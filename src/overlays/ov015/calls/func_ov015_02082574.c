@@ -1,13 +1,12 @@
-/* NOT MATCHING -- 456 of 460 bytes.  The ROM keeps the inner entry counter in r7 and
- * spills the compiler's row cursor (&spec + 8 * i, the +4 / +5 / +8 folded) at [sp]; build
- * 139 keeps the cursor in r7 and spills the counter for every form tried (declaration
- * orders, explicit row / spec pointers, entries indexed by the running total or from the
- * row base, per-row entry pointers, address-taken or volatile counters, C99 / block /
- * register / narrow counters, earlier counter initialisation, while / do / goto forms, no
- * guard, prototypes, pragmas).  Everything else now matches: the never-read entry counter
- * and the case-2 key live in a small struct declared after the entry array (sp+0x10 /
- * sp+0x14 like the ROM), and the entries are indexed by a plain running index so the entry
- * cursor is the loop optimiser's induction (initialised in the preheader).  Notes: build/held. */
+#pragma thumb on
+/* func_ov015_02082574 -- Ov015_ScriptOpCreateSpots: script op that reads a target, a slot and
+ * a table count, then per table its id and entry count and per entry the id, key, kind and
+ * four link bytes (one operand each) followed by the kind's payload: a point (kind 0) or a
+ * link (kind 1) carries a position (three fx32), the link also its link table and id; a
+ * pickup (kind 2) carries a key byte and a halfword resolved to the pickup piece (ov002
+ * 0207679c).  The entries are gathered in a 128-entry stack array, the tables in a spec
+ * block handed to Ov015_CreateSpotClass (02080df8) on the slot, and the class table is
+ * stored on the target (ov002 0207643c).  Always consumes the op (1). */
 typedef signed char    s8;
 typedef unsigned char  u8;
 typedef unsigned short u16;
@@ -49,37 +48,35 @@ extern void *func_ov002_0207679c(u8 nKey, u16 nArg);    /* resolve a pickup piec
 extern void *func_ov015_02080df8(u16 nSlot, Ov015SpotSpec *pSpec); /* Ov015_CreateSpotClass */
 extern void  func_ov002_0207643c(int nTarget, void *pValue);       /* store on the target */
 
+#pragma push
+#pragma opt_dead_assignments off
 int func_ov015_02082574(int vm, u16 *pc)
 {
     Ov015SpotSpec spec;
     Ov015SpotEntry aEntry[128];
-    struct {
-        volatile int nTotal;
-        int nKey;
-    } g;
-    int nBase;
+    int nArg;
+    int nKey;
+    int nBase = 0;
+    int i;
     int nTarget;
     int nSlot;
-    int i;
-    int j;
-    int nArg;
     u16 *pOperand;
+    int j;
 
-    g.nTotal = 0;
     nTarget = func_02021980(vm, pc);
     nSlot = func_02021980(vm, pc + 4);
     pOperand = pc + 8;
     pc += 0xc;
     spec.nRows = func_02021980(vm, pOperand);
-    nBase = 0;
     for (i = 0; i < spec.nRows; i++) {
         spec.aRow[i].nTable = func_02021980(vm, pc);
         pOperand = pc + 4;
         pc += 8;
         spec.aRow[i].nCount = func_02021980(vm, pOperand);
         spec.aRow[i].aEntry = &aEntry[nBase];
+        j = 0;
         if (spec.aRow[i].nCount > 0) {
-            for (j = 0; j < spec.aRow[i].nCount; j++) {
+            for (; j < spec.aRow[i].nCount; j++, nBase++) {
                 aEntry[nBase].nId = func_02021980(vm, pc);
                 aEntry[nBase].nKey = func_02021980(vm, pc + 4);
                 aEntry[nBase].nKind = func_02021980(vm, pc + 8);
@@ -107,18 +104,17 @@ int func_ov015_02082574(int vm, u16 *pc)
                     aEntry[nBase].nLinkId = func_02021980(vm, pOperand);
                     break;
                 case 2:
-                    g.nKey = func_02021980(vm, pc);
+                    nKey = func_02021980(vm, pc);
                     pOperand = pc + 4;
                     pc += 8;
                     nArg = func_02021980(vm, pOperand);
-                    aEntry[nBase].u.pPickup = func_ov002_0207679c(g.nKey, nArg);
+                    aEntry[nBase].u.pPickup = func_ov002_0207679c(nKey, nArg);
                     break;
                 }
-                g.nTotal++;
-                nBase++;
             }
         }
     }
     func_ov002_0207643c(nTarget, func_ov015_02080df8(nSlot, &spec));
     return 1;
 }
+#pragma pop
