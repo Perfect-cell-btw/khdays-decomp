@@ -645,7 +645,7 @@
       "mode": "arm",
       "size": 12,
       "source": "libs/nitro/os/asm_stubs/calls/OS_UnLockCartridge.c",
-      "source_sha256": "f8a27c8236d65dd5d030b88b966b0c014e28bc88ac393a4ee47bafeb1e203ebc",
+      "source_sha256": "946b722b583a8ac414ac96512fbd175eb3fef4999e46af14b3cfe3672359462f",
       "target_sha256": "aa594e08ac17c005f39025b8cb02f4440f31f4010f858723b166d2777148d4e5"
     },
     "OSi_AlarmHandler": {

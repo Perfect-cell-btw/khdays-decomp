@@ -28,7 +28,7 @@ identifications are not counted as real C decompilation.
 | Inline ASM / ASM stub matched functions | **108** / ~23,233 (~0.5%) | ASM implementations, including temporary game stubs, canonical library assembly and authorized inline exceptions; never counted as real C. Only explicitly verified manifest entries contribute to decomp.dev matching coverage. |
 | SDK/library byte-match identifications | **0** / ~23,233 (~0.0%) | NitroSDK or library functions identified separately by byte matching |
 | Named but not decompiled | **0** / ~23,233 (~0.0%) | Functions known to the project but not implemented as C |
-| Initialized DATA | **187,076** / 188,340 (**99.33%**) | Byte/relocation-verified `.rodata`/`.data`; includes the separately reported MobiClip executable payload at 26,012/26,012 bytes. |
+| Initialized DATA | **188,340** / 188,340 (**100.00%**) | Byte/relocation-verified `.rodata`/`.data`; includes the separately reported MobiClip executable payload at 26,012/26,012 bytes. |
 | Total known functions | **23,240** | Function index for the EU `YKGP` target |
 | Region | EU (`YKGP`) | |
 | Compiler | CodeWarrior `mwccarm` 3.0 build 139 | Fully-decompiled modules now include `ov031`, `ov188` and `ov189`; see `PROGRESS.md` for the complete generated list. A few precompiled-middleware translation units (e.g. the `ov028` anti-tamper crypto core) build with an older `mwccarm` via a per-file compiler override (`config/arm9/file_compilers.json`). |

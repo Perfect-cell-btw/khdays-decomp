@@ -5049,6 +5049,14 @@ src/overlays/ov008/data/ov008_page_0209082c.c:
     complete
     .data       start:0x0209082c end:0x0209086c
 
+src/overlays/ov008/data/ov008_page_020908e0.c:
+    complete
+    .data       start:0x020908e0 end:0x02090920
+
+src/overlays/ov008/data/ov008_page_020909d4.c:
+    complete
+    .data       start:0x020909d4 end:0x02090a14
+
 src/overlays/ov008/data/ov008_page_02090a14.c:
     complete
     .data       start:0x02090a14 end:0x02090a54
@@ -5073,6 +5081,10 @@ src/overlays/ov008/data/ov008_scene_params.c:
     complete
     .rodata     start:0x0208e9c4 end:0x0208edd4
 
+src/overlays/ov008/data/ov008_screen_02090148.c:
+    complete
+    .data       start:0x02090148 end:0x0209018c
+
 src/overlays/ov008/data/ov008_screen_020902e8.c:
     complete
     .data       start:0x020902e8 end:0x0209032c
@@ -5080,6 +5092,10 @@ src/overlays/ov008/data/ov008_screen_020902e8.c:
 src/overlays/ov008/data/ov008_screen_02090380.c:
     complete
     .data       start:0x02090380 end:0x020903c4
+
+src/overlays/ov008/data/ov008_screen_0209041c.c:
+    complete
+    .data       start:0x0209041c end:0x02090460
 
 src/overlays/ov008/data/ov008_screen_02090460.c:
     complete

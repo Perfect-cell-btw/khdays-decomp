@@ -12,7 +12,8 @@ the full link reported one multiply-defined symbol and thirty-nine undefined
 ones. This audit makes the class countable, and tools/gate.sh runs it before
 the link so it cannot recur in silence.
 
-What it checks, for every func_ADDR.c and func_ovNNN_ADDR.c under src/ and
+What it checks, for every func_ADDR.c / func_ovNNN_ADDR.c -- and, since 2026-09-28, every source
+named after any function symbol in symbols.txt -- under src/ and
 libs/, excluding nonmatching/ and asm_stubs/ (the build does not compile
 those):
 
@@ -34,7 +35,20 @@ NAME = re.compile(r"^func_(?:ov\d{3}_)?[0-9a-f]{8}$")
 SKIP_DIRS = {"nonmatching", "asm_stubs", "staging"}
 
 
+def function_symbols():
+    """Every function symbol named in config/**/symbols.txt. Since 2026-09-28 most functions carry
+    their real name, so a source named after ANY function symbol is checked, not only func_ADDR."""
+    names = set()
+    for sym in (ROOT / "config").rglob("symbols.txt"):
+        for line in sym.read_text(encoding="utf-8", errors="replace").splitlines():
+            parts = line.split()
+            if len(parts) > 1 and parts[1].startswith("kind:function"):
+                names.add(parts[0])
+    return names
+
+
 def source_files():
+    functions = function_symbols()
     for top in ("src", "libs"):
         base = ROOT / top
         if not base.is_dir():
@@ -42,7 +56,7 @@ def source_files():
         for path in base.rglob("*.c"):
             if SKIP_DIRS & set(path.relative_to(ROOT).parts):
                 continue
-            if NAME.match(path.stem):
+            if NAME.match(path.stem) or path.stem in functions:
                 yield path
 
 

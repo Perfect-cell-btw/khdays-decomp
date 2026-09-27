@@ -50,28 +50,30 @@ def ghidra_names():
 
 
 def key_for(func):
-    """func_ov228_020d01e8 -> arm9_ov228::020d01e8 ; func_0201a124 -> 0201a124"""
-    m = re.search(r'([0-9a-fA-F]{8})$', func)
-    if not m:
-        return None
-    addr = m.group(1).lower()
-    ov = re.match(r'func_(ov\d+)_', func)
-    return 'arm9_%s::%s' % (ov.group(1), addr) if ov else addr
+    """Ghidra address key for a function symbol: arm9_ov228::020d01e8 or 0201a124. Works for
+    semantic names too (resolved through symbols.txt, see audit_unnamed.ghidra_key)."""
+    from audit_unnamed import ghidra_key
+    return ghidra_key(func)
 
 
 def unit_of(func):
-    m = re.match(r'func_(ov\d+)_', func)
-    return m.group(1) if m else 'main'
+    """'ov228' / 'main' for a function symbol, whatever it is called."""
+    key = key_for(func)
+    if key and key.startswith('arm9_ov'):
+        return key.split('::')[0][len('arm9_'):]
+    return 'main'
 
 
 def matched_c():
     """func name -> path, real byte-exact C only (never asm_stubs / nonmatching)."""
+    from audit_unnamed import symbol_table
+    names = symbol_table()
     out = {}
     for root, _dirs, files in os.walk(os.path.join(ROOT, 'src')):
         if 'nonmatching' in root or 'asm_stubs' in root:
             continue
         for f in files:
-            if f.endswith('.c') and f.startswith('func_'):
+            if f.endswith('.c') and (f.startswith('func_') or f[:-2] in names):
                 out[f[:-2]] = os.path.join(root, f).replace(os.sep, '/')
     return out
 

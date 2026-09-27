@@ -3110,6 +3110,10 @@ src/overlays/ov022/data/ov022_pointers_020b2880.c:
     complete
     .data       start:0x020b2880 end:0x020b2894
 
+src/overlays/ov022/data/ov022_pointers_020b29bc.c:
+    complete
+    .data       start:0x020b29bc end:0x020b2b1c
+
 src/overlays/ov022/data/ov022_pointers_020b2b48.c:
     complete
     .data       start:0x020b2b48 end:0x020b2b6c

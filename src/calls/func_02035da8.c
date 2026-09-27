@@ -4,8 +4,8 @@
  * curve 0: linear.                          start + diff * t
  * curve 1: ease-in quadratic.               start + diff * t^2
  * curve 2: ease-out quadratic.              end   - diff * (1-t)^2
- * curve 3: two mirrored quadratic halves    (a smoothstep), built from a Q12
- *          FX_Inv reciprocal instead of the hardware divider.
+ * curve 3: two mirrored quadratic halves    (a smoothstep), with the progress
+ *          t = FX_Div(elapsed, duration) taken from the hardware divider.
  *
  * Any other curve value falls off the end of the switch and returns `start`
  * unchanged -- the ROM implements that as a bare `pop` right after the range

@@ -43,6 +43,42 @@ PLACEHOLDER = re.compile(r'^((Ov|ov)\d{3}_)?(%s)_(?=[0-9a-fA-F]*\d)[0-9a-fA-F]{4
                          % PLACEHOLDER_ROOTS, re.I)
 
 
+# Function symbols no longer all look like func_<addr>: since 2026-09-28 most carry their real
+# name, so the address comes from config/**/symbols.txt instead of the name. Module "arm9",
+# "itcm" and "dtcm" functions live in Ghidra's default space; overlay ones in arm9_ovNNN.
+_SYMBOLS = None
+
+
+def symbol_table():
+    """function name -> Ghidra key ('020593f4' or 'arm9_ov000::020593f4'), for every module."""
+    global _SYMBOLS
+    if _SYMBOLS is None:
+        _SYMBOLS = {}
+        for dirpath, _dirs, files in os.walk(os.path.join(ROOT, 'config', 'arm9')):
+            if 'symbols.txt' not in files:
+                continue
+            mod = os.path.basename(dirpath)
+            with open(os.path.join(dirpath, 'symbols.txt'), encoding='utf-8') as fh:
+                for line in fh:
+                    m = re.match(r'(\S+)\s+kind:function.*addr:0x([0-9a-fA-F]+)', line)
+                    if m:
+                        addr = m.group(2).lower()
+                        _SYMBOLS[m.group(1)] = ('arm9_%s::%s' % (mod, addr)) if mod.startswith('ov') else addr
+    return _SYMBOLS
+
+
+def ghidra_key(name):
+    """Ghidra address key for a function symbol, whatever it is called."""
+    key = symbol_table().get(name)
+    if key is not None:
+        return key
+    m = re.search(r'([0-9a-fA-F]{8})$', name)
+    if not m:
+        return None
+    ov = re.match(r'func_(ov\d+)_', name)
+    return 'arm9_%s::%s' % (ov.group(1), m.group(1).lower()) if ov else m.group(1).lower()
+
+
 def get(endpoint, params=None, timeout=120):
     q = '?' + urllib.parse.urlencode(params) if params else ''
     c = http.client.HTTPConnection('127.0.0.1', PORT, timeout=timeout)
@@ -72,7 +108,7 @@ def matched_c():
         if 'nonmatching' in root or 'asm_stubs' in root:
             continue
         for f in files:
-            if f.endswith('.c') and f.startswith('func_'):
+            if f.endswith('.c') and (f.startswith('func_') or f[:-2] in symbol_table()):
                 out[f[:-2]] = os.path.join(root, f).replace(os.sep, '/')
     return out
 
@@ -90,16 +126,13 @@ def main():
     placeholders = []
     missing = 0
     for name in sorted(matched_c()):
-        m = re.search(r'([0-9a-fA-F]{8})$', name)
-        if not m:
-            continue
-        addr = m.group(1).lower()
         # Overlay functions live in a prefixed address space: func_ov000_020593f4 is at
         # `arm9_ov000::020593f4`, NOT `020593f4`. Looking up the bare address silently finds
         # nothing and makes the whole overlay tree look clean -- the same prefix trap that made
         # a rename read-back report 27/27 "missing" on 2026-07-17.
-        ov = re.match(r'func_(ov\d+)_', name)
-        key = 'arm9_%s::%s' % (ov.group(1), addr) if ov else addr
+        key = ghidra_key(name)
+        if key is None:
+            continue
         cur = gn.get(key)
         if cur is None:
             missing += 1                   # not a defined function in Ghidra

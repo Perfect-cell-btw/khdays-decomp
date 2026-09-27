@@ -45,6 +45,17 @@ if ! python tools/audit_symbol_names.py; then
     exit 1
 fi
 
+echo "== 3b/8 recibos de DATA al dia"
+# POR QUE ESTA AQUI (2026-09-28): gen_delinks.py solo enlaza un fuente de DATA mientras el hash de
+# su recibo coincide. Un renombrado que no cambia ni un byte (una tabla de punteros que nombra una
+# funcion renombrada) cambia el hash, el fuente sale de delinks.txt y dsd rellena el rango con los
+# bytes de la ROM: el 306 sigue verde pero esa DATA ya no sale del codigo. Asi se perdieron 12
+# tablas de punteros a funcion sin que nada avisara (lo detecto el build nativo del port).
+if ! python tools/refresh_data_receipts.py | tee /dev/stderr | grep -q "^stale DATA receipts: 0$"; then
+    echo "!! hay recibos de DATA desfasados: python tools/refresh_data_receipts.py --fix"
+    exit 1
+fi
+
 echo "== 4/8 borrando los binarios del enlace anterior"
 # POR QUE ES rm Y NO cp (2026-09-11): la version anterior COPIABA aqui los binarios de referencia
 # de dsd_extract/, y `dsd check modules` no hace mas que hashear esos mismos ficheros contra el
@@ -94,6 +105,17 @@ echo "DSD_OK=$ok"
 if [ "$ok" != "306" ]; then
     echo "!! esperaba 306 modulos OK; los que fallan:"
     tools/dsd.exe check modules --config-path config/arm9/config.yaml -f 2>&1 | grep -v ": OK" | head -40
+    exit 1
+fi
+
+echo "== 8b/8 informe de progreso (lo mismo que ejecuta el CI)"
+# POR QUE ESTA AQUI (2026-09-28): el CI (job `report`) valida los hashes de los stubs ASM de
+# config/arm9/report_asm_matches.json. Editar un stub (aunque solo cambie el nombre de un simbolo
+# referenciado) deja su verificacion desfasada y el CI se pone rojo mientras el 306 local seguia
+# verde. Si falla: python tools/verify_report_asm.py
+if ! python tools/gen_report.py > build/gen_report_gate.log 2>&1; then
+    tail -5 build/gen_report_gate.log
+    echo "!! gen_report.py falla (el CI tambien): python tools/verify_report_asm.py"
     exit 1
 fi
 echo "GATE VERDE (306/306, modulos enlazados)"

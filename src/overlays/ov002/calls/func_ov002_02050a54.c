@@ -2,9 +2,10 @@
  *
  * The base comes from a twelve-byte record table indexed by the selector.
  * Selector 10 alone is interpolated: when the active actor's depth is below
- * -0x10000, the base is pulled toward the selector 0 entry by the reciprocal of
- * how far past that threshold the depth has gone, which is why the second data
- * label is the same word as the first table entry.
+ * -0x10000, the base is pulled toward the selector 0 entry by the factor
+ * FX_Div(-0x10000 - depth, 0x8000) -- a division by 0.5, so twice how far past
+ * that threshold the depth has gone (fx32) -- which is why the second data label
+ * is the same word as the first table entry.
  *
  * A second table keyed on the actor's world then adds a fixed offset. Selectors
  * other than 0 and 10 skip it and return the bare base.
