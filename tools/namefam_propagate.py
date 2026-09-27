@@ -86,6 +86,23 @@ def canon(f):
     return bytes(b).hex()
 
 
+def family_key(func, f):
+    """canon() plus every callee that lives outside the copy's own overlay, by exact symbol.
+
+    Masked bytes alone merge siblings that differ only in which SHARED helper they call: ov245's
+    part forwarders `Carrier_ForwardRegionEventToParts` (ov107 InitObjectFromSource) and
+    `Carrier_NotifyPartsThenBase` (ov107 InvokeSlot0x74) are byte-identical once relocs are
+    zeroed, and so are ov002's script commands that read two operands and call nine different
+    handlers. An overlay-local callee is still a wildcard -- that is what makes two overlays'
+    copies a family in the first place."""
+    unit = unit_of(func)
+    tail = []
+    for _off, sym in sorted(f['relocs']):
+        m = re.match(r'(?:func|data)_(ov\d+)_', sym)
+        tail.append('LOCAL' if unit != 'main' and m and m.group(1) == unit else sym)
+    return canon(f) + '|' + ','.join(tail)
+
+
 # `Ov228_SteerToTarget` / `ov228_SteerToTarget` -> ('Ov', '228', 'SteerToTarget')
 OVNAME = re.compile(r'^(Ov|ov)(\d{3})_(.+)$')
 
@@ -171,7 +188,7 @@ def main():
         f = idx.get(func)
         if not f:
             continue
-        fams[canon(f)].append(func)
+        fams[family_key(func, f)].append(func)
 
     plan = []          # (func, unit, addr, newname, source_func)
     conflicts = []
