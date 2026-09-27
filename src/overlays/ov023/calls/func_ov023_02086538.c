@@ -1,44 +1,3 @@
-/* NONMATCHING (parked 2026-09-17, user decision after the sweeps below).  Best candidate: same size,
- * same instructions and relocations as the ROM; the residue is a register-allocator choice that no
- * mwcc build in tools/mwccarm reproduces.  Notes from build/held/ov023:
- *
- * # func_ov023_02086538 (Ov023_CmdWarpActor, THUMB, 652 B) — HOLD 16/09 (spill-slot tie)
- *
- * Best: build/held/ov023/func_ov023_02086538.c — 652/652, same instructions/relocs; residue = two spill slots
- * swapped in the AnchorPos block: ROM cos at [sp+0] / nAnchor*12 at [sp+8], mine the reverse (17 diffs, all
- * ldr/str slot numbers + the scheduler placing the cos store around the muls). Levers found on the way: the
- * first branch's facing as a block-scoped u16 (r7), `nIdx = (angle >> 4) * 2` as a variable (puts nAnchor*4 in
- * r7 and spills nAnchor*12 like the ROM), `nSin = table[nIdx]; nCos = table[nIdx + 1]` in that order,
- * `vPos.x = nX; vPos.z = nZ;` (z sum kept in r1), a block-scoped pActor for the detach/reset pair (actorOff at
- * [sp+4]). Swept: 240 declaration permutations, types (int/s16/u16 for idx/sin/cos/anchor), inline table reads,
- * block scopes, tail orders. Next: whatever makes the cos temp get the lowest slot (spilled last).
- *
- * 17/09 (b): 6 more creation-order forms for the anchor temp vs cos (a VecFx32 *pAnchor local between the sin
- * and cos reads / before them, `pAnchor = aAnchorPos + nAnchor`, nX seeded from the anchor before the cos read,
- * cos read inline in both products, cos read inline in x then as a variable): the pointer forms lose the CSE
- * temp entirely (628-648 B), the inline forms only rotate the four slots (actorOff 8, cos 4, anchor12 0).
- * The slot order is not the creation order; hold stands.
- *
- * 17/09 (b) -- still OPEN, not archived (user's instruction). Slot data (actorOff / cos / anchor12 / sin):
- * held 4/8/0/0xc; cos inline 8/4/0/0xc; both inline 0xc/8/0/4; sin inline 8/4/0/0xc; nCos declared before nSin
- * 4/0xc/0/8; ROM 4/0/8/0xc. So declared variables take the top slots in declaration order and the temps follow,
- * but anchor12 (nAnchor * 12) is the LAST slot in every one of ~600 cells (random 11-axis cross product of
- * cos/sin/idx/xz/y-sum/top-block/nAngle scope/nFacing type/declaration order/association/read order, plus a
- * named nAnchorOffset in all three reads, multi-def by an init at the top, u8 / int cast forms, pointer forms).
- * The ROM needs anchor12 before actorOff and cos last. Next: a named, non-propagatable offset whose first
- * definition precedes the top block (only a reused earlier variable can do that), or the compiler question.
- *
- * 17/09 (c) -- spill-slot model measured on this function and on build/try/micro/m6538[a-c].c: slots ascend
- * in this order: [address/load temps in REVERSE creation order] [declared variables in REVERSE declaration
- * order] [call-result temps in creation order]. Held: anchor12 0, actorOff 4, cos 8, sin 0xc, nX 0x10,
- * nAngle 0x14, p1 0x18, p2 0x1c -- exactly that. The ROM (cos 0, actorOff 4, anchor12 8) therefore has
- * cos as the NEWEST temp and anchor12 (nAnchor * 12) as the OLDEST, older than the top block's
- * nActor * 0x1a64. cos as an inline read is fine; anchor12 older than a temp created in the first
- * statement of the function is impossible in source order for build 139 (multi-def reuse of nAnchor,
- * nIdx, a declared / volatile / u32 / short offset, inline helpers for the top block, for the products
- * and for the anchor block, 254-cell random cross product, all 2.0/3.0 builds identical). Open as a
- * compiler-version residue: the ROM's numbering of the multiply temps differs from 139's.
- */
 /* func_ov023_02086538 -- Ov023_CmdWarpActor: script command that moves an actor to a position
  * at once.  Operand 0 is the entity (0202bfcc) and, resolved (02020d10), the actor; an actor
  * with a model resource (+0x15e0) is first detached (02088f90) and reset (02089174).  Operands
@@ -131,18 +90,18 @@ int func_ov023_02086538(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
     char *pszName;
     int nAnchor;
     int nX;
-    int nSin;
+    s16 nSin;
     int nCos;
     int nZ;
     int nIdx;
+
 
     nActor = func_02021980(pCtx, pOperand);
     pEntity = func_0202bfcc((u16)nActor);
     nActor = func_02020d10(pCtx, nActor);
     if (pCtx->pEvent->pActors != 0) {
-        Ov023Actor *pActor = &pCtx->pEvent->pActors[nActor];
-        if (pActor->pResource != 0) {
-            func_ov023_02088f90(pActor);
+        if (pCtx->pEvent->pActors[nActor].pResource != 0) {
+            func_ov023_02088f90(&pCtx->pEvent->pActors[nActor]);
             func_ov023_02089174(&pCtx->pEvent->pActors[nActor]);
         }
     }
@@ -167,7 +126,12 @@ int func_ov023_02086538(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
             nIdx = (pCtx->pEvent->aAnchorAngle[nAnchor] >> 4) * 2;
             nSin = data_0203d210[nIdx];
             nCos = data_0203d210[nIdx + 1];
+            nCos = (s16)nCos;
             nX = pCtx->pEvent->aAnchorPos[nAnchor].x + func_02005418(nCos, vPos.x) + func_02005418(nSin, vPos.z);
+            /* A no-op re-assignment of the short sine between its two uses: it keeps the
+             * s16 variable itself (not an int promotion temporary) in the register, which is
+             * what orders its spill store right after the muls in the original. */
+            nSin = (s16)nSin;
             nZ = pCtx->pEvent->aAnchorPos[nAnchor].z + func_02005418(-nSin, vPos.x) + func_02005418(nCos, vPos.z);
             vPos.x = nX;
             vPos.z = nZ;
