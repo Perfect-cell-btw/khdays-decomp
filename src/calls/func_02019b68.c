@@ -6,7 +6,7 @@ extern void func_0201af0c(void);
 extern void func_0201a2ac(void);
 
 extern void func_02019c74(void);
-extern void WM_EndKeySharing_0x02019cac(void);
+extern void func_02019cac(void);
 
 extern void *data_0204a2e4;
 extern void *data_0204a2f0;
@@ -35,7 +35,7 @@ void func_02019b68(void)
     SND_Init();
     data_0204a2d4.unk10 = func_02019c74;
     data_0204a2d4.unk14 = 0;
-    data_0204a2d4.unk1C = WM_EndKeySharing_0x02019cac;
+    data_0204a2d4.unk1C = func_02019cac;
     data_0204a2d4.unk20 = 0;
     func_0200d5a8(&data_0204a2e4);
     func_0200d5c0(&data_0204a2f0);

@@ -5,9 +5,7 @@ typedef unsigned short u16;
 typedef unsigned int u32;
 typedef int GXVRamTex;
 
-extern GXVRamTex SNDi_UnlockMutex(void);   /* GX_ResetBankForTex */
-#define GX_ResetBankForTex SNDi_UnlockMutex
-
+extern GXVRamTex GX_ResetBankForTex(void);   /* GX_ResetBankForTex */
 /* gx_load3d.c's texture start table (data_02041428): blk1 / blk2 / szBlk1, each >> 12. */
 extern const struct {
     u16 blk1;

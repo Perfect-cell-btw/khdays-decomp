@@ -17,7 +17,7 @@ extern void func_ov262_020d3f88(void *anchor, struct Vecx32 *dir, const struct V
 extern void func_ov015_02080c00(int piece, int slot, int carried, int a);
 extern void func_0203c634(int *node, int slot, void *cb);
 extern void VEC_CrossProduct(void *a, void *b, void *d);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void func_01ffa724(int scale, void *v, void *d);
 extern void VEC_Add(void *a, void *b, void *d);
 extern const struct Vecx32 data_02042264;
@@ -58,7 +58,7 @@ void func_ov262_020d4e6c(int *node)
     }
     VEC_CrossProduct(state + 0x1d, &dir, &side);
     if (len >= 0x1800) {
-        t = FX_Inv(len - 0x1800, 0x800);
+        t = FX_Div(len - 0x1800, 0x800);
         if (t > 0x1000) {
             t = 0x1000;
         } else if (t < 0) {
@@ -68,7 +68,7 @@ void func_ov262_020d4e6c(int *node)
         func_01ffa724(t, &dir, &dir);
         VEC_Add(&side, &dir, &side);
     } else if (len < 0x800) {
-        t = FX_Inv(0x800 - len, 0x800);
+        t = FX_Div(0x800 - len, 0x800);
         if (t > 0x1000) {
             t = 0x1000;
         } else if (t < 0) {

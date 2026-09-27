@@ -290,7 +290,7 @@ typedef struct FSFile {
         FSCloseFileInfo closefile;
     } arg;
 } FSFile;
-s32 OS_UnlockByWord_0x0200ae4c(FSFile * p_file, void * dst, s32 len);
+s32 FS_ReadFile(FSFile * p_file, void * dst, s32 len);
 BOOL FS_SeekFile(FSFile * p_file, s32 offset, FSSeekFileMode origin);
 typedef enum {
     SND_DUTY_1_8,
@@ -577,7 +577,7 @@ s32 func_0201e008 (NNSSndStrmPlayer * player, void * dest, u32 size, u32 offset)
         (s32)(player->fileOffset + offset),
         FS_SEEK_SET
         );
-    return OS_UnlockByWord_0x0200ae4c(
+    return FS_ReadFile(
         &player->file,
         dest,
         (s32)size

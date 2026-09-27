@@ -12,7 +12,7 @@ typedef struct {
 
 extern PadState data_0204c18c;
 extern unsigned int data_0204c194[];
-extern unsigned int OS_IsThreadAvailable(void);   /* GetVBlankCount */
+extern unsigned int func_01ff80a8(void);   /* GetVBlankCount */
 
 int func_02023f78(void)
 {
@@ -32,7 +32,7 @@ int func_02023f78(void)
     prev = data_0204c18c.prev;
     cont = (u16)data_0204c18c.cont;     /* the cast gives the reloaded state its own value, allocated after prev */
     data_0204c18c.trig = ~prev & cont;
-    now = OS_IsThreadAvailable();
+    now = func_01ff80a8();
     for (i = 0; i < 12; i++) {
         if ((u16)(prev ^ cont) & bit) {
             data_0204c194[i] = now;

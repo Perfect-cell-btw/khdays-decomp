@@ -18,7 +18,7 @@ struct CastHit { int f0; int f4; int nBlocked; int nFraction; };
 
 extern int func_ov169_020ce424(int *state, void *sphere, void *push);
 extern void func_0203c634(int *node, int slot, void *cb);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern struct CastHit *func_01fff920(void *world, void *from, void *step);
 extern void func_01ffd144(int scale, void *v, void *d);
@@ -61,7 +61,7 @@ void func_ov169_020cea4c(int *node)
         if (time != 0) {
             /* guard written positively: the other way round the scheduler fills the umull slot
              * with the rounding add (adds before mla) */
-            idx = (unsigned short)((0x28BE60DB9391LL * FX_Mul(FX_Inv(state[0xc], time), 0x3244) + 0x80000000000LL) >> 44);   /* FX_RAD_TO_IDX */
+            idx = (unsigned short)((0x28BE60DB9391LL * FX_Mul(FX_Div(state[0xc], time), 0x3244) + 0x80000000000LL) >> 44);   /* FX_RAD_TO_IDX */
             sine = data_0203d210[(idx >> 4) << 1];                                                                     /* FX_SinIdx */
         } else {
             sine = 0;

@@ -3,7 +3,7 @@ typedef unsigned short u16;
 typedef unsigned int u32;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern int OS_IsThreadAvailable(void);
+extern int func_01ff80a8(void);
 extern void OS_WaitVBlankIntr(void);
 extern void func_02005630(void);
 extern void func_0200566c(void);
@@ -41,7 +41,7 @@ void *func_ov012_0205b618(void) {
             u16 *systemFlags;
             u32 keyMask;
 
-            previousThreadCount = OS_IsThreadAvailable();
+            previousThreadCount = func_01ff80a8();
             initialThreadCount = previousThreadCount;
             loopStatus = func_ov024_02084db8();
             if (loopStatus == 0) {
@@ -71,7 +71,7 @@ void *func_ov012_0205b618(void) {
                         *(u16 *)(context + 2) &= ~1;
                     }
 
-                    currentThreadCount = OS_IsThreadAvailable();
+                    currentThreadCount = func_01ff80a8();
                     if (previousThreadCount != currentThreadCount) {
                         func_ov012_0205b584(context,
                                             currentThreadCount - initialThreadCount);

@@ -1,7 +1,7 @@
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern int OS_ReadOwnerOfLockWord(void *lock);
-extern int OS_TryLockCartridge_0x02001730(int owner);
+extern int OS_TryLockCartridge(int owner);
 extern void WaitByLoop(int count);
 
 /* Spins until this processor owns the cartridge bus. `out` receives the saved interrupt state and
@@ -13,7 +13,7 @@ void CTRDGi_LockByProcessor(int owner, char *out) {
         if (*(int *)out != 0) {
             return;
         }
-        if (OS_TryLockCartridge_0x02001730(owner) == 0) {
+        if (OS_TryLockCartridge(owner) == 0) {
             return;
         }
         OS_RestoreInterrupts(*(int *)(out + 4));

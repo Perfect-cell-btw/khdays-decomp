@@ -22,7 +22,7 @@ extern void FS_InitFile(void *f);
 extern void FSi_WaitForCardThread(void);
 extern char *func_02024e6c(char *name);
 extern int FS_OpenFile(void *f, const char *path);
-extern int OS_UnlockByWord_0x0200ae4c(void *file, void *buf, int size);
+extern int FS_ReadFile(void *file, void *buf, int size);
 extern void *NNS_FndAllocFromDefaultExpHeapEx(u32 size, int align);
 extern int FS_CloseFile(void *f);
 
@@ -37,7 +37,7 @@ void *func_02024ee8(const char *name, int mode)
     FS_InitFile(file);
     FSi_WaitForCardThread();
     FS_OpenFile(file, func_02024e6c((char *)name));
-    OS_UnlockByWord_0x0200ae4c(file, &header, 0x10);
+    FS_ReadFile(file, &header, 0x10);
 
     {
         u16 countAndFlags = *(u16 *)((char *)&header + 2);
@@ -56,7 +56,7 @@ void *func_02024ee8(const char *name, int mode)
     buf[1] = mode;
     buf[2] = file[2];
     buf[3] = buf[3] + file[9];
-    OS_UnlockByWord_0x0200ae4c(file, buf + 4, size);
+    FS_ReadFile(file, buf + 4, size);
     FS_CloseFile(file);
     return buf;
 }

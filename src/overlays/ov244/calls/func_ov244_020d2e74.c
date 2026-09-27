@@ -6,7 +6,7 @@
  * clamped to 0x1000. When the gate byte is clear the speed is pinned to 0x1000, a hold time
  * is rolled uniformly between the bounds at +0x224/+0x228, and the action byte at +0x1c7 is
  * set to 2 before re-registering the think callback. */
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern int func_02023eb4(int scale);
 extern void func_0203c634(void *node, int idx, void *cb);
 
@@ -17,7 +17,7 @@ void func_ov244_020d2e74(int *node) {
     int lo;
 
     state[0x11] = state[0x11] + *(int *)((int)owner + 0x2c);
-    v = FX_Inv(state[0x11], 0x2aa);
+    v = FX_Div(state[0x11], 0x2aa);
     *(int *)(state[0] + 0x390) = v + 0xcc;
     if (*(int *)(state[0] + 0x390) > 0x1000) {
         *(int *)(state[0] + 0x390) = 0x1000;

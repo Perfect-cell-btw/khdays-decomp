@@ -80,7 +80,7 @@ extern struct Hit *func_0202c268(u16 nMask, struct VecFx32 *pFrom, struct VecFx3
                                  struct ActorNode *pNode);
 extern void func_01ffd0e8(int nScale, struct VecFx32 *pDir, struct VecFx32 *pBase,
                           struct VecFx32 *pOut);
-extern int FX_Inv(int nNumerator, int nDenominator);
+extern int FX_Div(int nNumerator, int nDenominator);
 extern void func_0202df34(struct VecFx32 *pMark);
 
 void func_ov022_0209c870(struct Actor *pActor)
@@ -128,7 +128,7 @@ void func_ov022_0209c870(struct Actor *pActor)
     if (nGap < 0) {
         nGap = -nGap;
     }
-    nShade = FX_Inv(GAP_FULL - nGap, GAP_FULL) * SHADE_SCALE;
+    nShade = FX_Div(GAP_FULL - nGap, GAP_FULL) * SHADE_SCALE;
     if (nShade < SHADE_MIN) {
         nShade = SHADE_MIN;
     }

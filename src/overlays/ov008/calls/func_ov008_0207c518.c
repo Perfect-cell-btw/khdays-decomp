@@ -27,7 +27,7 @@ extern int func_ov008_0208187c(int selection);
 extern int func_ov008_0207bc58(void);
 extern void func_ov008_0207bcd8(void);
 extern int func_02001030(void);
-extern u16 OS_IsTickAvailable_0x01ff8138(void);
+extern u16 func_01ff8138(void);
 extern int func_ov008_0207b7b4(void);
 extern void func_ov008_02081da0(void);
 extern void *func_ov008_02055c84(void *resource, u32 index);
@@ -67,11 +67,11 @@ MissionState func_ov008_0207c518(void)
         goto draw_screen;
     case 4:
         if (data_ov008_02090fa0->sessionReady != 0) {
-            if (OS_IsTickAvailable_0x01ff8138() != 1) {
+            if (func_01ff8138() != 1) {
                 nextState = 0;
             }
         } else {
-            if (OS_IsTickAvailable_0x01ff8138() == 0) {
+            if (func_01ff8138() == 0) {
                 nextState = 0;
             }
         }

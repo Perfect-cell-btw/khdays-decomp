@@ -33,7 +33,7 @@ extern void func_ov105_020bf8c8(void *callback);
 extern void func_02030610(void);
 extern void func_02031600(void *config);
 extern void func_020305d8(void);
-extern int OS_IsTickAvailable(void);
+extern int func_01ff8128(void);
 extern void func_ov006_0204e0c4(void);
 extern void func_02030cf8(int slot, void *callback);
 extern void func_ov006_0204e3ec(void);
@@ -55,7 +55,7 @@ void func_ov006_0204e114(void) {
         func_02031600(&exit_config);
         func_020305d8();
     } else {
-        if (OS_IsTickAvailable() == 0) {
+        if (func_01ff8128() == 0) {
             func_ov006_0204e0c4();
         } else {
             key_block = &data_ov006_020565e4->key_block;

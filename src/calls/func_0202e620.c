@@ -112,7 +112,7 @@ typedef struct {
 } CaptureCfg;
 
 extern void func_020056b4(int a, int b, int c);
-extern void SNDi_UnlockMutex_0x020063f8(void);
+extern void GX_ResetBankForSubOBJ(void);
 extern void GX_SetBankForSubBG(int bank);
 extern void GX_SetBankForLCDC(int bank);
 
@@ -124,7 +124,7 @@ void func_0202e620(CaptureCfg *cfg)
     } else {
         func_020056b4(1, 0, 1);
     }
-    SNDi_UnlockMutex_0x020063f8();
+    GX_ResetBankForSubOBJ();
     GX_SetBankForSubBG(GX_VRAM_SUB_BG_128_C);
     GX_SetBankForLCDC(GX_VRAM_LCDC_D);
     if (cfg->flags & 1) {

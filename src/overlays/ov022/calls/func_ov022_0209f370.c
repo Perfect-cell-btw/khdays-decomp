@@ -95,7 +95,7 @@ extern void func_ov022_0209fe20(struct Actor *pActor, VecFx32 *pOut);
 extern void *func_ov022_020b0e20(struct ComboState *pCombo);
 extern void func_ov022_020a5ff4(VecFx32 *pOut, struct Actor *pActor, VecFx32 *pIn, int nMode);
 extern int func_ov022_02083f90(void);
-extern int FX_Inv(int nNumerator, int nDenominator);
+extern int FX_Div(int nNumerator, int nDenominator);
 extern int func_ov022_020ad114(struct Actor *pActor);
 extern VecFx32 *func_ov022_020ad0c0(struct Actor *pActor);
 extern void VEC_Add(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
@@ -149,7 +149,7 @@ void func_ov022_0209f370(struct Actor *pActor)
     if (bHeld && vecDelta.y != 0) {
         if (!pRecord->bReleased) {
             if (data_ov022_020b2eb0 != 0) {
-                vecDelta.y = FX_Inv(vecDelta.y, RECOIL_SPAN);
+                vecDelta.y = FX_Div(vecDelta.y, RECOIL_SPAN);
             }
             pActor->nRecoil = vecDelta.y;
             pActor->nFlags |= FLAG_BIT21;

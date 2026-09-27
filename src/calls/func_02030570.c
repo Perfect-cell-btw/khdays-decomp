@@ -2,7 +2,7 @@ extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int func_02030670(void);
 extern int func_02030694(void);
 extern int func_020306b4(void);
-extern int OS_IsTickAvailable_0x01ff8138(void);
+extern int func_01ff8138(void);
 extern void func_020303d8(void);
 
 typedef struct {
@@ -19,7 +19,7 @@ int func_02030570(void)
     int flag = 0;
 
     if (func_02030670() != 0 && func_02030694() != 0) {
-        if (obj->h20 != OS_IsTickAvailable_0x01ff8138())
+        if (obj->h20 != func_01ff8138())
             flag = 1;
     }
     if (func_020306b4() != 0)

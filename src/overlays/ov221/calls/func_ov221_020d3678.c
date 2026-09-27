@@ -19,8 +19,8 @@ extern void func_ov107_020c5af8(int actor, int id, int mode, void *at);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
 extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
 extern int func_02020400(int nNum, int nDen);
-extern int FX_Inv(int a, int b);
-extern int FX_Inv_0x01ff8a40(int v);
+extern int FX_Div(int a, int b);
+extern int FX_Inv(int v);
 extern void func_ov221_020d0a2c(int *state, int mode, int b);
 extern short data_0203d210[];
 
@@ -66,7 +66,7 @@ void func_ov221_020d3678(int *node)
         }
         state[6] = state[0xb] + lift;
         state[6] = state[6] - *(int *)(state[2] + 4);
-        state[6] = FX_MUL(state[6], FX_Inv_0x01ff8a40(FX_Inv(*(int *)(*node + 0x2c), 0x88)));
+        state[6] = FX_MUL(state[6], FX_Inv(FX_Div(*(int *)(*node + 0x2c), 0x88)));
         func_ov221_020d0a2c(state, 3, 0);
         return;
     }

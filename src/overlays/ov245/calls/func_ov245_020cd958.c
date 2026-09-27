@@ -4,7 +4,7 @@
  * 0.925 into the +0x20 z speed (x/y zero), and hands the node to 020cd9f4. */
 extern void func_ov245_020cce08(int actor);
 extern int func_ov245_020ccda4(int *node, int flat);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_0203c634(int *node, int slot, void *cb);
 extern void func_ov245_020cd9f4(void);
 
@@ -22,7 +22,7 @@ void func_ov245_020cd958(int *node) {
     } else if (rest < 0) {
         rest = 0;
     }
-    rest = FX_Inv(rest, 0x5000);
+    rest = FX_Div(rest, 0x5000);
     state[6] = 0;
     state[7] = 0;
     state[8] = (int)(((long long)rest * 0xed0 + 0x800) >> 12);

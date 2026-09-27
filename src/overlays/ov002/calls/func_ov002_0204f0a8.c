@@ -6,7 +6,7 @@ extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int func_01fffe14(void);
 extern void *func_01fffde0(int nPlayer);
 extern void *func_02023bf0(void);   /* the active actor */
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern short FX_Atan2(int x, int y);
 /* Cosine to angle: a binary search over the shared sin/cos table. The other
  * three registers Ghidra shows at the call site are the callee's own locals. */
@@ -116,7 +116,7 @@ void *func_ov002_0204f0a8(void)
     func_01fffde0(nPlayer);
     nDist = func_ov002_02050b90(*(int *)(pCam + 0x44));
     nBase = func_ov002_02050b90(0);
-    nRatio = FX_Inv(nDist, nBase);
+    nRatio = FX_Div(nDist, nBase);
 
     if (data_0204be04 != *(unsigned int *)(pCam + 0xe0)) {
         return 0;
@@ -163,7 +163,7 @@ void *func_ov002_0204f0a8(void)
             if (func_ov002_0204e2e0(&nBits, pObj, 0, 0x28) == 0) {
                 if (func_ov002_0204e414(*(int *)(pCam + 0x58),
                                         *(int *)(pCam + 0x80)) == 0) {
-                    nStep = FX_Inv(*(int *)(pCam + 0x84), 0xa000);
+                    nStep = FX_Div(*(int *)(pCam + 0x84), 0xa000);
                     if (nStep < 0) {
                         nStep = -nStep;
                     }
@@ -208,7 +208,7 @@ void *func_ov002_0204f0a8(void)
         pObj = func_ov022_020865b4();
         if (pObj != 0) {
             if (func_ov002_0204e2e0(&nBits, pObj, 0, 0x28) == 0) {
-                nStep = FX_Inv(*(int *)(pCam + 0x84), 0xa000);
+                nStep = FX_Div(*(int *)(pCam + 0x84), 0xa000);
                 if (nStep < 0) {
                     nStep = -nStep;
                 }

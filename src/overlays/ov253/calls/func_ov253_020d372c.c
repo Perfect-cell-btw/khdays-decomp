@@ -7,7 +7,7 @@
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 axis[3]; int radius; int flag; } Cylinder;
 
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern int func_02020400(int a, int b);
 extern int func_ov107_020c8fd0(int actor, void *box, int *out);
 extern int func_ov253_020cceb0(int item, int hit);
@@ -43,7 +43,7 @@ void func_ov253_020d372c(int *node)
 
     state[5] += *(int *)(node[0] + 0x2c);
     state[6] += (0xc000 - state[6]) / 30;
-    inv = 0x1000 - FX_Inv(state[5], 0x4000);
+    inv = 0x1000 - FX_Div(state[5], 0x4000);
     if (inv < 0) {
         inv = 0;
     }

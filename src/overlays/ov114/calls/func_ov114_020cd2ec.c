@@ -4,7 +4,7 @@
  * and switch to action 7.
  *
  * Matched byte-exact 2026-07-23, first compile. One of three byte-identical siblings. */
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void func_0203c634(void *node, int idx, void *cb);
 
 void func_ov114_020cd2ec(int *node) {
@@ -13,7 +13,7 @@ void func_ov114_020cd2ec(int *node) {
 
     state[0x11] = state[0x11] + *(int *)((int)owner + 0x2c);
     if (state[0x11] >= 0x400) {
-        *(int *)(state[0] + 0x390) = 0x1000 - FX_Inv(state[0x11] - 0x400, 0x2aa);
+        *(int *)(state[0] + 0x390) = 0x1000 - FX_Div(state[0x11] - 0x400, 0x2aa);
         if (*(int *)(state[0] + 0x390) < 0xcc) {
             *(int *)(state[0] + 0x390) = 0xcc;
         }

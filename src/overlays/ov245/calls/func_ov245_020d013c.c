@@ -11,7 +11,7 @@ struct Ov245Actor { char pad[0x394]; int slots[3]; };
 extern void func_ov245_020d0794(int item, void *anchor, const Vec3 *dir);
 extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern void func_ov107_020c9264(int actor, int pose, int flag);
@@ -45,7 +45,7 @@ void func_ov245_020d013c(int *node) {
     d.y = 0;
     rest = *(int *)(node[0] + 0x2c);
     while (rest > 0) {
-        int ratio = FX_Inv(rest <= 0x88 ? rest : 0x88, 0x88);
+        int ratio = FX_Div(rest <= 0x88 ? rest : 0x88, 0x88);
         int t = (int)(((long long)ratio * 0x800 + 0x800) >> 12);
         sum += (int)(((long long)(0x1000 - sum) * (0x1000 - t) + 0x800) >> 12);
         rest -= 0x88;

@@ -5,7 +5,7 @@ extern int func_02020a9c(void);
 extern void func_020056b4(int a, int b, int c);
 extern void GX_SetBankForLCDC(int bank);
 extern void MIi_CpuClearFast(int value, void *dst, int size);
-extern void SNDi_UnlockMutex_0x020065d4(void);
+extern void GX_DisableBankForLCDC(void);
 extern void func_02023560(int a);
 
 void func_ov023_02084d64(void) {
@@ -13,7 +13,7 @@ void func_ov023_02084d64(void) {
         func_020056b4(1, 0, 1);
         GX_SetBankForLCDC(8);
         MIi_CpuClearFast(0, (void *)0x06800000, 0xa4000);
-        SNDi_UnlockMutex_0x020065d4();
+        GX_DisableBankForLCDC();
     }
     func_02023560(0);
 }

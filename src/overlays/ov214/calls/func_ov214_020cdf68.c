@@ -84,7 +84,7 @@ extern void VEC_Subtract(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *o
 extern int VEC_DotProduct(struct VecFx32 *a, struct VecFx32 *b);
 extern int func_020050b4(int x, int z);
 extern int func_ov107_020cab14(struct Ov214Actor *actor, int kind);
-extern int FX_Inv(int numerator, int denominator);
+extern int FX_Div(int numerator, int denominator);
 extern void MTX_RotY33_(struct MtxFx33 *matrix, int sine, int cosine);
 extern void MTX_MultVec33(struct VecFx32 *vector, struct MtxFx33 *matrix, struct VecFx32 *out);
 extern int func_02020400(int a, int b);
@@ -225,7 +225,7 @@ void func_ov214_020cdf68(struct Ov214Task *task)
                 } else {
                     slice = 0x88;
                 }
-                inverse = FX_Inv(slice, 0x88);
+                inverse = FX_Div(slice, 0x88);
                 state->nSpeed64 = FX_MUL(state->nSpeed64, 0x1000 - FX_MUL(inverse, 0x100));
             }
             func_01ffa724(state->nSpeed64, &state->vDirection14, &state->vVelocity20);

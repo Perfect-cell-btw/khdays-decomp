@@ -373,7 +373,7 @@ typedef struct NNSSndArc {
     struct NNSSndArcInfo * info;
     s32 loadBlockSize;
 } NNSSndArc;
-NNSSndArc * OS_IsThreadAvailable_0x0201b3d8(void);
+NNSSndArc * func_0201b3d8(void);
 void * func_0201b7e0(u32 fileId);
 void func_0201b808(u32 fileId, void * address);
 extern void func_0201c2ac(void * mem, u32 size, u32 data1, u32 data2);
@@ -390,7 +390,7 @@ NNSSndSeqData * func_0201bf9c (u32 fileId, NNSSndHeapHandle heap, BOOL bSetAddr)
         buffer = func_0201befc(
             fileId,
             func_0201c2ac,
-            bSetAddr ? (u32)OS_IsThreadAvailable_0x0201b3d8() : 0,
+            bSetAddr ? (u32)func_0201b3d8() : 0,
             fileId,
             heap
             );

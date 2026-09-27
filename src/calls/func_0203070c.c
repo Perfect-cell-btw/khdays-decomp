@@ -7,7 +7,7 @@ struct Foo {
 };
 
 extern struct Foo *data_0204c228;
-extern u32 OS_IsTickAvailable_0x01ff8138(void);
+extern u32 func_01ff8138(void);
 
 u32 func_0203070c(void) {
     struct Foo *p = data_0204c228;
@@ -21,7 +21,7 @@ u32 func_0203070c(void) {
         return 0;
     }
     mask = p->mask;
-    cur = OS_IsTickAvailable_0x01ff8138();
+    cur = func_01ff8138();
     out = 0;
     j = 0;
     for (i = 0; i < 4; i++) {

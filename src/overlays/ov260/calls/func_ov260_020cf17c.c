@@ -11,7 +11,7 @@ extern int func_ov107_020c9ee8(int part, int motion, int mode);
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_020050b4(int x, int y);
 extern int func_01ff8d18(Vec3 *v, Vec3 *out);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, Vec3 *v, Vec3 *d);
 extern void func_ov260_020cd04c(int actor, int flag);
 extern void func_0203c634(int *node, int slot, void *cb);
@@ -39,7 +39,7 @@ void func_ov260_020cf17c(int *node)
         VEC_Subtract((Vec3 *)(*(int *)(*state + 0x420) + 0x190), (Vec3 *)state[4], &d);
         state[0x19] = state[0x1a] = func_020050b4(d.x, d.z);
         d.y = 0;
-        t = FX_Inv(func_01ff8d18(&d, &d), *(int *)(*state + 0x80));
+        t = FX_Div(func_01ff8d18(&d, &d), *(int *)(*state + 0x80));
         if (t > 0x1000) {
             t = 0x1000;
         }

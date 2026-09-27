@@ -4,7 +4,7 @@
  * value (0x1000 - t)*6 into 0203ca50(state[1]+4, v, 0x2ffee, v). While state[0xd] < 0x800 return.
  * Once past: clear state[0xe] bits 0xf0, state[0x14] = 0, hand off via 0203c634 (cb=0).
  */
-extern int  FX_Inv(int x, int k);
+extern int  FX_Div(int x, int k);
 extern void func_0203ca50(int p, int a, int b, int c);
 extern void func_0203c634(int self, int idx, int cb);
 
@@ -13,7 +13,7 @@ void func_ov271_020d2a88(int *self) {
     int t;
 
     state[0xd] += *(int *)(*self + 0x2c);
-    t = FX_Inv(state[0xd], 0x800);
+    t = FX_Div(state[0xd], 0x800);
     if (t > 0x1000) {
         t = 0x1000;
     }

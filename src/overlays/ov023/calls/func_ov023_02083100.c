@@ -23,9 +23,9 @@ static volatile u16 *const REG_POWCNT = (volatile u16 *)0x04000304;
 
 extern void GX_SetBankForLCDC(int nBanks);
 extern void MIi_CpuClearFast(u32 nValue, void *pDst, u32 nSize);
-extern void SNDi_UnlockMutex_0x020065d4(void);
+extern void GX_DisableBankForLCDC(void);
 extern void GX_SetBankForTex(int nBank);
-extern void GX_BeginLoadOBJExtPltt(int nOffset);
+extern void GX_SetBankForTexPltt(int nOffset);
 extern void GX_SetBankForOBJ(int nBank);
 extern void GX_SetBankForBG(int nBank);
 extern void GX_SetBankForBGExtPltt(int nBank);
@@ -43,13 +43,13 @@ void func_ov023_02083100(void)
 
     GX_SetBankForLCDC(0x1ff);
     MIi_CpuClearFast(0, (void *)0x06800000, 0xa4000);
-    SNDi_UnlockMutex_0x020065d4();
+    GX_DisableBankForLCDC();
     GX_SetBankForTex(7);
     if ((data_0204c240 & 4) || (data_0204c240 & 2)) {
-        GX_BeginLoadOBJExtPltt(0x20);
+        GX_SetBankForTexPltt(0x20);
         GX_SetBankForOBJ(0x40);
     } else {
-        GX_BeginLoadOBJExtPltt(0x60);
+        GX_SetBankForTexPltt(0x60);
     }
     GX_SetBankForBG(0x10);
     GX_SetBankForBGExtPltt(0);

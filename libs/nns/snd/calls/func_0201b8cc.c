@@ -43,7 +43,7 @@ struct NNSiFndHeapHead {
 };
 typedef NNSiFndHeapHead * NNSFndHeapHandle;
 typedef void (*NNSFndHeapVisitor)(void * memBlock, NNSFndHeapHandle heap, u32 userParam);
-void WM_EndKeySharing_0x02010bc0(NNSFndHeapHandle heap);
+void NNS_FndDestroyFrmHeap(NNSFndHeapHandle heap);
 typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
 typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
 struct NNSSndHeap;
@@ -60,5 +60,5 @@ void func_0201b8cc (NNSSndHeapHandle heap)
 {
 
     func_0201b8e4(heap);
-    WM_EndKeySharing_0x02010bc0(heap->handle);
+    NNS_FndDestroyFrmHeap(heap->handle);
 }

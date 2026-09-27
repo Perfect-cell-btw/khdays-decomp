@@ -100,7 +100,7 @@ extern int func_02030788(void);                                                 
 extern int func_ov022_0209d7a4(struct Actor *pActor);                           /* Ov022_IsAnimPastEntry */
 extern int func_020358f4(int nId, int nRule);                                   /* Slot_EvalPackedParam */
 extern int func_02023c40(void);                                                 /* LoadGlobalU8_0204c058 */
-extern int FX_Inv(int nNum, int nDen);
+extern int FX_Div(int nNum, int nDen);
 extern void func_01ffa724(int nFactor, VecFx32 *pSrc, VecFx32 *pDst);          /* ScaleVec3Fx12 */
 extern void VEC_Add(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
 extern int func_ov022_020a35f4(struct Actor *pActor, int nState);              /* Ov022_ActorSetState */
@@ -151,7 +151,7 @@ int func_ov022_020a8b54(struct Actor *pActor)
                 pActor->nLungeLeft = nLeft - nSpeed;
             }
             if (pActor->nAnchorScale != FX32_ONE) {
-                nSpeed = (int)(((long long)nSpeed * FX_Inv(FX32_ONE, pActor->nAnchorScale) + 0x800) >> 12);
+                nSpeed = (int)(((long long)nSpeed * FX_Div(FX32_ONE, pActor->nAnchorScale) + 0x800) >> 12);
             }
             func_01ffa724(nSpeed, &vecMove, &vecMove);
         }

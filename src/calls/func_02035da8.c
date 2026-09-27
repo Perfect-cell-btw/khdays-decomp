@@ -37,7 +37,7 @@ typedef unsigned long long u64;
 #define DIV_RESULT32  (*(volatile s32 *)0x040002a0)
 #define DIV_RESULT    (*(volatile s64 *)0x040002a0)
 
-extern int FX_Inv(int x, int y);
+extern int FX_Div(int x, int y);
 
 static inline s32 FX_Mul(s32 a, s32 b)
 {
@@ -91,7 +91,7 @@ s32 func_02035da8(s32 start, s32 end, u32 elapsed, u32 duration, u32 curve)
 
     case 3:
         /* +0x1000 at the start, 0 at the midpoint, -0x1000 at the end. */
-        offsetFromMid = 0x1000 - (FX_Inv(elapsed, duration) << 1);
+        offsetFromMid = 0x1000 - (FX_Div(elapsed, duration) << 1);
 
         if (elapsed < (duration >> 1)) {
             offsetSq = FX_Mul(offsetFromMid, offsetFromMid);

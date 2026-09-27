@@ -8,7 +8,7 @@ typedef struct { int x, y, z; } Vec3;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void VEC_Add(void *a, void *b, void *out);
 extern void func_01ffa724(int scale, void *in, void *out);
 extern void func_0203ca30(void *p, void *v);
@@ -25,12 +25,12 @@ void func_ov271_020d2938(int *self) {
 
     nScale = state[5] == 0 ? 0x1800 : 0x1000;
     state[0xd] += *(int *)(self[0] + 0x2c);
-    t = FX_Inv(state[0xd], 0x2000);
+    t = FX_Div(state[0xd], 0x2000);
     VEC_Add((void *)state[0x12], (void *)state[0x13], &aim);
     func_01ffa724(0x800, &aim, &aim);
     func_0203ca30((void *)(state[3] + 4), &aim);
     func_0203ca50((void *)(state[3] + 4), t * 2 + 0x1200, t * 2 + 0x2000, 0x1000);
-    nGrow = FX_Inv(state[0xd], 0x800);
+    nGrow = FX_Div(state[0xd], 0x800);
     if (nGrow > 0x1000) {
         nGrow = 0x1000;
     }

@@ -14,7 +14,7 @@ struct Bits17a { unsigned char b0 : 1, b1 : 1; };
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
 extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
@@ -41,7 +41,7 @@ void func_ov228_020d2848(int *node)
     step = *(int *)(*node + 0x2c);
     while (step > 0) {
         state[9] = (int)(((long long)state[9]
-                              * ((int)(((long long)FX_Inv(step <= 0x88 ? step : 0x88, 0x88) * 0x300LL + 0x800LL) >> 12)
+                              * ((int)(((long long)FX_Div(step <= 0x88 ? step : 0x88, 0x88) * 0x300LL + 0x800LL) >> 12)
                                  + 0x1000)
                           + 0x800LL)
                          >> 12);
@@ -67,7 +67,7 @@ void func_ov228_020d2848(int *node)
         step = *(int *)(*node + 0x2c);
         while (step > 0) {
             state[0xc] = (int)(((long long)state[0xc]
-                                    * (0x1000 - (int)(((long long)FX_Inv(step <= 0x88 ? step : 0x88, 0x88) * 0x100LL + 0x800LL) >> 12))
+                                    * (0x1000 - (int)(((long long)FX_Div(step <= 0x88 ? step : 0x88, 0x88) * 0x100LL + 0x800LL) >> 12))
                                 + 0x800LL)
                                >> 12);
             step -= 0x88;

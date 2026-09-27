@@ -80,7 +80,7 @@ static inline int FX_Mul(int a, int b)
 extern int  func_ov016_02081624(Ov016Kickable *pSelf, int nPeer);        /* Ov016_KickableAckPeer */
 extern void VEC_Subtract(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
 extern int  func_ov002_0207687c(void);                                    /* frame delta */
-extern int  FX_Inv(int nNumerator, int nDenominator);
+extern int  FX_Div(int nNumerator, int nDenominator);
 extern void func_01ffa724(int nScale, const VecFx32 *pVec, VecFx32 *pOut); /* ScaleVec3Fx12 */
 extern int  func_02030788(void);                                          /* Session_GetLocalPlayerIndex */
 extern Ov016KickableKindRow data_ov016_02082748[];                        /* per-kind rows */
@@ -116,7 +116,7 @@ void func_ov016_02081670(Ov016Kickable *pSelf, Ov016KickableMessage *pMessage)
         pSelf->target = pMessage->u.position;
         pSelf->nKickFlags |= 0x304;
         VEC_Subtract(&pSelf->target, &pSelf->rest, &pSelf->kick);
-        func_01ffa724(FX_Inv(0x1000, FX_Mul(func_ov002_0207687c(), 0x3000)), &pSelf->kick, &pSelf->kick);
+        func_01ffa724(FX_Div(0x1000, FX_Mul(func_ov002_0207687c(), 0x3000)), &pSelf->kick, &pSelf->kick);
         pSelf->nWord484 = 0;
         break;
     case 5:

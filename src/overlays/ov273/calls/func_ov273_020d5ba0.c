@@ -37,7 +37,7 @@ struct Ov213State {
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, Vec3 *v, Vec3 *d);
 extern void VEC_Add(void *a, void *b, Vec3 *d);
 extern void VEC_Subtract(void *a, void *b, Vec3 *d);
@@ -92,7 +92,7 @@ void func_ov273_020d5ba0(int *node)
 
     state->nClock += *(int *)(*node + 0x2c);
     hit = 0;
-    t = FX_Inv(state->nClock, 0x2000);
+    t = FX_Div(state->nClock, 0x2000);
     if (t >= 0x1000) {
         t = 0x1000;
     }

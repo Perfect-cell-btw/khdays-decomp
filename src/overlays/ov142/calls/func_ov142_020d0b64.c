@@ -34,7 +34,7 @@ typedef struct {
 extern int func_ov107_020cab14(int owner, int mode);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern int func_01ff8d18(const VecFx32 *v, VecFx32 *unit);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern int func_02023eb4();
 extern int func_020050b4(int x, int z);
 extern void func_ov107_020c9264(int owner, int a, int b);
@@ -70,7 +70,7 @@ void func_ov142_020d0b64(int *node)
     gap = func_01ff8d18(&v, &v);
     gap = gap - *(int *)(state[1] + 0x80) - *(int *)(*state + 0x80);
 
-    t = FX_Inv(gap, 0xf000) * 2 - 0x1000;
+    t = FX_Div(gap, 0xf000) * 2 - 0x1000;
     if (t < -0x1000) {
         t = -0x1000;
     }

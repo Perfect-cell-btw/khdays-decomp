@@ -5,7 +5,7 @@ typedef unsigned char u8;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 b0 : 1; } Bit0;
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern const Vec3 data_02041dc8;
 
@@ -22,10 +22,10 @@ void func_ov146_020ceaf0(int *node)
     *(Vec3 *)(*state + 0xf0) = *(Vec3 *)(state + 3);
     for (remaining = *(int *)(node[0] + 0x2c); remaining > 0; remaining -= 0x88) {
         if (((Bit0 *)(*state + 0x17a))->b0) {
-            func_01ffa724(0x1000 - FX_MUL(FX_Inv(remaining <= 0x88 ? remaining : 0x88, 0x88), 0x148),
+            func_01ffa724(0x1000 - FX_MUL(FX_Div(remaining <= 0x88 ? remaining : 0x88, 0x88), 0x148),
                           (Vec3 *)(state + 3), (Vec3 *)(state + 3));
         } else {
-            func_01ffa724(0x1000 - FX_MUL(FX_Inv(remaining <= 0x88 ? remaining : 0x88, 0x88), 0x52),
+            func_01ffa724(0x1000 - FX_MUL(FX_Div(remaining <= 0x88 ? remaining : 0x88, 0x88), 0x52),
                           (Vec3 *)(state + 3), (Vec3 *)(state + 3));
         }
     }

@@ -11,7 +11,7 @@ extern void func_0202f188(struct Quat *q, const struct Vecx32 *axis, int angle);
 extern void func_0202ed60(struct Quat *q, const struct Vecx32 *from, const struct Vecx32 *to);
 extern void func_0202ef54(struct Quat *dst, const struct Quat *a, const struct Quat *b);
 extern void func_0203c9d0(int transform, const struct Quat *q);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void func_01ffa724(int scale, void *v, void *d);
 extern const struct Vecx32 data_02042264;
 
@@ -39,9 +39,9 @@ void func_ov220_020d27b8(int *node)
         return;
     }
     do {
-        t = FX_Inv(dt <= 0x88 ? dt : 0x88, 0x88);
+        t = FX_Div(dt <= 0x88 ? dt : 0x88, 0x88);
         func_01ffa724(0x1000 - FX_Mul(t, 0x1b0), state + 9, state + 9);
-        t = FX_Inv(dt <= 0x88 ? dt : 0x88, 0x88);
+        t = FX_Div(dt <= 0x88 ? dt : 0x88, 0x88);
         state[8] = FX_Mul(state[8], 0x1000 - FX_Mul(t, 0x200));
         dt -= 0x88;
     } while (dt > 0);

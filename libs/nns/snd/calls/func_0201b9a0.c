@@ -46,7 +46,7 @@ struct NNSiFndHeapHead {
 };
 typedef NNSiFndHeapHead * NNSFndHeapHandle;
 typedef void (*NNSFndHeapVisitor)(void * memBlock, NNSFndHeapHandle heap, u32 userParam);
-void * NNS_FndAllocFromExpHeapEx_0x02010bcc(NNSFndHeapHandle heap, u32 size, int alignment);
+void * NNS_FndAllocFromFrmHeapEx(NNSFndHeapHandle heap, u32 size, int alignment);
 typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
 typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
 struct NNSSndHeap;
@@ -77,7 +77,7 @@ void * func_0201b9a0 (NNSSndHeapHandle heap, u32 size, NNSSndHeapDisposeCallback
     NNSSndHeapBlock * block;
 
 
-    block = (NNSSndHeapBlock *)NNS_FndAllocFromExpHeapEx_0x02010bcc(
+    block = (NNSSndHeapBlock *)NNS_FndAllocFromFrmHeapEx(
         heap->handle, sizeof(NNSSndHeapBlock) + ROUNDUP(size, HEAP_ALIGN), HEAP_ALIGN);
     if (block == NULL) return NULL;
 

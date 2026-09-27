@@ -32,7 +32,7 @@ extern void  func_0201e374(int nBrightness);                              /* Set
 extern void  func_0201e3cc(int nBrightness);                              /* SetMasterBrightnessSub */
 extern void  func_0201e1d0(void);                                         /* GX_Init */
 extern void  GX_SetBankForTex(int nBank);
-extern void  GX_BeginLoadOBJExtPltt(int nBank);
+extern void  GX_SetBankForTexPltt(int nBank);
 extern void  GX_SetBankForBG(int nBank);
 extern void  GX_SetBankForOBJ(int nBank);
 extern void  GX_SetBankForOBJExtPltt(int nBank);
@@ -50,7 +50,7 @@ void func_ov008_02081f30(void)
     func_0201e3cc(-16);
     func_0201e1d0();
     GX_SetBankForTex(1);
-    GX_BeginLoadOBJExtPltt(0x40);
+    GX_SetBankForTexPltt(0x40);
     GX_SetBankForBG(0x10);
     GX_SetBankForOBJ(2);
     GX_SetBankForOBJExtPltt(0x20);

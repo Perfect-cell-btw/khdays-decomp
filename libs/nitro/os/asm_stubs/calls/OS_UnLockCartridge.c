@@ -8,10 +8,10 @@
  * of which load lr from a literal pool and so are hand-written by construction.
  */
 
-extern void OS_TryLockCartridge(int processor);
+extern void OS_UnlockCartridge_0x02001704(int processor);
 
 asm void OS_UnLockCartridge(int processor)
 {
-    ldr r1, =OS_TryLockCartridge
+    ldr r1, =OS_UnlockCartridge_0x02001704
     bx  r1
 }

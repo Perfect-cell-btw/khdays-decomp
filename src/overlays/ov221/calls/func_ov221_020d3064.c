@@ -13,7 +13,7 @@ static inline int FX_Mul(int a, int b) {
     return (int)(((long long)a * b + 0x800) >> 12);
 }
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void func_ov107_020c5af8(int owner, int id, int mode, void *at);
 extern void func_ov107_020c9264(int owner, int anim, int mode);
@@ -32,7 +32,7 @@ void func_ov221_020d3064(int *node)
 
     for (rem = *(int *)(node[0] + 0x2c); rem > 0; rem -= 0x88) {
         step = rem <= 0x88 ? rem : 0x88;
-        func_01ffa724(0x1000 - FX_Mul(FX_Inv(step, 0x88), 0x500), (Vec3 *)(state + 8), (Vec3 *)(state + 8));
+        func_01ffa724(0x1000 - FX_Mul(FX_Div(step, 0x88), 0x500), (Vec3 *)(state + 8), (Vec3 *)(state + 8));
     }
     *(Vec3 *)(state + 5) = *(Vec3 *)(state + 8);
     state[0x17] += *(int *)(node[0] + 0x2c);

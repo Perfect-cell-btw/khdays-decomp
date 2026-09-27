@@ -18,8 +18,8 @@ extern void VEC_Subtract(void *a, void *b, void *d);
 extern int func_01ff8d18(void *a, void *d);
 extern void func_01ffa724(int scale, void *v, void *d);
 extern char *func_ov107_020c9848(void);
-extern int FX_Inv_0x01ff8a40(int v);
-extern int FX_Inv(int a, int b);
+extern int FX_Inv(int v);
+extern int FX_Div(int a, int b);
 extern int func_02023eb4(int bound);
 extern void func_ov107_020c5af8(int actor, int a, int id, void *at);
 extern void func_0203c634(int *node, int slot, void *cb);
@@ -52,12 +52,12 @@ void func_ov170_020d0634(int *node)
         i = 0;
         step = 0;
         for (; i < state[0xd] / 2; i++) {
-            step += FX_Mul(FX_Inv_0x01ff8a40(*(int *)(func_ov107_020c9848() + 0x40)), -0x100);
+            step += FX_Mul(FX_Inv(*(int *)(func_ov107_020c9848() + 0x40)), -0x100);
             state[0xf] -= step;
         }
         state[0xd] <<= 12;
         if (state[0xd] != 0 && state[0xd] < 0xf000) {
-            func_01ffa724(FX_Inv(state[0xd], 0xf000), (void *)(state + 3), (void *)(state + 3));
+            func_01ffa724(FX_Div(state[0xd], 0xf000), (void *)(state + 3), (void *)(state + 3));
             state[0x10] = state[4];
             state[0xd] = 0xf000;
         }

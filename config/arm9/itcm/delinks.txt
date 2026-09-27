@@ -5,7 +5,7 @@ libs/nitro/os/calls/OSi_VBlankInterruptHandler.c:
     complete
     .text       start:0x01ff8000 end:0x01ff80a8
 
-src/calls/OS_IsThreadAvailable.c:
+src/calls/func_01ff80a8.c:
     complete
     .text       start:0x01ff80a8 end:0x01ff80b8
 
@@ -17,11 +17,11 @@ libs/nitro/fs/calls/FSi_WaitForCardThread.c:
     complete
     .text       start:0x01ff8110 end:0x01ff8128
 
-libs/nitro/os/calls/OS_IsTickAvailable.c:
+libs/nitro/os/calls/func_01ff8128.c:
     complete
     .text       start:0x01ff8128 end:0x01ff8138
 
-libs/nitro/os/calls/OS_IsTickAvailable_0x01ff8138.c:
+libs/nitro/os/calls/func_01ff8138.c:
     complete
     .text       start:0x01ff8138 end:0x01ff8148
 
@@ -121,7 +121,7 @@ libs/nitro/mi/asm_stubs/auto/MI_Zero36B.c:
     complete
     .text       start:0x01ff89f4 end:0x01ff8a02
 
-libs/nitro/fx/calls/FX_Inv.c:
+libs/nitro/fx/calls/FX_Div.c:
     complete
     .text       start:0x01ff8a04 end:0x01ff8a14
 
@@ -129,7 +129,7 @@ libs/nitro/fx/calls/func_01ff8a14.c:
     complete
     .text       start:0x01ff8a14 end:0x01ff8a40
 
-libs/nitro/fx/calls/FX_Inv_0x01ff8a40.c:
+libs/nitro/fx/calls/FX_Inv.c:
     complete
     .text       start:0x01ff8a40 end:0x01ff8a50
 

@@ -16,7 +16,7 @@ struct Nibbles { u8 lo : 4; u8 hi : 4; };
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern int func_ov107_020c8eb8(int owner, Sphere *sphere, int *hits);
 extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
 extern int func_01ff8d18(const Vec3 *v, Vec3 *out);
@@ -75,7 +75,7 @@ void func_ov257_020d02c8(int *node)
         int hp;
 
         state[0x12] += *(int *)(node[0] + 0x2c);
-        n = FX_Inv(state[0x12], 0x480);
+        n = FX_Div(state[0x12], 0x480);
         if (n > 0x1000) {
             n = 0x1000;
         }
@@ -103,7 +103,7 @@ void func_ov257_020d02c8(int *node)
             }
             func_ov107_020c5af8(*state, (short)*(int *)(*state + 0x408), 0x21, pos);
         }
-        i = FX_Inv(state[0x11], 0x4800);
+        i = FX_Div(state[0x11], 0x4800);
         if (i > 0x1000) {
             i = 0x1000;
         }

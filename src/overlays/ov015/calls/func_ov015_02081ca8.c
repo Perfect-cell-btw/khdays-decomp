@@ -95,7 +95,7 @@ extern int   func_02030788(void);                                          /* lo
 extern int   func_ov002_020766e0(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */
 extern void  func_0202aa9c(void *pNode);                                   /* Scene_DrawNode */
 extern void  func_0202bc30(void *pNode);                                   /* ReleaseNodeResources */
-extern int   FX_Inv(int nNumerator, int nDenominator);
+extern int   FX_Div(int nNumerator, int nDenominator);
 extern void  func_02033d0c(int nSlot, int nArg, VecFx32 *pPos, int nD);    /* Slot_Spawn */
 extern void  func_ov015_020813c4(Ov015Chest *pChest, int nExtent);         /* Ov015_ChestNotifyNeighbours */
 extern void  func_ov015_02081554(Ov015Chest *pChest, int nRange);          /* Ov015_ChestPushNearbyPlayers */
@@ -154,7 +154,7 @@ Ov015StateFn *func_ov015_02081ca8(Ov015Chest *pChest)
         pChest->nFlags &= ~8;
         func_0202bc30(&pChest->render);
         pChest->nRise = 0;
-        pChest->nRiseSpeed = FX_Inv(0x1000, 0x1e000);
+        pChest->nRiseSpeed = FX_Div(0x1000, 0x1e000);
         func_02033d0c(pDef->nClass == 0x1b ? 0x2e : 0x2f, 0, &pChest->render.node.position, 0);
     } else if (nBits & 0x40) {
         func_ov002_0207c700(pChest, &pChest->render.node, nDelta, 0, 0x34000, &pChest->nTimer);

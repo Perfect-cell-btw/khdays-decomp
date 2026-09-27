@@ -293,7 +293,7 @@ typedef struct FSFile {
         FSCloseFileInfo closefile;
     } arg;
 } FSFile;
-s32 OS_UnlockByWord_0x0200ae4c(FSFile * p_file, void * dst, s32 len);
+s32 FS_ReadFile(FSFile * p_file, void * dst, s32 len);
 BOOL FS_SeekFile(FSFile * p_file, s32 offset, FSSeekFileMode origin);
 typedef struct {
     void * prevObject;
@@ -391,7 +391,7 @@ BOOL func_0201b1e8 (NNSSndArc * arc, NNSSndHeapHandle heap, BOOL symbolLoadFlag)
     result = FS_SeekFile(&arc->file, 0, FS_SEEK_SET);
     if (!result) return FALSE;
 
-    readSize = OS_UnlockByWord_0x0200ae4c(
+    readSize = FS_ReadFile(
         &arc->file,
         &arc->header,
         sizeof(arc->header)
@@ -404,14 +404,14 @@ BOOL func_0201b1e8 (NNSSndArc * arc, NNSSndHeapHandle heap, BOOL symbolLoadFlag)
         if (arc->info == NULL) return FALSE;
         result = FS_SeekFile(&arc->file, (s32)(arc->header.infoOffset), FS_SEEK_SET);
         if (!result) return FALSE;
-        readSize = OS_UnlockByWord_0x0200ae4c(&arc->file, arc->info, (s32)(arc->header.infoSize));
+        readSize = FS_ReadFile(&arc->file, arc->info, (s32)(arc->header.infoSize));
         if (readSize != arc->header.infoSize) return FALSE;
 
         arc->fat = (NNSSndArcFat *)func_0201b9a0(heap, arc->header.fatSize, func_0201b844, (u32)arc, 0);
         if (arc->fat == NULL) return FALSE;
         result = FS_SeekFile(&arc->file, (s32)(arc->header.fatOffset), FS_SEEK_SET);
         if (!result) return FALSE;
-        readSize = OS_UnlockByWord_0x0200ae4c(&arc->file, arc->fat, (s32)(arc->header.fatSize));
+        readSize = FS_ReadFile(&arc->file, arc->fat, (s32)(arc->header.fatSize));
         if (readSize != arc->header.fatSize) return FALSE;
 
         if (symbolLoadFlag && arc->header.symbolDataSize > 0) {
@@ -420,7 +420,7 @@ BOOL func_0201b1e8 (NNSSndArc * arc, NNSSndHeapHandle heap, BOOL symbolLoadFlag)
             result = FS_SeekFile(&arc->file, (s32)(arc->header.symbolDataOffset), FS_SEEK_SET);
             if (!result) return FALSE;
 
-            readSize = OS_UnlockByWord_0x0200ae4c(&arc->file, arc->symbol, (s32)(arc->header.symbolDataSize));
+            readSize = FS_ReadFile(&arc->file, arc->symbol, (s32)(arc->header.symbolDataSize));
             if (readSize != arc->header.symbolDataSize) return FALSE;
         }
     }

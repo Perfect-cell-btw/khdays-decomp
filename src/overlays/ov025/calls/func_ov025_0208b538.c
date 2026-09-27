@@ -27,7 +27,7 @@ static volatile u16 *const REG_POWCNT1 = (volatile u16 *)0x04000304;
 
 extern void  func_0201e1d0(void);                                   /* GX_Init */
 extern void  GX_SetBankForTex(int nBank);
-extern void  GX_BeginLoadOBJExtPltt(int nOffset);
+extern void  GX_SetBankForTexPltt(int nOffset);
 extern void  G3X_SetClearColor(int nColour, int nAlpha, int nDepth, int nPolyId, int bFog);
 extern void  func_02010f08(void);
 extern void  func_02010e80(int nA, int nB);
@@ -52,7 +52,7 @@ void func_ov025_0208b538(void)
 
     func_0201e1d0();
     GX_SetBankForTex(2);
-    GX_BeginLoadOBJExtPltt(0x60);
+    GX_SetBankForTexPltt(0x60);
     mask = 0xffffcffd;
     *REG_DISP3DCNT = *REG_DISP3DCNT & mask;
     *REG_DISP3DCNT = *REG_DISP3DCNT & 0xcffb;

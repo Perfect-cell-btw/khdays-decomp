@@ -24,7 +24,7 @@ typedef struct {
 
 extern Ov002SceneContext *data_ov002_0207f618;
 
-extern int FX_Inv(int nNumerator, int nDenominator);
+extern int FX_Div(int nNumerator, int nDenominator);
 
 void func_ov002_02059590(int nPos, int nTotal, int nWindow) {
     Ov002SceneContext *ctx = data_ov002_0207f618;
@@ -44,17 +44,17 @@ void func_ov002_02059590(int nPos, int nTotal, int nWindow) {
     if (ctx->nMode17c != 0) {
         if (nPos >= nWindow) {
             nRest = nMax - nPos;
-            nFx = FX_Inv(nRest * (0x4d - ctx->wRowHeight), nMax - nWindow);
+            nFx = FX_Div(nRest * (0x4d - ctx->wRowHeight), nMax - nWindow);
             nFx = nFx + ctx->wRowHeight * 0x1000;
         } else {
-            nFx = FX_Inv(nPos * (0x4d - ctx->wScrollTop), nWindow);
+            nFx = FX_Div(nPos * (0x4d - ctx->wScrollTop), nWindow);
             nFx = nFx + ctx->wScrollTop * 0x1000;
         }
     } else {
         if (nPos == nMax) {
             nPos = nPos - 1;
         }
-        nFx = FX_Inv(nPos * (0x4d - ctx->wScrollTop), nMax);
+        nFx = FX_Div(nPos * (0x4d - ctx->wScrollTop), nMax);
         nFx = nFx + ctx->wScrollTop * 0x1000;
     }
 

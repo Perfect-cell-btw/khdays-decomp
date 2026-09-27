@@ -43,7 +43,7 @@ extern void func_0200ca50(int layer);
 extern void func_0200ca68(int layer);
 extern int func_02020a9c(void);
 extern u64 func_020031d4(void);
-extern unsigned int OS_IsThreadAvailable(void);
+extern unsigned int func_01ff80a8(void);
 extern int func_02034014(int slot);
 extern int func_02034048(int slot);
 extern void func_02033fec(int slot, int a);
@@ -75,7 +75,7 @@ void func_020229c4(void)
     }
     if ((data_0204c240 & 4) == 0 || (func_02020a9c() & 2) == 0) {
         heap->save = func_020031d4();
-        heap->seed = OS_IsThreadAvailable();
+        heap->seed = func_01ff80a8();
         if (func_02034014(0) != 0) {
             heap->track = func_02034048(0);
             func_02033fec(0, 0);

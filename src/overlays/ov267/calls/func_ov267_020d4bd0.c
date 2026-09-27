@@ -11,7 +11,7 @@ extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern int func_02020400(int a, int b);
 extern void MTX_RotY33_(MtxFx33 *m, int s, int c);
 extern void MTX_MultVec33(const Vec3 *v, const MtxFx33 *m, Vec3 *out);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern const Vec3 data_02041dc8;
 extern const short data_0203d210[];
 
@@ -47,7 +47,7 @@ void func_ov267_020d4bd0(int *node)
         v.x = 0;
         v.y = 0;
         MTX_MultVec33(&v, &m, &v);
-        func_01ffa724(FX_Inv(*(int *)(node[0] + 0x2c), 0x88), &v, &v);
+        func_01ffa724(FX_Div(*(int *)(node[0] + 0x2c), 0x88), &v, &v);
         if (state[9] < state[10]) {
             state[9] += v.z;
             if (state[9] > state[10]) {

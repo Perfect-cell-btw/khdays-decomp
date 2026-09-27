@@ -9,7 +9,7 @@ extern int func_020208e0(void);
 extern int func_02030788(void);
 extern void func_02016d10(int nModel, int nValue);
 extern int FX_Sqrt(int v);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern int func_01ff8e94(const VecFx32 *a, const VecFx32 *b);
 extern void func_01ff8d18(const VecFx32 *v, VecFx32 *out);   /* normalise */
 extern int VEC_Mag(const VecFx32 *v);
@@ -375,7 +375,7 @@ int func_ov002_0204ff18(void *pScene)
         if ((pCam->nFlags & 0x20008000) == 0) {
             nTimer = pCam->nScriptTimer;
             if (nTimer > 0x333) {
-                nRate = FX_Mul(FX_Inv(nTimer - 0x333, 0x1000 - 0x333), 0x600)
+                nRate = FX_Mul(FX_Div(nTimer - 0x333, 0x1000 - 0x333), 0x600)
                         + 0x200;
                 if (nRate > 0x800) {
                     nRate = 0x800;
@@ -441,8 +441,8 @@ int func_ov002_0204ff18(void *pScene)
         nSum = FX_Mul(vShakeDir.x, vShakeDir.x)
                + FX_Mul(vShakeDir.z, vShakeDir.z);
         if (nSum != 0) {
-            nStep = FX_Sqrt(FX_Inv(FX_Mul(vShakeDir.z, vShakeDir.z), nSum));
-            nApply = FX_Sqrt(FX_Inv(FX_Mul(vShakeDir.x, vShakeDir.x), nSum));
+            nStep = FX_Sqrt(FX_Div(FX_Mul(vShakeDir.z, vShakeDir.z), nSum));
+            nApply = FX_Sqrt(FX_Div(FX_Mul(vShakeDir.x, vShakeDir.x), nSum));
             vShakeAxis.y = 0;
             vShakeAxis.x = nStep;
             vShakeAxis.z = -nApply;

@@ -16,7 +16,7 @@ extern ListNode *func_01fffd70(void *list);
 extern ListNode *func_01fffd8c(void *list);
 extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
 extern int func_01ff8d18(const Vec3 *v, Vec3 *out);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern void func_ov107_020c9264(int owner, int anim, int mode);
@@ -57,7 +57,7 @@ void func_ov235_020d0970(int *node)
                 owner = *state;
                 gap = func_01ff8d18(&d, &d) - (*(int *)(obj + 0x80) + *(int *)(owner + 0x80));
                 if (gap <= 0x6000) {
-                    t = FX_Inv(gap, 0x6000);
+                    t = FX_Div(gap, 0x6000);
                     if (t < 0) {
                         t = 0;
                     }

@@ -15,7 +15,7 @@ extern void func_01ffa724(int scale, Vec3 *v, Vec3 *out);
 extern int func_02020400(int a, int b);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern int func_ov107_020c8eb8(int actor, Sphere *sphere, int *out);
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_01ff8d18(const Vec3 *v, Vec3 *out);
@@ -63,7 +63,7 @@ void func_ov249_020d4490(int *node)
             local.y = 0;
             local.z = 0x800;
             MTX_MultVec33(&local, &mtx, &local);
-            func_01ffa724(FX_Inv(*(int *)(node[0] + 0x2c), 0x88), &local, &local);
+            func_01ffa724(FX_Div(*(int *)(node[0] + 0x2c), 0x88), &local, &local);
             if (state[0xa] < state[0xb]) {
                 state[0xa] += local.z;
                 if (state[0xa] > state[0xb]) {

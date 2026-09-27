@@ -24,9 +24,9 @@ typedef unsigned short u16;
 typedef unsigned int   u32;
 
 extern void  func_0201e1d0(void);
-extern void  GX_DisableBankForOBJExtPltt_0x02006588(void);
+extern void  GX_DisableBankForOBJExtPltt(void);
 extern void  GX_SetBankForTex(int bank);
-extern void  GX_BeginLoadOBJExtPltt(int a);
+extern void  GX_SetBankForTexPltt(int a);
 extern void  G3X_SetClearColor(int r, int g, int b, int a, int e);
 extern void  func_02010f08(void);
 extern void  func_02010e80(int a, int b);
@@ -72,9 +72,9 @@ void func_ov025_0208cde0(void)
     void *scr;
 
     func_0201e1d0();
-    GX_DisableBankForOBJExtPltt_0x02006588();
+    GX_DisableBankForOBJExtPltt();
     GX_SetBankForTex(3);
-    GX_BeginLoadOBJExtPltt(0x10);
+    GX_SetBankForTexPltt(0x10);
 
     mask = 0xffffcffd;
     *REG_DISP3DCNT = *REG_DISP3DCNT & mask;

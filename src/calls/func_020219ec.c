@@ -31,7 +31,7 @@ extern ScriptValue *func_020218a4(ScriptContext *ctx, u16 *operand);
 extern fx32 func_020219c4(ScriptValue *v);      /* value as fixed point */
 extern int func_020219dc(ScriptValue *v);       /* value as integer */
 extern fx32 func_02005418(fx32 a, fx32 b);      /* FX_Mul */
-extern fx32 FX_Inv(fx32 a, fx32 b);             /* FX_Div */
+extern fx32 FX_Div(fx32 a, fx32 b);             /* FX_Div */
 extern int func_02020400(int a, int b);         /* integer divide */
 
 #define BINARY_CMP(OP)                                                          \
@@ -141,7 +141,7 @@ ScriptValue *func_020219ec(ScriptContext *ctx, u16 *code)
             if (a->type == SCRIPT_FIXED || b->type == SCRIPT_FIXED) {
                 fx32 x = func_020219c4(a);
 
-                a->value = FX_Inv(x, func_020219c4(b));
+                a->value = FX_Div(x, func_020219c4(b));
                 a->type = SCRIPT_FIXED;
             } else {
                 int x = func_020219dc(a);

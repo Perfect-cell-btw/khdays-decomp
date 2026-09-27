@@ -13,7 +13,7 @@ typedef struct { int w[4]; } Quat;
 extern void func_0202f384(Vec3 *out, void *pose, const Vec3 *k);
 extern int func_01ff8d18(Vec3 *v, Vec3 *d);
 extern void func_01ffa724(int scale, Vec3 *v, Vec3 *d);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern int func_ov107_020c8eb8(int owner, void *query, int *out);
 extern void VEC_Subtract(void *a, void *b, Vec3 *d);
 extern int func_ov107_020ca918(int hit, int a, int b, int kind, Vec3 *push, int z);
@@ -56,7 +56,7 @@ void func_ov260_020d1fa0(int *node)
     func_01ff8d18(&fwd, &fwd);
     func_01ffa724(state[0xe], &fwd, (Vec3 *)(state + 10));
     for (rem = *(int *)(node[0] + 0x2c); rem > 0; rem -= 0x88) {
-        state[0xe] = FX_MUL(state[0xe], 0x1000 - FX_MUL(FX_Inv(rem <= 0x88 ? rem : 0x88, 0x88), 0xe0));
+        state[0xe] = FX_MUL(state[0xe], 0x1000 - FX_MUL(FX_Div(rem <= 0x88 ? rem : 0x88, 0x88), 0xe0));
     }
     speed = state[0xe];
     if (speed > 0xa00) {

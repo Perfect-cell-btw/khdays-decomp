@@ -18,7 +18,7 @@ struct BoxQuery {
     int bFlag;
 };
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern int func_ov107_020c8fd0(int actor, struct BoxQuery *query, int *out);
 extern int func_ov107_020ca918(int hit, int owner, int item, int kind, Vec3 *push, int z);
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
@@ -42,7 +42,7 @@ void func_ov259_020d13cc(int *node)
         int count;
 
         seen = 0;
-        extent = FX_Inv(state[0x1a], 0x800);
+        extent = FX_Div(state[0x1a], 0x800);
         if (extent > 0x2b00) {
             extent = 0x2b00;
         }

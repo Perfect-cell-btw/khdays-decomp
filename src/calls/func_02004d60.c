@@ -26,7 +26,7 @@ typedef s64 fx64c;
  * existing caller externs it with (numerator, denominator). Its own one-argument
  * definition in libs/nitro/fx/calls/FX_Inv.c is the known, pre-existing
  * FX_Inv/FX_Div arity disagreement, not something introduced here. */
-extern fx32 FX_Inv(fx32 numerator, fx32 denominator);
+extern fx32 FX_Div(fx32 numerator, fx32 denominator);
 extern fx64c func_01ff8ab0(void);
 extern fx64c func_020201b8(fx64c numerator, fx64c denom);
 extern fx32 FX_GetDivResult(void);
@@ -63,7 +63,7 @@ void func_02004d60(fx32 fovySin, fx32 fovyCos, fx32 aspect, fx32 near, fx32 far,
     fx64c recipDepth;
     fx32 fovCot;
 
-    fovCot = FX_Inv(fovyCos, fovySin);
+    fovCot = FX_Div(fovyCos, fovySin);
     CP_SetDivImm64_64_NS_((u64)0x1000 << 32, (u64)(u32)(near - far));
     if (scaleW != 0x1000)
         fovCot = (fovCot * scaleW) / 0x1000;

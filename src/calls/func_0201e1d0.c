@@ -48,17 +48,17 @@ typedef struct { fx32 _00, _01, _10, _11; } MtxFx22;
 extern void func_0200566c(void);                        /* GX_DispOn */
 /* The GX_DisableBankFor* calls return the banks they released (u32), as in the SDK; declaring them
  * void changes how the rest of the function is scheduled. */
-extern u32 SNDi_UnlockMutex_0x020065ac(void);          /* GX_DisableBankForTex */
-extern u32 SNDi_UnlockMutex_0x020065c0(void);          /* GX_DisableBankForTexPltt */
-extern u32 SNDi_UnlockMutex_0x0200653c(void);          /* GX_DisableBankForBG */
-extern u32 GX_DisableBankForBGExtPltt_0x02006564(void);
-extern u32 SNDi_UnlockMutex_0x02006550(void);          /* GX_DisableBankForOBJ */
-extern u32 GX_DisableBankForOBJExtPltt_0x02006588(void);
-extern u32 SNDi_UnlockMutex_0x020065e8(void);          /* GX_DisableBankForSubBG */
-extern u32 SNDi_UnlockMutex_0x020065fc(void);          /* GX_DisableBankForSubOBJ */
-extern u32 GX_DisableBankForSubBGExtPltt_0x02006610(void);
-extern u32 GX_DisableBankForSubOBJExtPltt_0x02006638(void);
-extern u32 SNDi_UnlockMutex_0x020065d4(void);          /* GX_DisableBankForLCDC */
+extern u32 GX_DisableBankForTex(void);          /* GX_DisableBankForTex */
+extern u32 GX_DisableBankForTexPltt(void);          /* GX_DisableBankForTexPltt */
+extern u32 GX_DisableBankForBG(void);          /* GX_DisableBankForBG */
+extern u32 GX_DisableBankForBGExtPltt(void);
+extern u32 GX_DisableBankForOBJ(void);          /* GX_DisableBankForOBJ */
+extern u32 GX_DisableBankForOBJExtPltt(void);
+extern u32 GX_DisableBankForSubBG(void);          /* GX_DisableBankForSubBG */
+extern u32 GX_DisableBankForSubOBJ(void);          /* GX_DisableBankForSubOBJ */
+extern u32 GX_DisableBankForSubBGExtPltt(void);
+extern u32 GX_DisableBankForSubOBJExtPltt(void);
+extern u32 GX_DisableBankForLCDC(void);          /* GX_DisableBankForLCDC */
 extern void GX_SetBankForLCDC(int banks);
 extern void MIi_CpuClearFast(u32 data, void *dest, u32 size);
 extern void MTX_Identity22_(MtxFx22 *pDst);
@@ -102,20 +102,20 @@ void func_0201e1d0(void)
     GX_SetVisiblePlane(0);
     GXS_SetVisiblePlane(0);
 
-    SNDi_UnlockMutex_0x020065ac();
-    SNDi_UnlockMutex_0x020065c0();
-    SNDi_UnlockMutex_0x0200653c();
-    GX_DisableBankForBGExtPltt_0x02006564();
-    SNDi_UnlockMutex_0x02006550();
-    GX_DisableBankForOBJExtPltt_0x02006588();
-    SNDi_UnlockMutex_0x020065e8();
-    SNDi_UnlockMutex_0x020065fc();
-    GX_DisableBankForSubBGExtPltt_0x02006610();
-    GX_DisableBankForSubOBJExtPltt_0x02006638();
+    GX_DisableBankForTex();
+    GX_DisableBankForTexPltt();
+    GX_DisableBankForBG();
+    GX_DisableBankForBGExtPltt();
+    GX_DisableBankForOBJ();
+    GX_DisableBankForOBJExtPltt();
+    GX_DisableBankForSubBG();
+    GX_DisableBankForSubOBJ();
+    GX_DisableBankForSubBGExtPltt();
+    GX_DisableBankForSubOBJExtPltt();
 
     GX_SetBankForLCDC(0x1ff);
     MIi_CpuClearFast(0, HW_LCDC_VRAM, HW_LCDC_VRAM_SIZE);
-    SNDi_UnlockMutex_0x020065d4();
+    GX_DisableBankForLCDC();
 
     MIi_CpuClearFast(0, HW_BG_PLTT, 0x400);
     MIi_CpuClearFast(0, HW_DB_BG_PLTT, 0x400);

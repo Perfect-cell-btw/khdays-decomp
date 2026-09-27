@@ -73,7 +73,7 @@ extern void func_ov002_0204d0e0(void);
 extern void func_ov002_0204d12c(void);
 extern short func_02020a9c(void);
 extern ushort *func_ov002_02057560(ushort *);
-extern int FX_Inv(int,int);
+extern int FX_Div(int,int);
 extern void func_01ff8d18(uint *, int *);
 extern void VEC_Subtract(int *,int *,int *);
 extern uint VEC_DotProduct(int *,int *);
@@ -273,7 +273,7 @@ request_input:
               iVar11 = 0xa00;
             }
             uVar24 = func_ov002_02050a08();
-            iVar12 = FX_Inv(uVar18,0x4000);
+            iVar12 = FX_Div(uVar18,0x4000);
             iVar12 = FX_Mul(iVar12, uVar24);
             if (iVar12 > iVar11) {
               iVar11 = func_02023c40();
@@ -286,7 +286,7 @@ request_input:
             }
             else {
               uVar24 = func_ov002_02050a08();
-              iVar11 = FX_Inv(uVar18,0x4000);
+              iVar11 = FX_Div(uVar18,0x4000);
               uVar14 = func_ov002_02050a08();
               iVar11 = FX_Mul(iVar11, uVar24);
               if (iVar11 < (int)uVar14) {
@@ -294,7 +294,7 @@ request_input:
               }
               else {
                 uVar24 = func_ov002_02050a08();
-                iVar11 = FX_Inv(uVar18,0x4000);
+                iVar11 = FX_Div(uVar18,0x4000);
                 iVar11 = FX_Mul(iVar11, uVar24);
                 uVar14 = iVar11;
               }
@@ -315,7 +315,7 @@ request_input:
               iVar11 = 0xa00;
             }
             uVar24 = func_ov002_02050a08();
-            iVar12 = FX_Inv(uVar18,0x4000);
+            iVar12 = FX_Div(uVar18,0x4000);
             iVar12 = FX_Mul(iVar12, uVar24);
             if (iVar12 > iVar11) {
               iVar11 = func_02023c40();
@@ -328,7 +328,7 @@ request_input:
             }
             else {
               uVar24 = func_ov002_02050a08();
-              iVar11 = FX_Inv(uVar18,0x4000);
+              iVar11 = FX_Div(uVar18,0x4000);
               uVar14 = func_ov002_02050a08();
               iVar11 = FX_Mul(iVar11, uVar24);
               if (iVar11 < (int)uVar14) {
@@ -336,7 +336,7 @@ request_input:
               }
               else {
                 uVar24 = func_ov002_02050a08();
-                iVar11 = FX_Inv(uVar18,0x4000);
+                iVar11 = FX_Div(uVar18,0x4000);
                 iVar11 = FX_Mul(iVar11, uVar24);
                 uVar14 = iVar11;
               }
@@ -361,7 +361,7 @@ request_input:
               iVar11 = 0xa00;
             }
             uVar18 = func_ov002_02050a08();
-            iVar12 = FX_Inv(uVar16,0x4000);
+            iVar12 = FX_Div(uVar16,0x4000);
             iVar12 = FX_Mul(iVar12, uVar18);
             if (iVar12 > iVar11) {
               iVar11 = func_02023c40();
@@ -374,7 +374,7 @@ request_input:
             }
             else {
               uVar18 = func_ov002_02050a08();
-              iVar11 = FX_Inv(uVar16,0x4000);
+              iVar11 = FX_Div(uVar16,0x4000);
               uVar14 = func_ov002_02050a08();
               iVar11 = FX_Mul(iVar11, uVar18);
               if (iVar11 < (int)uVar14) {
@@ -382,7 +382,7 @@ request_input:
               }
               else {
                 uVar18 = func_ov002_02050a08();
-                iVar11 = FX_Inv(uVar16,0x4000);
+                iVar11 = FX_Div(uVar16,0x4000);
                 iVar11 = FX_Mul(iVar11, uVar18);
                 uVar15 = iVar11;
               }
@@ -400,7 +400,7 @@ request_input:
               iVar11 = 0xa00;
             }
             uVar18 = func_ov002_02050a08();
-            iVar12 = FX_Inv(uVar16,0x4000);
+            iVar12 = FX_Div(uVar16,0x4000);
             iVar12 = FX_Mul(iVar12, uVar18);
             if (iVar12 > iVar11) {
               iVar11 = func_02023c40();
@@ -413,7 +413,7 @@ request_input:
             }
             else {
               uVar18 = func_ov002_02050a08();
-              iVar11 = FX_Inv(uVar16,0x4000);
+              iVar11 = FX_Div(uVar16,0x4000);
               uVar14 = func_ov002_02050a08();
               iVar11 = FX_Mul(iVar11, uVar18);
               if (iVar11 < (int)uVar14) {
@@ -421,7 +421,7 @@ request_input:
               }
               else {
                 uVar18 = func_ov002_02050a08();
-                iVar11 = FX_Inv(uVar16,0x4000);
+                iVar11 = FX_Div(uVar16,0x4000);
                 iVar11 = FX_Mul(iVar11, uVar18);
                 uVar15 = iVar11;
               }
@@ -630,8 +630,8 @@ LAB_arm9_ov002__0204d9ac:
       iVar17 = func_ov002_02050b90(0);
       {
       int fxRatio;
-      fxRatio = FX_Inv(iVar12,iVar17);
-      iVar12 = FX_Inv(piVar7[0x21],0xa000);
+      fxRatio = FX_Div(iVar12,iVar17);
+      iVar12 = FX_Div(piVar7[0x21],0xa000);
       if (iVar12 < 0) {
         iVar12 = -iVar12;
       }

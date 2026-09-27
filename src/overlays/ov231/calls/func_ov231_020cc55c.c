@@ -6,7 +6,7 @@
 typedef unsigned char u8;
 struct Pair { void *res; void *handle; };
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void *func_ov107_020c08cc(void *taskList, void *subitem, u8 mode, int blend, int weight, void *payload);
 extern void *func_ov107_020c09a0(void *taskList, void *subitem, u8 kind, void *at, int a, int b);
 extern void func_0203c650(void *taskList, void *handle);
@@ -17,7 +17,7 @@ void func_ov231_020cc55c(char *actor, u8 *msg, int param)
     int weight;
 
     if (msg[2] == 5) {
-        weight = FX_Inv(0x1119, 0x1119);
+        weight = FX_Div(0x1119, 0x1119);
         switch (msg[3]) {
         case 0:
         case 2:

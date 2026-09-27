@@ -84,7 +84,7 @@ extern void func_0201e1d0(void);
 extern void func_0201e374(int nBrightness);
 extern void func_0201e3cc(int nBrightness);
 extern void GX_SetBankForTex(int nBank);
-extern void GX_BeginLoadOBJExtPltt(int nOffset);
+extern void GX_SetBankForTexPltt(int nOffset);
 extern void GX_SetBankForBG(int nBank);
 extern void GX_SetBankForOBJ(int nBank);
 extern void func_020056b4(int nDisplayMode, int nBgMode, int bUse3d);
@@ -216,7 +216,7 @@ void func_ov004_0204f32c(void)
     func_0201e374(-16);
     func_0201e3cc(-16);
     GX_SetBankForTex(7);
-    GX_BeginLoadOBJExtPltt(0x60);
+    GX_SetBankForTexPltt(0x60);
     GX_SetBankForBG(8);
     GX_SetBankForOBJ(0x10);
     func_020056b4(1, 0, 1);

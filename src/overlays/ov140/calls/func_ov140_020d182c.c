@@ -71,7 +71,7 @@ extern void func_0202f384(Vec3 *dst, void *quat, Vec3 *src);
 extern void func_01ffa724(int scale, Vec3 *v, Vec3 *d);
 extern void func_ov107_020c5af8(struct Ov204Owner *owner, int a, int id, Vec3 *at);
 extern int func_02023eb4(int bound);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern int func_ov107_020c8fd0(struct Ov204Owner *owner, struct BoxQuery *query, int *out);
 extern void VEC_Subtract(void *a, void *b, Vec3 *d);
 extern int func_01ff8d18(Vec3 *a, Vec3 *d);
@@ -140,7 +140,7 @@ void func_ov140_020d182c(int *node)
     }
     state->nTimer += *(int *)(*node + 0x2c);
     if (state->nTimer >= 0xc44 && state->nTimer < 0x1199) {
-        t = FX_Inv(state->nTimer - 0xc44, 0x555);
+        t = FX_Div(state->nTimer - 0xc44, 0x555);
         query.vCenter = *state->pPoint;
         query.vCenter.y += 0x400;
         query.vAxisX = data_02042270;

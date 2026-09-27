@@ -21,7 +21,7 @@ extern void func_0203c634(int node, int slot, void *cb);
 extern int FX_Sqrt(int a);
 extern void func_0203cd7c(void *out, void *a, int b, void *c);
 extern void func_0202ea48(void *a, void *b);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_0202f384(void *out, void *pose, void *k);
 extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
@@ -61,7 +61,7 @@ void func_ov125_020cd570(int *node)
     sq = FX_Sqrt(sq) - *(int *)(target + 0x80) - *(int *)(actor + 0x80);
     func_0203cd7c(buf, (void *)(state[1] + 0x74), state[9], &data_02042264);
     func_0202ea48(state + 0x1a, buf);
-    t = FX_Inv(0x4000 - sq, 0x4000);
+    t = FX_Div(0x4000 - sq, 0x4000);
     if (t < -0x1000) t = -0x1000;
     if (t > 0x1000) t = 0x1000;
     func_0202f384(&fwd, state + 0x1a, &data_02042258);

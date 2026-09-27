@@ -80,10 +80,8 @@ typedef struct SNDBankData {
     u32 instOffset[0];            /* 0x3c */
 } SNDBankData;
 
-extern void SNDi_UnlockMutex_0x020084f4(void);   /* SNDi_LockMutex */
-extern void SNDi_UnlockMutex_0x02008508(void);   /* SNDi_UnlockMutex */
-#define SNDi_LockMutex SNDi_UnlockMutex_0x020084f4
-#define SNDi_UnlockMutex SNDi_UnlockMutex_0x02008508
+extern void SNDi_LockMutex(void);
+extern void SNDi_UnlockMutex(void);
 extern void DC_StoreRange(void *addr, u32 size);
 
 /* SND_AssignWaveArc -- bind wave archive `waveArc` to slot `index` of the bank: the

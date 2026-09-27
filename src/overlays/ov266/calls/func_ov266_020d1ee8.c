@@ -10,7 +10,7 @@ typedef struct { int x, y, z; } Vec3;
 
 extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
 extern void func_ov107_020c5af8(int actor, int id, int kind, void *anchor);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void func_ov266_020cf914(int *state, int mode, Vec3 *v);
 extern void func_0203c634(int *node, int slot, void *cb);
@@ -39,7 +39,7 @@ void func_ov266_020d1ee8(int *node)
         *(Vec3 *)(state + 4) = *(Vec3 *)(state + 0xa);
         for (rem = *(int *)(node[0] + 0x2c); rem > 0; rem -= 0x88) {
             step = rem <= 0x88 ? rem : 0x88;
-            func_01ffa724(0x1000 - FX_Mul(FX_Inv(step, 0x88), 0x400), (Vec3 *)(state + 0xa), (Vec3 *)(state + 0xa));
+            func_01ffa724(0x1000 - FX_Mul(FX_Div(step, 0x88), 0x400), (Vec3 *)(state + 0xa), (Vec3 *)(state + 0xa));
         }
         push.nDrop = FX_Mul(*(int *)(*state + 0x80), 0x1100);
         push.v = *(Vec3 *)(*state + 0x108 + 0x400);

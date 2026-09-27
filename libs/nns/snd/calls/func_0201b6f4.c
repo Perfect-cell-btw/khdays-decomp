@@ -294,7 +294,7 @@ typedef struct FSFile {
         FSCloseFileInfo closefile;
     } arg;
 } FSFile;
-s32 OS_UnlockByWord_0x0200ae4c(FSFile * p_file, void * dst, s32 len);
+s32 FS_ReadFile(FSFile * p_file, void * dst, s32 len);
 BOOL FS_SeekFile(FSFile * p_file, s32 offset, FSSeekFileMode origin);
 typedef void (*NNSSndHeapDisposeCallback)(void * mem, u32 size, u32 data1, u32 data2);
 typedef struct NNSSndArcFileInfo {
@@ -399,7 +399,7 @@ s32 func_0201b6f4 (u32 fileId, void * buffer, s32 size, s32 offset)
             return -1;
         }
         FSi_WaitForCardThread();
-        readSize = OS_UnlockByWord_0x0200ae4c(&arc->file, destAddress, requestSize);
+        readSize = FS_ReadFile(&arc->file, destAddress, requestSize);
         if (readSize < 0) return readSize;
 
         totalReadSize += readSize;

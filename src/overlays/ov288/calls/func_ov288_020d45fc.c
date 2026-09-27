@@ -127,11 +127,11 @@ extern struct Hit *func_01fff920(void *world, VecFx32 *from, VecFx32 *delta);
 extern struct ListNode *func_01fffd70(void *list);
 extern struct ListNode *func_01fffd8c(void *list);
 extern int func_ov107_020c3504(void *shape, void *other, int mode);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern int func_01ff8d18(VecFx32 *out, VecFx32 *in);
 extern void func_01ffa724(int scale, VecFx32 *in, VecFx32 *out);
 extern void *func_ov107_020c9848(void);
-extern int FX_Inv_0x01ff8a40(int a);
+extern int FX_Inv(int a);
 extern void func_0203c634(struct AiStateNode *node, int slot, void *arg);
 
 extern const struct SinCos data_0203d210[];
@@ -209,7 +209,7 @@ void func_ov288_020d45fc(struct AiStateNode *node)
         }
         {
             if (st->nPlanned != 0) {
-                t = FX_Inv(st->nTravelled, st->nPlanned);
+                t = FX_Div(st->nTravelled, st->nPlanned);
                 u = (int)(((long long)t * 12868 + 0x800) >> 12);
                 s = data_0203d210[(u16)(int)(((long long)u * 0x28be60db9391LL +
                                               0x80000000000LL) >> 44) >> 4].sin;
@@ -271,7 +271,7 @@ void func_ov288_020d45fc(struct AiStateNode *node)
                     acc = 0;
                     if (st->nPlanned / 2 > 0) {
                         do {
-                            step = FX_Inv_0x01ff8a40(
+                            step = FX_Inv(
                                 *(int *)((char *)func_ov107_020c9848() + 0x40));
                             acc = acc + (int)(((long long)step * -96LL + 0x800) >> 12);
                             st->nDrop = st->nDrop - acc;
@@ -287,7 +287,7 @@ void func_ov288_020d45fc(struct AiStateNode *node)
         } while (obj != 0);
     }
     if (st->nPlanned != 0 && st->nPlanned < 0xf000) {
-        func_01ffa724(FX_Inv(st->nPlanned, 0xf000), &st->vVelocity, &st->vVelocity);
+        func_01ffa724(FX_Div(st->nPlanned, 0xf000), &st->vVelocity, &st->vVelocity);
         st->nBaseVelY = st->vVelocity.y;
         st->nPlanned = 0xf000;
     }

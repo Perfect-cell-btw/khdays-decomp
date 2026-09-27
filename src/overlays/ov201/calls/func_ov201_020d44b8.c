@@ -17,7 +17,7 @@ typedef struct { u16 lo; u16 hi; } Cmd4;
 
 extern void VEC_Add(void *a, void *b, void *out);
 extern void func_01ffa724(int scale, void *in, void *out);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_0203ca30(void *p, void *v);
 extern void func_0203ca50(void *placement, int x, int y, int z);
 extern void func_0202f384(void *out, void *pose, void *k);
@@ -45,7 +45,7 @@ void func_ov201_020d44b8(int *self) {
     func_01ffa724(0x800, &aim, &aim);
     func_0203ca30((void *)(state[3] + 4), &aim);
     state[0xd] += *(int *)(self[0] + 0x2c);
-    t = FX_Inv(state[0xd], 0x2000);
+    t = FX_Div(state[0xd], 0x2000);
     func_0203ca30((void *)(state[3] + 4), &aim);
     func_0203ca50((void *)(state[3] + 4), t * 2 + 0x1200, t * 2 + 0x1200, 0x1000);
     if (state[0xd] < nLimit) {

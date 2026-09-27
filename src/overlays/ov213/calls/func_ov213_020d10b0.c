@@ -6,7 +6,7 @@
  * clear, bit 1 of the actor's +0x394 is raised and the node moves to 020d1208. */
 typedef struct { int x, y, z; } Vec3;
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_01ff8d18(const Vec3 *v, Vec3 *out);
 extern void func_0202ed60(void *rotation, const Vec3 *from, const Vec3 *to);
@@ -27,7 +27,7 @@ void func_ov213_020d10b0(int *node) {
 
     *(Vec3 *)(state + 0x1c) = *(Vec3 *)(state[2] + 0x10);
     state[6] += *(int *)(node[0] + 0x2c);
-    t = FX_Inv(state[6], 0x1000);
+    t = FX_Div(state[6], 0x1000);
     if (t > 0x1000) t = 0x1000;
     VEC_Subtract((Vec3 *)(state + 0x1c), (Vec3 *)state[1], &dir);
     func_01ff8d18(&dir, &dir);

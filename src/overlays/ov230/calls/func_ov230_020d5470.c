@@ -13,7 +13,7 @@ typedef struct { int m[9]; } Mtx33;
 struct Bits17a { unsigned char b0 : 1; };
 struct Shards { char pad[0x3c0]; int shards[8]; };
 
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void func_01ffa724(int scale, Vec3 *v, Vec3 *out);
 extern int func_01fff920(int collision, Vec3 *start, Vec3 *ray);
 extern void func_01ffd144(int scale, Vec3 *in, Vec3 *out);
@@ -52,7 +52,7 @@ void func_ov230_020d5470(int self)
 
     step = *(int *)(*(int *)self + 0x2c);
     while (step > 0) {
-        func_01ffa724((int)(((long long)FX_Inv(step <= 0x88 ? step : 0x88, 0x88) * 0xabLL
+        func_01ffa724((int)(((long long)FX_Div(step <= 0x88 ? step : 0x88, 0x88) * 0xabLL
                              + 0x800LL)
                             >> 12)
                           + 0x1000,

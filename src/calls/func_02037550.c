@@ -17,7 +17,7 @@ typedef struct Box3 {
     fx32 extent[3];                     /* +0x30 */
 } Box3;
 
-extern fx32 FX_Inv(fx32 numer, fx32 denom);          /* FX_Div */
+extern fx32 FX_Div(fx32 numer, fx32 denom);          /* FX_Div */
 extern fx64c func_01ff8a50(fx32 v);                  /* FX_InvFx64c */
 
 /* FX_MulInline of the NitroSDK: rounded 20.12 product. */
@@ -62,11 +62,11 @@ void func_02037550(long i0, long i1, long i2, fx32 *pnt, const fx32 *dir, const 
             lSqr = FX_Mul(dir[i0], dir[i0]) + FX_Mul(dir[i2], dir[i2]);
             tmp = FX_Mul(lSqr, pPpE[i1]) - FX_Mul(dir[i1], FX_Mul(dir[i0], pmE[i0]) + FX_Mul(dir[i2], pPpE[i2]));
             if (tmp <= FX_Mul(2 * lSqr, box->extent[i1])) {
-                t = FX_Inv(tmp, lSqr);
+                t = FX_Div(tmp, lSqr);
                 lSqr += FX_Mul(dir[i1], dir[i1]);
                 tmp = pPpE[i1] - t;
                 delta = FX_Mul(dir[i0], pmE[i0]) + FX_Mul(dir[i1], tmp) + FX_Mul(dir[i2], pPpE[i2]);
-                param = -FX_Inv(delta, lSqr);
+                param = -FX_Div(delta, lSqr);
                 *pSqrDist += FX_Mul(pmE[i0], pmE[i0]) + FX_Mul(tmp, tmp) + FX_Mul(pPpE[i2], pPpE[i2]) + FX_Mul(delta, param);
                 if (pParam != 0) {
                     *pParam = param;
@@ -77,7 +77,7 @@ void func_02037550(long i0, long i1, long i2, fx32 *pnt, const fx32 *dir, const 
             } else {
                 lSqr += FX_Mul(dir[i1], dir[i1]);
                 delta = FX_Mul(dir[i0], pmE[i0]) + FX_Mul(dir[i1], pmE[i1]) + FX_Mul(dir[i2], pPpE[i2]);
-                param = -FX_Inv(delta, lSqr);
+                param = -FX_Div(delta, lSqr);
                 *pSqrDist += FX_Mul(pmE[i0], pmE[i0]) + FX_Mul(pmE[i1], pmE[i1]) + FX_Mul(pPpE[i2], pPpE[i2]) + FX_Mul(delta, param);
                 if (pParam != 0) {
                     *pParam = param;
@@ -93,11 +93,11 @@ void func_02037550(long i0, long i1, long i2, fx32 *pnt, const fx32 *dir, const 
             lSqr = FX_Mul(dir[i0], dir[i0]) + FX_Mul(dir[i1], dir[i1]);
             tmp = FX_Mul(lSqr, pPpE[i2]) - FX_Mul(dir[i2], FX_Mul(dir[i0], pmE[i0]) + FX_Mul(dir[i1], pPpE[i1]));
             if (tmp <= FX_Mul(2 * lSqr, box->extent[i2])) {
-                t = FX_Inv(tmp, lSqr);
+                t = FX_Div(tmp, lSqr);
                 lSqr += FX_Mul(dir[i2], dir[i2]);
                 tmp = pPpE[i2] - t;
                 delta = FX_Mul(dir[i0], pmE[i0]) + FX_Mul(dir[i1], pPpE[i1]) + FX_Mul(dir[i2], tmp);
-                param = -FX_Inv(delta, lSqr);
+                param = -FX_Div(delta, lSqr);
                 *pSqrDist += FX_Mul(pmE[i0], pmE[i0]) + FX_Mul(pPpE[i1], pPpE[i1]) + FX_Mul(tmp, tmp) + FX_Mul(delta, param);
                 if (pParam != 0) {
                     *pParam = param;
@@ -108,7 +108,7 @@ void func_02037550(long i0, long i1, long i2, fx32 *pnt, const fx32 *dir, const 
             } else {
                 lSqr += FX_Mul(dir[i2], dir[i2]);
                 delta = FX_Mul(dir[i0], pmE[i0]) + FX_Mul(dir[i1], pPpE[i1]) + FX_Mul(dir[i2], pmE[i2]);
-                param = -FX_Inv(delta, lSqr);
+                param = -FX_Div(delta, lSqr);
                 *pSqrDist += FX_Mul(pmE[i0], pmE[i0]) + FX_Mul(pPpE[i1], pPpE[i1]) + FX_Mul(pmE[i2], pmE[i2]) + FX_Mul(delta, param);
                 if (pParam != 0) {
                     *pParam = param;
@@ -124,11 +124,11 @@ void func_02037550(long i0, long i1, long i2, fx32 *pnt, const fx32 *dir, const 
             if (tmp >= 0) {
                 /* v[i1]-edge is closest */
                 if (tmp <= FX_Mul(2 * lSqr, box->extent[i1])) {
-                    t = FX_Inv(tmp, lSqr);
+                    t = FX_Div(tmp, lSqr);
                     lSqr += FX_Mul(dir[i1], dir[i1]);
                     tmp = pPpE[i1] - t;
                     delta = FX_Mul(dir[i0], pmE[i0]) + FX_Mul(dir[i1], tmp) + FX_Mul(dir[i2], pPpE[i2]);
-                    param = -FX_Inv(delta, lSqr);
+                    param = -FX_Div(delta, lSqr);
                     *pSqrDist += FX_Mul(pmE[i0], pmE[i0]) + FX_Mul(tmp, tmp) + FX_Mul(pPpE[i2], pPpE[i2]) + FX_Mul(delta, param);
                     if (pParam != 0) {
                         *pParam = param;
@@ -139,7 +139,7 @@ void func_02037550(long i0, long i1, long i2, fx32 *pnt, const fx32 *dir, const 
                 } else {
                     lSqr += FX_Mul(dir[i1], dir[i1]);
                     delta = FX_Mul(dir[i0], pmE[i0]) + FX_Mul(dir[i1], pmE[i1]) + FX_Mul(dir[i2], pPpE[i2]);
-                    param = -FX_Inv(delta, lSqr);
+                    param = -FX_Div(delta, lSqr);
                     *pSqrDist += FX_Mul(pmE[i0], pmE[i0]) + FX_Mul(pmE[i1], pmE[i1]) + FX_Mul(pPpE[i2], pPpE[i2]) + FX_Mul(delta, param);
                     if (pParam != 0) {
                         *pParam = param;
@@ -156,11 +156,11 @@ void func_02037550(long i0, long i1, long i2, fx32 *pnt, const fx32 *dir, const 
             if (tmp >= 0) {
                 /* v[i2]-edge is closest */
                 if (tmp <= FX_Mul(2 * lSqr, box->extent[i2])) {
-                    t = FX_Inv(tmp, lSqr);
+                    t = FX_Div(tmp, lSqr);
                     lSqr += FX_Mul(dir[i2], dir[i2]);
                     tmp = pPpE[i2] - t;
                     delta = FX_Mul(dir[i0], pmE[i0]) + FX_Mul(dir[i1], pPpE[i1]) + FX_Mul(dir[i2], tmp);
-                    param = -FX_Inv(delta, lSqr);
+                    param = -FX_Div(delta, lSqr);
                     *pSqrDist += FX_Mul(pmE[i0], pmE[i0]) + FX_Mul(pPpE[i1], pPpE[i1]) + FX_Mul(tmp, tmp) + FX_Mul(delta, param);
                     if (pParam != 0) {
                         *pParam = param;
@@ -171,7 +171,7 @@ void func_02037550(long i0, long i1, long i2, fx32 *pnt, const fx32 *dir, const 
                 } else {
                     lSqr += FX_Mul(dir[i2], dir[i2]);
                     delta = FX_Mul(dir[i0], pmE[i0]) + FX_Mul(dir[i1], pPpE[i1]) + FX_Mul(dir[i2], pmE[i2]);
-                    param = -FX_Inv(delta, lSqr);
+                    param = -FX_Div(delta, lSqr);
                     *pSqrDist += FX_Mul(pmE[i0], pmE[i0]) + FX_Mul(pPpE[i1], pPpE[i1]) + FX_Mul(pmE[i2], pmE[i2]) + FX_Mul(delta, param);
                     if (pParam != 0) {
                         *pParam = param;
@@ -186,7 +186,7 @@ void func_02037550(long i0, long i1, long i2, fx32 *pnt, const fx32 *dir, const 
             /* (v[i1], v[i2])-corner is closest */
             lSqr += FX_Mul(dir[i2], dir[i2]);
             delta = FX_Mul(dir[i0], pmE[i0]) + FX_Mul(dir[i1], pPpE[i1]) + FX_Mul(dir[i2], pPpE[i2]);
-            param = -FX_Inv(delta, lSqr);
+            param = -FX_Div(delta, lSqr);
             *pSqrDist += FX_Mul(pmE[i0], pmE[i0]) + FX_Mul(pPpE[i1], pPpE[i1]) + FX_Mul(pPpE[i2], pPpE[i2]) + FX_Mul(delta, param);
             if (pParam != 0) {
                 *pParam = param;

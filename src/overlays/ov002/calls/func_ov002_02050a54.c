@@ -19,7 +19,7 @@ extern int data_ov002_0207e764[];
 
 extern int func_01fffe14(void);
 extern int func_01fffde0(int nId);
-extern int FX_Inv(int nNumerator, int nDenominator);
+extern int FX_Div(int nNumerator, int nDenominator);
 
 int func_ov002_02050a54(int nIndex) {
     int nEntry = func_01fffde0(func_01fffe14());
@@ -37,7 +37,7 @@ int func_ov002_02050a54(int nIndex) {
             goto done;
         }
         {
-            int nScale = FX_Inv(-0x10000 - nDepth, 0x8000);
+            int nScale = FX_Div(-0x10000 - nDepth, 0x8000);
 
             int nDiff = nBase - data_ov002_0207e764[2];
 

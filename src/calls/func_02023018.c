@@ -29,7 +29,7 @@ extern char data_02042748[16];
 extern int func_02020a9c(void);
 extern void func_02023c30(int mode);
 extern void func_02003284(int a, int b);
-extern void srand(unsigned int seed);
+extern void func_02001020(unsigned int seed);
 extern void SNDi_BroadcastChannelOp(int op);
 extern void func_0203409c(int a);
 extern void func_02033c24(int volume, int frames);
@@ -48,7 +48,7 @@ void func_02023018(void)
     }
     if ((data_0204c240 & 4) == 0 || (func_02020a9c() & 2) == 0) {
         func_02003284(heap->saveA, heap->saveB);
-        srand(heap->seed);
+        func_02001020(heap->seed);
         SNDi_BroadcastChannelOp(0);
         if (heap->object == 0 && heap->track != -1) {
             func_0203409c(0);

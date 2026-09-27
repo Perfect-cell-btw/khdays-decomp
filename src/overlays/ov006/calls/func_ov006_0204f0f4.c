@@ -59,7 +59,7 @@ extern u16 *func_020200e4(u16 *dst, const u16 *src);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern void func_ov105_020bf27c(void);
 extern void func_ov006_0204de5c(void);
-extern u16 OS_IsTickAvailable_0x01ff8138(void);
+extern u16 func_01ff8138(void);
 extern int func_ov006_0204db14(int peerIndex);
 extern void func_ov006_0204d9fc(int peerIndex, u16 *name, u32 size);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
@@ -102,7 +102,7 @@ MissionCallback func_ov006_0204f0f4(void) {
         peerIndex = 0;
         remotePeerActive = 0;
         remotePeerActive = data_ov006_020565e4->remotePeerActive;
-        sessionMask = OS_IsTickAvailable_0x01ff8138();
+        sessionMask = func_01ff8138();
 
         peerIndex = 1;
         goto check_peer;

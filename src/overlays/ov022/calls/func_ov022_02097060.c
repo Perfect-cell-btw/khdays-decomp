@@ -30,7 +30,7 @@ extern void VEC_MultAdd(int nFactor, const struct VecFx32 *pStep,
                         const struct VecFx32 *pFrom, struct VecFx32 *pOut);
 /* the tree's name for the fixed-point divide; it takes the numerator and the
  * denominator, not a single value to invert */
-extern int FX_Inv(int nNum, int nDen);
+extern int FX_Div(int nNum, int nDen);
 /* VEC_Normalize */
 extern int func_01ff8d18(const struct VecFx32 *pSrc, struct VecFx32 *pDst);
 
@@ -51,7 +51,7 @@ int func_ov022_02097060(struct VecFx32 *pOutFoot, int *pOutDist,
     if (nLen2 == 0) {
         nAlong = 0;
     } else {
-        nAlong = FX_Inv(nAlong, nLen2);
+        nAlong = FX_Div(nAlong, nLen2);
     }
     VEC_MultAdd(nAlong, &vecSeg, pFrom, &vecFoot);
     if (bFromPoint != 0) {

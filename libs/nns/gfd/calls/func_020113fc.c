@@ -23,7 +23,7 @@ typedef volatile unsigned char vu8;
 
 typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
 typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
-void GX_BeginLoadOBJExtPltt_0x02007b64(void);
+void GX_BeginLoadOBJExtPltt(void);
 void GX_LoadOBJExtPltt(const void * pSrc, u32 destSlotAddr, u32 szByte);
 void GX_EndLoadOBJExtPltt(void);
 typedef void * (*MIAllocatorAllocFunction)(void * userdata, u32 length, u32 alignment);
@@ -32,7 +32,7 @@ typedef void (*MIAllocatorFreeFunction)(void * userdata, void * buffer);
 /* func_020113fc -- NitroSystem gfd_VramTransferManager.c: DoTransfer2dObjExtPlttMain. */
 void func_020113fc (const void * pSrc, u32 offset, u32 szByte)
 {
-    GX_BeginLoadOBJExtPltt_0x02007b64();
+    GX_BeginLoadOBJExtPltt();
     GX_LoadOBJExtPltt(pSrc, offset, szByte);
     GX_EndLoadOBJExtPltt();
 }

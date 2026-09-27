@@ -32,7 +32,7 @@ extern int func_02001030(void);
 extern int func_ov008_0207be38(void);
 extern int func_ov008_0207bc30(void);
 extern int func_ov008_0207d804(void);
-extern int OS_IsTickAvailable(void);
+extern int func_01ff8128(void);
 extern int func_ov008_0207b3d0(void);
 extern void func_ov008_020817c4(int state, int arg1, int arg2);
 extern void func_02033b78(int bank, int sound);
@@ -49,7 +49,7 @@ extern void MI_CpuFill8(void *dst, int value, u32 size);
 extern void func_ov008_0207b78c(void *destination);
 extern void func_ov008_02081c0c(int visible);
 extern void func_ov008_0208187c(int selection);
-extern u16 OS_IsTickAvailable_0x01ff8138(void);
+extern u16 func_01ff8138(void);
 extern int func_ov008_0207b7b4(void);
 extern void func_ov008_02081e08(void);
 
@@ -93,7 +93,7 @@ MissionState func_ov008_0207c7c8(void)
 
     transitionReady = 1;
     if (data_ov008_02090fa0->sessionReady != 0) {
-        if (OS_IsTickAvailable() != 0) {
+        if (func_01ff8128() != 0) {
             transitionReady = 0;
         }
         if (data_ov008_02090fa0->messageStateFlag != 0) {
@@ -217,11 +217,11 @@ MissionState func_ov008_0207c7c8(void)
 
     func_ov008_0208187c(-1);
     if (data_ov008_02090fa0->sessionReady != 0) {
-        if (OS_IsTickAvailable_0x01ff8138() > 1) {
+        if (func_01ff8138() > 1) {
             func_ov008_0208187c(func_ov008_0207b7b4());
         }
     } else {
-        if (OS_IsTickAvailable_0x01ff8138() != 0) {
+        if (func_01ff8138() != 0) {
             func_ov008_0208187c(func_ov008_0207b7b4());
         }
     }

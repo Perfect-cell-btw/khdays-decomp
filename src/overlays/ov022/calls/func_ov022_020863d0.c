@@ -65,7 +65,7 @@ extern int func_01fffe14(void);
 extern Ov022Actor *func_01fffde0(int index);
 extern u64 func_020031d4(void);
 extern u64 func_02020368(u64 value, u32 divisor, int mode);
-extern int FX_Inv(int numerator, int denominator);
+extern int FX_Div(int numerator, int denominator);
 extern void func_ov000_0204cac0();
 
 void func_ov022_020863d0(void *state,
@@ -127,7 +127,7 @@ second_done:
             long long product;
 
             group->records[2].point = *point;
-            ratio = FX_Inv(
+            ratio = FX_Div(
                 (int)func_02020368(
                     (actor->deadline - func_020031d4()) << 6,
                                    0x82ea, 0) << 12,

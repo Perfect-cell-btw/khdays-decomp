@@ -70,7 +70,7 @@ extern void OS_WakeupThread(OSThreadQueue *queue);
 extern int OS_ReceiveMessage(void *mq, void *msg, int flags);
 extern int FS_OpenFileDirect(void *file, void *archive, u32 imageTop, u32 imageBottom, u32 fileIndex);
 extern void FSi_WaitForCardThread(void);
-extern int OS_UnlockByWord_0x0200ae4c(void *file, void *dst, int len);   /* FS_ReadFile */
+extern int FS_ReadFile(void *file, void *dst, int len);   /* FS_ReadFile */
 extern int FS_ReadFileAsync(void *file, void *dst, int len);
 extern void OS_Terminate(void);
 extern int func_02004484(void *context, void *src, int len);
@@ -135,7 +135,7 @@ void func_0201e670(void *arg)
             rd->flags.prev = 1;
             rd->flags.first = 1;
             FSi_WaitForCardThread();
-            rd->len[rd->flags.cur] = OS_UnlockByWord_0x0200ae4c(rd->file, rd->block[rd->flags.cur], 0x200);
+            rd->len[rd->flags.cur] = FS_ReadFile(rd->file, rd->block[rd->flags.cur], 0x200);
             state = 3;
             break;
         case 3:
@@ -169,7 +169,7 @@ void func_0201e670(void *arg)
             break;
         case 4:
             FSi_WaitForCardThread();
-            rd->len[0] = OS_UnlockByWord_0x0200ae4c(rd->file, req->dest + rd->len[1], 0x200);
+            rd->len[0] = FS_ReadFile(rd->file, req->dest + rd->len[1], 0x200);
             if (rd->len[0] == -1) {
                 OS_Terminate();
             } else {

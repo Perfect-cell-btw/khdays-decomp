@@ -31,7 +31,7 @@ extern void func_0202accc(AnimState *anim, u16 nTrack, BlendTable *table, short 
    anything else; this caller evaluates and passes a second, unread argument
    (nFlags scaled to Q12) before the call, which is why the ROM materialises
    that shift right before the bl even though FX_Inv never reads it. */
-extern int FX_Inv(int x, int nUnused);
+extern int FX_Div(int x, int nUnused);
 extern void func_02014cd0(void *pRenderObj, void *pAnmObj);
 
 void func_0202ad74(AnimState *anim, u16 nTrack, BlendTable *table, short nBlend, int nFlags)
@@ -67,7 +67,7 @@ void func_0202ad74(AnimState *anim, u16 nTrack, BlendTable *table, short nBlend,
 
         if (anim->boundAnm[nTrack] != target) {
             anim->pendingBlend[nTrack] = nBlend;
-            anim->blendWeightInv = FX_Inv(0x1000, nFlags << 12);
+            anim->blendWeightInv = FX_Div(0x1000, nFlags << 12);
             anim->blendWeight = 0x1000 - anim->blendWeightInv;
 
             anim->pendingTarget = table->blendAnms[nTrack][nBlend];

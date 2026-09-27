@@ -15,7 +15,7 @@ extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
 extern int func_01ff8d18(Vec3 *v, Vec3 *out);
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_020050b4(int x, int y);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, Vec3 *v, Vec3 *d);
 extern void func_ov107_020c9264(int actor, int pose, int loop);
 extern int func_ov107_020c9ee8(int part, int motion, int mode);
@@ -50,7 +50,7 @@ void func_ov260_020cdecc(int *node)
         VEC_Subtract((Vec3 *)state[0x14], (Vec3 *)state[4], &d);
         state[0x1a] = func_020050b4(d.x, d.z);
         d.y = 0;
-        t = FX_Inv(func_01ff8d18(&d, &d), 0x3000);
+        t = FX_Div(func_01ff8d18(&d, &d), 0x3000);
         if (t > 0x1000) {
             t = 0x1000;
         } else if (t < 0) {

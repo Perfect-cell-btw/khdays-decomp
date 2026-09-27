@@ -26,7 +26,7 @@ extern int func_020255d4(int arc, int type, int idx);
 extern void func_02011988(int member, unsigned short **out);
 extern void func_02011f94(unsigned short *hdr, unsigned int a, int mode, int *out);
 extern void func_02011888(int member, int *out);
-extern void WM_EndKeySharing_0x020116e4(int member, int *out);
+extern void func_020116e4(int member, int *out);
 extern unsigned int func_02031bc8(unsigned int mapState, int obj);
 extern unsigned int func_02031b50(unsigned int mapState, int *obj);
 extern void func_02011a20(int member, PlttUpload **out);
@@ -60,7 +60,7 @@ void func_02031c58(unsigned int param_1, char *param_2, int *param_3)
     member = func_020255d4((int)arc, 5, 0);
     param_3[6] = member;
     func_02011888(param_3[5], param_3 + 3);
-    WM_EndKeySharing_0x020116e4(param_3[6], param_3 + 4);
+    func_020116e4(param_3[6], param_3 + 4);
     span = func_02031bc8(param_1, (int)param_3);
     param_3[0x16] = span;
     span = func_02031b50(param_1, param_3);

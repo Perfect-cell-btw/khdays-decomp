@@ -66,7 +66,7 @@ extern void  func_0202ea14(void *pCamera, int nMode);
 extern void  func_0202ea1c(void *pCamera, int nArg);
 extern void  func_02000f48(int nPriority, const char *pName, void (*pfn)(void)); /* register a named task */
 extern void  func_02011134(void *pMatrices);
-extern void  GX_BeginLoadOBJExtPltt(int nOffset);
+extern void  GX_SetBankForTexPltt(int nOffset);
 extern void  GX_SetBankForOBJ(int nBank);
 extern void  func_0201133c(void);
 extern void  func_02011174(int nA, int nB);
@@ -128,7 +128,7 @@ void *func_ov023_02082d20(Ov023SceneRequest *pRequest)
         aMatrix[8] = 0;
         aMatrix[9] = 0x20000;
         func_02011134(aMatrix);
-        GX_BeginLoadOBJExtPltt(0x20);
+        GX_SetBankForTexPltt(0x20);
         GX_SetBankForOBJ(0x40);
         func_0201133c();
         func_02011174(0x4000, 1);

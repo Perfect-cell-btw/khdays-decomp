@@ -11,7 +11,7 @@ struct Pieces { char pad[0x3c0]; int piece[3]; };
 struct Piece { char pad[0x10]; Srt srt; };
 struct Part { char pad[4]; Srt srt; };
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_0203ca50(void *srt, int x, int y, int z);
 extern void func_0203c650(void *taskList, void *handle);
 extern void func_0202f384(Vec3 *out, const Srt *m, const Vec3 *in);
@@ -21,7 +21,7 @@ extern void func_ov107_020c7ca4(char *self);
 
 void func_ov232_020d0344(char *self)
 {
-    int w = FX_Inv(0x1119, 0x1119);
+    int w = FX_Div(0x1119, 0x1119);
     Srt xf;
     Vec3 off;
     signed char i;
@@ -51,7 +51,7 @@ void func_ov232_020d0344(char *self)
         case 1:
         case 2:
             xf = i == 1 ? *(Srt *)(*(int *)(self + 0x3d4) + 4) : *(Srt *)(*(int *)(self + 0x3d8) + 4);
-            off.x = (int)(((long long)FX_Inv(0x1119, 0x1119) * 0x1000LL + 0x800) >> 12);
+            off.x = (int)(((long long)FX_Div(0x1119, 0x1119) * 0x1000LL + 0x800) >> 12);
             off.y = 0;
             off.z = i == 1 ? 0x800 : -0x800;
             func_0202f384(&off, &xf, &off);

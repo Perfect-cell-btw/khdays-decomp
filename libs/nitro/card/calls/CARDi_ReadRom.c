@@ -59,7 +59,7 @@ extern void OS_RestoreInterrupts(int state);
 extern void func_02001f10(void *queue);
 extern void MI_StopDma(u32 channel);
 extern BOOL func_0200eb34(struct CARDRomStat *state);
-extern void WM_EndKeySharing_0x0200f004(void);
+extern void CARD_WaitBackupAsync(void);
 extern void CARDi_SetTask(void (*task)(struct CARDiCommon *common));
 extern void func_0200ee0c(struct CARDiCommon *common);
 extern struct CARDRomStat data_02046b20 __attribute__((aligned(32)));
@@ -100,7 +100,7 @@ void CARDi_ReadRom(u32 dma, const void *source, void *destination, u32 length,
 
     if (func_0200eb34(state)) {
         if (!asynchronous) {
-            WM_EndKeySharing_0x0200f004();
+            CARD_WaitBackupAsync();
         }
     } else if (asynchronous) {
         CARDi_SetTask(func_0200ee0c);

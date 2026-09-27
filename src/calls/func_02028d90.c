@@ -1,7 +1,7 @@
 /* Case-insensitive name lookup: scan this->entries[] (stride 0x18) for one whose
  * 8-byte name matches key, using the case-folding compare at 0x0201f7bc.
- * WM_EndKeySharing_0x0202019c is the (mislabeled) veneer to that compare. */
-extern int WM_EndKeySharing_0x0202019c(void *a, void *b, int n);
+ * func_0202019c is the (mislabeled) veneer to that compare. */
+extern int func_0202019c(void *a, void *b, int n);
 
 typedef struct TableA {
     char _pad[0x76];
@@ -17,7 +17,7 @@ char *func_02028d90(TableA *this, void *key)
         int off = 0;
         do {
             char *base = this->entries;
-            if (WM_EndKeySharing_0x0202019c(base + off, key, 8) == 0)
+            if (func_0202019c(base + off, key, 8) == 0)
                 return base + off;
             i++;
             off += 0x18;

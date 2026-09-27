@@ -8,7 +8,7 @@ typedef struct { int x, y, z; } Vec3;
 struct Ov253Items { char pad[0x38c]; int items[4]; };
 struct Ov253ItemsNext { char pad[0x390]; int items[3]; };
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_01ff8d18(const Vec3 *v, Vec3 *out);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
@@ -32,7 +32,7 @@ void func_ov253_020d139c(int *node) {
     *(Vec3 *)(state + 2) = *(Vec3 *)(((struct Ov253ItemsNext *)*state)->items[state[9]] + 0x14);
     *(Vec3 *)(state + 5) = *(Vec3 *)(((struct Ov253Items *)*state)->items[state[9]] + 0x14);
     state[8] += *(int *)(node[0] + 0x2c);
-    t = FX_Inv(state[8], 0x400);
+    t = FX_Div(state[8], 0x400);
     if (t > 0x1000) {
         t = 0x1000;
     }

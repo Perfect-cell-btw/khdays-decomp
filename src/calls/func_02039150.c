@@ -18,7 +18,7 @@ typedef struct Box {
  * argument, but this call site loads and passes a second one. An undeclared
  * trailing parameter is how mwcc reserves that register, so declaring one
  * argument here drops a load the ROM performs. */
-extern int FX_Inv(int x, int y);
+extern int FX_Div(int x, int y);
 
 static inline fx32 FX_Mul(fx32 a, fx32 b)
 {
@@ -42,7 +42,7 @@ void func_02039150(int axis0, int axis1, int axis2, fx32 *axisDist, fx32 *deltaA
 {
     fx32 *delta0 = deltaArr + axis0;
     if (outInv) {
-        *outInv = FX_Inv(box->halfExtent[axis0] - axisDist[axis0], *delta0);
+        *outInv = FX_Div(box->halfExtent[axis0] - axisDist[axis0], *delta0);
     }
     axisDist[axis0] = box->halfExtent[axis0];
 

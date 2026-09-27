@@ -48,9 +48,9 @@ typedef struct {
 
 extern MissionContext *data_ov008_02090f24;
 extern const u16 data_ov008_02090bc4[];
-extern u16 OS_IsTickAvailable_0x01ff8138(void);
+extern u16 func_01ff8138(void);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
-extern u32 OS_IsThreadAvailable(void);
+extern u32 func_01ff80a8(void);
 extern void func_020200e4(u16 *dst, const u16 *src);
 extern u32 func_ov008_0207bc30(void);
 
@@ -70,7 +70,7 @@ void func_ov008_02079d60(void) {
     name = 0;
 
     sendBlock = &data_ov008_02090f24->selectionSendBlock;
-    sessionMask = OS_IsTickAvailable_0x01ff8138();
+    sessionMask = func_01ff8138();
 
     data_ov008_02090f24->refreshTimer--;
     if (data_ov008_02090f24->refreshTimer < 0) {
@@ -79,7 +79,7 @@ void func_ov008_02079d60(void) {
 
     MI_CpuFill8(&data_ov008_02090f24->selectionSendBlock, 0,
                 sizeof(MissionSelectionSendBlock));
-    data_ov008_02090f24->selectionSendBlock.sessionValue = OS_IsThreadAvailable();
+    data_ov008_02090f24->selectionSendBlock.sessionValue = func_01ff80a8();
     data_ov008_02090f24->selectionSendBlock.sessionMask = sessionMask;
 
     placeholderName = data_ov008_02090bc4;

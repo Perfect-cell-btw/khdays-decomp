@@ -55,7 +55,7 @@ struct Actor {
 
 extern short data_0203d210[];            /* sin, cos pairs by angle >> 4 */
 
-extern int FX_Inv(int nNumerator, int nDenominator);
+extern int FX_Div(int nNumerator, int nDenominator);
 extern void MTX_RotY33_(struct MtxFx33 *pMtx, int nSin, int nCos);
 extern void func_ov022_020ad7f0(struct Actor *pActor, int nSlot, struct VecFx32 *pOut);
 extern void VEC_Subtract(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *pOut);
@@ -74,7 +74,7 @@ void func_ov022_0209fe20(struct Actor *pActor, struct VecFx32 *pOut)
     nAngle = pActor->pNode->nAngle - ANGLE_BIAS;
     nScale = FX32_ONE;
     if (pActor->nAnchorScale != FX32_ONE) {
-        nScale = FX_Inv(FX32_ONE, pActor->nAnchorScale);
+        nScale = FX_Div(FX32_ONE, pActor->nAnchorScale);
     }
     nTrig = (nAngle >> ANGLE_STEP) * 2;
     MTX_RotY33_(&mtx, -data_0203d210[nTrig], -data_0203d210[nTrig + 1]);

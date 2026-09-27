@@ -10,7 +10,7 @@ extern void func_0202f188(Quat *out, const Vec3 *axis, int angle);
 extern void func_0202ed60(Quat *out, const Vec3 *from, const Vec3 *to);
 extern void func_0202ef54(Quat *out, const Quat *a, const Quat *b);
 extern void func_0203c9d0(void *srt, const Quat *rot);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern const Vec3 data_02042264;
 
@@ -30,8 +30,8 @@ void func_ov218_020ccc58(int *node)
     func_0203c9d0((void *)(*state + 0xa0), &tilt);
     *(Vec3 *)(*state + 0xf0) = *(Vec3 *)(state + 0xa);
     for (remaining = *(int *)(node[0] + 0x2c); remaining > 0; remaining -= 0x88) {
-        func_01ffa724(0x1000 - FX_MUL(FX_Inv(remaining <= 0x88 ? remaining : 0x88, 0x88), 0x1f0),
+        func_01ffa724(0x1000 - FX_MUL(FX_Div(remaining <= 0x88 ? remaining : 0x88, 0x88), 0x1f0),
                       (Vec3 *)(state + 0xa), (Vec3 *)(state + 0xa));
-        state[7] = FX_MUL(state[7], 0x1000 - FX_MUL(FX_Inv(remaining <= 0x88 ? remaining : 0x88, 0x88), 0x200));
+        state[7] = FX_MUL(state[7], 0x1000 - FX_MUL(FX_Div(remaining <= 0x88 ? remaining : 0x88, 0x88), 0x200));
     }
 }

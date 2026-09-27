@@ -26,8 +26,8 @@
  * The drag-armed test is a 1-bit bitfield read, not a shift pair: written as
  * `(x << 0x1f) >> 0x1f` mwcc folds the whole thing to `tst r0,#1` because the result is only
  * tested, and the ROM's `lsl #0x1f ; lsrs #0x1f` disappears. */
-extern int   OS_IsTickAvailable(void);
-extern int   OS_IsTickAvailable_0x01ff8138(void);
+extern int   func_01ff8128(void);
+extern int   func_01ff8138(void);
 extern void  func_02023a44(int scene, int next);
 extern void  func_ov006_0204ece4(void);
 extern void  func_ov006_0204ed24(void);
@@ -51,14 +51,14 @@ int func_ov006_0204f2f4(void) {
     if ((void (*)(void))state == func_ov006_0204ed24) {
         return 1;
     }
-    if (OS_IsTickAvailable() != 0) {
+    if (func_01ff8128() != 0) {
         goto ret0;
     }
     armed = ((Bits8 *)(((char **)&data_ov006_020565e4)[0] + 0x42c))->b0;
     if (armed == 0) {
         goto ret0;
     }
-    keys = OS_IsTickAvailable_0x01ff8138();
+    keys = func_01ff8138();
     if (*(unsigned short *)(*(char **)((char *)&data_ov006_020565e4) + 0x434) == keys) {
         goto ret0;
     }

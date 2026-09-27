@@ -20,7 +20,7 @@ extern int  func_0201e428(void);                                    /* the main 
 extern void func_0201e374(int nLevel);                              /* set the main fade */
 extern void func_0201e3cc(int nLevel);                              /* set the sub fade */
 extern void GX_SetBankForTex(int nBank);
-extern void GX_BeginLoadOBJExtPltt(int nOffset);
+extern void GX_SetBankForTexPltt(int nOffset);
 extern void GX_SetBankForBG(int nBank);
 extern void func_020056b4(int nMode, int nBgMode, int nBg0Mode);    /* GX_SetGraphicsMode */
 extern void func_ov002_02076028(int nMode);
@@ -44,7 +44,7 @@ void func_ov023_02082a80(void)
     func_0201e374(nLevel);
     func_0201e3cc(nLevel);
     GX_SetBankForTex(7);
-    GX_BeginLoadOBJExtPltt(0x60);
+    GX_SetBankForTexPltt(0x60);
     GX_SetBankForBG(0x10);
     func_020056b4(1, 0, 1);
     func_ov002_02076028(1);

@@ -22,7 +22,7 @@ struct Ov278Actor {
     void (*pfnMessage)(struct Ov278Actor *self, void *msg, int size);
 };
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern int func_ov107_020c8fd0(int owner, Cyl *cyl, int *hits);
 extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
 extern int func_01ff8d18(Vec3 *v, Vec3 *d);
@@ -61,7 +61,7 @@ void func_ov278_020d000c(int *node)
         *(u16 *)(*state + 0x100 + 0xae) |= 1;
     }
     if (state[0xa] < 0x800) {
-        t = FX_Inv(state[0xa], 0x800);
+        t = FX_Div(state[0xa], 0x800);
         if (t > 0x1000) {
             t = 0x1000;
         }

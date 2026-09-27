@@ -1,6 +1,6 @@
 extern void VEC_Subtract();
 extern int VEC_DotProduct();
-extern int FX_Inv();
+extern int FX_Div();
 extern void VEC_MultAdd();
 int func_01ffe460(int *param_1, int *param_2, int *param_3, int *param_4)
 {
@@ -15,7 +15,7 @@ int func_01ffe460(int *param_1, int *param_2, int *param_3, int *param_4)
         return -1;
     d2 = VEC_DotProduct(v1, v1);
     if ((int)d1 <= (int)d2) {
-        r = FX_Inv(d1, d2);
+        r = FX_Div(d1, d2);
         VEC_MultAdd(r, v1, param_2, param_4);
         return r;
     }

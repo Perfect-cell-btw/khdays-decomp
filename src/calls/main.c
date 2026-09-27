@@ -64,7 +64,7 @@ extern void  func_02023930(void *classDesc, int ctorArg);
 
 /* ---- per-frame ---- */
 extern void  OS_WaitVBlankIntr(void);             /* 0x02003878  frame begin      */
-extern unsigned int OS_IsThreadAvailable(void);   /* GetVBlankCount               */
+extern unsigned int func_01ff80a8(void);   /* GetVBlankCount               */
 extern void  func_01ff80b8(void);                 /* present / VBlank swap        */
 extern void  func_020115b8(void);                 /* FrameStep_UpdateTaskQueue    */
 extern void  func_02023f78(void);                 /* per-frame update B           */
@@ -151,14 +151,14 @@ int main(void) {
     /* --- 4. FRAME LOOP (0x02000cac) --- */
     for (;;) {
         OS_WaitVBlankIntr();                     /* frame begin              */
-        frameTarget = OS_IsThreadAvailable();    /* VBlank count snapshot    */
+        frameTarget = func_01ff80a8();    /* VBlank count snapshot    */
         func_020115b8();                         /* update task queue        */
         func_02023f78();
         G3X_ResetMtxStack();
 
         switch (data_0204bd84) {                 /* display mode             */
         case 0: func_02023adc(0); break;
-        case 1: func_020208a4(1); frameTarget = OS_IsThreadAvailable(); break;
+        case 1: func_020208a4(1); frameTarget = func_01ff80a8(); break;
         case 2: func_02023adc(0); func_020208a4(1); break;
         }
         func_02032f5c();
@@ -166,7 +166,7 @@ int main(void) {
         /* frame-rate pacing: advance whole frames until we reach the target */
         if (data_0204c058 != 2) {
             frameTarget += (data_0204c058 == 1) ? 2 : 1;
-            while (OS_IsThreadAvailable() < frameTarget) {
+            while (func_01ff80a8() < frameTarget) {
                 OS_WaitVBlankIntr();
                 func_020115b8();
             }

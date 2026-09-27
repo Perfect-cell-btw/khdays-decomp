@@ -6,7 +6,7 @@ extern void func_ov245_020cce08(int actor);
 extern void func_ov107_020c9ee8(int item, int motion, int flag);
 extern void func_ov245_020d1dc8(int item, int a);
 extern int func_ov245_020ccda4(int *node, int flat);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_0203c634(int *node, int slot, void *cb);
 extern void func_ov245_020cdd60(void);
 
@@ -23,7 +23,7 @@ void func_ov245_020cdcb4(int *node) {
     } else if (rest < 0) {
         rest = 0;
     }
-    rest = FX_Inv(rest, 0x5000);
+    rest = FX_Div(rest, 0x5000);
     state[6] = 0;
     state[7] = 0;
     state[8] = (int)(((long long)rest * 0xed0 + 0x800) >> 12);

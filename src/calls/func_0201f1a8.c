@@ -24,7 +24,7 @@ extern void OS_Terminate(void);
 extern int func_02004484(void *context, void *src, int len);
 extern void DC_FlushAll(void);
 extern void DC_FlushRange(const void *startAddr, u32 nBytes);
-extern int OS_UnlockByWord_0x0200ae4c(void *file, void *dst, int len);   /* FS_ReadFile */
+extern int FS_ReadFile(void *file, void *dst, int len);   /* FS_ReadFile */
 extern int FS_CloseFile(void *file);
 extern char *data_0204bbfc[];
 extern const unsigned char data_02041c48[128];
@@ -91,7 +91,7 @@ int func_0201f1a8(const void *data, void *buffer, int size)
         if (len > size) {
             len = -1;
         } else {
-            OS_UnlockByWord_0x0200ae4c(file, buffer, len);
+            FS_ReadFile(file, buffer, len);
         }
     }
     FS_CloseFile(file);

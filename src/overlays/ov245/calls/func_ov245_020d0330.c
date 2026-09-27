@@ -9,7 +9,7 @@ typedef struct { int x, y, z; } Vec3;
 struct Ov245Actor { char pad[0x394]; int slots[3]; };
 
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_01ff8d18(const Vec3 *v, Vec3 *out);
@@ -50,7 +50,7 @@ void func_ov245_020d0330(int *node) {
         VEC_Subtract((Vec3 *)(*(int *)(*state + 0x390) + 0x190), (Vec3 *)(state + 3), &d);
         sum = 0;
         for (rest = *(int *)(node[0] + 0x2c); rest > 0; rest -= 0x88) {
-            int ratio = FX_Inv(rest <= 0x88 ? rest : 0x88, 0x88);
+            int ratio = FX_Div(rest <= 0x88 ? rest : 0x88, 0x88);
             int t = (int)(((long long)ratio * 0xd40 + 0x800) >> 12);
             sum += (int)(((long long)(0x1000 - sum) * (0x1000 - t) + 0x800) >> 12);
         }
@@ -60,7 +60,7 @@ void func_ov245_020d0330(int *node) {
         d.y = 0;
         sum = 0;
         for (rest = *(int *)(node[0] + 0x2c); rest > 0; rest -= 0x88) {
-            int ratio = FX_Inv(rest <= 0x88 ? rest : 0x88, 0x88);
+            int ratio = FX_Div(rest <= 0x88 ? rest : 0x88, 0x88);
             int t = (int)(((long long)ratio * 0x800 + 0x800) >> 12);
             sum += (int)(((long long)(0x1000 - sum) * (0x1000 - t) + 0x800) >> 12);
         }

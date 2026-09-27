@@ -219,8 +219,8 @@ extern void PXI_SetFifoRecvCallback(int fifotag, void (*callback)(int, u32, BOOL
 extern void func_0200f050(void *arg);   /* CARDi_TaskThread */
 #define CARDi_TaskThread func_0200f050
 extern void CARDi_OnFifoRecv(int tag, u32 data, BOOL err);
-extern void srand_0x0200e090(BOOL enable);   /* CARD_Enable (mislabelled in the symbol map) */
-#define CARD_Enable srand_0x0200e090
+extern void func_0200e090(BOOL enable);   /* CARD_Enable (mislabelled in the symbol map) */
+#define CARD_Enable func_0200e090
 /* MB_IsMultiBootChild(): the multiboot parameter block's boot_type at HW_WM_BOOT_BUF. */
 static inline BOOL MB_IsMultiBootChild(void)
 {

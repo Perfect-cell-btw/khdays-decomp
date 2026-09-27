@@ -35,7 +35,7 @@ typedef struct MissionContext {
 
 extern MissionContext *data_ov008_02090f24;
 extern int  func_02030694(void);                                  /* Session_IsReady */
-extern u16  OS_IsTickAvailable(void);                             /* local slot */
+extern u16  func_01ff8128(void);                             /* local slot */
 extern u32  func_02030788(void);                                  /* Session_GetLocalPlayerIndex */
 extern void func_02031258(int nGate, void *pBuf, int nSize);      /* MsgQueue_SendGate */
 extern void func_02023c14(int nState);                            /* StoreToGlobalPtr4Field28 */
@@ -48,9 +48,9 @@ void *func_ov008_02079534(void)
     MissionContext *pCtx;
 
     if (func_02030694()) {
-        data_ov008_02090f24->aPacket[OS_IsTickAvailable()].bPending = 0;
+        data_ov008_02090f24->aPacket[func_01ff8128()].bPending = 0;
         pCtx = data_ov008_02090f24;
-        pCtx->join = pCtx->aPacket[OS_IsTickAvailable()];
+        pCtx->join = pCtx->aPacket[func_01ff8128()];
     } else {
         pCtx = data_ov008_02090f24;
         if (pCtx->nListHeader != 0) {

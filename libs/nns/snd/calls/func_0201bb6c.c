@@ -20,7 +20,7 @@ typedef volatile unsigned char vu8;
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-#define NNS_FndAllocFromFrmHeap(heap, size) NNS_FndAllocFromExpHeapEx_0x02010bcc(heap, size, NNS_FND_HEAP_DEFAULT_ALIGNMENT)
+#define NNS_FndAllocFromFrmHeap(heap, size) NNS_FndAllocFromFrmHeapEx(heap, size, NNS_FND_HEAP_DEFAULT_ALIGNMENT)
 #define NNS_FND_HEAP_DEFAULT_ALIGNMENT 4
 
 typedef struct {
@@ -45,7 +45,7 @@ struct NNSiFndHeapHead {
 };
 typedef NNSiFndHeapHead * NNSFndHeapHandle;
 typedef void (*NNSFndHeapVisitor)(void * memBlock, NNSFndHeapHandle heap, u32 userParam);
-void * NNS_FndAllocFromExpHeapEx_0x02010bcc(NNSFndHeapHandle heap, u32 size, int alignment);
+void * NNS_FndAllocFromFrmHeapEx(NNSFndHeapHandle heap, u32 size, int alignment);
 typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
 typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
 struct NNSSndHeap;

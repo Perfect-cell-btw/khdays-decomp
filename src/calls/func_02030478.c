@@ -46,10 +46,10 @@ extern SessionCtx *NNSi_FndGetCurrentRootHeap(void);
 extern SessionSource *func_020315f4(void);
 extern int func_02030670(void);
 extern void func_02023e34(int a, int b, int c);
-extern u16 OS_IsTickAvailable_0x01ff8138(void);
+extern u16 func_01ff8138(void);
 extern u32 func_02023eb4(int mode);
 extern void *func_02023930(const void *desc, int flags);
-extern int OS_IsTickAvailable(void);
+extern int func_01ff8128(void);
 extern void func_02030570(void);
 extern SessionCtx *data_0204c228;
 extern const char data_02042990[];
@@ -72,7 +72,7 @@ void *func_02030478(void)
     if (func_02030670() != 0) {
         ctx->memberMask = src->memberMask;
         func_02023e34(src->key, src->key, 0);
-        ctx->selfIndex = OS_IsTickAvailable_0x01ff8138();
+        ctx->selfIndex = func_01ff8138();
     } else {
         ctx->memberMask = 1;
     }
@@ -89,7 +89,7 @@ void *func_02030478(void)
     }
     ctx->packedMask = bits;
     pos = 0;
-    self = OS_IsTickAvailable();
+    self = func_01ff8128();
     for (j = 0; j < 4; j++) {
         if ((1 << j) & ctx->memberMask) {
             if (self == j) {

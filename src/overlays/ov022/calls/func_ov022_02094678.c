@@ -1,4 +1,4 @@
-extern int FX_Inv(int arg0, int arg1);
+extern int FX_Div(int arg0, int arg1);
 extern int data_0204c058;
 
 int func_ov022_02094678(int arg0, unsigned int arg1) {
@@ -22,7 +22,7 @@ int func_ov022_02094678(int arg0, unsigned int arg1) {
     if (arg1 <= 1) {
         x = 0x1000;
     } else {
-        x = 0x1000 - FX_Inv(arg0 << 0xc, arg1 << 0xc);
+        x = 0x1000 - FX_Div(arg0 << 0xc, arg1 << 0xc);
     }
     return r * x;
 }

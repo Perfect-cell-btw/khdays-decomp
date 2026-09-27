@@ -19,7 +19,7 @@
  * constant is only a source-level lever when it is hoisted across a CALL, as in the 96-byte
  * Tally family; inside straight-line arithmetic the compiler already does it.
  */
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int t, const int *src, int *dst);
 extern const short data_0203d210[];
 
@@ -43,7 +43,7 @@ void func_ov128_020d3ce8(int *self) {
     n = *(int *)(self[0] + 0x2c);
     if (n > 0) {
         do {
-            t = FX_Inv(n <= 0x88 ? n : 0x88, 0x88);
+            t = FX_Div(n <= 0x88 ? n : 0x88, 0x88);
             ctx[0xc] = FX_Mul(ctx[0xc], 0x1000 - FX_Mul(t, 0xe0));
             n = n - 0x88;
         } while (n > 0);

@@ -57,7 +57,7 @@ extern void func_0203c634(int self, int slot, void (*cb)(void));
 extern int FX_Sqrt(int x);
 extern void func_0203cd7c(int *dst, const Vec3 *a, const Vec3 *b, const void *c);
 extern void func_0202ea48(int *dst, const int *src);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_0202f384(Vec3 *dst, const int *a, const void *b);
 extern void func_01ffa724(int scale, const Vec3 *src, int *dst);
 extern int func_02023eb4();
@@ -103,7 +103,7 @@ void func_ov126_020d0ebc(int self) {
     t2 = ctx[1];
     func_0203cd7c(mtx, (const Vec3 *)(t2 + 0x74), (const Vec3 *)ctx[9], data_02042264);
     func_0202ea48(&ctx[0x1a], mtx);
-    fac = FX_Inv(0x4000 - d, 0x4000);
+    fac = FX_Div(0x4000 - d, 0x4000);
     if (fac < -0x1000) {
         fac = -0x1000;
     }

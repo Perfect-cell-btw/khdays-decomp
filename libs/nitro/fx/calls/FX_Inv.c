@@ -1,8 +1,8 @@
-/* Synchronous reciprocal: start the divide and block for its result. */
-extern void FX_DivAsync(int x);
+/* NitroSDK fx (fx_cp.c): FX_Inv -- FX_InvAsync(denom) then FX_GetDivResult(). */
+extern void FX_InvAsync(int x);
 extern int FX_GetDivResult(void);
 
 int FX_Inv(int x) {
-    FX_DivAsync(x);
+    FX_InvAsync(x);
     return FX_GetDivResult();
 }

@@ -31,7 +31,7 @@ typedef struct Ov023RotTween {
     int  nMode;               /* 0x24 */
 } Ov023RotTween;
 
-extern int  FX_Inv(int nNumerator, int nDenominator);              /* the SDK divide */
+extern int  FX_Div(int nNumerator, int nDenominator);              /* the SDK divide */
 extern int  func_02020400(int nNumerator, int nDenominator);        /* the 64-bit divide, low word */
 extern void VEC_Subtract(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
 extern MtxFx33 *func_ov023_0208836c(MtxFx33 *pOut, int nAngleX, int nAngleY, int nAngleZ); /* Ov023_BuildRotation33 */
@@ -58,7 +58,7 @@ MtxFx33 *func_ov023_02088454(Ov023RotTween *pTween, MtxFx33 *pOut)
         case 1:
             break;
         case 2:
-            nFactor = FX_Inv(nElapsed * 0x1000, pTween->nDuration << 12);
+            nFactor = FX_Div(nElapsed * 0x1000, pTween->nDuration << 12);
             break;
         case 3:
             nAngle = func_02020400(nElapsed * 0x8000, pTween->nDuration) - 0x4000;

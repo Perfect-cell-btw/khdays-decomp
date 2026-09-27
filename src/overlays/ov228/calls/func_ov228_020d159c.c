@@ -29,7 +29,7 @@ typedef struct {
     unsigned short hi : 8;
 } Hw60;
 
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void func_01ffa724(int scale, VecFx32 *v, VecFx32 *out);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_01ff8d18(const VecFx32 *a, const VecFx32 *b);
@@ -59,7 +59,7 @@ void func_ov228_020d159c(int self) {
         step = *(int *)(*(int *)self + 0x2c);
         while (step > 0) {
             func_01ffa724(0x1000
-                              - (int)(((long long)FX_Inv(step <= 0x88 ? step : 0x88, 0x88) * 0xa4LL
+                              - (int)(((long long)FX_Div(step <= 0x88 ? step : 0x88, 0x88) * 0xa4LL
                                        + 0x800LL)
                                       >> 12),
                           (VecFx32 *)((char *)ctx + 0x1c), (VecFx32 *)((char *)ctx + 0x1c));

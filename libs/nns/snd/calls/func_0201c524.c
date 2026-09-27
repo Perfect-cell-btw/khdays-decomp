@@ -373,7 +373,7 @@ typedef struct NNSSndArc {
     struct NNSSndArcInfo * info;
     s32 loadBlockSize;
 } NNSSndArc;
-NNSSndArc * OS_IsThreadAvailable_0x0201b3d8(void);
+NNSSndArc * func_0201b3d8(void);
 const NNSSndArcPlayerInfo * func_0201b5dc(int playerNo);
 void func_02019dd0(int playerNo, int seqCount);
 void func_02019df0(int playerNo, u32 chBitFlag);
@@ -382,7 +382,7 @@ BOOL func_02019e08(int playerNo, NNSSndHeapHandle heap, u32 size);
 /* func_0201c524 -- NitroSystem sndarc_player.c: NNS_SndArcPlayerSetup. */
 BOOL func_0201c524 (NNSSndHeapHandle heap)
 {
-    NNSSndArc * arc = OS_IsThreadAvailable_0x0201b3d8();
+    NNSSndArc * arc = func_0201b3d8();
     int playerNo;
     const NNSSndArcPlayerInfo * playerInfo;
 

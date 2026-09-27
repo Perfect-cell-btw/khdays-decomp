@@ -43,7 +43,7 @@ extern void func_0203c9d0(void *pose, Quat *q);
 extern int func_ov107_020cab14(int owner, int flag);
 extern struct CollisionHit *func_01fff8e8(void *collision, Vec3 *origin, Vec3 *dir, int radius, void *ignore);
 extern void func_01ffd144(int scale, Vec3 *in, Vec3 *out);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void func_ov225_020d0f94(int self, int *node);
 extern void func_ov225_020d0a08(int *state, int mode, struct Ov221SweepParams *params);
@@ -113,7 +113,7 @@ void func_ov225_020d1764(int *node)
     *(Vec3 *)(*state + 0xf0) = step;
     for (rem = *(int *)(*node + 0x2c); rem > 0; rem -= 0x88) {
         nStep = rem <= 0x88 ? rem : 0x88;
-        func_01ffa724(0x1000 - FX_Mul(FX_Inv(nStep, 0x88), 0x300), (Vec3 *)(state + 5), (Vec3 *)(state + 5));
+        func_01ffa724(0x1000 - FX_Mul(FX_Div(nStep, 0x88), 0x300), (Vec3 *)(state + 5), (Vec3 *)(state + 5));
     }
     if ((((struct hw60 *)(*state + 0x60))->lo & 1) == 0) {
         return;

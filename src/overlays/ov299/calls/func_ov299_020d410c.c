@@ -5,7 +5,7 @@ extern int func_01ff8d18(VecFx32 *out, VecFx32 *in);
 extern int func_020050b4(int x, int z);
 /* The symbol named FX_Inv at 0x01ff8a04 forwards r0 AND r1 to FX_DivAsync: it is
    the SDK's FX_Div(numer, denom). Declared with both parameters for that reason. */
-extern int FX_Inv(int numer, int denom);
+extern int FX_Div(int numer, int denom);
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
@@ -27,7 +27,7 @@ void func_ov299_020d410c(struct State *self, VecFx32 *target, int value) {
     VEC_Subtract(target, self->pos, &delta);
     mag = func_01ff8d18(&delta, &delta);
     self->angle28 = func_020050b4(delta.x, delta.z);
-    clamped = FX_Inv(mag, 0xc8000);
+    clamped = FX_Div(mag, 0xc8000);
     if (clamped > 0x1000) {
         clamped = 0x1000;
     } else if (clamped < 0) {

@@ -49,10 +49,8 @@ extern void MI_DmaCopy32Async(u32 dmaNo, const void *src, void *dest, u32 size, 
 extern void MIi_CpuCopy32(const void *src, void *dest, u32 size);
 #define MI_CpuCopy32 MIi_CpuCopy32
 /* This SDK names the bank-release helpers GX_DisableBankFor*; 4.x calls them GX_ResetBankFor*. */
-extern GXVRamBGExtPltt GX_DisableBankForBGExtPltt(void);
-#define GX_ResetBankForBGExtPltt GX_DisableBankForBGExtPltt
-extern GXVRamOBJExtPltt GX_DisableBankForOBJExtPltt(void);
-#define GX_ResetBankForOBJExtPltt GX_DisableBankForOBJExtPltt
+extern GXVRamBGExtPltt GX_ResetBankForBGExtPltt(void);
+extern GXVRamOBJExtPltt GX_ResetBankForOBJExtPltt(void);
 /* Real inline functions, as in the SDK headers: the value they return stays a variable (`ptr`
  * lands in ip and feeds both branches) where a macro constant would fold into each add. */
 static inline void *G2_GetOBJCharPtr(void) { return (void *)HW_OBJ_VRAM; }

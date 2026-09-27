@@ -9,7 +9,7 @@ typedef struct { int x, y, z; } Vec3;
 struct bf { unsigned b : 8; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void func_ov107_020c9264(int actor, int pose, int loop);
 extern int func_02023eb4(int bound);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
@@ -26,7 +26,7 @@ void func_ov181_020cd614(int node)
     int idx2;
 
     state[7] += *(int *)(*(int *)node + 0x2c);
-    *(int *)(*state + 0x394) = 0x1000 - FX_Inv(state[7], 0x555);
+    *(int *)(*state + 0x394) = 0x1000 - FX_Div(state[7], 0x555);
     if (*(int *)(*state + 0x394) < 0xcc) {
         *(int *)(*state + 0x394) = 0xcc;
     }

@@ -13,7 +13,7 @@ struct Bit0 { unsigned char b0 : 1; };
 extern void func_ov107_020c5af8(int actor, int id, int kind, void *anchor);
 extern void func_ov107_020c9264(int actor, int pose, int flag);
 extern void func_0203c634(int *node, int slot, void *cb);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern const Vec3 data_02041dc8;
 extern void func_ov245_020d1b90(void);
@@ -47,10 +47,10 @@ void func_ov245_020d1950(int *node) {
         }
         rest = *(int *)(node[0] + 0x2c);
         while (rest > 0) {
-            int ratio = FX_Inv(rest <= 0x88 ? rest : 0x88, 0x88);
+            int ratio = FX_Div(rest <= 0x88 ? rest : 0x88, 0x88);
             int t = (int)(((long long)ratio * 0x400 + 0x800) >> 12);
             state[10] = (int)(((long long)state[10] * (0x1000 - t) + 0x800) >> 12);
-            ratio = FX_Inv(rest <= 0x88 ? rest : 0x88, 0x88);
+            ratio = FX_Div(rest <= 0x88 ? rest : 0x88, 0x88);
             t = (int)(((long long)ratio * 0x400 + 0x800) >> 12);
             state[0xb] = (int)(((long long)state[0xb] * (0x1000 - t) + 0x800) >> 12);
             rest -= 0x88;

@@ -27,7 +27,7 @@ extern struct ListNode *func_01fffd70(void *list);
 extern struct ListNode *func_01fffd8c(void *list);
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_01ff8d18(const Vec3 *v, Vec3 *out);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
@@ -56,7 +56,7 @@ void func_ov162_020d038c(int *node)
             actor = *state;
             dist = func_01ff8d18(&dir, &dir) - (*(int *)(obj + 0x80) + *(int *)(actor + 0x80));
             if (dist <= 0xc000) {
-                t = FX_Inv(dist, 0xc000);
+                t = FX_Div(dist, 0xc000);
                 if (t < 0) {
                     t = 0;
                 }

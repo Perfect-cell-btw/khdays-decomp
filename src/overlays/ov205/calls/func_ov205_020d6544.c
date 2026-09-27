@@ -53,7 +53,7 @@ extern void func_ov205_020d6d54(struct Ov204ChargeState *state);
 extern int func_ov107_020cab14(struct Ov204Owner *actor, int mode);
 extern void VEC_Subtract(void *a, void *b, Vec3 *d);
 extern int func_020050b4(int x, int z);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void func_ov107_020c5af8(struct Ov204Owner *owner, int a, int id, Vec3 *at);
 extern s64 func_01ff8a14(int num, int den);
 extern void func_ov205_020d6f4c(struct Ov204ChargeState *state, s64 t, Vec3 *at);
@@ -107,7 +107,7 @@ void func_ov205_020d6544(int *node)
         VEC_Subtract((void *)(state->pTarget + 0x74), state->pPos, &dir);
         state->nTargetYaw = func_020050b4(dir.x, dir.z);
     }
-    rate = FX_Inv(speed, 0x3000);
+    rate = FX_Div(speed, 0x3000);
     if (rate > 0x200) {
         rate = 0x200;
     }

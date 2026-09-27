@@ -9,7 +9,7 @@ typedef struct { int x, y, z; } Vec3;
 
 extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
 extern void func_ov107_020c5af8(int actor, int id, int kind, void *anchor);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern void func_ov212_020cdb1c(int *state, int mode, Vec3 *sphere);
@@ -46,7 +46,7 @@ void func_ov212_020d03d4(int *node)
         *(Vec3 *)(state + 4) = *(Vec3 *)(state + 0xa);
         for (rem = *(int *)(node[0] + 0x2c); rem > 0; rem -= 0x88) {
             step = rem <= 0x88 ? rem : 0x88;
-            func_01ffa724(0x1000 - FX_Mul(FX_Inv(step, 0x88), 0x100), (Vec3 *)(state + 0xa), (Vec3 *)(state + 0xa));
+            func_01ffa724(0x1000 - FX_Mul(FX_Div(step, 0x88), 0x100), (Vec3 *)(state + 0xa), (Vec3 *)(state + 0xa));
         }
         idx = FX_RadToIdx(state[0xd]);
         dir.x = data_0203d210[(idx >> 4) * 2];

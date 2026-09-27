@@ -25,7 +25,7 @@ typedef struct { Vec3 pos; int nRadius; } Sphere;
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern int func_ov107_020c8eb8(int owner, Sphere *sphere, int *hits);
 extern int func_02023eb4(int bound);
 extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
@@ -54,7 +54,7 @@ void func_ov282_020d2350(int *node)
 
     state[0xb] += *(int *)(*node + 0x2c);
     if (state[0xb] >= 0x800 && state[0xb] <= 0xaaa) {
-        t = FX_Inv(state[0xb], 0xaaa);
+        t = FX_Div(state[0xb], 0xaaa);
         if (t > 0x1000) {
             t = 0x1000;
         }

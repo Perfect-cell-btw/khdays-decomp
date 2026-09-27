@@ -397,8 +397,7 @@ extern void FS_InitFile(FSFile *p_file);
 extern BOOL FS_CloseFile(FSFile *p_file);
 extern BOOL FS_OpenFileDirect(FSFile *p_file, FSArchive *p_arc, u32 image_top, u32 image_bottom, u32 file_index);
 extern BOOL FS_OpenFileFast(FSFile *p_file, FSFileID file_id);
-extern int OS_UnlockByWord_0x0200ae4c(FSFile *p_file, void *dst, s32 len);   /* FS_ReadFile */
-#define FS_ReadFile OS_UnlockByWord_0x0200ae4c
+extern int FS_ReadFile(FSFile *p_file, void *dst, s32 len);   /* FS_ReadFile */
 extern BOOL FS_WaitAsync(FSFile *p_file);
 extern FSArchive *FS_FindArchive(const char *name, int name_len);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);

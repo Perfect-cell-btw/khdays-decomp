@@ -6,7 +6,7 @@ typedef struct { int q[4]; } Quat;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_0203ca50(void *pose, int x, int y, int z);
 extern void func_0202ed60(Quat *out, const Vec3 *from, const Vec3 *to);
 extern void func_0203c9d0(void *pose, Quat *q);
@@ -25,7 +25,7 @@ void func_ov223_020d4974(int *node)
     }
     nScale = FX_MUL(state[0x10], 0x2000);
     owner = (char *)*state;
-    func_0203ca50(owner + 0xa0, nScale, FX_Inv(0x10000, 0x733), nScale);
+    func_0203ca50(owner + 0xa0, nScale, FX_Div(0x10000, 0x733), nScale);
     func_0202ed60(&q, &data_02042240, (Vec3 *)(state + 8));
     func_0203c9d0((void *)(*state + 0xa0), &q);
 }

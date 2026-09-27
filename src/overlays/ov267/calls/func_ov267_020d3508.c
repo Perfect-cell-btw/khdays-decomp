@@ -17,7 +17,7 @@ extern void func_0202b450(int node, Vec3 *pos);
 extern void func_ov022_020ad8e0(int actor, int a);
 extern void func_ov267_020d2020(int *state);
 extern void func_0203c634(int *node, int slot, void *cb);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 
 static inline int FX_Mul(int a, int b)
 {
@@ -81,6 +81,6 @@ void func_ov267_020d3508(int *node)
 decay:
     for (rem = *(int *)(node[0] + 0x2c); rem > 0; rem -= 0x88) {
         step = rem <= 0x88 ? rem : 0x88;
-        *(int *)(*state + 0x57c) = FX_Mul(*(int *)(*state + 0x57c), 0x1000 - FX_Mul(FX_Inv(step, 0x88), 0x140));
+        *(int *)(*state + 0x57c) = FX_Mul(*(int *)(*state + 0x57c), 0x1000 - FX_Mul(FX_Div(step, 0x88), 0x140));
     }
 }

@@ -77,7 +77,7 @@ extern void func_0202e8ec(unsigned int *p, int a);
 extern void func_0202ea14(int p, int a);
 extern void func_0202ea1c(int p, int a);
 extern void GX_SetBankForTex(int a);
-extern void GX_BeginLoadOBJExtPltt(int a);
+extern void GX_SetBankForTexPltt(int a);
 extern void GX_SetBankForBG(int a);
 extern void func_02011174(int a, int b);
 extern void func_020056b4(int a, int b, int c);          /* SetDisplayControl(1,0,1) */
@@ -165,7 +165,7 @@ int func_ov003_0204d98c(int param_1) {
     func_0202ea14((int)(root + 0x22), 1);
     func_0202ea1c((int)(root + 0x22), 1);
     GX_SetBankForTex(3);
-    GX_BeginLoadOBJExtPltt(0x20);
+    GX_SetBankForTexPltt(0x20);
     GX_SetBankForBG(0x10);
     func_02011174(0x4000, 1);
     func_020056b4(1, 0, 1);

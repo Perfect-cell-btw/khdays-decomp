@@ -1,6 +1,6 @@
 extern void DC_StoreRange(void *addr, unsigned size);
-extern void SNDi_UnlockMutex_0x020084f4(void);
-extern void SNDi_UnlockMutex_0x02008508(void);
+extern void SNDi_LockMutex(void);
+extern void SNDi_UnlockMutex(void);
 
 struct Node {
     char pad0[4];
@@ -26,7 +26,7 @@ void func_02008f44(struct Mgr *mgr) {
     struct Node *p;
     struct Node *q;
 
-    SNDi_UnlockMutex_0x020084f4();
+    SNDi_LockMutex();
     sentinel = (struct Node *)&mgr->list[0];
     for (i = 0; i < 4; i++) {
         node = mgr->list[i].head;
@@ -49,5 +49,5 @@ void func_02008f44(struct Mgr *mgr) {
         }
         sentinel = (struct Node *)((char *)sentinel + 8);
     }
-    SNDi_UnlockMutex_0x02008508();
+    SNDi_UnlockMutex();
 }

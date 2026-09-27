@@ -14,7 +14,7 @@ typedef struct MtxFx44 {
 } MtxFx44;
 
 extern void func_02015ca0(int *px1, int *py1, int *px2, int *py2);
-extern fx32 FX_Inv(fx32 numerator, fx32 denominator);
+extern fx32 FX_Div(fx32 numerator, fx32 denominator);
 extern const MtxFx44 *func_02015c38(void);
 extern void FX_InvAsync(fx32 value);
 extern fx64c func_01ff8ab0(void);
@@ -39,8 +39,8 @@ int func_020166c4(int px, int py, VecFx32 *pNear, VecFx32 *pFar)
     dx = x2 - x1;
     dy = y2 - y1;
 
-    x = FX_Inv((px - x1) << 12, dx << 12);
-    y = FX_Inv((py + y1 - 191) << 12, -dy << 12);
+    x = FX_Div((px - x1) << 12, dx << 12);
+    y = FX_Div((py + y1 - 191) << 12, -dy << 12);
 
     if (x < 0 || y < 0 || x > 0x1000 || y > 0x1000) {
         rval = -1;

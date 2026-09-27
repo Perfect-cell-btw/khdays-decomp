@@ -29,7 +29,7 @@ extern void GX_BeginLoadTexPltt(void);
 extern void GX_LoadTexPltt(const void *src, unsigned int addr, unsigned int size);
 extern void GX_EndLoadTexPltt(void);
 extern void GX_LoadOBJPltt(const void *src, unsigned int offset, unsigned int size);
-extern void GX_BeginLoadOBJExtPltt_0x02007b64(void);
+extern void GX_BeginLoadOBJExtPltt(void);
 extern void GX_LoadOBJExtPltt(const void *src, unsigned int offset, unsigned int size);
 extern void GX_EndLoadOBJExtPltt(void);
 extern void GXS_LoadOBJPltt(const void *src, unsigned int offset, unsigned int size);
@@ -47,7 +47,7 @@ void func_020121c0(PlttUpload *desc, int addr, int slot, int *out)
     switch (slot) {
     case 1:
         if (desc->dwUseExt != 0) {
-            GX_BeginLoadOBJExtPltt_0x02007b64();
+            GX_BeginLoadOBJExtPltt();
             GX_LoadOBJExtPltt(data, addr, size);
             GX_EndLoadOBJExtPltt();
         } else {

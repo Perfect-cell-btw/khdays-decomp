@@ -33,7 +33,7 @@ typedef struct DispObj {
 extern void MTX_Rot22_(MtxFx22 *pDst, fx32 sinVal, fx32 cosVal);
 extern void MI_CpuCopy8(const void *src, void *dest, u32 size);
 extern void MTX_ScaleApply22(const MtxFx22 *src, MtxFx22 *dst, fx32 x, fx32 y);
-extern fx32 FX_Inv_0x01ff8a40(fx32 v);
+extern fx32 FX_Inv(fx32 v);
 extern int func_020319fc(void *base, MtxFx22 *pMtx);
 extern u16 func_020124e0(GXOamAttr *pDstOams, u16 numDstOam, const NNSG2dCellData *pCell,
                          const MtxFx22 *pMtxSR, const NNSG2dFVec2 *pBaseTrans, u16 affineIndex,
@@ -71,7 +71,7 @@ void func_02032078(void *base, DispObj *obj)
         MTX_Rot22_(&mtxSR, obj->rotSin, obj->rotCos);
         MI_CpuCopy8(&mtxSR, &mtxInv, sizeof(MtxFx22));
         MTX_ScaleApply22(&mtxSR, &mtxSR, sx, sy);
-        MTX_ScaleApply22(&mtxInv, &mtxInv, FX_Inv_0x01ff8a40(sx), FX_Inv_0x01ff8a40(sy));
+        MTX_ScaleApply22(&mtxInv, &mtxInv, FX_Inv(sx), FX_Inv(sy));
         affineIndex = func_020319fc(base, &mtxInv);
         pMtx = &mtxSR;
     } else {

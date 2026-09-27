@@ -36,7 +36,7 @@ typedef struct Ov023Actor {
 
 extern void VEC_Subtract(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
 extern int  VEC_Mag(const VecFx32 *pVec);
-extern int  FX_Inv(int nNumerator, int nDenominator);              /* the SDK divide (FX_Inv in the symbol table) */
+extern int  FX_Div(int nNumerator, int nDenominator);              /* the SDK divide (FX_Inv in the symbol table) */
 extern void func_ov023_02088da0(Ov023Actor *pActor, VecFx32 *pVelocity); /* Ov023_ActorSetVelocity */
 extern int  func_ov023_02087cec(Ov023Actor *pActor, VecFx32 *pPos, VecFx32 *pStep, int nScale); /* Ov023_ActorWithinReach */
 extern void func_ov023_02089174(Ov023Actor *pActor);               /* Ov023_ResetActorModel */
@@ -65,11 +65,11 @@ void func_ov023_02087d64(Ov023Actor *pActor)
     if (nDistance < nStep) {
         nStep = nDistance;
     }
-    vDelta.x = FX_Inv((int)(((long long)vDelta.x * nStep + 0x800) >> 12), nDistance);
+    vDelta.x = FX_Div((int)(((long long)vDelta.x * nStep + 0x800) >> 12), nDistance);
     if (!(pActor->nFlags & 0x10)) {
-        vDelta.y = FX_Inv((int)(((long long)vDelta.y * nStep + 0x800) >> 12), nDistance);
+        vDelta.y = FX_Div((int)(((long long)vDelta.y * nStep + 0x800) >> 12), nDistance);
     }
-    vDelta.z = FX_Inv((int)(((long long)vDelta.z * nStep + 0x800) >> 12), nDistance);
+    vDelta.z = FX_Div((int)(((long long)vDelta.z * nStep + 0x800) >> 12), nDistance);
     func_ov023_02088da0(pActor, &vDelta);
     if (pActor->nWalkMotion != -1) {
         if (func_ov023_02087cec(pActor, &vPos, &vDelta, pActor->nPeriod << 12) && (pActor->nFlags & 0x80)) {

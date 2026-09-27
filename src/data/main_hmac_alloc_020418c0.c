@@ -28,8 +28,8 @@ typedef struct NNSFndAllocatorFunc {
 #define MATH_SHA1_DIGEST_SIZE 20
 
 extern void *func_02010d70(void *allocator, u32 size);
-extern void AllocatorFreeForExpHeap_0x02010d90(void *allocator, void *memBlock);
-extern void *AllocatorAllocForExpHeap_0x02010d58(void *allocator, u32 size);
+extern void AllocatorFreeForUnitHeap(void *allocator, void *memBlock);
+extern void *AllocatorAllocForFrmHeap(void *allocator, u32 size);
 extern void func_02010d6c(void *allocator, void *memBlock);
 
 const struct {
@@ -42,7 +42,7 @@ const struct {
         { MATH_SHA1_DIGEST_SIZE, 512 / 8 },
     },
     {
-        { func_02010d70, AllocatorFreeForExpHeap_0x02010d90 },
-        { AllocatorAllocForExpHeap_0x02010d58, func_02010d6c },
+        { func_02010d70, AllocatorFreeForUnitHeap },
+        { AllocatorAllocForFrmHeap, func_02010d6c },
     },
 };

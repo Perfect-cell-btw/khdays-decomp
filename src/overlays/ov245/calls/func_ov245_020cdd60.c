@@ -6,7 +6,7 @@
 typedef struct { int x, y, z; } Vec3;
 
 extern int func_ov245_020cce48(int actor);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern void func_ov245_020cce28(int actor);
@@ -22,7 +22,7 @@ void func_ov245_020cdd60(int *node) {
         state[5] = state[8];
         rest = *(int *)(node[0] + 0x2c);
         while (rest > 0) {
-            int ratio = FX_Inv(rest <= 0x88 ? rest : 0x88, 0x88);
+            int ratio = FX_Div(rest <= 0x88 ? rest : 0x88, 0x88);
             int t = (int)(((long long)ratio * 0x80 + 0x800) >> 12);
             state[8] = (int)(((long long)state[8] * (0x1000 - t) + 0x800) >> 12);
             rest -= 0x88;

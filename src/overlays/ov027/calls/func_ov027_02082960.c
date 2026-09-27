@@ -30,9 +30,9 @@ extern void func_0201e374(int nBrightness);                         /* SetMaster
 extern void func_0201e3cc(int nBrightness);                         /* SetMasterBrightnessSub */
 extern void GX_SetBankForLCDC(int nBanks);
 extern void MIi_CpuClearFast(u32 nValue, void *pDst, u32 nSize);
-extern void SNDi_UnlockMutex_0x020065d4(void);
+extern void GX_DisableBankForLCDC(void);
 extern void GX_SetBankForTex(int nBank);
-extern void GX_BeginLoadOBJExtPltt(int nOffset);
+extern void GX_SetBankForTexPltt(int nOffset);
 extern void GX_SetBankForBG(int nBank);
 extern void GX_SetBankForBGExtPltt(int nBank);
 extern void func_020056b4(int nMode, int nBgMode, int nBg0Mode);    /* GX_SetGraphicsMode */
@@ -54,9 +54,9 @@ void func_ov027_02082960(void)
     func_0201e3cc((data_0204c240 & 4) ? -16 : 16);
     GX_SetBankForLCDC(0x1ff);
     MIi_CpuClearFast(0, (void *)0x06800000, 0xa4000);
-    SNDi_UnlockMutex_0x020065d4();
+    GX_DisableBankForLCDC();
     GX_SetBankForTex(7);
-    GX_BeginLoadOBJExtPltt(0x60);
+    GX_SetBankForTexPltt(0x60);
     GX_SetBankForBG(8);
     GX_SetBankForBGExtPltt(0);
     func_020056b4(1, 0, 1);

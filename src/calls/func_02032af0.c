@@ -18,7 +18,7 @@ extern unsigned char *data_0204c234;
 extern void VEC_Subtract(int *a, int *b, int *out);
 extern int VEC_Mag(int *v);
 extern int VEC_DotProduct(int *a, int *b);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_0201a1a0(int *ch, int mask, int val);
 extern void func_0201a170(int *ch, int mask, int val);
 
@@ -39,7 +39,7 @@ void func_02032af0(int param_1)
             if (dist <= near) {
                 vol = *(short *)(base + 0xb46f4);
             } else if (dist < *(int *)(base + 0xb46f0)) {
-                int t = FX_Inv(dist - near, *(int *)(base + 0xb46f0) - near);
+                int t = FX_Div(dist - near, *(int *)(base + 0xb46f0) - near);
                 vol = (0x1000 - t) * (int)*(short *)(base + 0xb46f4) >> 0xc;
             } else {
                 vol = 0;
@@ -49,7 +49,7 @@ void func_02032af0(int param_1)
         }
         {
             int dot = VEC_DotProduct(delta, (int *)(base + 0xb44d8));
-            int p = FX_Inv(dot, dist);
+            int p = FX_Div(dot, dist);
             func_0201a1a0((int *)(param_1 + 0x1c), 0xffff, (p << 7) >> 0xc);
         }
     }

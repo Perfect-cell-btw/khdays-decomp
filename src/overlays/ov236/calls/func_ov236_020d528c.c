@@ -15,7 +15,7 @@ static inline int FX_Mul(int a, int b) {
     return (int)(((long long)a * b + 0x800) >> 12);
 }
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
@@ -41,7 +41,7 @@ void func_ov236_020d528c(int *node) {
     state[5] += *(int *)(node[0] + 0x2c);
     state[0x1e] += *(int *)(node[0] + 0x2c);
     mountPos = *(Vec3 *)(*(int *)(*state + 0x384) + 0xb0);
-    t = FX_Inv(state[5], 0x1000);
+    t = FX_Div(state[5], 0x1000);
     t2 = FX_Mul(t, t);
     t3 = FX_Mul(t2, t);
     t2x3 = 3 * t2;

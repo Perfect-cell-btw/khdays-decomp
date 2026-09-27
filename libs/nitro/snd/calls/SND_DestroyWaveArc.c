@@ -1,6 +1,6 @@
 /* Unlinks and clears the whole wave-archive chain under the sound mutex. */
-extern void SNDi_UnlockMutex_0x020084f4(void);
-extern void SNDi_UnlockMutex_0x02008508(void);
+extern void SNDi_LockMutex(void);
+extern void SNDi_UnlockMutex(void);
 extern void DC_StoreRange(void *p, unsigned int len);
 
 void SND_DestroyWaveArc(int **owner) {
@@ -8,7 +8,7 @@ void SND_DestroyWaveArc(int **owner) {
     int zero;
     int len;
     int *next;
-    SNDi_UnlockMutex_0x020084f4();
+    SNDi_LockMutex();
     node = (int *)owner[6];
     if (node != 0) {
         zero = 0;
@@ -21,5 +21,5 @@ void SND_DestroyWaveArc(int **owner) {
             node = next;
         } while (next != 0);
     }
-    SNDi_UnlockMutex_0x02008508();
+    SNDi_UnlockMutex();
 }

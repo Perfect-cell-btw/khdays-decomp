@@ -38,7 +38,7 @@ typedef struct GameState {
 
 extern Ov008ParamTable *data_ov008_02090fb0;
 extern GameState *data_0204be18;
-extern int FX_Inv(int nNumer, int nDenom);                        /* fx32 divide */
+extern int FX_Div(int nNumer, int nDenom);                        /* fx32 divide */
 
 u32 func_ov008_02089dc4(int nIndex)
 {
@@ -48,7 +48,7 @@ u32 func_ov008_02089dc4(int nIndex)
     s64 nFactor;
 
     pRec = data_ov008_02090fb0->apSorted[nIndex];
-    nFactor = (FX_Inv(data_0204be18->aLevel[pRec->nLevelField] << FX32_SHIFT, pRec->nDivisor << FX32_SHIFT) & FACTOR_MASK) + FX32_ONE;
+    nFactor = (FX_Div(data_0204be18->aLevel[pRec->nLevelField] << FX32_SHIFT, pRec->nDivisor << FX32_SHIFT) & FACTOR_MASK) + FX32_ONE;
     pRec = data_ov008_02090fb0->apSorted[nIndex];
     nAcc = nFactor;
     for (nPow = (pRec->nExponent >> FX32_SHIFT) - 1; nPow > 0; nPow--) {

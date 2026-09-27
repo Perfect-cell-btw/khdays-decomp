@@ -28,7 +28,7 @@ extern void *func_0203d15c(int size);
 extern void func_ov107_020c9074(void *self, void *obj);
 extern void *func_ov232_020d2d64(void *self);
 extern void func_ov107_020c92b0(void *self, int a, int b, const VecFx32 *v, int e);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void *func_01fffca8(void *list, int size, int count);
 extern void *func_ov107_020c319c(const Placement *placement);
 extern void *func_ov107_020c32b8(const Obb *box);
@@ -130,9 +130,9 @@ void func_ov232_020cfc08(char *self)
     box.ax = data_02042270;
     box.ay = data_02042264;
     box.az = data_02042258;
-    box.extent[0] = (int)(((long long)FX_Inv(0x1119, 0x1119) * 0x800 + 0x800) >> 12);
+    box.extent[0] = (int)(((long long)FX_Div(0x1119, 0x1119) * 0x800 + 0x800) >> 12);
     box.extent[1] = 0x400;
-    box.extent[2] = (int)(((long long)FX_Inv(0x1119, 0x1119) * 0x800 + 0x800) >> 12);
+    box.extent[2] = (int)(((long long)FX_Div(0x1119, 0x1119) * 0x800 + 0x800) >> 12);
     *(void **)(self + 0x3bc) = func_01fffca8(self + 0x22c, 0x10, 100);
     **(void ***)(self + 0x3bc) = func_ov107_020c319c(&place);
     for (i = 0; i < 3; i++) {

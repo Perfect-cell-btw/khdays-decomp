@@ -130,7 +130,7 @@ extern struct PanelThresholds data_0204c254;       /* g_ov002PanelThresholds */
 extern int func_020358f4(int nId, int nRule);                                   /* Slot_EvalPackedParam */
 extern int func_ov022_0209bd04(struct Actor *pActor);                           /* Ov022_GetChargeKind */
 extern int func_ov022_020ad7b0(struct Actor *pActor);                           /* Ov022_IsShielded */
-extern int FX_Inv(int nNumerator, int nDenominator);
+extern int FX_Div(int nNumerator, int nDenominator);
 extern int func_0203581c(int nId, int nKind);                                   /* Load2DArrayU8_c690 */
 extern int func_020235d0(int nField, int nWidth);                               /* GameState_GetField */
 extern int func_ov022_02095524(u32 *pRun);                                      /* ov022_IsState9Or6WithFlag200 */
@@ -201,11 +201,11 @@ int func_ov022_020a2424(struct Actor *pActor, struct HitRequest *pReq)
         if (nDivisor < ONE) {
             nDivisor = ONE;
         }
-        nResult = FX_Inv(FxMul(nDamage, DAMAGE_DOUBLE) + DAMAGE_BIAS, nDivisor);
+        nResult = FX_Div(FxMul(nDamage, DAMAGE_DOUBLE) + DAMAGE_BIAS, nDivisor);
     }
     if ((pReq->nFlags & REQ_PERCENT) != 0) {
         nResist = 100 - func_0203581c(pActor->nId, pReq->nKind);
-        nPart = FX_Inv(pReq->nDamage << 12, PERCENT_ONE); nPart *= nResist;
+        nPart = FX_Div(pReq->nDamage << 12, PERCENT_ONE); nPart *= nResist;
         if (bDrain) {
             if (data_0204c248.nKind == 1) {
                 nPart = FxMul(nPart, DRAIN_PART_A);

@@ -109,7 +109,7 @@ typedef struct { MsgHeader hdr; u8 amount; Fx24 pos[3]; } ImpactMsg;
 extern int func_ov107_020c5af8(struct Obj *, int, int, const FxVec *);
 extern int func_ov107_020c89e8(struct Obj *, struct HitPacket *);
 extern struct Manager *func_ov107_020c9848(void);
-extern int FX_Inv_0x01ff8a40(int);
+extern int FX_Inv(int);
 extern void func_01ffa724(int, VecFx32 *, VecFx32 *);
 extern u32 func_02023eb4(u32);
 extern int func_02020400(int, int);
@@ -202,7 +202,7 @@ int func_ov107_020c5cfc(struct Obj *obj, struct HitSource *source, struct HitPac
     if (obj->field_1d0 != 0) {
         VecFx32 savedNormal;
         savedNormal = packet->normal;
-        func_01ffa724(FX_Inv_0x01ff8a40(func_ov107_020c9848()->field_40),
+        func_01ffa724(FX_Inv(func_ov107_020c9848()->field_40),
                       &packet->normal, &packet->normal);
         if (obj->field_1d0(obj, source, packet) != 0) {
             packet->normal = savedNormal;

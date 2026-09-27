@@ -4,7 +4,7 @@ typedef unsigned int u32;
 
 extern void func_0201e1d0(void);
 extern void GX_SetBankForTex(int bank);
-extern void GX_BeginLoadOBJExtPltt(int offset);
+extern void GX_SetBankForTexPltt(int offset);
 extern void GX_SetBankForBG(int bank);
 extern void GX_SetBankForOBJ(int bank);
 extern void GX_SetBankForSubBG(int bank);
@@ -45,7 +45,7 @@ void func_ov008_0205d324(void)
     *REG_POWCNT1 &= ~0x8000;
 
     GX_SetBankForTex(1);
-    GX_BeginLoadOBJExtPltt(0x60);
+    GX_SetBankForTexPltt(0x60);
     GX_SetBankForBG(2);
     GX_SetBankForOBJ(0x10);
     GX_SetBankForSubBG(4);

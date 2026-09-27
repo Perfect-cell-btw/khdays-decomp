@@ -1,4 +1,4 @@
-extern int FX_Inv();
+extern int FX_Div();
 extern int func_02023eb4();
 extern int func_0203c634();
 
@@ -10,7 +10,7 @@ void func_ov250_020d08fc(int *s)
     int *c;
 
     *(int *)((char *)b + 0x1c) = *(int *)((char *)b + 0x1c) + *(int *)((char *)a + 0x2c);
-    r = FX_Inv(*(int *)((char *)b + 0x1c), 0x555);
+    r = FX_Div(*(int *)((char *)b + 0x1c), 0x555);
     if (r > 0x1000)
         r = 0x1000;
     *(int *)((char *)b[0] + 0x394) = r;

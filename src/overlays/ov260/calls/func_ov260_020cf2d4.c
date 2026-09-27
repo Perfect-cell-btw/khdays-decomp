@@ -7,7 +7,7 @@
 typedef unsigned char u8;
 typedef struct { int x, y, z; } Vec3;
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, Vec3 *v, Vec3 *d);
 extern void func_ov107_020c9264(int actor, int pose, int loop);
 extern int func_ov107_020c9ee8(int part, int motion, int mode);
@@ -31,7 +31,7 @@ void func_ov260_020cf2d4(int *node)
     *(Vec3 *)(state + 8) = *vel;
     state[9] = *(int *)(*(int *)(*state + 0x428) + 0x30);
     for (left = *(int *)(node[0] + 0x2c); left > 0; left -= 0x88) {
-        func_01ffa724(0x1000 - FX_MUL(FX_Inv(left <= 0x88 ? left : 0x88, 0x88), 0x11f), vel, vel);
+        func_01ffa724(0x1000 - FX_MUL(FX_Div(left <= 0x88 ? left : 0x88, 0x88), 0x11f), vel, vel);
     }
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;

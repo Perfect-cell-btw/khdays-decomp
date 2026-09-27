@@ -51,7 +51,7 @@ extern int func_02004484(void *state, void *src, int len);
 extern void DC_FlushAll(void);
 extern void DC_FlushRange(void *addr, u32 len);
 extern void *func_020236f8(u32 size, int align, int **heapPP);
-extern void OS_UnlockByWord_0x0200ae4c(FSFile *file, void *dst, u32 len);
+extern void FS_ReadFile(FSFile *file, void *dst, u32 len);
 extern void FS_CloseFile(FSFile *file);
 
 static inline int toupper(int c)
@@ -110,7 +110,7 @@ void *func_0201ef9c(char *name, u32 kind)
         size = file.bottom - file.top;
         buf = func_020236f8(size, 0x20, (int **)data_0204bbfc[5]);
         if (buf != 0) {
-            OS_UnlockByWord_0x0200ae4c(&file, buf, size);
+            FS_ReadFile(&file, buf, size);
         }
     }
     data_0204bbfc[5] = 0;

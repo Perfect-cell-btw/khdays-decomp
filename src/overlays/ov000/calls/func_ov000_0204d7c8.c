@@ -21,7 +21,7 @@ extern void  func_ov000_0204d72c(void *heap);
 extern void  func_0201e374(int);
 extern void  func_0201e3cc(int);
 extern void  GX_SetBankForTex(int);
-extern void  GX_BeginLoadOBJExtPltt(int);
+extern void  GX_SetBankForTexPltt(int);
 extern void  GX_SetBankForBG(int);
 extern void  GX_SetBankForSubBG(int);
 extern void  GX_SetBankForSubOBJ(int);
@@ -62,7 +62,7 @@ StateFn func_ov000_0204d7c8(int arg) {
         func_0201e3cc(-0x10);
     }
     GX_SetBankForTex(3);
-    GX_BeginLoadOBJExtPltt(0x60);
+    GX_SetBankForTexPltt(0x60);
     GX_SetBankForBG(0x10);
     GX_SetBankForSubBG(4);
     GX_SetBankForSubOBJ(8);

@@ -13,7 +13,7 @@ extern void func_ov204_020d3114(int *state);
 extern int func_ov107_020cab14(int actor, int mode);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int func_020050b4(int x, int z);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void func_ov107_020c9264(int actor, int anim, int flag);
 extern void func_0203c634(int *node, int slot, void *cb);
 extern void func_ov204_020d30e0(int *node);
@@ -35,7 +35,7 @@ void func_ov204_020d2ff4(int *node)
         VEC_Subtract((void *)(state[1] + 0x74), (void *)state[9], &dir);
         state[0xe] = func_020050b4(dir.x, dir.z);
     }
-    rate = FX_Inv(speed, 0x3000);
+    rate = FX_Div(speed, 0x3000);
     if (rate > 0x200) {
         rate = 0x200;
     }

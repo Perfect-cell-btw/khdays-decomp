@@ -43,7 +43,7 @@ static inline int FX_Mul(int a, int b) {
     return (int)(((long long)a * b + 0x800) >> 12);
 }
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
@@ -74,7 +74,7 @@ void func_ov277_020ce09c(int *node)
 
     target = *(Vec3 *)(*(int *)(*(int *)(*state + 0x384) + 0x3bc) + 0x14);
     state[0xb] += *(int *)(node[0] + 0x2c);
-    t = FX_Inv(state[0xb], state[0xc]);
+    t = FX_Div(state[0xb], state[0xc]);
     t2 = FX_Mul(t, t);
     t3 = FX_Mul(t2, t);
     t2x3 = 3 * t2;

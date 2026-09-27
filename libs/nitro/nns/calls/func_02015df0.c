@@ -55,7 +55,7 @@ enum {
 
 extern void MIi_CpuClearFast(u32 data, void *dest, u32 size);
 extern void MIi_CpuCopy32(const void *src, void *dest, u32 size);
-extern fx32 FX_Inv(fx32 numer, fx32 denom);
+extern fx32 FX_Div(fx32 numer, fx32 denom);
 extern void func_02015d80(VecFx32 *v0, const VecFx32 *v1, fx32 ratio, BOOL isV1One);
 extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void func_01ff8d18(const VecFx32 *src, VecFx32 *dst);
@@ -157,7 +157,7 @@ BOOL func_02015df0(NNSG3dJntAnmResult *pResult, const NNSG3dAnmObj *pAnmObj, u32
                         }
 
                         if (sumOfRatio != 0x1000) {
-                            ratio = FX_Inv(p->ratio, sumOfRatio);
+                            ratio = FX_Div(p->ratio, sumOfRatio);
                         } else {
                             ratio = p->ratio;
                         }

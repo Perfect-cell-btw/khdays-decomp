@@ -12,7 +12,7 @@ typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
 extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, Vec3 *v, Vec3 *d);
 extern void func_ov254_020cdbbc(int actor, int side);
 extern void func_ov254_020d5310(int helper);
@@ -36,7 +36,7 @@ void func_ov254_020d0e58(int *node)
     idx = ANG2IDX(state[0xc]);
     MTX_RotY33_(&m, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
     MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x430) + 0x2c), &m, (Vec3 *)(state + 3));
-    func_01ffa724(FX_Inv(state[0x15], 0x14000), (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+    func_01ffa724(FX_Div(state[0x15], 0x14000), (Vec3 *)(state + 3), (Vec3 *)(state + 3));
     if ((*((u8 *)state + 0x70) & 1) == 0 && state[0x11] >= 0xff0) {
         *((u8 *)state + 0x70) |= 1;
         func_ov254_020cdbbc(*state, 1);

@@ -12,7 +12,7 @@ struct Bits17a { unsigned char bit0 : 1, bit1 : 1; };
 struct CollisionResult { int pad00; int pad04; int pad08; int nAlong; };
 
 extern int VEC_Mag(Vec3 *v);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, Vec3 *v, Vec3 *d);
 extern int func_ov227_020d42d8(int *state, Vec3 *pos);
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
@@ -38,7 +38,7 @@ void func_ov227_020d4770(int *node)
 
     if (VEC_Mag((Vec3 *)(state + 3)) < 0x1800) {
         for (rem = *(int *)(node[0] + 0x2c); rem > 0; rem -= 0x88) {
-            func_01ffa724(FX_MUL(FX_Inv(rem <= 0x88 ? rem : 0x88, 0x88), 0xcd) + 0x1000,
+            func_01ffa724(FX_MUL(FX_Div(rem <= 0x88 ? rem : 0x88, 0x88), 0xcd) + 0x1000,
                           (Vec3 *)(state + 3), (Vec3 *)(state + 3));
         }
     }

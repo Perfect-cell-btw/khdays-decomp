@@ -1,7 +1,7 @@
 extern void func_020163cc(void);
 extern void G3X_InitMtxStack(void);
 extern void GX_SetBankForTex(int bank);
-extern void GX_BeginLoadOBJExtPltt(int offset);
+extern void GX_SetBankForTexPltt(int offset);
 extern void GX_SetBankForBG(int bank);
 extern void GX_SetBankForBGExtPltt(int bank);
 extern void func_020056b4(int a, int b, int c);
@@ -21,7 +21,7 @@ void func_ov001_0204cbb4(void) {
     func_020163cc();
     G3X_InitMtxStack();
     GX_SetBankForTex(7);
-    GX_BeginLoadOBJExtPltt(0x60);
+    GX_SetBankForTexPltt(0x60);
     GX_SetBankForBG(0x10);
     GX_SetBankForBGExtPltt(0);
     func_020056b4(1, 0, 1);

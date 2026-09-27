@@ -42,7 +42,7 @@ typedef enum {
     GX_TEXFMT_A5I3       = 6,
     GX_TEXFMT_DIRECT     = 7
 } GXTexFmt;
-fx32 FX_Inv(fx32 numer, fx32 denom);
+fx32 FX_Div(fx32 numer, fx32 denom);
 typedef u32 NNSGfdTexKey;
 inline u32 NNS_GfdGetTexKeyAddr (NNSGfdTexKey memKey)
 {
@@ -177,10 +177,10 @@ void func_02018fe0 (const NNSG3dResTex * pTex, const NNSG3dResName * pTexName, N
                 const s32 h = (s32)(((pData->extraParam) & NNS_G3D_TEXIMAGE_PARAMEX_ORIGH_MASK) >> NNS_G3D_TEXIMAGE_PARAMEX_ORIGH_SHIFT);
 
                 pResult->magW = (w != pResult->origWidth) ?
-                                FX_Inv(w << FX32_SHIFT, pResult->origWidth << FX32_SHIFT) :
+                                FX_Div(w << FX32_SHIFT, pResult->origWidth << FX32_SHIFT) :
                                 FX32_ONE;
                 pResult->magH = (h != pResult->origHeight) ?
-                                FX_Inv(h << FX32_SHIFT, pResult->origHeight << FX32_SHIFT) :
+                                FX_Div(h << FX32_SHIFT, pResult->origHeight << FX32_SHIFT) :
                                 FX32_ONE;
             }
         }

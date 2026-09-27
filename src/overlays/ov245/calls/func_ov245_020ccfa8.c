@@ -19,7 +19,7 @@
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned f : 8; };
 
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void func_0203c634(void *self, int idx, void *cb);
 extern void func_ov245_020cd668(void);
 extern void func_ov245_020cd73c(void);
@@ -38,7 +38,7 @@ void func_ov245_020ccfa8(void *self) {
     signed char slot;
 
     t = ctx[0xf] + 0xf000;
-    ctx[0xe] = FX_Inv(*(int *)(ctx[2] + 8) - t, -0xb000 - t);
+    ctx[0xe] = FX_Div(*(int *)(ctx[2] + 8) - t, -0xb000 - t);
     slot = *(signed char *)(*ctx + 0x1c7);
     if (slot == -1) {
         return;

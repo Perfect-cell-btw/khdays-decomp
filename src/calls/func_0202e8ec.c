@@ -3,7 +3,7 @@ extern int func_02010f08(void);
 extern int func_02010e80(int a, int b);
 extern int GXS_SetGraphicsMode(int);
 extern void MIi_CpuClearFast(int value, void *dst, int size);
-extern int SNDi_UnlockMutex_0x020065d4(void);
+extern int GX_DisableBankForLCDC(void);
 extern int func_0202e844(void);
 extern int func_02023c30(int a);
 
@@ -24,7 +24,7 @@ int func_0202e8ec(int *self, int arg) {
     func_02010e80(2, 1);
     GXS_SetGraphicsMode(3);
     MIi_CpuClearFast(0, (void *)0x06800000, 0xa4000);
-    SNDi_UnlockMutex_0x020065d4();
+    GX_DisableBankForLCDC();
     func_0202e844();
     func_02023c30(2);
     self[1] = 1;

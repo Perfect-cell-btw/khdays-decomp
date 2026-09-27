@@ -24,9 +24,9 @@ typedef struct Ov006Globals {
 #define SCENE_POLL_IDLE 4
 
 extern Ov006Globals data_ov008_02090f24;
-extern int OS_IsTickAvailable(void);
+extern int func_01ff8128(void);
 extern u16 func_01fff988(void);                    /* recorded session id */
-extern u16 OS_IsTickAvailable_0x01ff8138(void);    /* current session id */
+extern u16 func_01ff8138(void);    /* current session id */
 extern int func_02001030(void);                    /* Game_PollSceneAlive */
 
 int func_ov008_0207b0a0(void)
@@ -37,9 +37,9 @@ int func_ov008_0207b0a0(void)
     if (pCtx == 0 || pCtx->nTransferBusy != 0) {
         return 0;
     }
-    if (OS_IsTickAvailable() == 0) {
+    if (func_01ff8128() == 0) {
         nRecorded = func_01fff988();
-        if (nRecorded != OS_IsTickAvailable_0x01ff8138()) {
+        if (nRecorded != func_01ff8138()) {
             data_ov008_02090f24.context->bDirty = 1;
             return 1;
         }

@@ -112,8 +112,7 @@ extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
 extern OSIrqMask OS_DisableIrqMask(OSIrqMask intr);
 extern OSIrqMask OS_SetIrqMask(OSIrqMask intr);
-extern BOOL OS_IsTickAvailable_0x0200315c(void);   /* OS_IsTickAvailable */
-#define OS_IsTickAvailable OS_IsTickAvailable_0x0200315c
+extern BOOL OS_IsTickAvailable(void);
 extern void OS_Halt(void);
 extern void PM_ForceToPowerOff(void);
 extern void func_0200386c(u32 cycles);   /* OS_SpinWait */

@@ -11,7 +11,7 @@ typedef struct { u8 b0 : 1; } Bit0;
 extern int func_01ff8d18(const Vec3 *v, Vec3 *out);
 extern void func_0202ed60(Quat *out, const Vec3 *from, const Vec3 *to);
 extern void func_0203c9d0(void *srt, const Quat *rot);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern const Vec3 data_02042258;
 extern const Vec3 data_02041dc8;
 
@@ -50,7 +50,7 @@ void func_ov218_020ce5ac(int *node)
         return;
     }
     for (remaining = *(int *)(node[0] + 0x2c); remaining > 0; remaining -= 0x88) {
-        state[0xe] = FX_MUL(state[0xe], 0x1000 - FX_MUL(FX_Inv(remaining <= 0x88 ? remaining : 0x88, 0x88), 0x180));
+        state[0xe] = FX_MUL(state[0xe], 0x1000 - FX_MUL(FX_Div(remaining <= 0x88 ? remaining : 0x88, 0x88), 0x180));
     }
     state[5] = state[0xe];
 }

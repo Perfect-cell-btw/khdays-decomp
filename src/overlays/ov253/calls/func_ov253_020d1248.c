@@ -5,7 +5,7 @@
  * the +0x24 hop count becomes 2 and the node moves to 020d139c. */
 typedef struct { int x, y, z; } Vec3;
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_01ff8d18(const Vec3 *v, Vec3 *out);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
@@ -29,7 +29,7 @@ void func_ov253_020d1248(int *node) {
     *(Vec3 *)(state + 2) = *(Vec3 *)(*(int *)(*state + 0x39c) + 0x14);
     *(Vec3 *)(state + 5) = *(Vec3 *)(*(int *)(*state + 0x398) + 0x14);
     state[8] += *(int *)(node[0] + 0x2c);
-    t = FX_Inv(state[8], 0x555);
+    t = FX_Div(state[8], 0x555);
     if (t > 0x1000) {
         t = 0x1000;
     }

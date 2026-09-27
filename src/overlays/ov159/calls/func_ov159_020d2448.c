@@ -42,7 +42,7 @@ typedef struct {
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern int func_01ff8d18(const VecFx32 *v, VecFx32 *unit);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern int func_02023eb4();
 extern int func_020050b4(int x, int z);
 extern VecFx32 data_02042258;
@@ -76,7 +76,7 @@ void func_ov159_020d2448(int *ctx, VecFx32 *out) {
         reach = 0xf000;
     }
 
-    t = FX_Inv(gap, reach) * 2 - 0x1000;
+    t = FX_Div(gap, reach) * 2 - 0x1000;
     if (t < -0x1000) {
         t = -0x1000;
     }

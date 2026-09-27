@@ -5,7 +5,7 @@ extern void VEC_Subtract(struct vec3 *a, struct vec3 *b, struct vec3 *out);
 extern void func_01ff8d18(struct vec3 *dst, struct vec3 *src);
 extern void MTX_RotY33_(int *mtx, int a, int b);
 extern void MTX_MultVec33(struct vec3 *a, int *mtx, struct vec3 *out);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern void func_01ffa724(int scale, struct vec3 *src, struct vec3 *dst);
 extern void VEC_MultAdd(int t, struct vec3 *a, struct vec3 *b, struct vec3 *out);
 extern int func_02023c40(void);
@@ -27,7 +27,7 @@ void func_ov070_020b99e8(struct vec3 *param_1, int param_2, int param_3, int par
     MTX_RotY33_(f.mtx, 0x1000, 0);
     MTX_MultVec33(&f.v24, f.mtx, &f.v30);
     if (*(int *)(param_3 + 4) < 0x6000) {
-        int r = FX_Inv((*(int *)(param_3 + 4) / 3) * 3, 0x6000);
+        int r = FX_Div((*(int *)(param_3 + 4) / 3) * 3, 0x6000);
         t = (r / 8) + 0x1000;
     } else {
         t = 0x1000;

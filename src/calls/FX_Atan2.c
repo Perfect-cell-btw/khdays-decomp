@@ -14,7 +14,7 @@
  * angle directly without the table.
  */
 
-extern int FX_Inv(int numer, int denom);
+extern int FX_Div(int numer, int denom);
 extern const short data_02041314[130];
 
 unsigned short FX_Atan2(int x, int y)
@@ -105,7 +105,7 @@ unsigned short FX_Atan2(int x, int y)
         return 0;
     }
     if (add) {
-        return (unsigned short)(base + data_02041314[FX_Inv(numer, denom) >> 5]);
+        return (unsigned short)(base + data_02041314[FX_Div(numer, denom) >> 5]);
     }
-    return (unsigned short)(base - data_02041314[FX_Inv(numer, denom) >> 5]);
+    return (unsigned short)(base - data_02041314[FX_Div(numer, denom) >> 5]);
 }

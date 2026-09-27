@@ -2,7 +2,7 @@ typedef unsigned short u16;
 typedef unsigned int u32;
 
 extern void GX_SetBankForTex(int bank);
-extern void GX_BeginLoadOBJExtPltt(int offset);
+extern void GX_SetBankForTexPltt(int offset);
 extern void func_02010f08(void);
 extern void func_02010e80(int mode, int enable);
 extern void func_02011134(void *matrixState);
@@ -20,7 +20,7 @@ void func_ov022_02082960(void)
     u32 matrixState[10];
 
     GX_SetBankForTex(0xf);
-    GX_BeginLoadOBJExtPltt(0x60);
+    GX_SetBankForTexPltt(0x60);
 
     mask = 0xffffcffd;
     *REG_DISP3DCNT = *REG_DISP3DCNT & mask;

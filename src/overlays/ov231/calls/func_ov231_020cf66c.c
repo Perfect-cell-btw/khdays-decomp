@@ -95,7 +95,7 @@ extern void  func_01ffa724(int nScale, const Vec3 *pSrc, Vec3 *pDst);   /* Scale
 extern long long func_02020400(int nNum, int nDen);                    /* _s32_div_f */
 extern void  MTX_RotY33_(Mtx33 *pMtx, fx32 nSin, fx32 nCos);
 extern void  MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
-extern int   FX_Inv(int nNumer, int nDenom);                            /* fx32 divide */
+extern int   FX_Div(int nNumer, int nDenom);                            /* fx32 divide */
 extern int   func_ov107_020c8eb8(int hWorld, Vec4 *pVolume, HitEntry **apHit);
 extern int   func_ov107_020ca918(HitEntry *pHit, ChargeActor *pSelf, int hWorld, int nMode, Vec3 *pDir, int nFlag);
 extern void  func_ov107_020c0b90(int hWorld, int nCmd, Vec3 vAt, int nFlag);
@@ -149,7 +149,7 @@ void func_ov231_020cf66c(ChargeNode *pNode)
         nIndex = Ai_AngleIndex(nAngle);
         MTX_RotY33_(&mtx, data_0203d210[nIndex * 2], data_0203d210[nIndex * 2 + 1]);
         MTX_MultVec33(&pState->vVel, &mtx, &pState->vVel);
-        vLocal.z = FX_Mul(FX_Inv(pNode->pClock[0x2c / 4], 0x88), CHARGE_SPEED);
+        vLocal.z = FX_Mul(FX_Div(pNode->pClock[0x2c / 4], 0x88), CHARGE_SPEED);
         vLocal.x = 0;
         vLocal.y = 0;
         MTX_MultVec33(&vLocal, &mtx, &vLocal);

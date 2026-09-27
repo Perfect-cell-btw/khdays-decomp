@@ -10,7 +10,7 @@ extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void func_ov245_020cce28(int actor);
 extern void func_ov107_020c9264(int actor, int pose, int flag);
 extern void func_ov107_020c9ee8(int item, int motion, int flag);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_0203c634(int *node, int slot, void *cb);
 extern void func_ov245_020ce2d4(void);
 extern void func_ov245_020ce33c(void);
@@ -26,7 +26,7 @@ void func_ov245_020ce1cc(int *node) {
     if (*(int *)(owner + 0x39c) == 0) {
         func_ov245_020cce28(*state);
         func_ov107_020c9ee8(*(int *)(*state + 0x4c8), 2, 0);
-        state[0xc] = FX_Inv(-state[10], 0xe40f);
+        state[0xc] = FX_Div(-state[10], 0xe40f);
         func_0203c634(node, *(signed char *)((char *)node + 0x20), func_ov245_020ce2d4);
         return;
     }
@@ -35,6 +35,6 @@ void func_ov245_020ce1cc(int *node) {
     }
     func_ov107_020c9264(*state, 8, 0);
     func_ov107_020c9ee8(*(int *)(*state + 0x4c8), 2, 0);
-    state[0xc] = FX_Inv(-state[10], 0xe40f);
+    state[0xc] = FX_Div(-state[10], 0xe40f);
     func_0203c634(node, *(signed char *)((char *)node + 0x20), func_ov245_020ce33c);
 }

@@ -25,7 +25,7 @@ extern int func_01ff8d18(Vec3 *v, Vec3 *d);
 extern int func_020050b4(int x, int z);
 extern void func_01ffa724(int scale, Vec3 *v, Vec3 *d);
 extern int VEC_Mag(Vec3 *v);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
 extern void MTX_MultVec33(Vec3 *v, Mtx33 *m, Vec3 *d);
 extern void func_ov254_020cd750(int *state);
@@ -101,7 +101,7 @@ void func_ov254_020ce8a0(int *node)
         d.y = 0;
         dist = func_01ff8d18(&d, &d);
         state[0xd] = func_020050b4(d.x, d.z);
-        f = FX_Inv(dist, 0xa000);
+        f = FX_Div(dist, 0xa000);
         if (f > 0x1000) {
             f = 0x1000;
         } else if (f < 0x200) {

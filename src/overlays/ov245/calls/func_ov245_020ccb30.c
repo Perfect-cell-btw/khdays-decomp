@@ -14,7 +14,7 @@ struct Ov245Actor { char pad[0x3fc]; int slots[9]; };
 struct Ov245Owner { char pad[0x390]; int slots[10]; };
 struct Ov245Parts { char pad[0x420]; int parts[3]; };
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern int func_02023eb4(int scale);
 
 static inline int Ov245_Abs(int x) { return x < 0 ? -x : x; }
@@ -35,7 +35,7 @@ int func_ov245_020ccb30(int *node, int gap) {
     if (dist < 0) {
         dist = -dist;
     }
-    gap = FX_Inv(gap, dist);
+    gap = FX_Div(gap, dist);
     if (state[0xb] <= 0) {
         speed = state[0xe];
         if (speed < 0x400 || (low != 0 && speed < 0x800)) {

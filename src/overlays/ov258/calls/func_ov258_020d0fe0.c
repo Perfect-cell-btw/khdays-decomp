@@ -30,7 +30,7 @@ extern void func_0203c9d0(void *srt, const Quat *rot);
 extern void func_0203ca50(void *transform, int x, int y, int z);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int FX_Inv(int value, int denom);
+extern int FX_Div(int value, int denom);
 extern int func_01fff920(int collision, Vec3 *start, Vec3 *ray);
 extern void func_01ffd144(int scale, Vec3 *in, Vec3 *out);
 extern void func_0203c640(int *node);
@@ -94,7 +94,7 @@ void func_ov258_020d0fe0(int *node)
         func_0203ca50((void *)(state[1] + 4), 0x3000, 0x3000, 0x3000);
         *(Quat *)(state[2] + 0x410) = q;
     } else {
-        int t = FX_Inv(state[0xb], 0x1000);
+        int t = FX_Div(state[0xb], 0x1000);
         int world;
         int hit;
 

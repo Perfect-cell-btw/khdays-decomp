@@ -105,7 +105,7 @@ struct Actor {
 extern struct PlayerSlot *func_020358a4(int nSlot);                             /* GetPlayerSlotTableEntry */
 extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
 extern int VEC_Mag(VecFx32 *pVec);
-extern int FX_Inv(int nNumerator, int nDenominator);
+extern int FX_Div(int nNumerator, int nDenominator);
 extern int FX_Atan2(int y, int x);
 extern int func_01ff8e94(VecFx32 *pA, VecFx32 *pB);                             /* VEC_Distance */
 extern int func_ov022_020afd0c(struct Actor *pActor, int nY);                   /* IsDeltaOver1000 */
@@ -143,7 +143,7 @@ int func_ov022_020ae8a4(struct Actor *pSelf, struct Actor *pLeader, VecFx32 *pPo
     vecDir.y = 0;
     nDist = VEC_Mag(&vecDir);
     if (nDist != 0) {
-        VEC_Set(&vecDir, FX_Inv(vecDir.x, nDist), FX_Inv(vecDir.y, nDist), FX_Inv(vecDir.z, nDist));
+        VEC_Set(&vecDir, FX_Div(vecDir.x, nDist), FX_Div(vecDir.y, nDist), FX_Div(vecDir.z, nDist));
     } else {
         return 0;
     }

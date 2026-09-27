@@ -1,3 +1,4 @@
+/* NitroSDK os (os_spinLock.c): OS_UnlockCard -- OS_UnlockByWord on the card lock buffer with OSi_FreeCardBus. */
 typedef unsigned short u16;
 
 typedef struct OSLockWord {
@@ -8,13 +9,15 @@ typedef struct OSLockWord {
 typedef void (*OSLockCallback)(void);
 
 extern void OS_UnlockByWord(u16 lockId, OSLockWord *lock, OSLockCallback onFree);
-extern void OSi_AllocateCardBus(void);
+extern void OSi_FreeCardBus(void);
 
 /* The card lock word lives at a fixed address in the shared region, so its
    address is a plain literal rather than a relocated symbol. */
 #define OSi_CardLock ((OSLockWord *)0x027fffe0)
 
+/* Despite the inherited symbol name this is the lock-side entry: it installs the
+   bus release callback, where the unlock-side wrapper installs the allocate one. */
 void OS_UnlockCard(u16 lockId)
 {
-    OS_UnlockByWord(lockId, OSi_CardLock, OSi_AllocateCardBus);
+    OS_UnlockByWord(lockId, OSi_CardLock, OSi_FreeCardBus);
 }

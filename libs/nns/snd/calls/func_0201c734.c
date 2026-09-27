@@ -229,7 +229,7 @@ void func_0201a150(NNSSndHandle * handle, int priority);
 void func_0201a1c0(NNSSndHandle * handle, int seqNo);
 void func_0201a568(NNSSndSeqPlayer * seqPlayer, const void * seqDataBase, u32 seqDataOffset, const struct SNDBankData * bank);
 NNSSndSeqPlayer * func_0201a4c4(NNSSndHandle * handle, int playerNo, int prio);
-void WM_EndKeySharing_0x0201a55c(NNSSndSeqPlayer * seqPlayer);
+void func_0201a55c(NNSSndSeqPlayer * seqPlayer);
 NNSSndHeapHandle func_0201a62c(int playerNo, NNSSndSeqPlayer * seqPlayer);
 struct NNSSndSeqData;
 struct SNDBankData;
@@ -266,13 +266,13 @@ BOOL func_0201c734 (NNSSndHandle * handle, int playerNo, int bankNo, int playerP
 
     result = func_0201bd30(bankNo, NNS_SND_ARC_LOAD_BANK | NNS_SND_ARC_LOAD_WAVE, heap, FALSE, &bank);
     if (result != NNS_SND_ARC_LOAD_SUCESS) {
-        WM_EndKeySharing_0x0201a55c(player);
+        func_0201a55c(player);
         return FALSE;
     }
 
     result = func_0201bc4c(seqNo, NNS_SND_ARC_LOAD_SEQ, heap, FALSE, &seq);
     if (result != NNS_SND_ARC_LOAD_SUCESS) {
-        WM_EndKeySharing_0x0201a55c(player);
+        func_0201a55c(player);
         return FALSE;
     }
 

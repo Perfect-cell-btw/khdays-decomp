@@ -41,7 +41,7 @@ struct Node {
 
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *dst);
 extern int func_01ff8d18(const Vec3 *v, Vec3 *unit);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern int func_02023eb4();
 extern int func_020050b4(int x, int z);
 extern void func_01ffa724(int scale, const Vec3 *src, Vec3 *dst);
@@ -62,7 +62,7 @@ void func_ov286_020d4210(struct Node *node)
     VEC_Subtract((const Vec3 *)(st->pActor + 0x190), st->pPos10, &vToTarget);
     vToTarget.nY = 0;
     nFactor = func_01ff8d18(&vToTarget, &vToTarget);
-    nFactor = FX_Inv(nFactor, 0x14000);
+    nFactor = FX_Div(nFactor, 0x14000);
     nFactor = nFactor * 2 - 0x1000;
     if (nFactor < -0x1000) {
         nFactor = -0x1000;

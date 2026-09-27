@@ -6,7 +6,7 @@
  * with FS_ReadFileAsync. Returns the destination (0 when it does not fit). */
 typedef struct FSFile FSFile;
 
-extern int OS_UnlockByWord_0x0200ae4c(FSFile *p_file, void *dst, int len);   /* FS_ReadFile */
+extern int FS_ReadFile(FSFile *p_file, void *dst, int len);   /* FS_ReadFile */
 extern int FS_ReadFileAsync(FSFile *p_file, void *dst, int len);
 extern void *func_020236f8(unsigned size, int align, int **heapPP);
 extern void func_0200443c(void *context, void *dest, void *header);
@@ -19,7 +19,7 @@ void *func_0201e508(char *rd, FSFile *file, void *dest, int *pSize, int **heap, 
     int size;
     char *m = data_0204bbfc[0];
 
-    *(int *)(rd + 0x418) = OS_UnlockByWord_0x0200ae4c(file, rd, 0x200);
+    *(int *)(rd + 0x418) = FS_ReadFile(file, rd, 0x200);
     size = *(unsigned *)rd >> 8;
     if (dest == 0) {
         dest = func_020236f8(size, 0x20, heap);

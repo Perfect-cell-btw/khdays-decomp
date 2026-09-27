@@ -36,7 +36,7 @@ extern void func_01ffa724(int scale, const Vec3 *v, void *out);
 extern int func_ov107_020ca918(int hit, int owner, int item, int kind, Vec3 *push, int z);
 extern void func_0203c634(int *node, int slot, void *cb);
 extern int func_ov107_020cab14(int obj, int kind);
-extern int FX_Inv(int a, int b);
+extern int FX_Div(int a, int b);
 extern int func_02023eb4(int n);
 extern int func_020050b4(int y, int x);
 extern int func_ov107_020c9f48(int part, Vec3 *out);
@@ -186,7 +186,7 @@ void func_ov236_020d45bc(int *node)
     VEC_Subtract((void *)(state[1] + 0x190), (void *)state[7], &d);
     target = state[1];
     owner = *state;
-    t = FX_Inv(func_01ff8d18(&d, &d) - *(int *)(target + 0x80) - *(int *)(owner + 0x80), 0x5000) * 2 - 0x1000;
+    t = FX_Div(func_01ff8d18(&d, &d) - *(int *)(target + 0x80) - *(int *)(owner + 0x80), 0x5000) * 2 - 0x1000;
     if (t < -0x1000) {
         t = -0x1000;
     }

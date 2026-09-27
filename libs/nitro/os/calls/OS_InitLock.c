@@ -1,8 +1,8 @@
 typedef unsigned short u16;
 typedef unsigned int u32;
 
+extern void *OS_LockByWord(int id, void *word, void *callback);
 extern void *OS_UnlockByWord(int id, void *word, void *callback);
-extern void *OS_UnlockByWord_0x02001688(int id, void *word, void *callback);
 extern void WaitByLoop(u32 count);
 extern void INITi_CpuClear32_0x01ff86fc(u32 value, void *destination, u32 size);
 
@@ -41,7 +41,7 @@ void OS_InitLock(void)
     }
     data_02044308 = 1;
     data_027ffff0.lockFlag = 0;
-    OS_UnlockByWord(OS_LOCKID_INIT, &data_027ffff0, 0);
+    OS_LockByWord(OS_LOCKID_INIT, &data_027ffff0, 0);
 
     {
         OSLockWord *w = &data_027ffff0;
@@ -58,6 +58,6 @@ void OS_InitLock(void)
     REG_EXMEM_CNT |= 0x800;
     REG_EXMEM_CNT |= 0x80;
 
-    OS_UnlockByWord_0x02001688(OS_LOCKID_INIT, &data_027ffff0, 0);
-    OS_UnlockByWord(OS_LOCKID_ERROR, &data_027ffff0, 0);
+    OS_UnlockByWord(OS_LOCKID_INIT, &data_027ffff0, 0);
+    OS_LockByWord(OS_LOCKID_ERROR, &data_027ffff0, 0);
 }

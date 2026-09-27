@@ -50,7 +50,7 @@ extern void func_0203cd7c(int *dst, const Vec3 *a, const Vec3 *b, const void *c)
 extern void func_0202ea48(int *dst, const int *src);
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *dst);
 extern int func_01ff8d18(const Vec3 *v, Vec3 *unit);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_0202f384(Vec3 *dst, const int *a, const void *b);
 extern void func_01ffa724(int scale, const Vec3 *src, int *dst);
 extern int func_02023eb4();
@@ -94,7 +94,7 @@ void func_ov271_020d1048(int self) {
     if (gap < 0) {
         gap = 0;
     }
-    fac = FX_Inv(0x4000 - gap, 0x4000);
+    fac = FX_Div(0x4000 - gap, 0x4000);
     if (fac < -0x1000) {
         fac = -0x1000;
     }

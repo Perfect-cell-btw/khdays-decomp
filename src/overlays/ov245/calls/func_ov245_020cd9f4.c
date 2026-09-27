@@ -9,7 +9,7 @@ typedef struct { int x, y, z; } Vec3;
 struct Ov245Actor { char pad[0x3fc]; int slots[9]; };
 
 extern int func_ov245_020cce48(int actor);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_0203c634(int *node, int slot, void *cb);
 extern void func_ov245_020ce818(int self, Vec3 *at, Vec3 *dir, const Vec3 *base);
 extern void func_ov245_020cdbfc(void);
@@ -26,7 +26,7 @@ void func_ov245_020cd9f4(int *node) {
         state[5] = state[8];
         rest = *(int *)(node[0] + 0x2c);
         while (rest > 0) {
-            int ratio = FX_Inv(rest <= 0x88 ? rest : 0x88, 0x88);
+            int ratio = FX_Div(rest <= 0x88 ? rest : 0x88, 0x88);
             int t = (int)(((long long)ratio * 0x80 + 0x800) >> 12);
             state[8] = (int)(((long long)state[8] * (0x1000 - t) + 0x800) >> 12);
             rest -= 0x88;

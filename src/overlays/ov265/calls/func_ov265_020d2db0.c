@@ -8,7 +8,7 @@ typedef unsigned short u16;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern int func_ov107_020c9440(int pool, int kind);
 extern int func_0203b898(int res);
 extern void func_0203ca9c(void *srt, int weight);
@@ -23,7 +23,7 @@ extern void func_ov265_020d2f00(void);
 void func_ov265_020d2db0(char *self)
 {
     int owner = *(int *)(self + 0x388);
-    int w = FX_Inv(0x1ec6, 0x1119);
+    int w = FX_Div(0x1ec6, 0x1119);
     u16 v;
 
     *(void **)(self + 8) = (void *)func_ov265_020d2ee4;

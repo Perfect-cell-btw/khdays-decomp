@@ -4,7 +4,7 @@ typedef unsigned int u32;
 
 extern void func_0201e1d0(void);
 extern void GX_SetBankForTex(int bank);
-extern void GX_BeginLoadOBJExtPltt(int bank);
+extern void GX_SetBankForTexPltt(int bank);
 extern void G2x_SetBlendAlpha_(volatile u16 *reg, int firstTarget,
                               int secondTarget, int eva, int evb);
 extern void G3X_SetClearColor(int red, int green, int blue, int alpha,
@@ -58,7 +58,7 @@ void func_ov008_020590b4(void)
 
     func_0201e1d0();
     GX_SetBankForTex(2);
-    GX_BeginLoadOBJExtPltt(0x60);
+    GX_SetBankForTexPltt(0x60);
 
     REG_DISP3DCNT = REG_DISP3DCNT & 0xffffcffd;
     REG_DISP3DCNT = REG_DISP3DCNT & 0xcffb;

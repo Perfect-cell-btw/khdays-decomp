@@ -12,7 +12,7 @@ extern ListNode *func_01fffd70(void *list);
 extern ListNode *func_01fffd8c(void *list);
 extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
 extern int func_01ff8d18(const Vec3 *v, Vec3 *out);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
@@ -46,7 +46,7 @@ void func_ov257_020d2e40(int *node)
             VEC_Subtract(h + 3, obj + 0x74, &d);
             dist = func_01ff8d18(&d, &d);
             if (dist <= 0xc000) {
-                t = FX_Inv(dist, 0xc000);
+                t = FX_Div(dist, 0xc000);
                 if (t < 0) {
                     t = 0;
                 }

@@ -21,7 +21,7 @@ typedef struct {
     short cos;
 } SinCos;
 
-extern int   FX_Inv(int a, int b);
+extern int   FX_Div(int a, int b);
 extern int   func_02020400(int a, int b);
 extern SinCos data_0203d210[];
 
@@ -32,7 +32,7 @@ int func_0202136c(int param_1, unsigned int param_2, int param_3)
     iVar1 = param_2 - param_3;
     switch (param_1) {
     case 2:
-        return FX_Inv(iVar1 * 0x1000, param_2 << 0xc);
+        return FX_Div(iVar1 * 0x1000, param_2 << 0xc);
     case 3:
         iVar1 = func_02020400(iVar1 * 0x8000, param_2) - 0x4000;
         if (iVar1 < 0) {

@@ -1,5 +1,5 @@
-extern int WM_EndKeySharing_0x0200e918();
+extern int CARD_TryWaitRomAsync();
 
 int func_ov025_020b09fc(int arg0) {
-    return WM_EndKeySharing_0x0200e918(arg0);
+    return CARD_TryWaitRomAsync(arg0);
 }

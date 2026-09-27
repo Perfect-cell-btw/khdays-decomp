@@ -1,6 +1,6 @@
 typedef signed long fx32;
 
-extern int FX_Inv(int x, int unused);
+extern int FX_Div(int x, int unused);
 extern const short data_0203d210[];
 
 /* src: the same object func_0202e1cc reads. field_4c/50/54 are a VecFx32-shaped
@@ -31,7 +31,7 @@ typedef struct Self {
 void func_0202e2b0(Self *self, Src *src)
 {
     int angle = (int)(((unsigned)(((long long)(int)(unsigned)(int)((((long long)
-                 FX_Inv(src->field_4c, 0x2000) * 0xc00 + 0x800) >> 12))
+                 FX_Div(src->field_4c, 0x2000) * 0xc00 + 0x800) >> 12))
                  * 0x28be60db9391LL + 0x80000000000LL) >> 0x20) << 4) >> 0x10) >> 4;
 
     self->field_1c = src->field_50;

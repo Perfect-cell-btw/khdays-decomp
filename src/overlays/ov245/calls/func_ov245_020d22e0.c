@@ -7,7 +7,7 @@ typedef struct { int x, y, z, w; } Quat;
 extern int func_0203d040(int a, int b, int c, int d);
 extern void func_0202f188(Quat *out, const Vec3 *axis, int angle);
 extern void func_0203c9d0(void *srt, Quat *q);
-extern int FX_Inv(int num, int den);
+extern int FX_Div(int num, int den);
 extern void func_01ffa724(int scale, void *v, void *out);
 extern const Vec3 data_02042264;
 
@@ -23,7 +23,7 @@ void func_ov245_020d22e0(int *node)
     func_0202f188(&q, &data_02042264, state[4]);
     func_0203c9d0((void *)(*state + 0xa0), &q);
     for (rem = *(int *)(node[0] + 0x2c); rem > 0; rem -= 0x88) {
-        int t = FX_Inv(rem <= 0x88 ? rem : 0x88, 0x88);
+        int t = FX_Div(rem <= 0x88 ? rem : 0x88, 0x88);
 
         func_01ffa724(0x1000 - FX_MUL(t, 0x280), (void *)(*state + 0x3bc), (void *)(*state + 0x3bc));
     }

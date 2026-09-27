@@ -78,7 +78,7 @@ extern CollisionHit *func_01fff7f0(void *world, CollCastParams *params);
 extern CollisionHit *func_01fff7a4(void *world, CollCastParams *params);
 extern void func_01ffd0e8(fx32 s, const VecFx32 *a, const VecFx32 *b, VecFx32 *c);
 extern void func_02028d74(int model, short *face, int *normal);
-extern int FX_Inv(int numerator, int denominator);
+extern int FX_Div(int numerator, int denominator);
 extern int FX_Sqrt(int x);
 
 static inline fx32 MulRound(fx32 a, fx32 b) { return (fx32)(((fx64)a * b + 0x800) >> 12); }
@@ -164,7 +164,7 @@ int func_0202d660(VecFx32 *pos, int *self, int *pOut)
             func_02028d74((int)hit->model, (short *)((char *)hit->face + 0x14), normal);
             if (normal[1] < 0 && normal[1] > -0x1000) {
                 fx32 sq = MulRound(normal[1], normal[1]);
-                fx32 t = FX_Sqrt(FX_Inv(0x1000, sq) - 0x1000);
+                fx32 t = FX_Sqrt(FX_Div(0x1000, sq) - 0x1000);
                 baseHeight += MulRound(t, 0xd00);
             }
 

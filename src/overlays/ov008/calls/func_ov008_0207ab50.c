@@ -30,7 +30,7 @@ extern int func_02001030(void);
 extern void func_ov105_020bf1e4(u32 value);
 extern void func_ov105_020be900(void (*callback)(const MissionRecord *),
                                 void *data, int value);
-extern void OS_IsThreadAvailable(void);
+extern void func_01ff80a8(void);
 extern void func_ov008_0207966c(const MissionRecord *record);
 extern void func_ov008_02079998(void);
 
@@ -45,7 +45,7 @@ void *func_ov008_0207ab50(void) {
     case 2: {
         u8 i;
 
-        OS_IsThreadAvailable();
+        func_01ff80a8();
         for (i = 0; i < data_ov008_02090f24.context->row_count; i++) {
             u8 j;
 

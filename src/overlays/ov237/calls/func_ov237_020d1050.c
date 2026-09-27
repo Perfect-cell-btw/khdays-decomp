@@ -23,7 +23,7 @@ extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_02023eb4(int bound);
 extern int func_020050b4(int x, int z);
-extern int FX_Inv(int value, int denom);
+extern int FX_Div(int value, int denom);
 extern void func_ov107_020c5af8(int actor, int bank, int variant, int at);
 extern int func_01fff8e8(int collision, Vec3 *origin, Vec3 *dir, int radius, void *ignore);
 extern int VEC_Mag(const Vec3 *v);
@@ -106,7 +106,7 @@ void func_ov237_020d1050(int *node)
     state[3] = FX_MUL(state[6], state[9]);
     state[5] = FX_MUL(state[8], state[9]);
     if (!((Bits *)(*state + 0x17a))->b0) {
-        state[4] -= FX_MUL(FX_Inv(*(int *)(node[0] + 0x2c), 0x88), 0x100);
+        state[4] -= FX_MUL(FX_Div(*(int *)(node[0] + 0x2c), 0x88), 0x100);
     } else {
         func_ov107_020c5af8(*(int *)(*state + 0x390), 0x12d, 9, state[2]);
         state[4] = func_02023eb4(0x301) + 0x900;

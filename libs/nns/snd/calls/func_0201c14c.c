@@ -380,7 +380,7 @@ typedef struct NNSSndArc {
     struct NNSSndArcInfo * info;
     s32 loadBlockSize;
 } NNSSndArc;
-NNSSndArc * OS_IsThreadAvailable_0x0201b3d8(void);
+NNSSndArc * func_0201b3d8(void);
 void * func_0201b7e0(u32 fileId);
 void func_0201b808(u32 fileId, void * address);
 extern s32 func_0201b6f4(u32 fileId, void *buffer, s32 size, s32 offset);
@@ -416,7 +416,7 @@ SNDWaveArc * func_0201c14c (u32 fileId, NNSSndHeapHandle heap, BOOL bSetAddr)
             return NULL;
         }
         waveArc = (SNDWaveArc *)func_0201b9a0(heap, fileSize + 0x5c, func_0201c334,
-                                              bSetAddr ? (u32)OS_IsThreadAvailable_0x0201b3d8() : 0, fileId);
+                                              bSetAddr ? (u32)func_0201b3d8() : 0, fileId);
         if (waveArc == NULL) {
             return NULL;
         }
