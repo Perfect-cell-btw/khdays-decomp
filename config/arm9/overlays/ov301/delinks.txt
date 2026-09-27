@@ -23,11 +23,11 @@ src/overlays/ov301/calls/func_ov301_020cc178.c:
     complete
     .text       start:0x020cc178 end:0x020cc1d8
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cc1d8.c:
+src/overlays/ov301/calls/func_ov301_020cc1d8.c:
     complete
     .text       start:0x020cc1d8 end:0x020cc1e4
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cc1e4.c:
+src/overlays/ov301/calls/func_ov301_020cc1e4.c:
     complete
     .text       start:0x020cc1e4 end:0x020cc1f0
 

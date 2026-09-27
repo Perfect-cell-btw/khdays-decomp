@@ -24,11 +24,11 @@ src/overlays/ov234/calls/func_ov234_020cc1fc.c:
     complete
     .text       start:0x020cc1fc end:0x020cc25c
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cc25c.c:
+src/overlays/ov234/calls/func_ov234_020cc25c.c:
     complete
     .text       start:0x020cc25c end:0x020cc268
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cc268.c:
+src/overlays/ov234/calls/func_ov234_020cc268.c:
     complete
     .text       start:0x020cc268 end:0x020cc274
 

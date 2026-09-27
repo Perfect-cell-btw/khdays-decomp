@@ -5,7 +5,7 @@
  * This was filed as a "PROVEN TIE (register coloring only)" -- an r0/r1 swap with everything else
  * identical. It was two real source bugs, and the second one is the interesting half.
  *
- * 1. A DROPPED ARGUMENT. WM_EndKeySharing_0x02023ad0 takes the handle; the old source declared it
+ * 1. A DROPPED ARGUMENT. func_02023ad0 takes the handle; the old source declared it
  *    `(void)` and called it with none. The ROM's `bl` is reached with r0 still holding the value
  *    loaded by `ldr r0,[r1,#4]` at the top -- that is the argument, not a leftover. Passing it
  *    keeps the handle live in r0 across the whole body, which is precisely what forces the base
@@ -19,7 +19,7 @@
  *    Same total instructions either way; only the register choice differs.
  */
 extern int data_ov008_02090f24;
-extern int WM_EndKeySharing_0x02023ad0(int handle);
+extern int func_02023ad0(int handle);
 
 void func_ov008_0207b8a8(void) {
     char *base;
@@ -37,6 +37,6 @@ void func_ov008_0207b8a8(void) {
         *(unsigned short *)(base + 0xf2) = c - 1;
         return;
     }
-    WM_EndKeySharing_0x02023ad0(handle);
+    func_02023ad0(handle);
     *(int *)((char *)&data_ov008_02090f24 + 4) = 0;
 }

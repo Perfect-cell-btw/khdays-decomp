@@ -10,7 +10,7 @@ extern void func_ov004_0204ecf8(void *state, void *work, void *list);
 extern u16 *func_0203583c(int kind, unsigned int id);
 extern void func_ov004_0204f7e8(int id, int count);
 extern void func_ov004_0204f1c4(void *state, void *work, void *list);
-extern void WM_EndKeySharing_0x0204ecec(void *state);
+extern void func_ov004_0204ecec(void *state);
 
 void func_ov004_0204f874(void) {
     char list[0xc];
@@ -41,5 +41,5 @@ void func_ov004_0204f874(void) {
     }
 
     func_ov004_0204f1c4(state, work, list);
-    WM_EndKeySharing_0x0204ecec(state);
+    func_ov004_0204ecec(state);
 }

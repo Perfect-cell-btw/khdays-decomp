@@ -31,7 +31,7 @@ extern int  func_02016f10(void *node, void *desc);
 extern void func_ov022_0209f6e0(void *obj);
 
 extern void func_ov096_020baa90(void);
-extern void WM_EndKeySharing_0x020babb4(void);
+extern void func_ov096_020babb4(void);
 extern void func_ov096_020babc0(void);
 extern void func_ov096_020baa30(void);
 extern void func_ov096_020baa68(void);
@@ -81,7 +81,7 @@ void func_ov096_020ba81c(int *cfg) {
     }
 
     *(void **)(obj + 0x664 + 0x00) = (void *)&func_ov096_020baa90;
-    *(void **)(obj + 0x664 + 0x04) = (void *)&WM_EndKeySharing_0x020babb4;
+    *(void **)(obj + 0x664 + 0x04) = (void *)&func_ov096_020babb4;
     *(void **)(obj + 0x664 + 0x08) = (void *)&func_ov096_020babc0;
     *(void **)(obj + 0x664 + 0x0c) = 0;
     *(void **)(obj + 0x664 + 0x10) = 0;

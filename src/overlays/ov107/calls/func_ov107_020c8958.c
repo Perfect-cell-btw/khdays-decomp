@@ -2,13 +2,13 @@ typedef unsigned int u32;
 typedef unsigned short u16;
 typedef short s16;
 
-extern int OS_IsThreadAvailable_0x020c9848(void);
+extern int func_ov107_020c9848(void);
 extern void *func_0201ef9c(u32 flags, int heap);
 extern int func_02020400(int value, int percent);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 
 void func_ov107_020c8958(char *self, u32 mask) {
-    int ctx = OS_IsThreadAvailable_0x020c9848();
+    int ctx = func_ov107_020c9848();
     u32 table = *(u32 *)(ctx + 0x84);
     u32 flags = (((table + 0x8000) & 0xfffffc) << 7) | 0x80000000u | (((u32)0xfffffc >> 15) & mask);
     char *allocBase = (char *)func_0201ef9c(flags, 0xb);

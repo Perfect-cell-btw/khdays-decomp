@@ -20,7 +20,7 @@ typedef unsigned short u16;
 typedef void (*Callback)(void);
 
 extern void func_ov178_020cc344(void);
-extern void WM_EndKeySharing_ov178_0x020cc384(void);
+extern void func_ov178_020cc384(void);
 extern void func_ov178_020cc3e0(void);
 extern void func_ov178_020cc848(void);
 extern void func_ov178_020cc390(void);
@@ -64,7 +64,7 @@ void func_ov178_020cc020(char *self)
     bounds.w[4] = 0x1000;
     bounds.w[5] = 0x1000;
     *(Callback *)(self + 0x8) = func_ov178_020cc344;
-    *(Callback *)(self + 0xc) = WM_EndKeySharing_ov178_0x020cc384;
+    *(Callback *)(self + 0xc) = func_ov178_020cc384;
     *(Callback *)(self + 0x1c) = func_ov178_020cc3e0;
     *(Callback *)(self + 0x30) = func_ov178_020cc848;
     *(Callback *)(self + 0x28) = func_ov178_020cc390;

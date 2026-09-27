@@ -32,11 +32,11 @@ src/overlays/ov257/calls/func_ov257_020cc6fc.c:
     complete
     .text       start:0x020cc6fc end:0x020cca20
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cca20.c:
+src/overlays/ov257/calls/func_ov257_020cca20.c:
     complete
     .text       start:0x020cca20 end:0x020cca2c
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cca2c.c:
+src/overlays/ov257/calls/func_ov257_020cca2c.c:
     complete
     .text       start:0x020cca2c end:0x020cca38
 

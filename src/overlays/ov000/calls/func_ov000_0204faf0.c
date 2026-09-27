@@ -38,7 +38,7 @@ extern void func_ov000_020585e8(
 );
 extern void func_ov000_0205836c(void *state, void *work, void *list);
 extern void func_ov000_02058838(void *state, void *work, void *list);
-extern void WM_EndKeySharing_0x02058360(void *state);
+extern void func_ov000_02058360(void *state);
 extern int func_020235d0(int field, int kind);
 
 void func_ov000_0204faf0(int index, int result) {
@@ -77,7 +77,7 @@ void func_ov000_0204faf0(int index, int result) {
     func_ov000_0205836c(state, work, list);
     entry->cellCount = *(int *)(state + 0x78) + 1;
     func_ov000_02058838(state, work, list);
-    WM_EndKeySharing_0x02058360(state);
+    func_ov000_02058360(state);
 
     entry->gameValue8 = data_0204be18->value8;
     entry->profileValue = func_020235d0(0, 9);

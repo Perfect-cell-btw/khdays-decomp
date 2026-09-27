@@ -37,7 +37,7 @@ typedef struct Ov000SceneContext {
 extern Ov000SceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern int func_ov012_0205b920(void);
 extern int func_ov011_0205dc4c(void);
-extern void *WM_EndKeySharing_0x02023ad0(void *handle);
+extern void *func_02023ad0(void *handle);
 extern void func_0201e374(int brightness);
 extern void func_0201e3cc(int brightness);
 extern void func_0201e4a8(int processor, FSOverlayID overlayId);
@@ -56,7 +56,7 @@ Ov000StateFn func_ov000_0205a5e8(void) {
     } else if (func_ov011_0205dc4c() == 0) {
         return 0;
     }
-    WM_EndKeySharing_0x02023ad0(ctx->sharingHandle);
+    func_02023ad0(ctx->sharingHandle);
     func_0201e374(-0x10);
     func_0201e3cc(-0x10);
     if (ctx->transitionMode == 0) {

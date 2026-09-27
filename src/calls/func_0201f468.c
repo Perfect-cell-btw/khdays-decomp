@@ -1,7 +1,7 @@
 extern void *func_0201f3d8(int a, int b);
 extern int func_0201ebdc(int a, int b);
 extern void func_0201f924(void *dst, int src);
-extern int OS_IsThreadAvailable_0x02023650(void);
+extern int func_02023650(void);
 
 extern int data_0204bbfc[];
 
@@ -28,7 +28,7 @@ int func_0201f468(int a, Slot_0201f468 **out, int c) {
 
     v = data_0204bbfc[0x14 / 4];
     if (v == 0) {
-        v = OS_IsThreadAvailable_0x02023650();
+        v = func_02023650();
     }
     p->w8 = v;
     p->wc = func_0201ebdc(a, c);

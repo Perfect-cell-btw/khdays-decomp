@@ -41,7 +41,7 @@ extern int  func_02030670(void);                                    /* Session_I
 extern int  func_02020a9c(void);                                    /* the global mode halfword */
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void func_02024fd4(void *pContainer);                        /* close a text container */
-extern void WM_EndKeySharing_0x02023ad0(void *pObject);            /* end a sub-object */
+extern void func_02023ad0(void *pObject);            /* end a sub-object */
 extern void func_02020aa8(int nSlot, const void *pTable);          /* register a global table */
 extern u8   data_0204c240;                                          /* session bits */
 extern Ov023SceneRoot data_ov023_0208a784;
@@ -68,7 +68,7 @@ void func_ov023_02082ff8(void)
         func_02024fd4(data_ov023_0208a784.pScene->pWorldText);
     }
     if (data_ov023_0208a784.pScene->pSubObject != 0) {
-        WM_EndKeySharing_0x02023ad0(data_ov023_0208a784.pScene->pSubObject);
+        func_02023ad0(data_ov023_0208a784.pScene->pSubObject);
     }
     func_02020aa8(1, 0);
     func_02020aa8(0x14, 0);

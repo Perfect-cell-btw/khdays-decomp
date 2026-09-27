@@ -124,7 +124,7 @@ extern void  func_ov026_0208bb84(void);                                /* confir
 extern void  func_ov026_0208bad4(void);                                /* next step after a confirm */
 extern void  func_ov026_0208ab5c(void);                                /* cancel handler */
 extern void  func_ov026_0208bab0(void);                                /* next step after a cancel */
-extern void  FS_UnloadOverlayImage_0x020362ec(u16 *pSource);
+extern void  func_020362ec(u16 *pSource);
 extern u16   func_020362fc(const u16 *pSource);                        /* ReadU16 */
 extern void  func_02033b78(int nBank, int nSound);                     /* PlaySound */
 extern int   func_ov026_02087570(int bKeep, int bForce);               /* Ov008_RebuildShopList */
@@ -198,7 +198,7 @@ Ov008ShopStep func_ov026_0208b2c0(void)
         nLimit = 8;
         break;
     }
-    FS_UnloadOverlayImage_0x020362ec(&ctx->inputSource);
+    func_020362ec(&ctx->inputSource);
     nKeys = func_020362fc(&ctx->inputSource);
     if (nKeys & KEY_DOWN) {
         if (pView->nCount > 1) {

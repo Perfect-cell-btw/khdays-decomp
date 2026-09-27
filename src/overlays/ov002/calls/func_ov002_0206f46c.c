@@ -1,4 +1,4 @@
-extern void WM_EndKeySharing_0x02023ad0();
+extern void func_02023ad0();
 extern int data_ov002_0207f024;
 
 void func_ov002_0206f46c(void) {
@@ -6,6 +6,6 @@ void func_ov002_0206f46c(void) {
     if (p == -1) {
         return;
     }
-    WM_EndKeySharing_0x02023ad0(p);
+    func_02023ad0(p);
     data_ov002_0207f024 = -1;
 }

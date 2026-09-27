@@ -122,7 +122,7 @@ extern struct VecFx32 *func_ov022_020ad0c0(struct Actor *pActor);
 extern int FX_Atan2(int x, int z);
 extern void func_01ffa724(int nFactor, struct VecFx32 *pSrc,
                           struct VecFx32 *pDst);
-extern void WM_EndKeySharing_0x020b15a4(void *pOwner, u16 *pBinding);
+extern void func_ov022_020b15a4(void *pOwner, u16 *pBinding);
 
 typedef char Ov022ResetCarrierRequires32BitUnsigned[(sizeof(unsigned int) == 4) ? 1 : -1];
 
@@ -182,7 +182,7 @@ void func_ov022_0208eee8(struct ReactionCtx *pCtx)
     for (nPart = 0; nPart < pSlot->nParts; nPart++) {
         pPart = &pSlot->pParts[nPart];
         if ((pSlot->nBoundMask & (1 << nPart)) == 0) {
-            WM_EndKeySharing_0x020b15a4(pCtx->pOwner, pPart->binding);
+            func_ov022_020b15a4(pCtx->pOwner, pPart->binding);
             pSlot->nBoundMask = pSlot->nBoundMask | (1 << nPart);
         }
         pPart->nGroup = (u8)pActor->nSlotIndex;

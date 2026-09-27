@@ -14,7 +14,7 @@ extern void func_0202ed60(void *rotation, const Vec3 *from, const Vec3 *to);
 extern void func_0202f384(Vec3 *out, void *rotation, const Vec3 *in);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int OS_IsThreadAvailable_0x020c9848();
+extern int func_ov107_020c9848();
 extern void func_0203c634(int *node, int slot, void *cb);
 extern const Vec3 data_02042258;
 extern void func_ov253_020d1d28(void);
@@ -40,8 +40,8 @@ void func_ov253_020d1b80(int *node) {
     if (aim.y < state[9] + 0x1000) {
         aim.y = state[9] + 0x1000;
     }
-    if (*(int *)(OS_IsThreadAvailable_0x020c9848() + 0x74) != 0) {
-        obj = OS_IsThreadAvailable_0x020c9848();
+    if (*(int *)(func_ov107_020c9848() + 0x74) != 0) {
+        obj = func_ov107_020c9848();
         arg = func_ov022_02083f0c();
         (*(void (**)(int, int, Vec3 *))(obj + 0x74))(arg, 4, (Vec3 *)(state + 8));
     }

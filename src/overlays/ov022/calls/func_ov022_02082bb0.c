@@ -4,7 +4,7 @@
  * The handle loop counts UNSIGNED (blo), and the handle array is walked rather
  * than indexed. */
 extern void func_ov022_020831dc(void *ctx);
-extern void WM_EndKeySharing_0x02023ad0(int handle);
+extern void func_02023ad0(int handle);
 extern void func_ov002_02076568(void);
 extern void func_ov002_02077e68(void);
 extern void func_0202c4b0(void);
@@ -27,7 +27,7 @@ void func_ov022_02082bb0(void) {
 
     for (i = 0; i < 2; i++) {
         if (*(int *)(handle + 0x14) != 0) {
-            WM_EndKeySharing_0x02023ad0(*(int *)(handle + 0x14));
+            func_02023ad0(*(int *)(handle + 0x14));
         }
         handle += 4;
     }

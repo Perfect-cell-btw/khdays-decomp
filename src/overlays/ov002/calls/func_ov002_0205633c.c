@@ -173,7 +173,7 @@ extern void func_ov002_02055b24(void);
 extern void func_ov002_02057434(int a, int b);
 extern void func_ov002_0205693c(void);
 extern void func_ov002_02061bac(int a);
-extern void WM_EndKeySharing_0x02063574(void);
+extern void func_ov002_02063574(void);
 extern int func_ov002_0206e770(int a);
 extern int func_ov002_02075f84(void);
 
@@ -318,7 +318,7 @@ int func_ov002_0205633c(Ov002PanelParams *pParams)
         MI_CpuCopy8(ctx->aUnk0184, sHelp.aUnk10, 8);
         ctx->hHelpClass = func_02023930(data_ov002_0207ea00, &sHelp);
         if (func_ov002_020550d0(ctx->aSlots, &sRes) > 1) {
-            WM_EndKeySharing_0x02063574();
+            func_ov002_02063574();
         }
         func_ov002_02055984();
         func_ov002_02055b24();

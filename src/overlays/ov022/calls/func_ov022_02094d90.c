@@ -63,7 +63,7 @@ extern void func_ov002_02059590(int nTimer, int nWidth, int nExtra);
 extern void func_ov002_02059654(int bOn);
 /* Interworking veneer for the call above; the run compares its
  * address, so the reference has to go through the veneer. */
-extern void WM_EndKeySharing_0x02095444(void);
+extern void func_ov022_02095444(void);
 extern int func_ov022_02083f0c(void);
 extern void func_ov022_02094730(struct Run *pRun, int nKind);
 extern void func_ov022_020947a4(struct Run *pRun, int nTimer);
@@ -192,7 +192,7 @@ void func_ov022_02094d90(struct Run *pRun, int nDelta)
             if (pActor->nOwner == func_01fffe14()
                 && (u32)(pActor->nFlags & 0x10000ULL) == 0
                 && (pRun->nFlags & 0x200) != 0) {
-                func_ov002_02059654((int)WM_EndKeySharing_0x02095444 == 0);
+                func_ov002_02059654((int)func_ov022_02095444 == 0);
             }
             pRun->nFlags = 1;
             pRun->nState = 10;

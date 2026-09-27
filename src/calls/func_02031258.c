@@ -17,7 +17,7 @@
  * argument rather than held across the copy call.
  */
 
-extern int CARD_GetResultCode_0x0203065c(void);
+extern int func_0203065c(void);
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int n);
 extern void func_02030d2c(int hdr, int size);
 extern int func_02030fdc(int type, int size, unsigned short *hdr);
@@ -36,7 +36,7 @@ int func_02031258(int param_1, unsigned short *param_2, unsigned short param_3)
 
     ret = 0;
     doSend = 1;
-    switch (CARD_GetResultCode_0x0203065c()) {
+    switch (func_0203065c()) {
     case 2:
         if (param_1 == 3 || param_1 == 0x12) {
             ((MsgHdr *)buf)->type = param_1;

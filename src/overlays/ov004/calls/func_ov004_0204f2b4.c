@@ -9,7 +9,7 @@ extern void func_ov004_0204ef74(void *state, void *work, void *list, int arg);
 extern void func_ov004_0204ecf8(void *state, void *work, void *list);
 extern void func_02035a58(int obj, void *state);
 extern void func_ov004_0204f1c4(void *state, void *work, void *list);
-extern void WM_EndKeySharing_0x0204ecec(void *state);
+extern void func_ov004_0204ecec(void *state);
 
 void func_ov004_0204f2b4(int obj, int arg) {
     char list[0xc];
@@ -22,5 +22,5 @@ void func_ov004_0204f2b4(int obj, int arg) {
     func_ov004_0204ecf8(state, work, list);
     func_02035a58(obj, state);
     func_ov004_0204f1c4(state, work, list);
-    WM_EndKeySharing_0x0204ecec(state);
+    func_ov004_0204ecec(state);
 }

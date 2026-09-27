@@ -16,7 +16,7 @@ extern void *func_ov005_0204e0d0(Ov005SpriteManager *,int);
 extern void func_ov005_0204e3bc(Ov005SpriteManager *,void *,int);
 extern void func_ov005_0204e300(Ov005SpriteManager *,void *);
 extern void func_ov005_0204e33c(Ov005SpriteManager *,void *);
-extern int WM_EndKeySharing_0x02032444(Ov005SpriteManager *,int,int);
+extern int func_02032444(Ov005SpriteManager *,int,int);
 extern void func_020325b8(Ov005SpriteManager *,int,int);
 extern void func_0203257c(Ov005SpriteManager *,int,UiLayoutPos *);
 extern void func_020326cc(Ov005SpriteManager *,int);
@@ -50,7 +50,7 @@ void func_ov005_02052ca4(void) {
         x=17+id*112;
         for(index=0;index<7;index++) {
             y=49+index*16;
-            data_ov005_0205b80c->indicatorSlots[id][index]=WM_EndKeySharing_0x02032444(data_ov005_0205b80c->spriteManager,0,1);
+            data_ov005_0205b80c->indicatorSlots[id][index]=func_02032444(data_ov005_0205b80c->spriteManager,0,1);
             SetPixelPosition(&position,x,y);
             func_020325b8(data_ov005_0205b80c->spriteManager,data_ov005_0205b80c->indicatorSlots[id][index],120);
             func_0203257c(data_ov005_0205b80c->spriteManager,data_ov005_0205b80c->indicatorSlots[id][index],&position);

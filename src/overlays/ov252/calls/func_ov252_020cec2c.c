@@ -20,7 +20,7 @@ typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
 extern int func_0203d040(int a, int b, int c, int d);
 extern void func_0202f188(Quat *out, const Vec3 *axis, int angle);
 extern void func_0203c9d0(int a, void *b);
-extern int OS_IsThreadAvailable_0x020c9848();
+extern int func_ov107_020c9848();
 extern int func_ov022_02083f0c(void);
 extern void func_ov107_020c9264(int actor, int pose, int loop);
 extern int func_ov252_020cdfe8(int *node, Vec3 *to, int b);
@@ -102,8 +102,8 @@ void func_ov252_020cec2c(int *node)
             state[0x17] = 0;
         }
     }
-    if (*(int *)(OS_IsThreadAvailable_0x020c9848() + 0x74) != 0) {
-        obj = OS_IsThreadAvailable_0x020c9848();
+    if (*(int *)(func_ov107_020c9848() + 0x74) != 0) {
+        obj = func_ov107_020c9848();
         (*(void (**)(int, int, int))(obj + 0x74))(func_ov022_02083f0c(), 9, *(int *)(*state + 0x55c) + 0x14);
     }
     if (state[0x1e] != 0) {

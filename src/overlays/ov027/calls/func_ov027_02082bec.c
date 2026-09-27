@@ -149,7 +149,7 @@ typedef struct Ov027GameInfo {
 typedef void *(*Ov027StateFn)(void);
 
 extern Ov027Scene *NNSi_FndGetCurrentRootHeap(void);                /* the current scene work */
-extern Ov027SessionTable *CARDi_GetRomAccessor_0x020315f4(void);   /* Session_GetSlotTable */
+extern Ov027SessionTable *func_020315f4(void);   /* Session_GetSlotTable */
 extern int   func_ov027_020838f0(void);                             /* Ov027_HasRetryPrompt */
 extern void *func_02024ee8(const char *pszName, int nHeap);         /* open an archive */
 extern void  func_ov027_02083168(void);                             /* Ov027_LoadCharacterModels */
@@ -172,7 +172,7 @@ Ov027StateFn func_ov027_02082bec(void)
     int i;
 
     pScene = NNSi_FndGetCurrentRootHeap();
-    CARDi_GetRomAccessor_0x020315f4();
+    func_020315f4();
     data_ov027_02084364 = pScene;
     if (data_0204c4d8.nGameOvers < 5) {
         data_0204c4d8.nGameOvers++;
@@ -198,7 +198,7 @@ Ov027StateFn func_ov027_02082bec(void)
     func_ov027_02083ccc();
     if (!(data_0204c240.nBits & 4)) {
         func_ov027_020833b4(&pScene->character);
-    } else if (CARDi_GetRomAccessor_0x020315f4()->nState != 1) {
+    } else if (func_020315f4()->nState != 1) {
         func_ov027_02082b54(data_ov027_02084364);
     }
     return func_ov027_02082d8c;

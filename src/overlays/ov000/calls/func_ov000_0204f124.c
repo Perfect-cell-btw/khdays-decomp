@@ -23,7 +23,7 @@ typedef struct Ov000BootContext {
 } Ov000BootContext;
 
 extern Ov000BootContext *NNSi_FndGetCurrentRootHeap(void);
-extern void FS_UnloadOverlayImage_0x020362ec(void *image);
+extern void func_020362ec(void *image);
 extern u16 func_020362fc(const void *image);
 extern void func_ov000_0205324c(u16 id);
 extern void func_02023d70(void *bounds, int left, int right,
@@ -32,7 +32,7 @@ extern void func_0202aa9c(void *renderNode);
 extern int func_ov000_0205328c(void);
 extern int func_ov000_020532b0(void);
 extern int func_ov000_020532d0(void);
-extern void *WM_EndKeySharing_0x02023ad0(void *handle);
+extern void *func_02023ad0(void *handle);
 extern void func_ov000_0204d72c(void);
 extern void func_ov000_0204cac0(void);
 extern void func_ov000_0204d7a0(void);
@@ -45,7 +45,7 @@ Ov000StateFn func_ov000_0204f124(void) {
     Ov000BootContext *context = NNSi_FndGetCurrentRootHeap();
     int state;
 
-    FS_UnloadOverlayImage_0x020362ec(context->overlayImage);
+    func_020362ec(context->overlayImage);
     func_ov000_0205324c(func_020362fc(context->overlayImage));
     func_02023d70(context->scrollBounds, 0x3b33, -0x3b33,
                   -0x4d9a, 0x4d9a);
@@ -56,7 +56,7 @@ Ov000StateFn func_ov000_0204f124(void) {
     case 7:
         context->savedSceneFlag = func_ov000_020532b0();
         context->savedSceneId = func_ov000_020532d0();
-        WM_EndKeySharing_0x02023ad0(context->sharingHandle);
+        func_02023ad0(context->sharingHandle);
         context->sharingHandle = context->sharingAux = 0;
         *(volatile u32 *)0x04001000 &= ~0xe000;
 

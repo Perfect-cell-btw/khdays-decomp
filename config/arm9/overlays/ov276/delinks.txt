@@ -28,11 +28,11 @@ src/overlays/ov276/calls/func_ov276_020d0118.c:
     complete
     .text       start:0x020d0118 end:0x020d0194
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d0194.c:
+src/overlays/ov276/calls/func_ov276_020d0194.c:
     complete
     .text       start:0x020d0194 end:0x020d01a0
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d01a0.c:
+src/overlays/ov276/calls/func_ov276_020d01a0.c:
     complete
     .text       start:0x020d01a0 end:0x020d01ac
 

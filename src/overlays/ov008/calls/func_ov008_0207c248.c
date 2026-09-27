@@ -50,9 +50,9 @@ extern void func_ov008_02081ddc(void *text, int x, int y, u8 style,
                                 int layer, int align, int visible);
 extern void *func_ov008_02055c84(void *resource, int index);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
-extern void FS_UnloadOverlayImage_0x020362ec(void *image);
+extern void func_020362ec(void *image);
 extern void func_02033b78(u32 soundId, u32 variant);
-extern void CARDi_GetRomAccessor_0x0207c498(void);
+extern void func_ov008_0207c498(void);
 extern void func_ov008_0207d5d0(void);
 
 MissionState func_ov008_0207c248(void)
@@ -64,7 +64,7 @@ MissionState func_ov008_0207c248(void)
     MissionLabel optionLabels[4];
     u8 optionIndex;
 
-    FS_UnloadOverlayImage_0x020362ec(data_ov008_02090fa0->inputHeader);
+    func_020362ec(data_ov008_02090fa0->inputHeader);
     buttonBits = data_0204c190;
     if ((buttonBits & 1) != 0) {
         action = 1;
@@ -84,7 +84,7 @@ MissionState func_ov008_0207c248(void)
             }
             func_ov008_02081d70(data_ov008_02090fa0->sessionReady);
             func_02033b78(0, 1);
-            nextState = CARDi_GetRomAccessor_0x0207c498;
+            nextState = func_ov008_0207c498;
         }
         if ((action & 2) != 0) {
             func_02033b78(0, 3);

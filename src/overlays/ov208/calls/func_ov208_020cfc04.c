@@ -16,7 +16,7 @@ typedef struct {
     Mat dst;
 } Obj;
 
-extern int *OS_IsThreadAvailable_0x020c9848();
+extern int *func_ov107_020c9848();
 extern void func_01ffa724();
 extern void VEC_Add();
 extern void func_0203ca30();
@@ -26,7 +26,7 @@ void func_ov208_020cfc04(int param_1, int obj) {
     int tmp[3];
 
     ((Obj *)obj)->dst = ((Obj *)obj)->src;
-    func_01ffa724(-0x25b3, *OS_IsThreadAvailable_0x020c9848() + 0x7c, tmp);
+    func_01ffa724(-0x25b3, *func_ov107_020c9848() + 0x7c, tmp);
     VEC_Add(obj + 0x74, tmp, tmp);
     func_0203ca30(obj + 0x3e0, tmp);
     func_0203ca9c(obj + 0x3e0, 0x14cd);

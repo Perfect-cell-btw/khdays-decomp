@@ -47,7 +47,7 @@ extern void func_ov002_0206e718(int enabled);
 extern int  func_02023bf0(void);
 extern void func_02020aa8(int a, void *b);
 extern int  func_02030670(void);
-extern int  CARDi_GetRomAccessor_0x020315f4(void);
+extern int  func_020315f4(void);
 extern int  func_02030788(void);
 extern void func_ov002_02069240(void);
 extern void MI_CpuFill8(void *dest, int data, int size);
@@ -110,7 +110,7 @@ void *func_ov002_020679d4(void *param_1)
     *(int *)(heap + 0x8b58) = -1;
     *(int *)(heap + 0x8b4c) = -1;
     *(u16 *)(heap + 0x8da0) = 0;
-    if (func_02030670() != 0 && *(int *)(CARDi_GetRomAccessor_0x020315f4() + 4) >= 3) {
+    if (func_02030670() != 0 && *(int *)(func_020315f4() + 4) >= 3) {
         i = 1;
     } else {
         i = 0;

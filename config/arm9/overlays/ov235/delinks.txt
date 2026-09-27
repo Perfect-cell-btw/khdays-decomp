@@ -28,11 +28,11 @@ src/overlays/ov235/calls/func_ov235_020cc554.c:
     complete
     .text       start:0x020cc554 end:0x020cc8a0
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cc8a0.c:
+src/overlays/ov235/calls/func_ov235_020cc8a0.c:
     complete
     .text       start:0x020cc8a0 end:0x020cc8ac
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cc8ac.c:
+src/overlays/ov235/calls/func_ov235_020cc8ac.c:
     complete
     .text       start:0x020cc8ac end:0x020cc8b8
 

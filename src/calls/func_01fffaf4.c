@@ -7,7 +7,7 @@ typedef struct AsyncMessage {
     u16 size08;
 } AsyncMessage;
 
-extern int CARD_GetResultCode_0x0203065c(void);
+extern int func_0203065c(void);
 extern u16 func_01fff988(void);
 extern void func_01fffbf4(void);
 extern int func_ov105_020be164(void (*callback)(void), AsyncMessage *message,
@@ -24,7 +24,7 @@ int func_01fffaf4(AsyncMessage *message)
         return 0;
     }
 
-    switch (CARD_GetResultCode_0x0203065c()) {
+    switch (func_0203065c()) {
     case 2:
         message->active00 = 1;
         result = func_ov105_020be164(func_01fffbf4, message,

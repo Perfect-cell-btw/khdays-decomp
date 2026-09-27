@@ -13,7 +13,7 @@ typedef struct {
     unsigned char bRedraw;      /* +0x77 */
 } Ov002PauseSlot;
 
-extern void WM_EndKeySharing_0x02023ad0(int object);
+extern void func_02023ad0(int object);
 extern void func_ov002_0206e718(int mode);
 
 extern char *data_ov002_0207fa00;
@@ -25,7 +25,7 @@ void func_ov002_02069ca4(void) {
         return;
     }
 
-    WM_EndKeySharing_0x02023ad0(slot->nObject);
+    func_02023ad0(slot->nObject);
     slot->nObject = -1;
     slot->bRedraw = 1;
 

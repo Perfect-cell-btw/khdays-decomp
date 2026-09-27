@@ -16,7 +16,7 @@ extern void *func_0203c6a4(void *this_, int arg1);
 extern void func_0203c640(void *p);
 extern void *func_01fffd70(void *list);
 extern void *func_01fffd8c(void *list);
-extern void WM_EndKeySharing_0x020c3190(void *obj);
+extern void func_ov107_020c3190(void *obj);
 extern void func_0203d194(void *p);
 extern void NNSi_FndDestroyDoubleList(void *list);
 extern void func_ov107_020c3d84(void *self);
@@ -39,7 +39,7 @@ void func_ov107_020c68ec(Self68ec *self)
         do {
             void *elem = *entry;
             if (elem != 0)
-                WM_EndKeySharing_0x020c3190(elem);
+                func_ov107_020c3190(elem);
             entry = (void **)func_01fffd8c(self->list_22c);
         } while (entry != 0);
     }

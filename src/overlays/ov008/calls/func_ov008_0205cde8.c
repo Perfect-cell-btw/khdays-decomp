@@ -60,7 +60,7 @@ extern int   func_02013814(int a, int b, int c);
 extern int   func_ov008_02050e74(void);
 extern int   func_ov008_02050ea4(void);
 extern int   func_ov008_0205cc04(int ctx, int page);
-extern void  WM_EndKeySharing_0x02053464(IterSelf *self);
+extern void  func_ov008_02053464(IterSelf *self);
 extern void  func_020300f8(int dctx);
 
 void func_ov008_0205cde8(int ctx, int page)
@@ -140,6 +140,6 @@ void func_ov008_0205cde8(int ctx, int page)
         rec = func_ov008_02055c84(ctx + 0x28c, 0x1a);
         func_02030278(ctx + 0xe8, 0x2c, 4, 0xf1, (int)rec, 0);
     }
-    WM_EndKeySharing_0x02053464(&self);
+    func_ov008_02053464(&self);
     func_020300f8(ctx + 0xe8);
 }

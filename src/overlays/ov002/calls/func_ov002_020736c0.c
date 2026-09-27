@@ -13,7 +13,7 @@ typedef struct {
     int f78;
 } Ov107Node;
 
-extern Ov107Node *OS_IsThreadAvailable_0x020c9848(void);
+extern Ov107Node *func_ov107_020c9848(void);
 extern void func_ov107_020c9c1c(int nodeId);
 extern void func_02035d90(void);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
@@ -25,8 +25,8 @@ void func_ov002_020736c0(void) {
     Ov002Res *r = data_ov002_0207fa14;
 
     if (r->nodeId != -1) {
-        OS_IsThreadAvailable_0x020c9848()->f74 = 0;
-        OS_IsThreadAvailable_0x020c9848()->f78 = 0;
+        func_ov107_020c9848()->f74 = 0;
+        func_ov107_020c9848()->f78 = 0;
         func_ov107_020c9c1c(r->nodeId);
         func_02035d90();
         r->nodeId = -1;

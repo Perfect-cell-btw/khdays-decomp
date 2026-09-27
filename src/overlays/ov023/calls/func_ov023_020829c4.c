@@ -18,7 +18,7 @@ extern u32 OVERLAY_28_ID[1];
 #define FS_OVERLAY_ID_ov028 ((FSOverlayID)(u32) & (OVERLAY_28_ID))
 
 extern Ov023SceneContext *NNSi_FndGetCurrentRootHeap(void);
-extern void  WM_EndKeySharing_0x02023ad0(void *pObject);           /* end the key-sharing session */
+extern void  func_02023ad0(void *pObject);           /* end the key-sharing session */
 extern void  func_0201e470(int nProcessor, FSOverlayID nOverlay);   /* FS_LoadOverlay */
 extern void  func_0201e4a8(int nProcessor, FSOverlayID nOverlay);   /* FS_UnloadOverlay */
 extern int   func_ov028_0208b040(void (*pfn)(void));                /* anti-tamper predicates in ov028's encrypted block */
@@ -30,7 +30,7 @@ extern Ov023SceneContext *data_ov023_0208a780;
 
 void func_ov023_020829c4(void)
 {
-    WM_EndKeySharing_0x02023ad0(NNSi_FndGetCurrentRootHeap()->pMain);
+    func_02023ad0(NNSi_FndGetCurrentRootHeap()->pMain);
     func_0201e470(0, FS_OVERLAY_ID_ov028);
     if (func_ov028_0208b040(func_ov023_02082c5c) == 0) {
         if (func_ov028_0208b490(0) != 0) {

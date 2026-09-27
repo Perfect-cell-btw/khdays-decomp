@@ -57,8 +57,8 @@ extern void func_ov276_020d00c0(void);
 extern void func_ov276_020d0118(void);
 extern void func_ov276_020d01ac(void);
 extern void func_ov276_020d0504(void);
-extern void WM_EndKeySharing_0x020d0194(void);
-extern void WM_EndKeySharing_0x020d01a0(void);
+extern void func_ov276_020d0194(void);
+extern void func_ov276_020d01a0(void);
 extern void func_ov276_020d0374(void);
 extern void func_ov276_020d0560(void);
 extern void func_ov276_020d044c(void);
@@ -74,7 +74,7 @@ extern int func_0203bdfc(int item, const char *name);
 extern void func_0203c7ac(int item, int a);
 extern void func_0203c960(void *shape);
 extern int func_ov107_020c9e50(void *item, const char *name);
-extern int *OS_IsThreadAvailable_0x020c9848(void);
+extern int *func_ov107_020c9848(void);
 extern void func_ov107_020c9074(int self, int item);
 extern void func_02016b60(void *model, int a, int id);
 extern void func_ov107_020c92b0(int self, int a, int b, struct Lift *lift, int id);
@@ -115,8 +115,8 @@ void func_ov276_020cfcf8(char *self)
     handle = (int)self;
     *(void **)(self + 0x1c) = func_ov276_020d01ac;
     *(void **)(self + 0x30) = func_ov276_020d0504;
-    *(void **)(self + 0x28) = WM_EndKeySharing_0x020d0194;
-    *(void **)(self + 0x2c) = WM_EndKeySharing_0x020d01a0;
+    *(void **)(self + 0x28) = func_ov276_020d0194;
+    *(void **)(self + 0x2c) = func_ov276_020d01a0;
     *(void **)(self + 0x34) = func_ov276_020d0374;
     *(void **)(self + 0x1d0) = func_ov276_020d0560;
     *(void **)(self + 0x1dc) = func_ov276_020d044c;
@@ -145,7 +145,7 @@ void func_ov276_020cfcf8(char *self)
     *(int *)(self + 0x470) = func_ov107_020c9e50(func_ov107_020c9440(handle, 0x17), data_ov276_020d2c4c);
     for (i = 0; i < 6; i++) {
         if (i < 1) {
-            int *os = OS_IsThreadAvailable_0x020c9848();
+            int *os = func_ov107_020c9848();
             unsigned int kind = pools.id[i] & 0x1ff;
             unsigned int addr = (os[0x22] + 0x8000) & 0x00fffffc;
             addr = addr << 7;

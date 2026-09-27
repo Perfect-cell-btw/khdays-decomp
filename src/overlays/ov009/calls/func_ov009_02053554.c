@@ -41,7 +41,7 @@ extern void func_ov009_02050a5c(
 );
 extern void func_ov009_020507e0(void *state, void *work, void *list);
 extern void func_ov009_02050cac(void *state, void *work, void *list);
-extern void WM_EndKeySharing_0x020507d4(void *state);
+extern void func_ov009_020507d4(void *state);
 extern int func_020235d0(int field, int kind);
 
 void func_ov009_02053554(Ov009SaveContext *ctx, int index, int result)
@@ -78,7 +78,7 @@ void func_ov009_02053554(Ov009SaveContext *ctx, int index, int result)
     func_ov009_020507e0(state, work, list);
     slot->cellCount = *(int *)(state + 0x78) + 1;
     func_ov009_02050cac(state, work, list);
-    WM_EndKeySharing_0x020507d4(state);
+    func_ov009_020507d4(state);
 
     slot->gameValue8 = data_0204be18->value8;
     slot->profileValue = func_020235d0(0, 9);

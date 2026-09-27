@@ -56,7 +56,7 @@ src/overlays/ov277/calls/func_ov277_020cd1b8.c:
     complete
     .text       start:0x020cd1b8 end:0x020cd24c
 
-src/calls/WM_EndKeySharing_0x020cd24c.c:
+src/overlays/ov277/calls/func_ov277_020cd24c.c:
     complete
     .text       start:0x020cd24c end:0x020cd258
 
@@ -368,7 +368,7 @@ src/overlays/ov277/calls/func_ov277_020d0dd4.c:
     complete
     .text       start:0x020d0dd4 end:0x020d0e14
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d0e14.c:
+src/overlays/ov277/calls/func_ov277_020d0e14.c:
     complete
     .text       start:0x020d0e14 end:0x020d0e20
 

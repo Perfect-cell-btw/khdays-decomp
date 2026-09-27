@@ -56,7 +56,7 @@ struct Ov125Phase { int cur : 4, next : 4; };
 
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
-extern int *OS_IsThreadAvailable_0x020c9848(void);
+extern int *func_ov107_020c9848(void);
 extern int FX_Inv(int num, int den);
 extern void func_0203ca30(void *p, Vec3 *v);
 extern void func_0202f384(Vec3 *out, void *pose, void *k);
@@ -130,7 +130,7 @@ void func_ov125_020ceb74(int *node)
 
     VEC_Add((Vec3 *)(*(int *)(*state + 0x394) + 0x14), (Vec3 *)(*(int *)(*state + 0x398) + 0x14), &aim);
     func_01ffa724(0x800, &aim, &aim);
-    func_01ffa724(-0x100, (Vec3 *)(*OS_IsThreadAvailable_0x020c9848() + 0x7c), &pull);
+    func_01ffa724(-0x100, (Vec3 *)(*func_ov107_020c9848() + 0x7c), &pull);
     VEC_Add(&aim, &pull, &dir);
     state[0xc] += *(int *)(node[0] + 0x2c);
     t = FX_Inv(state[0xc], 0x800);

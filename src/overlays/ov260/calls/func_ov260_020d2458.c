@@ -9,7 +9,7 @@ extern int func_ov107_020c9440(char *self, int kind);
 extern int func_0203b898(int item);
 extern int func_0203bfb4(int subscriber, int item);
 extern void func_ov260_020d2510(void);
-extern void WM_EndKeySharing_0x020d252c(void);
+extern void func_ov260_020d252c(void);
 extern void func_ov260_020d25e0(void);
 extern void func_ov260_020d2538(void);
 extern const Vec3 data_02041dc8;
@@ -19,7 +19,7 @@ void func_ov260_020d2458(char *self)
     char *owner = *(char **)(self + 0x38c);
 
     *(void **)(self + 8) = func_ov260_020d2510;
-    *(void **)(self + 0xc) = WM_EndKeySharing_0x020d252c;
+    *(void **)(self + 0xc) = func_ov260_020d252c;
     *(void **)(self + 0x30) = func_ov260_020d25e0;
     *(void **)(self + 0x1dc) = func_ov260_020d2538;
     {

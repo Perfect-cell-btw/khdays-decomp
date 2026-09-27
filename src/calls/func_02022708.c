@@ -2,7 +2,7 @@ extern char *NNSi_FndGetCurrentRootHeap(void);
 extern int func_02020a9c(void);
 extern void func_02020888(int engine, void *handler, int a);
 extern void func_02023198(void);
-extern int *CARDi_GetRomAccessor_0x020315f4(void);
+extern int *func_020315f4(void);
 extern void func_02030cf8(int slot, void *handler);
 extern void func_020229c4(void);
 extern void func_02022d7c(void);
@@ -29,7 +29,7 @@ void *func_02022708(void) {
         func_02020888(2, (void *)&func_02023018, 0);
     }
     func_02023198();
-    if (*CARDi_GetRomAccessor_0x020315f4() != 1) {
+    if (*func_020315f4() != 1) {
         *(unsigned short *)&data_0204be08 = 0;
         func_02030cf8(0x11, (void *)&func_02023470);
         if ((func_02020a9c() & 2) == 0) {

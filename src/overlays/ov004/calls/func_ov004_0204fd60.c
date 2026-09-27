@@ -30,7 +30,7 @@ extern void func_0202afc4(void *object, int enabled);
 extern void func_ov004_020506cc(int valueFx12);
 extern void func_02023c60(void *object);
 extern void func_02032388(void *manager, SpriteManagerInit *init);
-extern void *WM_EndKeySharing_0x02032444(void *manager, int index, int arg);
+extern void *func_02032444(void *manager, int index, int arg);
 extern void func_02032800(void *manager, void *object, int arg);
 extern void func_0203257c(void *manager, void *object, Fx32Pair *position);
 extern void func_020326cc(void *manager, void *object);
@@ -71,7 +71,7 @@ void func_ov004_0204fd60(void) {
     func_02032388((char *)data_ov004_02051384 + 0xb0c, &init);
 
     for (i = 0; i < 3; i++) {
-        object = WM_EndKeySharing_0x02032444((char *)data_ov004_02051384 + 0xb0c, i, 0);
+        object = func_02032444((char *)data_ov004_02051384 + 0xb0c, i, 0);
         data_ov004_02051384->objects[i] = object;
         func_02032800((char *)data_ov004_02051384 + 0xb0c,
                       data_ov004_02051384->objects[i], 0);

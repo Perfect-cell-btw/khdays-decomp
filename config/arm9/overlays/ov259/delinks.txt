@@ -352,11 +352,11 @@ src/overlays/ov259/calls/func_ov259_020d1ad4.c:
     complete
     .text       start:0x020d1ad4 end:0x020d1be0
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d1be0.c:
+src/overlays/ov259/calls/func_ov259_020d1be0.c:
     complete
     .text       start:0x020d1be0 end:0x020d1bec
 
-src/calls/WM_EndKeySharing_0x020d1bec.c:
+src/overlays/ov259/calls/func_ov259_020d1bec.c:
     complete
     .text       start:0x020d1bec end:0x020d1bf8
 
@@ -444,7 +444,7 @@ src/overlays/ov259/calls/func_ov259_020d27b4.c:
     complete
     .text       start:0x020d27b4 end:0x020d28c0
 
-src/calls/WM_EndKeySharing_0x020d28c0.c:
+src/overlays/ov259/calls/func_ov259_020d28c0.c:
     complete
     .text       start:0x020d28c0 end:0x020d28cc
 

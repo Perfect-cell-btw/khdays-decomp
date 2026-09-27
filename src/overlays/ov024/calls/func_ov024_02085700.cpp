@@ -42,7 +42,7 @@ struct MobiClipDecoder {
 
 extern "C" {
 
-extern void WM_EndKeySharing_0x02083d00(void *pBlock);
+extern void func_ov024_02083d00(void *pBlock);
 
 void func_ov024_02085700(MobiClipDecoder *pDecoder)
 {
@@ -54,40 +54,40 @@ void func_ov024_02085700(MobiClipDecoder *pDecoder)
         delete pDecoder->pReader;
     }
 
-    WM_EndKeySharing_0x02083d00(pDecoder->pFrameState);
+    func_ov024_02083d00(pDecoder->pFrameState);
 
     if (pDecoder->apLuma != 0) {
         for (i = 0; i < pDecoder->nSlots; i++) {
-            WM_EndKeySharing_0x02083d00(pDecoder->apLuma[i]);
+            func_ov024_02083d00(pDecoder->apLuma[i]);
         }
-        WM_EndKeySharing_0x02083d00(pDecoder->apLuma);
+        func_ov024_02083d00(pDecoder->apLuma);
     }
     if (pDecoder->apChroma != 0) {
         for (i = 0; i < pDecoder->nSlots; i++) {
-            WM_EndKeySharing_0x02083d00(pDecoder->apChroma[i]);
+            func_ov024_02083d00(pDecoder->apChroma[i]);
         }
-        WM_EndKeySharing_0x02083d00(pDecoder->apChroma);
+        func_ov024_02083d00(pDecoder->apChroma);
     }
     if (pDecoder->anQuantiser != 0) {
-        WM_EndKeySharing_0x02083d00(pDecoder->anQuantiser);
+        func_ov024_02083d00(pDecoder->anQuantiser);
     }
     if (pDecoder->pFilteredLuma != 0) {
-        WM_EndKeySharing_0x02083d00(pDecoder->pFilteredLuma);
+        func_ov024_02083d00(pDecoder->pFilteredLuma);
     }
     if (pDecoder->pFilteredChroma != 0) {
-        WM_EndKeySharing_0x02083d00(pDecoder->pFilteredChroma);
+        func_ov024_02083d00(pDecoder->pFilteredChroma);
     }
     for (j = 0; j < 2; j++) {
         if (pDecoder->apScratch[j] != 0) {
-            WM_EndKeySharing_0x02083d00(pDecoder->apScratch[j]);
+            func_ov024_02083d00(pDecoder->apScratch[j]);
         }
         pDecoder->apScratch[j] = 0;
     }
     if (pDecoder->pIndex != 0) {
-        WM_EndKeySharing_0x02083d00(pDecoder->pIndex);
+        func_ov024_02083d00(pDecoder->pIndex);
     }
     if (pDecoder->pAudioTracks != 0) {
-        WM_EndKeySharing_0x02083d00(pDecoder->pAudioTracks);
+        func_ov024_02083d00(pDecoder->pAudioTracks);
     }
 
     pDecoder->pReader = 0;

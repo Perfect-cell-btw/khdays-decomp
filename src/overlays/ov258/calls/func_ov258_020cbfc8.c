@@ -17,7 +17,7 @@ struct Pair { int res; int handle; };
 struct Ov258Parts { char pad[0x3d8]; int parts[8]; char pad3f8[0x60]; int hands[2]; char pad460[4]; struct Pair items[43]; };
 
 extern void func_ov258_020cc490(void);
-extern void WM_EndKeySharing_0x020cc4f0(void);
+extern void func_ov258_020cc4f0(void);
 extern void func_ov258_020cc584(void);
 extern void func_ov258_020cc5e8(void);
 extern void func_ov258_020ccfbc(void);
@@ -64,7 +64,7 @@ void func_ov258_020cbfc8(char *self)
     int *slot;
 
     *(Callback *)(self + 0x8) = func_ov258_020cc490;
-    *(Callback *)(self + 0xc) = WM_EndKeySharing_0x020cc4f0;
+    *(Callback *)(self + 0xc) = func_ov258_020cc4f0;
     *(Callback *)(self + 0x20) = func_ov258_020cc584;
     *(Callback *)(self + 0x1c) = func_ov258_020cc5e8;
     *(Callback *)(self + 0x30) = func_ov258_020ccfbc;

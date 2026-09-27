@@ -41,7 +41,7 @@ extern void  func_ov008_020533e4(void *self, int a);
 extern void  func_ov008_020536ec(void *self, void *entries, NNSFndList *list, void *ids);
 extern void  func_ov008_02053470(void *self, void *entries, NNSFndList *list);
 extern void  func_ov008_0205393c(void *self, void *entries, NNSFndList *list);
-extern void  WM_EndKeySharing_0x02053464(void *self);
+extern void  func_ov008_02053464(void *self);
 extern int   func_020235d0(int id, int field);
 
 void func_ov008_0206836c(int param_1, int param_2, int param_3)
@@ -75,7 +75,7 @@ void func_ov008_0206836c(int param_1, int param_2, int param_3)
         func_ov008_02053470(f.iter, f.buffer, &f.list);
         entry->at2 = (u16)(*(int *)(f.iter + 0x78) + 1);
         func_ov008_0205393c(f.iter, f.buffer, &f.list);
-        WM_EndKeySharing_0x02053464(f.iter);
+        func_ov008_02053464(f.iter);
         entry->at4 = *(int *)(data_0204be18 + 8);
         entry->at0 = (u16)func_020235d0(0, 9);
         entry->atc = *(int *)data_0204be18;

@@ -624,7 +624,7 @@ src/overlays/ov022/calls/func_ov022_0208872c.c:
     complete
     .text       start:0x0208872c end:0x0208875c
 
-src/overlays/ov022/calls/srand_0x0208875c.c:
+src/overlays/ov022/calls/func_ov022_0208875c.c:
     complete
     .text       start:0x0208875c end:0x0208876c
 
@@ -1080,7 +1080,7 @@ src/overlays/ov022/calls/func_ov022_0208d6a8.c:
     complete
     .text       start:0x0208d6a8 end:0x0208d758
 
-src/overlays/ov022/calls/WM_EndKeySharing_0x0208d758.c:
+src/overlays/ov022/calls/func_ov022_0208d758.c:
     complete
     .text       start:0x0208d758 end:0x0208d764
 
@@ -1185,7 +1185,7 @@ src/overlays/ov022/calls/func_ov022_0208fb34.c:
     complete
     .text       start:0x0208fb34 end:0x0208fd64
 
-src/overlays/ov022/calls/WM_EndKeySharing_0x0208fd64.c:
+src/overlays/ov022/calls/func_ov022_0208fd64.c:
     complete
     .text       start:0x0208fd64 end:0x0208fd70
 
@@ -1770,7 +1770,7 @@ src/overlays/ov022/calls/func_ov022_02094d90.c:
     complete
     .text       start:0x02094d90 end:0x02095444
 
-src/overlays/ov022/calls/WM_EndKeySharing_0x02095444.c:
+src/overlays/ov022/calls/func_ov022_02095444.c:
     complete
     .text       start:0x02095444 end:0x02095450
 
@@ -2146,7 +2146,7 @@ src/overlays/ov022/calls/func_ov022_0209d0b0.c:
     complete
     .text       start:0x0209d0b0 end:0x0209d10c
 
-src/overlays/ov022/calls/WM_EndKeySharing_0x0209d10c.c:
+src/overlays/ov022/calls/func_ov022_0209d10c.c:
     complete
     .text       start:0x0209d10c end:0x0209d118
 
@@ -2926,7 +2926,7 @@ src/overlays/ov022/calls/func_ov022_020b1554.c:
     complete
     .text       start:0x020b1554 end:0x020b15a4
 
-src/overlays/ov022/calls/WM_EndKeySharing_0x020b15a4.c:
+src/overlays/ov022/calls/func_ov022_020b15a4.c:
     complete
     .text       start:0x020b15a4 end:0x020b15b0
 
@@ -3109,10 +3109,6 @@ src/overlays/ov022/data/ov022_pointers_020b2850.c:
 src/overlays/ov022/data/ov022_pointers_020b2880.c:
     complete
     .data       start:0x020b2880 end:0x020b2894
-
-src/overlays/ov022/data/ov022_pointers_020b29bc.c:
-    complete
-    .data       start:0x020b29bc end:0x020b2b1c
 
 src/overlays/ov022/data/ov022_pointers_020b2b48.c:
     complete

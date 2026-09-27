@@ -4,7 +4,7 @@
  *
  * The resolver takes the CONSTANT -1 ("current"), not the context -- the -1 built
  * for the handle comparison is what is still in r0 at the call. */
-extern void **OS_IsThreadAvailable_0x020c9848(int which);
+extern void **func_ov107_020c9848(int which);
 
 typedef struct {
     char pad0000[0x40];
@@ -30,6 +30,6 @@ void func_ov002_02074054(int flag) {
         return;
     }
 
-    obj = (Ov002SlotObject *)*OS_IsThreadAvailable_0x020c9848(-1);
+    obj = (Ov002SlotObject *)*func_ov107_020c9848(-1);
     obj->dwFlags = (obj->dwFlags & ~2) | ((flag & 1) << 1);
 }

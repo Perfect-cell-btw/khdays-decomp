@@ -27,7 +27,7 @@ extern void func_0203c7ac(int obj, int v);
 extern int func_0203bee8(int obj, int set, const char *name);
 extern void func_ov107_020c92b0(char *self, int a, int b, Vec3 *lift, int rate);
 extern void *func_0203d15c(int size);
-extern char *OS_IsThreadAvailable_0x020c9848(void);
+extern char *func_ov107_020c9848(void);
 extern void func_ov107_020c9074(char *self, int obj);
 extern int func_ov107_020c9e50(unsigned res, const char *name);
 extern int *func_01fffca8(void *list, int stride, int max);
@@ -120,7 +120,7 @@ void func_ov209_020d1aa0(char *self)
         if (i <= 0) {
             unsigned mask = 0xfffffc;
             (*(struct Pair **)(self + 0x40c))[i].res = func_0203b898(
-                (((*(unsigned *)(OS_IsThreadAvailable_0x020c9848() + 0x88) + 0x8000) & mask) << 7 | 0x80000000)
+                (((*(unsigned *)(func_ov107_020c9848() + 0x88) + 0x8000) & mask) << 7 | 0x80000000)
                 | (poses.w[i] & 0x1ff));
         } else {
             (*(struct Pair **)(self + 0x40c))[i].res = func_0203b898(func_ov107_020c9440(self, poses.w[i]));

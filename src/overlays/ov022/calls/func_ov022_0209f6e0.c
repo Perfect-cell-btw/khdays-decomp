@@ -193,7 +193,7 @@ extern u8 data_0204c248;                   /* Ov002TallyRules.nKind */
 extern int func_02023c40(void);                                                 /* LoadGlobalU8_0204c058 */
 extern void func_ov022_02097ff0(struct Actor *pActor);                          /* InitField4d0Block */
 extern void func_ov022_02096e94(struct Actor *pActor);                          /* Ov022_ApplyMissionLevelStats */
-extern struct ActorManager *OS_IsThreadAvailable_0x020c9848(void);                 /* misattributed SDK name: returns gOv107ActorManager */
+extern struct ActorManager *func_ov107_020c9848(void);                 /* misattributed SDK name: returns gOv107ActorManager */
 extern int func_020358f4(int nId, int nRule);                                   /* Slot_EvalPackedParam */
 extern int func_02030788(void);                                                 /* Session_GetLocalPlayerIndex */
 extern int func_02030670(void);                                                 /* Session_IsActive */
@@ -223,7 +223,7 @@ extern void func_ov022_0209016c(u8 *pBlk);                                      
 extern void func_ov022_02094c2c(u8 *pBlk);                                      /* Ov022_ClearFields_4c2c */
 extern void func_ov022_0209cda8(struct Actor *pActor);                          /* Ov022_LoadActorEffects */
 extern void func_ov022_0209d08c(struct Actor *pActor, struct HpDrain *pDrain, int nPeriod);   /* InitPairIfFlag2: period only under mode flag bit 1 */
-extern void WM_EndKeySharing_0x0209d10c(struct Actor *pActor);                    /* veneer to func_ov022_0209d1c0 */
+extern void func_ov022_0209d10c(struct Actor *pActor);                    /* veneer to func_ov022_0209d1c0 */
 extern void func_ov022_0209a4f8(void);                                          /* DispatchField18c */
 extern void func_ov022_0209a508(void);                                          /* Ov022_ApplyActorAction */
 extern void func_ov022_0209a614(void);                                          /* DispatchField18c9 */
@@ -269,7 +269,7 @@ void func_ov022_0209f6e0(struct Actor *pActor)
     pActor->nAimMode = 0;
     pActor->nAirTimer = 0;
     nId = pActor->nId;
-    pMgr = OS_IsThreadAvailable_0x020c9848();
+    pMgr = func_ov107_020c9848();
     pActor->pSub = pMgr != 0 ? pMgr->apPlayers[nId] : 0;
     if (pActor->pSub != 0) {
         nRule = func_020358f4(pActor->nId, RULE_RATE);
@@ -331,7 +331,7 @@ void func_ov022_0209f6e0(struct Actor *pActor)
     func_ov022_0209cda8(pActor);
     func_ov022_0209d08c(pActor, &pActor->hpDrainA, *(u16 *)(data_0204c254 + 0xa));
     func_ov022_0209d08c(pActor, &pActor->hpDrainB, *(u16 *)(data_0204c254 + 0xc));
-    WM_EndKeySharing_0x0209d10c(pActor);
+    func_ov022_0209d10c(pActor);
     pActor->pNode->nRenderFlags |= 1;
     pActor->pfnPreDraw(pActor, 0);
     if ((data_0204c240 & MODE_FLAG_BIT2) != 0 && data_0204c248 != 0) {

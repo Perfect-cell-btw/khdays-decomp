@@ -70,8 +70,8 @@ extern void func_ov234_020cc274(void);
 extern void func_ov234_020cc4e0(void);
 extern void func_ov234_020cc518(void);
 extern void func_ov234_020cc574(void);
-extern void WM_EndKeySharing_0x020cc25c(void);
-extern void WM_EndKeySharing_0x020cc268(void);
+extern void func_ov234_020cc25c(void);
+extern void func_ov234_020cc268(void);
 
 extern const struct Ov234TextureTable data_ov234_020cd100;
 extern unsigned func_ov107_020c9440();
@@ -112,8 +112,8 @@ int func_ov234_020cbfc4(struct Ov234Actor *arg0)
     self->fn00c = func_ov234_020cc1fc;
     self->fn01c = func_ov234_020cc274;
     self->fn030 = func_ov234_020cc518;
-    self->fn028 = WM_EndKeySharing_0x020cc25c;
-    self->fn02c = WM_EndKeySharing_0x020cc268;
+    self->fn028 = func_ov234_020cc25c;
+    self->fn02c = func_ov234_020cc268;
     self->fn1d0 = func_ov234_020cc574;
     self->fn1dc = func_ov234_020cc4e0;
 

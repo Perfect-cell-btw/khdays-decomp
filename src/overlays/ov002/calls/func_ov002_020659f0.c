@@ -70,7 +70,7 @@ extern Ov002SlotContext *data_ov002_0207f99c;
 extern const Ov002PenTable data_ov002_0207e434;
 
 extern u16 func_02030788(void);
-extern int OS_IsThreadAvailable_0x0206373c(void);
+extern int func_ov002_0206373c(void);
 extern int func_ov002_02067044(int nStep);
 extern int func_ov002_02067068(int nStep);
 extern void func_ov002_02066634(int hCanvas, u16 nX, u16 nY, u8 nPen, int a, int b);
@@ -99,7 +99,7 @@ void func_ov002_020659f0(int nSlot, const u16 *pPoint)
     pens = data_ov002_0207e434;
 
     func_02030788();
-    hCanvas = OS_IsThreadAvailable_0x0206373c();
+    hCanvas = func_ov002_0206373c();
     if (hCanvas == 0) {
         return;
     }
@@ -122,7 +122,7 @@ void func_ov002_020659f0(int nSlot, const u16 *pPoint)
             if (nY <= 0x20) {
                 nY = 0x20;
             }
-            func_ov002_02066634(OS_IsThreadAvailable_0x0206373c(), nX2, (u16)(nY - 0x20),
+            func_ov002_02066634(func_ov002_0206373c(), nX2, (u16)(nY - 0x20),
                     pens.aPens[nSlot], func_ov002_02067044(nStep),
                     func_ov002_02067068(nStep));
             return;

@@ -1,7 +1,7 @@
 #pragma thumb on
 /* func_02030478 -- set up the shared session context, MAIN. The context lives at the base of the
  * current root heap and is published in data_0204c228. It copies the session id from the source
- * block (CARDi_GetRomAccessor_0x020315f4 is misnamed); in a connected session (func_02030670) it
+ * block (func_020315f4 is misnamed); in a connected session (func_02030670) it
  * takes the member mask (+0xc), registers the source's +0x8 (func_02023e34) and stores the own
  * index (+0x20), otherwise the mask is just member 0. A 32-bit LCG (MATH_InitRand32) is seeded
  * from func_02023eb4(-1), two handles are opened (func_02023930), the member mask is compacted
@@ -43,7 +43,7 @@ typedef struct SessionCtx {
 } SessionCtx;
 
 extern SessionCtx *NNSi_FndGetCurrentRootHeap(void);
-extern SessionSource *CARDi_GetRomAccessor_0x020315f4(void);
+extern SessionSource *func_020315f4(void);
 extern int func_02030670(void);
 extern void func_02023e34(int a, int b, int c);
 extern u16 OS_IsTickAvailable_0x01ff8138(void);
@@ -67,7 +67,7 @@ void *func_02030478(void)
     int pos;
 
     data_0204c228 = ctx;
-    src = CARDi_GetRomAccessor_0x020315f4();
+    src = func_020315f4();
     ctx->id = src->id;
     if (func_02030670() != 0) {
         ctx->memberMask = src->memberMask;

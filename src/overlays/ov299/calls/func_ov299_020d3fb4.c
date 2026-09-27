@@ -9,7 +9,7 @@ typedef struct { int x, y, z; } Vec3;
 extern void func_0203c960(SrtTransform *transform);
 extern void func_0203ca30(SrtTransform *transform, const Vec3 *translation);
 extern int func_ov107_020c0794(int model, int parent, unsigned char kind, int zero, SrtTransform *transform);
-extern int *OS_IsThreadAvailable_0x020c9848(void);
+extern int *func_ov107_020c9848(void);
 extern void VEC_Subtract(const void *a, const Vec3 *b, Vec3 *d);
 extern int func_01ff8d18(Vec3 *v, Vec3 *d);
 extern void func_ov107_020c0b14(int owner, int effect);
@@ -46,7 +46,7 @@ void func_ov299_020d3fb4(int owner, unsigned char *command, int arg)
             *(int *)(owner + command[3] * 8 + 0x398) = func_ov107_020c0794(*(int *)(owner + 0x3c),
                 *(int *)(owner + command[3] * 8 + 0x394), (command[3] != 0 ? 2 : 0) | 0x15, 0, &transform);
             if (command[3] == 1) {
-                manager = OS_IsThreadAvailable_0x020c9848();
+                manager = func_ov107_020c9848();
                 if (manager != 0 && *manager != 0) {
                     VEC_Subtract((void *)(*manager + 0x88), &translation, &d);
                     if (func_01ff8d18(&d, &d) <= 0xa000) {

@@ -35,7 +35,7 @@ extern int  func_02030694(void);
 extern void func_020301c8(int node, int a, int b, int c, int d, int e);
 extern void func_020300f8(int node);
 extern u32  func_020235d0(int a, int b);
-extern int *WM_EndKeySharing_0x0205665c(int a, int b);
+extern int *func_ov008_0205665c(int a, int b);
 extern void func_ov008_0205af08(int *a, int b);
 extern void func_02030278(int node, int a, int b, int c, int *d, int e);
 extern int  func_ov008_02051028(void);
@@ -83,9 +83,9 @@ void func_ov008_0205af54(int obj)
     sel = 4;
     counter = func_020235d0(0, 9);
     if (0x165 <= counter) sel = 0;
-    rec = WM_EndKeySharing_0x0205665c(obj + 0x13fc, sel);
+    rec = func_ov008_0205665c(obj + 0x13fc, sel);
     func_ov008_0205af08((int *)(obj + 0x145c), (int)rec);
-    rec = WM_EndKeySharing_0x0205665c(obj + 0x13fc, sel);
+    rec = func_ov008_0205665c(obj + 0x13fc, sel);
     func_02030278(obj + 0x145c, 2, 3, 1, rec, 0);
     func_020300f8(obj + 0x145c);
     if (*(int *)(obj + 0x14e0) != 0 && func_ov008_02051028() != 0) {

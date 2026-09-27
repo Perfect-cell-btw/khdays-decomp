@@ -87,7 +87,7 @@ typedef struct Ov022Actor {
 extern char data_ov022_020b2e78[];
 
 extern int func_02030788(void);
-extern int CARD_GetResultCode_0x0202bfb8(void);
+extern int func_0202bfb8(void);
 extern int func_ov022_0208a28c(void);
 extern void func_02030de4(int index);
 extern int func_01fffe14(void);
@@ -126,7 +126,7 @@ int func_ov022_02087b7c(void)
         return 0;
     }
 
-    cardResult = CARD_GetResultCode_0x0202bfb8();
+    cardResult = func_0202bfb8();
     resource = (char *)func_ov022_0208a28c();
     if (*(unsigned char *)(resource + 0xc0) == 0) {
         func_02030de4(0);

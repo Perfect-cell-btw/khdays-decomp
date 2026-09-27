@@ -27,7 +27,7 @@ src/overlays/ov028/calls/func_ov028_0208aa78.c:
     complete
     .text       start:0x0208aa78 end:0x0208ab14
 
-src/overlays/ov028/calls/WM_EndKeySharing_0x0208ab14.c:
+src/overlays/ov028/calls/func_ov028_0208ab14.c:
     complete
     .text       start:0x0208ab14 end:0x0208ab20
 

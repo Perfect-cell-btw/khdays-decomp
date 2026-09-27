@@ -11,7 +11,7 @@ extern int func_ov107_020c09a0(int model, int res, int kind, void *at, int a, in
 extern void func_ov107_020c0b14(char *self, int a);
 extern int func_ov107_020cb040(char *self, int id, int mode, int flag, void *pose);
 extern void func_ov107_020cb100(int sub);
-extern int OS_IsThreadAvailable_0x020c9848();
+extern int func_ov107_020c9848();
 extern int func_ov022_02083f0c(void);
 extern void func_ov107_020c7500(char *self, u8 *msg, int arg);
 
@@ -53,8 +53,8 @@ void func_ov254_020cc7e0(char *self, u8 *msg, int arg)
             }
             break;
         case 0xd:
-            if (*(int *)(OS_IsThreadAvailable_0x020c9848() + 0x78) != 0) {
-                obj = OS_IsThreadAvailable_0x020c9848();
+            if (*(int *)(func_ov107_020c9848() + 0x78) != 0) {
+                obj = func_ov107_020c9848();
                 (*(void (**)(int, int, int))(obj + 0x78))(func_ov022_02083f0c(), msg[4], 0);
             }
             break;

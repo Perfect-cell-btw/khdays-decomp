@@ -1,5 +1,5 @@
 extern void func_ov105_020be49c(int state);
-extern int OS_UnlockByWord_0x020bd9ec(int handle, void *fn, int a);
+extern int func_ov105_020bd9ec(int handle, void *fn, int a);
 extern void func_ov105_020be4ac(void);
 extern void func_ov105_020bf6b4(void);
 extern char *data_ov105_020c04c0;
@@ -8,7 +8,7 @@ extern char *data_ov105_020c04c0;
  * has finished and the task has moved on to step 0xa. */
 int func_ov105_020bf66c(void) {
     func_ov105_020be49c(3);
-    if (OS_UnlockByWord_0x020bd9ec(*(int *)((char *)&data_ov105_020c04c0 + 0x4c),
+    if (func_ov105_020bd9ec(*(int *)((char *)&data_ov105_020c04c0 + 0x4c),
                                    (void *)&func_ov105_020bf6b4, 2) == 2) {
         return 1;
     }

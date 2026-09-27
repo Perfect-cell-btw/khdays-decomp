@@ -8,7 +8,7 @@
  * rematerialises slots[idx] after the call where the ROM loads it before" -- it was an
  * evaluation-order problem, not a rematerialisation one.) */
 extern int func_ov107_020c1f28(int i);
-extern int *OS_IsThreadAvailable_0x020c9848(void);
+extern int *func_ov107_020c9848(void);
 extern void func_ov107_020c2b20(int a, int b);
 extern int data_ov002_0207fa14;
 
@@ -18,7 +18,7 @@ void func_ov002_020739ec(int i) {
     slots[i] = func_ov107_020c1f28(i);
     v = slots[i];
     {
-        int h = *OS_IsThreadAvailable_0x020c9848();
+        int h = *func_ov107_020c9848();
         func_ov107_020c2b20(h, v);
     }
 }

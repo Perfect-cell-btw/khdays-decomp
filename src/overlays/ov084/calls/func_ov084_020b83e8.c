@@ -36,7 +36,7 @@
  */
 extern int data_ov084_020b9a20;
 
-extern void WM_EndKeySharing_0x020b8950(int self);
+extern void func_ov084_020b8950(int self);
 extern void func_ov084_020b9064(int self, int p);
 extern unsigned short func_02030788(void);
 extern void func_ov084_020b9078(int self, int p);
@@ -54,7 +54,7 @@ void func_ov084_020b83e8(int self, int mode) {
     switch (mode - 0x2e) {
     case 0:
         if (*(int *)(self + 0x6bc) != mode) {
-            WM_EndKeySharing_0x020b8950(self);
+            func_ov084_020b8950(self);
         }
         break;
     case 1:

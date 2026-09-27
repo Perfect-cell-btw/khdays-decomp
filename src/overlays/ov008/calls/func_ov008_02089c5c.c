@@ -40,7 +40,7 @@ extern char *data_ov008_02090fac;
 extern u16 data_0204c190;                                              /* pressed keys */
 extern GameState *data_0204be18;
 
-extern void FS_UnloadOverlayImage_0x020362ec(u16 *pWord);        /* pad word unload */
+extern void func_020362ec(u16 *pWord);        /* pad word unload */
 extern void func_ov008_02082bf4(void);                                 /* Ov008_UpdateTouchState */
 extern u16 func_020362fc(u16 *pWord);
 extern void func_02033b78(int nKind, int nSound);                      /* PlaySound */
@@ -59,7 +59,7 @@ void *func_ov008_02089c5c(void)
     int nItemId;
     GameState *pState;
 
-    FS_UnloadOverlayImage_0x020362ec((u16 *)(ctx + 0xc0fc));
+    func_020362ec((u16 *)(ctx + 0xc0fc));
     func_ov008_02082bf4();
     func_020362fc((u16 *)(ctx + 0xc0fc));
     if ((data_0204c190 & KEY_CONFIRM_MASK) != 0 || *(int *)(ctx + 0xc118) != 0) {

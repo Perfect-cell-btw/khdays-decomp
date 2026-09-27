@@ -76,7 +76,7 @@ typedef struct {
     u32 field_7c;
 } Manager;
 
-extern Manager *OS_IsThreadAvailable_0x020c9848(void);
+extern Manager *func_ov107_020c9848(void);
 extern void *func_0201ef9c(u32 resource, int kind);
 extern void NNSi_FndFreeFromDefaultHeap(void *user_ptr);
 
@@ -95,7 +95,7 @@ int func_ov107_020c2f94(int id, Output *slot)
     SignedHalfword arrayValue;
     SignedHalfword tailValue;
 
-    manager = OS_IsThreadAvailable_0x020c9848();
+    manager = func_ov107_020c9848();
     mask = 0xfffffc;
     source = (SourceFile *)func_0201ef9c(
         ((((manager->field_7c + 0x8000) & mask) << 7) | 0x80000000)

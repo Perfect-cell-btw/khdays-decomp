@@ -96,7 +96,7 @@ typedef struct AiState {
 } AiState;
 
 extern const char data_ov107_020cb638[10];
-extern int OS_IsThreadAvailable_0x020c9848(void);
+extern int func_ov107_020c9848(void);
 extern void *func_0201ef9c(char *name, u32 heap);
 extern void NNSi_FndFreeFromDefaultHeap(void *user_ptr);
 extern int func_02020400(int value, int percent);
@@ -143,7 +143,7 @@ void func_ov107_020c8500(AiState *self, int recordIndex)
 
     path = *(const Path *)data_ov107_020cb638;
 
-    file = func_0201ef9c((char *)((((*(u32 *)((char *)OS_IsThreadAvailable_0x020c9848()
+    file = func_0201ef9c((char *)((((*(u32 *)((char *)func_ov107_020c9848()
                                               + 0x80) + 0x8000) & 0xfffffc) << 7)
                                 | ((u32)0x8000 << 16)
                                 | (self->field_19c & 0x1ff)), 0xb);

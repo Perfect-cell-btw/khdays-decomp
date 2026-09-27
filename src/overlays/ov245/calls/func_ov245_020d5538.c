@@ -31,7 +31,7 @@ extern void func_0203b9ac(int item, void *track);
 extern int func_ov107_020c9e50(void *item, const char *name);
 extern void func_ov107_020c92b0(int self, int a, int b, Vec3 *lift, int id);
 extern void *func_0203d15c(int size);
-extern void *OS_IsThreadAvailable_0x020c9848(void);
+extern void *func_ov107_020c9848(void);
 extern void func_ov107_020c9074(int self, int item);
 extern int *func_01fffca8(void *list, int stride, int max);
 extern int func_ov107_020c319c(void *pose);
@@ -79,7 +79,7 @@ void func_ov245_020d5538(int selfArg) {
     for (i = 0; i < 5; i++) {
         void *node;
         if (i < 2) {
-            void *os = OS_IsThreadAvailable_0x020c9848();
+            void *os = func_ov107_020c9848();
             unsigned int kind = pools.id[i] & 0x1ff;
             unsigned int addr = (*(int *)((char *)os + 0x88) + 0x8000) & 0x00fffffc;
             addr = addr << 7;

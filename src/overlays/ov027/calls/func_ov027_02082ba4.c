@@ -22,7 +22,7 @@ typedef struct Ov023Panel {
     Ov023PanelScreen *pScreen; /* 0x0c */
 } Ov023Panel;
 
-extern int  WM_EndKeySharing_0x020bf240(void);                      /* the local peer's slot */
+extern int  func_ov105_020bf240(void);                      /* the local peer's slot */
 extern void func_02013484(void *pScreenDst, void *pScreenData, int nSrcX, int nSrcY, int nDstX, int nDstY, unsigned int nDstW, unsigned int nDstH, int nWidth, int nHeight);
 extern void GFXi_EnqueueCommand(int nCmd, int nDest, void *pSrc, int nSize);
 
@@ -33,6 +33,6 @@ void func_ov027_02082ba4(Ov023Panel *pPanel)
 
     pScreen = pPanel->pScreen;
     pData = pPanel->pScreenData;
-    func_02013484(pScreen->aCell, pData, (3 - WM_EndKeySharing_0x020bf240()) * 2, 0, 0, 0, pScreen->nWidth, pScreen->nHeight, 2, 2);
+    func_02013484(pScreen->aCell, pData, (3 - func_ov105_020bf240()) * 2, 0, 0, 0, pScreen->nWidth, pScreen->nHeight, 2, 2);
     GFXi_EnqueueCommand(0x19, 0, pPanel->pScreen->aCell, pPanel->pScreen->nBytes);
 }

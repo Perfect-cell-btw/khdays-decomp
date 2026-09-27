@@ -82,7 +82,7 @@ extern u32   func_ov025_0209e820(u32 nReport, u32 bMark);           /* Ov025_Rep
 extern void  func_ov025_020a0a14(void);                             /* Ov025_Reports_HighlightRows */
 extern void  func_02033b78(int nKind, int nSound);                  /* PlaySound */
 extern void  func_ov025_020a076c(void);                             /* Ov025_Reports_RefreshRows */
-extern void *OSi_IrqDma0_0x020b07dc(void);                          /* Ov025_Reports_Request0 */
+extern void *func_ov025_020b07dc(void);                          /* Ov025_Reports_Request0 */
 
 void func_ov025_020a0e1c(void *pEntry)
 {
@@ -112,5 +112,5 @@ void func_ov025_020a0e1c(void *pEntry)
         pPage->nFieldcc = 1;
     }
     func_ov025_020a076c();
-    OSi_IrqDma0_0x020b07dc();
+    func_ov025_020b07dc();
 }

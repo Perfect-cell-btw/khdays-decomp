@@ -84,7 +84,7 @@ extern const Ov008LobbyCaptions data_ov008_0208fc8c;
 extern void  func_ov008_0207d5cc(void);                                  /* next lobby step */
 extern u16   func_ov008_0207b138(void);                                  /* local member index */
 extern int   func_ov008_0207b7e4(void);
-extern void  FS_UnloadOverlayImage_0x020362ec(u16 *pHeader);
+extern void  func_020362ec(u16 *pHeader);
 extern void  func_ov008_0207b960(int nRow, MissionMenuRow *pOut);
 extern int   func_ov008_0207be38(void);                                  /* is host */
 extern int   func_ov008_0207bda4(int nIcon);                             /* cursor of an icon */
@@ -141,7 +141,7 @@ Ov008LobbyStep func_ov008_0207ce84(void)
     nLocal = func_ov008_0207b138();
     nSession = func_ov008_0207b7e4();
     nCursor = 0;
-    FS_UnloadOverlayImage_0x020362ec(data_ov008_02090fa0->inputHeader);
+    func_020362ec(data_ov008_02090fa0->inputHeader);
     for (i = 0; i < MEMBER_COUNT; i++) {
         func_ov008_0207b960(i, &aRow[i]);
     }

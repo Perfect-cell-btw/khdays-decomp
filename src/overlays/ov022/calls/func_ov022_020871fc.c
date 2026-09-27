@@ -2,7 +2,7 @@ extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void func_ov022_020883f4(int slot);
 extern void func_ov022_02087298(int slot);
 extern void SNDi_ProcessEntry(int id);
-extern void WM_EndKeySharing_0x02023ad0(int h);
+extern void func_02023ad0(int h);
 extern void func_ov029_020b2f40(int h);
 extern int func_02020a9c(void);
 extern void func_ov022_020b1fc4(char *p);
@@ -28,7 +28,7 @@ body:
         func_ov022_020883f4(i);
         func_ov022_02087298(i);
         SNDi_ProcessEntry(*(signed char *)(obj + 0x4bc));
-        WM_EndKeySharing_0x02023ad0(*(int *)(slot + 4));
+        func_02023ad0(*(int *)(slot + 4));
         func_ov029_020b2f40(*(int *)(slot + 8));
     }
     slot += 0xc;
@@ -39,7 +39,7 @@ test:
         goto body;
     }
     if (*(int *)(heap + 0x38) != -1) {
-        WM_EndKeySharing_0x02023ad0(*(int *)(heap + 0x38));
+        func_02023ad0(*(int *)(heap + 0x38));
     }
     func_ov022_020b1fc4(heap + 0x68);
     func_ov022_020b1fc4(heap + 0xa4);

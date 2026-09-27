@@ -10,7 +10,7 @@ struct Bit0 { unsigned int b0 : 1; };
 extern void func_ov107_020c3c74(char *self);
 extern void func_ov210_020d3e40(void);
 extern void func_ov210_020d3e5c(void);
-extern void WM_EndKeySharing_0x020d3f1c(void);   /* misnamed: an ov210 veneer (see ov223) */
+extern void func_ov210_020d3f1c(void);   /* misnamed: an ov210 veneer (see ov223) */
 extern void func_ov210_020d3f28(void);
 extern void func_ov210_020d3f98(void);
 extern void func_ov210_020d3fd0(void);
@@ -27,7 +27,7 @@ void func_ov210_020d3cf0(char *self, int pool)
     func_ov107_020c3c74(self);
     *(Callback *)(self + 0x8) = func_ov210_020d3e40;
     *(Callback *)(self + 0xc) = func_ov210_020d3e5c;
-    *(Callback *)(self + 0x1c) = WM_EndKeySharing_0x020d3f1c;
+    *(Callback *)(self + 0x1c) = func_ov210_020d3f1c;
     *(Callback *)(self + 0x20) = func_ov210_020d3f28;
     *(Callback *)(self + 0x28) = func_ov210_020d3f98;
     *(Callback *)(self + 0x2c) = func_ov210_020d3fd0;

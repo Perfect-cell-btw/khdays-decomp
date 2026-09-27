@@ -337,7 +337,7 @@ src/overlays/ov266/calls/func_ov266_020d2a10.c:
     complete
     .text       start:0x020d2a10 end:0x020d2a34
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d2a34.c:
+src/overlays/ov266/calls/func_ov266_020d2a34.c:
     complete
     .text       start:0x020d2a34 end:0x020d2a40
 

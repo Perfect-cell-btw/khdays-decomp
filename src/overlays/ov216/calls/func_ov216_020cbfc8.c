@@ -24,7 +24,7 @@ typedef struct { int w[11]; } PoseBlock;
 
 extern int func_02016320(void *model, MtxFx43 *out, void *opt, unsigned int jointId);
 extern void func_0203c960(void *srt);
-extern void *OS_IsThreadAvailable_0x020c9848(void);
+extern void *func_ov107_020c9848(void);
 extern void func_01ffa724(int scale, const VecFx32 *src, VecFx32 *dst);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern void func_0203ca30(void *srt, const VecFx32 *translation);
@@ -41,7 +41,7 @@ void func_ov216_020cbfc8(int *scene, char *self)
         position = jointXfm.translation;
         func_0203c960(self + 0x3f4);
         func_01ffa724(-0x1800,
-                      (const VecFx32 *)(*(char **)OS_IsThreadAvailable_0x020c9848() + 0x7c),
+                      (const VecFx32 *)(*(char **)func_ov107_020c9848() + 0x7c),
                       &cameraOffset);
         VEC_Add(&position, &cameraOffset, &position);
         func_0203ca30(self + 0x3f4, &position);

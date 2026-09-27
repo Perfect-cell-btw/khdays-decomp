@@ -52,7 +52,7 @@ src/overlays/ov244/calls/func_ov244_020cd178.c:
     complete
     .text       start:0x020cd178 end:0x020cd20c
 
-src/calls/WM_EndKeySharing_0x020cd20c.c:
+src/overlays/ov244/calls/func_ov244_020cd20c.c:
     complete
     .text       start:0x020cd20c end:0x020cd218
 
@@ -368,7 +368,7 @@ src/overlays/ov244/calls/func_ov244_020d0e3c.c:
     complete
     .text       start:0x020d0e3c end:0x020d0e7c
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d0e7c.c:
+src/overlays/ov244/calls/func_ov244_020d0e7c.c:
     complete
     .text       start:0x020d0e7c end:0x020d0e88
 

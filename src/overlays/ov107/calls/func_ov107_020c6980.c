@@ -120,7 +120,7 @@ struct ModePacket { u16 index; u8 kind; u8 mode; };
 
 extern char *func_ov107_020cab14(struct AiState *self, int *distance);
 extern int FX_Sqrt(int value);
-extern struct ThreadState *OS_IsThreadAvailable_0x020c9848(void);
+extern struct ThreadState *func_ov107_020c9848(void);
 extern int func_ov107_020c9568(void *context, VecFx32 *position);
 extern void func_ov107_020c5cfc(struct AiState *self, void *arg, void *data);
 extern void func_0203c4a8(void *owner, int tick);
@@ -164,7 +164,7 @@ void func_ov107_020c6980(struct AiState *self, int delta)
             /* The explicit target tests preserve the two short-circuit paths. */
             if (self->field_30c < 4 &&
                 (target == 0 || (target != 0 && distance > 0x1e000))) {
-                thread = OS_IsThreadAvailable_0x020c9848();
+                thread = func_ov107_020c9848();
                 other = thread != 0 ? thread->field_044 : 0;
                 if ((self->field_002 % 4) != (other % 4)) {
                     self->field_30c++;
@@ -172,28 +172,28 @@ void func_ov107_020c6980(struct AiState *self, int delta)
                 }
             } else if (self->field_30c < 3 &&
                        (target == 0 || (target != 0 && distance > 0x14000))) {
-                thread = OS_IsThreadAvailable_0x020c9848();
+                thread = func_ov107_020c9848();
                 other = thread != 0 ? thread->field_044 : 0;
                 if ((self->field_002 % 3) != (other % 3)) {
                     self->field_30c++;
                     return;
                 }
             } else if (self->field_30c < 3 && (((struct FlagBytes *)&self->flags60)->low & 1) == 0) {
-                thread = OS_IsThreadAvailable_0x020c9848();
+                thread = func_ov107_020c9848();
                 other = thread != 0 ? thread->field_044 : 0;
                 if ((self->field_002 % 3) != (other % 3)) {
                     self->field_30c++;
                     return;
                 }
             } else if (self->field_30c < 2 && (((struct FlagBytes *)&self->flags60)->low & 0x80) != 0) {
-                thread = OS_IsThreadAvailable_0x020c9848();
+                thread = func_ov107_020c9848();
                 other = thread != 0 ? thread->field_044 : 0;
                 if ((self->field_002 % 2) != (other % 2)) {
                     self->field_30c++;
                     return;
                 }
             } else if (self->field_30c < 2 && target != 0 && distance > 0xa000) {
-                thread = OS_IsThreadAvailable_0x020c9848();
+                thread = func_ov107_020c9848();
                 other = thread != 0 ? thread->field_044 : 0;
                 if ((self->field_002 % 2) == (other % 2)) {
                     self->field_30c++;
@@ -203,9 +203,9 @@ void func_ov107_020c6980(struct AiState *self, int delta)
         }
     } else if (self->field_004 != 0 && (self->field_1c4 & 0xf) == 0 &&
                (self->field_1ac & 8) == 0 && self->field_30c < 3 &&
-               func_ov107_020c9568(OS_IsThreadAvailable_0x020c9848()->field_000,
+               func_ov107_020c9568(func_ov107_020c9848()->field_000,
                                    &self->field_074) != 0) {
-        thread = OS_IsThreadAvailable_0x020c9848();
+        thread = func_ov107_020c9848();
         other = thread != 0 ? thread->field_044 : 0;
         if ((self->field_002 % 3) == (other % 3)) {
             self->field_30c++;

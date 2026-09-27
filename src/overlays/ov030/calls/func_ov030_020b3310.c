@@ -21,7 +21,7 @@ typedef struct {
 extern Ov030Context *NNSi_FndGetCurrentRootHeap(void);
 extern void func_0202a440(int *p);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
-extern void WM_EndKeySharing_0x02023ad0(void *obj);
+extern void func_02023ad0(void *obj);
 extern void func_ov002_02051fc8(int *a, int *b);
 extern void func_ov030_020b4c34(int *p);
 extern void *func_ov022_0209fab4(Ov030Context *ctx);
@@ -36,7 +36,7 @@ void *func_ov030_020b3310(void) {
         NNSi_FndFreeFromDefaultHeap(ctx->pBuffer2c50);
     }
     if (ctx->pObject2cac != 0) {
-        WM_EndKeySharing_0x02023ad0(ctx->pObject2cac);
+        func_02023ad0(ctx->pObject2cac);
     }
     func_ov002_02051fc8(ctx->aSub2c54, ctx->aSub0910);
     func_ov030_020b4c34(ctx->aSub2cb0);

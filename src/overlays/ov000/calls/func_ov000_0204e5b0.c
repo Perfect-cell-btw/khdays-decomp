@@ -57,7 +57,7 @@ extern unsigned short data_0204c190;
 
 extern Ov000MenuContext *NNSi_FndGetCurrentRootHeap(void);
 extern void      func_ov000_0204d354(void);
-extern void      FS_UnloadOverlayImage_0x020362ec(void *image);
+extern void      func_020362ec(void *image);
 extern int       func_ov000_0204d244(void *input, int selection, int group);
 extern void      func_0201e3cc(int brightness);
 extern void      G2x_SetBlendAlpha_(u32 reg, int a, int b, int c, int d);
@@ -86,7 +86,7 @@ StateFn func_ov000_0204e5b0(void) {
     cancel = 0;
     func_ov000_0204d354();
     if (ctx->inputReady != 0) {
-        FS_UnloadOverlayImage_0x020362ec(ctx->inputSource);
+        func_020362ec(ctx->inputSource);
         ctx->cursorRow[ctx->page] = func_ov000_0204d244(ctx->inputSource,
                                                         ctx->cursorRow[ctx->page],
                                                         ctx->page);

@@ -45,7 +45,7 @@ extern int data_ov002_0207f62c;
 extern const int data_ov002_0207ebf4[];
 
 extern int func_02023930(int nSound, int nArg);
-extern void WM_EndKeySharing_0x02023ad0(int hVoice);
+extern void func_02023ad0(int hVoice);
 
 extern void func_ov002_020536a0(void);
 extern void func_ov002_02053558(int nSound);
@@ -62,7 +62,7 @@ void func_ov002_02062a04(void)
 
     func_ov002_020536a0();
     if (s->hVoice != 0) {
-        WM_EndKeySharing_0x02023ad0(s->hVoice);
+        func_02023ad0(s->hVoice);
     }
 
     if (s->nLine == 2) {

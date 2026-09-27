@@ -44,7 +44,7 @@ extern const char data_ov191_020d2dec[];
 extern const char data_ov191_020d2df4[];
 
 extern void func_ov191_020cff74(void);
-extern void WM_EndKeySharing_0x020d0220(void);
+extern void func_ov191_020d0220(void);
 extern void func_ov191_020d022c(void);
 extern void func_ov191_020d000c(void);
 extern void func_ov191_020d01a8(void);
@@ -84,7 +84,7 @@ void func_ov191_020cfc04(int param)
     *(void **)(param + 0x30) = func_ov191_020d03bc;
     *(void **)(param + 0x28) = func_ov191_020d01a8;
     *(void **)(param + 0x2c) = func_ov191_020d01e4;
-    *(void **)(param + 0x0c) = WM_EndKeySharing_0x020d0220;
+    *(void **)(param + 0x0c) = func_ov191_020d0220;
     *(void **)(param + 0x10) = func_ov191_020d022c;
     *(void **)(param + 0x34) = func_ov191_020d0270;
     *(void **)(param + 0x1e0) = func_ov191_020d0628;

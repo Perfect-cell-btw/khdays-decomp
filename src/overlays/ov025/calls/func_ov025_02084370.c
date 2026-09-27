@@ -6,7 +6,7 @@
  * scroll counter (the second half's surface base is +0x4a80). Flush both command lists at +0x9500 and
  * +0x954c (020554e4), finalize (0204ffe4), and return the resulting page handle at +0x9614.
  */
-extern void FS_UnloadOverlayImage_0x020362ec(unsigned short *p);
+extern void func_020362ec(unsigned short *p);
 extern void func_ov025_02083a78(void);
 extern void func_ov025_02088044(int surface, int scroll);
 extern void func_ov025_0208918c(void *cmdlist);
@@ -18,7 +18,7 @@ extern int data_ov025_020b5744[];
 int func_ov025_02084370(void) {
     *(unsigned short *)(CTXV + 0x9610) = 0;
     *(int *)(CTXV + 0x95f4) = 1;
-    FS_UnloadOverlayImage_0x020362ec((unsigned short *)(CTXV + 0x963e));
+    func_020362ec((unsigned short *)(CTXV + 0x963e));
     func_ov025_02083a78();
     if (*(int *)(data_ov025_020b5744[1] + 0x9628) != 0) {
         func_ov025_02088044(data_ov025_020b5744[1],

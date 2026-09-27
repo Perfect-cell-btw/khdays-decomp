@@ -1884,7 +1884,7 @@ src/overlays/ov002/calls/func_ov002_0205f50c.c:
     complete
     .text       start:0x0205f50c end:0x0205f534
 
-src/overlays/ov002/calls/OS_IsThreadAvailable_0x0205f534.c:
+src/overlays/ov002/calls/func_ov002_0205f534.c:
     complete
     .text       start:0x0205f534 end:0x0205f544
 
@@ -2280,7 +2280,7 @@ src/overlays/ov002/calls/func_ov002_020634f4.c:
     complete
     .text       start:0x020634f4 end:0x02063574
 
-src/calls/WM_EndKeySharing_0x02063574.c:
+src/overlays/ov002/calls/func_ov002_02063574.c:
     complete
     .text       start:0x02063574 end:0x02063580
 
@@ -2336,7 +2336,7 @@ src/overlays/ov002/calls/func_ov002_02063714.c:
     complete
     .text       start:0x02063714 end:0x0206373c
 
-src/overlays/ov002/calls/OS_IsThreadAvailable_0x0206373c.c:
+src/overlays/ov002/calls/func_ov002_0206373c.c:
     complete
     .text       start:0x0206373c end:0x0206374c
 
@@ -3976,7 +3976,7 @@ src/overlays/ov002/calls/func_ov002_0206fb5c.c:
     complete
     .text       start:0x0206fb5c end:0x0206fb74
 
-src/overlays/ov002/calls/OSi_IrqTimer3_0x0206fb74.c:
+src/overlays/ov002/calls/func_ov002_0206fb74.c:
     complete
     .text       start:0x0206fb74 end:0x0206fb84
 

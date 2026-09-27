@@ -7,7 +7,7 @@ struct ListFlags5c { int b0 : 1; int b1 : 1; };
 
 extern void func_ov107_020c6980(int self);
 extern void func_0203c86c(int list, int a);
-extern char *OS_IsThreadAvailable_0x020c9848(void);   /* the game's camera-state getter, named after the byte-identical SDK thunk */
+extern char *func_ov107_020c9848(void);   /* the game's camera-state getter, named after the byte-identical SDK thunk */
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_01ff8d18(Vec3 *v, Vec3 *out);
 extern void func_01ffa724(int scale, Vec3 *v, Vec3 *out);
@@ -27,7 +27,7 @@ void func_ov213_020cc4cc(int self) {
     }
     at = *(Vec3 *)(self + 0xb0);
     at.y -= 0x2000;
-    VEC_Subtract((Vec3 *)(*(char **)OS_IsThreadAvailable_0x020c9848() + 0x88), &at, &dir);
+    VEC_Subtract((Vec3 *)(*(char **)func_ov107_020c9848() + 0x88), &at, &dir);
     func_01ff8d18(&dir, &dir);
     func_01ffa724(0x2000, &dir, &dir);
     VEC_Add(&at, &dir, &at);

@@ -58,7 +58,7 @@ extern Ov002MapSelection *func_ov002_02066248(int nPlayer);
 extern void func_ov002_020669f8(int nGroup, int nFlag);
 extern void func_ov002_02066920(int nCell, int hSound);
 extern void func_ov002_02066970(int nValue, int nFlag);
-extern int OS_IsThreadAvailable_0x0206373c(void);
+extern int func_ov002_0206373c(void);
 extern int func_ov002_02053bb8(int nId);
 extern void func_ov002_020667a0(int hCanvas, int hAnim, int a, int b, int c);
 extern void func_ov002_02053cd4(int nId);
@@ -112,7 +112,7 @@ void *func_ov002_02066a80(void)
     func_ov002_02066920(nCell, pPage->apSoundTables[pSel->nGroup][nIndex]);
     func_ov002_02066970(pSel->nField4, 1);
 
-    hCanvas = OS_IsThreadAvailable_0x0206373c();
+    hCanvas = func_ov002_0206373c();
     hAnim = func_ov002_02053bb8(0x1a);
     func_ov002_020667a0(hCanvas, hAnim, 3, 4, 0xd);
     func_ov002_02053cd4(0x1a);

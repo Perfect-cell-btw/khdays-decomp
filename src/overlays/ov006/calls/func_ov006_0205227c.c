@@ -95,7 +95,7 @@ extern const MissionOffsetTable data_ov006_0205630c;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int func_02020400(int numerator, int denominator);
-extern int WM_EndKeySharing_0x02032444(void *panel, int kind, int variant);
+extern int func_02032444(void *panel, int kind, int variant);
 extern void func_02032494(void *panel);
 extern void func_0203281c(void *panel, int cell, int mode);
 extern void func_02032680(void *panel, int cell, int step);
@@ -145,7 +145,7 @@ void func_ov006_0205227c(int mode)
     switch (mode) {
     case 0:
     case 1:
-        handle = WM_EndKeySharing_0x02032444(&data_ov006_02056664->panel, 0, 0);
+        handle = func_02032444(&data_ov006_02056664->panel, 0, 0);
         data_ov006_02056664->cellBackdrop = handle;
         config.x = 0x38;
         config.y = 0x98;
@@ -155,7 +155,7 @@ void func_ov006_0205227c(int mode)
         func_ov006_02051fbc(&data_ov006_02056664->panel, data_ov006_02056664->cellBackdrop, config);
 
         for (i = 0; i < 4; i++) {
-            handle = WM_EndKeySharing_0x02032444(&data_ov006_02056664->panel, 2, 0);
+            handle = func_02032444(&data_ov006_02056664->panel, 2, 0);
             data_ov006_02056664->rowCells[i] = handle;
             config.y = i * 0x18 + 0x28;
             config.x = 0x80;
@@ -165,7 +165,7 @@ void func_ov006_0205227c(int mode)
             func_ov006_02051fbc(&data_ov006_02056664->panel, data_ov006_02056664->rowCells[i], config);
         }
 
-        handle = WM_EndKeySharing_0x02032444(&data_ov006_02056664->panel, 1, 0);
+        handle = func_02032444(&data_ov006_02056664->panel, 1, 0);
         data_ov006_02056664->cellTitle = handle;
         config.x = 0x80;
         config.y = 0x28;
@@ -175,7 +175,7 @@ void func_ov006_0205227c(int mode)
         func_02032680(&data_ov006_02056664->panel, data_ov006_02056664->cellTitle, fade);
         func_ov006_02051fbc(&data_ov006_02056664->panel, data_ov006_02056664->cellTitle, config);
 
-        handle = WM_EndKeySharing_0x02032444(&data_ov006_02056664->panel, 5, 0);
+        handle = func_02032444(&data_ov006_02056664->panel, 5, 0);
         data_ov006_02056664->cellHeader = handle;
         config.x = 0xf8;
         config.y = 0xa8;
@@ -184,7 +184,7 @@ void func_ov006_0205227c(int mode)
         func_0203281c(&data_ov006_02056664->panel, data_ov006_02056664->cellHeader, 1);
         func_ov006_02051fbc(&data_ov006_02056664->panel, data_ov006_02056664->cellHeader, config);
 
-        handle = WM_EndKeySharing_0x02032444(&data_ov006_02056664->panel, 4, 0);
+        handle = func_02032444(&data_ov006_02056664->panel, 4, 0);
         data_ov006_02056664->cellFrame = handle;
         config.x = 0x80;
         config.y = 0x98;
@@ -193,7 +193,7 @@ void func_ov006_0205227c(int mode)
         func_0203281c(&data_ov006_02056664->panel, data_ov006_02056664->cellFrame, 1);
         func_ov006_02051fbc(&data_ov006_02056664->panel, data_ov006_02056664->cellFrame, config);
 
-        handle = WM_EndKeySharing_0x02032444(&data_ov006_02056664->panel, 3, 0);
+        handle = func_02032444(&data_ov006_02056664->panel, 3, 0);
         data_ov006_02056664->cellBody = handle;
         config.x = 0x80;
         config.y = 0x98;
@@ -206,7 +206,7 @@ void func_ov006_0205227c(int mode)
 
     case 2:
     case 3:
-        handle = WM_EndKeySharing_0x02032444(&data_ov006_02056664->panel, 0, 0);
+        handle = func_02032444(&data_ov006_02056664->panel, 0, 0);
         data_ov006_02056664->cellBackdrop = handle;
         config.x = 0x38;
         config.y = 0x98;
@@ -216,7 +216,7 @@ void func_ov006_0205227c(int mode)
         func_ov006_02051fbc(&data_ov006_02056664->panel, data_ov006_02056664->cellBackdrop, config);
 
         for (i = 0; i < 4; i++) {
-            handle = WM_EndKeySharing_0x02032444(&data_ov006_02056664->panel, 0, 1);
+            handle = func_02032444(&data_ov006_02056664->panel, 0, 1);
             data_ov006_02056664->rowCells[i] = handle;
             config.y = i * 0x18 + 0x28;
             config.x = 0x88;
@@ -226,7 +226,7 @@ void func_ov006_0205227c(int mode)
             func_ov006_02051fbc(&data_ov006_02056664->panel, data_ov006_02056664->rowCells[i], config);
         }
 
-        handle = WM_EndKeySharing_0x02032444(&data_ov006_02056664->panel, 5, 0);
+        handle = func_02032444(&data_ov006_02056664->panel, 5, 0);
         data_ov006_02056664->cellHeader = handle;
         config.x = 0xf8;
         config.y = 0xa8;
@@ -235,7 +235,7 @@ void func_ov006_0205227c(int mode)
         func_0203281c(&data_ov006_02056664->panel, data_ov006_02056664->cellHeader, 1);
         func_ov006_02051fbc(&data_ov006_02056664->panel, data_ov006_02056664->cellHeader, config);
 
-        handle = WM_EndKeySharing_0x02032444(&data_ov006_02056664->panel, 4, 0);
+        handle = func_02032444(&data_ov006_02056664->panel, 4, 0);
         data_ov006_02056664->cellFrame = handle;
         config.x = 0x80;
         config.y = 0x98;
@@ -248,7 +248,7 @@ void func_ov006_0205227c(int mode)
             ctx->entries[data_ov006_02056664->cellFrame].flags &= ~4;
         }
 
-        handle = WM_EndKeySharing_0x02032444(&data_ov006_02056664->panel, 3, 0);
+        handle = func_02032444(&data_ov006_02056664->panel, 3, 0);
         data_ov006_02056664->cellBody = handle;
         config.x = 0x80;
         config.y = 0x98;
@@ -260,7 +260,7 @@ void func_ov006_0205227c(int mode)
         return;
 
     case 4:
-        handle = WM_EndKeySharing_0x02032444(&ctx->sidePanel, 0, 0);
+        handle = func_02032444(&ctx->sidePanel, 0, 0);
         ctx->cellBackdrop = handle;
         config.x = 0;
         config.y = 0x24;
@@ -269,7 +269,7 @@ void func_ov006_0205227c(int mode)
         func_0203281c(&ctx->sidePanel, ctx->cellBackdrop, 1);
         func_ov006_02051fbc(&ctx->sidePanel, ctx->cellBackdrop, config);
 
-        handle = WM_EndKeySharing_0x02032444(&ctx->sidePanel, 1, 0);
+        handle = func_02032444(&ctx->sidePanel, 1, 0);
         ctx->cellHeader = handle;
         config.x = 0x48;
         config.y = 0x24;
@@ -279,7 +279,7 @@ void func_ov006_0205227c(int mode)
         func_ov006_02051fbc(&ctx->sidePanel, ctx->cellHeader, config);
 
         for (i = 0; i < 4; i++) {
-            handle = WM_EndKeySharing_0x02032444(&ctx->sidePanel, 2, 0);
+            handle = func_02032444(&ctx->sidePanel, 2, 0);
             (&ctx->cellBody)[i] = handle;
             config.y = i * 0x10 + 0x3e;
             config.x = 0xa0;
@@ -291,7 +291,7 @@ void func_ov006_0205227c(int mode)
         }
 
         for (i = 0; i < 3; i++) {
-            handle = WM_EndKeySharing_0x02032444(&ctx->sidePanel, 3, 0);
+            handle = func_02032444(&ctx->sidePanel, 3, 0);
             (&ctx->rowCells[1])[i] = handle;
             config.y = i * 0x10 + 0x3e;
             config.x = 0xfd;
@@ -303,7 +303,7 @@ void func_ov006_0205227c(int mode)
         }
 
         for (i = 0; i < 7; i++) {
-            handle = WM_EndKeySharing_0x02032444(&ctx->sidePanel, 4, 0);
+            handle = func_02032444(&ctx->sidePanel, 4, 0);
             ctx->iconCells[i] = handle;
             if (i < 4) {
                 config.x = 0xa0;
@@ -319,7 +319,7 @@ void func_ov006_0205227c(int mode)
         }
 
         for (i = 0; i < 4; i++) {
-            handle = WM_EndKeySharing_0x02032444(&ctx->sidePanel, 0, 1);
+            handle = func_02032444(&ctx->sidePanel, 0, 1);
             ctx->markCells[i] = handle;
             switch (i) {
             case 0:
@@ -347,7 +347,7 @@ void func_ov006_0205227c(int mode)
             func_ov006_02051fbc(&ctx->sidePanel, ctx->markCells[i], config);
         }
 
-        handle = WM_EndKeySharing_0x02032444(&ctx->panel, 0xe, 1);
+        handle = func_02032444(&ctx->panel, 0xe, 1);
         ctx->cellCaption = handle;
         config.x = 0x84;
         config.y = 0xa8;
@@ -359,7 +359,7 @@ void func_ov006_0205227c(int mode)
             ctx->entries[ctx->cellCaption].flags &= ~4;
         }
 
-        handle = WM_EndKeySharing_0x02032444(&ctx->panel, 0, 1);
+        handle = func_02032444(&ctx->panel, 0, 1);
         ctx->cellTopBar = handle;
         config.x = 0x80;
         config.y = 0xc;
@@ -368,7 +368,7 @@ void func_ov006_0205227c(int mode)
         func_ov006_02051fbc(&ctx->panel, ctx->cellTopBar, config);
         func_0203281c(&ctx->panel, ctx->cellTopBar, 1);
 
-        handle = WM_EndKeySharing_0x02032444(&ctx->panel, 0, 0);
+        handle = func_02032444(&ctx->panel, 0, 0);
         ctx->cellFooter = handle;
         config.x = 0xf8;
         config.y = 0xa8;
@@ -378,9 +378,9 @@ void func_ov006_0205227c(int mode)
 
         pos = data_ov006_0205628c.origin;
         for (i = 0; i < 4; i++) {
-            ctx->primaryCells[i] = WM_EndKeySharing_0x02032444(&ctx->panel, i + 5, 1);
-            ctx->secondaryCells[i] = WM_EndKeySharing_0x02032444(&ctx->panel, i + 1, 1);
-            ctx->cursorCells[i] = WM_EndKeySharing_0x02032444(&ctx->panel, i + 9, 1);
+            ctx->primaryCells[i] = func_02032444(&ctx->panel, i + 5, 1);
+            ctx->secondaryCells[i] = func_02032444(&ctx->panel, i + 1, 1);
+            ctx->cursorCells[i] = func_02032444(&ctx->panel, i + 9, 1);
             func_0203257c(&ctx->panel, ctx->cursorCells[i], &pos);
             ctx->pairIndex[i] = i;
             ctx->pairState[i] = 0;
@@ -434,7 +434,7 @@ void func_ov006_0205227c(int mode)
         i = 0;
         offsets = data_ov006_0205630c;
         do {
-            ctx->slotCells[i] = WM_EndKeySharing_0x02032444(&ctx->panel, i + 1, 0);
+            ctx->slotCells[i] = func_02032444(&ctx->panel, i + 1, 0);
             selector = i;
             if (selector == -1 || selector >= 19) {
                 config.x = -48;

@@ -53,7 +53,7 @@ extern void func_0203ca14(void *srt, int x, int y, int z);
 extern int func_0203bdfc(int item, const char *name);
 extern void func_0203c7ac(int item, int a);
 extern void func_ov107_020c92b0(char *self, int slot, int a, const Vec3 *v, int c);
-extern char *OS_IsThreadAvailable_0x020c9848(void);
+extern char *func_ov107_020c9848(void);
 extern void func_ov107_020c9074(char *self, int item);
 extern int *func_01fffca8(void *pool, int elementSize, int capacity);
 extern int func_ov107_020c3210(const Capsule *capsule);
@@ -165,7 +165,7 @@ void func_ov267_020d025c(char *self)
     for (i = 0; i < 10; i++) {
         if (i <= 1) {
             node = func_0203b898((void *)((ids.id[i] & 0x1ff)
-                | (((*(int *)(OS_IsThreadAvailable_0x020c9848() + 0x88) + 0x8000) & 0xfffffc) << 7 | 0x80000000)));
+                | (((*(int *)(func_ov107_020c9848() + 0x88) + 0x8000) & 0xfffffc) << 7 | 0x80000000)));
         } else {
             node = func_0203b898(func_ov107_020c9440(self, ids.id[i]));
         }

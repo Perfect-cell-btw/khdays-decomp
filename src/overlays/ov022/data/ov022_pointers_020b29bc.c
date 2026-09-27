@@ -55,8 +55,8 @@ extern void func_ov022_0208fd70(void);
 extern void func_ov022_0208fdf8(void);
 extern void func_ov022_0208fe40(void);
 extern void func_ov022_02090070(void);
-extern int WM_EndKeySharing_0x0208d758;
-extern int WM_EndKeySharing_0x0208fd64;
+extern int func_ov022_0208d758;
+extern int func_ov022_0208fd64;
 
 void *data_ov022_020b29bc[5] = {
 
@@ -140,7 +140,7 @@ void *data_ov022_020b2a20[15] = {
 
     (void *)func_ov022_0208f2d4,
 
-    &WM_EndKeySharing_0x0208d758,
+    &func_ov022_0208d758,
 
     (void *)func_ov022_0208d764,
 
@@ -148,7 +148,7 @@ void *data_ov022_020b2a20[15] = {
 
     (void *)func_ov022_0208f888,
 
-    &WM_EndKeySharing_0x0208fd64,
+    &func_ov022_0208fd64,
 
     (void *)func_ov022_0208fdf8,
 

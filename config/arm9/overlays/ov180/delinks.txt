@@ -24,7 +24,7 @@ src/overlays/ov180/calls/func_ov180_020d3bc4.c:
     complete
     .text       start:0x020d3bc4 end:0x020d3c04
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d3c04.c:
+src/overlays/ov180/calls/func_ov180_020d3c04.c:
     complete
     .text       start:0x020d3c04 end:0x020d3c10
 

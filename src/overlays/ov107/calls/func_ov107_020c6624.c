@@ -122,7 +122,7 @@ struct AiState {
 extern void func_ov107_020c3c74(u16 *node);
 extern void func_01fffc24(void *list);
 extern void *func_0203c400(void);
-extern ActorManager *OS_IsThreadAvailable_0x020c9848(void);
+extern ActorManager *func_ov107_020c9848(void);
 extern CreatedItem *func_0203b898(u32 handle);
 extern void func_ov107_020c92b0(AiState *self, int slot, unsigned int kind, Vec3 *pos, int field10);
 
@@ -186,7 +186,7 @@ void func_ov107_020c6624(AiState *self, StateData *data)
     func_01fffc24(self->list_22c);
     func_01fffc24(self->list_260);
     self->field_3c = func_0203c400();
-    self->field_1a8 = func_0203b898((((OS_IsThreadAvailable_0x020c9848()->spriteSet_88 + 0x8000)
+    self->field_1a8 = func_0203b898((((func_ov107_020c9848()->spriteSet_88 + 0x8000)
                                       & 0xfffffc) << 7) | 0x80000000 | 6);
     self->field_1a8->flags_5c |= 2;
     self->field_310 = -1;

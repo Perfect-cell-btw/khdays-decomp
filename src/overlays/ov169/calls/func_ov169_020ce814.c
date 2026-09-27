@@ -17,7 +17,7 @@ extern int func_ov107_020cab14(int actor, int mode);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int func_01ff8d18(void *a, void *d);
 extern void func_01ffa724(int scale, void *v, void *d);
-extern char *OS_IsThreadAvailable_0x020c9848(void);
+extern char *func_ov107_020c9848(void);
 extern int FX_Inv_0x01ff8a40(int v);
 extern int FX_Inv(int a, int b);
 extern int func_02023eb4(int bound);
@@ -52,7 +52,7 @@ void func_ov169_020ce814(int *node)
         i = 0;
         step = 0;
         for (; i < state[0xd] / 2; i++) {
-            step += FX_Mul(FX_Inv_0x01ff8a40(*(int *)(OS_IsThreadAvailable_0x020c9848() + 0x40)), -0x100);
+            step += FX_Mul(FX_Inv_0x01ff8a40(*(int *)(func_ov107_020c9848() + 0x40)), -0x100);
             state[0xf] -= step;
         }
         state[0xd] <<= 12;

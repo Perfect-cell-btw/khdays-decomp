@@ -13,7 +13,7 @@
  * part2, off2, slot2, i2. All 720 orders were compiled; exactly this one matches.
  *
  * One of four byte-identical siblings (ov036/ov055/ov075/ov092). */
-extern void WM_EndKeySharing_0x020b15a4(int handle, void *slot);
+extern void func_ov022_020b15a4(int handle, void *slot);
 extern char *data_ov055_020b7740;
 
 void func_ov055_020b6540(char *self) {
@@ -39,7 +39,7 @@ void func_ov055_020b6540(char *self) {
     slot = rig + 0x134;
     for (; i < 0xc; i++) {
         part = *(char **)(parts + 0x3c) + off;
-        WM_EndKeySharing_0x020b15a4(*(int *)(base + 0x63c), slot);
+        func_ov022_020b15a4(*(int *)(base + 0x63c), slot);
         *(char **)(part + 0x130) = slot;
         off += 0x1c8;
         slot += 0x24;
@@ -52,7 +52,7 @@ void func_ov055_020b6540(char *self) {
     slot2 = rig + 0x2e4;
     for (; i2 < 2; i2++) {
         part2 = *(char **)(parts2 + 0x6c) + off2;
-        WM_EndKeySharing_0x020b15a4(*(int *)(base2 + 0x640), slot2);
+        func_ov022_020b15a4(*(int *)(base2 + 0x640), slot2);
         *(char **)(part2 + 0x130) = slot2;
         off2 += 0x1c8;
         slot2 += 0x24;

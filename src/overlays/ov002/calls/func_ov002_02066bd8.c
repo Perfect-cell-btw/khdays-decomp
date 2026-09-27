@@ -27,7 +27,7 @@ typedef struct {
 
 extern Ov002LinkCtx *data_ov002_0207f9f0;
 
-extern Ov002BlitDesc *OS_IsThreadAvailable_0x0206373c(void);
+extern Ov002BlitDesc *func_ov002_0206373c(void);
 extern void func_ov002_02066820(Ov002BlitDesc *pDesc);
 extern u16 *func_ov002_02054d4c(u16 *pReq);
 extern void func_ov002_02066f14(u16 *pReq);
@@ -41,7 +41,7 @@ int func_ov002_02066bd8(void)
     Ov002LinkCtx *ctx;
 
     ctx = data_ov002_0207f9f0;
-    func_ov002_02066820(OS_IsThreadAvailable_0x0206373c());
+    func_ov002_02066820(func_ov002_0206373c());
     func_ov002_02054d4c(aReq);
     if (ctx->bWaiting != 0) {
         if (aReq[2] == 0) {

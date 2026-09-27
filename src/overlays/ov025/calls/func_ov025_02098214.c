@@ -57,7 +57,7 @@ extern void  func_ov025_02091e20(Ov008MenuContext *pCtx);                /* free
 extern void  func_ov025_02092f5c(Ov008MenuContext *pCtx);                /* Ov008_RebuildPanelRevealMask */
 extern void *NNS_FndGetNextListObject(void *pList, void *pObject);
 extern void  func_ov025_02092f34(Ov008MenuContext *pCtx, void *pNode);   /* unlink a tracked node */
-extern void  WM_EndKeySharing_0x02087254(Ov008GridSummary *pSummary);    /* release a summary */
+extern void  func_ov025_02087254(Ov008GridSummary *pSummary);    /* release a summary */
 extern void  func_ov025_02089884(void *pRecords);                         /* release a text cache */
 extern void  NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void *func_ov025_02084a50(void);                                   /* Ov008_GetCtxBlock9500 */
@@ -101,7 +101,7 @@ void func_ov025_02098214(Ov008MenuContext *pCtx)
             }
         }
     }
-    WM_EndKeySharing_0x02087254(&pCtx->summary);
+    func_ov025_02087254(&pCtx->summary);
     func_ov025_02089884(pCtx->records);
     REG_DISPCNT &= ~DISPCNT_MODE_BITS;
     if (pCtx->pIconArchive != 0) {

@@ -22,7 +22,7 @@ extern int func_ov022_02083f40(void);
 extern void func_ov022_02086818(int nHandle, int nMode);
 extern void func_ov002_0204cee0(int nHandle, int nMode);
 extern void func_ov002_0204cb70(int nHandle, int nMode, void *pExtra);
-extern int OS_IsThreadAvailable_0x0205f534(void);
+extern int func_ov002_0205f534(void);
 extern void func_ov002_0206b910(const char *pName, void *pText);
 extern int func_02030788(void);
 extern void func_ov002_0206d928(int nMode);
@@ -102,7 +102,7 @@ int func_ov002_0207b698(char *pElement)
         break;
 
     case 2:
-        nRes = OS_IsThreadAvailable_0x0205f534();
+        nRes = func_ov002_0205f534();
         if (nRes < 0) {
             break;
         }

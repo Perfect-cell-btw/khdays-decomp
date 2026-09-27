@@ -9,7 +9,7 @@ typedef struct { int id[3]; } IdTable3;
 struct Pair { int res; int handle; };
 
 extern void func_ov277_020d0dd4(void);
-extern void WM_EndKeySharing_0x020d0e14(void);
+extern void func_ov277_020d0e14(void);
 extern void func_ov277_020d0e20(void);
 extern void func_ov277_020d0f08(void);
 extern void *func_ov107_020c9440(int pool, int index);
@@ -27,7 +27,7 @@ void func_ov277_020d0c70(char *self)
     int i;
 
     *(Callback *)(self + 0x8) = func_ov277_020d0dd4;
-    *(Callback *)(self + 0xc) = WM_EndKeySharing_0x020d0e14;
+    *(Callback *)(self + 0xc) = func_ov277_020d0e14;
     *(Callback *)(self + 0x1c) = func_ov277_020d0e20;
     *(Callback *)(self + 0x30) = func_ov277_020d0f08;
     hw = *(u16 *)(self + 0x60);

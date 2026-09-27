@@ -24,15 +24,15 @@ src/overlays/ov116/calls/func_ov116_020cff74.c:
     complete
     .text       start:0x020cff74 end:0x020cffb4
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cffb4.c:
+src/overlays/ov116/calls/func_ov116_020cffb4.c:
     complete
     .text       start:0x020cffb4 end:0x020cffc0
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cffc0.c:
+src/overlays/ov116/calls/func_ov116_020cffc0.c:
     complete
     .text       start:0x020cffc0 end:0x020cffcc
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cffcc.c:
+src/overlays/ov116/calls/func_ov116_020cffcc.c:
     complete
     .text       start:0x020cffcc end:0x020cffd8
 

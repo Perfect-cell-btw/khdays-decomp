@@ -44,7 +44,7 @@ typedef struct Ov023HintPositions {
 } Ov023HintPositions;
 
 extern void  func_02032388(void *pManager, SpriteManagerInit *pInit);  /* SpriteManager_Init */
-extern void *WM_EndKeySharing_0x02032444(void *pManager, int nIndex, int nArg); /* SpriteManager_Create */
+extern void *func_02032444(void *pManager, int nIndex, int nArg); /* SpriteManager_Create */
 extern void  func_0203257c(void *pManager, void *pSprite, Fx32Pair *pPos); /* Sprite_SetPosition */
 extern void  func_020325ec(void *pManager, void *pSprite, int nEntry); /* Sprite_SetEntry */
 extern void  func_02032710(void *pManager, void *pSprite, int bVisible); /* Sprite_SetVisible */
@@ -68,7 +68,7 @@ void func_ov023_02083920(void)
     init.nReserved1 = 0;
     func_02032388(pManager, &init);
     for (i = 0; i < 3; i++) {
-        pManager->apHintSprite[i] = WM_EndKeySharing_0x02032444(pManager, i, 0);
+        pManager->apHintSprite[i] = func_02032444(pManager, i, 0);
         func_0203257c(pManager, pManager->apHintSprite[i], &positions.aPos[i]);
         func_020325ec(pManager, pManager->apHintSprite[i], 0);
         func_02032710(pManager, pManager->apHintSprite[i], 1);

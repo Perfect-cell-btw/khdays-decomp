@@ -46,7 +46,7 @@ typedef struct Ov023JointHook {
     int  nValue;              /* 0x2c */
 } Ov023JointHook;
 
-extern void WM_EndKeySharing_0x0202afe8(Ov023Node *pNode, int nValue); /* apply the joint hook value (0202afe8) */
+extern void func_0202afe8(Ov023Node *pNode, int nValue); /* apply the joint hook value (0202afe8) */
 extern void func_02016294(MtxFx43 *pPosition, MtxFx33 *pVector);  /* G3_ReadClipAndVectorMtx */
 extern MtxFx33 *func_ov023_02088454(Ov023RotTween *pTween, MtxFx33 *pOut); /* Ov023_RotTweenStep */
 extern void MTX_Concat43(const MtxFx43 *pA, const MtxFx43 *pB, MtxFx43 *pOut);
@@ -69,7 +69,7 @@ void func_ov023_020885fc(Ov023Node *pNode)
     int nTransZ;
 
     if (data_ov023_0208a790.nValue != 0) {
-        WM_EndKeySharing_0x0202afe8(pNode, data_ov023_0208a790.nValue);
+        func_0202afe8(pNode, data_ov023_0208a790.nValue);
     }
     for (i = 0; i < 7; i++) {
         Ov023RotTween *pTween = data_ov023_0208a7a0[i];

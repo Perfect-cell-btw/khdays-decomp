@@ -14,7 +14,7 @@ extern PlayerItemLimit *func_0203583c(int,unsigned int);
 extern void func_ov005_0205129c(unsigned int,int);
 extern void func_ov005_02050bfc(Ov005PanelView *,void **,NNSFndList *);
 /* Historical symbol name; this is the ov005 panel cleanup veneer, not WM code. */
-extern void WM_EndKeySharing_0x02050724(Ov005PanelView *);
+extern void func_ov005_02050724(Ov005PanelView *);
 void func_ov005_02051328(void) {
     void *entries[120];
     Ov005PanelView view;
@@ -35,5 +35,5 @@ void func_ov005_02051328(void) {
         }
     }
     func_ov005_02050bfc(&view,entries,&nodes);
-    WM_EndKeySharing_0x02050724(&view);
+    func_ov005_02050724(&view);
 }

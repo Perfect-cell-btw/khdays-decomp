@@ -61,7 +61,7 @@ extern MissionMenuContext *data_ov006_02056660;
 extern u16 data_0204c190;
 extern u8 data_ov006_020561d0[];
 
-extern void FS_UnloadOverlayImage_0x020362ec(void *image);
+extern void func_020362ec(void *image);
 extern int func_02033b78(int bank, int sound);  /* PlaySound */
 extern u16 func_ov006_0204f3ac(void);  /* Ov006_MissionGetCursorEntry */
 extern int func_ov006_0204fa58(void);  /* Ov006_GetMissionMenuSelection */
@@ -130,7 +130,7 @@ void *func_ov006_02050fc8(void)
     allSame = 0;
     slotVisible = 0;
     resolvedSelection = 0;
-    FS_UnloadOverlayImage_0x020362ec(data_ov006_02056660->inputHeader);
+    func_020362ec(data_ov006_02056660->inputHeader);
 
     if (func_ov006_02050090() != 0 || cursorEntry == 0xff) {
         func_ov006_0204fef4();

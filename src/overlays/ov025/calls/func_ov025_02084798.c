@@ -8,14 +8,14 @@
  * the spelling of the global read. `*(int *)((int)data + 4)` is one expression that mwcc is
  * free to reuse; `data[1]` is an array subscript and comes out as a fresh pool load every time,
  * which is what the original has. Same lever as func_ov008_0204ffe4. */
-extern int  OS_IsThreadAvailable_0x02085850(void);
+extern int  func_ov025_02085850(void);
 extern void func_ov025_02082c50(int mode);
 extern void func_ov025_02082e18(int from, unsigned int dur);
 extern void func_ov025_02082fd4(int a);
 extern int  data_ov025_020b5744[];   /* [1] -> shared screen context */
 
 void func_ov025_02084798(int slot, unsigned int dur) {
-    int cur = OS_IsThreadAvailable_0x02085850();
+    int cur = func_ov025_02085850();
     *(int *)((char *)data_ov025_020b5744[1] + 0x95c4) = slot;
     if (cur == -1) {
         func_ov025_02082c50(1);

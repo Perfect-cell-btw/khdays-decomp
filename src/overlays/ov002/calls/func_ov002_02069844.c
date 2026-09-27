@@ -1,6 +1,6 @@
 /* Drop the key-sharing session, if one is up: end it at the wireless layer, then
  * clear the handle, reset the phase to 0 and blank the peer field. */
-extern void WM_EndKeySharing_0x02023ad0(int handle);
+extern void func_02023ad0(int handle);
 
 typedef struct {
     int nHandle;            /* +0 of the block, i.e. +0x8bcc */
@@ -23,7 +23,7 @@ void func_ov002_02069844(void) {
         return;
     }
 
-    WM_EndKeySharing_0x02023ad0(session->nHandle);
+    func_02023ad0(session->nHandle);
 
     session->nHandle = -1;
     session->nPhase = 0;

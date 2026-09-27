@@ -36,7 +36,7 @@ src/overlays/ov193/calls/func_ov193_020d3e24.c:
     complete
     .text       start:0x020d3e24 end:0x020d3e60
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d3e60.c:
+src/overlays/ov193/calls/func_ov193_020d3e60.c:
     complete
     .text       start:0x020d3e60 end:0x020d3e6c
 

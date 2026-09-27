@@ -16,14 +16,14 @@ typedef u32 FSOverlayID;
 extern u32 OVERLAY_106_ID[1];
 #define FS_OVERLAY_ID_ov106 ((FSOverlayID)(u32) & (OVERLAY_106_ID))
 
-extern void WM_EndKeySharing_0x02023ad0(int handle);
+extern void func_02023ad0(int handle);
 extern void func_0201e4a8(int target, FSOverlayID id);   /* unload overlay */
 extern int data_ov022_020b2e60[];
 extern unsigned char data_0204be04;
 
 int func_ov022_02083bd8(void) {
     if (data_ov022_020b2e60[2] != 0) {
-        WM_EndKeySharing_0x02023ad0(data_ov022_020b2e60[2]);
+        func_02023ad0(data_ov022_020b2e60[2]);
         data_ov022_020b2e60[2] = 0;
         data_0204be04 = 0;
         func_0201e4a8(0, FS_OVERLAY_ID_ov106);

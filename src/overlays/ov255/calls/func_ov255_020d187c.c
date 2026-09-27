@@ -20,7 +20,7 @@ extern const char data_ov255_020d2c30[];
 extern void func_ov255_020d1a20(void);
 extern void func_ov255_020d1a60(void);
 extern void func_ov255_020d1a98(void);
-extern void WM_EndKeySharing_0x020d1b6c(void);
+extern void func_ov255_020d1b6c(void);
 extern void func_ov255_020d1ba8(void);
 extern void func_ov255_020d1b78(void);
 
@@ -32,7 +32,7 @@ void func_ov255_020d187c(char *self)
     *(Callback *)(self + 0x8) = func_ov255_020d1a20;
     *(Callback *)(self + 0xc) = func_ov255_020d1a60;
     *(Callback *)(self + 0x1c) = func_ov255_020d1a98;
-    *(Callback *)(self + 0x34) = WM_EndKeySharing_0x020d1b6c;
+    *(Callback *)(self + 0x34) = func_ov255_020d1b6c;
     *(Callback *)(self + 0x30) = func_ov255_020d1ba8;
     *(Callback *)(self + 0x1d0) = func_ov255_020d1b78;
     hw = *(unsigned short *)(self + 0x60);

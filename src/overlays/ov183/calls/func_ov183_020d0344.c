@@ -34,7 +34,7 @@ extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_ov107_020c8eb8(struct Ov181Actor *owner, Sphere *sphere, struct Ov181Actor **out);
 extern int func_ov107_020ca918(struct Ov181Actor *hit, struct Ov181Actor *a, struct Ov181Actor *b, int kind, const Vec3 *push, int z);
-extern char **OS_IsThreadAvailable_0x020c9848(void);   /* the ov107 global getter (misattributed SDK name) */
+extern char **func_ov107_020c9848(void);   /* the ov107 global getter (misattributed SDK name) */
 extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
 extern void func_ov107_020c5af8(struct Ov181Actor *owner, u16 a, u16 id, Vec3 *pos);
 extern const short data_0203d210[];
@@ -73,7 +73,7 @@ void func_ov183_020d0344(int *state, int kind)
                 msg = tmpl;
                 pMsg = &msg;
                 flip = kind == 1 ? 1 : 0;
-                if (VEC_DotProduct((Vec3 *)(*OS_IsThreadAvailable_0x020c9848() + 0x7c), &fwd) > 0) {
+                if (VEC_DotProduct((Vec3 *)(*func_ov107_020c9848() + 0x7c), &fwd) > 0) {
                     flip = (flip + 1) & 1;
                 }
                 ((u8 *)pMsg)[3] = flip == 0 ? 0 : 2;

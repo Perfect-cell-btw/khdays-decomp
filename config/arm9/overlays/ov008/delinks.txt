@@ -624,7 +624,7 @@ src/overlays/ov008/calls/func_ov008_02051a28.c:
     complete
     .text       start:0x02051a28 end:0x02051aa0
 
-src/calls/OS_IsThreadAvailable_0x02051aa0.c:
+src/overlays/ov008/calls/func_ov008_02051aa0.c:
     complete
     .text       start:0x02051aa0 end:0x02051ab0
 
@@ -720,7 +720,7 @@ src/overlays/ov008/calls/func_ov008_020533e4.c:
     complete
     .text       start:0x020533e4 end:0x02053464
 
-src/calls/WM_EndKeySharing_0x02053464.c:
+src/overlays/ov008/calls/func_ov008_02053464.c:
     complete
     .text       start:0x02053464 end:0x02053470
 
@@ -1268,7 +1268,7 @@ src/overlays/ov008/calls/func_ov008_0205664c.c:
     complete
     .text       start:0x0205664c end:0x0205665c
 
-src/calls/WM_EndKeySharing_0x0205665c.c:
+src/overlays/ov008/calls/func_ov008_0205665c.c:
     complete
     .text       start:0x0205665c end:0x02056668
 
@@ -1296,7 +1296,7 @@ src/overlays/ov008/calls/func_ov008_0205684c.c:
     complete
     .text       start:0x0205684c end:0x0205697c
 
-src/calls/WM_EndKeySharing_0x0205697c.c:
+src/overlays/ov008/calls/func_ov008_0205697c.c:
     complete
     .text       start:0x0205697c end:0x02056988
 
@@ -1417,7 +1417,7 @@ src/overlays/ov008/calls/func_ov008_020592d4.c:
     complete
     .text       start:0x020592d4 end:0x020593cc
 
-src/calls/WM_EndKeySharing_0x020593cc.c:
+src/overlays/ov008/calls/func_ov008_020593cc.c:
     complete
     .text       start:0x020593cc end:0x020593d8
 
@@ -1425,7 +1425,7 @@ src/overlays/ov008/calls/func_ov008_020593d8.c:
     complete
     .text       start:0x020593d8 end:0x020594c4
 
-src/calls/WM_EndKeySharing_0x020594c4.c:
+src/overlays/ov008/calls/func_ov008_020594c4.c:
     complete
     .text       start:0x020594c4 end:0x020594d0
 
@@ -1441,7 +1441,7 @@ src/overlays/ov008/calls/func_ov008_020595e0.c:
     complete
     .text       start:0x020595e0 end:0x0205968c
 
-src/calls/WM_EndKeySharing_0x0205968c.c:
+src/overlays/ov008/calls/func_ov008_0205968c.c:
     complete
     .text       start:0x0205968c end:0x02059698
 
@@ -1773,7 +1773,7 @@ src/overlays/ov008/calls/func_ov008_0205c564.c:
     complete
     .text       start:0x0205c564 end:0x0205c574
 
-src/calls/WM_EndKeySharing_0x0205c574.c:
+src/overlays/ov008/calls/func_ov008_0205c574.c:
     complete
     .text       start:0x0205c574 end:0x0205c580
 
@@ -2397,7 +2397,7 @@ src/overlays/ov008/auto/func_ov008_02067698.c:
     complete
     .text       start:0x02067698 end:0x020676a0
 
-libs/nitro/fx/calls/FX_Inv_0x020676a0.c:
+src/overlays/ov008/calls/func_ov008_020676a0.c:
     complete
     .text       start:0x020676a0 end:0x020676b0
 
@@ -2537,7 +2537,7 @@ src/overlays/ov008/calls/func_ov008_020697a4.c:
     complete
     .text       start:0x020697a4 end:0x020698ec
 
-src/calls/WM_EndKeySharing_0x020698ec.c:
+src/overlays/ov008/calls/func_ov008_020698ec.c:
     complete
     .text       start:0x020698ec end:0x020698f8
 
@@ -3493,7 +3493,7 @@ src/overlays/ov008/calls/func_ov008_02078110.c:
     complete
     .text       start:0x02078110 end:0x02078154
 
-src/calls/WM_EndKeySharing_0x02078154.c:
+src/overlays/ov008/calls/func_ov008_02078154.c:
     complete
     .text       start:0x02078154 end:0x02078160
 
@@ -3525,7 +3525,7 @@ src/overlays/ov008/auto/func_ov008_020782c0.c:
     complete
     .text       start:0x020782c0 end:0x020782c8
 
-libs/nitro/fx/calls/FX_Inv_0x020782c8.c:
+src/overlays/ov008/calls/func_ov008_020782c8.c:
     complete
     .text       start:0x020782c8 end:0x020782d8
 
@@ -3977,7 +3977,7 @@ src/overlays/ov008/calls/func_ov008_0207c248.c:
     complete
     .text       start:0x0207c248 end:0x0207c498
 
-src/overlays/ov008/calls/CARDi_GetRomAccessor_0x0207c498.c:
+src/overlays/ov008/calls/func_ov008_0207c498.c:
     complete
     .text       start:0x0207c498 end:0x0207c4a4
 
@@ -5049,14 +5049,6 @@ src/overlays/ov008/data/ov008_page_0209082c.c:
     complete
     .data       start:0x0209082c end:0x0209086c
 
-src/overlays/ov008/data/ov008_page_020908e0.c:
-    complete
-    .data       start:0x020908e0 end:0x02090920
-
-src/overlays/ov008/data/ov008_page_020909d4.c:
-    complete
-    .data       start:0x020909d4 end:0x02090a14
-
 src/overlays/ov008/data/ov008_page_02090a14.c:
     complete
     .data       start:0x02090a14 end:0x02090a54
@@ -5081,10 +5073,6 @@ src/overlays/ov008/data/ov008_scene_params.c:
     complete
     .rodata     start:0x0208e9c4 end:0x0208edd4
 
-src/overlays/ov008/data/ov008_screen_02090148.c:
-    complete
-    .data       start:0x02090148 end:0x0209018c
-
 src/overlays/ov008/data/ov008_screen_020902e8.c:
     complete
     .data       start:0x020902e8 end:0x0209032c
@@ -5092,10 +5080,6 @@ src/overlays/ov008/data/ov008_screen_020902e8.c:
 src/overlays/ov008/data/ov008_screen_02090380.c:
     complete
     .data       start:0x02090380 end:0x020903c4
-
-src/overlays/ov008/data/ov008_screen_0209041c.c:
-    complete
-    .data       start:0x0209041c end:0x02090460
 
 src/overlays/ov008/data/ov008_screen_02090460.c:
     complete

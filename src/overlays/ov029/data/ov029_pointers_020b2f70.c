@@ -4,14 +4,14 @@
  * a zero word is a null entry.
  */
 
-extern int SNDi_UnlockMutex_ov030_0x020b3220;
-extern int SNDi_UnlockMutex_ov050_0x020b5a20;
-extern int SNDi_UnlockMutex_ov070_0x020b8100;
-extern int SNDi_UnlockMutex_ov088_0x020ba7c0;
+extern int func_ov030_020b3220;
+extern int func_ov050_020b5a20;
+extern int func_ov070_020b8100;
+extern int func_ov088_020ba7c0;
 
 void *const data_ov029_020b2f70[80] = {
 
-    &SNDi_UnlockMutex_ov030_0x020b3220,
+    &func_ov030_020b3220,
 
     0,
 
@@ -19,156 +19,156 @@ void *const data_ov029_020b2f70[80] = {
 
     0,
 
-    &SNDi_UnlockMutex_ov030_0x020b3220,
+    &func_ov030_020b3220,
 
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
+    &func_ov050_020b5a20,
 
-    &SNDi_UnlockMutex_ov070_0x020b8100,
+    &func_ov070_020b8100,
 
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
+    &func_ov088_020ba7c0,
 
-    &SNDi_UnlockMutex_ov030_0x020b3220,
+    &func_ov030_020b3220,
 
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
+    &func_ov050_020b5a20,
 
-    &SNDi_UnlockMutex_ov070_0x020b8100,
-
-    0,
-
-    &SNDi_UnlockMutex_ov030_0x020b3220,
-
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
-
-    &SNDi_UnlockMutex_ov070_0x020b8100,
-
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
-
-    &SNDi_UnlockMutex_ov030_0x020b3220,
-
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
-
-    &SNDi_UnlockMutex_ov070_0x020b8100,
-
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
-
-    &SNDi_UnlockMutex_ov030_0x020b3220,
-
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
-
-    &SNDi_UnlockMutex_ov070_0x020b8100,
-
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
-
-    &SNDi_UnlockMutex_ov030_0x020b3220,
-
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
-
-    &SNDi_UnlockMutex_ov070_0x020b8100,
-
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
-
-    &SNDi_UnlockMutex_ov030_0x020b3220,
-
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
-
-    &SNDi_UnlockMutex_ov070_0x020b8100,
-
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
-
-    &SNDi_UnlockMutex_ov030_0x020b3220,
-
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
-
-    &SNDi_UnlockMutex_ov070_0x020b8100,
-
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
-
-    &SNDi_UnlockMutex_ov030_0x020b3220,
-
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
-
-    &SNDi_UnlockMutex_ov070_0x020b8100,
-
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
-
-    &SNDi_UnlockMutex_ov030_0x020b3220,
-
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
-
-    &SNDi_UnlockMutex_ov070_0x020b8100,
-
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
-
-    &SNDi_UnlockMutex_ov030_0x020b3220,
-
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
-
-    &SNDi_UnlockMutex_ov070_0x020b8100,
-
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
-
-    &SNDi_UnlockMutex_ov030_0x020b3220,
-
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
-
-    &SNDi_UnlockMutex_ov070_0x020b8100,
-
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
-
-    &SNDi_UnlockMutex_ov030_0x020b3220,
-
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
+    &func_ov070_020b8100,
 
     0,
 
+    &func_ov030_020b3220,
+
+    &func_ov050_020b5a20,
+
+    &func_ov070_020b8100,
+
+    &func_ov088_020ba7c0,
+
+    &func_ov030_020b3220,
+
+    &func_ov050_020b5a20,
+
+    &func_ov070_020b8100,
+
+    &func_ov088_020ba7c0,
+
+    &func_ov030_020b3220,
+
+    &func_ov050_020b5a20,
+
+    &func_ov070_020b8100,
+
+    &func_ov088_020ba7c0,
+
+    &func_ov030_020b3220,
+
+    &func_ov050_020b5a20,
+
+    &func_ov070_020b8100,
+
+    &func_ov088_020ba7c0,
+
+    &func_ov030_020b3220,
+
+    &func_ov050_020b5a20,
+
+    &func_ov070_020b8100,
+
+    &func_ov088_020ba7c0,
+
+    &func_ov030_020b3220,
+
+    &func_ov050_020b5a20,
+
+    &func_ov070_020b8100,
+
+    &func_ov088_020ba7c0,
+
+    &func_ov030_020b3220,
+
+    &func_ov050_020b5a20,
+
+    &func_ov070_020b8100,
+
+    &func_ov088_020ba7c0,
+
+    &func_ov030_020b3220,
+
+    &func_ov050_020b5a20,
+
+    &func_ov070_020b8100,
+
+    &func_ov088_020ba7c0,
+
+    &func_ov030_020b3220,
+
+    &func_ov050_020b5a20,
+
+    &func_ov070_020b8100,
+
+    &func_ov088_020ba7c0,
+
+    &func_ov030_020b3220,
+
+    &func_ov050_020b5a20,
+
+    &func_ov070_020b8100,
+
+    &func_ov088_020ba7c0,
+
+    &func_ov030_020b3220,
+
+    &func_ov050_020b5a20,
+
     0,
 
-    &SNDi_UnlockMutex_ov030_0x020b3220,
+    0,
 
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
+    &func_ov030_020b3220,
 
-    &SNDi_UnlockMutex_ov070_0x020b8100,
+    &func_ov050_020b5a20,
 
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
+    &func_ov070_020b8100,
 
-    &SNDi_UnlockMutex_ov030_0x020b3220,
+    &func_ov088_020ba7c0,
 
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
+    &func_ov030_020b3220,
 
-    &SNDi_UnlockMutex_ov070_0x020b8100,
+    &func_ov050_020b5a20,
 
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
+    &func_ov070_020b8100,
 
-    &SNDi_UnlockMutex_ov030_0x020b3220,
+    &func_ov088_020ba7c0,
 
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
+    &func_ov030_020b3220,
 
-    &SNDi_UnlockMutex_ov070_0x020b8100,
+    &func_ov050_020b5a20,
 
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
+    &func_ov070_020b8100,
 
-    &SNDi_UnlockMutex_ov030_0x020b3220,
+    &func_ov088_020ba7c0,
 
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
+    &func_ov030_020b3220,
 
-    &SNDi_UnlockMutex_ov070_0x020b8100,
+    &func_ov050_020b5a20,
 
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
+    &func_ov070_020b8100,
 
-    &SNDi_UnlockMutex_ov030_0x020b3220,
+    &func_ov088_020ba7c0,
 
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
+    &func_ov030_020b3220,
 
-    &SNDi_UnlockMutex_ov070_0x020b8100,
+    &func_ov050_020b5a20,
 
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
+    &func_ov070_020b8100,
 
-    &SNDi_UnlockMutex_ov030_0x020b3220,
+    &func_ov088_020ba7c0,
 
-    &SNDi_UnlockMutex_ov050_0x020b5a20,
+    &func_ov030_020b3220,
 
-    &SNDi_UnlockMutex_ov070_0x020b8100,
+    &func_ov050_020b5a20,
 
-    &SNDi_UnlockMutex_ov088_0x020ba7c0,
+    &func_ov070_020b8100,
+
+    &func_ov088_020ba7c0,
 
 };

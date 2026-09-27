@@ -14,7 +14,7 @@ extern void func_0203b9ac(void *obj, void *block);
 extern int func_0203bdfc(void *obj, const char *name);
 extern void func_0203c7ac(void *obj, int a);
 extern void func_ov107_020c92b0(void *self, int a, int b, const VecFx32 *v, int e);
-extern void *OS_IsThreadAvailable_0x020c9848(void);
+extern void *func_ov107_020c9848(void);
 extern void func_ov107_020c9074(void *self, void *obj);
 extern void *func_0203c1b0(void *res, int n);
 extern void *func_ov216_020cea1c(void *self);
@@ -118,7 +118,7 @@ void func_ov216_020cc210(char *self)
     for (i = 0; i < 5; i++) {
         void *node;
         if (i <= 0) {
-            void *os = OS_IsThreadAvailable_0x020c9848();
+            void *os = func_ov107_020c9848();
             unsigned int kind = kinds.w[i] & 0x1ff;
             unsigned int addr = (*(int *)((char *)os + 0x88) + 0x8000) & 0x00fffffc;
             addr = addr << 7;

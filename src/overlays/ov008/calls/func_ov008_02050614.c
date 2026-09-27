@@ -77,7 +77,7 @@ typedef struct Ov009MenuContext {
 extern Ov009MenuContext *data_ov008_02090f04[2];
 extern const char data_ov008_02090024[];
 
-extern int   OS_IsThreadAvailable_0x02051aa0(void);
+extern int   func_ov008_02051aa0(void);
 extern void  func_ov008_0204fab8(void);
 extern void  func_ov008_02050dd0(void);
 extern void  func_02000fb4(int mode, const void *descriptor);
@@ -91,7 +91,7 @@ extern void *G2_GetBG3CharPtr(void);
 extern void  MIi_CpuClearFast(u32 value, void *destination, u32 size);
 extern void  G3X_SetClearColor(
     u32 color, u32 alpha, u32 depth, u32 polygonId, int fog);
-extern void *WM_EndKeySharing_0x02023ad0(void *handle);
+extern void *func_02023ad0(void *handle);
 extern void  func_0200c5fc(void);
 extern void  func_0200ca50(u32 mask);
 extern int   func_0200ca68(int mask);
@@ -156,7 +156,7 @@ void func_ov008_02050614(void)
     int bufferIndex;
     int resourceIndex;
 
-    if (OS_IsThreadAvailable_0x02051aa0() != -1) {
+    if (func_ov008_02051aa0() != -1) {
         data_ov008_02090f04[1]->pendingId = -1;
         data_ov008_02090f04[1]->teardownRequested = 1;
         func_ov008_0204fab8();
@@ -236,7 +236,7 @@ void func_ov008_02050614(void)
     REG_SUB_BG_OFFSETS[2] = 0;
     REG_SUB_BG_OFFSETS[3] = 0;
 
-    WM_EndKeySharing_0x02023ad0(
+    func_02023ad0(
         data_ov008_02090f04[1]->graphicsObject);
     func_0200c5fc();
     func_0200ca50(4);

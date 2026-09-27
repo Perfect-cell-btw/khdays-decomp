@@ -50,7 +50,7 @@ extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
 extern int func_01ff8d18(Vec3 *v, Vec3 *d);
 extern void func_0203ca30(int srt, Vec3 *pos);
 extern int func_ov107_020c5cfc(int other, int source, struct HitPacket *packet);
-extern int *OS_IsThreadAvailable_0x020c9848(void);
+extern int *func_ov107_020c9848(void);
 extern void func_ov107_020c5af8(int owner, int id, int mode, void *at);
 extern void func_0203c634(int *node, int slot, void *cb);
 extern const Vec3 data_02041dc8;
@@ -104,7 +104,7 @@ void func_ov277_020ce09c(int *node)
     struct Msg14 msg;
     FxVec vContact;
     msg = data_ov277_020d3690;
-    VEC_Subtract((void *)(*OS_IsThreadAvailable_0x020c9848() + 0x88), (void *)state[7], &d);
+    VEC_Subtract((void *)(*func_ov107_020c9848() + 0x88), (void *)state[7], &d);
     func_01ff8d18(&d, &d);
     func_01ffa724(0x3000, &d, &d);
     VEC_Add((void *)state[7], &d, &c);

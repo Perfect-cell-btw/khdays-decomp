@@ -15,7 +15,7 @@ typedef struct Ov008MenuContext {
 } Ov008MenuContext;
 
 extern char *NNSi_FndGetCurrentRootHeap(void);
-extern void WM_EndKeySharing_0x02023ad0(int handle);
+extern void func_02023ad0(int handle);
 extern char *data_0204be18;
 extern void func_ov008_02053a90(void *source);
 extern Ov008MenuContext *data_ov008_02090f00;
@@ -29,7 +29,7 @@ void *func_ov008_0204eadc(void)
     char *root = NNSi_FndGetCurrentRootHeap();
 
     if (*(int *)(root + 0x14) >= 0) {
-        WM_EndKeySharing_0x02023ad0(*(int *)(root + 0x14));
+        func_02023ad0(*(int *)(root + 0x14));
         *(int *)(root + 0x14) = -1;
     }
 

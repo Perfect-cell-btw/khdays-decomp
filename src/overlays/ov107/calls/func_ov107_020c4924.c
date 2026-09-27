@@ -1,5 +1,5 @@
 extern void func_0203c86c(int this_, int arg1);
-extern void *OS_IsThreadAvailable_0x020c9848(void);
+extern void *func_ov107_020c9848(void);
 extern int func_ov107_020c9568(int ctx, void *extra);
 
 typedef struct {
@@ -34,7 +34,7 @@ void func_ov107_020c4924(void *self_, int flag) {
     }
 
     {
-        void *thr = OS_IsThreadAvailable_0x020c9848();
+        void *thr = func_ov107_020c9848();
         int ctx = *(int *)thr;
         int result = func_ov107_020c9568(ctx, self + 0x74);
         func_0203c86c(*(int *)(self + 0x9c), result);

@@ -83,7 +83,7 @@ extern const s8 data_ov002_0207ef68[];
 extern const GameClassDescriptor data_ov002_0207e8c8;
 extern Ov002DayClock data_0204c240;
 extern Ov002PanelThresholds data_0204c254;
-extern SessionSlotTable *CARDi_GetRomAccessor_0x020315f4(void);
+extern SessionSlotTable *func_020315f4(void);
 extern int func_02030670(void);
 extern u8 func_ov022_020882f8(void);
 extern int func_ov022_020882e0(int);
@@ -147,7 +147,7 @@ void func_ov002_02069d40(void)
 
     pRoot = data_ov002_0207fa00;
     pPause = &pRoot->pause;
-    pSession = CARDi_GetRomAccessor_0x020315f4();
+    pSession = func_020315f4();
     params.wInitialValue = 100;
     for (nIndex = 0; nIndex < 4; nIndex++) {
         params.aSlots[nIndex].nId = -1;

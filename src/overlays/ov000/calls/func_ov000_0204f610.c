@@ -13,12 +13,12 @@ typedef struct {
 } OverlayContext;
 
 extern OverlayContext *NNSi_FndGetCurrentRootHeap(void);
-extern void FS_UnloadOverlayImage_0x020362ec(void *image);
+extern void func_020362ec(void *image);
 extern void func_020362fc(void *image);
 extern void func_ov000_020548c8(void);
 extern void func_0202aa9c(void *object);
 extern int func_ov000_020548e0(void);
-extern void WM_EndKeySharing_0x02023ad0(int handle);
+extern void func_02023ad0(int handle);
 extern void func_ov000_0204d72c(void);
 extern void func_ov000_0204cac0(void);
 extern void func_ov000_0204d7a0(void);
@@ -30,14 +30,14 @@ extern void func_ov000_0204ebe4(void);
 OverlayCallback func_ov000_0204f610(void) {
     OverlayContext *context = NNSi_FndGetCurrentRootHeap();
 
-    FS_UnloadOverlayImage_0x020362ec(context->overlay_image);
+    func_020362ec(context->overlay_image);
     func_020362fc(context->overlay_image);
     func_ov000_020548c8();
     func_0202aa9c(context->update_object);
 
     switch (func_ov000_020548e0()) {
     case 4:
-        WM_EndKeySharing_0x02023ad0(context->sharing_handle);
+        func_02023ad0(context->sharing_handle);
         context->sharing_handle = context->sharing_state = 0;
         func_ov000_0204d72c();
         func_ov000_0204cac0();

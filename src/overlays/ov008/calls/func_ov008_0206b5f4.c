@@ -9,7 +9,7 @@ typedef unsigned short u16;
 extern void *func_ov008_02050c64(void);
 extern int   func_02030640(void);
 extern int   func_02030670(void);
-extern int   WM_EndKeySharing_0x020bf240(void);
+extern int   func_ov105_020bf240(void);
 extern void *func_ov008_02054788(void *ctx, int id);
 extern void  func_ov008_02054c80(void *ctx, void *widget, int value);
 extern void  func_ov008_02054ba4(void *ctx, void *widget, int flag);
@@ -21,7 +21,7 @@ void func_ov008_0206b5f4(void)
     if (func_02030640() == 0) return;
     if (func_02030670() == 0) return;
     {
-        int v = (signed char)WM_EndKeySharing_0x020bf240();
+        int v = (signed char)func_ov105_020bf240();
         if (v >= 0) {
             func_ov008_02054c80(ctx, func_ov008_02054788(ctx, 2), (u16)v);
             func_ov008_02054c80(ctx, func_ov008_02054788(ctx, 1), (u16)v);

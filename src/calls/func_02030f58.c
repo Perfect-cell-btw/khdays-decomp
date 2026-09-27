@@ -2,7 +2,7 @@ typedef unsigned int u32;
 
 extern void func_02023728(u32 a, u32 b);
 extern void func_0203112c(void);
-extern void WM_EndKeySharing_0x02023ad0(void *p);
+extern void func_02023ad0(void *p);
 
 extern u32 **data_0204c230;
 extern u32 *data_0204c024;
@@ -40,7 +40,7 @@ void func_02030f58(void)
     r5 = 0x758;
     r4 = 0;
     do {
-        WM_EndKeySharing_0x02023ad0((void *)*(u32 *)((char *)r6 + r5));
+        func_02023ad0((void *)*(u32 *)((char *)r6 + r5));
         r4++;
         r6 = (u32 *)((char *)r6 + 4);
     } while (r4 < 2);

@@ -8,7 +8,7 @@
  */
 extern void VEC_Add(void *a, void *b, void *out);
 extern void func_01ffa724(int scale, void *in, void *out);
-extern int *OS_IsThreadAvailable_0x020c9848(void);
+extern int *func_ov107_020c9848(void);
 extern void func_0203ca30(int p, void *v);
 extern void func_0203b9fc(int a, int b, int c, int d);
 extern void func_0203c634(int self, int idx, int cb);
@@ -21,7 +21,7 @@ void func_ov126_020d24f4(int *self) {
 
     VEC_Add((void *)(*(int *)(*state + 0x394) + 0x14), (void *)(*(int *)(*state + 0x398) + 0x14), v);
     func_01ffa724(0x800, v, v);
-    func_01ffa724(-0x100, (void *)(*OS_IsThreadAvailable_0x020c9848() + 0x7c), w);
+    func_01ffa724(-0x100, (void *)(*func_ov107_020c9848() + 0x7c), w);
     VEC_Add(v, w, v);
     *(int *)(state[4] + 0x5c) &= ~2;
     func_0203ca30(state[4] + 4, v);

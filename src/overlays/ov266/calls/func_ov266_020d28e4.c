@@ -11,7 +11,7 @@ typedef void (*Callback)(void);
 typedef unsigned short u16;
 
 extern void func_ov266_020d2a10(void);
-extern void WM_EndKeySharing_0x020d2a34(void);
+extern void func_ov266_020d2a34(void);
 extern void func_ov266_020d2a40(void);
 extern void func_ov266_020d2c28(void);
 extern void func_ov266_020d2b18(void);
@@ -28,7 +28,7 @@ void func_ov266_020d28e4(char *self) {
     int pool = *(int *)(self + 0x38c);
 
     *(Callback *)(self + 0x8) = func_ov266_020d2a10;
-    *(Callback *)(self + 0xc) = WM_EndKeySharing_0x020d2a34;
+    *(Callback *)(self + 0xc) = func_ov266_020d2a34;
     *(Callback *)(self + 0x1c) = func_ov266_020d2a40;
     *(Callback *)(self + 0x30) = func_ov266_020d2c28;
     *(Callback *)(self + 0x1dc) = func_ov266_020d2b18;

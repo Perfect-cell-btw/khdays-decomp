@@ -180,7 +180,7 @@ extern void  func_ov025_0208884c(int nCtx, void *pEntry, int bVisible); /* SetEn
 extern void  func_ov025_020887c0(int nCtx, void *pEntry, int nSet);     /* Ov025_PushSubitemSet */
 extern void  func_ov025_02088928(int nCtx, void *pEntry, int nFrame);   /* Ov025_ReleaseTwoSlotsEx */
 extern void  func_ov025_0208772c(Ov025GridSummary *pSummary, u32 *pCells, NNSFndList *pList); /* release the summary lists */
-extern void  WM_EndKeySharing_0x02087254(Ov025GridSummary *pSummary);   /* Veneer_02053464 */
+extern void  func_ov025_02087254(Ov025GridSummary *pSummary);   /* Veneer_02053464 */
 
 void func_ov025_0209338c(Ov025MenuContext *pCtx)
 {
@@ -349,5 +349,5 @@ void func_ov025_0209338c(Ov025MenuContext *pCtx)
         }
     }
     func_ov025_0208772c(&summary, aCells, &list);
-    WM_EndKeySharing_0x02087254(&summary);
+    func_ov025_02087254(&summary);
 }

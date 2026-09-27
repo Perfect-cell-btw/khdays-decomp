@@ -55,7 +55,7 @@ extern int func_0203bfb4(int subscriber, int item);
 extern int func_0203bdfc(int item, const char *name);
 extern void func_02014e18(int renderObj, void *cb, int ptr, int timing, int opt);
 extern int func_ov107_020c9e50(void *item, const char *name);
-extern int *OS_IsThreadAvailable_0x020c9848(void);
+extern int *func_ov107_020c9848(void);
 extern void func_ov107_020c9074(int self, int item);
 extern void func_0203b9fc(int item, int channel, int a, int b);
 extern int func_0203bf44(void);
@@ -107,7 +107,7 @@ void func_ov145_020cdec4(char *self)
     func_02014e18(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x20, func_ov145_020cdde4, 0, 6, 3);
     (*(void (**)(char *, int, int))(self + 0x1dc))(self, 0, 1);
     *(int *)(self + 0x394) = func_ov107_020c9e50(func_ov107_020c9440((int)self, 1), data_ov145_020cfaf8);
-    *(int *)(self + 0x388) = func_0203b898((void *)((((OS_IsThreadAvailable_0x020c9848()[0x22] + 0x8000) & 0xfffffc) << 7) | 0x80000007));
+    *(int *)(self + 0x388) = func_0203b898((void *)((((func_ov107_020c9848()[0x22] + 0x8000) & 0xfffffc) << 7) | 0x80000007));
     ((struct Bit0 *)(*(int *)(self + 0x388) + 0x5c))->bit0 = 1;
     func_ov107_020c9074((int)self, *(int *)(self + 0x388));
     *(int *)(*(int *)(self + 0x388) + 0x5c) |= 2;
@@ -118,7 +118,7 @@ void func_ov145_020cdec4(char *self)
     *(int *)(self + 0x38c) = func_0203b898(func_ov107_020c9440((int)self, 2));
     func_0203bfb4(*(int *)(self + 0x398), *(int *)(self + 0x38c));
     *(int *)(*(int *)(self + 0x38c) + 0x5c) |= 2;
-    item = actor->subitem3f8 = (struct Subitem *)func_0203b898((void *)((((OS_IsThreadAvailable_0x020c9848()[0x22] + 0x8000) & 0xfffffc) << 7) | 0x80000000));
+    item = actor->subitem3f8 = (struct Subitem *)func_0203b898((void *)((((func_ov107_020c9848()[0x22] + 0x8000) & 0xfffffc) << 7) | 0x80000000));
     func_ov107_020c9074((int)self, (int)item);
     item->flags5c |= 2;
     p = func_01fffca8(actor->pool144, 4, 0x64);

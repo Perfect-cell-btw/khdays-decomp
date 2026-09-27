@@ -24,8 +24,8 @@ extern const struct Vec3 data_02041dc8;
 extern unsigned short data_ov292_020d48cc[];
 
 extern void func_ov292_020d3a90(void);
-extern void WM_EndKeySharing_ov292_0x020d3ab4(void);
-extern void WM_EndKeySharing_ov292_0x020d3ac0(void);
+extern void func_ov292_020d3ab4(void);
+extern void func_ov292_020d3ac0(void);
 extern void func_ov292_020d3bdc(void);
 extern void func_ov292_020d3afc(void);
 extern void func_ov292_020d3b64(void);
@@ -57,8 +57,8 @@ void func_ov292_020d3844(char *self)
     box.max.y = 0x2000;
     box.max.z = 0x2000;
     *(void **)(self + 0x08) = func_ov292_020d3a90;
-    *(void **)(self + 0x0c) = WM_EndKeySharing_ov292_0x020d3ab4;
-    *(void **)(self + 0x1c) = WM_EndKeySharing_ov292_0x020d3ac0;
+    *(void **)(self + 0x0c) = func_ov292_020d3ab4;
+    *(void **)(self + 0x1c) = func_ov292_020d3ac0;
     *(void **)(self + 0x30) = func_ov292_020d3bdc;
     *(void **)(self + 0x34) = func_ov292_020d3afc;
     *(void **)(self + 0x38) = func_ov292_020d3b64;

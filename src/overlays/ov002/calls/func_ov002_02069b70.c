@@ -16,7 +16,7 @@
 typedef unsigned char u8;
 
 extern void func_020235e8(int field, int a, int val);
-extern int  CARDi_GetRomAccessor_0x020315f4(void);
+extern int  func_020315f4(void);
 extern int  func_020315c0(int index);
 extern u8   data_0204c240;
 extern u8   data_02042a1c;
@@ -42,7 +42,7 @@ void func_ov002_02069b70(void)
         return;
     }
 
-    rom = CARDi_GetRomAccessor_0x020315f4();
+    rom = func_020315f4();
     data_02042a1d = (u8)*(int *)(rom + 4);
     base = 0x2001;
     for (j = 0, count = 0; j < data_02042a1d; j++) {

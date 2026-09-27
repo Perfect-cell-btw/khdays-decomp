@@ -3,7 +3,7 @@ typedef unsigned short u16;
 
 extern char *data_ov002_0207fa00;   /* the ov002 root context */
 
-extern char *CARDi_GetRomAccessor_0x020315f4(void);  /* its +4 is the slot count */
+extern char *func_020315f4(void);  /* its +4 is the slot count */
 extern char *func_020315c0(int nSlot);  /* Slot4_GetIfOccupied */
 
 /* Fills the wrap-up report the session board hands to the results side.
@@ -34,7 +34,7 @@ void func_ov002_02069724(u16 *pReport)
     int nCount;
 
     pSeat = data_ov002_0207fa00 + 0x8bcc;
-    pAccessor = CARDi_GetRomAccessor_0x020315f4();
+    pAccessor = func_020315f4();
     nCount = 0;
     i = 0;
     if (*(int *)(pAccessor + 4) > 0) {

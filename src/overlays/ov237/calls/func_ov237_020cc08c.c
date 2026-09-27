@@ -31,7 +31,7 @@ extern void func_ov237_020cd12c(void);
 extern void func_ov237_020ccc00(void);
 extern void func_ov237_020ccef0(void);
 extern void func_ov237_020ccf2c(void);
-extern void WM_EndKeySharing_0x020cc800(void);
+extern void func_ov237_020cc800(void);
 extern void func_ov237_020cd1bc(void);
 extern void func_ov237_020ccfe8(void);
 extern void func_ov237_020ccf68(void);
@@ -101,7 +101,7 @@ void func_ov237_020cc08c(char *self)
     *(Callback *)(self + 0x34) = func_ov237_020ccc00;
     *(Callback *)(self + 0x28) = func_ov237_020ccef0;
     *(Callback *)(self + 0x2c) = func_ov237_020ccf2c;
-    *(Callback *)(self + 0x48) = WM_EndKeySharing_0x020cc800;
+    *(Callback *)(self + 0x48) = func_ov237_020cc800;
     *(Callback *)(self + 0x1d0) = func_ov237_020cd1bc;
     *(Callback *)(self + 0x1dc) = func_ov237_020ccfe8;
     *(Bounds *)(self + 0x1fc) = bounds;

@@ -108,7 +108,7 @@ typedef struct { MsgHeader hdr; u8 amount; Fx24 pos[3]; } ImpactMsg;
 
 extern int func_ov107_020c5af8(struct Obj *, int, int, const FxVec *);
 extern int func_ov107_020c89e8(struct Obj *, struct HitPacket *);
-extern struct Manager *OS_IsThreadAvailable_0x020c9848(void);
+extern struct Manager *func_ov107_020c9848(void);
 extern int FX_Inv_0x01ff8a40(int);
 extern void func_01ffa724(int, VecFx32 *, VecFx32 *);
 extern u32 func_02023eb4(u32);
@@ -202,7 +202,7 @@ int func_ov107_020c5cfc(struct Obj *obj, struct HitSource *source, struct HitPac
     if (obj->field_1d0 != 0) {
         VecFx32 savedNormal;
         savedNormal = packet->normal;
-        func_01ffa724(FX_Inv_0x01ff8a40(OS_IsThreadAvailable_0x020c9848()->field_40),
+        func_01ffa724(FX_Inv_0x01ff8a40(func_ov107_020c9848()->field_40),
                       &packet->normal, &packet->normal);
         if (obj->field_1d0(obj, source, packet) != 0) {
             packet->normal = savedNormal;
@@ -275,7 +275,7 @@ int func_ov107_020c5cfc(struct Obj *obj, struct HitSource *source, struct HitPac
                         obj->field_314[i].field_08 > 0 && obj->field_1a0 != 0 &&
                         before > obj->field_314[i].field_00 && obj->field_314[i].field_00 >= after &&
                         RandRange(0, 0x1000) <= obj->field_314[i].field_04) {
-                        struct Manager *manager = OS_IsThreadAvailable_0x020c9848();
+                        struct Manager *manager = func_ov107_020c9848();
                         accumulated += FX_Mul(FX_Mul(obj->field_1a0->field_50 * obj->field_314[i].field_08,
                                                       manager->field_8c), obj->field_2f8);
                     }
@@ -304,7 +304,7 @@ int func_ov107_020c5cfc(struct Obj *obj, struct HitSource *source, struct HitPac
             if (obj->field_21a == 0) {
                 if (obj->field_179 == 1) {
                     for (i = 0; i < 4; i++) {
-                        struct Manager *manager = OS_IsThreadAvailable_0x020c9848();
+                        struct Manager *manager = func_ov107_020c9848();
                         struct Obj *observer = manager != 0 ? manager->objects[i] : 0;
                         if (observer != 0 && observer->field_1d4 != 0) {
                             observer->field_1d4(observer, obj);

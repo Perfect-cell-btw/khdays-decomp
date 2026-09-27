@@ -130,7 +130,7 @@ extern int func_ov107_020c3504(void *shape, void *other, int mode);
 extern int FX_Inv(int a, int b);
 extern int func_01ff8d18(VecFx32 *out, VecFx32 *in);
 extern void func_01ffa724(int scale, VecFx32 *in, VecFx32 *out);
-extern void *OS_IsThreadAvailable_0x020c9848(void);
+extern void *func_ov107_020c9848(void);
 extern int FX_Inv_0x01ff8a40(int a);
 extern void func_0203c634(struct AiStateNode *node, int slot, void *arg);
 
@@ -272,7 +272,7 @@ void func_ov288_020d45fc(struct AiStateNode *node)
                     if (st->nPlanned / 2 > 0) {
                         do {
                             step = FX_Inv_0x01ff8a40(
-                                *(int *)((char *)OS_IsThreadAvailable_0x020c9848() + 0x40));
+                                *(int *)((char *)func_ov107_020c9848() + 0x40));
                             acc = acc + (int)(((long long)step * -96LL + 0x800) >> 12);
                             st->nDrop = st->nDrop - acc;
                             i++;

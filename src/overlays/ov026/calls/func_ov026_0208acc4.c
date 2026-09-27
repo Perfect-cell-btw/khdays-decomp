@@ -59,7 +59,7 @@ extern Ov008PanelContext *data_ov026_02091368;
 extern u16 data_0204c190;                                         /* keys pressed */
 extern u8  data_ov026_020910f0[];                                 /* Ov008TabOrder */
 extern Ov008ChoiceBox data_ov026_02091134[];                      /* touch boxes */
-extern void  FS_UnloadOverlayImage_0x020362ec(u16 *pSource);
+extern void  func_020362ec(u16 *pSource);
 extern u16   func_020362fc(const u16 *pSource);                   /* ReadU16 */
 extern void  func_02033b78(int nKind, int nSound);                /* PlaySound */
 extern void  func_ov026_02085aa4(void);                           /* Ov008_UpdateTouchState */
@@ -89,7 +89,7 @@ void *func_ov026_0208acc4(void)
     ctx = data_ov026_02091368;
     bStoryPast = ctx->bStoryPast;
     bReady = ctx->bReady;
-    FS_UnloadOverlayImage_0x020362ec(&ctx->inputSource);
+    func_020362ec(&ctx->inputSource);
     nButtons = func_020362fc(&ctx->inputSource);
     if (nButtons & BTN_UP) {
         func_02033b78(0, SOUND_MOVE);

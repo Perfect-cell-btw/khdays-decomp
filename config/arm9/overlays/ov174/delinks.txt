@@ -24,15 +24,15 @@ src/overlays/ov174/calls/func_ov174_020cff70.c:
     complete
     .text       start:0x020cff70 end:0x020cffb0
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cffb0.c:
+src/overlays/ov174/calls/func_ov174_020cffb0.c:
     complete
     .text       start:0x020cffb0 end:0x020cffbc
 
-libs/nitro/wm/calls/WM_EndKeySharing_ov174_0x020cffbc.c:
+src/overlays/ov174/calls/func_ov174_020cffbc.c:
     complete
     .text       start:0x020cffbc end:0x020cffc8
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cffc8.c:
+src/overlays/ov174/calls/func_ov174_020cffc8.c:
     complete
     .text       start:0x020cffc8 end:0x020cffd4
 

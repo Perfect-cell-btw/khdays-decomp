@@ -45,7 +45,7 @@ extern void func_ov002_02053904(void *obj);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern void func_0202ffbc(TileSurface *s);
 extern void func_ov002_02052834(int *p);
-extern void WM_EndKeySharing_0x02023ad0(void *obj);
+extern void func_02023ad0(void *obj);
 extern void func_02024fd4(void *p);
 
 extern char *data_ov002_0207f62c;
@@ -76,9 +76,9 @@ void func_ov002_02062cb0(void) {
         func_0202ffbc(&ctx->aSurfaces[2]);
     }
     func_ov002_02052834(ctx->aSubCtx);
-    WM_EndKeySharing_0x02023ad0(ctx->pObjectA);
+    func_02023ad0(ctx->pObjectA);
     if (ctx->pObjectB != 0) {
-        WM_EndKeySharing_0x02023ad0(ctx->pObjectB);
+        func_02023ad0(ctx->pObjectB);
     }
     func_02024fd4(ctx->pAnimB);
     func_02024fd4(ctx->pAnimA);

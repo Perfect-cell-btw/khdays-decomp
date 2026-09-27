@@ -28,7 +28,7 @@ typedef struct { int m[9]; } Mtx33;
 
 extern void *func_01fffd70(void *list);
 extern void *func_01fffd8c(void *list);
-extern void *OS_IsThreadAvailable_0x020c9848(void);
+extern void *func_ov107_020c9848(void);
 extern void VEC_Subtract(Vec3 *a, Vec3 *b, Vec3 *out);
 extern int func_01ff8d18(Vec3 *src, Vec3 *dst);
 extern void func_01ffa724(int factor, Vec3 *src, Vec3 *dst);
@@ -68,7 +68,7 @@ void func_ov107_020c28f0(char *self, int action) {
                     src = n->field_2cc != 0 ? (Vec3 *)n->field_2cc : &n->field_74;
                     *g = *src;
 
-                    thread = OS_IsThreadAvailable_0x020c9848();
+                    thread = func_ov107_020c9848();
                     VEC_Subtract((Vec3 *)((char *)*(void **)thread + 0x88), g, &result);
                     func_01ff8d18(&result, &result);
                     func_01ffa724(n->field_80, &result, &result);

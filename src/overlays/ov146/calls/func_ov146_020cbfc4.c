@@ -32,7 +32,7 @@ extern int func_0203bfb4(int subscriber, int item);
 extern int func_0203bee8(int item, int kind, const char *name);
 extern void func_0202a388(void *track, int model, void *resource, int slot);
 extern void func_0203b9ac(int item, void *track);
-extern int OS_IsThreadAvailable_0x020c9848(void);
+extern int func_ov107_020c9848(void);
 extern void func_ov107_020c9074(char *self, int item);
 extern void func_ov107_020c92b0(char *self, int action, int a, int b, int scale);
 extern int *func_01fffca8(void *list, int stride, int max);
@@ -89,7 +89,7 @@ void func_ov146_020cbfc4(char *self)
 
         if (i < 3) {
             item = func_0203b898((void *)((ids.id[i] & 0x1ff)
-                | ((((*(int *)(OS_IsThreadAvailable_0x020c9848() + 0x88) + 0x8000) & 0xfffffc) << 7) | 0x80000000)));
+                | ((((*(int *)(func_ov107_020c9848() + 0x88) + 0x8000) & 0xfffffc) << 7) | 0x80000000)));
         } else {
             item = func_0203b898(func_ov107_020c9440(self, ids.id[i]));
         }

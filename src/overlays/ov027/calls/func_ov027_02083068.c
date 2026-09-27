@@ -138,7 +138,7 @@ extern void  func_0201e3cc(int nBrightness);                        /* SetMaster
 extern void  func_ov027_02082b24(int nArg);                         /* Ov027_SetLeaving */
 extern void *func_ov027_02083164(void);                             /* the terminal state */
 extern void *func_ov027_02083114(void);                             /* Ov027_GameOverFadeOut */
-extern Ov027SessionTable *CARDi_GetRomAccessor_0x020315f4(void);        /* Session_GetSlotTable */
+extern Ov027SessionTable *func_020315f4(void);        /* Session_GetSlotTable */
 extern void  func_ov027_02082ba4(Ov027Scene *pScene);               /* Ov027_DrawSignInPanel */
 extern void  func_ov027_02083308(void);                             /* Ov027_UpdateModels */
 extern void  func_02023cc0(Ov027Camera *pCamera);                  /* Camera_Commit */
@@ -181,7 +181,7 @@ void *func_ov027_02083068(void)
     }
     func_0201e374(pScene->nBrightness);
     func_0201e3cc(pScene->nBrightness);
-    if (CARDi_GetRomAccessor_0x020315f4()->nState != 1) {
+    if (func_020315f4()->nState != 1) {
         func_ov027_02082ba4(data_ov027_02084364);
     }
     func_ov027_02083308();

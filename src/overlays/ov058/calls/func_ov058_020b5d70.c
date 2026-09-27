@@ -16,7 +16,7 @@
  * flagged. A valid id drives the secondary channel (setting bit 0 of +0xf0c first when the
  * unflagged path has +0xf0d set); no id clears that bit and parks the block's slot at -1.
  */
-extern void WM_EndKeySharing_0x020b6680(char *self);
+extern void func_ov058_020b6680(char *self);
 extern void func_ov058_020b6718(char *chan, int which);
 extern unsigned short func_02030788(void);
 extern int func_ov022_02083f0c(void);
@@ -37,7 +37,7 @@ void func_ov058_020b5d70(char *self, int mode) {
     switch (mode - 0x2e) {
     case 0:
         if (*(int *)(self + 0x6bc) != mode) {
-            WM_EndKeySharing_0x020b6680(self);
+            func_ov058_020b6680(self);
         }
         break;
     case 1:

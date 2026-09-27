@@ -48,7 +48,7 @@ extern unsigned short data_ov281_020ce520[];
 extern int data_ov281_020ce530;
 
 extern int func_ov281_020cc3dc, func_ov281_020cc41c, func_ov281_020cc440;
-extern int func_ov281_020cc7dc, WM_EndKeySharing_0x020cc63c, WM_EndKeySharing_0x020cc648;
+extern int func_ov281_020cc7dc, func_ov281_020cc63c, func_ov281_020cc648;
 extern int func_ov281_020cc68c, func_ov281_020cc838, func_ov281_020cc654;
 extern int func_ov281_020cca88, func_ov281_020ccab4;
 
@@ -86,9 +86,9 @@ void func_ov281_020cbfc4(struct Ov281Actor *actor) {
     actor->fn00c = &func_ov281_020cc41c;
     actor->fn01c = &func_ov281_020cc440;
     actor->fn030 = &func_ov281_020cc7dc;
-    actor->fn028 = &WM_EndKeySharing_0x020cc63c;
+    actor->fn028 = &func_ov281_020cc63c;
 
-    fn2c = &WM_EndKeySharing_0x020cc648;
+    fn2c = &func_ov281_020cc648;
 
     box.min.a = minX;
     box.min.b = minY;

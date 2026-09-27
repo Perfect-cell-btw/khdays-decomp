@@ -51,7 +51,7 @@ extern Ov169PoolEntry *func_01fffca8(void *pool, int elementSize, int capacity);
 extern int func_ov107_020c319c(void *field);
 extern void func_ov167_020d1f48(void);
 extern void func_ov167_020d1f64(void);
-extern void WM_EndKeySharing_0x020d1f9c(void);
+extern void func_ov167_020d1f9c(void);
 extern void func_ov167_020d2030(void);
 extern void func_ov167_020d1fa8(void);
 
@@ -61,7 +61,7 @@ void func_ov167_020d1de8(Ov169Object *self) {
 
     self->callback_0008 = func_ov167_020d1f48;
     self->callback_000c = func_ov167_020d1f64;
-    self->callback_001c = WM_EndKeySharing_0x020d1f9c;
+    self->callback_001c = func_ov167_020d1f9c;
     self->callback_0030 = func_ov167_020d2030;
     self->callback_01d0 = func_ov167_020d1fa8;
     v = self->flags_0060;

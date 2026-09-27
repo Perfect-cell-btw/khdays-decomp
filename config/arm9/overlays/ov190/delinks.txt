@@ -28,11 +28,11 @@ src/overlays/ov190/calls/func_ov190_020d3cb4.c:
     complete
     .text       start:0x020d3cb4 end:0x020d3eb0
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d3eb0.c:
+src/overlays/ov190/calls/func_ov190_020d3eb0.c:
     complete
     .text       start:0x020d3eb0 end:0x020d3ebc
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d3ebc.c:
+src/overlays/ov190/calls/func_ov190_020d3ebc.c:
     complete
     .text       start:0x020d3ebc end:0x020d3ec8
 

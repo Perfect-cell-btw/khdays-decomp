@@ -42,7 +42,7 @@ extern int func_ov022_020882f8(void);
 extern void func_ov022_020888b8(int nIndex, int a);
 extern int func_ov002_0207386c(void);
 extern void func_ov002_02074054(int a);
-extern Ov002Thread *OS_IsThreadAvailable_0x020c9848(void);
+extern Ov002Thread *func_ov107_020c9848(void);
 extern void func_ov002_020765f8(int a);
 extern int func_02030670(void);
 extern void func_02023c30(int a);
@@ -93,7 +93,7 @@ void func_ov002_0206aae4(int bLocal, int nMask)
             && ((nMask & 4) != 0 || bLocal == 0)) {
             func_ov002_02074054(bLocal == 0 ? 1 : 0);
             if (bLocal == 0) {
-                pThread = OS_IsThreadAvailable_0x020c9848();
+                pThread = func_ov107_020c9848();
                 if (pThread != 0) {
                     pThread->nWake = 0x1000;
                 }

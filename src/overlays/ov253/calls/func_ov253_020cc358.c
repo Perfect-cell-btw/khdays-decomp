@@ -27,7 +27,7 @@ extern void func_ov253_020ccad8(void);
 extern void func_ov253_020ccb40(void);
 extern void func_ov253_020ccba8(void);
 extern void func_ov253_020ccc1c(void);
-extern void WM_EndKeySharing_0x020cccf4(void);
+extern void func_ov253_020cccf4(void);
 extern void func_ov253_020ccef4(void);
 extern void func_ov253_020ccf40(void);
 extern void func_ov253_020ccd00(void);
@@ -86,7 +86,7 @@ void func_ov253_020cc358(char *self)
     *(Callback *)(self + 0x2c) = func_ov253_020ccb40;
     *(Callback *)(self + 0x20) = func_ov253_020ccba8;
     *(Callback *)(self + 0x1c) = func_ov253_020ccc1c;
-    *(Callback *)(self + 0x34) = WM_EndKeySharing_0x020cccf4;
+    *(Callback *)(self + 0x34) = func_ov253_020cccf4;
     *(Callback *)(self + 0x30) = func_ov253_020ccef4;
     *(Callback *)(self + 0x1d0) = func_ov253_020ccf40;
     *(Callback *)(self + 0x1dc) = func_ov253_020ccd00;

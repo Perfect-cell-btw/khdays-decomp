@@ -55,7 +55,7 @@ static inline u16 PriRet(volatile u16 *reg, int p) {
 }
 
 extern Ov010Context *NNSi_FndGetCurrentRootHeap(void);
-extern int OS_IsThreadAvailable_0x02023650(void);
+extern int func_02023650(void);
 extern void func_0202362c(int value);
 extern void func_0201e1d0(void);
 extern void func_02023c30(int value);
@@ -88,7 +88,7 @@ void *func_ov010_0204cb3c(u32 parameter) {
 
     *(PaletteData *)frame.palette = data_ov010_0204cf88;
 
-    previous_state = OS_IsThreadAvailable_0x02023650();
+    previous_state = func_02023650();
     func_0202362c(0);
 
     {

@@ -129,7 +129,7 @@ typedef struct {
 } ActorManager;
 
 extern int func_02005418(int a, int b);
-extern ActorManager *OS_IsThreadAvailable_0x020c9848(void);
+extern ActorManager *func_ov107_020c9848(void);
 extern int func_ov002_02072754(int value);
 extern u16 func_02031384(int kind, const void *pCmd, u16 size);
 extern void func_ov022_02088984(int player, int value);
@@ -152,7 +152,7 @@ void func_ov107_020c7da4(AiState *self)
         self->field_1a0 != 0) {
         int multiplier = func_02005418(self->field_1a0->field_68 << 4, self->field_2f8);
         int amount = func_02005418(multiplier,
-            OS_IsThreadAvailable_0x020c9848()->field_8c) + 0x800;
+            func_ov107_020c9848()->field_8c) + 0x800;
         self->field_25c->field_1d0(self->field_25c, amount >> 12);
     }
 
@@ -182,9 +182,9 @@ void func_ov107_020c7da4(AiState *self)
         if (self->field_2f4 > 0) {
             notificationAmount = (func_02005418(self->field_2f4,
                 self->field_1a0->field_02 << 4) + 0xfff) >> 12;
-        } else if (OS_IsThreadAvailable_0x020c9848()->field_00->field_a8 > 0) {
+        } else if (func_ov107_020c9848()->field_00->field_a8 > 0) {
             notificationAmount = (func_02005418(
-                OS_IsThreadAvailable_0x020c9848()->field_00->field_a8,
+                func_ov107_020c9848()->field_00->field_a8,
                 self->field_1a0->field_02 << 4) + 0xfff) >> 12;
         } else {
             notificationAmount = ((self->field_1a0->field_02 << 4) + 0xfff) >> 12;
@@ -192,7 +192,7 @@ void func_ov107_020c7da4(AiState *self)
     }
 
     for (i = 0; i < 4; i++) {
-        ActorManager *manager = OS_IsThreadAvailable_0x020c9848();
+        ActorManager *manager = func_ov107_020c9848();
         PlayerSlot *slot = manager ? manager->slots[i] : 0;
         if (slot != 0 && slot->field_18c != 0) {
             func_ov022_02088984(i, notificationAmount);

@@ -91,7 +91,7 @@ extern void  func_ov008_0205e5e0(Ov008MenuContext *pCtx, int nItemId);          
 extern void  func_ov008_02060850(Ov008MenuContext *pCtx, void *pNode);           /* Ov008_ClearNodeCells */
 extern void  func_ov008_020609e4(Ov008MenuContext *pCtx, void *pNode);           /* unlink the node */
 extern void  func_ov008_0205e790(Ov008MenuContext *pCtx, int nItemId, char nDelta); /* Ov008_BumpRowCounter */
-extern void  WM_EndKeySharing_0x02053464(Ov008GridSummary *pSummary);            /* release a summary */
+extern void  func_ov008_02053464(Ov008GridSummary *pSummary);            /* release a summary */
 extern void  func_020300f8(void *pSurface);                                      /* EnqueueObjGfxCommand */
 extern char  func_ov008_0205e734(Ov008MenuContext *pCtx, int nItemId);           /* Ov008_CountGridEntriesForOwner */
 extern void  func_ov008_020615dc(Ov008MenuContext *pCtx, int nArg);              /* Ov008_ResetGridDrag */
@@ -152,7 +152,7 @@ int func_ov008_020617e0(Ov008MenuContext *pCtx, int bKeepDrag)
             func_ov008_0205e790(pCtx, pCtx->pListNode->nItemId, 1);
         }
     } else {
-        WM_EndKeySharing_0x02053464(&snapshot);
+        func_ov008_02053464(&snapshot);
         return 0;
     }
     if (pCtx->bReplacedSame == 0) {
@@ -179,7 +179,7 @@ int func_ov008_020617e0(Ov008MenuContext *pCtx, int bKeepDrag)
             func_ov008_0206f644();
         }
     }
-    WM_EndKeySharing_0x02053464(&snapshot);
+    func_ov008_02053464(&snapshot);
     func_ov008_02060ae8(pCtx);
     nCtx = func_ov008_02050c54();
     func_ov008_02054ba4(nCtx, func_ov008_02054788(nCtx, WIDGET_HINT_A), 0);

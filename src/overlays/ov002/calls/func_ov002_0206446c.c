@@ -18,7 +18,7 @@ extern Ov002Block *data_ov002_0207f634;
 extern Ov002Handle *func_ov002_020636ac(void);
 extern void func_02033bb4(int a, int b, int c);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
-extern void WM_EndKeySharing_0x02023ad0(void *p);
+extern void func_02023ad0(void *p);
 
 void func_ov002_0206446c(void) {
     Ov002Block *b = data_ov002_0207f634;
@@ -34,6 +34,6 @@ void func_ov002_0206446c(void) {
     if (b->bufF != 0) NNSi_FndFreeFromDefaultHeap(b->bufF);
     if (b->bufC != 0) NNSi_FndFreeFromDefaultHeap(b->bufC);
     if (b->bufD != 0) NNSi_FndFreeFromDefaultHeap(b->bufD);
-    WM_EndKeySharing_0x02023ad0(b->owner);
+    func_02023ad0(b->owner);
     data_ov002_0207f634 = 0;
 }

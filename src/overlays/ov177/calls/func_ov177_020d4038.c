@@ -45,7 +45,7 @@ extern int func_ov107_020c89e8(char *actor, struct ActorHitEvent *hit);
 extern void func_ov107_020c5af8(char *actor, int id, u8 mode, void *anchor);
 extern const u8 data_ov177_020d6304[];
 extern int func_01ff8d18(struct Vec3 *v, struct Vec3 *out);
-extern char *OS_IsThreadAvailable_0x020c9848(void);   /* the game's camera-state getter, named after the byte-identical SDK thunk */
+extern char *func_ov107_020c9848(void);   /* the game's camera-state getter, named after the byte-identical SDK thunk */
 extern int FX_Inv_0x01ff8a40(int x);
 extern void func_01ffa724(int scale, struct Vec3 *v, struct Vec3 *out);
 
@@ -105,7 +105,7 @@ int func_ov177_020d4038(char *actor, int nParam, struct ActorHitEvent *hit)
         ((hit->uFlagsLo & 8) == 0 || (hit->uFlagsLo & 0x80) == 0 || hit->uFlagsHi != 0x80) &&
         (hit->nDamage != 0 || (hit->uFlagsLo & 0x80) == 0)) {
         func_01ff8d18(&state->vHit, &state->vHit);
-        func_01ffa724((int)(((long long)FX_Inv_0x01ff8a40(*(int *)(OS_IsThreadAvailable_0x020c9848() + 0x40)) * 0xc00 + 0x800) >> 12), &state->vHit, &state->vHit);
+        func_01ffa724((int)(((long long)FX_Inv_0x01ff8a40(*(int *)(func_ov107_020c9848() + 0x40)) * 0xc00 + 0x800) >> 12), &state->vHit, &state->vHit);
         *(u8 *)(state->pOwner + 0x1c7) = 0xc;
     }
     if (*(short *)(actor + 0x21a) == 0) {

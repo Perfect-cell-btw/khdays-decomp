@@ -20,7 +20,7 @@
  * >= 0x2e arm uses its result, which is why the flag lives in a callee-saved register across it.
  */
 extern int data_ov055_020b7740;
-extern void WM_EndKeySharing_0x020b6128(int self);
+extern void func_ov055_020b6128(int self);
 extern void func_ov055_020b7368(int self);
 extern void func_ov022_020a384c(int self, int mode);
 extern int func_ov002_020519b0(int a, int b, int c);
@@ -34,7 +34,7 @@ void func_ov055_020b5d2c(int self, int mode) {
 
     switch (mode) {
     case 0x2e:
-        if (*(int *)(self + 0x6bc) != mode) { WM_EndKeySharing_0x020b6128(self); }
+        if (*(int *)(self + 0x6bc) != mode) { func_ov055_020b6128(self); }
         break;
     case 0x2f:
     case 0x30:

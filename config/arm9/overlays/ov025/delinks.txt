@@ -488,7 +488,7 @@ src/overlays/ov025/calls/func_ov025_020857d8.c:
     complete
     .text       start:0x020857d8 end:0x02085850
 
-src/calls/OS_IsThreadAvailable_0x02085850.c:
+src/overlays/ov025/calls/func_ov025_02085850.c:
     complete
     .text       start:0x02085850 end:0x02085860
 
@@ -584,7 +584,7 @@ src/overlays/ov025/calls/func_ov025_020871d4.c:
     complete
     .text       start:0x020871d4 end:0x02087254
 
-src/calls/WM_EndKeySharing_0x02087254.c:
+src/overlays/ov025/calls/func_ov025_02087254.c:
     complete
     .text       start:0x02087254 end:0x02087260
 
@@ -1112,7 +1112,7 @@ src/overlays/ov025/calls/func_ov025_0208a25c.c:
     complete
     .text       start:0x0208a25c end:0x0208a26c
 
-src/calls/WM_EndKeySharing_0x0208a26c.c:
+src/overlays/ov025/calls/func_ov025_0208a26c.c:
     complete
     .text       start:0x0208a26c end:0x0208a278
 
@@ -1144,7 +1144,7 @@ src/overlays/ov025/calls/func_ov025_0208a4bc.c:
     complete
     .text       start:0x0208a4bc end:0x0208a5ec
 
-src/calls/WM_EndKeySharing_0x0208a5ec.c:
+src/overlays/ov025/calls/func_ov025_0208a5ec.c:
     complete
     .text       start:0x0208a5ec end:0x0208a5f8
 
@@ -1213,7 +1213,7 @@ src/overlays/ov025/calls/func_ov025_0208bda0.c:
     complete
     .text       start:0x0208bda0 end:0x0208bdf8
 
-src/calls/WM_EndKeySharing_0x0208bdf8.c:
+src/overlays/ov025/calls/func_ov025_0208bdf8.c:
     complete
     .text       start:0x0208bdf8 end:0x0208be04
 
@@ -1553,7 +1553,7 @@ src/overlays/ov025/calls/func_ov025_0208eaf8.c:
     complete
     .text       start:0x0208eaf8 end:0x0208eb08
 
-src/calls/WM_EndKeySharing_0x0208eb08.c:
+src/overlays/ov025/calls/func_ov025_0208eb08.c:
     complete
     .text       start:0x0208eb08 end:0x0208eb14
 
@@ -2177,7 +2177,7 @@ src/overlays/ov025/auto/func_ov025_02099a78.c:
     complete
     .text       start:0x02099a78 end:0x02099a80
 
-libs/nitro/fx/calls/FX_Inv_0x02099a80.c:
+src/overlays/ov025/calls/func_ov025_02099a80.c:
     complete
     .text       start:0x02099a80 end:0x02099a90
 
@@ -2317,7 +2317,7 @@ src/overlays/ov025/calls/func_ov025_0209bb84.c:
     complete
     .text       start:0x0209bb84 end:0x0209bccc
 
-src/calls/WM_EndKeySharing_0x0209bccc.c:
+src/overlays/ov025/calls/func_ov025_0209bccc.c:
     complete
     .text       start:0x0209bccc end:0x0209bcd8
 
@@ -3509,7 +3509,7 @@ src/overlays/ov025/calls/func_ov025_020ad768.c:
     complete
     .text       start:0x020ad768 end:0x020ad7ac
 
-src/calls/WM_EndKeySharing_0x020ad7ac.c:
+src/overlays/ov025/calls/func_ov025_020ad7ac.c:
     complete
     .text       start:0x020ad7ac end:0x020ad7b8
 
@@ -3653,7 +3653,7 @@ src/overlays/ov025/calls/func_ov025_020aeb80.c:
     complete
     .text       start:0x020aeb80 end:0x020aebbc
 
-src/calls/WM_EndKeySharing_0x020aebbc.c:
+src/overlays/ov025/calls/func_ov025_020aebbc.c:
     complete
     .text       start:0x020aebbc end:0x020aebc8
 
@@ -3669,7 +3669,7 @@ src/overlays/ov025/auto/func_ov025_020aed18.c:
     complete
     .text       start:0x020aed18 end:0x020aed20
 
-libs/nitro/fx/calls/FX_Inv_0x020aed20.c:
+src/overlays/ov025/calls/func_ov025_020aed20.c:
     complete
     .text       start:0x020aed20 end:0x020aed30
 
@@ -3769,11 +3769,11 @@ src/overlays/ov025/calls/func_ov025_020afc38.c:
     complete
     .text       start:0x020afc38 end:0x020afcbc
 
-src/overlays/ov025/calls/OSi_IrqDma0_0x020afcbc.c:
+src/overlays/ov025/calls/func_ov025_020afcbc.c:
     complete
     .text       start:0x020afcbc end:0x020afccc
 
-src/overlays/ov025/calls/OSi_IrqDma0_0x020afccc.c:
+src/overlays/ov025/calls/func_ov025_020afccc.c:
     complete
     .text       start:0x020afccc end:0x020afcdc
 
@@ -3837,7 +3837,7 @@ src/overlays/ov025/calls/func_ov025_020b0484.c:
     complete
     .text       start:0x020b0484 end:0x020b07dc
 
-src/overlays/ov025/calls/OSi_IrqDma0_0x020b07dc.c:
+src/overlays/ov025/calls/func_ov025_020b07dc.c:
     complete
     .text       start:0x020b07dc end:0x020b07ec
 
@@ -4085,18 +4085,6 @@ src/overlays/ov025/data/ov025_page_020b5310.c:
     complete
     .data       start:0x020b5310 end:0x020b5350
 
-src/overlays/ov025/data/ov025_page_020b53c4.c:
-    complete
-    .data       start:0x020b53c4 end:0x020b5404
-
-src/overlays/ov025/data/ov025_page_020b54b8.c:
-    complete
-    .data       start:0x020b54b8 end:0x020b54f8
-
-src/overlays/ov025/data/ov025_page_020b5508.c:
-    complete
-    .data       start:0x020b5508 end:0x020b5548
-
 src/overlays/ov025/data/ov025_page_020b5548.c:
     complete
     .data       start:0x020b5548 end:0x020b5588
@@ -4125,10 +4113,6 @@ src/overlays/ov025/data/ov025_reportsets_020b4228.c:
     complete
     .rodata     start:0x020b4228 end:0x020b4234
 
-src/overlays/ov025/data/ov025_screen_020b4b70.c:
-    complete
-    .data       start:0x020b4b70 end:0x020b4bb4
-
 src/overlays/ov025/data/ov025_screen_020b4cb4.c:
     complete
     .data       start:0x020b4cb4 end:0x020b4cf8
@@ -4136,10 +4120,6 @@ src/overlays/ov025/data/ov025_screen_020b4cb4.c:
 src/overlays/ov025/data/ov025_screen_020b4d4c.c:
     complete
     .data       start:0x020b4d4c end:0x020b4d90
-
-src/overlays/ov025/data/ov025_screen_020b4de8.c:
-    complete
-    .data       start:0x020b4de8 end:0x020b4e2c
 
 src/overlays/ov025/data/ov025_screen_020b4e2c.c:
     complete

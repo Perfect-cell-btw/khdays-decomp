@@ -58,7 +58,7 @@ typedef struct Ov107Global {
     int field_88;              /* 0x88 */
 } Ov107Global;
 
-extern Ov107Global *OS_IsThreadAvailable_0x020c9848(void);
+extern Ov107Global *func_ov107_020c9848(void);
 
 extern void func_ov107_020c24f0(void);
 extern void func_ov107_020c2548(void);
@@ -132,7 +132,7 @@ void func_ov107_020c207c(StatusNode *self, int tableIndex)
     fx->onBusy = func_ov107_020c2a6c;
     fx->owner = self;
 
-    fx = func_0203b898((void *)((((OS_IsThreadAvailable_0x020c9848()->field_88 + 0x8000)
+    fx = func_0203b898((void *)((((func_ov107_020c9848()->field_88 + 0x8000)
                                   & 0xfffffc) << 7) | 0x80000008));
     self->field_114 = fx;
     func_0203bfb4(self->group104, fx);

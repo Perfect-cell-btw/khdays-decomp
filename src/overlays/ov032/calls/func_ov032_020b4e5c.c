@@ -14,7 +14,7 @@
  * orders were compiled and this is the one that matches.
  *
  * One of three byte-identical siblings (ov032/ov052/ov072). */
-extern void WM_EndKeySharing_0x020b15a4(int handle, void *slot);
+extern void func_ov022_020b15a4(int handle, void *slot);
 
 void func_ov032_020b4e5c(char *self) {
     char *parts;
@@ -34,7 +34,7 @@ void func_ov032_020b4e5c(char *self) {
         slot = (char *)(0x118 + (int)rig);
         do {
             part = *(char **)(parts + 0x3c) + off;
-            WM_EndKeySharing_0x020b15a4(*(int *)(base + 0x63c), slot);
+            func_ov022_020b15a4(*(int *)(base + 0x63c), slot);
             *(char **)(part + 0x130) = slot;
             off += 0x1c8;
             slot += 0x24;

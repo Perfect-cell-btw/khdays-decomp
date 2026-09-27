@@ -18,7 +18,7 @@
  * comparison or a ternary.
  */
 extern int data_ov054_020b74a0;
-extern void WM_EndKeySharing_0x020b6308(int self);
+extern void func_ov054_020b6308(int self);
 extern void func_ov054_020b6344(int *p, int v);
 extern void func_ov022_020a4490(int self, int a, int b);
 extern void func_ov022_020a384c(int self, int mode);
@@ -35,7 +35,7 @@ void func_ov054_020b5d5c(int self, int mode) {
 
     switch (mode - 0x2e) {
     case 0:
-        if (*(int *)(self + 0x6bc) != mode) { WM_EndKeySharing_0x020b6308(self); }
+        if (*(int *)(self + 0x6bc) != mode) { func_ov054_020b6308(self); }
         break;
     case 1:
         *p = 0;

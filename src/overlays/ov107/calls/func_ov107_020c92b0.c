@@ -48,7 +48,7 @@ typedef struct {
     char pad_6[2];
 } SlotKindInfo;
 
-extern ActorManager *OS_IsThreadAvailable_0x020c9848(void);
+extern ActorManager *func_ov107_020c9848(void);
 extern void func_0203c7e8(CreatedItem *item);
 extern void func_0203d194(void *p);
 extern void *func_0203d15c(unsigned int size);
@@ -59,7 +59,7 @@ extern const SlotKindInfo data_ov107_020cb9a4[][4];
 
 void func_ov107_020c92b0(Obj *self, int slot, unsigned int kind, Vec3 *pos, int field10)
 {
-    unsigned int spriteSet = OS_IsThreadAvailable_0x020c9848()->spriteSet_88;
+    unsigned int spriteSet = func_ov107_020c9848()->spriteSet_88;
     Slot *entry;
     Vec3 v;
     int resource;

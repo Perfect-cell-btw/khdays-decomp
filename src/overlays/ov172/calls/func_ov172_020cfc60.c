@@ -20,7 +20,7 @@ typedef unsigned short u16;
 typedef void (*Callback)(void);
 
 extern void func_ov172_020cff84(void);
-extern void WM_EndKeySharing_0x020cffc4(void);
+extern void func_ov172_020cffc4(void);
 extern void func_ov172_020d0020(void);
 extern void func_ov172_020d03a0(void);
 extern void func_ov172_020cffd0(void);
@@ -58,7 +58,7 @@ void func_ov172_020cfc60(char *self)
     int *slot;
 
     *(Callback *)(self + 0x8) = func_ov172_020cff84;
-    *(Callback *)(self + 0xc) = WM_EndKeySharing_0x020cffc4;
+    *(Callback *)(self + 0xc) = func_ov172_020cffc4;
     *(Callback *)(self + 0x1c) = func_ov172_020d0020;
     *(Callback *)(self + 0x30) = func_ov172_020d03a0;
     *(Callback *)(self + 0x28) = func_ov172_020cffd0;

@@ -36,9 +36,9 @@ extern "C" {
 extern int data_ov024_020939c4;
 extern int data_ov024_020939e8;
 
-extern void *WM_EndKeySharing_0x02085e3c(u32 nSize);
-extern void *WM_EndKeySharing_0x020850f8(u32 nSize);
-extern void *WM_EndKeySharing_0x02085104(void *pBlock);
+extern void *func_ov024_02085e3c(u32 nSize);
+extern void *func_ov024_020850f8(u32 nSize);
+extern void *func_ov024_02085104(void *pBlock);
 extern int func_ov024_02085e54(void *pReader, void *pFile);
 extern void *func_ov024_02085110(void *pBlock);
 extern int func_ov024_02084e94(void *pStream, void *pReader, int nTries);
@@ -49,7 +49,7 @@ void *func_ov024_02084ec4(void *pFile, int nTries)
     MobiClipReaderRaw *pReader;
     void *pStream;
 
-    pReader = (MobiClipReaderRaw *)WM_EndKeySharing_0x02085e3c(0x14);
+    pReader = (MobiClipReaderRaw *)func_ov024_02085e3c(0x14);
     if (pReader != 0) {
         pReader->pVtable = &data_ov024_020939c4;
         pReader->pOwner = 0;
@@ -65,14 +65,14 @@ void *func_ov024_02084ec4(void *pFile, int nTries)
         return 0;
     }
 
-    pStream = WM_EndKeySharing_0x020850f8(0xd8);
+    pStream = func_ov024_020850f8(0xd8);
     if (pStream != 0) {
         pStream = func_ov024_02085110(pStream);
     }
     if (func_ov024_02084e94(pStream, pReader, nTries) == 0) {
         if (pStream != 0) {
             func_ov024_02085140(pStream);
-            WM_EndKeySharing_0x02085104(pStream);
+            func_ov024_02085104(pStream);
         }
         return 0;
     }

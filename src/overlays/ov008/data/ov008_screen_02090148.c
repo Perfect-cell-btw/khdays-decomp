@@ -19,8 +19,8 @@ typedef struct Ov008ScreenHooks {
     Ov008HookFn apfnHook[7];  /* 0x28 .. 0x40 */
 } Ov008ScreenHooks;
 
-extern void WM_EndKeySharing_0x020594c4(void);
-extern void WM_EndKeySharing_0x0205968c(void);
+extern void func_ov008_020594c4(void);
+extern void func_ov008_0205968c(void);
 extern void func_ov008_020594d0(void);
 extern void func_ov008_0205951c(void);
 extern void func_ov008_020595e0(void);
@@ -28,12 +28,12 @@ extern void func_ov008_020595e0(void);
 Ov008ScreenHooks data_ov008_02090148 = {
     func_ov008_0205951c,  /* pfnOpen */
     func_ov008_020595e0,  /* pfnStep */
-    WM_EndKeySharing_0x0205968c,  /* pfnClose */
+    func_ov008_0205968c,  /* pfnClose */
     0,  /* nFlags */
     1492,  /* nStateSize */
     0,  /* pfnSelect */
     0,  /* pfnCancel */
     { 0, 0 },  /* apfnAux */
     0,  /* pfnDone */
-    { WM_EndKeySharing_0x020594c4, 0, 0, 0, 0, 0, func_ov008_020594d0 },  /* apfnHook */
+    { func_ov008_020594c4, 0, 0, 0, 0, 0, func_ov008_020594d0 },  /* apfnHook */
 };

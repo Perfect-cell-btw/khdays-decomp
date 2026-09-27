@@ -8,7 +8,7 @@ typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
 
 extern int *func_01fffca8(void *pool, int elementSize, int capacity);
 extern void *func_ov107_020c3210(const Capsule *capsule);
-extern void WM_EndKeySharing_0x020d28c0(void);
+extern void func_ov259_020d28c0(void);
 extern void func_ov259_020d28cc(void);
 extern void func_ov259_020d29b0(void);
 extern void func_ov259_020d29a8(void);
@@ -19,7 +19,7 @@ void func_ov259_020d27b4(char *self)
 {
     Capsule cap;
 
-    *(void **)(self + 8) = WM_EndKeySharing_0x020d28c0;
+    *(void **)(self + 8) = func_ov259_020d28c0;
     *(void **)(self + 0xc) = func_ov259_020d28cc;
     *(void **)(self + 0x30) = func_ov259_020d29b0;
     *(void **)(self + 0x1d0) = func_ov259_020d29a8;

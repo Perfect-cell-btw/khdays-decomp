@@ -57,8 +57,8 @@ extern void func_ov257_020cc6b0(void);
 extern void func_ov257_020cc6fc(void);
 extern void func_ov257_020ccd9c(void);
 /* ov257 handlers 020cca20 / 020cca2c; the symbol table names them after an SDK routine */
-extern void WM_EndKeySharing_0x020cca20(void);
-extern void WM_EndKeySharing_0x020cca2c(void);
+extern void func_ov257_020cca20(void);
+extern void func_ov257_020cca2c(void);
 extern void func_ov257_020cca38(void);
 extern void func_ov257_020ccde8(void);
 extern void func_ov257_020ccbac(void);
@@ -86,8 +86,8 @@ void func_ov257_020cbfc4(char *self)
     *(Callback *)(self + 0x10) = func_ov257_020cc6b0;
     *(Callback *)(self + 0x1c) = func_ov257_020cc6fc;
     *(Callback *)(self + 0x30) = func_ov257_020ccd9c;
-    *(Callback *)(self + 0x28) = WM_EndKeySharing_0x020cca20;
-    *(Callback *)(self + 0x2c) = WM_EndKeySharing_0x020cca2c;
+    *(Callback *)(self + 0x28) = func_ov257_020cca20;
+    *(Callback *)(self + 0x2c) = func_ov257_020cca2c;
     *(Callback *)(self + 0x34) = func_ov257_020cca38;
     *(Callback *)(self + 0x1d0) = func_ov257_020ccde8;
     *(Callback *)(self + 0x1dc) = func_ov257_020ccbac;

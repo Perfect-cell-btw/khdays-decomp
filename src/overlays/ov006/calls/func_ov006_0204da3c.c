@@ -19,7 +19,7 @@ typedef struct Ov008SendCtx {
 
 extern Ov008SendCtx *data_ov006_020565e4;
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
-extern int  WM_EndKeySharing_0x020bf900(void *buf, u16 size, void *callback);
+extern int  func_ov105_020bf900(void *buf, u16 size, void *callback);
 extern void func_ov006_0204d9e4(void);
 
 int func_ov006_0204da3c(const void *src, int size)
@@ -31,7 +31,7 @@ int func_ov006_0204da3c(const void *src, int size)
     data_ov006_020565e4->busy = 1;
     *(int *)data_ov006_020565e4->buf = data_ov006_020565e4->seq;
     MI_CpuCopy8(src, data_ov006_020565e4->buf + 4, size);
-    if (WM_EndKeySharing_0x020bf900(data_ov006_020565e4->buf, (u16)(size + 4),
+    if (func_ov105_020bf900(data_ov006_020565e4->buf, (u16)(size + 4),
                                     func_ov006_0204d9e4) != 0) {
         return 1;
     }

@@ -1,7 +1,7 @@
 #pragma thumb on
 /* func_020308a0 -- lay out the packet slots of the session context (data_0204c22c), MAIN. Modes 1/2
  * use five slots, mode 3 two; the slot table sits at the DTCM area data_027e07fc, followed by the
- * slot buffers. The slot sizes follow the connection kind (CARD_GetResultCode_0x0203065c is
+ * slot buffers. The slot sizes follow the connection kind (func_0203065c is
  * misnamed): kinds 1/2 give the first two slots 0x3d8 bytes and the rest 0xc0, kind 3 gives every
  * slot 0x3c0. Each slot then gets its word-aligned buffer, a zero length and a zero state, and a
  * 0x3c0-byte scratch block is allocated from the default heap (+0x5c). */
@@ -26,7 +26,7 @@ typedef struct PacketCtx {
 extern PacketCtx *data_0204c22c;
 extern char data_027e07fc[];
 extern int **data_0204c024;
-extern int CARD_GetResultCode_0x0203065c(void);
+extern int func_0203065c(void);
 extern void *func_020236cc(u32 size, int **heap);
 
 void func_020308a0(int mode)
@@ -46,7 +46,7 @@ void func_020308a0(int mode)
     }
     ctx->slot = (PacketSlot *)buf;
     buf += (ctx->slotCount * sizeof(PacketSlot) + 3) & ~3;
-    switch (CARD_GetResultCode_0x0203065c()) {
+    switch (func_0203065c()) {
     case 1:
     case 2:
         for (i = 0; i < 2; i++) {

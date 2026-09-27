@@ -7,7 +7,7 @@ extern void func_020362e8(int *p);
 extern void func_ov006_0204d57c(int *p);
 extern void func_02033fec(int a, int b);
 extern void func_ov006_0204fb24(void);
-extern void WM_EndKeySharing_0x02023ad0(int *obj);
+extern void func_02023ad0(int *obj);
 extern int  data_ov006_02056660;
 
 void func_ov006_0205028c(void) {
@@ -17,7 +17,7 @@ void func_ov006_0205028c(void) {
     func_02033fec(0, 0x1e);
     func_ov006_0204fb24();
     if (heap[0] != 0) {
-        WM_EndKeySharing_0x02023ad0((int *)heap[0]);
+        func_02023ad0((int *)heap[0]);
         heap[0] = 0;
     }
     data_ov006_02056660 = 0;

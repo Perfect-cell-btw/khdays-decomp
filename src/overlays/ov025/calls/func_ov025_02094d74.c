@@ -103,7 +103,7 @@ extern void  func_ov025_020a4408(Ov008GridSummary *pSummary);                   
 extern int   func_ov025_020910e0(Ov008GridChanges *pOut, Ov008GridSummary *pOld, Ov008GridSummary *pNew);
 extern void  func_ov025_020a4c80(void);                                          /* Ov008_TriggerTag48IfState0 */
 extern void  func_ov025_020a4c30(void);                                          /* Ov008_EnableMissionRowOnPage1 */
-extern void  WM_EndKeySharing_0x02087254(Ov008GridSummary *pSummary);            /* release a summary */
+extern void  func_ov025_02087254(Ov008GridSummary *pSummary);            /* release a summary */
 
 int func_ov025_02094d74(Ov008MenuContext *pCtx)
 {
@@ -161,6 +161,6 @@ int func_ov025_02094d74(Ov008MenuContext *pCtx)
             bDone = 1;
         }
     }
-    WM_EndKeySharing_0x02087254(&snapshot);
+    func_ov025_02087254(&snapshot);
     return bDone;
 }

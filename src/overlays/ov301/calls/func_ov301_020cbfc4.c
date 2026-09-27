@@ -23,7 +23,7 @@
  * With this, ov301 is 16/16.
  */
 extern int func_ov301_020cc15c, func_ov301_020cc178, func_ov301_020cc240;
-extern int WM_EndKeySharing_0x020cc1d8, WM_EndKeySharing_0x020cc1e4;
+extern int func_ov301_020cc1d8, func_ov301_020cc1e4;
 extern int func_ov301_020cc28c, func_ov301_020cc1f0;
 extern int data_02041dc8[], data_02042264[];
 extern int func_ov107_020c9440(int p, int a);
@@ -85,9 +85,9 @@ void func_ov301_020cbfc4(struct Ov301Obj *self)
     self->fn08 = &func_ov301_020cc15c;
     self->fn0c = &func_ov301_020cc178;
     self->fn30 = &func_ov301_020cc240;
-    self->fn28 = &WM_EndKeySharing_0x020cc1d8;
+    self->fn28 = &func_ov301_020cc1d8;
 
-    fn2c = &WM_EndKeySharing_0x020cc1e4;
+    fn2c = &func_ov301_020cc1e4;
 
     box.min.x = minX;
     box.min.y = minY;

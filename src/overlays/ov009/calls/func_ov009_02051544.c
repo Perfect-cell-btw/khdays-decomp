@@ -63,7 +63,7 @@ extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);
 extern void *MI_CpuFill8(void *dst, unsigned char v, unsigned int n);
 extern void *MI_CpuCopy8(const void *src, void *dst, unsigned int n);
 extern void func_02035f84(void *p);
-extern int WM_EndKeySharing_0x02032444(Root *self, int key, int a);
+extern int func_02032444(Root *self, int key, int a);
 extern void func_020325b8(Root *self, int slot, int prio);
 extern void func_02032680(Root *self, int slot, int a);
 extern void func_ov009_020519fc(Root *self, void *obj, int n, void *a, void *b, int span);
@@ -101,7 +101,7 @@ void *func_ov009_02051544(Root *self, WidgetDescriptor *desc) {
             obj->keysAlternate[i] = desc->keysAlternate[i];
 
             if (((int *)keys)[i] >= 0) {
-                obj->slots[i] = WM_EndKeySharing_0x02032444(self, ((int *)keys)[i], desc->groupId);
+                obj->slots[i] = func_02032444(self, ((int *)keys)[i], desc->groupId);
                 func_020325b8(self, obj->slots[i], (unsigned char)(desc->priorityBase + 1 - i));
                 func_02032680(self, obj->slots[i], self->style);
             } else {

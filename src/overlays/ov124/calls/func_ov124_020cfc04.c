@@ -34,7 +34,7 @@ extern void func_ov124_020cffcc(void);
 extern const char data_ov124_020d1f4c[];
 
 extern void func_ov124_020cfe94(void);
-extern void WM_EndKeySharing_0x020cfed4(void);   /* the game's tail-call veneer to the ov107 draw hook, named after the byte-identical SDK thunk */
+extern void func_ov124_020cfed4(void);   /* the game's tail-call veneer to the ov107 draw hook, named after the byte-identical SDK thunk */
 extern void func_ov124_020cfee0(void);
 extern void func_ov124_020d0164(void);
 extern void func_ov124_020cff7c(void);
@@ -71,7 +71,7 @@ void func_ov124_020cfc04(int param)
 
     *(u16 *)param |= 0x100;
     *(void **)(param + 0x08) = func_ov124_020cfe94;
-    *(void **)(param + 0x0c) = WM_EndKeySharing_0x020cfed4;
+    *(void **)(param + 0x0c) = func_ov124_020cfed4;
     *(void **)(param + 0x1c) = func_ov124_020cfee0;
     *(void **)(param + 0x30) = func_ov124_020d0164;
     *(void **)(param + 0x28) = func_ov124_020cff7c;

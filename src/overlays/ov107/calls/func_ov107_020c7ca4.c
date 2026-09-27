@@ -1,4 +1,4 @@
-extern int OS_IsThreadAvailable_0x020c9848(void);
+extern int func_ov107_020c9848(void);
 extern int func_01fffd70(void *list);
 extern int func_01fffd8c(void *list);
 extern void func_ov107_020c3368(int v);
@@ -19,7 +19,7 @@ typedef struct {
 void func_ov107_020c7ca4(char *self)
 {
     if (*(int *)(self + 0x2e8) > 0) {
-        int cooldown = *(int *)(self + 0x2e8) - *(int *)((char *)OS_IsThreadAvailable_0x020c9848() + 0x40) / 30;
+        int cooldown = *(int *)(self + 0x2e8) - *(int *)((char *)func_ov107_020c9848() + 0x40) / 30;
         *(int *)(self + 0x2e8) = cooldown;
         if (cooldown <= 0) {
             *(int *)(self + 0x2e8) = 0;

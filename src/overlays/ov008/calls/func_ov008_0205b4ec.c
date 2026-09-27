@@ -14,7 +14,7 @@ extern void func_02030158(void *surface);
 extern int func_02023588(int flagId);
 extern void *func_ov008_02055c84(void *records, int index);
 extern void func_ov008_0205af08(void *surface, void *text);
-extern void *WM_EndKeySharing_0x0205665c(void *list, u32 entryId);
+extern void *func_ov008_0205665c(void *list, u32 entryId);
 extern void func_02030278(void *surface, int x, int y, int mode,
                           void *text, int shadow);
 extern void func_020300f8(void *surface);
@@ -51,11 +51,11 @@ void func_ov008_0205b4ec(u32 entryId, int fastTransition)
         func_02030278(menuContext + 0x145c, 2, 3, 1, textRecord, 0);
     }
     if (isEntryUnlocked != 0) {
-        textRecord = WM_EndKeySharing_0x0205665c(menuContext + 0x13fc, entryId);
+        textRecord = func_ov008_0205665c(menuContext + 0x13fc, entryId);
         func_ov008_0205af08(menuContext + 0x145c, textRecord);
     }
     if (isEntryUnlocked != 0) {
-        textRecord = WM_EndKeySharing_0x0205665c(menuContext + 0x13fc, entryId);
+        textRecord = func_ov008_0205665c(menuContext + 0x13fc, entryId);
         func_02030278(menuContext + 0x145c, 2, 3, 1, textRecord, 0);
     }
     func_020300f8(menuContext + 0x145c);

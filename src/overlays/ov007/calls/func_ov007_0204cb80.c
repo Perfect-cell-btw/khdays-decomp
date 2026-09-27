@@ -10,7 +10,7 @@ extern void GFXi_EnqueueCommand(int a, int b, int c, int d);
 extern void func_02024ae0(int a, int b, int c, int d);
 extern void func_02024b04(int a, int b, int c, int d);
 extern void func_02032388(int *a, unsigned int *b);
-extern int WM_EndKeySharing_0x02032444(int *a, int b, int c);
+extern int func_02032444(int *a, int b, int c);
 extern void func_0203257c(int *a, int b, unsigned int *c);
 extern void func_0203281c(int *a, int b, int c);
 extern void func_0202f7fc(int *a, void *b);
@@ -71,7 +71,7 @@ void *func_ov007_0204cb80(int param_1, int param_2, int param_3, int param_4) {
         fr.l24[2] = 0;
         fr.l24[3] = 0;
         func_02032388(heap + 0x41f, fr.l24);
-        heap[0x16ad] = WM_EndKeySharing_0x02032444(heap + 0x41f, 0, 0);
+        heap[0x16ad] = func_02032444(heap + 0x41f, 0, 0);
 
         fr.box[0] = 0x80000;
         fr.box[1] = 0xbc000;

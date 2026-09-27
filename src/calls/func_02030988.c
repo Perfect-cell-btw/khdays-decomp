@@ -10,7 +10,7 @@ struct Foo {
 };
 
 extern struct Foo *NNSi_FndGetCurrentRootHeap(void);
-extern u32 CARD_GetResultCode_0x0203065c(void);
+extern u32 func_0203065c(void);
 extern void func_020308a0(void);
 extern void func_02030ccc(void);
 extern void func_ov105_020bd59c(u32 a, void *b, u32 c);
@@ -28,7 +28,7 @@ void (*func_02030988(void))(void)
 
     p = NNSi_FndGetCurrentRootHeap();
     data_0204c22c = p;
-    CARD_GetResultCode_0x0203065c();
+    func_0203065c();
     func_020308a0();
     p->_6c = 0;
     p->_68 = 0;
@@ -36,7 +36,7 @@ void (*func_02030988(void))(void)
         p->arr[i] = 0;
     }
     func_02030ccc();
-    r = CARD_GetResultCode_0x0203065c();
+    r = func_0203065c();
     switch (r) {
     case 2:
         func_ov105_020bd59c(12, func_01fff9b8, 0);

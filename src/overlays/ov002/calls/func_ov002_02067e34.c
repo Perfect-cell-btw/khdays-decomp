@@ -37,7 +37,7 @@ extern void func_02020aa8(int nIndex, int nValue);
 extern void func_02020cf8(int nValue);
 extern void func_02024fd4(int pBlock);
 
-extern void OSi_IrqTimer3_0x0206fb74(void);
+extern void func_ov002_0206fb74(void);
 extern void func_ov002_02069844(void);
 extern void func_ov002_02069ce0(void);
 extern void func_ov002_02078eac(void);
@@ -64,7 +64,7 @@ void func_ov002_02067e34(void)
     char *ctx;
 
     ctx = NNSi_FndGetCurrentRootHeap();
-    OSi_IrqTimer3_0x0206fb74();
+    func_ov002_0206fb74();
     if (*(int *)(ctx + 0x8b4c) != -1) {
         (*(void (**)(void))(ctx + 0x8b84))();
         func_0201e4a8(0, *(FSOverlayID *)(ctx + 0x8b50));

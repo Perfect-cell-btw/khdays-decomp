@@ -59,7 +59,7 @@ extern void func_02035444(int memberIndex, int flags, int memberKind, int level)
 extern void func_02035d3c(void);
 extern int func_ov029_020b2ee0(int proc, int group);
 extern Ov022ActorEntry *func_01fffde0(int index);
-extern Ov022RuntimeContext *OS_IsThreadAvailable_0x020c9848(void);
+extern Ov022RuntimeContext *func_ov107_020c9848(void);
 
 void func_ov022_0208876c(void)
 {
@@ -88,7 +88,7 @@ void func_ov022_0208876c(void)
     object->root.instance10 = data_ov022_020b2e78.callback00(
         &data_ov022_020b2e80);
     object = (Ov022RootOrEntry *)func_01fffde0(1);
-    runtime = OS_IsThreadAvailable_0x020c9848();
+    runtime = func_ov107_020c9848();
     if (runtime != 0) {
         object->entry.activeObject4ec = runtime->activeObject30;
     } else {

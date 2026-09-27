@@ -53,7 +53,7 @@ extern void func_0203bfb4(int a, int b);
 extern int func_ov107_020c9e50(int a, const void *b);
 extern void func_01fffc24(void *pList);
 extern int func_0203d15c(int nSize);
-extern int OS_IsThreadAvailable_0x020c9848(void);
+extern int func_ov107_020c9848(void);
 extern void func_ov107_020c9074(int *self, int a);
 extern void func_ov107_020c92b0(int *self, int nChannel, int b, int c, int nRange);
 extern int func_01fffca8(void *a, int b, int c);
@@ -95,7 +95,7 @@ void func_ov127_020cbfc4(int *self)
     func_01fffc24((void *)&self[0xe6]);
     self[0xe5] = func_0203d15c(8);
 
-    nThread = OS_IsThreadAvailable_0x020c9848();
+    nThread = func_ov107_020c9848();
     *(int *)self[0xe5] =
         func_0203b898((aOwnerTag[0] & 0x1ff) |
                       (((*(int *)(nThread + 0x88) + 0x8000) & 0xfffffc) << 7 |

@@ -4,7 +4,7 @@
 extern int data_ov002_0207f99c;
 
 extern void func_ov002_02067028(void);
-extern void WM_EndKeySharing_0x02023ad0(int handle);
+extern void func_02023ad0(int handle);
 extern void *NNS_FndGetNextListObject(void *list, void *obj);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 
@@ -13,7 +13,7 @@ void func_ov002_02065e0c(void) {
     char *self = *(char **)&data_ov002_0207f99c;
 
     func_ov002_02067028();
-    WM_EndKeySharing_0x02023ad0(*(int *)self);
+    func_02023ad0(*(int *)self);
 
     node = (void **)NNS_FndGetNextListObject(self + 8, 0);
     while (node != 0) {

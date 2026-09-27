@@ -36,7 +36,7 @@ typedef struct Ov008TouchState {
 
 extern int  func_ov008_02050c64(void);                                    /* Ov008_GetCtxBlock4a80 */
 extern Ov008ScrollMenu *func_ov008_02050cec(void);                        /* Ov008_GetPageB */
-extern int  OS_IsThreadAvailable_0x02051aa0(void);                        /* scene state */
+extern int  func_ov008_02051aa0(void);                        /* scene state */
 extern int  func_ov008_02050c3c(void);                                    /* Ov008_GetCtxBlock954c */
 extern void func_ov008_02055c24(int nBlock, void *pOut);                  /* copy the touch record */
 extern void func_ov008_0206cdb4(Ov008ScrollMenu *pMenu, int nPos);        /* Ov008_SetScrollGaugePos */
@@ -56,7 +56,7 @@ void func_ov008_0206f3ac(void)
 
     nBlock = func_ov008_02050c64();
     pMenu = func_ov008_02050cec();
-    if (OS_IsThreadAvailable_0x02051aa0() == 2 || pMenu->nState == 1) {
+    if (func_ov008_02051aa0() == 2 || pMenu->nState == 1) {
         return;
     }
     if (pMenu->nPending != 0) {

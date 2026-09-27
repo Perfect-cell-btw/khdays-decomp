@@ -116,7 +116,7 @@ extern void VEC_Subtract(struct VecFx32 *pA, struct VecFx32 *pB,
 extern int FX_Atan2(int x, int z);
 extern void VEC_MultAdd(int nScale, struct VecFx32 *pVec,
                         struct VecFx32 *pAdd, struct VecFx32 *pDst);
-extern void WM_EndKeySharing_0x020b15a4(int nTrack, u16 *pBinding);
+extern void func_ov022_020b15a4(int nTrack, u16 *pBinding);
 
 #define HALF_TURN 0x8000
 #define SLOT_FLAG_ARMED 0x20
@@ -182,7 +182,7 @@ void func_ov022_0208e404(struct ReactionCtx *pCtx)
     while (i < pSlot->nParts) {
         pPart = &pSlot->pParts[i];
         if ((pSlot->nBoundMask & (1 << i)) == 0) {
-            WM_EndKeySharing_0x020b15a4(pCtx->nTrack, pPart->binding);
+            func_ov022_020b15a4(pCtx->nTrack, pPart->binding);
             pSlot->nBoundMask = pSlot->nBoundMask | (1 << i);
         }
         pPart->nSlotIndex = (u8)pActor->nSlotIndex;

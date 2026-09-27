@@ -24,7 +24,7 @@ src/overlays/ov168/calls/func_ov168_020d3bbc.c:
     complete
     .text       start:0x020d3bbc end:0x020d3bfc
 
-libs/nitro/wm/calls/WM_EndKeySharing_ov168_0x020d3bfc.c:
+src/overlays/ov168/calls/func_ov168_020d3bfc.c:
     complete
     .text       start:0x020d3bfc end:0x020d3c08
 
@@ -184,7 +184,7 @@ src/overlays/ov168/calls/func_ov168_020d5ba4.c:
     complete
     .text       start:0x020d5ba4 end:0x020d5bdc
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d5bdc.c:
+src/overlays/ov168/calls/func_ov168_020d5bdc.c:
     complete
     .text       start:0x020d5bdc end:0x020d5be8
 

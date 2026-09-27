@@ -1,4 +1,4 @@
-extern int CARD_GetResultCode_0x0202bfb8(void);
+extern int func_0202bfb8(void);
 extern void func_0202bda4(int mask, int a);
 extern void func_ov023_02083508(void);
 extern void func_0202bc90(unsigned short id);
@@ -10,7 +10,7 @@ extern char *data_ov023_0208a784;
  * the roster and republishes the lobby. */
 void func_ov023_020834c0(int peer) {
     int state;
-    if (CARD_GetResultCode_0x0202bfb8() <= peer) {
+    if (func_0202bfb8() <= peer) {
         return;
     }
     state = *(int *)((&data_ov023_0208a784)[1] + 0x875e4);

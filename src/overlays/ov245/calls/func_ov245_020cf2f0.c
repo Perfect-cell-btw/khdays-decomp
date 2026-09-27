@@ -29,7 +29,7 @@ extern int func_0203b898(void *item);
 extern int func_0203bfb4(int subscriber, int item);
 extern void func_0203c7ac(int item, int a);
 extern int func_0203bee8(int item, int kind, const char *name);
-extern void *OS_IsThreadAvailable_0x020c9848(void);
+extern void *func_ov107_020c9848(void);
 extern void func_ov107_020c9074(int self, int item);
 extern int *func_01fffca8(void *list, int stride, int max);
 extern int func_ov107_020c319c(void *pose);
@@ -75,10 +75,10 @@ void func_ov245_020cf2f0(int selfArg) {
     func_0203bfb4(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     func_0203c7ac(*(int *)(self + 0x384), 0);
     *(int *)(self + 0x3a0) = func_0203bee8(*(int *)(self + 0x384), 3, data_ov245_020d7220);
-    os = OS_IsThreadAvailable_0x020c9848();
+    os = func_ov107_020c9848();
     ((struct Ov245Self *)self)->slots[0].pItem =
         func_0203b898((void *)((((*(int *)((char *)os + 0x88) + 0x8000) & 0x00fffffc) << 7) | 0x80000000));
-    os = OS_IsThreadAvailable_0x020c9848();
+    os = func_ov107_020c9848();
     ((struct Ov245Self *)self)->slots[1].pItem =
         func_0203b898((void *)((((*(int *)((char *)os + 0x88) + 0x8000) & 0x00fffffc) << 7) | 0x80000003));
     ((struct Ov245Self *)self)->slots[2].pItem = func_0203b898(func_ov107_020c9440(pool, 0x1a));

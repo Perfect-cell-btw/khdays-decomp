@@ -37,7 +37,7 @@ typedef struct Ov000ListSceneContext {
 } Ov000ListSceneContext;
 
 extern Ov000ListSceneContext *NNSi_FndGetCurrentRootHeap(void);
-extern void FS_UnloadOverlayImage_0x020362ec(void *input);
+extern void func_020362ec(void *input);
 extern u16 func_020362fc(const void *input);
 extern void func_ov000_0205a118(Ov000TouchEntry *touch);
 extern int func_ov000_020589a0(const Ov000TouchEntry *touch,
@@ -63,7 +63,7 @@ Ov000SceneCallback func_ov000_0205a19c(void)
     Ov000SceneCallback result = 0;
     Ov000TouchEntry touch;
 
-    FS_UnloadOverlayImage_0x020362ec(&context->inputSource);
+    func_020362ec(&context->inputSource);
     context->buttonState = func_020362fc(&context->inputSource);
     func_ov000_0205a118(&touch);
 

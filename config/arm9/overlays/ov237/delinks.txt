@@ -24,7 +24,7 @@ src/overlays/ov237/calls/func_ov237_020cc788.c:
     complete
     .text       start:0x020cc788 end:0x020cc800
 
-src/calls/WM_EndKeySharing_0x020cc800.c:
+src/overlays/ov237/calls/func_ov237_020cc800.c:
     complete
     .text       start:0x020cc800 end:0x020cc80c
 
@@ -292,7 +292,7 @@ src/overlays/ov237/calls/func_ov237_020d0c68.c:
     complete
     .text       start:0x020d0c68 end:0x020d0ca0
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d0ca0.c:
+src/overlays/ov237/calls/func_ov237_020d0ca0.c:
     complete
     .text       start:0x020d0ca0 end:0x020d0cac
 

@@ -148,7 +148,7 @@ extern const Ov008ChoiceBox data_ov008_0208fe84[1];                    /* yes bo
 extern const Ov008ChoiceBox data_ov008_0208fe88[1];                    /* no box */
 extern void  func_ov008_020893dc(void);                                /* next step after the dialog */
 extern void  func_ov008_02082bf4(void);                                /* Ov008_UpdateTouchState */
-extern void  FS_UnloadOverlayImage_0x020362ec(u16 *pSource);           /* poll the input source */
+extern void  func_020362ec(u16 *pSource);           /* poll the input source */
 extern u16   func_020362fc(const u16 *pSource);                        /* ReadU16 */
 extern int   func_ov008_02082cec(const Ov008ChoiceBox *pBox);          /* Ov008_CursorInBox */
 extern unsigned long long func_0202060c(u32 nNum, u32 nDen);           /* Math_DivMod: quotient low, remainder high */
@@ -194,7 +194,7 @@ Ov008ShopStep func_ov008_02088d44(void)
     nTab = ctx->nTab;
     nCountBefore = pDialog->nCount;
     func_ov008_02082bf4();
-    FS_UnloadOverlayImage_0x020362ec(&ctx->inputSource);
+    func_020362ec(&ctx->inputSource);
     nPressed = data_0204c190;
     pDialog->nRepeatBits = (pDialog->nRepeatBits << 1) | ((data_0204c18c & KEY_REPEAT_MASK) != 0);
     switch (pDialog->nSelection) {

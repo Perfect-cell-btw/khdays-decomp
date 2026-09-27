@@ -42,7 +42,7 @@ typedef struct Ov008MenuContext {
 extern void func_ov025_020871d4(Ov008GridSummary *pSummary, void *pHooks);        /* init a summary */
 extern void func_ov025_02087260(Ov008GridSummary *pSummary, void *pSlots, void *pList); /* RebuildViewAndCountCells */
 extern int  func_ov025_0209696c(Ov008MenuContext *pCtx);                          /* settle one node */
-extern void WM_EndKeySharing_0x02087254(Ov008GridSummary *pSummary);                      /* release a summary */
+extern void func_ov025_02087254(Ov008GridSummary *pSummary);                      /* release a summary */
 extern void func_ov025_020913fc(Ov008GridSummary *pNew, Ov008GridSummary *pOld);  /* Ov008_DiffGridSummary */
 extern void func_ov025_020a4264(void);                                            /* Ov008_DisableRowBlock */
 extern void func_ov025_020a4408(Ov008GridSummary *pSummary);                      /* Ov008_RefreshEquipPanel */
@@ -71,7 +71,7 @@ void func_ov025_02096b9c(Ov008MenuContext *pCtx)
         }
     } while (bAgain != 0);
     if (bMoved == 0) {
-        WM_EndKeySharing_0x02087254(&snapshot);
+        func_ov025_02087254(&snapshot);
         return;
     }
     func_ov025_02087260(&pCtx->summary, pCtx->apPageSlot, pCtx->trackedNodeList);
@@ -84,7 +84,7 @@ void func_ov025_02096b9c(Ov008MenuContext *pCtx)
     if (changes.aChanged[0] != 0 || changes.aChanged[1] != 0 || changes.aChanged[2] != 0 || changes.aChanged[3] != 0) {
         func_ov025_020a4c30();
     }
-    WM_EndKeySharing_0x02087254(&snapshot);
+    func_ov025_02087254(&snapshot);
     func_ov025_02093038(pCtx);
     func_ov025_020a41f0(CURSOR_MODE_DRAG, 0, 0);
     if (bMoved != 0) {

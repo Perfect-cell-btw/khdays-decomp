@@ -14,7 +14,7 @@ typedef struct Ov002MarkerRow {
 
 extern char *data_ov002_0207fa14;
 
-extern int *OS_IsThreadAvailable_0x020c9848(void);
+extern int *func_ov107_020c9848(void);
 extern u8 func_ov107_020c95d0(int nHandle, int nId, int nHeight, int nParam);
 extern void func_ov107_020c9618(int nHandle);
 extern void func_ov107_020c96bc(int nHandle, int nSlot, int nKind);
@@ -51,7 +51,7 @@ void func_ov002_02073914(int nIndex)
 
     pCtx = data_ov002_0207fa14;
     pTable = *(char **)(pCtx + 4);
-    nHandle = *OS_IsThreadAvailable_0x020c9848();
+    nHandle = *func_ov107_020c9848();
 
     if (nIndex >= 0) {
         nCount = *(u8 *)(pCtx + 0x51);

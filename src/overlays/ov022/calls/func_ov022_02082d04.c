@@ -19,7 +19,7 @@ typedef struct GameRuntimeContext {
 extern Ov022Context *data_ov022_020b2e60;
 
 extern void func_ov002_02072034(void);
-extern GameRuntimeContext *OS_IsThreadAvailable_0x020c9848(void);
+extern GameRuntimeContext *func_ov107_020c9848(void);
 extern void func_ov002_02074054(int enabled);
 extern int func_02023588(unsigned int flagId);
 extern void func_ov002_02077eb4(void);
@@ -39,11 +39,11 @@ Ov022StateCallback func_ov022_02082d04(void)
     func_ov002_02072034();
     context->flags &= ~0x10;
 
-    if (OS_IsThreadAvailable_0x020c9848() != 0 &&
-        OS_IsThreadAvailable_0x020c9848()->activeObject != 0) {
+    if (func_ov107_020c9848() != 0 &&
+        func_ov107_020c9848()->activeObject != 0) {
         func_ov002_02074054(1);
         if (func_02023588(0x20b5) != 0) {
-            GameRuntimeContext *runtime = OS_IsThreadAvailable_0x020c9848();
+            GameRuntimeContext *runtime = func_ov107_020c9848();
             if (runtime != 0) {
                 runtime->pendingValue = 0;
             }

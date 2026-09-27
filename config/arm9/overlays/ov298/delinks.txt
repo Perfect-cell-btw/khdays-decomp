@@ -24,11 +24,11 @@ src/overlays/ov298/calls/func_ov298_020d3a54.c:
     complete
     .text       start:0x020d3a54 end:0x020d3ab4
 
-libs/nitro/wm/calls/WM_EndKeySharing_ov298_0x020d3ab4.c:
+src/overlays/ov298/calls/func_ov298_020d3ab4.c:
     complete
     .text       start:0x020d3ab4 end:0x020d3ac0
 
-libs/nitro/wm/calls/WM_EndKeySharing_ov298_0x020d3ac0.c:
+src/overlays/ov298/calls/func_ov298_020d3ac0.c:
     complete
     .text       start:0x020d3ac0 end:0x020d3acc
 

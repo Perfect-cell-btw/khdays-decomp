@@ -1,7 +1,7 @@
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void func_02032388(void *mgr, void *desc);
 extern void G2x_SetBlendAlpha_(int reg, int a, int b, int c, int d);
-extern int WM_EndKeySharing_0x02032444(void *mgr, int index, int);
+extern int func_02032444(void *mgr, int index, int);
 extern void func_020325ec(void *mgr, int obj, int);
 extern void func_020326cc(void *mgr, int obj);
 extern void func_0203281c(void *mgr, int obj, int);
@@ -63,7 +63,7 @@ void func_ov000_0204cac0(void) {
 
     for (i = 0; i < 10; i++) {
         context->objects[i].handle =
-            WM_EndKeySharing_0x02032444(context->objectManager, i, 0);
+            func_02032444(context->objectManager, i, 0);
     }
 
     for (j = 0; j < 10; j++) {

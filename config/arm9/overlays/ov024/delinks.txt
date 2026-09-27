@@ -76,7 +76,7 @@ src/overlays/ov024/calls/func_ov024_02083334.c:
     complete
     .text       start:0x02083334 end:0x02083358
 
-src/calls/OS_IsThreadAvailable_0x02083358.c:
+src/overlays/ov024/calls/func_ov024_02083358.c:
     complete
     .text       start:0x02083358 end:0x02083368
 
@@ -124,7 +124,7 @@ src/overlays/ov024/calls/func_ov024_02083590.c:
     complete
     .text       start:0x02083590 end:0x020835cc
 
-src/calls/WM_EndKeySharing_0x020835cc.c:
+src/overlays/ov024/calls/func_ov024_020835cc.c:
     complete
     .text       start:0x020835cc end:0x020835d8
 
@@ -176,7 +176,7 @@ src/overlays/ov024/calls/func_ov024_02083cf0.c:
     complete
     .text       start:0x02083cf0 end:0x02083d00
 
-src/calls/WM_EndKeySharing_0x02083d00.c:
+src/overlays/ov024/calls/func_ov024_02083d00.c:
     complete
     .text       start:0x02083d00 end:0x02083d0c
 
@@ -328,11 +328,11 @@ src/overlays/ov024/calls/func_ov024_020850e4.c:
     complete
     .text       start:0x020850e4 end:0x020850f8
 
-src/calls/WM_EndKeySharing_0x020850f8.c:
+src/overlays/ov024/calls/func_ov024_020850f8.c:
     complete
     .text       start:0x020850f8 end:0x02085104
 
-src/calls/WM_EndKeySharing_0x02085104.c:
+src/overlays/ov024/calls/func_ov024_02085104.c:
     complete
     .text       start:0x02085104 end:0x02085110
 
@@ -388,11 +388,11 @@ src/overlays/ov024/calls/func_ov024_02085c8c.cpp:
     complete
     .text       start:0x02085c8c end:0x02085e3c
 
-src/calls/WM_EndKeySharing_0x02085e3c.c:
+src/overlays/ov024/calls/func_ov024_02085e3c.c:
     complete
     .text       start:0x02085e3c end:0x02085e48
 
-src/calls/WM_EndKeySharing_0x02085e48.c:
+src/overlays/ov024/calls/func_ov024_02085e48.c:
     complete
     .text       start:0x02085e48 end:0x02085e54
 

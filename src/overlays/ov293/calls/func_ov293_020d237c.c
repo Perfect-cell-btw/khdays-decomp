@@ -42,7 +42,7 @@ struct Node {
     struct State *pState;
 };
 
-extern OvThread *OS_IsThreadAvailable_0x020c9848(void);
+extern OvThread *func_ov107_020c9848(void);
 extern int func_0203d040(int cur, int target, int step, int *pDone);
 extern void func_0202f188(Quat *out, const VecFx32 *axis, int angle);
 extern void func_0203c9d0(void *srt, Quat *q);
@@ -58,8 +58,8 @@ void func_ov293_020d237c(struct Node *node)
 
     st = node->pState;
     if (data_ov293_020d3660.nActive != 0) {
-        if (data_ov293_020d3660.nLastWake != OS_IsThreadAvailable_0x020c9848()->nWake) {
-            data_ov293_020d3660.nLastWake = OS_IsThreadAvailable_0x020c9848()->nWake;
+        if (data_ov293_020d3660.nLastWake != func_ov107_020c9848()->nWake) {
+            data_ov293_020d3660.nLastWake = func_ov107_020c9848()->nWake;
             data_ov293_020d3660.nAccum += node->pScene->nDelta;
             if (data_ov293_020d3660.nAccum > 0x2000) {
                 data_ov293_020d3660.nActive = 0;

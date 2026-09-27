@@ -26,7 +26,7 @@ extern u64 func_020031d4(void);
 extern void func_ov022_02088830(void);
 extern int func_ov022_02083f0c(void);
 extern void func_ov002_0204cee0(int object, int enabled);
-extern GameRuntimeContext *OS_IsThreadAvailable_0x020c9848(void);
+extern GameRuntimeContext *func_ov107_020c9848(void);
 extern void func_020336a4(int event);
 extern void func_020340d0(int enabled);
 extern void func_020235e8(int field, int width, int value);
@@ -50,7 +50,7 @@ Ov022StateCallback func_ov022_02083038(void)
         func_ov002_0204cee0(func_ov022_02083f0c(), 1);
 
         duration = func_02023c40() == 1 ? 0xf0 : 0xa0;
-        runtime = OS_IsThreadAvailable_0x020c9848();
+        runtime = func_ov107_020c9848();
         if (runtime != 0) {
             runtime->pendingValue = duration;
         }

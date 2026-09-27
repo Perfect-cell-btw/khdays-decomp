@@ -29,7 +29,7 @@ extern void  func_ov008_020536ec(void *self, void *entries, NNSFndList *list, u1
 extern void  func_ov008_02053470(void *self, void *entries, NNSFndList *list);
 extern void  func_ov008_0206ed7c(void *self);
 extern void  func_ov008_0205393c(void *self, void *entries, NNSFndList *list);
-extern void  WM_EndKeySharing_0x02053464(void *self);
+extern void  func_ov008_02053464(void *self);
 
 void func_ov008_0206f2a4(void)
 {
@@ -44,5 +44,5 @@ void func_ov008_0206f2a4(void)
     func_ov008_02053470(f.iter, f.buffer, &f.list);
     func_ov008_0206ed7c(f.iter);
     func_ov008_0205393c(f.iter, f.buffer, &f.list);
-    WM_EndKeySharing_0x02053464(f.iter);
+    func_ov008_02053464(f.iter);
 }

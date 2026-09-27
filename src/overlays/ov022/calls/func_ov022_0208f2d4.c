@@ -126,7 +126,7 @@ extern void func_ov022_0208a8bc(struct ReactionCtx *pCtx, void *pTarget,
 extern int func_ov022_0208acc4(int nKind, int nReaction);
 extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, struct VecFx32 *pAim,
                                 int nReaction);
-extern void WM_EndKeySharing_0x020b15a4(void *pOwner, u16 *pBinding);
+extern void func_ov022_020b15a4(void *pOwner, u16 *pBinding);
 extern int func_ov022_020ad114(struct Actor *pActor);
 extern struct VecFx32 *func_ov022_020ad0c0(struct Actor *pActor);
 extern void func_01ffa724(int nFactor, struct VecFx32 *pSrc,
@@ -185,7 +185,7 @@ void func_ov022_0208f2d4(struct ReactionCtx *pCtx)
         i = i + 1;
     }
     if ((pSlot->nBoundMask & (1 << i)) == 0) {
-        WM_EndKeySharing_0x020b15a4(pCtx->pOwner, pPart->binding);
+        func_ov022_020b15a4(pCtx->pOwner, pPart->binding);
         pSlot->nBoundMask = pSlot->nBoundMask | (1 << i);
     }
     pPart->nState = 1;

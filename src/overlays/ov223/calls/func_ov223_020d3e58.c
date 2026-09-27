@@ -18,7 +18,7 @@ extern int func_0203c1b0(int res, int n);
 extern void func_0202accc(int track, int channel, int block, int flag);
 extern int func_ov223_020d4e24(char *self);
 extern void func_ov223_020d4030(void);
-extern void WM_EndKeySharing_0x020d405c(void);   /* misnamed: an ov223 veneer to func_ov107_020c6980 */
+extern void func_ov223_020d405c(void);   /* misnamed: an ov223 veneer to func_ov107_020c6980 */
 extern void func_ov223_020d4068(void);
 extern void func_ov223_020d4278(void);
 extern void func_ov223_020d42e0(void);
@@ -36,7 +36,7 @@ void func_ov223_020d3e58(char *self) {
 
     owner = *(int *)(self + 0x38c);
     *(void **)(self + 8) = (void *)func_ov223_020d4030;
-    *(void **)(self + 0xc) = (void *)WM_EndKeySharing_0x020d405c;
+    *(void **)(self + 0xc) = (void *)func_ov223_020d405c;
     *(void **)(self + 0x1c) = (void *)func_ov223_020d4068;
     *(void **)(self + 0x20) = (void *)func_ov223_020d4278;
     *(void **)(self + 0x24) = (void *)func_ov223_020d42e0;

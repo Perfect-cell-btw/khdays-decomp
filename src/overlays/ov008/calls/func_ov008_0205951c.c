@@ -8,7 +8,7 @@ extern void MIi_CpuClearFast(int value, void *dst, unsigned size);
 extern void func_ov008_02055c4c(char *p, void *tbl);
 extern void func_ov008_020592d4(void);
 extern void func_ov008_020593d8(char *self);
-extern void WM_EndKeySharing_0x020593cc(char *self);
+extern void func_ov008_020593cc(char *self);
 extern void func_ov008_02057068(void);
 extern void func_ov008_02057f58(void);
 extern void func_ov008_020574c0(void);
@@ -29,7 +29,7 @@ int func_ov008_0205951c(char *self) {
     func_ov008_02055c4c(self + 4, &data_ov008_020901fc);
     func_ov008_020592d4();
     func_ov008_020593d8(self);
-    WM_EndKeySharing_0x020593cc(self);
+    func_ov008_020593cc(self);
     func_ov008_02057068();
     func_ov008_02057f58();
     func_ov008_020574c0();

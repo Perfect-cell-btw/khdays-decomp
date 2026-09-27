@@ -5092,7 +5092,7 @@ src/calls/func_0202362c.c:
     complete
     .text       start:0x0202362c end:0x02023650
 
-src/calls/OS_IsThreadAvailable_0x02023650.c:
+src/calls/func_02023650.c:
     complete
     .text       start:0x02023650 end:0x02023660
 
@@ -5160,7 +5160,7 @@ src/calls/func_02023a4c.c:
     complete
     .text       start:0x02023a4c end:0x02023ad0
 
-src/calls/WM_EndKeySharing_0x02023ad0.c:
+src/calls/func_02023ad0.c:
     complete
     .text       start:0x02023ad0 end:0x02023adc
 
@@ -5908,7 +5908,7 @@ src/auto/func_0202afdc.c:
     complete
     .text       start:0x0202afdc end:0x0202afe8
 
-src/calls/WM_EndKeySharing_0x0202afe8.c:
+src/calls/func_0202afe8.c:
     complete
     .text       start:0x0202afe8 end:0x0202aff4
 
@@ -6116,7 +6116,7 @@ src/calls/func_0202bfa0.c:
     complete
     .text       start:0x0202bfa0 end:0x0202bfb8
 
-libs/nitro/card/calls/CARD_GetResultCode_0x0202bfb8.c:
+src/calls/func_0202bfb8.c:
     complete
     .text       start:0x0202bfb8 end:0x0202bfcc
 
@@ -6624,7 +6624,7 @@ src/calls/func_02030640.c:
     complete
     .text       start:0x02030640 end:0x0203065c
 
-libs/nitro/card/calls/CARD_GetResultCode_0x0203065c.c:
+src/calls/func_0203065c.c:
     complete
     .text       start:0x0203065c end:0x02030670
 
@@ -6788,7 +6788,7 @@ src/auto/func_020315c0.c:
     complete
     .text       start:0x020315c0 end:0x020315f4
 
-libs/nitro/card/calls/CARDi_GetRomAccessor_0x020315f4.c:
+src/calls/func_020315f4.c:
     complete
     .text       start:0x020315f4 end:0x02031600
 
@@ -6908,7 +6908,7 @@ src/calls/func_0203243c.c:
     complete
     .text       start:0x0203243c end:0x02032444
 
-src/calls/WM_EndKeySharing_0x02032444.c:
+src/calls/func_02032444.c:
     complete
     .text       start:0x02032444 end:0x02032450
 
@@ -7516,7 +7516,7 @@ src/auto/func_020362e8.c:
     complete
     .text       start:0x020362e8 end:0x020362ec
 
-libs/nitro/fs/calls/FS_UnloadOverlayImage_0x020362ec.c:
+src/calls/func_020362ec.c:
     complete
     .text       start:0x020362ec end:0x020362fc
 

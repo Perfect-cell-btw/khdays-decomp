@@ -99,7 +99,7 @@ libs/nitro/wm/calls/func_ov105_020bd978.c:
     complete
     .text       start:0x020bd978 end:0x020bd9ec
 
-src/overlays/ov105/calls/OS_UnlockByWord_0x020bd9ec.c:
+src/overlays/ov105/calls/func_ov105_020bd9ec.c:
     complete
     .text       start:0x020bd9ec end:0x020bd9fc
 
@@ -339,7 +339,7 @@ src/overlays/ov105/calls/func_ov105_020bf22c.c:
     complete
     .text       start:0x020bf22c end:0x020bf240
 
-src/calls/WM_EndKeySharing_0x020bf240.c:
+src/overlays/ov105/calls/func_ov105_020bf240.c:
     complete
     .text       start:0x020bf240 end:0x020bf24c
 
@@ -411,7 +411,7 @@ src/overlays/ov105/calls/func_ov105_020bf8c8.c:
     complete
     .text       start:0x020bf8c8 end:0x020bf900
 
-src/calls/WM_EndKeySharing_0x020bf900.c:
+src/overlays/ov105/calls/func_ov105_020bf900.c:
     complete
     .text       start:0x020bf900 end:0x020bf90c
 

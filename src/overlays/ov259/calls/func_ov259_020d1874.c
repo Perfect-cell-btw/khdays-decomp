@@ -21,9 +21,9 @@ extern int *func_01fffca8(void *pool, int elementSize, int capacity);
 extern void *func_ov107_020c3210(const Capsule *capsule);
 extern void func_ov259_020d1aa4(void);
 extern void func_ov259_020d1ad4(void);
-extern void WM_EndKeySharing_0x020d1be0(void);
+extern void func_ov259_020d1be0(void);
 extern void func_ov259_020d1c68(void);
-extern void WM_EndKeySharing_0x020d1bec(void);
+extern void func_ov259_020d1bec(void);
 extern void func_ov259_020d1c60(void);
 extern const Vec3 data_02041dc8;
 extern const Vec3 data_02042258;
@@ -38,9 +38,9 @@ void func_ov259_020d1874(char *self)
 
     *(void **)(self + 8) = func_ov259_020d1aa4;
     *(void **)(self + 0xc) = func_ov259_020d1ad4;
-    *(void **)(self + 0x1c) = WM_EndKeySharing_0x020d1be0;
+    *(void **)(self + 0x1c) = func_ov259_020d1be0;
     *(void **)(self + 0x30) = func_ov259_020d1c68;
-    *(void **)(self + 0x34) = WM_EndKeySharing_0x020d1bec;
+    *(void **)(self + 0x34) = func_ov259_020d1bec;
     *(void **)(self + 0x1d0) = func_ov259_020d1c60;
     {
         u16 hw = *(u16 *)(self + 0x60);

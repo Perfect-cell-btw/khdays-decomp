@@ -26,7 +26,7 @@ extern void G2x_SetBlendBrightness_(u32 registerAddress, int planeMask,
                                     int brightness);
 extern void func_02033fec(int first, int second);
 extern int func_02034014(int processor);
-extern void WM_EndKeySharing_0x02023ad0(void *handle);
+extern void func_02023ad0(void *handle);
 extern void func_ov000_0204ef34(void);
 
 Ov000StateFn func_ov000_0204ebe4(void) {
@@ -63,18 +63,18 @@ Ov000StateFn func_ov000_0204ebe4(void) {
             switch (context->transitionMode) {
             case 0:
                 if (context->sharingHandle != 0) {
-                    WM_EndKeySharing_0x02023ad0(context->sharingHandle);
+                    func_02023ad0(context->sharingHandle);
                     context->sharingHandle = 0;
                 }
                 break;
             case 1:
             case 2:
                 if (context->sharingHandle != 0) {
-                    WM_EndKeySharing_0x02023ad0(context->sharingHandle);
+                    func_02023ad0(context->sharingHandle);
                     context->sharingHandle = 0;
                 }
                 if (context->sharingAux != 0) {
-                    WM_EndKeySharing_0x02023ad0(context->sharingAux);
+                    func_02023ad0(context->sharingAux);
                     context->sharingAux = 0;
                 }
                 break;

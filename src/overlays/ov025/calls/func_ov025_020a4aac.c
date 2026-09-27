@@ -13,7 +13,7 @@ typedef unsigned int   u32;
 extern int  data_ov025_020b575c;
 
 extern int  func_ov025_02084b14(void);
-extern int  OS_IsThreadAvailable_0x02085850(void);
+extern int  func_ov025_02085850(void);
 extern int  func_ov025_02084a8c(void);
 extern int  func_ov025_02084a64(void);
 extern void func_ov025_02089834(int block, void *out);
@@ -33,7 +33,7 @@ void func_ov025_020a4aac(void)
 
     if (data_ov025_020b575c == 0)
         return;
-    getter = OS_IsThreadAvailable_0x02085850();
+    getter = func_ov025_02085850();
     if (getter == 2 || *(int *)(ctx + 0x44) == 1)
         return;
     if (*(int *)(ctx + 8) != 0)

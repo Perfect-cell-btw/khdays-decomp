@@ -132,7 +132,7 @@ src/overlays/ov236/calls/func_ov236_020ce4c8.c:
     complete
     .text       start:0x020ce4c8 end:0x020ce6fc
 
-src/overlays/ov236/calls/WM_EndKeySharing_ov236_0x020ce6fc.c:
+src/overlays/ov236/calls/func_ov236_020ce6fc.c:
     complete
     .text       start:0x020ce6fc end:0x020ce708
 

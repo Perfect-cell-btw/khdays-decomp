@@ -24,7 +24,7 @@ extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int  func_ov012_0205b920(void);
 extern void func_0201e374(int brightness);   /* master brightness, main engine */
 extern void func_0201e3cc(int brightness);   /* master brightness, sub engine  */
-extern void WM_EndKeySharing_0x02023ad0(int handle);
+extern void func_02023ad0(int handle);
 extern void func_0201e4a8(int target, FSOverlayID id);   /* unload overlay */
 extern void func_0201e1d0(void);
 extern StateFn func_ov000_0204d7c8(int arg);
@@ -36,7 +36,7 @@ StateFn func_ov000_0204f404(void) {
     }
     func_0201e374(-0x10);
     func_0201e3cc(-0x10);
-    WM_EndKeySharing_0x02023ad0(*(int *)(heap + 0x5078));
+    func_02023ad0(*(int *)(heap + 0x5078));
     func_0201e4a8(0, FS_OVERLAY_ID_ov012);
     *(int *)(heap + 0x5074) = -1;
     func_0201e1d0();

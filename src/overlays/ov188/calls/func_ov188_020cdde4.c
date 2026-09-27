@@ -29,7 +29,7 @@ extern unsigned short data_ov188_020d0320[];
 extern int data_ov188_020d0330;
 
 extern void func_ov188_020ce1f0(void), func_ov188_020ce230(void), func_ov188_020ce254(void);
-extern void func_ov188_020ce5f0(void), WM_EndKeySharing_0x020ce450(void), WM_EndKeySharing_0x020ce45c(void);
+extern void func_ov188_020ce5f0(void), func_ov188_020ce450(void), func_ov188_020ce45c(void);
 extern void func_ov188_020ce4a0(void), func_ov188_020ce64c(void), func_ov188_020ce468(void);
 extern void func_ov188_020ce89c(void), func_ov188_020ce8c8(void);
 
@@ -61,8 +61,8 @@ void func_ov188_020cdde4(int param_1) {
     *(void **)(((unsigned int)param_1) + 0xc) = func_ov188_020ce230;
     *(void **)(((unsigned int)param_1) + 0x1c) = func_ov188_020ce254;
     *(void **)(((unsigned int)param_1) + 0x30) = func_ov188_020ce5f0;
-    *(void **)(((unsigned int)param_1) + 0x28) = WM_EndKeySharing_0x020ce450;
-    *(void **)(((unsigned int)param_1) + 0x2c) = WM_EndKeySharing_0x020ce45c;
+    *(void **)(((unsigned int)param_1) + 0x28) = func_ov188_020ce450;
+    *(void **)(((unsigned int)param_1) + 0x2c) = func_ov188_020ce45c;
     *(void **)(((unsigned int)param_1) + 0x34) = func_ov188_020ce4a0;
     *(void **)(((unsigned int)param_1) + 0x1d0) = func_ov188_020ce64c;
     *(void **)(((unsigned int)param_1) + 0x1dc) = func_ov188_020ce468;

@@ -24,7 +24,7 @@ extern void func_01ffa724(int scale, const Vec3 *v, Vec3 *out);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int func_ov107_020c8eb8(struct Ov114Actor *owner, Sphere *sphere, struct Ov114Actor **out);
 extern int func_ov107_020ca918(struct Ov114Actor *hit, struct Ov114Actor *a, struct Ov114Actor *b, int kind, const Vec3 *push, int z);
-extern char **OS_IsThreadAvailable_0x020c9848(void);
+extern char **func_ov107_020c9848(void);
 extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
 extern void func_ov107_020c5af8(struct Ov114Actor *owner, u16 a, u16 id, Vec3 *pos);
 extern const short data_0203d210[];
@@ -75,7 +75,7 @@ int func_ov114_020cc6f4(int *state, int kind)
                 hit = hits[i];
                 pMsg = &msg;
                 flip = kind == 1 ? 1 : 0;
-                if (VEC_DotProduct((Vec3 *)(*OS_IsThreadAvailable_0x020c9848() + 0x7c), &fwd) > 0) {
+                if (VEC_DotProduct((Vec3 *)(*func_ov107_020c9848() + 0x7c), &fwd) > 0) {
                     flip = (flip + 1) & 1;
                 }
                 if (flip == 0) {

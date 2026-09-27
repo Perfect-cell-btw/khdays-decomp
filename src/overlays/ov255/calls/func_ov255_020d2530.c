@@ -9,7 +9,7 @@ typedef struct { int w[4]; } Quat;
 struct Shake { int offset; int strength; char pad08[0x10]; int handle; char pad1c[0x10]; Vec3 at; };
 struct G3Glb { char pad[0xc4]; Vec3 scale; };
 
-extern int *OS_IsThreadAvailable_0x020c9848(void);
+extern int *func_ov107_020c9848(void);
 extern void func_0202ed60(Quat *out, const Vec3 *a, const Vec3 *b);
 extern void func_0202ec2c(void *mtx, const Quat *q);
 extern void func_02015880(const Vec3 *v);
@@ -45,7 +45,7 @@ void func_ov255_020d2530(char *self)
     int i;
     int off;
 
-    func_0202ed60(&q, &data_0204227c, (Vec3 *)(*OS_IsThreadAvailable_0x020c9848() + 0x7c));
+    func_0202ed60(&q, &data_0204227c, (Vec3 *)(*func_ov107_020c9848() + 0x7c));
     func_0202ec2c(data_02047428, &q);
     i = 0;
     if (*(int *)(self + 0x8c) > 0) {

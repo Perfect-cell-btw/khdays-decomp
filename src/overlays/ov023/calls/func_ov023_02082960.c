@@ -23,7 +23,7 @@ typedef struct Ov023MainArgs {
 } Ov023MainArgs;
 
 extern Ov023SceneContext *NNSi_FndGetCurrentRootHeap(void);
-extern void  CARDi_GetRomAccessor_0x020315f4(void);                /* Session_GetSlotTable */
+extern void  func_020315f4(void);                /* Session_GetSlotTable */
 extern void  func_0201f924(void *pDst, const void *pSrc);            /* copy a request record */
 extern void *func_02023930(void *pClass, void *pArgs);               /* InstantiateClass */
 extern int   func_ov023_02082a44(void);                              /* Ov023_SceneFirstFrame */
@@ -36,7 +36,7 @@ void *func_ov023_02082960(Ov023SceneRequest *pRequest)
     Ov023SceneContext *pContext;
 
     pContext = NNSi_FndGetCurrentRootHeap();
-    CARDi_GetRomAccessor_0x020315f4();
+    func_020315f4();
     data_ov023_0208a780 = pContext;
     pContext->nStatus = 1;
     func_0201f924(&args, pRequest);

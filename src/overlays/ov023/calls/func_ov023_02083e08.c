@@ -30,7 +30,7 @@ typedef struct Ov023SceneRoot {
 
 extern void  G2x_SetBlendBrightness_(int nBldCnt, int nPlanes, int nBrightness);
 extern int   func_ov002_02067904(void);                             /* the ov002 dialog is done */
-extern void  WM_EndKeySharing_0x02023ad0(void *pObject);            /* end an object */
+extern void  func_02023ad0(void *pObject);            /* end an object */
 extern void  func_02020878(char bValue);                            /* set the global byte 0204bd85 */
 extern Ov023SceneRoot data_ov023_0208a784;
 
@@ -56,7 +56,7 @@ int func_ov023_02083e08(void)
         break;
     case 3:
         if (func_ov002_02067904() != 0) {
-            WM_EndKeySharing_0x02023ad0(data_ov023_0208a784.pScene->pDialog);
+            func_02023ad0(data_ov023_0208a784.pScene->pDialog);
             data_ov023_0208a784.pScene->pDialog = 0;
             data_ov023_0208a784.pScene->nDialogState = 4;
             G2x_SetBlendBrightness_(0x04000050, 1, 0);

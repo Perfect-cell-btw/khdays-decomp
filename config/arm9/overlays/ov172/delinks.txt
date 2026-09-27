@@ -24,7 +24,7 @@ src/overlays/ov172/calls/func_ov172_020cff84.c:
     complete
     .text       start:0x020cff84 end:0x020cffc4
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cffc4.c:
+src/overlays/ov172/calls/func_ov172_020cffc4.c:
     complete
     .text       start:0x020cffc4 end:0x020cffd0
 

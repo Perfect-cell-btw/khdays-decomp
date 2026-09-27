@@ -95,7 +95,7 @@ extern void MTX_MultVec33(struct VecFx32 *pVec, struct MtxFx33 *pMtx,
 extern void VEC_Add(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *pOut);
 extern void func_ov022_0208a8bc(struct ReactionCtx *pCtx, void *pTarget,
                                 u16 *pAnim, int nIndex);
-extern void WM_EndKeySharing_0x020b15a4(void *pOwner, u16 *pAnim);
+extern void func_ov022_020b15a4(void *pOwner, u16 *pAnim);
 extern int func_ov022_0208acc4(int nKind, int nReaction);
 extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, struct VecFx32 *pAt,
                                 int nReaction);
@@ -145,7 +145,7 @@ void func_ov022_0208b848(struct ReactionCtx *pCtx)
         i = i + 1;
     }
     if ((pSlot->nBoundMask & (1 << i)) == 0) {
-        WM_EndKeySharing_0x020b15a4(pCtx->pOwner, pPart->anim);
+        func_ov022_020b15a4(pCtx->pOwner, pPart->anim);
         pSlot->nBoundMask = pSlot->nBoundMask | (1 << i);
     }
     func_ov022_0208a8bc(pCtx, pPart->anim, &pPart->nSlotFlags, 1);

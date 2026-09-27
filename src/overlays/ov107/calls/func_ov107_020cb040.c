@@ -12,14 +12,14 @@ typedef struct {
     u32 field_10;
 } Ov107Sub;
 
-extern void *OS_IsThreadAvailable_0x020c9848(void);
+extern void *func_ov107_020c9848(void);
 extern int func_0203c5c0(int param_1, unsigned int param_2, unsigned int param_3, int param_4, int param_5, int *param_6);
 extern int func_ov107_020cb164(int param_1);
 extern void func_ov107_020cb124(int self);
 extern unsigned int func_02033d0c(unsigned int param_1, unsigned int param_2, unsigned int *param_3, unsigned int param_4);
 
 int func_ov107_020cb040(int self, int id, int kind, int enabled, void *node) {
-    int base = *(int *)OS_IsThreadAvailable_0x020c9848();
+    int base = *(int *)func_ov107_020c9848();
     Ov107Sub *sub;
     int handle = func_0203c5c0(*(int *)(base + 0x3c), 0x64, 0x14,
                                 (int)func_ov107_020cb124, (int)func_ov107_020cb164,

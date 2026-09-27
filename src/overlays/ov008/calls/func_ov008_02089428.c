@@ -67,7 +67,7 @@ extern GameState *data_0204be18;
 extern u16 data_0204c190;                                         /* keys pressed */
 extern u8  data_ov008_0208fe74[];                                 /* choice 0 box */
 extern u8  data_ov008_0208fe78[];                                 /* choice 1 box */
-extern void  FS_UnloadOverlayImage_0x020362ec(u16 *pSource);
+extern void  func_020362ec(u16 *pSource);
 extern u16   func_020362fc(const u16 *pSource);                   /* ReadU16 */
 extern void  func_ov008_02082bf4(void);                           /* Ov008_UpdateTouchState */
 extern void *func_ov008_02054788(void *pWidgets, int nId);        /* FindEntryById */
@@ -99,7 +99,7 @@ void *func_ov008_02089428(void)
     pPanel = &ctx->detail;
     pWidgets = ctx->widgets;
     pWidgetsB = ctx->widgetsB;
-    FS_UnloadOverlayImage_0x020362ec(&ctx->inputSource);
+    func_020362ec(&ctx->inputSource);
     nButtons = func_020362fc(&ctx->inputSource);
     func_ov008_02082bf4();
     if (pPanel->bConfirmed != 0) {

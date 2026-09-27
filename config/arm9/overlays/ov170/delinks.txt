@@ -24,7 +24,7 @@ src/overlays/ov170/calls/func_ov170_020ce15c.c:
     complete
     .text       start:0x020ce15c end:0x020ce19c
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020ce19c.c:
+src/overlays/ov170/calls/func_ov170_020ce19c.c:
     complete
     .text       start:0x020ce19c end:0x020ce1a8
 
@@ -184,7 +184,7 @@ src/overlays/ov170/calls/func_ov170_020d0178.c:
     complete
     .text       start:0x020d0178 end:0x020d01b0
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d01b0.c:
+src/overlays/ov170/calls/func_ov170_020d01b0.c:
     complete
     .text       start:0x020d01b0 end:0x020d01bc
 

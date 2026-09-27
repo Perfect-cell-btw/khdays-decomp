@@ -14,7 +14,7 @@ typedef struct Ov008PageHooks {
     Ov008HookFn apfnHook[12]; /* 0x10 .. 0x3c */
 } Ov008PageHooks;
 
-extern void WM_EndKeySharing_0x02078154(void);
+extern void func_ov008_02078154(void);
 extern void func_ov008_02077b28(void);
 extern void func_ov008_02077d64(void);
 extern void func_ov008_02077eb4(void);
@@ -32,5 +32,5 @@ Ov008PageHooks data_ov008_020908e0 = {
     func_ov008_02077d64,  /* pfnStep */
     func_ov008_02077eb4,  /* pfnClose */
     1392,  /* nStateSize */
-    { func_ov008_02077ee4, func_ov008_02077f00, func_ov008_02077f1c, func_ov008_02077f8c, func_ov008_02077ffc, func_ov008_02078088, 0, 0, func_ov008_020780cc, func_ov008_02078110, 0, WM_EndKeySharing_0x02078154 },  /* apfnHook */
+    { func_ov008_02077ee4, func_ov008_02077f00, func_ov008_02077f1c, func_ov008_02077f8c, func_ov008_02077ffc, func_ov008_02078088, 0, 0, func_ov008_020780cc, func_ov008_02078110, 0, func_ov008_02078154 },  /* apfnHook */
 };

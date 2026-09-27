@@ -8,7 +8,7 @@
  * hoist. Computing it into a local before the loop is semantically identical but
  * emits it ahead of the counter init, where the original has it after -- the hoisted
  * copy lands at the END of the preheader, which is exactly where the original's is. */
-extern void WM_EndKeySharing_0x020b15a4(int handle, void *bones);
+extern void func_ov022_020b15a4(int handle, void *bones);
 
 void func_ov082_020b8a10(int self)
 {
@@ -17,6 +17,6 @@ void func_ov082_020b8a10(int self)
     char *part = (char *)(self + 0x234);
 
     for (i = 0; i < 8; i++, part += 0x170) {
-        WM_EndKeySharing_0x020b15a4(((int *)(owner + 0x2000))[0x18f], part + 0x108);
+        func_ov022_020b15a4(((int *)(owner + 0x2000))[0x18f], part + 0x108);
     }
 }

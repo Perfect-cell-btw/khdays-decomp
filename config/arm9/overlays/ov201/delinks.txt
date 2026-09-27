@@ -36,11 +36,11 @@ src/overlays/ov201/calls/func_ov201_020d20f8.c:
     complete
     .text       start:0x020d20f8 end:0x020d2278
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d2278.c:
+src/overlays/ov201/calls/func_ov201_020d2278.c:
     complete
     .text       start:0x020d2278 end:0x020d2284
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020d2284.c:
+src/overlays/ov201/calls/func_ov201_020d2284.c:
     complete
     .text       start:0x020d2284 end:0x020d2290
 

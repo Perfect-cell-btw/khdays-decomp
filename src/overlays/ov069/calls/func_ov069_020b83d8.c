@@ -20,7 +20,7 @@ extern void func_ov069_020ba4cc(void *ctx, void **entries, void *list, u16 *ids)
 extern void func_ov069_020ba250(void *ctx, void **entries, void *list);
 extern void *NNS_FndGetNextListObject(void *list, void *cur);
 extern void func_ov069_020ba71c(void *ctx, void **entries, void *list);
-extern void WM_EndKeySharing_0x020ba244(void *ctx);
+extern void func_ov069_020ba244(void *ctx);
 extern char *data_0204be18;
 
 int func_ov069_020b83d8(unsigned int min)
@@ -44,6 +44,6 @@ int func_ov069_020b83d8(unsigned int min)
         }
     }
     func_ov069_020ba71c(ctx, (void **)entries, list);
-    WM_EndKeySharing_0x020ba244(ctx);
+    func_ov069_020ba244(ctx);
     return found;
 }

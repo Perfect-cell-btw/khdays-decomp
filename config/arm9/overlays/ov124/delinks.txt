@@ -20,7 +20,7 @@ src/overlays/ov124/calls/func_ov124_020cfe94.c:
     complete
     .text       start:0x020cfe94 end:0x020cfed4
 
-libs/nitro/wm/calls/WM_EndKeySharing_0x020cfed4.c:
+src/overlays/ov124/calls/func_ov124_020cfed4.c:
     complete
     .text       start:0x020cfed4 end:0x020cfee0
 

@@ -26,7 +26,7 @@ typedef struct Ov009ObjectConfig {
 extern const Ov009ObjectConfig data_ov008_0208f500;
 extern const char data_ov008_020904d0[];
 extern const int data_ov008_0208f588[3][8];
-extern void WM_EndKeySharing_0x020698ec(void);
+extern void func_ov008_020698ec(void);
 
 extern int         func_ov008_02050f84(int index);
 extern int         func_ov008_02050c54(void);
@@ -64,7 +64,7 @@ void func_ov008_02067edc(Ov009PageContext *context)
     object = func_ov008_02050c54();
     func_ov008_02054744(object, &config);
     func_ov008_02054678(object, data_ov008_020904d0, 0x24);
-    func_ov008_0205477c(object, (int)WM_EndKeySharing_0x020698ec);
+    func_ov008_0205477c(object, (int)func_ov008_020698ec);
     func_020327e0(object, 8);
     G2x_SetBlendAlpha_((volatile void *)0x04000050, 4, 0x10, 8, 8);
 

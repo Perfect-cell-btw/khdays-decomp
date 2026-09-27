@@ -1,7 +1,7 @@
-extern void WM_EndKeySharing_0x02085e48(void);
+extern void func_ov024_02085e48(void);
 
 int func_ov024_02084f98(int a)
 {
-    WM_EndKeySharing_0x02085e48();
+    func_ov024_02085e48();
     return a;
 }

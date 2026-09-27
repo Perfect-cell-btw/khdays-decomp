@@ -16,7 +16,7 @@ extern int  func_02030640(void);
 extern void func_020307b8(int a);
 extern void func_02030d10(int flag);
 extern void func_ov008_0207b8a8(void);
-extern int *CARDi_GetRomAccessor_0x020315f4(void);
+extern int *func_020315f4(void);
 extern int  func_ov008_0204ed58(void);
 extern void func_02031600(struct Cfg4 *cfg);
 extern void func_02020a78(int scene, int arg);
@@ -42,7 +42,7 @@ void func_ov008_0204dc48(void) {
     func_ov008_0207b8a8();
     if (action != 7) {
         if (action == 8) {
-            cfg = *(struct Cfg4 *)CARDi_GetRomAccessor_0x020315f4();
+            cfg = *(struct Cfg4 *)func_020315f4();
             cfg.w[1] = func_ov008_0204ed58();
             func_02031600(&cfg);
             func_02020a78(2, 0);

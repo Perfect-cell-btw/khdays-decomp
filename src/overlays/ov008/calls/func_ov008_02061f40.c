@@ -68,7 +68,7 @@ extern void func_ov008_0206f694(void);                                          
 extern void func_ov008_0206f644(void);                                            /* Ov008_EnableMissionRowOnPage1 */
 extern void func_ov008_0206ebd8(void);                                            /* Ov008_DisableRowBlock */
 extern void func_ov008_0206ed7c(Ov008GridSummary *pSummary);                      /* Ov008_RefreshEquipPanel */
-extern void WM_EndKeySharing_0x02053464(Ov008GridSummary *pSummary);              /* release a summary */
+extern void func_ov008_02053464(Ov008GridSummary *pSummary);              /* release a summary */
 extern void func_ov008_02060ae8(Ov008MenuContext *pCtx);                          /* Ov008_RebuildGridHits */
 
 int func_ov008_02061f40(Ov008MenuContext *pCtx, u32 nPage, u32 nCol, u32 nRow, int bSilent)
@@ -109,7 +109,7 @@ int func_ov008_02061f40(Ov008MenuContext *pCtx, u32 nPage, u32 nCol, u32 nRow, i
         func_ov008_0206ebd8();
         func_ov008_0206ed7c(&pCtx->summary);
     }
-    WM_EndKeySharing_0x02053464(&snapshot);
+    func_ov008_02053464(&snapshot);
     func_ov008_02060ae8(pCtx);
     return 1;
 }

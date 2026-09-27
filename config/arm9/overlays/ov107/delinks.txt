@@ -296,7 +296,7 @@ src/overlays/ov107/calls/func_ov107_020c2f94.c:
     complete
     .text       start:0x020c2f94 end:0x020c3190
 
-src/calls/WM_EndKeySharing_0x020c3190.c:
+src/overlays/ov107/calls/func_ov107_020c3190.c:
     complete
     .text       start:0x020c3190 end:0x020c319c
 
@@ -569,7 +569,7 @@ src/overlays/ov107/calls/func_ov107_020c980c.c:
     complete
     .text       start:0x020c980c end:0x020c9848
 
-src/calls/OS_IsThreadAvailable_0x020c9848.c:
+src/overlays/ov107/calls/func_ov107_020c9848.c:
     complete
     .text       start:0x020c9848 end:0x020c9858
 

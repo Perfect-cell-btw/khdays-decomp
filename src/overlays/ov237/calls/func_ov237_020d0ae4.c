@@ -11,7 +11,7 @@ typedef struct { unsigned f : 8; } B8;
 
 extern void func_ov237_020d0c4c(void);
 extern void func_ov237_020d0c68(void);
-extern void WM_EndKeySharing_0x020d0ca0(void);
+extern void func_ov237_020d0ca0(void);
 extern void func_ov237_020d0d14(void);
 extern void func_ov237_020d0cc8(void);
 extern void *func_ov107_020c9440(int set, int index);
@@ -28,7 +28,7 @@ void func_ov237_020d0ae4(char *self)
 
     *(Callback *)(self + 0x8) = func_ov237_020d0c4c;
     *(Callback *)(self + 0xc) = func_ov237_020d0c68;
-    *(Callback *)(self + 0x1c) = WM_EndKeySharing_0x020d0ca0;
+    *(Callback *)(self + 0x1c) = func_ov237_020d0ca0;
     *(Callback *)(self + 0x30) = func_ov237_020d0d14;
     *(Callback *)(self + 0x1d0) = func_ov237_020d0cc8;
     {

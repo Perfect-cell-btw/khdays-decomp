@@ -8,14 +8,14 @@ typedef struct MenuContext {
 } MenuContext;
 
 extern MenuContext *volatile data_ov009_020563e4[2];
-extern int OS_IsThreadAvailable_0x0204ee00(void);
+extern int func_ov009_0204ee00(void);
 extern void func_ov009_0204cb6c(int mode);
 extern void func_ov009_0204cd34(int brightness, int duration);
 extern void func_ov009_0204cec0(int enabled);
 
 void func_ov009_0204e328(int value, int duration)
 {
-    int state = OS_IsThreadAvailable_0x0204ee00();
+    int state = func_ov009_0204ee00();
 
     data_ov009_020563e4[1]->transitionValue = value;
     if (state == -1) {
