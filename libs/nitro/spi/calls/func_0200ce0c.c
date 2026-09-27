@@ -23,7 +23,7 @@ typedef volatile unsigned char vu8;
 #define PM_SUCCESS 0
 
 typedef void (*PMCallback) (u32 result, void * arg);
-u32 PXIi_RequestCmd0x65(u16 registerAddr, u16 * buffer, PMCallback callback, void * arg);
+u32 PMi_ReadRegisterAsync(u16 registerAddr, u16 * buffer, PMCallback callback, void * arg);
 typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
 typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
 typedef enum {
@@ -118,14 +118,14 @@ void func_0200cab8(void);
 void func_0200caf8(u32 result, void * arg);
 extern void func_0200cab8 (void);
 extern void func_0200caf8 (u32 result, void * arg);
-extern u32 PXIi_RequestCmd0x65 (u16 registerAddr, u16 * buffer, PMCallback callback, void * arg);
+extern u32 PMi_ReadRegisterAsync (u16 registerAddr, u16 * buffer, PMCallback callback, void * arg);
 
 /* func_0200ce0c -- NitroSDK pm.c: PMi_ReadRegister. */
 u32 func_0200ce0c (u16 registerAddr, u16 * buffer)
 {
     u32 commandResult;
     u32 sendResult =
-        PXIi_RequestCmd0x65(registerAddr, buffer, func_0200caf8, &commandResult);
+        PMi_ReadRegisterAsync(registerAddr, buffer, func_0200caf8, &commandResult);
     if (sendResult == PM_SUCCESS) {
         func_0200cab8();
         return commandResult;

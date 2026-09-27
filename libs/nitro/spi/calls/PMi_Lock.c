@@ -1,9 +1,10 @@
+/* NitroSDK spi (pm.c): PMi_Lock -- takes the PM work lock (+0x1c) unless it is already held. */
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int mask);
 
 extern struct { char _0[0x1c]; int field_1c; } data_020463cc;
 
-int PXIi_TryLock(void) {
+int PMi_Lock(void) {
     int mask = OS_DisableInterrupts();
     if (data_020463cc.field_1c != 0) {
         OS_RestoreInterrupts(mask);

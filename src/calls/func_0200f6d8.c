@@ -1,4 +1,4 @@
-extern void WM_EndKeySharing_0x0200926c(void);
+extern void PXI_Init(void);
 extern int PXI_IsCallbackReady(int fifoNo, int kind);
 extern void PXI_SetFifoRecvCallback(int fifoNo, void (*cb)(int, unsigned int));
 extern void CTRDG_Enable(int enable);
@@ -27,7 +27,7 @@ void func_0200f6d8(void)
     data_02046d50.initialized = 1;
     func_0200f3c0();
     data_02046d50.field_c = 0;
-    WM_EndKeySharing_0x0200926c();
+    PXI_Init();
     while (!PXI_IsCallbackReady(13, 1)) {
     }
     PXI_SetFifoRecvCallback(13, func_0200f980);

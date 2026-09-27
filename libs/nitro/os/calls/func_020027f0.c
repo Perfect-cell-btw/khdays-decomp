@@ -36,7 +36,7 @@ void OS_InitAlarm(void);
 void func_020037a0(void);
 void func_02003894(void);
 void OSi_InitVramExclusive(void);
-void WM_EndKeySharing_0x0200926c(void);
+void PXI_Init(void);
 void CARD_Init(void);
 void MI_Init(void);
 void func_0200cb40(void);
@@ -52,7 +52,7 @@ void func_020027f0 (void)
 #endif
     OS_InitArena();
 
-    WM_EndKeySharing_0x0200926c();
+    PXI_Init();
 
     OS_InitLock();
     OS_InitArenaEx();
@@ -89,7 +89,7 @@ void func_020027f0 (void)
 
 #else
     OS_InitArena();
-    WM_EndKeySharing_0x0200926c();
+    PXI_Init();
     OS_InitLock();
     OS_InitIrqTable();
 

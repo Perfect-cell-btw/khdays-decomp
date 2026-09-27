@@ -45,7 +45,7 @@ typedef enum {
 } PXIFifoTag;
 typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
 typedef void (*PMCallback) (u32 result, void * arg);
-u32 PXIi_SendCmd0x64(u16 registerAddr, u16 data, PMCallback callback, void * arg);
+u32 PMi_WriteRegisterAsync(u16 registerAddr, u16 data, PMCallback callback, void * arg);
 typedef enum {
     TP_REQUEST_COMMAND_SAMPLING         = 0x0,
     TP_REQUEST_COMMAND_AUTO_ON          = 0x1,
@@ -136,14 +136,14 @@ void func_0200cab8(void);
 void func_0200caf8(u32 result, void * arg);
 extern void func_0200cab8 (void);
 extern void func_0200caf8 (u32 result, void * arg);
-extern u32 PXIi_SendCmd0x64 (u16 registerAddr, u16 data, PMCallback callback, void * arg);
+extern u32 PMi_WriteRegisterAsync (u16 registerAddr, u16 data, PMCallback callback, void * arg);
 
 /* func_0200ce94 -- NitroSDK pm.c: PMi_WriteRegister. */
 u32 func_0200ce94 (u16 registerAddr, u16 data)
 {
     u32 commandResult;
     u32 sendResult =
-        PXIi_SendCmd0x64(registerAddr, data, func_0200caf8, &commandResult);
+        PMi_WriteRegisterAsync(registerAddr, data, func_0200caf8, &commandResult);
     if (sendResult == PM_SUCCESS) {
         func_0200cab8();
         return commandResult;

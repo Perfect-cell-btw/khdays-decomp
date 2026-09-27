@@ -1,7 +1,7 @@
 typedef unsigned short u16;
 
-/* Four packed u16 fields; matches func_0200c92c's Rec layout (a touch-panel
- * calibration point). */
+/* TPData: x, y, touch, validity -- the touch-panel sample layout TP_GetCalibratedPoint
+ * (func_0200c92c) converts. */
 typedef struct {
     u16 field_00;
     u16 field_02;
@@ -9,25 +9,27 @@ typedef struct {
     u16 field_06;
 } Rec;
 
-extern int GX_GetBankForOBJExtPltt(void);
+extern int TP_GetLatestIndexInAuto(void);
 extern void func_0200c92c(Rec *out, Rec *in);
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int len);
 extern Rec data_0204c1c4[];
 
+/* Copies the four most recent auto-sampled touch points (ring of 5 at data_0204c1c4) into table,
+ * calibrated; returns how many (0 while the calibration-disable bit of 0x027fffa8 is set). */
 int func_02024da4(Rec *table) {
-    int bank;
+    int latest;
     int i;
     short count = 0;
 
     if (!((*(volatile u16 *)0x027fffa8 & 0x8000) >> 15)) {
         Rec buf;
 
-        bank = GX_GetBankForOBJExtPltt();
+        latest = TP_GetLatestIndexInAuto();
         i = 0;
-        bank -= 3;
+        latest -= 3;
 
         for (; i < 4; i++) {
-            int idx = bank + i;
+            int idx = latest + i;
             if (idx < 0) {
                 idx += 5;
             }

@@ -51,7 +51,7 @@ typedef enum {
 } PXIFifoTag;
 typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
 typedef void (*PMCallback) (u32 result, void * arg);
-u32 PXIi_RouteByChannelId(PMLEDStatus status, PMCallback callback, void * arg);
+u32 PMi_SetLEDAsync(PMLEDStatus status, PMCallback callback, void * arg);
 typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
 typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
 typedef enum {
@@ -225,13 +225,13 @@ void func_0200cab8(void);
 void func_0200caf8(u32 result, void * arg);
 extern void func_0200cab8 (void);
 extern void func_0200caf8 (u32 result, void * arg);
-extern u32 PXIi_RouteByChannelId (PMLEDStatus status, PMCallback callback, void * arg);
+extern u32 PMi_SetLEDAsync (PMLEDStatus status, PMCallback callback, void * arg);
 
 /* func_0200cf10 -- NitroSDK pm.c: PMi_SetLED. */
 u32 func_0200cf10 (PMLEDStatus status)
 {
     u32 commandResult;
-    u32 sendResult = PXIi_RouteByChannelId(status, func_0200caf8, &commandResult);
+    u32 sendResult = PMi_SetLEDAsync(status, func_0200caf8, &commandResult);
 
     if (sendResult == PM_SUCCESS) {
         func_0200cab8();

@@ -100,11 +100,11 @@ libs/nitro/init/asm_stubs/calls/func_02000a78.c:
     complete
     .text       start:0x02000a78 end:0x02000b60
 
-src/auto/func_02000b60.c:
+libs/nitro/init/auto/func_02000b60.c:
     complete
     .text       start:0x02000b60 end:0x02000b64
 
-src/auto/func_02000b64.c:
+libs/nitro/init/auto/func_02000b64.c:
     complete
     .text       start:0x02000b64 end:0x02000b68
 
@@ -144,7 +144,7 @@ libs/nitro/os/calls/OS_WaitIrq.c:
     complete
     .text       start:0x020010c4 end:0x02001138
 
-src/auto/func_02001138.c:
+libs/nitro/os/auto/func_02001138.c:
     complete
     .text       start:0x02001138 end:0x0200113c
 
@@ -1616,7 +1616,7 @@ libs/nitro/snd/calls/SND_AssignWaveArc.c:
     complete
     .text       start:0x02008e78 end:0x02008f44
 
-src/calls/func_02008f44.c:
+libs/nitro/snd/calls/func_02008f44.c:
     complete
     .text       start:0x02008f44 end:0x02008fdc
 
@@ -1644,7 +1644,7 @@ libs/nitro/snd/calls/SND_GetWaveDataAddress.c:
     complete
     .text       start:0x02009230 end:0x0200926c
 
-src/calls/WM_EndKeySharing_0x0200926c.c:
+libs/nitro/pxi/calls/PXI_Init.c:
     complete
     .text       start:0x0200926c end:0x02009278
 
@@ -1720,7 +1720,7 @@ libs/nitro/fs/auto/FSi_OpenFileDirectCommand.c:
     complete
     .text       start:0x0200a0e4 end:0x0200a10c
 
-src/auto/func_0200a10c.c:
+libs/nitro/fs/auto/func_0200a10c.c:
     complete
     .text       start:0x0200a10c end:0x0200a114
 
@@ -1956,7 +1956,7 @@ libs/nitro/spi/calls/func_0200c048.c:
     complete
     .text       start:0x0200c048 end:0x0200c2c8
 
-src/calls/func_0200c2c8.c:
+libs/nitro/spi/calls/func_0200c2c8.c:
     complete
     .text       start:0x0200c2c8 end:0x0200c340
 
@@ -1968,19 +1968,19 @@ libs/nitro/spi/calls/func_0200c3d4.c:
     complete
     .text       start:0x0200c3d4 end:0x0200c4fc
 
-libs/nitro/card/calls/func_0200c4fc.c:
+libs/nitro/spi/calls/func_0200c4fc.c:
     complete
     .text       start:0x0200c4fc end:0x0200c5fc
 
-src/calls/func_0200c5fc.c:
+libs/nitro/spi/calls/func_0200c5fc.c:
     complete
     .text       start:0x0200c5fc end:0x0200c694
 
-src/calls/func_0200c694.c:
+libs/nitro/spi/calls/func_0200c694.c:
     complete
     .text       start:0x0200c694 end:0x0200c730
 
-libs/nitro/gx/calls/GX_GetBankForOBJExtPltt.c:
+libs/nitro/spi/calls/TP_GetLatestIndexInAuto.c:
     complete
     .text       start:0x0200c730 end:0x0200c740
 
@@ -1988,23 +1988,23 @@ libs/nitro/spi/calls/func_0200c740.c:
     complete
     .text       start:0x0200c740 end:0x0200c92c
 
-src/calls/func_0200c92c.c:
+libs/nitro/spi/calls/func_0200c92c.c:
     complete
     .text       start:0x0200c92c end:0x0200ca50
 
-src/calls/func_0200ca50.c:
+libs/nitro/spi/calls/func_0200ca50.c:
     complete
     .text       start:0x0200ca50 end:0x0200ca68
 
-src/calls/func_0200ca68.c:
+libs/nitro/spi/calls/func_0200ca68.c:
     complete
     .text       start:0x0200ca68 end:0x0200ca7c
 
-libs/nitro/pxi/calls/PXIi_TryLock.c:
+libs/nitro/spi/calls/PMi_Lock.c:
     complete
     .text       start:0x0200ca7c end:0x0200cab8
 
-src/calls/func_0200cab8.c:
+libs/nitro/spi/calls/func_0200cab8.c:
     complete
     .text       start:0x0200cab8 end:0x0200caf8
 
@@ -2012,11 +2012,11 @@ libs/nitro/spi/auto/func_0200caf8.c:
     complete
     .text       start:0x0200caf8 end:0x0200cb00
 
-src/calls/func_0200cb00.c:
+libs/nitro/spi/calls/func_0200cb00.c:
     complete
     .text       start:0x0200cb00 end:0x0200cb40
 
-src/calls/func_0200cb40.c:
+libs/nitro/spi/calls/func_0200cb40.c:
     complete
     .text       start:0x0200cb40 end:0x0200cbe4
 
@@ -2024,15 +2024,15 @@ libs/nitro/spi/calls/func_0200cbe4.c:
     complete
     .text       start:0x0200cbe4 end:0x0200ccac
 
-src/calls/func_0200ccac.c:
+libs/nitro/spi/calls/func_0200ccac.c:
     complete
     .text       start:0x0200ccac end:0x0200cd40
 
-src/calls/func_0200cd40.c:
+libs/nitro/spi/calls/func_0200cd40.c:
     complete
     .text       start:0x0200cd40 end:0x0200cda0
 
-libs/nitro/pxi/calls/PXIi_RequestCmd0x65.c:
+libs/nitro/spi/calls/PMi_ReadRegisterAsync.c:
     complete
     .text       start:0x0200cda0 end:0x0200ce0c
 
@@ -2040,7 +2040,7 @@ libs/nitro/spi/calls/func_0200ce0c.c:
     complete
     .text       start:0x0200ce0c end:0x0200ce34
 
-libs/nitro/pxi/calls/PXIi_SendCmd0x64.c:
+libs/nitro/spi/calls/PMi_WriteRegisterAsync.c:
     complete
     .text       start:0x0200ce34 end:0x0200ce94
 
@@ -2048,7 +2048,7 @@ libs/nitro/spi/calls/func_0200ce94.c:
     complete
     .text       start:0x0200ce94 end:0x0200cebc
 
-libs/nitro/pxi/calls/PXIi_RouteByChannelId.c:
+libs/nitro/spi/calls/PMi_SetLEDAsync.c:
     complete
     .text       start:0x0200cebc end:0x0200cf10
 
@@ -2068,7 +2068,7 @@ libs/nitro/spi/calls/func_0200cfdc.c:
     complete
     .text       start:0x0200cfdc end:0x0200d088
 
-libs/nitro/os/calls/OSi_TryShutdown.c:
+libs/nitro/spi/calls/PM_ForceToPowerOff.c:
     complete
     .text       start:0x0200d088 end:0x0200d0b0
 
@@ -2080,7 +2080,7 @@ libs/nitro/spi/calls/func_0200d0dc.c:
     complete
     .text       start:0x0200d0dc end:0x0200d138
 
-libs/nitro/pxi/calls/PXIi_SendCommand.c:
+libs/nitro/spi/calls/PMi_SendPxiData.c:
     complete
     .text       start:0x0200d138 end:0x0200d164
 
@@ -2088,7 +2088,7 @@ libs/nitro/spi/calls/func_0200d164.c:
     complete
     .text       start:0x0200d164 end:0x0200d3a4
 
-src/calls/func_0200d3a4.c:
+libs/nitro/spi/calls/func_0200d3a4.c:
     complete
     .text       start:0x0200d3a4 end:0x0200d49c
 
@@ -2132,15 +2132,15 @@ libs/nitro/spi/calls/func_0200d5f0.c:
     complete
     .text       start:0x0200d5f0 end:0x0200d608
 
-src/calls/func_0200d608.c:
+libs/nitro/rtc/calls/func_0200d608.c:
     complete
     .text       start:0x0200d608 end:0x0200d674
 
-src/calls/func_0200d674.c:
+libs/nitro/rtc/calls/func_0200d674.c:
     complete
     .text       start:0x0200d674 end:0x0200d6e8
 
-src/calls/func_0200d6e8.c:
+libs/nitro/rtc/calls/func_0200d6e8.c:
     complete
     .text       start:0x0200d6e8 end:0x0200d720
 
@@ -2624,7 +2624,7 @@ libs/nitro/nns/calls/AllocatorAllocForExpHeap_0x02010d58.c:
     complete
     .text       start:0x02010d58 end:0x02010d6c
 
-src/auto/func_02010d6c.c:
+libs/nns/fnd/auto/func_02010d6c.c:
     complete
     .text       start:0x02010d6c end:0x02010d70
 
@@ -2656,19 +2656,19 @@ libs/nitro/nns/calls/NNS_FndInitAllocatorForExpHeap.c:
     complete
     .text       start:0x02010e00 end:0x02010e18
 
-src/auto/func_02010e18.c:
+libs/nns/gfd/auto/func_02010e18.c:
     complete
     .text       start:0x02010e18 end:0x02010e20
 
-src/auto/func_02010e20.c:
+libs/nns/gfd/auto/func_02010e20.c:
     complete
     .text       start:0x02010e20 end:0x02010e28
 
-src/auto/func_02010e28.c:
+libs/nns/gfd/auto/func_02010e28.c:
     complete
     .text       start:0x02010e28 end:0x02010e30
 
-src/auto/func_02010e30.c:
+libs/nns/gfd/auto/func_02010e30.c:
     complete
     .text       start:0x02010e30 end:0x02010e38
 
@@ -2708,7 +2708,7 @@ libs/nitro/nns/calls/func_020111c0.c:
     complete
     .text       start:0x020111c0 end:0x020112fc
 
-src/auto/func_020112fc.c:
+libs/nns/gfd/auto/func_020112fc.c:
     complete
     .text       start:0x020112fc end:0x02011304
 
@@ -4596,7 +4596,7 @@ libs/msl/runtime/asm_stubs/auto/func_0202060c.s:
     complete
     .text       start:0x0202060c end:0x020207f0
 
-src/auto/func_020207f0.c:
+libs/msl/runtime/auto/func_020207f0.c:
     complete
     .text       start:0x020207f0 end:0x020207f4
 
@@ -4604,7 +4604,7 @@ src/calls/func_020207f4.c:
     complete
     .text       start:0x020207f4 end:0x02020808
 
-src/calls/func_02020808.c:
+libs/msl/runtime/calls/func_02020808.c:
     complete
     .text       start:0x02020808 end:0x02020834
 

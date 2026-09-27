@@ -1,4 +1,4 @@
-extern void WM_EndKeySharing_0x0200926c(void);
+extern void PXI_Init(void);
 extern int PXI_IsCallbackReady(int fifoNo, int kind);
 extern void PXI_SetFifoRecvCallback(int fifoNo, void (*cb)(int, unsigned int));
 extern void OS_InitMutex(void *mutex);
@@ -26,7 +26,7 @@ void func_0200cb40(void)
     data_020463cc.initialized = 1;
     data_020463cc.field_1c = 0;
     data_020463cc.field_20 = 0;
-    WM_EndKeySharing_0x0200926c();
+    PXI_Init();
     while (!PXI_IsCallbackReady(8, 1)) {
     }
     PXI_SetFifoRecvCallback(8, func_0200cbe4);

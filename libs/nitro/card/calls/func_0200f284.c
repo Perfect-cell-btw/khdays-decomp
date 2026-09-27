@@ -55,7 +55,7 @@ static inline BOOL PAD_DetectFold (void)
 {
     return (BOOL)((*(vu16 *)(0x02000000 + 0x007fffa8) & 0x8000 ) >> 15);
 }
-u32 OSi_TryShutdown(void);
+u32 PM_ForceToPowerOff(void);
 extern void CARDi_SendtoPxi(u32 data, u32 wait);
 extern void CARDi_SendtoPxi (u32 data, u32 wait);
 
@@ -72,7 +72,7 @@ void func_0200f284 (void)
 
 	if (PAD_DetectFold()) {
 		u32 res;
-		while ((res = OSi_TryShutdown()) == SPI_PXI_RESULT_EXCLUSIVE) {
+		while ((res = PM_ForceToPowerOff()) == SPI_PXI_RESULT_EXCLUSIVE) {
 			func_0200386c(HW_CPU_CLOCK_ARM9 / 100);
 		}
 		if (res == PM_RESULT_SUCCESS) {

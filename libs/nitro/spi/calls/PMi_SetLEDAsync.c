@@ -1,6 +1,8 @@
+/* NitroSDK spi (pm.c): PMi_SetLEDAsync -- maps the LED status to a PM utility command and sends it
+ * through PM_SendUtilityCommandAsync (callback/arg pass through in r1/r2); 0xffff = PM_INVALID_COMMAND. */
 extern int func_0200cd40(int arg);
 
-int PXIi_RouteByChannelId(int arg0)
+int PMi_SetLEDAsync(int arg0)
 {
     int v;
     switch (arg0) {

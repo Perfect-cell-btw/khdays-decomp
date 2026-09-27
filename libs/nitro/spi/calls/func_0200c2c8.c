@@ -1,4 +1,4 @@
-extern void WM_EndKeySharing_0x0200926c(void);
+extern void PXI_Init(void);
 extern void PXI_SetFifoRecvCallback(int fifoNo, void (*cb)(int, unsigned int));
 extern int PXI_IsCallbackReady(int fifoNo, int kind);
 extern void func_0200c048(int fifoNo, unsigned int data);
@@ -26,7 +26,7 @@ void func_0200c2c8(void)
         return;
 
     data_02046390.initialized = 1;
-    WM_EndKeySharing_0x0200926c();
+    PXI_Init();
     data_02046390.field_10 = 0;
     data_02046390.field_4 = 0;
     data_02046390.field_14 = 0;

@@ -110,7 +110,7 @@ typedef struct OSMessageQueue OSMessageQueue;
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
-extern void WM_EndKeySharing_0x0200926c(void);   /* the PXI_Init veneer of main */
+extern void PXI_Init(void);   /* the PXI_Init veneer of main */
 extern BOOL PXI_IsCallbackReady(int tag, int proc);
 extern void DC_InvalidateRange(void *addr, u32 size);
 extern void DC_StoreRange(void *addr, u32 size);
@@ -161,7 +161,7 @@ WMErrCode func_ov105_020bcc4c(void *wmSysBuf, u16 dmaNo, u32 bufSize)
         return WM_ERRCODE_INVALID_PARAM;
     }
 
-    WM_EndKeySharing_0x0200926c();
+    PXI_Init();
     if (!PXI_IsCallbackReady(PXI_FIFO_TAG_WM, PXI_PROC_ARM7)) {
         (void)OS_RestoreInterrupts(e);
         return WM_ERRCODE_WM_DISABLE;

@@ -115,7 +115,7 @@ extern OSIrqMask OS_SetIrqMask(OSIrqMask intr);
 extern BOOL OS_IsTickAvailable_0x0200315c(void);   /* OS_IsTickAvailable */
 #define OS_IsTickAvailable OS_IsTickAvailable_0x0200315c
 extern void OS_Halt(void);
-extern void OSi_TryShutdown(void);
+extern void PM_ForceToPowerOff(void);
 extern void func_0200386c(u32 cycles);   /* OS_SpinWait */
 #define OS_SpinWait func_0200386c
 extern BOOL func_0200f438(void);   /* CTRDG_IsExisting */
