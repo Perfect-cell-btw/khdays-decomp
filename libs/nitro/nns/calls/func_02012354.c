@@ -129,9 +129,8 @@ inline BOOL NNSi_G2dIsCellAnimVramTransferHandleValid(
            NNS_G2D_INVALID_CELL_TRANSFER_STATE_HANDLE;
 }
 
-inline const NNSG2dCellVramTransferData *
-NNSi_G2dGetCellVramTransferData(const NNSG2dCellDataBank *pCellBank,
-                                u16 index)
+inline const NNSG2dCellVramTransferData *NNSi_G2dGetCellVramTransferData(
+    const NNSG2dCellDataBank *pCellBank, u16 index)
 {
     return &pCellBank->pVramTransferData->pCellTransferDataArray[index];
 }

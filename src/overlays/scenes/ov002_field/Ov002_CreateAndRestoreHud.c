@@ -236,6 +236,10 @@ void Ov002_CreateAndRestoreHud(void)
     }
     Ov002_Panel_RestoreRowsIfAny();
     Ov002_RepublishHud();
+    /* Ov002_IsPanelModeSet takes the value it returns when no panel is installed; the ROM hands it
+     * whatever Ov002_RepublishHud left in r0 (9 when the member is 9, otherwise what
+     * Ov002_PanelSetSecondaryFlag left). A panel is always installed by now, so it never
+     * reaches that value. */
     if (Ov002_IsPanelModeSet()) {
         nTotal = 0;
         for (nIndex = 0; nIndex < func_ov022_020882f8(); nIndex++) {

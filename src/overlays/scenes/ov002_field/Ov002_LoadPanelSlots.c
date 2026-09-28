@@ -19,11 +19,11 @@
  * THUMB.
  *
  * The last two parameters are never read: both are written before any use, so
- * callers may pass anything. They are here because the ROM's frame reserves
- * the r2 and r3 parameter homes at +0x0c and +0x10 and keeps nPalDst and i
- * there - as plain locals they land in the spill run higher up and five slots
- * come out permuted. The frame is the evidence that the original declared
- * them.
+ * callers may pass anything (Ov002_OpenPanelScreen passes nothing there). They
+ * are here because the ROM's frame reserves the r2 and r3 parameter homes at
+ * +0x0c and +0x10 and keeps nPalDst and i there - as plain locals they land in
+ * the spill run higher up and five slots come out permuted. The frame is the
+ * evidence that the original declared them.
  *
  * Three more shapes the frame depends on. The row offset is accumulated INSIDE
  * both arms of the `i == 0` test: written after the join, mwcc computes the

@@ -164,6 +164,8 @@ extern void Ov002_RunScrollHooks(void);
 extern void Ov002_UploadBgResourceAndFree(void *pArc, SpriteResSet *pRes);
 extern void Ov002_SetupBackgroundLayers(int bBg2Is256Colour);
 extern void Ov002_SetPanelBgLayers(int a);
+/* Defined with two more parameters, nPalDst and i, which it writes before reading: nothing is
+ * passed there (Ov002_LoadPanelSlots's header says why they are parameters). */
 extern int Ov002_LoadPanelSlots(Ov002PanelSlot *pSlots, SpriteResSet *pRes);
 extern void Ov002_SetPanelMode(int nMode);
 extern void Ov002_BuildPanelLabels(void);

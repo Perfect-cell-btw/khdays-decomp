@@ -63,15 +63,13 @@ static inline fx32 FX_Mul(fx32 v1, fx32 v2)
     return (fx32)(((s64)v1 * v2 + 0x800) >> 12);
 }
 
-static inline const NNSG2dAnimFrame *
-GetFrameEnd_(const NNSG2dAnimSequence *pSequence)
+static inline const NNSG2dAnimFrame *GetFrameEnd_(const NNSG2dAnimSequence *pSequence)
 {
     (void)0;
     return pSequence->pAnmFrameArray + pSequence->numFrames;
 }
 
-static inline const NNSG2dAnimFrame *
-GetFrameLoopBegin_(const NNSG2dAnimSequence *pSequence)
+static inline const NNSG2dAnimFrame *GetFrameLoopBegin_(const NNSG2dAnimSequence *pSequence)
 {
     (void)0;
     return pSequence->pAnmFrameArray + pSequence->loopStartFrameIdx;

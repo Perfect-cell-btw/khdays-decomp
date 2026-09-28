@@ -53,8 +53,7 @@ static inline u32 AllocFromReagionTail_(NNSGfdFrmTexRegionState *pRegion,
     }
 }
 
-static inline NNSGfdFrmTexRegionState *
-Get4x4IdxRegion_(const NNSGfdFrmTexRegionState *pRegion)
+static inline NNSGfdFrmTexRegionState *Get4x4IdxRegion_(const NNSGfdFrmTexRegionState *pRegion)
 {
     (void)0;
     switch (pRegion->index) {

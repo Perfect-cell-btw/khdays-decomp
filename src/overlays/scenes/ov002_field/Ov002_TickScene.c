@@ -90,6 +90,8 @@ int Ov002_TickScene(void) {
                 ctx->bDirty = ctx->bDirty | (1 << (i + 3));
             }
             if ((ctx->bDirty & (1 << (i + 3))) != 0) {
+                /* The empty slots of a one-player mission have no handle (0): the queued VRAM
+                 * transfer then copies from address 0, as the ROM does. */
                 GFXi_EnqueueCommand(7, pTable[0], ctx->aHandles[i], pTable[1]);
             }
             if (ctx->aHold[i] != 0) {
