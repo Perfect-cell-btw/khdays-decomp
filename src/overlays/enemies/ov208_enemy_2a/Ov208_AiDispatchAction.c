@@ -14,7 +14,7 @@
  * The hw60 write HAS the lsl#0x10/lsr#0x10 trunc pair -> bitfield form; the +8 fields are
  * byte-in-word. See codegen-cracks.md. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     int x;

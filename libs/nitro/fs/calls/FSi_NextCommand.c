@@ -1,10 +1,10 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nitro/mi.h"
 
 typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 /* NitroSDK FS library (file system / archives / overlays), as linked into the main binary.
  * Types from include/nitro/fs/{archive,file,overlay}.h and the library's internal headers. */
@@ -389,7 +389,6 @@ extern BOOL FS_WaitAsync(FSFile *p_file);
 extern FSArchive *FS_FindArchive(const char *name, int name_len);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern void MI_CpuFill8(void *dst, u8 data, u32 size);
-#define MI_CpuClear8(dst, size) MI_CpuFill8((dst), 0, (size))
 
 /* FSi_NextCommand -- NitroSDK fs_archive.c. */
 FSFile *FSi_NextCommand (FSArchive *p_arc)

@@ -1,5 +1,5 @@
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern void SetIndexedSlot(int obj, int slot, void *cb);

@@ -4,7 +4,7 @@
  * 2 and the +0x3a8 part's motion 1 play looped, +0x65 clears and the tick hands over to
  * func_ov235_020cde6c. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void Ov235_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);

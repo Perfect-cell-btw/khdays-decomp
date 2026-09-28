@@ -6,7 +6,7 @@
  * state 0x24. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ValidateTargetRef(char *self);

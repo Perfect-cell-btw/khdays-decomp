@@ -4,7 +4,7 @@
  * knocks the actor back. The base handler always runs. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[11]; } SrtTransform;
 struct EffectPair { int res; int handle; };

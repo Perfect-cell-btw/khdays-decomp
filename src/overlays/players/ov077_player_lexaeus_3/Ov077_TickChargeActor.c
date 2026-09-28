@@ -2,7 +2,7 @@
  * mode 0x22 or clears both motion positions and finishes the actor. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef int (*ActorHook)(int actor);
 typedef void (*ActorFinishHook)(int actor, int mode);

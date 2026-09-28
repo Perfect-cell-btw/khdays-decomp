@@ -11,7 +11,7 @@
  * unread word stores are the ROM's); this is what puts x/y+0x800/z in r1/r2/ip. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

@@ -8,7 +8,7 @@
  * set) and a second one into a +0x144 slot, also kept at +0x390. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { unsigned f : 8; } B8;
 typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;

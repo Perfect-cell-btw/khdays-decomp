@@ -1,21 +1,9 @@
+
+
 #include "nitro/types.h"
 #include "nitro/os.h"
+#include "nnsys/fnd.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-typedef struct {
-    void * prevObject;
-    void * nextObject;
-} NNSFndLink;
-typedef struct {
-    void * headObject;
-    void * tailObject;
-    u16 numObjects;
-    u16 offset;
-} NNSFndList;
 void * NNS_FndGetNextListObject(NNSFndList * list, void * object);
 extern void * NNS_FndGetNextListObject (NNSFndList * list, void * object);
 

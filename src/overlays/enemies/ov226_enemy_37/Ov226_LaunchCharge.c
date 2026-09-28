@@ -6,7 +6,7 @@
  * ends the action; a clear cast hands the tick over to Ov226_FlightTick. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct w8 { unsigned int lo : 8, rest : 24; };
 struct hw60 { unsigned short lo : 8, hi : 8; };

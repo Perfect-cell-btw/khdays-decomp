@@ -8,7 +8,7 @@
  * otherwise a follow-up (020cd2cc, without a +0x38 delay) or move 2. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);

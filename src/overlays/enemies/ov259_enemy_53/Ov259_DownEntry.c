@@ -6,7 +6,7 @@
  * high byte drops, pose 0x16 is queued (020cd628) and the node moves on to 020cfc40. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);

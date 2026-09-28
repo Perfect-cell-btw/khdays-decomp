@@ -3,7 +3,7 @@
  * 0x35 play. The +0xc velocity follows the +0x574 part's +0x2c vector turned by the +0x54 heading;
  * once the partner holds no queued move the next move is 5 with the guard up, else 2. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov252_GuardSweep(int *node);
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);

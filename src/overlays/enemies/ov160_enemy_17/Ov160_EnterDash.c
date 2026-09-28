@@ -10,7 +10,7 @@
  * The +0x60 half-word is a bitfield (unsigned short lo:8, hi:8); the |= 1 edit is spelled out
  * because the bitfield form adds a truncation the ROM does not have here. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct hw60 { unsigned short lo:8, hi:8; };
 struct b8 { unsigned int b:8; };

@@ -1,10 +1,9 @@
 /* NitroSDK original assembly (libraries/os/src/os_system.c). */
 
 #include "nitro/types.h"
+#include "nitro/hw.h"
 
 typedef unsigned int OSIntrMode;
-
-#define HW_PSR_IRQ_FIQ_DISABLE       0xc0
 
 asm OSIntrMode OS_RestoreInterrupts_IrqAndFiq (register OSIntrMode state)
 {

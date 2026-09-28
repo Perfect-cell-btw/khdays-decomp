@@ -7,7 +7,7 @@
 #pragma opt_common_subs off
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     u8 pad000[2];

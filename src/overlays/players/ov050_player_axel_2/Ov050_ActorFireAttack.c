@@ -18,7 +18,7 @@
  * comes out one register lower and thirteen instructions differ; that single missing
  * argument was the last residue in this function. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct ActorBits {
     unsigned char bUnk0 : 1;

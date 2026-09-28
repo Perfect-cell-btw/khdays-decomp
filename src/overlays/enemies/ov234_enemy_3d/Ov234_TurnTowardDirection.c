@@ -2,7 +2,7 @@
  * and moves its node along the new facing. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov234VecBlock {
     VecFx32 vector;

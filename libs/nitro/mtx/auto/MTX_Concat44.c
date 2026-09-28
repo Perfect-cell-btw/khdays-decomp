@@ -9,7 +9,7 @@
  * Verified byte-exact against this ROM: 1636 bytes, 0 relocs.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct MtxFx44 {
     fx32 m[4][4];

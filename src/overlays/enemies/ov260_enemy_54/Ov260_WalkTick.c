@@ -7,7 +7,7 @@
  * holds no queued move pose 2 plays, the part takes motion 1 and the timer and cues restart. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };

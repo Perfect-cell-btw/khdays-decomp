@@ -7,7 +7,7 @@
  * actor's heading, a random variant, cue 0xcf, kind 2. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct EmitPair {
     VecFx32 vPosB;

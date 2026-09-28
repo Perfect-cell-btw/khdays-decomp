@@ -3,7 +3,7 @@
  * 8 plays, the +0x3d0 part plays motion 7, +0x76 clears and the tick hands over to
  * Ov257_LandTick. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov257_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);

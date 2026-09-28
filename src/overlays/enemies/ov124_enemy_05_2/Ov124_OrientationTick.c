@@ -4,7 +4,7 @@
  * actor's +0x124 normal and written to the +0xa0 quaternion; the +4 offset is handed to the
  * actor's +0xf0 vector and reset to the zero vector. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(void *dst, void *src, int t);

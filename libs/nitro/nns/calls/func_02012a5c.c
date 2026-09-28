@@ -1,10 +1,9 @@
 
-#include "nitro/types.h"
 
-#define NULL ((void *)0)
+#include "nitro/types.h"
+#include "nitro/hw.h"
+
 #define GX_DMA_NOT_USE (-1)
-#define HW_BG_PLTT ((void *)0x05000000)
-#define HW_DB_BG_PLTT ((void *)0x05000400)
 
 typedef enum GXTexFmt {
     GX_TEXFMT_NONE = 0,

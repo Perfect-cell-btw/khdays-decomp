@@ -7,7 +7,7 @@
  * Once idle: fire attack 0xc (020c9264, flag 0) and hand off to the 020cde58 continuation.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);

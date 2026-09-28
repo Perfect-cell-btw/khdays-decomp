@@ -3,7 +3,7 @@
  * handler with interrupts disabled. */
 
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
 
 typedef int PXIFifoTag;
 

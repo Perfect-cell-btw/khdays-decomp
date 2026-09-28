@@ -6,7 +6,7 @@
  * the point is raised to the ground and handed to the spawner with the rig. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { VecFx32 v[16]; } OffsetTable;

@@ -8,7 +8,7 @@
  * and handing the collected list to Ov143_bindSubitemsByTypeId. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov143Cmd {
     u8 pad00[2];

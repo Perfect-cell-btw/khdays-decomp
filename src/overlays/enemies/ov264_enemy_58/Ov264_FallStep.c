@@ -22,7 +22,7 @@
  *    zero as a separate fourth argument at [sp+4].
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     unsigned short lo : 8;

@@ -1,49 +1,12 @@
+
+
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 #include "nitro/os.h"
+#include "nnsys/g3d.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-#define FX32_SHIFT 12
-#define FX32_ONE ((fx32) 0x0000000000001000L)         // 1.000000000000
-
-typedef union {
-        struct {
-            fx32 _00, _01, _02, _03;
-            fx32 _10, _11, _12, _13;
-            fx32 _20, _21, _22, _23;
-            fx32 _30, _31, _32, _33;
-        };
-        fx32 m[4][4];
-        fx32 a[16];
-    } MtxFx44;
 void FX_DivAsync(fx32 numer, fx32 denom);
 fx32 FX_GetDivResult(void);
-struct NNSG3dMatAnmResult_;
-typedef enum {
-    NNS_G3D_MATANM_RESULTFLAG_TEXMTX_SCALEONE  = 0x00000001,
-    NNS_G3D_MATANM_RESULTFLAG_TEXMTX_ROTZERO   = 0x00000002,
-    NNS_G3D_MATANM_RESULTFLAG_TEXMTX_TRANSZERO = 0x00000004,
-    NNS_G3D_MATANM_RESULTFLAG_TEXMTX_SET       = 0x00000008,
-    NNS_G3D_MATANM_RESULTFLAG_TEXMTX_MULT      = 0x00000010,
-    NNS_G3D_MATANM_RESULTFLAG_WIREFRAME        = 0x00000020}
-NNSG3dMatAnmResultFlag;
-typedef struct NNSG3dMatAnmResult_ {
-    NNSG3dMatAnmResultFlag flag;
-    u32 prmMatColor0;
-    u32 prmMatColor1;
-    u32 prmPolygonAttr;
-    u32 prmTexImage;
-    u32 prmTexPltt;
-    fx32 scaleS, scaleT;
-    fx16 sinR, cosR;
-    fx32 transS, transT;
-    u16 origWidth, origHeight;
-    fx32 magW, magH;
-} NNSG3dMatAnmResult;
 
 /* texmtxCalc_flag_ -- NitroSystem maya.c: texmtxCalc_flag_. */
 void texmtxCalc_flag_ (MtxFx44 * m, const NNSG3dMatAnmResult * anm)

@@ -5,7 +5,7 @@
  * the +0x10 / +0x14 headings take another draw from the same bounds, the sub-state takes the
  * +0x1c9 byte and the node slot is released. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
 struct Ov253Bounds { int lo[1]; int hi[4]; };

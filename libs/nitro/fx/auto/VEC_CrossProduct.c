@@ -1,6 +1,6 @@
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out)
 {

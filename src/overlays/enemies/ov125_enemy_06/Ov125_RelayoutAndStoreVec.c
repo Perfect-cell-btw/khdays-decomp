@@ -1,6 +1,6 @@
 /* Re-lays the node out, stores the vector and sets flag bit 0. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_MoveNodeAndRelayout();
 

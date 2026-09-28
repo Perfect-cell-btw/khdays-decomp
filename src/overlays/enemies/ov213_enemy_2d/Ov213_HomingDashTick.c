@@ -5,7 +5,7 @@
  * target direction (floored at 0). Within 1.0 of the target, or once the timer passes 1.0, pose
  * request 0 is queued and the node dispatches null. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 static inline int FX_Mul(int a, int b) {
     return (int)(((long long)a * b + 0x800) >> 12);

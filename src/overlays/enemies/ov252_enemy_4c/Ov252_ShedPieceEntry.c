@@ -2,7 +2,7 @@
  * 0x13 plays, the part takes motion 0xc, the owner plays effect 4 at the origin, +0x60 clears and the
  * node moves on to 020d0480. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { unsigned f : 8; } B8;
 struct Ov252Pieces { char pad[0x4f4]; int shapes[4]; };

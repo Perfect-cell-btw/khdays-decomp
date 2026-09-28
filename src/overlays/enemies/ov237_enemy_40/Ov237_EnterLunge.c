@@ -3,7 +3,7 @@
  * timers and the +0x57 flag clear and the brain waits on 020ce980. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern VecFx32 Ov237_RotateByActorHeading(int *node, VecFx32 *target);
 extern void Ov107_PostTagUpdate(int a, int b, int c);

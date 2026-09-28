@@ -8,7 +8,7 @@
  * to its +0xf0 and is cleared, and the +0x40 / +0x44 timers run down to zero. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } Xform;

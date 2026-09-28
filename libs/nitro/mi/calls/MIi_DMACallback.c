@@ -1,4 +1,5 @@
-typedef void (*OSIrqFunction)(void *arg);
+
+#include "nitro/os.h"
 
 extern unsigned int OS_DisableIrqMask(unsigned int mask);
 extern void OS_SetIrqFunction(unsigned int intrBits, OSIrqFunction function);

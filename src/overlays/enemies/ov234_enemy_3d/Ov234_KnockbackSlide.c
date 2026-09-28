@@ -1,4 +1,4 @@
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct bitguard { unsigned char b0 : 1; };
 

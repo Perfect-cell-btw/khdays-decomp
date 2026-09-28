@@ -2,7 +2,7 @@
  * towards it within its turn rate, moves it and plays its reaction on reach. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Actor;
 

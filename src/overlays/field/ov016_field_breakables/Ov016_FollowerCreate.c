@@ -8,7 +8,7 @@
  * the piece (02076480). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov016FollowerDef Ov016FollowerDef;
 

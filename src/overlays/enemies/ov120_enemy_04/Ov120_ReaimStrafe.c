@@ -5,7 +5,7 @@
  *
  * Matched byte-exact 2026-07-23, first compile. One of three byte-identical siblings. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_ActionResource_GetOffsetAndScale(int a, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *src, VecFx32 *v);

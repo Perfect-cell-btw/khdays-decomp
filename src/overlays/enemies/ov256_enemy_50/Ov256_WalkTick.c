@@ -9,7 +9,7 @@
  * instead of into the ROM's fresh r3. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 

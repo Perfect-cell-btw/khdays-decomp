@@ -7,7 +7,7 @@
  * time step runs afterwards. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov022_IsSlotReady(char *context);
 extern int Session_GetLocalPlayerIndex(void);

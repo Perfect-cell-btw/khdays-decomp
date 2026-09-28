@@ -7,7 +7,7 @@
  * hands over to Ov223_AiFastCountdownQueue0. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct hw60 { unsigned short lo : 8, hi : 8; };

@@ -6,7 +6,7 @@
  * [+0x224, +0x228], the +0x2c rate becomes the frame rate x 3, the +0x1c facing turns to a random
  * heading and the tick hands over to Ov119_HoverTick. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))

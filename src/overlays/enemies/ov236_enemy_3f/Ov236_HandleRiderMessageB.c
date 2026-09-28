@@ -6,7 +6,7 @@
  * +0x3b8 items' transforms. The base handler always runs. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[11]; } Srt;
 struct Bits3d4 { unsigned int b0 : 1; };

@@ -1,7 +1,7 @@
 /* Reports a hit on member index (locally) and spawns the damage number above it. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov022SeatEntry {
     char padding000[0x09];

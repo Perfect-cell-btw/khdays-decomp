@@ -8,7 +8,7 @@
  * off to the 020d1c04 state.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct h2 { unsigned short a, b; };
 struct hw60 { unsigned short lo : 8, hi : 8; };

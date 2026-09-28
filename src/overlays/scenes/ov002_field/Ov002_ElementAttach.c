@@ -1,6 +1,6 @@
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void *Ov002_LookupChannelEntry(char *pChannel);
 extern void Entity_Register(char *pObj, void *pEntry, int nA, int nB);

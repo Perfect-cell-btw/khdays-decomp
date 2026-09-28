@@ -6,7 +6,7 @@
  * 0x31. Then the base forwarder (020c7a90) runs. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u8 hi, mid, lo; } Fx24;

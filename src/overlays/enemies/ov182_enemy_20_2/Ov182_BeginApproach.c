@@ -10,7 +10,7 @@
  *
  * One of four byte-identical siblings. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(void *node, int idx, void *cb);

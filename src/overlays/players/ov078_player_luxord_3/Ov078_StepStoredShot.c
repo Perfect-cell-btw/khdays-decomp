@@ -8,7 +8,7 @@
  * the shot fires charged and the record is closed. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov022_ValidateTargetRef(char *self);
 extern VecFx32 *func_ov022_020ad0c0(char *self);

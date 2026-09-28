@@ -11,7 +11,7 @@
  * clearing bit 0 of +0x1ae instead. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { VecFx32 c; int r; } Sphere;

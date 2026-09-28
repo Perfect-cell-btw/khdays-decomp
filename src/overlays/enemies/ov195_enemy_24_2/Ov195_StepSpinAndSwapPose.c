@@ -4,7 +4,7 @@
  * `v = obj[3] = f(...)` in that order stores the raw r0; declaration order `r` then `q`
  * gives the ROM's stack layout. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct quat { int x, y, z, w; };
 extern int  Angle_TurnToward();

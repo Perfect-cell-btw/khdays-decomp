@@ -3,8 +3,7 @@
    cartridge bus to the ARM9, 1 to the ARM7. */
 
 #include "nitro/types.h"
-
-#define REG_EXMEM_CNT (*(volatile u16 *)0x04000204)
+#include "nitro/hw.h"
 
 void OSi_AllocateCartridgeBus(void)
 {

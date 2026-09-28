@@ -25,7 +25,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 #define FX32_PI      0x3244
 #define FX32_DEG50   0xdf6

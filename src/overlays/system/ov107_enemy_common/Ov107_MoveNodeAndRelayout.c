@@ -2,7 +2,7 @@
  * unused here; real per callers in ov115/ov117/ov107. Returns what Ov107_UpdateCollisionSphere
  * returns. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Srt_SetTranslation(void *sub, void *src);
 extern int Ov107_UpdateCollisionSphere(void *node);

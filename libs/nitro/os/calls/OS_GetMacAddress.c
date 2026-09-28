@@ -1,10 +1,10 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nitro/hw.h"
 
 typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 /* NitroSDK OS library: arena defaults (os_arena.c), the thread system init (os_thread.c) and the
  * owner info (os_ownerInfo.c). The SDK_* figures are link-time constants of the SDK build; the ROM
@@ -13,13 +13,6 @@ typedef int OSArenaId;
 enum { OS_ARENA_MAIN = 0, OS_ARENA_MAIN_SUBPRIV, OS_ARENA_MAINEX, OS_ARENA_ITCM, OS_ARENA_DTCM, OS_ARENA_SHARED, OS_ARENA_WRAM_MAIN, OS_ARENA_WRAM_SUB, OS_ARENA_WRAM_SUBPRIV, OS_ARENA_MAX };
 #define OS_CONSOLE_SIZE_MASK 0x00000003
 #define OS_CONSOLE_SIZE_4MB  0x00000001
-#define HW_MAIN_MEM_MAIN_END 0x023e0000
-#define HW_MAIN_MEM_DEBUGGER 0x02700000
-#define HW_ITCM_ARENA_HI_DEFAULT 0x02000000
-#define HW_SHARED_ARENA_HI_DEFAULT 0x027ff680
-#define HW_WRAM 0x037f8000
-#define HW_DTCM_IRQ_STACK_END 0x027e3f80
-#define HW_DTCM_SVC_STACK     0x027e3f80
 /* Link-time constants of the SDK build (linker-absolute symbols, declared in tools/configure.py
  * ABSOLUTE_SYMBOLS with the ROM's values: SDK_SYS_STACKSIZE 0, SDK_IRQ_STACKSIZE 0x800,
  * SDK_SECTION_ARENA_DTCM_START 0x027e0e60): the code must keep testing them at run time. */
@@ -35,8 +28,6 @@ extern void SDK_SECTION_ARENA_DTCM_START(void);
 /* HW_DTCM is the DTCM base symbol: the pool carries it and the offsets are added (+0x3f80). */
 extern u32 data_027e0000;
 #define HW_DTCM ((u32)&data_027e0000)
-#define HW_DTCM_SVC_STACK_ADDR (HW_DTCM + 0x3f80)
-#define HW_DTCM_IRQ_STACK_END_ADDR (HW_DTCM + 0x3f80)
 extern u32 OS_GetConsoleType(void);
 
 /* os_arena.c statics, one .bss block: OSi_Initialized then OSi_MainExArenaEnabled (a .bss
@@ -102,7 +93,6 @@ extern OSThread data_02044340;    /* OSi_IdleThread */
 #define OSi_IdleThread data_02044340
 extern OSThread data_02044400;    /* OSi_LauncherThread */
 #define OSi_LauncherThread data_02044400
-#define HW_SVC_STACK_SIZE 0x40
 #define OSi_IDLE_CHECKNUM_SIZE (sizeof(u32) * 2 + HW_SVC_STACK_SIZE)
 #define OSi_IDLE_SVC_SIZE (sizeof(u32) * 32)
 #define OSi_IDLE_THREAD_STACK_SIZE (OSi_IDLE_CHECKNUM_SIZE + OSi_IDLE_SVC_SIZE)
@@ -132,7 +122,6 @@ static inline void OS_SetCurrentThread(OSThread *thread)
 
 /* os_ownerInfo.c: the MAC address sits right after the NVRAMConfig (0x74 bytes) in the system
  * work's nvramUserInfo copy (HW_NVRAM_USER_INFO 0x027ffc80). */
-#define HW_NVRAM_USER_INFO 0x027ffc80
 #define NVRAMCONFIG_SIZE 0x74
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 

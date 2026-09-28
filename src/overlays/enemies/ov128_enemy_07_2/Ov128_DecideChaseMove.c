@@ -13,7 +13,7 @@
  * requested a state, it notifies instead of taking a slot.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;

@@ -13,7 +13,7 @@
  * mode 1). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov021Prize {
     char  nType;              /* 0x00: 0 item, 1 munny, 2 keyed object, 3 nothing */

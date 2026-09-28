@@ -7,7 +7,7 @@
  * +0x70/+0x50 clear, the facing is committed to +0xc and the tick hands over to
  * Ov279_SwipeHitWindow. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[4]; } Quat;
 struct Bits40 { int b0 : 1, b1 : 1; };

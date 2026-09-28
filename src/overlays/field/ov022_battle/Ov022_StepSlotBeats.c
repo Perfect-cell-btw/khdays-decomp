@@ -23,7 +23,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 #define BEAT_THRESHOLD 0x23000
 #define WAIT_HOLD 0x3000

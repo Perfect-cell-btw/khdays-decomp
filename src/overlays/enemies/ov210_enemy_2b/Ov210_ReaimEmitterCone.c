@@ -8,7 +8,7 @@
  * 0203c9d0(node, &m).
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct xform4 { int w[4]; };
 

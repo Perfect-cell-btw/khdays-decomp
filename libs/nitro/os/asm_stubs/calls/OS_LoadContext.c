@@ -1,19 +1,9 @@
 /* NitroSDK original assembly (libraries/os/src/os_context.c). */
 
 #include "nitro/types.h"
+#include "nitro/os.h"
 
-typedef struct OSContext OSContext;
 extern void CPi_RestoreContext(void);
-
-#define HW_PSR_CPU_MODE_MASK         0x1f
-#define HW_PSR_FIQ_DISABLE           0x40
-#define HW_PSR_IRQ_DISABLE           0x80
-#define HW_PSR_SVC_MODE              0x13
-#define OS_CONTEXT_CPSR              0
-#define OS_CONTEXT_CP_CONTEXT        72
-#define OS_CONTEXT_PC_PLUS4          64
-#define OS_CONTEXT_R0                4
-#define OS_CONTEXT_SP_SVC            68
 
 asm void OS_LoadContext (register OSContext * context)
 {

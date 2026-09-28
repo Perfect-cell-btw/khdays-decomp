@@ -5,7 +5,7 @@
  * clears, +0x50 = 1, pose 7 plays and the brain waits on 020cfc20. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov258_SwingHitTest(int *node);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, u16 variant, void *at);

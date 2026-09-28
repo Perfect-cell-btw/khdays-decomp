@@ -14,7 +14,7 @@
  * +0x93 marks); animation 1 plays while the +4 item's +0xad byte is clear. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Bits17a { u8 bit0 : 1, bit1 : 1; };
 

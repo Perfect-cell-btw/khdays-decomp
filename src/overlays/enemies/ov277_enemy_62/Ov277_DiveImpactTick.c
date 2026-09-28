@@ -7,7 +7,7 @@
  * reaction 0x165 mode 9 fires there, the hook receives the message and pose 0 is requested. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

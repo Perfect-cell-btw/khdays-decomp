@@ -8,7 +8,7 @@
  * loop lets mwcc merge them into `cmp; cmplt`. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Ov260Shards { char pad[0x434]; int shards[15]; };

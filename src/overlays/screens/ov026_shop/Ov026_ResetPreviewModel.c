@@ -1,4 +1,4 @@
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern char *data_ov026_02091368;
 extern char data_ov026_02091244;

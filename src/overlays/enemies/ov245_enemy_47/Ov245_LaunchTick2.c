@@ -3,7 +3,7 @@
  * scales it by the speed; once the +4 item's animation is no longer busy (+0xad) pose 9 plays
  * (flag 1), +0x40 clears, bit 6 of the +0x60 high byte clears and the node moves to 020d6f30. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_ActionResource_GetOffsetAndScale(int item, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);

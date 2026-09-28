@@ -6,7 +6,7 @@
  * distance a 1-in-3 roll decides: 35 % with a free target (020ccb8c) go to sub-state 9, the rest
  * to 2; otherwise the +0x48 phase advances and at 0x3000 sub-state 6 follows. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern void SetIndexedSlot(int node, int slot, void *cb);

@@ -11,7 +11,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Entry {
     unsigned long long nFlags;   /* 0x00, a 64 bit flag word */

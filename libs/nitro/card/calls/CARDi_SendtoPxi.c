@@ -1,10 +1,10 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nitro/hw.h"
 
 typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 /* NitroSDK CARD library: the game card ROM/backup access shared state (card_common.h / card_rom.h). */
 typedef s32 CARDiOwner;
@@ -48,8 +48,6 @@ typedef struct CARDRomStat {
     u8 cache_buf[CARD_ROM_PAGE_SIZE];   /* 0x20 */
 } CARDRomStat;
 
-#define REG_CARDCNT            0x040001a4
-#define REG_CARD_DATA          0x04100010
 #define CARD_DATA_READY         0x00800000
 #define CARD_COMMAND_PAGE       0x01000000
 #define CARD_COMMAND_ID         0x07000000

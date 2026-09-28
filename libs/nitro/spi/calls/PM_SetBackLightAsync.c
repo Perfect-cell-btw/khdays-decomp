@@ -1,117 +1,14 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nitro/os_types.h"
+#include "nitro/spi.h"
+#include "nitro/rtc.h"
+#include "nitro/wm.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-#define PM_INVALID_COMMAND 0xffff
-
-enum {
-    PM_UTIL_DUMMY = 0,
-    PM_UTIL_LED_ON,
-    PM_UTIL_LED_BLINK_HIGH_SPEED,
-    PM_UTIL_LED_BLINK_LOW_SPEED,
-    PM_UTIL_LCD1_BACKLIGHT_ON,
-    PM_UTIL_LCD1_BACKLIGHT_OFF,
-    PM_UTIL_LCD2_BACKLIGHT_ON,
-    PM_UTIL_LCD2_BACKLIGHT_OFF,
-    PM_UTIL_LCD12_BACKLIGHT_ON,
-    PM_UTIL_LCD12_BACKLIGHT_OFF,
-    PM_UTIL_SOUND_POWER_ON,
-    PM_UTIL_SOUND_POWER_OFF,
-    PM_UTIL_SOUND_VOL_CTRL_ON,
-    PM_UTIL_SOUND_VOL_CTRL_OFF,
-    PM_UTIL_FORCE_POWER_OFF,
-    PM_UTIL_FORCE_POWER_ON
-};
-typedef void (*PMCallback) (u32 result, void * arg);
-typedef enum {
-    PM_LCD_TOP = 0,
-    PM_LCD_BOTTOM = 1,
-    PM_LCD_ALL = 2
-} PMLCDTarget;
-typedef enum {
-    PM_BACKLIGHT_OFF = 0,
-    PM_BACKLIGHT_ON = 1
-} PMBackLightSwitch;
 u32 PM_SendUtilityCommandAsync(u32 number, PMCallback callback, void * arg);
-typedef enum {
-    TP_REQUEST_COMMAND_SAMPLING         = 0x0,
-    TP_REQUEST_COMMAND_AUTO_ON          = 0x1,
-    TP_REQUEST_COMMAND_AUTO_OFF         = 0x2,
-    TP_REQUEST_COMMAND_SET_STABILITY    = 0x3,
-    TP_REQUEST_COMMAND_AUTO_SAMPLING    = 0x10
-} TPRequestCommand;
-typedef enum {
-    TP_RESULT_SUCCESS = 0,
-    TP_RESULT_INVALID_PARAMETER,
-    TP_RESULT_ILLEGAL_STATUS,
-    TP_RESULT_EXCLUSIVE,
-    TP_RESULT_PXI_BUSY
-} TPRequestResult;
-typedef void (*TPRecvCallback) (TPRequestCommand command, TPRequestResult result, u16 index);
-typedef enum MICResult {
-    MIC_RESULT_SUCCESS = 0,
-    MIC_RESULT_BUSY,
-    MIC_RESULT_ILLEGAL_PARAMETER,
-    MIC_RESULT_SEND_ERROR,
-    MIC_RESULT_INVALID_COMMAND,
-    MIC_RESULT_ILLEGAL_STATUS,
-    MIC_RESULT_FATAL_ERROR,
-    MIC_RESULT_MAX
-} MICResult;
-typedef void (*MICCallback) (MICResult result, void * arg);
-typedef enum RTCResult {
-    RTC_RESULT_SUCCESS = 0,
-    RTC_RESULT_BUSY,
-    RTC_RESULT_ILLEGAL_PARAMETER,
-    RTC_RESULT_SEND_ERROR,
-    RTC_RESULT_INVALID_COMMAND,
-    RTC_RESULT_ILLEGAL_STATUS,
-    RTC_RESULT_FATAL_ERROR,
-    RTC_RESULT_MAX
-} RTCResult;
-typedef void (*RTCCallback) (RTCResult result, void * arg);
-typedef struct WMGameInfo {
-    u16 magicNumber;
-    u8 ver;
-    u8 platform;
-    u32 ggid;
-    u16 tgid;
-    u8 userGameInfoLength;
-    union {
-        u8 gameNameCount_attribute;
-        u8 attribute;
-    };
-    u16 parentMaxSize;
-    u16 childMaxSize;
-    union {
-        u16 userGameInfo[112 / sizeof(u16)];
-        struct {
-            u16 userName[8 / sizeof(u16)];
-            u16 gameName[16 / sizeof(u16)];
-            u16 padd1[44];
-        } old_type;
-    };
-} WMGameInfo, WMgameInfo;
-typedef struct WMStartScanCallback {
-    u16 apiid;
-    u16 errcode;
-    u16 wlCmdID;
-    u16 wlResult;
-    u16 state;
-    u8 macAddress[6 ];
-    u16 channel;
-    u16 linkLevel;
-    u16 ssidLength;
-    u16 ssid[32 / sizeof(u16)];
-    u16 gameInfoLength;
-    WMGameInfo gameInfo;
-} WMStartScanCallback, WMstartScanCallback;
 typedef enum WVRResult {
     WVR_RESULT_SUCCESS = 0,
     WVR_RESULT_OPERATING,

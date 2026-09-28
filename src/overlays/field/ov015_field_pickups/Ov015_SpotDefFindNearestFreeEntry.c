@@ -11,7 +11,7 @@
  * entry pointer block-scoped. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov015SpotEntry {
     s8  nId;                  /* 0x00 */

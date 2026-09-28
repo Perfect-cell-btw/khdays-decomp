@@ -3,7 +3,7 @@
  * Once the +0xc idle byte clears, animation 0x5 plays, the +0x3d0 part plays motion 0x4 and the tick
  * hands over to Ov257_TouchDownTick. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov257_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);

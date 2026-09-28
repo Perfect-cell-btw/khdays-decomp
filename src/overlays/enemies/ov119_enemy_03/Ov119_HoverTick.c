@@ -5,7 +5,7 @@
  * target found by Ov119_PickBestFacingTarget (kept at +8) requests sub-state 6 and ends the tick; otherwise
  * once the +0x50 delay runs out the tick hands over to Ov119_AiStep_PickLandingPoint. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))

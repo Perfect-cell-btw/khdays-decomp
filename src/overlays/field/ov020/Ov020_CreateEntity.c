@@ -12,7 +12,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov020Entity {
     char pad00[0x0c];

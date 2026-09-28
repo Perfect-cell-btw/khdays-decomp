@@ -13,6 +13,7 @@
  * before the counter write for the addresses to collapse. */
 
 #include "nitro/types.h"
+#include "nitro/hw.h"
 
 typedef struct OsAlarmState {
     u8  pad_00[4];
@@ -25,10 +26,6 @@ extern OsAlarmState data_02044664;
 
 extern int  OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
-
-#define REG_IF       (*(volatile u32 *)0x04000214)
-#define REG_TM0CNT_H (*(volatile u16 *)0x04000102)
-#define REG_TM0CNT_L (*(volatile u16 *)0x04000100)
 
 void SetupTimer0Reload(u64 nTick)
 {

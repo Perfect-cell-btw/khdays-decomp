@@ -3,7 +3,7 @@
  * +0x454 count). With `outHeading` the heading from that point towards route point +0x6c is
  * stored there. Returns 0 for an empty route, else 1. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern VecFx32 *List_First(void *list);
 extern VecFx32 *List_Next(void *list);

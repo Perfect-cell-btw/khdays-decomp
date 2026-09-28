@@ -9,7 +9,7 @@
  * 0, 1, 2, 3) at 0x550, 0x7f8, 0xaa0, 0xff0, 0x1298 and 0x1a90. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int x, y, z, w; } Quat;
 

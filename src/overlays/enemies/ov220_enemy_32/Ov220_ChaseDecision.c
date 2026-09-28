@@ -3,7 +3,7 @@
  * (looped), publishes a zero vector to the item with mode 1 and hands off to the chase tick. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov220_DistanceToTarget(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

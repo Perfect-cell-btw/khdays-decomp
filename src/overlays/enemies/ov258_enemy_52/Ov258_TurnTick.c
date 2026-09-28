@@ -5,7 +5,7 @@
  * turns toward the goal and orients the pose about up. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int x, y, z, w; } Quat;
 struct Ov258Vortex { char pad[0x428]; int time; };

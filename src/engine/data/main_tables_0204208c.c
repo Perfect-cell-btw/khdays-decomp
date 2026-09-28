@@ -2,7 +2,7 @@
  * and the class descriptor of the session's transfer-channel task. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct VecFx16 {
     fx16 x, y, z;

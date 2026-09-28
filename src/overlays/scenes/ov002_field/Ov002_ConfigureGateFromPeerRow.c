@@ -4,7 +4,7 @@
  * Preserve the effect pointer across the tint/flag writes to avoid a reload. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov002PeerRow {
     u8 nKey,nTargetSlot,pad02;

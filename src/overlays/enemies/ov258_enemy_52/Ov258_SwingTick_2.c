@@ -10,7 +10,7 @@
  * owner and record-index registers). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[7]; int radius; } Segment;
 typedef struct { short mode[5]; } Short5;

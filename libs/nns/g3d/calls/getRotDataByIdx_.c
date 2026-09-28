@@ -1,57 +1,11 @@
+
+
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 #include "nitro/os.h"
+#include "nitro/pxi.h"
+#include "nnsys/g3d.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-#define FX32_ONE ((fx32) 0x0000000000001000L)         // 1.000000000000
-
-typedef union {
-        struct {
-            fx32 _00, _01, _02;
-            fx32 _10, _11, _12;
-            fx32 _20, _21, _22;
-        };
-        fx32 m[3][3];
-        fx32 a[9];
-    } MtxFx33;
-typedef enum {
-    PXI_FIFO_TAG_EX = 0,
-    PXI_FIFO_TAG_USER_0,
-    PXI_FIFO_TAG_USER_1,
-    PXI_FIFO_TAG_SYSTEM,
-    PXI_FIFO_TAG_NVRAM,
-    PXI_FIFO_TAG_RTC,
-    PXI_FIFO_TAG_TOUCHPANEL,
-    PXI_FIFO_TAG_SOUND,
-    PXI_FIFO_TAG_PM,
-    PXI_FIFO_TAG_MIC,
-    PXI_FIFO_TAG_WM,
-    PXI_FIFO_TAG_FS,
-    PXI_FIFO_TAG_OS,
-    PXI_FIFO_TAG_CTRDG,
-    PXI_FIFO_TAG_CARD,
-    PXI_FIFO_TAG_WVR,
-    PXI_FIFO_TAG_CTRDG_Ex,
-    PXI_FIFO_TAG_CTRDG_PHI,
-    PXI_MAX_FIFO_TAG = 32
-} PXIFifoTag;
-typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
-typedef enum {
-    NNS_G3D_JNTANM_PIVOTINFO_IDXPIVOT_MASK   = 0x000f,
-    NNS_G3D_JNTANM_PIVOTINFO_MINUS           = 0x0010,
-    NNS_G3D_JNTANM_PIVOTINFO_SIGN_REVC       = 0x0020,
-    NNS_G3D_JNTANM_PIVOTINFO_SIGN_REVD       = 0x0040,
-    NNS_G3D_JNTANM_PIVOT_INFO_IDXPIVOT_SHIFT = 0
-} NNSG3dJntAnmPivotInfo;
-typedef enum {
-    NNS_G3D_JNTANM_RIDX_PIVOT         = 0x8000,
-    NNS_G3D_JNTANM_RIDX_IDXDATA_MASK  = 0x7fff,
-    NNS_G3D_JNTANM_RIDX_IDXDATA_SHIFT = 0
-} NNSG3dJntAnmRIdx;
 extern const u8 data_02041ae0[9][4];
 
 /* getRotDataByIdx_ -- NitroSystem nsbca.c: getRotDataByIdx_. */

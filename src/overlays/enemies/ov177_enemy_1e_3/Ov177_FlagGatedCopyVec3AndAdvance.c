@@ -2,7 +2,7 @@
  * (+0xb0), records whether the context mode where it lands is 8, then makes the stored action
  * (+0x1c9) pending and clears the step handler. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Node {
     char pad0[0x60];

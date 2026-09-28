@@ -2,7 +2,7 @@
 /* Index of the session's local player, or its delegate. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int QueryActiveStateOrDelegate(void);
 /* Collision world id of that player's track entry, or -1 when it has none. */

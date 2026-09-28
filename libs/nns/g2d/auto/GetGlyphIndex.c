@@ -1,41 +1,12 @@
-#include "nitro/types.h"
-#include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-#define NNS_G2D_GLYPH_INDEX_NOT_FOUND 0xFFFF
-
-typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
-typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
-typedef void * (*MIAllocatorAllocFunction)(void * userdata, u32 length, u32 alignment);
-typedef void (*MIAllocatorFreeFunction)(void * userdata, void * buffer);
-typedef enum NNSG2dFontMappingMethod {
-    NNS_G2D_MAPMETHOD_DIRECT,
-    NNS_G2D_MAPMETHOD_TABLE,
-    NNS_G2D_MAPMETHOD_SCAN,
-    NNS_G2D_NUM_OF_MAPMETHOD
-} NNSG2dFontMappingMethod;
-typedef struct NNSG2dCMapScanEntry {
-    u16 ccode;
-    u16 index;
-} NNSG2dCMapScanEntry;
-typedef struct NNSG2dCMapInfoScan {
-    u16 num;
-    NNSG2dCMapScanEntry entries[];
-} NNSG2dCMapInfoScan;
-typedef struct NNSG2dFontCodeMap {
-    u16 ccodeBegin;
-    u16 ccodeEnd;
-    u16 mappingMethod;
-    u16 reserved;
-    struct NNSG2dFontCodeMap * pNext;
-    u16 mapInfo[];
-} NNSG2dFontCodeMap;
 
 /* GetGlyphIndex -- NitroSystem g2d_Font.c: GetGlyphIndex. */
+
+#include "nitro/types.h"
+#include "nitro/mi.h"
+#include "nitro/os.h"
+#include "nnsys/g2d.h"
+
 u16 GetGlyphIndex (const NNSG2dFontCodeMap * pMap, u16 c)
 {
     u16 index = NNS_G2D_GLYPH_INDEX_NOT_FOUND;

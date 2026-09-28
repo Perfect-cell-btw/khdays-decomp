@@ -16,7 +16,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 #define SLOT_OPEN 0xffff
 

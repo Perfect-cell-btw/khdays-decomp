@@ -1,8 +1,7 @@
 /* NitroSDK original assembly (libraries/os/src/os_tcm.c). */
 
 #include "nitro/types.h"
-
-#define OSi_TCM_REGION_BASE_MASK     0xfffff000
+#include "nitro/os.h"
 
 asm u32 OS_GetDTCMAddress (void)
 {

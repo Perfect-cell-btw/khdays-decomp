@@ -1,18 +1,15 @@
 
+
 #include "nitro/types.h"
+#include "nitro/mi.h"
 
 enum {
-    MI_DMA_MAX_NUM = 3,
     CARD_COMMAND_PAGE = 0x01000000,
     CARD_COMMAND_MASK = 0x07000000,
     CARD_READ_MODE = 0,
     CARD_START = 0x80000000,
     CARD_RESET_HI = 0x20000000,
     CARD_ROM_PAGE_SIZE = 512,
-    HW_CACHE_LINE_SIZE = 32,
-    HW_ITCM = 0x01ff8000,
-    HW_ITCM_SIZE = 0x8000,
-    HW_DTCM_SIZE = 0x4000,
     OS_IE_CARD_DATA = 1 << 19
 };
 

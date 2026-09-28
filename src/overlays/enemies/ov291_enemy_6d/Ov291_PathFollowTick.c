@@ -10,7 +10,7 @@
  * (slot released), otherwise the index advances modulo the path's count. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 

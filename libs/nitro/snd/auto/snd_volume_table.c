@@ -5,10 +5,7 @@
  * (SWI 1Ch); same unit as snd_decibel_table.c. */
 
 #include "nitro/types.h"
-
-#define SND_VOLUME_DB_MIN (-723)
-#define SND_VOLUME_DB_MAX 0
-#define SND_VOLUME_TABLE_SIZE (SND_VOLUME_DB_MAX - SND_VOLUME_DB_MIN + 1)
+#include "nitro/snd.h"
 
 const u8 data_02041588[SND_VOLUME_TABLE_SIZE] = {
     0x00,

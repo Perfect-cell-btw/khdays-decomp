@@ -3,7 +3,7 @@
  * and the node moves on to 020cd9e0. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);

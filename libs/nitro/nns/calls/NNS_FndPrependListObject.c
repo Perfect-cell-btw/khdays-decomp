@@ -1,17 +1,7 @@
 
+
 #include "nitro/types.h"
-
-struct NNSFndLink {
-    void *prev_object;
-    void *next_object;
-};
-
-struct NNSFndList {
-    void *head_object;
-    void *tail_object;
-    u16 num_objects;
-    u16 offset;
-};
+#include "nnsys/fnd.h"
 
 extern void SetFirstObject(struct NNSFndList *list, void *object);
 

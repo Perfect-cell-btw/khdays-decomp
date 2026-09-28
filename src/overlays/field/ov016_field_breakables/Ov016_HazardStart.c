@@ -8,7 +8,7 @@
  * pair (0203355c) when the definition has a drop slot (def +0x68 >= 0). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov016HazardDef {
     u8 pad_00[0x58];

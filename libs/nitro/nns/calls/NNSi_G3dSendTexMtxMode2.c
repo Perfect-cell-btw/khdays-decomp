@@ -1,6 +1,6 @@
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct MtxFx44 {
     fx32 m[4][4];

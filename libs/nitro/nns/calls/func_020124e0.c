@@ -1,47 +1,11 @@
 
-#include "nitro/types.h"
-#include "nitro/fx.h"
 
-#define NULL ((void *)0)
+#include "nitro/types.h"
+#include "nitro/fx_types.h"
+#include "nitro/gx.h"
+
 #define FX32_SHIFT 12
 #define FX32_ONE (1 << FX32_SHIFT)
-
-#define GX_OAM_ATTR01_Y_SHIFT 0
-#define GX_OAM_ATTR01_Y_MASK 0x000000ff
-#define GX_OAM_ATTR01_RSENABLE_SHIFT 8
-#define GX_OAM_ATTR01_RSENABLE_MASK 0x00000300
-#define GX_OAM_ATTR01_SHAPE_SHIFT 14
-#define GX_OAM_ATTR01_SHAPE_MASK 0x0000c000
-#define GX_OAM_ATTR01_X_SHIFT 16
-#define GX_OAM_ATTR01_X_MASK 0x01ff0000
-#define GX_OAM_ATTR01_RS_SHIFT 25
-#define GX_OAM_ATTR01_RS_MASK 0x3e000000
-#define GX_OAM_ATTR01_FLIP_MASK 0x30000000
-#define GX_OAM_ATTR01_SIZE_SHIFT 30
-#define GX_OAM_ATTR01_SIZE_MASK 0xc0000000
-
-typedef enum GXOamEffect {
-    GX_OAM_EFFECT_NONE = 0,
-    GX_OAM_EFFECT_AFFINE = 0x100,
-    GX_OAM_EFFECT_NODISPLAY = 0x200,
-    GX_OAM_EFFECT_AFFINE_DOUBLE = 0x300
-} GXOamEffect;
-
-typedef enum GXOamShape {
-    GX_OAM_SHAPE_8x8 = 0
-} GXOamShape;
-
-typedef struct GXOamAttr {
-    union {
-        u32 attr01;
-        struct {
-            u16 attr0;
-            u16 attr1;
-        };
-    };
-    u16 attr2;
-    u16 _3;
-} GXOamAttr;
 
 typedef struct MtxFx22 {
     fx32 _00;

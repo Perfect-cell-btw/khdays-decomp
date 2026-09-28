@@ -9,7 +9,7 @@
    accumulator (field_16c), each side's counter (field_178) is bumped, and
    each side's flag (field_17a bit 4) is marked. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct AiState {
     char pad000[0x54];

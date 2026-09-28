@@ -5,7 +5,7 @@
  * that hides it.  Answers &position (+0x488). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov016Kickable {
     u8 pad_000[0x12];

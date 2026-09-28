@@ -8,7 +8,7 @@
  * own values (NNSi_G3dGetJntTransFromNode / NNSi_G3dGetMdlRot / NNSi_G3dGetJntScaleFromNode). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22; } MtxFx33;
 

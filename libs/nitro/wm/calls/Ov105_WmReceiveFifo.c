@@ -1,10 +1,10 @@
+
+
 #include "nitro/types.h"
+#include "nitro/mi.h"
 #include "nitro/os.h"
 
-typedef void *OSMessage;
 typedef void (*WMCallbackFunc)(void *arg);
-
-#define NULL ((void *)0)
 
 /* NitroSDK WM (wireless manager) library, ARM9 side, as linked into ov105. */
 #define WM_FIFO_BUF_SIZE        256
@@ -17,9 +17,6 @@ typedef void (*WMCallbackFunc)(void *arg);
 #define WM_BUF_MSG_NUM          10
 #define PXI_FIFO_TAG_WM         10
 #define PXI_PROC_ARM7           1
-#define OS_MESSAGE_NOBLOCK      0
-#define OS_MESSAGE_BLOCK        1
-#define MI_DMA_MAX_NUM          3
 
 enum {
     WM_ERRCODE_SUCCESS = 0,
@@ -498,9 +495,6 @@ extern void MI_CpuFill8(void *dst, u8 data, u32 size);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 extern void MIi_CpuClear16(u16 data, void *dst, u32 size);
 extern void MIi_CpuCopy16(const void *src, void *dst, u32 size);
-#define MI_CpuClear8(dst, size) MI_CpuFill8((dst), 0, (size))
-#define MI_CpuClear16(dst, size) MIi_CpuClear16(0, (dst), (size))
-#define MI_CpuCopy16(src, dst, size) MIi_CpuCopy16((src), (dst), (size))
 extern WMErrCode Ov105_ShutdownWireless(void);       /* WM_Finish */
 extern void Ov105_ClearSharedRequestBit(void);            /* WmClearFifoRecvFlag */
 #define WM_ERRCODE_FLASH_ERROR 19

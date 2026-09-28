@@ -1,13 +1,7 @@
 
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
-
-typedef struct MtxFx43 {
-    fx32 _00, _01, _02;
-    fx32 _10, _11, _12;
-    fx32 _20, _21, _22;
-    fx32 _30, _31, _32;
-} MtxFx43;
 
 typedef struct NNSG3dJntAnmResult {
     u32 flag;

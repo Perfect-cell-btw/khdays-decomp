@@ -2,7 +2,7 @@
  * flags60 high-byte mask 0x82, starts reaction 0x12f mode 6 and advances the action node. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Actor {
     char pad000[0x60];

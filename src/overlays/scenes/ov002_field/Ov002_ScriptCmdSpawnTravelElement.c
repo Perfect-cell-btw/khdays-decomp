@@ -3,7 +3,7 @@
  * the word that carries either the value itself or the reference to it. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     short kind;

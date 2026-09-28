@@ -1,22 +1,13 @@
 /* NitroSDK gx (gx_load2d.c): GX_BeginLoadOBJExtPltt -- takes the OBJ ext-palette banks back to LCDC for loading. */
 
+/* NitroSDK GX VRAM loaders (gx_load2d.c / gx_load3d.c, gxdma.h). */
+
 #include "nitro/types.h"
+#include "nitro/mi.h"
 #include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-/* NitroSDK GX VRAM loaders (gx_load2d.c / gx_load3d.c, gxdma.h). */
-typedef void (*MIDmaCallback)(void *);
 #define GX_DMA_NOT_USE      ((u32) ~0)
 #define GX_CPU_FASTER32_SIZE 0x30
-#define HW_OBJ_VRAM         0x06400000
-#define HW_DB_OBJ_VRAM      0x06600000
-#define HW_LCDC_VRAM_E      0x06880000
-#define HW_LCDC_VRAM_F      0x06890000
-#define HW_LCDC_VRAM_G      0x06894000
 typedef enum {
     GX_VRAM_BGEXTPLTT_NONE    = 0x0000,
     GX_VRAM_BGEXTPLTT_01_F    = 0x0020,
@@ -36,7 +27,6 @@ extern u32 data_020422b8;   /* GXi_DmaId */
 extern void MI_DmaCopy32(u32 dmaNo, const void *src, void *dest, u32 size);
 extern void MI_DmaCopy32Async(u32 dmaNo, const void *src, void *dest, u32 size, MIDmaCallback callback, void *arg);
 extern void MIi_CpuCopy32(const void *src, void *dest, u32 size);
-#define MI_CpuCopy32 MIi_CpuCopy32
 /* This SDK names the bank-release helpers GX_DisableBankFor*; 4.x calls them GX_ResetBankFor*. */
 extern GXVRamBGExtPltt GX_ResetBankForBGExtPltt(void);
 extern GXVRamOBJExtPltt GX_ResetBankForOBJExtPltt(void);

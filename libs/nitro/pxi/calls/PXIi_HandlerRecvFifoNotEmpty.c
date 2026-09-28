@@ -1,10 +1,7 @@
+
+
 #include "nitro/types.h"
 #include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 typedef int PXIFifoTag;
 typedef enum {
@@ -31,10 +28,6 @@ typedef void (*PXIFifoCallback)(PXIFifoTag tag, u32 data, BOOL err);
 #define reg_PXI_FIFO_CNT   (*(vu16 *)0x04000184)
 #define reg_PXI_SEND_FIFO  (*(vu32 *)0x04000188)
 #define reg_PXI_RECV_FIFO  (*(vu32 *)0x04100000)
-#define REG_PXI_FIFO_CNT_E_MASK         0x8000
-#define REG_PXI_FIFO_CNT_ERR_MASK       0x4000
-#define REG_PXI_FIFO_CNT_RECV_EMP_MASK  0x0100
-#define REG_PXI_FIFO_CNT_SEND_FULL_MASK 0x0002
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);

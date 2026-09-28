@@ -3,7 +3,7 @@
  * partner holds no queued move, +0x4c clears, pose 0x13 plays, the +0x450 part takes motion 5, it is
  * knocked back at the +0xc point (mode 0xe) and the node moves on to 020cf238. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov256_PickTarget(int *node);
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);

@@ -1,10 +1,10 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nitro/hw.h"
 
 typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 /* NitroSDK FS library (file system / archives / overlays), as linked into the main binary.
  * Types from include/nitro/fs/{archive,file,overlay}.h and the library's internal headers. */
@@ -369,8 +369,6 @@ typedef struct {
     u32 offset;
     u32 length;
 } CARDRomRegion;
-#define HW_ROM_HEADER_BUF         0x027ffe00
-#define HW_WM_BOOT_BUF            0x027ffc40
 #define MB_TYPE_MULTIBOOT         2
 
 static inline BOOL MB_IsMultiBootChild(void)

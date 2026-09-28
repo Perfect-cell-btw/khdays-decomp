@@ -13,7 +13,7 @@
  *  - `d.y = 0` is a DEAD store -- d is never read again after d.x/d.z -- but the ROM
  *    emits it, so it stays. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int *Ov107_FindNearestObject(int a, int b);
 extern int VEC_Subtract(void *a, void *b, void *out);

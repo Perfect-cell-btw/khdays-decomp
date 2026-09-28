@@ -18,7 +18,7 @@
  *    callee-saved registers come out swapped.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 

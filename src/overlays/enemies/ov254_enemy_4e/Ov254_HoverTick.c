@@ -8,7 +8,7 @@
  * next move is 3. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Hw60 { u16 lo : 8; u16 hi : 8; };

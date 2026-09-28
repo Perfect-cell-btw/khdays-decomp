@@ -5,7 +5,7 @@
  * coin toss under 9.0, 5 beyond 30.0 -- then the +0x38c item's +0xa8 flag clears and the node
  * moves to 020cd98c. Codegen: `+ (v - v)` is the documented random copy artifact. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov253_FindNearestTarget(int self, const VecFx32 *pos, const VecFx32 *dir, int minDot, int maxDist);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);

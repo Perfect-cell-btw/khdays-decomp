@@ -13,7 +13,7 @@
  * words are nine separate values declared z, y, x per site. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 

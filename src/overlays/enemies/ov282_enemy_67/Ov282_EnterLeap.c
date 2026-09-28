@@ -7,7 +7,7 @@
  * Ov282_LeapTick. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 h[7]; } Cmd14;

@@ -2,7 +2,7 @@
  * attach slots, and requests its resources. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Obj;
 typedef void (*ObjCallback)(struct Obj *self);

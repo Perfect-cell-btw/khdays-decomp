@@ -3,7 +3,7 @@
  * byte. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Flags40 { int b0 : 1; int b1 : 1; };
 

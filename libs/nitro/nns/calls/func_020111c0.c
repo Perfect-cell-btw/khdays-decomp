@@ -1,19 +1,7 @@
 
+
 #include "nitro/types.h"
-
-#define NNS_GFD_PLTTSIZE_MIN 8
-#define NNS_GFD_PLTTSIZE_MAX 0x7fff8
-#define NNS_GFD_4PLTT_MAX_ADDR 0x10000
-#define NNS_GFD_ALLOC_ERROR_PLTTKEY 0
-#define NNS_GFD_ALLOC_FROM_LOW 1
-
-typedef u32 NNSGfdPlttKey;
-
-typedef struct NNSGfdFrmPlttVramManager {
-    u32 loAddr;
-    u32 hiAddr;
-    u32 szTotal;
-} NNSGfdFrmPlttVramManager;
+#include "nnsys/gfd.h"
 
 extern NNSGfdFrmPlttVramManager data_02047364;
 

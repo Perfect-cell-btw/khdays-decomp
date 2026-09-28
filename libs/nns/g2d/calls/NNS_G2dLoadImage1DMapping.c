@@ -1,52 +1,13 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nitro/os_types.h"
+#include "nitro/mi.h"
+#include "nitro/spi.h"
+#include "nitro/rtc.h"
+#include "nitro/wm.h"
 
 void DC_FlushRange(const void * startAddr, u32 nBytes);
-typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
-typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
-typedef enum {
-    TP_REQUEST_COMMAND_SAMPLING         = 0x0,
-    TP_REQUEST_COMMAND_AUTO_ON          = 0x1,
-    TP_REQUEST_COMMAND_AUTO_OFF         = 0x2,
-    TP_REQUEST_COMMAND_SET_STABILITY    = 0x3,
-    TP_REQUEST_COMMAND_AUTO_SAMPLING    = 0x10
-} TPRequestCommand;
-typedef enum {
-    TP_RESULT_SUCCESS = 0,
-    TP_RESULT_INVALID_PARAMETER,
-    TP_RESULT_ILLEGAL_STATUS,
-    TP_RESULT_EXCLUSIVE,
-    TP_RESULT_PXI_BUSY
-} TPRequestResult;
-typedef void (*TPRecvCallback) (TPRequestCommand command, TPRequestResult result, u16 index);
-typedef enum MICResult {
-    MIC_RESULT_SUCCESS = 0,
-    MIC_RESULT_BUSY,
-    MIC_RESULT_ILLEGAL_PARAMETER,
-    MIC_RESULT_SEND_ERROR,
-    MIC_RESULT_INVALID_COMMAND,
-    MIC_RESULT_ILLEGAL_STATUS,
-    MIC_RESULT_FATAL_ERROR,
-    MIC_RESULT_MAX
-} MICResult;
-typedef void (*MICCallback) (MICResult result, void * arg);
-typedef void (*PMCallback) (u32 result, void * arg);
-typedef enum RTCResult {
-    RTC_RESULT_SUCCESS = 0,
-    RTC_RESULT_BUSY,
-    RTC_RESULT_ILLEGAL_PARAMETER,
-    RTC_RESULT_SEND_ERROR,
-    RTC_RESULT_INVALID_COMMAND,
-    RTC_RESULT_ILLEGAL_STATUS,
-    RTC_RESULT_FATAL_ERROR,
-    RTC_RESULT_MAX
-} RTCResult;
-typedef void (*RTCCallback) (RTCResult result, void * arg);
 typedef enum {
     GX_TEXSIZE_S8       = 0,
     GX_TEXSIZE_S16      = 1,
@@ -106,42 +67,6 @@ void GXS_LoadOBJ(const void * pSrc, u32 offset, u32 szByte);
 void GX_BeginLoadTex(void);
 void GX_LoadTex(const void * pSrc, u32 destSlotAddr, u32 szByte);
 void GX_EndLoadTex(void);
-typedef struct WMGameInfo {
-    u16 magicNumber;
-    u8 ver;
-    u8 platform;
-    u32 ggid;
-    u16 tgid;
-    u8 userGameInfoLength;
-    union {
-        u8 gameNameCount_attribute;
-        u8 attribute;
-    };
-    u16 parentMaxSize;
-    u16 childMaxSize;
-    union {
-        u16 userGameInfo[112 / sizeof(u16)];
-        struct {
-            u16 userName[8 / sizeof(u16)];
-            u16 gameName[16 / sizeof(u16)];
-            u16 padd1[44];
-        } old_type;
-    };
-} WMGameInfo, WMgameInfo;
-typedef struct WMStartScanCallback {
-    u16 apiid;
-    u16 errcode;
-    u16 wlCmdID;
-    u16 wlResult;
-    u16 state;
-    u8 macAddress[6 ];
-    u16 channel;
-    u16 linkLevel;
-    u16 ssidLength;
-    u16 ssid[32 / sizeof(u16)];
-    u16 gameInfoLength;
-    WMGameInfo gameInfo;
-} WMStartScanCallback, WMstartScanCallback;
 typedef enum WVRResult {
     WVR_RESULT_SUCCESS = 0,
     WVR_RESULT_OPERATING,
@@ -156,8 +81,6 @@ typedef enum WVRResult {
 typedef void (*WVRCallbackFunc) (void * arg, WVRResult result);
 typedef void (*MBFakeScanCallbackFunc) (u16 type, void * arg);
 typedef BOOL (*MBFakeCompareGGIDCallbackFunc) (WMStartScanCallback * arg, u32 defaultGGID);
-typedef void * (*MIAllocatorAllocFunction)(void * userdata, u32 length, u32 alignment);
-typedef void (*MIAllocatorFreeFunction)(void * userdata, void * buffer);
 typedef enum NNSG2dCharacterFmt {
     NNS_G2D_CHARACTER_FMT_CHAR,
     NNS_G2D_CHARACTER_FMT_BMP,

@@ -4,7 +4,7 @@
  * 0.75 and the node moves to 020d3890. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);

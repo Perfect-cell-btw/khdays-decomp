@@ -4,7 +4,7 @@
  * turned by the +0x1c orientation and stored in *dir, its speed in *speed (either may be null),
  * with or without a target. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[4]; } Quat;
 

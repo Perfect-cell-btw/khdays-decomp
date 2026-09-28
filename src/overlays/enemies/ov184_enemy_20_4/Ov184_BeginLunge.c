@@ -5,7 +5,7 @@
  * scale it, and -- unless the abort byte is up -- start animation 3 and hand
  * over to the charge handler. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int owner, int *out);
 extern void SetIndexedSlot(void *self, int index, void *handler);

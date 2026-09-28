@@ -1,7 +1,7 @@
 /* Copy the working VecFx32 after decrementing the node timer, guard on the actor bit, run
  * pose/subaction setup, and advance to the next state callback. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void Ov107_StartAnim(int obj, int a, int b);

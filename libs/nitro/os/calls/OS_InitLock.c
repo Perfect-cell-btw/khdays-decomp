@@ -1,5 +1,7 @@
 
+
 #include "nitro/types.h"
+#include "nitro/hw.h"
 
 extern void *OS_LockByWord(int id, void *word, void *callback);
 extern void *OS_UnlockByWord(int id, void *word, void *callback);
@@ -21,8 +23,6 @@ extern OSLockWord data_027ffff0;
 
 /* The lock-id allocation bitmap: two words of reserved ids, then the owner table. */
 #define OSi_LockIdFlags  ((u32 *)0x027fffb0)
-
-#define REG_EXMEM_CNT    (*(volatile u16 *)0x04000204)
 
 #define OS_LOCKID_INIT   0x7e
 #define OS_LOCKID_ERROR  0x7f

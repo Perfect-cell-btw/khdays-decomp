@@ -1,7 +1,7 @@
 /* Transforms a local point by the object's scale, rotation and offset (copies it when the object is
  * flagged). */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void Vec3TransformViaTempMtx(VecFx32 *in_vec, void *unused, VecFx32 *out_vec);

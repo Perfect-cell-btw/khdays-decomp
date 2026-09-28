@@ -7,7 +7,7 @@
  * re-armed between the actor's +0x224 and +0x228, sub-state 2 is requested and the action ends. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 struct Nib { u8 lo : 4, hi : 4; };

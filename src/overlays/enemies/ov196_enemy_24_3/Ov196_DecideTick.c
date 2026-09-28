@@ -9,7 +9,7 @@
  * timer expired: inside 3.0 request 6, else arm the +0x44 timer (1 if not positive) and
  * request 4. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);
 extern int FX_Sqrt(int x);

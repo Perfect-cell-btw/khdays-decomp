@@ -5,7 +5,7 @@
  * heads for it (Ov235_SteerToTarget); once it is within 4.0 or the +0x4c cooldown has run out,
  * the rig's +0xa8 byte clears and the tick hands over to Ov235_WindUpHoldTick. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int queryTableEntry(int rig, int channel);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);

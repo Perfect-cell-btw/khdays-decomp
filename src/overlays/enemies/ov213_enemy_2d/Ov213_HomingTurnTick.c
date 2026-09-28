@@ -5,7 +5,7 @@
  * +0x40 rotation is rebuilt from data_0204227c and the same direction. Once t reaches 1.0 the timer and +0x7c
  * clear, bit 1 of the actor's +0x394 is raised and the node moves to 020d1208. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int FX_Div(int num, int den);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);

@@ -8,7 +8,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 #define CAST_FLAGS 0xf
 #define CAST_RISE 0x800

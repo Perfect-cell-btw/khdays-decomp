@@ -8,7 +8,7 @@
  * Always returns 0. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov015PlayerActor {
     u8  pad_000[0x4ec];

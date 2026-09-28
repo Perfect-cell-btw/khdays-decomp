@@ -1,20 +1,7 @@
 
+
 #include "nitro/types.h"
-
-typedef enum NNSG2dScreenFormat {
-    NNS_G2D_SCREENFORMAT_TEXT,
-    NNS_G2D_SCREENFORMAT_AFFINE,
-    NNS_G2D_SCREENFORMAT_AFFINEEXT
-} NNSG2dScreenFormat;
-
-typedef struct NNSG2dScreenData {
-    u16 screenWidth;
-    u16 screenHeight;
-    u16 colorMode;
-    u16 screenFormat;
-    u32 szByte;
-    u32 rawData[1];
-} NNSG2dScreenData;
+#include "nnsys/g2d.h"
 
 extern void func_020130b0(void *pScreenDst,
                           const NNSG2dScreenData *pScreenData,

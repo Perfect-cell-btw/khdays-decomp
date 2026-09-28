@@ -1,5 +1,5 @@
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Sphere {
     VecFx32 pos;

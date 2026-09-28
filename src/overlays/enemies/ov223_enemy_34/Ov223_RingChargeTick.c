@@ -6,7 +6,7 @@
  * over to Ov223_AiFastCountdownQueue0. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Ov223Segment { VecFx32 p0; VecFx32 p1; int nLength; int nRadius; };

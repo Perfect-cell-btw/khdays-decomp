@@ -1,55 +1,11 @@
+
+
 #include "nitro/types.h"
 #include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nnsys/g2d.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-typedef enum {
-    GX_TEXFMT_NONE       = 0,
-    GX_TEXFMT_A3I5       = 1,
-    GX_TEXFMT_PLTT4      = 2,
-    GX_TEXFMT_PLTT16     = 3,
-    GX_TEXFMT_PLTT256    = 4,
-    GX_TEXFMT_COMP4x4    = 5,
-    GX_TEXFMT_A5I3       = 6,
-    GX_TEXFMT_DIRECT     = 7
-} GXTexFmt;
-typedef struct NNSG2dPaletteCompressInfo {
-    u16 numPalette;
-    u16 pad16;
-    void * pPlttIdxTbl;
-} NNSG2dPaletteCompressInfo;
-typedef struct NNSG2dPaletteData {
-    GXTexFmt fmt;
-    BOOL bExtendedPlt;
-    u32 szByte;
-    void * pRawData;
-} NNSG2dPaletteData;
-typedef enum NNSG2dBGSelect {
-    NNS_G2D_BGSELECT_MAIN0,
-    NNS_G2D_BGSELECT_MAIN1,
-    NNS_G2D_BGSELECT_MAIN2,
-    NNS_G2D_BGSELECT_MAIN3,
-    NNS_G2D_BGSELECT_SUB0,
-    NNS_G2D_BGSELECT_SUB1,
-    NNS_G2D_BGSELECT_SUB2,
-    NNS_G2D_BGSELECT_SUB3,
-    NNS_G2D_BGSELECT_NUM
-} NNSG2dBGSelect;
-typedef enum NNSG2dBGExtPlttSlot {
-    NNS_G2D_BGEXTPLTTSLOT_MAIN0,
-    NNS_G2D_BGEXTPLTTSLOT_MAIN1,
-    NNS_G2D_BGEXTPLTTSLOT_MAIN2,
-    NNS_G2D_BGEXTPLTTSLOT_MAIN3,
-    NNS_G2D_BGEXTPLTTSLOT_SUB0,
-    NNS_G2D_BGEXTPLTTSLOT_SUB1,
-    NNS_G2D_BGEXTPLTTSLOT_SUB2,
-    NNS_G2D_BGEXTPLTTSLOT_SUB3
-} NNSG2dBGExtPlttSlot;
 extern void BgExtPltt_Upload (NNSG2dBGExtPlttSlot slot, const NNSG2dPaletteData * pPltData, const NNSG2dPaletteCompressInfo * pCmpInfo);
 extern void func_02012a5c (NNSG2dBGSelect bg, const NNSG2dPaletteData * pPltData, const NNSG2dPaletteCompressInfo * pCmpInfo);
 extern NNSG2dBGExtPlttSlot GetBGExtPlttSlot (NNSG2dBGSelect bg);

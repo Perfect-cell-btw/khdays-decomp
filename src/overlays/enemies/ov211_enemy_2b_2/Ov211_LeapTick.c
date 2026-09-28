@@ -7,7 +7,7 @@
  * by up to 1.0 and the owner is announced there (ov107 c5c54). Once the +0xc idle byte clears,
  * sub-state 8 is requested and the action ends. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov211_BindOwnerAndAttach(int height, int a, int b);
 extern int Ov107_FindNearestObject(int owner, int flag);

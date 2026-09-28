@@ -9,7 +9,7 @@
  * two stores, in descending address order, as the ROM does. Written field by field the
  * loads pair up with their stores and the order flips. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void func_02031384(int a, void *p, int c);
 extern void Ov107_PostTagUpdate(int obj, int a, int b);

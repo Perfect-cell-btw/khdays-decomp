@@ -1,25 +1,10 @@
+
+
 #include "nitro/types.h"
+#include "nitro/mi.h"
 #include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
-
-typedef struct {
-    u8 * destp;
-    s32 destCount;
-    u32 length;
-    u16 destTmp;
-    u8 destTmpCnt;
-    u8 flags;
-    u8 flagIndex;
-    u8 lengthFlg;
-    u8 exFormat;
-    u8 _padding[1];
-} MIUncompContextLZ;
 
 /* func_02004484 -- NitroSDK mi_uncomp_stream.c: MI_ReadUncompLZ8. */
 asm s32 func_02004484 (register MIUncompContextLZ * context, register const u8 * data, register u32 len)

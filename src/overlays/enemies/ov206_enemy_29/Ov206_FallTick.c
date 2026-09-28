@@ -4,7 +4,7 @@
  * animation 4 (mode 1), +0x20 and the flag clear and the tick hands over to
  * Ov206_ChargeTick. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);

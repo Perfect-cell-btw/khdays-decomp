@@ -1,6 +1,6 @@
 /* Binds to the leader once, then follows its position. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov210_BindOwnerAndAttach(int a, int b, int c);
 extern long long FX_DivFx64c(int num, int denom);

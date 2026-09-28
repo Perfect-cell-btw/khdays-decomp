@@ -4,7 +4,7 @@
  * 2 and the +0x3d0 part's motion 1 play looped, +0x78 and +0x44 clear and the tick hands over to
  * Ov257_WindUpTick. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void Ov257_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);

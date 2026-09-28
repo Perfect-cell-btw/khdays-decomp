@@ -1,24 +1,13 @@
+
+
 #include "nitro/types.h"
 #include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nitro/gx.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
 #define BG_MODE_WARNING 8
 
-typedef enum {
-    GX_BGMODE_0 = 0,
-    GX_BGMODE_1 = 1,
-    GX_BGMODE_2 = 2,
-    GX_BGMODE_3 = 3,
-    GX_BGMODE_4 = 4,
-    GX_BGMODE_5 = 5,
-    GX_BGMODE_6 = 6
-} GXBGMode;
 void GXS_SetGraphicsMode(GXBGMode bgMode);
 inline GXBGMode GetBGModeSub (void)
 {

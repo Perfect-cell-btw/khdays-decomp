@@ -6,7 +6,7 @@
  * to the owner at +0xf0 and reset to the neutral constant. (Twin of Ov158_AiApplyHeadingAndNormal; differs only
  * in the countdown test: >= 0 here vs > 0 there.) */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     int v[4];

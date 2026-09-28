@@ -2,7 +2,7 @@
  * (0 while bit 1 of +0x1ac is set); the +0x3bc pose then follows the +0x3b8 part's pose, turned by
  * the rotation from data_02042270 to data_0204227c. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } Srt;

@@ -7,7 +7,7 @@
  * and rig motion 1 restart the flap cycle. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct b1 { unsigned char b0 : 1; };
 

@@ -6,7 +6,7 @@
  * to 020cff94. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern int RandNextScaled(int scale);

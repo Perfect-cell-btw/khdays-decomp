@@ -4,7 +4,7 @@
  * node moves on to 020cf5d8. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov259_PlaySound(int actor, int id, int variant, void *at);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

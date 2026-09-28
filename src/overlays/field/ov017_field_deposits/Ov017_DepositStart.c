@@ -10,7 +10,7 @@
  * bound (bit 2 of +0x12). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov017DepositDef {
     u8   pad_00[0x58];

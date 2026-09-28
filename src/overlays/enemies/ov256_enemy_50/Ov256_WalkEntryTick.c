@@ -5,7 +5,7 @@
  * +0x450 part takes motion 1 and the node moves on to 020ce050. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
 extern int Ov256_PickTarget(int *node);

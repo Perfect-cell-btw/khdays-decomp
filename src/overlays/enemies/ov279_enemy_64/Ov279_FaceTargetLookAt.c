@@ -7,7 +7,7 @@
  * Always hand off via 0203c634 to the 020cd8a8 state.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct q4 { int a, b, c, d; };
 extern void Ov107_PostTagUpdate(int a, int b, int c);

@@ -6,7 +6,8 @@
  * about the Y axis. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
+#include "nitro/gx.h"
 
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22, _30, _31, _32; } MtxFx43;
 typedef struct {
@@ -35,8 +36,6 @@ typedef struct NNSG3dGlb {
 #define NNS_G3D_RSFLAG_OPT_SKIP_SBCDRAW 0x200
 #define NNS_G3D_GLB_FLAG_FLUSH_WVP 1
 #define NNS_G3D_GLB_FLAG_FLUSH_VP  2
-#define G3OP_MTX_STORE   0x13
-#define G3OP_MTX_RESTORE 0x14
 
 extern u32 data_0204288c[];             /* bbcmd1 */
 extern u32 data_02042890[];             /* &bbcmd1[1] */

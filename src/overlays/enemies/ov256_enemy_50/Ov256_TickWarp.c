@@ -6,7 +6,7 @@
  * 020cec64. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { VecFx32 v[5]; } Spots5;
 typedef struct { VecFx32 v[4]; } Corners4;

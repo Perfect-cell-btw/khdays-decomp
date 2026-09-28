@@ -1,7 +1,7 @@
 /* Angle between the `dir` heading and `angle` (0203cd20 of the dot product of their unit vectors),
  * made positive when `absolute` is set. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int func_020050b4(int x, int z);
 extern int Fx_Acos(int cosine);

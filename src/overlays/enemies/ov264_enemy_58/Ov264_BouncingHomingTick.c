@@ -4,7 +4,7 @@
  * bHoming78. Phase progress is a divide by one less than nPhaseMax6f. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct MtxFx33 { int m[3][3]; };
 struct Ov264Params;

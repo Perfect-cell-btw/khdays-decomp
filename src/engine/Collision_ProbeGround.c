@@ -1,7 +1,7 @@
 /* Casts a ray 5 units down from just above the entry's position; stores the hit point (or the
  * position) in out. Returns 1 on a hit. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Entry {
     char pad_0000[8];

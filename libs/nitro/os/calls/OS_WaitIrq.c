@@ -1,4 +1,5 @@
 
+
 #include "nitro/types.h"
 #include "nitro/os.h"
 
@@ -12,7 +13,6 @@ extern u32 data_027e0000;
 extern u32 data_027e006c;
 
 #define DTCM ((char *)&data_027e0000)
-#define OSi_IrqCheckFlags (*(volatile u32 *)(DTCM + 0x3ff8))
 
 void OS_WaitIrq(BOOL clear, u32 irqFlags)
 {

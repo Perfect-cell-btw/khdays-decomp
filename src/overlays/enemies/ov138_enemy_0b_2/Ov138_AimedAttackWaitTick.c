@@ -7,7 +7,7 @@
  * item is idle (+0xad) the +0x44 delay is re-armed to a random value in [+0x224, +0x228],
  * sub-state 2 is queued and the state ends. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 static inline unsigned short FX_RadToIdx(int rad) {
     return (unsigned short)((0x28BE60DB9391LL * rad + 0x80000000000LL) >> 44);

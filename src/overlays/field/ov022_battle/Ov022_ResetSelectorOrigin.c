@@ -2,7 +2,7 @@
  * entry or fixed target) and the local actor's position and heading. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov022TypeTwoTarget {
     VecFx32 position;

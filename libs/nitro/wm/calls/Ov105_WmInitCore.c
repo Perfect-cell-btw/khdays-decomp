@@ -1,10 +1,10 @@
+
+
 #include "nitro/types.h"
+#include "nitro/mi.h"
 #include "nitro/os.h"
 
-typedef void *OSMessage;
 typedef void (*WMCallbackFunc)(void *arg);
-
-#define NULL ((void *)0)
 
 /* NitroSDK WM (wireless manager) library, ARM9 side, as linked into ov105. */
 #define WM_FIFO_BUF_SIZE        256
@@ -17,9 +17,6 @@ typedef void (*WMCallbackFunc)(void *arg);
 #define WM_BUF_MSG_NUM          10
 #define PXI_FIFO_TAG_WM         10
 #define PXI_PROC_ARM7           1
-#define OS_MESSAGE_NOBLOCK      0
-#define OS_MESSAGE_BLOCK        1
-#define MI_DMA_MAX_NUM          3
 
 enum {
     WM_ERRCODE_SUCCESS = 0,
@@ -99,8 +96,6 @@ typedef struct WMArm9Buf {
 extern u16 data_ov105_020bfa20;
 #define wmInitialized data_ov105_020bfa20
 #define wm9buf (*(WMArm9Buf **)((u8 *)&data_ov105_020bfa20 + 4))
-
-typedef struct OSMessageQueue OSMessageQueue;
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);

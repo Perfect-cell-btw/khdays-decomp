@@ -1,29 +1,11 @@
-#include "nitro/types.h"
-#include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 /* NitroSDK GX 3D engine registers (g3x.h / g3imm.h inlines, ioreg_G3X.h). */
-#define REG_DISP3DCNT_ADDR      0x04000060
-#define REG_BG0CNT_ADDR         0x04000008
-#define REG_BG0OFS_ADDR         0x04000010
-#define REG_CLEAR_COLOR_ADDR    0x04000350
-#define REG_CLEAR_DEPTH_ADDR    0x04000354
-#define REG_CLRIMAGE_OFFSET_ADDR 0x04000356
-#define REG_FOG_COLOR_ADDR      0x04000358
-#define REG_FOG_OFFSET_ADDR     0x0400035c
-#define REG_EDGE_COLOR_0_L_ADDR 0x04000330
-#define REG_FOG_TABLE_0_ADDR    0x04000360
-#define REG_MTX_MODE_ADDR       0x04000440
-#define REG_POLYGON_ATTR_ADDR   0x040004a4
-#define REG_TEXIMAGE_PARAM_ADDR 0x040004a8
-#define REG_TEXPLTT_BASE_ADDR   0x040004ac
-#define REG_SHININESS_ADDR      0x040004d0
-#define REG_END_VTXS_ADDR       0x04000504
-#define REG_GXSTAT_ADDR         0x04000600
+
+#include "nitro/types.h"
+#include "nitro/mi.h"
+#include "nitro/os.h"
+
 #define reg_G3X_DISP3DCNT       (*(REGType16v *)REG_DISP3DCNT_ADDR)
 #define reg_G2_BG0CNT           (*(REGType16v *)REG_BG0CNT_ADDR)
 #define reg_G2_BG0OFS           (*(REGType32v *)REG_BG0OFS_ADDR)
@@ -37,19 +19,6 @@ typedef void *OSMessage;
 #define reg_G3_SHININESS        (*(REGType32v *)REG_SHININESS_ADDR)
 #define reg_G3_END_VTXS         (*(REGType32v *)REG_END_VTXS_ADDR)
 #define reg_G3X_GXSTAT          (*(REGType32v *)REG_GXSTAT_ADDR)
-#define REG_G3X_DISP3DCNT_THS_MASK 0x0002
-#define REG_G3X_DISP3DCNT_AAE_MASK 0x0010
-#define REG_G3X_DISP3DCNT_ATE_MASK 0x0004
-#define REG_G3X_DISP3DCNT_RO_MASK  0x1000
-#define REG_G3X_DISP3DCNT_GO_MASK  0x2000
-#define REG_G3X_DISP3DCNT_THS_SHIFT 1
-#define REG_G3X_GXSTAT_SE_MASK  0x00008000
-#define REG_G3X_GXSTAT_GE_MASK  0x08000000
-#define REG_G3X_GXSTAT_FI_MASK  0xc0000000
-#define REG_G3X_GXSTAT_FI_SHIFT 30
-#define REG_G2_BG0CNT_PRIORITY_MASK 0x0003
-#define REG_G3X_ALPHA_TEST_REF_MASK 0x001f
-#define REG_ALPHA_TEST_REF_ADDR 0x04000340
 #define reg_G3X_ALPHA_TEST_REF  (*(REGType16v *)REG_ALPHA_TEST_REF_ADDR)
 #define GX_DMA_NOT_USE          ((u32) ~0)
 #define G3OP_MTX_MODE           0x10
@@ -67,11 +36,6 @@ typedef enum { GX_TEXFLIP_NONE = 0 } GXTexFlip;
 typedef enum { GX_TEXPLTTCOLOR0_USE = 0 } GXTexPlttColor0;
 #define GX_LIGHTMASK_NONE 0
 #define GX_POLYGON_ATTR_MISC_NONE 0
-#define REG_G3_POLYGON_ATTR_PLTT_SHIFT 0
-#define REG_G3_POLYGON_ATTR_PM_SHIFT 4
-#define REG_G3_POLYGON_ATTR_ALPHA_SHIFT 16
-#define REG_G3_POLYGON_ATTR_ID_SHIFT 24
-typedef void (*MIDmaCallback)(void *);
 
 extern u32 data_020422b8;   /* GXi_DmaId */
 #define GXi_DmaId data_020422b8
@@ -83,7 +47,6 @@ extern void G3X_ResetMtxStack_2(void);
 extern void MI_DmaFill32Async(u32 dmaNo, void *dest, u32 data, u32 size, MIDmaCallback callback, void *arg);
 extern void MI_DmaFill32(u32 dmaNo, void *dest, u32 data, u32 size);
 extern void INITi_CpuClear32_0x01ff86fc(u32 data, void *destp, u32 size);   /* MIi_CpuClear32 */
-#define MI_CpuFill32(dest, data, size) INITi_CpuClear32_0x01ff86fc((data), (dest), (size))
 
 static inline BOOL G3X_IsGeometryBusy(void)
 {
@@ -178,7 +141,6 @@ static inline void G3_TexImageParam(GXTexFmt texFmt, GXTexGen texGen, GXTexSizeS
 
 #define G2_BLENDTYPE_FADEIN  0x0080
 #define G2_BLENDTYPE_FADEOUT 0x00c0
-#define REG_G2_BLDCNT_EFFECT_MASK 0x00c0
 
 /* G3X_ResetMtxStack -- NitroSDK g3x.c: G3X_Reset (the symbol map calls this G3X_ResetMtxStack; the SDK's G3X_ResetMtxStack is G3X_ResetMtxStack_2). */
 void G3X_ResetMtxStack (void)

@@ -6,7 +6,7 @@
  * 020cf89c) and moves on to 020cf484, otherwise it moves on to the recoil entry directly. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int FX_Div(int num, int den);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);

@@ -8,7 +8,7 @@
  * and hands over to 020d08a4; any other sends the "next" message, resets the clock and plays pose 8. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { u16 id; u16 arg; } Msg4;

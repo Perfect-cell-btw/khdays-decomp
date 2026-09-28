@@ -1,9 +1,9 @@
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
 
 typedef void *OSMessage;
 
-#define NULL ((void *)0)
 #define HW_MAIN_MEM 0x02000000
 
 void INITi_CpuClear32_0x01ff86fc(u32 data, void * destp, u32 size);

@@ -1,6 +1,6 @@
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 #define FX32_ONE 0x1000
 

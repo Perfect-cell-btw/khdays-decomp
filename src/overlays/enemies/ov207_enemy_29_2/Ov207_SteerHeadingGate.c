@@ -9,7 +9,7 @@
  * (0203c634 with the 020cdd78 continuation).
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);

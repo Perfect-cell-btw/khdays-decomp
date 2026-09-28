@@ -13,7 +13,7 @@
  * inline; either one alone leaves the climb's difference and low word in swapped registers. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { unsigned f : 8; } B8;

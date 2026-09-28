@@ -6,7 +6,7 @@
  * common post-update runs afterwards. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void VEC_MultAdd(int scale, const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov033_LaunchProjectile(VecFx32 *pos, unsigned int angle, int kind, int grounded);

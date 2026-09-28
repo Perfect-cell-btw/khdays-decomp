@@ -13,7 +13,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 

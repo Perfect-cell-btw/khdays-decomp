@@ -9,7 +9,7 @@
  * accumulates in +0x20 until 21.0. Ending: effect 0 (flag 1) at the owner, animation 2, the length
  * restarts and the tick hands over to Ov233_AiScanReactTick. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Bits17a { unsigned char b0 : 1, b1 : 1; };

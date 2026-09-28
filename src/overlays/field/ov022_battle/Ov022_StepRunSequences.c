@@ -15,7 +15,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Sequence {
     u16 nFlags;                  /* 0x0000 */

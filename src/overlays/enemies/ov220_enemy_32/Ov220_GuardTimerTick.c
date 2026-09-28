@@ -5,7 +5,7 @@
  * publishes a zero vector to it with mode 4 (flag 2) and hands off to the guard end. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);

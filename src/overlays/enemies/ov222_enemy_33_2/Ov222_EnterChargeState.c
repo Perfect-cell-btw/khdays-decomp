@@ -29,7 +29,7 @@
  * the extract by hand instead lets mwcc fold it to `and #0xff` and drop the mask (-8 bytes). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     u32 lo : 8;

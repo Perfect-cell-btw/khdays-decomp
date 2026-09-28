@@ -5,7 +5,7 @@
 #pragma opt_common_subs off
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov044TickVectors {
     VecFx32 horizontal;

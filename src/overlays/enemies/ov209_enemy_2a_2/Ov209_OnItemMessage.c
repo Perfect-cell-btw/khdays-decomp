@@ -5,7 +5,7 @@
  * 2.0 along its forward axis. The base handler always runs. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[4]; VecFx32 trans; int pad[4]; } SrtTransform;
 struct b2 { int b0 : 1, b1 : 1; };

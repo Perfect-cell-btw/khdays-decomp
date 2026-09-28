@@ -1,10 +1,10 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nitro/hw.h"
 
 typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 /* NitroSDK FS library (file system / archives / overlays), as linked into the main binary.
  * Types from include/nitro/fs/{archive,file,overlay}.h and the library's internal headers. */
@@ -401,8 +401,6 @@ typedef struct {
 #define FS_OVERLAY_FLAG_COMP      0x0001
 #define FS_OVERLAY_FLAG_AUTH      0x0002
 #define FS_OVERLAY_DIGEST_SIZE    20
-#define HW_ROM_HEADER_BUF         0x027ffe00
-#define HW_WM_BOOT_BUF            0x027ffc40
 #define MB_TYPE_MULTIBOOT         2
 
 static inline u32 FS_GetOverlayTotalSize(const FSOverlayInfo *p_ovi)

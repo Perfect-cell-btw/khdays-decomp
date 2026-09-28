@@ -5,17 +5,8 @@
  */
 
 #include "nitro/types.h"
+#include "nnsys/g3d.h"
 
-typedef void (*NNSG3dAnimInitFunc)(void *pAnmObj, void *pResAnm, const void *pResMdl);
-
-typedef struct NNSG3dAnmObjInitFunc {
-    u8 category0;
-    u8 dummy;
-    u16 category1;
-    NNSG3dAnimInitFunc func;
-} NNSG3dAnmObjInitFunc;
-
-#define NNS_G3D_ANMOBJ_INITFUNC_MAX 10
 #define CATEGORY1(a, b) ((u16)((a) | ((b) << 8)))
 
 extern void AnmObj_InitMatTable(void *, void *, const void *);   /* NNSi_G3dAnmObjInitNsBma */

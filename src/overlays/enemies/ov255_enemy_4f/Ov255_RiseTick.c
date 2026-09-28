@@ -3,7 +3,7 @@
  * animation 0x1b plays looped, the +0x3a4 part plays motion 0x16 and the tick hands over to
  * Ov255_RiseTick2. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov255_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);

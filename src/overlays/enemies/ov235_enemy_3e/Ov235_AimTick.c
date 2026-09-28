@@ -7,7 +7,7 @@
  * the +4 point and the tick hands over to Ov235_DashTick. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { int m[9]; } Mtx33;

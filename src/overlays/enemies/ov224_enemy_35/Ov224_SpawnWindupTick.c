@@ -13,7 +13,7 @@
  * requested and the action ends. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int q[4]; } Quat;
 enum { SPAWN_FAN = 0, SPAWN_AIM = 1 };

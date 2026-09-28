@@ -2,6 +2,6 @@
  * OSi_CONSOLE_NOT_DETECT (-1) until the first call. */
 
 #include "nitro/types.h"
+#include "nitro/os.h"
 
-#define OSi_CONSOLE_NOT_DETECT 0xffffffff
 u32 data_020422b0 = OSi_CONSOLE_NOT_DETECT;

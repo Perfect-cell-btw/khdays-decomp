@@ -1,12 +1,7 @@
 
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
-
-typedef struct VecFx16 {
-    fx16 x;
-    fx16 y;
-    fx16 z;
-} VecFx16;
 
 void func_01ffcf48(const VecFx32 *a, const VecFx16 *b, VecFx32 *out)
 {

@@ -1,12 +1,11 @@
-#include "nitro/types.h"
-#include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 /* NitroSDK SPI library, touch panel (tp.c): the ARM9 side of the PXI touch-panel protocol. */
+
+#include "nitro/types.h"
+#include "nitro/os.h"
+#include "nitro/gx.h"
+
 typedef int PXIFifoTag;
 typedef u32 REGType32;
 typedef u64 REGType64;   /* the SDK divider registers are written through plain u64 (the pair may merge into stm) */
@@ -26,19 +25,9 @@ enum { TP_STATE_READY = 0, TP_STATE_SAMPLING, TP_STATE_AUTO_SAMPLING, TP_STATE_A
 #define SPI_PXI_RESULT_ILLEGAL_STATUS       0x0003
 #define SPI_PXI_RESULT_EXCLUSIVE            0x0004
 #define TP_RAW_MAX  0x1000
-#define GX_LCD_SIZE_X 256
-#define GX_LCD_SIZE_Y 192
 #define TP_CALIBRATE_DOT_SCALE_SHIFT        8
 #define TP_CALIBRATE_ORIGIN_SCALE_SHIFT     2
-#define HW_TOUCHPANEL_BUF   0x027fffaa   /* this SDK: the touch sample in the system work at HW_SYS_WORK + 0xaa */
-#define HW_NVRAM_USER_INFO  0x027ffc80
-#define REG_DIVCNT_ADDR     0x04000280
-#define REG_DIV_NUMER_ADDR  0x04000290
-#define REG_DIV_DENOM_ADDR  0x04000298
-#define REG_DIV_RESULT_ADDR 0x040002a0
 #define reg_CP_DIVCNT (*(REGType16v *)REG_DIVCNT_ADDR)
-#define REG_CP_DIVCNT_BUSY_MASK 0x8000
-#define CP_DIV_32_32BIT_MODE 0
 
 typedef struct {
     u16 x;
@@ -118,9 +107,7 @@ extern struct {
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
 extern void OS_Terminate(void);
-#define OS_Panic(...) OS_Terminate()
 extern u32 TP_CalcCalibrateParam(TPCalibrateParam *calibrate, u16 raw_x1, u16 raw_y1, u16 dx1, u16 dy1, u16 raw_x2, u16 raw_y2, u16 dx2, u16 dy2);
-#define OS_GetSystemWork_nvramUserInfo() ((void *)HW_NVRAM_USER_INFO)
 
 static inline void CP_SetDivImm32_32_NS_(u32 numer, u32 denom)
 {

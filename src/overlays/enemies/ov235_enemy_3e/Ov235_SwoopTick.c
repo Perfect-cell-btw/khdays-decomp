@@ -4,7 +4,7 @@
  * clears, animation 0x1a plays, the part plays motion 0x14 and the tick hands over to
  * Ov235_CircleTick. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[4]; } Quat;
 

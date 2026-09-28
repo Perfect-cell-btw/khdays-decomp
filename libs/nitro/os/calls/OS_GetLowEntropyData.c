@@ -1,51 +1,13 @@
+
+
 #include "nitro/types.h"
 #include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-#define OS_LOW_ENTROPY_DATA_SIZE 32
-#define HW_MAIN_MEM_SYSTEM 0x027ffc00
-#define HW_BUTTON_XY_BUF   0x027fffa8
 #define NVRAM_CONFIG_SIZE  0x74      /* sizeof(NVRAMConfig) in this SDK version */
 #define reg_GX_VCOUNT      (*(vu16 *)0x04000006)
 #define reg_G3X_GXSTAT     (*(vu32 *)0x04000600)
 #define reg_PAD_KEYINPUT   (*(vu16 *)0x04000130)
 static inline u16 GX_GetVCount(void) { return reg_GX_VCOUNT; }
-
-typedef struct {
-    u8 bootCheckInfo[0x20];       /* 0x000 */
-    u32 resetParameter;           /* 0x020 */
-    u8 padding5[0x8];             /* 0x024 */
-    u32 romBaseOffset;            /* 0x02c */
-    u8 cartridgeModuleInfo[12];   /* 0x030 */
-    u32 vblankCount;              /* 0x03c */
-    u8 wmBootBuf[0x40];           /* 0x040 */
-    u8 nvramUserInfo[0x100];      /* 0x080 */
-    u8 isd_reserved1[0x20];       /* 0x180 */
-    u8 arenaInfo[0x48];           /* 0x1a0 */
-    u8 real_time_clock[8];        /* 0x1e8 */
-    u32 dmaClearBuf[4];           /* 0x1f0 */
-    u8 rom_header[0x160];         /* 0x200 */
-    u8 isd_reserved2[32];         /* 0x360 */
-    u32 pxiSignalParam[2];        /* 0x380 */
-    u32 pxiHandleChecker[2];      /* 0x388 */
-    u32 mic_last_address;         /* 0x390 */
-    u16 mic_sampling_data;        /* 0x394 */
-    u16 wm_callback_control;      /* 0x396 */
-    u16 wm_rssi_pool;             /* 0x398 */
-    u8 ctrdg_SetModuleInfoFlag;   /* 0x39a */
-    u8 ctrdg_IsExisting;          /* 0x39b */
-    u32 component_param;          /* 0x39c */
-    void *threadinfo_mainp;       /* 0x3a0 */
-    void *threadinfo_subp;        /* 0x3a4 */
-    u16 button_XY;                /* 0x3a8 */
-    u8 touch_panel[4];            /* 0x3aa */
-    u16 autoloadSync;             /* 0x3ae */
-} OSSystemWork;
-#define OS_GetSystemWork() ((OSSystemWork *)HW_MAIN_MEM_SYSTEM)
 
 extern volatile u64 data_0204466c;   /* OSi_TickCounter */
 #define OSi_TickCounter data_0204466c

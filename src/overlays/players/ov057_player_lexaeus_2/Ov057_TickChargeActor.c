@@ -1,6 +1,6 @@
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef int (*ActorHook)(int pActor);
 typedef void (*ActorFinishHook)(int pActor, int mode);

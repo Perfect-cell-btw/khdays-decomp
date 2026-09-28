@@ -1,10 +1,9 @@
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
 
 typedef void *OSMessage;
 typedef void (*WMCallbackFunc)(void *arg);
-
-#define NULL ((void *)0)
 
 /* NitroSDK WM (wireless manager) library, ARM9 side, as linked into ov105. */
 #define WM_FIFO_BUF_SIZE        256

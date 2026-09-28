@@ -1,5 +1,5 @@
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(int *out, int *tbl, int r);

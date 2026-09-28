@@ -9,7 +9,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 #define PACKET_CHANNEL 0xa
 #define PACKET_MODE 6

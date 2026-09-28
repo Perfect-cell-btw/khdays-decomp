@@ -10,7 +10,7 @@
  * bit 4 raised.  Answers 0. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov016HitInfo {
     VecFx32 position;         /* 0x00 */

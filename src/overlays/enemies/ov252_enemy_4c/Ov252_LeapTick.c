@@ -10,7 +10,7 @@
  * pose 0x19 plays, the velocity rests and the node moves on to 020d1350. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { VecFx32 center; int nRadius; } Sphere;
 typedef struct { unsigned f : 8; } B8;

@@ -8,7 +8,7 @@
  * scaled by the speed. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Bit0 { unsigned char b0 : 1; };
 

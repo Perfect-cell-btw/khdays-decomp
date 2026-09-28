@@ -4,7 +4,7 @@
  * d100 below 30 requests move 0x10, the move chooser (Ov227_ChooseMove) may queue another, and
  * otherwise sub-state 2 is requested. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov227_MeasureTargetGap(int *node, VecFx32 *dir);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

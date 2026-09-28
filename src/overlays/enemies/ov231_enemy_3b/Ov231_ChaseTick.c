@@ -9,7 +9,7 @@
  * contact raises it below 1.07 or lowers it above 2.67 (once the climb is over). Finally the +0x30
  * velocity goes to the owner's +0xf0 and is scaled by 0.25. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Angle_TurnToward(int from, int to, int step, int mode);
 extern void QuatFromAxisAngle(void *q, const VecFx32 *axis, int angle);

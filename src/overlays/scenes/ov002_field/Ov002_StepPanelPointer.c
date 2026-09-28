@@ -10,7 +10,7 @@
  * ARM.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     char pad000[0xa4];

@@ -5,7 +5,7 @@
  * the node's own callback or walks the children in turn, giving each its joint matrix. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct MtxFx43 {
     s32 m[12];

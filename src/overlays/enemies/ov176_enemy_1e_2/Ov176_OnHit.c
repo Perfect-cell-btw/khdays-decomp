@@ -9,7 +9,7 @@
  * 0x8000 hit goes to 0xd from 0xc/0xd and to 0xc otherwise. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov175ActionState {
     int pOwner;

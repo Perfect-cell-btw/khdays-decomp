@@ -12,7 +12,7 @@
  * The table is read-only (nothing in the ROM writes it); declaring it const is
  * what lets mwcc schedule its loads past the stores into the slot record. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     char pad_00[0x5c];

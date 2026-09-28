@@ -10,7 +10,7 @@
  * 0xb and moves on to 020cfb24; earlier runs replay pose 0x1b. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 struct Items46c { char pad[0x46c]; int item[16]; };

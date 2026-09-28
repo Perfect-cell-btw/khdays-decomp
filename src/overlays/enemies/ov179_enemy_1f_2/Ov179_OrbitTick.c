@@ -10,7 +10,7 @@
  * 1-in-120 (or a target beyond 0x4000) -> 4, 1-in-20 -> 5, else with a free target 70 % -> 8 and
  * 30 % -> 9. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern int Ov179_FaceTargetGetClearance(int node, VecFx32 *out);

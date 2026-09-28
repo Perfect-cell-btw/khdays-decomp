@@ -1,5 +1,5 @@
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b)
 {

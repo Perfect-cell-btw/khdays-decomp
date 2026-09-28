@@ -6,7 +6,7 @@
  * active, bit 2 of the actor flags is raised and the enemy hands over to state 2, or, when
  * grounded, tells the slot callback 0 and hands over to state 0. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 

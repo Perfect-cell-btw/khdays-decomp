@@ -1,30 +1,10 @@
+
+
 #include "nitro/types.h"
+#include "nitro/mi.h"
 #include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
-
-typedef struct {
-    u32 compParam :4;
-    u32 compType :4;
-    u32 destSize :24;
-} MICompressionHeader;
-typedef struct {
-    u8 * destp;
-    s32 destCount;
-    u32 length;
-    u16 destTmp;
-    u8 destTmpCnt;
-    u8 flags;
-    u8 flagIndex;
-    u8 lengthFlg;
-    u8 exFormat;
-    u8 _padding[1];
-} MIUncompContextLZ;
 
 /* MI_InitUncompContextLZ -- NitroSDK mi_uncomp_stream.c: MI_InitUncompContextLZ. */
 void MI_InitUncompContextLZ (MIUncompContextLZ * context, u8 * dest, const MICompressionHeader * header)

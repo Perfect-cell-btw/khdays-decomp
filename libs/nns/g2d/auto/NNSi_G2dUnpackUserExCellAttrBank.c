@@ -1,23 +1,10 @@
+
+
 #include "nitro/types.h"
 #include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nnsys/g2d.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
-
-#define NNS_G2D_UNPACK_OFFSET_PTR(ptr, baseOffs) (ptr) = (void *)((u32)(ptr) + (u32)baseOffs)
-
-typedef struct NNSG2dUserExCellAttr {
-    u32 * pAttr;
-} NNSG2dUserExCellAttr;
-typedef struct NNSG2dUserExCellAttrBank {
-    u16 numCells;
-    u16 numAttribute;
-    NNSG2dUserExCellAttr * pCellAttrArray;
-} NNSG2dUserExCellAttrBank;
 
 /* NNSi_G2dUnpackUserExCellAttrBank -- NitroSystem g2d_Load.c: NNSi_G2dUnpackUserExCellAttrBank. */
 void NNSi_G2dUnpackUserExCellAttrBank (NNSG2dUserExCellAttrBank * pCellAttrBank)

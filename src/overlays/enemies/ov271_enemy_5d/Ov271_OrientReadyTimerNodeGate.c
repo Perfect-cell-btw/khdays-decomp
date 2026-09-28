@@ -17,7 +17,7 @@
  * it to a local pointer and copying THROUGH that pointer makes it live from the top of the block.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct h2 { unsigned short a, b; };
 extern int  Ov271_GetState(int obj);

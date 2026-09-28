@@ -10,7 +10,7 @@
  * the note) and unmarks the owner. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { VecFx32 c; int r; } Sphere;

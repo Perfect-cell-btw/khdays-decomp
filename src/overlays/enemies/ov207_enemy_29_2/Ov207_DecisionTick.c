@@ -8,7 +8,7 @@
  * farther the same test gives sub-state 5 or a second roll (under 50: 0xa, else 9). Every
  * decision ends the state. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int owner, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

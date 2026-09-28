@@ -6,7 +6,7 @@
  * table, y 0) scaled by 10.0 plus a random 0..5.0; the +4 position is copied into +0x40, +0x4c
  * gets a third random angle, the timer restarts and handler 020cd844 takes over. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct bf { unsigned b : 8; };
 struct hw60 { unsigned short lo : 8, hi : 8; };

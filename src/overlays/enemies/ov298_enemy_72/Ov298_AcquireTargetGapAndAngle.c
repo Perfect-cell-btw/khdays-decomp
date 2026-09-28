@@ -1,7 +1,7 @@
 /* Stores the nearest target (none: queues action 2, returns -1); returns the edge gap and sets the
  * angle. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject();
 extern int VEC_Subtract();

@@ -4,7 +4,7 @@
  *
  * Matched byte-exact 2026-07-23, first compile. One of three byte-identical siblings. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void *Ov107_FindNearestObject(void *obj, int a);
 extern void VEC_Subtract(void *a, void *b, void *out);

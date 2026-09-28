@@ -8,7 +8,7 @@
  * the +4 rig is idle sub-state 0 follows. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Sphere { VecFx32 centre; int radius; };
 struct ListNode { void *item; };

@@ -13,7 +13,7 @@
  * fires at the +4 point, the sub-state clears and the state ends. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u8 hi, mid, lo; } Fx24;

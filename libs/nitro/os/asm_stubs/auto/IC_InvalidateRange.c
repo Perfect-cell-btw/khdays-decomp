@@ -1,8 +1,7 @@
 /* NitroSDK original assembly (libraries/os/src/os_cache.c). */
 
 #include "nitro/types.h"
-
-#define HW_CACHE_LINE_SIZE           32
+#include "nitro/hw.h"
 
 asm void IC_InvalidateRange (register void * startAddr, register u32 nBytes)
 {

@@ -3,7 +3,7 @@
  * point with pose 0x17 and effect 0xb, and the brain waits on 020cf674. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov237_ChargeRelease(int *node);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, int at);

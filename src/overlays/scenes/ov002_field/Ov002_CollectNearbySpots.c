@@ -3,7 +3,7 @@
  * Keep the declaration order: it preserves the target's register reuse. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov002SpotActionOwner Ov002SpotActionOwner;
 struct Ov002SpotActionOwner {

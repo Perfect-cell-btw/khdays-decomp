@@ -18,7 +18,7 @@
  * and rotates the three registers this arm uses.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov020WallQuery {
     VecFx32 vOrigin;                    /* 0x00 */

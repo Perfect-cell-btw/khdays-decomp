@@ -6,7 +6,7 @@
  * byte clears poses 0x33 / 0x37 loop and the next move is 0xb (+0xac set, +0xa0 cleared) or 0xd. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 

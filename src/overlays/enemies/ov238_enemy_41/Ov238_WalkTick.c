@@ -4,7 +4,7 @@
  * motion 0xa); with charges left (+0x2d) and the target at least 6.0 away a charge restarts (pose 0x12,
  * motion 8) and the walk goes on; otherwise it lunges (pose 0x13, motion 9); both lead to 020d1400. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov238_TargetGap(int *node);
 extern void Ov238_TurnVelocity(int *node, VecFx32 *vec);

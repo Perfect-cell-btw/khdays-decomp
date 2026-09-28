@@ -1,7 +1,7 @@
 /* Setter: hand the caller's vector (param v) to Ov107_MoveNodeAndRelayout, store the second
  * triple (param_5..7) into owner fields +0x398/+0x39c/+0x3a0, and set owner hw60 hi bit 1. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *v);
 void Ov233_SetTwoVecsAndFlag(int param_1, VecFx32 v, VecFx32 v2) {

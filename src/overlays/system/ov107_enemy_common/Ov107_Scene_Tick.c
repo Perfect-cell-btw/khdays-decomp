@@ -2,7 +2,7 @@
  * and late hooks. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     unsigned pad0 : 1;

@@ -8,7 +8,7 @@
  * any hit fires reaction 0x4f (attack 6) or 0x51 at the +8 target. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
 struct Bit6 { u8 b0 : 1, b1 : 1, b2 : 1, b3 : 1, b4 : 1, b5 : 1, b6 : 1; };

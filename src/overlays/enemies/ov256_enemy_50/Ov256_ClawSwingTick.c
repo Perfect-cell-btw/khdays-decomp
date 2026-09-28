@@ -5,7 +5,7 @@
  * otherwise the part restarts motion 1. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov256_RotateByOwnerHeading(int *out, int param_2, int *vec);
 extern void Ov256_AttackHitTestB(int *node, int a, int b);

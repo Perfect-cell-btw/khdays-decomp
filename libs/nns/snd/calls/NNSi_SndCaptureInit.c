@@ -1,29 +1,11 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nitro/os_types.h"
+#include "nnsys/snd.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-typedef enum {
-    NNS_SND_CAPTURE_FORMAT_PCM16,
-    NNS_SND_CAPTURE_FORMAT_PCM8
-} NNSSndCaptureFormat;
-typedef enum {
-    NNS_SND_CAPTURE_TYPE_REVERB,
-    NNS_SND_CAPTURE_TYPE_EFFECT,
-    NNS_SND_CAPTURE_TYPE_SAMPLING
-} NNSSndCaptureType;
-typedef void (*NNSSndCaptureCallback)(void * bufferL, void * bufferR, u32 len, NNSSndCaptureFormat format, void * arg);
-typedef struct NNSSndFader {
-    int origin;
-    int target;
-    int counter;
-    int frame;
-} NNSSndFader;
 typedef struct CaptureParam {
     BOOL activeFlag;
     NNSSndCaptureType type;

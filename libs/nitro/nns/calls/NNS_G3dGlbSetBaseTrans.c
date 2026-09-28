@@ -2,7 +2,7 @@
  * it. A null target leaves everything alone. The three-word copy is a WHOLE-
  * STRUCT assignment, which is what produces the ldm/stm pair. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     char pad0000[0xd4];

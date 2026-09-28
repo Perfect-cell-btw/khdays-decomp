@@ -2,7 +2,7 @@
  * turn toward it and it counts as in front when it lies ahead of the old +0x38 heading. A front target
  * gets pose 5 or 6, otherwise 7 or 8 (random), and the node moves on to 020cebb4. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);

@@ -9,7 +9,7 @@
  * +0x3c velocity is handed to the actor (+0xf0) and cleared. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { int m[9]; } Mtx33;

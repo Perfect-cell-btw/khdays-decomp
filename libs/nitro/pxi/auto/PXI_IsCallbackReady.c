@@ -1,13 +1,12 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nitro/hw.h"
 
 typedef void *OSMessage;
 
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
 typedef int PXIProc;
-#define HW_MAIN_MEM_SYSTEM 0x027ffc00
 typedef struct OSSystemWork {
     u8 reserved[0x388];
     u32 pxiHandleChecker[2];      /* 0x388: fifo tags each processor has a callback for */

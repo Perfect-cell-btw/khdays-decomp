@@ -1,4 +1,5 @@
-typedef struct { int _00, _01, _10, _11; } MtxFx22;
+
+#include "nitro/fx.h"
 
 void MTX_ScaleApply22(const MtxFx22 *src, MtxFx22 *dst, int sx, int sy) {
     dst->_00 = (int)(((long long)sx * src->_00) >> 12);

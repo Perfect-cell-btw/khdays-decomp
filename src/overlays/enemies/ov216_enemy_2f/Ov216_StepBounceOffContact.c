@@ -2,7 +2,7 @@
  * direction off the contact normal, turning and slowing; tracks grounding and bounces. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct MtxFx33 { int m[3][3]; };
 struct Ov214Params;

@@ -7,7 +7,7 @@
  * 0x10 (too far); if no target, next-state 0x10. Hand off via 0203c634 (cb=0).
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *v);
 extern int  Ov107_FindNearestObject(int obj, int *out);

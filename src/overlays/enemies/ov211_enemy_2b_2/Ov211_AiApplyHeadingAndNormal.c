@@ -1,7 +1,7 @@
 /* Turns toward the heading at the turn rate, composes it with the surface-normal tilt and applies
  * it. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct T { int a, b, c, d; };
 struct S { struct T t; char pad[0x28 - 16]; unsigned char flag; };

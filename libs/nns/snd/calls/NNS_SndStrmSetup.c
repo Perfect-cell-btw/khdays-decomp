@@ -1,10 +1,11 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nitro/os_types.h"
+#include "nitro/mi.h"
+#include "nitro/pxi.h"
+#include "nitro/spi.h"
+#include "nnsys/fnd.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
@@ -124,47 +125,6 @@ void SND_SetupAlarm(
     void *arg
 );
 struct SNDExChannel;
-typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
-typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
-typedef enum {
-    PXI_FIFO_TAG_EX = 0,
-    PXI_FIFO_TAG_USER_0,
-    PXI_FIFO_TAG_USER_1,
-    PXI_FIFO_TAG_SYSTEM,
-    PXI_FIFO_TAG_NVRAM,
-    PXI_FIFO_TAG_RTC,
-    PXI_FIFO_TAG_TOUCHPANEL,
-    PXI_FIFO_TAG_SOUND,
-    PXI_FIFO_TAG_PM,
-    PXI_FIFO_TAG_MIC,
-    PXI_FIFO_TAG_WM,
-    PXI_FIFO_TAG_FS,
-    PXI_FIFO_TAG_OS,
-    PXI_FIFO_TAG_CTRDG,
-    PXI_FIFO_TAG_CARD,
-    PXI_FIFO_TAG_WVR,
-    PXI_FIFO_TAG_CTRDG_Ex,
-    PXI_FIFO_TAG_CTRDG_PHI,
-    PXI_MAX_FIFO_TAG = 32
-} PXIFifoTag;
-typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
-typedef void (*PMSleepCallback) (void *);
-typedef struct PMiSleepCallbackInfo PMSleepCallbackInfo;
-struct PMiSleepCallbackInfo {
-    PMSleepCallback callback;
-    void * arg;
-    PMSleepCallbackInfo * next;
-};
-typedef struct {
-    void * prevObject;
-    void * nextObject;
-} NNSFndLink;
-typedef struct {
-    void * headObject;
-    void * tailObject;
-    u16 numObjects;
-    u16 offset;
-} NNSFndList;
 void NNS_FndAppendListObject(NNSFndList * list, void * object);
 typedef enum NNSSndStrmFormat {
     NNS_SND_STRM_FORMAT_PCM8,

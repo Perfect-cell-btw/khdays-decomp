@@ -4,7 +4,7 @@
  * flag is set, the part takes motion 1 and the node moves on to 020d227c. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov256_AttackHitTestB(int *node, int a, int b);

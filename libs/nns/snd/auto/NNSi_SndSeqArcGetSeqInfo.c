@@ -1,46 +1,11 @@
-#include "nitro/types.h"
-#include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-#define NNS_SND_SEQ_ARC_INVALID_OFFSET 0xffffffff
-
-typedef struct SNDBinaryFileHeader {
-    char signature[4];
-    u16 byteOrder;
-    u16 version;
-    u32 fileSize;
-    u16 headerSize;
-    u16 dataBlocks;
-} SNDBinaryFileHeader;
-typedef struct SNDBinaryBlockHeader {
-    u32 kind;
-    u32 size;
-} SNDBinaryBlockHeader;
-typedef struct NNSSndSeqParam {
-    u16 bankNo;
-    u8 volume;
-    u8 channelPrio;
-    u8 playerPrio;
-    u8 playerNo;
-    u16 reserved;
-} NNSSndSeqParam;
-typedef struct NNSSndSeqArcSeqInfo {
-    u32 offset;
-    struct NNSSndSeqParam param;
-} NNSSndSeqArcSeqInfo;
-typedef struct NNSSndSeqArc {
-    struct SNDBinaryFileHeader fileHeader;
-    struct SNDBinaryBlockHeader blockHeader;
-    u32 baseOffset;
-    u32 count;
-    NNSSndSeqArcSeqInfo info[0];
-} NNSSndSeqArc;
 
 /* NNSi_SndSeqArcGetSeqInfo -- NitroSystem seqdata.c: NNSi_SndSeqArcGetSeqInfo. */
+
+#include "nitro/types.h"
+#include "nitro/os_types.h"
+#include "nnsys/snd.h"
+
 const NNSSndSeqArcSeqInfo * NNSi_SndSeqArcGetSeqInfo (const NNSSndSeqArc * seqArc, int index)
 {
 

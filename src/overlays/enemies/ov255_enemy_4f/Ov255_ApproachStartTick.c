@@ -3,7 +3,7 @@
  * heads for it (Ov255_SteerToTarget) and, once the +0xc idle byte clears, animation 3 plays, the
  * +0x3a4 part plays motion 2 and the tick hands over to Ov255_ApproachTick. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void Ov255_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);

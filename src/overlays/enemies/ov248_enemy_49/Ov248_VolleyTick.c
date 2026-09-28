@@ -4,7 +4,7 @@
  * launched from the +0xc origin, 2.0 + 3/8 x shot ahead along the +0x40 heading (jittered by up to
  * 1.5 on x and z after the first shot). Eight shots, 0.19 apart, then brain slot +0x20 runs 020cfe84. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { unsigned short lo : 8; unsigned short hi : 8; } Flags60;
 struct Ov248Owner { char pad[0x3c0]; int shots[8]; };

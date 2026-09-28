@@ -7,7 +7,7 @@
  * 0x16c/7 fires at the +4 anchor and the node moves to 020cfa44. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov253Bounds { int lo[1]; int hi[4]; };
 

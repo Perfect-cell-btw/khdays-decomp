@@ -3,7 +3,7 @@
  * added to the +0x3a0 position, then the anchor's +0x14 position is added; the owner is notified
  * (020c5c54), the seat's motion runs (020c9ec8) and the base sync (020c6980) finishes. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Srt_SetRotationQuat(int placement, void *rotation);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);

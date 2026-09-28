@@ -2,7 +2,8 @@
 /* NODEMIX requires at least one contribution in a validated SBC stream. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
+#include "nitro/gx.h"
 
 typedef struct MtxFx33 { fx32 aM[9]; } MtxFx33;
 typedef struct MtxFx43 { fx32 aM[12]; } MtxFx43;
@@ -40,9 +41,6 @@ typedef struct NNSG3dRenderState {
     u8 pad00c_0cc[0xc0];
     volatile u32 nodeMixCacheValid[2];
 } NNSG3dRenderState;
-typedef struct G3MatrixRegisters {
-    u32 mode, reserved04, push, store, restore, identity;
-} G3MatrixRegisters;
 
 extern NNSG3dNodeMixCacheEntry data_020489d4[];
 /* Alias of the vector member in the first 100-byte cache record. */

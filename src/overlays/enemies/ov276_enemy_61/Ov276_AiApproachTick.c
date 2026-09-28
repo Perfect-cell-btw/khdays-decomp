@@ -14,7 +14,7 @@
  * degenerates into the Y-rotation steering tail (see codegen-cracks.md for the Q12-radians
  * conversion). */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     int m[9];

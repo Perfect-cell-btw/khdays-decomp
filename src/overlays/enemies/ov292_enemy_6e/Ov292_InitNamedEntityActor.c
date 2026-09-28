@@ -17,7 +17,7 @@
  * it; filled afterwards the whole prologue schedules one slot late.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Placement { VecFx32 vec; int scale; };
 struct Box { VecFx32 min, max; };

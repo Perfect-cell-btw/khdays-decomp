@@ -1,14 +1,11 @@
+
+
 #include "nitro/types.h"
 #include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nitro/pxi.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-#define HW_CACHE_LINE_SIZE 32
 #define inp_top r1
 #define outp r2
 #define inp r3
@@ -17,29 +14,6 @@ typedef void *OSMessage;
 #define count8 r6
 #define index r7
 #define len r12
-
-typedef enum {
-    PXI_FIFO_TAG_EX = 0,
-    PXI_FIFO_TAG_USER_0,
-    PXI_FIFO_TAG_USER_1,
-    PXI_FIFO_TAG_SYSTEM,
-    PXI_FIFO_TAG_NVRAM,
-    PXI_FIFO_TAG_RTC,
-    PXI_FIFO_TAG_TOUCHPANEL,
-    PXI_FIFO_TAG_SOUND,
-    PXI_FIFO_TAG_PM,
-    PXI_FIFO_TAG_MIC,
-    PXI_FIFO_TAG_WM,
-    PXI_FIFO_TAG_FS,
-    PXI_FIFO_TAG_OS,
-    PXI_FIFO_TAG_CTRDG,
-    PXI_FIFO_TAG_CARD,
-    PXI_FIFO_TAG_WVR,
-    PXI_FIFO_TAG_CTRDG_Ex,
-    PXI_FIFO_TAG_CTRDG_PHI,
-    PXI_MAX_FIFO_TAG = 32
-} PXIFifoTag;
-typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
 
 /* MIi_UncompressBackward -- NitroSDK init/crt0.c: MIi_UncompressBackward. */
 asm void  MIi_UncompressBackward (register void *bottom)

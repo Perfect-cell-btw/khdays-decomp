@@ -1,4 +1,4 @@
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_PostTagUpdate();
 extern int Ov107_StartAnim();

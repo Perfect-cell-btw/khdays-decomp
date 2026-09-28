@@ -8,7 +8,7 @@
  * finally mark the bucket (ov002 02076968 mode 1) and register the piece (02076480). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov016LiftDef {
     u8 pad_00[0x68];

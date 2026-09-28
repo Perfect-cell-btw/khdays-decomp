@@ -7,7 +7,7 @@
  * timer (+0x1b4) is reset either way. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov016FollowerDef {
     u8 pad_00[0x58];

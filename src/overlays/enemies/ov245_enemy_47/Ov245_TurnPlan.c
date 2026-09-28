@@ -6,7 +6,7 @@
  * are cleared and the node moves to 020d4248. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[9]; } Mtx33;
 

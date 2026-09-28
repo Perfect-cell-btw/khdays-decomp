@@ -11,7 +11,7 @@
  * Same shape as ov122_020d12f4: Fx32-wrapped coordinates, `long` counters, two point cursors. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

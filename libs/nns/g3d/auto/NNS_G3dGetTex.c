@@ -1,80 +1,11 @@
-#include "nitro/types.h"
-#include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-#define NNS_G3D_SIGNATURE_NSBTX '0XTB'
-
-typedef u32 NNSGfdTexKey;
-typedef struct NNSG3dResFileHeader_ {
-    union {
-        char signature[4];
-        u32 sigVal;
-    };
-    u16 byteOrder;
-    u16 version;
-    u32 fileSize;
-    u16 headerSize;
-    u16 dataBlocks;
-} NNSG3dResFileHeader;
-typedef struct NNSG3dResDataBlockHeader_ {
-    union {
-        u32 kind;
-        char chr[4];
-    };
-    u32 size;
-} NNSG3dResDataBlockHeader;
-typedef struct NNSG3dResDictTreeNode_ {
-    u8 refBit;
-    u8 idxLeft;
-    u8 idxRight;
-    u8 idxEntry;
-} NNSG3dResDictTreeNode;
-typedef struct NNSG3dResDict_ {
-    u8 revision;
-    u8 numEntry;
-    u16 sizeDictBlk;
-    u16 dummy_;
-    u16 ofsEntry;
-    NNSG3dResDictTreeNode node[1];
-} NNSG3dResDict;
-typedef struct NNSG3dResTexInfo_ {
-    NNSGfdTexKey vramKey;
-    u16 sizeTex;
-    u16 ofsDict;
-    u16 flag;
-    u16 dummy_;
-    u32 ofsTex;
-} NNSG3dResTexInfo;
-typedef struct NNSG3dResTex4x4Info_ {
-    NNSGfdTexKey vramKey;
-    u16 sizeTex;
-    u16 ofsDict;
-    u16 flag;
-    u16 dummy_;
-    u32 ofsTex;
-    u32 ofsTexPlttIdx;
-} NNSG3dResTex4x4Info;
-typedef struct NNSG3dResPlttInfo_ {
-    NNSGfdTexKey vramKey;
-    u16 sizePltt;
-    u16 flag;
-    u16 ofsDict;
-    u16 dummy_;
-    u32 ofsPlttData;
-} NNSG3dResPlttInfo;
-typedef struct NNSG3dResTex_ {
-    NNSG3dResDataBlockHeader header;
-    NNSG3dResTexInfo texInfo;
-    NNSG3dResTex4x4Info tex4x4Info;
-    NNSG3dResPlttInfo plttInfo;
-    NNSG3dResDict dict;
-} NNSG3dResTex;
 
 /* NNS_G3dGetTex -- NitroSystem res_struct_accessor.c: NNS_G3dGetTex. */
+
+#include "nitro/types.h"
+#include "nitro/os.h"
+#include "nnsys/g3d.h"
+
 NNSG3dResTex * NNS_G3dGetTex (const NNSG3dResFileHeader * header)
 {
     u32 * blks;

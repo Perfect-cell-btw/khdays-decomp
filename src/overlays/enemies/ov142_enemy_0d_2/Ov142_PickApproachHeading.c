@@ -26,7 +26,7 @@
  * long long, casting its result, or folding the addend to a constant zero all drop
  * the instruction and land at 408 bytes. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int owner, int mode);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);

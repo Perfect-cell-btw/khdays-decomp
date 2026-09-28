@@ -14,7 +14,7 @@
  * The tie is retired.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov199_BuildHeadingRotation(int *state, VecFx32 v, int flag);
 extern void Ov107_PostTagUpdate(int a, int b, int c);

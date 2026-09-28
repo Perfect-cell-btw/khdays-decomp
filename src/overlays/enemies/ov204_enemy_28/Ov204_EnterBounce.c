@@ -6,7 +6,7 @@
  * of both branches: the tail-merged block keeps it ahead of the normalise argument. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     int actor;

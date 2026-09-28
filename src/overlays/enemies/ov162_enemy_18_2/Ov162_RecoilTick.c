@@ -8,7 +8,7 @@
  * counter reset. A set +0x3cc bit 0 on the actor ends the state with sub-state 8. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct ListNode {
     void *item;

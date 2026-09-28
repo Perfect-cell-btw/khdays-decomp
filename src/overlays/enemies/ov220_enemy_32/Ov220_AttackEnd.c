@@ -4,7 +4,7 @@
  * phase, the +0x3e flag is cleared and the tick hands off to the guard tick. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);

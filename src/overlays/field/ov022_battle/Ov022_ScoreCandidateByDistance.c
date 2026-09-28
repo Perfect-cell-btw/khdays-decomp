@@ -2,7 +2,7 @@
  * of sight); returns the best distance. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov022Actor {
     char pad_0000[0x12];

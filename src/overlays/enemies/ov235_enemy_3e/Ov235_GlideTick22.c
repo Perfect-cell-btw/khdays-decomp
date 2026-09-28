@@ -3,7 +3,7 @@
  * animation 0x22 plays looped, the +0x3a8 part plays motion 0x18 and the tick hands over to
  * Ov235_GlideTick23. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov235_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);

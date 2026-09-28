@@ -16,7 +16,7 @@
  * argument is computed, exactly as the original does.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov020ScriptTask {
     char pad00[8];

@@ -1,14 +1,8 @@
 
-#include "nitro/types.h"
-#include "nitro/fx.h"
 
-#define REG_DIVCNT          (*(vu16 *)0x04000280)
-#define REG_DIV_NUMER       (*(vu64 *)0x04000290)
-#define REG_DIV_DENOM       (*(vs64 *)0x04000298)
-#define REG_DIV_RESULT      (*(vs64 *)0x040002a0)
-#define REG_SQRTCNT         (*(vu16 *)0x040002b0)
-#define REG_SQRT_RESULT     (*(vu32 *)0x040002b4)
-#define REG_SQRT_PARAM      (*(u64 *)0x040002b8)
+#include "nitro/types.h"
+#include "nitro/fx_types.h"
+#include "nitro/hw.h"
 
 void func_01ffa7fc(VecFx32 *first, VecFx32 *second)
 {

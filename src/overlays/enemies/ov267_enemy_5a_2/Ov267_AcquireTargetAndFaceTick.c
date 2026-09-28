@@ -18,7 +18,7 @@
  * table loads issue before the stores. One of a 3-member family (family).
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int *Ov107_FindNearestObject(int a, int b);
 extern int VEC_Subtract(void *a, void *b, void *out);

@@ -16,7 +16,7 @@
 /* Ov022ShotDesc */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct ShotDesc {
     unsigned int nFlags;             /* 0x00 */

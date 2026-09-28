@@ -1,23 +1,7 @@
 
+
 #include "nitro/types.h"
-
-#define NULL ((void *)0)
-
-#define NNS_GFD_TEXSIZE_MIN 0x10
-#define NNS_GFD_TEXSIZE_MAX 0x7fff0
-#define NNS_GFD_ALLOC_ERROR_TEXKEY 0
-
-typedef u32 NNSGfdTexKey;
-
-typedef struct NNSGfdFrmTexRegionState {
-    u32 head;
-    u32 tail;
-    BOOL bActive;
-    const BOOL bHalfSize;
-    const u16 index;
-    const u16 pad16_;
-    const u32 baseAddress;
-} NNSGfdFrmTexRegionState;
+#include "nnsys/gfd.h"
 
 extern NNSGfdFrmTexRegionState *data_020423fc[2];
 extern NNSGfdFrmTexRegionState *data_02042404[5];

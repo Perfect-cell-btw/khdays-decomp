@@ -3,7 +3,7 @@
  * commit either way. The turn is skipped in the boot mode where data_0204be04
  * is set. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SoundMgr_SetListener(void *from, const VecFx32 *delta, void *out);

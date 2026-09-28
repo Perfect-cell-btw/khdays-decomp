@@ -1,20 +1,16 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nitro/hw.h"
 
 typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 typedef int OSTimer;
 #define OS_TIMER_0 0
 #define OS_TIMER_PRESCALER_64 (1UL << 0)
-#define REG_OS_TM0CNT_H_E_MASK 0x0080
-#define REG_OS_TM0CNT_H_I_MASK 0x0040
 #define OSi_TICK_TIMERCONTROL  (REG_OS_TM0CNT_H_E_MASK | REG_OS_TM0CNT_H_I_MASK | OS_TIMER_PRESCALER_64)
 #define OSi_TICK_TIMER         OS_TIMER_0
-#define REG_TM0CNT_L_ADDR      0x04000100
-#define REG_TM0CNT_H_ADDR      0x04000102
 
 static inline void OS_SetTimerCount(OSTimer id, u16 count)
 {

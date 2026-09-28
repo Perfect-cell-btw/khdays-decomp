@@ -1,5 +1,5 @@
 
-#include "nitro/os.h"
+#include "nitro/os_types.h"
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(OSIntrMode state);

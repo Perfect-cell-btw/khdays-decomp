@@ -3,7 +3,7 @@
  * effect stops. With a target (+0x54) both headings turn to it; +0x48 clears and the node moves on to
  * 020cdd74. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov146_Rider_LaunchIfReady(int partner, VecFx32 at);

@@ -6,7 +6,7 @@
  * with a +0xa0 reward pending (pose 0x15, motion 0xe, effect 4 mode 2, node to 020d0854); otherwise
  * pose 0x14, motion 0xd and effect 4 mode 1 restart it. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);

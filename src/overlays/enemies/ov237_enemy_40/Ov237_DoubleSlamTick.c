@@ -6,7 +6,7 @@
  * the +4 rig is idle poses 9 / partner 5 play and the brain waits on 020cec58. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { VecFx32 pos; VecFx32 axis[3]; int ext[3]; } Box;
 typedef struct { int w[7]; int radius; } Segment;

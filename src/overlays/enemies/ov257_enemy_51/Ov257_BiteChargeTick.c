@@ -4,7 +4,7 @@
  * otherwise the +0x10 step heads for it (Ov257_SteerToTarget) and, once the +0xc idle byte clears,
  * sub-state 2 is requested as well. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int queryTableEntry(int rig, int channel);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);

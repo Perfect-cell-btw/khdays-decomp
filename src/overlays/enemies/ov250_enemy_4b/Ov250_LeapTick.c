@@ -10,7 +10,7 @@
  * animation 0xf once (+0x50). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 struct hw60 { unsigned short lo : 8, hi : 8; };

@@ -8,7 +8,7 @@
  * sub-state 2 is requested. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flagLo : 4; u8 flagHi : 4; u8 pos[9]; } Cmd14;

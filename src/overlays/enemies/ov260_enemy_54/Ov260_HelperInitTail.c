@@ -4,7 +4,7 @@
  * loads from the +0x38c owner's kit entry 0x31 and registers with the +0x9c scene. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_PackTextureHandle(char *self, int kind);
 extern int CreateSubitemInstance0xB4(int item);

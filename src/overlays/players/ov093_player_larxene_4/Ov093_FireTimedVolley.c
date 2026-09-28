@@ -21,7 +21,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Emit {
     char pad00[0xc];

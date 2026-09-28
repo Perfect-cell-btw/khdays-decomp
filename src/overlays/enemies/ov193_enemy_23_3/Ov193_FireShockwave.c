@@ -8,7 +8,7 @@
  *
  * One of three byte-identical siblings. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(void *a, void *b);

@@ -5,7 +5,7 @@
  * action ends. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *pose, VecFx32 *in);
 extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *c);

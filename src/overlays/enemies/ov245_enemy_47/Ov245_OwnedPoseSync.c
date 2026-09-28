@@ -3,7 +3,7 @@
  * the owner is notified (020c5c54), the base sync (020c6980) runs, then the placement is copied
  * into the +0x38c item's +0x10 and that one's +0x10 into the +0x388 target's +0x10. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[11]; } Pose44;
 struct Ov245Item { char pad[0x10]; Pose44 pose; };

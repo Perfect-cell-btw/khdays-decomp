@@ -7,7 +7,7 @@
  * (Same shape as Ov208_MotionTickTimers; different field offsets.)
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int v[4]; } Xform;
 

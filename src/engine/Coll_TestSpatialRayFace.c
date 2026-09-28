@@ -1,7 +1,7 @@
 /* Cached Q27 ray intersection with full XYZ spatial edge planes. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct VecFx16 { s16 x, y, z; } VecFx16;
 typedef struct CollisionPlane {

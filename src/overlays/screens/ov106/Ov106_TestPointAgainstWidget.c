@@ -2,7 +2,7 @@
  * mode 1, else 1.0): on a hit test of 0 the widget moves to the projected point (+0x8d74) and
  * refreshes. Returns the test result. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern char *data_ov106_020b8b60;
 extern int func_02023c40(void);

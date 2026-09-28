@@ -1,7 +1,7 @@
 /* AI step: follows the part's motion and, on ground contact, posts pose 8, starts animation 2 and
  * continues. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void Ov107_StartAnim(int obj, int a, int b);

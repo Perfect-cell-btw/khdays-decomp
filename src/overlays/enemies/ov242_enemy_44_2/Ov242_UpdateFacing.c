@@ -3,7 +3,7 @@
  * +0xa0 orientation, shifts the +0x10 offset into the actor's +0xf0 and reloads the zero vector
  * into it (the Ov120_RecomputeNodeVectorAndReloadTriple shape). */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(int *out, int *tbl, int r);

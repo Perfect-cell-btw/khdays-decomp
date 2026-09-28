@@ -1,10 +1,7 @@
 
-#include "nitro/types.h"
 
-typedef struct NNSG3dGeCommandBuffer {
-    u32 count;
-    u32 words[0xc0];
-} NNSG3dGeCommandBuffer;
+#include "nitro/types.h"
+#include "nnsys/g3d.h"
 
 extern void MIi_CpuSend32(const void *src, volatile void *dst, u32 size);
 

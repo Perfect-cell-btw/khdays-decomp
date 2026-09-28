@@ -3,7 +3,7 @@
  * +0x14 point. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Srt_SetRotationQuat(void *srt, void *from);
 extern void Ov107_MoveNodeAndRelayout(int owner, const VecFx32 *pos);

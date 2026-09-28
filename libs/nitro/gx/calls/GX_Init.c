@@ -7,6 +7,7 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/os.h"
 
 #define reg_GX_POWCNT        (*(vu16 *)0x04000304)
 #define reg_GX_DISPCNT       (*(vu32 *)0x04000000)
@@ -20,8 +21,6 @@
 #define POWCNT_INIT_MASK 0x20e
 #define POWCNT_DSEL      0x8000
 #define POWCNT_LCD       0x0001
-
-#define OS_LOCK_ID_ERROR (-3)
 
 extern void GX_InitGXState(void);
 extern s32 OS_GetLockID(void);

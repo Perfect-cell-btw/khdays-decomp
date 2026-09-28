@@ -2,7 +2,7 @@
  * placed 1.0 above the +8 point, the +0x4c delay is re-rolled in [+0x224, +0x228], the +0x1c9
  * return sub-state is requested and the tick ends. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 

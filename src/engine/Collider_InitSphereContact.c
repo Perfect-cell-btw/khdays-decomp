@@ -1,6 +1,6 @@
 /* Fills the contact normal and distance for a sphere (direction from the center). */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Vec3ScaleAddQ27();
 extern void VEC_Subtract();

@@ -8,7 +8,7 @@
  * and the node moves to 020d30f4. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct m4 { int w[4]; };
 struct Bits3bc { unsigned char b0 : 1; };

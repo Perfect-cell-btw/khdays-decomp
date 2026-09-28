@@ -5,7 +5,7 @@
  * 0..10.0, clears the +0x14 timer and moves the node to 020d2ed4. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct m4 { int w[4]; };
 struct w8 { unsigned int lo : 8, rest : 24; };

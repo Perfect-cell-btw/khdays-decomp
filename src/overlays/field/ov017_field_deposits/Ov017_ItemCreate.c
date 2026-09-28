@@ -6,7 +6,7 @@
  * +0x16) and +0x17 = 1; then registers the piece (ov002 02076480). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov017Item {
     u8   pad_000[0xc];

@@ -1,23 +1,15 @@
+
+
 #include "nitro/types.h"
 #include "nitro/os.h"
+#include "nnsys/gfd.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-typedef u32 NNSGfdTexKey;
-typedef NNSGfdTexKey (*NNSGfdFuncAllocTexVram)(u32 szByte, BOOL is4x4comp, u32 opt);
-typedef int (*NNSGfdFuncFreeTexVram)(NNSGfdTexKey key);
 extern NNSGfdFuncAllocTexVram data_020423ec;
 extern NNSGfdFuncFreeTexVram data_020423f0;
 void Party_SetActiveSlots(int idx1st, int idx2nd, int idx3rd, int idx4th, int idx5th);
 NNSGfdTexKey func_02010f7c(u32 szByte, BOOL is4x4comp, u32 opt);
 int NNS_GfdFreeFrmTexVram(NNSGfdTexKey memKey);
 void NNS_GfdResetFrmTexVramState(void);
-typedef struct NNSGfdFrmTexVramMnager {
-    u16 numSlot;
-} NNSGfdFrmTexVramMnager;
 extern NNSGfdFrmTexVramMnager data_02047360;
 extern void Party_SetActiveSlots (int idx1st, int idx2nd, int idx3rd, int idx4th, int idx5th);
 extern void NNS_GfdResetFrmTexVramState (void);

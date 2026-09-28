@@ -6,7 +6,7 @@
    an index, which is what keeps the multiply out of the loops. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov002RosterBlock {
     void *pInstance;                /* +0x00, -1 until the class is made */

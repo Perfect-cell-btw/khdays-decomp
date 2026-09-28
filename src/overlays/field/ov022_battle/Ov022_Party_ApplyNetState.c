@@ -1,7 +1,7 @@
 /* Host-side: applies the received member records (position, state, flags) to each party actor;
  * returns whether any changed. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov022NetRecord {
     unsigned long long state;

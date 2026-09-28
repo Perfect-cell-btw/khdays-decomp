@@ -3,7 +3,7 @@
  * is normalised; within 5.0 a d100 roll under 50 marks the target's +0x190 point instead. Effect 0x1b
  * plays at that spot 15.6 high. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);

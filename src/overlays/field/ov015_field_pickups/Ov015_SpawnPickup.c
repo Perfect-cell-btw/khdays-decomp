@@ -16,7 +16,7 @@
  * and limit 0 (+0x13c); the piece is registered in bucket nKind (ov002 02076480). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov015PickupKindRow {
     void *pHandlers;          /* 0x00: class handler block of the kind */

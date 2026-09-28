@@ -1,12 +1,10 @@
+
+
+/* NitroSDK SND library (ARM9 side): command interface to the ARM7 sound driver. */
+
 #include "nitro/types.h"
 #include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-/* NitroSDK SND library (ARM9 side): command interface to the ARM7 sound driver. */
 typedef struct SNDCommand {
     struct SNDCommand *next;      /* 0x00 */
     u32 id;                       /* 0x04 */

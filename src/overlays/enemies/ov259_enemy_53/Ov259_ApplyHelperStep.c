@@ -1,7 +1,7 @@
 /* Apply the ov259 helper's +0xc step: the owner moves to its +0xb0 position plus the step
  * (020c5c54) and the step resets. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);

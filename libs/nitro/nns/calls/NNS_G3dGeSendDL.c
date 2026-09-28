@@ -1,10 +1,7 @@
 
-#include "nitro/types.h"
 
-typedef struct NNSG3dGeBuffer {
-    u32 idx;
-    u32 data[192];
-} NNSG3dGeBuffer;
+#include "nitro/types.h"
+#include "nnsys/g3d.h"
 
 extern volatile int data_027e0078;
 extern NNSG3dGeBuffer *data_027e0074;

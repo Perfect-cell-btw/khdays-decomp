@@ -1,5 +1,5 @@
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern VecFx32 data_ov002_0207e19c;
 extern int data_ov002_0207f628;

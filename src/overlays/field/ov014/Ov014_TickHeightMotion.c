@@ -2,7 +2,7 @@
  * syncs the actor; at 0 the local player sends record 2 once. With flag 0x80 hands over to
  * Ov014_ActorStepProgress. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     char pad00[0xe0];

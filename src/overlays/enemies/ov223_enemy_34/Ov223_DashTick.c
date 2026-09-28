@@ -7,7 +7,7 @@
  * sub-state 6 ends the state. While busy, a step shorter than 0x80 does nothing; otherwise
  * sub-action 2 (target) or 4 runs (Ov223_StrikeSweepEntities). */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Bit0 { unsigned char bit0 : 1; };
 

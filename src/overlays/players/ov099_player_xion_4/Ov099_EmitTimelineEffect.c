@@ -6,7 +6,7 @@
 #pragma opt_dead_assignments off
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 VecFx32;
 struct TimelineActor;

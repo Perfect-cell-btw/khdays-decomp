@@ -4,7 +4,7 @@
  * is scaled by +0x5c; both +0x394/+0x39c limb pairs update (020ced80) and a pending +0x60 timer runs
  * down. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int x, y, z, w; } Quat;
 struct Ov283Limbs { char pad[0x394]; int bones[2]; int parts[2]; };

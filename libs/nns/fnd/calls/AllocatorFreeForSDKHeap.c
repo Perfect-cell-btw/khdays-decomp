@@ -1,64 +1,11 @@
+
+
 #include "nitro/types.h"
+#include "nitro/mi.h"
 #include "nitro/os.h"
+#include "nnsys/fnd.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-typedef enum {
-    OS_ARENA_MAIN            = 0,
-    OS_ARENA_MAIN_SUBPRIV    = 1,
-    OS_ARENA_MAINEX          = 2,
-    OS_ARENA_ITCM            = 3,
-    OS_ARENA_DTCM            = 4,
-    OS_ARENA_SHARED          = 5,
-    OS_ARENA_WRAM_MAIN       = 6,
-    OS_ARENA_WRAM_SUB        = 7,
-    OS_ARENA_WRAM_SUBPRIV    = 8,
-    OS_ARENA_MAX             = 9
-} OSArenaId;
-typedef int OSHeapHandle;
 extern void OS_FreeToHeap(OSArenaId id, OSHeapHandle heap, void * ptr);
-typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
-typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
-typedef void * (*MIAllocatorAllocFunction)(void * userdata, u32 length, u32 alignment);
-typedef void (*MIAllocatorFreeFunction)(void * userdata, void * buffer);
-typedef struct {
-    void * prevObject;
-    void * nextObject;
-} NNSFndLink;
-typedef struct {
-    void * headObject;
-    void * tailObject;
-    u16 numObjects;
-    u16 offset;
-} NNSFndList;
-typedef struct NNSiFndHeapHead NNSiFndHeapHead;
-struct NNSiFndHeapHead {
-    u32 signature;
-    NNSFndLink link;
-    NNSFndList childList;
-    void * heapStart;
-    void * heapEnd;
-    u32 attribute;
-};
-typedef NNSiFndHeapHead * NNSFndHeapHandle;
-typedef void (*NNSFndHeapVisitor)(void * memBlock, NNSFndHeapHandle heap, u32 userParam);
-typedef struct NNSFndAllocator NNSFndAllocator;
-typedef void * (*NNSFndFuncAllocatorAlloc)(NNSFndAllocator * pAllocator, u32 size);
-typedef void (*NNSFndFuncAllocatorFree)(NNSFndAllocator * pAllocator, void * memBlock);
-typedef struct NNSFndAllocatorFunc NNSFndAllocatorFunc;
-struct NNSFndAllocatorFunc {
-    NNSFndFuncAllocatorAlloc pfAlloc;
-    NNSFndFuncAllocatorFree pfFree;
-};
-struct NNSFndAllocator {
-    NNSFndAllocatorFunc const * pFunc;
-    void * pHeap;
-    u32 heapParam1;
-    u32 heapParam2;
-};
 
 /* AllocatorFreeForSDKHeap -- NitroSystem allocator.c: AllocatorFreeForSDKHeap. */
 void AllocatorFreeForSDKHeap (NNSFndAllocator * pAllocator, void * memBlock)

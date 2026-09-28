@@ -5,7 +5,7 @@
  * hook decides bit 1 of +0x694, and past 0xb000 on the +0x7b0 timer the enemy hands over to
  * state 0x23. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 

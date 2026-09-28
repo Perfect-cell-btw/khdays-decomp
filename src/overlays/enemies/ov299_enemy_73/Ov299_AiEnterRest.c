@@ -1,6 +1,6 @@
 /* Clears the hit link and stance bit 0, sets bit 7, stops and installs the queue-action-1 step. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern const VecFx32 data_02041dc8;
 extern void SetIndexedSlot();

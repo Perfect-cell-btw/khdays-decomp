@@ -9,7 +9,7 @@
  * down the +0x74 hits and requests 0xd when they run out or the hit's +0x14 kind is 0x6b. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov227ModePair { u8 nFirst; u8 nSecond; };
 union Ov227ModeSlot { struct Ov227ModePair sPair; u8 aModes[2]; };

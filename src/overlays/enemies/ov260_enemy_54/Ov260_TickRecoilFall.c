@@ -6,7 +6,7 @@
  * node moves on to 020cfa38. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Flag17a { u8 b0 : 1; };

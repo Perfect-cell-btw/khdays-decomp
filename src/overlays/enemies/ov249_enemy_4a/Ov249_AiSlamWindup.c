@@ -7,7 +7,7 @@
  * via data_0203d210 (see codegen-cracks.md), build a MtxFx33, and rotate the owner's offset
  * vector into ctx+0x10. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     int m[9];

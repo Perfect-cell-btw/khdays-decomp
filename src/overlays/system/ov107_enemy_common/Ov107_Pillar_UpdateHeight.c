@@ -5,7 +5,7 @@
 
 /* Partial layouts for the node, its source, and its attached shape. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Source {
     unsigned char pad0[0x26b8];

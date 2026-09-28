@@ -6,7 +6,7 @@
  * shot is launched (cd484) along it. Once the +0x30 busy byte clears sub-state 2 is requested
  * and the state ends. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov123_FindTarget(int actor, int mode);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);

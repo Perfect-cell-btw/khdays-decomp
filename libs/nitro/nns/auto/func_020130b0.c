@@ -1,18 +1,10 @@
-#include "nitro/types.h"
 
-typedef u16 GXScrFmtText;
+
+#include "nitro/types.h"
+#include "nnsys/g2d.h"
 
 #define PLANE_WIDTH 32
 #define PLANE_HEIGHT 32
-
-typedef struct NNSG2dScreenData {
-    u16 screenWidth;
-    u16 screenHeight;
-    u16 colorMode;
-    u16 screenFormat;
-    u32 szByte;
-    u32 rawData[1];
-} NNSG2dScreenData;
 
 static inline int CalcTextScreenOffset(int x, int y, int w, int h)
 {

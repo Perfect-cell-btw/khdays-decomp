@@ -2,7 +2,7 @@
 /* The shot block of a slot, which the ROM addresses through its own base. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct SlotShot {
     u8 nState;                       /* 0x00 */

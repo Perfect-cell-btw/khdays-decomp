@@ -3,7 +3,7 @@
  * scales it by the speed; once the +4 item's animation is no longer busy (+0xad) the direction
  * is copied to +0x28 and the node moves to 020d6e00. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_ActionResource_GetOffsetAndScale(int item, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);

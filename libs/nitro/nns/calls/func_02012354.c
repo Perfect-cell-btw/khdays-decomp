@@ -1,8 +1,8 @@
 
-#include "nitro/types.h"
-#include "nitro/fx.h"
 
-#define NULL ((void *)0)
+#include "nitro/types.h"
+#include "nitro/fx_types.h"
+
 #define NNS_G2D_INVALID_CELL_TRANSFER_STATE_HANDLE 0xffffffff
 
 typedef enum NNSG2dAnimationPlayMode {

@@ -1,6 +1,6 @@
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void NNSi_FndGetCurrentRootHeap(void);
 /* out = origin + t * disp, in fx32. */

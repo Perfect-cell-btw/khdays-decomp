@@ -16,7 +16,7 @@
  * (Ov016_KickableAckPeer 02081624).  Always 0. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov016PeerMessage {
     u8   nType;               /* 0x00: 3 */

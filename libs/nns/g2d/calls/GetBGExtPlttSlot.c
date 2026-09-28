@@ -1,9 +1,11 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nnsys/g2d.h"
 
 typedef void *OSMessage;
 
-#define NULL ((void *)0)
 #define HW_MAIN_MEM 0x02000000
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
@@ -15,28 +17,6 @@ typedef void *OSMessage;
 #define REG_G2_BG0CNT_BGPLTTSLOT_MASK 0x2000
 #define REG_DB_BG0CNT_OFFSET 0x1008
 #define REG_DB_BG1CNT_OFFSET 0x100a
-
-typedef enum NNSG2dBGSelect {
-    NNS_G2D_BGSELECT_MAIN0,
-    NNS_G2D_BGSELECT_MAIN1,
-    NNS_G2D_BGSELECT_MAIN2,
-    NNS_G2D_BGSELECT_MAIN3,
-    NNS_G2D_BGSELECT_SUB0,
-    NNS_G2D_BGSELECT_SUB1,
-    NNS_G2D_BGSELECT_SUB2,
-    NNS_G2D_BGSELECT_SUB3,
-    NNS_G2D_BGSELECT_NUM
-} NNSG2dBGSelect;
-typedef enum NNSG2dBGExtPlttSlot {
-    NNS_G2D_BGEXTPLTTSLOT_MAIN0,
-    NNS_G2D_BGEXTPLTTSLOT_MAIN1,
-    NNS_G2D_BGEXTPLTTSLOT_MAIN2,
-    NNS_G2D_BGEXTPLTTSLOT_MAIN3,
-    NNS_G2D_BGEXTPLTTSLOT_SUB0,
-    NNS_G2D_BGEXTPLTTSLOT_SUB1,
-    NNS_G2D_BGEXTPLTTSLOT_SUB2,
-    NNS_G2D_BGEXTPLTTSLOT_SUB3
-} NNSG2dBGExtPlttSlot;
 
 /* the function's addrTable[]: the BGnCNT register offsets, owned by g2d_screen_tables.c */
 extern const u16 data_02041a04[8];

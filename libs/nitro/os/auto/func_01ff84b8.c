@@ -1,22 +1,12 @@
 
+
 #include "nitro/types.h"
+#include "nitro/card.h"
 
 #define reg_CARD_MASTERCNT (*(vu8 *)0x040001a1)
 #define reg_CARD_CMD       (*(vu8 *)0x040001a8)
 #define reg_CARD_CNT       (*(vu32 *)0x040001a4)
 #define reg_CARD_DATA      (*(vu32 *)0x04100010)
-
-enum {
-    CARD_MASTER_SELECT_ROM = 0x00,
-    CARD_MASTER_ENABLE = 0x80,
-    CARD_CMD_READ_PAGE = 0xb7,
-    CARD_CTRL_CMD_MASK = 0x07000000,
-    CARD_CTRL_CMD_PAGE = 0x01000000,
-    CARD_CTRL_READ = 0x00000000,
-    CARD_CTRL_RESET_HI = 0x20000000,
-    CARD_CTRL_START = 0x80000000,
-    CARD_CTRL_READY = 0x00800000
-};
 
 void func_01ff84b8(u32 source, void *destination, s32 length)
 {

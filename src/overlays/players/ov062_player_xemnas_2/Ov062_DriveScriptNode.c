@@ -8,7 +8,7 @@
  * (difficulty 1) or 0x1000 until it completes, which retires it. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct b2 { u8 b0 : 1, b1 : 1; };
 

@@ -6,7 +6,8 @@
  * normal matrix; the command pointer always advances by 3. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
+#include "nitro/hw.h"
 
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22; } MtxFx33;
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22, _30, _31, _32; } MtxFx43;
@@ -79,8 +80,6 @@ typedef struct NNSG3dGlb {
 #define NNS_G3D_MATFLAG_TEXMTX_ROTZERO   0x0004
 #define NNS_G3D_MATFLAG_TEXMTX_TRANSZERO 0x0008
 #define NNS_G3D_MATFLAG_EFFECTMTX        0x2000
-#define REG_G3_TEXIMAGE_PARAM_TGEN_MASK  0xc0000000
-#define REG_G3_TEXIMAGE_PARAM_TGEN_SHIFT 30
 #define GX_TEXGEN_NORMAL 2
 #define GX_MTXMODE_POSITION_VECTOR 2
 #define GX_MTXMODE_TEXTURE         3

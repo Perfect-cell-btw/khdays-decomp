@@ -1,8 +1,7 @@
 /* NitroSDK original assembly (libraries/os/src/os_protectionUnit.c). */
 
 #include "nitro/types.h"
-
-#define HW_C1_PROTECT_UNIT_ENABLE    0x00000001
+#include "nitro/hw.h"
 
 asm void OS_DisableProtectionUnit (void)
 {

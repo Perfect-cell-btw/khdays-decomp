@@ -1,11 +1,9 @@
+
+
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 #include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nitro/gx.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
@@ -38,12 +36,6 @@ typedef union {
         fx32 m[3][3];
         fx32 a[9];
     } MtxFx33;
-typedef enum {
-    GX_MTXMODE_PROJECTION      = 0,
-    GX_MTXMODE_POSITION        = 1,
-    GX_MTXMODE_POSITION_VECTOR = 2,
-    GX_MTXMODE_TEXTURE         = 3
-} GXMtxMode;
 int G3X_GetClipMtx(MtxFx44 * m);
 int G3X_GetVectorMtx(MtxFx33 * m);
 extern void G3_MtxMode(GXMtxMode mode);

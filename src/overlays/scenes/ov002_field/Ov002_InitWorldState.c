@@ -1,7 +1,7 @@
 /* World screen open handler: resets the world state, camera presets and feature flags from the game
  * state. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     int radialX;                   /* +0x00 */

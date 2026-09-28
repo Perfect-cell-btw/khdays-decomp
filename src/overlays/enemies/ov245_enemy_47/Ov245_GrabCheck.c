@@ -6,7 +6,7 @@
  * node moves to 020d47e0. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct w8 { unsigned int lo : 8, rest : 24; };
 

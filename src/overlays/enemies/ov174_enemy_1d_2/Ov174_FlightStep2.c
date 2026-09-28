@@ -4,7 +4,7 @@
  * phase * 0x6488 / 40, halved and scaled by 0x200. When the +4 sub-item's +0xad byte is clear
  * animation 8 plays (looping) and the state advances to Ov174_FlightStep3. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int obj, int a, int b);

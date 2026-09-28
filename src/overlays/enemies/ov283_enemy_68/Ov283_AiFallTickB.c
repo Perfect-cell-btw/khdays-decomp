@@ -1,6 +1,6 @@
 /* Applies gravity and damping; lands when the animation ends and grounded (second variant). */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void ScaleVec3Fx12(int factor, int *src, int *dst);
 extern unsigned int Rand16NextScaled(unsigned int range);

@@ -6,7 +6,7 @@
  * beam (020d0dbc) and 0x2a a marker (020d14e4, +0x5b8) at the position. The base handler always runs. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct EffectPair { int res; int handle; };
 struct Ov258Effects { char pad[0x464]; struct EffectPair pair[0x30]; };

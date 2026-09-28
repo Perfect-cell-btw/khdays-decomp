@@ -2,7 +2,7 @@
  * becomes (0, 0.25, 0) and is copied to +0x20, effect 0x1f starts at the +0x10 point (020cd148) and
  * the node moves on to 020cec98. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);

@@ -9,7 +9,7 @@
  * 020cf3a4. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov254_KnockbackAtFeet(int actor, int side);
 extern VecFx32 *List_First(void *list);

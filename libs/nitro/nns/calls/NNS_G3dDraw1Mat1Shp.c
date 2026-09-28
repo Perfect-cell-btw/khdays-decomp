@@ -1,7 +1,7 @@
 /* NitroSystem immediate draw of one material and one shape. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct NNSG3dResDictTreeNode {
     u8 refBit;

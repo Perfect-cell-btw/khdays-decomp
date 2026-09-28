@@ -23,7 +23,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void FX_InvAsync(fx32 x);
 extern fx64c FX_GetDivResultFx64c(void);

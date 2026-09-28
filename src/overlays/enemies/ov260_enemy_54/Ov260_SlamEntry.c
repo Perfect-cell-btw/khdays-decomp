@@ -3,7 +3,7 @@
  * feet (+0x74 lowered by the +0x13c height, mode 4), +0x74 clears and the node moves on to 020ce8b0. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);

@@ -3,7 +3,7 @@
  * 0xf plays, the part takes motion 0x14 and the node moves on to 020d0b44, else pose 0xe and motion 0x13
  * restart. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
 extern int Ov252_GroundCheck(int *node);

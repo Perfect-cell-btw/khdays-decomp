@@ -9,7 +9,7 @@
  * clears, the +0x4c cooldown is re-rolled in [+0x224, +0x228] and sub-state 2 is requested. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

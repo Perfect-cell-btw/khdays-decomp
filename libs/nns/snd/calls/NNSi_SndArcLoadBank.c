@@ -1,102 +1,11 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nnsys/snd.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-#define NNS_SND_ARC_LOAD_BANK (1 << 1)
-#define NNS_SND_ARC_LOAD_WAVE (1 << 2)
-#define NNS_SND_ARC_INVALID_WAVEARC_NO 0xffff
-#define NNS_SND_ARC_BANK_TO_WAVEARC_NUM 4
-#define NNS_SND_ARC_WAVEARC_SINGLE_LOAD (1 << 0)
-
-struct SNDBankData;
-struct SNDBankData;
-typedef struct SNDBinaryFileHeader {
-    char signature[4];
-    u16 byteOrder;
-    u16 version;
-    u32 fileSize;
-    u16 headerSize;
-    u16 dataBlocks;
-} SNDBinaryFileHeader;
-typedef struct SNDBinaryBlockHeader {
-    u32 kind;
-    u32 size;
-} SNDBinaryBlockHeader;
-struct SNDWaveArc;
-typedef struct SNDWaveArcLink {
-    struct SNDWaveArc * waveArc;
-    struct SNDWaveArcLink * next;
-} SNDWaveArcLink;
-typedef struct SNDWaveArc {
-    struct SNDBinaryFileHeader fileHeader;
-    struct SNDBinaryBlockHeader blockHeader;
-    struct SNDWaveArcLink * topLink;
-    u32 reserved[7];
-    u32 waveCount;
-    u32 waveOffset[0];
-} SNDWaveArc;
-typedef struct SNDBankData {
-    struct SNDBinaryFileHeader fileHeader;
-    struct SNDBinaryBlockHeader blockHeader;
-    struct SNDWaveArcLink waveArcLink[4 ];
-    u32 instCount;
-    u32 instOffset[0];
-} SNDBankData;
 void SND_AssignWaveArc(struct SNDBankData * bank, int index, struct SNDWaveArc * waveArc);
-struct SNDBankData;
-typedef struct {
-    void * prevObject;
-    void * nextObject;
-} NNSFndLink;
-typedef struct {
-    void * headObject;
-    void * tailObject;
-    u16 numObjects;
-    u16 offset;
-} NNSFndList;
-typedef struct NNSiFndHeapHead NNSiFndHeapHead;
-struct NNSiFndHeapHead {
-    u32 signature;
-    NNSFndLink link;
-    NNSFndList childList;
-    void * heapStart;
-    void * heapEnd;
-    u32 attribute;
-};
-typedef NNSiFndHeapHead * NNSFndHeapHandle;
-typedef void (*NNSFndHeapVisitor)(void * memBlock, NNSFndHeapHandle heap, u32 userParam);
-typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
-typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
-struct NNSSndHeap;
-typedef void (*NNSSndHeapDisposeCallback)(void * mem, u32 size, u32 data1, u32 data2);
-typedef struct NNSSndHeap * NNSSndHeapHandle;
-struct SNDBankData;
-struct SNDWaveArc;
-typedef enum NNSSndArcLoadResult {
-    NNS_SND_ARC_LOAD_SUCESS = 0,
-    NNS_SND_ARC_LOAD_ERROR_INVALID_GROUP_NO,
-    NNS_SND_ARC_LOAD_ERROR_INVALID_SEQ_NO,
-    NNS_SND_ARC_LOAD_ERROR_INVALID_SEQARC_NO,
-    NNS_SND_ARC_LOAD_ERROR_INVALID_BANK_NO,
-    NNS_SND_ARC_LOAD_ERROR_INVALID_WAVEARC_NO,
-    NNS_SND_ARC_LOAD_ERROR_FAILED_LOAD_SEQ,
-    NNS_SND_ARC_LOAD_ERROR_FAILED_LOAD_SEQARC,
-    NNS_SND_ARC_LOAD_ERROR_FAILED_LOAD_BANK,
-    NNS_SND_ARC_LOAD_ERROR_FAILED_LOAD_WAVE
-} NNSSndArcLoadResult;
 NNSSndArcLoadResult NNSi_SndArcLoadWaveArc(int waveArcNo, u32 loadFlag, NNSSndHeapHandle heap, BOOL bSetAddr, struct SNDWaveArc ** pData);
-typedef struct NNSSndArcBankInfo {
-    u32 fileId;
-    u16 waveArcNo[4 ];
-} NNSSndArcBankInfo;
-typedef struct NNSSndArcWaveArcInfo {
-    u32 fileId :24;
-    u32 flags  :8;
-} NNSSndArcWaveArcInfo;
 const NNSSndArcBankInfo * NNS_SndArcGetBankInfo(int bankNo);
 const NNSSndArcWaveArcInfo * NNS_SndArcGetWaveArcInfo(int waveArcNo);
 void * NNS_SndArcGetFileAddress(u32 fileId);

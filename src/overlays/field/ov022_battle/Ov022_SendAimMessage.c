@@ -8,7 +8,7 @@
  */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct AimRecord {
     u8 nKind;                    /* 0x00 */

@@ -1,22 +1,15 @@
 
-#include "nitro/types.h"
-
-typedef void (*OSIrqFunction)(void *arg);
 
 /* One 12-byte record per callback slot; see OSi_IrqCallback, which consumes it. */
-typedef struct {
-    OSIrqFunction pfnHandler;
-    unsigned int bKeepEnabled;
-    void *pArg;
-} OSiIrqSlot;
+
+#include "nitro/types.h"
+#include "nitro/os.h"
 
 extern OSiIrqSlot data_020442a8[];
 extern unsigned int data_027e0000;
 
 /* The flat vector table sits at the very start of DTCM, one entry per interrupt bit. */
 #define OSi_IrqTable ((OSIrqFunction *)&data_027e0000)
-
-#define OS_IRQ_TABLE_MAX 22
 
 /* Install one handler for every interrupt named in the mask.
  *

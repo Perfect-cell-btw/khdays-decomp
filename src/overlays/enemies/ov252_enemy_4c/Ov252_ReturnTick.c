@@ -2,7 +2,7 @@
  * toward the origin from its +8 point; once the partner holds no queued move, with a +0xa0 reward
  * pending the next move is 8, else pose 1 and part motion 0 start and the node moves on to 020cf324. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);

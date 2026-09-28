@@ -4,7 +4,7 @@
  * point, pose 0x18 loops on the actor and its partner and the node moves on to 020d105c. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov259_FaceTarget(int *node);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

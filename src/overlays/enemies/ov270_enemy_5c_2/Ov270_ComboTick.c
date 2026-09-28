@@ -17,7 +17,7 @@
  * ca918 call's trailing zero is a local set before each hit loop (it lives in fp). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { int m[9]; } Mtx33;

@@ -2,7 +2,7 @@
  * Airborne step: drift the actor along its heading, and on landing hand off or bail out.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     unsigned short lo : 8;

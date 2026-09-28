@@ -13,7 +13,7 @@
  * `v` (first declared local = highest stack address). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void SceneNode_Enable(void *node);                                              /* SceneNode_Enable */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);                   /* Anim_SetFrameWrapped */

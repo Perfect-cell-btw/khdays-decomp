@@ -5,7 +5,7 @@
  * self[0x50] == 1, forward the trailing vec (a,b,c) by value to 020d3cc8(self[0x214], abc).
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_MoveNodeAndRelayout(int self, VecFx32 *v);
 extern void RefreshObjectCallbacks(int a, int b);

@@ -9,7 +9,7 @@
  * sub-state 3; sub-state 9 with a target and a 1/0x10 hit requests 0xa. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov225ModePair { u8 nFirst; u8 nSecond; };
 union Ov225ModeSlot { struct Ov225ModePair sPair; u8 aModes[2]; };

@@ -1,5 +1,5 @@
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void VEC_Add(VecFx32 *dst, VecFx32 *a, VecFx32 *b);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);

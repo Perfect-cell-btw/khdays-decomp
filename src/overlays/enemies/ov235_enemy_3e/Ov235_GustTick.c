@@ -7,7 +7,7 @@
  * Ov235_SwoopTick. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { void *item; } ListNode;
 struct Bits40 { int b0 : 1, b1 : 1; };

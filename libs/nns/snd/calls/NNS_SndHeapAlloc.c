@@ -1,62 +1,17 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nitro/os_types.h"
+#include "nnsys/snd.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
 #define HEAP_ALIGN 32
 #define ROUNDUP(value, align) (((u32)(value) + ((align) - 1)) & ~((align) - 1))
 
-typedef struct {
-    void * prevObject;
-    void * nextObject;
-} NNSFndLink;
-typedef struct {
-    void * headObject;
-    void * tailObject;
-    u16 numObjects;
-    u16 offset;
-} NNSFndList;
 void NNS_FndAppendListObject(NNSFndList * list, void * object);
 void * NNS_FndGetPrevListObject(NNSFndList * list, void * object);
-typedef struct NNSiFndHeapHead NNSiFndHeapHead;
-struct NNSiFndHeapHead {
-    u32 signature;
-    NNSFndLink link;
-    NNSFndList childList;
-    void * heapStart;
-    void * heapEnd;
-    u32 attribute;
-};
-typedef NNSiFndHeapHead * NNSFndHeapHandle;
-typedef void (*NNSFndHeapVisitor)(void * memBlock, NNSFndHeapHandle heap, u32 userParam);
 void * NNS_FndAllocFromFrmHeapEx(NNSFndHeapHandle heap, u32 size, int alignment);
-typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
-typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
-struct NNSSndHeap;
-typedef void (*NNSSndHeapDisposeCallback)(void * mem, u32 size, u32 data1, u32 data2);
-typedef struct NNSSndHeap * NNSSndHeapHandle;
-typedef struct NNSSndHeap {
-    NNSFndHeapHandle handle;
-    NNSFndList sectionList;
-} NNSSndHeap;
-typedef struct NNSSndHeapBlock {
-    NNSFndLink link;
-    u32 size;
-    NNSSndHeapDisposeCallback callback;
-    u32 data1;
-    u32 data2;
-    u8 padding[ 0x20 - ((sizeof(NNSFndLink) + sizeof(NNSSndHeapDisposeCallback) + sizeof(u32) * 3) & 0x1f) ];
-    u32 buffer[ 0 ];
-} NNSSndHeapBlock;
-typedef struct NNSSndHeapSection {
-    NNSFndList blockList;
-    NNSFndLink link;
-} NNSSndHeapSection;
 
 /* NNS_SndHeapAlloc -- NitroSystem heap.c: NNS_SndHeapAlloc. */
 void * NNS_SndHeapAlloc (NNSSndHeapHandle heap, u32 size, NNSSndHeapDisposeCallback callback, u32 data1, u32 data2)

@@ -1,7 +1,8 @@
 /* NitroSystem G3D material SBC handler, including the game RGB scale extension. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
+#include "nitro/gx.h"
 
 typedef struct NNSG3dResDictTreeNode {
     u8 refBit;
@@ -132,12 +133,6 @@ typedef struct MaterialColorScale {
 typedef struct NNSG3dRSOnGlobal {
     NNSG3dMatAnmResult matCache[1];
 } NNSG3dRSOnGlobal;
-
-#define GX_COLOR_R(rgb) ((rgb) & 0x1f)
-#define GX_COLOR_G(rgb) (((rgb) >> 5) & 0x1f)
-#define GX_COLOR_B(rgb) (((rgb) >> 10) & 0x1f)
-#define GX_RGB(r, g, b) \
-    (((r) & 0x1f) | (((g) & 0x1f) << 5) | (((b) & 0x1f) << 10))
 
 static inline void *NNS_G3dGetResDataByIdx(const NNSG3dResDict *dict,
                                             u32 idx)

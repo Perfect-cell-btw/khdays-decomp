@@ -5,7 +5,7 @@
  * speed; the +0x40 and +0x58 timers count down while positive and the +0x94 flag mirrors
  * whether +0x58 still runs, resetting +0x78 when it changes. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Angle_TurnToward(int cur, int target, int step, int *out);
 extern void QuatFromAxisAngle(int *quat, const VecFx32 *axis, int angle);

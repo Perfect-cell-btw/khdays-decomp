@@ -19,7 +19,7 @@
  * 2 plays and, guarded, it faces the target again. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;

@@ -10,7 +10,7 @@
  * the shared zero (next's initial value) ahead of the self copy in the prologue schedule. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov022_IsSlotReady(void *context);
 extern int Ov022_ValidateTargetRef(char *self);

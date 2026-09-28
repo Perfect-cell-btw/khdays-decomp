@@ -2,7 +2,7 @@
  * area hits from 0xff0, clears motion after a hit, and advances when the substate ends. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct {
     VecFx32 center;

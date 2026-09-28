@@ -2,15 +2,10 @@
  * register dump is compiled out; only the user exception handler call remains). C with the
  * SDK's own inline asm block, which switches to system mode, turns the protection unit back on
  * and calls the handler with OSi_ExContext. */
-typedef struct OSiExContext OSiExContext;
-typedef void (*OSExceptionHandler)(void *context, void *arg);
 
 /* the unit's statics, laid out together in .bss */
-typedef struct OSiExceptionStatics {
-    void *debuggerHandler;                  /* OSi_DebuggerHandler */
-    void *userExceptionHandlerArg;          /* OSi_UserExceptionHandlerArg */
-    OSExceptionHandler userExceptionHandler;   /* OSi_UserExceptionHandler */
-} OSiExceptionStatics;
+
+#include "nitro/os.h"
 
 extern OSiExceptionStatics data_020445b4;
 extern void *data_020445b8;                 /* OSi_UserExceptionHandlerArg */

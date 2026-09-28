@@ -1,7 +1,7 @@
 /* Recoil entry of the ov260 actor: pose 0x1b plays, its +0x428 part takes motion 0x10, the +0x2c
  * push is normalised and scaled to 1/16, +0x30 = -0x3d2b and the node moves on to 020cf90c. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);

@@ -1,11 +1,8 @@
+
+
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 #include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 extern s32 FX_Whole(fx32 v);
 static inline s32 FX_Whole (fx32 v)

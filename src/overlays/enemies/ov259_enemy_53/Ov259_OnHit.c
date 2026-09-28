@@ -11,7 +11,7 @@
  * exhausted shield (+0x9c) drops the +0x50 shield effect and requests sub-state 15. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;

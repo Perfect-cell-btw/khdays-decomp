@@ -1,10 +1,10 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nitro/mi.h"
 
 typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 /* NitroSDK os_alloc.c: the arena heap allocator (free-list cells of 32-byte-aligned blocks). */
 typedef int OSArenaId;
@@ -16,7 +16,6 @@ typedef int OSHeapHandle;
 #define ROUND(n, a)     (((u32) (n) + (a) - 1) & ~((a) - 1))
 
 #define ALIGNMENT       32
-#define MINOBJSIZE      (HEADERSIZE + ALIGNMENT)
 #define HEADERSIZE      ROUND(sizeof(Cell), ALIGNMENT)
 
 typedef struct Cell Cell;

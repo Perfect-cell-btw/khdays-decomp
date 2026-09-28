@@ -4,7 +4,7 @@
  * clear and the tick hands over to Ov255_RingTick. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { u16 lo; u16 hi; } Cmd4;
 

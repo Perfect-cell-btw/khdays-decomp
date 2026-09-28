@@ -10,7 +10,7 @@
  * requests sub-state 7; spent stamina is pinned at 1. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;

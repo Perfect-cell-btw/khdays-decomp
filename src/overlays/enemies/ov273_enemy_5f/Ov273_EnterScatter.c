@@ -4,7 +4,7 @@
  * spawns effect 8 at the zero vector unless the actor is being torn down (+0x1c4 & 0xa), and
  * moves the node to 020cf5fc. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct SpreadMsg { int w[17]; };
 typedef void (*MsgHook)(int actor, struct SpreadMsg *m, int size);

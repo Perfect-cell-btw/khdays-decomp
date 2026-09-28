@@ -2,7 +2,7 @@
  * high-byte mask 0x82, stops the current action, starts resource 0x169 mode 6, and advances the
  * node. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void VEC_Subtract(void *a, void *b, void *out);

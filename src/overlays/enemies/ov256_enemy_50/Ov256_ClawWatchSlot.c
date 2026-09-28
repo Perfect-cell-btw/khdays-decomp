@@ -7,7 +7,7 @@
  * clears. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int x, y, z, w; } Quat;
 struct Flag17a { u8 b0 : 1; };

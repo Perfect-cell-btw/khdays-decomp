@@ -17,7 +17,7 @@
  * The vector at sp+0xc is zeroed in full before its Z is overwritten; that is what the ROM does
  * (the address escapes into Ov263_rotateVecByOwnerYaw, so the stores are not dead). */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov263_AcquireTarget(int self);
 extern void Ov263_rotateVecByOwnerYaw(VecFx32 *out, int self, const VecFx32 *ref);

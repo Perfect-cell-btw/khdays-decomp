@@ -1,11 +1,10 @@
+
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 #include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nitro/pxi.h"
+#include "nnsys/gfd.h"
 
 void MIi_CpuClear16(u16 data, void * destp, u32 size);
 static inline void MI_CpuFill16 (void * dest, u16 data, u32 size)
@@ -16,38 +15,6 @@ static inline void MI_CpuClear16 (void * dest, u32 size)
 {
     MI_CpuFill16(dest, 0, size);
 }
-typedef union {
-        struct {
-            fx32 _00, _01, _02;
-            fx32 _10, _11, _12;
-            fx32 _20, _21, _22;
-        };
-        fx32 m[3][3];
-        fx32 a[9];
-    } MtxFx33;
-typedef enum {
-    PXI_FIFO_TAG_EX = 0,
-    PXI_FIFO_TAG_USER_0,
-    PXI_FIFO_TAG_USER_1,
-    PXI_FIFO_TAG_SYSTEM,
-    PXI_FIFO_TAG_NVRAM,
-    PXI_FIFO_TAG_RTC,
-    PXI_FIFO_TAG_TOUCHPANEL,
-    PXI_FIFO_TAG_SOUND,
-    PXI_FIFO_TAG_PM,
-    PXI_FIFO_TAG_MIC,
-    PXI_FIFO_TAG_WM,
-    PXI_FIFO_TAG_FS,
-    PXI_FIFO_TAG_OS,
-    PXI_FIFO_TAG_CTRDG,
-    PXI_FIFO_TAG_CARD,
-    PXI_FIFO_TAG_WVR,
-    PXI_FIFO_TAG_CTRDG_Ex,
-    PXI_FIFO_TAG_CTRDG_PHI,
-    PXI_MAX_FIFO_TAG = 32
-} PXIFifoTag;
-typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
-typedef u32 NNSGfdTexKey;
 typedef struct NNSG3dResDataBlockHeader_ {
     union {
         u32 kind;

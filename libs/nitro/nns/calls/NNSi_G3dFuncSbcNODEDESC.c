@@ -1,7 +1,7 @@
 /* NitroSystem G3D NODEDESC: joint animation and optional matrix restore/store. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct MtxFx33 { fx32 aM[9]; } MtxFx33;
 typedef struct NNSG3dJntAnmResult {

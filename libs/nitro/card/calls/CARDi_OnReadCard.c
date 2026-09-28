@@ -1,5 +1,7 @@
 
+
 #include "nitro/types.h"
+#include "nitro/os.h"
 
 enum {
     CARD_RESULT_SUCCESS = 0,
@@ -7,8 +9,7 @@ enum {
     CARD_STAT_TASK = 1 << 3,
     CARD_STAT_RECV = 1 << 4,
     CARD_STAT_CANCEL = 1 << 6,
-    CARD_ROM_PAGE_SIZE = 512,
-    OS_IE_CARD_DATA = 1 << 19
+    CARD_ROM_PAGE_SIZE = 512
 };
 
 typedef void (*CARDCallback)(void *argument);

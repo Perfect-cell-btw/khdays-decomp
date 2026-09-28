@@ -9,7 +9,7 @@
  * matches. One of a 5-member family (ov215/216/217/264); only the chained-state symbol differs.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov107_PostTagUpdate(int owner, int mode, int b);
 extern int RandNext(void);

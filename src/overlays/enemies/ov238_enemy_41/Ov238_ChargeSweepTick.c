@@ -9,7 +9,7 @@
  * marked on acceptance. Once the clock reaches 2.0 +0x390 clears and sub-state 0 follows. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
 struct Atk { u8 b0; u8 bits; u8 r2; u8 r3; u16 power; };

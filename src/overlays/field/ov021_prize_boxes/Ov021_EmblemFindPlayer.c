@@ -7,7 +7,7 @@
  * position (+0x2a8, VEC_Distance 01ff8e94). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov021PlayerActor {
     u64  nFlags;              /* 0x00: bit 16 = out of play */

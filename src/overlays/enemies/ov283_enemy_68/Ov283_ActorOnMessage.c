@@ -3,7 +3,7 @@
  * the left hand (+0x394), 3 and 5 on the right hand (+0x398). The base handler always runs. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[11]; } SrtTransform;
 struct EffectPair { int res; int handle; };

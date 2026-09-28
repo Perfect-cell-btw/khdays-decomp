@@ -1,6 +1,6 @@
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 #define SQRT_CONTROL (*(volatile u16 *)0x040002b0)
 #define SQRT_RESULT (*(volatile fx32 *)0x040002b4)

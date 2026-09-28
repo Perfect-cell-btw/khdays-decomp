@@ -1,10 +1,11 @@
-#include "nitro/types.h"
 
-#define NULL ((void *)0)
 
 /* Threads carry their queue links inline: the scheduler never allocates nodes.
    Only the three fields this file touches are named; the rest of the thread
    record is not this function's business. */
+
+#include "nitro/types.h"
+
 typedef struct OSThread {
     u8 _reserved0[0x70];
     u32 priority;              /* 0x70, lower value means it runs sooner */

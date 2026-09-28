@@ -43,6 +43,8 @@ typedef int BOOL;
 #define TRUE 1
 #define FALSE 0
 
+#define NULL ((void *)0)
+
 /* Hardware register views, as the SDK's register headers name them. */
 typedef volatile u8 REGType8v;
 typedef volatile u16 REGType16v;

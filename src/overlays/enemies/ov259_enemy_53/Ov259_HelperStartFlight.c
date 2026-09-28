@@ -3,7 +3,7 @@
  * 0x10e along x) and the heading / ground-normal orientation are computed but not stored, as in
  * the original. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int x, y, z, w; } Quat;
 

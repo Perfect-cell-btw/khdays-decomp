@@ -7,7 +7,7 @@
  * zero it. The velocity goes to the actor's +0xf0 with x / z cleared and +0x24 takes the +8
  * track position. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int x, y, z, w; } Quat;
 

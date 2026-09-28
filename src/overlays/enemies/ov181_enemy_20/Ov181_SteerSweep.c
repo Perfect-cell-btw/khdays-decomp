@@ -10,7 +10,7 @@
  *
  * One of four byte-identical siblings. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_ActionResource_GetOffsetAndScale(int p, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(void *out, void *a, void *b);

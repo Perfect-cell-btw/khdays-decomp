@@ -7,7 +7,7 @@
  * task->nIndex, 0). Q12 multiply throughout: ((s64)a * b + 0x800) >> 12. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Vec4 {
     s32 x;

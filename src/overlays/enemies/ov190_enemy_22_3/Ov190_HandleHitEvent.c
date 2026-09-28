@@ -2,7 +2,7 @@
  * points, emits the alternating reaction effect and requests the next actor state. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov190ReactionModes {
     u8 normal[2];

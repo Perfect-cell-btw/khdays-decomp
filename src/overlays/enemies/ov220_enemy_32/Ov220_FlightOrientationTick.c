@@ -4,7 +4,7 @@
  * 0x88-frame-time slices, the velocity decays by 0x1b0/0x88 of the slice and the +0x20 speed by
  * 0x200/0x88 of it. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Quat { int a, b, c, d; };
 

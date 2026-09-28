@@ -18,7 +18,7 @@
  * Ghidra carries this as Ov002_TestRosterSlotGroundRay over VecFx32 and Ov022Ent.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int GetEntryField20ByIndex(int index);
 extern VecFx32 *func_ov022_020881f8(int index);

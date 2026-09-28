@@ -1,6 +1,6 @@
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern char *data_ov002_0207fa00;
 extern u8 data_0204c240;

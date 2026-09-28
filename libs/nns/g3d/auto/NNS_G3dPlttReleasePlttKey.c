@@ -1,72 +1,11 @@
-#include "nitro/types.h"
-#include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-typedef u32 NNSGfdTexKey;
-typedef struct NNSG3dResDataBlockHeader_ {
-    union {
-        u32 kind;
-        char chr[4];
-    };
-    u32 size;
-} NNSG3dResDataBlockHeader;
-typedef struct NNSG3dResDictTreeNode_ {
-    u8 refBit;
-    u8 idxLeft;
-    u8 idxRight;
-    u8 idxEntry;
-} NNSG3dResDictTreeNode;
-typedef struct NNSG3dResDict_ {
-    u8 revision;
-    u8 numEntry;
-    u16 sizeDictBlk;
-    u16 dummy_;
-    u16 ofsEntry;
-    NNSG3dResDictTreeNode node[1];
-} NNSG3dResDict;
-typedef struct NNSG3dResTexInfo_ {
-    NNSGfdTexKey vramKey;
-    u16 sizeTex;
-    u16 ofsDict;
-    u16 flag;
-    u16 dummy_;
-    u32 ofsTex;
-} NNSG3dResTexInfo;
-typedef struct NNSG3dResTex4x4Info_ {
-    NNSGfdTexKey vramKey;
-    u16 sizeTex;
-    u16 ofsDict;
-    u16 flag;
-    u16 dummy_;
-    u32 ofsTex;
-    u32 ofsTexPlttIdx;
-} NNSG3dResTex4x4Info;
-typedef enum {
-    NNS_G3D_RESPLTT_LOADED   = 0x0001,
-    NNS_G3D_RESPLTT_USEPLTT4 = 0x8000
-} NNSG3dResPlttFlag;
-typedef struct NNSG3dResPlttInfo_ {
-    NNSGfdTexKey vramKey;
-    u16 sizePltt;
-    u16 flag;
-    u16 ofsDict;
-    u16 dummy_;
-    u32 ofsPlttData;
-} NNSG3dResPlttInfo;
-typedef struct NNSG3dResTex_ {
-    NNSG3dResDataBlockHeader header;
-    NNSG3dResTexInfo texInfo;
-    NNSG3dResTex4x4Info tex4x4Info;
-    NNSG3dResPlttInfo plttInfo;
-    NNSG3dResDict dict;
-} NNSG3dResTex;
-typedef u32 NNSG3dPlttKey;
 
 /* NNS_G3dPlttReleasePlttKey -- NitroSystem kernel.c: NNS_G3dPlttReleasePlttKey. */
+
+#include "nitro/types.h"
+#include "nitro/os.h"
+#include "nnsys/g3d.h"
+
 NNSG3dPlttKey NNS_G3dPlttReleasePlttKey (NNSG3dResTex * pTex)
 {
     u32 rval;

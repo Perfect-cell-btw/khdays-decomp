@@ -4,6 +4,7 @@
  * objects by size). */
 
 #include "nitro/types.h"
+#include "nitro/hw.h"
 
 typedef struct ScreenSizeMap {
     u16 width;
@@ -34,11 +35,6 @@ typedef struct ScreenSizeMap {
 #define GX_BG_SCRSIZE_256x16PLTT_256x256 1
 #define GX_BG_SCRSIZE_256x16PLTT_512x512 2
 #define GX_BG_SCRSIZE_256x16PLTT_1024x1024 3
-
-#define REG_BG0CNT_OFFSET    0x0008
-#define REG_BG1CNT_OFFSET    0x000a
-#define REG_DB_BG0CNT_OFFSET 0x1008
-#define REG_DB_BG1CNT_OFFSET 0x100a
 
 /* sBG256x16PlttModeTable[2][8] */
 const u8 data_020419f4[2][8] = {

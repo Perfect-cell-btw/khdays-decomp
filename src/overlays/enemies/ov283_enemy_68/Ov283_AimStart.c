@@ -3,7 +3,7 @@
  * (vertical part from the aim); the pose settles (020c9264 mode 3), an effect plays at the +8 point,
  * the actor moves to the new spot (020c5c54) and the brain waits on 020ce214. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void Ov283_MeasureTargetGap(int *node);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);

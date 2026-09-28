@@ -1,6 +1,6 @@
 /* Transforms the offset through the owner's matrix and scales it. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_ActionResource_GetOffsetAndScale(void *src, void *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *base, void *vec);

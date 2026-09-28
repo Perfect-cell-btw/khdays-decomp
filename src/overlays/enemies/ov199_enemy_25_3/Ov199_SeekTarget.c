@@ -3,7 +3,7 @@
  * update 0x53; otherwise advances along its movement, ending when a ray cast hits the world. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Vec4 {
     int x, y, z, w;

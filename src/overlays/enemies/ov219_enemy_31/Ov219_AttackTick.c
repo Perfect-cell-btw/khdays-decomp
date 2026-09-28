@@ -5,7 +5,7 @@
  * cleared and the tick hands off to the guard state. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void MTX_RotY33_(void *mtx, int sin, int cos);
 extern void MTX_MultVec33(int *out, void *mtx, int *in);

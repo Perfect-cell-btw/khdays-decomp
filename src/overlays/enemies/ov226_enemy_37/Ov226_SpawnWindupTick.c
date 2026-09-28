@@ -10,7 +10,7 @@
  * the +4 owner's +0xad byte clears, sub-state 2 is requested and the action ends. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int q[4]; } Quat;
 enum { SPAWN_FAN = 0, SPAWN_AIM = 1 };

@@ -9,7 +9,7 @@
  * sub-state 2 and releases the slot. The bob index is the SDK macro verbatim (FX_RAD_TO_IDX)
  * and FX_SinIdx as table[(idx >> 4) << 1]. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern void SetIndexedSlot(int node, int slot, void *cb);

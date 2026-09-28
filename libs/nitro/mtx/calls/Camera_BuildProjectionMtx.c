@@ -22,7 +22,7 @@
  * FX_Inv/FX_Div arity disagreement, not something introduced here. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern fx32 FX_Div(fx32 numerator, fx32 denominator);
 extern fx64c FX_GetDivResultFx64c(void);

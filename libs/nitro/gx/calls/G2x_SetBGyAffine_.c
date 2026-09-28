@@ -1,15 +1,9 @@
-typedef struct Mtx22 {
-    int m[4];
-} Mtx22;
 
 /* Hardware BG affine register block: PA/PB packed into one 32-bit write,
  * PC/PD packed into another, then the 32-bit X/Y reference points. */
-typedef struct GXAffineReg {
-    unsigned int paPb;
-    unsigned int pcPd;
-    int x;
-    int y;
-} GXAffineReg;
+
+#include "nitro/fx.h"
+#include "nitro/gx.h"
 
 void G2x_SetBGyAffine_(GXAffineReg *pReg, const Mtx22 *pMtx,
                         int nCentreX, int nCentreY, int nX, int nY)

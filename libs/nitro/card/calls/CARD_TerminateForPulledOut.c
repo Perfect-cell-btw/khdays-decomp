@@ -1,44 +1,17 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nitro/os_types.h"
+#include "nitro/pxi.h"
+#include "nitro/spi.h"
+#include "nitro/card.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
-
-#define CARD_PXI_COMMAND_TERMINATE 0x0001
-#define HW_CPU_CLOCK_ARM9 67027964
-#define PM_RESULT_SUCCESS 0
-#define SPI_PXI_RESULT_EXCLUSIVE 0x0004
 
 void OS_Terminate();
 extern void OS_Terminate(void);
 extern void OS_SpinWait(u32 cycle);
 void MI_StopDma(u32 dmaNo);
-typedef enum {
-    PXI_FIFO_TAG_EX = 0,
-    PXI_FIFO_TAG_USER_0,
-    PXI_FIFO_TAG_USER_1,
-    PXI_FIFO_TAG_SYSTEM,
-    PXI_FIFO_TAG_NVRAM,
-    PXI_FIFO_TAG_RTC,
-    PXI_FIFO_TAG_TOUCHPANEL,
-    PXI_FIFO_TAG_SOUND,
-    PXI_FIFO_TAG_PM,
-    PXI_FIFO_TAG_MIC,
-    PXI_FIFO_TAG_WM,
-    PXI_FIFO_TAG_FS,
-    PXI_FIFO_TAG_OS,
-    PXI_FIFO_TAG_CTRDG,
-    PXI_FIFO_TAG_CARD,
-    PXI_FIFO_TAG_WVR,
-    PXI_FIFO_TAG_CTRDG_Ex,
-    PXI_FIFO_TAG_CTRDG_PHI,
-    PXI_MAX_FIFO_TAG = 32
-} PXIFifoTag;
-typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
 static inline BOOL PAD_DetectFold (void)
 {
     return (BOOL)((*(vu16 *)(0x02000000 + 0x007fffa8) & 0x8000 ) >> 15);

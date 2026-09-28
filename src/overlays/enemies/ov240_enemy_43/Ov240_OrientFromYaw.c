@@ -1,6 +1,6 @@
 /* Ov240_OrientFromYaw: ported from a matched sibling family (same shape, constants and offsets adjusted). */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(void *dst, void *src, int t);

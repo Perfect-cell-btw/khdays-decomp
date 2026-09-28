@@ -1,6 +1,7 @@
-#include "nitro/types.h"
 
-typedef u16 GXRgb;
+
+#include "nitro/types.h"
+#include "nitro/gx.h"
 
 typedef struct NNSG3dResDictTreeNode {
     u8 refBit;

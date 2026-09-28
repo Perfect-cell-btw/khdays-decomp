@@ -11,7 +11,7 @@
  * declared before the node pointer so the two land in the original's registers.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct Ov020WallQuery {
     VecFx32 vOrigin;                    /* 0x00 */

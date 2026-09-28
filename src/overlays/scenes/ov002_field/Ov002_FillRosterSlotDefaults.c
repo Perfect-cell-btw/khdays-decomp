@@ -21,7 +21,7 @@
  * Ghidra carries this as Ov002_FillRosterSlotDefaults over Ov002RosterSlot and VecFx32.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern char *data_ov002_0207fa00;
 extern unsigned char data_0204c240;

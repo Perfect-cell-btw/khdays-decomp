@@ -9,7 +9,7 @@
  * the local player, sets bit 1 of +0x464; while active the velocities are cleared, bit 2 is
  * raised and the enemy lands (state 0 with the slot callback when grounded, else state 2). */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 

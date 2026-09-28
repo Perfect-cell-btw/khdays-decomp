@@ -5,7 +5,7 @@
  * +0x40 and +0x44 is cleared before the cd560 tick takes over. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct w8 { unsigned int lo : 8, rest : 24; };
 

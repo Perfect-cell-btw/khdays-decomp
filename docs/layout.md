@@ -31,7 +31,7 @@ src/overlays/system/ovNNN_<name>/     boot, wireless, video, anti-tamper, shared
     <overlay>/data/                   the overlay's reconstructed DATA
 libs/<vendor>/<module>/{auto,calls}/  NitroSDK, NitroSystem, MSL and MobiClip C
 libs/<vendor>/<module>/asm_stubs/     the libraries' own assembly
-include/nitro/                        shared headers with the NitroSDK's type names
+include/nitro/, include/nnsys/        NitroSDK and NitroSystem headers (the SDK's names)
 docs/
 ```
 
@@ -44,14 +44,19 @@ without relocations) was a working-process split and is gone from `src/`; `libs/
 Still to do, in this order:
 
 - **Headers**: `include/` with the shared structs (actor, AI task, scene, script context, ...).
-  Done so far: the basic types (`nitro/types.h`: `u8`..`s64`, `vu*`, `BOOL`, `TRUE`/`FALSE`;
-  `nitro/fx.h`: `fx16`..`fx64c` and `VecFx32`; `nitro/os.h`: `OSIntrMode`, `OSTick`) replace the
-  typedefs each source used to repeat, and the dozen local names of the 3D vector (`Vec3`,
-  `FxVec`, `Ov002Vec3`, ...) are `VecFx32`. Includes sit at the top of each source. Under mwcc `u32`/`s32` are `long`, as in the SDK the game was built
-  with; a few sources that only match with `int` spell `unsigned int`/`int` where it matters.
+  Done so far:
+  - the basic types: `nitro/types.h` (`u8`..`s64`, `vu*`, `BOOL`, `TRUE`/`FALSE`, `NULL`),
+    `nitro/fx_types.h` (`fx16`..`fx64c`, `VecFx32`) and `nitro/os_types.h` (`OSIntrMode`, `OSTick`),
+    which every source includes instead of repeating its typedefs; the dozen local names of the 3D
+    vector are `VecFx32`. Under mwcc `u32`/`s32` are `long`, as in the SDK the game was built with;
+    a few sources that only match with `int` spell `unsigned int`/`int` where it matters.
+  - the NitroSDK and NitroSystem declarations the library sources used to copy in front of their
+    functions (about 75,000 lines): `nitro/{hw,cp,fx,mi,os,pxi,spi,rtc,card,fs,ctrdg,gx,snd,wm}.h`
+    and `nnsys/{fnd,gfd,snd,g2d,g3d}.h`, built from those copies (each type in the form most sources
+    used). Sources that carry a variant of a type of their own (a partial view, an enum spelled as
+    #defines) still declare that part locally, and function prototypes stay per source for now.
   Every compile gets `-i include`, and the build tracks header dependencies. Still per source:
-  the matrix types, the SDK and NitroSystem structs, the function prototypes and the game's own
-  structs.
+  the function prototypes and the game's own structs.
 - **Translation units**: grouping functions back into one `.c` per original file (per enemy, per
   menu, ...). The build verifies one function per file today. `src/engine/` gets its subsystem
   folders at that point: the boundaries below are approximate, and a prefix such as `Obj_` or

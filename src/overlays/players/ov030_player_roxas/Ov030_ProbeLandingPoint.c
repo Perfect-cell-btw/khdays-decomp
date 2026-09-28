@@ -1,7 +1,7 @@
 /* Moves the point by the step (stopping at walls when asked), then drops it onto the ground below
  * (or clamps it to the floor limit). */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int EntityMgr_RunSphereCast();
 extern void Vec3ScaleAddQ27();

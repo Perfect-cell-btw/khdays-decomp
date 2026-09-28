@@ -1,100 +1,18 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nitro/os_types.h"
+#include "nitro/mi.h"
+#include "nitro/pxi.h"
+#include "nitro/spi.h"
+#include "nitro/rtc.h"
+#include "nitro/wm.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
-typedef struct CPContext {
-    u64 div_numer;
-    u64 div_denom;
-    u64 sqrt;
-    u16 div_mode;
-    u16 sqrt_mode;
-} CPContext;
-typedef struct OSContext {
-    u32 cpsr;
-    u32 r[13];
-    u32 sp;
-    u32 lr;
-    u32 pc_plus4;
-    u32 sp_svc;
-    CPContext cp_context;
-} OSContext;
-typedef struct _OSThread OSThread;
-typedef struct _OSThreadQueue OSThreadQueue;
-typedef struct _OSThreadLink OSThreadLink;
-typedef struct _OSMutexQueue OSMutexQueue;
-typedef struct _OSMutexLink OSMutexLink;
-typedef struct OSMutex OSMutex;
-typedef struct OSiAlarm OSAlarm;
-struct _OSThreadQueue {
-        OSThread * head;
-        OSThread * tail;
-    };
-struct _OSThreadLink {
-        OSThread * prev;
-        OSThread * next;
-    };
-struct _OSMutexQueue {
-        OSMutex * head;
-        OSMutex * tail;
-    };
-struct _OSMutexLink {
-        OSMutex * next;
-        OSMutex * prev;
-    };
-typedef enum {
-    OS_THREAD_STATE_WAITING       = 0,
-    OS_THREAD_STATE_READY         = 1,
-    OS_THREAD_STATE_TERMINATED    = 2
-} OSThreadState;
-typedef void (*OSThreadDestructor) (void *);
-struct _OSThread {
-    OSContext context;
-    OSThreadState state;
-    OSThread * next;
-    u32 id;
-    u32 priority;
-    void * profiler;
-    OSThreadQueue * queue;
-    OSThreadLink link;
-    OSMutex * mutex;
-    OSMutexQueue mutexQueue;
-    u32 stackTop;
-    u32 stackBottom;
-    u32 stackWarningOffset;
-    OSThreadQueue joinQueue;
-    void * specific[3 ];
-    OSAlarm * alarmForSleep;
-    OSThreadDestructor destructor;
-    void * userParameter;
-    int systemErrno;
-};
 void OS_SleepThread(OSThreadQueue * queue);
-struct OSMutex {
-    OSThreadQueue queue;
-    OSThread * thread;
-    s32 count;
-    OSMutexLink link;
-};
-typedef void (*OSAlarmHandler) (void *);
-struct OSiAlarm {
-    OSAlarmHandler handler;
-    void * arg;
-    u32 tag;
-    OSTick fire;
-    OSAlarm * prev;
-    OSAlarm * next;
-    OSTick period;
-    OSTick start;
-};
-typedef void (*MIDmaCallback) (void *);
 typedef enum {
     CARD_RESULT_SUCCESS = 0,
     CARD_RESULT_FAILURE,
@@ -146,57 +64,6 @@ typedef struct {
     u32 offset;
     u32 length;
 } CARDRomRegion;
-typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
-typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
-typedef enum {
-    PXI_FIFO_TAG_EX = 0,
-    PXI_FIFO_TAG_USER_0,
-    PXI_FIFO_TAG_USER_1,
-    PXI_FIFO_TAG_SYSTEM,
-    PXI_FIFO_TAG_NVRAM,
-    PXI_FIFO_TAG_RTC,
-    PXI_FIFO_TAG_TOUCHPANEL,
-    PXI_FIFO_TAG_SOUND,
-    PXI_FIFO_TAG_PM,
-    PXI_FIFO_TAG_MIC,
-    PXI_FIFO_TAG_WM,
-    PXI_FIFO_TAG_FS,
-    PXI_FIFO_TAG_OS,
-    PXI_FIFO_TAG_CTRDG,
-    PXI_FIFO_TAG_CARD,
-    PXI_FIFO_TAG_WVR,
-    PXI_FIFO_TAG_CTRDG_Ex,
-    PXI_FIFO_TAG_CTRDG_PHI,
-    PXI_MAX_FIFO_TAG = 32
-} PXIFifoTag;
-typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
-typedef enum {
-    TP_REQUEST_COMMAND_SAMPLING         = 0x0,
-    TP_REQUEST_COMMAND_AUTO_ON          = 0x1,
-    TP_REQUEST_COMMAND_AUTO_OFF         = 0x2,
-    TP_REQUEST_COMMAND_SET_STABILITY    = 0x3,
-    TP_REQUEST_COMMAND_AUTO_SAMPLING    = 0x10
-} TPRequestCommand;
-typedef enum {
-    TP_RESULT_SUCCESS = 0,
-    TP_RESULT_INVALID_PARAMETER,
-    TP_RESULT_ILLEGAL_STATUS,
-    TP_RESULT_EXCLUSIVE,
-    TP_RESULT_PXI_BUSY
-} TPRequestResult;
-typedef void (*TPRecvCallback) (TPRequestCommand command, TPRequestResult result, u16 index);
-typedef enum MICResult {
-    MIC_RESULT_SUCCESS = 0,
-    MIC_RESULT_BUSY,
-    MIC_RESULT_ILLEGAL_PARAMETER,
-    MIC_RESULT_SEND_ERROR,
-    MIC_RESULT_INVALID_COMMAND,
-    MIC_RESULT_ILLEGAL_STATUS,
-    MIC_RESULT_FATAL_ERROR,
-    MIC_RESULT_MAX
-} MICResult;
-typedef void (*MICCallback) (MICResult result, void * arg);
-typedef void (*PMCallback) (u32 result, void * arg);
 enum {
     FS_ARCHIVE_NAME_LEN_MAX = 3
 };
@@ -365,53 +232,6 @@ typedef struct FSFile {
         FSCloseFileInfo closefile;
     } arg;
 } FSFile;
-typedef enum RTCResult {
-    RTC_RESULT_SUCCESS = 0,
-    RTC_RESULT_BUSY,
-    RTC_RESULT_ILLEGAL_PARAMETER,
-    RTC_RESULT_SEND_ERROR,
-    RTC_RESULT_INVALID_COMMAND,
-    RTC_RESULT_ILLEGAL_STATUS,
-    RTC_RESULT_FATAL_ERROR,
-    RTC_RESULT_MAX
-} RTCResult;
-typedef void (*RTCCallback) (RTCResult result, void * arg);
-typedef struct WMGameInfo {
-    u16 magicNumber;
-    u8 ver;
-    u8 platform;
-    u32 ggid;
-    u16 tgid;
-    u8 userGameInfoLength;
-    union {
-        u8 gameNameCount_attribute;
-        u8 attribute;
-    };
-    u16 parentMaxSize;
-    u16 childMaxSize;
-    union {
-        u16 userGameInfo[112 / sizeof(u16)];
-        struct {
-            u16 userName[8 / sizeof(u16)];
-            u16 gameName[16 / sizeof(u16)];
-            u16 padd1[44];
-        } old_type;
-    };
-} WMGameInfo, WMgameInfo;
-typedef struct WMStartScanCallback {
-    u16 apiid;
-    u16 errcode;
-    u16 wlCmdID;
-    u16 wlResult;
-    u16 state;
-    u8 macAddress[6 ];
-    u16 channel;
-    u16 linkLevel;
-    u16 ssidLength;
-    u16 ssid[32 / sizeof(u16)];
-    u16 gameInfoLength;
-    WMGameInfo gameInfo;
-} WMStartScanCallback, WMstartScanCallback;
 typedef enum WVRResult {
     WVR_RESULT_SUCCESS = 0,
     WVR_RESULT_OPERATING,
@@ -571,13 +391,6 @@ typedef struct WBTContext {
     int req_bitmap;
     u32 binfo_bitmap[16][(((sizeof(WBTBlockInfo)) + (( sizeof(u32)) - 1)) & ~(( sizeof(u32)) - 1)) / sizeof(u32)];
 } WBTContext;
-typedef void * (*MIAllocatorAllocFunction)(void * userdata, u32 length, u32 alignment);
-typedef void (*MIAllocatorFreeFunction)(void * userdata, void * buffer);
-typedef struct MIAllocator {
-    void * userdata;
-    MIAllocatorAllocFunction Alloc;
-    MIAllocatorFreeFunction Free;
-} MIAllocator;
 typedef enum WFSTableRegionType {
     WFS_TABLE_REGION_FAT,
     WFS_TABLE_REGION_FNT,

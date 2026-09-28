@@ -2,7 +2,7 @@
  * direction to the target, within the scan distance (larger with ability 0x55). */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct Ov022ActorNode {
     char pad_0000[0x80];

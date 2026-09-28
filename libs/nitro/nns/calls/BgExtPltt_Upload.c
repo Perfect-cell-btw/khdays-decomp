@@ -1,7 +1,6 @@
 
-#include "nitro/types.h"
 
-#define NULL ((void *)0)
+#include "nitro/types.h"
 
 typedef enum GXTexFmt {
     GX_TEXFMT_NONE = 0,

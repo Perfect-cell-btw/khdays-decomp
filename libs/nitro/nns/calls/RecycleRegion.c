@@ -1,25 +1,7 @@
 
+
 #include "nitro/types.h"
-
-struct NNSiFndExpHeapMBlockHead {
-    u16 signature;
-    u16 attribute;
-    u32 block_size;
-    struct NNSiFndExpHeapMBlockHead *prev_block;
-    struct NNSiFndExpHeapMBlockHead *next_block;
-};
-
-struct NNSiFndExpMBlockList {
-    struct NNSiFndExpHeapMBlockHead *head;
-    struct NNSiFndExpHeapMBlockHead *tail;
-};
-
-struct NNSiFndExpHeapHead {
-    struct NNSiFndExpMBlockList free_list;
-    struct NNSiFndExpMBlockList used_list;
-    u16 group_id;
-    u16 feature;
-};
+#include "nnsys/fnd.h"
 
 struct NNSiMemRegion {
     void *start;

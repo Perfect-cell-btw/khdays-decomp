@@ -6,7 +6,7 @@
  * facing (sin, 0, cos) of the +0x28 yaw at 0x800 and the point is pulled back by that many
  * steps along it before c5c4 launches the actor there; d47dc takes over. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int RandNextScaled(int range);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);

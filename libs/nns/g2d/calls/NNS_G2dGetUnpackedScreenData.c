@@ -1,39 +1,11 @@
+
+
 #include "nitro/types.h"
 #include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
+#include "nnsys/g2d.h"
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-#define NNS_G2D_BINBLK_SIG_SCRDATA (u32)'SCRN'
-
-typedef struct NNSG2dBinaryFileHeader {
-    u32 signature;
-    u16 byteOrder;
-    u16 version;
-    u32 fileSize;
-    u16 headerSize;
-    u16 dataBlocks;
-} NNSG2dBinaryFileHeader;
-typedef struct NNSG2dBinaryBlockHeader {
-    u32 kind;
-    u32 size;
-} NNSG2dBinaryBlockHeader;
-typedef struct NNSG2dScreenData {
-    u16 screenWidth;
-    u16 screenHeight;
-    u16 colorMode;
-    u16 screenFormat;
-    u32 szByte;
-    u32 rawData[1];
-} NNSG2dScreenData;
-typedef struct NNSG2dScreenDataBlock {
-    NNSG2dBinaryBlockHeader blockHeader;
-    NNSG2dScreenData screenData;
-} NNSG2dScreenDataBlock;
 NNSG2dBinaryBlockHeader * NNS_G2dFindBinaryBlock(NNSG2dBinaryFileHeader * pBinFileHeader, u32 signature);
 
 /* NNS_G2dGetUnpackedScreenData -- NitroSystem g2d_NSC_load.c: NNS_G2dGetUnpackedScreenData. */

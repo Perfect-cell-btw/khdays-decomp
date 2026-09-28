@@ -1,7 +1,7 @@
 /* AI step: keeps and scales up the velocity and, when the animation ends, rolls a timer and picks
  * approaching (far or not ready) or attacking. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct b2 { unsigned char b0:1, b1:1; };
 

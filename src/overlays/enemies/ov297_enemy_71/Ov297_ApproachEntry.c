@@ -2,7 +2,7 @@
  * aims the +0x2c/+0x30 yaws at it (the facing of the +0x2c yaw is dotted against that direction
  * and discarded); one of animations 5/6 plays at random and the tick hands off to d5034. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);

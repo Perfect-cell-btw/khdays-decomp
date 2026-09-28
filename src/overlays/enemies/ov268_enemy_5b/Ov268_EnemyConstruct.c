@@ -12,7 +12,7 @@
  * sound 0x15f. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[5]; } PoseTable;
 typedef struct { VecFx32 min; VecFx32 max; } Bounds;

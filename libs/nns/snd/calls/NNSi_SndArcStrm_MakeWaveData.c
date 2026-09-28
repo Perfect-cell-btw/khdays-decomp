@@ -1,121 +1,17 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nitro/pxi.h"
+#include "nitro/spi.h"
+#include "nitro/snd.h"
+#include "nnsys/fnd.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-#define NNS_FND_HEAP_INVALID_HANDLE NULL
 #define NNS_SND_HEAP_INVALID_HANDLE NNS_FND_HEAP_INVALID_HANDLE
 #define NNS_SND_STRM_PLAYER_NUM 4
 #define BLOCK_SIZE 512
 #define BLOCK_NUM 4
 
-typedef struct CPContext {
-    u64 div_numer;
-    u64 div_denom;
-    u64 sqrt;
-    u16 div_mode;
-    u16 sqrt_mode;
-} CPContext;
-typedef struct OSContext {
-    u32 cpsr;
-    u32 r[13];
-    u32 sp;
-    u32 lr;
-    u32 pc_plus4;
-    u32 sp_svc;
-    CPContext cp_context;
-} OSContext;
-typedef struct _OSThread OSThread;
-typedef struct _OSThreadQueue OSThreadQueue;
-typedef struct _OSThreadLink OSThreadLink;
-typedef struct _OSMutexQueue OSMutexQueue;
-typedef struct _OSMutexLink OSMutexLink;
-typedef struct OSMutex OSMutex;
-typedef struct OSiAlarm OSAlarm;
-struct _OSThreadQueue {
-        OSThread * head;
-        OSThread * tail;
-    };
-struct _OSThreadLink {
-        OSThread * prev;
-        OSThread * next;
-    };
-struct _OSMutexQueue {
-        OSMutex * head;
-        OSMutex * tail;
-    };
-struct _OSMutexLink {
-        OSMutex * next;
-        OSMutex * prev;
-    };
-typedef enum {
-    OS_THREAD_STATE_WAITING       = 0,
-    OS_THREAD_STATE_READY         = 1,
-    OS_THREAD_STATE_TERMINATED    = 2
-} OSThreadState;
-typedef void (*OSThreadDestructor) (void *);
-struct _OSThread {
-    OSContext context;
-    OSThreadState state;
-    OSThread * next;
-    u32 id;
-    u32 priority;
-    void * profiler;
-    OSThreadQueue * queue;
-    OSThreadLink link;
-    OSMutex * mutex;
-    OSMutexQueue mutexQueue;
-    u32 stackTop;
-    u32 stackBottom;
-    u32 stackWarningOffset;
-    OSThreadQueue joinQueue;
-    void * specific[3 ];
-    OSAlarm * alarmForSleep;
-    OSThreadDestructor destructor;
-    void * userParameter;
-    int systemErrno;
-};
-struct OSMutex {
-    OSThreadQueue queue;
-    OSThread * thread;
-    s32 count;
-    OSMutexLink link;
-};
-typedef void (*OSAlarmHandler) (void *);
-struct OSiAlarm {
-    OSAlarmHandler handler;
-    void * arg;
-    u32 tag;
-    OSTick fire;
-    OSAlarm * prev;
-    OSAlarm * next;
-    OSTick period;
-    OSTick start;
-};
-typedef struct {
-    void * prevObject;
-    void * nextObject;
-} NNSFndLink;
-typedef struct {
-    void * headObject;
-    void * tailObject;
-    u16 numObjects;
-    u16 offset;
-} NNSFndList;
-typedef struct NNSiFndHeapHead NNSiFndHeapHead;
-struct NNSiFndHeapHead {
-    u32 signature;
-    NNSFndLink link;
-    NNSFndList childList;
-    void * heapStart;
-    void * heapEnd;
-    u32 attribute;
-};
-typedef NNSiFndHeapHead * NNSFndHeapHandle;
-typedef void (*NNSFndHeapVisitor)(void * memBlock, NNSFndHeapHandle heap, u32 userParam);
 enum {
     FS_ARCHIVE_NAME_LEN_MAX = 3
 };
@@ -286,154 +182,10 @@ typedef struct FSFile {
         FSCloseFileInfo closefile;
     } arg;
 } FSFile;
-typedef enum {
-    SND_DUTY_1_8,
-    SND_DUTY_2_8,
-    SND_DUTY_3_8,
-    SND_DUTY_4_8,
-    SND_DUTY_5_8,
-    SND_DUTY_6_8,
-    SND_DUTY_7_8
-} SNDDuty;
-struct SNDExChannel;
-typedef enum SNDExChannelCallbackStatus {
-    SND_EX_CHANNEL_CALLBACK_DROP,
-    SND_EX_CHANNEL_CALLBACK_FINISH
-} SNDExChannelCallbackStatus;
-typedef void (*SNDExChannelCallback) (struct SNDExChannel * ch_p, SNDExChannelCallbackStatus status, void * userData);
-typedef struct SNDWaveParam {
-        u8 format;
-        u8 loopflag;
-        u16 rate;
-        u16 timer;
-        u16 loopstart;
-        u32 looplen;
-    } SNDWaveParam;
-typedef struct SNDLfoParam {
-    u8 target;
-    u8 speed;
-    u8 depth;
-    u8 range;
-    u16 delay;
-} SNDLfoParam;
-typedef struct SNDLfo {
-    struct SNDLfoParam param;
-    u16 delay_counter;
-    u16 counter;
-} SNDLfo;
-typedef struct SNDExChannel {
-    u8 myNo;
-    u8 type;
-    u8 env_status;
-    u8 active_flag : 1;
-    u8 start_flag : 1;
-    u8 auto_sweep : 1;
-    u8 sync_flag : 5;
-    u8 pan_range;
-    u8 original_key;
-    s16 user_decay2;
-    u8 key;
-    u8 velocity;
-    s8 init_pan;
-    s8 user_pan;
-    s16 user_decay;
-    s16 user_pitch;
-    s32 env_decay;
-    s32 sweep_counter;
-    s32 sweep_length;
-    u8 attack;
-    u8 sustain;
-    u16 decay;
-    u16 release;
-    u8 prio;
-    u8 pan;
-    u16 volume;
-    u16 timer;
-    struct SNDLfo lfo;
-    s16 sweep_pitch;
-    s32 length;
-    struct SNDWaveParam wave;
-    union {
-        const void * data;
-        SNDDuty duty;
-    };
-    SNDExChannelCallback callback;
-    void * callback_data;
-    struct SNDExChannel * nextLink;
-} SNDExChannel;
-typedef struct SNDBinaryFileHeader {
-    char signature[4];
-    u16 byteOrder;
-    u16 version;
-    u32 fileSize;
-    u16 headerSize;
-    u16 dataBlocks;
-} SNDBinaryFileHeader;
-typedef struct SNDBinaryBlockHeader {
-    u32 kind;
-    u32 size;
-} SNDBinaryBlockHeader;
-struct SNDExChannel;
 struct NNSSndHeap;
 typedef void (*NNSSndHeapDisposeCallback)(void * mem, u32 size, u32 data1, u32 data2);
 typedef struct NNSSndHeap * NNSSndHeapHandle;
 void * NNS_SndHeapAlloc(NNSSndHeapHandle heap, u32 size, NNSSndHeapDisposeCallback callback, u32 data1, u32 data2);
-typedef enum {
-    TP_REQUEST_COMMAND_SAMPLING         = 0x0,
-    TP_REQUEST_COMMAND_AUTO_ON          = 0x1,
-    TP_REQUEST_COMMAND_AUTO_OFF         = 0x2,
-    TP_REQUEST_COMMAND_SET_STABILITY    = 0x3,
-    TP_REQUEST_COMMAND_AUTO_SAMPLING    = 0x10
-} TPRequestCommand;
-typedef enum {
-    TP_RESULT_SUCCESS = 0,
-    TP_RESULT_INVALID_PARAMETER,
-    TP_RESULT_ILLEGAL_STATUS,
-    TP_RESULT_EXCLUSIVE,
-    TP_RESULT_PXI_BUSY
-} TPRequestResult;
-typedef void (*TPRecvCallback) (TPRequestCommand command, TPRequestResult result, u16 index);
-typedef enum {
-    PXI_FIFO_TAG_EX = 0,
-    PXI_FIFO_TAG_USER_0,
-    PXI_FIFO_TAG_USER_1,
-    PXI_FIFO_TAG_SYSTEM,
-    PXI_FIFO_TAG_NVRAM,
-    PXI_FIFO_TAG_RTC,
-    PXI_FIFO_TAG_TOUCHPANEL,
-    PXI_FIFO_TAG_SOUND,
-    PXI_FIFO_TAG_PM,
-    PXI_FIFO_TAG_MIC,
-    PXI_FIFO_TAG_WM,
-    PXI_FIFO_TAG_FS,
-    PXI_FIFO_TAG_OS,
-    PXI_FIFO_TAG_CTRDG,
-    PXI_FIFO_TAG_CARD,
-    PXI_FIFO_TAG_WVR,
-    PXI_FIFO_TAG_CTRDG_Ex,
-    PXI_FIFO_TAG_CTRDG_PHI,
-    PXI_MAX_FIFO_TAG = 32
-} PXIFifoTag;
-typedef void (*PXIFifoCallback) (PXIFifoTag tag, u32 data, BOOL err);
-typedef enum MICResult {
-    MIC_RESULT_SUCCESS = 0,
-    MIC_RESULT_BUSY,
-    MIC_RESULT_ILLEGAL_PARAMETER,
-    MIC_RESULT_SEND_ERROR,
-    MIC_RESULT_INVALID_COMMAND,
-    MIC_RESULT_ILLEGAL_STATUS,
-    MIC_RESULT_FATAL_ERROR,
-    MIC_RESULT_MAX
-} MICResult;
-typedef void (*MICCallback) (MICResult result, void * arg);
-typedef void (*PMCallback) (u32 result, void * arg);
-typedef void (*PMSleepCallback) (void *);
-typedef struct PMiSleepCallbackInfo PMSleepCallbackInfo;
-struct PMiSleepCallbackInfo {
-    PMSleepCallback callback;
-    void * arg;
-    PMSleepCallbackInfo * next;
-};
 typedef enum NNSSndStrmFormat {
     NNS_SND_STRM_FORMAT_PCM8,
     NNS_SND_STRM_FORMAT_PCM16

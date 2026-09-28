@@ -5,7 +5,7 @@
  * Codegen: the shared +0x24 address is a named pointer so the copy evaluates its destination
  * address first (ip) and the source (lr) second. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(void *out, void *tbl, int idx);

@@ -1,35 +1,11 @@
+
+
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
+#include "nnsys/snd.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-typedef enum {
-    SND_CHANNEL_DATASHIFT_NONE,
-    SND_CHANNEL_DATASHIFT_1BIT,
-    SND_CHANNEL_DATASHIFT_2BIT,
-    SND_CHANNEL_DATASHIFT_4BIT
-} SNDChannelDataShift;
 void SND_SetChannelVolume(u32 chBitMask, int volume, SNDChannelDataShift shift);
-typedef enum {
-    NNS_SND_CAPTURE_FORMAT_PCM16,
-    NNS_SND_CAPTURE_FORMAT_PCM8
-} NNSSndCaptureFormat;
-typedef enum {
-    NNS_SND_CAPTURE_TYPE_REVERB,
-    NNS_SND_CAPTURE_TYPE_EFFECT,
-    NNS_SND_CAPTURE_TYPE_SAMPLING
-} NNSSndCaptureType;
-typedef void (*NNSSndCaptureCallback)(void * bufferL, void * bufferR, u32 len, NNSSndCaptureFormat format, void * arg);
 void NNSi_SndCaptureStop(void);
-typedef struct NNSSndFader {
-    int origin;
-    int target;
-    int counter;
-    int frame;
-} NNSSndFader;
 int NNSi_SndFaderGet(const NNSSndFader * fader);
 void NNSi_SndFaderUpdate(NNSSndFader * fader);
 BOOL NNSi_SndFaderIsFinished(const NNSSndFader * fader);

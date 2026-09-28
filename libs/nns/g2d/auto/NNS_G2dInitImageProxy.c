@@ -1,10 +1,7 @@
+
+
 #include "nitro/types.h"
 #include "nitro/os.h"
-
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
 
 typedef enum {
     GX_TEXSIZE_S8       = 0,

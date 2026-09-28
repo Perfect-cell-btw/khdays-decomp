@@ -9,7 +9,7 @@
  * attack 2 and hand off to 020d10e8.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct b17a { unsigned char b0 : 1; };
 extern void VEC_Subtract(void *a, void *b, void *c);

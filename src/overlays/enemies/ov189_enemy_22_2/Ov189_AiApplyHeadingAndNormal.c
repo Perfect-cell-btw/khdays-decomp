@@ -1,6 +1,6 @@
 /* Turns toward the heading (3x rate), composes it with the surface-normal tilt and applies it. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(void *dst, void *src, int t);

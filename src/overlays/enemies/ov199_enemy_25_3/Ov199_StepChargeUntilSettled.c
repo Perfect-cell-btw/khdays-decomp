@@ -17,7 +17,7 @@
  * `*ctx` load out of the loop by itself; doing it by hand is not needed.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 extern int Ov199_BuildHeadingRotation(int *ctx, VecFx32 v, int flag);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);

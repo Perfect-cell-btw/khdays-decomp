@@ -1,12 +1,10 @@
+
+
+/* NitroSDK SND library (ARM9 side, snd_command.c): the command queue to the ARM7 sound driver. */
+
 #include "nitro/types.h"
 #include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-/* NitroSDK SND library (ARM9 side, snd_command.c): the command queue to the ARM7 sound driver. */
 typedef int PXIFifoTag;
 typedef struct SNDCommand {
     struct SNDCommand *next;      /* 0x00 */

@@ -1,9 +1,11 @@
 
+
 #include "nitro/types.h"
+#include "nitro/mi.h"
+#include "nitro/os.h"
 
 enum {
-    CARD_STAT_BUSY = 1 << 2,
-    MI_DMA_MAX_NUM = 3
+    CARD_STAT_BUSY = 1 << 2
 };
 
 typedef void (*CARDCallback)(void *argument);
@@ -44,11 +46,6 @@ struct CARDRomStat {
     u8 *cache_page;
     u32 dummy[5];
     u8 cache_buf[0x200];
-};
-
-struct OSiThreadInfoPrefix {
-    u32 initialized;
-    void *current_thread;
 };
 
 extern void CARD_CheckEnabled(void);

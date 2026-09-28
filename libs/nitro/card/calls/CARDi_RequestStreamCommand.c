@@ -1,6 +1,7 @@
 /* NitroSDK CARDi_RequestStreamCommand (src, dst, len, callback, arg, async, type, retry, mode). */
 
 #include "nitro/types.h"
+#include "nitro/os.h"
 
 enum {
     CARD_STAT_BUSY = 1 << 2
@@ -34,11 +35,6 @@ struct CARDiCommon {
     u32 priority;
     u8 busy_q[8];
     volatile u32 flag;
-};
-
-struct OSiThreadInfoPrefix {
-    u32 initialized;
-    void *current_thread;
 };
 
 extern void OSi_ReferSymbol(void *p);

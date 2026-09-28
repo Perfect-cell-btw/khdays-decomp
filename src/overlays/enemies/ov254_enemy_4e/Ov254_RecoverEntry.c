@@ -3,7 +3,7 @@
  * flag clear, the +0xc velocity resets to zero and the node moves to 020d06d0. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { unsigned f : 8; } B8;
 

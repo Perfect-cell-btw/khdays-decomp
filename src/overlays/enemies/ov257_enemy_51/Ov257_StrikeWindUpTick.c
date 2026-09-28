@@ -4,7 +4,7 @@
  * about data_02042264. Once the +0xc idle byte clears, animation 0x11 plays, +0x76 clears and the
  * tick hands over to Ov257_StrikeTick. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[4]; } Quat;
 

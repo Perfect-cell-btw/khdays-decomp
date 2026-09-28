@@ -9,7 +9,7 @@
  * after raising bit 2 unless both bit 36 and +0x464 bit 7 hold). The timer advances by 0x1800
  * in single-player frames (3c40 == 1) or 0x1000. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct ActorBits {
     unsigned char bUnk0 : 1;

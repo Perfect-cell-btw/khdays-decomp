@@ -1,6 +1,6 @@
 
 #include "nitro/types.h"
-#include "nitro/os.h"
+#include "nitro/os_types.h"
 
 struct FSArchive;
 

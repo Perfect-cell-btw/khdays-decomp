@@ -6,7 +6,7 @@
  * becomes 0.5, the target's height is kept at +0x6c and the tick hands over to
  * Ov272_CarryTick. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[4]; } Quat;
 struct Partner { char pad[0x464]; unsigned long long flags; };

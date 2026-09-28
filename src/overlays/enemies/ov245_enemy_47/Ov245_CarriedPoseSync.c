@@ -3,7 +3,7 @@
  * item's +0x10 and that into the +0x3b4 target's +0x10, lifts both +0x24 heights by 19.0 and
  * keeps the +0x3b8 item's +0x20 position at +0x3bc. */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int m[11]; } Pose44;
 struct Ov245Item { char pad[0x10]; Pose44 pose; };

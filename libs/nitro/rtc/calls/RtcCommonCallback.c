@@ -1,12 +1,10 @@
+
+
+/* NitroSDK RTC library (external.c): the ARM9 side of the real-time clock PXI protocol. */
+
 #include "nitro/types.h"
 #include "nitro/os.h"
 
-typedef void *OSMessage;
-
-#define NULL ((void *)0)
-#define HW_MAIN_MEM 0x02000000
-
-/* NitroSDK RTC library (external.c): the ARM9 side of the real-time clock PXI protocol. */
 typedef int PXIFifoTag;
 typedef int RTCResult;
 typedef int RTCPxiResult;
@@ -37,7 +35,6 @@ typedef enum RTCSequence {
 #define RTC_PXI_RESULT_MASK         0x000000ff
 #define RTC_PXI_RESULT_SHIFT        0
 #define RTC_PXI_COMMAND_INTERRUPT   0x30
-#define HW_RTC_BUF                  0x027ffde8   /* OSSystemWork.real_time_clock[8] */
 
 typedef struct RTCDate { u32 year; u32 month; u32 day; RTCWeek week; } RTCDate;
 typedef struct RTCTime { u32 hour; u32 minute; u32 second; } RTCTime;
@@ -111,7 +108,6 @@ typedef union RTCRawData {
     u16 halfs[4];
     u8 bytes[8];
 } RTCRawData;
-#define OS_GetSystemWork_real_time_clock() ((u8 *)HW_RTC_BUF)
 
 typedef struct RTCWork {
     u32 lock;                     /* 0x00 */

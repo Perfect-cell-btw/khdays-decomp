@@ -1,6 +1,8 @@
 
+
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
+#include "nitro/hw.h"
 
 typedef struct MtxFx33 {
     fx32 _00, _01, _02;
@@ -42,14 +44,6 @@ enum {
     NNS_G3D_JNTANM_RESULTFLAG_SCALEEX0_ONE = 0x00000008,
     NNS_G3D_JNTANM_RESULTFLAG_SCALEEX1_ONE = 0x00000010
 };
-
-#define REG_DIVCNT          (*(vu16 *)0x04000280)
-#define REG_DIV_NUMER       (*(vu64 *)0x04000290)
-#define REG_DIV_DENOM       (*(vs64 *)0x04000298)
-#define REG_DIV_RESULT      (*(vs64 *)0x040002a0)
-#define REG_SQRTCNT         (*(vu16 *)0x040002b0)
-#define REG_SQRT_RESULT     (*(vu32 *)0x040002b4)
-#define REG_SQRT_PARAM      (*(u64 *)0x040002b8)
 
 extern void func_01ffb234(NNSG3dJntAnmResult *pResult,
                           const NNSG3dAnmObj *pAnmObj, u32 dataIdx);

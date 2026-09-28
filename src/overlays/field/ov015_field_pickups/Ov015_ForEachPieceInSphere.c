@@ -6,7 +6,7 @@
  * (0207386c == -1) or the seat has no owner. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct SphereFx32 {
     VecFx32 center;

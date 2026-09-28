@@ -6,7 +6,7 @@
  * The base hook always runs. */
 
 #include "nitro/types.h"
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 typedef struct { int w[11]; } SrtTransform;
 struct Pair { int res; int handle; };

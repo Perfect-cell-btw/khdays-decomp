@@ -36,7 +36,7 @@
  * block, mwcc hoists the load above the strb and parks it in lr.
  */
 
-#include "nitro/fx.h"
+#include "nitro/fx_types.h"
 
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
 
