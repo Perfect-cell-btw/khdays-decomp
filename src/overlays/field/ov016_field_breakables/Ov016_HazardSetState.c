@@ -45,7 +45,8 @@ void Ov016_HazardSetState(Ov016Hazard *pSelf, int bState, int bSpawn)
     pDef = pSelf->pDef;
     nOn = (bState ? 1 : 0);
     nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
-    GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit, (u16)((nOn << 1) | (nState & 0xffff0001)));
+    GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit,
+                       (u16)((nOn << 1) | (nState & 0xffff0001)));
     if (pSelf->nNodeFlags34 & 4) {
         Ov002_RebindAnimTracks(&pSelf->nNodeFlagsB, nTrack, 0);
         SceneNode_Disable(&pSelf->nNodeFlagsB);

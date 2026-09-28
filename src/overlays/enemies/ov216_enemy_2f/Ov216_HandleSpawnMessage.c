@@ -8,7 +8,8 @@ typedef struct { int w[11]; } Srt;
 extern void SrtTransform_SetIdentity(Srt *srt);
 extern void Srt_SetTranslation(Srt *srt, const VecFx32 *t);
 extern void Srt_SetScaleUniform(Srt *srt, int scale);
-extern void *Ov107_CreateNodeBodyTask(void *owner, void *slot, int flags, void *xform, int a5, int a6);
+extern void *Ov107_CreateNodeBodyTask(void *owner, void *slot, int flags, void *xform, int a5,
+                                      int a6);
 extern void *Ov107_CreateNodeXformTask(void *owner, void *slot, int kind, int a4,
                                  const Srt *srt);
 extern void Ov107_ForwardVisibleEvent(void *self, int a2);
@@ -43,7 +44,9 @@ void Ov216_HandleSpawnMessage(char *self, u8 *cmd, void *arg3)
         switch (cmd[3]) {
         case 0:
             *(void **)(self + (cmd[3] << 3) + 0x444) =
-                Ov107_CreateNodeBodyTask(*(void **)(self + 0x3c), *(void **)(self + (cmd[3] << 3) + 0x440), 0x17, self + 0x3f4, 3, 0);
+                Ov107_CreateNodeBodyTask(*(void **)(self + 0x3c),
+                                         *(void **)(self + (cmd[3] << 3) + 0x440), 0x17,
+                                         self + 0x3f4, 3, 0);
             break;
         case 1:
             Srt_SetScaleUniform(&srt, 0x199a);
@@ -63,7 +66,9 @@ void Ov216_HandleSpawnMessage(char *self, u8 *cmd, void *arg3)
         case 2:
         case 4:
             *(void **)(self + (cmd[3] << 3) + 0x444) =
-                Ov107_CreateNodeBodyTask(*(void **)(self + 0x3c), *(void **)(self + (cmd[3] << 3) + 0x440), (u8)(((cmd[3] == 2) ? 0 : 4) | 1), self + 0x3c8, 0, 1);
+                Ov107_CreateNodeBodyTask(*(void **)(self + 0x3c),
+                                         *(void **)(self + (cmd[3] << 3) + 0x440),
+                                         (u8)(((cmd[3] == 2) ? 0 : 4) | 1), self + 0x3c8, 0, 1);
             if (cmd[3] == 2) {
                 *(void **)(self + 0x43c) =
                     Ov107_CreateSpawnTask(self, 0x144, 5, 1, self + 0x3c8);

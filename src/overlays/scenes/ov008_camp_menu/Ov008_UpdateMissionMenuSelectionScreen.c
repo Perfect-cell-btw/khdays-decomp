@@ -44,7 +44,8 @@ extern int Ov008_IsSubMenuSceneReady(void);
 extern void Ov008_Link_InstallSceneCallback(void);
 extern void Ov008_ResetTextLayers(void);
 extern void *Ov008_GetVarRecordByIndex(void *resource, u32 index);
-extern void Ov008_ForwardSevenArgs(void *text, int x, int y, int style, int layer, int align, int visible);
+extern void Ov008_ForwardSevenArgs(void *text, int x, int y, int style, int layer, int align,
+                                   int visible);
 extern u16 Ov008_GetMissionOptionMask(void);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
 extern void Ov008_CopyMissionOptionTextRows(void *destination);
@@ -187,7 +188,8 @@ MissionState Ov008_UpdateMissionMenuSelectionScreen(void)
     do {
         if ((optionMask & (1 << sourceRowIndex)) != 0 &&
             *(u16 *)((u8 *)optionTextRows + sourceRowIndex * 0x16) != 0) {
-            Ov008_ForwardSevenArgs((u8 *)optionTextRows + sourceRowIndex * 0x16, 99, visibleRowIndex * 0x18 + 0x23, 1, 1, 0, 0);
+            Ov008_ForwardSevenArgs((u8 *)optionTextRows + sourceRowIndex * 0x16, 99,
+                                   visibleRowIndex * 0x18 + 0x23, 1, 1, 0, 0);
             visibleRowIndex = (visibleRowIndex + 1) & 0xff;
         }
         sourceRowIndex = (sourceRowIndex + 1) & 0xff;

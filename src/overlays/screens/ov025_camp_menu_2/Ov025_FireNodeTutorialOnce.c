@@ -22,7 +22,8 @@ int Ov025_FireNodeTutorialOnce(void) {
     if (Ov025_GetCtxObject9630() != 0) {
         return 0;
     }
-    id = Ov025_GetTableValueB((unsigned short)(Ov025_FindFirstThresholdRow((unsigned short)(GameState_GetField(0, 9)))));
+    id = Ov025_GetTableValueB(
+                              (unsigned short)(Ov025_FindFirstThresholdRow((unsigned short)(GameState_GetField(0, 9)))));
     result = 0;
     if (GameState_IsFlagSet(id + 0x3bd5) == 0) {
         GameState_SetFlag(id + 0x3bd5);

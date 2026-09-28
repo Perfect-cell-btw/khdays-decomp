@@ -276,7 +276,8 @@ void Ov022_ActorUpdate(struct Actor *pActor)
             pActor->nFlags2 |= (1ULL << 33);
         }
         if (pActor->nSlotIndex >= 0 && pActor->nHp != 0) {
-            Ov002_CollectNearbySpots(Ov002_GetSlotTableByte(pActor->nSlotIndex), pActor->pSub, pActor->nId);
+            Ov002_CollectNearbySpots(Ov002_GetSlotTableByte(pActor->nSlotIndex), pActor->pSub,
+                                     pActor->nId);
         }
     }
     if ((pActor->nFlags & (1ULL << 42)) != 0) {

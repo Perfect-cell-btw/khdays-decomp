@@ -63,7 +63,8 @@ int Ov022_ScoreCandidateByFacing(u32 *selectionFlags, int index, int bestDistanc
     NNSi_FndGetCurrentRootHeap();
     origin = func_ov022_020881f8(index);
     actor = GetEntryField20ByIndex(index);
-    entry = Ov002_List_GetWord((u16)Ov002_GetSlotTableByte(Ov022_GetEntryField66(QueryActiveStateOrDelegate())));
+    entry = Ov002_List_GetWord(
+                               (u16)Ov002_GetSlotTableByte(Ov022_GetEntryField66(QueryActiveStateOrDelegate())));
 
     while (entry != 0) {
         int distance;

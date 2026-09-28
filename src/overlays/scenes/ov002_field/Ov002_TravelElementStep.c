@@ -80,7 +80,8 @@ int Ov002_TravelElementStep(char *pElement)
                 *(int *)(pElement + 0x2bc) = 0;
 
                 nState = GameState_GetField(*(u16 *)(pElement + 0x14), *(u8 *)(pElement + 0x16));
-                GameState_SetField(*(u16 *)(pElement + 0x14), *(u8 *)(pElement + 0x16), (u16)((nState & ~0xfffe) | 2));
+                GameState_SetField(*(u16 *)(pElement + 0x14), *(u8 *)(pElement + 0x16),
+                                   (u16)((nState & ~0xfffe) | 2));
 
                 Ov002_ElementStartTrack(pElement, (short *)(pElement + 0x1b0),
                                     *(u8 *)(pElement + 0x2c0),

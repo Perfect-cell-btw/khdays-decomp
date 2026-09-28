@@ -15,5 +15,6 @@ void Ov002_RebindActorModel(char *self) {
     if (flags != 0) {
         return;
     }
-    Render_SubmitNode(self + 0x2c, (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]), 0, 0);
+    Render_SubmitNode(self + 0x2c, (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]),
+                      0, 0);
 }

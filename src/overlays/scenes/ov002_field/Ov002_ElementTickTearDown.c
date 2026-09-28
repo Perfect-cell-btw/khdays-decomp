@@ -51,7 +51,8 @@ void *Ov002_ElementTickTearDown(char *pElement)
             if (Ov002_IsSessionOpen() != 0 && Ov002_HasAssignedPeerId() != 0) {
 
                 pSession = GetEntryField20ByIndex(*(unsigned char *)(pElement + 0x1b8));
-                pEntry = Ov002_GetRootField8d14((short)Ov002_FindKeyEntryIndex(*(short *)(pElement + 0x1b6)));
+                pEntry = Ov002_GetRootField8d14(
+                                                (short)Ov002_FindKeyEntryIndex(*(short *)(pElement + 0x1b6)));
 
                 /* All four values are read before the callback pointer is
                  * tested, and in this order: the original schedules them into
@@ -76,7 +77,8 @@ void *Ov002_ElementTickTearDown(char *pElement)
 
     if (bDone) {
         nState = GameState_GetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16));
-        GameState_SetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16), (u16)((nState & ~0xfffe) | 2));
+        GameState_SetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16),
+                           (u16)((nState & ~0xfffe) | 2));
         Ov002_SetFieldBit0(pElement, 0);
         ReleaseNodeResources(pElement + 0x2c);
         *(unsigned char *)(pElement + 0x1b4) = 7;

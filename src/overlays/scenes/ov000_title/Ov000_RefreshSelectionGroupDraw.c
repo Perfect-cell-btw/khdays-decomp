@@ -54,7 +54,8 @@ void Ov000_RefreshSelectionGroupDraw(void) {
         if (group >= 3) {
             Ov000_ReleaseTwoSlotsEx(&context->objectList, entry, 5);
         } else if (selectionGroup->state == 1) {
-            Ov000_ReleaseTwoSlotsEx(&context->objectList, entry, (u16)(data_ov000_0205ac24->selectionGroups[group].mode + 2));
+            Ov000_ReleaseTwoSlotsEx(&context->objectList, entry,
+                                    (u16)(data_ov000_0205ac24->selectionGroups[group].mode + 2));
         } else if (selectionGroup->state == 2) {
             Ov000_ReleaseTwoSlotsEx(&context->objectList, entry, 0);
         } else {

@@ -175,7 +175,9 @@ void Ov287_Actor_HandleEvent(struct Actor *actor, struct ActorEventMsg *msg, u32
                 w.scratch[2].b[2] = mid;
             }
             w.vec[2] = w.scratch[2].w >> 8;
-            Ov002_SpawnAllDrops(w.colour, (u16)(Ov002_GetSlotTableByte(*(void **)((char *)node + 0x78))), w.vec);
+            Ov002_SpawnAllDrops(w.colour,
+                                (u16)(Ov002_GetSlotTableByte(*(void **)((char *)node + 0x78))),
+                                w.vec);
             break;
         case 4:
             if (actor->mode050 == 2) {

@@ -67,8 +67,10 @@ void Ov002_UpdateGaugeRow(int nRow, GaugeFlag bFilled, GaugeFlag bLast)
                             pContext->aRowStyles[data_ov002_0207e988]);
     } else {
         short nLimit = pContext->aRowStyles[0]->nRowLimit;
-        nHandle = Ov002_PositionSubDcHandle(pContext->aRowStyles[data_ov002_0207e988], nEncodedRow, 0xb);
-        Ov002_PositionSubDcHandle_2(nHandle, (short)(nLimit - nHalfRow), pContext->aRowStyles[0]->nColour);
+        nHandle = Ov002_PositionSubDcHandle(pContext->aRowStyles[data_ov002_0207e988], nEncodedRow,
+                                            0xb);
+        Ov002_PositionSubDcHandle_2(nHandle, (short)(nLimit - nHalfRow),
+                                    pContext->aRowStyles[0]->nColour);
     }
     Ov002_Ctx_InvokeTagTrackerCallback(nHandle);
     data_ov002_0207e988 = -1;

@@ -97,7 +97,8 @@ extern void Ov022_StartSlotEffect(u8 *pBlk, VecFx32 *pPos, int nAngle, int nScal
 extern void func_ov022_02092808(u8 *pBlk, int nFrame);
 extern void func_ov022_02094224(u8 *pBlk, VecFx32 *pPos, int nFrame);
 extern int Ov022_GetGlobal34(void);
-extern void Ov022_StepDustEmitter(u8 *pBlk, VecFx32 *pPos, VecFx32 *pVec, int nDelta, int nReaction, int nAngle, u8 *pColl);
+extern void Ov022_StepDustEmitter(u8 *pBlk, VecFx32 *pPos, VecFx32 *pVec, int nDelta, int nReaction,
+                                  int nAngle, u8 *pColl);
 extern void func_ov022_0209d0b0(struct Actor *pActor, int *pCounter, int nDelta);
 extern void Ov022_TickChargeTimer(struct Actor *pActor, int nDelta);
 extern void func_ov022_02097b78(struct Actor *pActor);
@@ -188,19 +189,23 @@ void Ov022_UpdateSubsystems(struct Actor *pActor)
         Ov022_MoveEffectTowardCamera(pActor);
     }
     Ov022_StepReactionPhase(&pActor->reactionBlk);
-    Ov022_StepSpinEffect(&pActor->reactBlk, &vecFacing, (u16)(pActor->pNode->nAngle - 0x8000), pActor->nHitReaction == 0x13, pActor->nAreaFrame);
+    Ov022_StepSpinEffect(&pActor->reactBlk, &vecFacing, (u16)(pActor->pNode->nAngle - 0x8000),
+                         pActor->nHitReaction == 0x13, pActor->nAreaFrame);
     if ((pActor->nFlags2 & (1ULL << 27)) != 0
         || (pActor->nFlags2 & (1ULL << 28)) != 0) {
         Ov022_ResetFields135_168_174(&pActor->reactBlk);
     }
     if ((pActor->nFlags2 & (1ULL << 45)) != 0
         || (pActor->nFlags2 & (1ULL << 44)) != 0) {
-        Ov022_StartSlotEffect(&pActor->slotBlk, &pActor->vecPos, (u16)(pActor->pNode->nAngle - 0x8000), 0x1000);
+        Ov022_StartSlotEffect(&pActor->slotBlk, &pActor->vecPos,
+                              (u16)(pActor->pNode->nAngle - 0x8000), 0x1000);
     }
     func_ov022_02092808(&pActor->slotBlk, pActor->nAreaFrame);
     func_ov022_02094224(&pActor->timerBlk, &pActor->vecPos, pActor->nAreaFrame);
     nDelta = Ov022_GetGlobal34();
-    Ov022_StepDustEmitter(&pActor->comboBlk, &pActor->vecPos, &vecFacing, nDelta, pActor->nHitReaction, (u16)(pActor->pNode->nAngle - 0x8000), &pActor->collMain);
+    Ov022_StepDustEmitter(&pActor->comboBlk, &pActor->vecPos, &vecFacing, nDelta,
+                          pActor->nHitReaction, (u16)(pActor->pNode->nAngle - 0x8000),
+                          &pActor->collMain);
     if (Session_GetLocalPlayerIndex() == 0) {
         if ((data_0204c240 & 2) != 0) {
             if ((pActor->nInputMask & 4) != 0

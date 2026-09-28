@@ -160,7 +160,8 @@ extern const short data_02040210[];               /* kFxSinCosTable entry 3072 (
 
 extern int VEC_Mag(VecFx32 *pVec);
 extern void ScaleVec3Fx12(int nScale, VecFx32 *pIn, VecFx32 *pOut);             /* ScaleVec3Fx12 */
-extern struct Hit *EntityMgr_RunSphereCast(int nSlot, VecFx32 *pFrom, VecFx32 *pDir, int nRadius, struct ActorNode *pNode);   /* sphere cast */
+extern struct Hit *EntityMgr_RunSphereCast(int nSlot, VecFx32 *pFrom, VecFx32 *pDir, int nRadius,
+                                           struct ActorNode *pNode);   /* sphere cast */
 extern int IsField1cEqualData42910(struct HitState *pState);                              /* IsField1cEqualData42910 */
 extern void VecFx32FromVecS16(void *pModel, VecS16 *pPacked, VecFx32 *pOut);        /* VecFx32FromVecS16 */
 extern int VEC_DotProduct(VecFx32 *pA, VecFx32 *pB);
@@ -261,7 +262,8 @@ int Ov022_FindClimbTarget(struct Actor *pActor)
     vecDir.y = 0;
     vecDir.z = -vecNormal.z;
     ScaleVec3Fx12(BACK_REACH, &vecDir, &vecDir);
-    pHit = EntityMgr_RunSphereCast((u16)pActor->nSlotIndex, &vecTo, &vecDir, BACK_RADIUS, pActor->pNode);
+    pHit = EntityMgr_RunSphereCast((u16)pActor->nSlotIndex, &vecTo, &vecDir, BACK_RADIUS,
+                                   pActor->pNode);
     if (pHit == 0) {
         return 0;
     }

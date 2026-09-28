@@ -205,7 +205,8 @@ void Ov252_HandleMessage(char *self, u8 *msg, int arg)
             colour[4] = 0;
             colour[5] = 0;
             work.colour[2] = 8;
-            Ov002_SpawnAllDrops(work.colour, (u16)(Ov002_GetSlotTableByte(*(void **)(node + 0x78))), &work.pos);
+            Ov002_SpawnAllDrops(work.colour, (u16)(Ov002_GetSlotTableByte(*(void **)(node + 0x78))),
+                                &work.pos);
             break;
         case 0x34:
             *(int *)(self + 0x580) = Ov107_CreateSpawnTask(self, 0x148, 6, at, (void *)(*(int *)(self + 0x560) + 4));

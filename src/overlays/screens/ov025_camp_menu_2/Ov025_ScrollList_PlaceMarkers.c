@@ -67,5 +67,6 @@ void Ov025_ScrollList_PlaceMarkers(Ov025ScrollList *pList)
         Ov025_ApplyTempFieldsByTagB(nTracker, 0xc, (s16)2, (s16)nY);
         nY += 2;
     }
-    Ov025_ApplyTempFieldsByTagB(nTracker, 0xd, (s16)2, (s16)((pList->nCursor - pList->nScroll / 16) * 2));
+    Ov025_ApplyTempFieldsByTagB(nTracker, 0xd, (s16)2,
+                                (s16)((pList->nCursor - pList->nScroll / 16) * 2));
 }

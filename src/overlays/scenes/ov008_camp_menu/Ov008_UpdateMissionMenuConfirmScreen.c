@@ -33,7 +33,8 @@ extern u16 func_01ff8138(void);
 extern int Ov008_GetMissionMenuSelection(void);
 extern void Ov008_ResetTextLayers(void);
 extern void *Ov008_GetVarRecordByIndex(void *resource, u32 index);
-extern void Ov008_ForwardSevenArgs(void *text, int x, int y, int style, int layer, int align, int visible);
+extern void Ov008_ForwardSevenArgs(void *text, int x, int y, int style, int layer, int align,
+                                   int visible);
 extern void Ov008_MissionToggleSlotVisible(int visible);
 extern void Ov008_FlushTextLayers(void);
 
@@ -115,7 +116,8 @@ draw_screen:
     } else {
         textSelector = 0x42;
     }
-    Ov008_ForwardSevenArgs(Ov008_GetVarRecordByIndex(&data_ov008_02090fa0->resource, textSelector), 0x80, 0x60, 1, 1, 3, 1);
+    Ov008_ForwardSevenArgs(Ov008_GetVarRecordByIndex(&data_ov008_02090fa0->resource, textSelector),
+                           0x80, 0x60, 1, 1, 3, 1);
 
     for (lineIndex = 0; lineIndex < 4; lineIndex++) {
         Ov008_ForwardSevenArgs(data_ov008_02090d0c, 99, lineIndex * 0x18 + 0x23, 1, 1, 0, 0);
@@ -123,7 +125,8 @@ draw_screen:
 
     if (data_ov008_02090fa0->sessionReady != 0) {
         Ov008_MissionToggleSlotVisible(0);
-        Ov008_ForwardSevenArgs(Ov008_GetVarRecordByIndex(&data_ov008_02090fa0->resource, 0x43), 0x80, 0x98, 1, 1, 3, 0);
+        Ov008_ForwardSevenArgs(Ov008_GetVarRecordByIndex(&data_ov008_02090fa0->resource, 0x43),
+                               0x80, 0x98, 1, 1, 3, 0);
     }
 
     Ov008_FlushTextLayers();

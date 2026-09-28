@@ -26,7 +26,8 @@ extern int Ov002_GetModuleSlot(int nId);
 /* The narrow arguments are declared int here rather than u16 and u8: both are
  * already narrowed where the packed word is split, and a narrow parameter would
  * make the compiler narrow them a second time at the call. */
-extern void Ov002_SpawnLineElement(int nOwner, int wA, int wB, int nStateField, int nStateWidth, void *pPos, int nAngle, int nText);
+extern void Ov002_SpawnLineElement(int nOwner, int wA, int wB, int nStateField, int nStateWidth,
+                                   void *pPos, int nAngle, int nText);
 
 /* Script VM command: spawn a line element from the command's operands.
  *
@@ -72,6 +73,7 @@ int Ov002_ScriptCmdSpawnLineElement(void *pCtx, int nArgs)
 
     nOwner = Ov002_GetModuleSlot(f.nId);
 
-    Ov002_SpawnLineElement(nOwner, (u16)nA, (u16)nB, f.nStateField, nStateWidth, &f.aPos[0], nAngle, nText);
+    Ov002_SpawnLineElement(nOwner, (u16)nA, (u16)nB, f.nStateField, nStateWidth, &f.aPos[0], nAngle,
+                           nText);
     return 1;
 }

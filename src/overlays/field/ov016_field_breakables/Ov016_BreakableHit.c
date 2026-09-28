@@ -42,7 +42,8 @@ int Ov016_BreakableHit(Ov016Breakable *pSelf, Ov016HitRecord *pHit)
     if ((nBits & 1) == 0) {
         message.nAttacker = pHit->nAttacker;
         if (Ov002_RecordElementHit(pSelf, &message, 6) != 0) {
-            GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit, (u16)((GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit) & 0xffff0001) | ((u16)(nBits | 1) << 1)));
+            GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit,
+                               (u16)((GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit) & 0xffff0001) | ((u16)(nBits | 1) << 1)));
             MI_CpuCopy8(pHit, &pSelf->hit, 0x1c);
             pSelf->bDropPending = 1;
             return 0;

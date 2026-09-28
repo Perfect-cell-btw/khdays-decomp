@@ -16,7 +16,8 @@ extern void Render_SubmitNode(void *dst, int id, int a, void *b);
 extern void Ov002_ElementRefreshNamedBindings(void *self);
 
 void Ov002_RebindActorModel_2(char *self) {
-    Render_SubmitNode(self + 0x1c, (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]), 0, 0);
+    Render_SubmitNode(self + 0x1c, (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]),
+                      0, 0);
     {
         int off = 0x1c2;
 

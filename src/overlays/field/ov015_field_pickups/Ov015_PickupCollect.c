@@ -51,7 +51,8 @@ int Ov015_PickupCollect(Ov015Pickup *pPickup)
     }
     Ov002_ParkSpareEntry(pPickup);
     nField = GameState_GetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit);
-    GameState_SetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit, (u16)((nField & 0xffff0001) | 2));
+    GameState_SetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit,
+                       (u16)((nField & 0xffff0001) | 2));
     pPickup->nFlags &= ~8;
     if (pPickup->nStateBits & 0x80) {
         Ov015_StoreArgsRunTwoSubActionsIfFlag4(pPickup, &pPickup->sequence, 0, 0x1e000, 0);

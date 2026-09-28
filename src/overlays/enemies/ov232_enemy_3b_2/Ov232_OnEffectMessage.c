@@ -9,8 +9,10 @@
 struct Pair { void *res; void *handle; };
 
 extern int FX_Div(int num, int den);
-extern void *Ov107_CreateNodeXformTaskFx24(void *taskList, void *subitem, int mode, int blend, int weight, void *payload);
-extern void *Ov107_CreateNodeBodyTask(void *taskList, void *subitem, int kind, void *at, int a, int b);
+extern void *Ov107_CreateNodeXformTaskFx24(void *taskList, void *subitem, int mode, int blend,
+                                           int weight, void *payload);
+extern void *Ov107_CreateNodeBodyTask(void *taskList, void *subitem, int kind, void *at, int a,
+                                      int b);
 extern void TaskList_FinishByTag(void *taskList, void *handle);
 extern void Ov107_AiState_OnMessage(char *actor, u8 *msg, int param);
 
@@ -24,7 +26,9 @@ void Ov232_OnEffectMessage(char *actor, u8 *msg, int param)
         case 0:
         case 2:
             (*(struct Pair **)(actor + 0x3b8))[msg[3]].handle =
-                Ov107_CreateNodeXformTaskFx24(*(void **)(actor + 0x3c), (*(struct Pair **)(actor + 0x3b8))[msg[3]].res, (u8)(msg[3] == 0 ? 5 : 1), 0, weight, msg + 5);
+                Ov107_CreateNodeXformTaskFx24(*(void **)(actor + 0x3c),
+                                              (*(struct Pair **)(actor + 0x3b8))[msg[3]].res,
+                                              (u8)(msg[3] == 0 ? 5 : 1), 0, weight, msg + 5);
             break;
         case 1:
         case 3:
@@ -39,7 +43,9 @@ void Ov232_OnEffectMessage(char *actor, u8 *msg, int param)
                     (*(struct Pair **)(actor + 0x3b8))[6].handle = 0;
                 }
                 (*(struct Pair **)(actor + 0x3b8))[msg[3]].handle =
-                    Ov107_CreateNodeBodyTask(*(void **)(actor + 0x3c), (*(struct Pair **)(actor + 0x3b8))[msg[3]].res, (u8)kind, actor + 0x3dc, 0, msg[3] == 6);
+                    Ov107_CreateNodeBodyTask(*(void **)(actor + 0x3c),
+                                             (*(struct Pair **)(actor + 0x3b8))[msg[3]].res,
+                                             (u8)kind, actor + 0x3dc, 0, msg[3] == 6);
             }
             break;
         }

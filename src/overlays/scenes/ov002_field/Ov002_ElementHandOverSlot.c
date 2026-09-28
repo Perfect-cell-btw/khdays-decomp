@@ -56,7 +56,8 @@ void *Ov002_ElementHandOverSlot(char *pElement, unsigned char *pSource)
         }
 
         if (nResult == 0) {
-            Ov022_Member_ShowSpotMessage(*pSource, *(short *)(pKey + 0x40), *(signed char *)(pElement + 0x1b9));
+            Ov022_Member_ShowSpotMessage(*pSource, *(short *)(pKey + 0x40),
+                                         *(signed char *)(pElement + 0x1b9));
             return 0;
         }
 

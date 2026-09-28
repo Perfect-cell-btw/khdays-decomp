@@ -114,7 +114,8 @@ void Ov226_FlightTick(int *node)
         VEC_Subtract((void *)(hits[i] + 0x74), (void *)(*state + 0x74), &push);
         push.y = 0;
         VEC_Normalize(&push, &push);
-        if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x390), (u8)state[0x11], &push, 0) != 0) {
+        if (
+            Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x390), (u8)state[0x11], &push, 0) != 0) {
             func_ov107_020c0b90(*state, 0, box.pos, 0);
             Ov107_BuildAndSendUpdate(*state, 0x14c, 8, state[2]);
         }

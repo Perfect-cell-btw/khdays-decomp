@@ -94,7 +94,8 @@ void *Ov017_ItemGivenStep(Ov017Item *pSelf)
     }
     if (pSelf->nTimer + nDelta >= 0x1d000) {
         nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
-        GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit, (u16)((nState & 0xffff0001) | 2));
+        GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit,
+                           (u16)((nState & 0xffff0001) | 2));
         GameState_SetField((u16)pSelf->nTakenField, (u8)pSelf->nTakenBit, (u16)1);
         Ov002_SetFieldBit0(pSelf, 0);
         pSelf->nState = 7;

@@ -35,7 +35,9 @@ void Ov002_QueueTextItem(int bMain, int nFlags, int nX, int nY,
             const char *pRec = (const char *)pParam;
 
             Ov002_RegisterEventSlot(nFlags, nX, nY, nStyle,
-                                Ov002_CreateHandlerRecord(*(const u16 *)pRec, *(const u16 *)(pRec + 2), *(const short *)(pRec + 4), *(const u16 *)(pRec + 6)));
+                                Ov002_CreateHandlerRecord(*(const u16 *)pRec,
+                                        *(const u16 *)(pRec + 2), *(const short *)(pRec + 4),
+                                        *(const u16 *)(pRec + 6)));
         }
         break;
     }

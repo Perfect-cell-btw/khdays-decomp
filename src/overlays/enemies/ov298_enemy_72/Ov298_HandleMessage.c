@@ -11,7 +11,8 @@ typedef struct { int w[11]; } SrtTransform;
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetScaleUniform(SrtTransform *transform, int scale);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
-extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int blend, SrtTransform *transform);
+extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int blend,
+                                     SrtTransform *transform);
 extern void Ov107_AiState_OnMessage(int owner, u8 *msg, int arg);
 
 void Ov298_HandleMessage(int owner, u8 *msg, int arg)

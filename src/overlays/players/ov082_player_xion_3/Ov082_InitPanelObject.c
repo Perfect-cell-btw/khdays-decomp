@@ -84,7 +84,8 @@ void Ov082_InitPanelObject(struct Ov082InitConfig *config)
     params.enabled = 1;
     params.scale = 9 << 8;
     params.limit = 0xf << 8;
-    Entity_ForwardToSlot(*(signed char *)(object + 0x4bc), (u16)(1 << *(u8 *)(object + 8)), 0, &params, 0);
+    Entity_ForwardToSlot(*(signed char *)(object + 0x4bc), (u16)(1 << *(u8 *)(object + 8)), 0,
+                         &params, 0);
 
     nameGroup = config->nameGroup;
     alternateName = config->alternateName;

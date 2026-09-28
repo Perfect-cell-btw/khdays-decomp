@@ -48,7 +48,8 @@ extern void Ov006_MissionFillMenuLabels(MissionLabel labels[4]);
 extern void Ov006_MissionLeaveSubMenu(void);
 extern void Ov006_ResetTextLayers(void);
 extern void Ov006_FlushTextLayers(void);
-extern void Ov006_MissionDrawTextRunFwd(void *text, int x, int y, int style, int layer, int align, int visible);
+extern void Ov006_MissionDrawTextRunFwd(void *text, int x, int y, int style, int layer, int align,
+                                        int visible);
 extern void *Ov006_GetVarRecordByIndex(void *resource, int index);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
 extern void func_020362ec(void *image);
@@ -96,19 +97,24 @@ MissionState Ov006_UpdateMissionMenuOptionScreen(void)
     }
 
     Ov006_ResetTextLayers();
-    Ov006_MissionDrawTextRunFwd(Ov006_GetVarRecordByIndex(&data_ov006_02056660->resource, 0x3c), 0xfa, 2, (u8)1, 1, 1, 1);
-    Ov006_MissionDrawTextRunFwd(Ov006_GetVarRecordByIndex(&data_ov006_02056660->resource, 0x3d), 0x80, 0x60, (u8)1, 1, 3, 1);
+    Ov006_MissionDrawTextRunFwd(Ov006_GetVarRecordByIndex(&data_ov006_02056660->resource, 0x3c),
+                                0xfa, 2, (u8)1, 1, 1, 1);
+    Ov006_MissionDrawTextRunFwd(Ov006_GetVarRecordByIndex(&data_ov006_02056660->resource, 0x3d),
+                                0x80, 0x60, (u8)1, 1, 3, 1);
 
     MI_CpuFill8(optionLabels, 0, sizeof(optionLabels));
     Ov006_MissionFillMenuLabels(optionLabels);
     for (optionIndex = 0; optionIndex < 4; optionIndex++) {
-        Ov006_MissionDrawTextRunFwd(optionLabels[optionIndex], 0x57, optionIndex * 0x18 + 0x23, (u8)(optionIndex < visibleOptionCount ? 1 : 3), 1, 0, 0);
+        Ov006_MissionDrawTextRunFwd(optionLabels[optionIndex], 0x57, optionIndex * 0x18 + 0x23,
+                                    (u8)(optionIndex < visibleOptionCount ? 1 : 3), 1, 0, 0);
     }
 
     Ov006_MissionScene_SetByte95AC((u8)data_ov006_02056660->selection.cursorIndex);
     Ov006_SetMissionCursorSelection(Ov006_GetMissionMenuSelection());
-    Ov006_MissionDrawTextRunFwd(Ov006_GetVarRecordByIndex(&data_ov006_02056660->resource, 0x3e), 0x80, 0x98, (u8)1, 1, 3, 0);
-    Ov006_MissionDrawTextRunFwd(Ov006_GetVarRecordByIndex(&data_ov006_02056660->resource, 0x3f), 10, 0xb4, (u8)1, 1, 0, 0);
+    Ov006_MissionDrawTextRunFwd(Ov006_GetVarRecordByIndex(&data_ov006_02056660->resource, 0x3e),
+                                0x80, 0x98, (u8)1, 1, 3, 0);
+    Ov006_MissionDrawTextRunFwd(Ov006_GetVarRecordByIndex(&data_ov006_02056660->resource, 0x3f), 10,
+                                0xb4, (u8)1, 1, 0, 0);
     Ov006_FlushTextLayers();
     return nextState;
 }

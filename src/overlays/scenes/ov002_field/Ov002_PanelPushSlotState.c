@@ -52,5 +52,6 @@ void Ov002_PanelPushSlotState(int nSlot, int nState, int nValue) {
         }
     }
     nHandle = Ov002_Ctx_FindActiveEntryByTag(2);
-    Ov002_PositionSubDcHandle_4(nHandle, (short)s->aNodes[nSlot]->nValue, (short)s->aNodes[nSlot]->nKind);
+    Ov002_PositionSubDcHandle_4(nHandle, (short)s->aNodes[nSlot]->nValue,
+                                (short)s->aNodes[nSlot]->nKind);
 }

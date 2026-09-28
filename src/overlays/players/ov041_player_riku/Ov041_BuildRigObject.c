@@ -71,7 +71,8 @@ void Ov041_BuildRigObject(int *cfg) {
     params.a = 1;
     params.c = 9 << 8;
     params.b = 0xf << 8;
-    Entity_ForwardToSlot(*(signed char *)(obj + 0x4bc), (unsigned short)(1 << *(unsigned char *)(obj + 8)), 0, &params, 0);
+    Entity_ForwardToSlot(*(signed char *)(obj + 0x4bc),
+                         (unsigned short)(1 << *(unsigned char *)(obj + 8)), 0, &params, 0);
 
     if (cfg[6] == 0) {
         TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &data_ov041_020b4c74, 1, cfg[0] + 7);

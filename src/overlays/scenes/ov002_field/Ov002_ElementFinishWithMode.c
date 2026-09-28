@@ -39,7 +39,8 @@ void Ov002_ElementFinishWithMode(char *pElement, unsigned char bMode)
         if (nTrack != -1) {
             Ov002_RebindAnimTracks((short *)(pElement + 0x2c), nTrack, 0);
             SceneNode_Disable((u16 *)(pElement + 0x2c));
-            nState = GameState_GetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16));
+            nState = GameState_GetField(*(u16 *)(pElement + 0x14),
+                                        *(unsigned char *)(pElement + 0x16));
             Obj_SetFlagBit3(pElement + 0x1c, (nState & 1) != 0);
         } else {
             Obj_SetFlagBit3(pElement + 0x1c, 0);

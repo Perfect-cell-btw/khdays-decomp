@@ -50,5 +50,7 @@ void Ov022_SpawnMemberDrops(int kind, int channel, int intensity) {
     work.color.channel[channel] = (u8)intensity;
     work.vector = *func_ov022_020881f8(kind);
     work.vector.y += 0x800;
-    Ov002_SpawnAllDrops(work.color.channel, (u16)Ov002_GetSlotTableByte(Ov022_GetEntryField66(kind)), (int *)&work.vector);
+    Ov002_SpawnAllDrops(work.color.channel,
+                        (u16)Ov002_GetSlotTableByte(Ov022_GetEntryField66(kind)),
+                        (int *)&work.vector);
 }

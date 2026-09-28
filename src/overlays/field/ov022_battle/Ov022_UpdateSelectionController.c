@@ -56,7 +56,9 @@ void Ov022_UpdateSelectionController(void)
             if (Slot_EvalPackedParam(QueryActiveStateOrDelegate(), 0x53) != 0) {
                 mode = 1;
             }
-            Ov002_ShowEntryLabel(context->typeOneCandidate->value21a, context->typeOneCandidate->value218, context->typeOneCandidate->selectionId19c, mode);
+            Ov002_ShowEntryLabel(context->typeOneCandidate->value21a,
+                                 context->typeOneCandidate->value218,
+                                 context->typeOneCandidate->selectionId19c, mode);
         } else {
             func_ov022_020847f0();
         }

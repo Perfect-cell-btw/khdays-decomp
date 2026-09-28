@@ -68,7 +68,8 @@ void Ov008_InitializeSavePageLayout(Ov008MenuContext *context)
     if (resource != 0) NNSi_FndFreeFromDefaultHeap(resource);
 
     Ov008_LoadLayoutResource(layoutContext, Ov008_PackSlotTag(0x1a));
-    entry = Ov008_FindEntryByTag(layoutContext, data_ov008_0208f130[context->savePageCount - 1] & 0xffff);
+    entry = Ov008_FindEntryByTag(layoutContext,
+                                 data_ov008_0208f130[context->savePageCount - 1] & 0xffff);
     Ov008_TagTracker_InvokeCallback(layoutContext, entry);
 
     entry = Ov008_FindEntryByTag(layoutContext, 5);

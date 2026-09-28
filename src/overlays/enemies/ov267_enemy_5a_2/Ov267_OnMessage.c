@@ -118,16 +118,22 @@ void Ov267_OnMessage(char *self, u8 *msg, int arg)
         case 1:
             Srt_SetScaleUniform(&t, 0x1333);
             ((struct Ov267 *)self)->pairs[msg[3]].handle =
-                Ov107_CreateNodeXformTask(*(int *)(self + 0x3c), ((struct Ov267 *)self)->pairs[msg[3]].res, 0x17, (u8)(msg[3] == 0 ? 1 : 3), &t);
+                Ov107_CreateNodeXformTask(*(int *)(self + 0x3c),
+                                          ((struct Ov267 *)self)->pairs[msg[3]].res, 0x17,
+                                          (u8)(msg[3] == 0 ? 1 : 3), &t);
             break;
         case 3:
         case 8:
             ((struct Ov267 *)self)->pairs[msg[3]].handle =
-                Ov107_CreateNodeXformTask(*(int *)(self + 0x3c), ((struct Ov267 *)self)->pairs[msg[3]].res, 5, (u8)msg[4], &t);
+                Ov107_CreateNodeXformTask(*(int *)(self + 0x3c),
+                                          ((struct Ov267 *)self)->pairs[msg[3]].res, 5, (u8)msg[4],
+                                          &t);
             break;
         case 7:
             ((struct Ov267 *)self)->pairs[msg[3]].handle =
-                Ov107_CreateNodeXformTask(*(int *)(self + 0x3c), ((struct Ov267 *)self)->pairs[msg[3]].res, 0x15, (u8)msg[4], &t);
+                Ov107_CreateNodeXformTask(*(int *)(self + 0x3c),
+                                          ((struct Ov267 *)self)->pairs[msg[3]].res, 0x15,
+                                          (u8)msg[4], &t);
             break;
         case 2:
         case 4:

@@ -17,6 +17,8 @@ void Ov026_UpdateCounterPanel(void) {
         Obj_InvokeInnerVtable8(layout, 0, 0, 0xb0, 0x30);
         *(int *)panel = 1;
     }
-    Ov026_ShowThreeDigitCells(handle, *(unsigned short *)(*(char **)&data_0204be18 + 0x196a), panel + 8);
-    Ov026_ShowThreeDigitCells(handle, *(unsigned short *)(*(char **)&data_0204be18 + 0x1968), panel + 0x14);
+    Ov026_ShowThreeDigitCells(handle, *(unsigned short *)(*(char **)&data_0204be18 + 0x196a),
+                              panel + 8);
+    Ov026_ShowThreeDigitCells(handle, *(unsigned short *)(*(char **)&data_0204be18 + 0x1968),
+                              panel + 0x14);
 }

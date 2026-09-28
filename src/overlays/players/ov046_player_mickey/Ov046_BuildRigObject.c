@@ -78,7 +78,8 @@ void Ov046_BuildRigObject(struct PanelInitConfig *config)
     params.enabled = 1;
     params.scale = 9 << 8;
     params.limit = 7 << 8;
-    Entity_ForwardToSlot(*(signed char *)(object + 0x4bc), (u16)(1 << *(u8 *)(object + 8)), 0, &params, 0);
+    Entity_ForwardToSlot(*(signed char *)(object + 0x4bc), (u16)(1 << *(u8 *)(object + 8)), 0,
+                         &params, 0);
 
     TailForwardTrackEntry(*(signed char *)(object + 0x4bc), (void *)data_ov046_020b4ac8, 1,
                   config->objectType + 7);

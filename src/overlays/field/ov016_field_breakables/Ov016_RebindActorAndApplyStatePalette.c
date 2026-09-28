@@ -10,7 +10,8 @@ void Ov016_RebindActorAndApplyStatePalette(char *self) {
     int state;
     int palette;
     if ((*(unsigned char *)(self + 0x4a0) & 2) == 0) {
-        Render_SubmitNode(self + 0x498, (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]), 0, 0);
+        Render_SubmitNode(self + 0x498,
+                          (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]), 0, 0);
         state = *(unsigned char *)(owner + 0x7c);
         if (state == 0 || state == 2) {
             Actor_SetBindingByte(self + 0x5b4, 1, 3);

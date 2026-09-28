@@ -114,14 +114,16 @@ int Ov016_FollowerStep(Ov016Follower *pSelf)
         nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
         nHeld = (u16)((nState & 0xfffe) >> 1) & ~(1 << pSelf->nPlayer);
         nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
-        GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit, (u16)((nState & 0xffff0001) | (nHeld << 1)));
+        GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit,
+                           (u16)((nState & 0xffff0001) | (nHeld << 1)));
     }
     if (pSelf->nHoldTimer > pSelf->nDuration) {
         nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
         nOld = (u16)((nState & 0xfffe) >> 1);
         nHeld = (u16)((1 << pSelf->nPlayer) | nOld);
         nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
-        GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit, (u16)((nState & 0xffff0001) | (nHeld << 1)));
+        GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit,
+                           (u16)((nState & 0xffff0001) | (nHeld << 1)));
         if (nHeld != nOld && (nHeld & 0xf) == 0xf) {
             Ov016_FollowerComplete(pSelf);
         }

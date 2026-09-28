@@ -52,7 +52,8 @@ void Ov086_Boot(int *cfg) {
     params.a = 1;
     params.c = 9 << 8;
     params.b = 0x1700;
-    Entity_ForwardToSlot(*(signed char *)(obj + 0x4bc), (unsigned short)(1 << *(unsigned char *)(obj + 8)), 0, &params, 0);
+    Entity_ForwardToSlot(*(signed char *)(obj + 0x4bc),
+                         (unsigned short)(1 << *(unsigned char *)(obj + 8)), 0, &params, 0);
 
     TailForwardTrackEntry(*(signed char *)(obj + 0x4bc), &data_ov086_020b99c8, 1, cfg[0] + 7);
     *(void **)(obj + 0x664 + 0x00) = (void *)&Ov086_ApplyMode;

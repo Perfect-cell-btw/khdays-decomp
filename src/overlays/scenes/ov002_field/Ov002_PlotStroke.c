@@ -120,7 +120,9 @@ void Ov002_PlotStroke(int nSlot, const u16 *pPoint)
             if (nY <= 0x20) {
                 nY = 0x20;
             }
-            Ov002_DrawStamp(func_ov002_0206373c(), (u16)nX2, (u16)(nY - 0x20), (u8)pens.aPens[nSlot], Ov002_GetCueEntry(nStep), Ov002_GetCueEntryValue(nStep));
+            Ov002_DrawStamp(func_ov002_0206373c(), (u16)nX2, (u16)(nY - 0x20),
+                            (u8)pens.aPens[nSlot], Ov002_GetCueEntry(nStep),
+                            Ov002_GetCueEntryValue(nStep));
             return;
         }
     } else {

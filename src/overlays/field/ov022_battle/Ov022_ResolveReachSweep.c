@@ -66,7 +66,8 @@ struct Scene {
     void *pWorld;                /* 0x20 */
 };
 
-extern struct Hit *EntityMgr_RunSphereCast(int nMask, struct Ray *pRay, VecFx32 *pFrom, int nRadius, void *pWorld);
+extern struct Hit *EntityMgr_RunSphereCast(int nMask, struct Ray *pRay, VecFx32 *pFrom, int nRadius,
+                                           void *pWorld);
 extern struct Hit *EntityMgr_RunRayCast(int nMask, struct Ray *pRay, VecFx32 *pFrom, void *pWorld);
 extern struct Hit *EntityMgr_RunCastSimple(int nMask, struct Ray *pRay, VecFx32 *pFrom, void *pWorld);
 extern struct Thing *Actor_GetRecord(struct Hit *pHit, int nId);

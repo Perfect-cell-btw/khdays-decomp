@@ -1,6 +1,7 @@
 extern char *data_ov008_02090fac;
 extern int Ov008_ItemIdToSlot(int id);
-extern void func_02013484(void *dst, void *src, int w, int h, int x, int y, int cw, int ch, int srcW, int srcH);
+extern void func_02013484(void *dst, void *src, int w, int h, int x, int y, int cw, int ch,
+                          int srcW, int srcH);
 
 /* Blits one queued image into its VRAM bank and marks the bank dirty. A -1 in the size fields
  * means "take it from the source header". */
@@ -31,6 +32,7 @@ void Ov008_BlitQueuedImage(char *req, int external) {
     if (srcH == -1) {
         srcH = (unsigned int)*(unsigned short *)(*(char **)(*(char **)(req + 0x18) + 8) + 2) >> 3;
     }
-    func_02013484(dst, src, *(unsigned short *)(req + 6), *(unsigned short *)(req + 8), *(short *)(req + 2), *(short *)(req + 4), 0x20, 0x18, srcW, srcH);
+    func_02013484(dst, src, *(unsigned short *)(req + 6), *(unsigned short *)(req + 8),
+                  *(short *)(req + 2), *(short *)(req + 4), 0x20, 0x18, srcW, srcH);
     *(int *)(st + 0x2aac) |= 1 << bank;
 }

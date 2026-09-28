@@ -199,7 +199,8 @@ int Ov026_OpenSellDialog(void)
     pWidgets = ctx->widgets;
     pWidgetsB = ctx->widgetsB;
     hSlots = ctx->hSlots;
-    Ov026_TagTracker_InvokeCallback(ctx->tagTracker, Ov026_FindEntryByTag(ctx->tagTracker, (u16)nTag));
+    Ov026_TagTracker_InvokeCallback(ctx->tagTracker,
+                                    Ov026_FindEntryByTag(ctx->tagTracker, (u16)nTag));
     for (i = 0; i < 2; i++) {
         pos.nX = (data_ov026_020910dc[i].nX + (data_ov026_020910dc[i].nW >> 1)) << 12;
         pos.nY = (data_ov026_020910dc[i].nY + (data_ov026_020910dc[i].nH >> 1)) << 12;

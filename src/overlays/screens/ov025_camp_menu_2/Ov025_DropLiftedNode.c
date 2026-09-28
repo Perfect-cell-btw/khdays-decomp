@@ -123,7 +123,8 @@ int Ov025_DropLiftedNode(Ov008MenuContext *pCtx)
     pNode = Ov025_FindGridHit(pCtx, pCtx->nDragPage, pCtx->nHomeCol, pCtx->nHomeRow);
     if (pNode == 0 || Ov025_PlaceNodeShape(pCtx, pNode, pCtx->nVisiblePage, nLeft, nTop, 1) != 0) {
         if (Ov025_CanPlaceRecord(pCtx, pCtx->pListNode, pCtx->nVisiblePage, pCtx->nCursorCol, pCtx->nCursorRow, 0) != 0) {
-            Ov025_ProcessAndCleanup(pCtx, (u16)pCtx->nVisiblePage, pCtx->nCursorCol, pCtx->nCursorRow);
+            Ov025_ProcessAndCleanup(pCtx, (u16)pCtx->nVisiblePage, pCtx->nCursorCol,
+                                    pCtx->nCursorRow);
             Ov025_ProcessAndCleanup(pCtx, (u16)pCtx->nDragPage, pCtx->nHomeCol, pCtx->nHomeRow);
             Ov025_PlaceNodeOnPage(pCtx, pCtx->pListNode, pCtx->nVisiblePage, pCtx->nCursorCol, pCtx->nCursorRow);
             Ov025_AdjustAndSyncSlot(pCtx, pCtx->pListNode->nItemId, 1);

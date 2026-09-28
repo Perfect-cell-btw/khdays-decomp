@@ -14,7 +14,8 @@ void Ov002_RebindAnimatedActorModel(char *self) {
         if (*(unsigned char *)(self + 0x1b4) == 7) {
             return;
         }
-        Render_SubmitNode(self + 0x2c, (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]), 0, 0);
+        Render_SubmitNode(self + 0x2c,
+                          (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]), 0, 0);
         Actor_SetBindingByte(self + 0x148, 1, 3);
     }
 }

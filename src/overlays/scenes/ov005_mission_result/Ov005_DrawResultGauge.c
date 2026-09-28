@@ -20,7 +20,8 @@ void Ov005_DrawResultGauge(Ov005ResultGaugeRequest *request) {
     fullTiles = remainingPixels / 8;
     do {
         int tilePixels = fullTiles > 0 ? 8 : remainingPixels % 8;
-        Ov005_DrawResultTile(request->firstTileId + (tilePixels - 1), (u8)(request->column + column), (u8)request->row);
+        Ov005_DrawResultTile(request->firstTileId + (tilePixels - 1),
+                             (u8)(request->column + column), (u8)request->row);
         remainingPixels -= 8;
         fullTiles--;
         column++;

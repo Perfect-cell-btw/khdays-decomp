@@ -68,7 +68,8 @@ Ov015StateFn *Ov015_PickupTakenStep(Ov015Pickup *pPickup)
         pPickup->nStateBits &= ~1;
         pPickup->nState = 4;
         nField = GameState_GetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit);
-        GameState_SetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit, (u16)((nField & 0xffff0001) | 2));
+        GameState_SetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit,
+                           (u16)((nField & 0xffff0001) | 2));
         Ov002_SetFieldBit0(pPickup, 0);
         return Ov002_DoneTick;
     }

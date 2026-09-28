@@ -227,7 +227,8 @@ scaled:
                 VEC_Normalize(&push, &push);
                 ScaleVec3Fx12(0x800, &push, &push);
                 push.y = 0x800;
-                if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, (u8)(state->bCharged == 0), &push, 0) != 0) {
+                if (
+                    Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, (u8)(state->bCharged == 0), &push, 0) != 0) {
                     func_ov107_020c0b90(state->pOwner, 0, closest, 0);
                     Ov107_BuildAndSendUpdate(state->pOwner, 0x161, 6, &closest);
                     if (state->bCharged != 0) {

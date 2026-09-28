@@ -31,7 +31,8 @@ extern void Ov012_UpdateOpeningGlobals(void);
 extern void Ov012_InitOpeningRendererFromMobiClipHeader(void *renderer, int layer, void *font,
                                 MobiClipHeader *header);
 extern u16 *GetBGScreenBaseForLayer(int layer);
-extern void Tilemap_FillRect(u16 *tilemap, int width, int height, int x, int y, int mapWidth, int tile, int palette);
+extern void Tilemap_FillRect(u16 *tilemap, int width, int height, int x, int y, int mapWidth,
+                             int tile, int palette);
 extern void Ov012_TileTextRenderer_SetReady(void *renderer, int ready);
 extern void func_02031574(int value);
 extern void func_02030e64(int value);
@@ -65,8 +66,10 @@ void Ov012_StartOpeningMovie(char *streamName)
 
     Ov012_InitOpeningRendererFromMobiClipHeader(context + 0x8b4c, 4, context + 0x8b40, &header);
 
-    Tilemap_FillRect(GetBGScreenBaseForLayer(5), header.macroblockWidth, header.macroblockHeight, header.destinationX, header.destinationY, 0x20, header.tileBase, 0xe);
-    Tilemap_FillRect(GetBGScreenBaseForLayer(6), header.macroblockWidth, header.macroblockHeight, header.destinationX, header.destinationY, 0x20, header.tileBase, 0xe);
+    Tilemap_FillRect(GetBGScreenBaseForLayer(5), header.macroblockWidth, header.macroblockHeight,
+                     header.destinationX, header.destinationY, 0x20, header.tileBase, 0xe);
+    Tilemap_FillRect(GetBGScreenBaseForLayer(6), header.macroblockWidth, header.macroblockHeight,
+                     header.destinationX, header.destinationY, 0x20, header.tileBase, 0xe);
 
     Ov012_TileTextRenderer_SetReady(context + 0x8b4c, 1);
     func_02031574(1);

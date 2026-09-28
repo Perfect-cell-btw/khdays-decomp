@@ -1,6 +1,7 @@
 /* For each variable-stride record, forward its fields to Ov008_BuildTagTrackerNode. */
 
-extern void Ov008_BuildTagTrackerNode(void *context, unsigned short arg1, void *arg2, int arg3, int arg4, int arg5, int arg6);
+extern void Ov008_BuildTagTrackerNode(void *context, unsigned short arg1, void *arg2, int arg3,
+                                      int arg4, int arg5, int arg6);
 
 void Ov008_BuildLayoutFromTagTable(void *context, void *data)
 {

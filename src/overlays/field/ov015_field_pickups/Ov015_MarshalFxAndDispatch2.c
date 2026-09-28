@@ -21,6 +21,7 @@ int Ov015_MarshalFxAndDispatch2(void *arg1, int arg2) {
     int t = ScriptVm_ReadOperandInt(arg1, arg2 + 0x38);
     int r5 = Ov002_GetModuleSlot(t0);
     int fx = func_02020400(t << 0x10, 0x168);
-    Ov015_SpawnChest(r5, (unsigned short)r7, (unsigned short)t10, &buf[0], (short)fx, (unsigned short)r6, (unsigned char)(unsigned short)(r6 >> 0x10));
+    Ov015_SpawnChest(r5, (unsigned short)r7, (unsigned short)t10, &buf[0], (short)fx,
+                     (unsigned short)r6, (unsigned char)(unsigned short)(r6 >> 0x10));
     return 1;
 }

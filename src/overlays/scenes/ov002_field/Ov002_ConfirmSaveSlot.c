@@ -13,7 +13,8 @@ void Ov002_ConfirmSaveSlot(char *self) {
         return;
     }
     Ov002_AppendEntry(
-        Ov002_MakeSecondaryVramKey((unsigned short)*(int *)(Ov002_SnapshotChainEntry(*(int *)(self + 8), 0, 0) + 0x14)),
+        Ov002_MakeSecondaryVramKey(
+                                   (unsigned short)*(int *)(Ov002_SnapshotChainEntry(*(int *)(self + 8), 0, 0) + 0x14)),
         (void *)&Ov002_SwapOwnerBlock, 1);
     Ov002_DestroyOwnedEntry(self, 1);
 }

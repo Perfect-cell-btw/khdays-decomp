@@ -9,7 +9,8 @@ void Ov002_RebindActorModelAndPalette(char *self) {
     if ((*(unsigned short *)(self + 0x12) & 2) != 0) {
         return;
     }
-    Render_SubmitNode(self + 0x1c, (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]), 0, 0);
+    Render_SubmitNode(self + 0x1c, (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]),
+                      0, 0);
     palette = *(signed char *)(owner + 0x7a);
     if (palette < 0) {
         return;

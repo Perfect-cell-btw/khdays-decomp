@@ -69,7 +69,8 @@ struct Actor {
 #define SHADE_MIN 0x4000
 #define ANGLE_BIAS 0x8000
 
-extern struct Hit *EntityMgr_RunRayCast(int nMask, VecFx32 *pFrom, VecFx32 *pDir, struct ActorNode *pNode);
+extern struct Hit *EntityMgr_RunRayCast(int nMask, VecFx32 *pFrom, VecFx32 *pDir,
+                                        struct ActorNode *pNode);
 extern void Vec3ScaleAddQ27(int nScale, VecFx32 *pDir, VecFx32 *pBase,
                           VecFx32 *pOut);
 extern int FX_Div(int nNumerator, int nDenominator);

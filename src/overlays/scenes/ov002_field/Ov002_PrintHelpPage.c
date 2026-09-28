@@ -12,6 +12,7 @@ void Ov002_PrintHelpPage(int page, int *cursor) {
     if (page == 0) {
         Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(1));
     }
-    Ov002_Ctx_SetTagTrackerNodeArmed_3(Ov002_ForwardToSubDc((unsigned short)*(int *)(row + 0x14)), (unsigned char)(page + 2));
+    Ov002_Ctx_SetTagTrackerNodeArmed_3(Ov002_ForwardToSubDc((unsigned short)*(int *)(row + 0x14)),
+                                       (unsigned char)(page + 2));
     Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc((unsigned short)*(int *)(row + 0x14)));
 }
