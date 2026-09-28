@@ -1,3 +1,5 @@
+/* Returns the inverse camera x inverse projection matrix, computing and caching it on first use. */
+
 extern void *G3d_GetInverseCameraMtx(void);
 extern void *G3d_GetInverseProjMtx(void);
 extern void MTX_Copy43To44_(const void *src, void *dst);

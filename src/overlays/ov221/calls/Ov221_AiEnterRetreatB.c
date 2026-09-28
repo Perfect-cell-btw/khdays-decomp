@@ -1,3 +1,5 @@
+/* Plays anim 0x11 with turn rate 0x600 and installs the retreat tick. */
+
 /* Set +0x74=6, anim 0x11, +0x6c=0x600, clear +0x75/+0x5c, then dispatch. */
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int SetIndexedSlot(int a, int b, void *handler);

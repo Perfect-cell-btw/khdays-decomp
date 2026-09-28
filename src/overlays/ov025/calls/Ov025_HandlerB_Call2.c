@@ -1,3 +1,5 @@
+/* Calls entry 2 of the active handler B with the argument. */
+
 extern int data_ov025_020b574c[];
 extern char data_ov025_020b4a78[];
 

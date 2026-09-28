@@ -1,3 +1,5 @@
+/* Composes the global base matrix with the camera and scale and stores its inverse. */
+
 extern void MTX_Concat43(const void *a, const void *b, void *out);
 extern void MTX_ScaleApply43(const void *src, void *dst, int x, int y, int z);
 extern void MTX_Inverse43(const void *src, void *dst);

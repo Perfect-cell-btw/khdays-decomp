@@ -1,3 +1,6 @@
+/* False when obj+4 is not 10. For sub-kinds 5 and 10 it is also false once bit 16 of the 64-bit
+ * flag word at obj[0x328]+0x464 is set. True otherwise. */
+
 struct Flags020955b0 { char pad0[0x464]; unsigned long long flags; };
 
 int Ov022_IsActionAllowed(int arg0) {

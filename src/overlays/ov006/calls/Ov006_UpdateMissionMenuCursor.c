@@ -1,3 +1,6 @@
+/* Updates the Mission Menu cursor from latched and held left/right input, including delayed
+ * two-frame auto-repeat and movement sound. */
+
 typedef unsigned char u8;
 
 typedef struct {

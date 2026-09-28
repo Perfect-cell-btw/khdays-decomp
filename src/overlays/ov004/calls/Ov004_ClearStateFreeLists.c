@@ -1,3 +1,6 @@
+/* Clears the state block (+0x2c, +0xcc) and frees every object of the three lists at +8, +0x14 and
+ * +0x20. */
+
 extern int MI_CpuFill8();
 extern int INITi_CpuClear32_0x01ff86fc();
 extern int NNS_FndRemoveListObject();

@@ -1,3 +1,5 @@
+/* Plays the cancel sound, targets slot 0 and clears the report flag. */
+
 extern int Ov025_GetPageA();
 extern int PlaySound();
 extern int Ov025_SetTargetSlot();

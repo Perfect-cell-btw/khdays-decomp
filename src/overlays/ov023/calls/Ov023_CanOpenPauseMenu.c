@@ -1,3 +1,5 @@
+/* Runs the scene's action script and reports whether the result allows opening the pause menu. */
+
 extern int Game_RunActionScript(int);
 extern int func_0201e428(int);
 extern char *data_ov023_0208a784;

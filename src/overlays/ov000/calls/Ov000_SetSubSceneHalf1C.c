@@ -1,3 +1,5 @@
+/* Stores the sub-scene's halfword +0x1c. */
+
 /* If the ov000 global object exists, store a u16 at +0x1c. */
 extern int data_ov000_0205ac28;
 void Ov000_SetSubSceneHalf1C(short param_1) {

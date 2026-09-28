@@ -1,3 +1,5 @@
+/* count u16 chars in arg0 until null; return length. */
+
 int Wcslen(unsigned short *arg0) {
     int n = -1;
     unsigned short c;

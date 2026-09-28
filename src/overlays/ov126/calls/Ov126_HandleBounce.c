@@ -1,3 +1,5 @@
+/* On a bounce flag reverses the velocity once and marks it. */
+
 extern int ScaleVec3Fx12();
 
 int Ov126_HandleBounce(char *a, int b, int *c) {

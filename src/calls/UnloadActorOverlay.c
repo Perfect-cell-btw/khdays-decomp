@@ -1,3 +1,5 @@
+/* Unloads overlay 107 (the actor framework). */
+
 typedef unsigned int u32;
 typedef u32 FSOverlayID;
 

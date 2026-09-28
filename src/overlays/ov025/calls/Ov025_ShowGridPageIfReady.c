@@ -1,3 +1,5 @@
+/* Unless busy shows the grid page when it has content. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_ShowGridPage();
 

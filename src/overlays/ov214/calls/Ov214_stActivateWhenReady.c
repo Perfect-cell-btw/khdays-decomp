@@ -1,3 +1,6 @@
+/* ov node state callback: returns until the bound subitem's ready byte [+0xad]==0, then requests a
+ * pose via ov107 and advances the node state slot. */
+
 extern void SetIndexedSlot();
 extern void Ov107_PostTagUpdate();
 extern void Ov214_StepBounceOffContact(void);

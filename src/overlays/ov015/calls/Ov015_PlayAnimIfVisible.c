@@ -1,3 +1,5 @@
+/* When visible rebinds the node's animation and enables it. */
+
 extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);
 extern void SceneNode_Enable(unsigned short *p);
 

@@ -1,3 +1,5 @@
+/* Plays anim 1, sets the part flag and +0x1ae bit 0, installs the sub-state 9 prep step. */
+
 struct lobyte { unsigned int b : 8; };
 
 extern void Ov107_PostTagUpdate(int obj, int a, int b);

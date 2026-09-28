@@ -1,3 +1,6 @@
+/* Sets stance bits 0x82, locks the actor, posts updates 0x11a/6 and 0/0x48 and installs the
+ * target-angle step. */
+
 extern void Ov107_BuildAndSendUpdate(int obj, int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov293_TimerAcquireTargetAngleThenAdvance(int *node);

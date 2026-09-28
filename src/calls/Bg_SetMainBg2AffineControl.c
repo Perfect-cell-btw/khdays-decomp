@@ -1,3 +1,5 @@
+/* Selects the affine-BG2 display mode and sets main-engine BG2CNT with the area-over flag. */
+
 extern void DispMode_LookupWordAndDispatch(void *ptr);
 extern char data_02041f2c;
 extern int data_02047390;

@@ -1,3 +1,5 @@
+/* When ready sets stance bit 9 and releases the helper's AI task. */
+
 extern void Ov259_Helper_Release(int param_1);
 
 void Ov259_Helper_ReleaseIfReady(int this_) {

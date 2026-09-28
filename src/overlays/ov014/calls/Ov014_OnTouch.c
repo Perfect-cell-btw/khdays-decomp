@@ -1,3 +1,5 @@
+/* Unless busy or a HUD panel is open, records the touch and marks the element. */
+
 typedef struct {
     char pad[0x134];
     signed char state;

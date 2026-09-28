@@ -1,3 +1,6 @@
+/* Drops a reference to an 'HPAK' resource group; at zero releases every G3D resource of its section
+ * 7. */
+
 typedef struct {
     int tag;
     int counter;

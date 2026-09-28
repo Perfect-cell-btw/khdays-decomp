@@ -1,3 +1,6 @@
+/* After Ov107_RefreshAndSelectChild + Ov107_ProcessObjectTick, copies the 11-word block obj+0xa0
+ * into the child node (single copy). */
+
 extern void Ov107_RefreshAndSelectChild(void *p);
 extern void Ov107_ProcessObjectTick(void *obj, int arg2);
 struct blk11 { int w[11]; };

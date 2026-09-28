@@ -1,3 +1,5 @@
+/* Frees every node (and its buffers) of the list at +0x4620. */
+
 extern void SlotNode_FreeBuffers(void *node);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 

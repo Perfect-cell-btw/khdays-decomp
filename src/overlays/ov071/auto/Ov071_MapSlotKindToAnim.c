@@ -1,3 +1,5 @@
+/* Maps slot kind 0x15/0x16/0x17 to anim 0x79/0x7a/0x7b (else 0x78). */
+
 int Ov071_MapSlotKindToAnim(int i)
 {
     unsigned char v = ((unsigned char *)0x918)[i];

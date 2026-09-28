@@ -1,3 +1,6 @@
+/* Class pfnCtor: builds the actor, requests voice ids 0x44/0xca, runs its init and returns the
+ * decoder step. */
+
 extern void *NNSi_FndGetCurrentRootHeap();
 extern void Ov051_Boot();
 extern void Ov022_RequestVoiceIds();

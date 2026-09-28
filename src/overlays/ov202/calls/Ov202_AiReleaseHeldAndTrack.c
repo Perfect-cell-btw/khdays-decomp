@@ -1,3 +1,6 @@
+/* Unlinks the held node and follows the owner offset; once grounded and the flag clears queues
+ * action 2. */
+
 extern int Ov107_UnlinkNodeFromOwner();
 extern int Ov107_ActionResource_GetOffsetAndScale();
 extern int Vec3TransformViaTempMtx();

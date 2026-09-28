@@ -1,3 +1,5 @@
+/* Draws the node and advances its animation one frame. */
+
 extern int Scene_DrawNode();
 extern int Sequence_UpdateTracks();
 

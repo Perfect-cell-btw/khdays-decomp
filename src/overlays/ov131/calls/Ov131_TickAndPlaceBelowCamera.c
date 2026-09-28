@@ -1,3 +1,6 @@
+/* Runs the base callbacks, copies the source transform and offsets it 0.19 units toward the camera.
+ */
+
 extern int Ov107_AiState_DispatchModelCallbacks();
 extern int *func_ov107_020c9848();
 extern void ScaleVec3Fx12();

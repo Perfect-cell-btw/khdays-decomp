@@ -1,3 +1,5 @@
+/* Updates the scroll gauge and moves it to the top. */
+
 extern int Ov025_UpdateScrollGauge();
 extern int Ov025_SetScrollGaugePos();
 

@@ -1,3 +1,5 @@
+/* Allocates a 0xd0-byte box hit shape from the basis (identity transform). */
+
 typedef struct { int w[15]; } Basis;
 typedef struct { int w[3]; } Src3;
 

@@ -1,3 +1,6 @@
+/* Spawn a child object via CreateRegistryEntry (+0x388 copy), link back to owner, store at +0x214.
+ */
+
 extern void CreateRegistryEntry(void *ctx, int a, int b, void *callback, int zero, void *out);
 extern void Ov239_AiStateInit(void);
 

@@ -1,3 +1,6 @@
+/* When the scene has work pending (+0x20), call the handler its state (+0x28) selects from the
+ * dispatch table, if that slot is filled. Always reports 0. */
+
 extern int data_ov002_0207f9fc;
 extern void (*data_ov002_0207eed8[])(void);
 

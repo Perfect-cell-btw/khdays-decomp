@@ -1,3 +1,5 @@
+/* Set or clear the widget's hidden bit (0x4000 of the flags halfword at +0x10). */
+
 typedef struct Widget {
     char unk_00[0x10];
     unsigned short wFlags;

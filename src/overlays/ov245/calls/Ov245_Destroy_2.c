@@ -1,3 +1,5 @@
+/* Destroys the model instances, then the base object. */
+
 /* Teardown: release +0x384/+0x398, finalise. */
 extern void DestroyInstance(int a);
 extern void Ov107_DestroyObject(int a);

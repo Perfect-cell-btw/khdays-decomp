@@ -1,3 +1,8 @@
+/* Advance a 17-step fade; on completion publish the context, create the resource at +0x5074 and
+ * return Ov000_FinishMoviePlayback (Ov000_FinishMoviePlayback) as the next callback. SEVENTEEN
+ * steps is 0..16 inclusive -- the same ramp the other fades in this overlay produce as -(elapsed /
+ * 0x4cb5), which is independent corroboration that 16 is the range and not a coincidence. */
+
 typedef unsigned char u8;
 typedef int (*OverlayCallback)(void);
 

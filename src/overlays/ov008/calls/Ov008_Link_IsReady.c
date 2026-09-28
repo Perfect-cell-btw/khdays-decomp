@@ -1,3 +1,5 @@
+/* Whether the link is local or ready. */
+
 extern char *data_ov008_02090f24;
 extern int Ov008_Link_IsLocal(void);
 

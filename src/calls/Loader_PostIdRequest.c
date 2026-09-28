@@ -1,3 +1,5 @@
+/* Posts a type-2 request (id and two arguments) to the loader thread. */
+
 extern void *Loader_PopFreeRequest(void);
 extern void OS_SendMessage(void *queue, void *message, int flags);
 

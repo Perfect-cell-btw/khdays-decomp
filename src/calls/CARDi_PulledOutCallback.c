@@ -1,3 +1,6 @@
+/* NitroSDK CARD: on the pulled-out notification (0x11) runs the user hook once and terminates
+ * unless it declines; any other command panics. */
+
 extern void OS_Terminate(void);
 extern void CARD_TerminateForPulledOut(void);
 extern int data_02046d40;

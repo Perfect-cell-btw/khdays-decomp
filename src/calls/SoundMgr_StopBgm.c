@@ -1,3 +1,5 @@
+/* Stops the BGM player sequence with the fade frames and marks the manager stopping. */
+
 extern unsigned char *data_0204c234;
 extern void NNS_SndPlayerStopSeq(void *ptr, int arg);
 

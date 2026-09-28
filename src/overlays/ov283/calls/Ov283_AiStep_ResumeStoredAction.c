@@ -1,3 +1,5 @@
+/* If active: rolls the move timer, resets the counters and queues the stored action. */
+
 extern unsigned int RandNextScaled(unsigned int range);
 extern int Ov283_ForwardToAiTaskWhenReady(int param_1, int param_2);
 extern void SetIndexedSlot(int *a, int i, int v);

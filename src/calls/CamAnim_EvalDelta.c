@@ -1,3 +1,6 @@
+/* Evaluates the animation and returns how far the camera moved (position, target, up, fovy) since
+ * the last frame. */
+
 typedef long fx32;
 typedef struct { fx32 x, y, z; } VecFx32;
 

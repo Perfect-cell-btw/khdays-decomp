@@ -1,3 +1,5 @@
+/* Same routine as the ov157 function of this name; see it for the details. */
+
 extern void CreateRegistryEntry();
 extern void Ov286_AiStateInit();
 

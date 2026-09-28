@@ -1,3 +1,7 @@
+/* Walks the menu selection groups (stride from context+0x4b10). For each group it fetches the list
+ * object and sets its draw mode from the group state: state 1 uses mode+2, state 2 uses 0,
+ * otherwise 1; group index >= 3 forces mode 5. Each object also gets a base mode 3 first. */
+
 typedef unsigned char  u8;
 typedef unsigned short u16;
 

@@ -1,3 +1,6 @@
+/* Fixed-point marshal-dispatch (see Ov014_MarshalFxAndDispatch) with an extra trailing
+ * ScriptVm_ReadOperandInt field passed as the 8th arg. */
+
 extern int ScriptVm_ReadOperandInt(void *a, int b);
 extern int ScriptVm_ReadOperandFx32(void *a, int b);
 extern int func_02020400(int a, int b);

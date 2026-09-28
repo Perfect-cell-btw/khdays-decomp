@@ -1,3 +1,6 @@
+/* Rotates part +0x390 so the reference axis (data_02042264) maps onto normalize(+0xcc); keeps the
+ * axis when the vector is too short. */
+
 extern int VEC_Normalize();
 extern int Quat_FromTwoVectors();
 extern int Srt_SetRotationQuat();

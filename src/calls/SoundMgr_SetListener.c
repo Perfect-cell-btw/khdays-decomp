@@ -1,3 +1,5 @@
+/* Stores the listener position and its normalised up vector (cross product of the two axes). */
+
 extern void VEC_CrossProduct();
 extern void VEC_Normalize();
 extern char *data_0204c234;

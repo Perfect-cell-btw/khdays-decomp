@@ -1,3 +1,9 @@
+/* Actor class event handler installed in the +0x1c onAction slot. Kind 5 dispatches on the
+ * sub-opcode: 0 starts the first node slot's subitem from the message payload, 1 starts the second
+ * from a scaled copy of the actor transform, 2 packs the actor's translation into a nine-byte
+ * payload and starts the third from it. Every path forwards to the ov107 base handler. The twelve
+ * bytes the original also leaves at sp+8 are a copy of the translation that nothing ever reads. */
+
 /*
  * Ov120_Actor_HandleEvent -- Ov120_Actor_HandleEvent.
  *

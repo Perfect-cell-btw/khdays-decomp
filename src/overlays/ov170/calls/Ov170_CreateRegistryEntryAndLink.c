@@ -1,3 +1,5 @@
+/* Spawn a child object via CreateRegistryEntry, link back to owner, store at +0x214. */
+
 extern void CreateRegistryEntry();
 extern void Ov170_stateInitClearSlots(void);
 

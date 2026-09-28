@@ -1,3 +1,5 @@
+/* Width/height of the occupied bounding box of the 8x5 bit grid (40-bit mask). */
+
 struct S {
     char pad[0x10];
     unsigned long long bits;

@@ -1,3 +1,5 @@
+/* Steps the effect list when the root heap owner is idle; returns 0. */
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void  EffectList_Step(void);
 

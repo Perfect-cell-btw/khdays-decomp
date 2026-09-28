@@ -1,3 +1,6 @@
+/* Maps a Mission Mode resource slot to its menu entry id. Slot 13 has no mapped entry and returns
+ * zero; slot 19 aliases entry 12. */
+
 int Ov008_MenuSlotToEntry(int slot)
 {
     int entry = 0;

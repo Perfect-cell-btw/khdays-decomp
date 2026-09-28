@@ -1,3 +1,5 @@
+/* Re-encrypt the instructions back to the range's opening key. */
+
 extern int Ov028_RC4_InitAndEncryptInstructions(int key, int data, int out, int nbytes);
 extern void DC_FlushRange(unsigned int addr, int size);
 extern void IC_InvalidateRange(unsigned int addr, int size);

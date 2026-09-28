@@ -1,3 +1,5 @@
+/* Sets the active flag and clears the timer. */
+
 void Ov060_Activate(void *self)
 {
     *(int *)self = 1;

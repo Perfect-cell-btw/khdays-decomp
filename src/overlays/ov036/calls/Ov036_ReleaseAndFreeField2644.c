@@ -1,3 +1,6 @@
+/* Release the sub-object held at +0x2644 through func_ov022_02091228, then free it. One of eight
+ * byte-identical copies; see the ov007 twin. */
+
 extern int func_ov022_02091228();
 extern int NNSi_FndFreeFromDefaultHeap();
 

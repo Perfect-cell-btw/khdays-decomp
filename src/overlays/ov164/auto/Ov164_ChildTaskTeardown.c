@@ -1,3 +1,5 @@
+/* Child task teardown: flags the child (+0x5c bit 1) and clears the owner's back link. */
+
 void Ov164_ChildTaskTeardown(int **r0) {
     int *r3 = r0[1];
     int *r2 = ((int **)r3)[1];

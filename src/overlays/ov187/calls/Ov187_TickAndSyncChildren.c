@@ -1,3 +1,5 @@
+/* Runs the object tick, then copies the transform into both child nodes (+0x10). */
+
 extern int Ov107_ProcessObjectTick();
 
 struct s44 {

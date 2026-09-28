@@ -1,3 +1,5 @@
+/* Whether the 0xf0-headed tag list holds a 0xfb entry with value >= 3. */
+
 struct S {
     int a;       /* 0x00 */
     int pad1;    /* 0x04 */

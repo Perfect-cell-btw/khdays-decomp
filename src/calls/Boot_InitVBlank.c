@@ -1,3 +1,5 @@
+/* Clears the VBlank work, installs the VBlank handler and enables the VBlank IRQ. */
+
 extern void MI_CpuFill8(void *dst, unsigned char val, unsigned int size);
 extern void OS_SetIrqFunction(int mask, void (*cb)(void));
 extern int OS_EnableIrqMask(int mask);

@@ -1,3 +1,6 @@
+/* Initializes ov004 display banks, BG priorities and maps, blend planes, 3D control and display
+ * selection; clears three BG screen buffers and restores brightness. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

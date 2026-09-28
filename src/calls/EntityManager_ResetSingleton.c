@@ -1,3 +1,7 @@
+/* Allocates the EntityManager singleton from the default heap if it is not there yet, clears the
+ * whole thing, and zeroes a run of slot words. Six callers. Named from the allocate-if-null plus
+ * memset shape; refine if a caller shows more. */
+
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);
 extern void MI_CpuFill8(void *dst, unsigned char val, unsigned int size);
 

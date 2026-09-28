@@ -1,3 +1,5 @@
+/* On-hit handler: queues action 3; returns 1. */
+
 int Ov301_OnHitQueueAction3(int *r0)
 {
     int *p = (int *)r0[0x214 / 4];

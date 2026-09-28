@@ -1,3 +1,6 @@
+/* SetSubitemState on model tracks 0, 2, 4 and 1 with the actor's stored animation (+0x310), then
+ * RefreshObjectCallbacks. */
+
 extern int SetSubitemState();
 extern int RefreshObjectCallbacks();
 

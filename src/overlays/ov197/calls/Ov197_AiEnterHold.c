@@ -1,3 +1,5 @@
+/* Plays anim 1, arms the 0x2000 hold timer and installs its tick. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov197_TickHoldTimer(void);

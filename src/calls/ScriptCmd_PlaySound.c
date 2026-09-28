@@ -1,3 +1,5 @@
+/* Script command: reads two int operands and plays that sound (PlaySoundChecked); returns 1. */
+
 extern int ScriptVm_ReadOperandInt(int a, void *b);
 extern void PlaySoundChecked(int a, int b);
 

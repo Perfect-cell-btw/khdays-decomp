@@ -1,3 +1,5 @@
+/* Re-evaluates the element's game-state gate, then rebinds its model sequence and animation. */
+
 typedef unsigned short u16;
 typedef struct { int x, y, z; } Vec;
 

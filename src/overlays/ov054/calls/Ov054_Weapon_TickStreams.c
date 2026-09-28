@@ -1,3 +1,6 @@
+/* Commits the widget scroll for the frame and, outside mode 0x2a, feeds both stream groups
+ * (flagging the local player when idle). */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned long long u64;

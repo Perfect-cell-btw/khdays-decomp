@@ -36,12 +36,27 @@ def stale_receipts():
     return out
 
 
-def verify(sym, source):
-    res = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "verify_data.py"),
-                          os.path.join(ROOT, source), sym, "--receipt"],
+def verify_command(sym, receipt):
+    """The verifier call that re-proves one receipt, by receipt kind."""
+    tools = os.path.join(ROOT, "tools")
+    source = os.path.join(ROOT, receipt["source"])
+    kind = receipt.get("kind")
+    if kind == "section_range":  # a function's local .rodata, verified as one span
+        return [os.path.join(tools, "verify_data.py"), source, "--section-range", receipt["module"],
+                receipt["section"], "0x%08x" % receipt["start"], "--receipt"]
+    if kind == "dsprot_encrypted_code":
+        return [os.path.join(tools, "verify_dsprot.py"), source, "--receipt"]
+    if sym.startswith("executable_"):
+        return [os.path.join(tools, "verify_executable_data.py"), source, sym[len("executable_"):],
+                "--receipt"]
+    return [os.path.join(tools, "verify_data.py"), source, sym, "--receipt"]
+
+
+def verify(sym, receipt):
+    res = subprocess.run([sys.executable] + verify_command(sym, receipt),
                          capture_output=True, text=True, cwd=ROOT)
     ok = res.returncode == 0 and "MATCH" in res.stdout
-    return sym, source, ok, (res.stdout + res.stderr)[-400:]
+    return sym, receipt["source"], ok, (res.stdout + res.stderr)[-400:]
 
 
 def main():
@@ -56,12 +71,12 @@ def main():
     by_source = {}
     for path, r, why in stale:
         if why == "source changed":
-            by_source.setdefault(r["source"], []).append(os.path.splitext(os.path.basename(path))[0])
+            by_source.setdefault(r["source"], []).append((os.path.splitext(os.path.basename(path))[0], r))
     from concurrent.futures import ThreadPoolExecutor
 
     def run_group(item):
-        source, syms = item
-        return [verify(sym, source) for sym in syms]
+        _source, receipts = item
+        return [verify(sym, r) for sym, r in receipts]
 
     bad = 0
     with ThreadPoolExecutor(max_workers=max(2, (os.cpu_count() or 4) - 1)) as pool:

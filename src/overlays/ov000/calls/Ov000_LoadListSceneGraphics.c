@@ -1,3 +1,9 @@
+/* Loads the list scene's BG graphics. Opens the archive descriptor data_ov000_0205aba8, then picks
+ * an alternate BG3 character subfile by variant (func_02024e5c: 1->none, 2->#1, 3->#3, 4->#0,
+ * 5->#2, else terminate). Loads the main BG palette + (alternate or default) BG3 char + screen from
+ * archive subfile #3, and the sub-screen palette/char from subfile #0. Sets graphicsFlags|=4,
+ * clears a 0x40 span of BG2 char and fills the sub-screen map with 0xc8. */
+
 typedef unsigned char  u8;
 typedef unsigned short u16;
 typedef unsigned int  u32;

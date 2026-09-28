@@ -1,3 +1,11 @@
+/* Per-frame step of the hop arc. Advances the action timer by the frame delta and turns it into an
+ * angle index through the shared sin/cos table, which gives the vertical offset of the arc above
+ * the anchor height. The horizontal motion keeps the launch direction scaled by the frame delta
+ * times thirty. Once the arc turns downward it sweeps for ground: on a hit it publishes the landing
+ * message through the actor hook, records the landing height, sets the actor state to 7 and ends
+ * the action. Otherwise the action ends on its own once the timer reaches 0x1000, handing the node
+ * to the follow-up. */
+
 typedef struct {
     int x;
     int y;

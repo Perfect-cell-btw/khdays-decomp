@@ -1,3 +1,8 @@
+/* Per-frame tick of the bouncing, homing projectile. A contact reflects the velocity about the
+ * stored contact normal; otherwise the launch delay counts down and, once it runs out, the
+ * projectile either homes on its target or sweeps a rotating search direction, according to
+ * bHoming78. Phase progress is a divide by one less than nPhaseMax6f. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef signed short s16;

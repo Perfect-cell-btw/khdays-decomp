@@ -1,3 +1,5 @@
+/* Pillar +0x2c handler: clears stance bit 0, zeroes the two vectors and leaves the region. */
+
 struct T { int a, b, c; };
 
 extern struct T data_02041dc8;

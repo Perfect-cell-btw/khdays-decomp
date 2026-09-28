@@ -1,3 +1,6 @@
+/* When the gate flag allows and the element is idle, records the hit and marks it; returns 0 on
+ * success, 8 otherwise. */
+
 extern int GameState_GetField(int, int);
 extern int Ov002_RecordElementHit(void *, unsigned char *, int);
 

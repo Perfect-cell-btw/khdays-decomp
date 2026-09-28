@@ -1,3 +1,6 @@
+/* Install callbacks and bounds; create actor resources, six subitems and two transform descriptors;
+ * request pair 0x138. */
+
 typedef unsigned int u32;
 
 typedef struct VecFx32 {

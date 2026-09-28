@@ -1,3 +1,6 @@
+/* Refreshes the child selector and runs the tick, then refreshes the anchor point (raised 0x2000
+ * while airborne) and its 0x2000 radius. */
+
 extern int Ov107_RefreshAndSelectChild();
 extern int Ov107_ProcessObjectTick();
 

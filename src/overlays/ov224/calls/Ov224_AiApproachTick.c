@@ -1,3 +1,5 @@
+/* Heads for the target (direct or rotated preset velocity); queues action 2 once within 0x2000. */
+
 extern int VEC_Subtract();
 extern int func_020050b4();
 extern int VEC_Normalize();

@@ -1,3 +1,9 @@
+/* Walks one node of the scene graph. A node that carries a display list uploads its matrix straight
+ * to the geometry engine. Otherwise the node publishes its position, rebuilds its matrix from its
+ * own yaw and pitch when the rebuild bit is set, hands the matrix to the camera and clears two of
+ * the camera's flags. It then recurses: with the recurse bit set and a child present it either runs
+ * the node's own callback or walks the children in turn, giving each its joint matrix. */
+
 typedef unsigned short u16;
 typedef signed short s16;
 typedef signed int s32;

@@ -1,3 +1,5 @@
+/* Selects the text-BG2 display mode and sets main-engine BG2CNT. */
+
 extern void DispMode_LookupWordAndDispatch(void *ptr);
 extern char data_02041f4c;
 

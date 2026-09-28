@@ -1,3 +1,5 @@
+/* Releases the sequence and node item and clears the visible flag. */
+
 #pragma thumb on
 extern void ReleaseField74AndCleanup(int this_);
 extern void Render_ReleaseNodeItem(unsigned char *sub);

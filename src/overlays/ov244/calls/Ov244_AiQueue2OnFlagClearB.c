@@ -1,3 +1,5 @@
+/* Queues action 2 once the watched flag clears. */
+
 extern int SetIndexedSlot();
 
 struct Inner {

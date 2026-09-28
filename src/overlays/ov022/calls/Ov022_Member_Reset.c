@@ -1,3 +1,6 @@
+/* Resets a member's counters and flags, re-evaluates its equipment claim and clears its pending
+ * pose. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef unsigned long long u64;

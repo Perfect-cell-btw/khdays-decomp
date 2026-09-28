@@ -1,3 +1,5 @@
+/* Finds the nearest target and faces it. */
+
 struct bf { unsigned b : 8; };
 extern int Ov107_FindNearestObject();
 extern void VEC_Subtract();

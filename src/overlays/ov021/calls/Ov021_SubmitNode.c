@@ -1,3 +1,5 @@
+/* Submits the element's render node with its group's table byte. */
+
 extern int Ov002_GetCtxTableByte(int slot);
 extern void Render_SubmitNode(void *obj, int index, int p3, void *p4);
 

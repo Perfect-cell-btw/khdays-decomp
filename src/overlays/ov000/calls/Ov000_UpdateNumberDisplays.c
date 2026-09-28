@@ -1,3 +1,5 @@
+/* Updates the three number displays (three digits, value and sign). */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

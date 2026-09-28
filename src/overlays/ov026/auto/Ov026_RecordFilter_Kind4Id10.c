@@ -1,3 +1,5 @@
+/* Record filter: true for kind 4 records with id 10. */
+
 int Ov026_RecordFilter_Kind4Id10(unsigned char *p) {
     if (p[0x23] != 4) {
         return 0;

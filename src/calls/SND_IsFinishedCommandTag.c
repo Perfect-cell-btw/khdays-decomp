@@ -1,3 +1,5 @@
+/* NitroSDK SND: whether the command with this tag has been processed (wrap-around safe). */
+
 extern int OS_DisableInterrupts();
 extern void OS_RestoreInterrupts(int mask);
 extern unsigned int data_02044748[];

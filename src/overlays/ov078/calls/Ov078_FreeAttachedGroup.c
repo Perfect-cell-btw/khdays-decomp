@@ -1,3 +1,5 @@
+/* Releases and frees the stream group at +0x2644. */
+
 extern void func_ov022_02091228(int v);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 

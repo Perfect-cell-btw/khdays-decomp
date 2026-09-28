@@ -1,3 +1,5 @@
+/* Selects the animation in the resource and binds it to the player. */
+
 extern int NNS_G3dGetAnmByIdx(void *p);
 extern int initObjAndDispatch(void *p, int a);
 extern int Obj_SetIndirectWord(void *p, int a);

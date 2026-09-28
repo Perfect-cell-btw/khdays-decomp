@@ -1,3 +1,5 @@
+/* Sends a placement for a straight shot from the muzzle (bigger in mode 2). */
+
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } MtxFx33;
 typedef struct {

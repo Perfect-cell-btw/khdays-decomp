@@ -1,3 +1,5 @@
+/* Unless shut down, publishes flag B0. */
+
 extern int Ov002_RunShutdownHook();
 extern int Ov002_PublishSlotValueB();
 

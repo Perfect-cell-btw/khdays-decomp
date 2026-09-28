@@ -1,3 +1,5 @@
+/* Frees the animation player to the default heap allocator. */
+
 extern int NNSi_FndGetAllocatorForDefaultHeap();
 extern int NNS_FndFreeToAllocator();
 

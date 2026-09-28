@@ -1,3 +1,5 @@
+/* Releases the table slot and frees the sub-object channels. */
+
 extern void *data_ov054_020b74a0;
 extern void ReleaseField74AndCleanup(void *p);
 extern void Ov054_freeSubObjectChannels(char *a);

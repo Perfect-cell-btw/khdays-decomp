@@ -1,3 +1,5 @@
+/* When visible advances the frame (capped at 0x1d000) on the active tracks. */
+
 typedef unsigned short u16;
 
 typedef struct {

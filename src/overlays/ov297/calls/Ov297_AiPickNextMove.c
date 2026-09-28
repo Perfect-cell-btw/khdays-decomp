@@ -1,3 +1,6 @@
+/* Retargets; queues action 0xa or 9 when their counters reach 4, else installs the sub-state 2 prep
+ * step. */
+
 extern void Ov297_AcquireTargetGapAndAngle(int this_);
 extern void Ov297_UpdateHeadingVector(int this_);
 extern void SetIndexedSlot(void *obj, int idx, void *value);

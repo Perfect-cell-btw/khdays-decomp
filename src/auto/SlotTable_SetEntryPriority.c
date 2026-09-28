@@ -1,3 +1,5 @@
+/* Sets the priority (low 4 bits) of slot entry idx. */
+
 int *SlotTable_SetEntryPriority(int *r0, int r1, int r2)
 {
     if (r1 < 0)

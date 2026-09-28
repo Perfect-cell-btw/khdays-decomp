@@ -1,3 +1,5 @@
+/* When the watched flag clears rolls the move timer. */
+
 extern int RandNextScaled();
 extern int SetIndexedSlot();
 

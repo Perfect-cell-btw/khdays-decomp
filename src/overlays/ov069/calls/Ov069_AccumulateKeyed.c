@@ -1,3 +1,6 @@
+/* Adds amt and ORs flag into the list node with this key; appends a new 28-byte node when none
+ * exists. */
+
 extern int *NNS_FndGetNextListObject();
 extern void NNS_FndAppendListObject();
 extern void *NNSi_FndAllocFromDefaultExpHeap();

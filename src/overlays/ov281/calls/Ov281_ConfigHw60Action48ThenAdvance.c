@@ -1,3 +1,6 @@
+/* Configures actor hw60 high-byte flags, clears linked subobject flags, starts action 0x48, clears
+ * a state slot, then advances to the next node callback. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov281_CompleteAction48Windup(void);

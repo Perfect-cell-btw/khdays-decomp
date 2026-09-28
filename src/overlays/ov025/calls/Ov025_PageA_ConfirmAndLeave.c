@@ -1,3 +1,5 @@
+/* Applies the selection, plays the confirm sound and targets slot 0. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_Config_SaveValues();
 extern int PlaySound();

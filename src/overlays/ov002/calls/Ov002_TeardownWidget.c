@@ -1,3 +1,6 @@
+/* Tear the widget's own node down, tear the sub-object at +0x1b0 down too when the owner is flagged
+ * (+0x58), then drop bit 2 of the widget flags. */
+
 extern void Render_ReleaseNodeItem(int arg0);
 extern void ReleaseField74AndCleanup(int arg0);
 

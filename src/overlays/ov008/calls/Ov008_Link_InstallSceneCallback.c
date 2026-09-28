@@ -1,3 +1,5 @@
+/* Resets the wireless receiver, installs the mission-select scene callback and restarts it. */
+
 extern int data_ov008_02090f24[];
 extern void Ov105_WH_SetReceiver(int arg0);
 extern void Obj_SetField14(int arg0, void (*callback)(void));

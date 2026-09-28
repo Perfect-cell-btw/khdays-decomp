@@ -1,3 +1,5 @@
+/* Frees the camera animation player and releases its resource slot when active, then clears it. */
+
 extern int CamAnim_IsActive(void *p);
 extern void CamAnim_FreePlayer(void *p);
 extern void ResSlot_Release(void *p);

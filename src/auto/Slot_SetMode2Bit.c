@@ -1,3 +1,6 @@
+/* Write the low two bits of `value` into field +0x74 of entry `index` of a stride-0x8c slot array
+ * (the SlotEntry layout); negative indices are ignored. */
+
 struct S { char pad[0x74]; int field_74; };
 
 void Slot_SetMode2Bit(int *base, int index, int value)

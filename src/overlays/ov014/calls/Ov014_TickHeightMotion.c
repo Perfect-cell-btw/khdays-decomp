@@ -1,3 +1,7 @@
+/* While the event bit is set, integrates the decaying rate into the height, clamps it to 0..cap and
+ * syncs the actor; at 0 the local player sends record 2 once. With flag 0x80 hands over to
+ * Ov014_ActorStepProgress. */
+
 typedef struct {
     int x;
     int y;

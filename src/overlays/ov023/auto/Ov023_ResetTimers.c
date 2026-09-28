@@ -1,3 +1,5 @@
+/* Clears the three timers (and the fourth unless in mode 2). */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 

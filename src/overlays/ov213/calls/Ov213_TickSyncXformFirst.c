@@ -1,3 +1,5 @@
+/* Copies the transform into the model, then runs the object tick. */
+
 typedef struct { int w[11]; } Blk44;
 
 extern void Ov107_ProcessObjectTick(char *self, int a);

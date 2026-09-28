@@ -1,3 +1,6 @@
+/* Resets the page's slot state, widgets and texts and moves the cursor to the first entry; returns
+ * 1. */
+
 extern void Ov008_GetMenuContext(void);
 extern void Ov008_ResetMissionSlotState(void);
 extern void Ov008_SetupGridMenuDisplay(void);

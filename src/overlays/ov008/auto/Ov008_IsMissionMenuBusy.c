@@ -1,3 +1,5 @@
+/* Report the +0x498 busy flag or, when idle, bit 1 of the +0x42c byte. */
+
 extern char *data_ov008_02090f24;
 int Ov008_IsMissionMenuBusy(void)
 {

@@ -1,3 +1,5 @@
+/* Draws an animation slot: its model (with polygon id) or its command block at its transform. */
+
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;

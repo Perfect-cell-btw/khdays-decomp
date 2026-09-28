@@ -1,3 +1,5 @@
+/* Initialises the cast state from the parameters and resets the shared hit record. */
+
 typedef signed int s32;
 typedef unsigned int u32;
 typedef unsigned short u16;

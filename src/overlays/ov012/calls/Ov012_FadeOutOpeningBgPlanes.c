@@ -1,3 +1,6 @@
+/* Fades the selected opening background planes out of the visible mask across 16 steps, updates
+ * DISPCNT/BLDCNT, and advances when the fade completes. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

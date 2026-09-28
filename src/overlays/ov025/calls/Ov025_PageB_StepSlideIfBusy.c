@@ -1,3 +1,5 @@
+/* Steps page B's slide while its entry is busy. */
+
 extern int Ov025_IsEntryBusyOrInactive();
 extern int Ov025_StepPageBSlide();
 

@@ -1,3 +1,5 @@
+/* Copies the party tables into their saved copies. */
+
 extern int MI_CpuCopy8();
 
 extern char data_0204c6a0[];

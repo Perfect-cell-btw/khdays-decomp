@@ -1,3 +1,5 @@
+/* First entry (8-byte stride) whose in-use byte is clear, or the end. */
+
 struct E {
     char pad0[0x24];
     unsigned char b0 : 1;

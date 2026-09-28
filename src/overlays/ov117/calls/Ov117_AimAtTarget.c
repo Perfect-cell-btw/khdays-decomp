@@ -1,3 +1,13 @@
+/* Per-frame step of the launch-at-target action. Re-acquires the lock-on target; a null target ends
+ * the action. Otherwise it takes the vector from the actor to the target and normalises it in
+ * place, which also yields the distance, clamps that to 0x8000 and runs the aim helper, then resets
+ * the vertical component of the advance vector to -0x200. The launch half only runs while bit 0 of
+ * the actor flag byte at 0x17a is set. It flattens the delta on Y, normalises it and scales it by
+ * the clamped distance over thirty to get the launch velocity, clears the timer, latches the
+ * animation id and sets the proximity flag before handing the node to the follow-up action. The two
+ * components of the flattened delta are read into locals before any of the stores: that is what
+ * keeps both loads ahead of the write-back, which is the order the ROM uses. */
+
 typedef struct { unsigned char b0 : 1; } Bit0;
 typedef struct {
     int padding[0x19];

@@ -1,3 +1,6 @@
+/* THUMB tail-forward to Actor_StartMotion with the 0x184-stride track entry at
+ * (*data_0204c208)+0xc4+index*0x184, passing args 2-4 through. */
+
 extern void Actor_StartMotion(int, int, int, int);
 extern int data_0204c208;
 void TailForwardTrackEntry_2(int param_1, int param_2, int param_3, int param_4) {

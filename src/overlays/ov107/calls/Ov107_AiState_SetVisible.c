@@ -1,3 +1,5 @@
+/* Shows or hides the model node when the visibility changes and stores the flag. */
+
 typedef union {
     int word;
     struct {

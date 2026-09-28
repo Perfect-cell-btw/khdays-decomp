@@ -1,3 +1,6 @@
+/* Applies the brightness tween to the screens and updates the active widgets (dropping the finished
+ * ones). */
+
 typedef unsigned char u8;
 typedef unsigned int  u32;
 

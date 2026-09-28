@@ -1,3 +1,5 @@
+/* Whether the ov005 sub-scene state is at most 1. */
+
 /* Report whether +0x4b74 of the ov005 global object is <= 1. */
 extern int data_ov005_0205b810;
 int Ov005_SubScene_IsIdle(void) {

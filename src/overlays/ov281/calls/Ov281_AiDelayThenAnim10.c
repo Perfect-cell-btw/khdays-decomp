@@ -1,3 +1,5 @@
+/* After 0x3000 plays anim 10 and installs the queue-action-2 step. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov281_AiStep_QueueAction2OnAnimEnd_3(void);

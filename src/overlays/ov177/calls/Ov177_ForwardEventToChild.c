@@ -1,3 +1,5 @@
+/* Passes the event to the child object (+0x3ac), then to the base region-event handler. */
+
 extern int Ov107_InitObjectFromSource();
 extern int Ov107_HandleRegionEvent();
 

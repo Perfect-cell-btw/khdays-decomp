@@ -1,3 +1,5 @@
+/* Sets the orbit angle, recomputes the camera position and re-aims. */
+
 typedef struct {
     int x;
     int y;

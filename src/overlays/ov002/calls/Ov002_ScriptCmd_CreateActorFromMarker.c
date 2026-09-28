@@ -1,3 +1,5 @@
+/* Script command: reads two int operands and creates the actor from the marker. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_CreateActorFromMarker();
 

@@ -1,3 +1,7 @@
+/* Waits for the action-0x48 windup timer, reacquires and faces a target, clears actor flags60
+ * high-byte mask 0x82, stops the current action, starts resource 0x169 mode 6, and advances the
+ * node. */
+
 typedef struct VecFx32 {
     int x;
     int y;

@@ -1,3 +1,6 @@
+/* Draw callback: for node kind 2, copies the owner's position (+0x48c) and yaw into the node and
+ * draws it. */
+
 extern int Scene_DrawNode();
 
 struct vec3 { int a, b, c; };

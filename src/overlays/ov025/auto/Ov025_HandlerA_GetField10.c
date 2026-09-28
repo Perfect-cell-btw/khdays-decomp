@@ -1,3 +1,5 @@
+/* Follow the +0x10 link of the stride-8 table entry indexed by the first ov025 counter. */
+
 extern int data_ov025_020b574c;
 extern int data_ov025_020b4ab0;
 

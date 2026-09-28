@@ -1,3 +1,5 @@
+/* Runs a VRAM transfer task through its loader (flushing the source first when asked). */
+
 extern void DC_FlushRange(const void *addr, unsigned size);
 extern void *data_02041934[];
 

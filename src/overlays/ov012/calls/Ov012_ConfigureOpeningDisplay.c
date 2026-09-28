@@ -1,3 +1,7 @@
+/* Configures the opening scene display: darkens both engines, resets GX state, runs the selected
+ * ov024 display teardown, assigns main BG VRAM, and sets BG0/BG1/BG2 control and LCD power routing.
+ */
+
 extern void SetMasterBrightnessMain(int level);
 extern void SetMasterBrightnessSub(int level);
 extern void Gfx_Reset2DEngines(void);

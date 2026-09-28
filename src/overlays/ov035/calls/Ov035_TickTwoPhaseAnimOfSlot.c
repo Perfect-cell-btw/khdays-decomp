@@ -1,3 +1,5 @@
+/* Ticks the two-phase animation of the slot's +0x10 block. */
+
 extern void Ov035_TickTwoPhaseAnim(void *a, char *b);
 
 void Ov035_TickTwoPhaseAnimOfSlot(void *a, char *b) {

@@ -1,3 +1,6 @@
+/* Whether every mission in the value range of both lists is completed (clears *result on the first
+ * open one). */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

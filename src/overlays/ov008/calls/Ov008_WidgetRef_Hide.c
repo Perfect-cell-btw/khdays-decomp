@@ -1,3 +1,5 @@
+/* Hides the referenced widget and releases its slots. */
+
 extern int Ov008_GetContext(void);
 extern void Ov008_PushSubitemPair(int arg0, int arg1, int arg2);
 extern void Ov008_ReleaseTwoSlotsEx(int arg0, int arg1, int arg2);

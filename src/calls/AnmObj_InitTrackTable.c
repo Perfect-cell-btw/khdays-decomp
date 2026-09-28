@@ -1,3 +1,5 @@
+/* Binds the animation resource and fills the per-track index table from its track offsets. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

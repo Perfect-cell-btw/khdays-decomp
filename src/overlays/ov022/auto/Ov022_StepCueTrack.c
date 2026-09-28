@@ -1,3 +1,5 @@
+/* Steps a compact cue-track state machine and reports the state-3 equality case. */
+
 int Ov022_StepCueTrack(unsigned char *p, int val) {
     int r = 0;
     switch (*p) {

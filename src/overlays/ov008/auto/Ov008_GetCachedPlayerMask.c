@@ -1,3 +1,5 @@
+/* The player mask cached at init (+0x2c). */
+
 extern char *data_ov008_02090f00;
 int Ov008_GetCachedPlayerMask(void)
 {

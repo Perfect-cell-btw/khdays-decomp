@@ -1,3 +1,5 @@
+/* When the animation ends rolls a random timer, sets +0x78 and queues action 5. */
+
 extern int RandNextScaled();
 extern int SetIndexedSlot();
 

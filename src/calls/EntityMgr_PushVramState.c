@@ -1,3 +1,6 @@
+/* Pushes the texture VRAM manager and GFX state onto the entity manager's 16-deep stack; returns
+ * the new depth. */
+
 extern void OS_Terminate(void);
 extern void NNS_GfdGetFrmTexVramState(void *);
 extern void GFXi_SaveStateTo(void *);

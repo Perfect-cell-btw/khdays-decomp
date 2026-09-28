@@ -1,3 +1,5 @@
+/* Counts the timer down; then queues action 4. */
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 
 void Ov220_AiIdleCountdown(char *obj) {

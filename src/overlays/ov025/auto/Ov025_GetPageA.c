@@ -1,3 +1,5 @@
+/* Read the word at +0x959c of the second ov025 global object. */
+
 extern int data_ov025_020b5744;
 
 int Ov025_GetPageA(void) {

@@ -1,3 +1,5 @@
+/* When active clears the active/pending bits and releases the entity. */
+
 extern void EntityMgr_UnlinkFromListC(void *ptr);
 
 void Entity_Deactivate(unsigned char *ptr) {

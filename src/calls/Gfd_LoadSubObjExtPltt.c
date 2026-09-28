@@ -1,3 +1,5 @@
+/* Loads the sub engine's OBJ extended palette (begin/load/end). */
+
 extern void GXS_BeginLoadOBJExtPltt(void);
 extern void GXS_LoadOBJExtPltt(void *src, unsigned offset, unsigned size);
 extern void GXS_EndLoadOBJExtPltt(void);

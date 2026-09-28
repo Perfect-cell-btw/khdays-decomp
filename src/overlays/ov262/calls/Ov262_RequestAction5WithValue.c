@@ -1,3 +1,5 @@
+/* Command callback 3: stores the value and stores and queues action 5. */
+
 void Ov262_RequestAction5WithValue(void *self, int value)
 {
     *(int *)((char *)self + 0x3a8) = value;

@@ -1,3 +1,5 @@
+/* NitroSystem FND: resets the frame heap's tail pointer (and every saved state's tail). */
+
 void NNS_FndResetFrmHeapTail(int *p)
 {
     int *node = (int *)p[0x2c / 4];

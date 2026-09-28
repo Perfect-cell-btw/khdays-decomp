@@ -1,3 +1,5 @@
+/* Binds the widget reference to widget id value and copies its position. */
+
 extern void *Ov008_GetContext(void);
 extern void *Ov008_FindEntryById(void *context, int arg1);
 extern void *Ov008_GetEntryPos(void *context, void *entry);

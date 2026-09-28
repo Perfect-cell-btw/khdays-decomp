@@ -1,3 +1,5 @@
+/* Appends the load-screen apply step to the pending entries. */
+
 extern int Ov002_AppendEntry();
 extern int data_ov002_0207ee38;
 extern int Ov002_ApplyLoadedScreen();

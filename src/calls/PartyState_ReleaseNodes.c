@@ -1,3 +1,5 @@
+/* Releases the node of each of the two party records. */
+
 extern char data_0204c500;
 extern void DispatchByNodeKind(void *ptr);
 

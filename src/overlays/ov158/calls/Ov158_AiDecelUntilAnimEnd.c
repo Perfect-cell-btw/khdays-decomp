@@ -1,3 +1,6 @@
+/* Keeps the previous position and damps the velocity by 0xb00; once the animation ends queues
+ * action 2 and ends the step. */
+
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
 

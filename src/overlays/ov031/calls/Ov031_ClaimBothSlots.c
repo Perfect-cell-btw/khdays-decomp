@@ -1,3 +1,5 @@
+/* Marshals and claims actor slots 0 and 1, flagging each claimed one. */
+
 extern void func_ov022_0209fb60();
 extern void Ov022_SetSlotClaim();
 

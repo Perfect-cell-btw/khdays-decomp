@@ -1,3 +1,5 @@
+/* Stores the selection, clears the target slot and plays the confirm sound. */
+
 extern int Ov025_SetCtxField960c();
 extern int Ov025_SetTargetSlot();
 extern int PlaySound();

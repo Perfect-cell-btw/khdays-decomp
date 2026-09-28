@@ -1,3 +1,5 @@
+/* Turns toward the heading, composes it with the surface-normal tilt and applies it. */
+
 extern int Angle_TurnToward();
 extern int QuatFromAxisAngle();
 extern int Quat_FromTwoVectors();

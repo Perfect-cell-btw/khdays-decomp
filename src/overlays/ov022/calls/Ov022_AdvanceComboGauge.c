@@ -1,3 +1,10 @@
+/* Combo/gauge advance, gated on Session_GetLocalPlayerIndex idle and obj bit 16 clear. Requires the
+ * byte at obj+0x2ab4 (state) or param2 non-zero. A small switch on param2 picks a step delta (2 for
+ * kind 0, 5 for kinds 1/2, bumping the counter at obj+0x2ab3 on kinds 1[if param3>0]/2), then +1
+ * more if lookup Slot_EvalPackedParam(obj[9],0x4f) is positive. Clamps the counter (>=0xf -> 2)
+ * and, unless the state byte is already 2/3/4, sets state=1, adds the delta to obj+0x2ab5, and when
+ * the counter >=0xb caps that at 10 and sets state=2. */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern int Slot_EvalPackedParam(int a, int b);
 

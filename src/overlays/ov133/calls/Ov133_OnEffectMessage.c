@@ -1,3 +1,5 @@
+/* Effect message (kind 5): spawns the child or the effect task for the sub-kind. */
+
 extern int Ov133_SpawnChild0cAndBackLink(int, int, int, int);
 extern int Ov107_CreateSpawnTask(int, int, int, int, int);
 extern int Ov107_CreateNodeXformTaskFx24(int, int, int, int, int, int);

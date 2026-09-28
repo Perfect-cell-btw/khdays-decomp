@@ -1,3 +1,5 @@
+/* Deactivates the node outside modes 48/49; while active updates its animation tracks. */
+
 extern void Sequence_UpdateTracks(void *p, int arg);
 
 void Ov059_UpdateTracksByMode(char *obj, char *b, int c) {

@@ -1,3 +1,5 @@
+/* Resets party member kind for the argument, then runs a transient layout pass. */
+
 extern void Session_GetLocalPlayerIndex(int arg0);
 extern void PartyMember_ResetWithKind(int arg0, int arg1, int arg2, int arg3);
 extern char *data_0204be18;

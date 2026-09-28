@@ -1,3 +1,5 @@
+/* If active: sets +0x74 = 6, +0x78 = 1, queues the stored action and ends the step. */
+
 extern int SetIndexedSlot();
 
 typedef struct {

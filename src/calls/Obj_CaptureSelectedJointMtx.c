@@ -1,3 +1,5 @@
+/* Saves the current matrix into the matrix cache slot of the selected joint. */
+
 typedef signed int s32;
 typedef unsigned int u32;
 typedef unsigned char u8;

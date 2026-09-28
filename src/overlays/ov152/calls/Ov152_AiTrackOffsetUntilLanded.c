@@ -1,3 +1,6 @@
+/* Follows the owner-relative offset with damped velocity; once grounded after the flag clears
+ * queues action 2. */
+
 struct b1 { unsigned char b : 1; };
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
 extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);

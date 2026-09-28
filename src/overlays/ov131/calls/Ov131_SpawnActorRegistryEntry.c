@@ -1,3 +1,6 @@
+/* Spawn a child object via CreateRegistryEntry (callback Ov131_AiStateInit), link it back to this
+ * object, copy *(child)+0x384 into the child's +4 field and store it at +0x214. */
+
 extern void CreateRegistryEntry(int, int, int, void *, int, int **);
 extern void Ov131_AiStateInit(void);
 

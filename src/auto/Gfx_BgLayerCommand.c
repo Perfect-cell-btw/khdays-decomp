@@ -1,3 +1,5 @@
+/* GFX command for BG layer x (0xf for engine A layers 0-3, 0x1f for engine B, -1 otherwise). */
+
 /* Map an index 0..7 to a mask: 0-3 -> 0xf, 4-7 -> 0x1f, anything else -> -1. */
 int Gfx_BgLayerCommand(unsigned int x) {
     switch (x) {

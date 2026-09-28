@@ -1,3 +1,6 @@
+/* Sets the locked stance flags (|0x86, bit 0 clear), shows the part, posts update 0x49, clears
+ * pendingAction and ends the step. */
+
 extern int Ov107_BuildAndSendUpdate();
 extern int SetIndexedSlot();
 

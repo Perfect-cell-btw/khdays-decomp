@@ -1,3 +1,5 @@
+/* Sets state 5 and clears its timer. */
+
 void Ov017_ResetState5(void *self)
 {
     *(unsigned char *)((char *)self + 0x1b4) = 5;

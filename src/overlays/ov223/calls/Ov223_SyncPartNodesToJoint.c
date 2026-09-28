@@ -1,3 +1,6 @@
+/* Joint callback: moves the two nodes of the selected body part (+0x3ac.. / +0x3c0..) to the
+ * current joint matrix. */
+
 extern int NNS_G3dGetCurrentMtx();
 extern int Srt_SetTranslation();
 

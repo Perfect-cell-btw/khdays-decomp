@@ -1,3 +1,5 @@
+/* Teardown: release +0x384, the 2 stride-8 table entries at +0x398, free it, finalise. */
+
 extern void DestroyInstance();
 extern void FreeInstanceMemory();
 extern void Ov107_DestroyObject();

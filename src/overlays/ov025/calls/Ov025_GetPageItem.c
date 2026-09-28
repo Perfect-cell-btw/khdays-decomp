@@ -1,3 +1,5 @@
+/* Item index of page arg0, or NULL past its count. */
+
 extern int Ov025_GetPageTableEntry();
 extern int data_ov025_020b4ed0;
 

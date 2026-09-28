@@ -1,3 +1,6 @@
+/* Allocate and name a 0x3bc-byte Ov239Actor, install the initializer callback, and initialize its
+ * base actor. */
+
 extern void *CallocInstance(int size);
 extern void OS_SPrintf(void *buffer, void *format);
 extern int Ov107_OpenCachedResourceByName(void *name);

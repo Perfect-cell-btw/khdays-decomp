@@ -1,3 +1,6 @@
+/* Shows the three variant entries and hides the four confirm entries for mode 2, and the reverse
+ * for mode 3. */
+
 typedef unsigned char u8;
 
 typedef struct {

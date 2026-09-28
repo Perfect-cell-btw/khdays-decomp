@@ -1,3 +1,6 @@
+/* Load screen init: snapshots the game state, requests the font and resets the three slots; returns
+ * the load tick. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef void (*OverlayCallback)(void);

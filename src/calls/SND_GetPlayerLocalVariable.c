@@ -1,3 +1,6 @@
+/* NitroSDK SND: reads local variable j of player i from the shared work (after invalidating the
+ * cache line). */
+
 extern void DC_InvalidateRange(void *addr, unsigned size);
 extern char *data_02046280;
 

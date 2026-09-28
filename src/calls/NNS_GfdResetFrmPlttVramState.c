@@ -1,3 +1,5 @@
+/* NitroSystem: resets the frame palette VRAM manager to its full size. */
+
 extern int data_02047364;
 
 void NNS_GfdResetFrmPlttVramState(void) {

@@ -1,3 +1,5 @@
+/* Looks up the entry in the collision model's name table (case-insensitive). */
+
 extern void FindEntryByNameNoCase(int arg0);
 
 void CollModel_FindEntry(void *p)

@@ -1,3 +1,5 @@
+/* Allocates a 0x30-byte object list and initialises it. */
+
 extern void *CallocInstance(int size);
 extern void List_Init(void *p);
 

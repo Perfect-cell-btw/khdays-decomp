@@ -1,3 +1,7 @@
+/* Chase state entry. Acquires a target; with none it asks the actor for state 2 and clears the
+ * slot. Otherwise it resets the phase, kicks the actor's motion, rolls a chase duration of 0x1000
+ * plus rand(0x3001), and installs the chase tick. */
+
 typedef unsigned char u8;
 
 struct State {

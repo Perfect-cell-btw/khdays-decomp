@@ -1,3 +1,5 @@
+/* Applies gravity and damping; lands when the animation ends and grounded. */
+
 struct vec3 { int x, y, z; };
 struct b1 { unsigned char b:1; };
 

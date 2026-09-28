@@ -1,3 +1,5 @@
+/* Targets page 4 and plays the confirm sound. */
+
 extern int Ov025_SetTargetSlot();
 extern int PlaySound();
 

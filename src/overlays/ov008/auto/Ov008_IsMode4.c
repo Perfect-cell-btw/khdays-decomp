@@ -1,3 +1,5 @@
+/* Whether the screen work area's mode (+0x95cc) is 4. */
+
 extern char *data_ov008_02090f04[];
 
 int Ov008_IsMode4(void)

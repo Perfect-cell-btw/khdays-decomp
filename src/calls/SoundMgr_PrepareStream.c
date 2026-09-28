@@ -1,3 +1,5 @@
+/* Prepares stream slot index with the stream id. */
+
 extern void NNS_SndArcStrmPrepare(int, int, int);
 extern int data_0204c234;
 

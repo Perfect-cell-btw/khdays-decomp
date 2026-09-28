@@ -1,3 +1,5 @@
+/* Builds a sphere cast parameter block and runs it on entity slot index. */
+
 typedef struct {
     int word0;
     int word4;

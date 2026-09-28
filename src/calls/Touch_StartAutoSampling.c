@@ -1,3 +1,6 @@
+/* Starts touch auto-sampling into the 5-entry ring (4 per frame), waits and returns whether it
+ * succeeded. */
+
 extern int data_0204c1c4;
 extern void TP_RequestAutoSamplingStartAsync(int arg0, int arg1, void *ptr, int arg3);
 extern void TP_WaitBusy(int arg0);

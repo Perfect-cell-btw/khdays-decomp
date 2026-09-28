@@ -1,3 +1,5 @@
+/* Damps the velocity; once grounded plays anim 9 and installs the stop. */
+
 struct v3 { int x, y, z; };
 struct b1 { unsigned char b:1; };
 

@@ -1,3 +1,6 @@
+/* Resets the supplied controller state and releases the scene-global slot at +0x550 when present.
+ */
+
 extern int data_ov077_020b9b80;
 extern void SoundSeqHandle_Stop();
 

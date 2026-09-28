@@ -1,3 +1,5 @@
+/* Pose sender: fills the pose's flag bytes on first send, then the base send. */
+
 extern void Ov107_AiState_SendPose(int self, int node, int arg3);
 
 void Ov146_SendPoseWithFlags(int self, int node, int arg3) {

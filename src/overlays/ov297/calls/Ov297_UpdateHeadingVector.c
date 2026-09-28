@@ -1,3 +1,5 @@
+/* Rebuilds the 0x440-long heading vector from the angle at +0x34 and stores its yaw. */
+
 typedef struct { int x, y, z; } VecFx32;
 struct Mtx33_ov297 { int m[9]; };
 

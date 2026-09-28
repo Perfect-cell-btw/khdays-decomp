@@ -1,3 +1,5 @@
+/* After Ov107_ProcessObjectTick, copies the 11-word block obj+0xa0 into two linked nodes. */
+
 extern void Ov107_ProcessObjectTick(void *obj);
 struct blk11 { int w[11]; };
 void Ov152_CopyBlockToTwoNodes(char *obj) {

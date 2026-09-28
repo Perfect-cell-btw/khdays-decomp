@@ -1,3 +1,5 @@
+/* Arms the party reset flag. */
+
 extern char data_02042a1c;
 extern char data_02042a1d;
 

@@ -1,3 +1,5 @@
+/* Renders the object at its owner's position scaled to twice the owner's radius. */
+
 struct T { int a, b, c; };
 
 struct Xform {

@@ -1,3 +1,5 @@
+/* Steps the table slot (+0x2ca4) with the object's slot index, then forwards it. */
+
 extern char *data_ov074_020b9b80;
 extern void Ov074_TickTwoPhaseAnimOfSlot(void *a, void *arg1, int arg2);
 extern void Ov074_ForwardPlus10IfFlag694(void *a, void *arg1);

@@ -1,3 +1,8 @@
+/* Walk the three entry slots at +0x7c4 of the block at data_ov002_0207f624, stopping at the first
+ * empty one. Returns how many were active and writes the largest measured value through pnMax. Each
+ * entry is passed to the measure helper as its third argument, alongside the shared source at
+ * +0x6f0 and channel 0. */
+
 extern int data_ov002_0207f624;
 
 extern int NNSi_G2dFontGetTextWidth(int pSource, int nChannel, int nEntry);

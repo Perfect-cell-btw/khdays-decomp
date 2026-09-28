@@ -1,3 +1,5 @@
+/* When a panel is open requests caption 2 with the argument. */
+
 extern int Ov002_GetPanelField018c();
 extern int Ov002_RequestCaption();
 

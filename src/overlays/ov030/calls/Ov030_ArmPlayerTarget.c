@@ -1,3 +1,5 @@
+/* Sets the local player's lock bits, stores the target and arms the tracking state. */
+
 extern int Session_GetLocalPlayerIndex();
 extern int Ov022_ActorSetState();
 

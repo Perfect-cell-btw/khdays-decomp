@@ -1,3 +1,5 @@
+/* NitroSDK OS: reset notification (command 0x10) sets the reset flag; anything else panics. */
+
 extern void OS_Terminate(void);
 extern unsigned short data_02044694;
 

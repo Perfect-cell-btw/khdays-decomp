@@ -1,3 +1,6 @@
+/* On a hit deactivates the aim nodes and queues a reaction for interruptible actions, then the base
+ * post-tick. */
+
 typedef signed char s8;
 typedef unsigned char u8;
 

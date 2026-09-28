@@ -1,3 +1,7 @@
+/* Flip the visible bit on the primary slot and its linked slot, and write the INVERSE of that value
+ * to the alternate slot. Sits next to Ov006_MissionSetSlotVisible (Ov006_MissionSetSlotVisible),
+ * which sets the bit outright; this one toggles and keeps the alternate slot opposite. */
+
 typedef unsigned char u8;
 
 typedef struct {

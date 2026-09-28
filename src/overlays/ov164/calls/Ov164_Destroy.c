@@ -1,3 +1,6 @@
+/* Destroys the model, the child selector and the five attached instances, frees the table, then the
+ * base object. */
+
 extern int DestroyInstance();
 extern int FreeInstanceMemory();
 extern int Ov107_DestroyObject();

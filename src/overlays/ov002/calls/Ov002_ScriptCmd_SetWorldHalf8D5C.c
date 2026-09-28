@@ -1,3 +1,5 @@
+/* Script command: stores the operand in the world's halfword +0x8d5c; returns 1. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_World_SetHalf8D5C();
 

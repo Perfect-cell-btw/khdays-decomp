@@ -1,3 +1,6 @@
+/* Script command: unless stream 0 is playing, starts it with the operand; returns 1 when started.
+ */
+
 extern int ScriptVm_ReadOperandInt(int a, void *b);
 extern int SoundStrm_HasPlaybackPos(int a);
 extern void StampByteAndInvokeSubStructAt(int a, int b);

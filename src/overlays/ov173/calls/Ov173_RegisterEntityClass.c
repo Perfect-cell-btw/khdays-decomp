@@ -1,3 +1,5 @@
+/* Registers Ov173_CreateNamedEntity as the factory for entity class 0x1d. */
+
 extern void Ov107_RegisterHandler(int arg0, void (*arg1)(int));
 extern void Ov173_CreateNamedEntity(int);
 

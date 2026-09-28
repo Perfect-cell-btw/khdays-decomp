@@ -1,3 +1,6 @@
+/* First active entity of the manager, other than self, one of whose shapes overlaps the segment;
+ * shape out optional. */
+
 typedef struct Ov107ListNode {
     int field0;
     struct Ov107ListNode *next;

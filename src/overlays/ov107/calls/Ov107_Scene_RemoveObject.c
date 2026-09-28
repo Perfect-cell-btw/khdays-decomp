@@ -1,3 +1,5 @@
+/* Removes the object from the scene's object list. */
+
 extern int List_First(int list);
 extern int List_Next(int list);
 extern int List_RemoveByHandle(int list, int handle);

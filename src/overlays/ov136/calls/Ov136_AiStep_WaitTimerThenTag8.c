@@ -1,3 +1,6 @@
+/* AI step: accumulates the owner's frame delta into context +0x30; at 0x3000 posts tag 8 and
+ * installs the next step. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov136_AiStep_QueueAction2OnAnimEnd_3(void);

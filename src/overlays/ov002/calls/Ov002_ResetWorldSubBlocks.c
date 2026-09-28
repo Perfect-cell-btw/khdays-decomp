@@ -1,3 +1,5 @@
+/* Resets both of the world object's sub-blocks and arms it. */
+
 extern int data_ov002_0207fa00;
 extern int Obj_ResetBothSubBlocksAndArm();
 

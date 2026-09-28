@@ -1,3 +1,6 @@
+/* Class pfnMethod: releases the bound object and resources, destroys the root objects and clears
+ * the instance pointer. */
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov043_ReleaseBoundObject(int param_1);
 extern void Ov043_ReleaseMissionBlock(int param_1);

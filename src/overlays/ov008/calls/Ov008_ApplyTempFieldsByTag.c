@@ -1,3 +1,5 @@
+/* Applies the temporary fields to the entry with the tag. */
+
 extern int Ov008_FindEntryByTag(int arg0, unsigned short arg1);
 extern void Ov008_ApplyTempFieldsAndRestore(int arg0, int arg1, int arg2, int arg3);
 

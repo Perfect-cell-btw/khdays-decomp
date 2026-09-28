@@ -1,3 +1,5 @@
+/* Enqueues command table[idx] with the object's +0x14 data. */
+
 extern int GFXi_EnqueueCommand(void *a, int b, int c, int d);
 extern void *data_02041f8c[];
 

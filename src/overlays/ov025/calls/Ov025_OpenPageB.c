@@ -1,3 +1,5 @@
+/* Unless busy marks page B open and draws its elements. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_UpdateMenuButton5();
 extern int Ov025_DrawPageBElement();

@@ -1,3 +1,6 @@
+/* List-scene input tick: reads the button state and touch entry, drives the touch transition flag,
+ * and returns the next scene callback. */
+
 typedef signed char    s8;
 typedef unsigned char   u8;
 typedef signed short    s16;

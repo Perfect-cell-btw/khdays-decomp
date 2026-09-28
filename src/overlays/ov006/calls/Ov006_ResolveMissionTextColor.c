@@ -1,3 +1,6 @@
+/* Resolves a requested Mission Mode text color to the palette index used by the current state and
+ * alternate text layout. */
+
 typedef unsigned char u8;
 
 typedef struct {

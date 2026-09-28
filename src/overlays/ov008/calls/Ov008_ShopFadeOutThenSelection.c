@@ -1,3 +1,5 @@
+/* Shop state: refreshes the panel; moves to the selection tick once the fade-out ends. */
+
 extern int Ov008_FadeOutStep(void);
 extern void Ov008_RefreshPanelDisplay(void);
 extern void Ov008_SelectionTick(void);

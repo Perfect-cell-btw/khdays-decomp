@@ -1,3 +1,5 @@
+/* Queues action 9 once the watched flag clears. */
+
 extern int SetIndexedSlot();
 
 struct Obj {

@@ -1,3 +1,5 @@
+/* Forwards the three arguments to page A's widget handler. */
+
 extern int Ov025_GetPageA();
 extern int func_ov025_0208eb08();
 

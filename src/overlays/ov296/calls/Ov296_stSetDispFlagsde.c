@@ -1,3 +1,6 @@
+/* ov node state callback: OR-set display-flag bits 0xde into the object's [+0x60] high byte, then
+ * advance the node's state slot (SetIndexedSlot node[0x20]). */
+
 extern void SetIndexedSlot();
 extern void Ov296_LatchStateAndRender(void);
 void Ov296_stSetDispFlagsde(int node) {

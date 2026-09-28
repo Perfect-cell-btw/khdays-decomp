@@ -1,3 +1,5 @@
+/* Tears down the page and clears the menu's handles. */
+
 extern int NNSi_FndGetCurrentRootHeap();
 extern int Ov025_PageTeardown();
 extern int data_ov025_020b49c0;

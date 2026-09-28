@@ -1,3 +1,5 @@
+/* While active updates the animation tracks; deactivates when they finish. */
+
 extern int Sequence_UpdateTracks(void *p, void *b);
 
 void Ov057_UpdateTracksWhileActive(int unused, char *a, void *b) {

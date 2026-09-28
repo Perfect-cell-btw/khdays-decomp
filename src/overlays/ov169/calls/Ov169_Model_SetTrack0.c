@@ -1,3 +1,6 @@
+/* SetSubitemState on track 0 of the actor model (+0x384) with the given blend and value, then
+ * RefreshObjectCallbacks. */
+
 extern int SetSubitemState();
 extern int RefreshObjectCallbacks();
 

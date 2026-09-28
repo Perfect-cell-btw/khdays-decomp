@@ -1,3 +1,5 @@
+/* Queues action 1 and stores the mode, destination and zero velocity. */
+
 struct Vec3 { int x, y, z; };
 
 extern struct Vec3 data_02041dc8;

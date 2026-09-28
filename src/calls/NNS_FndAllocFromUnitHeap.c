@@ -1,3 +1,6 @@
+/* NitroSystem FND: pops a block from the unit heap's free list, zero-filling it when the heap asks.
+ */
+
 extern void *PopMBlock(void *p);
 extern void INITi_CpuClear32_0x01ff86fc(unsigned int data, void *dst, unsigned int size);
 

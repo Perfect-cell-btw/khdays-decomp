@@ -1,3 +1,5 @@
+/* Script command: resolves the operand and dispatches to the handler. */
+
 extern int ScriptVm_ResolveOperand(void *p);
 extern void ScriptVm_ReadOperandInt(void *p, int x);
 extern void dispatchToHandlerAtOffset(void);

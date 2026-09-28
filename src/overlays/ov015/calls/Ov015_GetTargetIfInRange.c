@@ -1,3 +1,5 @@
+/* Returns the target when the object is armed and the player is within range 0xc. */
+
 typedef unsigned char u8;
 
 int QueryActiveStateOrDelegate(void);

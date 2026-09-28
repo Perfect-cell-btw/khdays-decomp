@@ -1,3 +1,5 @@
+/* Posts update 0x177/4, stops, moves the actor to the fixed arena spot and queues action 2. */
+
 typedef struct { int x, y, z; } Vec3;
 
 extern void func_ov107_020c0b90(int obj, int flag, Vec3 v);

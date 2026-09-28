@@ -1,3 +1,5 @@
+/* ov thin tail-call veneer: forwards to ReleaseNodeResources with a computed/first arg. */
+
 extern void ReleaseNodeResources(char *p);
 
 void Ov021_tailDispatch(char *p) {

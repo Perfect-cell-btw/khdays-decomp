@@ -1,3 +1,5 @@
+/* Container node tick: runs the callbacks of the active children and sums the finished ones. */
+
 typedef struct Ov107_9784_Entry {
     char pad[0xc];
     void (*callback)(struct Ov107_9784_Entry *entry, int b);

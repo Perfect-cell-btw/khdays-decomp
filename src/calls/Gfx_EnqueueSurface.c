@@ -1,3 +1,5 @@
+/* Enqueues the object's surface upload (command 0xb, or 0xa in the alternate mode). */
+
 extern unsigned short LoadGlobalU16At0(void);
 extern void GFXi_EnqueueCommand(int a, int b, int c, int d);
 

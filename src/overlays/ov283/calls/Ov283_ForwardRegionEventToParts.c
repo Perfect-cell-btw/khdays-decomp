@@ -1,3 +1,6 @@
+/* Inits the two head parts and the sixteen segment parts from the event, then the base region
+ * handler. */
+
 extern void Ov107_InitObjectFromSource(int obj, int arg1);
 extern void Ov107_HandleRegionEvent(int obj, int arg1);
 

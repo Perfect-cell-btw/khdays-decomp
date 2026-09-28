@@ -1,3 +1,7 @@
+/* Node sub-state entry: clears hw60 hi bit0, sets hw60 hi|=0x86, clears the linked subobject
+ * low-byte flag, calls Ov107_BuildAndSendUpdate with action 0x49, clears requested sub-state, then
+ * advances with a null next callback. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 

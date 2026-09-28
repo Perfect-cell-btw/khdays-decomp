@@ -1,3 +1,8 @@
+/* Build step for the ov047 actor: clears the ready flags, requests animation set 2, binds two
+ * render handles -- one against the scene link the actor was spawned from and one against the model
+ * of the object it is attached to -- clears the 0xd3-byte work block at +0xda0, then latches the
+ * three ready bits and returns them. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 struct GridEntry;

@@ -1,3 +1,5 @@
+/* Destroys the model and the two attached instances, then the base object. */
+
 extern int DestroyInstance();
 extern int Ov107_DestroyObject();
 

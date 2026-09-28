@@ -1,3 +1,5 @@
+/* When the index is valid waits for the loader, then releases the VM's resource slot. */
+
 extern void Loader_SleepIfBusy(int a, int b, int c, int d);
 extern void ResSlot_Release(void *a);
 

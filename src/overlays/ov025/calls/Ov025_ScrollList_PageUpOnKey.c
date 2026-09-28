@@ -1,3 +1,5 @@
+/* When idle, pages the list up on key pattern 0x20. */
+
 extern int Ov025_ScrollList_PageStep();
 extern int data_0204c18c;
 

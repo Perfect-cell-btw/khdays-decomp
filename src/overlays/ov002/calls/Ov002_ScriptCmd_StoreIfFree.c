@@ -1,3 +1,5 @@
+/* Script command: stores the result when the entry is free. */
+
 extern int Ov002_ScriptIsEntryFree();
 extern int Slot48_StoreAtCurrentIndex();
 

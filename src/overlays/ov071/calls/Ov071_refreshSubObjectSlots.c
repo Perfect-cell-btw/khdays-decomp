@@ -1,3 +1,6 @@
+/* Run ReleaseField74AndCleanup over the 6+1 sub-object slots (base=*data_ov033_020b4b80+0x2c2c
+ * +0xc, then 6x stride 0x110) of the global object. x4 ov033/051/071/089. */
+
 extern void ReleaseField74AndCleanup();
 extern void *data_ov071_020b9a60;
 

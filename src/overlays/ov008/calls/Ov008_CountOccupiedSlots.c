@@ -1,3 +1,5 @@
+/* Number of the four player slots that are occupied. */
+
 extern int *Slot4_GetIfOccupied(int index);
 
 unsigned int Ov008_CountOccupiedSlots(void)

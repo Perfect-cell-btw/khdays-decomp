@@ -1,3 +1,6 @@
+/* Calls two sub-handlers passing a shared buffer pointer (*globalData + 0x2c80) and the s16 field
+ * at this+0x2aba to the first, buffer only to the second. */
+
 extern int data_ov101_020bc0e0;
 extern void Ov101_UpdateSlotsAndFlagLocal();
 extern void Ov101_InitAndProcessSixSlotsIfFlagSet();

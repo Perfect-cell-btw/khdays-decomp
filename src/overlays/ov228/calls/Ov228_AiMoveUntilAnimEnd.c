@@ -1,3 +1,5 @@
+/* Moves along the heading; queues action 2 when the animation ends. */
+
 extern int SetIndexedSlot();
 extern int MTX_RotY33_();
 extern int MTX_MultVec33();

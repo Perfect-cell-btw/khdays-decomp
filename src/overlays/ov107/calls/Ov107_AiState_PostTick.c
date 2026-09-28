@@ -1,3 +1,6 @@
+/* Latches the ground flag, updates the attached hit shapes while active, and clears the frame's
+ * push vector. */
+
 extern void *List_First(void *list);
 extern void Ov107_HitShape_UpdateWorld(int v);
 extern void *List_Next(void *list);

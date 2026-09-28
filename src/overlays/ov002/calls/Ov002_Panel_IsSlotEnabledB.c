@@ -1,3 +1,5 @@
+/* Whether the slot is enabled in mask B. */
+
 extern int data_ov002_0207f620;
 extern int Ov002_LookupSlotEnabledBit();
 

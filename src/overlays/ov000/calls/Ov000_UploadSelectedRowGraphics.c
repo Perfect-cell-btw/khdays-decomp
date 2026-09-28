@@ -1,3 +1,8 @@
+/* Pushes the selected save-row's graphics to VRAM: enqueues the row palette (0x1a0 bytes) and the
+ * row's command list through GFXi_EnqueueCommand, then copies its ten 0x28-byte row-data spans into
+ * the slot array at +0xa110 of the scene context (rows 9..18), and raises bit 1 of the transfer
+ * flags so the next frame consumes them. */
+
 typedef unsigned char u8;
 typedef signed short s16;
 typedef unsigned short u16;

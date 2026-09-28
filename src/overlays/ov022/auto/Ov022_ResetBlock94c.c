@@ -1,3 +1,6 @@
+/* Small reset: clears the byte at obj[0] and the word at obj+0x94c, then writes 0xFF into the five
+ * bytes at obj+0x950..0x954 (obj+0x94c+4+i for i in 0..4). */
+
 void Ov022_ResetBlock94c(char *obj) {
     int i;
     *obj = 0;

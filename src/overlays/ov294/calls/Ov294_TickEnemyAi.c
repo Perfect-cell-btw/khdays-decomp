@@ -1,3 +1,11 @@
+/* Enemy AI tick. Raises bit 0 of the render component's flag word, then: if a query against the
+ * target returns a hit whose state is absent or unflagged, walk toward the hit normal in Q12 steps
+ * of 0x1200; otherwise ask for candidates in a 0x1200-radius sphere and steer toward the NEAREST
+ * (VEC_Subtract + VEC_Mag seeded with 0x7fffffff), moving by 0x1200 - distance so it closes more
+ * the further it is. With no candidates it either applies vDirection (when bFlags17a bit 0 is set)
+ * or clears 0x48 of wFlags60 and gives up. Every non-giving-up path ends in SetIndexedSlot(task,
+ * task->nIndex, 0). Q12 multiply throughout: ((s64)a * b + 0x800) >> 12. */
+
 typedef signed char s8;
 typedef unsigned char u8;
 typedef signed short s16;

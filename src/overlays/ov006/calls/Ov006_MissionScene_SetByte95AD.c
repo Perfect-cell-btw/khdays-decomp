@@ -1,3 +1,5 @@
+/* Stores byte +0x95ad of the mission scene. */
+
 /* Store a byte at +0x95ad of the ov006 global object. */
 extern int data_ov006_02056664;
 void Ov006_MissionScene_SetByte95AD(int param_1) {

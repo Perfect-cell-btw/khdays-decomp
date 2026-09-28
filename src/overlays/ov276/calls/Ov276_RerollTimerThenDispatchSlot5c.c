@@ -1,3 +1,6 @@
+/* Roll a fresh 1..4 timer into (child)+0x50, then pose the actor per its phase byte at (child)+0x5c
+ * (ov107 anim + local sub-pose), and register the handler. */
+
 extern int RandNextScaled(int max);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov276_startAnim(int a, int b);

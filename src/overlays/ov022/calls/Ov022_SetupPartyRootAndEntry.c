@@ -1,3 +1,6 @@
+/* Rebuilds the party's derived stats, saves the tables, fills the session descriptor, loads the
+ * scene overlay and sets the entry's active object and limit. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

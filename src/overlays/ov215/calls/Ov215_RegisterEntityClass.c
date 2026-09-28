@@ -1,3 +1,5 @@
+/* Registers Ov215_AllocActorWithName as the factory for entity class 0x2e. */
+
 extern void Ov107_RegisterHandler(int arg0, void (*arg1)(int));
 extern void Ov215_AllocActorWithName(int);
 

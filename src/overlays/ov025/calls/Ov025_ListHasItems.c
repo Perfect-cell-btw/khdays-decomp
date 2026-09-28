@@ -1,3 +1,5 @@
+/* Whether list index of the context has any item. */
+
 extern int NNS_FndGetNextListObject(void *entry, int arg1);
 
 int Ov025_ListHasItems(void *context, int index)

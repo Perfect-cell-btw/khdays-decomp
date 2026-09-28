@@ -1,3 +1,5 @@
+/* First stat of the local player's character (table of 20 entries), or 0. */
+
 extern int Ov008_GetLocalPlayerCharacter(void);
 extern unsigned char data_ov008_0208f850[];
 

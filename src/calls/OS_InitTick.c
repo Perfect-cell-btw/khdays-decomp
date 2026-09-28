@@ -1,3 +1,6 @@
+/* NitroSDK OS: once, reserves timer 0, starts it with IRQ and installs the tick count-up handler.
+ */
+
 extern void OSi_SetTimerReserved(unsigned short timer);
 extern void OS_SetIrqFunction(unsigned int mask, void (*callback)(void));
 extern unsigned int OS_EnableIrqMask(unsigned int mask);

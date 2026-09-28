@@ -1,3 +1,5 @@
+/* NitroSDK SND: pops a command from the free list under an IRQ lock; NULL when empty. */
+
 extern int OS_DisableInterrupts();
 extern void OS_RestoreInterrupts(int mask);
 extern int *data_02044748[];

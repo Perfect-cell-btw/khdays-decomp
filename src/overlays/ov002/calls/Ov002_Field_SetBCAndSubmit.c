@@ -1,3 +1,5 @@
+/* Stores the value at field +0xbc, then runs the page submit hook. */
+
 extern int data_ov002_0207f62c;
 extern int Ov002_PageSubmitHookNoOp();
 

@@ -1,3 +1,5 @@
+/* Mission step 8: sets the mode (+0x94f4) to 9 when flag bit 2 of +0x955c is set. */
+
 extern char *data_ov008_02090fa4;
 void Ov008_MissionStep8SetModeIfFlagged(void)
 {

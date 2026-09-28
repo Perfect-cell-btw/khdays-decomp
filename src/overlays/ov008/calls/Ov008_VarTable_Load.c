@@ -1,3 +1,5 @@
+/* Loads the variable table file and sets its count and entry pointer. */
+
 extern void MI_CpuFill8(void *dst, int value, unsigned int size);
 extern char *Archive_LoadFile(void *source, int count);
 

@@ -1,3 +1,5 @@
+/* Pauses or resumes the BGM player; returns the current BGM id when none is playing. */
+
 extern char *data_0204c234;
 extern int NNS_SndPlayerPause(void *ptr, int arg);
 

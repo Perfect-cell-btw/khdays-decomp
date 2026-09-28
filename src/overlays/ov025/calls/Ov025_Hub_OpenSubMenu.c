@@ -1,3 +1,5 @@
+/* Opens the hub sub-menu and plays the confirm sound. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_Hub_SetSubMenu();
 extern int PlaySound();

@@ -1,3 +1,5 @@
+/* Re-orthonormalises the rotation matrix through a quaternion composed with the fixed rotation. */
+
 extern void Quat_FromMtx33(void *dst, void *ptr);
 extern void Vec4_Normalize(void *dst, void *src);
 extern void Quat_Multiply(void *dst, void *src, void *arg);

@@ -1,3 +1,6 @@
+/* Turns toward the heading, composes it with the surface-normal tilt, applies the rotation and the
+ * pending velocity. */
+
 extern int Angle_TurnToward();
 extern int QuatFromAxisAngle();
 extern int Quat_FromTwoVectors();

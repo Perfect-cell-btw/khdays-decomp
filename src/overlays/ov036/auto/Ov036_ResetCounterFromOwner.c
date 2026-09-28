@@ -1,3 +1,5 @@
+/* Resets the counter pair at +0x2c84 from the owner's positive count. */
+
 void Ov036_ResetCounterFromOwner(char *p) {
     char *q = p + 0x2c80;
     *(int *)(q + 4) = 0;

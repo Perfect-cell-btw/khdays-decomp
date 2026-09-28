@@ -1,3 +1,5 @@
+/* Notifies each tracked child whose visible flag changed (1 shown, 0 hidden). */
+
 typedef void (*Callback)(void *self, int param);
 
 typedef struct {

@@ -1,3 +1,6 @@
+/* Set flags 0x86 in the high byte of the u16 at obj+0x60, clear bit0 of the byte at
+ * (obj+0x388)->+8, then dispatch. */
+
 extern void SetIndexedSlot(int, int, void *);
 extern void Ov131_AiStep_QueueStoredActionIfActive(void);
 

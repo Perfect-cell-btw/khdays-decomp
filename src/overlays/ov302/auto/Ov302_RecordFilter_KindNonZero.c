@@ -1,3 +1,5 @@
+/* Record filter: true when the record kind (+0x23) is not 0. */
+
 int Ov302_RecordFilter_KindNonZero(unsigned char *r0)
 {
     return r0[0x23] != 0;

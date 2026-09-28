@@ -1,3 +1,5 @@
+/* Swaps the IRQ work word +0x30 with the argument under an IRQ lock; returns the old value. */
+
 extern int OS_DisableInterrupts();
 extern void OS_RestoreInterrupts(int mask);
 extern int data_0204430c[];

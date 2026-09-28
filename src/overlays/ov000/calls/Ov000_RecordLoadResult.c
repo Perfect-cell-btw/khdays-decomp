@@ -1,3 +1,7 @@
+/* Records a load-request result for entry `index`: maps the raw result code (0->1, 2->0, 4->2, else
+ * -1) into the entry's mappedResult, latches it into publishedResult if still unset (-1), and on
+ * success (result 0) builds the entry's working lists. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

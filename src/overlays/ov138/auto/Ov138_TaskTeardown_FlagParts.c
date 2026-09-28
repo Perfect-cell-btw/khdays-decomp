@@ -1,3 +1,5 @@
+/* Task teardown callback: sets bit 1 of the flags of the three parts the task drove. */
+
 struct inner {
     char pad[0x5c];
     unsigned int flags;

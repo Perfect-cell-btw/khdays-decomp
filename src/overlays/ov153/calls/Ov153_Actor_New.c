@@ -1,3 +1,6 @@
+/* Allocates the 0x3a0-byte actor, records its spawner (+0x38c) and state callback (+0x18c), runs
+ * the AiState constructor. */
+
 extern void *CallocInstance(int size);
 extern void func_ov107_020c6624(void *obj, int flag);
 extern void Ov153_Construct(void);

@@ -1,3 +1,7 @@
+/* Sets up the boot text screen: fades to black, waits VBlank, assigns the BG and BG-extended-
+ * palette VRAM banks, then loads the font resource, the tile-text renderer, the message archive and
+ * the text frame for the given mode. */
+
 typedef unsigned char  u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

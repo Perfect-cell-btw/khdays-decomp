@@ -1,3 +1,6 @@
+/* Create a sub-object via CreateRegistryEntry (kind 0x64/0x48, handler Ov197_InitReactionSlots),
+ * back-link it, copy owner state at +0x384, and store it at +0x214. */
+
 extern void CreateRegistryEntry();
 extern void Ov197_InitReactionSlots(void);
 

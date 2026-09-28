@@ -1,3 +1,5 @@
+/* Instantiates the roster service and resets its record. */
+
 extern int InstantiateClass();
 extern int Ov002_Roster_Reset();
 extern int data_ov002_0207f010;

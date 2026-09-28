@@ -1,3 +1,6 @@
+/* Loads the selected NNS G2D opening screen resource into BG0, BG1 or BG2 and advances the opening
+ * timeline. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

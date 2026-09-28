@@ -1,3 +1,6 @@
+/* Picks the animation id (0x91, 0x92, 0x93, 0x94, 0x95, 0x8e, 0x8f, 0x90, 0x8d) from the slot kind
+ * byte at +0x918. */
+
 int Ov100_MapSlotKindToAnim(int i)
 {
     unsigned char v = ((unsigned char *)0x918)[i];

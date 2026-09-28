@@ -1,3 +1,5 @@
+/* Posts update 0x16f/6, calls the actor callback and ends the step. */
+
 typedef unsigned char u8;
 struct Actor;
 typedef void (*ActorCallback)(u8 val, struct Actor *self);

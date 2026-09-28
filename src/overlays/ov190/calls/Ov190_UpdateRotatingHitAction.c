@@ -1,3 +1,7 @@
+/* Rotates the auxiliary hit vector from the action phase, advances the timer, starts reaction 0x12f
+ * once, tests the actor sphere for hits, and advances the node when its asynchronous substate ends.
+ */
+
 typedef unsigned char u8;
 
 typedef struct {

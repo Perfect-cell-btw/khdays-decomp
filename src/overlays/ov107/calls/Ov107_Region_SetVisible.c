@@ -1,3 +1,5 @@
+/* Shows or hides the region's node and broadcasts the value to the children. */
+
 typedef unsigned int u32;
 
 typedef struct {

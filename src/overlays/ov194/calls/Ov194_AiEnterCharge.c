@@ -1,3 +1,5 @@
+/* Plays anim 4, resets the charge state and installs the charge tick. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov194_ChargeTick(void);

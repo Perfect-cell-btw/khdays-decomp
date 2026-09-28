@@ -1,3 +1,5 @@
+/* Keeps the previous position and damps the velocity by 0xb00 until the watched flag clears. */
+
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
 

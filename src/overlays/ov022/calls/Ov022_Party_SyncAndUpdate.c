@@ -1,3 +1,6 @@
+/* When the party is active and valid, syncs the network state and updates each live member's
+ * movement, collision and pose. */
+
 typedef struct Ov022RootBits {
     unsigned char bit0 : 1;
     unsigned char bit1 : 1;

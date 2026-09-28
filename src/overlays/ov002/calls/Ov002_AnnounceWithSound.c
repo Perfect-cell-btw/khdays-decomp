@@ -1,3 +1,5 @@
+/* Announces the selection, optionally playing sound 0x11. */
+
 extern int Ov002_AnnounceSelection();
 extern int PlaySoundChecked();
 

@@ -1,3 +1,5 @@
+/* Calls the tick hook of every enabled child. */
+
 typedef void (*Callback)(void *self, void *param);
 
 typedef struct {

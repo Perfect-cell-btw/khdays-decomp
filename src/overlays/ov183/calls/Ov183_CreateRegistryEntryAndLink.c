@@ -1,3 +1,6 @@
+/* Spawn a child object via CreateRegistryEntry (callback Ov183_InitNodeAndRegisterHandlers), link
+ * it back to this object and store it at +0x214. */
+
 extern void CreateRegistryEntry();
 extern void Ov183_InitNodeAndRegisterHandlers(void);
 

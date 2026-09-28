@@ -1,3 +1,6 @@
+/* Allocates a character canvas with its cleared buffer, appends it to the surface and optionally
+ * makes it current. */
+
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);
 extern void *NNS_FndAllocFromDefaultExpHeapEx(unsigned int a, unsigned int b);
 extern void NNS_G2dCharCanvasInitForBG(void *a, void *b, int c, int d, int e);

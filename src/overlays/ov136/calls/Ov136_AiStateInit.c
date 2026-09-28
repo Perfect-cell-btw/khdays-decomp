@@ -1,3 +1,5 @@
+/* Resets the action state, caches the position pointers and installs the AI slots. */
+
 struct bf { unsigned b : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov136_SetHw60Flag86ClearBitsThenAdvance(void);

@@ -1,3 +1,6 @@
+/* If the 1-bit flag at this[0x694] is set: runs Ov046_DrawNodeWithOwnerPos3(this, arg1), then calls
+ * Ov046_DrawNodeIfState2 over 6 slots at arg1+0x128 stride 0x120. */
+
 extern void Ov046_DrawNodeWithOwnerPos3();
 extern void Ov046_DrawNodeIfState2();
 

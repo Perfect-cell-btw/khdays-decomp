@@ -1,3 +1,6 @@
+/* AI step: once the model's track-0 animation flag (+0xad) is clear, pendingAction (+0x1c7) = 4 and
+ * the step handler is cleared. */
+
 extern int SetIndexedSlot();
 
 struct Inner {

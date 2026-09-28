@@ -1,3 +1,5 @@
+/* Plays anim 2 and installs the approach tick. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void Ov276_startAnim(int obj, int arg);
 extern void SetIndexedSlot(void *obj, int idx, void *value);

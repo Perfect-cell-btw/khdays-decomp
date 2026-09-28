@@ -1,3 +1,5 @@
+/* Frees and clears the four buffers at +0x3c..+0x48. */
+
 extern int NNSi_FndFreeFromDefaultHeap();
 
 struct S {

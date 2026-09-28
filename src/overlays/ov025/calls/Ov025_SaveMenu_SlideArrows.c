@@ -1,3 +1,5 @@
+/* Slides the two page arrows in or out depending on the pending state. */
+
 typedef unsigned char u8;
 
 typedef struct Ov009SaveContext {

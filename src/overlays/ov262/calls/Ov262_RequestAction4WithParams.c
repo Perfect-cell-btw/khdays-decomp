@@ -1,3 +1,6 @@
+/* Command callback 2: stores the value and byte, stores and queues action 4 and marks the command
+ * pending. */
+
 void Ov262_RequestAction4WithParams(char *obj, int arg2, char arg3) {
     *(int *)(obj + 0x3a8) = arg2;
     obj[0x3ac] = arg3;

@@ -1,3 +1,6 @@
+/* Network join/leave message: forwards requests from the host and applies confirmed joins (1/2) and
+ * leaves (3/4). */
+
 typedef struct Msg {
     char pad0[2];
     unsigned char field_2;

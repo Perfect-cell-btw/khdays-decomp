@@ -1,3 +1,5 @@
+/* Returns the inverse of the projection matrix, computing and caching it on first use. */
+
 extern void func_02015924(void *a, void *b);
 extern struct { char _0[0xd4]; int field_d4; } data_02047394;
 extern char data_0204739c[];

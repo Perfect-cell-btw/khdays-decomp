@@ -1,3 +1,5 @@
+/* Mark the link session at rootCtx+0x8c94 idle (+0x77) when the argument is zero. */
+
 extern int data_ov002_0207fa00;
 
 void Ov002_SetSessionIdle(int arg0) {

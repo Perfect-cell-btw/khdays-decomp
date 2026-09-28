@@ -1,3 +1,6 @@
+/* Starts panel request kind 9 only while the panel context is idle, fills the request trailer,
+ * submits it and starts the 300-tick notification; returns whether it started. */
+
 typedef struct {
     unsigned char pad0000[0x3c];
     int nRequestValue;

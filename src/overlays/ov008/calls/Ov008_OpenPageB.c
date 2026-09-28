@@ -1,3 +1,5 @@
+/* Unless busy marks page B open and draws its elements. */
+
 extern char *Ov008_GetMenuContext(void);
 extern void Ov008_UpdateMenuButton5(int arg0);
 extern void Ov008_DrawPageBElement(int arg0, int arg1, int arg2);

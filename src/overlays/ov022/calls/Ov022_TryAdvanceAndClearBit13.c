@@ -1,3 +1,8 @@
+/* When Session_GetLocalPlayerIndex reports idle, raises bit 15 of the 64-bit flag word at
+ * obj+0x464. Unless bit 13 of the flag word at obj[0] is set, advances the state via
+ * Ov022_ActorSetState with mode 0 or 2 depending on bit 2 of obj+0x24. On success clears bit 13 of
+ * the obj[0] flag word and returns the Ov022_ActorSetState result. */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ActorSetState(int obj, int mode);
 

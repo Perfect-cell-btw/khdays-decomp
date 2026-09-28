@@ -1,3 +1,6 @@
+/* Resets the action state, caches the position/anim pointers, rolls the move timer and installs the
+ * AI slots. */
+
 extern int RandNextScaled(int);
 extern void SetIndexedSlot(int, int, void *);
 extern void Ov132_stateSetFlagsClearBit(void);

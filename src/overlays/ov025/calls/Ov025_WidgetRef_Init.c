@@ -1,3 +1,5 @@
+/* Binds the widget reference to widget id value and copies its position. */
+
 extern void *Ov025_GetContext(void);
 extern void *Ov025_FindEntryById(void *context, int arg1);
 extern void *Ov025_ApplyFirstValidSlot(void *context, void *entry);

@@ -1,3 +1,5 @@
+/* Walks the record list appending the records whose flag is clear and hi(+8) < value. */
+
 extern int Ov025_WalkRecordsAppendMatching();
 extern int Ov025_RecordFilter_BelowMax();
 

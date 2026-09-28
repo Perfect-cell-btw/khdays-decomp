@@ -1,3 +1,7 @@
+/* Node sub-state entry: accumulates the frame timer until 0x6ee, acquires a target, subtracts the
+ * target position from the stored reference Vec3, computes and mirrors the horizontal angle, clears
+ * actor hw60 high-byte bits, runs pose setup, and advances to the next callback. */
+
 typedef struct Vec3 {
     int x;
     int y;

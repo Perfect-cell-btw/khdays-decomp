@@ -1,3 +1,6 @@
+/* Installs the sub-object's callbacks and stance flags, creates its model (all tracks at 0) and its
+ * hit shape. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 

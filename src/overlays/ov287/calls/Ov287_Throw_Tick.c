@@ -1,3 +1,13 @@
+/* Per-frame tick of a thrown weapon, shared by ov287, ov288 and ov289. Before launch it normalises
+ * the aim, gives the throw unit speed and a 0x300 rise, then walks every other actor picking the
+ * nearest one inside a 0.866 cosine cone; for that target it sets the planned distance to the range
+ * over 1638 and integrates a per-step fall into the drop accumulator, clamping the plan to 0xf000,
+ * and marks itself launched. After launch it aborts on a blocked sphere cast, on a blocked ray cast
+ * once half the plan is behind it, on any overlap with another actor's parts, or when the thrower's
+ * own slot list stops naming it; otherwise it walks the arc by sampling the sine table at the
+ * fraction of the plan travelled, and once the plan is spent it just applies a constant fall.
+ * Aborting zeroes the velocity, sets the actor's state byte to 4 and re-registers the node. */
+
 /*
  * Ov287_Throw_Tick -- Ov287_Throw_Tick.
  *

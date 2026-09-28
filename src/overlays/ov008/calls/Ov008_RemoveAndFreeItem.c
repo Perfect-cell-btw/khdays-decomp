@@ -1,3 +1,5 @@
+/* Removes the item from the context list and frees it with its buffer. */
+
 extern void NNS_FndRemoveListObject(void *list, void *object);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 

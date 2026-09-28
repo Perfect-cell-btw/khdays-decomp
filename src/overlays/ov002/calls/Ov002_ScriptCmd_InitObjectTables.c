@@ -1,3 +1,5 @@
+/* Script command: reads two int operands and inits the object tables. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_InitObjectTables();
 

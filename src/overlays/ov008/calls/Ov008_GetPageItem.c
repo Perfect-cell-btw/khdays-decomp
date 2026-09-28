@@ -1,3 +1,5 @@
+/* Item index of page arg0, or NULL past its count. */
+
 extern unsigned char *Ov008_GetPageTableEntry(int arg0);
 extern char data_ov008_02090504[];
 

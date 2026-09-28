@@ -1,3 +1,5 @@
+/* Follows the head offset; when the animation ends plays anim 3 and model anim 2. */
+
 extern void Ov237_RotateByActorHeading(void *out, int self, int arg);
 extern int Ov107_PostTagUpdate(int, int, int);
 extern int Ov107_StartAnim(int, int, int);

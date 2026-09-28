@@ -1,3 +1,5 @@
+/* Converts the node's rotation matrix to a normalised quaternion and clears its dirty bit. */
+
 extern void Quat_FromMtx33(void *ptr);
 extern void Vec4_Normalize(void *ptr1, void *ptr2);
 

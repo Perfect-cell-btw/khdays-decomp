@@ -1,3 +1,5 @@
+/* Clears the node's three counters, then draws and steps it. */
+
 extern int Ov002_DrawAndStepNode();
 
 int Ov002_ResetAndDrawNode(int arg0) {

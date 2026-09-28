@@ -1,3 +1,8 @@
+/* Copies a snapshot of entry `src` (from GetEntryField20ByIndex) into the idx'th 0x44-byte row of
+ * the table at data_0204c3d8. Bit 0 of the row's flag byte at +0x24 takes bit 38 of src's 64-bit
+ * flag word, bit 1 takes bit 37; the bytes at +0x25/+0x26 and the two words at +0x28/+0x2C are
+ * copied straight from src+0x2BB0/+0x2770/+0x2778/+0x2774. */
+
 extern int GetEntryField20ByIndex(int idx);
 extern int data_0204c3d8;
 

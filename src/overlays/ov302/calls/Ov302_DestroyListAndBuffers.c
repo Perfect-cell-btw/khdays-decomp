@@ -1,3 +1,5 @@
+/* Frees the resource record buffer, destroys the list objects and frees the buffer at +0x14. */
+
 extern void Ov002_FreeResourceRecordBuffer();
 extern void Ov302_DestroyAllListObjects();
 extern void NNSi_FndFreeFromDefaultHeap();

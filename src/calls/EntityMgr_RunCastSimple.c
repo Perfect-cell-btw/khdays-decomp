@@ -1,3 +1,5 @@
+/* Builds a cast parameter block and runs the collision cast on entity slot index. */
+
 typedef struct {
     int word0;
     int word4;

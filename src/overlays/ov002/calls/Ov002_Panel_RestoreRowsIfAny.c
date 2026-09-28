@@ -1,3 +1,5 @@
+/* Restores the panel's group rows when the panel exists. */
+
 extern int data_ov002_0207f620;
 extern int Ov002_PanelRestoreGroupRows();
 

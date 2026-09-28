@@ -1,3 +1,5 @@
+/* Script command: reads an int operand and sets that global flag once; returns 1. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_SetGlobalFlagOnce();
 

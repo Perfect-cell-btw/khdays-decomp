@@ -1,3 +1,5 @@
+/* Selects the sub text-BG3 display mode and sets sub-engine BG3CNT. */
+
 extern void SetSubEngineGraphicsModeFromTable(void *ptr);
 extern char data_02041eec;
 

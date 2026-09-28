@@ -1,3 +1,5 @@
+/* Whether the sound manager state (+0xb46fc) is 1. */
+
 typedef struct {
     char pad[0xb46fc];
     unsigned char field_b46fc;

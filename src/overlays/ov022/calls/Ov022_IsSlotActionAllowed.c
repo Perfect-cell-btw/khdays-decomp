@@ -1,3 +1,8 @@
+/* Validates a slot action: false if idx is -1, if func_ov022_0209029c rejects the slot, or if the
+ * 2D table lookup Load2DArrayU8(kind, idx) is <= 0. Then a jump table on the state byte obj[2]
+ * allows states 0 and >=10 (result 1) and denies 1..9. A final gate forces 0 when bit 4 or bit 13
+ * of the 64-bit flag word at *(obj+0x58) is set. */
+
 extern int func_ov022_0209029c(int obj, unsigned int idx);
 extern int Load2DArrayU8(int kind, unsigned int idx);
 

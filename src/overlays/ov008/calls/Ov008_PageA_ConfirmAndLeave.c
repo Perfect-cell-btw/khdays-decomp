@@ -1,3 +1,5 @@
+/* Applies the selection, plays the confirm sound and targets slot 0. */
+
 extern void Ov008_GetMenuContext(void);
 extern void Ov008_SaveItemCounts(void);
 extern void PlaySound(int, int);

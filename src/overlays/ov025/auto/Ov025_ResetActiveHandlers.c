@@ -1,3 +1,5 @@
+/* Clears both active handler slots when set. */
+
 extern int data_ov025_020b574c;
 
 void Ov025_ResetActiveHandlers(void) {

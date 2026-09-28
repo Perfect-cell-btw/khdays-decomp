@@ -1,3 +1,5 @@
+/* Selects the text-BG3 display mode and sets main-engine BG3CNT. */
+
 extern void DispMode_LookupWordAndDispatch(void *ptr);
 extern char data_02041eec;
 

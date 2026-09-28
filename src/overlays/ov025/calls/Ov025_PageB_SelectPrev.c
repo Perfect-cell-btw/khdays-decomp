@@ -1,3 +1,5 @@
+/* Unless busy moves the page B selection back and plays the cursor sound. */
+
 extern int Ov025_GetPageB();
 extern int Ov025_ChangeMenuSelection();
 extern int PlaySound();

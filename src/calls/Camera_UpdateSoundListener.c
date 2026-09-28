@@ -1,3 +1,5 @@
+/* Feeds the active camera part's position and view direction to the sound listener. */
+
 typedef struct { int x; int y; int z; } Vec3;
 
 extern void VEC_Subtract(Vec3 *a, Vec3 *b, Vec3 *out);

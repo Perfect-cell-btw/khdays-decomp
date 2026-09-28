@@ -1,3 +1,6 @@
+/* Adds arg1 to three per-slot global fields indexed by arg0*0x108: *data_ov003_0204f9a0+0x2b8,
+ * +0xaf8, +0xf18. */
+
 extern int data_ov003_0204f9a0;
 
 void Ov003_AccumulateThreeGlobalStats(int arg0, int arg1) {

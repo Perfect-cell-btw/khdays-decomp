@@ -1,3 +1,5 @@
+/* Runs every child's handler, alternating forward and backward order each frame. */
+
 typedef struct HandlerObj {
     char pad[0x20];
     void (*handler)(struct HandlerObj *self);

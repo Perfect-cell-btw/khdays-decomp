@@ -1,3 +1,5 @@
+/* Maps all VRAM to LCDC and clears it, then clears OAM (hidden) and both palettes. */
+
 extern int GX_SetBankForLCDC();
 extern int MIi_CpuClearFast();
 extern int GX_DisableBankForLCDC();

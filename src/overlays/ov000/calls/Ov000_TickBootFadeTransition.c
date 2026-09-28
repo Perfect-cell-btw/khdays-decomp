@@ -1,3 +1,8 @@
+/* Per-frame boot-scene transition tick: recomputes scroll bounds and the render node every frame,
+ * then drives a fade keyed off context->frame -- ramping brightness up through frame 0x20, holding,
+ * and from 0x28 ramping down while adjusting both screens' blend brightness, clearing the blend
+ * registers past 0x30. */
+
 typedef signed char  s8;
 typedef unsigned char u8;
 typedef unsigned short u16;

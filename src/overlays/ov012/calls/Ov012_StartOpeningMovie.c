@@ -1,3 +1,6 @@
+/* Initializes the opening movie renderer and tilemaps, registers the frame callback, and opens the
+ * requested stream in slot 1. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

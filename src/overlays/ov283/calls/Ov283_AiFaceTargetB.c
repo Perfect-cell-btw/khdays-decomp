@@ -1,3 +1,5 @@
+/* Faces the target (heading at +0x40), second variant. */
+
 typedef struct { int x, y, z; } Vec3;
 
 extern void VEC_Subtract(int *a, int *b, int *out);

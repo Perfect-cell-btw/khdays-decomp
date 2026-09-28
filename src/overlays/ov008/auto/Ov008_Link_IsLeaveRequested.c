@@ -1,3 +1,5 @@
+/* Whether leaving the link was requested. */
+
 extern char *data_ov008_02090f24;
 int Ov008_Link_IsLeaveRequested(void)
 {

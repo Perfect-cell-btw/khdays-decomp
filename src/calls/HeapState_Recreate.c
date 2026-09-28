@@ -1,3 +1,5 @@
+/* Destroys the state's expanded heap and recreates it over the same region with a new allocator. */
+
 extern void NNS_FndDestroyExpHeap(void *heap);
 extern void *NNS_FndCreateExpHeapEx(void *start, unsigned int size, int opt);
 extern void NNS_FndInitAllocatorForExpHeap(void *allocator, void *heap, int align);

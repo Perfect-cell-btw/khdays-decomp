@@ -1,3 +1,5 @@
+/* Resets the world's marker state. */
+
 extern int data_ov002_0207fa00;
 
 void Ov002_World_ResetMarker(void) {

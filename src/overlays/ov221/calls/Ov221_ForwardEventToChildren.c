@@ -1,3 +1,6 @@
+/* Passes the event to each non-null child of the 4-entry array at +0x3ec, then to the base
+ * region-event handler. */
+
 extern int Ov107_InitObjectFromSource();
 extern int Ov107_HandleRegionEvent();
 

@@ -1,3 +1,7 @@
+/* Loads the mission-list resource, sums progress for entries whose low status bits are set, and
+ * returns the average completion percentage. The caller passes menuState although this body does
+ * not consume it. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

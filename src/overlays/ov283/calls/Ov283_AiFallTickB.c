@@ -1,3 +1,5 @@
+/* Applies gravity and damping; lands when the animation ends and grounded (second variant). */
+
 struct vec3_020cdae4 { int x, y, z; };
 
 extern void ScaleVec3Fx12(int factor, int *src, int *dst);

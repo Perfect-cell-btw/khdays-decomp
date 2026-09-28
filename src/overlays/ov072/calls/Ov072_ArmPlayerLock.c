@@ -1,3 +1,5 @@
+/* Sets the local player's lock bits and arms the state. */
+
 extern int Session_GetLocalPlayerIndex();
 extern int Ov022_ActorSetState();
 

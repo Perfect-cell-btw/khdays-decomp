@@ -1,3 +1,6 @@
+/* Builds an SRT (uniform scale, translation from packed 24-bit coordinates) and hands it to
+ * Ov107_CreateNodeXformTask. */
+
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned char hi, mid, lo; } Fx24;
 typedef union { struct { unsigned char pad, lo, mid, hi; } b; int w; } Fx24Word;

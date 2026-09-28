@@ -1,3 +1,6 @@
+/* Play the anim (ov107 mode 8), compute a value from +0x5c/+0x64 (via func_020050b4) offset by
+ * 0x3244, store it to +0x18/+0x14 and register the handler. */
+
 extern void Ov107_PostTagUpdate();
 extern int func_020050b4();
 extern void SetIndexedSlot();

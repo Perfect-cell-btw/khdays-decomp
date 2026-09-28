@@ -1,3 +1,7 @@
+/* Selects the gauge-row style from row parity and fill state, creates or reuses the row-pair
+ * tracker handle, applies its metrics and invokes the tracker callback; the final/odd row flushes
+ * pending state. */
+
 typedef unsigned short u16;
 
 typedef enum {

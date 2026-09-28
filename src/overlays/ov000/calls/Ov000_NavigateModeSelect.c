@@ -1,3 +1,7 @@
+/* Mode-select navigator: D-pad up (0x40) / down (0x80) moves the selection with wraparound over
+ * three entries, restarts the fade (PlaySound) and refreshes the mode slots via
+ * Ov000_DispatchLogoAction. */
+
 typedef unsigned char  u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

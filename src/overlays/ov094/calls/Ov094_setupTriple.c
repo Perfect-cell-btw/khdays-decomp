@@ -1,3 +1,5 @@
+/* ov setup (thumb): 3 chained setup calls with computed offsets/args. */
+
 extern int NNSi_FndGetCurrentRootHeap();extern void Ov094_FreeFiveGlobalSubObjects();extern void Ov022_DestroyRoot();extern int data_ov094_020bc240;
 void Ov094_setupTriple(int p) {
     int r = NNSi_FndGetCurrentRootHeap(p);

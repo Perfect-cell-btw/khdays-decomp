@@ -1,3 +1,6 @@
+/* First call resets the six shared enemy overlays; then loads the enemy overlay of table row idx /
+ * column base, runs its init and returns how many columns it uses. */
+
 extern int Loader_LoadOverlayInfo(void *info, int proc, int id);
 extern int Loader_LoadOverlayImage(int a);
 extern int FS_StartOverlay(void *info);

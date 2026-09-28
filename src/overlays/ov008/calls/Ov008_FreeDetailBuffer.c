@@ -1,3 +1,5 @@
+/* Frees the object's detail buffer (+0x174) and clears it. */
+
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
 void Ov008_FreeDetailBuffer(void *object)

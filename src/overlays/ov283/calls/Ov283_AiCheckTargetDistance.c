@@ -1,3 +1,5 @@
+/* After 0x2a8 measures the distance from the anchor to the target. */
+
 typedef signed int fx32;
 typedef struct { fx32 x, y, z; } VecFx32;
 

@@ -1,3 +1,5 @@
+/* Refreshes the child selector at +0x3d0 and runs the tick (disabled while flagged). */
+
 extern void Ov107_RefreshAndSelectChild(int v, void *b);
 extern void Ov107_ProcessObjectTick(void *a, void *b);
 

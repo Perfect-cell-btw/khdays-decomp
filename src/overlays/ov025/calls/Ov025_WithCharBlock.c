@@ -1,3 +1,5 @@
+/* Loads the archive file as kind 0xe, passes its CHAR sub-block to fp, then frees the file. */
+
 extern int Archive_LoadFile();
 extern int GetResourceSubBlock_CHAR();
 extern int NNSi_FndFreeFromDefaultHeap();

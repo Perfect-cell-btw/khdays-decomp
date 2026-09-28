@@ -1,3 +1,6 @@
+/* Registry task (0x64) binding a node with a transform (flag bit 1); applies SetSubitemState for
+ * each set bit of mode, then refreshes. */
+
 typedef struct { int w[11]; } Xform44;
 
 typedef struct {

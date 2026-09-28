@@ -1,3 +1,6 @@
+/* Refreshes the detail panel, both columns and the display, clears the dialog flag and returns the
+ * list step. */
+
 extern char *data_ov026_02091368;
 extern void Ov026_RefreshDetailPanel(void);
 extern void Ov026_RedrawBothColumns(void);

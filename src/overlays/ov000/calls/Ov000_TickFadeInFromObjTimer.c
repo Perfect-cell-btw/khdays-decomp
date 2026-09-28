@@ -1,3 +1,10 @@
+/* Fade IN counterpart: the brightness argument is (elapsed / 0x4cb5) - 16, so the ramp runs -16 ->
+ * 0. On crossing the threshold it restamps the timer, zeroes the fade and advances the state. The
+ * sign of the expression is the whole difference between this and its fade-out twin -- same
+ * divisor, same threshold, same call. Fade ramp: 16 steps over 0x4cb51 ticks (0x4cb51 / 0x4cb5 =
+ * 15.97), driven through SetMasterBrightnessSub with a NEGATIVE brightness. 16 is the DS master
+ * brightness range -- the same 0x10 Game_RunSceneLoop writes. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef unsigned long long u64;

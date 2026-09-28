@@ -1,3 +1,6 @@
+/* Pillar tick: flags (+0x1e4 bit 4) when the source's counter changed or it is busy, then the base
+ * post tick. */
+
 extern void Ov107_AiState_PostTick(void *self);
 
 void Ov107_Pillar_Tick(char *self) {

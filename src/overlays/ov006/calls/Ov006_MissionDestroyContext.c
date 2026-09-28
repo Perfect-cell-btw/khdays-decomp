@@ -1,3 +1,9 @@
+/* Tear down the MissionContext: release its resources and sub-objects, clear and free the eight
+ * 0x600 buffers, and null the global. Counterpart of Ov006_MissionCreateContext
+ * (Ov006_MissionCreateContext) -- the eight buffers freed here are the ones that function reserves,
+ * which is what confirms the pairing. Distinct from Ov006_MissionSceneDtor, which tears down the
+ * scene rather than this context. */
+
 typedef unsigned char u8;
 
 typedef struct {

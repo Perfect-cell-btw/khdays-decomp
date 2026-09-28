@@ -1,3 +1,5 @@
+/* Record of the entry's variable index. */
+
 extern int Ov025_GetVarRecordByIndex();
 
 int Ov025_VarTable_GetRecordOfEntry(int arg0, int arg1) {

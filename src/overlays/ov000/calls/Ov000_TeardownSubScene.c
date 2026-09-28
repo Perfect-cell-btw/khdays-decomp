@@ -1,3 +1,7 @@
+/* Tears the sub-scene down: releases the variant source, frees the three tile surfaces
+ * (FreeAllListNodeSubBuffers), and frees the resource4b00 allocation if present, clearing its slot.
+ */
+
 typedef unsigned char  u8;
 typedef unsigned int u32;
 

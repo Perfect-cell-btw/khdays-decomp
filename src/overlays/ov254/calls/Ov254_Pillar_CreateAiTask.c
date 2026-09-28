@@ -1,3 +1,5 @@
+/* Creates the pillar's AI task (state init) and links it. */
+
 extern void CreateRegistryEntry();
 extern void Ov254_stateInitClearSlots(void);
 void Ov254_Pillar_CreateAiTask(int param_1) {

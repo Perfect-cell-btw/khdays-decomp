@@ -1,3 +1,6 @@
+/* Selects one of three menu groups, updates entry visibility and selection, moves the selection
+ * marker, and draws the group's caption when present. */
+
 typedef unsigned char u8;
 
 typedef struct {

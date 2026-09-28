@@ -1,3 +1,6 @@
+/* Reaction check: queues action 12 unless it is already the current action; returns whether it did.
+ */
+
 int Ov249_RequestSubState12IfNotCurrent(int *r0) {
     char *p = *(char **)(r0[0x214 / 4]);
     if (*(signed char *)(p + 0x1c6) != 0xc) {

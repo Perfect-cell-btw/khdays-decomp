@@ -1,3 +1,7 @@
+/* Scene entry: build the context, copy two OPTIONAL u16, create resource 14 at context+0x9660, and
+ * return the next callback. Calls Ov000_CreateSceneContext, so +0x9660 is inside that same 0xd18c
+ * object. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

@@ -1,3 +1,5 @@
+/* Replaces the spawner's move animation and sets its duration (looping when none). */
+
 extern void FreeInstanceMemory(void *p);
 extern void Ov107_SetOwnerWord(int *p, int v);
 

@@ -1,3 +1,6 @@
+/* Posts the item update 0x173/7, plays anim 9, resets the barrage state and installs the barrage
+ * tick. */
+
 typedef struct { int a, b, c; } Blk12;
 
 typedef struct {

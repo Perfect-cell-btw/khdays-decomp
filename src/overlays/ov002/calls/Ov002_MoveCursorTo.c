@@ -1,3 +1,10 @@
+/* Moves the highlight cursor to nIndex, or hides it when nIndex is negative. The tag-0xd tracker
+ * node is fetched and re-armed either way. The cursor column is nOriginX + nIndex*2 narrowed to
+ * s16, and the row is nRowY. On a real move the sprite is repositioned from the OLD index still
+ * held in nCursor, redrawn, then the node is moved to the new column and shown; on a negative index
+ * the node is simply disarmed. nCursor is updated last in both paths, which is why the old value is
+ * still readable above. */
+
 typedef unsigned char u8;
 typedef short s16;
 

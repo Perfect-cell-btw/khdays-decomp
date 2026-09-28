@@ -1,3 +1,8 @@
+/* Raises bit 23 of the 64-bit flag word at obj[0] -- the guard-break request -- only when
+ * Ov022_IsInputAllowedForActiveSlot reports the slot idle, none of bits 24, 8, 17, 23 or 13 are
+ * already set, and the state byte at obj+0x2770 is not 3, 11 or 2. The whole flag word is loaded
+ * once and reused by all five mask tests. */
+
 extern int Ov022_IsInputAllowedForActiveSlot(void);
 
 void Ov022_RequestGuardBreak(int obj) {

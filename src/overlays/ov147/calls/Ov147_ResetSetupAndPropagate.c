@@ -1,3 +1,6 @@
+/* Resets via RefreshObjectCallbacks + DispatchObjectCallbacks(_,1), then Ov107_ProcessObjectTick,
+ * then two chained 11-word block copies. */
+
 extern void RefreshObjectCallbacks(void *p);
 extern void DispatchObjectCallbacks(void *p, int x);
 extern void Ov107_ProcessObjectTick(void *obj, int arg2);

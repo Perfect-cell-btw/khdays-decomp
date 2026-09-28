@@ -1,3 +1,5 @@
+/* Destroys the model instance and the action resource, then the base object. */
+
 /* Teardown: release +0x384 (c7e8) and +0x390 (ov107), finalise. */
 extern void DestroyInstance(int a);
 extern void Ov107_ActionResource_Destroy(int a);

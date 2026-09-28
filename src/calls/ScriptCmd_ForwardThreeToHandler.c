@@ -1,3 +1,5 @@
+/* Script command: reads three operands and forwards them to the current handler. */
+
 extern int ScriptVm_ReadOperandInt(int a, void *b);
 extern void ForwardToHandlerOrCurrentObject(int a, int b, int c);
 

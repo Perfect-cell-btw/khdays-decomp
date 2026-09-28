@@ -1,3 +1,5 @@
+/* Class pfnMethod: frees the subitem channel resources, then destroys the root objects. */
+
 extern void *NNSi_FndGetCurrentRootHeap();
 extern void Ov050_freeSubitemChannelResources();
 extern void Ov022_DestroyRoot();

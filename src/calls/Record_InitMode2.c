@@ -1,3 +1,5 @@
+/* Inits the record, sets mode 2 and stores the default callback and the value. */
+
 extern void Record_Init(void *p, int a1, int a2, int a3);
 extern char data_02042910[];
 

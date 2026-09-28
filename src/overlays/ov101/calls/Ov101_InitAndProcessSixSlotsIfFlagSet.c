@@ -1,3 +1,6 @@
+/* If the 1-bit flag at this[0x694] is set: runs a setup call, then processes 6 slots at arg1+0x128
+ * stride 0x120. */
+
 extern void Ov101_DrawNodeWithOwnerPos3();
 extern void Ov101_DrawNodeIfState2();
 

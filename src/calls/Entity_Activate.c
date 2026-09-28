@@ -1,3 +1,5 @@
+/* When inactive sets the active/pending bits and inserts the entity at the head of the list. */
+
 extern void func_0202b5f8(void *arg, void *ptr);
 
 void Entity_Activate(unsigned char *ptr, void *arg) {

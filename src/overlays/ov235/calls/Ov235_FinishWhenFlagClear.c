@@ -1,3 +1,5 @@
+/* Marks the task finished once the watched flag is clear. */
+
 extern int Task_MarkFinished();
 
 struct Sub { char pad[0xad]; unsigned char flag; };

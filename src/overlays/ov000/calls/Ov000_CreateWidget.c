@@ -1,3 +1,6 @@
+/* Allocates and fills a 0x9c-byte widget from its descriptor: slots, tweens, position and
+ * visibility. */
+
 typedef struct {
     void *head;
     void *tail;

@@ -1,3 +1,11 @@
+/* Fill the menu labels from MissionContext.aRows[i].awLabelText, with data_ov006_020563d4 as the
+ * fallback; bRowCount at +0x100 is the count. CORRECTED 2026-07-20: an earlier version of this
+ * comment said the rows live at +0x154 with stride 0xc0, which never closed -- 0x154..0x414 is 704
+ * bytes and not a multiple of 0xc0. The rows start at +0x104; the 0x154 that looked like an array
+ * base is +0x104 + 0x50, the label field's offset INSIDE the record. The layout then closes
+ * exactly: rows[4] fill 0x104..0x403, aRowStates[4] fill 0x404..0x413, and the selection block
+ * follows at 0x414. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

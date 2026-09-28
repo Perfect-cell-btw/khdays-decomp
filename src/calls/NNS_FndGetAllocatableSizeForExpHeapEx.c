@@ -1,3 +1,5 @@
+/* NitroSystem FND: largest block the expanded heap can allocate with the given alignment. */
+
 extern int abs(int);
 
 typedef struct Block {

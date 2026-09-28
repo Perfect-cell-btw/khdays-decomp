@@ -1,3 +1,5 @@
+/* Instantiates the sub-menu class, updates the input and returns the sub-menu tick. */
+
 extern int *NNSi_FndGetCurrentRootHeap(void);
 extern int InstantiateClass(void *data, int arg1);
 extern void Ov008_UpdateMenuInput(void);

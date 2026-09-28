@@ -1,3 +1,6 @@
+/* Targets the nearest object (action 2 when none), sets the turn speed, plays anim 2 and installs
+ * the chase tick. */
+
 extern int Ov107_FindNearestObject(int a, int b);
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);

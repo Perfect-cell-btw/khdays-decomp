@@ -1,3 +1,7 @@
+/* Teardown: destroy primary sub-object (0x384), destroy sub-list (0x3cc via
+ * Ov107_ActionResource_Destroy), destroy 5-entry object array (0x390), free array + 0x3c8 buffer
+ * via FreeInstanceMemory, then notify parent (Ov107_DestroyObject). */
+
 struct row8 { int a, b; };
 extern void DestroyInstance(int p);
 extern void Ov107_ActionResource_Destroy(int p);

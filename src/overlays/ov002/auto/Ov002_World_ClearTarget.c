@@ -1,3 +1,5 @@
+/* Clears the world's target slot. */
+
 extern int data_ov002_0207fa00;
 
 void Ov002_World_ClearTarget(void) {

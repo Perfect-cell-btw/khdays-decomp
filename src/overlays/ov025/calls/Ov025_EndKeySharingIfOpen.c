@@ -1,3 +1,5 @@
+/* Scene interface pfnEndKeySharing: ends WM key sharing when a session handle is held. */
+
 extern void func_02023ad0();
 extern int data_ov025_020b49c0;
 

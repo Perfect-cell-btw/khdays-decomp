@@ -1,3 +1,5 @@
+/* True when the target ref is valid and of kind 1. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

@@ -1,3 +1,6 @@
+/* Draws the model once per live instance with its scale, orientation, position, alpha and polygon
+ * id. */
+
 typedef int fx32;
 
 typedef struct {

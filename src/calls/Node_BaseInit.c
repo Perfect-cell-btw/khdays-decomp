@@ -1,3 +1,5 @@
+/* Resets the node's flags, callbacks and both transforms, and counts it. */
+
 extern void SrtTransform_SetIdentity(void *o);
 extern void Node_BaseOnDestroy(void);
 extern void Node_DefaultHook6C(void);

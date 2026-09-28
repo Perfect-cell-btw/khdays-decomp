@@ -1,3 +1,5 @@
+/* For type 0x15 stores the value of parameter record index; returns 1. */
+
 extern char *data_ov008_02090fb0;
 
 int Ov008_GetParamRecordValue(int *out, int type, int index)

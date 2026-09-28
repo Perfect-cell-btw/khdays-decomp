@@ -1,3 +1,5 @@
+/* True when the stream slot's current playing position is non-zero. */
+
 extern char *data_0204c234;
 extern int NNS_SndArcStrmGetCurrentPlayingPos(void *ptr);
 

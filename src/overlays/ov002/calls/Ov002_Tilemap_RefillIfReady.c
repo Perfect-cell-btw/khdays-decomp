@@ -1,3 +1,5 @@
+/* Refills the tilemap block when the map is in state 3 and has data. */
+
 extern int Ov002_FillTilemapBlock();
 
 void Ov002_Tilemap_RefillIfReady(int arg0) {

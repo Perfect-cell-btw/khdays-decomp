@@ -1,3 +1,5 @@
+/* Arms the walk state, posts two updates and installs the walk tick. */
+
 extern void Ov238_Reaction_ForwardTwoUpdates(int self, int param_2, int param_3, int param_4, void *cb);
 extern void Ov238_WalkTick(void);
 

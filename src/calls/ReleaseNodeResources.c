@@ -1,3 +1,6 @@
+/* If node flag8 bit1 set: optionally SceneNode_AttachToModelJoint (bit2); ClearFlag8HandleIfNot10;
+ * EntityMgr_UnlinkFromListA or EntityMgr_UnlinkFromListB by bit5; clear flag8 bit1. */
+
 extern void SceneNode_AttachToModelJoint();
 extern void ClearFlag8HandleIfNot10();
 extern void EntityMgr_UnlinkFromListA();

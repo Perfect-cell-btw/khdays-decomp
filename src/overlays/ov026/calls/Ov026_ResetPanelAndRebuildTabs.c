@@ -1,3 +1,6 @@
+/* Hides the detail overlay, redraws both columns and the panel, clears +0xc3d4 and returns the
+ * tab-list rebuild step. */
+
 extern char *data_ov026_02091368;
 extern void Ov026_HideDetailOverlay(void);
 extern void Ov026_RedrawBothColumns(void);

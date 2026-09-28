@@ -1,3 +1,5 @@
+/* Marks the task finished once the owner's flag is clear. */
+
 extern void Task_MarkFinished();
 
 struct sub { unsigned char pad[0xad]; unsigned char flag; };

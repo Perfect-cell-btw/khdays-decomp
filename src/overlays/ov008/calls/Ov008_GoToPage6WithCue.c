@@ -1,3 +1,5 @@
+/* Arms the cue request, targets page 6 and plays the confirm sound. */
+
 extern int *Ov008_GetCueRequest(void);
 extern void Ov008_SetTargetSlot(int arg0, int arg1);
 extern void PlaySound(int arg0, int arg1);

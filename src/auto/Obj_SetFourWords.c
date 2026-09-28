@@ -1,3 +1,5 @@
+/* Store four arguments into the first four words of the object. */
+
 void Obj_SetFourWords(int *p, int a, int b, int c, int d)
 {
     p[0] = a;

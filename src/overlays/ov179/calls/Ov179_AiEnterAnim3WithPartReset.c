@@ -1,3 +1,5 @@
+/* Resets the part, plays anim 3 and installs the next step. */
+
 extern void SetIndexedSlot();
 extern void Ov179_ForwardToAiTaskWhenReady();
 extern void Ov107_PostTagUpdate();

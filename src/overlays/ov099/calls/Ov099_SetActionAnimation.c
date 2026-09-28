@@ -1,3 +1,8 @@
+/* Drive the sub-object for the selected action: selector 0x22 plays animation 0x2f; selector 0x23
+ * plays 0x30, sets the 0x39000 parameter and the 0x1000 field at +0x64, and -- when a target exists
+ * -- turns the object to face it (FX_Atan2 of the normalised delta, minus half a turn) unless bit 5
+ * of the node's flag word is already set. */
+
 extern int func_ov022_020acf14();
 extern int Ov022_ValidateTargetRef();
 extern int func_ov022_020ad0c0();

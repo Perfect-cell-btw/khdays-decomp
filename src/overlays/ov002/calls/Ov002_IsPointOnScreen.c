@@ -1,3 +1,6 @@
+/* Projects a point and reports which screen edges (with margins) it lies beyond; returns 1 when
+ * visible. */
+
 typedef unsigned int uint;
 
 typedef struct {

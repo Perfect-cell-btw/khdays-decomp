@@ -1,3 +1,6 @@
+/* Tear down the manager: run the two release passes, then free the element buffer at +0x14 if it is
+ * still allocated. */
+
 extern void Ov008_FreeResourceRecordBuffer(void *object);
 extern void Ov008_DestroyAllListObjects_2(void *object);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);

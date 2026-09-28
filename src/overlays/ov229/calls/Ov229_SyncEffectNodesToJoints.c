@@ -1,3 +1,6 @@
+/* Moves the two trail nodes along one joint (offsets 0x800/0x1000) and a third node to another
+ * joint. */
+
 extern int VEC_Add();
 extern int func_02016320();
 extern int Vec3TransformViaTempMtx();

@@ -1,3 +1,5 @@
+/* UI setup entry 4: blits the tile region with Ov002_UiTileSourceB, mode 0. */
+
 extern int Ov002_BlitTileRegion();
 extern int Ov002_UiTileSourceB();
 

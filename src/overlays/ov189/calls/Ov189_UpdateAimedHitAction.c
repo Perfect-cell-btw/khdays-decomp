@@ -1,3 +1,7 @@
+/* Acquires a target, computes and stores its heading, builds the phase-derived motion vector,
+ * processes sphere hits from time zero, and ends the action at timer 0x1800. Requests actor state 2
+ * when no target exists. */
+
 typedef unsigned char u8;
 
 typedef struct {

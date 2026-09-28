@@ -1,3 +1,6 @@
+/* Stores the nearest target (none: queues action 2, returns -1); returns the edge gap and sets the
+ * angle. */
+
 extern int Ov107_FindNearestObject();
 extern int VEC_Subtract();
 extern int VEC_Normalize();

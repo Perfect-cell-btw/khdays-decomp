@@ -1,3 +1,12 @@
+/* D-pad focus navigation. Walks the focused node's neighbour links until it finds one that is
+ * neither disabled nor unfocusable, then moves focus there and records which direction was used.
+ * The key bits are the NitroSDK d-pad set and the links are in that order: 0x40 up -> +0x88, 0x80
+ * down -> +0x8c, 0x20 left -> +0x90, 0x10 right -> +0x94. A candidate is rejected when its group id
+ * at +0xc equals the current node's or the focused node's, which is what stops the walk wrapping
+ * within a group. The direction mask at +0x4a78 gates all four: it is reset to 0xf0 whenever it no
+ * longer intersects data_0204c18c, and then narrowed to the single direction actually taken -- so a
+ * held d-pad keeps repeating in one axis instead of drifting. */
+
 typedef struct {
     unsigned disabled : 1;
     unsigned focusable : 1;

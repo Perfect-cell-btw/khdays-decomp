@@ -1,3 +1,6 @@
+/* SetSubitemState on model tracks 0 and 3 with the given blend and value, then
+ * RefreshObjectCallbacks. */
+
 extern int SetSubitemState(void *, int, short, int);
 extern int RefreshObjectCallbacks();
 

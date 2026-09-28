@@ -1,3 +1,7 @@
+/* Initializes the opening scene, clears its script workspace, loads the NFTR font and opening
+ * archives, builds 41 sprite resource sets, starts op/scr.z and returns the opening-scene update
+ * callback. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

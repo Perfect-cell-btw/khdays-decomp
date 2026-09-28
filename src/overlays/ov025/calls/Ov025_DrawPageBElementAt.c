@@ -1,3 +1,5 @@
+/* Draws page B element arg2 with the argument. */
+
 extern int Ov025_DrawPageBElement();
 
 int Ov025_DrawPageBElementAt(int arg0, int arg1, int arg2) {

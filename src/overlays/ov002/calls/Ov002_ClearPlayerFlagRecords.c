@@ -1,3 +1,5 @@
+/* Clears the four player flag records. */
+
 extern void MI_CpuFill8();
 extern int data_ov002_0207f9a0;
 

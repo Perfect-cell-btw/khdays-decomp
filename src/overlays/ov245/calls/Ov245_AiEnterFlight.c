@@ -1,3 +1,5 @@
+/* Resets the step state and installs Ov245_FlightTick as the next step. */
+
 /* Set +0x30=0x14000, then dispatch via c634. */
 extern int SetIndexedSlot(int, int, void *);
 extern int Ov245_FlightTick(int);

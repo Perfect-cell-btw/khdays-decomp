@@ -1,3 +1,6 @@
+/* Child task teardown: flags the child, clears the owner's link (+0x24) and sets owner +0x3cc bit
+ * 0. */
+
 void Ov161_ChildTaskTeardownAndFlag(char *p) {
     char *r3 = *(char **)(p + 4);
     char *r2 = *(char **)(r3 + 4);

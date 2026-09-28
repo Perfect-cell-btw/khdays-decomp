@@ -1,3 +1,6 @@
+/* NitroSDK OS: arms a periodic alarm (start, period, handler, arg) and inserts it into the alarm
+ * queue. */
+
 typedef long long s64;
 typedef unsigned long long u64;
 typedef unsigned int u32;

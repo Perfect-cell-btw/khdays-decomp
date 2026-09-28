@@ -1,3 +1,6 @@
+/* Targets the nearest object (action 2 when none), plays anim 7 and model anim 6 and installs the
+ * glide tick. */
+
 extern int Ov107_FindNearestObject(int, int);
 extern int Ov107_PostTagUpdate(int, int, int);
 extern int Ov107_StartAnim(int, int, int);

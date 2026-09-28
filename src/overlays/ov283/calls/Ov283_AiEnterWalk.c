@@ -1,3 +1,5 @@
+/* Plays looping anim 0, clears the velocity, rolls the walk time and installs the walk tick. */
+
 typedef struct { int w[3]; } Blk12;
 
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);

@@ -1,3 +1,5 @@
+/* Push the +0x28 vector into Ov147_BuildHeadingRotation; unless busy mark state 5 and dispatch. */
+
 extern void Ov147_BuildHeadingRotation();
 extern void SetIndexedSlot();
 

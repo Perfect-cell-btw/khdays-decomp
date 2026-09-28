@@ -1,3 +1,5 @@
+/* Toggles the detail panel and plays the confirm sound. */
+
 extern void Ov008_Menu_ToggleDetailPanel(int);
 extern void PlaySound(int, int);
 void Ov008_ToggleDetailPanelWithSound(void)

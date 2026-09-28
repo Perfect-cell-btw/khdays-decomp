@@ -1,3 +1,8 @@
+/* Prepares the logo scene's three tile surfaces: copies three TileSurfaceCfg templates, clears the
+ * BG3 scroll map, points each config at the resource storage and the BG3 VRAM target, applies each
+ * via TileSurface_InitAndUpload4bpp, and arms the three surface slots with
+ * Ov000_DispatchLogoAction(i, 2). */
+
 typedef unsigned char  u8;
 typedef unsigned int u32;
 

@@ -1,3 +1,6 @@
+/* Enqueues the BG character upload (remapped layer) when chars are given, else the screen upload.
+ */
+
 extern int remapIndexIfHwFlagSet(int a0, int a1, int a2);
 extern int Gfx_EnqueueBgCharUpload(int a0, int a1);
 extern int Gfx_EnqueueBgScreenUpload(int a0, int a1);

@@ -1,3 +1,5 @@
+/* Slot-0x20 callback: sends event 0x28, carrying the value at +0x428, to the handler at +0x24. */
+
 struct S { char buf[0x24]; int last; };
 struct A { char pad24[0x24]; void (*fn)(struct A *, struct S *, int); char pad28[0x428 - 0x28]; int field394; };
 void Ov258_ForwardEvent28ToHandler(struct A *a) {

@@ -1,3 +1,7 @@
+/* Zero the Tween, then set nMode, nFrom, nTo and nDuration from the four arguments (in the call's
+ * argument order: mode, from, to, duration) and clear flag bits 0, 1 and 2. Callers configure a
+ * pair of adjacent Tweens 0x1c apart and start the first -- see Ov000_EmitSplinePair. */
+
 extern void MI_CpuFill8(void *dst, unsigned char val, unsigned int size);
 
 struct X {

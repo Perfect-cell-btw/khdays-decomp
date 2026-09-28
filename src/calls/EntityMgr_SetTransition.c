@@ -1,3 +1,5 @@
+/* Sets the transition of entity slot index. */
+
 extern void Obj_SetTransition(int, int, int);
 extern int data_0204c208;
 

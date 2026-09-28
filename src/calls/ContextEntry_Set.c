@@ -1,3 +1,5 @@
+/* Stores the value in the current root heap owner and returns the init step. */
+
 extern int *NNSi_FndGetCurrentRootHeap(void);
 extern void ContextEntry_InitForRootHeap(void);
 

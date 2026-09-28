@@ -1,3 +1,5 @@
+/* Unless busy shows the grid page when it has content. */
+
 extern char *Ov008_GetMenuContext(void);
 extern void Ov008_ShowGridPage(void *context, int arg1, int arg2);
 

@@ -1,3 +1,6 @@
+/* Class pfnCtor: constructs the object, resets and inits it, requests voice ids 0x4f/0xc4 and
+ * returns the decoder step. */
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov062_Construct(void *arg0);
 extern void Ov062_ResetScriptRequest(void *heap);

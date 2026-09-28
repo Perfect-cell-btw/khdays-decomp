@@ -1,3 +1,5 @@
+/* NitroSDK SND: number of commands on the reserve list. */
+
 extern int OS_DisableInterrupts();
 extern void OS_RestoreInterrupts(int mask);
 extern int *data_02044748[];

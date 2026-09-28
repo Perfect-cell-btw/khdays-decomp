@@ -1,3 +1,5 @@
+/* Piece class slot 0x14: clears the transition and releases the render item (+0x1c). */
+
 extern int Obj_SetTransition();
 extern int Render_ReleaseNodeItem();
 

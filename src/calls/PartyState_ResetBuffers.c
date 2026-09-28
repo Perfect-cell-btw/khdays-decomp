@@ -1,3 +1,5 @@
+/* Clears the four 0x104-byte and two 0x48-byte party buffers and their counters. */
+
 extern void MI_CpuFill8(void *dst, unsigned char val, unsigned int size);
 extern void ClearGlobalShort4(void);
 

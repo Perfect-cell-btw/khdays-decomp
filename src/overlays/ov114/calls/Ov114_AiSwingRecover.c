@@ -1,3 +1,5 @@
+/* After 0x800 sets the wind-up speed and installs the wind-up tick. */
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov114_WindupTick(void);
 

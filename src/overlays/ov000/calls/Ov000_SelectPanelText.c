@@ -1,3 +1,7 @@
+/* Picks the panel text for the given mode: mode 2 selects by baseMode (0/1 -> different variant
+ * text via Ov000_GetVarRecordByIndex), other modes take their own text; first prepares the surface
+ * at context+0x37c+0x4800 via Obj_InvokeInnerVtable4. */
+
 typedef unsigned char  u8;
 
 typedef struct Ov000SubSceneContext {

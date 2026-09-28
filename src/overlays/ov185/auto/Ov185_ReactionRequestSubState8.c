@@ -1,3 +1,5 @@
+/* Reaction check: during action 9 queues 0 and returns 1; otherwise, while in 2/4/6/7, queues 8. */
+
 int Ov185_ReactionRequestSubState8(char *arg) {
     char *base = *(char **)(arg + 0x214);
     char *s = *(char **)base;

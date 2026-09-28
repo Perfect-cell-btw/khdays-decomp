@@ -1,3 +1,7 @@
+/* Resolve carry-release position against nearby contacts. Build a weighted penetration correction
+ * from up to four sphere contacts, then cast vertically and settle pPosition at the returned
+ * surface. */
+
 typedef struct VecFx32 {
     int x;
     int y;

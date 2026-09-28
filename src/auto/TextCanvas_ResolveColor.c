@@ -1,3 +1,6 @@
+/* Maps palette codes 1/2 to the canvas's configured colors (storing the result); other codes pass
+ * through. */
+
 int TextCanvas_ResolveColor(int r0, int *r1)
 {
     int *r2 = (int *)r1[8];

@@ -1,3 +1,7 @@
+/* Acquires a target, updates target heading and scaled motion, starts the aimed effect, applies
+ * area hits while active, and advances after timer 0x1800; requests state 2 when no target exists.
+ */
+
 typedef unsigned char u8;
 
 typedef struct {

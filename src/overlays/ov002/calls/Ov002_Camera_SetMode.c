@@ -1,3 +1,6 @@
+/* Switches the field camera mode (follow, cutscene preset, look-at target...), updating its flags
+ * and presets. */
+
 typedef struct {
     int x;
     int y;

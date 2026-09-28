@@ -1,3 +1,5 @@
+/* Allocates one indexed slot from a five-word parameter block and sets its class-dependent flag. */
+
 extern int InstantiateClass(void *cls, void *buf);
 extern void func_ov022_020895a4(int arg0, int arg1);
 extern int data_ov022_020b2930;

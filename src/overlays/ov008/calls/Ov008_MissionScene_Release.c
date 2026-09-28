@@ -1,3 +1,6 @@
+/* Releases the mission scene instance; in link mode also releases the wireless overlay and resets.
+ */
+
 extern char *data_ov008_02090fa8;
 extern void func_02023ad0(int arg0);
 extern void Overlay105_Release(void);

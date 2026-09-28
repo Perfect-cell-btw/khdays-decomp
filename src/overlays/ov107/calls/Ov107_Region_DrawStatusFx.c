@@ -1,3 +1,6 @@
+/* Draws the status-effect model on every visible member with the given status bit, facing the
+ * camera. */
+
 typedef struct { int x, y, z; } Vec3;
 
 typedef struct {

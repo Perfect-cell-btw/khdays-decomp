@@ -1,3 +1,5 @@
+/* Clears the world's element list (+0xdc). */
+
 extern int data_ov002_0207f60c;
 extern int Ov002_ClearElementList();
 

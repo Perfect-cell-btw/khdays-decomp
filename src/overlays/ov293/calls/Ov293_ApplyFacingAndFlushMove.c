@@ -1,3 +1,5 @@
+/* Turns toward the target angle, applies it as the rotation and flushes the pending velocity. */
+
 typedef struct {
     int nX;
     int nY;

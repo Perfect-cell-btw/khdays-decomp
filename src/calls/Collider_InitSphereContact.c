@@ -1,3 +1,5 @@
+/* Fills the contact normal and distance for a sphere (direction from the center). */
+
 extern void Vec3ScaleAddQ27();
 extern void VEC_Subtract();
 extern void func_01ffcfd0();

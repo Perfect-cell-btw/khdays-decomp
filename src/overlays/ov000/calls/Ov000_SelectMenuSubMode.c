@@ -1,3 +1,7 @@
+/* Menu sub-mode selector. Input code 0x10 sets baseMode to 1 and 0x20 sets it to 0 (each resetting
+ * the fade via PlaySound only on an actual change). Any other input dispatches on the external code
+ * (data_0204c190) into a mode (2/5/...), restarting the fade as needed. */
+
 typedef unsigned char  u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

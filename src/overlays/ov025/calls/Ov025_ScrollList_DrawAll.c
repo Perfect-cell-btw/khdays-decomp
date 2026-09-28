@@ -1,3 +1,5 @@
+/* Draws the eleven visible rows from the scroll position and marks the list drawn. */
+
 extern void Ov025_ScrollList_DrawRow(int arg0, int arg1, int arg2);
 
 void Ov025_ScrollList_DrawAll(int arg0) {

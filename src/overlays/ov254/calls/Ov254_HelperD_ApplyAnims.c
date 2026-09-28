@@ -1,3 +1,5 @@
+/* Sets model tracks 0, 2, 4 and 1 to the variant animation and refreshes callbacks. */
+
 extern int SetSubitemState();
 extern int RefreshObjectCallbacks();
 

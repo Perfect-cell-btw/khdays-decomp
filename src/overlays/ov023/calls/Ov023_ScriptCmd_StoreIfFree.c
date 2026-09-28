@@ -1,3 +1,5 @@
+/* Script command: stores the result when the entry is free. */
+
 extern int Ov023_Cmd_TestEntityCollisionBit();
 extern int Slot48_StoreAtCurrentIndex();
 

@@ -1,3 +1,6 @@
+/* Spawns an entity of the class id: on first use loads the enemy overlay and spawn record, then
+ * calls the registered factory. */
+
 typedef struct Actor Actor;
 
 extern int Ov107_EnemyTableHasEntry(int id, int cnt);

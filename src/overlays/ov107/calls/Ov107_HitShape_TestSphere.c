@@ -1,3 +1,5 @@
+/* Overlap test of a hit shape against a sphere; contact point optionally written out. */
+
 typedef int fx32;
 typedef long long fx64;
 typedef unsigned char u8;

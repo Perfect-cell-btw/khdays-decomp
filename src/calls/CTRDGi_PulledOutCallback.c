@@ -1,3 +1,6 @@
+/* NitroSDK CTRDG: on the pulled-out notification (0x11) runs the user hook once and terminates when
+ * it asks to. */
+
 extern void OS_Terminate(void);
 extern void CTRDG_TerminateForPulledOut(void);
 extern int data_02046d50[];

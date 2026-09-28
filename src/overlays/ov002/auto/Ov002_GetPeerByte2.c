@@ -1,3 +1,5 @@
+/* Byte +2 of the current peer record (0xff when none). */
+
 extern int data_ov002_0207fa10;
 
 int Ov002_GetPeerByte2(void) {

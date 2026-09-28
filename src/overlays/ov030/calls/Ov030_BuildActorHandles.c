@@ -1,3 +1,11 @@
+/* Build step for the ov030 actor: clears the ready flags, requests animation set 2 for the actor's
+ * slot, binds two render handles -- one against the scene link the actor was spawned from and one
+ * against the shared scene block at the scene's +0x2ee4 -- clears the 0xd0 byte work block at
+ * +0xda0, then latches the three ready bits and RETURNS them. Two things matter for reproducing it.
+ * The return is the flags byte, so no instruction is spent materialising a result. And the scene
+ * block pointer must be declared before the build block pointer: the other order gives the same
+ * instructions with two registers swapped. */
+
 typedef unsigned char u8;
 
 struct Ov030BuildBlock {

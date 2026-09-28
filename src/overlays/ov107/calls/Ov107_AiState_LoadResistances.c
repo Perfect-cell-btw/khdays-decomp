@@ -1,3 +1,5 @@
+/* Loads the five resistance triples (percent) of the actor kind. */
+
 typedef unsigned int u32;
 typedef unsigned short u16;
 typedef short s16;

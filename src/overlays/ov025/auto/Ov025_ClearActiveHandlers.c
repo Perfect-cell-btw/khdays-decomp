@@ -1,3 +1,5 @@
+/* Clears the two active handler slots. */
+
 extern int data_ov025_020b574c;
 
 void Ov025_ClearActiveHandlers(void) {

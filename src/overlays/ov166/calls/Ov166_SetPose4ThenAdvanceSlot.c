@@ -1,3 +1,6 @@
+/* Push animation params (4, 0) to the sprite, then dispatch via SetIndexedSlot with handler
+ * Ov166_AiDecelUntilAnimEnd. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov166_AiDecelUntilAnimEnd();

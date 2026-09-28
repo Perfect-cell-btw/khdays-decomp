@@ -1,3 +1,5 @@
+/* Builds a cast parameter block from the arguments and runs the collision cast. */
+
 typedef struct {
     int word0;
     int word4;

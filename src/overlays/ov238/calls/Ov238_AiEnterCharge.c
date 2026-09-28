@@ -1,3 +1,5 @@
+/* Arms the charge state, posts two updates and installs the charge tick. */
+
 extern void Ov238_Reaction_ForwardTwoUpdates(int self, int param_2, int param_3, int param_4, void *cb);
 extern void Ov238_ChargeTick(void);
 

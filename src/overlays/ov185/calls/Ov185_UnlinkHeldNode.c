@@ -1,3 +1,5 @@
+/* Unlinks the held node (+0x390) from its owner and clears it. */
+
 extern int Ov107_UnlinkNodeFromOwner();
 
 void Ov185_UnlinkHeldNode(int *r0) {

@@ -1,3 +1,8 @@
+/* THUMB. Writes a 0x20 header (the 8-byte template at data_ov000_0205ab80.source8 repeated four
+ * times) to save-media offset 0 via Ov000_BackupWrite, then probes six lanes at stride 0x2018 from
+ * offset 0x20 (3 groups x 2 lanes) reading each into a scratch buffer. Returns 1 when every access
+ * succeeds, 0 on the first failure. Frees the scratch buffer on the way out. */
+
 typedef unsigned char u8;
 
 typedef struct Ov000ProbeTemplate {

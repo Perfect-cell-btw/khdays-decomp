@@ -1,3 +1,5 @@
+/* Sets or clears the menu's busy bit (+0x28 bit 0). */
+
 extern char *data_ov008_02090f00;
 
 void Ov008_SetBusyFlag(int enabled)

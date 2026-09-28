@@ -1,3 +1,5 @@
+/* Returns the ground height (+0x10) of the slot's link record. */
+
 extern int data_ov002_0207fa10;
 
 int Ov002_GetSlotGround(int arg0) {

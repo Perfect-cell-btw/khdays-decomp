@@ -1,3 +1,5 @@
+/* When reports exist toggles the view and refreshes the current report. */
+
 extern int Ov025_GetPageA();
 extern int PlaySound();
 extern int Ov025_Reports_RefreshCurrentEntry();

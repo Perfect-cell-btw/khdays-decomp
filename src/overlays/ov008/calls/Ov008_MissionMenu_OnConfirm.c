@@ -1,3 +1,5 @@
+/* On state 4 of the selection starts the selected mission. */
+
 extern void Ov008_StartSelectedMission(int);
 void Ov008_MissionMenu_OnConfirm(int *obj, int state)
 {

@@ -1,3 +1,5 @@
+/* Line class slot 0x0c: releases the node resources (+0x2c) if the node is live. */
+
 extern int ReleaseNodeResources();
 
 void Ov002_Line_ReleaseNode(int arg0) {

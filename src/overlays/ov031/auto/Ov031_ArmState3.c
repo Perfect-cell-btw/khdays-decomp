@@ -1,3 +1,5 @@
+/* Sets state 3 with the value and clears the counter. */
+
 struct S {
     int f0;
     int f4;

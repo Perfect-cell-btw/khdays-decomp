@@ -1,3 +1,5 @@
+/* Damage scale from the attacker and defender stats (defense floor of 1.0). */
+
 typedef int fx32;
 
 static inline fx32 FX_Mul(fx32 a, fx32 b) {

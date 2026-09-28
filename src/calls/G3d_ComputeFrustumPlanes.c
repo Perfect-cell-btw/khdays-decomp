@@ -1,3 +1,5 @@
+/* Derives the projection coefficients and viewport scale from the view parameters. */
+
 typedef int fx32;
 typedef short s16;
 typedef unsigned short u16;

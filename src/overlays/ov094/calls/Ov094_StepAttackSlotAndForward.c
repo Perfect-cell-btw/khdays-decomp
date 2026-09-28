@@ -1,3 +1,5 @@
+/* Steps the attack slot of the table (+0x2c2c) with the object's slot index, then forwards it. */
+
 extern char *data_ov094_020bc240;
 extern void Ov094_UpdateAllPartsAndFlagLocal(void *a, void *arg1, int arg2);
 extern void Ov094_UpdatePartsIfEnabled(void *a, void *arg1);

@@ -1,3 +1,6 @@
+/* When the session changed tick or the scene may be interrupted, runs the scene loop (unless
+ * blocked); returns 0. */
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int Session_IsActive(void);
 extern int Session_IsReady(void);

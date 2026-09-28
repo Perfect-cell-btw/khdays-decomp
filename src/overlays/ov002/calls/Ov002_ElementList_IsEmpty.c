@@ -1,3 +1,5 @@
+/* Whether the global element list is empty. */
+
 extern int NNS_FndGetNextListObject();
 extern int data_ov002_0207f608;
 

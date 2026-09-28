@@ -1,3 +1,5 @@
+/* Advances the request ring's tick and drops the requests older than 8 ticks. */
+
 extern int data_0204c234;
 
 typedef struct {

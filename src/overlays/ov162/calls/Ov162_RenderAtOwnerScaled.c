@@ -1,3 +1,6 @@
+/* Places the object at the owner's model position with scale 0xa00, then renders it
+ * (Obj_RenderModel). */
+
 extern int Obj_RenderModel();
 
 struct S11 { int a[11]; };

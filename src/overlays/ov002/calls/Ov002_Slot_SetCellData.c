@@ -1,3 +1,5 @@
+/* Sets the slot's cell data and rebinds it. */
+
 extern int Ov002_RebindSlotToCell();
 
 int Ov002_Slot_SetCellData(int arg0, int arg1) {

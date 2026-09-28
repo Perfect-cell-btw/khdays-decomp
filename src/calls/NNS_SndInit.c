@@ -1,3 +1,6 @@
+/* NitroSystem sound: once, SND_Init, registers the sleep callbacks and initialises the player,
+ * stream and capture modules. */
+
 extern void SND_Init(void);
 extern void PM_PrependPreSleepCallback(void *p);
 extern void PM_AppendPostSleepCallback(void *p);

@@ -1,3 +1,6 @@
+/* NitroSystem G3D SBC: forwards the command's byte as a geometry command (0x14) when enabled, then
+ * advances 2 bytes. */
+
 extern void NNSi_G3dGeBufferCommand1(int arg0, unsigned char arg1);
 
 void NNSi_G3dSbcCmdSetPolygonAttr(int *ptr) {

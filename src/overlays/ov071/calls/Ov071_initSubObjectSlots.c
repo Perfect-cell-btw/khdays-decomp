@@ -1,3 +1,7 @@
+/* Zero the global object slot header (base=*data_ov033_020b4b80+0x2c2c) and init the 6+1 sub-object
+ * slots (base+0xc, then 6x stride 0x110) via RegisterSeqAndInit, seeding per-slot counter 0x1c-i.
+ * x4 ov033/051/071/089. */
+
 extern void RegisterSeqAndInit();
 extern void *data_ov071_020b9a60;
 extern void *data_ov071_020b9a2c;

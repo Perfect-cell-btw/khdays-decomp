@@ -1,3 +1,5 @@
+/* Clears the shop's running totals. */
+
 extern char *data_ov008_02090fac;
 
 void Ov008_Shop_ClearTotals(void)

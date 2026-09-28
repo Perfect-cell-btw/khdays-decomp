@@ -1,3 +1,5 @@
+/* Removes the block from the object's list and frees it. */
+
 extern int NNS_FndRemoveListObject();
 extern void NNSi_FndFreeFromDefaultHeap();
 

@@ -1,3 +1,5 @@
+/* Destroys the model and the two attached instances, frees the table, then the base object. */
+
 extern int DestroyInstance();
 extern int FreeInstanceMemory();
 extern int Ov107_DestroyObject();

@@ -1,3 +1,5 @@
+/* ov init (thumb): run 4 setup calls on the object then clear a global slot. */
+
 extern int NNSi_FndGetCurrentRootHeap();extern void Ov038_BuildRigObject();extern void Ov038_ResetSequences();extern void Ov022_RequestVoiceIds();extern void Ov022_ArmDecoder(void);
 int Ov038_initSubitemsClear(int p) {
     int r = NNSi_FndGetCurrentRootHeap(p);

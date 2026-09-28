@@ -1,3 +1,5 @@
+/* Binds the object to the shared block (+0x968c). */
+
 extern int Ov025_GetCtxBlock968c();
 extern int Ov025_SetWord0And20_2();
 

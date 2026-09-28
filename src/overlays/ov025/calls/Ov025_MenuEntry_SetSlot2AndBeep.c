@@ -1,3 +1,5 @@
+/* Menu entry widget 1 callback: sets target slot 2 (-1) and plays sound 0. */
+
 extern int Ov025_SetTargetSlot();
 extern int PlaySound();
 

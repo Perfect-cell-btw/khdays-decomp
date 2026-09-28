@@ -1,3 +1,5 @@
+/* Shows the name tags of the live party members within range of the camera owner. */
+
 typedef struct VecFx32 {
     int x;
     int y;

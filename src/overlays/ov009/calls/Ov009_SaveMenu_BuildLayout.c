@@ -1,3 +1,6 @@
+/* Builds the save-page widget layout: three pages of eight cells slid in from the right, arrows and
+ * the summary rows. */
+
 typedef unsigned char u8;
 typedef unsigned int  u32;
 

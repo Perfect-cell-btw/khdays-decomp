@@ -1,3 +1,5 @@
+/* Script command: reads an int operand and appends it to the pending ids; returns 1. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_AppendPendingId();
 

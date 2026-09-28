@@ -1,3 +1,5 @@
+/* Binds the node animation and maps each animated node name to its model index. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

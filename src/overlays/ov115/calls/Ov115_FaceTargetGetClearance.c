@@ -1,3 +1,6 @@
+/* Distance between the two context nodes minus both radii (clamped at 0); orients the context
+ * towards the target and optionally returns the delta. */
+
 extern int VEC_Subtract();
 extern int VEC_Normalize();
 extern int Mtx33_LookAt();

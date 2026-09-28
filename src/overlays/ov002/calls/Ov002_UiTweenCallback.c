@@ -1,3 +1,5 @@
+/* UI context callback: samples the blend tween unless the context is paused (+0xc). */
+
 extern int Ov002_SampleBlendTween();
 extern int data_ov002_0207f60c;
 

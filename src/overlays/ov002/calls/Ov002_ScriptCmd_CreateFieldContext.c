@@ -1,3 +1,5 @@
+/* Script command: creates the field context; returns 1. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_CreateFieldContext();
 

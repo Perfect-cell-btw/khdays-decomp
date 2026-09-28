@@ -1,3 +1,6 @@
+/* Constructs the sub-object at actor+0x20 bound to the entity record (from ArrayEntryPtrD0); start
+ * state flags 0x14. */
+
 #pragma thumb on
 
 /* Construct the sub-object embedded at +0x20 of an actor object.

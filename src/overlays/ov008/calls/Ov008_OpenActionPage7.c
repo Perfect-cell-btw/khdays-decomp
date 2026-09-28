@@ -1,3 +1,5 @@
+/* Unless busy builds action page 7 and plays the confirm sound. */
+
 extern char *Ov008_GetMenuContext(void);
 extern void Ov008_BuildActionPage(void *context, int arg1);
 extern void PlaySound(int arg0, int arg1);

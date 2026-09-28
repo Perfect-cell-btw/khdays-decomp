@@ -1,3 +1,5 @@
+/* Mode byte of the link state (+0x100). */
+
 extern char *data_ov008_02090f24;
 int Ov008_Link_GetMode(void)
 {

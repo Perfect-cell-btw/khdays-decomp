@@ -1,3 +1,12 @@
+/* Load-scene tick. Polls the pending resource load (Obj_IsIdFree); while it is not ready, returns 0
+ * to stay in this scene. Once Ov000_UpdateLoadState reports phase 2, reads the two score halves
+ * (0xc77/0xc87 via GameState_GetField), packs them (low | high<<16), keeps the best packed value
+ * and its phase, advances loadPhase and -- at phase 3 -- finishes: snapshots the game state into
+ * data_0204be18, counts the valid save slots, allocates and clears three 0x800 transfer buffers,
+ * runs the four sub-initialisers, kicks the tween pulse, stamps a 64-bit timestamp, picks
+ * selectedResult (0 when resultFlags set, else bestPhase), and returns the next scene callback
+ * Ov000_TickSelectionScene. */
+
 typedef unsigned char     u8;
 typedef unsigned short     u16;
 typedef unsigned int       u32;

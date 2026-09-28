@@ -1,3 +1,5 @@
+/* Rewinds the HUD's main widget and marks it restarted. */
+
 extern int Ov002_RewindWidget();
 extern int data_ov002_0207f628;
 

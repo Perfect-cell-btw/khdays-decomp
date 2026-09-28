@@ -1,3 +1,5 @@
+/* Draws both nodes while active. */
+
 extern void Scene_DrawNode(void *p);
 
 void Ov043_DrawNodesWhileActive(char *p) {

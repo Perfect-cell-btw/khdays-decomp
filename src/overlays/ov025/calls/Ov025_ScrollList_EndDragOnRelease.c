@@ -1,3 +1,5 @@
+/* Ends the drag when the touch is released. */
+
 extern int Ov025_GetBlock4a80();
 extern int Ov025_GetTouchSample();
 

@@ -1,3 +1,5 @@
+/* Queues action 2 once the watched slot (+0x44) is empty. */
+
 extern int SetIndexedSlot();
 
 struct Inner {

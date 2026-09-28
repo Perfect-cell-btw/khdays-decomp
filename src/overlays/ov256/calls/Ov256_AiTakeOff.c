@@ -1,3 +1,6 @@
+/* Follows the head offset; when the animation ends plays anim 3 and head anim 2 and installs the
+ * flight tick. */
+
 extern void Ov256_RotateByActorHeading(void *out, int self, int arg);
 extern int Ov107_PostTagUpdate(int, int, int);
 extern int Ov107_StartAnim(int, int, int);

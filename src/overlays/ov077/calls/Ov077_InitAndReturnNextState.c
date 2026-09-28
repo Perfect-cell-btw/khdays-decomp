@@ -1,3 +1,6 @@
+/* Initializes the ov077 rig object and scene resources, starts encounter parameters 0x49/0xc8, and
+ * returns the next-state function. */
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov077_BuildRigObject(void *obj);
 extern void Ov077_InitSceneResources(void *heap);

@@ -1,3 +1,5 @@
+/* Looks up the pair key in table A and calls handler index with the value. */
+
 extern int LookupPairKey(void *ptr, unsigned short arg1, unsigned short arg2);
 extern void (*data_02041e2c[])(int value, int arg1, int arg2);
 extern char data_02041dfc;

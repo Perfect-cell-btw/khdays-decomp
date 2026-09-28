@@ -1,3 +1,5 @@
+/* Sets the sound manager's enable flag and sets/clears bit 2 of every listener. */
+
 typedef struct ListenerNode020340d0 {
     struct ListenerNode020340d0 *next;   /* +0x00 */
     char pad04[0x10];

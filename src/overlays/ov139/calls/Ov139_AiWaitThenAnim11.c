@@ -1,3 +1,5 @@
+/* After 0x4000 plays anim 11 and installs the next step. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov139_AiRollTimerOnFlagClear_2(void);

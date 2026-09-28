@@ -1,3 +1,5 @@
+/* Whether link flag bit 3 is set. */
+
 extern int data_ov002_0207fa08;
 
 int Ov002_Link_IsFlag8(void) {

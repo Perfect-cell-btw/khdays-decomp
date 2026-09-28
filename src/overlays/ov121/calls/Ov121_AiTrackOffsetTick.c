@@ -1,3 +1,5 @@
+/* Transforms the offset through the owner's matrix and scales it. */
+
 typedef struct {
     int x;
     int y;

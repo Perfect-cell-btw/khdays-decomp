@@ -1,3 +1,6 @@
+/* Transforms the offset (+0x18) through the owner's matrix and scales it; once the animation ends
+ * queues action 2 and ends the step. */
+
 extern int Ov107_ActionResource_GetOffsetAndScale();
 extern int Vec3TransformViaTempMtx();
 extern int ScaleVec3Fx12();

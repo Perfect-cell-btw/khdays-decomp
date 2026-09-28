@@ -1,3 +1,10 @@
+/* Installed in the +0x1dc slot by Ov287_Actor_InitClassAndSpawnParts, shared by ov287, ov288 and
+ * ov289. Does nothing unless the actor is in mode 1. Builds the 14-byte event packet the +0x1c
+ * handler's sub-opcode 4 branch expects -- kind 5, sub 4, the index biased by four times the
+ * actor's +0x38c and folded into seven bits with the on flag in bit 7 -- sends it on channel 4,
+ * then applies the same change locally: the raw index on channel 0 of the first subitem, the biased
+ * index on channel 2, and a refresh. */
+
 /*
  * Ov287_Actor_SetSubStateAndNotify -- Ov287_Actor_SetSubStateAndNotify.
  *

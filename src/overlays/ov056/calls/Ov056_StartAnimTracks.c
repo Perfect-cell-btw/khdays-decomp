@@ -1,3 +1,5 @@
+/* Arms the node (state 2), binds animation tracks 0, 2 and 1 and rewinds them to frame 0. */
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 

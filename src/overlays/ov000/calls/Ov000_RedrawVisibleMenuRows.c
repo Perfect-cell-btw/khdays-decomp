@@ -1,3 +1,7 @@
+/* Repaint the ten visible rows of the menu list: each row is drawn with the highlight sprite when
+ * its index equals selectedRow - firstRow, otherwise with the normal sprite. Rows step 2 units
+ * apart starting at y = 2. */
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov000_Elem_SetPos(void *spriteContext, int sprite, int x, int y);
 extern void Ov000_TagTracker_InvokeCallback(void *spriteContext, int sprite);

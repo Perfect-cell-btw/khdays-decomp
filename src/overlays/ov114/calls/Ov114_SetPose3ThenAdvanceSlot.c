@@ -1,3 +1,5 @@
+/* Play the anim (ov107 mode 3,1) and register the handler. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov114_ApproachTick();

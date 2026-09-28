@@ -1,3 +1,5 @@
+/* Forwards to the element list's halfword setter. */
+
 extern int data_ov002_0207f60c;
 extern int Ov002_SetHalfword20();
 

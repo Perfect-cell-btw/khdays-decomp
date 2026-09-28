@@ -1,3 +1,6 @@
+/* NitroSystem G3D: scale and inverse-scale pair of a joint animation at a frame (step-1/2/4 data,
+ * interpolated). */
+
 typedef unsigned char u8;
 typedef unsigned long u32;
 typedef signed short fx16;

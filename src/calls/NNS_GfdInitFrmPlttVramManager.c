@@ -1,3 +1,6 @@
+/* NitroSystem: inits the frame palette VRAM manager with the size and optionally installs it as the
+ * default allocator. */
+
 extern int data_02047364[];
 extern void *data_020423f4;
 extern void *data_020423f8;

@@ -1,3 +1,5 @@
+/* NitroSDK SND: finished tag when nothing is reserved, otherwise the current tag. */
+
 extern int OS_DisableInterrupts();
 extern void OS_RestoreInterrupts(int mask);
 extern int data_02044748[];

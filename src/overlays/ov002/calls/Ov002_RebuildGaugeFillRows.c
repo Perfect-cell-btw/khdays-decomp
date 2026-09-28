@@ -1,3 +1,6 @@
+/* Converts total and filled gauge units to 46-unit row counts, updates every row style, and marks
+ * the final row so the pending row pair is flushed. */
+
 typedef struct {
     unsigned char pad0000[0x44];
     int nUnitCost;

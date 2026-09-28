@@ -1,3 +1,6 @@
+/* Resets the global scale, rotation and translation, flushes the cached commands and sends the
+ * default color. */
+
 typedef struct { int m[3][3]; } MtxFx33;
 
 extern void MTX_Identity33_(MtxFx33 *mtx);

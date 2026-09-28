@@ -1,3 +1,5 @@
+/* Sets or clears the flag bit of slot entry idx. */
+
 struct Bits {
     unsigned int b0 : 3;
     unsigned int flag : 1;

@@ -1,3 +1,5 @@
+/* Queues action 7 when the animation ends. */
+
 extern int SetIndexedSlot();
 
 struct Inner {

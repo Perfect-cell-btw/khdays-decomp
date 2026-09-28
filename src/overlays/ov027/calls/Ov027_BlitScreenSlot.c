@@ -1,3 +1,5 @@
+/* Blits slot idx of the table into the screen buffer. */
+
 #pragma thumb on
 extern void func_02013484(void *pScreenDst, void *pScreenData, int srcX, int srcY,
                           int dstX, int dstY, unsigned int dstW, unsigned int dstH,

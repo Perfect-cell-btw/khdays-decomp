@@ -1,3 +1,5 @@
+/* Plays anim 5, resets the part and installs the next step. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void Ov220_startAnim(int obj, int arg);
 extern void SetIndexedSlot(void *obj, int idx, void *value);

@@ -1,3 +1,5 @@
+/* Registers Ov163_CreateNamedEntity as the factory for entity class 0x19. */
+
 extern void Ov107_RegisterHandler(int arg0, void (*arg1)(int));
 extern void Ov163_CreateNamedEntity(int);
 

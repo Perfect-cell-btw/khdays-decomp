@@ -1,3 +1,5 @@
+/* Resets the circle state and installs the circle tick. */
+
 /* Clear +0x2c/+0x3c, then dispatch via c634. */
 extern int SetIndexedSlot(int, int, void *);
 extern int Ov238_CircleTick(int);

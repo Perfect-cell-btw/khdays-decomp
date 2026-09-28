@@ -1,3 +1,5 @@
+/* Script command: when ready stores the selection and applies it; returns 1. */
+
 extern int IsSubStructValidAndReady(void);
 extern void SetSelectionIfChanged(unsigned a);
 extern unsigned char data_020425e8;

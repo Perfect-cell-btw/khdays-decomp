@@ -1,3 +1,5 @@
+/* After 0x3000 stops the animation speed and installs the pause end. */
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov120_stIdlePose10Advance(void);
 

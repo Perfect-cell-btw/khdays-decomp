@@ -1,3 +1,6 @@
+/* Advances the turn timer and rotates the facing vector; queues action 2 when the animation ends.
+ */
+
 extern int SetIndexedSlot();
 extern int MTX_RotY33_();
 extern int MTX_MultVec33();

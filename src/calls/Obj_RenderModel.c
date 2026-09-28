@@ -1,3 +1,6 @@
+/* Loads the object's transform (position, quaternion, scale) into the current matrix, draws the
+ * model, then moves each attached node to its joint. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

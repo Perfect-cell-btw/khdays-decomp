@@ -1,3 +1,5 @@
+/* Stamps the cell block into the second tile area (+0x380). */
+
 extern int data_ov002_0207f638;
 extern int Ov002_StampCellBlock();
 

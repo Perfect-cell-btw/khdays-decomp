@@ -1,3 +1,6 @@
+/* Spawn a child object via CreateRegistryEntry (callback Ov296_SetupActorNodeAndStateSlots), link
+ * it back to this object and store it at +0x214. */
+
 extern void CreateRegistryEntry();
 extern void Ov296_SetupActorNodeAndStateSlots();
 

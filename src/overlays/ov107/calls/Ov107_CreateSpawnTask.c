@@ -1,3 +1,6 @@
+/* Registry task (0x64) recording owner, id, kind, enabled and node; spawns the slot (Slot_Spawn)
+ * when the owner's flag bit 0 at +0x40 is set. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

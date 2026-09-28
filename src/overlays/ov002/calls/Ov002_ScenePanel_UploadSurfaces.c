@@ -1,3 +1,5 @@
+/* When shown, enqueues both of the scene panel's surfaces. */
+
 extern int Ov002_EnqueueBothSurfaces();
 extern int data_ov002_0207f624;
 

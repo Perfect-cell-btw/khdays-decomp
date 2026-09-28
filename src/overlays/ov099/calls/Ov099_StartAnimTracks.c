@@ -1,3 +1,5 @@
+/* Marks the node active, binds animation tracks 0, 2 and 1 and rewinds them to frame 0. */
+
 extern int BindAnimTrack();
 extern int Anim_SetFrameWrapped();
 

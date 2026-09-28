@@ -1,3 +1,5 @@
+/* Binds each of the five charge animation tracks to one phase and rewinds their frames. */
+
 extern int BindAnimTrack(int, unsigned short, int, short);
 extern int Anim_SetFrameWrapped(int, unsigned short, int);
 

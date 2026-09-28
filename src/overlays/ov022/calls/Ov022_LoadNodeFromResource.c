@@ -1,3 +1,5 @@
+/* Unpacks entry index of the resource (ids, packed fields, facing, flags) into the node. */
+
 typedef struct Ov022Bits4e8 {
     unsigned char bit0 : 1;
     unsigned char bit1 : 1;

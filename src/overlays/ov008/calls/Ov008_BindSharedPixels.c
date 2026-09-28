@@ -1,3 +1,5 @@
+/* Points both pixel buffers of the object at the shared pixel area. */
+
 extern int Ov008_GetCtxBlock968c(void);
 void Ov008_BindSharedPixels(int *obj)
 {

@@ -1,3 +1,5 @@
+/* Script command: advances the roster setup; returns whether it progressed. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_AdvanceRosterSetup();
 

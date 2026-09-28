@@ -1,3 +1,6 @@
+/* Ticks all ov057 scene-part state machines and publishes local-player flags after charge begins.
+ */
+
 extern void Ov057_TickChargeSequence(int a, int b, int c);
 extern void Ov057_UpdateTracksWhileActive(int a, int b, int c);
 extern void Ov057_DriveSwingSequence(int a, int b, int c);

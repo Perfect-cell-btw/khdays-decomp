@@ -1,3 +1,5 @@
+/* Damps the velocity until almost still, then plays anim 10 and installs the end step. */
+
 struct v3 { int a, b, c; };
 extern void ScaleVec3Fx12();
 extern int VEC_Mag();

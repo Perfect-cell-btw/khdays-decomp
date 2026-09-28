@@ -1,3 +1,5 @@
+/* Whether the point lies outside the node's 60-degree view cone. */
+
 typedef int fx32;
 
 typedef struct {

@@ -1,3 +1,5 @@
+/* Primes the sub-scene from the cursor, targets page 4 and plays the confirm sound. */
+
 extern void Ov008_PrimeSubSceneFromCursor(int);
 extern void Ov008_SetTargetSlot(int, int);
 extern void PlaySound(int, int);

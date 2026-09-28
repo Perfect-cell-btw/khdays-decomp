@@ -1,3 +1,5 @@
+/* Counts the waypoint delay down; then installs the next-waypoint step. */
+
 extern void SetIndexedSlot(void *a, int b, void *cb);
 extern void Ov243_NextWaypoint(void);
 

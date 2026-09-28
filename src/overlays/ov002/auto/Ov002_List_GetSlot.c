@@ -1,3 +1,5 @@
+/* Slot idx of the object list. */
+
 extern int data_ov002_0207fa20;
 
 int Ov002_List_GetSlot(int arg0) {

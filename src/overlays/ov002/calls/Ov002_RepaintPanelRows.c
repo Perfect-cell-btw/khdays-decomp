@@ -1,3 +1,11 @@
+/* Repaints the whole panel row list. The shared block is copied over the panel's own first, then
+ * every row up to wCount0112 is drawn in the mode the first gauge dictates - 2 only when that gauge
+ * is both active and mid-phase, 0 otherwise - and the rows between there and wRowsFilled are drawn
+ * in mode 1. The bulk call that follows is asked for wRowsPending more rows, cut back so the total
+ * never passes wRowLimit. Finally the scroll thumb is refreshed from wScrollThumb while a prompt is
+ * pending and from the row count otherwise, and bit 3 of bStateFlags is raised so the tick pushes
+ * the result. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

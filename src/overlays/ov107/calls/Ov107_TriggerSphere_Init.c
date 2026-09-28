@@ -1,3 +1,5 @@
+/* Initialises a trigger sphere (test/react hooks, center, radius, bounding box). */
+
 typedef unsigned int u32;
 
 extern void Ov107_TaskReset(int obj);

@@ -1,3 +1,5 @@
+/* Whether page B is active and has a pending action. */
+
 extern void *Ov008_GetPageB(void);
 extern int data_ov008_02090f20[];
 

@@ -1,3 +1,5 @@
+/* Steps the attack slot of the table (+0x2c2c) with the object's slot index, then forwards it. */
+
 extern char *data_ov048_020b4b80;
 extern void Ov048_ForwardToThreeSubHandlersSameArgs(void *a, void *arg1, int arg2);
 extern void Ov048_RunThreeSubHandlersIfFlagSet(void *a, void *arg1);

@@ -1,3 +1,10 @@
+/* Marker-select scene tick. Reads the pending button id: 0x20 turns the highlight on (toggle=1),
+ * 0x10 turns it off; any other id resolves a confirm/back from data_0204c190 (1 -> confirm when
+ * highlighted else back, 2 -> back). On confirm (action 4) it first steps the transition, then lays
+ * out the four markers (selected at 0, the rest parked at -0x100000) and clears pendingMode; on
+ * back (action 2) it re-enables the primary and reselects. Finally drops the highlight, notifies
+ * Ov000_PushSubWidgetValue and latches nextState=action. No-ops when nothing is pending. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

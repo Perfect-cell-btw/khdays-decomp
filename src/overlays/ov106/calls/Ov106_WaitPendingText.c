@@ -1,3 +1,5 @@
+/* State: once a pending text is flagged, moves to loading the font and caption. */
+
 extern void *data_ov106_020b8b60;
 extern void Ov106_LoadFontAndCaption(void);
 

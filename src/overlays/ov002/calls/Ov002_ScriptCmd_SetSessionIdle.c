@@ -1,3 +1,5 @@
+/* Script command: reads an int operand and sets the session idle; returns 1. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_SetSessionIdle();
 

@@ -1,3 +1,6 @@
+/* Calls two sub-handlers passing a shared buffer pointer (*globalData+0xe4+0x2c00) and the s16
+ * field at this+0x2aba to the first, buffer only to the second. */
+
 extern char *data_ov073_020ba540;
 extern void Ov073_DriveGuardSequence(void *a, void *arg1, int arg2);
 extern void Ov073_PickSourcePosAndDraw(void *a, void *arg1);

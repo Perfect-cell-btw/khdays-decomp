@@ -1,3 +1,7 @@
+/* If arg1 is 0 returns 1; else clears bit 0x20 of *this, calls RegisterSeqAndInit(this+4, arg1,
+ * arg2, arg3), and if bit 8 of *this is set copies the 3-word vec at this+0x13c into this+0xa8;
+ * returns 1. */
+
 extern void RegisterSeqAndInit();
 
 struct vec3 { int x, y, z; };

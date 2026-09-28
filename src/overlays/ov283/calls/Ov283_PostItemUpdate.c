@@ -1,3 +1,5 @@
+/* When an item is held posts an update whose kind follows the item type. */
+
 extern int Ov107_BuildAndSendUpdate();
 
 void Ov283_PostItemUpdate(int param1, int param2, int param3, int param4)

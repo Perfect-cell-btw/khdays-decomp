@@ -1,3 +1,5 @@
+/* Sets the local player's lock bits and arms the build block with the value. */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ActorSetState(int *self, int state);
 extern int data_ov047_020b4380;

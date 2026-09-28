@@ -1,3 +1,5 @@
+/* Class pfnCtor: stores the root, initializes the menu and milestones and waits for the commit. */
+
 typedef void (*Ov009Callback)(void);
 
 extern void *data_ov009_020563e0;

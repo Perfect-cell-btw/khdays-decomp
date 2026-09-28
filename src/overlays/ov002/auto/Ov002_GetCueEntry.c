@@ -1,3 +1,5 @@
+/* 12-byte cue entry idx, or NULL without table. */
+
 extern int data_ov002_0207f9f8;
 
 int Ov002_GetCueEntry(int arg0) {

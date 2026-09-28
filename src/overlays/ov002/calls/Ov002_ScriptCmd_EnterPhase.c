@@ -1,3 +1,5 @@
+/* Script command: reads an int operand and enters that phase; returns 1 (done). */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_EnterPhase();
 

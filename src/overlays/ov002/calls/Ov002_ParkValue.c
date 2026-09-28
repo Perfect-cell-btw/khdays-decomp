@@ -1,3 +1,7 @@
+/* Copy the value into the first free slot of the owner's four-slot park queue and mark that slot in
+ * use. No-op when the owner at data_ov002_0207f628 is null or all four slots are taken. Queue lives
+ * at owner +0x1434 (values) and +0x1464 (flags). */
+
 typedef struct { int x; int y; int z; } VecFx32;
 
 typedef struct {

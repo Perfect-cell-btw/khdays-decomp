@@ -1,3 +1,5 @@
+/* Rebinds the model's animation clip from the resource and restarts track 0. */
+
 extern int NNS_G3dRenderObjInit();
 extern int Snd_RegisterSeqAndBind();
 extern int FreeAllResourceTables();

@@ -1,3 +1,7 @@
+/* Resolve the handle stored at context+0x4c, then either hide it (negative value) or activate it
+ * and apply a u16. The negative test is the discriminator: a negative handle means 'no entry', not
+ * 'entry number -n'. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

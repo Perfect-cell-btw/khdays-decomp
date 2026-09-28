@@ -1,3 +1,6 @@
+/* Calls two sub-handlers, passing a shared buffer pointer (this+0x84+0x2c00) and the s16 field at
+ * this+0x2aba to the first, buffer only to the second. */
+
 extern void Ov060_DispatchToFourSubHandlers();
 extern void Ov060_UpdateSubBlocksIfEnabled();
 

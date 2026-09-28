@@ -1,3 +1,6 @@
+/* When a toggle is pending switches between sub-screen and blend capture; returns the current mode.
+ */
+
 extern void Gfx_SetupBlendCapture(void *ptr);
 extern void Gfx_SetupSubScreenCapture(void *ptr);
 extern unsigned char data_0204c214[];

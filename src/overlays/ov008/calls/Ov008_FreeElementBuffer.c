@@ -1,3 +1,5 @@
+/* Free one element buffer: null +0xc, free heap alloc at +4 (if set) and null it. */
+
 extern int NNSi_FndFreeFromDefaultHeap();
 
 struct S {

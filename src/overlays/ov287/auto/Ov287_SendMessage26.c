@@ -1,3 +1,5 @@
+/* Calls the object's message hook with an empty buffer and message 0x26. */
+
 struct Obj {
     char pad[0x24];
     void (*fn)(struct Obj *, void *, int);

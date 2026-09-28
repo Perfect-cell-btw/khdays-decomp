@@ -1,3 +1,5 @@
+/* Sets the alpha blend of the table's engine (main or sub) to alpha. */
+
 extern void G2x_SetBlendAlpha_(unsigned int reg, int a, int b, int c, int d);
 
 void SlotTable_SetBlendAlpha(char *p, int alpha) {

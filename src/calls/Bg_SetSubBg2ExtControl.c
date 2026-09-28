@@ -1,3 +1,5 @@
+/* Selects the sub extended-BG2 display mode and sets sub-engine BG2CNT. */
+
 extern void SetSubEngineGraphicsModeFromTable(void *ptr);
 extern char data_02041f0c;
 extern int data_02047390;

@@ -1,3 +1,5 @@
+/* Whether the field state's event halfword is set. */
+
 extern int data_ov002_0207f62c;
 
 int Ov002_Field_HasPendingEvent(void) {

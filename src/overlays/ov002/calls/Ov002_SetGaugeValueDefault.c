@@ -1,3 +1,5 @@
+/* Sets a gauge value with the default flags (1, 0). */
+
 extern int Ov002_SetGaugeValue();
 
 int Ov002_SetGaugeValueDefault(int a, int b, int c) {

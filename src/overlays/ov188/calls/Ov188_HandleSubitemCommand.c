@@ -1,3 +1,7 @@
+/* Handles type-5 placement commands for the named entity actor: decodes a signed 24-bit position,
+ * creates or transforms subitems for actions 0-3, creates the special resource for action 5,
+ * releases it for action 6, then forwards to the base actor handler. */
+
 typedef unsigned char u8;
 
 struct Ov188Vec3 {

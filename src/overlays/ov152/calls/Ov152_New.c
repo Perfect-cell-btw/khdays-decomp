@@ -1,3 +1,5 @@
+/* Allocates the 0x3a8-byte actor with its owner and constructor. */
+
 extern void *CallocInstance(int size);
 extern void func_ov107_020c6624(void *obj, int flag);
 extern void Ov152_ConstructPet(void);

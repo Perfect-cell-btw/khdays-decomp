@@ -1,3 +1,5 @@
+/* First inactive element of the 0x38-byte element array (or one past the end). */
+
 struct Elem {
     char pad[0x14];
     int active;

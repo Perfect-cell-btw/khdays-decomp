@@ -1,3 +1,6 @@
+/* Runs the members' attach hooks, their pairwise contact hooks and trigger hooks (host only), then
+ * the children and callbacks. */
+
 typedef unsigned short u16;
 typedef unsigned char u8;
 

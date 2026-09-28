@@ -1,3 +1,5 @@
+/* Invokes the callback of the stream group at +0x2644. */
+
 extern void Ov022_InvokeCallback24IfBit0(int arg);
 
 void Ov037_InvokeGroupCallback(char *base) {

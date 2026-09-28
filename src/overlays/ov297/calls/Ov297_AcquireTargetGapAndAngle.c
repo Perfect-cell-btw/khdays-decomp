@@ -1,3 +1,6 @@
+/* Stores the nearest target (none: queues action 2, returns -1); returns the edge gap and sets the
+ * angle. */
+
 typedef struct { int x, y, z; } VecFx32;
 
 extern int Ov107_FindNearestObject(int a, int b);

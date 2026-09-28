@@ -1,3 +1,6 @@
+/* Finds the nearest target (queues action 2 when none), returns the horizontal gap minus both
+ * radii, stores the heading (+0x58) and direction. */
+
 extern int Ov107_FindNearestObject();
 extern int VEC_Subtract();
 extern int VEC_Normalize();

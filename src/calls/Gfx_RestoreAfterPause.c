@@ -1,3 +1,6 @@
+/* Re-enables the BG layers of both engines, resets the brightness, restores the graphics mode and
+ * VBlank callback and refreshes the scene. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 

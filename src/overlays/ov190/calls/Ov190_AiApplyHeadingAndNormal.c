@@ -1,3 +1,5 @@
+/* Turns toward the heading (3x rate), composes it with the surface-normal tilt and applies it. */
+
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(void *dst, void *src, int t);
 extern void Quat_FromTwoVectors(void *dst, void *src, int m);

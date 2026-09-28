@@ -1,3 +1,7 @@
+/* Configure and activate the object at +0xd118, clear +0x966a, and pick the mode at +0xd138 for
+ * cases 0 and 27 through an explicit switch. +0xd118 is the interpolator sub-object
+ * Ov000_CreateSceneContext initialises, so this is the same 0xd18c scene context. */
+
 typedef unsigned char u8;
 typedef signed short s16;
 typedef unsigned short u16;

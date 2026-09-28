@@ -1,3 +1,5 @@
+/* Releases both table slots (+0x2c30 and +0x2d4c). */
+
 extern void *data_ov093_020bc3c0;
 extern void ReleaseField74AndCleanup(void *p);
 

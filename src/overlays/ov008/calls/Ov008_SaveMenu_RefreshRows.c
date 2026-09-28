@@ -1,3 +1,5 @@
+/* Shows each summary row's frame for its state and its cells (details only for used slots). */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

@@ -1,3 +1,5 @@
+/* When shown, refills the scene panel's tilemap. */
+
 extern int Ov002_Tilemap_RefillIfReady();
 extern int data_ov002_0207f624;
 

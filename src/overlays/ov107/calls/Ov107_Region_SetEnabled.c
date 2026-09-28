@@ -1,3 +1,5 @@
+/* Sets the enabled flag and notifies every member. */
+
 typedef void (*Callback)(void *self, int param);
 
 typedef struct {

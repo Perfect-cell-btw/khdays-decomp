@@ -1,3 +1,5 @@
+/* Copies the most recent valid touch sample (validity 0), or the last one, into out. */
+
 extern int Touch_GetRecentSamples();
 extern int MI_CpuCopy8();
 

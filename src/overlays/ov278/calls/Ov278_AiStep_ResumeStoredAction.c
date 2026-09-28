@@ -1,3 +1,5 @@
+/* If active: queues the stored action and ends the step. */
+
 extern int SetIndexedSlot();
 
 struct Sub {

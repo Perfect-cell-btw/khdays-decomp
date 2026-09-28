@@ -1,3 +1,7 @@
+/* Selects entry obj[obj[0xC]*4 + 0x18]. Bails unless signed byte[0x110] equals the active state's
+ * field66 and that field is not -1. Drives track 10 with value 0, then 3 if bit1 of byte[0x134] is
+ * set, notifies entry+8, then 3 again. */
+
 extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(int state);
 extern void NNS_G3dMdlSetMdlCullMode(int a, int b, int c);

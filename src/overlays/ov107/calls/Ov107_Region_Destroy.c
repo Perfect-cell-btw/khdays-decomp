@@ -1,3 +1,5 @@
+/* Calls every child's destroy hook, destroys the list and the instance. */
+
 extern int List_First(void *o);
 extern int List_Next(void *o);
 extern void NNSi_FndDestroyDoubleList(void *list);

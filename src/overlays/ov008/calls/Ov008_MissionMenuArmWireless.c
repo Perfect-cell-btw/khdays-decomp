@@ -1,3 +1,5 @@
+/* State: arms the wireless callback, marks the context and enters the mission menu. */
+
 extern char *data_ov008_02090fa0;
 extern void Ov008_ArmWirelessCallback(int arg0);
 extern void Ov008_MissionMenuEnter(void);

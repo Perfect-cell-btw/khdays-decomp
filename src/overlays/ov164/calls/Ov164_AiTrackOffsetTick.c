@@ -1,3 +1,5 @@
+/* Transforms the offset through the owner's matrix and scales it; acts once the animation ends. */
+
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
 extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);

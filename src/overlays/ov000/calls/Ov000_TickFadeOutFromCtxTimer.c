@@ -1,3 +1,9 @@
+/* Advance the fade from the CONTEXT timer at +0x4ae4; once 0x4cb51 ticks have passed, restamp the
+ * timer and copy next_state (+0x4ad8) into active_state (+0x4ad0). Fades OUT: the brightness
+ * argument is -(elapsed / 0x4cb5), clamped at -16. Fade ramp: 16 steps over 0x4cb51 ticks (0x4cb51
+ * / 0x4cb5 = 15.97), driven through SetMasterBrightnessSub with a NEGATIVE brightness. 16 is the DS
+ * master brightness range -- the same 0x10 Game_RunSceneLoop writes. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef unsigned long long u64;

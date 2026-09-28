@@ -1,3 +1,7 @@
+/* Teardown chain: releases the nine sub-objects hanging off obj at fixed offsets (0x1070, 0x118C,
+ * 0x1198, 0x1318, 0x1C8C, 0x2288, 0x1DA8, 0x22F8) after the root release at
+ * Ov022_ReleaseResourceTables. */
+
 extern void Ov022_ReleaseResourceTables(int a);
 extern void Ov022_TeardownIfBit0(int a);
 extern void Ov022_ClearIfBit0(int a);

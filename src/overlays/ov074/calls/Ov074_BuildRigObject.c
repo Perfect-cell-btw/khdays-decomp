@@ -1,3 +1,6 @@
+/* Builds the panel object in the root heap: slot/bit setup, callback table at +0x664, bone indices.
+ */
+
 typedef unsigned char u8;
 
 struct InitConfig {

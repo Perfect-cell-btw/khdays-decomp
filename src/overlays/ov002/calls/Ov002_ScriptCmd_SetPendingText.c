@@ -1,3 +1,5 @@
+/* Script command: resolves a text operand and sets it as the pending text; returns 1. */
+
 extern int ByteCode_ResolveOperand();
 extern int Ov106_SetPendingText();
 

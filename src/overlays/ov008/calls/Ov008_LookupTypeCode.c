@@ -1,3 +1,6 @@
+/* Advance Session_GetLocalPlayerIndex, then map the current Slot4_GetIfOccupied slot to a priority
+ * table, storing its index. */
+
 extern void Session_GetLocalPlayerIndex(void *arg0);
 extern int *Slot4_GetIfOccupied(void);
 extern int data_ov008_0208e8a4[];

@@ -1,3 +1,7 @@
+/* Queries up to four actors inside a sphere, skips actor ids already present in the per-hit mask,
+ * computes and scales a hit direction, publishes the impact position and emits the mode-specific
+ * reaction effect. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

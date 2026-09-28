@@ -1,3 +1,5 @@
+/* Creates the label and value cells of the four stat rows and places the panel widget. */
+
 #pragma opt_dead_assignments off
 
 typedef signed short s16;

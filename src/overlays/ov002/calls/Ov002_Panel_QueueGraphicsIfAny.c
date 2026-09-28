@@ -1,3 +1,5 @@
+/* Queues the panel graphics when the panel exists. */
+
 extern int data_ov002_0207f634;
 extern int Ov002_QueuePanelGraphics();
 

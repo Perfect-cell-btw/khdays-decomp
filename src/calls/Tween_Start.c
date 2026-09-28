@@ -1,3 +1,6 @@
+/* Stamp llStartTick with GetTick64() and set flag bit 0, clearing bits 1 and 2. This is what makes
+ * the object time-based: the elapsed time is measured against this stamp. */
+
 extern long long OS_GetTick(void);
 
 struct obj {

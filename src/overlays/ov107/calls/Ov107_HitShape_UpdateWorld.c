@@ -1,3 +1,5 @@
+/* Transforms the hit shape (sphere, capsule or box) into world space and refreshes its bounds. */
+
 typedef int fx32;
 typedef struct { fx32 x, y, z; } VecFx32;
 

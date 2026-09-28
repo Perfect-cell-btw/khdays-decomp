@@ -1,3 +1,5 @@
+/* Uploads page B's surface +0xdc when page B is active. */
+
 extern int Ov025_GetPageB();
 extern int EnqueueObjGfxCommand();
 extern int data_ov025_020b575c;

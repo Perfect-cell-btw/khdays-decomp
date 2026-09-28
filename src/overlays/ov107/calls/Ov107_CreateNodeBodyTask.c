@@ -1,3 +1,6 @@
+/* Registry task (0xc8) binding a node and a 44-byte body block; applies SetSubitemState for each
+ * set bit of kind, then refreshes. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

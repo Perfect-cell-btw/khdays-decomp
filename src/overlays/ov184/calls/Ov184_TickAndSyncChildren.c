@@ -1,3 +1,6 @@
+/* Refreshes the child selector, runs the object tick, then copies the object's block into both
+ * child nodes (+0x10). */
+
 extern int Ov107_ProcessObjectTick();
 extern int Ov107_RefreshAndSelectChild();
 

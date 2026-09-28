@@ -1,3 +1,6 @@
+/* Object tick slot: runs the base tick, with a zero delta while frozen (+0x1ac bit 4 under the
+ * owner flag). */
+
 extern void Ov107_ProcessObjectTick(void *obj, int arg2);
 
 void Ov146_TickUnlessFrozen(char *obj, int arg2) {

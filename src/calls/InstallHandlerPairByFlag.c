@@ -1,3 +1,7 @@
+/* Installs a pair of function pointers into the struct at data_0204bbfc: if arg0 is nonzero stores
+ * EnqueueGfxCmd0 at +0xc and EnqueueGfxCmd1 at +0x10, otherwise stores Gfd_LoadTexB and
+ * Gfd_LoadTexPlttB. */
+
 extern char data_0204bbfc[];
 extern void EnqueueGfxCmd0();
 extern void EnqueueGfxCmd1();

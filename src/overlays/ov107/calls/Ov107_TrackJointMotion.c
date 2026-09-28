@@ -1,3 +1,5 @@
+/* Follows the bound joint's position, updating the node's previous position and motion delta. */
+
 typedef int fx32;
 typedef unsigned short u16;
 typedef struct { fx32 x, y, z; } VecFx32;

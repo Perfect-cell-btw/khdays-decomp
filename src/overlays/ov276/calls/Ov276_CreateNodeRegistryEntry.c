@@ -1,3 +1,6 @@
+/* Create a sub-object via CreateRegistryEntry (kind 0x64/0x6c), back-link it, copy owner state at
+ * +0x384, and store it at +0x214. */
+
 extern void CreateRegistryEntry(void *ctx, int a, int b, void *callback, int zero, void *out);
 extern void Ov276_BeginPhasedReaction(void);
 

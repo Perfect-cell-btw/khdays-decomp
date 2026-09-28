@@ -1,3 +1,6 @@
+/* Calls Ov039_TickChargeStateGated(this, arg1+0x18+i*0x10c, arg2) for i in 0..1, then
+ * Ov039_StepStoredShot(this, arg1+0x308, arg2). */
+
 extern void Ov039_TickChargeStateGated();
 extern void Ov039_StepStoredShot();
 

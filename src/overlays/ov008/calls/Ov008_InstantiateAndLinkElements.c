@@ -1,3 +1,7 @@
+/* Two passes over items[] (stride 0x58, count elements): first call handler A on each element, then
+ * handler B on each. base is preserved across the first pass (kept for the second) so i spills to
+ * the stack there. */
+
 extern void Ov008_CreateWidget(void *context, void *entry);
 extern void Ov008_BuildNodeWithChildren(void *context, void *entry);
 

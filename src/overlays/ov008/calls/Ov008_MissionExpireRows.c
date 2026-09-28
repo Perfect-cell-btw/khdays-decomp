@@ -1,3 +1,7 @@
+/* Age every row, compact rows[4] once a row reaches 600 ticks, and take the ov105 scene branch when
+ * the compaction empties the list. 600 is the expiry threshold in ticks; the row stride is the
+ * MissionRecord 0xc0 established by the first hand-off. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

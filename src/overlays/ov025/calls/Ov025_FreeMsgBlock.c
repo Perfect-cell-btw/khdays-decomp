@@ -1,3 +1,5 @@
+/* Frees the object's message block (+0x1b4). */
+
 extern int ZeroHalfThenFree();
 
 int Ov025_FreeMsgBlock(int arg0) {

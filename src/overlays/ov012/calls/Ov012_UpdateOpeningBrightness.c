@@ -1,3 +1,6 @@
+/* Advances the opening brightness frame after MobiClip starts, applies the signed level to the sub
+ * engine, and clamps the main engine to the timeline brightness limit. */
+
 extern int Ov024_MobiClip_BufferedFrameCount(void);
 extern void GXx_SetMasterBrightness_(volatile unsigned short *reg,
                                     int brightness);

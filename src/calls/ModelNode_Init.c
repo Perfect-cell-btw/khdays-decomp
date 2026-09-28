@@ -1,3 +1,5 @@
+/* Base-inits the node, installs the model node callbacks and its child list. */
+
 extern void Node_BaseInit(void *p);
 extern void List_Init(void *p);
 extern void ModelNode_Destroy(void);

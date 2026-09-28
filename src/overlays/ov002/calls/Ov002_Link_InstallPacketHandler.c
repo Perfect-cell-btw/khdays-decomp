@@ -1,3 +1,5 @@
+/* Installs the session packet dispatcher on channel 7. */
+
 extern int StoreGlobalPtrArray4At0c();
 extern int Ov002_DispatchSessionPacket();
 

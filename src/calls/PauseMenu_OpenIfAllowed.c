@@ -1,3 +1,5 @@
+/* When the current BGM allows it, installs the pause menu frame callback and runs it. */
+
 extern int SoundMgr_Update(void);
 extern int Ov023_CanOpenPauseMenu(int);
 extern void setDualArrayEntry(int a, void *b, int c);

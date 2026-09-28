@@ -1,3 +1,5 @@
+/* Waits for the card thread, then loads the overlay image. */
+
 extern int FSi_WaitForCardThread();
 extern int FS_LoadOverlayImage();
 

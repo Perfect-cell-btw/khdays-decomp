@@ -1,3 +1,5 @@
+/* Stores the spawn position and marks it set. */
+
 extern void MI_CpuCopy8();
 extern int data_ov002_0207f62c;
 

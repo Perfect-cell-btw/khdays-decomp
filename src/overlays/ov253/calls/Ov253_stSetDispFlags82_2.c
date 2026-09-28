@@ -1,3 +1,6 @@
+/* ov node state callback: OR-set display-flag bits 0x82 into the object's [+0x60] high byte, then
+ * advance the node's state slot (SetIndexedSlot node[0x20]). */
+
 extern void SetIndexedSlot();
 extern void Ov253_AiStep_QueueAction2IfActive(void);
 void Ov253_stSetDispFlags82_2(int node) {

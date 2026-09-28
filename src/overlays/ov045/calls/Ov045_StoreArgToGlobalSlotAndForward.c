@@ -1,3 +1,6 @@
+/* Stores arg1 into the global slot *data_ov045_020b4c20+0x2df0+0x114 and clears +0x118, then
+ * tail-calls Ov022_ActorSetState(this, 0x21, slot, 0). */
+
 extern int data_ov045_020b4c20;
 extern void *Ov022_ActorSetState();
 

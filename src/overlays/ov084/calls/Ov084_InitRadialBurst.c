@@ -1,3 +1,7 @@
+/* Initialize an effect part. Phase 2 binds three slots at 120-degree offsets around vPosition;
+ * phase 1 can arm the local pending trigger. When the scene spawn bit is set, spawn slot id 0xd6.
+ */
+
 typedef signed char s8;
 typedef unsigned char u8;
 typedef unsigned short u16;

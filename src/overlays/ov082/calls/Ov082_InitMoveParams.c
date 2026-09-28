@@ -1,3 +1,5 @@
+/* Sets the move parameters (speed 0xf46 in mode 1, else 0xa2f). */
+
 extern int func_02023c40();
 
 struct S {

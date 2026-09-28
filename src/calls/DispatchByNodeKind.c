@@ -1,3 +1,6 @@
+/* Read the kind halfword at obj[0]+2 and dispatch: kind 0x16 goes to Record_ReleaseSlot, any other
+ * kind below 0x21 to FreeNodeAndChildLists, and 0x21 or above returns 0. */
+
 extern int Record_ReleaseSlot(void *ptr);
 extern int FreeNodeAndChildLists(void *ptr);
 

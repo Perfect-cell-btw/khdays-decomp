@@ -1,3 +1,5 @@
+/* First element whose +0xc word is zero, or the end. */
+
 struct Element {
     int unk0;
     int unk4;

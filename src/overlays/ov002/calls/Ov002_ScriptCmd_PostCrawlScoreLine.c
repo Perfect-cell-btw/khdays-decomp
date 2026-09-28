@@ -1,3 +1,5 @@
+/* Script command: posts the crawl score line; returns 1. */
+
 extern int QueryActiveStateOrDelegate();
 extern int Ov022_GetEntryField66();
 extern int Ov002_PostCrawlScoreLine();

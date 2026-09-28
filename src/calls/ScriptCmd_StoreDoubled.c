@@ -1,3 +1,5 @@
+/* Script command: stores twice the operand (plus a random bit when nonzero) in the current slot. */
+
 extern int ScriptVm_ReadOperandInt(void *arg);
 extern int func_01ff80a8(void);
 extern void Slot48_StoreAtCurrentIndex(void *arg, int adj);

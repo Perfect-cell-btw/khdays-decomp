@@ -1,3 +1,5 @@
+/* Whether two angles differ by more than the turn limit (larger in mode 1). */
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int func_02023c40(void);
 

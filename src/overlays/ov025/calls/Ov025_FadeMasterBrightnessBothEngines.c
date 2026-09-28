@@ -1,3 +1,7 @@
+/* Master-brightness fade for both 2D engines. Engine A gets plane mask 1; engine B takes its plane
+ * mask from the live DISPCNT (0x04001000) layer-enable bits 8-12. brightness = 0 when disabled, -8
+ * when enabled. */
+
 extern void G2x_SetBlendBrightness_(void *reg, int planeMask, int brightness);
 void Ov025_FadeMasterBrightnessBothEngines(int bEnable) {
     volatile unsigned int *pDispcntB = (volatile unsigned int *)0x04001000;

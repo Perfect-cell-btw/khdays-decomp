@@ -1,3 +1,5 @@
+/* When ready launches the rider's AI task with the vector. */
+
 struct v3 { int x, y, z; };
 
 extern int Ov146_Launch(int a, struct v3 v);

@@ -1,3 +1,5 @@
+/* Script command: reads two operands and requests the resource pair. */
+
 extern int ScriptVm_ReadOperandInt(void *a, void *b);
 extern int Res_RequestIdPair(int x);
 

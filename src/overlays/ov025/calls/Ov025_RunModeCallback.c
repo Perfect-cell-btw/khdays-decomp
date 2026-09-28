@@ -1,3 +1,5 @@
+/* Runs the callback of the current context mode, if any. */
+
 extern int Ov025_GetCtxField95cc();
 extern int data_ov025_020b37e0;
 

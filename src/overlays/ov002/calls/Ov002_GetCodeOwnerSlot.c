@@ -1,3 +1,5 @@
+/* Returns the slot that owns the session handle's code. */
+
 extern int Ov002_FindCodeOwner();
 
 int Ov002_GetCodeOwnerSlot(int arg0) {

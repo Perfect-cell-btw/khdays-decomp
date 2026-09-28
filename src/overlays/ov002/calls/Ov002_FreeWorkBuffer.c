@@ -1,3 +1,5 @@
+/* Frees the work buffer and clears it. */
+
 extern void NNSi_FndFreeFromDefaultHeap();
 extern int data_ov002_0207fa0c;
 

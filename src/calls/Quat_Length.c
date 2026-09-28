@@ -1,3 +1,5 @@
+/* Length of a 4-component fixed-point vector (quaternion). */
+
 extern int FX_Sqrt(int x);
 
 int Quat_Length(int *v)

@@ -1,3 +1,5 @@
+/* Binds the object to canned descriptor 0. */
+
 extern int Ov025_GetDescriptor0();
 extern int Ov025_SetWord0And20_2();
 

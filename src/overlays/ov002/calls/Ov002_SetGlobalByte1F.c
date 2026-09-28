@@ -1,3 +1,5 @@
+/* Stores the global state byte +0x1f. */
+
 extern int data_0204c2d0;
 
 void Ov002_SetGlobalByte1F(char arg0) {

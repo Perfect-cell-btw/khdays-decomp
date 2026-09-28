@@ -1,3 +1,6 @@
+/* Full link reset: tear the slots down, reset the peers, blank the 8-byte id array to 0xffff and
+ * put the state word back to 1. */
+
 extern int data_ov002_0207fa04;
 extern void Ov002_ResetAllSlots(void);
 extern void Ov002_ResetAllPeerSlots(void);

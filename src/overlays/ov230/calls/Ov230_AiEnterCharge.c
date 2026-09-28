@@ -1,3 +1,5 @@
+/* Snaps next to the target when one is held, plays anim 0x13 and installs the charge tick. */
+
 extern void ScaleVec3Fx12();
 extern void VEC_Subtract();
 extern void Ov107_MoveNodeAndRelayout();

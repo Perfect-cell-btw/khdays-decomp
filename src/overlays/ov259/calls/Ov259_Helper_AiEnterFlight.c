@@ -1,3 +1,5 @@
+/* Resets the flight state and installs the helper flight tick. */
+
 /* Clear +0x34/+0x38, then dispatch via c634. */
 extern int SetIndexedSlot(int, int, void *);
 extern int Ov259_Helper_AiFlightTick(int);

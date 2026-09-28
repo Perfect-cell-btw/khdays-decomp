@@ -1,3 +1,6 @@
+/* Allocates via Archive_LoadFile(arg1, arg2); if NNS_G2dGetUnpackedScreenData(r, this) succeeds
+ * returns r, else frees r via NNSi_FndFreeFromDefaultHeap and returns 0. */
+
 extern void *Archive_LoadFile();
 extern int NNS_G2dGetUnpackedScreenData();
 extern void NNSi_FndFreeFromDefaultHeap();

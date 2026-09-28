@@ -1,3 +1,5 @@
+/* Returns the inverse of the current camera matrix, computing and caching it on first use. */
+
 extern void MTX_Inverse43(const void *src, void *dst);
 
 extern struct { char _0[0xd4]; int field_d4; } data_02047394;

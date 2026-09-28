@@ -1,3 +1,6 @@
+/* Updates all five ov077 scene parts and raises the actor local flags after the li_e0 controller
+ * becomes active. */
+
 extern void Ov077_UpdateChargeSequence(int a, int b, int c);
 extern void Ov077_UpdateTracksWhileActive(int a, int b, int c);
 extern void Ov077_DriveSwingSequence(int a, int b, int c);

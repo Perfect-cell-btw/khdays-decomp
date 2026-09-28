@@ -1,3 +1,6 @@
+/* Turns toward the heading, integrates and damps the velocity, resolves it against collision and
+ * stores the new position; runs the move timer down. */
+
 extern int Angle_TurnToward();
 extern int QuatFromAxisAngle();
 extern int Srt_SetRotationQuat();

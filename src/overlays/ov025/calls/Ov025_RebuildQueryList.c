@@ -1,3 +1,5 @@
+/* Destroys the list objects, then rebuilds them for the selector. */
+
 extern int Ov025_DestroyAllListObjects_2();
 extern int Ov025_QueryFieldBySelector();
 

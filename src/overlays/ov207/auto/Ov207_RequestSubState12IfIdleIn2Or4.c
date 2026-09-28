@@ -1,3 +1,6 @@
+/* Reaction check: during action 2 or 4 with nothing pending, queues action 12; returns whether it
+ * did. */
+
 int Ov207_RequestSubState12IfIdleIn2Or4(int *r0) {
     signed char *p = *(signed char **)((char *)r0[0x214 / 4]);
 

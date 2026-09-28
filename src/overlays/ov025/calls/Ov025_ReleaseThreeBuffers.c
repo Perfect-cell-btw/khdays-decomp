@@ -1,3 +1,5 @@
+/* Teardown: run Ov025_SweepElements, then free the +0x14/+0x10/+0xc sub-allocations if present. */
+
 extern void Ov025_SweepElements();
 extern void NNSi_FndFreeFromDefaultHeap();
 

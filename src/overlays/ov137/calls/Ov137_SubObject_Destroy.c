@@ -1,3 +1,5 @@
+/* Destroys the sub-object's model and child instance, frees its table, then the base object. */
+
 extern int DestroyInstance();
 extern int FreeInstanceMemory();
 extern int Ov107_DestroyObject();

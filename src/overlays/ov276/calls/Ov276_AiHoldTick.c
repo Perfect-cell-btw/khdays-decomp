@@ -1,3 +1,5 @@
+/* Advances the timer; at 0xd48 releases the hold flags, clears pendingAction and ends the step. */
+
 extern int SetIndexedSlot();
 
 struct H {

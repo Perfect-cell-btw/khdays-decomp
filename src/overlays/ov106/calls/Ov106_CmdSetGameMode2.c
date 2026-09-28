@@ -1,3 +1,5 @@
+/* Script command: runs the ov002 handler, then sets game mode 2; returns 1. */
+
 /* Twin of Ov023_CmdSetGameMode2. */
 extern void func_ov002_0206d31c(int arg);
 extern void SetGameMode(int arg);

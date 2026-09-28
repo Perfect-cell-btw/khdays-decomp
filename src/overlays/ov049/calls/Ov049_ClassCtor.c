@@ -1,3 +1,6 @@
+/* Class pfnCtor: builds the object, loads its archive file unless disabled, requests voice ids
+ * 0x51/0xd2 and returns the decoder step. */
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern unsigned char data_0204c240;
 extern void *data_ov049_020b4c5c;

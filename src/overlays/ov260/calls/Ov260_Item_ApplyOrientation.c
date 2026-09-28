@@ -1,3 +1,5 @@
+/* Applies the orientation quaternion and the pending velocity to the item. */
+
 struct w3 { int a, b, c; };
 extern int Srt_SetRotationQuat(int dst, int src);
 extern const struct w3 data_02041dc8;

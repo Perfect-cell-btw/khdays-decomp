@@ -1,3 +1,5 @@
+/* Script command: frees and clears entry operand of the VM's table (+0x48c). */
+
 extern int ScriptVm_ReadOperandInt(int arg);
 extern int ZeroHalfThenFree(void *arg0);
 

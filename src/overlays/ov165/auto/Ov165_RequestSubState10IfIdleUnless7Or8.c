@@ -1,3 +1,6 @@
+/* Reaction check: outside actions 7/8, queues action 10 when none is pending; returns whether it
+ * did. */
+
 struct Inner {
     char pad[0x1c6];
     signed char field_1c6;

@@ -1,3 +1,5 @@
+/* Enqueues the 16-byte palette (normal or alternate) of row index. */
+
 extern const char data_ov025_020b4d2c[];
 extern const char data_ov025_020b4d3c[];
 extern void GFXi_EnqueueCommand(int command, int param, const void *data, int size);

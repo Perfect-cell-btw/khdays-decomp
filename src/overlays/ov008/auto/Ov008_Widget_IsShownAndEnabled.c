@@ -1,3 +1,5 @@
+/* Whether the widget's shown bit and enabled bit are both set. */
+
 typedef struct {
     char pad[0x64];
     unsigned int b64_0 : 2;

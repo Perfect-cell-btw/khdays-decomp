@@ -1,3 +1,5 @@
+/* Whether the session was ready at init. */
+
 extern int *data_ov008_02090f00;
 int Ov008_IsSessionReady(void)
 {

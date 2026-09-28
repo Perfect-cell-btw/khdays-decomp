@@ -1,3 +1,5 @@
+/* Refreshes the tutorial page parts and scrolls to the current row. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_Tutorial_UpdateScrollBar();
 extern int Ov025_Tutorial_PlaceMarkers();

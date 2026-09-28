@@ -1,3 +1,6 @@
+/* Tests the cast against a collision model's quad tree (after a bounds check); records the nearest
+ * face. */
+
 typedef signed short s16;
 typedef unsigned short u16;
 typedef signed int s32;

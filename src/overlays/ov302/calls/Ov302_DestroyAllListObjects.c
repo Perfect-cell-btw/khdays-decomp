@@ -1,3 +1,7 @@
+/* (Codex) iterates the NNS list at obj+0x18 via NNS_FndGetNextListObject; for each:
+ * Ov302_FreeWorkBuffers(o), NNS_FndRemoveListObject, and if nonzero NNSi_FndFreeFromDefaultHeap(o).
+ */
+
 extern void *NNS_FndGetNextListObject(void *list, void *object);
 extern void NNS_FndRemoveListObject(void *list, void *object);
 extern void Ov302_FreeWorkBuffers(void *object);

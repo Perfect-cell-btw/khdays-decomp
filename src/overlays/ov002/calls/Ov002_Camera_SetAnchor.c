@@ -1,3 +1,6 @@
+/* Anchors the orbit camera at the origin, recomputes its position from angle and radius and
+ * re-aims. */
+
 typedef struct {
     int x;
     int y;

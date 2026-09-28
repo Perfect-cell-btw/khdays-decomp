@@ -1,3 +1,8 @@
+/* Pick the per-state callback, stage the active_record for it, and update the two flag bytes at
+ * context+0x4ee and +0x4ef. Those two flags sit just below the 0x4f4 context size that
+ * Ov006_MissionCreateContext measures, so they are the last fields of the object rather than
+ * something past its end. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

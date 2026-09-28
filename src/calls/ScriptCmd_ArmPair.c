@@ -1,3 +1,5 @@
+/* Script command: arms the pair state with the two operands; returns 3. */
+
 extern int ScriptVm_ReadOperandInt(int a, void *b);
 
 int ScriptCmd_ArmPair(int param_1, int param_2) {

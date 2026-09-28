@@ -1,3 +1,5 @@
+/* NitroSDK OS: once, empties the V-count alarm queue and masks the V-count IRQ. */
+
 extern void OS_DisableIrqMask();
 
 extern struct {

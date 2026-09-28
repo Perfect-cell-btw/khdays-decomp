@@ -1,3 +1,5 @@
+/* Collect up to four collision contact points for a fixed-point sphere. */
+
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 center; int radius; } Sphere;
 typedef struct { int minX, minZ, maxX, maxZ; } BBox;

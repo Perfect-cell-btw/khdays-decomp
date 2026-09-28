@@ -1,3 +1,5 @@
+/* When active copies the owner's yaw and position into the node and draws it. */
+
 extern int Scene_DrawNode();
 
 struct Vec3 { int a, b, c; };

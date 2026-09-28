@@ -1,3 +1,5 @@
+/* Draws the node when its state is 2. */
+
 extern void Scene_DrawNode(void *p);
 
 void Ov101_DrawNodeIfState2(int *p) {

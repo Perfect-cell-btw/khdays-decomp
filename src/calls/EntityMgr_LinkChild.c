@@ -1,3 +1,5 @@
+/* Links entity slot b under entity slot a. */
+
 extern void LinkChildNode(int, int, int);
 extern int data_0204c208;
 

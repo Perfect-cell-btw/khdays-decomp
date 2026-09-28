@@ -1,3 +1,6 @@
+/* Reports whether the resource slot is in a ready state and has reached its completion threshold.
+ */
+
 extern int func_ov022_02095618(int arg0);
 
 int Ov022_IsSlotReady(unsigned int *arg0) {

@@ -1,3 +1,6 @@
+/* Counts the hit cooldown down, updates the hit shapes, respawns actors fallen below the world and
+ * ticks the rest timer. */
+
 extern int func_ov107_020c9848(void);
 extern int List_First(void *list);
 extern int List_Next(void *list);

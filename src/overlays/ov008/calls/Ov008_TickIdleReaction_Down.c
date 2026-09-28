@@ -1,3 +1,6 @@
+/* When the actor is idle (fields 0x1a/0xc/0xd all zero) and the global phase byte is in the 0x20
+ * band, start a directed reaction (field 0x13e != 0, dir from 0x13f) or the default down one. */
+
 extern void Ov008_ApplyModeWidgets(int obj, unsigned int flag);
 extern void Ov008_MissionListPage(int *obj, int dir);
 extern unsigned short data_0204c18c;

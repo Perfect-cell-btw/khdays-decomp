@@ -1,3 +1,6 @@
+/* Applies an actor hit event: selects the reaction mode, computes and clamps damage, updates hit
+ * points, emits the alternating reaction effect and requests the next actor state. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

@@ -1,3 +1,6 @@
+/* ov node state callback: stores object[+0x2c]*30/5 into a state field (magic-multiply divide),
+ * then advances/guards the node state slot. */
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 void Ov192_stDiv5Store(int *node) {
     int v = *(int *)(*node + 0x2c) * 0x1e;

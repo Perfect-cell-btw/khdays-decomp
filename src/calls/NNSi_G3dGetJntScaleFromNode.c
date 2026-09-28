@@ -1,3 +1,6 @@
+/* NitroSystem G3D: joint scale taken from the model's node data through the render state's scale
+ * function. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned long u32;

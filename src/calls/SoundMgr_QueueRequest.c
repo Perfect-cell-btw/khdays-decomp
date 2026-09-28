@@ -1,3 +1,6 @@
+/* Queues a request of kind (updating the pending one of the same kind in place) unless it is
+ * already current. */
+
 extern unsigned char *data_0204c234;
 extern unsigned char *SoundMgr_PeekQueued(int arg);
 extern void ScriptQueue_Push(int arg0, int arg1, int arg2);

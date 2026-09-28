@@ -1,3 +1,5 @@
+/* Updates each used row's number tags (three digits, value and availability). */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

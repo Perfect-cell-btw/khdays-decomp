@@ -1,3 +1,5 @@
+/* Clears the holder link, sets the 0x80 stance flag and clears bit 0. */
+
 struct Vec3_020cf740 { int x, y, z; };
 extern const struct Vec3_020cf740 data_02041dc8;
 extern void SetIndexedSlot(int *a, int i, int v);

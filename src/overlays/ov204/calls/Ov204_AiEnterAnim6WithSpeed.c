@@ -1,3 +1,5 @@
+/* Sets the speed, plays model anim 1 and anim 6 and installs the next step. */
+
 extern void Ov107_StartAnim();
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);

@@ -1,3 +1,5 @@
+/* Sets slot flag 0 from the active word (+0x8e48) and clears slot flag 1; returns 0. */
+
 extern int data_ov106_020b8b60;
 extern void Ov002_SetSlotFlag1(int index, int flag);
 

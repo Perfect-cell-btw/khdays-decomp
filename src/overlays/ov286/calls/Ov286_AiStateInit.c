@@ -1,3 +1,6 @@
+/* Resets the action state, caches the position pointers, sets stance bits 0x16 and installs the AI
+ * slots. */
+
 struct bf { unsigned b : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov286_stateSetFlagsClearBit(void);

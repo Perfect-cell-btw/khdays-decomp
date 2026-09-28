@@ -1,3 +1,6 @@
+/* vecAim + phase.vecMark rotated about Y by the node heading (angle - 0x8000 + 0x8000, /16 into the
+ * sin/cos table); struct return. */
+
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } MtxFx33;
 

@@ -1,3 +1,7 @@
+/* Zeroes the entry header (halfword at obj[0], bytes at obj+2, words at obj+8/0x54), sets the two
+ * ids at obj+0xC/0x10 to -1, clears the 15-word array at obj+0x18, and writes 0xFFFF to the
+ * halfword at obj+0x6c. */
+
 void Ov022_InitEntryState(char *obj) {
     int i;
     int *q;

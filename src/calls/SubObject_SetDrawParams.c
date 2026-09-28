@@ -1,3 +1,5 @@
+/* Stores the draw parameters of sub-object entry idx and dispatches its draw. */
+
 extern void SubObject_DispatchDraw(void *ptr, int index);
 
 void SubObject_SetDrawParams(unsigned char *ptr, int index, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {

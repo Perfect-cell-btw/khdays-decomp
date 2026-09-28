@@ -1,3 +1,5 @@
+/* Releases a live slot object (and its resources when it owns them) and clears it. */
+
 extern void ReleaseField74AndCleanup(void *object);
 extern void FreeAllResourceTables(void *object);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);

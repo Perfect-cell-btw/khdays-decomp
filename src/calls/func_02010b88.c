@@ -1,3 +1,6 @@
+/* NitroSystem FND: word-aligns the region and creates an expanded heap in it (NULL when too small).
+ */
+
 extern void *NNSi_FndInitExpHeap(void *hh, void *end, int opt);
 
 void *func_02010b88(unsigned int start, unsigned int size, int opt)

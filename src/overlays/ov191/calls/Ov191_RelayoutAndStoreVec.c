@@ -1,3 +1,5 @@
+/* Re-lays the node out, stores the vector at +0x394 and sets flags60 bit 8. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

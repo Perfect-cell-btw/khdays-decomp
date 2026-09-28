@@ -1,3 +1,5 @@
+/* NitroSDK CTRDG: module-info ready notification (1) sets the flag; anything else panics. */
+
 extern void OS_Terminate(void);
 extern unsigned short data_02046d4c;
 

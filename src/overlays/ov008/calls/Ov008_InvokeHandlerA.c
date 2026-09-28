@@ -1,3 +1,5 @@
+/* Runs the active handler of slot A (1 when none). */
+
 typedef int (*Unk0205137cCallback)(int arg0);
 
 typedef struct {

@@ -1,3 +1,8 @@
+/* ITCM getter: returns the word at +0x20 of the idx'th 0xC-byte entry of the table at
+ * *(data_ov022_020b2e78 + 4). Returns 0 when the table pointer is null or the entry's +4 pointer is
+ * null. Hot cross-overlay callee. Ov022_OnEndMessage reads that word as an actor and reaches its
+ * reaction context at a fixed +0x2288, which is why the return type is Ov022Actor *. */
+
 extern int data_ov022_020b2e78;
 
 int GetEntryField20ByIndex(int idx) {

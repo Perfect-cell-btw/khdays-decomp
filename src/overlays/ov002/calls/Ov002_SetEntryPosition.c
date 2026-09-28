@@ -1,3 +1,6 @@
+/* Write a VecFx32 into the entry's object at +0x104, indexing the 0x18-byte entry table at ctx+0x44
+ * by the id's resolved slot. */
+
 typedef struct { int x, y, z; } VecFx32;
 
 extern int data_ov002_0207fa14;

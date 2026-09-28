@@ -1,3 +1,5 @@
+/* Releases the element's node item when it has one. */
+
 extern int Render_ReleaseNodeItem();
 
 void Ov002_Element_ReleaseNode(int arg0) {

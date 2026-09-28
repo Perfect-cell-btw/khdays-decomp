@@ -1,3 +1,5 @@
+/* Script command: reads an int operand into global byte 0x1f; returns 1. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_SetGlobalByte1F();
 

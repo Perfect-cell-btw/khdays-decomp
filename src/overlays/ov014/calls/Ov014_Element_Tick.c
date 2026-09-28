@@ -1,3 +1,5 @@
+/* Element tick: notifies the player in range, advances the open/close state and draws the node. */
+
 extern int Session_IsActive(void);
 extern int Ov002_IsSessionOpen(void);
 extern int Ov014_IsPlayerInRange(void *self);

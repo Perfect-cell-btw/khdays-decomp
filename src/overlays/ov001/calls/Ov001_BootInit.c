@@ -1,3 +1,11 @@
+/* Overlay 1 boot/init entry point. Sets POWCNT2 (0x04000304) bits and clears display engine B's BG3
+ * enable (bit 16 of 0x04001000), then runs
+ * BootInitHookNoOp/GX_Init/OS_InitTick/RTC_Init/StoreGlobalPairAt118(0x500,0x2400)/GX_DispOff/SetMasterBrightnessMain(0x10)/SetMasterBrightnessSub(0x10)/GfxQueue_Configure(&data_0204be24,0x20)/Boot_InitVBlank
+ * to prep subsystems, enables IRQ mask 0x40000, arms IME (0x04000208), and finally dispatches the
+ * ov001 subsystems (func_ov001_0204cf5c heap allocators, Ov001_ClearVideoMemory GX clear,
+ * Ov001_SetupDisplayRegs DISPCNT setup, Ov001_InitTouchPanel misc, Ov001_SeedMathRandContexts RNG
+ * seed). */
+
 extern void BootInitHookNoOp(void);
 extern void GX_Init(void);
 extern void OS_InitTick(void);

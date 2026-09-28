@@ -1,3 +1,5 @@
+/* Unless busy switches to tab 0 and plays the tab sound. */
+
 extern int Ov025_GetPageB();
 extern int Ov025_SwitchMenuTab();
 extern int PlaySound();

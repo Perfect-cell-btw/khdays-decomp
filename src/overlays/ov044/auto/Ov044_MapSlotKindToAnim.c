@@ -1,3 +1,5 @@
+/* Picks the animation id (0x6b, 0x56, 0x55, 0x55, v + 0x55) from the slot kind byte at +0x918. */
+
 int Ov044_MapSlotKindToAnim(unsigned char *p) {
     unsigned char v = p[0x918];
     switch (v) {

@@ -1,3 +1,6 @@
+/* Quaternion of the look-at rotation from the owner position (+0x74) toward the context target
+ * (+0x44). */
+
 extern int Mtx33_LookAt();
 extern int Quat_FromMtx33();
 extern int data_02042264;

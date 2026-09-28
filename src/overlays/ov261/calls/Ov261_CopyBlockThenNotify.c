@@ -1,3 +1,6 @@
+/* After Ov107_ProcessObjectTick, copies the 11-word block obj+0xa0 into the child node, then (if
+ * the notify target is non-null) calls Ov002_Element_CallHook30. */
+
 extern void Ov107_ProcessObjectTick(void *obj);
 extern void Ov002_Element_CallHook30(int a, void *b);
 struct blk11 { int w[11]; };

@@ -1,3 +1,5 @@
+/* Run the refresh pass over this enemy's three 0x30-byte part records. */
+
 extern void Ov022_InvokeCallback24IfBit0();
 
 void Ov075_RefreshParts(int this_) {

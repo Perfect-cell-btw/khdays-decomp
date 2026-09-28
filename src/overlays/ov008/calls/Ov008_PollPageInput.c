@@ -1,3 +1,5 @@
+/* Polls the input source and routes presses to the enabled pages A/B. */
+
 typedef unsigned char  u8;
 typedef unsigned short u16;
 

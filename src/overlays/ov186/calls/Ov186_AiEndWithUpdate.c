@@ -1,3 +1,6 @@
+/* Sets the stance flags (hi byte bit 0 clear, |0x86), +0x1ae |= 3, clears child +0x388 bit 0, posts
+ * update 0x120/4, clears pendingAction and ends the AI task. */
+
 extern int Ov107_BuildAndSendUpdate();
 extern int SetIndexedSlot();
 

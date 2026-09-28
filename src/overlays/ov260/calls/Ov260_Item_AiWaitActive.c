@@ -1,3 +1,5 @@
+/* Queues action 1 once the item is active. */
+
 extern int SetIndexedSlot();
 
 struct Sub {

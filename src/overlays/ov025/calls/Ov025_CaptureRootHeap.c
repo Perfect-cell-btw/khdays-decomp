@@ -1,3 +1,5 @@
+/* Captures the current root heap and returns the heap getter step. */
+
 extern int NNSi_FndGetCurrentRootHeap();
 extern int data_ov025_020b5754;
 extern int Ov025_MsgQueue_GetHeap();

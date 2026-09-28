@@ -1,3 +1,5 @@
+/* Touch page callback: publishes the slot value unless the shutdown hook takes it. */
+
 extern int Ov002_RunShutdownHook();
 extern int Ov002_PublishSlotValueA();
 

@@ -1,3 +1,6 @@
+/* Walks the record list appending the records passing the eligibility gate (kind, id < 900, group,
+ * progress flags). */
+
 /* Dispatch to Ov005_WalkRecordsAppendMatching with handler Ov005_IsEncounterEligible. */
 extern int Ov005_WalkRecordsAppendMatching(int a, int b, int c, void *handler);
 extern void Ov005_IsEncounterEligible(void);

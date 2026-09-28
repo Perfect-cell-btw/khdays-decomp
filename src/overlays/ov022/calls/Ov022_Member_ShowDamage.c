@@ -1,3 +1,5 @@
+/* Reports a hit on member index (locally) and spawns the damage number above it. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef signed short s16;

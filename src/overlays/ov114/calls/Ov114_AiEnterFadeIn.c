@@ -1,3 +1,5 @@
+/* Plays anim 5 and installs the sub-object fade-in. */
+
 extern void Ov107_PostTagUpdate(int v, int a, int b);
 extern void SetIndexedSlot(void *a, int b, void *cb);
 extern void Ov114_FadeInSubObject(void);

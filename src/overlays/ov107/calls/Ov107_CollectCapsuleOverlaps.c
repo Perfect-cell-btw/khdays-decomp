@@ -1,3 +1,6 @@
+/* Collects the owner's container entries whose capsule (+0x78 of their shape) is within its radius
+ * of the position. */
+
 extern int List_First(void *list);
 extern int List_Next(void *list);
 extern int Capsule_ClosestToBox(void *a, void *b, int c, int d, int e, int f);

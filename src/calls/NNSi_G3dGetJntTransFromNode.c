@@ -1,3 +1,6 @@
+/* NitroSystem G3D: joint translation taken from the model's node data (flags identity when it has
+ * none). */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned long u32;

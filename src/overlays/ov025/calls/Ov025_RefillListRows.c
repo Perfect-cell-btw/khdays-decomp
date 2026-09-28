@@ -1,3 +1,8 @@
+/* Refill up to 6 visible list rows from scroll index (field 0xc / 32): walk the row list
+ * (Ov008_GetNextMissionEntry_2 then _0205b650), drawing each via Ov008_DrawMissionRow, stopping at
+ * the list end or when the clamped range (field 0x6e) is exceeded; marks the view built (+0x48 =
+ * 1). */
+
 extern int Ov025_GetNextMissionEntry_2(int index);
 extern int Ov025_GetNextMissionEntry(int node);
 extern void Ov025_DrawMissionRow(int obj, int slot, int node);

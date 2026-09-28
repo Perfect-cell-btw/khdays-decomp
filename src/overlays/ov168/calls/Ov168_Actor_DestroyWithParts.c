@@ -1,3 +1,6 @@
+/* Destroys the model (+0x384) and the three part objects (+0x39c), frees the part array, runs
+ * Ov107_DestroyObject. */
+
 extern int DestroyInstance();
 extern int FreeInstanceMemory();
 extern int Ov107_DestroyObject();

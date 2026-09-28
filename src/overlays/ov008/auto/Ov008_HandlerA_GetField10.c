@@ -1,3 +1,5 @@
+/* Follow the +0x10 link of the stride-8 table entry indexed by the first ov008 counter. */
+
 struct ov008_ptr_slot {
     char *ptr;
     int _pad;

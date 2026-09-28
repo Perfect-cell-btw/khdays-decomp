@@ -1,3 +1,5 @@
+/* Copies 8 bytes into slot idx (0-3) of the global slot table. */
+
 extern int MI_CpuCopy8();
 
 extern char data_020429c8[];

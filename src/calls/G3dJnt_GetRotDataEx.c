@@ -1,3 +1,6 @@
+/* NitroSystem G3D: rotation matrix of a joint animation at a frame with interpolation across the
+ * loop point. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned long u32;

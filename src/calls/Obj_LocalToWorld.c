@@ -1,3 +1,6 @@
+/* Transforms a local point by the object's scale, rotation and offset (copies it when the object is
+ * flagged). */
+
 typedef struct {
     int x;
     int y;

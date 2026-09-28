@@ -1,3 +1,5 @@
+/* Calls the node's +0x80 hook, if any. */
+
 typedef int (*fp)();
 
 int Node_CallHook80(char *p) {

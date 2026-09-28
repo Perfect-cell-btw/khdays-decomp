@@ -1,3 +1,5 @@
+/* Node count steps after the list head. */
+
 struct Node02031c30 {
     char _0[0x5c];
     struct Node02031c30 *next;

@@ -1,3 +1,5 @@
+/* Runs the object tick, then copies the transform and scale into the model. */
+
 extern int Ov107_ProcessObjectTick();
 
 struct s44 {

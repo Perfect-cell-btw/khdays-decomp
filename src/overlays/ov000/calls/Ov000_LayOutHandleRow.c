@@ -1,3 +1,7 @@
+/* Lays out one list row: places the group's first handle at (0xe8000, (row+0x10) << 12), then walks
+ * the group's handles, enabling each and stepping the Y position down by 0x8000 per entry, and
+ * finally places the closing handle at the position reached. */
+
 typedef unsigned char u8;
 
 typedef struct OverlayVector {

@@ -1,3 +1,5 @@
+/* Free the buffer at rootCtx+0x8d14 and null the slot, if allocated. */
+
 extern int NNSi_FndFreeFromDefaultHeap(int block);
 extern char *data_ov002_0207fa00;
 void Ov002_FreeRootBuffer0x8d14(void) {

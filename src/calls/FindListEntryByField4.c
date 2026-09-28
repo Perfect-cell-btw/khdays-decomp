@@ -1,3 +1,6 @@
+/* Searches the doubly-linked list at this (List_First first / List_Next next) for an entry whose +4
+ * field equals arg1; returns that entry or 0. */
+
 extern void *List_First();
 extern void *List_Next();
 

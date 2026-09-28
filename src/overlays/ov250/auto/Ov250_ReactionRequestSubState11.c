@@ -1,3 +1,6 @@
+/* Reaction check: during action 12 queues 0 and returns 1; otherwise, when ready and moving
+ * (2/4/7/8), queues 11. */
+
 struct Inner {
     unsigned char pad[0x17a];
     unsigned char bf17a : 1;

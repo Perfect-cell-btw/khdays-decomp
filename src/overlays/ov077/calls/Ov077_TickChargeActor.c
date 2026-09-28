@@ -1,3 +1,6 @@
+/* Ticks the actor charge phase, waits for the charge sequence or action gate, then transitions to
+ * mode 0x22 or clears both motion positions and finishes the actor. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 typedef unsigned long long u64;

@@ -1,3 +1,6 @@
+/* Ticks all ov038 scene-part state machines and publishes local-player flags after charge begins.
+ */
+
 extern void Ov038_StepCharge(int a, int b, int c);
 extern void Ov038_UpdateTracksWhileActive(int a, int b, int c);
 extern void Ov038_DriveSwingSequence(int a, int b, int c);

@@ -1,3 +1,6 @@
+/* Ov107_ProcessObjectTick, then copies the actor's 44-byte transform block into its model (+0x10).
+ */
+
 extern int Ov107_ProcessObjectTick();
 
 struct Block { int a[11]; };

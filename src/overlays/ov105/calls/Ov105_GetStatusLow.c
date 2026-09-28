@@ -1,3 +1,5 @@
+/* Returns the u16 status at wireless state +0xc. */
+
 /* Read the u16 field at (&data_ov105_020c04c0 + 0xc). */
 extern int data_ov105_020c04c0;
 int Ov105_GetStatusLow(void) {

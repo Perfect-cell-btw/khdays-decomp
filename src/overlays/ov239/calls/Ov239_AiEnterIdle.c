@@ -1,3 +1,5 @@
+/* Plays looping anim 1, arms the 0x1000 timer and installs the countdown. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov239_AiIdleCountdown(void);

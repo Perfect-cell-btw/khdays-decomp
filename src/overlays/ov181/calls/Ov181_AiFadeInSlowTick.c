@@ -1,3 +1,5 @@
+/* Fades the object in (+0x394) over 0x555; then continues when the watched flag clears. */
+
 extern int FX_Div();
 extern int RandNextScaled();
 extern int SetIndexedSlot();

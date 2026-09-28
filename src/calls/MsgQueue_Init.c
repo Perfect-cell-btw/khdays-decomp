@@ -1,3 +1,5 @@
+/* Clears the four message queue slots and installs the receive dispatcher on channel 11. */
+
 extern void StoreGlobalPtrArray4At0c(int a, void (*b)(void));
 extern void MsgQueue_RecvDispatch(void);
 

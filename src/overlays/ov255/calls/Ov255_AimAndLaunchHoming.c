@@ -1,3 +1,5 @@
+/* Aim/scale variant of Ov257_AimAndLaunchHoming using Ov255_SteerToTarget and node[0x17]. */
+
 extern void Ov255_SteerToTarget(int node, int arg, void *outVec, int *outScale);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void SetIndexedSlot(int self, int idx, int cb);

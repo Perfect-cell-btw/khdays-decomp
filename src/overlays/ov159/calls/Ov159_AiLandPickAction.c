@@ -1,3 +1,6 @@
+/* When the landing animation ends queues action 2, or action 6/7 at random once the counter ran
+ * out. */
+
 extern int RandNextScaled();
 extern int SetIndexedSlot();
 

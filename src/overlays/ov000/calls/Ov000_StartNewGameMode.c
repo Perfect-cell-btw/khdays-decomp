@@ -1,3 +1,7 @@
+/* Enters New Game mode: sets activeMode=1, loads the resource container
+ * (Msg_OpenContainerAndReadHeader) and sets up the resource tracker/cell from the template at
+ * data_ov000_0205a858. */
+
 typedef unsigned char  u8;
 typedef unsigned int  u32;
 

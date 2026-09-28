@@ -1,3 +1,9 @@
+/* Builds the four gauges from a setup block. A shared 0xc0-byte block is copied and a second one
+ * allocated first. Then, per gauge, the requested count is clamped to the cap, the count pair is
+ * seeded with the total and a zero, and a gauge that asks for anything at all gets its own block
+ * copied and a private allocation filled from it, which raises that gauge's bit in bStateFlags so
+ * the tick repaints it. Every gauge, empty or not, is handed to the shared setter with mode 7. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

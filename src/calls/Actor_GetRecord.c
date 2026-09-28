@@ -1,3 +1,6 @@
+/* Record index -> pointer: the entity manager's table for a free actor, else the actor's own table
+ * (+0xac); NULL for 0xff. */
+
 extern void *EntityMgr_GetRecord(int index);
 
 void *Actor_GetRecord(unsigned char *ptr, int index) {

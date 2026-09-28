@@ -1,3 +1,5 @@
+/* Walks the record list appending the records whose flag is clear and hi(+8) < value. */
+
 extern void Ov302_ParseRecordListAppendMatches(void *a, void *b, void *c, void *cb);
 extern void Ov302_RecordFilter_BelowMax(void);
 

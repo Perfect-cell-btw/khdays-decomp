@@ -1,3 +1,12 @@
+/* Fill the scene's 18-entry handle table from resource ids 4, 5, then 6..21 -- the first two
+ * written individually and the remaining sixteen in a loop, all through Ov000_FindEntryById against
+ * the embedded object. LAYOUT CONFLICT, recorded rather than resolved: this function is handed the
+ * current root heap block, which for ov000 is Ov000SceneContext, and it writes 18 ints at +8
+ * (covering +8..+0x4f). Ov000SceneContext currently declares renderNode at +12, pad0010 at +16 and
+ * selectionObject at +76, all inside that span. One of the two views is wrong and this function
+ * cannot tell you which, so nothing was merged. Settle it against whatever allocates or clears the
+ * whole object before building on either. */
+
 typedef unsigned char u8;
 
 typedef struct {

@@ -1,3 +1,6 @@
+/* Processes confirm/cancel input, updates the cursor, redraws the four Mission Menu option labels
+ * and returns the next state callback when leaving the screen. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

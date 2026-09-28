@@ -1,3 +1,5 @@
+/* Page B's busy word when active, else 0. */
+
 extern int Ov025_GetPageB();
 extern int data_ov025_020b575c;
 

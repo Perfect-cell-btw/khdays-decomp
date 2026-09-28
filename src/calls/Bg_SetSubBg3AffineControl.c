@@ -1,3 +1,5 @@
+/* Selects the sub affine-BG3 display mode and sets sub-engine BG3CNT with the area-over flag. */
+
 extern void SetSubEngineGraphicsModeFromTable(void *ptr);
 extern char data_02041ecc;
 extern int data_02047390;

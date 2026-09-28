@@ -1,3 +1,6 @@
+/* NitroSDK OS: once, reserves timer 1 for alarms, empties the alarm queue and masks the timer IRQ.
+ */
+
 extern void OSi_SetTimerReserved(int);
 extern void OS_DisableIrqMask(unsigned int);
 

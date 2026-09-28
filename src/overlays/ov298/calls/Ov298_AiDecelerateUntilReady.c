@@ -1,3 +1,6 @@
+/* Slows the drift; once the ready flag is set plays the held-item anim 3 and anim 4 and installs
+ * the next step. */
+
 struct vec3 { int x, y, z; };
 struct b1 { unsigned char b:1; };
 

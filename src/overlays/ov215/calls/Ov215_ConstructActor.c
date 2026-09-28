@@ -1,3 +1,7 @@
+/* Builds the ov215 actor: installs its nine state-slot callbacks, its collision box, the rig and
+ * the effect subitem it drives, five attachment subitems and the two nodes it publishes its pose
+ * through. */
+
 typedef unsigned short u16;
 typedef struct { int x, y, z; } VecFx32;
 typedef struct { void *node; int pad; } Slot;

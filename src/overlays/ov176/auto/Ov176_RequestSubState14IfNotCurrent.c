@@ -1,3 +1,6 @@
+/* Reaction check: queues action 14 unless it is already the current action; returns whether it did.
+ */
+
 struct A {
     char pad[0x1c6];
     signed char b1c6;

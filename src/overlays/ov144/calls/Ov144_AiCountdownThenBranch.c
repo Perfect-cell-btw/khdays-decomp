@@ -1,3 +1,5 @@
+/* Counts the timer down; then installs the branch step. */
+
 extern void SetIndexedSlot(void *a, int b, void *cb);
 extern void Ov144_BranchInvokeOrCopySlotThenAdvance(void);
 

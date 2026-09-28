@@ -1,3 +1,5 @@
+/* Unlinks the held node, then aims at the target. */
+
 extern int Ov107_UnlinkNodeFromOwner();
 extern int Ov107_ActionResource_GetOffsetAndScale();
 extern int Vec3TransformViaTempMtx();

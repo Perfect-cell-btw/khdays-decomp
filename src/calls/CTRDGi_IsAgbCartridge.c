@@ -1,3 +1,6 @@
+/* NitroSDK CTRDG: whether the module info reports a GBA cartridge (Nintendo maker id, unit code 4).
+ */
+
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned size);
 extern void DC_StoreRange(void *addr, unsigned size);
 

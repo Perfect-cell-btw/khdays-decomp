@@ -1,3 +1,5 @@
+/* Loads the sub engine's BG extended palette (begin/load/end). */
+
 extern void GXS_BeginLoadBGExtPltt(void);
 extern void GXS_LoadBGExtPltt(void *src, unsigned offset, unsigned size);
 extern void GXS_EndLoadBGExtPltt(void);

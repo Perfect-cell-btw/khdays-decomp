@@ -1,3 +1,5 @@
+/* Configures both channels to 0 and marks the object armed. */
+
 extern void Ov031_configTwoChannelsPair();
 
 struct S { int f0; int f4; };

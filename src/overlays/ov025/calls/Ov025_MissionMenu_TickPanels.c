@@ -1,3 +1,5 @@
+/* Drags the info panel and ticks the slider when active. */
+
 extern int Ov025_DragInfoPanel();
 extern int Ov025_TickSlider();
 

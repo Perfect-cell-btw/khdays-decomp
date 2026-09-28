@@ -1,3 +1,5 @@
+/* Restores the default animation bindings for the ov094 actor. */
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 

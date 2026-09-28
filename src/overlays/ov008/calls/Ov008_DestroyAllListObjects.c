@@ -1,3 +1,5 @@
+/* Destroys every object of the list at +0x4a38. */
+
 extern void *NNS_FndGetNextListObject(void *list, void *object);
 extern void Ov008_DestroyObject(void *context, void *entry);
 

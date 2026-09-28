@@ -1,3 +1,5 @@
+/* UI setup entry 3: blits the tile region with the computed source, mode 1. */
+
 extern int Ov002_BlitTileRegion();
 extern int Ov002_Compute_a_2b_2cd();
 

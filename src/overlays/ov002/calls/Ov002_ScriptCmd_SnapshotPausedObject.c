@@ -1,3 +1,5 @@
+/* Script command: snapshots the paused object; returns 1. */
+
 extern int ByteCode_ResolveOperand();
 extern int Ov002_SnapshotPausedObject();
 

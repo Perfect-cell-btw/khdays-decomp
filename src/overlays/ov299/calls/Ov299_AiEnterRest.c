@@ -1,3 +1,5 @@
+/* Clears the hit link and stance bit 0, sets bit 7, stops and installs the queue-action-1 step. */
+
 typedef struct { int x, y, z; } Vec3;
 extern const Vec3 data_02041dc8;
 extern void SetIndexedSlot();

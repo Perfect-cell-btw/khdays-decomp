@@ -1,3 +1,5 @@
+/* Script command: reads two int operands and loads that world's link resources. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_LoadWorldLinkResources();
 

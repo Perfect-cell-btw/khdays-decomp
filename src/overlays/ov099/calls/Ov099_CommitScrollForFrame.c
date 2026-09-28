@@ -1,3 +1,5 @@
+/* Commits the widget scroll for the current animation frame, then checks the span bound. */
+
 extern int Anim_GetFrame();
 extern int Ov002_WidgetScrollCommit();
 extern int func_ov022_020ad588();

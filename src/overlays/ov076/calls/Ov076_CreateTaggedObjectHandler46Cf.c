@@ -1,3 +1,6 @@
+/* Create a heap-backed overlay object, run the overlay parameter/object initializers, register tags
+ * 0x46/0xcf, and return the common ov022 handler callback. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov076_Boot(int param);
 extern void Ov076_InitEffectSlotsAlt(int obj);

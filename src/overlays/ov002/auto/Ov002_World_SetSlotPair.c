@@ -1,3 +1,5 @@
+/* Stores slot idx's byte and halfword in the world. */
+
 extern int data_ov002_0207fa00;
 
 void Ov002_World_SetSlotPair(int arg0, int arg1, int arg2) {

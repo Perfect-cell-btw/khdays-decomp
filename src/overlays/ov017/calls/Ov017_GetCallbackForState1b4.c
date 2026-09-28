@@ -1,3 +1,6 @@
+/* Returns a function pointer by state byte this[0x1b4]: 5 -> Ov017_ItemGivenStep, 7 ->
+ * Ov002_DoneTick, else NULL. */
+
 extern void Ov017_ItemGivenStep();
 extern void Ov002_DoneTick();
 

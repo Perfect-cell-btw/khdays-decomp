@@ -1,3 +1,5 @@
+/* Plays looping anim 2, resets the part, rolls the move timer and installs the walk tick. */
+
 extern void Ov107_PostTagUpdate();
 extern void Ov240_startAnim();
 extern int RandNextScaled(int);

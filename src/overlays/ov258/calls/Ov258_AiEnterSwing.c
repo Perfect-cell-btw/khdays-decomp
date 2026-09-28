@@ -1,3 +1,5 @@
+/* Resets the swing state and installs the swing tick. */
+
 /* Clear +0xc/+0x10, then dispatch via c634. */
 extern int SetIndexedSlot(int, int, void *);
 extern int Ov258_SwingTick_2(int);

@@ -1,3 +1,6 @@
+/* Posts update 0x16a/4 once, lowers the actor on an eased curve and queues action 6 when the
+ * animation ends. */
+
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov107_BuildAndSendUpdate(int a, int b, int c, int d);

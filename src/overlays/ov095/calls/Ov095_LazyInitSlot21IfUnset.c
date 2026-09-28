@@ -1,3 +1,6 @@
+/* Returns 0 if the global slot at *data_ov095_020bcba0+0x2fe4 is already set; otherwise returns
+ * Ov022_ActorSetState(this, 0x21). */
+
 extern int data_ov095_020bcba0;
 extern int Ov022_ActorSetState();
 

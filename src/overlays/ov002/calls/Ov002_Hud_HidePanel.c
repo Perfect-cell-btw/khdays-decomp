@@ -1,3 +1,5 @@
+/* Hides the panel and clears the active panel id. */
+
 extern int Ov002_SceneHidePanel();
 extern int Ov002_GetPanelField018c();
 extern int data_ov002_0207f614;

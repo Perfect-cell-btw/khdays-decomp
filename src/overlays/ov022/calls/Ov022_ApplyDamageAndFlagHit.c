@@ -1,3 +1,8 @@
+/* Skips when mode is 0 and both Slot_EvalPackedParam(kind, 0x41) and func_ov022_020ad7b0(obj)
+ * accept the entry. Applies the amount through Ov022_ActorSetHp -- raw when mode is set, offset by
+ * the halfword at obj+0x12 otherwise. When Session_GetLocalPlayerIndex reports idle it raises bit
+ * 40 of the 64-bit flag word at obj+0x46C. */
+
 extern int Slot_EvalPackedParam(int a, int b);
 extern int func_ov022_020ad7b0(int obj);
 extern void Ov022_ActorSetHp(int obj, int v);

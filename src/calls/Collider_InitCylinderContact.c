@@ -1,3 +1,5 @@
+/* Fills the contact normal and distance for a cylinder (XZ direction from the axis). */
+
 typedef long fx32;
 typedef struct { fx32 x, y, z; } VecFx32;
 

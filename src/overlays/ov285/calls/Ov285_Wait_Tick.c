@@ -1,3 +1,8 @@
+/* Waits out 0x6ee of scene time, accumulating the frame delta and returning early until it is
+ * reached. Then it re-acquires the target and, if there is one, aims the facing at it with the
+ * horizontal angle from the actor to the target. Finally it clears bits 6 and 7 of the high byte of
+ * wFlags60, stops the actor's motion, resets the elapsed counter and installs the next state. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 

@@ -1,3 +1,5 @@
+/* Whether the field state exists and is active. */
+
 extern int data_ov002_0207f62c;
 
 int Ov002_Field_IsActive(void) {

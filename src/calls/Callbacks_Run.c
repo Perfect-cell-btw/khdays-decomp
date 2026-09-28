@@ -1,3 +1,5 @@
+/* Runs callback slot index with its registered argument, if set. */
+
 extern void (*data_0204bd88[])(void *ptr);
 extern void *data_0204bd94[];
 

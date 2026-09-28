@@ -1,3 +1,6 @@
+/* Turns toward the heading at the turn rate, composes it with the surface-normal tilt and applies
+ * it. */
+
 typedef struct { int x, y, z; } Vec3;
 struct T { int a, b, c, d; };
 struct S { struct T t; char pad[0x28 - 16]; unsigned char flag; };

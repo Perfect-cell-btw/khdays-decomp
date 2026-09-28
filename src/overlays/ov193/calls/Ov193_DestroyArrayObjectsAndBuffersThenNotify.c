@@ -1,3 +1,6 @@
+/* Teardown: destroy primary sub-object (0x384), destroy 4-entry object array (0x3a0), free array +
+ * 0x3a4 buffer via FreeInstanceMemory, then notify parent (Ov107_DestroyObject). */
+
 struct row8 { int a, b; };
 extern void DestroyInstance(int p);
 extern void FreeInstanceMemory(int p);

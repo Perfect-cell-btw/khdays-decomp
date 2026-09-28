@@ -1,3 +1,11 @@
+/* Move the selection cursor up one row, wrapping past the top to row 27, and scroll the ten-row
+ * window to keep it visible: after a wrap the window top jumps to cursor - 9, and in the ordinary
+ * case it simply follows the cursor down. Either adjustment clears the 'settled' flag at +0x60.
+ * Ends with the move sound and a redraw. This corroborates nSelection at +2 -- it is the cursor,
+ * and +0 is its window top. The window is ten rows because the wrap test is `top + 10 <= cursor`,
+ * and the list is 28 rows because the wrap target is 27, which agrees with the existing rows[28].
+ */
+
 typedef unsigned char u8;
 typedef signed short s16;
 

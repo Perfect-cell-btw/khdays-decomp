@@ -1,3 +1,6 @@
+/* Resets the page's slot state, widgets and texts and moves the cursor to the first entry; returns
+ * 1. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_PageA_ResetSmall();
 extern int Ov025_SetupGridMenuDisplay();

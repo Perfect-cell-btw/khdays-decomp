@@ -1,3 +1,5 @@
+/* Allocates a 0xb4-byte model node and initialises it. */
+
 extern void *CallocInstance(int);
 extern void ModelNode_Init(void *);
 

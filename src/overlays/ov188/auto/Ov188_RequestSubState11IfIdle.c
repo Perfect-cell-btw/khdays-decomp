@@ -1,3 +1,5 @@
+/* Reaction check: queues action 11 when no action is pending; returns whether it did. */
+
 struct Obj {
     signed char b[0x1c8];
 };

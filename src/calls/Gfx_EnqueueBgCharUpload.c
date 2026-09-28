@@ -1,3 +1,5 @@
+/* Enqueues a BG character upload for layer idx (engine A 0-3, engine B otherwise). */
+
 extern int GFXi_EnqueueCommand(int a, int b, int c, int d);
 
 typedef struct {

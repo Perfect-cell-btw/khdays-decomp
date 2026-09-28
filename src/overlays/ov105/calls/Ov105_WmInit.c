@@ -1,3 +1,5 @@
+/* Initialises the WM core with a 0xf00 buffer and clears the pending state; returns the result. */
+
 extern int Ov105_WmInitCore(int a0, int a1, int a2);
 extern int data_ov105_020bfa20;
 

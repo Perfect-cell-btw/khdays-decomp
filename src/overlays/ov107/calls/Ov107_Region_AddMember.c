@@ -1,3 +1,5 @@
+/* Files the member into the actor, player or item list by its flags, then links it as a child. */
+
 typedef unsigned short u16;
 
 extern int *List_InsertSorted(int list, int stride, int max);

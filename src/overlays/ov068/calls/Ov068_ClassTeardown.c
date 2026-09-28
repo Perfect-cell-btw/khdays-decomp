@@ -1,3 +1,6 @@
+/* Class pfnMethod: frees the archive binding and resource tables, then destroys the root objects.
+ */
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern unsigned char data_0204c240;
 extern void FreeAllResourceTables(void *);

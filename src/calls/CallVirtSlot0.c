@@ -1,3 +1,5 @@
+/* Calls the object's vtable slot 0 on its +4 sub-object with its first word and the arguments. */
+
 typedef void (*func_0202fb58_cb)(void *ptr, int word0, int arg1, int arg2, int arg3, int arg4);
 
 void CallVirtSlot0(int *ptr, int arg1, int arg2, int arg3, int arg4) {

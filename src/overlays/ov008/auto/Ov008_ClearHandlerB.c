@@ -1,3 +1,5 @@
+/* Force the second ov008 id word to -1 and return 1. */
+
 extern int data_ov008_02090f0c[];
 int Ov008_ClearHandlerB(void)
 {

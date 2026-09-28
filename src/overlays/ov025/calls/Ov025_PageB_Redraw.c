@@ -1,3 +1,5 @@
+/* Refreshes and redraws page B's rows. */
+
 extern int Ov025_GetPageB();
 extern int Ov025_GetCtxBlock954c();
 extern int Ov025_RefreshPageBRow();

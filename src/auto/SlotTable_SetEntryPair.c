@@ -1,3 +1,5 @@
+/* Sets the two fields of slot entry idx. */
+
 struct Elem {
     char pad[0x84];
     int a;

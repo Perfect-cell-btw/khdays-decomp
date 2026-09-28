@@ -1,3 +1,5 @@
+/* Register pSubscriber in pOwner's subscriber list; returns zero. */
+
 extern void Obj_ReplaceRef(int a, int b);
 extern int *List_InsertSorted(int a, int b, int c);
 int RegisterSubscriberSlot(int param_1, int param_2) {

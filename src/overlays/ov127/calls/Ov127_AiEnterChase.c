@@ -1,3 +1,5 @@
+/* Plays anim 2, rolls the move timer and installs the chase decision. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern int RandNextScaled(unsigned int mul);
 extern void SetIndexedSlot(void *obj, int idx, void *value);

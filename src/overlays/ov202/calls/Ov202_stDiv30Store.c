@@ -1,3 +1,6 @@
+/* ov node state callback: stores object[+0x2c]*30/30 into a state field (magic-multiply divide),
+ * then advances/guards the node state slot. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov202_ReactWhenTargetInReach(void);

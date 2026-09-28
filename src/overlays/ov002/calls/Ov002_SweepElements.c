@@ -1,3 +1,5 @@
+/* Releases pending elements, flushes the flagged ones and frees their buffers. */
+
 extern int Ov002_SweepReleasePendingElements();
 extern int Ov002_FlushFlaggedElements();
 extern int Ov002_SweepFreeElementBuffers();

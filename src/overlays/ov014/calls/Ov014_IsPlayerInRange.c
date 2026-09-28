@@ -1,3 +1,5 @@
+/* Whether the active player is in the element's group and within its range. */
+
 typedef signed long s32;
 typedef unsigned char u8;
 typedef signed short s16;

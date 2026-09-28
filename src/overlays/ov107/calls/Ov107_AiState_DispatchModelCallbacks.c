@@ -1,3 +1,6 @@
+/* Dispatches the model's callbacks with the flag, or with the camera-distance LOD when not forced.
+ */
+
 extern void DispatchObjectCallbacks(int this_, int arg1);
 extern void *func_ov107_020c9848(void);
 extern int Ov107_IsBehindView(int ctx, void *extra);

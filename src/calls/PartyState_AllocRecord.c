@@ -1,3 +1,5 @@
+/* Allocates the 0x7e-byte party record once. */
+
 extern void *NNSi_FndAllocFromDefaultExpHeap(int size);
 extern void *data_0204c4f0[];
 

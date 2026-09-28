@@ -1,3 +1,6 @@
+/* First active entity of the container (+0x80), other than the owner, one of whose shapes (+0x22c)
+ * overlaps the sphere; shape out optional. */
+
 typedef struct {
     char pad[4];
     void *container;

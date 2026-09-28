@@ -1,3 +1,7 @@
+/* Advances the stream window by its base step plus the current dynamic delta, rolls the step back
+ * and shifts the frame window if the next look-ahead would exceed the limit, then recomputes
+ * presentation lead. */
+
 typedef unsigned char u8;
 
 typedef struct MobiClipStream {

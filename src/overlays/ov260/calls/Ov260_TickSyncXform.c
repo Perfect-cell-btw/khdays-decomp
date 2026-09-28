@@ -1,3 +1,5 @@
+/* Runs the object tick, then copies the transform into the model. */
+
 extern int Ov107_ProcessObjectTick();
 
 struct Block { int a[11]; };

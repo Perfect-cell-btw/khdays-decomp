@@ -1,3 +1,5 @@
+/* Steps the mover and, when it produced a new position, moves the actor there. */
+
 extern int Mover_Step(void *ptr, void *out, int arg);
 extern void Actor_SetVecAndSyncChild(void *ptr, void *src);
 

@@ -1,3 +1,6 @@
+/* Zeroes the 0x100-byte context, installs the fetch/dispatch callbacks (defaults MsgDb_FetchRecord
+ * / DispatchByNodeKind) and inits its three lists. */
+
 extern void MI_CpuFill8();
 extern void NNS_FndInitList();
 extern void MsgDb_FetchRecord();

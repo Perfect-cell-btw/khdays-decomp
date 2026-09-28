@@ -1,3 +1,7 @@
+/* Prepare resources and queue up to SEVEN 0x600-byte transfers into the buffers at context+0x9910
+ * (stride 0x800), then clear the pending mask at +0x966c. Stride 0x800 with a 0x600 payload means
+ * each slot has 0x200 of slack, so the buffers are fixed-size slots rather than a packed array. */
+
 typedef unsigned char u8;
 typedef signed short s16;
 typedef unsigned short u16;

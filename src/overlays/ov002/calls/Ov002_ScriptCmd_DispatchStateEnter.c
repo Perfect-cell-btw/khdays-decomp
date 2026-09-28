@@ -1,3 +1,5 @@
+/* Script command: reads an int operand and dispatches the state enter; returns 1. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_DispatchStateEnter();
 

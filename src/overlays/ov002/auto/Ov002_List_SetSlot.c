@@ -1,3 +1,5 @@
+/* Stores slot idx of the object list. */
+
 extern int data_ov002_0207fa20;
 
 void Ov002_List_SetSlot(int arg0, int arg1) {

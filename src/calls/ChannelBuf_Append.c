@@ -1,3 +1,5 @@
+/* Appends data to the channel's buffer (optionally restarting it) and marks the buffers dirty. */
+
 extern void MIi_CpuCopy16(const void *src, void *dst, unsigned int size);
 
 extern void *data_0204c22c;

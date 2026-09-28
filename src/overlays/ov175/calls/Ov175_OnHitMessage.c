@@ -1,3 +1,5 @@
+/* In action 1 reacts to the hit message flags (bounce on bit 0 / 4). */
+
 struct Vec3 {
     int x;
     int y;

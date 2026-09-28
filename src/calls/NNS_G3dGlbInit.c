@@ -1,3 +1,6 @@
+/* NitroSystem G3D: initialises the global state (default polygon/material attributes, identity
+ * matrices, unit scale, camera up vector). */
+
 extern void MTX_Identity33_(void *m);
 extern void MTX_Identity43_(void *m);
 extern void MTX_Identity44_(void *m);

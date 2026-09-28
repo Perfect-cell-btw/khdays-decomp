@@ -1,3 +1,5 @@
+/* Switches the slot's cues when the sound bank is active. */
+
 extern int data_ov002_0207f9f0;
 extern int Ov002_SwitchSlotCues();
 

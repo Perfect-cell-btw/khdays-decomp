@@ -1,3 +1,5 @@
+/* Formats the world's path string from its index. */
+
 extern int OS_SPrintf();
 extern int data_ov002_0207f0d4;
 extern int data_ov002_0207f100;

@@ -1,3 +1,5 @@
+/* Script command: reads an int operand into world byte +0x8c9c; returns 1. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_World_SetByte8C9C();
 

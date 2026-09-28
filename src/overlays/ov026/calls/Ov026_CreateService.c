@@ -1,3 +1,5 @@
+/* Instantiates the ov026 service class with the argument. */
+
 extern int InstantiateClass(void *desc, int arg);
 extern int data_ov026_02091200;
 extern int *data_ov026_02091360;

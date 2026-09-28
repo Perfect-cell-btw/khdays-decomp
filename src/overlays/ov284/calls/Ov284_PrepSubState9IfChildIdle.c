@@ -1,3 +1,5 @@
+/* Unless the busy byte at *(child+8) is set, mark sub-state 9 and dispatch with no handler. */
+
 extern void SetIndexedSlot();
 
 void Ov284_PrepSubState9IfChildIdle(int this_) {

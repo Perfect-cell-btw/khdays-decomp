@@ -1,3 +1,5 @@
+/* Creates the chain layout task and links it to the actor and its chain (+0x3ac). */
+
 extern int CreateRegistryEntry(int owner, int a, int b, void *step, void *done, int **out);
 extern void Ov284_LayoutChain(void);
 extern void Ov284_ResetEntryList(char *obj);

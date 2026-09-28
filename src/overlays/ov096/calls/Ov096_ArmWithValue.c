@@ -1,3 +1,5 @@
+/* Sets the active flag, clears the timer and stores the value. */
+
 void Ov096_ArmWithValue(void *self, int value)
 {
     *(int *)self = 1;

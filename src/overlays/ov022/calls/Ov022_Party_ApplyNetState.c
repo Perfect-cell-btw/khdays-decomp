@@ -1,3 +1,6 @@
+/* Host-side: applies the received member records (position, state, flags) to each party actor;
+ * returns whether any changed. */
+
 typedef struct VecFx32 {
     int x;
     int y;

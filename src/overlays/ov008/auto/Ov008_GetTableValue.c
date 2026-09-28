@@ -1,3 +1,5 @@
+/* Value of entry index of the menu value table. */
+
 struct ov008_halfword_entry {
     unsigned short value;
     unsigned char _pad[6];

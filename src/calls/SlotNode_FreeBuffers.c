@@ -1,3 +1,5 @@
+/* Frees the node's combined buffer, or its two separate buffers, and clears them. */
+
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 
 struct Node02032334 {

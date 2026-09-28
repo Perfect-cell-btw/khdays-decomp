@@ -1,3 +1,5 @@
+/* In states 2-5 sets the model's polygon ID from the fade step and draws the node. */
+
 extern int NNS_G3dMdlSetMdlPolygonID();
 extern int Scene_DrawNode();
 

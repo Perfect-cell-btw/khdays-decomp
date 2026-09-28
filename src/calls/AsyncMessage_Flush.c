@@ -1,3 +1,6 @@
+/* Sends or applies the pending message according to the session mode, then clears it; returns 1
+ * when there was one. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 

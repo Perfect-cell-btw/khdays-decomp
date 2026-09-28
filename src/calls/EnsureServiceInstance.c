@@ -1,3 +1,5 @@
+/* Instantiates the service class once (id cached in data_02042978). */
+
 extern int data_02042978;
 extern int data_0204297c;
 extern int InstantiateClass(void *ptr, int value);

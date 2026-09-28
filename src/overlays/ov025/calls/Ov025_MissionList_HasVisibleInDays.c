@@ -1,3 +1,5 @@
+/* Whether page A's mission list has a visible mission in the day range. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_MissionList_HasVisibleMissionInDays();
 

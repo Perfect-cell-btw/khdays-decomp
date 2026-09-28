@@ -1,3 +1,6 @@
+/* state entry for this boss: per message the flags/animation setup and the step function handed
+ * back (0x21 -> Ov091_StepRiseState, 0x22 -> Ov091_VolleyStep). */
+
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov022_IsSlotReady(unsigned int *obj);

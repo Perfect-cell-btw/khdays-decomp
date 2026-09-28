@@ -1,3 +1,5 @@
+/* Draws the node while it is active. */
+
 extern void Scene_DrawNode(void *p);
 
 void Ov086_DrawNodeWhileActive(int unused, char *p) {

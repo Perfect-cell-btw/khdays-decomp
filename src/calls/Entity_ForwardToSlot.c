@@ -1,3 +1,6 @@
+/* Index the entity array of the manager singleton (data_0204c208, array at +0xc4, stride 0x184) by
+ * slot and forward the remaining four arguments to Actor_ArmWithMessage. */
+
 extern void Actor_ArmWithMessage(int, int, int, int, int);
 extern int data_0204c208;
 

@@ -1,3 +1,7 @@
+/* Gets the NNS root heap, reads its 0x58 config via Tween_Sample into a local, arithmetic-shifts
+ * >>12, passes the result to SetMasterBrightnessMain and SetMasterBrightnessSub, and returns bit2
+ * of *(heap+0x70). */
+
 extern int NNSi_FndGetCurrentRootHeap();
 extern void Tween_Sample();
 extern void SetMasterBrightnessMain();

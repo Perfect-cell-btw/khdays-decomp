@@ -1,3 +1,5 @@
+/* Pops a free request slot from the loader's free list, or NULL. */
+
 extern int data_0204bbfc[];
 
 int *Loader_PopFreeRequest(void)

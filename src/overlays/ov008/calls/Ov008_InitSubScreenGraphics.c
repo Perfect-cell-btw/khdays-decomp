@@ -1,3 +1,5 @@
+/* Resets the texture VRAM managers and configures DISPCNT and the BG layers for the sub screen. */
+
 typedef unsigned char  u8;
 typedef unsigned short u16;
 typedef unsigned int   u32;

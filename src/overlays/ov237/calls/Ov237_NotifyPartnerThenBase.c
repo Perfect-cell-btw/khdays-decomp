@@ -1,3 +1,5 @@
+/* Calls the partner's +0x1f0 hook, then the base handler. */
+
 extern void Ov107_LoadMsUpRecord(int *self, int arg);
 
 typedef void (*func_ov237_020ccfb4_cb)(int *target, int arg);

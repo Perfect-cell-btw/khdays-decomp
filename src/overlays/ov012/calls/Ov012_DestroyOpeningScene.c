@@ -1,3 +1,6 @@
+/* Releases the opening archives, renderer and font resource, clears sound slot 3, unloads ov024,
+ * invalidates the opening clip id and restores the LCD swap bit. */
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 extern int func_ov012_0205bb78(void *renderer);

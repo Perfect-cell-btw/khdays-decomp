@@ -1,3 +1,5 @@
+/* Collect up to four collision contact points for a fixed-point sphere. */
+
 typedef struct {
     int x;          /* +0x00 */
     int pad_04;

@@ -1,3 +1,7 @@
+/* Waits for the state-0x21 actor action to finish. It advances the motion callback, then either
+ * transitions through state 0x22 when the scene phase is above 1 or clears both motion vectors and
+ * returns the actor to mode 0 or 2. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 typedef unsigned long long u64;

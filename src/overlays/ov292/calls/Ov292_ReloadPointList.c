@@ -1,3 +1,10 @@
+/* Empties the actor's point list at +0x394 and refills it from the caller's table: nBytes / 12
+ * entries of three words each, appended one at a time. The ov287, ov288 and ov289 siblings are the
+ * same routine at +0x398, and they skip a leading word that this one does not have. One source fact
+ * is load-bearing: the quotient is written back over the size parameter rather than into a new
+ * local, which is what puts it in the same register and forces the copy the umull's operand
+ * constraint needs. */
+
 struct v3 { int a, b, c; };
 extern void NNSi_FndDestroyDoubleList(void *p);
 extern void List_Init(void *p);

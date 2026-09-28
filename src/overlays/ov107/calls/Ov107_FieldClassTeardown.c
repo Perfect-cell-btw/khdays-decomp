@@ -1,3 +1,6 @@
+/* Field class pfnMethod: runs the pending steps, releases the handles and lists, frees the buffers
+ * and clears the instance. */
+
 typedef struct { void *f0; void *f4; void *f8; } Step;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);

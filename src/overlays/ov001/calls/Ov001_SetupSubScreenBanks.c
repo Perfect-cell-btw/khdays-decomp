@@ -1,3 +1,5 @@
+/* Maps the sub BG/OBJ VRAM banks and enables the sub engine's 1D OBJ mapping. */
+
 extern int GX_SetBankForSubBG();
 extern int GX_SetBankForSubOBJ();
 

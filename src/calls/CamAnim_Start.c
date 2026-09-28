@@ -1,3 +1,6 @@
+/* Binds the camera animation resource, allocates its player, selects animation 0, loads the default
+ * projection and evaluates the first frame. */
+
 extern void *SND_RegisterSeq(int a, int b);
 extern int CamAnim_AllocPlayer();
 extern int CamAnim_SelectAnim();

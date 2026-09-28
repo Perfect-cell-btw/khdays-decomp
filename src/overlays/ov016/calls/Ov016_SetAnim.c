@@ -1,3 +1,5 @@
+/* Stores the animation type and parameters and, when visible, rebinds and enables it. */
+
 typedef unsigned short u16;
 
 extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);

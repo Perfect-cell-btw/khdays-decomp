@@ -1,3 +1,5 @@
+/* Renders the object once per collision sphere (up to 16), scaled to twice the sphere radius. */
+
 extern int SrtTransform_SetIdentity();
 extern int Srt_SetScaleUniform();
 extern int Srt_SetTranslation();

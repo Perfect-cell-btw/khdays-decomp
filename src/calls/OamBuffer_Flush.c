@@ -1,3 +1,6 @@
+/* Hides the unused OAM entries, then uploads the buffer now (engine A or B) or enqueues the upload.
+ */
+
 typedef unsigned int u32;
 
 extern void DC_FlushRange(const void *addr, u32 size);

@@ -1,3 +1,5 @@
+/* Initialises the reader on the data and installs the halfword fetch. */
+
 extern void func_02014720(void *arg, void *ptr);
 extern void Stream_ReadU16(void);
 

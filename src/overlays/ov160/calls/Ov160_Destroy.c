@@ -1,3 +1,5 @@
+/* Destroys the models and attached instances (freeing their table), then the base object. */
+
 /* Teardown with an extra ov107 release. */
 struct row8 { int p; int pad; };
 extern void DestroyInstance(int a);

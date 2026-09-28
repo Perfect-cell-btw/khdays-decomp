@@ -1,3 +1,5 @@
+/* Re-lays the node out, stores the vector and sets flag bit 0. */
+
 extern int Ov107_MoveNodeAndRelayout();
 
 struct Vec3 {

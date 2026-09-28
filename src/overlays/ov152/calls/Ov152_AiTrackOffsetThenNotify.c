@@ -1,3 +1,6 @@
+/* Follows the owner-relative offset; when the watched flag clears sends the notify message and
+ * queues action 2. */
+
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
 extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);

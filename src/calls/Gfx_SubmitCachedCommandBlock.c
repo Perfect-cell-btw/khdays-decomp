@@ -1,3 +1,6 @@
+/* Submit the cached command block at data_02047394 -- its first word is the packed command, the
+ * following 0x34 words the parameters -- then clear the two dirty bits at +0xd4. */
+
 extern void GX_SendFifoWords(unsigned int cmd, const void *src, unsigned int words);
 
 struct Gfx0201571c {

@@ -1,3 +1,5 @@
+/* Returns the link context's signed byte for the actor id (+0xf + id). */
+
 extern int data_ov002_0207fa10;
 
 signed char Ov002_GetActorSlotByte(int arg0) {

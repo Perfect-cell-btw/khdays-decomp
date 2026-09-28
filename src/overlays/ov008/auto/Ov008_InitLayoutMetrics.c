@@ -1,3 +1,5 @@
+/* Sets the layout metrics (item scales 0xb33/0xab8, span 0x4800). */
+
 void Ov008_InitLayoutMetrics(int *obj)
 {
     obj[5] = 0xb33;

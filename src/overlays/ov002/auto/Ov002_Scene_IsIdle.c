@@ -1,3 +1,5 @@
+/* True when neither bit 0 nor bit 1 of the scene flags is set. */
+
 extern int data_ov002_0207f600;
 
 int Ov002_Scene_IsIdle(void) {

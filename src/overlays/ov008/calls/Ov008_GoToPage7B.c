@@ -1,3 +1,5 @@
+/* Selects variant 1, targets page 7 and plays the confirm sound. */
+
 extern void Ov008_SetCtxField9768(int);
 extern void Ov008_SetTargetSlot(int, int);
 extern void PlaySound(int, int);

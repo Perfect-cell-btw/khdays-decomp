@@ -1,3 +1,5 @@
+/* Counts the cooldown (+0x5c) down to 0; queues action 6 when the animation ends. */
+
 typedef struct B B;
 typedef struct C C;
 typedef struct D D;

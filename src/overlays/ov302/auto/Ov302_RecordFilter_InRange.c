@@ -1,3 +1,5 @@
+/* Record filter: true for an enabled record whose range contains the value. */
+
 struct S {
     unsigned char pad0[6];
     unsigned short lo;   /* +6 */

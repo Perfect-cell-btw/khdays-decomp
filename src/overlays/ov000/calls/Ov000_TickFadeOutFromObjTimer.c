@@ -1,3 +1,9 @@
+/* Same fade-out ramp as Ov000_TickFadeOutFromCtxTimer, but driven from a small object's timestamp
+ * at +0x14 rather than the big context's +0x4ae4. Pairs with Ov000_TickFadeInFromObjTimer on that
+ * same object. Fade ramp: 16 steps over 0x4cb51 ticks (0x4cb51 / 0x4cb5 = 15.97), driven through
+ * SetMasterBrightnessSub with a NEGATIVE brightness. 16 is the DS master brightness range -- the
+ * same 0x10 Game_RunSceneLoop writes. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef unsigned long long u64;

@@ -1,3 +1,5 @@
+/* Record filter: true for an enabled record whose maximum is below the value. */
+
 struct S {
     char pad0[8];
     unsigned short h;

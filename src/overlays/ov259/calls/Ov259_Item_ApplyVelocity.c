@@ -1,3 +1,5 @@
+/* Applies the velocity (zero in action 0, scaled in action 1). */
+
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 
 struct vec3 { int a, b, c; };

@@ -1,3 +1,6 @@
+/* Marks the first scene sequence active and binds animation tracks 0 and 2 to their default frames.
+ */
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 

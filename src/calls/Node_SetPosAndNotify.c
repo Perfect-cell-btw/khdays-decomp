@@ -1,3 +1,5 @@
+/* Stores the position, marks it dirty and calls the node's change hook. */
+
 typedef struct {
     int x;
     int y;

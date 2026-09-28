@@ -1,3 +1,5 @@
+/* Allocates the entity manager's record table (n entries of 0x14 bytes). */
+
 extern void *NNSi_FndAllocFromDefaultExpHeap(int size);
 extern char *data_0204c208;
 

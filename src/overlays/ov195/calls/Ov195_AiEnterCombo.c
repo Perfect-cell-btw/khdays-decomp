@@ -1,3 +1,5 @@
+/* Plays anim 15, resets the combo state and installs the combo tick. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov195_ComboTick(void);

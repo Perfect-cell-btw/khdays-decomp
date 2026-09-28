@@ -1,3 +1,6 @@
+/* Actor +0x1f8 handler: clears the pending action, sets stance bits 0x82, clears bit 0 and resets
+ * +0x2e8 to 0x800. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

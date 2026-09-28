@@ -1,3 +1,6 @@
+/* Cross-fades a new opening background-plane mask over the current mask across the event duration,
+ * updates DISPCNT/BLDCNT, and advances when the 16-step blend completes. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

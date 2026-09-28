@@ -1,3 +1,5 @@
+/* Stores the link mode byte and value. */
+
 extern int data_ov002_0207fa10;
 
 void Ov002_SetLinkModeAndValue(int arg0, int arg1) {

@@ -1,3 +1,5 @@
+/* Script command: sets the current element's +0x10 to its base plus the operand; returns 2. */
+
 struct Elem {
     char pad[0xc];
     int field_c;

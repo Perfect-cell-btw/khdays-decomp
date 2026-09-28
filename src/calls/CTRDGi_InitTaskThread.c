@@ -1,3 +1,5 @@
+/* NitroSDK CTRDG: once, creates and starts the cartridge task thread on the given work. */
+
 extern void OS_CreateThread(void *thread, void (*func)(void *), void *arg, void *stack, unsigned stackSize, unsigned prio);
 extern void OS_WakeupThreadDirect(void *thread);
 extern int OS_DisableInterrupts(void);

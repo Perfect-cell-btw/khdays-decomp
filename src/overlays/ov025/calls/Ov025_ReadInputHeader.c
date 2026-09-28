@@ -1,3 +1,5 @@
+/* Reads the input header halfword of the screen work area. */
+
 extern int data_ov025_020b5744;
 extern int Mem_ReadU16();
 

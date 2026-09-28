@@ -1,3 +1,7 @@
+/* ARM Mission Menu constructor. Allocates and clears the 0x70-byte menu context, initializes its
+ * input header and resource record, creates the scene object, selects the immediate/session/local
+ * setup path and returns the next state callback. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

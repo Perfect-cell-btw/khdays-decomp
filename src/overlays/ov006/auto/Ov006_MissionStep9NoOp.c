@@ -1,1 +1,3 @@
+/* Empty entry 9 of the 15-entry mission step table. */
+
 void Ov006_MissionStep9NoOp(void) {}

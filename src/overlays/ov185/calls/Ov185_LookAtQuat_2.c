@@ -1,3 +1,6 @@
+/* Builds the look-at rotation from the node position toward the target and converts it to a
+ * quaternion. */
+
 extern int Mtx33_LookAt();
 extern int Quat_FromMtx33();
 extern int data_02042264;

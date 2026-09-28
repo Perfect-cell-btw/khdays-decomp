@@ -1,3 +1,5 @@
+/* Frees the spawner's eight data blocks and clears their count. */
+
 typedef struct {
     void *ptr;
     int val;

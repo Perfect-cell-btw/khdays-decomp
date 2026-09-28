@@ -1,3 +1,5 @@
+/* Fills the pose message (gauge flags, part visibility bits, HP, action) and sends it. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef short s16;

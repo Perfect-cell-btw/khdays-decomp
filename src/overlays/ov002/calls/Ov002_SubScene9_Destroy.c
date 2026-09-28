@@ -1,3 +1,5 @@
+/* Screen close handler (pair of Ov002_SubScene9_Create): clears the instance pointer. */
+
 extern int data_ov002_0207fa08;
 extern int NNSi_FndGetCurrentRootHeap();
 

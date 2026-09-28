@@ -1,3 +1,6 @@
+/* Detaches the node, then attaches it to the model's joint looked up by name and links it into the
+ * model's node list. */
+
 extern void INITi_CpuClear32_0x01ff86fc(unsigned int data, void *dst, unsigned int size);
 extern void SceneNode_Detach(void *p);
 extern void strcpy(void *dst, void *src);

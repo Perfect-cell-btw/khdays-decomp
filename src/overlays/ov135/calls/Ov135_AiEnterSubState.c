@@ -1,3 +1,5 @@
+/* Plays anim 9, resets the state and installs the sub-state step. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov135_ConfigSubStateThenAdvanceSlot(void);

@@ -1,3 +1,5 @@
+/* On a state message sets the hazard state, then clears the pending flag. */
+
 extern void Ov016_HazardSetState(void *self, int value, int flag);
 
 void Ov016_OnHazardMessage(char *self, char *arg1) {

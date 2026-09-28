@@ -1,3 +1,5 @@
+/* Allocates and loads page A, blits it, sets mode 2 and registers the per-frame tick. */
+
 typedef unsigned char u8;
 typedef unsigned int  u32;
 

@@ -1,3 +1,5 @@
+/* Unlinks the two arrow cells. */
+
 extern void Slot_UnlinkIfLinked(void *arg0, int arg1);
 extern char *data_ov008_02090fac[];
 

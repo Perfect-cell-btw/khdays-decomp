@@ -1,3 +1,5 @@
+/* Clears page B's state and binds it to page A's block. */
+
 extern int Ov025_GetPageB();
 extern void MI_CpuFill8();
 extern int Ov025_PageA_GetBlock1EC();

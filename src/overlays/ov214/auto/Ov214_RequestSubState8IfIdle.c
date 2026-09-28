@@ -1,3 +1,5 @@
+/* Reaction check: queues action 8 when no action is pending; returns whether it did. */
+
 struct Inner {
     signed char pad[0x1c7];
     signed char flag;

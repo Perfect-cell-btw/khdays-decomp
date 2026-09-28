@@ -1,3 +1,8 @@
+/* Swallows a queued message or lets it through. A message repeating the page's current id is
+ * dropped, and so are the four terminal ids 0x13, 0x14, 0x15 and 0x1b; dropping clears the caller's
+ * slot and reports handled. Everything else goes to the shared dispatcher and returns whatever it
+ * says. */
+
 #pragma opt_propagation off
 
 typedef unsigned char u8;

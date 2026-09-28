@@ -1,3 +1,5 @@
+/* State after the fade-out: stores the scene change (5, saved value); returns ~1. */
+
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void StoreGlobalPairAt10(int, int);
 

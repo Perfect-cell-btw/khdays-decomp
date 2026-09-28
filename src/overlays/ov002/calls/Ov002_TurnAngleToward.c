@@ -1,3 +1,5 @@
+/* Turns an angle toward the target by a damped step bounded by the turn limit. */
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int func_02023c40(void);
 

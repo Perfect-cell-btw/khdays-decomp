@@ -1,3 +1,5 @@
+/* Blends every palette color toward white by scale/16 and uploads the palette. */
+
 extern void GFXi_EnqueueCommand(int type, int a, void *src, int size);
 
 typedef unsigned char u8;

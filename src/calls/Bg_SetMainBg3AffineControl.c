@@ -1,3 +1,5 @@
+/* Selects the affine-BG3 display mode and sets main-engine BG3CNT with the area-over flag. */
+
 extern void DispMode_LookupWordAndDispatch(void *ptr);
 extern char data_02041ecc;
 extern int data_02047390;

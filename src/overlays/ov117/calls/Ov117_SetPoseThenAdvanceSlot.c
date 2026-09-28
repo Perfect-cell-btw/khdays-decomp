@@ -1,3 +1,6 @@
+/* Set animation state 1 then dispatch via SetIndexedSlot with handler Ov117_KeepDistanceOrRetreat.
+ */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov117_KeepDistanceOrRetreat();

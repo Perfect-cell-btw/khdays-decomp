@@ -1,3 +1,5 @@
+/* True when the HUD widgets exist and +0xe4 is 1. */
+
 extern int data_ov002_0207f628;
 
 int Ov002_HudWidgets_IsFieldE4One(void) {

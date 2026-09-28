@@ -1,3 +1,5 @@
+/* Draws the panel counter (alternate style). */
+
 extern int Ov002_PanelDrawCounter();
 
 int Ov002_Panel_DrawCounterAlt(int a, int b, int c, int d) {

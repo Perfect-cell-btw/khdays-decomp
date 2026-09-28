@@ -1,3 +1,6 @@
+/* Finishes the AI task and removes the actor's model and part nodes from the region list (+0x104),
+ * then the base detach. */
+
 typedef struct {
     char pad_00[0x14];
     int field_14;

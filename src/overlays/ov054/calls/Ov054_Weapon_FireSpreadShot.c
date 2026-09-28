@@ -1,3 +1,5 @@
+/* Sends a placement for a shot from the muzzle with a random spread (wider when charged). */
+
 typedef unsigned short u16;
 typedef unsigned char u8;
 typedef unsigned int u32;

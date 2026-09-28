@@ -1,3 +1,6 @@
+/* Casts a ray 5 units down from just above the entry's position; stores the hit point (or the
+ * position) in out. Returns 1 on a hit. */
+
 typedef struct VecFx32 {
     int x;
     int y;

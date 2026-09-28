@@ -1,3 +1,5 @@
+/* Updates touch and display; returns the list step once the dialog finished. */
+
 extern int Ov026_FadeInStep(void);
 extern void func_020362ec(void *image);
 extern void Ov026_UpdateTouchState(void);

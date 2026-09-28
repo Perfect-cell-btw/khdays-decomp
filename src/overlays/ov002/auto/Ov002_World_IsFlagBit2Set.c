@@ -1,3 +1,5 @@
+/* Bit 2 of the world's flag word; 1 without world. */
+
 extern int data_ov002_0207f60c;
 
 int Ov002_World_IsFlagBit2Set(void) {

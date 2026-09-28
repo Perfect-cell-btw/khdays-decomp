@@ -1,3 +1,6 @@
+/* Runs callback operand-1 of the current slot; keeps it current when it yields, clears it when
+ * done. */
+
 struct Outer;
 typedef int (*CallbackFunc)(struct Outer *ctx, int arg);
 

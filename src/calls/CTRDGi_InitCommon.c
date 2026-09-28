@@ -1,3 +1,5 @@
+/* NitroSDK CTRDG: clears the common work and takes a lock id. */
+
 extern void CpuSet(const void *src, void *dst, unsigned ctrl);
 extern int OS_GetLockID(void);
 

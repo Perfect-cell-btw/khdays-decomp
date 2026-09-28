@@ -1,3 +1,5 @@
+/* Walk the +0x4a38 list, invoking Ov025_FillAnchorPair on each node. */
+
 extern int NNS_FndGetNextListObject();
 extern void Ov025_FillAnchorPair();
 

@@ -1,3 +1,7 @@
+/* Returns while bit 9 of the 64-bit flag word at obj[0] is set. Otherwise, when bits 2 and 0 of the
+ * byte at obj+0x694 are both set, runs func_ov022_0209c9fc(obj). Always clears bit 2 of that byte
+ * on the way out. */
+
 extern void func_ov022_0209c9fc(int obj);
 
 struct Bits020a06bc { unsigned char b0 : 1; unsigned char b1 : 1; unsigned char b2 : 1; };

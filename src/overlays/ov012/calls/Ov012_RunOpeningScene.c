@@ -1,3 +1,7 @@
+/* Runs the opening-scene script and display loop, handles skip input and thread-count changes,
+ * waits for the brightness transition, then resets the script/display state and selects the next
+ * scene. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

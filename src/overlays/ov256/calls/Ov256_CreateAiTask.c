@@ -1,3 +1,5 @@
+/* Creates the AI task (brain start) with the model and child links, and links it. */
+
 extern void CreateRegistryEntry();
 extern void Ov256_StartBrain(void);
 void Ov256_CreateAiTask(int param_1) {

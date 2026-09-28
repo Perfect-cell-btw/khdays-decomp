@@ -1,3 +1,5 @@
+/* Draw callback: draws the node when its kind is 2. */
+
 extern void Scene_DrawNode();
 
 void Ov080_DrawNodeCallback(int a, int *b) {

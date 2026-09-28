@@ -1,3 +1,5 @@
+/* Current scroll row of page B (integer part). */
+
 extern char *Ov025_GetPageB(void);
 int Ov025_PageB_GetScrollRow(void)
 {

@@ -1,3 +1,5 @@
+/* Returns the panel session's first byte. */
+
 extern int data_ov002_0207f620;
 
 int Ov002_Panel_GetState(void) {

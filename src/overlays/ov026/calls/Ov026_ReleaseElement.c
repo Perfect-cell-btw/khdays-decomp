@@ -1,3 +1,5 @@
+/* Release one element: clear +0x24 bit1, free heap alloc at +0x2c (if set) and null it. */
+
 extern int NNSi_FndFreeFromDefaultHeap();
 
 struct S {

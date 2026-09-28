@@ -1,3 +1,6 @@
+/* Initializes the animation root from the setup (slots allocated at 0x114 each) and returns its
+ * first step. */
+
 #pragma thumb on
 
 typedef unsigned char u8;

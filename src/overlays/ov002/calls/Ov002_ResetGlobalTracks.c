@@ -1,3 +1,5 @@
+/* Clears the global track counter and resets its tracks. */
+
 extern int data_0204c4d8;
 extern int Ov002_ResetTracks();
 

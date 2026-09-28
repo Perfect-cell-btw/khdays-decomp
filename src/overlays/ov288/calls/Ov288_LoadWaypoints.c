@@ -1,3 +1,5 @@
+/* Stores the waypoint count and rebuilds the sorted waypoint list from the 12-byte entries. */
+
 struct ent { int w[3]; };
 extern void NNSi_FndDestroyDoubleList(void *p);
 extern void List_Init(void *p);

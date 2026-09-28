@@ -1,3 +1,6 @@
+/* Child task teardown: clears the child's timers, flags it (+0x5c bit 1) and clears the owner's
+ * back link. */
+
 void Ov142_ChildTaskTeardown(char *p) {
     char *r3 = *(char **)(p + 4);
     *(int *)(*(char **)(r3 + 4) + 0x6c) = 0;

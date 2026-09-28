@@ -1,3 +1,5 @@
+/* Copies the party equipment tables; returns 1. */
+
 extern int PartyState_CopyEquipTables();
 
 int Ov013_CopyEquipTables(void) {

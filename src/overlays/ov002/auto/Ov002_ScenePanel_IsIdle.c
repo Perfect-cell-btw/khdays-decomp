@@ -1,3 +1,5 @@
+/* Whether the scene panel exists and is idle. */
+
 extern int data_ov002_0207f624;
 
 int Ov002_ScenePanel_IsIdle(void) {

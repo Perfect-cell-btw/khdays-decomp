@@ -1,3 +1,6 @@
+/* Ov107_ProcessObjectTick, then copies the actor transform into both of its models (+0x388,
+ * +0x38c). */
+
 extern int Ov107_ProcessObjectTick();
 
 struct s44 {

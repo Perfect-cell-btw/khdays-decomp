@@ -1,3 +1,5 @@
+/* Inits the touch panel with the user calibration and sets the sampling stability. */
+
 extern int TP_Init();
 extern int TP_GetUserInfo();
 extern int TP_SetCalibrateParam();

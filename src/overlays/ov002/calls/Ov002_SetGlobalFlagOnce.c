@@ -1,3 +1,5 @@
+/* Sets the global flag once (signed argument). */
+
 extern int func_ov022_02083fa4();
 
 int Ov002_SetGlobalFlagOnce(int arg0) {

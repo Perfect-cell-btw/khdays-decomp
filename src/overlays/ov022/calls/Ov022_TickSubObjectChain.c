@@ -1,3 +1,9 @@
+/* Per-tick sub-object orchestrator. First runs func_ov022_0209093c on the obj+0x2288 block. Returns
+ * if the 64-bit flag word at obj[0] has bit 9 set, or if bit 0 of obj+0x694 is clear. Otherwise
+ * runs Ov022_DropGroundMark, then four check-then-run pairs over the sub blocks at
+ * +0x1070/+0x1198/+0x1c8c/+0x1318 (the last also gated on bit 7 of the 64-bit flag at obj+0x464),
+ * then refreshes obj+0x1da8 and finishes with Ov022_DrawChargeEntries and func_ov022_0209d3a0. */
+
 extern void func_ov022_0209093c(short *p, int a, int b);
 extern void Ov022_DropGroundMark(int obj);
 extern int Ov022_IsBit0Set(void *p);

@@ -1,3 +1,5 @@
+/* Uploads the block's data through the registered copy callback and marks it loaded. */
+
 typedef void (*func_02025420_cb)(void *ptr, unsigned int arg1, unsigned int arg2);
 
 extern func_02025420_cb data_0204bc0c;

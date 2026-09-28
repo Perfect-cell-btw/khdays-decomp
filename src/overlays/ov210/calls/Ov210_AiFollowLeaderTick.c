@@ -1,3 +1,5 @@
+/* Binds to the leader once, then follows its position. */
+
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov210_BindOwnerAndAttach(int a, int b, int c);

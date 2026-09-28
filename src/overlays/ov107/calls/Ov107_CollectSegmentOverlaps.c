@@ -1,3 +1,6 @@
+/* Collects the elements of the owner's container list (+0xa8) whose hit shape (+0x1d8) overlaps the
+ * segment; returns the count. */
+
 extern void *List_First(void *listHead);
 extern void *List_Next(void *listHead);
 extern int Ov107_HitShape_TestSegment(void *criteria, void *query, int flags);

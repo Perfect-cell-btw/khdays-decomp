@@ -1,3 +1,5 @@
+/* Invokes slot 0x74 on the part object, then the base handler. */
+
 extern void Ov107_InvokeSlot0x74(void *a, int v);
 extern void Ov107_Actor_DetachFromRegion(void *a, void *b);
 

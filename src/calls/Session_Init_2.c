@@ -1,3 +1,6 @@
+/* Binds the session work, lays out the packet slots, clears the counters, installs the message
+ * queue and the mode's send hook; returns the idle step. */
+
 typedef unsigned int u32;
 
 struct Foo {

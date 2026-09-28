@@ -1,3 +1,6 @@
+/* Same routine as the ov157 function of this name, with the 0x4c size variant; see it for the
+ * details. */
+
 extern void CreateRegistryEntry();
 extern void Ov142_stInitSlotsFlags6(void);
 

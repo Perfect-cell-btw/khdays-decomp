@@ -1,3 +1,5 @@
+/* Runs callback C of table entry index with three arguments, if set. */
+
 extern char data_02041fe0[];
 
 void Callbacks_RunTableEntryC(int index, int arg1, int arg2, int arg3) {

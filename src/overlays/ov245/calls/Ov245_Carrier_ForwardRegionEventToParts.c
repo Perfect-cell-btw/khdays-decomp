@@ -1,3 +1,5 @@
+/* Inits the three part objects (+0x394) from the event, then the base region handler. */
+
 extern void Ov107_InitObjectFromSource();
 extern void Ov107_HandleRegionEvent();
 

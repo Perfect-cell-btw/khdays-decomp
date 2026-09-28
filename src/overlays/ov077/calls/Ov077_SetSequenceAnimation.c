@@ -1,3 +1,6 @@
+/* Binds each of the five animation tracks to the selected animation and resets every frame to zero.
+ */
+
 extern int BindAnimTrack(int, unsigned short, int, short);
 extern int Anim_SetFrameWrapped(int, unsigned short, int);
 

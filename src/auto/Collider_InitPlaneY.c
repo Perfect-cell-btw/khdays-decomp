@@ -1,3 +1,5 @@
+/* Fills the contact as a horizontal plane at the object's height. */
+
 int Collider_InitPlaneY(int *r0, int r1, short *r2) {
     r2[0x0c] = 0;
     r2[0x0a] = 0;

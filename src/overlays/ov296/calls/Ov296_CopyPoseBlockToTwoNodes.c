@@ -1,3 +1,6 @@
+/* After Ov107_ProcessObjectTick, copies the 11-word pose block (src +0x30) into two linked nodes.
+ */
+
 extern void Ov107_ProcessObjectTick(void *obj);
 struct blk11 { int w[11]; };
 void Ov296_CopyPoseBlockToTwoNodes(char *obj) {

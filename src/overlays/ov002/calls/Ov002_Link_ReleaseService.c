@@ -1,3 +1,5 @@
+/* Releases the link service instance. */
+
 extern void func_02023ad0();
 extern int data_ov002_0207f024;
 

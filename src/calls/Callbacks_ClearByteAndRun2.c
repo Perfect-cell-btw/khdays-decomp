@@ -1,3 +1,5 @@
+/* Clears the callback byte, then runs callback slot 2. */
+
 extern int Callbacks_SetByte();
 extern int Callbacks_Run();
 

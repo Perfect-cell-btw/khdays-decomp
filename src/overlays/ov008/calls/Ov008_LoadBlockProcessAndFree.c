@@ -1,3 +1,5 @@
+/* Build the transient blob, hand it to Ov008_InstantiateAndLinkElements, then free it. */
+
 extern void *Archive_LoadFile(void *source, int count);
 extern void Ov008_InstantiateAndLinkElements(void *context, void *block, int arg2);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);

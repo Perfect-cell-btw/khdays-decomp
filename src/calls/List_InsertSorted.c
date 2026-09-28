@@ -1,3 +1,8 @@
+/* ITCM: inserts a node into the address-sorted (key at +8) doubly-linked list at list+4, before the
+ * first node whose key exceeds `key`. Allocates extra+0x10 via CallocInstance (CallocInstance),
+ * links it in, bumps the count at list+0x20, and returns the new node's inline handle (node+0x10,
+ * also stored at node+0xC). */
+
 extern unsigned int *CallocInstance(int size);
 
 unsigned int List_InsertSorted(int list, int extra, unsigned int key) {

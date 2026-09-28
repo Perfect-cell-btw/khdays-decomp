@@ -1,3 +1,5 @@
+/* Steps the attack slot of the table (+0x2c2c) with the object's slot index, then forwards it. */
+
 extern char *data_ov093_020bc3c0;
 extern void Ov093_StepAttackSlot(void *a, void *arg1, int arg2);
 extern void Ov093_ForwardArg1IfFlagSet(void *a, void *arg1);

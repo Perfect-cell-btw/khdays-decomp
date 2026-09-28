@@ -1,3 +1,5 @@
+/* Contact between two overlapping actors: pushes the non-player one back with a knock-back hit. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

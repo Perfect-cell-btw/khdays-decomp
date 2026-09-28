@@ -1,3 +1,5 @@
+/* Script command: reads two int operands and loads the peer into the slot. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_LoadPeerIntoSlot();
 

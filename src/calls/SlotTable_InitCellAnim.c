@@ -1,3 +1,5 @@
+/* Initialises the entry's cell animation with sequence b of the bank (skips negative). */
+
 extern unsigned int NNS_G2dGetAnimSequenceByIdx(unsigned int a, unsigned int b);
 extern void NNS_G2dInitCellAnimation(void *p, unsigned int v, void *q);
 

@@ -1,3 +1,6 @@
+/* Moves the point by the step (stopping at walls when asked), then drops it onto the ground below
+ * (or clamps it to the floor limit). */
+
 extern int EntityMgr_RunSphereCast();
 extern void Vec3ScaleAddQ27();
 extern void VEC_Add();

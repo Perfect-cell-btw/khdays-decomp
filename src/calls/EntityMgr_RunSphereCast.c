@@ -1,3 +1,5 @@
+/* Builds a sphere-cast argument block and runs Collision_RunSphereCast on entity slot index. */
+
 typedef struct {
     int word0;
     int word4;

@@ -1,3 +1,5 @@
+/* Aims at the holder's target (heading at +0x14/+0x18). */
+
 typedef struct {
     void *p0;
     int *vecB;

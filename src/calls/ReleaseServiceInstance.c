@@ -1,3 +1,5 @@
+/* Releases the service class instance, if any, and forgets its id. */
+
 extern void func_02023ad0(int arg);
 
 extern int data_02042978;

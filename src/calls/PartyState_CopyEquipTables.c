@@ -1,3 +1,6 @@
+/* Copies the 24 word entries and/or the 15 halfword entries of the party record into the shared
+ * tables. */
+
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 
 extern char *data_0204c4f0[];

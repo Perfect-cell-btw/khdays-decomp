@@ -1,3 +1,5 @@
+/* Unless shut down, publishes slot value A1. */
+
 extern int Ov002_RunShutdownHook();
 extern int Ov002_PublishSlotValueA();
 

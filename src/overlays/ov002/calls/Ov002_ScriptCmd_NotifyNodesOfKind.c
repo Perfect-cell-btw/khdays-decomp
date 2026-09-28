@@ -1,3 +1,5 @@
+/* Script command: notifies the nodes of the operand kind; returns 1. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_NotifyNodesOfKind();
 

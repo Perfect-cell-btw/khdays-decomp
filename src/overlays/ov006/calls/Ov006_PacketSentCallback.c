@@ -1,3 +1,5 @@
+/* Send completion callback: clears the mission sync context's busy flag (+0x2c). */
+
 /* Clear +0x2c of the ov006 global object. */
 extern int data_ov006_020565e4;
 void Ov006_PacketSentCallback(void) {

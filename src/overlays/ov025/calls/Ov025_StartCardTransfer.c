@@ -1,3 +1,5 @@
+/* Begins the card transfer and marks it running. */
+
 extern int Ov025_BeginCardTransfer();
 
 void Ov025_StartCardTransfer(int arg0, int arg1) {

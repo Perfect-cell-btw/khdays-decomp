@@ -1,3 +1,5 @@
+/* Plays anim 1 and installs the idle tick. */
+
 extern void Ov107_PostTagUpdate(int v, int a, int b);
 extern void SetIndexedSlot(void *a, int b, void *cb);
 extern void Ov276_IdleTick(void);

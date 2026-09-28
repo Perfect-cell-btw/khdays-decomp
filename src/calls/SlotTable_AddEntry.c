@@ -1,3 +1,6 @@
+/* Takes a free slot entry, resets its state and scale, binds cell animation a1 of bank a2 and
+ * appends it; returns its index. */
+
 extern void INITi_CpuClear32_0x01ff86fc(unsigned int data, void *dst, unsigned int size);
 extern int SlotTable_FindFree(void);
 extern void SlotTable_InitCellAnim(void *dst, int a, int b, int c);

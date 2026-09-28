@@ -1,3 +1,5 @@
+/* Sets the flag of the local player's record. */
+
 extern int Session_GetLocalPlayerIndex();
 extern int data_ov002_0207f9b0;
 

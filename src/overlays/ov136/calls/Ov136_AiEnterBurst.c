@@ -1,3 +1,5 @@
+/* Plays anim 4, resets the burst state and installs the burst tick. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov136_BurstAttackTick(void);

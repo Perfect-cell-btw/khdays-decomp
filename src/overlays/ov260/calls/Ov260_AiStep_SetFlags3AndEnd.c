@@ -1,3 +1,5 @@
+/* Sets bits 0-1 of the actor's first flag word and ends the step. */
+
 extern int SetIndexedSlot();
 
 struct Sub {

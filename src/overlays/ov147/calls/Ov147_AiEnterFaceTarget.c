@@ -1,3 +1,5 @@
+/* Plays anim 2, seeds the default pose and installs the face-target step. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void Ov147_SeedDefaultPoseAndAdvance(int obj, int arg);
 extern void SetIndexedSlot(void *obj, int idx, void *value);

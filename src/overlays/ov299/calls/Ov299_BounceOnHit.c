@@ -1,3 +1,6 @@
+/* Hit callback: once, launches away from the hit (or back along the velocity) at 0x600 plus 0x500
+ * upward. */
+
 typedef struct { int x, y, z; } VecFx32;
 
 extern int VEC_Normalize(const VecFx32 *source, VecFx32 *dest);

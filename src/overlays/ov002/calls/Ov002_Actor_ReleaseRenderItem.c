@@ -1,3 +1,5 @@
+/* Actor class slot 0x14: releases the render item (+0x1c) if the node is live. */
+
 extern int Render_ReleaseNodeItem();
 
 void Ov002_Actor_ReleaseRenderItem(int arg0) {

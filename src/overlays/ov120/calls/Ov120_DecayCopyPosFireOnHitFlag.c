@@ -1,3 +1,10 @@
+/* Decay the counter at state[0xb] by 0x100, copy the vec3 at state+0x28 down to state+0x1c, and
+ * ONLY IF bit 0 of owner+0x17a is set, fire attack 6 (flag 0) and chain the next step.
+ * Byte-identical across ov120/ov121/ov122/ov293, so all four share this name. Retired from two
+ * competing names, both wrong: AdvancePositionUnlessHitFlag inverted the gate (it fires IF the
+ * flag, not unless) and described the vec copy as a position advance; ConfigSubStateThenAdvanceSlot
+ * mentioned neither the decay nor the copy. */
+
 struct v3 { int x, y, z; };
 struct bit0 { unsigned char b : 1; };
 extern void Ov107_PostTagUpdate(int a, int b, int c);

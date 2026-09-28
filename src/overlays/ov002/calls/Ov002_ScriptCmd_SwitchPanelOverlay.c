@@ -1,3 +1,5 @@
+/* Panel script command: reads an int operand and switches the panel overlay; returns 1. */
+
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_SwitchPanelOverlay();
 

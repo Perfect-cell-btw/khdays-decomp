@@ -1,3 +1,5 @@
+/* 1 in the local mode, otherwise the packed mask of connected players. */
+
 extern int Ov008_Link_IsLocal(void);
 extern int Session_PackConnectedPlayerMask(void);
 int Ov008_GetPlayerMask(void)

@@ -1,3 +1,5 @@
+/* Shop state: opens the detail panel, refreshes, and moves to the detail confirm tick. */
+
 extern void Ov026_OpenShopDetailPanel(void);
 extern void Ov026_RefreshPanelDisplay(void);
 extern void Ov026_ShopDetailConfirmTick(void);

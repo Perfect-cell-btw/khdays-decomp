@@ -1,3 +1,5 @@
+/* Frees the scene's lookup list and tables, then the base region teardown. */
+
 typedef unsigned int u32;
 
 typedef struct Obj {

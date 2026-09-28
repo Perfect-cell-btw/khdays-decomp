@@ -1,3 +1,5 @@
+/* Calls the object's message hook with an empty buffer and message 0x24. */
+
 struct Buf {
     short a;
     char b;

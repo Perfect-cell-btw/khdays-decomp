@@ -1,3 +1,5 @@
+/* Next playing position of stream slot index, or -1 at the end. */
+
 extern unsigned char *data_0204c234;
 extern unsigned int NNS_SndArcStrmGetCurrentPlayingPos(void *ptr);
 extern unsigned int NNS_SndArcStrmGetTimeLength(void *ptr);

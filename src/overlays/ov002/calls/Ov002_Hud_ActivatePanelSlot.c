@@ -1,3 +1,5 @@
+/* Activates the panel slot and arms the HUD state 4. */
+
 extern int Ov002_PanelActivateSlot();
 extern int data_ov002_0207f614;
 

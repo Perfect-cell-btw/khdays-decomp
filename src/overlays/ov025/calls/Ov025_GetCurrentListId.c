@@ -1,3 +1,5 @@
+/* Id of the menu context's current list. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_GetId10();
 

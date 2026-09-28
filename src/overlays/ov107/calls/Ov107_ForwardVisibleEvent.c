@@ -1,3 +1,5 @@
+/* For a visible flagged node, forwards the event (value and mode 3/0) to the global handler. */
+
 extern void *func_ov107_020c9848(void);
 extern int func_ov022_02083f0c(void);
 

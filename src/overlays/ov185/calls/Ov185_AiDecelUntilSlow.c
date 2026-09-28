@@ -1,3 +1,5 @@
+/* Keeps the previous velocity and damps it by 0xb00; below 0x20 clears stance bit 6. */
+
 extern int ScaleVec3Fx12();
 extern int RandNextScaled();
 extern int SetIndexedSlot();

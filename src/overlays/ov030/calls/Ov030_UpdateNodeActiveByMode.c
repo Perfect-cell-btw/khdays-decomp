@@ -1,3 +1,5 @@
+/* Deactivates the node outside modes 0x2f/0x30, then updates it while active. */
+
 extern int Anim_SetFrameWrapped(int, int, int);
 extern int Anim_GetFrame(int, int);
 

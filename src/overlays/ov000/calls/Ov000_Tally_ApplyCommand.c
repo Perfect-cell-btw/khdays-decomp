@@ -1,3 +1,6 @@
+/* Applies a tally command: 1/3 apply the slot updates, 3 and 6 add the seven deltas and the 14
+ * counters (capped at 0x64000). */
+
 typedef unsigned short u16;
 
 typedef struct {

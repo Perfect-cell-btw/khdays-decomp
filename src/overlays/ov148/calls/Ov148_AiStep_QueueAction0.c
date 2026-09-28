@@ -1,3 +1,5 @@
+/* Queues action 0 and ends the step. */
+
 extern int SetIndexedSlot();
 
 struct A {

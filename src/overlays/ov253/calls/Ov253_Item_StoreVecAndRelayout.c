@@ -1,3 +1,5 @@
+/* Stores the vector (+0x38c), re-lays the node out and sets flags60 bit 8. */
+
 extern void Ov107_MoveNodeAndRelayout();
 
 struct w3 { int a, b, c; };

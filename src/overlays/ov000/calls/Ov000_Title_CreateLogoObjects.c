@@ -1,3 +1,5 @@
+/* Loads the title's cell resource and creates the ten logo objects at their positions. */
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void ObjNode_InitFromDesc(void *mgr, void *desc);
 extern void G2x_SetBlendAlpha_(int reg, int a, int b, int c, int d);

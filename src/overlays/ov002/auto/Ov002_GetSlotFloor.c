@@ -1,3 +1,5 @@
+/* Returns the floor height (+8) of the slot's link record. */
+
 extern int data_ov002_0207fa10;
 
 int Ov002_GetSlotFloor(int arg0) {

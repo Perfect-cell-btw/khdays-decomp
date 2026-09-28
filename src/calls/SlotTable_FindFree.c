@@ -1,3 +1,5 @@
+/* Index of the first free slot entry (of 0x80, 0x8c stride), or -1. */
+
 struct Entry02031ac4 {
     unsigned int bit0 : 1;
     unsigned int _rest : 31;

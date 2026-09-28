@@ -1,3 +1,5 @@
+/* Opens the buy dialog and returns its step (or the list step when disabled). */
+
 extern char *data_ov026_02091368;
 extern void Ov026_OpenBuyDialog(void);
 extern void Ov026_RefreshPanelDisplay(void);

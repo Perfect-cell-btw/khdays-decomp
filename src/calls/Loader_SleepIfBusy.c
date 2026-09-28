@@ -1,3 +1,5 @@
+/* Sleeps the loader thread while requests are pending or active; returns 1. */
+
 extern void OS_SleepThread(void *p);
 extern struct { char _0[4]; char *field_4; char _8[0x34]; int field_3c; } data_0204bbfc;
 

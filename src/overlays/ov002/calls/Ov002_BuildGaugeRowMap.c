@@ -1,3 +1,6 @@
+/* Rebuilds the 48-row gauge work map from leading, divider, and blank six-byte styles, then
+ * publishes the complete 0xc0-byte buffer. */
+
 typedef struct {
     unsigned char pad0000[0x20];
     void *pDisplayRows;

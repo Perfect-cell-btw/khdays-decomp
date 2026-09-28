@@ -1,3 +1,8 @@
+/* Enable two handles according to value_0, then shift the Y coordinate belonging to the handle at
+ * +0xd150 by (value_2 - value_0) in 16.16 fixed point. 16.16 rather than the Q12 used by the
+ * fixed-point vector library -- worth noting because the two conventions coexist in this codebase.
+ */
+
 typedef unsigned char u8;
 typedef signed short s16;
 

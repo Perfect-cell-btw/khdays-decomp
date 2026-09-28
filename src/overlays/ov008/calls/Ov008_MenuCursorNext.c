@@ -1,3 +1,5 @@
+/* Plays the cursor sound and moves the menu cursor to the next entry. */
+
 extern char *Ov008_GetMenuContext(void);
 extern void PlaySound(int arg0, int arg1);
 extern void Ov008_MoveMenuCursor(int arg0);

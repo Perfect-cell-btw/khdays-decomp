@@ -1,3 +1,5 @@
+/* Counts the move timer down; at zero queues action 6 when flagged and returns 1. */
+
 int Ov264_AiCountdownQueue6(char *p) {
     char *ptr = *(char **)(p + 4);
     int diff = *(int *)(ptr + 0x50) - *(int *)(*(char **)p + 0x2c);

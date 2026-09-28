@@ -1,3 +1,5 @@
+/* Registers and initializes a sequence object from its resource descriptor. */
+
 extern int SND_RegisterSeq();
 extern void ModelInst_Init();
 

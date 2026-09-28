@@ -1,3 +1,6 @@
+/* Per-frame nudge of a two-state slider (field +8): state 1 slides -8 while phase bit 6 holds,
+ * state 2 slides +8 while phase bit 7 holds; on release or any other state, reset to 0. */
+
 extern void Ov008_ScrollMissionList(int obj, int delta);
 extern unsigned short data_0204c18c;
 

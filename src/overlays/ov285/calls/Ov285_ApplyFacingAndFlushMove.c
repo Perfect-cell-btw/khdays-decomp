@@ -1,3 +1,8 @@
+/* Per-frame facing update. Steps the facing angle toward its target, builds the turn as a
+ * quaternion about the up axis, composes it with the actor's current direction and writes the
+ * result into the actor's transform block. Then it hands the frame's accumulated movement to the
+ * actor and zeroes it. */
+
 typedef struct {
     int nX;
     int nY;

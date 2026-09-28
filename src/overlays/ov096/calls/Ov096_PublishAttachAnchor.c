@@ -1,3 +1,5 @@
+/* Publishes the attached block's anchor (+0x263c + 4) into the overlay state. */
+
 extern char *data_ov096_020bc0c0;
 
 void Ov096_PublishAttachAnchor(char *obj) {

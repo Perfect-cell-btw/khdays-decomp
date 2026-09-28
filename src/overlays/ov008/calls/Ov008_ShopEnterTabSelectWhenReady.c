@@ -1,3 +1,5 @@
+/* Shop state: refreshes touch and panel; moves to the tab-select tick once ready. */
+
 extern int Ov008_FadeInStep(void);
 extern void Ov008_UpdateTouchState(void);
 extern void Ov008_RefreshPanelDisplay(void);

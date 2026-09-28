@@ -1,3 +1,5 @@
+/* Third stat of the local player's character, or 0. */
+
 extern int Ov008_GetLocalPlayerCharacter(void);
 extern unsigned char data_ov008_0208f854[];
 

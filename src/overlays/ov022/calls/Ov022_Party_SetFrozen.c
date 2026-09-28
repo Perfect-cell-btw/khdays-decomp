@@ -1,3 +1,6 @@
+/* Freezes or unfreezes the party: toggles the flags, shows/hides the members and resets their
+ * velocity. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned long long u64;

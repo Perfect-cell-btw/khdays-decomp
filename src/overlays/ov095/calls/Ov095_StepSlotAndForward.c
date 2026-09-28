@@ -1,3 +1,5 @@
+/* Steps the table slot (+0x2cd4) with the object's slot index, then forwards it. */
+
 extern char *data_ov095_020bcba0;
 extern void Ov095_ProcessTwoSlotsThenTail(void *a, void *arg1, int arg2);
 extern void Ov095_ProcessTwoSlotsIfFlagSet(void *a, void *arg1);

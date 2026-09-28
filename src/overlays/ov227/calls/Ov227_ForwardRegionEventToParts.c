@@ -1,3 +1,5 @@
+/* Inits the part objects from the event, then the base region handler. */
+
 extern int Ov107_InitObjectFromSource();
 extern int Ov107_HandleRegionEvent();
 

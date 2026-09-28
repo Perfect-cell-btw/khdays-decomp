@@ -1,3 +1,5 @@
+/* State: updates the menu input; once the shop is closed returns to the commit page. */
+
 extern void Ov008_UpdateMenuInput(void);
 extern int Ov008_Shop_IsClosed(void);
 extern void Ov008_ReturnToCommitPage(void);

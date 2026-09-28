@@ -1,3 +1,5 @@
+/* Creates the AI task (first step InitChase) and links it at +0x214. */
+
 extern void CreateRegistryEntry();
 extern void Ov137_InitChase(void);
 void Ov137_CreateAiTask(int param_1) {

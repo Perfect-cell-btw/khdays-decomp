@@ -1,3 +1,6 @@
+/* ov node state callback: stores object[+0x2c]*30/10 into a state field (magic-multiply divide),
+ * requests a pose, then advances the node state slot. */
+
 extern int Quat_Slerp();
 extern int Srt_SetRotationQuat();
 

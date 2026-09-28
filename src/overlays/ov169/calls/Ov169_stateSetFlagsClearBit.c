@@ -1,3 +1,6 @@
+/* Set flags 0x86 in the high byte of the u16 at obj+0x60, clear bit0 of the byte at
+ * (obj+0x388)->+8, then dispatch. */
+
 struct bf { unsigned b : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov169_FlagGatedCopyVec3AndAdvance(void);

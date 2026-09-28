@@ -1,3 +1,6 @@
+/* Drops one reference; at zero releases the resource (HPAK group or G3D resource). Returns 1 when
+ * released. */
+
 extern int ResGroup_Release(void *p);
 extern int NNS_G3dResDefaultRelease(void *p);
 

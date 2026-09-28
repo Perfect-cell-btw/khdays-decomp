@@ -1,3 +1,5 @@
+/* While held (action 1) follows the holder's hand position and rotation. */
+
 typedef signed char s8;
 
 typedef struct { int a, b, c, d; } T4;

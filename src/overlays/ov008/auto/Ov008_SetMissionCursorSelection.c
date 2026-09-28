@@ -1,3 +1,5 @@
+/* If the ov008 global object exists, store a byte at +0x950c and return 1; else 0. */
+
 extern char *data_ov008_02090fa4;
 int Ov008_SetMissionCursorSelection(int value)
 {

@@ -1,3 +1,6 @@
+/* AI step: when the byte behind context +0x48 is clear, pendingAction (+0x1c7) = 2 and the step
+ * handler is cleared. */
+
 extern int SetIndexedSlot();
 
 struct Sub {

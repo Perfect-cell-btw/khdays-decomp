@@ -1,3 +1,6 @@
+/* Message override: message 5/0 and 5/1 spawn node-transform tasks, then falls back to
+ * Ov107_AiState_OnMessage. */
+
 extern int Ov107_CreateNodeXformTaskFx24(int a, int b, int c, int d, int e, int f);
 extern int Ov107_AiState_OnMessage(int a, int b, int c);
 

@@ -1,3 +1,6 @@
+/* Push animation params (4, 0) to the sprite, then dispatch via SetIndexedSlot with handler
+ * Ov291_PrepSubState5GuardField20. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov291_PrepSubState5GuardField20();

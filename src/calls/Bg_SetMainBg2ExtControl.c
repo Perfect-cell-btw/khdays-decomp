@@ -1,3 +1,5 @@
+/* Selects the extended-BG2 display mode and sets main-engine BG2CNT. */
+
 extern void DispMode_LookupWordAndDispatch(void *ptr);
 extern char data_02041f0c;
 extern int data_02047390;

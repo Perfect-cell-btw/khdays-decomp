@@ -1,3 +1,5 @@
+/* Whether the distance between two points is at least the value. */
+
 extern int VEC_Distance();
 
 int Ov002_IsBeyondDistance(int arg0, int arg1, int arg2) {

@@ -1,3 +1,6 @@
+/* Tail-call the shared dispatcher Ov025_WalkRecordsAppendMatching, supplying
+ * Ov025_RecordFilter_InRange as the per-variant handler (4th arg). */
+
 extern int Ov025_WalkRecordsAppendMatching();
 extern int Ov025_RecordFilter_InRange();
 

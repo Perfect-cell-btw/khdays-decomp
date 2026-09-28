@@ -1,3 +1,6 @@
+/* Drops one reference; at zero releases the resource (packed 'HPAK' group or G3D resource), frees
+ * its memory and clears the slot. Returns 1 when freed. */
+
 typedef struct ResGroup ResGroup;
 
 extern void ResGroup_Release(ResGroup *state);

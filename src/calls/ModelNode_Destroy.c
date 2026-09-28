@@ -1,3 +1,5 @@
+/* Destroys the node's child list, then the base node. */
+
 extern void NNSi_FndDestroyDoubleList(void *p);
 extern void Node_BaseOnDestroy(void *p);
 

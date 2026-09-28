@@ -1,3 +1,6 @@
+/* Copy the working Vec3 after decrementing the node timer, guard on the actor bit, run
+ * pose/subaction setup, and advance to the next state callback. */
+
 typedef struct Vec3 {
     int x;
     int y;

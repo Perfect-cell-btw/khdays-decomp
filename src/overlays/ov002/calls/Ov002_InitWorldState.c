@@ -1,3 +1,6 @@
+/* World screen open handler: resets the world state, camera presets and feature flags from the game
+ * state. */
+
 typedef struct {
     int x;
     int y;
