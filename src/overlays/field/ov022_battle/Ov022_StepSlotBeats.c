@@ -107,7 +107,7 @@ extern int Ov022_ClampReactionForKind10(int nKind, int nMode);
 extern void func_ov022_0208acdc(struct Ov022ReactionCtx *pCtx, struct Ov022ActionQuery *pReq,
                                 int nReaction);
 extern void func_ov022_0208a6b0(struct Ov022ReactionCtx *pCtx);
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 extern int Session_IsReady(void);
 int Ov022_StepSlotBeats(struct Ov022ReactionCtx *pCtx, int nDelta)
 {

@@ -8,7 +8,7 @@
  * advances into phase 6. */
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);                /* Anim_SetFrameWrapped */
-extern int Sequence_UpdateTracks(void *animation, int delta);                            /* Sequence_UpdateTracks */
+extern unsigned short Sequence_UpdateTracks(void *animation, int delta);                            /* Sequence_UpdateTracks */
 extern void SoundSeqHandle_Stop(int handle);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern int Ov022_PlayEntityVoice(char *self, int nSound, int nVariant);

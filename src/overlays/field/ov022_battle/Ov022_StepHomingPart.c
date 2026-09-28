@@ -72,7 +72,7 @@ extern int VEC_Distance(VecFx32 *a, VecFx32 *b);
 extern int Ov022_ClampReactionForKind10(int nKind, int nReaction);
 extern void Ov022_EndPartRun(struct ReactionCtx *pCtx,
                                 struct SlotPart *pPart, int nReaction);
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 
 int Ov022_StepHomingPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                         int nDelta)

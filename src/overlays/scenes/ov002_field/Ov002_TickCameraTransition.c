@@ -17,7 +17,7 @@ extern void VEC_MultAdd(int k, const VecFx32 *a, const VecFx32 *b,
                         VecFx32 *out);
 
 extern VecFx32 *func_ov022_020881f8(int nPlayer);
-extern int func_ov022_02088254(int nPlayer);
+extern unsigned short func_ov022_02088254(int nPlayer);
 extern void Ov022_GetStreamTimestamp(int nPlayer);
 
 extern unsigned short data_0204c190;

@@ -1,6 +1,6 @@
 /* Walks the record list appending the records of kind 4 with id (+2) 10. */
 
-extern int Ov025_WalkRecordsAppendMatching();
+extern unsigned short Ov025_WalkRecordsAppendMatching();
 extern int Ov025_RecordFilter_Kind4Id10();
 
 int Ov025_AppendRecordsKind4Id10(int arg0, int arg1, int arg2) {

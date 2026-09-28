@@ -6,7 +6,7 @@
  * advances the tracks; 3 advances them and goes idle when they finish. */
 extern void SoundSeqHandle_Stop(int handle);
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */
-extern int Sequence_UpdateTracks(void *animation, int delta);                            /* Sequence_UpdateTracks */
+extern unsigned short Sequence_UpdateTracks(void *animation, int delta);                            /* Sequence_UpdateTracks */
 extern void Ov086_BindAnimsAndFaceOwner(char *self, char *slot);
 extern void Ov022_PlayEntityVoice(char *self, int nSound, int nVariant);
 

@@ -1,6 +1,6 @@
 /* While the effect slot is active, advances its tracks and marks it idle when they finish. */
 
-extern int Sequence_UpdateTracks();
+extern unsigned short Sequence_UpdateTracks();
 
 void Ov089_ClearStateIfReadyWhenActive(int this_, int delta) {
     if (*(int *)this_ != 1) return;

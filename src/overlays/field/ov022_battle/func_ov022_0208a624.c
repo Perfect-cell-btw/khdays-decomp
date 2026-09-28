@@ -2,7 +2,7 @@
  * message handle. */
 
 extern int QueryActiveStateOrDelegate(void);
-extern int func_02031384(int a, void *b, int c);
+extern unsigned short func_02031384(int a, void *b, int c);
 
 union marshal_0208a624 {
     unsigned int raw;

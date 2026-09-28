@@ -1,6 +1,6 @@
 /* Walks the record list appending the records whose kind byte (+0x23) is nonzero. */
 
-extern int Ov025_WalkRecordsAppendMatching();
+extern unsigned short Ov025_WalkRecordsAppendMatching();
 extern int Ov025_RecordFilter_KindNonZero();
 
 int Ov025_AppendRecordsKindNonZero(int arg0, int arg1, int arg2) {

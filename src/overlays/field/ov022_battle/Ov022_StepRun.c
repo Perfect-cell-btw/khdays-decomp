@@ -50,7 +50,7 @@ extern struct Record data_0204c3d8[];
 
 extern int Session_IsReady(void);
 extern int QueryActiveStateOrDelegate(void);
-extern int GetGlobalU16At6(void);
+extern unsigned short GetGlobalU16At6(void);
 extern int MsgQueue_Contains(int nMsgId);
 extern int Slot_EvalPackedParam(int nId, int nWhat);
 extern void Ov002_Camera_SetMode(int nA, int nB, int nC);

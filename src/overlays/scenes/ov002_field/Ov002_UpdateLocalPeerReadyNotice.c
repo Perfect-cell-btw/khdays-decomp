@@ -14,7 +14,7 @@ extern int func_ov022_020886d0(int nSlot);
 extern int Ov002_GetSlotTableByte(int nSlot);
 extern int Ov002_GetWidgetStateByte(int nWidget);
 extern int Ov002_SetWidgetStateByte(int nWidget, int nState, int bRelayout);
-extern int Ov002_GetCtxModeByte(void);
+extern signed char Ov002_GetCtxModeByte(void);
 extern void Ov002_ReportRequestLevel(int nFlags, int nLevel, int nReserved);
 
 void Ov002_UpdateLocalPeerReadyNotice(unsigned int nSlot, int bReady)

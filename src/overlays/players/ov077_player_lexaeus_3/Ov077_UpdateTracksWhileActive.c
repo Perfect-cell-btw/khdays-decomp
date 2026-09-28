@@ -1,6 +1,6 @@
 /* While active updates the animation tracks; deactivates when they finish. */
 
-extern int Sequence_UpdateTracks(void *p, void *b);
+extern unsigned short Sequence_UpdateTracks(void *p, void *b);
 
 void Ov077_UpdateTracksWhileActive(int unused, char *a, void *b) {
     if (*(int *)(a + 0xc) != 1) return;

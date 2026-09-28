@@ -11,7 +11,7 @@
  * guarded do/while with the counter initialised above the guard and the byte offset
  * inside it: that is what puts the ROM's `mov r6,#1` ahead of `mov r7,#0` and sinks
  * the offset's zero into the loop preheader. */
-extern int Sequence_UpdateTracks(int a, int b);
+extern unsigned short Sequence_UpdateTracks(int a, int b);
 extern void *data_ov022_020b29bc[];
 
 typedef int (*Handler0208ba80)(int obj, int sub, int a1, void *fn);

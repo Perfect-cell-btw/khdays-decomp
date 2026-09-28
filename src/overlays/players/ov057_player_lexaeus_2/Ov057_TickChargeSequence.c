@@ -15,7 +15,7 @@ extern void Ov057_ReleaseGlobalSlotIfSet(int pActor, int *pCharge);
 extern void Ov057_BindChargeTracks(int pCharge, int a);
 extern void Ov057_BindDefaultAnims(int pActor, void *block);
 extern void Ov057_BindSwingSequencePhase(int pActor, void *block, int a);
-extern unsigned int Sequence_UpdateTracks(void *p, int a);
+extern unsigned short Sequence_UpdateTracks(void *p, int a);
 extern void Ov022_PlayEntityVoice(int pActor, int a, int b);
 extern int Ov022_IsSlotReady(void *p);
 

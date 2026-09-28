@@ -60,7 +60,7 @@ struct ReactionCtx {
 
 extern int Session_IsReady(void);
 extern int QueryActiveStateOrDelegate(void);
-extern int func_02031384(int nPort, struct EndMessage *pMsg, int nSize);
+extern unsigned short func_02031384(int nPort, struct EndMessage *pMsg, int nSize);
 
 void Ov022_EndPartRun(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                          int nReaction)

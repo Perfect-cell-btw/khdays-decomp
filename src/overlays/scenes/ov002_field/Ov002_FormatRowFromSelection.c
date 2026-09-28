@@ -3,7 +3,7 @@
  * filled by Ov002_ScreenToCell before the second lookup runs. */
 extern int func_ov022_020881f8(int player);
 extern void Ov002_ScreenToCell(void *out, int value);
-extern int func_ov022_02088254(int self);
+extern unsigned short func_ov022_02088254(int self);
 extern void Ov002_PlotPageGlyph(int self, void *pair, int row);
 
 void Ov002_FormatRowFromSelection(int self) {

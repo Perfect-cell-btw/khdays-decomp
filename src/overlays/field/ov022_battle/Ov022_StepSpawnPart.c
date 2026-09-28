@@ -72,7 +72,7 @@ struct ActionParams {
 };
 
 extern void func_ov022_0208a938(u16 *pFlags, int nValue);
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 extern void func_ov022_0208a6b0(struct ReactionCtx *pCtx);
 extern int Ov022_GetActorValue(void *pActor, int nKey, int nActionLevel);
 extern int Ov022_TrySpawnAction(struct ReactionCtx *pCtx,

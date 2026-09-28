@@ -2,7 +2,7 @@
  * charge time is long enough, and plays its tracks to the end before resetting the follow-up
  * sequence. */
 
-extern int Sequence_UpdateTracks(int a, int b);
+extern unsigned short Sequence_UpdateTracks(int a, int b);
 extern void Ov057_ResetSequenceState(int a, int b);
 extern int data_ov057_020b74a0;
 

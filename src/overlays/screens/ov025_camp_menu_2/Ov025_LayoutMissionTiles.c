@@ -54,9 +54,9 @@ extern const Ov008RankTags data_ov025_020b4598;
 extern Ov008MissionListEntry *Ov025_GetNextMissionEntry_2(int nIndex);           /* mission list entry */
 extern int   Ov025_GetCtxBlock954c(void);                                  /* Ov008_GetCtxBlock954c */
 extern int   Ov025_GetCtxObject9630(void);                                  /* Ov008_GetCtxObject9630 */
-extern int   Ov025_GetStateByte14f0(int nGroup);                            /* mission count of a group */
+extern unsigned char   Ov025_GetStateByte14f0(int nGroup);                            /* mission count of a group */
 extern long long OS_GetTick(void);                                    /* GetTick64 */
-extern int   Ov025_GetPageAByte14F3(void);                                  /* cleared mission count */
+extern unsigned char   Ov025_GetPageAByte14F3(void);                                  /* cleared mission count */
 extern u32   GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 extern int   Ov025_FindActiveEntryByTag(int nOwner, u32 nTag);                  /* ov008_FindActiveEntryByTag */
 extern void  Ov025_SetTagTrackerNodeArmed(int nOwner, int nEntry, int bArmed);    /* SetTagTrackerNodeArmed */

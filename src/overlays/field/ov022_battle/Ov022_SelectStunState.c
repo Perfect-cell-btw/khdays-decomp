@@ -29,7 +29,7 @@ struct Actor {
 };
 
 extern void func_ov022_0209c700(struct Actor *pActor);
-extern int Ov002_GetActorSlotByte(u8 nId);
+extern signed char Ov002_GetActorSlotByte(u8 nId);
 extern int Session_GetLocalPlayerIndex(void);
 extern void *Ov022_ResolveGuardBreakState(struct Actor *pActor);
 extern void *Ov022_ActorSetState(struct Actor *pActor, int nState);

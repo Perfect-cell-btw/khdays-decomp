@@ -15,7 +15,7 @@ extern void Ov094_ReleaseGlobalSlotIfSet(int self, int *p2);
 extern void Ov094_BindChargeTracks(int p2, int a);
 extern void Ov094_BindDefaultAnims(int self, void *block);
 extern void Ov094_RearmSequenceSlots(int self, void *block, int a);
-extern unsigned int Sequence_UpdateTracks(void *p, int a);
+extern unsigned short Sequence_UpdateTracks(void *p, int a);
 extern void Ov022_PlayEntityVoice(int self, int a, int b);
 extern int Ov022_IsSlotReady(void *p);
 

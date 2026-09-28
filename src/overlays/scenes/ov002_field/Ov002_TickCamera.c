@@ -9,7 +9,7 @@ extern int FX_Div(int a, int b);
 extern short FX_Atan2(int x, int y);
 /* Cosine to angle: a binary search over the shared sin/cos table. The other
  * three registers Ghidra shows at the call site are the callee's own locals. */
-extern int FX_AcosIdx(int nCos);
+extern unsigned short FX_AcosIdx(int nCos);
 extern void func_0201653c(int *pObj, int *pOutA, int *pOutB);
 extern void func_020166c4(int a, int b, int *pOut, int *pWork);
 extern int VEC_Mag(const VecFx32 *v);

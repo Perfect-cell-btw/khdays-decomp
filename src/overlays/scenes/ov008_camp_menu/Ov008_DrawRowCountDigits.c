@@ -50,7 +50,7 @@ typedef struct Ov008MenuContext {
 
 extern Font *Ov008_GetDescriptor3(void);                                   /* wide glyph set */
 extern void *Ov008_GetCtxBlock968c(void);                                   /* Ov008_GetCtxBlock968c */
-extern u32   NNS_G2dFontFindGlyphIndex(Font *pFont, u16 nChar);                       /* glyph index of a character */
+extern unsigned short   NNS_G2dFontFindGlyphIndex(Font *pFont, u16 nChar);                       /* glyph index of a character */
 extern GlyphInfo *NNS_G2dFontGetCharWidthsFromIndex(Font *pFont, u32 nGlyph);                 /* glyph info */
 extern int   Obj_ForwardInnerPayload(TileSurface *pSurface, int nX, int nY, int nColour, int nGlyph); /* Obj_ForwardInnerPayload */
 

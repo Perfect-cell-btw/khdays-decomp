@@ -47,7 +47,7 @@ extern int Ov044_ov030_UpdatePathMotionState(struct Ov044Controller *self,
 extern int Ov022_IsState9Or6WithFlag200(void *buildBlock);
 extern void BindAnimTrack(void *animation, int track, void *table, int mode);
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);
-extern int Sequence_UpdateTracks(void *animation, int delta);
+extern unsigned short Sequence_UpdateTracks(void *animation, int delta);
 extern void Ov044_UpdateNodeActiveByMode(struct Ov044Controller *self, int delta);
 extern void Ov044_updateSubObjects(struct Ov044Controller *self);
 

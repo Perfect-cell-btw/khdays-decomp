@@ -47,7 +47,7 @@ typedef int (*StepFn)(struct ReactionCtx *pCtx, struct SlotPart *pPart,
 
 extern StepFn const data_ov022_020b29bc[];
 
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 extern void Ov022_StepHomingPart_2(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                                 int nDelta);
 

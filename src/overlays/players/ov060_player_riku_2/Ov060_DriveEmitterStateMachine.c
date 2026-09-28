@@ -16,7 +16,7 @@
 extern int Ov022_IsState9Or6WithFlag200(void *p);
 extern void BindAnimTrack(void *p, int a, void *b, int c);
 extern void Anim_SetFrameWrapped(void *p, int a, int b);
-extern unsigned int Sequence_UpdateTracks(void *p, int a);
+extern unsigned short Sequence_UpdateTracks(void *p, int a);
 
 void Ov060_DriveEmitterStateMachine(int self, int *p, int p3) {
     if (*p != 0 && *p != 4 && Ov022_IsState9Or6WithFlag200((void *)(self + 0x22f8)) == 0 &&

@@ -13,7 +13,7 @@
  * `code = -1` must be a STATEMENT after the guard, not a declaration-initialiser: as an
  * initialiser mwcc hoists the `mvn r1, #0` above the early return, where the ROM emits it
  * after. Everything else was byte-exact on the first compile. */
-extern int Ov002_GetCtxModeByte(void);
+extern signed char Ov002_GetCtxModeByte(void);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, void *d);
 
 void Ov297_MapHeldItemKindToAnim(int self, int param_2, int param_3, int param_4) {

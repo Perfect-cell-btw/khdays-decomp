@@ -108,7 +108,7 @@ extern int Session_RandNextScaled(int nRange);                                  
 extern int Slot_EvalPackedParam(int nId, int nRule);                                   /* Slot_EvalPackedParam */
 extern int func_ov022_020ad7b0(struct Actor *pActor);                           /* Ov022_IsShielded */
 extern int Ov022_LookupRowValue(struct Actor *pActor, int bAlt, int bBonus);     /* Ov022_LookupRowValue */
-extern int Ov002_GetActorSlotByte(int nId);
+extern signed char Ov002_GetActorSlotByte(int nId);
 extern int Ov022_GetByte2770(struct Actor *pActor);                           /* Ov022_GetChargeKind */
 extern int Ov022_ReceiveHit(struct Actor *pOwner, struct HitRequest *pReq);
 extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pActor);          /* CopyVec3FromSub948 */

@@ -8,7 +8,7 @@
 
 extern int Ov022_IsState9Or6WithFlag200(void *p);
 extern void Anim_SetFrameWrapped(void *p, int idx, int a);
-extern unsigned int Sequence_UpdateTracks(void *p, int rate);
+extern unsigned short Sequence_UpdateTracks(void *p, int rate);
 
 void Ov072_EffectBlockTick(int self, char *block)
 {

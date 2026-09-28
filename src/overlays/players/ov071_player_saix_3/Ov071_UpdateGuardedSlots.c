@@ -4,7 +4,7 @@
 
 extern int Ov022_IsState9Or6WithFlag200(int a);
 extern void MI_Copy48B(int dst, int src);
-extern int Sequence_UpdateTracks(int a, int b);
+extern unsigned short Sequence_UpdateTracks(int a, int b);
 extern void Ov071_ClearStateIfReadyWhenActive(int a, int b);
 
 typedef struct {

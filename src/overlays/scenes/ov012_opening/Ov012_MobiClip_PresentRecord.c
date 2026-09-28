@@ -28,7 +28,7 @@ typedef struct {
     int unk4;
 } Ov024_RecordRef;
 
-extern int Ov012_MobiClip_SubtitleNextChar(int stream);
+extern unsigned short Ov012_MobiClip_SubtitleNextChar(int stream);
 extern void MobiClip_ResolveGlyphRecord(int stream, Ov024_RecordRef *out, int status);
 extern int Ov012_MobiClip_StreamAdvance(int stream);
 extern void CallVirtSlot0(int stream, int a, int b, int mode, Ov024_RecordRef *ref);

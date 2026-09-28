@@ -3,7 +3,7 @@
 
 extern void Ov055_ApplyChargeLevelOnce(int self, int lvl);
 extern void Scene_DrawNode(int a);
-extern int Sequence_UpdateTracks(int a, int b);
+extern unsigned short Sequence_UpdateTracks(int a, int b);
 
 typedef struct { unsigned char b0 : 1; } Flags;
 

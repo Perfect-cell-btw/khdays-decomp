@@ -28,7 +28,7 @@ extern unsigned int GameState_GetField(int id, int kind);
 extern void LoadOverlaySync(int processor, int overlay);
 extern void UnloadOverlaySync(int processor, int overlay);
 extern void Ov302_InitObjectWithList(void *set, struct RecordInit *init);
-extern int Ov302_GetId10(void *set);
+extern unsigned short Ov302_GetId10(void *set);
 extern struct Record *Ov302_FindListObjectWithField10Zero(void *set, struct Record *cur);
 extern void Ov302_DestroyListAndBuffers(void *set);
 extern const struct RecordInit data_ov069_020ba7ec;

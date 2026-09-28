@@ -75,7 +75,7 @@ extern int Session_IsReady(void);
 extern void Ov022_ApplyReactionHit(struct ReactionCtx *pCtx,
                                 struct ActorSlot *pSlot);
 /* Sequence_UpdateTracks */
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 
 #define KIND_TRIGGER 0xc
 #define ACTOR_FLAG_CHARGE 0x1000ULL

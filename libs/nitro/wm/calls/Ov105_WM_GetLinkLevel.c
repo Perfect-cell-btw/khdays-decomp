@@ -200,7 +200,7 @@ extern void OS_GetMacAddress(u8 *macAddress);
 /* Ov105_WM_GetLinkLevel -- WM_GetLinkLevel: the ARM7's link quality level while an MP
  * or DCF session is up (a parent with no child yet reports level 0).
  */
-u16 Ov105_WM_GetLinkLevel(void)
+int Ov105_WM_GetLinkLevel(void)
 {
     WMErrCode result;
     WMArm9Buf *p = Ov105_GetContext();

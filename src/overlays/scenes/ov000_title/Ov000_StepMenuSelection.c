@@ -15,7 +15,7 @@ typedef struct {
 
 extern const OverlayCountTable data_ov000_0205a6b0;
 extern OverlayContext *NNSi_FndGetCurrentRootHeap(void);
-extern int Mem_ReadU16(void *input);
+extern unsigned short Mem_ReadU16(void *input);
 extern void PlaySound(int first, int second);
 
 int Ov000_StepMenuSelection(void *input, int selection, int group) {

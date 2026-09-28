@@ -31,7 +31,7 @@ struct Obj {
 };
 
 extern int Ov107_MoveNodeAndRelayout(int node, VecFx32 *v);
-extern int Ov002_GetCtxModeByte(int x);
+extern signed char Ov002_GetCtxModeByte(int x);
 extern int SetIndexedSlot();
 
 void Ov167_FlagGatedCopyVec3AndAdvance(struct Obj *this_) {

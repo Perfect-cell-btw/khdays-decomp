@@ -10,7 +10,7 @@
  * case 0 are bare `pop {r3,r4,r5,pc}` instructions rather than branches. See
  * codegen-cracks.md. Matched byte-exact on the first compile with that shape. */
 extern void Ov067_RebindAnimTracks(int p2, int a);
-extern unsigned int Sequence_UpdateTracks(void *p, int a);
+extern unsigned short Sequence_UpdateTracks(void *p, int a);
 extern void Ov022_PlayEntityVoice(int self, int a, int b);
 extern int Ov022_IsSlotReady(void *p);
 

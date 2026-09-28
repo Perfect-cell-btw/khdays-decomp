@@ -81,7 +81,7 @@ extern int Session_IsReady(void);
 extern int Ov022_GetSlotMoveMode(struct ReactionCtx *pCtx, int nSlot);
 extern void func_ov022_020b19ec(int *pAnimReq, int nMode);
 extern void Ov022_BuildEntryLabelText(struct ReactionCtx *pCtx, int nSlot);
-extern int Ov022_MarshalStateHalf12(struct ReactionCtx *pCtx, int nKind, int *pSlot);
+extern unsigned short Ov022_MarshalStateHalf12(struct ReactionCtx *pCtx, int nKind, int *pSlot);
 extern int MsgQueue_Contains(unsigned int nMsgId);
 extern int func_ov022_020b1510(u8 *pOwner);
 extern int Ov022_StepCueTrack(u8 *pCueTrack, int nCue);

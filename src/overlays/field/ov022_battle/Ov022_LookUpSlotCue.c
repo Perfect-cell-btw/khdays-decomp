@@ -17,7 +17,7 @@
 extern const short data_ov022_020b2654[];
 extern const short data_ov022_020b2672[];
 extern const short data_ov022_020b2690[];
-extern int Ov002_GetCtxModeByte(void);
+extern signed char Ov002_GetCtxModeByte(void);
 
 int Ov022_LookUpSlotCue(int nState, int nSlot)
 {

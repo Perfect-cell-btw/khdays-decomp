@@ -18,7 +18,7 @@ typedef struct GameState {
 extern GameState *data_0204be18;
 extern int Ov008_GetChildField14OrNeg1(int nChild);   /* GetChildField14OrNeg1 */
 
-u8 Ov008_CountSpareItemsOfChild(int nChild)
+int Ov008_CountSpareItemsOfChild(int nChild)
 {
     int nItem;
     u8 nSpare;

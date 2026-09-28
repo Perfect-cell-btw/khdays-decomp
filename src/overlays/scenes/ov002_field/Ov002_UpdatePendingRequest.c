@@ -18,7 +18,7 @@
 #include "nitro/types.h"
 
 extern int  Session_IsReady(void);
-extern int  GetGlobalU16At6(void);
+extern unsigned short  GetGlobalU16At6(void);
 extern u16  Ov002_BuildSessionCommand(int kind, void *out);
 extern int  MsgQueue_Contains(int slot);
 extern int  Session_GetLocalPlayerIndex(void);

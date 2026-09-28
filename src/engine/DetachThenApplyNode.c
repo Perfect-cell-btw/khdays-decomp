@@ -2,7 +2,7 @@
  * then advances its tracks unless paused (flags 0x20/0x40); returns the track result. */
 
 extern void TeardownNodeIfBit0Set();
-extern unsigned int Sequence_UpdateTracks();
+extern unsigned short Sequence_UpdateTracks();
 unsigned int DetachThenApplyNode(int param_1, unsigned int *param_2, int param_3)
 {
     unsigned int r = 0;

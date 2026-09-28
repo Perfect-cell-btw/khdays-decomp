@@ -15,7 +15,7 @@
 
 typedef struct { char *metrics; int bitmap; } GlyphDraw;
 
-extern unsigned NNS_G2dFontFindGlyphIndex(int *font, unsigned ch);
+extern unsigned short NNS_G2dFontFindGlyphIndex(int *font, unsigned ch);
 extern char *NNS_G2dFontGetCharWidthsFromIndex(int *font, unsigned glyph);
 
 int Text_DrawGlyph(int owner, int *font, int x, int y, int p5, unsigned short ch)

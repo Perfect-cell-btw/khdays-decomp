@@ -26,7 +26,7 @@ typedef struct {
 extern int data_ov002_0207f628;
 
 extern int func_02023c40(void);
-extern unsigned int Sequence_UpdateTracks(void *pWidget, int nStep);
+extern unsigned short Sequence_UpdateTracks(void *pWidget, int nStep);
 extern void Scene_DrawNode(void *pWidget);
 
 extern void Ov002_ProjectWorldToPanel(VecFx32 *pOut, const VecFx32 *pIn,

@@ -14,7 +14,7 @@ extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int Ov276_IdleCountdown(int *node, int dist);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern int Ov002_GetCtxModeByte(void);
+extern signed char Ov002_GetCtxModeByte(void);
 extern int RandNextScaled(int range);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 

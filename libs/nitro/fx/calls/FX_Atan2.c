@@ -12,12 +12,15 @@
  * falls on. Each axis-aligned or diagonal special case (both zero handled by
  * degenerate ratios, one axis zero, or the two components equal) returns its
  * angle directly without the table.
+ *
+ * The angle comes back as an int, zero-extended: that is how every caller in the
+ * game reads it (declared returning u16, their code changes).
  */
 
 extern int FX_Div(int numer, int denom);
 extern const short data_02041314[130];
 
-unsigned short FX_Atan2(int x, int y)
+int FX_Atan2(int x, int y)
 {
     int numer;
     int denom;

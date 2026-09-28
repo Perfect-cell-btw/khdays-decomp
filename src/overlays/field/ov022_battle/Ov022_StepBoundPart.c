@@ -94,7 +94,7 @@ extern int Ov022_CastMove(struct ReactionCtx *pCtx,
                                struct MoveProbe *pProbe);
 extern void Ov022_BindBlockAnimations(struct ReactionCtx *pCtx, u16 *pBinding,
                                 u16 *pFlags, int nIndex);
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 
 int Ov022_StepBoundPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                         int nDelta)

@@ -10,7 +10,7 @@ extern void MTX_MultVec33();
 extern void VEC_Add();
 extern void VEC_Normalize();
 extern int VEC_Distance();
-extern int Sequence_UpdateTracks();
+extern unsigned short Sequence_UpdateTracks();
 extern void Ov044_beginState5();
 extern void Ov044_RebindEmitterSlots();
 extern void Ov044_RequestSpawnAtObject();

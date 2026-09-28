@@ -85,7 +85,7 @@ extern void Ov022_MovePartTo(struct ReactionCtx *pCtx, struct SlotPart *pPart,
 extern int Ov022_ClampReactionForKind10(int nKind, int nMode);
 extern void Ov022_EndPartRun(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                                 int nReaction);
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 
 int Ov022_StepHomingPart_2(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                         int nDelta)

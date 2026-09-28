@@ -1,7 +1,7 @@
 /* Walks the record list appending the records triggerable at value (flag clear, in range, unlock
  * flag set). */
 
-extern int Ov025_WalkRecordsAppendMatching();
+extern unsigned short Ov025_WalkRecordsAppendMatching();
 extern int Ov025_CanTriggerActionInRange();
 
 int Ov025_AppendTriggerableInRange(int arg0, int arg1, int arg2) {

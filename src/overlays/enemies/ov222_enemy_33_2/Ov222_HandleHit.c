@@ -69,7 +69,7 @@ struct Ov221ActorHitState {
 extern const struct Ov221ReactionModes data_ov222_020d6be8;
 extern int Ov107_CalcHitDamage(struct Ov221ActorHitState *self, struct Ov221Hit *hit);
 extern void Ov107_BuildAndSendUpdate(struct Ov221ActorHitState *self, int reactionId, u8 mode, int context);
-extern int Ov002_GetCtxModeByte(void);
+extern signed char Ov002_GetCtxModeByte(void);
 
 int Ov222_HandleHit(struct Ov221ActorHitState *self, int source, struct Ov221Hit *hit)
 {

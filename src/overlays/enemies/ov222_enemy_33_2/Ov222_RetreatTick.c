@@ -17,7 +17,7 @@ static inline void VEC_Set(VecFx32 *v, int x, int y, int z) { v->x = x; v->y = y
 
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
-extern int Ov002_GetCtxModeByte(void);
+extern signed char Ov002_GetCtxModeByte(void);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02041dc8;
 

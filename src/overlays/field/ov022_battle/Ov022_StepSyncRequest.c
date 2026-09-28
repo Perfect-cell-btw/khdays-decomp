@@ -44,7 +44,7 @@ extern int Ov022_ActivateSyncRequest(struct SyncRequest *pReq);
 extern int Session_IsReady(void);
 extern int Session_GetLocalPlayerIndex(void);
 extern void Ov022_SendSyncRequest(struct SyncRequest *pReq);
-extern int GetGlobalU16At6(void);
+extern unsigned short GetGlobalU16At6(void);
 
 void Ov022_StepSyncRequest(struct SyncRequest *pReq)
 {

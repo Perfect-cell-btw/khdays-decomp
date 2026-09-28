@@ -8,7 +8,7 @@ extern char *NNSi_FndGetCurrentRootHeap(void);               /* the overlay root
 extern void Ov002_BuildWrapUpReport(void *pReport);  /* Ov002_BuildWrapUpReport */
 extern void Scene_RequestPending(int nKind, int nArg); /* request a scene */
 extern int Session_IsReady(void);                 /* is the session ready */
-extern int GetGlobalU16At6(void);                 /* the local peer mask */
+extern unsigned short GetGlobalU16At6(void);                 /* the local peer mask */
 extern void MIi_CpuClear16(int nValue, void *pDst, int nSize);
 extern int Ov002_BuildSessionCommand(int nKind, void *pCmd);  /* send, kind 8 */
 

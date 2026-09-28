@@ -48,7 +48,7 @@ struct Actor {
 #define MENU_STATE_3 3
 #define MENU_STATE_7 7
 
-extern int Sequence_UpdateTracks(u16 *pAnim, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pAnim, int nDelta);
 extern void func_ov022_0209b0c0(struct Actor *pActor, int nEntry, int nValue);
 extern void Ov022_ResetAnimationSlot(struct Actor *pActor, int nEntry, int nValue);
 extern int Session_GetLocalPlayerIndex(void);

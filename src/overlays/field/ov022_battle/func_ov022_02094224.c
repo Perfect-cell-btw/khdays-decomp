@@ -2,7 +2,7 @@
  * its animation. */
 
 extern int Ov022_IsBit0Set_5(int a);
-extern int Sequence_UpdateTracks(unsigned short *a, int b);
+extern unsigned short Sequence_UpdateTracks(unsigned short *a, int b);
 
 struct vec3_02094224 {
     int a;

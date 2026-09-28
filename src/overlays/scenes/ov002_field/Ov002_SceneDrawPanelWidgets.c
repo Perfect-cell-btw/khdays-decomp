@@ -23,7 +23,7 @@ typedef struct {
 extern int data_ov002_0207f628;
 
 extern void Tween_Sample(void *pTween, int *pOut);
-extern unsigned int Sequence_UpdateTracks(void *pWidget, int nTime);
+extern unsigned short Sequence_UpdateTracks(void *pWidget, int nTime);
 extern void Scene_DrawNode(void *pWidget);
 extern void NNS_G3dMdlSetMdlAlphaAll(int nList, int nValue);
 

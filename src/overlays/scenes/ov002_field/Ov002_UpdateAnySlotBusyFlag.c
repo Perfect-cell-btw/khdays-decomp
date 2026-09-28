@@ -1,5 +1,5 @@
 extern int Ov002_GetCtxTableByte(int slot);
-extern int Ov002_GetCtxModeByte(int id);
+extern signed char Ov002_GetCtxModeByte(int id);
 extern int Ov002_GetSlotTableByte(int id);
 extern char data_ov002_0207fa28;
 

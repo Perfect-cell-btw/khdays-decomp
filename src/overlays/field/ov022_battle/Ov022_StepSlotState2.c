@@ -78,7 +78,7 @@ extern int func_ov022_0208ac10(struct ReactionCtx *pCtx,
 extern int Ov022_ClampReactionForKind10(int nKind, int nArg);
 extern void Ov022_EndPartRun(struct ReactionCtx *pCtx,
                                 struct ActorSlot *pSlot, int nReaction);
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 
 #define SLOT_OPEN 0xffff
 #define REACH 0x4000

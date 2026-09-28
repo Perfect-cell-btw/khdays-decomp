@@ -7,7 +7,7 @@
 extern char *data_ov106_020b8b60;
 extern int func_02023c40(void);
 extern void Ov106_ProjectToScreen(VecFx32 *out, const VecFx32 *point, void *cam);
-extern unsigned int Sequence_UpdateTracks(void *p, int a);
+extern unsigned short Sequence_UpdateTracks(void *p, int a);
 extern void Scene_DrawNode(void *widget);
 
 int Ov106_TestPointAgainstWidget(void *cam, VecFx32 *point)

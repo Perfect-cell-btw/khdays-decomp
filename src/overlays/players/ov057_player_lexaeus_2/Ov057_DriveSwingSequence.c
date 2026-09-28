@@ -16,7 +16,7 @@ struct Self { char pad[0x464]; unsigned long long flags; };
 
 extern int Ov022_IsState9Or6WithFlag200(void *p);
 extern void Ov057_ResetSequenceState(int self, int *p);
-extern unsigned int Sequence_UpdateTracks(void *p, int a);
+extern unsigned short Sequence_UpdateTracks(void *p, int a);
 extern void Ov057_BindSwingSequencePhase(int self, int *p, int mode);
 
 void Ov057_DriveSwingSequence(int self, int *p, int p3) {

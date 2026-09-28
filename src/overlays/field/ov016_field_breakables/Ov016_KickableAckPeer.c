@@ -10,7 +10,7 @@ typedef struct Ov016Kickable {
     u8 nAckMask;              /* 0x61d: one bit per peer */
 } Ov016Kickable;
 
-extern int GetGlobalU16At6(void);   /* Session_GetPeerMask */
+extern unsigned short GetGlobalU16At6(void);   /* Session_GetPeerMask */
 
 int Ov016_KickableAckPeer(Ov016Kickable *pSelf, int nPeer)
 {

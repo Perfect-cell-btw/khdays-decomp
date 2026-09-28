@@ -13,7 +13,7 @@ extern int func_ov022_02083f5c(void);
 extern int func_ov022_020881d8(void);
 extern int func_ov022_02088338(void);
 extern int func_ov022_020886d0(int nPlayer);
-extern int func_ov022_02088254(int nPlayer);
+extern unsigned short func_ov022_02088254(int nPlayer);
 
 extern void Ov002_Camera_UpdateFollow(void);
 extern int Ov002_TurnAngleToward(int nAngleA, int nAngleB);

@@ -5,7 +5,7 @@
 
 #include "nitro/types.h"
 
-extern u32  Sequence_UpdateTracks(void *pNode, int nDelta);   /* Sequence_UpdateTracks */
+extern unsigned short  Sequence_UpdateTracks(void *pNode, int nDelta);   /* Sequence_UpdateTracks */
 extern void Scene_DrawNode(void *pNode);               /* Scene_DrawNode */
 
 typedef struct Ov015Pickup {

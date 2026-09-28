@@ -20,7 +20,7 @@ struct Self { char pad[0x464]; unsigned long long flags; };
 extern int Ov022_IsState9Or6WithFlag200(void *p);
 extern void Ov073_ClearTimer(int self, int p2);
 extern void Ov022_PlayEntityVoice(int self, int a, int b);
-extern unsigned int Sequence_UpdateTracks(void *p, int a);
+extern unsigned short Sequence_UpdateTracks(void *p, int a);
 
 void Ov073_DriveGuardSequence(int self, int p2) {
     if (*(int *)(p2 + 0x24) != 0 &&

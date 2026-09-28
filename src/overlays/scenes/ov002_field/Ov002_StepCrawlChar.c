@@ -39,7 +39,7 @@ typedef struct {
 extern Ov002CrawlCtx *data_ov002_0207f624;
 
 extern void Obj_ForwardInnerPayload(void *pCtx, int nX, int nY, int nFlags, int nChar);
-extern int NNS_G2dFontFindGlyphIndex(Ov002Font *pFont, int nChar);
+extern unsigned short NNS_G2dFontFindGlyphIndex(Ov002Font *pFont, int nChar);
 extern void *NNS_G2dFontGetCharWidthsFromIndex(Ov002Font *pFont, int nGlyph);
 
 int Ov002_StepCrawlChar(void)

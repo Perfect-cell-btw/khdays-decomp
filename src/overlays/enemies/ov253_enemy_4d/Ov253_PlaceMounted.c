@@ -13,7 +13,7 @@ extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Srt_SetTranslation(void *srt, const VecFx32 *translation);
 extern void Srt_SetRotationAxisAngle(void *srt, const VecFx32 *axis, int angle);
 extern void Srt_SetScaleVec(void *srt, const VecFx32 *offset);
-extern int Sequence_UpdateTracks(void *animation, int delta);
+extern unsigned short Sequence_UpdateTracks(void *animation, int delta);
 extern void Ov107_ProcessObjectTick(int self, int delta);
 extern const VecFx32 data_02042264;
 

@@ -6,7 +6,7 @@
  * moves r1 into r4 -- and the park declared it `void (void)`. With both arguments live, `entry`
  * has to survive the load of its own field and mwcc puts it in r1, which is the whole residue.
  * The size was right the entire time, which is exactly why the arity was never suspected. */
-extern int func_ov022_020882bc(unsigned int arg0);
+extern unsigned char func_ov022_020882bc(unsigned int arg0);
 extern int QueryActiveStateOrDelegate(void);
 extern void Ov107_Region_RequestLeave(int obj, int *ent);
 

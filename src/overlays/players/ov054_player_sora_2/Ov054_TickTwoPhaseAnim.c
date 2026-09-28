@@ -3,7 +3,7 @@
 
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
-extern int Sequence_UpdateTracks(int a, int b);
+extern unsigned short Sequence_UpdateTracks(int a, int b);
 
 void Ov054_TickTwoPhaseAnim(int a, int *node, int dt) {
     switch (node[0]) {

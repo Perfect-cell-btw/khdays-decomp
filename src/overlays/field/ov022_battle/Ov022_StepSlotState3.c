@@ -86,7 +86,7 @@ extern int Ov022_GetActorValue(void *pActor, int nField, int nActionLevel);
 extern void func_ov022_0208ac10(struct Ov022ReactionCtx *pCtx,
                                 struct Ov022ActionQuery *pQuery,
                                 struct Ov022ActionParams *pParams);
-extern int Sequence_UpdateTracks(u16 *pTracks, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pTracks, int nDelta);
 
 int Ov022_StepSlotState3(struct Ov022ReactionCtx *pCtx, int nDelta)
 {

@@ -30,7 +30,7 @@ extern u8 data_0204c248[];
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov002_GetRootField8b68Alt(void);
-extern int Ov002_GetSessionSlotValue(int nId, int nKind);
+extern unsigned short Ov002_GetSessionSlotValue(int nId, int nKind);
 extern void Ov002_AddMissionTally(int nId, int nKind, int nDelta);
 extern unsigned int Session_RandNextScaled(int nRange);
 extern void func_ov022_0208a0b4(unsigned int nId, int nKind, int nAmount);

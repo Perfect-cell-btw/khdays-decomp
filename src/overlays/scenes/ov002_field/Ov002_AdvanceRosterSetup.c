@@ -57,7 +57,7 @@ extern void Ov002_World_ResetMarker(void);
 extern int Ov002_GetCtxTableByte(int nId);
 extern int Ov002_GetWidgetStateByte(int nId);
 extern int Ov002_FindSeatByKind(int nId);
-extern int GetGlobalU16At6(void);
+extern unsigned short GetGlobalU16At6(void);
 extern int func_ov022_020882f8(void);
 extern void strcpy(char *pDst, const char *pSrc);
 extern int Ov002_BuildSessionCommand(int nKind, void *pCmd);

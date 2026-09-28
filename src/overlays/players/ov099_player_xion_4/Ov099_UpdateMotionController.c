@@ -47,7 +47,7 @@ extern int Ov099_ov030_UpdatePathMotionState(struct TimelineActorOwner *self,
 extern int Ov022_IsState9Or6WithFlag200(void *buildBlock);
 extern void BindAnimTrack(void *animation, int track, void *table, int mode);
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);
-extern int Sequence_UpdateTracks(void *animation, int delta);
+extern unsigned short Sequence_UpdateTracks(void *animation, int delta);
 extern void Ov099_UpdateNodeActiveByMode(struct TimelineActorOwner *self, int delta);
 extern void Ov099_updateSubObjects(struct TimelineActorOwner *self);
 

@@ -27,7 +27,7 @@ extern u8 data_ov002_0207e610[];
 extern Ov002SurfaceTagTemplate data_ov002_0207e640[];
 extern char data_ov002_0207f0dc[];
 extern int Entity_LoadAndAttach(u16,u32);
-extern int Ov002_GetCtxModeByte(void);
+extern signed char Ov002_GetCtxModeByte(void);
 extern void Res_RequestIdPair(int);
 extern TrackEntryGroup *GetTrackEntryBase(u16);
 extern void BitArray_SetBit(void *,int);

@@ -16,7 +16,7 @@ typedef struct Ov022BattleObject {
 
 extern u8 func_ov022_020882bc(int entityId);
 extern int Ov002_GetPanelWord0220Idx(int entityIndex);
-extern int Sequence_UpdateTracks(u16 *timer, int amount);
+extern unsigned short Sequence_UpdateTracks(u16 *timer, int amount);
 extern int data_0204c240;
 
 void Ov022_PlayHitFeedback(Ov022BattleObject *object, int amount) {

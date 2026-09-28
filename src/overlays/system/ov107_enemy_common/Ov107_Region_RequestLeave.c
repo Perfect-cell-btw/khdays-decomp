@@ -10,7 +10,7 @@ typedef struct {
     signed int b2:1;
 } EntFlags;
 
-extern int func_02031384(int a, void *buf, int b);
+extern unsigned short func_02031384(int a, void *buf, int b);
 
 typedef struct { u16 a; u16 b; } Buf2;
 

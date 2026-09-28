@@ -70,7 +70,7 @@ extern const short data_0203d210[];
 
 extern void Ov022_MovePartTo(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                                 VecFx32 *pAt, VecFx32 *pDir);
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 
 int Ov022_StepWaitingPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                         int nDelta)

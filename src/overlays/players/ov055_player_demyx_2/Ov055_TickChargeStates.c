@@ -1,7 +1,7 @@
 /* Charge effect state machine: waits through two timed phases, then plays its tracks to the end and
  * returns to idle. */
 
-extern int Sequence_UpdateTracks(int a, int b);
+extern unsigned short Sequence_UpdateTracks(int a, int b);
 
 void Ov055_TickChargeStates(int a, int *node, int dt) {
     switch (node[0]) {

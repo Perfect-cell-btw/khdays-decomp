@@ -44,7 +44,7 @@ extern int  Ov002_GetCtxTableByte(int nBucket);                 /* bucket -> sea
 extern int  Ov002_GetLocalPlayerGroup(void);                        /* the seat being run */
 extern void Ov016_AdvanceFrame(Ov016Follower *pSelf);
 extern VecFx32 *func_ov022_020881f8(int nSeat);               /* where the seat is */
-extern int  func_ov022_02088254(int nSeat);                   /* the seat's facing */
+extern unsigned short  func_ov022_02088254(int nSeat);                   /* the seat's facing */
 extern int  func_02020400(int nNumerator, int nDenominator);  /* _s32_div_f */
 extern void Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);   /* Actor_SetVecAndSyncChild */
 extern int  Ov002_GetModuleScale(void);                        /* frame delta */

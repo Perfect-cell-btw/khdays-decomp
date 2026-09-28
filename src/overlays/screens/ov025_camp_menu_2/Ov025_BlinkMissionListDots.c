@@ -25,7 +25,7 @@ typedef struct Ov008MissionList {
 
 extern long long OS_GetTick(void);                                     /* GetTick64 */
 extern int  Ov025_GetCtxBlock954c(void);                                    /* Ov008_GetCtxBlock954c */
-extern int  Ov025_GetStateByte14f0(int nGroup);                              /* mission count of a group */
+extern unsigned char  Ov025_GetStateByte14f0(int nGroup);                              /* mission count of a group */
 extern void Ov025_SetTagValueDup(int nOwner, u32 nTag, short nX, short nY); /* Ov008_SetTagValueDup */
 
 void Ov025_BlinkMissionListDots(Ov008MissionList *pList)

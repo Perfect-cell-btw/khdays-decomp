@@ -61,7 +61,7 @@ struct ReactionCtx {
 extern void Ov022_ApplyReactionHit(struct ReactionCtx *pCtx, struct ActorSlot *pSlot);
 extern void Ov022_BindBlockAnimations(struct ReactionCtx *pCtx, int nTrack, u16 *pFlags,
                                 int nBinding);
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 extern int Session_IsReady(void);
 
 int Ov022_StepReaction(struct ReactionCtx *pCtx, int nDelta)

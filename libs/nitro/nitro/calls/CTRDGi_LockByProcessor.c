@@ -1,6 +1,6 @@
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
-extern int OS_ReadOwnerOfLockWord(void *lock);
+extern unsigned short OS_ReadOwnerOfLockWord(void *lock);
 extern int OS_TryLockCartridge(int owner);
 extern void WaitByLoop(int count);
 

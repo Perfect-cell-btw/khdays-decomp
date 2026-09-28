@@ -84,7 +84,7 @@ extern int Ov002_UpdateCameraDistance(int);
 extern int Ov002_GetCameraDistance(int);
 extern uint GameState_GetField(int,int);
 extern int Ov002_Camera_GetPresetHeight(int);
-extern int func_ov022_02088254(uint);
+extern unsigned short func_ov022_02088254(uint);
 extern int func_ov022_020886d0(uint);
 extern int Ov022_IsBit2SetVia0x20(undefined4);
 extern void Ov002_PlaceCameraForFrame(int *,uint *,int *,undefined4 *,int,int,int);

@@ -24,7 +24,7 @@ typedef struct {
 } Bits8;
 
 extern int RandNextScaled();
-extern int Ov002_GetCtxModeByte(void);
+extern signed char Ov002_GetCtxModeByte(void);
 
 int Ov227_ChooseMove(int self, int dist) {
     int *ctx;

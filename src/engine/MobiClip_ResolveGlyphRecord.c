@@ -1,7 +1,7 @@
 /* Resolves a character's glyph in the font: its width record and the address of its glyph image
  * (the default glyph when the character is missing). */
 
-extern int NNS_G2dFontFindGlyphIndex(void *ptr, unsigned int value);
+extern unsigned short NNS_G2dFontFindGlyphIndex(void *ptr, unsigned int value);
 extern void *NNS_G2dFontGetCharWidthsFromIndex(void *ptr, int value);
 
 void MobiClip_ResolveGlyphRecord(int *ptr, int *out, unsigned int value) {

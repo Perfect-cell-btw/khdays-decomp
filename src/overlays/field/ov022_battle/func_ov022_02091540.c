@@ -1,7 +1,7 @@
 /* Advances an animation when it has at least the step left; returns whether it ended. */
 
 extern int Anim_GetLengthQ12(unsigned short *p, unsigned int idx);
-extern unsigned int Sequence_UpdateTracks(unsigned short *p, int param_2);
+extern unsigned short Sequence_UpdateTracks(unsigned short *p, int param_2);
 
 unsigned int func_ov022_02091540(unsigned short *param_1, int param_2) {
     int iVar1 = 0;

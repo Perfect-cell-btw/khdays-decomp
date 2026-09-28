@@ -54,7 +54,7 @@ extern void      Ov000_RegisterLogoObjects(void);
 extern void      Camera_CommitMatricesEx(void *bounds, int a, int b, int c, int d);
 extern void      Scene_DrawNode(void *node);
 extern long long OS_GetTick(void);
-extern int       Sequence_UpdateTracks(void *node, int mask);
+extern unsigned short       Sequence_UpdateTracks(void *node, int mask);
 extern int       BuildSlotMask(void *node, int mask);
 extern void      Ov000_TickMenuLoop(void);
 

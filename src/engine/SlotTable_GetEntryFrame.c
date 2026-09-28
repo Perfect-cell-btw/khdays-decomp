@@ -1,6 +1,6 @@
 /* Current frame of slot entry idx's cell animation (0 for negative). */
 
-extern int NNS_G2dGetAnimCtrlCurrentFrame(void *p);
+extern unsigned short NNS_G2dGetAnimCtrlCurrentFrame(void *p);
 
 int SlotTable_GetEntryFrame(char *arg0, int arg1) {
     if (arg1 < 0) {

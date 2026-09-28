@@ -11,7 +11,7 @@
 extern int Ov008_GetCtxObject9630(void);
 extern int GameState_GetField(int event, int bits);
 extern int Ov008_FindFirstThresholdRow(unsigned short sel);
-extern int Ov008_GetTableValue(unsigned short node);
+extern unsigned short Ov008_GetTableValue(unsigned short node);
 extern int GameState_IsFlagSet(int flag);
 extern void GameState_SetFlag(int flag);
 

@@ -16,8 +16,8 @@ typedef struct {
 extern MissionContext *volatile data_ov006_020565e4;
 extern char data_ov006_02056600[];
 
-extern int Ov105_EnterState1AndResolveId(void);
-extern int Ov105_WM_GetNextTgid(void);
+extern unsigned short Ov105_EnterState1AndResolveId(void);
+extern unsigned short Ov105_WM_GetNextTgid(void);
 extern void Ov105_SetBuffer(void *resource, int size);
 extern int Ov105_WH_ParentConnect(int mode, int selection, int value, int count, int option);
 extern void Ov105_WH_SetReceiver(void (*callback)(void));

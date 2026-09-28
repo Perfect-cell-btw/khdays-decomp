@@ -1,6 +1,6 @@
 /* In state 2 updates the animation tracks; resets when they finish. */
 
-extern int Sequence_UpdateTracks(void *p, void *b);
+extern unsigned short Sequence_UpdateTracks(void *p, void *b);
 
 void Ov080_UpdateTracksWhileState2(int unused, char *a, void *b) {
     if (*(int *)(a + 0x0) != 2) return;

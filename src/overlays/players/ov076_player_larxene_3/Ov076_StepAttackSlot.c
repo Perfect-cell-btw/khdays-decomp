@@ -13,7 +13,7 @@ extern int Ov022_IsSlotReady(char *context);
 extern int Session_GetLocalPlayerIndex(void);
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);                /* Anim_SetFrameWrapped */
-extern int Sequence_UpdateTracks(void *animation, int delta);                            /* Sequence_UpdateTracks */
+extern unsigned short Sequence_UpdateTracks(void *animation, int delta);                            /* Sequence_UpdateTracks */
 extern void Ov022_PlayEntityVoice(char *self, int nSound, int nVariant);
 extern void Ov076_AdvanceTrackTime(char *self, char *slot, int dt);
 

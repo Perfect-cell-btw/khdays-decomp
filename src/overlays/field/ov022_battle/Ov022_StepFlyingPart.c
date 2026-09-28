@@ -115,7 +115,7 @@ extern void Ov022_MovePartTo(struct ReactionCtx *pCtx,
                                 struct SlotPart *pPart,
                                 VecFx32 *pAt, VecFx32 *pDir);
 extern void func_ov022_0208a6b0(struct ReactionCtx *pCtx);
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 
 int Ov022_StepFlyingPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                         int nDelta)

@@ -44,7 +44,7 @@ struct Run {
 };
 
 extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pActor);
-extern int Sequence_UpdateTracks(struct Sequence *pSeq, int nDelta);
+extern unsigned short Sequence_UpdateTracks(struct Sequence *pSeq, int nDelta);
 extern void SceneNode_Enable(struct Sequence *pSeq);
 extern void SceneNode_Disable(struct Sequence *pSeq);
 extern void Anim_SetFrameWrapped(struct Sequence *pSeq, int nWhich, int nFrame);

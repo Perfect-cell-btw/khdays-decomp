@@ -34,7 +34,7 @@ extern int  Ov025_FindEntryById(int ctx, int id);
 extern void Ov025_SetEntrySlotsVisible(int ctx, int entry, int a);
 extern void Ov025_ReleaseTwoSlots(int ctx, int entry);
 extern int  Ov025_GetCtxObject9634(void);
-extern int  Ov025_CalcMissionCompletionPercent(int obj);
+extern unsigned short  Ov025_CalcMissionCompletionPercent(int obj);
 extern void Ov025_ReleaseTwoSlotsEx_2(int ctx, int entry, int digit);
 extern Block4 data_ov025_020b394c;
 extern Block4 data_ov025_020b395c;

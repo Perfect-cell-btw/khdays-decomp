@@ -15,7 +15,7 @@
  */
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern int func_02023c40(void);
-extern unsigned int Sequence_UpdateTracks(unsigned short *name, int budget);
+extern unsigned short Sequence_UpdateTracks(unsigned short *name, int budget);
 
 typedef struct Ov022HeapBlock {
     unsigned char inUse;            /* +0x00 */

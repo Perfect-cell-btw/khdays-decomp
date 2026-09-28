@@ -11,7 +11,7 @@
 
 extern u16  data_0204c18c;
 
-extern int  Ov008_ReadInputHeader(void);
+extern unsigned short  Ov008_ReadInputHeader(void);
 extern int  Ov008_ScrollMenuMoveTo(int ctx, int bound, int b, int c);
 extern void PlaySound(int a, int b);
 extern void Ov008_ApplyControlValue(int a);

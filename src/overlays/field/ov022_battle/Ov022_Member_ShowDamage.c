@@ -37,7 +37,7 @@ extern Ov022EntrySystem data_ov022_020b2e78;
 extern Ov022SeatEntry *GetEntryField20ByIndex(int index);
 extern unsigned int Session_GetLocalPlayerIndex(void);
 extern void Ov022_DriveOwnedSound(Ov022SeatEntry *entry, int value, int id, int delta);
-extern int Ov002_FindNamedValue(int id);
+extern short Ov002_FindNamedValue(int id);
 extern VecFx32 *func_ov022_020881f8(int index);
 extern void Ov002_ClearSeatBitByKey(int context, int key, int value, u16 id);
 extern int Ov002_GetSlotTableByte(int group);

@@ -19,7 +19,7 @@ extern Ov002SeatState *data_ov002_0207fa04;
 /* Non-zero once the link session is up and running the seats itself. */
 extern int Session_IsReady(void);
 /* The mask of seats the session currently holds. */
-extern int GetGlobalU16At6(void);
+extern unsigned short GetGlobalU16At6(void);
 
 /* Handle one seat message.
  *

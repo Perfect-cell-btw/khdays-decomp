@@ -17,7 +17,7 @@ typedef struct {
 
 extern OverlayContext *NNSi_FndGetCurrentRootHeap(void);
 extern void func_020362ec(void *image);
-extern int Mem_ReadU16(void *image);
+extern unsigned short Mem_ReadU16(void *image);
 extern void Ov000_SetSubSceneHalf1C(int);
 extern void Scene_DrawNode(void *object);
 extern int Ov000_GetSubSceneResult(void);

@@ -10,7 +10,7 @@
 
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
-extern int Sequence_UpdateTracks(void *animation, int delta);                            /* Sequence_UpdateTracks */
+extern unsigned short Sequence_UpdateTracks(void *animation, int delta);                            /* Sequence_UpdateTracks */
 
 /* Pins the slot's node to the actor's heading and origin. */
 static inline void Ov045_PinSlot(char *slot, u16 heading, VecFx32 *origin)

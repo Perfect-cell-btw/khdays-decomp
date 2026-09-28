@@ -4,7 +4,7 @@ extern void MI_CpuFill8(void *dst, int value, int size);
 extern void OS_GetMacAddress(void *dst);
 extern int Ov105_IsDeviceReady(void);
 extern char *Ov105_GetContext(void);
-extern int Ov105_GetSessionLinkState(void);
+extern unsigned short Ov105_GetSessionLinkState(void);
 extern int Ov105_GetSessionChannel(void);
 
 /* Installs the per-slot wireless event handler and fires an initial "state" event at it so the

@@ -90,7 +90,7 @@ extern int Ov022_ClampReactionForKind10(int nKind, int nMode);
 extern void Ov022_EndPartRun(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                                 int nReaction);
 extern void func_ov022_0208a6b0(struct ReactionCtx *pCtx);
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 
 int Ov022_StepFlightPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                         int nDelta)

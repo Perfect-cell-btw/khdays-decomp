@@ -70,7 +70,7 @@ typedef int (*PartStep)(struct ReactionCtx *pCtx, struct SlotPart *pPart,
 /* One step routine per part state; the idle state is never looked up. */
 extern PartStep data_ov022_020b29d0[];
 
-extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
+extern unsigned short Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 extern int Ov022_ArmNextPart(struct ReactionCtx *pCtx,
                                struct ActorSlot *pSlot, int nArmed);
 

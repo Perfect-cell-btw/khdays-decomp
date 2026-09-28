@@ -17,7 +17,7 @@ extern void BindAnimTrack(void *animation, int track, void *table, short mode); 
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);              /* Anim_SetFrameWrapped */
 extern void Scene_DrawNode(void *node);
 extern int func_02023c40(void);
-extern int Sequence_UpdateTracks(void *node, int tick);
+extern unsigned short Sequence_UpdateTracks(void *node, int tick);
 
 void Ov043_DriveScriptNode(char *self)
 {

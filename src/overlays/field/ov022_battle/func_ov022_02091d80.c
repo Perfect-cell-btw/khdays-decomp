@@ -2,7 +2,7 @@
  * session is ready. */
 
 extern int Session_IsReady(void);
-extern int func_02031384(int a, void *b, int c);
+extern unsigned short func_02031384(int a, void *b, int c);
 
 struct marshal_02091d80 {
     unsigned char f0 : 2;

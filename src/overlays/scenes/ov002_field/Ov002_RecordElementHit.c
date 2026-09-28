@@ -19,7 +19,7 @@ typedef struct {
 } Ov002Owner;
 
 extern int func_02020400(int numer, int denom);
-extern int func_02031384(int tag, int record, int arg);
+extern unsigned short func_02031384(int tag, int record, int arg);
 
 int Ov002_RecordElementHit(Ov002Elem *elem, unsigned char *rec, int param_3)
 {

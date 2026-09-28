@@ -45,7 +45,7 @@ struct Request {
 };
 
 extern int Ov022_IsReactionActive(struct Request *pReq);
-extern int Sequence_UpdateTracks(struct Anim *pAnim, int nStep);
+extern unsigned short Sequence_UpdateTracks(struct Anim *pAnim, int nStep);
 extern int Ov022_IsField8Eq3(int nSlot);
 extern int Ov022_GetByteCOrA(int nSlot);
 extern int Ov022_GetGlobal34(void);

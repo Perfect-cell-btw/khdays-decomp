@@ -16,7 +16,7 @@ extern void Ov057_ResetSequenceState(int pActor, void *block);
 extern void MTX_RotY33_(struct Mtx33 *m, int sin, int cos);
 extern void MTX_MultVec33(const VecFx32 *v, const struct Mtx33 *m, VecFx32 *dst);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
-extern unsigned int Sequence_UpdateTracks(void *p, int a);
+extern unsigned short Sequence_UpdateTracks(void *p, int a);
 
 extern int data_ov057_020b74a0;
 extern short data_0203d210[];

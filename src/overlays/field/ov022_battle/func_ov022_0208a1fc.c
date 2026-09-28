@@ -3,7 +3,7 @@
 
 extern int func_ov022_020882f8(void);
 extern int func_ov022_020886f8(int i);
-extern int func_ov022_020882bc(int i);
+extern unsigned char func_ov022_020882bc(int i);
 extern int data_ov022_020b2ea4;
 
 void func_ov022_0208a1fc(void) {

@@ -19,7 +19,7 @@
 extern void Ov101_FillEightHalvesMinus1(int *node);
 extern int Session_GetLocalPlayerIndex(void);
 extern void Ov101_LaunchPartProjectile(int *node);
-extern int Sequence_UpdateTracks(int a, int b);
+extern unsigned short Sequence_UpdateTracks(int a, int b);
 
 int Ov101_TickStateReturnDone(int *node, int dt) {
     int r = 0;

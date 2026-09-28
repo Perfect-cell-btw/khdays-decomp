@@ -16,7 +16,7 @@
 extern int Ov022_IsState9Or6WithFlag200(char *pBlock);
 extern void Ov070_configTwoChannelsPair(char *pNode, int nKind, int nParam);
 extern void Ov070_ResetChannelsAndArm(char *pNode);
-extern int Sequence_UpdateTracks(char *pAnim, int nDelta);
+extern unsigned short Sequence_UpdateTracks(char *pAnim, int nDelta);
 
 void Ov070_ActorNodeTick(char *self, char *pNode, int nDelta)
 {

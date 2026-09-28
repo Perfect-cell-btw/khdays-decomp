@@ -16,7 +16,7 @@
  * around the call exactly where the ROM has them. */
 extern int Session_GetLocalPlayerIndex(void);
 extern int RandNextScaled(int max);
-extern int func_02031384(int a, void *buf, int c);
+extern unsigned short func_02031384(int a, void *buf, int c);
 extern int data_ov022_020b2ea4;
 
 struct Buf02089fe8 {

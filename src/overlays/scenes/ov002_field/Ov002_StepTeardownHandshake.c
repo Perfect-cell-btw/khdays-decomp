@@ -7,7 +7,7 @@ extern void Ov002_SetCurrentSlotFlag1(int nArg);  /* Ov002_SetCurrentSlotFlag1 *
 extern int Session_IsActive(void);                 /* Session_IsActive */
 extern int Session_GetLocalPlayerIndex(void);                 /* Session_GetLocalPlayerIndex */
 extern int Ov002_BuildSessionCommand(int nKind, void *pCmd);  /* send, or 0xffff */
-extern int GetGlobalU16At6(void);                 /* the peer mask */
+extern unsigned short GetGlobalU16At6(void);                 /* the peer mask */
 
 /* Drives the two-sided handshake that settles which peers are in, and reports
  * whether it is finished.

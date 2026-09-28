@@ -107,7 +107,7 @@ extern void  Ov025_ConfigureEntryByTag_2(int nOwner, u32 nTag, short nX, short n
 extern u32   GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 extern u32   Ov025_BuildRankMask2(Ov008MissionMenu *pMenu, u32 nWord);    /* Ov008_BuildRankMask2 */
 extern u8    Ov025_UpdateMissionSummaryTier(Ov008MissionListEntry *pEntry);         /* Ov008_UpdateMissionSummaryTier */
-extern int   Ov025_GetPageAByte14F3(void);                                  /* cleared mission count */
+extern unsigned char   Ov025_GetPageAByte14F3(void);                                  /* cleared mission count */
 extern void *Ov025_FindEntryByTag(int nOwner, int nTag);                  /* ov008_FindEntryByTag */
 extern void  Ov025_TagTracker_InvokeCallback(int nOwner, void *pEntry);              /* Ov008_TagTracker_InvokeCallback */
 

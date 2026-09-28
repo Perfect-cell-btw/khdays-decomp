@@ -10,7 +10,7 @@
 extern void Ov022_PlayEntityVoice(char *self, int nSound, int nVariant);
 extern void BindAnimTrack(void *animation, int track, void *table, s16 mode);   /* BindAnimTrack */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);              /* Anim_SetFrameWrapped */
-extern int Sequence_UpdateTracks(void *animation, int delta);                          /* Sequence_UpdateTracks */
+extern unsigned short Sequence_UpdateTracks(void *animation, int delta);                          /* Sequence_UpdateTracks */
 extern char *data_ov079_020b9a00;
 
 void Ov079_StepSequenceSlot(char *self, char *slot, int dt)
