@@ -9,11 +9,12 @@
  *
  * Lever: the slot callback takes (self, 0) -- the zero of the six velocity stores is still live
  * in r1 at the blx, which is why the ROM colours it r1 and re-materialises it for state 0. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Session_GetLocalPlayerIndex(void);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern void *Ov022_ActorSetState(char *self, int state);
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);              /* Anim_SetFrameWrapped */
@@ -21,8 +22,8 @@ extern char *data_ov086_020b9a60;
 
 void *Ov086_HoverStep(char *self)
 {
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     char *rig = data_ov086_020b9a60 + 0x2c + 0x2c00;
     void *next = 0;
 
@@ -41,7 +42,7 @@ void *Ov086_HoverStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     (*(int (**)(char *))(self + 0x668))(self);
     if ((*(u16 *)(self + 0x1a) & 1) == 0 || Ov022_IsState9Or6WithFlag200(self + 0x2f8 + 0x2000) == 0) {
         if (*(int *)(rig + 0x358) > 1) {

@@ -9,11 +9,13 @@
  * reaction 0x15 there and hands over to Ov255_DriftTick. Hitting a plain wall on the way from
  * the owner's +0x39c point reports that point (data_ov255_020d2bb6) and ends the shot, as does
  * running for more than 5.0 (+0x1c); ending clears +0x1c and requests the owner's sub-state 0. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
-typedef struct { Vec3 c; int r; } Sphere;
+typedef struct { VecFx32 c; int r; } Sphere;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
@@ -24,26 +26,26 @@ typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *a, const Vec3 *b);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *a, const VecFx32 *b);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void Quat_Slerp(void *a, int t, void *b, Quat *out);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int id, Vec3 at, int flag);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int id, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern int *Collision_CastSphereEx(void *collision, void *from, Vec3 *dir, int radius, int flag);
-extern const Vec3 data_02042258;
+extern int *Collision_CastSphereEx(void *collision, void *from, VecFx32 *dir, int radius, int flag);
+extern const VecFx32 data_02042258;
 extern const short data_0203d210[];
 extern const Cmd14 data_ov255_020d2ba8;
 extern const Cmd14 data_ov255_020d2bb6;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov255_DriftTick(int *node);
 
 static inline int FX_Mul(int a, int b)
@@ -56,15 +58,15 @@ void Ov255_HomingShotFlightTick(int *node)
     int obj;
     int *pHits;
     int *h = (int *)node[1];
-    Vec3 fwd;
-    Vec3 side;
+    VecFx32 fwd;
+    VecFx32 side;
     Sphere sph;
     int hits[4];
-    Vec3 d;
+    VecFx32 d;
     Quat q;
-    Vec3 push;
+    VecFx32 push;
     Cmd14 msg;
-    Vec3 wallDir;
+    VecFx32 wallDir;
     Cmd14 wallMsg;
     Fx32 scratchZ;
     Fx32 scratchY;
@@ -79,7 +81,7 @@ void Ov255_HomingShotFlightTick(int *node)
     int *wall;
 
     Vec3TransformViaTempMtx(&fwd, (void *)h[8], &data_02042258);
-    ScaleVec3Fx12(h[6], &fwd, (Vec3 *)(h + 2));
+    ScaleVec3Fx12(h[6], &fwd, (VecFx32 *)(h + 2));
     *(int *)h[9] += FX_Mul(*(int *)(node[0] + 0x2c) * 30, 0x6488) / 32;
     if (*(int *)h[9] > 0x6488 / 2) {
         *(int *)h[9] -= 0x6488;
@@ -107,7 +109,7 @@ void Ov255_HomingShotFlightTick(int *node)
         h[6] += (0x200 - h[6]) / 10;
     }
     h[5] += (*(int *)(node[0] + 0x2c) * 30 / 5 - h[5]) / 20;
-    sph.c = *(Vec3 *)h[1];
+    sph.c = *(VecFx32 *)h[1];
     sph.r = 0x400;
     n = Ov107_CollectSphereOverlaps(h[0], &sph, hits);
     if (n != 0) {
@@ -116,7 +118,7 @@ void Ov255_HomingShotFlightTick(int *node)
             pHits = hits;
             do {
                 obj = pHits[i];
-                ScaleVec3Fx12(0x1000, (Vec3 *)(h + 2), &push);
+                ScaleVec3Fx12(0x1000, (VecFx32 *)(h + 2), &push);
                 if (Ov107_InvokeHitCallback(pHits[i], h[0], *(int *)(h[0] + 0x384), 6, &push, 0) != 0) {
                     msg = data_ov255_020d2ba8;
                     PACK(msg, scratchX, *(Fx32 *)(obj + 0x74), 5);
@@ -142,10 +144,10 @@ void Ov255_HomingShotFlightTick(int *node)
         wall = Collision_CastSphereEx(*(void **)(world + 0x7c), (void *)(h[0] + 0x39c), &wallDir, 0x400, 0);
     }
     if (wall != 0 && wall[2] == 0) {
-        Vec3 *at;
+        VecFx32 *at;
 
         wallMsg = data_ov255_020d2bb6;
-        at = (Vec3 *)(h[0] + 0x39c);
+        at = (VecFx32 *)(h[0] + 0x39c);
         PACK(wallMsg, wallX, *(Fx32 *)&at->x, 5);
         PACK(wallMsg, wallY, *(Fx32 *)&at->y, 8);
         PACK(wallMsg, wallZ, *(Fx32 *)&at->z, 11);

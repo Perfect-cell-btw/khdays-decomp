@@ -2,7 +2,8 @@
  * resets the global orientation matrix, and for each entry with a live marker stamps twice the
  * marker into the global state's 0xc4/0xc8/0xcc slots, draws the model at the entry's +0x2c
  * with polygon id `i mod 63` on the +0x88 object's +0x78 model and reruns its +0x20 channels. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void MTX_Identity33_(int *m);
 extern void NNS_G3dGlbSetBaseTrans(const VecFx32 *target);

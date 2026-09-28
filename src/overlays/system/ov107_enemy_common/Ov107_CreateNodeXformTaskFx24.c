@@ -1,14 +1,15 @@
 /* Builds an SRT (uniform scale, translation from packed 24-bit coordinates) and hands it to
  * Ov107_CreateNodeXformTask. */
 
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned char hi, mid, lo; } Fx24;
 typedef union { struct { unsigned char pad, lo, mid, hi; } b; int w; } Fx24Word;
 typedef struct { int w[11]; } BoneXform;
 
 extern void SrtTransform_SetIdentity(BoneXform *p);
 extern void Srt_SetScaleUniform(BoneXform *p, int weight);
-extern void Srt_SetTranslation(BoneXform *dst, Vec3 *src);
+extern void Srt_SetTranslation(BoneXform *dst, VecFx32 *src);
 extern void *Ov107_CreateNodeXformTask(void *taskList, void *subitem, int mode, int blend,
                                   BoneXform *xform);
 
@@ -20,7 +21,7 @@ void *Ov107_CreateNodeXformTaskFx24(void *taskList, void *subitem, int mode, int
     Srt_SetScaleUniform(&local, weight);
 
     if (payload != 0) {
-        Vec3 decoded;
+        VecFx32 decoded;
         Fx24Word d[3];
 
         d[0].b.hi = payload[0].hi;

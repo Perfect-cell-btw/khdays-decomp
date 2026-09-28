@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* NitroSDK alignment-aware byte-fill primitive. */
+
+#include "nitro/types.h"
+
 asm void MI_CpuFill8(register void *destination, register u32 value,
                      register u32 size)
 {

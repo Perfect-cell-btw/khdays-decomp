@@ -7,18 +7,14 @@
  * the cursor -- 1 for the hidden middle case -- the new slot's blink phase is 1 with its timer
  * (+0x570) reset, and every slot is redrawn shifted by its phase (Ov027_DrawPanelSlotShifted
  * 02083c78). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

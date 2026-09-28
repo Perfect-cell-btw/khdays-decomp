@@ -6,24 +6,25 @@
  * +0x18 step. With the timer running, a target within 4.0 clears the +4 item's +0xa8 byte and
  * moves to the turn-and-step handler (020cd578); with it expired the same happens when the
  * target is under 6.0 or beyond the actor's +0x2d8 range. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int Ov107_ActionResource_GetOffsetAndScale(int resource, int a);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov195_TurnStepTick(void);
 extern const short data_0203d210[];
 
 void Ov195_ChaseTick(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 d;
-    Vec3 fwd;
+    VecFx32 d;
+    VecFx32 fwd;
     int idx;
     int dist;
     int dot;
@@ -36,7 +37,7 @@ void Ov195_ChaseTick(int node)
         SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)(*state + 0xb0), &d);
+    VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)(*state + 0xb0), &d);
     d.y = 0;
     dist = VEC_Normalize(&d, &d);
     state[4] = func_020050b4(d.x, d.z);
@@ -54,7 +55,7 @@ void Ov195_ChaseTick(int node)
     }
     boost = state[0x11] > 0 ? 0x800 : 0;
     speed = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3d0), 0);
-    ScaleVec3Fx12((int)(((long long)speed * (dot + boost) + 0x800) >> 12), &fwd, (Vec3 *)(state + 6));
+    ScaleVec3Fx12((int)(((long long)speed * (dot + boost) + 0x800) >> 12), &fwd, (VecFx32 *)(state + 6));
     if (state[0x11] > 0) {
         if (dist > 0x4000) {
             return;

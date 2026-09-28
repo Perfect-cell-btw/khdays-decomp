@@ -3,6 +3,7 @@
  * (the +0x75 byte marks it). Between 0x1540 and 0x2178 with a target, or 0x2200 and 0x2ec0
  * without, the strike sweep (ov227 0a08) runs with mode 7. Once the +4 owner's +0xad byte
  * clears, sub-state 2 is requested and the action ends. */
+
 #include "nitro/types.h"
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);

@@ -7,6 +7,7 @@
  * path: Res_LoadSpriteSet (5 args) unpacks into the resource cell, GX BG3 palette/char upload, free
  * the temp, fetch the cell-list ctx (02050c28), attach subfile 0x15 (02055534), and register
  * cells for tags {0,2}. Resource-cell layout matches Ov008_SetupMenuBgCells. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;

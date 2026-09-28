@@ -2,18 +2,20 @@
  * translation becomes that of the +0x3c0 transform and the two +0x3ec transforms are placed
  * 0x433 and 0x866 ahead of it along the actor's +0xa0 orientation; when it reports the +0x3b8
  * joint, its translation becomes that of the +0x444 transform. */
-struct Vecx32 { int x, y, z; };
-struct MtxFx43 { int m[9]; struct Vecx32 t; };
+
+#include "nitro/fx.h"
+
+struct MtxFx43 { int m[9]; VecFx32 t; };
 
 extern int func_02016320(void *renderObj, struct MtxFx43 *out, void *b, int joint);
-extern void Srt_SetTranslation(void *transform, struct Vecx32 *pos);
-extern void Vec3TransformViaTempMtx(struct Vecx32 *dst, void *quat, struct Vecx32 *src);
-extern void VEC_Add(struct Vecx32 *a, struct Vecx32 *b, struct Vecx32 *d);
+extern void Srt_SetTranslation(void *transform, VecFx32 *pos);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, VecFx32 *src);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *d);
 
 void Ov276_JointCallback(int item, int actor)
 {
     struct MtxFx43 mtx;
-    struct Vecx32 v;
+    VecFx32 v;
     int i;
 
     if (func_02016320((void *)(*(int *)(item + 0x88) + 0x20), &mtx, 0, *(int *)(actor + 0x3b4)) != 0) {

@@ -9,7 +9,8 @@
  * its load into the multiply sequence, where the ROM has it.
  *
  * Matched byte-exact 2026-07-23. One of four byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int z);

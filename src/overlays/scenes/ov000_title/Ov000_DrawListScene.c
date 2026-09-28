@@ -3,6 +3,7 @@
  * (text + glyph run) onto the row surface, then the header/special text and the selected row
  * onto the primary surface, and commits both. The trailing transferFlags |= 9 is stored twice
  * on purpose -- MWCCARM 3.0/139 emits the duplicate store and it is required for the match. */
+
 #include "nitro/types.h"
 
 typedef struct Ov000RenderSurface { u8 data[0x3c]; } Ov000RenderSurface;

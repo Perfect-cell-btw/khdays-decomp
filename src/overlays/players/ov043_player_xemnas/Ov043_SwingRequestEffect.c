@@ -4,8 +4,10 @@
  * around zero it is clamped to the bound and the speed reversed. Rows 0/1 yaw by the angle;
  * row 2 yaws by minus three times it and row 3 by three times it, both then pitching by the
  * angle less the bound. The effect's +0x1c offset rotated by the result is written to out. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } MtxFx33;
 
 struct SwingRow {
@@ -20,11 +22,11 @@ extern void MTX_Identity33_(MtxFx33 *m);
 extern void MTX_RotY33_(MtxFx33 *m, int nSin, int nCos);
 extern void MTX_RotX33_(MtxFx33 *m, int nSin, int nCos);
 extern void MTX_Concat33(const MtxFx33 *a, const MtxFx33 *b, MtxFx33 *out);
-extern void MTX_MultVec33(const Vec3 *v, const MtxFx33 *m, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *v, const MtxFx33 *m, VecFx32 *out);
 extern char *data_ov043_020b58e0;
 extern const short data_0203d210[];
 
-void Ov043_SwingRequestEffect(char *pEffect, Vec3 *out)
+void Ov043_SwingRequestEffect(char *pEffect, VecFx32 *out)
 {
     MtxFx33 m;
     MtxFx33 mPitch;
@@ -71,5 +73,5 @@ void Ov043_SwingRequestEffect(char *pEffect, Vec3 *out)
         MTX_Concat33(&mPitch, &m, &m);
         break;
     }
-    MTX_MultVec33((Vec3 *)(pEffect + 0x1c), &m, out);
+    MTX_MultVec33((VecFx32 *)(pEffect + 0x1c), &m, out);
 }

@@ -3,7 +3,9 @@
  * data_02042264 and atan2 of the flattened, normalised direction from the actor to the partner,
  * copied down to +0x28, pose 0xa plays on the actor, flag 0x80 clears in its +0x60 high byte,
  * pose 2 plays on the partner and the node moves to 020cee0c. */
+
 #include "nitro/types.h"
+
 struct m4 { int w[4]; };
 struct S213 { char pad[0x28]; struct m4 dst; struct m4 src; };
 struct Flags394 { int b0 : 1; int b1 : 1; };

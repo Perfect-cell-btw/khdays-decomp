@@ -23,31 +23,26 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define CAST_FLAGS 0xf
 #define GROUND_BAND 0x100
 #define BLOCKING 2
 
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* the block the mover fills before asking */
 struct MoveProbe {
-    struct VecFx32 vecPos;       /* 0x00 */
-    struct VecFx32 vecDir;       /* 0x0c */
+    VecFx32 vecPos;       /* 0x00 */
+    VecFx32 vecDir;       /* 0x0c */
     int nRadius;                 /* 0x18 */
     int nDrop;                   /* 0x1c */
     int nSlotIndex;              /* 0x20 */
-    struct VecFx32 vecHit;       /* 0x24 */
+    VecFx32 vecHit;       /* 0x24 */
 };
 
 /* CollCastParams */
 struct CollCastParams {
-    struct VecFx32 *pOrigin;     /* 0x00 */
-    struct VecFx32 *pDir;        /* 0x04 */
+    VecFx32 *pOrigin;     /* 0x00 */
+    VecFx32 *pDir;        /* 0x04 */
     int nRadius;                 /* 0x08 */
     u16 wDirIsUnit;              /* 0x0c */
     u16 wFlagE;                  /* 0x0e */
@@ -75,17 +70,17 @@ extern struct Hit *func_0202c248(int nSlotIndex, struct CollCastParams *pQry);
 extern struct Hit *func_0202c208(int nSlotIndex, struct CollCastParams *pQry);
 extern struct Hit *func_0202c228(int nSlotIndex, struct CollCastParams *pQry);
 extern struct CollSurfaceAttr *Actor_GetRecord(struct Hit *pHit, int nTag);
-extern void VecFx32FromVecS16(void *pModel, u8 *pFace, struct VecFx32 *pOut);
+extern void VecFx32FromVecS16(void *pModel, u8 *pFace, VecFx32 *pOut);
 /* VEC_Normalize is VEC_Normalize and Vec3ScaleAddQ27 is Vec3ScaleAddQ27; both
  * still carry their address names in the tree's symbol table. */
-extern int VEC_Normalize(struct VecFx32 *pSrc, struct VecFx32 *pDst);
-extern void Vec3ScaleAddQ27(int nFactor, struct VecFx32 *pDir,
-                          struct VecFx32 *pOrigin, struct VecFx32 *pOut);
+extern int VEC_Normalize(VecFx32 *pSrc, VecFx32 *pDst);
+extern void Vec3ScaleAddQ27(int nFactor, VecFx32 *pDir,
+                          VecFx32 *pOrigin, VecFx32 *pOut);
 
 int Ov022_CastMove(struct ReactionCtx *pCtx, struct MoveProbe *pProbe)
 {
-    struct VecFx32 vecDir;
-    struct VecFx32 vecNormal;
+    VecFx32 vecDir;
+    VecFx32 vecNormal;
     struct CollCastParams qry;
     int nRet;
     struct Hit *pHit;

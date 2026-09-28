@@ -3,11 +3,13 @@
  * ground (+0x17a bit 0) the horizontal velocity clears. Once falling within 12.0 of the floor
  * (+0x13c), animation 0x1e plays, the +0x3d0 part plays motion 0x1b, +0x44, +0x73 and +0x72 clear
  * and the tick hands over to Ov257_LandingSlamTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Bits17a { unsigned char b0 : 1; };
 
-extern int Ov257_SteerToTarget(int *state, int target, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov257_SteerToTarget(int *state, int target, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);
@@ -17,12 +19,12 @@ extern void Ov257_LandingSlamTick(int *node);
 void Ov257_JumpTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
 
     state[0x10] = 0;
     Ov257_SteerToTarget(state, state[0x18], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     VEC_Add(state + 4, state + 0x19, state + 4);
     state[0x1a] -= 0xc0;
     if (((struct Bits17a *)(*state + 0x17a))->b0) {

@@ -11,15 +11,16 @@
  * VALUE is VEC_Subtract's first argument, and the anchor is self+0x48c reached as one
  * offset even though the ROM splits it into +0x8c and +0x400.
  */
-typedef struct { int x, y, z; } Vec3;
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *dst);
-extern int VEC_Mag(const Vec3 *v);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
+extern int VEC_Mag(const VecFx32 *v);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Atan2(int x, int z);
 extern void Ov022_FillEightHalvesMinus1At0x2bd4(char *self);
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
 extern char *data_ov057_020b74a0;
 extern void Ov057_TickChargeActor(void);
 extern void Ov057_TickFinishAction(void);
@@ -27,7 +28,7 @@ extern void Ov057_TickFinishAction(void);
 void *Ov057_HandleMsgAndReaim(char *self, int msg) {
     char *blk = data_ov057_020b74a0 + 0x2c + 0x2c00;
     void *next = 0;
-    Vec3 d;
+    VecFx32 d;
     unsigned short a;
     int *node;
     int code;
@@ -47,7 +48,7 @@ void *Ov057_HandleMsgAndReaim(char *self, int msg) {
         (*(void (**)(char *, int))(self + 0x664))(self, code);
         Ov022_FillEightHalvesMinus1At0x2bd4(self);
         if (Ov022_ValidateTargetRef(self) != 0) {
-            VEC_Subtract(func_ov022_020ad0c0(self), (const Vec3 *)(self + 0x48c), &d);
+            VEC_Subtract(func_ov022_020ad0c0(self), (const VecFx32 *)(self + 0x48c), &d);
             if (VEC_Mag(&d) != 0) {
                 VEC_Normalize(&d, &d);
             }

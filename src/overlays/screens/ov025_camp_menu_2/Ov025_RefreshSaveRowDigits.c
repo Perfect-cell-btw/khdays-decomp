@@ -4,6 +4,7 @@
  * the "empty" sign (-1 when the row's flag at +0x24 is clear, else 0) to the
  * row's tags 5..7, 4 and 3 through Ov008_ConfigureTagBySign.
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT   3

@@ -23,6 +23,7 @@
  * is the loop counter's zero kept in a register; declaration order i,
  * nCount, nMask, nBit.
  */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
@@ -34,12 +35,6 @@
 #define CMD_CHARGE   0
 #define REACTION_HIT 6
 #define REACTION_END 7
-
-typedef struct Vec3 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} Vec3;
 
 typedef struct Vec4 {
     fx32 a[4];
@@ -61,7 +56,7 @@ typedef struct ChargeActor {
     int   hWorld;             /* 0x388 */
     signed char nTurn;        /* 0x38c */
     u8    pad_38d[3];
-    Vec3  vFacing;            /* 0x390 */
+    VecFx32  vFacing;            /* 0x390 */
 } ChargeActor;
 
 typedef struct HitEntry {
@@ -71,8 +66,8 @@ typedef struct HitEntry {
 
 typedef struct ChargeState {
     ChargeActor *pSelf;       /* 0x00 */
-    Vec3 *pAnchor;            /* 0x04 */
-    Vec3  vVel;               /* 0x08 */
+    VecFx32 *pAnchor;            /* 0x04 */
+    VecFx32  vVel;               /* 0x08 */
     int   nDuration;          /* 0x14 */
     u8    pad_18[4];
     int   nTravel;            /* 0x1c */
@@ -89,16 +84,16 @@ typedef struct ChargeNode {
 } ChargeNode;
 
 extern short data_0203d210[];                                          /* Q12 sin / cos table */
-extern void  ScaleVec3Fx12(int nScale, const Vec3 *pSrc, Vec3 *pDst);   /* ScaleVec3Fx12 */
+extern void  ScaleVec3Fx12(int nScale, const VecFx32 *pSrc, VecFx32 *pDst);   /* ScaleVec3Fx12 */
 extern long long func_02020400(int nNum, int nDen);                    /* _s32_div_f */
 extern void  MTX_RotY33_(Mtx33 *pMtx, fx32 nSin, fx32 nCos);
-extern void  MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
+extern void  MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern int   FX_Div(int nNumer, int nDenom);                            /* fx32 divide */
 extern int   Ov107_CollectSphereOverlaps(int hWorld, Vec4 *pVolume, HitEntry **apHit);
-extern int   Ov107_InvokeHitCallback(HitEntry *pHit, ChargeActor *pSelf, int hWorld, int nMode, Vec3 *pDir, int nFlag);
-extern void  func_ov107_020c0b90(int hWorld, int nCmd, Vec3 vAt, int nFlag);
-extern void  Ov107_BuildAndSendUpdate(ChargeActor *pSelf, int nId, int nReaction, Vec3 *pAt);
-extern int   VEC_Mag(const Vec3 *pVec);
+extern int   Ov107_InvokeHitCallback(HitEntry *pHit, ChargeActor *pSelf, int hWorld, int nMode, VecFx32 *pDir, int nFlag);
+extern void  func_ov107_020c0b90(int hWorld, int nCmd, VecFx32 vAt, int nFlag);
+extern void  Ov107_BuildAndSendUpdate(ChargeActor *pSelf, int nId, int nReaction, VecFx32 *pAt);
+extern int   VEC_Mag(const VecFx32 *pVec);
 extern void  SetIndexedSlot(ChargeNode *pNode, int nSlot, void *pValue); /* SetIndexedSlot */
 
 static inline fx32 FX_Mul(fx32 a, fx32 b)
@@ -119,8 +114,8 @@ void Ov231_Item_AiChargeTick(ChargeNode *pNode)
     Vec4 volume;
     HitEntry *apHit[4];
     Mtx33 mtx;
-    Vec3 vLocal;
-    Vec3 vAt;
+    VecFx32 vLocal;
+    VecFx32 vAt;
     ChargeState *pState;
     ChargeActor *pActor;
     fx32 nAngle;

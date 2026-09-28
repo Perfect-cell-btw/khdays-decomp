@@ -3,6 +3,7 @@
  * the shared element list cleared (02084a64 / 02089644), entries 0x3e and 0x3f of the 4a80
  * block hidden (0208843c / 0208884c), the sub BG1 / BG3 scroll registers zeroed, the row
  * records (+4) freed and the string set (+0x1c) released (02089884). */
+
 #include "nitro/types.h"
 
 typedef struct TileBlock {

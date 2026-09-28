@@ -14,12 +14,7 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct MtxFx33 {
     int m[9];
@@ -30,7 +25,7 @@ struct Effect {
     u8 pad001[0x7b];
     int nModel;                      /* 0x07c */
     u8 pad080[0x28];
-    struct VecFx32 vecAt;            /* 0x0a8 */
+    VecFx32 vecAt;            /* 0x0a8 */
     u8 pad0b4[0x81];
     u8 nState;                       /* 0x135 */
     u8 pad136[0xe];
@@ -56,7 +51,7 @@ extern void NNS_G3dMdlSetMdlAlphaAll(int nModel, int nAngle);
 #define SPIN_RATE 0x1800
 #define REST_TIME 0x3000
 
-void Ov022_StepSpinEffect(struct Effect *pEffect, struct VecFx32 *pAt, int nAngle,
+void Ov022_StepSpinEffect(struct Effect *pEffect, VecFx32 *pAt, int nAngle,
                          int bTurn, int nDelta)
 {
     int bAlive;

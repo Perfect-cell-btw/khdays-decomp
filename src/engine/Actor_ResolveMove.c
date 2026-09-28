@@ -1,11 +1,6 @@
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
-
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
 
 typedef struct CollCastParams {
     VecFx32 *origin;

@@ -4,9 +4,9 @@
  * builds the burst parameters with spin 0x2080 and the fixed 0xa00/0x66/0xa00 extent, and
  * submits them; if the submit takes and neither busy bit of +0x26bc is set, it plays 0xca at
  * +0x26c8. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Emit {
     char pad00[0xc];
@@ -27,7 +27,7 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;

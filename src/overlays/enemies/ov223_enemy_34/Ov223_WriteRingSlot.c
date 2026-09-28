@@ -2,7 +2,9 @@
  * ring (index +4) with scale 1.0, radius 0.5, the given point at +0x2c and a pose at +8 made
  * of a -0x1922 turn about data_02042270 combined with the given pose (ef54); the index then
  * advances modulo the owner's +0x8c count. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int q[4]; } Quat;
 
 struct Ov223RingEntry {
@@ -10,14 +12,14 @@ struct Ov223RingEntry {
     int nRadius;
     Quat pose;
     char pad18[0x14];
-    Vec3 vPoint;
+    VecFx32 vPoint;
 };
 
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Quat_Multiply(Quat *out, const Quat *a, const Quat *b);
-extern const Vec3 data_02042270;
+extern const VecFx32 data_02042270;
 
-void Ov223_WriteRingSlot(int *state, const Vec3 *pPoint, const Quat *pPose)
+void Ov223_WriteRingSlot(int *state, const VecFx32 *pPoint, const Quat *pPose)
 {
     struct Ov223RingEntry *entry = &((struct Ov223RingEntry *)*(int *)(*state + 0x90))[state[1]];
 

@@ -9,6 +9,7 @@
  * 0x3f, 1, 0x47, 0x48 of block 4a80 hidden, and the sub engine's BG1 / BG3
  * scroll registers zeroed.
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT 6

@@ -6,21 +6,23 @@
  * 0x88 of the frame step and the sink rate becomes the y velocity. Otherwise gravity
  * (-0x80 * step / 0x88) accumulates in y. The horizontal velocity is the +0x18 direction
  * scaled by the speed. */
-typedef struct { int x, y, z; } Vec3;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Bit0 { unsigned char b0 : 1; };
 
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern const Vec3 data_02041dc8;
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern const VecFx32 data_02041dc8;
 extern void Ov245_Thrown_AiTimeoutTick(void);
 
 void Ov245_GlideTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 v;
+    VecFx32 v;
     int rest;
     int vy;
 
@@ -40,7 +42,7 @@ void Ov245_GlideTick(int *node) {
     if (state[4] < 0 && ((struct Bit0 *)(*state + 0x17a))->b0) {
         if (state[0xb] < 0x80 && *(unsigned char *)(state[1] + 0xad) == 0) {
             Ov107_PostTagUpdate(*state, 1, 1);
-            *(Vec3 *)(state + 3) = data_02041dc8;
+            *(VecFx32 *)(state + 3) = data_02041dc8;
             state[9] = 0;
             SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_Thrown_AiTimeoutTick);
             return;
@@ -59,7 +61,7 @@ void Ov245_GlideTick(int *node) {
     } else {
         state[4] += *(int *)(node[0] + 0x2c) * -0x80 / 0x88;
     }
-    ScaleVec3Fx12(state[10], (Vec3 *)(state + 6), &v);
+    ScaleVec3Fx12(state[10], (VecFx32 *)(state + 6), &v);
     state[3] = v.x;
     state[5] = v.z;
 }

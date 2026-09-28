@@ -2,21 +2,23 @@
  * world's +0xa8 list within 12.0 of the helper's +0xc point is swirled: its direction to the point
  * is bent by the cross with data_02042240, normalised and scaled to 0.28 by how close it is, then
  * added to its +0xe4 push. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { void *item; } ListNode;
 struct Bits40 { int b0 : 1, b1 : 1; };
 struct Flags60 { u16 lo : 8; u16 hi : 8; };
 
 extern ListNode *List_First(void *list);
 extern ListNode *List_Next(void *list);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int FX_Div(int num, int den);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern const Vec3 data_02042240;
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern const VecFx32 data_02042240;
 
 static inline int FX_Mul(int a, int b)
 {
@@ -26,9 +28,9 @@ static inline int FX_Mul(int a, int b)
 void Ov257_SwirlTick(int *node)
 {
     int *h = (int *)node[1];
-    Vec3 d;
-    Vec3 push;
-    Vec3 c;
+    VecFx32 d;
+    VecFx32 push;
+    VecFx32 c;
     ListNode *link;
     char *obj;
     int world;

@@ -2,10 +2,12 @@
  * animation 1 plays (looping), bit 0 of the +0x388 part's flag byte clears, bit 1 of the +0x60
  * high byte and bit 0 of +0x1ae are raised, reaction 0x167 mode 4 fires at the point, the +0x50
  * timer restarts and the tick hands over to Ov272_OrbitWindUpTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned int lo : 8, rest : 24; } Byte8;
 
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -16,7 +18,7 @@ void Ov272_EnterBite(int *node)
     int *state = (int *)node[1];
     unsigned short v;
 
-    func_ov107_020c0b90(*state, 1, *(Vec3 *)state[0x13], 0);
+    func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[0x13], 0);
     Ov107_PostTagUpdate(*state, 1, 1);
     ((Byte8 *)(*(int *)(*state + 0x388) + 8))->lo &= ~1;
     v = *(unsigned short *)(*state + 0x60);

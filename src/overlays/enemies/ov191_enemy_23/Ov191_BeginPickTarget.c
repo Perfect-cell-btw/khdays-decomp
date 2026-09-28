@@ -6,14 +6,16 @@
  * rate and advances to the chase handler (020d1370).
  * The candidate array is a block-scoped `int found[4] = {0, 0, 0, 0}` opened after the notify
  * call: the initialiser is what zeroes it through one base register, at that position. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned short a, b; } Pair;
 
 extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
 extern int RandNextScaled(int bound);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern Pair data_ov191_020d2d70;
@@ -24,7 +26,7 @@ void Ov191_BeginPickTarget(int node)
     int *state = *(int **)(node + 4);
     Pair p;
     int found[4];
-    Vec3 d;
+    VecFx32 d;
     signed char n = 0;
     int owner;
     int *pNode;
@@ -61,7 +63,7 @@ void Ov191_BeginPickTarget(int node)
             return;
         }
         state[6] = found[RandNextScaled(n)];
-        VEC_Subtract((Vec3 *)(state[6] + 0x190), (Vec3 *)state[2], &d);
+        VEC_Subtract((VecFx32 *)(state[6] + 0x190), (VecFx32 *)state[2], &d);
         state[5] = func_020050b4(d.x, d.z);
         state[0xc] = *(int *)(*(int *)node + 0x2c) * 30 / 5;
         SetIndexedSlot(node, *(signed char *)(node + 0x20), Ov191_FireShockwave);

@@ -3,9 +3,11 @@
  * Call 020c0b90(state[0], mode 2, const vec data_02041dc8, flag 0) -- passes the vec3 by value.
  * Reset state[0xb] = 0 (elapsed) and the *(u8)(state+0x49) flag, then hand off to the 020d22e0 state.
  */
-struct vec3 { int x, y, z; };
-extern struct vec3 data_02041dc8;
-extern void func_ov107_020c0b90(int obj, int mode, struct vec3 v, int flag);
+
+#include "nitro/fx.h"
+
+extern VecFx32 data_02041dc8;
+extern void func_ov107_020c0b90(int obj, int mode, VecFx32 v, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov208_AiStrikeWindup(void);
 

@@ -4,13 +4,9 @@
  * duration and remaining count (+0x1c / +0x20) and easing mode (+0x24) are set, the current
  * target (+0) becomes the start (+0xc) and the new angles the target.  Flag bit 10 (+0x1a28)
  * is set and the entity's halfword at +4 gets bit 7. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023RotTween {
     VecFx32 vTarget;          /* 0x00 */

@@ -3,18 +3,14 @@
  * observed read. No normal calculation has been inferred for it.
  * The child-offset table is read-only in the ROM (rodata).
  */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct {
     int x;
     int z;
 } Pair;
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
 
 typedef struct {
     VecFx32 center;

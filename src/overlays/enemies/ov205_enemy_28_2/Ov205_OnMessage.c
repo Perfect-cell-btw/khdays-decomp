@@ -4,9 +4,10 @@
  * payload 1 the +0x28 item into +0x2c at the actor's position lowered by its +0x13c height
  * (packed as 24-bit fixed point), payload 3 the first of the overlay's four listed +4 slots
  * whose handle is not alive. The base handler always runs. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -27,7 +28,7 @@ struct Ov204Slot { int item; int handle; };
 
 void Ov205_OnMessage(int actor, u8 *msg, int param)
 {
-    Vec3 pos;
+    VecFx32 pos;
     Fx24 packed[3];
     struct SlotList slots;
     FxVec vDead;
@@ -41,7 +42,7 @@ void Ov205_OnMessage(int actor, u8 *msg, int param)
                 Ov107_CreateNodeXformTaskFx24(*(void **)(actor + 0x3c), *(void **)(*(int *)(actor + 0x394) + 0x20), 0x17, 0, 0x1000, msg + 5);
             break;
         case 1:
-            pos = *(Vec3 *)(actor + 0x74);
+            pos = *(VecFx32 *)(actor + 0x74);
             pos.y -= *(int *)(actor + 0x13c);
             vDead.x = *(Fx32 *)&pos.x;
             PackFx24(&packed[0], vDead.x.value);

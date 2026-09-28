@@ -15,6 +15,7 @@
  * +0x10 and any "appeared" word (+0x38) sets the flag.  Codegen: the kind
  * table is a 22-word struct copy; nOld is declared before nNew.
  */
+
 #include "nitro/types.h"
 
 #define CATEGORY_COUNT 14

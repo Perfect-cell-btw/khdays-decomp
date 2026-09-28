@@ -2,18 +2,19 @@
  * move is 2 and 0 is returned. Otherwise returns the ground-plane gap between the two bodies (distance
  * minus both +0x80 radii, at least 0); with `face` the +0x58 heading turns toward the target, and
  * `delta` (when given) receives the ground-plane offset to it. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 
-int Ov252_CheckTarget(int *node, Vec3 *delta, int face)
+int Ov252_CheckTarget(int *node, VecFx32 *delta, int face)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int gap;
 
     *(int *)(*state + 0x4e4) = Ov107_FindNearestObject(*state, 0);
@@ -21,7 +22,7 @@ int Ov252_CheckTarget(int *node, Vec3 *delta, int face)
         *(u8 *)(*state + 0x1c7) = 2;
         return 0;
     }
-    VEC_Subtract((Vec3 *)(*(int *)(*state + 0x4e4) + 0x190), (Vec3 *)(*state + 0xb0), &d);
+    VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x4e4) + 0x190), (VecFx32 *)(*state + 0xb0), &d);
     d.y = 0;
     gap = VEC_Normalize(&d, &d);
     gap -= (*(int *)(*(int *)(*state + 0x4e4) + 0x80) + *(int *)(*state + 0x80));

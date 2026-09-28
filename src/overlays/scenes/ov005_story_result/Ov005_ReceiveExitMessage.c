@@ -2,6 +2,7 @@
  * replies. */
 
 #include "nitro/types.h"
+
 typedef struct Ov005ExitTask { unsigned receivedPlayerMask; int protocolPhase; } Ov005ExitTask;
 extern Ov005ExitTask *data_ov005_0205b8d0;
 extern const char *data_ov005_0205b79c[3];

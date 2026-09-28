@@ -5,6 +5,7 @@
  * (GameState_IsFlagSet), resolves its node (Ov008_GetSharedRecord), and if present sets bit 2 of the
  * node's byte flags before signalling Ov008_PrimeSubSceneFromCursor(8). The two flag tests read single
  * bitfield members so the compiler emits the lsl/lsr bit extracts. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008Flags5c6 {

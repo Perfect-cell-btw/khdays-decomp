@@ -10,9 +10,10 @@
  * finisher bit goes into the sixty-four bit flag word.
  */
 
+/* Ov022Actor */
+
 #include "nitro/types.h"
 
-/* Ov022Actor */
 struct Actor {
     unsigned int nFlags;             /* 0x0000 */
     u8 pad0004[5];

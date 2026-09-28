@@ -5,13 +5,14 @@
  * (data_ov282_020d4748, low nibble of byte 4 = 6) carries its +0x74 point to the owner's +0x24
  * hook and reaction 0/0x53 fires there. Once the +0xc idle byte clears, the +0x6c think timer is
  * re-armed between the actor's +0x224 and +0x228, sub-state 2 is requested and the action ends. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 struct Nib { u8 lo : 4, hi : 4; };
 typedef struct { u16 id; u8 kind; u8 cmd; struct Nib flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
@@ -22,13 +23,13 @@ typedef struct { Vec3 pos; int nRadius; } Sphere;
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int FX_Div(int num, int den);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
 extern int RandNextScaled(int bound);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov282_020d4748;
@@ -38,7 +39,7 @@ void Ov282_BurstTick(int *node)
     int *state = (int *)node[1];
     Sphere sphere;
     int hits[4];
-    Vec3 push;
+    VecFx32 push;
     Cmd14 msg;
     Cmd14 tmpl;
     Fx32 scratchZ;
@@ -56,7 +57,7 @@ void Ov282_BurstTick(int *node)
         if (t > 0x1000) {
             t = 0x1000;
         }
-        sphere.pos = *(Vec3 *)state[1];
+        sphere.pos = *(VecFx32 *)state[1];
         sphere.nRadius = FX_MUL(t, 0x4cc9);
         n = Ov107_CollectSphereOverlaps(*state, &sphere, hits);
         i = 0;

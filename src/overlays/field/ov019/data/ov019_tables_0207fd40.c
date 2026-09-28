@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov019_ShowMessageWithCounters (0207fa94): unsigned char data_ov019_0207fd40[]; */
+
 #include "nitro/types.h"
 
-/* read by Ov019_ShowMessageWithCounters (0207fa94): unsigned char data_ov019_0207fd40[]; */
 const u8 data_ov019_0207fd40[8] = {
     51, 0, 49, 0, 50, 0, 0, 0,
 };

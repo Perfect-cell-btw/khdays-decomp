@@ -6,6 +6,7 @@
  * text loader (+0xc130) at "UI/shop/shp_&.s.z" and cache variable records
  * 0x1a, 0x1b, 0x1c, 0x1e and 0x1d at +0xc5c8.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008PanelContext {

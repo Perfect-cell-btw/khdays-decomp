@@ -10,26 +10,28 @@
  * +0x3a0 flag; any landing fires reaction 0/0x53 at the +0xc anchor. Once the +4 item's
  * animation is free (+0xad), remaining +0x28 swings without a landing re-plan the turn
  * (020d40e8); otherwise pose 2 and the node moves to 020d462c. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 p0; Vec3 dir; int scale; } Segment;
-struct Capsule { Segment seg; int radius; };
-struct Ov245Box { Vec3 pos; Vec3 a; Vec3 b; Vec3 c; int scale; int kind; };
 
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 p0; VecFx32 dir; int scale; } Segment;
+struct Capsule { Segment seg; int radius; };
+struct Ov245Box { VecFx32 pos; VecFx32 a; VecFx32 b; VecFx32 c; int scale; int kind; };
+
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern int Ov107_CollectEntitiesTouchingDisc(int actor, struct Ov245Box *box, int *out);
 extern int Ov107_CollectSegmentOverlaps(int actor, struct Capsule *cap, int *out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void Ov245_TurnPlan(int *node);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
 extern void Ov245_FourShape_AiStep_QueueAction0OnAnimEnd(void);
 
 void Ov245_SwingTick(int *node) {
@@ -37,7 +39,7 @@ void Ov245_SwingTick(int *node) {
     int hits[4];
     struct Ov245Box box;
     struct Capsule cap;
-    Vec3 push;
+    VecFx32 push;
     long i;
     int nHits;
     unsigned char bit;
@@ -49,15 +51,15 @@ void Ov245_SwingTick(int *node) {
     }
     if ((*((unsigned char *)state + 0x35) & 2) == 0 && state[0xb] >= 0x770) {
         *((unsigned char *)state + 0x35) |= 2;
-        *(Vec3 *)(state + 4) = *(Vec3 *)(*(int *)(*state + 0x3b0) + 0x14);
+        *(VecFx32 *)(state + 4) = *(VecFx32 *)(*(int *)(*state + 0x3b0) + 0x14);
         state[5] = 0;
-        func_ov107_020c0b90(*state, 1, *(Vec3 *)(state + 4), 0);
+        func_ov107_020c0b90(*state, 1, *(VecFx32 *)(state + 4), 0);
         Ov107_BuildAndSendUpdate(*state, 0x15a, 8, (void *)(state + 4));
     }
     if ((*(unsigned short *)(*(int *)(*state + 0x3b4) + 0x100 + 0xac) & 2) == 0) {
         nHits = 0;
         if ((*((unsigned char *)state + 0x35) & 2) != 0 && (state[0xc] += *(int *)(node[0] + 0x2c)) <= 0x6e8) {
-            box.pos = *(Vec3 *)(state + 4);
+            box.pos = *(VecFx32 *)(state + 4);
             if (state[0xc] > 0x6e8 - 0x110) {
                 nHits = 0x6e8 - 0x110;
             } else if (state[0xc] >= 0) {
@@ -77,14 +79,14 @@ void Ov245_SwingTick(int *node) {
         for (i = 0; i < nHits; i++) {
             bit = 1 << *(unsigned short *)(hits[i] + 2);
             if ((*((unsigned char *)state + 0x34) & bit) == 0) {
-                VEC_Subtract((Vec3 *)(hits[i] + 0x74), (Vec3 *)(*state + 0x74), &push);
+                VEC_Subtract((VecFx32 *)(hits[i] + 0x74), (VecFx32 *)(*state + 0x74), &push);
                 push.y = 0;
                 if (VEC_Normalize(&push, &push) == 0) {
                     push = data_02042258;
                 }
                 ScaleVec3Fx12(0x1b00, &push, &push);
                 if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x3b4), 3, &push, 0) != 0) {
-                    func_ov107_020c0b90(*(int *)(*state + 0x3b4), 0, *(Vec3 *)(hits[i] + 0x74), 0);
+                    func_ov107_020c0b90(*(int *)(*state + 0x3b4), 0, *(VecFx32 *)(hits[i] + 0x74), 0);
                     *((unsigned char *)state + 0x34) |= bit;
                     *(int *)(*state + 0x3a0) = 1;
                 }

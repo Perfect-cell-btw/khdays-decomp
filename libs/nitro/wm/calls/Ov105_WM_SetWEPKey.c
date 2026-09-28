@@ -1,5 +1,6 @@
 #include "nitro/types.h"
 #include "nitro/os.h"
+
 typedef void *OSMessage;
 typedef void (*WMCallbackFunc)(void *arg);
 

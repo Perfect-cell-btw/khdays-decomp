@@ -1,6 +1,7 @@
 /* Rebuilds the 0x440-long heading vector from the angle at +0x34 and stores its yaw. */
 
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
+
 struct Mtx33_ov297 { int m[9]; };
 
 extern void MTX_RotY33_(void *mtx, int cos, int sin);

@@ -4,6 +4,7 @@
  * (GameState_SetField 020235e8), the row's mission and day (16-byte records at +4) become the
  * context selection (Ov025_SetCtxFields9638And963a 02084e50), entry 1 is set up
  * (Ov025_SetGlobalConfigAndInit 02084830) and the confirm sound plays (02033b78 0 / 1). */
+
 #include "nitro/types.h"
 
 typedef struct TileBlock {

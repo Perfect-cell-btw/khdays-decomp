@@ -9,7 +9,9 @@
  * spelling emits ldm+stm and then re-loads the middle word.
  *
  * One of four byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { int a, b, c, d; } Ov185Quad;
 
 extern Ov185Quad data_020420f8;

@@ -30,15 +30,11 @@
  * register above the branch and the bitfield mask is derived from it (sub #0x20000).
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022HitSpec */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct HitSpec {
     int nBase;                   /* 0x00 */
     int nExtra;                  /* 0x04 */

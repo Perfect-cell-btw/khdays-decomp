@@ -10,6 +10,7 @@
  *
  * Codegen: the part stride is written UNSIGNED (`i * 0x1c8u`); the signed product becomes an
  * induction pointer, the ROM multiplies every iteration. The loop is the `goto test` shape. */
+
 #include "nitro/types.h"
 
 struct PanelSubCfg {

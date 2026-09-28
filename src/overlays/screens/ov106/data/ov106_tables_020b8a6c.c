@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov106_LayoutMarkerWidget (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov106_LayoutMarkerWidget (not yet decompiled) */
 const u8 data_ov106_020b8a6c[12] = {
     0, 192, 254, 255, 0, 96, 255, 255, 0, 0, 0, 0,
 };

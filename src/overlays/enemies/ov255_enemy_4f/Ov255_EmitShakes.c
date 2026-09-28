@@ -4,20 +4,22 @@
  * set, and the entries from the ring cursor (+0x10, wrapping at the table's +0x8c count) are
  * spread along the owner's move since the last tick (+0x39c to +0xb0): offset 0.25 (3 entries) or
  * 0.125, full strength and the owner's +0x3bc handle. The move start is then updated. */
-typedef struct { int x, y, z; } Vec3;
-struct Shake { int offset; int strength; char pad08[0x10]; int handle; char pad1c[0x10]; Vec3 at; };
+
+#include "nitro/fx.h"
+
+struct Shake { int offset; int strength; char pad08[0x10]; int handle; char pad1c[0x10]; VecFx32 at; };
 struct ShakeSet { char pad[0x8c]; int count; struct Shake *items; };
 
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern long long func_02020400(int num, int den);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 
 void Ov255_EmitShakes(int *node)
 {
     int *h = (int *)node[1];
-    Vec3 move;
-    Vec3 step;
+    VecFx32 move;
+    VecFx32 step;
     signed char i;
     int count;
 
@@ -42,5 +44,5 @@ void Ov255_EmitShakes(int *node)
         e->handle = *(int *)(h[0] + 0x3bc);
         h[4] = (int)(func_02020400(h[4] + 1, ((struct ShakeSet *)h[1])->count) >> 32);
     }
-    *(Vec3 *)(h[0] + 0x39c) = *(Vec3 *)(h[0] + 0xb0);
+    *(VecFx32 *)(h[0] + 0x39c) = *(VecFx32 *)(h[0] + 0xb0);
 }

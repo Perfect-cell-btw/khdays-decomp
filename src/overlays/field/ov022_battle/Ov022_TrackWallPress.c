@@ -15,10 +15,7 @@
  */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x, y, z;
-};
+#include "nitro/fx.h"
 
 struct Surface {
     u8 pad00[0xc];
@@ -73,19 +70,19 @@ extern short data_0203d210[];
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int func_ov022_020a0814(struct Actor *pActor);
-extern void VEC_Normalize(const struct Vec3 *pIn, struct Vec3 *pOut);
+extern void VEC_Normalize(const VecFx32 *pIn, VecFx32 *pOut);
 extern int Ov002_RunShutdownHook(void);
 extern int func_ov022_02095450(u8 *pBlk);
 extern int Ov022_IsState9Or6WithFlag200(u8 *pBlk);
 extern int func_ov022_02083f0c(void);
 extern int Ov002_IsObjectFlag2000Set(int nSlot);
 extern struct Surface *Actor_GetRecord(struct CollBlock *pBlk, u32 nIndex);
-extern void VecFx32FromVecS16(int nHandle, short *pTri, struct Vec3 *pOut);
-extern int VEC_DotProduct(const struct Vec3 *pA, const struct Vec3 *pB);
+extern void VecFx32FromVecS16(int nHandle, short *pTri, VecFx32 *pOut);
+extern int VEC_DotProduct(const VecFx32 *pA, const VecFx32 *pB);
 extern unsigned long long OS_GetTick(void);
 extern int Ov002_GetSlotTableByte(int nSlot);
 extern void func_ov022_020ad2e4(struct Actor *pActor, int nMode);
-extern void Ov013_SpawnAtOrientedOffset(struct Actor *pActor, struct Vec3 *pNormal);
+extern void Ov013_SpawnAtOrientedOffset(struct Actor *pActor, VecFx32 *pNormal);
 extern void func_ov022_02096964(struct Actor *pActor);
 
 void Ov022_TrackWallPress(struct Actor *pActor)
@@ -94,8 +91,8 @@ void Ov022_TrackWallPress(struct Actor *pActor)
     int bSkip;
     int nAngle;
     struct CollBlock *apBlocks[2];
-    struct Vec3 vecNormal;
-    struct Vec3 vecDir;
+    VecFx32 vecNormal;
+    VecFx32 vecDir;
     int i;
     struct CollBlock *pBlk;
     struct Surface *pSurf;

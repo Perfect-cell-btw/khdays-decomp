@@ -1,6 +1,6 @@
-#include "nitro/types.h"
 
-struct Ov281Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov281ReactionModes {
     u8 normal[2];
@@ -14,7 +14,7 @@ struct Ov281HitFlags {
 
 struct Ov281Hit {
     unsigned int flags;
-    struct Ov281Vec3 position;
+    VecFx32 position;
     char pad10[0x10];
     int reaction20;
     unsigned int resultFlags24;
@@ -32,7 +32,7 @@ struct Ov281ReactionWork {
     char pad004[0x08];
     int reactionContext0c;
     char pad010[0x1c];
-    struct Ov281Vec3 position2c;
+    VecFx32 position2c;
     int source38;
     char pad03c[0x02];
     u8 facing3e;

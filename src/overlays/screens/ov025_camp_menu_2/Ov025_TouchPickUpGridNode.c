@@ -9,6 +9,7 @@
  * with 5, the grid refreshed, and the node's text row repainted (0205eafc,
  * row 0, colour 0xf3, index from 0208e66c on +0x1e68) with the pick sound.
  */
+
 #include "nitro/types.h"
 
 #define WIDGET_INFO  100

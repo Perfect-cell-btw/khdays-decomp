@@ -2,7 +2,9 @@
  * at the point is tested against the world's (+0x7c) collision; every contact weighs by the
  * radius less its distance, the unit directions away from the contacts scaled by those weights
  * are summed by their share of the total (64-bit ratios) and the point is moved by that sum. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
 
 extern int Ov107_QuerySphereContacts(void *collision, Sphere *sphere, VecFx32 *list, VecFx32 *direction);

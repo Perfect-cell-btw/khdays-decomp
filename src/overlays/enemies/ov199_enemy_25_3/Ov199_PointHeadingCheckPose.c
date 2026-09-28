@@ -9,13 +9,14 @@
  *
  * ★ THIS IS THE ORIGINAL `ldm`-args-coalescing example (it was the deferred-ties entry's own
  * citation), and the STRUCT-BY-VALUE crack matched it on the first compile: the vector at
- * state[10..0xc] is passed as `*(struct Vec3 *)(state + 10)`, which mwcc loads with one
+ * state[10..0xc] is passed as `*(VecFx32 *)(state + 10)`, which mwcc loads with one
  * `ldm r1,{r1,r2,r3}` -- exactly the ROM. Three separate `int` args would have been three `ldr`s.
  * The tie is retired.
  */
-struct Vec3 { int x, y, z; };
 
-extern void Ov199_BuildHeadingRotation(int *state, struct Vec3 v, int flag);
+#include "nitro/fx.h"
+
+extern void Ov199_BuildHeadingRotation(int *state, VecFx32 v, int flag);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov199_SeedDefaultPoseAndAdvance(int a, int b);
 extern void SetIndexedSlot(int self, int idx, int cb);
@@ -24,7 +25,7 @@ extern int Ov199_InvokeWithVec3ThenSetSubState5;
 void Ov199_PointHeadingCheckPose(int self) {
     int *state = *(int **)(self + 4);
 
-    Ov199_BuildHeadingRotation(state, *(struct Vec3 *)(state + 10), 1);
+    Ov199_BuildHeadingRotation(state, *(VecFx32 *)(state + 10), 1);
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }

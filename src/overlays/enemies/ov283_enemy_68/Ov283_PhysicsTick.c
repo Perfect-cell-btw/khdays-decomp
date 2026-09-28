@@ -3,16 +3,18 @@
  * down (to 0), the +0x3c tilt eases back toward 0 by 0.066, the +0xf0 velocity mirrors +0x10, which
  * is scaled by +0x5c; both +0x394/+0x39c limb pairs update (020ced80) and a pending +0x60 timer runs
  * down. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 struct Ov283Limbs { char pad[0x394]; int bones[2]; int parts[2]; };
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, const Quat *rot);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov283_ForwardToAiTaskWhenReady(int part, int bone);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 void Ov283_PhysicsTick(int *node)
 {
@@ -42,9 +44,9 @@ void Ov283_PhysicsTick(int *node)
         state[0xf] += 0x110;
     }
     {
-        Vec3 *vel = (Vec3 *)(state + 4);
+        VecFx32 *vel = (VecFx32 *)(state + 4);
 
-        *(Vec3 *)(*state + 0xf0) = *vel;
+        *(VecFx32 *)(*state + 0xf0) = *vel;
         ScaleVec3Fx12(state[0x17], vel, vel);
     }
     for (i = 0; i < 2; i++) {

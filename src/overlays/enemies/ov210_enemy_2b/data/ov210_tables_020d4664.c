@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov210_Construct (020cfc04): const PoseTable data_ov210_020d4664; */
+
 #include "nitro/types.h"
 
-/* read by Ov210_Construct (020cfc04): const PoseTable data_ov210_020d4664; */
 const int data_ov210_020d4664[8] = {
     28, 29, 30, 31, 32, 33, 34, 35,
 };

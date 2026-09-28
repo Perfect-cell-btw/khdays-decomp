@@ -2,6 +2,7 @@
  * draws the option text rows and cursor; returns the next state. */
 
 #include "nitro/types.h"
+
 typedef void (*MissionState)(void);
 
 typedef struct {

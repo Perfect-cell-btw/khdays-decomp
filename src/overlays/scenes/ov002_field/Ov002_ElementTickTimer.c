@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* The queue record this element hands to the collector. */
+
+#include "nitro/types.h"
+
 typedef struct {
     unsigned char bTag;             /* +0x00 */
     unsigned char bPad0[3];

@@ -4,9 +4,9 @@
  * facing (+0x98), raises its flag bit 5 and enables it (0202af1c); then binds the model node
  * (+0x124, 0202b930 on the definition's model +0x68) and puts it at a copy of the position
  * raised by 0x7d7 (+0x1d8); a fresh emblem (state 0) also shows the model (0202bedc 1). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov021EmblemDef {
     u8   pad_00[0x58];

@@ -1,10 +1,10 @@
 /* When the effect node is in its visible state, places it at the attack anchor its kind names,
  * turned with the character, and draws it. */
 
+#include "nitro/fx.h"
+
 extern void Ov039_GetAttackAnchor(int self, int kind, void *out);
 extern void Scene_DrawNode(int a);
-
-typedef struct { int x, y, z; } Vec3;
 
 typedef struct {
     signed char f0;
@@ -14,11 +14,11 @@ typedef struct {
     char pad6[0x7a];
     unsigned short angle;
     char pad82[0x26];
-    Vec3 vec;
+    VecFx32 vec;
 } Node;
 
 void Ov039_DrawNodeWithResolvedPos(int self, Node *node) {
-    Vec3 v;
+    VecFx32 v;
     if (node->f1 != 2) return;
     Ov039_GetAttackAnchor(self, node->f0, &v);
     node->angle = (unsigned short)(*(unsigned short *)(*(int *)(self + 0x20) + 0x80) - 0x8000) + 0x8000;

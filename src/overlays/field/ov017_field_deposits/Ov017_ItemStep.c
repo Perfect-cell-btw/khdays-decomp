@@ -3,6 +3,7 @@
  * carrying it (ov002 020766e0) and moves to state 2; once the id has come back (+0x1b9 != -1,
  * set by the type-1 message handler) it moves to state 3 and hands over to the dispatching
  * state Ov017_ItemDispatchState (0208079c).  Otherwise stays (0). */
+
 #include "nitro/types.h"
 
 typedef struct Ov017ItemMessage {

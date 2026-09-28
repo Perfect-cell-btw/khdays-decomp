@@ -20,6 +20,7 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define ANGLE_BIAS 0x8000
 #define IN_CONTACT 2
@@ -29,12 +30,6 @@
 #define HIT_BIT_B 4
 #define FACING_NEAR 0x2100
 #define FACING_FAR 0xdf00
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 /* Ov022CollBlock */
 struct CollBlock {
@@ -97,13 +92,13 @@ struct Actor {
 extern int Ov022_IsIndexedRecordBit0Set(struct Actor *pActor, int nIndex);
 extern int Ov022_TestBit4(u32 *pFlags);
 extern struct CollSurfaceAttr *Actor_GetRecord(struct CollBlock *pBlock, int nTag);
-extern void VecFx32FromVecS16(int nHandle, u8 *pFace, struct VecFx32 *pOut);
+extern void VecFx32FromVecS16(int nHandle, u8 *pFace, VecFx32 *pOut);
 extern int FX_Atan2(int x, int y);
 
 int Ov022_MayActOnHit(struct Actor *pActor)
 {
     struct CollBlock *aBlocks[2];
-    struct VecFx32 vecNormal;
+    VecFx32 vecNormal;
     struct CollSurfaceAttr *pAttr;
     int bResult;
     int bBlocked;

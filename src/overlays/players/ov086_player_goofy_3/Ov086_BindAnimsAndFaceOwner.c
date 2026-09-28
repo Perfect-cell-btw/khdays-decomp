@@ -1,15 +1,15 @@
 /* Starts the attack effect at the locked target's point: binds and rewinds its tracks, turns it
  * with the character and activates it; the local player also gets a short rumble. */
 
+#include "nitro/fx.h"
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 extern void func_ov022_020ad44c(void *out, int self);
 extern int Session_GetLocalPlayerIndex(void);
 
-typedef struct { int x, y, z; } Vec3;
-
 void Ov086_BindAnimsAndFaceOwner(int self, char *blk) {
-    Vec3 v;
+    VecFx32 v;
     BindAnimTrack((int)(blk + 0x120), 0, (int)(blk + 0x200), 0);
     BindAnimTrack((int)(blk + 0x120), 2, (int)(blk + 0x200), 0);
     Anim_SetFrameWrapped((int)(blk + 0x120), 0, 0);
@@ -18,7 +18,7 @@ void Ov086_BindAnimsAndFaceOwner(int self, char *blk) {
     *(unsigned short *)(blk + 0x19c) =
         (unsigned short)(*(unsigned short *)(*(int *)(self + 0x20) + 0x80) - 0x8000) + 0x8000;
     *(unsigned short *)(blk + 0x120) |= 0x20;
-    *(Vec3 *)(blk + 0x1c4) = v;
+    *(VecFx32 *)(blk + 0x1c4) = v;
     *(int *)(blk + 0x11c) = 1;
     if (Session_GetLocalPlayerIndex() != 0) return;
     if ((*(int *)self & 0x10000) != 0) return;

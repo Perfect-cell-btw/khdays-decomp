@@ -1,13 +1,13 @@
 /* Draws the status-effect model on every visible member with the given status bit, facing the
  * camera. */
 
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad0[0x60];
     unsigned short field_60;
     char pad62[0x74 - 0x62];
-    Vec3 field_74;
+    VecFx32 field_74;
     int field_80;
     char pad84[0x1ac - 0x84];
     unsigned short field_1ac;
@@ -32,20 +32,20 @@ typedef struct { int m[9]; } Mtx33;
 extern void *List_First(void *list);
 extern void *List_Next(void *list);
 extern void *func_ov107_020c9848(void);
-extern void VEC_Subtract(Vec3 *a, Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *src, Vec3 *dst);
-extern void ScaleVec3Fx12(int factor, Vec3 *src, Vec3 *dst);
-extern void VEC_Add(Vec3 *a, Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *src, VecFx32 *dst);
+extern void ScaleVec3Fx12(int factor, VecFx32 *src, VecFx32 *dst);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern void MTX_Identity33_(Mtx33 *m);
 extern void Gfx_SubmitCachedCommandBlock(void);
 extern void Obj_InitChannelsAndRun(unsigned int *p);
 
 extern Xform394 data_02047394;
-extern Vec3 data_0204744c;
+extern VecFx32 data_0204744c;
 extern Mtx33 data_02047428;
 
 void Ov107_Region_DrawStatusFx(char *self, int action) {
-    Vec3 *g = &data_0204744c;
+    VecFx32 *g = &data_0204744c;
     char *base = *(char **)(self + 0x84);
     void *listNode;
 
@@ -60,19 +60,19 @@ void Ov107_Region_DrawStatusFx(char *self, int action) {
             if ((f60 & 1) != 0) {
                 if ((n->field_1ac & 7) == 0) {
                     int v = n->field_80 << 1;
-                    Vec3 *src;
+                    VecFx32 *src;
                     void *thread;
-                    Vec3 result;
+                    VecFx32 result;
 
                     data_02047394.f_c4 = v;
                     data_02047394.f_c8 = v;
                     data_02047394.f_cc = 1;
 
-                    src = n->field_2cc != 0 ? (Vec3 *)n->field_2cc : &n->field_74;
+                    src = n->field_2cc != 0 ? (VecFx32 *)n->field_2cc : &n->field_74;
                     *g = *src;
 
                     thread = func_ov107_020c9848();
-                    VEC_Subtract((Vec3 *)((char *)*(void **)thread + 0x88), g, &result);
+                    VEC_Subtract((VecFx32 *)((char *)*(void **)thread + 0x88), g, &result);
                     VEC_Normalize(&result, &result);
                     ScaleVec3Fx12(n->field_80, &result, &result);
                     VEC_Add(g, &result, g);

@@ -15,10 +15,7 @@
  */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x, y, z;
-};
+#include "nitro/fx.h"
 
 struct Anim {
     u8 pad0000[0xa4];
@@ -29,7 +26,7 @@ struct Slot {
     u8 nFlags;                   /* 0x0000 */
     u8 pad0001[3];
     struct Anim anim;            /* 0x0004 */
-    struct Vec3 vecPos;          /* 0x00a8 */
+    VecFx32 vecPos;          /* 0x00a8 */
     int nScaleX;                 /* 0x00b4 */
     int nScaleY;                 /* 0x00b8 */
     int nScaleZ;                 /* 0x00bc */
@@ -78,12 +75,12 @@ extern int func_ov022_02089604(int nTarget, int nHandle);
 extern int Ov022_DispatchSpawnRecord(int nTarget, u8 *pBlk, u16 nAngle);
 extern int Ov022_IsIndexedRecordByteZero(int nTarget, int nHandle);
 
-void Ov022_StepDustEmitter(struct Emitter *pEm, struct Vec3 *pPos,
-                         struct Vec3 *pOrigin, int nDelta, int nReaction,
+void Ov022_StepDustEmitter(struct Emitter *pEm, VecFx32 *pPos,
+                         VecFx32 *pOrigin, int nDelta, int nReaction,
                          int nAngle, struct Coll *pColl)
 {
-    struct Vec3 vecOrigin;
-    struct Vec3 vecPos;
+    VecFx32 vecOrigin;
+    VecFx32 vecPos;
     int i;
     struct Anim *pAnim;
     struct Slot *pSlot;

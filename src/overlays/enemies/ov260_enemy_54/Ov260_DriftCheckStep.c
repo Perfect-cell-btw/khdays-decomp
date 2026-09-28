@@ -1,11 +1,13 @@
 /* Drift step of the ov260 actor with a re-check: the +0x20 velocity is its +0x428 part's +0x2c vector
  * turned by the +0x64 heading; once the partner holds no queued move the node ends, queueing move 2
  * unless the target check (020cd540) already picked one. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern int Ov260_PickMove(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
@@ -22,7 +24,7 @@ void Ov260_DriftCheckStep(int *node)
 
         MTX_RotY33_(&rot, data_0203d210[idx], data_0203d210[idx + 1]);
     }
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (Vec3 *)(state + 8));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (VecFx32 *)(state + 8));
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }

@@ -4,7 +4,9 @@
  * The explicit unsigned mode predicate preserves the original boolean sequence.
  * ARM: 476 bytes, 17 relocations, byte-exact.
  */
+
 #include "nitro/types.h"
+
 typedef struct Ov002PageChars {char header[16];int nCharSize;void *pCharData;} Ov002PageChars;
 typedef struct BgPlttSrc {int nFormat,n_pad;u32 dwSize;void *pData;} BgPlttSrc;
 typedef struct SpriteResSet {void *pScreen;Ov002PageChars *pChar;BgPlttSrc *pPalette;} SpriteResSet;

@@ -2,6 +2,7 @@
  * the ARM7-shared X/Y/debug bits, active-low, masked to 0x2fff) unless the lid is closed, derives
  * the newly pressed set and stamps the change time (vblank count) of every button that changed.
  * Always returns 1. */
+
 #include "nitro/types.h"
 
 typedef struct {

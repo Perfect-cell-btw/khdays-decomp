@@ -14,10 +14,11 @@
  * Codegen: the contact position is a stack copy (`raw`, y raised in place) packed through the
  * Fx32 wrapper copies (ov122_020d12f4 idiom) -- the three unread word stores at the frame
  * bottom are the ROM's; the ca918 push is the zero vector. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -36,17 +37,17 @@ struct Ov269Owner {
 };
 
 extern void Ov107_BuildAndSendUpdate(struct Ov269Owner *owner, int a, int id, void *at);
-extern int Ov107_ActionResource_GetOffsetAndScale(int resource, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *dst, void *xfm, Vec3 *src);
-extern void ScaleVec3Fx12(int scale, Vec3 *src, Vec3 *dst);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern int Ov107_ActionResource_GetOffsetAndScale(int resource, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
+extern void ScaleVec3Fx12(int scale, VecFx32 *src, VecFx32 *dst);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectSphereOverlaps(struct Ov269Owner *owner, Sphere *sphere, int *out);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov269Owner *a, struct Ov269Owner *b, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov269Owner *a, struct Ov269Owner *b, int kind, VecFx32 *push, int z);
 extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_PostTagUpdate(struct Ov269Owner *actor, int anim, int flag);
 extern const PosMsg data_ov270_020d688a;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov270_BeginSwing(void);
 
 static inline void PackFx24(Fx24 *dst, int v) {
@@ -66,10 +67,10 @@ void Ov270_SwingTick(int *node)
 {
     int *state = (int *)node[1];
     struct Ov269Owner *owner;
-    Vec3 fwd;
+    VecFx32 fwd;
     int hits[4];
     Sphere sphere;
-    Vec3 raw;
+    VecFx32 raw;
     PosMsg msg;
     PosMsg tmpl;
     FxVec vContact;
@@ -86,20 +87,20 @@ void Ov270_SwingTick(int *node)
         }
     }
     speed = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3d0), &fwd);
-    Vec3TransformViaTempMtx((Vec3 *)(state + 6), (char *)*state + 0xa0, &fwd);
-    ScaleVec3Fx12(speed, (Vec3 *)(state + 6), (Vec3 *)(state + 6));
+    Vec3TransformViaTempMtx((VecFx32 *)(state + 6), (char *)*state + 0xa0, &fwd);
+    ScaleVec3Fx12(speed, (VecFx32 *)(state + 6), (VecFx32 *)(state + 6));
     if (state[0xc] >= 0x200) {
         sphere = *(Sphere *)(*(int *)(*state + 0x390) + 0x68);
-        VEC_Add(&sphere.pos, (Vec3 *)(state + 6), &sphere.pos);
+        VEC_Add(&sphere.pos, (VecFx32 *)(state + 6), &sphere.pos);
         nHits = Ov107_CollectSphereOverlaps((struct Ov269Owner *)*state, &sphere, hits);
         i = 0;
         if (nHits > 0) {
             tmpl = data_ov270_020d688a;
             do {
                 if (((*(u8 *)((char *)state + 0x51) >> *(u8 *)(hits[i] + 0x1b4)) & 1) == 0 &&
-                    Ov107_InvokeHitCallback(hits[i], (struct Ov269Owner *)*state, (struct Ov269Owner *)*state, 1, (Vec3 *)&data_02041dc8, 0) != 0) {
+                    Ov107_InvokeHitCallback(hits[i], (struct Ov269Owner *)*state, (struct Ov269Owner *)*state, 1, (VecFx32 *)&data_02041dc8, 0) != 0) {
                     msg = tmpl;
-                    raw = *(Vec3 *)(hits[i] + 0x74);
+                    raw = *(VecFx32 *)(hits[i] + 0x74);
                     raw.y += 0x800;
                     vContact.x = *(Fx32 *)&raw.x;
                     ((u8 *)&msg)[5] = (u8)(((u32)vContact.x.value >> 0x10 & 0x7f) | ((u32)vContact.x.value >> 0x18 & 0x80));

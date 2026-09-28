@@ -5,26 +5,28 @@
  * back at its position (mode 0xb), queues pose 7 (020cd628) and is marked; entities no longer
  * touched are forgotten. Past 0xaa0, once the partner holds no queued move, +0x54 clears, the next
  * move is 2 when grounded (+0x17a bit 0) else 0xc, and the node ends. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct Flag17a { u8 b0 : 1; };
 struct BoxQuery {
-    Vec3 vCenter;
-    Vec3 vAxisX;
-    Vec3 vAxisZ;
-    Vec3 vAxisY;
+    VecFx32 vCenter;
+    VecFx32 vAxisX;
+    VecFx32 vAxisZ;
+    VecFx32 vAxisY;
     int nExtent;
     int bFlag;
 };
 
 extern int FX_Div(int num, int den);
 extern int Ov107_CollectEntitiesTouchingDisc(int actor, struct BoxQuery *query, int *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov259_ArmPartnerCue(int *node, int pose, int delay);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
 
 void Ov259_SlamSweepTick(int *node)
 {
@@ -34,7 +36,7 @@ void Ov259_SlamSweepTick(int *node)
     state[0x1a] += *(int *)(node[0] + 0x2c);
     if (state[0x1a] < 0xaa0) {
         struct BoxQuery box;
-        Vec3 push;
+        VecFx32 push;
         int hits[4];
         u8 seen;
         int extent;
@@ -45,11 +47,11 @@ void Ov259_SlamSweepTick(int *node)
         if (extent > 0x2b00) {
             extent = 0x2b00;
         }
-        box.vCenter = *(Vec3 *)(*state + 0x74);
+        box.vCenter = *(VecFx32 *)(*state + 0x74);
         box.vCenter.y -= 0x600;
         box.vAxisX = data_02042270;
         box.vAxisZ = data_02042258;
-        box.vAxisY = *(Vec3 *)(*state + 0x124);
+        box.vAxisY = *(VecFx32 *)(*state + 0x124);
         box.nExtent = extent * 7;
         box.bFlag = 0;
         push.x = 0;
@@ -62,7 +64,7 @@ void Ov259_SlamSweepTick(int *node)
             seen |= bit;
             if ((*((u8 *)state + 0xaf) & bit) == 0 &&
                 Ov107_InvokeHitCallback(hits[i], *state, *state, 7, &push, 0)) {
-                func_ov107_020c0b90(*state, 0xb, *(Vec3 *)(hits[i] + 0x74), 0);
+                func_ov107_020c0b90(*state, 0xb, *(VecFx32 *)(hits[i] + 0x74), 0);
                 Ov259_ArmPartnerCue(node, 7, 0);
                 *((u8 *)state + 0xaf) |= bit;
             }

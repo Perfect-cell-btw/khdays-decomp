@@ -1,24 +1,25 @@
 /* Whether the ov106 +0x8cd0 widget misses `point` seen through `cam` (0202a818 with a 1.5 margin in
  * mode 1, else 1.0): on a hit test of 0 the widget moves to the projected point (+0x8d74) and
  * refreshes. Returns the test result. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern char *data_ov106_020b8b60;
 extern int func_02023c40(void);
-extern void Ov106_ProjectToScreen(Vec3 *out, const Vec3 *point, void *cam);
+extern void Ov106_ProjectToScreen(VecFx32 *out, const VecFx32 *point, void *cam);
 extern unsigned int Sequence_UpdateTracks(void *p, int a);
 extern void Scene_DrawNode(void *widget);
 
-int Ov106_TestPointAgainstWidget(void *cam, Vec3 *point)
+int Ov106_TestPointAgainstWidget(void *cam, VecFx32 *point)
 {
-    Vec3 pos;
+    VecFx32 pos;
     int margin = func_02023c40() == 1 ? 0x1800 : 0x1000;
     int hit;
 
     Ov106_ProjectToScreen(&pos, point, cam);
     hit = Sequence_UpdateTracks(data_ov106_020b8b60 + 0x8cd0, margin);
     if (hit == 0) {
-        *(Vec3 *)(data_ov106_020b8b60 + 0x8d74) = pos;
+        *(VecFx32 *)(data_ov106_020b8b60 + 0x8d74) = pos;
         Scene_DrawNode(data_ov106_020b8b60 + 0x8cd0);
     }
     return hit;

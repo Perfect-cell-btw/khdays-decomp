@@ -4,17 +4,19 @@
  * zero vector, flags 0x10) to everything it finds. The +0xc timer runs to 0xa000 -- or ends
  * early when the pool's +0x60 low byte has bit 7 set -- and then the target position (+8) is
  * pushed to the render hook (cmd 1), pose 2 plays and the release handler (020cee40) follows. */
+
 #include "nitro/types.h"
-struct vec3 { int x, y, z; };
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Vec4;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern int Ov107_CollectSphereOverlaps(int owner, Vec4 *src, int *out);
 extern int Ov107_InvokeHitCallback(int victim, int a, int b, int mode, void *push, int flags);
-extern void func_ov107_020c0b90(int obj, int cmd, struct vec3 v, int flag);
+extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
 extern void SetIndexedSlot(int obj, int slot, void *cb);
-extern struct vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern void Ov178_AiStep_QueueAction0OnAnimEnd(void);
 
 void Ov178_SettleHold(int node) {
@@ -42,7 +44,7 @@ void Ov178_SettleHold(int node) {
         return;
     }
     {
-        struct vec3 v = *(struct vec3 *)state[2];
+        VecFx32 v = *(VecFx32 *)state[2];
         func_ov107_020c0b90(*(int *)(*state + 0x388), 1, v, 0);
     }
     Ov107_PostTagUpdate(*state, 2, 0);

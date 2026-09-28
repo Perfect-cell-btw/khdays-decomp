@@ -3,6 +3,7 @@
  * (bits 8-12), then for each of the four BGnCNT registers keeps the low mode bits (& 0x43) and
  * programs the screen/char base (BG0 = 0x4080; BG1/2/3 = 0x4080 + 0x210/0x410/0x610). A second
  * pass sets the layer priorities in ascending order (BG0=0, BG1=1, BG2=2, BG3=3). */
+
 #include "nitro/types.h"
 
 typedef struct GfxRegsB {

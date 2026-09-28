@@ -1,10 +1,12 @@
 /* Attach the sub-actor (020c5c54), store the spawn position (param_3 -> +0x390) and slot
  * (param_4 -> +0x38c), and raise flag 0 in the high byte at (param_1)+0x60. */
+
+#include "nitro/fx.h"
+
 extern void Ov107_MoveNodeAndRelayout(int a, int b);
-struct Vec3_020cf0dc { int x, y, z; };
 void Ov280_Item_RelayoutAndStoreVec(int param_1, int param_2, int param_3, int param_4) {
     Ov107_MoveNodeAndRelayout(param_1, param_2);
-    *(struct Vec3_020cf0dc *)(param_1 + 0x390) = *(struct Vec3_020cf0dc *)param_3;
+    *(VecFx32 *)(param_1 + 0x390) = *(VecFx32 *)param_3;
     *(signed char *)(param_1 + 0x38c) = param_4;
     {
         unsigned short *p = (unsigned short *)(param_1 + 0x60);

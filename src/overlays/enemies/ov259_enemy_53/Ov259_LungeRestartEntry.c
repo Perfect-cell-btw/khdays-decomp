@@ -1,6 +1,7 @@
 /* Restart entry of the ov259 lunge: the +0x54, +0x68 and +0x98 counters and the +0xac cue flags
  * clear, bits 2 and 6 of the actor's +0x60 high byte are set, pose 0xf plays on the actor and its
  * partner (020cd524) and the node moves on to 020d0e34. */
+
 #include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

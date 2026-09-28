@@ -3,6 +3,7 @@
  * table data_ov008_0208f180 to a local, opens the surface (Obj_InvokeInnerVtable4), builds a cell from the
  * table's arg1-th id via Ov008_VariadicMapForward(arg0+0x28c, tbl[arg1], work, 0x80, arg2) into a 0x100
  * work buffer, and renders it with Text_DrawWithShadow(arg0+0x124, 0, 0, 0xf3, cell, 1). */
+
 #include "nitro/types.h"
 
 typedef struct Buf18 { int entries[6]; } Buf18;

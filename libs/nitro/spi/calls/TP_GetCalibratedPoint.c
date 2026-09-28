@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* Four packed u16 fields; shared layout for both the raw input record and
  * the (possibly transformed) output record. */
+
+#include "nitro/types.h"
+
 typedef struct {
     unsigned short field_00;
     unsigned short field_02;

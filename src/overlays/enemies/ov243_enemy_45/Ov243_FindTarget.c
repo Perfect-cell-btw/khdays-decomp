@@ -5,20 +5,22 @@
  * to 8.0, whose flattened direction from the origin (world Z when degenerate) lies within
  * the 0xb50 cosine of the heading, and that Ov243_IsPathToTargetClear accepts with its position and
  * +0x80 radius. Returns the best actor or 0. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct flags40 { int bit0 : 1, bit1 : 1; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern int Ov243_IsPathToTargetClear(int *state, Vec3 pos, int radius);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern int Ov243_IsPathToTargetClear(int *state, VecFx32 pos, int radius);
 extern const short data_0203d210[];
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 int Ov243_FindTarget(int node)
 {
@@ -30,10 +32,10 @@ int Ov243_FindTarget(int node)
     int actor;
     int owner = *(int *)(*state + 4);
     int idx;
-    Vec3 fwd;
-    Vec3 origin;
-    Vec3 d;
-    Vec3 pos;
+    VecFx32 fwd;
+    VecFx32 origin;
+    VecFx32 d;
+    VecFx32 pos;
     int *pNode;
     int dy;
 
@@ -42,13 +44,13 @@ int Ov243_FindTarget(int node)
     fwd.z = data_0203d210[((idx >> 4) << 1) + 1];                                    /* FX_CosIdx */
     fwd.y = 0;
     ScaleVec3Fx12(-0x1800, &fwd, &origin);
-    VEC_Add(&origin, (Vec3 *)(*state + 0x74), &origin);
+    VEC_Add(&origin, (VecFx32 *)(*state + 0x74), &origin);
     pNode = List_First((void *)(owner + 0xa8));
     actor = pNode == 0 ? 0 : *pNode;
     while (actor != 0) {
         if (((struct flags40 *)(actor + 0x40))->bit1 && (((struct hw60 *)(actor + 0x60))->lo & 1) != 0) {
-            pos = *(Vec3 *)(actor + 0x74);
-            VEC_Subtract(&pos, (Vec3 *)(*state + 0x74), &d);
+            pos = *(VecFx32 *)(actor + 0x74);
+            VEC_Subtract(&pos, (VecFx32 *)(*state + 0x74), &d);
             dy = d.y;
             if (dy < 0) {
                 dy = -dy;

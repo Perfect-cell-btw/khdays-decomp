@@ -4,6 +4,7 @@
  * palette vram base, both halved for non-4-color palettes. Returns 1. Codegen: the palette values
  * are read offset first, then base (declared in that order after texBase). */
 #pragma thumb on
+
 #include "nitro/types.h"
 
 typedef struct {

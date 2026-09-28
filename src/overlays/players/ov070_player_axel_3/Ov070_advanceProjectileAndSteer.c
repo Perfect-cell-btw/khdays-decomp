@@ -1,8 +1,9 @@
-struct vec3 { int x, y, z; };
 
-extern struct vec3 data_02041dc8;
+#include "nitro/fx.h"
+
+extern VecFx32 data_02041dc8;
 extern int Anim_GetLengthQ12(unsigned short *p, unsigned int idx);
-extern void Ov022_ResolveShotHit(void *a, int b, struct vec3 *c, struct vec3 *d);
+extern void Ov022_ResolveShotHit(void *a, int b, VecFx32 *c, VecFx32 *d);
 extern unsigned int func_ov022_02091540(unsigned short *a, int b);
 extern void func_ov022_02091d80(void *a, int b);
 
@@ -14,12 +15,12 @@ extern void func_ov022_02091d80(void *a, int b);
  * death check, which sets the state byte at +2 itself; state 3 means expired, so
  * zero the lifetime and hand off to 02091d80. */
 int Ov070_advanceProjectileAndSteer(void *param_1, int param_2, int param_3) {
-    struct vec3 target;
-    struct vec3 staging;
+    VecFx32 target;
+    VecFx32 staging;
     int animLen = Anim_GetLengthQ12((unsigned short *)(param_2 + 0x28), 0);
     int steerUntil = animLen - 0x9000;
 
-    target = *(struct vec3 *)(param_2 + 0xcc);
+    target = *(VecFx32 *)(param_2 + 0xcc);
     staging = data_02041dc8;
     *(int *)(param_2 + 4) += param_3;
     target.y -= 0x5000;

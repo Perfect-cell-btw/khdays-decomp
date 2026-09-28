@@ -1,12 +1,14 @@
 /* Orbit tick (slow): the +0xc velocity is the +0x430 partner's +0x2c vector turned by the +0x30
  * yaw and scaled by 0.75, kept level. Once the +4 item's +0xad byte clears and no move is pending,
  * a missing target (020cd080) requests move 2; the handler is then cleared. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov254_CheckTarget(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
@@ -20,8 +22,8 @@ void Ov254_SlowOrbitTick(int *node)
     unsigned int idx = ANG2IDX(state[0xc]);
 
     MTX_RotY33_(&m, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x430) + 0x2c), &m, (Vec3 *)(state + 3));
-    ScaleVec3Fx12(0xc00, (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x430) + 0x2c), &m, (VecFx32 *)(state + 3));
+    ScaleVec3Fx12(0xc00, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     state[4] = 0;
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;

@@ -10,15 +10,11 @@
  * contact kind is 1 or 4; the kept contact is written back at the end.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022SweepContact */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct SweepContact {
     int nResult;                 /* 0x00 */
     int nKind;                   /* 0x04 */

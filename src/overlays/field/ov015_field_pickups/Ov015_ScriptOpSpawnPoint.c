@@ -2,6 +2,7 @@
  * index, a packed field / bit pair (raw word at pc + 0x1c: low half the GameState field,
  * next byte its bit) and a facing (fx32), then spawns a point piece (02080fc0) on the
  * slot's class table (ov002 02076468).  Always consumes the op (1). */
+
 #include "nitro/types.h"
 
 extern int  ScriptVm_ReadOperandInt(int vm, u16 *pc);            /* ScriptVm_ReadOperandInt */

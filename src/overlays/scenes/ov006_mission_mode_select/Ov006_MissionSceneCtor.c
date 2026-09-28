@@ -12,6 +12,7 @@
  * function (Ov006_UpdateMissionModeFrame).
  *
  * Resource paths confirmed by reading RAM at runtime. */
+
 #include "nitro/types.h"
 
 struct S5 { int w[5]; };

@@ -5,12 +5,14 @@
  * the +0x30 timer counts down and, when it runs out, is re-armed at random inside the
  * [+0x224, +0x228] range and sub-state 6 is requested; above 0x6000 but still inside the +0x2d8
  * range sub-state 4 is requested. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Flags42 { unsigned char bCharge : 1; };
 
 extern int Ov107_FindNearestObject(int actor, int *distSq);
 extern int FX_Sqrt(int x);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -19,7 +21,7 @@ void Ov135_IdleTick(int *node)
 {
     int *state = (int *)node[1];
     int dist;
-    Vec3 d;
+    VecFx32 d;
     int actor;
     int target;
     int lo;
@@ -35,7 +37,7 @@ void Ov135_IdleTick(int *node)
     if (dist > *(int *)(*state + 0x2d8)) {
         return;
     }
-    VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)(*state + 0xb0), &d);
+    VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)(*state + 0xb0), &d);
     state[4] = func_020050b4(d.x, d.z);
     if (((struct Flags42 *)((char *)state + 0x42))->bCharge) {
         *(unsigned char *)(*state + 0x1c7) = 4;

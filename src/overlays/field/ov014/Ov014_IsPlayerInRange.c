@@ -1,12 +1,7 @@
 /* Whether the active player is in the element's group and within its range. */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 {
-    s32 x;
-    s32 y;
-    s32 z;
-} VecFx32;
+#include "nitro/fx.h"
 
 extern int QueryActiveStateOrDelegate(void);
 extern void *GetEntryField20ByIndex(int index);

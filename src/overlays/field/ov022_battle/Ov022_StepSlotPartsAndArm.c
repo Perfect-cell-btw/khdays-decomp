@@ -9,27 +9,23 @@
  * its sequence slot back.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022AnimBlock */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct AnimBlock {
     u16 nFlags;                  /* 0x00 */
     u8 pad02[0xa2];
-    struct VecFx32 vecAt;        /* 0xa4 */
+    VecFx32 vecAt;        /* 0xa4 */
     int aEntryFlags[3];          /* 0xb0 */
 };
 
 /* Ov022SlotPart */
 struct SlotPart {
     int nTimer;                  /* 0x000 */
-    struct VecFx32 vecPos;       /* 0x004 */
-    struct VecFx32 vecVel;       /* 0x010 */
+    VecFx32 vecPos;       /* 0x004 */
+    VecFx32 vecVel;       /* 0x010 */
     struct AnimBlock anim;       /* 0x01c */
     u8 pad0d8[0x70];
     void *pOwner;                /* 0x148 */

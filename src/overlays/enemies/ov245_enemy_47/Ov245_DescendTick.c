@@ -2,9 +2,10 @@
  * (+0x2c); the +0x14 height grows by itself times the +0x38 factor clamped to 0..1; then the
  * height-gap check (020ccda4 with mode 0) feeds the arrival test (020ccb30) and on success the
  * node's slot is released. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+#include "nitro/fx.h"
+
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov245_TargetHeightGap(int *node, int flat);
 extern int Ov245_ArrivalDecision(int *node, int gap);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -13,7 +14,7 @@ void Ov245_DescendTick(int *node) {
     int *state = (int *)node[1];
     int factor;
 
-    ScaleVec3Fx12(-0x1000, (Vec3 *)(*(int *)(*state + 0x4c8) + 0x2c), (Vec3 *)(state + 3));
+    ScaleVec3Fx12(-0x1000, (VecFx32 *)(*(int *)(*state + 0x4c8) + 0x2c), (VecFx32 *)(state + 3));
     factor = state[0xe];
     if (factor > 0x1000) {
         factor = 0x1000;

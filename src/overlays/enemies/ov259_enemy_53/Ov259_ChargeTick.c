@@ -2,8 +2,9 @@
  * accumulates the frame rate; the cue pulses once 0x330 before the end (020cd2c8 2, +0xac bit 0).
  * Past 0x27d8 the timer, cue flags and +0x60 clear, +0x38 resets, +0x2c takes the target's +0x190
  * point, pose 0x18 loops on the actor and its partner and the node moves on to 020d105c. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov259_FaceTarget(int *node);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
@@ -11,7 +12,7 @@ extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_TickDive(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov259_ChargeTick(int *node)
 {
@@ -23,8 +24,8 @@ void Ov259_ChargeTick(int *node)
         state[0x1a] = 0;
         *((u8 *)state + 0xac) = 0;
         state[0x18] = 0;
-        *(Vec3 *)(state + 0xe) = data_02041dc8;
-        *(Vec3 *)(state + 0xb) = *(Vec3 *)(state[2] + 0x190);
+        *(VecFx32 *)(state + 0xe) = data_02041dc8;
+        *(VecFx32 *)(state + 0xb) = *(VecFx32 *)(state[2] + 0x190);
         Ov107_PostTagUpdate(*state, 0x18, 1);
         Ov259_MirrorPartnerPose(node, 0x18, 1);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov259_TickDive);

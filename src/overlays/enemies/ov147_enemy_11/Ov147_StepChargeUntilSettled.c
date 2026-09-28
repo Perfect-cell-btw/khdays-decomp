@@ -3,7 +3,7 @@
  * Re-runs the steering helper with the stored direction at ctx+0x28 -- note that direction
  * is passed BY VALUE.  The ROM's `ldm r1, {r1, r2, r3}` is not a bulk load of three
  * separate arguments, it is mwcc putting a 12-byte struct into r1-r3, which is what the
- * calling convention does with a Vec3.  Writing it as three int arguments compiles but
+ * calling convention does with a VecFx32.  Writing it as three int arguments compiles but
  * does not match.
  *
  * The state ends only when all three of the owner's nodes at +0x398 have gone idle (their
@@ -16,10 +16,11 @@
  * at the access, which is what keeps the ROM's `add r1, r3, r2, lsl #2`.  mwcc hoists the
  * `*ctx` load out of the loop by itself; doing it by hand is not needed.
  */
-typedef struct { int x, y, z; } Vec3;
 
-extern int Ov147_BuildHeadingRotation(int *ctx, Vec3 v, int flag);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *dst);
+#include "nitro/fx.h"
+
+extern int Ov147_BuildHeadingRotation(int *ctx, VecFx32 v, int flag);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern void SetIndexedSlot(int *self, int action, void *cb);
 extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov147_PointHeadingCheckPose(void);
@@ -29,7 +30,7 @@ void Ov147_StepChargeUntilSettled(int *self) {
     int reach;
     int i;
 
-    reach = Ov147_BuildHeadingRotation(ctx, *(Vec3 *)((char *)ctx + 0x28), 1);
+    reach = Ov147_BuildHeadingRotation(ctx, *(VecFx32 *)((char *)ctx + 0x28), 1);
 
     for (i = 0; i < 3; i++) {
         if (*(int *)(*(int *)((char *)*ctx + i * sizeof(int) + 0x398) + 0x38c) != 0) {
@@ -53,8 +54,8 @@ void Ov147_StepChargeUntilSettled(int *self) {
         return;
     }
     if (*(int *)(*ctx + 0x394) != 0) {
-        VEC_Subtract((const Vec3 *)(*(int *)(*ctx + 0x394) + 0x190), (const Vec3 *)ctx[3],
-                     (Vec3 *)((char *)ctx + 0x28));
+        VEC_Subtract((const VecFx32 *)(*(int *)(*ctx + 0x394) + 0x190), (const VecFx32 *)ctx[3],
+                     (VecFx32 *)((char *)ctx + 0x28));
     }
     Ov107_PostTagUpdate(*ctx, 3, 0);
 }

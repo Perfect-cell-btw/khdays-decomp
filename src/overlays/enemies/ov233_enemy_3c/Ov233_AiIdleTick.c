@@ -20,11 +20,7 @@
  * Written with gotos because the ROM has two shared tails (the stance dispatch and the reset) that
  * several branches jump into; expressing them as nested ifs duplicates the code. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int owner, int a);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);

@@ -2,10 +2,11 @@
  * 0.25, level) and the +0x10 climb is the height difference to the next route point (020cd840),
  * clamped to +-0x7fff. Within 10.0 of the track the next move is 8 when aggressive (+0x78) and the
  * +0x21a stock is at most 60 % of +0x218, else 4. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int Ov254_PanelYForPhase(int *state, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
@@ -16,7 +17,7 @@ static inline int FX_Mul(int a, int b) {
 void Ov254_PatrolTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int dist;
 
     VEC_Subtract(state + 6, (void *)state[2], &d);

@@ -22,7 +22,7 @@
  * exactly where the ROM zeroes it.
  */
 
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
 
 extern int func_ov022_02083f0c(void);
 extern void Ov002_ResetViewToDefault(void);          /* reset the view */

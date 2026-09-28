@@ -6,21 +6,23 @@
  * requests sub-state 6; else the timer is re-armed at random between the actor's +0x224 and
  * +0x228, the overlay's probe offset is rotated by the target yaw and a 0..100 roll picks
  * sub-state 6 (below 40, when the probe finds nothing), 0xb (70 and up) or 7. */
-typedef struct Vec3 { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern int Ov107_FindNearestObject(int actor, int mode);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int func_020050b4(int x, int z);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int RandNextScaled(int range);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(Vec3 *v, Mtx33 *m, Vec3 *d);
-extern int Ov205_TestSubObjectHelperNonzero(int *node, Vec3 *at);
+extern void MTX_MultVec33(VecFx32 *v, Mtx33 *m, VecFx32 *d);
+extern int Ov205_TestSubObjectHelperNonzero(int *node, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern short data_0203d210[];
-extern const Vec3 data_ov205_020d7240;
+extern const VecFx32 data_ov205_020d7240;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
@@ -34,10 +36,10 @@ static inline int RandRange(int low, int high)
 void Ov205_ApproachDecision(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
-    Vec3 facing;
+    VecFx32 dir;
+    VecFx32 facing;
     Mtx33 mtx;
-    Vec3 probe;
+    VecFx32 probe;
     int gap;
     int actor;
     int target;
@@ -59,7 +61,7 @@ void Ov205_ApproachDecision(int *node)
         facing.x = data_0203d210[idx * 2];
         facing.y = 0;
         facing.z = data_0203d210[idx * 2 + 1];
-        ScaleVec3Fx12(-0x100, &facing, (Vec3 *)(state + 2));
+        ScaleVec3Fx12(-0x100, &facing, (VecFx32 *)(state + 2));
     }
     if (state[0xc] <= 0) {
         if (gap < 0x6000) {

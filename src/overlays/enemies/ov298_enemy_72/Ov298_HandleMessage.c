@@ -2,20 +2,22 @@
  * transform scaled by 2.0 at the packet's 24-bit position and starts the +0x39c sub-item of
  * that slot under the +0x3c owner (kind 0x17, the packet's blend) into +0x3a0. The base handler
  * always runs. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetScaleUniform(SrtTransform *transform, int scale);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, u8 blend, SrtTransform *transform);
 extern void Ov107_AiState_OnMessage(int owner, u8 *msg, int arg);
 
 void Ov298_HandleMessage(int owner, u8 *msg, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         u8 bytes[12];

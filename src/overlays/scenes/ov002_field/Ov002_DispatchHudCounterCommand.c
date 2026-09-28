@@ -1,4 +1,5 @@
 #include "nitro/types.h"
+
 typedef s64 (*Ov002EntrySampleFn)(void);
 
 typedef struct Ov002PauseSlot {

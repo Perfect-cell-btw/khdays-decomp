@@ -2,10 +2,11 @@
  * tracker handle, applies its metrics and invokes the tracker callback; the final/odd row flushes
  * pending state. */
 
-#include "nitro/types.h"
-
 /* The flags are an enum here, not BOOL: mwcc treats the two differently, and only the enum gives
  * the ROM's code. */
+
+#include "nitro/types.h"
+
 typedef enum {
     GAUGE_NO = 0,
     GAUGE_YES = 1

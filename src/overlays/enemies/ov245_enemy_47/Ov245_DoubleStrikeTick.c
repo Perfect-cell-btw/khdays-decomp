@@ -8,44 +8,46 @@
  * landing hit gets effect 1 at the centre, its bit set, the direction zeroed and reaction
  * 0x11a/5 at the centre. Once the +4 item's animation is free (+0xad) the direction is copied
  * to +0x28 and the node moves to 020d6c78. */
-typedef struct { int x, y, z; } Vec3;
-struct Sphere { Vec3 centre; int radius; };
 
-extern int Ov107_ActionResource_GetOffsetAndScale(int item, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
+#include "nitro/fx.h"
+
+struct Sphere { VecFx32 centre; int radius; };
+
+extern int Ov107_ActionResource_GetOffsetAndScale(int item, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern int Ov107_CollectSphereOverlaps(int actor, struct Sphere *sphere, int *out);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov245_DecayCopyPosFireOnHitFlag(void);
 
 void Ov245_DoubleStrikeTick(int *node) {
     int *state = (int *)node[1];
     int hits[4];
-    Vec3 centres[2];
-    Vec3 fwd;
+    VecFx32 centres[2];
+    VecFx32 fwd;
     struct Sphere sphere;
-    Vec3 zero;
+    VecFx32 zero;
     int j;
     int speed;
     int nHits;
     int i;
-    Vec3 *centre;
-    Vec3 *anchor;
+    VecFx32 *centre;
+    VecFx32 *anchor;
 
     speed = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3a0), &fwd);
-    Vec3TransformViaTempMtx((Vec3 *)(state + 7), (void *)(*state + 0xa0), &fwd);
-    ScaleVec3Fx12(speed, (Vec3 *)(state + 7), (Vec3 *)(state + 7));
-    VEC_Add((Vec3 *)(*(int *)(*state + 0x394) + 0x14), (Vec3 *)(state + 7), &centres[0]);
-    VEC_Add((Vec3 *)(*(int *)(*state + 0x398) + 0x14), (Vec3 *)(state + 7), &centres[1]);
+    Vec3TransformViaTempMtx((VecFx32 *)(state + 7), (void *)(*state + 0xa0), &fwd);
+    ScaleVec3Fx12(speed, (VecFx32 *)(state + 7), (VecFx32 *)(state + 7));
+    VEC_Add((VecFx32 *)(*(int *)(*state + 0x394) + 0x14), (VecFx32 *)(state + 7), &centres[0]);
+    VEC_Add((VecFx32 *)(*(int *)(*state + 0x398) + 0x14), (VecFx32 *)(state + 7), &centres[1]);
     state[0x10] += *(int *)(node[0] + 0x2c);
     if (*((unsigned char *)state + 0x48) == 0 && state[0x10] >= 0x2a8) {
         *((unsigned char *)state + 0x48) = 1;
-        func_ov107_020c0b90(*state, 3, *(Vec3 *)(*(int *)(*state + 0x390) + 0x14), 0);
+        func_ov107_020c0b90(*state, 3, *(VecFx32 *)(*(int *)(*state + 0x390) + 0x14), 0);
         Ov107_BuildAndSendUpdate(*state, 0x11a, 4, (void *)state[3]);
     }
     if (state[0x10] >= 0xff0) {
@@ -58,10 +60,10 @@ void Ov245_DoubleStrikeTick(int *node) {
             nHits = Ov107_CollectSphereOverlaps(*state, &sphere, hits);
             for (i = 0; i < nHits; i++) {
                 if ((*((unsigned char *)state + 0x49) & (1 << *(unsigned short *)(hits[i] + 2))) == 0) {
-                    if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x3cc), 6, (Vec3 *)(state + 7), 0) != 0) {
+                    if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x3cc), 6, (VecFx32 *)(state + 7), 0) != 0) {
                         func_ov107_020c0b90(*state, 1, *centre, 0);
                         *((unsigned char *)state + 0x49) |= 1 << *(unsigned short *)(hits[i] + 2);
-                        *(Vec3 *)(state + 7) = zero;
+                        *(VecFx32 *)(state + 7) = zero;
                         Ov107_BuildAndSendUpdate(*state, 0x11a, 5, anchor);
                     }
                 }
@@ -73,6 +75,6 @@ void Ov245_DoubleStrikeTick(int *node) {
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    *(Vec3 *)(state + 10) = *(Vec3 *)(state + 7);
+    *(VecFx32 *)(state + 10) = *(VecFx32 *)(state + 7);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_DecayCopyPosFireOnHitFlag);
 }

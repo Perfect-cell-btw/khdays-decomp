@@ -2,18 +2,19 @@
  * its 2 animations (+4, stride 0x108) get channels 0 and 2 bound to their +0xe0 tables and
  * rewound, then the row is marked live, its +0xa8 / +0x224 vectors copied from the two
  * arguments and its +0x1b0 vector computed from the slot's world position (4ef0). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);                /* Anim_SetFrameWrapped */
-extern void Ov062_ComputeSlotPosition(char *self, int slot, Vec3 *out);
+extern void Ov062_ComputeSlotPosition(char *self, int slot, VecFx32 *out);
 
-void Ov062_ArmRequestRow(char *self, char *node, int slot, Vec3 *a, Vec3 *b)
+void Ov062_ArmRequestRow(char *self, char *node, int slot, VecFx32 *a, VecFx32 *b)
 {
     char *row = node + 0x12c + slot * 0x240;
     int i;
     char *anim;
-    Vec3 pos;
+    VecFx32 pos;
 
     if (*(int *)row == 0) {
         anim = row + 4;
@@ -26,8 +27,8 @@ void Ov062_ArmRequestRow(char *self, char *node, int slot, Vec3 *a, Vec3 *b)
         }
     }
     *(int *)row = 1;
-    *(Vec3 *)(row + 0xa8) = *a;
-    *(Vec3 *)(row + 0x224) = *b;
+    *(VecFx32 *)(row + 0xa8) = *a;
+    *(VecFx32 *)(row + 0x224) = *b;
     Ov062_ComputeSlotPosition(self, slot, &pos);
-    *(Vec3 *)(row + 0x1b0) = pos;
+    *(VecFx32 *)(row + 0x1b0) = pos;
 }

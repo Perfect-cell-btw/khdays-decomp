@@ -1,9 +1,9 @@
 /* Feeds the active camera part's position and view direction to the sound listener. */
 
-typedef struct { int x; int y; int z; } Vec3;
+#include "nitro/fx.h"
 
-extern void VEC_Subtract(Vec3 *a, Vec3 *b, Vec3 *out);
-extern void SoundMgr_SetListener(Vec3 *dst, Vec3 *a, Vec3 *b);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
+extern void SoundMgr_SetListener(VecFx32 *dst, VecFx32 *a, VecFx32 *b);
 
 typedef struct {
     char _00[4];
@@ -15,7 +15,7 @@ typedef struct {
 void Camera_UpdateSoundListener(Obj02020e20 *obj)
 {
     char *base;
-    Vec3 tmp;
+    VecFx32 tmp;
 
     if (obj->selector == 1) {
         base = obj->part1;
@@ -23,6 +23,6 @@ void Camera_UpdateSoundListener(Obj02020e20 *obj)
         base = obj->part0;
     }
 
-    VEC_Subtract((Vec3 *)(base + 0x14), (Vec3 *)(base + 0x20), &tmp);
-    SoundMgr_SetListener((Vec3 *)(base + 0x20), &tmp, (Vec3 *)(base + 0x2c));
+    VEC_Subtract((VecFx32 *)(base + 0x14), (VecFx32 *)(base + 0x20), &tmp);
+    SoundMgr_SetListener((VecFx32 *)(base + 0x20), &tmp, (VecFx32 *)(base + 0x2c));
 }

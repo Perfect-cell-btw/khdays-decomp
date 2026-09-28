@@ -21,7 +21,7 @@
  * indexing rather than a struct that would mostly be padding.
  */
 
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
 
 extern VecFx32 data_02041dc8;                      /* kVecZero */
 

@@ -2,6 +2,7 @@
  * frame-times, the +0x1c anchor follows the +0x3a8 part's +0x74 position, the +0x30 jitter
  * vector is re-rolled in [-0x100, 0x100] and after 0x1000 of accumulated frame-time the state
  * ends with sub-state 4. */
+
 #include "nitro/types.h"
 
 extern void Ov262_SetFacingAnchor(void *anchor, void *pos, int *target);

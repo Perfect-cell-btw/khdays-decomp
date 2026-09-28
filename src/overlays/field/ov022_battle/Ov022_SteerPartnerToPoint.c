@@ -18,15 +18,11 @@
  * slot's position takes the partner's and the count resets.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* PlayerSlotDesc */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct SlotDesc {
     u8 pad00[0x1c];
     int nReachInner;             /* 0x1c */

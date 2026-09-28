@@ -3,6 +3,7 @@
  * 0x37c5, 0x37c6, then 0x37c7 and 0x35bf (2 bits each, modulo 3); value 7 is not loaded.  When
  * the player owns no copy of item 0x1a0 (GameState 0x810 + id) field 0x3c29 is first set to 1.
  * Twin of ov008 02069ca4's first half. */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ConfigPage {

@@ -2,7 +2,8 @@
  * slots, registers its sequence and requests its resources. */
 
 #include "nitro/types.h"
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
+
 typedef struct { void *node; int pad; } Slot;
 typedef struct { int w[5]; } KindTable;
 typedef struct { int w[6]; } ParamBlock;

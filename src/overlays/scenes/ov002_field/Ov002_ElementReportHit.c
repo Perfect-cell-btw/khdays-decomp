@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* The 12 byte event this path posts to the element's owner. */
+
+#include "nitro/types.h"
+
 typedef struct {
     unsigned char bKind;            /* +0x00 */
     unsigned char pad01[3];

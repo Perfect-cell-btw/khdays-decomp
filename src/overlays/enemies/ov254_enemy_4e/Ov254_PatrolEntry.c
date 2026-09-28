@@ -1,6 +1,7 @@
 /* Move entry: bit 2 of the actor's +0x60 high byte is set, pose 0 plays (looping), the next
  * waypoint is chosen into +0x34 (020cd5f4) and copied to +0x30, the first tick runs at once and
  * the node moves to 020d1710. */
+
 #include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);

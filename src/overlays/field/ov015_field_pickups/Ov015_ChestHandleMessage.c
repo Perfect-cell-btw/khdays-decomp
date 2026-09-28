@@ -5,9 +5,9 @@
  * player byte (+0x4) is acknowledged (02081824).  Type 5 (open request): unless the chest
  * is refreshing or already opening / rising (bits 5 / 6), the opened bit is dropped, the
  * open-request bit raised and the player byte recorded as the opener. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern int Ov015_ChestAckPlayer(void *pChest, int nPlayer);        /* Ov015_ChestAckPlayer */
 

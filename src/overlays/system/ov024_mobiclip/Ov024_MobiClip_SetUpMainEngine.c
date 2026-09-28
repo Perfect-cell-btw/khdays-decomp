@@ -5,6 +5,7 @@
  * affine transform sixteen scanlines up, and finally hides every layer and
  * puts the backgrounds back in priority order.
  */
+
 #include "nitro/types.h"
 
 struct Mtx22 {

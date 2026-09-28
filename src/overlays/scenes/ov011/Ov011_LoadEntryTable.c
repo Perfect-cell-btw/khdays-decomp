@@ -13,6 +13,7 @@
  *     the counter is zeroed after it and the two setup instructions swap;
  *   - the count is copied into the table before either, which is what puts the file's
  *     count load where the ROM has it. */
+
 #include "nitro/types.h"
 
 typedef struct Ov011PackedEntry {

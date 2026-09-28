@@ -17,12 +17,7 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct MtxFx33 {
     int m[3][3];
@@ -36,13 +31,13 @@ struct SlotTail {
 /* Ov022SlotPart */
 struct SlotPart {
     int nTimer;                      /* 0x000 */
-    struct VecFx32 vecPos;           /* 0x004 */
-    struct VecFx32 vecVel;           /* 0x010 */
+    VecFx32 vecPos;           /* 0x004 */
+    VecFx32 vecVel;           /* 0x010 */
     u16 nSlotFlags;                  /* 0x01c */
     u8 pad01e[0x7a];
     u16 nAngle;                      /* 0x098 */
     u8 pad09a[0x26];
-    struct VecFx32 vecAt;            /* 0x0c0 */
+    VecFx32 vecAt;            /* 0x0c0 */
     u8 pad0cc[0x7c];
     struct SlotTail *pOwner;         /* 0x148 */
     u8 nState;                       /* 0x14c */
@@ -65,7 +60,7 @@ struct ActorSlot {
     int nScatter;                    /* 0x188 */
     u16 nBackAngle;                  /* 0x18c */
     u8 pad18e[2];
-    struct VecFx32 vecBack;          /* 0x190 */
+    VecFx32 vecBack;          /* 0x190 */
 };
 
 struct ReactionCtx;
@@ -81,28 +76,28 @@ struct ReactionCtx;
 #define FX32_CONST(x) ((int)((x) > 0 ? (x) * 4096 + 0.5 : (x) * 4096 - 0.5))
 
 extern const s16 data_0203d210[];            /* sin, cos pairs by angle >> 4 */
-extern const struct VecFx32 data_02041dc8;   /* kVecZero */
+extern const VecFx32 data_02041dc8;   /* kVecZero */
 
-extern void VEC_MultAdd(int nScale, struct VecFx32 *pA, struct VecFx32 *pB,
-                        struct VecFx32 *pOut);
-extern void ScaleVec3Fx12(int nFactor, struct VecFx32 *pSrc,
-                          struct VecFx32 *pDst);
-extern void VEC_Add(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *pOut);
+extern void VEC_MultAdd(int nScale, VecFx32 *pA, VecFx32 *pB,
+                        VecFx32 *pOut);
+extern void ScaleVec3Fx12(int nFactor, VecFx32 *pSrc,
+                          VecFx32 *pDst);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *pOut);
 extern void MTX_RotY33_(struct MtxFx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(struct VecFx32 *pIn, struct MtxFx33 *pMtx,
-                          struct VecFx32 *pOut);
-extern void Ov022_SettlePointOnGround(struct VecFx32 *pOut, struct ReactionCtx *pCtx,
-                                struct VecFx32 *pOrigin, struct VecFx32 *pDir,
+extern void MTX_MultVec33(VecFx32 *pIn, struct MtxFx33 *pMtx,
+                          VecFx32 *pOut);
+extern void Ov022_SettlePointOnGround(VecFx32 *pOut, struct ReactionCtx *pCtx,
+                                VecFx32 *pOrigin, VecFx32 *pDir,
                                 int nRadius, unsigned int nGroup);
 extern int Ov022_ClampReactionForKind10(int nState, int nReaction);
-extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, struct VecFx32 *pAim,
+extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, VecFx32 *pAim,
                                 int nReaction);
 
 int Ov022_ArmNextPart(struct ReactionCtx *pCtx, struct ActorSlot *pSlot,
                         int nIndex)
 {
-    struct VecFx32 vecBase;
-    struct VecFx32 vecDir;
+    VecFx32 vecBase;
+    VecFx32 vecDir;
     struct MtxFx33 mtx;
     struct SlotPart *pPart;
     int nPart;
@@ -129,7 +124,7 @@ int Ov022_ArmNextPart(struct ReactionCtx *pCtx, struct ActorSlot *pSlot,
     pPart->nSlotFlags |= PART_FLAG_ARMED;
     switch (pSlot->nKind) {
     case KIND_CHAIN: {
-        struct VecFx32 vecSettled;
+        VecFx32 vecSettled;
         vecBase = pSlot->vecBack;
         nKeepY = vecBase.y;
         nTrig = pSlot->nBackAngle >> 4;
@@ -146,7 +141,7 @@ int Ov022_ArmNextPart(struct ReactionCtx *pCtx, struct ActorSlot *pSlot,
         break;
     }
     case KIND_SCATTER: {
-        struct VecFx32 aOffset[16] = {
+        VecFx32 aOffset[16] = {
             { FX32_CONST(0.0), 0, FX32_CONST(0.0) },
             { FX32_CONST(-0.5), 0, FX32_CONST(-0.8) },
             { FX32_CONST(1.1), 0, FX32_CONST(-0.7) },
@@ -164,14 +159,14 @@ int Ov022_ArmNextPart(struct ReactionCtx *pCtx, struct ActorSlot *pSlot,
             { FX32_CONST(-0.8), 0, FX32_CONST(1.2) },
             { FX32_CONST(-1.0), 0, FX32_CONST(-0.9) },
         };
-        struct VecFx32 vecSettled;
+        VecFx32 vecSettled;
         ScaleVec3Fx12(pSlot->nScatter, &aOffset[nIndex & 0xf], &vecBase);
         nTrig = pSlot->nBackAngle >> 4;
         MTX_RotY33_(&mtx, data_0203d210[nTrig * 2], data_0203d210[nTrig * 2 + 1]);
         MTX_MultVec33(&vecBase, &mtx, &vecBase);
         VEC_Add(&pSlot->vecBack, &vecBase, &vecBase);
         Ov022_SettlePointOnGround(&vecSettled, pCtx, &vecBase,
-                            (struct VecFx32 *)&data_02041dc8,
+                            (VecFx32 *)&data_02041dc8,
                             pSlot->nHalfBound, pSlot->nSlotIndex);
         pPart->vecPos = vecSettled;
         break;

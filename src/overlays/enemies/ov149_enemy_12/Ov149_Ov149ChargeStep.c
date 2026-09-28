@@ -22,13 +22,9 @@
  * flat 0x80 per frame, with it the remaining vertical speed is scaled and the
  * forward speed decays, both inside that same arm.
  */
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Msg {
     u16 h[7];

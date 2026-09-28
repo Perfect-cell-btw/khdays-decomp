@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov229_Construct (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov229_Construct (not yet decompiled) */
 const int data_ov229_020d686c[10] = {
     0, 29, 30, 31, 32, 33, 34, 37,
     38, 39,

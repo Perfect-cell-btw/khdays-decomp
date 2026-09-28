@@ -7,9 +7,9 @@
  * Codegen: the operand pointer is advanced past the fixed operands before the key count is
  * read (through a pointer taken first) and then walks the keys; the packed words are split
  * into u16 / u8 locals as they are read; the vectors are declared before the scalars. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern int   ScriptVm_ReadOperandInt(int vm, u16 *pc);            /* ScriptVm_ReadOperandInt */
 extern int   ScriptVm_ReadOperandFx32(int vm, u16 *pc);            /* ScriptVm_ReadOperandFx32 */

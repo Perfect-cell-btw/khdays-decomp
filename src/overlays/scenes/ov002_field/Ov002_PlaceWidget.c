@@ -5,11 +5,10 @@
  * The position is a whole-struct assignment -- that is what produces the ldm/stm
  * pair -- while the depth chain is three separate re-reading assignments, same as
  * Ov002_RetargetWidget. */
-extern void RegisterSeqAndInit(void *self, int owner, int flags, int style);
 
-typedef struct {
-    int x, y, z;
-} VecFx32;
+#include "nitro/fx.h"
+
+extern void RegisterSeqAndInit(void *self, int owner, int flags, int style);
 
 typedef struct {
     char pad0000[0xa4];

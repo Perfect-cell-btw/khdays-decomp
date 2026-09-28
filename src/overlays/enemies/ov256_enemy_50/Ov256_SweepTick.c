@@ -4,48 +4,50 @@
  * half-extents growing 1.0 per 0x88 of the timer up to 5.0) strikes along (0, -1.0, 0.75) turned
  * by the +0x40 heading (020cd0e8). Once the +4 item's +0xad byte clears, a leash request without
  * +0x7c sends it to move 7; otherwise +0x7c clears and the next move is +0x74 + 2. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { int m[9]; } Mtx33;
-typedef struct { Vec3 pos; Vec3 axis[3]; int ext[3]; } Box;
-typedef struct { Vec3 pos; int radius; } Sphere;
 
-extern void Ov256_RotateByActorHeading(Vec3 *out, int *node, void *part);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { int m[9]; } Mtx33;
+typedef struct { VecFx32 pos; VecFx32 axis[3]; int ext[3]; } Box;
+typedef struct { VecFx32 pos; int radius; } Sphere;
+
+extern void Ov256_RotateByActorHeading(VecFx32 *out, int *node, void *part);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
-extern void Ov256_AttackHitTest(int *node, Sphere *s, Box *box, int b, Vec3 *dir, int c, int d, int e);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
+extern void Ov256_AttackHitTest(int *node, Sphere *s, Box *box, int b, VecFx32 *dir, int c, int d, int e);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042258;
-extern const Vec3 data_ov256_020d25b8;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_ov256_020d25b8;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
 void Ov256_SweepTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 fwd;
+    VecFx32 fwd;
     Box box;
     Mtx33 m;
-    Vec3 dir;
-    Vec3 out;
+    VecFx32 dir;
+    VecFx32 out;
     unsigned int idx;
 
     if (state[0x1e] == 0) {
         Ov256_RotateByActorHeading(&out, node, (void *)(*(int *)(*state + 0x450) + 0x2c));
         fwd = out;
-        ScaleVec3Fx12(0x3000, &fwd, (Vec3 *)(state + 4));
+        ScaleVec3Fx12(0x3000, &fwd, (VecFx32 *)(state + 4));
         state[0x13] += *(int *)(node[0] + 0x2c);
         if (*((u8 *)state + 0x69) == 0) {
             *((u8 *)state + 0x69) = 1;
-            *(Vec3 *)(state + 7) = *(Vec3 *)state[3];
+            *(VecFx32 *)(state + 7) = *(VecFx32 *)state[3];
         }
         if (state[0x13] < 0x13a8) {
             dir = data_ov256_020d25b8;
-            box.pos = *(Vec3 *)(state + 7);
+            box.pos = *(VecFx32 *)(state + 7);
             box.axis[0] = data_02042270;
             box.axis[1] = data_02042264;
             box.axis[2] = data_02042258;

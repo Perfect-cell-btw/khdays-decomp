@@ -7,17 +7,13 @@
  * 0x3e66/0x1f33/0x1f33/0x1f33 rates, then creates two capsule placements from one request
  * (position (0, 0xa00, 0), world Y axis, radius and height 0xa00): +0x390 on the +0x144 list,
  * +0x388 on the +0x22c list; +0x398 is built by Ov154_Actor_New and sound 0x13c is loaded. */
-#include "nitro/types.h"
 
-struct Ov153Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov153Capsule {
-    struct Ov153Vec3 vPos;
-    struct Ov153Vec3 vUp;
+    VecFx32 vPos;
+    VecFx32 vUp;
     int nRadius;
     int nHeight;
 };
@@ -28,8 +24,8 @@ struct Ov153SubitemSlot {
 };
 
 extern const int data_ov154_020d1c4c[2];
-extern struct Ov153Vec3 data_ov154_020d1c54;
-extern const struct Ov153Vec3 data_02042264;
+extern VecFx32 data_ov154_020d1c54;
+extern const VecFx32 data_02042264;
 extern const char data_ov154_020d1ccc[];
 
 extern void Ov154_Destroy(void);
@@ -59,7 +55,7 @@ extern void Res_RequestIdPair();
 void Ov154_ConstructActor(int param)
 {
     struct Ov153Capsule req;
-    struct Ov153Vec3 offset;
+    VecFx32 offset;
     int kinds[2];
     int i;
     int resource;

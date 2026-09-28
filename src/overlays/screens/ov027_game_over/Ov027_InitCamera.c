@@ -2,18 +2,14 @@
  * block at +0x4d8 of the scene work is initialised (02023c60), its angle (+0x4f0) advanced by
  * 0xccd and copied to the target (+0x4fc), the distance (+0x500) set to 1.0 << 2, the near /
  * far (+0x4d8 / +0x4dc) to 0x579 / 0xf09, and the camera committed (02023cc0). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

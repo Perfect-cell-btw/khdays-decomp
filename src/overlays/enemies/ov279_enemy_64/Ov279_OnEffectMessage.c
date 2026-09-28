@@ -4,7 +4,9 @@
  * the slot); slot 2 spawns pair 1 (kind 5) at the packed position; slot 3 spawns pair 4 on the
  * +0xa0 pose and starts reaction 0x167 mode 6 there into +0x3b0; slot 4 anchors pair 3 on the pose
  * (looping). The base hook always runs. */
+
 #include "nitro/types.h"
+
 struct Pair { int res; int handle; };
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);

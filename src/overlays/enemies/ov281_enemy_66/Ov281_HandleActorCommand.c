@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-struct Ov281Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov281Transform {
     int words[11];
@@ -35,7 +31,7 @@ struct Ov281Actor {
 
 extern void SrtTransform_SetIdentity(struct Ov281Transform *transform);
 extern void Srt_SetTranslation(struct Ov281Transform *transform,
-                          const struct Ov281Vec3 *position);
+                          const VecFx32 *position);
 extern int Ov107_CreateNodeXformTask(int resource, int node, int kind, int flags,
                                struct Ov281Transform *transform);
 extern int Ov107_CreateNodeBodyTask(int resource, int node, int kind,
@@ -54,7 +50,7 @@ void Ov281_HandleActorCommand(struct Ov281Actor *self,
                          struct Ov281Command *command, int arg2)
 {
     struct Ov281Transform transform;
-    struct Ov281Vec3 position;
+    VecFx32 position;
     union {
         int words[3];
         u8 bytes[12];

@@ -4,7 +4,8 @@
  * 1.0, times 30 is the beam length, and the node is rescaled to 3 x t + 1.5 by 2 x t + 1.5.
  * The +4 node is scaled by 4 x (1.5 without a +0x14 target, 1.0 with) on x/z and 0.1 of the
  * length on y, and the beam runs through Ov200_TickBeam with the length and mode 1. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
@@ -17,7 +18,7 @@ extern void Ov200_TickBeam(int *node, int nLength, int mode);
 
 void Ov200_BeamFireTick(int *self) {
     int *state = (int *)self[1];
-    Vec3 aim;
+    VecFx32 aim;
     int t;
     int nLen;
     int nScale;

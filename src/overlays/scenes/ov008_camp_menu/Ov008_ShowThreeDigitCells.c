@@ -4,6 +4,7 @@
  * with its digit frame (value % 10) while the value is non-zero, the units cell
  * always; leading cells with nothing left are hidden.
  */
+
 #include "nitro/types.h"
 
 #define VALUE_MAX 999

@@ -2,20 +2,22 @@
  * 0x24 flag into bit 1 of the +0x384 sub-item's +0x5c; a "spawned" message (kind 5) unpacks the
  * 24-bit position into a fresh transform and, for slot 0 only, starts the +0x394 sub-item under
  * the +0x3c owner with kind 5 into +0x398. The base handler always runs. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 struct b2 { int b0 : 1, b1 : 1; };
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero, SrtTransform *transform);
 extern void Ov107_AiState_OnMessage(int owner, u8 *msg, int arg);
 
 void Ov226_ItemHandleMessage(int owner, u8 *msg, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         u8 bytes[12];

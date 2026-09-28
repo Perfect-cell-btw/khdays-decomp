@@ -1,17 +1,17 @@
 /* Spawns the landing effect at the point through a placement message to the battle module, using
  * the stronger variant when flagged. */
 
+#include "nitro/fx.h"
+
 extern void Ov022_SendPlacementMessage(int self, void *p);
 
-typedef struct { int x, y, z; } Vec3;
-
 typedef struct {
-    Vec3 vec;
+    VecFx32 vec;
     short f0c, f0e, f10, f12;
     int f14, f18, f1c, f20, f24, f28;
 } Params;
 
-void Ov104_SpawnEffectWithVariant(int self, int *ctx, Vec3 *src) {
+void Ov104_SpawnEffectWithVariant(int self, int *ctx, VecFx32 *src) {
     Params p;
     p.vec = *src;
     p.f14 = 0;

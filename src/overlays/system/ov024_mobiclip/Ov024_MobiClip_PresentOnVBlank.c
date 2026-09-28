@@ -9,6 +9,7 @@
  *
  * The work is confined to the vertical blank proper, scanlines 0xa0 to 0x103.
  */
+
 #include "nitro/types.h"
 
 #define DISPCNT_LAYERS   0x1f00

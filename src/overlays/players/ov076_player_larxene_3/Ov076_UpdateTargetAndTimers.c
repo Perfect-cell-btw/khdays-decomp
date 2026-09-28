@@ -4,6 +4,7 @@
  * current tick; at exactly 0x36000 on the +0x7b0 timer in mode 0x30 the enemy tells 0xcf and,
  * when idle and not flagged 0x10000, arms +0x47a/+0x47b; finally, while the emitter at +0x22f8
  * reports activity on an idle session, bit 49 of the +0x464 flags is raised. */
+
 #include "nitro/types.h"
 
 extern int Session_GetLocalPlayerIndex(void);

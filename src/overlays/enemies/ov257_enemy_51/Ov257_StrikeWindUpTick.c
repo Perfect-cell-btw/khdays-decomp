@@ -3,23 +3,25 @@
  * 0.6; with a nearest target (020cab14, kept in +0x60) the +0x2c orientation turns to face it
  * about data_02042264. Once the +0xc idle byte clears, animation 0x11 plays, +0x76 clears and the
  * tick hands over to Ov257_StrikeTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov257_StrikeTick(int *node);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 void Ov257_StrikeWindUpTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
 
     state[0x15] += *(int *)(node[0] + 0x2c);
     if (*((unsigned char *)state + 0x76) == 0 && state[0x15] >= 0x333) {

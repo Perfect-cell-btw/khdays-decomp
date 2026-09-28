@@ -8,9 +8,10 @@
  * +0x228 and picks sub-state 6 (under 20 with an idle aim node), 7 (under 80) or 5; otherwise
  * the 020cd27c state takes over once the +0x13c height drops under 0x2000.
  * `+ (v - v)` is the documented copy artifact of RandNextScaled (`add r4,r0,#0`). */
-typedef struct { int x, y, z; } Vec3;
 
-static inline void VEC_Set(Vec3 *v, int x, int y, int z) {
+#include "nitro/fx.h"
+
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z) {
     v->x = x;
     v->y = y;
     v->z = z;
@@ -23,9 +24,9 @@ extern void Mtx33_LookAt(void *out, void *a, int b, void *c);
 extern void Quat_FromMtx33(void *a, void *b);
 extern int FX_Div(int num, int den);
 extern void Vec3TransformViaTempMtx(void *out, void *pose, void *k);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int RandNextScaled(int bound);
 extern int Ov126_IsField34Nibble1(int node);
 extern int data_02042264;
@@ -37,10 +38,10 @@ void Ov126_DiveTick(int *node)
     int owner;
     int *state = (int *)node[1];
     int buf[9];
-    Vec3 up;
-    Vec3 sideN;
-    Vec3 side;
-    Vec3 fwd;
+    VecFx32 up;
+    VecFx32 sideN;
+    VecFx32 side;
+    VecFx32 fwd;
     int sq;
     int actor;
     int target;
@@ -71,7 +72,7 @@ void Ov126_DiveTick(int *node)
     ScaleVec3Fx12(-t, &fwd, &side);
     ScaleVec3Fx12(0x280, &sideN, &sideN);
     ScaleVec3Fx12(0x280, &side, &side);
-    VEC_Add(&sideN, &side, (Vec3 *)(state + 2));
+    VEC_Add(&sideN, &side, (VecFx32 *)(state + 2));
     state[3] = -0x180;
     if (state[0x15] <= 0) {
         int r = RandNextScaled(0x65) + (v - v);

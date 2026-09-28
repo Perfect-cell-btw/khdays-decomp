@@ -7,14 +7,14 @@
  * the parameter and hit point are recorded and a positive +0x10 damage that is not the
  * 8|0x80/0x80 special fires reaction 0x132 with the mode alternating through the +0x46 counter
  * (2/3 for flags 0x22, 1/0 otherwise). */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov204ActionState {
     int pOwner;
     char pad004[0x10];
-    struct Vec3 vHit;
+    VecFx32 vHit;
     char pad020[4];
     void *pPos;
     char pad028[0x18];
@@ -26,7 +26,7 @@ struct Ov204ActionState {
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     int nDamage10;
     char pad014[0xc];
     unsigned int uMode20;

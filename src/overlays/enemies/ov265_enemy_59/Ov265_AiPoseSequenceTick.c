@@ -1,17 +1,19 @@
 /* Compute the offset vector (020cca74) into (child)+0x30; unless the gate byte at
  * *(child+0x10) is set, advance the step counter (+0x28): steps 0-1 pose both nodes with
  * anim 1, step 2 with anim 0xc, and from step 3 mark sub-state 2 and dispatch. */
+
+#include "nitro/fx.h"
+
 extern void Ov265_rotateVecByOwnerYaw(void *out, int a, int b);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_StartAnim(int a, int b, int c);
 extern int SetIndexedSlot(int a, int b, void *handler);
-struct Vec3_020cecc8 { int x, y, z; };
 void Ov265_AiPoseSequenceTick(int param_1) {
     int child = *(int *)(param_1 + 4);
-    struct Vec3_020cecc8 out;
+    VecFx32 out;
     int counter;
     Ov265_rotateVecByOwnerYaw(&out, param_1, *(int *)(*(int *)child + 0x388) + 0x2c);
-    *(struct Vec3_020cecc8 *)(child + 0x30) = out;
+    *(VecFx32 *)(child + 0x30) = out;
     if (*(unsigned char *)*(int *)(child + 0x10) != 0) return;
     counter = *(int *)(child + 0x28) + 1;
     *(int *)(child + 0x28) = counter;

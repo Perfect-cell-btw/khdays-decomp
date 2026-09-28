@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* The seat window of the root context.  It starts at the offset table because
  * that is the anchor the compiler builds the two field addresses from. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002SeatBlock {
     void *pOffsetTable;             /* +0x00, root +0x8d7c */
     u16 wSeatMask;                  /* +0x04, root +0x8d80 */

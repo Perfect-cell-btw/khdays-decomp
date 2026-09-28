@@ -8,6 +8,7 @@
  * (GameState 0x1168 + 2 * slot) must reach the required value (+0x20) of the
  * record at that slot.  Returns 1 when listed.
  */
+
 #include "nitro/types.h"
 
 #define CATEGORY_ANY   -1

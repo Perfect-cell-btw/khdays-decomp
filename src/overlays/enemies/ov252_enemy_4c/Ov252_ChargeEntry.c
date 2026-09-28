@@ -2,12 +2,13 @@
  * +0xac guard up); unguarded and below the ground it gets a 1.3125 upward +0x10 velocity and bits 3-4
  * of the +0x60 high byte are set. The owner plays effect 2 at its +0x560 model's +0x14 point, the
  * +0x60/+0x6c/+0x64 timers clear, +0x88 = 1 and the node moves on to 020cfdd8. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_ChargeTick(void);
 
@@ -29,7 +30,7 @@ void Ov252_ChargeEntry(int *node)
                 ((((((unsigned int)hw << 0x10) >> 0x18) | 0x18) << 0x18) >> 0x10);
         }
     }
-    func_ov107_020c0b90(*state, 2, *(Vec3 *)(*(int *)(*state + 0x560) + 0x14), 0);
+    func_ov107_020c0b90(*state, 2, *(VecFx32 *)(*(int *)(*state + 0x560) + 0x14), 0);
     state[0x18] = 0;
     state[0x1b] = 0;
     state[0x19] = 0;

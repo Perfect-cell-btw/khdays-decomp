@@ -1,7 +1,8 @@
 /* Collect up to four collision contact points for a fixed-point sphere. */
 
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 center; int radius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 center; int radius; } Sphere;
 typedef struct { int minX, minZ, maxX, maxZ; } BBox;
 typedef struct { int a, b; } Pair;
 
@@ -23,9 +24,9 @@ typedef struct {
 
 extern int Ov107_CollectSphereContacts(Pair *pair, int f8c, int f9c, int fa4,
                                 Sphere *b, BBox *bbox, int *count,
-                                Vec3 *outList, Vec3 *outDir);
+                                VecFx32 *outList, VecFx32 *outDir);
 
-int Ov107_QuerySphereContacts(Ctx *a, Sphere *b, Vec3 *outList, Vec3 *outDir) {
+int Ov107_QuerySphereContacts(Ctx *a, Sphere *b, VecFx32 *outList, VecFx32 *outDir) {
     int count = 0;
     BBox bbox;
     Pair pair;

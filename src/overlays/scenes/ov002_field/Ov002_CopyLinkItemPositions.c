@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct Vec3 {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern char *data_ov002_0207fa10;
 extern u8 data_0204c240;                /* g_modeAndDayClock; bit 2 gates this */
@@ -22,7 +18,7 @@ extern int Ov022_GetEntryField66(int nPeer);      /* peer -> kind, or negative *
  * away mid-copy shortens the walk.  A peer with no kind, or a kind with no
  * items, copies nothing and answers zero.
  */
-int Ov002_CopyLinkItemPositions(Vec3 *aOut)
+int Ov002_CopyLinkItemPositions(VecFx32 *aOut)
 {
     char *pCtx;
     s8 *pCount;
@@ -41,7 +37,7 @@ int Ov002_CopyLinkItemPositions(Vec3 *aOut)
                 pSlot = pCtx + nKind * 0x20;
                 pKind = pCtx + nKind;
                 do {
-                    *aOut = *(Vec3 *)(*(char **)(pSlot + 0x7c) + 8);
+                    *aOut = *(VecFx32 *)(*(char **)(pSlot + 0x7c) + 8);
                     i++;
                     pSlot += 4;
                     aOut++;

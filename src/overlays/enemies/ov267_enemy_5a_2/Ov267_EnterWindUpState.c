@@ -6,10 +6,12 @@
  * Sibling of Ov212_EnterRecoveryState; note this hw60 write has NO lsl#0x10/lsr#0x10
  * trunc pair, so it takes the explicit extract/reassemble form. The vec3 goes to
  * ov107_020c0b90 BY VALUE (r2, r3 and [sp+0]), with the flag at [sp+4]. */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct b8 { unsigned f : 8; };
 
-extern void func_ov107_020c0b90(int obj, int cmd, struct vec3 v, int flag);
+extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, void *d);
 extern void SetIndexedSlot(void *self, int idx, void *cb);
 extern void Ov267_AiDownTick(void);
@@ -26,7 +28,7 @@ void Ov267_EnterWindUpState(void *self) {
     for (; i < 3; i++) {
         ((struct b8 *)(((int *)*ctx)[i + 0x133] + 8))->f &= ~1;
     }
-    func_ov107_020c0b90(*ctx, 1, *(struct vec3 *)(*ctx + 0x508), 0);
+    func_ov107_020c0b90(*ctx, 1, *(VecFx32 *)(*ctx + 0x508), 0);
     Ov107_BuildAndSendUpdate(*ctx, 0, 0x49, (void *)(*ctx + 0x74));
     ctx[0x10] = 0;
     SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), Ov267_AiDownTick);

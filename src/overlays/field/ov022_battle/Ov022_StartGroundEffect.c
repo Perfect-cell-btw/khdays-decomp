@@ -10,35 +10,30 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define SLOT_FREE (-1)
 #define SIZE_SMALL 0x1000
 #define SIZE_MEDIUM 0x1800
 #define SIZE_LARGE 0x2000
 
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022Actor */
 struct Actor {
     u8 pad0000[0xc];
     int nModelId;                /* 0x000c */
     u8 pad0010[0x47c];
-    struct VecFx32 vecPos;       /* 0x048c */
+    VecFx32 vecPos;       /* 0x048c */
     u8 pad0498[0x328];
     int nEffectC;                /* 0x07c0 */
     int nEffectD;                /* 0x07c4 */
 };
 
-extern int Ov022_DispatchSpawnRecord(int nContext, struct VecFx32 *pAt, int nValue);
+extern int Ov022_DispatchSpawnRecord(int nContext, VecFx32 *pAt, int nValue);
 extern void Ov022_StoreVToBase101418IfNonNeg(int nContext, int nSlot, int nValue);
 
 void Ov022_StartGroundEffect(struct Actor *pActor)
 {
-    struct VecFx32 vecAt;
+    VecFx32 vecAt;
     int nSize;
 
     if (pActor->nEffectC == 0) {

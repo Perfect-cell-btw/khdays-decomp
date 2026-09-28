@@ -1,6 +1,7 @@
 /* Dock entry of an ov260 helper: its owner is marked busy (+0x388), bit 7 of the +0x60 high byte
  * drops and bit 0 is set, pose 0 plays, +0xc and the +0x10 flag clear and the node moves on to
  * 020d2888. */
+
 #include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

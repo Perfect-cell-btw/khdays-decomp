@@ -1,5 +1,7 @@
 /* Loads the title's cell resource and creates the ten logo objects at their positions. */
 
+#include "nitro/types.h"
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void ObjNode_InitFromDesc(void *mgr, void *desc);
 extern void G2x_SetBlendAlpha_(int reg, int a, int b, int c, int d);
@@ -8,8 +10,6 @@ extern void Slot_ForwardToEntry(void *mgr, int obj, int);
 extern void Slot_ClearFlagBit1(void *mgr, int obj);
 extern void Slot_SetMode2Bit(void *mgr, int obj, int);
 extern void Slot_SetPosition(void *mgr, int obj, int *params);
-
-#include "nitro/types.h"
 
 typedef struct Ov000ResourceDescriptor {
     unsigned int address;

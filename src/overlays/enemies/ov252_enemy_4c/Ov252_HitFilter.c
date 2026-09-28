@@ -7,6 +7,7 @@
  * +0x21a health (capped by +0x218), knocked out the next move is 3. Unless it is a flag-8/0x80
  * kind-0x80 hit, reaction 0x148 fires with the mode alternating (+0x87) between the special
  * (flag 0x22) {2, 3} and normal {0, 1} pairs. */
+
 #include "nitro/types.h"
 
 struct ReactionModes { u8 normal[2]; u8 special[2]; };

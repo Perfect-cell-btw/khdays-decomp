@@ -5,7 +5,9 @@
  * finalised), allocates the +0x390 block whose effect comes from the data_ov158_020cf560 pose
  * (registered on the actor, bit 1 of +0x5c raised), and links a +0x22c list slot to the +0x64
  * pose as +0x388 with bit 1 of its +8 low byte raised. */
+
 #include "nitro/types.h"
+
 struct Ov158Pose { int w; };
 struct Ov158Byte8 { u32 lo : 8, rest : 24; };
 

@@ -3,22 +3,24 @@
  * pose, the +0x50 clock runs and a non-negative +0x4c cooldown counts down. Within 5.0 of the
  * origin the +0x10 step is pushed outwards by the missing distance; the step then becomes the
  * owner's +0xf0 velocity and resets. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 
 extern void Ov235_StepAttackCues(int *state, int rate);
 extern void Quat_Slerp(Quat *dst, int t, const Quat *from, const Quat *to);
 extern void Srt_SetRotationQuat(void *srt, const Quat *q);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern const Vec3 data_02041dc8;
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern const VecFx32 data_02041dc8;
 
 void Ov235_BodyTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int len;
 
     Ov235_StepAttackCues(state, *(int *)(node[0] + 0x2c));
@@ -32,12 +34,12 @@ void Ov235_BodyTick(int *node)
     len = VEC_Normalize(&d, &d);
     if (len < 0x5000) {
         ScaleVec3Fx12(0x5000 - len, &d, &d);
-        VEC_Add((Vec3 *)(state + 4), &d, (Vec3 *)(state + 4));
+        VEC_Add((VecFx32 *)(state + 4), &d, (VecFx32 *)(state + 4));
     }
     {
-        Vec3 *step = (Vec3 *)(state + 4);
+        VecFx32 *step = (VecFx32 *)(state + 4);
 
-        *(Vec3 *)(*state + 0xf0) = *step;
+        *(VecFx32 *)(*state + 0xf0) = *step;
         *step = data_02041dc8;
     }
 }

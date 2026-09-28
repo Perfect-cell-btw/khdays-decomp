@@ -9,9 +9,9 @@
  * pool node's +0x14, modes 2/3 for flag-0x22 hits and 0/1 otherwise, except for kind-0x80 hits
  * carrying both flag 8 and flag 0x80.
  */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov191ActionState {
     int pOwner;
@@ -22,7 +22,7 @@ struct Ov191ActionState {
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     char pad010[8];
     int pSource18;
     char pad01c[4];

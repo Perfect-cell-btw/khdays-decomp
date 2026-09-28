@@ -1,7 +1,6 @@
 /* Transforms the hit shape (sphere, capsule or box) into world space and refreshes its bounds. */
 
 #include "nitro/fx.h"
-typedef struct { fx32 x, y, z; } VecFx32;
 
 static inline fx32 FX_Mul(fx32 a, fx32 b) {
     return (int)(((long long)a * b + 0x800) >> 12);

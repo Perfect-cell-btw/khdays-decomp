@@ -9,12 +9,13 @@
  * Ov206_AiQueue2OnFlagClear); otherwise the +0x20 step counter fires reaction 0x116 mode 4 at 5 and
  * mode 5 at 10 (wrapping), and the +0x24 timer, fed by the owner's rate, ends the charge the
  * same way past 3.0 or once the owner reports a wall (+0x17a bit 1). */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;
 typedef struct { int value; } Fx32;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
 
 typedef struct {
     u16 id;             /* +0x0 */
@@ -26,11 +27,11 @@ typedef struct {
 
 struct Ov206State {
     int pOwner;                  /* 0x00 */
-    Vec3 *pPoint;                /* 0x04 */
-    Vec3 *pPos;                  /* 0x08 */
+    VecFx32 *pPoint;                /* 0x04 */
+    VecFx32 *pPos;                  /* 0x08 */
     u8 *pBusy;                   /* 0x0c */
     char pad10[4];
-    Vec3 vVelocity;              /* 0x14 */
+    VecFx32 vVelocity;              /* 0x14 */
     int nStep;                   /* 0x20 */
     int nTimer;                  /* 0x24 */
     char pad28[0x18];
@@ -51,7 +52,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov206State *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov206State *state, PosMsg *msg, const VecFx32 *src)
 {
     Fx32 px;
     Fx32 py;
@@ -67,13 +68,13 @@ static inline void SendPos(struct Ov206State *state, PosMsg *msg, const Vec3 *sr
     }
 }
 
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int VEC_Normalize(Vec3 *a, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *a, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *query, int *out);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_DotProduct(Vec3 *a, Vec3 *b);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
-extern void VEC_Add(Vec3 *a, Vec3 *b, Vec3 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *d);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -85,11 +86,11 @@ void Ov206_ChargeTick(int *node)
 {
     struct Ov206State *state = (struct Ov206State *)node[1];
     Sphere query;
-    Vec3 dir;
+    VecFx32 dir;
     int hits[4];
-    Vec3 d;
+    VecFx32 d;
     PosMsg msg;
-    Vec3 at;
+    VecFx32 at;
     PosMsg tmpl;
     long n;
     long i;
@@ -111,7 +112,7 @@ void Ov206_ChargeTick(int *node)
             if (VEC_DotProduct(&d, &dir) > 0) {
                 if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, 0, &dir, 0) != 0) {
                     msg = tmpl;
-                    VEC_Add((Vec3 *)(hits[i] + 0x74), (Vec3 *)(*(int *)(*(int *)(state->pOwner + 0x3b0)) + 4), &at);
+                    VEC_Add((VecFx32 *)(hits[i] + 0x74), (VecFx32 *)(*(int *)(*(int *)(state->pOwner + 0x3b0)) + 4), &at);
                     ScaleVec3Fx12(0x800, &at, &at);
                     SendPos(state, &msg, &at);
                     Ov107_BuildAndSendUpdate(state->pOwner, 0x116, 6, state->pPos);

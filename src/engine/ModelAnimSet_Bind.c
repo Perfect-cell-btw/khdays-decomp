@@ -6,6 +6,7 @@
  * (NNS_G3dAnmObjInit); group 3 (texture pattern) also gets the texture set of the instance's
  * resource list. The per-group counts and `texSrc` are recorded in the set. Codegen: each loop
  * keeps its own block-scoped count `n`; one function-scope `n` swaps the third loop's n/anm registers. */
+
 #include "nitro/types.h"
 
 typedef struct ModelResList {

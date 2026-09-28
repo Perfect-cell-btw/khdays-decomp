@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern char *Ov002_ClaimPoolEntry(void *pClass, int nSlot);
 extern int Ov002_GetCtxTableByte(int nBucket);
@@ -21,7 +17,7 @@ extern void Ov002_SpareEntryStep(void);
  * than counted - and two flags arm the park handler and the wide slot. The
  * state machine is installed last and the entry is pushed into its bucket.
  */
-char *Ov002_SpawnSpareEntry(void *pClass, int nSlot, int nBucket, const Vec3 *pPos,
+char *Ov002_SpawnSpareEntry(void *pClass, int nSlot, int nBucket, const VecFx32 *pPos,
                           u16 wStateField, unsigned char bStateWidth,
                           signed char bQueuedWidth, signed char nCount,
                           const char *pName, const char *pLine,
@@ -32,7 +28,7 @@ char *Ov002_SpawnSpareEntry(void *pClass, int nSlot, int nBucket, const Vec3 *pP
     pEntry = Ov002_ClaimPoolEntry(pClass, nSlot);
     Ov002_GetCtxTableByte(nBucket);
 
-    *(Vec3 *)(pEntry + 0x1c) = *pPos;
+    *(VecFx32 *)(pEntry + 0x1c) = *pPos;
 
     *(int *)(pEntry + 0x28) = nParamB;
     *(int *)(pEntry + 0x44) = nParamA;

@@ -9,14 +9,11 @@
  * the +0x22c list and +0x390 on the +0x144 list, whose +0x20 block is kept in +0x2cc; sound
  * 0x134 is loaded. (The ov120 initializer shape: the +0x2cc store needs the tail in its own
  * block with its own `int *self` -- see Ov120_InitializeActor.) */
-struct Ov269Vec3 {
-    int x;
-    int y;
-    int z;
-};
+
+#include "nitro/fx.h"
 
 struct Ov269Pose {
-    struct Ov269Vec3 position;
+    VecFx32 position;
     int scale;
 };
 
@@ -25,8 +22,8 @@ struct Ov269SubitemSlot {
     int pad;
 };
 
-extern struct Ov269Vec3 data_ov270_020d6848;
-extern struct Ov269Vec3 data_02041dc8;
+extern VecFx32 data_ov270_020d6848;
+extern VecFx32 data_02041dc8;
 extern const char data_ov270_020d68ec[];
 extern const char data_ov270_020d68f8[];
 extern const char data_ov270_020d6900[];
@@ -56,7 +53,7 @@ extern void Res_RequestIdPair();
 
 void Ov270_Construct(int param)
 {
-    struct Ov269Vec3 kinds;
+    VecFx32 kinds;
     struct Ov269Pose pose;
     int i;
 

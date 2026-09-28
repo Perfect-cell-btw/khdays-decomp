@@ -9,12 +9,7 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Actor {
     unsigned int nFlags;         /* 0x0000 */
@@ -24,7 +19,7 @@ struct Actor {
     u8 pad000a[2];
     int nModelId;                /* 0x000c */
     u8 pad0010[0x47c];
-    struct VecFx32 vecAim;       /* 0x048c */
+    VecFx32 vecAim;       /* 0x048c */
     u8 pad0498[0x30e];
     short nHandlerId;            /* 0x07a6 */
 };
@@ -39,9 +34,9 @@ extern struct CueSet data_ov022_020b25d4;
 extern u16 QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(unsigned int nId);
 extern int Session_GetLocalPlayerIndex(void);
-extern int VEC_Distance(struct VecFx32 *pA, struct VecFx32 *pB);
+extern int VEC_Distance(VecFx32 *pA, VecFx32 *pB);
 extern void Slot_Spawn(int nHandlerId, unsigned int nCue,
-                          struct VecFx32 *pPos, u16 nFlags);
+                          VecFx32 *pPos, u16 nFlags);
 
 #define ACTOR_SILENCED 0x10000
 #define CUE_NEAR 1
@@ -54,7 +49,7 @@ extern void Slot_Spawn(int nHandlerId, unsigned int nCue,
 #define MODEL_FLAGGED 3
 
 void Ov022_SpawnVoiceCue(struct Actor *pActor, int nIndex,
-                         struct VecFx32 *pPos, int nLevel)
+                         VecFx32 *pPos, int nLevel)
 {
     struct CueSet setOwn;
     struct CueSet setShared;

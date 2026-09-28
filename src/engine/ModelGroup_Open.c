@@ -3,6 +3,7 @@
  * pointers (+4, count at +2) are allocated from the default heap and each one is prepared
  * (Coll_ResolveModelBlobPointers). Returns 1. */
 #pragma thumb on
+
 #include "nitro/types.h"
 
 typedef struct {

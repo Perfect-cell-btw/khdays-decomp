@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov253_EnemyConstruct (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov253_EnemyConstruct (not yet decompiled) */
 const int data_ov253_020d482c[2] = {
     32, 43,
 };

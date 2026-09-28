@@ -7,28 +7,29 @@
  * owner is sent mode 0 at the entity's +0x74 (with a query) or at the sphere's edge along the
  * unit direction (without), and the bit is set. Any acceptance fires reaction 0x4f (mode 6) or
  * 0x51 at the +8 point. */
-#include "nitro/types.h"
 
-struct Vecx32 { int x, y, z; };
-struct Sphere { struct Vecx32 pos; int nRadius; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+struct Sphere { VecFx32 pos; int nRadius; };
 
 struct Ov221Hit {
     char pad000[2];
     u16 nKind;
     char pad004[0x70];
-    struct Vecx32 vOrigin74;
+    VecFx32 vOrigin74;
 };
 
 struct Ov221Owner {
     char pad000[0x74];
-    struct Vecx32 vOrigin74;
+    VecFx32 vOrigin74;
     char pad080[0x330];
     int *pBody3b0;
     char pad3b4[0x6c];
     u8 bMask420;
 };
 
-struct Ov221Body { char pad[0x20]; struct Vecx32 vPoint20; };
+struct Ov221Body { char pad[0x20]; VecFx32 vPoint20; };
 
 struct Ov221Node {
     struct Ov221Owner *pOwner;
@@ -48,9 +49,9 @@ extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void VEC_Add(void *a, void *b, void *d);
 extern int Ov107_InvokeHitCallback(struct Ov221Hit *hit, struct Ov221Owner *a, struct Ov221Owner *b,
                                u8 kind, void *push, int z);
-extern void func_ov107_020c0b90(struct Ov221Owner *owner, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(struct Ov221Owner *owner, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(struct Ov221Owner *owner, int a, int id, int p);
-extern const struct Vecx32 data_02042258;
+extern const VecFx32 data_02042258;
 extern short data_0203d210[];
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
@@ -59,9 +60,9 @@ void Ov226_StrikeSweepEntities(struct Ov221Node *node, unsigned int mode, void *
 {
     struct Sphere sphere;
     struct Ov221Hit *hits[4];
-    struct Vecx32 dir;
-    struct Vecx32 push;
-    struct Vecx32 step;
+    VecFx32 dir;
+    VecFx32 push;
+    VecFx32 step;
     int n;
     int pushed;
     int i;

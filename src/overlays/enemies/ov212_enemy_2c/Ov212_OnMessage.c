@@ -8,8 +8,10 @@
  * (flag 1/3), slots 3/8 effect 5 and slot 7 effect 0x15 with byte 4 as flag; slots 2/4 anchor
  * effect 0x15 on the +0x54c pose (looping in slot 2), slot 5 effect 5 there, slots 6/9 effect 5 on
  * the +0x520 pose. The base hook always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } SrtTransform;
 typedef union { int words[3]; u8 bytes[12]; } Packed;
@@ -18,24 +20,24 @@ struct b2 { int b0 : 1, b1 : 1; };
 struct Items { char pad[0x38c]; char *items[16]; };
 struct Ov212 { char pad[0x60c]; struct Pair pairs[10]; };
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *forward, const Vec3 *direction);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *forward, const VecFx32 *direction);
 extern void Srt_SetRotationQuat(void *pose, const Quat *q);
 extern void SrtTransform_SetIdentity(SrtTransform *t);
-extern void Srt_SetTranslation(SrtTransform *t, const Vec3 *pos);
+extern void Srt_SetTranslation(SrtTransform *t, const VecFx32 *pos);
 extern void Srt_SetScaleUniform(SrtTransform *t, int scale);
 extern int Ov107_CreateNodeXformTask(int model, int res, int kind, u8 flag, SrtTransform *t);
 extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, u8 flag, int loop);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 void Ov212_OnMessage(char *self, u8 *msg, int arg)
 {
-    Vec3 w;
+    VecFx32 w;
     Quat q;
     SrtTransform t;
-    Vec3 v;
+    VecFx32 v;
     Packed packedA;
     Packed packedB;
     Packed packedC;
@@ -76,7 +78,7 @@ void Ov212_OnMessage(char *self, u8 *msg, int arg)
                     packedB.bytes[10] = slot[0x38];
                     packedB.bytes[9] = slot[0x39];
                     w.z = packedB.words[2] >> 8;
-                    VEC_Subtract(&w, (Vec3 *)(item + 0x40), &w);
+                    VEC_Subtract(&w, (VecFx32 *)(item + 0x40), &w);
                     VEC_Normalize(&w, &w);
                     Quat_FromTwoVectors(&q, &data_02042258, &w);
                     Srt_SetRotationQuat(item + 0x30, &q);

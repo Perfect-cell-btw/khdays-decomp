@@ -3,18 +3,20 @@
  * advances at 2.5, then at 3.13 and 3.33 with rumble effects 0xb and 0xc (sound 0x165) at the pillar.
  * Once the pillar's +0xad rig is idle its actions 0/2/4/1 are enabled, its animation stops and
  * 020ce734 follows. */
-struct Vec3 { int x, y, z; };
-extern void Srt_SetTranslation(int srt, struct Vec3 *pos);
-extern void Slot_Spawn(int id, int kind, struct Vec3 *pos, int flag);
+
+#include "nitro/fx.h"
+
+extern void Srt_SetTranslation(int srt, VecFx32 *pos);
+extern void Slot_Spawn(int id, int kind, VecFx32 *pos, int flag);
 extern void SetSubitemState(int obj, int slot, int a, int b);
 extern void RefreshObjectCallbacks(int obj, int a);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov277_WaitRigIdleBlendOut(void);
 void Ov277_TickPillarRise(int param_1) {
     int *node = *(int **)(param_1 + 4);
-    struct Vec3 pos;
+    VecFx32 pos;
 
-    pos = *(struct Vec3 *)(*(int *)(node[3] + 0x3c8) + 0x14);
+    pos = *(VecFx32 *)(*(int *)(node[3] + 0x3c8) + 0x14);
     pos.y = *(int *)(node[3] + 0xb4) + 0x200;
     Srt_SetTranslation(node[0] + 4, &pos);
     node[1] += *(int *)(*(int *)param_1 + 0x2c);

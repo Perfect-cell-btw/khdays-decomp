@@ -11,37 +11,37 @@
  * to the target drops below the speed, the step zeroes the velocity, advances
  * the point index modulo the lap count, and walks the point list to the new
  * index. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
-struct Vec3 { int x, y, z; };
-
-extern void VEC_Subtract(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *out);
-extern int VEC_Normalize(const struct Vec3 *src, struct Vec3 *dst);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 extern int func_020050b4(int x, int z);
-extern void QuatFromAxisAngle(void *quat, const struct Vec3 *axis, int angle);
-extern void Vec3TransformViaTempMtx(struct Vec3 *out, void *mtx, const struct Vec3 *v);
+extern void QuatFromAxisAngle(void *quat, const VecFx32 *axis, int angle);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *mtx, const VecFx32 *v);
 extern long long func_02020400(int num, int den);
-extern int VEC_DotProduct(const struct Vec3 *a, const struct Vec3 *b);
-extern void ScaleVec3Fx12(int scale, const struct Vec3 *v, struct Vec3 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void *List_First(void *list);
 extern void *List_Next(void *list);
 
-extern const struct Vec3 data_02042264;
-extern const struct Vec3 data_02042258;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
 
 void Ov292_StepSteering(char *state)
 {
-    struct Vec3 vToTarget;
-    struct Vec3 vFacing;
-    struct Vec3 vFlat;
+    VecFx32 vToTarget;
+    VecFx32 vFacing;
+    VecFx32 vFlat;
     char *actor;
     int nSpeed;
     int nAim;
     int i;
-    struct Vec3 *point;
+    VecFx32 *point;
 
     actor = *(char **)state;
-    VEC_Subtract((struct Vec3 *)(state + 0x1c), *(struct Vec3 **)(state + 8),
+    VEC_Subtract((VecFx32 *)(state + 0x1c), *(VecFx32 **)(state + 8),
                  &vToTarget);
     VEC_Normalize(&vToTarget, &vToTarget);
     QuatFromAxisAngle(state + 0x48, &data_02042264,
@@ -65,7 +65,7 @@ void Ov292_StepSteering(char *state)
     if (nSpeed < 0x3c0) {
         nSpeed = 0x3c0;
     }
-    ScaleVec3Fx12(nSpeed, &vToTarget, (struct Vec3 *)(state + 0x10));
+    ScaleVec3Fx12(nSpeed, &vToTarget, (VecFx32 *)(state + 0x10));
 
     nAim = *(int *)(state + 0x30) + 0xc0;
     if (nAim > 0x1000) {
@@ -79,22 +79,22 @@ void Ov292_StepSteering(char *state)
         return;
     }
 
-    VEC_Subtract((struct Vec3 *)(state + 0x1c), *(struct Vec3 **)(state + 8),
+    VEC_Subtract((VecFx32 *)(state + 0x1c), *(VecFx32 **)(state + 8),
                  &vFlat);
     vFlat.y = 0;
     if (VEC_Normalize(&vFlat, &vFlat) >= nSpeed) {
         return;
     }
 
-    VEC_Subtract((struct Vec3 *)(state + 0x1c), *(struct Vec3 **)(state + 8),
-                 (struct Vec3 *)(state + 0x10));
+    VEC_Subtract((VecFx32 *)(state + 0x1c), *(VecFx32 **)(state + 8),
+                 (VecFx32 *)(state + 0x10));
     *(int *)(state + 0x34) = (int)((u64)func_02020400(*(int *)(state + 0x34) + 1,
                                                       *(int *)(*(char **)state + 0x3b4)) >> 32);
 
     point = List_First(*(char **)state + 0x394);
     i = 0;
     while (point != 0) {
-        *(struct Vec3 *)(state + 0x1c) = *point;
+        *(VecFx32 *)(state + 0x1c) = *point;
         if (i >= *(int *)(state + 0x34)) {
             return;
         }

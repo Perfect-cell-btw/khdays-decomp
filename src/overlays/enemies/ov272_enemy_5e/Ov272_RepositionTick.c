@@ -2,12 +2,13 @@
  * the owner's rate) the owner is placed (c5c54) 0.94 behind the +8 target: the target's rig yaw
  * (+0x18c -> +0x20 -> +0x80, turned half a circle and converted to radians) gives the direction
  * from its +0x74 point. The timer restarts and the tick hands over to Ov272_GrabApproachFinish. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-extern void Ov107_MoveNodeAndRelayout(int owner, Vec3 *pos);
+extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern void Ov272_GrabApproachFinish(int *node);
@@ -15,7 +16,7 @@ extern void Ov272_GrabApproachFinish(int *node);
 void Ov272_RepositionTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 pos;
+    VecFx32 pos;
     int target;
     int rad;
     int yaw;

@@ -1,16 +1,12 @@
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern u8 data_0204c240;
 
 extern char *Ov002_ClaimPoolEntry(void *pClass, int nSlot);
 extern void Actor_ArmWithMessage(char *pObj, int a, void *pOwner, int c, int d);
-extern void Actor_SetVecAndSyncChild(char *pNode, const Vec3 *pPos);
+extern void Actor_SetVecAndSyncChild(char *pNode, const VecFx32 *pPos);
 extern void Ov002_PushBucketNode(int nBucket, char *pElement);
 extern void strcpy(void *pDst, const void *pSrc);
 
@@ -27,7 +23,7 @@ extern void Ov002_ElementPromptStep(void);
  * text when there is one.
  */
 char *Ov002_SpawnLineElement(char *pClass, int nSlot, int nBucket, u16 wStateField,
-                          u8 bStateWidth, const Vec3 *pPos, short nAngle,
+                          u8 bStateWidth, const VecFx32 *pPos, short nAngle,
                           const void *pText)
 {
     char *pElement;
@@ -41,7 +37,7 @@ char *Ov002_SpawnLineElement(char *pClass, int nSlot, int nBucket, u16 wStateFie
     Actor_SetVecAndSyncChild(pElement + 0x38, pPos);
 
     *(short *)(pElement + 0x18) = nAngle;
-    *(Vec3 *)(pElement + 0x1c) = *(Vec3 *)(pElement + 0xe0);
+    *(VecFx32 *)(pElement + 0x1c) = *(VecFx32 *)(pElement + 0xe0);
 
     *(int *)(pElement + 0x28) = *(short *)(pClass + 0x68);
     *(u8 *)(pElement + 0x10) = (u8)nBucket;

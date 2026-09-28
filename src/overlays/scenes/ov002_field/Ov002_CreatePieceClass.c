@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* What the caller hands over to describe one class of piece. */
+
+#include "nitro/types.h"
+
 typedef struct {
     const char *pName;              /* +0x00 */
     short nSlotA;                   /* +0x04 */

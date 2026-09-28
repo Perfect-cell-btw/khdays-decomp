@@ -1,4 +1,5 @@
-﻿/* Fires the ov057 charge burst once the gauge reaches the window the current
+
+/* Fires the ov057 charge burst once the gauge reaches the window the current
  * scene stage asks for: stage 0 and 1 want exactly 0x15000, stage 2 anywhere in
  * [0x1b000, 0x21000] and rings a cue right at 0x1e000. Each stage picks its own
  * spin, kind and scale.
@@ -7,9 +8,9 @@
  * heading through the shared sin/cos table, builds the burst parameters with a
  * scaled extent, and submits them. If the submit takes and neither of the two
  * busy bits is set, it also pushes the muzzle position out as event 5. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Emit {
     char pad00[0xc];
@@ -30,7 +31,7 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;
@@ -40,9 +41,9 @@ struct Params {
 extern void Ov022_FillEightHalvesMinus1At0x2bd4(int pActor);
 extern void func_ov022_020ad44c(struct Emit *emit, int pActor);
 extern void Ov022_ScaleRowValues(int pActor, int spin, void *a, void *b);
-extern void ScaleVec3Fx12(int scale, const struct Vec3 *v, struct Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov022_RunCommandHandlers(int pActor, struct Emit *emit, void *params);
-extern void Ov022_MarshalNetworkRecord(int pActor, int event, struct Vec3 *pos, int range,
+extern void Ov022_MarshalNetworkRecord(int pActor, int event, VecFx32 *pos, int range,
                                 int heading, int flag);
 
 extern int data_ov057_020b74a0;
@@ -52,7 +53,7 @@ void Ov057_FireChargeBurst(int pActor)
 {
     struct Emit emit;
     struct Params prm;
-    struct Vec3 vMuzzle;
+    VecFx32 vMuzzle;
     int pSceneBlock = data_ov057_020b74a0 + 0x2c + 0x2c00;
     int fireBurst = 0;
     int burstKind;
@@ -132,7 +133,7 @@ void Ov057_FireChargeBurst(int pActor)
     if ((*(unsigned int *)(pActor + 0x26bc) & 0x40) != 0) {
         return;
     }
-    vMuzzle = *(struct Vec3 *)(pActor + 0x26c8);
+    vMuzzle = *(VecFx32 *)(pActor + 0x26c8);
     eventFlag = 0;
     if (*(int *)(pSceneBlock + 4) == 2) {
         eventFlag = 1;

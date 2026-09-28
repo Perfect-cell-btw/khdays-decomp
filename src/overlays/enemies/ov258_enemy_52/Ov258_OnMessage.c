@@ -4,20 +4,22 @@
  * the message position (bank 5 / 0xd / 0x17, scale 1.0 for 6, 7 and 0x16 else 3.0); 12 and 0x1b fill the
  * first free shot (020d06a0, ten from 12) or burst (020d0a5c, six from 0x1b) slot (the slot index is passed on), 0x19 / 0x1a spawn a
  * beam (020d0dbc) and 0x2a a marker (020d14e4, +0x5b8) at the position. The base handler always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct EffectPair { int res; int handle; };
 struct Ov258Effects { char pad[0x464]; struct EffectPair pair[0x30]; };
 
 extern int Ov107_CreateNodeBodyTask(int model, int res, u8 kind, void *at, int a, int b);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, u8 kind, int arg, int scale, u8 *pos);
-extern int Ov258_SpawnMarker(char *self, int rig, Vec3 *pos);
-extern int Ov258_SpawnEffectB(char *self, int rig, Vec3 *pos, int slot);
-extern int Ov258_SpawnEffectA(char *self, int rig, Vec3 *pos, int slot);
-extern int Ov258_SpawnBeam(char *self, int rig, Vec3 *pos, int kind);
+extern int Ov258_SpawnMarker(char *self, int rig, VecFx32 *pos);
+extern int Ov258_SpawnEffectB(char *self, int rig, VecFx32 *pos, int slot);
+extern int Ov258_SpawnEffectA(char *self, int rig, VecFx32 *pos, int slot);
+extern int Ov258_SpawnBeam(char *self, int rig, VecFx32 *pos, int kind);
 extern int Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
-static inline void UnpackPosition(Vec3 *out, const u8 *msg)
+static inline void UnpackPosition(VecFx32 *out, const u8 *msg)
 {
     union {
         int words[3];
@@ -40,7 +42,7 @@ static inline void UnpackPosition(Vec3 *out, const u8 *msg)
 
 int Ov258_OnMessage(char *self, u8 *msg, int arg)
 {
-    Vec3 pos;
+    VecFx32 pos;
     signed char j;
 
     if (msg[2] == 0) {

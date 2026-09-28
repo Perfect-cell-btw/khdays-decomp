@@ -4,10 +4,12 @@
  * from pool entry 0x15 of the +0x3c8 pool (+0x384, subscribed to +0x9c) and its "tag_00" joint
  * (+0x3b8), a shape on the +0x144 list (+0x388) from a request at the origin along
  * data_02042258 with rate 7.0 / value 2.0, ten +0x390 slots from 020d284c, and clears +0x38c. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; Vec3 axis; int rate; int value; } ShapeRequest;
-typedef void (*Callback)(void);
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; VecFx32 axis; int rate; int value; } ShapeRequest;
+typedef void (*Callback)(void);
 struct Ov245Self { char pad[0x390]; int slots[10]; };
 
 extern void Ov245_OnDespawn(void);
@@ -27,8 +29,8 @@ extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_Mover_New(ShapeRequest *req);
 extern int Ov245_Hopper_New(int self);
 extern const char data_ov245_020d722c[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
 
 void Ov245_ConstructVariant(int self) {
     int pool = *(int *)(self + 0x3c8);

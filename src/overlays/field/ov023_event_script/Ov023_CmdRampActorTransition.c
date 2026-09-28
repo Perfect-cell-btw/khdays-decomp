@@ -4,6 +4,7 @@
  * itself (+0x24) and is counted down here; while it runs the eased duration (Anim_GetBlendFactor
  * 0202136c mode 2, Anim_Interpolate 02021404) is applied, the command is re-queued (020219b4)
  * and 0 returned; on the last frame the final duration is applied and 1 returned. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023Operand {

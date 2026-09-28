@@ -4,18 +4,20 @@
  * 0x1f at the position for 0xf / 0x11 or on the actor for 0x10; 7 emits a spark at the position
  * (+0x3e8 emitter, 4.0), 0x14 starts effect set 1 and 0x15 creates the +0x498 item (0x12d, 0xb). The
  * base handler always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct EffectPair { int res; int handle; };
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, u8 *pos);
 extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
-extern void Ov237_EmitSpark(void *emitter, Vec3 *pos, int value);
+extern void Ov237_EmitSpark(void *emitter, VecFx32 *pos, int value);
 extern void Ov107_ForwardVisibleEvent(char *self, int set);
 extern int Ov107_CreateSpawnTask(char *self, int bank, int variant, int a, void *at);
 extern int Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
-static inline void UnpackPosition(Vec3 *out, const u8 *msg)
+static inline void UnpackPosition(VecFx32 *out, const u8 *msg)
 {
     union {
         int words[3];
@@ -38,7 +40,7 @@ static inline void UnpackPosition(Vec3 *out, const u8 *msg)
 
 int Ov237_OnMessage(char *self, u8 *msg, int arg)
 {
-    Vec3 pos;
+    VecFx32 pos;
 
     if (msg[2] != 0 && msg[2] == 5) {
         switch (msg[3]) {

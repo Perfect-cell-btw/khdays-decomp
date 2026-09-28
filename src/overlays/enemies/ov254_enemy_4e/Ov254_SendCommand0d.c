@@ -1,6 +1,8 @@
 /* Send the 14-byte "kind 5, command 0xd" message for the actor's +2 id with the given argument
  * byte through the shared queue (02031384, channel 1). */
+
 #include "nitro/types.h"
+
 struct Msg14 { u16 h[7]; };
 
 extern void func_02031384(int channel, void *msg, int size);

@@ -4,7 +4,9 @@
  * record's velocity (+4) from the caller's rate field (+0x18, halved) applied over the
  * caller's target delta (+0xc), and folds the caller's own position into it. Returns the
  * new record. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[8]; } Blk32;
 typedef struct { unsigned char lo : 4; unsigned char hi : 4; } NibblePair;
 

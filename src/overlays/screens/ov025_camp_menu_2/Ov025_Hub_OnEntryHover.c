@@ -6,6 +6,7 @@
  * and the entry's help string (ids 1..6 and 9..13 map to strings 9, 10, 12, 15, 11, 16 and
  * 17..19, 13, 14; 02089894) is drawn on the body surface (+0x4c; cleared 02030158, drawn at
  * (0x56, 0) in colour 2 with a shadow 02030278, uploaded 020300f8). */
+
 #include "nitro/types.h"
 
 typedef struct UiLayoutPos {

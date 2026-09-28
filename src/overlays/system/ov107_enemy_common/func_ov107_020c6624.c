@@ -8,9 +8,9 @@
  *
  * Partial layouts: only offsets this function and the landed callbacks establish.
  * field_310 is signed: the ROM stores it as -1, derived from the preceding constant 2. */
-#include "nitro/types.h"
 
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct AiState AiState;
 typedef struct CreatedItem CreatedItem;
@@ -26,7 +26,7 @@ struct CreatedItem {
 
 typedef struct {
     unsigned int kind:4;
-    Vec3 pos;
+    VecFx32 pos;
     int field_10;
     CreatedItem *item;
 } Slot;
@@ -121,7 +121,7 @@ extern void List_Init(void *list);
 extern void *ObjList_New(void);
 extern ActorManager *func_ov107_020c9848(void);
 extern CreatedItem *CreateSubitemInstance0xB4(u32 handle);
-extern void Ov107_Actor_SetAttachSlot(AiState *self, int slot, unsigned int kind, Vec3 *pos, int field10);
+extern void Ov107_Actor_SetAttachSlot(AiState *self, int slot, unsigned int kind, VecFx32 *pos, int field10);
 
 extern void Ov107_DestroyObject(AiState *self);
 extern void Ov107_ProcessObjectTick(AiState *self, int delta);

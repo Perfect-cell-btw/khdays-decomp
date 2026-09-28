@@ -1,6 +1,7 @@
 /* Draws one of the three mission-summary headings into the shared heading
  * surface. Multiplayer waits for the session-ready signal before touching the
  * surface; every accepted call brackets its draw with begin/submit. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MenuContext {

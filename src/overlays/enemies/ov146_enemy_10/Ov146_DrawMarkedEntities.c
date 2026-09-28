@@ -2,15 +2,16 @@
  * of the owner's scene list (+0x388 set's +4 grid, +0x80 list) flagged 0x10 (+0x1c4) is drawn with it:
  * the model's +0x78 animation takes frame n % 28 + 3, and the model is scaled to twice the entity's
  * radius and placed on its +0x74 point before the draw (0203bc78). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void SrtTransform_SetIdentity(void *srt);
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
 extern void NNS_G3dMdlSetMdlPolygonID(int a, int b, int c);
 extern void Srt_SetScaleUniform(void *srt, int scale);
-extern void Srt_SetTranslation(void *srt, const Vec3 *v);
+extern void Srt_SetTranslation(void *srt, const VecFx32 *v);
 extern int Obj_RenderModel(char *model, int arg);
 
 void Ov146_DrawMarkedEntities(char *model, int arg)
@@ -34,7 +35,7 @@ void Ov146_DrawMarkedEntities(char *model, int arg)
         if (*(u8 *)(e + 0x1c4) & 0x10) {
             NNS_G3dMdlSetMdlPolygonID(*(int *)(*(int *)(*(int *)(owner + 0x384) + 0x88) + 0x78), 0, n % 28 + 3);
             Srt_SetScaleUniform(model + 0x30, *(int *)(e + 0x80) * 2);
-            Srt_SetTranslation(model + 0x30, (Vec3 *)(e + 0x74));
+            Srt_SetTranslation(model + 0x30, (VecFx32 *)(e + 0x74));
             Obj_RenderModel(model, arg);
             n++;
         }

@@ -9,16 +9,18 @@
  * bit (bit 49, node shown, bit 1 of +0x464 on the local session); once fired the state becomes
  * 0x23 while the +0x22f8 emitter is idle, else 0x25 once the timer reaches +0x7b0 (plus 0xf000
  * with the flag). */
+
+#include "nitro/fx.h"
+
 struct ActorBits {
     unsigned char bUnk0 : 1;
     unsigned char bFired : 1;
 };
 
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 
 struct FireParams {
-    Vec3 vPos;
+    VecFx32 vPos;
     short vx;
     short vy;
     short vz;
@@ -29,30 +31,30 @@ struct FireParams {
 };
 
 extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
-extern void Ov022_StepAnchorDelta(char *self, Vec3 *pOut);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void Ov022_StepAnchorDelta(char *self, VecFx32 *pOut);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void MTX_RotY33_(Mtx33 *m, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
-extern void VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov022_SendPlacementMessage(char *self, struct FireParams *p);
 extern void SceneNode_Enable(int *p);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern int Ov022_ActorSetState(char *self, int nMode);
 extern int data_ov052_020b80c0;
-extern Vec3 data_02041dc8;
-extern Vec3 data_ov052_020b7ee8;
-extern Vec3 data_ov052_020b7ef4;
+extern VecFx32 data_02041dc8;
+extern VecFx32 data_ov052_020b7ee8;
+extern VecFx32 data_ov052_020b7ef4;
 extern const short data_0203d210[];
 
 int Ov052_ShotStep(char *self)
 {
-    Vec3 vSpawn;
-    Vec3 vAim;
-    Vec3 vDir;
+    VecFx32 vSpawn;
+    VecFx32 vAim;
+    VecFx32 vDir;
     Mtx33 mFacing;
     struct FireParams p;
-    Vec3 vOffset;
+    VecFx32 vOffset;
     int nRet = 0;
     int *pBlock = (int *)(*(int *)&data_ov052_020b80c0 + 0x278 + 0x2c00);
     int nLimit;
@@ -74,7 +76,7 @@ int Ov052_ShotStep(char *self)
     }
     vOffset = vSpawn;
     vOffset.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &vOffset, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &vOffset, (VecFx32 *)(self + 0x98 + 0x400));
     if (*(int *)(self + 0x4cc) >= 0 && pBlock[1] == 0) {
         int nIndex;
         vAim = data_ov052_020b7ee8;
@@ -83,7 +85,7 @@ int Ov052_ShotStep(char *self)
                                   - 0x8000) >> 4;
         MTX_RotY33_(&mFacing, -data_0203d210[nIndex * 2], -data_0203d210[nIndex * 2 + 1]);
         MTX_MultVec33(&vDir, &mFacing, &p.vPos);
-        VEC_Add(&p.vPos, (Vec3 *)(self + 0x8c + 0x400), &p.vPos);
+        VEC_Add(&p.vPos, (VecFx32 *)(self + 0x8c + 0x400), &p.vPos);
         MTX_RotY33_(&mFacing, -data_0203d210[nIndex * 2], -data_0203d210[nIndex * 2 + 1]);
         MTX_MultVec33(&vAim, &mFacing, &vAim);
         if (VEC_Mag(&vAim) != 0) {

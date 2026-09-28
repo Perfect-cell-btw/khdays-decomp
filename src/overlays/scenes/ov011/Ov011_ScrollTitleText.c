@@ -7,6 +7,7 @@
  * Structure follows the ROM's block order (the pText == NULL height and the in-range draw are the
  * fall-through cases); the declaration order below is what puts bTag/nColor in r6/r7 so both
  * stack arguments go out with one stm. */
+
 #include "nitro/types.h"
 
 typedef struct Ov011TitleLine {

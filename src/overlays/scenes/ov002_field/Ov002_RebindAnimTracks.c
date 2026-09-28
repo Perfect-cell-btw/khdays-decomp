@@ -6,11 +6,13 @@
  * the whole animation restarts in step. This is the shared entry the area
  * overlays reach through their common 0207fa40 wrapper.
  */
-#include "nitro/types.h"
 
 /* The blend argument is a short, the same signature proved on
    Ov002_ApplyAnimMode, so the narrowing belongs to the call rather than to a
    cast here. */
+
+#include "nitro/types.h"
+
 extern void BindAnimTrack(void *pAnim, u16 nTrack, void *pTable, short nBlend);
 extern void Anim_SetFrameWrapped(void *pAnim, u16 nTrack, int nFrame);
 

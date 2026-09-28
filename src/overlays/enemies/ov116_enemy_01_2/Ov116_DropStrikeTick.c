@@ -8,9 +8,10 @@
  * sweeps for actors above the point; the first that takes a kind-1 hit gets the +0xe template
  * message with the point raised by 0x1000, reaction 0x114 mode 6, and the task is released.
  * Otherwise the task is released once the actor's +0xad flag is clear. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
 typedef struct {
@@ -22,8 +23,8 @@ typedef struct {
 } PosMsg;
 
 struct SweepQuery {
-    Vec3 vPos;
-    Vec3 vDir;
+    VecFx32 vPos;
+    VecFx32 vDir;
     int nRadius;
     int nHeight;
 };
@@ -39,22 +40,22 @@ struct Ov115ActionState {
     char *pActor;              /* +0x0 */
     struct Ov115Owner *pOwner; /* +0x4 */
     int pTarget;               /* +0x8 */
-    Vec3 vPoint;               /* +0xc */
+    VecFx32 vPoint;               /* +0xc */
     int nTimer;                /* +0x18 */
     u8 nPhase;                 /* +0x1c */
 };
 
-extern struct CastHit *Collision_CastRay(void *world, Vec3 *from, Vec3 *step);
+extern struct CastHit *Collision_CastRay(void *world, VecFx32 *from, VecFx32 *step);
 extern void SrtTransform_SetIdentity(void *transform);
-extern void Srt_SetTranslation(void *transform, Vec3 *pos);
-extern void Ov107_BuildAndSendUpdate(struct Ov115Owner *owner, int a, int id, Vec3 *pos);
+extern void Srt_SetTranslation(void *transform, VecFx32 *pos);
+extern void Ov107_BuildAndSendUpdate(struct Ov115Owner *owner, int a, int id, VecFx32 *pos);
 extern int Ov107_CollectSegmentOverlaps(struct Ov115Owner *owner, struct SweepQuery *query, int *out);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov115Owner *a, struct Ov115Owner *b, int kind, const Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov115Owner *a, struct Ov115Owner *b, int kind, const VecFx32 *push, int z);
 extern void Task_MarkFinished(int *node);
 extern const PosMsg data_ov116_020d2794;
 extern const PosMsg data_ov116_020d27a2;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02041dc8;
 
 typedef struct { int value; } Fx32;
 
@@ -67,7 +68,7 @@ typedef struct { int value; } Fx32;
     (dst).mid = (u32)(scratch).value >> 8;                                         \
     (dst).lo = (scratch).value
 
-static inline void VEC_Set(Vec3 *vec, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z)
 {
     int *components = (int *)vec;
     components[0] = x;
@@ -75,7 +76,7 @@ static inline void VEC_Set(Vec3 *vec, int x, int y, int z)
     components[2] = z;
 }
 
-static inline void SetPoint(struct Ov115ActionState *state, Vec3 at)
+static inline void SetPoint(struct Ov115ActionState *state, VecFx32 at)
 {
     state->vPoint = at;
 }
@@ -83,11 +84,11 @@ static inline void SetPoint(struct Ov115ActionState *state, Vec3 at)
 void Ov116_DropStrikeTick(int *node)
 {
     struct Ov115ActionState *state = (struct Ov115ActionState *)node[1];
-    Vec3 ray;
+    VecFx32 ray;
     PosMsg msg1;
     int hits[4];
     struct SweepQuery query;
-    Vec3 at2;
+    VecFx32 at2;
     PosMsg msg2;
     int scene;
     int i;
@@ -106,7 +107,7 @@ void Ov116_DropStrikeTick(int *node)
         VEC_Set(&ray, 0, 0, 0);
         scene = *(int *)((char *)state->pOwner + 4);
         ray.y = -0x10000;
-        SetPoint(state, state->pTarget != 0 ? *(Vec3 *)(state->pTarget + 0x190) : *(Vec3 *)((char *)state->pOwner + 0x74));
+        SetPoint(state, state->pTarget != 0 ? *(VecFx32 *)(state->pTarget + 0x190) : *(VecFx32 *)((char *)state->pOwner + 0x74));
         state->vPoint.y += 0x8000;
         hit = Collision_CastRay(*(void **)(scene + 0x7c), &state->vPoint, &ray);
         if (hit != 0) {

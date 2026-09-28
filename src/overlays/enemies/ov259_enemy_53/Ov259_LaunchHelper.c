@@ -2,18 +2,20 @@
  * (data_02042240) to `dir`, it is placed at `pos` (020c5c54), the +0x0c handler is told (when +0x40
  * bit 1 allows it), +0x388 marks it busy and its +0x214 flight takes the direction and heading
  * (020d2904). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 struct Flags40 { int b0 : 1; int b1 : 1; };
 
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *from, const Vec3 *to);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern void Vec4_Normalize(Quat *q, Quat *out);
 extern void Srt_SetRotationQuat(char *srt, Quat *q);
-extern void Ov107_MoveNodeAndRelayout(char *actor, Vec3 *at);
-extern void Ov259_HelperStartFlight(int flight, Vec3 *dir, int heading);
-extern const Vec3 data_02042240;
+extern void Ov107_MoveNodeAndRelayout(char *actor, VecFx32 *at);
+extern void Ov259_HelperStartFlight(int flight, VecFx32 *dir, int heading);
+extern const VecFx32 data_02042240;
 
-void Ov259_LaunchHelper(char *self, Vec3 *pos, Vec3 *dir, int heading)
+void Ov259_LaunchHelper(char *self, VecFx32 *pos, VecFx32 *dir, int heading)
 {
     Quat q;
 

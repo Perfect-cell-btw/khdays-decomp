@@ -12,9 +12,9 @@
  * enabled -> state 02080d1c; else with break tracks (+0x2be) the next track (+0x2bf) is rewound
  * on the model node (+0x3c), enabled and drawn -> Ov016_BreakableBreakStep (02080d24); else the
  * piece retires -> terminal. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef void *Ov016StateFn(void *pPiece);
 

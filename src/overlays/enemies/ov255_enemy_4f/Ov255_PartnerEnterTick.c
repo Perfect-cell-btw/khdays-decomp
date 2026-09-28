@@ -2,14 +2,16 @@
  * and bit 1 is raised, the low byte of its +0x38c rig's +8 word gets bit 0, +0x18 becomes 0.25,
  * +0x1c and +0x14 clear, effect 2 is spawned at the origin and the tick hands over to
  * Ov255_HomingShotFlightTick. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct hw60 { u16 lo : 8, hi : 8; };
 struct Word8 { unsigned int lo : 8; };
 
-extern void func_ov107_020c0b90(int owner, int id, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int id, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov255_HomingShotFlightTick(int *node);
 
 void Ov255_PartnerEnterTick(int *node)

@@ -4,6 +4,7 @@
  * drawn in the third style instead of the caller's, which is what dims the part
  * of the bar that is about to drain. The style table has six bytes per entry
  * and the row helper is asked for that same six-byte span. */
+
 #include "nitro/types.h"
 
 typedef struct {

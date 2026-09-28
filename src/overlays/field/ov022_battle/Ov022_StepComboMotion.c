@@ -19,15 +19,11 @@
  * that same pair and keeps the delta.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022ComboRecord */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ComboRecord {
     u8 pad00[0x1c];
     int nHold;                   /* 0x1c */

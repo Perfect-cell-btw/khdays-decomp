@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Constructor of the ov181 enemy (x4: ov181/182/183/184): installs the handlers (+8 tick, +0 (020cbfc4): struct Ov181Vec3 data_ov181_020ce9f8; */
+
 #include "nitro/types.h"
 
-/* read by Constructor of the ov181 enemy (x4: ov181/182/183/184): installs the handlers (+8 tick, +0 (020cbfc4): struct Ov181Vec3 data_ov181_020ce9f8; */
 const int data_ov181_020ce9f8[3] = {
     2, 3, 4,
 };

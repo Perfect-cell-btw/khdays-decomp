@@ -1,8 +1,5 @@
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+
+#include "nitro/fx.h"
 
 extern int FX_Sqrt(int n);
 
@@ -16,8 +13,8 @@ extern int FX_Sqrt(int n);
  * and the high side takes y, z, z. That is what the original does and it is
  * reproduced here rather than corrected.
  */
-int Ov002_PointWithinBoxRange(const Vec3 *pCentre, const Vec3 *pExtent,
-                        const Vec3 *pPoint, int nRange)
+int Ov002_PointWithinBoxRange(const VecFx32 *pCentre, const VecFx32 *pExtent,
+                        const VecFx32 *pPoint, int nRange)
 {
     int aMin[3];
     int aMax[3];

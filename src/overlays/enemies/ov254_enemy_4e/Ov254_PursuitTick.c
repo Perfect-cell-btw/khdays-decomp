@@ -10,42 +10,44 @@
  * grab meter or an expired +0x3c timer ends the move (pose +0x75+2, rig motion +0x76+2 looping,
  * flight extras) into 020cee30; otherwise pose +0x75+1 plays and, with the rig idle, rig motion
  * +0x76+1 follows (the climb resets while flying). */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
 struct Ov254 {
     char pad000[0x4ac];
     int debris[10];         /* +0x4ac */
 };
 
 extern void Ov254_ChooseWaypoint(int *state, int a, int b);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int func_020050b4(int x, int z);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int VEC_Mag(Vec3 *v);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int VEC_Mag(VecFx32 *v);
 extern int FX_Div(int num, int den);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(Vec3 *v, Mtx33 *m, Vec3 *d);
+extern void MTX_MultVec33(VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern void Ov254_PickRoutePoint(int *state);
-extern void VEC_Add(void *a, void *b, Vec3 *d);
-extern void Ov254_InvokeHookAndRearm2_2(int shard, Vec3 *at);
+extern void VEC_Add(void *a, void *b, VecFx32 *d);
+extern void Ov254_InvokeHookAndRearm2_2(int shard, VecFx32 *at);
 extern int Ov107_QuerySphereContacts(int collision, Sphere *sphere, int *out);
 extern void Ov107_PostTagUpdate(int owner, int pose, int loop);
 extern void Ov107_StartAnim(int rig, int motion, int mode);
 extern void Ov254_ForwardToAiIfReady_7(int helper);
 extern void Ov254_ForwardToAiIfReady_9(int helper);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_SlowOrbitTick(void);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-static inline void VecSet(Vec3 *v, int x, int y, int z)
+static inline void VecSet(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -55,12 +57,12 @@ static inline void VecSet(Vec3 *v, int x, int y, int z)
 void Ov254_PursuitTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 aim;
+    VecFx32 aim;
     Mtx33 mtx;
-    Vec3 d;
+    VecFx32 d;
     Sphere sph;
     int hits[12];
-    Vec3 v;
+    VecFx32 v;
     int dist;
     int speed;
     int rem;
@@ -77,12 +79,12 @@ void Ov254_PursuitTick(int *node)
         int meter;
         int max;
 
-        aim = *(Vec3 *)(*(int *)(*state + 0x3dc) + 0x190);
+        aim = *(VecFx32 *)(*(int *)(*state + 0x3dc) + 0x190);
         aim.y += 0x7b31;
         VEC_Subtract(&aim, (void *)state[2], &aim);
         VEC_Normalize(&aim, &aim);
         state[0xd] = func_020050b4(aim.x, aim.z);
-        ScaleVec3Fx12(0x400, &aim, (Vec3 *)(state + 3));
+        ScaleVec3Fx12(0x400, &aim, (VecFx32 *)(state + 3));
         VecSet(&aim, state[3], 0, state[5]);
         state[0x19] += VEC_Mag(&aim);
         meter = state[0x19];
@@ -97,7 +99,7 @@ void Ov254_PursuitTick(int *node)
     } else {
         int f;
 
-        VEC_Subtract((Vec3 *)(state + 6), (void *)state[2], &d);
+        VEC_Subtract((VecFx32 *)(state + 6), (void *)state[2], &d);
         d.y = 0;
         dist = VEC_Normalize(&d, &d);
         state[0xd] = func_020050b4(d.x, d.z);
@@ -110,7 +112,7 @@ void Ov254_PursuitTick(int *node)
         speed = FX_MUL(f, 0xc00);
         idx = ANG2IDX(state[0xd]);
         MTX_RotY33_(&mtx, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-        MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x430) + 0x2c), &mtx, (Vec3 *)(state + 3));
+        MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x430) + 0x2c), &mtx, (VecFx32 *)(state + 3));
         if (state[0x1e] != 0) {
             int climb;
 
@@ -123,7 +125,7 @@ void Ov254_PursuitTick(int *node)
             }
             state[0x18] = climb;
         }
-        ScaleVec3Fx12(speed, (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+        ScaleVec3Fx12(speed, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
         state[4] = 0;
         if (dist <= 0xa000) {
             Ov254_PickRoutePoint(state);
@@ -151,11 +153,11 @@ void Ov254_PursuitTick(int *node)
         for (rem = *(int *)(node[0] + 0x2c); rem > 0; rem -= 0x88) {
             state[0x18] = FX_MUL(state[0x18], 0xf00);
         }
-        VEC_Add((void *)(*(int *)(*state + 0x408) + 0x14), (Vec3 *)(state + 3), &sph.pos);
+        VEC_Add((void *)(*(int *)(*state + 0x408) + 0x14), (VecFx32 *)(state + 3), &sph.pos);
         sph.nRadius = 0x7b31;
         v = data_02041dc8;
         if (Ov107_QuerySphereContacts(*(int *)(world + 0x7c), &sph, hits) > 0) {
-            state[0x18] = VEC_Mag((Vec3 *)(state + 3));
+            state[0x18] = VEC_Mag((VecFx32 *)(state + 3));
             state[3] = state[5] = 0;
         }
     }

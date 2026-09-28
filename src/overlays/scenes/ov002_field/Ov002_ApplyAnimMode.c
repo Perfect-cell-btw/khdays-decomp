@@ -1,8 +1,10 @@
-#include "nitro/types.h"
 
 /* The actor's animation state block. The table array and its count were named
    by the teardown at 02051fc8; the mode byte and the changed flag are proved
    here. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002AnimStateBlock {
     char nCurrentMode;      /* mode the actor is playing right now */
     char pad0001[3];

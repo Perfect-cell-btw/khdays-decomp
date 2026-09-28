@@ -2,19 +2,20 @@
  * in the shared object's +0x2c3c; every 0x2000 of it drops one effect (Ov042_ClaimSlotAndLaunch)
  * along the unit direction of the move, at `origin` plus the direction scaled by what was left
  * over from the previous drop (0x2000 - carry), consuming 0x2000 per drop. */
-typedef struct { int x, y, z; } Vec3;
 
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
-extern int VEC_Mag(const Vec3 *v);
-extern void ScaleVec3Fx12(int scale, const Vec3 *src, Vec3 *dst);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void Ov042_ClaimSlotAndLaunch(Vec3 *pos, Vec3 *dir);                         /* Ov042_ClaimSlotAndLaunch */
+#include "nitro/fx.h"
+
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
+extern int VEC_Mag(const VecFx32 *v);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Ov042_ClaimSlotAndLaunch(VecFx32 *pos, VecFx32 *dir);                         /* Ov042_ClaimSlotAndLaunch */
 extern char *data_ov042_020b4800;
 
-void Ov042_LayTrail(Vec3 *origin, Vec3 *move)
+void Ov042_LayTrail(VecFx32 *origin, VecFx32 *move)
 {
-    Vec3 vDir;
-    Vec3 vPos;
+    VecFx32 vDir;
+    VecFx32 vPos;
     char *trail = data_ov042_020b4800 + 0x2c + 0x2c00;
     int carry = *(int *)(trail + 0x10);
     int dist;

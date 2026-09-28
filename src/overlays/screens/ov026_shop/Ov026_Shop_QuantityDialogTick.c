@@ -37,6 +37,7 @@
  * remainder and the affordable quotient are the two halves of
  * Math_DivMod; declaration order i, nPressed, pfnNext, nRow, pBox, nKeys.
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT       4

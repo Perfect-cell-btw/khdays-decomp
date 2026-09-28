@@ -12,11 +12,7 @@
  * ARM.
  */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad000[0x78];

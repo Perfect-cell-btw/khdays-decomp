@@ -17,11 +17,7 @@
  * The vector at sp+0xc is zeroed in full before its Z is overwritten; that is what the ROM does
  * (the address escapes into Ov265_rotateVecByOwnerYaw, so the stores are not dead). */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 extern void Ov265_AcquireTarget(int self);
 extern void Ov265_rotateVecByOwnerYaw(VecFx32 *out, int self, const VecFx32 *ref);

@@ -8,6 +8,7 @@
  * record wins.  Otherwise the record table is walked from id 1 for the first
  * category-1 record with spare copies.  Returns the record, or 0.
  */
+
 #include "nitro/types.h"
 
 #define GRID_PAGES 3

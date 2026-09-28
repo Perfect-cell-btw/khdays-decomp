@@ -14,17 +14,13 @@
  * three copies); the unpack and the transform are built before the
  * switch; byte 4 is always an unsigned read.
  */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct SrtTransform {
     int w[11];
 } SrtTransform;
-
-typedef struct Vec3 {
-    int x;
-    int y;
-    int z;
-} Vec3;
 
 typedef struct EffectSlot {
     int nResource;            /* 0x00 */
@@ -43,7 +39,7 @@ typedef struct EffectActor {
 #define KIND_EFFECT_B 0x15
 
 extern void SrtTransform_SetIdentity(SrtTransform *pTransform);                   /* Srt_Init */
-extern void Srt_SetTranslation(SrtTransform *pTransform, const Vec3 *pPos);  /* Srt_SetTranslation */
+extern void Srt_SetTranslation(SrtTransform *pTransform, const VecFx32 *pPos);  /* Srt_SetTranslation */
 extern int  Ov107_CreateNodeXformTask(int hList, int nResource, int nKind, int nZero, SrtTransform *pTransform);
 extern int  Ov107_CreateNodeBodyTask(int hList, int nResource, int nKind, void *pSrt, int nParam, int nFlag);
 extern void Ov107_ForwardVisibleEvent(EffectActor *pActor, int nPose);
@@ -53,7 +49,7 @@ extern void Ov107_AiState_OnMessage(EffectActor *pActor, u8 *pCommand, int nArg)
 void Ov226_HandleMessage(EffectActor *pActor, u8 *pCommand, int nArg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         u8 bytes[12];

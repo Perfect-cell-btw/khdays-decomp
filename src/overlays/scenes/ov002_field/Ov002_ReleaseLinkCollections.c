@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* One entry of the context's big table: 0x10c bytes with a live flag near the
  * end.  Only the flag and the stride are established here. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002LinkEntry {
     char pad0000[0x108];
     s8 bActive;                     /* 0x108 */

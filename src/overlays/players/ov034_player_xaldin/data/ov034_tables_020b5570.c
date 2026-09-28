@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov034_ReleaseIndexedHandles (020b3c04): Idx3 data_ov034_020b5570; */
+
 #include "nitro/types.h"
 
-/* read by Ov034_ReleaseIndexedHandles (020b3c04): Idx3 data_ov034_020b5570; */
 const int data_ov034_020b5570[3] = {
     0, 1, 2,
 };

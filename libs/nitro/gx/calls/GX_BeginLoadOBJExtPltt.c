@@ -1,6 +1,8 @@
 /* NitroSDK gx (gx_load2d.c): GX_BeginLoadOBJExtPltt -- takes the OBJ ext-palette banks back to LCDC for loading. */
+
 #include "nitro/types.h"
 #include "nitro/os.h"
+
 typedef void *OSMessage;
 
 #define NULL ((void *)0)

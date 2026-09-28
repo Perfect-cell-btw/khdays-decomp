@@ -9,13 +9,14 @@
  *
  * Codegen notes: the message template is copied once into a local (tmpl) and per hit into msg
  * (an intra-struct copy reschedules the halfword loop); the packed position is mirrored into a
- * volatile Vec3 (the stores survive and sink under the next load, x lands in lr); `n = 0` under
+ * volatile VecFx32 (the stores survive and sink under the next load, x lands in lr); `n = 0` under
  * opt_dead_assignments off only orders the counter/count webs (i -> r4, n -> r5).
  */
 #pragma opt_dead_assignments off
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
 typedef struct {
@@ -27,10 +28,10 @@ typedef struct {
 } PosMsg;
 
 struct BoxQuery {
-    Vec3 vCenter;
-    Vec3 vAxisX;
-    Vec3 vAxisZ;
-    Vec3 vAxisY;
+    VecFx32 vCenter;
+    VecFx32 vAxisX;
+    VecFx32 vAxisZ;
+    VecFx32 vAxisY;
     int nExtent;
     int bFlag;
 };
@@ -39,9 +40,9 @@ struct Ov191Actor {
     char pad000[0x24];
     void (*pfnMessage)(struct Ov191Actor *self, PosMsg *msg, int size);
     char pad028[0x4c];
-    Vec3 vPos74;
+    VecFx32 vPos74;
     char pad080[0x110];
-    Vec3 vPos190;
+    VecFx32 vPos190;
     char pad19c[0x18];
     u8 nKind1b4;
 };
@@ -54,14 +55,14 @@ struct Ov191ActionState {
 };
 
 extern int Ov107_CollectEntitiesTouchingDisc(struct Ov191Actor *owner, struct BoxQuery *query, struct Ov191Actor **out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *a, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(struct Ov191Actor *hit, struct Ov191Actor *a, struct Ov191Actor *b, u8 kind, Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov191Actor *owner, u16 a, u16 id, Vec3 *pos);
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042270;
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *a, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(struct Ov191Actor *hit, struct Ov191Actor *a, struct Ov191Actor *b, u8 kind, VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov191Actor *owner, u16 a, u16 id, VecFx32 *pos);
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042270;
 extern const PosMsg data_ov191_020d2d74;
 
 static inline void PackFx24(Fx24 *dst, int v) {
@@ -70,15 +71,15 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-void Ov191_BoxSweepPush(struct Ov191ActionState *state, long long len, const Vec3 *aim)
+void Ov191_BoxSweepPush(struct Ov191ActionState *state, long long len, const VecFx32 *aim)
 {
     struct Ov191Actor *hits[4];
     struct BoxQuery query;
-    Vec3 push;
-    Vec3 fxPos;
+    VecFx32 push;
+    VecFx32 fxPos;
     PosMsg msg;
     PosMsg tmpl;
-    volatile Vec3 pos;
+    volatile VecFx32 pos;
     int i;
     int n = 0;
     int x;

@@ -5,6 +5,7 @@
  * matrices to identity, restores the default BG priorities (0..3), closes the windows, turns
  * blending off and sets the 3D clear colour to black at the far depth. The bank releases use the
  * SDK's GX_DisableBankFor* entry points, some of which carry other names in the symbol table. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 

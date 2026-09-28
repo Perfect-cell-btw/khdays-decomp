@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 extern int ScriptVm_ReadOperandInt(int pOwner, int pSlot);

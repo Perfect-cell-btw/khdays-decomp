@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Constructor of the ov204 enemy (and its byte-identical twin ov205; variant of the ov139/14 (020cfc04): const Vec3 data_ov204_020d35c4; */
+
 #include "nitro/types.h"
 
-/* read by Constructor of the ov204 enemy (and its byte-identical twin ov205; variant of the ov139/14 (020cfc04): const Vec3 data_ov204_020d35c4; */
 const int data_ov204_020d35c4[3] = {
     0, 2048, 0,
 };

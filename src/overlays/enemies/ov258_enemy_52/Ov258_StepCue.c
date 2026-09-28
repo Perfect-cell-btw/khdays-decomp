@@ -1,7 +1,9 @@
 /* Step cue of the ov258 actor: once the +0x44 clock reaches `step` x 0x88 and the +0x53 low-nibble
  * countdown is at `phase`, the countdown steps down and (for variants below 0x1b) sound variant
  * `variant` of the +0x58 bank plays at the +0x430 rig's +0x14 point. */
+
 #include "nitro/types.h"
+
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, int at);

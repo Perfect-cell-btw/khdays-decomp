@@ -3,6 +3,7 @@
  * the mission owner's +0x2d38 block (+0x10), one against the model of the +0x2644 record's
  * +0x3c object -- clears the 0xc4-byte work block at +0xda0, then latches the ready bits 0xf
  * and returns them. */
+
 #include "nitro/types.h"
 
 extern void Ov022_ConfigureGridSlotMode(int slot, int mode);

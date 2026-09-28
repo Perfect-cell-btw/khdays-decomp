@@ -2,6 +2,7 @@
  */
 
 #include "nitro/types.h"
+
 typedef struct InventoryView {
     char opaque0[0x810];
     u8 firstItemCount;

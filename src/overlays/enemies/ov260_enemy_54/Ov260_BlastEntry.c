@@ -1,15 +1,16 @@
 /* Blast entry of the ov260 actor: pose 0xc plays, the actor is knocked back at the origin (mode 0xa),
  * effects 0x16 and 0x1d start at the +0x10 point, +0x70 and the +0x7b flag clear and the node moves
  * on to 020d0834. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_BlastTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov260_BlastEntry(int *node)
 {

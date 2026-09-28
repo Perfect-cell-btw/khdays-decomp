@@ -4,6 +4,7 @@
  * rewinds both, goes to phase 2 and tells the enemy 0xd7; phase 2 advances the tracks and goes
  * back to phase 1 when they finish -- or, still running, when the enemy is in mode 0x2f with
  * the timer below 0x3000 again. */
+
 #include "nitro/types.h"
 
 extern void BindAnimTrack(void *animation, int track, void *table, s16 mode);   /* BindAnimTrack */

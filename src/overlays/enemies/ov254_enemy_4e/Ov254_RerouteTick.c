@@ -7,21 +7,22 @@
  * actor's +0x3dc target (020cab14) is visible from it (ray through the +4 item's world, radius
  * 0x3d98), in which case the other; +0x18 becomes that point. The node then moves on to
  * 020cf3a4. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov254_KnockbackAtFeet(int actor, int side);
-extern Vec3 *List_First(void *list);
-extern Vec3 *List_Next(void *list);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
+extern VecFx32 *List_First(void *list);
+extern VecFx32 *List_Next(void *list);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern int Collision_CastSphere(void *world, const Vec3 *from, const Vec3 *step, int radius);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern int Collision_CastSphere(void *world, const VecFx32 *from, const VecFx32 *step, int radius);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_ApproachTick(void);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
@@ -32,9 +33,9 @@ static inline int FX_Mul(int a, int b) {
 void Ov254_RerouteTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 pts[2];
-    Vec3 d;
-    Vec3 *p;
+    VecFx32 pts[2];
+    VecFx32 d;
+    VecFx32 *p;
     int t;
     int prev;
     int i;
@@ -72,19 +73,19 @@ void Ov254_RerouteTick(int *node)
             }
         }
         for (i = 0; i < 2; i++) {
-            VEC_Subtract(&pts[i], (Vec3 *)state[2], &pts[i]);
+            VEC_Subtract(&pts[i], (VecFx32 *)state[2], &pts[i]);
             pts[i].y = 0;
         }
         pick = VEC_Mag(&pts[0]) <= VEC_Mag(&pts[1]) ? 1 : 0;
         *(int *)(*state + 0x3dc) = Ov107_FindNearestObject(*state, 0);
         if (*(int *)(*state + 0x3dc) != 0) {
             item = *(int *)(*state + 4);
-            VEC_Subtract((Vec3 *)(*(int *)(*state + 0x3dc) + 0x190), &pts[pick], &d);
+            VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x3dc) + 0x190), &pts[pick], &d);
             if (Collision_CastSphere(*(void **)(item + 0x7c), &pts[pick], &d, 0x3d98) != 0) {
                 pick ^= 1;
             }
         }
-        VEC_Add(&pts[pick], (Vec3 *)state[2], (Vec3 *)(state + 6));
+        VEC_Add(&pts[pick], (VecFx32 *)state[2], (VecFx32 *)(state + 6));
     }
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov254_ApproachTick);
 }

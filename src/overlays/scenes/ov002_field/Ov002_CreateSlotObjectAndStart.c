@@ -1,14 +1,16 @@
 /* Ov002_CreateSlotObjectAndStart: create a slot, initialize its object and
  * install the record's permitted marker parts before activating special links. */
+
 #include "nitro/types.h"
-typedef struct Ov002Vec3 {int x,y,z;} Ov002Vec3;
+#include "nitro/fx.h"
+
 typedef struct Ov107Object Ov107Object;
 struct Ov107Object {
     char pad0[0x14];void (*pStateCallback)(Ov107Object *,int);char pad18[0x28];
     u32 dwStateFlags;void *pCallback;u16 wFlags;short nObjTag;char pad4c[0xb8];
-    Ov002Vec3 vObjectPos;int nObjA,nObjC,nObjB;
+    VecFx32 vObjectPos;int nObjA,nObjC,nObjB;
 };
-typedef struct Ov002ObjectSlot {Ov107Object *pObject;Ov002Vec3 vAt;int nMode;s8 bEntryIndex;u8 nActiveEvent;char pad16[2];} Ov002ObjectSlot;
+typedef struct Ov002ObjectSlot {Ov107Object *pObject;VecFx32 vAt;int nMode;s8 bEntryIndex;u8 nActiveEvent;char pad16[2];} Ov002ObjectSlot;
 typedef struct Ov002MarkerLookup {s8 nRowIndex;u8 nHandle;} Ov002MarkerLookup;
 typedef struct Ov002RecordGroup {s8 nRowIndex;u8 nLimit,nCount;s8 nLastPlayer;} Ov002RecordGroup;
 typedef struct Ov002RecordEntryFlags {s8 nState:4,nValue:4;} Ov002RecordEntryFlags;
@@ -18,12 +20,12 @@ typedef struct Ov002RecordList {u8 nRowCount,nEntryCount;char pad2[2];Ov002Marke
 typedef struct Ov002ObjectContext {void *pOwnedTable;Ov002RecordList *pEntryList;char pad8[0x3c];Ov002ObjectSlot *pSlots;char pad48[4];Ov002MarkerLookup *pSlotLookup;u8 nLookupCount,nLookupInUse;} Ov002ObjectContext;
 extern Ov002ObjectContext *data_ov002_0207fa14;
 extern int Ov002_CreateObjectSlot(int);
-extern void Ov002_StartSlotAnim(int,int,int,Ov002Vec3 *,int);
+extern void Ov002_StartSlotAnim(int,int,int,VecFx32 *,int);
 extern int Ov107_Spawner_AddSlot(Ov107Object *,u8,u8,int,s8,u32);
 extern void *Ov002_FindSiblingOfKindE(int);
 extern int Ov002_GetSlotTableByte(int);
 extern void Ov015_SpotInstallTable(void *,Ov107Object *,int,u32);
-void Ov002_CreateSlotObjectAndStart(int nEntry,int nKind,u32 nMask,int nMode,Ov002Vec3 *pObjectPos,int nObjA,int nObjTag,int nObjB,int nObjC,Ov002Vec3 *pAnimAt,int nAnimMode,int nAnimParam)
+void Ov002_CreateSlotObjectAndStart(int nEntry,int nKind,u32 nMask,int nMode,VecFx32 *pObjectPos,int nObjA,int nObjTag,int nObjB,int nObjC,VecFx32 *pAnimAt,int nAnimMode,int nAnimParam)
 {
     Ov002ObjectContext *pCtx;
     int i;

@@ -11,7 +11,9 @@
  * Scene flags at +0x23ac0 are a bitfield: bit0 threadAvail, bit1 busy, bit2 lidClosed.
  * The signed 1-bit field is what makes bit0 read back with lsl#31/asr#31.
  */
+
 #include "nitro/types.h"
+
 typedef void (*Ov011StateFn)(void);
 
 typedef struct Ov011StreamInterface {

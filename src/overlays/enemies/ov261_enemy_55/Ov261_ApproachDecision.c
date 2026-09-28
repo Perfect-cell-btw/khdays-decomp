@@ -3,6 +3,7 @@
  * part's +4 owner plays animation 0 (looped), resets the +0x6c clock and hands off to d0f90;
  * otherwise bits 1 and 7 of the +0x60 flag high byte are set, animation 2 (looped) plays and the
  * tick hands off to d0e4c. */
+
 #include "nitro/types.h"
 
 extern int Ov261_FindGrabSlotPath(int *state, int slot);

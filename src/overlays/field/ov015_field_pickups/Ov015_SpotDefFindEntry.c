@@ -4,6 +4,7 @@
  * nine.  Returns the entry, or 0 when none matches.  The spot argument is not used.
  * Codegen: the table walker is a byte pointer with the +0x58 table base folded into each
  * access, nFirst is initialised before nEnd and declared after the entry index. */
+
 #include "nitro/types.h"
 
 typedef struct Ov015SpotEntry {

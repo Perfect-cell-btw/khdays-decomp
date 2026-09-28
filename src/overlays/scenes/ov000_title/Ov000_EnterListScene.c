@@ -2,6 +2,7 @@
  * objects, surfaces and rows, starts touch sampling and the music, and starts the fade-in. */
 
 #include "nitro/types.h"
+
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

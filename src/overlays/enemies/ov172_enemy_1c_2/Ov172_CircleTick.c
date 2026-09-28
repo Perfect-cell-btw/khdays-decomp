@@ -6,15 +6,16 @@
  * down by the node's +0x2c speed; at zero a roll under 60 (of 101) with a free target
  * (020ccaa0) requests sub-state 8, else 5, and the slot is cleared unless the sub-state stayed
  * idle. `+ (dist - dist)` is the documented copy artifact of RandNextScaled. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern int Ov172_FaceTargetGetClearance(int node, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern int Ov172_FaceTargetGetClearance(int node, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int RandNextScaled(int bound);
 extern int Ov172_IsChildInactive(int node);
 extern int data_02042264;
@@ -22,8 +23,8 @@ extern int data_02042264;
 void Ov172_CircleTick(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 dir;
-    Vec3 side;
+    VecFx32 dir;
+    VecFx32 side;
     int dist;
     int a;
     int b;
@@ -40,11 +41,11 @@ void Ov172_CircleTick(int node)
     if (dist > 0x100) {
         dist = 0x100;
     }
-    ScaleVec3Fx12(dist, &dir, (Vec3 *)(state + 8));
-    VEC_CrossProduct((Vec3 *)&data_02042264, &dir, &side);
+    ScaleVec3Fx12(dist, &dir, (VecFx32 *)(state + 8));
+    VEC_CrossProduct((VecFx32 *)&data_02042264, &dir, &side);
     VEC_Normalize(&side, &side);
     ScaleVec3Fx12(state[0x18] * 0x180, &side, &side);
-    VEC_Add((Vec3 *)(state + 8), &side, (Vec3 *)(state + 8));
+    VEC_Add((VecFx32 *)(state + 8), &side, (VecFx32 *)(state + 8));
     a = *(int *)(state[3] + 0x78);
     b = *(int *)(state[2] + 4);
     diff = a - b;

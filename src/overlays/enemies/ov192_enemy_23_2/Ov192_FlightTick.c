@@ -18,9 +18,10 @@
  * inline sender (allocated after the address-taken queryHit, one triple per call site), with the
  * owner read from the state only after the packing.
  */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct Vec4 { int x, y, z, w; } Vec4;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -38,7 +39,7 @@ struct Zero44 {
 
 struct HitCommand {
     u32 flags00;
-    Vec3 vector04;
+    VecFx32 vector04;
     u32 field10;
     u32 field14;
     void *hit18;
@@ -75,23 +76,23 @@ struct Ov191Actor {
 
 struct Ov191FlightState {
     struct Ov191Actor *pOwner;
-    Vec3 *pPos;
-    Vec3 vStep;
-    Vec3 vDir;
+    VecFx32 *pPos;
+    VecFx32 vStep;
+    VecFx32 vDir;
     int nSpeed;
     int nDist;
     char pad028[0x18];
     int bPartMode;
 };
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_CollectSphereOverlaps(char *item, Vec4 *sphere, struct Ov191Actor **out);
-extern int Ov107_InvokeHitCallback(struct Ov191Actor *hit, struct Ov191Actor *a, char *item, int kind, const Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov191Actor *owner, u16 a, u16 id, Vec3 *pos);
+extern int Ov107_InvokeHitCallback(struct Ov191Actor *hit, struct Ov191Actor *a, char *item, int kind, const VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov191Actor *owner, u16 a, u16 id, VecFx32 *pos);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern struct Ov191Actor *Ov107_FindEntityHitBySphere(struct Ov191Actor *owner, Vec4 *sphere, void *result);
 extern int Ov107_AiState_ApplyHit(struct Ov191Actor *target, int value, struct HitCommand *command);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const PosMsg data_ov192_020d4bac;
 extern const PosMsg data_ov192_020d4bba;
 extern const PosMsg data_ov192_020d4bc8;
@@ -102,7 +103,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov191FlightState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov191FlightState *state, PosMsg *msg, const VecFx32 *src)
 {
     volatile int px;
     volatile int py;

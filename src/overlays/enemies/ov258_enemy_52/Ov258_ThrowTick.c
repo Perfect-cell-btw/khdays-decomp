@@ -3,12 +3,13 @@
  * (0, 15.6, 11.0), the throw sound (+0x58 bank, variant 0x12 with a +0x460 partner else 0x19) and
  * effect 0x2a play there and the actor's +0x428 becomes 7.0. Once the +4 rig is idle the +0x30 timer
  * clears, +0x50 = 1, pose 7 plays and the brain waits on 020cfc20. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov258_SwingHitTest(int *node);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, u16 variant, void *at);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov258_SwingTick(void);
@@ -26,7 +27,7 @@ void Ov258_ThrowTick(int *node)
         state[8] = 0xfa00;
         state[9] = 0xb000;
         Ov107_BuildAndSendUpdate(*state, *(short *)(state + 0x16), *(int *)(*state + 0x460) != 0 ? 0x12 : 0x19, state + 7);
-        func_ov107_020c0b90(*state, 0x2a, *(Vec3 *)(state + 7), 0);
+        func_ov107_020c0b90(*state, 0x2a, *(VecFx32 *)(state + 7), 0);
         *(int *)(*state + 0x428) = 0x7000;
     }
     if (*(u8 *)(state[1] + 0xad) != 0) {

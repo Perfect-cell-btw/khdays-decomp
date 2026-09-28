@@ -1,7 +1,9 @@
 /* Re-read the clip/vector matrix for whichever of the two matrix slots (0x150 / 0x180) is enabled
  * and whose stored owner key (0x148 / 0x14c) matches this node's key: its 0xae byte when flag bit
  * 4 is set, else -1. */
+
 #include "nitro/types.h"
+
 extern void NNS_G3dGetCurrentMtx(void *dst, void *src);
 
 void Ov008_RefreshMatchingMatrices(int node) {

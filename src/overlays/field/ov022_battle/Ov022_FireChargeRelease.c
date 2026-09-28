@@ -7,20 +7,17 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define RELEASE_ID 0xe4a
 #define RELEASE_KIND 0xb
 #define CHARGE_FULL 0xa000
 
-struct Vec3 {
-    int x, y, z;
-};
-
 struct Actor;
 
 struct Request {
     int nId;                     /* 0x00 */
-    struct Vec3 vecOffset;       /* 0x04 */
+    VecFx32 vecOffset;       /* 0x04 */
     int nSpare;                  /* 0x10 */
     int nKind;                   /* 0x14 */
     u8 bFlag;                    /* 0x18 */
@@ -42,7 +39,7 @@ struct Actor {
     struct Charge charge;        /* 0x2770 */
 };
 
-extern const struct Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov022_ReceiveHit(struct Actor *pActor, struct Request *pReq,
                                 int nKind);
 extern void Ov022_EnterState0E(struct Actor *pActor);

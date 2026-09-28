@@ -1,6 +1,7 @@
 /* NitroSDK original assembly (libraries/os/src/os_context.c). */
 
 #include "nitro/types.h"
+
 typedef struct OSContext OSContext;
 
 #define HW_PSR_ARM_STATE             0x0

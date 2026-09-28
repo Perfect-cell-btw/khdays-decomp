@@ -2,17 +2,19 @@
  * While still below obj[0x18]+0x800, re-arm via Ov225_StrikeSweepEntities with mode 2/4 (by the
  * obj[0x1e] flag). Once past it, notify Ov107_PostTagUpdate with mode 0xa/0xe, and when the
  * flag is clear push a shared constant vec (data_02041dc8), then dispatch via SetIndexedSlot. */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern void Ov107_PostTagUpdate(int owner, int mode, int b);
-extern void func_ov107_020c0b90(int owner, int mode, struct vec v, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov225_StrikeSweepEntities(int *obj, int mode, int b);
-extern struct vec data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern void Ov225_DashTick(void);
 void Ov225_ChargeTimerThenFire(int self) {
     int *obj = *(int **)(self + 4);
     int t, flag;
-    *(struct vec *)(obj + 5) = *(struct vec *)(obj + 8);
+    *(VecFx32 *)(obj + 5) = *(VecFx32 *)(obj + 8);
     t = (obj[0x17] += *(int *)(*(int *)self + 0x2c));
     flag = obj[0x1e];
     if (t >= obj[0x18] + 0x800) {

@@ -3,14 +3,15 @@
  * and lies inside the +0x2c..+0x40 box takes reaction 5 (020ca918, push data_02041dc8, 0x18)
  * from the item; the +0x24 timer runs up and past 6.0 sub-state 0 is requested and the node
  * slot released. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int List_First(int list);
 extern int List_Next(int list);
 extern int Ov253_IdIsFree(int item, int hit);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, const Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, const VecFx32 *push, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov253_BoxSweepTick(int *node) {
     int *state = (int *)node[1];

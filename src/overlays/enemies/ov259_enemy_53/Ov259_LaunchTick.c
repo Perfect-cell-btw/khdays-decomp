@@ -3,23 +3,25 @@
  * direction is the rest vector turned by the +0x78 heading and the helper launches from the +0x10
  * point (020d26e0). With the first throw done a d100 roll is drawn, +0x84 = 0x3fc0, the next move is
  * 2 and the node ends. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 
 extern void Ov259_FaceTarget(int *node);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
-extern void Vec3TransformViaTempMtx(Vec3 *out, Quat *q, const Vec3 *in);
-extern void Ov259_LaunchHelper(int helper, Vec3 *pos, Vec3 *dir, int heading);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, Quat *q, const VecFx32 *in);
+extern void Ov259_LaunchHelper(int helper, VecFx32 *pos, VecFx32 *dir, int heading);
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
 
 void Ov259_LaunchTick(int *node)
 {
     int *state = (int *)node[1];
     int expired = 0;
-    Vec3 dir;
+    VecFx32 dir;
     Quat q;
 
     Ov259_FaceTarget(node);
@@ -36,7 +38,7 @@ void Ov259_LaunchTick(int *node)
         if (*(int *)(helper + 0x388) == 0) {
             QuatFromAxisAngle(&q, &data_02042264, state[0x1e]);
             Vec3TransformViaTempMtx(&dir, &q, &data_02042258);
-            Ov259_LaunchHelper(helper, (Vec3 *)state[4], &dir, state[0x1e]);
+            Ov259_LaunchHelper(helper, (VecFx32 *)state[4], &dir, state[0x1e]);
         }
     } else {
         RandNextScaled(0x65);

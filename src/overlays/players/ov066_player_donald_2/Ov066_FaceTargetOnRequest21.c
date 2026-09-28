@@ -1,6 +1,8 @@
 /* State 0x21 handler: sends the attack command for the variant, faces the locked target (turning
  * the display object once) and returns the panel update step. */
 
+#include "nitro/fx.h"
+
 extern void Ov066_PanelUpdate(void);
 extern int Ov022_ValidateTargetRef(int self);
 extern int func_ov022_020ad0c0(int self);
@@ -9,10 +11,8 @@ extern int VEC_Mag(void *v);
 extern void VEC_Normalize(void *a, void *b);
 extern int FX_Atan2(int y, int x);
 
-typedef struct { int x, y, z; } Vec3;
-
 void *Ov066_FaceTargetOnRequest21(int self, int req) {
-    Vec3 d;
+    VecFx32 d;
     void *cb = 0;
     char *blk = (char *)(self + 0xc50);
     int *flag = (int *)(blk + 0x2000);

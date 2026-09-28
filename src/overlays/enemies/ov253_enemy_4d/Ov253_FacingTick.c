@@ -2,17 +2,19 @@
  * heading is steered (0203d040) towards the +0x10 target at the +0x14 rate with the +0x18
  * state and published at the actor's +0x448; its unit direction is dotted against the four
  * data_ov253_020d4910 axes and the best-facing one becomes the actor's +0x451 side. */
-typedef struct { int x, y, z; } Vec3;
-struct Ov253Axes { Vec3 v[4]; };
+
+#include "nitro/fx.h"
+
+struct Ov253Axes { VecFx32 v[4]; };
 
 extern int Angle_TurnToward(int heading, int target, int rate, int *state);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern const struct Ov253Axes data_ov253_020d4910;
 extern const short data_0203d210[];
 
 void Ov253_FacingTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     struct Ov253Axes axes = data_ov253_020d4910;
     int i;
     int best = 0x80000001;

@@ -3,13 +3,9 @@
  * (+0x15c0 / +0x15cc), the walk speed (+0x15d8) cleared, +0x15bc -1 and +0x15b8 1.0, no
  * parent (+0) or children (+0x1a3c); the pending entries (+0x984) are wiped with ids -1 and
  * the whole motion set (+0x538) wiped with frames -1. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023Motion {
     int  nEndFrame;           /* 0x00 */

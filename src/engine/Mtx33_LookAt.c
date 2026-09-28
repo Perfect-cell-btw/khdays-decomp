@@ -1,8 +1,5 @@
-#include "nitro/fx.h"
 
-typedef struct VecFx32 {
-    fx32 x, y, z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct MtxFx33 {
     fx32 _00, _01, _02;

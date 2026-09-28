@@ -7,7 +7,9 @@
  *  - `obj` is declared LAST. Declared first it takes r4 and target r5; the ROM has it
  *    the other way round.
  * tmp[9], not tmp[8], is what makes the frame 0x2c. */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct quat { int x, y, z, w; };
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int index, void *cb);
@@ -16,9 +18,9 @@ extern void Quat_FromMtx33();
 extern void VEC_Subtract();
 extern void VEC_Normalize();
 extern void ScaleVec3Fx12();
-extern void func_ov107_020c0b90(int owner, int mode, struct vec v, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern char data_02042264[];
-extern struct vec data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern void Ov116_DashTick(void);
 
 void Ov116_TrackTargetUntilCharge(int self) {

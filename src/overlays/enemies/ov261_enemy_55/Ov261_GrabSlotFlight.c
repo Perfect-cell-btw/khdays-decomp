@@ -7,28 +7,29 @@
  * the axis-cross-direction, blended back towards the direction beyond 0x1800 and towards its
  * reverse under 0x800 of distance; the +0x3c rate is the frame-time * 30 / 5 and the anchor
  * faces the velocity. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
 
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
-extern int VEC_DotProduct(const struct Vecx32 *a, const struct Vecx32 *b);
-extern void Ov261_SetFacingAnchor(void *anchor, struct Vecx32 *dir, const struct Vecx32 *pos);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void Ov261_SetFacingAnchor(void *anchor, VecFx32 *dir, const VecFx32 *pos);
 extern void Ov015_SpotArrive(int piece, int slot, int carried, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void VEC_CrossProduct(void *a, void *b, void *d);
 extern int FX_Div(int a, int b);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void VEC_Add(void *a, void *b, void *d);
-extern const struct Vecx32 data_02042264;
-extern const struct Vecx32 data_02042258;
-extern const struct Vecx32 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02041dc8;
 
 void Ov261_GrabSlotFlight(int *node)
 {
     int *state = (int *)node[1];
-    struct Vecx32 dir;
-    struct Vecx32 side;
+    VecFx32 dir;
+    VecFx32 side;
     int slot;
     int len;
     int t;
@@ -42,7 +43,7 @@ void Ov261_GrabSlotFlight(int *node)
             t = -t;
         }
         if (t > 0xc00) {
-            *(struct Vecx32 *)(state + 0x1d) = data_02042264;
+            *(VecFx32 *)(state + 0x1d) = data_02042264;
             dir = data_02042258;
             len = 0x800;
         }

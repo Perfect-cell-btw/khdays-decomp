@@ -2,12 +2,7 @@
  * cast from just above the player). */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct Ov022Actor {
     char pad_0000[0x66];

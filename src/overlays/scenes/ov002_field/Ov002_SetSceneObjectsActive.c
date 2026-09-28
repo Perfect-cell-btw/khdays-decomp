@@ -15,6 +15,7 @@
  */
 
 #include "nitro/types.h"
+
 typedef void (*Fn)(int obj, int active);
 
 extern int data_ov002_0207fa20[];

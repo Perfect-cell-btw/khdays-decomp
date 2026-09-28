@@ -5,13 +5,14 @@
  * normalised direction from the actor's anchor (+0x390 +0x14), advance the +0x48 phase by the
  * node's +0x2c speed and, once the actor's +0xad flag is clear, run the setup (020ce710) and
  * hand over to sub-state 2 with the slot cleared. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void Mtx33_LookAt(void *mtx, Vec3 *from, Vec3 *to, void *up);
+#include "nitro/fx.h"
+
+extern void Mtx33_LookAt(void *mtx, VecFx32 *from, VecFx32 *to, void *up);
 extern void Quat_FromMtx33(void *dst, void *mtx);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void Ov180_RunSetupThenSetHw60HighBit0(int rig, int target, Vec3 *dir);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void Ov180_RunSetupThenSetHw60HighBit0(int rig, int target, VecFx32 *dir);
 extern void SetIndexedSlot(int obj, int slot, void *cb);
 extern int data_02042264;
 
@@ -20,7 +21,7 @@ void Ov180_ApproachTick(int node)
     char *actor;
     int *state = *(int **)(node + 4);
     char mtx[0x24];
-    Vec3 dir;
+    VecFx32 dir;
 
     actor = (char *)state[3];
     if (state[0x22] == 0) {
@@ -32,9 +33,9 @@ void Ov180_ApproachTick(int node)
             state[9] += 0x200;
         }
     }
-    Mtx33_LookAt(mtx, (Vec3 *)(actor + 0x74), (Vec3 *)state[2], &data_02042264);
+    Mtx33_LookAt(mtx, (VecFx32 *)(actor + 0x74), (VecFx32 *)state[2], &data_02042264);
     Quat_FromMtx33(state + 0x1d, mtx);
-    VEC_Subtract((Vec3 *)(actor + 0x74), (Vec3 *)(*(int *)(*state + 0x390) + 0x14), &dir);
+    VEC_Subtract((VecFx32 *)(actor + 0x74), (VecFx32 *)(*(int *)(*state + 0x390) + 0x14), &dir);
     VEC_Normalize(&dir, &dir);
     state[0x12] += *(int *)(*(int *)node + 0x2c);
     if (*(unsigned char *)(state[1] + 0xad) == 0) {

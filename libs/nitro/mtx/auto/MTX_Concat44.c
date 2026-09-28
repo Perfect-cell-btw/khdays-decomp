@@ -8,6 +8,7 @@
  * arm9/lib/NitroSDK/src/FX_mtx44.c, which reproduces the same SDK routine.
  * Verified byte-exact against this ROM: 1636 bytes, 0 relocs.
  */
+
 #include "nitro/fx.h"
 
 typedef struct MtxFx44 {

@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* The place request as it goes out over the link.  The leading halfword is
    left alone; the sender fills only what follows. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002PlaceMsg {
     s16 hUnused;                /* 0x00 */
     s16 nWho;                   /* 0x02 */

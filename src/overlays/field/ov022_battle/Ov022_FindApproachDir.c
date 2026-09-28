@@ -13,15 +13,11 @@
  * actor, the sum of the two, normalised, is the answer.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022ActorNode */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ActorNode {
     u8 pad000[0x80];
     u16 nAngle;                  /* 0x080 */

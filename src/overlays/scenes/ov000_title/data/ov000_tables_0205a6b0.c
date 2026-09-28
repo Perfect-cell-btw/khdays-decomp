@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov000_StepMenuSelection (0204d244): const OverlayCountTable data_ov000_0205a6b0; */
+
 #include "nitro/types.h"
 
-/* read by Ov000_StepMenuSelection (0204d244): const OverlayCountTable data_ov000_0205a6b0; */
 const int data_ov000_0205a6b0[3] = {
     2, 2, 2,
 };

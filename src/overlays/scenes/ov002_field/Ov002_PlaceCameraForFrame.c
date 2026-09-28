@@ -1,6 +1,5 @@
-typedef struct {
-    int x, y, z;
-} VecFx32;
+
+#include "nitro/fx.h"
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int QueryActiveStateOrDelegate(void);

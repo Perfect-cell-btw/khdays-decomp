@@ -20,10 +20,11 @@
  * instructions with two registers permuted. Hold the offset the code means,
  * not the encoding.
  */
-typedef struct { int x, y, z; } Vec3;
 
-extern int VEC_Mag(const Vec3 *v);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+#include "nitro/fx.h"
+
+extern int VEC_Mag(const VecFx32 *v);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Atan2(int x, int z);
 extern void Ov030_SetActionAnimation(char *slots, int msg);
 extern unsigned char data_0204c240;
@@ -34,7 +35,7 @@ extern void Ov030_ForwardGlobalCtx2cb0_2(void);
 void *Ov030_HandleMessage(char *self, int msg) {
     void *next = 0;
     char *slots = self + 0x2cb0;
-    Vec3 d;
+    VecFx32 d;
     unsigned short a;
     unsigned int *node;
 
@@ -49,7 +50,7 @@ void *Ov030_HandleMessage(char *self, int msg) {
         (*(void (**)(char *, int))(self + 0x664))(self, 0x1b);
         *(int *)(self + 0x58) = 0;
         if (*(int *)(self + 0x47c) != 0 || *(int *)(self + 0x484) != 0) {
-            d = *(Vec3 *)(self + 0x7c + 0x400);
+            d = *(VecFx32 *)(self + 0x7c + 0x400);
             d.y = 0;
             if (VEC_Mag(&d) != 0) {
                 VEC_Normalize(&d, &d);

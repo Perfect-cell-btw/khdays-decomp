@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Constructor of the ov171 enemy (twins by byte identity). Installs the handlers (+8 release (020cc020): IdTable data_ov171_020ceeac; */
+
 #include "nitro/types.h"
 
-/* read by Constructor of the ov171 enemy (twins by byte identity). Installs the handlers (+8 release (020cc020): IdTable data_ov171_020ceeac; */
 const int data_ov171_020ceeac[3] = {
     1, 2, 4,
 };

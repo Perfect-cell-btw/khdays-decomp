@@ -1,7 +1,9 @@
 /* Finish tick of an ov252 marker: once its +0 part stops animating (+0xad) the owner's (+4) marker
  * mask (+0x57e) toggles the marker's bit (+0x24 index), its +0x778 slot clears and the node ends
  * (0203c640). */
+
 #include "nitro/types.h"
+
 struct Ov252Slots { char pad[0x640]; struct { int handle; int pad; } slot[0x40]; };
 
 extern void Task_MarkFinished(int *node);

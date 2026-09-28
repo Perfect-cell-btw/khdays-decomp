@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by chase tick of the ov231 enemy (x5 with ov232/ov263/ov265/ov280). The +0x18 (020d1150): const Vec3 data_ov232_020d3674; */
+
 #include "nitro/types.h"
 
-/* read by chase tick of the ov231 enemy (x5 with ov232/ov263/ov265/ov280). The +0x18 (020d1150): const Vec3 data_ov232_020d3674; */
 const u8 data_ov232_020d3674[12] = {
     0, 0, 0, 0, 0, 144, 255, 255, 0, 0, 0, 0,
 };

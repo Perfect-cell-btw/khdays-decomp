@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov253_RebuildCarriedLists (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov253_RebuildCarriedLists (not yet decompiled) */
 const int data_ov253_020d4894[13] = {
     1, 2, 3, 4, 5, 6, 7, 8,
     9, 10, 11, 12, 13,

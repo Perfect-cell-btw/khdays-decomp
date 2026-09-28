@@ -15,8 +15,9 @@
  * sets +0x1ae bit 0 and 1.0 of invulnerability, and every fourth bounce requests move 0xc.
  * A damaging hit that is not the 8|0x80/0x80 special flips the +0x50 parity and fires reaction
  * 0x166 with mode 2/3 (bits 1/5) or 0/1 at the +0x38 point. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct HitWord { unsigned int lo : 16, hi : 16; };
 struct Parity { u8 b0 : 1; };
@@ -24,20 +25,20 @@ struct Bits52 { u8 b0 : 1; u8 b1 : 1; };
 typedef struct { int b0 : 1; } Flag1;
 
 extern int Ov107_CalcHitDamage(char *self, unsigned int *hit);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern int VEC_Mag(const Vec3 *v);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern int VEC_Mag(const VecFx32 *v);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void Ov107_BuildAndSendUpdate(char *self, int id, u16 mode, void *at);
 
 int Ov278_MountHitFilter(char *self, int src, unsigned int *hit)
 {
     int *state = *(int **)(self + 0x214);
-    Vec3 away;
-    Vec3 back;
-    Vec3 bounce;
-    Vec3 dir;
+    VecFx32 away;
+    VecFx32 back;
+    VecFx32 bounce;
+    VecFx32 dir;
     int front;
     int rear;
     int frontFree;
@@ -75,7 +76,7 @@ int Ov278_MountHitFilter(char *self, int src, unsigned int *hit)
         }
         *(short *)(self + 0x200 + 0x1a) = limit;
         if (*(short *)(self + 0x200 + 0x1a) == 0) {
-            *(Vec3 *)(*state + 0x190) = *(Vec3 *)(*state + 0xb0);
+            *(VecFx32 *)(*state + 0x190) = *(VecFx32 *)(*state + 0xb0);
             *(u8 *)(*state + 0x1c7) = 3;
         }
     } else if ((!((Flag1 *)(front + 0x3c0))->b0 && !((Flag1 *)(rear + 0x3d4))->b0 && *(u8 *)(*state + 0x3bd) == 0) ||
@@ -151,13 +152,13 @@ int Ov278_MountHitFilter(char *self, int src, unsigned int *hit)
             VEC_Subtract((void *)(src + 0x74), (void *)state[0xd], &dir);
             dir.y = 0;
             VEC_Normalize(&dir, &dir);
-            VEC_Mag((Vec3 *)(state + 0xf));
-            ScaleVec3Fx12(-0x1000, (Vec3 *)(state + 0xf), &back);
+            VEC_Mag((VecFx32 *)(state + 0xf));
+            ScaleVec3Fx12(-0x1000, (VecFx32 *)(state + 0xf), &back);
             ScaleVec3Fx12(VEC_DotProduct(&back, &dir) * 2, &dir, &bounce);
             VEC_Subtract(&bounce, &back, &bounce);
             bounce.y = 0;
-            VEC_Normalize(&bounce, (Vec3 *)(state + 0xf));
-            ScaleVec3Fx12(0x800, (Vec3 *)(state + 0xf), (Vec3 *)(state + 0xf));
+            VEC_Normalize(&bounce, (VecFx32 *)(state + 0xf));
+            ScaleVec3Fx12(0x800, (VecFx32 *)(state + 0xf), (VecFx32 *)(state + 0xf));
             if (*((signed char *)state + 0x53) >= 4) {
                 *((signed char *)state + 0x53) = 0;
                 *(u8 *)(*state + 0x1c7) = 0xc;

@@ -1,6 +1,7 @@
 /* Points each visible reward quad at its item's icon texture. */
 
 #include "nitro/types.h"
+
 typedef struct NNSG3dResFileHeader NNSG3dResFileHeader;
 typedef struct Ov005TextureParams {unsigned int texImageParam,texPlttBase;} Ov005TextureParams;
 typedef struct Ov005MenuQuad {Ov005TextureParams texture;char opaque[0x1c];} Ov005MenuQuad;

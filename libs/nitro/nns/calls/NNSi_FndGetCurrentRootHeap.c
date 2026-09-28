@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 extern u32 *data_0204c058[];

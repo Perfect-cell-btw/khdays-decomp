@@ -8,6 +8,7 @@
  * 0xc4 + 8 * i, x = 0xb0.  The ready word is cleared and the panel marked
  * visible.
  */
+
 #include "nitro/types.h"
 
 #define DIGIT_COUNT   3

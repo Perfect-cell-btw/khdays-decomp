@@ -4,6 +4,7 @@
  * one pointer per listed recipe and fill it with pointers into the recipe
  * records.  The count goes to *pCount; returns the array (0 when empty).
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008RecipeRecord {

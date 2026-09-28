@@ -11,6 +11,7 @@
  * materialises the address of the register the source writes FIRST (the control word)
  * and reaches the reload counter at -2, which is why the control write has to come
  * before the counter write for the addresses to collapse. */
+
 #include "nitro/types.h"
 
 typedef struct OsAlarmState {

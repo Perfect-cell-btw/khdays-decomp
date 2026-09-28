@@ -2,10 +2,10 @@
  * the threshold, binds and rewinds the charge effect's tracks, places it at the character facing
  * its way and marks it active. */
 
+#include "nitro/fx.h"
+
 extern void BindAnimTrack(int a, unsigned short b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, unsigned short b, int c);
-
-typedef struct { int x, y, z; } Vec3;
 
 void Ov036_ApplyChargeLevelOnce(int self, int bit) {
     int *blk = (int *)(self + 0x2c80);
@@ -19,7 +19,7 @@ void Ov036_ApplyChargeLevelOnce(int self, int bit) {
             Anim_SetFrameWrapped((int)blk + 0xc, i, 0);
         }
     }
-    *(Vec3 *)((char *)blk + 0xb0) = *(Vec3 *)(self + 0x8c + 0x400);
+    *(VecFx32 *)((char *)blk + 0xb0) = *(VecFx32 *)(self + 0x8c + 0x400);
     *(unsigned short *)((char *)blk + 0x88) =
         (unsigned short)(*(unsigned short *)(*(int *)(self + 0x20) + 0x80) - 0x8000) + 0x8000;
     *(unsigned short *)((char *)blk + 0xc) |= 0x20;

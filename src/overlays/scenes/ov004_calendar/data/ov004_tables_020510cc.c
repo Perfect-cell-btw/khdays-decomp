@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov004_PrepareTransitionLabel (02050a04): int data_ov004_020510cc[68]; */
+
 #include "nitro/types.h"
 
-/* read by Ov004_PrepareTransitionLabel (02050a04): int data_ov004_020510cc[68]; */
 const int data_ov004_020510cc[68] = {
     0, 7, 8, 9, 10, 11, 12, 13,
     14, 15, 22, 23, 24, 25, 26, 27,

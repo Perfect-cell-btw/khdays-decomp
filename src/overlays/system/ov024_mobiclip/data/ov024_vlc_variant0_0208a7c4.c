@@ -13,6 +13,7 @@
  * takes when the twelve-bit lookup is not enough on its own.
  *
  */
+
 #include "nitro/types.h"
 
 #define VLC(bits, level, run, last)     ((u16)((bits) | ((level) << 4) | ((run) << 9) | ((last) << 15)))

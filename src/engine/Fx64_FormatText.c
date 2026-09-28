@@ -3,6 +3,7 @@
  * pIntText (at least "0"; a 32-bit fast path when it fits) and, when `precision` > 0, the fraction
  * as eight digits (the three nibbles scaled by 1e8 and summed, 1e8 added so leading zeros survive)
  * cut to `precision` characters into pFracText, which is first filled with '0'. */
+
 #include "nitro/types.h"
 
 extern s64 func_020201b8(s64 numerator, s64 denom);   /* 64-bit signed divide */

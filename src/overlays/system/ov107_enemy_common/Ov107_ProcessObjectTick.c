@@ -8,13 +8,9 @@
  * the call site changes address reuse and scheduling in mwccarm.
  * Both external vector constants are in their modules' .rodata sections.
  */
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct {
     int w;

@@ -4,6 +4,7 @@
  * toggling between 0x2000 and 0x8000 over 500 units depending on ctx->field234 -- steps it, and
  * flips field234. Otherwise it samples the current tween value and applies it (>>12, fixed->int)
  * to the widget via ClampToRange0to16At0x4628. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008FadeCtx {

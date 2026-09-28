@@ -1,7 +1,8 @@
 /* Clears the holder link, sets the 0x80 stance flag and clears bit 0. */
 
-struct Vec3_020cf740 { int x, y, z; };
-extern const struct Vec3_020cf740 data_02041dc8;
+#include "nitro/fx.h"
+
+extern const VecFx32 data_02041dc8;
 extern void SetIndexedSlot(int *a, int i, int v);
 extern void Ov283_Item_RestIdleStep(void);
 
@@ -20,7 +21,7 @@ void Ov283_Item_AiEnterRest(int param_1) {
     }
     ((struct node60_020cf740 *)(*(int *)child + 0x60))->hi &= ~1;
 
-    *(struct Vec3_020cf740 *)(child + 8) = data_02041dc8;
+    *(VecFx32 *)(child + 8) = data_02041dc8;
 
     SetIndexedSlot((int *)param_1, *(signed char *)(param_1 + 0x20), (int)&Ov283_Item_RestIdleStep);
 }

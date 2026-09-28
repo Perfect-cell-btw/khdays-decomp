@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Constructor of the ov269 enemy (and its byte-identical twins): installs the handlers (+8 t (020d3844): struct Ov269Vec3 data_ov270_020d6848; */
+
 #include "nitro/types.h"
 
-/* read by Constructor of the ov269 enemy (and its byte-identical twins): installs the handlers (+8 t (020d3844): struct Ov269Vec3 data_ov270_020d6848; */
 const int data_ov270_020d6848[3] = {
     2, 3, 4,
 };

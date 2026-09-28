@@ -5,27 +5,28 @@
  * within 0x1800; the vertical part of the step becomes the vertical speed; without bit 33 an
  * airborne enemy raises bit 46 and clears the speed. Past 0x18000 on the +0x4cc counter, or once
  * in range, it hands over to state 0x22. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
 extern int FX_Atan2(int x, int z);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);         /* ScaleVec3Fx12 */
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);         /* ScaleVec3Fx12 */
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void *Ov022_ActorSetState(char *self, int state);
 extern char *data_ov040_020b4b20;
 extern short data_0203d210[];
 
 void *Ov040_PursuitStep(char *self)
 {
-    Vec3 d;
-    Vec3 step;
-    Vec3 flat;
+    VecFx32 d;
+    VecFx32 step;
+    VecFx32 flat;
     int speed = *(int *)(data_ov040_020b4b20 + 0x2d70);
     int bClose = 0;
     void *next = 0;
@@ -55,7 +56,7 @@ void *Ov040_PursuitStep(char *self)
             step.y = 0;
             step.z = -data_0203d210[idx * 2 + 1];
         } else {
-            VEC_Subtract(func_ov022_020ad0c0(self), (Vec3 *)(self + 0x8c + 0x400), &d);
+            VEC_Subtract(func_ov022_020ad0c0(self), (VecFx32 *)(self + 0x8c + 0x400), &d);
             dist = VEC_Mag(&d);
             if (dist >= 0x1800) {
                 a = (u16)FX_Atan2(-d.x, -d.z);
@@ -87,7 +88,7 @@ void *Ov040_PursuitStep(char *self)
     }
     flat = step;
     flat.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &flat, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &flat, (VecFx32 *)(self + 0x98 + 0x400));
     if (*(int *)(self + 0x4cc) >= 0x18000 || bClose != 0) {
         next = Ov022_ActorSetState(self, 0x22);
     }

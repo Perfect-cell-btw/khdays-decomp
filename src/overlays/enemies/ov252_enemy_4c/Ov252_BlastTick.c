@@ -4,21 +4,23 @@
  * in place once (mode 0x12, +0x88) and a sphere 2.0 ahead of its +0xb0 position (turned by the
  * +0x54 angle) grows from 4.5 to 14.5 and strikes (020ce0a8, kind 3). Once the +4 item's +0xad
  * byte clears poses 0x33 / 0x37 loop and the next move is 0xb (+0xac set, +0xa0 cleared) or 0xd. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 
 extern int Ov252_CheckTarget(int *node, int a, int b);
 extern int Ov252_GuardSweep(int *node);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
-extern void Ov252_TurnVecY(Vec3 *v, int angle, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
+extern void Ov252_TurnVecY(VecFx32 *v, int angle, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov252_ReboundHitTest(int *state, int kind, Sphere *sphere, int a, int b);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_ov252_020d438c;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_ov252_020d438c;
 
 void Ov252_BlastTick(int *node)
 {
@@ -39,10 +41,10 @@ void Ov252_BlastTick(int *node)
             func_ov107_020c0b90(*state, 0x12, data_02041dc8, 0);
         }
         {
-        Vec3 fwd = data_ov252_020d438c;
+        VecFx32 fwd = data_ov252_020d438c;
 
         Ov252_TurnVecY(&fwd, state[0x15], &fwd);
-        VEC_Add((Vec3 *)(*state + 0xb0), &fwd, &blast.pos);
+        VEC_Add((VecFx32 *)(*state + 0xb0), &fwd, &blast.pos);
         blast.radius = 0x4800;
         blast.radius = (state[0x19] - 0x990) * 0xa000 / 0x1c28 + 0x4800;
         Ov252_ReboundHitTest(state, 3, &blast, 0, 0);

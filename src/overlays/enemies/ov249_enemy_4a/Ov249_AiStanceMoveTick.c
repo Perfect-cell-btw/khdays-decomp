@@ -14,11 +14,7 @@
  * degenerates into the Y-rotation steering tail (see codegen-cracks.md for the Q12-radians
  * conversion). */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int m[9];

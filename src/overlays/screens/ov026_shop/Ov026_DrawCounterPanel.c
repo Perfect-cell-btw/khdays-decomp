@@ -18,6 +18,7 @@
  * are locals; the digit rows are a 3 x 3 array and the quantity row is
  * picked as (&aDigit[1])[tab != 1]; the tab test is an int bool.
  */
+
 #include "nitro/types.h"
 
 #define DIGIT_COUNT   3

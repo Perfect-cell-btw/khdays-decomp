@@ -25,6 +25,7 @@
  *
  * ARM.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov002MapScene {

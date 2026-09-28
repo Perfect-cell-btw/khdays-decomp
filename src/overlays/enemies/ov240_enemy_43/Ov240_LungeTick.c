@@ -3,7 +3,9 @@
  * clears, the +0x20 lunge is cut short by a sphere cast and a ray cast of the scene's +0x7c
  * world (scaled to the first hit's +0xc fraction), the actor is placed at the +8 point plus the
  * lunge, animation 5 plays, effect 4 spawns there and the tick hands off to cf208. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 struct CastHit { char pad000[0xc]; int nFraction; };
 
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int b, void *at);

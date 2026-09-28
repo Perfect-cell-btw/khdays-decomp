@@ -7,18 +7,14 @@
  * (GX_Init 0201e1d0).  Mode bit 2 (+0x24, a wireless session) also ends the session
  * (02030788 / ov002 0206d8a0).  Finally the published scene work is cleared and the scene handle
  * (second word of the static block data_ov027_02083ee0) becomes -1. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

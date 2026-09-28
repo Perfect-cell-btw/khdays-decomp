@@ -4,7 +4,9 @@
  * animation resumes (020cd6b0: piece 1 for 0x2f-0x30, 2 for 0x31-0x34, 3 for 0x35-0x38, else 0), and the
  * five body parts (+0x388..+0x398, slots +0x430..+0x4c0) take their level poses (020cd5a8) below 0x2f
  * (only the first at 0x2e). */
+
 #include "nitro/types.h"
+
 typedef struct { u8 b0 : 1; } Bit0;
 typedef struct { char pad0[0xc]; int bound; char pad10[0x14]; } AnimSlot;
 struct Ov252Rig { char pad[0x3a0]; AnimSlot slots[4]; };

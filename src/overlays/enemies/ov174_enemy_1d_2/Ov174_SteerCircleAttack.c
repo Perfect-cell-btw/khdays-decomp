@@ -7,7 +7,9 @@
  * Matched byte-exact 2026-07-23. Two things beyond the arithmetic: `sub` has to be declared
  * BEFORE `state` to colour r4/r5 the way the ROM does, and the 0x24-byte matrix has to be
  * declared before the 3-word vector so the frame comes out as sp+0xc / sp+0. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } MtxFx33;
 
 extern void Mtx33_LookAt(void *out, void *a, int b, VecFx32 *c);

@@ -10,10 +10,11 @@
  * overlay's hit message with the +8 position, reaction 0x14f mode 5, sub-state 0 and the slot
  * released. Past 0xf000 on the clock the end message goes out with reaction 0x14f mode 6,
  * sub-state 0 and the slot released. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -38,8 +39,8 @@ struct Quat { int x, y, z, w; };
 struct Ov151ShotState {
     struct Ov151Owner *pOwner;  /* +0x00 */
     int pTarget;                /* +0x04 */
-    Vec3 *pPos;                 /* +0x08 */
-    Vec3 vVelocity;             /* +0x0c */
+    VecFx32 *pPos;                 /* +0x08 */
+    VecFx32 vVelocity;             /* +0x0c */
     struct Quat qOrient;        /* +0x18 */
     int nSpeed;                 /* +0x28 */
     int nWallTimer;             /* +0x2c */
@@ -48,20 +49,20 @@ struct Ov151ShotState {
     int nClock;                 /* +0x38 */
 };
 
-extern void Vec3TransformViaTempMtx(Vec3 *dst, struct Quat *quat, const Vec3 *src);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, struct Quat *quat, const VecFx32 *src);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov107_FindNearestObject(struct Ov151Owner *owner, int mode);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void Quat_FromTwoVectors(struct Quat *out, const Vec3 *forward, Vec3 *direction);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void Quat_FromTwoVectors(struct Quat *out, const VecFx32 *forward, VecFx32 *direction);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void Quat_Slerp(struct Quat *out, int t, struct Quat *from, struct Quat *to);
 extern void Vec4_Normalize(struct Quat *out, struct Quat *in);
-extern int Ov107_CollectSphereOverlaps(void *item, Vec3 *sphere, int *out);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov151Owner *a, void *item, int kind, const Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov151Owner *owner, int a, int id, Vec3 *at);
+extern int Ov107_CollectSphereOverlaps(void *item, VecFx32 *sphere, int *out);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov151Owner *a, void *item, int kind, const VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov151Owner *owner, int a, int id, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern const PosMsg data_ov152_020d647c;
 extern const PosMsg data_ov152_020d64a6;
 
@@ -73,7 +74,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov151ShotState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov151ShotState *state, PosMsg *msg, const VecFx32 *src)
 {
     FxVec vDead;
     vDead.x = *(Fx32 *)&src->x;
@@ -88,7 +89,7 @@ static inline void SendPos(struct Ov151ShotState *state, PosMsg *msg, const Vec3
 }
 
 /* Reflect the forward vector about the unit normal n and re-aim the orientation. */
-static inline void Bounce(struct Ov151ShotState *state, Vec3 *fwd, Vec3 *n, Vec3 *back, Vec3 *refl)
+static inline void Bounce(struct Ov151ShotState *state, VecFx32 *fwd, VecFx32 *n, VecFx32 *back, VecFx32 *refl)
 {
     ScaleVec3Fx12(-0x1000, fwd, back);
     ScaleVec3Fx12(VEC_DotProduct(back, n) << 1, n, refl);
@@ -101,13 +102,13 @@ void Ov152_ShotTick(int *node)
 {
     struct Ov151Owner *owner;
     struct Ov151ShotState *state = (struct Ov151ShotState *)node[1];
-    Vec3 fwd;
-    Vec3 back;
-    Vec3 refl;
+    VecFx32 fwd;
+    VecFx32 back;
+    VecFx32 refl;
     struct Quat want;
-    Vec3 d;
+    VecFx32 d;
     int hits[4];
-    Vec3 push;
+    VecFx32 push;
     PosMsg msg;
     PosMsg endMsg;
     struct Ov151Owner *actor;
@@ -134,7 +135,7 @@ void Ov152_ShotTick(int *node)
     if (state->nWallTimer <= 0) {
         actor = state->pOwner;
         if (((struct Bits17a *)((char *)actor + 0x17a))->bit1 != 0) {
-            Bounce(state, &fwd, (Vec3 *)((char *)actor + 0x114), &back, &refl);
+            Bounce(state, &fwd, (VecFx32 *)((char *)actor + 0x114), &back, &refl);
             state->nWallTimer = 0x200;
         }
     }
@@ -144,12 +145,12 @@ void Ov152_ShotTick(int *node)
     if (state->nFloorTimer <= 0) {
         actor = state->pOwner;
         if (((struct Bits17a *)((char *)actor + 0x17a))->bit0 != 0) {
-            Bounce(state, &fwd, (Vec3 *)((char *)actor + 0x124), &back, &refl);
+            Bounce(state, &fwd, (VecFx32 *)((char *)actor + 0x124), &back, &refl);
             state->nFloorTimer = 0x200;
         }
     }
     owner = state->pOwner;
-    n = Ov107_CollectSphereOverlaps(*(void **)((char *)owner + 0x38c), (Vec3 *)((char *)owner + 0x74), hits);
+    n = Ov107_CollectSphereOverlaps(*(void **)((char *)owner + 0x38c), (VecFx32 *)((char *)owner + 0x74), hits);
     for (i = 0; i < n; i++) {
         VEC_Subtract((void *)(hits[i] + 0x74), (char *)owner + 0x74, &push);
         VEC_Normalize(&push, &push);

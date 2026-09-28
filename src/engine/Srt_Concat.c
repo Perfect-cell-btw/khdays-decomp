@@ -5,9 +5,9 @@
  * rotated by the parent (Vec3TransformViaTempMtx), scaled and offset, and the scales multiply. Otherwise
  * both sides become scaled rotation matrices, the product sets the rotation/scale (Node_SetRotationFromMtx)
  * and the child's translation goes through the parent matrix. */
+
 #include "nitro/fx.h"
 
-typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 w, x, y, z; } Quat;
 typedef struct { fx32 m[9]; } MtxFx33;
 

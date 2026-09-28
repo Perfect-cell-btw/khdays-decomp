@@ -3,17 +3,19 @@
  * and a per-band flag read from a table by the progress band ((+0x7b0 - 0x9000) / 0x3000, 15
  * bands, wrapping to 0). While the shared rig's +0x2cd4 flag is clear one event is pushed from
  * the single-row table; once it is set both anchors get one, each from its own row. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int v[15]; } Ov039BandRow;
 
-extern void Ov039_GetAttackAnchor(char *self, int side, Vec3 *out);              /* Ov039_GetAttackAnchor */
-extern void Ov022_MarshalNetworkRecord(char *self, int event, Vec3 *pos, int range, int angle, int flag);
+extern void Ov039_GetAttackAnchor(char *self, int side, VecFx32 *out);              /* Ov039_GetAttackAnchor */
+extern void Ov022_MarshalNetworkRecord(char *self, int event, VecFx32 *pos, int range, int angle, int flag);
 extern char *data_ov039_020b5600;
 extern const Ov039BandRow data_ov039_020b53c8;      /* the single-anchor per-band flags */
 
 void Ov039_PushAttackEvents(char *self)
 {
-    Vec3 vAnchor;
+    VecFx32 vAnchor;
     char *rig = data_ov039_020b5600 + 0xd4 + 0x2c00;
     int band;
     int angle;

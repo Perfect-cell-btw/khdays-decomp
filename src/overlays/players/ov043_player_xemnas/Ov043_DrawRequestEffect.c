@@ -4,13 +4,9 @@
  * a pitch whenever it has a vertical one, each concatenated onto an identity. The result goes
  * into the global orientation matrix, the camera's two targets are set from the effect's scale
  * and position, and the model is submitted. */
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Effect {
     u8 pad0000;

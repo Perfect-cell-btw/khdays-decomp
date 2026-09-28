@@ -2,20 +2,21 @@
  * quaternion from the direction from the position to the target point (the shared forward
  * vector when degenerate), with its vertical component clamped to [-0x800, 0x800] and
  * renormalised, through the zero-origin look-at matrix. */
-struct Vecx32 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
-extern void Mtx33_LookAt(int *out, struct Vecx32 *dir, const struct Vecx32 *origin, const struct Vecx32 *up);
+extern void Mtx33_LookAt(int *out, VecFx32 *dir, const VecFx32 *origin, const VecFx32 *up);
 extern void Quat_FromMtx33(int *quat, int *mtx);
-extern const struct Vecx32 data_02042258;
-extern const struct Vecx32 data_02041dc8;
-extern const struct Vecx32 data_02042264;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
 
-void Ov262_SetFacingAnchor(int *anchor, struct Vecx32 *target, struct Vecx32 *pos)
+void Ov262_SetFacingAnchor(int *anchor, VecFx32 *target, VecFx32 *pos)
 {
     int mtx[9];
-    struct Vecx32 dir;
+    VecFx32 dir;
     int y;
 
     VEC_Subtract(target, pos, &dir);

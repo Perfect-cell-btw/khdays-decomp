@@ -1,12 +1,9 @@
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
 
 /* Hit report filled in here and handed to the victim's hit callback. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct HitInfo {
     int flags;          /* +0x00 */
     VecFx32 vPush;      /* +0x04 */

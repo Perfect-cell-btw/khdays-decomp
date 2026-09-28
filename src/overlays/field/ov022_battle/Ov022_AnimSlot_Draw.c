@@ -1,12 +1,7 @@
 /* Draws an animation slot: its model (with polygon id) or its command block at its transform. */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct MtxFx33 {
     int value[9];

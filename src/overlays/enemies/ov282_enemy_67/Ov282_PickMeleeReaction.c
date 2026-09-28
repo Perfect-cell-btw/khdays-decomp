@@ -8,7 +8,9 @@
  * state[9]=state[10]=heading, hand off to 020d10e8. No target (state[8]==0, out-of-line tail): fire
  * attack 2 and hand off to 020d10e8.
  */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct b17a { unsigned char b0 : 1; };
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern void Vec3TransformViaTempMtx(void *dst, void *src, void *m);
@@ -21,8 +23,8 @@ extern int  data_02042258;
 
 void Ov282_PickMeleeReaction(int self) {
     int *state = *(int **)(self + 4);
-    struct vec w;
-    struct vec v;
+    VecFx32 w;
+    VecFx32 v;
     int a;
 
     if (state[8] != 0) {

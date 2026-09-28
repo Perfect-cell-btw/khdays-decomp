@@ -5,14 +5,15 @@
  * two other (3) +0x390 parts (Ov201_SetNodeActiveState) and start reaction 0x157 mode 7 on the +0xa0 pose
  * into +0x3b0, slots 2/4 disable them again; slots 5/6 start modes 4/5 (looping) into +0x3b4/
  * +0x3b8. The base hook always runs. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 struct Pair { int res; int handle; };
 
 extern void SrtTransform_SetIdentity(SrtTransform *t);
-extern void Srt_SetTranslation(SrtTransform *t, const Vec3 *pos);
+extern void Srt_SetTranslation(SrtTransform *t, const VecFx32 *pos);
 extern void Srt_SetScaleUniform(SrtTransform *t, int scale);
 extern int Ov107_CreateNodeXformTask(int model, int res, int kind, int zero, SrtTransform *t);
 extern int FindListEntryByField1c(int model, int handle);
@@ -23,7 +24,7 @@ extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 void Ov201_OnEffectMessage(char *self, u8 *msg, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         u8 bytes[12];

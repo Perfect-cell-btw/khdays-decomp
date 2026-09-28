@@ -12,6 +12,7 @@
  * conversion node keeps &pick out of the outer loop's invariants (the ROM
  * recomputes it for the first call and hoists it only over the inner loop).
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008ItemRing {

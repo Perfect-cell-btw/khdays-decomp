@@ -6,23 +6,25 @@
  * +0xad byte clears +0x78 is cleared, move 0xb is prepared (020cd920), the +0x3c grip becomes
  * 8.0 (rider) or 15.0 and the next move is 4. Otherwise, before 0x2000, every 0x580 of the +0x40
  * countdown knocks the actor back in place again. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov254_KnockbackAtFeet(int actor, int side);
 extern void Ov254_ForwardToAiIfReady_8(int helper);
 extern void Ov254_ForwardToAiIfReady_9(int helper);
 extern void Ov254_ForwardToAiIfReady(int partner);
 extern void Ov254_SendCommand0d(int *self, int arg);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
@@ -35,8 +37,8 @@ void Ov254_CarryTick(int *node)
     state[0x11] += *(int *)(node[0] + 0x2c);
     idx = ANG2IDX(state[0xc]);
     MTX_RotY33_(&m, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x430) + 0x2c), &m, (Vec3 *)(state + 3));
-    ScaleVec3Fx12(FX_Div(state[0x15], 0x14000), (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x430) + 0x2c), &m, (VecFx32 *)(state + 3));
+    ScaleVec3Fx12(FX_Div(state[0x15], 0x14000), (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     if ((*((u8 *)state + 0x70) & 1) == 0 && state[0x11] >= 0xff0) {
         *((u8 *)state + 0x70) |= 1;
         Ov254_KnockbackAtFeet(*state, 1);

@@ -4,6 +4,7 @@
  * three ready bits and returns them. */
 
 #include "nitro/types.h"
+
 struct GridEntry;
 struct PartBlock { int header; u16 flags; };
 struct Model { u8 pad00[0x28]; u16 flags; };

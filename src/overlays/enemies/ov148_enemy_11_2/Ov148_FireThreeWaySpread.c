@@ -13,7 +13,7 @@
  * TWO CODEGEN POINTS, both about things that look like scheduling and are not:
  *  - DECLARATION ORDER sets the stack layout.  The ROM has the direction at sp+0 and the
  *    quaternion at sp+0xc; mwcc gives the LOWER address to the LATER declaration, so the
- *    Xform must be declared before the Vec3.  Declared the other way the whole frame is
+ *    Xform must be declared before the VecFx32.  Declared the other way the whole frame is
  *    mirrored and every access offset is wrong.
  *  - the node index must stay a displacement: `(char *)*self + i * sizeof(int)` with the
  *    +0x398 applied at the access.  Folding the base in as `((int *)(*self + 0x398))[i]`
@@ -21,18 +21,20 @@
  *    `add r0, r0, r4, lsl #2`), which spills into an EIGHTH callee-saved register and an
  *    extra push -- 12 bytes.  Same lever as the Tally families.
  */
+
+#include "nitro/fx.h"
+
 typedef struct { int v[4]; } Xform;
-typedef struct { int x, y, z; } Vec3;
 
 extern void QuatFromAxisAngle(Xform *out, const Xform *src, int angle);
-extern void Vec3TransformViaTempMtx(Vec3 *dst, const Xform *x, const Vec3 *src);
-extern void Ov148_RunPreDispatchHook(int node, int arg, Vec3 *dir);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, const Xform *x, const VecFx32 *src);
+extern void Ov148_RunPreDispatchHook(int node, int arg, VecFx32 *dir);
 extern Xform data_02042264;
 extern const short data_0203d210[];
 
 void Ov148_FireThreeWaySpread(int *self, int height, int arg) {
     Xform rot;
-    Vec3 dir;
+    VecFx32 dir;
     int i;
     int idx;
 

@@ -9,6 +9,7 @@
  * both palettes to 0 (MIi_CpuClearFast), the sprite layer reset (02010f08, 02010e80 3 / 1,
  * 0201133c, 02011174 with 0x4000 in a session or 0x8000 otherwise), the LCD enabled
  * (POWCNT bit 15) and the game mode set to 0 (02023c30). */
+
 #include "nitro/types.h"
 
 static volatile u32 *const REG_DISPCNT = (volatile u32 *)0x04000000;

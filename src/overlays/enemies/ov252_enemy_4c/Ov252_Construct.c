@@ -10,14 +10,16 @@
  * sphere pairs (8.0 / 4.0) and two boxes (13.0 / 8.0 by 15.0), each on the +0x22c (+0x4e8) and +0x144
  * (+0x50c) lists. Finally arms the +0x504 / +0x508 volumes, shows the four armour pieces (020cc134)
  * and loads sound 0x148. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
 typedef struct { int min[3]; int max[3]; } Bounds;
 typedef struct { int id[49]; } PartPoses;
-typedef struct { Vec3 pos; int radius; } Sphere;
-typedef struct { Vec3 pos; Vec3 axis; int w; int radius; } Capsule;
-typedef struct { Vec3 pos; Vec3 a; Vec3 b; Vec3 c; int w0; int w1; int w2; } Box;
+typedef struct { VecFx32 pos; int radius; } Sphere;
+typedef struct { VecFx32 pos; VecFx32 axis; int w; int radius; } Capsule;
+typedef struct { VecFx32 pos; VecFx32 a; VecFx32 b; VecFx32 c; int w0; int w1; int w2; } Box;
 struct w8 { unsigned int lo : 8, rest : 24; };
 struct Ov252Track { char pad[0x88]; int track; };
 struct Ov252Part { int item; int pad; };
@@ -63,10 +65,10 @@ extern const char data_ov252_020d45b4[];
 extern const char data_ov252_020d45c0[];
 extern const char data_ov252_020d45cc[];
 extern const char data_ov252_020d45d8[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
 
 void Ov252_Construct(char *self)
 {

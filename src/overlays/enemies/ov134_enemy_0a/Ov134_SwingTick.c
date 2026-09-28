@@ -9,11 +9,12 @@
  * Codegen: the victim position is a plain stack copy (`raw`, y raised in place) and each
  * component is packed through an Fx32 wrapper copy taken right before its bytes (the three
  * unread word stores are the ROM's); this is what puts x/y+0x800/z in r1/r2/ip. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
-struct Vec3i { int x, y, z; };
 typedef struct { int x, y, z, w; } Quat;
 
 struct Sphere {
@@ -72,7 +73,7 @@ void Ov134_SwingTick(struct Node *node)
     FxVec vLocal;
     void *aVictims[4];
     struct Sphere shape;
-    struct Vec3i raw;
+    VecFx32 raw;
     struct Msg msg;
     struct Msg tmpl;
     FxVec vContact;
@@ -99,7 +100,7 @@ void Ov134_SwingTick(struct Node *node)
             if (((st->uHitMask41 >> *(u8 *)((char *)aVictims[i] + 0x1b4)) & 1) == 0 &&
                 Ov107_InvokeHitCallback(aVictims[i], st->pActor, st->pActor, 1, &st->vVelocity, 0) != 0) {
                 msg = tmpl;
-                raw = *(struct Vec3i *)((char *)aVictims[i] + 0x74);
+                raw = *(VecFx32 *)((char *)aVictims[i] + 0x74);
                 raw.y += 0x800;
                 vContact.x = *(Fx32 *)&raw.x;
                 ((u8 *)&msg)[5] = (u8)(((u32)vContact.x.value >> 16 & 0x7f) |

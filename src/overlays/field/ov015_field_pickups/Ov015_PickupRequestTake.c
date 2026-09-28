@@ -2,6 +2,7 @@
  * == 0): unless a panel is open (ov002 020573cc), send a take request (kind 0x10: type 1
  * plus the toucher's player byte) through ov002 020766e0 and, once it is accepted, move
  * the pickup to the "requested" state (+0x14c = 1).  Always returns 0 (no hit consumed). */
+
 #include "nitro/types.h"
 
 extern int Ov002_Hud_IsPanelOpen(void);                                 /* a panel is open */

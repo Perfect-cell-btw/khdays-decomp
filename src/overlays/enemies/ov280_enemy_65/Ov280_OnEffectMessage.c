@@ -3,7 +3,9 @@
  * (slot 0) or 1 and weight 0x2908 / 0x1119; the other slots first finish the pending slot-6 effect
  * and then anchor on the +0x3dc point with kind 0x15 (slot 4) or 5, looping for slot 6. The base
  * hook always runs. */
+
 #include "nitro/types.h"
+
 struct Pair { void *res; void *handle; };
 
 extern int FX_Div(int num, int den);

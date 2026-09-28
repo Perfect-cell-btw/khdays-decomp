@@ -8,6 +8,7 @@
  * Each input byte yields two samples, packed low half first into one output
  * word, so the caller gets a stereo-shaped pair per byte.
  */
+
 #include "nitro/types.h"
 
 #define INDEX_MAX   0x58

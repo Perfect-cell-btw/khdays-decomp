@@ -5,9 +5,11 @@
  * by value, 0). Spawn via 020c5af8(state[0], 0, 0x49, state[3]). Clear state[0xb] = 0, hand off to the
  * 020d362c state.
  */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct b8 { unsigned f : 8; };
-extern void func_ov107_020c0b90(int obj, int mode, struct vec3 v, int flag);
+extern void func_ov107_020c0b90(int obj, int mode, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov208_WaitThenSetFlagsAndAdvance(void);
@@ -28,7 +30,7 @@ void Ov208_SpawnEffect49KickMotion(int *self) {
     h = *hw;
     /* hw60.hi |= 0x40 */
     *hw = h & ~0xff00 | (((((unsigned int)h << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10);
-    func_ov107_020c0b90(*state, 0, *(struct vec3 *)state[3], 0);
+    func_ov107_020c0b90(*state, 0, *(VecFx32 *)state[3], 0);
     Ov107_BuildAndSendUpdate(*state, 0, 0x49, state[3]);
     state[0xb] = 0;
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov208_WaitThenSetFlagsAndAdvance);

@@ -5,6 +5,7 @@
  * Codegen: the value parameter is declared s16 here so the field load is
  * evaluated before the id / width constants (mwcc argument order).
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008SelCtx {

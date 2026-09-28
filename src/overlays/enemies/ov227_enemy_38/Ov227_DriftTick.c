@@ -4,16 +4,18 @@
  * the tick ends. Every 2.0 of the timer the velocity is re-aimed at 0.75 towards a point jittered
  * by up to 4.0 around the +8 target's +0x190, the timer and the +0x28 hit mask clear and the tick
  * hands over to Ov227_RockFlightTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov227_HitSweep(int *part, void *sphere);
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int RandNextScaled(int n);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov227_RockFlightTick(int *node);
 
 static inline int RandRange(int lo, int hi)
@@ -29,13 +31,13 @@ static inline int RandRange(int lo, int hi)
 void Ov227_DriftTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 goal;
+    VecFx32 goal;
 
     state[9] += *(int *)(*node + 0x2c);
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x80;
-    ScaleVec3Fx12(0xf85, (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+    ScaleVec3Fx12(0xf85, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     if (Ov227_HitSweep(state, (void *)(*state + 0x74)) != 0) {
-        func_ov107_020c0b90(*state, 0, *(Vec3 *)(*state + 0x74), 1);
+        func_ov107_020c0b90(*state, 0, *(VecFx32 *)(*state + 0x74), 1);
         *(unsigned char *)(*state + 0x1c7) = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
@@ -43,12 +45,12 @@ void Ov227_DriftTick(int *node)
     if (state[9] < 0x2000) {
         return;
     }
-    goal = *(Vec3 *)(state[2] + 0x190);
+    goal = *(VecFx32 *)(state[2] + 0x190);
     goal.x += RandRange(-0x4000, 0x4000);
     goal.z += RandRange(-0x4000, 0x4000);
-    VEC_Subtract(&goal, (void *)state[1], (Vec3 *)(state + 3));
-    VEC_Normalize((Vec3 *)(state + 3), (Vec3 *)(state + 3));
-    ScaleVec3Fx12(0xc00, (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+    VEC_Subtract(&goal, (void *)state[1], (VecFx32 *)(state + 3));
+    VEC_Normalize((VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
+    ScaleVec3Fx12(0xc00, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     state[9] = 0;
     *(unsigned char *)(state + 10) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov227_RockFlightTick);

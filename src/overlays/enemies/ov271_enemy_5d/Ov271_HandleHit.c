@@ -6,14 +6,14 @@
  * (and a 0x2000 one also raises +0x68). A damaging hit that is not the 8/0x80/kind-0x80 kind
  * fires reaction 0x161 with the +0x58 bit-0 side's mode from the overlay's hurt (bits 1/5) or
  * idle pair at the +0x48 point, then flips the side. */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov271ActionState {
     int pOwner;
     char pad004[0x14];
-    struct Vec3 vHit;
+    VecFx32 vHit;
     char pad024[0x24];
     void *pPos;
     char pad04c[8];
@@ -26,7 +26,7 @@ struct Ov271ActionState {
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     char pad010[0x10];
     unsigned int uMode20;
     unsigned int uResultLo : 16;

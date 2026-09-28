@@ -1,7 +1,8 @@
 /* Slows the drift; once the ready flag is set plays the held-item anim 3 and anim 4 and installs
  * the next step. */
 
-struct vec3i { int x, y, z; };
+#include "nitro/fx.h"
+
 struct Flags17a { char pad[0x17a]; unsigned char ready : 1; };
 
 extern void ScaleVec3Fx12(int factor, void *src, void *dst);
@@ -14,7 +15,7 @@ void Ov297_AiDecelerateUntilReady(int this_) {
     int node = *(int *)(this_ + 4);
     void *v = (void *)(node + 0x1c);
 
-    *(struct vec3i *)(node + 0x10) = *(struct vec3i *)v;
+    *(VecFx32 *)(node + 0x10) = *(VecFx32 *)v;
     *(int *)(node + 0x14) = *(int *)(node + 0x4c);
     *(int *)(node + 0x4c) = *(int *)(node + 0x4c) - 0x80;
     ScaleVec3Fx12(0xe00, v, v);

@@ -6,6 +6,7 @@
  * characters at offset 0x4f40, frees the temp resource, and attaches a descriptor
  * (data_ov008_02090b58) to the cell-list context. Character-block layout matches the loader family
  * (size at +0x10, data at +0x14). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;

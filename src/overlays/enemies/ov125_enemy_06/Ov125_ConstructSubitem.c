@@ -1,12 +1,12 @@
 /* Ov125_ConstructSubitem: sub-item constructor of the ov125 enemy (four handlers, speed 0x200,
  * capsule 0x1000/0x200 on the data_02041dc8 / data_02042240 axes). */
-#include "nitro/types.h"
 
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct {
-    Vec3 vPos;
-    Vec3 vUp;
+    VecFx32 vPos;
+    VecFx32 vUp;
     int nRadius;
     int nHeight;
 } Capsule;
@@ -51,8 +51,8 @@ extern void Ov125_OnDespawn(void);
 extern void Ov125_TickAndSyncModelXform(void);
 extern void Ov125_CreateAiTask_2(void);
 extern void Ov125_HandleBounce(void);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042240;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042240;
 
 void Ov125_ConstructSubitem(Ov125Object *self) {
     Capsule req;

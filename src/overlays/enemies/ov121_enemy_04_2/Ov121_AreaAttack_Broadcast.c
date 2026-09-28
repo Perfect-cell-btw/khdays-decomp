@@ -38,15 +38,16 @@
  *    original's coordinate type. Copying a wrapped value is a struct copy, which mwcc keeps, and
  *    that is the ROM's unread stack copy of the body position.
  */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 struct Ov120AreaMsg { u16 h[7]; };
 struct Ov120AreaOpener { u16 h[2]; };
 struct Ov120AreaMsgPair { struct Ov120AreaOpener aOpener; struct Ov120AreaMsg aTemplate; };
-struct Ov107SweepQuery { struct Vec3 vPos; int nRadius; };
+struct Ov107SweepQuery { VecFx32 vPos; int nRadius; };
 
 struct Ov120Actor {
     char pad000[0x24];
@@ -84,12 +85,12 @@ struct Ov120ActionNode {
 };
 
 extern struct Ov120AreaOpener data_ov121_020cfd10;
-extern struct Vec3 data_02042258;
+extern VecFx32 data_02042258;
 extern struct Ov120AreaMsg data_ov121_020cfd14;
 
 extern int Ov107_CollectSphereOverlaps(struct Ov120Actor *owner, void *query, void *results);
 extern void VEC_Subtract(void *a, void *b, void *out);
-extern int VEC_Normalize(struct Vec3 *v, struct Vec3 *unit);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern int Ov107_InvokeHitCallback(int ent, struct Ov120Actor *a, struct Ov120Actor *b, int mode,
                                void *dir, int flag);
@@ -101,9 +102,9 @@ void Ov121_AreaAttack_Broadcast(struct Ov120ActionNode *node)
 {
     int results[4];
     struct Ov107SweepQuery query;
-    struct Vec3 dir;
+    VecFx32 dir;
     struct Ov120AreaMsg msg;
-    struct Vec3 fwd;
+    VecFx32 fwd;
     struct Ov120AreaMsgPair pair;
     FxVec vDead;
     struct Ov120ActionState *state;
@@ -121,7 +122,7 @@ void Ov121_AreaAttack_Broadcast(struct Ov120ActionNode *node)
         state->bOneShot4c = 1;
     }
     if (state->nElapsed40 >= 0x555) {
-        query.vPos = *(struct Vec3 *)(state->pOwner->pBody390 + 5);
+        query.vPos = *(VecFx32 *)(state->pOwner->pBody390 + 5);
         query.nRadius = 0x300;
         count = Ov107_CollectSphereOverlaps(state->pOwner, &query, results);
         i = 0;

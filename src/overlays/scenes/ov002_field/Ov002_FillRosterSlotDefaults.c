@@ -18,18 +18,14 @@
  * Declaring that callee as taking no argument compiles to the same instructions in a different
  * order and with every prologue register shifted down one, which is a ten-byte difference.
  *
- * Ghidra carries this as Ov002_FillRosterSlotDefaults over Ov002RosterSlot and Vec3.
+ * Ghidra carries this as Ov002_FillRosterSlotDefaults over Ov002RosterSlot and VecFx32.
  */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
 extern char *data_ov002_0207fa00;
 extern unsigned char data_0204c240;
-extern Vec3 *func_ov022_020881f8(int index);
+extern VecFx32 *func_ov022_020881f8(int index);
 extern int func_ov022_02088254(int index);
 extern int Ov022_GetEntryField66(int index);
 extern void Ov002_ReadRosterSeat(int seatId, int *unused, void *out);
@@ -37,9 +33,9 @@ extern void Save_StoreSlotTables(void);
 
 void Ov002_FillRosterSlotDefaults(int index) {
     int *slot = (int *)(*(char **)(data_ov002_0207fa00 + 0x8bd0) + index * 0x44);
-    Vec3 *defaultVec = func_ov022_020881f8(index);
+    VecFx32 *defaultVec = func_ov022_020881f8(index);
 
-    *(Vec3 *)slot = *defaultVec;
+    *(VecFx32 *)slot = *defaultVec;
     slot[3] = func_ov022_02088254(index);
     Ov002_ReadRosterSeat(Ov022_GetEntryField66(index), 0, slot + 4);
 

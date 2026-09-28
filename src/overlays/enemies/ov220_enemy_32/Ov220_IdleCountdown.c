@@ -2,6 +2,7 @@
  * percentage is rolled, the timer is re-rolled to +0x224 + rand(|+0x228 - +0x224| + 1), a caller
  * distance of 0x6000 or more forces sub-state 5 and one above 0x3800 picks sub-state 5 (roll
  * below 75) or 7; the call reports 1 when a sub-state is pending. */
+
 #include "nitro/types.h"
 
 extern int RandNextScaled(int bound);

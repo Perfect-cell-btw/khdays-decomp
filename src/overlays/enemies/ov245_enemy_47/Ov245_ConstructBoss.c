@@ -9,12 +9,14 @@
  * 4.75 x 2) shaping two placements (+0x3b4 on the +0x22c list, +0x3b8 on +0x144), registers
  * the +0x458 spawner (kind 4), nine +0x3fc slots (020ce87c), three +0x420 parts (020cf284), three
  * +0x43c riders (020d54f0), the four +0x42c..+0x438 helpers and loads sound 0x15a. */
-typedef struct { int x, y, z; } Vec3;
-typedef void (*Callback)(void);
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef void (*Callback)(void);
 struct Flags5c { int bit0 : 1; };
 struct Ov245Track { char pad[0x88]; int track; };
-struct Ov245Query { Vec3 pos; Vec3 a; Vec3 b; Vec3 c; int w0; int w1; int w2; };
+struct Ov245Query { VecFx32 pos; VecFx32 a; VecFx32 b; VecFx32 c; int w0; int w1; int w2; };
 struct Ov245Boss {
     char pad[0x388];
     int items[2];          /* 0x388 */
@@ -60,10 +62,10 @@ extern const char data_ov245_020d71f4[];
 extern const char data_ov245_020d7200[];
 extern const char data_ov245_020d720c[];
 extern const char data_ov245_020d7218[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
 
 void Ov245_ConstructBoss(int selfArg) {
     char *self = (char *)selfArg;   /* codegen: the local copy keeps the query-block copies and address temps in ROM order */
@@ -114,10 +116,10 @@ void Ov245_ConstructBoss(int selfArg) {
     *(int *)(item + 0x5c) |= 2;
     *(int *)(self + 0x4c8) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0xd), data_ov245_020d7218);
     *(int *)(self + 0x4cc) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 0xe), data_ov245_020d7218);
-    *(Vec3 *)(self + 0x3bc) = data_02041dc8;
-    *(Vec3 *)(self + 0x3c8) = data_02042270;
-    *(Vec3 *)(self + 0x3d4) = data_02042264;
-    *(Vec3 *)(self + 0x3e0) = data_02042258;
+    *(VecFx32 *)(self + 0x3bc) = data_02041dc8;
+    *(VecFx32 *)(self + 0x3c8) = data_02042270;
+    *(VecFx32 *)(self + 0x3d4) = data_02042264;
+    *(VecFx32 *)(self + 0x3e0) = data_02042258;
     *(int *)(self + 0x3ec) = 0x8000;
     *(int *)(self + 0x3f0) = 0x4c00;
     *(int *)(self + 0x3f4) = 0x4c00;

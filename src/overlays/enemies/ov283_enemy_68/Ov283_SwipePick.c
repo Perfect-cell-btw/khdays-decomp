@@ -1,11 +1,12 @@
 /* Swipe pick of the ov283 actor: +0x5c is 0.56; with a target (+0xc) both headings (+0x38, +0x40)
  * turn toward it and it counts as in front when it lies ahead of the old +0x38 heading. A front target
  * gets pose 5 or 6, otherwise 7 or 8 (random), and the node moves on to 020cebb4. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int func_020050b4(int x, int z);
 extern int RandNextScaled(int bound);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
@@ -18,8 +19,8 @@ extern const short data_0203d210[];
 void Ov283_SwipePick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 fwd;
-    Vec3 d;
+    VecFx32 fwd;
+    VecFx32 d;
     int front;
     int actor;
 
@@ -33,7 +34,7 @@ void Ov283_SwipePick(int *node)
             fwd.x = data_0203d210[idx];
             fwd.z = data_0203d210[idx + 1];
         }
-        VEC_Subtract((Vec3 *)(state[3] + 0x74), (Vec3 *)(*state + 0x74), &d);
+        VEC_Subtract((VecFx32 *)(state[3] + 0x74), (VecFx32 *)(*state + 0x74), &d);
         VEC_Normalize(&d, &d);
         if (VEC_DotProduct(&fwd, &d) >= 0) {
             front = 1;

@@ -1,9 +1,6 @@
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
-
-typedef struct VecFx32 {
-    fx32 x, y, z;
-} VecFx32;
 
 typedef union MtxFx33 {
     struct {

@@ -5,21 +5,23 @@
  * pick. Returns the picked node (0 when none). Codegen: `state` is an `int *` and the list address is
  * spelled `(int)state + 0xa8`; an `int state` (or `(int)(state + 0x2a)`) colours state last (r8)
  * instead of the ROM's r4. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w40 { int b0 : 1, b1 : 1; };
 
 extern int List_First(int list);
 extern int List_Next(int list);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 
-int Ov253_FindNearestTarget(int *self, const Vec3 *pos, const Vec3 *dir, int minDot, int maxDist) {
+int Ov253_FindNearestTarget(int *self, const VecFx32 *pos, const VecFx32 *dir, int minDot, int maxDist) {
     int *state = (int *)self[1];
     int bestnode = 0;
     int best = 0x7fffffff;
-    Vec3 v;
+    VecFx32 v;
     int it;
     int node;
 
@@ -29,7 +31,7 @@ int Ov253_FindNearestTarget(int *self, const Vec3 *pos, const Vec3 *dir, int min
         if (((struct w40 *)(node + 0x40))->b1 != 0 && (((struct hw60 *)(node + 0x60))->lo & 1) != 0) {
             int dist;
             int radius = *(int *)(node + 0x80);
-            VEC_Subtract((Vec3 *)(node + 0x74), pos, &v);
+            VEC_Subtract((VecFx32 *)(node + 0x74), pos, &v);
             dist = VEC_Normalize(&v, &v) - radius;
             if (VEC_DotProduct(dir, &v) > minDot && dist < best && dist <= maxDist) {
                 best = dist;

@@ -3,31 +3,32 @@
  * and at the +0x10 point (mode 9), effect 0x1c starts there, +0x70 and the +0x7b flag clear, the dash
  * starts (+0x7c) and the node moves on to 020d04bc. Without one, once the partner holds no queued move,
  * pose 0xb plays, the origin knock-back (mode 0xd, 8) runs and the node moves on the same way. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int y);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_DashTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov260_DashEntryTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
 
     if (state[2] != 0) {
-        VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)state[4], &d);
+        VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)state[4], &d);
         state[0x19] = state[0x1a] = func_020050b4(d.x, d.z);
         Ov107_PostTagUpdate(*state, 0xa, 0);
         Ov107_StartAnim(*(int *)(*state + 0x428), 4, 0);
         func_ov107_020c0b90(*state, 0xd, data_02041dc8, 8);
-        func_ov107_020c0b90(*state, 9, *(Vec3 *)state[4], 0);
+        func_ov107_020c0b90(*state, 9, *(VecFx32 *)state[4], 0);
         Ov260_PlaySound(*state, 0x1c, state[4]);
         state[0x1c] = 0;
         *((u8 *)state + 0x7b) = 0;

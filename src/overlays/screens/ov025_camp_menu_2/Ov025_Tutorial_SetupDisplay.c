@@ -7,6 +7,7 @@
  * display mode, all layers (0x1f00) and its LCD is powered off (POWCNT1 bit 15).  BG1 / BG3 of
  * the main engine get their control words (0x4410 / 0x4008 over the two preserved bits),
  * the shared entry contexts are reset (02084ab4) and the first BG1 tile cleared. */
+
 #include "nitro/types.h"
 
 typedef struct DisplayRegisters {

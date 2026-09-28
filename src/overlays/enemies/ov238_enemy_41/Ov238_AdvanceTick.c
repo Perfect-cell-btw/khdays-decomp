@@ -3,12 +3,13 @@
  * after 7 and 19 frames. Once the partner holds no queued move: within 3.0 of the target a lunge starts
  * (pose 0x15, part motion 0xb, cues re-armed, node 020d16e8); out of charges (+0x2d) the walk resets
  * (pose 0xf, motion 5) and also goes to 020d16e8; otherwise the node goes back to 020d1510. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+#include "nitro/fx.h"
+
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov238_TargetGap(int *node);
 extern void Ov238_TimedCue(int *node, int ticks, int cue, int variant);
-extern void Ov238_TurnVelocity(int *node, Vec3 *vec);
+extern void Ov238_TurnVelocity(int *node, VecFx32 *vec);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -18,10 +19,10 @@ extern void Ov238_AiWalkStep(void);
 void Ov238_AdvanceTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 v;
+    VecFx32 v;
     int dist;
 
-    ScaleVec3Fx12(0xb40, (Vec3 *)(*(int *)(*state + 0x3e0) + 0x2c), &v);
+    ScaleVec3Fx12(0xb40, (VecFx32 *)(*(int *)(*state + 0x3e0) + 0x2c), &v);
     dist = Ov238_TargetGap(node);
     state[8] += *(int *)(node[0] + 0x2c);
     Ov238_TimedCue(node, 7, 2, 5);

@@ -7,8 +7,9 @@
  * ranges ahead the +0x3c drift grows by 0.2 toward the +0x7c side (up to 1.57). Unless the swipe
  * window (020ccca8) is open, a d100 roll up to 10 makes the next move 9; otherwise +0x34 rerolls
  * (1.57 to 3.14) and one time in five the actor faces the target (+0x38 / +0x40) and dashes (5). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov283_MapHeldItemKindToAnim(int actor, int part);
 extern int Ov283_MeasureTargetGap(int *node);
@@ -17,10 +18,10 @@ extern int Ov283_AiCheckTargetDistance(int *node);
 extern int RandNextScaled(int bound);
 extern int Rand16NextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Collision_CastSphereEx(int collision, Vec3 *origin, Vec3 *dir, int radius, void *ignore);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Collision_CastSphereEx(int collision, VecFx32 *origin, VecFx32 *dir, int radius, void *ignore);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern const short data_0203d210[];
 
@@ -30,8 +31,8 @@ void Ov283_CircleTick(int *node)
 {
     int *state = (int *)node[1];
     int world = *(int *)(*state + 4);
-    Vec3 out;
-    Vec3 dir;
+    VecFx32 out;
+    VecFx32 dir;
     int hit;
     int lo = 0;
 
@@ -73,7 +74,7 @@ void Ov283_CircleTick(int *node)
         dir.z = data_0203d210[idx + 1];
     }
     ScaleVec3Fx12(*(int *)(*state + 0x80) * 3, &dir, &out);
-    hit = Collision_CastSphereEx(*(int *)(world + 0x7c), (Vec3 *)(*state + 0x74), &out, 0x100, 0);
+    hit = Collision_CastSphereEx(*(int *)(world + 0x7c), (VecFx32 *)(*state + 0x74), &out, 0x100, 0);
     if (hit != 0 && *(int *)(hit + 8) == 0) {
         if (state[0x1f] != 0) {
             if (state[0xf] < 0x1922) {
@@ -100,7 +101,7 @@ void Ov283_CircleTick(int *node)
             dir.y = 0;
             dir.z = data_0203d210[idx + 1];
         }
-        VEC_Subtract((Vec3 *)(*(int *)(*state + 0x390) + 0x74), (Vec3 *)(*state + 0x74), &out);
+        VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x390) + 0x74), (VecFx32 *)(*state + 0x74), &out);
         VEC_Normalize(&out, &out);
         state[0xe] = state[0x10] = func_020050b4(out.x, out.z);
         *(signed char *)(*state + 0x1c7) = 5;

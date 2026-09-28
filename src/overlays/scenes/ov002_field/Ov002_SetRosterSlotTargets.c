@@ -18,34 +18,30 @@
  * Declaring pDst before pSrc, and assigning pSrc before pDst inside each arm, fixes the last
  * register pair; pEntry must be declared at function scope.
  *
- * Ghidra carries this as Ov002_SetRosterSlotTargets over Ov002RosterSlot and Vec3.
+ * Ghidra carries this as Ov002_SetRosterSlotTargets over Ov002RosterSlot and VecFx32.
  */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
-    Vec3 vecBase;               /* +0x00 default triple */
+    VecFx32 vecBase;               /* +0x00 default triple */
     int nBaseValue;             /* +0x0c default value */
     char aDetail[0x24];         /* +0x10 detail payload */
-    Vec3 vecTarget;             /* +0x34 live triple */
+    VecFx32 vecTarget;             /* +0x34 live triple */
     int nTargetValue;           /* +0x40 live value */
 } Ov002RosterSlot;
 
 extern char *data_ov002_0207fa00;
 
-void Ov002_SetRosterSlotTargets(Vec3 *pSrcVec, int nValue) {
+void Ov002_SetRosterSlotTargets(VecFx32 *pSrcVec, int nValue) {
     char *pSession = data_ov002_0207fa00 + 0x8bcc;
     Ov002RosterSlot *pEntry;
     int nByteOffset = 0;
     int nIndex = 0;
 
     do {
-        Vec3 *pDst;
-        Vec3 *pSrc;
+        VecFx32 *pDst;
+        VecFx32 *pSrc;
 
         pEntry = (Ov002RosterSlot *)(*(char **)(pSession + 4) + nByteOffset);
         if (pSrcVec == 0) {

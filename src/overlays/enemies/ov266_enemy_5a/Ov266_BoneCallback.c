@@ -14,9 +14,11 @@
  * of its +0x40 flags is set.
  * Codegen: built with `opt_common_subs off` (push/pop scoped) and `obj` declared before the tail
  * locals; with CSE on the tail loop's i/seg registers swap (r8/r6). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
-typedef struct { int m[9]; Vec3 t; } Mtx43;
+typedef struct { int m[9]; VecFx32 t; } Mtx43;
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int b0 : 1; int b1 : 1; } Flag2;
@@ -27,25 +29,25 @@ struct Ov266 {
 };
 
 extern int func_02016320(int a, Mtx43 *out, int b, int bone);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern void Srt_SetTranslation(void *srt, const Vec3 *t);
+extern void Srt_SetTranslation(void *srt, const VecFx32 *t);
 extern void VEC_Subtract(const void *a, const void *b, void *out);
-extern int VEC_Normalize(const Vec3 *v, void *out);
+extern int VEC_Normalize(const VecFx32 *v, void *out);
 extern void ScaleVec3Fx12(int scale, const void *v, void *out);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int func_020050b4(int x, int z);
 extern int Ov266_WrapSignedDelta6488(int a, int b);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *from, const Vec3 *to);
+extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Slerp(Quat *out, int t, Quat *a, Quat *b);
 extern void Srt_SetRotationQuat(void *srt, Quat *q);
 extern void Srt_SetScaleXYZ(void *srt, int x, int y, int z);
-extern void Obj_LocalToWorld(Vec3 *out, void *srt, void *in);
-extern void Ov107_MoveNodeAndRelayout(int obj, Vec3 *v);
+extern void Obj_LocalToWorld(VecFx32 *out, void *srt, void *in);
+extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *v);
 extern const short data_0203d210[];
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
@@ -54,13 +56,13 @@ extern const Vec3 data_02042258;
 void Ov266_BoneCallback(int rig, char *self)
 {
     Mtx43 probe;
-    Vec3 first;
-    Vec3 pos;
+    VecFx32 first;
+    VecFx32 pos;
     Quat quat;
     Quat saved;
-    Vec3 root;
-    Vec3 span;
-    Vec3 dir;
+    VecFx32 root;
+    VecFx32 span;
+    VecFx32 dir;
     Mtx33 mtx;
     int k;
     int part;
@@ -74,7 +76,7 @@ void Ov266_BoneCallback(int rig, char *self)
     int seg;
 
     if (func_02016320(*(int *)(rig + 0x88) + 0x20, &probe, 0, *(int *)(self + 0x58c)) != 0) {
-        *(Vec3 *)(self + 0x508) = probe.t;
+        *(VecFx32 *)(self + 0x508) = probe.t;
         *(SrtTransform *)(self + 0x520) = *(SrtTransform *)(self + 0xa0);
         pos.x = 0;
         pos.y = 0;

@@ -7,6 +7,7 @@
  * (offset 0x2000). The character size/data are read into locals before the palette upload
  * so they survive that call in callee-saved r5/r6. Finally frees the temp resource.
  * data_0204be18 is a char* global; `+ 0xee0` reads the pointer then adds the field offset. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;

@@ -4,32 +4,34 @@
  * and diagonal) whose ground, probed 3.125 down from 16.0 up, sits within 0x10. The bomb then
  * rests at height 0 on the owner's +4 transform and records its slot (+0x24) and kind (+0x25).
  * Returns the spawn handle. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 v[8]; } Ring8;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 v[8]; } Ring8;
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
-struct Bomb { int owner; char *spawner; Vec3 pos; char pad14[0x10]; u8 slot; u8 kind; };
+struct Bomb { int owner; char *spawner; VecFx32 pos; char pad14[0x10]; u8 slot; u8 kind; };
 struct BombPair { int obj; int active; };
 struct Spawner { char pad[0x774]; struct BombPair pair[10]; };
 
 extern int CreateRegistryEntry(int scene, int kind, int size, void *cb, void *cls, struct Bomb **out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern CollisionHit *Collision_CastRay(void *collision, Vec3 *origin, Vec3 *direction);
-extern void Srt_SetTranslation(void *srt, const Vec3 *v);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern CollisionHit *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *direction);
+extern void Srt_SetTranslation(void *srt, const VecFx32 *v);
 extern void Ov252_GemStart(void);
 extern void Ov252_TaskTeardown_FlagOwner_3(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const Ring8 data_ov252_020d44ac;
-extern const Vec3 data_ov252_020d44a0;
+extern const VecFx32 data_ov252_020d44a0;
 
-int Ov252_SpawnBomb(char *self, int owner, Vec3 *pos, signed char slot, u8 kind)
+int Ov252_SpawnBomb(char *self, int owner, VecFx32 *pos, signed char slot, u8 kind)
 {
-    Vec3 p;
-    Vec3 d;
-    Vec3 a;
-    Vec3 b;
+    VecFx32 p;
+    VecFx32 d;
+    VecFx32 a;
+    VecFx32 b;
     struct Bomb *bomb;
     int handle;
     signed char i;
@@ -47,8 +49,8 @@ int Ov252_SpawnBomb(char *self, int owner, Vec3 *pos, signed char slot, u8 kind)
     {
     Ring8 cur;
     Ring8 ring = data_ov252_020d44ac;
-    Vec3 zero = data_02041dc8;
-    Vec3 down = data_ov252_020d44a0;
+    VecFx32 zero = data_02041dc8;
+    VecFx32 down = data_ov252_020d44a0;
 
     for (; i < 10; i++) {
         if (i == slot) {
@@ -57,7 +59,7 @@ int Ov252_SpawnBomb(char *self, int owner, Vec3 *pos, signed char slot, u8 kind)
         if (((struct Spawner *)self)->pair[i].active == 0) {
             continue;
         }
-        VEC_Subtract((Vec3 *)(((struct Spawner *)self)->pair[i].obj + 0x14), &p, &d);
+        VEC_Subtract((VecFx32 *)(((struct Spawner *)self)->pair[i].obj + 0x14), &p, &d);
         if (VEC_Normalize(&d, &d) >= 0x6000) {
             continue;
         }

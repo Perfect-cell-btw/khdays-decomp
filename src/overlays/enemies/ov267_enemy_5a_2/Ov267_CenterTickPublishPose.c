@@ -25,11 +25,7 @@
  * `-height / 2` is a SIGNED divide by two -- the ROM's `rsb ; add r0, r0, r0, lsr #31 ; asr #1`
  * is the round-toward-zero correction. Do not simplify it to a shift. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int v[11];

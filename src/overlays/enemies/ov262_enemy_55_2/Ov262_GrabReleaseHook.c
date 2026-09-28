@@ -3,6 +3,7 @@
  * +0x3a0 list's first entry is released (Ov015_SpotArrive, slot +0x3ad, "carried" when the
  * slot's kind is 1), sub-state 2 is asked for and the grab slots are cleared. Bit 1 of +0x40
  * then follows the new state. */
+
 #include "nitro/types.h"
 
 extern void Ov015_SpotArrive(int piece, int slot, int carried, int a);

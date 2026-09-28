@@ -14,6 +14,7 @@
  * 4 and 0xc then update the active screen's boxes (020834c0 on +0x87590), release the
  * armed slots (02083690), refresh the boxes (020838b8) and, in a session (02030670), redraw
  * the sign-in panel (Ov023_DrawSignInPanel 02083334 on +0x12c).  0 to stay. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023Scene {

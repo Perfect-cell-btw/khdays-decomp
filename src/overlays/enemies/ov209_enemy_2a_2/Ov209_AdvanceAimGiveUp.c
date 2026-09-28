@@ -4,8 +4,10 @@
  * state[0x16] -= (delta*30<<8 + 0x800)>>12 (a Q12 step). Copy state[0x15..0x17] down to state[5..7]
  * (field-to-field). Once state[0x16] goes negative, mark *state+0x1c7 = 0xb.
  */
-struct vec3 { int x, y, z; };
-struct S208 { char pad[0x14]; struct vec3 a; char pad2[0x34]; struct vec3 b; };
+
+#include "nitro/fx.h"
+
+struct S208 { char pad[0x14]; VecFx32 a; char pad2[0x34]; VecFx32 b; };
 extern int func_020050b4(int x, int z);
 
 void Ov209_AdvanceAimGiveUp(int *self) {

@@ -3,18 +3,14 @@
  * 5.  The renderer at +0x5e4 of the scene work is cleared (0202fa20), the hint for the current
  * language (data_ov027_02083f0c by 02024e5c) widened into a stack buffer (0202fcb8) and drawn at
  * x 0x80, colours 3 / 1, height 0x10 (0202fa38), and the renderer flushed (0202f9f8). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

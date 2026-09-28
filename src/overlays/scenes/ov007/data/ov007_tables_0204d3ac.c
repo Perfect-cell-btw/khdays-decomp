@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov007_SceneInit (0204cb80): int data_ov007_0204d3ac; */
+
 #include "nitro/types.h"
 
-/* read by Ov007_SceneInit (0204cb80): int data_ov007_0204d3ac; */
 const u8 data_ov007_0204d3ac[8] = {
     0, 0, 255, 127, 0, 0, 0, 0,
 };

@@ -1,7 +1,9 @@
 /* Enter tick of an ov235 state: the owner's +0x24 hook receives note 2 of the
  * data_ov235_020d24d0 table (4 bytes), animation 0x10 plays, the +0x54 timer and the +0x65 flag
  * clear and the tick hands over to func_ov235_020cf664. */
+
 #include "nitro/types.h"
+
 typedef struct { u16 lo; u16 hi; } Cmd4;
 
 extern const struct { Cmd4 n[4]; } data_ov235_020d24d0;

@@ -12,9 +12,10 @@
  * actually taken is reported, capped at a hundred so it fits the packet.
  */
 
+/* Ov022Actor */
+
 #include "nitro/types.h"
 
-/* Ov022Actor */
 struct Actor {
     u8 pad0000[9];
     u8 nId;                          /* 0x0009 */

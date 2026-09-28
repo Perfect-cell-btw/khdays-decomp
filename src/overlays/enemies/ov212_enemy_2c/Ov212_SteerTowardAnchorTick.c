@@ -16,20 +16,22 @@
  *
  * One of a 3-member family (ov266/ov267).
  */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void Ov212_ReactionCueTick(void *self, int a, int b);
 extern int VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int a, int b);
-extern int VEC_Normalize(const struct vec3 *v, struct vec3 *out);
-extern void ScaleVec3Fx12(int s, struct vec3 *v, struct vec3 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int s, VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(void *self, int idx, void *cb);
 extern const short data_0203d210[];
 
 void Ov212_SteerTowardAnchorTick(void *self) {
     int *ctx = *(int **)((char *)self + 4);
-    struct vec3 d;
+    VecFx32 d;
     int dist;
     unsigned int idx;
 
@@ -44,7 +46,7 @@ void Ov212_SteerTowardAnchorTick(void *self) {
     ctx[4] = data_0203d210[idx * 2];
     ctx[5] = 0;
     ctx[6] = data_0203d210[idx * 2 + 1];
-    ScaleVec3Fx12(*(int *)(*ctx + 0x578), (struct vec3 *)(ctx + 4), (struct vec3 *)(ctx + 4));
+    ScaleVec3Fx12(*(int *)(*ctx + 0x578), (VecFx32 *)(ctx + 4), (VecFx32 *)(ctx + 4));
     if (dist >= 0x2000) {
         return;
     }

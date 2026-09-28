@@ -34,11 +34,7 @@
  * returns long long, so mwcc materialises -spread and adds it. Same mechanism as the `+ (v - v)`
  * copy artifact (deferred-ties.md) -- here the addend is real, so no dummy is needed. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);

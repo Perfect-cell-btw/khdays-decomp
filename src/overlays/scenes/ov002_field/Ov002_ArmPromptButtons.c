@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 extern int LoadGlobalU16At0(void);                 /* LoadGlobalU16At0 */

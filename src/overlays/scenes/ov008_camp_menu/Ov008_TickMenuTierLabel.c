@@ -4,6 +4,7 @@
  * text surface, fit the glyph set to the label text (max width 0xa0), draw it
  * with a shadow at (0xfa, 2) and queue the surface upload.
  */
+
 #include "nitro/types.h"
 
 #define LABEL_CYCLE_FRAMES 60

@@ -4,11 +4,8 @@
  * 0xc) at the part on the last two steps. Once the part is idle (+0xad clear) its channels 0, 2,
  * 4 and 1 are started (mode 1), it is reset (0203c7ac) and the tick hands over to
  * Ov244_WaitRigIdleBlendOut. */
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+
+#include "nitro/fx.h"
 
 extern void Srt_SetTranslation(void *pSrt, VecFx32 *pPos);
 extern void Slot_Spawn(int nEffect, int nVariant, VecFx32 *pPos, int nFlags);

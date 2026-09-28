@@ -5,9 +5,10 @@
  * position is packed into the overlay's 14-byte template (data_ov274_020d4272) for the owner's
  * +0x24 hook, reaction 0x163 mode 0xc fires there and the kind bit is set. Once the +0xc idle
  * byte clears sub-state 2 is requested and the state ends. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;
 typedef struct { int value; } Fx32;
 
@@ -20,17 +21,17 @@ typedef struct {
 } PosMsg;
 
 struct BoxQuery {
-    Vec3 vCenter;
-    Vec3 vAxisX;
-    Vec3 vAxisZ;
-    Vec3 vAxisY;
+    VecFx32 vCenter;
+    VecFx32 vAxisX;
+    VecFx32 vAxisZ;
+    VecFx32 vAxisY;
     int nExtent;
     int bFlag;
 };
 
 struct Ov274State {
     int pOwner;                  /* 0x00 */
-    Vec3 *pPoint;                /* 0x04 */
+    VecFx32 *pPoint;                /* 0x04 */
     int pPos;                    /* 0x08 */
     u8 *pBusy;                   /* 0x0c */
     char pad10[0x14];
@@ -45,7 +46,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov274State *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov274State *state, PosMsg *msg, const VecFx32 *src)
 {
     Fx32 px;
     Fx32 py;
@@ -62,15 +63,15 @@ static inline void SendPos(struct Ov274State *state, PosMsg *msg, const Vec3 *sr
 }
 
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, struct BoxQuery *query, int *out);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *a, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *a, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
 extern const PosMsg data_ov274_020d4272;
 
 void Ov274_ShockwaveTick(int *node)
@@ -79,7 +80,7 @@ void Ov274_ShockwaveTick(int *node)
     struct Ov274State *state = (struct Ov274State *)node[1];
     int hits[4];
     struct BoxQuery query;
-    Vec3 push;
+    VecFx32 push;
     PosMsg msg;
     PosMsg tmpl;
     long n;
@@ -106,7 +107,7 @@ void Ov274_ShockwaveTick(int *node)
                     if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, 2, &push, 0) != 0) {
                         msg = tmpl;
                         hit = hits[i];
-                        SendPos(state, &msg, (Vec3 *)(hit + 0x74));
+                        SendPos(state, &msg, (VecFx32 *)(hit + 0x74));
                         Ov107_BuildAndSendUpdate(state->pOwner, 0x163, 0xc, (void *)(hit + 0x74));
                         state->bHitMask50 |= 1 << *(u8 *)(hits[i] + 0x1b4);
                     }

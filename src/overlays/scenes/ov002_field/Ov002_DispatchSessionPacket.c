@@ -1,5 +1,7 @@
 /* Ov002_DispatchSessionPacket: channel 7 receive callback. */
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct Ov002ForwardPacketFlags {
     unsigned char nKind : 2;
     unsigned char nIndex : 6;

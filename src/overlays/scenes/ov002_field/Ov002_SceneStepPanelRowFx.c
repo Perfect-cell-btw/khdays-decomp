@@ -23,6 +23,8 @@
  * ARM.
  */
 
+#include "nitro/fx.h"
+
 typedef struct {
     int nMode;
     int nDuration;
@@ -48,19 +50,13 @@ typedef struct {
 } Ov002FxTrackSet;
 
 typedef struct {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
-
-typedef struct {
     char pad000[0x718];
-    Ov002Vec3 pos;
+    VecFx32 pos;
 } Ov002RowView;
 
 typedef struct {
     char pad000[0x718];
-    Ov002Vec3 aRowPos[3];
+    VecFx32 aRowPos[3];
     int aRowTint[3];
     int aRowElem[3];
     char pad754[0x74];
@@ -92,7 +88,7 @@ void Ov002_SceneStepPanelRowFx(void)
     Ov002FxTrack *pLevelRow;
     Ov002FxTrack *pTintRow;
     Ov002FxTrack *pSlideRow;
-    Ov002Vec3 *pPos;
+    VecFx32 *pPos;
     Ov002RowFxScene *s = *(Ov002RowFxScene **)&data_ov002_0207f628;
     b = s;
     Ov002FxTrackSet level = data_ov002_0207e214;

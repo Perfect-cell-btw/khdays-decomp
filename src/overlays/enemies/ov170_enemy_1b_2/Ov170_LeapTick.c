@@ -9,9 +9,10 @@
  * item's +8 byte, zeroes the +0x44 timer and hands off to the landing state. Without a ray hit,
  * a blocked sphere cast (0x300) or an item with any of bits 1/3 set at +0x1c4 publishes mode 1
  * (the reaction only when those bits are clear) and ends with sub-state 0. */
-#include "nitro/types.h"
 
-struct Vecx32 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned f : 8; };
 struct CastHit { int f0; int f4; int nBlocked; int nFraction; };
@@ -24,7 +25,7 @@ extern struct CastHit *Collision_CastRay(void *world, void *from, void *step);
 extern void ScaleVec3Fixed27(int scale, void *v, void *d);
 extern void VEC_Add(void *a, void *b, void *d);
 extern void Ov107_MoveNodeAndRelayout(int actor, void *at);
-extern void func_ov107_020c0b90(void *item, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(void *item, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern struct CastHit *Collision_CastSphereEx(void *world, void *from, void *step, int radius, void *z);
 extern const short data_0203d210[];
@@ -38,8 +39,8 @@ static inline int FX_Mul(int a, int b)
 void Ov170_LeapTick(int *node)
 {
     int *state = (int *)node[1];
-    struct Vecx32 step;
-    struct Vecx32 at;
+    VecFx32 step;
+    VecFx32 at;
     unsigned short *hw;
     unsigned int h;
     int scene;
@@ -71,13 +72,13 @@ void Ov170_LeapTick(int *node)
         state[0xc] = *(int *)(*node + 0x2c) * 0x1e + state[0xc];
     }
     VEC_Subtract((void *)state[2], (void *)(state + 9), &step);
-    *(struct Vecx32 *)(state + 9) = *(struct Vecx32 *)state[2];
+    *(VecFx32 *)(state + 9) = *(VecFx32 *)state[2];
     hit = Collision_CastRay(*(void **)(scene + 0x7c), (void *)state[2], &step);
     if (hit != 0) {
         ScaleVec3Fixed27(hit->nFraction, &step, &step);
         VEC_Add(&step, (void *)state[2], &at);
         Ov107_MoveNodeAndRelayout(*state, &at);
-        func_ov107_020c0b90(*(void **)(*state + 0x38c), 7, *(struct Vecx32 *)state[2], 0);
+        func_ov107_020c0b90(*(void **)(*state + 0x38c), 7, *(VecFx32 *)state[2], 0);
         Ov107_BuildAndSendUpdate(*state, 0x13f, 7, (void *)state[2]);
         hw = (unsigned short *)(*state + 0x60);
         h = *hw;
@@ -93,7 +94,7 @@ void Ov170_LeapTick(int *node)
     if (!(hit != 0 && hit->nBlocked == 0) && (*(u8 *)(*(int *)(*state + 0x38c) + 0x1c4) & 0xa) == 0) {
         return;
     }
-    func_ov107_020c0b90(*(void **)(*state + 0x38c), 1, *(struct Vecx32 *)state[2], 0);
+    func_ov107_020c0b90(*(void **)(*state + 0x38c), 1, *(VecFx32 *)state[2], 0);
     if ((*(u8 *)(*(int *)(*state + 0x38c) + 0x1c4) & 0xa) == 0) {
         Ov107_BuildAndSendUpdate(*state, 0x13f, 7, (void *)state[2]);
     }

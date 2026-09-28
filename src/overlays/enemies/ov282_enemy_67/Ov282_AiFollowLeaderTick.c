@@ -1,6 +1,6 @@
 /* Binds to the leader once, then follows its position. */
 
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov282_BindOwnerAndAttach(int a, int b, int c);
 extern long long FX_DivFx64c(int num, int denom);
@@ -13,7 +13,7 @@ void Ov282_AiFollowLeaderTick(int *self) {
     int leaderVal;
     long long q;
     int delta;
-    Vec3 v;
+    VecFx32 v;
 
     if (*(unsigned char *)((char *)state + 0x64) == 0) {
         leaderVal = *(int *)(*(int *)(*(int *)(*state + 0x3d4)) + 0x194);
@@ -27,7 +27,7 @@ void Ov282_AiFollowLeaderTick(int *self) {
         q = 0x100000000LL;
     }
     delta = (int)(((q * (long long)0x1666) + 0x80000000LL) >> 32);
-    v = *(Vec3 *)(state + 0xd);
+    v = *(VecFx32 *)(state + 0xd);
     v.y = v.y + (delta - 0x1000);
     Ov107_MoveNodeAndRelayout(state[0], &v);
     if (q == 0x100000000LL) {

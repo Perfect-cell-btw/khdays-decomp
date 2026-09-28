@@ -1,8 +1,10 @@
 /* Grab release of the ov227 enemy (shape of ov283 Ov283_Item_AiEnterRest): the owner's +0x388 grab is
  * dropped, bit 7 of its +0x60 high byte raised and bit 0 cleared, the +0xc step zeroed
  * (data_02041dc8), and the tick hands over to Ov227_ReleaseGrabIdleStep. */
-struct Vec3_020cf740 { int x, y, z; };
-extern const struct Vec3_020cf740 data_02041dc8;
+
+#include "nitro/fx.h"
+
+extern const VecFx32 data_02041dc8;
 extern void SetIndexedSlot(int *a, int i, int v);
 extern void Ov227_ReleaseGrabIdleStep(void);
 
@@ -21,7 +23,7 @@ void Ov227_ReleaseGrab(int param_1) {
     }
     ((struct node60_020cf740 *)(*(int *)child + 0x60))->hi &= ~1;
 
-    *(struct Vec3_020cf740 *)(child + 0xc) = data_02041dc8;
+    *(VecFx32 *)(child + 0xc) = data_02041dc8;
 
     SetIndexedSlot((int *)param_1, *(signed char *)(param_1 + 0x20), (int)&Ov227_ReleaseGrabIdleStep);
 }

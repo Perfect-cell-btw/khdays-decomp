@@ -9,8 +9,10 @@
  * mode 1 with a target kind of 0 or 2, the overlay's 4-byte command (data_ov200_020d1840, byte
  * 3 = 5 for kind 0 / 6 otherwise) goes to the owner's +0x24 hook. +0x50 is set and the tick
  * hands over to Ov200_BeamFireTick. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int q[4]; } Quat;
 typedef struct { u16 lo; u16 hi; } Cmd4;
 
@@ -20,7 +22,7 @@ extern int FX_Div(int num, int den);
 extern void Srt_SetTranslation(void *p, void *v);
 extern void Srt_SetScaleXYZ(void *placement, int x, int y, int z);
 extern void Vec3TransformViaTempMtx(void *out, void *pose, void *k);
-extern void Quat_FromTwoVectors(Quat *dst, void *src, Vec3 *m);
+extern void Quat_FromTwoVectors(Quat *dst, void *src, VecFx32 *m);
 extern void Vec4_Normalize(Quat *out, Quat *in);
 extern void Srt_SetRotationQuat(void *pose, Quat *q);
 extern void SetIndexedSlot(int self, int idx, void *cb);
@@ -31,8 +33,8 @@ extern void Ov200_BeamFireTick(void);
 
 void Ov200_BeamChargeTick(int *self) {
     int *state = (int *)self[1];
-    Vec3 aim;
-    Vec3 fwd;
+    VecFx32 aim;
+    VecFx32 fwd;
     Quat q;
     Cmd4 cmd;
     int t;
@@ -56,9 +58,9 @@ void Ov200_BeamChargeTick(int *self) {
     Srt_SetTranslation((void *)(state[2] + 4), &aim);
     Srt_SetScaleXYZ((void *)(state[2] + 4), 0x1000, 0x2000, 0x800);
     Vec3TransformViaTempMtx(&fwd, (char *)*state + 0xa0, &data_02042258);
-    ScaleVec3Fx12(0, &fwd, (Vec3 *)(state + 6));
-    VEC_Add(&aim, (Vec3 *)(state + 6), (Vec3 *)(state + 6));
-    *(Vec3 *)(state + 9) = *(Vec3 *)(state + 6);
+    ScaleVec3Fx12(0, &fwd, (VecFx32 *)(state + 6));
+    VEC_Add(&aim, (VecFx32 *)(state + 6), (VecFx32 *)(state + 6));
+    *(VecFx32 *)(state + 9) = *(VecFx32 *)(state + 6);
     *(int *)(state[1] + 0x5c) &= ~2;
     Srt_SetScaleXYZ((void *)(state[1] + 4), nScale * 3, 0, nScale * 3);
     Quat_FromTwoVectors(&q, &data_02042240, &fwd);

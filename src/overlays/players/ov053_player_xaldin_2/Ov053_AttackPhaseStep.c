@@ -5,12 +5,14 @@
  * decides bit 1 of +0x694: becoming active raises bit 49, shows the node and, for the local
  * player, sets bit 1 of +0x464. Once that bit is set the enemy hands over to state 0x21 while
  * the emitter at +0x22f8 is busy, otherwise to state 0x25. */
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
-typedef struct { int x, y, z; } Vec3;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov053_FireHeavyBurst(char *self);
 extern void SceneNode_Enable(void *node);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
@@ -19,8 +21,8 @@ extern void *Ov022_ActorSetState(char *self, int state);
 void *Ov053_AttackPhaseStep(char *self)
 {
     int r;
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     void *next = 0;
     unsigned int *node;
 
@@ -37,7 +39,7 @@ void *Ov053_AttackPhaseStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     Ov053_FireHeavyBurst(self);
     r = (*(int (**)(char *))(self + 0x668))(self);
     ((Flags *)(self + 0x694))->b1 = (unsigned char)r;

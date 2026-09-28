@@ -4,15 +4,17 @@
  * 0x138c (16-bit) and by the +0x30 amplitude into a yaw, and the velocity is turned by it
  * along with a 0.5 forward step scaled to the frame (rate / 0x88) whose z advances the phase,
  * clamped at the span while still below it. The velocity is published to the actor's +0xf0. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } MtxFx33;
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int func_02020400(int a, int b);
 extern void MTX_RotY33_(MtxFx33 *m, int s, int c);
-extern void MTX_MultVec33(const Vec3 *v, const MtxFx33 *m, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *v, const MtxFx33 *m, VecFx32 *out);
 extern int FX_Div(int num, int den);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const short data_0203d210[];
 
 static inline unsigned short FX_RadToIdx(int rad) {
@@ -23,18 +25,18 @@ void Ov212_SubActorOrbitStep(int *node)
 {
     int *state = (int *)node[1];
     MtxFx33 m;
-    Vec3 v;
+    VecFx32 v;
     int i;
     int k;
     unsigned short idx;
 
     switch (*(signed char *)(*state + 0x1c6)) {
     case 0:
-        *(Vec3 *)(state + 2) = data_02041dc8;
+        *(VecFx32 *)(state + 2) = data_02041dc8;
         break;
     case 1:
     case 2:
-        ScaleVec3Fx12(0x800, (Vec3 *)(state + 5), (Vec3 *)(state + 2));
+        ScaleVec3Fx12(0x800, (VecFx32 *)(state + 5), (VecFx32 *)(state + 2));
         if (state[9] > state[10] || state[10] == 0) {
             break;
         }
@@ -42,7 +44,7 @@ void Ov212_SubActorOrbitStep(int *node)
         k = data_0203d210[i * 2 + 1] * (short)0x138c / 0x1000;
         idx = FX_RadToIdx(state[0xc] * k);
         MTX_RotY33_(&m, data_0203d210[(idx >> 4) * 2], data_0203d210[(idx >> 4) * 2 + 1]);
-        MTX_MultVec33((Vec3 *)(state + 2), &m, (Vec3 *)(state + 2));
+        MTX_MultVec33((VecFx32 *)(state + 2), &m, (VecFx32 *)(state + 2));
         v.z = 0x800;
         v.x = 0;
         v.y = 0;
@@ -58,5 +60,5 @@ void Ov212_SubActorOrbitStep(int *node)
         }
         break;
     }
-    *(Vec3 *)(*state + 0xf0) = *(Vec3 *)(state + 2);
+    *(VecFx32 *)(*state + 0xf0) = *(VecFx32 *)(state + 2);
 }

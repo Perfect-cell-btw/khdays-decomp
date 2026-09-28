@@ -3,19 +3,21 @@
  * side 1) and in place (mode 0xa, +0x70 bit 0). Once the +4 item's +0xad byte clears, every shape
  * of the ten +0x4ac items' +0x22c lists loses bit 1, the +0x45c partner is resumed (020d2050) and
  * the next move is 4. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 struct Items4ac { char pad[0x4ac]; int item[10]; };
 
 extern int Ov254_PanelYForPhase(int *state, int a);
 extern void Ov254_KnockbackAtFeet(int actor, int side);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int List_First(void *list);
 extern int List_Next(void *list);
 extern void Ov254_ForwardToAiIfReady(int partner);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 static inline int FX_Mul(int a, int b) {
     return (int)(((long long)a * b + 0x800) >> 12);

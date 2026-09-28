@@ -7,18 +7,14 @@
  * is 10000 or more, else the first placement (+0x44) -- and then the first placement is stored
  * anyway; the scale is the descriptor's (+0x10) and the angle (+0x30) and the two words at
  * +0x34 / +0x38 are cleared. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

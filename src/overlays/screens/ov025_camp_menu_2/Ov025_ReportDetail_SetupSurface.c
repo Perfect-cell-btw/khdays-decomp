@@ -2,6 +2,7 @@
  * report detail view of page B (Ov025_GetPageB 02084b14) from the template data_ov025_020b4978
  * with the shared tile pixel buffer (02084c84) and VRAM slot 0x19 (02084aa4), uploaded as 4bpp
  * tiles (0202ff8c).  Part of the detail screen setup 020b00f0. */
+
 #include "nitro/types.h"
 
 typedef struct TileSurfaceCfg {

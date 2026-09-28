@@ -16,6 +16,7 @@
  * one being mutated, and otherwise sinks it past the call and spends an extra
  * callee-saved register on it.
  */
+
 #include "nitro/types.h"
 
 extern int Ov002_GetItemResource(int nItemId);

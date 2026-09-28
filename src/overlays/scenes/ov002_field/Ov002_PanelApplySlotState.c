@@ -8,6 +8,7 @@
  *
  * This is the first call of the slot state push.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

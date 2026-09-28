@@ -4,13 +4,14 @@
  * moves to the actor's +0xf0 and is zeroed; in sub-states 2/3 with a non-negative +0x3c0 table
  * entry the +0x3c timer counts the frame-time down and, once spent, the sub-state is remembered
  * in +0x50 and sub-state 8 is requested. */
-typedef struct Vec3 { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Angle_TurnToward(int cur, int target, int step, int *out);
-extern void QuatFromAxisAngle(int *quat, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(int *quat, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, int *quat);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
@@ -18,7 +19,7 @@ void Ov144_OrientationTick(int *node)
 {
     int *state = (int *)node[1];
     int quat[4];
-    Vec3 *vel;
+    VecFx32 *vel;
 
     switch (*(signed char *)(*state + 0x1c6)) {
     case 5:
@@ -39,8 +40,8 @@ void Ov144_OrientationTick(int *node)
     }
     QuatFromAxisAngle(quat, &data_02042264, state[0xc]);
     Srt_SetRotationQuat((char *)*state + 0xa0, quat);
-    vel = (Vec3 *)(state + 9);
-    *(Vec3 *)(*state + 0xf0) = *vel;
+    vel = (VecFx32 *)(state + 9);
+    *(VecFx32 *)(*state + 0xf0) = *vel;
     *vel = data_02041dc8;
     if (*(signed char *)(*state + 0x1c6) != 2 && *(signed char *)(*state + 0x1c6) != 3) {
         return;

@@ -7,14 +7,14 @@
  * positive +0x10 damage that is not the 8|0x80/0x80 special toggles bit 0 of +0x56 and fires
  * reaction 0x11f with the mode alternating (2/3 for flags 0x22, 0/1 otherwise) at the +0x4c
  * position. */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov139ActionState {
     int pOwner;
     char pad004[0x1c];
-    struct Vec3 vHit;           /* +0x20 */
+    VecFx32 vHit;           /* +0x20 */
     char pad02c[0x18];
     int nParam;                 /* +0x44 */
     char pad048[4];
@@ -26,7 +26,7 @@ struct Ov139ActionState {
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     int nDamage10;
     char pad014[0xc];
     unsigned int uMode20;

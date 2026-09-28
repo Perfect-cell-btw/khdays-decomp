@@ -13,6 +13,7 @@
  * the zero and the registry table ahead of the constant 3, as the ROM does
  * (found with decomp-permuter).
  */
+
 #include "nitro/types.h"
 
 struct MobiClipPlayer {

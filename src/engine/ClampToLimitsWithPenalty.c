@@ -1,10 +1,5 @@
-#include "nitro/fx.h"
 
-typedef struct VecFx32 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
+#include "nitro/fx.h"
 
 static inline fx32 FX_Mul(fx32 a, fx32 b)
 {

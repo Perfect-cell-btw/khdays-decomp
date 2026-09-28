@@ -5,13 +5,15 @@
  * with `bCharged` and a shot level above 1 the placement's +0x24 counter and the reaction
  * variant go up by one; shot level 1 selects kind 3. The first shot also rings cue 0xcd at the
  * shot's position, latched in the shared rig's +0x2ce4. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 p; short a, b, c; short scale; int f14, f18, f1c, f20, f24, f28; } Placement;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 p; short a, b, c; short scale; int f14, f18, f1c, f20, f24, f28; } Placement;
 
 extern unsigned Session_RandNextScaled(unsigned);                                       /* Session_RandNextScaled */
 extern void Ov022_SendPlacementMessage(char *, Placement *);
-extern void func_ov022_020ad28c(char *self, Vec3 *pos, int nCue, int nKind);
+extern void func_ov022_020ad28c(char *self, VecFx32 *pos, int nCue, int nKind);
 extern short data_0203d210[];
 extern char *data_ov095_020bcba0;
 
@@ -26,7 +28,7 @@ void Ov095_FireStoredShot(char *self, char *shot, int bCharged)
     req.b = 0;
     req.a = -data_0203d210[idx * 2];
     req.c = -data_0203d210[idx * 2 + 1];
-    req.p = *(Vec3 *)(shot + 0x14);
+    req.p = *(VecFx32 *)(shot + 0x14);
     req.f14 = 0;
     req.f1c = 0;
     req.f20 = 0;
@@ -56,7 +58,7 @@ void Ov095_FireStoredShot(char *self, char *shot, int bCharged)
     }
     Ov022_SendPlacementMessage(self, &req);
     if (*(int *)(rig + 0x10) == 0) {
-        func_ov022_020ad28c(self, (Vec3 *)(shot + 0x14), 0xcd, nKind);
+        func_ov022_020ad28c(self, (VecFx32 *)(shot + 0x14), 0xcd, nKind);
         *(int *)(rig + 0x10) = 1;
     }
 }

@@ -1,4 +1,3 @@
-#include "nitro/types.h"
 
 /* The id, the state field and the position share one addressed block whose
  * address the call already takes. That is a codegen device: it makes those
@@ -10,6 +9,9 @@
  * single slot, above the text store; a conservative load could do neither. The
  * declaration order of the two is not free either - nA must come first, or its
  * reload lands a slot late and the frame comes out wrong at 0x1a and 0x26. */
+
+#include "nitro/types.h"
+
 typedef struct {
     int nId;                        /* +0x00 */
     int nStateField;                /* +0x04 */

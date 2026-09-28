@@ -21,6 +21,7 @@
  * register local (pItem) for the length test; the two status tests are
  * bools negated in a second step; the seen-list search is a for loop.
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT       13

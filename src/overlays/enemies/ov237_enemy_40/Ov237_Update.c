@@ -6,8 +6,10 @@
  * pending +0x498 item is dropped (020cb100). Each segment of both arms (+0x3f4) points along its joint
  * chain (+0x41c, from the +0x44c joint for the first) and takes its joint's transform; the +0x45c
  * transform copies the actor's, the +0x470 clock advances by 2.5 and the base update runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int w[8]; } Pose32;
 struct Xf10 { char pad[0x10]; SrtTransform srt; };
@@ -17,8 +19,8 @@ struct Ov237Body { char pad[0x3f4]; int arms[2][5]; int joints[2][5]; };
 
 extern void Ov237_StopLoopEffects(char *self);
 extern void TaskList_FinishByTag(int model, int handle);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int queryTableEntry(int rig, int channel);
 extern void callIfTableEntrySet(int rig, int channel, int frame);
 extern void Ov107_UnlinkNodeFromOwner(int item);
@@ -26,8 +28,8 @@ extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov237_Update(char *self)
 {
-    Vec3 d;
-    Vec3 e;
+    VecFx32 d;
+    VecFx32 e;
     int k;
     long m;
     int part;
@@ -51,8 +53,8 @@ void Ov237_Update(char *self)
     {
         int part = *(int *)(self + 0x3f0);
 
-        VEC_Subtract((Vec3 *)(*(int *)(self + 0x44c) + 0x14), (Vec3 *)(*(int *)(self + 0x448) + 0x14), &d);
-        *(int *)(part + 0x70) = VEC_Normalize(&d, (Vec3 *)(part + 0x64));
+        VEC_Subtract((VecFx32 *)(*(int *)(self + 0x44c) + 0x14), (VecFx32 *)(*(int *)(self + 0x448) + 0x14), &d);
+        *(int *)(part + 0x70) = VEC_Normalize(&d, (VecFx32 *)(part + 0x64));
         ((struct Pose58 *)**(int **)(self + 0x48c))->pose = ((struct Pose58 *)part)->pose;
     }
     ((struct Xf10 *)(*(int *)(self + 0x3f0)))->srt = *(SrtTransform *)(self + 0xa0);
@@ -71,14 +73,14 @@ void Ov237_Update(char *self)
         for (m = 0; m < 5; m++) {
             part = ((struct Ov237Body *)self)->arms[k][m];
             if (m == 0) {
-                VEC_Subtract((Vec3 *)(*(int *)(self + 0x44c) + 0x14),
-                             (Vec3 *)(((struct Ov237Body *)self)->joints[k][m] + 0x14), &e);
+                VEC_Subtract((VecFx32 *)(*(int *)(self + 0x44c) + 0x14),
+                             (VecFx32 *)(((struct Ov237Body *)self)->joints[k][m] + 0x14), &e);
             } else {
-                VEC_Subtract((Vec3 *)(((struct Ov237Body *)self)->joints[k][m - 1] + 0x14),
-                             (Vec3 *)(((struct Ov237Body *)self)->joints[k][m] + 0x14), &e);
+                VEC_Subtract((VecFx32 *)(((struct Ov237Body *)self)->joints[k][m - 1] + 0x14),
+                             (VecFx32 *)(((struct Ov237Body *)self)->joints[k][m] + 0x14), &e);
             }
             VEC_Normalize(&e, &e);
-            *(Vec3 *)(part + 0x64) = e;
+            *(VecFx32 *)(part + 0x64) = e;
             *(int *)(part + 0x70) = 0x1000;
             ((struct Xf10 *)(((struct Ov237Body *)self)->arms[k][m]))->srt =
                 ((struct Xf4 *)((struct Ov237Body *)self)->joints[k][m])->srt;

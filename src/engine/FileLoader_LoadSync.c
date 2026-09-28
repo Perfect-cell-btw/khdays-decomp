@@ -6,7 +6,9 @@
  * the end (a failed read terminates the thread); the data cache is then flushed (all of it past
  * 0x2400 bytes). Anything else is read raw when it fits in `size`. Returns the byte count, or -1
  * when the data does not fit. */
+
 #include "nitro/types.h"
+
 typedef struct FSFile FSFile;
 
 extern void FS_InitFile(void *file);

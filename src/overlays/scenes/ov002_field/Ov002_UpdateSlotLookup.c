@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* One row of the marker table, sixteen bytes. The kind is a four bit field:
  * the ROM extracts it with a shift pair rather than a mask. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002MarkerRow {
     u8 bId;                             /* +0x0 */
     u8 nKind : 4;                       /* +0x1 low nibble */

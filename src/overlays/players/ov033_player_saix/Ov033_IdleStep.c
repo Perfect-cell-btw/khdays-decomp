@@ -6,14 +6,16 @@
  * +0x694 and, with the emitter at +0x22f8 busy, an activation rewinds the animation, clears the
  * timer and the bit and raises bit 29; the forward burst is tried; an active enemy hands over to
  * state 0x23, and a +0x1c state of 5 or 6 to state 0x22. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ClampAngleTowardTarget(char *self, unsigned int angle);            /* Ov022_ClampAngleTowardTarget */
 extern int Ov022_StepAnchorDelta(char *self, void *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);          /* Anim_SetFrameWrapped */
 extern void Ov033_FireForwardBurst(char *self);
@@ -21,8 +23,8 @@ extern void *Ov022_ActorSetState(char *self, int state);
 
 void *Ov033_IdleStep(char *self)
 {
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     void *next = 0;
     int a;
     unsigned int *node;
@@ -54,7 +56,7 @@ void *Ov033_IdleStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     if (next == 0) {
         r = (*(int (**)(char *))(self + 0x668))(self);
         ((Flags *)(self + 0x694))->b1 = (unsigned char)r;

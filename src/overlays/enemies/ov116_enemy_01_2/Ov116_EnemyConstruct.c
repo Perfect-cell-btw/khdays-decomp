@@ -8,13 +8,15 @@
  * seeded with the pose key and requests resource 0x114. Codegen: the shared zero vector
  * data_02041dc8 is const -- declared non-const, its loads may alias the +0x70 store, which then
  * stays behind the v copy and swaps the registers of the whole handler block. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int a, b, c; } Vec3b;
-typedef struct { Vec3 vector; int scalar; } CameraWork;
+typedef struct { VecFx32 vector; int scalar; } CameraWork;
 typedef struct { int w[6]; } Bounds;
 typedef struct { int id[7]; } IdTable;
 typedef struct { int subitem; int pad; } Slot;
-#include "nitro/types.h"
 typedef void (*Callback)(void);
 
 extern void Ov116_ReleaseSubObjectsListThenNotify(void);
@@ -39,7 +41,7 @@ extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, int b, int c)
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int resourceId);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern IdTable data_ov116_020d2778;
 extern char data_ov116_020d27cc[];
 extern char data_ov116_020d27d4[];
@@ -49,7 +51,7 @@ void Ov116_EnemyConstruct(char *self)
     IdTable ids = data_ov116_020d2778;
     Bounds bounds;
     CameraWork work;
-    Vec3 v;
+    VecFx32 v;
     u16 hw;
     int i;
     int *slot;

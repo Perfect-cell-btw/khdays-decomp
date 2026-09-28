@@ -3,21 +3,23 @@
  * the +0x3a8 part's travel (020c9f48) turned by the +0x1c orientation. Once the +0xc idle byte
  * clears, a coin flip picks the +0x58 circling direction, animation 0x1b plays, the +0x7c duration
  * is rolled in [0x100, 0x300] and the tick hands over to Ov235_CirclingTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
-extern int Ov107_ActionResource_GetOffsetAndScale(int obj, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, const Quat *q, const Vec3 *in);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
+extern int Ov107_ActionResource_GetOffsetAndScale(int obj, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const Quat *q, const VecFx32 *in);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov235_CirclingTick(int *node);
 extern int RandNextScaled(int n);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 static inline int RandRange(int lo, int hi)
 {
@@ -32,8 +34,8 @@ static inline int RandRange(int lo, int hi)
 void Ov235_CircleTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 v;
-    Vec3 d;
+    VecFx32 v;
+    VecFx32 d;
     int speed;
 
     state[0x10] = *(int *)(node[0] + 0x2c) * 30 / 20;
@@ -43,7 +45,7 @@ void Ov235_CircleTick(int *node)
         QuatFromAxisAngle((Quat *)(state + 0xb), &data_02042264, func_020050b4(d.x, d.z));
         speed = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3a8), &v);
         Vec3TransformViaTempMtx(&v, (Quat *)(state + 7), &v);
-        ScaleVec3Fx12(speed, &v, (Vec3 *)(state + 4));
+        ScaleVec3Fx12(speed, &v, (VecFx32 *)(state + 4));
     }
     if (*(unsigned char *)state[3] != 0) {
         return;

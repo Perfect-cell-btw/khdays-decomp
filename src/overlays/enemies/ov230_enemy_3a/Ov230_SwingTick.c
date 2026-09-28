@@ -2,11 +2,13 @@
  * offset, turned by the +0x40 heading, is kept in +0x10; a hit found by 020d2d90 clears +8. Once the
  * +4 rig is idle pose 0xe plays, move 0xb starts (020d3028), the +0x62 flag clears and brain
  * slot +0x20 runs 020d4298. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern int Ov230_ContactCheck(int *state);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov230_startAnim(int owner, int anim);
@@ -27,7 +29,7 @@ void Ov230_SwingTick(int *node)
 
         MTX_RotY33_(&rot, data_0203d210[idx], data_0203d210[idx + 1]);
     }
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x490) + 0x2c), &rot, (Vec3 *)(state + 4));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x490) + 0x2c), &rot, (VecFx32 *)(state + 4));
     if (Ov230_ContactCheck(state) != 0) {
         state[2] = 0;
     }

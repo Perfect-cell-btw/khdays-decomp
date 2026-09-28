@@ -2,6 +2,7 @@
  * theirs and, once every entry is confirmed, starts the lobby transfer. */
 
 #include "nitro/types.h"
+
 typedef void (*MissionCallback)(void);
 
 typedef struct {

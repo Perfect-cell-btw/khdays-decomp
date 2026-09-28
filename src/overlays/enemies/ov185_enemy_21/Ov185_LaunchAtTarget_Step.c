@@ -1,16 +1,16 @@
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov120Actor {
     char pad000[0x60];
     u16 hw60;
     char pad062[0x4e];
-    struct Vec3 vPosb0;
+    VecFx32 vPosb0;
     char pad0bc[0xbe];
     u8 bLaunch17a : 1;
     char pad17b[0x15];
-    struct Vec3 vPos190;
+    VecFx32 vPos190;
     char pad19c[0x2b];
     u8 bActionState1c7;
 };
@@ -19,14 +19,14 @@ struct Ov185ActionState {
     struct Ov120Actor *pOwner;
     struct Ov120Actor *pTarget;
     char pad008[0x10];
-    struct Vec3 vPos18;
+    VecFx32 vPos18;
     char pad024[8];
-    struct Vec3 vForward2c;
+    VecFx32 vForward2c;
     char pad038[0xc];
     struct Ov185Anim *pAnim44;
     char pad048[0x18];
     int nElapsed60;
-    struct Vec3 vLaunch64;
+    VecFx32 vLaunch64;
     int nAnim70;
 };
 
@@ -43,9 +43,9 @@ extern void Ov185_HopArc_Step(void);
 
 extern struct Ov120Actor *Ov107_FindNearestObject(struct Ov120Actor *owner, int *pDistSq);
 extern void SetIndexedSlot(void *node, int idx, void *value);
-extern void VEC_Subtract(struct Vec3 *a, struct Vec3 *b, struct Vec3 *out);
-extern int VEC_Normalize(struct Vec3 *v, struct Vec3 *unit);
-extern void Ov185_LookAtQuat_2(struct Ov185ActionState *state, struct Vec3 *pos);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
+extern void Ov185_LookAtQuat_2(struct Ov185ActionState *state, VecFx32 *pos);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 
 /*
@@ -68,7 +68,7 @@ extern void ScaleVec3Fx12(int scale, void *src, void *dst);
  */
 void Ov185_LaunchAtTarget_Step(struct Ov120ActionNode *node)
 {
-    struct Vec3 vDelta;
+    VecFx32 vDelta;
     struct Ov185ActionState *state;
     int nLen;
     int nFlatZ;

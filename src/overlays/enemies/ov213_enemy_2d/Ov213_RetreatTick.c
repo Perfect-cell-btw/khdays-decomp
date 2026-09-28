@@ -2,16 +2,18 @@
  * +0x38 rotation (transforming data_02042258), scales it by that speed into the +0xc velocity
  * and, unless the +8 flag byte is set, writes pose kind 5 into the actor's +0x1c7 and
  * dispatches with a null handler. */
-struct Vec3 { int x, y, z; };
-extern struct Vec3 data_02042258;
-extern void Vec3TransformViaTempMtx(struct Vec3 *dst, void *xfm, struct Vec3 *src);
-extern int VEC_Normalize(struct Vec3 *v, struct Vec3 *unit);
+
+#include "nitro/fx.h"
+
+extern VecFx32 data_02042258;
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 
 void Ov213_RetreatTick(int *node) {
     int *state = (int *)node[1];
-    struct Vec3 dir;
+    VecFx32 dir;
     state[0x17] = state[0x17] + -state[0x17] / 5;
     Vec3TransformViaTempMtx(&dir, state + 0xe, &data_02042258);
     VEC_Normalize(&dir, &dir);

@@ -2,11 +2,12 @@
  * (020cf6dc) runs until 0x330; a pending +0x50 flare (1) fires effect 0x25 at the +0x1c point. Once
  * the +4 rig is idle, without a +0x38 delay a follow-up (020cd2cc) may be picked, otherwise the next
  * move is 2. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov258_SwingHitTest(int *node);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int Ov258_PickMove(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
@@ -20,7 +21,7 @@ void Ov258_SwingTick(int *node)
     }
     if (*(u16 *)(state + 0x14) == 1) {
         (*(u16 *)(state + 0x14))--;
-        func_ov107_020c0b90(*state, 0x25, *(Vec3 *)(state + 7), 0);
+        func_ov107_020c0b90(*state, 0x25, *(VecFx32 *)(state + 7), 0);
     }
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;

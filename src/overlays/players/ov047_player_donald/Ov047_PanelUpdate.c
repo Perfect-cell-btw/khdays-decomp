@@ -6,13 +6,9 @@
  * the charge has run its full course, the energy is clamped back down. Finally the
  * registered predicate at +0x668 decides whether the panel has finished: if it has, the
  * cached vectors are cleared and the teardown handler runs. */
-#include "nitro/types.h"
 
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct PanelBits {
     u8 b0 : 1;
@@ -21,8 +17,8 @@ struct PanelBits {
 };
 
 extern int Session_GetLocalPlayerIndex(void);
-extern void Ov022_StepAnchorDelta(char *self, struct VecFx32 *pOut);
-extern void VEC_Add(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *pOut);
+extern void Ov022_StepAnchorDelta(char *self, VecFx32 *pOut);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *pOut);
 extern int Ov022_IsState9Or6WithFlag200(char *obj);
 extern void Ov047_SpawnEffectRing(char *self);
 extern int Ov022_GetGlobal34(void);
@@ -33,8 +29,8 @@ extern char *data_ov047_020b4380;
 
 int Ov047_PanelUpdate(char *self)
 {
-    struct VecFx32 vDelta;
-    struct VecFx32 vTmp;
+    VecFx32 vDelta;
+    VecFx32 vTmp;
     int nRet = 0;
     char *blk = data_ov047_020b4380 + 0xc50 + 0x2000;
     int nEnergy;
@@ -62,8 +58,8 @@ int Ov047_PanelUpdate(char *self)
      * ROM materialises the literal zero twice rather than sharing one register. */
     vTmp = vDelta;
     vTmp.y = 0;
-    VEC_Add((struct VecFx32 *)(self + 0x98 + 0x400), &vTmp,
-            (struct VecFx32 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &vTmp,
+            (VecFx32 *)(self + 0x98 + 0x400));
 
     if (*(int *)(blk + 8) == 0) {
         nEnergy = 0xf000;

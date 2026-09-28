@@ -42,13 +42,9 @@
  *    LL suffixes, unsigned rounding, a split shift, the multiplier or the rounding value in a
  *    local, and a static inline helper all compile to the same bytes.
  */
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct SinCos {
     short sin;

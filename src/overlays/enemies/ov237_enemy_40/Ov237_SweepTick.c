@@ -5,43 +5,45 @@
  * data_ov237_020d1b4c push is turned by the +0x10 heading; a 1.0 sphere 6.5 out from the +0x444 rig and
  * a box 3.5 out along the direction (0.27 / 0.27 / 3.5) hit once each (effect 1, kind 2) and the +0x55
  * hold drops. Once the +4 rig is idle +0x58 is set and the next move is 2. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { int m[9]; } Mtx33;
-typedef struct { Vec3 pos; int radius; } Sphere;
-typedef struct { Vec3 pos; Vec3 axis[3]; int ext[3]; } Box;
+typedef struct { VecFx32 pos; int radius; } Sphere;
+typedef struct { VecFx32 pos; VecFx32 axis[3]; int ext[3]; } Box;
 
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int Ov237_AttackHitTest(int *node, void *sphere, void *box, void *segment, Vec3 *push, int once, unsigned short effect, int kind);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *from, const Vec3 *to);
-extern void Vec3TransformViaTempMtx(Vec3 *out, const Quat *q, const Vec3 *in);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int Ov237_AttackHitTest(int *node, void *sphere, void *box, void *segment, VecFx32 *push, int once, unsigned short effect, int kind);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const Quat *q, const VecFx32 *in);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_ov237_020d1b4c;
-extern const Vec3 data_ov237_020d1b58;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042270;
+extern const VecFx32 data_ov237_020d1b4c;
+extern const VecFx32 data_ov237_020d1b58;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042270;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
 void Ov237_SweepTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
-    Vec3 push;
+    VecFx32 dir;
+    VecFx32 push;
     Mtx33 rot;
     Sphere sphere;
     Box box;
-    Vec3 reach;
-    Vec3 ax;
-    Vec3 ay;
-    Vec3 az;
+    VecFx32 reach;
+    VecFx32 ax;
+    VecFx32 ay;
+    VecFx32 az;
     Quat q;
 
     state[0xc] += *(int *)(node[0] + 0x2c);
@@ -73,7 +75,7 @@ void Ov237_SweepTick(int *node)
         MTX_MultVec33(&dir, &rot, &dir);
         MTX_MultVec33(&push, &rot, &push);
         ScaleVec3Fx12(0x6800, &dir, &sphere.pos);
-        VEC_Add(&sphere.pos, (Vec3 *)(*(int *)(*state + 0x444) + 0x14), &sphere.pos);
+        VEC_Add(&sphere.pos, (VecFx32 *)(*(int *)(*state + 0x444) + 0x14), &sphere.pos);
         sphere.radius = 0x1000;
         Ov237_AttackHitTest(node, &sphere, 0, 0, &push, 1, 1, 2);
         reach = dir;
@@ -82,7 +84,7 @@ void Ov237_SweepTick(int *node)
         Vec3TransformViaTempMtx(&ay, &q, &data_02042264);
         Vec3TransformViaTempMtx(&az, &q, &data_02042258);
         ScaleVec3Fx12(0x3800, &reach, &reach);
-        VEC_Add((Vec3 *)(*(int *)(*state + 0x444) + 0x14), &reach, &box.pos);
+        VEC_Add((VecFx32 *)(*(int *)(*state + 0x444) + 0x14), &reach, &box.pos);
         box.axis[0] = ax;
         box.axis[1] = ay;
         box.axis[2] = az;

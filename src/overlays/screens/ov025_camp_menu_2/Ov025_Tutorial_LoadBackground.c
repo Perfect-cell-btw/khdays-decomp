@@ -4,6 +4,7 @@
  * (GX_LoadBGPltt); the characters come from the localised sub-file 1 when there is one
  * (02084d50: its CHAR block 020119d4 is flushed from the cache and sent to BG3), else from the
  * member's own character block (GX_LoadBG3Char); the files are freed again. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;

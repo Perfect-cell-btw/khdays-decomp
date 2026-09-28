@@ -3,6 +3,7 @@
  * start. The first tick knocks the actor back at its feet (020cdbbc, +0x70 bit 0); at 0xaa0
  * reaction 0x16d/0x12 fires at the track (+0x70 bit 1). Once the +4 item's +0xad byte clears the
  * next move is 0xb. */
+
 #include "nitro/types.h"
 
 extern void Ov254_KnockbackAtFeet(int actor, int side);

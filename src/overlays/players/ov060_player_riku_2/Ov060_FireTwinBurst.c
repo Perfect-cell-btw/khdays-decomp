@@ -4,13 +4,13 @@
  * burst parameters with spin 0x1b00, flags 0x225 and the fixed 0xa00/0x66/0xa00 extent, and
  * submits the pair; if the submit takes and busy bit 0 of +0x26bc is clear, it draws a random
  * (discarded) and marshals record 0 (kind 1) at the +0x26c8 muzzle with the actor's heading. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct EmitPair {
-    struct Vec3 vPosB;
-    struct Vec3 vPosA;
+    VecFx32 vPosB;
+    VecFx32 vPosA;
     int nOwner;
     int nRange;
     void *pAnchor;
@@ -24,31 +24,31 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;
     u8 pad26[2];
 };
 
-extern void func_ov022_020ad44c(struct Vec3 *out, char *self);
-extern void ScaleVec3Fx12(int scale, const struct Vec3 *v, struct Vec3 *out);
-extern void VEC_Add(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *out);
+extern void func_ov022_020ad44c(VecFx32 *out, char *self);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void *Ov022_ComputeStrengthDamage(char *self, int spin, int a, int b);
 extern void Ov022_ScaleRowValues(char *self, int spin, void *a, void *b);
 extern int Ov022_RunReachHandlers(char *self, struct EmitPair *emit, void *params);
 extern int Session_RandNextScaled(int n);
-extern void Ov022_MarshalNetworkRecord(char *self, int record, struct Vec3 *at, int scale, unsigned int angle, int kind);
+extern void Ov022_MarshalNetworkRecord(char *self, int record, VecFx32 *at, int scale, unsigned int angle, int kind);
 extern short data_0203d210[];
 
 void Ov060_FireTwinBurst(char *self)
 {
     struct EmitPair emit;
     struct Params prm;
-    struct Vec3 tmp;
-    struct Vec3 dir;
-    struct Vec3 anchor;
-    struct Vec3 at;
+    VecFx32 tmp;
+    VecFx32 dir;
+    VecFx32 anchor;
+    VecFx32 at;
     int angle;
     int idx;
 
@@ -84,6 +84,6 @@ void Ov060_FireTwinBurst(char *self)
         return;
     }
     Session_RandNextScaled(3);
-    at = *(struct Vec3 *)(self + 0x2c8 + 0x2400);
+    at = *(VecFx32 *)(self + 0x2c8 + 0x2400);
     Ov022_MarshalNetworkRecord(self, 0, &at, 0x1000, angle, 1);
 }

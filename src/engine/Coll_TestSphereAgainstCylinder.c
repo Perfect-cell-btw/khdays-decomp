@@ -2,8 +2,10 @@
  * Keep per-product Q12 rounding and separate wide-offset lifetimes.
  * Common-expression folding otherwise promotes direction squares to wide multiplies. */
 #pragma opt_common_subs off
+
 #include "nitro/types.h"
-typedef struct VecFx32 { s32 x,y,z; } VecFx32;
+#include "nitro/fx.h"
+
 typedef struct CollisionObject {
  u8 pad00[0x2c]; VecFx32 position2c; s32 radius38,height3c;
 } CollisionObject;

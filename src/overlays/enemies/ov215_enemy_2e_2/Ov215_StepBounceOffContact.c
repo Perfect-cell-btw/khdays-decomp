@@ -13,9 +13,10 @@
  * mode field as a plain statement drops the compare the original emits and the
  * function comes out four bytes short.
  */
-#include "nitro/types.h"
 
-struct VecFx32 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct MtxFx33 { int m[3][3]; };
 struct Ov215Params;
 
@@ -23,12 +24,12 @@ struct Ov215Actor {
     char pad000[0x2c];
     int nFrameDelta2c;
     char pad030[0x44];
-    struct VecFx32 vPosition74;
+    VecFx32 vPosition74;
     int nRadius80;
     char pad084[0x2c];
-    struct VecFx32 vCenterb0;
+    VecFx32 vCenterb0;
     char pad0bc[0x58];
-    struct VecFx32 vContactNormal114;
+    VecFx32 vContactNormal114;
     char pad120[0x5a];
     u8 bCollisionFlags17a;
     u8 bCollisionState17b;
@@ -39,9 +40,9 @@ struct Ov215State {
     int nUnknown04;
     struct Ov215Actor *pTarget;
     int nUnknown0c;
-    struct VecFx32 *pOffset10;
-    struct VecFx32 vDirection14;
-    struct VecFx32 vVelocity20;
+    VecFx32 *pOffset10;
+    VecFx32 vDirection14;
+    VecFx32 vVelocity20;
     char pad02c[0x24];
     int nCallback50;
     int nUnknown54;
@@ -87,27 +88,27 @@ struct Ov215CollisionFlags {
 };
 
 extern void Ov107_PostTagUpdate(struct Ov215Actor *actor, int mode, int zero);
-extern void func_ov107_020c0b90(struct Ov215Actor *actor, int mode, struct VecFx32 value, int zero);
-extern struct Ov215CollisionResult *Collision_CastSphereEx(void *collision, struct VecFx32 *origin,
-                                                 struct VecFx32 *direction, int radius, int zero);
-extern int VEC_Normalize(struct VecFx32 *source, struct VecFx32 *destination);
-extern void ScaleVec3Fx12(int scale, struct VecFx32 *source, struct VecFx32 *destination);
-extern void VEC_Add(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *out);
-extern void VEC_Subtract(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *out);
-extern int VEC_DotProduct(struct VecFx32 *a, struct VecFx32 *b);
+extern void func_ov107_020c0b90(struct Ov215Actor *actor, int mode, VecFx32 value, int zero);
+extern struct Ov215CollisionResult *Collision_CastSphereEx(void *collision, VecFx32 *origin,
+                                                 VecFx32 *direction, int radius, int zero);
+extern int VEC_Normalize(VecFx32 *source, VecFx32 *destination);
+extern void ScaleVec3Fx12(int scale, VecFx32 *source, VecFx32 *destination);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern int func_020050b4(int x, int z);
 extern int Ov107_FindNearestObject(struct Ov215Actor *actor, int kind);
 extern int FX_Div(int numerator, int denominator);
 extern void MTX_RotY33_(struct MtxFx33 *matrix, int sine, int cosine);
-extern void MTX_MultVec33(struct VecFx32 *vector, struct MtxFx33 *matrix, struct VecFx32 *out);
+extern void MTX_MultVec33(VecFx32 *vector, struct MtxFx33 *matrix, VecFx32 *out);
 extern int func_02020400(int a, int b);
 extern void SetIndexedSlot(struct Ov215Task *task, int slot, void *callback);
 extern void Ov215_ProcessHitTargets(struct Ov215State *state, unsigned int kind,
                                 struct Ov215Params *params);
 extern void Ov215_TimerActionOnceThenAdvance(void);
 
-extern const struct VecFx32 data_02041dc8;
-extern const struct VecFx32 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
 extern const s16 data_0203d210[];
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
@@ -118,13 +119,13 @@ extern const s16 data_0203d210[];
 void Ov215_StepBounceOffContact(struct Ov215Task *task)
 {
     struct Ov215State *state = task->pState;
-    struct VecFx32 normal = state->pActor->vContactNormal114;
-    struct VecFx32 velocity;
-    struct VecFx32 reflected;
-    struct VecFx32 delta;
-    struct VecFx32 delta2;
+    VecFx32 normal = state->pActor->vContactNormal114;
+    VecFx32 velocity;
+    VecFx32 reflected;
+    VecFx32 delta;
+    VecFx32 delta2;
     struct MtxFx33 matrix;
-    struct VecFx32 rotated;
+    VecFx32 rotated;
     struct Ov215CollisionResult *hit;
     int collision;
     int targetAngle;
@@ -152,7 +153,7 @@ void Ov215_StepBounceOffContact(struct Ov215Task *task)
 
     if (collision == 0 && state->pActor->bCollisionState17b == 0) {
         hit = Collision_CastSphereEx(*(void **)(*(char **)((char *)state->pActor + 4) + 0x7c),
-                            &state->pActor->vPosition74, (struct VecFx32 *)((char *)state + 0x2c),
+                            &state->pActor->vPosition74, (VecFx32 *)((char *)state + 0x2c),
                             state->pActor->nRadius80, 0);
         if (hit != 0 && hit->nType08 == 0) {
             collision = 1;
@@ -188,7 +189,7 @@ void Ov215_StepBounceOffContact(struct Ov215Task *task)
     } else if (state->bHoming78 == 0) {
         state->pTarget = (struct Ov215Actor *)Ov107_FindNearestObject(state->pActor, 0);
         if (state->pTarget != 0 && state->nTimer5c <= 0) {
-            VEC_Subtract((struct VecFx32 *)((char *)state->pTarget + 0x190),
+            VEC_Subtract((VecFx32 *)((char *)state->pTarget + 0x190),
                          &state->pActor->vCenterb0, &delta);
             delta.y = 0;
             collision = VEC_Normalize(&delta, &delta);
@@ -217,7 +218,7 @@ void Ov215_StepBounceOffContact(struct Ov215Task *task)
         if (state->nDelay60 <= 0) {
             if (wasPositive) {
                 if (state->pTarget != 0) {
-                    VEC_Subtract((struct VecFx32 *)((char *)state->pTarget + 0x190),
+                    VEC_Subtract((VecFx32 *)((char *)state->pTarget + 0x190),
                                  &state->pActor->vCenterb0, &delta2);
                     targetAngle = func_020050b4(delta2.x, delta2.z);
                     index = ANGLE_TO_INDEX(targetAngle);

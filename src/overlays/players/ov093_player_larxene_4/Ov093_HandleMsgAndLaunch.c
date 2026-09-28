@@ -12,15 +12,16 @@
  * base (`add r0, r5, #0x64` then `[r0, #0x404]`) is just how mwcc addresses the high half,
  * not a separate source construct.
  */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void Ov022_FillEightHalvesMinus1At0x2bd4(char *self);
 extern void Anim_SetFrameWrapped(char *p, int i, int v);
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *dst);
-extern int VEC_Mag(const Vec3 *v);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
+extern int VEC_Mag(const VecFx32 *v);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Atan2(int x, int z);
 extern char *data_ov093_020bc3c0;
 extern void Ov093_ApproachStep(void);
@@ -29,7 +30,7 @@ extern void Ov093_ChargeStep(void);
 void *Ov093_HandleMsgAndLaunch(char *self, int msg) {
     char *blk = data_ov093_020bc3c0 + 0x2c + 0x2c00;
     void *next = 0;
-    Vec3 d;
+    VecFx32 d;
     unsigned short a;
     int *node;
 
@@ -48,7 +49,7 @@ void *Ov093_HandleMsgAndLaunch(char *self, int msg) {
         *(long long *)self |= 0x20000000;
         *(unsigned short *)(self + 0x64) = 0x1800;
         if (Ov022_ValidateTargetRef(self) != 0) {
-            VEC_Subtract(func_ov022_020ad0c0(self), (const Vec3 *)(self + 0x48c), &d);
+            VEC_Subtract(func_ov022_020ad0c0(self), (const VecFx32 *)(self + 0x48c), &d);
             if (VEC_Mag(&d) != 0) {
                 VEC_Normalize(&d, &d);
             }

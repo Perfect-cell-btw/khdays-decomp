@@ -7,25 +7,27 @@
  * while the target is flagged 0x10; it is pushed out of the world (Ov119_PushOutOfWorld, the
  * target's radius) and given to the partner's +0x20 model and +0x48c point. Once the +0x50 timer
  * reaches 2.0 the owner is set down above it, the partner is released and sub-state 8 requested. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
 extern void Ov022_ToggleBit13ByMode(int partner, int flag);
-extern void Ov107_MoveNodeAndRelayout(int owner, Vec3 *pos);
-extern void Mtx33_LookAt(int *dst, const Vec3 *a, const Vec3 *b, const void *c);
+extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *pos);
+extern void Mtx33_LookAt(int *dst, const VecFx32 *a, const VecFx32 *b, const void *c);
 extern void Quat_FromMtx33(void *dst, const int *src);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, const Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, const VecFx32 *push, int z);
 extern int RandNextScaled(int n);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void Ov119_PushOutOfWorld(int world, Vec3 *point, int unused, int radius);
-extern void Actor_SetVecAndSyncChild(int model, Vec3 *pos);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Ov119_PushOutOfWorld(int world, VecFx32 *point, int unused, int radius);
+extern void Actor_SetVecAndSyncChild(int model, VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02042264;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02041dc8;
 
 void Ov119_CarryTick(int *node)
 {
@@ -33,8 +35,8 @@ void Ov119_CarryTick(int *node)
     int *state = (int *)node[1];
     int partner = *(int *)(*state + 0x3ac);
     int mtx[9];
-    Vec3 pos;
-    Vec3 nudge;
+    VecFx32 pos;
+    VecFx32 nudge;
     int yaw;
     int rad;
     int world;
@@ -56,7 +58,7 @@ void Ov119_CarryTick(int *node)
     pos.y = *(int *)(target + 0x78);
     pos.z = *(int *)(target + 0x7c) + FX_MUL(data_0203d210[ANG2IDX(rad) * 2 + 1], 0xf00);
     Ov107_MoveNodeAndRelayout(*state, &pos);
-    Mtx33_LookAt(mtx, (Vec3 *)(target + 0x74), (Vec3 *)state[0x13], &data_02042264);
+    Mtx33_LookAt(mtx, (VecFx32 *)(target + 0x74), (VecFx32 *)state[0x13], &data_02042264);
     Quat_FromMtx33(state + 7, mtx);
     *(Quat *)(state + 3) = *(Quat *)(state + 7);
     state[0x15] += *(int *)(*node + 0x2c);
@@ -80,13 +82,13 @@ void Ov119_CarryTick(int *node)
         nudge.y = RandNextScaled(0x41) - 0x40;
         nudge.z = RandNextScaled(0x201) - 0x100;
     }
-    VEC_Add((Vec3 *)(state[2] + 0x190), &nudge, &pos);
+    VEC_Add((VecFx32 *)(state[2] + 0x190), &nudge, &pos);
     state[0x14] += *(int *)(*node + 0x2c);
     done = state[0x14] >= 0x2000;
     Ov119_PushOutOfWorld(world, &pos, rad, *(int *)(state[2] + 0x80));
     partner = *(int *)(*state + 0x3ac);
     Actor_SetVecAndSyncChild(*(int *)(partner + 0x20), &pos);
-    *(Vec3 *)(partner + 0x48c) = pos;
+    *(VecFx32 *)(partner + 0x48c) = pos;
     *(int *)(*(int *)(*state + 0x3ac) + 0x58) = 0;
     if (done == 0) {
         return;

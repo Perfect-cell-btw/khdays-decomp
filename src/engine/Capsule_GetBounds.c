@@ -1,9 +1,8 @@
 /* Bounding box of a swept sphere: from the capsule's start point (+0) along its direction (+0xc)
  * times its length (+0x18), widened on every axis by the radius (+0x1c). The box is
  * min x/y/z then max x/y/z. */
-typedef struct {
-    int x, y, z;
-} VecFx32;
+
+#include "nitro/fx.h"
 
 typedef struct {
     VecFx32 pos;        /* 0x00 */

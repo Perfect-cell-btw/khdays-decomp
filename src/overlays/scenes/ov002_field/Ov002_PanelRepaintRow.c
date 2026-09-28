@@ -20,6 +20,7 @@
  * declaration placed after the tile: either alone leaves it one register away
  * from the ROM's choice, and only the two together land on it.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

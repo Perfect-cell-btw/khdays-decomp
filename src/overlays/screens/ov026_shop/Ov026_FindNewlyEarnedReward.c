@@ -11,6 +11,7 @@
  * base is declared after it; the per-list total is read inline from the
  * stack array so the compiler hoists it itself.
  */
+
 #include "nitro/types.h"
 
 #define LIST_COUNT       2

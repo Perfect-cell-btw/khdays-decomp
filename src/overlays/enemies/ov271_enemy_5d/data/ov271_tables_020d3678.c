@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov271_Construct (020cfc04): IdTable data_ov271_020d3678; */
+
 #include "nitro/types.h"
 
-/* read by Ov271_Construct (020cfc04): IdTable data_ov271_020d3678; */
 const int data_ov271_020d3678[4] = {
     1, 6, 7, 7,
 };

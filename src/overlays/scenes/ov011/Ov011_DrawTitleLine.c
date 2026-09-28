@@ -7,6 +7,7 @@
  *
  * The sprite manager is bound to a local at the top of the tag branch: mwcc then computes its
  * base and index parts before the search loop, as the ROM does. */
+
 #include "nitro/types.h"
 
 typedef struct UiLayoutPos {

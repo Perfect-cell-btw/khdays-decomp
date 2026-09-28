@@ -17,11 +17,7 @@
  *
  * Stack 0x40 = vec(0xc) at sp+0, anchor(0x10) at sp+0xc, MtxFx33(0x24) at sp+0x1c. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int m[9];

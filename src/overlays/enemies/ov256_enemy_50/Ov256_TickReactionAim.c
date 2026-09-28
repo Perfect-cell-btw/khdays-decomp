@@ -1,4 +1,5 @@
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void Ov256_RotateByActorHeading(void *out, int self, int arg);
 extern int SetIndexedSlot(int self, int idx, void *handler);

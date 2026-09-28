@@ -5,12 +5,14 @@
  * bits 1 and 7 of the +0x60 high byte clear, pose 2 plays, the +0x10 / +0x14 headings take
  * another draw from the same bounds plus 3.14, the timer and +0x30 latch clear, reaction
  * 0x16c/7 fires at the +4 anchor and the node moves to 020cfa44. */
-typedef struct { int x, y, z; } Vec3;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Ov253Bounds { int lo[1]; int hi[4]; };
 
 extern int RandNextScaled(int scale);
-extern void Ov107_MoveNodeAndRelayout(int actor, const Vec3 *pos);
+extern void Ov107_MoveNodeAndRelayout(int actor, const VecFx32 *pos);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -28,7 +30,7 @@ static inline unsigned short FX_RadToIdx(int rad) {
 void Ov253_TurnEnter(int *node) {
     int *state = (int *)node[1];
     struct Ov253Bounds bounds;
-    Vec3 pos;
+    VecFx32 pos;
     int idx;
     int angle;
     int lo;
@@ -51,7 +53,7 @@ void Ov253_TurnEnter(int *node) {
     scale = RandNextScaled(0x10001) + 0x8000;
     item = *(int *)(*state + 0x384);
     sinIdx = FX_RadToIdx(angle);
-    pos = *(Vec3 *)(item + 0xb0);
+    pos = *(VecFx32 *)(item + 0xb0);
     pos.x += FX_Mul(data_0203d210[(sinIdx >> 4) << 1], scale);
     pos.z += FX_Mul(data_0203d210[((sinIdx >> 4) << 1) + 1], scale);
     Ov107_MoveNodeAndRelayout(*state, &pos);

@@ -2,12 +2,7 @@
  * visual row, advances animation, and tears it down when its state changes. */
 
 #include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int m[9];

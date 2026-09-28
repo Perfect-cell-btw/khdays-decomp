@@ -6,9 +6,9 @@
  * GameState field / bit pairs (+0x14 / +0x16 and +0x2e4 / +0x2e6), state 0 (+0x2b8), the
  * top / bottom heights, speed and wait (+0x2d4..+0x2e0) and the home position (+0x2e8);
  * finally mark the bucket (ov002 02076968 mode 1) and register the piece (02076480). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016LiftDef {
     u8 pad_00[0x68];

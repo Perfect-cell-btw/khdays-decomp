@@ -3,6 +3,7 @@
  * data_ov023_0208a7a0, the hook Ov023_DrawJointRotations (020885fc) is installed on the
  * entity's animation (+0x15e0; +0x24; 02014e18 with 0 / 6 / 3) and the hook value at +0x2c of
  * data_ov023_0208a790 records whether the entity has bit 4 of its halfword at +4. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023RotTween {

@@ -2,8 +2,9 @@
  * heading (020cd054); once the partner holds no queued move +0x54, +0x4c and the +0x69 charges clear,
  * the +0x70 turn direction is rolled (+1 or -1), pose 1 plays, the +0x450 part takes motion 0 and the
  * node moves on to 020cdc98. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
 extern int RandNextScaled(int n);
@@ -15,10 +16,10 @@ extern void Ov256_WalkTick(void);
 void Ov256_StepTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 v;
+    VecFx32 v;
 
     Ov256_RotateByActorHeading((int *)&v, (int)node, (int *)(*(int *)(*state + 0x450) + 0x2c));
-    *(Vec3 *)(state + 4) = v;
+    *(VecFx32 *)(state + 4) = v;
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }

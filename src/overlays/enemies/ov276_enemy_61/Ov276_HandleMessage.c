@@ -4,12 +4,14 @@
  * transform with the packet's blend, 2 at the +0x3ec anchor and 3/5 at the +0xa0 transform
  * with the packet's blend; payload 7 registers effect 0x164 (kind 9) on the +0xa0 node into
  * +0x484. The base handler always runs. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern void Srt_SetScaleUniform(SrtTransform *transform, int scale);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, u8 blend, SrtTransform *transform);
 extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, u8 blend, int b);
@@ -19,7 +21,7 @@ extern void Ov107_AiState_OnMessage(int owner, u8 *msg, int arg);
 void Ov276_HandleMessage(int owner, u8 *msg, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         u8 bytes[12];

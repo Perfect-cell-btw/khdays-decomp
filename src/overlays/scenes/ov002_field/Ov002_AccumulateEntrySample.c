@@ -3,6 +3,7 @@
  * accumulator and the stored reading are reset to the new value. The stamp is
  * always refreshed. Passing a non-zero flag also repaints the entry.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

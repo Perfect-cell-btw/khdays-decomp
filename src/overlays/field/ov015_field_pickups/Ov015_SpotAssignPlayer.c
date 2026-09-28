@@ -6,9 +6,9 @@
  * rejected callback (+0x50) fires; otherwise the entry becomes current (+0x179), the
  * assigned callback (+0x48) fires with it and the live bit (bit 1 of +0x40) is dropped.
  * Always returns 0. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov015PlayerActor {
     u8  pad_000[0x4ec];

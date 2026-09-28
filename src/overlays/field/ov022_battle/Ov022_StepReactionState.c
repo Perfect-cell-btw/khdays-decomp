@@ -26,9 +26,10 @@
  *      timer runs, and past 0x9000 the context is cleared.
  */
 
+/* Ov022Actor */
+
 #include "nitro/types.h"
 
-/* Ov022Actor */
 struct Actor {
     u8 pad0000[0x464];
     u64 nFlags2;                     /* 0x0464 */

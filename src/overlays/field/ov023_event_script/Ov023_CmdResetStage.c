@@ -9,6 +9,7 @@
  * scene's sub-object rebuilt (0208402c), game fields 0x2480 := 0 and 0x248f := 1 (020235e8),
  * in a host session (bit 2 of data_0204c240) 02023574 run, and for kind 2 the resource 0x2da
  * requested (0203355c).  Returns 1. */
+
 #include "nitro/types.h"
 
 static volatile u16 *const REG_POWCNT = (volatile u16 *)0x04000304;

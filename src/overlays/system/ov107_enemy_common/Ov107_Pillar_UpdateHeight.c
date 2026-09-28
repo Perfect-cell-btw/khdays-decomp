@@ -2,9 +2,11 @@
  * and use half the result for the node's +0x70 value and +0x64 vector's Y.
  * The source reach and shape height follow the uses in Ov022_ComputeAimPoint.
  */
-typedef struct { int x, y, z; } VecFx32;
 
 /* Partial layouts for the node, its source, and its attached shape. */
+
+#include "nitro/fx.h"
+
 typedef struct Source {
     unsigned char pad0[0x26b8];
     int nReach;                   /* +0x26b8 */

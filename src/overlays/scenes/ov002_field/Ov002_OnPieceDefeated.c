@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct Ov002Vec3 {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov002Owner {
     char pad000[0x68];
@@ -20,7 +16,7 @@ typedef struct Ov002PieceElement {
     char pad011[1];
     u16 nFlags;                 /* +0x12 */
     char pad014[8];
-    Ov002Vec3 vPlace;           /* +0x1c */
+    VecFx32 vPlace;           /* +0x1c */
     char pad028[4];
     char aBodyNode[0x10];       /* +0x2c */
     short aAnimNode[1];         /* +0x3c */
@@ -51,7 +47,7 @@ extern u8 data_0204c240;                /* boot-mode flags */
 extern int Rand16NextScaled(unsigned short nRange);        /* 0 .. nRange-1 */
 extern int Ov002_GetRootField8d94(void);                   /* the drop multiplier */
 extern void Ov002_SpawnAllDrops(const u8 *aAmount, int nCtxIndex,
-                                const Ov002Vec3 *pPlace);
+                                const VecFx32 *pPlace);
 extern void ReleaseNodeResources(char *pNode);
 extern void Ov002_SetFieldBit0(char *pElement, int nMode);
 extern void Slot_Spawn(int a, int b, void *pBlock, int d);

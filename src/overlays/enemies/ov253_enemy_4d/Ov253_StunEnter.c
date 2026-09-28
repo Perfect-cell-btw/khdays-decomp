@@ -2,7 +2,9 @@
  * actor's +0x24 hook when set, fires reaction 0x16c/6 at the +4 anchor, raises bit 0 of +0x1ae,
  * raises bits 1 and 7 then clears bit 0 of the +0x60 high byte, clears bit 0 of the +0x3b4
  * item's +8 low byte and releases the node slot. */
+
 #include "nitro/types.h"
+
 struct hpair { unsigned short a, b; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 

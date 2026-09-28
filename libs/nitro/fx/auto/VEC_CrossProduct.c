@@ -1,11 +1,6 @@
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
-
-typedef struct VecFx32 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
 
 void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out)
 {

@@ -10,19 +10,17 @@
  * high one with a single add.
  */
 
-#include "nitro/types.h"
-
-struct Vec3 {
-    int x, y, z;
-};
-
 /* The game copies vectors through a pointer round-trip rather than by plain
  * struct assignment. Where the two objects are distinct this compiles to the
  * same ldm/stm pair a plain assignment would, but it also survives the two
  * cases the compiler would otherwise fold away: copying the position onto
  * itself, and staging a value through a local before storing it.
  */
-#define VEC_COPY(pDst, pSrc) (*(pDst) = *(struct Vec3 *)(void *)(pSrc))
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+#define VEC_COPY(pDst, pSrc) (*(pDst) = *(VecFx32 *)(void *)(pSrc))
 
 struct NodeAnim {
     u32 nOpaque;
@@ -36,7 +34,7 @@ struct Node {
     u8 pad028[0x58];
     u16 nAngle;                  /* 0x080 */
     u8 pad082[0x26];
-    struct Vec3 vecPos;          /* 0x0a8 */
+    VecFx32 vecPos;          /* 0x0a8 */
     u8 pad0b4[0x94];
     u32 nField148;               /* 0x148 */
 };
@@ -46,7 +44,7 @@ struct Sub {
     u16 nAim : 8;                /* 0x060, extracted with a shift pair */
     u16 nRest60 : 8;
     u8 pad062[0x12e];
-    struct Vec3 vecTarget;       /* 0x190 */
+    VecFx32 vecTarget;       /* 0x190 */
 };
 
 struct Actor;
@@ -61,7 +59,7 @@ struct Actor {
     u8 pad014[0xc];
     struct Node *pNode;          /* 0x020 */
     u8 pad024[4];
-    struct Vec3 vecVel;          /* 0x028 */
+    VecFx32 vecVel;          /* 0x028 */
     u8 pad034[0x24];
     int nRecoil;                 /* 0x058 */
     u8 pad05c[0xa];
@@ -78,8 +76,8 @@ struct Actor {
     char nField47b;              /* 0x47b */
     u8 pad47c[0xc];
     u32 nFacingAngle;            /* 0x488 */
-    struct Vec3 vecPos;          /* 0x48c */
-    struct Vec3 vecStep;         /* 0x498 */
+    VecFx32 vecPos;          /* 0x48c */
+    VecFx32 vecStep;         /* 0x498 */
     u8 pad4a4[0x28];
     int nStateTimer;             /* 0x4cc */
     u8 pad4d0[0x1c];
@@ -90,8 +88,8 @@ struct Actor {
     u8 pad695[0x11b];
     int nAnimHandle;             /* 0x7b0 */
     u8 pad7b4[0x144];
-    struct Vec3 vecFacing;       /* 0x8f8 */
-    struct Vec3 vecPrevPos;      /* 0x904 */
+    VecFx32 vecFacing;       /* 0x8f8 */
+    VecFx32 vecPrevPos;      /* 0x904 */
     u8 pad910[0x480];
     u8 subA[0x10];               /* 0xd90 */
     u8 subB[0x1558];             /* 0xda0 */
@@ -101,7 +99,7 @@ struct Actor {
 
 extern u8 data_0204be04;
 
-extern void func_ov022_020ad44c(struct Vec3 *pOut, struct Actor *pActor);
+extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pActor);
 extern void func_ov022_0209ca88(struct Actor *pActor);
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_IsInputAllowedForActiveSlot(void);
@@ -118,10 +116,10 @@ extern void func_ov022_0209a1ac(struct Actor *pActor);
 extern void Ov022_ApplyExternalPush(struct Actor *pActor);
 extern int Ov002_GetSlotTableByte(int nSlot);
 extern int Ov002_GetSlotGround(int nArea);
-extern int VEC_Mag(const struct Vec3 *pVec);
+extern int VEC_Mag(const VecFx32 *pVec);
 extern void Mover_StepActor(struct Node **ppNode, int nOn);
-extern void Actor_SetVecAndSyncChild(struct Node *pNode, const struct Vec3 *pPos);
-extern int VEC_Distance(const struct Vec3 *pA, const struct Vec3 *pB);
+extern void Actor_SetVecAndSyncChild(struct Node *pNode, const VecFx32 *pPos);
+extern int VEC_Distance(const VecFx32 *pA, const VecFx32 *pB);
 extern int func_ov022_02088338(void);
 extern void Ov022_RunReplayFrame(struct Actor *pActor);
 extern void func_ov022_020965b8(struct Actor *pActor);
@@ -133,19 +131,19 @@ extern int func_ov022_020ad7b0(struct Actor *pActor);
 extern int Ov022_IsState9Or6WithFlag200(void *pObj);
 extern void Ov002_GetPanelWord0220Alt(u8 nId, int nOn);
 extern void Ov022_SpendDecodeBudget(struct Actor *pActor);
-extern void Ov022_ComputeAimPoint(struct Vec3 *pOut, struct Actor *pActor);
-extern void Ov107_MoveNodeAndRelayout(struct Sub *pSub, const struct Vec3 *pPos);
+extern void Ov022_ComputeAimPoint(VecFx32 *pOut, struct Actor *pActor);
+extern void Ov107_MoveNodeAndRelayout(struct Sub *pSub, const VecFx32 *pPos);
 extern void Ov002_CollectNearbySpots(int nArea, struct Sub *pSub, u8 nId);
 extern void func_ov022_0209a68c(struct Actor *pActor, int nOn);
 extern void Scene_DrawNode(struct NodeAnim *pAnim);
 
 void Ov022_ActorUpdate(struct Actor *pActor)
 {
-    struct Vec3 vecClamp;
-    struct Vec3 vecReplay;
-    struct Vec3 vecSubCopy;
-    struct Vec3 vecFacing;
-    struct Vec3 vecSubPos;
+    VecFx32 vecClamp;
+    VecFx32 vecReplay;
+    VecFx32 vecSubCopy;
+    VecFx32 vecFacing;
+    VecFx32 vecSubPos;
     int nGround;
     int nEnable;
     void *pNext;

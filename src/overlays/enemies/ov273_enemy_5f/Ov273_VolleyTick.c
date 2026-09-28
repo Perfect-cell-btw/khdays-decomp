@@ -4,14 +4,16 @@
  * rand(0x301) + 0x100, the pair's two projectiles (+0x3e0 table) are placed at the +0x3f0 / +0x3f4
  * anchors (+0x14) and told to launch through their +0x1cc hook. Unless the +8 flag byte is set,
  * pose request 5 is queued and the node dispatches null. */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct Pair { int a, b; };
 typedef void (*LaunchHook)(int part, int arg);
 extern void func_ov107_020c0b90();  /* K&R + const vector: hoists the pool load over the latch store */
 extern int  RandNextScaled(int bound);
 extern void Srt_SetTranslation(int srt, int translation);
 extern void SetIndexedSlot(int self, int idx, int cb);
-extern const struct vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov273_VolleyTick(int *self) {
     int *state = (int *)self[1];

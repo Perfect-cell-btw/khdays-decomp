@@ -4,10 +4,12 @@
  * 0xa, dispatch null), whose atan2 lands in +0x10. The +0x28 timer counts the frame step down;
  * once spent (or at once when bit 0 of +0x52 is set) the +4 child's +0xa8 flag clears and the
  * node moves to 020d1704. */
+
+#include "nitro/fx.h"
+
 static inline int FX_Mul(int a, int b) {
     return (int)(((long long)a * b + 0x800) >> 12);
 }
-struct vec { int x, y, z; };
 struct Bits52 { unsigned char b0 : 1; };
 extern int  Ov107_ActionResource_GetOffsetAndScale(int obj, void *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *src, void *w);
@@ -22,8 +24,8 @@ extern void Ov278_SpawnStep(void);
 
 void Ov278_DashSteerTick(int *self) {
     int *state = (int *)self[1];
-    struct vec d;
-    struct vec w;
+    VecFx32 d;
+    VecFx32 w;
     int factor;
     int target;
     int dot;

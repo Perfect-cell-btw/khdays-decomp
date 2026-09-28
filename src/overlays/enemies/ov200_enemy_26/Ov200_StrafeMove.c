@@ -8,26 +8,27 @@
  * and a sub-state is requested: 6 when all three +0x390 parts are clear, 7 when the last two are,
  * else 5 (2 instead of 6/7 while +0x1c4 bit 2 is set). Otherwise the chooser takes over again once
  * the +0x13c attack window drops below 2.0. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void SetIndexedSlot(int self, int slot, void (*cb)(void));
-extern void Mtx33_LookAt(int *dst, const Vec3 *a, const Vec3 *b, const void *c);
+extern void Mtx33_LookAt(int *dst, const VecFx32 *a, const VecFx32 *b, const void *c);
 extern void Quat_FromMtx33(int *dst, const int *src);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *dst);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Div(int num, int den);
-extern void Vec3TransformViaTempMtx(Vec3 *dst, const int *a, const void *b);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *src, Vec3 *dst);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, int *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, const int *a, const void *b);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, int *out);
 extern int RandNextScaled();
 extern int Ov200_IsField38NibbleZero(int slot);
 extern void Ov200_AiChooseMoveSteering(void);
 extern char data_02042264[];
 extern char data_02042258[];
 
-static inline void VEC_Set(Vec3 *v, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -46,11 +47,11 @@ void Ov200_StrafeMove(int self)
     int base;
     int span;
     int mtx[9];
-    Vec3 toTarget;
-    Vec3 up;
-    Vec3 side;
-    Vec3 dir;
-    Vec3 fwd;
+    VecFx32 toTarget;
+    VecFx32 up;
+    VecFx32 side;
+    VecFx32 dir;
+    VecFx32 fwd;
 
     ctx = *(int **)(self + 4);
     owner = (int *)ctx[0];
@@ -62,9 +63,9 @@ void Ov200_StrafeMove(int self)
         return;
     }
 
-    Mtx33_LookAt(mtx, (const Vec3 *)(target + 0x74), (const Vec3 *)ctx[0x13], data_02042264);
+    Mtx33_LookAt(mtx, (const VecFx32 *)(target + 0x74), (const VecFx32 *)ctx[0x13], data_02042264);
     Quat_FromMtx33(&ctx[0x25], mtx);
-    VEC_Subtract((const Vec3 *)ctx[0x13], (const Vec3 *)(target + 0x74), &toTarget);
+    VEC_Subtract((const VecFx32 *)ctx[0x13], (const VecFx32 *)(target + 0x74), &toTarget);
     toTarget.y = 0;
     tgt = ctx[2];
     own2 = (int *)ctx[0];

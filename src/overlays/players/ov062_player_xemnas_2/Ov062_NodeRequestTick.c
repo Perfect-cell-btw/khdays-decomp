@@ -6,6 +6,7 @@
  * request until it completes, rebinds the animation tracks (mode 1) and moves to stage 3;
  * stage 3 only steps the request; stage 4 steps it and, once complete, stops the sound, tells
  * the player action 8 and resets. Both +0x12c rows (stride 0x240) are then advanced. */
+
 #include "nitro/types.h"
 
 extern void ForwardToHandlerOrCurrentObject(int nSound, int nVariant, int nFlag);

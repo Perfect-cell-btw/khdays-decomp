@@ -1,7 +1,9 @@
 /* Damage handler of the ov238 partner: while alive, the hit's damage (020c89e8, into +0x28) comes off
  * the health (+0x21a, clamped to 0..max); a damaging hit that is not a blocked special plays
  * alternating hurt sounds 0x12e (flag 0x22 picks the first pair). Returns 1 (0 when already down). */
+
 #include "nitro/types.h"
+
 typedef struct { u8 a, b; } Pair2;
 typedef struct { unsigned lo : 16; unsigned hi : 16; } HitWord;
 

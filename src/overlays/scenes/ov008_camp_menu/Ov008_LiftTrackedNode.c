@@ -8,6 +8,7 @@
  * 0x10 and the next drag cell (+0x184c, 0x28 each) activated in state 0x10
  * with the texture of the record's 1-based tag (+0x20).
  */
+
 #include "nitro/types.h"
 
 #define GRID_PAGES 3

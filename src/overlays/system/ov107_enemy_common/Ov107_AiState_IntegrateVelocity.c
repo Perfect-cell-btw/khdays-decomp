@@ -1,12 +1,9 @@
-#include "nitro/types.h"
-
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
 
 /* Partial AiState, fields from STRUCTS.md; pads are not claims about the object. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct AiState {
     u16 field_00;
     u8 pad002[2];

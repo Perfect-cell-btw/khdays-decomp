@@ -1,8 +1,9 @@
 /* Cached Q27 segment intersection with a triangle or quad face. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
+
 typedef struct VecFx16 { s16 x, y, z; } VecFx16;
-typedef struct VecFx32 { fx32 x, y, z; } VecFx32;
 typedef struct CollisionPlane {
     VecFx16 normal;
     u16 padding06;

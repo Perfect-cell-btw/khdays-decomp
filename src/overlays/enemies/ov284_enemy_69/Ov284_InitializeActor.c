@@ -9,13 +9,15 @@
  * 020cbfc4, bit 1), a 32-byte slot table (+0x3b0) holding the four sub-items of the 0x020cd594
  * ids (attached, bit 1), a placement on the +0x22c list (+0x3a8) from the zero pose at scale
  * 1.0, then loads sound 0x16c. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[4]; } IdTable;
 typedef struct { const char *name[4]; } NameTable;
-typedef struct { Vec3 vA; Vec3 vB; int nScale; int nRange; } PlaceReq;
-typedef struct { Vec3 vec; int scale; } CameraWork;
+typedef struct { VecFx32 vA; VecFx32 vB; int nScale; int nRange; } PlaceReq;
+typedef struct { VecFx32 vec; int scale; } CameraWork;
 typedef struct { int pItem; int pad; } SubitemSlot;
 
 extern void Ov284_Destroy(void);
@@ -42,8 +44,8 @@ extern void Res_RequestIdPair(int resourceId);
 extern const IdTable data_ov284_020cd594;
 extern const NameTable data_ov284_020cd5a4;
 extern const char data_ov284_020cd60c[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042270;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042270;
 
 void Ov284_InitializeActor(char *self)
 {
@@ -80,7 +82,7 @@ void Ov284_InitializeActor(char *self)
     NameTable names;
     NameTable *pNames = &names;
     *pNames = data_ov284_020cd5a4;
-    Vec3 v = data_02041dc8;
+    VecFx32 v = data_02041dc8;
     req.vA = data_02041dc8;
     req.vB = data_02042270;
     req.nScale = 0x1000;

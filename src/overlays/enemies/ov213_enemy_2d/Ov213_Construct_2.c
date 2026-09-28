@@ -6,8 +6,10 @@
  * subscribed to +0x9c) and the +0x394 slot item from the data_ov213_020d2f70 entry (attached,
  * bit 1 of its +0x5c). The pool entry is a one-word wrapper struct copied to the stack early
  * (the ROM's [sp] spill). */
-typedef void (*Callback)(void);
+
 #include "nitro/types.h"
+
+typedef void (*Callback)(void);
 
 extern void Ov213_Minion_Destroy(void);
 extern void Ov213_SendMessage24_2(void);

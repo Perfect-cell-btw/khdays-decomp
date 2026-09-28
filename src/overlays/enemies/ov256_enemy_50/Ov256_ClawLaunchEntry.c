@@ -2,14 +2,15 @@
  * start point is the owner's +0x3ac part's hand bone (+0x418, or +0x424 for the second claw, +0x394)
  * position, bits 1-4 of the +0x60 high byte are set, the +0x390 part takes motion 3, the timers and
  * the +0x6c flag clear and the node moves on to 020d1c50. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_ClawOrbitEntryTick(void);
 
-static inline void VEC_Set(Vec3 *vec, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z)
 {
     int *components = (int *)vec;
     components[0] = x;
@@ -20,20 +21,20 @@ static inline void VEC_Set(Vec3 *vec, int x, int y, int z)
 void Ov256_ClawLaunchEntry(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 zero;
-    Vec3 start;
+    VecFx32 zero;
+    VecFx32 start;
 
     VEC_Set(&zero, 0, 0, 0);
     *(int *)(*state + 0x3a0) = 1;
     state[0x15] = state[0x14];
     {
         int owner = *state;
-        Vec3 *p = &start;
+        VecFx32 *p = &start;
 
-        *p = *(Vec3 *)((*(u8 *)(owner + 0x394) == 0 ? *(int *)(*(int *)(owner + 0x3ac) + 0x418)
+        *p = *(VecFx32 *)((*(u8 *)(owner + 0x394) == 0 ? *(int *)(*(int *)(owner + 0x3ac) + 0x418)
                                                      : *(int *)(*(int *)(owner + 0x3ac) + 0x424)) + 0x14);
     }
-    *(Vec3 *)(state + 0xd) = start;
+    *(VecFx32 *)(state + 0xd) = start;
     {
         u16 hw = *(u16 *)(*state + 0x60);
         *(u16 *)(*state + 0x60) = (hw & ~0xff00) |

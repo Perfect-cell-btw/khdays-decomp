@@ -11,6 +11,7 @@
  *
  * MMIO through held volatile register pointers as in Ov008_MainMenu_SetupDisplay.
  */
+
 #include "nitro/types.h"
 
 typedef struct DisplayRegisters {

@@ -6,8 +6,10 @@
  * VEC_Mag(flatten_y(target(+0x74) - state[0]+0x74)) and pick next-state 7 (in range, dist>0x4000) or
  * 0x10 (too far); if no target, next-state 0x10. Hand off via 0203c634 (cb=0).
  */
-struct vec3 { int x, y, z; };
-extern void Ov107_MoveNodeAndRelayout(int obj, struct vec3 *v);
+
+#include "nitro/fx.h"
+
+extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *v);
 extern int  Ov107_FindNearestObject(int obj, int *out);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Mag(int *v);
@@ -15,18 +17,18 @@ extern void SetIndexedSlot(int self, int idx, int cb);
 
 void Ov211_TrackLeaderRangeCheck(int *self) {
     int *state = (int *)self[1];
-    struct vec3 w;
+    VecFx32 w;
     int v[3];
     int dist;
     int target;
     int c;
 
-    *(struct vec3 *)(state + 0xd) = *(struct vec3 *)(*(int *)(*(int *)(*state + 0x3d4)) + 0xb0);
+    *(VecFx32 *)(state + 0xd) = *(VecFx32 *)(*(int *)(*(int *)(*state + 0x3d4)) + 0xb0);
     c = *(int *)(*(int *)(*(int *)(*state + 0x3d4)) + 0x190);
     if (c != 0) {
         state[0xe] = *(int *)(c + 0x44);
     }
-    w = *(struct vec3 *)(state + 0xd);
+    w = *(VecFx32 *)(state + 0xd);
     w.y -= 0x6000;
     Ov107_MoveNodeAndRelayout(*state, &w);
     target = Ov107_FindNearestObject(*state, &dist);

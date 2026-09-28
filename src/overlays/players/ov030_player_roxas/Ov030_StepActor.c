@@ -10,19 +10,20 @@
  * sample is declared before the step: the other order costs five instructions
  * of shuffling.
  */
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
-struct Vec3 { int x, y, z; };
-
 extern int Ov022_StepAnchorDelta(int self, void *out);
-extern void VEC_Add(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SceneNode_Enable(int node);
 extern int Session_GetLocalPlayerIndex(void);
 
 int Ov030_StepActor(int self) {
     int r;
-    struct Vec3 sample;
-    struct Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
 
     *(int *)(self + 0x24) &= ~0x80;
     Ov022_StepAnchorDelta(self, &sample);
@@ -30,7 +31,7 @@ int Ov030_StepActor(int self) {
 
     step = sample;
     step.y = 0;
-    VEC_Add((struct Vec3 *)(self + 0x498), &step, (struct Vec3 *)(self + 0x498));
+    VEC_Add((VecFx32 *)(self + 0x498), &step, (VecFx32 *)(self + 0x498));
 
     r = (*(int (**)(int))(self + 0x668))(self);
     ((Flags *)(self + 0x694))->b1 = (unsigned char)r;

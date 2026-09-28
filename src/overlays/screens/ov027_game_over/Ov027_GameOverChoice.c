@@ -7,18 +7,14 @@
  * 02083c78), queues it (Ov027_EnqueuePanel 02083cb8) and goes back to Ov027_GameOverMenu
  * (02082e74); otherwise, without bit 4 of the mode word, the main display's BG mode goes to 1
  * and Ov027_GameOverIdle (02083068) follows; 0 to stay. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

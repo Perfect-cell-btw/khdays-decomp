@@ -3,19 +3,20 @@
  * mode 0xd at the +8 point and sets the flag. Once the +0xc idle byte is clear the owner plays
  * animation 4 (mode 1), +0x20 and the flag clear and the tick hands over to
  * Ov274_ChargeTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov274_ChargeTick(int *node);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov274_FallTick(int *node)
 {
     int *state = (int *)node[1];
 
-    *(Vec3 *)(state + 5) = data_02041dc8;
+    *(VecFx32 *)(state + 5) = data_02041dc8;
     if (*(unsigned char *)((char *)state + 0x52) == 0) {
         state[9] += *(int *)(node[0] + 0x2c);
         if (state[9] >= 0x666) {

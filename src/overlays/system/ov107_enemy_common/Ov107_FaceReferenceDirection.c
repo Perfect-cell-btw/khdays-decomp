@@ -2,9 +2,8 @@
  * the two constant vectors into self+0x7c, normalise it in place, copy the
  * second constant straight into self+0x88, then hand off to
  * Ov107_Region_SyncChildVisibility. */
-typedef struct {
-    int x, y, z;
-} VecFx32;
+
+#include "nitro/fx.h"
 
 extern VecFx32 data_020475c4;
 extern VecFx32 data_020475ac;

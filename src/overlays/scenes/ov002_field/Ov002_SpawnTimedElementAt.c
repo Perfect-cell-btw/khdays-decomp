@@ -1,13 +1,10 @@
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
 
 /* The 20 byte placement record the node call reads. Only the first three
  * fields are set here. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct {
     int nKind;                      /* +0x00 */
     int nParamB;                    /* +0x04 */
@@ -19,7 +16,7 @@ typedef struct {
 extern char *Ov002_ClaimPoolEntry(char *pClass, int nSlot);
 extern int Actor_ArmWithMessage(int nNode, int nZero, void *pObj,
                          Ov002PlaceParams *pParams, int nFlag);
-extern void Actor_SetVecAndSyncChild(char *pNode, Vec3 *pPos);
+extern void Actor_SetVecAndSyncChild(char *pNode, VecFx32 *pPos);
 extern int Ov002_TakeEntryOfKind1(void);
 extern void Ov002_PushBucketNode(int nBucket, char *pElement);
 extern void Ov002_Element_PickTick(char *pElement);
@@ -32,13 +29,13 @@ extern void Ov002_Element_PickTick(char *pElement);
  * starts in state 3, and the per-frame handler is installed before the node
  * goes into its bucket.
  */
-void Ov002_SpawnTimedElementAt(char *pClass, int nSlot, int nBucket, Vec3 *pPos,
+void Ov002_SpawnTimedElementAt(char *pClass, int nSlot, int nBucket, VecFx32 *pPos,
                          short nAngle, u16 wStateField,
                          unsigned char bStateWidth, short nKey)
 {
     char *pElement;
     Ov002PlaceParams place;
-    Vec3 vPos;
+    VecFx32 vPos;
 
     pElement = Ov002_ClaimPoolEntry(pClass, nSlot);
 
@@ -51,7 +48,7 @@ void Ov002_SpawnTimedElementAt(char *pClass, int nSlot, int nBucket, Vec3 *pPos,
     Actor_SetVecAndSyncChild(pElement + 0x38, &vPos);
 
     *(short *)(pElement + 0x18) = nAngle;
-    *(Vec3 *)(pElement + 0x1c) = *pPos;
+    *(VecFx32 *)(pElement + 0x1c) = *pPos;
     *(int *)(pElement + 0x28) = place.nParamA;
 
     *(u16 *)(pElement + 0x1b6) = nKey;

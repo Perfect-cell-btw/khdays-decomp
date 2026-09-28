@@ -6,6 +6,7 @@
  * (GXS_LoadBG3Char), then the file is freed.  Members 0x10 and 0x11 load their CHAR blocks into
  * sub BG0 and BG2 (020ae340), cells 0xa and 0xb of the shared tag tracker (02084a64) are invoked
  * (Ov008_TagTracker_InvokeCallback 02089544) and VRAM slots 0x19..0x1b marked used (02084964). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;

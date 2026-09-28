@@ -4,8 +4,10 @@
  * of the +0x394 pool (+0x384, subscribed, motion halted), the +0x398 sub-item from entry 0x24
  * (attached, bit 1 of +0x5c), and from a pose 1.5 up at scale 2.6 a +0x22c placement (+0x388,
  * bit 1 of its +8 low byte) and a +0x144 placement (+0x38c); +0x390 starts empty. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int scale; } Pose;
+
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int scale; } Pose;
 typedef void (*Callback)(void);
 struct w8 { unsigned int lo : 8, rest : 24; };
 
@@ -24,9 +26,7 @@ extern void Ov107_EnqueueValue(struct Ov245Thrown *self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
 
-typedef struct { int x, y, z; } VecP_;
-
-static inline void VecSetP_(VecP_ *v, int x, int y, int z)
+static inline void VecSetP_(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -47,7 +47,7 @@ struct Ov245Thrown {
     int f54;              /* 0x54 */
     int f58;              /* 0x58 */
     int pad5c[2];
-    VecP_ pose;           /* 0x64 */
+    VecFx32 pose;           /* 0x64 */
     int scale;            /* 0x70 */
     int pad74[10];
     int pOwner;           /* 0x9c */

@@ -1,6 +1,7 @@
 /* SBC CALLDL handler (NitroSystem G3D): unless the render state is skipping (flag 0x100), send the
  * display list at the command's relative offset (bytes 1-4, little endian) with the size in bytes
  * 5-8 to the geometry engine (NNS_G3dGeSendDL = NNS_G3dGeSendDL); then step past the 9-byte command. */
+
 #include "nitro/types.h"
 
 typedef struct NNSG3dRS {

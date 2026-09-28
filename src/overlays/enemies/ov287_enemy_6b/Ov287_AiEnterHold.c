@@ -7,7 +7,8 @@
  * it just below sp, which is exactly the ROM's `sub r3,sp,#8 / ldm / stm`.
  *
  * One of three byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void func_ov107_020c0b90(int obj, int a, VecFx32 v, int d);
 extern void Ov107_BuildAndSendUpdate(int obj, int a, int b, int c);

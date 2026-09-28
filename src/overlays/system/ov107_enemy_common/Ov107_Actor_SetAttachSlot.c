@@ -11,11 +11,8 @@
  *
  * The table is read-only (nothing in the ROM writes it); declaring it const is
  * what lets mwcc schedule its loads past the stores into the slot record. */
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+
+#include "nitro/fx.h"
 
 typedef struct {
     char pad_00[0x5c];
@@ -24,7 +21,7 @@ typedef struct {
 
 typedef struct {
     unsigned int kind:4;
-    Vec3 pos;                 /* +0x04 */
+    VecFx32 pos;                 /* +0x04 */
     int field_10;             /* +0x10 */
     CreatedItem *item;        /* +0x14 */
     unsigned char field_18;   /* +0x18 */
@@ -54,14 +51,14 @@ extern void FreeInstanceMemory(void *p);
 extern void *CallocInstance(unsigned int size);
 extern CreatedItem *CreateSubitemInstance0xB4(unsigned int handle);
 
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const SlotKindInfo data_ov107_020cb9a4[][4];
 
-void Ov107_Actor_SetAttachSlot(Obj *self, int slot, unsigned int kind, Vec3 *pos, int field10)
+void Ov107_Actor_SetAttachSlot(Obj *self, int slot, unsigned int kind, VecFx32 *pos, int field10)
 {
     unsigned int spriteSet = func_ov107_020c9848()->spriteSet_88;
     Slot *entry;
-    Vec3 v;
+    VecFx32 v;
     int resource;
 
     if (kind == 0 && self->slots[slot] != 0) {

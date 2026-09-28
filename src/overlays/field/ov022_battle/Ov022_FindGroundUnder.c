@@ -8,21 +8,16 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define CAST_FLAGS 0xf
 #define CAST_RISE 0x800
 #define CAST_REACH 0x8000
 
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* CollCastParams */
 struct CollCastParams {
-    struct VecFx32 *pOrigin;     /* 0x00 */
-    struct VecFx32 *pDir;        /* 0x04 */
+    VecFx32 *pOrigin;     /* 0x00 */
+    VecFx32 *pDir;        /* 0x04 */
     int nRadius;                 /* 0x08 */
     u16 wDirIsUnit;              /* 0x0c */
     u16 wFlagE;                  /* 0x0e */
@@ -49,15 +44,15 @@ struct Hit {
 
 extern struct Hit *func_0202c208(int nSlotIndex, struct CollCastParams *pQry);
 /* Vec3ScaleAddQ27 is Vec3ScaleAddQ27; it still carries its address name. */
-extern void Vec3ScaleAddQ27(int nFactor, struct VecFx32 *pDir,
-                          struct VecFx32 *pOrigin, struct VecFx32 *pOut);
+extern void Vec3ScaleAddQ27(int nFactor, VecFx32 *pDir,
+                          VecFx32 *pOrigin, VecFx32 *pOut);
 
-int Ov022_FindGroundUnder(int nSlotIndex, const struct VecFx32 *pvecPos,
-                        struct VecFx32 *pvecOut, struct Hit **ppHit)
+int Ov022_FindGroundUnder(int nSlotIndex, const VecFx32 *pvecPos,
+                        VecFx32 *pvecOut, struct Hit **ppHit)
 {
-    struct VecFx32 vecOrigin;
-    struct VecFx32 vecDir;
-    struct VecFx32 vecHit;
+    VecFx32 vecOrigin;
+    VecFx32 vecDir;
+    VecFx32 vecHit;
     struct CollCastParams qry;
     struct Hit *pHit;
 

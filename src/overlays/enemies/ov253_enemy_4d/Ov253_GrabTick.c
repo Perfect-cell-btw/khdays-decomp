@@ -9,12 +9,14 @@
  * +0x1ae sets, the +0x3b4 part's hit volume turns off, reaction 0x16c mode 5 fires at the hand, the
  * timer clears and the tick hands over to Ov253_CarryHoldTick; without one, pose 7 plays and the tick
  * hands over to Ov253_EnterReaction. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { Fx32 x, y, z; } FxVec;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 struct Bits40 { int bit0 : 1; int bit1 : 1; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
@@ -24,15 +26,15 @@ extern long long func_020201b8(long long a, long long b);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int *List_First(int list);
 extern int *List_Next(int list);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, const Vec3 *push, int z);
-extern void VEC_Add(const void *a, const Vec3 *b, void *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, const VecFx32 *push, int z);
+extern void VEC_Add(const void *a, const VecFx32 *b, void *out);
 extern void Ov022_ToggleBit13ByMode(int a, int b);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov253_020d497e;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov253_CarryHoldTick(int *node);
 extern void Ov253_EnterReaction(void);
 
@@ -42,9 +44,9 @@ void Ov253_GrabTick(int *node)
     long long q;
     int scene = *(int *)(*state + 4);
     Sphere sphere;
-    Vec3 d;
-    Vec3 push;
-    Vec3 raw;
+    VecFx32 d;
+    VecFx32 push;
+    VecFx32 raw;
     Cmd14 msg;
     FxVec vContact;
     int *entry;
@@ -61,7 +63,7 @@ void Ov253_GrabTick(int *node)
         *((u8 *)state + 0x32) = 1;
     }
     if (q >= 0x80000000LL) {
-        sphere.center = *(Vec3 *)(*(int *)(*state + 0x3ac) + 0x14);
+        sphere.center = *(VecFx32 *)(*(int *)(*state + 0x3ac) + 0x14);
         sphere.nRadius = 0x2000;
         if (*(int *)(*state + 0x3bc) == 0) {
             entry = List_First(scene + 0xa8);
@@ -96,7 +98,7 @@ void Ov253_GrabTick(int *node)
     }
     if (*(int *)(*state + 0x3bc) != 0) {
         msg = data_ov253_020d497e;
-        raw = *(Vec3 *)(*(int *)(*state + 0x3ac) + 0x14);
+        raw = *(VecFx32 *)(*(int *)(*state + 0x3ac) + 0x14);
         raw.y += 0x1000;
         vContact.x = *(Fx32 *)&raw.x;
         ((u8 *)&msg)[5] = (u8)(((u32)vContact.x.value >> 0x10 & 0x7f) | ((u32)vContact.x.value >> 0x18 & 0x80));

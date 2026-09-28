@@ -4,26 +4,27 @@
  * while a target closer than 0x333 or no target at all leaves it in place; the vertical speed is
  * set to 0x1333 and the actor's hook runs; past 0x6000 on the +0x4cc counter it hands over to
  * state 0x24. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
 extern int FX_Atan2(int x, int z);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);         /* ScaleVec3Fx12 */
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);         /* ScaleVec3Fx12 */
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void *Ov022_ActorSetState(char *self, int state);
 extern char *data_ov090_020bcc00;
 extern short data_0203d210[];
 
 void *Ov090_ApproachStep(char *self)
 {
-    Vec3 d;
-    Vec3 step;
-    Vec3 flat;
+    VecFx32 d;
+    VecFx32 step;
+    VecFx32 flat;
     void *next = 0;
     u16 angle;
     int speed = *(int *)(data_ov090_020bcc00 + 0x2cf8);
@@ -42,7 +43,7 @@ void *Ov090_ApproachStep(char *self)
     if (Ov022_ValidateTargetRef(self) == 0) {
         angle = *(u16 *)(*(char **)(self + 0x20) + 0x80) - 0x8000;
     } else {
-        VEC_Subtract(func_ov022_020ad0c0(self), (Vec3 *)(self + 0x8c + 0x400), &d);
+        VEC_Subtract(func_ov022_020ad0c0(self), (VecFx32 *)(self + 0x8c + 0x400), &d);
         dist = VEC_Mag(&d);
         if (dist >= 0x333) {
             angle = (u16)FX_Atan2(-d.x, -d.z);
@@ -68,7 +69,7 @@ void *Ov090_ApproachStep(char *self)
     *(int *)(self + 0x58) = 0x1333;
     flat = step;
     flat.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &flat, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &flat, (VecFx32 *)(self + 0x98 + 0x400));
     (*(int (**)(char *))(self + 0x668))(self);
     if (*(int *)(self + 0x4cc) >= 0x6000) {
         next = Ov022_ActorSetState(self, 0x24);

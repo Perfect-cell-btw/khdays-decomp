@@ -5,7 +5,9 @@
  * (kind 0x17, at the +0xa0 pose) whose counters are non-zero; 2 / 3 run the 020cda7c hook;
  * 4 / 5 start the +0x18 / +0x20 sub-items at the +0x3ac / +0x3a8 items' transforms; 6 starts
  * effect 0x166 (kind 0xa) at the +0xa0 pose into +0x3c4. The base handler always runs. */
+
 #include "nitro/types.h"
+
 struct Bits3c0 { unsigned int b0 : 1; };
 struct Bits28 { u8 b0 : 1; };
 struct Ov278SubSlot { int pItem; int pChild; };

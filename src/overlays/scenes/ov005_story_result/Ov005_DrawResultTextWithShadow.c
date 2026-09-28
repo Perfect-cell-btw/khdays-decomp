@@ -1,5 +1,7 @@
 /* Draw result text and its optional one-pixel shadow. */
+
 #include "nitro/types.h"
+
 typedef struct TileSurface TileSurface;
 extern void Text_DrawDirectional_2(TileSurface *, int, int, int, unsigned int, const u16 *);
 void Ov005_DrawResultTextWithShadow(TileSurface *surface, const u16 *text, int x, int y,

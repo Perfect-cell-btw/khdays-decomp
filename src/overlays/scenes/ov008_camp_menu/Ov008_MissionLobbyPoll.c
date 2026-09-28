@@ -11,6 +11,7 @@
  * forwarding block is a static inline helper (three copies, each with its own
  * stack info); the packet array is taken through a local pointer.
  */
+
 #include "nitro/types.h"
 
 #define GATE_LOBBY   0xd

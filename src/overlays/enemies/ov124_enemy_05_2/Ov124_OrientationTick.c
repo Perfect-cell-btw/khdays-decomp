@@ -3,16 +3,17 @@
  * the yaw's rotation about world Y is composed with the orientation that tilts world Y onto the
  * actor's +0x124 normal and written to the +0xa0 quaternion; the +4 offset is handed to the
  * actor's +0xf0 vector and reset to the zero vector. */
+
+#include "nitro/fx.h"
+
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(void *dst, void *src, int t);
 extern void Quat_FromTwoVectors(void *dst, void *src, int m);
 extern void Quat_Multiply(void *dst, void *a, void *b);
 extern void Srt_SetRotationQuat(int a, void *b);
 
-typedef struct { int x, y, z; } Vec3;
-
-extern Vec3 data_02042264;
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02042264;
+extern VecFx32 data_02041dc8;
 
 void Ov124_OrientationTick(int *ctx) {
     int a[4];
@@ -26,8 +27,8 @@ void Ov124_OrientationTick(int *ctx) {
     Quat_Multiply(a, a, b);
     Srt_SetRotationQuat(s[0] + 0xa0, a);
     {
-        Vec3 *q = (Vec3 *)((char *)s + 0x4);
-        *(Vec3 *)(s[0] + 0xf0) = *q;
+        VecFx32 *q = (VecFx32 *)((char *)s + 0x4);
+        *(VecFx32 *)(s[0] + 0xf0) = *q;
         *q = data_02041dc8;
     }
 }

@@ -6,8 +6,10 @@
  * keep waiting; else if either facing bit0 at *state+0x17a/+0x17c is set, mark *state+0x1c7 = 6 when
  * state[0x1a] != 0 else 2, and bail (0203c634 cb=0).
  */
-struct vec3 { int x, y, z; };
-struct S200b { char pad[0xc]; struct vec3 dst; struct vec3 src; };
+
+#include "nitro/fx.h"
+
+struct S200b { char pad[0xc]; VecFx32 dst; VecFx32 src; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b1 { unsigned char b0 : 1; };
 extern void ScaleVec3Fx12(int scale, void *in, void *out);

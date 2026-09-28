@@ -9,9 +9,10 @@
  * acknowledged bit and then clears the request back to idle.
  */
 
+/* Ov022SyncRequest: one of the twelve 0x38-byte requests */
+
 #include "nitro/types.h"
 
-/* Ov022SyncRequest: one of the twelve 0x38-byte requests */
 struct SyncRequest {
     u8 bWaiting : 1;             /* 0x00 bit 0 */
     u8 bDone : 1;                /* 0x00 bit 1 */

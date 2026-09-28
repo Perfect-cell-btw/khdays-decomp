@@ -1,12 +1,13 @@
 /* Start of the ov258 burst effect: its rig transform resets and moves to the stored position, bit 1
  * of the rig's +0x5c flags clears, tracks 0 and 2 play, the transform scales to 2.0 and the rig is
  * posed; the +0x14 timer and +0x18 flag clear, +0x19 is set and the brain waits on 020d0bbc. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void SrtTransform_SetIdentity(void *transform);
 extern void Srt_SetScaleXYZ(void *transform, int x, int y, int z);
-extern void Srt_SetTranslation(void *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(void *transform, const VecFx32 *translation);
 extern void SetSubitemState(int rig, int channel, int a, int b);
 extern void RefreshObjectCallbacks(int rig, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -17,7 +18,7 @@ void Ov258_BurstEffectStart(int *node)
     int *state = (int *)node[1];
 
     SrtTransform_SetIdentity((void *)(*state + 4));
-    Srt_SetTranslation((void *)(*state + 4), (Vec3 *)(state + 2));
+    Srt_SetTranslation((void *)(*state + 4), (VecFx32 *)(state + 2));
     *(int *)(*state + 0x5c) &= ~2;
     SetSubitemState(*state, 0, 0, 0);
     SetSubitemState(*state, 2, 0, 0);

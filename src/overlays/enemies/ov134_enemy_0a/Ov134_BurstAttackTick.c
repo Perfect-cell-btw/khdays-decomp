@@ -17,13 +17,14 @@
  * position is a wrapped-value copy (FxVec) so the unread stack copy survives; the two-pass
  * counter is a signed char; the entity id at +0x1b4 is read unsigned.
  */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 struct Ov134AreaMsg { u16 h[7]; };
-struct Ov107SweepQuery { struct Vec3 vPos; int nRadius; };
+struct Ov107SweepQuery { VecFx32 vPos; int nRadius; };
 
 struct Ov134Actor {
     char pad000[0x24];
@@ -38,8 +39,8 @@ struct Ov134ActionState {
     char pad008[0x28];
     int nElapsed30;              /* +0x30 */
     char pad034[4];
-    struct Vec3 *pPoint38;       /* +0x38 */
-    struct Vec3 *pPoint3c;       /* +0x3c */
+    VecFx32 *pPoint38;       /* +0x38 */
+    VecFx32 *pPoint3c;       /* +0x3c */
     u8 bFlags40;                 /* +0x40 */
     u8 bHitMask41;               /* +0x41 */
 };
@@ -58,10 +59,10 @@ struct Ov134ActionNode {
 
 extern struct Ov134AreaMsg data_ov134_020cdfa2;
 extern struct Ov134AreaMsg data_ov134_020cdf94;
-extern struct Vec3 data_02042258;
+extern VecFx32 data_02042258;
 
-extern void Vec3TransformViaTempMtx(struct Vec3 *dst, int *mtx, struct Vec3 *src);
-extern int VEC_Normalize(struct Vec3 *v, struct Vec3 *unit);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, int *mtx, VecFx32 *src);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void VEC_Add(void *a, void *b, void *out);
 extern int Ov107_CollectSphereOverlaps(struct Ov134Actor *owner, void *query, void *results);
@@ -78,9 +79,9 @@ void Ov134_BurstAttackTick(struct Ov134ActionNode *node)
     struct Ov134AreaMsg msg1;
     int results[4];
     struct Ov107SweepQuery query;
-    struct Vec3 dir;
-    struct Vec3 push;
-    struct Vec3 at;
+    VecFx32 dir;
+    VecFx32 push;
+    VecFx32 at;
     struct Ov134AreaMsg msg;
     struct Ov134AreaMsg tmpl;
     FxVec vDead1;
@@ -142,7 +143,7 @@ void Ov134_BurstAttackTick(struct Ov134ActionNode *node)
                     ScaleVec3Fx12(0x600, &push, &push);
                     if (Ov107_InvokeHitCallback(results[i], state->pOwner, state->pOwner, 0, &push, 0) != 0) {
                         msg = tmpl;
-                        at = *(struct Vec3 *)(results[i] + 0x74);
+                        at = *(VecFx32 *)(results[i] + 0x74);
                         at.y += 0x800;
                         vDead2.x = *(Fx32 *)&at.x;
                         ((u8 *)&msg)[5] = (u8)(((unsigned int)vDead2.x.value >> 0x10 & 0x7f)

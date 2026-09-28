@@ -4,16 +4,17 @@
  * height, and the +0x34 climb is -0x80 while the owner's +0x13c height is above it (else 0x80). A
  * target found by Ov279_PickBestFacingTarget (kept at +8) requests sub-state 6 and ends the tick; otherwise
  * once the +0x50 delay runs out the tick hands over to Ov279_AiStep_PickLandingPoint. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-extern void Vec3TransformViaTempMtx(Vec3 *out, const void *m, const Vec3 *in);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *m, const VecFx32 *in);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov279_PickBestFacingTarget(int owner);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern const short data_0203d210[];
 extern void Ov279_AiStep_PickLandingPoint(int *node);
 
@@ -23,8 +24,8 @@ void Ov279_HoverTick(int *node)
     int height = *(int *)(*state + 0x13c);
     int bob;
 
-    Vec3TransformViaTempMtx((Vec3 *)(state + 0xc), (void *)(*state + 0xa0), &data_02042258);
-    ScaleVec3Fx12(0x100, (Vec3 *)(state + 0xc), (Vec3 *)(state + 0xc));
+    Vec3TransformViaTempMtx((VecFx32 *)(state + 0xc), (void *)(*state + 0xa0), &data_02042258);
+    ScaleVec3Fx12(0x100, (VecFx32 *)(state + 0xc), (VecFx32 *)(state + 0xc));
     state[0x17] += *(int *)(*node + 0x2c);
     if (state[0x17] > 0x2000) {
         state[0x17] -= 0x4000;

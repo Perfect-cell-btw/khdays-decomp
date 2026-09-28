@@ -3,6 +3,7 @@
  * reflected about the owner's +0xc fx32 X (less the sprite width, Oam_GetObjWidth) and the H flip
  * toggled on, and likewise for Y with flip-Y (bit 5), the +0x10 Y and the height (Oam_GetObjHeight).
  * The effect is written back through G2_SetOBJEffect with `rsParam`. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 

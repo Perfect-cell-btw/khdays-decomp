@@ -5,11 +5,13 @@
  * sphere's surface towards it to the owner's +0x24 hook. The head point is then remembered in +0x24.
  * Once the +0x30 idle byte clears, animation 2 plays once, +0x12, +0x1c and +0x20 clear and the
  * tick hands over to Ov277_SummonTick. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -18,12 +20,12 @@ typedef struct { Vec3 center; int nRadius; } Sphere;
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, void *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov277_020d36ec;
@@ -37,9 +39,9 @@ void Ov277_LungeBiteTick(int *node)
     Fx32 scratchX;
     int hits[4];
     Sphere sphere;
-    Vec3 step;
-    Vec3 dir;
-    Vec3 point;
+    VecFx32 step;
+    VecFx32 dir;
+    VecFx32 point;
     int n;
     int i;
 
@@ -71,7 +73,7 @@ void Ov277_LungeBiteTick(int *node)
             }
         }
     }
-    *(Vec3 *)(state + 9) = *(Vec3 *)(*(int *)(*state + 0x3cc) + 0x14);
+    *(VecFx32 *)(state + 9) = *(VecFx32 *)(*(int *)(*state + 0x3cc) + 0x14);
     if (*(u8 *)state[0xc] != 0) {
         return;
     }

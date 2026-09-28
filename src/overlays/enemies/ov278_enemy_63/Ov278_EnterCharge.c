@@ -1,6 +1,7 @@
 /* Charge entry: plays the charge cue (data_ov278_020d6374 entry 1) through the object's cue
  * callback when set, spawns effect 0x166 (kind 6) at the +0x38 anchor, plays pose 4 and moves
  * the node to 020d046c. */
+
 #include "nitro/types.h"
 
 typedef struct {

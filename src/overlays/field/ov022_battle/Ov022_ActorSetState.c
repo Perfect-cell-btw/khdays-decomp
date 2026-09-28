@@ -6,6 +6,7 @@
  * that is why each one loads and stores BOTH words and ANDs the untouched half
  * with an all-ones mask built by mvn/sub.
  */
+
 #include "nitro/types.h"
 
 struct Vec3 {

@@ -10,19 +10,15 @@
  * is handed to the mover with.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022AnimBlock */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct AnimBlock {
     u16 nFlags;                  /* 0x00 */
     u8 pad02[0xa2];
-    struct VecFx32 vecAt;        /* 0xa4 */
+    VecFx32 vecAt;        /* 0xa4 */
     int aEntryFlags[3];          /* 0xb0 */
 };
 
@@ -40,8 +36,8 @@ struct SlotTail {
 /* Ov022SlotPart */
 struct SlotPart {
     int nTimer;                  /* 0x000 */
-    struct VecFx32 vecPos;       /* 0x004 */
-    struct VecFx32 vecVel;       /* 0x010 */
+    VecFx32 vecPos;       /* 0x004 */
+    VecFx32 vecVel;       /* 0x010 */
     struct AnimBlock anim;       /* 0x01c */
     u8 pad0d8[0x70];
     void *pOwner;                /* 0x148 */
@@ -72,7 +68,7 @@ struct Actor {
     u8 pad000[0x20];
     struct ActorNode *pNode;     /* 0x020 */
     u8 pad024[0x468];
-    struct VecFx32 vecMark;      /* 0x48c */
+    VecFx32 vecMark;      /* 0x48c */
 };
 
 /* Ov022ReactionCtx */
@@ -90,12 +86,12 @@ extern short data_0203d210[];
 
 extern void Ov022_LaunchSlotPart(struct ReactionCtx *pCtx, void *pRow,
                                 int nArg2, int nArg3);
-extern void VEC_MultAdd(int nScale, struct VecFx32 *pA, struct VecFx32 *pB,
-                        struct VecFx32 *pOut);
-extern void VEC_Subtract(struct VecFx32 *pA, struct VecFx32 *pB,
-                         struct VecFx32 *pOut);
+extern void VEC_MultAdd(int nScale, VecFx32 *pA, VecFx32 *pB,
+                        VecFx32 *pOut);
+extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB,
+                         VecFx32 *pOut);
 extern void Ov022_MovePartTo(struct ReactionCtx *pCtx, struct SlotPart *pPart,
-                                struct VecFx32 *pAt, struct VecFx32 *pDir);
+                                VecFx32 *pAt, VecFx32 *pDir);
 
 #define AIM_WINDOW 0x5a000
 #define AIM_MARK 0xc000
@@ -108,8 +104,8 @@ extern void Ov022_MovePartTo(struct ReactionCtx *pCtx, struct SlotPart *pPart,
 void Ov022_EnterReactionAlongFacing(struct ReactionCtx *pCtx, int nUnused, int nArg2,
                          int nArg3)
 {
-    struct VecFx32 vecAt;
-    struct VecFx32 vecDir;
+    VecFx32 vecAt;
+    VecFx32 vecDir;
     struct ActorSlot *pSlot;
     struct Actor *pActor;
     int nPart;

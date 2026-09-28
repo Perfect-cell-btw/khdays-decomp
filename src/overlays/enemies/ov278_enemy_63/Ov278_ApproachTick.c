@@ -3,21 +3,22 @@
  * 0.25 along it) and, once the surface gap (root of the squared distance minus both +0x80
  * radii, measured twice) closes under 2.0, rolls a strafe direction into +0x34, clears +0x38
  * and moves the node to 020d2628. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int FX_Sqrt(int x);
 extern int RandNextScaled();  /* K&R decl: needed for the rand `+ (v - v)` copy artifact */
 extern void Ov278_StrafeTick(void);
 
 void Ov278_ApproachTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int dist;
     int v;
 
@@ -33,14 +34,14 @@ void Ov278_ApproachTick(int *node) {
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)(state[1] + 0x74), (Vec3 *)(*state + 0x74), &d);
+    VEC_Subtract((VecFx32 *)(state[1] + 0x74), (VecFx32 *)(*state + 0x74), &d);
     {
         int actor = state[0];
         int target = state[1];
         dist = VEC_Normalize(&d, &d) - (*(int *)(target + 0x80) + *(int *)(actor + 0x80));
     }
     state[0xc] = func_020050b4(d.x, d.z);
-    ScaleVec3Fx12(0x400, &d, (Vec3 *)(state + 2));
+    ScaleVec3Fx12(0x400, &d, (VecFx32 *)(state + 2));
     {
         int actor = state[0];
         int target = state[1];

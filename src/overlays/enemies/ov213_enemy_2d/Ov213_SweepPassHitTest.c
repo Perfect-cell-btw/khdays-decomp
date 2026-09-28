@@ -4,12 +4,13 @@
  * downwards, on behalf of the actor's +0x384 rider (kind 2); on acceptance the 14-byte message
  * data_ov213_020d2f2c carries its +0x74 point to the actor's +0x24 hook, its bit is set and the
  * rider's reaction 0x122 mode 7 fires at the +4 point. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -21,10 +22,10 @@ typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern int Segment_ClosestPoint(void *point, Segment *seg, fx64 *outDist);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, void *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern const Cmd14 data_ov213_020d2f2c;
 
@@ -42,8 +43,8 @@ void Ov213_SweepPassHitTest(int *state)
     Fx32 scratchX;
     int hits[4];
     Segment seg;
-    Vec3 point;
-    Vec3 push;
+    VecFx32 point;
+    VecFx32 push;
     int n;
     int i;
 

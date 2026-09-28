@@ -5,9 +5,9 @@
  * transform (+0x4a4) is then put at the target (0202b450), the position (+0x488) reloaded from
  * the rest position (+0x54c), kind-0 kickables get kick flag bit 2 and a body value of 0x19a
  * (+0x5c), and sync flag bit 0 (+0x61c) is raised. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016KickableDef {
     u8 pad_00[0x7c];

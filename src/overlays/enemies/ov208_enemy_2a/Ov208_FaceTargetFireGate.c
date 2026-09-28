@@ -7,7 +7,9 @@
  * dir = normalise(target(+0x190) - state[2]); state[0xd] = atan2(dir.x, dir.z). If heading . dir >=
  * 0xf00 fire attack 3 and go to the 020d215c state; else fire attack 9 and go to 020d2024.
  */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int  Ov208_PickBestFacingNode(int obj, void *p);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
@@ -21,8 +23,8 @@ extern short data_0203d210;
 
 void Ov208_FaceTargetFireGate(int *self) {
     int *state = (int *)self[1];
-    struct vec v;
-    struct vec dir;
+    VecFx32 v;
+    VecFx32 dir;
     int target;
 
     state[0x18] = *(int *)(*self + 0x2c) * 0x1e / 10;

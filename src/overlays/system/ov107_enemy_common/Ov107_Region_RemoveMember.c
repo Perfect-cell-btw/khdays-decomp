@@ -1,8 +1,10 @@
-#include "nitro/types.h"
 
 /* Combatant/creature instance: only the fields this function touches. Same
  * type is used both for the "target" argument and for the payload each list
  * entry points at (both are creature instances; effects are matched by id). */
+
+#include "nitro/types.h"
+
 typedef struct Combatant {
     u16 flags;              /* +0x00 */
     u16 id;                 /* +0x02 */

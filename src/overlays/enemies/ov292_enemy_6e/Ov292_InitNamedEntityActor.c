@@ -16,11 +16,13 @@
  * filled before the handler entries go in, exactly as the ov189 sibling does
  * it; filled afterwards the whole prologue schedules one slot late.
  */
-struct Vec3 { int x, y, z; };
-struct Placement { struct Vec3 vec; int scale; };
-struct Box { struct Vec3 min, max; };
 
-extern const struct Vec3 data_02041dc8;
+#include "nitro/fx.h"
+
+struct Placement { VecFx32 vec; int scale; };
+struct Box { VecFx32 min, max; };
+
+extern const VecFx32 data_02041dc8;
 extern unsigned short data_ov292_020d48cc[];
 
 extern void Ov292_ReleaseSubObjectAndListThenNotify(void);
@@ -46,7 +48,7 @@ extern void List_Init();
 
 void Ov292_InitNamedEntityActor(char *self)
 {
-    struct Vec3 zero;
+    VecFx32 zero;
     struct Box box;
     struct Placement place;
 
@@ -75,7 +77,7 @@ void Ov292_InitNamedEntityActor(char *self)
     }
     *(int *)(self + 0x70) = 0x1800;
     zero = data_02041dc8;
-    *(struct Vec3 *)(self + 0x64) = zero;
+    *(VecFx32 *)(self + 0x64) = zero;
 
     *(void **)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(void **)(self + 0x384));

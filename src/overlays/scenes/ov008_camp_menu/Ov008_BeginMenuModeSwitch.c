@@ -9,6 +9,7 @@
  * flag (+0x4) raised, the save-page group shown or hidden for the mode, and
  * the mode recorded (+0x8, previous one kept at +0xc).
  */
+
 #include "nitro/types.h"
 
 #define STATE_IDLE     2

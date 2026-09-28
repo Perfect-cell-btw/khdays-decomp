@@ -4,6 +4,7 @@
  * then the 8 x 5 grid cells (+0x10a0); every cell is a 0x28-byte "shown" word
  * followed by its Ov008MenuQuad.  Ends with the draw flush.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MenuQuad {

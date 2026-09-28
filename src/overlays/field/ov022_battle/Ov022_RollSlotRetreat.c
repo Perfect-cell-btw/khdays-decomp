@@ -12,9 +12,10 @@
  * a fifth of its member's full health, past 50 when under half.
  */
 
+/* Ov002MissionMemberBody: the member's own stored stat row */
+
 #include "nitro/types.h"
 
-/* Ov002MissionMemberBody: the member's own stored stat row */
 struct StatRow {
     u8 pad00[6];
     u16 nHpMax;                  /* 0x06 */

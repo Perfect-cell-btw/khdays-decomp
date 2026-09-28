@@ -2,11 +2,13 @@
  * it starts (020cf1c0) at the +0x394 model's +0x14 point heading along +0x38, effects 4 and 5 play
  * there and the +0x54 launch count advances; below 16 the launch sound (0x173 variant 4) plays at the
  * +8 point and 1 is returned, the 16th wraps the count and returns 0 (as does finding no idle helper). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Ov283Helpers { char pad[0x3a4]; int helpers[16]; };
 
-extern void Ov283_InvokeHookAndRearm(int helper, Vec3 *pos, Vec3 *dir);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void Ov283_InvokeHookAndRearm(int helper, VecFx32 *pos, VecFx32 *dir);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov283_PostItemUpdate(int owner, int id, int mode, int at);
 extern const short data_0203d210[];
 
@@ -15,13 +17,13 @@ extern const short data_0203d210[];
 int Ov283_LaunchHelper(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 pos;
-    Vec3 dir;
+    VecFx32 pos;
+    VecFx32 dir;
     int i;
 
     for (i = 0; i < 0x10; i++) {
         if (*(int *)(((struct Ov283Helpers *)*state)->helpers[i] + 0x388) == 0) {
-            pos = *(Vec3 *)(*(int *)(*state + 0x394) + 0x14);
+            pos = *(VecFx32 *)(*(int *)(*state + 0x394) + 0x14);
             {
                 int idx = ANG2IDX(state[0xe]) * 2;
 

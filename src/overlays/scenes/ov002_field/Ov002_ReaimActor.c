@@ -2,9 +2,8 @@
  * points at +0x14 and +0x20 and turn the orientation at +0x2c toward it, then
  * commit either way. The turn is skipped in the boot mode where data_0204be04
  * is set. */
-typedef struct {
-    int x, y, z;
-} VecFx32;
+
+#include "nitro/fx.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SoundMgr_SetListener(void *from, const VecFx32 *delta, void *out);

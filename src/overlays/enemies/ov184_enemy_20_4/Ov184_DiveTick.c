@@ -11,12 +11,13 @@
  * The impact point is packed through per-component Fx32 wrapper copies taken right before
  * each byte triple (the ov122_020d12f4 spelling).
  */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+typedef struct { VecFx32 pos; int radius; } Sphere;
 
 struct Msg {
     u16 h[7];
@@ -30,13 +31,13 @@ struct Ov181Actor {
     void (*pfnMessage)(struct Ov181Actor *self, struct Msg *msg, int size);
 };
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectSphereOverlaps(struct Ov181Actor *owner, Sphere *sphere, struct Ov181Actor **out);
-extern int Ov107_InvokeHitCallback(struct Ov181Actor *hit, struct Ov181Actor *a, struct Ov181Actor *b, int kind, const Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov181Actor *owner, u16 a, u16 id, Vec3 *pos);
+extern int Ov107_InvokeHitCallback(struct Ov181Actor *hit, struct Ov181Actor *a, struct Ov181Actor *b, int kind, const VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov181Actor *owner, u16 a, u16 id, VecFx32 *pos);
 extern const struct Msg data_ov184_020d4472;
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void Ov184_AiRollTimerQueue2(void);
@@ -46,25 +47,25 @@ void Ov184_DiveTick(int node)
 {
     int *state = *(int **)(node + 4);
     Sphere sphere;
-    Vec3 push;
+    VecFx32 push;
     struct Ov181Actor *hits[4];
-    Vec3 impact;
+    VecFx32 impact;
     struct Msg msg;
     struct Msg tmpl;
     FxVec vContact;
     int i;
     int n;
 
-    *(Vec3 *)(state + 0x15) = *(Vec3 *)(state + 0x1e);
+    *(VecFx32 *)(state + 0x15) = *(VecFx32 *)(state + 0x1e);
     state[0x1f] -= (int)(((long long)(*(int *)(*(int *)node + 0x2c) * 30) * 0xc0 + 0x800) >> 12);
     state[7] += *(int *)(*(int *)node + 0x2c);
     state[0x1b] += *(int *)(*(int *)node + 0x2c);
     if (!((struct Flags51 *)((char *)state + 0x51))->bit1 && state[0x1b] >= 0x1222) {
         *(unsigned char *)((char *)state + 0x51) |= 2;
-        Ov107_BuildAndSendUpdate((struct Ov181Actor *)*state, 0x131, 8, (Vec3 *)state[1]);
+        Ov107_BuildAndSendUpdate((struct Ov181Actor *)*state, 0x131, 8, (VecFx32 *)state[1]);
     }
     if (state[7] > 0x100) {
-        VEC_Add((Vec3 *)state[2], (Vec3 *)(state + 0x15), &sphere.pos);
+        VEC_Add((VecFx32 *)state[2], (VecFx32 *)(state + 0x15), &sphere.pos);
         sphere.radius = 0xe00;
         push.x = state[0x1e];
         push.y = 0;
@@ -78,7 +79,7 @@ void Ov184_DiveTick(int node)
             do {
                 if (Ov107_InvokeHitCallback(hits[i], (struct Ov181Actor *)*state, (struct Ov181Actor *)*state, 2, &push, 0) != 0) {
                     msg = tmpl;
-                    VEC_Add(&sphere.pos, (Vec3 *)(state + 0x15), &impact);
+                    VEC_Add(&sphere.pos, (VecFx32 *)(state + 0x15), &impact);
                     vContact.x = *(Fx32 *)&impact.x;
                     ((u8 *)&msg)[5] = (u8)(((u32)vContact.x.value >> 16 & 0x7f) | ((u32)vContact.x.value >> 24 & 0x80));
                     ((u8 *)&msg)[6] = (u8)((u32)vContact.x.value >> 8);

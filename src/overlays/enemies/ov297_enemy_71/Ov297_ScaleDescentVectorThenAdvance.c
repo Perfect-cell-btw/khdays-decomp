@@ -1,4 +1,5 @@
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern void ScaleVec3Fx12(int s, int dst, int src);
 extern void Ov107_PostTagUpdate(int obj, int a, int b);
@@ -11,8 +12,8 @@ extern void Ov297_AiDecelerateUntilReady(void);
 void Ov297_ScaleDescentVectorThenAdvance(int *this)
 {
     int node = this[1];
-    struct vec3 *v = (struct vec3 *)(node + 0x1c);
-    *(struct vec3 *)(node + 0x10) = *v;
+    VecFx32 *v = (VecFx32 *)(node + 0x1c);
+    *(VecFx32 *)(node + 0x10) = *v;
     *(int *)(node + 0x14) = *(int *)(node + 0x4c);
     *(int *)(node + 0x4c) = *(int *)(node + 0x4c) - 0x80;
     ScaleVec3Fx12(0xe00, (int)v, (int)v);

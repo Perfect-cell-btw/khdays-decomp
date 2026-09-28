@@ -10,17 +10,13 @@
  * THUMB.
  */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad000[0x78];
     int nList;
     char pad07c[0x28];
-    Ov002Vec3 vPos;
+    VecFx32 vPos;
     int aTint[3];
     char pad0bc[0x24];
     char sub0e0[0x28];

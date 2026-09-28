@@ -4,8 +4,10 @@
  * +0x13c height. When the +0x3a8 part's +4 owner matches the actor's, bit 7 of the +0x60 flag
  * high byte clears, animation 0 (looped) plays, the +0x6c index resets and the tick hands off to
  * the grab walk. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void VEC_Subtract(void *a, void *b, void *d);
@@ -18,14 +20,14 @@ extern void Ov261_GrabWalk(int *node);
 void Ov261_ApproachTick(int *node)
 {
     int *state = (int *)node[1];
-    struct Vecx32 goal;
-    struct Vecx32 dir;
+    VecFx32 goal;
+    VecFx32 dir;
     int len;
     int speed;
     int d;
     int actor;
 
-    goal = *(struct Vecx32 *)(*(int *)(*state + 0x3a0) + *(u8 *)((char *)state + 0x49) * 0x24 + 0x2c);
+    goal = *(VecFx32 *)(*(int *)(*state + 0x3a0) + *(u8 *)((char *)state + 0x49) * 0x24 + 0x2c);
     VEC_Subtract(&goal, (void *)state[1], &dir);
     dir.y = 0;
     len = VEC_Normalize(&dir, &dir);

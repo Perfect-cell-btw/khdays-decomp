@@ -1,5 +1,6 @@
 /* main .data, 0x02042ac0-0x020442a0: the level loader's two path templates, the spawn id counter
  * and the NitroSDK overlay digest table (SDK_OVERLAY_DIGEST .. SDK_OVERLAY_DIGEST_END). */
+
 #include "nitro/types.h"
 
 #define FS_OVERLAY_DIGEST_SIZE 20

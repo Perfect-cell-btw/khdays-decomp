@@ -2,6 +2,7 @@
  * (NNS_G2dBGSetup / NNS_G2dBGSetupEx and their helpers), plus the BG control register offsets
  * GetBGExtPlttSlot indexes. Laid out in the ROM's order (the linker sorted the unit's const
  * objects by size). */
+
 #include "nitro/types.h"
 
 typedef struct ScreenSizeMap {

@@ -9,11 +9,13 @@
  * bounce point mirrored off its plane), when falling onto open ground, or past 3.0: animation 0xe,
  * effect 5 and reaction 0x154 mode 0xc at the end point unless the owner is flagged (+0x1c4 & 0xa),
  * and the tick hands over to Ov209_ShockwaveTick. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -22,23 +24,23 @@ typedef struct { Vec3 center; int nRadius; } Sphere;
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-typedef struct { Vec3 push; u8 nPower; u8 nType; int nSe; int nKind; int nMask; } StrikeInfo;
+typedef struct { VecFx32 push; u8 nPower; u8 nType; int nSe; int nKind; int nMask; } StrikeInfo;
 struct Bits17a { unsigned char b0 : 1, b1 : 1; };
 
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern int func_020050b4(int y, int x);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, void *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov209_TestEntitiesAgainstRect(int grid, Sphere *sphere, int *list);
 extern int Ov002_DispatchNodeEvent(int target, StrikeInfo *info);
 extern int Collision_CastRay(int grid, void *pos, void *step);
-extern void ScaleVec3Fixed27(int plane, Vec3 *in, Vec3 *out);
+extern void ScaleVec3Fixed27(int plane, VecFx32 *in, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov209_020d65fc;
@@ -60,8 +62,8 @@ void Ov209_BounceShotTick(int *node)
     Fx32 scratchX;
     Sphere sphere;
     int hits[4];
-    Vec3 push;
-    Vec3 pt;
+    VecFx32 push;
+    VecFx32 pt;
     int list[4];
     int hit;
     int n;
@@ -78,7 +80,7 @@ void Ov209_BounceShotTick(int *node)
     if (state[0x16] < -0x1000) {
         state[0x16] = -0x1000;
     }
-    *(Vec3 *)(state + 5) = *(Vec3 *)(state + 0x15);
+    *(VecFx32 *)(state + 5) = *(VecFx32 *)(state + 0x15);
     if (((struct Bits17a *)(*state + 0x17a))->b1) {
         int x = state[0x15];
         int z = state[0x17];
@@ -112,8 +114,8 @@ void Ov209_BounceShotTick(int *node)
     n = Ov209_TestEntitiesAgainstRect(*(int *)(grid + 0x7c), &sphere, list);
     for (i = 0; i < n; i++) {
         StrikeInfo info = {0};
-        Vec3 dir;
-        Vec3 pt2;
+        VecFx32 dir;
+        VecFx32 pt2;
         Cmd14 msg;
 
         VEC_Subtract((void *)(list[i] + 0x2c), &sphere.center, &dir);
@@ -142,18 +144,18 @@ void Ov209_BounceShotTick(int *node)
     }
     hit = Collision_CastRay(*(int *)(grid + 0x7c), (void *)state[2], state + 5);
     if (hit != 0 && *(int *)(hit + 8) == 0) {
-        Vec3 refl;
+        VecFx32 refl;
 
-        refl = *(Vec3 *)(state + 5);
+        refl = *(VecFx32 *)(state + 5);
         ScaleVec3Fixed27(*(int *)(hit + 0xc), &refl, &refl);
         VEC_Add(&refl, (void *)state[2], state + 8);
         done = 1;
     } else if (falling != 0) {
-        *(Vec3 *)(state + 8) = *(Vec3 *)state[2];
+        *(VecFx32 *)(state + 8) = *(VecFx32 *)state[2];
         done = 1;
     }
     if (state[0xb] >= 0x3000) {
-        *(Vec3 *)(state + 8) = *(Vec3 *)state[2];
+        *(VecFx32 *)(state + 8) = *(VecFx32 *)state[2];
         done = 1;
     }
     if (done == 0) {
@@ -162,7 +164,7 @@ void Ov209_BounceShotTick(int *node)
     Ov107_PostTagUpdate(*state, 0xe, 0);
     state[0xb] = 0;
     if ((*(u8 *)(*state + 0x1c4) & 0xa) == 0) {
-        func_ov107_020c0b90(*state, 5, *(Vec3 *)(state + 8), 0);
+        func_ov107_020c0b90(*state, 5, *(VecFx32 *)(state + 8), 0);
         Ov107_BuildAndSendUpdate(*state, 0x154, 0xc, state + 8);
     }
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov209_ShockwaveTick);

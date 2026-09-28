@@ -8,6 +8,7 @@
  * state stays.  Any other path arms handler 0207a254 on gate 0xd (state 1) and
  * moves on to 0207a424.
  */
+
 #include "nitro/types.h"
 
 #define GATE_LOBBY 0xd

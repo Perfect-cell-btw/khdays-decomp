@@ -12,6 +12,7 @@
  * the context pointer is coloured r7 and the panel / slots / index registers
  * rotate one down; the pragma reproduces the ROM's r4..r7 assignment.
  */
+
 #include "nitro/types.h"
 
 #define DIGIT_COUNT   3

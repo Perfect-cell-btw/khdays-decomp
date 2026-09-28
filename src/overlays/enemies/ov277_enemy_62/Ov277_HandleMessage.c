@@ -9,7 +9,9 @@
  * slot 0xd and 020cf490 into slot 7. The base handler always runs.
  *
  * Codegen: the packed position goes through Fx32 wrapper copies (ov125_020cc384 idiom). */
+
 #include "nitro/types.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 

@@ -3,6 +3,7 @@
  * (actor+0x1ac bit 1 clear, actor+0x60 bit 0 set), run the actor's +0x1f8 callback, decrement the
  * per-id live count, clear the slot's bit 1 and unlink actor and slot.
  * Layout of Ov107Object/Ov107Slot/Actor from Ov107_Spawner_OnActorRetired. */
+
 #include "nitro/types.h"
 
 typedef struct Actor Actor;

@@ -4,7 +4,9 @@
  * (020c89e8, into +0x28) scaled by 1 + boost/10 (+0x45c) comes off the health (+0x21a); in rage
  * (+0x80) the +0x5c counter grows; the +0x64 damage tally loses a fifth of the maximum (+0x218) each
  * time it reaches it, except at boost 3; health stays at or above 0. Always returns 1. */
+
 #include "nitro/types.h"
+
 struct HitWord { unsigned lo : 16; unsigned hi : 16; };
 
 extern int Ov107_CalcHitDamage(char *self, char *hit);

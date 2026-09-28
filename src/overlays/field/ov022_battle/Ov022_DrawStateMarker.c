@@ -10,15 +10,11 @@
  * once it reaches three units.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022ScreenPos: an fx32 screen position */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ScreenPos {
     int x;
     int y;

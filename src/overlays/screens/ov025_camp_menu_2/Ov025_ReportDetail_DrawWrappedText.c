@@ -8,6 +8,7 @@
  * argument late, into r7) and declared before the style flag (r8); the line-full test is the
  * `if` with the plain store as its else; the reopened line starts with `*pDst++ = 2` (the
  * hoisted `aLine + 1` spilled at sp+0xc). */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ReportDetailPage {

@@ -9,6 +9,7 @@
  * position is cleared to 0xffff, mode 2 entered, the layout refreshed
  * (020631cc 1), the scroll flag (+0x2c) cleared and menu button 5 refreshed.
  */
+
 #include "nitro/types.h"
 
 typedef struct UiLayoutPos {

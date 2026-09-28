@@ -9,6 +9,7 @@
  * 0x19, 0x1a and 0x1b are marked used.  pList (the mission list, passed by
  * Ov008_MissionListInitStep) is unused.
  */
+
 #include "nitro/types.h"
 
 #define HEAP_FILE     0xe

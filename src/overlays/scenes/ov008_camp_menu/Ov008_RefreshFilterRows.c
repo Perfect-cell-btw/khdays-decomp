@@ -16,6 +16,7 @@
  * is declared first and the selection is read through it (through the
  * context it shares the +0xc000 partial with the flags).
  */
+
 #include "nitro/types.h"
 
 #define FILTER_ROWS 5

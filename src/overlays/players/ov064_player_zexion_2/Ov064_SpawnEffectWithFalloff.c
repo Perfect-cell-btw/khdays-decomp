@@ -1,17 +1,17 @@
 /* Spawns the effect at the point with a speed that grows with the effect's timer (capped), using
  * the stronger variant when flagged, through a placement message to the battle module. */
 
+#include "nitro/fx.h"
+
 extern void Ov022_SendPlacementMessage(int self, void *p);
 
-typedef struct { int x, y, z; } Vec3;
-
 typedef struct {
-    Vec3 vec;
+    VecFx32 vec;
     short f0c, f0e, f10, f12;
     int f14, f18, f1c, f20, f24, f28;
 } Params;
 
-void Ov064_SpawnEffectWithFalloff(int self, int *node, Vec3 *src) {
+void Ov064_SpawnEffectWithFalloff(int self, int *node, VecFx32 *src) {
     Params p;
     int t = 0x800;
     t += node[0x43] * 0xcd;

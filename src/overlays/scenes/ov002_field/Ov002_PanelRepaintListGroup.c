@@ -15,6 +15,7 @@
  * before the slot lookup -- left in the argument list it is evaluated after the
  * call, and the ROM does it before.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

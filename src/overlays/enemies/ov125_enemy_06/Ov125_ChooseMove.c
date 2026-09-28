@@ -43,10 +43,11 @@
  * the `!= 0 ? -1 : 1` ternary, and inverted guards so their bodies land out of line at the end.
  */
 
-typedef struct { int x, y, z; } Vec3;
-
 /* The ROM loads both of these with one `ldm` -- they are adjacent fields, not two
  * independent dereferences of `self`. */
+
+#include "nitro/fx.h"
+
 typedef struct {
     int *scene;
     int *ctx;
@@ -55,11 +56,11 @@ typedef struct {
 extern int Ov107_FindNearestObject(int obj, int *outDistSq);
 extern void SetIndexedSlot(int self, int slot, void (*cb)(void));
 extern int FX_Sqrt(int x);
-extern void Mtx33_LookAt(int *dst, const Vec3 *a, const Vec3 *b, const void *c);
+extern void Mtx33_LookAt(int *dst, const VecFx32 *a, const VecFx32 *b, const void *c);
 extern void Quat_FromMtx33(int *dst, const int *src);
 extern int FX_Div(int num, int den);
-extern void Vec3TransformViaTempMtx(Vec3 *dst, const int *a, const void *b);
-extern void ScaleVec3Fx12(int scale, const Vec3 *src, int *dst);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, const int *a, const void *b);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *src, int *dst);
 extern int RandNextScaled();
 extern int Ov125_IsField34Nibble1(int slot);
 extern void Ov125_DiveTick(void);
@@ -79,7 +80,7 @@ void Ov125_ChooseMove(int self) {
     int span;
     int roll;
     int mtx[9];
-    Vec3 dir;
+    VecFx32 dir;
 
     s = (Self *)self;
     {
@@ -101,7 +102,7 @@ void Ov125_ChooseMove(int self) {
     d = (FX_Sqrt(d) - *(int *)(target + 0x80)) - own2[0x20];
 
     t2 = ctx[1];
-    Mtx33_LookAt(mtx, (const Vec3 *)(t2 + 0x74), (const Vec3 *)ctx[9], data_02042264);
+    Mtx33_LookAt(mtx, (const VecFx32 *)(t2 + 0x74), (const VecFx32 *)ctx[9], data_02042264);
     Quat_FromMtx33(&ctx[0x1a], mtx);
     fac = FX_Div(0x4000 - d, 0x4000);
     if (fac < -0x1000) {
@@ -112,7 +113,7 @@ void Ov125_ChooseMove(int self) {
     }
     Vec3TransformViaTempMtx(&dir, &ctx[0x1a], data_02042258);
     ScaleVec3Fx12(-fac, &dir, &ctx[2]);
-    ScaleVec3Fx12(0x280, (const Vec3 *)&ctx[2], &ctx[2]);
+    ScaleVec3Fx12(0x280, (const VecFx32 *)&ctx[2], &ctx[2]);
 
     if (d > *(int *)(ctx[0] + 0x2d8)) {
         base = *(int *)(ctx[0] + 0x224);

@@ -2,14 +2,16 @@
  * reloaded before each hw60 block. That is not cosmetic: the cast-based version is
  * byte-for-byte the same size but schedules the vec3 ldm at the END, while the ROM (and
  * this form) hoists it above the hw60 work. House style copied from ov149_020cfd84. */
-struct Vec3 { int x, y, z; };
-extern const struct Vec3 data_02041dc8;
+
+#include "nitro/fx.h"
+
+extern const VecFx32 data_02041dc8;
 extern void SetIndexedSlot();
 extern void Ov245_SeedAimIdleStep(void);
 
 struct D { char pad0[8]; unsigned int f8 : 8; };
 struct C { char pad0[0x60]; unsigned short f60; char pad62[0x326]; struct D *f388; };
-struct B { struct C *p0; char pad4[8]; struct Vec3 vc; };
+struct B { struct C *p0; char pad4[8]; VecFx32 vc; };
 struct A { char pad0[4]; struct B *b; char pad8[0x18]; signed char f20; };
 
 void Ov245_SeedAimResetFlags_b(struct A *a) {

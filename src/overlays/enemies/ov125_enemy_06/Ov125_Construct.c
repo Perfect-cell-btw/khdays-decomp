@@ -7,10 +7,12 @@
  * 0x2000, sets the blend of entries 2/3/4/8, creates the two pools at +0x388/+0x38c seeded with
  * the camera key, allocates the +0x390 projectile entry and the two +0x3a0 sub-entries, and
  * requests resource 0x11b. */
+
+#include "nitro/types.h"
+
 typedef struct { int id[9]; } IdTable;
 typedef struct { int subitem; int pad; } Slot;
 typedef struct { char pad[0x3a0]; int nodes[2]; } SubEntries;
-#include "nitro/types.h"
 typedef void (*Callback)(void);
 
 extern void Ov125_Destroy(void);

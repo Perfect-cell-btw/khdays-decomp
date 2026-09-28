@@ -8,7 +8,9 @@
  * Frame layout is load-bearing: the scratch words sit at sp+0 and the decoded vector
  * at sp+0xc, and mwcc gives the FIRST-declared local the HIGHEST address -- so `pos`
  * must be declared before the scratch array. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quaternion;
 
 extern void Ov212_PushRingEntry(int *ctx, const VecFx32 *v, const Quaternion *q);

@@ -20,22 +20,18 @@
  * result back otherwise, which is what the original evidently did.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022ShotDesc */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ShotDesc {
     u32 nFlags;                      /* 0x00 */
     int nHitKind;                    /* 0x04 */
     u8 pad08[4];
     int nRadius;                     /* 0x0c */
     u8 pad10[0x1c];
-    struct VecFx32 vecHitOffset;     /* 0x2c */
+    VecFx32 vecHitOffset;     /* 0x2c */
     u32 nHitFlags;                   /* 0x38 */
     u8 pad3c[4];
     int nRadiusPhase4;               /* 0x40 */
@@ -69,10 +65,10 @@ struct ReactionCtx {
 
 /* Ov022ActionQuery: a cast from a point along a direction */
 struct ActionQuery {
-    struct VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecPos;           /* 0x00 */
     int nRadius;                     /* 0x0c */
     u32 nGroup;                      /* 0x10 */
-    struct VecFx32 vecDir;           /* 0x14 */
+    VecFx32 vecDir;           /* 0x14 */
     int nConeLimit;                  /* 0x20 */
     short *pHitIds;                  /* 0x24 */
     int nField28;                    /* 0x28 */
@@ -80,8 +76,8 @@ struct ActionQuery {
 
 /* Ov022SegmentQuery: a test along the segment between two points */
 struct SegmentQuery {
-    struct VecFx32 vecPos;           /* 0x00 */
-    struct VecFx32 vecEnd;           /* 0x0c */
+    VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecEnd;           /* 0x0c */
     u32 nGroup;                      /* 0x18 */
     int nRadius;                     /* 0x1c */
     short *pHitIds;                  /* 0x20 */
@@ -96,7 +92,7 @@ struct ActionParams {
     int nField0c;                    /* 0x0c */
     u8 nLevel;                       /* 0x10 */
     u8 pad11[3];
-    struct VecFx32 vecField14;       /* 0x14 */
+    VecFx32 vecField14;       /* 0x14 */
     int nField20;                    /* 0x20 */
     s8 nPhase;                       /* 0x24 */
     u8 bFlagA : 1;                   /* 0x25 */
@@ -117,7 +113,7 @@ struct ActionParams {
 #define PARAM_FLAG_400 0x400
 #define FIRST_HIT_AGE 0x3000
 
-extern void VEC_Add(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *pOut);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *pOut);
 extern u16 FX_Atan2(int x, int z);
 extern int Ov022_SearchMatchingRow(void *pActor, int bEnabled, int *pMatchMask,
                                u8 *pAmount);
@@ -127,7 +123,7 @@ extern int Ov022_TransformNodeValue(struct ReactionCtx *pCtx, struct ShotDesc *p
                                void *pQuery, struct ActionParams *pParams);
 
 int Ov022_TestShotHit(struct ReactionCtx *pCtx, struct Shot *pShot,
-                        struct VecFx32 *pPos, struct VecFx32 *pDelta)
+                        VecFx32 *pPos, VecFx32 *pDelta)
 {
     struct SegmentQuery seg;
     struct ActionQuery cast;

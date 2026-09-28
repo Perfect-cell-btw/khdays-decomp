@@ -9,6 +9,7 @@
  * record at that slot.  Returns 1 when listed.  nIndex (the record's index,
  * passed by Ov008_IsShopRecordShown) is unused.
  */
+
 #include "nitro/types.h"
 
 #define CATEGORY_ANY   -1

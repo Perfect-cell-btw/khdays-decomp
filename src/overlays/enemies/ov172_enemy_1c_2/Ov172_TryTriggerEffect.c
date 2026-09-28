@@ -1,24 +1,20 @@
 /* Hit reaction: in action 1, when the hit flags have bits 0 and 4 set, fires the effect at the
  * stored position and queues action 0; returns whether it did. */
 
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
-extern int func_ov107_020c0b90(int a, int b, struct Vec3 v, int c);
+extern int func_ov107_020c0b90(int a, int b, VecFx32 v, int c);
 
 int Ov172_TryTriggerEffect(int *a, int b, short *c) {
     int *p = *(int **)((char *)a + 0x214);
     int *q = *(int **)p;
-    struct Vec3 *vp;
+    VecFx32 *vp;
     unsigned short v;
     if (*(signed char *)((char *)q + 0x1c6) == 1) {
         v = (unsigned short)*(int *)c;
         if (v & 1) {
             if (v & 0x10) {
-                vp = *(struct Vec3 **)((char *)p + 8);
+                vp = *(VecFx32 **)((char *)p + 8);
                 func_ov107_020c0b90(*(int *)((char *)q + 0x38c), 2, *vp, 0);
                 *(char *)(*(int *)p + 0x1c7) = 0;
                 return 1;

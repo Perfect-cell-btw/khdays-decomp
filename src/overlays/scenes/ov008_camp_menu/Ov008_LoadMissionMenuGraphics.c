@@ -10,6 +10,7 @@
  * The menu pointer is the parameter its only caller (Ov008_MissionMenuInitStep)
  * passes; it is not read.
  */
+
 #include "nitro/types.h"
 
 #define HEAP_FILE     0xe

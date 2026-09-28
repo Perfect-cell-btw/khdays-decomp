@@ -3,6 +3,7 @@
  * and the range at +0x1c, then latch the armed flag at +0x41 -- and run the reposition
  * step every tick from then on. Finally, unless the actor's busy byte at +0xad is set,
  * fire attack 5 and hand off to the next state through the indexed dispatcher. */
+
 #include "nitro/types.h"
 
 extern void Ov127_DecaySpinOverElapsed(int *self);

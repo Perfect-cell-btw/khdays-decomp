@@ -7,13 +7,14 @@
  * timer accumulates the rate; once the owner reports contact (+0x17a bits 0, 1 or 3) or the
  * timer reaches 1.0, bit 6 of the +0x60 high byte clears, animation 9 plays and the tick hands
  * over to Ov211_AiRetarget. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 struct Nib { u8 lo : 4, hi : 4; };
 typedef struct { u16 id; u8 kind; u8 cmd; struct Nib flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Bits17a { u8 b0 : 1, b1 : 1, b2 : 1, b3 : 1; };
@@ -25,12 +26,12 @@ struct Bits17a { u8 b0 : 1, b1 : 1, b2 : 1, b3 : 1; };
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -42,7 +43,7 @@ void Ov211_ChargeTick(int *node)
     int *state = (int *)node[1];
     Segment seg;
     int hits[4];
-    Vec3 push;
+    VecFx32 push;
     Cmd14 msg;
     Cmd14 tmpl;
     Fx32 scratchZ;
@@ -51,9 +52,9 @@ void Ov211_ChargeTick(int *node)
     int n;
     int i;
 
-    ScaleVec3Fx12(0xd00, (Vec3 *)(state + 0x11), (Vec3 *)(state + 5));
+    ScaleVec3Fx12(0xd00, (VecFx32 *)(state + 0x11), (VecFx32 *)(state + 5));
     seg = *(Segment *)(*(int *)(*state + 0x3b4) + 0x78);
-    VEC_Add(&seg.p0, (Vec3 *)(state + 5), &seg.p0);
+    VEC_Add(&seg.p0, (VecFx32 *)(state + 5), &seg.p0);
     n = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
     i = 0;
     if (n > 0) {

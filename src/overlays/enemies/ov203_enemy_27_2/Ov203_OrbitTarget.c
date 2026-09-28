@@ -29,9 +29,10 @@
  *  - Three stack vectors: declaration order `d, v, up` puts up at sp+0, v at sp+0xc, d at sp+0x18
  *    -- the LAST declared gets the lowest slot.
  */
-struct Vecx32 { int x, y, z; };
 
-static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
+#include "nitro/fx.h"
+
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
     vec->y = y;
     vec->z = z;
@@ -49,9 +50,9 @@ extern short data_0203d210[];
 
 void Ov203_OrbitTarget(int self) {
     int *state = *(int **)(self + 4);
-    struct Vecx32 d;
-    struct Vecx32 v;
-    struct Vecx32 up;
+    VecFx32 d;
+    VecFx32 v;
+    VecFx32 up;
     int owner;
     int target;
     int len;

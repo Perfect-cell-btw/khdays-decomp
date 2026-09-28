@@ -9,7 +9,8 @@
  * is what lets mwcc reuse the loaded byte for the `orr`.
  *
  * One of four byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern int Ov107_ActionResource_GetOffsetAndScale(int p, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(void *out, void *a, void *b);

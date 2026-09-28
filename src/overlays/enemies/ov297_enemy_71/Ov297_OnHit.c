@@ -8,13 +8,14 @@
  * down set the stamina to 1 and request sub-state 10; with stamina left a 0x8000 hit outside
  * sub-state 6 requests sub-state 6, anything else arms the +0x5c chase clock at 0x2fd0 and
  * requests sub-state 7; spent stamina is pinned at 1. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    Vec3 vPoint;
+    VecFx32 vPoint;
     int nDamage10;
     char pad014[0xc];
     unsigned int uMode20;
@@ -28,7 +29,7 @@ struct ModeTable { struct ModePair pair; struct ModePair pair22; };
 
 extern int RandNextScaled(int range);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int d);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);
 extern const struct ModeTable data_ov297_020d5698;
 
 int Ov297_OnHit(char *actor, int nParam, struct ActorHitEvent *hit)
@@ -52,7 +53,7 @@ int Ov297_OnHit(char *actor, int nParam, struct ActorHitEvent *hit)
         hit->uResultLo |= 9;
         Ov107_BuildAndSendUpdate(*state, 0, 0x3f, (void *)state[2]);
         owner = *state;
-        func_ov107_020c0b90(owner, 1, *(Vec3 *)(owner + 0x74), 0);
+        func_ov107_020c0b90(owner, 1, *(VecFx32 *)(owner + 0x74), 0);
         *(u8 *)(*state + 0x1c7) = 8;
         goto done;
     }
@@ -67,7 +68,7 @@ int Ov297_OnHit(char *actor, int nParam, struct ActorHitEvent *hit)
     }
     *(short *)(actor + 0x21a) = (short)rem;
     state[3] = nParam;
-    *(Vec3 *)(state + 7) = hit->vPoint;
+    *(VecFx32 *)(state + 7) = hit->vPoint;
     if (hit->nDamage > 0) {
         if ((hit->uFlagsLo & 8) == 0 || (hit->uFlagsLo & 0x80) == 0 || hit->uFlagsHi != 0x80) {
             if ((hit->uFlagsLo & 0x22) != 0) {

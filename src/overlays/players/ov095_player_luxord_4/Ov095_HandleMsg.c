@@ -8,15 +8,16 @@
  * (Ov039_StartFlight), tells the callback 0x33 and hands over to the flight step. Anything else
  * is refused (null). Codegen: `next` is assigned before the zero stores of a case, which keeps
  * the shared zero (next's initial value) ahead of the self copy in the prologue schedule. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov022_IsSlotReady(void *context);
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Atan2(int x, int z);
 extern void SceneNode_Enable(u16 *nodeFlags);                                     /* SceneNode_Enable */
 extern void Ov095_StartFlight(char *self);                                    /* Ov039_StartFlight */
@@ -29,7 +30,7 @@ void *Ov095_HandleMsg(char *self, int msg)
 {
     void *next = 0;
     char *rig = data_ov095_020bcba0 + 0xd4 + 0x2c00;
-    Vec3 d;
+    VecFx32 d;
     u16 a;
     u32 *node;
 
@@ -44,7 +45,7 @@ void *Ov095_HandleMsg(char *self, int msg)
             (*(void (**)(char *, int))(self + 0x664))(self, 0x32);
         }
         if (Ov022_ValidateTargetRef(self) != 0) {
-            VEC_Subtract(func_ov022_020ad0c0(self), (Vec3 *)(self + 0x8c + 0x400), &d);
+            VEC_Subtract(func_ov022_020ad0c0(self), (VecFx32 *)(self + 0x8c + 0x400), &d);
             if (VEC_Mag(&d) != 0) {
                 VEC_Normalize(&d, &d);
             }

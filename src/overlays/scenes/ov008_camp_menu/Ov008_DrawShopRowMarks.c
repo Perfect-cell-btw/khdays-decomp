@@ -12,6 +12,7 @@
  * when that fails, past the category's free count (+0xc578 + 2 * tab) with
  * the record's byte +0x12 clear nothing more shows, else cell B / C[row].
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT   8

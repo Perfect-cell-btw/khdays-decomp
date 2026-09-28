@@ -5,8 +5,9 @@
  * elapsed frame, the slot is pinned to the actor's heading and origin, 0xcf is told and phase 2
  * begins; phase 2 keeps the slot pinned and advances the tracks until they finish. The slot's
  * time step runs afterwards. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov022_IsSlotReady(char *context);
 extern int Session_GetLocalPlayerIndex(void);
@@ -17,16 +18,16 @@ extern void Ov022_PlayEntityVoice(char *self, int nSound, int nVariant);
 extern void Ov037_AdvanceTrackTime(char *self, char *slot, int dt);
 
 /* Pins the slot's node to the actor's heading and origin. */
-static inline void Ov037_PinSlot(char *slot, u16 heading, Vec3 *origin)
+static inline void Ov037_PinSlot(char *slot, u16 heading, VecFx32 *origin)
 {
     *(u16 *)(slot + 0x80) = heading;
     *(u16 *)(slot + 4) |= 0x20;
-    *(Vec3 *)(slot + 0xa8) = *origin;
+    *(VecFx32 *)(slot + 0xa8) = *origin;
 }
 
 void Ov037_StepAttackSlot(char *self, char *slot, int dt)
 {
-    Vec3 origin;
+    VecFx32 origin;
     u16 heading;
     int frame;
     int bLocal = 0;
@@ -45,7 +46,7 @@ void Ov037_StepAttackSlot(char *self, char *slot, int dt)
             *(unsigned long long *)(self + 0x46c) |= 0x10000;
         }
     }
-    origin = *(Vec3 *)(self + 0x8c + 0x400);
+    origin = *(VecFx32 *)(self + 0x8c + 0x400);
     heading = (u16)(*(u16 *)(*(char **)(self + 0x20) + 0x80) - 0x8000) + 0x8000;
     switch (*(int *)slot) {
     case 1:

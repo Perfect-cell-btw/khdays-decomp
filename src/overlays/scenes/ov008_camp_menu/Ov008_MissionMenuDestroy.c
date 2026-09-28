@@ -9,6 +9,7 @@
  * the list node at +0x170 is removed and freed; and the sub engine's BG2 /
  * BG3 scroll registers are zeroed.
  */
+
 #include "nitro/types.h"
 
 #define TAG_COUNT 5

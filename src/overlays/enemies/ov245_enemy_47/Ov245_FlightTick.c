@@ -6,7 +6,9 @@
  * (RandNextScaled(0x595) - 0x2ca) becomes the launch direction handed to the owner (020d1234
  * with the +0x44c item's +0x14 anchor), +0x28 is cleared, the actor reset (020cce08) and the
  * node moves to 020ce0d8. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Ov245Actor { char pad[0x43c]; int parts[3]; };
 
@@ -15,14 +17,14 @@ extern int Ov245_ForwardToAiTaskWhenReady(int owner);
 extern int Ov245_Mounted_ForceState9IfReady(int part);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int RandNextScaled(int scale);
-extern void Ov245_InvokeHookAndRearm_2(int owner, void *anchor, Vec3 *dir);
+extern void Ov245_InvokeHookAndRearm_2(int owner, void *anchor, VecFx32 *dir);
 extern void Ov245_SetNodeMode3(int actor);
 extern void Ov245_AiDelayThenFlight(void);
 extern const short data_0203d210[];
 
 void Ov245_FlightTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int j;
     int active;
     int i;

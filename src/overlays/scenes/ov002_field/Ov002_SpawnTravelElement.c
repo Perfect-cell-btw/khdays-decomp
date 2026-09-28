@@ -1,16 +1,14 @@
-#include "nitro/types.h"
 
-typedef struct Ov002Vec3 {
-    int x, y, z;
-} Ov002Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern char *Ov002_ClaimPoolEntry(char *pClass, int nSlot);
 extern int Ov002_PlaceElementNode(void *pObj, int nNode, void *pOut,
                                 int nUnused, int nKind, int nParamA,
                                 int nParamB, int nParamC,
                                 int nAngle, int nFlag);
-extern void Ov002_BuildSpawnPosition(Ov002Vec3 *pOut, Ov002Vec3 *pPos, int *pIn);
-extern void Actor_SetVecAndSyncChild(char *pNode, Ov002Vec3 *pPos);
+extern void Ov002_BuildSpawnPosition(VecFx32 *pOut, VecFx32 *pPos, int *pIn);
+extern void Actor_SetVecAndSyncChild(char *pNode, VecFx32 *pPos);
 extern void Ov002_PushBucketNode(int nBucket, char *pElement);
 extern void Ov002_TravelElementStep(void);
 
@@ -25,10 +23,10 @@ extern void Ov002_TravelElementStep(void);
  * is pushed into its bucket.
  */
 char *Ov002_SpawnTravelElement(char *pClass, u16 wSlot, u16 wBucket,
-                          u16 wStateField, u8 bStateWidth, Ov002Vec3 *pPos,
+                          u16 wStateField, u8 bStateWidth, VecFx32 *pPos,
                           s16 nAngle, s16 nTravelParam)
 {
-    Ov002Vec3 vStart;
+    VecFx32 vStart;
     int aPlace[5];
     char *pElement;
 
@@ -43,7 +41,7 @@ char *Ov002_SpawnTravelElement(char *pClass, u16 wSlot, u16 wBucket,
     Actor_SetVecAndSyncChild(pElement + 0x38, pPos);
 
     *(s16 *)(pElement + 0x18) = nAngle;
-    *(Ov002Vec3 *)(pElement + 0x1c) = vStart;
+    *(VecFx32 *)(pElement + 0x1c) = vStart;
     *(int *)(pElement + 0x28) = aPlace[2];
     *(u8 *)(pElement + 0x10) = (u8)wBucket;
     *(void **)(pElement + 0x0c) = (void *)Ov002_TravelElementStep;

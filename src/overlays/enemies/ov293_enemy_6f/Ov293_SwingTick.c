@@ -9,16 +9,17 @@
  * clears the turn step is zeroed, the velocity kept at +0x28 and d31b0 takes over.
  *
  * Same shape as ov122_020d12f4: Fx32-wrapped coordinates, `long` counters, two point cursors. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 struct Ov293AreaMsg { u16 h[7]; };
 struct Ov107SweepQuery { FxVec vCentre; int nRadius; };
 struct Ov293AttachBody {
     char pad000[0x14];
-    struct Vec3 vPos14;
+    VecFx32 vPos14;
 };
 struct Ov107SweepEntity {
     char pad000[2];
@@ -42,8 +43,8 @@ struct Ov293ActionState {
     int nHeading10;
     int nTurnStep14;
     char pad018[4];
-    struct Vec3 vVelocity;
-    struct Vec3 vPos28;
+    VecFx32 vVelocity;
+    VecFx32 vPos28;
     char pad034[0xc];
     int nElapsed40;
     char pad044[8];
@@ -62,14 +63,14 @@ struct Ov293ActionNode {
     signed char bSlot;
 };
 
-extern const struct Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern struct Ov293AreaMsg data_ov293_020d3608;
 extern void Ov293_DecayCopyPosFireOnHitFlag(void);
 extern int Ov107_FindNearestObject(struct Ov293Actor *actor, int mode);
-extern void VEC_Subtract(const void *a, const void *b, struct Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int Ov107_ActionResource_GetOffsetAndScale(void *resource, struct Vec3 *out);
-extern void Vec3TransformViaTempMtx(struct Vec3 *dst, struct Ov293BoneXform *xfm, struct Vec3 *src);
+extern int Ov107_ActionResource_GetOffsetAndScale(void *resource, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, struct Ov293BoneXform *xfm, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void VEC_Add(void *a, void *b, void *out);
 extern void Ov107_BuildAndSendUpdate(struct Ov293Actor *actor, int id, int mode, void *anchor);
@@ -82,12 +83,12 @@ void Ov293_SwingTick(struct Ov293ActionNode *node)
 {
     struct Ov107SweepEntity *aResults[4];
     FxVec aPoints[2];
-    struct Vec3 vLocalOffset;
-    struct Vec3 vToTarget;
+    VecFx32 vLocalOffset;
+    VecFx32 vToTarget;
     struct Ov107SweepQuery query;
     struct Ov293AreaMsg msg;
     struct Ov293AreaMsg tmpl;
-    struct Vec3 vZero;
+    VecFx32 vZero;
     FxVec vContact;
     struct Ov293ActionState *state;
     long nFound;

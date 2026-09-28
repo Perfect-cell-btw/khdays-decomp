@@ -1,13 +1,9 @@
 /* Projects a point and reports which screen edges (with margins) it lies beyond; returns 1 when
  * visible. */
 
-typedef unsigned int uint;
+#include "nitro/fx.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+typedef unsigned int uint;
 
 extern int func_0201653c(const VecFx32 *, int *, int *);
 extern void VEC_Subtract(const VecFx32 *, const VecFx32 *, VecFx32 *);

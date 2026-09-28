@@ -7,6 +7,7 @@
  * 0206d194) and calls the player's actor sub-object hook at +0x1bc (actor from 01fffde0, sub
  * at +0x4ec) with the spawn id, the entry's low flag byte (+0x42) and its key (+0x40).  Type
  * 4: state 7 (done).  Type 0 and anything above 4 do nothing. */
+
 #include "nitro/types.h"
 
 typedef struct Ov017ItemMessage {

@@ -13,14 +13,11 @@
  * the store sinks below the two movs. The block frees r0 and the original's
  * `add r0,r0,#0x14 ; str r0,[r6,#0x2cc]` comes back.
  */
-struct Ov142Vec3 {
-    int x;
-    int y;
-    int z;
-};
+
+#include "nitro/fx.h"
 
 struct Ov142Pose {
-    struct Ov142Vec3 position;
+    VecFx32 position;
     int scale;
 };
 
@@ -34,7 +31,7 @@ struct Ov142KindTable {
 };
 
 extern struct Ov142KindTable data_ov142_020d25fc;
-extern struct Ov142Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern const char data_ov142_020d268c[];
 extern const char data_ov142_020d2690[];
 extern char data_ov142_020d2698[];

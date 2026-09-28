@@ -2,11 +2,12 @@
  * bit 0 of its model's flag byte (+8), resets the step vector from the constant default at
  * data_02041dc8 and installs the queue-action-when-active step. */
 
+#include "nitro/fx.h"
+
 extern int SetIndexedSlot();
 extern int Ov169_AiStep_QueueAction1IfActive();
 
-struct Vec3 { int x, y, z; };
-extern const struct Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 struct D {
     char pad0[8];
@@ -23,7 +24,7 @@ struct C {
 struct B {
     struct C *p0;
     char pad4[8];
-    struct Vec3 vc;
+    VecFx32 vc;
 };
 
 struct A {

@@ -2,6 +2,7 @@
  * wait for the host; registers the exit message handler. */
 
 #include "nitro/types.h"
+
 typedef void *(*ExitTaskState)(void);
 typedef struct Ov005ExitTask {
     unsigned receivedPlayerMask;

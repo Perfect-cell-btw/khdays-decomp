@@ -17,6 +17,7 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define KIND_UNAIMED 0x19
 #define ANGLE_BIAS 0x8000
@@ -26,16 +27,10 @@
 #define PART_DELAYED 1
 #define PART_RUNNING 2
 
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022AnimBlock */
 struct AnimBlock {
     u8 pad00[0xa4];
-    struct VecFx32 vecAt;        /* 0x00a4 */
+    VecFx32 vecAt;        /* 0x00a4 */
     int aEntryFlags[3];          /* 0x00b0 */
 };
 
@@ -49,8 +44,8 @@ struct SlotTail {
 /* Ov022SlotPart */
 struct SlotPart {
     int nTimer;                  /* 0x0000 */
-    struct VecFx32 vecPos;       /* 0x0004 */
-    struct VecFx32 vecVel;       /* 0x0010 */
+    VecFx32 vecPos;       /* 0x0004 */
+    VecFx32 vecVel;       /* 0x0010 */
     struct AnimBlock anim;       /* 0x001c */
     u8 pad0d8[0x70];
     struct SlotTail *pOwner;     /* 0x0148 */
@@ -70,7 +65,7 @@ struct Actor {
     u8 pad000[0x20];
     struct ActorNode *pNode;     /* 0x0020 */
     u8 pad024[0x468];
-    struct VecFx32 vecPos;       /* 0x048c */
+    VecFx32 vecPos;       /* 0x048c */
 };
 
 /* Ov022ReactionCtx */
@@ -86,19 +81,19 @@ extern s16 data_0203d210[];
 
 extern int Ov022_GetSlotMoveMode(struct ReactionCtx *pCtx, int nKind);
 extern void Ov022_MovePartTo(struct ReactionCtx *pCtx, struct SlotPart *pPart,
-                                struct VecFx32 *pAt, struct VecFx32 *pDir);
-extern int VEC_Normalize(struct VecFx32 *pSrc, struct VecFx32 *pDst);
+                                VecFx32 *pAt, VecFx32 *pDir);
+extern int VEC_Normalize(VecFx32 *pSrc, VecFx32 *pDst);
 extern void Sequence_UpdateTracks(struct AnimBlock *pAnim, int nDelta);
-extern void VEC_MultAdd(int nFactor, struct VecFx32 *pStep,
-                        struct VecFx32 *pFrom, struct VecFx32 *pOut);
-extern void VEC_Subtract(struct VecFx32 *pA, struct VecFx32 *pB,
-                         struct VecFx32 *pOut);
+extern void VEC_MultAdd(int nFactor, VecFx32 *pStep,
+                        VecFx32 *pFrom, VecFx32 *pOut);
+extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB,
+                         VecFx32 *pOut);
 
 int Ov022_StepAimedPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                         int nDelta)
 {
-    struct VecFx32 vecAt;
-    struct VecFx32 vecAim;
+    VecFx32 vecAt;
+    VecFx32 vecAim;
     struct SlotTail *pOwner;
     struct Actor *pActor;
     int nIndex;

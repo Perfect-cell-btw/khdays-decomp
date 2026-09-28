@@ -7,7 +7,9 @@
  * sub-node byte *(char*)state[3] is still set, return. Once idle: fire attack 2 (020c9264, flag 1)
  * and hand off to the 020ce1c8 continuation via 0203c634.
  */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
@@ -19,7 +21,7 @@ extern int  data_02041dc8;
 
 void Ov274_FireAttack2OnIdle(int *self) {
     int *state = (int *)self[1];
-    struct vec v;
+    VecFx32 v;
     int target;
 
     target = Ov107_FindNearestObject(*state, 0);
@@ -33,7 +35,7 @@ void Ov274_FireAttack2OnIdle(int *self) {
     VEC_Normalize(&v, &v);
     state[0xf] = *(int *)(*self + 0x2c) * 0x1e / 20;
     state[0x11] = func_020050b4(v.x, v.z);
-    *(struct vec *)(state + 5) = *(struct vec *)&data_02041dc8;
+    *(VecFx32 *)(state + 5) = *(VecFx32 *)&data_02041dc8;
     if (*(unsigned char *)state[3] != 0) {
         return;
     }

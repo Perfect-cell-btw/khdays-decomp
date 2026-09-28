@@ -6,10 +6,11 @@
  * animation 6 plays, the +0x2c/+0x30 timers clear, the +4 point is kept at +0x34 and sent packed
  * in the overlay's 14-byte message (data_ov282_020d4710, flag 0) to the owner's +0x24 hook; the
  * +0x60 timer and +0x66 byte clear and the tick hands over to Ov282_AiSinkTick. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 h[7]; } Cmd14;
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -94,7 +95,7 @@ void Ov282_RiseDecision(int *node)
     Ov107_PostTagUpdate(*state, 6, 0);
     state[0xb] = 0;
     state[0xc] = 0;
-    *(Vec3 *)(state + 0xd) = *(Vec3 *)state[1];
+    *(VecFx32 *)(state + 0xd) = *(VecFx32 *)state[1];
     msg = data_ov282_020d4710;
     pPos = (Fx32 *)state[1];
     PACK(msg, scratchX, pPos[0], 5);

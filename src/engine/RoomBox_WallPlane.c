@@ -4,10 +4,10 @@
  * faces, whose normal is a (negated) row of the rotation and whose point is the half extent
  * (+0x38 / +0x40) along it. The plane gets a flat fx16 normal (+0x14), its distance (+0x1c) through
  * the face point moved to the box position (+0x2c), and the box's +0x24 tag (+0x80). */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
-typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx16 x, y, z; } VecFx16;
 typedef struct { fx32 _00, _01, _10, _11; } MtxFx22;
 

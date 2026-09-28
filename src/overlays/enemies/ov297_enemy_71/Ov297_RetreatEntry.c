@@ -3,7 +3,9 @@
  * was not used in the last four (+0x64 ring) and lies within 0x18000 of the actor (up to 100
  * far draws); the pick is recorded in the ring, the +0x10 velocity is zeroed, the actor is
  * placed at the point, the +0x38 timer resets, sub-state 2 is requested and the state ends. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 struct PointTable { VecFx32 p[2][10]; };
 
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);

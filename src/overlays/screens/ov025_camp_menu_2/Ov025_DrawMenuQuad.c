@@ -2,6 +2,7 @@
  * attributes and the four textured vertices relative to the screen origin. */
 
 #include "nitro/types.h"
+
 typedef struct Ov005TextureParams {u32 texImageParam,texPlttBase;} Ov005TextureParams;
 typedef struct Ov005MenuQuad {
     Ov005TextureParams texture;

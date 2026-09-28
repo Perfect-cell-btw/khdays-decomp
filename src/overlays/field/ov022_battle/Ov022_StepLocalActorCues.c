@@ -13,15 +13,11 @@
  * the constant's zero half into the spawn-flag register, as the ROM has it.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022Actor */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Actor {
     u32 nFlags;                      /* 0x0000 */
     u8 pad0004[4];
@@ -29,7 +25,7 @@ struct Actor {
     u8 pad0009[0x45b];
     u64 nFlags2;                     /* 0x0464 */
     u8 pad046c[0x20];
-    struct VecFx32 vecAim;           /* 0x048c */
+    VecFx32 vecAim;           /* 0x048c */
     u8 pad0498[0x1fc];
     u8 bSuppressDraw : 1;            /* 0x0694 bit 0 */
     u8 nRest694 : 7;
@@ -53,9 +49,9 @@ struct Actor {
 #define BIT58 (1ULL << 58)
 
 extern int Session_GetLocalPlayerIndex(void);
-extern int Slot_Spawn(int nKindId, int nCue, struct VecFx32 *pPos, u16 nFlags);
+extern int Slot_Spawn(int nKindId, int nCue, VecFx32 *pPos, u16 nFlags);
 extern int SoundSeqHandle_IsActive(int hSpawn);
-extern void Handle_WritePayloadIfLive(int hSpawn, struct VecFx32 *pPos);
+extern void Handle_WritePayloadIfLive(int hSpawn, VecFx32 *pPos);
 extern void Ov022_PlayEntityVoice(struct Actor *pActor, int nA, int nCue);
 extern void Ov022_StepReactionCues(struct Actor *pActor);
 

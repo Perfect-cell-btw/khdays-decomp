@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Spawns the ov066 panel's effect instances around the actor. Builds a rotation matrix (020b6454): struct SpawnRing4 data_ov066_020b6a4c; */
+
 #include "nitro/types.h"
 
-/* read by Spawns the ov066 panel's effect instances around the actor. Builds a rotation matrix (020b6454): struct SpawnRing4 data_ov066_020b6a4c; */
 const u8 data_ov066_020b6a4c[48] = {
     0, 0, 0, 0, 0, 8, 0, 0, 51, 19, 0, 0, 51, 3, 0, 0,
     205, 12, 0, 0, 205, 20, 0, 0, 205, 252, 255, 255, 51, 19, 0, 0,

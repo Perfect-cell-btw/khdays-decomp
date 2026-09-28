@@ -2,6 +2,7 @@
  * items and the mode's special reward, then the two columns. */
 
 #include "nitro/types.h"
+
 typedef struct Ov005MenuItemHeader {char data[0x24c];} Ov005MenuItemHeader;
 typedef struct PlayerItemLimit {u16 itemId;short limit;} PlayerItemLimit;
 typedef struct Ov005Config {

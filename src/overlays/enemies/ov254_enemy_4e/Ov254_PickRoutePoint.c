@@ -3,16 +3,17 @@
  * otherwise a new waypoint is chosen (020cd5f4). Unlatched, the +0x6c-th point of the actor's
  * +0x434 route list is copied to +0x18, +0x6c advances modulo the +0x454 count and 1 is returned;
  * 0 when the route is empty. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int obj, int flag);
 extern int Ov254_ChooseWaypoint(int *state, int a, int *out);
-extern Vec3 *List_First(void *list);
-extern Vec3 *List_Next(void *list);
+extern VecFx32 *List_First(void *list);
+extern VecFx32 *List_Next(void *list);
 
 int Ov254_PickRoutePoint(int *state)
 {
-    Vec3 *p;
+    VecFx32 *p;
     int i;
 
     state[0x1f] = 0;
@@ -31,7 +32,7 @@ int Ov254_PickRoutePoint(int *state)
         i = 0;
         while (p != 0) {
             if (i == state[0x1b]) {
-                *(Vec3 *)(state + 6) = *p;
+                *(VecFx32 *)(state + 6) = *p;
                 state[0x1b] = (state[0x1b] + 1) % *(int *)(*state + 0x454);
                 return 1;
             }

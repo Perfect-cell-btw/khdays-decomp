@@ -1,6 +1,8 @@
 /* Move entry: bit 7 of the actor's +0x60 high byte clears, the +0x20 heading turns back by the
  * frame rate scaled by -0xd0 / 0x88, the next move is 3 and the node's handler is cleared. */
+
 #include "nitro/types.h"
+
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

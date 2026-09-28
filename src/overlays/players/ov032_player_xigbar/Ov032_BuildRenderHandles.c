@@ -4,6 +4,7 @@
  * the 0xc5-byte work block at +0xda0, then latches the ready bits 0xf. Unlike the u8-returning
  * build steps of ov033-049 this one returns nothing; with a return value the argument setup
  * around the calls is scheduled differently. */
+
 #include "nitro/types.h"
 
 extern void Ov022_ConfigureGridSlotMode(int slot, int mode);

@@ -12,14 +12,11 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define STEEP_LIMIT 0x100
 #define PARTS_PER_HIT 4
 #define KIND_OWNED 4
-
-struct Vec3 {
-    int x, y, z;
-};
 
 struct Part {
     u8 pad00[0x14];
@@ -49,7 +46,7 @@ struct Ray {
     u8 pad00[4];
     int nLimit;                  /* 0x04 */
     u8 pad08[4];
-    struct Vec3 vec;             /* 0x0c */
+    VecFx32 vec;             /* 0x0c */
     int nRadius;                 /* 0x18 */
     int nMask;                   /* 0x1c */
 };
@@ -59,7 +56,7 @@ struct Contact {
     int nKind;                   /* 0x04 */
     u8 nState;                   /* 0x08 */
     u8 pad09[3];
-    struct Vec3 vec;             /* 0x0c */
+    VecFx32 vec;             /* 0x0c */
     int nHandle;                 /* 0x18 */
     struct Hit hit;              /* 0x1c */
 };
@@ -70,24 +67,24 @@ struct Scene {
 };
 
 extern struct Hit *EntityMgr_RunSphereCast(u16 nMask, struct Ray *pRay,
-                                 struct Vec3 *pFrom, int nRadius,
+                                 VecFx32 *pFrom, int nRadius,
                                  void *pWorld);
 extern struct Hit *EntityMgr_RunRayCast(u16 nMask, struct Ray *pRay,
-                                 struct Vec3 *pFrom, void *pWorld);
+                                 VecFx32 *pFrom, void *pWorld);
 extern struct Hit *EntityMgr_RunCastSimple(u16 nMask, struct Ray *pRay,
-                                 struct Vec3 *pFrom, void *pWorld);
+                                 VecFx32 *pFrom, void *pWorld);
 extern struct Thing *Actor_GetRecord(struct Hit *pHit, int nId);
-extern void Vec3ScaleAddQ27(void *pShape, struct Vec3 *pFrom, struct Ray *pRay,
-                          struct Vec3 *pOut);
-extern void VecFx32FromVecS16(int nFace, u8 *pVerts, struct Vec3 *pOut);
-extern void VEC_Normalize(struct Vec3 *pOut, struct Vec3 *pIn);
+extern void Vec3ScaleAddQ27(void *pShape, VecFx32 *pFrom, struct Ray *pRay,
+                          VecFx32 *pOut);
+extern void VecFx32FromVecS16(int nFace, u8 *pVerts, VecFx32 *pOut);
+extern void VEC_Normalize(VecFx32 *pOut, VecFx32 *pIn);
 
 int Ov022_ResolveReachSweep(struct Scene *pScene, struct Ray *pRay,
                         struct Contact *pOut)
 {
-    struct Vec3 vFrom;
-    struct Vec3 vPoint;
-    struct Vec3 vNormal;
+    VecFx32 vFrom;
+    VecFx32 vPoint;
+    VecFx32 vNormal;
     int bTaken;
     struct Hit *pHit;
     int nKind;

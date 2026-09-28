@@ -5,14 +5,16 @@
  * beam segment from the +0x3bc part's +0x14 point to the +0x3c4 part's (unit direction, length,
  * radius 0.625) is copied to the +0x3b4 body's and the first +0x3b0 body's +0x58, and the base
  * update (ov107 7ca4) runs. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 struct Body { char pad[0x58]; Segment seg; };
 
 extern void TaskList_FinishByTag(int list, int handle);
 extern void Ov107_UnlinkNodeFromOwner(int handle);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov211_Update(char *self)
@@ -38,8 +40,8 @@ void Ov211_Update(char *self)
         }
     }
     seg.nRadius = 0xa00;
-    seg.p0 = *(Vec3 *)(*(int *)(self + 0x3bc) + 0x14);
-    VEC_Subtract((Vec3 *)(*(int *)(self + 0x3c4) + 0x14), &seg.p0, &seg.dir);
+    seg.p0 = *(VecFx32 *)(*(int *)(self + 0x3bc) + 0x14);
+    VEC_Subtract((VecFx32 *)(*(int *)(self + 0x3c4) + 0x14), &seg.p0, &seg.dir);
     seg.nLength = VEC_Normalize(&seg.dir, &seg.dir);
     ((struct Body *)*(int *)(self + 0x3b4))->seg = seg;
     ((struct Body *)**(int **)(self + 0x3b0))->seg = seg;

@@ -11,6 +11,7 @@
  * compiles to base + 0x8d00 with 0x82 in the displacement, which is one
  * instruction short and in the wrong place.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

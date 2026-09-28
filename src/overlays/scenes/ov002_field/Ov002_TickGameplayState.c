@@ -19,6 +19,7 @@
  */
 
 #include "nitro/types.h"
+
 typedef void (*CodeFn)(int);
 
 extern int  NNSi_FndGetCurrentRootHeap(void);

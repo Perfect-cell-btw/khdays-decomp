@@ -2,18 +2,19 @@
  * landing height by `step` per hop (each hop 0.75 shorter) while the step is still rising or the
  * landing height stays above the target's +4 height, aims the +0x18 direction at the target (normalised, its length kept at +0x30 as a
  * 64-bit value) and divides that length by the number of hops (64-bit divide). */
-typedef struct { int x, y, z; } Vec3;
-#include "nitro/types.h"
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern s64 func_020201b8(s64 num, s64 den);
 
-void Ov245_PlanHop(int *state, Vec3 *target, int step) {
-    Vec3 goal;
+void Ov245_PlanHop(int *state, VecFx32 *target, int step) {
+    VecFx32 goal;
     int hops;
 
-    goal = *(Vec3 *)state[2];
+    goal = *(VecFx32 *)state[2];
     goal.y += step;
     hops = 1;
     while (step > 0 || goal.y > target->y) {
@@ -21,7 +22,7 @@ void Ov245_PlanHop(int *state, Vec3 *target, int step) {
         goal.y += step;
         hops++;
     }
-    VEC_Subtract(target, (Vec3 *)state[2], (Vec3 *)(state + 6));
-    *(s64 *)(state + 0xc) = VEC_Normalize((Vec3 *)(state + 6), (Vec3 *)(state + 6));
+    VEC_Subtract(target, (VecFx32 *)state[2], (VecFx32 *)(state + 6));
+    *(s64 *)(state + 0xc) = VEC_Normalize((VecFx32 *)(state + 6), (VecFx32 *)(state + 6));
     *(s64 *)(state + 0xc) = func_020201b8(*(s64 *)(state + 0xc) << 20, hops);
 }

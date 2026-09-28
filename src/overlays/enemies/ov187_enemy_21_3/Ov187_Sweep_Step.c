@@ -1,6 +1,7 @@
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Quat { int x, y, z, w; };
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
@@ -16,7 +17,7 @@ struct Ov185Target {
     char pad044[0x1c];
     u16 hw60;
     char pad062[0x12];
-    struct Vec3 vPos74;
+    VecFx32 vPos74;
     int nRadius80;
 };
 
@@ -33,12 +34,12 @@ struct Ov185Actor {
     char pad000[0x04];
     struct Ov185Scene *pScene04;
     char pad008[0x6c];
-    struct Vec3 vPos74;
+    VecFx32 vPos74;
     int nRadius80;
     char pad084[0x1c];
     struct Quat qSrtA0;
     char pad0b0[0x40];
-    struct Vec3 vDeltaF0;
+    VecFx32 vDeltaF0;
     char pad0fc[0xca];
     signed char bAction1c6;
 };
@@ -49,7 +50,7 @@ struct Ov185ActionState {
     struct Quat qRot08;
     struct Quat qTarget18;
     int nBlend28;
-    struct Vec3 vForward2c;
+    VecFx32 vForward2c;
     char pad038[0x04];
     int nTimer3c;
     int nAngle40;
@@ -70,18 +71,18 @@ struct Ov185ActionNode {
 };
 
 extern const short data_0203d210[];
-extern const struct Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 extern void Quat_Slerp(struct Quat *out, int t, struct Quat *a, struct Quat *b);
 extern void Srt_SetRotationQuat(struct Quat *dst, struct Quat *src);
 extern struct ListNode *List_First(void *list);
 extern struct ListNode *List_Next(void *list);
-extern void VEC_Subtract(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *out);
-extern int VEC_Normalize(struct Vec3 *v, struct Vec3 *unit);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern int Ov107_InvokeHitCallback(struct Ov185Target *candidate, struct Ov185Actor *owner,
                                struct Ov185Actor *source, int mode,
-                               const struct Vec3 *v, int flags);
-extern void func_ov107_020c0b90(struct Ov185Actor *owner, int mode, struct Vec3 v,
+                               const VecFx32 *v, int flags);
+extern void func_ov107_020c0b90(struct Ov185Actor *owner, int mode, VecFx32 v,
                                 int flag);
 
 /*
@@ -119,7 +120,7 @@ void Ov187_Sweep_Step(struct Ov185ActionNode *node)
     int bHit;
     struct Ov185Scene *scene;
     struct Ov185Target *target;
-    struct Vec3 vDelta;
+    VecFx32 vDelta;
     struct ListNode *pNode;
 
     state = node->pState;

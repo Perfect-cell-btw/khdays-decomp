@@ -17,18 +17,20 @@
  * just used -- mwcc coalesces the two. Written as a one-argument call the whole tail
  * comes out one register lower and thirteen instructions differ; that single missing
  * argument was the last residue in this function. */
+
+#include "nitro/fx.h"
+
 struct ActorBits {
     unsigned char bUnk0 : 1;
     unsigned char bFired : 1;
 };
 
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 
 /* One object, not two: the position vector is its head and the projectile fields
  * are its tail, which is why the ROM passes a single pointer. */
 struct FireParams {
-    Vec3 vPos;
+    VecFx32 vPos;
     short vx;
     short vy;
     short vz;
@@ -39,30 +41,30 @@ struct FireParams {
 };
 
 extern int Session_GetLocalPlayerIndex(void);
-extern void Ov022_StepAnchorDelta(char *self, Vec3 *pOut);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void Ov022_StepAnchorDelta(char *self, VecFx32 *pOut);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void MTX_RotY33_(Mtx33 *m, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
-extern void VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov022_SendPlacementMessage(char *self, struct FireParams *p);
 extern void SceneNode_Enable(int *p);
 extern int Ov022_ActorSetState(char *self, int nMode);
 
 extern char *data_ov088_020bc360;
-extern Vec3 data_02041dc8;
-extern Vec3 data_ov088_020bc1e8;
-extern Vec3 data_ov088_020bc1f4;
+extern VecFx32 data_02041dc8;
+extern VecFx32 data_ov088_020bc1e8;
+extern VecFx32 data_ov088_020bc1f4;
 extern short data_0203d210[];
 
 int Ov088_ActorFireAttack(char *self)
 {
-    Vec3 vSpawn;
-    Vec3 vAim;
-    Vec3 vDir;
+    VecFx32 vSpawn;
+    VecFx32 vAim;
+    VecFx32 vDir;
     Mtx33 mFacing;
     struct FireParams p;
-    Vec3 vOffset;
+    VecFx32 vOffset;
     int nRet = 0;
     char *pBlock = data_ov088_020bc360 + 0x2c2c;
 
@@ -84,7 +86,7 @@ int Ov088_ActorFireAttack(char *self)
 
     vOffset = vSpawn;
     vOffset.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &vOffset, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &vOffset, (VecFx32 *)(self + 0x98 + 0x400));
 
     if (*(int *)(self + 0x4cc) >= *(int *)(pBlock + 8) && *(int *)(pBlock + 4) == 0) {
         int nIndex;
@@ -95,7 +97,7 @@ int Ov088_ActorFireAttack(char *self)
                                   - 0x8000) >> 4;
         MTX_RotY33_(&mFacing, -data_0203d210[nIndex * 2], -data_0203d210[nIndex * 2 + 1]);
         MTX_MultVec33(&vDir, &mFacing, &p.vPos);
-        VEC_Add(&p.vPos, (Vec3 *)(self + 0x8c + 0x400), &p.vPos);
+        VEC_Add(&p.vPos, (VecFx32 *)(self + 0x8c + 0x400), &p.vPos);
         MTX_MultVec33(&vAim, &mFacing, &vAim);
         if (VEC_Mag(&vAim) != 0) {
             VEC_Normalize(&vAim, &vAim);

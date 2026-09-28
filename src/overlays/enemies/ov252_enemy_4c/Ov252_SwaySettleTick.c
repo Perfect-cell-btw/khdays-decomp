@@ -5,13 +5,14 @@
  * phase 5, a target within the turn cone (020cdb88 under 1.05) marks a pending turn while one outside
  * it (or a +0xb4 hit) makes 0xd current and moves on to 020d1abc. With a turn or reward pending pose 3
  * and motion 2 start and the phase becomes 0 (reward) or 5; otherwise the node goes back to 020cf3b8. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
 
-extern void Ov252_TurnVecY(Vec3 *out, int angle, Vec3 *vec);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov252_CheckTarget(int *node, Vec3 *delta, int face);
-extern int Ov252_HeadingDelta(int *node, Vec3 *v, int angle, int wantAbs);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
+extern int Ov252_HeadingDelta(int *node, VecFx32 *v, int angle, int wantAbs);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -21,14 +22,14 @@ extern void Ov252_RetreatDecision(void);
 void Ov252_SwaySettleTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 delta;
-    Vec3 v;
+    VecFx32 delta;
+    VecFx32 v;
     u8 phase;
     int gap;
 
-    Ov252_TurnVecY(&v, state[0x15], (Vec3 *)(*(int *)(*state + 0x574) + 0x2c));
-    *(Vec3 *)(state + 3) = v;
-    ScaleVec3Fx12(state[0x1c] + 0x800, (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    *(VecFx32 *)(state + 3) = v;
+    ScaleVec3Fx12(state[0x1c] + 0x800, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     state[0x19] += *(int *)(node[0] + 0x2c);
     switch (*(u8 *)(*state + 0x579)) {
     case 0:

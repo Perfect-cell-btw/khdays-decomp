@@ -8,13 +8,13 @@
  * result then picks the follow-up: 1 arms the +0x47a/+0x47b pair and asks for step 2
  * when busy or step 1 outside pattern 2, 2 asks for step 1, 4 asks for step 2 unless +0x26c0
  * says 2. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct EmitPair {
-    struct Vec3 vPosB;
-    struct Vec3 vPosA;
+    VecFx32 vPosB;
+    VecFx32 vPosA;
     int nOwner;
     int nRange;
     void *pAnchor;
@@ -28,7 +28,7 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;
@@ -67,18 +67,18 @@ struct Actor {
     int nAttackMode;
     u8 bBurstResult;
     u8 pad26c5[3];
-    struct Vec3 vBurstOrigin;
+    VecFx32 vBurstOrigin;
     u8 pad26d4[0x500];
     unsigned int uAttackAnchor;
 };
 
 extern void Ov022_FillEightHalvesMinus1At0x2bd4(int self);
-extern void func_ov022_020ad44c(struct Vec3 *out, int self);
-extern void ScaleVec3Fx12(int scale, const struct Vec3 *v, struct Vec3 *out);
-extern void VEC_Add(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *out);
+extern void func_ov022_020ad44c(VecFx32 *out, int self);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov022_ScaleRowValues(int self, int spin, int *a, int *b);
 extern int Ov022_RunReachHandlers(struct Actor *self, struct EmitPair *emit, struct Params *params);
-extern void Ov022_MarshalNetworkRecord(int self, int record, struct Vec3 *at, int scale, unsigned int angle, int kind);
+extern void Ov022_MarshalNetworkRecord(int self, int record, VecFx32 *at, int scale, unsigned int angle, int kind);
 extern struct GlobalState *data_ov103_020bc120;
 extern short data_0203d210[];
 
@@ -101,9 +101,9 @@ int Ov103_EmitAttackBurst(struct Actor *self)
 {
     struct EmitPair emit;
     struct Params prm;
-    struct Vec3 dir;
-    struct Vec3 anchor;
-    struct Vec3 tmp;
+    VecFx32 dir;
+    VecFx32 anchor;
+    VecFx32 tmp;
     int rem;
     int next;
     u8 *rigBytes;

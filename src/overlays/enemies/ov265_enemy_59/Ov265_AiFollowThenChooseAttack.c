@@ -2,17 +2,19 @@
  * per the mode byte at (child)+0x49; unless the gate byte at *(child+0x10) is set, clear
  * bit 1 in the low byte of [+8] of the child slot at (*child)+0x3bc and, if 020ccfb8 approves,
  * dispatch. */
+
+#include "nitro/fx.h"
+
 extern void Ov265_rotateVecByOwnerYaw(void *out, int a, int b);
 extern void ScaleVec3Fx12(int a, int b, int c);
 extern int Ov265_ChooseAttack(int);
 extern int SetIndexedSlot(int a, int b, void *handler);
-struct Vec3_020ce10c { int x, y, z; };
 struct lo8_020ce10c { unsigned f : 8; };
 void Ov265_AiFollowThenChooseAttack(int param_1) {
     int child = *(int *)(param_1 + 4);
-    struct Vec3_020ce10c out;
+    VecFx32 out;
     Ov265_rotateVecByOwnerYaw(&out, param_1, *(int *)(*(int *)child + 0x388) + 0x2c);
-    *(struct Vec3_020ce10c *)(child + 0x30) = out;
+    *(VecFx32 *)(child + 0x30) = out;
     if (*(unsigned char *)(child + 0x49) < 2) {
         ScaleVec3Fx12(0x2000, child + 0x30, child + 0x30);
     } else {

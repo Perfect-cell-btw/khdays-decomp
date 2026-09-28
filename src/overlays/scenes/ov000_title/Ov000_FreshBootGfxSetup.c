@@ -7,6 +7,7 @@
  * returns the scene's running state fn. arg selects the entry variant (0=fresh). */
 
 #include "nitro/types.h"
+
 typedef void          *StateFn;
 
 #define reg_GX_DISPCNT  (*(vu32 *)0x04000000)

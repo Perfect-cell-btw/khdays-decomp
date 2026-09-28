@@ -9,11 +9,13 @@
  * x and z axes) are reserved at +0x398 / +0x39c on the +0x144 pool and, with radius scaled by 1.125
  * and flag bit 0 set, at +0x3b0 / +0x3b4 on the +0x22c pool. Both rider counters (+0x3bc / +0x3be)
  * start at 1, +0x3c0 bit 0 is set, the presence hook runs and both rigs re-init. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[5]; } IdTable5;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 struct Pair { int res; int handle; };
 typedef struct { unsigned f : 8; } B8;
 struct b1 { unsigned int b0 : 1; };
@@ -47,9 +49,9 @@ extern void RefreshObjectCallbacks(int item, int a);
 extern IdTable5 data_ov236_020d6314;
 extern char data_ov236_020d64c8[];
 extern char data_ov236_020d64d4[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_0204224c;
-extern const Vec3 data_02042270;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_0204224c;
+extern const VecFx32 data_02042270;
 
 static inline int FX_Mul(int a, int b) {
     return (int)(((long long)a * b + 0x800) >> 12);
@@ -59,7 +61,7 @@ void Ov236_FrontRidersConstruct(char *self)
 {
     IdTable5 ids = data_ov236_020d6314;
     Capsule cap;
-    Vec3 zero;
+    VecFx32 zero;
     u16 hw;
     int i;
     int *slot;

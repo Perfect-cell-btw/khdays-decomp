@@ -20,6 +20,7 @@
  * counters, so the pane reload schedules early like the ROM. Modelling the tiles as a
  * 0x40-byte `Tile` (indexed, not `int* + i*0x40`) is what removed the earlier size gap.
  */
+
 #include "nitro/types.h"
 
 typedef struct Tile { int px[16]; } Tile;  /* 0x40 bytes = one 8x8 4bpp tile */

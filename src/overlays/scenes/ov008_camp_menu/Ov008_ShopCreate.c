@@ -13,6 +13,7 @@
  * record at +0xc5fc set up with the handlers 0208b838 / 0208b870.  Returns
  * the tick function 02087cac.
  */
+
 #include "nitro/types.h"
 
 #define CONTEXT_SIZE   0xc608

@@ -2,7 +2,9 @@
  * the part's +2 clip; while it animates the frame is clamped to +0x3a4 plus the owner's +0x3ac part's
  * +0x45c boost (x 512). Then the +0x390 part and the base update run and the +0xa0 pose is copied into
  * the +0x38c model and on to the +0x388 shape. */
+
 #include "nitro/types.h"
+
 typedef struct { int w[11]; } Pose;
 
 extern int queryTableEntry(int model, int track);

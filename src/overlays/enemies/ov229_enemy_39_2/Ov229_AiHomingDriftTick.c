@@ -18,11 +18,7 @@
  * The ending clears the impulse (+0x1c = 0, +0x20 = -0x1800, +0x24 = 0), drops bit 0x40 of the
  * hw60 hi-byte (it HAS the trunc pair, so bitfield form) and hands off to Ov229_SlamTick. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     unsigned short lo : 8;

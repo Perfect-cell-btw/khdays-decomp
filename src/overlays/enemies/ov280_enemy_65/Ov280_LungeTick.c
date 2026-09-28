@@ -7,22 +7,24 @@
  * pending +0x54 flag spawns effect 3 at the origin once. The +0x30 velocity is the +0x388 part's
  * +0x2c vector plus the drift, both turned by the heading (Ov280_rotateVecByOwnerYaw). When the +0x10
  * idle byte clears, sub-state 2 is requested and the tick ends. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
 extern void Ov280_AcquireTarget(int *node);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov280_ProbeSpawnPoint(int *self, Sphere *sphere, void *query, void *pt, int flags);
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
-extern void Ov280_rotateVecByOwnerYaw(void *out, int *self, Vec3 *vec);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
+extern void Ov280_rotateVecByOwnerYaw(void *out, int *self, VecFx32 *vec);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
-static inline void VEC_Set(Vec3 *vec, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z)
 {
     int *components = (int *)vec;
     components[0] = x;
@@ -33,10 +35,10 @@ static inline void VEC_Set(Vec3 *vec, int x, int y, int z)
 void Ov280_LungeTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 lift;
-    Vec3 dir;
+    VecFx32 lift;
+    VecFx32 dir;
     Sphere sphere;
-    Vec3 v;
+    VecFx32 v;
 
     VEC_Set(&lift, 0, 0, 0);
     state[0xa] += *(int *)(*node + 0x2c);
@@ -55,7 +57,7 @@ void Ov280_LungeTick(int *node)
         dir.y = -0x1200;
         dir.z = data_0203d210[ANG2IDX(state[6]) * 2 + 1];
         sphere.radius = 0x3b81;
-        sphere.pos = *(Vec3 *)(*(int *)(*state + 0x3d0) + 0x14);
+        sphere.pos = *(VecFx32 *)(*(int *)(*state + 0x3d0) + 0x14);
         if (Ov280_ProbeSpawnPoint(node, &sphere, 0, &dir, 1) != 0) {
             Ov107_BuildAndSendUpdate(*state, 0, 0x50, (void *)(*state + 0x74));
         }
@@ -65,9 +67,9 @@ void Ov280_LungeTick(int *node)
         state[0x15] = 0;
     }
     Ov280_rotateVecByOwnerYaw(&lift, node, &lift);
-    Ov280_rotateVecByOwnerYaw(&v, node, (Vec3 *)(*(int *)(*state + 0x388) + 0x2c));
-    *(Vec3 *)(state + 0xc) = v;
-    VEC_Add((Vec3 *)(state + 0xc), &lift, (Vec3 *)(state + 0xc));
+    Ov280_rotateVecByOwnerYaw(&v, node, (VecFx32 *)(*(int *)(*state + 0x388) + 0x2c));
+    *(VecFx32 *)(state + 0xc) = v;
+    VEC_Add((VecFx32 *)(state + 0xc), &lift, (VecFx32 *)(state + 0xc));
     if (*(unsigned char *)state[4] != 0) {
         return;
     }

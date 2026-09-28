@@ -11,14 +11,16 @@
  * the twelve effect pairs of +0x400 (nine from the effect resource, three from the
  * data_ov257_020d3094 poses) and loads the voice bank (+0x408: 0x17f in the alternate language,
  * else 0x17a). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[12]; } IdTable;
 typedef struct { int id[4]; } IdTable4;
 typedef struct { void *name[4]; } NameTable4;
-typedef struct { Vec3 pos; int scale; } Placement;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 pos; int scale; } Placement;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 struct Pair { int res; int handle; };
 struct Nib { u8 lo : 4, hi : 4; };
 struct Bit0 { unsigned bit0 : 1; };
@@ -45,10 +47,10 @@ extern const char data_ov257_020d33cc[];
 extern const char data_ov257_020d33dc[];
 extern const char data_ov257_020d33e0[];
 extern const char data_ov257_020d33ec[];
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02041dc8;
 extern u8 data_0204c240;
 extern void Ov257_Actor_Destroy(void);
 extern void Ov257_TickWithChildRefresh(void);
@@ -70,7 +72,7 @@ void Ov257_EnemyConstruct(char *self)
     IdTable4 armIds = data_ov257_020d3064;
     NameTable4 names1;
     NameTable4 names3;
-    Vec3 up;
+    VecFx32 up;
     int i;
     int *slot;
     u16 hw;

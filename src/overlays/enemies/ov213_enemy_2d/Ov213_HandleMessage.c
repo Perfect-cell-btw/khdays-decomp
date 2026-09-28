@@ -8,8 +8,10 @@
  * angle and distance around the actor and runs its +0x1cc hook; 5 attaches pair 7 at the body
  * rig's +0x30; 6 plays pair 2 at the unpacked point; 7 / 9 / 8 register effect 0x122 (modes
  * 0xc / 5 / 0xa) on the +0xa0 pose into +0x424 / +0x428 / +0x42c. The base handler always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } Srt;
 struct Pair { int res; int handle; };
 struct Bit0 { int b0 : 1; };
@@ -19,17 +21,17 @@ struct Bits40 { int b0 : 1; int b1 : 1; };
 extern void RefreshObjectCallbacks(int item, int a);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);
 extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
-extern int Slot_Spawn(int slot, int id, Vec3 *pos, u16 flags);
+extern int Slot_Spawn(int slot, int id, VecFx32 *pos, u16 flags);
 extern void Ov107_ForwardVisibleEvent(char *self, int a);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Collision_CastRay(int grid, Vec3 *pos, Vec3 *ray);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Collision_CastRay(int grid, VecFx32 *pos, VecFx32 *ray);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern void Srt_SetTranslation(void *srt, Vec3 *pos);
+extern void Srt_SetTranslation(void *srt, VecFx32 *pos);
 extern void SrtTransform_SetIdentity(Srt *srt);
 extern int Ov107_CreateSpawnTask(char *self, int id, int mode, int flag, void *pose);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 extern const short data_0203d210[];
-extern const Vec3 data_02042240;
+extern const VecFx32 data_02042240;
 
 #define PAIRS (*(struct Pair **)(self + 0x430))
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
@@ -40,10 +42,10 @@ static inline int FX_Mul(int a, int b) {
 
 void Ov213_HandleMessage(char *self, u8 *msg, int arg)
 {
-    Vec3 pos;
+    VecFx32 pos;
     Srt srt;
-    Vec3 at;
-    Vec3 ray;
+    VecFx32 at;
+    VecFx32 ray;
     int atZ;
     int atY;
     int atX;

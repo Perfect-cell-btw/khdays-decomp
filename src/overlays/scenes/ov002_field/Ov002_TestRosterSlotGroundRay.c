@@ -15,27 +15,23 @@
  * out start-above-direction, which is this declaration order, and the direction's z component is
  * assigned before its x.
  *
- * Ghidra carries this as Ov002_TestRosterSlotGroundRay over Vec3 and Ov022Ent.
+ * Ghidra carries this as Ov002_TestRosterSlotGroundRay over VecFx32 and Ov022Ent.
  */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
 extern int GetEntryField20ByIndex(int index);
-extern Vec3 *func_ov022_020881f8(int index);
-extern int EntityMgr_RunRayCast(unsigned short handle, Vec3 *from, Vec3 *dir, int mask);
+extern VecFx32 *func_ov022_020881f8(int index);
+extern int EntityMgr_RunRayCast(unsigned short handle, VecFx32 *from, VecFx32 *dir, int mask);
 
 int Ov002_TestRosterSlotGroundRay(int index) {
-    Vec3 from;
-    Vec3 dir;
+    VecFx32 from;
+    VecFx32 dir;
     int hit = 1;
     short handle = *(short *)(GetEntryField20ByIndex(index) + 0x66);
 
     if (handle >= 0) {
-        Vec3 *entryVec = func_ov022_020881f8(index);
+        VecFx32 *entryVec = func_ov022_020881f8(index);
         int entry = GetEntryField20ByIndex(index);
 
         from.x = entryVec->x;

@@ -9,18 +9,14 @@
  * object's position (+0x10) unless bit 1 of its flags (+0x30) is set, when the scene's character
  * object (+0x588) steers toward it (Ov027_ObjectAimAt 020835b8) and the object moves by its
  * step (+0x3c). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

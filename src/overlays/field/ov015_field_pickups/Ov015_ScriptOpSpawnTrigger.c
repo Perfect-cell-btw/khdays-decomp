@@ -3,9 +3,9 @@
  * a parameter word, the centre (three fx32), a shape, the extent (three fx32) and the
  * name (a resolved operand), then spawns a trigger piece (0208061c) on the slot's class
  * table (ov002 02076468).  Always consumes the op (1). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern int   ScriptVm_ReadOperandInt(int vm, u16 *pc);            /* ScriptVm_ReadOperandInt */
 extern int   ScriptVm_ReadOperandFx32(int vm, u16 *pc);            /* ScriptVm_ReadOperandFx32 */

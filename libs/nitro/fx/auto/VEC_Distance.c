@@ -1,11 +1,6 @@
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
-
-typedef struct Vecx32 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
 
 #define SQRT_CONTROL (*(volatile u16 *)0x040002b0)
 #define SQRT_RESULT (*(volatile fx32 *)0x040002b4)

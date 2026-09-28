@@ -2,14 +2,16 @@
  * of the owner's scene list (other than the owner and its +0x3b8 partner) within 48.0 of the owner is
  * marked (+0x1c5 bit 4); when the effect state changes to off the marks clear. The +0x38c state is
  * remembered in +0x390 and the base update runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov107_ProcessObjectTick(void *obj, int arg2);
 
 void Ov146_Update(char *self, int arg)
@@ -18,7 +20,7 @@ void Ov146_Update(char *self, int arg)
         int grid = *(int *)(*(int *)(self + 0x388) + 4);
         int *it;
         char *e;
-        Vec3 d;
+        VecFx32 d;
 
         if (*(int *)(self + 0x38c) != 0) {
             it = List_First((void *)(grid + 0x80));
@@ -28,7 +30,7 @@ void Ov146_Update(char *self, int arg)
 
                 if (e != owner && e != *(char **)(owner + 0x3b8) && (((flags16 *)(e + 0x60))->lo & 1) &&
                     !(*(u16 *)(e + 0x1ac) & 6)) {
-                    VEC_Subtract((Vec3 *)(owner + 0x74), (Vec3 *)(e + 0x74), &d);
+                    VEC_Subtract((VecFx32 *)(owner + 0x74), (VecFx32 *)(e + 0x74), &d);
                     if (VEC_Normalize(&d, &d) <= 0x30000) {
                         *(u8 *)(e + 0x1c5) |= 0x10;
                     }

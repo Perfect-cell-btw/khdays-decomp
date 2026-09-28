@@ -7,6 +7,7 @@
  * priorities 3/2/1), clears the first BG3 character tile and shows only BG1..3
  * on the sub display.
  */
+
 #include "nitro/types.h"
 
 #define PAGE_B_SIZE 0x214

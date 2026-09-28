@@ -8,6 +8,7 @@
  * block, refreshes the equip panel (+0x1f78) and plays cue 0x35.  Mode 2 does
  * nothing (an empty case the compiler still tests).
  */
+
 #include "nitro/types.h"
 
 #define KEY_RIGHT  0x10

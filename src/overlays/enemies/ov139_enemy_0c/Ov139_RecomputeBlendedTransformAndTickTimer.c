@@ -1,4 +1,5 @@
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(int *out, int *tbl, int r);
@@ -25,8 +26,8 @@ void Ov139_RecomputeBlendedTransformAndTickTimer(int *this)
         node[0x10] = node[0x10] - *(int *)(*this + 0x2c);
     }
     {
-        struct vec3 *triple = (struct vec3 *)(node + 5);
-        *(struct vec3 *)(node[0] + 0xf0) = *triple;
-        *triple = *(struct vec3 *)&data_02041dc8;
+        VecFx32 *triple = (VecFx32 *)(node + 5);
+        *(VecFx32 *)(node[0] + 0xf0) = *triple;
+        *triple = *(VecFx32 *)&data_02041dc8;
     }
 }

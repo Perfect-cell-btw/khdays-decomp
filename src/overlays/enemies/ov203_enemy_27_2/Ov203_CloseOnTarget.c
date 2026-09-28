@@ -27,9 +27,10 @@
  * The relocs even carry VEC_Subtract and VEC_DotProduct by name -- the index knew what these
  * were all along.
  */
-struct Vecx32 { int x, y, z; };
 
-static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
+#include "nitro/fx.h"
+
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
     vec->y = y;
     vec->z = z;
@@ -52,8 +53,8 @@ extern short data_0203d210[];
 
 void Ov203_CloseOnTarget(int self) {
     int *state = *(int **)(self + 4);
-    struct Vecx32 d;
-    struct Vecx32 v;
+    VecFx32 d;
+    VecFx32 v;
     int owner;
     int target;
     int len;

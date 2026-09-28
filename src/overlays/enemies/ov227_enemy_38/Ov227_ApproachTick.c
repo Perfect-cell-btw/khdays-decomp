@@ -2,10 +2,11 @@
  * the tracking step (Ov227_MeasureTargetGap) reports it lost, or the move chooser
  * (Ov227_ChooseMove) queues a move, the tick ends. Otherwise the +0x38 goal is the +8 point
  * pushed 100 steps along the flat direction and the tick hands over to Ov227_WalkTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern int Ov227_MeasureTargetGap(int *node, Vec3 *dir);
+extern int Ov227_MeasureTargetGap(int *node, VecFx32 *dir);
 extern int Ov227_ChooseMove(int *node, int dist);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov227_WalkTick(int *node);
@@ -13,7 +14,7 @@ extern void Ov227_WalkTick(int *node);
 void Ov227_ApproachTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int dist;
 
     *(int *)(*state + 0x3e8) = Ov107_FindNearestObject(*state, 0);
@@ -26,7 +27,7 @@ void Ov227_ApproachTick(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    *(Vec3 *)(state + 0xe) = *(Vec3 *)state[2];
+    *(VecFx32 *)(state + 0xe) = *(VecFx32 *)state[2];
     state[0xe] += dir.x * 100;
     state[0x10] += dir.z * 100;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov227_WalkTick);

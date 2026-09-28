@@ -3,8 +3,10 @@
  * +0x388 item's +8 byte gets bit 1, and with a +0x40 target the +0xc/+0x10 yaw turns towards it
  * (from the actor's +0xb0 point to the target's +0x190 point). The target is cleared and the
  * tick hands off to the attack tick. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
+
 struct b8 { unsigned f : 8; };
 
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
@@ -18,7 +20,7 @@ extern void Ov219_AttackTick(int *node);
 void Ov219_BeginAttack(int *node)
 {
     int *state = (int *)node[1];
-    struct Vecx32 dir;
+    VecFx32 dir;
     int actor;
 
     Ov107_PostTagUpdate(*state, 6, 0);

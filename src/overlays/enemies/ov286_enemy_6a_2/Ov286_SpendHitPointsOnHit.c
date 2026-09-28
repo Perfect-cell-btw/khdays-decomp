@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* The hit state hanging off the actor; only its owner pointer is used here. */
+
+#include "nitro/types.h"
+
 struct HitState {
     char *pOwner;
 };

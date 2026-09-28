@@ -51,18 +51,15 @@
  *  - `v.x / v.y / v.z` in that order even though the ROM stores y first. mwcc reorders these
  *    freely; writing them in store order permutes the registers instead. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Only used for the queued-move slot in the validation pass, where the SAME address is both read
  * (ldrsb, which must split 0x1c7 into a base + 0xc7) and written. Spelled as a cast the address
  * becomes a common subexpression and mwcc builds a second partial base for the store; as a struct
  * field each access picks its own addressing mode, and the store folds 0x1c7 straight into the
  * strb (12-bit range) as the ROM does. The unconditional stores above are plain casts because they
  * share no address with a load. */
+
+#include "nitro/fx.h"
+
 typedef struct {
     char pad0[0x1c7];
     signed char queued;

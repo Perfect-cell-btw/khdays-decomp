@@ -9,9 +9,9 @@
  * +0x15) resolved, the linked spot (+0x154 of the table) armed, the link table (+0x178)
  * and the linked entry (+0x17c) recorded and the linked spot's target set to the linked
  * entry's position (+0x8). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov015SpotEntry {
     s8  nId;                  /* 0x00 */

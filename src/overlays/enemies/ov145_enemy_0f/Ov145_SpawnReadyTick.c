@@ -5,12 +5,14 @@
  * +8 target with charge 0; the actor is placed at its +0x3ac spot and, when a piece lures it, the
  * yaws face the target, the lure flag is set and sub-state 7 is requested, otherwise the +0x1c9
  * fallback sub-state; the tick then hands off to a null callback. */
-typedef struct Vec3 { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void Ov107_MoveNodeAndRelayout(int actor, int spot);
 extern int Ov145_LureToPiece(int *state, int flag);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int func_020050b4(int x, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
@@ -19,7 +21,7 @@ void Ov145_SpawnReadyTick(int *node)
     int *state = (int *)node[1];
     int actor;
     int path;
-    Vec3 d;
+    VecFx32 d;
 
     if ((((struct hw60 *)(*state + 0x60))->lo & 1) == 0) {
         return;
@@ -32,10 +34,10 @@ void Ov145_SpawnReadyTick(int *node)
     actor = *state;
     path = *(int *)(actor + 0x39c);
     if (path != 0 && *(int *)(actor + 0x3b8) != 0) {
-        *(Vec3 *)(state + 3) = *(Vec3 *)(path + state[0x11] * 0x10);
+        *(VecFx32 *)(state + 3) = *(VecFx32 *)(path + state[0x11] * 0x10);
         state[0x10] = *(int *)(*(int *)(*state + 0x39c) + state[0x11] * 0x10 + 0xc);
     } else {
-        *(Vec3 *)(state + 3) = *(Vec3 *)state[2];
+        *(VecFx32 *)(state + 3) = *(VecFx32 *)state[2];
         state[0x10] = 0;
     }
     Ov107_MoveNodeAndRelayout(*state, *state + 0x3ac);

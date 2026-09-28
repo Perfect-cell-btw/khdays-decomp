@@ -12,15 +12,10 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define FLAT_MIN 0xfc0
 #define RUMBLE_STRENGTH 0x333
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 /* Ov022CollBlock */
 struct CollBlock {
@@ -42,13 +37,13 @@ struct Actor {
 };
 
 extern int Session_GetLocalPlayerIndex(void);
-extern void VecFx32FromVecS16(void *pModel, s16 *pFace, struct VecFx32 *pOut);
+extern void VecFx32FromVecS16(void *pModel, s16 *pFace, VecFx32 *pOut);
 extern int func_ov022_02083f0c(void);
 extern void Ov002_StoreVAndToggleBit25(int nHandle, int bOn, int nStrength);
 
 int Ov022_FollowGroundRumble(struct Actor *pActor)
 {
-    struct VecFx32 vecNormal;
+    VecFx32 vecNormal;
     struct CollBlock *pColl;
     int bFlat;
 

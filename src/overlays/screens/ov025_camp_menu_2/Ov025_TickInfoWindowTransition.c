@@ -1,4 +1,5 @@
 /* Advance or finish the main-menu info-window position transition. */
+
 #include "nitro/types.h"
 
 typedef struct TweenFlags {

@@ -7,9 +7,10 @@
  * there; the phase accumulates the frame-time and drives the ground sweep (phase over 0x600 as a
  * 64-bit fraction); past 0x800 the +0x390 part runs action 6, animation 0xf plays, the +0x44
  * mask and the phase reset and the tick hands off to the second variant. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
 typedef struct {
@@ -28,10 +29,10 @@ struct Ov204Owner {
 struct Ov204ChargeState {
     struct Ov204Owner *pOwner;  /* +0x00 */
     int pTarget;                /* +0x04 */
-    Vec3 vVelocity;             /* +0x08 */
+    VecFx32 vVelocity;             /* +0x08 */
     char pad014[0xc];
-    Vec3 *pPoint;               /* +0x20 */
-    Vec3 *pPos;                 /* +0x24 */
+    VecFx32 *pPoint;               /* +0x20 */
+    VecFx32 *pPos;                 /* +0x24 */
     u8 *pBusy;                  /* +0x28 */
     int nTravel;                /* +0x2c */
     char pad030[8];
@@ -43,17 +44,17 @@ struct Ov204ChargeState {
     int nPhase;                 /* +0x58 */
 };
 
-extern int Ov107_ActionResource_GetOffsetAndScale(void *part, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *dst, void *quat, Vec3 *src);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, VecFx32 *src);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov205_ChargeSweep(struct Ov204ChargeState *state);
 extern int Ov107_FindNearestObject(struct Ov204Owner *actor, int mode);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int func_020050b4(int x, int z);
 extern int FX_Div(int a, int b);
-extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, Vec3 *at);
+extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, VecFx32 *at);
 extern s64 FX_DivFx64c(int num, int den);
-extern void Ov205_GroundSweep(struct Ov204ChargeState *state, s64 t, Vec3 *at);
+extern void Ov205_GroundSweep(struct Ov204ChargeState *state, s64 t, VecFx32 *at);
 extern void Ov107_StartAnim(void *part, int a, int b);
 extern void Ov107_PostTagUpdate(struct Ov204Owner *actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -66,7 +67,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov204ChargeState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov204ChargeState *state, PosMsg *msg, const VecFx32 *src)
 {
     volatile int px;
     volatile int py;
@@ -89,8 +90,8 @@ static inline void SendPos(struct Ov204ChargeState *state, PosMsg *msg, const Ve
 void Ov205_ChargeTick1(int *node)
 {
     struct Ov204ChargeState *state = (struct Ov204ChargeState *)node[1];
-    Vec3 step;
-    Vec3 dir;
+    VecFx32 step;
+    VecFx32 dir;
     PosMsg msg;
     int speed;
     int rate;

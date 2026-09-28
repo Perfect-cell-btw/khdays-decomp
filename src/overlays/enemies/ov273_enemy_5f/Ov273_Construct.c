@@ -9,12 +9,14 @@
  * the +0x22c pool and an oriented box (half-extents 0.85 / 1.7 / 0.68) at +0x3d8 on the +0x144
  * pool. Creates the 020d0574 companion (+0x3dc) and eight 020d1628 / 020d238c children (+0x3e0 /
  * +0x3e4), then loads sound 0x162. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[8]; } IdTable8;
-typedef struct { Vec3 pos; int scale; } Placement;
-typedef struct { Vec3 pos; Vec3 axis[3]; int ext[3]; } Box;
+typedef struct { VecFx32 pos; int scale; } Placement;
+typedef struct { VecFx32 pos; VecFx32 axis[3]; int ext[3]; } Box;
 struct Pair { int res; int handle; };
 
 extern void Ov273_ReleaseNodeResources(void);
@@ -38,7 +40,7 @@ extern void MainBlob_ResetSlotRows(int a, void *list);
 extern int InsertSortedEntryWithKey(int item, int kind, void *name);
 extern int CallocInstance(int size);
 extern void Ov107_EnqueueValue(char *self, int item);
-extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const Vec3 *v, int c);
+extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const VecFx32 *v, int c);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(const Placement *placement);
 extern int Ov107_HitShape_NewBox(const Box *box);
@@ -51,17 +53,17 @@ extern char data_ov273_020d6bec[];
 extern char data_ov273_020d6bf4[];
 extern char data_ov273_020d6bfc[];
 extern char data_ov273_020d6c0c[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
 
 void Ov273_Construct(char *self)
 {
     IdTable8 ids = data_ov273_020d69b4;
     Box box;
     Placement place;
-    Vec3 zero;
+    VecFx32 zero;
     u16 hw;
     int i;
     int *slot;

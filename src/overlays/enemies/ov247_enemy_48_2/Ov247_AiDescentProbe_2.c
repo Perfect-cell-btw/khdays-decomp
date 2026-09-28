@@ -18,11 +18,7 @@
  * ctx and delta take declaration-initialisers so they are read before the zeroing, as the ROM
  * does. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int x;

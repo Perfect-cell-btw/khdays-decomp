@@ -7,17 +7,13 @@
  * offset and the 0x3000/0x1800/0x1800/0x1800 rates, then creates two capsule placements from
  * one request (position (0, 0x800, 0), world Y axis, radius and height 0x800): +0x38c on the
  * +0x144 list, +0x388 on the +0x22c list; +0x394 is built by cd4cc and sound 0x115 is loaded. */
-#include "nitro/types.h"
 
-struct Ov153Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov153Capsule {
-    struct Ov153Vec3 vPos;
-    struct Ov153Vec3 vUp;
+    VecFx32 vPos;
+    VecFx32 vUp;
     int nRadius;
     int nHeight;
 };
@@ -28,8 +24,8 @@ struct Ov153SubitemSlot {
 };
 
 extern const int data_ov123_020ce298[2];
-extern struct Ov153Vec3 data_ov123_020ce2a0;
-extern const struct Ov153Vec3 data_02042264;
+extern VecFx32 data_ov123_020ce2a0;
+extern const VecFx32 data_02042264;
 extern void Ov123_Model_SetTracks0And3(void);
 extern const char data_ov123_020ce30c[];
 
@@ -59,7 +55,7 @@ extern void Res_RequestIdPair();
 
 void Ov123_Construct(int param)
 {
-    struct Ov153Vec3 offset;
+    VecFx32 offset;
     struct Ov153Capsule req;
     int kinds[2];
     int i;

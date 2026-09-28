@@ -9,9 +9,9 @@
  * cleared from the held mask kept in bits 1..15 of the follower's GameState field; when the
  * timer passes the duration (+0x1b0) the player's bit is set and, if that completes all four
  * bits, Ov016_FollowerComplete (020803b4) fires.  Always returns 0. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016Follower {
     u8 pad_000[0x10];

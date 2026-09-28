@@ -3,10 +3,7 @@
  * update 0x53; otherwise advances along its movement, ending when a ray cast hits the world. */
 
 #include "nitro/types.h"
-
-typedef struct Vec3 {
-    int x, y, z;
-} Vec3;
+#include "nitro/fx.h"
 
 typedef struct Vec4 {
     int x, y, z, w;
@@ -37,11 +34,11 @@ struct Obj {
 
 struct State {
     struct Obj *owner;
-    Vec3 *position;
+    VecFx32 *position;
     char pad08[0x18];
     int alternateQuery;
     int travel;
-    Vec3 previousPosition;
+    VecFx32 previousPosition;
 };
 
 struct Node {
@@ -57,7 +54,7 @@ struct Zero44 {
 
 struct HitCommand {
     u32 flags00;
-    Vec3 vector04;
+    VecFx32 vector04;
     u32 field10;
     u32 field14;
     void *hit18;
@@ -79,45 +76,45 @@ struct Hw60 {
     u16 high : 8;
 };
 
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern int Ov107_CollectSphereOverlaps(struct Obj *owner, Vec4 *position, struct Obj **results);
-extern void VEC_Subtract(Vec3 *a, Vec3 *b, Vec3 *out);
-extern void VEC_Normalize(Vec3 *a, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, Vec3 *a, Vec3 *out);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
+extern void VEC_Normalize(VecFx32 *a, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, VecFx32 *a, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(struct Obj *candidate, struct Obj *owner,
-                              struct AuxData *aux, int mode, Vec3 *direction, int zero);
-extern void func_ov107_020c0b90(struct Obj *owner, int mode, Vec3 position, int zero);
-extern void Ov107_BuildAndSendUpdate(struct Obj *owner, int zero, int event, Vec3 *position);
+                              struct AuxData *aux, int mode, VecFx32 *direction, int zero);
+extern void func_ov107_020c0b90(struct Obj *owner, int mode, VecFx32 position, int zero);
+extern void Ov107_BuildAndSendUpdate(struct Obj *owner, int zero, int event, VecFx32 *position);
 extern void SetIndexedSlot(struct Node *node, int action, void *next);
 extern struct Obj *Ov107_FindEntityHitBySphere(struct Obj *owner, Vec4 *position,
                                       void *result);
 extern int Ov107_AiState_ApplyHit(struct Obj *target, int value, struct HitCommand *command);
-extern void *Collision_CastRay(void *collision, Vec3 *position, Vec3 *direction);
-extern struct CollisionResult *Collision_CastSphereEx(void *collision, Vec3 *position,
-                                             Vec3 *direction, int radius, void *ignore);
-extern int VEC_Mag(Vec3 *vector);
+extern void *Collision_CastRay(void *collision, VecFx32 *position, VecFx32 *direction);
+extern struct CollisionResult *Collision_CastSphereEx(void *collision, VecFx32 *position,
+                                             VecFx32 *direction, int radius, void *ignore);
+extern int VEC_Mag(VecFx32 *vector);
 
 void Ov197_SeekTarget(struct Node *node)
 {
     struct State *state = node->state;
     void *collisionOwner = state->owner->collisionOwner04;
     Vec4 origin;
-    Vec3 movement;
-    Vec3 ray;
+    VecFx32 movement;
+    VecFx32 ray;
 
     ((struct Hw60 *)&state->owner->flags60)->high &= ~0x80;
     origin = state->owner->position74;
 
     if (state->alternateQuery == 0) {
         struct Obj *results[4];
-        Vec3 direction;
+        VecFx32 direction;
         int i;
         int count;
 
         count = Ov107_CollectSphereOverlaps(state->owner, &origin, results);
         for (i = 0; i < count; i++) {
-            VEC_Subtract((Vec3 *)&results[i]->position74,
-                         (Vec3 *)&state->owner->position74, &direction);
+            VEC_Subtract((VecFx32 *)&results[i]->position74,
+                         (VecFx32 *)&state->owner->position74, &direction);
             direction.y = 0;
             VEC_Normalize(&direction, &direction);
             ScaleVec3Fx12(0x800, &direction, &direction);

@@ -7,13 +7,9 @@
  * (+0x15dc), reaching the target within the actor's period (+4, as fx32) with flag bit 7
  * resets its model (02089174) and reaching it within 10 units (0xa000) starts the motion
  * (Ov023_ActorPlayMotion 020894c0 with 0 / 10 / 1) and forgets it. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023Entity {
     u8   pad_00[0xa8];

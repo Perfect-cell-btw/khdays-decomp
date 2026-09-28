@@ -5,27 +5,28 @@
  * +0x54 period (re-armed at random + 0x78), and is pulled in/out by 0x100 below 0x2000 / above
  * 0x3000. Past half the +0x2d8 range sub-state 4 is requested; inside it the +0x5c timer counts
  * down and then rolls sub-state 4 (1/120 or too far) or 5 (1/20). Variant: the ov171 tick only requests sub-state 5 inside the range. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
-extern int Ov171_FaceTargetGetClearance(int node, Vec3 *out);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov171_FaceTargetGetClearance(int node, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int RandNextScaled(int bound);
 extern int func_02020400(int a, int b);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern short data_0203d210[];
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern int data_02042264;
 
 void Ov171_OrbitTick(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 dir;
-    Vec3 side;
-    Vec3 pull;
+    VecFx32 dir;
+    VecFx32 side;
+    VecFx32 pull;
     int dist;
     int h;
     int t;
@@ -39,9 +40,9 @@ void Ov171_OrbitTick(int node)
     }
     dist = Ov171_FaceTargetGetClearance(node, &dir);
     if (dist > *(int *)(*state + 0x2d8)) {
-        *(Vec3 *)(state + 8) = data_02041dc8;
+        *(VecFx32 *)(state + 8) = data_02041dc8;
     } else {
-        VEC_CrossProduct((Vec3 *)&data_02042264, &dir, &side);
+        VEC_CrossProduct((VecFx32 *)&data_02042264, &dir, &side);
         VEC_Normalize(&side, &side);
         ScaleVec3Fx12((int)(((long long)(state[0x13] * state[0x18]) * 0x1000 + 0x800) >> 12), &side, &side);
         state[8] = side.x;
@@ -70,12 +71,12 @@ void Ov171_OrbitTick(int node)
         dir.y = 0;
         VEC_Normalize(&dir, &dir);
         ScaleVec3Fx12(-0x80, &dir, &pull);
-        VEC_Add((Vec3 *)(state + 8), &pull, (Vec3 *)(state + 8));
+        VEC_Add((VecFx32 *)(state + 8), &pull, (VecFx32 *)(state + 8));
     } else if (dist > 0x3000) {
         dir.y = 0;
         VEC_Normalize(&dir, &dir);
         ScaleVec3Fx12(0x80, &dir, &pull);
-        VEC_Add((Vec3 *)(state + 8), &pull, (Vec3 *)(state + 8));
+        VEC_Add((VecFx32 *)(state + 8), &pull, (VecFx32 *)(state + 8));
     }
     if (dist < *(int *)(*state + 0x2d8)) {
         *(unsigned char *)(*state + 0x1c7) = 5;

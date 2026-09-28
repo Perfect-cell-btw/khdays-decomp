@@ -1,9 +1,11 @@
-#include "nitro/types.h"
 
 /* Arena ids, in the order NitroSDK declares them. Id 1 is the sub-processor's
    private slice of main memory and is not touched here; id 2 is the extended
    main memory, which retail hardware does not have, so it is emptied instead
    of being seeded from the linker's figures. */
+
+#include "nitro/types.h"
+
 #define OS_ARENA_MAIN       0
 #define OS_ARENA_MAINEX     2
 #define OS_ARENA_ITCM       3

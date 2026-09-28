@@ -3,6 +3,7 @@
  * open limit of 0x1700, a TWO-WAY name choice on the config's alternateName field --
  * which the whole ov047 family leaves unused -- five bone lookups rather than four,
  * and an eight-entry handler table. */
+
 #include "nitro/types.h"
 
 struct PanelInitConfig {

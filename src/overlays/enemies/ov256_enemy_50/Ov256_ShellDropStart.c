@@ -3,11 +3,12 @@
  * rig (+0) is reset and placed at the point, shown again (flag 1 of its +0x5c clears), actions
  * 0/2/4/3/1 are disabled and its animation stopped; the +0x18 clock and +0x1c flag reset and brain
  * slot +0x20 runs 020d0e5c. */
-typedef struct { int x, y, z; } Vec3;
 
-extern int Collision_CastRay(int collision, Vec3 *start, Vec3 *ray);
+#include "nitro/fx.h"
+
+extern int Collision_CastRay(int collision, VecFx32 *start, VecFx32 *ray);
 extern void SrtTransform_SetIdentity(void *transform);
-extern void Srt_SetTranslation(void *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(void *transform, const VecFx32 *translation);
 extern void SetSubitemState(int item, int channel, int a, int b);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -16,18 +17,18 @@ extern void Ov256_ShockwaveTick(void);
 void Ov256_ShellDropStart(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 ray = {0};
+    VecFx32 ray = {0};
     int hit;
     int world;
 
     world = *(int *)(state[1] + 4);
     ray.y = -0xa000;
-    hit = Collision_CastRay(*(int *)(world + 0x7c), (Vec3 *)(state + 3), &ray);
+    hit = Collision_CastRay(*(int *)(world + 0x7c), (VecFx32 *)(state + 3), &ray);
     if (hit != 0) {
         state[4] += (int)(((long long)*(int *)(hit + 0xc) * ray.y) >> 27);
     }
     SrtTransform_SetIdentity((void *)(*state + 4));
-    Srt_SetTranslation((void *)(*state + 4), (Vec3 *)(state + 3));
+    Srt_SetTranslation((void *)(*state + 4), (VecFx32 *)(state + 3));
     *(int *)(*state + 0x5c) &= ~2;
     SetSubitemState(*state, 0, 0, 0);
     SetSubitemState(*state, 2, 0, 0);

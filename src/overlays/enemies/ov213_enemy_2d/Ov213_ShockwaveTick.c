@@ -5,10 +5,11 @@
  * (swept at twice it) and every entity not yet in the +0x69 mask that accepts a kind-3 hit pushed
  * 1.0 outwards and 0.5 up gets the overlay's 14-byte message with its +0x74 position, its mask
  * bit and reaction 0/0x53 there. Once the +8 flag byte clears the next move is 6. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; Vec3 axis[3]; int radius; int flag; } Cyl;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; VecFx32 axis[3]; int radius; int flag; } Cyl;
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 struct Msg14 { u16 h[7]; };
@@ -20,16 +21,16 @@ struct Ov213Actor {
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, Cyl *cyl, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct Msg14 data_ov213_020d2e90;
 extern const struct Msg14 data_ov213_020d2e9e;
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
 
 #define PACK3(msg, base, v) \
     ((u8 *)(msg))[(base)] = (u8)(((u32)(v) >> 0x10 & 0x7f) | ((u32)(v) >> 0x18 & 0x80)); \
@@ -39,16 +40,16 @@ extern const Vec3 data_02042264;
 void Ov213_ShockwaveTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 at;
+    VecFx32 at;
     struct Msg14 note;
     int hits[4];
     Cyl cyl;
-    Vec3 push;
+    VecFx32 push;
     struct Msg14 msg;
     struct Msg14 tmpl;
     FxVec vAt;
     FxVec vHit;
-    Vec3 *pPos;
+    VecFx32 *pPos;
     int nHits;
     int i;
 
@@ -56,7 +57,7 @@ void Ov213_ShockwaveTick(int *node)
     if (*((u8 *)state + 0x68) == 0 && state[7] >= 0xaaa) {
         {
             note = data_ov213_020d2e90;
-            at = *(Vec3 *)(*state + 0x74);
+            at = *(VecFx32 *)(*state + 0x74);
             at.y = at.y - *(int *)(*state + 0x13c) + 0x200;
             vAt.x = *(Fx32 *)&at.x;
             PACK3(&note, 5, vAt.x.value);
@@ -71,7 +72,7 @@ void Ov213_ShockwaveTick(int *node)
             *((u8 *)state + 0x68) = 1;
         }
     } else if (*((u8 *)state + 0x68) == 1 && state[7] <= 0x14cc) {
-        cyl.pos = *(Vec3 *)(*state + 0x74);
+        cyl.pos = *(VecFx32 *)(*state + 0x74);
         cyl.pos.y = cyl.pos.y - *(int *)(*state + 0x13c) + 0x800;
         cyl.axis[0] = data_02042270;
         cyl.axis[1] = data_02042258;
@@ -93,7 +94,7 @@ void Ov213_ShockwaveTick(int *node)
                     push.y = 0x800;
                     if (Ov107_InvokeHitCallback(hits[i], *state, *state, 3, &push, 0) != 0) {
                         msg = tmpl;
-                        pPos = (Vec3 *)(hits[i] + 0x74);
+                        pPos = (VecFx32 *)(hits[i] + 0x74);
                         vHit.x = *(Fx32 *)&pPos->x;
                         PACK3(&msg, 5, vHit.x.value);
                         vHit.y = *(Fx32 *)&pPos->y;

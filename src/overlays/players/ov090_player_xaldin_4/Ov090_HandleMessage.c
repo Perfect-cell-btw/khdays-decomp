@@ -5,6 +5,7 @@
  * offset unless the facing is locked; 0x23 tells 0x33, rewinds the animation to 0xb000, raises
  * bit 49, shows the node and caches the height in the rig; 0x24 clears the rig's two counters
  * and sets the fall speed; 0x25 tells 0x32. Each accepted message returns its step. */
+
 #include "nitro/types.h"
 
 extern int Session_GetLocalPlayerIndex(void);

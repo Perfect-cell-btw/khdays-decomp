@@ -2,22 +2,23 @@
  * shrinks by 0xd0 per frame, count the frames until the arc falls back to the target's height;
  * the +0x28 horizontal speed is the flat distance over that count (64-bit, 20 fraction bits), the +8 heading faces
  * the target, +0x48 is set and the next move is 2. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern long long func_020201b8(long long num, long long den);
-extern void Quat_FromTwoVectors(void *rotation, const Vec3 *from, const Vec3 *to);
-extern const Vec3 data_02042258;
+extern void Quat_FromTwoVectors(void *rotation, const VecFx32 *from, const VecFx32 *to);
+extern const VecFx32 data_02042258;
 
-void Ov254_PlanJump(int *state, Vec3 *target)
+void Ov254_PlanJump(int *state, VecFx32 *target)
 {
-    Vec3 p;
-    Vec3 d;
+    VecFx32 p;
+    VecFx32 d;
     int step;
     int n;
 
-    p = *(Vec3 *)state[6];
+    p = *(VecFx32 *)state[6];
     p.y += 0xc00;
     step = 0xc00;
     n = 1;
@@ -26,7 +27,7 @@ void Ov254_PlanJump(int *state, Vec3 *target)
         p.y += step;
         n++;
     }
-    VEC_Subtract(target, (Vec3 *)state[6], &d);
+    VEC_Subtract(target, (VecFx32 *)state[6], &d);
     d.y = 0;
     *(long long *)(state + 10) = VEC_Normalize(&d, &d);
     *(long long *)(state + 10) = func_020201b8(*(long long *)(state + 10) << 20, n);

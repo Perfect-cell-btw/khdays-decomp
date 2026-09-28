@@ -7,12 +7,14 @@
  * the rig's alternate flag) the ground shot fires once, latched at +0x2d98. While active the
  * velocities at +0x498 and +0x698 are cleared and the enemy hands over to state 2, or, when
  * grounded, tells the slot callback 0 and hands over to state 0. */
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
-typedef struct { int x, y, z; } Vec3;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SceneNode_Enable(void *node);
 extern void *Ov022_ActorSetState(char *self, int state);
 extern void Ov065_FireGroundShot(char *self);
@@ -21,8 +23,8 @@ extern char *data_ov065_020b7340;
 void *Ov065_LandingStep(char *self)
 {
     int r;
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     char *rig = data_ov065_020b7340 + 0x2c80;
     void *next = 0;
     unsigned int *node;
@@ -43,7 +45,7 @@ void *Ov065_LandingStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     limit = *(int *)rig != 0 ? 0x18000 : 0xc000;
     if (*(int *)(self + 0x7b0) >= limit && *(int *)(rig + 0x118) == 0) {
         Ov065_FireGroundShot(self);

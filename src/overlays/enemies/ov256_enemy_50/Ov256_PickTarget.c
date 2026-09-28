@@ -2,11 +2,12 @@
  * without one the next move is the +0x74 mode + 2 and 0 is returned. Otherwise +0x34 is the unit
  * direction from the +0xb0 anchor to the target's +0x190 point, +0x58 the gap (distance minus both
  * +0x80 radii, at least 0), +0x44 the heading, and 1 is returned. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int y);
 
 int Ov256_PickTarget(int *node)
@@ -18,8 +19,8 @@ int Ov256_PickTarget(int *node)
         *(signed char *)(*state + 0x1c7) = state[0x1d] + 2;
         return 0;
     }
-    VEC_Subtract((Vec3 *)(*(int *)(*state + 0x430) + 0x190), (Vec3 *)(*state + 0xb0), (Vec3 *)(state + 0xd));
-    state[0x16] = VEC_Normalize((Vec3 *)(state + 0xd), (Vec3 *)(state + 0xd));
+    VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x430) + 0x190), (VecFx32 *)(*state + 0xb0), (VecFx32 *)(state + 0xd));
+    state[0x16] = VEC_Normalize((VecFx32 *)(state + 0xd), (VecFx32 *)(state + 0xd));
     if ((state[0x16] -= *(int *)(*(int *)(*state + 0x430) + 0x80) + *(int *)(*state + 0x80)) < 0) {
         state[0x16] = 0;
     }

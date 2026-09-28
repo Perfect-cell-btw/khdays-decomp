@@ -19,14 +19,15 @@
  *    `i = 0; p = blk; for (; i < 7; i++)`.  Otherwise the two initialising movs come out
  *    swapped -- and that was the last two bytes.
  */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void BindAnimTrack(char *p, int i, char *tbl, short m);
 extern void Anim_SetFrameWrapped(char *p, int i, int z);
 extern int FX_Atan2(int x, int z);
 extern char *data_ov098_020bbda0;
 
-void Ov098_ClaimSlotAndLaunch(Vec3 *pos, Vec3 *dir) {
+void Ov098_ClaimSlotAndLaunch(VecFx32 *pos, VecFx32 *dir) {
     char *blk = data_ov098_020bbda0 + 0x2c + 0x2c00;
     char *slot = 0;
     char *p;
@@ -56,7 +57,7 @@ void Ov098_ClaimSlotAndLaunch(Vec3 *pos, Vec3 *dir) {
     Anim_SetFrameWrapped(slot + 4, 2, 0);
     Anim_SetFrameWrapped(slot + 4, 1, 0);
 
-    *(Vec3 *)(slot + 0xa8) = *pos;
+    *(VecFx32 *)(slot + 0xa8) = *pos;
     *(short *)(slot + 0x80) = (short)FX_Atan2(-dir->x, -dir->z);
     *(unsigned short *)(slot + 4) |= 0x20;
     *(int *)(blk + 0xc) = *(int *)(blk + 0xc) + 1;

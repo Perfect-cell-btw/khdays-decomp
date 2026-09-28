@@ -2,10 +2,12 @@
  * reaction 0x167 mode 4 fires there, animation 1 plays (looping), bit 0 of +0x1ae is raised, bit
  * 0 of the +0x388 part's flag byte clears, bits 1 and 2 of the +0x60 high byte are raised, the
  * +0x50 timer restarts and the tick hands over to Ov272_RepositionTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned int lo : 8, rest : 24; } Byte8;
 
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -16,7 +18,7 @@ void Ov272_EnterLunge(int *node)
     int *state = (int *)node[1];
     unsigned short v;
 
-    func_ov107_020c0b90(*state, 1, *(Vec3 *)state[0x13], 0);
+    func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[0x13], 0);
     Ov107_BuildAndSendUpdate(*state, 0x167, 4, (void *)state[0x13]);
     Ov107_PostTagUpdate(*state, 1, 1);
     *(unsigned short *)(*state + 0x100 + 0xae) |= 1;

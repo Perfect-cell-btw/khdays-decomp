@@ -8,31 +8,33 @@
  * contact (+0x17a bit 1) fires the reaction and clears the step; otherwise the travelled length
  * accumulates in +0x20 until 21.0. Ending: effect 0 (flag 1) at the owner, animation 2, the length
  * restarts and the tick hands over to Ov228_AiScanReactTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 struct Bits17a { unsigned char b0 : 1, b1 : 1; };
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
 extern int FX_Div(int a, int b);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov228_ScanNearbyEntitiesReact(int *state);
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern int VEC_Mag(const Vec3 *v);
+extern int VEC_Mag(const VecFx32 *v);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov228_AiScanReactTick(int *node);
 
 void Ov228_DashTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 weave;
+    VecFx32 weave;
     Mtx33 mtx;
     int step;
     int speed;
@@ -54,7 +56,7 @@ void Ov228_DashTick(int *node)
         speed = 0xc0;
     }
     state[9] = speed;
-    ScaleVec3Fx12(speed, (Vec3 *)(state + 5), (Vec3 *)(state + 2));
+    ScaleVec3Fx12(speed, (VecFx32 *)(state + 5), (VecFx32 *)(state + 2));
     if (state[0xe] != 0) {
         state[0xb] += *(int *)(*node + 0x2c) * 0x15000 / 0x1000;
         if (state[0xb] > 0xffff) {
@@ -78,22 +80,22 @@ void Ov228_DashTick(int *node)
     weave.z = 0;
     MTX_RotY33_(&mtx, data_0203d210[ANG2IDX(state[0xa]) * 2], data_0203d210[ANG2IDX(state[0xa]) * 2 + 1]);
     MTX_MultVec33(&weave, &mtx, &weave);
-    VEC_Add((Vec3 *)(state + 2), &weave, (Vec3 *)(state + 2));
+    VEC_Add((VecFx32 *)(state + 2), &weave, (VecFx32 *)(state + 2));
     if (Ov228_ScanNearbyEntitiesReact(state) != 0) {
         item = *state;
-        func_ov107_020c0b90(*(int *)(item + 0x38c), 8, *(Vec3 *)(item + 0x74), 0);
+        func_ov107_020c0b90(*(int *)(item + 0x38c), 8, *(VecFx32 *)(item + 0x74), 0);
         Ov107_BuildAndSendUpdate(state[0], 0x12b, 0xe, (void *)state[1]);
     } else if (((struct Bits17a *)(*state + 0x17a))->b1 != 0) {
         Ov107_BuildAndSendUpdate(*state, 0x12b, 0xe, (void *)state[1]);
-        *(Vec3 *)(state + 2) = data_02041dc8;
+        *(VecFx32 *)(state + 2) = data_02041dc8;
     } else {
-        state[8] += VEC_Mag((Vec3 *)(state + 2));
+        state[8] += VEC_Mag((VecFx32 *)(state + 2));
         if (state[8] < 0x15000) {
             return;
         }
     }
     item = *state;
-    func_ov107_020c0b90(item, 0, *(Vec3 *)(item + 0x74), 1);
+    func_ov107_020c0b90(item, 0, *(VecFx32 *)(item + 0x74), 1);
     Ov107_PostTagUpdate(*state, 2, 0);
     state[8] = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov228_AiScanReactTick);

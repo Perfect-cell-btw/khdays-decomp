@@ -7,7 +7,9 @@
  * through the `RandNextScaled(N) + (v - v)` copy artifact with an uninitialised scratch, the
  * free flag is a separate local set inside the loop and the declaration order i/free/items/actor
  * fixes the colouring (r2/r3/r4/ip). */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void ScaleVec3Fx12(int a, void *b, void *c);

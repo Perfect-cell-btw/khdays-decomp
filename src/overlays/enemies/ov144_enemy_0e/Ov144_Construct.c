@@ -13,6 +13,7 @@
  * size keeps the ROM's add chains; folded constants become pool loads) and copied as a whole
  * after the sub-state byte; the sub-item/list tail goes through the typed actor view, which
  * keeps the `orr r1` flag store ahead of the list call's argument setup. */
+
 #include "nitro/types.h"
 
 struct Bit0 {

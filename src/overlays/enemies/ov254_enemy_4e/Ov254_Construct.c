@@ -8,13 +8,15 @@
  * (length 8.4, radius 1.57); each goes both into the +0x144 pool (kept in +0x3f4) and the +0x22c pool
  * (kept in +0x3e0). The four helpers (+0x468, +0x45c, +0x460, +0x464), sixteen +0x46c shards and ten
  * +0x4ac debris pieces are created and sound 0x16d loads. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[8]; } IdTable8;
 typedef struct { int w[6]; } Bounds;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 struct Pair { int res; int handle; };
 struct Ov254 {
     char pad000[0x3e0];
@@ -68,8 +70,8 @@ extern const char data_ov254_020d59b8[];
 extern const char data_ov254_020d59c4[];
 extern const char data_ov254_020d59d0[];
 extern const char data_ov254_020d59dc[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
 
 static inline void SetAnchor(char *self, int x, int z)
 {
@@ -85,7 +87,7 @@ void Ov254_Construct(char *self)
     IdTable8 ids = data_ov254_020d592c;
     Sphere sph;
     Segment seg;
-    Vec3 zero;
+    VecFx32 zero;
     int i;
     int *slot;
     int capsule;

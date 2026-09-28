@@ -1,20 +1,21 @@
 /* Thrown-card arc step: advances the shot's timer, resolves hits until close to the end of its
  * animation, and marks it finished (state 3, then 4) when the animation ends, releasing it. */
 
+#include "nitro/fx.h"
+
 extern int Anim_GetLengthQ12(int a, int b);
 extern void Ov022_ResolveShotHit(int self, char *node, void *v, void *w);
 extern int func_ov022_02091540(int a, int b);
 extern void func_ov022_02091d80(int self, char *node, int c);
 
-typedef struct { int x, y, z; } Vec3;
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 int Ov095_TickThrowArcWithLimit(int self, char *node, int dt) {
-    Vec3 a;
-    Vec3 b;
+    VecFx32 a;
+    VecFx32 b;
     int r = Anim_GetLengthQ12((int)(node + 0x28), 0);
     int lim = r - 0x9000;
-    a = *(Vec3 *)(node + 0xcc);
+    a = *(VecFx32 *)(node + 0xcc);
     b = data_02041dc8;
     *(int *)(node + 4) += dt;
     if (*(int *)(node + 4) <= lim) {

@@ -1,5 +1,7 @@
 /* Ov002_ScriptOpenChoicePanel: decode script text and submit a choice request. */
+
 #include "nitro/types.h"
+
 typedef struct ScriptVmOperand {u16 nType,pad2;u32 nValue;} ScriptVmOperand;
 typedef struct Ov002PanelChoiceFields {u16 *pTitle,*apChoices[3];int nFlags,nSelection,nMode;} Ov002PanelChoiceFields;
 typedef union Ov002PanelRequestPayload {int aWords[7];Ov002PanelChoiceFields choice;} Ov002PanelRequestPayload;

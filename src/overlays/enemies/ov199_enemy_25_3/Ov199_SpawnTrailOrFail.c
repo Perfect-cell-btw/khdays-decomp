@@ -1,14 +1,15 @@
 /* State step: acquires the nearest target, or queues action 2 and ends the step without one; posts
  * pose 6, fires the trail effects at the tracked position and installs the steer-trail step. */
 
+#include "nitro/fx.h"
+
 extern int Ov107_FindNearestObject(int a, int b);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int *self, int idx, void *cb);
 extern void Ov199_SteerTrailThenAdvance(void);
 
-typedef struct { int x, y, z; } Vec3;
-extern Vec3 data_02041dc8;
-extern void func_ov107_020c0b90(int a, int b, Vec3 v, int d);
+extern VecFx32 data_02041dc8;
+extern void func_ov107_020c0b90(int a, int b, VecFx32 v, int d);
 
 void Ov199_SpawnTrailOrFail(int *self) {
     int *s = (int *)self[1];
@@ -19,7 +20,7 @@ void Ov199_SpawnTrailOrFail(int *self) {
         return;
     }
     Ov107_PostTagUpdate(*s, 6, 0);
-    func_ov107_020c0b90(*s, 0, *(Vec3 *)(*s + 0x3d8), 0);
+    func_ov107_020c0b90(*s, 0, *(VecFx32 *)(*s + 0x3d8), 0);
     func_ov107_020c0b90(*s, 2, data_02041dc8, 0);
     s[0x10] = 0;
     SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), (void *)&Ov199_SteerTrailThenAdvance);

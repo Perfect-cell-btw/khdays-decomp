@@ -2,19 +2,14 @@
  * and moves its node along the new facing. */
 
 #include "nitro/types.h"
-
-struct Ov234Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Ov234VecBlock {
-    struct Ov234Vec3 vector;
+    VecFx32 vector;
     int unused;
 };
 
-static inline void Ov234Vec3_Set(struct Ov234Vec3 *vec, int x, int y, int z)
+static inline void Ov234Vec3_Set(VecFx32 *vec, int x, int y, int z)
 {
     vec->x = x;
     vec->y = y;
@@ -36,11 +31,11 @@ struct Ov234Object {
     char pad000[0x2c];
     int frameDelta2c;
     char pad030[0x70];
-    struct Ov234Vec3 anchorA0;
+    VecFx32 anchorA0;
     char pad0ac[0x44];
-    struct Ov234Vec3 movementF0;
+    VecFx32 movementF0;
     char pad0fc[0x18];
-    struct Ov234Vec3 vector114;
+    VecFx32 vector114;
     char pad120[0x5a];
     struct Ov234ObjectFlags flags17a;
     char pad17b[0x23d];
@@ -52,8 +47,8 @@ struct Ov234State {
     int field04;
     int node08;
     int field0c;
-    struct Ov234Vec3 direction10;
-    struct Ov234Vec3 effectPosition1c;
+    VecFx32 direction10;
+    VecFx32 effectPosition1c;
     char pad28[0x0c];
     int angle34;
     int targetAngle38;
@@ -76,32 +71,32 @@ struct Ov234Node {
     struct Ov234State *state;
 };
 
-extern const struct Ov234Vec3 data_02042264;
-extern const struct Ov234Vec3 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02041dc8;
 extern const short data_0203d210[];
 
 extern int Angle_TurnToward(int, int, int, int);
-extern void QuatFromAxisAngle(struct Ov234Vec3 *,
-                         const struct Ov234Vec3 *, int);
-extern void Srt_SetRotationQuat(struct Ov234Vec3 *, struct Ov234Vec3 *);
-extern int VEC_DotProduct(struct Ov234Vec3 *, struct Ov234Vec3 *);
-extern void ScaleVec3Fx12(int, struct Ov234Vec3 *, struct Ov234Vec3 *);
-extern void VEC_Subtract(struct Ov234Vec3 *, struct Ov234Vec3 *,
-                         struct Ov234Vec3 *);
-extern int VEC_Normalize(struct Ov234Vec3 *, struct Ov234Vec3 *);
+extern void QuatFromAxisAngle(VecFx32 *,
+                         const VecFx32 *, int);
+extern void Srt_SetRotationQuat(VecFx32 *, VecFx32 *);
+extern int VEC_DotProduct(VecFx32 *, VecFx32 *);
+extern void ScaleVec3Fx12(int, VecFx32 *, VecFx32 *);
+extern void VEC_Subtract(VecFx32 *, VecFx32 *,
+                         VecFx32 *);
+extern int VEC_Normalize(VecFx32 *, VecFx32 *);
 extern int func_020050b4(int, int);
 extern void Ov107_BuildAndSendUpdate(struct Ov234Object *, int, int, int);
-extern void Ov107_MoveNodeAndRelayout(struct Ov234Object *, struct Ov234Vec3 *);
+extern void Ov107_MoveNodeAndRelayout(struct Ov234Object *, VecFx32 *);
 
 void Ov234_TurnTowardDirection(struct Ov234Node *node)
 {
     struct Ov234State *state = node->state;
     struct Ov234VecBlock rotated;
-    struct Ov234Vec3 objectVector;
-    struct Ov234Vec3 facing;
-    struct Ov234Vec3 projected;
-    struct Ov234Vec3 oldDirection;
-    struct Ov234Vec3 newDirection;
+    VecFx32 objectVector;
+    VecFx32 facing;
+    VecFx32 projected;
+    VecFx32 oldDirection;
+    VecFx32 newDirection;
     int turnStep;
     int angleIndex;
 

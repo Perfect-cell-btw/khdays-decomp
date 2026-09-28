@@ -1,8 +1,10 @@
-#include "nitro/types.h"
 
 /* An event slot carrying one arithmetic step on a game-state field: the record
  * builder allocates 0x24 bytes and fills the four halfwords behind the slot's
  * own 0x1c. */
+
+#include "nitro/types.h"
+
 typedef struct {
     char pad0000[0x1c];
     u16 nFieldOffset;   /* 0x1c */

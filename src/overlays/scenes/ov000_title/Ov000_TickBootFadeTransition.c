@@ -4,6 +4,7 @@
  * registers past 0x30. */
 
 #include "nitro/types.h"
+
 typedef void (*Ov000StateFn)(void);
 
 typedef struct Ov000BootContext {

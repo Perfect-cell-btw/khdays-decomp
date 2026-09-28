@@ -1,5 +1,7 @@
 /* Select decimal digit sequences and hide slots beyond the requested width. */
+
 #include "nitro/types.h"
+
 typedef struct Ov005SpriteManager { char data[0x4a80]; } Ov005SpriteManager;
 typedef struct Ov005ResultContext { char unknown00[0x54]; Ov005SpriteManager spriteManager; } Ov005ResultContext;
 extern Ov005ResultContext *data_ov005_0205b810;

@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov023_CreateHintSprites (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov023_CreateHintSprites (not yet decompiled) */
 const u8 data_ov023_02089cfc[24] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 11, 0,
     0, 0, 0, 0, 0, 0, 0, 0,

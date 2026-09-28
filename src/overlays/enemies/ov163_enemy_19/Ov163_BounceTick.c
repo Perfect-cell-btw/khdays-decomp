@@ -4,22 +4,24 @@
  * actor's +0x114 surface normal (v - 2 (v.n) n on the reversed heading), re-normalised and the
  * +0x40/+0x30 counters cleared; the +0x18 velocity is the heading scaled by the +0x38 speed,
  * which then decays to 0x7c6/2000 of itself. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Bit0 { int b0 : 1; };
 struct Flags17a { unsigned char b0 : 1, b1 : 1; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 
 void Ov163_BounceTick(int *node)
 {
     int actor;
     int *state = (int *)node[1];
-    Vec3 back;
-    Vec3 reflected;
+    VecFx32 back;
+    VecFx32 reflected;
 
     if (((struct Bit0 *)(*state + 0x3cc))->b0) {
         *(unsigned char *)(*state + 0x1c7) = 8;
@@ -29,13 +31,13 @@ void Ov163_BounceTick(int *node)
     state[0xc] += *(int *)(*node + 0x2c);
     actor = *state;
     if (((struct Flags17a *)(actor + 0x17a))->b1 && state[0xc] >= *(int *)(*node + 0x2c) * 2) {
-        ScaleVec3Fx12(-0x1000, (Vec3 *)(state + 0xf), &back);
-        ScaleVec3Fx12(VEC_DotProduct(&back, (Vec3 *)(actor + 0x114)) << 1, (Vec3 *)(actor + 0x114), &reflected);
+        ScaleVec3Fx12(-0x1000, (VecFx32 *)(state + 0xf), &back);
+        ScaleVec3Fx12(VEC_DotProduct(&back, (VecFx32 *)(actor + 0x114)) << 1, (VecFx32 *)(actor + 0x114), &reflected);
         VEC_Subtract(&reflected, &back, &reflected);
-        VEC_Normalize(&reflected, (Vec3 *)(state + 0xf));
+        VEC_Normalize(&reflected, (VecFx32 *)(state + 0xf));
         state[0x10] = 0;
         state[0xc] = 0;
     }
-    ScaleVec3Fx12(state[0xe], (Vec3 *)(state + 0xf), (Vec3 *)(state + 6));
+    ScaleVec3Fx12(state[0xe], (VecFx32 *)(state + 0xf), (VecFx32 *)(state + 6));
     state[0xe] = state[0xe] * 0x7c6 / 2000;
 }

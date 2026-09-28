@@ -8,7 +8,9 @@
  * first through it. That is what makes mwcc read +0xa before +8 and reuse the table base register
  * for the second load, exactly as the ROM does. A struct assignment reads +8 first and keeps the
  * base alive, which is the four-instruction residue the park recorded. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Vec4;
 struct bit0 { unsigned char b : 1; };
 typedef struct { unsigned short a, b; } Pair;
@@ -25,7 +27,7 @@ void Ov117_PublishLanding(int *self) {
     Pair p;
     void (*cb)(int owner, Pair *p, int n);
 
-    *(Vec3 *)((char *)ctx + 0x2c) = *(Vec3 *)((char *)ctx + 0x64);
+    *(VecFx32 *)((char *)ctx + 0x2c) = *(VecFx32 *)((char *)ctx + 0x64);
 
     if (Ov107_CollectSphereOverlaps(*ctx, *ctx + 0x74, &out) != 0) {
         Pair *pp = &p;

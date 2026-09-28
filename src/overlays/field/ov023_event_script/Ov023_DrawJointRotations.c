@@ -7,13 +7,9 @@
  * keeping its translation), and both matrices are re-sent to the geometry engine
  * (GX_SendFifoWords: matrix mode 2, the vector matrix, mode 1, the position matrix,
  * mode 2). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct MtxFx33 {
     int  a[9];                /* 0x00 */

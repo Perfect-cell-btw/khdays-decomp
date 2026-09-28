@@ -13,15 +13,11 @@
  * trailing counters zeroed.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022ShotDesc */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ShotDesc {
     unsigned int nFlags;             /* 0x00 */
     u8 pad04[0xc];
@@ -45,10 +41,10 @@ struct Shot {
     u8 nField0a;                     /* 0x00a */
     u8 nField0b;                     /* 0x00b */
     int nField0c;                    /* 0x00c */
-    struct VecFx32 vecStart;         /* 0x010 */
-    struct VecFx32 vecDir;           /* 0x01c */
+    VecFx32 vecStart;         /* 0x010 */
+    VecFx32 vecDir;           /* 0x01c */
     u8 pad028[0xa4];
-    struct VecFx32 vecPos;           /* 0x0cc */
+    VecFx32 vecPos;           /* 0x0cc */
     u8 pad0d8[0x5c];
     u8 nField134;                    /* 0x134 */
     u8 pad135[3];
@@ -67,7 +63,7 @@ struct ShotPool {
 };
 
 struct SpawnReq {
-    struct VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecPos;           /* 0x00 */
     short nDirX;                     /* 0x0c */
     short nDirY;                     /* 0x0e */
     short nDirZ;                     /* 0x10 */
@@ -82,7 +78,7 @@ struct SpawnReq {
 
 extern void Ov022_ReleaseRigSlots(struct Shot *pShot, int nRig);
 extern int func_02023c40(void);
-extern void ScaleVec3Fx12(int nScale, struct VecFx32 *pIn, struct VecFx32 *pOut);
+extern void ScaleVec3Fx12(int nScale, VecFx32 *pIn, VecFx32 *pOut);
 
 #define SHOT_IDLE 0
 #define SHOT_LIVE 1

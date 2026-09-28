@@ -3,13 +3,15 @@
  * animation 6 (looped). Two random headings (yaw within +-0x3244, scaled to 10.0 plus a random
  * 0..4.0) go to +0x1c and +0x28, the +4 position is copied to +0x34, a third random yaw to
  * +0x40 and +0x44 is cleared before the cd560 tick takes over. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern int RandNextScaled(int range);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov277_BounceTick(int *node);
 extern const short data_0203d210[];
@@ -41,13 +43,13 @@ void Ov277_BounceEntry(int *node)
     state[7] = data_0203d210[idx * 2];                                        /* FX_SinIdx */
     state[8] = 0;
     state[9] = data_0203d210[idx * 2 + 1];                                    /* FX_CosIdx */
-    ScaleVec3Fx12(RandRange(0, 0x4000) + 0xa000, (Vec3 *)(state + 7), (Vec3 *)(state + 7));
+    ScaleVec3Fx12(RandRange(0, 0x4000) + 0xa000, (VecFx32 *)(state + 7), (VecFx32 *)(state + 7));
     idx = ANG2IDX(RandRange(-0x3244, 0x3244));
     state[10] = data_0203d210[idx * 2];                                       /* FX_SinIdx */
     state[11] = 0;
     state[12] = data_0203d210[idx * 2 + 1];                                   /* FX_CosIdx */
-    ScaleVec3Fx12(RandRange(0, 0x4000) + 0xa000, (Vec3 *)(state + 10), (Vec3 *)(state + 10));
-    *(Vec3 *)(state + 13) = *(Vec3 *)state[1];
+    ScaleVec3Fx12(RandRange(0, 0x4000) + 0xa000, (VecFx32 *)(state + 10), (VecFx32 *)(state + 10));
+    *(VecFx32 *)(state + 13) = *(VecFx32 *)state[1];
     state[0x10] = RandRange(-0x3244, 0x3244);
     state[0x11] = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov277_BounceTick);

@@ -11,12 +11,7 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct MtxFx33 {
     int m[9];
@@ -35,7 +30,7 @@ struct Actor {
     u8 pad024[0x42];
     short nSlotIndex;            /* 0x066 */
     u8 pad068[0x424];
-    struct VecFx32 vecAim;       /* 0x48c */
+    VecFx32 vecAim;       /* 0x48c */
 };
 
 /* Ov022ActorSlot */
@@ -49,7 +44,7 @@ struct ActorSlot {
     int nModel;                  /* 0x080 */
     u16 nAngle;                  /* 0x084 */
     u8 pad086[0x26];
-    struct VecFx32 vecAim;       /* 0x0ac */
+    VecFx32 vecAim;       /* 0x0ac */
     int aEntryFlags[3];          /* 0x0b8 */
     u8 pad0c4[0x4c];
     s8 nSlotIndex;               /* 0x110 */
@@ -79,14 +74,14 @@ extern short data_0203d210[];
 
 extern void Ov022_BindBlockAnimations(struct ReactionCtx *pCtx, int nTrack,
                                 u16 *pFlags, int nArg3);
-extern struct VecFx32 *func_ov022_0208a96c(struct ReactionCtx *pCtx);
+extern VecFx32 *func_ov022_0208a96c(struct ReactionCtx *pCtx);
 extern void MTX_RotY33_(struct MtxFx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(struct VecFx32 *pIn, struct MtxFx33 *pMtx,
-                          struct VecFx32 *pOut);
-extern void VEC_Add(struct VecFx32 *pA, struct VecFx32 *pB,
-                    struct VecFx32 *pOut);
+extern void MTX_MultVec33(VecFx32 *pIn, struct MtxFx33 *pMtx,
+                          VecFx32 *pOut);
+extern void VEC_Add(VecFx32 *pA, VecFx32 *pB,
+                    VecFx32 *pOut);
 extern int Ov022_ClampReactionForKind10(int nKind, int nArg1);
-extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, struct VecFx32 *pAt,
+extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, VecFx32 *pAt,
                                 int nReaction);
 extern void NNS_G3dMdlSetMdlAlphaAll(int nModel, int nSpeed);
 
@@ -98,10 +93,10 @@ extern void NNS_G3dMdlSetMdlAlphaAll(int nModel, int nSpeed);
 void Ov022_EnterReactionAtOffset(struct ReactionCtx *pCtx)
 {
     struct MtxFx33 mtx;
-    struct VecFx32 vecAim;
+    VecFx32 vecAim;
     struct Actor *pActor;
     struct ActorSlot *pSlot;
-    struct VecFx32 *pOffset;
+    VecFx32 *pOffset;
     int nReaction;
     int nIndex;
     u16 nBack;

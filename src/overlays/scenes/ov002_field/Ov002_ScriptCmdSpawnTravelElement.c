@@ -1,11 +1,10 @@
-#include "nitro/types.h"
-
-typedef struct {
-    int x, y, z;
-} VecFx32;
 
 /* One operand of a script command: a tag saying how the value is fetched and
  * the word that carries either the value itself or the reference to it. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct {
     short kind;
     short pad;

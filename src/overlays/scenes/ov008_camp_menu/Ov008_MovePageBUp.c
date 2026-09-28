@@ -4,6 +4,7 @@
  * real move drains the double count for the new row, starts the collapse slide and
  * plays the move sound.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008PageB {

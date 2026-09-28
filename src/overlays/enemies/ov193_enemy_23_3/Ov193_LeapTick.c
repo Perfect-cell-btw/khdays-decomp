@@ -7,15 +7,17 @@
  * is dropped, the +0x1c counter re-rolled to 2 + rand(5), pose 5 plays, the heading is
  * re-aimed at the target with a random +-0xc90 spread, the phase and latch reset, bit 1 of
  * +0x39 cleared and the follow-up handler (020d190c) installed. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct bf { unsigned b : 8; };
 
 extern int Ov193_FindTarget(int obj, int *out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void Ov193_ProbeGroundBelowNode(int *node, Vec3 *out);
+extern void Ov193_ProbeGroundBelowNode(int *node, VecFx32 *out);
 extern long long FX_DivFx64c(int num, int denom);
-extern void Ov193_BoxSweepPush(int *node, long long t, Vec3 *at);
+extern void Ov193_BoxSweepPush(int *node, long long t, VecFx32 *at);
 extern int RandNextScaled(int bound);
 extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern void SetIndexedSlot(int node, int slot, void *cb);
@@ -24,24 +26,24 @@ extern void Ov193_ChargeAimedShotState(void);
 void Ov193_LeapTick(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 d;
-    Vec3 d2;
+    VecFx32 d;
+    VecFx32 d2;
     int spread;
     int heading;
 
     state[6] = Ov193_FindTarget(*state, 0);
     if (state[6] != 0) {
-        VEC_Subtract((Vec3 *)(state[6] + 0x190), (Vec3 *)state[2], &d);
+        VEC_Subtract((VecFx32 *)(state[6] + 0x190), (VecFx32 *)state[2], &d);
         state[5] = func_020050b4(d.x, d.z);
         state[0xc] = *(int *)(*(int *)node + 0x2c) * 30 / 10;
     }
     state[0xb] += *(int *)(*(int *)node + 0x2c);
     if (*(unsigned char *)(state + 0xe) == 0 && state[0xb] >= 0x1bbb) {
-        Ov193_ProbeGroundBelowNode(state, (Vec3 *)(state + 8));
+        Ov193_ProbeGroundBelowNode(state, (VecFx32 *)(state + 8));
         *(unsigned char *)(state + 0xe) = 1;
     }
     if (state[0xb] >= 0x1bbb && state[0xb] <= 0x22a9) {
-        Ov193_BoxSweepPush(state, FX_DivFx64c(state[0xb] - 0x1bbb, 0x1bbb >> 2), (Vec3 *)(state + 8));
+        Ov193_BoxSweepPush(state, FX_DivFx64c(state[0xb] - 0x1bbb, 0x1bbb >> 2), (VecFx32 *)(state + 8));
     }
     if (*(unsigned char *)state[1] != 0) {
         return;
@@ -50,7 +52,7 @@ void Ov193_LeapTick(int node)
     state[7] = RandNextScaled(5) + 2;
     Ov107_PostTagUpdate(*state, 5, 0);
     if (state[6] != 0) {
-        VEC_Subtract((Vec3 *)(state[6] + 0x190), (Vec3 *)state[2], &d2);
+        VEC_Subtract((VecFx32 *)(state[6] + 0x190), (VecFx32 *)state[2], &d2);
         spread = RandNextScaled(0x1923) - 0xc91;
         heading = func_020050b4(d2.x, d2.z);
         state[5] = heading + spread;

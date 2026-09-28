@@ -5,7 +5,8 @@
  * plain ray. A hit sets the +0x20 height to the origin's y plus the scaled direction's y and
  * returns the hit normal -- the result's own +0x24 triple for a hit with the +8 flag, else its
  * plane's +0x14 triple. Returns 1 on a hit. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 typedef struct {
     char pad00[0x14];
@@ -21,15 +22,15 @@ struct Hit {
     short nx, ny, nz;
 };
 
-extern struct Hit *Collision_CastRayEx(void *collision, Vec3 *origin, Vec3 *dir, void *ignore);
-extern struct Hit *Collision_CastRay(void *collision, Vec3 *origin, Vec3 *dir);
-extern void ScaleVec3Fixed27(int scale, const Vec3 *v, Vec3 *out);
+extern struct Hit *Collision_CastRayEx(void *collision, VecFx32 *origin, VecFx32 *dir, void *ignore);
+extern struct Hit *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *dir);
+extern void ScaleVec3Fixed27(int scale, const VecFx32 *v, VecFx32 *out);
 
-int Ov138_ProbeGround(int *state, Vec3 *dir, Vec3 *out)
+int Ov138_ProbeGround(int *state, VecFx32 *dir, VecFx32 *out)
 {
     int coll = *(int *)(*state + 4);
-    Vec3 origin;
-    Vec3 d;
+    VecFx32 origin;
+    VecFx32 d;
     struct Hit *hit;
     int target = state[0xb];
 

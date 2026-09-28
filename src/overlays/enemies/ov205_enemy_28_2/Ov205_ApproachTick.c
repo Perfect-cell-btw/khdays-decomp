@@ -4,15 +4,16 @@
  * part's motion step rotated by the actor's +0xa0 orientation and, unless the target distance is
  * within the actor's +0x2d8 reach yet beyond 0x5000, the +0x384 item's +0xa8 byte is cleared and
  * the tick hands off to the next approach state. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int *dist);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int func_020050b4(int x, int z);
-extern int Ov107_ActionResource_GetOffsetAndScale(void *part, struct Vecx32 *out);
-extern void Vec3TransformViaTempMtx(void *dst, void *quat, struct Vecx32 *src);
+extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(void *dst, void *quat, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void Ov205_stateAcquireTransform(int *node);
 
@@ -20,8 +21,8 @@ void Ov205_ApproachTick(int *node)
 {
     int *state = (int *)node[1];
     int dist;
-    struct Vecx32 dir;
-    struct Vecx32 step;
+    VecFx32 dir;
+    VecFx32 step;
     int speed;
 
     state[1] = Ov107_FindNearestObject(*state, &dist);

@@ -10,7 +10,9 @@
  * induction variable (+8 B, and an extra register in the push list). Declaring the
  * array as a struct member reproduces the ROM's two-add form (`add r1,r0,ip,lsl #4`
  * then `add r4,r1,#0x3cc`). */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct blk16 { int a, b, c, d; };
 struct Ctx { char pad[0x3cc]; struct blk16 mats[16]; };
 
@@ -23,7 +25,7 @@ void Ov212_ResetPoseCache(int *self) {
         *(int *)(((int *)*self)[i + 0xe3] + 0x5c) &= ~2;
         ((struct Ctx *)*self)->mats[i] = *(struct blk16 *)(*self + 0xa0);
     }
-    *(struct vec3 *)(*self + 0x4f0) = *(struct vec3 *)(*(int *)(*self + 0x5a8) + 0x190);
+    *(VecFx32 *)(*self + 0x4f0) = *(VecFx32 *)(*(int *)(*self + 0x5a8) + 0x190);
     *(int *)(*self + 0x57c) = 0;
     *(int *)(*self + 0x5b0) = 0;
     *(int *)(*self + 0x5ac) = *(int *)(*self + 0x5b0);

@@ -4,9 +4,10 @@
  * of the owner's +0x1ac is set, resets the actor (020cce28 / pose 8), starts motion 2 of the
  * anchor, turns the accumulated height into the +0x30 ratio against 0xe40f (FX_Inv of the
  * negation) and moves the node to the hover tick (020ce2d4) or the strike (020ce33c). */
-typedef struct { int x, y, z; } Vec3;
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+#include "nitro/fx.h"
+
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov245_ResetMode(int actor);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov107_StartAnim(int item, int motion, int flag);
@@ -19,7 +20,7 @@ void Ov245_HoverArmedTick(int *node) {
     int *state = (int *)node[1];
     int owner;
 
-    ScaleVec3Fx12(-0x1000, (Vec3 *)(*(int *)(*state + 0x4c8) + 0x2c), (Vec3 *)(state + 3));
+    ScaleVec3Fx12(-0x1000, (VecFx32 *)(*(int *)(*state + 0x4c8) + 0x2c), (VecFx32 *)(state + 3));
     state[10] += *(int *)(state[2] + 8) - state[0xc];
     state[0xc] = *(int *)(state[2] + 8);
     owner = *(int *)(*state + 0x434);

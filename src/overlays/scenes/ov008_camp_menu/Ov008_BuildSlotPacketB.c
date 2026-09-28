@@ -4,6 +4,7 @@
  * link, or 0 without a link (a `!= 0 ? lookup : 0` ternary; the if/else form colours
  * the shared zero one register up).
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008ParamRecord {

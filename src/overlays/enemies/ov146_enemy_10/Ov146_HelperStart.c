@@ -1,6 +1,7 @@
 /* Start of the ov146 actor's helper: no move is current or next, the +8 model's +0x5c bit 1 is set,
  * bit 0 of the actor's +0x60 high byte is set and the three helper slots start (020cf338 in slot 0,
  * 020cf3d0 in slot 1, 020cf3cc in slot 2). */
+
 #include "nitro/types.h"
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

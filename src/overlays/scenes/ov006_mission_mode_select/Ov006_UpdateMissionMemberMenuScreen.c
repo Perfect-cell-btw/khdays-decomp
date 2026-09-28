@@ -19,12 +19,14 @@
  *
  * Finally the local rows are written back to the shared context and the next state
  * function is returned (0 to stay, or the menu-state entry point after a confirm). */
-#include "nitro/types.h"
 
 /* One mission-menu row. Eight bytes, so the ROM indexes it with `lsl #3`.
  * The same layout backs the twin loop in ov008; the offsets are what the
  * disassembly pins, the names what the uses show.
  */
+
+#include "nitro/types.h"
+
 typedef struct {
     u16 id;          /* +0x00  entry id                                    */
     u8 slotUsed;     /* +0x02  row occupied; gates the cues and the counter */

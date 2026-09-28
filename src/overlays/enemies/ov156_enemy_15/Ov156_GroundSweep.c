@@ -5,9 +5,10 @@
  * its +0x74 position, lifted by 0xb00 and halved, is packed into the overlay's 14-byte template
  * for the actor's +0x24 message hook, reaction 0x13d mode 5 fires there and the kind bit is
  * set. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -21,10 +22,10 @@ typedef struct {
 } PosMsg;
 
 struct BoxQuery {
-    Vec3 vCenter;
-    Vec3 vAxisX;
-    Vec3 vAxisZ;
-    Vec3 vAxisY;
+    VecFx32 vCenter;
+    VecFx32 vAxisX;
+    VecFx32 vAxisZ;
+    VecFx32 vAxisY;
     int nExtent;
     int bFlag;
 };
@@ -42,14 +43,14 @@ struct Ov156ChargeState {
 };
 
 extern int Ov107_CollectEntitiesTouchingDisc(struct Ov156Owner *owner, struct BoxQuery *query, int *out);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *a, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov156Owner *a, struct Ov156Owner *b, int kind, Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov156Owner *owner, int a, int id, Vec3 *at);
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *a, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov156Owner *a, struct Ov156Owner *b, int kind, VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov156Owner *owner, int a, int id, VecFx32 *at);
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
 extern const PosMsg data_ov156_020ced94;
 
 static inline void PackFx24(Fx24 *dst, int v) {
@@ -58,7 +59,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov156ChargeState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov156ChargeState *state, PosMsg *msg, const VecFx32 *src)
 {
     FxVec vDead;
     vDead.x = *(Fx32 *)&src->x;
@@ -72,12 +73,12 @@ static inline void SendPos(struct Ov156ChargeState *state, PosMsg *msg, const Ve
     }
 }
 
-void Ov156_GroundSweep(struct Ov156ChargeState *state, s64 t, const Vec3 *at)
+void Ov156_GroundSweep(struct Ov156ChargeState *state, s64 t, const VecFx32 *at)
 {
     int hits[4];
     struct BoxQuery query;
-    Vec3 push;
-    Vec3 pos;
+    VecFx32 push;
+    VecFx32 pos;
     PosMsg msg;
     PosMsg tmpl;
     long i;

@@ -4,12 +4,14 @@
  * callback self[0xc] is non-null, invoke it as cb(self, 0). Always run 0203c7ac(self[0x384], 0). If
  * self[0x50] == 1, forward the trailing vec (a,b,c) by value to 020d3cc8(self[0x214], abc).
  */
-struct vec3 { int x, y, z; };
-extern void Ov107_MoveNodeAndRelayout(int self, struct vec3 *v);
-extern void RefreshObjectCallbacks(int a, int b);
-extern void Ov268_SetTargetOrient(int p, struct vec3 abc);
 
-void Ov268_NodeUpdateApplyMotion(int self, struct vec3 v, struct vec3 abc) {
+#include "nitro/fx.h"
+
+extern void Ov107_MoveNodeAndRelayout(int self, VecFx32 *v);
+extern void RefreshObjectCallbacks(int a, int b);
+extern void Ov268_SetTargetOrient(int p, VecFx32 abc);
+
+void Ov268_NodeUpdateApplyMotion(int self, VecFx32 v, VecFx32 abc) {
     int *s = (int *)self;
 
     Ov107_MoveNodeAndRelayout(self, &v);

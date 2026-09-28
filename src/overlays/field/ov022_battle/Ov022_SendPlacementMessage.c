@@ -6,6 +6,7 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Owner {
     u8 pad000[9];
@@ -20,14 +21,8 @@ struct Words {
     u16 nWord2;
 };
 
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 struct Placement {
-    struct VecFx32 vecPos;       /* 0x00 */
+    VecFx32 vecPos;       /* 0x00 */
     struct Words words;          /* 0x0c */
     short nField12;              /* 0x12 */
     int nField14;                /* 0x14 */
@@ -47,7 +42,7 @@ struct Message {
     u8 nField18 : 3;             /* bits 3 to 5 */
     u8 nField1c : 2;             /* bits 6 and 7 */
     short nField12;              /* 0x02 */
-    struct VecFx32 vecPos;       /* 0x04 */
+    VecFx32 vecPos;       /* 0x04 */
     struct Words words;          /* 0x10 */
     u8 nField20 : 3;             /* 0x16 bits 0 to 2 */
     u8 nField28 : 3;             /* bits 3 to 5 */

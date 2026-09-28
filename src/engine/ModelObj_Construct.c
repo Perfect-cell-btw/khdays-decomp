@@ -3,7 +3,9 @@
  * (+0x88, CallocInstance) bound to `res` (RegisterSeqAndInit, 12 frames) and started (SceneNode_SetFlag40); its
  * +0xe0 part is kept in +0x8c, bit 0 of +0xb2 cleared and the five channel weights (+0x94) reset
  * to 1.0 with their +0xa8 / +0xad bytes cleared. */
+
 #include "nitro/types.h"
+
 typedef void (*Callback)(void);
 
 struct ModelObj {

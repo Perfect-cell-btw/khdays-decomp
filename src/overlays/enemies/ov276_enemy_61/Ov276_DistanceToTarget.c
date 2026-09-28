@@ -1,21 +1,22 @@
 /* Ov276_DistanceToTarget: ported from a matched sibling family (same shape, constants and offsets adjusted). */
+
+#include "nitro/fx.h"
+
 extern int Ov107_FindNearestObject();
 extern int VEC_Subtract();
 extern int VEC_Normalize();
 extern int func_020050b4();
 
-typedef struct { int x, y, z; } Vec3;
-
 typedef struct {
     char pad0[0x80];
     int v80;
     char pad84[0x10c];
-    Vec3 v190;
+    VecFx32 v190;
 } P3bc;
 
 typedef struct {
     char pad0[0xb0];
-    Vec3 vb0;
+    VecFx32 vb0;
     char padbc[0x10b];
     unsigned char b1c7;
     char pad1c8[0x1f4];
@@ -41,7 +42,7 @@ int Ov276_DistanceToTarget(Param *param)
     Obj *obj;
     P3bc *p3bc;
     int diff;
-    Vec3 local;
+    VecFx32 local;
 
     wrap = param->wrap;
     obj = wrap->obj;

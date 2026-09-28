@@ -10,12 +10,14 @@
  * team byte, and reserves the +0x144 / +0x22c shape handles: a capsule (0.5 below, length 1.0,
  * radius 0.45) at +0x394 and +0x3a4 (radius scaled by 1.25), and a placement (scale 0.75) at
  * +0x398 and +0x3a8 (scaled by 1.5). Loads sound 0x166. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[10]; } IdTable;
-typedef struct { Vec3 pos; int scale; } Placement;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 pos; int scale; } Placement;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 struct Pair { int res; int handle; };
 
 extern void Ov278_Destroy(void);
@@ -52,8 +54,8 @@ extern IdTable data_ov278_020d6244;
 extern char data_ov278_020d646c[];
 extern char data_ov278_020d6474[];
 extern const char data_ov278_020d6480[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
 
 static inline int FX_Mul(int a, int b) {
     return (int)(((long long)a * b + 0x800) >> 12);

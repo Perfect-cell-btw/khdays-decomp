@@ -5,6 +5,7 @@
  * pOwner->pTable (no table local); the entries are indexed, which walks a pointer
  * from the group with the +8 folded into the load.  Twin of 0206fc24 (table at +0x58).
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008FlagEntry {

@@ -6,19 +6,21 @@
  * picks 0xc (30%) or, with the +0x3ec partner active and within 8.0, 9, a near one 8 (70%) or 9
  * with the partner active. Otherwise a target 8.0 away brings 4, and within 2.0 a 1-in-11 chance
  * picks one of 5, 6 and 7. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 struct Bits5c { int b0 : 1, b1 : 1; };
 
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int RandNextScaled(int n);
 extern int func_02020400(int num, int den);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 static inline int RandRange(int lo, int hi)
 {
@@ -40,7 +42,7 @@ void Ov255_DecideTick(int *node)
     int owner;
     int target;
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
 
     target = state[0x17] = Ov107_FindNearestObject(*state, 0);
     if (target == 0) {

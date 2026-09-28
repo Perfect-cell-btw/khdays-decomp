@@ -7,7 +7,7 @@
  *
  * MATCHED. Two catalogued spellings, both about how a vector crosses the ABI:
  *  - ★ `ldm`-ARG COALESCING: the aim vector is passed to BuildHeadingRotation as a STRUCT BY VALUE
- *    (`struct Vec3` -> three register args), which makes mwcc load the three words with a single
+ *    (`VecFx32` -> three register args), which makes mwcc load the three words with a single
  *    `ldm` -- exactly the ROM's `ldm r1,{r1,r2,r3}`. Passing them as three separate `int` args
  *    (`f(state, aim[0], aim[1], aim[2], 0)`) emits three `ldr`s instead and is one instruction
  *    off. This is the deferred-ties "ldm-args coalescing" entry, and struct-by-value is the crack
@@ -17,16 +17,17 @@
  *    after the call instead, mwcc keeps one copy and drops the reload (128 B) -- but the ROM
  *    holds owner across the call and re-reads, so the C must too.
  */
-struct Vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern void VEC_Subtract(void *a, void *b, void *d);
-extern void Ov198_BuildHeadingRotation(int *state, struct Vec3 v, int flag);
+extern void Ov198_BuildHeadingRotation(int *state, VecFx32 v, int flag);
 extern int VEC_Normalize(void *a, void *d);
 extern void SetIndexedSlot(int self, int idx, int cb);
 
 void Ov198_FaceTargetCheckReach(int self) {
     int *state = *(int **)(self + 4);
-    struct Vec3 aim;
+    VecFx32 aim;
     int dist;
     int owner;
 

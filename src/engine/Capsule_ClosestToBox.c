@@ -3,9 +3,8 @@
  * [0, length] the end point (start or start + dir * length) is tested instead (OBB_DistSqToPoint) and
  * the parameter clamped. The parameter and the three results the tests report are stored through
  * the optional out pointers; the test's own result is returned. */
-typedef struct {
-    int x, y, z;
-} VecFx32;
+
+#include "nitro/fx.h"
 
 typedef struct {
     VecFx32 pos;        /* 0x00 */

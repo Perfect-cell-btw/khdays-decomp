@@ -16,6 +16,7 @@
  */
 
 #include "nitro/types.h"
+
 typedef unsigned int   uint;
 
 extern int  Session_IsReady(void);

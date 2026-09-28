@@ -4,6 +4,7 @@
  * point each back at this node. */
 
 #include "nitro/types.h"
+
 typedef void (*Callback)(void);
 
 typedef struct List28 { int w[10]; } List28; /* initialised by List_Init */

@@ -17,6 +17,7 @@
  * The declaration order of the locals is load-bearing: it is what puts the
  * entry pointer above the glyph block in the callee-saved range.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

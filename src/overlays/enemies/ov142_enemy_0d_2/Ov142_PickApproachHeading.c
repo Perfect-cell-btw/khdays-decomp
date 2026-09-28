@@ -25,11 +25,8 @@
  * zero-valued addend of that shape reproduces it. Declaring the RNG as returning
  * long long, casting its result, or folding the addend to a constant zero all drop
  * the instruction and land at 408 bytes. */
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int owner, int mode);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);

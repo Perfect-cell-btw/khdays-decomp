@@ -3,6 +3,7 @@
  * the two ids at +0xec/+0xee, clears the two progress words and runs the two
  * setup passes. Bit 1 of +0x28 marks the scene as restarted.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

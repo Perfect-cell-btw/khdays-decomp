@@ -1,6 +1,7 @@
 /* Fades the reward menu in over time and moves to state 1 when done. */
 
 #include "nitro/types.h"
+
 typedef struct Ov005Context { char opaque00[0x4bf0]; int menuState; u64 startTick; } Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;
 extern u64 OS_GetTick(void);

@@ -1,6 +1,8 @@
 /* Replay the ov146 actor's current armour animation: layers 0, 4, 1 and 2 of its +0x384 rig restart on
  * the +0x310 kind with the +0x311 loop bit and the rig pose resets. */
+
 #include "nitro/types.h"
+
 typedef struct { u8 b0 : 1; } Bit0;
 
 extern void SetSubitemState(int rig, int channel, int a, int b);

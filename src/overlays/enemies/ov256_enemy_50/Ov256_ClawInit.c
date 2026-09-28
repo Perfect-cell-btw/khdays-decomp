@@ -5,10 +5,12 @@
  * part is the owner's "move_buki_L/R" motion (0x47 / 0x48). A hit capsule (length 0x2a00, radius 0xa00)
  * goes into a +0x22c pool slot at +0x388 (bit 1 set), bit 3 of +0x1ae is set and a second capsule in a
  * +0x144 slot is also kept at +0x38c. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 
 extern int Ov107_PackTextureHandle(char *self, int kind);
 extern int CreateSubitemInstance0xB4(int item);
@@ -20,15 +22,15 @@ extern void Ov256_Destroy(void);
 extern void Ov256_ClawUpdate(void);
 extern void Ov256_Claw_CreateAiTask(void);
 extern void Ov256_Claw_OnHitNoOp(void);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
 extern char data_ov256_020d26d4[];
 extern char data_ov256_020d26e0[];
 
 void Ov256_ClawInit(char *self)
 {
     char *owner = *(char **)(self + 0x3ac);
-    Vec3 origin;
+    VecFx32 origin;
     Capsule cap;
 
     *(void **)(self + 8) = Ov256_Destroy;
@@ -42,7 +44,7 @@ void Ov256_ClawInit(char *self)
     }
     *(int *)(self + 0x70) = 0x800;
     origin = data_02041dc8;
-    *(Vec3 *)(self + 0x64) = data_02041dc8;
+    *(VecFx32 *)(self + 0x64) = data_02041dc8;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
     if (*(u8 *)(self + 0x394) == 0) {

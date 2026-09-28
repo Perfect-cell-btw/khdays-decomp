@@ -1,7 +1,9 @@
 /* Animation switch of the ov298 enemy (and its ov297 twin): the +0x384 item plays the +0x310
  * animation with the +0x311 bit-0 blend, and for kinds 1-4 the +0x388 item's channels 0/2/1
  * play animation kind - 1 with the given blend before it refreshes. */
+
 #include "nitro/types.h"
+
 struct Bits311 { u8 bit0 : 1; };
 
 extern void SetSubitemState(int item, int channel, short anim, u8 blend);

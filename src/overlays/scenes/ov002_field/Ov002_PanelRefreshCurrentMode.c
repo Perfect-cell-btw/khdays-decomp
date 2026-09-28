@@ -12,6 +12,7 @@
  * by six come out signed -- magic multiply plus the lsr #31 correction -- even
  * though the value can never be negative. Writing them as unsigned loses that.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

@@ -6,21 +6,23 @@
  * toggles it too. The +0x7c part follows the shot (0203ca30). Past 1.0, or once its bit is set,
  * the bit toggles, the owner spawns effect 0 at the shot, the slot's +0x640 entry clears and the
  * node is released (0203c640). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Collision_CastRay(int grid, void *pos, void *vel);
 extern int Collision_CastSphere(int grid, void *pos, void *vel, int radius);
 extern void Srt_SetTranslation(int srt, void *pos);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Task_MarkFinished(int *node);
 
 void Ov252_ShotFlightTick(int *node)
@@ -28,7 +30,7 @@ void Ov252_ShotFlightTick(int *node)
     int *state = (int *)node[1];
     int hits[4];
     Sphere sphere;
-    Vec3 push;
+    VecFx32 push;
     int owner;
     signed char i;
     int n;
@@ -37,7 +39,7 @@ void Ov252_ShotFlightTick(int *node)
     state[8] += *(int *)(node[0] + 0x2c);
     VEC_Add(state + 2, state + 5, state + 2);
     if (*(int *)(state[1] + 0x50) == 1) {
-        sphere.center = *(Vec3 *)(state + 2);
+        sphere.center = *(VecFx32 *)(state + 2);
         sphere.nRadius = 0xc00;
         n = Ov107_CollectSphereOverlaps(state[1], &sphere, hits);
         for (i = 0; i < n; i++) {
@@ -64,7 +66,7 @@ void Ov252_ShotFlightTick(int *node)
         return;
     }
     *(u16 *)(state[1] + 0x57a) ^= 1 << *((signed char *)state + 0x24);
-    func_ov107_020c0b90(state[1], 0, *(Vec3 *)(state + 2), 0);
+    func_ov107_020c0b90(state[1], 0, *(VecFx32 *)(state + 2), 0);
     *(int *)(state[1] + (*((signed char *)state + 0x24) + 0x13) * 8 + 0x640) = 0;
     Task_MarkFinished(node);
 }

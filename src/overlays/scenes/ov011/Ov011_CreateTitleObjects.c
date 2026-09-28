@@ -6,9 +6,10 @@
  * handle is kept at +0x2cf40 and cleared of flag bit 1.
  */
 
+/* ObjNodeDesc */
+
 #include "nitro/types.h"
 
-/* ObjNodeDesc */
 struct ObjDesc {
     u32 nAddress;                /* 0x00 */
     int nKind;                   /* 0x04 */

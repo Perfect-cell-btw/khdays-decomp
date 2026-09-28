@@ -2,16 +2,18 @@
  * model's shape shows and +0x394 is set; effect 1 fires at the origin, pose 0 loops, the +0x28
  * velocity starts at the +0x3ac point and half of it goes to +0x10, the +0x38/+0x14 timers start at
  * 0.125, the rest clears and the node moves on to 020ce9b0. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov218_ShotBounceTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov218_RiseEntry(int *node)
 {
@@ -31,8 +33,8 @@ void Ov218_RiseEntry(int *node)
     *(int *)(*state + 0x394) = 1;
     func_ov107_020c0b90(*state, 1, data_02041dc8, 0);
     Ov107_PostTagUpdate(*state, 0, 1);
-    *(Vec3 *)(state + 0xa) = *(Vec3 *)(*state + 0x3ac);
-    ScaleVec3Fx12(0x800, (Vec3 *)(state + 0xa), (Vec3 *)(state + 4));
+    *(VecFx32 *)(state + 0xa) = *(VecFx32 *)(*state + 0x3ac);
+    ScaleVec3Fx12(0x800, (VecFx32 *)(state + 0xa), (VecFx32 *)(state + 4));
     state[0xe] = 0x200;
     state[5] = 0x200;
     state[0xf] = 0;

@@ -13,6 +13,7 @@
  * (17 differing bytes vs 7).  Declaration order ctx, position, i, entry, id is the one of 120
  * that colours entry/id into sb/sl the ROM's way.
  */
+
 #include "nitro/types.h"
 
 typedef struct OverlayVector {

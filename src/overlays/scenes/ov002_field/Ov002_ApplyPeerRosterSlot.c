@@ -1,17 +1,13 @@
-#include "nitro/types.h"
 
-typedef struct Vec3 {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov002RosterSlot {
-    Vec3 vecBase;                   /* +0x00 */
+    VecFx32 vecBase;                   /* +0x00 */
     int nBaseValue;                 /* +0x0c */
     int nSeatId;                    /* +0x10 */
     char aSeatData[32];             /* +0x14 */
-    Vec3 vecTarget;                 /* +0x34 */
+    VecFx32 vecTarget;                 /* +0x34 */
     int nTargetValue;               /* +0x40 */
 } Ov002RosterSlot;                  /* 0x44 */
 
@@ -54,7 +50,7 @@ void Ov002_ApplyPeerRosterSlot(char *pMsg)
 
     pSlot = pRoster->aSeats[0].pSlots + pMsg[1];
     pSlot->nSeatId = pMsg[2];
-    pSlot->vecBase = *(Vec3 *)(pMsg + 4);
+    pSlot->vecBase = *(VecFx32 *)(pMsg + 4);
     pSlot->nBaseValue = *(int *)(pMsg + 0x10);
     strcpy((unsigned int *)pSlot->aSeatData, (unsigned int *)(pMsg + 0x14));
 

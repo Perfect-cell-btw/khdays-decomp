@@ -2,23 +2,25 @@
  * end 020d0fc8) holds `rig`, the owner's +0x464 effect record 0x26 (kind 0x19) or 0x27, the owner and
  * its nearest target (020cab14; none aborts with 0). The rig moves to `pos` (kept in +0x10), the kind
  * is stored in +0x49 and +0x4a marks the second variant. Returns the node handle. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct EffectPair { int res; int handle; };
 struct Ov258Effects { char pad[0x464]; struct EffectPair pair[0x30]; };
 
 extern int CreateRegistryEntry(int model, int a, int size, void *start, void *end, int **out);
 extern int Ov107_FindNearestObject(int actor, int kind);
-extern void Srt_SetTranslation(void *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(void *transform, const VecFx32 *translation);
 extern void Ov258_BeamStart(void);
 extern void Ov258_TaskTeardown_FlagOwner_3(void);
 
 enum { BEAM_MAIN = 0, BEAM_SIDE = 1 };
 
-int Ov258_SpawnBeam(char *self, int rig, Vec3 *pos, int kind)
+int Ov258_SpawnBeam(char *self, int rig, VecFx32 *pos, int kind)
 {
     int *state;
-    Vec3 at;
+    VecFx32 at;
     int handle;
 
     handle = CreateRegistryEntry(*(int *)(self + 0x3c), 100, 0x50, Ov258_BeamStart, Ov258_TaskTeardown_FlagOwner_3, &state);
@@ -30,7 +32,7 @@ int Ov258_SpawnBeam(char *self, int rig, Vec3 *pos, int kind)
         return 0;
     }
     at = *pos;
-    *(Vec3 *)(state + 4) = *pos;
+    *(VecFx32 *)(state + 4) = *pos;
     Srt_SetTranslation((void *)(state[0] + 4), &at);
     *((u8 *)state + 0x49) = kind;
     *((u8 *)state + 0x4a) = kind == 0x19 ? BEAM_MAIN : BEAM_SIDE;

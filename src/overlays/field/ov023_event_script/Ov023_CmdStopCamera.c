@@ -7,13 +7,9 @@
  * angles, position, distance and roll are rewound to their "from" copies (+0xb8 -> +0xa0,
  * +0xac -> +0x94, +0xe4 -> +0xdc, the angles once more, +0xe8 -> +0xe0) and the duration
  * (+0xf0) cleared.  Returns 1. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023Camera {
     u8   pad_000[0x94];

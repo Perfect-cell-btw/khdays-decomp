@@ -11,9 +11,10 @@
  * the set's tag is the request's count plus seven.
  */
 
+/* Ov022ResNodeSet: what this function fills (embedded at request+4) */
+
 #include "nitro/types.h"
 
-/* Ov022ResNodeSet: what this function fills (embedded at request+4) */
 struct ResNodeSet {
     u16 anCounts[5];             /* 0x00 nodes per group */
     u16 nTag;                    /* 0x0a request count + 7 */

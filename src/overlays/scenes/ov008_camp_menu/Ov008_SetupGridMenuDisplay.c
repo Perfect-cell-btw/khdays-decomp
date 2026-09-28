@@ -19,6 +19,7 @@
  * with an int result, which is what keeps the group-2 pointer derivation
  * out of the sub-DISPCNT load's delay slot.
  */
+
 #include "nitro/types.h"
 
 typedef struct DisplayRegisters {

@@ -1,6 +1,8 @@
 /* hw60 `hi |= 1` takes the EXPLICIT extract/reassemble form; the `|= 1` at +8 is a BYTE
  * field and needs a real bitfield type. */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned int lo : 8, rest : 24; } Byte8;
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov198_SeekTarget(void);
@@ -16,6 +18,6 @@ void Ov198_ResetOrientationAndAdvance(int self) {
         (unsigned short)((w & ~0xff00)
                          | (((((unsigned int)w << 0x10) >> 0x18 | 1) << 0x18) >> 0x10));
     ((Byte8 *)(*(int *)(*obj + 0x388) + 8))->lo |= 1;
-    *(struct vec *)(obj + 10) = *(struct vec *)obj[1];
+    *(VecFx32 *)(obj + 10) = *(VecFx32 *)obj[1];
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov198_SeekTarget);
 }

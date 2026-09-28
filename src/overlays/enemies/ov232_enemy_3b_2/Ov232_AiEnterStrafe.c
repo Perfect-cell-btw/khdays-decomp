@@ -23,11 +23,7 @@
  * FX_Mul is inlined by the ROM (no FX_ reloc), hence the static inline; -inline on,noauto only
  * inlines what is marked. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 extern void Ov232_AcquireTarget(int self);
 extern int RandNextScaled(int n);

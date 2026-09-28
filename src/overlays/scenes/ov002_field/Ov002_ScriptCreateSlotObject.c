@@ -1,6 +1,5 @@
-typedef struct Ov002Vec3 {
-    int x, y, z;
-} Ov002Vec3;
+
+#include "nitro/fx.h"
 
 extern int ScriptVm_ReadOperandInt(int pCtx, unsigned short *pOperand);
 extern int ScriptVm_ReadOperandFx32(int pCtx, unsigned short *pOperand);
@@ -8,8 +7,8 @@ extern int ScriptVm_ReadOperandFx32(int pCtx, unsigned short *pOperand);
  * makes, and starts its animation. The names below are what it does with each
  * argument, not guesses. */
 extern void Ov002_CreateSlotObjectAndStart(int nEntry, int nKind, int nMask, int nMode,
-                                Ov002Vec3 *pObjectPos, int nObjA, int nObjTag,
-                                int nObjB, int nObjC, Ov002Vec3 *pAnimAt,
+                                VecFx32 *pObjectPos, int nObjA, int nObjTag,
+                                int nObjB, int nObjC, VecFx32 *pAnimAt,
                                 int nAnimMode, int nAnimParam);
 
 /* Script command: create a slot object and start it.
@@ -23,8 +22,8 @@ extern void Ov002_CreateSlotObjectAndStart(int nEntry, int nKind, int nMask, int
  */
 int Ov002_ScriptCreateSlotObject(int pCtx, unsigned short *pArgs)
 {
-    Ov002Vec3 vObjectPos;
-    Ov002Vec3 vAnimAt;
+    VecFx32 vObjectPos;
+    VecFx32 vAnimAt;
     int nEntry;
     int nKind;
     int nMask;

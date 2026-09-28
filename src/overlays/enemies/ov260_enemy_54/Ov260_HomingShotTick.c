@@ -7,27 +7,29 @@
  * step, or a swept sphere (half the owner's radius) from the +0x1c previous position, breaks it with
  * message 1 / 0 and sound 0x11; after 5.0 it expires with message 0. Otherwise +0x1c keeps the
  * position. */
-typedef struct Vec3 { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *pose, const Vec3 *k);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *pose, const VecFx32 *k);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int FX_Div(int num, int den);
 extern int Ov107_CollectSphereOverlaps(int owner, void *query, int *out);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Ov107_FindNearestObject(int actor, int mode);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *forward, const Vec3 *direction);
-extern int VEC_DotProduct(Vec3 *a, Vec3 *b);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *forward, const VecFx32 *direction);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern void Quat_Slerp(Quat *out, int t, Quat *a, Quat *b);
 extern void Vec4_Normalize(Quat *out, Quat *in);
-extern int Collision_CastRay(int collision, Vec3 *start, Vec3 *ray);
-extern int Collision_CastSphereEx(int collision, Vec3 *origin, Vec3 *dir, int radius, void *ignore);
-extern const Vec3 data_02042258;
+extern int Collision_CastRay(int collision, VecFx32 *start, VecFx32 *ray);
+extern int Collision_CastSphereEx(int collision, VecFx32 *origin, VecFx32 *dir, int radius, void *ignore);
+extern const VecFx32 data_02042258;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
@@ -35,10 +37,10 @@ void Ov260_HomingShotTick(int *node)
 {
     int owner;
     int *state = (int *)node[1];
-    Vec3 fwd;
-    Vec3 to;
+    VecFx32 fwd;
+    VecFx32 to;
     int hits[4];
-    Vec3 push;
+    VecFx32 push;
     Quat q;
     int world;
     int speed;
@@ -54,7 +56,7 @@ void Ov260_HomingShotTick(int *node)
     hit = 0;
     Vec3TransformViaTempMtx(&fwd, state + 2, &data_02042258);
     VEC_Normalize(&fwd, &fwd);
-    ScaleVec3Fx12(state[0xe], &fwd, (Vec3 *)(state + 10));
+    ScaleVec3Fx12(state[0xe], &fwd, (VecFx32 *)(state + 10));
     for (rem = *(int *)(node[0] + 0x2c); rem > 0; rem -= 0x88) {
         state[0xe] = FX_MUL(state[0xe], 0x1000 - FX_MUL(FX_Div(rem <= 0x88 ? rem : 0x88, 0x88), 0xe0));
     }
@@ -76,7 +78,7 @@ void Ov260_HomingShotTick(int *node)
         }
     }
     if (hit != 0) {
-        func_ov107_020c0b90(*state, 0, *(Vec3 *)state[6], 0);
+        func_ov107_020c0b90(*state, 0, *(VecFx32 *)state[6], 0);
         Ov260_PlaySound(*(int *)(*state + 0x38c), 0x10, state[6]);
         *(unsigned char *)(*state + 0x1c7) = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
@@ -95,26 +97,26 @@ void Ov260_HomingShotTick(int *node)
             }
         }
     }
-    if (Collision_CastRay(*(int *)(world + 0x7c), (Vec3 *)state[6], (Vec3 *)(state + 10)) != 0) {
-        func_ov107_020c0b90(*state, 1, *(Vec3 *)state[6], 0);
+    if (Collision_CastRay(*(int *)(world + 0x7c), (VecFx32 *)state[6], (VecFx32 *)(state + 10)) != 0) {
+        func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[6], 0);
         Ov260_PlaySound(*(int *)(*state + 0x38c), 0x11, state[6]);
         *(unsigned char *)(*state + 0x1c7) = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
     VEC_Subtract((void *)state[6], (void *)(state + 7), &to);
-    if (Collision_CastSphereEx(*(int *)(world + 0x7c), (Vec3 *)(state + 7), &to, *(int *)(owner + 0x80) / 2, 0) != 0) {
-        func_ov107_020c0b90(*state, 0, *(Vec3 *)state[6], 0);
+    if (Collision_CastSphereEx(*(int *)(world + 0x7c), (VecFx32 *)(state + 7), &to, *(int *)(owner + 0x80) / 2, 0) != 0) {
+        func_ov107_020c0b90(*state, 0, *(VecFx32 *)state[6], 0);
         Ov260_PlaySound(*(int *)(*state + 0x38c), 0x11, state[6]);
         *(unsigned char *)(*state + 0x1c7) = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
     if (state[0xd] >= 0x5000) {
-        func_ov107_020c0b90(*state, 0, *(Vec3 *)state[6], 0);
+        func_ov107_020c0b90(*state, 0, *(VecFx32 *)state[6], 0);
         *(unsigned char *)(*state + 0x1c7) = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    *(Vec3 *)(state + 7) = *(Vec3 *)state[6];
+    *(VecFx32 *)(state + 7) = *(VecFx32 *)state[6];
 }

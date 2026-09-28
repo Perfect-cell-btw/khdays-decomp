@@ -23,18 +23,14 @@
  * ctx[0] is re-read before each use rather than cached in a local: the stores through it may alias
  * *ctx, so the ROM reloads and so must the C (codegen-cracks.md). */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* The u32 at *(ctx[0]+0x388) + 8 -- only its low byte is a flag set. This one DOES want the
  * bitfield form: the ROM keeps both the lsl#0x18/lsr#0x18 extract and the redundant `and #0xff`
  * field-width truncation, which is exactly what `lo |= K` on an unsigned bitfield emits. Writing
  * the extract by hand instead lets mwcc fold it to `and #0xff` and drop the mask (-8 bytes). */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct {
     u32 lo : 8;
     u32 rest : 24;

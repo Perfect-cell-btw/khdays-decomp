@@ -12,9 +12,10 @@
  * The slot is finished only when none of the three had anything to do.
  */
 
+/* one of the 0x150-byte parts the slot owns */
+
 #include "nitro/types.h"
 
-/* one of the 0x150-byte parts the slot owns */
 struct SlotPart {
     int nTimer;                  /* 0x000 */
     u8 pad004[0x148];

@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Shot step of the ov032 enemy (and its byte-identical twins): on the local player both 64-b (020b79a8): Vec3 data_ov052_020b7ee8; */
+
 #include "nitro/types.h"
 
-/* read by Shot step of the ov032 enemy (and its byte-identical twins): on the local player both 64-b (020b79a8): Vec3 data_ov052_020b7ee8; */
 const u8 data_ov052_020b7ee8[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0,
 };

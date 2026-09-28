@@ -1,6 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct QuerySphere {
     VecFx32 position;

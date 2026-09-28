@@ -7,13 +7,15 @@
  * slot 1. While moving: in moves 2 and 4 with a rider above the floor less 7.7 the +0x3f0 shape
  * gains bit 0 and loses bit 1; in move 0xa without a rider bit 3 of the +0x60 high byte follows
  * the solid ground. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 typedef struct { unsigned f : 8; } B8;
 struct Shapes3e0 { char pad[0x3e0]; int shape[5]; };
 
-extern int Ov254_ProbeGround(int *self, Vec3 pos, int *outY);
+extern int Ov254_ProbeGround(int *self, VecFx32 pos, int *outY);
 extern void Ov254_ForwardToAiIfReady_5(int shell);
 extern void Ov254_ForwardToAiIfReady_7(int helper);
 extern void Ov254_ForwardToAiIfReady_9(int helper);
@@ -42,7 +44,7 @@ void Ov254_MoveDispatch(int *node)
     *(int *)(*state + 0x4dc) = 1;
     if (moving) {
         y = 0;
-        ground = Ov254_ProbeGround(state, *(Vec3 *)state[2], &y);
+        ground = Ov254_ProbeGround(state, *(VecFx32 *)state[2], &y);
         if (ground != -1 && ground != 1 && ground == 3) {
             *(int *)(*state + 0x4d4) = y;
             *(int *)(*state + 0x4dc) = 1;

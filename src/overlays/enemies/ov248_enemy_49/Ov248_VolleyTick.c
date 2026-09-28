@@ -3,16 +3,18 @@
  * expires the first idle projectile of the owner's +0x3c0 set (bit 0 of its +0x60 low byte clear) is
  * launched from the +0xc origin, 2.0 + 3/8 x shot ahead along the +0x40 heading (jittered by up to
  * 1.5 on x and z after the first shot). Eight shots, 0.19 apart, then brain slot +0x20 runs 020cfe84. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned short lo : 8; unsigned short hi : 8; } Flags60;
 struct Ov248Owner { char pad[0x3c0]; int shots[8]; };
 
 extern int Ov248_MeasureTargetGap(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int RandNextScaled(int bound);
-extern void Ov248_SetTwoVecsAndFlag(int shot, Vec3 at, Vec3 dir);
+extern void Ov248_SetTwoVecsAndFlag(int shot, VecFx32 at, VecFx32 dir);
 extern void Ov248_AiStep_QueueAction2OnAnimEnd_2(void);
 extern const short data_0203d210[];
 
@@ -21,8 +23,8 @@ extern const short data_0203d210[];
 void Ov248_VolleyTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 pos;
-    Vec3 dir;
+    VecFx32 pos;
+    VecFx32 dir;
     int i;
 
     if (state[0x12] == 0 && Ov248_MeasureTargetGap(node) < 0) {
@@ -42,7 +44,7 @@ void Ov248_VolleyTick(int *node)
                 dir.z = data_0203d210[idx + 1];
             }
             ScaleVec3Fx12(state[0x12] * 0x18000 / 8 + 0x2000, &dir, &pos);
-            VEC_Add(&pos, (Vec3 *)state[3], &pos);
+            VEC_Add(&pos, (VecFx32 *)state[3], &pos);
             if (state[0x12] != 0) {
                 int jit = RandNextScaled(0x3001) - 0x1800;
 

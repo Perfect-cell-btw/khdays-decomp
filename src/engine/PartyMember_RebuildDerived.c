@@ -11,7 +11,9 @@
  * 0x14000, the table is released and db 0x1d closed. The fixed-rewards loop is a do-while whose
  * first store alone is guarded by `i < 3` (always true), which is the ROM's in-loop bge; the
  * indexed reward of the else call is reread (volatile read). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct RecHeader {
     u8 pad00[3];
@@ -56,8 +58,6 @@ typedef struct GrowthTable {
     int base18;                         /* +0x18 */
     GrowthEntry entry[24];              /* +0x1c */
 } GrowthTable;
-
-typedef struct { int x, y, z; } VecFx32;
 
 static inline void VEC_Set(VecFx32 *a, int x, int y, int z)
 {

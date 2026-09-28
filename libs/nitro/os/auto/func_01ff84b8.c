@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 #define reg_CARD_MASTERCNT (*(vu8 *)0x040001a1)

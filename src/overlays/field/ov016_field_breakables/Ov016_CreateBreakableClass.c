@@ -4,6 +4,7 @@
  * (+0x78 / +0x7a, shorts), the parameter word (+0x7c) and the four placement parameters
  * (+0x80..+0x8c) across, install the ten handlers of the breakable (the object that spawns
  * its drop and plays its sequence when hit) and stamp kind 0x17. */
+
 #include "nitro/types.h"
 
 typedef struct Ov016BreakableDesc {

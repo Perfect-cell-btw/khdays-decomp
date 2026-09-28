@@ -4,6 +4,7 @@
  * bit 3 of +0x78 is set, applies the palette override +0x6c (-1 keeps the cell's), mirrors the
  * entry for the object's flip flags (DispObj_MirrorOam), sets the priority +0x70 and hands the entry
  * on with the affine index (DispOamBuffer_Push). */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 

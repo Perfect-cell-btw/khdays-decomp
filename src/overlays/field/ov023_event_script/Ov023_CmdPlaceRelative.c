@@ -8,13 +8,9 @@
  * there (Entity_SetPosition 0202ba78 with the reference's model id 0202bf84), takes the
  * reference's heading (+0x80) unless locked (bit 5 of +0), is shown (0202beb8) and, when the
  * event has actors, its model is placed (Ov023_PlaceActorModel 020887dc).  Returns 1. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct MtxFx43 {
     int  a[12];               /* 0x00 */

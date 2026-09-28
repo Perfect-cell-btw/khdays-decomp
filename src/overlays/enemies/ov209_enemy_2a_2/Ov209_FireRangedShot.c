@@ -9,7 +9,8 @@
  * keeps the direction in the LOW pair of slots.
  *
  * One of three byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *out);

@@ -10,12 +10,7 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct HitOwner {
     u8 pad000[0x158];
@@ -42,7 +37,7 @@ struct ActorNode {
 
 /* Ov022GroundMark: the shadow mark under the actor */
 struct GroundMark {
-    struct VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecPos;           /* 0x00 */
     u8 pad0c[8];
     u8 nShade;                       /* 0x14 five bits */
     u8 pad15[1];
@@ -57,7 +52,7 @@ struct Actor {
     u8 pad0024[0x42];
     short nSlotIndex;                /* 0x0066 */
     u8 pad0068[0x424];
-    struct VecFx32 vecAim;           /* 0x048c */
+    VecFx32 vecAim;           /* 0x048c */
     u8 pad0498[0x1fc];
     u8 bSuppressDraw : 1;            /* 0x0694 bit 0 */
     u8 nRest694 : 7;
@@ -74,18 +69,18 @@ struct Actor {
 #define SHADE_MIN 0x4000
 #define ANGLE_BIAS 0x8000
 
-extern struct Hit *EntityMgr_RunRayCast(u16 nMask, struct VecFx32 *pFrom, struct VecFx32 *pDir,
+extern struct Hit *EntityMgr_RunRayCast(u16 nMask, VecFx32 *pFrom, VecFx32 *pDir,
                                  struct ActorNode *pNode);
-extern void Vec3ScaleAddQ27(int nScale, struct VecFx32 *pDir, struct VecFx32 *pBase,
-                          struct VecFx32 *pOut);
+extern void Vec3ScaleAddQ27(int nScale, VecFx32 *pDir, VecFx32 *pBase,
+                          VecFx32 *pOut);
 extern int FX_Div(int nNumerator, int nDenominator);
-extern void ShadowVolume_Draw(struct VecFx32 *pMark);
+extern void ShadowVolume_Draw(VecFx32 *pMark);
 
 void Ov022_DropGroundMark(struct Actor *pActor)
 {
-    struct VecFx32 vecHit;
-    struct VecFx32 vecFrom;
-    struct VecFx32 vecDown;
+    VecFx32 vecHit;
+    VecFx32 vecFrom;
+    VecFx32 vecDown;
     int bLanded;
     int nSlot;
     struct Hit *pHit;

@@ -10,13 +10,15 @@
  * are spelled `*(Callback *)(*(int *)(self + 0x384) + 0x74)`
  * on the `char *self` parameter (the pool load of the value is then emitted before the item
  * load and the shared zero sits in r4); the bounds block is filled before the handler table. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int a, b, c; } Vec3b;
-typedef struct { Vec3 vector; int scalar; } CameraWork;
+typedef struct { VecFx32 vector; int scalar; } CameraWork;
 typedef struct { int w[6]; } Bounds;
 typedef struct { int id[4]; } IdTable;
 typedef struct { int subitem; int pad; } Slot;
-#include "nitro/types.h"
 typedef void (*Callback)(void);
 
 extern void Ov174_ReleaseSubObjectsListThenNotify(void);
@@ -41,7 +43,7 @@ extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, int b, int c)
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int resourceId);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern IdTable data_ov174_020d28d8;
 extern char data_ov174_020d290c[];
 extern char data_ov174_020d2914[];
@@ -51,7 +53,7 @@ void Ov174_Construct(char *self)
     IdTable ids = data_ov174_020d28d8;
     Bounds bounds;
     CameraWork work;
-    Vec3 v;
+    VecFx32 v;
     u16 hw;
     int i;
     int *slot;

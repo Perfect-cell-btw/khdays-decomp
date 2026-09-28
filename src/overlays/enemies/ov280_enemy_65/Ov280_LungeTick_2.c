@@ -6,32 +6,34 @@
  * candidates towards the heading lifted 2.0 (Ov280_ProbeSpawnPoint); on a hit reaction 0/0x51 fires at
  * the owner's +0x74 point. Past 0xff0 a pending +0x54 flag spawns effect 4 at the origin once. When
  * the +0x10 idle byte clears, sub-state 2 is requested and the tick ends. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-extern void Ov280_rotateVecByOwnerYaw(void *out, int *self, Vec3 *vec);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void Ov280_rotateVecByOwnerYaw(void *out, int *self, VecFx32 *vec);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov280_AcquireTarget(int *node);
 extern int Ov280_ProbeSpawnPoint(int *self, int kind, void *query, void *pt, int flags);
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02042240;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042240;
+extern const VecFx32 data_02041dc8;
 
 void Ov280_LungeTick_2(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     Segment seg;
-    Vec3 v;
+    VecFx32 v;
 
-    Ov280_rotateVecByOwnerYaw(&v, node, (Vec3 *)(*(int *)(*state + 0x388) + 0x2c));
-    *(Vec3 *)(state + 0xc) = v;
-    ScaleVec3Fx12(0x800, (Vec3 *)(state + 0xc), (Vec3 *)(state + 0xc));
+    Ov280_rotateVecByOwnerYaw(&v, node, (VecFx32 *)(*(int *)(*state + 0x388) + 0x2c));
+    *(VecFx32 *)(state + 0xc) = v;
+    ScaleVec3Fx12(0x800, (VecFx32 *)(state + 0xc), (VecFx32 *)(state + 0xc));
     state[0xa] += *(int *)(*node + 0x2c);
     if (state[0xa] >= 0xff0 && *((unsigned char *)state + 0x4c) != 0) {
         *((unsigned char *)state + 0x4c) = 0;
@@ -42,7 +44,7 @@ void Ov280_LungeTick_2(int *node)
         dir.x = data_0203d210[ANG2IDX(state[6]) * 2];
         dir.y = 0x2000;
         dir.z = data_0203d210[ANG2IDX(state[6]) * 2 + 1];
-        seg.p0 = *(Vec3 *)state[3];
+        seg.p0 = *(VecFx32 *)state[3];
         seg.p0.y += 0x5210;
         seg.dir = data_02042240;
         seg.nLength = 0x2000;

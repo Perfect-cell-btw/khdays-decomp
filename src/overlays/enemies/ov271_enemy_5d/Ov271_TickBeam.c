@@ -10,10 +10,10 @@
  * world's +0x80 list whose shapes the capsule crosses receives a 4 packet (straight up) once per
  * activation (64-bit +0x3c mask). The end point shows the impact and glow models (hidden when
  * nothing was hit). */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
 typedef struct Quat { int x, y, z, w; } Quat;
 typedef struct Segment { VecFx32 p0; VecFx32 dir; int scale; } Segment;
 typedef struct BeamQuery { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } BeamQuery;

@@ -9,10 +9,6 @@ typedef struct VecFx16 {
     fx16 pad;
 } VecFx16;
 
-typedef struct VecFx32 {
-    fx32 x, y, z;
-} VecFx32;
-
 /* Quaternion as the game stores it: w first, then the vector part. */
 typedef struct Quat {
     fx32 w, x, y, z;

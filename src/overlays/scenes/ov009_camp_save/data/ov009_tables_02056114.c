@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov009_UpdateCompletionMilestones (020557dc): const u16 data_ov009_02056114[60][2]; */
+
 #include "nitro/types.h"
 
-/* read by Ov009_UpdateCompletionMilestones (020557dc): const u16 data_ov009_02056114[60][2]; */
 const u8 data_ov009_02056114[240] = {
     0, 0, 7, 0, 8, 0, 8, 0, 9, 0, 13, 0, 14, 0, 14, 0,
     15, 0, 21, 0, 22, 0, 22, 0, 23, 0, 23, 0, 24, 0, 24, 0,

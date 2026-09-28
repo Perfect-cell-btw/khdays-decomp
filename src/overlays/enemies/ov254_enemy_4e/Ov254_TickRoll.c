@@ -8,10 +8,11 @@
  * reflects the velocity at 0.625 of its speed. The +0x30 clock starts the rumble pose at 8.0 and, at
  * 12.0 or when landed with +0x48 set, the ball bursts: a doubled sphere hits everything once more,
  * the velocity stops and the node moves back to state 0. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct Sphere { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct Sphere { VecFx32 pos; int radius; } Sphere;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 struct Bits17a { u8 bit0 : 1, bit1 : 1; };
@@ -19,7 +20,7 @@ struct Bits17a { u8 bit0 : 1, bit1 : 1; };
 struct HitPacket {
     u32 flagsLo : 16;
     u32 flagsHi : 16;
-    Vec3 normal;
+    VecFx32 normal;
     int field_10 : 16;
     int field_12 : 16;
     int field_14 : 16;
@@ -37,8 +38,8 @@ typedef struct Ov254RollState {
     int pOwner;
     int pTarget;
     int field_08[4];
-    Vec3 *pEffectAt;
-    Vec3 vel;
+    VecFx32 *pEffectAt;
+    VecFx32 vel;
     int field_28[2];
     int nClock;
     u32 aHitMask[2];
@@ -50,14 +51,14 @@ typedef struct Ov254RollState {
     int bSkipTarget;
 } Ov254RollState;
 
-extern int VEC_Mag(const Vec3 *v);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *d);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern int VEC_Mag(const VecFx32 *v);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *d);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(int actor, Sphere *sphere, int *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int *List_First(int list);
 extern int *List_Next(int list);
@@ -65,7 +66,7 @@ extern int Ov107_HitShape_TestSphere(void *shape, Sphere *sphere, int mode);
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 static inline int FX_Mul(int a, int b)
 {
@@ -103,10 +104,10 @@ void Ov254_TickRoll(int *node)
                     u16 kind = *(u16 *)(hits[i] + 2);
 
                     if (((*(u64 *)state->aHitMask >> kind) & 1) == 0) {
-                        Vec3 push;
+                        VecFx32 push;
 
                         *(u64 *)state->aHitMask |= (u64)1 << kind;
-                        VEC_Subtract((Vec3 *)(hits[i] + 0x74), (Vec3 *)(state->pOwner + 0x74), &push);
+                        VEC_Subtract((VecFx32 *)(hits[i] + 0x74), (VecFx32 *)(state->pOwner + 0x74), &push);
                         push.y = 0;
                         VEC_Normalize(&push, &push);
                         ScaleVec3Fx12(0x800, &push, &push);
@@ -145,7 +146,7 @@ void Ov254_TickRoll(int *node)
                     if (state->bRedirected == 0 && state->pTarget != 0) {
                         int len;
 
-                        VEC_Subtract((Vec3 *)(*(int *)(state->pOwner + 0x394) + 0x74), (Vec3 *)(state->pOwner + 0x74), &state->vel);
+                        VEC_Subtract((VecFx32 *)(*(int *)(state->pOwner + 0x394) + 0x74), (VecFx32 *)(state->pOwner + 0x74), &state->vel);
                         len = VEC_Normalize(&state->vel, &state->vel);
                         ScaleVec3Fx12(0x1000, &state->vel, &state->vel);
                         for (; len > 0; len -= 0x1000) {
@@ -165,7 +166,7 @@ void Ov254_TickRoll(int *node)
                         packet.field_10 = *(u16 *)(state->pOwner + 2);
                     }
                     if (ok != 0) {
-                        VEC_Subtract((Vec3 *)(other + 0x74), (Vec3 *)(state->pOwner + 0x74), &packet.normal);
+                        VEC_Subtract((VecFx32 *)(other + 0x74), (VecFx32 *)(state->pOwner + 0x74), &packet.normal);
                         VEC_Normalize(&packet.normal, &packet.normal);
                         packet.flagsLo = 0x2004;
                         packet.field_14 = *(int *)(state->pOwner + 0x258);
@@ -184,12 +185,12 @@ void Ov254_TickRoll(int *node)
             state->bSkipTarget = 0;
         }
         if (((struct Bits17a *)(state->pOwner + 0x17a))->bit1) {
-            Vec3 n;
-            Vec3 back;
-            Vec3 refl;
+            VecFx32 n;
+            VecFx32 back;
+            VecFx32 refl;
             int len;
 
-            n = *(Vec3 *)(state->pOwner + 0x114);
+            n = *(VecFx32 *)(state->pOwner + 0x114);
             len = VEC_Normalize(&state->vel, &back);
             ScaleVec3Fx12(-0x1000, &back, &back);
             ScaleVec3Fx12(VEC_DotProduct(&back, &n) << 1, &n, &refl);
@@ -218,9 +219,9 @@ void Ov254_TickRoll(int *node)
     sphere.radius <<= 1;
     n = Ov107_CollectSphereOverlaps(*(int *)(state->pOwner + 0x394), &sphere, hits);
     for (i = 0; i < n; i++) {
-        Vec3 push;
+        VecFx32 push;
 
-        VEC_Subtract((Vec3 *)(hits[i] + 0x74), (Vec3 *)(state->pOwner + 0x74), &push);
+        VEC_Subtract((VecFx32 *)(hits[i] + 0x74), (VecFx32 *)(state->pOwner + 0x74), &push);
         push.y = 0;
         VEC_Normalize(&push, &push);
         ScaleVec3Fx12(0x800, &push, &push);

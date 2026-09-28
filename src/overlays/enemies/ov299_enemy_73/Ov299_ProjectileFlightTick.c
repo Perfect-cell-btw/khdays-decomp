@@ -11,15 +11,16 @@
  * scene's +0x7c collision along the step stops at the contact (effect 1 there, reaction 0x170/6,
  * effect 2 too on a 0xd-typed surface) and, past 0x3c000 of +0x24 flight time, the flight ends
  * with effect 1 at the position. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 typedef struct Segment {
-    Vec3 p0;
-    Vec3 dir;
+    VecFx32 p0;
+    VecFx32 dir;
     int scale;
 } Segment;
 
@@ -31,7 +32,7 @@ struct Capsule {
 struct HitPacket {
     u32 flagsLo : 16;
     u32 flagsHi : 16;
-    Vec3 normal;
+    VecFx32 normal;
     int field_10 : 16;
     int field_12 : 16;
     int field_14 : 16;
@@ -45,32 +46,32 @@ struct HitPacket {
     int field_28;
 };
 
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *d);
-extern void VEC_Add(const void *a, const void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *d);
+extern void VEC_Add(const void *a, const void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov107_CollectSegmentOverlaps(int actor, struct Capsule *cap, int *out);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 at, int d);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 at, int d);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int *List_First(int list);
 extern int *List_Next(int list);
 extern int Ov107_HitShape_TestSegment(void *shape, Segment *seg, int flags);
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
-extern int Collision_CastRayEx(void *collision, Vec3 *from, Vec3 *step, void *ignore);
-extern int Collision_CastSphereEx(void *collision, Vec3 *from, Vec3 *step, int radius, void *ignore);
-extern void ScaleVec3Fixed27(int t, Vec3 *v, Vec3 *d);
-extern const Vec3 data_02041dc8;
+extern int Collision_CastRayEx(void *collision, VecFx32 *from, VecFx32 *step, void *ignore);
+extern int Collision_CastSphereEx(void *collision, VecFx32 *from, VecFx32 *step, int radius, void *ignore);
+extern void ScaleVec3Fixed27(int t, VecFx32 *v, VecFx32 *d);
+extern const VecFx32 data_02041dc8;
 
 void Ov299_ProjectileFlightTick(int *node)
 {
     int *state = (int *)node[1];
     struct Capsule cap;
-    Vec3 last;
-    Vec3 step;
+    VecFx32 last;
+    VecFx32 step;
     int hits[4];
-    Vec3 push;
+    VecFx32 push;
     int i;
     int nHits;
     int scene;
@@ -83,7 +84,7 @@ void Ov299_ProjectileFlightTick(int *node)
 
     scene = *(int *)(*state + 4);
     state[4] += *(int *)(*node + 0x2c) * -0x60 / 0x88;
-    cap.seg.p0 = *(Vec3 *)(state + 6);
+    cap.seg.p0 = *(VecFx32 *)(state + 6);
     VEC_Subtract((void *)state[1], state + 6, &cap.seg.dir);
     cap.seg.scale = VEC_Normalize(&cap.seg.dir, &cap.seg.dir);
     cap.radius = *(int *)(*state + 0x80);
@@ -94,7 +95,7 @@ void Ov299_ProjectileFlightTick(int *node)
         VEC_Normalize(&push, &push);
         ScaleVec3Fx12(0x800, &push, &push);
         if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x390), 0, &push, 0) != 0) {
-            func_ov107_020c0b90(*state, 1, *(Vec3 *)state[1], 0);
+            func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[1], 0);
             Ov107_BuildAndSendUpdate(*state, 0x170, 5, (void *)state[1]);
             *(u8 *)(*state + 0x1c7) = 0;
             SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
@@ -117,7 +118,7 @@ void Ov299_ProjectileFlightTick(int *node)
                         packet.field_14 = *(int *)(*state + 0x258);
                         packet.field_18 = shape;
                         if (Ov107_AiState_ApplyHit(other, *(int *)(*state + 0x25c), &packet) != 0) {
-                            func_ov107_020c0b90(*state, 1, *(Vec3 *)state[1], 0);
+                            func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[1], 0);
                             Ov107_BuildAndSendUpdate(*state, 0x170, 5, (void *)state[1]);
                             *(u8 *)(*state + 0x1c7) = 0;
                             SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
@@ -132,8 +133,8 @@ void Ov299_ProjectileFlightTick(int *node)
         } while (other != 0);
     }
     VEC_Subtract((void *)state[1], state + 6, &step);
-    last = *(Vec3 *)(state + 6);
-    *(Vec3 *)(state + 6) = *(Vec3 *)state[1];
+    last = *(VecFx32 *)(state + 6);
+    *(VecFx32 *)(state + 6) = *(VecFx32 *)state[1];
     hit = Collision_CastRayEx(*(void **)(scene + 0x7c), &last, &step, 0);
     if (hit != 0) {
         rec = *(int *)(hit + 4);
@@ -162,7 +163,7 @@ void Ov299_ProjectileFlightTick(int *node)
     if (state[9] < 0x3c000) {
         return;
     }
-    func_ov107_020c0b90(*state, 1, *(Vec3 *)state[1], 0);
+    func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[1], 0);
     *(u8 *)(*state + 0x1c7) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
 }

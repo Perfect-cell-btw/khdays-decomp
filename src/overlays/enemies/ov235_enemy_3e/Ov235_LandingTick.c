@@ -1,14 +1,16 @@
 /* Landing tick of an ov235 state: once bit 0 of the owner's +0x60 low byte is set, the owner is
  * placed 1.0 above the +8 point, the +0x4c delay is re-rolled in [+0x224, +0x228], the +0x1c9
  * return sub-state is requested and the tick ends. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern void Ov107_MoveNodeAndRelayout(int owner, Vec3 *pos);
+extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *pos);
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
-static inline void VEC_Set(Vec3 *v, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -28,12 +30,12 @@ static inline int RandRange(int lo, int hi)
 void Ov235_LandingTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 pos;
+    VecFx32 pos;
 
     if ((((struct hw60 *)(*state + 0x60))->lo & 1) == 0) {
         return;
     }
-    VEC_Set(&pos, ((Vec3 *)state[2])->x, ((Vec3 *)state[2])->y + 0x1000, ((Vec3 *)state[2])->z);
+    VEC_Set(&pos, ((VecFx32 *)state[2])->x, ((VecFx32 *)state[2])->y + 0x1000, ((VecFx32 *)state[2])->z);
     Ov107_MoveNodeAndRelayout(*state, &pos);
     state[0x13] = RandRange(*(int *)(*state + 0x224), *(int *)(*state + 0x228));
     *(signed char *)(*state + 0x1c7) = *(signed char *)(*state + 0x100 + 0xc9);

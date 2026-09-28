@@ -3,7 +3,9 @@
  * 'M' 'PT' (texture pattern), 'M' 'AT' (texture SRT), 'V' 'AV' (visibility), 'J' 'AC' (joint) --
  * with room for five user-registered entries (the count in use, data_02042490, sits apart).
  */
+
 #include "nitro/types.h"
+
 typedef void (*NNSG3dAnimInitFunc)(void *pAnmObj, void *pResAnm, const void *pResMdl);
 
 typedef struct NNSG3dAnmObjInitFunc {

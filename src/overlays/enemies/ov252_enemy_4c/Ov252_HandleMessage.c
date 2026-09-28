@@ -5,8 +5,10 @@
  * pose (then attached through 020c09a0), from the payload (0xb), or spawns a shard, gem or bomb into
  * the first free pair of its range; 0x32 knocks the actor back, 0x33 plays the owner's sound at the
  * position and 0x34 starts the +0x580 sound 0x148/6. The base handler always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int b0 : 1; int b1 : 1; } Bits;
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
@@ -33,27 +35,27 @@ struct Ov252Body {
 /* Spawn work area: the sound message colour bytes (0x33) and the unpacked position. */
 struct Ov252MsgWork {
     u8 colour[6];
-    Vec3 pos;
+    VecFx32 pos;
 };
 struct EffectPair { int res; int handle; };
 struct Ov252Effects { char pad[0x63c]; struct EffectPair pair[0x31]; };
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int arg, SrtTransform *transform);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int parent, int kind, void *at, int weight, void *payload);
 extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
-extern int Ov252_SpawnShard(char *self, int owner, Vec3 *vel, signed char slot);
-extern int Ov252_SpawnGem(char *self, int owner, Vec3 *pos, signed char slot, u8 kind);
-extern int Ov252_SpawnBomb(char *self, int owner, Vec3 *pos, signed char slot, u8 kind);
+extern int Ov252_SpawnShard(char *self, int owner, VecFx32 *vel, signed char slot);
+extern int Ov252_SpawnGem(char *self, int owner, VecFx32 *pos, signed char slot, u8 kind);
+extern int Ov252_SpawnBomb(char *self, int owner, VecFx32 *pos, signed char slot, u8 kind);
 extern void Ov107_ForwardVisibleEvent(char *self, int a);
 extern int Ov002_GetSlotTableByte(void *scene);
-extern void Ov002_SpawnAllDrops(u8 *colour, u16 id, Vec3 *vec);
+extern void Ov002_SpawnAllDrops(u8 *colour, u16 id, VecFx32 *vec);
 extern int Ov107_CreateSpawnTask(char *self, int id, int mode, void *at, void *pose);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
 /* The message carries x, y, z at +5 as big-endian signed 24-bit values. */
-static inline void UnpackPosition(Vec3 *out, const u8 *msg)
+static inline void UnpackPosition(VecFx32 *out, const u8 *msg)
 {
     union {
         int words[3];

@@ -3,22 +3,23 @@
  * +0x2c30 / +0x2c38 / +0x2c3c, and, if there is a target, turns the node to face it (target minus
  * the +0x48c origin, normalised, atan2 of the negated x/z, +0x8000) unless the node's bit 0x20
  * says the facing is locked; then hands over to the per-frame step. Other messages are refused. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov022_IsSlotReady(void *context);
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Atan2(int x, int z);
 extern void Ov061_AttackStep(void);
 
 void *Ov061_HandleMessage(char *self, int msg)
 {
     void *next = 0;
-    Vec3 d;
+    VecFx32 d;
     u16 a;
     u32 *node;
 
@@ -34,7 +35,7 @@ void *Ov061_HandleMessage(char *self, int msg)
         *(int *)(trail + 0xc) = 0;
         *(int *)(trail + 0x10) = 0;
         if (Ov022_ValidateTargetRef(self) != 0) {
-            VEC_Subtract(func_ov022_020ad0c0(self), (Vec3 *)(self + 0x8c + 0x400), &d);
+            VEC_Subtract(func_ov022_020ad0c0(self), (VecFx32 *)(self + 0x8c + 0x400), &d);
             if (VEC_Mag(&d) != 0) {
                 VEC_Normalize(&d, &d);
             }

@@ -18,6 +18,7 @@
  * modes up to 8 mode 0, each with sound 3.  Codegen: the flag toggle is a
  * static inline helper (three copies; the "+0x1fa4 set" branch first).
  */
+
 #include "nitro/types.h"
 
 #define STATE_LIST   0

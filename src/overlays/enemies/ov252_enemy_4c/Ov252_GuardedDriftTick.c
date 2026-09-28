@@ -2,18 +2,19 @@
  * (020cdfe8 0, 1); while the +0xac guard is up and the partner's +0xaf flag is clear poses 0x31 and
  * 0x35 play. The +0xc velocity follows the +0x574 part's +0x2c vector turned by the +0x54 heading;
  * once the partner holds no queued move the next move is 5 with the guard up, else 2. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void Ov252_GuardSweep(int *node);
-extern int Ov252_CheckTarget(int *node, Vec3 *delta, int face);
+extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void Ov252_TurnVecY(Vec3 *out, int angle, Vec3 *vec);
+extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov252_GuardedDriftTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 v;
+    VecFx32 v;
 
     Ov252_GuardSweep(node);
     Ov252_CheckTarget(node, 0, 1);
@@ -21,8 +22,8 @@ void Ov252_GuardedDriftTick(int *node)
         Ov107_PostTagUpdate(*state, 0x31, 0);
         Ov107_PostTagUpdate(*state, 0x35, 0);
     }
-    Ov252_TurnVecY(&v, state[0x15], (Vec3 *)(*(int *)(*state + 0x574) + 0x2c));
-    *(Vec3 *)(state + 3) = v;
+    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    *(VecFx32 *)(state + 3) = v;
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }

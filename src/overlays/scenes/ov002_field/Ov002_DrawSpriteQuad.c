@@ -12,7 +12,7 @@
  * frame*width and (frame+1)*width.
  */
 
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     char           _p00[4];

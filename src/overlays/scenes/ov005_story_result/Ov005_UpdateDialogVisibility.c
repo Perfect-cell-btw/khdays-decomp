@@ -2,6 +2,7 @@
  * when neither is up. */
 
 #include "nitro/types.h"
+
 typedef struct Ov005Context {
     char header[0x54];
     char embeddedManager[0x4a80];

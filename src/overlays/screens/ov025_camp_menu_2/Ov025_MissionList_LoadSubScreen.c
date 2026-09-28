@@ -10,6 +10,7 @@
  * (02084e38) -- and cell 1 too with touch enabled (+0x38) and no 9630 object (02084e08) -- else
  * cell 2; cell 4 always; VRAM slots 0x19..0x1b are marked used (02084964).  Sibling of the day
  * list's 020ae384. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;

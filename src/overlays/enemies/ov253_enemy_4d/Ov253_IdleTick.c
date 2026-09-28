@@ -6,29 +6,31 @@
  * slot. Otherwise the +0x1c timer runs down; expired -- or with an empty +0x21a stock -- the
  * +0x38c item's +0xa8 flag clears and, once the +8 item's animation is free, sub-state 4 is
  * requested and the slot released. Codegen: `+ (v - v)` is the documented random copy artifact. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w40 { int b0 : 1, b1 : 1; };
 
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern int List_First(int list);
 extern int List_Next(int list);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int func_020050b4(int y, int x);
 extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 void Ov253_IdleTick(int *node) {
     int *state = (int *)node[1];
     int bestnode = 0;
     int best = 0x7fffffff;
     int scene = *(int *)(*state + 4);
-    Vec3 bestv;
-    Vec3 fwd;
-    Vec3 v;
+    VecFx32 bestv;
+    VecFx32 fwd;
+    VecFx32 v;
     int it;
     int hit;
     int dist;
@@ -40,7 +42,7 @@ void Ov253_IdleTick(int *node) {
     hit = it == 0 ? 0 : *(int *)it;
     while (hit != 0) {
         if (((struct w40 *)(hit + 0x40))->b1 != 0 && (((struct hw60 *)(hit + 0x60))->lo & 1) != 0) {
-            VEC_Subtract((Vec3 *)(hit + 0x74), (Vec3 *)state[1], &v);
+            VEC_Subtract((VecFx32 *)(hit + 0x74), (VecFx32 *)state[1], &v);
             v.y = 0;
             dist = VEC_Normalize(&v, &v);
             if (VEC_DotProduct(&fwd, &v) >= 0x400) {

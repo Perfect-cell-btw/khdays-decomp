@@ -21,6 +21,7 @@
  * (its dead branch survives); the listed test is an int bool; the two texts
  * are arrays (their addresses are the arguments); recipe block in the else.
  */
+
 #include "nitro/types.h"
 
 #define TAB_BUY      0

@@ -1,11 +1,8 @@
-typedef struct Vec3 {
-    int x;
-    int y;
-    int z;
-} Vec3;
+
+#include "nitro/fx.h"
 
 typedef struct Sphere {
-    Vec3 pos;
+    VecFx32 pos;
     int radius;
 } Sphere;
 
@@ -47,7 +44,7 @@ typedef struct Ov264Params Ov264Params;
 
 extern void **List_First(void *list);
 extern void **List_Next(void *list);
-extern int Disc_DistanceSq(Vec3 *pos, Ov264Params *params);
+extern int Disc_DistanceSq(VecFx32 *pos, Ov264Params *params);
 extern int FX_Sqrt(int x);
 
 int Ov107_CollectEntitiesTouchingDisc(Ov264Owner *owner, Ov264Params *params, void **out)

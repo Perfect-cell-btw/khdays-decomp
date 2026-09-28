@@ -4,6 +4,7 @@
  * draw its caption. Twin of ov008 Ov008_SelectMenuGroupAndDrawCaption (byte-identical code; the ov025 build of
  * the same menu unit). The unused zero-initialised static fixes the order mwcc emits the two
  * local initialiser templates in ([12, 13] before [10, 11]). */
+
 #include "nitro/types.h"
 
 typedef struct {

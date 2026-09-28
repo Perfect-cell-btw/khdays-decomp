@@ -8,6 +8,7 @@
  * If no slot could be taken, or any file failed to open, everything taken so
  * far is handed back and the caller is told the movie will not play.
  */
+
 #include "nitro/types.h"
 
 #define TICK_BASE   0x00ffb0ffu

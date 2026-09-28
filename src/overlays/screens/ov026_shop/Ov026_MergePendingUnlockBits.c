@@ -3,6 +3,7 @@
  * its committed arrays, then OR the two pending summary words into the game
  * state's unlock summary at 0x1160.
  */
+
 #include "nitro/types.h"
 
 #define BIT_ARRAY_COUNT 2

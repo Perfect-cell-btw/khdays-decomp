@@ -4,8 +4,10 @@
  * facing (sin, 0, cos of the +0x30 yaw) as seen from 0x2800 behind the actor, and that is in
  * line of sight past its +0x80 margin; a piece whose +0x1b4 entry has flag 0x10000 set is not
  * a candidate but is reported to the actor's +0x3a8 hook instead. Returns the piece or 0. */
+
 #include "nitro/types.h"
-typedef struct Vecx32 { int x, y, z; } Vecx32;
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern int Ov144_ChargeRange(int *state, int flag);
@@ -16,10 +18,10 @@ extern int *List_Next(int list);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern int VEC_DotProduct(void *a, void *b);
-extern int Ov144_HasLineOfSight(int *state, Vecx32 target, int margin);
+extern int Ov144_HasLineOfSight(int *state, VecFx32 target, int margin);
 extern u64 *GetEntryField20ByIndex(int index);
 extern short data_0203d210[];
-extern Vecx32 data_02042258;
+extern VecFx32 data_02042258;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
@@ -34,11 +36,11 @@ int Ov144_FindPiece(int *node)
     int piece;
     int *entry;
     unsigned int idx;
-    Vecx32 facing;
-    Vecx32 dir;
-    Vecx32 behind;
-    Vecx32 at;
-    Vecx32 fwd;
+    VecFx32 facing;
+    VecFx32 dir;
+    VecFx32 behind;
+    VecFx32 at;
+    VecFx32 fwd;
 
     range = Ov144_ChargeRange(state, 1);
     if (range < 0) {
@@ -56,7 +58,7 @@ int Ov144_FindPiece(int *node)
         fwd = data_02042258;
         do {
         if (((*(int *)(piece + 0x40) << 30) >> 31) != 0 && (((struct hw60 *)(piece + 0x60))->lo & 1) != 0) {
-            at = *(Vecx32 *)(piece + 0x74);
+            at = *(VecFx32 *)(piece + 0x74);
             VEC_Subtract(&at, (void *)(*state + 0x74), &dir);
             dir.y = 0;
             dist = VEC_Normalize(&dir, &dir);

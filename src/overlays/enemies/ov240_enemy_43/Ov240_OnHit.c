@@ -6,13 +6,14 @@
  * 8|0x80/0x80 special fires reaction 0x139 with the mode taken from the overlay's pairs (0x22
  * hits use the second pair) alternated by the +0x31 toggle. Spent stamina requests sub-state 3;
  * a 1|0x10 hit in sub-state 6 marks +0x30; a 0x8000 hit requests sub-state 7. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    Vec3 vPoint;
+    VecFx32 vPoint;
     int nDamage10;
     char pad014[0xc];
     unsigned int uMode20;
@@ -51,7 +52,7 @@ int Ov240_OnHit(char *actor, int nParam, struct ActorHitEvent *hit)
         break;
     }
     state[0x10] = nParam;
-    *(Vec3 *)(state + 0xb) = hit->vPoint;
+    *(VecFx32 *)(state + 0xb) = hit->vPoint;
     hit->nDamage = Ov107_CalcHitDamage(actor, hit);
     if ((hit->uFlagsLo & 0x4000) != 0) {
         hit->uResultLo = 1;

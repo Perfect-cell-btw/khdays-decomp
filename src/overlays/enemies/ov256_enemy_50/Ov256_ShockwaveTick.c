@@ -4,18 +4,20 @@
  * x 5.0 box (kind 1); every entity whose +2 id bit is clear in the +0x1c mask and that accepts the
  * zero push gets its bit set. Once the part's rig is idle (+0xad), the owner's +0x4b0 slot clears
  * and the node is released (0203c640). */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
-typedef struct { Vec3 center; Vec3 axisX; Vec3 axisY; Vec3 axisZ; int nExtentX; int nExtentY; int nExtentZ; } Box;
 
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02041dc8;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 center; VecFx32 axisX; VecFx32 axisY; VecFx32 axisZ; int nExtentX; int nExtentY; int nExtentZ; } Box;
+
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02041dc8;
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern int Ov107_CollectCapsuleOverlaps(int owner, Box *box, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, const Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, const VecFx32 *push, int z);
 extern void Task_MarkFinished(int *node);
 
 void Ov256_ShockwaveTick(int *node)
@@ -24,19 +26,19 @@ void Ov256_ShockwaveTick(int *node)
     int hits[4];
     Segment seg;
     Box box;
-    Vec3 up;
+    VecFx32 up;
     int i;
     int n;
 
     *(int *)(*state + 0x5c) &= ~2;
     state[6] += *(int *)(node[0] + 0x2c);
     if (state[6] < 0x2a8 && *(int *)(state[1] + 0x50) == 1) {
-        seg.p0 = *(Vec3 *)(state + 3);
+        seg.p0 = *(VecFx32 *)(state + 3);
         up = data_02042264;
         seg.dir = up;
         seg.nRadius = 0x300;
         seg.nLength = 0x3a000;
-        box.center = *(Vec3 *)(state + 3);
+        box.center = *(VecFx32 *)(state + 3);
         box.axisX = data_02042270;
         box.axisY = up;
         box.axisZ = data_02042258;

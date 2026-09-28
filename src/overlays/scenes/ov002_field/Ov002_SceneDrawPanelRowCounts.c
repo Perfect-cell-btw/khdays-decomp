@@ -20,18 +20,13 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct {
     int aWords[6];
     unsigned int pad0 : 2;
     unsigned int bHeld : 1;
 } Ov002Tween;
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
 
 extern int data_ov002_0207f628;
 
@@ -47,7 +42,7 @@ extern void Ov002_DrawAndStepNode(void *pWidget);
 
 void Ov002_SceneDrawPanelRowCounts(void)
 {
-    Ov002Vec3 v;
+    VecFx32 v;
     int *ctx;
     int nTint;
     int nValue;
@@ -119,7 +114,7 @@ void Ov002_SceneDrawPanelRowCounts(void)
                        - j) * 0x44c - 0x1f40;
                 v.y = (aSlide[i] >> 12) + 0x2d50;
                 v.z = 0;
-                *(Ov002Vec3 *)((char *)ctx + 0xa78) = v;
+                *(VecFx32 *)((char *)ctx + 0xa78) = v;
                 Ov002_DrawAndStepNode((char *)ctx + 0x9d4);
             }
         }

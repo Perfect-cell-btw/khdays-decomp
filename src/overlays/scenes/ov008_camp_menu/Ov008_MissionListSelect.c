@@ -8,6 +8,7 @@
  * the 8-bit fields 0x35cd / 0x35df, global config 2 is initialised and cue 1
  * plays.
  */
+
 #include "nitro/types.h"
 
 #define FIELD_MISSION_STATUS 0x28e4

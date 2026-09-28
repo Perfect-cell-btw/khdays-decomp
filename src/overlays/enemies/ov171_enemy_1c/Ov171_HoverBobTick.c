@@ -8,12 +8,13 @@
  * the +8 position's y, times 0.5, becomes the climb. Closer than 2.0 the actor requests
  * sub-state 2 and releases the slot. The bob index is the SDK macro verbatim (FX_RAD_TO_IDX)
  * and FX_SinIdx as table[(idx >> 4) << 1]. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern int Ov171_FaceTargetGetClearance(int node, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov171_FaceTargetGetClearance(int node, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int RandNextScaled(int bound);
 extern int func_02020400(int a, int b);
 extern short data_0203d210[];
@@ -21,7 +22,7 @@ extern short data_0203d210[];
 void Ov171_HoverBobTick(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 dir;
+    VecFx32 dir;
     int dist;
     int h;
     int t;
@@ -36,7 +37,7 @@ void Ov171_HoverBobTick(int node)
         return;
     }
     dist = Ov171_FaceTargetGetClearance(node, &dir);
-    ScaleVec3Fx12(0x180, &dir, (Vec3 *)(state + 8));
+    ScaleVec3Fx12(0x180, &dir, (VecFx32 *)(state + 8));
     state[9] = 0;
     state[0x14] += *(int *)(*(int *)node + 0x2c) * 30;
     if (state[0x14] >= state[0x15] << 12) {

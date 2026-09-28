@@ -6,17 +6,19 @@
  * velocity, +0x80 wide). Once the partner holds no queued move, stage 2 ends the glide (pose 0x18,
  * motion 0xe, on to 020ce70c); earlier stages re-aim (020cd794), turn to the target, advance and play
  * pose 0x13 + 2 x stage, motion 9 + 2 x stage and effect 0x17 (stage 1) or 0x1a. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void Ov260_MapHeldItemKindToAnim(int actor, int flag);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern void Ov260_AttackSweep(int *state, int kind, void *sphere, void *cyl, void *seg);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
@@ -66,11 +68,11 @@ void Ov260_GlideComboTick(int *node)
 
         MTX_RotY33_(&rot, data_0203d210[idx], data_0203d210[idx + 1]);
     }
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (Vec3 *)(state + 8));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (VecFx32 *)(state + 8));
     if (STAGE(state) >= 2) {
-        seg.pos = *(Vec3 *)(*state + 0x74);
+        seg.pos = *(VecFx32 *)(*state + 0x74);
         seg.radius = *(int *)(*state + 0x80);
-        seg.length = VEC_Normalize((Vec3 *)(state + 8), &seg.axis);
+        seg.length = VEC_Normalize((VecFx32 *)(state + 8), &seg.axis);
         Ov260_AttackSweep(state, STAGE(state), 0, 0, &seg);
     } else {
         Ov260_AttackSweep(state, STAGE(state), 0, 0, 0);

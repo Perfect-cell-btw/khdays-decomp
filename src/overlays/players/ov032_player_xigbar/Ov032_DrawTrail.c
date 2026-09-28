@@ -5,12 +5,14 @@
  * keys take their translation from older slots (head - index, two and four more for the last two).
  * Both matrices are loaded back into the geometry engine (projection, then position), and the last
  * key advances the count and the ring head. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[4][3]; } MtxFx43;
 typedef struct { int m[3][3]; } MtxFx33;
 typedef struct {
-    Vec3 pos[10];
+    VecFx32 pos[10];
     short count;
     signed char head;
 } Trail;
@@ -19,7 +21,7 @@ extern void NNS_G3dGetCurrentMtx(MtxFx43 *m, MtxFx33 *n);
 extern void GX_SendFifoWords(int cmd, const void *words, int count);
 extern char *data_ov032_020b58c0;
 
-static inline void VEC_Set(Vec3 *v, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;

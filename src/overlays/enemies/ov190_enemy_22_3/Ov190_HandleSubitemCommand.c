@@ -3,12 +3,7 @@
  * releases it for action 6, then forwards to the base actor handler. */
 
 #include "nitro/types.h"
-
-struct Ov190Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Ov190Transform {
     int words[11];
@@ -39,7 +34,7 @@ struct Ov190Actor {
 
 extern void SrtTransform_SetIdentity(struct Ov190Transform *transform);
 extern void Srt_SetTranslation(struct Ov190Transform *transform,
-                          const struct Ov190Vec3 *position);
+                          const VecFx32 *position);
 extern int Ov107_CreateNodeXformTask(int resource, int node, int kind, int flags,
                                struct Ov190Transform *transform);
 extern int Ov107_CreateNodeBodyTask(int resource, int node, int kind,
@@ -57,7 +52,7 @@ void Ov190_HandleSubitemCommand(struct Ov190Actor *self,
                          struct Ov190Command *command, int arg2)
 {
     struct Ov190Transform transform;
-    struct Ov190Vec3 position;
+    VecFx32 position;
     union {
         int words[3];
         u8 bytes[12];

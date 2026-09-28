@@ -3,6 +3,7 @@
  * has its two-bit game field (0x379f + 2 * (kind - 1)) at exactly 1 (unlocked but
  * not yet maxed), and 0 once the entries run out.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionListEntry {

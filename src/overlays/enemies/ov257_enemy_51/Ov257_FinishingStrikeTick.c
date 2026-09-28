@@ -10,12 +10,14 @@
  * in the +0x75 mask and setting it on acceptance (message data_ov257_020d332e). Once the +0xc idle
  * byte clears, the +0x4c delay is drawn from the owner's [+0x224, +0x228] range, +0x50 clears and
  * sub-state 2 is requested. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -26,14 +28,14 @@ typedef struct { Vec3 center; int nRadius; } Sphere;
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern int Ov257_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov257_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -59,7 +61,7 @@ void Ov257_FinishingStrikeTick(int *node)
 {
     int obj;
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
     Fx32 scratchZ;
     Fx32 scratchY;
@@ -82,19 +84,19 @@ void Ov257_FinishingStrikeTick(int *node)
         return;
     }
     Ov257_SteerToTarget(state, state[0x18], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     state[0x11] += *(int *)(node[0] + 0x2c);
     n = state[0x11];
     if (n > 0 && n < 0xfff) {
         int hits[4];
         Sphere sphere;
 
-        sphere.center = *(Vec3 *)(*(int *)(*state + 0x3d4) + 0x14);
+        sphere.center = *(VecFx32 *)(*(int *)(*state + 0x3d4) + 0x14);
         VEC_Add(&sphere.center, state + 4, &sphere.center);
         sphere.nRadius = 0x4000;
         n = Ov107_CollectSphereOverlaps(*state, &sphere, hits);
         for (i = 0; i < n; i++) {
-            Vec3 push;
+            VecFx32 push;
             Cmd14 msg;
 
             obj = hits[i];
@@ -123,7 +125,7 @@ void Ov257_FinishingStrikeTick(int *node)
         seg.nRadius = FX_Mul(seg.nRadius, 0x2800);
         count = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
         for (j = 0; j < count; j++) {
-            Vec3 push;
+            VecFx32 push;
             Cmd14 msg;
 
             sweepObj = hits[j];

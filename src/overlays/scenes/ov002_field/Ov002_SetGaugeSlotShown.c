@@ -10,6 +10,7 @@
  * owns the looping sound: it starts on the way up and stops on the way down,
  * unless the shutdown hook has already taken over.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

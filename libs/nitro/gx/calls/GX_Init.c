@@ -5,6 +5,7 @@
  * Algorithm cross-checked against pret/pokediamond's
  * arm9/lib/NitroSDK/src/GX.c (GX_Init); verified byte-exact against this ROM.
  */
+
 #include "nitro/types.h"
 
 #define reg_GX_POWCNT        (*(vu16 *)0x04000304)

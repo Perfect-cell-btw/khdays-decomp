@@ -6,6 +6,7 @@
  * refused).  Either way mode 2 is entered, menu button 5 refreshed and the drag
  * flag (+0x28) cleared.
  */
+
 #include "nitro/types.h"
 
 typedef struct UiLayoutPos {

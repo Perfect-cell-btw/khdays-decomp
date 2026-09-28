@@ -1,12 +1,9 @@
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 /* The shot block of a slot, which the ROM addresses through its own base. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct SlotShot {
     u8 nState;                       /* 0x00 */
     u8 pad01[3];
@@ -36,10 +33,10 @@ struct ActorSlot {
 struct SlotPart {
     int nTimer;                      /* 0x000 */
     u8 pad004[0xc];
-    struct VecFx32 vecVel;           /* 0x010 */
+    VecFx32 vecVel;           /* 0x010 */
     u16 nSlotFlags;                  /* 0x01c */
     u8 pad01e[0xa2];
-    struct VecFx32 vecAt;            /* 0x0c0 */
+    VecFx32 vecAt;            /* 0x0c0 */
     int aBound[3];                   /* 0x0cc */
     u8 pad0d8[0x4c];
     u16 binding[2];                  /* 0x124 */
@@ -62,12 +59,12 @@ struct ReactionCtx {
 
 /* The block the mover fills before asking the world where it stops. */
 struct MoveProbe {
-    struct VecFx32 vecPos;           /* 0x00 */
-    struct VecFx32 vecDir;           /* 0x0c */
+    VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecDir;           /* 0x0c */
     int nRadius;                     /* 0x18 */
     int nDrop;                       /* 0x1c */
     int nSlotIndex;                  /* 0x20 */
-    struct VecFx32 vecHit;           /* 0x24 */
+    VecFx32 vecHit;           /* 0x24 */
 };
 
 #define SLOT_OPEN 0xffff
@@ -83,13 +80,13 @@ struct MoveProbe {
 #define BIND_LANDED 3
 
 extern int func_ov022_0208a9ac(int nRadius, int nPending, int nTimer);
-extern void ScaleVec3Fx12(int nFactor, struct VecFx32 *pSrc,
-                          struct VecFx32 *pDst);
+extern void ScaleVec3Fx12(int nFactor, VecFx32 *pSrc,
+                          VecFx32 *pDst);
 extern int func_02023c40(void);
-extern void VEC_Add(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *pOut);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *pOut);
 extern void Ov022_MovePartTo(struct ReactionCtx *pCtx,
                                 struct SlotPart *pPart,
-                                struct VecFx32 *pAt, struct VecFx32 *pDir);
+                                VecFx32 *pAt, VecFx32 *pDir);
 extern int Ov022_ClampReactionForKind10(int nState, int nReaction);
 extern void Ov022_EndPartRun(struct ReactionCtx *pCtx,
                                 struct SlotPart *pPart, int nReaction);
@@ -102,8 +99,8 @@ extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 int Ov022_StepBoundPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                         int nDelta)
 {
-    struct VecFx32 vecAt;
-    struct VecFx32 vecStep;
+    VecFx32 vecAt;
+    VecFx32 vecStep;
     struct MoveProbe probe;
     struct ActorSlot *pSlot;
     struct SlotShot *pShot;

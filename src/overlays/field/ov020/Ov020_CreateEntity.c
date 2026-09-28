@@ -10,9 +10,9 @@
  * the stack slots. The local sits after the allocation call because that is
  * where the original builds it.
  */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov020Entity {
     char pad00[0x0c];
@@ -23,7 +23,7 @@ struct Ov020Entity {
     u8 bFlag16;                             /* 0x16 */
     u8 bPhase17;                            /* 0x17 */
     char pad18[0xa8];
-    struct Vec3 vOffsetC0;                  /* 0xc0 */
+    VecFx32 vOffsetC0;                  /* 0xc0 */
     char padcc[0x58];
     char aCamera124[4];                     /* 0x124 */
 };
@@ -39,7 +39,7 @@ struct Ov020Entity *Ov020_CreateEntity(int a, int b, int kind, u16 id, u8 flag)
 
     entity = Ov002_ClaimPoolEntry(a, b);
     {
-        struct Vec3 zero;
+        VecFx32 zero;
 
         zero.x = 0;
         zero.y = 0;

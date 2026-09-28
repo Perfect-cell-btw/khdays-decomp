@@ -4,18 +4,20 @@
  * right of +0x64; the landing point (+0x14) is the target's +0x190 point stepped back 4.0 along it
  * (2.0 from the fifth circle), pushed off the scene's walls within the body radius, the recoil entry
  * is armed (+0xc = 020cebe4) and the node moves on to 020cf484. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern void Ov260_AttackSweep(int *state, int kind, void *sphere, void *cyl, void *seg);
 extern int RandNextScaled(int n);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Collision_CastSphere(int walls, Vec3 *at, Vec3 *dir, int radius);
-extern void ScaleVec3Fixed27(int plane, Vec3 *in, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Collision_CastSphere(int walls, VecFx32 *at, VecFx32 *dir, int radius);
+extern void ScaleVec3Fixed27(int plane, VecFx32 *in, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_AiEndCircle(void);
 extern void Ov260_BurstEntry(void);
@@ -27,7 +29,7 @@ void Ov260_CircleTick(int *node)
 {
     int *state = (int *)node[1];
     Mtx33 rot;
-    Vec3 off;
+    VecFx32 off;
     int scene;
     int hit;
 
@@ -36,7 +38,7 @@ void Ov260_CircleTick(int *node)
 
         MTX_RotY33_(&rot, data_0203d210[idx], data_0203d210[idx + 1]);
     }
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (Vec3 *)(state + 8));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (VecFx32 *)(state + 8));
     Ov260_AttackSweep(state, 3, 0, 0, 0);
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
@@ -60,12 +62,12 @@ void Ov260_CircleTick(int *node)
         off.z = data_0203d210[idx + 1];
     }
     ScaleVec3Fx12(state[0x1d] < 5 ? -0x4000 : -0x2000, &off, &off);
-    hit = Collision_CastSphere(*(int *)(scene + 0x7c), (Vec3 *)(*(int *)(*state + 0x420) + 0x190), &off,
+    hit = Collision_CastSphere(*(int *)(scene + 0x7c), (VecFx32 *)(*(int *)(*state + 0x420) + 0x190), &off,
                         *(int *)(*state + 0x80));
     if (hit != 0) {
         ScaleVec3Fixed27(*(int *)(hit + 0xc), &off, &off);
     }
-    VEC_Add((Vec3 *)(*(int *)(*state + 0x420) + 0x190), &off, (Vec3 *)(state + 5));
+    VEC_Add((VecFx32 *)(*(int *)(*state + 0x420) + 0x190), &off, (VecFx32 *)(state + 5));
     state[3] = (int)Ov260_AiEndCircle;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov260_BurstEntry);
 }

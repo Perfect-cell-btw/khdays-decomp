@@ -8,15 +8,17 @@
  * rate; past +0x18 the next move is 1.
  * Codegen: the +0x390 owner is read through the OwnerOf accessor (the plain dereference swaps the
  * owner and record-index registers). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[7]; int radius; } Segment;
 typedef struct { short mode[5]; } Short5;
 typedef struct { u8 b0 : 1; } Bit0;
 
 struct HitPacket40 {
     int flags;
-    Vec3 push;
+    VecFx32 push;
     int damage;
     int reaction;
     u8 hitstop;
@@ -24,10 +26,10 @@ struct HitPacket40 {
     int w[2];
 };
 
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int Ov107_CollectSegmentOverlaps(int owner, void *capsule, int *hits);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int RandNextScaled(int bound);
 extern void Ov107_BuildAndSendUpdate(int actor, short bank, int variant, int at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -48,7 +50,7 @@ void Ov258_SwingTick_2(int *node)
     int *state = (int *)node[1];
 
     if (((Bit0 *)(*state + 0x17a))->b0) {
-        func_ov107_020c0b90(*state, 7, *(Vec3 *)state[2], 0);
+        func_ov107_020c0b90(*state, 7, *(VecFx32 *)state[2], 0);
     }
     if (state[3] >= state[5] && state[3] < state[6]) {
         Segment seg;
@@ -64,7 +66,7 @@ void Ov258_SwingTick_2(int *node)
         i = 0;
         if (n > 0) {
             do {
-                Vec3 push;
+                VecFx32 push;
                 short modes[5];
                 u8 *rec;
 
@@ -75,7 +77,7 @@ void Ov258_SwingTick_2(int *node)
                 if (*(int *)(hits[i] + 0x1c4) == 0) {
                     goto next;
                 }
-                VEC_Subtract((Vec3 *)(hits[i] + 0x74), (Vec3 *)(*state + 0x74), &push);
+                VEC_Subtract((VecFx32 *)(hits[i] + 0x74), (VecFx32 *)(*state + 0x74), &push);
                 VEC_Normalize(&push, &push);
                 push.z += 0x4000;
                 push.y += 0x1000;
@@ -115,7 +117,7 @@ void Ov258_SwingTick_2(int *node)
                     packet.hitstop = 0x5a;
                 }
                 if ((*(int (**)(u16, struct HitPacket40 *))(hits[i] + 0x1c4))(*(u16 *)(hits[i] + 2), &packet) != 0) {
-                    func_ov107_020c0b90(OwnerOf(*state), 6, *(Vec3 *)(hits[i] + 0x190), 0);
+                    func_ov107_020c0b90(OwnerOf(*state), 6, *(VecFx32 *)(hits[i] + 0x190), 0);
                     Ov107_BuildAndSendUpdate(*state,
                                         *(int *)(OwnerOf(*state) + 0x460) != 0 ? 0x180 : 0x17b, 0xd, state[2]);
                     *((u8 *)state + 0x10) |= bit;

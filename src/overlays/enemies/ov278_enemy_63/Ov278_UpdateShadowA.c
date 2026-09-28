@@ -2,22 +2,24 @@
  * of the +0x9c list's +0x5c into the +0x388 item's +0x5c bit 1, then place that item's transform
  * (+4) on the actor's +0xa0 pose at the +0x74 position lowered to y = 0x200, scaled in x/z by
  * 1.0 - height(+0x13c)/20 (at least 1/16). */
-struct Vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct Flags5c { int b0 : 1; int b1 : 1; };
 extern void Ov107_RefreshAndSelectChild(int sub);
 extern void Ov107_ProcessObjectTick(char *obj, int arg1);
 extern void Srt_SetRotationQuat(int srt, void *pose);
-extern void Srt_SetTranslation(int srt, struct Vec3 *pos);
+extern void Srt_SetTranslation(int srt, VecFx32 *pos);
 extern void Srt_SetScaleXYZ(int srt, int sx, int sy, int sz);
 
 void Ov278_UpdateShadowA(char *obj, int arg1) {
-    struct Vec3 pos;
+    VecFx32 pos;
     int scale;
 
     Ov107_RefreshAndSelectChild(*(int *)(obj + 0x3ac));
     scale = 0x1000 - *(int *)(obj + 0x13c) / 20;
     if (scale < 0x100) scale = 0x100;
-    pos = *(struct Vec3 *)(obj + 0x74);
+    pos = *(VecFx32 *)(obj + 0x74);
     pos.y = 0x200;
     Ov107_ProcessObjectTick(obj, arg1);
     ((struct Flags5c *)(*(int *)(obj + 0x388) + 0x5c))->b1 = ((struct Flags5c *)(*(int *)(obj + 0x9c) + 0x5c))->b1;

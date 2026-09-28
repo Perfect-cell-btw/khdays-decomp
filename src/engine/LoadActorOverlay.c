@@ -1,4 +1,5 @@
 #include "nitro/types.h"
+
 typedef u32 FSOverlayID;
 
 /* 0x6b (107) is the ADDRESS of a linker-absolute symbol -- the NitroSDK FS_OVERLAY_ID

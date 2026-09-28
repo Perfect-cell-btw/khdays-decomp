@@ -6,11 +6,12 @@
  * holds no queued move: unguarded, +0x7c is three frames and with no lift height the next move is 7;
  * otherwise (guarded: +0x64 clears, +0x7c half a frame) +0xbc/+0x70/+0xb8 clear, pose 2 plays and the
  * node moves on to 020d1c7c. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void Ov252_GuardSweep(int *node);
-extern void Ov252_TurnVecY(Vec3 *out, int angle, Vec3 *vec);
-extern int Ov252_CheckTarget(int *node, Vec3 *delta, int face);
+extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
+extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern unsigned int RandNextScaled(int bound);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -19,11 +20,11 @@ extern void Ov252_CruiseTick(void);
 void Ov252_HoverTick_2(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 v;
+    VecFx32 v;
 
     Ov252_GuardSweep(node);
-    Ov252_TurnVecY(&v, state[0x15], (Vec3 *)(*(int *)(*state + 0x574) + 0x2c));
-    *(Vec3 *)(state + 3) = v;
+    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    *(VecFx32 *)(state + 3) = v;
     if (*((unsigned char *)state + 0x88) == 3) {
         Ov252_CheckTarget(node, 0, 1);
         *((unsigned char *)state + 0x92) = *(int *)(*(int *)(*state + 0x4e4) + 0x194) < 0xa000 ? 0x10 :

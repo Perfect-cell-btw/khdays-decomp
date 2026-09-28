@@ -3,13 +3,14 @@
  * two timers at +0xc/+0x10 and advance to the hold handler (020cecdc). Codegen: the bit-0 set is the
  * explicit u16 form and the bit-7 clear the hw60 bitfield form (the mix fixes the ip/lr roles).
  * hw60 = *(u16*)(*state+0x60), reloaded each op (the Ov283_ResetReactionFlags spelling). */
-#include "nitro/types.h"
-struct vec3 { int x, y, z; };
 
-extern void func_ov107_020c0b90(int obj, int cmd, struct vec3 v, int flag);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
 extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern void SetIndexedSlot(int obj, int slot, void *cb);
-extern struct vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern void Ov180_SettleHold(void);
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -18,7 +19,7 @@ void Ov180_SettleEnter(int node) {
     int *state = *(int **)(node + 4);
     u16 hw;
     {
-        struct vec3 v = data_02041dc8;
+        VecFx32 v = data_02041dc8;
         func_ov107_020c0b90(*state, 0, v, 0);
     }
     Ov107_PostTagUpdate(*state, 0, 0);

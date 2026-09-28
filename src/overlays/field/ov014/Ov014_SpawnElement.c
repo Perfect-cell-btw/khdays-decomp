@@ -1,9 +1,7 @@
 /* Spawns an element from the pool: places its node, sets its position, heading and motion, puts it
  * in its bucket and sets its height per mode. */
 
-typedef struct {
-    int x, y, z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int kind;

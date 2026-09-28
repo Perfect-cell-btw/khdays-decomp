@@ -6,16 +6,17 @@
  * 0x800 clears +0x3f4 and hands off to the facing check. Lured, reaching twice the +0x80 range
  * requests sub-state 6; otherwise, within range, the next +0x39c path node (modulo the +0x3b8
  * count) becomes the point while its +0xc charge stays at or below 0x100, else sub-state 2. */
-typedef struct Vec3 { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov145_LureToPiece(int *state, int flag);
 extern int Ov107_ActionResource_GetOffsetAndScale(void *item, int mode);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int func_020050b4(int x, int z);
-extern int VEC_DotProduct(Vec3 *a, Vec3 *b);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov145_FacingAlignedTick(int *node);
 extern short data_0203d210[];
 
@@ -31,8 +32,8 @@ void Ov145_AdvanceTick(int *node)
     int dot;
     int actor;
     unsigned int idx;
-    Vec3 dir;
-    Vec3 facing;
+    VecFx32 dir;
+    VecFx32 facing;
 
     if (*(signed char *)(*state + 0x1c6) == 3 && Ov145_LureToPiece(state, 1) != 0) {
         state[0x13] = 1;
@@ -62,7 +63,7 @@ void Ov145_AdvanceTick(int *node)
     if (dot < 0xe00) {
         dot = 0;
     }
-    ScaleVec3Fx12(FX_MUL(speed, dot), &dir, (Vec3 *)(state + 9));
+    ScaleVec3Fx12(FX_MUL(speed, dot), &dir, (VecFx32 *)(state + 9));
     if (state[0x13] != 0) {
         if (len > range * 2) {
             return;
@@ -79,7 +80,7 @@ void Ov145_AdvanceTick(int *node)
         state[0x11] = (state[0x11] + 1) % *(int *)(actor + 0x3b8);
         state[0x10] = *(int *)(*(int *)(*state + 0x39c) + state[0x11] * 0x10 + 0xc);
         if (state[0x10] <= 0x100) {
-            *(Vec3 *)(state + 3) = *(Vec3 *)(*(int *)(*state + 0x39c) + state[0x11] * 0x10);
+            *(VecFx32 *)(state + 3) = *(VecFx32 *)(*(int *)(*state + 0x39c) + state[0x11] * 0x10);
             return;
         }
     }

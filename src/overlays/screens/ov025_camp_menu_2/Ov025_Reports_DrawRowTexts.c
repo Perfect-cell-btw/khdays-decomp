@@ -4,7 +4,9 @@
  * shows its read variant when the gate (+0xc0) or a held entry (+0x25c) allows it; in mission mode
  * entries with pending bits show the fallback text data_ov025_020b5270. The pRead lookup is written
  * twice on purpose (the test and the local): that is what gives the ROM's register assignment. */
+
 #include "nitro/types.h"
+
 typedef struct Entry {
     u16 id:9;
     u16 flag9:1;

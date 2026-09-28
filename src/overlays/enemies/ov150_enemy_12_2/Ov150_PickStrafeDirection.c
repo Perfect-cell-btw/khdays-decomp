@@ -8,7 +8,8 @@
  * and the 6/5 choice is an if/else -- as a ternary mwcc colours the pair r2/r1 instead of r1/r0.
  *
  * One of five byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void ScaleVec3Fx12(int a, void *b, void *c);
 extern int RandNextScaled();

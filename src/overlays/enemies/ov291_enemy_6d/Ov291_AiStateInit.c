@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 extern void SetIndexedSlot(int *a, int i, int v);

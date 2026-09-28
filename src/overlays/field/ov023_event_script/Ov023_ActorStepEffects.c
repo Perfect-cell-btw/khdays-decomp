@@ -6,6 +6,7 @@
  * when the new frame (0202aee0 on the entity's animation) lands on a whole frame, else one
  * whole frame at a time until a track fires or the whole frames are used up.  A firing track
  * spawns its effect. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023Entity {

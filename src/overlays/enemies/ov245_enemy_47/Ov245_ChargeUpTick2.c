@@ -1,7 +1,9 @@
 /* Ov245_ChargeUpTick2 -- charge-up (variant): flags the actor's +0x390 and counts the state's
  * +0xc timer up by the scene step; after 0.5 raises bit 0 of the +0x60 high byte and bit 0 of
  * the +0x388 item's +8 low byte, plays pose 0 and moves the node to 020d5134. */
+
 #include "nitro/types.h"
+
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);

@@ -14,6 +14,7 @@
  * static inline helper (two copies) taking the packets through a local
  * pointer; the u8 loop counter walks a byte index.
  */
+
 #include "nitro/types.h"
 
 #define GATE_LOBBY   0xd

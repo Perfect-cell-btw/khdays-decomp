@@ -1,6 +1,8 @@
 /* Raise flags 0x86 in the high byte at (*child)+0x60, then clear bit 0 of that same high byte
  * and bit 0 of the (*child)+0x394 word, then register the 020d0bec handler. */
+
 #include "nitro/types.h"
+
 extern int SetIndexedSlot(int a, int b, void *handler);
 extern void Ov273_AiStep_QueueStoredActionIfActive(int);
 void Ov273_EnterRaiseFlags86ClearLocks(int param_1) {

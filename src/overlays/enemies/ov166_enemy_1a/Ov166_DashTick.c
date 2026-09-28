@@ -8,9 +8,10 @@
  * eases towards 0x100 by a twentieth, otherwise the lift drops by 0x100. A set bit 1 publishes the
  * position with mode 1, fires reaction 0x13e mode 7 and ends; else the +0x28 travel accumulates
  * the velocity's length and ends the dash (mode 1, no reaction) once it passes 0x20000. */
-#include "nitro/types.h"
 
-struct Vecx32 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Flags17a { u8 b0 : 1, b1 : 1; };
 
 extern int Ov107_CollectSphereOverlaps(void *item, void *sphere, void *out);
@@ -18,15 +19,15 @@ extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern int Ov107_InvokeHitCallback(void *hit, int actor, void *item, int mode, void *push, int z);
-extern void func_ov107_020c0b90(void *item, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(void *item, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Ov107_FindNearestObject(int actor, int mode);
-extern int VEC_DotProduct(const struct Vecx32 *a, const struct Vecx32 *b);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void VEC_Add(void *a, void *b, void *d);
 extern int RandNextScaled(int bound);
 extern int func_020050b4(int x, int z);
-extern int VEC_Mag(const struct Vecx32 *v);
+extern int VEC_Mag(const VecFx32 *v);
 extern const short data_0203d210[];
 
 void Ov166_DashTick(int *node)
@@ -34,10 +35,10 @@ void Ov166_DashTick(int *node)
     int actor;
     int *state = (int *)node[1];
     void *hits[4];
-    struct Vecx32 push;
-    struct Vecx32 dir;
-    struct Vecx32 heading;
-    struct Vecx32 sum;
+    VecFx32 push;
+    VecFx32 dir;
+    VecFx32 heading;
+    VecFx32 sum;
     int i;
     int n;
     int target;
@@ -55,7 +56,7 @@ void Ov166_DashTick(int *node)
             VEC_Normalize(&push, &push);
             ScaleVec3Fx12(0x800, &push, &push);
             if (Ov107_InvokeHitCallback(hits[i], *state, *(void **)(*state + 0x38c), 0, &push, 0) != 0) {
-                func_ov107_020c0b90(*(void **)(*state + 0x38c), 2, *(struct Vecx32 *)state[2], 0);
+                func_ov107_020c0b90(*(void **)(*state + 0x38c), 2, *(VecFx32 *)state[2], 0);
                 Ov107_BuildAndSendUpdate(*state, 0x13e, 6, (void *)state[2]);
                 *(u8 *)(*state + 0x1c7) = 0;
                 SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
@@ -67,7 +68,7 @@ void Ov166_DashTick(int *node)
     if (((struct Flags17a *)(*state + 0x17a))->b0 && (target = Ov107_FindNearestObject(*state, 0)) != 0) {
         VEC_Subtract((void *)(target + 0x74), (void *)(actor + 0x74), &dir);
         dir.y = 0;
-        heading = *(struct Vecx32 *)(state + 6);
+        heading = *(VecFx32 *)(state + 6);
         heading.y = 0;
         VEC_Normalize(&dir, &dir);
         VEC_Normalize(&heading, &heading);
@@ -90,17 +91,17 @@ void Ov166_DashTick(int *node)
         state[9] += (0x100 - state[9]) / 20;
     }
     if (((struct Flags17a *)(*state + 0x17a))->b1) {
-        func_ov107_020c0b90(*(void **)(*state + 0x38c), 1, *(struct Vecx32 *)state[2], 0);
+        func_ov107_020c0b90(*(void **)(*state + 0x38c), 1, *(VecFx32 *)state[2], 0);
         Ov107_BuildAndSendUpdate(*state, 0x13e, 7, (void *)state[2]);
         *(u8 *)(*state + 0x1c7) = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    state[10] += VEC_Mag((struct Vecx32 *)(state + 3));
+    state[10] += VEC_Mag((VecFx32 *)(state + 3));
     if (state[10] < 0x20000) {
         return;
     }
-    func_ov107_020c0b90(*(void **)(*state + 0x38c), 1, *(struct Vecx32 *)state[2], 0);
+    func_ov107_020c0b90(*(void **)(*state + 0x38c), 1, *(VecFx32 *)state[2], 0);
     *(u8 *)(*state + 0x1c7) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
 }

@@ -4,27 +4,28 @@
  * its channels 0 and 2 take the flag (as a short) with a zero second argument and it is
  * reset (c7ac 0). Reaction 0x158 mode 7 fires at the anchor, the +0x28 rate becomes 0x400 with the +0x30 hit mask cleared, and
  * the drop tick Ov246_GroundDropTick runs once before it takes the slot. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void *Collision_CastRay(void *collision, Vec3 *origin, Vec3 *direction);
+#include "nitro/fx.h"
+
+extern void *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *direction);
 extern void SetSubitemState(int item, int channel, short a, int b);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov246_GroundDropTick(int *node);
-extern Vec3 data_ov246_020d3108;
+extern VecFx32 data_ov246_020d3108;
 
 void Ov246_EnterGroundDrop(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int bAir;
     int coll;
 
     coll = *(int *)(*state + 4);
     dir = data_ov246_020d3108;
     bAir = 0;
-    if (Collision_CastRay(*(void **)(coll + 0x7c), (Vec3 *)(state + 4), &dir) == 0) {
+    if (Collision_CastRay(*(void **)(coll + 0x7c), (VecFx32 *)(state + 4), &dir) == 0) {
         bAir = 1;
     }
     *(int *)(state[1] + 0x5c) |= 2;

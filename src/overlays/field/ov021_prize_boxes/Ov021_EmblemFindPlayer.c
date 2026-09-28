@@ -5,9 +5,9 @@
  * flags clear, owns a slot (ov022 02088474), sits in the emblem's bucket (the bucket's current
  * piece kind, ov002 02072754) and its seat (ov022 020881f8) is within reach of the emblem's
  * position (+0x2a8, VEC_Distance 01ff8e94). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov021PlayerActor {
     u64  nFlags;              /* 0x00: bit 16 = out of play */

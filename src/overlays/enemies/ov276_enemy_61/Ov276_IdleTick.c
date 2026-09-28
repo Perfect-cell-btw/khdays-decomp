@@ -6,11 +6,12 @@
  * the clock resets (animation 1 when the item's +0xad byte is clear). Else the +0x5c attack
  * choice is 1 (gap below 0x1000, 45% roll), 2 or 3 at random (gap below 0x3000, unless already
  * one of them) or 0, sub-state 4 is requested and the state ends. */
-struct Vecx32 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
-extern void VEC_Subtract(void *a, void *b, struct Vecx32 *d);
-extern int VEC_Normalize(struct Vecx32 *v, struct Vecx32 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int Ov276_IdleCountdown(int *node, int dist);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Ov002_GetCtxModeByte(void);
@@ -20,7 +21,7 @@ extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 void Ov276_IdleTick(int *node)
 {
     int *state = (int *)node[1];
-    struct Vecx32 d;
+    VecFx32 d;
     int gap;
     int len;
     int actor;

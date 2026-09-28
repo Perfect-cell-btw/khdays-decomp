@@ -7,8 +7,10 @@
  * and clears +0x388. Codegen: `self` must be a `char *` parameter -- with an `int` the stored
  * +0x394 value is forwarded into the attach call (`mov r1,r0`) and the handler pool loads
  * interleave differently; the ROM reloads +0x394. */
-typedef void (*Callback)(void);
+
 #include "nitro/types.h"
+
+typedef void (*Callback)(void);
 
 extern void Ov266_Destroy(void);
 extern void func_ov266_020d2a34(void);

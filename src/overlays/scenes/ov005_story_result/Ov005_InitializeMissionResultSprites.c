@@ -4,7 +4,9 @@
  * percentage to 100. Pixel widths use 183*percent/100 narrowed to signed 16 bits.
  * ARM: 1220 bytes, 46 relocations, byte-exact.
  */
+
 #include "nitro/types.h"
+
 typedef struct Ov005SpriteManager {char data[0x4a80];} Ov005SpriteManager;
 typedef struct Ov005ResultContext {u32 resultArchive,localizedResultArchive;char unknown08[76];Ov005SpriteManager spriteManager;} Ov005ResultContext;
 typedef struct Ov005Config {u16 sceneId,missionIndex;char unknown04[8];u16 rewardMode;char unknown0e[18];int missionProgressValue;char unknown24[12];int missionTargetValue;} Ov005Config;

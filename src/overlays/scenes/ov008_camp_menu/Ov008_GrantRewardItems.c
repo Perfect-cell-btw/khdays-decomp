@@ -8,6 +8,7 @@
  * one static inline helper per case (the state pointer is re-read after the
  * byte store); every case returns.
  */
+
 #include "nitro/types.h"
 
 #define ITEM_COUNT_MAX  99

@@ -3,7 +3,9 @@
  * +0x60 flag high byte, sets bit 0 of +0x1ae, points the state at the actor's +0x74 position and
  * the +0x384 item's +0xad busy byte, seeds the +0xc and +0x1c quaternions from the shared
  * identity, clears the +0x48 byte and installs the three hover handlers in slots 1, 0 and 2. */
+
 #include "nitro/types.h"
+
 struct Quat { int a, b, c, d; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 

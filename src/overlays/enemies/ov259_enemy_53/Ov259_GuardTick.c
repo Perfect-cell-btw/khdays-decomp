@@ -1,6 +1,7 @@
 /* Guard tick of the ov259 actor: the +0x68 timer accumulates the frame rate and the aim refreshes
  * (020cdcac). While guarding (+0x44) bits 0-1 of +0x1ae are set; otherwise past the +0x64 limit
  * pose 7 plays and the node moves on to 020cfe0c. */
+
 #include "nitro/types.h"
 
 extern void Ov259_RefreshAim(int *node);

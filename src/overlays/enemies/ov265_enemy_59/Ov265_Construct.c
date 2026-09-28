@@ -9,8 +9,10 @@
  * and 4/2 lifted 1.5 above the +0xb0 point and 2/3 (all at rate 1.15); reserves the +0x22c
  * placement (+0x3bc) and the three +0x144 handles (+0x3c0: a placement, then two oriented boxes of
  * half-extents 0.5*1.92/0.25/0.5*1.92), and loads sound 0x168. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
+
 typedef struct { void *node; int pad; } Slot;
 typedef struct { int w[8]; } KindTable;
 typedef struct { int w[6]; } ParamBlock;

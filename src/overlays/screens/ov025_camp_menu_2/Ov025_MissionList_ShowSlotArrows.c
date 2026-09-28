@@ -3,6 +3,7 @@
  * 0208dc74), reselect the cursor's slot (+0x54) and, with two or more, show entries 4 / 5 of the
  * 4a7c block (02084a7c) and 0x47 / 0x48 of the 4a80 block (02084a8c): the slot arrows
  * (FindEntryById 0208843c / SetEntrySlotsVisible 0208884c). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionList {

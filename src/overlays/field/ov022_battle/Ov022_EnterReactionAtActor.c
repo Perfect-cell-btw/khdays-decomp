@@ -13,15 +13,11 @@
  * bias, and the state ends up armed with the timer cleared.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022ActorNode */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ActorNode {
     u8 pad000[0x80];
     u16 nAngle;                  /* 0x0080 */
@@ -34,7 +30,7 @@ struct Actor {
     u8 pad024[0x42];
     short nSlotIndex;            /* 0x0066 */
     u8 pad068[0x424];
-    struct VecFx32 vecPos;       /* 0x048c */
+    VecFx32 vecPos;       /* 0x048c */
 };
 
 /* Ov022ActorSlot */
@@ -47,14 +43,14 @@ struct ActorSlot {
     u8 pad00a[0x7a];
     u16 nAngle;                  /* 0x084 */
     u8 pad086[0x26];
-    struct VecFx32 vecAim;       /* 0x0ac */
+    VecFx32 vecAim;       /* 0x0ac */
     u8 pad0b8[0x58];
     u8 nSlotIndex;               /* 0x110 */
     u8 pad111[7];
     u8 nState;                   /* 0x118 */
     u8 pad119[3];
     int nTimer;                  /* 0x11c */
-    struct VecFx32 vecScratch;   /* 0x120 */
+    VecFx32 vecScratch;   /* 0x120 */
 };
 
 /* Ov022ReactionCtx */
@@ -72,7 +68,7 @@ struct ReactionCtx {
 extern void Ov022_BindBlockAnimations(struct ReactionCtx *pCtx, int nTrack, u16 *pFlags,
                                 int nBinding);
 extern int Ov022_ClampReactionForKind10(int nKind, int nMode);
-extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, struct VecFx32 *pAim,
+extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, VecFx32 *pAim,
                                 int nReaction);
 extern void func_ov022_0208a6b0(struct ReactionCtx *pCtx);
 

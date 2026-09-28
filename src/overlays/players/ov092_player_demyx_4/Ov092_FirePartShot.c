@@ -3,26 +3,28 @@
  * (+0x48c) for the spawn position, aims straight back along the heading, takes the kind from
  * the part's +0x19 byte and the speed from its first word, and marks the request 1/2 when the
  * caller asks for the alternate shot and bit 1 of the part's +0x14 byte for the homing variant. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 typedef struct { u8 b0 : 1, b1 : 1; } PartBits;
 typedef struct {
-    Vec3 pos;
+    VecFx32 pos;
     short f0c, f0e, f10, f12;
     int f14, f18, f1c, f20, f24, f28;
 } Params;
 
 extern void MTX_RotY33_(Mtx33 *m, int s, int c);
-extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov022_SendPlacementMessage(char *self, Params *p);
 extern short data_0203d210[];
 
 int Ov092_FirePartShot(char *self, int unused, char *pPart, int bAlt)
 {
     Params p;
-    Vec3 v;
+    VecFx32 v;
     Mtx33 m;
     int idx;
     int s;
@@ -33,9 +35,9 @@ int Ov092_FirePartShot(char *self, int unused, char *pPart, int bAlt)
         c = -data_0203d210[idx * 2 + 1];
         s = -data_0203d210[idx * 2];
         MTX_RotY33_(&m, s, c);
-        MTX_MultVec33((Vec3 *)(pPart + 0x1c), &m, &v);
+        MTX_MultVec33((VecFx32 *)(pPart + 0x1c), &m, &v);
         p.f12 = (short)*(int *)pPart;
-        VEC_Add((Vec3 *)(self + 0x8c + 0x400), &v, &p.pos);
+        VEC_Add((VecFx32 *)(self + 0x8c + 0x400), &v, &p.pos);
         v.x = s;
         v.z = c;
         v.y = 0;

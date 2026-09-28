@@ -10,12 +10,14 @@
  * step's heading and the packed point goes through the owner's +0x24 hook, and sub-state 2 ends
  * the tick when the step hits a wall, finds no floor within 0x300, or the +0x20 distance reaches
  * 32.0. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
-typedef struct { Vec3 c; int r; } Sphere;
-typedef struct { Vec3 center; Vec3 axisX; Vec3 axisY; Vec3 axisZ; int extent[3]; } Obb;
+typedef struct { VecFx32 c; int r; } Sphere;
+typedef struct { VecFx32 center; VecFx32 axisX; VecFx32 axisY; VecFx32 axisZ; int extent[3]; } Obb;
 typedef struct { u16 id; u8 kind; u8 cmd; Quat q; u8 pos[9]; u8 pad[3]; } Msg32;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
@@ -27,28 +29,28 @@ struct hw60 { unsigned short lo : 8, hi : 8; };
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
 extern int Ov107_CollectSphereOverlaps(int body, Sphere *src, int *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectCapsuleOverlaps(int body, Obb *query, int *out);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
-extern void *Collision_CastRay(void *collision, Vec3 *origin, Vec3 *dir);
-extern int *Collision_CastSphereEx(void *collision, Vec3 *origin, Vec3 *dir, int radius, void *ignore);
-extern int VEC_Mag(const Vec3 *v);
-extern const Vec3 data_02042264;
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
+extern void *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *dir);
+extern int *Collision_CastSphereEx(void *collision, VecFx32 *origin, VecFx32 *dir, int radius, void *ignore);
+extern int VEC_Mag(const VecFx32 *v);
+extern const VecFx32 data_02042264;
 
 /* The three-point trail at +0x40 of the state. Codegen notes: the leg's far end is addressed as a
  * byte offset from the trail (`i * 12 + 12`, an offset induction variable next to the walker of
  * pts[i]) and the shift loop reads the trail as a member of the state view; the loop tests
  * `i - 1 >= 0` (subs/bpl). */
-struct TrailState { char pad[0x40]; Vec3 pts[3]; };
+struct TrailState { char pad[0x40]; VecFx32 pts[3]; };
 void Ov266_TrailTick(int *node)
 {
     int *state = (int *)node[1];
@@ -56,12 +58,12 @@ void Ov266_TrailTick(int *node)
     int n;
     int world = *(int *)(*state + 4);
     Sphere sphere;
-    Vec3 d;
+    VecFx32 d;
     Quat quat;
     int hits[4];
     Obb obb;
-    Vec3 dir;
-    Vec3 at;
+    VecFx32 dir;
+    VecFx32 at;
     Fx32 scratchZ;
     Fx32 scratchY;
     Fx32 scratchX;
@@ -71,9 +73,9 @@ void Ov266_TrailTick(int *node)
     sphere = *(Sphere *)(*state + 0x74);
     n = Ov107_CollectSphereOverlaps(*(int *)(*state + 0x38c), &sphere, hits);
     for (i = 0; n == 0 && i + 1 < 3; i++) {
-        Vec3 *cur = &((Vec3 *)(state + 0x10))[i];
+        VecFx32 *cur = &((VecFx32 *)(state + 0x10))[i];
 
-        VEC_Subtract((Vec3 *)((char *)(state + 0x10) + (i * 12 + 12)), cur, &d);  /* pts[i + 1] */
+        VEC_Subtract((VecFx32 *)((char *)(state + 0x10) + (i * 12 + 12)), cur, &d);  /* pts[i + 1] */
         obb.extent[2] = VEC_Normalize(&d, &obb.axisZ) / 2;
         if (obb.extent[2] == 0) {
             break;
@@ -103,14 +105,14 @@ void Ov266_TrailTick(int *node)
         }
     }
     VEC_Subtract((void *)state[1], (void *)(state + 0xd), &d);
-    *(Vec3 *)(state + 0xd) = *(Vec3 *)state[1];
+    *(VecFx32 *)(state + 0xd) = *(VecFx32 *)state[1];
     state[0xb] += *(int *)(*node + 0x2c);
     if (state[0xb] >= 0x300) {
         state[0xb] = 0;
         for (i = 2; i - 1 >= 0; i--) {
             ((struct TrailState *)state)->pts[i] = ((struct TrailState *)state)->pts[i - 1];
         }
-        ((struct TrailState *)state)->pts[0] = *(Vec3 *)state[1];
+        ((struct TrailState *)state)->pts[0] = *(VecFx32 *)state[1];
     }
     QuatFromAxisAngle(&quat, &data_02042264, func_020050b4(-d.x, -d.z));
     {
@@ -131,12 +133,12 @@ void Ov266_TrailTick(int *node)
             (*(void (**)(int, Msg32 *, int))(*state + 0x24))(*state, &msg, 0x20);
         }
     }
-    if (Collision_CastRay(*(void **)(world + 0x7c), (Vec3 *)state[1], &d) != 0) {
+    if (Collision_CastRay(*(void **)(world + 0x7c), (VecFx32 *)state[1], &d) != 0) {
         *(u8 *)(*state + 0x1c7) = 2;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    floor = Collision_CastSphereEx(*(void **)(world + 0x7c), (Vec3 *)state[1], &d, 0x300, 0);
+    floor = Collision_CastSphereEx(*(void **)(world + 0x7c), (VecFx32 *)state[1], &d, 0x300, 0);
     if (floor != 0 && floor[2] == 0) {
         *(u8 *)(*state + 0x1c7) = 2;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);

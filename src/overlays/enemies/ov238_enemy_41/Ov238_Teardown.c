@@ -1,6 +1,8 @@
 /* Teardown of the ov238 actor: while it is shown (+0x60 bit 7) its +0x3a8 effect stops (0203c650) and
  * clears; then the base teardown runs. */
+
 #include "nitro/types.h"
+
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 
 extern void TaskList_FinishByTag(int model, int handle);

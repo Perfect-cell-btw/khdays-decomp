@@ -5,6 +5,7 @@
  * the locked fallback text or the entry-specific record, remeasures it, draws it, and flushes
  * the tile-text surface.
  */
+
 #include "nitro/types.h"
 
 extern u8 *Ov025_GetPageA(void);

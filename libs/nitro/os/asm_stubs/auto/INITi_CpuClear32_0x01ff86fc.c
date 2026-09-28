@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* Second linked copy of the NitroSDK startup clear primitive. */
+
+#include "nitro/types.h"
+
 asm void INITi_CpuClear32_0x01ff86fc(register u32 value,
                                     register void *destination,
                                     register u32 size)

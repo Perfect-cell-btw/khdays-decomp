@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov218_Construct (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov218_Construct (not yet decompiled) */
 const int data_ov218_020cf30c[1] = {
     1026,
 };

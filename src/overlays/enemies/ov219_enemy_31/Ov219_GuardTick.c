@@ -3,13 +3,14 @@
  * +0x3e flag is clear, the +4 item's +0xa8 byte is cleared and the flag set. Once the item is
  * idle the actor plays animation 8, publishes a zero vector to it with mode 4 (flag 2) and hands
  * off to the next guard state. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
-extern void func_ov107_020c0b90(int actor, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const struct Vecx32 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov219_GuardEnd(int *node);
 
 void Ov219_GuardTick(int *node)

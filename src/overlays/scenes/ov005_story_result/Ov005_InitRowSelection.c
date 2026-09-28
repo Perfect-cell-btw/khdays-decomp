@@ -2,6 +2,7 @@
  * the first is empty) and the scrollbar. */
 
 #include "nitro/types.h"
+
 typedef struct Ov005Context {
     char opaque[0x4bfc];
     u8 unknown4bfc,activeRow,firstVisibleItem,unknown4bff;

@@ -4,6 +4,7 @@
  * window and the cursor (+2) move up nine topics, or up to the top when fewer remain.  The
  * row base (+0x64) resets, the phase bits (0-1 of +0xc) become 1, the cursor sound plays
  * (02033b78 0 / 0) and the rows are refreshed (0209e3f8). */
+
 #include "nitro/types.h"
 
 typedef struct Ov025TutorialList {

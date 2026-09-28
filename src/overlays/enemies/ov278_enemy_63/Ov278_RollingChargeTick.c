@@ -9,11 +9,13 @@
  * 8 ticks, reaction 0 mode 0x4e fires there and the velocity bounces off it at full speed. The +0x28
  * timer accumulates the frame rate; past 5.0 the +4 part's +0xa8 flag clears and the tick hands
  * over to Ov278_ReactDecayAimAndCancelAction. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -34,7 +36,7 @@ extern int VEC_Normalize(const void *v, void *out);
 extern long long func_020201b8(long long a, long long b);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern const Cmd14 data_ov278_020d638e;
 extern void Ov278_ReactDecayAimAndCancelAction(int *node);
@@ -50,14 +52,14 @@ void Ov278_RollingChargeTick(int *node)
     Fx32 scratchX;
     int hits[4];
     Segment seg;
-    Vec3 neg;
-    Vec3 refl;
-    Vec3 push;
-    Vec3 raw;
+    VecFx32 neg;
+    VecFx32 refl;
+    VecFx32 push;
+    VecFx32 raw;
     Cmd14 msg;
-    Vec3 neg2;
-    Vec3 refl2;
-    Vec3 normal;
+    VecFx32 neg2;
+    VecFx32 refl2;
+    VecFx32 normal;
     long long q;
     int accel;
     int cap;
@@ -106,7 +108,7 @@ void Ov278_RollingChargeTick(int *node)
     state[0x10] = 0;
     VEC_Normalize(state + 0xf, state + 0xf);
     ScaleVec3Fx12(speed, state + 0xf, state + 0xf);
-    *(Vec3 *)(state + 6) = *(Vec3 *)(state + 0xf);
+    *(VecFx32 *)(state + 6) = *(VecFx32 *)(state + 0xf);
     cb = (u8 *)state;
     for (k = 0; k < 4; k++) {
         if (cb[k + 0x4c] != 0) {
@@ -129,7 +131,7 @@ void Ov278_RollingChargeTick(int *node)
             continue;
         }
         msg = data_ov278_020d638e;
-        raw = *(Vec3 *)(hits[i] + 0x74);
+        raw = *(VecFx32 *)(hits[i] + 0x74);
         raw.y += 0x800;
         PACK(msg, scratchX, *(Fx32 *)&raw.x, 5);
         PACK(msg, scratchY, *(Fx32 *)&raw.y, 8);

@@ -3,19 +3,20 @@
  * the frame rate x 3; without a nearest target (020cab14, kept in +0x60) sub-state 2 is requested,
  * otherwise the +0x10 step heads for it (Ov257_SteerToTarget) and, once the +0xc idle byte clears,
  * sub-state 2 is requested as well. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int queryTableEntry(int rig, int channel);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern int Ov257_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov257_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov257_BiteChargeTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
 
     {
@@ -40,7 +41,7 @@ void Ov257_BiteChargeTick(int *node)
         return;
     }
     Ov257_SteerToTarget(state, state[0x18], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     if (*(unsigned char *)state[3] != 0) {
         return;
     }

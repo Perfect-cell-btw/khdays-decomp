@@ -23,6 +23,7 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define ACTION_BIT 4
 #define NODE_NO_ANIM 0x20
@@ -43,12 +44,6 @@
 #define FLAGS2_IN_STEP 0x100ULL
 #define FLAGS2_REQUEST 0x2ULL
 #define FLAGS2_SKILL 0x80ULL
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 /* Ov022ActorNode */
 struct ActorNode {
@@ -77,9 +72,9 @@ struct Actor {
     u8 pad005c[0x408];
     u64 nFlags2;                 /* 0x0464 */
     u8 pad046c[0x10];
-    struct VecFx32 vecDrift;     /* 0x047c */
+    VecFx32 vecDrift;     /* 0x047c */
     u8 pad0488[0x10];
-    struct VecFx32 vecStep;      /* 0x0498 */
+    VecFx32 vecStep;      /* 0x0498 */
     u8 pad04a4[0x10];
     int nInterruptCharge;        /* 0x04b4 */
     u8 pad04b8[0x14];
@@ -104,7 +99,7 @@ extern int Ov022_GetByte2770(struct Actor *pActor);
 extern int func_ov022_020940a0(u8 *pBlk, int nAnimPos);
 extern int func_ov022_02094120(u8 *pBlk, int nAnimPos);
 extern void Ov022_SendInterruptRecord(struct Actor *pActor);
-extern void Ov022_TakeDriftStep(struct Actor *pActor, struct VecFx32 *pOutStep);
+extern void Ov022_TakeDriftStep(struct Actor *pActor, VecFx32 *pOutStep);
 extern void func_ov022_02097038(struct Actor *pActor, int nPos);
 /* Ov022_ActorSetState */
 extern int Ov022_ActorSetState(struct Actor *pActor, int nState);
@@ -112,13 +107,13 @@ extern void func_ov022_0209c700(struct Actor *pActor);
 extern int Anim_GetFrame(u16 *pAnimFlags, int nArg);
 /* SceneNode_Enable */
 extern void SceneNode_Enable(u16 *pAnimFlags);
-extern void VEC_Add(const struct VecFx32 *pA, const struct VecFx32 *pB,
-                    struct VecFx32 *pOut);
+extern void VEC_Add(const VecFx32 *pA, const VecFx32 *pB,
+                    VecFx32 *pOut);
 
 int Ov022_StepInterruptible(struct Actor *pActor)
 {
-    struct VecFx32 vecDrift;
-    struct VecFx32 vecMove;
+    VecFx32 vecDrift;
+    VecFx32 vecMove;
     int nRet;
     int bEnd;
 

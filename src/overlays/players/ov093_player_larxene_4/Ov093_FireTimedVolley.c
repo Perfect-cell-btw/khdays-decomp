@@ -19,9 +19,9 @@
  * and stored after nDirY, which is what holds it in r1 across the table lookups. And the flag
  * test is the 64-bit spelling from the ov044 twin: the low word of a u64 AND loads into r1.
  */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Emit {
     char pad00[0xc];
@@ -42,7 +42,7 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;
@@ -52,7 +52,7 @@ struct Params {
 struct EffectRec {
     u8 bSlot;
     u8 pad01[3];
-    struct Vec3 vPos;
+    VecFx32 vPos;
     u16 uScale;
     short nAngle;
     u8 bVariant;
@@ -73,7 +73,7 @@ void Ov093_FireTimedVolley(char *self)
 {
     struct Emit emit;
     struct Params prm;
-    struct Vec3 at;
+    VecFx32 at;
     struct EffectRec rec;
     int angle;
     int idx;
@@ -144,7 +144,7 @@ void Ov093_FireTimedVolley(char *self)
             continue;
         }
         variant = Session_RandNextScaled(3);
-        at = *(struct Vec3 *)(self + 0x2c8 + 0x2400);
+        at = *(VecFx32 *)(self + 0x2c8 + 0x2400);
         r = Session_RandNext() - 0x800;
         at.x += (int)(((s64)r * 0x99a + 0x800) >> 12);
         r = Session_RandNext() - 0x800;

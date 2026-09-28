@@ -23,6 +23,7 @@
  *     strh r0, [sp, #2]
  *     strh r2, [sp]
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov149State Ov149State;

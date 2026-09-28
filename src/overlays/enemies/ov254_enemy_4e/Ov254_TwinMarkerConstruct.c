@@ -2,28 +2,30 @@
  * sets bits 1-3, 5 and 6 of the +0x60 high byte and bits 2-4 of +0x1ae, the +0x64 pose (0, 1, 0,
  * tiny scale), builds the two +0x384 / +0x388 items (poses 0x46 / 0x47 of the +0x38c pool), flags
  * them (+0x5c bit 0) and subscribes both to +0x9c. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 struct Items { char pad[0x384]; int item[2]; };
 struct b1 { unsigned int b0 : 1; };
 
 extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov254_ReleaseSubObjects(void);
 extern void Ov254_DrawRiders(void);
 extern void Ov254_TwinMarker_CreateAiTask(void);
 extern void Ov254_BindRiderChannels(void);
 
-static inline void SetXYZ(Vec3 *v, int x, int y, int z) {
+static inline void SetXYZ(VecFx32 *v, int x, int y, int z) {
     v->x = x;
     v->y = y;
     v->z = z;
 }
 
-static inline void VecSet(Vec3 *v, int x, int y, int z)
+static inline void VecSet(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -33,7 +35,7 @@ static inline void VecSet(Vec3 *v, int x, int y, int z)
 void Ov254_TwinMarkerConstruct(char *self)
 {
     int pool = *(int *)(self + 0x38c);
-    Vec3 *pose;
+    VecFx32 *pose;
     int i;
 
     *(Callback *)(self + 0x8) = Ov254_ReleaseSubObjects;
@@ -46,7 +48,7 @@ void Ov254_TwinMarkerConstruct(char *self)
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0x6e) << 0x18) >> 0x10);
     }
     *(u16 *)(self + 0x100 + 0xae) |= 0x1c;
-    pose = (Vec3 *)(self + 0x64);
+    pose = (VecFx32 *)(self + 0x64);
     *pose = data_02041dc8;
     VecSet(pose, 0, *(int *)(self + 0x70) = 1, 0);
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x46));

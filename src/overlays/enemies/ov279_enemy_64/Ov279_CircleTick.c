@@ -5,21 +5,23 @@
  * height) and the +0x1c facing aims at the target. An attack chosen by Ov279_DecideAttackByDistanceRoll ends the
  * tick; beyond 14.0 the tick goes back to Ov279_StalkTick, within 3.0 on to
  * Ov279_BackOffTick, and beyond the owner's +0x2d8 leash sub-state 2 is requested. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Bits40 { int b0 : 1, b1 : 1; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
-extern void Mtx33_LookAt(int *dst, const Vec3 *a, const Vec3 *b, const void *c);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
+extern void Mtx33_LookAt(int *dst, const VecFx32 *a, const VecFx32 *b, const void *c);
 extern void Quat_FromMtx33(void *dst, const int *src);
 extern int Ov279_DecideAttackByDistanceRoll(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 extern void Ov279_StalkTick(int *node);
 extern void Ov279_BackOffTick(int *node);
 
@@ -28,7 +30,7 @@ void Ov279_CircleTick(int *node)
     int target;
     int *state = (int *)node[1];
     int owner;
-    Vec3 d;
+    VecFx32 d;
     int mtx[9];
     int t;
     int o;
@@ -56,7 +58,7 @@ void Ov279_CircleTick(int *node)
     bob = data_0203d210[ANG2IDX(FX_MUL(state[0x17], 0x3244) / 2) * 2] / 2 + 0x4000;
     state[0x18] = bob;
     state[0xd] = height > bob ? -0x80 : 0x80;
-    Mtx33_LookAt(mtx, (Vec3 *)(target + 0x74), (Vec3 *)state[0x13], &data_02042264);
+    Mtx33_LookAt(mtx, (VecFx32 *)(target + 0x74), (VecFx32 *)state[0x13], &data_02042264);
     Quat_FromMtx33(state + 7, mtx);
     if (Ov279_DecideAttackByDistanceRoll(node) != 0) {
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);

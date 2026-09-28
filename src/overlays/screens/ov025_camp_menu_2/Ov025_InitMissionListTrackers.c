@@ -7,6 +7,7 @@
  * tags 0 / 1 are disabled and tag 2 enabled.  Widgets 0x35 and 0x36 of block
  * 4a80 get callbacks 02073fe8 and 0207403c.
  */
+
 #include "nitro/types.h"
 
 #define TRACKER_MASK 0xffff

@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov022_InitUiSubsystem (02085f9c): Ov022DefaultValues data_ov022_020b226c; */
+
 #include "nitro/types.h"
 
-/* read by Ov022_InitUiSubsystem (02085f9c): Ov022DefaultValues data_ov022_020b226c; */
 const u8 data_ov022_020b226c[16] = {
     0, 0, 0, 0, 255, 63, 0, 0, 255, 127, 0, 0, 255, 191, 0, 0,
 };

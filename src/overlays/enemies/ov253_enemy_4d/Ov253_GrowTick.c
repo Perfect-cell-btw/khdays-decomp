@@ -5,7 +5,9 @@
  * coordinates goes through the actor's +0x24 hook, the timer restarts, reaction 0x16b/8 fires
  * on the item at that anchor and the node moves to 020d2db0. Codegen: the anchor is packed
  * through Fx32 wrapper copies (ov269_3930 idiom). */
+
 #include "nitro/types.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

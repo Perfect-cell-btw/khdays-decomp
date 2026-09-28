@@ -1,7 +1,9 @@
 #pragma opt_common_subs off
 /* NODEMIX requires at least one contribution in a validated SBC stream. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
+
 typedef struct MtxFx33 { fx32 aM[9]; } MtxFx33;
 typedef struct MtxFx43 { fx32 aM[12]; } MtxFx43;
 typedef struct MtxFx44 { fx32 aM[16]; } MtxFx44;

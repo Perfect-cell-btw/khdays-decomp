@@ -1,8 +1,5 @@
-typedef struct Vec3 {
-    int x;
-    int y;
-    int z;
-} Vec3;
+
+#include "nitro/fx.h"
 
 typedef struct Ov002Piece Ov002Piece;
 
@@ -12,12 +9,12 @@ typedef struct Ov002Owner {
 } Ov002Owner;
 
 extern int Ov022_GetEntryField66(int nPeer);          /* peer -> owner slot */
-extern Vec3 *func_ov022_020881f8(int nPeer);        /* where the peer is */
+extern VecFx32 *func_ov022_020881f8(int nPeer);        /* where the peer is */
 extern int Ov002_Event_GetField18(void);
 extern Ov002Owner *Ov002_GetPieceOwner(int nSlot);
 extern Ov002Piece **List_First(void *pList);     /* first */
 extern Ov002Piece **List_Next(void *pList);     /* next */
-extern int Ov002_PieceAnswersForPoint(Ov002Piece *pPiece, const Vec3 *pPos, int nArg);
+extern int Ov002_PieceAnswersForPoint(Ov002Piece *pPiece, const VecFx32 *pPos, int nArg);
 
 /* Asks every piece the peer owns whether it answers for the peer's position,
  * and stops at the first that does.
@@ -29,7 +26,7 @@ extern int Ov002_PieceAnswersForPoint(Ov002Piece *pPiece, const Vec3 *pPos, int 
  */
 int Ov002_AskPiecesAboutPeer(int nPeer, int nArg)
 {
-    Vec3 vPos;
+    VecFx32 vPos;
     Ov002Piece **ppPiece;
     Ov002Piece *pPiece;
     Ov002Owner *pOwner;

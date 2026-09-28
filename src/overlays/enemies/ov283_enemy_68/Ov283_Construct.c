@@ -6,12 +6,14 @@
  * 020ced9c helpers (+0x39c) and sixteen 020cf21c helpers (+0x3a4), builds the six hidden sub-items of
  * data_ov283_020cfb4c into the +0x3ec pair table, sets the +0x3e8 threshold to 70 % and loads sound
  * 0x17e (with a +0x3e4 partner) or 0x173. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[6]; } IdTable6;
-typedef struct { Vec3 min; Vec3 max; } Bounds;
-typedef struct { Vec3 pos; int scale; } Placement;
+typedef struct { VecFx32 min; VecFx32 max; } Bounds;
+typedef struct { VecFx32 pos; int scale; } Placement;
 struct Pair { int res; int handle; };
 struct Ov283Parts { char pad[0x39c]; int small[2]; int helpers[16]; char pad3e4[4]; int threshold; struct Pair items[6]; };
 

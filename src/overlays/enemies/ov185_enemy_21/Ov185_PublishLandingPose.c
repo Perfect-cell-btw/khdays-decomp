@@ -9,25 +9,27 @@
  * instructions come out different.
  *
  * One of three byte-identical siblings. */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
-static inline void VEC_Set(struct vec3 *v, int x, int y, int z) {
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z) {
     v->x = x;
     v->y = y;
     v->z = z;
 }
 
-extern void Ov107_MoveNodeAndRelayout(int obj, struct vec3 *v);
+extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *v);
 extern void SetIndexedSlot(int self, int idx, int cb);
 
 void Ov185_PublishLandingPose(int *self) {
     int *state = (int *)self[1];
-    struct vec3 v;
+    VecFx32 v;
 
     if ((((struct hw60 *)(*state + 0x60))->lo & 1) == 0) {
         return;
     }
-    { struct vec3 *p = (struct vec3 *)state[0x11];
+    { VecFx32 *p = (VecFx32 *)state[0x11];
       VEC_Set(&v, p->x, p->y + 0xc00, p->z); }
     Ov107_MoveNodeAndRelayout(*state, &v);
     *(char *)(*state + 0x1c7) = *(signed char *)(*state + 0x1c9);

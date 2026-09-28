@@ -9,6 +9,7 @@
  * are then drawn with the values at +0x1f8.. and their extras at +0x1e8..,
  * and the panel refreshed (0206f35c).
  */
+
 #include "nitro/types.h"
 
 #define PAIR_COUNT   4

@@ -9,6 +9,7 @@
  * the record (or its read variant, +0x40) is marked owned (Ov025_QueryItemFlags 0209e820) when it
  * has nothing pending, the cursor sound plays (02033b78) and the rows refresh (020a076c); +0x22c
  * is cleared. */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ReportsList {

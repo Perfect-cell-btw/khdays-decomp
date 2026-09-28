@@ -4,13 +4,15 @@
  * +0.7853 (45 deg) when the rotated x is below -3.5, -0.7853 above 3.5, else a coin toss
  * (RandNextScaled(2)); the turn is added to the heading, +0x2c/+0x30 and the +0x34/+0x35 bytes
  * are cleared and the node moves to 020d4248. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { int m[9]; } Mtx33;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { int m[9]; } Mtx33;
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
 extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_SwingTick(void);
@@ -19,7 +21,7 @@ extern const short data_0203d210[];
 void Ov245_TurnPlan(int *node) {
     int *state = (int *)node[1];
     Mtx33 m;
-    Vec3 out;
+    VecFx32 out;
     int idx;
 
     {
@@ -33,7 +35,7 @@ void Ov245_TurnPlan(int *node) {
     Ov107_PostTagUpdate(*state, 1, 0);
     idx = (unsigned short)((0x28BE60DB9391LL * state[7] + 0x80000000000LL) >> 44);   /* FX_RAD_TO_IDX */
     MTX_RotY33_(&m, data_0203d210[(idx >> 4) << 1], data_0203d210[((idx >> 4) << 1) + 1]);
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x3b0) + 0x14), &m, &out);
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x3b0) + 0x14), &m, &out);
     if (out.x < -0x3800) {
         state[9] = 0xc91;
     } else if (out.x > 0x3800) {

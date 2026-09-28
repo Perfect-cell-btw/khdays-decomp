@@ -22,6 +22,7 @@
  * table address in two separate entries, and mwcc emits two only for two distinct
  * symbols. With one name the second read reuses the register already holding the
  * base and the second entry never exists. */
+
 #include "nitro/types.h"
 
 typedef struct {

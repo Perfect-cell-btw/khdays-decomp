@@ -2,7 +2,8 @@
  * target at the +0x28 rate, turns it into a quaternion about the world Y axis for the actor's
  * +0xa0 orientation, shifts the +0x10 offset into the actor's +0xf0 and reloads the zero vector
  * into it (the Ov120_RecomputeNodeVectorAndReloadTriple shape). */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(int *out, int *tbl, int r);
@@ -18,8 +19,8 @@ void Ov243_UpdateFacing(int *this)
     QuatFromAxisAngle(scratch, &data_02042264, node[1]);
     Srt_SetRotationQuat(node[0] + 0xa0, scratch);
     {
-        struct vec3 *triple = (struct vec3 *)(node + 4);
-        *(struct vec3 *)(node[0] + 0xf0) = *triple;
-        *triple = *(struct vec3 *)&data_02041dc8;
+        VecFx32 *triple = (VecFx32 *)(node + 4);
+        *(VecFx32 *)(node[0] + 0xf0) = *triple;
+        *triple = *(VecFx32 *)&data_02041dc8;
     }
 }

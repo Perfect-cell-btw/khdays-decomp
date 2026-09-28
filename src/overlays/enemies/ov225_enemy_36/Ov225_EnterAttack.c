@@ -2,13 +2,14 @@
  * zero-vector message of mode 1 goes out with flag 1 only when there is no target, reaction
  * 0x14b mode 6 fires at the +8 point, the +0x75 flag and +0x5c timer clear and the tick hands
  * over to Ov225_SpawnWindupTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 v, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern void Ov225_SpawnWindupTick(int *node);
 
 void Ov225_EnterAttack(int *node)

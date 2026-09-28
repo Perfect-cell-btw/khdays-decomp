@@ -4,6 +4,7 @@
  * the eight cells tagged nFirstTag..nFirstTag+7 in the primary tracker with their
  * tile palette set to nPalette.  Called for tiers 1..3 by 020850c0.
  */
+
 #include "nitro/types.h"
 
 #define REWARD_CELL_COUNT 8

@@ -6,6 +6,7 @@
  * The scene pointer is the file-defined shared-bss global: through the extern Ov011Globals the
  * reload of pScene is not hoisted above the pos.y store. The second pass counts panes with k and
  * slots with i (the other way round the allocator rotates four registers). */
+
 #include "nitro/types.h"
 
 typedef struct UiLayoutPos {

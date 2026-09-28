@@ -4,6 +4,7 @@
  * (+0x18), operand 1 its frame count (+0x1c) and the elapsed count (+0x24) is cleared; the
  * level is applied to both engines (0201e374 / 0201e3cc), the command re-queued (020219b4)
  * for Ov023_CmdStepBrightnessFade (02084cc4) and 0 returned. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023EventBlock {

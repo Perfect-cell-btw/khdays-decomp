@@ -1,6 +1,7 @@
 /* Moves the scrollbar thumb to the list's scroll position. */
 
 #include "nitro/types.h"
+
 typedef struct Ov005SelectionState {
     signed char selectedItem,activeRow,firstVisibleItem,unknown03;
     int maxFirstVisibleItem,cachedRowItemCounts[2],scrollThumbHeight;

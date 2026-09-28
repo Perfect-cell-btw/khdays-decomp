@@ -10,6 +10,7 @@
  * declares it short: the truncation belongs to the callee prototype, not to a
  * cast here. All three list classes of the panel repaint converge on this call.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

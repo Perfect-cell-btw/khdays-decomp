@@ -15,6 +15,7 @@
  * 0x40, 0201133c, 02011174 0x4000 / 1).  Session bits 1 / 2 (data_0204c240) also bring up
  * the sprite objects (02083920).  Finally status bit 1 (+0x8758c) is raised, the dialogue
  * tween (+0x87564) cleared (02035f84) and the poll state Ov023_ScenePoll (02082ec0) returned. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023SceneRequest {

@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* NitroSDK fast word-fill primitive. */
+
+#include "nitro/types.h"
+
 asm void MIi_CpuClearFast(register u32 value,
                           register void *destination, register u32 size)
 {

@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Compute one of this enemy's attack anchor points into `out`: the plain offset {0, 0x2000, (020b8f30): const Vec3 data_ov078_020ba270; */
+
 #include "nitro/types.h"
 
-/* read by Compute one of this enemy's attack anchor points into `out`: the plain offset {0, 0x2000, (020b8f30): const Vec3 data_ov078_020ba270; */
 const u8 data_ov078_020ba270[12] = {
     0, 0, 0, 0, 0, 32, 0, 0, 174, 15, 0, 0,
 };

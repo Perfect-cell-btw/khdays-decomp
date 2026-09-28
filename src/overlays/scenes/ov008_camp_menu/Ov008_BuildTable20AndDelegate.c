@@ -2,6 +2,7 @@
  * with a shadow. */
 
 #include "nitro/types.h"
+
 extern void Text_FormatUtf16(u16 *dst, int count, const void *tmpl, unsigned int a, unsigned int b);
 extern void Ov008_DrawElementWithShadow(int p1, int p2, int p3, int p4, int p5, int table);
 extern int data_ov008_02090808;

@@ -1,7 +1,8 @@
 /* Target distance of the ov240 enemy: acquires the actor's +0x394 target when missing (none
  * requests sub-state 2 and returns -1), aims the +0x10 yaw from the +8 position at the
  * target's +0x190 point and returns the flat distance. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);

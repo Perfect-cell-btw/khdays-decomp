@@ -5,17 +5,12 @@
 #pragma opt_common_subs off
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Ov044TickVectors {
-    struct Vec3 horizontal;
-    struct Vec3 direction;
-    struct Vec3 movement;
+    VecFx32 horizontal;
+    VecFx32 direction;
+    VecFx32 movement;
 };
 
 struct Ov044Node {
@@ -53,8 +48,8 @@ struct Ov044Actor {
     u8 action47a;
     u8 action47b;
     char pad47c[0x10];
-    struct Vec3 anchor48c;
-    struct Vec3 accumulated498;
+    VecFx32 anchor48c;
+    VecFx32 accumulated498;
     char pad4a4[0x28];
     int timer4cc;
     char pad4d0[0x194];
@@ -63,7 +58,7 @@ struct Ov044Actor {
     char pad66c[0x28];
     struct Ov044ActorBits694 bits694;
     char pad695[3];
-    struct Vec3 accumulated698;
+    VecFx32 accumulated698;
     char pad6a4[0x10c];
     int timeline7b0;
 };
@@ -77,15 +72,15 @@ struct Ov044Controller4908 {
 
 extern u32 Session_GetLocalPlayerIndex(void);
 extern int Ov022_ValidateTargetRef(struct Ov044Actor *actor);
-extern struct Vec3 *func_ov022_020ad0c0(struct Ov044Actor *actor);
-extern void VEC_Subtract(const struct Vec3 *a, const struct Vec3 *b,
-                         struct Vec3 *out);
-extern int VEC_Mag(const struct Vec3 *v);
-extern void VEC_Normalize(const struct Vec3 *v, struct Vec3 *out);
+extern VecFx32 *func_ov022_020ad0c0(struct Ov044Actor *actor);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b,
+                         VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int FX_Atan2(int y, int x);
-extern void Ov022_StepAnchorDelta(struct Ov044Actor *actor, struct Vec3 *out);
-extern void VEC_Add(const struct Vec3 *a, const struct Vec3 *b,
-                    struct Vec3 *out);
+extern void Ov022_StepAnchorDelta(struct Ov044Actor *actor, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b,
+                    VecFx32 *out);
 extern void Ov044_EmitTimelineEffect(struct Ov044Controller4908 *self);
 extern void SceneNode_Enable(u16 *nodeFlags);
 extern void *Ov022_ActorSetState(struct Ov044Actor *actor, int mode);

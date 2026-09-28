@@ -2,6 +2,7 @@
  * with the +4 point packed into bytes 5..13 as 24-bit fixed values (each copied through a stack
  * Fx32 first) and byte 4 set when the owner's +0x13c height is more than 0x100 above 0x800, sent
  * through the owner's +0x24 hook (length 0xe). */
+
 #include "nitro/types.h"
 
 typedef struct { int value; } Fx32;

@@ -3,20 +3,22 @@
  * +0x394 owner when it points within ~50 degrees of the hit's own direction, else the hit
  * direction. A sourced hit resets the +0x40 / +0x44 timers, sets +0x4c and clears the +0x34 hit
  * mask; an unsourced one adds bit (short)hit[4] to that 64-bit mask. Returns 1. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct HitWord { unsigned int lo : 16, hi : 16; };
 
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 
 int Ov254_HelperEHitFilter(char *self, int src, unsigned int *hit)
 {
     int *state = *(int **)(self + 0x214);
-    Vec3 dir;
-    Vec3 toOwner;
+    VecFx32 dir;
+    VecFx32 toOwner;
 
     if ((*(u16 *)(self + 0x100 + 0xac) & 1) != 0) {
         return 0;
@@ -25,16 +27,16 @@ int Ov254_HelperEHitFilter(char *self, int src, unsigned int *hit)
         return 0;
     }
     state[1] = src;
-    dir = *(Vec3 *)(hit + 1);
+    dir = *(VecFx32 *)(hit + 1);
     dir.y = 0;
     VEC_Normalize(&dir, &dir);
     VEC_Subtract((void *)(*(int *)(*state + 0x394) + 0x74), (void *)(*state + 0x74), &toOwner);
     toOwner.y = 0;
     VEC_Normalize(&toOwner, &toOwner);
     if (VEC_DotProduct(&toOwner, &dir) >= 0xa49) {
-        ScaleVec3Fx12(0x1000, &toOwner, (Vec3 *)(state + 7));
+        ScaleVec3Fx12(0x1000, &toOwner, (VecFx32 *)(state + 7));
     } else {
-        ScaleVec3Fx12(0x1000, &dir, (Vec3 *)(state + 7));
+        ScaleVec3Fx12(0x1000, &dir, (VecFx32 *)(state + 7));
     }
     if (state[1] != 0) {
         state[0x11] = 0;

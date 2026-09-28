@@ -9,6 +9,7 @@
  * called.  Finally the 32 x 24 grids of slots 0x18..0x1b are cleared and the
  * sub engine's four BG screens wiped.
  */
+
 #include "nitro/types.h"
 
 #define ROW_LIST_COUNT 7

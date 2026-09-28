@@ -4,6 +4,7 @@
  * is set.  String 7 of the hub's string set (+4; 02089894) is drawn on the first surface right
  * aligned (flags 0x821) twice, at (0xff, 3) in colour 1 under (0xfe, 2) in colour 2
  * (Text_DrawDirectional 020301c8), the surface uploaded (020300f8) and slot 9 marked (02084964). */
+
 #include "nitro/types.h"
 
 typedef struct TileSurfaceCfg {

@@ -13,15 +13,10 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define ANGLE_BIAS 0x8000
 #define ANGLE_SHIFT 4
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 struct MtxFx33 {
     int a[9];
@@ -43,7 +38,7 @@ struct Actor {
     u8 pad0520[4];
     int nSlotB;                  /* 0x0524 */
     u8 pad0528[0x3dc];
-    struct VecFx32 vecPrevPos;   /* 0x0904 */
+    VecFx32 vecPrevPos;   /* 0x0904 */
 };
 
 /* kFxSinCosTable, read as one flat array of halfwords; const so the reads can
@@ -51,21 +46,21 @@ struct Actor {
 extern const s16 data_0203d210[];
 
 extern void Ov022_GetSlotPos(struct Actor *pActor, int nSlot,
-                                struct VecFx32 *pOut);
+                                VecFx32 *pOut);
 extern void MTX_RotZ33_(struct MtxFx33 *pMtx, int nSin, int nCos);
 extern void MTX_RotY33_(struct MtxFx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const struct VecFx32 *pVec, const struct MtxFx33 *pMtx,
-                          struct VecFx32 *pOut);
-extern void VEC_Add(const struct VecFx32 *pA, const struct VecFx32 *pB,
-                    struct VecFx32 *pOut);
+extern void MTX_MultVec33(const VecFx32 *pVec, const struct MtxFx33 *pMtx,
+                          VecFx32 *pOut);
+extern void VEC_Add(const VecFx32 *pA, const VecFx32 *pB,
+                    VecFx32 *pOut);
 
-void Ov022_GetEffectAnchor(struct VecFx32 *pOut, struct Actor *pActor)
+void Ov022_GetEffectAnchor(VecFx32 *pOut, struct Actor *pActor)
 {
-    struct VecFx32 vecAnchor;
-    struct VecFx32 vecSpare;
+    VecFx32 vecAnchor;
+    VecFx32 vecSpare;
     struct MtxFx33 mtxFacing;
     struct MtxFx33 mtxReplay;
-    struct VecFx32 vecWorld;
+    VecFx32 vecWorld;
     struct ActorNode *pNode;
     int nIndex;
 

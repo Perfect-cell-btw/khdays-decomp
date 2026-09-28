@@ -4,13 +4,9 @@
  * (x 182, a pitch above 360 mirrored) when given as numbers; operand 0 picks the tracked actor
  * (+0xfc; -1 leaves it, 0x40 none) or, as a string, a placement (0202c3c4) whose position is
  * added to the camera's.  Returns 1. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023Operand {
     s16  nType;               /* 0x00 */

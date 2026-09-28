@@ -5,19 +5,21 @@
  * to +0xc, and once the +4 animator is free animation 6 plays (looping), the timer restarts, +0x54
  * becomes 0.5, the target's height is kept at +0x6c and the tick hands over to
  * Ov272_CarryTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 struct Partner { char pad[0x464]; unsigned long long flags; };
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-extern void Ov107_MoveNodeAndRelayout(int owner, Vec3 *pos);
-extern void Mtx33_LookAt(int *dst, const Vec3 *a, const Vec3 *b, const void *c);
+extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *pos);
+extern void Mtx33_LookAt(int *dst, const VecFx32 *a, const VecFx32 *b, const void *c);
 extern void Quat_FromMtx33(void *dst, const int *src);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 extern void Ov272_CarryTick(int *node);
 
 void Ov272_HoldTick(int *node)
@@ -26,7 +28,7 @@ void Ov272_HoldTick(int *node)
     int *state = (int *)node[1];
     int partner = *(int *)(*state + 0x3ac);
     int mtx[9];
-    Vec3 pos;
+    VecFx32 pos;
     int yaw;
     int rad;
 
@@ -46,7 +48,7 @@ void Ov272_HoldTick(int *node)
     pos.y = *(int *)(target + 0x78);
     pos.z = *(int *)(target + 0x7c) + (int)(((long long)data_0203d210[ANG2IDX(rad) * 2 + 1] * 0x1680LL + 0x800LL) >> 12);
     Ov107_MoveNodeAndRelayout(*state, &pos);
-    Mtx33_LookAt(mtx, (Vec3 *)(target + 0x74), (Vec3 *)state[0x13], &data_02042264);
+    Mtx33_LookAt(mtx, (VecFx32 *)(target + 0x74), (VecFx32 *)state[0x13], &data_02042264);
     Quat_FromMtx33(state + 7, mtx);
     *(Quat *)(state + 3) = *(Quat *)(state + 7);
     if (*(unsigned char *)(state[1] + 0xad) != 0) {

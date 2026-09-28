@@ -6,13 +6,15 @@
  * subscribes it to the parent and finalises it, builds the +0x394 sub-item from the saved kind
  * (registered on the actor, bit 1 of +0x5c raised), and finally a +0x22c list slot takes the
  * +0x64 pose as +0x388 with bit 1 of its +8 low byte raised; +0x38c clears. */
+
+#include "nitro/fx.h"
+
 typedef struct {
     unsigned f : 8;
 } B8;
 
 struct Ov226Saved { int w; };
-typedef struct { int x, y, z; } Vec3;
-static inline void VEC_Set(Vec3 *v, int x, int y, int z) { v->x = x; v->y = y; v->z = z; }
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z) { v->x = x; v->y = y; v->z = z; }
 
 extern int Ov107_PackTextureHandle(int owner, int kind);
 extern int CreateSubitemInstance0xB4(int a);
@@ -51,7 +53,7 @@ void Ov226_ConstructItem(char *self) {
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
-    VEC_Set((Vec3 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
+    VEC_Set((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
 
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, 0x1a));
     SetSubitemState(*(int *)(self + 0x384), 0, 0, 1);

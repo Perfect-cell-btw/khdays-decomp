@@ -9,11 +9,7 @@
  * ARM.
  */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad000[0x78];
@@ -31,12 +27,12 @@ extern int data_ov002_0207f628;
 extern void NNS_G3dMdlSetMdlPolygonIDAll(int nList, int nValue);
 extern void NNS_G3dMdlSetMdlAlphaAll(int nList, int nValue);
 
-extern void Ov002_PlaceWidget_2(char *pWidget, const Ov002Vec3 *pPos, int nTag,
+extern void Ov002_PlaceWidget_2(char *pWidget, const VecFx32 *pPos, int nTag,
                                 int nValue);
 
 void Ov002_DrawHudNumber(int nX, int nY, int nValue)
 {
-    Ov002Vec3 v;
+    VecFx32 v;
     int nTag;
     Ov002HudScene *s;
 

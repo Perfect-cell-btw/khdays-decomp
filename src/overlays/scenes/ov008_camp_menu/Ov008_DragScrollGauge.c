@@ -6,6 +6,7 @@
  * When the pen is up, widget 5 is reset to frame 0 and shown and the drag flag
  * cleared.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008ScrollMenu {

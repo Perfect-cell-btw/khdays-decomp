@@ -3,8 +3,9 @@
  * the flat direction from the +0x24 position to the target's +0x74, the +8 velocity is 0x100
  * along the +0x34 yaw's (sin, 0, cos) and, once the +0x28 busy byte clears, the +0x390 part
  * restarts action 0, animation 3 (looped) plays and the tick hands off to the approach tick. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -20,8 +21,8 @@ extern void Ov205_ApproachTick(int *node);
 void Ov205_BeginApproach(int *node)
 {
     int *state = (int *)node[1];
-    struct Vecx32 dir;
-    struct Vecx32 fwd;
+    VecFx32 dir;
+    VecFx32 fwd;
     int idx;
 
     state[1] = Ov107_FindNearestObject(*state, 0);

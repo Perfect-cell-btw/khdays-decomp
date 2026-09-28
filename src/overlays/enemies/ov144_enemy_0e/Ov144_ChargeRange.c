@@ -3,6 +3,7 @@
  * split by the item's animation progress (queryTableEntry/be68, frame 1 when +0x3f0 is clear):
  * the covered part when +0x3f0 is set, the remainder otherwise; an idle item yields the full
  * range only while +0x3f0 is set. */
+
 #include "nitro/types.h"
 
 extern int queryTableEntry(int item, int a);

@@ -14,14 +14,9 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define RAISE 0xc00
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 /* Ov022ActorNode */
 struct ActorNode {
@@ -34,7 +29,7 @@ struct Actor {
     u8 pad000[0x20];
     struct ActorNode *pNode;     /* 0x0020 */
     u8 pad024[0x468];
-    struct VecFx32 vecPos;       /* 0x048c */
+    VecFx32 vecPos;       /* 0x048c */
 };
 
 /* Ov022AnimBlock */
@@ -74,14 +69,14 @@ struct ReactionCtx {
 extern const short data_0203d210[];
 
 extern void Ov022_MovePartTo(struct ReactionCtx *pCtx, struct SlotPart *pPart,
-                                struct VecFx32 *pAt, struct VecFx32 *pDir);
+                                VecFx32 *pAt, VecFx32 *pDir);
 extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 
 int Ov022_StepWaitingPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                         int nDelta)
 {
-    struct VecFx32 vecAt;
-    struct VecFx32 vecDir;
+    VecFx32 vecAt;
+    VecFx32 vecDir;
     struct Actor *pActor;
     struct SlotTail *pOwner;
     int nTimer;

@@ -1,10 +1,6 @@
 /* Sets the orbit angle, recomputes the camera position and re-aims. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int radius;

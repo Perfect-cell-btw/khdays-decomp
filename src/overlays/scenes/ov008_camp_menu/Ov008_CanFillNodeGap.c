@@ -3,6 +3,7 @@
  * The anchor record category selects which spare-record lookup to call.
  * Return 1 if a lookup succeeds, 0 otherwise.
  */
+
 #include "nitro/types.h"
 
 #define GRID_PAGES 3

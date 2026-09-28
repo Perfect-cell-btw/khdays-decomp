@@ -1,4 +1,5 @@
 #include "nitro/types.h"
+
 typedef struct Ov002PanelSlot {
     int nId, nIcon;
     u16 wRecordedValue, wCurrentValue, wState, wReserved;

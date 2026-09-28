@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* One seat row of the session board, as the readers at 0206bdcc see it. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002SeatRow {
     int nHandle;
     int nUnk04;

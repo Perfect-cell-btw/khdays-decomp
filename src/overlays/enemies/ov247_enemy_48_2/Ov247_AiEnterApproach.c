@@ -9,22 +9,18 @@
  * magic with asr #1 (that shift is /5, not the /10 you get with asr #2); hand-folding it to `x * 6`
  * would change behaviour, since the x*30 intermediate can overflow. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int owner, int kind);
 extern void SetIndexedSlot(int self, int action, void (*cb)(void));
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void Ov247_ArmMovePhase2(void);
 
 void Ov247_AiEnterApproach(int self) {
     int *ctx;
-    Vec3 v;
+    VecFx32 v;
     int target;
 
     ctx = *(int **)(self + 4);
@@ -36,7 +32,7 @@ void Ov247_AiEnterApproach(int self) {
         return;
     }
 
-    VEC_Subtract((const Vec3 *)(target + 0x190), (const Vec3 *)ctx[0x13], &v);
+    VEC_Subtract((const VecFx32 *)(target + 0x190), (const VecFx32 *)ctx[0x13], &v);
     v.y = 0;
     VEC_Normalize(&v, &v);
     ctx[4] = func_020050b4(v.x, v.z);

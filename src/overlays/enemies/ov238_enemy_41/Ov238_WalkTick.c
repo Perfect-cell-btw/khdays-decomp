@@ -3,10 +3,11 @@
  * Once the partner holds no queued move: a target beyond 20.0 makes it turn back (+0x34 set, pose 0x14,
  * motion 0xa); with charges left (+0x2d) and the target at least 6.0 away a charge restarts (pose 0x12,
  * motion 8) and the walk goes on; otherwise it lunges (pose 0x13, motion 9); both lead to 020d1400. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov238_TargetGap(int *node);
-extern void Ov238_TurnVelocity(int *node, Vec3 *vec);
+extern void Ov238_TurnVelocity(int *node, VecFx32 *vec);
 extern void Ov238_TimedCue(int *node, int ticks, int cue, int variant);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
@@ -18,7 +19,7 @@ void Ov238_WalkTick(int *node)
     int *state = (int *)node[1];
     int dist = Ov238_TargetGap(node);
 
-    Ov238_TurnVelocity(node, (Vec3 *)(*(int *)(*state + 0x3e0) + 0x2c));
+    Ov238_TurnVelocity(node, (VecFx32 *)(*(int *)(*state + 0x3e0) + 0x2c));
     state[8] += *(int *)(node[0] + 0x2c);
     Ov238_TimedCue(node, 0xa, 2, 5);
     Ov238_TimedCue(node, 0x23, 1, 4);

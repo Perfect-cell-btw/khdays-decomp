@@ -1,6 +1,7 @@
 /* Whether the ov106 actor may act on its target reference: the base check (020ad114) must pass and the
  * +0x4f0 reference must be of kind 1; a kind-0x3f entity (+0x19c) whose item (+4) is above 1 does
  * not qualify. Twin of ov291 020cca78 with the extra entity test. */
+
 #include "nitro/types.h"
 
 struct TargetRef {

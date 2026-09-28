@@ -7,6 +7,7 @@
  * the count, hides the title, digits and mark and shows the read-variant mark only for a record
  * with nothing pending, and the badge (flags of the record itself; always hidden for reports)
  * only then too. */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ReportsEntry {

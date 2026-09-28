@@ -3,22 +3,24 @@
  * +0x28 clock resets, +0x18 keeps the +0x398 goal and +0xc the origin; bit 0 of the +0x60 high byte is
  * raised and bits 2, 3 and 7 cleared, the +0x388 rig's flag 0 is set, cue 0x145 (13) plays on the +8
  * target and effect 0 at the actor's +0x74 position; the +0x24 count resets and 020d4490 runs next. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov107_BuildAndSendUpdate(int owner, int cue, int kind, void *target);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov249_LeapFlightTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov249_LeapStart(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int target = Ov107_FindNearestObject(*state, 0);
 
     if (target == 0) {
@@ -26,14 +28,14 @@ void Ov249_LeapStart(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)(target + 0x190), (Vec3 *)(*state + 0xb0), &d);
+    VEC_Subtract((VecFx32 *)(target + 0x190), (VecFx32 *)(*state + 0xb0), &d);
     state[0xb] = VEC_Normalize(&d, &d) - 0x3000;
     if (state[0xb] > 0x20000) {
         state[0xb] = 0x20000;
     }
     state[0xa] = 0;
-    *(Vec3 *)(state + 6) = *(Vec3 *)(*state + 0x398);
-    *(Vec3 *)(state + 3) = data_02041dc8;
+    *(VecFx32 *)(state + 6) = *(VecFx32 *)(*state + 0x398);
+    *(VecFx32 *)(state + 3) = data_02041dc8;
     {
         unsigned short hw = *(unsigned short *)(*state + 0x60);
 
@@ -48,7 +50,7 @@ void Ov249_LeapStart(int *node)
     }
     ((B8 *)(*(int *)(*state + 0x388) + 8))->f |= 1;
     Ov107_BuildAndSendUpdate(*state, 0x145, 0xd, (void *)state[2]);
-    func_ov107_020c0b90(*state, 0, *(Vec3 *)(*state + 0x74), 0);
+    func_ov107_020c0b90(*state, 0, *(VecFx32 *)(*state + 0x74), 0);
     state[9] = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov249_LeapFlightTick);
 }

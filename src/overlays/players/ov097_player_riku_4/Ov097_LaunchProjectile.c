@@ -3,14 +3,16 @@
  * bound to its own blend table (+0xe4) and rewound, places it one unit behind the anchor sample
  * along the actor's heading (+0xa8), and builds its orientation at +0x84 as identity rotated by
  * the heading about Y and by the given roll about Z. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);                /* Anim_SetFrameWrapped */
-extern void func_ov022_020ad44c(Vec3 *out, char *self);
-extern void VEC_MultAdd(int scale, const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void func_ov022_020ad44c(VecFx32 *out, char *self);
+extern void VEC_MultAdd(int scale, const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void MTX_Identity33_(Mtx33 *m);
 extern void MTX_RotY33_(Mtx33 *m, int s, int c);
 extern void MTX_RotZ33_(Mtx33 *m, int s, int c);
@@ -20,8 +22,8 @@ extern short data_0203d210[];
 
 void Ov097_LaunchProjectile(char *self, char *slots, int roll, int mode)
 {
-    Vec3 pos;
-    Vec3 dir;
+    VecFx32 pos;
+    VecFx32 dir;
     Mtx33 m;
     Mtx33 mz;
     Mtx33 my;
@@ -53,7 +55,7 @@ void Ov097_LaunchProjectile(char *self, char *slots, int roll, int mode)
     dir.y = 0;
     func_ov022_020ad44c(&pos, self);
     VEC_MultAdd(0x1000, &dir, &pos, &pos);
-    *(Vec3 *)(slot + 0xa8) = pos;
+    *(VecFx32 *)(slot + 0xa8) = pos;
     MTX_Identity33_(&m);
     idx = (u16)(angle + 0x8000) >> 4;
     MTX_RotY33_(&my, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);

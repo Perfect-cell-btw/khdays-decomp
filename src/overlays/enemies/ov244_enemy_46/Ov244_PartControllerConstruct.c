@@ -3,7 +3,9 @@
  * scale 1.5 at +0x70 and clears +0x54; builds the +0x388 part (pose 0x2e of the owner's +0x384
  * pool, subscribed to +0x9c) with channels 0, 1, 2 and 4 bound to (0, 1), then the three hidden
  * sub-items of data_ov244_020d3774 into the +0x38c pair table. */
+
 #include "nitro/types.h"
+
 typedef void (*Callback)(void);
 typedef struct { int id[3]; } IdTable3;
 struct Pair { int res; int handle; };

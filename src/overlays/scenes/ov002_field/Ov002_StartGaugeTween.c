@@ -10,6 +10,7 @@
  *
  * The helper returns the quotient in the low word and the remainder in the
  * high word, so a quotient is a plain cast and a remainder is a shift by 32. */
+
 #include "nitro/types.h"
 
 typedef void (*Ov002CellFn)(int nHandle, int nCell, int nMode);

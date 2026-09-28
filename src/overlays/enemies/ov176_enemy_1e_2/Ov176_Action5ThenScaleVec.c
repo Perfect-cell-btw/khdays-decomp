@@ -4,7 +4,8 @@
  * by 0x600 into the velocity slot at state[2..4].
  *
  * Matched byte-exact 2026-07-23, first compile. One of three byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void Ov107_BuildAndSendUpdate(int obj, int a, int b, int c);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);

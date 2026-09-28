@@ -11,12 +11,7 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct MtxFx33 {
     int m[9];
@@ -35,7 +30,7 @@ struct Actor {
     u8 pad024[0x42];
     short nSlotIndex;                /* 0x066 */
     u8 pad068[0x424];
-    struct VecFx32 vecAim;           /* 0x48c */
+    VecFx32 vecAim;           /* 0x48c */
 };
 
 /* Ov022SlotPart */
@@ -61,7 +56,7 @@ struct ActorSlot {
     u8 pad00a[0x7a];
     u16 nAngle;                      /* 0x084 */
     u8 pad086[0x26];
-    struct VecFx32 vecAim;           /* 0x0ac */
+    VecFx32 vecAim;           /* 0x0ac */
     u8 pad0b8[0x58];
     s8 nSlotIndex;                   /* 0x110 */
     u8 pad111[0x57];
@@ -78,7 +73,7 @@ struct ActorSlot {
     u8 pad17c[0x10];
     u16 nBackAngle;                  /* 0x18c */
     u8 pad18e[2];
-    struct VecFx32 vecBack;          /* 0x190 */
+    VecFx32 vecBack;          /* 0x190 */
 };
 
 /* Ov022ReactionCtx */
@@ -97,22 +92,22 @@ extern short data_0203d210[];
 
 extern void Ov022_BindBlockAnimations(struct ReactionCtx *pCtx, int nTrack,
                                 u16 *pFlags, int nArg3);
-extern struct VecFx32 *func_ov022_0208a96c(struct ReactionCtx *pCtx);
+extern VecFx32 *func_ov022_0208a96c(struct ReactionCtx *pCtx);
 extern void MTX_RotY33_(struct MtxFx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(struct VecFx32 *pIn, struct MtxFx33 *pMtx,
-                          struct VecFx32 *pOut);
-extern void VEC_Add(struct VecFx32 *pA, struct VecFx32 *pB,
-                    struct VecFx32 *pOut);
+extern void MTX_MultVec33(VecFx32 *pIn, struct MtxFx33 *pMtx,
+                          VecFx32 *pOut);
+extern void VEC_Add(VecFx32 *pA, VecFx32 *pB,
+                    VecFx32 *pOut);
 extern int Ov022_ClampReactionForKind10(int nKind, int nArg1);
-extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, struct VecFx32 *pAt,
+extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, VecFx32 *pAt,
                                 int nReaction);
 extern int Ov022_ValidateTargetRef(struct Actor *pActor);
-extern struct VecFx32 *func_ov022_020ad0c0(struct Actor *pActor);
-extern void VEC_Subtract(struct VecFx32 *pA, struct VecFx32 *pB,
-                         struct VecFx32 *pOut);
+extern VecFx32 *func_ov022_020ad0c0(struct Actor *pActor);
+extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB,
+                         VecFx32 *pOut);
 extern int FX_Atan2(int x, int z);
-extern void VEC_MultAdd(int nScale, struct VecFx32 *pVec,
-                        struct VecFx32 *pAdd, struct VecFx32 *pDst);
+extern void VEC_MultAdd(int nScale, VecFx32 *pVec,
+                        VecFx32 *pAdd, VecFx32 *pDst);
 extern void func_ov022_020b15a4(int nTrack, u16 *pBinding);
 
 #define HALF_TURN 0x8000
@@ -124,13 +119,13 @@ extern void func_ov022_020b15a4(int nTrack, u16 *pBinding);
 void Ov022_ArmSlotAtActor(struct ReactionCtx *pCtx)
 {
     struct MtxFx33 mtx;
-    struct VecFx32 vecAim;
-    struct VecFx32 vecDir;
-    struct VecFx32 vecToTarget;
+    VecFx32 vecAim;
+    VecFx32 vecDir;
+    VecFx32 vecToTarget;
     struct Actor *pActor;
     struct ActorSlot *pSlot;
     struct SlotPart *pPart;
-    struct VecFx32 *pOffset;
+    VecFx32 *pOffset;
     struct SlotStamp *pStamp;
     int nReaction;
     int nIndex;

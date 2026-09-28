@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov022_SpawnVoiceCue -- start the cue that goes with an actor's action. (020a48c8): struct CueSet data_ov022_020b25c4; */
+
 #include "nitro/types.h"
 
-/* read by Ov022_SpawnVoiceCue -- start the cue that goes with an actor's action. (020a48c8): struct CueSet data_ov022_020b25c4; */
 const int data_ov022_020b25c4[4] = {
     0, 0, 1, 6,
 };

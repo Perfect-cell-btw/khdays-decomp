@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Constructor of the ov297 enemy: installs the handlers (+8 tick, +0xc draw, +0x1c message, (020d3844): const int data_ov297_020d5690[2]; */
+
 #include "nitro/types.h"
 
-/* read by Constructor of the ov297 enemy: installs the handlers (+8 tick, +0xc draw, +0x1c message, (020d3844): const int data_ov297_020d5690[2]; */
 const int data_ov297_020d5690[2] = {
     2, 3,
 };

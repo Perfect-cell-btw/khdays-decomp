@@ -6,9 +6,9 @@
  * player scaled by 0x266, damage a tenth (0x19a / 4096) of the seat's recorded value
  * (data_0204c678 rows of 0x104 bytes, +0xe), kind 7 (def class 0x1b) or 3, strength 100 and
  * the chest as owner, then marks the seat's bit. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov015PushRequest {
     int  nId;                 /* 0x00 */

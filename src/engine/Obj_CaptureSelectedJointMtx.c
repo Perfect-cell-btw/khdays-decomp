@@ -1,16 +1,11 @@
 /* Saves the current matrix into the matrix cache slot of the selected joint. */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct MtxFx43 {
     s32 value[12];
 } MtxFx43;
-
-typedef struct VecFx32 {
-    s32 x;
-    s32 y;
-    s32 z;
-} VecFx32;
 
 typedef struct RenderMatrixCache {
     u8 pad000[0x514];

@@ -6,28 +6,29 @@
  * the forward vector at half the speed scaled by the (clamped) alignment, +0x1c clears and,
  * once the +0x20 busy byte clears, animation 3 plays, the part runs action 2, the phase resets
  * and the tick hands off to cd2d0. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int queryTableEntry(int item, int a);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);
-extern int Ov107_ActionResource_GetOffsetAndScale(int resource, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern int Ov107_ActionResource_GetOffsetAndScale(int resource, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void Ov107_StartAnim(void *part, int a, int b);
 extern void Ov291_AiSpinTick(void);
 extern int func_020050b4(int x, int z);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 
 void Ov291_ApproachTick(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 fwd;
-    Vec3 at;
-    Vec3 d;
+    VecFx32 fwd;
+    VecFx32 at;
+    VecFx32 d;
     int dist;
     int limit;
     int dot;
@@ -50,8 +51,8 @@ void Ov291_ApproachTick(int node)
             *(unsigned char *)(state + 0xa) = 0;
         }
     }
-    at = *(Vec3 *)(*(int *)(*state + 0x3a0) + (state[9] << 4) + 0x10);
-    VEC_Subtract(&at, (Vec3 *)state[3], &d);
+    at = *(VecFx32 *)(*(int *)(*state + 0x3a0) + (state[9] << 4) + 0x10);
+    VEC_Subtract(&at, (VecFx32 *)state[3], &d);
     dist = VEC_Normalize(&d, &d);
     limit = speed;
     if (dist < limit) {
@@ -62,7 +63,7 @@ void Ov291_ApproachTick(int node)
     if (dot < 0) {
         dot = 0;
     }
-    ScaleVec3Fx12((int)(((long long)limit * dot + 0x800) >> 12) >> 1, &fwd, (Vec3 *)(state + 4));
+    ScaleVec3Fx12((int)(((long long)limit * dot + 0x800) >> 12) >> 1, &fwd, (VecFx32 *)(state + 4));
     state[7] = 0;
     if (*(unsigned char *)state[8] != 0) {
         return;

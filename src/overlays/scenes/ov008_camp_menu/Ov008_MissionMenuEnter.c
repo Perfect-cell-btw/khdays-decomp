@@ -9,7 +9,9 @@
  * (02081864), selects the current row's icon (020819a8), starts the wipe to
  * sub-state 0xe, clears the menu state (+0x2c) and hands over to 0207cd04.
  */
+
 #include "nitro/types.h"
+
 typedef void (*MissionState)(void);
 
 #define ROW_COUNT   4

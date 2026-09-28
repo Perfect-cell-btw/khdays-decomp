@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 #define reg_G3_GXSTAT        (*(REGType32v *)0x4000600)

@@ -8,12 +8,7 @@
  */
 
 #include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 #define END_COUNT 2
 #define SEGMENT_END 0x1000

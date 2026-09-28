@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov091_Weapon_FireStraightShot (020bb490): Vec3 data_ov091_020bc100; */
+
 #include "nitro/types.h"
 
-/* read by Ov091_Weapon_FireStraightShot (020bb490): Vec3 data_ov091_020bc100; */
 const u8 data_ov091_020bc100[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0,
 };

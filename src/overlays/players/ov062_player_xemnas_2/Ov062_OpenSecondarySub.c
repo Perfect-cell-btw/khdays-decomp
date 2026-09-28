@@ -4,6 +4,7 @@
  * data_ov062_020b80c4, and installs the slot's two handlers at +0x50 / +0x54.
  *
  * THUMB. Same shape as Ov092_OpenSecondarySubObjects with a single slot. */
+
 #include "nitro/types.h"
 
 struct ActorSubCfg {

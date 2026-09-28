@@ -11,27 +11,29 @@
  * mode 2 with the zero vector, flagged when there is no target, and reaction 0x14a mode 7
  * fires at the +8 point. Otherwise, once the +4 owner's +0xad byte clears, sub-state 2 is
  * requested and the action ends. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int q[4]; } Quat;
 enum { SPAWN_FAN = 0, SPAWN_AIM = 1 };
 struct Ov221Family { char pad[0x3ec]; int aChildren[4]; };
 
-extern int Ov224_MeasureTargetGap(int *node, Vec3 *dir);
+extern int Ov224_MeasureTargetGap(int *node, VecFx32 *dir);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, const Quat *q, const Vec3 *in);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void Ov224_Projectile_Fire(int self, int mode, Vec3 at, Vec3 facing, Vec3 dir);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 v, u8 flag);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const Quat *q, const VecFx32 *in);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Ov224_Projectile_Fire(int self, int mode, VecFx32 at, VecFx32 facing, VecFx32 dir);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, u8 flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern const Quat data_020420f8;
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
 extern short data_0203d210[];
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
@@ -41,13 +43,13 @@ void Ov224_SpawnWindupTick(int *node)
     int *state = (int *)node[1];
     Quat qHeading;
     Quat qSpread;
-    Vec3 vAt;
-    Vec3 vStep;
-    Vec3 vDir;
-    Vec3 vFacing;
-    Vec3 vToTarget;
-    Vec3 vChildDir;
-    Vec3 vZero;
+    VecFx32 vAt;
+    VecFx32 vStep;
+    VecFx32 vDir;
+    VecFx32 vFacing;
+    VecFx32 vToTarget;
+    VecFx32 vChildDir;
+    VecFx32 vZero;
     int n;
     long i;
     int bNoTarget;
@@ -74,7 +76,7 @@ void Ov224_SpawnWindupTick(int *node)
         vAt.z = 0x1000;
         ScaleVec3Fx12(0x1852, &vAt, &vAt);
         Vec3TransformViaTempMtx(&vAt, &qHeading, &vAt);
-        VEC_Add(&vAt, (Vec3 *)(*(int *)(*(int *)(*state + 0x3ac)) + 0x20), &vAt);
+        VEC_Add(&vAt, (VecFx32 *)(*(int *)(*(int *)(*state + 0x3ac)) + 0x20), &vAt);
         if (bNoTarget == 0) {
             vDir.x = 0;
             vDir.y = 0x1000;
@@ -88,7 +90,7 @@ void Ov224_SpawnWindupTick(int *node)
             Vec3TransformViaTempMtx(&vDir, &qSpread, &data_02042258);
             QuatFromAxisAngle(&qSpread, &data_02042264, -0xdf6);
             if (*(int *)(*state + 0x3e8) != 0) {
-                VEC_Subtract((Vec3 *)(*(int *)(*state + 0x3e8) + 0x190), &vAt, &vToTarget);
+                VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x3e8) + 0x190), &vAt, &vToTarget);
                 VEC_Normalize(&vToTarget, &vToTarget);
                 vDir.y = vToTarget.y;
                 vFacing.y = vToTarget.y;

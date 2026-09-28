@@ -4,7 +4,9 @@
  * The +0x10 point tracks the +0x398 bone's x/z while its y sinks by 30 x rate x 0.5 per frame
  * and places the +4 sub-object; the +0x28 timer accumulates the rate and past 1.0 resets with
  * the +0x30 hit mask before handing over to Ov137_AiDescentProbe. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int q[4]; } Quat;
 
 static inline int FX_Mul(int a, int b) {
@@ -13,20 +15,20 @@ static inline int FX_Mul(int a, int b) {
 
 extern int Ov107_FindNearestObject(int owner, int flag);
 extern void Task_MarkFinished(int *node);
-extern int Ov137_ProbeGround(int *state, Vec3 *dir, Vec3 *out);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *from, const Vec3 *to);
+extern int Ov137_ProbeGround(int *state, VecFx32 *dir, VecFx32 *out);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern void Srt_SetRotationQuat(void *transform, const Quat *q);
-extern void Srt_SetTranslation(void *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(void *transform, const VecFx32 *translation);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov137_AiDescentProbe(int *node);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 void Ov137_DescentTick(int *node)
 {
     int *state = (int *)node[1];
     int step = *(int *)(node[0] + 0x2c) * 30;
-    Vec3 hit;
-    Vec3 down = {0};
+    VecFx32 hit;
+    VecFx32 down = {0};
     Quat q;
 
     state[0xb] = Ov107_FindNearestObject(*state, 0);
@@ -39,12 +41,12 @@ void Ov137_DescentTick(int *node)
         Quat_FromTwoVectors(&q, &data_02042264, &hit);
         Srt_SetRotationQuat((void *)(state[2] + 4), &q);
         state[8] += 0x100;
-        Srt_SetTranslation((void *)(state[2] + 4), (Vec3 *)(state + 7));
+        Srt_SetTranslation((void *)(state[2] + 4), (VecFx32 *)(state + 7));
     }
     state[4] = *(int *)(*(int *)(*state + 0x398) + 0x14);
     state[5] += FX_Mul(step, 0x800);
     state[6] = *(int *)(*(int *)(*state + 0x398) + 0x1c);
-    Srt_SetTranslation((void *)(state[1] + 4), (Vec3 *)(state + 4));
+    Srt_SetTranslation((void *)(state[1] + 4), (VecFx32 *)(state + 4));
     state[0xa] += *(int *)(node[0] + 0x2c);
     if (state[0xa] <= 0x1000) {
         return;

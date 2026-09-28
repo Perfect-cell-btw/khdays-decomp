@@ -6,9 +6,11 @@
  * +0x80 radius, a 5/6 message with that point is broadcast, effect 9 spawns at the origin and
  * +0x434/+0x438 clear. When the rig is free and either held or grounded, Ov227_SetMode (with
  * the +0x420 hold) finishes the script. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
 struct Bits17a { u8 b0 : 1; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -22,9 +24,9 @@ struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void Ov107_BuildAndSendUpdate(char *owner, int id, int mode, void *at);
 extern void func_02031384(int to, void *msg, int size);
-extern void func_ov107_020c0b90(char *actor, int a, Vec3 v, int b);
+extern void func_ov107_020c0b90(char *actor, int a, VecFx32 v, int b);
 extern void Ov227_SetMode(char *self, int hold);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov227_RunSubStateScript(char *self, int *node)
 {
@@ -58,7 +60,7 @@ void Ov227_RunSubStateScript(char *self, int *node)
         }
         if (*(int *)(self + 0x41c) >= 0x600 && (*(u8 *)(self + 0x418) & 0x80) == 0
             && ((struct Bits17a *)(self + 0x17a))->b0 != 0) {
-            *(Vec3 *)(self + 0x428) = *(Vec3 *)(self + 0x180);
+            *(VecFx32 *)(self + 0x428) = *(VecFx32 *)(self + 0x180);
             *(int *)(self + 0x42c) -= *(int *)(self + 0x80);
             {
             Cmd14 msg;

@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 typedef void (*JointScaleCallback)(u32 *result, u32 *scratch,

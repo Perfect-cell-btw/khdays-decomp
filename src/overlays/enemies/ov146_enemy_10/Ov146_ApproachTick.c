@@ -4,14 +4,15 @@
  * and the node moves on to 020cd3b4. Otherwise it walks toward its partner (+8) at up to 0.0234 along
  * the ground-plane heading (+0x2c); within reach (both radii plus 0.0234) the next move is 5, and once
  * the +0x44 timer is out it is 6. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern int RandNextScaled(int bound);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov146_SwoopTick(void);
 extern const short data_0203d210[];
@@ -21,10 +22,10 @@ extern const short data_0203d210[];
 void Ov146_ApproachTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
-    Vec3 unit;
-    Vec3 to;
-    Vec3 dir;
+    VecFx32 d;
+    VecFx32 unit;
+    VecFx32 to;
+    VecFx32 dir;
     int dist;
     int reach;
     int flat;
@@ -34,7 +35,7 @@ void Ov146_ApproachTick(int *node)
         if (*(int *)(*state + 0x3b4) == 0) {
             return;
         }
-        VEC_Subtract((Vec3 *)(*(int *)(*state + 0x3b4) + 0x190), (Vec3 *)(*state + 0xb0), &d);
+        VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x3b4) + 0x190), (VecFx32 *)(*state + 0xb0), &d);
         {
             int range = VEC_Normalize(&d, &d);
 
@@ -50,7 +51,7 @@ void Ov146_ApproachTick(int *node)
         return;
     }
     reach = *(int *)(state[2] + 0x80) + 0x60 + *(int *)(*state + 0x80);
-    VEC_Subtract((Vec3 *)(state[2] + 0xb0), (Vec3 *)(*state + 0xb0), &to);
+    VEC_Subtract((VecFx32 *)(state[2] + 0xb0), (VecFx32 *)(*state + 0xb0), &to);
     dist = VEC_Normalize(&to, &unit);
     to.y = 0;
     flat = VEC_Normalize(&to, &to);
@@ -65,7 +66,7 @@ void Ov146_ApproachTick(int *node)
     if (flat >= 0x60) {
         flat = 0x60;
     }
-    ScaleVec3Fx12(flat, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(flat, &dir, (VecFx32 *)(state + 4));
     if (dist < reach) {
         *(unsigned char *)(*state + 0x1c7) = 5;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);

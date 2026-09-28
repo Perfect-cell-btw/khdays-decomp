@@ -18,14 +18,11 @@
  * itself -- temporaries, post-increment, assignment expressions, volatile,
  * register hints, inline helper, declaration-order permutations -- are all
  * bit-identical and none of them move it. */
-struct Ov120Vec3 {
-    int x;
-    int y;
-    int z;
-};
+
+#include "nitro/fx.h"
 
 struct Ov120Pose {
-    struct Ov120Vec3 position;
+    VecFx32 position;
     int scale;
 };
 
@@ -38,8 +35,8 @@ struct Ov120Bone {
     unsigned char pad[0x14];
 };
 
-extern struct Ov120Vec3 data_ov120_020cdee4;
-extern struct Ov120Vec3 data_02041dc8;
+extern VecFx32 data_ov120_020cdee4;
+extern VecFx32 data_02041dc8;
 extern const unsigned short data_ov120_020cdf2c[];
 extern const unsigned short data_ov120_020cdf38[];
 extern const unsigned short data_ov120_020cdf48[];
@@ -69,7 +66,7 @@ extern void Res_RequestIdPair();
 
 void Ov120_InitializeActor(int param)
 {
-    struct Ov120Vec3 kinds;
+    VecFx32 kinds;
     struct Ov120Pose pose;
     int i;
     int resource;

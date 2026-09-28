@@ -3,12 +3,14 @@
  * takes the +0xc anchor. The timer runs and the claw moves (020d1400 1, 3); once the part's animation
  * ends the orbit count +0x64 = 1, the timer and the +0x6c flag clear, the part takes motion 4 and the
  * node moves on to 020d1d88. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern int Ov256_HelperOrbitHeading(int *node);
 extern void Ov256_AttackHitTestB(int *node, int a, int b);
 extern int Ov107_StartAnim(int part, int motion, int mode);
@@ -28,10 +30,10 @@ void Ov256_ClawOrbitEntryTick(int *node)
 
         MTX_RotY33_(&rot, data_0203d210[idx], data_0203d210[idx + 1]);
     }
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x390) + 0x2c), &rot, (Vec3 *)(state + 4));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x390) + 0x2c), &rot, (VecFx32 *)(state + 4));
     if (state[0x18] >= 0x908) {
         state[0x14] = Ov256_HelperOrbitHeading(node);
-        *(Vec3 *)(state + 0xd) = *(Vec3 *)state[3];
+        *(VecFx32 *)(state + 0xd) = *(VecFx32 *)state[3];
     }
     state[0x18] += *(int *)(node[0] + 0x2c);
     Ov256_AttackHitTestB(node, 1, 3);

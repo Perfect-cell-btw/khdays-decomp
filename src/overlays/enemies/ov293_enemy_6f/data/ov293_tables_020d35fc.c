@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Constructor of the ov293 enemy: installs the handlers (+8 tick, +0xc draw, +0x1c message, (020d1a24): struct v2 data_ov293_020d35fc; */
+
 #include "nitro/types.h"
 
-/* read by Constructor of the ov293 enemy: installs the handlers (+8 tick, +0xc draw, +0x1c message, (020d1a24): struct v2 data_ov293_020d35fc; */
 const int data_ov293_020d35fc[2] = {
     2, 3,
 };

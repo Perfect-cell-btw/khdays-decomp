@@ -5,13 +5,15 @@
  * (< 60) or 9. Airborne: closer than 3.0 -> 5 (< 90) or 6; closer than 8.0 -> 6 (< 20), 8 (< 70), 0xa
  * (< 90) or 9; farther -> 6 (< 50), 8 (< 90) or 9. When a move was picked the idle time is rolled
  * between the +0x224 / +0x228 bounds and 1 is returned, otherwise 0. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Ov260Parts { char pad[0x430]; int parts[2]; };
 struct flags16 { unsigned short lo : 8; unsigned short hi : 8; };
 
 extern int RandNextScaled(int n);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 
 int Ov260_PickMove(int *node)
 {
@@ -21,7 +23,7 @@ int Ov260_PickMove(int *node)
     int shellIdle;
     int gap;
     int i;
-    Vec3 d;
+    VecFx32 d;
 
     if (*(int *)(*state + 0x420) == 0) {
         return 0;
@@ -36,7 +38,7 @@ int Ov260_PickMove(int *node)
                 break;
             }
         }
-        VEC_Subtract((Vec3 *)(*(int *)(*state + 0x420) + 0x190), (Vec3 *)state[4], &d);
+        VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x420) + 0x190), (VecFx32 *)state[4], &d);
         d.y = 0;
         gap = VEC_Normalize(&d, &d);
         gap -= *(int *)(*(int *)(*state + 0x420) + 0x80) + *(int *)(*state + 0x80);

@@ -5,11 +5,13 @@
  * pose 0 is requested. Otherwise the +0x14 timer accumulates the frame rate and, once grounded
  * (+0x17a bit 0) or past 10.0, the message data_ov277_020d3726 carries the +4 point lowered by 1.5,
  * reaction 0x165 mode 9 fires there, the hook receives the message and pose 0 is requested. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -20,10 +22,10 @@ typedef struct { Vec3 center; int nRadius; } Sphere;
 
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
 extern int RandNextScaled(int n);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, void *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -55,12 +57,12 @@ void Ov277_DiveImpactTick(int *node)
     int n;
     int i;
 
-    sphere.center = *(Vec3 *)state[1];
+    sphere.center = *(VecFx32 *)state[1];
     sphere.nRadius = 0x1800;
     n = Ov107_CollectSphereOverlaps(*(int *)(*state + 0x384), &sphere, hits);
     for (i = 0; i < n; i++) {
-        Vec3 push = {0, 0, 0};
-        Vec3 point;
+        VecFx32 push = {0, 0, 0};
+        VecFx32 point;
         Cmd14 msg;
 
         push.x = RandRange(0, 0x1000);
@@ -92,11 +94,11 @@ void Ov277_DiveImpactTick(int *node)
         return;
     }
     {
-        Vec3 raw;
+        VecFx32 raw;
         Cmd14 msg;
 
         msg = data_ov277_020d3726;
-        raw = *(Vec3 *)state[1];
+        raw = *(VecFx32 *)state[1];
         raw.y -= 0x1800;
         PACK(msg, scratch2X, *(Fx32 *)&raw.x, 5);
         PACK(msg, scratch2Y, *(Fx32 *)&raw.y, 8);

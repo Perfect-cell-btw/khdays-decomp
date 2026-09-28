@@ -2,6 +2,7 @@
  * (-1), points the state at the actor's +0xb0 / +0x74 vectors and the +0x384 item's +0xad
  * flag, raises bits 1-4 and 6 of the +0x60 high byte and installs the three sub-nodes
  * (slot 1: 020d2a34, slot 0: 020d2934, slot 2: 020d2a30). */
+
 #include "nitro/types.h"
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

@@ -11,12 +11,7 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct ActorNode {
     unsigned int nFlags;         /* 0x00 */
@@ -35,7 +30,7 @@ struct Actor {
     u8 pad0024[0x40];
     u16 nField64;                /* 0x0064 */
     u8 pad0066[0x416];
-    struct VecFx32 vecDrift;     /* 0x047c */
+    VecFx32 vecDrift;     /* 0x047c */
     u8 pad0488[0x1dc];
     ActorAction pfnPreDraw;      /* 0x0664 */
     u8 pad0668[0x30];
@@ -44,8 +39,8 @@ struct Actor {
     int nStateWordC;             /* 0x06a0 */
 };
 
-extern int VEC_Mag(struct VecFx32 *pVec);
-extern int VEC_Normalize(struct VecFx32 *pOut, struct VecFx32 *pIn);
+extern int VEC_Mag(VecFx32 *pVec);
+extern int VEC_Normalize(VecFx32 *pOut, VecFx32 *pIn);
 extern short FX_Atan2(int x, int y);
 extern int Session_RandNextScaled(int nRange);
 extern void func_ov022_02097038(struct Actor *pActor, int nArg);
@@ -57,7 +52,7 @@ extern void func_ov022_02097038(struct Actor *pActor, int nArg);
 
 void Ov022_TurnAwayFromDrift(struct Actor *pActor, int nArg1, int nArg2, int nArg3)
 {
-    struct VecFx32 vecDrift;
+    VecFx32 vecDrift;
     struct ActorNode *pNode;
     u16 nFacing;
     u16 nAim;

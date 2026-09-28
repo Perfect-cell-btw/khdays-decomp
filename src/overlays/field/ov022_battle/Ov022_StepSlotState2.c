@@ -10,20 +10,16 @@
  * Whatever happens, the slot's own tracks take the frame.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022ActorSlot */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ActorSlot {
     u8 pad000[8];
     u16 nSlotFlags;                  /* 0x008 */
     u8 pad00a[0xa2];
-    struct VecFx32 vecAim;           /* 0x0ac */
+    VecFx32 vecAim;           /* 0x0ac */
     u8 pad0b8[0x58];
     s8 nSlotIndex;                   /* 0x110 */
     u8 pad111[3];
@@ -48,10 +44,10 @@ struct ReactionCtx {
 
 /* Ov022ActionQuery */
 struct ActionQuery {
-    struct VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecPos;           /* 0x00 */
     int nRadius;                     /* 0x0c */
     unsigned int nGroup;             /* 0x10 */
-    struct VecFx32 vecDir;           /* 0x14 */
+    VecFx32 vecDir;           /* 0x14 */
     int nConeLimit;                  /* 0x20 */
     short *pHitIds;                  /* 0x24 */
     int nField28;                    /* 0x28 */
@@ -65,7 +61,7 @@ struct ActionParams {
     int nField0c;                    /* 0x0c */
     u8 nLevel;                       /* 0x10 */
     u8 pad11[3];
-    struct VecFx32 vecField14;       /* 0x14 */
+    VecFx32 vecField14;       /* 0x14 */
     int nField20;                    /* 0x20 */
     s8 nPhase;                       /* 0x24 */
     u8 bFlag0 : 1;                   /* 0x25 bit 0 */
@@ -74,7 +70,7 @@ struct ActionParams {
     u8 pad26[2];
 };
 
-extern const struct VecFx32 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 extern int func_ov022_0208ac10(struct ReactionCtx *pCtx,
                                struct ActionQuery *pQuery,

@@ -1,6 +1,8 @@
 /* Ov002_CreatePlacedPiece: claim, position and register a destructible piece. */
+
 #include "nitro/types.h"
-typedef struct Ov002Vec3 {int x,y,z;} Ov002Vec3;
+#include "nitro/fx.h"
+
 typedef struct Ov002PlaceParams {int nKind,nParamB,nParamA,nParamC,nAngle;} Ov002PlaceParams;
 typedef struct Ov002PiecePlacementBytes {s8 bPlaceKind,bSlotKind;} Ov002PiecePlacementBytes;
 typedef union Ov002PiecePlacementParamB {short nParamB;Ov002PiecePlacementBytes fields;} Ov002PiecePlacementParamB;
@@ -8,20 +10,20 @@ typedef struct Ov002PieceClass {char pad0[0x68];short nRequestA;char pad6a[10];s
 typedef void *Ov002StateFn(void *);
 typedef struct Ov002PieceElement {
     char pad0[0xc];Ov002StateFn *pfnPhase;u8 bBucket,pad11;u16 wFlags,wRequestId;u8 bRequestSlot,bStateDirty;
-    short nAngle;char pad1a[2];Ov002Vec3 vPlace;int nNodeFlags;char aBodyNode[12];int nBuildFlags;u16 wAnimFlags;
+    short nAngle;char pad1a[2];VecFx32 vPlace;int nNodeFlags;char aBodyNode[12];int nBuildFlags;u16 wAnimFlags;
     char pad3e[0x7a];short nHomeAngle;char padba[0xf6];int aClock[1];short nDropScale;u8 bDropsOn:1,nReplays:7;u8 nAnimCounter;
 } Ov002PieceElement;
 extern Ov002PieceElement *Ov002_ClaimPoolEntry(Ov002PieceClass *,int);
 extern int Ov002_PlaceElementNode(void *,void *,Ov002PlaceParams *,int,int,int,int,int,int,int);
-extern void Ov002_BuildSpawnPosition(Ov002Vec3 *,Ov002Vec3 *,Ov002PlaceParams *);
-extern void Actor_SetVecAndSyncChild(void *,Ov002Vec3 *);
+extern void Ov002_BuildSpawnPosition(VecFx32 *,VecFx32 *,Ov002PlaceParams *);
+extern void Actor_SetVecAndSyncChild(void *,VecFx32 *);
 extern Ov002StateFn Ov002_OnPieceDefeated;
 extern void Ov002_PushBucketNode(int,Ov002PieceElement *);
 extern int Ov002_List_SetBit(int,int);
-Ov002PieceElement *Ov002_CreatePlacedPiece(Ov002PieceClass *pClass,u16 nEntry,int nBucket,Ov002Vec3 *pPosition,short nAngle,short nDropScale,u16 nRequestId,u8 nRequestSlot)
+Ov002PieceElement *Ov002_CreatePlacedPiece(Ov002PieceClass *pClass,u16 nEntry,int nBucket,VecFx32 *pPosition,short nAngle,short nDropScale,u16 nRequestId,u8 nRequestSlot)
 {
     Ov002PlaceParams placement;
-    Ov002Vec3 vPlaced;
+    VecFx32 vPlaced;
     Ov002PieceElement *pPiece=Ov002_ClaimPoolEntry(pClass,nEntry);
     int nPlaceAngle=nAngle;
     Ov002_PlaceElementNode(pPiece,pPiece->aBodyNode,&placement,nEntry,pClass->bKind,pClass->nParamA,pClass->placeParamB.nParamB,pClass->nParamC,nPlaceAngle,1);

@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* NitroSDK word copy primitive. */
+
+#include "nitro/types.h"
+
 asm void MIi_CpuCopy32(register const void *source,
                        register void *destination, register u32 size)
 {

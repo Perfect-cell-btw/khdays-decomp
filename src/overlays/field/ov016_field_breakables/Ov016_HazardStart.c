@@ -6,9 +6,9 @@
  * +0x2b8 and applies it through Ov016_HazardSetState (020821f8, without spawning); enables the
  * model node (0202bedc) only if the GameState bit 0 is set; and requests the drop resource
  * pair (0203355c) when the definition has a drop slot (def +0x68 >= 0). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016HazardDef {
     u8 pad_00[0x58];

@@ -5,9 +5,9 @@
  * submits them; if the submit takes and neither busy bit of +0x26bc is set, it marshals record
  * 0 at the +0x26c8 muzzle with the actor's heading. The return value is only defined on the
  * firing path (0), as in the ROM. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Emit {
     char pad00[0xc];
@@ -28,7 +28,7 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;
@@ -38,12 +38,12 @@ struct Params {
 extern void func_ov022_020ad44c(struct Emit *emit, char *self);
 extern void Ov022_ScaleRowValues(char *self, int spin, void *a, void *b);
 extern int Ov022_RunCommandHandlers(char *self, struct Emit *emit, void *params);
-extern void Ov022_MarshalNetworkRecord(char *self, int record, struct Vec3 *at, int scale, unsigned int angle, int kind);
+extern void Ov022_MarshalNetworkRecord(char *self, int record, VecFx32 *at, int scale, unsigned int angle, int kind);
 extern short data_0203d210[];
 
 void *Ov034_FireThirdCountBurst(char *self)
 {
-    struct Vec3 at;
+    VecFx32 at;
     struct Emit emit;
     struct Params prm;
     int angle;
@@ -77,7 +77,7 @@ void *Ov034_FireThirdCountBurst(char *self)
     if (Ov022_RunCommandHandlers(self, &emit, &prm) != 0
         && (*(unsigned int *)(self + 0x26bc) & 1) == 0
         && (*(unsigned int *)(self + 0x26bc) & 0x40) == 0) {
-        at = *(struct Vec3 *)(self + 0x2c8 + 0x2400);
+        at = *(VecFx32 *)(self + 0x2c8 + 0x2400);
         Ov022_MarshalNetworkRecord(self, 0, &at, 0x1000, angle, 0);
     }
     next = 0;

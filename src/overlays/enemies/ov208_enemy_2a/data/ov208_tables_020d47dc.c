@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov208_BounceShotTick (020d2c6c): const Cmd14 data_ov208_020d47dc; */
+
 #include "nitro/types.h"
 
-/* read by Ov208_BounceShotTick (020d2c6c): const Cmd14 data_ov208_020d47dc; */
 const u8 data_ov208_020d47dc[16] = {
     0, 0, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };

@@ -11,6 +11,7 @@
  * ratio of about 1.1 per step, followed by a zero terminator the walker stops
  * on. These are the published IMA values, not a MobiClip variant.
  */
+
 #include "nitro/types.h"
 
 const s8 data_ov024_0209382c[16] = {

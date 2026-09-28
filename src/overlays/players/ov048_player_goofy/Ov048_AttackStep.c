@@ -8,15 +8,17 @@
  * the rig's duration (+0x2f98) or the burst asks for it (step 1, or step 2 which also marks the
  * alternate ending): the enemy hands over to state 0x24 (0x23 for the alternate ending);
  * otherwise an activation rewinds the animation to 0x15000, clears the bit and raises bit 29. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
 extern int Ov022_ClampAngleTowardTarget(char *self, unsigned int angle);            /* Ov022_ClampAngleTowardTarget */
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);            /* ScaleVec3Fx12 */
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);            /* ScaleVec3Fx12 */
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov048_EmitAttackBurst(char *self);
 extern void *Ov022_ActorSetState(char *self, int state);
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);          /* Anim_SetFrameWrapped */
@@ -25,8 +27,8 @@ extern short data_0203d210[];
 
 void *Ov048_AttackStep(char *self)
 {
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     char *rig = data_ov048_020b4b80 + 0x2c + 0x2c00;
     void *next = 0;
     int bDone = 0;
@@ -72,7 +74,7 @@ void *Ov048_AttackStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     r = (*(int (**)(char *))(self + 0x668))(self);
     ((Flags *)(self + 0x694))->b1 = (unsigned char)r;
     if (*(int *)(rig + 0x364) >= *(int *)(rig + 0x36c)) {

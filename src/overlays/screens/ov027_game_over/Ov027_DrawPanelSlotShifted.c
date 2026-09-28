@@ -2,18 +2,14 @@
  * its source row moved down by nShift cells (2 half-rows each) and put back afterwards
  * (Ov027_DrawPanelSlot 02083c40).  Slot 1, the prompt line, is left out while the scene is in
  * state 3 (+0x5d4 of the scene work) without the prompt flag (+0x5e0). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

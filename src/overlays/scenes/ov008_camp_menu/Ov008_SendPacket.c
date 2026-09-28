@@ -7,6 +7,7 @@
  * with Ov008_PacketSentCallback as the completion callback. On a successful hand-off it returns 1
  * with the context left busy (cleared later by the callback); if the send call reports failure
  * it clears the busy flag again and returns 0. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008SendCtx {

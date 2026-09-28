@@ -3,11 +3,12 @@
  * rig is busy (+0xad) the enemy keeps steering along it (Ov227_Steer); once it is free, a
  * d100 below 30 requests move 0x10, the move chooser (Ov227_ChooseMove) may queue another, and
  * otherwise sub-state 2 is requested. */
-typedef struct { int x, y, z; } Vec3;
 
-extern int Ov227_MeasureTargetGap(int *node, Vec3 *dir);
+#include "nitro/fx.h"
+
+extern int Ov227_MeasureTargetGap(int *node, VecFx32 *dir);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
 extern unsigned int RandNextScaled(int n);
 extern int Ov227_ChooseMove(int *node, int dist);
@@ -16,7 +17,7 @@ extern void Ov227_Steer(int *node, int rad);
 void Ov227_WalkTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int dist;
 
     dist = Ov227_MeasureTargetGap(node, 0);

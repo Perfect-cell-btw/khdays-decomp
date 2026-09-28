@@ -4,7 +4,8 @@
  * ids (+0x3a4/+0x3a8), the +8 piece (+0x3ec), the +0xc angle converted from 360ths to 0x6488
  * units (+0x3e8), the +0x10 size class (+0x3bc), the +0x3c vector (+0x3ac) and the five
  * +0x28/+0x14 pairs (+0x3c0/+0x3d4). */
-struct Vecx32 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern void FreeInstanceMemory(void *block);
 extern void *CallocInstance(int size);
@@ -28,7 +29,7 @@ void Ov144_Configure(char *actor, int a, int *rec)
     *(int *)(actor + 0x3ec) = rec[2];
     *(int *)(actor + 0x3e8) = rec[3] * 0x6488 / 360;
     *(int *)(actor + 0x3bc) = rec[4];
-    *(struct Vecx32 *)(actor + 0x3ac) = *(struct Vecx32 *)(rec + 0xf);
+    *(VecFx32 *)(actor + 0x3ac) = *(VecFx32 *)(rec + 0xf);
     for (i = 0; i < 5; i++) {
         ((int *)(actor + 0x3c0))[i] = rec[10 + i];
         ((int *)(actor + 0x3d4))[i] = rec[5 + i];

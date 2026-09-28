@@ -1,4 +1,3 @@
-#include "nitro/types.h"
 
 /* STRANGE, AND LIKELY NOT HOW THE ORIGINAL WAS WRITTEN. Kept by owner decision
  * (2026-09-12) because it is the only form found that matches.
@@ -7,6 +6,9 @@
  * effect is the brief halfword store to the stack that the ROM performs. It is
  * the same kind of type pun as the rejected one-word struct copy cast. Replace
  * it when a plain form that reproduces the stack store is found. */
+
+#include "nitro/types.h"
+
 typedef union {
     s16 value;
     u16 raw;

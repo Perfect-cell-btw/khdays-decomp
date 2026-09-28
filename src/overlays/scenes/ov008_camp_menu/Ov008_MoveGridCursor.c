@@ -22,6 +22,7 @@
  * the "lifted" branches come first; the record local is reused for the
  * cell record.
  */
+
 #include "nitro/types.h"
 
 #define GRID_COLS      5

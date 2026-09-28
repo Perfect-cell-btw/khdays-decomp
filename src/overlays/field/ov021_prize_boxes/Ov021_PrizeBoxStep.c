@@ -14,9 +14,9 @@
  * 0206b84c, else 0x38; 02033d0c).  8: once track 2 ends, state 9 and the terminal state
  * (ov002 0207cea4).  1, 4 and 6 wait.  Then, while the model is bound (bit 2 of +0x12), the
  * node (+0x3c) is drawn (0202aa9c).  Returns 0. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov021Prize {
     char  nType;              /* 0x00: 0 item, 1 munny, 2 keyed object, 3 nothing */

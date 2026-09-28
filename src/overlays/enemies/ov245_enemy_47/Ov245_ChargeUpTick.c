@@ -5,32 +5,34 @@
  * to 020cff94. Under 2.5 the +0xc position eases towards the +0x390 owner's +0x190 anchor (rate
  * 0.83 per 0x88 of the step) and the goal eases towards the position (rate 0.5, capped at 0.25
  * per frame), while the goal's +0x3c0..+0x3c8 scale follows 3/4 of the timer capped at 1.5. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Ov245Actor { char pad[0x394]; int slots[3]; };
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void QuatFromAxisAngle(int *quat, const Vec3 *axis, int angle);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void QuatFromAxisAngle(int *quat, const VecFx32 *axis, int angle);
 extern int RandNextScaled(int scale);
-extern void Ov245_InvokeHookAndRearm(int item, void *anchor, const Vec3 *dir);
-extern void Vec3TransformViaTempMtx(Vec3 *out, const int *quat, const Vec3 *in);
+extern void Ov245_InvokeHookAndRearm(int item, void *anchor, const VecFx32 *dir);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const int *quat, const VecFx32 *in);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042240;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042240;
 extern void Ov245_Carrier_AiStep_QueueAction2OnAnimEnd(void);
 
 void Ov245_ChargeUpTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 n;
-    Vec3 d;
+    VecFx32 n;
+    VecFx32 d;
     int quat[4];
-    Vec3 origin;
-    Vec3 dir;
-    Vec3 v;
+    VecFx32 origin;
+    VecFx32 dir;
+    VecFx32 v;
     int scale;
     int rest;
     int sum;
@@ -47,7 +49,7 @@ void Ov245_ChargeUpTick(int *node) {
         if (scale > 0x1800) {
             scale = 0x1800;
         }
-        VEC_Subtract((Vec3 *)(*(int *)(*state + 0x390) + 0x190), (Vec3 *)(state + 3), &d);
+        VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x390) + 0x190), (VecFx32 *)(state + 3), &d);
         sum = 0;
         for (rest = *(int *)(node[0] + 0x2c); rest > 0; rest -= 0x88) {
             int ratio = FX_Div(rest <= 0x88 ? rest : 0x88, 0x88);
@@ -55,8 +57,8 @@ void Ov245_ChargeUpTick(int *node) {
             sum += (int)(((long long)(0x1000 - sum) * (0x1000 - t) + 0x800) >> 12);
         }
         ScaleVec3Fx12(sum, &d, &d);
-        VEC_Add((Vec3 *)(state + 3), &d, (Vec3 *)(state + 3));
-        VEC_Subtract((Vec3 *)(state + 3), (Vec3 *)(*state + 0x3b4), &d);
+        VEC_Add((VecFx32 *)(state + 3), &d, (VecFx32 *)(state + 3));
+        VEC_Subtract((VecFx32 *)(state + 3), (VecFx32 *)(*state + 0x3b4), &d);
         d.y = 0;
         sum = 0;
         for (rest = *(int *)(node[0] + 0x2c); rest > 0; rest -= 0x88) {
@@ -68,14 +70,14 @@ void Ov245_ChargeUpTick(int *node) {
         if (VEC_Normalize(&d, &n) > 0x400) {
             ScaleVec3Fx12(0x400, &n, &d);
         }
-        VEC_Add((Vec3 *)(*state + 0x3b4), &d, (Vec3 *)(*state + 0x3b4));
+        VEC_Add((VecFx32 *)(*state + 0x3b4), &d, (VecFx32 *)(*state + 0x3b4));
         actor = *state;
         *(int *)(actor + 0x3c0) = scale;
         *(int *)(actor + 0x3c4) = scale;
         *(int *)(actor + 0x3c8) = scale;
         return;
     }
-    origin = *(Vec3 *)(*state + 0x3b4);
+    origin = *(VecFx32 *)(*state + 0x3b4);
     origin.y += 0xa000;
     dir = data_02042258;
     QuatFromAxisAngle(quat, &data_02042264, 0x2182);

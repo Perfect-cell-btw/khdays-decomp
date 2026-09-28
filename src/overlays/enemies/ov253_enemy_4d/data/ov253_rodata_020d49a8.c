@@ -1,8 +1,9 @@
 /* ov253 .rodata tables 0x020d49a8-0x020d4a00 (split by alignment so the objects tile their run). */
 
+/* read by Ov253_HeadButtTick (020d0d18): const Cmd14 data_ov253_020d49a8; */
+
 #include "nitro/types.h"
 
-/* read by Ov253_HeadButtTick (020d0d18): const Cmd14 data_ov253_020d49a8; */
 const u8 data_ov253_020d49a8[16] = {
     0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };

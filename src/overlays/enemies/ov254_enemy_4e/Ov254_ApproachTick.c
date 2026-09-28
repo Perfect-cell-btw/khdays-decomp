@@ -3,11 +3,12 @@
  * height difference to route point 0xb, clamped to +-0x7fff. Within 10.0 pose 0x1a plays, the
  * +0x44 timer clears, the +0x50 start takes the track's +4 and +0x54 the distance to route point
  * 5; the +0x70 flag clears and the node moves to 020cf4e8. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
 
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int Ov254_TrackTargetFlatDistance(int *node);
 extern int Ov254_PanelYForPhase(int *state, int a);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
@@ -21,7 +22,7 @@ static inline int FX_Mul(int a, int b) {
 void Ov254_ApproachTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int dist;
 
     VEC_Subtract(state + 6, (void *)state[2], &d);

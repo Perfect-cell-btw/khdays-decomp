@@ -2,8 +2,10 @@
  * Signed digit -1 suppresses leading zeros; changing digits cross-fade
  * vertically using RGB555 grayscale.
  */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
+
 typedef struct { unsigned char opaque[0x108]; } Ov004DigitGlyph;
 typedef struct {
     Ov004DigitGlyph digitGlyphs[10];

@@ -2,14 +2,16 @@
  * sub-state 2 and ends the state); a negative distance to it ends the state too, else the +0x14
  * velocity is the +0x398 part's +0x2c motion turned by the +0x10 yaw and the idle countdown may
  * end the state. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Ov240_DistanceToTarget(int *node);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern int Ov240_IdleCountdown(int *node, int dist);
 extern short data_0203d210[];
 
@@ -35,7 +37,7 @@ void Ov240_WanderTick(int *node)
     }
     idx = ANG2IDX(state[4]);
     MTX_RotY33_(&mtx, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x398) + 0x2c), &mtx, (Vec3 *)(state + 5));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x398) + 0x2c), &mtx, (VecFx32 *)(state + 5));
     if (Ov240_IdleCountdown(node, dist) != 0) {
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
     }

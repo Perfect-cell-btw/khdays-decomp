@@ -3,10 +3,11 @@
  * hit with the +8 velocity as push; on acceptance the entity's +0x74 position is packed into the
  * overlay's 14-byte template and delivered to the actor's +0x24 message hook, reaction 0x132
  * mode 4 fires there and the id bit is set (through `1 >> id`, as the original does). */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -27,16 +28,16 @@ struct Ov204Owner {
 struct Ov204ChargeState {
     struct Ov204Owner *pOwner;  /* +0x00 */
     int pTarget;                /* +0x04 */
-    Vec3 vVelocity;             /* +0x08 */
+    VecFx32 vVelocity;             /* +0x08 */
     char pad014[0x10];
-    Vec3 *pPos;                 /* +0x24 */
+    VecFx32 *pPos;                 /* +0x24 */
     char pad028[0x1c];
     u8 bHitMask44;              /* +0x44 */
 };
 
 extern int Ov107_CollectSphereOverlaps(struct Ov204Owner *owner, Sphere *sphere, int *out);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov204Owner *a, struct Ov204Owner *b, int kind, Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, Vec3 *at);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov204Owner *a, struct Ov204Owner *b, int kind, VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, VecFx32 *at);
 extern const PosMsg data_ov204_020d366e;
 
 static inline void PackFx24(Fx24 *dst, int v) {
@@ -45,7 +46,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov204ChargeState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov204ChargeState *state, PosMsg *msg, const VecFx32 *src)
 {
     FxVec vDead;
     vDead.x = *(Fx32 *)&src->x;
@@ -63,7 +64,7 @@ void Ov204_ChargeSweep(struct Ov204ChargeState *state)
 {
     Sphere sphere;
     int hits[4];
-    Vec3 at;
+    VecFx32 at;
     PosMsg msg;
     PosMsg tmpl;
     long i;
@@ -79,7 +80,7 @@ void Ov204_ChargeSweep(struct Ov204ChargeState *state)
             if (((state->bHitMask44 >> *(u16 *)(hits[i] + 2)) & 1) == 0) {
                 if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, 2, &state->vVelocity, 0) != 0) {
                     msg = tmpl;
-                    at = *(Vec3 *)(hits[i] + 0x74);
+                    at = *(VecFx32 *)(hits[i] + 0x74);
                     SendPos(state, &msg, &at);
                     Ov107_BuildAndSendUpdate(state->pOwner, 0x132, 4, &at);
                     state->bHitMask44 |= 1 >> *(u16 *)(hits[i] + 2);

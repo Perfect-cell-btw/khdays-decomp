@@ -25,6 +25,7 @@
  *    materialisation exactly as retail schedules it.
  *  - `item` must be declared after `j2`.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov000RecipeIngredient {

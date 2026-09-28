@@ -5,6 +5,7 @@
  * gets the per-slot tick handler; slot 1 is opened from a single block (flags 0x783, speeds
  * 0x1000/0x1800, range 0x12000, kind 0x25) and gets the tick and finish handlers. The
  * assignment orders are the pre-images of the ROM's store orders. */
+
 #include "nitro/types.h"
 
 struct PanelSubCfg {

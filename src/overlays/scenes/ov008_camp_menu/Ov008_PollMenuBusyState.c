@@ -5,6 +5,7 @@
  * is 9 and Ov008_IsSceneState0() reports active. Otherwise returns whether the scene id is 7.
  * The `data_ov008_02090fa0 != 0` re-test in the second condition is deliberate: it matches the
  * ROM, which reuses the null-check flags to predicate the field2c load (ldrne/cmpne). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MenuState {

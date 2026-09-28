@@ -6,12 +6,14 @@
  * data_ov238_020d3674 table are drawn at random into +0x3fc; a placement at the origin with the pose
  * scale fills the +0x38c / +0x3dc handles, the +0x384 helper is created (020d2640) with flag 2 on its
  * body, and sound 0x12e loads. */
+
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { short v[12]; } Order12;
 typedef struct { int id[9]; } IdTable9;
-typedef struct { Vec3 min; Vec3 max; } Bounds;
-typedef struct { Vec3 pos; int scale; } Placement;
+typedef struct { VecFx32 min; VecFx32 max; } Bounds;
+typedef struct { VecFx32 pos; int scale; } Placement;
 struct Pair { int res; int handle; };
 struct Ov238Parts { char pad[0x404]; struct Pair items[9]; };
 
@@ -43,7 +45,7 @@ extern const char data_ov238_020d370c[];
 extern const char data_ov238_020d3718[];
 extern const char data_ov238_020d3724[];
 extern const char data_ov238_020d3730[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov238_Construct(char *self)
 {

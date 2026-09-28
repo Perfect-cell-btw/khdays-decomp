@@ -3,15 +3,17 @@
  * then the one *+0x388 points to) copies the +0x394 body transform into its +0x10 transform and is
  * pulled back along its +0x64 direction by its +0x70 reach, turned by that transform. The base
  * update (020c7ca4) follows. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
 
 extern void TaskList_FinishByTag(int scene, int link);
 extern void Ov107_UnlinkNodeFromOwner(int effect);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern void Srt_SetTranslation(void *srt, const Vec3 *t);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern void Srt_SetTranslation(void *srt, const VecFx32 *t);
 extern void Ov107_AiState_PostTickBase(char *self);
 
 static inline int ClawPart(char *self, int first)
@@ -26,7 +28,7 @@ static inline SrtTransform *ClawXf(char *self, int first)
 
 void Ov245_UpdateClaws(char *self)
 {
-    Vec3 v;
+    VecFx32 v;
     int k;
     int part;
     char *xf;
@@ -47,7 +49,7 @@ void Ov245_UpdateClaws(char *self)
         part = ClawPart(self, first);
         xf = (char *)ClawXf(self, first);
         *(SrtTransform *)xf = *(SrtTransform *)(*(int *)(self + 0x394) + 4);
-        Vec3TransformViaTempMtx(&v, xf, (Vec3 *)(part + 0x64));
+        Vec3TransformViaTempMtx(&v, xf, (VecFx32 *)(part + 0x64));
         ScaleVec3Fx12(*(int *)(part + 0x70), &v, &v);
         VEC_Subtract(xf + 0x10, &v, &v);
         Srt_SetTranslation(xf, &v);

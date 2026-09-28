@@ -2,30 +2,32 @@
  * heading and the +0xc velocity is `dir` at 0.3125. The launch point (owner pose origin nudged
  * 0x10e along x) and the heading / ground-normal orientation are computed but not stored, as in
  * the original. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 
-extern void Vec3TransformViaTempMtx(Vec3 *out, const void *m, const Vec3 *in);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *from, const Vec3 *to);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *m, const VecFx32 *in);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Multiply(Quat *a, Quat *out, Quat *b);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042264;
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
 
-void Ov259_HelperStartFlight(int *state, Vec3 *dir, int heading)
+void Ov259_HelperStartFlight(int *state, VecFx32 *dir, int heading)
 {
-    Vec3 at;
+    VecFx32 at;
     Quat yaw;
     Quat tilt;
 
     *(signed char *)(*state + 0x1c7) = 1;
-    *(Vec3 *)(state + 6) = *dir;
+    *(VecFx32 *)(state + 6) = *dir;
     Vec3TransformViaTempMtx(&at, (void *)(*state + 0xa0), &data_02041dc8);
     at.x += 0x10e;
     state[10] = heading;
     QuatFromAxisAngle(&yaw, &data_02042264, heading);
-    Quat_FromTwoVectors(&tilt, &data_02042264, (Vec3 *)(*state + 0x124));
+    Quat_FromTwoVectors(&tilt, &data_02042264, (VecFx32 *)(*state + 0x124));
     Quat_Multiply(&tilt, &tilt, &yaw);
-    ScaleVec3Fx12(0x500, (Vec3 *)(state + 6), (Vec3 *)(state + 3));
+    ScaleVec3Fx12(0x500, (VecFx32 *)(state + 6), (VecFx32 *)(state + 3));
 }

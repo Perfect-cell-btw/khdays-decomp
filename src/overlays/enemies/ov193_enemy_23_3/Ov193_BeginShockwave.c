@@ -4,19 +4,21 @@
  * box (+0x28..+0x3c = origin +- 0x1800), zeroes the +8 step and the +0x24 timer, and advances
  * to the shockwave handler (020d2c08).
  * The message is a 7-halfword template copy (three-pair loop + one) and the coordinates are
- * mirrored into a volatile Vec3 while they are packed (the stores survive and sink under the
+ * mirrored into a volatile VecFx32 while they are packed (the stores survive and sink under the
  * next load, the first coordinate lands in ip); the state is typed throughout so the
  * zero-vector ldm can hoist over the box stores (cf. Ov141_ConfigHw60CopyVec3ConstThenAdvance). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;
 typedef struct { u16 w[7]; } PosMsg;     /* id, kind/sub, arg + Fx24 pos[3] */
 typedef struct Actor { char pad[0x24]; void (*notify)(struct Actor *, PosMsg *, int); char pad28[0x60 - 0x28]; u16 hw60; } Actor;
-typedef struct { Actor *actor; Vec3 *origin; Vec3 step; char pad14[0x10]; int timer; Vec3 min; Vec3 max; } State;
+typedef struct { Actor *actor; VecFx32 *origin; VecFx32 step; char pad14[0x10]; int timer; VecFx32 min; VecFx32 max; } State;
 
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern PosMsg data_ov193_020d69f6;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov193_ShockwaveTick(void);
 
 static inline void PackFx24(Fx24 *dst, int v) {
@@ -29,8 +31,8 @@ void Ov193_BeginShockwave(int node)
 {
     State *st = *(State **)(node + 4);
     PosMsg msg;
-    volatile Vec3 pos;
-    Vec3 *origin;
+    volatile VecFx32 pos;
+    VecFx32 *origin;
     int v;
 
     msg = data_ov193_020d69f6;

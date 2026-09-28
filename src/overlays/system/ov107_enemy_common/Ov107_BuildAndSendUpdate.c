@@ -12,6 +12,7 @@
  * wrapped value is a struct copy, which mwcc never deletes, and that is what
  * keeps the unread stack copy of the position the ROM has.
  */
+
 #include "nitro/types.h"
 
 typedef struct { int value; } Fx32;

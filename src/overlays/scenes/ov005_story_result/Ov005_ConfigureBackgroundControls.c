@@ -1,5 +1,7 @@
 /* Set tile and screen bases for the result/menu backgrounds on both engines. */
+
 #include "nitro/types.h"
+
 extern void GXS_SetGraphicsMode(int);
 extern void GX_SetGraphicsMode(int,int,int);
 void Ov005_ConfigureBackgroundControls(void) {

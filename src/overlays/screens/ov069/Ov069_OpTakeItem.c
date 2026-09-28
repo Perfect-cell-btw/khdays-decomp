@@ -2,6 +2,7 @@
  * 1..0x3ff are ignored. The free stock is the +0x810 count minus one per slot of the three
  * 40-entry +0xee0 rows holding the id; the amount is subtracted while it fits, otherwise the
  * stock is emptied. */
+
 #include "nitro/types.h"
 
 extern int ScriptVm_ReadOperandInt(void *vm, unsigned short *pc);

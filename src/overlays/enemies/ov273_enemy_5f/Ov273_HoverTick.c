@@ -5,12 +5,14 @@
  * or both ready and the latch hold, nothing more happens; otherwise the second
  * halfword pair of data_ov273_020d6aac goes through the +0x24 hook, pose 7 plays, the +0x1c timer restarts at
  * 0xc00, the +0x64 counter clears and the node moves to 020cfe48. */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct Bits17a { unsigned char b0 : 1, b1 : 1, b2 : 1, b3 : 1; };
 extern void func_ov107_020c0b90();  /* K&R + const vector: hoists the pool load over the latch store */
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
-extern const struct vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern unsigned short data_ov273_020d6aac[];
 extern void Ov273_VolleyTick(void);
 

@@ -5,20 +5,21 @@
  * for it (Ov257_SteerToTarget); with the +0x4c cooldown out a target more than 2.0 above or below,
  * or 5.0 on the timer, picks 0xd; within 2.0 the rig's +0xa8 byte clears and the tick hands over to
  * Ov257_WindUpHoldTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int queryTableEntry(int rig, int channel);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern int Ov257_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov257_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov257_WindUpHoldTick(int *node);
 
 void Ov257_WindUpTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
     int dist;
 
@@ -50,7 +51,7 @@ void Ov257_WindUpTick(int *node)
         return;
     }
     dist = Ov257_SteerToTarget(state, state[0x18], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     if (state[0x13] <= 0) {
         int dy = *(int *)(*state + 0xb4) - *(int *)(state[0x18] + 0x78);
 

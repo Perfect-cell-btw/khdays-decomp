@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Advance 02030788, then map the current 020315c0 slot to a priority table, storing its inde (0204d368): int data_ov004_0205104c; */
+
 #include "nitro/types.h"
 
-/* read by Advance 02030788, then map the current 020315c0 slot to a priority table, storing its inde (0204d368): int data_ov004_0205104c; */
 const int data_ov004_0205104c[20] = {
     10, 0, 16, 11, 14, 12, 1, 4,
     5, 6, 7, 9, 13, 15, 17, 18,

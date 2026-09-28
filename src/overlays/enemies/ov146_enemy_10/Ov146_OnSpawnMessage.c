@@ -2,14 +2,16 @@
  * and starts the +0x3c4 effect pair of the sub id: 0 at the transform scaled 2.0, 1 and 2 at the
  * partner chain's (+0x3b8 of +0x3b8) +0x14 point scaled 2.0 (variant 0 / 2), 4 attached to the actor
  * pose (+0xa0). The base handler always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
 struct EffectPair { int res; int handle; };
 struct Ov146Effects { char pad[0x3c4]; struct EffectPair pair[8]; };
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern void Srt_SetScaleUniform(SrtTransform *transform, int scale);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int arg, SrtTransform *transform);
 extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
@@ -18,7 +20,7 @@ extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 void Ov146_OnSpawnMessage(char *self, u8 *msg, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         u8 bytes[12];
@@ -47,7 +49,7 @@ void Ov146_OnSpawnMessage(char *self, u8 *msg, int arg)
             break;
         case 1:
         case 2:
-            Srt_SetTranslation(&transform, (Vec3 *)(*(int *)(*(int *)(self + 0x3b8) + 0x3b8) + 0x14));
+            Srt_SetTranslation(&transform, (VecFx32 *)(*(int *)(*(int *)(self + 0x3b8) + 0x3b8) + 0x14));
             Srt_SetScaleUniform(&transform, 0x2000);
             ((struct Ov146Effects *)self)->pair[msg[3]].handle = Ov107_CreateNodeXformTask(
                 *(int *)(self + 0x3c), ((struct Ov146Effects *)self)->pair[msg[3]].res, 0x17,

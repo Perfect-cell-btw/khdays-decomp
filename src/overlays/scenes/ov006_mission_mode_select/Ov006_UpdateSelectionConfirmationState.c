@@ -2,6 +2,7 @@
  * confirmed (or on a forced exit), moves on to syncing the entries. */
 
 #include "nitro/types.h"
+
 typedef void (*MissionCallback)(void);
 
 typedef struct {

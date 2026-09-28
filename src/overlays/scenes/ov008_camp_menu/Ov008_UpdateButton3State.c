@@ -5,6 +5,7 @@
  * widget 3 and sets state->field48 = 1; when the condition clears and the button is currently
  * disabled, it re-enables widget 3 and clears state->field48. The widget context comes from
  * Ov008_GetContext; the enable flag is pushed via Ov008_SetEntrySlotsVisible. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008ToggleState {

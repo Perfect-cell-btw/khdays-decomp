@@ -15,17 +15,17 @@
  *
  * Codegen: nLen is declared first and the hit flags before the two result pointers -- that is
  * the ROM's callee-saved assignment (nLen r6, nBest r7, bHit1 r8, r1/bHit2 r5, owner/r2 sb). */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int q[4]; } Quat;
 typedef struct { u16 h[7]; } Cmd14;
 
 typedef struct {
-    Vec3 p0;
-    Vec3 dir;
+    VecFx32 p0;
+    VecFx32 dir;
     int nLength;
     int nRadius;
 } Segment;
@@ -38,7 +38,7 @@ typedef struct {
 } PlaneS16;
 
 typedef struct {
-    Vec3 n;
+    VecFx32 n;
     int d;
 } Plane;
 
@@ -51,26 +51,26 @@ struct CollisionResult {
 
 struct Ov125Phase { int cur : 4, next : 4; };
 
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int *func_ov107_020c9848(void);
 extern int FX_Div(int num, int den);
-extern void Srt_SetTranslation(void *p, Vec3 *v);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *pose, void *k);
-extern void Quat_FromTwoVectors(Quat *dst, void *src, Vec3 *m);
+extern void Srt_SetTranslation(void *p, VecFx32 *v);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *pose, void *k);
+extern void Quat_FromTwoVectors(Quat *dst, void *src, VecFx32 *m);
 extern void Vec4_Normalize(Quat *out, Quat *in);
 extern void Srt_SetRotationQuat(void *pose, Quat *q);
-extern struct CollisionResult *Collision_CastSphereEx(void *collision, Vec3 *position, Vec3 *direction, int radius, void *ignore);
-extern void ScaleVec3Fixed27(int scale, Vec3 *in, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern struct CollisionResult *Collision_CastRay(void *collision, Vec3 *position, Vec3 *direction);
+extern struct CollisionResult *Collision_CastSphereEx(void *collision, VecFx32 *position, VecFx32 *direction, int radius, void *ignore);
+extern void ScaleVec3Fixed27(int scale, VecFx32 *in, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern struct CollisionResult *Collision_CastRay(void *collision, VecFx32 *position, VecFx32 *direction);
 extern void Srt_SetScaleXYZ(void *placement, int x, int y, int z);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *query, int *results);
-extern int Segment_ClosestPoint(Vec3 *point, Segment *seg, fx64 *outDist);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int ent, int owner, int aux, int mode, Vec3 *dir, int flag);
-extern void Ov107_BuildAndSendUpdate(int owner, int id, int a, Vec3 *at);
+extern int Segment_ClosestPoint(VecFx32 *point, Segment *seg, fx64 *outDist);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int ent, int owner, int aux, int mode, VecFx32 *dir, int flag);
+extern void Ov107_BuildAndSendUpdate(int owner, int id, int a, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int data_02042258;
 extern int data_02042240;
@@ -91,21 +91,21 @@ static inline int FX_Mul(int a, int b)
 void Ov126_BeamTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 aim;
+    VecFx32 aim;
     Quat q;
-    Vec3 fwd;
-    Vec3 end;
-    Vec3 beam;
-    Vec3 normal;
-    Vec3 sum;
+    VecFx32 fwd;
+    VecFx32 end;
+    VecFx32 beam;
+    VecFx32 normal;
+    VecFx32 sum;
     Plane plane;
-    Vec3 dir;
-    Vec3 pull;
-    Vec3 side;
+    VecFx32 dir;
+    VecFx32 pull;
+    VecFx32 side;
     Segment axis;
     int results[4];
-    Vec3 hit;
-    Vec3 dir2;
+    VecFx32 hit;
+    VecFx32 dir2;
     Cmd14 cmd;
     fx64 along;
     Fx32 scratchZ;
@@ -125,9 +125,9 @@ void Ov126_BeamTick(int *node)
     int t;
     int i;
 
-    VEC_Add((Vec3 *)(*(int *)(*state + 0x394) + 0x14), (Vec3 *)(*(int *)(*state + 0x398) + 0x14), &aim);
+    VEC_Add((VecFx32 *)(*(int *)(*state + 0x394) + 0x14), (VecFx32 *)(*(int *)(*state + 0x398) + 0x14), &aim);
     ScaleVec3Fx12(0x800, &aim, &aim);
-    ScaleVec3Fx12(-0x100, (Vec3 *)(*func_ov107_020c9848() + 0x7c), &pull);
+    ScaleVec3Fx12(-0x100, (VecFx32 *)(*func_ov107_020c9848() + 0x7c), &pull);
     VEC_Add(&aim, &pull, &dir);
     state[0xc] += *(int *)(node[0] + 0x2c);
     t = FX_Div(state[0xc], 0x800);
@@ -204,12 +204,12 @@ scaled:
     axis.nRadius = 0x200;
     n = Ov107_CollectSegmentOverlaps(*state, &axis, results);
     for (i = 0; i < n; i++) {
-        Segment_ClosestPoint((Vec3 *)(results[i] + 0x74), &axis, &along);
+        Segment_ClosestPoint((VecFx32 *)(results[i] + 0x74), &axis, &along);
         hit.x = (fx32)((along * axis.dir.x + 0x80000000LL) >> 32);
         hit.y = (fx32)((along * axis.dir.y + 0x80000000LL) >> 32);
         hit.z = (fx32)((along * axis.dir.z + 0x80000000LL) >> 32);
         VEC_Add(&axis.p0, &hit, &hit);
-        VEC_Subtract((Vec3 *)(results[i] + 0x74), &hit, &dir2);
+        VEC_Subtract((VecFx32 *)(results[i] + 0x74), &hit, &dir2);
         VEC_Normalize(&dir2, &dir2);
         ScaleVec3Fx12(0x400, &dir2, &dir2);
         if (Ov107_InvokeHitCallback(results[i], *state, *state, 1, &dir2, 0) != 0) {

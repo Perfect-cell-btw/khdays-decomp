@@ -12,17 +12,13 @@
  * finally notifies the peer with its hit id and argument.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022ControlRecord */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ControlRecord {
-    struct VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecPos;           /* 0x00 */
     short nValue;                    /* 0x0c */
     u16 nAngle;                      /* 0x0e */
     u32 nOwner : 2;                  /* 0x10 bits 0-1: entry index */
@@ -49,12 +45,12 @@ struct Actor {
 #define PEER_HIT_ID 0xc5
 #define PEER_HIT_ARG 2
 
-extern int Ov022_DispatchSpawnRecord(int nContext, struct VecFx32 *pAt, int nAngle);
+extern int Ov022_DispatchSpawnRecord(int nContext, VecFx32 *pAt, int nAngle);
 extern void Ov022_StoreVToBase101418IfNonNeg(int nContext, int nSlot, int nValue);
 extern void func_ov022_020894a0(int nContext, int nSlot, int nValue);
 extern void Ov022_SpawnVoiceCue(struct Actor *pActor, int nIndex,
-                                struct VecFx32 *pPos, int nLevel);
-extern void Ov022_NotifyPeerHit(struct Actor *pActor, struct VecFx32 *pPos,
+                                VecFx32 *pPos, int nLevel);
+extern void Ov022_NotifyPeerHit(struct Actor *pActor, VecFx32 *pPos,
                                 unsigned int nId, unsigned int nArg);
 
 void Ov022_PlayControlRecord(struct Actor *pActor, int nContext,

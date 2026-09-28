@@ -1,6 +1,7 @@
 /* Construction of the ov137 actor: installs its five handlers, configures the
  * actor and parent flags, creates and registers the primary and secondary
  * subitems, and links the actor's pose into its sorted registry. */
+
 #include "nitro/types.h"
 
 struct Ov137Pose {

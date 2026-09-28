@@ -11,15 +11,11 @@
  * 36, or the actor carries flag bit 14 or 26; any of those stalls the slot.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022SlotDesc: the reach pair of a player slot */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct SlotDesc {
     u8 pad00[0x18];
     int nReachOuter;             /* 0x18 */

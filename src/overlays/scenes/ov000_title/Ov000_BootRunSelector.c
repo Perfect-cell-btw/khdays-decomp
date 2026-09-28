@@ -14,7 +14,9 @@
  * `OVERLAY_28_ID = 28;` into arm9.lcf, which is why 0x1c comes from the literal pool and is
  * kept in a callee-saved register across the load and the unload.
  */
+
 #include "nitro/types.h"
+
 typedef u32 FSOverlayID;
 
 extern u32 OVERLAY_28_ID[1];

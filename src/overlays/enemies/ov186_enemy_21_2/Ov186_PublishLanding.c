@@ -9,7 +9,9 @@
  * four instructions come out different.
  *
  * One of four byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned short a, b; } Ev;
 
 extern Ev data_ov186_020d34c0[];

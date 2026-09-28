@@ -17,15 +17,11 @@
  * point shift stays at the two use sites.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022ShotDesc */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ShotDesc {
     unsigned int nFlags;             /* 0x00 */
     u8 pad04[6];
@@ -42,9 +38,9 @@ struct Shot {
     u8 pad00[4];
     int nAge;                        /* 0x004 */
     u8 pad08[0x14];
-    struct VecFx32 vecDir;           /* 0x01c */
+    VecFx32 vecDir;           /* 0x01c */
     u8 pad028[0xa4];
-    struct VecFx32 vecPos;           /* 0x0cc */
+    VecFx32 vecPos;           /* 0x0cc */
     u8 pad0d8[0x60];
     struct ShotDesc *pDesc;          /* 0x138 */
 };
@@ -58,17 +54,17 @@ struct ReactionCtx {
 /* Ov022_ValidateTargetRef */
 extern int Ov022_ValidateTargetRef(void *pActor);
 /* the actor's current target position */
-extern struct VecFx32 *func_ov022_020ad0c0(void *pActor);
-extern void VEC_Subtract(const struct VecFx32 *a, const struct VecFx32 *b,
-                         struct VecFx32 *pOut);
-extern int VEC_DotProduct(const struct VecFx32 *a, const struct VecFx32 *b);
+extern VecFx32 *func_ov022_020ad0c0(void *pActor);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b,
+                         VecFx32 *pOut);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 /* VEC_Normalize */
-extern void VEC_Normalize(const struct VecFx32 *pVec, struct VecFx32 *pOut);
+extern void VEC_Normalize(const VecFx32 *pVec, VecFx32 *pOut);
 /* ScaleVec3Fx12 */
-extern void ScaleVec3Fx12(int nScale, const struct VecFx32 *pVec,
-                          struct VecFx32 *pOut);
-extern void VEC_MultAdd(int nScale, const struct VecFx32 *pVec,
-                        const struct VecFx32 *pAdd, struct VecFx32 *pOut);
+extern void ScaleVec3Fx12(int nScale, const VecFx32 *pVec,
+                          VecFx32 *pOut);
+extern void VEC_MultAdd(int nScale, const VecFx32 *pVec,
+                        const VecFx32 *pAdd, VecFx32 *pOut);
 /* the difficulty mode */
 extern int func_02023c40(void);
 
@@ -79,15 +75,15 @@ extern int func_02023c40(void);
 #define MODE_HARD 1
 #define STEP_FRAMES 3
 
-void Ov022_ComputeShotStep(struct VecFx32 *pOut, struct ReactionCtx *pCtx,
+void Ov022_ComputeShotStep(VecFx32 *pOut, struct ReactionCtx *pCtx,
                          struct Shot *pShot, int nDelta)
 {
     void *pShooter;
     struct ShotDesc *pDesc;
-    struct VecFx32 *pTarget;
-    struct VecFx32 vecPos;
-    struct VecFx32 vecToTarget;
-    struct VecFx32 vecStep;
+    VecFx32 *pTarget;
+    VecFx32 vecPos;
+    VecFx32 vecToTarget;
+    VecFx32 vecStep;
     int nScale;
     int nSteps;
 

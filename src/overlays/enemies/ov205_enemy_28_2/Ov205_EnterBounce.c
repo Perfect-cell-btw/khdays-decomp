@@ -4,16 +4,17 @@
  * sets the speed to 0x1000, clears the phase and the clock, fires reaction 0x132 mode 8 at the
  * reaction point and hands off to the bounce tick. The flattening store is written at the end
  * of both branches: the tail-merged block keeps it ahead of the normalise argument. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     int actor;
     int pad04;
-    Vec3 vel;
-    Vec3 defaultDir;
-    Vec3 *from;
-    Vec3 *at;
+    VecFx32 vel;
+    VecFx32 defaultDir;
+    VecFx32 *from;
+    VecFx32 *at;
     u8 *busy;
     int clock;
     int pad30[4];
@@ -21,16 +22,16 @@ typedef struct {
     u8 pad44;
     u8 phase;
     u8 pad46[2];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
 } BallState;
 
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *d);
-extern int VEC_Normalize(const Vec3 *a, Vec3 *d);
-extern void Ov107_BuildAndSendUpdate(int actor, int reaction, int mode, Vec3 *at);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *d);
+extern int VEC_Normalize(const VecFx32 *a, VecFx32 *d);
+extern void Ov107_BuildAndSendUpdate(int actor, int reaction, int mode, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void Ov205_BounceTick(int *node);
 
 void Ov205_EnterBounce(int *node)
@@ -39,7 +40,7 @@ void Ov205_EnterBounce(int *node)
 
     Ov107_PostTagUpdate(state->actor, 9, 0);
     if (state->target != 0) {
-        VEC_Subtract(state->from, (Vec3 *)(state->target + 0x190), &state->dir);
+        VEC_Subtract(state->from, (VecFx32 *)(state->target + 0x190), &state->dir);
         state->dir.y = 0;
     } else {
         state->dir = state->defaultDir;

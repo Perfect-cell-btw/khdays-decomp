@@ -1,5 +1,6 @@
 /* Drop the (key, tag) pair from the panel's second entry list and refresh the
  * row offset the cursor stepper reads. */
+
 #include "nitro/types.h"
 
 typedef struct {

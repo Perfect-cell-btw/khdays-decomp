@@ -2,6 +2,7 @@
  * the saved scene and builds the title logo, or starts the fade to the next scene. */
 
 #include "nitro/types.h"
+
 typedef void (*Ov000StateFn)(void);
 
 typedef struct Ov000BootContext {

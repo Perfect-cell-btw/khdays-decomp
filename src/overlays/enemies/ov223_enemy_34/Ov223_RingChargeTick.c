@@ -4,30 +4,32 @@
  * 442c, mode 0) runs with a segment from that point to the target of length 16.0 and radius
  * 0.5. The +0x3c timer accumulates the owner's rate; past 0x1200 it clears and the tick hands
  * over to Ov223_AiFastCountdownQueue0. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-struct hw60 { unsigned short lo : 8, hi : 8; };
-struct Ov223Segment { Vec3 p0; Vec3 p1; int nLength; int nRadius; };
 
-extern void Ov107_MoveNodeAndRelayout(int owner, Vec3 *at);
-extern void Vec3TransformViaTempMtx(Vec3 *out, const void *pose, const Vec3 *in);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+struct hw60 { unsigned short lo : 8, hi : 8; };
+struct Ov223Segment { VecFx32 p0; VecFx32 p1; int nLength; int nRadius; };
+
+extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *at);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *pose, const VecFx32 *in);
 extern int Ov223_StrikeSweep(int *node, int mode, struct Ov223Segment *seg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void Ov223_AiFastCountdownQueue0(int *node);
 
 void Ov223_RingChargeTick(int *node)
 {
     int *state = (int *)node[1];
     struct Ov223Segment seg;
-    Vec3 at;
+    VecFx32 at;
 
-    at = *(Vec3 *)(*(int *)(*(int *)(*(int *)(*state + 0x38c) + 0x3ac)) + 0x20);
+    at = *(VecFx32 *)(*(int *)(*(int *)(*(int *)(*state + 0x38c) + 0x3ac)) + 0x20);
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x80;
     Ov107_MoveNodeAndRelayout(*state, &at);
-    Vec3TransformViaTempMtx((Vec3 *)(state + 8), (const void *)(*(int *)(*state + 0x38c) + 0xa0), &data_02042258);
+    Vec3TransformViaTempMtx((VecFx32 *)(state + 8), (const void *)(*(int *)(*state + 0x38c) + 0xa0), &data_02042258);
     seg.p0 = at;
-    seg.p1 = *(Vec3 *)(state + 8);
+    seg.p1 = *(VecFx32 *)(state + 8);
     seg.nLength = 0x10000;
     seg.nRadius = 0x800;
     Ov223_StrikeSweep(node, 0, &seg);

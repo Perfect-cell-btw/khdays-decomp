@@ -7,24 +7,26 @@
  * +0x42 is hit at the origin with mode 7 (when its bit is in the +0x438 owner's +0x3b0 mask) or
  * mode 4 (when in +0x40), 0x218, and marked in +0x42. Once the +4 item's animation is free
  * (+0xad) the owner is released (020d4870), sub-state 2 set and the node slot freed. */
-typedef struct { int x, y, z; } Vec3;
-struct Ov245Query { Vec3 pos; int w[12]; };
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+#include "nitro/fx.h"
+
+struct Ov245Query { VecFx32 pos; int w[12]; };
+
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectCapsuleOverlaps(int actor, struct Ov245Query *query, int *out);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, const Vec3 *push, int z);
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, const VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
 extern int Ov245_FourShape_ResetAiIfReady(int owner);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov245_LandingTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 push;
+    VecFx32 push;
     int hits[4];
     struct Ov245Query query;
     int any;
@@ -37,11 +39,11 @@ void Ov245_LandingTick(int *node) {
     int other;
     int actor;
 
-    ScaleVec3Fx12(-0x1000, (Vec3 *)(*(int *)(*state + 0x4c8) + 0x2c), (Vec3 *)(state + 3));
+    ScaleVec3Fx12(-0x1000, (VecFx32 *)(*(int *)(*state + 0x4c8) + 0x2c), (VecFx32 *)(state + 3));
     if (state[5] < 0) {
         query = *(struct Ov245Query *)(*state + 0x3bc);
         any = 0;
-        VEC_Add(&query.pos, (Vec3 *)(state + 3), &query.pos);
+        VEC_Add(&query.pos, (VecFx32 *)(state + 3), &query.pos);
         push.x = 0;
         push.y = 0x1000;
         push.z = -0x5000;
@@ -50,7 +52,7 @@ void Ov245_LandingTick(int *node) {
             bit = 1 << *(unsigned short *)(hits[i] + 2);
             if ((*((unsigned char *)state + 0x40) & bit) == 0) {
                 if (Ov107_InvokeHitCallback(hits[i], *state, *state, 4, &push, 0x80) != 0) {
-                    func_ov107_020c0b90(*state, 0, *(Vec3 *)(hits[i] + 0x74), 0);
+                    func_ov107_020c0b90(*state, 0, *(VecFx32 *)(hits[i] + 0x74), 0);
                     *((unsigned char *)state + 0x40) |= bit;
                     any = 1;
                 }

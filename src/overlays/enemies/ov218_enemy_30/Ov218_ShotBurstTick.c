@@ -6,9 +6,11 @@
  * owner, the body's +0x290 power for that kind, the owner's +0x258 reaction, the part) through
  * 020c5cfc and message 0 on acceptance. Any hit fires reaction 0x135 mode 5 at the +8 target. Once
  * the +4 rig is idle sub-state 0 follows. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-struct Sphere { Vec3 centre; int radius; };
+#include "nitro/fx.h"
+
+struct Sphere { VecFx32 centre; int radius; };
 struct ListNode { void *item; };
 struct W8 { unsigned int lo : 8; };
 
@@ -19,14 +21,14 @@ struct Obj {
     unsigned short lo060 : 8;
     unsigned short hi060 : 8;
     char pad062[0x12];
-    Vec3 pos074;
+    VecFx32 pos074;
     char pad080[0x12c];
     u16 attr1ac;
 };
 
 struct HitPacket {
     u32 flags00;
-    Vec3 normal;
+    VecFx32 normal;
     u32 field10;
     u32 field14;
     void *pPart;
@@ -44,25 +46,25 @@ struct ShotState {
 };
 
 extern int Ov107_CollectSphereOverlaps(int owner, struct Sphere *query, int *out);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, u8 kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, u8 kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern struct ListNode *List_First(void *list);
 extern struct ListNode *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(void *part, struct Sphere *shape, int flag);
 extern int Ov107_AiState_ApplyHit(struct Obj *obj, int target, struct HitPacket *packet);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, int at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 void Ov218_ShotBurstTick(int *node)
 {
     struct ShotState *st = (struct ShotState *)node[1];
     struct Sphere sphere;
     int hits[4];
-    Vec3 push;
+    VecFx32 push;
     long n;
     int hit;
     int world;
@@ -92,7 +94,7 @@ void Ov218_ShotBurstTick(int *node)
             VEC_Normalize(&push, &push);
             ScaleVec3Fx12(0x800, &push, &push);
             if (Ov107_InvokeHitCallback(hits[i], st->pOwner, *(int *)(st->pOwner + 0x390), kind, &push, 0) != 0) {
-                func_ov107_020c0b90(*(int *)(st->pOwner + 0x390), 0, *(Vec3 *)(hits[i] + 0x74), 0);
+                func_ov107_020c0b90(*(int *)(st->pOwner + 0x390), 0, *(VecFx32 *)(hits[i] + 0x74), 0);
                 hit = 1;
             }
         }

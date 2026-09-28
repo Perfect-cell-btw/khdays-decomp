@@ -18,12 +18,6 @@
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
-typedef struct VecFx32 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
-
 typedef struct Segment {
     VecFx32 p0;
     VecFx32 dir;

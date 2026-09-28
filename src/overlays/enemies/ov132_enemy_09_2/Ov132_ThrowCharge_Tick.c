@@ -3,12 +3,7 @@
  * queues action 8 and clears the step handler. */
 
 #include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 struct Flags17a {
     u8 bBit0 : 1;

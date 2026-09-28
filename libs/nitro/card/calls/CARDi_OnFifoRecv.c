@@ -1,4 +1,5 @@
 #include "nitro/types.h"
+
 typedef s32 PXIFifoTag;
 
 enum {

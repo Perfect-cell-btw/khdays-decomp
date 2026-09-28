@@ -3,29 +3,30 @@
  * 2) and the next claw of the +0x43c set (+0x54 counter) is thrown from 2.19 above that point
  * (020d0334). Once the partner holds no queued move, after boost + 1 claws (+0x45c) the next move is
  * the +0x74 mode + 2 and the node ends; otherwise the timer restarts with two charges and pose 9. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
 
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
-extern void Ov256_InvokeHookAndRearm2(int claw, Vec3 *at);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
+extern void Ov256_InvokeHookAndRearm2(int claw, VecFx32 *at);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov256_ClawLobTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 at;
+    VecFx32 at;
 
     state[0x13] += *(int *)(node[0] + 0x2c);
     if (state[0x13] >= 0xcc0 && *((u8 *)state + 0x69) == 2) {
         *((u8 *)state + 0x69) -= 1;
-        func_ov107_020c0b90(*state, 1, *(Vec3 *)state[3], 0);
+        func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[3], 0);
     }
     if (state[0x13] >= 0x1ba0 && *((u8 *)state + 0x69) != 0) {
-        at = *(Vec3 *)state[3];
+        at = *(VecFx32 *)state[3];
         at.y += 0x2300;
         *((u8 *)state + 0x69) = 0;
-        func_ov107_020c0b90(*state, 2, *(Vec3 *)state[3], 0);
+        func_ov107_020c0b90(*state, 2, *(VecFx32 *)state[3], 0);
         Ov256_InvokeHookAndRearm2(*(int *)(*state + state[0x15] * 4 + 0x43c), &at);
         state[0x15]++;
     }

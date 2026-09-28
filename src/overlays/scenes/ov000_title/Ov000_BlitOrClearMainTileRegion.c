@@ -24,6 +24,7 @@
  * registers by declaration rank), and so is `layer` living in the inner block.
  */
 #pragma opt_strength_reduction off
+
 #include "nitro/types.h"
 
 typedef struct Ov000TileSource {

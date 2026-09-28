@@ -5,6 +5,7 @@
  * release 020819a0, rebind 02081acc, 02081978, show 020819bc, hit 02081b14, 02081c78,
  * 02081c90, 02081c9c, reset 0208190c) and tag the class 0x1b, or 0x1c when the block's
  * variant byte (+0x1c) is set. */
+
 #include "nitro/types.h"
 
 typedef struct Ov015ChestParams {

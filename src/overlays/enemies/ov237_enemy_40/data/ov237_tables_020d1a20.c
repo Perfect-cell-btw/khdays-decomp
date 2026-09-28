@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov237_Construct (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov237_Construct (not yet decompiled) */
 const int data_ov237_020d1a20[19] = {
     52, 53, 54, 55, 56, 57, 58, 59,
     60, 61, 62, 63, 64, 65, 66, 67,

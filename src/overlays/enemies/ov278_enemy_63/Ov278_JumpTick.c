@@ -2,8 +2,10 @@
  * once falling, and only if the actor's +0x17a bit 0 (grounded) is set, the landing cue
  * (first halfword pair of data_ov278_020d6374) is sent through the +0x24 hook, effect 0x166 of kind 9
  * fires at the +0x38 anchor, pose request 5 is queued and the node dispatches null. */
+
 #include "nitro/types.h"
-struct Vec3 { int x, y, z; };
+#include "nitro/fx.h"
+
 struct Bits17a { u8 b0 : 1; };
 
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
@@ -16,7 +18,7 @@ void Ov278_JumpTick(int *node) {
     unsigned short *pp;
     void (*cb)();
 
-    *(struct Vec3 *)(state + 6) = *(struct Vec3 *)(state + 0xf);
+    *(VecFx32 *)(state + 6) = *(VecFx32 *)(state + 0xf);
     state[0x10] -= 0x80;
     if (state[0x10] >= 0) {
         return;

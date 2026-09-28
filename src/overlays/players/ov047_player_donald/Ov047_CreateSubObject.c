@@ -19,6 +19,7 @@
  * zero run (before it, zero and 0x800 swap the callee-saved pair they land in) and
  * field40 comes BEFORE field2c. The zero run must also be eight separate statements;
  * chaining them into one assignment moves the stores. */
+
 #include "nitro/types.h"
 
 struct PanelSubCfg {

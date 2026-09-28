@@ -7,7 +7,9 @@
  * (020c9264), set hw60.hi bit 0x40, clear state[0xb] and the *(u8)(state+0x64)/+0x67 flags, then hand
  * off to the 020d1c04 state.
  */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct h2 { unsigned short a, b; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern int  Ov107_FindNearestObject(int obj, int flag);
@@ -15,7 +17,7 @@ extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *in, void *out);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
-extern struct vec3 data_02042258;
+extern VecFx32 data_02042258;
 extern struct h2 data_ov282_020d4700;
 extern void Ov282_ChargeTick(void);
 
@@ -28,12 +30,12 @@ void Ov282_AimSetupNotifyArm(int *self) {
 
     state[4] = target;
     if (target == 0) {
-        *(struct vec3 *)(state + 0x11) = data_02042258;
+        *(VecFx32 *)(state + 0x11) = data_02042258;
     } else {
         VEC_Subtract((void *)(target + 0x190), (void *)state[1], v);
         v[1] = 0;
         if (VEC_Normalize(v, (void *)(state + 0x11)) == 0) {
-            *(struct vec3 *)(state + 0x11) = data_02042258;
+            *(VecFx32 *)(state + 0x11) = data_02042258;
         }
     }
     scratch = data_ov282_020d4700;

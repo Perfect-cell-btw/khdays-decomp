@@ -3,8 +3,9 @@
  * nearest the +4 position into the +0x48 byte, and runs the recursive path search from it with
  * a fresh 16-entry order buffer (depth limit 0x3e7), the +0x49 order table and a depth counter;
  * returns the search result, 0 for an invalid id. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
 
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int Ov262_FindGrabPath(int *state, int slot, u16 *order, unsigned int id, u8 depth, u16 *out, int *limit);
@@ -17,7 +18,7 @@ static inline int FX_Mul(int a, int b)
 int Ov262_FindGrabSlotPath(int *state, unsigned int id)
 {
     u16 order[16];
-    struct Vecx32 d;
+    VecFx32 d;
     int limit;
     int i;
     int best;

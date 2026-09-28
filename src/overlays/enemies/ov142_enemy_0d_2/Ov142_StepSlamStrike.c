@@ -31,18 +31,19 @@
  * is why the three components of each site are declared z, y, x, and why the
  * loop bound is declared after the loop counter.
  */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 
-struct Vec3 { int x, y, z; };
 struct Ov142Cmd { u16 h[7]; };
 struct Ov142Quat { int q[4]; };
 
 struct Ov142Query {
     FxVec vAnchor;
-    struct Vec3 vFacing;
+    VecFx32 vFacing;
     int nSpeed;
     int nRange;
 };
@@ -51,7 +52,7 @@ struct Ov142Query {
    point, kept field-for-field identical to them. */
 struct HitCommand {
     u32 flags00;
-    struct Vec3 vector04;
+    VecFx32 vector04;
     u32 field10;
     u32 field14;
     void *hit18;
@@ -84,8 +85,8 @@ struct Ov142SubObj {
 struct Ov142StepState {
     struct Ov142SubObj *pSelf;   /* 0x00 */
     FxVec *pAnchor;              /* 0x04 */
-    struct Vec3 vVelocity08;     /* 0x08 */
-    struct Vec3 vFacing14;       /* 0x14 */
+    VecFx32 vVelocity08;     /* 0x08 */
+    VecFx32 vFacing14;       /* 0x14 */
     int nMode20;                 /* 0x20 */
     int nTimer24;                /* 0x24 */
     int nSpeed28;                /* 0x28 */
@@ -98,16 +99,16 @@ struct Ov142StepNode {
     signed char bSlot;             /* 0x20 */
 };
 
-extern struct Vec3 data_02042258;
-extern struct Vec3 data_02041dc8;
+extern VecFx32 data_02042258;
+extern VecFx32 data_02041dc8;
 extern struct Ov142Cmd data_ov142_020d2630;
 extern struct Ov142Cmd data_ov142_020d264c;
 extern struct Ov142Cmd data_ov142_020d265a;
 
-extern void Quat_FromTwoVectors(struct Ov142Quat *out, const struct Vec3 *from,
-                          const struct Vec3 *to);
+extern void Quat_FromTwoVectors(struct Ov142Quat *out, const VecFx32 *from,
+                          const VecFx32 *to);
 extern void Srt_SetRotationQuat(void *srt, const struct Ov142Quat *rot);
-extern void ScaleVec3Fx12(int scale, const struct Vec3 *src, struct Vec3 *dst);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
 extern int Ov107_CollectSegmentOverlaps(struct Ov142Owner *owner, struct Ov142Query *query,
                                int *results);
 extern int Ov107_InvokeHitCallback(int ent, struct Ov142SubObj *self,

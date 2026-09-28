@@ -7,7 +7,9 @@
  * height (+0x80) fields of the extra parameter; the resource file is freed.
  * PROVENANCE: byte-identical twin of ov023's Ov023_LoadNoiseTexture (Ov023_LoadNoiseTexture), same code and
  * pool layout in the ov106 event scene; the ov023 source is the analysed one. */
+
 #include "nitro/types.h"
+
 typedef struct NNSG3dResDict {
     u8 revision, numEntry;
     u16 sizeDictBlk, dummy, ofsEntry;

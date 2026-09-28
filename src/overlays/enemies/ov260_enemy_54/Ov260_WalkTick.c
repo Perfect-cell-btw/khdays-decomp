@@ -5,18 +5,20 @@
  * within 1/8 of the range, pose 3 plays, the part takes motion 2 and the node moves on to 020ce198.
  * Otherwise the +0x70 timer runs with step cues at 0 and 0x4c8 (020cd04c 0 / 1), and once the partner
  * holds no queued move pose 2 plays, the part takes motion 1 and the timer and cues restart. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int y);
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void Ov260_MapHeldItemKindToAnim(int actor, int flag);
@@ -31,7 +33,7 @@ void Ov260_WalkTick(int *node)
 {
     int *state = (int *)node[1];
     Mtx33 rot;
-    Vec3 d;
+    VecFx32 d;
     int speed;
     int t = 0x7fffffff;
 
@@ -40,14 +42,14 @@ void Ov260_WalkTick(int *node)
 
         MTX_RotY33_(&rot, data_0203d210[idx], data_0203d210[idx + 1]);
     }
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (Vec3 *)(state + 8));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (VecFx32 *)(state + 8));
     if (state[0x14] != 0) {
         {
-            int len = VEC_Normalize((Vec3 *)(*(int *)(*state + 0x428) + 0x2c), &d);
+            int len = VEC_Normalize((VecFx32 *)(*(int *)(*state + 0x428) + 0x2c), &d);
 
             speed = FX_MUL(len, *(int *)(*state + 0x470) != 0 ? 0x1800 : 0x1000);
         }
-        VEC_Subtract((Vec3 *)state[0x14], (Vec3 *)state[4], &d);
+        VEC_Subtract((VecFx32 *)state[0x14], (VecFx32 *)state[4], &d);
         state[0x1a] = func_020050b4(d.x, d.z);
         d.y = 0;
         t = FX_Div(VEC_Normalize(&d, &d), 0x3000);
@@ -63,7 +65,7 @@ void Ov260_WalkTick(int *node)
             state[9] = 0;
             state[10] = data_0203d210[idx + 1];
         }
-        ScaleVec3Fx12(FX_MUL(speed, t), (Vec3 *)(state + 8), (Vec3 *)(state + 8));
+        ScaleVec3Fx12(FX_MUL(speed, t), (VecFx32 *)(state + 8), (VecFx32 *)(state + 8));
     }
     if (((struct Flag17a *)(*state + 0x17a))->b1) {
         state[0x18] = 0;

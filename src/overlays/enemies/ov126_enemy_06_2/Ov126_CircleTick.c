@@ -8,17 +8,18 @@
  * random value between the actor's +0x224 and +0x228 and picks sub-state 6 (under 20 with an
  * idle aim node) or 7; otherwise past 0x2000 sub-state 4 is queued.
  * `+ (dist - dist)` is the documented copy artifact of RandNextScaled (`add r5,r0,#0`). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Mtx33_LookAt(void *out, void *a, void *b, void *c);
 extern void Quat_FromMtx33(void *a, void *b);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int RandNextScaled(int bound);
 extern int Ov126_IsField34Nibble1(int node);
 extern int data_02042264;
@@ -32,8 +33,8 @@ void Ov126_CircleTick(int *node)
     int len;
     int sum;
     int buf[9];
-    Vec3 dir;
-    Vec3 side;
+    VecFx32 dir;
+    VecFx32 side;
     int b;
     int a;
     int diff;
@@ -48,7 +49,7 @@ void Ov126_CircleTick(int *node)
         return;
     }
     actor = *state;
-    VEC_Subtract((Vec3 *)(target + 0x74), (Vec3 *)(actor + 0x74), &dir);
+    VEC_Subtract((VecFx32 *)(target + 0x74), (VecFx32 *)(actor + 0x74), &dir);
     len = VEC_Normalize(&dir, &dir);
     sum = *(int *)(target + 0x80) + *(int *)(actor + 0x80) + 0x800;
     dist = len > sum ? len - sum : 0;
@@ -57,11 +58,11 @@ void Ov126_CircleTick(int *node)
     if (dist > 0x400) {
         dist = 0x400;
     }
-    ScaleVec3Fx12(dist, &dir, (Vec3 *)(state + 2));
-    VEC_CrossProduct((Vec3 *)&data_02042264, &dir, &side);
+    ScaleVec3Fx12(dist, &dir, (VecFx32 *)(state + 2));
+    VEC_CrossProduct((VecFx32 *)&data_02042264, &dir, &side);
     VEC_Normalize(&side, &side);
     ScaleVec3Fx12(state[0x1e] << 10, &side, &side);
-    VEC_Add((Vec3 *)(state + 2), &side, (Vec3 *)(state + 2));
+    VEC_Add((VecFx32 *)(state + 2), &side, (VecFx32 *)(state + 2));
     b = *(int *)(actor + 0x78);
     a = *(int *)(target + 0x78);
     diff = a - b;

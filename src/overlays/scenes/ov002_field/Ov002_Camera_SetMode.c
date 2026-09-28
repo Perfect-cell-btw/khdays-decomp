@@ -1,11 +1,7 @@
 /* Switches the field camera mode (follow, cutscene preset, look-at target...), updating its flags
  * and presets. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     int x;
@@ -22,7 +18,7 @@ typedef struct {
     char pad48[0x18];
     int derivedZ;                  /* +0x60 */
     char pad64[0x28];
-    Vec3 target;                   /* +0x8c */
+    VecFx32 target;                   /* +0x8c */
     char pad98[0x24];
     int presetX0;                  /* +0xbc */
     int scratch0;                  /* +0xc0 */
@@ -84,7 +80,7 @@ void Ov002_Camera_SetMode(Ov002Actor *actor, int mode, void *modeData)
         if (modeData == 0) {
             return;
         }
-        motion->target = *(Vec3 *)modeData;
+        motion->target = *(VecFx32 *)modeData;
         break;
     case 5:
         motion->mode = 0;

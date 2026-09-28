@@ -8,6 +8,7 @@
  * Codegen: the slot tag's high part is the just-stored +0x90 word read back (a copy the compiler
  * keeps in r7 rather than a folded zero), declared before the u32 slot counter; the stack order
  * list, day descriptor, slot descriptor, position; both entry positions fetched before the reads. */
+
 #include "nitro/types.h"
 
 typedef struct UiLayoutPos {

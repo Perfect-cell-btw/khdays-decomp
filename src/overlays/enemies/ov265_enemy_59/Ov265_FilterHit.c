@@ -7,15 +7,17 @@
  * +0x28, the stock drains (clamped to 0..+0x218), an empty owner stock requests sub-state 3 and a
  * damaging hit that is not the 0x88-flagged 0x80 kind fires reaction +0x50 at the +8 anchor with
  * the {0,1} / {2,3} (0x22 hits) mode picked by the +0x4e parity, which then flips. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct HitWord { unsigned int lo : 16, hi : 16; };
 
 extern int RandNextScaled(int n);
-extern void Vec3TransformViaTempMtx(Vec3 *out, const void *m, const Vec3 *in);
-extern int VEC_DotProduct(const void *a, const Vec3 *b);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *m, const VecFx32 *in);
+extern int VEC_DotProduct(const void *a, const VecFx32 *b);
 extern int Ov107_CalcHitDamage(char *self, unsigned int *hit);
 extern void Ov107_BuildAndSendUpdate(char *self, int id, int mode, void *at);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
@@ -23,7 +25,7 @@ int Ov265_FilterHit(char *self, int src, unsigned int *hit)
 {
     unsigned char modes[2][2] = { { 0, 1 }, { 2, 3 } };
     int *state = *(int **)(self + 0x214);
-    Vec3 fwd;
+    VecFx32 fwd;
     int stock;
     int limit;
 

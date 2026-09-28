@@ -2,15 +2,16 @@
  * locked, combines it with the ground-normal rotation into the model's SRT, speeds up while
  * flagged, and hands the step velocity to the actor (+0xf0), clearing it. */
 
+#include "nitro/fx.h"
+
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(void *dst, void *src, int t);
 extern void Quat_FromTwoVectors(void *dst, void *src, int m);
 extern void Quat_Multiply(void *dst, void *a, void *b);
 extern void Srt_SetRotationQuat(int a, void *b);
 
-typedef struct { int x, y, z; } Vec3;
-extern Vec3 data_02042264;
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02042264;
+extern VecFx32 data_02041dc8;
 
 void Ov199_CommitTrailTransform(int *self) {
     int b[4];
@@ -29,7 +30,7 @@ void Ov199_CommitTrailTransform(int *self) {
     {
         int owner = *s;
         s = (int *)((char *)s + 0x10);
-        *(Vec3 *)(owner + 0xf0) = *(Vec3 *)s;
-        *(Vec3 *)s = data_02041dc8;
+        *(VecFx32 *)(owner + 0xf0) = *(VecFx32 *)s;
+        *(VecFx32 *)s = data_02041dc8;
     }
 }

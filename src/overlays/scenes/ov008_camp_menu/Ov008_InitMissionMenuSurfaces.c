@@ -7,6 +7,7 @@
  * from template fa4c (e5c pixels, no transfer) or fa74 (transfer, +0x150),
  * and the fifth (fac4, 968c pixels) at 0x1b0 or 0x1b6 accordingly.
  */
+
 #include "nitro/types.h"
 
 #define SURFACE_COUNT 5

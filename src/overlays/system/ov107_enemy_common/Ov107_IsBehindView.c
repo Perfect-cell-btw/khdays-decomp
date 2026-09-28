@@ -2,12 +2,6 @@
 
 #include "nitro/fx.h"
 
-typedef struct {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
-
 extern void VEC_Subtract(int *a, int *b, int *out);
 extern fx32 VEC_Mag(const VecFx32 *v);
 extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);

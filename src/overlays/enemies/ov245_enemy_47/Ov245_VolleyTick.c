@@ -5,15 +5,17 @@
  * vector through the +0x3b8 item's +0x14 anchor, spends one +0x18 shot, latches +0x20 and sets
  * the actor's +0x3c4 to -0.375. Unless the scene's +0xad flag is set, shots left restart the
  * timer on 020d2714, otherwise pose 2 and 020d27b4. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Ov245Actor { char pad[0x390]; int slots[10]; };
 
 extern int Ov107_FindNearestObject(int actor, int a);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void Ov245_HitReact3(int self, void *anchor, Vec3 *pos, int angle, int flag);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Ov245_HitReact3(int self, void *anchor, VecFx32 *pos, int angle, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov245_WaitPartsIdle(void);
@@ -22,14 +24,14 @@ extern const short data_0203d210[];
 
 void Ov245_VolleyTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int target;
     int i;
     int idx;
 
     target = Ov107_FindNearestObject(*state, 0);
     if (target != 0) {
-        VEC_Subtract((Vec3 *)(target + 0x190), (Vec3 *)(*state + 0xb0), &d);
+        VEC_Subtract((VecFx32 *)(target + 0x190), (VecFx32 *)(*state + 0xb0), &d);
         VEC_Normalize(&d, &d);
         state[5] = func_020050b4(d.x, d.z);
         state[7] += *(int *)(node[0] + 0x2c);
@@ -40,7 +42,7 @@ void Ov245_VolleyTick(int *node) {
                     d.x = data_0203d210[(idx >> 4) << 1];
                     d.y = 0;
                     d.z = data_0203d210[((idx >> 4) << 1) + 1];
-                    VEC_Add((Vec3 *)(target + 0x190), &d, &d);
+                    VEC_Add((VecFx32 *)(target + 0x190), &d, &d);
                     Ov245_HitReact3(((struct Ov245Actor *)*state)->slots[i], (void *)(*(int *)(*state + 0x3b8) + 0x14), &d, state[4], 1);
                     state[6]--;
                     *((unsigned char *)state + 0x20) = 1;

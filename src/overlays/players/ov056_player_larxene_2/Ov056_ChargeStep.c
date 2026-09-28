@@ -7,12 +7,14 @@
  * player, sets bit 1 of +0x464. Once that bit is set the velocities at +0x498 and +0x698 are
  * cleared, bit 2 of the actor flags is raised and the enemy hands over to state 0 when grounded
  * (also telling the slot callback 0), otherwise to state 2. */
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
-typedef struct { int x, y, z; } Vec3;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SceneNode_Enable(void *node);
 extern void *Ov022_ActorSetState(char *self, int state);
 extern void Ov056_FireTimedVolley(char *self);
@@ -21,8 +23,8 @@ extern void Ov056_ReleaseCharge(char *self);
 void *Ov056_ChargeStep(char *self)
 {
     int r;
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     void *next = 0;
     unsigned int *node;
 
@@ -44,7 +46,7 @@ void *Ov056_ChargeStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     r = (*(int (**)(char *))(self + 0x668))(self);
     ((Flags *)(self + 0x694))->b1 = (unsigned char)r;
     if (*(int *)(self + 0x7b0) >= 0x36000) {

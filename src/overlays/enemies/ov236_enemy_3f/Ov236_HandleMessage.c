@@ -4,8 +4,10 @@
  * transform and pushes pose 1; slots 2 / 3 start the +0x30 / +0x38 sub-items; slot 4 stores
  * the 020d5f34 result at +0x44; slot 5 starts effect 0x127 (kind 0xf) on the +0x39c item's
  * transform into +0x3c4. The base handler always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } Srt;
 struct Ov236SlotMap { u8 b[4]; };
 

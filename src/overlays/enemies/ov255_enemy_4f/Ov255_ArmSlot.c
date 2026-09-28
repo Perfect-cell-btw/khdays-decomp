@@ -1,7 +1,9 @@
-typedef struct { int x, y, z; } Vec3;
 
 /* Arms the slot: clears the timer, marks it active, flags the node dirty, drops the pending
  * target and snapshots the base pose into the working one. */
+
+#include "nitro/fx.h"
+
 void Ov255_ArmSlot(int *self) {
     char *node;
     self[2] = 0;
@@ -9,5 +11,5 @@ void Ov255_ArmSlot(int *self) {
     node = (char *)self[1];
     *(int *)(node + 0x5c) |= 2;
     *(int *)(*self + 0x3cc) = 0;
-    *(Vec3 *)(*self + 0x39c) = *(Vec3 *)(*self + 0xb0);
+    *(VecFx32 *)(*self + 0x39c) = *(VecFx32 *)(*self + 0xb0);
 }

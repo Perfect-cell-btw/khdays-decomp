@@ -24,6 +24,7 @@
  * entry pointer declared after k and j, with the anchor kind declared last;
  * the table hit sets the result and jumps to the end.
  */
+
 #include "nitro/types.h"
 
 #define GRID_PAGES 3

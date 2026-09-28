@@ -1,6 +1,7 @@
 /* Ov253_ChargeEnter -- charge entry: raises bit 0 of the actor's +0x1ae, sets pose 2, raises
  * bit 0 of the +0x60 high byte, fires reaction 0x16c/7 at the +4 anchor and moves the node to
  * 020cf2c0. */
+
 #include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);

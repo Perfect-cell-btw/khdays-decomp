@@ -1,12 +1,7 @@
 /* Pushes the position away (in view space) from every active animation slot within the radius. */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct MtxFx33 {
     int value[9];

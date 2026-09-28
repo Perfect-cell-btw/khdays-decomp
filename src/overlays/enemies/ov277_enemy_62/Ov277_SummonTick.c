@@ -4,12 +4,14 @@
  * at the +0x3c8 bone's +0x14 point on the +0xc floor height, pushed 2.0 along the angle
  * index x pi. Once the +0x1c timer reaches 0x2aaa, animation 3 plays and the tick hands over to
  * Ov277_AiQueue2OnFlagClear. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-extern void Ov107_MoveNodeAndRelayout(int child, Vec3 *pos);
+extern void Ov107_MoveNodeAndRelayout(int child, VecFx32 *pos);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
@@ -18,7 +20,7 @@ extern void Ov277_AiQueue2OnFlagClear(int *node);
 void Ov277_SummonTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 pos;
+    VecFx32 pos;
     int child;
 
     state[8] += *(int *)(*node + 0x2c);
@@ -30,7 +32,7 @@ void Ov277_SummonTick(int *node)
                 if (*(void (**)(int, int))(child + 0x1cc) != 0) {
                     (*(void (**)(int, int))(child + 0x1cc))(child, 0);
                 }
-                pos = *(Vec3 *)(*(int *)(*state + 0x3c8) + 0x14);
+                pos = *(VecFx32 *)(*(int *)(*state + 0x3c8) + 0x14);
                 pos.y = *(int *)(state[3] + 4);
                 pos.x += data_0203d210[ANG2IDX(*(short *)((char *)state + 0x12) * 0x6488 / 2) * 2] * 2;
                 pos.z += data_0203d210[ANG2IDX(*(short *)((char *)state + 0x12) * 0x6488 / 2) * 2 + 1] * 2;

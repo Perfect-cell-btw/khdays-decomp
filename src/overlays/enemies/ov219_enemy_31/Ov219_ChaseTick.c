@@ -2,17 +2,19 @@
  * 0x800 and the +0x14 clock grows by 0x800 per tick. Below 0x11000 without bit 1 of the actor's
  * +0x17a flags the attack sweep runs (kind 0); otherwise the actor plays animation 5, publishes
  * a zero vector with mode 4 (flag 1) and hands off to the next chase state. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
+
 struct Flags17a { u8 b0 : 1, b1 : 1; };
 
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void Ov219_AttackSweep(int *state, int kind);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
-extern void func_ov107_020c0b90(int actor, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const struct Vecx32 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov219_AiStep_QueueAction2OnAnimEnd(int *node);
 
 void Ov219_ChaseTick(int *node)

@@ -7,16 +7,17 @@
  * by the shared tick; reaching zero raises the actor's panel bit and parks the
  * timer back at its idle value.
  */
-struct Vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern int func_ov022_0209fc78(int self, int a);
 extern int Ov022_IsIndexedRecordBit0Set(int self, int a);
-extern int Ov022_DispatchSpawnRecord(int object, const struct Vec3 *at, int mode);
+extern int Ov022_DispatchSpawnRecord(int object, const VecFx32 *at, int mode);
 extern void func_ov022_0208954c(int object, int result, int source);
 extern int Ov022_GetGlobal34(void);
 extern void Ov030_UpdateMotionController(int slots, int id);
 extern int data_ov030_020b5a00;
-extern struct Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 void Ov030_TickExtraClass(int self) {
     int base = *(int *)&data_ov030_020b5a00;

@@ -5,17 +5,19 @@
  * origin and the +0x458 hand arms its 0.5 to 0.83 window; the final swing also arms the +0x45c hand.
  * With no swing left, without a +0x38 delay a follow-up (020cd2cc) may be picked, else the next move
  * is 2. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
 extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov258_ForwardEventIfStateOne(int partner, int from, int to, int d);
 extern int Ov258_PickMove(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov258_ComboTick(int *node)
 {

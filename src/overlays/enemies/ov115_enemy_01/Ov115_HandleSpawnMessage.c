@@ -6,11 +6,13 @@
  * their placed counterparts at +4/+0x1c/+0x24 from the +0x38c/+0x390 pools; sub-kind 8 finally
  * registers effect 0x143 (kind 5 or 6 by the message's +4 slot) on the +0xa0 node into the
  * +0x3a0 slot. The base handler always runs. */
+
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero, SrtTransform *transform);
 extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern int Ov107_CreateSpawnTask(int owner, int resourceId, int kind, int zero, void *work);
@@ -21,7 +23,7 @@ extern int Ov115_SpawnActionEntry(int owner, int parent, int kind);
 void Ov115_HandleSpawnMessage(int owner, unsigned char *command, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         unsigned char bytes[12];

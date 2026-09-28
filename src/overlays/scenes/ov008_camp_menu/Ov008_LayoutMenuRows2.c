@@ -5,6 +5,7 @@
  * widget 0xd at (field2fc << 12), and widget 0xe at ((field2fc + ctx->field2f8 - 0x10) << 12),
  * each pushed via Ov008_SetEntryPos. field2fc is re-read from the object each iteration
  * (matching the ROM's per-iteration load). */
+
 #include "nitro/types.h"
 
 typedef struct WidgetPos {

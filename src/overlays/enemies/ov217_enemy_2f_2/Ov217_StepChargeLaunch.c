@@ -2,7 +2,7 @@
  * Airborne step: drift the actor along its heading, and on landing hand off or bail out.
  */
 
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
 
 typedef struct {
     unsigned short lo : 8;
@@ -13,7 +13,7 @@ typedef struct {
     unsigned char hasLanding : 1;
 } LandingFlag;
 
-static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
     vec->y = y;
     vec->z = z;
@@ -21,7 +21,7 @@ static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
 
 extern void ScaleVec3Fx12(int scale, void *v, void *dst);
 extern void VEC_Add(void *a, void *b, void *dst);
-extern void func_ov107_020c0b90(int obj, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(int obj, int a, VecFx32 v, int b);
 extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void Ov107_BuildAndSendUpdate(int obj, int id, int a, void *v);
 extern void SetIndexedSlot(int self, int idx, void *cb);
@@ -31,7 +31,7 @@ extern short data_0203d210[];
 
 void Ov217_StepChargeLaunch(int *self) {
     int *state = (int *)self[1];
-    struct Vecx32 dir;
+    VecFx32 dir;
     int idx;
     short kind;
 
@@ -47,9 +47,9 @@ void Ov217_StepChargeLaunch(int *self) {
 
     ((Hw60 *)(*state + 0x60))->hi &= ~0x40;
     if (((LandingFlag *)(*state + 0x17a))->hasLanding) {
-        *(struct Vecx32 *)(state + 0xe) = *(struct Vecx32 *)(*state + 0x180);
+        *(VecFx32 *)(state + 0xe) = *(VecFx32 *)(*state + 0x180);
         state[0xf] -= *(int *)(*state + 0x80);
-        func_ov107_020c0b90(*state, 3, *(struct Vecx32 *)(state + 0xe), 0);
+        func_ov107_020c0b90(*state, 3, *(VecFx32 *)(state + 0xe), 0);
         Ov107_PostTagUpdate(*state, 5, 0);
         Ov107_BuildAndSendUpdate(*state, 0x144, 7, state + 0xe);
         state[0x14] = 0;

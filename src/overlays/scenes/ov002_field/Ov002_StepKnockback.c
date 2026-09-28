@@ -1,19 +1,15 @@
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+extern const VecFx32 data_02041dc8;
 
-extern const Vec3 data_02041dc8;
-
-extern int VEC_Mag(const Vec3 *v);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *ab);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *pUnit);
-extern void ScaleVec3Fx12(int nFactor, const Vec3 *pSrc, Vec3 *pDst);
-extern int VEC_Distance(const Vec3 *a, const Vec3 *b);
-extern void Actor_SetVecAndSyncChild(void *pActor, const Vec3 *pPos);
+extern int VEC_Mag(const VecFx32 *v);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *pUnit);
+extern void ScaleVec3Fx12(int nFactor, const VecFx32 *pSrc, VecFx32 *pDst);
+extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
+extern void Actor_SetVecAndSyncChild(void *pActor, const VecFx32 *pPos);
 extern int Ov002_GetModuleScale(void);
 extern void Mover_StepActor(void *pActorSlot, int nFlag);
 
@@ -30,11 +26,11 @@ extern void Mover_StepActor(void *pActorSlot, int nFlag);
  * displacement, which is not the same as the intended one because the actor
  * call can refuse or clip the move.
  */
-int Ov002_StepKnockback(int nUnused, char *pElement, Vec3 *pOutDelta)
+int Ov002_StepKnockback(int nUnused, char *pElement, VecFx32 *pOutDelta)
 {
-    Vec3 vAfter;
-    Vec3 vBefore;
-    Vec3 vStep;
+    VecFx32 vAfter;
+    VecFx32 vBefore;
+    VecFx32 vStep;
     int nResult;
     int bStruck;
     int nMag;
@@ -49,12 +45,12 @@ int Ov002_StepKnockback(int nUnused, char *pElement, Vec3 *pOutDelta)
     }
 
     if (bStruck || (*(u8 *)(pElement + 0x04) & 2) != 0) {
-    vBefore = *(Vec3 *)(*(char **)(pElement + 0x08) + 0xa8);
+    vBefore = *(VecFx32 *)(*(char **)(pElement + 0x08) + 0xa8);
 
     if ((*(u16 *)(pElement + 0x448) & 0x200) != 0) {
-        if (VEC_Mag((Vec3 *)(pElement + 0x44c)) < 0x10) {
+        if (VEC_Mag((VecFx32 *)(pElement + 0x44c)) < 0x10) {
             Actor_SetVecAndSyncChild(*(void **)(pElement + 0x08),
-                                     (Vec3 *)(pElement + 0x458));
+                                     (VecFx32 *)(pElement + 0x458));
             *(u16 *)(pElement + 0x448) &= ~0x200;
             *(int *)(pElement + 0x44c) = 0;
             *(int *)(pElement + 0x450) = 0;
@@ -62,14 +58,14 @@ int Ov002_StepKnockback(int nUnused, char *pElement, Vec3 *pOutDelta)
         } else {
             *(int *)(pElement + 0x468) += Ov002_GetModuleScale();
             if (*(int *)(pElement + 0x468) >= 0x3000) {
-                vAfter = *(Vec3 *)(pElement + 0x458);
+                vAfter = *(VecFx32 *)(pElement + 0x458);
                 nResult = 2;
                 *(u16 *)(pElement + 0x448) &= ~0x200;
                 *(int *)(pElement + 0x44c) = 0;
                 *(int *)(pElement + 0x450) = 0;
                 *(int *)(pElement + 0x454) = 0;
             } else {
-                VEC_Add(&vBefore, (Vec3 *)(pElement + 0x44c), &vAfter);
+                VEC_Add(&vBefore, (VecFx32 *)(pElement + 0x44c), &vAfter);
             }
             Actor_SetVecAndSyncChild(*(void **)(pElement + 0x08), &vAfter);
         }
@@ -78,7 +74,7 @@ int Ov002_StepKnockback(int nUnused, char *pElement, Vec3 *pOutDelta)
         *(int *)(pElement + 0x14) = 0;
         *(int *)(pElement + 0x18) = data_02041dc8.z;
 
-        nMag = VEC_Mag((Vec3 *)(pElement + 0x44c));
+        nMag = VEC_Mag((VecFx32 *)(pElement + 0x44c));
 
         if ((*(int *)(pElement + 0x0c) & 4) == 0) {
             if (*(int *)(pElement + 0x40) == (int)0x80000000) {
@@ -110,7 +106,7 @@ int Ov002_StepKnockback(int nUnused, char *pElement, Vec3 *pOutDelta)
 
         if (nMag > 0) {
             nBleed = *(short *)(pElement + 0x00);
-            vStep = *(Vec3 *)(pElement + 0x44c);
+            vStep = *(VecFx32 *)(pElement + 0x44c);
 
             if (*(int *)(pElement + 0x450) != 0) {
                 *(int *)(pElement + 0x40) = *(int *)(pElement + 0x450);
@@ -124,20 +120,20 @@ int Ov002_StepKnockback(int nUnused, char *pElement, Vec3 *pOutDelta)
             }
 
             if (nMag > 0xe00) {
-                VEC_Normalize((Vec3 *)(pElement + 0x44c), &vStep);
+                VEC_Normalize((VecFx32 *)(pElement + 0x44c), &vStep);
                 ScaleVec3Fx12(0xe00, &vStep, &vStep);
             }
 
-            vAfter = *(Vec3 *)(*(char **)(pElement + 0x08) + 0xa8);
+            vAfter = *(VecFx32 *)(*(char **)(pElement + 0x08) + 0xa8);
             VEC_Add(&vAfter, &vStep, &vAfter);
-            ScaleVec3Fx12(nBleed, (Vec3 *)(pElement + 0x44c),
-                          (Vec3 *)(pElement + 0x44c));
+            ScaleVec3Fx12(nBleed, (VecFx32 *)(pElement + 0x44c),
+                          (VecFx32 *)(pElement + 0x44c));
 
             *(int *)(pElement + 0x10) = vStep.x;
             *(int *)(pElement + 0x14) = 0;
             *(int *)(pElement + 0x18) = vStep.z;
 
-            nMag = VEC_Mag((Vec3 *)(pElement + 0x44c));
+            nMag = VEC_Mag((VecFx32 *)(pElement + 0x44c));
             if ((*(u16 *)(pElement + 0x448) & 1) == 0 && nMag <= 0x80) {
                 *(int *)(pElement + 0x454) = 0;
                 *(int *)(pElement + 0x450) = 0;
@@ -149,7 +145,7 @@ int Ov002_StepKnockback(int nUnused, char *pElement, Vec3 *pOutDelta)
         Mover_StepActor(pElement + 0x08, 1);
     }
 
-    vAfter = *(Vec3 *)(*(char **)(pElement + 0x08) + 0xa8);
+    vAfter = *(VecFx32 *)(*(char **)(pElement + 0x08) + 0xa8);
 
     if (VEC_Distance(&vBefore, &vAfter) > 4
         && (vBefore.x != vAfter.x || vBefore.y != vAfter.y

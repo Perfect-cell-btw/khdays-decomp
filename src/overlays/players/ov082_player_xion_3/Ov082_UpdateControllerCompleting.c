@@ -5,17 +5,12 @@
 #pragma opt_common_subs off
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Ov082UpdateVectors {
-    struct Vec3 horizontal;
-    struct Vec3 movement;
-    struct Vec3 direction;
+    VecFx32 horizontal;
+    VecFx32 movement;
+    VecFx32 direction;
 };
 
 struct Ov082Node {
@@ -47,15 +42,15 @@ struct Ov082Actor {
     u64 flags464;
     u64 flags46c;
     char pad474[0x18];
-    struct Vec3 anchor48c;
-    struct Vec3 accumulated498;
+    VecFx32 anchor48c;
+    VecFx32 accumulated498;
     char pad4a4[0x1c0];
     Ov082ActorCallback callback664;
     Ov082ActorUpdateCallback callback668;
     char pad66c[0x28];
     struct Ov082ActorBits694 bits694;
     char pad695[3];
-    struct Vec3 accumulated698;
+    VecFx32 accumulated698;
     char pad6a4[0x10c];
     int timeline7b0;
     char pad7b4[0x1b44];
@@ -71,15 +66,15 @@ struct Ov082Controller4c14 {
 
 extern u32 Session_GetLocalPlayerIndex(void);
 extern int Ov022_ValidateTargetRef(struct Ov082Actor *actor);
-extern struct Vec3 *func_ov022_020ad0c0(struct Ov082Actor *actor);
-extern void VEC_Subtract(const struct Vec3 *a, const struct Vec3 *b,
-                         struct Vec3 *out);
-extern int VEC_Mag(const struct Vec3 *v);
-extern void VEC_Normalize(const struct Vec3 *v, struct Vec3 *out);
+extern VecFx32 *func_ov022_020ad0c0(struct Ov082Actor *actor);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b,
+                         VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int FX_Atan2(int y, int x);
-extern void Ov022_StepAnchorDelta(struct Ov082Actor *actor, struct Vec3 *out);
-extern void VEC_Add(const struct Vec3 *a, const struct Vec3 *b,
-                    struct Vec3 *out);
+extern void Ov022_StepAnchorDelta(struct Ov082Actor *actor, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b,
+                    VecFx32 *out);
 extern void Ov082_EmitTimelineEffect(struct Ov082Controller4c14 *self);
 extern int Ov022_IsSlotReady(void *context);
 extern int Ov022_IsState9Or6WithFlag200(void *context);

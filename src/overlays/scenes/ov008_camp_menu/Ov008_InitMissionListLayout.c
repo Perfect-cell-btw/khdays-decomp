@@ -8,6 +8,7 @@
  * 2 and 3 are shown, widgets 2..0x13 get their two slots released, and the
  * rows and scroll arrows are laid out.
  */
+
 #include "nitro/types.h"
 
 #define ROW_HEIGHT   32

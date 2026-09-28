@@ -2,6 +2,7 @@
  * and exchanges them with the peers before the entry sync. */
 
 #include "nitro/types.h"
+
 typedef void (*MissionCallback)(void);
 
 typedef struct {

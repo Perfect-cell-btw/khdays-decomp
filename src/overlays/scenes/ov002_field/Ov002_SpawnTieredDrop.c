@@ -1,19 +1,16 @@
-#include "nitro/types.h"
-
-typedef struct Ov002Vec3 {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
 
 /* Three tier values, one byte each, laid out just before the spot descriptors
    and read from the top down.  They are 100 here, 10 at 0207e679 and 1 at
    0207e678: a plain decimal breakdown. The lower two share a separate
    two-byte table immediately before the hundreds value. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 extern u8 data_ov002_0207e67a;
 
 extern void *Ov002_SpawnKindIntoFreeSpot(int nKind, u16 nTier, int nCtxIndex,
-                                 const Ov002Vec3 *pPlace, int nMode);
+                                 const VecFx32 *pPlace, int nMode);
 
 /* Turns an amount into spawned objects, spending the dearest tier first: as
    long as the tier's value still fits it is taken off the amount, and the
@@ -24,7 +21,7 @@ extern void *Ov002_SpawnKindIntoFreeSpot(int nKind, u16 nTier, int nCtxIndex,
    Everything goes out with mode 0, so each object gets a scattered velocity
    off the stage generator. */
 void Ov002_SpawnTieredDrop(int nKind, u8 nAmount, int nCtxIndex,
-                         const Ov002Vec3 *pPlace)
+                         const VecFx32 *pPlace)
 {
     int nTier;
     u8 *pTierValue;

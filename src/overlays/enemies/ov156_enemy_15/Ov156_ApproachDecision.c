@@ -4,12 +4,14 @@
  * target's +0x190 point from the +8 position. With the +0x34 cooldown spent: a gap under 0x2000
  * requests sub-state 6 and ends the state; otherwise the first of the two +0x3a4 items whose
  * +0x60 low bit is clear requests sub-state 4 and ends the state. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern int Ov107_FindNearestObject(int actor, int *distSq);
 extern int FX_Sqrt(int x);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
@@ -17,7 +19,7 @@ void Ov156_ApproachDecision(int *node)
 {
     int *state = (int *)node[1];
     int dist;
-    Vec3 d;
+    VecFx32 d;
     int actor;
     int target;
     int i;
@@ -32,7 +34,7 @@ void Ov156_ApproachDecision(int *node)
     if (dist >= *(int *)(*state + 0x2d8)) {
         return;
     }
-    VEC_Subtract((Vec3 *)(state[6] + 0x190), (Vec3 *)state[2], &d);
+    VEC_Subtract((VecFx32 *)(state[6] + 0x190), (VecFx32 *)state[2], &d);
     state[5] = func_020050b4(d.x, d.z);
     if (state[0xd] > 0) {
         return;

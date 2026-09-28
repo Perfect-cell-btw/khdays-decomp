@@ -1,5 +1,6 @@
 /* Record the ov252 actor's +0x310 slot byte for armour piece `which` (+0x39c) and fetch the other three
  * pieces' records from its +0x384 model's +0x88 bank (0202aee0; piece 3 reads record 4). */
+
 #include "nitro/types.h"
 
 extern int Anim_GetFrame(int bank, u16 id);

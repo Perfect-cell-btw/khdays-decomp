@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* The overlay's stopwatch.  Only the first three words matter here; the rest
  * of the context carries the total, the run, the split and the laps. */
+
+#include "nitro/types.h"
+
 typedef struct {
     int nFlags;             /* 0x00 */
     int nLastMs;            /* 0x04 */

@@ -1,8 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct {
-    int x, y, z;
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern void NNSi_FndGetCurrentRootHeap(void);
 /* out = origin + t * disp, in fx32. */

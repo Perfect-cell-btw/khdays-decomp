@@ -4,13 +4,15 @@
  * decays by 0xe80 on the ground with no source (+4) or 0xfb0 otherwise; the +0x20 vertical speed
  * falls by the frame rate * 0xd0 / 0x88 (zeroed when landed and not rising); on the ground a
  * velocity under 1/16 is zeroed and the bounce flag +0x44 is set. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 struct Flag17a { u8 b0 : 1; };
 
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern const Vec3 data_02041dc8;
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern const VecFx32 data_02041dc8;
 
 static inline int FX_Mul(int a, int b) {
     return (int)(((long long)a * b + 0x800) >> 12);
@@ -19,7 +21,7 @@ static inline int FX_Mul(int a, int b) {
 void Ov254_HelperPhysicsTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int actor = *state;
     int onGround;
     int move;
@@ -33,10 +35,10 @@ void Ov254_HelperPhysicsTick(int *node)
     switch (move) {
     case 1:
     case 2:
-        *(Vec3 *)(actor + 0xf0) = *(Vec3 *)(state + 7);
+        *(VecFx32 *)(actor + 0xf0) = *(VecFx32 *)(state + 7);
         break;
     case 3:
-        *(Vec3 *)(actor + 0xf0) = *(Vec3 *)(state + 7);
+        *(VecFx32 *)(actor + 0xf0) = *(VecFx32 *)(state + 7);
         if (state[0x10] != 0) {
             if (onGround) {
                 state[0x10] = 0;
@@ -50,8 +52,8 @@ void Ov254_HelperPhysicsTick(int *node)
         if (!onGround) {
             return;
         }
-        if (VEC_Normalize((Vec3 *)(state + 7), &dir) < 0x100) {
-            *(Vec3 *)(state + 7) = data_02041dc8;
+        if (VEC_Normalize((VecFx32 *)(state + 7), &dir) < 0x100) {
+            *(VecFx32 *)(state + 7) = data_02041dc8;
         }
         state[0x11] = 1;
         break;

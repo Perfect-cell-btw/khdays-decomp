@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by * Ov287_Actor_ResolveHit -- Ov287_Actor_ResolveHit. (020d0304): const struct ImpactIdPairs data_ov287_020d16d4; */
+
 #include "nitro/types.h"
 
-/* read by * Ov287_Actor_ResolveHit -- Ov287_Actor_ResolveHit. (020d0304): const struct ImpactIdPairs data_ov287_020d16d4; */
 const u8 data_ov287_020d16d4[8] = {
     2, 3, 0, 1, 0, 16, 0, 0,
 };

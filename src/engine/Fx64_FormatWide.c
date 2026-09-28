@@ -2,6 +2,7 @@
 /* Fx64_FormatWide -- format a 64-bit fixed-point value as two wide strings: the decimal integer part
  * into pIntOut and the fraction digits (to `precision` places) into pFracOut, both zero-terminated,
  * through the byte formatter Fx64_FormatText. */
+
 #include "nitro/types.h"
 
 extern void Fx64_FormatText(s64 value, int precision, char *pIntText, char *pFracText);

@@ -5,25 +5,27 @@
  * +0x190 scaled by an ease-in accumulated per 0x88 of the frame step (1 - (1 - t) ...), +0x3b8 is
  * cleared, +0x3c0 zeroed, the goal copied to +0xc, pose 1 set (flag 1), the timer cleared and
  * the node moved to 020d0330. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Ov245Actor { char pad[0x394]; int slots[3]; };
 
-extern void Ov245_InvokeHookAndRearm(int item, void *anchor, const Vec3 *dir);
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void Ov245_InvokeHookAndRearm(int item, void *anchor, const VecFx32 *dir);
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_ChargeUpTick(void);
-extern const Vec3 data_02042264;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02041dc8;
 
 void Ov245_ChargeTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 d;
-    Vec3 zero;
+    VecFx32 d;
+    VecFx32 zero;
     int i;
     int rest;
     int sum;
@@ -40,7 +42,7 @@ void Ov245_ChargeTick(int *node) {
     }
     zero = data_02041dc8;
     func_ov107_020c0b90(*state, 2, data_02041dc8, 0);
-    VEC_Subtract((Vec3 *)(*(int *)(*state + 0x390) + 0x190), (Vec3 *)state[2], &d);
+    VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x390) + 0x190), (VecFx32 *)state[2], &d);
     sum = 0;
     d.y = 0;
     rest = *(int *)(node[0] + 0x2c);
@@ -51,10 +53,10 @@ void Ov245_ChargeTick(int *node) {
         rest -= 0x88;
     }
     ScaleVec3Fx12(sum, &d, &d);
-    VEC_Add(&d, (Vec3 *)state[2], (Vec3 *)(*state + 0x3b4));
+    VEC_Add(&d, (VecFx32 *)state[2], (VecFx32 *)(*state + 0x3b4));
     *(int *)(*state + 0x3b8) = 0;
-    *(Vec3 *)(*state + 0x3c0) = zero;
-    *(Vec3 *)(state + 3) = *(Vec3 *)(*state + 0x3b4);
+    *(VecFx32 *)(*state + 0x3c0) = zero;
+    *(VecFx32 *)(state + 3) = *(VecFx32 *)(*state + 0x3b4);
     Ov107_PostTagUpdate(*state, 1, 1);
     state[0xc] = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_ChargeUpTick);

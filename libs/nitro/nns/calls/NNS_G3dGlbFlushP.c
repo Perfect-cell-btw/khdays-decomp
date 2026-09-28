@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
@@ -12,10 +13,6 @@ typedef struct MtxFx43 {
 typedef struct MtxFx33 {
     fx32 m[3][3];
 } MtxFx33;
-
-typedef struct VecFx32 {
-    fx32 x, y, z;
-} VecFx32;
 
 typedef struct NNSG3dGlb {
     u32 cmd0;

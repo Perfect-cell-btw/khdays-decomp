@@ -2,15 +2,11 @@
  * syncs the actor; at 0 the local player sends record 2 once. With flag 0x80 hands over to
  * Ov014_ActorStepProgress. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad00[0xe0];
-    Vec3 sourceVec;
+    VecFx32 sourceVec;
     char pad_ec[0x1b1 - 0xec];
     unsigned char flags;
     unsigned char useAltRate;
@@ -32,7 +28,7 @@ extern int Ov002_GetModuleScale(void);
 extern unsigned int GameState_GetField(int, int);
 extern unsigned int Session_GetLocalPlayerIndex(void);
 extern int Ov002_RecordElementHit(Ov014State *, unsigned char *, int);
-extern void Actor_SetVecAndSyncChild(int *, const Vec3 *);
+extern void Actor_SetVecAndSyncChild(int *, const VecFx32 *);
 extern void Ov014_SetFlag2RunTwoSubActionsIfFlag4(Ov014State *, int);
 extern int Ov014_ActorStepProgress(void);
 
@@ -42,7 +38,7 @@ int Ov014_TickHeightMotion(Ov014State *self)
     int rate;
     unsigned int event;
     unsigned char rec[4];
-    Vec3 vec;
+    VecFx32 vec;
 
     delta = Ov002_GetModuleScale();
     rate = self->source;
@@ -78,7 +74,7 @@ int Ov014_TickHeightMotion(Ov014State *self)
         vec = self->sourceVec;
         vec.y = self->position;
         Actor_SetVecAndSyncChild((int *)((char *)self + 0x38), &vec);
-        *(Vec3 *)((char *)self + 0x1c) = vec;
+        *(VecFx32 *)((char *)self + 0x1c) = vec;
     } else {
         if (*(short *)((char *)self + 0x1d0) >= 0) {
             self->callbackState = 1;

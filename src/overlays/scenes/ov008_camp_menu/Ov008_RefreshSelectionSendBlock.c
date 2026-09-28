@@ -3,6 +3,7 @@
  * message from the current session mask and four player records. The four dead
  * initial assignments emit no code under this pragma and reproduce the retail
  * register allocation. */
+
 #include "nitro/types.h"
 
 typedef struct {

@@ -6,13 +6,9 @@
  * to sixteen ids of live actors whose surface distance is within 0x8000, halving
  * their stagger timer when this enemy is in mode 1, firing reaction 0x11e at each,
  * and handing the collected list to Ov141_bindSubitemsByTypeId. */
-#include "nitro/types.h"
 
-struct Ov141Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov141Cmd {
     u8 pad00[2];
@@ -38,7 +34,7 @@ struct Ov141Other {
     char pad04[0x5c];
     struct Ov141Hw60 { u16 lo : 8, hi : 8; } flags60;
     char pad62[0x12];
-    struct Ov141Vec3 vPos74;
+    VecFx32 vPos74;
     int nRadius80;
     char pad84[0x17c];
     u16 flags200_18;
@@ -55,7 +51,7 @@ struct Ov141Self {
     char pad40[0x10];
     int nMode50;
     char pad54[0x20];
-    struct Ov141Vec3 vPos74;
+    VecFx32 vPos74;
     int nRadius80;
     char pad84[0x30c];
     struct Ov141Slots *pSlots390;
@@ -72,11 +68,11 @@ extern int Ov107_CreateSpawnTask(struct Ov141Self *self, int id, int kind, int e
                                void *transform);
 extern void **List_First(void *list);
 extern void **List_Next(void *list);
-extern void VEC_Subtract(const struct Ov141Vec3 *a, const struct Ov141Vec3 *b,
-                         struct Ov141Vec3 *dst);
-extern int VEC_Mag(const struct Ov141Vec3 *v);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b,
+                         VecFx32 *dst);
+extern int VEC_Mag(const VecFx32 *v);
 extern void Ov107_BuildAndSendUpdate(struct Ov141Self *self, int id, int kind,
-                                struct Ov141Vec3 *at);
+                                VecFx32 *at);
 extern int Ov141_bindSubitemsByTypeId(struct Ov141Self *self, short *ids);
 extern void Ov107_AiState_OnMessage(struct Ov141Self *self, struct Ov141Cmd *cmd, int arg2);
 
@@ -109,7 +105,7 @@ void Ov141_HandleCommand(struct Ov141Self *self, struct Ov141Cmd *cmd, int arg2)
         case 0: {
             int list = self->pScene04;
             short ids[16] = {0};
-            struct Ov141Vec3 delta;
+            VecFx32 delta;
 
             count = 0;
             it = List_First((void *)(list + 0x80));

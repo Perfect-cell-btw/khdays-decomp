@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* TPData: x, y, touch, validity -- the touch-panel sample layout TP_GetCalibratedPoint
  * (TP_GetCalibratedPoint) converts. */
+
+#include "nitro/types.h"
+
 typedef struct {
     u16 field_00;
     u16 field_02;

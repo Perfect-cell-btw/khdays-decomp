@@ -4,23 +4,24 @@
  * +0xc facing becomes a unit vector (sine/cosine table) whose dot with that offset, clamped to
  * 0..1, scales the +0x3d0 resource's forward speed into the +0x18 step. Once the +4 item's
  * +0xad byte clears, a positive +0x44 timer requests sub-state 7 and otherwise 2. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int Ov107_ActionResource_GetOffsetAndScale(int resource, int a);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern const short data_0203d210[];
 
 void Ov195_TurnStepTick(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 d;
-    Vec3 fwd;
+    VecFx32 d;
+    VecFx32 fwd;
     int idx;
     int dot;
     int speed;
@@ -31,7 +32,7 @@ void Ov195_TurnStepTick(int node)
         SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)(*state + 0xb0), &d);
+    VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)(*state + 0xb0), &d);
     d.y = 0;
     VEC_Normalize(&d, &d);
     state[4] = func_020050b4(d.x, d.z);
@@ -47,7 +48,7 @@ void Ov195_TurnStepTick(int node)
         dot = 0;
     }
     speed = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3d0), 0);
-    ScaleVec3Fx12((int)(((long long)speed * dot + 0x800) >> 12), &fwd, (Vec3 *)(state + 6));
+    ScaleVec3Fx12((int)(((long long)speed * dot + 0x800) >> 12), &fwd, (VecFx32 *)(state + 6));
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }

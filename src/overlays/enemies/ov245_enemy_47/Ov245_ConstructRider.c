@@ -8,8 +8,10 @@
  * rest from pool entries listed there, all attached (bit 1 of +0x5c). Two placements at the
  * origin (scale 0.5) go on the +0x22c list (+0x388) and the +0x144 list (+0x38c); sound 0x11a
  * is loaded. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int scale; } Pose;
+
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int scale; } Pose;
 typedef void (*Callback)(void);
 struct PoolIds { int id[5]; };
 struct Ov245Slot { int pItem; int pad4; };
@@ -29,7 +31,7 @@ extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
 extern void Snd_RegisterSeqAndBind(void *track, int model, void *resource, int slot);
 extern void MainBlob_ResetSlotRows(int item, void *track);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
-extern void Ov107_Actor_SetAttachSlot(int self, int a, int b, Vec3 *lift, int id);
+extern void Ov107_Actor_SetAttachSlot(int self, int a, int b, VecFx32 *lift, int id);
 extern void *CallocInstance(int size);
 extern void *func_ov107_020c9848(void);
 extern void Ov107_EnqueueValue(int self, int item);
@@ -42,7 +44,7 @@ extern const char data_ov245_020d7274[];
 extern const char data_ov245_020d7284[];
 extern const char data_ov245_020d7294[];
 extern const char data_ov245_020d729c[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov245_ConstructRider(int selfArg) {
     char *self = (char *)selfArg;   /* codegen: the local copy keeps `mov r1,#1` in the call shadow */

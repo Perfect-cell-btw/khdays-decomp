@@ -3,14 +3,16 @@
  * clear and its +0x3ac shape hides. A point 0.75 above the actor, turned by its +0xa0 rotation and
  * offset from the +0xc point, gets effect 0; sound 0/0x48 plays at the actor, +0x3c clears and the node
  * moves on to 020ccfe8. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern int Ov146_ForwardToAiTaskWhenReady(int partner);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov146_WakeTick(void);
@@ -18,7 +20,7 @@ extern void Ov146_WakeTick(void);
 void Ov146_GrabEntry(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 at;
+    VecFx32 at;
 
     Ov146_ForwardToAiTaskWhenReady(state[2]);
     {
@@ -44,7 +46,7 @@ void Ov146_GrabEntry(int *node)
     at.y = 0xc00;
     at.z = 0;
     Vec3TransformViaTempMtx(&at, (void *)(*state + 0xa0), &at);
-    VEC_Add(&at, (Vec3 *)state[3], &at);
+    VEC_Add(&at, (VecFx32 *)state[3], &at);
     func_ov107_020c0b90(*state, 0, at, 0);
     Ov107_BuildAndSendUpdate(*state, 0, 0x48, (void *)(*state + 0x74));
     state[0xf] = 0;

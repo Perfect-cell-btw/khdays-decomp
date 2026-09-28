@@ -1,10 +1,11 @@
 /* Initialises the main menu's panel context: clears its transforms and brightness tweens and
  * decodes the panel widgets' transforms and resources for the game mode. */
 
-#include "nitro/types.h"
 #pragma opt_strength_reduction off
 #pragma opt_common_subs off
 #pragma opt_lifetimes off
+
+#include "nitro/types.h"
 
 typedef struct Vec3 {
     u32 x;

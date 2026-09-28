@@ -10,10 +10,11 @@
  * Two codegen notes: the entry count is tested signed, and the loop counter is
  * declared before the node pointer so the two land in the original's registers.
  */
-struct Vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 struct Ov020WallQuery {
-    struct Vec3 vOrigin;                    /* 0x00 */
+    VecFx32 vOrigin;                    /* 0x00 */
     int nScale0c;                           /* 0x0c */
     int bUpperWall10;                       /* 0x10 */
     int bReady14;                           /* 0x14 */
@@ -43,7 +44,7 @@ struct TrackEntryGroup {
 
 struct Ov020Placement {
     char pad00[8];
-    struct Vec3 vOrigin08;                  /* 0x08 */
+    VecFx32 vOrigin08;                  /* 0x08 */
 };
 
 extern char data_ov020_020800d8[];

@@ -2,7 +2,9 @@
  * data_020420f8, resets the actor's +0x1c6 kind and +0x1c7 request, clears bit 0 of the +0x60
  * high byte and bit 0 of +0x1ae, then installs the three slot handlers (0: 020cd904,
  * 1: 020cd9c8, 2: 020cd998). */
+
 #include "nitro/types.h"
+
 struct vec4 { int a, b, c, d; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern const struct vec4 data_020420f8;

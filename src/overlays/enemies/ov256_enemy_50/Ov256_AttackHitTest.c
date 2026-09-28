@@ -1,14 +1,15 @@
 /* cd0e8 */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
 extern int Ov107_CollectCapsuleOverlaps(int owner, void *box, int *hits);
 extern int Ov107_CollectSegmentOverlaps(int owner, void *seg, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 
-int Ov256_AttackHitTest(int *node, void *sphere, void *box, void *seg, Vec3 *push, int bMask, int unused, int kind)
+int Ov256_AttackHitTest(int *node, void *sphere, void *box, void *seg, VecFx32 *push, int bMask, int unused, int kind)
 {
     int *state = (int *)node[1];
     int hits[4];
@@ -35,7 +36,7 @@ int Ov256_AttackHitTest(int *node, void *sphere, void *box, void *seg, Vec3 *pus
             if (bMask != 0) {
                 *((u8 *)state + 0x6a) |= bit;
             }
-            func_ov107_020c0b90(*state, 0, *(Vec3 *)(hits[i] + 0x190), 0);
+            func_ov107_020c0b90(*state, 0, *(VecFx32 *)(hits[i] + 0x190), 0);
         }
         if (bMask != 0) {
             if (*((u8 *)state + 0x6a) != 0) {

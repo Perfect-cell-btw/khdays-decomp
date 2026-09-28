@@ -5,9 +5,11 @@
  * hook in the 14-byte message of data_ov257_020d32f6 and reaction +0x408 mode 0x2b fires there.
  * Animation 0x10 plays, the +0x50 timer and +0x65 clear and the tick hands over to
  * Ov257_StrikeWindUpTick. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo; u16 hi; } Cmd4;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
 
@@ -22,9 +24,9 @@ typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
 extern const Cmd4 data_ov257_020d325c;
 extern const Cmd14 data_ov257_020d32f6;
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern int *Collision_CastRay(void *collision, Vec3 *origin, Vec3 *dir);
-extern void ScaleVec3Fixed27(int plane, Vec3 *in, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern int *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *dir);
+extern void ScaleVec3Fixed27(int plane, VecFx32 *in, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -34,8 +36,8 @@ void Ov257_GroundStrikeEnterTick(int *node)
 {
     int *state = (int *)node[1];
     Cmd4 note = data_ov257_020d325c;
-    Vec3 p;
-    Vec3 ray;
+    VecFx32 p;
+    VecFx32 ray;
     Cmd14 msg;
     Fx32 scratchZ;
     Fx32 scratchY;
@@ -49,7 +51,7 @@ void Ov257_GroundStrikeEnterTick(int *node)
         int world = *(int *)(*state + 4);
         int *wall;
 
-        p = *(Vec3 *)(state[0x18] + 0x190);
+        p = *(VecFx32 *)(state[0x18] + 0x190);
         p.y += 0xa000;
         ray.x = 0;
         ray.z = 0;

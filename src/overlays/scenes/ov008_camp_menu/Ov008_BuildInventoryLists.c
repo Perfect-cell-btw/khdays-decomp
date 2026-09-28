@@ -9,6 +9,7 @@
  * the category's count (+0x7c) bumped.  The word at +0x78 is cleared once per
  * category.
  */
+
 #include "nitro/types.h"
 
 #define CATEGORY_COUNT 8

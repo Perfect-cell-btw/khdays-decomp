@@ -1,23 +1,19 @@
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern u8 data_0204c240;
 
 extern int Ov002_LookupChannelEntry(void *pName);
 extern void Entity_Register(char *pObj, int nRes, int a, int b);
-extern void Actor_SetVecAndSyncChild(char *pNode, Vec3 *pPos);
+extern void Actor_SetVecAndSyncChild(char *pNode, VecFx32 *pPos);
 extern int Ov002_GetLastPositiveSlotValue(u16 *pAnim);
 extern void Ov002_RebindAnimTracks(short *pAnim, int nTrack, int nFrame);
 extern void SceneNode_Enable(u16 *pAnim);
 extern void SceneNode_Disable(u16 *pAnim);
 extern unsigned int GameState_GetField(u16 nId, u8 nSlot);
 extern void Obj_SetFlagBit3(char *pObj, int bOn);
-extern void Ov002_ForwardLinkEventKind1(int nKind, Vec3 *pPos, int nParam);
+extern void Ov002_ForwardLinkEventKind1(int nKind, VecFx32 *pPos, int nParam);
 
 /* Bring an actor element's model back after its owner has been rebound.
  *
@@ -30,15 +26,15 @@ extern void Ov002_ForwardLinkEventKind1(int nKind, Vec3 *pPos, int nParam);
  */
 void Ov002_ElementRestorePose(char *pElement)
 {
-    Vec3 vPos;
-    const Vec3 *pCached;
+    VecFx32 vPos;
+    const VecFx32 *pCached;
     void *pOwnerName;
     int nState;
     int bVisible;
     u16 wAngle;
 
     pOwnerName = *(char **)(pElement + 8) + 0x58;
-    pCached = (const Vec3 *)(pElement + 0x1c);
+    pCached = (const VecFx32 *)(pElement + 0x1c);
     vPos.x = pCached->x;
     vPos.y = pCached->y;
     vPos.z = pCached->z;

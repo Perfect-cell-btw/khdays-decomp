@@ -5,6 +5,7 @@
  * list's array is then freed and cleared.  Finally the listed-pointer array
  * (+0x38) and the table itself are freed.
  */
+
 #include "nitro/types.h"
 
 #define LIST_COUNT 5

@@ -1,15 +1,16 @@
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
 struct Ov185Bone {
     char pad000[0x60];
     u16 hw60;
     char pad062[0x4e];
-    struct Vec3 vPosb0;
+    VecFx32 vPosb0;
     char pad0bc[0x1c];
-    struct Vec3 vDird8;
+    VecFx32 vDird8;
 };
 
 struct Ov185Actor {
@@ -34,9 +35,9 @@ struct Ov185ActionNode {
 
 extern const short data_0203d210[];
 
-extern int VEC_Normalize(struct Vec3 *v, struct Vec3 *unit);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
-extern void Ov107_MoveNodeAndRelayout(struct Ov185Actor *owner, struct Vec3 *pos);
+extern void Ov107_MoveNodeAndRelayout(struct Ov185Actor *owner, VecFx32 *pos);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 
 /*
@@ -57,7 +58,7 @@ extern void SetIndexedSlot(void *node, int idx, void *value);
  */
 void Ov186_BoneSpin_Step(struct Ov185ActionNode *node)
 {
-    struct Vec3 vPos;
+    VecFx32 vPos;
     struct Ov185ActionState *state;
     struct Ov185Bone **aBones;
     int i;

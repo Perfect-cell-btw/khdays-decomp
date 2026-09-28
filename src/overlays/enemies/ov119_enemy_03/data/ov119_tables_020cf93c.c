@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by refresh sub-node #0's local transform, then publish it. (020cbfc4): struct blk4 data_ov119_020cf93c; */
+
 #include "nitro/types.h"
 
-/* read by refresh sub-node #0's local transform, then publish it. (020cbfc4): struct blk4 data_ov119_020cf93c; */
 const int data_ov119_020cf93c[4] = {
     0, 2896, 2896, 0,
 };

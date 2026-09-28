@@ -4,10 +4,6 @@
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
-typedef struct VecFx32 {
-    fx32 x, y, z;
-} VecFx32;
-
 #define PAD_BUTTON_A      0x0001
 #define PAD_BUTTON_B      0x0002
 #define PAD_KEY_RIGHT     0x0010

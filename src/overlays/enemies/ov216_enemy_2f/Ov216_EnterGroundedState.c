@@ -10,11 +10,13 @@
  * truncation pair on `|=`), while the sub-node's low-byte clear at +8 uses the bitfield --
  * the two idioms sit four statements apart here.
  */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct LowByteFlags { unsigned bits : 8; };
 
-extern void func_ov107_020c0b90(int owner, int a, Vec3 v, int b);
-extern void Ov107_BuildAndSendUpdate(int owner, int a, int kind, const Vec3 *v);
+extern void func_ov107_020c0b90(int owner, int a, VecFx32 v, int b);
+extern void Ov107_BuildAndSendUpdate(int owner, int a, int kind, const VecFx32 *v);
 extern void SetIndexedSlot(int *self, int action, void *cb);
 extern void Ov216_stTimerSetFlag80ClearBit0(void);
 
@@ -34,8 +36,8 @@ void Ov216_EnterGroundedState(int *self) {
             (hw60 & ~0xff00) | (((((unsigned int)hw60 << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10);
     }
 
-    func_ov107_020c0b90(*ctx, 0, *(Vec3 *)((char *)*ctx + 0x74), 0);
-    Ov107_BuildAndSendUpdate(*ctx, 0, 0x49, (const Vec3 *)((char *)*ctx + 0x74));
+    func_ov107_020c0b90(*ctx, 0, *(VecFx32 *)((char *)*ctx + 0x74), 0);
+    Ov107_BuildAndSendUpdate(*ctx, 0, 0x49, (const VecFx32 *)((char *)*ctx + 0x74));
     ctx[0x14] = 0;
     SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), &Ov216_stTimerSetFlag80ClearBit0);
 }

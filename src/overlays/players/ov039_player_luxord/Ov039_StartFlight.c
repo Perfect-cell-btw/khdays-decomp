@@ -4,22 +4,24 @@
  * position (020ad44c) heading along its facing (unit vector of (0, 0, 0x1000) turned by the
  * angle at +0x80 of the +0x20 node), with the lap count at +0x2fdc, progress 0, the owner id
  * from +0x66 and the running flag at +0x2fe4. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
-extern void func_ov022_020ad44c(Vec3 *pOut, char *self);
+extern void func_ov022_020ad44c(VecFx32 *pOut, char *self);
 extern void MTX_RotY33_(Mtx33 *m, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern char *data_ov039_020b5600;
 extern short data_0203d210[];
 
 void Ov039_StartFlight(char *self)
 {
-    Vec3 vDir;
+    VecFx32 vDir;
     Mtx33 mFacing;
-    Vec3 vFrom;
+    VecFx32 vFrom;
     char *flight = data_ov039_020b5600 + 0xd4 + 0x2c00;
     int bStart = 1;
     int nLaps;
@@ -49,7 +51,7 @@ void Ov039_StartFlight(char *self)
         return;
     }
     func_ov022_020ad44c(&vFrom, self);
-    *(Vec3 *)(flight + 0x31c) = vFrom;
+    *(VecFx32 *)(flight + 0x31c) = vFrom;
     nIndex = (unsigned short)(*(unsigned short *)(*(char **)(self + 0x20) + 0x80) - 0x8000) >> 4;
     MTX_RotY33_(&mFacing, -data_0203d210[nIndex * 2], -data_0203d210[nIndex * 2 + 1]);
     vDir.x = 0;
@@ -57,9 +59,9 @@ void Ov039_StartFlight(char *self)
     vDir.z = 0x1000;
     MTX_MultVec33(&vDir, &mFacing, &vDir);
     if (VEC_Mag(&vDir) == 0) {
-        *(Vec3 *)(flight + 0x328) = vDir;
+        *(VecFx32 *)(flight + 0x328) = vDir;
     } else {
-        VEC_Normalize(&vDir, (Vec3 *)(flight + 0x328));
+        VEC_Normalize(&vDir, (VecFx32 *)(flight + 0x328));
     }
     *(int *)(flight + 0x308) = nLaps;
     *(int *)(flight + 0x30c) = 0;

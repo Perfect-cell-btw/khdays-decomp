@@ -10,15 +10,11 @@
  * ARM.
  */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad000[0xa4];
-    Ov002Vec3 vPos;
+    VecFx32 vPos;
     char pad0b0[0x58];
 } Ov002Widget;
 
@@ -33,15 +29,15 @@ extern int func_02023c40(void);
 extern unsigned int Sequence_UpdateTracks(void *pWidget, int nStep);
 extern void Scene_DrawNode(void *pWidget);
 
-extern void Ov002_ProjectWorldToPanel(Ov002Vec3 *pOut, const Ov002Vec3 *pIn,
+extern void Ov002_ProjectWorldToPanel(VecFx32 *pOut, const VecFx32 *pIn,
                                 const void *pCam);
 
-unsigned int Ov002_StepPanelPointer(const void *pCam, const Ov002Vec3 *pIn)
+unsigned int Ov002_StepPanelPointer(const void *pCam, const VecFx32 *pIn)
 {
     Ov002PointerScene *s;
     unsigned int nDone;
     int nStep;
-    Ov002Vec3 v;
+    VecFx32 v;
 
     s = *(Ov002PointerScene **)&data_ov002_0207f628;
     if (func_02023c40() == 1) {

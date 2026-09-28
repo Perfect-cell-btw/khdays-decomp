@@ -2,7 +2,9 @@
  * point, picks the overlay's hide point for the set chosen by +0x91, sets the +0x80 flag, zeroes
  * the +0x10 velocity, places the actor at the point, resets the +0x38 and +0x7c timers, requests
  * sub-state 2 and ends the state. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 struct HideTable { VecFx32 p[2]; };
 
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);

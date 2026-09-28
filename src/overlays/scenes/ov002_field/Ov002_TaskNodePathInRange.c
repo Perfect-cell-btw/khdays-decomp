@@ -1,11 +1,9 @@
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
 
 /* The path node this predicate belongs to; it is one of the step functions
  * Ov002_CreateTaskNodePath installs at +0x14. */
+
+#include "nitro/fx.h"
+
 typedef struct Ov002TaskNodePath {
     void *pHook0;                       /* +0x00 */
     void *pHook1;                       /* +0x04 */

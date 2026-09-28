@@ -7,6 +7,7 @@
  * one: the descriptors are 0x10-byte structs passed by their byte array, the slot is
  * an int parameter, the binding parameter is a void * built as the ADDRESS OF A MEMBER
  * rather than a pointer sum, and the function RETURNS the latched flags. */
+
 #include "nitro/types.h"
 
 struct Ov088BuildBlock {

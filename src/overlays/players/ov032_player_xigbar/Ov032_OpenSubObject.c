@@ -2,6 +2,7 @@
  * it and builds a two-entry parameter table on the stack (a 0x181 entry with the 0x99a/0x119a
  * ranges and a 0x383 entry with 0x1400/0x1000, both spanning 0x19000..0x32000 at 0x3000) that
  * the overlay's descriptor opens with modes 2/4. */
+
 #include "nitro/types.h"
 
 struct PanelSubCfg {

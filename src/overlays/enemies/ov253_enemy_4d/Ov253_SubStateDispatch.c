@@ -2,6 +2,7 @@
  * and 7 of the actor's +0x60 high byte clear, the request becomes the +0x1c6 kind and slot 1
  * takes the matching node (0: 020d2a34, 1-2: 020d2aac, 4: 020d2bac, 5: 020d2f24, 6: 020d3038);
  * the request is then cleared (-1). */
+
 #include "nitro/types.h"
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

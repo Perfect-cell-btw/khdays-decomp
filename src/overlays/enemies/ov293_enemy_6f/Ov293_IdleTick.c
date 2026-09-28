@@ -8,8 +8,9 @@
  *
  * Codegen: the record's actor is read a second time through an `int *` view of the record
  * ((int *)&record)[2]) for the owner comparison; a plain field re-read is CSE'd into one load. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct Ov293Owner {
     char pad000[4];
@@ -25,8 +26,8 @@ struct Ov293HitRecord {
 };
 
 extern int Ov107_FindNearestObject(struct Ov293Owner *actor, int mode);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int func_020050b4(int x, int z);
 extern void Ov107_PostTagUpdate(struct Ov293Owner *actor, int anim, int flag);
 extern void Ov107_StartAnim(int handle, int a, int b);
@@ -41,7 +42,7 @@ void Ov293_IdleTick(int *node)
 {
     int *state = (int *)node[1];
     struct Msg4 msg;
-    Vec3 d;
+    VecFx32 d;
 
     state[5] = *(int *)(*node + 0x2c) * 30 / 20;
     if (data_ov293_020d3660.pActor != 0) {

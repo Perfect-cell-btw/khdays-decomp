@@ -7,38 +7,40 @@
  * stomps the +0x52 low mask clears. Each time the +4 rig finishes a remaining stomp (+0x52 high nibble)
  * replays pose 0xb (last) or 0xe with effect 3 or 4; with none left a follow-up (020cd2cc, without a
  * +0x38 delay) or move 2 follows. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
-typedef struct { Vec3 pos; Vec3 axis[3]; int radius; int flag; } Cylinder;
+typedef struct { VecFx32 pos; VecFx32 axis[3]; int radius; int flag; } Cylinder;
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
 extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
 extern void Ov258_ForwardEventIfStateOne(int partner, int from, int to, int d);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
-extern int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *capsule, void *cylinder, Vec3 *push, int once, u16 effect, int kind);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
+extern int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *capsule, void *cylinder, VecFx32 *push, int once, u16 effect, int kind);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int Ov258_PickMove(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_ov258_020d1820;
-extern const Vec3 data_ov258_020d182c;
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042270;
+extern const VecFx32 data_ov258_020d1820;
+extern const VecFx32 data_ov258_020d182c;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042270;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
 void Ov258_StompTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 marker;
+    VecFx32 marker;
     Mtx33 rot;
     Cylinder cyl;
-    Vec3 push;
+    VecFx32 push;
 
     state[0xc] += *(int *)(node[0] + 0x2c);
     state[0x11] += *(int *)(node[0] + 0x2c);
@@ -75,12 +77,12 @@ void Ov258_StompTick(int *node)
         } else {
             func_ov107_020c0b90(*state, 9, marker, 0);
         }
-        *(Vec3 *)(state + 7) = marker;
+        *(VecFx32 *)(state + 7) = marker;
     }
     if ((state[0xc] >= 0x24a8 && state[0xc] < 0x24a8 + 0x550) || (state[0xc] >= 0x3520 && state[0xc] < 0x3520 + 0x550) ||
         (state[0xc] >= 0x4378 && state[0xc] < 0x4378 + 0x550) || (state[0xc] >= 0x4fb0 && state[0xc] < 0x5500)) {
         push = data_ov258_020d1820;
-        cyl.pos = *(Vec3 *)(state + 7);
+        cyl.pos = *(VecFx32 *)(state + 7);
         cyl.pos.y += 0x800;
         cyl.axis[0] = data_02042270;
         cyl.axis[1] = data_02042258;

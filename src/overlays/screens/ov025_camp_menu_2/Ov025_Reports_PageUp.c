@@ -9,6 +9,7 @@
  * pending, the cursor sound plays (02033b78) and the rows refresh (020a076c); +0x22c is cleared.
  * Codegen: the old window position is an s16 local (it lands in ip and leaves r3 to the held
  * keys); declaration order nTop, nCursor, nOldTop and d before nLast. */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ReportsList {

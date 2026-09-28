@@ -3,9 +3,9 @@
  * pending (kick flag bit 8 of +0x464) and be in the room (bit 3 of +0x12); a kickable whose
  * GameState bit is 1 is always available, any other keeps a "taken" flag in bit 1 of its field
  * that hides it.  Answers &position (+0x488). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016Kickable {
     u8 pad_000[0x12];

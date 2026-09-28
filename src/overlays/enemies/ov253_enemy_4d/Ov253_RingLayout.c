@@ -4,13 +4,15 @@
  * segment (raised by 0.5) with scale 1.0 (the last segment's entries grow with the fraction);
  * the owner's +0x88 model rebinds channels 0, 2, 1 and 4 to its +0xe0 and clears them; the
  * node moves to 020d1af4. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Ov253JointsNext { char *cur[1]; char *next[4]; };
 struct Ov253Links { char pad[0x390]; char *link[4]; };
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void BindAnimTrack(int object, int channel, void *target, int flag);
 extern void Anim_SetFrameWrapped(int object, int channel, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -18,10 +20,10 @@ extern void Ov253_NotifyIfQueryBit0Set(void);
 
 void Ov253_RingLayout(int *node) {
     int *state = (int *)node[1];
-    Vec3 a;
-    Vec3 b;
+    VecFx32 a;
+    VecFx32 b;
     char *joints[5];
-    Vec3 pos;
+    VecFx32 pos;
     int i;
     int actor = *state;
     int quarter = *(int *)(state[1] + 0x8c) / 4;
@@ -37,13 +39,13 @@ void Ov253_RingLayout(int *node) {
         entry = *(char **)(state[1] + 0x90) + i * 0x38;
         seg = i / quarter;
         t = ((i % quarter) << 12) / quarter;
-        a = *(Vec3 *)(joints[seg] + 0x14);
-        b = *(Vec3 *)(joints[seg + 1] + 0x14);
+        a = *(VecFx32 *)(joints[seg] + 0x14);
+        b = *(VecFx32 *)(joints[seg + 1] + 0x14);
         VEC_Subtract(&b, &a, &pos);
         ScaleVec3Fx12(t, &pos, &pos);
         VEC_Add(&a, &pos, &pos);
         pos.y += 0x800;
-        *(Vec3 *)(entry + 0x2c) = pos;
+        *(VecFx32 *)(entry + 0x2c) = pos;
         if (seg + 1 == 4) {
             *(int *)entry = (t << 1) + 0x1000;
         } else {

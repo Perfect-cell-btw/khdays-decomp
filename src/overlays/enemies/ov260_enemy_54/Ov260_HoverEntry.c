@@ -1,7 +1,8 @@
 /* Hover entry of the ov260 actor: pose 0xf plays, its +0x428 part takes motion 7, the +0x2c push
  * becomes (0, 0.25, 0) and is copied to +0x20, effect 0x1f starts at the +0x10 point (020cd148) and
  * the node moves on to 020cec98. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
@@ -18,7 +19,7 @@ void Ov260_HoverEntry(int *node)
     state[0xb] = 0;
     state[0xc] = 0x400;
     state[0xd] = 0;
-    *(Vec3 *)(state + 8) = *(Vec3 *)(state + 0xb);
+    *(VecFx32 *)(state + 8) = *(VecFx32 *)(state + 0xb);
     Ov260_PlaySound(*state, 0x1f, state[4]);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov260_FallTick);
 }

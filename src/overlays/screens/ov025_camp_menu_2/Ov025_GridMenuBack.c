@@ -11,6 +11,7 @@
  * the previous mode (+0xc), enters state 0 without a secondary panel (+0x4c), installs the grid
  * list hooks (data_ov025_020b4d4c: done 020988c0, select 020984ac, cancel 020985b8) with sound
  * 0x38; 2 / 5 enter grid menu mode 1 / 4 and the other sub modes up to 8 mode 0, with sound 3. */
+
 #include "nitro/types.h"
 
 #define STATE_LIST   0

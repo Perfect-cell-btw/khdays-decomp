@@ -7,6 +7,7 @@
  * ctx object 95c0, either targets slot 0 and sets flag 0x200a or targets no
  * slot with 0x5dc.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionListEntry {

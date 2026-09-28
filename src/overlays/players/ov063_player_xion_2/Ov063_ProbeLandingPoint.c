@@ -1,19 +1,19 @@
 /* Moves the point by the step (stopping at walls when asked), then drops it onto the ground below
  * (or clamps it to the floor limit). */
 
+#include "nitro/fx.h"
+
 extern int EntityMgr_RunSphereCast();
 extern void Vec3ScaleAddQ27();
 extern void VEC_Add();
 extern int EntityMgr_RunRayCast();
 
-struct Vec3 { int x; int y; int z; };
-
-void Ov063_ProbeLandingPoint(struct Vec3 *out, char *p1, char *p2, int p3, int p4, int p5)
+void Ov063_ProbeLandingPoint(VecFx32 *out, char *p1, char *p2, int p3, int p4, int p5)
 {
     int *r4;
     int *obj;
-    struct Vec3 va;
-    struct Vec3 vb;
+    VecFx32 va;
+    VecFx32 vb;
 
     r4 = *(int **)(p1 + 0xdb4);
 

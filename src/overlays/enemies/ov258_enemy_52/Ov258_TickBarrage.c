@@ -7,27 +7,29 @@
  * to the owner is pulled out to 4.5, raised by k/16 over -1.0 and fired (effect 0xc). Once the rig is
  * idle, 50 shots end in a follow-up (020cd2cc, without a +0x38 delay) or move 2; before that the rig
  * replays pose 0xc (first shot) or 0. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern int Ov258_AcquireTarget(int *node, int face);
 extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, u16 variant, void *at);
 extern int func_020050b4(int x, int z);
 extern int RandNextScaled(int bound);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);
 extern int Ov258_PickMove(int *node);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_ov258_020d1838;
+extern const VecFx32 data_ov258_020d1838;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
@@ -41,13 +43,13 @@ static inline int RandRange(int lo, int hi)
 void Ov258_TickBarrage(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 at;
-    Vec3 at2;
-    Vec3 pos;
+    VecFx32 at;
+    VecFx32 at2;
+    VecFx32 pos;
     Mtx33 rot;
-    Vec3 off;
-    Vec3 target;
-    Vec3 d;
+    VecFx32 off;
+    VecFx32 target;
+    VecFx32 d;
     u8 k;
 
     state[0xd] += *(int *)(node[0] + 0x2c);
@@ -57,7 +59,7 @@ void Ov258_TickBarrage(int *node)
     Ov258_StepCue(node, 0x36, 2, *(int *)(*state + 0x460) != 0 ? 0x1b : 0x15);
     Ov258_StepCue(node, 0x5a, 1, 7);
     if (state[0xd] >= 0x550 && *(u16 *)(state + 0x14) == 6) {
-        at = *(Vec3 *)state[3];
+        at = *(VecFx32 *)state[3];
         (*(u16 *)(state + 0x14))--;
         at.y = -0xde00;
         func_ov107_020c0b90(*state, 10, at, 0);
@@ -72,7 +74,7 @@ void Ov258_TickBarrage(int *node)
         (*(u16 *)(state + 0x14))--;
     }
     if (state[0xd] >= 0x3278 && *(u16 *)(state + 0x14) == 2) {
-        at2 = *(Vec3 *)(*(int *)(*state + 0x448) + 0x14);
+        at2 = *(VecFx32 *)(*(int *)(*state + 0x448) + 0x14);
         (*(u16 *)(state + 0x14))--;
         at2.y += 0xde00;
         func_ov107_020c0b90(*state, 0xb, at2, 0);
@@ -84,14 +86,14 @@ void Ov258_TickBarrage(int *node)
         state[8] = 0xfa00;
         state[9] = 0x8000;
         Ov107_BuildAndSendUpdate(*state, *(short *)(state + 0x16), *(int *)(*state + 0x460) != 0 ? 0x12 : 0x19, state + 7);
-        func_ov107_020c0b90(*state, 0x2a, *(Vec3 *)(state + 7), 0);
+        func_ov107_020c0b90(*state, 0x2a, *(VecFx32 *)(state + 7), 0);
         *(int *)(*state + 0x428) = 0x8000;
     }
     if (state[0xd] >= 0x5258 && (state[0xc] += *(int *)(node[0] + 0x2c)) >= 0x2a8) {
         k = state[0xf] % 10;
         switch (k) {
         case 0:
-            pos = *(Vec3 *)(*(int *)(*state + 0x454) + 0x190);
+            pos = *(VecFx32 *)(*(int *)(*state + 0x454) + 0x190);
             break;
         case 1:
         case 2: {
@@ -103,7 +105,7 @@ void Ov258_TickBarrage(int *node)
                 off.y = 0;
                 off.z = 0;
             }
-            pos = *(Vec3 *)(*(int *)(*state + 0x454) + 0x190);
+            pos = *(VecFx32 *)(*(int *)(*state + 0x454) + 0x190);
             if (k == 3) {
                 off.x = (signed char)(RandNextScaled(2) == 0 ? -1 : 1) * 0x5000;
                 off.y = 0;
@@ -128,8 +130,8 @@ void Ov258_TickBarrage(int *node)
             signed char sx = RandNextScaled(2) == 0 ? -1 : 1;
             signed char sz = RandNextScaled(2) == 0 ? -1 : 1;
 
-            pos = k == 2 ? *(Vec3 *)(*(int *)(*state + 0x454) + 0x190) : *(Vec3 *)state[3];
-            pos = *(Vec3 *)(*(int *)(*state + 0x454) + 0x190);
+            pos = k == 2 ? *(VecFx32 *)(*(int *)(*state + 0x454) + 0x190) : *(VecFx32 *)state[3];
+            pos = *(VecFx32 *)(*(int *)(*state + 0x454) + 0x190);
             pos.x += sx * FX_MUL(data_0203d210[ANG2IDX((state[0xf] - 3 + state[0xf] / 10 * 3) * 0x6488 / 10) * 2], 0xa800);
             pos.z += sz * FX_MUL(data_0203d210[ANG2IDX((state[0xf] - 3 + state[0xf] / 10 * 3) * 0x6488 / 10) * 2 + 1], 0xa800);
             pos.x += sx * RandRange(0, 0x2800);
@@ -137,7 +139,7 @@ void Ov258_TickBarrage(int *node)
             break;
         }
         }
-        target = *(Vec3 *)state[3];
+        target = *(VecFx32 *)state[3];
         d = pos;
         d.y = 0;
         target.y = 0;

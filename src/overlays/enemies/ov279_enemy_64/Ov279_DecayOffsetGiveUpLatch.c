@@ -6,7 +6,9 @@
  * give up: if the pending target *(state[0]+0x25c) is non-null, latch it into state[2] and mark
  * *state[0]+0x1c7 = 8; else mark 2. Hand off via 0203c634 (cb=0).
  */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b1 { unsigned char b0 : 1; };
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
@@ -16,7 +18,7 @@ void Ov279_DecayOffsetGiveUpLatch(int *self) {
     int *state = (int *)self[1];
     int t;
 
-    *(struct vec3 *)(state + 0xc) = *(struct vec3 *)(state + 0xf);
+    *(VecFx32 *)(state + 0xc) = *(VecFx32 *)(state + 0xf);
     ScaleVec3Fx12(0xb00, (void *)(state + 0xf), (void *)(state + 0xf));
     if (state[0xd] < 0x20) {
         ((struct hw60 *)(*state + 0x60))->hi &= ~0x40;

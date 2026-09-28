@@ -5,24 +5,25 @@
  * table and added to the anchor at +0x48c. The heading is stored back on the
  * record, the visible bit is raised and the state advances to 2, where the
  * emitter runs until it reports done. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Mtx33 { int m[9]; };
 
 extern void Ov022_PlayEntityVoice(int pActor, int a, int b);
 extern void Ov057_ResetSequenceState(int pActor, void *block);
 extern void MTX_RotY33_(struct Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const struct Vec3 *v, const struct Mtx33 *m, struct Vec3 *dst);
-extern void VEC_Add(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *dst);
+extern void MTX_MultVec33(const VecFx32 *v, const struct Mtx33 *m, VecFx32 *dst);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern unsigned int Sequence_UpdateTracks(void *p, int a);
 
 extern int data_ov057_020b74a0;
 extern short data_0203d210[];
 
 void Ov057_TickForwardEffectSequence(int pActor, int *pEffect, int delta) {
-    struct Vec3 effectPosition;
-    struct Vec3 effectOffset;
+    VecFx32 effectPosition;
+    VecFx32 effectOffset;
     struct Mtx33 rotation;
     char *pSceneBlock = (char *)(*(int *)&data_ov057_020b74a0 + 0x2c + 0x2c00);
     u16 heading;
@@ -42,7 +43,7 @@ void Ov057_TickForwardEffectSequence(int pActor, int *pEffect, int delta) {
         effectOffset.x = 0x148;
         effectOffset.y = 0;
         effectOffset.z = 0x1800;
-        effectPosition = *(struct Vec3 *)(pActor + 0x48c);
+        effectPosition = *(VecFx32 *)(pActor + 0x48c);
 
         heading = *(u16 *)(*(char **)(pActor + 0x20) + 0x80);
         heading = (u16)(heading - 0x8000);
@@ -54,7 +55,7 @@ void Ov057_TickForwardEffectSequence(int pActor, int *pEffect, int delta) {
 
         *(u16 *)((char *)pEffect + 0x80) = heading;
         *(u16 *)((char *)pEffect + 4) |= 0x20;
-        *(struct Vec3 *)((char *)pEffect + 0xa8) = effectPosition;
+        *(VecFx32 *)((char *)pEffect + 0xa8) = effectPosition;
         *pEffect = 2;
         return;
     case 2:

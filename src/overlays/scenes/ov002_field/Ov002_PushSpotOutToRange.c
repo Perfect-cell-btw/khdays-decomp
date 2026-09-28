@@ -1,22 +1,20 @@
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
 
 /* A stored spot: a position plus the index of the party slot it belongs to. */
+
+#include "nitro/fx.h"
+
 typedef struct {
-    Vec3 vPos;                      /* +0x00 */
+    VecFx32 vPos;                      /* +0x00 */
     unsigned char bSlot;            /* +0x0c */
 } Ov002Spot;
 
-extern int VEC_Mag(const Vec3 *v);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *ab);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *pUnit);
-extern void ScaleVec3Fx12(int nFactor, const Vec3 *pSrc, Vec3 *pDst);
-extern Vec3 *Ov002_Element_CallHook2C(int nObj);
+extern int VEC_Mag(const VecFx32 *v);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *pUnit);
+extern void ScaleVec3Fx12(int nFactor, const VecFx32 *pSrc, VecFx32 *pDst);
+extern VecFx32 *Ov002_Element_CallHook2C(int nObj);
 extern int func_ov022_020882f8(void);
-extern Vec3 *func_ov022_020881f8(int nSlot);
+extern VecFx32 *func_ov022_020881f8(int nSlot);
 
 /* Pull a spot in towards its party member when it is closer than a radius.
  *
@@ -26,10 +24,10 @@ extern Vec3 *func_ov022_020881f8(int nSlot);
  * radius. The original height is put back either way.
  */
 void Ov002_PushSpotOutToRange(int nObj, const Ov002Spot *pSpot, int nRange,
-                         Vec3 *pOut)
+                         VecFx32 *pOut)
 {
     int nSlot;
-    Vec3 *pFrom;
+    VecFx32 *pFrom;
 
     *pOut = pSpot->vPos;
     pOut->y = 0;

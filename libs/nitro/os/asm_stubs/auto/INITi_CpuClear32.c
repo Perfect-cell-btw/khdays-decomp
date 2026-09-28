@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* NitroSDK startup clear primitive; preserves the fill value in r0. */
+
+#include "nitro/types.h"
+
 asm void INITi_CpuClear32(register u32 value, register void *destination,
                           register u32 size)
 {

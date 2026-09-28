@@ -1,11 +1,13 @@
 /* Queue a point in the ov106 scene: the first free of the four +0x8dd8 slots (+0x8e08 in-use flags)
  * takes `pos` and is marked used. No-op without a scene or a free slot. */
-typedef struct { int x, y, z; } Vec3;
-struct Ov106Scene { char pad[0x8dd8]; Vec3 points[4]; int used[4]; };
+
+#include "nitro/fx.h"
+
+struct Ov106Scene { char pad[0x8dd8]; VecFx32 points[4]; int used[4]; };
 
 extern struct Ov106Scene *data_ov106_020b8b60;
 
-void Ov106_QueuePoint(Vec3 *pos)
+void Ov106_QueuePoint(VecFx32 *pos)
 {
     int i;
 

@@ -14,9 +14,10 @@
  * reach block counts clears the reach timer.
  */
 
+/* Ov022AimState: the aim bytes at actor+0x2bb0 */
+
 #include "nitro/types.h"
 
-/* Ov022AimState: the aim bytes at actor+0x2bb0 */
 struct AimState {
     u8 nAimSlot;                 /* 0x00 */
     u8 bHold;                    /* 0x01 */

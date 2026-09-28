@@ -14,6 +14,7 @@
  * declaration order nY, nLeft, nDigit, nSpare, nX, pFont, nGlyph colours
  * the first loop (5040-permutation sweep).
  */
+
 #include "nitro/types.h"
 
 #define GLYPH_MISSING   0xffff

@@ -11,12 +11,7 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct MtxFx33 {
     int m[3][3];
@@ -41,7 +36,7 @@ struct Actor {
     int nSlotSpare;                  /* 0x051c */
     int nSlotAnchor;                 /* 0x0520 */
     u8 pad0524[0x3c8];
-    struct VecFx32 vecAnchorDelta;   /* 0x08ec */
+    VecFx32 vecAnchorDelta;   /* 0x08ec */
 };
 
 #define FLAG_BIT29 (1ULL << 29)
@@ -55,16 +50,16 @@ extern short data_0203d210[];            /* sin, cos pairs by angle >> 4 */
 
 extern int FX_Div(int nNumerator, int nDenominator);
 extern void MTX_RotY33_(struct MtxFx33 *pMtx, int nSin, int nCos);
-extern void Ov022_GetSlotPos(struct Actor *pActor, int nSlot, struct VecFx32 *pOut);
-extern void VEC_Subtract(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *pOut);
-extern void ScaleVec3Fx12(int nFactor, struct VecFx32 *pSrc, struct VecFx32 *pDst);
-extern void MTX_MultVec33(struct VecFx32 *pVec, struct MtxFx33 *pMtx, struct VecFx32 *pOut);
+extern void Ov022_GetSlotPos(struct Actor *pActor, int nSlot, VecFx32 *pOut);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *pOut);
+extern void ScaleVec3Fx12(int nFactor, VecFx32 *pSrc, VecFx32 *pDst);
+extern void MTX_MultVec33(VecFx32 *pVec, struct MtxFx33 *pMtx, VecFx32 *pOut);
 
-void Ov022_StepAnchorDelta(struct Actor *pActor, struct VecFx32 *pOut)
+void Ov022_StepAnchorDelta(struct Actor *pActor, VecFx32 *pOut)
 {
     struct MtxFx33 mtx;
-    struct VecFx32 vecAnchor;
-    struct VecFx32 vecSpare;
+    VecFx32 vecAnchor;
+    VecFx32 vecSpare;
     int nScale;
     u16 nAngle;
     int nTrig;

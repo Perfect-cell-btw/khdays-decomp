@@ -6,20 +6,21 @@
  * timer is within 0xf000 of the animation's end the enemy hands over: to state 0x22 without the
  * marker, otherwise it stops, raises bit 2 and goes to state 2 (or tells the slot callback and
  * goes to state 0 when grounded). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Anim_GetLengthQ12(void *animation, int track);                 /* Anim_GetLengthQ12 */
 extern void *Ov022_ActorSetState(char *self, int state);
 extern char *data_ov083_020b9b00;
 
 void *Ov083_DescentStep(char *self)
 {
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     void *next = 0;
     char *rig = data_ov083_020b9b00 + 0xdf0 + 0x2000;
 
@@ -40,7 +41,7 @@ void *Ov083_DescentStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     (*(int (**)(char *))(self + 0x668))(self);
     if ((*(u16 *)(self + 0x18) & 2) == 2) {
         *(int *)(rig + 0x118) = 1;

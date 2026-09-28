@@ -7,10 +7,11 @@
  * template with the +0x3a4 item's +0x14 point goes to the actor's +0x24 message hook, the kind
  * bit is set and reaction 0x16c mode 5 fires there. Once the +8 busy byte clears animation 7
  * plays and the tick hands off to cd020. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -30,7 +31,7 @@ struct Ov284Owner {
 
 struct Ov284SwingState {
     struct Ov284Owner *pOwner;  /* +0x00 */
-    Vec3 *pPos;                 /* +0x04 */
+    VecFx32 *pPos;                 /* +0x04 */
     u8 *pBusy;                  /* +0x08 */
     int pTarget;                /* +0x0c */
     char pad010[4];
@@ -43,13 +44,13 @@ struct Ov284SwingState {
 };
 
 extern int Ov107_FindNearestObject(struct Ov284Owner *owner, int mode);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern s64 FX_DivFx64c(int num, int den);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(struct Ov284Owner *owner, Sphere *sphere, int *out);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov284Owner *a, struct Ov284Owner *b, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov284Owner *a, struct Ov284Owner *b, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(struct Ov284Owner *owner, int a, int id, void *at);
 extern void Ov107_PostTagUpdate(struct Ov284Owner *actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -62,7 +63,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov284SwingState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov284SwingState *state, PosMsg *msg, const VecFx32 *src)
 {
     FxVec vDead;
     vDead.x = *(Fx32 *)&src->x;
@@ -79,10 +80,10 @@ static inline void SendPos(struct Ov284SwingState *state, PosMsg *msg, const Vec
 void Ov284_SwingTick(int *node)
 {
     struct Ov284SwingState *state = (struct Ov284SwingState *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int hits[4];
     Sphere sphere;
-    Vec3 push;
+    VecFx32 push;
     PosMsg msg;
     PosMsg tmpl;
     s64 t;
@@ -117,7 +118,7 @@ void Ov284_SwingTick(int *node)
                     ScaleVec3Fx12(0x1000, &push, &push);
                     if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, 0, &push, 0) != 0) {
                         msg = tmpl;
-                        SendPos(state, &msg, (Vec3 *)(*(int *)((char *)state->pOwner + 0x3a4) + 0x14));
+                        SendPos(state, &msg, (VecFx32 *)(*(int *)((char *)state->pOwner + 0x3a4) + 0x14));
                         state->bHitMask24 |= 1 << *(u8 *)(hits[i] + 0x1b4);
                         Ov107_BuildAndSendUpdate(state->pOwner, 0x16c, 5, (void *)(*(int *)((char *)state->pOwner + 0x3a4) + 0x14));
                     }

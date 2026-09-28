@@ -2,13 +2,14 @@
  * ticks, marks it finished when it reaches the duration, and writes the eased value between its
  * endpoints. */
 
-#include "nitro/types.h"
-
 /* Same Tween/TweenFlags shape already established by the callers in the tree
  * (e.g. src/overlays/scenes/ov008_camp_menu/Ov008_TickInfoWindowTransition.c, which declares this
  * exact function as `extern void Tween_Sample(Tween *tween, s32 *value);`,
  * and src/overlays/scenes/ov005_story_result/Ov005_InitResultResources.c /
  * Ov005_UpdateRewardPosition.c with the identical field layout). */
+
+#include "nitro/types.h"
+
 typedef struct TweenFlags {
     u32 started : 1;
     u32 paused : 1;

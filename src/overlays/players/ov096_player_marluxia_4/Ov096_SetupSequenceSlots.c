@@ -2,6 +2,7 @@
  * flight parameters: the flight timer at +0x2c58 and +0x2d74 are zeroed, the speed at +0x2d70 set
  * to 0xccd (scaled by 1.5 in hard mode), the three slots register their effect sequences with
  * priority id+7, and the enemy's own emitter at +0x2648 is opened with the 5-word block. */
+
 #include "nitro/types.h"
 
 typedef struct { int w[5]; } Params;

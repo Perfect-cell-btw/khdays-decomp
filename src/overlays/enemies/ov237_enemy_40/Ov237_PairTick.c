@@ -7,25 +7,27 @@
  * unless paired and merged), the +0x494 grab time takes the shorter side, both sides at 0 health start
  * move 3 (+0x4c0). The +0x10 heading turns toward +0x14 at the +0x20 rate and orients the pose, and the
  * +0x3c velocity is handed to the actor (+0xf0) and cleared. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { int m[9]; } Mtx33;
 
 extern int Ov237_TargetGap(int *node);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, const Quat *rot);
 extern void INITi_CpuClear32_0x01ff86fc(unsigned int data, void *dst, unsigned int size);
 extern const short data_0203d210[];
-extern const Vec3 data_ov237_020d1bc4;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_ov237_020d1bc4;
+extern const VecFx32 data_02042264;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define ACTOR ((char *)*state)
@@ -35,8 +37,8 @@ void Ov237_PairTick(int *node)
 {
     int *state = (int *)node[1];
     Quat q;
-    Vec3 d;
-    Vec3 off;
+    VecFx32 d;
+    VecFx32 off;
     Mtx33 rot;
 
     if (state[0x16] != 0) {
@@ -75,9 +77,9 @@ void Ov237_PairTick(int *node)
     }
     if (*(int *)(ACTOR + 0x4ac) != 0) {
         if (*(signed char *)(ACTOR + 0x1c6) == 0xc) {
-            *(Vec3 *)(PARTNER + 0x4c4) = *(Vec3 *)(ACTOR + 0x4c4);
+            *(VecFx32 *)(PARTNER + 0x4c4) = *(VecFx32 *)(ACTOR + 0x4c4);
         } else if (*(signed char *)(PARTNER + 0x1c6) == 0xc) {
-            *(Vec3 *)(ACTOR + 0x4c4) = *(Vec3 *)(PARTNER + 0x4c4);
+            *(VecFx32 *)(ACTOR + 0x4c4) = *(VecFx32 *)(PARTNER + 0x4c4);
         }
     }
     if (*(int *)(ACTOR + 0x4ac) != 0 && *(short *)(PARTNER + 0x4a0) != 0) {
@@ -99,7 +101,7 @@ void Ov237_PairTick(int *node)
         int dist;
         int ang;
 
-        VEC_Subtract((Vec3 *)(PARTNER + 0xb0), (Vec3 *)state[0xe], &d);
+        VEC_Subtract((VecFx32 *)(PARTNER + 0xb0), (VecFx32 *)state[0xe], &d);
         dist = VEC_Normalize(&d, &d);
         ang = func_020050b4(d.x, d.z);
         if (dist < 0x7000) {
@@ -110,7 +112,7 @@ void Ov237_PairTick(int *node)
                 MTX_RotY33_(&rot, data_0203d210[idx], data_0203d210[idx + 1]);
             }
             MTX_MultVec33(&off, &rot, &off);
-            VEC_Add((Vec3 *)(state + 0xf), &off, (Vec3 *)(state + 0xf));
+            VEC_Add((VecFx32 *)(state + 0xf), &off, (VecFx32 *)(state + 0xf));
         }
     }
     if (*(int *)(ACTOR + 0x4ac) != 0 && *(int *)(PARTNER + 0x4b0) != 0) {
@@ -153,9 +155,9 @@ void Ov237_PairTick(int *node)
     QuatFromAxisAngle(&q, &data_02042264, state[4]);
     Srt_SetRotationQuat((void *)(*state + 0xa0), &q);
     {
-        Vec3 *vel = (Vec3 *)(state + 0xf);
+        VecFx32 *vel = (VecFx32 *)(state + 0xf);
 
-        *(Vec3 *)(*state + 0xf0) = *vel;
+        *(VecFx32 *)(*state + 0xf0) = *vel;
         INITi_CpuClear32_0x01ff86fc(0, vel, 0xc);
     }
 }

@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by * Attack step: the per-frame body of the ov042 enemy's attack state. (020b38d4): PermTable data_ov042_020b46f4; */
+
 #include "nitro/types.h"
 
-/* read by * Attack step: the per-frame body of the ov042 enemy's attack state. (020b38d4): PermTable data_ov042_020b46f4; */
 const int data_ov042_020b46f4[18] = {
     0, 1, 2, 0, 2, 1, 1, 0,
     2, 1, 2, 0, 2, 0, 1, 2,

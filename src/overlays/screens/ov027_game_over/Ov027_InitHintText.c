@@ -4,18 +4,14 @@
  * 0xf from data_02042958, 0x20 bytes), and the tile text renderer at +0x5e4 is set up on layer 2
  * with a 0x20 x 3 cell box at (0, 0x14), palette 1, spacing 0xd, kind 1 (0202f834), cleared
  * (0202fa20) and flushed (0202f9f8). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

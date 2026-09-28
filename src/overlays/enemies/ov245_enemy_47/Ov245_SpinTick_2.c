@@ -1,15 +1,17 @@
 /* Spin tick of the ov245 enemy's body: the +0x10 angle eases towards the +0x14 target (0203d040,
  * three times the frame step), the owner's +0xa0 transform takes that yaw, and the owner's +0x3bc
  * velocity loses 15.6 % per 1/30 s slice of the frame. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, Quat *q);
 extern int FX_Div(int num, int den);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 

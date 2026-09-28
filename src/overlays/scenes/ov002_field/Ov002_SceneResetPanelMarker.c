@@ -16,12 +16,6 @@
 #include "nitro/fx.h"
 
 typedef struct {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
-
-typedef struct {
     fx32 a[16];
 } MtxFx44;
 

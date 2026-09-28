@@ -5,24 +5,26 @@
  * target is within 0x1000, otherwise the state ends when the distance leaves the
  * [0x6000, +0x2d8] band, clearing the +0xa8 byte of the +4 sub-item and advancing to
  * Ov134_AimSpinPickAttack. */
+
+#include "nitro/fx.h"
+
 struct Flags42 { unsigned char bCharge : 1; };
-typedef struct { int x, y, z; } Vec3;
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern int Ov107_ActionResource_GetOffsetAndScale(int resource, int a);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov134_AimSpinPickAttack(void);
 extern const short data_0203d210[];
 
 void Ov134_ChaseTick(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 d;
-    Vec3 fwd;
+    VecFx32 d;
+    VecFx32 fwd;
     int idx;
     int dist;
     int boost;
@@ -36,7 +38,7 @@ void Ov134_ChaseTick(int node)
         SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)(*state + 0xb0), &d);
+    VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)(*state + 0xb0), &d);
     d.y = 0;
     actor = *state;
     target = state[2];
@@ -48,7 +50,7 @@ void Ov134_ChaseTick(int node)
     fwd.y = 0;
     boost = ((struct Flags42 *)((char *)state + 0x42))->bCharge ? 2 : 1;
     speed = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3a0), 0);
-    ScaleVec3Fx12(boost * speed, &fwd, (Vec3 *)(state + 6));
+    ScaleVec3Fx12(boost * speed, &fwd, (VecFx32 *)(state + 6));
     if (((struct Flags42 *)((char *)state + 0x42))->bCharge) {
         if (dist > 0x1000) {
             return;

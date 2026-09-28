@@ -17,6 +17,7 @@
  * completed drop, 0 otherwise; the snapshot is released either way.
  * Codegen: both inner conditions are written with the reset case first.
  */
+
 #include "nitro/types.h"
 
 #define CATEGORY_FIXED 6

@@ -9,15 +9,11 @@
  * actor's aim raised by its reach is posted with its id and menu state.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022ChargeEntry */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ChargeEntry {
     u16 nTrackFlags;                 /* 0x000 head of the five tracks */
     u8 pad002[0x106];
@@ -38,7 +34,7 @@ struct Actor {
     u8 pad000a[0x45a];
     u64 nFlags2;                     /* 0x0464 */
     u8 pad046c[0x20];
-    struct VecFx32 vecAim;           /* 0x048c */
+    VecFx32 vecAim;           /* 0x048c */
     u8 pad0498[0x2220];
     int nReach;                      /* 0x26b8 */
     u8 pad26bc[0xb4];
@@ -56,11 +52,11 @@ extern int Sequence_UpdateTracks(u16 *pAnim, int nDelta);
 extern void func_ov022_0209b0c0(struct Actor *pActor, int nEntry, int nValue);
 extern void Ov022_ResetAnimationSlot(struct Actor *pActor, int nEntry, int nValue);
 extern int Session_GetLocalPlayerIndex(void);
-extern void Ov022_PlaceStateMarker(int nKind, int nId, int nState, struct VecFx32 *pPos);
+extern void Ov022_PlaceStateMarker(int nKind, int nId, int nState, VecFx32 *pPos);
 
 void Ov022_StepChargeEntries(struct Actor *pActor, int nDelta)
 {
-    struct VecFx32 vecPos;
+    VecFx32 vecPos;
     struct Charge *pCharge;
 
     pCharge = &pActor->charge;

@@ -7,6 +7,7 @@
  * 4: lowers the brightness by 2 a frame (BLDCNT_SUB, 0xc) and at -16 returns to state 0,
  * sets the global byte 0204bd85 (02020878 1) and returns 0.  While running, the sub engine
  * shows BG1..BG3 (DISPCNT_SUB bits 9..11) and 1 is returned. */
+
 #include "nitro/types.h"
 
 static volatile u32 *const REG_DISPCNT_SUB = (volatile u32 *)0x04001000;

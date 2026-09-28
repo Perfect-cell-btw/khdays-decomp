@@ -30,6 +30,7 @@
  * struct copies (adjusted after the copy), the anchor's x cached; the later
  * tab tests re-read the context.
  */
+
 #include "nitro/types.h"
 
 #define TAB_SHOP    0

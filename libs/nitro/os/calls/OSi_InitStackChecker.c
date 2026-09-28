@@ -1,6 +1,7 @@
 /* NitroSDK libraries/os/src/os_interrupt.c: OS_SetIrqStackChecker. Plants the two canary words
  * at the bottom and top of the IRQ stack (the top of DTCM, below its 0x40-byte system area),
  * which OS_GetIrqStackStatus later checks. */
+
 #include "nitro/types.h"
 
 extern unsigned char data_027e0000[];          /* SDK_AUTOLOAD_DTCM_START */

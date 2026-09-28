@@ -12,12 +12,14 @@
  * and the two +0x468 slot models (kinds of data_ov253_020d482c) are built, and sound 0x16b loads.
  * Codegen: the first name table is copied after the capsule request is complete, and the +0x60
  * halfword is read through an explicit int conversion. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[2]; } IdTable;
 typedef struct { const char *name[5]; } NameTable;
-typedef struct { Vec3 vA; Vec3 vB; int nScale; int nRange; } PlaceReq;
+typedef struct { VecFx32 vA; VecFx32 vB; int nScale; int nRange; } PlaceReq;
 typedef struct { int pItem; int pad; } SubitemSlot;
 struct Bit0 { unsigned int b0 : 1; };
 
@@ -63,9 +65,9 @@ extern const NameTable data_ov253_020d486c;
 extern const NameTable data_ov253_020d4844;
 extern const NameTable data_ov253_020d4880;
 extern const NameTable data_ov253_020d4858;
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042240;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042240;
 
 void Ov253_EnemyConstruct(char *self)
 {

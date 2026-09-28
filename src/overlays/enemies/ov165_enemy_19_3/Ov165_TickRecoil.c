@@ -6,11 +6,13 @@
  * The bit-0 test is a SIGNED one-bit bitfield: that is what gives `lsl #0x1f ; asrs #0x1f`
  * instead of an `ands #1`. The hw60 clear keeps the extra `(unsigned short)` truncation in
  * the middle of the byte round-trip -- without it the two shifts at 0x10 disappear. */
+
+#include "nitro/fx.h"
+
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov165_BounceTick(void);
 
 typedef struct { int b0 : 1; } Ov165Bit0;
-typedef struct { int x, y, z; } VecFx32;
 
 void Ov165_TickRecoil(int *node) {
     int *state = (int *)node[1];

@@ -4,6 +4,7 @@
  * halves; written with bare while loops so the pivot key is re-read in the low
  * scan and CSE'd into the high scan, as in the ROM.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008ItemDef {

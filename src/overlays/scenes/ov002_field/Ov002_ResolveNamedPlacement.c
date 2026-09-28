@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct Ov002Vec3 {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov002DayEntry {
     char pad000[1];
@@ -37,7 +33,7 @@ extern Ov002PlaceResult *EntityMgr_FindCollEntry(u16 nSlot, const char *pKey);
 /* Builds a placement key out of the mission name and looks the placement up.
    The day comes from characters 4 and 5 of the name read as two decimal digits,
    unless the peer row says otherwise.  The key is "pent<day>_<index>". */
-void Ov002_ResolveNamedPlacement(const char *pName, int nSlot, Ov002Vec3 *pPlace,
+void Ov002_ResolveNamedPlacement(const char *pName, int nSlot, VecFx32 *pPlace,
                          int *pOutExtra, int nIndex)
 {
     Ov002CodeBase *pBase;

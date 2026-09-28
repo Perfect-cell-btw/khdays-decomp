@@ -4,6 +4,7 @@
  * something past its end. */
 
 #include "nitro/types.h"
+
 typedef void (*MissionCallback)(void);
 
 typedef struct {

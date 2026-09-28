@@ -1,7 +1,9 @@
 /* Message handler of the ov218 actor: a spawn message (kind 5) starts the +0x39c effect pair of sub 0
  * from the payload (kind 5, variant byte 4, scale 1.3), knocks the actor back and clears +0x394, or
  * for sub 1 starts the flash helper (020cf0fc) into pair 1. The base handler always runs. */
+
 #include "nitro/types.h"
+
 struct EffectPair { int res; int handle; };
 struct Ov218Effects { char pad[0x39c]; struct EffectPair pair[2]; };
 

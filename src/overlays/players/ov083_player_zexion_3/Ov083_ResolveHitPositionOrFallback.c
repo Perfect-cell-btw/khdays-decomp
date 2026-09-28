@@ -1,19 +1,19 @@
 /* Finds the ground under the point with a downward cast: returns the hit point slightly raised, or
  * the point 0x5000 higher when nothing is hit. */
 
+#include "nitro/fx.h"
+
 extern void *EntityMgr_RunCastSimple(int a, void *b, void *c, int d);
 extern void Vec3ScaleAddQ27(int a, void *b, void *c, void *d);
 extern int data_ov083_020b9b00;
 
-typedef struct { int x, y, z; } Vec3;
-
-void Ov083_ResolveHitPositionOrFallback(Vec3 *src, int *out) {
-    Vec3 a;
+void Ov083_ResolveHitPositionOrFallback(VecFx32 *src, int *out) {
+    VecFx32 a;
     int q[3];
     void *r;
     int *ctx;
     a = *src;
-    *(Vec3 *)out = a;
+    *(VecFx32 *)out = a;
     q[0] = 0;
     q[1] = 0x5ccd;
     q[2] = 0;

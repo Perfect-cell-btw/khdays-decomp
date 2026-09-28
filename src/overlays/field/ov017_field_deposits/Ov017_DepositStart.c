@@ -8,9 +8,9 @@
  * facing +0x334); the crack sequence (+0x3c0, position +0x464, facing +0x43c).  Then the hit
  * count (+0x4d8) is read from bits 1.. of the deposit's GameState field and the model marked
  * bound (bit 2 of +0x12). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov017DepositDef {
     u8   pad_00[0x58];

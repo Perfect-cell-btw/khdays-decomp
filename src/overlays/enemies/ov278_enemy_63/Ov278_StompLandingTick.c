@@ -5,10 +5,11 @@
  * away from the box centre gets the overlay's 14-byte message (its kind, its +0x74 position with
  * y raised by 0x800) through the +0x394 target's +0x24 hook, reaction 0x166/0xd at that point and
  * its mask bit. Once the +0x24 flag byte clears the next move is 9. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 center; Vec3 axis[3]; int ext[3]; } Box;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 center; VecFx32 axis[3]; int ext[3]; } Box;
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 struct Msg14 { u16 h[7]; };
@@ -19,15 +20,15 @@ struct Ov278Target {
 };
 
 extern int Ov107_CollectCapsuleOverlaps(int owner, Box *box, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int a, int id, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_0204224c;
-extern const Vec3 data_02042240;
-extern const Vec3 data_0204227c;
+extern const VecFx32 data_0204224c;
+extern const VecFx32 data_02042240;
+extern const VecFx32 data_0204227c;
 extern const struct Msg14 data_ov278_020d63b8;
 
 #define PACK3(msg, base, v) \
@@ -40,8 +41,8 @@ void Ov278_StompLandingTick(int *node)
     int *state = (int *)node[1];
     int hits[4];
     Box box;
-    Vec3 d;
-    Vec3 raw;
+    VecFx32 d;
+    VecFx32 raw;
     struct Msg14 msg;
     struct Msg14 tmpl;
     FxVec vContact;
@@ -50,7 +51,7 @@ void Ov278_StompLandingTick(int *node)
 
     state[5] += *(int *)(node[0] + 0x2c);
     if (state[5] > 0x26ee && state[5] < 0x56ee) {
-        box.center = *(Vec3 *)state[7];
+        box.center = *(VecFx32 *)state[7];
         box.center.y = *(int *)(*(int *)(*state + 0x3a8) + 0x18);
         box.center.y -= *(int *)(*(int *)(*state + 0x398) + 0x74);
         box.axis[0] = data_0204224c;
@@ -70,7 +71,7 @@ void Ov278_StompLandingTick(int *node)
                     ScaleVec3Fx12(0x400, &d, &d);
                     if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x394), 0, &d, 0) != 0) {
                         msg = tmpl;
-                        raw = *(Vec3 *)(hits[i] + 0x74);
+                        raw = *(VecFx32 *)(hits[i] + 0x74);
                         raw.y += 0x800;
                         vContact.x = *(Fx32 *)&raw.x;
                         PACK3(&msg, 5, vContact.x.value);

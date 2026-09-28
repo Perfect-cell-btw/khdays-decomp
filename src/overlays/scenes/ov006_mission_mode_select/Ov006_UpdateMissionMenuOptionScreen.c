@@ -2,6 +2,7 @@
  * and returns the next state callback when leaving the screen. */
 
 #include "nitro/types.h"
+
 typedef void (*MissionState)(void);
 
 typedef struct {

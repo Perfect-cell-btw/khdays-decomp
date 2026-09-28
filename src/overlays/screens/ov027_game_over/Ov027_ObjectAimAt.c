@@ -1,6 +1,7 @@
 /* Ov027_ObjectAimAt -- Ov027_ObjectAimAt: give a display object a step towards a target: the
  * difference between the target and the object's position (+0x10), clamped to +-1.0 (fx32) per
  * axis (Ov027_ClampStep), becomes the object's step (+0x3c). */
+
 #include "nitro/types.h"
 
 typedef struct Fx32Pair {

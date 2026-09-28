@@ -5,6 +5,7 @@
  * GXS_LoadBG3Scr); dirty rows (+0x14) reload slot 0x1a into the sub BG2 screen and flush and
  * upload each of the eleven row surfaces' current tiles (+0x30, 0x3c bytes each: the block's
  * data at +0x18 / +0x20, size +0xc, character offset +0x10; GXS_LoadBG2Char).  Returns 1. */
+
 #include "nitro/types.h"
 
 typedef struct TileBlock {

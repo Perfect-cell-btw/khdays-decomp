@@ -5,8 +5,10 @@
  * the +0x430 partner motion 6; the timer, +0x40 and the +0x70 flags clear, the +0xc velocity
  * resets and the +0x54 drop becomes the height from the track to the actor's +0x4d4 floor + 7.7
  * (at least 15.0); the node moves on to 020d0e58. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern void Ov254_KnockbackAtFeet(int actor, int side);
@@ -15,7 +17,7 @@ extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_CarryTick(void);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
@@ -51,7 +53,7 @@ void Ov254_ClimbOutTick(int *node)
     state[0x11] = 0;
     state[0x10] = 0;
     *((u8 *)state + 0x70) = 0;
-    *(Vec3 *)(state + 3) = data_02041dc8;
+    *(VecFx32 *)(state + 3) = data_02041dc8;
     floor = *(int *)(*state + 0x4d4) + 0x7b31;
     if (floor < 0xf000) {
         floor = 0xf000;

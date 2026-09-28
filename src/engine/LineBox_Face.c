@@ -7,8 +7,8 @@
  * (rounded 20.12), quotients FX_Div (FX_Inv two-argument form), 1/dir through FX_InvFx64c.
  * The axis indices are long and ppE is a vector reached through a component pointer, as the
  * original's Vector3 operator[] did. */
+
 #include "nitro/fx.h"
-typedef struct { fx32 x, y, z; } VecFx32;
 
 typedef struct Box3 {
     char pad00[0x30];

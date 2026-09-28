@@ -13,11 +13,11 @@
  * direction and ends the search. Phase +0x45 0 waits for the +0x28 busy byte to clear and
  * plays animation 0xa (looped); phase 1 plays animation 0xb once the speed drops below 0x200
  * and hands off to d2728. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
@@ -32,8 +32,8 @@ typedef struct {
 } PosMsg;
 
 typedef struct Segment {
-    Vec3 p0;
-    Vec3 dir;
+    VecFx32 p0;
+    VecFx32 dir;
     int scale;
 } Segment;
 
@@ -45,7 +45,7 @@ struct Capsule {
 struct HitPacket {
     u32 flagsLo : 16;
     u32 flagsHi : 16;
-    Vec3 normal;
+    VecFx32 normal;
     int field_10 : 16;
     int field_12 : 16;
     int field_14 : 16;
@@ -67,26 +67,26 @@ struct Ov204Owner {
 struct Ov204BallState {
     struct Ov204Owner *pOwner;  /* +0x00 */
     int pTarget;                /* +0x04 */
-    Vec3 vVelocity;             /* +0x08 */
+    VecFx32 vVelocity;             /* +0x08 */
     char pad014[0x10];
-    Vec3 *pPos;                 /* +0x24 */
+    VecFx32 *pPos;                 /* +0x24 */
     u8 *pBusy;                  /* +0x28 */
     int nTimer;                 /* +0x2c */
     char pad030[0x15];
     u8 nPhase45;                /* +0x45 */
     char pad046[2];
-    Vec3 vDir;                  /* +0x48 */
+    VecFx32 vDir;                  /* +0x48 */
     int nSpeed;                 /* +0x54 */
 };
 
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int VEC_DotProduct(Vec3 *a, Vec3 *b);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern void VEC_Add(void *a, void *b, Vec3 *d);
-extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, Vec3 *at);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern void VEC_Add(void *a, void *b, VecFx32 *d);
+extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, VecFx32 *at);
 extern int Ov107_CollectSphereOverlaps(struct Ov204Owner *owner, Sphere *sphere, int *out);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov204Owner *a, struct Ov204Owner *b, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov204Owner *a, struct Ov204Owner *b, int kind, VecFx32 *push, int z);
 extern int Segment_ClosestPoint(void *point, Segment *seg, fx64 *outDist);
 extern int *List_First(int list);
 extern int *List_Next(int list);
@@ -104,7 +104,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov204BallState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov204BallState *state, PosMsg *msg, const VecFx32 *src)
 {
     volatile int px;
     volatile int py;
@@ -125,7 +125,7 @@ static inline void SendPos(struct Ov204BallState *state, PosMsg *msg, const Vec3
 }
 
 /* Reflect the +0x48 direction about the unit normal n. */
-static inline void Reflect(struct Ov204BallState *state, Vec3 *n, Vec3 *back, Vec3 *refl)
+static inline void Reflect(struct Ov204BallState *state, VecFx32 *n, VecFx32 *back, VecFx32 *refl)
 {
     ScaleVec3Fx12(-0x1000, &state->vDir, back);
     ScaleVec3Fx12(VEC_DotProduct(back, n) << 1, n, refl);
@@ -134,7 +134,7 @@ static inline void Reflect(struct Ov204BallState *state, Vec3 *n, Vec3 *back, Ve
 }
 
 /* Closest point of the capsule axis to `point`, into `out`. */
-static inline void AxisPoint(void *point, Segment *seg, fx64 *t, Vec3 *out)
+static inline void AxisPoint(void *point, Segment *seg, fx64 *t, VecFx32 *out)
 {
     Segment_ClosestPoint(point, seg, t);
     out->x = (int)((*t * seg->dir.x + 0x80000000LL) >> 32);
@@ -146,11 +146,11 @@ static inline void AxisPoint(void *point, Segment *seg, fx64 *t, Vec3 *out)
 void Ov204_BounceTick(int *node)
 {
     struct Ov204BallState *state = (struct Ov204BallState *)node[1];
-    Vec3 back;
-    Vec3 refl;
-    Vec3 n;
-    Vec3 closest;
-    Vec3 push;
+    VecFx32 back;
+    VecFx32 refl;
+    VecFx32 n;
+    VecFx32 closest;
+    VecFx32 push;
     PosMsg wallMsg;
     int hits[4];
     struct Capsule cap;
@@ -166,7 +166,7 @@ void Ov204_BounceTick(int *node)
     int *shape;
 
     if (((struct Bits17a *)((char *)state->pOwner + 0x17a))->bit1 != 0) {
-        n = *(Vec3 *)((char *)state->pOwner + 0x114);
+        n = *(VecFx32 *)((char *)state->pOwner + 0x114);
         n.y = 0;
         VEC_Normalize(&n, &n);
         Reflect(state, &n, &back, &refl);
@@ -198,7 +198,7 @@ void Ov204_BounceTick(int *node)
                     n.y = 0;
                     VEC_Normalize(&n, &n);
                     Reflect(state, &n, &back, &refl);
-                    SendPos(state, &msg, (Vec3 *)(hits[i] + 0x74));
+                    SendPos(state, &msg, (VecFx32 *)(hits[i] + 0x74));
                     Ov107_BuildAndSendUpdate(state->pOwner, 0x132, 4, state->pPos);
                 }
             } while (++i < nHits);

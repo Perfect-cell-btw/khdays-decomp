@@ -3,7 +3,9 @@
  * +0x410 part for slots 7 / 3; kind 5 on its own +0xa0 pose for slot 5, message byte 4 as the
  * variant), knocks itself back in place (0xa), attaches / releases the +0x4e4 sound 0x16d (0xb /
  * 0xc) or forwards byte 4 to the camera's +0x78 handler (0xd); then the base handler runs. */
+
 #include "nitro/types.h"
+
 struct Pairs { char pad[0x4e8]; struct { int res; int handle; } pair[1]; };
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);

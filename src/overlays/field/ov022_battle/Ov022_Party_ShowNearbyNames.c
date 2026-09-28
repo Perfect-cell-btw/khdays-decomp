@@ -1,10 +1,6 @@
 /* Shows the name tags of the live party members within range of the camera owner. */
 
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct Ov022Root {
     char padding000[0x34];

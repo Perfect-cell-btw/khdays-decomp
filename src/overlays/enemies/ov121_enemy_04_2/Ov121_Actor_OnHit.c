@@ -35,13 +35,9 @@
  *    handler records; reading them as a plain word with masks changes the shifts. The same
  *    goes for the state's facing bit, which is a one-bit field, not a byte masked by hand.
  */
-#include "nitro/types.h"
 
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov120Actor;
 
@@ -51,7 +47,7 @@ struct Ov120ActionState {
     void *pTarget;
     void *pEventAnchor;
     char pad010[0x24];
-    struct Vec3 vHitPoint;
+    VecFx32 vHitPoint;
     char pad040[4];
     int nHitParam44;
     char pad048[6];
@@ -71,7 +67,7 @@ struct Ov120Actor {
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     char pad010[0x10];
     unsigned int uMode20;
     unsigned int uResultLo : 16;

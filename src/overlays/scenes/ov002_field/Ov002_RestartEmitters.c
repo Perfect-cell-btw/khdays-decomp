@@ -1,8 +1,5 @@
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+
+#include "nitro/fx.h"
 
 extern int data_ov002_0207f628;
 

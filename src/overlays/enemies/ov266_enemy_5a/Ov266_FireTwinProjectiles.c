@@ -13,9 +13,10 @@
  * `add r2, sp, #0` per call, which is what the ROM does. The tree's own definition of
  * the callee spells that parameter `int b`; it matches there, but callers need the
  * pointer. See codegen-cracks.md. */
-struct vec3 { int x, y, z; };
 
-extern void Ov266_MoveNotifyForward(int obj, int a, struct vec3 *v, int c);
+#include "nitro/fx.h"
+
+extern void Ov266_MoveNotifyForward(int obj, int a, VecFx32 *v, int c);
 extern void SetIndexedSlot(void *self, int idx, void *cb);
 extern short data_0203d210[];
 
@@ -27,7 +28,7 @@ void Ov266_FireTwinProjectiles(void *self) {
     t = ctx[0x10] + c0[0xb];
     ctx[0x10] = t;
     if (t >= 0x1c28 && *(unsigned char *)((char *)ctx + 0x5a) == 0) {
-        struct vec3 v;
+        VecFx32 v;
         unsigned int idx =
             (unsigned short)(((long long)ctx[0xd] * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4;
         v.x = data_0203d210[idx * 2];

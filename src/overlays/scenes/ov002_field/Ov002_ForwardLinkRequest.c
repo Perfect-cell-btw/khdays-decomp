@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* One eight-byte link request as it arrives from the session. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002LinkRequest {
     u8 nOp;
     char pad001[1];

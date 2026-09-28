@@ -8,16 +8,12 @@
  * +0x144 list (+0x394 at the origin, scale 0xc00; +0x390 at y 0xc00, scale 0xc00) and two on the
  * +0x22c list (+0x38c at the origin, scale 0xa00; +0x388 at y 0x800, scale 0x800, bit 1 on its
  * +8 flags), fills the +0x3a4 table with four Ov191_Actor_New records and loads sound 0x133. */
-#include "nitro/types.h"
 
-struct Ov191Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov191Pose {
-    struct Ov191Vec3 position;
+    VecFx32 position;
     int scale;
 };
 
@@ -38,8 +34,8 @@ struct bf {
 };
 
 extern struct Ov191Kinds data_ov191_020d2d60;
-extern struct Ov191Vec3 data_ov191_020d2d54;
-extern const struct Ov191Vec3 data_02041dc8;
+extern VecFx32 data_ov191_020d2d54;
+extern const VecFx32 data_02041dc8;
 extern const char data_ov191_020d2dec[];
 extern const char data_ov191_020d2df4[];
 
@@ -71,7 +67,7 @@ void Ov191_Construct(int param)
 {
     struct Ov191Kinds kinds;
     struct Ov191Pose pose;
-    struct Ov191Vec3 offset;
+    VecFx32 offset;
     int i;
     int resource;
 

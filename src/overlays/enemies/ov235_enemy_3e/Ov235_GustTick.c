@@ -5,8 +5,10 @@
  * the owner: 0.75 scaled by how close it is, added to its +0xe4 push. Once the +0xc idle byte
  * clears, animation 0x19 plays, the +0x3a8 part plays motion 0x13 and the tick hands over to
  * Ov235_SwoopTick. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { void *item; } ListNode;
 struct Bits40 { int b0 : 1, b1 : 1; };
 struct Flags60 { u16 lo : 8; u16 hi : 8; };
@@ -14,10 +16,10 @@ struct Flags60 { u16 lo : 8; u16 hi : 8; };
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern ListNode *List_First(void *list);
 extern ListNode *List_Next(void *list);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);
@@ -33,8 +35,8 @@ void Ov235_GustTick(int *node)
 {
     int *state = (int *)node[1];
     int world = *(int *)(*state + 4);
-    Vec3 d;
-    Vec3 push;
+    VecFx32 d;
+    VecFx32 push;
     ListNode *link;
     char *obj;
     int gap;

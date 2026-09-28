@@ -6,6 +6,7 @@
  * resources are requested (Ov023_RequestGroupResources 02083c14, with the extra set when game
  * field 0x2480 reads 1) and the camera distance set (02033f50): 0xa000 or operand 2 when
  * present, five times that, 0x7f. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023EntityManager {

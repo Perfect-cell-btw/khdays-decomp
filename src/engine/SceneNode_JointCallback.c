@@ -2,6 +2,7 @@
  * (data_0204c1f4) attached to the joint the renderer is on (the render state's current node when
  * its node-valid flag 0x10 is set), the child's matrix is multiplied in at model scale (the
  * state's posScale, then back with invPosScale), billboarded first when the child asks (flag 8). */
+
 #include "nitro/types.h"
 
 typedef struct {

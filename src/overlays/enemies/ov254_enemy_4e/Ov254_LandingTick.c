@@ -2,14 +2,16 @@
  * knocked back in place (mode 5, flag 2). While aggressive (+0x78) the next move is 6; otherwise
  * pose 0x12 plays, the +0x3e4 shape gains bit 1 and the +0x3e0 one loses it, the +0x44 timer and
  * +0x70 flag clear and the node moves to 020d151c. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov254_RiseTick(void);
 
 void Ov254_LandingTick(int *node)

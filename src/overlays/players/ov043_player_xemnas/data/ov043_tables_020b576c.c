@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov043_SeedRequestRows (020b4bd8): const IntTable4 data_ov043_020b576c; */
+
 #include "nitro/types.h"
 
-/* read by Ov043_SeedRequestRows (020b4bd8): const IntTable4 data_ov043_020b576c; */
 const u8 data_ov043_020b576c[16] = {
     68, 1, 0, 0, 188, 254, 255, 255, 68, 1, 0, 0, 188, 254, 255, 255,
 };

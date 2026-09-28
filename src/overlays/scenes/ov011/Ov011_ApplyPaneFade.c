@@ -14,6 +14,7 @@
  * read as a u32; declaration order nOffset, pScene, pHooks, hooks, pPane; the timeout
  * blend passes an explicit 0 that shares the zero stored into the delta byte.
  */
+
 #include "nitro/types.h"
 
 #define FADE_ALPHA_MAX 0x10

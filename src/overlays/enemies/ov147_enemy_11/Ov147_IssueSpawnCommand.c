@@ -1,11 +1,12 @@
 /* Message override: message 5 carries a packed position; it spawns a node-transform task at that
  * position and a spawn task; other messages go to the shared handler (Ov107_AiState_OnMessage). */
 
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero,
                                SrtTransform *transform);
 extern int Ov107_CreateSpawnTask(int owner, int resourceId, int kind, int zero,
@@ -15,7 +16,7 @@ extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 void Ov147_IssueSpawnCommand(int owner, unsigned char *command, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         unsigned char bytes[12];

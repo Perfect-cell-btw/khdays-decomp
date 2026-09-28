@@ -8,24 +8,26 @@
  * the +0x3b0 prop is turned in place, and the base update runs.
  *
  * Codegen: the pose copies go through typed members (src=lr / dst=ip); a raw cast swaps them. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } Pose;
-typedef struct { Vec3 p0; Vec3 dir; int len; } Seg;
+typedef struct { VecFx32 p0; VecFx32 dir; int len; } Seg;
 struct At4 { char pad[4]; Pose pose; };
 struct At10 { char pad[0x10]; Pose pose; };
 struct At30 { char pad[0x30]; Pose pose; };
 
 extern void Ov107_UnlinkNodeFromOwner(int effect);
 extern void TaskList_FinishByTag(int list, int node);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void Quat_Multiply(void *out, const void *a, const Quat *b);
 extern void Srt_SetRotationQuat(void *pose, const Quat *q);
 extern void Ov107_AiState_PostTickBase(char *self);
 extern const Quat data_ov277_020d35c0;
 
-#define SET_SEG(seg, from, to)                                           ((Seg *)(seg))->p0 = *(Vec3 *)((from) + 0x14);                        VEC_Subtract((to) + 0x14, &((Seg *)(seg))->p0, &((Seg *)(seg))->dir);     ((Seg *)(seg))->len = VEC_Normalize(&((Seg *)(seg))->dir, &((Seg *)(seg))->dir)
+#define SET_SEG(seg, from, to)                                           ((Seg *)(seg))->p0 = *(VecFx32 *)((from) + 0x14);                        VEC_Subtract((to) + 0x14, &((Seg *)(seg))->p0, &((Seg *)(seg))->dir);     ((Seg *)(seg))->len = VEC_Normalize(&((Seg *)(seg))->dir, &((Seg *)(seg))->dir)
 
 void Ov277_Update(char *self)
 {

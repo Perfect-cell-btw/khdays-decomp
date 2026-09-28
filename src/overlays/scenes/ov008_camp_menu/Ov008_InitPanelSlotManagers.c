@@ -10,6 +10,7 @@
  * to table 0208fef0's slot (else cell 2).  Handles are
  * (((src + 0x8000) & 0xfffffc) << 7) | 0x80000000 | slot.
  */
+
 #include "nitro/types.h"
 
 #define CELL_MASK   0x00fffffc

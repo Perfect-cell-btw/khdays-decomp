@@ -9,9 +9,9 @@
  * bit 0) and fires reaction 0x131 at the +8 position, modes 2/3 for flag-0x22 hits and 0/1
  * otherwise, except for kind-0x80 hits carrying both flag 8 and flag 0x80.
  */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov181ActionState {
     int pOwner;
@@ -22,13 +22,13 @@ struct Ov181ActionState {
     char pad028[0x29];
     u8 bFacing : 1;
     char pad052[0xe];
-    struct Vec3 vHit;
+    VecFx32 vHit;
 };
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     char pad010[8];
     int pSource18;
     char pad01c[4];

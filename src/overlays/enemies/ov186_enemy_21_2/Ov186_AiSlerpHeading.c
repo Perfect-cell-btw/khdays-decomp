@@ -16,13 +16,14 @@
  *    Split into `sum = ...; mid->f3c = sum;` mwcc hoists the following literal-pool load one slot
  *    above the shift.
  * Byte-identical twin of Ov117_AiSlerpHeading. */
+
+#include "nitro/fx.h"
+
 extern int Quat_Slerp();
 extern int Srt_SetRotationQuat();
 
 extern short data_0203d210[];
 extern int data_02041dc8[];
-
-typedef struct { int x, y, z; } Vec3;
 
 typedef struct {
     int base;           /* +0x00 */
@@ -31,7 +32,7 @@ typedef struct {
     int f20;            /* +0x20 */
     int f24;            /* +0x24 */
     int f28;            /* +0x28 */
-    Vec3 f2c;           /* +0x2c .. +0x37 */
+    VecFx32 f2c;           /* +0x2c .. +0x37 */
     int f38;            /* +0x38 */
     int f3c;            /* +0x3c */
     int f40;            /* +0x40 */
@@ -61,6 +62,6 @@ void Ov186_AiSlerpHeading(int *obj)
     if (mid->f40 > 0)
         mid->f40 -= *(int *)((char *)obj[0] + 0x2c);
 
-    *(Vec3 *)((char *)mid->base + 0xf0) = mid->f2c;
-    mid->f2c = *(Vec3 *)&data_02041dc8;
+    *(VecFx32 *)((char *)mid->base + 0xf0) = mid->f2c;
+    mid->f2c = *(VecFx32 *)&data_02041dc8;
 }

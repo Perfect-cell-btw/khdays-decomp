@@ -2,7 +2,9 @@
  * current (+0x1c6), bits 1-3 and 7 of the actor's +0x60 high byte clear and bits 0 and 6 are set,
  * the +0x388 shape is armed, +0x1ae bit 0 clears and the handler of moves 0-3 (020d334c / 020d340c
  * / 020d378c / 020d3910) is registered in slot 1; the pending slot is then reset to -1. */
+
 #include "nitro/types.h"
+
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 typedef struct { unsigned f : 8; } B8;
 

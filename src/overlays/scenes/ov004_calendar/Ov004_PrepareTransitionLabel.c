@@ -1,6 +1,7 @@
 /* Draws the label of the target day when it has one (marking it unavailable otherwise). */
 
 #include "nitro/types.h"
+
 typedef struct { void *resource; unsigned count; unsigned char *records; } Ov004LabelRecords;
 typedef struct { unsigned char opaque[64]; } Ov004LabelTiles;
 typedef struct {

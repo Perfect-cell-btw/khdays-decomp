@@ -1,4 +1,5 @@
 /* NitroSystem G3D material SBC handler, including the game RGB scale extension. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 

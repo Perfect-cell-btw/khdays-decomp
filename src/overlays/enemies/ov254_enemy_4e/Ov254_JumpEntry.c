@@ -2,20 +2,21 @@
  * of +0x1ae are set, pose 0 plays and reaction 0x16d/9 fires at the +0x18 point; the +0x1c / +0x24
  * velocity is the +8 heading's forward direction times the 64-bit +0x28 speed, the +0x20 rise is
  * 0.75 and the node moves to 020d3890. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void Ov254_TurnBackEntry(void);
 
 void Ov254_JumpEntry(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
 
     *(int *)(*state + 0x390) = 1;
     {

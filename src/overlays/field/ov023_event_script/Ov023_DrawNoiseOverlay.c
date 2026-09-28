@@ -3,6 +3,7 @@
  * (+0x60 of the noise state data_ov023_0208a7c0), the scroll (+0x70) advances by 0x4000 and
  * wraps at 0x10000; then the overlay's geometry state is set (Ov023_SetupNoiseDraw 02089880)
  * and the twelve tiles drawn (Ov023_DrawNoiseQuad 02089ae0). */
+
 #include "nitro/types.h"
 
 typedef struct Fx32Pair {

@@ -12,11 +12,7 @@
  * THUMB.
  */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/fx.h"
 
 extern int data_ov002_0207f628;
 
@@ -32,7 +28,7 @@ void Ov002_SceneResetPanelWidgets(void)
     int i;
     void *pTweenA;
     void *pTweenB;
-    Ov002Vec3 v;
+    VecFx32 v;
     void *pTweenC;
     int *pWalk;
     int *ctx;
@@ -75,16 +71,16 @@ void Ov002_SceneResetPanelWidgets(void)
     v.y = 0x3520;
     i = 0;
     v.z = 0;
-    *(Ov002Vec3 *)((char *)ctx + 0x18c) = v;
-    *(Ov002Vec3 *)((char *)ctx + 0x39c) = v;
+    *(VecFx32 *)((char *)ctx + 0x18c) = v;
+    *(VecFx32 *)((char *)ctx + 0x39c) = v;
     v.z = 0x3000;
-    *(Ov002Vec3 *)((char *)ctx + 0x294) = v;
+    *(VecFx32 *)((char *)ctx + 0x294) = v;
 
     pWalk = ctx;
     v.x = -0x3a98;
     v.y = 0x2ee0;
     v.z = 0x4000;
-    *(Ov002Vec3 *)((char *)ctx + 0x5ac) = v;
+    *(VecFx32 *)((char *)ctx + 0x5ac) = v;
 
     pTweenA = (char *)ctx + 0x7c8;
     pTweenB = (char *)ctx + 0x81c;

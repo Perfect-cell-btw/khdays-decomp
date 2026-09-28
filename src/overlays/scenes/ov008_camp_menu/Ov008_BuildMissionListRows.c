@@ -11,6 +11,7 @@
  * strength-reduces it into the ROM's six induction registers itself -- explicit
  * walking pointers / counters colour them differently.
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT 6

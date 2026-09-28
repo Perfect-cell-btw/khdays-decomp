@@ -12,6 +12,7 @@
  * flat ends: the table absorbs the over- and undershoot the YCoCg to RGB555
  * step produces, which is why it is 384 long and not 256.
  */
+
 #include "nitro/types.h"
 
 #define SAT(c) ((u16)((c) * 0x0101))

@@ -2,6 +2,7 @@
  * the shared tag tracker, Ov008_GetCtxBlock954c 02084a64) at column 2, rows 0, 2, .. 20
  * (020ada10) and the cursor marker (cell 0xd) at column 2 on the cursor's row: the cursor
  * (+0x2c8 of the list) less the scrolled rows (+0x2d0 pixels, 16 a row), doubled. */
+
 #include "nitro/types.h"
 
 typedef struct TileBlock {

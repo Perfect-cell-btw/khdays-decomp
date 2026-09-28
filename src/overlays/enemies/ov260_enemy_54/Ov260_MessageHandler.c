@@ -2,18 +2,20 @@
  * in bytes 5..13 which becomes the translation of a fresh transform; sub-kinds 0 and 1 attach the
  * effect model of their +0x394 slot there (mode 0x17 under the +0x3c owner, message byte 4 as the
  * variant) into the slot's +0x398 handle. The base handler always runs. */
+
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int variant, SrtTransform *transform);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 
 void Ov260_MessageHandler(int owner, unsigned char *command, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         unsigned char bytes[12];

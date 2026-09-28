@@ -1,5 +1,7 @@
 /* Fade out the sub-screen and advance to the finished result phase. */
+
 #include "nitro/types.h"
+
 typedef struct Ov005ResultContext { char unknown00[0x4b5c]; long long startTick; char unknown4b64[16]; int resultPhase; } Ov005ResultContext;
 extern Ov005ResultContext *data_ov005_0205b810;
 extern u64 OS_GetTick(void), func_02020368(u64, u64);

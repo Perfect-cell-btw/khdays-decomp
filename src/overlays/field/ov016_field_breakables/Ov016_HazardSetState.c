@@ -4,9 +4,9 @@
  * bound (bit 2 of the node byte at +0x34); when asked to spawn (bSpawn) and the definition has
  * a drop slot (def +0x68) with an id for the new state (def +0x6a when switching on, +0x6c when
  * switching off) that drop is spawned at the hazard's position (+0xe0, 02033d0c). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016HazardDef {
     u8 pad_00[0x68];

@@ -2,28 +2,30 @@
  * knocked back in place (mode 5). When not aggressive, every shape of the ten +0x4ac items' +0x22c
  * lists gains bit 1 and the +0x45c partner is released (020d206c). The +0x70 flag clears and the
  * node moves to 020d121c. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 struct Items4ac { char pad[0x4ac]; int item[10]; };
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int List_First(void *list);
 extern int List_Next(void *list);
 extern void Ov254_ForwardToAiIfReady_2(int partner);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov254_RouteLandingTick(void);
 
 void Ov254_StopEntry(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 zero = data_02041dc8;
+    VecFx32 zero = data_02041dc8;
     int i;
     int shape;
 
-    *(Vec3 *)(state + 3) = data_02041dc8;
+    *(VecFx32 *)(state + 3) = data_02041dc8;
     Ov107_PostTagUpdate(*state, state[0x1e] != 0 ? 7 : 0x10, 0);
     func_ov107_020c0b90(*state, 5, zero, 0);
     if (state[0x1e] == 0) {

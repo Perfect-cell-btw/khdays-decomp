@@ -1,7 +1,8 @@
 /* Stagger tick of the ov266 enemy: the +0x40 timer accumulates the owner's rate and past 0x1a90
  * spawns effect 4 at the zero vector (data_02041dc8), fires reaction 0x15e mode 0xa at the +8
  * point, queues sub-state 0xa and ends the state. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int b, void *at);

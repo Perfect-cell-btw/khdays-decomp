@@ -1,12 +1,7 @@
 /* Contact between two overlapping actors: pushes the non-player one back with a knock-back hit. */
 
 #include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 struct Obj {
     u16 flags00;

@@ -13,6 +13,7 @@
  * index -- that declaration order is what gives the buffer r6 above the
  * table address r5.
  */
+
 #include "nitro/types.h"
 
 #define CATEGORY_ANY (-1)

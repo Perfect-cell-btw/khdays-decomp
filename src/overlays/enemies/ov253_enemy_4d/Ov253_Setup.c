@@ -7,13 +7,15 @@
  * +0x144 list; the +0x3b8 effect (item 0x2c, callback 020ce3f8) is attached and hidden; the five
  * +0x3b0 slot models (kinds of data_ov253_020d4950) are attached and hidden, the second one also
  * flagged; a placement at the origin (scale 1.0) fills +0x3b4, +0x3c0 clears and sound 0x16c loads. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[5]; } IdTable;
 typedef struct { const char *name[4]; } NameTable;
-typedef struct { Vec3 vA; Vec3 vB; int nScale; int nRange; } PlaceReq;
-typedef struct { Vec3 vec; int scale; } CameraWork;
+typedef struct { VecFx32 vA; VecFx32 vB; int nScale; int nRange; } PlaceReq;
+typedef struct { VecFx32 vec; int scale; } CameraWork;
 typedef struct { int pItem; int pad; } SubitemSlot;
 struct Bit0 { unsigned int b0 : 1; };
 
@@ -40,8 +42,8 @@ extern void Res_RequestIdPair(int resourceId);
 extern const IdTable data_ov253_020d4950;
 extern const NameTable data_ov253_020d4940;
 extern const char data_ov253_020d4bc0[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042270;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042270;
 
 void Ov253_Setup(char *self)
 {
@@ -80,7 +82,7 @@ void Ov253_Setup(char *self)
     NameTable names;
     NameTable *pNames = &names;
     *pNames = data_ov253_020d4940;
-    Vec3 v = data_02041dc8;
+    VecFx32 v = data_02041dc8;
     req.vA = data_02041dc8;
     req.vB = data_02042270;
     req.nScale = 0x1000;

@@ -8,6 +8,7 @@
  * op 3 and returns the write's result (kept live across the store: that is
  * why the constant 3 goes to r1).
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008SaveTierEntry {

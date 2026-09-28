@@ -1,16 +1,14 @@
-#include "nitro/types.h"
 
-typedef struct Ov002Vec3 {
-    int x, y, z;
-} Ov002Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern char *Ov002_ClaimPoolEntry(char *pClass, int nSlot);
 extern int Ov002_PlaceElementNode(void *pObj, int nNode, void *pOut,
                                 int nUnused, int nKind, int nParamA,
                                 int nParamB, int nParamC,
                                 int nAngle, int nFlag);
-extern void Ov002_BuildSpawnPosition(Ov002Vec3 *pOut, Ov002Vec3 *pPos, int *pIn);
-extern void Actor_SetVecAndSyncChild(char *pNode, Ov002Vec3 *pPos);
+extern void Ov002_BuildSpawnPosition(VecFx32 *pOut, VecFx32 *pPos, int *pIn);
+extern void Actor_SetVecAndSyncChild(char *pNode, VecFx32 *pPos);
 extern void Actor_SetBindingByte(void *pNode, int nIndex, int nValue);
 extern void Ov002_PushBucketNode(int nBucket, char *pPiece);
 extern void Ov002_DoneTick(void);
@@ -23,10 +21,10 @@ extern void Ov002_DoneTick(void);
  * The finished piece is registered in the caller's bucket and handed back.
  */
 char *Ov002_SpawnPieceElement(char *pClass, u16 wSlot, u16 wBucket,
-                          u16 wStateField, u8 bStateWidth, Ov002Vec3 *pPos,
+                          u16 wStateField, u8 bStateWidth, VecFx32 *pPos,
                           s16 nAngle)
 {
-    Ov002Vec3 vOut;
+    VecFx32 vOut;
     int aSetup[5];
     char *pPiece;
 

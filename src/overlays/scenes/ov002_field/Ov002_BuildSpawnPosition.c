@@ -1,10 +1,8 @@
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
 
 /* The 0x14 placement record ov002_PlaceElementNode fills in. */
+
+#include "nitro/fx.h"
+
 typedef struct {
     int nKind;                      /* +0x00 */
     int nParamB;                    /* +0x04 */

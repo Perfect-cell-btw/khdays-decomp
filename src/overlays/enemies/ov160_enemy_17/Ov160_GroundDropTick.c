@@ -9,13 +9,14 @@
  * owner placed at (0.5, 5.0, 0) and the overlay's 14-byte message (data_ov160_020cf7b4) with
  * the object's +0xa8 point lifted 1.0 goes to the owner's +0x24 hook; +0x34 is then set. The
  * state ends once the +0xc sub-object goes idle (+0xad). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 typedef struct { u8 hi, mid, lo; } Fx24;
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
 
 typedef struct {
     u16 id;             /* +0x0 */
@@ -35,13 +36,13 @@ static inline void PackFx24(Fx24 *dst, int v) {
 }
 
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *query, int *results);
-extern int Ov107_InvokeHitCallback(int ent, int owner, int aux, int mode, const Vec3 *dir, int flag);
+extern int Ov107_InvokeHitCallback(int ent, int owner, int aux, int mode, const VecFx32 *dir, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov022_ToggleBit13ByMode(int body, int a);
-extern void Actor_SetVecAndSyncChild(int object, Vec3 *at);
-extern void Ov107_MoveNodeAndRelayout(int ent, Vec3 *at);
+extern void Actor_SetVecAndSyncChild(int object, VecFx32 *at);
+extern void Ov107_MoveNodeAndRelayout(int ent, VecFx32 *at);
 extern void Task_MarkFinished(int *node);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const PosMsg data_ov160_020cf7b4;
 
 void Ov160_GroundDropTick(int *node)
@@ -50,7 +51,7 @@ void Ov160_GroundDropTick(int *node)
     int results[4];
     Sphere query;
     PosMsg msg;
-    Vec3 raw;
+    VecFx32 raw;
     FxVec vContact;
     long i;
     long n;
@@ -59,7 +60,7 @@ void Ov160_GroundDropTick(int *node)
     if (*(int *)(*state + 0x50) == 1) {
         state[0xa] += *(int *)(node[0] + 0x2c);
         if (state[0xa] <= 0xa00) {
-            query.pos = *(Vec3 *)(state + 4);
+            query.pos = *(VecFx32 *)(state + 4);
             query.nRadius = 0x2000;
             n = Ov107_CollectSphereOverlaps(*state, &query, results);
             for (i = 0; i < n; i++) {
@@ -78,11 +79,11 @@ void Ov160_GroundDropTick(int *node)
         }
     }
     if (state[0xd] == 0 && state[0xe] != 0 && (((struct Ov160Flags464 *)state[0xe])->flags & 0x8000) != 0) {
-        Actor_SetVecAndSyncChild(*(int *)(state[0xe] + 0x20), (Vec3 *)(*state + 0xb0));
+        Actor_SetVecAndSyncChild(*(int *)(state[0xe] + 0x20), (VecFx32 *)(*state + 0xb0));
         e = *(int *)(state[0xe] + 0x4ec);
         if (e != 0) {
-            *(Vec3 *)(e + 0x190) = *(Vec3 *)(*state + 0xb0);
-            Ov107_MoveNodeAndRelayout(e, (Vec3 *)(e + 0x190));
+            *(VecFx32 *)(e + 0x190) = *(VecFx32 *)(*state + 0xb0);
+            Ov107_MoveNodeAndRelayout(e, (VecFx32 *)(e + 0x190));
             e = *(int *)(state[0xe] + 0x4ec);
             if (((struct Ov160Bits40 *)(e + 0x40))->b1 != 0 && *(void (**)(int, int))(e + 0xc) != 0) {
                 (*(void (**)(int, int))(e + 0xc))(e, 0);
@@ -94,7 +95,7 @@ void Ov160_GroundDropTick(int *node)
         raw.y = 0x5000;
         raw.z = 0;
         Ov107_MoveNodeAndRelayout(*state, &raw);
-        raw = *(Vec3 *)(*(int *)(state[0xe] + 0x20) + 0xa8);
+        raw = *(VecFx32 *)(*(int *)(state[0xe] + 0x20) + 0xa8);
         raw.y += 0x1000;
         vContact.x = *(Fx32 *)&raw.x;
         PackFx24(&msg.pos[0], vContact.x.value);

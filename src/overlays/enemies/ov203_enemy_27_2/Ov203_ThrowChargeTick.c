@@ -1,11 +1,7 @@
 /* Ov203_ThrowChargeTick: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Flags17a {
     u8 bBit0 : 1;

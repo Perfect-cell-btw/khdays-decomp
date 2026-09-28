@@ -19,19 +19,21 @@
  * one chained assignment `+0x698 = +0x69c = +0x6a0 = 0` -- that is what puts the third store
  * through a copied register (`mov r3,r1`) after the argument moves.
  */
-typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
-typedef struct { int x, y, z; } Vec3;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
-extern void VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int FX_Atan2(int y, int x);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov080_FireTwinBurst(char *self);
 extern int Ov022_IsSlotReady(char *chan);
 extern int Ov022_IsState9Or6WithFlag200(char *chan);
@@ -43,9 +45,9 @@ extern void *Ov022_ActorSetState(char *self, int state);
 void *Ov080_ApproachStep(char *self)
 {
     int r;
-    Vec3 sample;
-    Vec3 dir;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 dir;
+    VecFx32 step;
     void *next = 0;
     char *rig = self + 0x84 + 0x2c00;
     int angle = -1;
@@ -59,7 +61,7 @@ void *Ov080_ApproachStep(char *self)
         *(unsigned long long *)(self + 0x46c) |= 0x10000;
     }
     if (Ov022_ValidateTargetRef(self) != 0) {
-        VEC_Subtract(func_ov022_020ad0c0(self), (Vec3 *)(self + 0x8c + 0x400), &dir);
+        VEC_Subtract(func_ov022_020ad0c0(self), (VecFx32 *)(self + 0x8c + 0x400), &dir);
         if (VEC_Mag(&dir) != 0) {
             VEC_Normalize(&dir, &dir);
         }
@@ -84,7 +86,7 @@ void *Ov080_ApproachStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     if (*(int *)(self + 0x7b0) >= 0xc000 && *(int *)(self + 0x7b0) <= 0x12000) {
         Ov080_FireTwinBurst(self);
     }

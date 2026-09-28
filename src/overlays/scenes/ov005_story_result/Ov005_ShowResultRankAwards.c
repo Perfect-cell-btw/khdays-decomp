@@ -1,5 +1,7 @@
 /* Display rank awards and mark awards added beyond the saved record. */
+
 #include "nitro/types.h"
+
 typedef struct Ov005SpriteManager { char data[0x4a80]; } Ov005SpriteManager;
 typedef struct Ov005ResultContext { char unknown00[0x54]; Ov005SpriteManager spriteManager; } Ov005ResultContext;
 typedef struct Ov005Config { unsigned short sceneId, missionIndex; char unknown04[8]; unsigned short rewardMode; char unknown0e[2]; int resultRank; } Ov005Config;

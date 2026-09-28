@@ -7,14 +7,16 @@
  * and the block's +4 latch set; the attack burst ticks; a quiet emitter at +0x22f8 hands over
  * to state 0x23, otherwise the actor's hook runs and becoming active either hands over to 0x23
  * (quiet emitter) or winds the animation and timer to 0x9000. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ClampAngleTowardTarget(char *self, unsigned int angle);            /* Ov022_ClampAngleTowardTarget */
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);            /* ScaleVec3Fx12 */
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);            /* ScaleVec3Fx12 */
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov062_FireBothRows(char *self);
 extern void Ov062_AttackBurstTick(char *self);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
@@ -25,8 +27,8 @@ extern short data_0203d210[];
 
 void *Ov062_ChargeStep(char *self)
 {
-    Vec3 step;
-    Vec3 flat;
+    VecFx32 step;
+    VecFx32 flat;
     void *next = 0;
     char *pBlock = data_ov062_020b80e0 + 0x138 + 0x2c00;
     int a;
@@ -60,7 +62,7 @@ void *Ov062_ChargeStep(char *self)
     }
     flat = step;
     flat.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &flat, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &flat, (VecFx32 *)(self + 0x98 + 0x400));
     if (*(int *)(pBlock + 4) == 0 && *(int *)(self + 0x7b0) >= 0x9000) {
         Ov062_FireBothRows(self);
         if ((*(int *)self & 0x10000) == 0) {

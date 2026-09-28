@@ -1,5 +1,6 @@
 /* Enter the ov258 held item's flight: bits 2 and 0 of the +0x60 high byte are set and bit 7 cleared,
  * and the brain waits on 020d029c. */
+
 #include "nitro/types.h"
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

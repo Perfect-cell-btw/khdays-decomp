@@ -12,13 +12,9 @@
  *       live count is decremented on unbind.
  * Layout of Ov107Object/Ov107Slot from Ov107_Spawner_OnActorRetired, Ov107_Spawner_AddSlot,
  * Ov107_Spawner_AddDataBlock and Ov107_InitMovementNode. */
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct AiState AiState;
 typedef struct Ov107Object Ov107Object;

@@ -6,25 +6,27 @@
  * packet whose normal points from the +0x494 point to it (flattened) through its +0x1c4 handler.
  * Once the +4 item's +0xad byte clears, every third slam requests sub-state 9; otherwise a d100
  * picks 6 (below 40), 9 (below 60), 0xa (below 80) or 2, and the state ends. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { int m[9]; } Mtx33;
 
 struct HitPacket40 {
     int nKind;
-    Vec3 vNormal;
+    VecFx32 vNormal;
     int w[6];
 };
 
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern void VEC_Add(void *a, void *b, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern void VEC_Add(void *a, void *b, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(int actor, Sphere *sphere, int *out);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern short data_0203d210[];
@@ -36,7 +38,7 @@ void Ov230_SlamSweepTick(int *node)
 {
     int *state = (int *)node[1];
     Mtx33 mtx;
-    Vec3 facing;
+    VecFx32 facing;
     Sphere sphere;
     int hits[4];
     unsigned int idx;
@@ -48,7 +50,7 @@ void Ov230_SlamSweepTick(int *node)
     state[0x13] += *(int *)(*node + 0x2c);
     idx = ANG2IDX(state[0x10]);
     MTX_RotY33_(&mtx, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x490) + 0x2c), &mtx, (Vec3 *)(state + 4));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x490) + 0x2c), &mtx, (VecFx32 *)(state + 4));
     if (*(u8 *)((char *)state + 0x61) == 0 && state[0x13] >= 0xff0) {
         Ov107_BuildAndSendUpdate(*state, 0x147, 0xf, (void *)state[3]);
         *(u8 *)((char *)state + 0x61) = 1;

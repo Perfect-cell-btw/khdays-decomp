@@ -11,17 +11,18 @@
  *
  * Codegen as in ov143: coordinates are packed through Fx32 wrapper copies whose unread scratch
  * words are nine separate values declared z, y, x per site. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
 
-struct Vec3 { int x, y, z; };
 struct Ov125Cmd { u16 h[7]; };
 struct Ov125Query { int w[8]; };
 
 struct HitCommand {
     u32 flags00;
-    struct Vec3 vector04;
+    VecFx32 vector04;
     u32 field10;
     u32 field14;
     void *hit18;
@@ -76,15 +77,15 @@ struct Ov125Node {
     signed char bSlot;
 };
 
-extern struct Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern struct Ov125Cmd data_ov125_020d0406;
 extern struct Ov125Cmd data_ov125_020d03f8;
 extern struct Ov125Cmd data_ov125_020d0414;
 
 extern int Ov107_CollectSegmentOverlaps(struct Ov125Item *item, struct Ov125Query *query, int *results);
-extern void VEC_Subtract(const void *a, const void *b, struct Vec3 *out);
-extern int VEC_Normalize(const struct Vec3 *v, struct Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const struct Vec3 *src, struct Vec3 *dst);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
 extern int Ov107_InvokeHitCallback(int ent, struct Ov125Actor *actor, struct Ov125Item *item, int mode, void *dir, int flag);
 extern struct Ov125Actor *Ov107_FindEntityHitBySegment(struct Ov125Actor *actor, struct Ov125Query *query, void **out);
 extern int Ov107_AiState_ApplyHit(struct Ov125Actor *lock, int param, struct HitCommand *req);
@@ -103,7 +104,7 @@ void Ov125_SpinStrikeTick(struct Ov125Node *node)
     struct Ov125State *state = node->pState;
     struct Ov125Query query;
     int results[4];
-    struct Vec3 dir;
+    VecFx32 dir;
     struct Ov125Cmd cmdHit;
     void *handle;
     Fx32 hitScratchZ;

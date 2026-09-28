@@ -1,7 +1,8 @@
 /* Ov216_HandleSpawnMessage: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-#include "nitro/types.h"
 
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } Srt;
 
 extern void SrtTransform_SetIdentity(Srt *srt);

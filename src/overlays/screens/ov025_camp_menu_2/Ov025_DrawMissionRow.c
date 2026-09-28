@@ -34,6 +34,7 @@
  * call) for the refresh and the reward branch -- two base registers; the
  * slot is loaded into a local before the three unlock tests.
  */
+
 #include "nitro/types.h"
 
 #define ROWS_PER_PAGE   6

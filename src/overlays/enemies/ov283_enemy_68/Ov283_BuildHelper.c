@@ -3,9 +3,11 @@
  * 0.125 sphere at the origin with no speed, model 1 of the +0x388 set becomes the +0x384 rig
  * (subscribed to the scene) and a 1.0-long upright capsule of that radius is registered in the
  * +0x144 pool (+0x38c). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 
 extern void Ov283_OnDespawn(void);
 extern void Ov283_Item_TickSyncXform(void);
@@ -15,12 +17,12 @@ extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int *List_InsertSorted(void *pool, int count, int size);
 extern int Ov107_Mover_New(const Capsule *capsule);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
 
 void Ov283_BuildHelper(char *self)
 {
-    Vec3 origin;
+    VecFx32 origin;
     Capsule body;
     int set = *(int *)(self + 0x388);
     int *cyl;
@@ -36,7 +38,7 @@ void Ov283_BuildHelper(char *self)
     *(u16 *)(self + 0x1ae) |= 0x14;
     *(int *)(self + 0x70) = 0x200;
     origin = data_02041dc8;
-    *(Vec3 *)(self + 0x64) = origin;
+    *(VecFx32 *)(self + 0x64) = origin;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(set, 1));

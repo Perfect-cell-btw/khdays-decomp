@@ -18,10 +18,11 @@
  *    The 0x23 arm is predicated into that shared epilogue (`ldreq r0, [pc]`), which is what
  *    the `next` variable plus `break` gives.
  */
-typedef struct { int x, y, z; } Vec3;
 
-extern int VEC_Mag(const Vec3 *v);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+#include "nitro/fx.h"
+
+extern int VEC_Mag(const VecFx32 *v);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Atan2(int x, int z);
 extern unsigned char data_0204c240;
 extern void Ov087_HoverStep(void);
@@ -31,7 +32,7 @@ extern void Ov087_DescentStep(void);
 void *Ov087_HandleMsgAndFaceHeading(char *self, int msg) {
     char *blk = self + 0xfc + 0x2c00;
     void *next = 0;
-    Vec3 d;
+    VecFx32 d;
     unsigned short a;
     int *node;
 
@@ -45,7 +46,7 @@ void *Ov087_HandleMsgAndFaceHeading(char *self, int msg) {
     case 0x21:
         (*(void (**)(char *, int))(self + 0x664))(self, 0x1b);
         *(int *)(self + 0x58) = 0;
-        d = *(Vec3 *)(self + 0x7c + 0x400);
+        d = *(VecFx32 *)(self + 0x7c + 0x400);
         d.y = 0;
         if (VEC_Mag(&d) != 0) {
             VEC_Normalize(&d, &d);

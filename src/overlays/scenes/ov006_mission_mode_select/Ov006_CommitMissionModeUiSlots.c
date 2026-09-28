@@ -13,6 +13,7 @@
  * walk a 4-entry window starting at 0x95D8, which straddles rowSlotIds[3] and
  * secondarySlotIds[0..2]. The overlap is in the original code, not a mis-typed
  * array. */
+
 #include "nitro/types.h"
 
 typedef struct {

@@ -2,20 +2,15 @@
  * slots, and requests its resources. */
 
 #include "nitro/types.h"
-
-struct Ov234Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Ov234Box {
-    struct Ov234Vec3 min;
-    struct Ov234Vec3 max;
+    VecFx32 min;
+    VecFx32 max;
 };
 
 struct Ov234Work {
-    struct Ov234Vec3 vec;
+    VecFx32 vec;
     int scale;
 };
 

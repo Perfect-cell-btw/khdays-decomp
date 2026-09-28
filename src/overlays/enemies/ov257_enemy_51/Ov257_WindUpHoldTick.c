@@ -3,21 +3,22 @@
  * 3 and the +0x10 step heads for the +0x60 target (Ov257_SteerToTarget). Once the +0xc idle byte
  * clears, animation 3 plays, the +0x3d0 part plays motion 2, +0x78 clears and the tick hands over
  * to Ov257_BiteChargeTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int queryTableEntry(int rig, int channel);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);
-extern int Ov257_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov257_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov257_BiteChargeTick(int *node);
 
 void Ov257_WindUpHoldTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
 
     {
@@ -41,7 +42,7 @@ void Ov257_WindUpHoldTick(int *node)
     }
     state[0x10] = *(int *)(node[0] + 0x2c) * 30 / 10;
     Ov257_SteerToTarget(state, state[0x18], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     if (*(unsigned char *)state[3] != 0) {
         return;
     }

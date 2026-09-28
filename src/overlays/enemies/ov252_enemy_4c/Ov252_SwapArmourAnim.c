@@ -2,7 +2,9 @@
  * (0203b9ac) and plays with the +0x311 loop bit; every other live piece (+0x39c slot byte not negative)
  * rebinds its slot, replays with its rig-held mode (+0xa8) and resumes at its saved frame `frames[i]`
  * in the +0x88 bank (Anim_SetFrameWrapped). Piece 3 is track 4. */
+
 #include "nitro/types.h"
+
 typedef struct { u8 b0 : 1; } Bit0;
 typedef struct { char data[0x24]; } AnimSlot;
 struct Ov252Rig { char pad[0x3a0]; AnimSlot slots[4]; };

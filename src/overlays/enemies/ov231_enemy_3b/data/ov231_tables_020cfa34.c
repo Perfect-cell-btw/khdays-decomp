@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov231_ChaseTick (020cd510): const Vec3 data_ov231_020cfa34; */
+
 #include "nitro/types.h"
 
-/* read by Ov231_ChaseTick (020cd510): const Vec3 data_ov231_020cfa34; */
 const u8 data_ov231_020cfa34[12] = {
     0, 0, 0, 0, 0, 144, 255, 255, 0, 0, 0, 0,
 };

@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct Ov002Vec3 {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov002Rng {
     int nSeed;
@@ -20,7 +16,7 @@ typedef struct Ov002SpawnCtx {
 typedef struct Ov002Spawned {
     char pad000[8];
     char *pAnim;                /* +0x08 */
-    Ov002Vec3 vHome;            /* +0x0c */
+    VecFx32 vHome;            /* +0x0c */
     s16 nSpanA;                 /* +0x18 */
     s16 nSpanB;                 /* +0x1a */
     u8 bStateA;                 /* +0x1c */
@@ -46,8 +42,8 @@ typedef struct Ov002Spawned {
     s16 nPower;                 /* +0x38 */
     char pad03a[2];
     int nSpeed;                 /* +0x3c */
-    Ov002Vec3 vPos;             /* +0x40 */
-    Ov002Vec3 vVel;             /* +0x4c */
+    VecFx32 vPos;             /* +0x40 */
+    VecFx32 vVel;             /* +0x4c */
     int nField58;               /* +0x58 */
 } Ov002Spawned;
 
@@ -96,7 +92,7 @@ extern void func_0202c604(Ov002SpawnCtx *pCtx, Ov002Spawned *pRow);
    and on hard the velocity grows by half while the shorts are divided by
    three. */
 Ov002Spawned *Ov002_BuildSpawnRow(int nSpotId, int nKind, int nTier,
-                                  int nCtxIndex, const Ov002Vec3 *pPlace,
+                                  int nCtxIndex, const VecFx32 *pPlace,
                                   int nMode, Ov002Rng *pRng)
 {
     Ov002SpotStage *pStage;

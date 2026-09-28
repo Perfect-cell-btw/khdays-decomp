@@ -5,18 +5,19 @@
  * 0x440-0x660 for 0x7f8, 1 pose 0xa sweeping 0x880-0xbb0 for 0xcc0, 2 pose 0xb sweeping 0x220-0x440
  * for 0x13a8 with +0x424 set (+0x420 = 0 each time); the timer restarts and the step count grows.
  * After the third swing the node moves on to 020cef48. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov259_FaceTargetGap(int *node);
 extern void Ov259_RefreshAim(int *node);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
-extern void Ov259_ForwardSweep(int body, int a, int b, Vec3 lift);
+extern void Ov259_ForwardSweep(int body, int a, int b, VecFx32 lift);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_EnterFlinch(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov259_ComboTick(int *node)
 {
@@ -28,7 +29,7 @@ void Ov259_ComboTick(int *node)
     ground = Ov259_FaceTargetGap(node);
     Ov259_RefreshAim(node);
     if (ground <= *(int *)(*state + 0x80)) {
-        ScaleVec3Fx12(0x400, (Vec3 *)(state + 5), (Vec3 *)(state + 5));
+        ScaleVec3Fx12(0x400, (VecFx32 *)(state + 5), (VecFx32 *)(state + 5));
     }
     if (state[0x1a] > state[0x20] || *(u8 *)(state[1] + 0xad) == 0 || state[0x26] == 0) {
         next = 1;

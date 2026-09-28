@@ -4,8 +4,10 @@
  * 10.0 plus a random 0..10.0 with a 40.0 rise, the +0x4c one along another random yaw at 10.0
  * plus a random 0..10.0 and flat, clears the +0x14 timer, +0x78 word and +0x7c stage and
  * moves the node to 020d528c. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct m4 { int w[4]; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 
@@ -15,7 +17,7 @@ static inline unsigned short FX_RadToIdx(int rad) {
 
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern int RandNextScaled();  /* K&R decl: needed for the rand `+ (v - v)` copy artifact */
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov236_DismountLeapTick(int *node);
 extern const short data_0203d210[];
@@ -36,18 +38,18 @@ void Ov236_EnterBuckB(int *node)
     ((struct w8 *)(*(int *)(*state + 0x3c4) + 8))->lo &= ~1;
     Ov107_PostTagUpdate(*state, 5, 0);
     *(struct m4 *)(state + 0x19) = *(struct m4 *)(*state + 0xa0);
-    *(Vec3 *)(state + 0x16) = *(Vec3 *)state[7];
+    *(VecFx32 *)(state + 0x16) = *(VecFx32 *)state[7];
     idx = FX_RadToIdx(RandNextScaled(0x6489) + (v - v));
     state[0x10] = data_0203d210[(idx >> 4) << 1];                             /* FX_SinIdx */
     state[0x11] = 0;
     state[0x12] = data_0203d210[((idx >> 4) << 1) + 1];                       /* FX_CosIdx */
-    ScaleVec3Fx12(RandNextScaled(0xa001) + 0xa000, (Vec3 *)(state + 0x10), (Vec3 *)(state + 0x10));
+    ScaleVec3Fx12(RandNextScaled(0xa001) + 0xa000, (VecFx32 *)(state + 0x10), (VecFx32 *)(state + 0x10));
     state[0x11] = 0x28000;
     idx = FX_RadToIdx(RandNextScaled(0x6489) + (v - v));
     state[0x13] = data_0203d210[(idx >> 4) << 1];                             /* FX_SinIdx */
     state[0x14] = 0;
     state[0x15] = data_0203d210[((idx >> 4) << 1) + 1];                       /* FX_CosIdx */
-    ScaleVec3Fx12(RandNextScaled(0xa001) + 0xa000, (Vec3 *)(state + 0x13), (Vec3 *)(state + 0x13));
+    ScaleVec3Fx12(RandNextScaled(0xa001) + 0xa000, (VecFx32 *)(state + 0x13), (VecFx32 *)(state + 0x13));
     state[0x14] = 0;
     state[5] = 0;
     state[0x1e] = 0;

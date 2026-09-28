@@ -8,11 +8,13 @@
  * the owner's +0x24 hook, their bit is set and reaction +0x408 mode 9 fires there. Once the +0xc
  * idle byte clears, the +0x4c delay is drawn from the owner's [+0x224, +0x228] range and sub-state
  * 2 is requested. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -23,17 +25,17 @@ typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int RandNextScaled(int n);
-extern int Ov107_ActionResource_GetOffsetAndScale(int part, Vec3 *out);
+extern int Ov107_ActionResource_GetOffsetAndScale(int part, VecFx32 *out);
 extern const Cmd14 data_ov257_020d3312;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void VEC_Add(const void *a, const void *b, void *out);
 
 static inline int RandRange(int lo, int hi)
@@ -59,7 +61,7 @@ void Ov257_ThirdBiteTick(int *node)
     int *state = (int *)node[1];
     int k;
     int n;
-    Vec3 dir;
+    VecFx32 dir;
     int hits[4];
     Segment seg;
     Fx32 scratchZ;
@@ -80,7 +82,7 @@ void Ov257_ThirdBiteTick(int *node)
     }
     n = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3d0), &dir);
     Vec3TransformViaTempMtx(&dir, state + 7, &dir);
-    ScaleVec3Fx12(n, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(n, &dir, (VecFx32 *)(state + 4));
     state[0x11] += *(int *)(node[0] + 0x2c);
     if (state[0x11] > 0x1000 && state[0x11] < 0x18ff) {
         for (k = 0; k < 4; k++) {
@@ -92,7 +94,7 @@ void Ov257_ThirdBiteTick(int *node)
             if (i < n) {
                 pHits = hits;
                 do {
-                    Vec3 push;
+                    VecFx32 push;
                     Cmd14 msg;
 
                     obj = pHits[i];

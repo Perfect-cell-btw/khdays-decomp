@@ -7,7 +7,9 @@
  * by the overlay's +0x2890 table into a fresh 24-byte slot table (+0x398, attached, bit 1),
  * registers reaction 2/2 (id 0x2120) and two placements on the +0x22c/+0x144 lists (+0x388/
  * +0x38c) from the pose at the origin, then loads sound 0x159. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
 
 struct PoolIds {
@@ -20,7 +22,7 @@ struct Box {
 };
 
 struct Pose {
-    Vec3 pos;
+    VecFx32 pos;
     int scale;
 };
 
@@ -56,7 +58,7 @@ extern const char data_ov251_020d654c[];
 extern const char data_ov251_020d6554[];
 extern const char data_ov251_020d6564[];
 extern const char data_ov251_020d6574[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov251_Construct(char *self)
 {

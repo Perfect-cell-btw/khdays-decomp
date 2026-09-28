@@ -4,14 +4,15 @@
  * the +0x3e0 point (kind 0x17, param 3), slots 2/3 spawn pair 2 on the actor's +0xa0 pose (flag
  * set for slot 3), slots 1/4/5 spawn pair 1/3/4 at the transform, and slot 5 also sets pose 1.
  * The base hook always runs. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 struct Pair { int res; int handle; };
 
 extern void SrtTransform_SetIdentity(SrtTransform *t);
-extern void Srt_SetTranslation(SrtTransform *t, const Vec3 *pos);
+extern void Srt_SetTranslation(SrtTransform *t, const VecFx32 *pos);
 extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
 extern int Ov107_CreateNodeXformTask(int model, int res, int kind, int zero, SrtTransform *t);
 extern void Ov107_ForwardVisibleEvent(char *self, int pose);
@@ -20,7 +21,7 @@ extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 void Ov268_OnEffectMessage(char *self, u8 *msg, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         u8 bytes[12];

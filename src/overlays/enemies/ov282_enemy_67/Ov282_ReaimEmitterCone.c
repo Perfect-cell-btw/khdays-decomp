@@ -7,7 +7,9 @@
  * 0203ca14(node, x, y+0x100, z), its length via 0203ca9c(node, 0x1000), and its orientation via
  * 0203c9d0(node, &m).
  */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct xform4 { int w[4]; };
 
 extern void ObjList_Update(int scene, unsigned tick);
@@ -28,11 +30,11 @@ void Ov282_ReaimEmitterCone(int self, unsigned tick) {
     }
     {
         int recoil = *(int *)(self + 0x13c);
-        struct vec3 s;
+        VecFx32 s;
         struct xform4 m;
 
         Quat_FromTwoVectors(&m, &data_02042264, (int *)(self + 0x124));
-        s = *(struct vec3 *)(self + 0x74);
+        s = *(VecFx32 *)(self + 0x74);
         s.y -= recoil;
         Srt_SetTranslationXYZ(*(int *)(self + 0x190) + 0x30, s.x, s.y + 0x100, s.z);
         Srt_SetScaleUniform(*(int *)(self + 0x190) + 0x30, 0x1000);

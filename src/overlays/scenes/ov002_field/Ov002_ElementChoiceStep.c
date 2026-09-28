@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 extern u8 data_0204be04;

@@ -11,7 +11,9 @@
  * emits `OVERLAY_12_ID = 12;` into arm9.lcf.  Spelled as a plain 12 the pool word disappears
  * and the function is 4 bytes short.
  */
+
 #include "nitro/types.h"
+
 typedef u32 FSOverlayID;
 typedef void *StateFn;
 

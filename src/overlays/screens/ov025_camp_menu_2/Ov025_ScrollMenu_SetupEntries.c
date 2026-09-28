@@ -8,6 +8,7 @@
  * 0x80 shown (0208884c) and entries 0x2b / 0x2c get the callbacks 020a3eac / 020a3edc
  * (02088420) -- with sub-item set 1 pushed on both (020887c0) while the sub LCD is off (POWCNT1
  * bit 15).  The four panel entries of data_ov025_020b4370 give the positions +0x21c. */
+
 #include "nitro/types.h"
 
 typedef struct UiLayoutPos {

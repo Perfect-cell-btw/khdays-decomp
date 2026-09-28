@@ -6,7 +6,9 @@
  * into the +0x3a8 pair table (registered, bit 1 of +0x5c), registers actions 0, 1, 2 and 4 with
  * mode 1 (rate 1.13), reserves the +0x22c capsule (+0x388) and one +0x144 capsule (+0x38c, its
  * body at +0x2cc) of length 1.0 and radius 0.56 along +Y, and loads sound 0x121. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { void *node; int pad; } Slot;
 typedef struct { int w[5]; } KindTable;
 typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;

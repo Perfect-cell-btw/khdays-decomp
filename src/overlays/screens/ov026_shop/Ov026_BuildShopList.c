@@ -9,6 +9,7 @@
  * met by the level slot (+0x4) in the game state (0x1168 + 2 * slot).  The
  * count goes to *pCount; returns the array (0 when empty).
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008ParamRecord {

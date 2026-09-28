@@ -1,4 +1,5 @@
 /* Resolve a message-record pointer from ov008 caches or the generic database. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MessageCacheContextView {

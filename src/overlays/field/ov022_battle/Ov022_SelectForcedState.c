@@ -15,10 +15,7 @@
  */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x, y, z;
-};
+#include "nitro/fx.h"
 
 struct Actor {
     unsigned long long nFlags;   /* 0x000 */
@@ -33,7 +30,7 @@ struct Actor {
     u8 pad46c[8];
     int nFallTimer;              /* 0x474 */
     u8 pad478[0x14];
-    struct Vec3 vecPos;          /* 0x48c */
+    VecFx32 vecPos;          /* 0x48c */
     u8 pad498[0x1f8];
     int nPendingState;           /* 0x690 */
     u8 bSuppressDraw : 1;        /* 0x694 bit 0 */

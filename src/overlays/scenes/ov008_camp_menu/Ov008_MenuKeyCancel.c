@@ -6,6 +6,7 @@
  * three list hooks; otherwise closes the list with mode 1, refreshes menu
  * button 5 and rebuilds the grid hits.  Cue 0x38 either way.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MenuContext {

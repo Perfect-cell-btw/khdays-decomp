@@ -1,5 +1,7 @@
 /* Initialize the result font and two text surfaces sharing the selected row buffer. */
+
 #include "nitro/types.h"
+
 typedef struct FontInfo { char data[12]; } FontInfo;
 typedef struct TileSurface { char data[60]; } TileSurface;
 typedef struct TileSurfaceCfg {

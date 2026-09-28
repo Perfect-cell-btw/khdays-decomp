@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Constructor of the ov210 enemy (x3 with ov211/ov282). Installs the handlers, clears +0x1f4 (020d1a24): const PoseTable data_ov211_020d6484; */
+
 #include "nitro/types.h"
 
-/* read by Constructor of the ov210 enemy (x3 with ov211/ov282). Installs the handlers, clears +0x1f4 (020d1a24): const PoseTable data_ov211_020d6484; */
 const int data_ov211_020d6484[8] = {
     28, 29, 30, 31, 32, 33, 34, 35,
 };

@@ -7,16 +7,18 @@
  * distance to the target ends the state, a finished idle countdown (020cc7f8) just returns; otherwise
  * the +0xc/+0x10 yaws follow the velocity and the phase advances by the +0x54 rate, handing off to the
  * circle state (and running it) once it reaches 0x8000. */
-typedef struct Vec3 { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 struct Bits17a { unsigned char bit0 : 1, bit1 : 1; };
 
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int VEC_DotProduct(Vec3 *a, Vec3 *b);
-extern void VEC_Subtract(Vec3 *a, Vec3 *b, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *d);
 extern int func_020050b4(int x, int z);
 extern int Ov218_DistanceToTarget(int *node);
 extern int Ov218_WalkDecide(int *node, int dist);
@@ -30,9 +32,9 @@ void Ov218_FlightTick(int *node)
 {
     int *state = (int *)node[1];
     Mtx33 mtx;
-    Vec3 n;
-    Vec3 back;
-    Vec3 refl;
+    VecFx32 n;
+    VecFx32 back;
+    VecFx32 refl;
     int bob;
     int dist;
     int len;
@@ -46,15 +48,15 @@ void Ov218_FlightTick(int *node)
     }
     idx = ANG2IDX(state[0x13]);
     MTX_RotY33_(&mtx, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-    MTX_MultVec33((Vec3 *)(state + 0xa), &mtx, (Vec3 *)(state + 0xa));
-    VEC_Normalize((Vec3 *)(state + 0xa), (Vec3 *)(state + 0xa));
+    MTX_MultVec33((VecFx32 *)(state + 0xa), &mtx, (VecFx32 *)(state + 0xa));
+    VEC_Normalize((VecFx32 *)(state + 0xa), (VecFx32 *)(state + 0xa));
     bob = data_0203d210[(state[0x14] >> 4) * 2] * 0x600 / 2;
     if (bob < 0) {
         bob = -bob;
     }
-    ScaleVec3Fx12(bob / 0x1000 + 0x300 + state[7], (Vec3 *)(state + 0xa), (Vec3 *)(state + 0xa));
+    ScaleVec3Fx12(bob / 0x1000 + 0x300 + state[7], (VecFx32 *)(state + 0xa), (VecFx32 *)(state + 0xa));
     if (((struct Bits17a *)(*state + 0x17a))->bit1 != 0) {
-        n = *(Vec3 *)(*state + 0x114);
+        n = *(VecFx32 *)(*state + 0x114);
         idx = ANG2IDX(state[3]);
         back.x = -data_0203d210[idx * 2];
         back.y = 0;
@@ -63,8 +65,8 @@ void Ov218_FlightTick(int *node)
         VEC_Subtract(&refl, &back, &refl);
         VEC_Normalize(&refl, &refl);
         state[0x13] = func_020050b4(refl.x, refl.z);
-        len = VEC_Normalize((Vec3 *)(state + 0xa), (Vec3 *)(state + 0xa));
-        ScaleVec3Fx12(len, &refl, (Vec3 *)(state + 0xa));
+        len = VEC_Normalize((VecFx32 *)(state + 0xa), (VecFx32 *)(state + 0xa));
+        ScaleVec3Fx12(len, &refl, (VecFx32 *)(state + 0xa));
         state[0x18] = 1;
     }
     dist = Ov218_DistanceToTarget(node);

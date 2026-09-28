@@ -42,9 +42,11 @@
  * function for the construct that OWNS it. The owner routinely has no textual
  * relationship to the diff.
  */
-#include "nitro/types.h"
 
 /* Same five-word shape the matched Ov000_LoadPageSubScreenLayer passes to this initialiser. */
+
+#include "nitro/types.h"
+
 typedef struct Ov000ResourceTrackerConfig {
     u32 entryCapacity;
     u32 nodeCapacity;

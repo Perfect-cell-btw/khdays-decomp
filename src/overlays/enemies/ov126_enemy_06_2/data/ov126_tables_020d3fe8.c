@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Constructor of the ov125 enemy. Installs the handlers (+8 release, +0xc draw veneer, +0x1c (020cfc04): IdTable data_ov126_020d3fe8; */
+
 #include "nitro/types.h"
 
-/* read by Constructor of the ov125 enemy. Installs the handlers (+8 release, +0xc draw veneer, +0x1c (020cfc04): IdTable data_ov126_020d3fe8; */
 const int data_ov126_020d3fe8[9] = {
     1, 2, 3, 3, 4, 6, 7, 7,
     8,

@@ -7,6 +7,7 @@
  * queries (ids 9, 0x40a, 0xc4b, 0x44e), with the last stored as (result == 6). The mode arm uses
  * a switch so the compiler lays the four stores out of line (sparse cmp-chain) rather than
  * predicating them inline. */
+
 #include "nitro/types.h"
 
 typedef struct NNSFndList {

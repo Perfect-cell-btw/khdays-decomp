@@ -15,11 +15,7 @@
  * NitroSDK's vector-first argument order (v, m, dst) is what makes the tail read sensibly: take
  * the vector at *(ctx[0]+0x490)+0x2c, rotate it about Y, land it in ctx+0x10. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int m[9];

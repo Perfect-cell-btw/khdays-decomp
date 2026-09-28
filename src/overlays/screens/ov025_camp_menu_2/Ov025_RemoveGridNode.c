@@ -11,6 +11,7 @@
  * disabled and the equip panel refreshed.  The snapshot is released and the
  * grid hits rebuilt; returns 1.
  */
+
 #include "nitro/types.h"
 
 #define PAGE_COLS 5

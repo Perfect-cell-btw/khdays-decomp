@@ -15,7 +15,8 @@
  * register -- which is what lets its store be scheduled after the call
  * argument is computed, exactly as the original does.
  */
-struct Vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 struct Ov020ScriptTask {
     char pad00[8];
@@ -27,8 +28,8 @@ struct Ov020ScriptTask {
     char pad1e[0x3a];
     char aName58[0x10];                     /* 0x58 */
     char pad68[0x58];
-    volatile struct Vec3 vOffsetC0;         /* 0xc0 */
-    struct Vec3 vScaleCC;                   /* 0xcc */
+    volatile VecFx32 vOffsetC0;         /* 0xc0 */
+    VecFx32 vScaleCC;                   /* 0xcc */
 };
 
 extern void *Ov002_LookupChannelEntry(const char *name);

@@ -9,6 +9,7 @@
  * is enabled when flag 0x200b is set, or from day 12 on once flag 0x3c2b + the 0x34 tier base
  * (020afda0) is set.  Codegen: declaration order nTracker, i, nCtx, pTier, bVisible (the
  * visibility flag reuses the tracker's r5). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008LayoutTemplate {

@@ -12,25 +12,27 @@
  * Codegen: the tail's `else if` repeats `!done` (ROM predicates the partner test on the done
  * compare: ldreq/ldrbeq/cmpeq), and `grounded` is held as an `int *` read through `(int)` casts,
  * which gives the ROM's r1/r2 split between the mode byte and the flag. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int y);
-extern void Ov256_RotateByActorHeading(Vec3 *out, int *node, void *part);
+extern void Ov256_RotateByActorHeading(VecFx32 *out, int *node, void *part);
 extern int Ov256_PickTarget(int *node);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov256_PathProbe(int *node, Vec3 *probe, int a);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov256_PathProbe(int *node, VecFx32 *probe, int a);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_TurnTick(void);
 extern void Ov256_AiTakeOff(void);
-extern const Vec3 data_ov256_020d25c4;
+extern const VecFx32 data_ov256_020d25c4;
 
-static inline void VecSet(Vec3 *v, int x, int y, int z)
+static inline void VecSet(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -40,12 +42,12 @@ static inline void VecSet(Vec3 *v, int x, int y, int z)
 void Ov256_FlightTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 anchor;
-    Vec3 probe;
-    Vec3 v1;
-    Vec3 v2;
-    Vec3 v3;
-    Vec3 v4;
+    VecFx32 anchor;
+    VecFx32 probe;
+    VecFx32 v1;
+    VecFx32 v2;
+    VecFx32 v3;
+    VecFx32 v4;
     int done = 0;
     int turned;
     int *grounded;
@@ -53,23 +55,23 @@ void Ov256_FlightTick(int *node)
     switch (*((u8 *)state + 0x6b)) {
     case 4:
         anchor = data_ov256_020d25c4;
-        VEC_Subtract(&anchor, (Vec3 *)(*state + 0xb0), (Vec3 *)(state + 0xd));
-        state[0x16] = VEC_Normalize((Vec3 *)(state + 0xd), (Vec3 *)(state + 0xd));
+        VEC_Subtract(&anchor, (VecFx32 *)(*state + 0xb0), (VecFx32 *)(state + 0xd));
+        state[0x16] = VEC_Normalize((VecFx32 *)(state + 0xd), (VecFx32 *)(state + 0xd));
         if (state[0x16] < 0) {
             state[0x16] = done;
         }
         state[0x11] = func_020050b4(state[0xd], state[0xf]);
         Ov256_RotateByActorHeading(&v1, node, (void *)(*(int *)(*state + 0x450) + 0x2c));
-        *(Vec3 *)(state + 4) = v1;
+        *(VecFx32 *)(state + 4) = v1;
         state[5] *= *((signed char *)state + 0x71);
         break;
     case 2:
         Ov256_PickTarget(node);
         Ov256_RotateByActorHeading(&v2, node, (void *)(*(int *)(*state + 0x450) + 0x2c));
-        *(Vec3 *)(state + 4) = v2;
-        if (((Vec3 *)state[3])->y + 0x1000 < *(int *)(*(int *)(*state + 0x430) + 0x194)) {
+        *(VecFx32 *)(state + 4) = v2;
+        if (((VecFx32 *)state[3])->y + 0x1000 < *(int *)(*(int *)(*state + 0x430) + 0x194)) {
             state[5] = 0x200;
-        } else if (((Vec3 *)state[3])->x > *(int *)(*(int *)(*state + 0x430) + 0x194) + 0x1000) {
+        } else if (((VecFx32 *)state[3])->x > *(int *)(*(int *)(*state + 0x430) + 0x194) + 0x1000) {
             state[5] = -0x200;
         }
         break;
@@ -78,7 +80,7 @@ void Ov256_FlightTick(int *node)
         state[0x10] = (state[0x13] * 0x1922 / 0x7f8 + state[0x11]) * *((signed char *)state + 0x71);
         state[0x13] += *(int *)(node[0] + 0x2c);
         Ov256_RotateByActorHeading(&v3, node, (void *)(*(int *)(*state + 0x450) + 0x2c));
-        *(Vec3 *)(state + 4) = v3;
+        *(VecFx32 *)(state + 4) = v3;
         state[5] += 0x500;
         if (*((u8 *)state + 0x6b) == 1) {
             state[5] -= 0xa00;
@@ -87,13 +89,13 @@ void Ov256_FlightTick(int *node)
     case 3:
         Ov256_PickTarget(node);
         Ov256_RotateByActorHeading(&v4, node, (void *)(*(int *)(*state + 0x450) + 0x2c));
-        *(Vec3 *)(state + 4) = v4;
-        ScaleVec3Fx12(-0x1000, (Vec3 *)(state + 4), (Vec3 *)(state + 4));
+        *(VecFx32 *)(state + 4) = v4;
+        ScaleVec3Fx12(-0x1000, (VecFx32 *)(state + 4), (VecFx32 *)(state + 4));
         state[0x11] += 0x3244;
         state[0x10] = state[0x11];
         break;
     }
-    ScaleVec3Fx12((*(int *)(*state + 0x45c) << 9) + 0x1000, (Vec3 *)(state + 4), (Vec3 *)(state + 4));
+    ScaleVec3Fx12((*(int *)(*state + 0x45c) << 9) + 0x1000, (VecFx32 *)(state + 4), (VecFx32 *)(state + 4));
     if (*(u8 *)(state[1] + 0xad) == 0) {
         switch (*((u8 *)state + 0x6b)) {
         case 2:
@@ -110,8 +112,8 @@ void Ov256_FlightTick(int *node)
         case 1:
             grounded = (int *)(((struct Flag17a *)(*state + 0x17a))->b1);
             if (((int)grounded) || state[0x15] == 0 ||
-                (*((u8 *)state + 0x6b) == 0 && ((Vec3 *)state[3])->y > 0x10000) ||
-                (*((u8 *)state + 0x6b) == 1 && ((Vec3 *)state[3])->y < 0xc000)) {
+                (*((u8 *)state + 0x6b) == 0 && ((VecFx32 *)state[3])->y > 0x10000) ||
+                (*((u8 *)state + 0x6b) == 1 && ((VecFx32 *)state[3])->y < 0xc000)) {
                 if (((int)grounded)) {
                     VecSet(&probe, 0x4600, state[5], state[6]);
                     if (Ov256_PathProbe(node, &probe, 0) != 0) {

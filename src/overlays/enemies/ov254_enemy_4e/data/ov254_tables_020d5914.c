@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov254_Construct (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov254_Construct (not yet decompiled) */
 const u8 data_ov254_020d5914[24] = {
     0, 176, 255, 255, 0, 96, 255, 255, 0, 176, 255, 255, 0, 80, 0, 0,
     0, 160, 0, 0, 0, 80, 0, 0,

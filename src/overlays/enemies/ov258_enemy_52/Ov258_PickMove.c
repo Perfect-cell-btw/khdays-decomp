@@ -4,6 +4,7 @@
  * stage 1 move 6 (+0x54 bit 7), stage 2 move 7 (bit 6), below 80 % move 8 (bit 5), below 15 % move 8
  * (bit 4). A picked move rolls the +0x38 delay between the +0x224 and +0x228 bounds, is remembered in
  * +0x55 and returns 1. */
+
 #include "nitro/types.h"
 
 extern int Ov258_AcquireTarget(int *node, int face);

@@ -7,8 +7,10 @@
  * value in the root's +0x2e78 and goes to state 0x24; with nothing chosen an input carrying bit
  * 1 of +0x18 goes to 0x23. Without bit 2 of +0x24 the actor is marked unrestricted (bit 46) with
  * a cleared +0x58. */
-typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
+
 #include "nitro/types.h"
+
+typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
 extern void SceneNode_Enable(void *node);

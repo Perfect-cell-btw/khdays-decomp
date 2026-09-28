@@ -5,6 +5,7 @@
  * 020805c0, start 020805c8, hit 020805d0, node 020806d0, owner 02080708, 02080714 and
  * 0208071c at +0x3c) and stamps kind 0x1d, or 0x1e when the descriptor's flag byte (+0x8) is
  * set.  The item is the piece that hands an item to the player who touches it. */
+
 #include "nitro/types.h"
 
 typedef struct Ov017ItemDesc {

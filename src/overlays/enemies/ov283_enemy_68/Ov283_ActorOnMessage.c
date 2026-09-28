@@ -1,20 +1,22 @@
 /* Message handler of the ov283 actor: a spawn message (kind 5) unpacks its position into a transform
  * and starts the +0x3ec effect pair of the sub id: 0 and 1 at the position scaled 2.0, 2 and 4 on
  * the left hand (+0x394), 3 and 5 on the right hand (+0x398). The base handler always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
 struct EffectPair { int res; int handle; };
 struct Ov283Effects { char pad[0x3ec]; struct EffectPair pair[6]; };
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern void Srt_SetScaleUniform(SrtTransform *transform, int scale);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int arg, SrtTransform *transform);
 extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern int Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
-static inline void UnpackPosition(Vec3 *out, const u8 *msg)
+static inline void UnpackPosition(VecFx32 *out, const u8 *msg)
 {
     union {
         int words[3];
@@ -38,7 +40,7 @@ static inline void UnpackPosition(Vec3 *out, const u8 *msg)
 int Ov283_ActorOnMessage(char *self, u8 *msg, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
 
     if (msg[2] == 5) {
         UnpackPosition(&translation, msg);

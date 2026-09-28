@@ -2,7 +2,9 @@
  * target gap measured and the +0x30 target yaw aimed from the actor at its +0x394 target plus
  * the turn; animation 8 plays, the +0x90 flag is set, bit 0 of the +0x38c part's +8 word is set,
  * reaction 0 mode 0x43 fires at the +8 point and the tick hands off to d51fc. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 struct LowByte32 { unsigned bits : 8; };
 
 extern int RandNextScaled(int range);

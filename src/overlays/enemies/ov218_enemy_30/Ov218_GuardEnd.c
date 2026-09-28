@@ -1,6 +1,7 @@
 /* Guard end of the ov218 enemy: once the +4 item is idle the +0x1c phase advances and the +0x21a
  * stamina is refilled from the +0x218 maximum divided by 2, 3 or 5 (at least 1) according to the
  * phase; then the state ends with sub-state 2. */
+
 #include "nitro/types.h"
 
 struct Ov218Actor {

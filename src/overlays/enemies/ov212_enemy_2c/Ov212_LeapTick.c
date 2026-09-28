@@ -6,13 +6,14 @@
  * the +4 item is idle (+0xad) sub-state 2 is queued and the state ends. Codegen: the drop lives
  * in the same stack aggregate as the pushed vector (the ROM stores it at [sp+0x14] and reloads
  * *state after that store). */
-typedef struct { int x, y, z; } Vec3;
 
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
+#include "nitro/fx.h"
+
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void Ov212_AreaAttackSweep(int *state, int mode, Vec3 *v);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void Ov212_AreaAttackSweep(int *state, int mode, VecFx32 *v);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 static inline int FX_Mul(int a, int b)
@@ -23,7 +24,7 @@ static inline int FX_Mul(int a, int b)
 void Ov212_LeapTick(int *node)
 {
     int *state = (int *)node[1];
-    struct { Vec3 v; int nDrop; } push;
+    struct { VecFx32 v; int nDrop; } push;
     int actor;
     int rem;
     int step;
@@ -32,17 +33,17 @@ void Ov212_LeapTick(int *node)
     if (state[0x10] >= 0x15c8 && state[0x10] <= 0x1ed0) {
         if (*(unsigned char *)((char *)state + 0x5a) == 0) {
             actor = *state;
-            func_ov107_020c0b90(actor, 6, *(Vec3 *)(actor + 0x74), 0);
+            func_ov107_020c0b90(actor, 6, *(VecFx32 *)(actor + 0x74), 0);
             Ov107_BuildAndSendUpdate(*state, 0x128, 8, (void *)state[2]);
             *(unsigned char *)((char *)state + 0x5a) = 1;
         }
-        *(Vec3 *)(state + 4) = *(Vec3 *)(state + 0xa);
+        *(VecFx32 *)(state + 4) = *(VecFx32 *)(state + 0xa);
         for (rem = *(int *)(node[0] + 0x2c); rem > 0; rem -= 0x88) {
             step = rem <= 0x88 ? rem : 0x88;
-            ScaleVec3Fx12(0x1000 - FX_Mul(FX_Div(step, 0x88), 0x400), (Vec3 *)(state + 0xa), (Vec3 *)(state + 0xa));
+            ScaleVec3Fx12(0x1000 - FX_Mul(FX_Div(step, 0x88), 0x400), (VecFx32 *)(state + 0xa), (VecFx32 *)(state + 0xa));
         }
         push.nDrop = FX_Mul(*(int *)(*state + 0x80), 0x1100);
-        push.v = *(Vec3 *)(*state + 0x108 + 0x400);
+        push.v = *(VecFx32 *)(*state + 0x108 + 0x400);
         push.v.y -= push.nDrop / 3;
         Ov212_AreaAttackSweep(state, 1, &push.v);
     }

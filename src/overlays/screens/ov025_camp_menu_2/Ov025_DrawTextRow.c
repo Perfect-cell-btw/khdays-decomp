@@ -9,6 +9,7 @@
  * NOTE: the surface address is spelled &pCtx->aSurface[nRow] at every use; a
  * local for it swaps the base / product registers.
  */
+
 #include "nitro/types.h"
 
 #define ROW_ENTRIES   4

@@ -16,9 +16,10 @@
  * zero-stores go in descending offset order within every vector.
  */
 
-typedef struct { int x, y, z; } VecFx32;
-
 /* Global camera-commit state (GX dirty flags + cached vectors, data_02047394). */
+
+#include "nitro/fx.h"
+
 extern struct {
     char    _p00[0xd4];
     int     flags;          /* +0xd4 */

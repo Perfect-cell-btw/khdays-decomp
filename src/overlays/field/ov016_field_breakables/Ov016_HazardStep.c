@@ -9,6 +9,7 @@
  * the hazard's (+0x2b8) a kind-0xc message {1, state, slot, index} is queued on the piece
  * (ov002 020766e0); once it goes out the state is stored and the sync byte set to 2.  Always
  * stays (0). */
+
 #include "nitro/types.h"
 
 typedef struct Ov016HazardDef {

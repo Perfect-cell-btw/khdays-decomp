@@ -3,6 +3,7 @@
  * freed when it drops to 0; otherwise a non-empty stack goes to the first free of the 24 entries
  * (+0x3c). Adding an empty stack does nothing. */
 #pragma thumb on
+
 #include "nitro/types.h"
 
 typedef struct {

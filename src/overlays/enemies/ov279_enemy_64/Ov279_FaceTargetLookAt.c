@@ -6,21 +6,23 @@
  * 0202ed60 (look-at from data_02042258 toward dir) + 0202f4a4, then copy it down to state[3..6].
  * Always hand off via 0203c634 to the 020cd8a8 state.
  */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct q4 { int a, b, c, d; };
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *a, void *b);
 extern void Quat_FromTwoVectors(void *out, void *fwd, void *dir);
 extern void Vec4_Normalize(void *dst, void *src);
-extern struct vec3 data_02042258;
+extern VecFx32 data_02042258;
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov279_DecayOffsetGiveUpLatch(void);
 
 void Ov279_FaceTargetLookAt(int *self) {
     int *state = (int *)self[1];
     int target;
-    struct vec3 v;
+    VecFx32 v;
 
     Ov107_PostTagUpdate(*state, 2, 0);
     target = state[0x16];

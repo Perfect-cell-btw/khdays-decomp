@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov244_Update (020cccec): const Quat data_ov244_020d3628; */
+
 #include "nitro/types.h"
 
-/* read by Ov244_Update (020cccec): const Quat data_ov244_020d3628; */
 const int data_ov244_020d3628[4] = {
     0, 2896, 2896, 0,
 };

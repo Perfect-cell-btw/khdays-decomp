@@ -6,30 +6,31 @@
  * +0x190 is taken, or, when that is degenerate, the sine/cosine of the +0x30 heading, and the
  * direction is scaled by a twenty-fifth of the length; y then becomes 1.0, +0x34 takes the heading
  * of the direction and the tick hands over to Ov209_AdvanceAimGiveUp. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 static inline unsigned short FX_RadToIdx(int rad) {
     return (unsigned short)((0x28BE60DB9391LL * rad + 0x80000000000LL) >> 44);
 }
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern int Ov107_FindNearestObject(int owner, int flag);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const short data_0203d210[];
 extern void Ov209_AdvanceAimGiveUp(int *node);
 
 void Ov209_LeapWindUpTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int len;
     unsigned short idx;
 
@@ -41,22 +42,22 @@ void Ov209_LeapWindUpTick(int *node)
     if (*(u8 *)state[0x14] != 0) {
         return;
     }
-    func_ov107_020c0b90(*state, 4, *(Vec3 *)state[2], 0);
+    func_ov107_020c0b90(*state, 4, *(VecFx32 *)state[2], 0);
     *(u16 *)(*state + 0x100 + 0xae) |= 1;
     Ov107_PostTagUpdate(*state, 0xc, 1);
-    *(Vec3 *)(state + 0x15) = data_02041dc8;
+    *(VecFx32 *)(state + 0x15) = data_02041dc8;
     state[4] = Ov107_FindNearestObject(*state, 0);
     if (state[4] != 0) {
-        VEC_Subtract((Vec3 *)(state[4] + 0x190), (Vec3 *)state[2], &d);
+        VEC_Subtract((VecFx32 *)(state[4] + 0x190), (VecFx32 *)state[2], &d);
         d.y = 0;
-        len = VEC_Normalize(&d, (Vec3 *)(state + 0x15));
+        len = VEC_Normalize(&d, (VecFx32 *)(state + 0x15));
         if (len == 0) {
             idx = FX_RadToIdx(state[0xc]);
             state[0x15] = data_0203d210[(idx >> 4) * 2];
             state[0x16] = 0;
             state[0x17] = data_0203d210[(idx >> 4) * 2 + 1];
         }
-        ScaleVec3Fx12(len / 25, (Vec3 *)(state + 0x15), (Vec3 *)(state + 0x15));
+        ScaleVec3Fx12(len / 25, (VecFx32 *)(state + 0x15), (VecFx32 *)(state + 0x15));
     }
     state[0x16] = 0x1000;
     state[0xd] = func_020050b4(state[0x15], state[0x17]);

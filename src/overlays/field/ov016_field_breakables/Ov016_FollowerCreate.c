@@ -6,9 +6,9 @@
  * track 0 (+0x1bf), timers cleared (+0x1b4, +0x1c0), the turn rate (+0x1c4), the player it
  * trails (+0x1c6), the initial angle 0x8000 (+0x1b8) and the cone (+0x1c8); finally register
  * the piece (02076480). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016FollowerDef Ov016FollowerDef;
 

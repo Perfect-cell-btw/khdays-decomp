@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Death entry of the ov284 enemy: sends the overlay's 4-byte message to the actor's +0x24 ho (020cd080): const ShortMsg data_ov284_020cd5b4; */
+
 #include "nitro/types.h"
 
-/* read by Death entry of the ov284 enemy: sends the overlay's 4-byte message to the actor's +0x24 ho (020cd080): const ShortMsg data_ov284_020cd5b4; */
 const u8 data_ov284_020cd5b4[4] = {
     0, 0, 5, 3,
 };

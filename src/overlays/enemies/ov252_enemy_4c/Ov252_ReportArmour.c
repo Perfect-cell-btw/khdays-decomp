@@ -1,7 +1,9 @@
 /* Report the ov252 actor's armour to its +0x24 hook as a 0x44-byte snapshot: per piece the +0x38c
  * model's shown bit, the +0x518 record's high nibble and the +0x39c slot byte, then the +0x57a, +0x57c
  * and +0x57e masks. */
+
 #include "nitro/types.h"
+
 typedef struct { int b0 : 1; int b1 : 1; } Bits;
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 struct Ov252Body {

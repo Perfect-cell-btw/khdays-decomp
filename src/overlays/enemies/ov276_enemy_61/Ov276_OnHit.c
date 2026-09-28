@@ -8,13 +8,14 @@
  * damage (clamped to the +0x218 maximum) and a 0x8000 hit that is not the 8|0x80/0x80 special
  * fires reaction 0x164 with the mode taken from the overlay's pairs (0x22 hits use the first
  * pair) alternated by the +0x63 toggle; spent stamina requests sub-state 3. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    Vec3 vPoint;
+    VecFx32 vPoint;
     int nDamage10;
     char pad014[0xc];
     unsigned int uMode20;
@@ -26,9 +27,9 @@ struct ActorHitEvent {
 struct ModePair { u8 a[2]; };
 struct ModeTable { struct ModePair pair22; struct ModePair pair; };
 
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern int VEC_DotProduct(Vec3 *a, Vec3 *b);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern int Ov107_CalcHitDamage(char *actor, struct ActorHitEvent *hit);
 extern void Ov107_BuildAndSendUpdate(char *actor, int a, int id, void *at);
 extern short data_0203d210[];
@@ -39,8 +40,8 @@ extern const struct ModeTable data_ov276_020d2bf8;
 int Ov276_OnHit(char *actor, int other, struct ActorHitEvent *hit)
 {
     int *state = *(int **)(actor + 0x214);
-    Vec3 facing;
-    Vec3 d;
+    VecFx32 facing;
+    VecFx32 d;
     struct ModePair pair22;
     struct ModePair pair;
     int frontal;
@@ -96,7 +97,7 @@ int Ov276_OnHit(char *actor, int other, struct ActorHitEvent *hit)
         }
         break;
     }
-    *(Vec3 *)(state + 10) = hit->vPoint;
+    *(VecFx32 *)(state + 10) = hit->vPoint;
     state[0xb] = 0;
     delta = *(short *)(actor + 0x21a) - hit->nDamage;
     if (delta < 0) {

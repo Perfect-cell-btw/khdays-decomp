@@ -9,11 +9,13 @@
  * hook, its bit is set and reaction +0x408 mode 9 fires there. Once the +0xc idle byte clears,
  * animation 0x14 plays, the +0x3d0 part plays motion 0x11 and the tick hands over to
  * Ov257_LandingTick. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -22,13 +24,13 @@ typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern int Ov257_SteerToTarget(int *state, int target, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov257_SteerToTarget(int *state, int target, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);
@@ -46,7 +48,7 @@ void Ov257_WhirlFinishTick(int *node)
     int obj;
     int *pHits;
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
     Fx32 scratchZ;
     Fx32 scratchY;
@@ -69,7 +71,7 @@ void Ov257_WhirlFinishTick(int *node)
     }
     state[0x10] = *(int *)(node[0] + 0x2c) * 30 / 10;
     Ov257_SteerToTarget(state, state[0x18], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     state[0x11] += *(int *)(node[0] + 0x2c);
     n = state[0x11];
     if (n > 0x1444 && n < 0x1d55) {
@@ -85,7 +87,7 @@ void Ov257_WhirlFinishTick(int *node)
             if (i < n) {
                 pHits = hits;
                 do {
-                    Vec3 push;
+                    VecFx32 push;
                     Cmd14 msg;
 
                     obj = pHits[i];

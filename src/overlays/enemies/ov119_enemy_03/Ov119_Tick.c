@@ -6,16 +6,18 @@
  * hidden otherwise; a +0x3ac grab is let go (ov022 020ad8e0) outside sub-state 0xa. Then the
  * segment from the +0x39c bone's +0x14 to the +0x3a0 bone's +0x14 (unit direction, length, radius
  * 0x240) is written into the +0x38c item's and the +0x388 part's +0x58 and the base tick runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 origin; Vec3 dir; int nLength; int nRadius; } Segment;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 origin; VecFx32 dir; int nLength; int nRadius; } Segment;
 typedef struct { char pad[0x58]; Segment seg; } Ov119Item;
 
 extern void TaskList_FinishByTag(int list, int node);
 extern void Ov107_UnlinkNodeFromOwner(int sub);
 extern void Ov022_ToggleBit13ByMode(int partner, int flag);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov119_Tick(int self)
@@ -65,8 +67,8 @@ void Ov119_Tick(int self)
         *(int *)(self + 0x3ac) = 0;
     }
     seg.nRadius = 0x240;
-    seg.origin = *(Vec3 *)(*(int *)(self + 0x39c) + 0x14);
-    VEC_Subtract((Vec3 *)(*(int *)(self + 0x3a0) + 0x14), &seg.origin, &seg.dir);
+    seg.origin = *(VecFx32 *)(*(int *)(self + 0x39c) + 0x14);
+    VEC_Subtract((VecFx32 *)(*(int *)(self + 0x3a0) + 0x14), &seg.origin, &seg.dir);
     seg.nLength = VEC_Normalize(&seg.dir, &seg.dir);
     (*(Ov119Item **)(self + 0x38c))->seg = seg;
     (**(Ov119Item ***)(self + 0x388))->seg = seg;

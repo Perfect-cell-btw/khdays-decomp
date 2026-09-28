@@ -1,7 +1,9 @@
 /* Message handler of the ov218 actor's +0x3dc effect set: a spawn message (kind 5) starts pair 0 from
  * the payload (kind 5, scale 1.3), attaches pair 1 to the +0x3b0 shadow transform (kind 0x15), or for
  * sub 3 stops pair `byte 4`. The base handler always runs. */
+
 #include "nitro/types.h"
+
 struct EffectPair { int res; int handle; };
 struct Ov218Set { char pad[0x3dc]; struct EffectPair pair[4]; };
 

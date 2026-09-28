@@ -10,13 +10,15 @@
  * 0x13e. Codegen: the item stores are spelled `*(Callback *)(*(int *)(self + 0x384) + 0x74)`
  * on the `char *self` parameter (the pool load of the value is then emitted before the item
  * load and the shared zero sits in r4); the bounds block sits before the +0x60 update. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int a, b, c; } Vec3b;
-typedef struct { Vec3 vector; int scalar; } CameraWork;
+typedef struct { VecFx32 vector; int scalar; } CameraWork;
 typedef struct { int w[6]; } Bounds;
 typedef struct { int id[3]; } IdTable;
 typedef struct { int subitem; int pad; } Slot;
-#include "nitro/types.h"
 typedef void (*Callback)(void);
 
 extern void Ov168_Actor_DestroyWithParts(void);
@@ -42,7 +44,7 @@ extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int resourceId);
 extern int *Ov168_Actor_New(char *self);
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern IdTable data_ov168_020d6350;
 extern char data_ov168_020d638c[];
 extern char data_ov168_020d6394[];
@@ -52,7 +54,7 @@ void Ov168_Construct(char *self)
     IdTable ids = data_ov168_020d6350;
     Bounds bounds;
     CameraWork work;
-    Vec3 v;
+    VecFx32 v;
     u16 hw;
     int i;
     int *slot;

@@ -5,15 +5,16 @@
  * +0x18 override when +0x88 is set) above the target position. Beyond 0x3000 of surface
  * distance a 1-in-3 roll decides: 35 % with a free target (020ccb8c) go to sub-state 9, the rest
  * to 2; otherwise the +0x48 phase advances and at 0x3000 sub-state 6 follows. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int y, int x);
 extern void QuatFromAxisAngle(void *quat, void *axis, int angle);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int RandNextScaled(int bound);
 extern int Ov173_DefaultStepDone(int node);
 extern int data_02042264;
@@ -21,7 +22,7 @@ extern int data_02042264;
 void Ov173_StalkTick(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 d;
+    VecFx32 d;
     int dist;
     int target;
     int obj;
@@ -34,13 +35,13 @@ void Ov173_StalkTick(int node)
         SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)state[2], (Vec3 *)(state[3] + 0x74), &d);
+    VEC_Subtract((VecFx32 *)state[2], (VecFx32 *)(state[3] + 0x74), &d);
     d.y = 0;
     target = state[3];
     obj = *state;
     dist = VEC_Normalize(&d, &d) - *(int *)(target + 0x80) - *(int *)(obj + 0x80);
     QuatFromAxisAngle(state + 0x1d, &data_02042264, func_020050b4(d.x, d.z));
-    ScaleVec3Fx12(0x600, &d, (Vec3 *)(state + 8));
+    ScaleVec3Fx12(0x600, &d, (VecFx32 *)(state + 8));
     if (state[0x22] != 0) {
         height = state[6];
     } else {

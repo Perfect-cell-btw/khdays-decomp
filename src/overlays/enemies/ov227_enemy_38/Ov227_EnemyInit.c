@@ -8,12 +8,14 @@
  * places five spheres at the origin (radius 0.375, 1.63, 1.19 and twice 1.0, all scaled by 1.52),
  * each reserved in the +0x22c pool (kept in +0x3ac) and the +0x144 pool (kept in +0x3c0), raises
  * bit 1 of the second one, creates the ten +0x3ec helpers (020d3e0c) and loads sound 0x14d. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[8]; } IdTable8;
-typedef struct { Vec3 min; Vec3 max; } Bounds;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
+typedef struct { VecFx32 min; VecFx32 max; } Bounds;
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
 struct Pair { int res; int handle; };
 struct ShapeFlags { unsigned int lo : 8; };
 struct Ov227 {
@@ -45,7 +47,7 @@ extern void Snd_RegisterSeqAndBind(void *dst, int a, void *b, int n);
 extern void MainBlob_ResetSlotRows(int obj, void *block);
 extern int FindResourceIndexByName(int item, const char *name);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
-extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const Vec3 *v, int c);
+extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const VecFx32 *v, int c);
 extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(const Sphere *sphere);
@@ -58,11 +60,11 @@ extern const char data_ov227_020d4ba8[];
 extern const char data_ov227_020d4bb4[];
 extern const char data_ov227_020d4bc0[];
 extern const char data_ov227_020d4bcc[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-static inline void VEC_Set(Vec3 *v, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -73,9 +75,9 @@ void Ov227_EnemyInit(char *self)
 {
     IdTable8 ids = data_ov227_020d4b34;
     Bounds bounds;
-    Vec3 lift;
+    VecFx32 lift;
     Sphere sph;
-    Vec3 origin;
+    VecFx32 origin;
     int i;
     int k;
     int node;
@@ -100,7 +102,7 @@ void Ov227_EnemyInit(char *self)
     *(Callback *)(self + 0x1e4) = Ov227_RequestSubState15IfIdle;
     *(int *)(self + 0x70) = 0;          /* overwritten store kept from the source (scheduling) */
     *(int *)(self + 0x70) = 0x30a4;
-    VEC_Set((Vec3 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
+    VEC_Set((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
     *(Bounds *)(self + 0x1fc) = bounds;
     *(u16 *)(self + 0x100 + 0xae) |= 8;
     {

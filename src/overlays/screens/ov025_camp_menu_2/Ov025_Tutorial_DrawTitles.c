@@ -4,6 +4,7 @@
  * 0209e1c0), then the names of the nine visible topics (records of 8 bytes at +0xcc, from the
  * window +0 while below the count +4) at column 0x1c, 16 rows apart from row 0x23, in style
  * 0x209; the surface is flushed (020300f8) and VRAM slot 9 marked used (02084964). */
+
 #include "nitro/types.h"
 
 typedef struct Ov025TutorialList {

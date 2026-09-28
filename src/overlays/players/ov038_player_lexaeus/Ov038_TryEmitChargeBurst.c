@@ -7,9 +7,9 @@
  * heading through the shared sin/cos table, builds the burst parameters with a
  * scaled extent, and submits them. If the submit takes and neither of the two
  * busy bits is set, it also pushes the muzzle position out as event 5. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Emit {
     char pad00[0xc];
@@ -30,7 +30,7 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;
@@ -40,9 +40,9 @@ struct Params {
 extern void Ov022_FillEightHalvesMinus1At0x2bd4(int self);
 extern void func_ov022_020ad44c(struct Emit *emit, int self);
 extern void Ov022_ScaleRowValues(int self, int spin, void *a, void *b);
-extern void ScaleVec3Fx12(int scale, const struct Vec3 *v, struct Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov022_RunCommandHandlers(int self, struct Emit *emit, void *params);
-extern void Ov022_MarshalNetworkRecord(int self, int event, struct Vec3 *pos, int range,
+extern void Ov022_MarshalNetworkRecord(int self, int event, VecFx32 *pos, int range,
                                 int angle, int flag);
 
 extern int data_ov038_020b4ca0;
@@ -52,7 +52,7 @@ void Ov038_TryEmitChargeBurst(int self)
 {
     struct Emit emit;
     struct Params prm;
-    struct Vec3 vMuzzle;
+    VecFx32 vMuzzle;
     int scene = data_ov038_020b4ca0 + 0x2c + 0x2c00;
     int bFire = 0;
     int nKind;
@@ -132,7 +132,7 @@ void Ov038_TryEmitChargeBurst(int self)
     if ((*(unsigned int *)(self + 0x26bc) & 0x40) != 0) {
         return;
     }
-    vMuzzle = *(struct Vec3 *)(self + 0x26c8);
+    vMuzzle = *(VecFx32 *)(self + 0x26c8);
     nFlag = 0;
     if (*(int *)(scene + 4) == 2) {
         nFlag = 1;

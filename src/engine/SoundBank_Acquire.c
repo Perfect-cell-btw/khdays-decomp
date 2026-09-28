@@ -4,7 +4,9 @@
  * (all four banks are marked loading with dataId and the context becomes busy). Otherwise an id
  * already mapped just reports its bank; a busy context refuses; a bank already holding dataId gains
  * a reference; else the last free bank is taken and loading starts. */
+
 #include "nitro/types.h"
+
 typedef struct NNSSndHeap *NNSSndHeapHandle;
 
 #define SND_BANK_NUM 4

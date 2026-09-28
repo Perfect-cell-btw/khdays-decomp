@@ -16,7 +16,9 @@
  * through a volatile view so the argument chain reloads; the enabled flag is stored
  * before that read.
  */
+
 #include "nitro/types.h"
+
 typedef u32 FSOverlayID;
 typedef void (*Ov011StateFn)(void);
 

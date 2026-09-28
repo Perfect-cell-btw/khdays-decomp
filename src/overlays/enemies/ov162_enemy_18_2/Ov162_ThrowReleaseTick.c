@@ -1,6 +1,5 @@
 /* Ov162_ThrowReleaseTick: throw-release tick of the ov161 enemy (x2), ported from the matched ov202 sibling (radius = timer * 4 + 0x800, pushes raised to 0x1000, kind bit 0x20000, +0x60 bit 7 set at the end). */
 /* Ov162_ThrowReleaseTick: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-#include "nitro/types.h"
 
 /*
  * Coordinates are held in a one-value wrapper type (Fx32), a tentative
@@ -8,6 +7,9 @@
  * a struct copy, which mwcc keeps, and that is the ROM's unread stack copy of
  * the position.
  */
+
+#include "nitro/types.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 

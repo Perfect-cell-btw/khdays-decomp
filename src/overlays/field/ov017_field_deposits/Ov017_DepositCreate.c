@@ -8,9 +8,9 @@
  * (+0x4d8 hits, +0x4da hit state, +0x4db animation flags, +0x4dc cooldown), the maximum
  * number of hits (+0x4d9), both animation frames and lengths zeroed (+0x4c8..+0x4d4) and the
  * hit-count GameState field / bit (+0x4e0 / +0x4e2); registers the piece (ov002 02076480). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov017DepositDef {
     u8   pad_00[0x8c];

@@ -1,13 +1,9 @@
-#include "nitro/fx.h"
-
-typedef struct VecFx32 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
 
 /* Same oriented box as OBB_DistSqToPoint, which runs the identical per-axis
  * clamp against halfExtent[] and is the nearest solved neighbour. */
+
+#include "nitro/fx.h"
+
 typedef struct Box {
     VecFx32 center;
     VecFx32 axis[3];

@@ -1,5 +1,7 @@
 #pragma thumb on
+
 #include "nitro/types.h"
+
 typedef struct NNSSndHeap *NNSSndHeapHandle;
 typedef struct { void *player; } NNSSndHandle;
 typedef struct { void *player; } NNSSndStrmHandle;

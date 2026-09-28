@@ -9,12 +9,7 @@
  */
 
 #include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 #define MODE_FIRST_FREE 0
 #define MODE_ROUND_ROBIN 1

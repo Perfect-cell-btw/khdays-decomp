@@ -9,9 +9,10 @@
  * releases the slot. The step from the +0x2c previous position (then refreshed) grows the
  * +0x28 distance: a wall or floor contact (bits 0/1 of +0x17a) ends the flight with reaction
  * 0x115 mode 6, and past 0x14000 the end message goes out (sub-state 0, slot released). */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct Vec4 { int x, y, z, w; } Vec4;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -30,7 +31,7 @@ struct Zero44 {
 struct HitCommand {
     u32 flagsLo : 16;
     u32 flagsHi : 16;
-    Vec3 vector04;
+    VecFx32 vector04;
     u32 field10;
     u32 field14;
     void *hit18;
@@ -68,24 +69,24 @@ struct Ov191Actor {
 struct Ov191FlightState {
     struct Ov191Actor *pOwner;  /* +0x00 */
     int pad004;
-    Vec3 *pPos;                 /* +0x08 */
+    VecFx32 *pPos;                 /* +0x08 */
     char pad00c[0x18];
     int pTarget;                /* +0x24 */
     int nDist;                  /* +0x28 */
-    Vec3 vPrev;                 /* +0x2c */
+    VecFx32 vPrev;                 /* +0x2c */
 };
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern int VEC_Mag(const Vec3 *v);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern int VEC_Mag(const VecFx32 *v);
 extern int Ov107_CollectSphereOverlaps(char *item, Vec4 *sphere, struct Ov191Actor **out);
-extern int Ov107_InvokeHitCallback(struct Ov191Actor *hit, struct Ov191Actor *a, char *item, int kind, const Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov191Actor *owner, u16 a, u16 id, Vec3 *pos);
+extern int Ov107_InvokeHitCallback(struct Ov191Actor *hit, struct Ov191Actor *a, char *item, int kind, const VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov191Actor *owner, u16 a, u16 id, VecFx32 *pos);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern struct Ov191Actor *Ov107_FindEntityHitBySphere(struct Ov191Actor *owner, Vec4 *sphere, void *result);
 extern int Ov107_AiState_ApplyHit(struct Ov191Actor *target, int value, struct HitCommand *command);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const PosMsg data_ov124_020d1ef8;
 extern const PosMsg data_ov124_020d1f06;
 extern const PosMsg data_ov124_020d1f14;
@@ -97,7 +98,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov191FlightState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov191FlightState *state, PosMsg *msg, const VecFx32 *src)
 {
     volatile int px;
     volatile int py;
@@ -121,9 +122,9 @@ void Ov124_ShotFlightTick(int node)
 {
     struct Ov191FlightState *state = *(struct Ov191FlightState **)(node + 4);
     Vec4 sphere;
-    Vec3 step;
+    VecFx32 step;
     struct Ov191Actor *hits[4];
-    Vec3 push;
+    VecFx32 push;
     PosMsg msg1;
     int i;
     int n;

@@ -6,14 +6,11 @@
  * (0x398/4 = 0xe6, 0x388/4 = 0xe2, 0x38c/4 = 0xe3) so the ROM's single `add r3,r5,r4,lsl#2`
  * survives; the counter is bumped AFTER the second call (mwcc hoists it above the bl
  * otherwise); and `i` must be declared last so it lands in r4 and the context in r5. */
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
 
-extern void VEC_Subtract(Vec3 *a, Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *a, Vec3 *b);
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *a, VecFx32 *b);
 
 void Ov284_UpdateSegmentDirections(int unused, char **arg) {
     char **ctx;
@@ -23,9 +20,9 @@ void Ov284_UpdateSegmentDirections(int unused, char **arg) {
     ctx = arg;
     do {
         e = ctx[i + 0xe6] + 0x58;
-        *(Vec3 *)e = *(Vec3 *)(ctx[i + 0xe2] + 0x14);
-        VEC_Subtract((Vec3 *)(ctx[i + 0xe3] + 0x14), (Vec3 *)e, (Vec3 *)(e + 0xc));
-        *(int *)(e + 0x18) = VEC_Normalize((Vec3 *)(e + 0xc), (Vec3 *)(e + 0xc));
+        *(VecFx32 *)e = *(VecFx32 *)(ctx[i + 0xe2] + 0x14);
+        VEC_Subtract((VecFx32 *)(ctx[i + 0xe3] + 0x14), (VecFx32 *)e, (VecFx32 *)(e + 0xc));
+        *(int *)(e + 0x18) = VEC_Normalize((VecFx32 *)(e + 0xc), (VecFx32 *)(e + 0xc));
         i = i + 1;
     } while (i < 3);
 }

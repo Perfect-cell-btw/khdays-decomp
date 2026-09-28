@@ -1,10 +1,12 @@
 /* d02c8 */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo; u16 hi; } Cmd4;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 struct Nibbles { u8 lo : 4; u8 hi : 4; };
 
 #define PACK(cmd, dead, src, at)                                              \
@@ -14,20 +16,20 @@ struct Nibbles { u8 lo : 4; u8 hi : 4; };
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int FX_Div(int a, int b);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov257_020d32be;
 extern const Cmd4 data_ov257_020d325c[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov257_GlideTick(int *node);
 
 static inline int FX_Mul(int a, int b)
@@ -50,7 +52,7 @@ void Ov257_HealBurstTick(int *node)
 {
     Cmd4 note;
     Sphere sphere;
-    Vec3 *pos;
+    VecFx32 *pos;
     int *state = (int *)node[1];
     Fx32 scratchZ;
     Fx32 scratchY;
@@ -58,13 +60,13 @@ void Ov257_HealBurstTick(int *node)
     int ratio;
     int n;
     int i;
-    Vec3 push;
+    VecFx32 push;
     int hits[4];
 
     state[0x15] += *(int *)(node[0] + 0x2c);
     if (*((u8 *)state + 0x76) == 0 && state[0x15] >= 0x15dd
         && *((signed char *)state + 0x88) == 0 && *((signed char *)state + 0x89) == 0) {
-        func_ov107_020c0b90(*state, 0xc, *(Vec3 *)state[1], 0);
+        func_ov107_020c0b90(*state, 0xc, *(VecFx32 *)state[1], 0);
         *((u8 *)state + 0x76) = 1;
     }
     state[0x11] += *(int *)(node[0] + 0x2c);
@@ -78,7 +80,7 @@ void Ov257_HealBurstTick(int *node)
         if (n > 0x1000) {
             n = 0x1000;
         }
-        sphere.center = *(Vec3 *)(*(int *)(*state + 0x3d4) + 0x14);
+        sphere.center = *(VecFx32 *)(*(int *)(*state + 0x3d4) + 0x14);
         sphere.nRadius = FX_Mul(n, 0x3000);
         ((struct Nibbles *)*(int *)(*state + 0x3fc))->hi |= 1;
         *(Sphere *)(*(int *)(*state + 0x3fc) + 0x58) = sphere;
@@ -86,7 +88,7 @@ void Ov257_HealBurstTick(int *node)
         for (i = 0; i < n; i++) {
             Cmd14 msg;
 
-            pos = (Vec3 *)(hits[i] + 0x74);
+            pos = (VecFx32 *)(hits[i] + 0x74);
             VEC_Subtract(pos, &sphere.center, &push);
             VEC_Normalize(&push, &push);
             ScaleVec3Fx12(0x800, &push, &push);

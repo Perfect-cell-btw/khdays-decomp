@@ -1,9 +1,10 @@
 /* ov258 .rodata 0x020d16f4-0x020d1850: the local initializer templates of the actor's functions,
  * one object per function in the original unit's order. Q12 fixed point for the vectors. */
 
-typedef struct { int x, y, z; } Vec3;
-
 /* Ov258_PlayRigMove: per-move poses of the +0x384 body rig and the +0x3ac tail rig. */
+
+#include "nitro/fx.h"
+
 typedef struct { int id[16]; } MovePoses;
 
 /* Ov258_Construct (constructor): poses of the 43 hidden parts. */
@@ -22,12 +23,12 @@ const PartPoses data_ov258_020d1774 = { {
 } };
 
 /* Ov258_StompTick: strike push (0, 1.25, 0). */
-const Vec3 data_ov258_020d1820 = { 0, 0x1400, 0 };
+const VecFx32 data_ov258_020d1820 = { 0, 0x1400, 0 };
 
 /* Ov258_StompTick: reach 7.875 ahead, turned by the heading. */
-const Vec3 data_ov258_020d182c = { 0, 0, 0x7e00 };
+const VecFx32 data_ov258_020d182c = { 0, 0, 0x7e00 };
 
 /* Ov258_TickBarrage: offset 5.0 behind. */
-const Vec3 data_ov258_020d1838 = { 0, 0, -0x5000 };
+const VecFx32 data_ov258_020d1838 = { 0, 0, -0x5000 };
 
 const ReactionVariants data_ov258_020d1844 = { { 1, 9, 5, 6, 10 }, 0 };

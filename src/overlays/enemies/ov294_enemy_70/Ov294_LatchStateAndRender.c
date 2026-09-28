@@ -35,10 +35,12 @@
  * Last detail: `p` is loaded AFTER the strb. Declared with an initialiser at the top of the
  * block, mwcc hoists the load above the strb and parks it in lr.
  */
-struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
-struct Vecx32 { int x, y, z; };
 
-static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
+#include "nitro/fx.h"
+
+struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
+
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
     vec->y = y;
     vec->z = z;
@@ -52,10 +54,10 @@ void Ov294_LatchStateAndRender(void *param_1) {
     int node = *node_ref;
 
     if (((struct hw60 *)(node + 0x60))->lo & 1) {
-        struct Vecx32 stk;
-        struct Vecx32 *p;
+        VecFx32 stk;
+        VecFx32 *p;
         *(signed char *)(node + 0x1c7) = *(signed char *)(node + 0x1c9);
-        p = (struct Vecx32 *)node_ref[1];
+        p = (VecFx32 *)node_ref[1];
         VEC_Set(&stk, p->x, p->y + 0x900, p->z);
         Ov107_MoveNodeAndRelayout(*node_ref, &stk);
         SetIndexedSlot(param_1, *(signed char *)((char *)param_1 + 0x20), 0);

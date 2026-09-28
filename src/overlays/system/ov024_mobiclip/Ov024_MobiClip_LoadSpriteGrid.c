@@ -6,6 +6,7 @@
  * handed to the requested engine, and the scratch buffer is given straight
  * back.
  */
+
 #include "nitro/types.h"
 
 #define OAM_BYTES        0x400

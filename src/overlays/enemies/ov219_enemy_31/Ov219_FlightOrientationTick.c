@@ -3,17 +3,19 @@
  * combined with that yaw spin, and the +0x24 velocity is written to the actor's +0xf0. Then, in
  * 0x88-frame-time slices, the velocity decays by 0x180/0x88 of the slice and the +0x20 speed by
  * 0x200/0x88 of it. */
-struct Vecx32 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct Quat { int a, b, c, d; };
 
 extern int Angle_TurnToward(int cur, int target, int step, int flags);
-extern void QuatFromAxisAngle(struct Quat *q, const struct Vecx32 *axis, int angle);
-extern void Quat_FromTwoVectors(struct Quat *q, const struct Vecx32 *from, const struct Vecx32 *to);
+extern void QuatFromAxisAngle(struct Quat *q, const VecFx32 *axis, int angle);
+extern void Quat_FromTwoVectors(struct Quat *q, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Multiply(struct Quat *dst, const struct Quat *a, const struct Quat *b);
 extern void Srt_SetRotationQuat(int transform, const struct Quat *q);
 extern int FX_Div(int a, int b);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
-extern const struct Vecx32 data_02042264;
+extern const VecFx32 data_02042264;
 
 static inline int FX_Mul(int a, int b)
 {
@@ -30,10 +32,10 @@ void Ov219_FlightOrientationTick(int *node)
 
     state[3] = Angle_TurnToward(state[3], state[4], *(int *)(*node + 0x2c) << 2, 0);
     QuatFromAxisAngle(&spin, &data_02042264, state[3]);
-    Quat_FromTwoVectors(&q, &data_02042264, (const struct Vecx32 *)(*state + 0x124));
+    Quat_FromTwoVectors(&q, &data_02042264, (const VecFx32 *)(*state + 0x124));
     Quat_Multiply(&q, &q, &spin);
     Srt_SetRotationQuat(*state + 0xa0, &q);
-    *(struct Vecx32 *)(*state + 0xf0) = *(struct Vecx32 *)(state + 9);
+    *(VecFx32 *)(*state + 0xf0) = *(VecFx32 *)(state + 9);
     dt = *(int *)(*node + 0x2c);
     if (dt <= 0) {
         return;

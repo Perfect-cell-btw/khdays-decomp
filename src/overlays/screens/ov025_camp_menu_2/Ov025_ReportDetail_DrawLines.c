@@ -4,6 +4,7 @@
  * drop shadow (Ov025_DrawStringShadowed 020b0250); then six rows 16 pixels apart: for the
  * chapters below the page's (+0x58) the record's line (+0x28 + 4 * chapter), or string 2 when
  * it has none, and "????????" (data_ov025_020b5724) for the chapters not reached. */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ReportsEntry {

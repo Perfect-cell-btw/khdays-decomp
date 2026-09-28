@@ -5,29 +5,30 @@
  * beyond 5 move 0x10, and the node ends; otherwise the first step (+0x98 == 0) plays pose 0x13
  * sweeping 0x550-0xee0 and restarts, and the second plays pose 0x14 sweeping 0x330-0x550, resets the
  * step and moves on to 020d06b0 (+0x420 = 5 both times). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov259_FaceTargetGap(int *node);
 extern void Ov259_RefreshAim(int *node);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
-extern void Ov259_ForwardSweep(int body, int a, int b, Vec3 lift);
+extern void Ov259_ForwardSweep(int body, int a, int b, VecFx32 lift);
 extern void Ov259_LungeSequenceTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov259_SlamChargeTick(int *node)
 {
     int *state = (int *)node[1];
     int ground = Ov259_FaceTargetGap(node);
-    Vec3 v;
+    VecFx32 v;
 
     Ov259_RefreshAim(node);
     if (ground <= *(int *)(*state + 0x80) * 3) {
-        v = *(Vec3 *)(state + 5);
+        v = *(VecFx32 *)(state + 5);
         ScaleVec3Fx12(0x400, &v, &v);
         state[5] = v.x;
         state[7] = v.z;

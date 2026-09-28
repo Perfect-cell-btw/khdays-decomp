@@ -9,6 +9,7 @@
  * (`isPlain = code != 0x34 && code != 0x3a; if (isPlain) ...`).  Testing the condition directly
  * lets mwcc fold it into predicated moves and drop the branch, which is 16 bytes short.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov000RenderObject Ov000RenderObject;

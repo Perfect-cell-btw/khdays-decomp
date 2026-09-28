@@ -7,9 +7,9 @@
  * (+0x1bc) with the animation length / frame (+0x1b4 / +0x1b0) through Ov021_PrizeBoxPlayAnim
  * (0207fa40).  Finally requests the resource pair of the box's effect: id 0x3f in mission
  * 0x41d (ov002 0206b84c), 0x38 elsewhere (0203355c). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov021PrizeBoxDef {
     u8   pad_00[0x58];

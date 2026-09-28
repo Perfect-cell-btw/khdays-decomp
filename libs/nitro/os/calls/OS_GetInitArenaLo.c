@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* Bit 0..1 of the console type is the main-memory size; 1 means the 4 MB retail
    part, which has no extended region above it. */
+
+#include "nitro/types.h"
+
 #define OS_CONSOLE_SIZE_MASK  3
 #define OS_CONSOLE_SIZE_4MB   1
 

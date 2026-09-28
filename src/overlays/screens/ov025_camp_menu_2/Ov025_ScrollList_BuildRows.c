@@ -5,6 +5,7 @@
  * the limit becomes the span first day .. next first day - 1, kept (with its name from the
  * string set +0x1c, 02089894) only when a visible mission falls inside it
  * (Ov025_MissionList_HasVisibleMissionInDays through 0208dd20); +8 counts the rows kept. */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ScrollRow {

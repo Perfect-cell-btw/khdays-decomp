@@ -6,10 +6,10 @@
  * scale / inverse-scale pairs (G3dJnt_GetScaleDataEx or constant) into pS_invS. Identity parts only set the
  * result flag (+0x00: 1 scale one, 2 rotation zero, 4 translation zero); base parts copy the model's
  * own values (NNSi_G3dGetJntTransFromNode / NNSi_G3dGetMdlRot / NNSi_G3dGetJntScaleFromNode). */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
-typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22; } MtxFx33;
 
 typedef struct NNSG3dResJntAnm {

@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 typedef struct Ov107Object Ov107Object;

@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov004_LoadSceneGraphics (0204fd60): char data_ov004_020510b0[]; */
+
 #include "nitro/types.h"
 
-/* read by Ov004_LoadSceneGraphics (0204fd60): char data_ov004_020510b0[]; */
 const u8 data_ov004_020510b0[8] = {
     0, 0, 255, 127, 0, 0, 0, 0,
 };

@@ -9,16 +9,16 @@
  * sub-state 5 asks for 3, and a 0x8000 hit stores the 0x22 knockback bits and asks for 6.
  * Codegen: the impact table is held through a `T *const` local so its pool load is created before
  * the actor parameter is homed (r3, not r0). */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov219ActionState {
     int pOwner;
     char pad004[4];
     void *pPos;
     char pad00c[0x24];
-    struct Vec3 vHit;
+    VecFx32 vHit;
     char pad03c[1];
     u8 nToggle3d;
     char pad03e[2];
@@ -30,7 +30,7 @@ struct Ov219ActionState {
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     char pad010[8];
     int pSource18;
     char pad01c[4];

@@ -7,6 +7,7 @@
  * The leading widget context (arg0, a `this` pointer) is unused by this method. The zeroed
  * two-word scratch is preserved as declared in the original (it reserves the slot but is never
  * read here); volatile keeps mwcc from eliding the dead initialisation. */
+
 #include "nitro/types.h"
 
 extern void *Ov008_GetCtxBlock4a80(void);

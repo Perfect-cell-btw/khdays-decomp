@@ -4,17 +4,19 @@
  * and in place (mode 0xa, +0x70 bit 0). Once the +4 item's +0xad byte clears pose 0x1b plays,
  * the +0x3e4 shape loses bit 1, the +0x44 timer, +0x40, +0x58 and the +0x70 flags clear and the
  * node moves on to 020cf684. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern void Ov254_KnockbackAtFeet(int actor, int side);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_BarrageTick(void);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 

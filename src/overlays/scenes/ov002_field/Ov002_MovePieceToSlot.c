@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* The description a piece works from; the two slots a piece can occupy each
    have their own binding and their own spawn argument. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002PieceInfo {
     char pad000[0x74];
     int aBinding[2];            /* 0x74 */

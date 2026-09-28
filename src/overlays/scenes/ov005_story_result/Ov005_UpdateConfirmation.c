@@ -2,6 +2,7 @@
  * synchronisation in a session, or leaving at once). */
 
 #include "nitro/types.h"
+
 typedef struct MenuLimitHeader { u16 inputMask; short limits[2]; char opaque[20]; } MenuLimitHeader;
 typedef struct Ov005Context {
     char opaque00[0x4bf0];

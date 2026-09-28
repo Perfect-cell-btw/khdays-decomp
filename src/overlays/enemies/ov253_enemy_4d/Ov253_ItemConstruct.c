@@ -5,7 +5,9 @@
  * finalised), allocates the +0x398 pair block whose two effects come from the
  * data_ov253_020d4a00 poses (registered, bit 1 of +0x5c raised), and links a +0x144 list slot
  * to the +0x64 pose as +0x39c. */
+
 #include "nitro/types.h"
+
 struct Ov253Poses { int w[2]; };
 struct Ov253Pair { int pEffect; int pChild; };
 

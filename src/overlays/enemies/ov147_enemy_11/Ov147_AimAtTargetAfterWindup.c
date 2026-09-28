@@ -4,7 +4,9 @@
  * Declaration order `b, a` puts a at sp+0 and b at sp+0xc, which is the ROM layout.
  * Also: no cached `owner` local -- the ROM re-reads *obj each time. And the guard is
  * `>= 0x990` (an ARM immediate), not `> 0x98f`. */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void VEC_Subtract();
 extern int  VEC_Normalize();
@@ -13,15 +15,15 @@ extern void SetIndexedSlot(int self, int index, void *cb);
 
 void Ov147_AimAtTargetAfterWindup(int *self) {
     int *obj = (int *)self[1];
-    struct vec b, a;
+    VecFx32 b, a;
 
     obj[0x10] = obj[0x10] + *(int *)(self[0] + 0x2c);
     if (*(unsigned char *)((int)obj + 0x45) == 0 && obj[0x10] >= 0x990) {
         *(unsigned char *)((int)obj + 0x45) = 1;
         *(int *)(*obj + 0x394) = Ov107_FindNearestObject(*obj, 0);
         if (*(int *)(*obj + 0x394) != 0) {
-            b = *(struct vec *)(*obj + 0x3d8);
-            a = *(struct vec *)(*(int *)(*obj + 0x394) + 0x74);
+            b = *(VecFx32 *)(*obj + 0x3d8);
+            a = *(VecFx32 *)(*(int *)(*obj + 0x394) + 0x74);
             b.y = b.y + *(int *)(*(int *)(*obj + 0x398) + 0x70);
             a.y = a.y + *(int *)(*(int *)(*obj + 0x398) + 0x70);
             VEC_Subtract(&a, &b, &a);

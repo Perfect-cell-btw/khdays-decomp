@@ -5,6 +5,7 @@
  * (0201eea8), the block is attached to the actor (0202b984) and, when operand 2 asks for it,
  * the actor's sub-panel released (02089604); operand 3's value is then negated for the second
  * phase, the command re-queued (020219b4) and 0 returned. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023Operand {

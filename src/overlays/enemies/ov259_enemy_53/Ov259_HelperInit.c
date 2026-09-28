@@ -6,10 +6,12 @@
  * "tag00_1" node, both register with the +0x9c scene, the shell hides and the body shows at full
  * scale. A hit capsule (length 0x1a00, radius 0x400) goes into a +0x22c pool slot at +0x38c (bit 1
  * set) and a second one into a +0x144 slot, also kept at +0x390. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 
 extern int Ov107_PackTextureHandle(char *self, int kind);
 extern int CreateSubitemInstance0xB4(int item);
@@ -24,15 +26,15 @@ extern void func_ov259_020d1be0(void);
 extern void Ov259_Helper_CreateAiTask(void);
 extern void func_ov259_020d1bec(void);
 extern void Ov259_OnHitIgnore(void);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
 extern u8 data_0204c240;
 extern char data_ov259_020d2fdc[];
 
 void Ov259_HelperInit(char *self)
 {
     char *owner = *(char **)(self + 0x394);
-    Vec3 origin;
+    VecFx32 origin;
     Capsule cap;
 
     *(void **)(self + 8) = Ov259_ReleaseSubObjects;
@@ -55,7 +57,7 @@ void Ov259_HelperInit(char *self)
     *(u16 *)(self + 0x1ae) |= 0x10;
     *(int *)(self + 0x70) = 0x800;
     origin = data_02041dc8;
-    *(Vec3 *)(self + 0x64) = data_02041dc8;
+    *(VecFx32 *)(self + 0x64) = data_02041dc8;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
     *(int *)(self + 0x398) = 0;

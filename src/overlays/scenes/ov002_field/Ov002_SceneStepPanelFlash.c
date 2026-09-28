@@ -15,6 +15,8 @@
  * ARM.
  */
 
+#include "nitro/fx.h"
+
 typedef struct {
     int nMode;
     int nDuration;
@@ -36,16 +38,10 @@ typedef struct {
 } Ov002FxTrack;
 
 typedef struct {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
-
-typedef struct {
     char pad000[0x370];
     int nRowList;
     char pad374[0x28];
-    Ov002Vec3 vRowPos;
+    VecFx32 vRowPos;
     int aRowTint[3];
     char pad3b4[0x3a0];
     Ov002Tween aFlash[4];
@@ -65,7 +61,7 @@ extern void NNS_G3dMdlSetMdlAlphaAll(int nList, int nValue);
 
 void Ov002_SceneStepPanelFlash(void)
 {
-    Ov002Vec3 v;
+    VecFx32 v;
     Ov002FxTrack level = data_ov002_0207e1a8;
     Ov002FxTrack tint = data_ov002_0207e1cc;
     Ov002FxTrack slide = data_ov002_0207e1f0;

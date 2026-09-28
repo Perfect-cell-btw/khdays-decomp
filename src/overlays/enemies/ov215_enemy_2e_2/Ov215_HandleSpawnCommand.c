@@ -12,9 +12,10 @@
  * block. Every command, handled or not, falls through to the shared actor
  * command handler.
  */
-#include "nitro/types.h"
 
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } Srt;
 
 extern void SrtTransform_SetIdentity(Srt *srt);

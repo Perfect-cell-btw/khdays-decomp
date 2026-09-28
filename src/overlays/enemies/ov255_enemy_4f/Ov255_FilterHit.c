@@ -4,6 +4,7 @@
  * +0x24. Otherwise the damage is taken (clamped to [0, max]), the source is kept in the brain's
  * +0x3c, blow hits (0x20) count in +0x79 and damaging flag-4 hits in +0x78; a knockout requests
  * sub-state 3, and a flag 1+0x10 hit on a kind-8 owner requests 0xa. */
+
 #include "nitro/types.h"
 
 struct HitFlags {

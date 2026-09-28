@@ -1,7 +1,8 @@
 /* Recover entry of the ov239 enemy: plays animation 0, raises bit 0 of the actor's +0x1ae,
  * spawns effect 0 at the +8 point, fires reaction 0x138 mode 9 at the actor's position and
  * hands off to ccf0c. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);

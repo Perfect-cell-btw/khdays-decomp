@@ -7,6 +7,7 @@
  * when there is one (unpacked with 020119d4, flushed and uploaded), else from the cell.  The
  * files are freed, the 0x40 bytes at +0x2800 of the sub BG2 characters cleared and the sub BG2
  * screen filled with tile 0xa0. */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ReportsEntry {

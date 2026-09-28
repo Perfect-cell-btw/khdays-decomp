@@ -2,13 +2,15 @@
  * +0x30 yaw and scaled by 0.75, kept level. Once the +4 item's +0xad byte clears the actor plays
  * pose +0x75 + 1 and the partner motion +0x76 + 1, the +0x44 timer clears and the node moves to
  * 020ce8a0. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -24,8 +26,8 @@ void Ov254_AnimatedOrbitTick(int *node)
     unsigned int idx = ANG2IDX(state[0xc]);
 
     MTX_RotY33_(&m, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x430) + 0x2c), &m, (Vec3 *)(state + 3));
-    ScaleVec3Fx12(0xc00, (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x430) + 0x2c), &m, (VecFx32 *)(state + 3));
+    ScaleVec3Fx12(0xc00, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     state[4] = 0;
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;

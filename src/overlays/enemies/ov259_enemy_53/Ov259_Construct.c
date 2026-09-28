@@ -6,11 +6,13 @@
  * the +0x414 bone of pose 0x1f and the thirteen +0x430 sub-items of data_ov259_020d2f2c (attached,
  * hidden); the +0x404 / +0x408 placements come from the pose, the +0x384 and +0x388 helpers are
  * created (+0x42c set in between), and sound 0x17d (variant) or 0x172 loads. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[13]; } IdTable13;
-typedef struct { Vec3 min; Vec3 max; } Bounds;
+typedef struct { VecFx32 min; VecFx32 max; } Bounds;
 struct Pair { int res; int handle; };
 struct Ov259Parts { char pad[0x430]; struct Pair items[13]; };
 

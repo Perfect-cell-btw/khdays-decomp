@@ -12,6 +12,7 @@
  * The local declaration order below is load-bearing, not style: it is what puts
  * the context in r5, the record pointer in r6 and the column in r4. Reordering
  * the declarations changes the register allocation and breaks the match. */
+
 #include "nitro/types.h"
 
 typedef struct {

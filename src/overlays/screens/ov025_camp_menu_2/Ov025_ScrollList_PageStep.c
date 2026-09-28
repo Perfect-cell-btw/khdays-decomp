@@ -3,6 +3,7 @@
  * pixel scroll (+0x2d0) follows by 16 a row within 0..+0x2d8, the knob (+0x2dc) is placed
  * proportionally over its range (+0x2e4; the 64-bit divide 02020400; 020adfb0 without cursor
  * clamping) and the cursor sound plays (02033b78 0 / 0). */
+
 #include "nitro/types.h"
 
 typedef struct TileBlock {

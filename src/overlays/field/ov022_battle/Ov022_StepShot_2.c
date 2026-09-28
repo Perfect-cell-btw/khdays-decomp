@@ -11,15 +11,11 @@
  * back.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022ShotDesc */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ShotDesc {
     unsigned int nFlags;         /* 0x00 */
     u8 pad04[0x10];
@@ -37,11 +33,11 @@ struct Shot {
     u8 pad003;
     int nAge;                    /* 0x004 */
     u8 pad008[8];
-    struct VecFx32 vecStart;     /* 0x010 */
+    VecFx32 vecStart;     /* 0x010 */
     u8 pad01c[0xc];
     u16 nSlotFlags;              /* 0x028 */
     u8 pad02a[0xa2];
-    struct VecFx32 vecPos;       /* 0x0cc */
+    VecFx32 vecPos;       /* 0x0cc */
     u8 pad0d8[0x60];
     struct ShotDesc *pDesc;      /* 0x138 */
     short aHitIds[8];            /* 0x13c */
@@ -49,14 +45,14 @@ struct Shot {
 
 struct ReactionCtx;
 
-extern void Ov022_ComputeShotStep(struct VecFx32 *pOut, struct ReactionCtx *pCtx,
+extern void Ov022_ComputeShotStep(VecFx32 *pOut, struct ReactionCtx *pCtx,
                                 struct Shot *pShot, int nDelta);
-extern void VEC_Add(struct VecFx32 *pA, struct VecFx32 *pB,
-                    struct VecFx32 *pOut);
+extern void VEC_Add(VecFx32 *pA, VecFx32 *pB,
+                    VecFx32 *pOut);
 extern void func_ov022_02091540(u16 *pFlags, int nDelta);
 extern void Ov022_ResolveShotHit(struct ReactionCtx *pCtx, struct Shot *pShot,
-                                struct VecFx32 *pAt, struct VecFx32 *pDelta);
-extern int VEC_Distance(struct VecFx32 *pA, struct VecFx32 *pB);
+                                VecFx32 *pAt, VecFx32 *pDelta);
+extern int VEC_Distance(VecFx32 *pA, VecFx32 *pB);
 extern void Ov022_MarshalStateByte9(struct ReactionCtx *pCtx, struct Shot *pShot);
 extern void Ov022_ReleaseRigSlots(struct Shot *pShot, int nRig);
 
@@ -70,8 +66,8 @@ extern void Ov022_ReleaseRigSlots(struct Shot *pShot, int nRig);
 
 int Ov022_StepShot_2(struct ReactionCtx *pCtx, struct Shot *pShot, int nDelta)
 {
-    struct VecFx32 vecAt;
-    struct VecFx32 vecDelta;
+    VecFx32 vecAt;
+    VecFx32 vecDelta;
     struct ShotDesc *pDesc;
     int nSlot;
 

@@ -1,18 +1,14 @@
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern char *Ov002_ClaimPoolEntry(char *pClass, int nSlot);
 extern int Ov002_GetCtxTableByte(int nSlot);
 extern int Actor_ArmWithMessage(int nNode, int nZero, void *pObj, void *pParams,
                          int nFlag);
-extern int EntityMgr_ProbeGround(u16 nId, int nSpot, Vec3 *pOut);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *ab);
-extern void Actor_SetVecAndSyncChild(char *pNode, Vec3 *pPos);
+extern int EntityMgr_ProbeGround(u16 nId, int nSpot, VecFx32 *pOut);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void Actor_SetVecAndSyncChild(char *pNode, VecFx32 *pPos);
 extern short EntityMgr_GetCollEntryField14(u16 nId, int nSpot);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
 extern void Ov002_PushBucketNode(int nBucket, char *pElement);
@@ -29,14 +25,14 @@ extern void *Ov002_ElementPhase_WatchStateBit(char *pElement);
 char *Ov002_SpawnActorElement(char *pClass, int nSlot, int nBucket,
                           u16 wStateField, unsigned char bStateWidth,
                           const char *pName, signed char bTrackIndex,
-                          int nSpot, Vec3 *pPos, const Vec3 *pBound,
+                          int nSpot, VecFx32 *pPos, const VecFx32 *pBound,
                           short nAngle)
 {
     char *pElement;
     char *pOwner;
     int nId;
     signed char nKind;
-    Vec3 vSpot;
+    VecFx32 vSpot;
 
     pElement = Ov002_ClaimPoolEntry(pClass, nSlot);
     pOwner = *(char **)(pElement + 8);
@@ -56,7 +52,7 @@ char *Ov002_SpawnActorElement(char *pClass, int nSlot, int nBucket,
     }
 
     if (*(signed char *)(pOwner + 0x58) != 0) {
-        *(Vec3 *)(pElement + 0xdc) = *pBound;
+        *(VecFx32 *)(pElement + 0xdc) = *pBound;
     }
 
     *(unsigned char *)(pElement + 0x10) = (unsigned char)nBucket;

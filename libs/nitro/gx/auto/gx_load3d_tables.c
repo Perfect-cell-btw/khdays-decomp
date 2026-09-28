@@ -1,6 +1,8 @@
 /* NitroSDK gx_load3d.c: the texture and texture-palette LCDC start tables (VRAM block addresses >> 12),
  * indexed by the GXVRamTex / GXVRamTexPltt bank masks; read by GX_BeginLoadTex and GX_BeginLoadTexPltt. */
+
 #include "nitro/types.h"
+
 #define HW_LCDC_VRAM     0x06800000
 #define HW_VRAM_A_SIZE   0x20000
 #define HW_VRAM_B_SIZE   0x20000

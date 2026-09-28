@@ -3,13 +3,15 @@
  * volleys done (+0x68 >= 2) the actor recovers (020ce8c8). Each volley fires once the clock passes
  * its step (2 then 5 x 0x88): a launch (020cc9e0) that finds no free helper ends in 020ce918,
  * otherwise the volley counts; past 0x440 the clock resets and the actor recovers. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int v[2]; } Steps;
 struct Ov283VolleyTmpl { u8 pairs[4]; Steps steps; };
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Ov283_LaunchHelper(int *node);
 extern void Ov283_AiLandWithItem(void);
@@ -23,7 +25,7 @@ void Ov283_VolleyTick(int *node)
 {
     int *state = (int *)node[1];
     Steps steps;
-    Vec3 lift;
+    VecFx32 lift;
     long long angle;    /* kept 64-bit: the index is derived from it twice (sin and cos) */
 
     angle = state[0xe] + 0x3244;
@@ -32,11 +34,11 @@ void Ov283_VolleyTick(int *node)
     state[4] = data_0203d210[ANG2IDX(angle) * 2];
     state[5] = 0;
     state[6] = data_0203d210[ANG2IDX(angle) * 2 + 1];
-    ScaleVec3Fx12(0x500, (Vec3 *)(state + 4), (Vec3 *)(state + 4));
+    ScaleVec3Fx12(0x500, (VecFx32 *)(state + 4), (VecFx32 *)(state + 4));
     lift.x = 0;
     lift.y = 0x600;
     lift.z = 0;
-    VEC_Add((Vec3 *)(state + 4), &lift, (Vec3 *)(state + 4));
+    VEC_Add((VecFx32 *)(state + 4), &lift, (VecFx32 *)(state + 4));
     if ((unsigned int)state[0x1a] >= 2) {
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov283_AiLandWithItem);
         return;

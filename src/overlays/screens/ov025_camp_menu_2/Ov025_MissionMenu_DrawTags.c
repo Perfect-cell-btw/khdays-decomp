@@ -32,6 +32,7 @@
  * branch is written first; the tier's byte store is a second test after
  * the callback if / else.
  */
+
 #include "nitro/types.h"
 
 #define FLAG_TEXT_SLOT_BASE 0x3bc9

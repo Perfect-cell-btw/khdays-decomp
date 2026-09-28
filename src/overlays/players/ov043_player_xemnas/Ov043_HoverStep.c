@@ -10,19 +10,21 @@
  * burst ticks when not sampling, and the actor's hook decides bit 1 of +0x694: becoming active
  * hands over to state 0x22 (finished emitter) or 0x23 (quiet emitter), or in mode 0x2f rewinds
  * the animation and timer to 0x18000. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern int Ov022_IsSlotReady(char *emitter);
 extern int Ov022_ClampAngleTowardTarget(char *self, unsigned int angle);            /* Ov022_ClampAngleTowardTarget */
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);            /* ScaleVec3Fx12 */
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);            /* ScaleVec3Fx12 */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);          /* Anim_SetFrameWrapped */
-extern void Ov022_StepAnchorDelta(char *self, Vec3 *out);
+extern void Ov022_StepAnchorDelta(char *self, VecFx32 *out);
 extern int func_02023c40(void);                                            /* game mode: 1 = hard */
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov043_AttackBurstTick(char *self);
 extern void *Ov022_ActorSetState(char *self, int state);
 extern char *data_ov043_020b58e0;
@@ -30,8 +32,8 @@ extern short data_0203d210[];
 
 void *Ov043_HoverStep(char *self)
 {
-    Vec3 step;
-    Vec3 flat;
+    VecFx32 step;
+    VecFx32 flat;
     void *next = 0;
     char *pBlock = data_ov043_020b58e0 + 0x138 + 0x2c00;
     int bSample;
@@ -90,7 +92,7 @@ void *Ov043_HoverStep(char *self)
     }
     flat = step;
     flat.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &flat, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &flat, (VecFx32 *)(self + 0x98 + 0x400));
     if (bSample == 0) {
         Ov043_AttackBurstTick(self);
     }

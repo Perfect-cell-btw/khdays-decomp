@@ -10,9 +10,9 @@
  * three words after them, copy the lid position (+0x54c) into the home (+0x474), clear
  * +0x480 / +0x484, raise the body flag (+0x20) and register the piece in its bucket.
  * Returns the chest. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov015SeqNode {
     u16  nFlags;              /* 0x00 */

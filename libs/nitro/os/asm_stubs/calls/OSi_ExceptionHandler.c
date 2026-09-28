@@ -1,6 +1,7 @@
 /* NitroSDK original assembly (libraries/os/src/os_exception.c). */
 
 #include "nitro/types.h"
+
 extern void OSi_GetAndDisplayContext(void);
 extern void *data_020445b4;             /* OSi_DebuggerHandler (.bss) */
 

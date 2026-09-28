@@ -3,11 +3,7 @@
  * separate set for flagged hits) and queues defeat (action 3) at zero or the knockback action (6)
  * for a flagged hit; returns 1 when it handled the hit. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
 struct ReactionModes {
     unsigned char flagged[2];
@@ -21,7 +17,7 @@ struct HitFlags {
 
 struct HitDescriptor {
     unsigned int flags;
-    Vec3 direction;
+    VecFx32 direction;
     char pad10[0x18];
     int damage;
 };
@@ -32,7 +28,7 @@ struct ReactionNode {
     int source;
     int reactionContext;
     char pad10[0x0c];
-    Vec3 direction;
+    VecFx32 direction;
     char pad28[0x1c];
     unsigned char facing;
 };
@@ -101,7 +97,4 @@ int Ov147_ResolveHitReaction(int owner, int source, struct HitDescriptor *hit)
 
     return 1;
 }
-
-
-
 

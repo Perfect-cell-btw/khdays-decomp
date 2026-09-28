@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov131_nodeConstructor (020cbfc4): struct v5 data_ov131_020cef58; */
+
 #include "nitro/types.h"
 
-/* read by Ov131_nodeConstructor (020cbfc4): struct v5 data_ov131_020cef58; */
 const int data_ov131_020cef58[5] = {
     2, 3, 4, 5, 6,
 };

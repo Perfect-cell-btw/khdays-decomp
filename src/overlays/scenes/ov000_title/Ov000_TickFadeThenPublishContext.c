@@ -4,6 +4,7 @@
  * 0x4cb5), which is independent corroboration that 16 is the range and not a coincidence. */
 
 #include "nitro/types.h"
+
 typedef int (*OverlayCallback)(void);
 
 typedef struct {

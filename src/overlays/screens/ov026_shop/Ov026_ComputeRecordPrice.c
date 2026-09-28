@@ -6,6 +6,7 @@
  * and applied to the base price (+0x8).  The product is brought back to fx32 as
  * `(prod << 12) >> 24` (the ROM's byte-split tail; a plain `>> 12` is shorter).
  */
+
 #include "nitro/types.h"
 
 #define FX32_ONE   0x1000

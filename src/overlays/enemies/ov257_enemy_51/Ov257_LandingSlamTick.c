@@ -13,12 +13,14 @@
  * reaction mode 0x1c fires at the +4 point and +0x72 is set. Once the +0xc idle byte clears on the
  * ground, the +0x4c delay is drawn from the owner's [+0x224, +0x228] range and sub-state 2 is
  * requested. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 typedef struct { u16 lo : 8; u16 hi : 8; } Hw60;
 struct Bits17a { unsigned char b0 : 1; };
 
@@ -29,23 +31,23 @@ struct Bits17a { unsigned char b0 : 1; };
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern int Ov257_SteerToTarget(int *state, int target, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov257_SteerToTarget(int *state, int target, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 extern const Cmd14 data_ov257_020d3294;
-extern const Vec3 data_ov257_020d326c;
+extern const VecFx32 data_ov257_020d326c;
 extern const Cmd14 data_ov257_020d333c;
 
 static inline int RandRange(int lo, int hi)
@@ -68,7 +70,7 @@ void Ov257_LandingSlamTick(int *node)
     int obj;
     int *pHits;
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
     int target;
     Fx32 scratchZ;
@@ -82,7 +84,7 @@ void Ov257_LandingSlamTick(int *node)
     int i;
 
     Ov257_SteerToTarget(state, state[0x18], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     VEC_Add(state + 4, state + 0x19, state + 4);
     if (((struct Bits17a *)(*state + 0x17a))->b0) {
         state[0x10] = 0;
@@ -95,7 +97,7 @@ void Ov257_LandingSlamTick(int *node)
     }
     target = state[0x18] = Ov107_FindNearestObject(*state, 0);
     if (target != 0) {
-        Vec3 d;
+        VecFx32 d;
 
         VEC_Subtract((void *)(target + 0x74), (void *)(*state + 0x74), &d);
         QuatFromAxisAngle((Quat *)(state + 0xb), &data_02042264, func_020050b4(d.x, d.z));
@@ -115,7 +117,7 @@ void Ov257_LandingSlamTick(int *node)
             if (i < n) {
                 pHits = hits;
                 do {
-                    Vec3 push;
+                    VecFx32 push;
                     Cmd14 msg;
 
                     obj = pHits[i];
@@ -141,7 +143,7 @@ void Ov257_LandingSlamTick(int *node)
         }
     }
     if (*((u8 *)state + 0x72) == 0 && ((struct Bits17a *)(*state + 0x17a))->b0) {
-        Vec3 pos;
+        VecFx32 pos;
         Cmd14 msg;
 
         pos = data_ov257_020d326c;

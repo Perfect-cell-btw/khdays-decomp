@@ -5,38 +5,40 @@
  * well the target and the owner line up from the origin; otherwise it faces the target about
  * data_02042264. The +0x3a8 part's motion step (020c9f48) is then turned by the +0x1c
  * orientation and stored in *dir, its speed in *speed (either may be null). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *a, const Vec3 *b);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *a, const VecFx32 *b);
 extern int func_020050b4(int y, int x);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
-extern int Ov107_ActionResource_GetOffsetAndScale(int part, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042258;
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
+extern int Ov107_ActionResource_GetOffsetAndScale(int part, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
 
-static inline void VEC_Set(Vec3 *v, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
     v->z = z;
 }
 
-int Ov235_SteerToTarget(int *state, int target, Vec3 *dir, int *speed)
+int Ov235_SteerToTarget(int *state, int target, VecFx32 *dir, int *speed)
 {
-    Vec3 step;
-    Vec3 d;
-    Vec3 other;
-    Vec3 self;
-    Vec3 flat;
-    Vec3 side;
+    VecFx32 step;
+    VecFx32 d;
+    VecFx32 other;
+    VecFx32 self;
+    VecFx32 flat;
+    VecFx32 side;
     int owner;
     int gap;
     int kind;
@@ -48,7 +50,7 @@ int Ov235_SteerToTarget(int *state, int target, Vec3 *dir, int *speed)
     gap = VEC_Normalize(&d, &d) - *(int *)(owner + 0x80) - *(int *)(target + 0x80);
     kind = *(signed char *)(*state + 0x1c6);
     if (!(kind != 4 && kind != 6 && kind != 7)) {
-        Vec3 blend = {0, 0, 0};
+        VecFx32 blend = {0, 0, 0};
         int dot;
 
         VEC_Subtract(&data_02041dc8, (void *)(target + 0x74), &other);

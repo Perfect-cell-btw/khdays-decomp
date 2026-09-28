@@ -4,11 +4,13 @@
  * the scene rate (x30/5), aim at the target, build the orientation matrix and
  * scale it, and -- unless the abort byte is up -- start animation 3 and hand
  * over to the charge handler. */
-struct Vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int Ov107_FindNearestObject(int owner, int *out);
 extern void SetIndexedSlot(void *self, int index, void *handler);
 extern int FX_Sqrt(int x);
-extern void VEC_Subtract(void *a, void *b, struct Vec3 *out);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *out);
 extern int func_020050b4(int dx, int dz);
 extern void Vec3TransformViaTempMtx(void *dst, void *src, const void *table);
 extern void ScaleVec3Fx12(int scale, void *dst, void *src);
@@ -19,7 +21,7 @@ extern void Ov181_AiStep_QueueAction2OnFlag0cClear(void);
 void Ov181_BeginLunge(int *self) {
     int *obj = (int *)self[1];
     int gap;
-    struct Vec3 delta;
+    VecFx32 delta;
     int me;
     int target;
 

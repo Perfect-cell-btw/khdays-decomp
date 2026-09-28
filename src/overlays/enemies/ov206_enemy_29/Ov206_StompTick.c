@@ -6,12 +6,13 @@
  * the entity's +0x74 position added to the transform and scaled 0.5 to the owner's +0x24
  * hook, where reaction 0x116 mode 0xc fires. Once the +0xc idle byte clears sub-state 0xa is
  * requested and the state ends. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;
 typedef struct { int value; } Fx32;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
 
 typedef struct {
     u16 id;             /* +0x0 */
@@ -23,8 +24,8 @@ typedef struct {
 
 struct Ov206State {
     int pOwner;                  /* 0x00 */
-    Vec3 *pPoint;                /* 0x04 */
-    Vec3 *pPos;                  /* 0x08 */
+    VecFx32 *pPoint;                /* 0x04 */
+    VecFx32 *pPos;                  /* 0x08 */
     u8 *pBusy;                   /* 0x0c */
     char pad10[0x14];
     int nTimer;                  /* 0x24 */
@@ -38,7 +39,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov206State *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov206State *state, PosMsg *msg, const VecFx32 *src)
 {
     Fx32 px;
     Fx32 py;
@@ -55,11 +56,11 @@ static inline void SendPos(struct Ov206State *state, PosMsg *msg, const Vec3 *sr
 }
 
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *query, int *out);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *a, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
-extern void VEC_Add(void *a, void *b, Vec3 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *a, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
+extern void VEC_Add(void *a, void *b, VecFx32 *d);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const PosMsg data_ov206_020d05f6;
@@ -67,9 +68,9 @@ extern const PosMsg data_ov206_020d05da;
 
 static inline void SweepFoot(struct Ov206State *state, int nFoot, PosMsg tmpl, int *hits, Sphere *psphere)
 {
-    Vec3 at;
+    VecFx32 at;
     PosMsg msg;
-    Vec3 push;
+    VecFx32 push;
     long i;
     long n;
 

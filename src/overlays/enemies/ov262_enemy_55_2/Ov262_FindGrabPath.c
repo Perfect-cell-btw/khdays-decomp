@@ -8,6 +8,7 @@
  * Codegen: compiled with opt_dead_assignments off (push/pop scoped); `i` is declared first and the
  * loop re-reads the depth parameter into `cur` before the end-of-list test, as in the ROM (a plain
  * `depth + 1` argument is hoisted out of the loop and the depth stays cached in a register). */
+
 #include "nitro/types.h"
 
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);

@@ -19,6 +19,7 @@
  * sentinels are one chained assignment (the constant is formed before the
  * current-cell store).
  */
+
 #include "nitro/types.h"
 
 #define LIST_COUNT   8

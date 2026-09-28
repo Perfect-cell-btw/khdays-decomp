@@ -3,8 +3,9 @@
  * heading swings by 70 degrees (and +0x40 follows), a pending retreat (+0x6b) re-picks the target, the
  * step count +0x54 = 5, +0x4c and +0x74 clear, the +0x71 turn direction is rolled, pose 2 plays, the
  * +0x450 part takes motion 1 and the node moves on to 020ce050. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
 extern int Ov256_PickTarget(int *node);
@@ -17,10 +18,10 @@ extern void Ov256_AiTakeOff(void);
 void Ov256_WalkEntryTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 v;
+    VecFx32 v;
 
     Ov256_RotateByActorHeading((int *)&v, (int)node, (int *)(*(int *)(*state + 0x450) + 0x2c));
-    *(Vec3 *)(state + 4) = v;
+    *(VecFx32 *)(state + 4) = v;
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }

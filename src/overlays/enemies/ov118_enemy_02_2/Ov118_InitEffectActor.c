@@ -2,6 +2,7 @@
  * attach slots, and requests its resources. */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Obj;
 typedef void (*ObjCallback)(struct Obj *self);
@@ -13,14 +14,8 @@ struct Vec4 {
     int w;
 };
 
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
-
 struct CameraWork {
-    struct Vec3 vector;
+    VecFx32 vector;
     int scalar;
 };
 

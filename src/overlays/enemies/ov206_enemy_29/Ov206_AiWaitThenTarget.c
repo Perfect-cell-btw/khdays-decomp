@@ -11,19 +11,15 @@
  * emits a redundant `lsl #0x10 ; lsr #0x10` truncation, which this function HAS and 020cd464 does
  * not. Match the presence of that pair to pick the form -- see codegen-cracks.md. */
 
+#include "nitro/fx.h"
+
 typedef struct {
     unsigned short lo : 8;
     unsigned short hi : 8;
 } Hw60;
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
-
 extern int Ov107_FindNearestObject(int owner, int kind);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void SetIndexedSlot(int self, int action, void (*cb)(void));
@@ -31,7 +27,7 @@ extern void Ov206_AiStep_QueueAction2OnFlag0cClear(void);
 
 void Ov206_AiWaitThenTarget(int self) {
     int *ctx;
-    Vec3 v;
+    VecFx32 v;
     int target;
 
     ctx = *(int **)(self + 4);
@@ -43,7 +39,7 @@ void Ov206_AiWaitThenTarget(int self) {
     target = Ov107_FindNearestObject(ctx[0], 0);
     ctx[4] = target;
     if (target != 0) {
-        VEC_Subtract((const Vec3 *)(target + 0x74), (const Vec3 *)ctx[2], &v);
+        VEC_Subtract((const VecFx32 *)(target + 0x74), (const VecFx32 *)ctx[2], &v);
         ctx[0x11] = func_020050b4(v.x, v.z);
         ctx[0x10] = ctx[0x11];
     }

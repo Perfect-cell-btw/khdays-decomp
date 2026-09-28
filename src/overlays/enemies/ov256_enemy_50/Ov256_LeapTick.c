@@ -5,15 +5,17 @@
  * position hits along the +0x34 direction (020cd0e8, mask 1). At 0x6e8 it lands: on a claw the +0xc
  * point takes the +0x1c spot, otherwise it is knocked back there (mode 7); the timer and charge flags
  * clear and the node moves on to 020cee70. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov256_AttackHitTest(int *node, void *sphere, void *box, void *seg, Vec3 *push, int bMask, int unused, int kind);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov256_AttackHitTest(int *node, void *sphere, void *box, void *seg, VecFx32 *push, int bMask, int unused, int kind);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_SweepTick(void);
 
@@ -28,10 +30,10 @@ void Ov256_LeapTick(int *node)
 {
     int *state = (int *)node[1];
     Sphere sphere;
-    Vec3 dir;
-    Vec3 v;
+    VecFx32 dir;
+    VecFx32 v;
 
-    dir = *(Vec3 *)(state + 0xd);
+    dir = *(VecFx32 *)(state + 0xd);
     if (state[0x13] >= *((u8 *)state + 0x69) * 0x88) {
         *((u8 *)state + 0x69) = 0;
         ((B8 *)(*(int *)(*state + 0x428) + 8))->f |= 1;
@@ -41,8 +43,8 @@ void Ov256_LeapTick(int *node)
     }
     state[0x13] += *(int *)(node[0] + 0x2c);
     Ov256_RotateByActorHeading((int *)&v, (int)node, (int *)(*(int *)(*state + 0x450) + 0x2c));
-    ScaleVec3Fx12(0x3000, &v, (Vec3 *)(state + 4));
-    sphere.pos = *(Vec3 *)(*state + 0x74);
+    ScaleVec3Fx12(0x3000, &v, (VecFx32 *)(state + 4));
+    sphere.pos = *(VecFx32 *)(*state + 0x74);
     sphere.nRadius = 0x2b00;
     if (state[0x1e] == 0) {
         Ov256_AttackHitTest(node, &sphere, 0, 0, &dir, 1, 0, 0);
@@ -51,9 +53,9 @@ void Ov256_LeapTick(int *node)
         return;
     }
     if (state[0x1e] != 0) {
-        *(Vec3 *)state[3] = *(Vec3 *)(state + 7);
+        *(VecFx32 *)state[3] = *(VecFx32 *)(state + 7);
     } else {
-        func_ov107_020c0b90(*state, 7, *(Vec3 *)state[3], 0);
+        func_ov107_020c0b90(*state, 7, *(VecFx32 *)state[3], 0);
     }
     state[0x13] = 0;
     *((u8 *)state + 0x6a) = 0;

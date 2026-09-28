@@ -29,6 +29,7 @@
  * unassigned count reuses nOwned -- a fresh local would colour the counter
  * and the count the other way round (sl / sb).
  */
+
 #include "nitro/types.h"
 
 #define TAG_TRADE      0x3f4

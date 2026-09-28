@@ -4,8 +4,10 @@
  * (kind 0x17) 0x600 below the +0x39c / +0x3a4 item's +0x20 position, posed like the actor's
  * +0xa0; 2 / 3 run the 020ce984 hook; 4 / 5 start the +0x10 / +0x18 sub-items at the +0x3bc /
  * +0x3b8 items' transforms. The base handler always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } Srt;
 struct Bits3d4 { unsigned int b0 : 1; };
 struct Bits28 { u8 b0 : 1; };

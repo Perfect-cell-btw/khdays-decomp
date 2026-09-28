@@ -5,6 +5,7 @@
  * (MsgDb_AllocRecord), its two strings are fetched (MsgDb_FetchStringPair; on failure the object is
  * released again) and every record field is copied into the object, widening bytes and halfwords
  * to the object's field sizes. Returns 1 on success, 0 otherwise. */
+
 #include "nitro/types.h"
 
 typedef struct DbRecord {

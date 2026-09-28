@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct Ov002Vec3 {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov002TaskNodePath {
     void *pHook0;
@@ -21,7 +17,7 @@ typedef struct Ov002TaskNodePath {
     int n20;
     int n24;
     int n28;
-    Ov002Vec3 place;
+    VecFx32 place;
     char szName[0x10];
 } Ov002TaskNodePath;
 
@@ -55,7 +51,7 @@ static inline void Ov002_SetHooks(Ov002TaskNodePath *pNode, void *pA, void *pB,
 /* Allocates a path node and fills it in from the nine arguments the submitter
    spreads out of its argument block.  Never checks the allocation. */
 void *Ov002_CreateTaskNodePath(int nOwner, int nKind, int nValue,
-                          const Ov002Vec3 *pPlace, int n20, int n24, int n28,
+                          const VecFx32 *pPlace, int n20, int n24, int n28,
                           const char *pName, int nThreshold)
 {
     Ov002TaskNodePath *pNode;

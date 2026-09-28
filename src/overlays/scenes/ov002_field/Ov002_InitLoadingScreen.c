@@ -1,5 +1,7 @@
 /* Ov002_InitLoadingScreen: configure loading graphics and register the blink tick. */
+
 #include "nitro/types.h"
+
 typedef struct Ov002BlinkState {u64 nLastTick;int nPhase,bHoldsPanel;u8 *pTileData;} Ov002BlinkState;
 typedef struct Ov002PageChars {u8 pad0[0x10];int nCharSize;u8 *pCharData;} Ov002PageChars;
 typedef struct BgPlttSrc {int nFormat,n_pad;u32 dwSize;void *pData;} BgPlttSrc;

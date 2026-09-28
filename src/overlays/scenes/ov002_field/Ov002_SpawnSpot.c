@@ -1,12 +1,9 @@
-#include "nitro/types.h"
-
-typedef struct Ov002Vec3 {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
 
 /* The stage's linear congruential generator, seeded here from the level. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct Ov002Rng {
     int nSeed;
     int nMult;
@@ -26,7 +23,7 @@ typedef struct Ov002SpotStage {
     char pad058[4];
     void *pFreeBits;        /* one bit per spot id, set while the id is free */
     char pad060[0x24c8];
-    Ov002Vec3 aSpots[1];    /* where each spot was last spawned */
+    VecFx32 aSpots[1];    /* where each spot was last spawned */
 } Ov002SpotStage;
 
 typedef struct Ov002SpotHolder {
@@ -39,7 +36,7 @@ extern Ov002SpotHolder data_ov002_0207fa28;
 extern int BitArray_TestBit(void *pBits, unsigned int nIndex);  /* bit test */
 extern void Ov002_ReleaseSlotOwner(char *pRow);   /* release the row's owner */
 extern Ov002Spawned *Ov002_BuildSpawnRow(int nIndex, int a1, int a2, int a3,
-                                         const Ov002Vec3 *pPlace, int a5,
+                                         const VecFx32 *pPlace, int a5,
                                          Ov002Rng *pRng);
 
 /* Spawns the object for one spot and remembers where it went.  If the spot's
@@ -48,7 +45,7 @@ extern Ov002Spawned *Ov002_BuildSpawnRow(int nIndex, int a1, int a2, int a3,
    stack: the caller's level shifted up by 14 as the seed, then the fixed
    multiplier and increment. */
 void *Ov002_SpawnSpot(int nIndex, int a1, int a2, int a3,
-                          const Ov002Vec3 *pPlace, int a5, u8 bLevel)
+                          const VecFx32 *pPlace, int a5, u8 bLevel)
 {
     Ov002SpotStage *pStage;
     Ov002Spawned *pSpawned;

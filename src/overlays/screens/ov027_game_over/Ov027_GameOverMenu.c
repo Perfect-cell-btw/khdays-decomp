@@ -8,18 +8,14 @@
  * two slots (+0x5d4), is rebuilt (Ov027_BuildPanel 02083b94), each slot drawn shifted by its
  * blink phase (+0x574; Ov027_DrawPanelSlotShifted 02083c78) and queued (Ov027_EnqueuePanel
  * 02083cb8), the character and camera updated, and Ov027_GameOverChoice (02082fb4) follows. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

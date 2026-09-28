@@ -7,30 +7,32 @@
  * range, goes to move 0x12 (over 12x) or 0x10 (over 5x) or plays pose 0x15 with a lifted sweep
  * (+0x420 = 6, +0x424) and restarts via 020d0b6c. The six +0xac flags pulse the cue (020cd2c8 0, 1,
  * 0, 1, 2, 3) at 0x550, 0x7f8, 0xaa0, 0xff0, 0x1298 and 0x1a90. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 
 extern int Ov259_FaceTargetGap(int *node);
 extern void Ov259_RefreshAim(int *node);
-extern void Ov259_ForwardSweep(int body, int a, int b, Vec3 lift);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
+extern void Ov259_ForwardSweep(int body, int a, int b, VecFx32 lift);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int y);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
-extern void Vec3TransformViaTempMtx(Vec3 *out, const Quat *q, const Vec3 *in);
-extern void Ov259_LaunchHelper(int helper, int climb, Vec3 *dir, int heading);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const Quat *q, const VecFx32 *in);
+extern void Ov259_LaunchHelper(int helper, int climb, VecFx32 *dir, int heading);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_SlamTick(void);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042258;
-extern const Vec3 data_ov259_020d2f60;
-extern const Vec3 data_ov259_020d2f6c;
-extern const Vec3 data_ov259_020d2f84;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_ov259_020d2f60;
+extern const VecFx32 data_ov259_020d2f6c;
+extern const VecFx32 data_ov259_020d2f84;
 
 void Ov259_LungeSequenceTick(int *node)
 {
@@ -61,9 +63,9 @@ void Ov259_LungeSequenceTick(int *node)
         break;
     case 2:
         if (state[0x1a] > 0x1100) {
-            Vec3 d;
+            VecFx32 d;
 
-            VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)(*state + 0x74), &d);
+            VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)(*state + 0x74), &d);
             VEC_Normalize(&d, &d);
             state[0x1e] = state[0x1f] = func_020050b4(d.x, d.z);
             Ov259_ForwardSweep(*(int *)(*state + 0x384), 0x198, 0x6e8, data_ov259_020d2f6c);
@@ -73,11 +75,11 @@ void Ov259_LungeSequenceTick(int *node)
         break;
     case 3:
         if (state[0x1a] > 0x17e8) {
-            Vec3 lift = data_ov259_020d2f84;
+            VecFx32 lift = data_ov259_020d2f84;
             int helper = *(int *)(*state + 0x388);
 
             if (*(int *)(helper + 0x388) == 0) {
-                Vec3 dir;
+                VecFx32 dir;
                 Quat q;
 
                 QuatFromAxisAngle(&q, &data_02042264, state[0x1e]);
@@ -91,10 +93,10 @@ void Ov259_LungeSequenceTick(int *node)
         break;
     default:
         if (*(u8 *)(state[1] + 0xad) == 0) {
-            Vec3 lift = data_ov259_020d2f60;
-            Vec3 d;
+            VecFx32 lift = data_ov259_020d2f60;
+            VecFx32 d;
 
-            VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)(*state + 0x74), &d);
+            VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)(*state + 0x74), &d);
             VEC_Normalize(&d, &d);
             state[0x1e] = state[0x1f] = func_020050b4(d.x, d.z);
             if (n > *(int *)(*state + 0x80) * 12) {

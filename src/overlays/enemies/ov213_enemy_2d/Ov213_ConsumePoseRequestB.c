@@ -1,7 +1,9 @@
 /* Consume the pending pose request (+0x1c7 of the actor): when one is queued (!= -1) it becomes
  * the current kind (+0x1c6), flag 2 is raised and flags 0x84 cleared in the high byte at +0x60,
  * and kind 0 / 2 dispatch slot 1 to 020d1d8c / 020d1e40; the request is then cleared to -1. */
+
 #include "nitro/types.h"
+
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov213_AiLockAndResume(void);
 extern void Ov213_EnterLeap(void);

@@ -1,6 +1,7 @@
-#include "nitro/types.h"
 
-typedef struct VecFx32 { s32 x; s32 y; s32 z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct VecFx16 { s16 x; s16 y; s16 z; } VecFx16;
 
 #define DIVCNT      (*(volatile u16 *)0x04000280)

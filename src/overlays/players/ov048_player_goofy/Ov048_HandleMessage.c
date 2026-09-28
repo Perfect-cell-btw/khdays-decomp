@@ -5,17 +5,18 @@
  * counter cleared and its speed set to 0x800 (0xc00 in hard mode, scaled by 1.2 in mode 4),
  * the fall speed to 0x180 (0x240 in hard mode), the node turns to face the target unless locked,
  * and the attack step takes over. 0x23/0x24 tell 0x31/0x30 and hand over to the landing step. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int func_02023c40(void);                                                /* game mode: 1 = hard */
 extern void Ov022_FillEightHalvesMinus1At0x2bd4(char *self);
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);              /* Anim_SetFrameWrapped */
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Atan2(int x, int z);
 extern char *data_ov048_020b4b80;
 extern void Ov048_HoverStep(void);
@@ -26,7 +27,7 @@ void *Ov048_HandleMessage(char *self, int msg)
 {
     char *rig = data_ov048_020b4b80 + 0x2c + 0x2c00;
     void *next = 0;
-    Vec3 d;
+    VecFx32 d;
     u16 a;
     unsigned int *node;
 
@@ -67,7 +68,7 @@ void *Ov048_HandleMessage(char *self, int msg)
         }
         *(int *)(self + 0x4b0) = func_02023c40() == 1 ? 0x240 : 0x180;
         if (Ov022_ValidateTargetRef(self) != 0) {
-            VEC_Subtract(func_ov022_020ad0c0(self), (Vec3 *)(self + 0x8c + 0x400), &d);
+            VEC_Subtract(func_ov022_020ad0c0(self), (VecFx32 *)(self + 0x8c + 0x400), &d);
             if (VEC_Mag(&d) != 0) {
                 VEC_Normalize(&d, &d);
             }

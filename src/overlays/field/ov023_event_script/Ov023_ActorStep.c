@@ -15,13 +15,9 @@
  * (0202b450); otherwise the step (or, when that is zero, the velocity) is added to the
  * entity's position.  Bit 7 runs the effect timing (Ov023_ActorStepEffects 02087bc8) and the
  * step is reset to the zero vector (data_02041dc8) for the next frame. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023Entity {
     int  nFlags;              /* 0x00 */

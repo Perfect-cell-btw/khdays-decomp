@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* NitroSDK alignment-aware byte-copy primitive. */
+
+#include "nitro/types.h"
+
 asm void MI_CpuCopy8(register const void *source, register void *destination,
                      register u32 size)
 {

@@ -5,10 +5,12 @@
  * (sphere of the actor's +0x80 radius against kind 5, 020ce0a8; a hit plays sound 0/0x4e at the actor);
  * outside them +0x86 clears. Once the partner holds no queued move pose 0x22 plays, +0x64 clears and
  * the node moves on to 020d2c0c. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 center; int nRadius; } Sphere;
 
-extern int Ov252_CheckTarget(int *node, Vec3 *delta, int face);
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 center; int nRadius; } Sphere;
+
+extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
 extern unsigned char Ov252_ReboundHitTest(int *state, int kind, Sphere *sphere, void *cyl, void *box);
@@ -46,12 +48,12 @@ void Ov252_PartSlamTick(int *node)
     fist.nRadius = *(int *)(*state + 0x80);
     state[0x19] += *(int *)(node[0] + 0x2c);
     if ((state[0x19] >= 0xbb0 && state[0x19] <= 0x1540) || (state[0x19] >= 0x4620 && state[0x19] <= 0x51d0)) {
-        fist.center = *(Vec3 *)(*(int *)(*state + 0x568) + 0x14);
+        fist.center = *(VecFx32 *)(*(int *)(*state + 0x568) + 0x14);
         if (Ov252_ReboundHitTest(state, 5, &fist, 0, 0) != 0) {
             Ov107_BuildAndSendUpdate(*state, 0, 0x4e, (void *)(*state + 0x74));
         }
     } else if ((state[0x19] >= 0x26c8 && state[0x19] <= 0x3168) || (state[0x19] >= 0x5be8 && state[0x19] <= 0x6798)) {
-        fist.center = *(Vec3 *)(*(int *)(*state + 0x564) + 0x14);
+        fist.center = *(VecFx32 *)(*(int *)(*state + 0x564) + 0x14);
         if (Ov252_ReboundHitTest(state, 5, &fist, 0, 0) != 0) {
             Ov107_BuildAndSendUpdate(*state, 0, 0x4e, (void *)(*state + 0x74));
         }

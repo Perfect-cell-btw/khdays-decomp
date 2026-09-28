@@ -18,15 +18,11 @@
  * declared with the actor first because that is what colours it below the slot.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022ActorSlot */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ActorSlot {
     u8 nKind;                        /* 0x000 */
     u8 pad001;
@@ -34,7 +30,7 @@ struct ActorSlot {
     u8 pad003[5];
     u16 nSlotFlags;                  /* 0x008 */
     u8 pad00a[0xa2];
-    struct VecFx32 vecAim;           /* 0x0ac */
+    VecFx32 vecAim;           /* 0x0ac */
     u8 pad0b8[0x58];
     s8 nSlotIndex;                   /* 0x110 */
     u8 pad111[7];
@@ -56,7 +52,7 @@ struct Actor {
     u8 pad000[0x464];
     u64 nFlags2;                     /* 0x464 */
     u8 pad46c[0x20];
-    struct VecFx32 vecAim;           /* 0x48c */
+    VecFx32 vecAim;           /* 0x48c */
     u8 pad498[0x1c];
     int nInterruptCharge;            /* 0x4b4 */
     u8 pad4b8[0x1dc];
@@ -92,7 +88,7 @@ int Ov022_StepChargeSlot(struct ReactionCtx *pCtx, int nDelta)
     struct Actor *pActor;
     struct ActorSlot *pSlot;
     int bDone;
-    struct VecFx32 vecAim;
+    VecFx32 vecAim;
 
     pActor = pCtx->pActor;
     pSlot = pCtx->aSlots[pCtx->nSlot];

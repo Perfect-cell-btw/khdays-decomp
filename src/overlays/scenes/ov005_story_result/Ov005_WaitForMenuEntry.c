@@ -2,6 +2,7 @@
  * straight to the list. */
 
 #include "nitro/types.h"
+
 typedef struct Ov005Context {
     char opaque00[0x4bf0];
     int menuState;

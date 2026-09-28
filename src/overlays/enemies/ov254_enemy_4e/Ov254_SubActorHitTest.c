@@ -3,22 +3,23 @@
  * clear in the +0x2c mask is pushed 1.0 horizontally away from the sub-actor, lifted by 1.0 (kind 2,
  * on behalf of the owner); on acceptance the owner spawns effect 0 at the entity's +0x74 point (or
  * at the sphere centre), reaction 0x16d mode 8 fires at the +8 point and the bit is set. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov107_CollectSegmentOverlaps(int owner, void *seg, int *hits);
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 
-void Ov254_SubActorHitTest(int *node, Vec3 *sphere, void *seg)
+void Ov254_SubActorHitTest(int *node, VecFx32 *sphere, void *seg)
 {
     int *state = (int *)node[1];
     int hits[4];
-    Vec3 push;
+    VecFx32 push;
     int n;
     int i;
 
@@ -44,7 +45,7 @@ void Ov254_SubActorHitTest(int *node, Vec3 *sphere, void *seg)
             continue;
         }
         if (seg != 0) {
-            func_ov107_020c0b90(*(int *)(*state + 0x38c), 0, *(Vec3 *)(hits[i] + 0x74), 0);
+            func_ov107_020c0b90(*(int *)(*state + 0x38c), 0, *(VecFx32 *)(hits[i] + 0x74), 0);
         } else if (sphere != 0) {
             func_ov107_020c0b90(*(int *)(*state + 0x38c), 0, *sphere, 0);
         }

@@ -3,7 +3,9 @@
  * read back (02016320) a fresh transform is built at the joint's translation, rotated by its
  * matrix, composed with the data_ov253_020d4834 rotation and normalised, and copied into the
  * +0x440 item and from there into the +0x444 slot's item. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } MtxFx33;
 typedef struct { MtxFx33 rotation; VecFx32 translation; } MtxFx43;
 typedef struct { int w[11]; } Pose44;

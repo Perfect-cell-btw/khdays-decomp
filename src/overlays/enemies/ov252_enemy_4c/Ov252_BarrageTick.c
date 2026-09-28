@@ -7,32 +7,33 @@
  * shows while a volley runs, a cue fires effect 0x34 at the +0x560 point with +0x588 set, and the shot
  * counters advance. Once the partner holds no queued move it turns toward the origin (020cdb88) and,
  * after 10.0 (15.0 guarded), clears +0x588, plays pose 0x1c and moves on to 020d0220; else pose 0x1b. */
-typedef struct { int x, y, z; } Vec3;
 
-extern int Ov252_CheckTarget(int *node, Vec3 *delta, int face);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+#include "nitro/fx.h"
+
+extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int RandNextScaled(int bound);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
-extern int Ov252_HeadingDelta(int *node, Vec3 *v, int angle, int wantAbs);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
+extern int Ov252_HeadingDelta(int *node, VecFx32 *v, int angle, int wantAbs);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_IdleDecide(void);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
 void Ov252_BarrageTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 delta;
-    Vec3 muzzle;
-    Vec3 aim;
-    Vec3 dir;
-    Vec3 d;
-    Vec3 p;
+    VecFx32 delta;
+    VecFx32 muzzle;
+    VecFx32 aim;
+    VecFx32 dir;
+    VecFx32 d;
+    VecFx32 p;
     int gap;
     int spread;
 
@@ -40,10 +41,10 @@ void Ov252_BarrageTick(int *node)
     gap = Ov252_CheckTarget(node, &delta, 1);
     if (state[0x2b] == 0) {
         if (gap < 0xa000) {
-            ScaleVec3Fx12(-0x500, &delta, (Vec3 *)(state + 3));
+            ScaleVec3Fx12(-0x500, &delta, (VecFx32 *)(state + 3));
         }
         if (gap > 0x40000) {
-            ScaleVec3Fx12(0x500, &delta, (Vec3 *)(state + 3));
+            ScaleVec3Fx12(0x500, &delta, (VecFx32 *)(state + 3));
         }
     }
     state[0x19] += *(int *)(node[0] + 0x2c);
@@ -56,9 +57,9 @@ void Ov252_BarrageTick(int *node)
         state[0x19] -= 0x1000;
     }
     if (state[0x19] >= 0x200) {
-        muzzle = *(Vec3 *)(*(int *)(*state + 0x570) + 0x14);
+        muzzle = *(VecFx32 *)(*(int *)(*state + 0x570) + 0x14);
         if (*(int *)(*state + 0x4e4) != 0) {
-            VEC_Subtract((Vec3 *)(*(int *)(*state + 0x4e4) + 0x190), &muzzle, &aim);
+            VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x4e4) + 0x190), &muzzle, &aim);
             VEC_Normalize(&aim, &dir);
             spread = RandNextScaled(0x1ad) - 0xd6;
             {
@@ -81,7 +82,7 @@ void Ov252_BarrageTick(int *node)
         if (*((unsigned char *)state + 0x89) != 0) {
             *((unsigned char *)state + 0x89) = 0;
             *(int *)(*state + 0x588) = 1;
-            func_ov107_020c0b90(*state, 0x34, *(Vec3 *)(*(int *)(*state + 0x560) + 0x14), 0);
+            func_ov107_020c0b90(*state, 0x34, *(VecFx32 *)(*(int *)(*state + 0x560) + 0x14), 0);
         }
         *((unsigned char *)state + 0x88) += 1;
         state[0x18]++;
@@ -90,7 +91,7 @@ void Ov252_BarrageTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    p = *(Vec3 *)state[2];
+    p = *(VecFx32 *)state[2];
     p.y = 0;
     VEC_Subtract(&data_02041dc8, &p, &d);
     VEC_Normalize(&d, &d);

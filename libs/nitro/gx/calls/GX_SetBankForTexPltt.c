@@ -1,4 +1,5 @@
 /* NitroSDK gx (gx_vramcnt.c): GX_SetBankForTexPltt -- returns the old texPltt banks to LCDC and maps the new ones (VRAMCNT E/F/G). */
+
 #include "nitro/types.h"
 
 extern void GX_VRAMCNT_SetLCDC_(u32 bankBits);

@@ -6,6 +6,7 @@
  * buffers, the audio ring when the stream has sound, and the frame index.
  * Reports zero on the first read or allocation that fails.
  */
+
 #include "nitro/types.h"
 
 #define HEADER_BYTES  0x30

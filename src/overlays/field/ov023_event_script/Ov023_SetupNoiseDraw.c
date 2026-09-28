@@ -6,13 +6,9 @@
  * height (+0x7c / +0x80 of the noise state) in 4.12 (NNS_G3dGlbSetBaseScale 020158b0) and the
  * base rotation a Z rotation by the scroll (+0x70; MTX_RotZ33_ from FX_SinCosTable_ copied
  * into data_02047428 with MI_Copy36B); the matching dirty bits are cleared each time. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct MtxFx33 {
     int  a[9];                /* 0x00 */

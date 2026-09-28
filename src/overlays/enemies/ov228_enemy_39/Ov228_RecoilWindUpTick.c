@@ -3,10 +3,11 @@
  * the +4 animator's +0xad flag drops, effect 7 spawns at the +0xc position, animation 0x17 plays,
  * bit 6 of the +0x60 high byte is raised, the timer restarts, the +0x1c impulse becomes
  * (0, 1.5, 0) and the tick hands over to Ov228_AiHomingDriftTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov228_AiHomingDriftTick(int *node);
@@ -24,7 +25,7 @@ void Ov228_RecoilWindUpTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    func_ov107_020c0b90(*state, 7, *(Vec3 *)state[3], 0);
+    func_ov107_020c0b90(*state, 7, *(VecFx32 *)state[3], 0);
     Ov107_PostTagUpdate(*state, 0x17, 0);
     v = *(unsigned short *)(*state + 0x60);
     *(unsigned short *)(*state + 0x60) = (unsigned short)((v & ~0xff00) | (((((unsigned int)v << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10));

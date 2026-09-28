@@ -4,6 +4,7 @@
  * the other way round.  Then, unless a transfer is pending, rebinds the three
  * list callbacks and plays the confirm cue.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MenuContext {

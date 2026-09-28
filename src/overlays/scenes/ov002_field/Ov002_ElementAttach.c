@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern void *Ov002_LookupChannelEntry(char *pChannel);
 extern void Entity_Register(char *pObj, void *pEntry, int nA, int nB);

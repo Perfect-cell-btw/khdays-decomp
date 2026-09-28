@@ -1,6 +1,8 @@
 /* Boot step: draws the logo and fades the sub screen in, then sets up the sub screen backgrounds,
  * releases the text engine and creates the next scene. */
 
+#include "nitro/types.h"
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Camera_CommitMatricesEx(int p, int a, int b, int c, int d);
 extern void Scene_DrawNode(unsigned short *p);
@@ -12,8 +14,6 @@ extern void Obj_Release(int *p);
 extern void *InstantiateClass(void *class_desc, int arg);
 extern int data_ov000_0205aa34;
 extern void Ov000_TickBootTeardown(void);
-
-#include "nitro/types.h"
 
 typedef struct Ov000SceneNextField {
     int value;

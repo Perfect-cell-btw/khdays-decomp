@@ -1,5 +1,6 @@
 /* Sequence tail tick of the ov259 actor: the +0x68 timer accumulates the frame rate, the cue pulses
  * once at 0x2288 (+0xac bit 6) and, once the +4 item's +0xad byte clears, the next move is 2. */
+
 #include "nitro/types.h"
 
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);

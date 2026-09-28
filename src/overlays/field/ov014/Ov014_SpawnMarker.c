@@ -1,19 +1,20 @@
 /* Spawns a marker element from the pool at a position with a heading and puts it in its bucket. */
 
+#include "nitro/fx.h"
+
 extern void *Ov002_ClaimPoolEntry(void *pool, int index);
 extern void Ov002_PushBucketNode(int idx, int *node);
 extern void Ov014_Element_Tick(void);
-typedef struct { int x, y, z; } Vec;
 
 void *Ov014_SpawnMarker(void *pool, unsigned short b, unsigned short c,
                           unsigned short d, unsigned char e, void *vec, int g) {
-    Vec *v = (Vec *)vec;
+    VecFx32 *v = (VecFx32 *)vec;
     unsigned char *entry = (unsigned char *)Ov002_ClaimPoolEntry(pool, b);
-    *(Vec *)(entry + 0xd0) = *v;
+    *(VecFx32 *)(entry + 0xd0) = *v;
     *(unsigned short *)(entry + 0xa8) = (unsigned short)g;
     *(unsigned short *)(entry + 0x2c) |= 0x20;
     *(unsigned short *)(entry + 0x18) = (unsigned short)g;
-    *(Vec *)(entry + 0x1c) = *v;
+    *(VecFx32 *)(entry + 0x1c) = *v;
     *(int *)(entry + 0x28) = *(int *)((char *)pool + 0x68);
     entry[0x135] = 0;
     entry[0x134] = 0;

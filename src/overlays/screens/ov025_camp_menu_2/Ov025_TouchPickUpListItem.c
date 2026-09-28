@@ -12,6 +12,7 @@
  * pick-up plays sound 4.  Either way the row is highlighted (0205f084) and
  * becomes the selected row (+0x9c).
  */
+
 #include "nitro/types.h"
 
 #define LIST_TOP      0x18

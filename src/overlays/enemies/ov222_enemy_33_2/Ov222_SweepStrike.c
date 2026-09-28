@@ -3,15 +3,17 @@
  * unit direction from the owner's +0x74 (kind +0x58 byte) and, on acceptance, the sphere's
  * centre goes out as the mode-0 message (Ov222_ForwardVecToOwner), reaction 0x12a
  * mode 8 fires at the +8 point and the bit is set. Returns the entity count. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
+
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
 
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *query, int *out);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *a, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
-extern void Ov222_ForwardVecToOwner(int *state, Vec3 v, int flag);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *a, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
+extern void Ov222_ForwardVecToOwner(int *state, VecFx32 v, int flag);
 struct Ov221Byte8 { unsigned int lo : 8, rest : 24; };
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 
@@ -19,7 +21,7 @@ int Ov222_SweepStrike(int *node, Sphere *sphere)
 {
     int *state = (int *)node[1];
     int hits[4];
-    Vec3 push;
+    VecFx32 push;
     long i;
     long n;
     unsigned char bit;

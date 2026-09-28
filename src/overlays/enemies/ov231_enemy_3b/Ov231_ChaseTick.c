@@ -8,26 +8,27 @@
  * the +0x34 lift by 0x200 per tick while it runs down, and the distance from the +0xc point to the
  * contact raises it below 1.07 or lowers it above 2.67 (once the climb is over). Finally the +0x30
  * velocity goes to the owner's +0xf0 and is scaled by 0.25. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Angle_TurnToward(int from, int to, int step, int mode);
-extern void QuatFromAxisAngle(void *q, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(void *q, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *pose, void *q);
 extern void Ov231_AcquireTarget(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern int Ov231_ProbeGround(int *node, Vec3 *dir, int direct);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern const Vec3 data_02042264;
-extern const Vec3 data_ov231_020cfa34;
+extern int Ov231_ProbeGround(int *node, VecFx32 *dir, int direct);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_ov231_020cfa34;
 
 void Ov231_ChaseTick(int *node)
 {
     int *state = (int *)node[1];
     int q[4];
-    Vec3 probe;
+    VecFx32 probe;
     int len;
     int d;
 
@@ -65,8 +66,8 @@ void Ov231_ChaseTick(int *node)
             }
         }
         if (probe.y != 0) {
-            VEC_Add(&probe, (Vec3 *)state[3], &probe);
-            VEC_Subtract(&probe, (Vec3 *)state[3], &probe);
+            VEC_Add(&probe, (VecFx32 *)state[3], &probe);
+            VEC_Subtract(&probe, (VecFx32 *)state[3], &probe);
             len = VEC_Normalize(&probe, &probe);
             if (state[0xb] != 0) {
                 state[0xd] += 0x200;
@@ -85,8 +86,8 @@ void Ov231_ChaseTick(int *node)
         }
     }
     {
-        Vec3 *vel = (Vec3 *)(state + 0xc);
-        *(Vec3 *)(*state + 0xf0) = *vel;
+        VecFx32 *vel = (VecFx32 *)(state + 0xc);
+        *(VecFx32 *)(*state + 0xf0) = *vel;
         ScaleVec3Fx12(0x400, vel, vel);
     }
 }

@@ -15,9 +15,10 @@
  *
  * Returns 0 when the actor is already dead or currently invulnerable.
  */
-#include "nitro/types.h"
 
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 a, b; } Pair2;
 typedef struct { unsigned int lo : 16; unsigned int hi : 16; } EvtWord;
 #define EW(e) (((EvtWord *)(e))->lo)

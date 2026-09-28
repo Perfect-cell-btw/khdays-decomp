@@ -1,6 +1,7 @@
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
 struct Ov185Rig {
@@ -34,7 +35,7 @@ struct Ov185Actor {
 struct Ov185ActionState {
     struct Ov185Actor *pOwner;
     char pad004[0x40];
-    struct Vec3 *pAnchor44;
+    VecFx32 *pAnchor44;
 };
 
 struct Ov185ActionNode {
@@ -47,7 +48,7 @@ struct Ov185ActionNode {
 extern const short data_0203d210[];
 extern void Ov187_AiEnterBoneSpin(void);
 
-extern void Ov107_MoveNodeAndRelayout(struct Ov185Bone *bone, struct Vec3 *pos);
+extern void Ov107_MoveNodeAndRelayout(struct Ov185Bone *bone, VecFx32 *pos);
 extern void Ov107_BuildAndSendUpdate(struct Ov185Actor *owner, int id, int mode, void *anchor);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 
@@ -74,7 +75,7 @@ extern void SetIndexedSlot(void *node, int idx, void *value);
  */
 void Ov187_RingBurst_Begin(struct Ov185ActionNode *node)
 {
-    struct Vec3 vPos;
+    VecFx32 vPos;
     struct Ov185ActionState *state;
     int i;
     struct Ov185Bone *bone;

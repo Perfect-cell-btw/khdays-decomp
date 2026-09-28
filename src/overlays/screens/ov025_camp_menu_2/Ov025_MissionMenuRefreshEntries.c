@@ -9,6 +9,7 @@
  * 0x28e4 + 3 * id below 2 without a modal object, or during a transition the
  * rank cap / helper 020742ec -- bumps the selectable count (+0x17a).
  */
+
 #include "nitro/types.h"
 
 #define FIELD_MISSION_STATUS 0x28e4

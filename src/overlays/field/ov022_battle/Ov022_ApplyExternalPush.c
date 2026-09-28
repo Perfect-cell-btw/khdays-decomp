@@ -8,33 +8,30 @@
  */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x, y, z;
-};
+#include "nitro/fx.h"
 
 struct Actor {
     unsigned long long nFlags;   /* 0x000 */
     u8 pad008[0x1c];
     u32 nInputMask;              /* 0x024 */
     u8 pad028[0x470];
-    struct Vec3 vecStep;         /* 0x498 */
+    VecFx32 vecStep;         /* 0x498 */
     u8 pad4a4[0x1c];
-    struct Vec3 *pPush;          /* 0x4c0 */
+    VecFx32 *pPush;          /* 0x4c0 */
 };
 
-extern int VEC_Mag(const struct Vec3 *pVec);
-extern void VEC_Add(const struct Vec3 *pA, const struct Vec3 *pB,
-                    struct Vec3 *pOut);
-extern void VEC_Normalize(const struct Vec3 *pIn, struct Vec3 *pOut);
-extern void ScaleVec3Fx12(int nScale, const struct Vec3 *pIn,
-                          struct Vec3 *pOut);
+extern int VEC_Mag(const VecFx32 *pVec);
+extern void VEC_Add(const VecFx32 *pA, const VecFx32 *pB,
+                    VecFx32 *pOut);
+extern void VEC_Normalize(const VecFx32 *pIn, VecFx32 *pOut);
+extern void ScaleVec3Fx12(int nScale, const VecFx32 *pIn,
+                          VecFx32 *pOut);
 
 void Ov022_ApplyExternalPush(struct Actor *pActor)
 {
-    struct Vec3 vecPush;
-    struct Vec3 vecSum;
-    struct Vec3 vecFlat;
+    VecFx32 vecPush;
+    VecFx32 vecSum;
+    VecFx32 vecFlat;
 
     if ((pActor->nFlags & (1ULL << 7)) != 0) {
         return;

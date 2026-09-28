@@ -3,18 +3,14 @@
  * work) steps down one notch a frame; once it reaches -16 the counter is reset, the scene's
  * flag word is updated (Ov027_SetLeaving 02082b24 with 0) and the terminal state
  * (Ov027_ConstReturn0) is returned; both screens get the brightness on those frames.  0 to stay. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

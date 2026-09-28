@@ -9,9 +9,10 @@
  * could write the sin/cos table, which reorders one table load; const is the aliasing fact that
  * matches. One of a 5-member family (ov215/216/217/264, byte-identical).
  */
-struct Vecx32 { int x, y, z; };
 
-static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
+#include "nitro/fx.h"
+
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
     vec->y = y;
     vec->z = z;
@@ -26,7 +27,7 @@ extern const short data_0203d210[];
 
 void Ov219_AimAndFaceTick(int self) {
     int *state = *(int **)(self + 4);
-    struct Vecx32 aim;
+    VecFx32 aim;
     int dist;
     int idx;
     int owner;
@@ -38,7 +39,7 @@ void Ov219_AimAndFaceTick(int self) {
     idx = (int)(((unsigned)(((long long)(int)(unsigned)state[3] * 0x28be60db9391LL +
                  0x80000000000LL) >> 0x20) << 4) >> 0x10) >> 4;
     dist = dist - *(int *)(owner + 0x80);
-    VEC_Set((struct Vecx32 *)(state + 9), (int)data_0203d210[idx * 2], 0,
+    VEC_Set((VecFx32 *)(state + 9), (int)data_0203d210[idx * 2], 0,
             (int)data_0203d210[idx * 2 + 1]);
     ScaleVec3Fx12(0x600, (void *)(state + 9), (void *)(state + 9));
     if (dist < 0x2000) {

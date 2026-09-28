@@ -8,12 +8,14 @@
  * at +0x2f04) or ends the hover: bit 49 dropped, node hidden, animation set 0xf000 before its
  * end, bit 29 raised; otherwise it stops, raises bit 2 and lands (state 0 with the slot
  * callback when grounded, else state 2). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Session_GetLocalPlayerIndex(void);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov083_SpawnNextEffect(char *self, int dt);
 extern void SceneNode_Enable(void *node);                                          /* SceneNode_Enable */
 extern void SceneNode_Disable(void *node);                                          /* SceneNode_Disable */
@@ -26,8 +28,8 @@ extern char *data_ov083_020b9b00;
 
 void *Ov083_HoverStep(char *self)
 {
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     void *next = 0;
     char *rig = data_ov083_020b9b00 + 0xdf0 + 0x2000;
     int r;
@@ -50,7 +52,7 @@ void *Ov083_HoverStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     Ov083_SpawnNextEffect(self, *(short *)(self + 0x2aba));
     r = (*(int (**)(char *))(self + 0x668))(self);
     ((Flags *)(self + 0x694))->b1 = (unsigned char)r;

@@ -1,6 +1,7 @@
 /* Stagger entry of the ov260 actor: bit 6 of the +0x60 high byte is set; in move 7 the partner's
  * queued move (+4 -> +0xad) clears, otherwise pose 0x19 plays; effect 0x19 starts at the +0x10 point,
  * +0x70 and the +0x7b flag clear and the node moves on to 020cf17c. */
+
 #include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

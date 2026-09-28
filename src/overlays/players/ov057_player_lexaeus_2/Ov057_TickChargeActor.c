@@ -1,17 +1,12 @@
-﻿typedef unsigned short u16;
-#include "nitro/types.h"
 
-typedef struct Vec3 {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef int (*ActorHook)(int pActor);
 typedef void (*ActorFinishHook)(int pActor, int mode);
 
 extern int Session_GetLocalPlayerIndex(void);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov022_IsState9Or6WithFlag200(void *state);
 extern int Ov022_ActorSetState(int pActor, int mode);
 extern int data_ov057_020b74a0;
@@ -20,8 +15,8 @@ extern int data_ov057_020b74a0;
  * motion vectors and finishes the actor once its charge sequence ends. */
 int Ov057_TickChargeActor(int pActor)
 {
-    Vec3 zero;
-    Vec3 delta;
+    VecFx32 zero;
+    VecFx32 delta;
 
     int pSceneBlock = data_ov057_020b74a0 + 0x2c + 0x2c00;
     int result = 0;
@@ -43,8 +38,8 @@ int Ov057_TickChargeActor(int pActor)
 
     delta = zero;
     delta.y = 0;
-    VEC_Add((Vec3 *)(pActor + 0x498), &delta,
-            (Vec3 *)(pActor + 0x498));
+    VEC_Add((VecFx32 *)(pActor + 0x498), &delta,
+            (VecFx32 *)(pActor + 0x498));
     (*(ActorHook *)(pActor + 0x668))(pActor);
 
     if ((*(u16 *)(pActor + 0x1a) & 1) == 0) {

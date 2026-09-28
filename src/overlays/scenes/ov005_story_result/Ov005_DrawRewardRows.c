@@ -1,5 +1,7 @@
 /* Render the three base rewards and the resulting scaled totals. */
+
 #include "nitro/types.h"
+
 typedef struct Ov005ResultTween { char tween[28]; int duration, currentValue, fromValue, toValue; } Ov005ResultTween;
 typedef struct Ov005ResultContext { char unknown00[0x4b84]; Ov005ResultTween resultTweens[4]; } Ov005ResultContext;
 typedef struct Ov005Config { char unknown00[0x34]; int rewardBases[3], rewardTotals[3]; u32 rewardScales[3]; } Ov005Config;

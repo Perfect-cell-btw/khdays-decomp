@@ -1,4 +1,5 @@
 /* Acquire and place up to five indexed sub-display resources. */
+
 #include "nitro/types.h"
 
 extern u16 data_ov002_0207db84[];

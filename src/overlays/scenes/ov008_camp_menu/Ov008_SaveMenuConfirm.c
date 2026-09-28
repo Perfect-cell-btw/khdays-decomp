@@ -10,6 +10,7 @@
  * layout, hides the prompt and clears context field 95fc.  Phase 4: releases
  * the target slot (entry 0, -1).  Sound 1 for yes / other phases, 3 for no.
  */
+
 #include "nitro/types.h"
 
 #define SLOT_COUNT     3

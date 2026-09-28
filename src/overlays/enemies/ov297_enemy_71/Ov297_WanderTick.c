@@ -12,12 +12,14 @@
  * velocity, counts +0x78 (sub-state 2 after two), re-arming the timer at 0xff0. The clock then
  * plays the held-item animations 0 (from 0x4c8) and 1 (from 0x908, resetting the clock and the
  * +0x93 marks); animation 1 plays while the +4 item's +0xad byte is clear. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct Bits17a { u8 bit0 : 1, bit1 : 1; };
 
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Ov297_AcquireTargetGapAndAngle(int *node);
 extern void Ov297_UpdateHeadingVector(int *node);
@@ -25,8 +27,8 @@ extern unsigned int Rand16NextScaled(unsigned int range);
 extern int RandNextScaled(int range);
 extern int func_020050b4(int x, int z);
 extern int Ov107_FindNearestObject(int actor, int mode);
-extern int VEC_DotProduct(Vec3 *a, Vec3 *b);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov297_MapHeldItemKindToAnim(int actor, int anim);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern short data_0203d210[];
@@ -36,11 +38,11 @@ extern short data_0203d210[];
 void Ov297_WanderTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
-    Vec3 dir;
-    Vec3 n;
-    Vec3 back;
-    Vec3 refl;
+    VecFx32 d;
+    VecFx32 dir;
+    VecFx32 n;
+    VecFx32 back;
+    VecFx32 refl;
     int gap;
     int len;
     int turn;
@@ -111,7 +113,7 @@ void Ov297_WanderTick(int *node)
             *(u8 *)(*state + 0x1c7) = 2;
         }
         if (((struct Bits17a *)(*state + 0x17a))->bit1 != 0) {
-            n = *(Vec3 *)(*state + 0x114);
+            n = *(VecFx32 *)(*state + 0x114);
             if ((unsigned int)RandNextScaled(0x64) < 0x32) {
                 turn = Rand16NextScaled(0x1922) + 0x1922;
                 state[10] = turn;
@@ -125,8 +127,8 @@ void Ov297_WanderTick(int *node)
             VEC_Subtract(&refl, &back, &refl);
             VEC_Normalize(&refl, &refl);
             state[0xd] = func_020050b4(refl.x, refl.z);
-            len = VEC_Normalize((Vec3 *)(state + 4), (Vec3 *)(state + 4));
-            ScaleVec3Fx12(len, &refl, (Vec3 *)(state + 4));
+            len = VEC_Normalize((VecFx32 *)(state + 4), (VecFx32 *)(state + 4));
+            ScaleVec3Fx12(len, &refl, (VecFx32 *)(state + 4));
             state[0x1e]++;
             state[0x15] = 0xff0;
             if (state[0x1e] > 2) {

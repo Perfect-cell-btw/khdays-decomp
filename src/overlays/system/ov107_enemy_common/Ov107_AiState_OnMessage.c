@@ -7,6 +7,7 @@
 #pragma opt_common_subs off
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct {
     u8 pad000[2];
@@ -117,23 +118,17 @@ typedef struct {
 } AiState;
 
 typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
-
-typedef struct {
     int raw9[3];
     int raw11[3];
     u8 amount9[6];
     u8 amount11[6];
-    Vec3 place9;
-    Vec3 place11;
+    VecFx32 place9;
+    VecFx32 place11;
 } PacketLocals;
 
 extern int Ov002_GetSlotTableByte(int value);
 extern void Ov002_SpawnAllDrops(const u8 *amount, int context,
-                                const Vec3 *place);
+                                const VecFx32 *place);
 extern int List_First(void *list);
 extern int List_Next(void *list);
 extern int Ov107_FindMessageHandler(unsigned int id);

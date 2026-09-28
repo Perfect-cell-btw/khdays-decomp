@@ -4,40 +4,42 @@
  * 0x179 mode 4 fires at the actor's position and the tick hands off to the hover entry.
  * Codegen: the partner position is held as a pointer variable (`pos`); a plain `int part` local
  * leaves the /15 quotient in ip instead of the ROM's r6. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 
 typedef struct {
     int actor;
-    Vec3 *pos;
+    VecFx32 *pos;
     int pad08;
     Quat orient;
-    Vec3 anchor;
+    VecFx32 anchor;
     int pad28[2];
-    Vec3 jitter;
+    VecFx32 jitter;
     int speed;
     int clock;
 } HoverState;
 
-extern void Ov261_SetFacingAnchor(Vec3 *anchor, Vec3 *pos, Vec3 *target);
-extern void Vec3TransformViaTempMtx(Vec3 *dst, Quat *orient, const Vec3 *src);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *d);
-extern int VEC_Normalize(const Vec3 *a, Vec3 *d);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern void Ov107_BuildAndSendUpdate(int actor, int reaction, int mode, Vec3 *at);
+extern void Ov261_SetFacingAnchor(VecFx32 *anchor, VecFx32 *pos, VecFx32 *target);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, Quat *orient, const VecFx32 *src);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *d);
+extern int VEC_Normalize(const VecFx32 *a, VecFx32 *d);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void Ov107_BuildAndSendUpdate(int actor, int reaction, int mode, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void Ov261_HoverEntryTick(int *node);
 
 void Ov261_AimTick(int *node)
 {
     HoverState *state = (HoverState *)node[1];
-    Vec3 fwd;
-    Vec3 dir;
-    Vec3 *pos;
+    VecFx32 fwd;
+    VecFx32 dir;
+    VecFx32 *pos;
 
     state->speed = *(int *)(*node + 0x2c) * 30 / 15;
-    pos = (Vec3 *)(*(int *)(state->actor + 0x3a8) + 0x74);
+    pos = (VecFx32 *)(*(int *)(state->actor + 0x3a8) + 0x74);
     Ov261_SetFacingAnchor(&state->anchor, pos, state->pos);
     Vec3TransformViaTempMtx(&fwd, &state->orient, &data_02042258);
     VEC_Subtract(pos, state->pos, &dir);

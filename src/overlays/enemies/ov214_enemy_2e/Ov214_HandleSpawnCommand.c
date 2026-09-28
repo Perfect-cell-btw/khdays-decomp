@@ -3,8 +3,8 @@
  * message to the shared handler. */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
-typedef struct { int x, y, z; } VecFx32;
 typedef struct { int w[11]; } Srt;
 
 extern void SrtTransform_SetIdentity(Srt *srt);

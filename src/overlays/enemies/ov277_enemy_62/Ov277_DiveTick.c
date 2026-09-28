@@ -8,11 +8,13 @@
  * +0x384 rider: the first entity that accepts the velocity as its push (kind 2) gets the message
  * data_ov277_020d3674, flag 0x10, with the point of its +0x80 radius towards the actor, reaction
  * 0x165 mode 0xf fires and pose 0 is requested. Past 20.0 the dive gives up (pose 0). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -24,13 +26,13 @@ typedef struct { Vec3 center; int nRadius; } Sphere;
 typedef struct { int w[4]; } Quat;
 struct Bits17a { unsigned char b0 : 1, b1 : 1; };
 
-extern const Vec3 data_02042270;
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, void *out);
+extern const VecFx32 data_02042270;
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
 extern int Ov277_PickNearestMate(int rider);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *from, const Vec3 *to);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Slerp(void *out, int t, void *a, Quat *b);
 extern void Vec4_Normalize(void *out, void *in);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
@@ -55,14 +57,14 @@ void Ov277_DiveTick(int *node)
     Fx32 scratch2Z;
     Fx32 scratch2Y;
     Fx32 scratch2X;
-    Vec3 dir;
+    VecFx32 dir;
     Quat turn;
-    Vec3 toTarget;
-    Vec3 raw;
+    VecFx32 toTarget;
+    VecFx32 raw;
     Cmd14 landMsg;
     Sphere sphere;
     int hits[4];
-    Vec3 point;
+    VecFx32 point;
     Cmd14 msg;
     int n;
     int i;
@@ -84,7 +86,7 @@ void Ov277_DiveTick(int *node)
         }
         if (((struct Bits17a *)(*state + 0x17a))->b0 || ((struct Bits17a *)(*state + 0x17a))->b1) {
             landMsg = data_ov277_020d3682;
-            raw = *(Vec3 *)state[7];
+            raw = *(VecFx32 *)state[7];
             raw.y -= 0x900;
             PACK(landMsg, scratchX, *(Fx32 *)&raw.x, 5);
             PACK(landMsg, scratchY, *(Fx32 *)&raw.y, 8);

@@ -4,6 +4,7 @@
  * is hidden.  Leading zeros are hidden until the first non-zero digit (the last
  * cell is always shown); each shown cell gets its digit frame.
  */
+
 #include "nitro/types.h"
 
 #define VALUE_MAX   999999

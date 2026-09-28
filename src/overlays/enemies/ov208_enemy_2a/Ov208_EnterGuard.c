@@ -3,22 +3,23 @@
  * commands 2 and 3 with the zero vector, fires reaction 0x154 mode 0xd at the +8 point, keeps the
  * +0x394 partner's sub-state in the +0x44 byte, clears the +0x40 timer, keeps the +8 point at
  * +0x24, clears the +0x45 byte and hands the tick over to Ov208_ItemSweepTick. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 v, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov208_ItemSweepTick(int *node);
 
 void Ov208_EnterGuard(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 zero = data_02041dc8;
+    VecFx32 zero = data_02041dc8;
     u16 v;
 
     v = *(u16 *)(*state + 0x60);
@@ -30,7 +31,7 @@ void Ov208_EnterGuard(int *node)
     Ov107_BuildAndSendUpdate(*state, 0x154, 0xd, (void *)state[2]);
     *(unsigned char *)((char *)state + 0x44) = *(signed char *)(*(int *)(*state + 0x394) + 0x1c6);
     state[0x10] = 0;
-    *(Vec3 *)(state + 9) = *(Vec3 *)state[2];
+    *(VecFx32 *)(state + 9) = *(VecFx32 *)state[2];
     *(unsigned char *)((char *)state + 0x45) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov208_ItemSweepTick);
 }

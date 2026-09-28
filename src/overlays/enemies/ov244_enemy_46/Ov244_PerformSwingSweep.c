@@ -1,11 +1,12 @@
 /* Swing sweep for ov114: probe the forward volume, notify each accepted hit,
  * spawn reaction 0x112 at the target position, and report whether any hit was accepted. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+typedef struct { VecFx32 pos; int radius; } Sphere;
 
 struct Msg {
     u16 h[7];
@@ -15,27 +16,27 @@ struct Ov114Actor {
     char pad000[0x24];
     void (*pfnMessage)(struct Ov114Actor *self, struct Msg *msg, int size);
     char pad028[0x74 - 0x28];
-    Vec3 position;
+    VecFx32 position;
 };
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectSphereOverlaps(struct Ov114Actor *owner, Sphere *sphere, struct Ov114Actor **out);
-extern int Ov107_InvokeHitCallback(struct Ov114Actor *hit, struct Ov114Actor *a, struct Ov114Actor *b, int kind, const Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(struct Ov114Actor *hit, struct Ov114Actor *a, struct Ov114Actor *b, int kind, const VecFx32 *push, int z);
 extern char **func_ov107_020c9848(void);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern void Ov107_BuildAndSendUpdate(struct Ov114Actor *owner, u16 a, u16 id, Vec3 *pos);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void Ov107_BuildAndSendUpdate(struct Ov114Actor *owner, u16 a, u16 id, VecFx32 *pos);
 extern const short data_0203d210[];
 extern const struct Msg data_ov244_020d37a8;
 
 #pragma opt_dead_assignments off
 int Ov244_PerformSwingSweep(int *state, int kind)
 {
-    Vec3 fwd;
-    Vec3 push;
+    VecFx32 fwd;
+    VecFx32 push;
     Sphere sphere;
     struct Ov114Actor *hits[4];
-    Vec3 impact;
+    VecFx32 impact;
     struct Msg msg;
     struct Msg tmpl;
     FxVec vContact;
@@ -61,7 +62,7 @@ int Ov244_PerformSwingSweep(int *state, int kind)
     pMsg = 0;
     ScaleVec3Fx12(0x400, &fwd, &push);
     ScaleVec3Fx12(0xc00, &fwd, &sphere.pos);
-    VEC_Add((Vec3 *)state[2], &sphere.pos, &sphere.pos);
+    VEC_Add((VecFx32 *)state[2], &sphere.pos, &sphere.pos);
     sphere.radius = 0x600;
     n = Ov107_CollectSphereOverlaps((struct Ov114Actor *)*state, &sphere, hits);
     i = hitAny;
@@ -73,7 +74,7 @@ int Ov244_PerformSwingSweep(int *state, int kind)
                 hit = hits[i];
                 pMsg = &msg;
                 flip = kind == 1 ? 1 : 0;
-                if (VEC_DotProduct((Vec3 *)(*func_ov107_020c9848() + 0x7c), &fwd) > 0) {
+                if (VEC_DotProduct((VecFx32 *)(*func_ov107_020c9848() + 0x7c), &fwd) > 0) {
                     flip = (flip + 1) & 1;
                 }
                 if (flip == 0) {

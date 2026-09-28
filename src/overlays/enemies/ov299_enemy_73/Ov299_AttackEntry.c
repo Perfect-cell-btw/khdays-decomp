@@ -2,7 +2,8 @@
  * deactivates the +0x388 shape, aims effect 0 at the +4 target position and fires reaction
  * 0x170/4 there; the +0x24 timer and the +0xc velocity are cleared before handing off to the
  * d45d4 tick. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);

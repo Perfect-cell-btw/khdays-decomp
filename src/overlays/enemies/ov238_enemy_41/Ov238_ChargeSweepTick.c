@@ -7,9 +7,11 @@
  * of the world list (not the partner) with a shown part inside the sphere then gets a kind-4 44-byte
  * packet through 020c5cfc (random reaction, partner power, owner +0x258 reaction, knock 100) and is
  * marked on acceptance. Once the clock reaches 2.0 +0x390 clears and sub-state 0 follows. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
 struct Atk { u8 b0; u8 bits; u8 r2; u8 r3; u16 power; };
 struct Rider { char pad[0x28c]; struct Atk atk[2]; };
 struct ListNode { void *item; };
@@ -27,7 +29,7 @@ struct Obj {
 
 struct HitPacket40 {
     int nKind;
-    Vec3 vNormal;
+    VecFx32 vNormal;
     int nPower;
     int nReaction;
     u8 bKnock;
@@ -37,7 +39,7 @@ struct HitPacket40 {
 
 struct HitPacket {
     u32 flags00;
-    Vec3 normal;
+    VecFx32 normal;
     u32 field10;
     u32 field14;
     void *pPart;
@@ -48,7 +50,7 @@ struct HitPacket {
 struct ChargeState {
     int pOwner;             /* +0x00 */
     int pad04;
-    Vec3 *pPos;             /* +0x08 */
+    VecFx32 *pPos;             /* +0x08 */
     char pad0c[0x10];
     unsigned long long mask; /* +0x1c */
     int pad24;
@@ -60,7 +62,7 @@ typedef int (*HitHook)(u16 id, struct HitPacket40 *packet);
 
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *query, int *out);
 extern int RandNextScaled(int bound);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern struct ListNode *List_First(void *list);
 extern struct ListNode *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(void *part, Sphere *shape, int flag);
@@ -74,10 +76,10 @@ void Ov238_ChargeSweepTick(int *node)
 {
     struct ChargeState *st = (struct ChargeState *)node[1];
     Sphere sphere;
-    Vec3 dir;
+    VecFx32 dir;
     int hits[4];
     struct HitPacket40 packet1 = {0};
-    Vec3 at;
+    VecFx32 at;
     long n;
     long i;
     int partner = *(int *)(st->pOwner + 0x398);
@@ -118,7 +120,7 @@ void Ov238_ChargeSweepTick(int *node)
                     packet1.bKnock = 100;
                     packet1.pSource = *(int *)(st->pOwner + 0x398);
                     if ((*(HitHook *)(hits[i] + 0x1c4))(*(u16 *)(hits[i] + 2), &packet1) != 0) {
-                        at = *(Vec3 *)(hits[i] + 0x190);
+                        at = *(VecFx32 *)(hits[i] + 0x190);
                         *(int *)(st->pOwner + 0x394) = 1;
                         st->mask |= (long long)bit;
                         at.y += 0x1800;

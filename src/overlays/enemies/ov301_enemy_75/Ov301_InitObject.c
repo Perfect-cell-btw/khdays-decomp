@@ -22,6 +22,9 @@
  *
  * With this, ov301 is 16/16.
  */
+
+#include "nitro/fx.h"
+
 extern int Ov301_OnDespawn, Ov301_PropagateBlockToLinkedNodes, Ov301_CreateRegistryEntryForActor;
 extern int func_ov301_020cc1d8, func_ov301_020cc1e4;
 extern int Ov301_OnHitQueueAction3, Ov301_SetSubitemStatesAndConfig;
@@ -33,8 +36,7 @@ extern int *List_InsertSorted(void *p, int sz, int n);
 extern int Ov107_Mover_New(void *p);
 extern int Ov107_CloneResourceTransform(void *p);
 
-struct Vec3 { int x, y, z; };
-struct Box  { struct Vec3 min, max; };
+struct Box  { VecFx32 min, max; };
 struct WorkBlock { int v[8]; };
 
 struct Ov301Obj {
@@ -115,8 +117,8 @@ void Ov301_InitObject(struct Ov301Obj *self)
 
     self->flags1ae |= 0x10;
 
-    *(struct Vec3 *)&work.v[0] = *(struct Vec3 *)data_02041dc8;
-    *(struct Vec3 *)&work.v[3] = *(struct Vec3 *)data_02042264;
+    *(VecFx32 *)&work.v[0] = *(VecFx32 *)data_02041dc8;
+    *(VecFx32 *)&work.v[3] = *(VecFx32 *)data_02042264;
     work.v[6] = 0x4000;
     work.v[7] = 0x1900;
 

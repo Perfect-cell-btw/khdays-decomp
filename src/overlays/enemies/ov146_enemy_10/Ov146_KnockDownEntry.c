@@ -2,12 +2,14 @@
  * guard (+0x58), the actor plays effect 1 at the partner's +0x74 point; bit 0 of the +0x60 high byte
  * clears, bits 0-1 of +0x1ae and bits 1, 2 and 7 of the high byte are set, the +0x3ac shape hides,
  * sound 0/0x4a plays at the actor, the +0x3bc effect stops, the next move is 0 and the node ends. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern int Ov146_Rider_SetFlagIfReady(int a, int b);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
 extern int Ov146_Mount_SetStateIfReady(int param_1, int param_2);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -18,7 +20,7 @@ void Ov146_KnockDownEntry(int *node)
 
     Ov146_Rider_SetFlagIfReady(state[2], 0);
     if (state[0x16] == 0) {
-        func_ov107_020c0b90(*state, 1, *(Vec3 *)(state[2] + 0x74), 0);
+        func_ov107_020c0b90(*state, 1, *(VecFx32 *)(state[2] + 0x74), 0);
     }
     {
         u16 hw = *(u16 *)(*state + 0x60);

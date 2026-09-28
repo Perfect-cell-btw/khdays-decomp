@@ -1,11 +1,7 @@
 /* World screen open handler: resets the world state, camera presets and feature flags from the game
  * state. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int radialX;                   /* +0x00 */

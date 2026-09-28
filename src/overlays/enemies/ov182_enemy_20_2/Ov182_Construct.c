@@ -6,20 +6,16 @@
  * (+0x398, attached, bit 1 on their +0x5c), configures action 2 (mode 2, rate 0x3000) and
  * creates two placements from the actor's +0x64 pose: +0x388 on the +0x22c list and +0x38c on
  * the +0x144 list; sound 0x131 is loaded. */
-#include "nitro/types.h"
 
-struct Ov181Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov181SubitemSlot {
     void *subitem;
     int pad;
 };
 
-extern struct Ov181Vec3 data_ov182_020d0818;
+extern VecFx32 data_ov182_020d0818;
 extern const char data_ov182_020d086c[];
 
 extern void Ov182_Destroy(void);
@@ -45,7 +41,7 @@ extern void Res_RequestIdPair();
 
 void Ov182_Construct(int param)
 {
-    struct Ov181Vec3 kinds;
+    VecFx32 kinds;
     int i;
 
     kinds = data_ov182_020d0818;

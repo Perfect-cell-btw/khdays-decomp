@@ -9,11 +9,7 @@
  * last word lands exactly where the ABI wants it. Storing it into a temp first instead would change
  * the schedule. See codegen-cracks.md. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern void func_ov107_020c0b90(int obj, int kind, VecFx32 v, int flag);

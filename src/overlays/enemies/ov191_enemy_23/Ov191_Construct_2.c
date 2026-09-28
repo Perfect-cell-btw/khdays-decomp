@@ -5,7 +5,9 @@
  * its four channels bound with (0, 1), state cleared), the two sub-items from pool entries 5 and 7
  * into a fresh 16-byte slot table (+0x390, attached, bit 1 on their +0x5c), and the +0x388 list
  * node gets a placement built from the actor's +0x64 pose with bit 1 raised on its +8 flags. */
+
 #include "nitro/types.h"
+
 typedef void (*Callback)(void);
 
 struct Ov191SubitemSlot {

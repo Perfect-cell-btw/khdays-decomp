@@ -2,6 +2,7 @@
  * draws the page text, scrolls the page and places the selection markers. */
 
 #include "nitro/types.h"
+
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

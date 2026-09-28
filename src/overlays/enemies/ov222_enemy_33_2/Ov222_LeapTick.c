@@ -8,16 +8,18 @@
  * ov221 0a2c with mode 3. Past the duration the tick waits for the +4 owner's +0xad byte to
  * clear, requests sub-state 2 -- or 8 with a lock when none of the +0x3ec family's four
  * members has a +0x38c item -- and ends the action. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 struct Ov221Family { char pad[0x3ec]; char *aMembers[4]; };
 
-extern int Ov222_MeasureTargetGap(int *node, Vec3 *dir);
+extern int Ov222_MeasureTargetGap(int *node, VecFx32 *dir);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *at);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern int func_02020400(int nNum, int nDen);
 extern int FX_Div(int a, int b);
 extern int FX_Inv(int v);
@@ -54,10 +56,10 @@ void Ov222_LeapTick(int *node)
             MTX_RotY33_(&mtx, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
         }
         z = state[0xd];
-        ((Vec3 *)(state + 5))->x = 0;
-        ((Vec3 *)(state + 5))->y = 0;
-        ((Vec3 *)(state + 5))->z = z;
-        MTX_MultVec33((Vec3 *)(state + 5), &mtx, (Vec3 *)(state + 5));
+        ((VecFx32 *)(state + 5))->x = 0;
+        ((VecFx32 *)(state + 5))->y = 0;
+        ((VecFx32 *)(state + 5))->z = z;
+        MTX_MultVec33((VecFx32 *)(state + 5), &mtx, (VecFx32 *)(state + 5));
         if (state[0x1c] == 0) {
             lift = 0;
         } else {

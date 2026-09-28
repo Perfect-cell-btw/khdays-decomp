@@ -9,6 +9,7 @@
  * otherwise the rows are rebuilt from the new first row (0205e2e0).  Finally
  * the row is highlighted relative to the scroll row.  Returns 1.
  */
+
 #include "nitro/types.h"
 
 #define VISIBLE_ROWS  8

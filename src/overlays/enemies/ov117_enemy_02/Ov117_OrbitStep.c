@@ -6,6 +6,8 @@
  * the action. Otherwise the action ends on its own once the timer reaches 0x1000, handing the node
  * to the follow-up. */
 
+#include "nitro/fx.h"
+
 typedef struct {
     int x;
     int y;
@@ -14,20 +16,14 @@ typedef struct {
 } Vec4;
 
 typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
-
-typedef struct {
     int owner;
     char padding04[0x28];
-    Vec3 motion;
+    VecFx32 motion;
     char padding38[0x0c];
     int *related;
     char padding48[0x18];
     int timer;
-    Vec3 direction;
+    VecFx32 direction;
     int baseY;
     int landingY;
 } Ov117MoveState;
@@ -47,7 +43,7 @@ static inline int FX_Mul(int a, int b) {
     return (int)(((long long)a * b + 0x800) >> 12);
 }
 
-static inline void SetVec3(Vec3 *dst, int x, int y, int z) {
+static inline void SetVec3(VecFx32 *dst, int x, int y, int z) {
     dst->x = x;
     dst->y = y;
     dst->z = z;

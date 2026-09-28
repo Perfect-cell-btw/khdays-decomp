@@ -4,6 +4,7 @@
  * clears the wait queue at +0x44c of the second reader, installs the two request hooks (EnqueueGfxCmd0 / EnqueueGfxCmd1), sets up the 32-slot request
  * queue and starts the loader thread (FileLoader_ThreadMain, priority 0x11, 0x240-byte stack in DTCM).
  * Returns TRUE. */
+
 #include "nitro/types.h"
 
 typedef struct OSThreadQueue {

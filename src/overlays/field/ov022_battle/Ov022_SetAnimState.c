@@ -17,12 +17,7 @@
  */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 #define FLAG_BIT28 (1ULL << 28)
 #define FLAG_BIT33 (1ULL << 33)
@@ -69,7 +64,7 @@ struct Actor {
     u8 pad0024[0x440];
     u64 nFlags2;                 /* 0x0464 */
     u8 pad046c[0x20];
-    struct Vec3 vecAim;          /* 0x048c */
+    VecFx32 vecAim;          /* 0x048c */
     u8 pad0498[0x46];
     u16 nLatchedArg;             /* 0x04de */
     u8 pad04e0[3];
@@ -96,9 +91,9 @@ extern int Ov022_GetByteCOrA(struct AnimRequest *pReq);                       /*
 extern int Ov002_GetModeBlendFrames(int nNewMode, int nOldMode, int nKind);          /* Ov002_GetModeBlendFrames */
 extern void func_ov022_020a3c78(struct Actor *pActor, void *pAnim, int nSub, int nBlend);   /* SetSlot2c28AndPlay */
 extern int Session_GetLocalPlayerIndex(void);                                                 /* Session_GetLocalPlayerIndex */
-extern void func_ov022_020ad44c(struct Vec3 *pOut, struct Actor *pActor);       /* CopyVec3FromSub948 */
-extern void Ov022_RotateAboutAxis(u8 *pBlk, struct Vec3 *pVec, int nAngle);       /* Ov022_RotateAboutAxis */
-extern void Ov022_ApplyVec3AndResetTracks(u8 *pBlk, struct Vec3 *pVec);                   /* Ov022_ApplyVec3AndResetTracks */
+extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pActor);       /* CopyVec3FromSub948 */
+extern void Ov022_RotateAboutAxis(u8 *pBlk, VecFx32 *pVec, int nAngle);       /* Ov022_RotateAboutAxis */
+extern void Ov022_ApplyVec3AndResetTracks(u8 *pBlk, VecFx32 *pVec);                   /* Ov022_ApplyVec3AndResetTracks */
 extern int Ov022_GetSlotMoveMode(u8 *pCtx, int nSlotState);                       /* Ov022_GetSlotMoveMode */
 extern void func_ov022_020b19cc(struct AnimRequest *pReq, int nAnim, int nMode);   /* SetSlotHeaderDispatch */
 extern void Ov022_SetRecordValue(u8 *pCtx, int nValue);                          /* Ov022_SetRecordValue */
@@ -110,7 +105,7 @@ extern void *Ov022_GetWordAt0x340Plus4(u8 *pRun);                               
 
 void Ov022_SetAnimState(struct Actor *pActor, int nAnim)
 {
-    struct Vec3 vecSub;
+    VecFx32 vecSub;
     int bSkip;
     int bChanged;
     int nSub;

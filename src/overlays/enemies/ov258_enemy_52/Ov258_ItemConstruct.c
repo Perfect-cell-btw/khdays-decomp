@@ -3,10 +3,12 @@
  * radius (3), the body at the origin with no speed; model 0x28 of the owner's +0x390 set becomes the
  * +0x384 rig (subscribed to +0x9c) and a 13.9-long upright capsule of radius 0.7 is registered in the
  * +0x144 pool (+0x388). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 
 extern void Ov258_OnDespawn(void);
 extern void Ov258_TickSyncXform(void);
@@ -16,13 +18,13 @@ extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int *List_InsertSorted(void *pool, int count, int size);
 extern int Ov107_Mover_New(const Capsule *capsule);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
 
 void Ov258_ItemConstruct(char *self)
 {
     Capsule body;
-    Vec3 origin;
+    VecFx32 origin;
     int set = *(int *)(self + 0x390);
     int *slot;
 
@@ -37,7 +39,7 @@ void Ov258_ItemConstruct(char *self)
     }
     *(int *)(self + 0x70) = 3;
     origin = data_02041dc8;
-    *(Vec3 *)(self + 0x64) = origin;
+    *(VecFx32 *)(self + 0x64) = origin;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
     *(u16 *)(self + 0x1ae) |= 0xc;

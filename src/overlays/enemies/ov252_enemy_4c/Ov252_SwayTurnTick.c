@@ -6,15 +6,16 @@
  * point) is still on the phase's side (020ce42c) with the +0x84 pose replayed; in phases 3 and 4 it
  * rises or sinks at 0.625. Advancing plays the next +0x84 pose, motion 5 (phase 1) or 8 (phase 2),
  * clears +0x64 and moves on to 020cfa28. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
 
-extern void Ov252_TurnVecY(Vec3 *out, int angle, Vec3 *vec);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern u8 Ov252_TurnSide(int *state, Vec3 v);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern u8 Ov252_TurnSide(int *state, VecFx32 v);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
-extern int Ov252_CheckTarget(int *node, Vec3 *delta, int face);
+extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern int Ov252_PickMove(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_RetreatDecision(void);
@@ -24,22 +25,22 @@ void Ov252_SwayTurnTick(int *node)
 {
     int *state = (int *)node[1];
     int idle = *(u8 *)(state[1] + 0xad) == 0;
-    Vec3 d;
-    Vec3 delta;
-    Vec3 v;
+    VecFx32 d;
+    VecFx32 delta;
+    VecFx32 v;
     int actor;
 
     state[0x19] += *(int *)(node[0] + 0x2c);
-    Ov252_TurnVecY(&v, state[0x15], (Vec3 *)(*(int *)(*state + 0x574) + 0x2c));
-    *(Vec3 *)(state + 3) = v;
-    ScaleVec3Fx12(state[0x1c] + 0x800, (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    *(VecFx32 *)(state + 3) = v;
+    ScaleVec3Fx12(state[0x1c] + 0x800, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     switch (*(u8 *)(*state + 0x579)) {
     case 1:
     case 2:
         state[0x16] = state[0x15] + (*(u8 *)(*state + 0x579) == 2 ? 0x430 : -0x430);
-        d.x = state[6] - ((Vec3 *)state[2])->x;
+        d.x = state[6] - ((VecFx32 *)state[2])->x;
         d.y = 0;
-        d.z = state[8] - ((Vec3 *)state[2])->z;
+        d.z = state[8] - ((VecFx32 *)state[2])->z;
         if (!idle) {
             return;
         }

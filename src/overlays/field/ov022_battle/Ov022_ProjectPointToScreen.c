@@ -7,13 +7,10 @@
  * back as fx32, and the projector's own answer (or -1) is the result.
  */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022ScreenPos: an fx32 screen position */
+
+#include "nitro/fx.h"
+
 struct ScreenPos {
     int x;
     int y;

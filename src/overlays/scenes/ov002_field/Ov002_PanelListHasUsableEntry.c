@@ -9,6 +9,7 @@
  * under EQ, compares that against zero under EQ too, and a single movne/return
  * pair then serves both arms.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

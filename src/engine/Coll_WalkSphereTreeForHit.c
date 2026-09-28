@@ -1,5 +1,6 @@
 /* Sphere-cast tree traversal. Static faces use the 132-byte format;
  * dynamic objects return the shared hit-face sentinel. */
+
 #include "nitro/types.h"
 
 typedef struct CollisionFace84 CollisionFace84;

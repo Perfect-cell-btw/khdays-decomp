@@ -2,6 +2,7 @@
  * quantities, the column labels or the selected item's description. */
 
 #include "nitro/types.h"
+
 typedef struct FontInfo { int opaque[3]; } FontInfo;
 typedef struct TileSurface {
     void *pixels;

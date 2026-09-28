@@ -1,5 +1,4 @@
 /* Ov164_HomingDashTick: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-#include "nitro/types.h"
 
 /*
  * Coordinates are held in a one-value wrapper type (Fx32), a tentative
@@ -7,6 +6,9 @@
  * a struct copy, which mwcc keeps, and that is the ROM's unread stack copy of
  * the position.
  */
+
+#include "nitro/types.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 

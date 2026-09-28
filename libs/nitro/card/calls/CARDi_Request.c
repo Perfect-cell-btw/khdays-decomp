@@ -1,4 +1,5 @@
 #include "nitro/types.h"
+
 typedef s32 PXIFifoTag;
 typedef s32 PXIProc;
 typedef s32 CARDResult;

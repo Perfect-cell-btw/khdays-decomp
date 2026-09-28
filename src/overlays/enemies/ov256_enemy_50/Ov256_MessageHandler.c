@@ -4,16 +4,17 @@
  * bytes 5..13 (020d0c8c with the +0x4ac model, into +0x4b0), 10 / 12 on the +0x434 claw and 11 / 13 on
  * the +0x438 claw, 1 and 15 on the actor's +0xa0 node (byte 4 as the variant). The base handler always
  * runs. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int parent, int kind, int zero, int scale, void *spot);
 extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
-extern int Ov256_SpawnShard(int owner, int model, Vec3 *pos);
+extern int Ov256_SpawnShard(int owner, int model, VecFx32 *pos);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 
 void Ov256_MessageHandler(int owner, unsigned char *command, int arg)
 {
-    Vec3 pos;
+    VecFx32 pos;
     union {
         int words[3];
         unsigned char bytes[12];

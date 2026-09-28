@@ -3,12 +3,7 @@
 #pragma opt_propagation off
 
 #include "nitro/types.h"
-
-struct Ov022ColorVector {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Ov022ColorBuffer {
     u8 channel[6];
@@ -17,7 +12,7 @@ struct Ov022ColorBuffer {
 struct Ov022ColorWork {
     struct Ov022ColorBuffer color;
     char _pad06[2];
-    struct Ov022ColorVector vector;
+    VecFx32 vector;
 };
 
 struct Ov022ActiveState {
@@ -25,7 +20,7 @@ struct Ov022ActiveState {
     void *activeBase;
 };
 
-extern struct Ov022ColorVector *func_ov022_020881f8(int kind);
+extern VecFx32 *func_ov022_020881f8(int kind);
 extern int Ov022_GetEntryField66(int kind);
 extern int Ov002_GetSlotTableByte(int state);
 extern void Ov002_SpawnAllDrops(u8 *color, u16 id, int *vector);

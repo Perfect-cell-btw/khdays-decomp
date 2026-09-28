@@ -1,6 +1,5 @@
 /* Ov164_ThrowReleaseTick: ported from the matched ov202 sibling (same shape: throw-release tick with the 0xc00 guard, a fixed 0x3000 radius and the +0x60 bit-7 set at the end). */
 /* Ov164_ThrowReleaseTick: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-#include "nitro/types.h"
 
 /*
  * Coordinates are held in a one-value wrapper type (Fx32), a tentative
@@ -8,6 +7,9 @@
  * a struct copy, which mwcc keeps, and that is the ROM's unread stack copy of
  * the position.
  */
+
+#include "nitro/types.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 

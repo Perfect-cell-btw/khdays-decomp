@@ -5,6 +5,7 @@
  * handlers (init 02082294, release 020822cc, rebind 02082380, 020822c0, start 020822e0,
  * 020823a8) and stamp kind 1.  The hazard is the modelled object that delivers hits to the
  * pieces of the target slot (Ov016_HazardStep 02082444). */
+
 #include "nitro/types.h"
 
 typedef struct Ov016HazardDesc {

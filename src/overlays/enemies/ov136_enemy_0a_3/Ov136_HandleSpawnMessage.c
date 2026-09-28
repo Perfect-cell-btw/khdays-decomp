@@ -3,11 +3,13 @@
  * the message's packed position, the actor's +0xa0 quaternion and a unit scale (mode 0x15); sub 1
  * starts entry 2 from the payload (mode 0x15, weight 0xb33); sub 2 fixes entry 4 to the +0x394
  * item's +4 placement (mode 1). The base handler always runs. */
+
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern void Srt_SetRotationQuat(SrtTransform *transform, void *placement);
 extern void Srt_SetScaleUniform(SrtTransform *transform, int scale);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero, SrtTransform *transform);
@@ -18,7 +20,7 @@ extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 void Ov136_HandleSpawnMessage(int owner, unsigned char *command, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         unsigned char bytes[12];

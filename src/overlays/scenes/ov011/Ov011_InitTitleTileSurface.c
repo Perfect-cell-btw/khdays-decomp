@@ -6,9 +6,10 @@
  * scalar pointer load above the config stores. Returns what TileSurface_InitAndUpload4bpp returns.
  */
 
+/* TileSurfaceCfg */
+
 #include "nitro/types.h"
 
-/* TileSurfaceCfg */
 struct TileSurfaceCfg {
     int nUnk00;                  /* 0x00 */
     int nUnk04;                  /* 0x04 */

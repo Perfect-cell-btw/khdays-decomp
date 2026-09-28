@@ -10,7 +10,9 @@
  * `OVERLAY_24_ID = 24;` into arm9.lcf.  24 is an encodable ARM immediate, so spelled as a plain
  * integer the pool word disappears and the function comes out 4 bytes short.
  */
+
 #include "nitro/types.h"
+
 typedef u32 FSOverlayID;
 typedef void (*Ov000StateFn)(void);
 

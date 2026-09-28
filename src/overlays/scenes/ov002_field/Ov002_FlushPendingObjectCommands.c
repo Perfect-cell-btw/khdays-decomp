@@ -1,6 +1,8 @@
 /* Ov002_FlushPendingObjectCommands: clear queued commands only after submission. */
+
 #include "nitro/types.h"
-typedef struct VecFx32 {int x,y,z;} VecFx32;
+#include "nitro/fx.h"
+
 typedef struct Ov002PartRetireCmd {u8 nKind,nEntryIndex,nGroupIndex;} Ov002PartRetireCmd;
 typedef struct Ov002SessionSlotCmd {u8 nKind,nSlot;} Ov002SessionSlotCmd;
 typedef struct Ov002SessionSpawnCmd {u8 nKind;u8 nSlot:2,nStyle:6;u8 nEntry;s8 nKeyIndex;u8 nSeed,pad5[3];VecFx32 vPos;} Ov002SessionSpawnCmd;

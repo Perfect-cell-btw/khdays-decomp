@@ -6,15 +6,11 @@
  * to the owner at +0xf0 and reset to the neutral constant. (Twin of Ov158_AiApplyHeadingAndNormal; differs only
  * in the countdown test: >= 0 here vs > 0 there.) */
 
+#include "nitro/fx.h"
+
 typedef struct {
     int v[4];
 } Xform;
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
 
 extern int Angle_TurnToward(int a, int b, int c, int *state);
 extern void QuatFromAxisAngle(Xform *out, const Xform *src, int v);
@@ -22,7 +18,7 @@ extern void Quat_FromTwoVectors(Xform *out, const Xform *src, int rig);
 extern void Quat_Multiply(Xform *out, const Xform *a, const Xform *b);
 extern void Srt_SetRotationQuat(int dst, const Xform *x);
 extern Xform data_02042264;
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 void Ov114_AdvanceMotionPublish(int self) {
     int *ctx;
@@ -45,6 +41,6 @@ void Ov114_AdvanceMotionPublish(int self) {
      * what gives the ROM's post-indexed `ldr r0,[r4],#0x18`. It is ctx's last use. */
     owner = *ctx;
     ctx = (int *)((char *)ctx + 0x50);
-    *(Vec3 *)(owner + 0xf0) = *(Vec3 *)ctx;
-    *(Vec3 *)ctx = data_02041dc8;
+    *(VecFx32 *)(owner + 0xf0) = *(VecFx32 *)ctx;
+    *(VecFx32 *)ctx = data_02041dc8;
 }

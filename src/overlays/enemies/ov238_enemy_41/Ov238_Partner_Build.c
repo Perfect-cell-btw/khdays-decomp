@@ -6,9 +6,11 @@
  * byte clear, a second cylinder goes to the +0x144 pool (+0x38c), and the owner's four +0x3fc
  * shorts are copied to +0x39c. The +0x60 clear is a plain bitfield `&=`: the hand-expanded
  * insert keeps the fca8 argument setup out of the update. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 typedef struct { unsigned f : 8; } B8;
 struct Ov238Limits { char pad[0x39c]; short limits[4]; };
 struct Ov238Owner { char pad[0x3fc]; short limits[4]; };

@@ -26,9 +26,10 @@
  *    argument would be garbage. 020cc778's own prologue confirms it: r0/r1/r2 only.
  *  - The flags at node+0x32 and sub-node+0xad are `ldrb` = UNSIGNED. Each cost a byte.
  */
-struct Vecx32 { int x, y, z; };
 
-static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
+#include "nitro/fx.h"
+
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
     vec->y = y;
     vec->z = z;
@@ -37,12 +38,12 @@ static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern int Vec3TransformViaTempMtx(void *a, int m, void *d);
 extern int VEC_Add(void *a, int b, void *d);
-extern void Ov239_ContactSweep(int *node, int a, struct Vecx32 *v);
+extern void Ov239_ContactSweep(int *node, int a, VecFx32 *v);
 extern void SetIndexedSlot(int *self, int slot, int arg);
 
 void Ov239_TickFallingDebris(int *self) {
     int *node = (int *)self[1];
-    struct { struct Vecx32 v; int w; } b;
+    struct { VecFx32 v; int w; } b;
 
     node[0xb] += *(int *)(*self + 0x2c);
     if (*(unsigned char *)((int)node + 0x32) == 0 && node[0xb] >= 0x330) {

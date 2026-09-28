@@ -4,6 +4,7 @@
  * while the 3-bit story field 0x44e is below 2, items 0xca, 0xcc, 0xd2, 0xd3, 0xd8
  * and 0xda are hidden too.  Returns 1 otherwise.
  */
+
 #include "nitro/types.h"
 
 #define FIELD_STORY_STAGE 0x44e

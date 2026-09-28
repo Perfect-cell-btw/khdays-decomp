@@ -11,16 +11,12 @@
  * firing again for the rest of the walk.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* The walker's two matrices: the clip matrix carries a translation, the
  * directional one is only ever a rotation. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct {
     int m[9];
     VecFx32 t;

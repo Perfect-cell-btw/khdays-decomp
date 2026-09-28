@@ -15,6 +15,7 @@
  * +0x68).  Step 2 selects the current entry unless animating, draws heading
  * 2 and fades both engines in.
  */
+
 #include "nitro/types.h"
 
 #define FLAG_LIST_OPEN 0x200a

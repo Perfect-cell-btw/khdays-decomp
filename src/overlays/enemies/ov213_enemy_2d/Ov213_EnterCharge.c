@@ -3,16 +3,18 @@
  * (+0x74) at the target (+0x74) with the data_02042264 up vector, the +0x48 rate becomes 30/10
  * of the frame step, pose 8 plays on the actor and pose 0 on its +0x3dc partner, effect 9 is
  * spawned at the zero vector (data_02041dc8) and the node moves to 020ce88c. */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void Mtx33_LookAt(void *out, int a, int b, void *c);
 extern void Quat_FromMtx33(void *quat, void *mtx);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
-extern void func_ov107_020c0b90(int owner, int mode, struct vec v, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov213_LockOnEntry(void);
 extern int  data_02042264;
-extern struct vec data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 void Ov213_EnterCharge(int *self) {
     int *state = (int *)self[1];

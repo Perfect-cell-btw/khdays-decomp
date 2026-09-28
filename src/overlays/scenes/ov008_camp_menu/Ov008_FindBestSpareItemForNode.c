@@ -5,6 +5,7 @@
  * has the highest u16 rank at +0x92.  Returns the record, or 0 when the node has
  * no list or nothing qualifies.
  */
+
 #include "nitro/types.h"
 
 #define DB_ITEM_LISTS 0x16

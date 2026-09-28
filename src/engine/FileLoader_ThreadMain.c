@@ -12,6 +12,7 @@
  *   6  loads the sound data (NNS_SndArcLoadSeqArc) and its wave (NNS_SndArcLoadBank); reports 2 or 3.
  *   7  returns the request to the free list and goes idle.
  * A failed read terminates the thread; every busy state yields (OS_RescheduleThread). */
+
 #include "nitro/types.h"
 
 typedef struct OSThreadQueue {

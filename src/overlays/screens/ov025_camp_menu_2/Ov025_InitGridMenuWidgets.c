@@ -13,6 +13,7 @@
  * three release loops end on the inclusive bounds; the loops keep their
  * constant arguments in registers.
  */
+
 #include "nitro/types.h"
 
 #define ROW_WIDGET_BASE  400

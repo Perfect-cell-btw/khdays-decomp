@@ -22,17 +22,12 @@
  * the hit count is a u8 incremented with `and #0xff`; the four vectors
  * are declared heading, axis copy, forward, facing.
  */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
 #define FX32_PI      0x3244
 #define FX32_PI_HALF 0x1922
-
-typedef struct Vec3 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} Vec3;
 
 typedef struct DiveActor {
     u8   pad_000[0xa0];
@@ -52,8 +47,8 @@ typedef struct DiveState {
     u8   pad_24[4];
     int  nTimer;              /* 0x28 */
     u8   pad_2c[4];
-    Vec3 vVel;                /* 0x30 */
-    Vec3 vAxis;               /* 0x3c */
+    VecFx32 vVel;                /* 0x30 */
+    VecFx32 vAxis;               /* 0x3c */
     u8   nPasses;             /* 0x48 */
     u8   pad_49;
     u8   nPhase;              /* 0x4a */
@@ -69,14 +64,14 @@ typedef struct DiveNode {
     signed char nSlot;        /* 0x20 */
 } DiveNode;
 
-extern const Vec3 data_ov280_020d36b0;                                 /* base heading */
-extern const Vec3 data_02042258;                                       /* kVecForward */
-extern void  Ov280_rotateVecByOwnerYaw(Vec3 *pOut, DiveNode *pNode, const Vec3 *pIn); /* rotate by the owner yaw */
+extern const VecFx32 data_ov280_020d36b0;                                 /* base heading */
+extern const VecFx32 data_02042258;                                       /* kVecForward */
+extern void  Ov280_rotateVecByOwnerYaw(VecFx32 *pOut, DiveNode *pNode, const VecFx32 *pIn); /* rotate by the owner yaw */
 extern void  Ov280_AcquireTarget(DiveNode *pNode);                      /* update the heading */
-extern void  ScaleVec3Fx12(int nScale, const Vec3 *pSrc, Vec3 *pDst);   /* ScaleVec3Fx12 */
-extern void  Vec3TransformViaTempMtx(Vec3 *pOut, void *pSrt, const Vec3 *pIn);    /* Vec3TransformViaTempMtx */
-extern void  VEC_DotProduct(Vec3 *pOut, const Vec3 *pIn);
-extern int   Ov280_ProbeGround(DiveNode *pNode, const Vec3 *pDir, int nArg); /* probe for a hit */
+extern void  ScaleVec3Fx12(int nScale, const VecFx32 *pSrc, VecFx32 *pDst);   /* ScaleVec3Fx12 */
+extern void  Vec3TransformViaTempMtx(VecFx32 *pOut, void *pSrt, const VecFx32 *pIn);    /* Vec3TransformViaTempMtx */
+extern void  VEC_DotProduct(VecFx32 *pOut, const VecFx32 *pIn);
+extern int   Ov280_ProbeGround(DiveNode *pNode, const VecFx32 *pDir, int nArg); /* probe for a hit */
 extern void  SetIndexedSlot(DiveNode *pNode, int nSlot, void *pValue);   /* SetIndexedSlot */
 
 static inline fx32 FX_Mul(fx32 a, fx32 b)
@@ -86,10 +81,10 @@ static inline fx32 FX_Mul(fx32 a, fx32 b)
 
 void Ov280_AiDiveTick(DiveNode *pNode)
 {
-    Vec3 vDir;
-    Vec3 vAxis;
-    Vec3 vForward;
-    Vec3 vFacing;
+    VecFx32 vDir;
+    VecFx32 vAxis;
+    VecFx32 vForward;
+    VecFx32 vFacing;
     DiveState *pState;
     int bDone;
     signed char nSide;

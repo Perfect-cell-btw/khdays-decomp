@@ -8,15 +8,11 @@
  * ARM.
  */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad000[0x970];
-    Ov002Vec3 vDigitPos;
+    VecFx32 vDigitPos;
     char pad97c[0x3e4];
     int nTotalShown;
 } Ov002CounterScene;
@@ -30,7 +26,7 @@ extern void Ov002_DrawAndStepNode(void *pWidget);
 
 void Ov002_SceneDrawPanelTotal(void)
 {
-    Ov002Vec3 v;
+    VecFx32 v;
     int i;
     int nValue;
     Ov002CounterScene *s;

@@ -15,9 +15,10 @@
  * Returns whether the slot has finished this frame.
  */
 
+/* Ov022ActorSlot */
+
 #include "nitro/types.h"
 
-/* Ov022ActorSlot */
 struct ActorSlot {
     u8 pad000[2];
     u8 nSeq;                     /* 0x002 */

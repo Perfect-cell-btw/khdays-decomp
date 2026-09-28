@@ -4,7 +4,9 @@
  * (x4096 / 65536), afterwards it decays by 0x300 to zero. Once the speed is at most 0x200 and
  * the +4 item is idle (+0xad), bit 6 of the +0x60 flag high byte clears, the 020d0200 pass
  * runs, animation 0xb (looped) plays, the timer resets and the tick hands off to 020d1b00. */
-struct Vecx32 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void VEC_Subtract(void *a, void *b, void *d);
@@ -18,7 +20,7 @@ extern void Ov267_AiHoldTick(int *node);
 void Ov267_AlertApproachTick(int *node)
 {
     int *state = (int *)node[1];
-    struct Vecx32 dir;
+    VecFx32 dir;
     int len;
 
     VEC_Subtract((void *)(*state + 0x5c0), (void *)(*(int *)(*state + 0x38c) + 0x40), &dir);
@@ -26,7 +28,7 @@ void Ov267_AlertApproachTick(int *node)
     if (len > 0x300) {
         ScaleVec3Fx12(0x300, &dir, state + 4);
     } else {
-        *(struct Vecx32 *)(state + 4) = dir;
+        *(VecFx32 *)(state + 4) = dir;
         len = 0;
     }
     state[0x10] += *(int *)(*node + 0x2c);

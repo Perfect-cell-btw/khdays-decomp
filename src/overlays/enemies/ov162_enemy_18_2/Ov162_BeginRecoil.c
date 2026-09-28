@@ -3,6 +3,9 @@
  * from the table's second pair through the actor's +0x24 hook, play animation 7, clear the
  * actor's +0x3cc bit 0, zero the +0x24 vector and the +0x58/+0x30 counters and advance to
  * Ov162_RecoilTick. */
+
+#include "nitro/fx.h"
+
 extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov162_RecoilTick(void);
@@ -10,7 +13,6 @@ extern unsigned short data_ov162_020d1098[];
 extern int data_02041dc8[];
 
 typedef struct { unsigned short a, b; } Ov161Pair;
-typedef struct { int x, y, z; } VecFx32;
 
 void Ov162_BeginRecoil(int *node) {
     int *state = (int *)node[1];

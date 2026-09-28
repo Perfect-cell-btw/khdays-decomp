@@ -12,7 +12,9 @@
  * the wipe to sub-state 0 started and 0207c1cc follows.  Either way the
  * text loader (+0x60) is released and re-pointed at "UI/mlt/mlt_%s.z".
  */
+
 #include "nitro/types.h"
+
 typedef void (*MissionState)(void);
 
 #define FLAG_SINGLE_ROW 0x200d

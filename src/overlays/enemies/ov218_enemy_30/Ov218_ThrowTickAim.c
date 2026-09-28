@@ -4,8 +4,10 @@
  * by the +0xc heading, and the first unguarded +0x394 partner is thrown at it (020cdff8, 30 % spin).
  * After the throw, once the partner holds no queued move, the second throw (+0x20) re-runs 020cd658;
  * then the next move is 4. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 struct Ov218Actor { char pad[0x394]; int partners[2]; };
@@ -13,13 +15,13 @@ struct Ov218Actor { char pad[0x394]; int partners[2]; };
 extern int Ov218_DistanceToTarget(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern unsigned int RandNextScaled(int bound);
-extern void Ov218_PlaceAt(int partner, void *hand, Vec3 *aim, int spin);
+extern void Ov218_PlaceAt(int partner, void *hand, VecFx32 *aim, int spin);
 extern void Ov218_AiEnterAnim4IfTarget(void);
 extern const short data_0203d210[];
 
@@ -29,7 +31,7 @@ void Ov218_ThrowTickAim(int *node)
 {
     int *state = (int *)node[1];
     Mtx33 rot;
-    Vec3 aim;
+    VecFx32 aim;
     int i;
 
     if (Ov218_DistanceToTarget(node) < 0) {
@@ -48,9 +50,9 @@ void Ov218_ThrowTickAim(int *node)
         if (*(int *)(*state + 0x390) == 0) {
             return;
         }
-        aim = *(Vec3 *)(*(int *)(*state + 0x390) + 0x190);
+        aim = *(VecFx32 *)(*(int *)(*state + 0x390) + 0x190);
         aim.y += *(int *)(*(int *)(*state + 0x390) + 0x80);
-        VEC_Subtract(&aim, (Vec3 *)(*state + 0x39c), &aim);
+        VEC_Subtract(&aim, (VecFx32 *)(*state + 0x39c), &aim);
         VEC_Normalize(&aim, &aim);
         {
             int turn = state[3] - func_020050b4(aim.x, aim.z);

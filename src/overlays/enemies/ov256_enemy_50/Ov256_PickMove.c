@@ -5,6 +5,7 @@
  * 4: closer than 16.0 -> 8 (< 5), 9 (< 65) or 6; closer than 32.0 -> 0xa (< 25), 8 (< 75) or 6;
  * farther -> 0xa (< 10), 0xd (< 90) or 6. A target beyond x 14.0 always gets 0xd. When a move was
  * picked the idle time is rolled between the +0x224 / +0x228 bounds and 1 is returned, else 0. */
+
 #include "nitro/types.h"
 
 extern int RandNextScaled(int n);

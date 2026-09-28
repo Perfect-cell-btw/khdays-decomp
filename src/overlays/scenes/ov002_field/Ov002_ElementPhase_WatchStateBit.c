@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* The queue record the collector fills in. */
+
+#include "nitro/types.h"
+
 typedef struct {
     unsigned char bTag;             /* +0x00 */
     unsigned char bSource;          /* +0x01 filled by the collector */

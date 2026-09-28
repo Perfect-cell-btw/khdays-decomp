@@ -10,6 +10,7 @@
  * Several helpers here (e.g. Ov025_AcquireMsgDb, Ov025_DrawStatusPage) are invoked with only the
  * arguments this state actually sets; the trailing register args they also read are left as the
  * caller's residue, matching the ROM. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008State {

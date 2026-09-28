@@ -7,6 +7,7 @@
  * the list slots in mode 2 (02088a7c); entries 2, 3 and 1 become the up arrow, the down arrow
  * and the scroll knob (+0x2a4 / +0x2a8 / +0x2ac; FindEntryById 0208843c) and the knob is shown
  * (SetEntrySlotsVisible 0208884c). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008LayoutTemplate {

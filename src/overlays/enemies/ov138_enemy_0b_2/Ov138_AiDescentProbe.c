@@ -22,22 +22,17 @@
  * nearest distance is a signed 64-bit compare with the min in a register
  * pair (counter declared before the count); the hit branches come first.
  */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
-
-typedef struct Vec3 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} Vec3;
 
 typedef struct Quat {
     fx32 q[4];
 } Quat;
 
 typedef struct HitQuery {
-    Vec3 vOrigin;             /* 0x00 */
-    Vec3 vDir;                /* 0x0c */
+    VecFx32 vOrigin;             /* 0x00 */
+    VecFx32 vDir;                /* 0x0c */
     fx32 nSpeed;              /* 0x18 */
     fx32 nRange;              /* 0x1c */
 } HitQuery;
@@ -47,8 +42,8 @@ typedef struct DropState {
     char *pSrtA;              /* 0x04 */
     char *pSrtB;              /* 0x08 */
     char *pSrtC;              /* 0x0c */
-    Vec3  vPos;               /* 0x10 */
-    Vec3  vTarget;            /* 0x1c */
+    VecFx32  vPos;               /* 0x10 */
+    VecFx32  vTarget;            /* 0x1c */
     int   nTimer;             /* 0x28 */
     int   nHit;               /* 0x2c */
 } DropState;
@@ -60,17 +55,17 @@ typedef struct DropNode {
     signed char nSlot;        /* 0x20 */
 } DropNode;
 
-extern const Vec3 data_02042264;                                       /* kVecUp */
+extern const VecFx32 data_02042264;                                       /* kVecUp */
 extern int   Ov107_FindNearestObject(int nActor, int nArg);
 extern void  Task_MarkFinished(DropNode *pNode);                           /* Task_MarkFinished */
-extern int   Ov138_ProbeGround(DropState *pState, Vec3 *pStep, Vec3 *pNormal, fx32 nY);
-extern void  Quat_FromTwoVectors(Quat *pOut, const Vec3 *pFrom, const Vec3 *pTo);
+extern int   Ov138_ProbeGround(DropState *pState, VecFx32 *pStep, VecFx32 *pNormal, fx32 nY);
+extern void  Quat_FromTwoVectors(Quat *pOut, const VecFx32 *pFrom, const VecFx32 *pTo);
 extern void  Srt_SetRotationQuat(char *pSrt, const Quat *pRot);              /* Srt_SetRotationQuat */
-extern void  Srt_SetTranslation(char *pSrt, const Vec3 *pPos);              /* Srt_SetTranslation */
-extern fx32  VEC_Normalize(const Vec3 *pIn, Vec3 *pOut);                /* VEC_Normalize */
+extern void  Srt_SetTranslation(char *pSrt, const VecFx32 *pPos);              /* Srt_SetTranslation */
+extern fx32  VEC_Normalize(const VecFx32 *pIn, VecFx32 *pOut);                /* VEC_Normalize */
 extern int   Ov107_CollectSegmentOverlaps(int nActor, HitQuery *pQuery, int *pResults);
 extern void  Segment_ClosestPoint(void *pVolume, HitQuery *pQuery, fx64 *pDist);
-extern void  VEC_Add(const Vec3 *pA, const Vec3 *pB, Vec3 *pOut);
+extern void  VEC_Add(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
 extern void  SetIndexedSlot(DropNode *pNode, int nSlot, void (*pfnCallback)(void)); /* SetIndexedSlot */
 extern void  Ov138_EnterGroundDrop(void);
 
@@ -87,8 +82,8 @@ static inline fx32 FX_MulHigh64(fx64 a, fx32 b)
 void Ov138_AiDescentProbe(DropNode *pNode)
 {
     DropState *pState = pNode->pState;
-    Vec3 vStep = {0, 0, 0};
-    Vec3 vNormal;
+    VecFx32 vStep = {0, 0, 0};
+    VecFx32 vNormal;
     Quat rotA;
     Quat rotB;
     int aResult[4];

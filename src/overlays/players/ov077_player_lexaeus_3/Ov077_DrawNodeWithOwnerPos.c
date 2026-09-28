@@ -1,9 +1,9 @@
 /* When the effect node is in state 1, places it at the character's position turned with the
  * character and draws it. */
 
-extern void Scene_DrawNode(int a);
+#include "nitro/fx.h"
 
-typedef struct { int x, y, z; } Vec3;
+extern void Scene_DrawNode(int a);
 
 typedef struct {
     char pad0[0xc];
@@ -12,13 +12,13 @@ typedef struct {
     char pad12[0x7a];
     unsigned short angle;
     char pad8e[0x26];
-    Vec3 vec;
+    VecFx32 vec;
 } Node;
 
 void Ov077_DrawNodeWithOwnerPos(int self, Node *node) {
-    Vec3 v;
+    VecFx32 v;
     if (node->kind != 1) return;
-    v = *(Vec3 *)(self + 0x8c + 0x400);
+    v = *(VecFx32 *)(self + 0x8c + 0x400);
     node->angle = (unsigned short)(*(unsigned short *)(*(int *)(self + 0x20) + 0x80) - 0x8000) + 0x8000;
     node->flags |= 0x20;
     node->vec = v;

@@ -2,9 +2,10 @@
  * +0x54 heading; once the partner holds no queued move, when the landing spot is taken (020cdc78) pose
  * 0xf plays, the part takes motion 0x14 and the node moves on to 020d0b44, else pose 0xe and motion 0x13
  * restart. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void Ov252_TurnVecY(Vec3 *out, int angle, Vec3 *vec);
+#include "nitro/fx.h"
+
+extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
 extern int Ov252_GroundCheck(int *node);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
@@ -14,10 +15,10 @@ extern void Ov252_TickLand(void);
 void Ov252_DriftLandTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 v;
+    VecFx32 v;
 
-    Ov252_TurnVecY(&v, state[0x15], (Vec3 *)(*(int *)(*state + 0x574) + 0x2c));
-    *(Vec3 *)(state + 3) = v;
+    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    *(VecFx32 *)(state + 3) = v;
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }

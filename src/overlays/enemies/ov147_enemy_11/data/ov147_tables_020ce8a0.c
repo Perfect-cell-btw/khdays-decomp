@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov147_ResolveHitReaction (020cc800): const struct ReactionModes data_ov147_020ce8a0; */
+
 #include "nitro/types.h"
 
-/* read by Ov147_ResolveHitReaction (020cc800): const struct ReactionModes data_ov147_020ce8a0; */
 const u8 data_ov147_020ce8a0[8] = {
     2, 3, 0, 1, 96, 8, 0, 0,
 };

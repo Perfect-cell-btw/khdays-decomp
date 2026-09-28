@@ -6,10 +6,10 @@
  * rotation (or the inverse view) and the saved position matrix, folds in the clip matrix read back
  * from the projection stack, sets the texture coordinate offset from it and restores the position
  * matrix; the command pointer always advances by 3. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
-typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22; } MtxFx33;
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22, _30, _31, _32; } MtxFx43;
 typedef struct {

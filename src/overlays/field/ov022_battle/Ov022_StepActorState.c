@@ -19,6 +19,7 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define HIT_KIND_REACT 0xd
 #define ACTION_BIT 4
@@ -29,12 +30,6 @@
 #define FLAGS_END 0x4ULL
 #define FLAGS2_REQUEST 0x2ULL
 #define FLAGS2_SKILL 0x80ULL
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 /* Ov022ActorNode */
 struct ActorNode {
@@ -59,7 +54,7 @@ struct Actor {
     u8 pad005c[0x408];
     u64 nFlags2;                 /* 0x0464 */
     u8 pad046c[0x2c];
-    struct VecFx32 vecStep;      /* 0x0498 */
+    VecFx32 vecStep;      /* 0x0498 */
     u8 pad04a4[0x1c0];
     PreDrawFn pfnPreDraw;        /* 0x0664 */
     PostDrawFn pfnPostDraw;      /* 0x0668 */
@@ -77,7 +72,7 @@ struct Actor {
     int nHit;                    /* 0x06bc */
 };
 
-extern void Ov022_TakeDriftStep(struct Actor *pActor, struct VecFx32 *pOutStep);
+extern void Ov022_TakeDriftStep(struct Actor *pActor, VecFx32 *pOutStep);
 /* Ov022_PlayEntityVoice */
 extern u32 Ov022_PlayEntityVoice(struct Actor *pActor, u32 nA, u32 nB);
 /* Ov022_ActorSetState */
@@ -85,13 +80,13 @@ extern int Ov022_ActorSetState(struct Actor *pActor, int nState);
 /* SceneNode_Enable */
 extern void SceneNode_Enable(u16 *pAnimFlags);
 extern int Session_GetLocalPlayerIndex(void);
-extern void VEC_Add(const struct VecFx32 *pA, const struct VecFx32 *pB,
-                    struct VecFx32 *pOut);
+extern void VEC_Add(const VecFx32 *pA, const VecFx32 *pB,
+                    VecFx32 *pOut);
 
 int Ov022_StepActorState(struct Actor *pActor)
 {
-    struct VecFx32 vecDrift;
-    struct VecFx32 vecMove;
+    VecFx32 vecDrift;
+    VecFx32 vecMove;
     int nRet;
 
     nRet = 0;

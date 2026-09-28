@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by * Ov029_AcquireOverlaySlot -- overlay slot allocator.  THUMB. (020b2ee0): OverlayGroup   data_ov029_020b30b0[]; */
+
 #include "nitro/types.h"
 
-/* read by * Ov029_AcquireOverlaySlot -- overlay slot allocator.  THUMB. (020b2ee0): OverlayGroup   data_ov029_020b30b0[]; */
 const int data_ov029_020b30b0[20][4] = {
     { 30, -1, -1, -1 },
     { 31, 50, 70, 88 },

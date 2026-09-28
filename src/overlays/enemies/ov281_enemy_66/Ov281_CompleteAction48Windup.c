@@ -2,11 +2,7 @@
  * high-byte mask 0x82, stops the current action, starts resource 0x169 mode 6, and advances the
  * node. */
 
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void VEC_Subtract(void *a, void *b, void *out);

@@ -8,6 +8,7 @@
  * The reciprocal (0x800 / s) comes back as a 64-bit Q32 factor from
  * FX_DivFx64c; each product is widened to 64 bits, rounded with 0x80000000,
  * and the high word taken -- the same idiom as Ov127_UpdateChaseFacing. */
+
 #include "nitro/types.h"
 
 extern s32 FX_Sqrt(s32 x);

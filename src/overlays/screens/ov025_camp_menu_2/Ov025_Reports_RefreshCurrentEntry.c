@@ -2,6 +2,7 @@
  * report (or its read version). */
 
 #include "nitro/types.h"
+
 typedef struct Entry {
     u16 id:9;
     u16 flag9:1;

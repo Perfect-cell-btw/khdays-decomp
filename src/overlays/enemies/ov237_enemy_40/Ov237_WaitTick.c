@@ -1,6 +1,7 @@
 /* Wait tick of the ov237 actor: once the +4 rig is idle, a free linked partner (+0x4ac set, its
  * +0x4b0 clear) or a pending +0x4a8 request clears the request and ends the move: 020cd8c8 decides
  * (else the next move is 4); otherwise pose 0 plays. */
+
 #include "nitro/types.h"
 
 extern int Ov237_PickMove(int *node);

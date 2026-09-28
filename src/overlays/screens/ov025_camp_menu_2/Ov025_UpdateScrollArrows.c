@@ -5,6 +5,7 @@
  * something to scroll: with count = state->count > 0, the prev arrow is enabled if
  * state->index > 0 and the next arrow if state->index < count. Widget states are pushed via
  * Ov025_SetEntrySlotsVisible(ctx, Ov025_FindEntryById(ctx, id), enabled). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008ScrollState {

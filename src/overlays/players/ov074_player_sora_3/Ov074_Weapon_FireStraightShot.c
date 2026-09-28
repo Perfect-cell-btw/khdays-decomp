@@ -1,27 +1,28 @@
 /* Sends a placement for a straight shot from the muzzle (bigger in mode 2). */
 
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } MtxFx33;
 typedef struct {
-    Vec3 pos;
+    VecFx32 pos;
     short sx, sy, sz, scale;
     int f14, f18, f1c, f20, f24, f28;
 } Placement;
 
 extern void MTX_RotY33_(MtxFx33 *, int, int);
-extern void MTX_MultVec33(const Vec3 *, const MtxFx33 *, Vec3 *);
-extern void VEC_Add(const Vec3 *, const Vec3 *, Vec3 *);
-extern int VEC_Mag(const Vec3 *);
-extern int VEC_Normalize(const Vec3 *, Vec3 *);
+extern void MTX_MultVec33(const VecFx32 *, const MtxFx33 *, VecFx32 *);
+extern void VEC_Add(const VecFx32 *, const VecFx32 *, VecFx32 *);
+extern int VEC_Mag(const VecFx32 *);
+extern int VEC_Normalize(const VecFx32 *, VecFx32 *);
 extern void Ov022_SendPlacementMessage(char *, Placement *);
 extern char *data_ov074_020b9b80;
-extern Vec3 data_ov074_020b9a40;
+extern VecFx32 data_ov074_020b9a40;
 extern short data_0203d210[];
 
 void Ov074_Weapon_FireStraightShot(char *self)
 {
-    Vec3 v;
-    Vec3 temp;
+    VecFx32 v;
+    VecFx32 temp;
     MtxFx33 mtx;
     Placement req;
     char *base = data_ov074_020b9b80;
@@ -33,13 +34,13 @@ void Ov074_Weapon_FireStraightShot(char *self)
     block = base + 0xa4;
     state = block + 0x2c00;
     v = data_ov074_020b9a40;
-    temp = *(Vec3 *)(state + 0x124);
+    temp = *(VecFx32 *)(state + 0x124);
     a = (unsigned short)(*(unsigned short *)(*(char **)(self + 0x20) + 0x80) - 0x8000);
     i = a >> 4;
     MTX_RotY33_(&mtx, -data_0203d210[i * 2], -data_0203d210[i * 2 + 1]);
     temp.z += 0x99a;
     MTX_MultVec33(&temp, &mtx, &req.pos);
-    VEC_Add(&req.pos, (Vec3 *)(self + 0x8c + 0x400), &req.pos);
+    VEC_Add(&req.pos, (VecFx32 *)(self + 0x8c + 0x400), &req.pos);
     MTX_MultVec33(&v, &mtx, &v);
     if (VEC_Mag(&v) != 0)
         VEC_Normalize(&v, &v);

@@ -2,12 +2,14 @@
  * +0x60 high byte, clears bit 0 of the +0x388 item's +8 low byte, spawns effect 0 at the state's
  * +0xc position (020c0b90, flag 1), fires reaction 0x49 there (020c5af8), requests sub-state 0
  * and releases the node's slot. */
-typedef struct { int x, y, z; } Vec3;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
@@ -21,7 +23,7 @@ void Ov245_FinishEnter(int *node) {
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0x86) << 0x18) >> 0x10);
     }
     ((struct w8 *)(*(int *)(*state + 0x388) + 8))->lo &= ~1;
-    func_ov107_020c0b90(*state, 0, *(Vec3 *)state[3], 1);
+    func_ov107_020c0b90(*state, 0, *(VecFx32 *)state[3], 1);
     Ov107_BuildAndSendUpdate(*state, 0, 0x49, (void *)state[3]);
     *(unsigned char *)(*state + 0x1c7) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);

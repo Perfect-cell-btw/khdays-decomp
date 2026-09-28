@@ -19,6 +19,7 @@
  */
 
 #include "nitro/types.h"
+
 typedef int (*Fn)(void *st, int arg);
 
 extern int  LoadGlobalIntAtC(void);

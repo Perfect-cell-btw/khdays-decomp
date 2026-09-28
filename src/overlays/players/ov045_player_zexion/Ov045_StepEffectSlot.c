@@ -4,24 +4,25 @@
  * slot on the actor (heading and origin); 1 waits for the +0x7b0 timer to reach 0x9000, 2
  * advances the tracks and on completion rebinds them in mode 1 for phase 3, 3 only advances,
  * and 4 advances until completion into phase 5. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern int Sequence_UpdateTracks(void *animation, int delta);                            /* Sequence_UpdateTracks */
 
 /* Pins the slot's node to the actor's heading and origin. */
-static inline void Ov045_PinSlot(char *slot, u16 heading, Vec3 *origin)
+static inline void Ov045_PinSlot(char *slot, u16 heading, VecFx32 *origin)
 {
     *(u16 *)(slot + 0x80) = heading;
     *(u16 *)(slot + 4) |= 0x20;
-    *(Vec3 *)(slot + 0xa8) = *origin;
+    *(VecFx32 *)(slot + 0xa8) = *origin;
 }
 
 void Ov045_StepEffectSlot(char *self, char *slot, int dt)
 {
-    Vec3 origin;
+    VecFx32 origin;
     u16 heading;
 
     if (*(signed char *)slot == 3 && (*(unsigned long long *)(self + 0x464) & 0x10000) == 0) {
@@ -33,7 +34,7 @@ void Ov045_StepEffectSlot(char *self, char *slot, int dt)
         && Ov022_IsState9Or6WithFlag200(self + 0x2f8 + 0x2000) == 0) {
         *slot = 0;
     }
-    origin = *(Vec3 *)(self + 0x8c + 0x400);
+    origin = *(VecFx32 *)(self + 0x8c + 0x400);
     heading = (u16)(*(u16 *)(*(char **)(self + 0x20) + 0x80) - 0x8000) + 0x8000;
     switch (*(signed char *)slot) {
     case 1:

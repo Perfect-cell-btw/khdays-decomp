@@ -1,10 +1,11 @@
 /* Swipe tick of the ov238 actor: +0x20 accumulates the frame rate, sounds 0x12e/5 and 0x12e/4 cue after
  * 10 and 18 frames, the +0xc velocity follows the +0x3e0 part's +0x2c vector turned by the heading;
  * once the partner holds no queued move the next move is 4 (with +0x28 set and +0x2e not 1), else 2. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void Ov238_TimedCue(int *node, int ticks, int cue, int variant);
-extern void Ov238_TurnVelocity(int *node, Vec3 *vec);
+extern void Ov238_TurnVelocity(int *node, VecFx32 *vec);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov238_SwipeTick(int *node)
@@ -14,7 +15,7 @@ void Ov238_SwipeTick(int *node)
     state[8] += *(int *)(node[0] + 0x2c);
     Ov238_TimedCue(node, 0xa, 2, 5);
     Ov238_TimedCue(node, 0x12, 1, 4);
-    Ov238_TurnVelocity(node, (Vec3 *)(*(int *)(*state + 0x3e0) + 0x2c));
+    Ov238_TurnVelocity(node, (VecFx32 *)(*(int *)(*state + 0x3e0) + 0x2c));
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }

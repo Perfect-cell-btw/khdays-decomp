@@ -6,11 +6,13 @@
  * a BYTE cast rather than using a second pointer: that is what produces the ROM's post-indexed
  * `ldr r0, [r4], #0xc`. Writing `state + 3`, or a separate cursor local, splits it into a load
  * plus an add. Same idiom as Ov247_AiApplyHeadingAndNormal. */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern void Quat_Slerp(void *a, int s, void *b, void *m);
 extern void Srt_SetRotationQuat(void *a, void *b);
 extern int  RandNextScaled(int mul);
-extern struct vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 void Ov200_AiSlerpHeading(int *self) {
     int *state = (int *)self[1];
@@ -28,7 +30,7 @@ void Ov200_AiSlerpHeading(int *self) {
     {
         int owner = *state;
         state = (int *)((char *)state + 0xc);
-        *(struct vec3 *)(owner + 0xf0) = *(struct vec3 *)state;
-        *(struct vec3 *)state = data_02041dc8;
+        *(VecFx32 *)(owner + 0xf0) = *(VecFx32 *)state;
+        *(VecFx32 *)state = data_02041dc8;
     }
 }

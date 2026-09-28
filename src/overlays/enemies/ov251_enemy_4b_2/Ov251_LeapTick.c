@@ -8,10 +8,11 @@
  * direction clears. Past 0x100 with bit 0 of +0x17a set, animation 0x10 plays, bit 6 of the
  * +0x60 high byte clears and the state hands off to d2440; otherwise a negative height plays
  * animation 0xf once (+0x50). */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Bits17a { u8 bit0 : 1, bit1 : 1; };
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
@@ -33,8 +34,8 @@ struct Ov250Owner {
 
 struct Ov250SweepState {
     struct Ov250Owner *pOwner;  /* +0x00 */
-    Vec3 *pAnchor;              /* +0x04 */
-    Vec3 *pPos;                 /* +0x08 */
+    VecFx32 *pAnchor;              /* +0x04 */
+    VecFx32 *pPos;                 /* +0x08 */
     char pad00c[0x10];
     int nTimer;                 /* +0x1c */
     char pad020[0x30];
@@ -42,7 +43,7 @@ struct Ov250SweepState {
     u8 bit0 : 1;                /* +0x51 */
     u8 bWarned : 1;
     char pad052[2];
-    Vec3 vVelocity;             /* +0x54 */
+    VecFx32 vVelocity;             /* +0x54 */
     char pad060[0xc];
     int nClock;                 /* +0x6c */
     char pad070[8];
@@ -51,14 +52,14 @@ struct Ov250SweepState {
     int nDirZ;                  /* +0x80 */
 };
 
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void Ov107_PostTagUpdate(struct Ov250Owner *actor, int anim, int flag);
 extern void Ov251_AiRollTimerQueue2(void);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectSphereOverlaps(struct Ov250Owner *owner, Sphere *sphere, int *out);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov250Owner *a, struct Ov250Owner *b, int kind, Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov250Owner *owner, int a, int id, Vec3 *at);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov250Owner *a, struct Ov250Owner *b, int kind, VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov250Owner *owner, int a, int id, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern const PosMsg data_ov251_020d651c;
@@ -72,7 +73,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov250SweepState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov250SweepState *state, PosMsg *msg, const VecFx32 *src)
 {
     FxVec vDead;
     vDead.x = *(Fx32 *)&src->x;
@@ -90,15 +91,15 @@ void Ov251_LeapTick(int *node)
 {
     struct Ov250SweepState *state = (struct Ov250SweepState *)node[1];
     Sphere sphere;
-    Vec3 push;
+    VecFx32 push;
     int hits[4];
-    Vec3 at;
+    VecFx32 at;
     PosMsg msg;
     PosMsg tmpl;
     int i;
     int n;
 
-    state->vVelocity = *(Vec3 *)&state->nDirX;
+    state->vVelocity = *(VecFx32 *)&state->nDirX;
     state->nHeight -= FX_MUL(*(int *)(*node + 0x2c) * 30, 0xc0);
     state->nTimer += *(int *)(*node + 0x2c);
     state->nClock += *(int *)(*node + 0x2c);
@@ -120,7 +121,7 @@ void Ov251_LeapTick(int *node)
             tmpl = data_ov251_020d651c;
             do {
                 if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, 2, &push, 0) != 0) {
-                    at = *(Vec3 *)(hits[i] + 0x190);
+                    at = *(VecFx32 *)(hits[i] + 0x190);
                     msg = tmpl;
                     at.y += 0x2000;
                     SendPos(state, &msg, &at);

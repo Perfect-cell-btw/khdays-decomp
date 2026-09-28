@@ -5,7 +5,9 @@
  * rerolls +0x34 (1.57 to 3.14; +0x7c = past 2.36, +0x3c cleared) for move 4, else move 2; farther
  * the +0x6c sequence plays (step 0: move 2 on a roll up to 20, else sound 8 with pose 10; step 1:
  * sound 9 with pose 11) and advances. */
+
 #include "nitro/types.h"
+
 typedef struct { int v[6]; } Steps6;
 
 extern int Ov283_MeasureTargetGap(int *node);

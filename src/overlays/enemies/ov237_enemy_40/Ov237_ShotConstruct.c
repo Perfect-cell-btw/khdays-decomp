@@ -3,10 +3,12 @@
  * builds model 0x3c of the owner's +0x390 set as the +0x384 rig (subscribed to +0x9c, tracks 0, 2, 4
  * and 1 looping, posed), sets bit 3 of +0x1ae and places the body on the +0x22c pool (+0x388, flag 1
  * of its +8 byte); no target yet (+0x38c). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int scale; } Placement;
+typedef struct { VecFx32 pos; int scale; } Placement;
 typedef struct { unsigned f : 8; } B8;
 
 extern void Ov237_OnDespawn(void);

@@ -5,20 +5,22 @@
  * vector data_02041dc8 through 020c0b90 twice (mode 0 then mode 1, flag 0). Clear state[0x10] = 0 and
  * hand off to the 020d442c state.
  */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned f : 8; };
 extern void Ov107_PostTagUpdate(int a, int b, int c);
-extern void func_ov107_020c0b90(int obj, int mode, struct vec3 v, int flag);
+extern void func_ov107_020c0b90(int obj, int mode, VecFx32 v, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
-extern struct vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern void Ov209_ItemFlightTick(void);
 
 void Ov209_TimerFlagFirePushTwice(int *self) {
     int *state = (int *)self[1];
     unsigned short *hw;
     unsigned int h;
-    struct vec3 v;
+    VecFx32 v;
 
     state[0x10] += *(int *)(*self + 0x2c);
     if (state[0x10] < 0x198) {

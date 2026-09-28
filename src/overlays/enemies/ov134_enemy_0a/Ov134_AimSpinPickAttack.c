@@ -19,10 +19,12 @@
  *    `beq` to the idle block. (Also: `aim` before `dir` for the frame; Ghidra's `< 0xa01`-style
  *    non-encodable constants do not appear here.)
  */
-struct Vecx32 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct Bit0 { unsigned char b : 1; };
 
-static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
     vec->y = y;
     vec->z = z;
@@ -40,8 +42,8 @@ extern short data_0203d210[];
 
 void Ov134_AimSpinPickAttack(int self) {
     int *state = *(int **)(self + 4);
-    struct Vecx32 aim;
-    struct Vecx32 dir;
+    VecFx32 aim;
+    VecFx32 dir;
     int target;
     int idx;
 

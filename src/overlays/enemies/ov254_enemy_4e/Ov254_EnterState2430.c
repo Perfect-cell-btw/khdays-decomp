@@ -1,6 +1,8 @@
 /* Ov254_EnterState2430 -- entry of a sub-state: clears the actor's +0x388 handle, raises bit 7
  * and clears bit 0 of the +0x60 high byte, and installs 020d2430 in the node's slot. */
+
 #include "nitro/types.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

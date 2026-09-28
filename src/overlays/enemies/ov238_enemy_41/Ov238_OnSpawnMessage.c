@@ -2,14 +2,16 @@
  * and starts the +0x404 effect pair of the sub id: 0-4 and 8 from the payload (kind 5, weight 1.0);
  * 5-7 replace the +0x438 effect and attach to the +0x3f8 part's +4 placement (sub 6 variant 1); 0xa
  * knocks the actor back. The base handler always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
 struct EffectPair { int res; int handle; };
 struct Ov238Effects { char pad[0x404]; struct EffectPair pair[9]; };
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int parent, int kind, int arg, int weight, void *payload);
 extern void TaskList_FinishByTag(int model, int handle);
 extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
@@ -19,7 +21,7 @@ extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 void Ov238_OnSpawnMessage(char *self, u8 *msg, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         u8 bytes[12];

@@ -6,6 +6,7 @@
  * and the scroll-bounds setup (Camera_CommitMatricesEx), then hands off to Ov000_TickBootFadeIn. */
 
 #include "nitro/types.h"
+
 typedef void          *StateFn;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);

@@ -1,4 +1,5 @@
 #include "nitro/types.h"
+
 typedef u16 GXScrFmtText;
 
 #define PLANE_WIDTH 32

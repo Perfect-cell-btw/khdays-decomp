@@ -6,6 +6,7 @@
  * flips to the previous page ((page + count - 1) mod page count) and, when that took and
  * there is more than one page, plays cue 0.
  */
+
 #include "nitro/types.h"
 
 #define KEY_UP     0x40

@@ -3,21 +3,22 @@
  * frame-time (floored at zero); when it has run out and the +0x3e flag is clear, the +4 item's
  * +0xa8 byte is cleared and the flag set. Once the item is idle the actor plays animation 9,
  * publishes a zero vector to it with mode 4 (flag 2) and hands off to the guard end. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
 
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
-extern void func_ov107_020c0b90(int actor, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const struct Vecx32 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov220_GuardEnd(int *node);
 
 void Ov220_GuardTimerTick(int *node)
 {
     int *state = (int *)node[1];
 
-    *(struct Vecx32 *)(state + 9) = *(struct Vecx32 *)(state + 0xc);
+    *(VecFx32 *)(state + 9) = *(VecFx32 *)(state + 0xc);
     ScaleVec3Fx12(0xb00, state + 0xc, state + 0xc);
     if (state[7] >= 2) {
         return;

@@ -8,6 +8,7 @@
  * NOTE: the counts run right after ctx->sel, and the original holds a single base pointer
  * p = &ctx->sel (r6) for the copy source AND the count accesses -- hence the pointer forms
  * (p+1)[p[0]] and *(p+p[0]+1) rather than ctx->counts[ctx->sel] (which would re-base on ctx). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008SelCtx {

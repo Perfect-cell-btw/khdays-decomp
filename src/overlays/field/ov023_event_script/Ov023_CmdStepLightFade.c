@@ -3,6 +3,7 @@
  * the event block) advances, the level (+0x20) becomes from + elapsed * (to - from) / frames
  * clamped to 0..31 and is applied (Ov023_SetLightLevel 02089cdc).  Returns 1 once the elapsed
  * count reaches the frame count, else 0. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023EventBlock {

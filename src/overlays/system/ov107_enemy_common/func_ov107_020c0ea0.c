@@ -2,6 +2,7 @@
  * spawn conditions hold, runs the spawn step. */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov107Object Ov107Object;
 typedef struct Ov107Actor Ov107Actor;
@@ -17,12 +18,6 @@ typedef struct {
     u16 lo : 8;
     u16 hi : 8;
 } Flags60;
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
 
 typedef struct {
     u8 id;
@@ -53,7 +48,7 @@ struct Ov107Actor {
     u8 pad044[0x1c];
     Flags60 flags60;
     u8 pad062[0x12];
-    Vec3 position;
+    VecFx32 position;
     int radius;
     u8 pad084[0x1cc - 0x84];
     int (*actionCallback)(Ov107Actor *, int);
@@ -76,7 +71,7 @@ struct Ov107Object {
     int field_f8;
     int field_fc;
     int field_100;
-    Vec3 position104;
+    VecFx32 position104;
     int field_110;
     int field_114;
     int field_118;
@@ -122,7 +117,7 @@ void func_ov107_020c0ea0(Ov107Object *self, int delta)
         while (actor != 0) {
             if (actor->flags40.bit1 && actor->flags40.bit2
                 && (actor->flags60.lo & 1) != 0) {
-                Vec3 deltaVec;
+                VecFx32 deltaVec;
                 long long distSq;
                 int scaledDist;
 

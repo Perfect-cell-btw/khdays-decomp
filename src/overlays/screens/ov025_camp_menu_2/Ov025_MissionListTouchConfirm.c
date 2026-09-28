@@ -4,6 +4,7 @@
  * phase 0), no modal object is up and the list accepts touches: with nothing
  * selected it runs the confirm handler, otherwise it commits word -1 with target 1.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionList {

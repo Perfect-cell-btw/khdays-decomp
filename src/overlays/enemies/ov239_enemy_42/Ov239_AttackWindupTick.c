@@ -4,13 +4,15 @@
  * height of the target's +0x194 above the actor's +0xb4 clamped to +-0x200 (0 without a
  * target). Once the +4 item's +0xad byte clears, bit 0 of the actor's +0x1ae drops, the timer
  * resets and sub-state 6 is configured (part action 2, flag 1) before handing off to cd54c. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern void Ov239_ConfigSubStateThenAdvanceSlot(int *node, int anim, int action, int flag, void *next);
 extern void Ov239_ChargeTick(int *node);
 extern short data_0203d210[];
@@ -35,7 +37,7 @@ void Ov239_AttackWindupTick(int *node)
     }
     idx = ANG2IDX(state[4]);
     MTX_RotY33_(&mtx, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x398) + 0x2c), &mtx, (Vec3 *)(state + 5));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x398) + 0x2c), &mtx, (VecFx32 *)(state + 5));
     if (*(int *)(*state + 0x394) != 0) {
         dy = *(int *)(*(int *)(*state + 0x394) + 0x194) - *(int *)(*state + 0xb4);
         state[6] = dy;

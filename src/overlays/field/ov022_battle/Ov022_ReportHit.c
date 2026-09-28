@@ -14,12 +14,7 @@
  */
 
 #include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 #define HIT_KIND_NORMAL 1
 #define HIT_KIND_FLAGGED 2

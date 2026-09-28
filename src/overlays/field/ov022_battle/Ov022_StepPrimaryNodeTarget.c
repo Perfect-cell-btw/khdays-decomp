@@ -1,11 +1,7 @@
 /* Replay step for the primary node: resolves its target pick from the recorded input, turns it
  * towards the target, and runs its hit callback, actor update and sub-object chain. */
 
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct Ov022Node {
     unsigned long long flags;
@@ -115,5 +111,4 @@ void Ov022_StepPrimaryNodeTarget(int unused)
     root->savedMask0 = data_0204c190;
     root->savedMask1 = data_0204c18c;
 }
-
 

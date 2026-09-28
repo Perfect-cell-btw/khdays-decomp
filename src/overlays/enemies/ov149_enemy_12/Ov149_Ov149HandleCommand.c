@@ -6,13 +6,9 @@
  * to sixteen ids of live actors whose surface distance is within 0x8000, halving
  * their stagger timer when this enemy is in mode 1, firing reaction 0x14e at each,
  * and handing the collected list to Ov149_bindSubitemsByTypeId. */
-#include "nitro/types.h"
 
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Command {
     u8 pad00[2];
@@ -38,7 +34,7 @@ struct Other {
     char pad04[0x5c];
     struct Hw60 { u16 lo : 8, hi : 8; } flags60;
     char pad62[0x12];
-    struct Vec3 vPos74;
+    VecFx32 vPos74;
     int nRadius80;
     char pad84[0x17c];
     u16 flags200_18;
@@ -55,7 +51,7 @@ struct Self {
     char pad40[0x10];
     int nMode50;
     char pad54[0x20];
-    struct Vec3 vPos74;
+    VecFx32 vPos74;
     int nRadius80;
     char pad84[0x30c];
     struct Slots *pSlots390;
@@ -72,11 +68,11 @@ extern int Ov107_CreateSpawnTask(struct Self *self, int id, int kind, int enable
                                void *transform);
 extern void **List_First(void *list);
 extern void **List_Next(void *list);
-extern void VEC_Subtract(const struct Vec3 *a, const struct Vec3 *b,
-                         struct Vec3 *dst);
-extern int VEC_Mag(const struct Vec3 *v);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b,
+                         VecFx32 *dst);
+extern int VEC_Mag(const VecFx32 *v);
 extern void Ov107_BuildAndSendUpdate(struct Self *self, int id, int kind,
-                                struct Vec3 *at);
+                                VecFx32 *at);
 extern int Ov149_bindSubitemsByTypeId(struct Self *self, short *ids);
 extern void Ov107_AiState_OnMessage(struct Self *self, struct Command *cmd, int arg2);
 
@@ -109,7 +105,7 @@ void Ov149_Ov149HandleCommand(struct Self *self, struct Command *cmd, int arg2)
         case 0: {
             int list = self->pScene04;
             short ids[16] = {0};
-            struct Vec3 delta;
+            VecFx32 delta;
 
             count = 0;
             it = List_First((void *)(list + 0x80));

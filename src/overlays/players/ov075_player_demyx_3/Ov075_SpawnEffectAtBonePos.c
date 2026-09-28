@@ -1,20 +1,20 @@
 /* Spawns the attack effect at the character's weapon anchor through a placement message to the
  * battle module. */
 
+#include "nitro/fx.h"
+
 extern void func_ov022_020ad44c(void *out, int self);
 extern void Ov022_SendPlacementMessage(int self, void *p);
 
-typedef struct { int x, y, z; } Vec3;
-
 typedef struct {
-    Vec3 pos;
+    VecFx32 pos;
     short f0c, f0e, f10, f12;
     int f14, f18, f1c, f20, f24, f28;
 } Params;
 
 void Ov075_SpawnEffectAtBonePos(int self) {
     Params p;
-    Vec3 v;
+    VecFx32 v;
     func_ov022_020ad44c(&v, self);
     p.f10 = 0;
     p.f0e = 0;

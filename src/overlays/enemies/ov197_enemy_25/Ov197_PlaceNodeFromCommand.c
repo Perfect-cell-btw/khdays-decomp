@@ -3,7 +3,7 @@
  * Only acts on command 5 targeting slot 0 or 1.  The command carries three 24-bit
  * BIG-ENDIAN fixed-point components at +5, +8 and +0xb; each is reassembled by writing its
  * three bytes REVERSED into the high end of a stack word and taking `>> 8`, which both
- * swaps the byte order and sign-extends from bit 23 in one go.  Those become a Vec3, an
+ * swaps the byte order and sign-extends from bit 23 in one go.  Those become a VecFx32, an
  * identity transform is built and translated by it, and the result is handed to the
  * placement helper; the returned handle replaces the slot at owner + slot*8 + 0x398.
  * Everything else in the command stream falls through to the shared tail.
@@ -19,17 +19,19 @@
  *    and the byte-assembly buffer at the bottom, so they are declared in that order --
  *    mwcc gives the lower address to the later declaration.
  */
+
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(SrtTransform *m);
-extern void Srt_SetTranslation(SrtTransform *m, const Vec3 *v);
+extern void Srt_SetTranslation(SrtTransform *m, const VecFx32 *v);
 extern int Ov107_CreateNodeXformTask(int a, int node, int kind, int z, SrtTransform *m);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *cmd, int arg);
 
 void Ov197_PlaceNodeFromCommand(int owner, unsigned char *cmd, int arg) {
     SrtTransform m;
-    Vec3 v;
+    VecFx32 v;
     union { int w[3]; unsigned char b[12]; } t;
 
     if (cmd[2] == 5 && !(cmd[3] != 0 && cmd[3] != 1)) {

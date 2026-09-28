@@ -8,26 +8,28 @@
  * with +-0.5 jitter. When that point is on the ground (020ccfd4 == 3) the shell is launched there
  * (020d189c). Once the +4 item's +0xad byte clears the third run plays pose 0x1c / partner motion
  * 0xb and moves on to 020cfb24; earlier runs replay pose 0x1b. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 struct Items46c { char pad[0x46c]; int item[16]; };
 
 struct HitPacket40 {
     int nKind;
-    Vec3 vNormal;
+    VecFx32 vNormal;
     int w[6];
 };
 
 extern int Ov254_TrackTargetFlatDistance(int *node);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(int actor, Sphere *sphere, int *out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int RandNextScaled(int range);
-extern int Ov254_ProbeGround(int *self, Vec3 pos, int *outY);
-extern void Ov254_InvokeHookAndRearm2(int shell, Vec3 *at);
+extern int Ov254_ProbeGround(int *self, VecFx32 pos, int *outY);
+extern void Ov254_InvokeHookAndRearm2(int shell, VecFx32 *at);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -36,7 +38,7 @@ extern const short data_0203d210[];
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-static inline void VecSet(Vec3 *v, int x, int y, int z)
+static inline void VecSet(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -46,7 +48,7 @@ static inline void VecSet(Vec3 *v, int x, int y, int z)
 void Ov254_BarrageTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 v;
+    VecFx32 v;
     Sphere sphere;
     int hits[4];
     int dist;
@@ -73,12 +75,12 @@ void Ov254_BarrageTick(int *node)
             sphere.pos.x = data_0203d210[idx * 2];
             sphere.pos.z = data_0203d210[idx * 2 + 1];
             ScaleVec3Fx12(sphere.radius, &sphere.pos, &sphere.pos);
-            VEC_Add(&sphere.pos, (Vec3 *)(*(int *)(*state + 0x414) + 0x14), &sphere.pos);
+            VEC_Add(&sphere.pos, (VecFx32 *)(*(int *)(*state + 0x414) + 0x14), &sphere.pos);
             n = Ov107_CollectSphereOverlaps(*state, &sphere, hits);
             i = 0;
             if (n > 0) {
                 do {
-                    VEC_Subtract((Vec3 *)(hits[i] + 0x74), (Vec3 *)(*state + 0x74), &packet.vNormal);
+                    VEC_Subtract((VecFx32 *)(hits[i] + 0x74), (VecFx32 *)(*state + 0x74), &packet.vNormal);
                     packet.vNormal.y = 0;
                     VEC_Normalize(&packet.vNormal, &packet.vNormal);
                     ScaleVec3Fx12(0x1400, &packet.vNormal, &packet.vNormal);
@@ -106,7 +108,7 @@ void Ov254_BarrageTick(int *node)
                     j = RandNextScaled(0x2001) - 0x1000;
                     v.z += j;
                 }
-                VEC_Add(&v, (Vec3 *)state[2], &v);
+                VEC_Add(&v, (VecFx32 *)state[2], &v);
                 if (Ov254_ProbeGround(state, v, &v.y) == 3) {
                     Ov254_InvokeHookAndRearm2(((struct Items46c *)*state)->item[i], &v);
                 }

@@ -16,11 +16,7 @@
  *
  * Stack: 0x30 = the 0x24-byte MtxFx33 at sp+0 plus the 0xc-byte VecFx32 at sp+0x24. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int m[9];

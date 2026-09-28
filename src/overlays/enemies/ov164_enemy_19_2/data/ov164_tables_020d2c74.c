@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by ported from a matched sibling family (same shape, constants and offsets adjusted). (020cfc04): struct v5 data_ov164_020d2c74; */
+
 #include "nitro/types.h"
 
-/* read by ported from a matched sibling family (same shape, constants and offsets adjusted). (020cfc04): struct v5 data_ov164_020d2c74; */
 const int data_ov164_020d2c74[5] = {
     2, 3, 5, 6, 10,
 };

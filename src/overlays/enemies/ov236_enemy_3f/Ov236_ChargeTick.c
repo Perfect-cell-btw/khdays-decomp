@@ -3,18 +3,20 @@
  * cross of the up axis with that direction scaled by the +0x30 side (x 1/8), the +0x3a8 part drops
  * bit 1 and when the +0x2c run time is out the actor requests move 0xb. With a free rider the +0x24
  * timer runs down instead and at its end the actor requests move 9. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct PartFlags { unsigned int lo : 8; };
 
 extern int Ov107_FindNearestObject(int owner, int a);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, void *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, void *out);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 void Ov236_ChargeTick(int *node)
 {
@@ -24,7 +26,7 @@ void Ov236_ChargeTick(int *node)
     int frontFree = (*(u16 *)(front + 0x100 + 0xac) & 2) ? 0 : 1;
     int rearFree = (*(u16 *)(rear + 0x100 + 0xac) & 2) ? 0 : 1;
     int target;
-    Vec3 d;
+    VecFx32 d;
 
     target = Ov107_FindNearestObject(*state, 0);
     state[2] = target;

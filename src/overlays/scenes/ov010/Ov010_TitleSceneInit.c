@@ -11,6 +11,7 @@
  * recomputed each time -- which is exactly what the ROM does. The other half of the
  * fix is the palette header: one 4-byte struct copy, not two halfword stores.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

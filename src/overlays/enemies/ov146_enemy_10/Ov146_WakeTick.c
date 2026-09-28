@@ -1,5 +1,6 @@
 /* Wake tick of the ov146 actor: +0x3c accumulates the frame rate; after 0.43 bits 1 and 7 of both its
  * and its partner's (+8) +0x60 high byte clear, both play pose 0 and the node moves on to 020cd0a4. */
+
 #include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

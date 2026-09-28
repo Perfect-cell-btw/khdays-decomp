@@ -6,6 +6,7 @@
  * closes both streams, tears the video layers down and hands back the state
  * that follows.
  */
+
 #include "nitro/types.h"
 
 #define REG_KEYINPUT   (*(volatile u16 *)0x04000130)

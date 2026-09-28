@@ -4,9 +4,11 @@
  * given kind. On acceptance the contact point (the actor's position plus the radius along the
  * unflattened direction plus the push) is published with mode 0 and the id bit is set. Reaction
  * 0x137 mode 5 fires at the +8 position when anything was hit; returns whether it did. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
-struct Sphere { struct Vecx32 pos; int radius; };
+#include "nitro/fx.h"
+
+struct Sphere { VecFx32 pos; int radius; };
 
 extern int Ov107_CollectSphereOverlaps(int owner, struct Sphere *sphere, int *out);
 extern void VEC_Subtract(void *a, void *b, void *d);
@@ -14,23 +16,23 @@ extern int VEC_Normalize(void *a, void *d);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern int Ov107_InvokeHitCallback(int hit, int actor, int item, u8 kind, void *push, int z);
 extern void VEC_Add(void *a, void *b, void *d);
-extern void func_ov107_020c0b90(int actor, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
-extern const struct Vecx32 data_02042258;
+extern const VecFx32 data_02042258;
 
 int Ov220_AttackSweep(int *state, int kind)
 {
     struct Sphere sphere;
     int hits[4];
-    struct Vecx32 push;
-    struct Vecx32 out;
-    struct Vecx32 fwd;
+    VecFx32 push;
+    VecFx32 out;
+    VecFx32 fwd;
     int hit;
     long i;
     long n;
     u8 mask;
 
-    sphere.pos = *(struct Vecx32 *)(*state + 0x74);
+    sphere.pos = *(VecFx32 *)(*state + 0x74);
     sphere.radius = *(int *)(*state + 0x80);
     hit = 0;
     n = Ov107_CollectSphereOverlaps(*state, &sphere, hits);

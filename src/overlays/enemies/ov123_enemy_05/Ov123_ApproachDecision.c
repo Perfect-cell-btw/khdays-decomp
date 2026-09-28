@@ -5,25 +5,27 @@
  * . direction >= 0.875) the +0x28 timer is re-armed at random between the actor's +0x224 and
  * +0x228 and sub-state 4 is requested; otherwise the timer counts down and, once spent, does the
  * same -- both only while the +0x394 item's +0x60 low bit is clear. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern int Ov123_FindTarget(int actor, int *distOut);
 extern int FX_Sqrt(int x);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 void Ov123_ApproachDecision(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 d;
-    Vec3 fwd;
+    VecFx32 d;
+    VecFx32 fwd;
     int dist;
     int target;
     int obj;
@@ -41,7 +43,7 @@ void Ov123_ApproachDecision(int node)
     if (dist >= *(int *)(*state + 0x2d8)) {
         return;
     }
-    VEC_Subtract((Vec3 *)(state[9] + 0x190), (Vec3 *)state[4], &d);
+    VEC_Subtract((VecFx32 *)(state[9] + 0x190), (VecFx32 *)state[4], &d);
     VEC_Normalize(&d, &d);
     Vec3TransformViaTempMtx(&fwd, (void *)(*state + 0xa0), &data_02042258);
     if (dist < 0x1000 && VEC_DotProduct(&fwd, &d) >= 0xe00) {

@@ -1,6 +1,7 @@
 /* NitroSDK original assembly (libraries/os/src/os_system.c). */
 
 #include "nitro/types.h"
+
 typedef unsigned int OSIntrMode_Irq;
 
 #define HW_PSR_IRQ_DISABLE           0x80

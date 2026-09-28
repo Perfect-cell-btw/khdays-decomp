@@ -7,6 +7,7 @@
  * otherwise each list is walked by the filtered helper, list 2 with its
  * alternate mode.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

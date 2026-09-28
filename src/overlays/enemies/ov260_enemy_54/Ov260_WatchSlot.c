@@ -1,14 +1,16 @@
 /* Watch slot of the ov260 actor (every frame): the +0x64 heading turns toward +0x68 by 2.5 x the
  * frame rate, the +0xa0 pose follows it, +0xf0 keeps the last +0x20 velocity which then clears, and
  * in move 4 the +0x60 idle time runs down to 0. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(char *srt, Quat *q);
-extern const Vec3 data_02042264;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02041dc8;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
@@ -21,9 +23,9 @@ void Ov260_WatchSlot(int *node)
     QuatFromAxisAngle(&q, &data_02042264, state[0x19]);
     Srt_SetRotationQuat((char *)(*state + 0xa0), &q);
     {
-        Vec3 *vel = (Vec3 *)(state + 8);
+        VecFx32 *vel = (VecFx32 *)(state + 8);
 
-        *(Vec3 *)(*state + 0xf0) = *vel;
+        *(VecFx32 *)(*state + 0xf0) = *vel;
         *vel = data_02041dc8;
     }
     if (*(signed char *)(*state + 0x1c6) != 4) {

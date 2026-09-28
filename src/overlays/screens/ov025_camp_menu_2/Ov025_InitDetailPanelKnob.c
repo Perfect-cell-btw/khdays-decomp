@@ -6,6 +6,7 @@
  * (fx32) below cap 0x16's block position.  Then the panel is laid out at
  * scroll 0 (02074878).
  */
+
 #include "nitro/types.h"
 
 #define SEGMENT_FIRST 0x18

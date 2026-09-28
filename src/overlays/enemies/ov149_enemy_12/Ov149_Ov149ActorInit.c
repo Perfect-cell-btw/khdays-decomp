@@ -15,14 +15,11 @@
  * store sinks below the two movs. Putting the tail in its own block with its own
  * `int *self` declaration frees r0 and mwcc emits the ROM's
  * `add r0,r0,#0x14 ; str r0,[r6,#0x2cc]`. */
-struct Ov149Vec3 {
-    int x;
-    int y;
-    int z;
-};
+
+#include "nitro/fx.h"
 
 struct Ov149Pose {
-    struct Ov149Vec3 position;
+    VecFx32 position;
     int scale;
 };
 
@@ -36,7 +33,7 @@ struct Ov149Kinds {
 };
 
 extern struct Ov149Kinds data_ov149_020d0738;
-extern struct Ov149Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern const unsigned short data_ov149_020d07ac[];
 extern const unsigned short data_ov149_020d07b0[];
 extern char data_ov149_020d07b8[];

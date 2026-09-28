@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov000_LayoutSelectionPages (0204fdac): const int data_ov000_0205a6f4[7]; */
+
 #include "nitro/types.h"
 
-/* read by Ov000_LayoutSelectionPages (0204fdac): const int data_ov000_0205a6f4[7]; */
 const int data_ov000_0205a6f4[7] = {
     11, 12, 13, 14, 15, 17, 61,
 };

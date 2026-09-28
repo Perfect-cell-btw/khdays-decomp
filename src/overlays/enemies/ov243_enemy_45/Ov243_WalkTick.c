@@ -5,24 +5,25 @@
  * heading and, normalised, the walk: the step (+0x10) is the forward vector scaled by
  * min(1.5 x speed, dist / 2) times the (clamped) dot with the offset; +0x28 is 30 x dt / 25.
  * Arriving inside the actor's +0x80 radius requests sub-state 2 and releases the slot. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int queryTableEntry(int item, int a);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);
-extern int Ov107_ActionResource_GetOffsetAndScale(int resource, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern int Ov107_ActionResource_GetOffsetAndScale(int resource, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 
 void Ov243_WalkTick(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 d;
-    Vec3 fwd;
+    VecFx32 d;
+    VecFx32 fwd;
     int dist;
     int limit;
     int dot;
@@ -46,7 +47,7 @@ void Ov243_WalkTick(int node)
     speed = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x390), &fwd);
     limit = (int)(((long long)speed * 0x1800 + 0x800) >> 12);
     Vec3TransformViaTempMtx(&fwd, (void *)(*state + 0xa0), &fwd);
-    VEC_Subtract((Vec3 *)state[7], (Vec3 *)state[3], &d);
+    VEC_Subtract((VecFx32 *)state[7], (VecFx32 *)state[3], &d);
     dist = VEC_Normalize(&d, &d);
     if (dist < limit) {
         limit = dist >> 1;
@@ -56,7 +57,7 @@ void Ov243_WalkTick(int node)
     if (dot < 0) {
         dot = 0;
     }
-    ScaleVec3Fx12((int)(((long long)limit * dot + 0x800) >> 12), &fwd, (Vec3 *)(state + 4));
+    ScaleVec3Fx12((int)(((long long)limit * dot + 0x800) >> 12), &fwd, (VecFx32 *)(state + 4));
     state[0xa] = *(int *)(*(int *)node + 0x2c) * 30 / 25;
     if (dist > *(int *)(*state + 0x80)) {
         return;

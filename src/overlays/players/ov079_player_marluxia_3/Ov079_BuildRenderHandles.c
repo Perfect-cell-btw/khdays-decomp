@@ -2,6 +2,7 @@
  * animation set 2, binds two render handles -- one against the scene link the enemy was spawned
  * from, one against the rig's own model at +0x2c5c -- clears the 0xce-byte work block at +0xda0,
  * then latches the ready bits 0xb and returns them. */
+
 #include "nitro/types.h"
 
 extern void Ov022_ConfigureGridSlotMode(int slot, int mode);

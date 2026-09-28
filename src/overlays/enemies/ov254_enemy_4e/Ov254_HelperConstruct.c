@@ -2,15 +2,17 @@
  * sets bits 1-3 and 6 of the +0x60 high byte and bits 2 and 4 of +0x1ae, zeroes the +0x64 pose
  * with a tiny scale, clears +0x54 / +0x58, builds the +0x384 item (pose 0x41 of the +0x38c pool,
  * subscribed to +0x9c) and the hidden +0x390 item (pose 0x42, registered). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 
 extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Ov107_EnqueueValue(char *self, int item);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov254_Destroy(void);
 extern void Ov254_HelperBHandleMessage(void);
 extern void Ov254_Helper_CreateAiTask(void);
@@ -30,7 +32,7 @@ void Ov254_HelperConstruct(char *self)
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0x4e) << 0x18) >> 0x10);
     }
     *(u16 *)(self + 0x100 + 0xae) |= 0x14;
-    *(Vec3 *)(self + 0x64) = data_02041dc8;
+    *(VecFx32 *)(self + 0x64) = data_02041dc8;
     *(int *)(self + 0x70) = 1;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;

@@ -5,6 +5,7 @@
  * Ov025_ReleaseHandleGridAndList collect, Ov025_RefreshStatusPage applies the menu step, and
  * func_02053464 finalizes. The iterator (0x100 B), list (NNSFndList) and buffer (0x1e0 B) live in
  * one stack frame so their offsets (0x0/0xc/0x10c) match the original layout. */
+
 #include "nitro/types.h"
 
 typedef struct NNSFndList {

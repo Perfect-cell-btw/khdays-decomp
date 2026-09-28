@@ -4,7 +4,9 @@
  * +0x14 point. The +0x5c timer accumulates the owner's rate and once (+0x75) past 0x440 fires
  * reaction 0x12a mode 5 at the +8 point. Once the +4 item goes idle (+0xad) the +0x78 target
  * flag is set, sub-state 6 is requested and the state ends. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 static inline unsigned short FX_RadToIdx(int rad) {
@@ -15,7 +17,7 @@ extern int Ov107_FindNearestObject(int owner, int flag);
 extern int Ov222_MeasureTargetGap(int *node, int arg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void MTX_RotY33_(Mtx33 *m, int s, int c);
-extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern const short data_0203d210[];
 
@@ -33,7 +35,7 @@ void Ov222_TurnTick(int *node)
         }
         idx = FX_RadToIdx(state[0x14]);
         MTX_RotY33_(&m, data_0203d210[(idx >> 4) * 2], data_0203d210[(idx >> 4) * 2 + 1]);
-        MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x3fc) + 0x2c), &m, (Vec3 *)(state + 5));
+        MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x3fc) + 0x2c), &m, (VecFx32 *)(state + 5));
     }
     state[0x17] += *(int *)(node[0] + 0x2c);
     if (*(unsigned char *)((char *)state + 0x75) == 0 && state[0x17] >= 0x440) {

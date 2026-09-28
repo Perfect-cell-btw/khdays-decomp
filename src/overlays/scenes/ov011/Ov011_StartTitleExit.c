@@ -4,9 +4,10 @@
  * the fade table entry 0 is kicked for 30 frames.
  */
 
+/* Ov011ExitWindow */
+
 #include "nitro/types.h"
 
-/* Ov011ExitWindow */
 struct ExitWindow {
     u16 nStart;                  /* 0x00 */
     u16 nEnd;                    /* 0x02 */

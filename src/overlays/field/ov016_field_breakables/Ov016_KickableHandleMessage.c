@@ -11,9 +11,9 @@
  * FX_Inv, ScaleVec3Fx12 01ffa724), zeroing +0x484.  Type 6 (a peer's velocity, ignored on the
  * host): the three halfword components times 16 go to +0x640 and sync bit 1 is raised.
  * Types 0, 1, 5 and anything above 6 do nothing. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016KickableKindRow {
     void *pfnStep;            /* 0x00 */

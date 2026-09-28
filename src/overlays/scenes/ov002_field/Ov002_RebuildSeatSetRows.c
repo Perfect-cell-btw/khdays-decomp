@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* One entry of a code entry's item list. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002CodeItem {
     u8 nCode;
     char pad001[3];

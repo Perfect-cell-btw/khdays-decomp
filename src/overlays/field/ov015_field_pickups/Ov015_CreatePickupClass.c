@@ -6,6 +6,7 @@
  * 0207fab0, show 0207fb8c, teardown 0207fa90, load 0207fac0, hit 0207fc40, 0207fcbc,
  * 0207fcc4, position 0207fcd0), tag the class 0x10 and clear the mission-flag base (+0x86 =
  * 0xffff, resolved when the first piece spawns). */
+
 #include "nitro/types.h"
 
 typedef struct Ov015PickupParams {

@@ -2,17 +2,19 @@
  * countdown is 6 with the +0x44 clock cleared and the +0x52 high nibble 2, the rig switches (020cd028
  * mode 1), effect 0 plays at the origin, the +0x45c partner arms its 2.82 to 3.15 window (020cfd3c) and
  * the brain waits on 020cdd6c. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov258_AcquireTarget(int *node, int mode);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov258_ForwardEventIfStateOne(int partner, int from, int to, int d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov258_ComboTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov258_EnterCharge(int *node)
 {

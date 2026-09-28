@@ -12,15 +12,10 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define ANCHOR_RAISE 0x200
 #define ANCHOR_REACH 0x800
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 /* Ov022Actor */
 struct Actor {
@@ -30,22 +25,22 @@ struct Actor {
 };
 
 /* gCameraCachePos */
-extern struct VecFx32 data_020475ac;
+extern VecFx32 data_020475ac;
 
-extern void func_ov022_020ad44c(struct VecFx32 *pOut, struct Actor *pActor);
-extern void func_ov022_02089478(int nContext, int nSlot, struct VecFx32 *pAt);
+extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pActor);
+extern void func_ov022_02089478(int nContext, int nSlot, VecFx32 *pAt);
 extern int Ov022_IsIndexedRecordByteZero(int nContext, int nSlot);
-extern void VEC_Subtract(const struct VecFx32 *pA, const struct VecFx32 *pB,
-                         struct VecFx32 *pOut);
-extern void VEC_MultAdd(int nFactor, const struct VecFx32 *pStep,
-                        const struct VecFx32 *pFrom, struct VecFx32 *pOut);
+extern void VEC_Subtract(const VecFx32 *pA, const VecFx32 *pB,
+                         VecFx32 *pOut);
+extern void VEC_MultAdd(int nFactor, const VecFx32 *pStep,
+                        const VecFx32 *pFrom, VecFx32 *pOut);
 /* VEC_Normalize */
-extern int VEC_Normalize(const struct VecFx32 *pSrc, struct VecFx32 *pDst);
+extern int VEC_Normalize(const VecFx32 *pSrc, VecFx32 *pDst);
 
 void Ov022_MoveEffectTowardCamera(struct Actor *pActor)
 {
-    struct VecFx32 vecAt;
-    struct VecFx32 vecDir;
+    VecFx32 vecAt;
+    VecFx32 vecDir;
 
     if (pActor->nEffectA == 0) {
         return;

@@ -15,9 +15,11 @@
  * assignment reads +0xc first; a sized `[4]` declaration stores the first halfword before
  * loading the second.
  */
+
+#include "nitro/fx.h"
+
 struct flags16 { unsigned short lo : 8, hi : 8; };
 
-typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned short a, b; } HalfPair;
 
 struct AiState;
@@ -32,9 +34,9 @@ struct AiState {
     unsigned char pad028[0x38];
     struct flags16 flags60;       /* 0x060 */
     unsigned char pad062[0x4e];
-    Vec3 field_b0;                /* 0x0b0 */
+    VecFx32 field_b0;                /* 0x0b0 */
     unsigned char pad0bc[0xd4];
-    Vec3 field_190;               /* 0x190 */
+    VecFx32 field_190;               /* 0x190 */
     unsigned char pad19c[0x12];
     unsigned short flags1ae;      /* 0x1ae */
     unsigned char pad1b0[0x15];

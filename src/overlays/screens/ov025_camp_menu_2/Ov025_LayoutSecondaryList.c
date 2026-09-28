@@ -5,6 +5,7 @@
  * offset (16 px cells); then every tracked grid node in the list at +0x19b8 gets
  * its column-header cell (+0x1858/+0x185a, 0x28 apart) at origin + 16 * (col, row).
  */
+
 #include "nitro/types.h"
 
 typedef struct UiLayoutPos {

@@ -2,10 +2,11 @@
  * (020cdb50); once the +4 rig finishes the next pose is picked by the +0x3dc target's height: above
  * 3.0 bit 6 of the +0x60 high byte is set with poses 0x16 / partner 9, else poses 10 / partner 6; the
  * +0x30 timer and the +0x57 flag clear, +0x34 = 1 and the brain waits on 020ced4c. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
 
-extern Vec3 Ov237_RotateByActorHeading(int *node, Vec3 *target);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern VecFx32 Ov237_RotateByActorHeading(int *node, VecFx32 *target);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_StartAnim(int actor, int pose, int c);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -15,7 +16,7 @@ void Ov237_LungeTick(int *node)
 {
     int *state = (int *)node[1];
 
-    *(Vec3 *)(state + 0xf) = Ov237_RotateByActorHeading(node, (Vec3 *)(*(int *)(*state + 0x3d8) + 0x2c));
+    *(VecFx32 *)(state + 0xf) = Ov237_RotateByActorHeading(node, (VecFx32 *)(*(int *)(*state + 0x3d8) + 0x2c));
     if (*(u8 *)(state[1] + 0xad) == 0) {
         return;
     }

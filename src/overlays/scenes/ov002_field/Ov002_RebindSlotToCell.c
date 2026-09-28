@@ -14,6 +14,7 @@
  * which no direct spelling of the test reproduces. And the two re-reads at +0x04
  * and +0x06 go through a signed short view, because the ROM reloads them with
  * ldrsh. */
+
 #include "nitro/types.h"
 
 extern void InstallHandlerPairByFlag(int bEnable);

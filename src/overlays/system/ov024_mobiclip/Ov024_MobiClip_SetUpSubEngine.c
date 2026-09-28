@@ -5,6 +5,7 @@
  * this screen, the same affine reset sixteen scanlines up, and the same
  * hide-everything-then-reorder finish.
  */
+
 #include "nitro/types.h"
 
 struct Mtx22 {

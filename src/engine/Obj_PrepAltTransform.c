@@ -19,7 +19,7 @@
  * is held while the second angle is negated inline at the MTX_MakeRotXY43 call.
  */
 
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
 
 extern int  ArrayEntryPtrD0(int anchorIndex);
 extern void Transform_SetBasePos(int dst, void *src);

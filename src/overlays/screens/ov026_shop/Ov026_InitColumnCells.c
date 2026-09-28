@@ -5,6 +5,7 @@
  * y = 0x4d - 8 * (8 - i) (fx32).  Then clears both selected-row and base
  * words (+0xc0..+0xcc) and redraws both columns.
  */
+
 #include "nitro/types.h"
 
 #define ROW_CELLS   8

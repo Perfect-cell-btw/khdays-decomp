@@ -8,6 +8,7 @@
  * The tail cursor below is load-bearing, not style: reading the fourth cell
  * through its own pointer is what frees the scheduler to advance the row
  * pointer after that read rather than immediately before it. */
+
 #include "nitro/types.h"
 
 typedef struct {

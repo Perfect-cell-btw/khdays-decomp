@@ -3,17 +3,18 @@
  * +0x190 minus both +0x80 radii and gives up beyond the actor's +0x2d8 reach; otherwise aims
  * +0x14 at the target (atan2), requests sub-state 4 beyond 3.0, or counts the +0x40 timer down
  * and then requests 6 (within 0.5) or 7, releasing the node's slot either way. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov245_ApproachTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int gap;
     int target;
     int actor;
@@ -22,7 +23,7 @@ void Ov245_ApproachTick(int *node) {
     if (state[2] == 0) {
         return;
     }
-    VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)(*state + 0xb0), &d);
+    VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)(*state + 0xb0), &d);
     target = state[2];
     actor = *state;
     gap = VEC_Normalize(&d, &d) - *(int *)(target + 0x80) - *(int *)(actor + 0x80);

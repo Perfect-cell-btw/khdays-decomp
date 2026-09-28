@@ -20,14 +20,15 @@
  *    ROM leaves r0 alone across the call boundary precisely because it is being consumed.
  *    Checklist item 5, and the tell is a `bl` with no visible use of its result.
  */
-typedef struct { int x, y, z; } Vec3;
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *dst);
-extern int VEC_Mag(const Vec3 *v);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
+extern int VEC_Mag(const VecFx32 *v);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Atan2(int x, int z);
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
 extern char *data_ov065_020b7340;
 extern void Ov065_StepAttackEnd(void);
 extern void Ov065_LandingStep(void);
@@ -35,7 +36,7 @@ extern void Ov065_LandingStep(void);
 void *Ov065_HandleMsgAndFacePartner(char *self, int msg) {
     char *blk = data_ov065_020b7340 + 0x2c80;
     void *next = 0;
-    Vec3 d;
+    VecFx32 d;
     unsigned short a;
     int *node;
 
@@ -58,7 +59,7 @@ void *Ov065_HandleMsgAndFacePartner(char *self, int msg) {
             (*(void (**)(char *, int))(self + 0x664))(self, 0x30);
         }
         if (Ov022_ValidateTargetRef(self) != 0) {
-            VEC_Subtract(func_ov022_020ad0c0(self), (const Vec3 *)(self + 0x48c), &d);
+            VEC_Subtract(func_ov022_020ad0c0(self), (const VecFx32 *)(self + 0x48c), &d);
             if (VEC_Mag(&d) != 0) {
                 VEC_Normalize(&d, &d);
             }

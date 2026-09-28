@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* The descriptor the caller fills in for one spare-entry class. */
+
+#include "nitro/types.h"
+
 typedef struct {
     u16 wStateField;                /* +0x00 */
     unsigned char bStateWidth;      /* +0x02 */

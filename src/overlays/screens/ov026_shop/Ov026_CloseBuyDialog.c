@@ -13,6 +13,7 @@
  * into r6; the const local keeps ctx a declared variable (r6) and lets the
  * tail's 0x60 reuse r4.  The dialog pointer is assigned first.
  */
+
 #include "nitro/types.h"
 
 #define TAG_BUY_DIALOG   0x199

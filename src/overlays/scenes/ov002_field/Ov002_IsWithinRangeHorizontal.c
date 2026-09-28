@@ -6,8 +6,10 @@
  * plane by zeroing their Y components, and returns whether their distance (VEC_Distance) is within
  * the range param_1[0x20].
  */
+
+#include "nitro/fx.h"
+
 extern int VEC_Distance(void *a, void *b, int c);
-typedef struct { int x, y, z; } VecFx32;
 
 int Ov002_IsWithinRangeHorizontal(int param_1, void *param_2)
 {

@@ -11,6 +11,7 @@
  * screen set up, while the recipe tab runs 02087884.  Finally widgets 1,
  * 0x33, 0x34, 4 and 5 are hidden and the list cells hidden.
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT   8

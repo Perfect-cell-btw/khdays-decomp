@@ -6,9 +6,9 @@
  * stamina asks for sub-state 3 and a 0x8000 hit for 6; a positive damage that is not the
  * 8|0x80/0x80 special toggles bit 0 of +0x51 and fires reaction 0x159 with the mode alternating
  * (2/3 for flags 0x22, 0/1 otherwise) at the +8 position. */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov134ActionState {
     int pOwner;
@@ -19,13 +19,13 @@ struct Ov134ActionState {
     char pad028[0x29];
     u8 bFacing : 1;             /* +0x51 */
     char pad052[0xe];
-    struct Vec3 vHit;           /* +0x60 */
+    VecFx32 vHit;           /* +0x60 */
 };
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     char pad010[8];
     int pSource18;
     char pad01c[4];

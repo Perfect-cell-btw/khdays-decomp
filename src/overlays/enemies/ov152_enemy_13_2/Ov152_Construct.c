@@ -7,7 +7,9 @@
  * attached, bit 1), registers four reactions (0/1/2/4, id 0x2999) and two placements on the
  * +0x22c/+0x144 lists (+0x388/+0x38c) from the pose at the origin with scale 0xc00, then three
  * summoned pets (cc994) into a 12-byte table (+0x3c8) and loads sound 0x14f. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
 
 struct PoolIds {
@@ -15,7 +17,7 @@ struct PoolIds {
 };
 
 struct Pose {
-    Vec3 pos;
+    VecFx32 pos;
     int scale;
 };
 
@@ -49,7 +51,7 @@ extern const struct PoolIds data_ov152_020d6460;
 extern const char data_ov152_020d64ec[];
 extern const char data_ov152_020d64f0[];
 extern const char data_ov152_020d64f8[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov152_Construct(char *self)
 {

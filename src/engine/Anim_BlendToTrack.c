@@ -1,8 +1,10 @@
-#include "nitro/types.h"
 
 /* Per-track candidate table: numBlends[track] gates whether blendAnms[track]
    is valid, blendAnms[track][blendCode] -> NNSG3dAnmObj*. Matches the
    established BlendTable in src/engine/BindAnimTrack.c. */
+
+#include "nitro/types.h"
+
 typedef struct {
     u16 numBlends[5];
     char pad_0a[0x10 - 0xa];

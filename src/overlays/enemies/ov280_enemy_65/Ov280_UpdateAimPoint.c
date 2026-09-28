@@ -6,24 +6,20 @@
  * (+0x18). Either way the driver is re-armed through Ov280_PlayPoseAnims with
  * Ov280_AiDiveTick as the continuation. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
-extern void Ov280_rotateVecByOwnerYaw(Vec3 *out, int self, int rig);
+extern void Ov280_rotateVecByOwnerYaw(VecFx32 *out, int self, int rig);
 extern int Ov280_AcquireTarget(int self);
 extern void Ov280_PlayPoseAnims(int self, int a, int b, int c, void (*cb)(void));
 extern void Ov280_AiDiveTick(void);
 
 void Ov280_UpdateAimPoint(int self) {
     int *ctx;
-    Vec3 aim;
+    VecFx32 aim;
 
     ctx = *(int **)(self + 4);
     Ov280_rotateVecByOwnerYaw(&aim, self, *(int *)(ctx[0] + 0x388) + 0x2c);
-    *(Vec3 *)((char *)ctx + 0x30) = aim;
+    *(VecFx32 *)((char *)ctx + 0x30) = aim;
 
     if (**(unsigned char **)(ctx + 4) != 0) {
         return;

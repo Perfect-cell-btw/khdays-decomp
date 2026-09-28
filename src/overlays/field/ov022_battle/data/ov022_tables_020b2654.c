@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by ov022: pick the cue for a slot, given what the actor is doing. (02098134): const short data_ov022_020b2654[]; */
+
 #include "nitro/types.h"
 
-/* read by ov022: pick the cue for a slot, given what the actor is doing. (02098134): const short data_ov022_020b2654[]; */
 const u16 data_ov022_020b2654[15] = {
     1, 2, 7, 10, 3, 8, 9, 5,
     6, 4, 11, 65535, 65535, 65535, 13,

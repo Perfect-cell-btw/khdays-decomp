@@ -2,12 +2,7 @@
  * around the player and records the closest accepted part in the selection. */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct SphereFx32 {
     VecFx32 center;

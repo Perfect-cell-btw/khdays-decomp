@@ -12,15 +12,11 @@
  * slot of the hit-id list and no more of its parts are tested.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022Capsule */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Capsule {
     VecFx32 vecA;                /* 0x00 */
     VecFx32 vecB;                /* 0x0c */

@@ -2,6 +2,7 @@
  * texture flag off (G3dRes_DefaultSetup), takes model 0 of its model set (NNS_G3dGetMdlSet /
  * NNS_G3dGetMdlByIdx, inlined) into data_0204c20c[0] and binds it (NNS_G3dMdlSetMdlLightEnableFlag). Returns 1. */
 #pragma thumb on
+
 #include "nitro/types.h"
 
 typedef struct {

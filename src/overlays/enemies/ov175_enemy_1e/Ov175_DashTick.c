@@ -4,10 +4,11 @@
  * and the state ends with sub-state 0. Otherwise a set +0x17a bit 0 or bit 1 publishes the
  * position with mode 1, fires reaction 0x142 mode 7 and ends the same way; else the +0x20 travel
  * accumulates the +8 velocity's length and ends the dash once it passes 0x15000. */
-#include "nitro/types.h"
 
-struct Vecx32 { int x, y, z; };
-struct Sphere { struct Vecx32 vCentre; int nRadius; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+struct Sphere { VecFx32 vCentre; int nRadius; };
 struct Flags17a { u8 b0 : 1, b1 : 1; };
 
 extern int Ov107_CollectSphereOverlaps(void *item, struct Sphere *sphere, void *out);
@@ -15,17 +16,17 @@ extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern int Ov107_InvokeHitCallback(void *hit, int actor, void *item, int mode, void *push, int z);
-extern void func_ov107_020c0b90(void *item, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(void *item, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern int VEC_Mag(const struct Vecx32 *v);
+extern int VEC_Mag(const VecFx32 *v);
 
 void Ov175_DashTick(int *node)
 {
     int *state = (int *)node[1];
     struct Sphere sphere;
     void *hits[4];
-    struct Vecx32 push;
+    VecFx32 push;
     int i;
     int n;
     int actor;
@@ -40,7 +41,7 @@ void Ov175_DashTick(int *node)
             VEC_Normalize(&push, &push);
             ScaleVec3Fx12(0x800, &push, &push);
             if (Ov107_InvokeHitCallback(hits[i], *state, *(void **)(*state + 0x38c), 0, &push, 0) != 0) {
-                func_ov107_020c0b90(*(void **)(*state + 0x38c), 2, *(struct Vecx32 *)state[1], 0);
+                func_ov107_020c0b90(*(void **)(*state + 0x38c), 2, *(VecFx32 *)state[1], 0);
                 Ov107_BuildAndSendUpdate(*state, 0x142, 6, (void *)state[1]);
                 *(u8 *)(*state + 0x1c7) = 0;
                 SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
@@ -51,20 +52,20 @@ void Ov175_DashTick(int *node)
     }
     actor = *state;
     if (((struct Flags17a *)(actor + 0x17a))->b0) {
-        func_ov107_020c0b90(*(void **)(actor + 0x38c), 1, *(struct Vecx32 *)state[1], 0);
+        func_ov107_020c0b90(*(void **)(actor + 0x38c), 1, *(VecFx32 *)state[1], 0);
         Ov107_BuildAndSendUpdate(*state, 0x142, 7, (void *)state[1]);
         *(u8 *)(*state + 0x1c7) = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
     if (((struct Flags17a *)(actor + 0x17a))->b1) {
-        func_ov107_020c0b90(*(void **)(actor + 0x38c), 1, *(struct Vecx32 *)state[1], 0);
+        func_ov107_020c0b90(*(void **)(actor + 0x38c), 1, *(VecFx32 *)state[1], 0);
         Ov107_BuildAndSendUpdate(*state, 0x142, 7, (void *)state[1]);
         *(u8 *)(*state + 0x1c7) = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    state[8] += VEC_Mag((struct Vecx32 *)(state + 2));
+    state[8] += VEC_Mag((VecFx32 *)(state + 2));
     if (state[8] < 0x15000) {
         return;
     }

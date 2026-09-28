@@ -1,6 +1,8 @@
 /* Recover tick of the ov238 actor: once its guard flag (+0x60 bit 0) is up, the +0x28 rest is rolled
  * between +0x224 and +0x228, pose 0x16 loops and the queued +0x1c9 move becomes next. */
+
 #include "nitro/types.h"
+
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 
 extern int RandNextScaled(int bound);

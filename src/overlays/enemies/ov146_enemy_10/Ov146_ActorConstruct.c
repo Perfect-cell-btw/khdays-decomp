@@ -5,9 +5,11 @@
  * rig, subscribed to the +0x9c scene, its data_ov146_020cf534 sub-part goes to +0x3b8, the rig pose
  * resets and record 0xc binds to the +0x388 slot. Two collision cylinders from the +0x64 sphere at the
  * origin are registered in the +0x22c (16) and +0x144 (4) pools; the second is kept in +0x3b0. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 typedef struct { char data[0x24]; } AnimSlot;
 
 extern void Ov146_Destroy(void);
@@ -26,9 +28,9 @@ extern void MainBlob_ResetSlotRows(int rig, AnimSlot *slot);
 extern int *List_InsertSorted(void *pool, int count, int size);
 extern int Ov107_CloneResourceTransform(Sphere *sphere);
 extern char data_ov146_020cf534[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
-static inline void VecSet(Vec3 *v, int x, int y, int z)
+static inline void VecSet(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -66,7 +68,7 @@ void Ov146_ActorConstruct(char *self)
     *(int *)(self + 0x70) = 0xc00;
     *(int *)(self + 0x54) = 0x1000;
     *(int *)(self + 0x58) = 0x800;
-    VecSet((Vec3 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
+    VecSet((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(set, 0xb));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(int *)(self + 0x3b8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov146_020cf534);

@@ -5,10 +5,11 @@
  * one that cca78 accepts, while the +0x34 latch is clear, turns the ov022 handler on (86834 mode 1,
  * ov002 56a98 mode 1) and sets the latch. With nothing counted the latch and both are turned
  * off. */
-typedef struct Vec3 { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Angle_TurnToward(int cur, int want, int step, int mode);
-extern void QuatFromAxisAngle(int *quat, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(int *quat, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *orientation, int *quat);
 extern int *List_First(int list);
 extern int *List_Next(int list);
@@ -17,8 +18,8 @@ extern int func_ov022_02083f5c(void);
 extern int Ov291_HasKind1Target(int item);
 extern void func_ov022_02086834(int handle, int on);
 extern void Ov002_RefreshCaptionWidget(int mode);
-extern const Vec3 data_02042264;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02041dc8;
 
 void Ov291_TurnTick(int *node)
 {
@@ -29,14 +30,14 @@ void Ov291_TurnTick(int *node)
     int scene;
     int *entry;
     int other;
-    Vec3 *vel;
+    VecFx32 *vel;
 
     count = 0;
     state[1] = Angle_TurnToward(state[1], state[2], state[7], 0);
     QuatFromAxisAngle(quat, &data_02042264, state[1]);
     Srt_SetRotationQuat((void *)(*state + 0xa0), quat);
-    vel = (Vec3 *)(state + 4);
-    *(Vec3 *)(*state + 0xf0) = *vel;
+    vel = (VecFx32 *)(state + 4);
+    *(VecFx32 *)(*state + 0xf0) = *vel;
     *vel = data_02041dc8;
     if (state[0xc] != 0) {
         return;

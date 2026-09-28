@@ -1,6 +1,8 @@
 /* Move entry: bit 7 of the actor's +0x60 high byte clears and bit 0 is set, the +0x388 shape is
  * armed, pose 2 plays and the node moves to 020d2a2c. */
+
 #include "nitro/types.h"
+
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 typedef struct { unsigned f : 8; } B8;
 

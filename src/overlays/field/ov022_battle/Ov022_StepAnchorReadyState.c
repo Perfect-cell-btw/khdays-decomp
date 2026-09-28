@@ -17,12 +17,7 @@
  */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 #define FLAG_BIT26 (1ULL << 26)
 #define FLAG2_BIT10 (1ULL << 10)
@@ -68,7 +63,7 @@ struct HitState {
 
 /* Ov022GroundBlock: the ground block at actor+0x5b8 */
 struct Ground {
-    struct Vec3 vec;             /* 0x00 */
+    VecFx32 vec;             /* 0x00 */
     u8 pad000c[8];
     struct HitState *pHit;       /* 0x14 */
     u8 pad0018[0x8c];
@@ -101,7 +96,7 @@ struct Actor {
     u8 pad0110[0x354];
     u64 nFlags2;                 /* 0x0464 */
     u8 pad046c[0x20];
-    struct Vec3 vecAim;          /* 0x048c */
+    VecFx32 vecAim;          /* 0x048c */
     u8 pad0498[0x120];
     struct Ground ground;        /* 0x05b8 Ov022GroundBlock: nStepScratch 0x65c, nFacingAngle 0x660 */
     PfnPre pfnPreDraw;           /* 0x0664 */
@@ -116,7 +111,7 @@ struct Actor {
     u8 bTriggerHeld : 1;
     u8 nSpare6947 : 1;
     u8 pad0695[3];
-    struct Vec3 vecMotion;       /* 0x0698 */
+    VecFx32 vecMotion;       /* 0x0698 */
     u8 pad06a4[0x10c];
     int nAnimFrame;              /* 0x07b0 */
     u8 pad07b4[0x1ef8];
@@ -126,32 +121,32 @@ struct Actor {
 extern short data_0203d210[];               /* kFxSinCosTable: sin, cos pairs */
 
 extern int Session_GetLocalPlayerIndex(void);                                                 /* Session_GetLocalPlayerIndex */
-extern struct Vec3 *Ov002_GetElementVelocity(void *pElement);                        /* Ov002_GetElementVelocity */
-extern void VEC_Add(struct Vec3 *pA, struct Vec3 *pB, struct Vec3 *pOut);
-extern void Actor_SetVecAndSyncChild(struct Node *pNode, struct Vec3 *pVec);              /* Actor_SetVecAndSyncChild */
+extern VecFx32 *Ov002_GetElementVelocity(void *pElement);                        /* Ov002_GetElementVelocity */
+extern void VEC_Add(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
+extern void Actor_SetVecAndSyncChild(struct Node *pNode, VecFx32 *pVec);              /* Actor_SetVecAndSyncChild */
 extern int Ov022_ActorSetState(struct Actor *pActor, int nState);               /* Ov022_ActorSetState */
 extern int Ov022_TryPendingAction(struct Actor *pActor, int nArg);                 /* Ov022_TryPendingAction */
 extern int func_ov022_020882f8(void);                                           /* GetActiveField34 */
-extern struct Vec3 *func_ov022_020881f8(int nIndex);                            /* GetEntryPtr48cOrDefault */
-extern void VEC_Subtract(struct Vec3 *pA, struct Vec3 *pB, struct Vec3 *pOut);
-extern int VEC_Mag(struct Vec3 *pVec);
-extern int VEC_DotProduct(struct Vec3 *pA, struct Vec3 *pB);
-extern int VEC_Normalize(struct Vec3 *pSrc, struct Vec3 *pDst);                 /* VEC_Normalize */
-extern void ScaleVec3Fx12(int nScale, struct Vec3 *pSrc, struct Vec3 *pDst);    /* ScaleVec3Fx12 */
+extern VecFx32 *func_ov022_020881f8(int nIndex);                            /* GetEntryPtr48cOrDefault */
+extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
+extern int VEC_Mag(VecFx32 *pVec);
+extern int VEC_DotProduct(VecFx32 *pA, VecFx32 *pB);
+extern int VEC_Normalize(VecFx32 *pSrc, VecFx32 *pDst);                 /* VEC_Normalize */
+extern void ScaleVec3Fx12(int nScale, VecFx32 *pSrc, VecFx32 *pDst);    /* ScaleVec3Fx12 */
 
 int Ov022_StepAnchorReadyState(struct Actor *pActor)
 {
-    struct Vec3 vecFacing;
-    struct Vec3 vecOther;
-    struct Vec3 vecDiff;
-    struct Vec3 vecFrom;
+    VecFx32 vecFacing;
+    VecFx32 vecOther;
+    VecFx32 vecDiff;
+    VecFx32 vecFrom;
     int nRet;
     int bLocked;
     int bAnchor;
     int i;
     struct Ground *pGround;
     struct Node *pNode;
-    struct Vec3 *pVel;
+    VecFx32 *pVel;
     void *pElement;
     int nCenter;
     int nDiff;

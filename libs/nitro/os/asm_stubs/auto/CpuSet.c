@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* Nintendo DS BIOS SWI 0x0b veneer. */
+
+#include "nitro/types.h"
+
 asm void CpuSet(register const void *source, register void *destination,
                 register u32 control)
 {

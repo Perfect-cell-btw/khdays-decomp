@@ -1,11 +1,9 @@
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
 
 /* The hit record the caller hands over. The leading byte picks the shape, and
  * what follows the source point is either a radius or a second point. */
+
+#include "nitro/fx.h"
+
 typedef struct {
     signed char nShape;             /* +0x00 */
     char pad01[3];

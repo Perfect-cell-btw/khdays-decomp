@@ -1,11 +1,12 @@
 /* Hop entry of the ov283 actor: +0x74 clears, the +0x60 timer starts at 5.98, bit 6 of the +0x60 high
  * byte is set, pose 2 plays, the +0x1c drift points along the +0x38 heading at 0.875, +0x58 is 0.3125
  * and the node moves on to 020cd9e0. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov283_ScaleDescentVectorThenAdvance(void);
 extern const short data_0203d210[];
@@ -31,7 +32,7 @@ void Ov283_HopEntry(int *node)
         state[8] = 0;
         state[9] = data_0203d210[idx + 1];
     }
-    ScaleVec3Fx12(0xe00, (Vec3 *)(state + 7), (Vec3 *)(state + 7));
+    ScaleVec3Fx12(0xe00, (VecFx32 *)(state + 7), (VecFx32 *)(state + 7));
     state[0x16] = 0x500;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov283_ScaleDescentVectorThenAdvance);
 }

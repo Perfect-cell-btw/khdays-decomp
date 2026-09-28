@@ -5,6 +5,7 @@
  * frame count (ov002 0207c6c0 on +0x3c) as the number of break frames (+0x2be); enable the model
  * node (0202bedc) only if the breakable's GameState bit is set; and request the drop resource
  * pair (0203355c) when the definition has a drop slot (def +0x78 >= 0). */
+
 #include "nitro/types.h"
 
 typedef struct Ov016BreakableDef {

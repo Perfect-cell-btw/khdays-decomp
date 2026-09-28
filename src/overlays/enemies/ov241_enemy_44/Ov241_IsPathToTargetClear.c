@@ -21,7 +21,8 @@
  * address-taken aggregates mwcc gives the FIRST declared local the HIGHEST stack
  * offset, and the ROM keeps origin low.
  */
-typedef struct { int x; int y; int z; } VecFx32;
+
+#include "nitro/fx.h"
 
 typedef struct {
     char pad00[0x7c];

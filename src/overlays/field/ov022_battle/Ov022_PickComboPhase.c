@@ -14,9 +14,10 @@
  * input bit 2, a ready reaction block and slot rule 0x33 open phase 5.
  */
 
+/* Ov022ComboRecord */
+
 #include "nitro/types.h"
 
-/* Ov022ComboRecord */
 struct ComboRecord {
     u8 pad00[0x24];
     int nLimit;                  /* 0x24 negative: no limit */

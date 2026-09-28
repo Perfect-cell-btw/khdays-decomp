@@ -29,11 +29,7 @@
  * computes r7 = target_r + own_r before the two calls and keeps it in a callee-saved register).
  * Same rule, opposite conclusion -- read the ROM, do not apply the crack by reflex. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void Ov107_MoveNodeAndRelayout(int obj, const VecFx32 *dst);

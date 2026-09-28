@@ -2,7 +2,9 @@
  * Restores the two capture/blend engines (SetMasterBrightnessMain/3cc -0x10), clears the BG-mode bits of
  * both DISPCNT registers and re-enables the LCD (POWCNT1), then reprograms the BG priorities:
  * main BG0..3 = 3/0/1/2, sub BG0..3 = 0/1/2/3 (preserving each register's char/screen bits). */
+
 #include "nitro/types.h"
+
 extern void SetMasterBrightnessMain(int a);
 extern void SetMasterBrightnessSub(int a);
 

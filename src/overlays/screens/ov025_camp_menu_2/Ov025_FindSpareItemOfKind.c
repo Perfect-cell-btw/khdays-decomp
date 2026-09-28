@@ -18,6 +18,7 @@
  * a fresh counter created at the list loop colours below the item id (sb / sl
  * swapped); an older variable keeps the id below it.
  */
+
 #include "nitro/types.h"
 
 #define GRID_COLS      5

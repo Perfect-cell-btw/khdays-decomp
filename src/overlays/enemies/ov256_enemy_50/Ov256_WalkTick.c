@@ -7,13 +7,15 @@
  * every two steps the count grows and the stance flips; the stance picks pose 1 / motion 0 or pose 3 /
  * motion 2. Codegen: the stance flip is `(u8)(++stance) % 2`; `(u8)(stance + 1) % 2` adds in place
  * instead of into the ROM's fresh r3. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 
 extern int Ov256_PickTarget(int *node);
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int RandNextScaled(int n);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
@@ -22,13 +24,13 @@ extern void SetIndexedSlot(int *node, int slot, void *cb);
 void Ov256_WalkTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 v;
+    VecFx32 v;
 
     Ov256_PickTarget(node);
     state[0x11] += *((signed char *)state + 0x70) * 0x1922;
     Ov256_RotateByActorHeading((int *)&v, (int)node, (int *)(*(int *)(*state + 0x450) + 0x2c));
     {
-        Vec3 *vel = (Vec3 *)(state + 4);
+        VecFx32 *vel = (VecFx32 *)(state + 4);
 
         *vel = v;
         ScaleVec3Fx12((*(int *)(*state + 0x45c) << 9) + 0x1000, vel, vel);

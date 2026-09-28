@@ -1,5 +1,7 @@
 /* Count newly reached reward thresholds and return the last valid threshold. */
+
 #include "nitro/types.h"
+
 typedef struct MsgDbRecordHeader { short nSlot,nDbId; int nField04,nField08; } MsgDbRecordHeader;
 typedef struct MsgDbRewardThresholdRecord { MsgDbRecordHeader header; int threshold; } MsgDbRewardThresholdRecord;
 typedef struct Ov005Config { char unknown00[0x34]; int rewardBases[3]; int rewardTotals[3]; unsigned int rewardScales[3]; } Ov005Config;

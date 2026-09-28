@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov187_Actor_Construct (020d3848): const struct CameraWork data_ov187_020d70f0; */
+
 #include "nitro/types.h"
 
-/* read by Ov187_Actor_Construct (020d3848): const struct CameraWork data_ov187_020d70f0; */
 const int data_ov187_020d70f0[4] = {
     0, 0, 0, 3072,
 };

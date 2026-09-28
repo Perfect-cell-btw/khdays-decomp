@@ -17,21 +17,23 @@
  *  - those locals must be declared with `z` before `y` (the assignment order), or the two
  *    callee-saved registers come out swapped.
  */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern int RandNextScaled();
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *dst);
-extern void ScaleVec3Fx12(int t, const Vec3 *a, Vec3 *b);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
+extern void ScaleVec3Fx12(int t, const VecFx32 *a, VecFx32 *b);
 extern void SetIndexedSlot(int *self, int action, void *cb);
-extern Vec3 data_02042264;
+extern VecFx32 data_02042264;
 extern void Ov186_EmitAtOrbit(void);
 
 void Ov186_BeginTumble(int *self) {
     int *ctx = (int *)self[1];
-    Vec3 *axis = (Vec3 *)((char *)ctx + 0x78);
-    Vec3 *spin = (Vec3 *)((char *)ctx + 0x84);
+    VecFx32 *axis = (VecFx32 *)((char *)ctx + 0x78);
+    VecFx32 *spin = (VecFx32 *)((char *)ctx + 0x84);
     int z, y, x;
 
     {

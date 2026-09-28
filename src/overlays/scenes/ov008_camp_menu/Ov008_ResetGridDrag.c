@@ -10,6 +10,7 @@
  * widgets 0xc9, 100 and 0x60 hidden.  The tween, pick-up and lifted words
  * (+0x28 / +0x2c / +0x50) are cleared.
  */
+
 #include "nitro/types.h"
 
 #define DRAG_CELLS  9

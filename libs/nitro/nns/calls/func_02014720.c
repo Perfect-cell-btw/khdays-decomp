@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 #define NNS_G2D_BINFILE_SIG_FONTDATA 0x4e465452

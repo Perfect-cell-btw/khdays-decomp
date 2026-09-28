@@ -6,8 +6,10 @@
  * +0x60 high byte and bit 0 of +0x1ae clear, the mount is told to land (020c5c54), the mount's
  * +0x3bc bit 0 is set when exactly one rider counter is left, the actor's +0x3c0 bit 0 is set
  * and the node moves to 020d30f4. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct m4 { int w[4]; };
 struct Bits3bc { unsigned char b0 : 1; };
 struct Bits3c0 { unsigned int b0 : 1; };
@@ -17,22 +19,22 @@ static inline int FX_Mul(int a, int b) {
 }
 
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Quat_Slerp(void *a, int s, void *b, void *m);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern int func_020050b4(int x, int z);
-extern void Ov107_MoveNodeAndRelayout(int obj, Vec3 *v);
+extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *v);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void Ov278_RecoveryWaitA(void);
 
 void Ov278_BuckTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 mountPos;
-    Vec3 acc;
-    Vec3 tmp;
+    VecFx32 mountPos;
+    VecFx32 acc;
+    VecFx32 tmp;
     struct m4 pose;
     int t;
     int t2;
@@ -40,19 +42,19 @@ void Ov278_BuckTick(int *node) {
     int t2x3;
 
     state[5] += *(int *)(node[0] + 0x2c);
-    mountPos = *(Vec3 *)(*(int *)(*state + 0x394) + 0xb0);
+    mountPos = *(VecFx32 *)(*(int *)(*state + 0x394) + 0xb0);
     t = FX_Div(state[5], 0x1000);
     t2 = FX_Mul(t, t);
     t3 = FX_Mul(t2, t);
     t2x3 = 3 * t2;
-    ScaleVec3Fx12(2 * t3 - t2x3 + 0x1000, (Vec3 *)(state + 0x16), &acc);
+    ScaleVec3Fx12(2 * t3 - t2x3 + 0x1000, (VecFx32 *)(state + 0x16), &acc);
     ScaleVec3Fx12(-(t3 + t3) + t2x3, &mountPos, &tmp);
     VEC_Add(&acc, &tmp, &acc);
-    ScaleVec3Fx12(t3 - 2 * t2 + t, (Vec3 *)(state + 0x10), &tmp);
+    ScaleVec3Fx12(t3 - 2 * t2 + t, (VecFx32 *)(state + 0x10), &tmp);
     VEC_Add(&acc, &tmp, &acc);
-    ScaleVec3Fx12(t3 - t2, (Vec3 *)(state + 0x13), &tmp);
+    ScaleVec3Fx12(t3 - t2, (VecFx32 *)(state + 0x13), &tmp);
     VEC_Add(&acc, &tmp, &acc);
-    VEC_Subtract(&acc, (Vec3 *)state[7], (Vec3 *)(state + 2));
+    VEC_Subtract(&acc, (VecFx32 *)state[7], (VecFx32 *)(state + 2));
     Quat_Slerp(&pose, t, state + 0x19, (void *)(*(int *)(*state + 0x394) + 0xa0));
     Vec3TransformViaTempMtx(&tmp, (void *)(*(int *)(*state + 0x394) + 0xa0), &data_02042258);
     state[0xc] = state[0xb] = func_020050b4(tmp.x, tmp.z);

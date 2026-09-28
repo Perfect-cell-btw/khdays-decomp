@@ -3,24 +3,26 @@
  * when spent. The +0x2c goal heading is capped at 0.26 from straight ahead (020cd8c0), the +0x4c turn
  * rate grows by 2 up to 3/4 of the frame rate and the +0x28 heading (mirrored to the actor's +0x420)
  * turns toward the goal and orients the pose about up. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 struct Ov258Vortex { char pad[0x428]; int time; };
 
 extern void Ov258_VortexPull(int *node);
-extern int Ov258_AngleTo(int *node, Vec3 *dir, int angle, int absolute);
+extern int Ov258_AngleTo(int *node, VecFx32 *dir, int angle, int absolute);
 extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, const Quat *rot);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
 
 void Ov258_TurnTick(int *node)
 {
     int *state = (int *)node[1];
     Quat q;
-    Vec3 fwd;
+    VecFx32 fwd;
 
     if (*(signed char *)(*state + 0x1c6) == 2 && state[0xe] != 0) {
         state[0xe] -= *(int *)(node[0] + 0x2c);

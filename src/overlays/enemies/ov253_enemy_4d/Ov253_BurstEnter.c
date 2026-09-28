@@ -4,8 +4,10 @@
  * +0x20 timer is armed with 0.5, the +8 velocity takes half the +0x14 direction, +0x44 and
  * +0x24 clear and the node moves to 020d425c. Codegen: the position is packed through Fx32
  * wrapper copies (ov269_3930 idiom). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -18,7 +20,7 @@ typedef struct {
     Fx24 pos[3];        /* +0x5 */
 } PosMsg;
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const PosMsg data_ov253_020d4a08;
 extern void Ov253_ThrownSpearTick(void);
@@ -58,7 +60,7 @@ void Ov253_BurstEnter(int *node) {
     }
     *(u16 *)(*state + 0x100 + 0xae) &= ~3;
     state[8] = 0x800;
-    ScaleVec3Fx12(state[8], (Vec3 *)(state + 5), (Vec3 *)(state + 2));
+    ScaleVec3Fx12(state[8], (VecFx32 *)(state + 5), (VecFx32 *)(state + 2));
     state[0x11] = 0;
     state[9] = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov253_ThrownSpearTick);

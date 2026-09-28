@@ -4,16 +4,17 @@
  * velocity is the +0x390 part's motion step rotated by the actor's +0xa0 orientation and, unless
  * the gap is within the actor's +0x2d8 range but beyond 0x3000, the +0x384 item's +0xa8 byte
  * clears and the tick hands off to cd224. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int *dist);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int FX_Sqrt(int x);
 extern int func_020050b4(int x, int z);
-extern int Ov107_ActionResource_GetOffsetAndScale(void *part, struct Vecx32 *out);
-extern void Vec3TransformViaTempMtx(void *dst, void *quat, struct Vecx32 *src);
+extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(void *dst, void *quat, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void Ov139_AcquireTargetTransformScaleThenAdvance(int *node);
 
@@ -21,8 +22,8 @@ void Ov139_ApproachTick(int *node)
 {
     int *state = (int *)node[1];
     int dist;
-    struct Vecx32 dir;
-    struct Vecx32 step;
+    VecFx32 dir;
+    VecFx32 step;
     int speed;
     int actor;
     int target;

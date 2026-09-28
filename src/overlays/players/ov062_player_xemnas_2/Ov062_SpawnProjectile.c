@@ -3,10 +3,12 @@
  * added to its +0x48c position, its scale is the descriptor's id and its direction the
  * descriptor's +0x28 vector rotated and normalised. `flag` marks a kind-1/2 shot and bit 1 of
  * the descriptor's +0x14 adds mode bit 0. Always 0. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } MtxFx33;
 typedef struct {
-    Vec3 pos;
+    VecFx32 pos;
     short sx, sy, sz, scale;
     int f14, f18, f1c, f20, f24, f28;
 } Placement;
@@ -16,24 +18,24 @@ struct ShotDesc {
     char pad004[0x10];
     unsigned char nFlags14;   /* 0x14 */
     char pad015[7];
-    Vec3 vOffset;             /* 0x1c */
-    Vec3 vDir;                /* 0x28 */
+    VecFx32 vOffset;             /* 0x1c */
+    VecFx32 vDir;                /* 0x28 */
 };
 
 struct b2 { unsigned char b0 : 1, b1 : 1; };
 
 extern void MTX_RotY33_(MtxFx33 *, int, int);
-extern void MTX_MultVec33(const Vec3 *, const MtxFx33 *, Vec3 *);
-extern void VEC_Add(const Vec3 *, const Vec3 *, Vec3 *);
-extern int VEC_Mag(const Vec3 *);
-extern int VEC_Normalize(const Vec3 *, Vec3 *);
+extern void MTX_MultVec33(const VecFx32 *, const MtxFx33 *, VecFx32 *);
+extern void VEC_Add(const VecFx32 *, const VecFx32 *, VecFx32 *);
+extern int VEC_Mag(const VecFx32 *);
+extern int VEC_Normalize(const VecFx32 *, VecFx32 *);
 extern void Ov022_SendPlacementMessage(char *, Placement *);
 extern const short data_0203d210[];
 
-int Ov062_SpawnProjectile(char *self, Vec3 *pos, struct ShotDesc *desc, int flag)
+int Ov062_SpawnProjectile(char *self, VecFx32 *pos, struct ShotDesc *desc, int flag)
 {
     Placement req;
-    Vec3 dir;
+    VecFx32 dir;
     MtxFx33 mtx;
     int i;
 
@@ -42,7 +44,7 @@ int Ov062_SpawnProjectile(char *self, Vec3 *pos, struct ShotDesc *desc, int flag
         MTX_RotY33_(&mtx, -data_0203d210[i * 2], -data_0203d210[i * 2 + 1]);
         MTX_MultVec33(&desc->vOffset, &mtx, &dir);
         req.scale = desc->nId;
-        VEC_Add((Vec3 *)(self + 0x8c + 0x400), &dir, &req.pos);
+        VEC_Add((VecFx32 *)(self + 0x8c + 0x400), &dir, &req.pos);
         MTX_MultVec33(&desc->vDir, &mtx, &dir);
         if (VEC_Mag(&dir) != 0) {
             VEC_Normalize(&dir, &dir);

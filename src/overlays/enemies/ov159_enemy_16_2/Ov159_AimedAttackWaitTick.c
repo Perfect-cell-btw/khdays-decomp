@@ -6,17 +6,18 @@
  * from that bone along the sine/cosine of the +0xc heading and phase 2 begins. Once the +4
  * item is idle (+0xad) the +0x44 delay is re-armed to a random value in [+0x224, +0x228],
  * sub-state 2 is queued and the state ends. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 static inline unsigned short FX_RadToIdx(int rad) {
     return (unsigned short)((0x28BE60DB9391LL * rad + 0x80000000000LL) >> 44);
 }
 
-extern int Ov107_ActionResource_GetOffsetAndScale(int aim, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *basis, const Vec3 *v);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov107_ActionResource_GetOffsetAndScale(int aim, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *basis, const VecFx32 *v);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov159_RelayoutAndStoreVec(int emitter, void *at, Vec3 *dir);
+extern void Ov159_RelayoutAndStoreVec(int emitter, void *at, VecFx32 *dir);
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern unsigned short data_ov159_020d4fa0[];
@@ -25,8 +26,8 @@ extern short data_0203d210[];
 void Ov159_AimedAttackWaitTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 aim;
-    Vec3 dir;
+    VecFx32 aim;
+    VecFx32 dir;
     unsigned short pair[2];
     unsigned short *pp;
     void (*cb)();
@@ -36,8 +37,8 @@ void Ov159_AimedAttackWaitTick(int *node)
     int diff;
 
     reach = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x39c), &aim);
-    Vec3TransformViaTempMtx((Vec3 *)(state + 6), (char *)*state + 0xa0, &aim);
-    ScaleVec3Fx12(reach, (Vec3 *)(state + 6), (Vec3 *)(state + 6));
+    Vec3TransformViaTempMtx((VecFx32 *)(state + 6), (char *)*state + 0xa0, &aim);
+    ScaleVec3Fx12(reach, (VecFx32 *)(state + 6), (VecFx32 *)(state + 6));
     state[0xf] += *(int *)(node[0] + 0x2c);
     if (*(unsigned char *)((char *)state + 0x54) == 0 && state[0xf] > 0x22aa) {
         pp = pair;

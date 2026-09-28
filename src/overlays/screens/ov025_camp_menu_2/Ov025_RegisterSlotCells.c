@@ -6,6 +6,7 @@
  * table's group tag (Ov025_RetargetCellByTag(table->id, 0, 0)) and registers the selected slot's
  * active-tag cell (table->arrA[state->selected], the byte at +8). state->selected and
  * table->count are re-read on each iteration. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008SlotState {

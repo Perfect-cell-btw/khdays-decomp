@@ -9,7 +9,9 @@
  * instead of `movs r1,#0x6a`: it is not a constant in the source, it is `&OVERLAY_106_ID`.
  * Written as a plain `0x6a` the function is 4 bytes short -- the pool word disappears.
  */
+
 #include "nitro/types.h"
+
 typedef u32 FSOverlayID;
 
 /* FS_EXTERN_OVERLAY(ov106) -- dsd names the absolute symbol OVERLAY_106_ID. */

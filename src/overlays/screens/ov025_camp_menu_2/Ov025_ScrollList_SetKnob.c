@@ -4,6 +4,7 @@
  * bClampCursor the cursor (+0x2c8) is pulled into the ten rows now in view (the scroll plus
  * 8 pixels, 16 a row; Ov025_ScrollList_SelectRow 020adee0 without sound).  The list is marked
  * dirty (+0x2c4) and the knob bar redrawn (020adc7c). */
+
 #include "nitro/types.h"
 
 typedef struct TileBlock {

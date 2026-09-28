@@ -1,4 +1,5 @@
 #include "nitro/types.h"
+
 typedef u16 GXRgb;
 
 typedef struct NNSG3dResDictTreeNode {

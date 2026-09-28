@@ -5,6 +5,7 @@
  * listed kinds are contiguous, which is why the original reaches them through a
  * jump table rather than a compare chain.
  */
+
 #include "nitro/types.h"
 
 struct Ov030Actor {

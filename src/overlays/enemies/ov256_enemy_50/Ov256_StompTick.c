@@ -3,14 +3,15 @@
  * point is reset and the actor is knocked back at the tracked point (mode 8). Once the partner holds
  * no queued move the stomp count +0x54 grows: at 4 the next move is the +0x74 mode + 2 and the node
  * ends, otherwise the timer restarts with a new charge and pose 0x19. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov256_PickTarget(int *node);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov256_StompTick(int *node)
 {
@@ -19,12 +20,12 @@ void Ov256_StompTick(int *node)
     state[0x13] += *(int *)(node[0] + 0x2c);
     if (state[0x13] < 0x1d38) {
         Ov256_PickTarget(node);
-        *(Vec3 *)(state + 7) = *(Vec3 *)(*(int *)(*state + 0x430) + 0x190);
+        *(VecFx32 *)(state + 7) = *(VecFx32 *)(*(int *)(*state + 0x430) + 0x190);
     }
     if (state[0x13] >= 0x2530 && *((u8 *)state + 0x69) != 0) {
         *((u8 *)state + 0x69) = 0;
-        *(Vec3 *)(*(int *)(*state + 0x430) + 0x190) = data_02041dc8;
-        func_ov107_020c0b90(*state, 8, *(Vec3 *)(state + 7), 0);
+        *(VecFx32 *)(*(int *)(*state + 0x430) + 0x190) = data_02041dc8;
+        func_ov107_020c0b90(*state, 8, *(VecFx32 *)(state + 7), 0);
     }
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;

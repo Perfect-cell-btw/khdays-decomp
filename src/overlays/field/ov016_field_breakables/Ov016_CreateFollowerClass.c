@@ -5,6 +5,7 @@
  *
  * Sibling of Ov016_CreateEntry (0207feb8, class 0x13) and Ov016_CreateEntryClass80 (02081f64);
  * the size is written 0x73 * 4 because that is how the ROM materialises it. */
+
 #include "nitro/types.h"
 
 typedef struct Ov016FollowerDesc {

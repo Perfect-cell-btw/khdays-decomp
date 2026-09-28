@@ -5,25 +5,26 @@
  * direction x speed (the +0x30 heading = atan2 of the offset), the speed eases a fiftieth
  * towards 0x500 and the velocity drops 0x300 in y. Beyond a 4.0 gap the node moves to
  * 020d24dc; inside 2.0 the velocity is -0x100 along the offset instead. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int FX_Sqrt(int x);
 extern int RandNextScaled();  /* K&R decl: needed for the rand `+ (v - v)` copy artifact */
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern const Vec3 data_02042264;
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern const VecFx32 data_02042264;
 extern void Ov236_ApproachTick(void);
 
 void Ov236_StrafeTick(int *node) {
     int *state = (int *)node[1];
     int dist;
-    Vec3 d;
-    Vec3 side;
+    VecFx32 d;
+    VecFx32 side;
     int actor;
     int target;
     int v;
@@ -48,7 +49,7 @@ void Ov236_StrafeTick(int *node) {
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)(state[1] + 0x74), (Vec3 *)(*state + 0x74), &d);
+    VEC_Subtract((VecFx32 *)(state[1] + 0x74), (VecFx32 *)(*state + 0x74), &d);
     {
         int actor = state[0];
         int target = state[1];
@@ -56,7 +57,7 @@ void Ov236_StrafeTick(int *node) {
     }
     VEC_CrossProduct(&data_02042264, &d, &side);
     state[0xc] = func_020050b4(d.x, d.z);
-    ScaleVec3Fx12(state[0xe] * state[0xd], &side, (Vec3 *)(state + 2));
+    ScaleVec3Fx12(state[0xe] * state[0xd], &side, (VecFx32 *)(state + 2));
     state[0xe] += (0x500 - state[0xe]) / 50;
     state[3] -= 0x300;
     if (dist > 0x4000) {
@@ -66,5 +67,5 @@ void Ov236_StrafeTick(int *node) {
     if (dist >= 0x2000) {
         return;
     }
-    ScaleVec3Fx12(-0x100, &d, (Vec3 *)(state + 2));
+    ScaleVec3Fx12(-0x100, &d, (VecFx32 *)(state + 2));
 }

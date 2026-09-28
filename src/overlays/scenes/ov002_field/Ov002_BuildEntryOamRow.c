@@ -4,6 +4,7 @@
  * palette 7. The row is placed by column and line, counting back from the
  * entry's width so it grows leftwards.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

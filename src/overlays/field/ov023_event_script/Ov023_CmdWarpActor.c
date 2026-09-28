@@ -8,13 +8,9 @@
  * position is added, its angle (0202b150) being the facing.  The facing goes to the model
  * (02088e78) when there is one, else onto the entity (+0x80, flag bit 5 of +4) unless its
  * bit 5 at +0 is set.  The entity is then shown (0202beb8 1).  Returns 1. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023Operand {
     s16  nType;               /* 0x00 */

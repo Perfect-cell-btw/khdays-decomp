@@ -11,6 +11,7 @@
  * sound 0x35.  State 2 (drag): +0x30 cleared and the selected row (+0x9c)
  * re-selected; failure highlights row 0 and clears the selection.
  */
+
 #include "nitro/types.h"
 
 #define STATE_LIST 0

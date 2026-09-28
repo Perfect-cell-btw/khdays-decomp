@@ -5,10 +5,11 @@
  * (data_ov211_020d6546, flag 1) carries the +4 point raised 6.0, packed as 24-bit values. The
  * +0x50 height becomes 10.0, +0x60 and the +0x66/+0x64 bytes clear and the tick hands over to
  * Ov211_LeapTick. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 h[7]; } Cmd14;
 
 struct w8 { unsigned int lo : 8, rest : 24; };
@@ -29,7 +30,7 @@ extern void Ov211_LeapTick(int *node);
 void Ov211_EnterLeap(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 raw;
+    VecFx32 raw;
     Cmd14 msg;
     u16 cmd[2];
     Fx32 scratchZ;
@@ -53,7 +54,7 @@ void Ov211_EnterLeap(int *node)
     state[0xb] = 0;
     state[0xc] = 0;
     msg = data_ov211_020d6546;
-    raw = *(Vec3 *)state[1];
+    raw = *(VecFx32 *)state[1];
     raw.y += 0x6000;
     PACK(msg, scratchX, *(Fx32 *)&raw.x, 5);
     PACK(msg, scratchY, *(Fx32 *)&raw.y, 8);

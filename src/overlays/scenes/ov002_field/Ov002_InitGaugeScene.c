@@ -1,6 +1,7 @@
 /* Initialize the gauge scene and return its per-frame callback. The local
  * aggregate copy is load-bearing: it produces the original THUMB ldm/stm copy
  * and preserves the relocation to data_ov002_0207ddd0. */
+
 #include "nitro/types.h"
 
 typedef struct Ov002GaugeSetup Ov002GaugeSetup;

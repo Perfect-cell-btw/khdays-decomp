@@ -1,6 +1,7 @@
 /* Whether the game flag of the current level (235d0 kind 9) is set: the first entry of the
  * overlay's 56-entry threshold table whose +0 bound exceeds the value gives the flag offset
  * (+2), added to 0x3bd5 (offset 0 when none does). */
+
 #include "nitro/types.h"
 
 struct LevelFlagEntry {

@@ -29,15 +29,11 @@
  * for the desc's rest time.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022ActorNode */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ActorNode {
     u8 pad00[0x80];
     u16 nAngle;                  /* 0x80 */

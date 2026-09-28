@@ -9,9 +9,10 @@
  * address escapes into the send call, so mwcc keeps the three position stores
  * the ROM has.
  */
-#include "nitro/types.h"
 
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
 typedef struct {

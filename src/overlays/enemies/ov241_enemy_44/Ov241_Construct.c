@@ -7,6 +7,7 @@
  * creates three kind-2 sub-items (+0x38c.., attached, bits 0/1 of their +0x5c, channels 0 and
  * 2 bound, subscribed), an effect node (+0x3a0, subscribed, bit 0) hosting the kind-3 item
  * (+0x388), a placement on the +0x144 list (+0x398) and loads sound 0x13a. */
+
 #include "nitro/types.h"
 
 struct Bit0 {

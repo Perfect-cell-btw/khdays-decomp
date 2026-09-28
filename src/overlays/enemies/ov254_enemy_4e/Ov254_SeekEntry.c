@@ -3,17 +3,18 @@
  * (aggressive) or 0xc / 7 (+0x75 / +0x76) and plays (partner looping); aggressive also starts the
  * +0x460 / +0x464 helpers and knocks the actor back in place (mode 0xb). The +0x10 / +0x60
  * counters and +0x71 flag clear and the node moves to 020ce7a0. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov254_PickRoutePoint(int *state);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void Ov254_ForwardToAiIfReady_6(int helper);
 extern void Ov254_ForwardToAiIfReady_8(int helper);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov254_AnimatedOrbitTick(void);
 
 void Ov254_SeekEntry(int *node)

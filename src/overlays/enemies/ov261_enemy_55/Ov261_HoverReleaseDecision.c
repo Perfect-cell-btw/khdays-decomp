@@ -4,8 +4,10 @@
  * +0x2c word and ends the state with sub-state 2. Otherwise the +0x34 lift eases by a fiftieth
  * towards 0x2000 above the +0x13c height, the +0xc quaternion is decomposed into the +0x74 axis
  * (and a discarded angle), the +0x40 clock resets and the tick hands off to d122c. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void Ov015_SpotArrive(int piece, int slot, int carried, int a);

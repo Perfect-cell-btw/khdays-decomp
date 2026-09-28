@@ -3,6 +3,7 @@
  * divider) and the translation row keeps the rotation centred on the texture: row 3 is
  * ((1 - sin - cos) * width << 3) - (transS * width << 4) and ((1 + sin - cos) * height << 3) +
  * (transT * height << 4). */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 

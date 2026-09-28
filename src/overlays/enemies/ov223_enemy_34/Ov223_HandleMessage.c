@@ -4,23 +4,25 @@
  * transform and starts the +0x398 sub-item under the +0x3c owner with kind 0x17 into +0x39c;
  * with slot 2 the 0x14 position goes to the +0x390 ring's writer (ov223 4e70) along with the
  * message's +4 pose. The base handler always runs. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int q[4]; } Quat;
 typedef union { int words[3]; u8 bytes[12]; } Packed;
 
-extern void Srt_SetScaleVec(void *pose, const Vec3 *offset);
+extern void Srt_SetScaleVec(void *pose, const VecFx32 *offset);
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero, SrtTransform *transform);
-extern void Ov223_WriteRingSlot(int *ring, const Vec3 *pPoint, const Quat *pPose);
+extern void Ov223_WriteRingSlot(int *ring, const VecFx32 *pPoint, const Quat *pPose);
 extern void Ov107_AiState_OnMessage(int owner, u8 *msg, int arg);
 
 void Ov223_HandleMessage(int owner, u8 *msg, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     Packed anchor;
     Packed spawn;
     Packed ring;
@@ -39,7 +41,7 @@ void Ov223_HandleMessage(int owner, u8 *msg, int arg)
             anchor.bytes[10] = msg[0x2b];
             anchor.bytes[9] = msg[0x2c];
             *(int *)(owner + 0xc4) = anchor.words[2] >> 8;
-            Srt_SetScaleVec((void *)(owner + 0xa0), (Vec3 *)(owner + 0xbc));
+            Srt_SetScaleVec((void *)(owner + 0xa0), (VecFx32 *)(owner + 0xbc));
         }
     } else if (msg[2] == 5) {
         switch (msg[3]) {

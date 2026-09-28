@@ -8,9 +8,10 @@
  * 30 x dt / 25. Within 0x1000 of the node its kind decides: 1/2 clears the +0x384 item's +0xa8
  * flag and hands off to cd100, 3 clears bit 0 of the +0x60 high byte and requests sub-state 0
  * (slot released), otherwise the index advances modulo the path's count. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 struct PathEntry {
@@ -20,15 +21,15 @@ struct PathEntry {
     int kind;
 };
 
-extern int Ov107_ActionResource_GetOffsetAndScale(int item, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, Vec3 *in);
+extern int Ov107_ActionResource_GetOffsetAndScale(int item, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, VecFx32 *in);
 extern int queryTableEntry(int item, int channel);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int func_020050b4(int x, int z);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov291_ApproachTick(int *node);
 extern const short data_0203d210[];
@@ -39,9 +40,9 @@ extern const short data_0203d210[];
 void Ov291_PathFollowTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 fwd;
-    Vec3 point;
-    Vec3 dir;
+    VecFx32 fwd;
+    VecFx32 point;
+    VecFx32 dir;
     int speed;
     int len;
     int dot;
@@ -67,8 +68,8 @@ void Ov291_PathFollowTick(int *node)
             *(u8 *)(state + 0xa) = 0;
         }
     }
-    point = *(Vec3 *)(*(int *)(*state + 0x3a0) + state[9] * 0x10 + 0x10);
-    VEC_Subtract(&point, (Vec3 *)state[3], &dir);
+    point = *(VecFx32 *)(*(int *)(*state + 0x3a0) + state[9] * 0x10 + 0x10);
+    VEC_Subtract(&point, (VecFx32 *)state[3], &dir);
     len = VEC_Normalize(&dir, &dir);
     if (len < speed) {
         speed = len >> 1;
@@ -82,7 +83,7 @@ void Ov291_PathFollowTick(int *node)
     fwd.x = data_0203d210[idx * 2];                                       /* FX_SinIdx */
     fwd.y = 0;
     fwd.z = data_0203d210[idx * 2 + 1];                                   /* FX_CosIdx */
-    ScaleVec3Fx12(FX_MUL(speed, dot), &fwd, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(FX_MUL(speed, dot), &fwd, (VecFx32 *)(state + 4));
     state[7] = *(int *)(*node + 0x2c) * 30 / 25;
     if (len > 0x1000) {
         return;

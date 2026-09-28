@@ -1,12 +1,7 @@
 /* Moves the cast segment into the model's space and computes its XZ bounds. */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 {
-    s32 x;
-    s32 y;
-    s32 z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct CollCastState {
     s32 mode00;

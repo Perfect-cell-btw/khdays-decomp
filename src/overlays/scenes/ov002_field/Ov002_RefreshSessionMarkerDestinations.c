@@ -1,6 +1,7 @@
-typedef struct Ov002Vec3 { int x, y, z; } Ov002Vec3;
+#include "nitro/fx.h"
+
 typedef struct Ov002SessionMarker {
-    Ov002Vec3 place;
+    VecFx32 place;
     int nOwner;
     int nKind;
     char szName[0x30];
@@ -23,7 +24,7 @@ extern int Ov002_FindCodeOwner(int nCode, int *pSlot, int *pDestination);
 extern int func_ov022_020882f8(void);
 extern Ov002SessionActorFlags *GetEntryField20ByIndex(int nPlayer);
 extern void Ov002_ResolveNamedPlacement(const char *pName, int nSlot,
-    Ov002Vec3 *pPlace, int *pExtra, int nPlayer);
+    VecFx32 *pPlace, int *pExtra, int nPlayer);
 
 /* Refresh marker destinations and optional named placements after a code change. */
 void Ov002_RefreshSessionMarkerDestinations(void)

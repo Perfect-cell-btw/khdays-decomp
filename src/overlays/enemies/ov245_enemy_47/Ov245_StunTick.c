@@ -4,12 +4,13 @@
  * bit 0 of +0x1ae, picks the +0x38 follow-up (2 for a random draw below 40 of 100, else 1),
  * spawns effect 0 and fires reaction 0/0x48 at the actor's +0x74 position, and moves the node
  * to 020cff94. */
-typedef struct { int x, y, z; } Vec3;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern int RandNextScaled(int scale);
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_Carrier_AiStep_QueueAction2OnAnimEnd(void);
@@ -37,7 +38,7 @@ void Ov245_StunTick(int *node) {
     Ov107_PostTagUpdate(*state, 0, 0);
     *(u16 *)(*state + 0x100 + 0xae) |= 1;
     state[0xe] = (unsigned int)RandNextScaled(0x64) < 0x28 ? 2 : 1;
-    func_ov107_020c0b90(*state, 0, *(Vec3 *)(*state + 0x74), 0);
+    func_ov107_020c0b90(*state, 0, *(VecFx32 *)(*state + 0x74), 0);
     Ov107_BuildAndSendUpdate(*state, 0, 0x48, (void *)(*state + 0x74));
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_Carrier_AiStep_QueueAction2OnAnimEnd);
 }

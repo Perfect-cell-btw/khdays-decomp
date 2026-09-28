@@ -8,18 +8,14 @@
  * is drawn in its blink phase (Ov027_DrawPanelSlotShifted 02083c78); in a session only the
  * "waiting" strip is placed (slot 2, source row 7, at row 19, 14 cells wide) and the panel is
  * queued (Ov027_EnqueuePanel 02083cb8). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

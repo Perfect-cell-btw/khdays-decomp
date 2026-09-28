@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* The question the board is showing and who has answered it. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002Board {
     char pad000[0x48];
     s16 nTopic;                 /* 0x48 */

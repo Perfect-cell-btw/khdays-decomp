@@ -2,11 +2,12 @@
  * of the model's +0x5c flags clears, the owner's +0x57e mask gains the gem's bit (+0x24 index), layers
  * 0, 2, 4 and 1 play (mode 0, 0), the model is scaled 2.5/4.06 (big gem, +0x25) or 2.0/3.25, the rig pose
  * resets, +0x20 clears, the first-blink flag (+0x26) is set and the node moves on to 020d3d10. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void SrtTransform_SetIdentity(void *srt);
-extern void Srt_SetTranslation(void *srt, const Vec3 *v);
+extern void Srt_SetTranslation(void *srt, const VecFx32 *v);
 extern void SetSubitemState(int rig, int channel, int a, int b);
 extern void Srt_SetScaleXYZ(void *placement, int x, int y, int z);
 extern void RefreshObjectCallbacks(int rig, int a);
@@ -18,7 +19,7 @@ void Ov252_GemStart(int *node)
     int *state = (int *)node[1];
 
     SrtTransform_SetIdentity((void *)(*state + 4));
-    Srt_SetTranslation((void *)(*state + 4), (Vec3 *)(state + 2));
+    Srt_SetTranslation((void *)(*state + 4), (VecFx32 *)(state + 2));
     *(int *)(*state + 0x5c) &= ~2;
     *(u16 *)(state[1] + 0x57e) |= 1 << *((signed char *)state + 0x24);
     SetSubitemState(*state, 0, 0, 0);

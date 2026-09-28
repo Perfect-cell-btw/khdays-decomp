@@ -33,19 +33,15 @@
  *  - nElapsed40 is accumulated and compared in that order: the ROM stores the new value
  *    unconditionally and branches on it, which is what the single statement produces.
  */
-#include "nitro/types.h"
 
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov120Actor {
     char pad000[0x80];
     int nRadius80;
     char pad084[0x2c];
-    struct Vec3 vPos0b0;
+    VecFx32 vPos0b0;
     char pad0bc[0x10b];
     u8 bActionState1c7;
     char pad1c8[0x110];
@@ -56,7 +52,7 @@ struct Ov107LockTarget {
     char pad000[0x80];
     int nRadius80;
     char pad084[0x10c];
-    struct Vec3 vPos190;
+    VecFx32 vPos190;
 };
 
 struct Ov120ActionState {
@@ -67,7 +63,7 @@ struct Ov120ActionState {
     int nFacing10;
     int nHeading14;
     int nSpeed18;
-    struct Vec3 vVelocity;
+    VecFx32 vVelocity;
     char pad028[0x18];
     int nElapsed40;
 };
@@ -85,20 +81,20 @@ struct Ov120ActionNode {
 };
 
 extern const short data_0203d210[];
-extern struct Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 extern struct Ov107LockTarget *Ov107_FindNearestObject(struct Ov120Actor *owner, int out);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern int VEC_Subtract(void *a, void *b, void *out);
-extern int VEC_Normalize(struct Vec3 *v, struct Vec3 *unit);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern int func_020050b4(int x, int z);
-extern int VEC_DotProduct(struct Vec3 *a, struct Vec3 *b);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 
 void Ov122_ChargeTowardTarget_Step(struct Ov120ActionNode *node)
 {
-    struct Vec3 vAim;
-    struct Vec3 vFacing;
+    VecFx32 vAim;
+    VecFx32 vFacing;
     struct Ov120ActionState *state;
     struct Ov107LockTarget *target;
     struct Ov120Actor *owner;

@@ -6,6 +6,7 @@
  * (0202aee0) is already past it, then the full length; without it the full length less the
  * entity speed (0202c6a8 on +0x1a38) unless the actor tracks (flag bit 6, +0x1a28).  The
  * depth's two sound requests (+0x498) are cleared.  Flag bit 9 is set either way. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023Entity {

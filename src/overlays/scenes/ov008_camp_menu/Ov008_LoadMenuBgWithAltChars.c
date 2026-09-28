@@ -7,6 +7,7 @@
  * Note the func_02024e5c() == 1 test is a materialized bool (moveq/movne/cmp#0) and the early
  * return fires when it is TRUE, so the alternate path runs for every mode EXCEPT 1.
  * Res_LoadSpriteSet takes five args; resource-cell layout matches Ov008_SetupMenuBgCells. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;

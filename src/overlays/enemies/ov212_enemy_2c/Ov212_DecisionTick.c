@@ -8,24 +8,26 @@
  * the 020cffbc nor the 020cfb00 check firing -- queues sub-state 2. An idle item with the cfb00
  * check quiet plays animation 5. When a sub-state was queued animation 0x10 plays, the sub-state
  * is remembered at +0x5d and cleared, and the tick hands off to 020d1124. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Hw60 { unsigned short lo : 8, hi : 8; };
 struct b2 { unsigned char b0 : 1, b1 : 1; };
 
 extern void Ov212_ReactionCueTick(int *node, int actor, void *at);
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern int Ov212_IsState6cActive(int *state, int a);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov212_IsTargetOutsideCone(int *node);
 extern int Ov212_ChooseMove(int *node, int gap);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern const short data_0203d210[];
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 extern void Ov212_AiQueueStoredOnAnimEnd(int *node);
 
 static inline unsigned short FX_RadToIdx(int rad) {
@@ -35,9 +37,9 @@ static inline unsigned short FX_RadToIdx(int rad) {
 void Ov212_DecisionTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 aim;
-    Vec3 fwd;
-    Vec3 side;
+    VecFx32 aim;
+    VecFx32 fwd;
+    VecFx32 side;
     int gap;
     int len;
     int target;
@@ -53,7 +55,7 @@ void Ov212_DecisionTick(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)(target + 0x190), (Vec3 *)(*state + 0x108 + 0x400), &aim);
+    VEC_Subtract((VecFx32 *)(target + 0x190), (VecFx32 *)(*state + 0x108 + 0x400), &aim);
     aim.y = 0;
     len = VEC_Normalize(&aim, &aim);
     gap = len - *(int *)(*(int *)(*state + 0x5a8) + 0x80) - *(int *)(*state + 0x80);
@@ -68,20 +70,20 @@ void Ov212_DecisionTick(int *node)
     }
     if (Ov212_IsState6cActive(state, 1) != 0) {
         if (gap < 0x3000) {
-            ScaleVec3Fx12(-*(int *)(*state + 0x578), &fwd, (Vec3 *)(state + 4));
+            ScaleVec3Fx12(-*(int *)(*state + 0x578), &fwd, (VecFx32 *)(state + 4));
         } else {
             if (((struct b2 *)(*state + 0x17a))->b1 != 0) {
                 state[0x18] ^= 1;
             }
             VEC_CrossProduct(&data_02042264, &aim, &side);
             VEC_Normalize(&side, &side);
-            ScaleVec3Fx12(state[0x18] == 0 ? *(int *)(*state + 0x578) : -*(int *)(*state + 0x578), &side, (Vec3 *)(state + 4));
+            ScaleVec3Fx12(state[0x18] == 0 ? *(int *)(*state + 0x578) : -*(int *)(*state + 0x578), &side, (VecFx32 *)(state + 4));
         }
     } else {
         if (gap > 0x9800) {
-            ScaleVec3Fx12(*(int *)(*state + 0x578), &fwd, (Vec3 *)(state + 4));
+            ScaleVec3Fx12(*(int *)(*state + 0x578), &fwd, (VecFx32 *)(state + 4));
         } else if (gap < 0x3000) {
-            ScaleVec3Fx12(-*(int *)(*state + 0x578), &fwd, (Vec3 *)(state + 4));
+            ScaleVec3Fx12(-*(int *)(*state + 0x578), &fwd, (VecFx32 *)(state + 4));
         } else if (*(unsigned char *)(state[1] + 0xad) == 0 && Ov212_IsTargetOutsideCone(node) == 0
                    && Ov212_ChooseMove(node, gap) == 0) {
             *(unsigned char *)(*state + 0x1c7) = 2;

@@ -15,12 +15,13 @@
  * two stores (permuted schedule, still 292 B). const is the aliasing fact that lets both
  * table loads issue before the stores. One of a 3-member family (family).
  */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern int *Ov107_FindNearestObject(int a, int b);
 extern int VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int a, int b);
-extern void ScaleVec3Fx12(int s, struct vec3 *v, struct vec3 *out);
+extern void ScaleVec3Fx12(int s, VecFx32 *v, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *self, int idx, void *cb);
 extern void Ov212_ChargeAttackTick(void);
@@ -30,7 +31,7 @@ extern const short data_0203d210[];
 
 void Ov212_EnterFaceTargetB(void *self) {
     int *ctx = *(int **)((char *)self + 4);
-    struct vec3 d;
+    VecFx32 d;
     unsigned int idx;
     int tgt;
 
@@ -47,7 +48,7 @@ void Ov212_EnterFaceTargetB(void *self) {
     ctx[0xa] = data_0203d210[idx * 2];
     ctx[0xb] = 0;
     ctx[0xc] = data_0203d210[idx * 2 + 1];
-    ScaleVec3Fx12(0xa00, (struct vec3 *)(ctx + 0xa), (struct vec3 *)(ctx + 0xa));
+    ScaleVec3Fx12(0xa00, (VecFx32 *)(ctx + 0xa), (VecFx32 *)(ctx + 0xa));
     Ov107_PostTagUpdate(*ctx, 0xe, 0);
     ctx[0x10] = 0;
     *(char *)((char *)ctx + 0x5a) = 0;

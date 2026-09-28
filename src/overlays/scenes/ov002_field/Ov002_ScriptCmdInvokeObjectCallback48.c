@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* One operand of a script command: a tag saying how the value is fetched and
  * the word that carries either the value itself or the reference to it. */
+
+#include "nitro/types.h"
+
 typedef struct {
     short kind;
     short pad;

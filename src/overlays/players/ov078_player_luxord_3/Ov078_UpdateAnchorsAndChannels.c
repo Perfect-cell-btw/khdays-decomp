@@ -5,13 +5,14 @@
  * flag bit 12 / bit 4 is set and the +0xf0d byte is non-zero; then the second channel (+0xf0c
  * from +0x2c80) is driven, the attachment stepped, an idle attachment flags the local player's
  * bit 16 in both words, and the common post-update runs. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */
 extern void Ov002_WidgetScrollCommit(char *channel, char *config, int heading, int frame);
 extern int func_ov022_020923dc(char *emitter, int slot);
-extern void Ov078_GetAttackAnchor(char *self, int side, Vec3 *out);
-extern void func_ov022_02089478(int context, int slot, Vec3 *at);
+extern void Ov078_GetAttackAnchor(char *self, int side, VecFx32 *out);
+extern void func_ov022_02089478(int context, int slot, VecFx32 *at);
 extern void func_ov022_02089524(int context, int slot);
 extern int Ov022_GetGlobal34(void);
 extern void Ov022_ForwardToNodeHandler(void *attach, int tick);
@@ -22,7 +23,7 @@ extern void func_ov022_020ad588(char *self);
 
 void Ov078_UpdateAnchorsAndChannels(char *self)
 {
-    Vec3 at;
+    VecFx32 at;
     int frame = Anim_GetFrame(*(char **)(self + 0x20) + 4, 0);
     int i;
     int context;

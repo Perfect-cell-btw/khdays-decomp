@@ -2,9 +2,8 @@
  * unit axes (+0x0c/+0x18/+0x24) and three half extents (+0x30/+0x34/+0x38); each axis is scaled by its
  * half extent (ScaleVec3Fx12), the eight corners are built from the centre with every sign
  * combination, and the per-component minimum and maximum over the corners are written out. */
-#include "nitro/fx.h"
 
-typedef struct { fx32 x, y, z; } VecFx32;
+#include "nitro/fx.h"
 
 typedef struct OrientedBox {
     VecFx32 centre;                     /* +0x00 */

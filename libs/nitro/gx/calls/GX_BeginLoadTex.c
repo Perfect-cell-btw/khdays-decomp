@@ -1,7 +1,9 @@
 /* NitroSDK gx_load3d.c: GX_BeginLoadTex -- release the texture banks to LCDC and record, from
  * sTexStartAddrTable, the LCDC addresses of the (up to two) blocks the bank mask maps to and the
  * size of the first one. The symbol map calls GX_ResetBankForTex "SNDi_UnlockMutex". */
+
 #include "nitro/types.h"
+
 typedef int GXVRamTex;
 
 extern GXVRamTex GX_ResetBankForTex(void);   /* GX_ResetBankForTex */

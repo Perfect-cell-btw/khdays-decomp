@@ -2,13 +2,9 @@
  * bits 0 and 1 of its control word (+0x24 of the entity at +0x15e0) set (020279e0), drop bit 1
  * again and return the position of the actor's current track (+0x15b0 into the 0x58-byte
  * track entries at +0xac4, position at +0x24). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023Entity {
     u8   pad_00[0x24];

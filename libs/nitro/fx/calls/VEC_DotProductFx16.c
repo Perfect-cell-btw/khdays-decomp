@@ -1,6 +1,6 @@
+
 #include "nitro/fx.h"
 
-typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx16 x, y, z; } VecFx16;
 
 fx32 VEC_DotProductFx16(const VecFx32 *v, const VecFx16 *m)

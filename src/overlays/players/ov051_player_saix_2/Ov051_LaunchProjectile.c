@@ -4,8 +4,10 @@
  * kind and rewound, copies the spawn position to +0xac, and builds its orientation at +0x88 as
  * identity rotated by the heading about Y and, unless grounded, by random pitch and roll within
  * +/- 0x1555. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern int Ov022_PlayEntityVoice(char *self, int nSound, int nVariant);
@@ -21,7 +23,7 @@ extern void MI_Copy36B(const void *src, void *dst);
 extern char *data_ov051_020b7380;
 extern short data_0203d210[];
 
-void Ov051_LaunchProjectile(Vec3 *pos, int angle, int kind, int grounded)
+void Ov051_LaunchProjectile(VecFx32 *pos, int angle, int kind, int grounded)
 {
     Mtx33 m;
     Mtx33 mx;
@@ -56,7 +58,7 @@ void Ov051_LaunchProjectile(Vec3 *pos, int angle, int kind, int grounded)
     Anim_SetFrameWrapped(slot + 8, 0, 0);
     Anim_SetFrameWrapped(slot + 8, 1, 0);
     Anim_SetFrameWrapped(slot + 8, 2, 0);
-    *(Vec3 *)(slot + 0xac) = *pos;
+    *(VecFx32 *)(slot + 0xac) = *pos;
     MTX_Identity33_(&m);
     idx = (u16)(angle + 0x8000) >> 4;
     MTX_RotY33_(&my, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);

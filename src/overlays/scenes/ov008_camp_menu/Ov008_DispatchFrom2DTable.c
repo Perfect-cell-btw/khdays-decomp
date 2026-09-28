@@ -1,9 +1,10 @@
 /* Initialises a widget reference from the menu table's sub-entry id. */
 
+#include "nitro/types.h"
+
 extern void Ov008_GetMenuContext(void);
 extern void Ov008_GetContext(void);
 extern void Ov008_WidgetRef_Init(int arg0, int arg1);
-#include "nitro/types.h"
 
 typedef struct Ov008MenuSubEntry {
     s16 nId;                  /* 0x00 */

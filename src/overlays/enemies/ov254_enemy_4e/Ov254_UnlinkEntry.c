@@ -1,6 +1,8 @@
 /* Move entry: the actor's +0x38c link clears, bit 7 of its +0x60 high byte is set and bit 0
  * cleared, the +0x388 shape is disarmed and the node moves to 020d2604. */
+
 #include "nitro/types.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

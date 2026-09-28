@@ -1,10 +1,7 @@
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Sphere {
     VecFx32 centre;

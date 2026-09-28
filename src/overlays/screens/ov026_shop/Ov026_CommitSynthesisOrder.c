@@ -2,6 +2,7 @@
  * (stock + count, its "seen" flag, the recipe's unlock bit) and take the up to four
  * ingredient stacks out of the stock.
  */
+
 #include "nitro/types.h"
 
 #define INGREDIENT_COUNT 4

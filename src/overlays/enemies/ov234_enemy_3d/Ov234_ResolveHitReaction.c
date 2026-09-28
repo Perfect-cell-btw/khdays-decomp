@@ -2,14 +2,9 @@
  * direction from the hit, random stagger) and sends it; returns whether the hit counts. */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
-struct Ov234Vec3 {
-    int x;
-    int y;
-    int z;
-};
-
-static inline void Ov234Vec3_Set(struct Ov234Vec3 *vec, int x, int y, int z)
+static inline void Ov234Vec3_Set(VecFx32 *vec, int x, int y, int z)
 {
     vec->x = x;
     vec->y = y;
@@ -23,14 +18,14 @@ struct Ov234HitFlags {
 
 struct Ov234Hit {
     struct Ov234HitFlags flags;
-    struct Ov234Vec3 position;
+    VecFx32 position;
     char pad10[0x18];
     int result28;
 };
 
 struct Ov234Object {
     char pad000[0x74];
-    struct Ov234Vec3 vector74;
+    VecFx32 vector74;
     char pad080[0x147];
     u8 state1c7;
 };
@@ -40,9 +35,9 @@ struct Ov234Work {
     int field04;
     int node08;
     void *source0c;
-    struct Ov234Vec3 direction10;
+    VecFx32 direction10;
     char pad1c[0x0c];
-    struct Ov234Vec3 velocity28;
+    VecFx32 velocity28;
     int angle34;
     int angle38;
     char pad3c[0x08];
@@ -73,18 +68,18 @@ extern const short data_0203d210[];
 
 extern int Ov107_CalcHitDamage();
 extern void Ov107_BuildAndSendUpdate(struct Ov234Actor *, int, u16, int);
-extern void ScaleVec3Fx12(int, struct Ov234Vec3 *, struct Ov234Vec3 *);
+extern void ScaleVec3Fx12(int, VecFx32 *, VecFx32 *);
 extern int func_020050b4(int, int);
-extern int VEC_Normalize(struct Ov234Vec3 *, struct Ov234Vec3 *);
+extern int VEC_Normalize(VecFx32 *, VecFx32 *);
 extern unsigned RandNextScaled(unsigned);
 extern int Rand16NextScaled(int);
 extern void func_ov107_020c0b90(struct Ov234Object *, int,
-                                struct Ov234Vec3, int);
+                                VecFx32, int);
 
 int Ov234_ResolveHitReaction(struct Ov234Actor *self, void *source,
                         struct Ov234Hit *hit)
 {
-    struct Ov234Vec3 normalized;
+    VecFx32 normalized;
     u8 specialModes[2] = {
         data_ov234_020cd104.special[0],
         data_ov234_020cd104.special[1]

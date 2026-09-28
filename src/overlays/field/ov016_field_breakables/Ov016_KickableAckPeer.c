@@ -1,6 +1,7 @@
 /* Ov016_KickableAckPeer -- Ov016_KickableAckPeer: record peer nPeer's acknowledgement in the ack
  * mask (+0x61d); once every connected peer (01fff974 = the session's peer mask) has
  * answered, drop the "waiting" bit (bit 4 of +0x61c), clear the mask and report 1. */
+
 #include "nitro/types.h"
 
 typedef struct Ov016Kickable {

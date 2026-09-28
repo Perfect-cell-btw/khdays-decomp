@@ -12,13 +12,15 @@
  * player), clears the velocities, sets bit 2 and hands over to state 0 (after the slot
  * callback) or 2.
  */
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
-typedef struct { int x, y, z; } Vec3;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern void SceneNode_Disable(void *node);                                          /* SceneNode_Disable */
 extern int Ov022_StepAnchorDelta(char *self, void *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov039_StartFlight(char *self);
 extern void SceneNode_Enable(void *node);
 extern void *Ov022_ActorSetState(char *self, int state);
@@ -27,8 +29,8 @@ extern char *data_ov039_020b5600;
 void *Ov039_ChargeStep(char *self)
 {
     int r;
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     char *rig = data_ov039_020b5600 + 0xd4 + 0x2c00;
     void *next = 0;
     int limit;
@@ -59,7 +61,7 @@ void *Ov039_ChargeStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     limit = *(int *)rig != 0 ? 0xf000 : 0x6000;
     if (*(int *)(self + 0x7b0) >= limit && *(int *)(rig + 4) == 0) {
         Ov039_StartFlight(self);

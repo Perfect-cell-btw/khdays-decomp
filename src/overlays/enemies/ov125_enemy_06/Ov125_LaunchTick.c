@@ -6,12 +6,14 @@
  * count runs out, the +0x54 cooldown is re-rolled in [+0x224, +0x228], sub-state 2 is requested
  * and the tick ends; otherwise the timer restarts at a random 0x100..0x300 and the tick hands
  * over to Ov125_HopTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Owner { char pad[0x3a0]; int kids[2]; };
 
-extern void Vec3TransformViaTempMtx(Vec3 *out, const void *m, const Vec3 *in);
-extern void Ov125_RelayoutAndStoreVec(int child, void *from, Vec3 *dir);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *m, const VecFx32 *in);
+extern void Ov125_RelayoutAndStoreVec(int child, void *from, VecFx32 *dir);
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 /* data_ov125_020d03cc: the enemy's four owner-message pairs. This tick copies pair 3 as a typed
@@ -19,7 +21,7 @@ extern void SetIndexedSlot(int *node, int slot, void *cb);
 typedef struct { unsigned short a, b; } MsgPair;
 typedef struct { MsgPair pairs[4]; } Ov125MsgPairs;
 extern Ov125MsgPairs data_ov125_020d03cc;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void Ov125_HopTick(int *node);
 
 static inline int RandRange(int low, int high)
@@ -32,7 +34,7 @@ static inline int RandRange(int low, int high)
 void Ov125_LaunchTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     void *from[2];
     unsigned short pair[2];
     unsigned short *pp;

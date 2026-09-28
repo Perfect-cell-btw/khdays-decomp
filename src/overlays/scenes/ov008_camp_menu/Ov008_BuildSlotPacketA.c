@@ -5,6 +5,7 @@
  * ternary after the item lookup -- the `!=` polarity defers the subtract); the tail word is
  * cleared.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008ParamRecord {

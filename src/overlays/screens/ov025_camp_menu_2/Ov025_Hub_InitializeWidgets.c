@@ -2,6 +2,7 @@
  * from the progress, and installs each entry's callback. */
 
 #include "nitro/types.h"
+
 typedef struct Ov025LayoutTemplate { u32 words[4]; } Ov025LayoutTemplate;
 extern const Ov025LayoutTemplate data_ov025_020b3894;
 extern int Ov025_GetContext(void);

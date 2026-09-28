@@ -7,6 +7,7 @@
  * BG bank 4, OBJ bank 8, no extended palettes and the same DISPCNT bits; POWCNT1 bit 15 is set,
  * BG1..BG3 get their control words (0x4604 / 0x4c00 / 0x4e00 over the two preserved bits), the
  * 95d0 mode becomes 1 (02084ab4) and the first BG1 character tile is cleared. */
+
 #include "nitro/types.h"
 
 typedef struct DisplayRegisters {

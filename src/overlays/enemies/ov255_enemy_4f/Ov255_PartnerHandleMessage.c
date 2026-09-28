@@ -1,7 +1,9 @@
 /* Message handler of the ov255 partner object (+0x1c): kind-5 messages 0 and 1 play its pairs 0
  * and 1 (+0x3c0 table, kind 0x17) at the message point, 2 and 3 start and stop the +0x3c4 effect;
  * every message then goes to the common handler. */
+
 #include "nitro/types.h"
+
 struct Pair { int res; int handle; };
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);

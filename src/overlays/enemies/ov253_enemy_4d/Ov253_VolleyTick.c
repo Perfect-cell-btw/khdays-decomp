@@ -5,14 +5,16 @@
  * the timer restarts and the +0x20 count grows. The +0x14 speed follows three times the frame
  * step (30 / 10); without a target or after eight launches the +0x38c item's +0xa8 flag clears
  * and the node moves to 020ce0ac. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern int Ov253_FindNearestTarget(int self, const Vec3 *pos, const Vec3 *dir, int minDot, int maxDist);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern int Ov253_FindNearestTarget(int self, const VecFx32 *pos, const VecFx32 *dir, int minDot, int maxDist);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern void Ov253_Item_StoreVecAndRelayout(int part, void *anchor, Vec3 *dir);
+extern void Ov253_Item_StoreVecAndRelayout(int part, void *anchor, VecFx32 *dir);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
@@ -24,19 +26,19 @@ static inline unsigned short FX_RadToIdx(int rad) {
 
 void Ov253_VolleyTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 launch;
-    Vec3 aim;
-    Vec3 dir;
+    VecFx32 launch;
+    VecFx32 aim;
+    VecFx32 dir;
     int i;
 
     launch.x = data_0203d210[(FX_RadToIdx(state[3]) >> 4) << 1];
     launch.y = 0;
     launch.z = data_0203d210[((FX_RadToIdx(state[3]) >> 4) << 1) + 1];
-    state[9] = Ov253_FindNearestTarget(*state, (Vec3 *)state[2], &launch, -0x1000, 0x3c000);
+    state[9] = Ov253_FindNearestTarget(*state, (VecFx32 *)state[2], &launch, -0x1000, 0x3c000);
     if (state[9] != 0) {
-        VEC_Subtract((Vec3 *)(state[9] + 0x74), (Vec3 *)(*(int *)(*state + 0x39c) + 0x14), &dir);
+        VEC_Subtract((VecFx32 *)(state[9] + 0x74), (VecFx32 *)(*(int *)(*state + 0x39c) + 0x14), &dir);
         VEC_Normalize(&dir, &dir);
-        VEC_Subtract((Vec3 *)(state[9] + 0x74), (Vec3 *)state[2], &aim);
+        VEC_Subtract((VecFx32 *)(state[9] + 0x74), (VecFx32 *)state[2], &aim);
         aim.y = 0;
         state[4] = func_020050b4(aim.x, aim.z);
         state[7] += *(int *)(node[0] + 0x2c);

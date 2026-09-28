@@ -11,15 +11,16 @@
  * position message at the +4 point and clears the sub-state. Otherwise the +0x28 distance
  * advances by the length and the action ends (reaction 0x158 mode 7) once the object reports
  * contact or the distance passes 30.0. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
-struct Segment { struct Vec3 origin; struct Vec3 dir; int nLength; int nRadius; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+struct Segment { VecFx32 origin; VecFx32 dir; int nLength; int nRadius; };
 struct HitWord { u32 lo : 16, hi : 16; };
 
 struct HitCommand {
     struct HitWord flags00;
-    struct Vec3 vector04;
+    VecFx32 vector04;
     u32 field10;
     u32 field14;
     void *hit18;
@@ -33,10 +34,10 @@ struct Ov246Byte8 { u32 lo : 8, rest : 24; };
 
 extern char **List_First(void *list);
 extern char **List_Next(void *list);
-extern void VEC_Subtract(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *out);
-extern int VEC_DotProduct(const struct Vec3 *a, const struct Vec3 *b);
-extern int VEC_Normalize(const struct Vec3 *v, struct Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const struct Vec3 *src, struct Vec3 *dst);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
 extern int Ov107_CollectSegmentOverlaps(int item, struct Segment *query, int *results);
 extern int Ov107_InvokeHitCallback(int ent, int actor, int item, int mode, void *dir, int flag);
 extern void Ov247_SendPositionMessage(int *state);
@@ -44,14 +45,14 @@ extern void Ov107_BuildAndSendUpdate(int item, int id, int a, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *value);
 extern int Ov107_FindEntityHitBySegment(int actor, struct Segment *query, void **out);
 extern int Ov107_AiState_ApplyHit(int lock, int param, struct HitCommand *req);
-extern struct Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 void Ov247_SweepStrikeTick(int *node)
 {
     int *state = (int *)node[1];
     struct Segment query;
-    struct Vec3 d;
-    struct Vec3 bestDir;
+    VecFx32 d;
+    VecFx32 bestDir;
     int results[4];
     void *handle;
     int lock;
@@ -69,9 +70,9 @@ void Ov247_SweepStrikeTick(int *node)
         e = (it == 0) ? found : *it;
         while (e != 0) {
             if (((struct Ov246Bits40 *)(e + 0x40))->b1 != 0 && (((struct Ov246HalfByte *)(e + 0x60))->lo & 1) != 0) {
-                VEC_Subtract((struct Vec3 *)(e + 0x74), (struct Vec3 *)state[1], &d);
+                VEC_Subtract((VecFx32 *)(e + 0x74), (VecFx32 *)state[1], &d);
                 VEC_Normalize(&d, &d);
-                dot = VEC_DotProduct((struct Vec3 *)(state + 5), &d);
+                dot = VEC_DotProduct((VecFx32 *)(state + 5), &d);
                 if (dot > 0x400 && dot > nBest) {
                     nBest = dot;
                     bestDir = d;
@@ -85,12 +86,12 @@ void Ov247_SweepStrikeTick(int *node)
             state[5] += (bestDir.x - state[5]) / 20;
             state[6] += (bestDir.y - state[6]) / 10;
             state[7] += (bestDir.z - state[7]) / 20;
-            VEC_Normalize((struct Vec3 *)(state + 5), (struct Vec3 *)(state + 5));
+            VEC_Normalize((VecFx32 *)(state + 5), (VecFx32 *)(state + 5));
         }
     }
-    ScaleVec3Fx12(state[8], (struct Vec3 *)(state + 5), (struct Vec3 *)(state + 2));
-    query.origin = *(struct Vec3 *)state[1];
-    query.dir = *(struct Vec3 *)(state + 5);
+    ScaleVec3Fx12(state[8], (VecFx32 *)(state + 5), (VecFx32 *)(state + 2));
+    query.origin = *(VecFx32 *)state[1];
+    query.dir = *(VecFx32 *)(state + 5);
     query.nLength = state[8];
     query.nRadius = 0x1000;
 

@@ -15,15 +15,11 @@
  * point.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022ShotDesc */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ShotDesc {
     u32 nFlags;                      /* 0x00 */
     u8 pad04[0x44];
@@ -52,7 +48,7 @@ struct Actor {
     u8 pad26c0[4];
     u8 nHitState;                    /* 0x26c4 */
     u8 pad26c5[3];
-    struct VecFx32 vecImpact;        /* 0x26c8 */
+    VecFx32 vecImpact;        /* 0x26c8 */
 };
 
 /* Ov022ReactionCtx */
@@ -74,17 +70,17 @@ struct ReactionCtx {
 #define FX32_ONE 0x1000
 
 extern int Ov022_TestShotHit(struct ReactionCtx *pCtx, struct Shot *pShot,
-                               struct VecFx32 *pPos, struct VecFx32 *pDelta);
+                               VecFx32 *pPos, VecFx32 *pDelta);
 extern int FX_Atan2(int x, int z);
 extern void Ov022_MarshalNetworkRecord(struct Actor *pActor, int nKind,
-                                struct VecFx32 *pAt, int nScale, u16 nAngle,
+                                VecFx32 *pAt, int nScale, u16 nAngle,
                                 int nArg);
 extern void Ov022_SetBit3IfClear(u32 *pStateFlags);
-extern void Slot_Spawn(int nHandlerId, int nCue, struct VecFx32 *pPos,
+extern void Slot_Spawn(int nHandlerId, int nCue, VecFx32 *pPos,
                           int nFlags);
 
 void Ov022_ResolveShotHit(struct ReactionCtx *pCtx, struct Shot *pShot,
-                         struct VecFx32 *pPos, struct VecFx32 *pDelta)
+                         VecFx32 *pPos, VecFx32 *pDelta)
 {
     struct Actor *pShooter;
     struct ShotDesc *pDesc;

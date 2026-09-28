@@ -8,7 +8,9 @@
  * while >0, return. Then if dir . w > 0, clear *(*state[0]+0x384)+0xa8 and fire the transition
  * (0203c634 with the 020cdd78 continuation).
  */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
@@ -22,8 +24,8 @@ extern void Ov206_FireAttackCOnIdle(void);
 
 void Ov206_SteerHeadingGate(int *self) {
     int *state = (int *)self[1];
-    struct vec v;
-    struct vec w;
+    VecFx32 v;
+    VecFx32 w;
     int target;
     int factor;
     int t;

@@ -10,18 +10,14 @@
  * (Ov027_InitHintText 02083ccc) are set up; single player also builds the character object at
  * +0x588 (Ov027_InitCharacterObject 020833b4), a session host loads the sign-in panel
  * (Ov027_LoadSignInPanel 02082b54).  Returns the first state, Ov027_WaitSceneReady 02082d8c. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

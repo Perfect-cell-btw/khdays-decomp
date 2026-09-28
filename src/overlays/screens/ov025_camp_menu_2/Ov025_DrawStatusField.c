@@ -25,6 +25,7 @@
  * the value; the negative branch of 0xf and the capped branch of 0x11 are
  * written first.
  */
+
 #include "nitro/types.h"
 
 #define COLOUR_TEXT    0xf2

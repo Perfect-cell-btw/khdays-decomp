@@ -1,11 +1,6 @@
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
-
-typedef struct VecFx32 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
 
 typedef struct SqrtRegisters {
     volatile unsigned short control;

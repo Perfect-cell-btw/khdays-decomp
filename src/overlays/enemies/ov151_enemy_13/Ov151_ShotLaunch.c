@@ -6,10 +6,11 @@
  * overlay's 14-byte message goes to the owner's +0x24 hook with that position, reaction 0x14f
  * mode 6 fires there, sub-state 0 is requested and the state ends; otherwise the shot tick
  * (cd3ac) takes over. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -33,8 +34,8 @@ struct b8 { unsigned int b : 8; };
 struct Ov151ShotState {
     struct Ov151Owner *pOwner;  /* +0x00 */
     int pTarget;                /* +0x04 */
-    Vec3 *pPos;                 /* +0x08 */
-    Vec3 vVelocity;             /* +0x0c */
+    VecFx32 *pPos;                 /* +0x08 */
+    VecFx32 vVelocity;             /* +0x0c */
     char pad018[0x10];
     int nSpeed;                 /* +0x28 */
     char pad02c[8];
@@ -42,14 +43,14 @@ struct Ov151ShotState {
     int nHits;                  /* +0x38 */
 };
 
-extern void Vec3TransformViaTempMtx(Vec3 *dst, void *quat, const Vec3 *src);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int Collision_CastSphere(void *collision, void *from, Vec3 *dir, int radius);
-extern void Ov107_BuildAndSendUpdate(struct Ov151Owner *owner, int a, int id, Vec3 *at);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, const VecFx32 *src);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int Collision_CastSphere(void *collision, void *from, VecFx32 *dir, int radius);
+extern void Ov107_BuildAndSendUpdate(struct Ov151Owner *owner, int a, int id, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov151_ShotTick(void);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern const PosMsg data_ov151_020cec0a;
 
 static inline void PackFx24(Fx24 *dst, int v) {
@@ -58,7 +59,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov151ShotState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov151ShotState *state, PosMsg *msg, const VecFx32 *src)
 {
     FxVec vDead;
     vDead.x = *(Fx32 *)&src->x;
@@ -76,7 +77,7 @@ void Ov151_ShotLaunch(int *node)
 {
     struct Ov151ShotState *state = (struct Ov151ShotState *)node[1];
     char *scene = *(char **)((char *)state->pOwner + 4);
-    Vec3 d;
+    VecFx32 d;
     PosMsg msg;
 
     state->nHits = 0;

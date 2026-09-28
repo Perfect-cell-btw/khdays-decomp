@@ -8,12 +8,14 @@
  * (hidden), then the eleven effect pairs of +0x3bc (the first eight from the effect resource, the
  * rest from the data_ov235_020d22d0 poses; all hidden) and loads the voice bank (+0x3c8: 0x17f
  * in the alternate language, else 0x17a). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[11]; } IdTable;
-typedef struct { Vec3 pos; int scale; } Placement;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 pos; int scale; } Placement;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 struct Pair { int res; int handle; };
 struct Nib { u8 lo : 4, hi : 4; };
 
@@ -37,9 +39,9 @@ extern const char data_ov235_020d259c[];
 extern const char data_ov235_020d25a8[];
 extern const char data_ov235_020d25b4[];
 extern const char data_ov235_020d25c0[];
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02041dc8;
 extern u8 data_0204c240;
 extern void Ov235_Destroy(void);
 extern void Ov235_TickWithChildRefresh(void);
@@ -57,7 +59,7 @@ void Ov235_EnemyConstruct(char *self)
     Capsule cap;
     Placement place;
     IdTable ids = data_ov235_020d22d0;
-    Vec3 up;
+    VecFx32 up;
     int i;
     int *slot;
     u16 hw;

@@ -1,9 +1,11 @@
-#include "nitro/types.h"
 
 /* Software mirror of the VRAM bank state, fields beyond field0/fieldA are
    unknown (see GX_BeginLoadOBJExtPltt.c, GX_SetBankForLCDC.c,
    GX_GetBankForBGExtPltt.c for the parts of this struct that are used
    elsewhere). This function only needs to know it is 13 halfwords wide. */
+
+#include "nitro/types.h"
+
 typedef struct {
     u16 field0;
     u16 field2;

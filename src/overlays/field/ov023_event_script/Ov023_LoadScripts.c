@@ -8,6 +8,7 @@
  * streamed into the message block at +0x4b88 (02020c7c with the packed descriptor, the scene
  * name +0x87598 as source and the staging tail +0x1d6b0); the word at +0x5118 becomes 0x10000
  * and the state moves on to Ov023_SceneReady (0208337c). */
+
 #include "nitro/types.h"
 
 typedef struct Ov023Scene {

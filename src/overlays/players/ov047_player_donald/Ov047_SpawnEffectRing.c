@@ -10,24 +10,20 @@
  * this spawn-request idiom does it. That is what pins the layout: the two rings, the
  * matrix, the anchor, the rotated offset and the request are all at fixed offsets of a
  * 0xf8-byte frame, and declaring them as separate locals lets mwcc reorder them. */
-#include "nitro/types.h"
 
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct SpawnRing4 {
-    struct VecFx32 v[4];
+    VecFx32 v[4];
 };
 
 struct SpawnRing8 {
-    struct VecFx32 v[8];
+    VecFx32 v[8];
 };
 
 struct PanelSpawnReq {
-    struct VecFx32 vPos;
+    VecFx32 vPos;
     short sx;
     short sy;
     short sz;
@@ -43,15 +39,15 @@ struct PanelSpawnReq {
 struct SpawnFrame {
     struct SpawnRing4 ring4;
     int mtx[9];
-    struct VecFx32 vAnchor;
-    struct VecFx32 vOffset;
+    VecFx32 vAnchor;
+    VecFx32 vOffset;
     struct PanelSpawnReq req;
     struct SpawnRing8 ring8;
 };
 
 extern void MTX_RotY33_(int *mtx, int nCos, int nSin);
-extern void MTX_MultVec33(struct VecFx32 *pIn, int *mtx, struct VecFx32 *pOut);
-extern void VEC_Add(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *pOut);
+extern void MTX_MultVec33(VecFx32 *pIn, int *mtx, VecFx32 *pOut);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *pOut);
 /* _s32_div_f: the MetroWerks signed divide. Quotient in r0, REMAINDER IN r1, so the
  * 64-bit return type is how the remainder is reached from C. Writing `a % b` emits
  * byte-identical code but names the reloc _s32_div_f, which symbols.txt does not
@@ -72,7 +68,7 @@ void Ov047_SpawnEffectRing(char *self)
     int i;
     int nCount;
     int nRingSize;
-    struct VecFx32 *pRing;
+    VecFx32 *pRing;
     int nIdx;
 
     f.ring4 = data_ov047_020b424c;
@@ -82,7 +78,7 @@ void Ov047_SpawnEffectRing(char *self)
     nIdx = (u16)(*(u16 *)(*(char **)(self + 0x20) + 0x80) - 0x8000) >> 4;
     MTX_RotY33_(f.mtx, -data_0203d210[nIdx * 2], -data_0203d210[nIdx * 2 + 1]);
 
-    f.vAnchor = *(struct VecFx32 *)(self + 0x8c + 0x400);
+    f.vAnchor = *(VecFx32 *)(self + 0x8c + 0x400);
 
     if (*(int *)blk == 0) {
         nRingSize = 4;

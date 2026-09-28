@@ -11,13 +11,14 @@
  * `kind = 0; if (flag) kind = 1;` (mov #0 / movne #1 after the ldrh -- `!= 0` gives
  * movne/moveq and the angle arithmetic sinks below the argument moves); `at` declared before
  * `v` (first declared local = highest stack address). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void SceneNode_Enable(void *node);                                              /* SceneNode_Enable */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);                   /* Anim_SetFrameWrapped */
-extern void func_ov022_020ad44c(Vec3 *out, char *self);
-extern void Ov022_MarshalNetworkRecord(char *self, int record, Vec3 *at, int scale, u16 angle, int kind);
+extern void func_ov022_020ad44c(VecFx32 *out, char *self);
+extern void Ov022_MarshalNetworkRecord(char *self, int record, VecFx32 *at, int scale, u16 angle, int kind);
 extern char *data_ov079_020b9a00;
 extern void Ov079_PursuitStep(void);
 extern void Ov079_IdleStep(void);
@@ -33,8 +34,8 @@ void *Ov079_HandleMessage(char *self, int msg)
 {
     char *rig = data_ov079_020b9a00 + 0x2c50;
     void *next = 0;
-    Vec3 at;
-    Vec3 v;
+    VecFx32 at;
+    VecFx32 v;
     int *node;
     int kind;
     u16 a;

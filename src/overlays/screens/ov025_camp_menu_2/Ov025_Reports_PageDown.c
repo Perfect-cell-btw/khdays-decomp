@@ -9,6 +9,7 @@
  * read variant, +0x40) marked owned (Ov025_QueryItemFlags 0209e820) when it has nothing pending,
  * and, when the window moved, the rows refresh (020a076c) and +0x22c is cleared.  Codegen as
  * Ov025_Reports_PageUp (s16 old window position, nTop / nCursor / nOldTop order, d before nLast). */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ReportsList {

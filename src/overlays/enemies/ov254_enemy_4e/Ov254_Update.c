@@ -6,14 +6,16 @@
  * +0x60 extra lift (rider) or burns it off; the other flying moves keep their climb and the rest
  * zero it. The velocity goes to the actor's +0xf0 with x / z cleared and +0x24 takes the +8
  * track position. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(int a, void *b);
 extern int Ov254_PanelYForPhase(int *state, int a);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 static inline int FX_Mul(int a, int b) {
     return (int)(((long long)a * b + 0x800) >> 12);
@@ -80,7 +82,7 @@ void Ov254_Update(int *node)
         state[4] = 0;
         break;
     }
-    *(Vec3 *)(*state + 0xf0) = *(Vec3 *)(state + 3);
+    *(VecFx32 *)(*state + 0xf0) = *(VecFx32 *)(state + 3);
     state[3] = state[5] = 0;
-    *(Vec3 *)(state + 9) = *(Vec3 *)state[2];
+    *(VecFx32 *)(state + 9) = *(VecFx32 *)state[2];
 }

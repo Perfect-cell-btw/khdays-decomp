@@ -9,12 +9,7 @@
  */
 
 #include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 struct Desc {
     u8 pad0000[0x14];

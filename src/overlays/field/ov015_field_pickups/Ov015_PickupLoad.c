@@ -7,9 +7,9 @@
  * requested (0203355c).  The pickup's own sequence node (+0x30) is then registered with
  * the class's sequence name (+0x68, 0202a634), placed at the home position (+0xd4) with the
  * facing (+0xac), facing-locked, and the taken-sequence bit (bit 0 of +0x14d) cleared. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov015PickupKindRow {
     void *pHandlers;          /* 0x00: state function of the kind */

@@ -2,6 +2,7 @@
  * table (resolving duplicates), sends and confirms the entries, then moves on. */
 
 #include "nitro/types.h"
+
 typedef void (*MissionCallback)(void);
 
 typedef struct {

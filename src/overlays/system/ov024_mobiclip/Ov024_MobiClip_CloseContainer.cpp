@@ -9,6 +9,7 @@
  * a virtual call and the release is a plain delete whose null check is part of
  * the expression.
  */
+
 #include "nitro/types.h"
 
 class MobiClipReaderRef {

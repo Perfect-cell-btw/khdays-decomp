@@ -6,6 +6,7 @@
  * The flag byte at +0x24 is a bitfield (both bits extracted from one ldrb via lsl/lsrs); the result
  * register is seeded to 0 up front so the counter-bounds case returns it directly (bxlt).
  */
+
 #include "nitro/types.h"
 
 typedef struct { u8 b0:1; u8 b1:1; } Fl;

@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* One entry of the tally at the tail of the result. */
+
+#include "nitro/types.h"
+
 typedef struct {
     u16 wId;                /* 0x00 */
     s16 nCount;             /* 0x02 */

@@ -1,12 +1,14 @@
 /* Fires both of the mission owner's +0x2d38 rows (stride 0x240): each shot spawns at the row's
  * slot position (4ef0), aims along the normalised +0x340 vector of the row, kind 7 from a slot,
  * speed 0x1100, and is handed to Ov022_SendPlacementMessage. */
-typedef struct { int x, y, z; } Vec3;
 
 /* One object, not two: the position vector is its head and the projectile fields are its
  * tail, which is why the ROM passes a single pointer. */
+
+#include "nitro/fx.h"
+
 struct FireParams {
-    Vec3 vPos;
+    VecFx32 vPos;
     short vx;
     short vy;
     short vz;
@@ -16,22 +18,22 @@ struct FireParams {
     int pad1c[4];
 };
 
-extern void Ov062_ComputeSlotPosition(char *self, int slot, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
-extern void VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void Ov062_ComputeSlotPosition(char *self, int slot, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov022_SendPlacementMessage(char *self, struct FireParams *p);
 extern char *data_ov062_020b80e0;
 
 void Ov062_FireBothRows(char *self)
 {
-    Vec3 vAim;
+    VecFx32 vAim;
     struct FireParams p;
     int i;
     char *pRow = data_ov062_020b80e0 + 0x138 + 0x2c00;
 
     for (i = 0; i < 2; i++) {
         Ov062_ComputeSlotPosition(self, i, &p.vPos);
-        vAim = *(Vec3 *)(pRow + 0x340);
+        vAim = *(VecFx32 *)(pRow + 0x340);
         if (VEC_Mag(&vAim) != 0) {
             VEC_Normalize(&vAim, &vAim);
         }

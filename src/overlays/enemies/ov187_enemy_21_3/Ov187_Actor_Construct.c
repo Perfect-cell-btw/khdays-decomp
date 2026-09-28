@@ -1,16 +1,12 @@
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Obj;
 typedef void (*ObjCallback)(struct Obj *self);
 
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
-
 struct CameraWork {
-    struct Vec3 vector;
+    VecFx32 vector;
     int scalar;
 };
 

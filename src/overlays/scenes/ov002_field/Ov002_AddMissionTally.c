@@ -13,9 +13,11 @@
  *
  * Called from ov022 and ov234 as well as from inside ov002.
  */
-#include "nitro/types.h"
 
 /* The record the deferred handler consumes: kind, index and value. */
+
+#include "nitro/types.h"
+
 typedef struct {
     u8 nKind;
     u8 nIndex;

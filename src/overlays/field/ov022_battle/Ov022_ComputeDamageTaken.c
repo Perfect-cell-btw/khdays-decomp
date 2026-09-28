@@ -22,15 +22,11 @@
  * it.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022HitRequest */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct HitRequest {
     u32 nFlags;                  /* 0x00 */
     VecFx32 vecPush;             /* 0x04 */

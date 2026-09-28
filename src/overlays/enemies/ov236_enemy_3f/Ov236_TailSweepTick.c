@@ -6,10 +6,11 @@
  * its slot in the +0x4c hit table and reaction 0/0x53 at that point. Past 0x8d55 reaction
  * 0x127/0x12 fires once at the +0x38 point (+0x51). Once the +4 item's +0xad byte clears the next
  * move is 10 when the +0x3bd flag is up, else 8 (consuming +0x52 bit 1) or 2. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; Vec3 axis[3]; int radius; int flag; } Cyl;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; VecFx32 axis[3]; int radius; int flag; } Cyl;
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 struct Msg14 { u16 h[7]; };
@@ -22,15 +23,15 @@ struct Ov236Actor {
 
 extern int FX_Div(int num, int den);
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, Cyl *cyl, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int a, int id, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
 extern const struct Msg14 data_ov236_020d63cc;
 
 #define PACK3(msg, base, v) \
@@ -43,8 +44,8 @@ void Ov236_TailSweepTick(int *node)
     int *state = (int *)node[1];
     Cyl cyl;
     int hits[4];
-    Vec3 d;
-    Vec3 raw;
+    VecFx32 d;
+    VecFx32 raw;
     struct Msg14 msg;
     struct Msg14 tmpl;
     FxVec vContact;
@@ -63,7 +64,7 @@ void Ov236_TailSweepTick(int *node)
         if (t > 0x1000) {
             t = 0x1000;
         }
-        cyl.pos = *(Vec3 *)state[0xd];
+        cyl.pos = *(VecFx32 *)state[0xd];
         cyl.pos.y += 0x800;
         cyl.axis[0] = data_02042270;
         cyl.axis[1] = data_02042258;
@@ -80,7 +81,7 @@ void Ov236_TailSweepTick(int *node)
                 ScaleVec3Fx12(0x800, &d, &d);
                 if (Ov107_InvokeHitCallback(hits[i], *state, *state, 3, &d, 0) != 0) {
                     msg = tmpl;
-                    raw = *(Vec3 *)(hits[i] + 0x74);
+                    raw = *(VecFx32 *)(hits[i] + 0x74);
                     raw.y += 0x800;
                     vContact.x = *(Fx32 *)&raw.x;
                     PACK3(&msg, 5, vContact.x.value);

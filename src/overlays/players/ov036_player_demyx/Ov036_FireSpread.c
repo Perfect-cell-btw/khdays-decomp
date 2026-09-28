@@ -2,18 +2,20 @@
  * many shots go out and how far apart (0: one straight ahead; 1: two at half a turn; 2: three at
  * a third; 3/5: four at a quarter; 4: four at a quarter starting an eighth turn off). Each shot is
  * a record 1 request (kind 7, speed 0xe00) two units from the origin along its own heading. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 typedef struct {
-    Vec3 pos;
+    VecFx32 pos;
     short f0c, f0e, f10, f12;
     int f14, f18, f1c, f20, f24, f28;
 } Params;
 
 extern void MTX_RotY33_(Mtx33 *m, int s, int c);
-extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov022_SendPlacementMessage(char *self, Params *p);
 extern short data_0203d210[];
 extern char *data_ov036_020b4f40;
@@ -21,8 +23,8 @@ extern char *data_ov036_020b4f40;
 void Ov036_FireSpread(char *self)
 {
     Params p;
-    Vec3 v;
-    Vec3 origin;
+    VecFx32 v;
+    VecFx32 origin;
     Mtx33 m;
     int angle = (u16)(*(u16 *)(*(char **)(self + 0x20) + 0x80) - 0x8000);
     int count;
@@ -31,7 +33,7 @@ void Ov036_FireSpread(char *self)
     int step;
     int idx;
 
-    origin = *(Vec3 *)(self + 0x8c + 0x400);
+    origin = *(VecFx32 *)(self + 0x8c + 0x400);
     switch (*(int *)(data_ov036_020b4f40 + 0x2da4)) {
     case 0:
         a = angle;

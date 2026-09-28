@@ -1,6 +1,6 @@
-extern int Ov002_GetCtxTableByte(int slot);
+#include "nitro/fx.h"
 
-typedef struct { int x, y, z; } Ov016Vec3;
+extern int Ov002_GetCtxTableByte(int slot);
 
 typedef struct {
     int x;
@@ -21,7 +21,7 @@ int Ov016_DeliverHitToTarget(char *self, char *target) {
         != Ov002_GetCtxTableByte((unsigned char)self[0x10])) {
         return 0;
     }
-    *(Ov016Vec3 *)&hit = *(Ov016Vec3 *)(self + 0x1c);
+    *(VecFx32 *)&hit = *(VecFx32 *)(self + 0x1c);
     hit.strength = *(int *)(self + 0x28);
     hit.source = self;
     return (*(int (**)(void *, int, void *))(*(char **)(target + 8) + 0x44))(

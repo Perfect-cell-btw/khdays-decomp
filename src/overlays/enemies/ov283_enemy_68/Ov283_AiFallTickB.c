@@ -1,6 +1,6 @@
 /* Applies gravity and damping; lands when the animation ends and grounded (second variant). */
 
-struct vec3_020cdae4 { int x, y, z; };
+#include "nitro/fx.h"
 
 extern void ScaleVec3Fx12(int factor, int *src, int *dst);
 extern unsigned int Rand16NextScaled(unsigned int range);
@@ -9,10 +9,10 @@ extern void SetIndexedSlot(int *a, int i, int v);
 void Ov283_AiFallTickB(int *this)
 {
     int node = this[1];
-    struct vec3_020cdae4 *v = (struct vec3_020cdae4 *)(node + 0x1c);
+    VecFx32 *v = (VecFx32 *)(node + 0x1c);
     int y;
 
-    *(struct vec3_020cdae4 *)(node + 0x10) = *v;
+    *(VecFx32 *)(node + 0x10) = *v;
     *(int *)(node + 0x14) = *(int *)(node + 0x58);
     *(int *)(node + 0x58) = *(int *)(node + 0x58) - 0x80;
     ScaleVec3Fx12(0xe00, (int *)v, (int *)v);

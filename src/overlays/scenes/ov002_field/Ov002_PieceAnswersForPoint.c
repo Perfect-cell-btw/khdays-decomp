@@ -1,8 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct {
-    int x, y, z;
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct {
     u8 gap0000[0x60];

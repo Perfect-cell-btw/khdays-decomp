@@ -1,7 +1,8 @@
 /* AI step: keeps and scales up the velocity and, when the animation ends, rolls a timer and picks
  * approaching (far or not ready) or attacking. */
 
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct b2 { unsigned char b0:1, b1:1; };
 
 extern void ScaleVec3Fx12(int s, int dst, int src);
@@ -12,8 +13,8 @@ extern void SetIndexedSlot(int obj, int idx, int cb);
 void Ov298_AiPickApproachOrAttack(int *this)
 {
     int node = this[1];
-    Vec3 *v = (Vec3 *)(node + 0x1c);
-    *(Vec3 *)(node + 0x10) = *v;
+    VecFx32 *v = (VecFx32 *)(node + 0x1c);
+    *(VecFx32 *)(node + 0x10) = *v;
     ScaleVec3Fx12(0xb00, (int)v, (int)v);
 
     {

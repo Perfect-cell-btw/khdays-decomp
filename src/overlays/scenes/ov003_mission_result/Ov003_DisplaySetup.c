@@ -1,4 +1,5 @@
 /* Configure the main and sub display engines, fade registers, and cameras. */
+
 #include "nitro/types.h"
 
 typedef struct {

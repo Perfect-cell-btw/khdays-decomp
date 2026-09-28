@@ -7,11 +7,13 @@
  * rider); on acceptance the message data_ov253_020d49a8 carries the +0x3ac part's +0x14 point to the
  * +0x24 hook, the slot bit is set and reaction 0x16c mode 5 fires there. Once the +8 idle byte
  * clears, animation 7 plays and the tick hands over to Ov253_WaitTick. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -21,15 +23,15 @@ typedef struct { Vec3 center; int nRadius; } Sphere;
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern long long FX_DivFx64c(int num, int den);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
 extern int Ov253_IdIsFree(int owner, int hit);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov253_020d49a8;
@@ -41,10 +43,10 @@ void Ov253_HeadButtTick(int *node)
     Fx32 scratchZ;
     Fx32 scratchY;
     Fx32 scratchX;
-    Vec3 d;
+    VecFx32 d;
     int hits[4];
     Sphere sphere;
-    Vec3 push;
+    VecFx32 push;
     long long q;
     int n;
     int i;
@@ -71,7 +73,7 @@ void Ov253_HeadButtTick(int *node)
         n = Ov107_CollectSphereOverlaps(*state, &sphere, hits);
         for (i = 0; i < n; i++) {
             Cmd14 msg;
-            Vec3 *at;
+            VecFx32 *at;
 
             if (((*((u8 *)state + 0x31) >> *(u8 *)(hits[i] + 0x1b4)) & 1) != 0) {
                 continue;
@@ -86,7 +88,7 @@ void Ov253_HeadButtTick(int *node)
                 continue;
             }
             msg = data_ov253_020d49a8;
-            at = (Vec3 *)(*(int *)(*state + 0x3ac) + 0x14);
+            at = (VecFx32 *)(*(int *)(*state + 0x3ac) + 0x14);
             PACK(msg, scratchX, *(Fx32 *)&at->x, 5);
             PACK(msg, scratchY, *(Fx32 *)&at->y, 8);
             PACK(msg, scratchZ, *(Fx32 *)&at->z, 11);

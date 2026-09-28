@@ -3,12 +3,14 @@
  * owner's +0x24 hook receives note 0 of data_ov235_020d24d0, animation 0x16 plays looped, +0x44,
  * +0x48 and +0x65 clear, +0x84 takes the owner's hit points (+0x21a) as a fixed-point value and the
  * tick hands over to Ov235_HealBurstTick. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { u16 lo; u16 hi; } Cmd4;
 
-extern void Ov235_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void Ov235_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd4 data_ov235_020d24d0;
@@ -17,13 +19,13 @@ extern void Ov235_HealBurstTick(int *node);
 void Ov235_GlideInTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
     Cmd4 note;
 
     state[0x15] += *(int *)(node[0] + 0x2c);
     Ov235_SteerToTarget(state, state[0x17], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     if (*(unsigned char *)state[3] != 0) {
         return;
     }

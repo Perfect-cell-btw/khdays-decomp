@@ -1,25 +1,25 @@
 /* Finds the nearest target (queues action 2 when none), returns the gap minus both radii and stores
  * the heading. */
 
+#include "nitro/fx.h"
+
 extern int Ov107_FindNearestObject();
 extern void VEC_Subtract(int *a, int *b, int *out);
 extern int VEC_Normalize(int *source, int *destination);
 extern int func_020050b4();
 
-typedef struct { int x, y, z; } Vec3_020ccb48;
-
 typedef struct {
     char pad0[0x80];
     int v80;
     char pad84[0x10c];
-    Vec3_020ccb48 v190;
+    VecFx32 v190;
 } P3bc_020ccb48;
 
 typedef struct {
     char pad0[0x80];
     int v80;
     char pad84[0x2c];
-    Vec3_020ccb48 vb0;
+    VecFx32 vb0;
     char padbc[0x10b];
     unsigned char b1c7;
     char pad1c8[0x1c8];
@@ -43,7 +43,7 @@ int Ov283_MeasureTargetGap(Param_020ccb48 *param)
     Obj_020ccb48 *obj;
     P3bc_020ccb48 *p3bc;
     int diff;
-    Vec3_020ccb48 local;
+    VecFx32 local;
 
     wrap = param->wrap;
     obj = wrap->obj;

@@ -2,6 +2,7 @@
  * icon, quantity and new-item state. */
 
 #include "nitro/types.h"
+
 typedef struct Ov005MenuItemHeader {
     u16 itemId,textureResourceId;
     u16 name[32];

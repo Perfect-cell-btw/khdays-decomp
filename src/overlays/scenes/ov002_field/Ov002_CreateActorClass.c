@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* The descriptor the caller fills in for one actor-element class. */
+
+#include "nitro/types.h"
+
 typedef struct {
     const char *pName;              /* +0x00 */
     short nParamA;                  /* +0x04 */

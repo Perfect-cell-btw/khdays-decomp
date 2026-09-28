@@ -5,18 +5,20 @@
  * reflects the reversed swung heading about the owner's +0x114 contact normal into a new +0x30
  * heading and stops the sway. The +0x10 velocity is the heading times the climb, turned by the swing
  * angle, and the distance advances by the swung forward step of the frame. */
-typedef struct Vec3 { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 struct Bits17a { unsigned char bit0 : 1, bit1 : 1; };
 
-extern void VEC_Subtract(Vec3 *a, Vec3 *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int func_020050b4(int x, int z);
 extern int func_02020400(int num, int den);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int VEC_DotProduct(Vec3 *a, Vec3 *b);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern short data_0203d210[];
 
@@ -26,13 +28,13 @@ extern short data_0203d210[];
 void Ov146_SwoopTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     Mtx33 mtx;
-    Vec3 v;
-    Vec3 n;
-    Vec3 neg;
-    Vec3 refl;
-    Vec3 back;
+    VecFx32 v;
+    VecFx32 n;
+    VecFx32 neg;
+    VecFx32 refl;
+    VecFx32 back;
     int t;
     int len;
     int swing;
@@ -40,7 +42,7 @@ void Ov146_SwoopTick(int *node)
     unsigned int idx;
 
     if (*(int *)(*state + 0x3b4) != 0) {
-        VEC_Subtract((Vec3 *)(*(int *)(*state + 0x3b4) + 0x190), (Vec3 *)(*state + 0xb0), &d);
+        VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x3b4) + 0x190), (VecFx32 *)(*state + 0xb0), &d);
         VEC_Normalize(&d, &d);
         state[0xb] = func_020050b4(d.x, d.z);
     }
@@ -51,7 +53,7 @@ void Ov146_SwoopTick(int *node)
         lift = FX_MUL(data_0203d210[((func_02020400((t * 5) << 12, len) + 0x3000) >> 4) * 2] * 0x500 / 0x1000 + 0x100,
                       0x1000);
         if (((struct Bits17a *)(*state + 0x17a))->bit1 != 0) {
-            n = *(Vec3 *)(*state + 0x114);
+            n = *(VecFx32 *)(*state + 0x114);
             idx = ANG2IDX(state[0x13] * 0x138c + state[0xc]);
             back.x = data_0203d210[idx * 2];
             back.y = 0;
@@ -67,10 +69,10 @@ void Ov146_SwoopTick(int *node)
         v.x = data_0203d210[idx * 2];
         v.y = 0;
         v.z = data_0203d210[idx * 2 + 1];
-        ScaleVec3Fx12(lift, &v, (Vec3 *)(state + 4));
+        ScaleVec3Fx12(lift, &v, (VecFx32 *)(state + 4));
         idx = ANG2IDX(swing);
         MTX_RotY33_(&mtx, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-        MTX_MultVec33((Vec3 *)(state + 4), &mtx, (Vec3 *)(state + 4));
+        MTX_MultVec33((VecFx32 *)(state + 4), &mtx, (VecFx32 *)(state + 4));
         v.z = lift * *(int *)(node[0] + 0x2c) / 0x88;
         v.x = 0;
         v.y = 0;

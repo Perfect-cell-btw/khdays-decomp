@@ -14,6 +14,7 @@
  * 16-byte one as a halfword loop, the others unrolled); the reset branch is
  * written first; pView declared before pShop.
  */
+
 #include "nitro/types.h"
 
 #define TAB_SHOP    0

@@ -8,16 +8,16 @@
  * facing bit (+0x50 bit 0) and fires reaction 0x11a at the state's +8 anchor, modes 2/3 for
  * flag-0x22 hits and 0/1 otherwise, except for kind-0x80 hits carrying both flag 8 and flag
  * 0x80. */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov293ActionState {
     int pOwner;
     char pad004[4];
     void *pAnchor;
     char pad00c[0x28];
-    struct Vec3 vHit;           /* +0x34 */
+    VecFx32 vHit;           /* +0x34 */
     char pad040[8];
     int nParam;                 /* +0x48 */
 };
@@ -30,7 +30,7 @@ struct Ov293Facing {
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     int nDamage10;
     char pad014[0xc];
     unsigned int uMode20;

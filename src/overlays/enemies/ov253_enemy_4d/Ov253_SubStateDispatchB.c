@@ -4,7 +4,9 @@
  * of the +0x444 item's +8 low byte, becomes the +0x1c6 kind and installs the matching slot 1
  * node (0: 020cd5a8, 1: 020cd704, 2: 020cd784, 4: 020cd9e8, 5: 020cddf0, 7: 020ce150,
  * 3: 020ce3a4); the request is then cleared (-1). */
+
 #include "nitro/types.h"
+
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

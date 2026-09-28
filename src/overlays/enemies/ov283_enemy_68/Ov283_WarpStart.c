@@ -5,18 +5,19 @@
  * rerolls (1.57 to 3.14; +0x7c = past 2.36, +0x3c cleared) and the next move is 4. Otherwise an
  * effect plays at the +8 point, the actor moves to the spot at the target's height (020c5c54) and the
  * brain waits on 020ce620. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void Ov283_MeasureTargetGap(int *node);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Collision_CastSphereEx(int collision, Vec3 *origin, Vec3 *dir, int radius, void *ignore);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Collision_CastSphereEx(int collision, VecFx32 *origin, VecFx32 *dir, int radius, void *ignore);
 extern int Rand16NextScaled(int bound);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
-extern void Ov107_MoveNodeAndRelayout(int owner, const Vec3 *pos);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
+extern void Ov107_MoveNodeAndRelayout(int owner, const VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov283_AiFaceTargetB(void);
 extern const short data_0203d210[];
@@ -26,12 +27,12 @@ extern const short data_0203d210[];
 void Ov283_WarpStart(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 fwd;
-    Vec3 d;
-    Vec3 unit;
-    Vec3 off;
-    Vec3 target;
-    Vec3 probe;
+    VecFx32 fwd;
+    VecFx32 d;
+    VecFx32 unit;
+    VecFx32 off;
+    VecFx32 target;
+    VecFx32 probe;
     int world;
     int hit;
 
@@ -44,10 +45,10 @@ void Ov283_WarpStart(int *node)
         fwd.y = 0;
         fwd.z = data_0203d210[idx + 1];
     }
-    VEC_Subtract((Vec3 *)(*(int *)(*state + 0x390) + 0x190), (Vec3 *)(*state + 0x74), &d);
+    VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x390) + 0x190), (VecFx32 *)(*state + 0x74), &d);
     VEC_Normalize(&d, &d);
     state[0xe] = state[0x10] = func_020050b4(d.x, d.z);
-    target = *(Vec3 *)(*(int *)(*state + 0x390) + 0x190);
+    target = *(VecFx32 *)(*(int *)(*state + 0x390) + 0x190);
     VEC_Normalize(&d, &unit);
     {
         int idx = ANG2IDX(state[0xe]) * 2;
@@ -68,7 +69,7 @@ void Ov283_WarpStart(int *node)
         fwd.z = data_0203d210[idx + 1];
     }
     ScaleVec3Fx12(*(int *)(*state + 0x80) * 2, &fwd, &d);
-    hit = Collision_CastSphereEx(*(int *)(world + 0x7c), (Vec3 *)(*(int *)(*state + 0x390) + 0x74), &d, 0x100, 0);
+    hit = Collision_CastSphereEx(*(int *)(world + 0x7c), (VecFx32 *)(*(int *)(*state + 0x390) + 0x74), &d, 0x100, 0);
     target.y = *(int *)(*(int *)(*state + 0x390) + 0x194);
     if (hit != 0 && *(int *)(hit + 8) == 0) {
         state[0x14] = 0;
@@ -79,7 +80,7 @@ void Ov283_WarpStart(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    func_ov107_020c0b90(*state, 0, *(Vec3 *)state[2], 0);
+    func_ov107_020c0b90(*state, 0, *(VecFx32 *)state[2], 0);
     Ov107_MoveNodeAndRelayout(*state, &target);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov283_AiFaceTargetB);
 }

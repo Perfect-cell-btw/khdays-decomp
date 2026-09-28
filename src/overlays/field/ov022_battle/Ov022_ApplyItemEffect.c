@@ -17,9 +17,10 @@
  * Kind 0xf (local player only) applies the mode.
  */
 
+/* Ov022Actor */
+
 #include "nitro/types.h"
 
-/* Ov022Actor */
 struct Actor {
     u8 pad0000[8];
     u8 nOwner;                   /* 0x0008 */

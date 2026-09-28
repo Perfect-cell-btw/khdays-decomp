@@ -6,9 +6,9 @@
  * positive non-8/0x80/0x80 hit fires reaction 0x141 with the impact-table mode picked by the
  * alternating +0x85 counter, a grab in sub-state 9 requests 0xa, zero health requests 3 and,
  * outside sub-state 8, an 0x8000 hit goes to 0xd from 0xc/0xd and to 0xc otherwise. */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov173ActionState {
     int pOwner;
@@ -17,7 +17,7 @@ struct Ov173ActionState {
     char pad00c[4];
     int nParam;
     char pad014[0x18];
-    struct Vec3 vHit;
+    VecFx32 vHit;
     char pad038[0x4d];
     u8 nToggle85;
 };
@@ -25,7 +25,7 @@ struct Ov173ActionState {
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     char pad010[8];
     int pSource18;
     char pad01c[4];

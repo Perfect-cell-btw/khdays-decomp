@@ -5,6 +5,7 @@
  * while there is room to scroll in that direction.  The row content is then
  * refreshed for nPos.
  */
+
 #include "nitro/types.h"
 
 #define ROWS_VISIBLE  8

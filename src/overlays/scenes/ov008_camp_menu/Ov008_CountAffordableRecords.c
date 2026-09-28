@@ -8,6 +8,7 @@
  * its own induction variable and spills the base; the signed add keeps the ROM's
  * base register + j.
  */
+
 #include "nitro/types.h"
 
 #define LIST_COUNT      2

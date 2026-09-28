@@ -26,11 +26,7 @@
  * uninitialised there, which is fine -- the expression is dead by construction and only exists to
  * stop the addend folding away. See deferred-ties.md. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 extern int Ov267_IsState6cActive(int *ctx, int a);
 extern int Ov267_CheckState6c(int *ctx, int a);

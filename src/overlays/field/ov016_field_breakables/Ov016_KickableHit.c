@@ -8,9 +8,9 @@
  * (kind 0x14) carrying the position, the player (7 bits) and bit 5 of the hit flags is queued
  * on the piece (ov002 020766e0); once accepted the ack mask (+0x61d) is cleared and sync flag
  * bit 4 raised.  Answers 0. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016HitInfo {
     VecFx32 position;         /* 0x00 */

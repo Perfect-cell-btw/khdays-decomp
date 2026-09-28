@@ -15,6 +15,7 @@
  * before the two widget bases and the first call's 0x40 then reuses the
  * widget-context register (240/2880 orders match).
  */
+
 #include "nitro/types.h"
 
 #define WIDGET_OVERLAY_A 6

@@ -10,13 +10,9 @@
  * A live camera with no frames or a motion in flight is updated at once (020217d4); a queued
  * camera is finished (02021418 with no outputs), linked from its live twin (+0) and the
  * current camera index dropped by 2.  Returns 1. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023Operand {
     s16  nType;               /* 0x00 */

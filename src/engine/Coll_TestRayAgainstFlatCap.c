@@ -1,7 +1,9 @@
 /* Downward ray intersection with the flat upper cylinder cap.
  * The hardware divider is drained on every path after the asynchronous start. */
+
 #include "nitro/types.h"
-typedef struct VecFx32 { s32 x,y,z; } VecFx32;
+#include "nitro/fx.h"
+
 typedef struct CollisionObject { u8 pad00[0x2c]; VecFx32 position2c; s32 radius38,height3c; } CollisionObject;
 typedef struct CollCastState {
  u8 pad00[0x10]; VecFx32 vRayStart,vDir;

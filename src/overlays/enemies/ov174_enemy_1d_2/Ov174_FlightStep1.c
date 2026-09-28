@@ -3,9 +3,10 @@
  * phase advances 30 per frame (wrapping at 0x28000) and the vertical speed follows a sine of
  * phase * 0x6488 / 40, halved and scaled by 0x200. When the +4 sub-item's +0xad byte is clear
  * animation 7 plays and the state advances to Ov174_FlightStep2. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+#include "nitro/fx.h"
+
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
@@ -18,8 +19,8 @@ void Ov174_FlightStep1(int *node)
     int idx;
     int s;
 
-    *(Vec3 *)(state + 8) = *(Vec3 *)(state + 0xb);
-    ScaleVec3Fx12(0xf00, (Vec3 *)(state + 0xb), (Vec3 *)(state + 0xb));
+    *(VecFx32 *)(state + 8) = *(VecFx32 *)(state + 0xb);
+    ScaleVec3Fx12(0xf00, (VecFx32 *)(state + 0xb), (VecFx32 *)(state + 0xb));
     if (state[0x22] == 0) {
         state[0x14] += *(int *)(*node + 0x2c) * 30;
         if (state[0x14] >= 0x28000) {

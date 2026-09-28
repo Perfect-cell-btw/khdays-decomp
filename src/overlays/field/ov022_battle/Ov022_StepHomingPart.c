@@ -2,12 +2,7 @@
  * towards it within its turn rate, moves it and plays its reaction on reach. */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Actor;
 
@@ -40,11 +35,11 @@ struct SlotTail {
 
 struct SlotPart {
     int nTimer;                      /* 0x000 */
-    struct VecFx32 vecPos;           /* 0x004 */
-    struct VecFx32 vecVel;           /* 0x010 */
+    VecFx32 vecPos;           /* 0x004 */
+    VecFx32 vecVel;           /* 0x010 */
     u16 nSlotFlags;                  /* 0x01c */
     u8 pad01e[0xa2];
-    struct VecFx32 vecAt;            /* 0x0c0 */
+    VecFx32 vecAt;            /* 0x0c0 */
     u8 pad0cc[0x7c];
     struct SlotTail *pOwner;         /* 0x148 */
     u8 nState;                       /* 0x14c */
@@ -58,22 +53,22 @@ struct SlotPart {
 #define REACTION_KIND 2
 
 extern int Ov022_ValidateTargetRef(void *pActor);
-extern struct VecFx32 *func_ov022_020ad0c0(void *pActor);
-extern void VEC_Subtract(struct VecFx32 *a, struct VecFx32 *b,
-                         struct VecFx32 *pOut);
-extern int VEC_DotProduct(struct VecFx32 *a, struct VecFx32 *b);
-extern int VEC_Normalize(struct VecFx32 *pSrc, struct VecFx32 *pDst);
-extern void ScaleVec3Fx12(int nFactor, struct VecFx32 *pSrc,
-                          struct VecFx32 *pDst);
-extern void VEC_MultAdd(int nScale, struct VecFx32 *pVec,
-                        struct VecFx32 *pAdd, struct VecFx32 *pDst);
+extern VecFx32 *func_ov022_020ad0c0(void *pActor);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b,
+                         VecFx32 *pOut);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
+extern int VEC_Normalize(VecFx32 *pSrc, VecFx32 *pDst);
+extern void ScaleVec3Fx12(int nFactor, VecFx32 *pSrc,
+                          VecFx32 *pDst);
+extern void VEC_MultAdd(int nScale, VecFx32 *pVec,
+                        VecFx32 *pAdd, VecFx32 *pDst);
 extern int func_02023c40(void);
 extern int func_ov022_0208a9ac(int nSpeed, int nDecay, int nTimer);
-extern void VEC_Add(struct VecFx32 *a, struct VecFx32 *b, struct VecFx32 *pOut);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *pOut);
 extern void Ov022_MovePartTo(struct ReactionCtx *pCtx,
                                 struct SlotPart *pPart,
-                                struct VecFx32 *pAt, struct VecFx32 *pDir);
-extern int VEC_Distance(struct VecFx32 *a, struct VecFx32 *b);
+                                VecFx32 *pAt, VecFx32 *pDir);
+extern int VEC_Distance(VecFx32 *a, VecFx32 *b);
 extern int Ov022_ClampReactionForKind10(int nKind, int nReaction);
 extern void Ov022_EndPartRun(struct ReactionCtx *pCtx,
                                 struct SlotPart *pPart, int nReaction);
@@ -82,9 +77,9 @@ extern int Sequence_UpdateTracks(u16 *pFlags, int nDelta);
 int Ov022_StepHomingPart(struct ReactionCtx *pCtx, struct SlotPart *pPart,
                         int nDelta)
 {
-    struct VecFx32 vecAt;
-    struct VecFx32 vecToTarget;
-    struct VecFx32 vecStep;
+    VecFx32 vecAt;
+    VecFx32 vecToTarget;
+    VecFx32 vecStep;
     void *pActor;
     struct SlotTail *pOwner;
     int nSpeed;

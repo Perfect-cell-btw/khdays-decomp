@@ -2,26 +2,28 @@
  * forward axis turned by q, the item's +0x390 point sits 0.5 out from the centre plus the forward
  * axis, its +0x3a8 orientation faces along the cross of the forward and outward axes, the angle is
  * kept at +0x3b8 and bit 0 of the +0x60 high byte is raised. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *a, const Vec3 *b);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *a, const VecFx32 *b);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern const Vec3 data_02042258;
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern const VecFx32 data_02042258;
 extern const short data_0203d210[];
 
-void Ov255_PlaceRingItem(char *item, Vec3 *at, void *q, int angle)
+void Ov255_PlaceRingItem(char *item, VecFx32 *at, void *q, int angle)
 {
-    Vec3 fwd;
-    Vec3 side;
-    Vec3 up;
+    VecFx32 fwd;
+    VecFx32 side;
+    VecFx32 up;
     u16 hw;
 
     if (*(int *)(item + 0x50) != 1) {

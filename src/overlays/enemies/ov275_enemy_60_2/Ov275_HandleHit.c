@@ -11,9 +11,9 @@
  * the body's transform, modes 2/3 for flag-0x22 hits and 0/1 otherwise, except for kind-0x80
  * hits carrying both flag 8 and flag 0x80; an emptied timer ends in sub-state 3.
  */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov274ActionState {
     int pOwner;
@@ -30,7 +30,7 @@ struct Ov274ActionState {
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     unsigned int uMode10;
     char pad014[4];
     int *pSource18;
@@ -41,16 +41,16 @@ struct ActorHitEvent {
 };
 
 extern int Ov107_CalcHitDamage(char *actor, struct ActorHitEvent *hit);
-extern void VEC_Subtract(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *out);
-extern void Vec3TransformViaTempMtx(struct Vec3 *out, void *basis, const struct Vec3 *v);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *basis, const VecFx32 *v);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, unsigned short mode, void *anchor);
-extern const struct Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 int Ov275_HandleHit(char *actor, char *attacker, struct ActorHitEvent *hit)
 {
     struct Ov274ActionState *state = *(struct Ov274ActionState **)(actor + 0x214);
-    struct Vec3 d;
-    struct Vec3 v;
+    VecFx32 d;
+    VecFx32 v;
     int delta;
     int rem;
     int dmg;
@@ -103,7 +103,7 @@ int Ov275_HandleHit(char *actor, char *attacker, struct ActorHitEvent *hit)
         }
     } else if ((int)hit->pSource18 == *(int *)(actor + 0x3b0)) {
         if (state->aSlot[*(u16 *)(attacker + 2)] == 0) {
-            VEC_Subtract((struct Vec3 *)(attacker + 0x190), (struct Vec3 *)(actor + 0xb0), &d);
+            VEC_Subtract((VecFx32 *)(attacker + 0x190), (VecFx32 *)(actor + 0xb0), &d);
             Vec3TransformViaTempMtx(&v, actor + 0xa0, &data_02042258);
             if ((short)hit->uMode10 > 0) {
                 Ov107_BuildAndSendUpdate(state->pOwner, 0x163, 8, (char *)*hit->pSource18 + 4);

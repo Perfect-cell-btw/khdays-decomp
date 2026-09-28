@@ -2,7 +2,8 @@
  * the actor's +0x394 target's +0x190 point, scaled by the gap beyond both +0x80 radii; no gap
  * requests sub-state 2 and ends the state, else bit 0 of the actor's +0x1ae is raised,
  * animation 4 plays, the +0x38 timer and +0x3e flag reset and the tick hands off to cf0c8. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);

@@ -3,21 +3,22 @@
  * the actor's +0xb0 to the target's +0x190 (normalised, minus both +0x80 radii) and its heading
  * (+0x14) are taken, the +0x10 angle turned into a forward vector (sine table) which, scaled by
  * 0.1875, becomes the +0x1c step; inside 0.5 the actor goes to sub-state 2 and the slot is released. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern const short data_0203d210[];
 
 void Ov245_ApproachPlan(int *node) {
     int *state = (int *)node[1];
-    Vec3 d;
-    Vec3 fwd;
+    VecFx32 d;
+    VecFx32 fwd;
     int gap;
     int idx;
     int target;
@@ -29,7 +30,7 @@ void Ov245_ApproachPlan(int *node) {
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)(*state + 0xb0), &d);
+    VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)(*state + 0xb0), &d);
     d.y = 0;
     target = state[2];
     actor = *state;
@@ -40,7 +41,7 @@ void Ov245_ApproachPlan(int *node) {
     fwd.y = 0;
     fwd.z = data_0203d210[((idx >> 4) << 1) + 1];                                     /* FX_CosIdx */
     VEC_DotProduct(&fwd, &d);
-    ScaleVec3Fx12(0x300, &fwd, (Vec3 *)(state + 7));
+    ScaleVec3Fx12(0x300, &fwd, (VecFx32 *)(state + 7));
     if (gap >= 0x800) {
         return;
     }

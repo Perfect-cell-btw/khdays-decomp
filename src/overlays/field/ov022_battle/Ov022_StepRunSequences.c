@@ -15,10 +15,7 @@
  */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x, y, z;
-};
+#include "nitro/fx.h"
 
 struct Sequence {
     u16 nFlags;                  /* 0x0000 */
@@ -35,18 +32,18 @@ struct Run {
     u8 pad0010[0x104];
     struct Sequence seqAimed;    /* 0x0114 */
     u8 pad0118[0xa0];
-    struct Vec3 vecAimed;        /* 0x01b8 */
+    VecFx32 vecAimed;        /* 0x01b8 */
     u8 pad01c4[0x58];
     struct Sequence seqThird;    /* 0x021c */
     u8 pad0220[0xa0];
-    struct Vec3 vecThird;        /* 0x02c0 */
+    VecFx32 vecThird;        /* 0x02c0 */
     u8 pad02cc[0x5c];
     struct Actor *pActor;        /* 0x0328 */
     u8 pad032c[4];
     int nElapsed;                /* 0x0330 */
 };
 
-extern void func_ov022_020ad44c(struct Vec3 *pOut, struct Actor *pActor);
+extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pActor);
 extern int Sequence_UpdateTracks(struct Sequence *pSeq, int nDelta);
 extern void SceneNode_Enable(struct Sequence *pSeq);
 extern void SceneNode_Disable(struct Sequence *pSeq);
@@ -57,8 +54,8 @@ extern void Ov022_PlayEntityVoice(struct Actor *pActor, int nA, int nCue);
 
 void Ov022_StepRunSequences(struct Run *pRun, int nDelta)
 {
-    struct Vec3 vecFeed;
-    struct Vec3 vecPos;
+    VecFx32 vecFeed;
+    VecFx32 vecPos;
     struct Actor *pActor;
 
     pActor = pRun->pActor;

@@ -1,11 +1,13 @@
 /* Throw entry tick of the ov218 actor: the +0x28 velocity is its +0x3ac part's +0x2c vector turned by
  * the +0xc heading; once the partner holds no queued move pose 9 loops, +0x14 and +0x40 clear and the
  * node moves on to 020cdd44. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov218_StaggerTick(void);
@@ -23,7 +25,7 @@ void Ov218_ThrowEntryTick(int *node)
 
         MTX_RotY33_(&rot, data_0203d210[idx], data_0203d210[idx + 1]);
     }
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x3ac) + 0x2c), &rot, (Vec3 *)(state + 0xa));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x3ac) + 0x2c), &rot, (VecFx32 *)(state + 0xa));
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }

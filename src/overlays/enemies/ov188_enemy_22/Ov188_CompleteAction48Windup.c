@@ -2,12 +2,7 @@
  * high-byte flags 0x82, starts reaction 0x12f mode 6 and advances the action node. */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 struct Actor {
     char pad000[0x60];

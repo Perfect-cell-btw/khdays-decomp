@@ -2,6 +2,7 @@
  * spans the whole screen and the sub engine's windows are disabled, the data_ov106_020b8ab4 resource
  * is released, the +0x8b38 model, the +0x8cd0 and +0x8bc4 widgets and the +0x8e40 handle are freed,
  * and the scene pointer clears. */
+
 #include "nitro/types.h"
 
 extern char *data_ov106_020b8b60;

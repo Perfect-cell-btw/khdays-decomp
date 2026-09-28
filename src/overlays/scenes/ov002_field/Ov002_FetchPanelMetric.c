@@ -1,9 +1,11 @@
-#include "nitro/types.h"
 
 /* Which value the mission panel shows.  The fetcher's return says which way
  * that value runs, and Ov002_GetPanelValueBand turns it into the direction of
  * its threshold walk.
  */
+
+#include "nitro/types.h"
+
 enum {
     OV002_METRIC_TIME_LEFT    = 0,  /* the timeout, in hundredths of a second */
     OV002_METRIC_PANEL_TOTAL  = 1,

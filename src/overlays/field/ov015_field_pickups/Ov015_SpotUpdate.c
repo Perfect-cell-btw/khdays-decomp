@@ -5,6 +5,7 @@
  * that has both an occupied callback (+0x4c) and an actor (+0x3c) which has arrived (bit 2
  * of the actor's +0x40) fires the callback with the player's sub-actor (01fffde0 of
  * +0x180, +0x4ec) and the entry id, then drops the pending bit.  Always returns 0. */
+
 #include "nitro/types.h"
 
 extern int GameState_GetField(u16 nField, u8 nBit);                    /* GameState_GetField */

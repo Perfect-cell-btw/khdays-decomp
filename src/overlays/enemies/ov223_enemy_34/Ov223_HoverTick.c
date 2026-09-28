@@ -10,15 +10,17 @@
  * launched (+0x400 bit 7), accumulates +0x41c up to 0xc38: within it the strike sweep (ov221
  * 0a2c mode 6) runs from the +0x410 landing with the three axes and a reach growing from 0x1933
  * to 0x4333 across the window. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int q[4]; } Quat;
 
 struct Ov221SweepParams {
-    Vec3 aim;
-    Vec3 v0c;
-    Vec3 v18;
-    Vec3 v24;
+    VecFx32 aim;
+    VecFx32 v0c;
+    VecFx32 v18;
+    VecFx32 v24;
     int nReach;
     int bFlag;
 };
@@ -38,25 +40,25 @@ static inline int FX_Mul(int a, int b) {
 }
 
 extern int Angle_TurnToward(int cur, int target, int step, int flag);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *pose, Quat *q);
 extern int Ov107_FindNearestObject(int owner, int flag);
-extern struct CollisionHit *Collision_CastSphereEx(void *collision, Vec3 *origin, Vec3 *dir, int radius, void *ignore);
-extern void ScaleVec3Fixed27(int scale, Vec3 *in, Vec3 *out);
+extern struct CollisionHit *Collision_CastSphereEx(void *collision, VecFx32 *origin, VecFx32 *dir, int radius, void *ignore);
+extern void ScaleVec3Fixed27(int scale, VecFx32 *in, VecFx32 *out);
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov223_RunSubStateScript(int self, int *node);
 extern void Ov223_StrikeSweepEntities(int *state, int mode, struct Ov221SweepParams *params);
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
 
 void Ov223_HoverTick(int *node)
 {
     int *state = (int *)node[1];
     Quat q;
-    Vec3 step;
-    Vec3 origin;
+    VecFx32 step;
+    VecFx32 origin;
     struct Ov221SweepParams params;
     int rem;
     int nStep;
@@ -66,7 +68,7 @@ void Ov223_HoverTick(int *node)
     int t;
     struct CollisionHit *hit;
 
-    step = *(Vec3 *)(state + 5);
+    step = *(VecFx32 *)(state + 5);
     if (((struct b1 *)(*state + 0x17a))->b0 == 0 && *(signed char *)(*state + 0x1c6) != 6) {
         state[0x14] = Angle_TurnToward(state[0x14], state[0x16],
                                     *(int *)(*node + 0x2c) * (state[0x1e] != 0 ? 0x96 : 0x28) / 100, 0);
@@ -103,17 +105,17 @@ void Ov223_HoverTick(int *node)
         }
         break;
     case 9:
-        origin = *(Vec3 *)(*state + 0x74);
+        origin = *(VecFx32 *)(*state + 0x74);
         hit = Collision_CastSphereEx(*(void **)(*(int *)(*state + 4) + 0x7c), &origin, &step, *(int *)(*state + 0x80), 0);
         if (hit != 0 && hit->nBlocked == 0) {
             ScaleVec3Fixed27(hit->nAlong, &step, &step);
         }
         break;
     }
-    *(Vec3 *)(*state + 0xf0) = step;
+    *(VecFx32 *)(*state + 0xf0) = step;
     for (rem = *(int *)(*node + 0x2c); rem > 0; rem -= 0x88) {
         nStep = rem <= 0x88 ? rem : 0x88;
-        ScaleVec3Fx12(0x1000 - FX_Mul(FX_Div(nStep, 0x88), 0x300), (Vec3 *)(state + 5), (Vec3 *)(state + 5));
+        ScaleVec3Fx12(0x1000 - FX_Mul(FX_Div(nStep, 0x88), 0x300), (VecFx32 *)(state + 5), (VecFx32 *)(state + 5));
     }
     if ((((struct hw60 *)(*state + 0x60))->lo & 1) == 0) {
         return;
@@ -126,7 +128,7 @@ void Ov223_HoverTick(int *node)
     if (*(int *)(*state + 0x41c) > 0xc38) {
         return;
     }
-    params.aim = *(Vec3 *)(*state + 0x410);
+    params.aim = *(VecFx32 *)(*state + 0x410);
     t = *(int *)(*state + 0x41c);
     if (t > 0xc38) {
         t = 0xc38;

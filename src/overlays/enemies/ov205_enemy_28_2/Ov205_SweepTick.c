@@ -7,10 +7,11 @@
  * the actor's +0x24 message hook, reaction 0x132 mode 4 fires there and the id bit is set
  * (through `1 >> id`, as the original does). Once the +0x28 busy byte clears, sub-state 2 is
  * requested and the tick hands off to a null callback. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -31,9 +32,9 @@ struct Ov204Owner {
 struct Ov204SweepState {
     struct Ov204Owner *pOwner;  /* +0x00 */
     int pTarget;                /* +0x04 */
-    Vec3 vVelocity;             /* +0x08 */
+    VecFx32 vVelocity;             /* +0x08 */
     char pad014[0x10];
-    Vec3 *pPos;                 /* +0x24 */
+    VecFx32 *pPos;                 /* +0x24 */
     u8 *pBusy;                  /* +0x28 */
     int nTimer;                 /* +0x2c */
     char pad030[4];
@@ -42,12 +43,12 @@ struct Ov204SweepState {
     u8 bHitMask44;              /* +0x44 */
 };
 
-extern int Ov107_ActionResource_GetOffsetAndScale(void *part, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *dst, void *quat, Vec3 *src);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, VecFx32 *src);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(struct Ov204Owner *owner, Sphere *sphere, int *out);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov204Owner *a, struct Ov204Owner *b, int kind, Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, Vec3 *at);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov204Owner *a, struct Ov204Owner *b, int kind, VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern short data_0203d210[];
 extern const PosMsg data_ov205_020d72a0;
@@ -60,7 +61,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov204SweepState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov204SweepState *state, PosMsg *msg, const VecFx32 *src)
 {
     FxVec vDead;
     vDead.x = *(Fx32 *)&src->x;
@@ -79,8 +80,8 @@ void Ov205_SweepTick(int *node)
     struct Ov204SweepState *state = (struct Ov204SweepState *)node[1];
     int hits[4];
     Sphere sphere;
-    Vec3 step;
-    Vec3 at;
+    VecFx32 step;
+    VecFx32 at;
     PosMsg msg;
     PosMsg tmpl;
     int speed;
@@ -107,7 +108,7 @@ void Ov205_SweepTick(int *node)
                 if (((state->bHitMask44 >> *(u16 *)(hits[i] + 2)) & 1) == 0) {
                     if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, 0, &state->vVelocity, 0) != 0) {
                         msg = tmpl;
-                        at = *(Vec3 *)(hits[i] + 0x74);
+                        at = *(VecFx32 *)(hits[i] + 0x74);
                         at.y += 0x800;
                         SendPos(state, &msg, &at);
                         Ov107_BuildAndSendUpdate(state->pOwner, 0x132, 4, &at);

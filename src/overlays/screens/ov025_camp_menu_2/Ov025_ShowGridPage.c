@@ -13,6 +13,7 @@
  * statement at the top of the inner body; the palette is an int narrowed at
  * the store (hoisted); the page switch lists case 3 before case 2.
  */
+
 #include "nitro/types.h"
 
 #define GRID_ROWS   8

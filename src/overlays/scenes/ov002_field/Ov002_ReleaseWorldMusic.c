@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* Only the leading flag word of a player record matters here: bit 16 takes the
    player out of the walk. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002PlayerRecord {
     unsigned long long nFlags;
 } Ov002PlayerRecord;

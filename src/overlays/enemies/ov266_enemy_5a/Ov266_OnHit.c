@@ -8,7 +8,9 @@
  * stock puts the actor in sub-state 3; a grabbing hit instead runs the 020cf3dc pass and re-arms
  * the +0x4c delay to a random value in [+0x224, +0x228] plus 0x1100. Returns 1 when the stock was
  * positive. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct HitWord { unsigned int lo : 16, hi : 16; };
 
 extern int Ov266_IsState6cActive(int *state, int a);
@@ -44,7 +46,7 @@ int Ov266_OnHit(int self, int param, unsigned int *hit) {
         hit[8] = 2;
         break;
     }
-    *(Vec3 *)(state + 7) = *(Vec3 *)(hit + 1);
+    *(VecFx32 *)(state + 7) = *(VecFx32 *)(hit + 1);
     hit[10] = Ov107_CalcHitDamage(self, hit);
     if ((((struct HitWord *)hit)->lo & 0x4000) != 0) {
         hit[9] = (hit[9] & 0xffff0000) | 1;

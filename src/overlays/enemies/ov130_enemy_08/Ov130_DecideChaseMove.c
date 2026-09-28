@@ -13,9 +13,9 @@
  * requested a state, it notifies instead of taking a slot.
  */
 
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
 
-static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
     vec->y = y;
     vec->z = z;
@@ -23,7 +23,7 @@ static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
 
 extern int func_02020400(int num, int den);
 extern void Ov130_UpdateChaseFacing(int *self);
-extern void ScaleVec3Fx12(int scale, struct Vecx32 *v, struct Vecx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov107_PostTagUpdate(int actor, int a, int b);
@@ -39,7 +39,7 @@ void Ov130_DecideChaseMove(int *self)
     int hp;
     int roll;
     int timer;
-    struct Vecx32 *vel;
+    VecFx32 *vel;
 
     if (*(short *)(actor + 0x218) == 0) {
         speed = 0;
@@ -51,7 +51,7 @@ void Ov130_DecideChaseMove(int *self)
 
     idx = (int)(((unsigned)(((long long)(int)(unsigned)nd[9] * 0x28be60db9391LL +
                  0x80000000000LL) >> 0x20) << 4) >> 0x10) >> 4;
-    vel = (struct Vecx32 *)(nd + 6);
+    vel = (VecFx32 *)(nd + 6);
     vel->x = (int)data_0203d210[idx * 2];
     vel->y = 0;
     vel->z = (int)data_0203d210[idx * 2 + 1];

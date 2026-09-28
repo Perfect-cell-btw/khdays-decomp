@@ -3,6 +3,7 @@
  * the list dirty and queue the upload of the three surfaces of every row that
  * was left unfilled.
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT 6

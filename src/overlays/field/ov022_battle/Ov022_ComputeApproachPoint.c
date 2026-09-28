@@ -2,12 +2,7 @@
  * direction to the target, within the scan distance (larger with ability 0x55). */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct Ov022ActorNode {
     char pad_0000[0x80];

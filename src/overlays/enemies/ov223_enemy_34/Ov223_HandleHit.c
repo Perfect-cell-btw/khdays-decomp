@@ -7,9 +7,9 @@
  * +0x77 side's mode from the overlay's hurt (bits 1/5) or idle table, then flips the side.
  * Empty hit points request sub-state 3; sub-state 9 with a target and a 1/0x10 hit requests 0xa;
  * the hit is otherwise accepted. */
-#include "nitro/types.h"
 
-struct Ov223Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov223ModePair { u8 nFirst; u8 nSecond; };
 union Ov223ModeSlot { struct Ov223ModePair sPair; u8 aModes[2]; };
@@ -25,7 +25,7 @@ struct Ov223HitFlags {
 
 struct Ov223Hit {
     unsigned int flags;
-    struct Ov223Vec3 position;
+    VecFx32 position;
     char pad10[4];
     int kind14;
     int body18;

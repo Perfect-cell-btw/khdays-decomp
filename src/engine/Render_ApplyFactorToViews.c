@@ -2,6 +2,7 @@
  * (heads at data_0204c208+idx*4+{0x84,0x64}, same table Render_DrawViewLists walks).
  * The +0x84 list scales each node's own factor at +0x180 by `scale` in 1.19.12
  * fixed point before dispatching; the +0x64 list passes `scale` through. */
+
 #include "nitro/fx.h"
 
 extern int data_0204c208;

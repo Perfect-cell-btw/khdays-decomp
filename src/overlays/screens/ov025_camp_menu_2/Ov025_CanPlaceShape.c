@@ -6,6 +6,7 @@
  * coordinates refuse.  Either way the context's "count" text pointer (+0x2078)
  * is refreshed from variable record 0x1b of the records at +0x28c.
  */
+
 #include "nitro/types.h"
 
 #define GRID_PAGES 3

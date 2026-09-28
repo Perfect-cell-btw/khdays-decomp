@@ -8,13 +8,9 @@
  * model placed at the origin (020887dc with the actor's model id 0202bf84) and linked to the
  * actor (020888b8), and, when the motion table has an entry, the motion "mi/mo/mu.p2"
  * (variant 0) or "mi/mo/win_we.p2" (variant 1) started on it (02089390).  Returns 1. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023SessionSlot {
     int  nField00;            /* 0x00 */

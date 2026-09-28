@@ -1,9 +1,9 @@
 /* When the effect node is in one of its visible states, places it at the character's position
  * turned with the character and draws it. */
 
-extern void Scene_DrawNode(int a);
+#include "nitro/fx.h"
 
-typedef struct { int x, y, z; } Vec3;
+extern void Scene_DrawNode(int a);
 
 typedef struct {
     char pad0[0x4c];
@@ -11,7 +11,7 @@ typedef struct {
     char pad4e[0x7a];
     unsigned short angle;
     char padca[0x26];
-    Vec3 vec;
+    VecFx32 vec;
     char padfc[0x158 - 0xfc];
     int kind;
 } Node;
@@ -19,9 +19,9 @@ typedef struct {
 typedef struct { char pad0[0x200]; Node node; } Block;
 
 void Ov103_DrawSubNodeWithYaw3(int self, Block *b) {
-    Vec3 v;
+    VecFx32 v;
     if (b->node.kind != 2 && b->node.kind != 3 && b->node.kind != 4) return;
-    v = *(Vec3 *)(self + 0x8c + 0x400);
+    v = *(VecFx32 *)(self + 0x8c + 0x400);
     b->node.angle = (unsigned short)(*(unsigned short *)(*(int *)(self + 0x20) + 0x80) - 0x8000) + 0x8000;
     b->node.flags |= 0x20;
     b->node.vec = v;

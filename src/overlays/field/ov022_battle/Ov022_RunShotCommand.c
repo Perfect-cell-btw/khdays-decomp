@@ -20,16 +20,11 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct ShotDir2 {
     short nDirX;
     short nDirY;
-};
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
 };
 
 struct ShotCommand {
@@ -44,7 +39,7 @@ struct ShotCommand {
         short nFuse;                 /* 0x02 */
         u8 nShot;
     } u;
-    struct VecFx32 vecPos;           /* 0x04 */
+    VecFx32 vecPos;           /* 0x04 */
     struct ShotDir2 dir;             /* 0x10 */
     u16 nDirZ;                       /* 0x14 */
     u8 nId2 : 3;                     /* 0x16 */
@@ -53,7 +48,7 @@ struct ShotCommand {
 };
 
 struct ShotRequest {
-    struct VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecPos;           /* 0x00 */
     struct ShotDir2 dir;             /* 0x0c */
     short nDirZ;                     /* 0x10 */
     short nFuse;                     /* 0x12 */

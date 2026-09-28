@@ -2,8 +2,10 @@
  * each row's +0x214 vector, +0x230 (zero), +0x234 speed -- scaled by 1.5 on difficulty 1 --
  * and +0x220 value come from data_ov062_020b7fa4 / 576c / 577c by row index, and the +0x23c
  * counter is cleared. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 v[4]; } VecTable4;
+
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 v[4]; } VecTable4;
 typedef struct { int n[4]; } IntTable4;
 
 extern int func_02023c40(void);
@@ -25,7 +27,7 @@ void Ov062_SeedRequestRows(char *node)
     tblB = data_ov062_020b7f7c;
     pRow = node + 0x12c;
     for (i = 0; i < 2; i++) {
-        *(Vec3 *)(pRow + 0x214) = tblVec.v[i];
+        *(VecFx32 *)(pRow + 0x214) = tblVec.v[i];
         *(int *)(pRow + 0x230) = tblZero.n[i];
         *(int *)(pRow + 0x234) = tblA.n[i];
         *(int *)(pRow + 0x220) = tblB.n[i];

@@ -5,6 +5,7 @@
  * Anim_Interpolate 02021404, as fx32 -> frames) is applied, the command is re-queued
  * (020219b4) and 0 returned; on the last frame the final frame is applied and 1 returned.
  * The entity is looked up (0202bfcc) once before the countdown and again for each apply. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023Operand {

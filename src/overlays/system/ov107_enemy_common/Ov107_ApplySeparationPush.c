@@ -11,12 +11,6 @@
 
 #include "nitro/fx.h"
 
-typedef struct VecFx32 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
-
 typedef struct AiState {
     char pad000[0x54];
     int field_54;              /* 0x54 */

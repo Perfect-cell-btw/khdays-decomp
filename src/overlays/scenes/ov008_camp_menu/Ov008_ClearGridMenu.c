@@ -5,6 +5,7 @@
  * cell of the visible page up to the first blocked (0xff) cell of every row,
  * and all nine column-header cells.
  */
+
 #include "nitro/types.h"
 
 #define GRID_PAGES 3

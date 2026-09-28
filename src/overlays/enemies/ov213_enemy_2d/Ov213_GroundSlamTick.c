@@ -7,11 +7,13 @@
  * rider's reaction 0 mode 0x4f fires there. The tick ends once the +0x388 part's rig is idle or
  * the rider's +0x1c4 flags have bit 1 or 3 set; in the latter case the part's animation 0 is
  * advanced by one frame step. Ending requests pose 0. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -22,13 +24,13 @@ typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 extern const short data_0203d210[];
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern int RandNextScaled(int n);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, void *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Obj_GetCellScaledField(int part, int a, int b);
 extern void callIfTableEntrySet(int part, int a, int frame);
@@ -43,7 +45,7 @@ void Ov213_GroundSlamTick(int *node)
     Fx32 scratchX;
     int hits[4];
     Segment seg;
-    Vec3 push;
+    VecFx32 push;
     int n;
     int i;
 
@@ -55,7 +57,7 @@ void Ov213_GroundSlamTick(int *node)
         }
     } else if (*((u8 *)state + 0xc) == 1) {
         n = *state;
-        seg.p0 = *(Vec3 *)(n + 0xb0);
+        seg.p0 = *(VecFx32 *)(n + 0xb0);
         seg.dir = data_02042264;
         seg.nLength = 0x8000;
         seg.nRadius = 0x600;

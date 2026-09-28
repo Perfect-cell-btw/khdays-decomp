@@ -5,7 +5,9 @@
  * state[0xd] = *(*state+0x78) - *(*state+0x80). Then heading = atan2 of (state[0xc] - (*state+0xb0)),
  * stored at *(*state+0x3ac).
  */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern void VEC_Normalize(void *a, void *b);
@@ -15,7 +17,7 @@ extern int  func_020050b4(int x, int z);
 
 void Ov200_AimLeadTarget(int *self) {
     int *state = (int *)self[1];
-    struct vec3 v;
+    VecFx32 v;
     int w[3];
     int target = Ov107_FindNearestObject(*state, 0);
 
@@ -23,9 +25,9 @@ void Ov200_AimLeadTarget(int *self) {
     VEC_Subtract((void *)(target + 0x74), (void *)state[0x13], (void *)(state + 0xf));
     VEC_Normalize((void *)(state + 0xf), (void *)(state + 0xf));
     ScaleVec3Fx12(0x800, (void *)(state + 0xf), (void *)(state + 9));
-    v = *(struct vec3 *)(*state + 0xb0);
+    v = *(VecFx32 *)(*state + 0xb0);
     VEC_Add(&v, (void *)(state + 9), &v);
-    *(struct vec3 *)(state + 0xc) = v;
+    *(VecFx32 *)(state + 0xc) = v;
     state[0xd] = *(int *)(*state + 0x78) - *(int *)(*state + 0x80);
     VEC_Subtract((void *)(state + 0xc), (void *)(*state + 0xb0), w);
     *(int *)(*state + 0x3ac) = func_020050b4(w[0], w[2]);

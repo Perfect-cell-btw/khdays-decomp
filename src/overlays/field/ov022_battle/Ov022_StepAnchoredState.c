@@ -13,15 +13,11 @@
  * the state ends into state 2, and the delta is kept as the actor's motion.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022ActorNode */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ActorNode {
     u32 nFlags;                  /* 0x00 */
     u16 nAnimFlags;              /* 0x04 */
@@ -43,12 +39,12 @@ struct Actor {
     u8 pad005c[0x408];
     u64 nFlags2;                 /* 0x0464 */
     u8 pad046c[0x10];
-    struct VecFx32 vecDrift;     /* 0x047c */
+    VecFx32 vecDrift;     /* 0x047c */
     u8 pad0488[4];
-    struct VecFx32 vecAim;       /* 0x048c */
-    struct VecFx32 vecStep;      /* 0x0498 */
+    VecFx32 vecAim;       /* 0x048c */
+    VecFx32 vecStep;      /* 0x0498 */
     u8 pad04a4[0x1c];
-    struct VecFx32 *pPush;       /* 0x04c0 */
+    VecFx32 *pPush;       /* 0x04c0 */
     u8 pad04c4[0x1a4];
     PostDrawFn pfnPostDraw;      /* 0x0668 */
     u8 pad066c[0x28];
@@ -56,7 +52,7 @@ struct Actor {
     u8 bStateOver : 1;           /* bit 1 */
     u8 nFlags694Rest : 6;
     u8 pad0695[3];
-    struct VecFx32 vecMotion;    /* 0x0698 */
+    VecFx32 vecMotion;    /* 0x0698 */
     u8 pad06a4[0x10c];
     int nAnimFrame;              /* 0x07b0 */
 };
@@ -70,20 +66,20 @@ struct Actor {
 #define ANCHOR_FRAME 0x5000
 #define STATE_END 2
 
-extern void Ov022_StepAnchorDelta(struct Actor *pActor, struct VecFx32 *pOut);   /* Ov022_StepAnchorDelta */
-extern void VEC_Add(const struct VecFx32 *pA, const struct VecFx32 *pB, struct VecFx32 *pOut);
-extern void Actor_SetVecAndSyncChild(struct ActorNode *pNode, struct VecFx32 *pPos);      /* Actor_SetVecAndSyncChild */
+extern void Ov022_StepAnchorDelta(struct Actor *pActor, VecFx32 *pOut);   /* Ov022_StepAnchorDelta */
+extern void VEC_Add(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
+extern void Actor_SetVecAndSyncChild(struct ActorNode *pNode, VecFx32 *pPos);      /* Actor_SetVecAndSyncChild */
 extern int Session_GetLocalPlayerIndex(void);
 extern void SceneNode_Enable(u16 *pAnimFlags);                                    /* SceneNode_Enable */
 extern int Ov022_ActorSetState(struct Actor *pActor, int nState);             /* Ov022_ActorSetState */
 
 int Ov022_StepAnchoredState(struct Actor *pActor)
 {
-    struct VecFx32 vecDelta;
-    struct VecFx32 vecPos;
-    struct VecFx32 vecFlat;
+    VecFx32 vecDelta;
+    VecFx32 vecPos;
+    VecFx32 vecFlat;
     int nRet;
-    struct VecFx32 *pPush;
+    VecFx32 *pPush;
 
     nRet = 0;
     if ((pActor->nFlags & FLAG_BIT10) == 0) {

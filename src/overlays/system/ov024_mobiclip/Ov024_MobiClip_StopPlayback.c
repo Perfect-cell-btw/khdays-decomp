@@ -6,6 +6,7 @@
  * its two channel buffers are freed, and each slot has its stream closed, its
  * file closed and the slot itself released.
  */
+
 #include "nitro/types.h"
 
 struct MobiClipAudioStream {

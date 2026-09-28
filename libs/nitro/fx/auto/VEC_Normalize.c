@@ -1,11 +1,6 @@
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
-
-typedef struct VecFx32 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
 
 #define REG_DIVCNT          (*(vu16 *)0x04000280)
 #define REG_DIV_NUMER       (*(vu64 *)0x04000290)

@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 #define NNS_GFD_PLTTSIZE_MIN 8

@@ -3,12 +3,6 @@
 
 #include "nitro/fx.h"
 
-typedef struct VecFx32 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
-
 typedef struct Quat {
     fx32 w, x, y, z;
 } Quat;

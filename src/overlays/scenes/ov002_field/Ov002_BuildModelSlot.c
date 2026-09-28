@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct Ov002Vec3 {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov002ModelDesc {
     s8 nKind;               /* 1, 2 and 4 each start their own animation */
@@ -12,7 +8,7 @@ typedef struct Ov002ModelDesc {
     u16 hTint;
     int nParams;
     char pad008[8];
-    Ov002Vec3 place;
+    VecFx32 place;
 } Ov002ModelDesc;
 
 typedef struct Ov002ModelBase {
@@ -69,7 +65,7 @@ void Ov002_BuildModelSlot(Ov002ModelDesc *pDesc, int nId, int nFlag)
         *(u16 *)(pFlags + 4) = (u16)(*(u16 *)(pFlags + 4) | 0x20);
     }
 
-    *(Ov002Vec3 *)((char *)pBase->apSlots[nSlot] + 0xc0) = pDesc->place;
+    *(VecFx32 *)((char *)pBase->apSlots[nSlot] + 0xc0) = pDesc->place;
 
     switch (pDesc->nKind) {
     case 1:

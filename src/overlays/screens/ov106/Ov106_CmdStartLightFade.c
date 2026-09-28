@@ -7,6 +7,7 @@
  * end level is applied at once and 1 returned, else 0. *
  * PROVENANCE: byte-identical twin of ov023's Ov023_CmdStartLightFade (Ov023_CmdStartLightFade), same code and
  * callees, verified byte-exact in this overlay. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023EventBlock {

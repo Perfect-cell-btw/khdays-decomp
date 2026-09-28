@@ -6,13 +6,14 @@
 #pragma opt_dead_assignments off
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
-struct Vec3;
+VecFx32;
 struct TimelineActor;
 struct StructOut;
 struct StructM;
 
-extern void func_ov022_020ad44c(struct Vec3 *, struct TimelineActor *);
+extern void func_ov022_020ad44c(VecFx32 *, struct TimelineActor *);
 extern void Ov022_ScaleRowValues(struct TimelineActor *, int, int *, int *);
 extern int Ov022_RunCommandHandlers(struct TimelineActor *, struct StructOut *, int *, int);
 extern unsigned Session_RandNextScaled(unsigned);
@@ -21,7 +22,6 @@ extern void Ov022_SendAimMessage(void *, int, struct StructM *);
 
 extern const short data_0203d210[];
 
-struct Vec3 { int x, y, z; };
 struct Direction3 {
     int x;
     int y;
@@ -63,7 +63,7 @@ struct TimelineActor {
     u8 effect2648[0x74];
     u32 flags26bc;
     char pad26c0[8];
-    struct Vec3 position26c8;
+    VecFx32 position26c8;
 };
 
 struct TimelineActorOwner {
@@ -89,7 +89,7 @@ struct StructB {
 };
 
 struct StructOut {
-    struct Vec3 head;
+    VecFx32 head;
     int f0c;
     int f10;
     struct Direction3 direction14;
@@ -98,7 +98,7 @@ struct StructOut {
     int f28;
 };
 
-static inline void VecSet(struct Vec3 *out, int z, int y, int x) {
+static inline void VecSet(VecFx32 *out, int z, int y, int x) {
     out->x = x;
     out->y = y;
     out->z = z;
@@ -107,7 +107,7 @@ static inline void VecSet(struct Vec3 *out, int z, int y, int x) {
 struct StructM {
     unsigned char f00;
     unsigned char pad01[3];
-    struct Vec3 f04;
+    VecFx32 f04;
     unsigned short f10;
     unsigned short f12;
     unsigned char f14;
@@ -125,7 +125,7 @@ void Ov099_EmitTimelineEffect(struct TimelineActorOwner *this) {
     int effectKind;
     struct StructOut so;
     struct StructB sb;
-    struct Vec3 tmp;
+    VecFx32 tmp;
     struct StructM sm;
     unsigned char b;
     int sinValue, cosValue;

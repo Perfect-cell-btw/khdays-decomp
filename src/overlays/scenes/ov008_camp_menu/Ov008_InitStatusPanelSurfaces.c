@@ -10,6 +10,7 @@
  * mwcc schedules the third upload's arguments the other way round (add r0 before
  * add r1); no source form changed that, the pragma reproduces the ROM.
  */
+
 #include "nitro/types.h"
 
 #define SURFACE_COUNT 6

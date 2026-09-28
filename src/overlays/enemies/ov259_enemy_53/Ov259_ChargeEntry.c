@@ -2,25 +2,26 @@
  * plays on the actor and its partner (020cd524), the body sweeps 0x908-0xb28 flat (020d1700,
  * +0x420 = 4), +0x88 = 0.875 and +0x94 = 100, the timers, step and cue flags, +0xa8 and +0x70 clear,
  * +0xae becomes 0x10 and the node moves on to 020cff54. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int y);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
-extern void Ov259_ForwardSweep(int body, int a, int b, Vec3 lift);
+extern void Ov259_ForwardSweep(int body, int a, int b, VecFx32 lift);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_SweepSequenceTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov259_ChargeEntry(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
 
-    VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)(*state + 0x74), &d);
+    VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)(*state + 0x74), &d);
     VEC_Normalize(&d, &d);
     state[0x1e] = state[0x1f] = func_020050b4(d.x, d.z);
     Ov107_PostTagUpdate(*state, 0x11, 0);

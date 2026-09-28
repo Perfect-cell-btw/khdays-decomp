@@ -8,6 +8,7 @@
  * the sound fades to 0x40; the main screen shows BG0 only; the fade block (+0xac, 0x18 bytes) is
  * reset with its step at 3 in mode bit 1 else 2; mode bit 3 resets the effect layer; and
  * PauseMenu_Open is queued as the next task. */
+
 #include "nitro/types.h"
 
 #define REG_DISPCNT (*(volatile u32 *)0x04000000)

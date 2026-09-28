@@ -11,9 +11,10 @@
  * caller keeps the bank reset step.
  */
 
+/* Ov022SyncRequest */
+
 #include "nitro/types.h"
 
-/* Ov022SyncRequest */
 struct SyncRequest {
     u8 nFlags;                   /* 0x00 */
     u8 nRow;                     /* 0x01 */

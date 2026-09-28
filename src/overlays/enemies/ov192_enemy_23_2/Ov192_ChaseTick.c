@@ -4,12 +4,14 @@
  * +0x2d8 range, faces the target's +0x190 anchor from the +8 position. With no +0x34 hold
  * pending, closer than 0x2000 goes to sub-state 6, and any of the four +0x3a4 parts whose +0x60
  * low byte lacks bit 0 sends it to sub-state 4. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern int Ov192_FindTarget(int obj, int *out);
 extern int FX_Sqrt(int x);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 
@@ -34,7 +36,7 @@ void Ov192_ChaseTick(int node)
     if (dist >= *(int *)(*state + 0x2d8)) {
         return;
     }
-    VEC_Subtract((Vec3 *)(state[6] + 0x190), (Vec3 *)state[2], (Vec3 *)(dist2 + 1));
+    VEC_Subtract((VecFx32 *)(state[6] + 0x190), (VecFx32 *)state[2], (VecFx32 *)(dist2 + 1));
     state[5] = func_020050b4(dist2[1], dist2[3]);
     if (state[0xd] > 0) {
         return;

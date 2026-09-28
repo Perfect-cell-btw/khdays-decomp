@@ -3,13 +3,9 @@
  * word at +0x344 gets bit 0 and the animation is advanced (020279e0).  Then the nine track
  * slots (+0x42c, an index into the 0x58-byte tracks at +0x58 or -1) are scanned for the first
  * whose track position has a y of 0xcd or more; its slot index is returned, else -1. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023MotionTrack {
     VecFx32 vPos;             /* 0x00 */

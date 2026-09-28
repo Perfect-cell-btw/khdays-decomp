@@ -3,16 +3,17 @@
  * zero vector with mode 2; the +0x14 timer becomes 0x7000 after sub-state 8, 0x3000 while the
  * +0x21a stamina is positive, else 0x4b000 scaled by 1.5 per +0x18 phase; the +0x3e flag is
  * cleared and the tick hands off to the guard state. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
 
 extern void MTX_RotY33_(void *mtx, int sin, int cos);
 extern void MTX_MultVec33(int *out, void *mtx, int *in);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
-extern void func_ov107_020c0b90(int actor, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const struct Vecx32 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov219_GuardTick(int *node);
 
 static inline int FX_Mul(int a, int b)

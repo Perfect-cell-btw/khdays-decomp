@@ -1,6 +1,7 @@
 /* Build step of the ov041 enemy (x4: ov041/060/080/097): clears the ready flags, requests
  * animation set 1, binds the render handle against the scene link the enemy was spawned from,
  * clears the 0xd7-byte work block at +0xda0, then latches the ready bits 9 and returns them. */
+
 #include "nitro/types.h"
 
 extern void Ov022_ConfigureGridSlotMode(int slot, int mode);

@@ -9,12 +9,7 @@
  */
 
 #include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 struct SlotEffect {
     u8 nFlags;                   /* 0x0000, bit 0 marks the effect live */

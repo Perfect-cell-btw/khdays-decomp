@@ -4,6 +4,7 @@
  * one recorded marks the group dirty and answers yes; with one, a group already
  * marked dirty answers yes.  Otherwise yes unless the scene poll reports 4.
  */
+
 #include "nitro/types.h"
 
 typedef struct MissionContext {

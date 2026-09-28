@@ -1,11 +1,7 @@
 /* Scales a vector's selected components and a scalar by a clamped factor according to the control's
  * flags. */
 
-typedef struct FxVec3_020b0c24 {
-    int x;
-    int y;
-    int z;
-} FxVec3_020b0c24;
+#include "nitro/fx.h"
 
 typedef struct ScaleControl_020b0c24 {
     unsigned char padding_00[0x13];
@@ -46,12 +42,12 @@ static inline int ClampOffset_020b0c24(int value)
 
 static inline void ScalePrefix_020b0c24(
     ScaleControl_020b0c24 *control,
-    FxVec3_020b0c24 *vector,
+    VecFx32 *vector,
     FxScalar_020b0c24 *scalar,
     int scale)
 {
-    const FxVec3_020b0c24 *input = vector;
-    FxVec3_020b0c24 *output = vector;
+    const VecFx32 *input = vector;
+    VecFx32 *output = vector;
     const FxScalar_020b0c24 *scalarInput = scalar;
     FxScalar_020b0c24 *scalarOutput = scalar;
 
@@ -74,7 +70,7 @@ static inline void ScalePrefix_020b0c24(
 #pragma opt_dead_assignments on
 void Ov022_ApplyScaleControl(
     ScaleControl_020b0c24 *arg0,
-    FxVec3_020b0c24 *arg1,
+    VecFx32 *arg1,
     FxScalar_020b0c24 *arg2,
     FxAngle_020b0c24 *arg3,
     int arg4)

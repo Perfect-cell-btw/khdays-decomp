@@ -6,6 +6,7 @@
  * facing counter and fires reaction 0x13c at the state's +8 position, modes 2/3 for flag-0x22
  * hits and 0/1 otherwise, except for kind-0x80 hits carrying both flag 8 and flag 0x80.
  */
+
 #include "nitro/types.h"
 
 struct Ov153ActionState {

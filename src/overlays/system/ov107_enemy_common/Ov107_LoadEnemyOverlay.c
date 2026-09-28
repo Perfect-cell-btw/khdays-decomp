@@ -1,6 +1,8 @@
 /* First call resets the six shared enemy overlays; then loads the enemy overlay of table row idx /
  * column base, runs its init and returns how many columns it uses. */
 
+#include "nitro/types.h"
+
 extern int Loader_LoadOverlayInfo(void *info, int proc, int id);
 extern int Loader_LoadOverlayImage(int a);
 extern int FS_StartOverlay(void *info);
@@ -14,7 +16,6 @@ extern int data_ov107_020cb610[6];
 extern void *data_ov107_020cb5f8[6];
 extern unsigned char data_ov107_020cb6a4[];
 
-#include "nitro/types.h"
 extern u32 OVERLAY_113_ID[1];
 #define FS_OVERLAY_ID_ov113 ((int)(u32)&(OVERLAY_113_ID))
 

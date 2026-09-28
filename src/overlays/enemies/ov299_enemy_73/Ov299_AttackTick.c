@@ -5,12 +5,13 @@
  * of 0x60-accelerating fall steps that cover 0x14000 is counted; the +0xc velocity becomes the
  * facing (sin, 0, cos) of the +0x28 yaw at 0x800 and the point is pulled back by that many
  * steps along it before c5c4 launches the actor there; d47dc takes over. */
-typedef struct Vec3 { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int RandNextScaled(int range);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern void VEC_Add(const void *a, const Vec3 *b, Vec3 *d);
-extern void Ov107_MoveNodeAndRelayout(int actor, Vec3 *at);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern void VEC_Add(const void *a, const VecFx32 *b, VecFx32 *d);
+extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov299_AiEnterProjectileFlight(int *node);
 extern const short data_0203d210[];
@@ -27,8 +28,8 @@ static inline int RandRange(int low, int high)
 void Ov299_AttackTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 target;
-    Vec3 dir;
+    VecFx32 target;
+    VecFx32 dir;
     int speed;
     int ang;
     int roll;
@@ -41,7 +42,7 @@ void Ov299_AttackTick(int *node)
     if (state[9] < state[0xb]) {
         return;
     }
-    target = *(Vec3 *)state[1];
+    target = *(VecFx32 *)state[1];
     if (state[2] != 0) {
         ang = RandNextScaled(0x6489) - 0x3244;
         roll = RandNextScaled(100);
@@ -72,7 +73,7 @@ void Ov299_AttackTick(int *node)
     state[3] = data_0203d210[idx * 2];                                        /* FX_SinIdx */
     state[4] = 0;
     state[5] = data_0203d210[idx * 2 + 1];                                    /* FX_CosIdx */
-    ScaleVec3Fx12(0x800, (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+    ScaleVec3Fx12(0x800, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     target.x -= state[3] * n;
     target.z -= state[5] * n;
     Ov107_MoveNodeAndRelayout(*state, &target);

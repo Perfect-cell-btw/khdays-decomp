@@ -2,7 +2,9 @@
  * position from param_6/param_7 scaled by 0x82ea (64-bit multiply, >>6 across the split),
  * param_5, then allocate a param_4-entry index and fill it by resolving each u16 tag in
  * param_3 through Ov008_FindEntryByTag. */
+
 #include "nitro/types.h"
+
 extern void *Ov008_FindFirstUnusedEntry(int a);
 extern void MI_CpuFill8(void *dst, int val, unsigned int size);
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);

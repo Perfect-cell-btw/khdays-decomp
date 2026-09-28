@@ -7,7 +7,9 @@
  * 0, 1, 2 and 4 with mode 1 (rate 3.0), builds the ten-joint +0x3a8 chain from pose 8, reserves
  * the +0x22c placement (+0x388) and one +0x144 placement (+0x38c) at the pose, creates the three
  * +0x390 parts (Ov200_BuildBeamState kinds 0/1/2) and loads sound 0x157. */
+
 #include "nitro/types.h"
+
 typedef void (*Callback)(void);
 typedef struct { int id[4]; } IdTable;
 typedef struct { int w[6]; } Box;

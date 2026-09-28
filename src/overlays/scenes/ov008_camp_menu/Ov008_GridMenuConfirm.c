@@ -12,6 +12,7 @@
  * busy the selected list item (+0x9c) is picked up into slot 0x16 (refusal
  * 4), state 0 entered and sound 1 played.
  */
+
 #include "nitro/types.h"
 
 #define STATE_LIST   0

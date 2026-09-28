@@ -8,6 +8,7 @@
  * second count the set 0x1f / 0x1d / 0x1a / 0x1c / 0x1e (row 2) and the
  * rest 0x25 / 0x23 / 0x20 / 0x22 / 0x24 (row 2).  The step tick is stored.
  */
+
 #include "nitro/types.h"
 
 #define BLINK_TICKS  0x1991b

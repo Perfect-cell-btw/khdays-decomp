@@ -7,6 +7,7 @@
  * info and extra tile surfaces (pixels at pCurrent+0x20, size / offset from
  * the surface) after flushing them from the cache.  Always returns 1.
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT   6

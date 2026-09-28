@@ -2,12 +2,7 @@
  * right of the local player's facing); returns the new bound. */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 extern int QueryActiveStateOrDelegate(void);
 extern const VecFx32 *func_ov022_020881f8(int index);

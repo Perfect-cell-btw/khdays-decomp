@@ -4,9 +4,10 @@
  * 18 and 19 always, 20 in 0-0x1100, 0x1540-0x1d38 or from 0x2288, 21 in 0-0xdd0, 26 from 0xd48.
  * When the window opens (+0x42c clear) or closes (+0x42c set) the actor is told at the +0x10 point
  * (020c0b90 mode 0x11 / 0x10). */
-typedef struct { int x, y, z; } Vec3;
 
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+#include "nitro/fx.h"
+
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 
 void Ov259_HitWindowStep(int *node)
 {
@@ -73,11 +74,11 @@ void Ov259_HitWindowStep(int *node)
         if (*(int *)(*state + 0x42c) != 0) {
             return;
         }
-        func_ov107_020c0b90(*state, 0x11, *(Vec3 *)state[4], 0);
+        func_ov107_020c0b90(*state, 0x11, *(VecFx32 *)state[4], 0);
     } else {
         if (*(int *)(*state + 0x42c) == 0) {
             return;
         }
-        func_ov107_020c0b90(*state, 0x10, *(Vec3 *)state[4], 0);
+        func_ov107_020c0b90(*state, 0x10, *(VecFx32 *)state[4], 0);
     }
 }

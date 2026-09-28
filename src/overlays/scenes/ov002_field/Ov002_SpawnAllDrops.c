@@ -1,17 +1,13 @@
-#include "nitro/types.h"
 
-typedef struct Ov002Vec3 {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern u8 data_0204c240;                /* boot-mode flags */
 
 extern void Ov002_SpawnTieredDrop(int nKind, u8 nAmount, int nCtxIndex,
-                                const Ov002Vec3 *pPlace);
+                                const VecFx32 *pPlace);
 extern void *Ov002_SpawnKindIntoFreeSpot(int nKind, u16 nTier, int nCtxIndex,
-                                 const Ov002Vec3 *pPlace, int nMode);
+                                 const VecFx32 *pPlace, int nMode);
 
 /* Spawns the four kinds of drop listed in aAmount, one byte of value each.
 
@@ -22,7 +18,7 @@ extern void *Ov002_SpawnKindIntoFreeSpot(int nKind, u16 nTier, int nCtxIndex,
    In the boot mode that raises bit 2, kinds 2 and 3 go through the tiered
    splitter instead, which spawns only half of what the amount affords. */
 void Ov002_SpawnAllDrops(const u8 *aAmount, int nCtxIndex,
-                         const Ov002Vec3 *pPlace)
+                         const VecFx32 *pPlace)
 {
     int bHalfRate;
     int nKind;

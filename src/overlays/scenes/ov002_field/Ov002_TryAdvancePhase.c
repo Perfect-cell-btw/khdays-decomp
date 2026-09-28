@@ -15,6 +15,7 @@
  */
 
 #include "nitro/types.h"
+
 typedef int (*Fn)(void);
 
 extern int  NNSi_FndGetCurrentRootHeap(void);

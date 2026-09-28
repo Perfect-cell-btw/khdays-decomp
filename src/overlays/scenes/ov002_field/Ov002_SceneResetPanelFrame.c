@@ -9,11 +9,7 @@
  * THUMB.
  */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad000[0xe0];
@@ -28,7 +24,7 @@ typedef struct {
 } Ov002FrameScene;
 
 extern int data_ov002_0207f628;
-extern const Ov002Vec3 data_ov002_0207e184;
+extern const VecFx32 data_ov002_0207e184;
 
 extern void SceneNode_SetFlag40(void *pWidget, int nValue);
 extern void Widget_SetTagWord(void *pWidget, int nTag);
@@ -36,11 +32,11 @@ extern void BindAnimTrack(void *pWidget, int nSlot, void *pNode, int nFlags);
 extern void SceneNode_Enable(void *pWidget);
 
 extern void Ov002_PlaceWidget(void *pWidget, unsigned int nFileId,
-                                const Ov002Vec3 *pPos, int nTint, int nKind);
+                                const VecFx32 *pPos, int nTint, int nKind);
 
 void Ov002_SceneResetPanelFrame(void)
 {
-    Ov002Vec3 v;
+    VecFx32 v;
     Ov002FrameScene *s;
 
     s = *(Ov002FrameScene **)&data_ov002_0207f628;

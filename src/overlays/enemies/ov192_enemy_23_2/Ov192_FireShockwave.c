@@ -7,7 +7,8 @@
  * produces the `lsl #0x18 ; asr #0x18` round-trip on every increment.
  *
  * One of three byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(void *a, void *b);

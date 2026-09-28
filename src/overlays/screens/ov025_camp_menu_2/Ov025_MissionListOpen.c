@@ -7,6 +7,7 @@
  * updated; not found: the cursor slot is cleared, and when the list has no
  * entries either, the cursor steps to the first accepted slot.
  */
+
 #include "nitro/types.h"
 
 #define SLOT_COUNT     12

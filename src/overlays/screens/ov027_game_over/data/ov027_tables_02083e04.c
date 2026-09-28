@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov027_LoadCharacterModels: load the fallen characters shown on the (02083168): VecFx32 data_ov027_02083e04; */
+
 #include "nitro/types.h"
 
-/* read by Ov027_LoadCharacterModels: load the fallen characters shown on the (02083168): VecFx32 data_ov027_02083e04; */
 const u8 data_ov027_02083e04[12] = {
     0, 0, 0, 0, 61, 10, 0, 0, 195, 217, 255, 255,
 };

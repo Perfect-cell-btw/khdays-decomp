@@ -7,11 +7,7 @@
  * spawns there, animation 0x19 plays, reaction 0x12b mode 0xc fires at it, the timer at +0x4c
  * restarts and the tick hands over to Ov228_AiExpandingSweepTick. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     VecFx32 pos;

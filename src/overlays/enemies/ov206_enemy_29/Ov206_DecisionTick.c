@@ -7,25 +7,26 @@
  * product of the direction and the aim above 0x200 gives sub-state 6, else nothing, and
  * farther the same test gives sub-state 5 or a second roll (under 50: 0xa, else 9). Every
  * decision ends the state. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int owner, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int Ov107_ActionResource_GetOffsetAndScale(int aim, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *basis, const Vec3 *v);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov107_ActionResource_GetOffsetAndScale(int aim, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *basis, const VecFx32 *v);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern long long RandNextScaled(int bound);
 static inline int RandRange(int lo, int hi) { return (int)RandNextScaled(hi - lo + 1) + lo; }
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 
 void Ov206_DecisionTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
-    Vec3 aim;
+    VecFx32 dir;
+    VecFx32 aim;
     int gap;
     int target;
     int owner;
@@ -38,16 +39,16 @@ void Ov206_DecisionTick(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)(state[4] + 0x190), (Vec3 *)state[1], &dir);
+    VEC_Subtract((VecFx32 *)(state[4] + 0x190), (VecFx32 *)state[1], &dir);
     target = state[4];
     owner = *state;
     gap = VEC_Normalize(&dir, &dir) - (*(int *)(owner + 0x80) + *(int *)(target + 0x80));
     state[0xf] = *(int *)(node[0] + 0x2c) * 30 / 30;
     state[0x11] = func_020050b4(dir.x, dir.z);
     reach = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3b4), &aim);
-    Vec3TransformViaTempMtx((Vec3 *)(state + 5), (char *)*state + 0xa0, &aim);
-    ScaleVec3Fx12(reach, (Vec3 *)(state + 5), (Vec3 *)(state + 5));
-    VEC_Normalize((Vec3 *)(state + 5), &aim);
+    Vec3TransformViaTempMtx((VecFx32 *)(state + 5), (char *)*state + 0xa0, &aim);
+    ScaleVec3Fx12(reach, (VecFx32 *)(state + 5), (VecFx32 *)(state + 5));
+    VEC_Normalize((VecFx32 *)(state + 5), &aim);
     if (*(unsigned char *)state[3] != 0) {
         return;
     }

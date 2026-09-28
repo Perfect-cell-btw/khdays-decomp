@@ -2,10 +2,12 @@
  * members without a +0x388 item is placed 1.0 above the +0x3ac body's +0x20 point (counting the
  * spawns at +0x60). While the +4 item is busy (+0xad) nothing else happens; otherwise animation
  * 0x19 plays, or after ten spawns animation 0x1a and the tick hands over to Ov227_AiStep_QueueAction2OnAnimEnd. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Ov227Family { char pad[0x3ec]; char *aMembers[10]; };
 
-extern void Ov227_PlaceAt(char *obj, Vec3 pos);
+extern void Ov227_PlaceAt(char *obj, VecFx32 pos);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov227_AiStep_QueueAction2OnAnimEnd(int *node);
@@ -18,7 +20,7 @@ void Ov227_SpawnTick(int *node)
     if (state[0x17] >= 0x2a8) {
         int i;
         struct Ov227Family *owner = (struct Ov227Family *)*state;
-        Vec3 pos = *(Vec3 *)(**(int **)((char *)owner + 0x3ac) + 0x20);
+        VecFx32 pos = *(VecFx32 *)(**(int **)((char *)owner + 0x3ac) + 0x20);
 
         pos.y += 0x1000;
         for (i = 0; i < 0xa; i++) {

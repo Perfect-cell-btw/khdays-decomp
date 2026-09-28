@@ -6,6 +6,7 @@
  * -- and in that case also pulses PlaySound(0,0) -- then id 0x51 (enabled), id 5 and id 0x80
  * (disabled). Finishes with Ov025_ScrollMenuMoveTo(p, p->field50, 1, 0) and marks the pass done
  * (p->field10 = p->field8 = 1). The readiness test is a short-circuit `||` guard. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008State {

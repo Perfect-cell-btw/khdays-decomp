@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov107_LoadEnemyOverlay (020c0680): int data_ov107_020cb610[6]; */
+
 #include "nitro/types.h"
 
-/* read by Ov107_LoadEnemyOverlay (020c0680): int data_ov107_020cb610[6]; */
 const int data_ov107_020cb610[6] = {
     108, 109, 110, 111, 112, 113,
 };

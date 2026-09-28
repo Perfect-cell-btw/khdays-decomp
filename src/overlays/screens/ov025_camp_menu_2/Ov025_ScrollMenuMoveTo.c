@@ -25,6 +25,7 @@
  * the kind-0 text is a ternary on the two record fields (one shared load);
  * the division helper is called explicitly (remainder from the high word).
  */
+
 #include "nitro/types.h"
 
 #define ROW_HEIGHT     16

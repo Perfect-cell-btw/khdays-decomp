@@ -3,6 +3,7 @@
  * source and VRAM slot 0x1b) and mark each as dirty, then point the page's text
  * loader at "UI/tutorial/root_&.s.z".
  */
+
 #include "nitro/types.h"
 
 #define SURFACE_COUNT 7

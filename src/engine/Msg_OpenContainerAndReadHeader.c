@@ -11,6 +11,7 @@
  * table is read in directly behind the header. The file is closed and the buffer
  * returned; the caller owns it.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

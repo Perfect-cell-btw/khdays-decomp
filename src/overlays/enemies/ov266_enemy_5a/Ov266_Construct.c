@@ -14,14 +14,16 @@
  * of length 1.0 and radius 2.0, then two placements of scale 1.0), creates the two +0x5cc
  * trails (Ov266_New) and the +0x5d4 shadow (Ov266_New_2), and loads sound
  * 0x15e. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
 typedef struct { int id[10]; } IdTable;
 typedef struct { int w[6]; } Box;
-typedef struct { Vec3 pos; int scale; } Placement;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 pos; int scale; } Placement;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 struct Items { char pad[0x38c]; int items[16]; };
 struct Poses { char pad[0x3cc]; Quat pose[16]; };
 struct Pair { int res; int handle; };
@@ -52,7 +54,7 @@ extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Srt_SetTranslationXYZ(void *srt, int x, int y, int z);
 extern int FindResourceIndexByName(int item, const char *name);
 extern void RefreshObjectCallbacks(int item, int a);
-extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const Vec3 *v, int c);
+extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const VecFx32 *v, int c);
 extern char *func_ov107_020c9848(void);
 extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
@@ -71,8 +73,8 @@ extern const char data_ov266_020d3fb0[];
 extern const char data_ov266_020d3fbc[];
 extern const char data_ov266_020d3fc4[];
 extern const Quat data_020420f8;
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
 
 void Ov266_Construct(char *self)
 {
@@ -80,9 +82,9 @@ void Ov266_Construct(char *self)
     Box params;
     Placement place;
     Capsule cap;
-    Vec3 lift;
+    VecFx32 lift;
     Quat quat;
-    Vec3 zero;
+    VecFx32 zero;
     u16 hw;
     int i;
     int *slot;

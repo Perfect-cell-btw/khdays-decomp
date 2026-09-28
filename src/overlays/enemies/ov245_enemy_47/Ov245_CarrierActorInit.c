@@ -6,8 +6,11 @@
  * the shared +0x88 model base (kinds 0 and 3, +0x3e0 / +0x3e8) and one from entry 0x1a (+0x3f0),
  * all three attached (bit 1 of +0x5c), two placements from the +0x64 pose (+0x388 on the +0x22c
  * list with bit 1 of its +8 low byte, +0x38c on the +0x144 list) and three +0x394 slots (020d07f0). */
-typedef void (*Callback)(void);
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef void (*Callback)(void);
 struct w8 { unsigned int lo : 8, rest : 24; };
 struct Ov245Slot { int pItem; int pad4; };
 struct Ov245Self { char pad[0x3e0]; struct Ov245Slot slots[3]; };
@@ -36,9 +39,7 @@ extern int Ov107_CloneResourceTransform(void *pose);
 extern int Ov245_Child_New(int self);
 extern const char data_ov245_020d7220[];
 
-typedef struct { int x, y, z; } Vec3;
-
-static inline void VEC_Set(Vec3 *v, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -70,7 +71,7 @@ void Ov245_CarrierActorInit(int selfArg) {
     }
     *(u16 *)(self + 0x100 + 0xb0) |= 0x88c;
     *(int *)(self + 0x70) = 0x1000;
-    VEC_Set((Vec3 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
+    VEC_Set((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x10));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);

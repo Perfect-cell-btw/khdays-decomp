@@ -3,7 +3,9 @@
  * 0.875) and flag 2 of the +0x9c body; the main model (+0x384, item 0x24 of the +0x38c pool) is
  * subscribed with its animation stopped, the +0x390 slot model (kind from data_ov228_020d2cd8)
  * attached and hidden, and the +0x388 contact built from the pose. */
+
 #include "nitro/types.h"
+
 typedef void (*Callback)(void);
 typedef struct { int w[1]; } KindTable;
 struct bf { unsigned b : 8; };

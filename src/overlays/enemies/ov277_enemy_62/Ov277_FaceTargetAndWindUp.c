@@ -10,7 +10,9 @@
  * instead gives the ascending order and four differing instructions.
  *
  * One of three byte-identical siblings (ov114/ov244/ov277). */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned short a, b; } Ov277Pair;
 
 extern void Ov107_PostTagUpdate(int obj, int a, int b);

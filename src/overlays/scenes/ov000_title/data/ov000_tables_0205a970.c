@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov000_QueueResourceTransfers (02059d78): const void *data_ov000_0205a970[7]; */
+
 #include "nitro/types.h"
 
-/* read by Ov000_QueueResourceTransfers (02059d78): const void *data_ov000_0205a970[7]; */
 const int data_ov000_0205a970[7] = {
     9, 10, 11, 24, 25, 26, 27,
 };

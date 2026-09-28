@@ -1,4 +1,5 @@
 /* Sample active Mission Mode UI tweens and apply their values. */
+
 #include "nitro/types.h"
 
 typedef struct Tween {

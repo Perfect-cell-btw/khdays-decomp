@@ -9,6 +9,7 @@
  * The tag mapping is written so the middle case (==1) sits in an else block: mwcc otherwise
  * predicates it inline and comes out one instruction short per mapping -- the else form forces
  * the ROM's out-of-line branch (cmp/beq to a separate mov) while the last case (==2) predicates. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008TabState {

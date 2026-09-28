@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* The menu archive path ("UI/cm/cmo_&.p2", '&' = language code) followed by an end marker. */
+
 #include "nitro/types.h"
 
-/* The menu archive path ("UI/cm/cmo_&.p2", '&' = language code) followed by an end marker. */
 struct {
     char path[16];
     int end;

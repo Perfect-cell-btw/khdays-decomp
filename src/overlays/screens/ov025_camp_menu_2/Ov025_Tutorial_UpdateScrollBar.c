@@ -3,6 +3,7 @@
  * topics (+4) remain below it (0208884c); the scroll knob (+0x2ac) keeps its x and is placed
  * (Ov008_GetEntryPos 02088544 / Ov008_SetEntryPos 02088500) one cell per row below its origin,
  * at the cursor's row (+2 less +0). */
+
 #include "nitro/types.h"
 
 typedef struct UiLayoutPos {

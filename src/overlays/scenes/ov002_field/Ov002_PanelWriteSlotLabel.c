@@ -16,6 +16,7 @@
  * And nRow must be declared after pRes: the declaration order of the locals is
  * what puts the resource pointer above the row in the callee-saved range.
  */
+
 #include "nitro/types.h"
 
 extern int Ov002_GetItemResource(int nItemId);

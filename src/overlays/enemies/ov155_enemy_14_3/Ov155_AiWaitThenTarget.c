@@ -3,7 +3,8 @@
  * heading. Either way, drop 0x82 from the hw60 high byte, stop the animation and continue.
  *
  * Matched byte-exact 2026-07-23, first compile. One of three byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void *Ov107_FindNearestObject(void *obj, int a);
 extern void VEC_Subtract(void *a, void *b, void *out);

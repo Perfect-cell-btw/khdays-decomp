@@ -47,15 +47,11 @@
  * decision and the slot state toggle.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* PlayerSlotDesc */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct SlotDesc {
     u8 pad00[0x18];
     int nReachOuter;             /* 0x18 */

@@ -5,14 +5,16 @@
  * bits 4/5) the contact sweep runs with kind 1. The +0x14 velocity is the +0x398 part's +0x2c
  * motion turned by the +0x10 yaw; once the +4 item's +0xad byte clears sub-state 2 is
  * requested and the state ends. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern void Ov240_ContactSweep(int *state, int kind);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern short data_0203d210[];
 
@@ -60,7 +62,7 @@ void Ov240_SpinTick(int *node)
     }
     idx = ANG2IDX(state[4]);
     MTX_RotY33_(&mtx, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x398) + 0x2c), &mtx, (Vec3 *)(state + 5));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x398) + 0x2c), &mtx, (VecFx32 *)(state + 5));
     if (*(u8 *)(state[1] + 0xad) == 0) {
         *(u8 *)(*state + 0x1c7) = 2;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);

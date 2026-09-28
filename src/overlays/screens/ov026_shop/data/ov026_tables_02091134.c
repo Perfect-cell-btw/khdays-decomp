@@ -5,11 +5,12 @@
  * packed bytes.
  */
 
-#include "nitro/types.h"
-
 /* read by Ov008_InitFilterRows: build the five filter rows of the (02086314): const Ov008RowRect data_ov026_02091134[];
  *   Ov008_ShowFilterRow: flip row nRow of the filter panel (02086438): const u8 data_ov026_02091134[];
  *   Ov008_ShopTabSelectTick: one frame of the shop's (0208acc4): Ov008ChoiceBox data_ov026_02091134[]; */
+
+#include "nitro/types.h"
+
 const u8 data_ov026_02091134[1] = {
     80,
 };

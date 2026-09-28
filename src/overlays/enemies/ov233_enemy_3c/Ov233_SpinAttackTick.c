@@ -7,16 +7,18 @@
  * Reaction 0x164 modes 7 (from 0xbb0) and 8 (from 0x1430) fire once each (bits 0/1) at the
  * +0xc position; once the +4 item's +0xad byte clears sub-state 2 is requested and the state
  * ends. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern int Ov233_MeasureTargetGap(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov233_ContactSweep(int *state, int kind, Sphere *sphere, void *box);
-extern void VEC_Add(void *a, void *b, Vec3 *d);
+extern void VEC_Add(void *a, void *b, VecFx32 *d);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern const short data_0203d210[];
 
@@ -27,7 +29,7 @@ void Ov233_SpinAttackTick(int *node)
 {
     int *state = (int *)node[1];
     Sphere sphere;
-    Vec3 ahead;
+    VecFx32 ahead;
     unsigned int idx;
 
     sphere = *(Sphere *)(*state + 0x494);
@@ -49,7 +51,7 @@ void Ov233_SpinAttackTick(int *node)
         state[4] = data_0203d210[idx * 2];
         state[5] = 0;
         state[6] = data_0203d210[idx * 2 + 1];
-        ScaleVec3Fx12(0x180, (Vec3 *)(state + 4), (Vec3 *)(state + 4));
+        ScaleVec3Fx12(0x180, (VecFx32 *)(state + 4), (VecFx32 *)(state + 4));
     }
     if (state[0x13] >= 0xbb0 && state[0x13] <= 0x1188) {
         sphere.radius = FX_MUL(sphere.radius, 0x1a00);

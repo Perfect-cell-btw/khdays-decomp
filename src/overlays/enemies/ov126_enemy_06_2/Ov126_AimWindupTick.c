@@ -8,7 +8,8 @@
  * is scaled 2/0/2, given the direction's pose (ed60 by data_02042240 + normalise) and placed at
  * the aim point; the timer is cleared and the 020ceb74 state registered.
  */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void VEC_Add(void *a, void *b, void *out);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
@@ -27,10 +28,10 @@ extern void Ov126_BeamTick(void);
 
 void Ov126_AimWindupTick(int *self) {
     int *state = (int *)self[1];
-    Vec3 v;
-    Vec3 dir;
-    Vec3 w;
-    Vec3 pose;
+    VecFx32 v;
+    VecFx32 dir;
+    VecFx32 w;
+    VecFx32 pose;
     int q[4];
     int t;
 
@@ -52,7 +53,7 @@ void Ov126_AimWindupTick(int *self) {
     Vec3TransformViaTempMtx(&pose, (char *)*state + 0xa0, &data_02042258);
     ScaleVec3Fx12(0, &pose, state + 6);
     VEC_Add(&v, state + 6, state + 6);
-    *(Vec3 *)(state + 9) = *(Vec3 *)(state + 6);
+    *(VecFx32 *)(state + 9) = *(VecFx32 *)(state + 6);
     *(int *)(state[1] + 0x5c) &= ~2;
     Srt_SetScaleXYZ((void *)(state[1] + 4), 0x2000, 0, 0x2000);
     Quat_FromTwoVectors(q, &data_02042240, &pose);

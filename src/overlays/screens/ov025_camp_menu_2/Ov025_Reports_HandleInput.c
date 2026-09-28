@@ -13,6 +13,7 @@
  * row search keeps the window top as an s16 local (it lands in ip and leaves r5 to the touch y)
  * with the running topic and the count as ints, declared nRow, nY, nTopic, nCount, nTop; the
  * held entry and the records are read through the page, not copied. */
+
 #include "nitro/types.h"
 
 typedef struct Ov025TouchPoint {

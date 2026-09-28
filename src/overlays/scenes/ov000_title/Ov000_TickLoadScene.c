@@ -8,6 +8,7 @@
  * Ov000_TickSelectionScene. */
 
 #include "nitro/types.h"
+
 typedef void (*OverlayCallback)(void);
 
 typedef struct GameState {

@@ -3,6 +3,7 @@
  * tile pixel buffer (02084c84) and VRAM slot 0x1a (02084aa4): row i starts at tile row 0x120 +
  * 0x22 * i with id 2 * i and is uploaded as 8bpp tiles (TileSurface_InitAndUpload8bpp
  * 0202ff98). */
+
 #include "nitro/types.h"
 
 typedef struct TileSurfaceCfg {

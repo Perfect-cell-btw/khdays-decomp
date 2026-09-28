@@ -8,6 +8,7 @@
  * prize-box handlers (message 0207faf8, init 0207fbb8, refresh 0207fca0, release 0207fb80,
  * start 0207fbc8, hit 0207fd98, node 0207fec0, owner 0207fed4, 0207fee0, 0207fee8 at +0x3c)
  * and stamps kind 0x11.  The prize box is ov021's box holding one prize of a shuffled list. */
+
 #include "nitro/types.h"
 
 typedef struct Ov021Prize {

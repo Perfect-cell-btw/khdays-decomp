@@ -1,8 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct Ov002Vec3 {
-    int x, y, z;
-} Ov002Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern char *data_ov002_0207fa00;
 extern u8 data_0204c240;
@@ -20,7 +18,7 @@ extern char *Ov002_FindHandlerByKey(int nKey);
 extern int GameState_GetField(int nField, int nWidth);
 extern int Ov002_TakeEntryOfKind1(void);
 extern void Ov002_SpawnSpot(int nIndex, int nGroup, int nSlot, int nKind,
-                                Ov002Vec3 *pPlace, int nFlags, int nLevel);
+                                VecFx32 *pPlace, int nFlags, int nLevel);
 extern void Ov002_FreeRootBuffer0x8d7c(void);
 
 /* Put out the spots the current state's table asks for.
@@ -38,7 +36,7 @@ void Ov002_SpawnStateSpots(void)
     int nKey;
     char *pTable;
     char *pRow;
-    Ov002Vec3 *pPlace;
+    VecFx32 *pPlace;
     int i;
     int nBits;
 
@@ -55,7 +53,7 @@ void Ov002_SpawnStateSpots(void)
             i = 0;
             if (*(s8 *)(pTable + 2) > 0) {
                 pRow = pTable;
-                pPlace = (Ov002Vec3 *)(pTable + 0xc);
+                pPlace = (VecFx32 *)(pTable + 0xc);
                 do {
                     nBits = GameState_GetField(data_0204c23c * 4 + 0x92b, 4);
                     if ((nBits & (1 << *(s8 *)(pRow + 4))) == 0) {
@@ -67,7 +65,7 @@ void Ov002_SpawnStateSpots(void)
                     }
                     i++;
                     pRow += 0x14;
-                    pPlace = (Ov002Vec3 *)((char *)pPlace + 0x14);
+                    pPlace = (VecFx32 *)((char *)pPlace + 0x14);
                 } while (i < *(s8 *)(pTable + 2));
             }
         }

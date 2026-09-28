@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by For each variable-stride record, build a sprite via Ov006_AddElem (kind-mapped prior (0204cb00): unsigned char data_ov006_020561c0; */
+
 #include "nitro/types.h"
 
-/* read by For each variable-stride record, build a sprite via Ov006_AddElem (kind-mapped prior (0204cb00): unsigned char data_ov006_020561c0; */
 const u8 data_ov006_020561c0[4] = {
     8, 9, 10, 11,
 };

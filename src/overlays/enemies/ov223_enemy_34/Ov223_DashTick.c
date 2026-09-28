@@ -6,7 +6,9 @@
  * zero-vector mode-0xa message with flag 3 and hands over to Ov223_AiStep_QueueAction4OnAnimEnd, otherwise
  * sub-state 6 ends the state. While busy, a step shorter than 0x80 does nothing; otherwise
  * sub-action 2 (target) or 4 runs (Ov223_StrikeSweepEntities). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Bit0 { unsigned char bit0 : 1; };
 
 static inline int FX_Mul(int a, int b) {
@@ -14,14 +16,14 @@ static inline int FX_Mul(int a, int b) {
 }
 
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 v, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern int VEC_Mag(const Vec3 *v);
+extern int VEC_Mag(const VecFx32 *v);
 extern void Ov223_StrikeSweepEntities(int *state, int action, int arg);
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern void Ov223_AiStep_QueueAction4OnAnimEnd(int *node);
 
 void Ov223_DashTick(int *node)
@@ -32,9 +34,9 @@ void Ov223_DashTick(int *node)
 
     for (rem = *(int *)(node[0] + 0x2c); rem > 0; rem -= 0x88) {
         step = rem <= 0x88 ? rem : 0x88;
-        ScaleVec3Fx12(0x1000 - FX_Mul(FX_Div(step, 0x88), 0x500), (Vec3 *)(state + 8), (Vec3 *)(state + 8));
+        ScaleVec3Fx12(0x1000 - FX_Mul(FX_Div(step, 0x88), 0x500), (VecFx32 *)(state + 8), (VecFx32 *)(state + 8));
     }
-    *(Vec3 *)(state + 5) = *(Vec3 *)(state + 8);
+    *(VecFx32 *)(state + 5) = *(VecFx32 *)(state + 8);
     state[0x17] += *(int *)(node[0] + 0x2c);
     if ((*(unsigned char *)((char *)state + 0x75) & 4) == 0 && state[0x17] >= 0x2420) {
         if (state[0x1e] == 0) {
@@ -58,7 +60,7 @@ void Ov223_DashTick(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    if (VEC_Mag((Vec3 *)(state + 5)) < 0x80) {
+    if (VEC_Mag((VecFx32 *)(state + 5)) < 0x80) {
         return;
     }
     Ov223_StrikeSweepEntities(state, state[0x1e] != 0 ? 2 : 4, 0);

@@ -18,19 +18,21 @@
  * goes to state 0 (with the slot callback) or 2; otherwise below counter 5 or with the channel
  * done the model is rewound to 0 and the state stays, else state 0x22 follows.
  */
-typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
-typedef struct { int x, y, z; } Vec3;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ClampAngleTowardTarget(char *self, unsigned int angle);            /* Ov022_ClampAngleTowardTarget */
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);         /* ScaleVec3Fx12 */
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);         /* ScaleVec3Fx12 */
 extern int func_02023c40(void);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov022_IsSlotReady(char *chan);
 extern int Session_RandNext(void);
-extern void func_ov022_020ad44c(Vec3 *emit, char *self);
-extern void func_ov022_020ad28c(char *self, Vec3 *at, int effect, int arg);
+extern void func_ov022_020ad44c(VecFx32 *emit, char *self);
+extern void func_ov022_020ad28c(char *self, VecFx32 *at, int effect, int arg);
 extern void Ov075_FireSpread(char *self);
 extern int Ov022_IsState9Or6WithFlag200(char *chan);
 extern void *Ov022_ActorSetState(char *self, int state);
@@ -40,10 +42,10 @@ extern short data_0203d210[];
 
 void *Ov075_IdleStep(char *self)
 {
-    Vec3 sample;
-    Vec3 at;
-    Vec3 emit;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 at;
+    VecFx32 emit;
+    VecFx32 step;
     char *rig = data_ov075_020b9e20 + 0x194 + 0x2c00;
     void *next = 0;
     int fire;
@@ -83,7 +85,7 @@ void *Ov075_IdleStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     if (Ov022_IsSlotReady(self + 0x2f8 + 0x2000) != 0) {
         *(int *)rig = 1;
     }

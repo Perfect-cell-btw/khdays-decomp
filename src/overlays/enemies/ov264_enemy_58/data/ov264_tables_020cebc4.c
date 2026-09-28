@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov264_initActor (020cc1fc): KindTable data_ov264_020cebc4; */
+
 #include "nitro/types.h"
 
-/* read by Ov264_initActor (020cc1fc): KindTable data_ov264_020cebc4; */
 const int data_ov264_020cebc4[5] = {
     0, 11, 12, 13, 15,
 };

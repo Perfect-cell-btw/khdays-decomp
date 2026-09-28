@@ -1,7 +1,9 @@
 /* Ov002_RebuildObjectEventParts: preserve selected parts of an object across
  * its event reset, then restart its animation or clear it when none remain. */
+
 #include "nitro/types.h"
-typedef struct Ov002Vec3 { int x,y,z; } Ov002Vec3;
+#include "nitro/fx.h"
+
 typedef struct Ov002PartOwnerTagFields {
     u8 nGroupIndex,nSlotIndex; unsigned short wReserved;
 } Ov002PartOwnerTagFields;
@@ -18,7 +20,7 @@ struct Ov107Object {
     char pad18[0x34]; short nPartCount; char pad4e[2]; Ov107ObjectPart aParts[8];
 };
 typedef struct Ov002ObjectSlot {
-    Ov107Object *pObject; Ov002Vec3 vAt; int nMode; s8 bEntryIndex; u8 nActiveEvent; char pad16[2];
+    Ov107Object *pObject; VecFx32 vAt; int nMode; s8 bEntryIndex; u8 nActiveEvent; char pad16[2];
 } Ov002ObjectSlot;
 typedef struct Ov002RecordGroup { u8 reserved,nLimit,nCount,pad; } Ov002RecordGroup;
 typedef struct Ov002RecordEntryFlags { s8 nState:4,nValue:4; } Ov002RecordEntryFlags;
@@ -35,7 +37,7 @@ extern void Ov107_StartObject(Ov107Object *);
 extern int Ov107_Spawner_AddSlot(Ov107Object *,u8,u8,int,s8,u32);
 extern void Ov107_SetPartBinding(Ov107Object *,int,int);
 extern void Ov107_Spawner_FreeDataBlocks(Ov107Object *);
-extern void Ov002_StartSlotAnim(int,int,int,Ov002Vec3 *,int);
+extern void Ov002_StartSlotAnim(int,int,int,VecFx32 *,int);
 extern int Session_IsActive(void);
 
 void Ov002_RebuildObjectEventParts(u8 nSlotIndex)

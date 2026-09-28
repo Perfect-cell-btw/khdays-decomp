@@ -1,6 +1,7 @@
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
 struct Ov120Actor {
@@ -18,9 +19,9 @@ struct Ov185ActionState {
     struct Ov120Actor *pOwner;
     struct Ov120Actor *pTarget;
     int aRotation8[4];
-    struct Vec3 vPos18;
+    VecFx32 vPos18;
     char pad024[8];
-    struct Vec3 vForward2c;
+    VecFx32 vForward2c;
 };
 
 struct Ov120ActionNode {
@@ -30,15 +31,15 @@ struct Ov120ActionNode {
     signed char bSlot;
 };
 
-extern struct Vec3 data_02042258;
+extern VecFx32 data_02042258;
 
 extern struct Ov120Actor *Ov107_FindNearestObject(struct Ov120Actor *owner, int *pDistSq);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern int FX_Sqrt(int x);
-extern void Ov187_LookAtQuat(struct Ov185ActionState *state, struct Vec3 *pos,
+extern void Ov187_LookAtQuat(struct Ov185ActionState *state, VecFx32 *pos,
                                 int nDist, int nRadius);
-extern void Vec3TransformViaTempMtx(struct Vec3 *dst, void *xfm, struct Vec3 *src);
-extern int VEC_Normalize(struct Vec3 *v, struct Vec3 *unit);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 
 /*

@@ -7,7 +7,9 @@
  * `static inline VEC_Set`, not with a struct copy: the three arguments are three adjacent loads
  * that mwcc groups into one ldm, and the inline body is three separate stores. Byte-identical to
  * Ov185/186/187/118_PublishFinishPose. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { int a, b, c, d; } Ov261Quad;
 
 extern Ov261Quad data_020420f8;

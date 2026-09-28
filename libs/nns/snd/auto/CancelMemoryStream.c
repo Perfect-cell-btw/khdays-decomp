@@ -1,5 +1,6 @@
 #include "nitro/types.h"
 #include "nitro/os.h"
+
 typedef void *OSMessage;
 
 #define NULL ((void *)0)

@@ -22,6 +22,7 @@
  * PROVENANCE: byte-identical twin of Ov008_SetupGridMenuDisplay (ov008), propagated with this
  * overlay's own callees and verified byte-exact here.
  */
+
 #include "nitro/types.h"
 
 typedef struct DisplayRegisters {

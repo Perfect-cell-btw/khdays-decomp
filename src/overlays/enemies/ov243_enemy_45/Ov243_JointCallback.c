@@ -3,21 +3,23 @@
  * current 4x3/3x3 pair is taken, the subscriber's +0x44 is raised by 0x400, the joint's forward
  * heading (the -Z axis through the joint's rotation) goes to +0x3b0, and the +0x394 item is
  * placed with a pure Y rotation of that heading at (actor +0xb0, subscriber +0x44, actor +0xb8). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } MtxFx33;
-typedef struct { int m[9]; Vec3 t; } MtxFx43;
+typedef struct { int m[9]; VecFx32 t; } MtxFx43;
 typedef struct { int a, b, c, d; } Quat;
 
 extern void NNS_G3dGetCurrentMtx(MtxFx43 *m43, MtxFx33 *m33);
 extern void Quat_FromMtx33(Quat *out, MtxFx33 *m33);
 extern void SrtTransform_SetIdentity(void *transform);
-extern void Srt_SetTranslation(void *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(void *transform, const VecFx32 *translation);
 extern void Srt_SetRotationQuat(void *transform, Quat *rotation);
-extern void Vec3TransformViaTempMtx(Vec3 *out, Quat *rotation, const Vec3 *in);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, Quat *rotation, const VecFx32 *in);
 extern int func_020050b4(int x, int z);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
-extern const Vec3 data_0204227c;
-extern const Vec3 data_02042264;
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
+extern const VecFx32 data_0204227c;
+extern const VecFx32 data_02042264;
 
 void Ov243_JointCallback(int joint)
 {
@@ -25,8 +27,8 @@ void Ov243_JointCallback(int joint)
     MtxFx43 m43;
     MtxFx33 m33;
     Quat rot;
-    Vec3 at;
-    Vec3 fwd;
+    VecFx32 at;
+    VecFx32 fwd;
     int sel;
     unsigned short id;
 

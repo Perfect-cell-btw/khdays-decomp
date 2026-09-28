@@ -1,15 +1,17 @@
 /* Turn `vec` by the fixed-point heading `angle` (Y rotation from the shared trig table), in place,
  * and copy it to *out. Twin of ov256 020cd054. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern const short data_0203d210[];
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-void Ov252_TurnVecY(Vec3 *out, int angle, Vec3 *vec)
+void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec)
 {
     Mtx33 rot;
 

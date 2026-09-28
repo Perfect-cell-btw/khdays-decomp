@@ -6,11 +6,13 @@
  * away from the owner, never downwards (kind 0); on acceptance the 14-byte message
  * data_ov273_020d6aec carries its +0x74 point to the owner's +0x24 hook, its bit is set and
  * reaction 0x162 mode 7 fires there. Once the +8 idle byte clears, pose 5 is requested. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -19,14 +21,14 @@ typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, void *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov273_020d6aec;
 
@@ -40,7 +42,7 @@ void Ov273_TailSweepTick(int *node)
     Fx32 scratchX;
     int hits[4];
     Segment seg;
-    Vec3 push;
+    VecFx32 push;
     int n;
     int i;
 
@@ -54,7 +56,7 @@ void Ov273_TailSweepTick(int *node)
     state[7] += *(int *)(node[0] + 0x2c);
     n = state[7];
     if (n > 0xc44 && n < 0xf77) {
-        seg.p0 = *(Vec3 *)(part + 0x14);
+        seg.p0 = *(VecFx32 *)(part + 0x14);
         Vec3TransformViaTempMtx(&seg.dir, (void *)(part + 4), &data_02042258);
         seg.nLength = 0x1666;
         seg.nRadius = 0x1000;

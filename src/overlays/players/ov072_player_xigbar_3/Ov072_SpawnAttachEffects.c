@@ -3,7 +3,9 @@
  * extra class is asked for a slot at the origin (a negative answer ends the pass), bound to the
  * matching +0x528 matrix, released from any source and the actor's +0x7a6 cue fired with mode
  * 7 (modes 0x25/0x27/0x2a), 5 (0x26/0x28/0x29) or 2. */
-struct Vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct Masks { long long m[2]; };
 
 struct Ov032Actor {
@@ -19,11 +21,11 @@ struct Ov032Actor {
     int pExtra2c2c;
 };
 
-extern int Ov022_DispatchSpawnRecord(int object, const struct Vec3 *at, int mode);
+extern int Ov022_DispatchSpawnRecord(int object, const VecFx32 *at, int mode);
 extern void func_ov022_0208954c(int object, int result, void *source);
 extern void func_ov022_020894cc(int object, int result, int a);
 extern void Ov022_PlayEntityVoice(struct Ov032Actor *self, int cue, int mode);
-extern const struct Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const struct Masks data_ov072_020ba5e0;
 
 void Ov072_SpawnAttachEffects(struct Ov032Actor *self)

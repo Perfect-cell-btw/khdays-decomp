@@ -1,5 +1,6 @@
 /* Store the four-byte link option block and bind it to either the active
  * external roster entry or every available entry. */
+
 #include "nitro/types.h"
 
 typedef struct Ov002LinkCtx {

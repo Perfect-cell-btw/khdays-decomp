@@ -3,12 +3,13 @@
  * block's first effect child (020c09a0, kind 5, at the actor's +0xa0) into its +4 and the
  * position child at +0xb0 (020d31a0) into +0x3d0, aimed at slot 1 spawns the second one
  * (020c08cc, kind 5, scale 1.0, payload at byte 5) into its +0xc. Then the base hook (020c7500). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_CreateNodeXformTaskFx24(int list, int parent, int kind, int a, int scale, unsigned char *payload);
 extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *pos, int a, int b);
 extern int Ov107_AiState_OnMessage(int self, unsigned char *msg, int extra);
-extern int Ov253_SpawnPosChild(int self, const Vec3 *pos);
+extern int Ov253_SpawnPosChild(int self, const VecFx32 *pos);
 
 struct Ov253Pair { int pEffect; int pChild; };
 
@@ -23,7 +24,7 @@ int Ov253_MsgHookB(int self, unsigned char *msg, int extra) {
         case 0:
             (*(struct Ov253Pair **)(self + 0x3e8))[0].pChild =
                 Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), (*(struct Ov253Pair **)(self + 0x3e8))[0].pEffect, 5, (void *)(self + 0xa0), 0, 0);
-            *(int *)(self + 0x3d0) = Ov253_SpawnPosChild(self, (Vec3 *)(self + 0xb0));
+            *(int *)(self + 0x3d0) = Ov253_SpawnPosChild(self, (VecFx32 *)(self + 0xb0));
             break;
         case 1:
             (*(struct Ov253Pair **)(self + 0x3e8))[1].pChild =

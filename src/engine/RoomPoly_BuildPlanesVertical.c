@@ -5,9 +5,9 @@
  * (+0x20) are built against the fixed up axis (data_020420d0) instead of the face normal, so they
  * stand vertical; each distance is taken at the edge's first vertex. The first parameter is
  * unused. */
+
 #include "nitro/fx.h"
 
-typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx16 x, y, z; } VecFx16;
 
 typedef struct RoomPlane {

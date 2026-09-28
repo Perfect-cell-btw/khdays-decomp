@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by * Attack step: the per-frame body of the ov042 enemy's attack state. (020bae74): Angles data_ov098_020bbc30; */
+
 #include "nitro/types.h"
 
-/* read by * Attack step: the per-frame body of the ov042 enemy's attack state. (020bae74): Angles data_ov098_020bbc30; */
 const u8 data_ov098_020bbc30[12] = {
     0, 0, 0, 0, 85, 21, 0, 0, 171, 234, 255, 255,
 };

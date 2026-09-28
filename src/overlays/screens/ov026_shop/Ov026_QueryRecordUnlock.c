@@ -11,6 +11,7 @@
  * one register web per variable across both branches (nList r5, nBit r4); with
  * lifetime splitting the reward branch colours them the other way round.
  */
+
 #include "nitro/types.h"
 
 #define RECORD_KIND_RECIPE 2

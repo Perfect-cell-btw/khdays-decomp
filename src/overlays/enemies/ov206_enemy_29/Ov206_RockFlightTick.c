@@ -10,12 +10,14 @@
  * resting, or after 3.0 of flight: the landing message of data_ov206_020d05b0 is broadcast with
  * the point, animation 0x10 plays, reaction 0x116 mode 0x10 fires there and the tick hands over
  * to Ov206_ShockwaveTick. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 c; int r; } Sphere;
+typedef struct { VecFx32 c; int r; } Sphere;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 push; u8 b0c; u8 b0d; u8 pad[2]; int team; int mode; int mask; } BreakReq;
+typedef struct { VecFx32 push; u8 b0c; u8 b0d; u8 pad[2]; int team; int mode; int mask; } BreakReq;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -25,27 +27,27 @@ typedef struct { Vec3 push; u8 b0c; u8 b0d; u8 pad[2]; int team; int mode; int m
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
 extern int func_020050b4(int y, int x);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *src, int *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int mode, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int mode, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern int Ov206_TestEntitiesAgainstRect(void *collision, Vec3 *pos, int *out);
+extern int Ov206_TestEntitiesAgainstRect(void *collision, VecFx32 *pos, int *out);
 extern int Ov002_DispatchNodeEvent(int obj, BreakReq *req);
-extern int *Collision_CastRay(void *collision, Vec3 *origin, Vec3 *dir);
-extern void ScaleVec3Fixed27(int plane, Vec3 *in, Vec3 *out);
+extern int *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *dir);
+extern void ScaleVec3Fixed27(int plane, VecFx32 *in, VecFx32 *out);
 extern void func_02031384(int to, void *msg, int size);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern const Cmd14 data_ov206_020d05be;
 extern const Cmd14 data_ov206_020d0620;
 extern const Cmd14 data_ov206_020d05b0;
 extern void Ov206_ShockwaveTick(int *node);
 
-static inline void VEC_Set(Vec3 *v, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -65,10 +67,10 @@ void Ov206_RockFlightTick(int *node)
     int *state = (int *)node[1];
     Sphere sphere;
     int hits[4];
-    Vec3 pos;
-    Vec3 push;
+    VecFx32 pos;
+    VecFx32 push;
     Cmd14 msg;
-    Vec3 at;
+    VecFx32 at;
     int list[4];
     Fx32 scratchZ;
     Fx32 scratchY;
@@ -97,11 +99,11 @@ void Ov206_RockFlightTick(int *node)
     if (state[0xd] < -0x1000) {
         state[0xd] = -0x1000;
     }
-    *(Vec3 *)(state + 5) = *(Vec3 *)(state + 0xc);
+    *(VecFx32 *)(state + 5) = *(VecFx32 *)(state + 0xc);
     if (((struct { u8 b0 : 1, b1 : 1; } *)(*state + 0x17a))->b1) {
-        VEC_Set((Vec3 *)(state + 5), -state[0xc], state[0xd], -state[0xe]);
+        VEC_Set((VecFx32 *)(state + 5), -state[0xc], state[0xd], -state[0xe]);
     }
-    VEC_Add((Vec3 *)state[1], (Vec3 *)(state + 5), &sphere.c);
+    VEC_Add((VecFx32 *)state[1], (VecFx32 *)(state + 5), &sphere.c);
     sphere.r = 0x1800;
     scan[k].nHits = Ov107_CollectSphereOverlaps(*state, &sphere, hits);
     for (i = 0; i < scan[k].nHits; i++) {
@@ -118,7 +120,7 @@ void Ov206_RockFlightTick(int *node)
             continue;
         }
         msg = data_ov206_020d05be;
-        VEC_Add((Vec3 *)(hits[i] + 0x74), &sphere.c, &at);
+        VEC_Add((VecFx32 *)(hits[i] + 0x74), &sphere.c, &at);
         ScaleVec3Fx12(0x800, &at, &at);
         PACK(msg, scratchX, *(Fx32 *)&at.x, 5);
         PACK(msg, scratchY, *(Fx32 *)&at.y, 8);
@@ -132,8 +134,8 @@ void Ov206_RockFlightTick(int *node)
     m = Ov206_TestEntitiesAgainstRect(*(void **)(scan[k].world + 0x7c), &sphere.c, list);
     for (j = 0; j < m; j++) {
         BreakReq req = {0};
-        Vec3 d;
-        Vec3 rim;
+        VecFx32 d;
+        VecFx32 rim;
         Cmd14 msg2;
 
         VEC_Subtract((void *)(list[j] + 0x2c), &sphere.c, &d);
@@ -160,19 +162,19 @@ void Ov206_RockFlightTick(int *node)
             (*(void (**)(int, Cmd14 *, int))(*state + 0x24))(*state, &msg2, 0xe);
         }
     }
-    wall = Collision_CastRay(*(void **)(scan[k].world + 0x7c), (Vec3 *)state[1], (Vec3 *)(state + 5));
+    wall = Collision_CastRay(*(void **)(scan[k].world + 0x7c), (VecFx32 *)state[1], (VecFx32 *)(state + 5));
     if (wall != 0 && (wall[2] == 0 || (wall[2] != 0 && (*(u16 *)(wall[2] + 0x22) & 0xff) == 0))) {
-        pos = *(Vec3 *)(state + 5);
+        pos = *(VecFx32 *)(state + 5);
         ScaleVec3Fixed27(wall[3], &pos, &pos);
         pos.y += 0x200;
-        VEC_Add(&pos, (Vec3 *)state[1], &pos);
+        VEC_Add(&pos, (VecFx32 *)state[1], &pos);
         done = 1;
     } else if (landed) {
-        pos = *(Vec3 *)state[1];
+        pos = *(VecFx32 *)state[1];
         done = 1;
     }
     if (state[9] >= 0x3000) {
-        pos = *(Vec3 *)state[1];
+        pos = *(VecFx32 *)state[1];
         done = 1;
     }
     if (done == 0) {

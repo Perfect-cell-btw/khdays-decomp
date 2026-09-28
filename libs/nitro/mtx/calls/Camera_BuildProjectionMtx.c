@@ -15,13 +15,15 @@
  *
  * Verified byte-exact against this ROM: 332 bytes, 4 relocs.
  */
-#include "nitro/types.h"
-#include "nitro/fx.h"
 
 /* The symbol named FX_Inv in this tree is really the two-argument divide: every
  * existing caller externs it with (numerator, denominator). Its own one-argument
  * definition in libs/nitro/fx/calls/FX_Inv.c is the known, pre-existing
  * FX_Inv/FX_Div arity disagreement, not something introduced here. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 extern fx32 FX_Div(fx32 numerator, fx32 denominator);
 extern fx64c FX_GetDivResultFx64c(void);
 extern fx64c func_020201b8(fx64c numerator, fx64c denom);

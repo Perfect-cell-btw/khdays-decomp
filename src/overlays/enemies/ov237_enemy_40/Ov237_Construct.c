@@ -11,12 +11,14 @@
  * shot (020d0ab0, +0x3e0), the 0x3b effect rig (+0x3e4, hooked to 020cbfc4) and the spark emitter
  * (+0x3e8). The first one built also creates its partner ("Ms/40", +0x4a4, +0x4ac / +0x4b0 set), then
  * loads sound 0x12d. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 min; Vec3 max; } Bounds;
-typedef struct { Vec3 pos; int scale; } Placement;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 min; VecFx32 max; } Bounds;
+typedef struct { VecFx32 pos; int scale; } Placement;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 typedef struct { const char *name[2][5]; } JointNames;
 typedef struct { int id[19]; } IdTable19;
 struct Pair { int res; int handle; };
@@ -68,8 +70,8 @@ extern const char data_ov237_020d1cc4[];
 extern const char data_ov237_020d1ccc[];
 /* read through a const view: lets the check load hoist above the effect-rig stores (ROM order) */
 extern const signed char data_ov237_020d1ce0;
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
 
 void Ov237_Construct(char *self)
 {
@@ -78,8 +80,8 @@ void Ov237_Construct(char *self)
     Bounds bounds;
     Placement place;
     Capsule cap;
-    Vec3 zero;
-    Vec3 up;
+    VecFx32 zero;
+    VecFx32 up;
     int k;
     int i;
     int *slot;

@@ -8,6 +8,7 @@
  * and gets its placed / owned counts drawn (0205e0f4).  The row's widget
  * (500 + row) is shown while any copy is placed, hidden otherwise.
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT       8

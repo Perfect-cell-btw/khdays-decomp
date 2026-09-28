@@ -11,10 +11,7 @@
  */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x, y, z;
-};
+#include "nitro/fx.h"
 
 struct Node {
     u32 nFlags;                   /* 0x00 */
@@ -43,7 +40,7 @@ struct Actor {
 
 extern void SceneNode_Disable(u16 *pAnim);
 extern void func_ov022_02097038(struct Actor *pActor, int nArg);
-extern void Mover_Step(struct Node **ppNode, struct Vec3 *pOut, int nMode);
+extern void Mover_Step(struct Node **ppNode, VecFx32 *pOut, int nMode);
 extern int func_ov022_020ad588(struct Actor *pActor);
 extern void SceneNode_Enable(u16 *pAnim);
 
@@ -52,7 +49,7 @@ int Ov022_RunReplayFrame(struct Actor *pActor)
     struct Node *pNode;
     PfnReplayHook pfnHook;
     int nIndex;
-    struct Vec3 vecTmp;
+    VecFx32 vecTmp;
 
     if ((pActor->pNode->nFlags & 0x20) == 0) {
         SceneNode_Disable(&pActor->pNode->nAnimFlags);

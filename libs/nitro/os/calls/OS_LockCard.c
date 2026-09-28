@@ -1,4 +1,5 @@
 /* NitroSDK os (os_spinLock.c): OS_LockCard -- OS_LockByWord on the card lock buffer with OSi_AllocateCardBus. */
+
 #include "nitro/types.h"
 
 typedef struct OSLockWord {

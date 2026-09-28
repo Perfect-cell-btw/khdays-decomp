@@ -5,8 +5,10 @@
  * +0x384 rig (subscribed to the +0x9c scene) and the two data_ov218_020cf314 models go into the
  * +0x39c pairs, attached (020c9074) and hidden. Two collision cylinders from the sphere are registered
  * in the +0x22c (16) and +0x144 (4) pools; the second is kept in +0x38c. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { u8 a, b; } Pair2;
 struct EffectPair { int res; int handle; };
 struct Ov218Models { char pad[0x39c]; struct EffectPair pair[2]; };
@@ -27,7 +29,7 @@ extern void Ov107_EnqueueValue(char *self, int model);
 extern int *List_InsertSorted(void *pool, int count, int size);
 extern int Ov107_CloneResourceTransform(void *sphere);
 
-static inline void VecSet(Vec3 *v, int x, int y, int z)
+static inline void VecSet(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -62,7 +64,7 @@ void Ov218_Build(char *self)
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
-    VecSet((Vec3 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
+    VecSet((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
     Srt_SetScaleUniform(self + 0xa0, 0x14cd);
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(set, 3));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));

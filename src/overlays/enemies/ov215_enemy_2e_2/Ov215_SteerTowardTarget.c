@@ -27,9 +27,10 @@
  *  - VEC_DotProduct's result is discarded, but mwcc keeps the call (it cannot prove it pure), so
  *    it is written as a bare statement.
  */
-struct Vecx32 { int x, y, z; };
 
-static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
+#include "nitro/fx.h"
+
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
     vec->y = y;
     vec->z = z;
@@ -47,8 +48,8 @@ extern short data_0203d210[];
 
 void Ov215_SteerTowardTarget(int *self) {
     int *state = (int *)self[1];
-    struct Vecx32 aim;
-    struct Vecx32 dir;
+    VecFx32 aim;
+    VecFx32 dir;
     int target;
     int dist;
     int idx;

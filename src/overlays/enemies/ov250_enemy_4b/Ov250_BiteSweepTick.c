@@ -5,10 +5,11 @@
  * for the actor's +0x24 message hook and reaction 0x159 mode 5 fires there. Once the +0xc busy
  * byte clears the +0x74 cooldown is re-armed at random between the actor's +0x224 and +0x228,
  * sub-state 2 is requested and the state ends. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -39,12 +40,12 @@ struct Ov250SweepState {
     int nCooldown;              /* +0x74 */
 };
 
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int RandNextScaled(int bound);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectSphereOverlaps(struct Ov250Owner *owner, Sphere *sphere, int *out);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov250Owner *a, struct Ov250Owner *b, int kind, Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov250Owner *owner, int a, int id, Vec3 *at);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov250Owner *a, struct Ov250Owner *b, int kind, VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov250Owner *owner, int a, int id, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern const PosMsg data_ov250_020d28ce;
@@ -57,7 +58,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov250SweepState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov250SweepState *state, PosMsg *msg, const VecFx32 *src)
 {
     FxVec vDead;
     vDead.x = *(Fx32 *)&src->x;
@@ -74,11 +75,11 @@ static inline void SendPos(struct Ov250SweepState *state, PosMsg *msg, const Vec
 void Ov250_BiteSweepTick(int *node)
 {
     struct Ov250SweepState *state = (struct Ov250SweepState *)node[1];
-    Vec3 facing;
-    Vec3 push;
+    VecFx32 facing;
+    VecFx32 push;
     Sphere sphere;
     int hits[4];
-    Vec3 at;
+    VecFx32 at;
     PosMsg msg;
     PosMsg tmpl;
     unsigned int idx;
@@ -95,7 +96,7 @@ void Ov250_BiteSweepTick(int *node)
         facing.z = data_0203d210[idx * 2 + 1];
         push = facing;
         ScaleVec3Fx12(0x1200, &push, &push);
-        sphere.pos = *(Vec3 *)(*(int *)((char *)state->pOwner + 0x3a0) + 0x14);
+        sphere.pos = *(VecFx32 *)(*(int *)((char *)state->pOwner + 0x3a0) + 0x14);
         sphere.radius = 0x1600;
         n = Ov107_CollectSphereOverlaps(state->pOwner, &sphere, hits);
         i = 0;

@@ -1,9 +1,8 @@
 /* Latch the secondary camera target and drop the three view flags that depend on
  * it. A null target leaves everything alone. The three-word copy is a WHOLE-
  * STRUCT assignment, which is what produces the ldm/stm pair. */
-typedef struct {
-    int x, y, z;
-} VecFx32;
+
+#include "nitro/fx.h"
 
 typedef struct {
     char pad0000[0xd4];

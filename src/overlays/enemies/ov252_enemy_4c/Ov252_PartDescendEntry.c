@@ -1,17 +1,18 @@
 /* Descend entry of an ov252 part: +0x6c clears, +0x89 = 5, +0x88 = 1, the owner plays effects 0xe and
  * 0xf at the origin and the node moves on to 020d2848. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
 
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_PartDescendTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov252_PartDescendEntry(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 at;
+    VecFx32 at;
 
     state[0x1b] = 0;
     *((u8 *)state + 0x89) = 5;

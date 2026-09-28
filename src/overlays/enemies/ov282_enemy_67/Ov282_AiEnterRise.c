@@ -2,11 +2,7 @@
  * scaling the constant axis data_02042264 by 0x1200, clear the counter at +0x2c and hand off to
  * Ov282_AiRiseTick. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);

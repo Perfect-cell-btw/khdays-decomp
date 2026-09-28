@@ -10,12 +10,14 @@
  * +0x3bc) from a zero capsule pointing up (radius 1.32, height 1.47), the +0x22c/+0x144 placements
  * +0x3b8 (0.76), +0x3c0 (1.0) and +0x3c4/+0x3c8 (1.43); spawns the item into +0x3b0 and loads
  * sound 0x154. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[5]; } PoseTable;
-typedef struct { Vec3 min; Vec3 max; } Bounds;
-typedef struct { Vec3 pos; Vec3 up; int radius; int height; } Capsule;
-typedef struct { Vec3 pos; int scale; } Placement;
+typedef struct { VecFx32 min; VecFx32 max; } Bounds;
+typedef struct { VecFx32 pos; VecFx32 up; int radius; int height; } Capsule;
+typedef struct { VecFx32 pos; int scale; } Placement;
 struct Pair { int res; int handle; };
 
 extern unsigned Ov107_PackTextureHandle(char *self, int kind);
@@ -25,7 +27,7 @@ extern void Snd_RegisterSeqAndBind(void *set, int model, unsigned anim, int n);
 extern void MainBlob_ResetSlotRows(int obj, void *set);
 extern void RefreshObjectCallbacks(int obj, int v);
 extern int InsertSortedEntryWithKey(int obj, int set, const char *name);
-extern void Ov107_Actor_SetAttachSlot(char *self, int a, int b, Vec3 *lift, int rate);
+extern void Ov107_Actor_SetAttachSlot(char *self, int a, int b, VecFx32 *lift, int rate);
 extern void *CallocInstance(int size);
 extern char *func_ov107_020c9848(void);
 extern void Ov107_EnqueueValue(char *self, int obj);
@@ -42,8 +44,8 @@ extern const char data_ov208_020d4848[];
 extern const char data_ov208_020d4858[];
 extern const char data_ov208_020d4860[];
 extern const char data_ov208_020d4870[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
 extern void Ov208_Destroy(void);
 extern void Ov208_DrawPushAway(void);
 extern void Ov208_OnEffectMessage(void);
@@ -57,7 +59,7 @@ extern void Ov208_MessageMapTableForward(void);
 extern void Ov208_SnapshotNudgeMatrix(void);
 
 typedef void (*Callback)();
-static inline void VEC_Set(Vec3 *v, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -70,8 +72,8 @@ void Ov208_EnemyConstruct(char *self)
     Placement place;
     Capsule capsule;
     Bounds box;
-    Vec3 lift;
-    Vec3 zero;
+    VecFx32 lift;
+    VecFx32 zero;
     int i;
     int *p;
     int v;
@@ -95,7 +97,7 @@ void Ov208_EnemyConstruct(char *self)
     *(Callback *)(self + 0x1dc) = Ov208_MessageMapTableForward;
     *(Bounds *)(self + 0x1fc) = box;
     *(int *)(self + 0x70) = 0x25b3;
-    VEC_Set((Vec3 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
+    VEC_Set((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
     *(u16 *)(self + 0x1ae) |= 8;
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     *(void **)(*(int *)(self + 0x384) + 0x74) = (void *)Ov208_SnapshotNudgeMatrix;

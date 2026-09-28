@@ -3,6 +3,7 @@
  * the fade task runs, else 0), the interaction check runs, the camera applies the mode and reports
  * the active screen into +0x8e48 (mirrored to data_0204be04), the fades step and the sub engine's
  * layers follow the main screen. */
+
 #include "nitro/types.h"
 
 extern char *data_ov106_020b8b60;

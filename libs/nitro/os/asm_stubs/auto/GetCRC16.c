@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* Nintendo DS BIOS SWI 0x0e veneer. */
+
+#include "nitro/types.h"
+
 asm u16 GetCRC16(register u16 initialValue, register const void *data,
                  register u32 size)
 {

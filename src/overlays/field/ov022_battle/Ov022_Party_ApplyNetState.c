@@ -1,11 +1,7 @@
 /* Host-side: applies the received member records (position, state, flags) to each party actor;
  * returns whether any changed. */
 
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct Ov022NetRecord {
     unsigned long long state;

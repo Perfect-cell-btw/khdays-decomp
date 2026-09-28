@@ -1,16 +1,18 @@
 /* Shed entry of the ov252 actor: when no armour piece is picked the next move is 4; otherwise pose
  * 0x13 plays, the part takes motion 0xc, the owner plays effect 4 at the origin, +0x60 clears and the
  * node moves on to 020d0480. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 struct Ov252Pieces { char pad[0x4f4]; int shapes[4]; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov252_TickShedDrift(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov252_ShedPieceEntry(int *node)
 {

@@ -3,9 +3,9 @@
  * pointed backwards along the heading (kind 0x2333, range 0x1000, no anchor); the burst takes
  * spin 0x1900, flags 0x205, the fixed 0xa00/0x66/0xa00 extent and no second block. A successful
  * submit that is not busy spawns effect 0xc4 (arg 2) at +0x26c8. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Emit {
     int w00;
@@ -28,7 +28,7 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;

@@ -1,12 +1,10 @@
-typedef struct Ov002Vec3 {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
 
 /* One entry of the session screen's marker table. */
+
+#include "nitro/fx.h"
+
 typedef struct Ov002SessionMarker {
-    Ov002Vec3 place;
+    VecFx32 place;
     int nOwner;
     int nKind;              /* left alone when the caller passes -1 */
     char szName[0x30];
@@ -22,10 +20,10 @@ extern char *data_ov002_0207fa00;
 extern int QueryActiveStateOrDelegate(void);                 /* the active slot */
 extern int Ov002_GetCtxTableByte(int nKind);      /* kind -> table byte */
 extern void Ov002_ResolveNamedPlacement(const char *pName, int nSlot,
-                                Ov002Vec3 *pPlace, int *pOwner, int nIndex);
+                                VecFx32 *pPlace, int *pOwner, int nIndex);
 extern int GameState_IsFlagSet(int nFlagId);          /* progress flag set */
-extern void Ov002_ScatterPlaceByIndex(Ov002Vec3 *pPlace, int nOwner, int nIndex,
-                                Ov002Vec3 *pOut);
+extern void Ov002_ScatterPlaceByIndex(VecFx32 *pPlace, int nOwner, int nIndex,
+                                VecFx32 *pOut);
 extern void strcpy(char *pDst, const char *pSrc);
 
 /* Fills in one marker of the session screen's table and always returns 1.  An
@@ -36,12 +34,12 @@ extern void strcpy(char *pDst, const char *pSrc);
    dropped so it is not copied again below.  Without a name, the placement goes
    through Ov002_ScatterPlaceByIndex unless the caller skips it or flag 0x20e7 is
    already set. */
-int Ov002_WriteSessionMarker(int nIndex, int nKind, const Ov002Vec3 *pPlace,
+int Ov002_WriteSessionMarker(int nIndex, int nKind, const VecFx32 *pPlace,
                         int nOwner, const char *pName, int bSkipSolver)
 {
     Ov002SessionBlock *pBlock;
-    Ov002Vec3 out;
-    Ov002Vec3 place;
+    VecFx32 out;
+    VecFx32 place;
     int nOwnerLocal;
     int nIdx;
     const char *pPending;

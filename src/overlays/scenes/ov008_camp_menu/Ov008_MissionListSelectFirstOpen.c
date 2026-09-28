@@ -6,6 +6,7 @@
  * When every mission is cleared nSel is never written: the ROM hands whatever
  * r4 held to the commit -- an original bug, kept as is.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionList {

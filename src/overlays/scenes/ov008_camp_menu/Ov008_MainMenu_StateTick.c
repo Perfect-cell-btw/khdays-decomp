@@ -22,10 +22,11 @@
  * are leftover-register phantoms; only the registers set here are real.
  */
 
-#include "nitro/types.h"
-
 /* Object-list init parameters: a 3-word template copied from data_ov008_0208edd4, with
  * the last two words overwritten for the main-menu list geometry in state 0. */
+
+#include "nitro/types.h"
+
 typedef struct {
     int f0;
     int slotCount;

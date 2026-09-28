@@ -10,6 +10,7 @@
  * Ov008_DrawPageBElement is variadic (id, flag, ...): the callers pass zero, one, or two value
  * registers. eq3/counter must be declared before uVar9 so the coalesced eq3+counter live range
  * takes r7 and uVar9 takes r8, matching the ROM. */
+
 #include "nitro/types.h"
 
 extern char *data_0204be18;

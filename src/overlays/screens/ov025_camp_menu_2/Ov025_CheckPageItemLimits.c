@@ -5,6 +5,7 @@
  * ctx+0x207c); the entry's itemId (field 0x14) selects a counter. It tallies each item, and as soon
  * as a count would exceed that item's per-item limit (base + itemId + 0x810) it stops and returns 1
  * (over capacity); otherwise it returns 0. The counter buffer is freed on both exits. */
+
 #include "nitro/types.h"
 
 typedef struct SlotEntry {

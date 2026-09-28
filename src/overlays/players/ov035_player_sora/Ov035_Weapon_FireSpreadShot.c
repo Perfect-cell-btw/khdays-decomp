@@ -1,35 +1,36 @@
 /* Sends a placement for a shot from the muzzle with a random spread (wider when charged). */
 
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 p; short a,b,c; short scale; int f14,f18,f1c,f20,f24,f28; } Placement;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 p; short a,b,c; short scale; int f14,f18,f1c,f20,f24,f28; } Placement;
 typedef struct { int m[9]; } MtxFx33;
 extern void MTX_RotY33_(MtxFx33 *, int, int);
-extern void MTX_MultVec33(Vec3 *, MtxFx33 *, Vec3 *);
-extern void VEC_Add(Vec3 *, Vec3 *, Vec3 *);
-extern int VEC_Mag(Vec3 *);
-extern int VEC_Normalize(Vec3 *, Vec3 *);
+extern void MTX_MultVec33(VecFx32 *, MtxFx33 *, VecFx32 *);
+extern void VEC_Add(VecFx32 *, VecFx32 *, VecFx32 *);
+extern int VEC_Mag(VecFx32 *);
+extern int VEC_Normalize(VecFx32 *, VecFx32 *);
 extern int Session_RandNext(void);
 extern int Ov022_ValidateTargetRef(char *);
 extern void Ov022_SendPlacementMessage(char *, Placement *);
 extern short data_0203d210[];
-extern Vec3 data_ov035_020b4b6c;
+extern VecFx32 data_ov035_020b4b6c;
 extern char *data_ov035_020b4ca0;
 void Ov035_Weapon_FireSpreadShot(char *self) {
     Placement req;
-    Vec3 v0;
-    Vec3 v1;
+    VecFx32 v0;
+    VecFx32 v1;
     MtxFx33 m;
     int idx, scale, n, t;
     char *base = data_ov035_020b4ca0;
     char *offset = base + 0x1c8;
     v0 = data_ov035_020b4b6c;
     offset += 0x2c00;
-    v1 = *(Vec3 *)offset;
+    v1 = *(VecFx32 *)offset;
     idx = (u16)(*(u16 *)(*(char **)(self + 0x20) + 0x80) - 0x8000) >> 4;
     MTX_RotY33_(&m, -data_0203d210[idx * 2], -data_0203d210[idx * 2 + 1]);
     MTX_MultVec33(&v1, &m, &req.p);
-    VEC_Add(&req.p, (Vec3 *)(self + 0x8c + 0x400), &req.p);
+    VEC_Add(&req.p, (VecFx32 *)(self + 0x8c + 0x400), &req.p);
     scale = 0x266;
     if (Ov022_ValidateTargetRef(self)) scale = 0x1800;
     n = Session_RandNext() - 0x800;

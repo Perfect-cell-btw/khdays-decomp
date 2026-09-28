@@ -6,8 +6,10 @@
  * out through the actor's +0x24 hook, the companion plays pose 1 (looping), the +0x1c timer
  * clears, bit 1 of the +0x60 high byte and bit 0 of +0x1ae are set, the +0x3d4 shape is disarmed
  * and the node moves to 020ceb2c. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 typedef struct { int w[4]; } Quat;
 typedef struct { int value; } Fx32;
@@ -25,10 +27,10 @@ struct Ov213Actor {
 
 extern int Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Mtx33_LookAt(Mtx33 *out, const void *from, const void *to, const Vec3 *up);
+extern void Mtx33_LookAt(Mtx33 *out, const void *from, const void *to, const VecFx32 *up);
 extern void Quat_FromMtx33(void *q, const Mtx33 *m);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 extern const struct Msg14 data_ov273_020d6b08;
 extern void Ov273_EnterAlert(void);
 
@@ -43,7 +45,7 @@ void Ov273_LockOnEntry(int *node)
     Mtx33 mtx;
     struct Msg14 msg;
     FxVec vAt;
-    Vec3 *pPos;
+    VecFx32 *pPos;
     void (*hook)(int, int);
 
     state[9] = Ov107_FindNearestObject(*state, 0);
@@ -68,7 +70,7 @@ void Ov273_LockOnEntry(int *node)
     *(int *)(*(int *)(*state + 0x3dc) + 0x394) &= ~2;
     *(int *)(*(int *)(*state + 0x3dc) + 0x394) &= ~4;
     msg = data_ov273_020d6b08;
-    pPos = (Vec3 *)state[1];
+    pPos = (VecFx32 *)state[1];
     vAt.x = *(Fx32 *)&pPos->x;
     PACK3(&msg, 5, vAt.x.value);
     vAt.y = *(Fx32 *)&pPos->y;

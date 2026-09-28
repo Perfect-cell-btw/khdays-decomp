@@ -4,6 +4,7 @@
  * the list at ctx+4 (Ov025_InitResourceRecord), overrides the template's field18
  * (Ov025_LookupEntry(9)) and field20 (Ov025_GetCtxBlock968c()), and applies it with TileSurface_InitAndUpload4bpp.
  * The one-surface counterpart of Ov008_SetupMenuSurfaces (Ov008_SetupMenuSurfaces). */
+
 #include "nitro/types.h"
 
 typedef struct Style28 {

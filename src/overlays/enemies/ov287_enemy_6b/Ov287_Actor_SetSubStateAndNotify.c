@@ -26,6 +26,7 @@
  *    term to u8 costs an extra `and r3, r3, #0xff`; left uncast, mwcc folds the shift into the
  *    `orr` operand as the original does.
  */
+
 #include "nitro/types.h"
 
 struct ActorEventPacket {

@@ -4,8 +4,10 @@
  * from pool entry 0x11 of the +0x390 pool (+0x384, subscribed to +0x9c), the three +0x394 slot
  * items from entries 0x17..0x19 (attached, bit 1 of +0x5c), and a +0x22c placement (+0x388)
  * from the +0x64 pose with bit 1 of its +8 low byte; +0x38c starts empty. */
-typedef void (*Callback)(void);
+
 #include "nitro/types.h"
+
+typedef void (*Callback)(void);
 struct w8 { unsigned int lo : 8, rest : 24; };
 struct Ov245Slot { int pItem; int pad4; };
 struct Ov245Self { char pad[0x394]; struct Ov245Slot slots[3]; };

@@ -4,28 +4,30 @@
  * it touches once (+0x18 mask) away from the centre (a vertical offset spread sideways) at 0.5, kind 2,
  * with sound 0xe and effect 0x16. Once the owner's rig is idle the owner's effect slot 0xc + the +0x1a
  * index is released and the node ends (0203c640). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 struct EffectPair { int res; int handle; };
 struct Ov258Effects { char pad[0x464]; struct EffectPair pair[0x30]; };
 
 extern void Ov107_BuildAndSendUpdate(int actor, short bank, int variant, void *at);
 extern int Ov107_CollectSegmentOverlaps(int owner, void *capsule, int *hits);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Task_MarkFinished(int *node);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 void Ov258_ShotUpdate(int *node)
 {
     int *state = (int *)node[1];
     int hits[4];
     Capsule cap;
-    Vec3 push;
+    VecFx32 push;
     long i;
     long n;
     u8 bit;
@@ -37,14 +39,14 @@ void Ov258_ShotUpdate(int *node)
         Ov107_BuildAndSendUpdate(state[1], *(int *)(state[1] + 0x460) != 0 ? 0x180 : 0x17b, 8, state + 2);
     }
     if (state[5] >= 0xe58 && state[5] < 0x1430 && *(int *)(state[1] + 0x50) == 1) {
-        cap.pos = *(Vec3 *)(state + 2);
+        cap.pos = *(VecFx32 *)(state + 2);
         cap.axis = data_02042264;
         cap.length = 0x30000;
         cap.radius = 0xe00;
         n = Ov107_CollectSegmentOverlaps(state[1], &cap, hits);
         for (i = 0; i < n; i++) {
             bit = 1 << *(u16 *)(hits[i] + 2);
-            VEC_Subtract((Vec3 *)(hits[i] + 0x190), (Vec3 *)(state + 2), &push);
+            VEC_Subtract((VecFx32 *)(hits[i] + 0x190), (VecFx32 *)(state + 2), &push);
             VEC_Normalize(&push, &push);
             if (push.y != 0) {
                 int half = push.y / 2;
@@ -61,7 +63,7 @@ void Ov258_ShotUpdate(int *node)
                 continue;
             }
             Ov107_BuildAndSendUpdate(state[1], *(int *)(state[1] + 0x460) != 0 ? 0x180 : 0x17b, 0xe, state + 2);
-            func_ov107_020c0b90(state[1], 0x16, *(Vec3 *)(hits[i] + 0x190), 0);
+            func_ov107_020c0b90(state[1], 0x16, *(VecFx32 *)(hits[i] + 0x190), 0);
             *((u8 *)state + 0x18) |= bit;
         }
     }

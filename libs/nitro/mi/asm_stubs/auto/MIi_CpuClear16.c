@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* NitroSDK halfword clear primitive. */
+
+#include "nitro/types.h"
+
 asm void MIi_CpuClear16(register u16 value, register void *destination,
                         register u32 size)
 {

@@ -19,6 +19,7 @@
  * calls, both interpolations) matches under either return type; only r0 avoidance in
  * the two low-pressure windows depends on the non-void return.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov011FadePane {

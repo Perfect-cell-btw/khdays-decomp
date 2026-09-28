@@ -5,15 +5,15 @@
  * 0x1000, no anchor), builds the burst parameters with spin 0xa00, flags 0x205 and the fixed
  * 0xa00/0x66/0xa00 extent, and submits them; if the submit takes and neither busy bit of
  * +0x26bc is set, it plays 0xca at +0x26c8. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Emit {
-    struct Vec3 vPos;
+    VecFx32 vPos;
     int nKind;
     int nOwner;
-    struct Vec3 vDir;
+    VecFx32 vDir;
     int nRange;
     void *pAnchor;
     int nFlags28;
@@ -26,7 +26,7 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;
@@ -34,7 +34,7 @@ struct Params {
 };
 
 extern void func_ov022_020ad44c(struct Emit *emit, char *self);
-extern void VEC_Add(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov022_ScaleRowValues(char *self, int spin, void *a, void *b);
 extern int Ov022_RunCommandHandlers(char *self, struct Emit *emit, void *params);
 extern void func_ov022_020ad28c(char *self, char *pos, int nSound, int nVariant);

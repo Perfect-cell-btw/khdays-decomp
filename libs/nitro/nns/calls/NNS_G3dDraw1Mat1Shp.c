@@ -1,4 +1,5 @@
 /* NitroSystem immediate draw of one material and one shape. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
@@ -86,7 +87,6 @@ typedef struct NNSG3dResShpData {
     u8 pad04[4];
     u32 ofsDL, sizeDL;
 } NNSG3dResShpData;
-typedef struct VecFx32 { fx32 x, y, z; } VecFx32;
 typedef void (*NNSG3dFuncMatSend)(NNSG3dMatAnmResult *result);
 extern NNSG3dFuncMatSend data_0204251c[];
 extern void GX_SendFifoWords(u32 command, const void *words, u32 count);

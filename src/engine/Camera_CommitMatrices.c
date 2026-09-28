@@ -24,9 +24,10 @@
  * (separate globals batch the two destination pool loads and mis-order the block).
  */
 
-typedef struct { int x, y, z; } VecFx32;
-
 /* Camera actor: projection setup words at the top, then the look-at points. */
+
+#include "nitro/fx.h"
+
 typedef struct {
     int     projParams[4];  /* +0x00: perspective build inputs */
     int     f10;            /* +0x10: near/far bound */

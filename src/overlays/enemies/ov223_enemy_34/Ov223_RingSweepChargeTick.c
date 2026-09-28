@@ -5,20 +5,22 @@
  * (ov223 442c, mode 0) runs with a segment from the point to the target of length 16.0 and
  * radius 0.5. The +0x3c timer accumulates the owner's rate; past 1.0 it clears and the tick
  * hands over to Ov223_AiFastCountdownQueue0. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 struct hw60 { unsigned short lo : 8, hi : 8; };
-struct Ov223Segment { Vec3 p0; Vec3 p1; int nLength; int nRadius; };
+struct Ov223Segment { VecFx32 p0; VecFx32 p1; int nLength; int nRadius; };
 
-extern void Ov107_MoveNodeAndRelayout(int owner, Vec3 *at);
+extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *at);
 extern void MTX_RotX33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
-extern void Vec3TransformViaTempMtx(Vec3 *out, const void *pose, const Vec3 *in);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *pose, const VecFx32 *in);
 extern int Ov223_StrikeSweep(int *node, int mode, struct Ov223Segment *seg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern short data_0203d210[];
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void Ov223_AiFastCountdownQueue0(int *node);
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
@@ -28,21 +30,21 @@ void Ov223_RingSweepChargeTick(int *node)
     int *state = (int *)node[1];
     struct Ov223Segment seg;
     Mtx33 m;
-    Vec3 at;
+    VecFx32 at;
     int ang;
     int t;
     unsigned int idx;
 
-    at = *(Vec3 *)(*(int *)(*(int *)(*(int *)(*state + 0x38c) + 0x3ac)) + 0x20);
+    at = *(VecFx32 *)(*(int *)(*(int *)(*(int *)(*state + 0x38c) + 0x3ac)) + 0x20);
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x80;
     Ov107_MoveNodeAndRelayout(*state, &at);
     ang = 0x1922 - state[0xf] * 0x1922 / 4096;
     idx = ANG2IDX(ang);
     MTX_RotX33_(&m, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-    MTX_MultVec33(&data_02042258, &m, (Vec3 *)(state + 8));
-    Vec3TransformViaTempMtx((Vec3 *)(state + 8), (const void *)(*(int *)(*state + 0x38c) + 0xa0), (Vec3 *)(state + 8));
+    MTX_MultVec33(&data_02042258, &m, (VecFx32 *)(state + 8));
+    Vec3TransformViaTempMtx((VecFx32 *)(state + 8), (const void *)(*(int *)(*state + 0x38c) + 0xa0), (VecFx32 *)(state + 8));
     seg.p0 = at;
-    seg.p1 = *(Vec3 *)(state + 8);
+    seg.p1 = *(VecFx32 *)(state + 8);
     seg.nLength = 0x10000;
     seg.nRadius = 0x800;
     Ov223_StrikeSweep(node, 0, &seg);

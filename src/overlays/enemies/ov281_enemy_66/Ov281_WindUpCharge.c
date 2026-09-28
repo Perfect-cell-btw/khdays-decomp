@@ -4,7 +4,8 @@
  * to 2 and the think callback is dropped.
  *
  * Matched byte-exact 2026-07-23, first compile. One of four byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void func_ov107_020c0b90(int obj, int a, VecFx32 v, int d);
 extern void Ov281_ApplyAreaHit(int *state, int a, int b, int p, int q);

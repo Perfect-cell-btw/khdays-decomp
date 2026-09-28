@@ -4,29 +4,31 @@
  * is pushed away flat at half strength (020ca918 with `kind`); an accepted hit spawns the impact
  * effect (7 for cylinder/sphere, 0 otherwise) at the sphere's scaled contact or the victim, and is
  * marked struck. Any hit sounds the attack (020cd148 mode 4). */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 
-extern const Vec3 data_02042258;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
+
+extern const VecFx32 data_02042258;
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, void *cyl, int *hits);
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
 extern int Ov107_CollectSegmentOverlaps(int owner, void *seg, int *hits);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 
-void Ov260_AttackSweep(int *state, int kind, Vec3 *sphere, void *cyl, void *seg)
+void Ov260_AttackSweep(int *state, int kind, VecFx32 *sphere, void *cyl, void *seg)
 {
     int hits[4];
     Segment sweep;
-    Vec3 push;
-    Vec3 dir;
+    VecFx32 push;
+    VecFx32 dir;
     long i;
     int effect = 7;
     long n;
@@ -41,7 +43,7 @@ void Ov260_AttackSweep(int *state, int kind, Vec3 *sphere, void *cyl, void *seg)
         n = Ov107_CollectSegmentOverlaps(*state, seg, hits);
         effect = 0;     /* cleared after the query in each branch, as the ROM hoists it */
     } else {
-        sweep.p0 = *(Vec3 *)(*(int *)(*state + 0x424) + 0x14);
+        sweep.p0 = *(VecFx32 *)(*(int *)(*state + 0x424) + 0x14);
         sweep.nLength = *(int *)(*state + 0x470) == 0 ? 0x1800 : 0x3000;
         sweep.nRadius = 0x400;
         Vec3TransformViaTempMtx(&sweep.dir, (void *)(*(int *)(*state + 0x424) + 4), &data_02042258);

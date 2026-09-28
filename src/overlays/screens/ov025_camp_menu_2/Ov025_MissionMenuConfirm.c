@@ -7,6 +7,7 @@
  * through to the mission start.  The middle arm re-tests the pending word (the ROM
  * keeps the redundant beq).
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionMenu {

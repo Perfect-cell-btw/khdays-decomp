@@ -8,6 +8,7 @@
  * select node armed when it is the last, or the down node rewound and armed
  * when more rows follow.
  */
+
 #include "nitro/types.h"
 
 #define TAG_UP     0x15

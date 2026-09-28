@@ -8,17 +8,12 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct AimRecord {
     u8 nKind;                    /* 0x00 */
     u8 pad001[3];
-    struct VecFx32 vecPos;       /* 0x04 */
+    VecFx32 vecPos;       /* 0x04 */
     short nField10;              /* 0x10 */
     short nField12;              /* 0x12 */
     u8 nSub;                     /* 0x14 */
@@ -28,7 +23,7 @@ struct AimRecord {
 };
 
 struct AimMessage {
-    struct VecFx32 vecPos;       /* 0x00 */
+    VecFx32 vecPos;       /* 0x00 */
     short nField10;              /* 0x0c */
     short nField12;              /* 0x0e */
     u32 nKind : 2;               /* 0x10 bits 0 and 1 */

@@ -7,6 +7,7 @@
  * engine's BG palette, BG1 characters and BG1 screen; then the file is closed
  * and freed.
  */
+
 #include "nitro/types.h"
 
 #define ENTRY_ALT_ARCHIVE 0x10000

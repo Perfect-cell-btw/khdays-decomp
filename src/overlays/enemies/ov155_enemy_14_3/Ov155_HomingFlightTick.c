@@ -18,9 +18,10 @@
  * add; the SDK macros are spelled literally (FX_RAD_TO_IDX with `>> 44`, FX_SinIdx/CosIdx as
  * table[(idx >> 4) << 1] and +1).
  */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
 typedef struct {
@@ -40,7 +41,7 @@ struct Ov153Actor {
     char pad000[0x24];
     void (*pfnMessage)(struct Ov153Actor *self, PosMsg *msg, int size);
     char pad028[0x4c];
-    Vec3 vPos74;
+    VecFx32 vPos74;
     int nRadius80;
     char pad084[0xf6];
     struct Flags17a flags17a;
@@ -52,7 +53,7 @@ struct Ov153Actor {
 
 struct Ov153FlightState {
     struct Ov153Actor *pOwner;
-    Vec3 *pPos;
+    VecFx32 *pPos;
     int nStepX;
     int nHeight;
     int nStepZ;
@@ -63,19 +64,19 @@ struct Ov153FlightState {
     int nDist;
 };
 
-extern int Ov107_CollectSphereOverlaps(char *item, Vec3 *sphere, struct Ov153Actor **out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(struct Ov153Actor *hit, struct Ov153Actor *a, char *item, int kind, const Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov153Actor *owner, u16 a, u16 id, Vec3 *pos);
+extern int Ov107_CollectSphereOverlaps(char *item, VecFx32 *sphere, struct Ov153Actor **out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(struct Ov153Actor *hit, struct Ov153Actor *a, char *item, int kind, const VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov153Actor *owner, u16 a, u16 id, VecFx32 *pos);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern struct Ov153Actor *Ov107_FindNearestObject(struct Ov153Actor *owner, int mode);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int RandNextScaled(int bound);
 extern int func_020050b4(int x, int z);
-extern int VEC_Mag(const Vec3 *v);
+extern int VEC_Mag(const VecFx32 *v);
 extern const short data_0203d210[];
 extern const PosMsg data_ov155_020d58a8;
 extern const PosMsg data_ov155_020d58b6;
@@ -87,7 +88,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov153FlightState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov153FlightState *state, PosMsg *msg, const VecFx32 *src)
 {
     volatile int px;
     volatile int py;
@@ -112,11 +113,11 @@ void Ov155_HomingFlightTick(int node)
     struct Ov153Actor *actor;
     struct Ov153FlightState *state = *(struct Ov153FlightState **)(node + 4);
     struct Ov153Actor *hits[4];
-    Vec3 push;
+    VecFx32 push;
     PosMsg msgA;
-    Vec3 d;
-    Vec3 dir;
-    Vec3 sum;
+    VecFx32 d;
+    VecFx32 dir;
+    VecFx32 sum;
     PosMsg msgB;
     PosMsg msgC;
     struct Ov153Actor *target;
@@ -147,7 +148,7 @@ void Ov155_HomingFlightTick(int node)
         if (target != 0) {
             VEC_Subtract(&target->vPos74, &actor->vPos74, &d);
             d.y = 0;
-            dir = *(Vec3 *)&state->nDirX;
+            dir = *(VecFx32 *)&state->nDirX;
             dir.y = 0;
             VEC_Normalize(&d, &d);
             VEC_Normalize(&dir, &dir);
@@ -178,7 +179,7 @@ void Ov155_HomingFlightTick(int node)
         SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
         return;
     }
-    state->nDist += VEC_Mag((Vec3 *)&state->nStepX);
+    state->nDist += VEC_Mag((VecFx32 *)&state->nStepX);
     if (state->nDist <= 0x14000) {
         return;
     }

@@ -4,25 +4,27 @@
  * `1 << id` of the +0x38 mask) that takes the hit (020ca918 kind 7, push 0.375 up) knocks the +0x394
  * owner back at its position (mode 0xb), plays sound 0x172/7 at the +8 point and is marked; entities
  * no longer touched are forgotten. The +0xc velocity then clears. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct BoxQuery {
-    Vec3 vCenter;
-    Vec3 vAxisX;
-    Vec3 vAxisZ;
-    Vec3 vAxisY;
+    VecFx32 vCenter;
+    VecFx32 vAxisX;
+    VecFx32 vAxisZ;
+    VecFx32 vAxisY;
     int nExtent;
     int bFlag;
 };
 
 extern int FX_Div(int num, int den);
 extern int Ov107_CollectEntitiesTouchingDisc(int actor, struct BoxQuery *query, int *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov259_PlaySound(int actor, int id, int variant, void *at);
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02041dc8;
 
 void Ov259_HelperSweepTick(int *node)
 {
@@ -32,7 +34,7 @@ void Ov259_HelperSweepTick(int *node)
     state[0xd] += *(int *)(node[0] + 0x2c);
     if (state[0xd] < 0xaa0) {
         struct BoxQuery box;
-        Vec3 push;
+        VecFx32 push;
         int hits[4];
         u8 seen;
         int extent;
@@ -43,11 +45,11 @@ void Ov259_HelperSweepTick(int *node)
         if (extent > 0x2b00) {
             extent = 0x2b00;
         }
-        box.vCenter = *(Vec3 *)(*state + 0x74);
+        box.vCenter = *(VecFx32 *)(*state + 0x74);
         box.vCenter.y += 0x300;
         box.vAxisX = data_02042270;
         box.vAxisZ = data_02042258;
-        box.vAxisY = *(Vec3 *)(*state + 0x124);
+        box.vAxisY = *(VecFx32 *)(*state + 0x124);
         box.nExtent = extent * 7;
         box.bFlag = 0;
         push.x = 0;
@@ -60,12 +62,12 @@ void Ov259_HelperSweepTick(int *node)
             seen |= bit;
             if ((*((u8 *)state + 0x38) & bit) == 0 &&
                 Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x394), 7, &push, 0)) {
-                func_ov107_020c0b90(*(int *)(*state + 0x394), 0xb, *(Vec3 *)(hits[i] + 0x74), 0);
+                func_ov107_020c0b90(*(int *)(*state + 0x394), 0xb, *(VecFx32 *)(hits[i] + 0x74), 0);
                 Ov259_PlaySound(*(int *)(*state + 0x394), 0x172, 7, (void *)state[2]);
                 *((u8 *)state + 0x38) |= bit;
             }
         }
         *((u8 *)state + 0x38) &= seen;
     }
-    *(Vec3 *)(state + 3) = data_02041dc8;
+    *(VecFx32 *)(state + 3) = data_02041dc8;
 }

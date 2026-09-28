@@ -12,18 +12,13 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define ANGLE_BIAS 0x8000
 #define ANGLE_SHIFT 4
 #define UNIT_SCALE 0x1000
 #define SPAWN_FLAGS 0x808
 #define ACTOR_TAIL 0x2bd4
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 /* Ov022ActorNode */
 struct ActorNode {
@@ -44,10 +39,10 @@ struct Actor {
 
 /* the block the effect is placed with */
 struct EffectPlace {
-    struct VecFx32 vecAt;        /* 0x00 */
+    VecFx32 vecAt;        /* 0x00 */
     int nScaleX;                 /* 0x0c */
     int nSlotIndex;              /* 0x10 */
-    struct VecFx32 vecFace;      /* 0x14 */
+    VecFx32 vecFace;      /* 0x14 */
     int nScaleZ;                 /* 0x20 */
     void *pTail;                 /* 0x24 */
     int nField28;                /* 0x28 */
@@ -58,7 +53,7 @@ struct EffectRequest {
     u8 pad00[8];
     int nFlags;                  /* 0x08 */
     u8 pad0c[8];
-    struct VecFx32 vecAt;        /* 0x14 */
+    VecFx32 vecAt;        /* 0x14 */
     int nCount;                  /* 0x20 */
     u8 pad24[4];
 };
@@ -68,14 +63,14 @@ struct EffectRequest {
  * feeds, and ends up holding the doubled index in a callee-saved register. */
 extern const s16 data_0203d210[];
 
-extern void func_ov022_020ad44c(struct VecFx32 *pOut, struct Actor *pActor);
+extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pActor);
 extern void MI_CpuFill8(void *pDst, u8 nByte, u32 nSize);
 
-void Ov022_FillEffectBlocks(struct Actor *pActor, struct VecFx32 *pAt,
+void Ov022_FillEffectBlocks(struct Actor *pActor, VecFx32 *pAt,
                          struct EffectPlace *pPlace,
                          struct EffectRequest *pRequest)
 {
-    struct VecFx32 vecAt;
+    VecFx32 vecAt;
     int nIndex;
     int nSin;
     int nCos;

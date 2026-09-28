@@ -8,8 +8,9 @@
  * else 0x300), the +0x2e7c/+0x2e80 pair cleared and, for 0x22 with a target, the node turned
  * to face it unless locked. 0x23 tells 0x31 and hands over to the fire attempt; 0x24 sets the
  * +0x64 halfword to 0x1800, tells 0x30 (+0x2e78 set) or 0x32 and hands over to the shot. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct ActorBits {
     unsigned char bUnk0 : 1;
@@ -21,10 +22,10 @@ extern void Anim_SetFrameWrapped(void *animation, int track, int frame);        
 extern void SceneNode_Enable(int *p);
 extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Atan2(int x, int z);
 extern void Ov032_ChargeTick(void);
 extern void Ov032_HoverStep(void);
@@ -35,7 +36,7 @@ void *Ov032_HandleStateMessage(char *self, int msg)
 {
     void *next = 0;
     int force = 0;
-    Vec3 d;
+    VecFx32 d;
     u16 a;
     unsigned int *node;
 
@@ -84,7 +85,7 @@ void *Ov032_HandleStateMessage(char *self, int msg)
         *(int *)(self + 0x2000 + 0xe7c) = 0;
         *(int *)(self + 0x2000 + 0xe80) = 0;
         if (Ov022_ValidateTargetRef(self) != 0 && msg != 0x25) {
-            VEC_Subtract(func_ov022_020ad0c0(self), (Vec3 *)(self + 0x8c + 0x400), &d);
+            VEC_Subtract(func_ov022_020ad0c0(self), (VecFx32 *)(self + 0x8c + 0x400), &d);
             if (VEC_Mag(&d) != 0) {
                 VEC_Normalize(&d, &d);
             }

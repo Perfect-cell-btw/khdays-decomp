@@ -11,9 +11,10 @@
  * state that did not end raises flag-3 bit 13 for the local player.
  */
 
+/* Ov022ActorNode */
+
 #include "nitro/types.h"
 
-/* Ov022ActorNode */
 struct ActorNode {
     u32 nFlags;                  /* 0x00 */
     u16 nAnimFlags;              /* 0x04 */

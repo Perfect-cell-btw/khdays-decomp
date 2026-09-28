@@ -4,6 +4,7 @@
  * restore the remembered scroll (field 0x35df, 8 bits: (v + 16) / 32 rows) when
  * one is stored and select the found row.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionList Ov008MissionList;

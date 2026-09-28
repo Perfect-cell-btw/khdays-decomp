@@ -9,11 +9,13 @@
  * reaction +0x3f8 mode 9 fires there. Once the +0xc idle byte clears, animation 0xe plays, the
  * +0x3a4 part plays motion 0xd, +0x44, +0x63, +0x65, +0x66 and +0x62 clear and the tick hands over
  * to Ov255_BiteTick2. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -24,23 +26,23 @@ typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern int Ov255_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
+extern int Ov255_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov255_020d2b8a;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void Ov255_BiteTick2(int *node);
 
 void Ov255_BiteTick(int *node)
 {
     int obj;
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int hits[4];
     Segment seg;
     int speed;
@@ -65,7 +67,7 @@ void Ov255_BiteTick(int *node)
     if (n < speed) {
         speed = n;
     }
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     state[0x11] += *(int *)(node[0] + 0x2c);
     if (state[0x11] > 0x333) {
         state[0x10] = *(int *)(node[0] + 0x2c) * 30 / 10;
@@ -77,7 +79,7 @@ void Ov255_BiteTick(int *node)
         seg.nRadius = 0xc00;
         n = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
         for (i = 0; i < n; i++) {
-            Vec3 push;
+            VecFx32 push;
             Cmd14 msg;
 
             obj = hits[i];

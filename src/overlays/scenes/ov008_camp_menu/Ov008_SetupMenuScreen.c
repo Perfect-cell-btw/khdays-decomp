@@ -6,6 +6,7 @@
  * trailing fields and disables widget id 6 (ctx+0x7530), then Ov008_RedrawBothColumns.
  * NOTE: the clear buffer's address is written as (u8 (*)[0x480])(ctx+0x2a8) + 1 so mwcc emits the
  * base(ctx+0x2a8) + 0x480 split the original uses, rather than folding ctx+0x728 into one add. */
+
 #include "nitro/types.h"
 
 extern char *data_ov008_02090fac;

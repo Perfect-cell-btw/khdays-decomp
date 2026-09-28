@@ -6,13 +6,15 @@
  * clears pose 5 / partner motion 4 (move 5, which also restarts the +0x460 helper with 5) or
  * pose 2 / motion 1 play, the timers and flags reset, +0x38 takes the +0x30 yaw, the +0x58 /
  * +0x5c scales return to 1.0 and the node moves on to 020cff0c. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov254_KnockbackAtFeet(int actor, int side);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
@@ -43,8 +45,8 @@ void Ov254_GlideTick(int *node)
     }
     idx = ANG2IDX(state[0xc]);
     MTX_RotY33_(&m, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x430) + 0x2c), &m, (Vec3 *)(state + 3));
-    ScaleVec3Fx12(0x1000, (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x430) + 0x2c), &m, (VecFx32 *)(state + 3));
+    ScaleVec3Fx12(0x1000, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     state[4] = FX_Mul(data_0203d210[ANG2IDX(t * 0x1922 / 0x1540) * 2], state[0x15]) -
                (*(int *)(state[2] + 4) - state[0x14]);
     if ((*((u8 *)state + 0x70) & 1) == 0 && state[0x11] >= 0x440) {

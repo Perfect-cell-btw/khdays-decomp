@@ -11,6 +11,7 @@
  *     0x810 load displacement, the second folds id+0x810 into a register offset.
  * The declaration order (count, i, j, base) is load-bearing too: register assignment follows it,
  * and the other 23 orders are all byte-identical except for which register each local lands in. */
+
 #include "nitro/types.h"
 
 extern u8 *data_0204be18;

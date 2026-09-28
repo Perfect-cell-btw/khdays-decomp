@@ -5,18 +5,19 @@
  * also +0x94 = 200 and +0x424); step 4 moves the node on to 020d02b8. Otherwise +0x94 grades the
  * target count against the actor's +0x80 range (100 / 10 / 2), and the six +0xac flags pulse the
  * cue (020cd2c8, alternating 0 / 1) at 0x550, 0xaa0, 0xff0, 0x1430, 0x17e8 and 0x1ed0. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov259_FaceTargetGap(int *node);
 extern void Ov259_RefreshAim(int *node);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern void Ov259_ForwardSweep(int body, int a, int b, Vec3 lift);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern void Ov259_ForwardSweep(int body, int a, int b, VecFx32 lift);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_SequenceTailTick(void);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_ov259_020d2f78;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_ov259_020d2f78;
 
 void Ov259_SweepSequenceTick(int *node)
 {
@@ -27,7 +28,7 @@ void Ov259_SweepSequenceTick(int *node)
     n = Ov259_FaceTargetGap(node);
     if (n > 1) {
         Ov259_RefreshAim(node);
-        ScaleVec3Fx12(0x2000, (Vec3 *)(state + 5), (Vec3 *)(state + 5));
+        ScaleVec3Fx12(0x2000, (VecFx32 *)(state + 5), (VecFx32 *)(state + 5));
     }
     switch (state[0x26]) {
     case 0:

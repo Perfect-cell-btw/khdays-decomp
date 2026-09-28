@@ -5,6 +5,7 @@
  * count reaches the frame count, else 0. *
  * PROVENANCE: byte-identical twin of ov023's Ov023_CmdStepLightFade (Ov023_CmdStepLightFade), same code and
  * callees, verified byte-exact in this overlay. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023EventBlock {

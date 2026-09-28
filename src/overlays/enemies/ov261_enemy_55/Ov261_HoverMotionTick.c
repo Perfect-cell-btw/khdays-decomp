@@ -3,13 +3,15 @@
  * rotation; while bit 0 of the +0x60 flags is set the +0x44 phase accumulates the frame-time and
  * the +0x34 lift bobs by sin(phase * 8) / 20. The +0x30 velocity is written to the actor's +0xf0
  * and then cleared. */
-struct Vecx32 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void Quat_Slerp(void *dst, int t, void *a, void *b);
 extern void Srt_SetRotationQuat(void *transform, void *quat);
 extern const short data_0203d210[];
-extern const struct Vecx32 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov261_HoverMotionTick(int *node)
 {
@@ -26,7 +28,7 @@ void Ov261_HoverMotionTick(int *node)
     {
         int actor = *state;
         state = (int *)((char *)state + 0x30);
-        *(struct Vecx32 *)(actor + 0xf0) = *(struct Vecx32 *)state;
-        *(struct Vecx32 *)state = data_02041dc8;
+        *(VecFx32 *)(actor + 0xf0) = *(VecFx32 *)state;
+        *(VecFx32 *)state = data_02041dc8;
     }
 }

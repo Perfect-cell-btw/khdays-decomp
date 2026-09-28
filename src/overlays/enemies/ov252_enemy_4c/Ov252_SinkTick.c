@@ -6,34 +6,36 @@
  * partner motion 0x16 play. Deeper, the last shown one of the +0x4f4 shapes (+0x93) is hidden,
  * +0x88 becomes 2, the counters and velocity reset, the +0x60 high byte loses bit 0, the actor is
  * placed 3.0 below the origin (020c5c54) and the node moves on to 020d0f14. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 struct Shapes4e8 { char pad[0x4e8]; int shape[7]; };
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
-extern void Ov252_TurnVecY(Vec3 *out, int angle, void *base);
-extern void Ov107_MoveNodeAndRelayout(int actor, Vec3 *at);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
+extern void Ov252_TurnVecY(VecFx32 *out, int angle, void *base);
+extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void Ov252_LeapTick(void);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_ov252_020d4350;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_ov252_020d4350;
 
 void Ov252_SinkTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 pos;
-    Vec3 spawn;
-    Vec3 v;
+    VecFx32 pos;
+    VecFx32 spawn;
+    VecFx32 v;
     u8 i;
 
     state[0x19] += *(int *)(node[0] + 0x2c);
     if (*(int *)(state[2] + 4) <= -*(int *)(*state + 0x80) && *((u8 *)state + 0x88) == 0) {
-        pos = *(Vec3 *)(*(int *)(*state + 0x560) + 0x14);
+        pos = *(VecFx32 *)(*(int *)(*state + 0x560) + 0x14);
         pos.y = 0x1c0;
         Ov107_BuildAndSendUpdate(*state, 0x148, 0xa, &pos);
         func_ov107_020c0b90(*state, 9, pos, 0);
@@ -43,7 +45,7 @@ void Ov252_SinkTick(int *node)
     }
     if (*(int *)(state[2] + 4) > -*(int *)(*state + 0x80) * 4) {
         Ov252_TurnVecY(&v, state[0x15], (void *)(*(int *)(*state + 0x574) + 0x2c));
-        *(Vec3 *)(state + 3) = v;
+        *(VecFx32 *)(state + 3) = v;
     } else {
         spawn = data_ov252_020d4350;
         for (i = 3; i >= 0; i--) {
@@ -57,7 +59,7 @@ void Ov252_SinkTick(int *node)
         state[0x27] = 0;
         *((u8 *)state + 0x86) = 0;
         state[0x19] = 0;
-        *(Vec3 *)(state + 3) = data_02041dc8;
+        *(VecFx32 *)(state + 3) = data_02041dc8;
         ((struct Hw60 *)(*state + 0x60))->hi &= ~1;
         Ov107_MoveNodeAndRelayout(*state, &spawn);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_LeapTick);

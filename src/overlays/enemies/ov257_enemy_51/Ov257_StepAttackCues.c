@@ -2,6 +2,7 @@
  * (+0x1c6), the +0x77 cue counter fires reaction +0x408 at the +4 point once each mark is
  * passed -- kind 8: mode 0x22 at 0.33, 0x23 at 0.93, 0x26 at 2.67; kind 9: 0x27 at once, 0x25
  * at 2.33; kind 0xb: 0x24 at 1.5; kind 0xd: 0x26 at 2.23; kind 0xc: 0x2a at 1.93. */
+
 #include "nitro/types.h"
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);

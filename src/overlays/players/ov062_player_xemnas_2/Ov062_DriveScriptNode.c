@@ -6,8 +6,10 @@
  * latches bit 0 once the frame passes 0xc000. Whenever the node is live it is re-registered
  * for a flagged actor (+0x694 bit 0), and outside those two modes it is stepped at 0x1800
  * (difficulty 1) or 0x1000 until it completes, which retires it. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct b2 { u8 b0 : 1, b1 : 1; };
 
 extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */
@@ -29,7 +31,7 @@ void Ov062_DriveScriptNode(char *self)
         *(u8 *)(pNode + 0x109) &= ~2;
         BindAnimTrack(pNode, 2, pNode + 0xe0, 0);
         Anim_SetFrameWrapped(pNode, 2, nFrame);
-        *(Vec3 *)(pNode + 0xa4) = *(Vec3 *)(self + 0x8c + 0x400);
+        *(VecFx32 *)(pNode + 0xa4) = *(VecFx32 *)(self + 0x8c + 0x400);
         bActive = 1;
         *(u16 *)(pNode + 0x7c) = (u16)(*(u16 *)(*(char **)(self + 0x20) + 0x80) - 0x8000) + 0x8000;
         *(u16 *)pNode |= 0x20;
@@ -40,7 +42,7 @@ void Ov062_DriveScriptNode(char *self)
             *(u8 *)(pNode + 0x109) &= ~2;
         }
         if (((struct b2 *)(pNode + 0x109))->b1 == 0) {
-            *(Vec3 *)(pNode + 0xa4) = *(Vec3 *)(self + 0x8c + 0x400);
+            *(VecFx32 *)(pNode + 0xa4) = *(VecFx32 *)(self + 0x8c + 0x400);
             *(u16 *)(pNode + 0x7c) = (u16)(*(u16 *)(*(char **)(self + 0x20) + 0x80) - 0x8000) + 0x8000;
             *(u16 *)pNode |= 0x20;
             ((struct b2 *)(pNode + 0x109))->b0 = 0;

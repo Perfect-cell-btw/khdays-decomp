@@ -2,11 +2,13 @@
  * +0x3bd latch is set; the +0xc yaw steps towards the +0x10 target by the +0x14 rate and the
  * +0xa0 orientation is rebuilt about world Y; the +0x54 timer counts the frame step down while positive; the
  * velocity is handed to the actor's +0xf0 motion slot and cleared. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 extern int Angle_TurnToward(int cur, int want, int step, int *state);
-extern void Srt_SetRotationAxisAngle(void *quat, const Vec3 *axis, int angle);
-extern const Vec3 data_02042264;
-extern const Vec3 data_02041dc8;
+extern void Srt_SetRotationAxisAngle(void *quat, const VecFx32 *axis, int angle);
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02041dc8;
 
 void Ov278_MountStep(int *self) {
     int *ctx = (int *)self[1];
@@ -24,8 +26,8 @@ void Ov278_MountStep(int *self) {
         ctx[0x15] -= *(int *)(self[0] + 0x2c);
     }
     {
-        Vec3 *p18 = (Vec3 *)(ctx + 6);
-        *(Vec3 *)(ctx[0] + 0xf0) = *p18;
+        VecFx32 *p18 = (VecFx32 *)(ctx + 6);
+        *(VecFx32 *)(ctx[0] + 0xf0) = *p18;
         *p18 = data_02041dc8;
     }
 }

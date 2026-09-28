@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov160_Construct (020cbfc4): struct Ov160Kinds data_ov160_020cf770; */
+
 #include "nitro/types.h"
 
-/* read by Ov160_Construct (020cbfc4): struct Ov160Kinds data_ov160_020cf770; */
 const int data_ov160_020cf770[9] = {
     2, 3, 4, 5, 6, 7, 8, 9,
     10,

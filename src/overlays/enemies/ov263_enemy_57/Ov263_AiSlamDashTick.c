@@ -16,11 +16,7 @@
  * data_02041dc8 is a 12-byte vector passed BY VALUE; the `sub r3,sp,#8` straddles it across sp so
  * two words land in r2/r3 and the third is already in the outgoing stack slot. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     VecFx32 from;

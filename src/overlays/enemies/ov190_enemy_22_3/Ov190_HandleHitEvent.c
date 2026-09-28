@@ -2,12 +2,7 @@
  * points, emits the alternating reaction effect and requests the next actor state. */
 
 #include "nitro/types.h"
-
-struct Ov190Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Ov190ReactionModes {
     u8 normal[2];
@@ -21,7 +16,7 @@ struct Ov190HitFlags {
 
 struct Ov190Hit {
     unsigned int flags;
-    struct Ov190Vec3 position;
+    VecFx32 position;
     char pad10[0x10];
     int reaction20;
     unsigned int resultFlags24;
@@ -39,7 +34,7 @@ struct Ov190ReactionWork {
     char pad004[0x08];
     int reactionContext0c;
     char pad010[0x1c];
-    struct Ov190Vec3 position2c;
+    VecFx32 position2c;
     int source38;
     char pad03c[0x02];
     u8 facing3e;

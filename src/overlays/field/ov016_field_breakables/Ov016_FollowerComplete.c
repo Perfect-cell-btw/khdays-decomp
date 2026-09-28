@@ -3,6 +3,7 @@
  * at the first piece whose kind byte (+0x19c) is 'm', fire the completion hooks (ov233
  * 020cc5a8 with the piece and its kind, then ov022 020888b8 with 0 / 1). Nothing happens without a record set (ov002
  * 0207386c == -1) or without an owner. */
+
 #include "nitro/types.h"
 
 typedef struct Ov016Piece {

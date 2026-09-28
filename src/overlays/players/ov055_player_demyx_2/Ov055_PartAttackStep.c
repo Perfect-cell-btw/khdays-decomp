@@ -4,25 +4,26 @@
  * definition asks for the high variant); the part then goes to kind 4, the actor's +0x26c4 gate
  * (neither 0 nor 4) plays 0xcc at +0x26c8, the animation is stepped, and once it reports done the
  * part becomes kind 3, its timer is cleared and the finish handler runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Anim_GetLengthQ12(void *animation, int track);                                 /* Anim_GetLengthQ12 */
-extern void Ov022_ResolveShotHit(char *pGroup, char *pPart, Vec3 *pos, Vec3 *dir);
+extern void Ov022_ResolveShotHit(char *pGroup, char *pPart, VecFx32 *pos, VecFx32 *dir);
 extern void func_ov022_020ad28c(char *pActor, char *pos, int nSound, int nVariant);
 extern int func_ov022_02091540(void *animation, int dt);
 extern void func_ov022_02091d80(char *pGroup, char *pPart);
-extern Vec3 data_02041dc8;                                                            /* kVecZero */
+extern VecFx32 data_02041dc8;                                                            /* kVecZero */
 
 int Ov055_PartAttackStep(char *pGroup, char *pPart, int dt)
 {
-    Vec3 pos;
-    Vec3 dir;
+    VecFx32 pos;
+    VecFx32 dir;
     char *pActor = *(char **)(pGroup + 8);
     int *pDef = *(int **)(pPart + 0x138);
     int len = Anim_GetLengthQ12(pPart + 0x28, 0);
 
-    pos = *(Vec3 *)(pPart + 0xcc);
+    pos = *(VecFx32 *)(pPart + 0xcc);
     dir = data_02041dc8;
     *(int *)(pPart + 4) += dt;
     if (pDef[1] == 1) {

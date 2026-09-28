@@ -4,34 +4,36 @@
  * gets effect 0xb at its +0x74 point and pose 0 is requested (the original also scales and adds two
  * uninitialised scratch vectors there, whose result is unused). Otherwise the +0x24 timer
  * accumulates the frame rate and past 0.6, or once blocked (+0x17a bit 1), pose 0 is requested. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 struct Bits17a { unsigned char b0 : 1, b1 : 1; };
 
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov259_TailLashTick(int *node)
 {
     int *state = (int *)node[1];
     Segment seg;
-    Vec3 pos;
+    VecFx32 pos;
     int hits[4];
-    Vec3 push;
-    Vec3 b;
-    Vec3 a;
+    VecFx32 push;
+    VecFx32 b;
+    VecFx32 a;
     int i;
     int n;
 
     seg = *(Segment *)(**(int **)(*state + 0x384) + 0x78);
-    pos = *(Vec3 *)(*state + 0x74);
+    pos = *(VecFx32 *)(*state + 0x74);
     pos.y += 0x300;
     seg.p0 = pos;
     seg.nLength += 0x2900;
@@ -46,7 +48,7 @@ void Ov259_TailLashTick(int *node)
         }
         ScaleVec3Fx12(seg.nRadius, &a, &a);
         VEC_Add(&a, &b, &a);
-        func_ov107_020c0b90(*(int *)(*state + 0x38c), 0xb, *(Vec3 *)(hits[i] + 0x74), 0);
+        func_ov107_020c0b90(*(int *)(*state + 0x38c), 0xb, *(VecFx32 *)(hits[i] + 0x74), 0);
         *(u8 *)(*state + 0x1c7) = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;

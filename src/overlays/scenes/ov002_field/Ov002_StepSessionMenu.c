@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* One of the four members a wireless session can hold. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002SessionMember {
     s16 nValue;             /* value published onto the shared board */
     s8 bActive;             /* non-zero while this member holds its slot */

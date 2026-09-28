@@ -13,14 +13,9 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
-
-#define VEC_COPY(pDst, pSrc) (*(pDst) = *(struct Vec3 *)(void *)(pSrc))
+#define VEC_COPY(pDst, pSrc) (*(pDst) = *(VecFx32 *)(void *)(pSrc))
 
 #define FLAGS_KEEP 0x400000f000011461ULL
 #define FLAG_BIT29 (1ULL << 29)
@@ -37,7 +32,7 @@ typedef void (*PfnState)(struct Actor *pActor);
 /* Ov022ActorSub */
 struct Sub {
     u8 pad0000[0x190];
-    struct Vec3 vecTarget;       /* 0x190 */
+    VecFx32 vecTarget;       /* 0x190 */
 };
 
 /* Ov022Charge */
@@ -60,13 +55,13 @@ struct Actor {
     u8 pad001c[4];
     void *pNode;                 /* 0x0020 */
     u32 nInputMask;              /* 0x0024 */
-    struct Vec3 vecVel;          /* 0x0028 */
+    VecFx32 vecVel;          /* 0x0028 */
     u8 pad0034[0x42c];
     PfnState pfnState;           /* 0x0460 */
     u64 nFlags2;                 /* 0x0464 */
     u64 nFlags3;                 /* 0x046c */
     u8 pad0474[8];
-    struct Vec3 vecDrift;        /* 0x047c */
+    VecFx32 vecDrift;        /* 0x047c */
     u8 pad0488[0x2c];
     int nInterruptCharge;        /* 0x04b4 */
     u8 pad04b8[0x34];
@@ -95,7 +90,7 @@ struct Actor {
     struct Charge charge;        /* 0x2770 */
 };
 
-extern const struct Vec3 data_02041dc8;     /* kVecZero */
+extern const VecFx32 data_02041dc8;     /* kVecZero */
 extern u8 data_0204c240;                    /* g_modeAndDayClock.nModeFlags */
 
 extern int Session_GetLocalPlayerIndex(void);                                                 /* Session_GetLocalPlayerIndex */
@@ -106,8 +101,8 @@ extern void func_ov022_02097ff0(struct Actor *pActor);                          
 extern void Mover_StepActor(void **pPlacement, int nArg);                         /* re-place the node */
 extern void func_ov022_02096964(struct Actor *pActor);                          /* ClearVec3At_2bc4 */
 extern void func_ov022_020965b8(struct Actor *pActor);                          /* SetScrollTargetOrClamp */
-extern void Ov022_ComputeAimPoint(struct Vec3 *pOut, struct Actor *pActor);       /* Ov022_ComputeAimPoint */
-extern void Ov107_MoveNodeAndRelayout(struct Sub *pSub, const struct Vec3 *pPos);     /* Ov107_MoveNodeAndRelayout */
+extern void Ov022_ComputeAimPoint(VecFx32 *pOut, struct Actor *pActor);       /* Ov022_ComputeAimPoint */
+extern void Ov107_MoveNodeAndRelayout(struct Sub *pSub, const VecFx32 *pPos);     /* Ov107_MoveNodeAndRelayout */
 extern void Ov022_ActorSetHp(struct Actor *pActor, int nValue);              /* Ov022_ActorSetHp */
 extern u32 Ov002_GetRootField8b64(void);                                           /* Ov002_GetRootField8b64 */
 extern void func_02020878(int nArg);                                            /* StoreGlobalByteAt1_0204bd84 */
@@ -115,8 +110,8 @@ extern void func_ov022_0209190c(void *pChannels);                               
 
 void Ov022_ResetActorAfterPlace(struct Actor *pActor)
 {
-    struct Vec3 vecSubCopy;
-    struct Vec3 vecSubPos;
+    VecFx32 vecSubCopy;
+    VecFx32 vecSubPos;
 
     if (Session_GetLocalPlayerIndex() == 0) {
         pActor->pfnState = (PfnState)Ov022_ActorSetState(pActor, 0);

@@ -2,7 +2,9 @@
  * Last matching item wins. Preserve the 64-bit flags test, direct bounds,
  * X/Y/Z calculation order, and bound-first comparisons for exact codegen.
  * Declarations k/i/j/context reproduce the original stack slot ordering. */
-typedef struct VecFx32 { int x,y,z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct Ov002SessionActorFlags {
     unsigned long long qwFlags;
     char pad008[0x45c];

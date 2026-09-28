@@ -1,6 +1,7 @@
 /* Picks a random item from a weighted item table and adds it to the reward list. */
 
 #include "nitro/types.h"
+
 typedef struct Ov005MenuItemHeader {char data[0x24c];} Ov005MenuItemHeader;
 typedef struct ItemWeight {u32 itemId;int weight;} ItemWeight;
 typedef struct WeightedItemRecord {char header[0x14];ItemWeight items[8];} WeightedItemRecord;

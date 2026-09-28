@@ -10,6 +10,7 @@
  * grid is rebuilt (02060e3c) and the pending, drag-active and +0x50 words are
  * set.  Returns 1.
  */
+
 #include "nitro/types.h"
 
 #define PAGE_COLS   5

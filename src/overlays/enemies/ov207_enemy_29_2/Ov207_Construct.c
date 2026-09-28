@@ -12,20 +12,17 @@
  * (+0x3ac), a capsule (world Y axis, radius 1.0, height 0x1333) on the +0x22c list with 110
  * slots (+0x3b0), a capsule of height 0x1050 on the +0x144 list (+0x3b8) and placements of
  * scale 0xccc there (three) (+0x3bc / +0x3c0 / +0x3c4); sound 0x116 is loaded. */
-struct Ov206Vec3 {
-    int x;
-    int y;
-    int z;
-};
+
+#include "nitro/fx.h"
 
 struct Ov206Pose {
-    struct Ov206Vec3 position;
+    VecFx32 position;
     int scale;
 };
 
 struct Ov206Capsule {
-    struct Ov206Vec3 vPos;
-    struct Ov206Vec3 vUp;
+    VecFx32 vPos;
+    VecFx32 vUp;
     int nRadius;
     int nHeight;
 };
@@ -38,8 +35,8 @@ struct Ov206SubitemSlot {
 };
 
 extern struct Ov206Kinds data_ov207_020d4190;
-extern struct Ov206Vec3 data_02041dc8;
-extern struct Ov206Vec3 data_02042264;
+extern VecFx32 data_02041dc8;
+extern VecFx32 data_02042264;
 extern const char data_ov207_020d42ac[];
 extern const char data_ov207_020d42b8[];
 extern const char data_ov207_020d42c8[];
@@ -79,9 +76,9 @@ void Ov207_Construct(int param)
     struct Ov206Kinds kinds;
     struct Ov206Pose pose;
     struct Ov206Capsule capsule;
-    struct Ov206Vec3 offset;
-    struct Ov206Vec3 base;
-    struct Ov206Vec3 axis;
+    VecFx32 offset;
+    VecFx32 base;
+    VecFx32 axis;
     int i;
 
     kinds = data_ov207_020d4190;

@@ -5,10 +5,11 @@
  * data_ov282_020d4700 (kind 5, command 7) goes to the owner's +0x24 hook. Reaction 0x16a mode 6
  * fires at the +4 point with the +0x64 byte raised around it and the tick hands over to
  * Ov282_AiFollowLeaderTick. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 h[7]; } Cmd14;
 
 struct w8 { unsigned int lo : 8, rest : 24; };
@@ -30,7 +31,7 @@ extern void Ov282_AiFollowLeaderTick(int *node);
 void Ov282_EnterRiseStrike(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 raw;
+    VecFx32 raw;
     Cmd14 msg;
     u16 cmd[2];
     Fx32 scratchZ;
@@ -46,7 +47,7 @@ void Ov282_EnterRiseStrike(int *node)
     state[0xb] = 0;
     state[0xc] = 0;
     msg = data_ov282_020d471e;
-    raw = *(Vec3 *)state[1];
+    raw = *(VecFx32 *)state[1];
     raw.y += 0x6000;
     PACK(msg, scratchX, *(Fx32 *)&raw.x, 5);
     PACK(msg, scratchY, *(Fx32 *)&raw.y, 8);

@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov003_StateRebindAnims (0204e9d8): int data_ov003_0204f724[]; */
+
 #include "nitro/types.h"
 
-/* read by Ov003_StateRebindAnims (0204e9d8): int data_ov003_0204f724[]; */
 const u8 data_ov003_0204f724[16] = {
     0, 144, 0, 0, 0, 128, 0, 0, 0, 120, 0, 0, 0, 100, 0, 0,
 };

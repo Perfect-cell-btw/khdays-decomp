@@ -5,8 +5,10 @@
  * the -latch/2 is computed from the just-stored +0x70 (forwarded, so the ROM negates the 0x1800
  * register) into a local BEFORE the zero stores, which keeps the zero in r0 and the half in r1
  * and gives the ROM's store order. */
-typedef void (*Callback)(void);
+
 #include "nitro/types.h"
+
+typedef void (*Callback)(void);
 
 typedef struct {
     int value;

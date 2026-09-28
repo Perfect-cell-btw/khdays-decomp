@@ -8,10 +8,12 @@
  * aborts: message 0xd, the overlay's short note to the hook, the part flag dropped, pose 0x1d, the
  * +0x3a4 rig motion 0x18, +0x6c cleared and 020d054c. After 4.5 the tick ends the same way (without
  * the note) and unmarks the owner. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 c; int r; } Sphere;
+typedef struct { VecFx32 c; int r; } Sphere;
 typedef struct { u16 lo; u16 hi; } Cmd4;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
 struct Nib { u8 lo : 4, hi : 4; };
@@ -23,20 +25,20 @@ struct Nib { u8 lo : 4, hi : 4; };
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern void func_ov107_020c0b90(int owner, int id, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int id, VecFx32 at, int flag);
 extern int FX_Div(int num, int den);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov255_020d2b98;
 extern const Cmd4 data_ov255_020d2b20[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov255_GlideTick2(int *node);
 
 static inline int FX_Mul(int a, int b)
@@ -57,10 +59,10 @@ static inline int ClampHp(char *actor, int hp)
 
 void Ov255_HealBurstTick(int *node)
 {
-    Vec3 *pos;
+    VecFx32 *pos;
     int *state = (int *)node[1];
     Sphere sph;
-    Vec3 push;
+    VecFx32 push;
     int hits[4];
     Cmd4 note;
     Fx32 scratchZ;
@@ -72,7 +74,7 @@ void Ov255_HealBurstTick(int *node)
 
     state[0x14] += *(int *)(node[0] + 0x2c);
     if (*((u8 *)state + 0x65) == 0 && state[0x14] >= 0x15dd) {
-        func_ov107_020c0b90(*state, 0xc, *(Vec3 *)state[1], 0);
+        func_ov107_020c0b90(*state, 0xc, *(VecFx32 *)state[1], 0);
         *((u8 *)state + 0x65) = 1;
     }
     state[0x11] += *(int *)(node[0] + 0x2c);
@@ -86,7 +88,7 @@ void Ov255_HealBurstTick(int *node)
         if (n > 0x1000) {
             n = 0x1000;
         }
-        sph.c = *(Vec3 *)(*(int *)(*state + 0x3a8) + 0x14);
+        sph.c = *(VecFx32 *)(*(int *)(*state + 0x3a8) + 0x14);
         sph.r = FX_Mul(n, 0x3000);
         ((struct Nib *)*(int *)(*state + 0x3e8))->hi |= 1;
         *(Sphere *)(*(int *)(*state + 0x3e8) + 0x58) = sph;
@@ -94,7 +96,7 @@ void Ov255_HealBurstTick(int *node)
         for (i = 0; i < n; i++) {
             Cmd14 msg;
 
-            pos = (Vec3 *)(hits[i] + 0x74);
+            pos = (VecFx32 *)(hits[i] + 0x74);
             VEC_Subtract(pos, &sph.c, &push);
             VEC_Normalize(&push, &push);
             ScaleVec3Fx12(0x800, &push, &push);

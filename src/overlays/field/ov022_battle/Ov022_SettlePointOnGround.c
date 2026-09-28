@@ -10,16 +10,11 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct CollCastParams {
-    struct VecFx32 *pOrigin;         /* 0x00 */
-    struct VecFx32 *pDir;            /* 0x04 */
+    VecFx32 *pOrigin;         /* 0x00 */
+    VecFx32 *pDir;            /* 0x04 */
     int nRadius;                     /* 0x08 */
     u16 wDirIsUnit;                  /* 0x0c */
     u16 wFlagE;                      /* 0x0e */
@@ -60,9 +55,9 @@ struct ReactionCtx {
 extern struct Hit *func_0202c248(u16 nGroup, struct CollCastParams *pCast);
 extern struct Hit *func_0202c208(u16 nGroup, struct CollCastParams *pCast);
 extern struct CollSurfaceAttr *Actor_GetRecord(struct Hit *pHit, unsigned int nSlot);
-extern void Vec3ScaleAddQ27(int nScale, struct VecFx32 *pDir, struct VecFx32 *pBase,
-                          struct VecFx32 *pOut);
-extern void VEC_Add(struct VecFx32 *pA, struct VecFx32 *pB, struct VecFx32 *pOut);
+extern void Vec3ScaleAddQ27(int nScale, VecFx32 *pDir, VecFx32 *pBase,
+                          VecFx32 *pOut);
+extern void VEC_Add(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
 
 #define CAST_FLAGS 0xf
 #define SURFACE_PASS_THROUGH 2
@@ -70,12 +65,12 @@ extern void VEC_Add(struct VecFx32 *pA, struct VecFx32 *pB, struct VecFx32 *pOut
 #define GROUND_LIFT 0x14000
 #define GROUND_REACH 0x28000
 
-void Ov022_SettlePointOnGround(struct VecFx32 *pOut, struct ReactionCtx *pCtx,
-                         struct VecFx32 *pOrigin, struct VecFx32 *pDir,
+void Ov022_SettlePointOnGround(VecFx32 *pOut, struct ReactionCtx *pCtx,
+                         VecFx32 *pOrigin, VecFx32 *pDir,
                          int nRadius, unsigned int nGroup)
 {
-    struct VecFx32 vecAt;
-    struct VecFx32 vecDrop;
+    VecFx32 vecAt;
+    VecFx32 vecDrop;
     struct CollCastParams cast;
     struct Actor *pActor;
     int nSlot;

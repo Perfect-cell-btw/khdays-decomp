@@ -2,10 +2,11 @@
  * +0x1c spin vector scaled by 1 + the owner's +0x3ac part's +0x45c boost (x 1/8), the claw moves
  * (020d1400 1, 2). Once the +0x390 part's animation (+0x3c -> +0xad) ends the timers clear, the +0x6d
  * flag is set, the part takes motion 1 and the node moves on to 020d227c. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
 
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov256_AttackHitTestB(int *node, int a, int b);
 extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -16,8 +17,8 @@ void Ov256_ClawSpinTick(int *node)
     int *state = (int *)node[1];
 
     state[0x18] += *(int *)(node[0] + 0x2c);
-    *(Vec3 *)(state + 4) = *(Vec3 *)(state + 7);
-    ScaleVec3Fx12((*(int *)(*(int *)(*state + 0x3ac) + 0x45c) << 9) + 0x1000, (Vec3 *)(state + 4), (Vec3 *)(state + 4));
+    *(VecFx32 *)(state + 4) = *(VecFx32 *)(state + 7);
+    ScaleVec3Fx12((*(int *)(*(int *)(*state + 0x3ac) + 0x45c) << 9) + 0x1000, (VecFx32 *)(state + 4), (VecFx32 *)(state + 4));
     Ov256_AttackHitTestB(node, 1, 2);
     if (*(u8 *)(*(int *)(*(int *)(*state + 0x390) + 0x3c) + 0xad) != 0) {
         return;

@@ -2,26 +2,21 @@
  * mode 0x22 or clears both motion positions and finishes the actor. */
 
 #include "nitro/types.h"
-
-typedef struct Vec3 {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
 typedef int (*ActorHook)(int actor);
 typedef void (*ActorFinishHook)(int actor, int mode);
 
 extern int Session_GetLocalPlayerIndex(void);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov022_IsState9Or6WithFlag200(void *state);
 extern int Ov022_ActorSetState(int actor, int mode);
 extern int data_ov077_020b9b80;
 
 int Ov077_TickChargeActor(int actor)
 {
-    Vec3 zero;
-    Vec3 delta;
+    VecFx32 zero;
+    VecFx32 delta;
 
     int scene = data_ov077_020b9b80 + 0x2c + 0x2c00;
     int result = 0;
@@ -43,8 +38,8 @@ int Ov077_TickChargeActor(int actor)
 
     delta = zero;
     delta.y = 0;
-    VEC_Add((Vec3 *)(actor + 0x498), &delta,
-            (Vec3 *)(actor + 0x498));
+    VEC_Add((VecFx32 *)(actor + 0x498), &delta,
+            (VecFx32 *)(actor + 0x498));
     (*(ActorHook *)(actor + 0x668))(actor);
 
     if ((*(u16 *)(actor + 0x1a) & 1) == 0) {

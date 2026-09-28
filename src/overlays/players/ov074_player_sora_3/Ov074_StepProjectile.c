@@ -16,28 +16,30 @@
  * here in an ordinary if -- when two arms do the SAME thing, that is a single condition in
  * the source.
  */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Bit0 { unsigned char b : 1; };
 
-extern void Ov022_ComputeShotStep(Vec3 *out, char *a, char *ent, int arg);
-extern void Ov022_ResolveShotHit(char *a, char *ent, Vec3 *p, Vec3 *v);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *dst);
+extern void Ov022_ComputeShotStep(VecFx32 *out, char *a, char *ent, int arg);
+extern void Ov022_ResolveShotHit(char *a, char *ent, VecFx32 *p, VecFx32 *v);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern int func_ov022_02091540(char *p, int arg);
 extern void Ov022_ReleaseRigSlots(char *ent, int n);
-extern int VEC_Distance(const Vec3 *a, const Vec3 *b);
-extern void Slot_Spawn(int a, int b, Vec3 *p, int d);
+extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
+extern void Slot_Spawn(int a, int b, VecFx32 *p, int d);
 
 int Ov074_StepProjectile(char *a, char *ent, int arg) {
     char *owner = *(char **)(a + 8);
     char *cfg = *(char **)(ent + 0x138);
-    Vec3 pos;
-    Vec3 vel;
+    VecFx32 pos;
+    VecFx32 vel;
 
-    pos = *(Vec3 *)(ent + 0xcc);
+    pos = *(VecFx32 *)(ent + 0xcc);
     Ov022_ComputeShotStep(&vel, a, ent, arg);
     Ov022_ResolveShotHit(a, ent, &pos, &vel);
     VEC_Add(&pos, &vel, &pos);
-    *(Vec3 *)(ent + 0xcc) = pos;
+    *(VecFx32 *)(ent + 0xcc) = pos;
 
     if (func_ov022_02091540(ent + 0x28, arg) != 0) {
         int st = *(short *)(ent + 0x2a);
@@ -47,7 +49,7 @@ int Ov074_StepProjectile(char *a, char *ent, int arg) {
     }
 
     if (*(signed char *)(ent + 2) != 3) {
-        if (VEC_Distance((const Vec3 *)(ent + 0x10), &pos) > *(int *)(cfg + 0x14) ||
+        if (VEC_Distance((const VecFx32 *)(ent + 0x10), &pos) > *(int *)(cfg + 0x14) ||
             *(int *)(ent + 4) >= *(int *)(cfg + 0x18)) {
             *(signed char *)(ent + 2) = 4;
         }

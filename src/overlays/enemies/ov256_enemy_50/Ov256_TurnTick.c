@@ -2,8 +2,9 @@
  * heading (020cd054); once the partner holds no queued move a side is rolled (0 or 2) and the target
  * re-picked (020ccd54); a heading change of more than 35 degrees forces side 2. Pose 0x1f + side plays,
  * the +0x450 part takes motion 0x10 + side and the node moves on to 020ce650. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
 extern int RandNextScaled(int n);
@@ -16,12 +17,12 @@ extern void Ov256_RetreatTick(void);
 void Ov256_TurnTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 v;
+    VecFx32 v;
     u8 side;
     int heading;
 
     Ov256_RotateByActorHeading((int *)&v, (int)node, (int *)(*(int *)(*state + 0x450) + 0x2c));
-    *(Vec3 *)(state + 4) = v;
+    *(VecFx32 *)(state + 4) = v;
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }

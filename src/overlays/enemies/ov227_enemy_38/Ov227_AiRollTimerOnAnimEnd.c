@@ -1,9 +1,9 @@
 /* When the animation ends rolls a random timer, sets +0x78 and queues action 5. */
 
+#include "nitro/types.h"
+
 extern int RandNextScaled();
 extern int SetIndexedSlot();
-
-#include "nitro/types.h"
 
 struct S2 {
     u8 pad0[0x60];

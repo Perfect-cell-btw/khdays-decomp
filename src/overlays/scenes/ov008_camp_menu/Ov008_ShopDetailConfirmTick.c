@@ -13,6 +13,7 @@
  * selection keys 0xb or a touch play sound 0, hide widgets 7 / 8 and close.
  * The detail panel and the display are then redrawn.
  */
+
 #include "nitro/types.h"
 
 #define BTN_SWAP_A   0x20

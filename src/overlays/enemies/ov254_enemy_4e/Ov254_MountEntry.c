@@ -1,7 +1,9 @@
 /* Mount entry: every rider of the two +0x384 slots still mounted (+0xad) gets its +0xa8..+0xac
  * hold flags raised; with none mounted the actor plays pose 0 (looping). The node moves to
  * 020d57fc. */
+
 #include "nitro/types.h"
+
 struct Riders { char pad[0x384]; int rider[2]; };
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);

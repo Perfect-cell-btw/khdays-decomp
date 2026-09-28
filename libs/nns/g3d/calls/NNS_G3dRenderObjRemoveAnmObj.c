@@ -1,6 +1,7 @@
 #include "nitro/types.h"
 #include "nitro/fx.h"
 #include "nitro/os.h"
+
 typedef void *OSMessage;
 
 #define NULL ((void *)0)
@@ -10,11 +11,6 @@ typedef void *OSMessage;
 #define SDK_WARNING(exp, ...) (void) ((exp) || (OSi_Warning(__FILE__, __LINE__, __VA_ARGS__), 0))
 #define OSi_Warning(file, line, ...) ((void)0)
 
-typedef struct {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
 typedef union {
         struct {
             fx32 _00, _01, _02;

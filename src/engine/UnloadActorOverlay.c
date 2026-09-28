@@ -1,6 +1,7 @@
 /* Unloads overlay 107 (the actor framework). */
 
 #include "nitro/types.h"
+
 typedef u32 FSOverlayID;
 
 extern u32 OVERLAY_107_ID[1];

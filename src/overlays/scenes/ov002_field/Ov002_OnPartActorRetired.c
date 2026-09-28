@@ -1,7 +1,9 @@
 /* Ov002_OnPartActorRetired: host retirement notification and probabilistic
  * replacement spawn. Preserve both RNG advances, including the discarded draw. */
+
 #include "nitro/types.h"
-typedef struct VecFx32 {int x,y,z;} VecFx32;
+#include "nitro/fx.h"
+
 typedef struct ActorTransform {char pad0[0x78];int nSlotTableIndex;} ActorTransform;
 typedef struct ActorXfmBlock {u32 aPrefixWords[4];VecFx32 vPosition;u32 aSuffixWords[4];} ActorXfmBlock;
 typedef struct Ov002PartOwnerTagFields {u8 nGroupIndex,nSlotIndex;u16 wReserved;} Ov002PartOwnerTagFields;

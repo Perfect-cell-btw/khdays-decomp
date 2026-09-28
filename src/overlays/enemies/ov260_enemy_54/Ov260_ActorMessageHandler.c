@@ -5,12 +5,14 @@
  * also flag the actor (020c0b14); 1 and 8 on the +0x3e4 node (mode 0x1f, 8 looped); 5 and 0xa on the
  * +0x3b8 node; 0xb on the +0x424 part; 0xd releases the effect in slot byte 4. The base handler
  * always runs. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern void Srt_SetRotationQuat(SrtTransform *transform, void *quat);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int variant, SrtTransform *transform);
 extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
@@ -21,7 +23,7 @@ extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 void Ov260_ActorMessageHandler(int owner, unsigned char *command, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         unsigned char bytes[12];

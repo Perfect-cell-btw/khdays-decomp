@@ -3,6 +3,7 @@
  * blocks are hashed straight from a word-aligned input (or through the block buffer one by one
  * when it is not aligned), and the remainder waits in the block buffer. Blocks go through the
  * replaceable process-block hook data_020422d0. */
+
 #include "nitro/types.h"
 
 typedef struct DGTHash2Context {

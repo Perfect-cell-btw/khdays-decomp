@@ -2,8 +2,10 @@
  * actor's +0x494 clear, pose 4 plays, bit 1 of the +0x488 rig's +8 flags is set and bit 6 of the
  * +0x60 high byte cleared; the release sound (0x12d variant 0xf) plays at the +0x38 point and the
  * brain waits on 020d039c. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern void Ov107_PostTagUpdate(int a, int b, int c);
@@ -15,7 +17,7 @@ void Ov237_ReleaseGrab(int *node)
 {
     int *state = (int *)node[1];
 
-    *(Vec3 *)(*state + 0x4c4) = *(Vec3 *)state[0xe];
+    *(VecFx32 *)(*state + 0x4c4) = *(VecFx32 *)state[0xe];
     state[0x16] = 0;
     *(int *)(*state + 0x494) = 0;
     Ov107_PostTagUpdate(*state, 4, 0);

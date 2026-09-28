@@ -1,15 +1,17 @@
 /* d0bbc */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Task_MarkFinished(int *node);
 
 void Ov258_RiseBurstTick(int *node)
@@ -17,7 +19,7 @@ void Ov258_RiseBurstTick(int *node)
     int *state = (int *)node[1];
     int hits[4];
     Sphere sphere;
-    Vec3 push;
+    VecFx32 push;
     long i;
     long n;
     u8 bit;
@@ -25,7 +27,7 @@ void Ov258_RiseBurstTick(int *node)
     *(int *)(*state + 0x5c) &= ~2;
     state[5] += *(int *)(node[0] + 0x2c);
     if (*(int *)(state[1] + 0x50) == 1 && state[5] < 0xaa0) {
-        sphere.center = *(Vec3 *)(state + 2);
+        sphere.center = *(VecFx32 *)(state + 2);
         sphere.nRadius = 0x3000;
         n = Ov107_CollectSphereOverlaps(state[1], &sphere, hits);
         for (i = 0; i < n; i++) {
@@ -51,7 +53,7 @@ void Ov258_RiseBurstTick(int *node)
             }
             Ov107_BuildAndSendUpdate(state[1], (short)(*(int *)(state[1] + 0x460) != 0 ? 0x180 : 0x17b), 0x10,
                                 (void *)(hits[i] + 0x190));
-            func_ov107_020c0b90(state[1], 7, *(Vec3 *)(hits[i] + 0x190), 0);
+            func_ov107_020c0b90(state[1], 7, *(VecFx32 *)(hits[i] + 0x190), 0);
             *((u8 *)state + 0x18) |= bit;
         }
     }

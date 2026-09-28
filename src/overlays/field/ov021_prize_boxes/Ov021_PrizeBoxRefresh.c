@@ -6,9 +6,9 @@
  * (type 2 with a valid key) and a slot is free for it (ov002 02074460), hides that object
  * unless it was already revealed (bit 1 of +0x1b9; ov002 02073ed0) and moves it to the box's
  * position (ov002 02073f28). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov021Prize {
     char  nType;              /* 0x00: 0 item, 1 munny, 2 keyed object, 3 nothing */

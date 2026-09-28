@@ -5,11 +5,13 @@
  * 1/16 (kind 4, on behalf of the +0x394 object); on acceptance the 14-byte message
  * data_ov236_020d6420 carries its +0x74 point raised by 0.5 and its +0x1b4 byte to the +0x394
  * object's +0x24 hook, and reaction 0x127 mode 0xd fires at that raised point. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -20,10 +22,10 @@ typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 
 extern int queryTableEntry(int part, int channel);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, void *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern const Cmd14 data_ov236_020d6420;
 
@@ -35,8 +37,8 @@ void Ov236_ClawSwipeTick(int *node)
     Fx32 scratchX;
     int hits[4];
     Segment seg;
-    Vec3 push;
-    Vec3 raw;
+    VecFx32 push;
+    VecFx32 raw;
     int frame;
     int k;
     int n;
@@ -65,7 +67,7 @@ void Ov236_ClawSwipeTick(int *node)
                 continue;
             }
             msg = data_ov236_020d6420;
-            raw = *(Vec3 *)(hits[i] + 0x74);
+            raw = *(VecFx32 *)(hits[i] + 0x74);
             raw.y += 0x800;
             PACK(msg, scratchX, *(Fx32 *)&raw.x, 5);
             PACK(msg, scratchY, *(Fx32 *)&raw.y, 8);

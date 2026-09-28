@@ -6,6 +6,7 @@
  * is 0x46 instead of 0x4e, the child slots are ALLOCATED through CallocInstance
  * rather than living inline in the object, and the owner sits at +0x38c so the
  * slot pointer can take +0x390. */
+
 #include "nitro/types.h"
 
 struct ChildIds {

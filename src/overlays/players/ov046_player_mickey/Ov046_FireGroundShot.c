@@ -3,24 +3,26 @@
  * the ground with a 0x7000 probe (resting 0x19a above a hit, or the full probe depth without one)
  * and a record request is built there: kind 7, the rig's pattern (+0x2d a4) as its tag, and a
  * speed of 0x1980 / 0x2200 / 0x2400 by pattern (pattern 2 also sets the homing flag). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 typedef struct {
-    Vec3 pos;
+    VecFx32 pos;
     short f0c, f0e, f10, f12;
     int f14, f18, f1c, f20, f24, f28;
 } Params;
 
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
 extern void MTX_RotY33_(Mtx33 *m, int s, int c);
-extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern char *EntityMgr_RunRayCast(unsigned int mask, Vec3 *from, Vec3 *dir, void *node);
-extern void Vec3ScaleAddQ27(int t, const Vec3 *dir, const Vec3 *from, Vec3 *out);   /* Vec3ScaleAddQ27 */
+extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern char *EntityMgr_RunRayCast(unsigned int mask, VecFx32 *from, VecFx32 *dir, void *node);
+extern void Vec3ScaleAddQ27(int t, const VecFx32 *dir, const VecFx32 *from, VecFx32 *out);   /* Vec3ScaleAddQ27 */
 extern void Ov022_SendPlacementMessage(char *self, Params *p);
 extern char *data_ov046_020b4b40;
 extern short data_0203d210[];
@@ -28,18 +30,18 @@ extern short data_0203d210[];
 void Ov046_FireGroundShot(char *self)
 {
     Params p;
-    Vec3 pos;
-    Vec3 origin;
-    Vec3 down;
+    VecFx32 pos;
+    VecFx32 origin;
+    VecFx32 down;
     Mtx33 m;
-    Vec3 d;
+    VecFx32 d;
     char *rig = data_ov046_020b4b40 + 0x2c80;
     int bTarget = 0;
     u16 angle = *(u16 *)(*(char **)(self + 0x20) + 0x80) - 0x8000;
     char *hit;
     int idx;
 
-    origin = *(Vec3 *)(self + 0x8c + 0x400);
+    origin = *(VecFx32 *)(self + 0x8c + 0x400);
     if (Ov022_ValidateTargetRef(self) != 0) {
         VEC_Subtract(func_ov022_020ad0c0(self), &origin, &d);
         if (VEC_Mag(&d) <= 0x9000) {

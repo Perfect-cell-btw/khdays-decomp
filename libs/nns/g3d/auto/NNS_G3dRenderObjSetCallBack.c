@@ -1,6 +1,7 @@
 #include "nitro/types.h"
 #include "nitro/fx.h"
 #include "nitro/os.h"
+
 typedef void *OSMessage;
 
 #define NULL ((void *)0)
@@ -11,11 +12,6 @@ typedef struct {
     u32 enable;
     void * arg;
 } OSIrqCallbackInfo;
-typedef struct {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
 typedef union {
         struct {
             fx32 _00, _01, _02;

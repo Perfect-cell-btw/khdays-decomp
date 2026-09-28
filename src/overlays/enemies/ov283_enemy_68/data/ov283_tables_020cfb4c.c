@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov283_Construct (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov283_Construct (not yet decompiled) */
 const int data_ov283_020cfb4c[6] = {
     6, 6, 4, 4, 5, 5,
 };

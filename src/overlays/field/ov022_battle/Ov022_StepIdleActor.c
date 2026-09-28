@@ -14,9 +14,10 @@
  * takes the fast or slow move and turn rates by the same global flag.
  */
 
+/* Ov022Actor */
+
 #include "nitro/types.h"
 
-/* Ov022Actor */
 struct Actor {
     u64 nFlags;                      /* 0x0000 */
     u8 pad0008[0x10];

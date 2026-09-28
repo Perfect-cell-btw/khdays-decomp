@@ -9,6 +9,7 @@
  * as void(void) because a dropped trailing arg does not change the callee's bytes), and
  * Ov000_RecordLoadResult takes (slot, result) -- result homed in r1 produces the ROM's
  * mov r1,r0 after the poll call. Return type is u8 (caller Ov000_TickLoadScene). */
+
 #include "nitro/types.h"
 
 typedef struct Ov000PageSlot {

@@ -2,6 +2,7 @@
  * number of changes. */
 
 #include "nitro/types.h"
+
 typedef u32 FSOverlayID;
 
 extern u32 OVERLAY_302_ID[1];

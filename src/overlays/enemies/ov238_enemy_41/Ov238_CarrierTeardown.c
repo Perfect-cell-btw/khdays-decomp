@@ -2,19 +2,21 @@
  * mirrors it onto the +0x38c set's first model; the data_ov238_020d3668 offset turned by the +0x3f8
  * part's rotation is added to that part's +0x14 position. Outside move 8 the +0x438 effect stops; then
  * the base teardown runs. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
 struct Posed { char pad[0x10]; SrtTransform srt; };
 struct Anchor { char pad[4]; SrtTransform srt; };
 
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void TaskList_FinishByTag(int model, int handle);
 extern void Ov107_AiState_PostTickBase(char *self);
-extern const Vec3 data_ov238_020d3668;
+extern const VecFx32 data_ov238_020d3668;
 
 void Ov238_CarrierTeardown(char *self)
 {
-    Vec3 off;
+    VecFx32 off;
 
     (*(struct Posed **)(self + 0x3dc))->srt = (*(struct Anchor **)(self + 0x3ec))->srt;
     (**(struct Posed ***)(self + 0x38c))->srt = (*(struct Posed **)(self + 0x3dc))->srt;

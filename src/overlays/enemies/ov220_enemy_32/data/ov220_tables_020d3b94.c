@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Constructor of the ov220 enemy (and its byte-identical twin ov220): installs the handlers (020d1a24): const Kinds data_ov220_020d3b94; */
+
 #include "nitro/types.h"
 
-/* read by Constructor of the ov220 enemy (and its byte-identical twin ov220): installs the handlers (020d1a24): const Kinds data_ov220_020d3b94; */
 const u8 data_ov220_020d3b94[4] = {
     2, 3, 4, 0,
 };

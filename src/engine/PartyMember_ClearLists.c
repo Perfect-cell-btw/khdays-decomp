@@ -2,6 +2,7 @@
  * the 15 byte pairs (+0x9c) and the 5 counters (+0x28). Codegen: every loop indexes the global
  * record directly; a `rec` pointer local puts the record address in r1 instead of the ROM's r2. */
 #pragma thumb on
+
 #include "nitro/types.h"
 
 struct SlotEntry {

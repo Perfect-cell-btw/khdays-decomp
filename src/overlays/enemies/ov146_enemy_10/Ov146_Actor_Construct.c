@@ -6,11 +6,13 @@
  * the ids of data_ov146_020cf4f8 -- the first three relative to the running thread's resource, the
  * last two from the pool; actions 2, 1 and 4 at 2.0; the pose as a hit shape on the +0x22c (+0x3ac)
  * and +0x144 (+0x3b0) lists; the two helpers 020ce308 / 020cee30 (+0x3b8 / +0x3bc) and sound 0x125. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { Vec3 min; Vec3 max; } Box;
-typedef struct { Vec3 v; int nScale; } Pose;
+typedef struct { VecFx32 min; VecFx32 max; } Box;
+typedef struct { VecFx32 v; int nScale; } Pose;
 typedef struct { int id[5]; } PartIds;
 struct Ov146Part { int item; int pad; };
 
@@ -40,7 +42,7 @@ extern int Ov146_Mount_New(char *self);
 extern void Res_RequestIdPair(int id);
 extern const PartIds data_ov146_020cf4f8;
 extern const char data_ov146_020cf52c[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov146_Actor_Construct(char *self)
 {

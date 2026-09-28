@@ -4,6 +4,7 @@
  * for the per-slot regions (offsets 0x24, 0x60, 0x10964, 0x109a0 with their pixel sources at 0x9c,
  * 0x89c, 0x109dc, 0x111dc). pScene is read by name on every use. Returns what the last
  * Ov011_InitTitleTileSurface returns. */
+
 #include "nitro/types.h"
 
 typedef struct Ov011Globals { u32 nTimer; u8 *pScene; } Ov011Globals;

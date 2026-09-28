@@ -5,9 +5,9 @@
  * rewind the sequence to the track byte (+0x1bf, ov002 0207c618 frame 0), disable the node
  * (0202af2c) and enable it (0202bedc) only if the follower's GameState bit is set. The hold
  * timer (+0x1b4) is reset either way. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016FollowerDef {
     u8 pad_00[0x58];

@@ -3,7 +3,9 @@
  * +0x388 rig's +0x88 bank (track 3 / 0); bound slots are released, the bank resets and each live
  * part binds its model record (020c9440: kind + 1, back part 0x12). The current part plays on its
  * track with the +0x311 loop bit, and the other live part resumes at the sampled frame. */
+
 #include "nitro/types.h"
+
 typedef struct { u8 b0 : 1; } Bit0;
 typedef struct { char pad0[0xc]; int bound; char pad10[0x14]; } AnimSlot;
 struct Ov238Rig { char pad[0x394]; AnimSlot slots[2]; };

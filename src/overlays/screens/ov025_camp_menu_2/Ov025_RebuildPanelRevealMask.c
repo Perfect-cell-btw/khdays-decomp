@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* The 3-page x 8-row x 5-column panel grid also used by ov000's tally subsystem. */
+
+#include "nitro/types.h"
+
 typedef struct Ov008PanelRevealCtx {
     u8  pad_0000[0x58];
     int pendingA;

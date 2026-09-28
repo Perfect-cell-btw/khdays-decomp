@@ -2,8 +2,7 @@
  * normalises the direction when needed and resets the nearest hit. */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 { s32 x; s32 y; s32 z; } VecFx32;
+#include "nitro/fx.h"
 
 typedef struct CollCastParams {
     VecFx32 *origin00;

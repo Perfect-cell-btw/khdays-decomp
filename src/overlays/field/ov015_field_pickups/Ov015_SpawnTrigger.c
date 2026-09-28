@@ -3,9 +3,9 @@
  * extent (+0x40) and the parameter word (+0x4c), clear its state (+0x50), set the class
  * word (+0xc, the trigger handler block 02080540), the kind (+0x10), the GameState field /
  * bit pair (+0x14 / +0x16) and register it in bucket nKind (ov002 02076480). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov015Trigger {
     u8   pad_00[0xc];

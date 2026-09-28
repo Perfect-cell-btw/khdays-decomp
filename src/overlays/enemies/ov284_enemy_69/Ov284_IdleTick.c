@@ -1,9 +1,11 @@
 /* Idle tick of the ov284 enemy: re-acquires the target into +0xc and aims the +0x14 yaw at its
  * +0x190 point from the +4 position; the surface distance (root minus both +0x80 radii) is
  * measured and, once the +0x20 timer is spent, sub-state 7 is requested and the state ends. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 extern int Ov107_FindNearestObject(int actor, int *distOut);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern int FX_Sqrt(int x);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -12,7 +14,7 @@ void Ov284_IdleTick(int *node)
 {
     int *state = (int *)node[1];
     int dist;
-    Vec3 d;
+    VecFx32 d;
     int target;
     int actor;
 

@@ -3,8 +3,8 @@
  * walker); returns whether it hit. */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
-typedef struct VecFx32 { s32 x; s32 y; s32 z; } VecFx32;
 typedef struct CollisionRegion { s32 centerX00; s32 centerZ04; s32 size08; } CollisionRegion;
 
 typedef struct CollCastState {

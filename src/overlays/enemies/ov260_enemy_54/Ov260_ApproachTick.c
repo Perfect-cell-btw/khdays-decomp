@@ -3,16 +3,18 @@
  * +0x190 point when farther than 5.5, else the point 8.0 short of it along the approach (+0x44), or
  * none. Once the partner holds no queued move pose 2 plays, the part takes motion 1, +0x70 and the
  * +0x7b flag clear and the node moves on to 020cdecc. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -25,22 +27,22 @@ void Ov260_ApproachTick(int *node)
 {
     int *state = (int *)node[1];
     Mtx33 rot;
-    Vec3 d;
+    VecFx32 d;
 
     {
         int idx = ANG2IDX(state[0x19]) * 2;
 
         MTX_RotY33_(&rot, data_0203d210[idx], data_0203d210[idx + 1]);
     }
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (Vec3 *)(state + 8));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (VecFx32 *)(state + 8));
     *(int *)(*state + 0x420) = Ov107_FindNearestObject(*state, 0);
     if (*(int *)(*state + 0x420) != 0) {
-        VEC_Subtract((Vec3 *)(*(int *)(*state + 0x420) + 0x190), (Vec3 *)state[4], &d);
+        VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x420) + 0x190), (VecFx32 *)state[4], &d);
         if (VEC_Normalize(&d, &d) > 0x5800) {
             state[0x14] = *(int *)(*state + 0x420) + 0x190;
         } else {
             ScaleVec3Fx12(0x8000, &d, &d);
-            VEC_Subtract((Vec3 *)(*(int *)(*state + 0x420) + 0x190), &d, (Vec3 *)(state + 0x11));
+            VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x420) + 0x190), &d, (VecFx32 *)(state + 0x11));
             state[0x14] = (int)(state + 0x11);
         }
     } else {

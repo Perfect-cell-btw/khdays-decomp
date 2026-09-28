@@ -12,7 +12,8 @@
  *    out-of-line `return 0` at the end.
  *  - `d.y = 0` is a DEAD store -- d is never read again after d.x/d.z -- but the ROM
  *    emits it, so it stays. */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern int *Ov107_FindNearestObject(int a, int b);
 extern int VEC_Subtract(void *a, void *b, void *out);
@@ -25,7 +26,7 @@ extern short data_0203d210[];
 
 int Ov212_IsTargetOutsideCone(void *self) {
     int *ctx = *(int **)((char *)self + 4);
-    struct vec3 d;
+    VecFx32 d;
     int *tgt = Ov107_FindNearestObject(*ctx, 0);
     unsigned int ia, im;
     int a, ang;

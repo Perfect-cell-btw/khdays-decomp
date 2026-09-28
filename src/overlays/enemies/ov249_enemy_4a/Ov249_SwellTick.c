@@ -1,9 +1,11 @@
 /* Swell tick of the ov249 actor: while the +0x4c clock is short of 0.4 it runs up at the frame rate
  * (capped there) and a kind-2 contact sphere at the +0x34 point grows with it (radius 0 to 4.0 over the
  * first 0.27). Once the +4 rig is idle the next move is 2 and the brain slot +0x20 clears. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
-typedef struct { Vec3 pos; Vec3 axis[3]; int radius; int flag; } Cylinder;
+
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
+typedef struct { VecFx32 pos; VecFx32 axis[3]; int radius; int flag; } Cylinder;
 
 extern void Ov249_ContactSweep(int *state, int kind, Sphere *sphere, void *box);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -18,7 +20,7 @@ void Ov249_SwellTick(int *node)
     if (state[0x13] < 0x660) {
         state[0x13] += *(int *)(node[0] + 0x2c);
         state[0x13] = state[0x13] > 0x660 ? 0x660 : state[0x13];
-        shape.pos = *(Vec3 *)(state + 0xd);
+        shape.pos = *(VecFx32 *)(state + 0xd);
         t = state[0x13];
         if (t > 0x440) {
             t = 0x440;

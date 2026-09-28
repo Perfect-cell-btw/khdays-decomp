@@ -16,6 +16,7 @@
  *   - the tileset is reached through a pointer to the pane's inner block rather than the
  *     pane itself, which is why the ROM builds two bases four bytes apart instead of one.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov011Tileset {

@@ -9,12 +9,14 @@
  * reaction +0x3f8 mode 9 fires there. From 0.7 on the hook receives note 5 of data_ov255_020d2b20
  * once (+0x62). Once the +0xc idle byte clears, the +0x54 cooldown is re-rolled in
  * [+0x224, +0x228] and sub-state 2 is requested. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo; u16 hi; } Cmd4;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -25,15 +27,15 @@ typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern int Ov107_ActionResource_GetOffsetAndScale(int part, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
+extern int Ov107_ActionResource_GetOffsetAndScale(int part, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov255_020d2b52;
 extern const Cmd4 data_ov255_020d2b20[];
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern int RandNextScaled(int n);
 
 static inline int RandRange(int lo, int hi)
@@ -50,7 +52,7 @@ void Ov255_BiteTick3(int *node)
 {
     int obj;
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int hits[4];
     Segment seg;
     Cmd4 note;
@@ -73,7 +75,7 @@ void Ov255_BiteTick3(int *node)
     }
     n = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3a4), &dir);
     Vec3TransformViaTempMtx(&dir, state + 7, &dir);
-    ScaleVec3Fx12(n, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(n, &dir, (VecFx32 *)(state + 4));
     state[0x11] += *(int *)(node[0] + 0x2c);
     state[0x10] = state[0x11] > 0xccc ? 0 : *(int *)(node[0] + 0x2c) * 30 / 2;
     if (state[0x11] > 0xa22 && state[0x11] < 0x1400) {
@@ -81,7 +83,7 @@ void Ov255_BiteTick3(int *node)
         seg.nRadius = 0xc00;
         n = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
         for (i = 0; i < n; i++) {
-            Vec3 push;
+            VecFx32 push;
             Cmd14 msg;
 
             obj = hits[i];

@@ -1,14 +1,9 @@
+
 #include "nitro/fx.h"
 
 typedef struct MtxFx33_0203cf0c {
     fx32 m[9];
 } MtxFx33_0203cf0c;
-
-typedef struct VecFx32_0203cf0c {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32_0203cf0c;
 
 static inline fx32 FX_Mul_0203cf0c(fx32 a, fx32 b)
 {
@@ -17,7 +12,7 @@ static inline fx32 FX_Mul_0203cf0c(fx32 a, fx32 b)
 
 /* Scale a 3x3 matrix's rows by (scale->x, scale->y, scale->z), one factor
  * per column, and write the result to *dst. */
-void Mtx33_ScaleColumns(MtxFx33_0203cf0c *dst, const MtxFx33_0203cf0c *mtx, const VecFx32_0203cf0c *scale)
+void Mtx33_ScaleColumns(MtxFx33_0203cf0c *dst, const MtxFx33_0203cf0c *mtx, const VecFx32 *scale)
 {
     MtxFx33_0203cf0c result;
 

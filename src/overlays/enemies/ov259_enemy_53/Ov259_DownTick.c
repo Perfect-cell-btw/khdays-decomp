@@ -1,6 +1,7 @@
 /* Down tick of the ov259 actor: the +0x68 timer accumulates the frame rate; with no health left
  * (+0x21a) bits 0-1 of +0x1ae are set; the cue pulses once at 0x3b8 (020cd2c8 2, +0xac bit 0).
  * Past 0x550 the timer restarts, pose 0x1b plays and the node moves on to 020cfce4. */
+
 #include "nitro/types.h"
 
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);

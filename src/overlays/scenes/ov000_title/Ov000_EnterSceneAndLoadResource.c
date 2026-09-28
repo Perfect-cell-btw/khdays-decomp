@@ -3,6 +3,7 @@
  * object. */
 
 #include "nitro/types.h"
+
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

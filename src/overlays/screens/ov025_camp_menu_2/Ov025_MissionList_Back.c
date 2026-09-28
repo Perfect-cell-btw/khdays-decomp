@@ -6,6 +6,7 @@
  * the menu entirely when the context object (02084dd8) is 1 (ov002 0206d970, target -1 / -1;
  * 02084798), to entry 5 with mission 0 (02084fd8 / 02084830) when the 9630 object is set outside
  * a page transition (02084e08 / 02084e38), else to target 0 / -1; the cancel sound plays. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionList {

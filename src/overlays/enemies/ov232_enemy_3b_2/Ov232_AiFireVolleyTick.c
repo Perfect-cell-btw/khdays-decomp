@@ -22,14 +22,11 @@
  *
  * data_02041dc8 is a 12-byte vector passed BY VALUE (the `sub r3,sp,#8` straddle). */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* The low-byte bit test must go through the bitfield (ldrh; lsl#0x18; lsr#0x18; tst #1);
  * writing *(u16*)p & 0xff & 1 collapses it to ldrb; tst -- see codegen-cracks.md. */
+
+#include "nitro/fx.h"
+
 typedef struct {
     unsigned short lo : 8;
     unsigned short hi : 8;

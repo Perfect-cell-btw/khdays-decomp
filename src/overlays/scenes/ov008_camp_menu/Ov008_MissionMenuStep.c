@@ -11,6 +11,7 @@
  * remainder (the high word of the 64-bit return); the status test is kept as a
  * materialised bool (cmp/movcs/movcc).
  */
+
 #include "nitro/types.h"
 
 #define FIELD_MISSION_STATUS 0x28e4

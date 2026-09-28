@@ -7,14 +7,16 @@
  * rig's +0x2d98 marker, and an active enemy either hands over to state 0x23 (busy emitter and no
  * marker) or stops, raises bit 2 and lands: state 0 with the slot callback when grounded, else
  * state 2. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ClampAngleTowardTarget(char *self, unsigned int angle);            /* Ov022_ClampAngleTowardTarget */
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);            /* ScaleVec3Fx12 */
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);            /* ScaleVec3Fx12 */
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov055_SpawnEffectAtBonePos(char *self);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern void *Ov022_ActorSetState(char *self, int state);
@@ -23,8 +25,8 @@ extern short data_0203d210[];
 
 void *Ov055_ChargeStep(char *self)
 {
-    Vec3 step;
-    Vec3 flat;
+    VecFx32 step;
+    VecFx32 flat;
     char *rig = data_ov055_020b7740 + 0x194 + 0x2c00;
     void *next = 0;
     int a;
@@ -58,7 +60,7 @@ void *Ov055_ChargeStep(char *self)
     }
     flat = step;
     flat.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &flat, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &flat, (VecFx32 *)(self + 0x98 + 0x400));
     r = (*(int (**)(char *))(self + 0x668))(self);
     ((Flags *)(self + 0x694))->b1 = (unsigned char)r;
     if (*(int *)(rig + 8) == 0 && *(int *)(self + 0x7b0) >= 0xc000) {

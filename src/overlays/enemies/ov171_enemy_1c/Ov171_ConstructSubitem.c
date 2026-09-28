@@ -1,4 +1,5 @@
 /* Ov171_ConstructSubitem: sub-item constructor of the ov171 enemy (x2), variant of the matched ov175 sibling (four handlers, latch 0x64c). */
+
 #include "nitro/types.h"
 
 typedef struct {

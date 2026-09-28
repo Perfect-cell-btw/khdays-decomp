@@ -9,25 +9,22 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define PACKET_CHANNEL 0xa
 #define PACKET_MODE 6
 
-struct Vec3 {
-    int x, y, z;
-};
-
 struct Source {
     u8 nKind;                    /* 0x00 */
     u8 pad01[3];
-    struct Vec3 vec;             /* 0x04 */
+    VecFx32 vec;             /* 0x04 */
     u8 pad10[6];
     u16 nId;                     /* 0x16 */
     u16 nExtra;                  /* 0x18 */
 };
 
 struct Packet {
-    struct Vec3 vec;             /* 0x00 */
+    VecFx32 vec;             /* 0x00 */
     u16 nSent;                   /* 0x0c */
     u16 nAcked;                  /* 0x0e */
     unsigned nKind : 2;          /* 0x10 bits 0-1 */

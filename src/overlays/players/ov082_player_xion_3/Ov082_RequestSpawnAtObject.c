@@ -23,17 +23,18 @@
  * Also load-bearing: the three tail stores must be written in the ROM's order
  * one(0x20) -> flag25(0x25) -> b10(0x10); the `t = reqB.flag25` read only has to precede its
  * write, so the b10 store goes last. */
+
+#include "nitro/fx.h"
+
 extern int VEC_Mag();
 extern int VEC_Normalize();
 extern int Ov022_ScaleRowValues();
 extern int Ov022_RunReachHandlers();
 extern int Ov022_PlayEntityVoice();
 
-typedef struct { int x, y, z; } Vec3;
-
 typedef struct {
-    Vec3 a;       /* 0x00 */
-    Vec3 b;       /* 0x0c */
+    VecFx32 a;       /* 0x00 */
+    VecFx32 b;       /* 0x0c */
     int flags;    /* 0x18 */
     int k;        /* 0x1c */
     void *ptr;    /* 0x20 */
@@ -47,7 +48,7 @@ typedef struct {
     int f0c;         /* 0x0c */
     char b10;        /* 0x10 */
     char pad11[3];   /* 0x11 */
-    Vec3 v;          /* 0x14 */
+    VecFx32 v;          /* 0x14 */
     int one;         /* 0x20 */
     char pad24;      /* 0x24 */
     unsigned char flag25; /* 0x25 */
@@ -56,7 +57,7 @@ typedef struct {
 
 typedef struct {
     char pad[0xa4];
-    Vec3 pos;        /* 0xa4 */
+    VecFx32 pos;        /* 0xa4 */
     char pad2[0xac]; /* 0xb0 .. 0x15b */
     unsigned char b15c; /* 0x15c */
     char pad3[3];
@@ -89,7 +90,7 @@ void Ov082_RequestSpawnAtObject(int *base, Obj *obj, int unused, char *r3p)
     reqB.f0c = flag;
     reqB.f08 = 0x625;
     if (VEC_Mag(r3p) == 0) {
-        reqB.v = *(Vec3 *)r3p;
+        reqB.v = *(VecFx32 *)r3p;
     } else {
         VEC_Normalize(r3p, &reqB.v);
     }

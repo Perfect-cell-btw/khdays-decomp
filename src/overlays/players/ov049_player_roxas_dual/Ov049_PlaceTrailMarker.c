@@ -18,19 +18,21 @@
  *
  * Case order from tools/switchorder.py: {2,3,4,5} share one body, {0,1} share the
  * default's -- only the first group is written. */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct b1 { unsigned char b0 : 1; };
 
-extern void func_ov022_020ad44c(struct vec3 *out, int self);
+extern void func_ov022_020ad44c(VecFx32 *out, int self);
 extern void MTX_RotY33_(int *m, int s, int c);
-extern void MTX_MultVec33(struct vec3 *v, int *m, struct vec3 *out);
-extern void VEC_Add(struct vec3 *a, struct vec3 *b, struct vec3 *out);
+extern void MTX_MultVec33(VecFx32 *v, int *m, VecFx32 *out);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern void Scene_DrawNode(void *p);
 extern short data_0203d210[];
 
 void Ov049_PlaceTrailMarker(int self, signed char *msg) {
-    struct vec3 out;
-    struct vec3 v;
+    VecFx32 out;
+    VecFx32 v;
     int m[9];
     unsigned short biased;
     unsigned int idx;
@@ -56,7 +58,7 @@ void Ov049_PlaceTrailMarker(int self, signed char *msg) {
         }
         *(unsigned short *)(msg + 0x80) = biased + 0x8000;
         *(unsigned short *)(msg + 4) |= 0x20;
-        *(struct vec3 *)(msg + 0xa8) = out;
+        *(VecFx32 *)(msg + 0xa8) = out;
         Scene_DrawNode(msg + 4);
         break;
     }

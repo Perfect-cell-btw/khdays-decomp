@@ -1,7 +1,9 @@
 /* Guard end tick of the ov259 actor: the aim refreshes (020cdcac) and the +0x68 timer accumulates
  * the frame rate. Grounded (+0x17a bit 0) past 0xff0 a pending move (+0xad) is taken; otherwise
  * a d100 roll of 50 or more (or a +0x4c request) clears +0x84 and the next move is 2. */
+
 #include "nitro/types.h"
+
 struct Flag17a { u8 b0 : 1; };
 
 extern void Ov259_RefreshAim(int *node);

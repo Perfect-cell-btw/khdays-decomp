@@ -5,7 +5,9 @@
  * of the +0x3b4 item's +8 low byte, becomes the +0x1c6 kind and installs the matching slot 1
  * node (0: 020cf04c, 1: 020cf244, 2: 020cf35c, 4: 020cf5f4, 5: 020cfbc4, 6: 020d09a8,
  * 3: 020d0bbc, 7: 020d0cac); the request is then cleared (-1). */
+
 #include "nitro/types.h"
+
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void Ov022_ToggleBit13ByMode(int target, int a);

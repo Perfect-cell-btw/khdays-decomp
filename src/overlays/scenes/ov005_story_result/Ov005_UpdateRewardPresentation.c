@@ -2,6 +2,7 @@
  * lands (with a sound) and redraws the list. */
 
 #include "nitro/types.h"
+
 typedef struct Tween {
     int mode,duration,from,to;
     long long startTick;

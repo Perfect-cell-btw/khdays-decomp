@@ -14,11 +14,7 @@
  * declared `long long` and the remainder taken as the HIGH word. `(int)(q >> 32)` is the modulo;
  * `(int)q` would be the quotient. (The tree already had this: see Ov003_DrawNumber.) */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int x;

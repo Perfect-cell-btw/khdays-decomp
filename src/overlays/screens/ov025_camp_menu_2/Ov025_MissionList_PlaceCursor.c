@@ -3,6 +3,7 @@
  * scroll +0xc) << 12, one row higher while a page transition is active (02084e38); with no
  * selection (+0 < 0) the cursor takes the off-screen offset data_ov025_020b4578
  * (Ov025_SetEntryOffset 02088564). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionList {

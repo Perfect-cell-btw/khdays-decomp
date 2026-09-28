@@ -6,18 +6,14 @@
  * the prompt line (slot 1, source column 15) at row 16 when the retry prompt (+0x5e0) is on,
  * which pushes the quit line down to row 18 -- a client without the prompt lifts it to row 15;
  * the quit line (slot 2, source row 3) only below room 10000. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

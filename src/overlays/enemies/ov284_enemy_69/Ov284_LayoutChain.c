@@ -6,12 +6,13 @@
  * model on channels 0, 2, 1 and 4 (0202accc against its +0xe0 block, 01fff774) and hands the
  * node to 020cd55c. Codegen: the segment counter is initialised at its declaration, before the
  * actor local (the gather loop then counts in r3 and keeps the actor in r4). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern long long func_02020400(int num, int den);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void BindAnimTrack(int model, int channel, void *block, int a);
 extern void Anim_SetFrameWrapped(int model, int channel, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -25,10 +26,10 @@ void Ov284_LayoutChain(int *node)
     int item = state[1];
     int count = *(int *)(item + 0x8c);
     int step = count / 4;
-    Vec3 a;
-    Vec3 b;
+    VecFx32 a;
+    VecFx32 b;
     int parts[5];
-    Vec3 d;
+    VecFx32 d;
     int idx;
     int frac;
     char *seg;
@@ -41,13 +42,13 @@ void Ov284_LayoutChain(int *node)
         seg = *(char **)(item + 0x90) + i * 0x38;
         idx = (int)func_02020400(i, step);
         frac = (int)func_02020400((int)(func_02020400(i, step) >> 32) << 12, step);
-        a = *(Vec3 *)(parts[idx] + 0x14);
-        b = *(Vec3 *)(parts[idx + 1] + 0x14);
+        a = *(VecFx32 *)(parts[idx] + 0x14);
+        b = *(VecFx32 *)(parts[idx + 1] + 0x14);
         VEC_Subtract(&b, &a, &d);
         ScaleVec3Fx12(frac, &d, &d);
         VEC_Add(&a, &d, &d);
         d.y += 0x800;
-        *(Vec3 *)(seg + 0x2c) = d;
+        *(VecFx32 *)(seg + 0x2c) = d;
         if (idx + 1 == 4) {
             *(int *)seg = (frac << 1) + 0x1000;
         } else {

@@ -5,24 +5,25 @@
  * the +0x48 sense x 0x40. A 1/257 roll requests sub-state 6; otherwise beyond 4.0 a second
  * 1/257 roll (or an expired +0x4c timer) requests sub-state 4, and inside 4.0 an expired timer
  * requests 0xa (beyond 0.5) or 9. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);
 extern int FX_Sqrt(int x);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 void Ov277_CircleDecision(int node)
 {
     int *state = *(int **)(node + 4);
     int dist;
-    Vec3 d;
+    VecFx32 d;
     int obj;
     int target;
 
@@ -36,12 +37,12 @@ void Ov277_CircleDecision(int node)
     if (dist > *(int *)(*state + 0x2d8)) {
         return;
     }
-    VEC_Subtract((Vec3 *)(state[4] + 0x190), (Vec3 *)state[1], &d);
+    VEC_Subtract((VecFx32 *)(state[4] + 0x190), (VecFx32 *)state[1], &d);
     state[6] = func_020050b4(d.x, d.z);
     d.y = 0;
     VEC_Normalize(&d, &d);
-    VEC_CrossProduct(&d, &data_02042264, (Vec3 *)(state + 0x14));
-    ScaleVec3Fx12(*(signed char *)((char *)state + 0x48) << 6, (Vec3 *)(state + 0x14), (Vec3 *)(state + 0x14));
+    VEC_CrossProduct(&d, &data_02042264, (VecFx32 *)(state + 0x14));
+    ScaleVec3Fx12(*(signed char *)((char *)state + 0x48) << 6, (VecFx32 *)(state + 0x14), (VecFx32 *)(state + 0x14));
     if (RandNextScaled(0x101) + (dist - dist) == 0) {
         *(unsigned char *)(*state + 0x1c7) = 6;
         SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);

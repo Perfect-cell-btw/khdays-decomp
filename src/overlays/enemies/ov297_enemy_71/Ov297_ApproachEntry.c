@@ -1,11 +1,12 @@
 /* Approach entry of the ov298 enemy: sets the +0x50 speed to 0x900 and, with a +0xc target,
  * aims the +0x2c/+0x30 yaws at it (the facing of the +0x2c yaw is dotted against that direction
  * and discarded); one of animations 5/6 plays at random and the tick hands off to d5034. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern int VEC_DotProduct(Vec3 *a, Vec3 *b);
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern int func_020050b4(int x, int z);
 extern int RandNextScaled(int range);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
@@ -18,8 +19,8 @@ extern short data_0203d210[];
 void Ov297_ApproachEntry(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 facing;
-    Vec3 dir;
+    VecFx32 facing;
+    VecFx32 dir;
     unsigned int idx;
     int actor;
 

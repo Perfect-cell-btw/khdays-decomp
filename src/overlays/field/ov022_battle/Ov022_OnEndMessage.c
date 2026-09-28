@@ -21,6 +21,7 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define CTX_IN_ACTOR 0x2288
 #define FLAG_CLASS0 0x4
@@ -29,12 +30,6 @@
 #define GUARD_KIND 7
 #define SLOT_DONE 3
 #define ANIM_MODE 2
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 /* Ov022EndMessage -- the four bytes Ov022_EndPartRun posts */
 struct EndMessage {
@@ -50,7 +45,7 @@ struct EndMessage {
 /* Ov022AnimBlock -- the same block sits in a slot and in each of its parts */
 struct AnimBlock {
     u8 pad00[0xa4];
-    struct VecFx32 vecAt;        /* 0x00a4 */
+    VecFx32 vecAt;        /* 0x00a4 */
     int aEntryFlags[3];          /* 0x00b0 */
 };
 
@@ -99,8 +94,8 @@ struct Actor {
 extern struct Actor *GetEntryField20ByIndex(int nOwner);
 extern int Session_IsReady(void);
 extern void func_ov022_0208b6c0(struct ReactionCtx *pCtx, struct SlotPart *pPart,
-                                struct VecFx32 *pAt, int nReaction);
-extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, struct VecFx32 *pAim,
+                                VecFx32 *pAt, int nReaction);
+extern void func_ov022_0208acdc(struct ReactionCtx *pCtx, VecFx32 *pAim,
                                 int nReaction);
 extern void Ov022_BindBlockAnimations(struct ReactionCtx *pCtx, u8 *pTrack,
                                 struct AnimBlock *pAnim, int nMode);

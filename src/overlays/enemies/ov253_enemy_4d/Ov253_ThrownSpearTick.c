@@ -7,24 +7,26 @@
  * solid (+0x60 bit 0), not ghosted (bit 7) and not disabled (+0x1ac bit 2), with the same result.
  * Past 45.0, or once blocked/grounded (+0x17a bits 0, 1, 3), the owner's reaction mode 7 fires and
  * pose 2 is requested. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; } Ray;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; } Ray;
 typedef struct { u16 lo : 8; u16 hi : 8; } Hw60;
 struct Bits17a { unsigned char b0 : 1, b1 : 1, b2 : 1, b3 : 1; };
 
-extern const Vec3 data_02041dc8;
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern const VecFx32 data_02041dc8;
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern int Ov253_IdIsFree(int owner, int hit);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
-extern int Ov107_HitShape_IntersectSegment(int shape, Ray *ray, Vec3 *out);
+extern int Ov107_HitShape_IntersectSegment(int shape, Ray *ray, VecFx32 *out);
 
 static inline int FX_Mul(int a, int b)
 {
@@ -40,24 +42,24 @@ void Ov253_ThrownSpearTick(int *node)
     int n;
 
     state[9] += FX_Mul(state[8], *(int *)(node[0] + 0x2c) * 30);
-    ScaleVec3Fx12(state[8], (Vec3 *)(state + 5), (Vec3 *)(state + 2));
+    ScaleVec3Fx12(state[8], (VecFx32 *)(state + 5), (VecFx32 *)(state + 2));
     if (state[0x11] == 0) {
-        seg.p0 = *(Vec3 *)state[1];
-        seg.nLength = VEC_Normalize((Vec3 *)(state + 2), &seg.dir);
+        seg.p0 = *(VecFx32 *)state[1];
+        seg.nLength = VEC_Normalize((VecFx32 *)(state + 2), &seg.dir);
         seg.nRadius = 0x200;
         n = Ov107_CollectSegmentOverlaps(*(int *)(*state + 0x388), &seg, hits);
         for (i = 0; i < n; i++) {
-            Vec3 push;
+            VecFx32 push;
 
             if (Ov253_IdIsFree(*(int *)(*state + 0x388), hits[i]) == 0) {
                 continue;
             }
-            VEC_Normalize((Vec3 *)(state + 2), &push);
+            VEC_Normalize((VecFx32 *)(state + 2), &push);
             ScaleVec3Fx12(0x100, &push, &push);
             if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x388), 2, &push, 0) == 0) {
                 continue;
             }
-            *(Vec3 *)(state + 2) = data_02041dc8;
+            *(VecFx32 *)(state + 2) = data_02041dc8;
             Ov107_BuildAndSendUpdate(*(int *)(state[0] + 0x388), 0x16b, 6, (void *)state[1]);
             *(u8 *)(*state + 0x1c7) = 2;
             SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
@@ -72,8 +74,8 @@ void Ov253_ThrownSpearTick(int *node)
         int *sub;
 
         grid = *(int *)(*state + 4);
-        ray.p0 = *(Vec3 *)state[1];
-        ray.nLength = VEC_Normalize((Vec3 *)(state + 2), &ray.dir);
+        ray.p0 = *(VecFx32 *)state[1];
+        ray.nLength = VEC_Normalize((VecFx32 *)(state + 2), &ray.dir);
         for (link = List_First((void *)(grid + 0x80)); link != 0; link = List_Next((void *)(grid + 0x80))) {
             obj = *link;
             if ((((Hw60 *)(obj + 0x60))->lo & 1) == 0 || (((Hw60 *)(obj + 0x60))->lo & 0x80) != 0
@@ -82,7 +84,7 @@ void Ov253_ThrownSpearTick(int *node)
             }
             for (sub = List_First((void *)(obj + 0x144)); sub != 0; sub = List_Next((void *)(obj + 0x144))) {
                 if (Ov107_HitShape_IntersectSegment(*sub, &ray, 0) != 0) {
-                    *(Vec3 *)(state + 2) = data_02041dc8;
+                    *(VecFx32 *)(state + 2) = data_02041dc8;
                     Ov107_BuildAndSendUpdate(*(int *)(state[0] + 0x388), 0x16b, 6, (void *)state[1]);
                     *(u8 *)(*state + 0x1c7) = 2;
                     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);

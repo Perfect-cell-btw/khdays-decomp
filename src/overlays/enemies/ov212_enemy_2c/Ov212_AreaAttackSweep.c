@@ -11,22 +11,24 @@
  * prototype (the `& 0xff` is hoisted to a stack slot); count is declared before spawned, i starts
  * at 0 before the count test and the flag is set before spawned.
  */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int  Ov107_CollectSphereOverlaps(int obj, int kind, int *list);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *a, void *b);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
 extern int  Ov107_InvokeHitCallback(int node, int a, int b, unsigned char mode, void *pt, int z);
 extern void VEC_Add(void *a, void *b, void *c);
-extern void func_ov107_020c0b90(int a, int b, struct vec v, int c);
+extern void func_ov107_020c0b90(int a, int b, VecFx32 v, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern int  data_02042258;
 
 void Ov212_AreaAttackSweep(int *self, int mode, int *targetPos) {
     int nodes[4];
-    struct vec dir;
-    struct vec unit;
-    struct vec fallback;
+    VecFx32 dir;
+    VecFx32 unit;
+    VecFx32 fallback;
     int count;
     int spawned = 0;
     int i;
@@ -34,7 +36,7 @@ void Ov212_AreaAttackSweep(int *self, int mode, int *targetPos) {
     count = Ov107_CollectSphereOverlaps(*self, (int)targetPos, nodes);
     i = 0;
     if (count > 0) {
-        fallback = *(struct vec *)&data_02042258;
+        fallback = *(VecFx32 *)&data_02042258;
         do {
             int bit = (1 << *(unsigned short *)(nodes[i] + 2)) & 0xff;
             if ((*(unsigned char *)((int)self + 0x5b) & bit) == 0) {

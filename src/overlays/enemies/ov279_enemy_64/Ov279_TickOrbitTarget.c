@@ -6,11 +6,8 @@
  *
  * FX_Mul must be the SDK-style static inline, not a macro: the macro puts the radius first in the
  * smull and every register after it rotates. */
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+
+#include "nitro/fx.h"
 
 extern int  Ov107_FindNearestObject(int actor, int n);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);

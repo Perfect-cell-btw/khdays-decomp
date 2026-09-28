@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov227_EnemyInit (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov227_EnemyInit (not yet decompiled) */
 const u8 data_ov227_020d4b34[32] = {
     28, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 32, 0, 0, 0,
     33, 0, 0, 0, 255, 255, 255, 255, 36, 0, 0, 0, 35, 0, 0, 0,

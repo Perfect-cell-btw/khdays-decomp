@@ -7,13 +7,14 @@
  * +0x3c8 mode 0xa fires there. The +0x44 timer accumulates the frame rate; past 0.25 the hook
  * receives note 4 of data_ov235_020d24d0, animation 0x21 plays and the tick hands over to
  * Ov235_HoverTick. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo; u16 hi; } Cmd4;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -22,13 +23,13 @@ typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern int Segment_ClosestPoint(void *point, Segment *seg, fx64 *outDist);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -51,16 +52,16 @@ void Ov235_DashTick(int *node)
     int i;
 
     state[0x10] = *(int *)(node[0] + 0x2c) * 30 / 4;
-    ScaleVec3Fx12(0x2000, (Vec3 *)(state + 0x1a), (Vec3 *)(state + 4));
-    seg.p0 = *(Vec3 *)(*(int *)(*state + 0x3ac) + 0x14);
-    seg.nLength = VEC_Normalize((Vec3 *)(state + 4), &seg.dir);
+    ScaleVec3Fx12(0x2000, (VecFx32 *)(state + 0x1a), (VecFx32 *)(state + 4));
+    seg.p0 = *(VecFx32 *)(*(int *)(*state + 0x3ac) + 0x14);
+    seg.nLength = VEC_Normalize((VecFx32 *)(state + 4), &seg.dir);
     seg.nRadius = 0xc00;
     n = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
     i = 0;
     if (n > 0) {
         do {
-            Vec3 push = {0, 0, 0};
-            Vec3 proj;
+            VecFx32 push = {0, 0, 0};
+            VecFx32 proj;
             Cmd14 msg;
 
             obj = hits[i];

@@ -1,6 +1,7 @@
 /* Take-off enter tick of an ov257 state: animation 0x1c plays, the +0x3d0 part plays motion 0x19,
  * bit 6 of the owner's +0x60 high byte is raised, the +0x54 timer and +0x76 clear and the tick
  * hands over to Ov257_JumpStartTick. */
+
 #include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);

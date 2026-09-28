@@ -16,15 +16,11 @@
  * two, and state three notifies the point first when the answer is one.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022SlotTail */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct SlotTail {
     u8 nState;                       /* 0x00 */
     u8 pad01;
@@ -35,7 +31,7 @@ struct SlotTail {
     int nField2c;                    /* 0x2c */
     int nField30;                    /* 0x30 */
     int nField34;                    /* 0x34 */
-    struct VecFx32 vecField38;       /* 0x38 */
+    VecFx32 vecField38;       /* 0x38 */
     u8 nLevel;                       /* 0x44 */
     u8 pad45[3];
     int nField48;                    /* 0x48 */
@@ -45,7 +41,7 @@ struct SlotTail {
 /* Ov022SlotPart */
 struct SlotPart {
     u8 pad000[0xc0];
-    struct VecFx32 vecAt;            /* 0x0c0 */
+    VecFx32 vecAt;            /* 0x0c0 */
     u8 pad0cc[0x7c];
     struct SlotTail *pOwner;         /* 0x148 */
     u8 pad14c;
@@ -64,20 +60,20 @@ struct ReactionCtx {
 
 /* Ov022MoveProbe: what the cast is handed. */
 struct MoveProbe {
-    struct VecFx32 vecPos;           /* 0x00 */
-    struct VecFx32 vecDir;           /* 0x0c */
+    VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecDir;           /* 0x0c */
     int nRadius;                     /* 0x18 */
     int nDrop;                       /* 0x1c */
     int nSlotIndex;                  /* 0x20 */
-    struct VecFx32 vecHit;           /* 0x24 */
+    VecFx32 vecHit;           /* 0x24 */
 };
 
 /* Ov022ActionQuery */
 struct ActionQuery {
-    struct VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecPos;           /* 0x00 */
     int nRadius;                     /* 0x0c */
     unsigned int nGroup;             /* 0x10 */
-    struct VecFx32 vecDir;           /* 0x14 */
+    VecFx32 vecDir;           /* 0x14 */
     int nConeLimit;                  /* 0x20 */
     short *pHitIds;                  /* 0x24 */
     int nField28;                    /* 0x28 */
@@ -91,7 +87,7 @@ struct ActionParams {
     int nField0c;                    /* 0x0c */
     u8 nLevel;                       /* 0x10 */
     u8 pad11[3];
-    struct VecFx32 vecField14;       /* 0x14 */
+    VecFx32 vecField14;       /* 0x14 */
     int nField20;                    /* 0x20 */
     u8 nPhase;                       /* 0x24 */
     u8 bFlagA : 1;                   /* 0x25 */
@@ -118,13 +114,13 @@ extern int func_ov022_0208ac10(struct ReactionCtx *pCtx,
                                struct ActionParams *pParams);
 extern s16 FX_Atan2(int x, int z);
 extern void Ov022_MarshalNetworkRecord(void *pActor, int nKind,
-                                struct VecFx32 *pAt, int nScale,
+                                VecFx32 *pAt, int nScale,
                                 unsigned int nAngle, unsigned int bEnd);
 extern void func_ov022_0208acdc(struct ReactionCtx *pCtx,
-                                struct VecFx32 *pAt, int nKind);
+                                VecFx32 *pAt, int nKind);
 
 void Ov022_MovePartTo(struct ReactionCtx *pCtx, struct SlotPart *pPart,
-                         struct VecFx32 *pAt, struct VecFx32 *pDir)
+                         VecFx32 *pAt, VecFx32 *pDir)
 {
     struct MoveProbe probe;
     struct ActionQuery query;

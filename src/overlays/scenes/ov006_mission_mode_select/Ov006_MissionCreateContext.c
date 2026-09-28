@@ -2,6 +2,7 @@
  * allocates its buffers, loads the wireless overlay and waits to start. */
 
 #include "nitro/types.h"
+
 typedef void (*MissionCallback)(void);
 
 typedef struct {

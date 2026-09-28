@@ -3,11 +3,13 @@
  * 0xa000 as the target, the enemy's owner id (+0x66 of the shared object), a 0x1000 range and the
  * part's +0x110 anchor; the hit parameters get flags 0x625 and an extent of {0xa00, 0x66, 0xa00}
  * with both busy bits cleared, and the spin comes from the object's 0x2400 pair. */
+
 #include "nitro/types.h"
-struct Vec3 { int x, y, z; };
+#include "nitro/fx.h"
+
 struct Launch {
-    struct Vec3 vFrom;
-    struct Vec3 vTo;
+    VecFx32 vFrom;
+    VecFx32 vTo;
     int nOwner;
     int nRange;
     void *pAnchor;
@@ -20,7 +22,7 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;
@@ -28,7 +30,7 @@ struct Params {
 };
 extern int Anim_GetLengthQ12(unsigned short *p, unsigned int idx);                  /* Anim_GetLengthQ12 */
 extern int Anim_GetFrame(unsigned short *p, unsigned int idx);                  /* Anim_GetFrame */
-extern void VEC_Add(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov022_ScaleRowValues(char *obj, int spin, void *a, void *b);
 extern void Ov022_RunReachHandlers(char *obj, struct Launch *launch, struct Params *params);
 extern char *data_ov046_020b4b40;
@@ -36,7 +38,7 @@ void Ov046_LaunchPartProjectile(char *part)
 {
     struct Launch launch;
     struct Params prm;
-    struct Vec3 vLift;
+    VecFx32 vLift;
     char *obj = data_ov046_020b4b40;
     int animLen;
     int frame;
@@ -49,7 +51,7 @@ void Ov046_LaunchPartProjectile(char *part)
     launch.pAnchor = part + 0x110;
     launch.nOwner = *(short *)(obj + 0x66);
     launch.nFlags = 0;
-    launch.vFrom = *(struct Vec3 *)(part + 0xa8);
+    launch.vFrom = *(VecFx32 *)(part + 0xa8);
     vLift.x = 0;
     vLift.y = 0xa000;
     vLift.z = 0;

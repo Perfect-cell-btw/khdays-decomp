@@ -3,12 +3,7 @@
  * outside the invulnerable action, and plays the reaction. */
 
 #include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 struct HitState {
     char *pTarget;

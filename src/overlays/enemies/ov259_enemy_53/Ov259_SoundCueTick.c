@@ -1,6 +1,7 @@
 /* Sound-cue tick of the ov259 enemy: the +0x70 clock runs up at the frame rate (capped at 39.84) and,
  * in phases 11 (six cues), 16 (six) and 17 (eleven) of +0xae, each +0xa8 step plays its sound 0x172
  * variants (020cd3c4) once the clock passes the step's time, advancing +0xa8. */
+
 #include "nitro/types.h"
 
 extern void Ov259_PlaySound(int actor, int id, u16 mode, int at);

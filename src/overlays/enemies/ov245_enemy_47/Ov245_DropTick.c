@@ -5,20 +5,22 @@
  * item's +0x14 anchor along data_0204227c, both shifted -/+ (2.0 / 0.4375) in x for the +0x40
  * side 0 / 2; the drop count falls, the timer restarts and the side cycles through 0..2.
  * With no drops left the node moves to 020cdbfc. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Ov245Actor { char pad[0x3fc]; int slots[9]; };
 
 extern int Ov245_AnimGate(int actor);
 extern int FX_Div(int num, int den);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov245_HitReact2(int self, Vec3 *at, Vec3 *dir, const Vec3 *base);
+extern void Ov245_HitReact2(int self, VecFx32 *at, VecFx32 *dir, const VecFx32 *base);
 extern void Ov245_WaitPartsSettled(void);
-extern const Vec3 data_0204227c;
+extern const VecFx32 data_0204227c;
 
 void Ov245_DropTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 at;
-    Vec3 dir;
+    VecFx32 at;
+    VecFx32 dir;
     int rest;
     int i;
 
@@ -44,7 +46,7 @@ void Ov245_DropTick(int *node) {
     for (i = 0; i < 9; i++) {
         if (*(int *)(((struct Ov245Actor *)*state)->slots[i] + 0x38c) == 0) {
             dir = data_0204227c;
-            at = *(Vec3 *)(*(int *)(*state + 0x44c) + 0x14);
+            at = *(VecFx32 *)(*(int *)(*state + 0x44c) + 0x14);
             switch (*((unsigned char *)state + 0x40)) {
             case 0:
                 at.x -= 0x2000;

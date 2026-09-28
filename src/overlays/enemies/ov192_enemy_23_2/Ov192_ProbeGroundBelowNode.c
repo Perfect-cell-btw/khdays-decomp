@@ -3,22 +3,23 @@
  * down from it through the actor's +0x7c collision world and, on a hit, moves the point onto
  * the surface (the hit's +0xc fraction of the ray, plus 0x200); the result is pushed to the
  * render hook (cmd 2) and effect 0x133 (7) is spawned at the node position. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void *Collision_CastRayEx(void *world, Vec3 *from, Vec3 *ray, void *arg);   /* Collision_CastRayEx */
-extern void ScaleVec3Fixed27(int scale, Vec3 *in, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void func_ov107_020c0b90(int obj, int cmd, Vec3 v, int flag);
+#include "nitro/fx.h"
+
+extern void *Collision_CastRayEx(void *world, VecFx32 *from, VecFx32 *ray, void *arg);   /* Collision_CastRayEx */
+extern void ScaleVec3Fixed27(int scale, VecFx32 *in, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int obj, int effect, int kind, void *pos);
 
-void Ov192_ProbeGroundBelowNode(int *node, Vec3 *out)
+void Ov192_ProbeGroundBelowNode(int *node, VecFx32 *out)
 {
-    Vec3 at;
-    Vec3 ray;
+    VecFx32 at;
+    VecFx32 ray;
     int actor = *(int *)(*node + 4);
     void *hit;
 
-    at = *(Vec3 *)(*(int *)(*node + 0x398) + 0x14);
+    at = *(VecFx32 *)(*(int *)(*node + 0x398) + 0x14);
     at.y += 0x400;
     *out = at;
     ray.x = 0;

@@ -8,6 +8,7 @@
  * 0208843c); the second slot pair of the three digits, the count and the slash is released
  * (Ov025_ReleaseTwoSlots 020888b0) and cell 0 of the tag tracker (+0x44) invoked
  * (Ov025_TagTracker_InvokeCallback 02089544). */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ReportsEntry {

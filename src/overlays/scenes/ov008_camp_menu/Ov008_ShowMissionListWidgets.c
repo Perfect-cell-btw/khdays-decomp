@@ -6,6 +6,7 @@
  * widget 2's sub-item set pushed off and 0x16's on, and the extras 0x33 and
  * 0x35..0x38 hidden.
  */
+
 #include "nitro/types.h"
 
 #define WIDGET_LIST      2

@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Spawns the ov045 enemy's next effect (x4: ov045/064/083/100) when the rig's countdown at (020b9364): OffsetTable data_ov083_020b998c; */
+
 #include "nitro/types.h"
 
-/* read by Spawns the ov045 enemy's next effect (x4: ov045/064/083/100) when the rig's countdown at (020b9364): OffsetTable data_ov083_020b998c; */
 const u8 data_ov083_020b998c[192] = {
     0, 0, 0, 0, 0, 0, 0, 0, 205, 4, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 16, 0, 0, 51, 251, 255, 255, 0, 0, 0, 0,

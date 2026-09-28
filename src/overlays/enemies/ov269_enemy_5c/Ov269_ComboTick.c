@@ -15,10 +15,11 @@
  * Codegen: the position packs go through Fx32 wrapper copies (ov122_020d12f4 idiom); the hit
  * position is a stack copy with y raised in place; the point counter is a signed char and the
  * ca918 call's trailing zero is a local set before each hit loop (it lives in fp). */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -31,19 +32,19 @@ struct Ov269Owner {
 };
 
 extern void Ov107_BuildAndSendUpdate(struct Ov269Owner *owner, int a, int id, void *at);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
-extern void VEC_Add(const void *a, const void *b, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
+extern void VEC_Add(const void *a, const void *b, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(struct Ov269Owner *owner, Sphere *sphere, int *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov269Owner *a, struct Ov269Owner *b, int kind, Vec3 *push, int z);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov269Owner *a, struct Ov269Owner *b, int kind, VecFx32 *push, int z);
 extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct Msg20 data_ov269_020d4a88;
-extern const Vec3 data_ov269_020d4a44;
+extern const VecFx32 data_ov269_020d4a44;
 extern const struct Msg14 data_ov269_020d4a78;
 extern const short data_0203d210[];
 
@@ -65,16 +66,16 @@ void Ov269_ComboTick(int *node)
 {
     int *state = (int *)node[1];
     struct Ov269Owner *owner;
-    Vec3 d;
+    VecFx32 d;
     struct Msg20 msg20;
     int hits[4];
     Sphere sphere;
     Mtx33 mtx;
-    Vec3 off;
-    Vec3 push;
-    Vec3 raw;
+    VecFx32 off;
+    VecFx32 push;
+    VecFx32 raw;
     struct Msg14 msg;
-    Vec3 offBase;
+    VecFx32 offBase;
     struct Msg14 tmpl;
     FxVec vStart;
     FxVec vContact;
@@ -82,7 +83,7 @@ void Ov269_ComboTick(int *node)
     int nHits;
     int i;
     unsigned int idx;
-    Vec3 *pPos;
+    VecFx32 *pPos;
     int zero;
 
     if (*(u8 *)((char *)state + 0x53) == 0) {
@@ -100,7 +101,7 @@ void Ov269_ComboTick(int *node)
         msg20 = data_ov269_020d4a88;
         VEC_Subtract((char *)*(int *)(*state + 0x398) + 0x14, (void *)state[0xf], &d);
         msg20.w[4] = func_020050b4(d.x, d.z);
-        pPos = (Vec3 *)state[0xf];
+        pPos = (VecFx32 *)state[0xf];
         vStart.x = *(Fx32 *)&pPos->x;
         PACK3(&msg20, 5, vStart.x.value);
         vStart.y = *(Fx32 *)&pPos->y;
@@ -118,7 +119,7 @@ void Ov269_ComboTick(int *node)
         nPoint = 0;
         tmpl = data_ov269_020d4a78;
         do {
-            sphere.pos = *(Vec3 *)((char *)*(int *)(*state + 0x39c) + 0x14);
+            sphere.pos = *(VecFx32 *)((char *)*(int *)(*state + 0x39c) + 0x14);
             sphere.radius = 0x1300;
             if (nPoint == 1) {
                 off = offBase;
@@ -140,7 +141,7 @@ void Ov269_ComboTick(int *node)
                         ScaleVec3Fx12(0x300, &push, &push);
                         if (Ov107_InvokeHitCallback(hits[i], (struct Ov269Owner *)*state, (struct Ov269Owner *)*state, 2, &push, zero) != 0) {
                             msg = tmpl;
-                            raw = *(Vec3 *)(hits[i] + 0x74);
+                            raw = *(VecFx32 *)(hits[i] + 0x74);
                             raw.y += 0x800;
                             vContact.x = *(Fx32 *)&raw.x;
                             PACK3(&msg, 5, vContact.x.value);

@@ -1,5 +1,7 @@
 /* Assign background priorities on the main and sub display engines. */
+
 #include "nitro/types.h"
+
 #define BG_CONTROL(address) (*(volatile u16 *)(address))
 void Ov005_ConfigureBackgroundPriorities(void) {
     BG_CONTROL(0x0400100a)=(BG_CONTROL(0x0400100a)&~3)|3;

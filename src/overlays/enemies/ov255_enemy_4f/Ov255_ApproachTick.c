@@ -3,20 +3,21 @@
  * resolved (Ov255_SteerToTarget) into the +0x10 step and, once the +0xc idle byte clears, the
  * next sub-state is 0xc when the +0x54 cooldown has run out and the gap between the two collision
  * radii exceeds 4.0, else 2. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void Ov255_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void Ov255_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov255_ApproachTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
-    Vec3 d;
+    VecFx32 dir;
+    VecFx32 d;
     int speed;
 
     state[0x10] = *(int *)(node[0] + 0x2c) * 30 / 10;
@@ -27,7 +28,7 @@ void Ov255_ApproachTick(int *node)
         return;
     }
     Ov255_SteerToTarget(state, state[0x17], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     if (*(unsigned char *)state[3] != 0) {
         return;
     }

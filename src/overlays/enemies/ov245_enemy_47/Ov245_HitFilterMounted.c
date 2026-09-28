@@ -6,7 +6,9 @@
  * the actor in sub-state 3, a 0x8000-flagged hit in 5. A positive +0x10 halfword then fires
  * reaction 0x11a at the +0xc anchor (unless the hit is the 0x88-flagged 0x80-kind one) with
  * the kind 2/3 (0x22-flagged) or 0/1 picked by the +0x4a parity bit, which flips. Returns 1. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Hit24 { unsigned int lo : 16, hi : 16; };
 struct Bit0 { unsigned char b0 : 1; };
 struct HitWord { unsigned int lo : 16, hi : 16; };
@@ -24,7 +26,7 @@ int Ov245_HitFilterMounted(int self, int source, unsigned int *hit) {
         return 0;
     }
     state[0x11] = source;
-    *(Vec3 *)(state + 0xd) = *(Vec3 *)(hit + 1);
+    *(VecFx32 *)(state + 0xd) = *(VecFx32 *)(hit + 1);
     actor = *state;
     kind = *(signed char *)(actor + 0x100 + 0xc6);
     if (kind == 7 && ((unsigned short)*hit & 1) != 0 && ((unsigned short)*hit & 0x10) != 0) {

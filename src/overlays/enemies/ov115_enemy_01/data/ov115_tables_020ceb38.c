@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov115_EnemyConstruct (020cc020): void data_ov115_020ceb38(void); */
+
 #include "nitro/types.h"
 
-/* read by Ov115_EnemyConstruct (020cc020): void data_ov115_020ceb38(void); */
 const int data_ov115_020ceb38[7] = {
     1, 2, 4, 5, 6, 7, 3,
 };

@@ -13,33 +13,28 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
-extern void VEC_Subtract(const struct VecFx32 *pA, const struct VecFx32 *pB,
-                         struct VecFx32 *pOut);
-extern int VEC_DotProduct(const struct VecFx32 *pA, const struct VecFx32 *pB);
-extern int VEC_Mag(const struct VecFx32 *pA);
-extern void VEC_MultAdd(int nFactor, const struct VecFx32 *pStep,
-                        const struct VecFx32 *pFrom, struct VecFx32 *pOut);
+extern void VEC_Subtract(const VecFx32 *pA, const VecFx32 *pB,
+                         VecFx32 *pOut);
+extern int VEC_DotProduct(const VecFx32 *pA, const VecFx32 *pB);
+extern int VEC_Mag(const VecFx32 *pA);
+extern void VEC_MultAdd(int nFactor, const VecFx32 *pStep,
+                        const VecFx32 *pFrom, VecFx32 *pOut);
 /* the tree's name for the fixed-point divide; it takes the numerator and the
  * denominator, not a single value to invert */
 extern int FX_Div(int nNum, int nDen);
 /* VEC_Normalize */
-extern int VEC_Normalize(const struct VecFx32 *pSrc, struct VecFx32 *pDst);
+extern int VEC_Normalize(const VecFx32 *pSrc, VecFx32 *pDst);
 
-int Ov022_ClosestPointOnSegment(struct VecFx32 *pOutFoot, int *pOutDist,
-                        struct VecFx32 *pOutDir, const struct VecFx32 *pPoint,
-                        const struct VecFx32 *pFrom, const struct VecFx32 *pTo,
+int Ov022_ClosestPointOnSegment(VecFx32 *pOutFoot, int *pOutDist,
+                        VecFx32 *pOutDir, const VecFx32 *pPoint,
+                        const VecFx32 *pFrom, const VecFx32 *pTo,
                         int bFromPoint)
 {
-    struct VecFx32 vecSeg;
-    struct VecFx32 vecFoot;
-    struct VecFx32 vecDelta;
+    VecFx32 vecSeg;
+    VecFx32 vecFoot;
+    VecFx32 vecDelta;
     int nAlong;
     int nLen2;
 

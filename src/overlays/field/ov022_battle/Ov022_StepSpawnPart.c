@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Desc {
     u8 nKind;                        /* 0x00 */
@@ -17,7 +13,7 @@ struct Desc {
     int nField2c;                    /* 0x2c */
     int nField30;                    /* 0x30 */
     int nField34;                    /* 0x34 */
-    struct VecFx32 vecField38;       /* 0x38 */
+    VecFx32 vecField38;       /* 0x38 */
     u8 nLevel;                       /* 0x44 */
 };
 
@@ -26,7 +22,7 @@ struct SlotPart {
     u8 pad004[0x18];
     u16 nSlotFlags;                  /* 0x01c */
     u8 pad01e[0xa2];
-    struct VecFx32 vecAt;            /* 0x0c0 */
+    VecFx32 vecAt;            /* 0x0c0 */
     u8 pad0cc[0x7c];
     struct Desc *pDesc;              /* 0x148 */
     u8 nState;                       /* 0x14c */
@@ -45,8 +41,8 @@ struct ReactionCtx {
 /* Ov022Capsule: the segment the sweep handlers test, named after the matched
  * readers Ov022_SweepCapsuleOverGroup and Ov022_RunReachHandlers. */
 struct Capsule {
-    struct VecFx32 vecA;             /* 0x00 */
-    struct VecFx32 vecB;             /* 0x0c */
+    VecFx32 vecA;             /* 0x00 */
+    VecFx32 vecB;             /* 0x0c */
     int nGroup;                      /* 0x18 */
     int nRadius;                     /* 0x1c */
 };
@@ -66,7 +62,7 @@ struct ActionParams {
     int nField0c;                    /* 0x0c */
     u8 nLevel;                       /* 0x10 */
     u8 pad11[3];
-    struct VecFx32 vecField14;       /* 0x14 */
+    VecFx32 vecField14;       /* 0x14 */
     int nField20;                    /* 0x20 */
     s8 nPhase;                       /* 0x24 */
     u8 bFlag0 : 1;                   /* 0x25 bit 0 */

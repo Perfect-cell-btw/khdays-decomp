@@ -16,12 +16,13 @@
  * wrapped value is a struct copy, which mwcc keeps, and that is the ROM's unread
  * twelve-byte stack copy of the anchor position.
  */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 
-struct Vec3 { int x, y, z; };
 struct Ov141Cmd { u16 h[7]; };
 struct Ov141Mtx33 { int m[9]; };
 struct Ov141Quat { int q[4]; };
@@ -41,15 +42,15 @@ struct Ov141SubObj {
     u8 bSubState1c7;                                               /* 0x1c7 */
     char pad1c8[0x1c0];
     struct Ov141PoolEntry *pPoolEntry388;                          /* 0x388 */
-    struct Vec3 vFacing38c;                                        /* 0x38c */
+    VecFx32 vFacing38c;                                        /* 0x38c */
     char *pOwner398;                                               /* 0x398 */
 };
 
 struct Ov141StepState {
     struct Ov141SubObj *pSelf;   /* 0x00 */
     FxVec *pAnchor;              /* 0x04 */
-    struct Vec3 vVelocity08;     /* 0x08 */
-    struct Vec3 vFacing14;       /* 0x14 */
+    VecFx32 vVelocity08;     /* 0x08 */
+    VecFx32 vFacing14;       /* 0x14 */
     int nUnused20;               /* 0x20 */
     int nUnused24;               /* 0x24 */
     int nSpeed28;                /* 0x28 */
@@ -62,22 +63,22 @@ struct Ov141StepNode {
     signed char bSlot;           /* 0x20 */
 };
 
-extern struct Vec3 data_02042258;
-extern struct Vec3 data_ov141_020ce9e4;
+extern VecFx32 data_02042258;
+extern VecFx32 data_ov141_020ce9e4;
 extern struct Ov141Cmd data_ov141_020ce9fe;
 extern const short data_0203d210[];
 extern void Ov141_StepSlamStrike(void);
 
-extern void Quat_FromTwoVectors(struct Ov141Quat *out, const struct Vec3 *from,
-                          const struct Vec3 *to);
+extern void Quat_FromTwoVectors(struct Ov141Quat *out, const VecFx32 *from,
+                          const VecFx32 *to);
 extern void Srt_SetRotationQuat(void *srt, const struct Ov141Quat *rot);
 extern int func_020050b4(int x, int z);
-extern void ScaleVec3Fx12(int scale, const struct Vec3 *src, struct Vec3 *dst);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
 extern void MTX_RotY33_(struct Ov141Mtx33 *m, int sine, int cosine);
-extern void MTX_MultVec33(const struct Vec3 *v, const struct Ov141Mtx33 *m,
-                          struct Vec3 *out);
-extern void *Collision_CastSphere(void *collision, const struct Vec3 *origin,
-                           const struct Vec3 *dir, int radius);
+extern void MTX_MultVec33(const VecFx32 *v, const struct Ov141Mtx33 *m,
+                          VecFx32 *out);
+extern void *Collision_CastSphere(void *collision, const VecFx32 *origin,
+                           const VecFx32 *dir, int radius);
 extern void SetIndexedSlot(struct Ov141StepNode *node, int slot, void *value);
 
 #define ANGLE_TO_INDEX(angle) \
@@ -88,7 +89,7 @@ void Ov141_StepSlamProbe(struct Ov141StepNode *node)
     struct Ov141StepState *state = node->pState;
     struct Ov141Quat rot;
     struct Ov141Mtx33 mtx;
-    struct Vec3 probe;
+    VecFx32 probe;
     struct Ov141Cmd cmd;
     FxVec vDead;
     void *scene;
@@ -123,7 +124,7 @@ void Ov141_StepSlamProbe(struct Ov141StepNode *node)
     MTX_RotY33_(&mtx, data_0203d210[index * 2], data_0203d210[index * 2 + 1]);
     MTX_MultVec33(&probe, &mtx, &probe);
     hit = Collision_CastSphere(*(void **)((char *)scene + 0x7c),
-                        (struct Vec3 *)(state->pSelf->pOwner398 + 0xb0),
+                        (VecFx32 *)(state->pSelf->pOwner398 + 0xb0),
                         &probe, 0x280);
     if (hit != 0) {
         cmd = data_ov141_020ce9fe;

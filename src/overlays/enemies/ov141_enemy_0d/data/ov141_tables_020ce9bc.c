@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by ov141 actor initializer: install the callback table, seed the camera pose, (020cbfc4): struct Ov141KindTable data_ov141_020ce9bc; */
+
 #include "nitro/types.h"
 
-/* read by ov141 actor initializer: install the callback table, seed the camera pose, (020cbfc4): struct Ov141KindTable data_ov141_020ce9bc; */
 const int data_ov141_020ce9bc[5] = {
     9, 2, 3, 4, 5,
 };

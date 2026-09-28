@@ -7,11 +7,13 @@
  * of data_ov235_020d2518 carries its +0x74 point to the owner's +0x24 hook, its bit is set and
  * reaction +0x3c8 mode 9 fires there. Once the +0xc idle byte clears, the +0x4c cooldown is
  * re-rolled in [+0x224, +0x228] and sub-state 2 is requested. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -21,15 +23,15 @@ typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern int Ov235_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov235_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov235_020d2518;
 extern int RandNextScaled(int n);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 
 static inline int RandRange(int lo, int hi)
 {
@@ -45,7 +47,7 @@ void Ov235_SweepTick(int *node)
 {
     int obj;
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int hits[4];
     Segment seg;
     int speed;
@@ -62,16 +64,16 @@ void Ov235_SweepTick(int *node)
     }
     state[0x10] = *(int *)(node[0] + 0x2c) * 30 / 30;
     Ov235_SteerToTarget(state, state[0x17], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     state[0x11] += *(int *)(node[0] + 0x2c);
     if (state[0x11] > 0x222 && state[0x11] < 0x911) {
-        seg.p0 = *(Vec3 *)(*state + 0x74);
-        n = VEC_Normalize((Vec3 *)(state + 4), &seg.dir);
+        seg.p0 = *(VecFx32 *)(*state + 0x74);
+        n = VEC_Normalize((VecFx32 *)(state + 4), &seg.dir);
         seg.nLength = n;
         seg.nRadius = 0x2400;
         n = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
         for (i = 0; i < n; i++) {
-            Vec3 push;
+            VecFx32 push;
             Cmd14 msg;
 
             obj = hits[i];

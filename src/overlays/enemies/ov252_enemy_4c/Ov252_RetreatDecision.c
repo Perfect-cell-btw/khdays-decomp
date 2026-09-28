@@ -7,27 +7,29 @@
  * (+0x78) forces mode 5. Mode 0 plays pose 2 / partner motion 1 and moves on to 020cf7d8; other
  * modes play pose 3m+1 (partner motion 3 or 6 for modes 1 / 2), clear +0x64 and move on to
  * 020cf6a0. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
-extern CollisionHit *Collision_CastSphereEx(void *collision, Vec3 *origin, Vec3 *dir, int radius, void *ignore);
-extern u8 Ov252_TurnSide(int *state, Vec3 to);
-extern int Ov252_CheckTarget(int *node, Vec3 *to, int b);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
+extern CollisionHit *Collision_CastSphereEx(void *collision, VecFx32 *origin, VecFx32 *dir, int radius, void *ignore);
+extern u8 Ov252_TurnSide(int *state, VecFx32 to);
+extern int Ov252_CheckTarget(int *node, VecFx32 *to, int b);
 extern int Ov252_PickMove(int *node);
 extern void Ov252_SwaySettleTick(void);
 extern void Ov252_SwayTurnTick(void);
 extern void Ov252_SwayTick(void);
 extern const short data_0203d210[];
-extern const Vec3 data_ov252_020d43a4;
+extern const VecFx32 data_ov252_020d43a4;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-static inline void VecSet(Vec3 *v, int x, int y, int z)
+static inline void VecSet(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -38,9 +40,9 @@ void Ov252_RetreatDecision(int *node)
 {
     int *state = (int *)node[1];
     int item = *(int *)(*state + 4);
-    Vec3 toOrigin;
-    Vec3 fwd;
-    Vec3 home = data_ov252_020d43a4;
+    VecFx32 toOrigin;
+    VecFx32 fwd;
+    VecFx32 home = data_ov252_020d43a4;
     CollisionHit *hit;
     unsigned int idx;
     int dist;
@@ -51,17 +53,17 @@ void Ov252_RetreatDecision(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_SwaySettleTick);
         return;
     }
-    VecSet(&toOrigin, -((Vec3 *)state[2])->x, 0, -((Vec3 *)state[2])->z);
+    VecSet(&toOrigin, -((VecFx32 *)state[2])->x, 0, -((VecFx32 *)state[2])->z);
     dist = VEC_Normalize(&toOrigin, &fwd);
     idx = ANG2IDX(state[0x15]);
     VecSet(&fwd, data_0203d210[idx * 2], 0, data_0203d210[idx * 2 + 1]);
-    hit = Collision_CastSphereEx(*(void **)(item + 0x7c), (Vec3 *)state[2], &fwd, *(int *)(*state + 0x80), 0);
+    hit = Collision_CastSphereEx(*(void **)(item + 0x7c), (VecFx32 *)state[2], &fwd, *(int *)(*state + 0x80), 0);
     if ((hit != 0 && hit->c == 0) || dist > 0x1e000) {
         *(u8 *)(*state + 0x579) = Ov252_TurnSide(state, toOrigin);
-        *(Vec3 *)(state + 6) = home;
+        *(VecFx32 *)(state + 6) = home;
     } else if (Ov252_CheckTarget(node, &toOrigin, 0) > 0x1e000 && *(int *)(*state + 0x4e4) != 0) {
         *(u8 *)(*state + 0x579) = Ov252_TurnSide(state, toOrigin);
-        *(Vec3 *)(state + 6) = *(Vec3 *)(*(int *)(*state + 0x4e4) + 0x190);
+        *(VecFx32 *)(state + 6) = *(VecFx32 *)(*(int *)(*state + 0x4e4) + 0x190);
     } else {
         *(u8 *)(*state + 0x579) = 0;
         if (Ov252_PickMove(node) != 0) {

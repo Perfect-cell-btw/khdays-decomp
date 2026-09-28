@@ -3,23 +3,25 @@
  * (kind 5) attaches the +0x398 pair named by its slot: slots 0/1 anchor it on the +0x38c/+0x390
  * part's +4 point (kind 0x17, flag 1); slots 2/3 take the +0x394 part's +0xa0 transform moved
  * 2.0 along its forward axis. The base handler always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { int m[4]; Vec3 trans; int pad[4]; } SrtTransform;
+#include "nitro/fx.h"
+
+typedef struct { int m[4]; VecFx32 trans; int pad[4]; } SrtTransform;
 struct b2 { int b0 : 1, b1 : 1; };
 struct Pair { int res; int handle; };
 
 extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
-extern void Vec3TransformViaTempMtx(Vec3 *out, const SrtTransform *m, const Vec3 *in);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void Srt_SetTranslation(SrtTransform *t, const Vec3 *v);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const SrtTransform *m, const VecFx32 *in);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Srt_SetTranslation(SrtTransform *t, const VecFx32 *v);
 extern int Ov107_CreateNodeXformTask(int model, int res, int kind, int zero, SrtTransform *t);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
 void Ov208_OnItemMessage(char *self, u8 *msg, int arg)
 {
     SrtTransform t;
-    Vec3 v;
+    VecFx32 v;
 
     if (msg[2] == 0) {
         if (*(int *)(self + 0x50) != 1) {

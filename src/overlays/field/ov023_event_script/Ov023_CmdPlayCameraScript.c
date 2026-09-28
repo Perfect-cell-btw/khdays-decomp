@@ -7,6 +7,7 @@
  * player is rewound (0202e5cc 0) and given operand 2 (0202e618).  The camera then tracks no
  * actor (+0xfc = 0x40), has unit zoom (+0xec = 0x1000) and remembers whether it was kept
  * (+0x100).  Returns 1. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023Camera {

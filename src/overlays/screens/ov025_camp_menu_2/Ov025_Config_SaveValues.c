@@ -3,6 +3,7 @@
  * 0x37c7 and 0x35bf (2 bits), masked to their width; value 7 is not saved.  Twin of ov008
  * 02069eec's first half.  Codegen: the value parameter is declared s16 so the field load is
  * evaluated before the id / width constants (mwcc argument order). */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ConfigPage {

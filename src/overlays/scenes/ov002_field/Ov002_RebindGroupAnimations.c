@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* The resource group the track id resolves to: a count and a vector of
  * entries. Same shape Ov002_ElementRefreshNamedBindings walks. */
+
+#include "nitro/types.h"
+
 typedef struct {
     u16 wPad;                       /* +0x00 */
     u16 wCount;                     /* +0x02 */

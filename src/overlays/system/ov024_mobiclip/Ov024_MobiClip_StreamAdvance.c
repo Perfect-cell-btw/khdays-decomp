@@ -4,6 +4,7 @@
  * says this frame carries. If stepping again would run past the window limit
  * the position is put back and the reader is asked for more data first.
  */
+
 #include "nitro/types.h"
 
 typedef struct MobiClipStream {

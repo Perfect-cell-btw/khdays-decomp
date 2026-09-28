@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Node {
     u8 pad00[0x82];
@@ -48,7 +44,7 @@ struct Actor {
 /* One 0x30-byte slot of the status packet the gate receives each frame. */
 struct StatusRecord {
     unsigned long long nStamp;       /* 0x00 */
-    struct VecFx32 vecAt;            /* 0x08 */
+    VecFx32 vecAt;            /* 0x08 */
     int nField14;                    /* 0x14 */
     u16 nField18;                    /* 0x18 */
     u16 nAngleReplay;                /* 0x1a */
@@ -80,7 +76,7 @@ struct StatusRecord {
 extern int func_ov022_020882f8(void);
 extern struct Actor *GetEntryField20ByIndex(int nOwner);
 extern unsigned long long Ov022_GetStreamTimestamp(int nOwner);
-extern struct VecFx32 *func_ov022_020881f8(int nOwner);
+extern VecFx32 *func_ov022_020881f8(int nOwner);
 extern int func_ov022_02088370(int nOwner);
 extern u16 func_ov022_02088254(int nOwner);
 extern u16 Ov022_GetEntryField12(int nOwner);

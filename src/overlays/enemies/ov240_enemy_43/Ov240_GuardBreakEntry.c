@@ -2,7 +2,9 @@
  * +0x1ae and bits 1/2/7 of the high byte, clears bit 0 of the +0x38c part's +8 word, spawns
  * effect 1 at the +8 point, fires reaction 0x139 mode 0xc at the actor's position and hands off
  * to cf8a0. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct LowByte32 { unsigned bits : 8; };
 

@@ -11,12 +11,7 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Entry {
     unsigned long long nFlags;   /* 0x00, a 64 bit flag word */
@@ -25,7 +20,7 @@ struct Entry {
 };
 
 struct CueBody {
-    struct VecFx32 vecPos;       /* 0x00 */
+    VecFx32 vecPos;       /* 0x00 */
     u16 nPlayer : 3;             /* 0x0c bits 0 to 2 */
     u16 nKind : 13;              /* bits 3 to 15 */
     short nAngle;                /* 0x0e */
@@ -43,18 +38,18 @@ extern u16 QueryActiveStateOrDelegate(void);
 extern struct Entry *GetEntryField20ByIndex(unsigned int nState);
 extern int Session_GetLocalPlayerIndex(void);
 extern void func_ov022_02088428(unsigned int nState, int nKind);
-extern void func_ov022_02088218(unsigned int nState, struct VecFx32 *pPos);
+extern void func_ov022_02088218(unsigned int nState, VecFx32 *pPos);
 extern void func_ov022_02088280(unsigned int nState, int nAngle);
 extern int Ov002_GetBit0OfField38IfValid(int nRecord);
 extern void Ov002_Camera_SetOrbitAngle(int nRecord, int nAngle);
-extern void Ov002_Camera_SetAnchor(int nRecord, struct VecFx32 *pPos);
+extern void Ov002_Camera_SetAnchor(int nRecord, VecFx32 *pPos);
 extern int Ov002_PollSession(void);
 extern void func_02031384(int nGate, void *pBody, int nSize);
 
 #define ENTRY_REPLIES 0x100
 #define CUE_GATE 2
 
-void Ov022_BroadcastCue(unsigned int nOwner, int nKind, struct VecFx32 *pPos,
+void Ov022_BroadcastCue(unsigned int nOwner, int nKind, VecFx32 *pPos,
                          int nAngle)
 {
     struct CueBody *pBody;

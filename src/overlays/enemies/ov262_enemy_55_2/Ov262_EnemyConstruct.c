@@ -7,7 +7,9 @@
  * bound), a placement on the +0x144 list (+0x398) from the +0x64 pose, clears bit 0 of the +0x60
  * high byte, loads sound 0x179 and finally sends the +0x38 hook a 60-byte notice (+0x14 = 1, bit 16
  * of +0x18 clear, +0x2c..+0x34 zero, +0x38..+0x3b = -1) that is freed right after. */
+
 #include "nitro/types.h"
+
 typedef void (*Callback)(void);
 
 struct Bit0 {

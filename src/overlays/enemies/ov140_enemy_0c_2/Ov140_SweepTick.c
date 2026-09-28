@@ -7,10 +7,11 @@
  * 14-byte template for the actor's +0x24 message hook, the kind bit is set and reaction 0x11f
  * mode 4 fires there. Once the +0x50 busy byte clears the +0x40 timer is re-armed at random
  * between the actor's +0x224 and +0x228, sub-state 2 is requested and the state ends. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -33,24 +34,24 @@ struct Ov204SweepState {
     int pTarget;                /* +0x04 */
     int nYaw;                   /* +0x08 */
     char pad00c[8];
-    Vec3 vVelocity;             /* +0x14 */
+    VecFx32 vVelocity;             /* +0x14 */
     char pad020[0x20];
     int nTimer;                 /* +0x40 */
     char pad044[8];
-    Vec3 *pPos;                 /* +0x4c */
+    VecFx32 *pPos;                 /* +0x4c */
     u8 *pBusy;                  /* +0x50 */
     char pad054[1];
     u8 bHitMask55;              /* +0x55 */
 };
 
-extern int Ov107_ActionResource_GetOffsetAndScale(void *part, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *dst, void *quat, Vec3 *src);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, VecFx32 *src);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int RandNextScaled(int bound);
 extern int Ov107_CollectSphereOverlaps(struct Ov204Owner *owner, Sphere *sphere, int *out);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov204Owner *a, struct Ov204Owner *b, int kind, Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, Vec3 *at);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov204Owner *a, struct Ov204Owner *b, int kind, VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern short data_0203d210[];
 extern const PosMsg data_ov140_020d287c;
@@ -63,7 +64,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov204SweepState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov204SweepState *state, PosMsg *msg, const VecFx32 *src)
 {
     FxVec vDead;
     vDead.x = *(Fx32 *)&src->x;
@@ -82,8 +83,8 @@ void Ov140_SweepTick(int *node)
     struct Ov204SweepState *state = (struct Ov204SweepState *)node[1];
     int hits[4];
     Sphere sphere;
-    Vec3 step;
-    Vec3 at;
+    VecFx32 step;
+    VecFx32 at;
     PosMsg msg;
     PosMsg tmpl;
     int speed;
@@ -101,7 +102,7 @@ void Ov140_SweepTick(int *node)
     step.x = data_0203d210[idx * 2];
     step.z = data_0203d210[idx * 2 + 1];
     if (VEC_DotProduct(&state->vVelocity, &step) > 0) {
-        sphere.pos = *(Vec3 *)((char *)state->pOwner + 0xb0);
+        sphere.pos = *(VecFx32 *)((char *)state->pOwner + 0xb0);
         sphere.pos.y += 0x800;
         sphere.radius = 0xa00;
         n = Ov107_CollectSphereOverlaps(state->pOwner, &sphere, hits);
@@ -112,7 +113,7 @@ void Ov140_SweepTick(int *node)
                 if (((state->bHitMask55 >> *(u8 *)(hits[i] + 0x1b4)) & 1) == 0) {
                     if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, 0, &state->vVelocity, 0) != 0) {
                         msg = tmpl;
-                        at = *(Vec3 *)(hits[i] + 0x74);
+                        at = *(VecFx32 *)(hits[i] + 0x74);
                         at.y += 0x800;
                         SendPos(state, &msg, &at);
                         state->bHitMask55 |= 1 << *(u8 *)(hits[i] + 0x1b4);

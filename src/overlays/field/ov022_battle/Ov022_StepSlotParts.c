@@ -11,9 +11,10 @@
  * anything to do.
  */
 
+/* one of the 0x150-byte parts the slot owns */
+
 #include "nitro/types.h"
 
-/* one of the 0x150-byte parts the slot owns */
 struct SlotPart {
     u8 pad000[0x14c];
     u8 nState;                   /* 0x14c */

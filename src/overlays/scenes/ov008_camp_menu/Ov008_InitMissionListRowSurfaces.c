@@ -10,6 +10,7 @@
  * width x height tiles), then the extra surface: template f938 (+4) while
  * the gate is clear, template f960 (+10) while it is set.
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT       6

@@ -1,10 +1,9 @@
-#include "nitro/types.h"
-
-typedef struct {
-    int x, y, z;
-} VecFx32;
 
 /* Index of the session's local player, or its delegate. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 extern int QueryActiveStateOrDelegate(void);
 /* Collision world id of that player's track entry, or -1 when it has none. */
 extern int Ov022_GetEntryField66(int nPlayer);

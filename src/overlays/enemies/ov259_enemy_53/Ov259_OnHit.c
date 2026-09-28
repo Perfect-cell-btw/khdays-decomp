@@ -9,26 +9,27 @@
  * maximum, the target kept, and a damaging hit (except the 8|0x80 / 0x80 special) plays hurt sound
  * 0x172 alternating on +0xaf (0x22 hits use modes 2/3). Spent stamina sets +0x44 and sub-state 3; an
  * exhausted shield (+0x9c) drops the +0x50 shield effect and requests sub-state 15. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    Vec3 vPoint;
+    VecFx32 vPoint;
     unsigned char pad010[0x14];
     unsigned int uResultLo : 16;
     unsigned int uResultHi : 16;
     int nDamage;
 };
 
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern int VEC_DotProduct(Vec3 *a, Vec3 *b);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern int func_020050b4(int y, int x);
 extern int RandNextScaled(int bound);
 extern int Ov107_CalcHitDamage(char *actor, struct ActorHitEvent *hit);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, int at);
 extern void Ov259_PlaySound(char *actor, int id, u16 mode, int at);
 extern void Ov259_Helper_ReleaseIfReady(int effect);
@@ -39,9 +40,9 @@ extern short data_0203d210[];
 int Ov259_OnHit(char *self, int other, struct ActorHitEvent *hit)
 {
     int *state = *(int **)(self + 0x214);
-    Vec3 facing;
-    Vec3 d;
-    Vec3 v;
+    VecFx32 facing;
+    VecFx32 d;
+    VecFx32 v;
     int frontal;
     int owner;
     unsigned int idx;
@@ -68,7 +69,7 @@ int Ov259_OnHit(char *self, int other, struct ActorHitEvent *hit)
         hit->nDamage = 0;
         hit->uResultLo |= 9;
         owner = *state;
-        func_ov107_020c0b90(owner, 0xa, *(Vec3 *)(*(int *)(owner + 0x384) + 0x74), 0);
+        func_ov107_020c0b90(owner, 0xa, *(VecFx32 *)(*(int *)(owner + 0x384) + 0x74), 0);
         Ov107_BuildAndSendUpdate(*state, 0, 0x3f, state[4]);
         *(u8 *)(*state + 0x1c7) = 9;
         return 1;
@@ -79,7 +80,7 @@ int Ov259_OnHit(char *self, int other, struct ActorHitEvent *hit)
     if ((*(u16 *)(self + 0x100 + 0xac) & 1) != 0) {
         return 0;
     }
-    *(Vec3 *)(state + 8) = hit->vPoint;
+    *(VecFx32 *)(state + 8) = hit->vPoint;
     if (state[0x13] != 0) {
         hit->nDamage /= 3;
         *(short *)(self + 0x21a) -= hit->nDamage;
@@ -94,7 +95,7 @@ int Ov259_OnHit(char *self, int other, struct ActorHitEvent *hit)
                 hit->nDamage = 0;
                 hit->uResultLo |= 9;
                 owner = *state;
-                func_ov107_020c0b90(owner, 0xa, *(Vec3 *)(*(int *)(owner + 0x384) + 0x74), 0);
+                func_ov107_020c0b90(owner, 0xa, *(VecFx32 *)(*(int *)(owner + 0x384) + 0x74), 0);
                 Ov107_BuildAndSendUpdate(*state, 0, 0x3f, state[4]);
                 *(u8 *)(*state + 0x1c7) = 9;
                 return 1;

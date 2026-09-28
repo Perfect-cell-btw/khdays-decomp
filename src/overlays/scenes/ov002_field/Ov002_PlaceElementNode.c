@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* The 20 byte placement record this helper builds on the stack, hands to the
  * scene-node placement call and then copies back to the caller's scratch. */
+
+#include "nitro/types.h"
+
 typedef struct {
     int nKind;                      /* +0x00 */
     int nParamB;                    /* +0x04 */

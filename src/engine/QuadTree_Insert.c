@@ -3,6 +3,7 @@
  * quadrant (0 top-left, 1 top-right, 2 bottom-left, 3 bottom-right) and that child exists, the
  * quadrant's bit (0x1000 << q) is raised on the node and the item descends with the child's square
  * (centre moved by a quarter side, half the side). Otherwise the item is pushed on the node's list. */
+
 #include "nitro/types.h"
 
 typedef struct QuadItem {

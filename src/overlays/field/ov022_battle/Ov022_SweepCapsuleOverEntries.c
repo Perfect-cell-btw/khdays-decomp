@@ -12,18 +12,14 @@
  * written into the first free slot of the capsule's hit-id list.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022Capsule (with the list this variant carries) */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Capsule {
-    struct VecFx32 vecA;             /* 0x00 */
-    struct VecFx32 vecB;             /* 0x0c */
+    VecFx32 vecA;             /* 0x00 */
+    VecFx32 vecB;             /* 0x0c */
     int nGroup;                      /* 0x18 */
     u8 pad1c[4];
     short *pHitIds;                  /* 0x20 */
@@ -37,7 +33,7 @@ struct SweepHit {
 };
 
 struct HitRecord {
-    struct VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecPos;           /* 0x00 */
 };
 
 /* Ov022Actor */
@@ -58,26 +54,26 @@ struct Actor {
 #define FLAG_SET(nFlags, nBit) (((nFlags) & (nBit)) > 0)
 
 extern int Session_IsActive(void);
-extern void VEC_Subtract(struct VecFx32 *pA, struct VecFx32 *pB, struct VecFx32 *pOut);
+extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
 extern int func_ov022_020882f8(void);
 extern struct Actor *func_ov022_0209ee54(struct Actor *pActor, int nEntry, int nGroup,
                                          short *pHitIds);
-extern void func_ov022_020ad44c(struct VecFx32 *pOut, struct Actor *pEntry);
-extern int Ov022_TestCapsuleReach(struct VecFx32 *pPoint, int nRadius, struct VecFx32 *pOut,
+extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pEntry);
+extern int Ov022_TestCapsuleReach(VecFx32 *pPoint, int nRadius, VecFx32 *pOut,
                                struct Capsule *pCapsule);
 extern int Session_GetLocalPlayerIndex(void);
 extern void Ov022_BuildHitPush(struct HitRecord *pHit, struct SweepHit *pCtx,
-                                struct VecFx32 *pContact, struct VecFx32 *pPoint,
-                                struct VecFx32 *pDir);
+                                VecFx32 *pContact, VecFx32 *pPoint,
+                                VecFx32 *pDir);
 extern void Ov022_DeliverHit(struct Actor *pActor, struct SweepHit *pCtx,
                                 struct Actor *pEntry, struct HitRecord *pHit);
 
 int Ov022_SweepCapsuleOverEntries(struct Actor *pActor, struct Capsule *pCap, struct SweepHit *pCtx)
 {
     struct HitRecord hit;
-    struct VecFx32 vecDir;
-    struct VecFx32 vecContact;
-    struct VecFx32 vecPoint;
+    VecFx32 vecDir;
+    VecFx32 vecContact;
+    VecFx32 vecPoint;
     int bHit;
     struct Actor *pEntry;
     int nEntry;

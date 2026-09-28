@@ -7,6 +7,7 @@
  * the slot is read as `((void **)(self + 0x258))[i]` but cleared through a differently spelt
  * address (`self + i * sizeof(void *) + 0x258`) -- the same spelling on both sides lets mwcc
  * keep the address in a callee-saved register across the remove call, the ROM recomputes it. */
+
 #include "nitro/types.h"
 
 extern void NNS_G3dRenderObjRemoveAnmObj(void *renderObj, void *anmObj);                    /* NNS_G3dRenderObjRemoveAnmObj */

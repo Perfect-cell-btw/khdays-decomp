@@ -5,6 +5,7 @@
  * sub-object at +4 (Ov008_DrawMenuPanels). Then, if field14e0 is set and GameState_IsFlagSet(0x200d)
  * returns 0, it refreshes widget id 2 with the (u16) value from Ov105_WM_GetLinkLevel via
  * Ov008_ReleaseTwoSlotsEx. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008TimerState {

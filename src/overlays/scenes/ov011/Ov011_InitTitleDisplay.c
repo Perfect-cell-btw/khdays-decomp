@@ -2,6 +2,7 @@
  * map the VRAM banks, put both engines in 2D mode 0 with BG1 in 16 colours and BG0/2/3 in 256,
  * show every plane, use 1D 128K OBJ character mapping, order the BGs 3/0/1/2 and put the main
  * engine on the top screen. */
+
 #include "nitro/types.h"
 
 #define reg_GX_DISPCNT      (*(REGType32v *)0x04000000)

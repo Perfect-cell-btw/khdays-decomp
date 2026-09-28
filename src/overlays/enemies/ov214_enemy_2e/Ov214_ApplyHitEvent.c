@@ -3,8 +3,8 @@
  * facing the attacker, queueing defeat or stagger. */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
-typedef struct { int x, y, z; } VecFx32;
 typedef struct { u8 a, b; } Pair2;
 typedef struct { unsigned int lo : 16; unsigned int hi : 16; } EvtWord;
 #define EW(e) (((EvtWord *)(e))->lo)

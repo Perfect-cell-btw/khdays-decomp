@@ -5,21 +5,22 @@
  * Once the partner holds no queued move the drift ends after 12 drops, beyond 25.0 from the origin or
  * with a +0xa0 reward pending (pose 0x15, motion 0xe, effect 4 mode 2, node to 020d0854); otherwise
  * pose 0x14, motion 0xd and effect 4 mode 1 restart it. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void Ov252_TurnVecY(Vec3 *out, int angle, Vec3 *vec);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+#include "nitro/fx.h"
+
+extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern unsigned int RandNextScaled(int bound);
 extern int Ov252_DropReward(int *node, int param);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_HoverTickB(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
-static inline void VecSet(Vec3 *v, int x, int y, int z)
+static inline void VecSet(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -29,13 +30,13 @@ static inline void VecSet(Vec3 *v, int x, int y, int z)
 void Ov252_ShedDriftTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
-    Vec3 v;
+    VecFx32 d;
+    VecFx32 v;
     int dist;
 
-    Ov252_TurnVecY(&v, state[0x15], (Vec3 *)(*(int *)(*state + 0x574) + 0x2c));
-    *(Vec3 *)(state + 3) = v;
-    ScaleVec3Fx12(state[0x1c] + 0x800, (Vec3 *)(state + 3), (Vec3 *)(state + 3));
+    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    *(VecFx32 *)(state + 3) = v;
+    ScaleVec3Fx12(state[0x1c] + 0x800, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     state[4] = *(int *)(*(int *)(*state + 0x574) + 0x30);
     state[0x19] += *(int *)(node[0] + 0x2c);
     if (state[0x19] >= 0xd48 && *((unsigned char *)state + 0x8c) == 0) {
@@ -57,7 +58,7 @@ void Ov252_ShedDriftTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    VecSet(&d, -((Vec3 *)state[2])->x, 0, -((Vec3 *)state[2])->z);
+    VecSet(&d, -((VecFx32 *)state[2])->x, 0, -((VecFx32 *)state[2])->z);
     dist = VEC_Normalize(&d, &d);
     if (state[0x18] >= 0xc || dist > 0x19000 || state[0x28] != 0) {
 finish:

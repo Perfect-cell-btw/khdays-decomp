@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov011_StepPaneScroll (0205bb58): void data_ov011_0205dc7c(void); */
+
 #include "nitro/types.h"
 
-/* read by Ov011_StepPaneScroll (0205bb58): void data_ov011_0205dc7c(void); */
 const u16 data_ov011_0205dc7c[3] = {
     255, 65289, 0,
 };

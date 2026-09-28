@@ -23,23 +23,18 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define BEAT_THRESHOLD 0x23000
 #define WAIT_HOLD 0x3000
 #define HIT_KIND 0xb
 
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* what the asker is told about where the hit lands */
 struct Ov022ActionQuery {
-    struct VecFx32 vecPos;       /* 0x00 */
+    VecFx32 vecPos;       /* 0x00 */
     int nRadius;                 /* 0x0c */
     unsigned int nGroup;         /* 0x10 */
-    struct VecFx32 vecDir;       /* 0x14 */
+    VecFx32 vecDir;       /* 0x14 */
     int nConeLimit;              /* 0x20 */
     short *pHitIds;              /* 0x24 */
     int nField28;                /* 0x28 */
@@ -53,7 +48,7 @@ struct Ov022ActionParams {
     int nField0c;                /* 0x0c */
     u8 nLevel;                   /* 0x10 */
     u8 pad11[3];
-    struct VecFx32 vecField14;   /* 0x14 */
+    VecFx32 vecField14;   /* 0x14 */
     int nField20;                /* 0x20 */
     u8 nPhase;                   /* 0x24 */
     u8 bFlagA : 1;               /* 0x25 */
@@ -69,7 +64,7 @@ struct Ov022ActorSlot {
     u8 pad003[5];
     u16 nSlotFlags;              /* 0x008 */
     u8 pad00a[0xa2];
-    struct VecFx32 vecAim;       /* 0x0ac */
+    VecFx32 vecAim;       /* 0x0ac */
     u8 pad0b8[0x58];
     signed char nSlotIndex;      /* 0x110 */
     u8 pad111[7];
@@ -99,7 +94,7 @@ struct Ov022ReactionCtx {
     short aHitIds[8];            /* 0x5c */
 };
 
-extern const struct VecFx32 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 /* ABI view of the div/mod helper: quotient in r0, remainder in r1.
  * The 64-bit declaration lets the caller access r1 without inline assembly. */

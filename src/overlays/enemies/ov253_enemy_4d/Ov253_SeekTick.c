@@ -4,11 +4,12 @@
  * up and picks the next decision at +0x28: 5 once the target sits within 30.0 for 10.0, a 5/4
  * coin toss under 9.0, 5 beyond 30.0 -- then the +0x38c item's +0xa8 flag clears and the node
  * moves to 020cd98c. Codegen: `+ (v - v)` is the documented random copy artifact. */
-typedef struct { int x, y, z; } Vec3;
 
-extern int Ov253_FindNearestTarget(int self, const Vec3 *pos, const Vec3 *dir, int minDot, int maxDist);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+#include "nitro/fx.h"
+
+extern int Ov253_FindNearestTarget(int self, const VecFx32 *pos, const VecFx32 *dir, int minDot, int maxDist);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int y, int x);
 extern int RandNextScaled(int scale);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -21,8 +22,8 @@ static inline unsigned short FX_RadToIdx(int rad) {
 
 void Ov253_SeekTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 dir;
-    Vec3 d;
+    VecFx32 dir;
+    VecFx32 d;
     int target;
     int dist;
     int v;
@@ -31,12 +32,12 @@ void Ov253_SeekTick(int *node) {
     dir.x = data_0203d210[(FX_RadToIdx(state[3]) >> 4) << 1];
     dir.y = 0;
     dir.z = data_0203d210[((FX_RadToIdx(state[3]) >> 4) << 1) + 1];
-    target = Ov253_FindNearestTarget(*state, (Vec3 *)state[2], &dir, -0x1000, 0x3c000);
+    target = Ov253_FindNearestTarget(*state, (VecFx32 *)state[2], &dir, -0x1000, 0x3c000);
     state[9] = target;
     if (target == 0) {
         return;
     }
-    VEC_Subtract((Vec3 *)(target + 0x190), (Vec3 *)state[2], &d);
+    VEC_Subtract((VecFx32 *)(target + 0x190), (VecFx32 *)state[2], &d);
     dist = VEC_Normalize(&d, &d);
     state[4] = func_020050b4(d.x, d.z);
     if (state[0xc] > 0) {

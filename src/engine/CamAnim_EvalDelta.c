@@ -2,7 +2,6 @@
  * the last frame. */
 
 #include "nitro/fx.h"
-typedef struct { fx32 x, y, z; } VecFx32;
 
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);

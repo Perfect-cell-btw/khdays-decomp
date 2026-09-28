@@ -4,16 +4,18 @@
  * the actor plays pose 8 (aggressive) or 0x11 (looping) and is knocked back in place (mode 5,
  * flag 1), the +0x3e4 shape loses bit 1 and the +0x3e0 one gains it, the +0x44 timer clears and
  * the node moves to 020d1384. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern int Ov254_PanelYForPhase(int *state, int a);
 extern void Ov254_KnockbackAtFeet(int actor, int side);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov254_AiSettleTick(void);
 
 static inline int FX_Mul(int a, int b) {

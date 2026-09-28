@@ -5,15 +5,17 @@
  * If flag: when *(ctx[2]+8) > 0x1a000 subtract 0x200 from ctx[7]; when < -0x1a000 add 0x200. Publish
  * the cached offset at +0x14 to the owner at +0xf0 and reset it to the neutral constant.
  */
+
+#include "nitro/fx.h"
+
 typedef struct { int v[4]; } Xform;
-typedef struct { int x, y, z; } Vec3;
 
 extern int Ov002_GetStateWord(void);
 extern int Angle_TurnToward(int a, int b, int c, int *state);
 extern void QuatFromAxisAngle(Xform *out, const Xform *src, int v);
 extern void Srt_SetRotationQuat(int dst, const Xform *x);
 extern Xform data_02042264;
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 void Ov268_MotionTickTimers(int self, int p2, int p3, int p4) {
     int *ctx = *(int **)(self + 4);
@@ -45,6 +47,6 @@ void Ov268_MotionTickTimers(int self, int p2, int p3, int p4) {
 
     owner = *ctx;
     ctx = (int *)((char *)ctx + 0x14);
-    *(Vec3 *)(owner + 0xf0) = *(Vec3 *)ctx;
-    *(Vec3 *)ctx = data_02041dc8;
+    *(VecFx32 *)(owner + 0xf0) = *(VecFx32 *)ctx;
+    *(VecFx32 *)ctx = data_02041dc8;
 }

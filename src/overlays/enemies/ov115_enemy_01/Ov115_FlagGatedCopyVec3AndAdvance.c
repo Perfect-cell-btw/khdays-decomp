@@ -2,13 +2,13 @@
  * (+0xb0), records whether the context mode where it lands is 8, then makes the stored action
  * (+0x1c9) pending and clears the step handler. */
 
-struct Vec3 { int x, y, z; };
+#include "nitro/fx.h"
 
 struct Node {
     char pad0[0x60];
     unsigned short f60;
     char pad62[0x4e];
-    struct Vec3 fb0;
+    VecFx32 fb0;
     char padbc[0x10b];
     signed char f1c7;
     char pad1c8;
@@ -18,7 +18,7 @@ struct Node {
 struct Holder {
     struct Node *node;
     char pad4[0x10];
-    struct Vec3 f14;
+    VecFx32 f14;
     char pad20[0x68];
     int f88;
 };
@@ -30,7 +30,7 @@ struct Obj {
     signed char f20;
 };
 
-extern int Ov107_MoveNodeAndRelayout(int node, struct Vec3 *v);
+extern int Ov107_MoveNodeAndRelayout(int node, VecFx32 *v);
 extern int Ov002_GetCtxModeByte(int x);
 extern int SetIndexedSlot();
 

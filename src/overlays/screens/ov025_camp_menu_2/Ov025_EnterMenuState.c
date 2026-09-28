@@ -10,6 +10,7 @@
  * switched to -- on failure row 0 is highlighted and the selection cleared --
  * and cursor mode 0x14 with 0 requested; then the grid is refreshed.
  */
+
 #include "nitro/types.h"
 
 #define STATE_LIST   0

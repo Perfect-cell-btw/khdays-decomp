@@ -1,13 +1,13 @@
-typedef struct Ov002Vec3 {
-    int x, y, z;
-} Ov002Vec3;
 
 /* The 0x2c byte path-task record this command builds on the stack. */
+
+#include "nitro/fx.h"
+
 typedef struct Ov002TaskArgsPath {
     int n00;                            /* +0x00 */
     int n04;                            /* +0x04 */
     int n08;                            /* +0x08 */
-    Ov002Vec3 vPlace;                   /* +0x0c */
+    VecFx32 vPlace;                   /* +0x0c */
     int n18;                            /* +0x18 */
     int n1c;                            /* +0x1c */
     int n20;                            /* +0x20 */
@@ -32,7 +32,7 @@ extern void Ov002_SubmitTaskNode(int bGate, int nSlot, int nKind,
  */
 int Ov002_ScriptSubmitPathTask(int pCtx, unsigned short *pArgs)
 {
-    Ov002Vec3 vPlace;
+    VecFx32 vPlace;
     Ov002TaskArgsPath args;
     int nSlot;
     int nA;

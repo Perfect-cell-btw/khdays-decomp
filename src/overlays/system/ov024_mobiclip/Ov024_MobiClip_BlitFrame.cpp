@@ -10,6 +10,7 @@
  *
  * Reports zero once every frame the stream holds has been blitted.
  */
+
 #include "nitro/types.h"
 
 struct MobiClipDeblockRequest {

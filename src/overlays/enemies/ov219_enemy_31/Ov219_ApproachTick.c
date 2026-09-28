@@ -5,19 +5,21 @@
  * bob taken from the sine of the +0x4c phase (0xc00 / 3, folded to fixed point); the phase
  * advances by 24 turns per second (wrapped to 16 bits), the +0xc/+0x10 yaws follow the velocity
  * and, after 0x1000 of the +0x14 clock, the tick hands off to the wander state and runs it. */
-typedef struct Vec3 { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 struct Bits17a { unsigned char bit0 : 1, bit1 : 1; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Ov219_DistanceToTarget(int *node);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const Vec3 *v, Mtx33 *m, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int func_020050b4(int x, int z);
 extern void Ov219_WanderTick(int *node);
 extern short data_0203d210[];
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
@@ -44,12 +46,12 @@ void Ov219_ApproachTick(int *node)
     angle += (deg + 0xb4) * 0x3244 / 180;
     idx = ANG2IDX(angle);
     MTX_RotY33_(&mtx, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);
-    MTX_MultVec33(&data_02042258, &mtx, (Vec3 *)(state + 9));
+    MTX_MultVec33(&data_02042258, &mtx, (VecFx32 *)(state + 9));
     bob = data_0203d210[(state[0x13] >> 4) * 2] * 0xc00 / 3;
     if (bob < 0) {
         bob = -bob;
     }
-    ScaleVec3Fx12(bob / 0x1000 + 0x200 + state[8], (Vec3 *)(state + 9), (Vec3 *)(state + 9));
+    ScaleVec3Fx12(bob / 0x1000 + 0x200 + state[8], (VecFx32 *)(state + 9), (VecFx32 *)(state + 9));
     state[0x13] += *(int *)(*node + 0x2c) * 0x18000 / 0x1000;
     state[0x13] &= 0x7fff;
     state[4] = state[3] = func_020050b4(state[9], state[0xb]);

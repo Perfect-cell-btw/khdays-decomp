@@ -4,6 +4,7 @@
  * 5 waiting for the last frame, 6 finished. Reports non-zero only when the
  * slot has nothing left to do, which is what the teardown polls for.
  */
+
 #include "nitro/types.h"
 
 #define QUEUE_DEPTH 10

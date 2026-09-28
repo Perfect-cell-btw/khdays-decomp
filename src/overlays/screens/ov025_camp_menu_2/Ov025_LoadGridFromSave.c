@@ -16,6 +16,7 @@
  * counters of the first pass (page in j, column in i) -- the registers follow
  * the variables; the category test is written !(a != 4 && a != 5).
  */
+
 #include "nitro/types.h"
 
 #define GRID_PAGES  3

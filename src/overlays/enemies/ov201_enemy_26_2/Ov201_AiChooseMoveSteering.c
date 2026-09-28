@@ -46,17 +46,18 @@
  * FX_Div in NitroSDK terms. The name is kept because the symbol table says so.
  */
 
+#include "nitro/fx.h"
+
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void SetIndexedSlot(int self, int slot, void (*cb)(void));
-typedef struct { int x, y, z; } Vec3;
 
-extern void Mtx33_LookAt(int *dst, const Vec3 *a, const Vec3 *b, const void *c);
+extern void Mtx33_LookAt(int *dst, const VecFx32 *a, const VecFx32 *b, const void *c);
 extern void Quat_FromMtx33(int *dst, const int *src);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *dst);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *unit);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Div(int num, int den);
-extern void Vec3TransformViaTempMtx(Vec3 *dst, const int *a, const void *b);
-extern void ScaleVec3Fx12(int scale, const Vec3 *src, int *dst);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, const int *a, const void *b);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *src, int *dst);
 extern int RandNextScaled();
 extern int Ov201_IsField38NibbleZero(int slot);
 extern void Ov201_StrafeMove(void);
@@ -74,8 +75,8 @@ void Ov201_AiChooseMoveSteering(int self) {
     int base;
     int span;
     int mtx[9];
-    Vec3 toTarget;
-    Vec3 dir;
+    VecFx32 toTarget;
+    VecFx32 dir;
 
     ctx = *(int **)(self + 4);
     owner = (int *)ctx[0];
@@ -87,9 +88,9 @@ void Ov201_AiChooseMoveSteering(int self) {
         return;
     }
 
-    Mtx33_LookAt(mtx, (const Vec3 *)(target + 0x74), (const Vec3 *)ctx[0x13], data_02042264);
+    Mtx33_LookAt(mtx, (const VecFx32 *)(target + 0x74), (const VecFx32 *)ctx[0x13], data_02042264);
     Quat_FromMtx33(&ctx[0x25], mtx);
-    VEC_Subtract((const Vec3 *)ctx[0x13], (const Vec3 *)(target + 0x74), &toTarget);
+    VEC_Subtract((const VecFx32 *)ctx[0x13], (const VecFx32 *)(target + 0x74), &toTarget);
     tgt = ctx[2];
     own2 = (int *)ctx[0];
     gap = VEC_Normalize(&toTarget, &toTarget);
@@ -106,7 +107,7 @@ void Ov201_AiChooseMoveSteering(int self) {
     }
     Vec3TransformViaTempMtx(&dir, &ctx[0x25], data_02042258);
     ScaleVec3Fx12(-fac, &dir, &ctx[3]);
-    ScaleVec3Fx12(0x280, (const Vec3 *)&ctx[3], &ctx[3]);
+    ScaleVec3Fx12(0x280, (const VecFx32 *)&ctx[3], &ctx[3]);
 
     if (gap > *(int *)(ctx[0] + 0x2d8)) {
         *(signed char *)(ctx[0] + 0x1c7) = 2;

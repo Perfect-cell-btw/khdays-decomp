@@ -1,4 +1,5 @@
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
+
 typedef struct { char pad0[0x24]; VecFx32 pos; } Probe;
 
 extern void Obj_RenderModel(int a, int b);

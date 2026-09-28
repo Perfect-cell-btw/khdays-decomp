@@ -10,11 +10,7 @@
  * 2 -> (9, 7), 3 -> (6, 5) -- and then continues into Ov249_AiStanceMoveTick. Any other stance
  * parks 2 in ctx[0]+0x1c7 and re-enters with no callback, i.e. gives up. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int m[9];

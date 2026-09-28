@@ -11,9 +11,10 @@
  * (data_0204739c) comes first and the view output (data_020473e0) last.
  */
 
-typedef struct { int x, y, z; } VecFx32;
-
 /* Camera actor: near/far words then the look-at points. */
+
+#include "nitro/fx.h"
+
 typedef struct {
     char    _0[0xc];
     int     fC;             /* +0xc: near */

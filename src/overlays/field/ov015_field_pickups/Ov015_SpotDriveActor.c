@@ -5,9 +5,9 @@
  * the callback is fired with the arriving player's sub-actor (01fffde0 of +0x180, +0x4ec)
  * and the entry id, and the entry's pickup (entry +0x8, via 020807f4) has its position
  * handler invoked three times; otherwise the spot is marked pending (bit 6 of +0x40). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov015SpotEntry {
     s8  nId;                  /* 0x00 */

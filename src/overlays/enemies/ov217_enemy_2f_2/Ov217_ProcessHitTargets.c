@@ -2,8 +2,8 @@
 #pragma opt_dead_assignments off
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
-struct Vecx32 { int x, y, z; };
 struct Vec4 { int x, y, z, w; };
 
 struct Ov264Hit {
@@ -24,16 +24,16 @@ struct Ov264Node {
     struct Ov264Owner *pOwner;
     char pad004[0x0c];
     int nEffect10;
-    struct Vecx32 vStep14;
+    VecFx32 vStep14;
     char pad020[0x51];
     u8 bHandled71;
 };
 
 struct Ov264Params {
-    struct Vecx32 aim;
-    struct Vecx32 v0c;
-    struct Vecx32 v18;
-    struct Vecx32 v24;
+    VecFx32 aim;
+    VecFx32 v0c;
+    VecFx32 v18;
+    VecFx32 v24;
     int nSteps;
     int bFlag;
 };
@@ -46,15 +46,15 @@ extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void VEC_Add(void *a, void *b, void *d);
 extern int Ov107_InvokeHitCallback(struct Ov264Hit *hit, struct Ov264Owner *a, struct Ov264Owner *b,
                                u8 kind, void *push, int z);
-extern void func_ov107_020c0b90(struct Ov264Owner *owner, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(struct Ov264Owner *owner, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(struct Ov264Owner *owner, int a, int id, int p);
-extern const struct Vecx32 data_02042258;
+extern const VecFx32 data_02042258;
 
 void Ov217_ProcessHitTargets(struct Ov264Node *node, unsigned int kind, struct Ov264Params *params) {
     struct Vec4 origin;
     struct Ov264Hit *hits[4];
-    struct Vecx32 push;
-    struct Vecx32 step;
+    VecFx32 push;
+    VecFx32 step;
     int i;
     u8 bit;
     u8 seen;

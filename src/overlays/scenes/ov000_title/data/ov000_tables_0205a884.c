@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov000_SetupLogoTileSurfaces (020535b4): const TileSurfaceCfg data_ov000_0205a884; */
+
 #include "nitro/types.h"
 
-/* read by Ov000_SetupLogoTileSurfaces (020535b4): const TileSurfaceCfg data_ov000_0205a884; */
 const int data_ov000_0205a884[10] = {
     6, 8, 16, 8, 37, 15, 0, 23,
     0, 32,

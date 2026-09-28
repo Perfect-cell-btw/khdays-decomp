@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 struct Ov120AreaMsg { u16 h[7]; };
@@ -8,7 +10,7 @@ struct Ov107SweepQuery { FxVec vCentre; int nRadius; };
 
 struct Ov120AttachBody {
     char pad000[0x14];
-    struct Vec3 vPos14;
+    VecFx32 vPos14;
 };
 
 struct Ov107SweepEntity {
@@ -33,8 +35,8 @@ struct Ov120ActionState {
     char pad004[8];
     void *pEventAnchor;
     char pad010[0xc];
-    struct Vec3 vVelocity;
-    struct Vec3 vPos28;
+    VecFx32 vVelocity;
+    VecFx32 vPos28;
     char pad034[0xc];
     int nElapsed40;
     char pad044[4];
@@ -55,15 +57,15 @@ struct Ov120ActionNode {
     signed char bSlot;
 };
 
-extern const struct Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern struct Ov120AreaMsg data_ov121_020cfd22;
 extern void Ov121_DecayCopyPosFireOnHitFlag(void);
 
-extern int Ov107_ActionResource_GetOffsetAndScale(void *resource, struct Vec3 *out);
-extern void Vec3TransformViaTempMtx(struct Vec3 *dst, struct Ov120BoneXform *xfm, struct Vec3 *src);
+extern int Ov107_ActionResource_GetOffsetAndScale(void *resource, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, struct Ov120BoneXform *xfm, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void VEC_Add(void *a, void *b, void *out);
-extern void func_ov107_020c0b90(struct Ov120Actor *actor, int mode, struct Vec3 v,
+extern void func_ov107_020c0b90(struct Ov120Actor *actor, int mode, VecFx32 v,
                                 int flag);
 extern void Ov107_BuildAndSendUpdate(struct Ov120Actor *actor, int id, int mode, void *anchor);
 extern int Ov107_CollectSphereOverlaps(struct Ov120Actor *actor, void *query, void *results);
@@ -99,11 +101,11 @@ void Ov121_SweepAttack_Step(struct Ov120ActionNode *node)
 {
     struct Ov107SweepEntity *aResults[4];
     FxVec aPoints[2];
-    struct Vec3 vLocalOffset;
+    VecFx32 vLocalOffset;
     struct Ov107SweepQuery query;
     struct Ov120AreaMsg msg;
     struct Ov120AreaMsg tmpl;
-    struct Vec3 vZero;
+    VecFx32 vZero;
     FxVec vContact;
     struct Ov120ActionState *state;
     long nFound;

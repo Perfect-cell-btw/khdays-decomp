@@ -7,10 +7,12 @@
  * its +0x190 is taken, or, when that is degenerate, the sine/cosine of the +0x40 heading, and
  * the direction is scaled by a twentieth of the length; y then becomes 1.0, +0x44 takes the
  * heading of the direction and the tick hands over to Ov206_AiBallisticTick. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { u8 hi, mid, lo; } Fx24;
-typedef struct { int x, y, z; } Vec3;
 
 typedef struct {
     u16 id;             /* +0x0 */
@@ -33,13 +35,13 @@ static inline void PackFx24(Fx24 *dst, int v) {
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern int Ov107_FindNearestObject(int owner, int flag);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const PosMsg data_ov206_020d05cc;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const short data_0203d210[];
 extern void Ov206_AiBallisticTick(int *node);
 
@@ -47,7 +49,7 @@ void Ov206_JumpWindupTick(int *node)
 {
     int *state = (int *)node[1];
     PosMsg msg;
-    Vec3 d;
+    VecFx32 d;
     Fx32 scratchZ;
     Fx32 scratchY;
     Fx32 scratchX;
@@ -77,18 +79,18 @@ void Ov206_JumpWindupTick(int *node)
     *(u16 *)(*state + 0x100 + 0xae) |= 1;
     Ov107_PostTagUpdate(*state, 0xe, 1);
     state[4] = Ov107_FindNearestObject(*state, 0);
-    *(Vec3 *)(state + 0xc) = data_02041dc8;
+    *(VecFx32 *)(state + 0xc) = data_02041dc8;
     if (state[4] != 0) {
-        VEC_Subtract((Vec3 *)(state[4] + 0x190), (Vec3 *)state[1], &d);
+        VEC_Subtract((VecFx32 *)(state[4] + 0x190), (VecFx32 *)state[1], &d);
         d.y = 0;
-        len = VEC_Normalize(&d, (Vec3 *)(state + 0xc));
+        len = VEC_Normalize(&d, (VecFx32 *)(state + 0xc));
         if (len == 0) {
             idx = FX_RadToIdx(state[0x10]);
             state[0xc] = data_0203d210[(idx >> 4) * 2];
             state[0xd] = 0;
             state[0xe] = data_0203d210[(idx >> 4) * 2 + 1];
         }
-        ScaleVec3Fx12(len / 20, (Vec3 *)(state + 0xc), (Vec3 *)(state + 0xc));
+        ScaleVec3Fx12(len / 20, (VecFx32 *)(state + 0xc), (VecFx32 *)(state + 0xc));
     }
     state[0xd] = 0x1000;
     state[0x11] = func_020050b4(state[0xc], state[0xe]);

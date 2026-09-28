@@ -2,6 +2,7 @@
  * (the +0x18 word of the entry the node's page/column/row point at); with a non-zero `min` the
  * node must also carry a +4 record and a +8 count of at least `min`. The grid context, entry
  * table and node list are built and torn down around the search. */
+
 #include "nitro/types.h"
 
 struct MenuNode {

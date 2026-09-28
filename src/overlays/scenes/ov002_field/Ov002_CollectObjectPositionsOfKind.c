@@ -15,12 +15,13 @@
  * The ROM's `mov r5,r6` is just mwcc reusing the counter's zero for the loop index, not an
  * artefact to reproduce by hand.
  */
+
+#include "nitro/fx.h"
+
 extern int Ov002_GetCtxTableByte(int slot);
 extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(int a);
 extern char *Ov002_GetListEntry(int index);
-
-typedef struct { int x, y, z; } Ov002Vec3;
 
 /* Collects the world position of every live actor that belongs to the current party member.
  * Returns how many were written. */
@@ -34,8 +35,8 @@ int Ov002_CollectObjectPositionsOfKind(char *out) {
     for (i = 0; i < 0x40; i++) {
         obj = Ov002_GetListEntry(i);
         if (obj != 0 && kind == Ov002_GetCtxTableByte((unsigned char)obj[0x10])) {
-            *(Ov002Vec3 *)out =
-                *(*(Ov002Vec3 *(**)(void *))(*(char **)(obj + 8) + 0x2c))(obj);
+            *(VecFx32 *)out =
+                *(*(VecFx32 *(**)(void *))(*(char **)(obj + 8) + 0x2c))(obj);
             out += 0xc;
             count++;
         }

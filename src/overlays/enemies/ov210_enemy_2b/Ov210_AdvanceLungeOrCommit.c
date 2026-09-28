@@ -5,13 +5,15 @@
  * at *state+0x17a is clear, keep waiting. Otherwise snap state[5..7] to the const vec data_02041dc8,
  * fire attack 0x17 (020c9264) and hand off to the 020d326c state.
  */
-struct vec3 { int x, y, z; };
-struct S210 { char pad[0x14]; struct vec3 a; char pad2[0x34]; struct vec3 b; };
+
+#include "nitro/fx.h"
+
+struct S210 { char pad[0x14]; VecFx32 a; char pad2[0x34]; VecFx32 b; };
 struct b17a { unsigned char b0 : 1; };
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov210_AiQueue2OnFlagClearB(void);
-extern struct vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 void Ov210_AdvanceLungeOrCommit(int *self) {
     int *state = (int *)self[1];

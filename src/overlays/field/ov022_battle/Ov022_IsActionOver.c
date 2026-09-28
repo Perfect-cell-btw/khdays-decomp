@@ -17,9 +17,10 @@
  * of that register.
  */
 
+/* Both bits have to be up for a run to count as cut short. */
+
 #include "nitro/types.h"
 
-/* Both bits have to be up for a run to count as cut short. */
 #define FLAGS_CUTSHORT 0x10000ULL
 #define FLAGS2_CUTSHORT 0x8000000000ULL
 

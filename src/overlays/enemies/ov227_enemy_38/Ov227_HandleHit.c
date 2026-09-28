@@ -7,9 +7,9 @@
  * Empty hit points request sub-state 3; sub-state 9 with a target and a 1/0x10 hit requests 0xa;
  * otherwise, off game mode 8 with a target and outside sub-state 0xd, a damaging hit counts
  * down the +0x74 hits and requests 0xd when they run out or the hit's +0x14 kind is 0x6b. */
-#include "nitro/types.h"
 
-struct Ov227Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov227ModePair { u8 nFirst; u8 nSecond; };
 union Ov227ModeSlot { struct Ov227ModePair sPair; u8 aModes[2]; };
@@ -25,7 +25,7 @@ struct Ov227HitFlags {
 
 struct Ov227Hit {
     unsigned int flags;
-    struct Ov227Vec3 position;
+    VecFx32 position;
     char pad10[4];
     int kind14;
     int body18;

@@ -6,22 +6,23 @@
  * 0x13c/4 fires at the +0x38c node's +0x14 and Ov154_RelayoutAndStoreVec launches from the +0x398 item
  * along that vector. Finally the byte behind +0xc (the item's +0xad) being clear ends the aim in
  * sub-state 2. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);
-extern void Ov154_RelayoutAndStoreVec(int item, void *anchor, Vec3 *dir);
-extern const Vec3 data_02042258;
+extern void Ov154_RelayoutAndStoreVec(int item, void *anchor, VecFx32 *dir);
+extern const VecFx32 data_02042258;
 
 void Ov154_AimTick(int node)
 {
     int *state = *(int **)(node + 4);
-    Vec3 d;
-    Vec3 dir;
+    VecFx32 d;
+    VecFx32 dir;
 
     state[6] = Ov107_FindNearestObject(*state, 0);
     if (state[6] == 0) {
@@ -29,7 +30,7 @@ void Ov154_AimTick(int node)
         SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)(state[6] + 0x190), (Vec3 *)state[1], &d);
+    VEC_Subtract((VecFx32 *)(state[6] + 0x190), (VecFx32 *)state[1], &d);
     state[5] = func_020050b4(d.x, d.z);
     state[8] = *(int *)(*(int *)node + 0x2c) * 30 / 40;
     state[7] += *(int *)(*(int *)node + 0x2c);

@@ -7,12 +7,7 @@
  * task->nIndex, 0). Q12 multiply throughout: ((s64)a * b + 0x800) >> 12. */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    s32 x;
-    s32 y;
-    s32 z;
-};
+#include "nitro/fx.h"
 
 struct Vec4 {
     s32 x;
@@ -22,7 +17,7 @@ struct Vec4 {
 };
 
 struct Sphere {
-    struct Vec3 center;
+    VecFx32 center;
     s32 radius;
 };
 
@@ -32,7 +27,7 @@ struct Component388 {
 };
 
 struct Transform {
-    struct Vec3 position;
+    VecFx32 position;
     char pad0c[0x70];
     void *field7c;
 };
@@ -44,7 +39,7 @@ struct Actor {
     u16 flags60;
     char pad62[0x3e];
     char fieldA0[0x84];
-    struct Vec3 direction124;
+    VecFx32 direction124;
     char pad130[0x4a];
     u8 flags17a;
     char pad17b[0x20d];
@@ -53,7 +48,7 @@ struct Actor {
 
 struct Inner {
     struct Actor *actor00;
-    struct Vec3 *target04;
+    VecFx32 *target04;
 };
 
 struct Task {
@@ -84,25 +79,25 @@ struct Hit {
 
 extern struct Vec4 data_02042264;
 
-extern struct Hit *Collision_CastSimple(void *a, struct Vec3 *b, struct Vec3 *c, int d);
-extern void ScaleVec3Fixed27(void *a, struct Vec3 *b, struct Vec3 *c);
-extern void VEC_Normalize(struct Vec3 *dst, struct Vec3 *src);
-extern int Ov107_MoveNodeAndRelayout(void *node, struct Vec3 *pos);
-extern int Quat_FromTwoVectors(struct Vec4 *out, struct Vec4 *m, struct Vec3 *v);
+extern struct Hit *Collision_CastSimple(void *a, VecFx32 *b, VecFx32 *c, int d);
+extern void ScaleVec3Fixed27(void *a, VecFx32 *b, VecFx32 *c);
+extern void VEC_Normalize(VecFx32 *dst, VecFx32 *src);
+extern int Ov107_MoveNodeAndRelayout(void *node, VecFx32 *pos);
+extern int Quat_FromTwoVectors(struct Vec4 *out, struct Vec4 *m, VecFx32 *v);
 extern int Srt_SetRotationQuat(void *dst, struct Vec4 *src);
 extern void SetIndexedSlot(struct Task *obj, int idx, void *value);
-extern int Ov107_QuerySphereContacts(void *a, struct Sphere *b, struct Vec3 *outList, struct Vec3 *outDir);
-extern void VEC_Subtract(struct Vec3 *a, struct Vec3 *b, struct Vec3 *out);
-extern int VEC_Mag(struct Vec3 *v);
+extern int Ov107_QuerySphereContacts(void *a, struct Sphere *b, VecFx32 *outList, VecFx32 *outDir);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
+extern int VEC_Mag(VecFx32 *v);
 
 struct StackLocals {
-    struct Vec3 diff;
-    struct Vec3 candidates[4];
+    VecFx32 diff;
+    VecFx32 candidates[4];
     struct Sphere sphere;
     struct Vec4 matrix;
-    struct Vec3 direction;
-    struct Vec3 result;
-    struct Vec3 offset;
+    VecFx32 direction;
+    VecFx32 result;
+    VecFx32 offset;
 };
 
 static inline s32 mul_round(s32 a, s32 b)

@@ -27,6 +27,7 @@
  * local before the first test; the three-argument prototypes of the drawers
  * copy the node into r2.
  */
+
 #include "nitro/types.h"
 
 #define COLOUR_NORMAL   0xf1

@@ -3,6 +3,7 @@
  * and its speed at +0x2fe8 set to 0x59a (scaled by 1.5 in hard mode), both slots register the
  * "lu" effect sequence with priority id+7, and the enemy's own emitter at +0x2648 is opened with
  * the 5-word parameter block before the first update. */
+
 #include "nitro/types.h"
 
 typedef struct { int w[5]; } Params;

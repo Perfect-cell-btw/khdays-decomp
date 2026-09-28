@@ -3,9 +3,9 @@
  * on a box trigger (shape +0x3c == 1) with a zero message type tests the message's point
  * (+0x4) and radius (+0x10) against the box (centre +0x30, extent +0x40, ov002 0207c824)
  * and answers 1 / 0; any other kind answers -1. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern int GameState_GetField(u16 nField, u8 nBit);                    /* GameState_GetField */
 extern int Ov002_PointWithinBoxRange(VecFx32 *pCentre, VecFx32 *pExtent, VecFx32 *pPoint, int nRadius); /* point within the box */

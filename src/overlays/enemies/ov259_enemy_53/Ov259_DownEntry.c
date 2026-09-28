@@ -4,14 +4,15 @@
  * +0x1ae are set. Sound 0x172/0x1b fires at the +0x10 point, the actor is knocked back there (mode
  * 4), pose 5 plays on the actor and its partner, the +0x384 rig closes (020d1764), bit 6 of the +0x60
  * high byte drops, pose 0x16 is queued (020cd628) and the node moves on to 020cfc40. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int y);
 extern void Ov259_PlaySound(int actor, int id, int variant, void *at);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void Ov259_SwapShells(int rig, int open);
@@ -22,9 +23,9 @@ extern void Ov259_DownTick(void);
 void Ov259_DownEntry(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
 
-    VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)(*state + 0x74), &d);
+    VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)(*state + 0x74), &d);
     VEC_Normalize(&d, &d);
     state[0x1e] = state[0x1f] = func_020050b4(d.x, d.z);
     state[0x1a] = 0;
@@ -45,7 +46,7 @@ void Ov259_DownEntry(int *node)
         *(u16 *)(*state + 0x1ae) |= 3;
     }
     Ov259_PlaySound(*state, 0x172, 0x1b, (void *)state[4]);
-    func_ov107_020c0b90(*state, 4, *(Vec3 *)state[4], 0);
+    func_ov107_020c0b90(*state, 4, *(VecFx32 *)state[4], 0);
     Ov107_PostTagUpdate(*state, 5, 0);
     Ov259_MirrorPartnerPose(node, 5, 0);
     Ov259_SwapShells(*(int *)(*state + 0x384), 0);

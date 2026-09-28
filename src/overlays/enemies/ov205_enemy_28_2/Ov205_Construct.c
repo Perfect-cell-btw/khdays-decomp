@@ -7,7 +7,9 @@
  * reactions (id 0x3000: 0/1 at the 0x020d35c4 lift, 1/1, 2/1 and 4/1 without one) and two
  * placements on the +0x22c/+0x144 lists (+0x388/+0x38c) from the +0x64 pose, then loads sound
  * 0x132. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
 
 struct PoolIds {
@@ -32,18 +34,18 @@ extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern void *CallocInstance(int size);
 extern void Ov107_EnqueueValue(char *self, int item);
-extern void Ov107_Actor_SetAttachSlot(char *self, int a, int b, Vec3 *lift, int id);
+extern void Ov107_Actor_SetAttachSlot(char *self, int a, int b, VecFx32 *lift, int id);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern void Res_RequestIdPair(int id);
 extern const struct PoolIds data_ov205_020d7220;
-extern const Vec3 data_ov205_020d7204;
+extern const VecFx32 data_ov205_020d7204;
 extern const char data_ov205_020d72ec[];
 
 void Ov205_Construct(char *self)
 {
     struct PoolIds pools;
-    Vec3 lift;
+    VecFx32 lift;
     int *p;
     int i;
 

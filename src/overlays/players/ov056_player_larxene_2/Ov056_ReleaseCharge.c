@@ -5,13 +5,13 @@
  * submits the pair; if the submit takes and busy bit 0 of +0x26bc is clear, it queues effect
  * record 5 on the emitter at +0x2648: the +0x26c8 muzzle jittered by 0x99a/0x4cd/0x99a, the
  * actor's heading, a random variant, cue 0xcf, kind 2. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct EmitPair {
-    struct Vec3 vPosB;
-    struct Vec3 vPosA;
+    VecFx32 vPosB;
+    VecFx32 vPosA;
     int nOwner;
     int nRange;
     void *pAnchor;
@@ -21,7 +21,7 @@ struct EmitPair {
 struct EffectRecord {
     u8 nOwnerId;
     u8 pad01[3];
-    struct Vec3 vPos;
+    VecFx32 vPos;
     u16 nScale;
     u16 nAngle;
     u8 nVariant;
@@ -38,16 +38,16 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;
     u8 pad26[2];
 };
 
-extern void func_ov022_020ad44c(struct Vec3 *out, char *self);
-extern void ScaleVec3Fx12(int scale, const struct Vec3 *v, struct Vec3 *out);
-extern void VEC_Add(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *out);
+extern void func_ov022_020ad44c(VecFx32 *out, char *self);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov022_ScaleRowValues(char *self, int spin, void *a, void *b);
 extern int Ov022_RunReachHandlers(char *self, struct EmitPair *emit, void *params);
 extern int Session_RandNextScaled(int n);                                             /* Session_RandNextScaled */
@@ -59,10 +59,10 @@ void Ov056_ReleaseCharge(char *self)
 {
     struct EmitPair emit;
     struct Params prm;
-    struct Vec3 tmp;
-    struct Vec3 dir;
-    struct Vec3 anchor;
-    struct Vec3 at;
+    VecFx32 tmp;
+    VecFx32 dir;
+    VecFx32 anchor;
+    VecFx32 at;
     struct EffectRecord rec;
     int angle;
     int idx;
@@ -100,7 +100,7 @@ void Ov056_ReleaseCharge(char *self)
         return;
     }
     variant = Session_RandNextScaled(3);
-    at = *(struct Vec3 *)(self + 0x2c8 + 0x2400);
+    at = *(VecFx32 *)(self + 0x2c8 + 0x2400);
     randomOffset = Session_RandNext() - 0x800;
     at.x += (int)(((long long)randomOffset * 0x99a + 0x800) >> 12);
     randomOffset = Session_RandNext() - 0x800;

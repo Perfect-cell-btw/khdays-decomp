@@ -2,6 +2,7 @@
  * all-cleared/all-complete flags, the best rank, and adds the scaled rewards (capped). */
 
 #include "nitro/types.h"
+
 typedef struct Ov005Config {
     u16 sceneId,missionIndex;
     char unknown04[8];

@@ -2,24 +2,19 @@
  * rush update (0x11f, mode 8) and continues with the rush tick. */
 
 #include "nitro/types.h"
-
-typedef struct Vec3 {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
 struct Ov140RushState {
     void *pOwner;
     char pad004[0x1c];
-    Vec3 vInitialDirection;
-    Vec3 vDirection;
+    VecFx32 vInitialDirection;
+    VecFx32 vDirection;
     int nSpeed;
     int nTimer;
     char pad040[4];
     void *pTarget;
-    Vec3 *pPosition;
-    Vec3 *pEffectPosition;
+    VecFx32 *pPosition;
+    VecFx32 *pEffectPosition;
     u8 pad050[4];
     u8 nPhase;
 };
@@ -28,9 +23,9 @@ extern void Ov107_PostTagUpdate(void *actor, int animation, int loop);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(void *source, void *dest);
 extern void Ov107_BuildAndSendUpdate(void *actor, int reaction, int mode,
-                                Vec3 *position);
+                                VecFx32 *position);
 extern void SetIndexedSlot(int *node, int slot, void *callback);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void Ov140_RushTick(void);
 
 void Ov140_InitRush(int *node)
@@ -44,16 +39,16 @@ void Ov140_InitRush(int *node)
                      state + 0xb);
         state[0xc] = 0;
     } else {
-        *(Vec3 *)(state + 0xb) = *(Vec3 *)(state + 8);
+        *(VecFx32 *)(state + 0xb) = *(VecFx32 *)(state + 8);
         state[0xc] = 0;
     }
     if (VEC_Normalize(state + 0xb, state + 0xb) == 0) {
-        *(Vec3 *)(state + 0xb) = data_02042258;
+        *(VecFx32 *)(state + 0xb) = data_02042258;
     }
     state[0xe] = 0x800;
     *(u8 *)((char *)state + 0x54) = 0;
     state[0xf] = 0;
-    Ov107_BuildAndSendUpdate((void *)*state, 0x11f, 8, (Vec3 *)state[0x13]);
+    Ov107_BuildAndSendUpdate((void *)*state, 0x11f, 8, (VecFx32 *)state[0x13]);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20),
                   Ov140_RushTick);
 }

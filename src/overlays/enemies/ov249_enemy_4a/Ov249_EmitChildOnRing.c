@@ -7,20 +7,22 @@
  * add the owner origin (state[3]), and hand the node BOTH the world point and the raw heading via
  * 020d1ff4 (two vec3s by value). Re-arm via 0203c634 with the 020d1c14 continuation.
  */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern int  Ov249_MeasureTargetGap(int self);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
 extern void VEC_Add(void *a, void *b, void *c);
-extern void Ov249_SetPlacement(int node, struct vec v, struct vec v2);
+extern void Ov249_SetPlacement(int node, VecFx32 v, VecFx32 v2);
 extern void Ov249_AiStep_QueueAction2OnAnimEnd_2(void);
 extern short data_0203d210;
 
 void Ov249_EmitChildOnRing(int *self, int p2, int p3, int p4) {
     int *state = (int *)self[1];
-    struct vec out;
-    struct vec vec;
+    VecFx32 out;
+    VecFx32 vec;
     int t;
     int i;
 

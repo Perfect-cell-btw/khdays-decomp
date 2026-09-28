@@ -9,6 +9,7 @@
  * the widget from Ov025_FindEntryById). arg2 is the widget context; takes 5 args (arg5 on the
  * stack). Row target reads use a 16-byte struct subscript so mwcc recomputes p + i*0x10 each
  * iteration (index addressing) instead of adding an induction variable. */
+
 #include "nitro/types.h"
 
 typedef struct DisplayObj {

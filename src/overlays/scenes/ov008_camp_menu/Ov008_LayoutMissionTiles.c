@@ -20,6 +20,7 @@
  * third count then spills); the badge tests are two separate ifs; the x
  * counter is an int stepped before the index.
  */
+
 #include "nitro/types.h"
 
 #define FIELD_MISSION_STATUS 0x28e4

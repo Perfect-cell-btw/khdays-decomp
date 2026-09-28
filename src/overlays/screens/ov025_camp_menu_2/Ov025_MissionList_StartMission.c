@@ -8,6 +8,7 @@
  * Without a transfer (+0x150 of page B) touch is disabled (02084d14) and the jingle 1 / 4 plays
  * (02033fb4), else sound 0 / 1; the target slot becomes -1 / 0x5dc (02084798), or 0 / -1 with
  * flag 0x200a set when the 95c0 object (02084dd8) is 2. */
+
 #include "nitro/types.h"
 
 typedef struct GameplayThresholdSnapshot {

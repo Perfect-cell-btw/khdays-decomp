@@ -5,6 +5,7 @@
  * entry 3 and the "back" state armed; any other non-negative result builds the
  * entry from it.  Either way phase 2 is "done".  Returns the phase.
  */
+
 #include "nitro/types.h"
 
 #define ENTRY_COUNT 3

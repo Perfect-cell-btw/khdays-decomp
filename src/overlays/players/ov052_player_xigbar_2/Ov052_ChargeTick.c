@@ -8,7 +8,8 @@
  * reported through 020a35f4 (mode 0 plus the +0x664 handler with bit 2 of +0x24, else mode 2
  * after raising bit 2 unless both bit 36 and +0x464 bit 7 hold). The timer advances by 0x1800
  * in single-player frames (3c40 == 1) or 0x1000. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 struct ActorBits {
     unsigned char bUnk0 : 1;
@@ -21,17 +22,17 @@ struct FlagBits2c30 {
 };
 
 extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void func_ov022_0209190c(int item);
 extern void SceneNode_Enable(int *p);
 extern int Ov022_ActorSetState(char *self, int mode);
 extern int func_02023c40(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 int Ov052_ChargeTick(char *self)
 {
     int nRet = 0;
-    Vec3 v;
+    VecFx32 v;
 
     if ((*(unsigned long long *)self & 0x1000000000ULL) != 0 &&
         (*(unsigned long long *)(self + 0x464) & 0x80) != 0 && Session_GetLocalPlayerIndex() == 0) {
@@ -46,7 +47,7 @@ int Ov052_ChargeTick(char *self)
     }
     v = data_02041dc8;
     v.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &v, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &v, (VecFx32 *)(self + 0x98 + 0x400));
     ((struct ActorBits *)(self + 0x694))->bFired = (*(int (**)(char *))(self + 0x668))(self);
     if (*(int *)(self + 0x4cc) >= 0x3000 && ((struct FlagBits2c30 *)(self + 0x2000 + 0xc30))->bReleased != 0) {
         func_ov022_0209190c(*(int *)(self + 0x2000 + 0x644));

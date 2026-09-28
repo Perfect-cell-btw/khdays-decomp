@@ -1,5 +1,6 @@
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
 
 extern int SetIndexedSlot(int self, int idx, void *handler);
 extern void Ov283_AiEnterHop(int self);

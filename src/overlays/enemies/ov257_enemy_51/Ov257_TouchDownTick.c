@@ -2,11 +2,13 @@
  * (Ov257_SteerToTarget) into the +0x10 step. Once the +0xc idle byte clears and the owner is
  * grounded (+0x17a bit 0), animation 6 plays, the +0x3d0 part plays motion 5, reaction +0x408 mode
  * 3 fires at the +4 point and the tick hands over to Ov257_SettleTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Bits17a { unsigned char b0 : 1; };
 
-extern void Ov257_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void Ov257_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
@@ -16,12 +18,12 @@ extern void Ov257_SettleTick(int *node);
 void Ov257_TouchDownTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
 
     state[0x10] = 0;
     Ov257_SteerToTarget(state, state[0x18], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     if (*(unsigned char *)state[3] != 0) {
         return;
     }

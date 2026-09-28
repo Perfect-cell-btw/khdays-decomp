@@ -3,10 +3,10 @@
  * +0x16 angle (the base-derived matrices are marked stale), then flushed. The model is drawn twice
  * in shadow polygon mode with alpha +0x14: first as the mask (polygon id 0, front faces culled),
  * then as the shadow itself (polygon id 0x3f, no culling). The base scale is reset to 1.0 after. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
-typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 m[9]; } MtxFx33;
 
 typedef struct NNSG3dGlb {

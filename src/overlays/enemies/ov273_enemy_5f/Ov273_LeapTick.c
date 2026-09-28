@@ -6,12 +6,13 @@
  * entity's +0x74 position to the owner's +0x24 hook and reaction 0x4f fires at the owner. At the end of
  * the curve, on landing (+0x17a bit 1) or after a hit, the landing template carries the owner's
  * position to the hook, reaction 0x162 mode 0xd fires when nothing was hit, and sub-state 0 follows. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;
 typedef struct { int value; } Fx32;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
 struct b2 { u8 b0 : 1, b1 : 1; };
 
 typedef struct {
@@ -24,24 +25,24 @@ typedef struct {
 
 struct Ov213State {
     int pOwner;                  /* 0x00 */
-    Vec3 *pPos;                  /* 0x04 */
-    Vec3 vStep;                  /* 0x08 */
+    VecFx32 *pPos;                  /* 0x04 */
+    VecFx32 vStep;                  /* 0x08 */
     int nClock;                  /* 0x14 */
-    Vec3 vTan0;                  /* 0x18 */
-    Vec3 vTan1;                  /* 0x24 */
-    Vec3 vFrom;                  /* 0x30 */
-    Vec3 vTo;                    /* 0x3c */
+    VecFx32 vTan0;                  /* 0x18 */
+    VecFx32 vTan1;                  /* 0x24 */
+    VecFx32 vFrom;                  /* 0x30 */
+    VecFx32 vTo;                    /* 0x3c */
 };
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern void VEC_Add(void *a, void *b, Vec3 *d);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern void VEC_Add(void *a, void *b, VecFx32 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *query, int *out);
-extern int VEC_Normalize(Vec3 *a, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
+extern int VEC_Normalize(VecFx32 *a, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const PosMsg data_ov273_020d6b84;
@@ -53,7 +54,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov213State *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov213State *state, PosMsg *msg, const VecFx32 *src)
 {
     Fx32 px;
     Fx32 py;
@@ -72,11 +73,11 @@ static inline void SendPos(struct Ov213State *state, PosMsg *msg, const Vec3 *sr
 void Ov273_LeapTick(int *node)
 {
     struct Ov213State *state = (struct Ov213State *)node[1];
-    Vec3 pos;
-    Vec3 term;
+    VecFx32 pos;
+    VecFx32 term;
     int hits[4];
     Sphere sphere;
-    Vec3 push;
+    VecFx32 push;
     PosMsg msg;
     PosMsg land;
     PosMsg tmpl;
@@ -110,7 +111,7 @@ void Ov273_LeapTick(int *node)
     VEC_Add(&pos, &term, &pos);
     VEC_Subtract(&pos, state->pPos, &state->vStep);
     sphere = *(Sphere *)(state->pOwner + 0x74);
-    VEC_Add(&sphere, &state->vStep, (Vec3 *)&sphere);
+    VEC_Add(&sphere, &state->vStep, (VecFx32 *)&sphere);
     n = Ov107_CollectSphereOverlaps(state->pOwner, &sphere, hits);
     i = 0;
     if (n > 0) {
@@ -124,7 +125,7 @@ void Ov273_LeapTick(int *node)
             ScaleVec3Fx12(0x100, &push, &push);
             if (Ov107_InvokeHitCallback(hits[i], state->pOwner, *(int *)(state->pOwner + 0x384), 5, &push, 0) != 0) {
                 msg = tmpl;
-                SendPos(state, &msg, (Vec3 *)(hits[i] + 0x74));
+                SendPos(state, &msg, (VecFx32 *)(hits[i] + 0x74));
                 hit = 1;
                 Ov107_BuildAndSendUpdate(*(int *)(state->pOwner + 0x384), 0, 0x4f, (void *)(state->pOwner + 0x74));
             }
@@ -134,7 +135,7 @@ void Ov273_LeapTick(int *node)
         return;
     }
     land = data_ov273_020d6ba0;
-    SendPos(state, &land, (Vec3 *)(state->pOwner + 0x74));
+    SendPos(state, &land, (VecFx32 *)(state->pOwner + 0x74));
     if (hit == 0) {
         Ov107_BuildAndSendUpdate(*(int *)(state->pOwner + 0x384), 0x162, 0xd, (void *)(state->pOwner + 0x74));
     }

@@ -27,6 +27,7 @@
  *
  * Byte-identical in ov004/005/008/009/025/069.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov000TallySlot {

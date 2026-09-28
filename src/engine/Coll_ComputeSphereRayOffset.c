@@ -3,18 +3,17 @@
  */
 
 #include "nitro/fx.h"
-typedef struct { fx32 x, y, z; } Vec;
 
-extern void VEC_Subtract(const Vec *a, const Vec *b, Vec *dst);
-extern fx32 VEC_DotProduct(const Vec *a, const Vec *b);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
+extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern fx32 FX_Sqrt(fx32 x);
-extern void ScaleVec3Fx12(fx32 a, const Vec *b, void *c);
+extern void ScaleVec3Fx12(fx32 a, const VecFx32 *b, void *c);
 
 #define FX_MUL(a, b) ((fx32)(((long long)(a) * (long long)(b) + 0x800) >> 12))
 
-int Coll_ComputeSphereRayOffset(const Vec *a, const Vec *b, const Vec *c, fx32 d, void *e)
+int Coll_ComputeSphereRayOffset(const VecFx32 *a, const VecFx32 *b, const VecFx32 *c, fx32 d, void *e)
 {
-    Vec diff;
+    VecFx32 diff;
     fx32 dot;
     fx32 disc;
 

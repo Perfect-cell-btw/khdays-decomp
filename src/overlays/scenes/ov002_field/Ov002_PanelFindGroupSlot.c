@@ -16,6 +16,7 @@
  * group-3 body out of line with a predicated return, even though mwcc still
  * emits the comparison against 3 first.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

@@ -4,17 +4,19 @@
  *    back to back, exactly as in ov119 020ccef4.
  *  - the `&= ~1` at +8 is a BYTE field, so it needs a real bitfield type;
  *  - func_ov107_020c0b90 takes the vec BY VALUE. */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned short lo : 8, hi : 8; } Hw60;
 typedef struct { unsigned int lo : 8, rest : 24; } Byte8;
 
 extern void Ov107_BuildAndSendUpdate();
-extern void func_ov107_020c0b90(int owner, int mode, struct vec v, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void VEC_Subtract();
 extern int  func_020050b4(int a, int b);
 extern void SetIndexedSlot(int self, int index, void *cb);
-extern struct vec data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern void Ov197_ClearMoveTimerAndFire(void);
 
 void Ov197_EnterAttackFacingTarget(int self) {

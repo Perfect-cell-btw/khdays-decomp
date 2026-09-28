@@ -5,24 +5,25 @@
  * table and added to the anchor at +0x48c. The heading is stored back on the
  * record, the visible bit is raised and the state advances to 2, where the
  * emitter runs until it reports done. */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Mtx33 { int m[9]; };
 
 extern void Ov022_PlayEntityVoice(int self, int a, int b);
 extern void Ov038_ResetSequenceState(int self, void *block);
 extern void MTX_RotY33_(struct Mtx33 *m, int sin, int cos);
-extern void MTX_MultVec33(const struct Vec3 *v, const struct Mtx33 *m, struct Vec3 *dst);
-extern void VEC_Add(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *dst);
+extern void MTX_MultVec33(const VecFx32 *v, const struct Mtx33 *m, VecFx32 *dst);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern unsigned int Sequence_UpdateTracks(void *p, int a);
 
 extern int data_ov038_020b4ca0;
 extern short data_0203d210[];
 
 void Ov038_PlaceChargeEffect(int self, int *p2, int p3) {
-    struct Vec3 vAnchor;
-    struct Vec3 vOffset;
+    VecFx32 vAnchor;
+    VecFx32 vOffset;
     struct Mtx33 mtx;
     char *blk = (char *)(*(int *)&data_ov038_020b4ca0 + 0x2c + 0x2c00);
     u16 angle;
@@ -42,7 +43,7 @@ void Ov038_PlaceChargeEffect(int self, int *p2, int p3) {
         vOffset.x = 0x148;
         vOffset.y = 0;
         vOffset.z = 0x1800;
-        vAnchor = *(struct Vec3 *)(self + 0x48c);
+        vAnchor = *(VecFx32 *)(self + 0x48c);
 
         angle = *(u16 *)(*(char **)(self + 0x20) + 0x80);
         angle = (u16)(angle - 0x8000);
@@ -54,7 +55,7 @@ void Ov038_PlaceChargeEffect(int self, int *p2, int p3) {
 
         *(u16 *)((char *)p2 + 0x80) = angle;
         *(u16 *)((char *)p2 + 4) |= 0x20;
-        *(struct Vec3 *)((char *)p2 + 0xa8) = vAnchor;
+        *(VecFx32 *)((char *)p2 + 0xa8) = vAnchor;
         *p2 = 2;
         return;
     case 2:

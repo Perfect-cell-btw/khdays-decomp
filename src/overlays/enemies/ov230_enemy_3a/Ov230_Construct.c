@@ -7,13 +7,15 @@
  * others with texture frames 3..30 cycling); registers action 2/3 lowered 2.0 (rate 0.6), 1/2 (0.8)
  * and 4/2 (1.0); reserves the +0x22c/+0x144 handles of a placement of scale 2.0 (+0x3ac, +0x3b0),
  * creates the eight +0x3c0 projectiles (020d5ca8) and loads sound 0x147. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int id[10]; } IdTable;
-typedef struct { Vec3 min; Vec3 max; } Bounds;
-typedef struct { Vec3 pos; int scale; } Placement;
+typedef struct { VecFx32 min; VecFx32 max; } Bounds;
+typedef struct { VecFx32 pos; int scale; } Placement;
 struct Pair { int res; int handle; };
 struct Pairs { char pad[0x4a8]; struct Pair pairs[10]; };
 struct Xforms { char pad[0x40c]; SrtTransform xf[2]; };
@@ -43,7 +45,7 @@ extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern char *func_ov107_020c9848(void);
 extern void Ov107_EnqueueValue(char *self, int item);
 extern void NNS_G3dMdlSetMdlPolygonID(int a, int b, int c);
-extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const Vec3 *v, int c);
+extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const VecFx32 *v, int c);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(const Placement *placement);
 extern int Ov230_New(char *self);
@@ -52,14 +54,14 @@ extern IdTable data_ov230_020d63b8;
 extern const char data_ov230_020d648c[];
 extern const char data_ov230_020d649c[];
 extern const char data_ov230_020d64ac[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov230_Construct(char *self)
 {
     IdTable ids = data_ov230_020d63b8;
     Bounds bounds;
     Placement place;
-    Vec3 lift;
+    VecFx32 lift;
     int i;
     int frame = 3;
     int node;

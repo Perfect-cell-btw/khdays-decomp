@@ -11,28 +11,30 @@
  * part; when that point lies on ground 3.5 below 32.0 the actor is knocked back there (mode 0x27).
  * Codegen: compiled with opt_dead_assignments off (push/pop scoped) and the products through the FX_Mul
  * inline; either one alone leaves the climb's difference and low word in swapped registers. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { unsigned f : 8; } B8;
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
 
 extern int Angle_TurnToward(int a, int b, int c, int d);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(int a, void *b);
 extern int func_ov107_020c9848();
 extern int func_ov022_02083f0c(void);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov252_CheckTarget(int *node, Vec3 *to, int b);
+extern int Ov252_CheckTarget(int *node, VecFx32 *to, int b);
 extern int func_020050b4(int x, int y);
-extern void Ov252_TurnVecY(Vec3 *v, int angle, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern CollisionHit *Collision_CastRay(void *collision, Vec3 *origin, Vec3 *direction);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
-extern const Vec3 data_02042264;
-extern const Vec3 data_ov252_020d43c8;
-extern const Vec3 data_ov252_020d43b0;
+extern void Ov252_TurnVecY(VecFx32 *v, int angle, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern CollisionHit *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *direction);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_ov252_020d43c8;
+extern const VecFx32 data_ov252_020d43b0;
 
 static inline int FX_Mul(int a, int b)
 {
@@ -89,7 +91,7 @@ void Ov252_FlyerUpdate(int *node)
             state[4] = state[4] > 0x100 ? 0x100 : (state[4] < -0x100 ? -0x100 : state[4]);
         }
     }
-    *(Vec3 *)(*state + 0xf0) = *(Vec3 *)(state + 3);
+    *(VecFx32 *)(*state + 0xf0) = *(VecFx32 *)(state + 3);
     state[3] = FX_Mul(state[3], 0xfc0);
     state[5] = FX_Mul(state[5], 0xfc0);
     if (*(signed char *)(*state + 0x100 + 0xc6) == 4) {
@@ -127,17 +129,17 @@ void Ov252_FlyerUpdate(int *node)
     if (state[0x1d] > 0x3800) {
         state[0x1d] = 0;
         item = *(int *)(*state + 4);
-        Vec3 ray = data_ov252_020d43c8;
-        Vec3 toTarget;
-        Vec3 aim = data_ov252_020d43b0;
+        VecFx32 ray = data_ov252_020d43c8;
+        VecFx32 toTarget;
+        VecFx32 aim = data_ov252_020d43b0;
 
         if (Ov252_CheckTarget(node, &toTarget, 0) > 0x20000) {
             Ov252_TurnVecY(&aim, func_020050b4(*(int *)(*(int *)(*state + 0x4e4) + 0x19c),
                                                     *(int *)(*(int *)(*state + 0x4e4) + 0x1a4)), &aim);
-            VEC_Add(&aim, (Vec3 *)(*(int *)(*state + 0x4e4) + 0x190), &aim);
+            VEC_Add(&aim, (VecFx32 *)(*(int *)(*state + 0x4e4) + 0x190), &aim);
         } else {
             ScaleVec3Fx12(0xb000, &toTarget, &aim);
-            VEC_Add(&aim, (Vec3 *)(*(int *)(*state + 0x538) + 0x14), &aim);
+            VEC_Add(&aim, (VecFx32 *)(*(int *)(*state + 0x538) + 0x14), &aim);
         }
         toTarget.y = 0;
         aim.y = 0x20000;

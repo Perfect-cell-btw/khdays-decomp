@@ -13,6 +13,7 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define ACTOR_FLAGS(p) (*(unsigned long long *)(p)->aFlags)
 #define ACTOR_FLAGS2(p) (*(unsigned long long *)(p)->aFlags2)
@@ -24,10 +25,6 @@
 #define SHOVE_SLOW 0x4cd
 #define SHOVE_FAST 0x99a
 
-struct Vec3 {
-    int x, y, z;
-};
-
 struct Source {
     u8 pad000[0x19c];
     u8 nRole;                    /* 0x19c */
@@ -35,7 +32,7 @@ struct Source {
 
 struct Request {
     int nFlags;                  /* 0x00 */
-    struct Vec3 vec;             /* 0x04 */
+    VecFx32 vec;             /* 0x04 */
     u8 pad10[0xc];
     struct Source *pSrc;         /* 0x1c */
     int nAmount;                 /* 0x20 */
@@ -59,7 +56,7 @@ struct Actor {
     u32 aFlags2[2];              /* 0x0464 */
     u32 aFlags3[2];              /* 0x046c */
     u8 pad474[8];
-    struct Vec3 vecDrift;        /* 0x047c */
+    VecFx32 vecDrift;        /* 0x047c */
     u32 nFacingAngle;            /* 0x0488 */
     u8 pad48c[0x28];
     int nInterruptCharge;                  /* 0x04b4 */
@@ -81,7 +78,7 @@ struct Actor {
 
 extern u8 data_0204c240[];
 extern u8 data_0204c248[];
-extern const struct Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 extern int Ov022_TryBlockHit(struct Actor *pActor, struct Request *pReq);
 extern int Ov022_TryTriggerFinisher(struct Actor *pActor, struct Request *pReq);
@@ -99,7 +96,7 @@ extern int Slot_EvalPackedParam(int nId, int nQuery);
 extern void Ov002_World_AddStat(int nMode, int nArg);
 extern void Ov022_ChargeGaugeForHit(struct Actor *pActor, int nAmount, int bFlag);int Ov022_ReceiveHit(struct Actor *pActor, struct Request *pReq)
 {
-    struct Vec3 vShove;
+    VecFx32 vShove;
     int nAmount;
     int bBreak;
     int bBlock;

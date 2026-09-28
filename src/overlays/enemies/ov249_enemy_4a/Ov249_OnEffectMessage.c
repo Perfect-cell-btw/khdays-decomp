@@ -5,9 +5,10 @@
  * anchors on the +0x40c point, slots 3/9 on the actor's +0xa0 pose, slot 4 on the +0x438 point
  * (looping when byte 4 is 1) and slot 5 on the +0x3e0 point, all with byte 4; slot 0xb starts
  * reaction 0x145 mode 9 on the +0xa0 pose into +0x4a4. The base hook always runs. */
-#include "nitro/types.h"
 
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } Srt;
 
 extern void SrtTransform_SetIdentity(Srt *srt);

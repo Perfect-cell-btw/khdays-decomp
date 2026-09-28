@@ -1,5 +1,7 @@
 /* Draw mission results, reward gauges, rank indicators and the current mode count. */
+
 #include "nitro/types.h"
+
 typedef struct Ov005SpriteManager { char data[0x4a80]; } Ov005SpriteManager;
 typedef struct Ov005ResultTween { char tween[28]; int duration, currentValue, fromValue, toValue; } Ov005ResultTween;
 typedef struct Ov005GaugeRange { int maximum, value; } Ov005GaugeRange;

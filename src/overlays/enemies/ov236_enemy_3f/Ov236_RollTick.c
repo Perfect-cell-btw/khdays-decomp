@@ -4,18 +4,20 @@
  * step down; when the +4 child's +0xa8 flag is set and the timer is spent, bit 2 of +0x52 and
  * that flag clear. Once the child's +0xad byte clears, pose request 0xa (actor's +0x3bd latch),
  * 4 (bit 0 of +0x52) or 6 is queued and the node dispatches null. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Bits52 { unsigned char b0 : 1; };
 
 extern int Ov107_FindNearestObject(int actor, int mode);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov236_RollTick(int *node) {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     int target;
     int child;
 
@@ -24,11 +26,11 @@ void Ov236_RollTick(int *node) {
         return;
     }
     if (state[5] != 0) {
-        VEC_Subtract((Vec3 *)(target + 0x74), (Vec3 *)(*state + 0x74), &d);
+        VEC_Subtract((VecFx32 *)(target + 0x74), (VecFx32 *)(*state + 0x74), &d);
         state[3] = state[4] = func_020050b4(d.x, d.z);
         state[5] = 0;
     }
-    VEC_Subtract((Vec3 *)(state[2] + 0x74), (Vec3 *)(*state + 0x74), &d);
+    VEC_Subtract((VecFx32 *)(state[2] + 0x74), (VecFx32 *)(*state + 0x74), &d);
     d.y = 0;
     VEC_Normalize(&d, &d);
     state[4] = func_020050b4(d.x, d.z);

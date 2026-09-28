@@ -1,4 +1,5 @@
 /* Initialize the refresh-window subsystem and register its named task. */
+
 #include "nitro/types.h"
 
 typedef struct Ov002RefreshWindowState {

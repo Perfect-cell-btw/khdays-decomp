@@ -3,13 +3,15 @@
  * flagged) is swept for hits (020cd2a0 kind 4). Then, once (+0x7b bit 1), the +0x78 stomp count drops
  * and while stomps remain the partner's queued move clears and the node goes back to the hop
  * (020cf17c); otherwise, once the partner holds no queued move, the next move is 2 and the node ends. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct BoxQuery {
-    Vec3 vCenter;
-    Vec3 vAxisX;
-    Vec3 vAxisZ;
-    Vec3 vAxisY;
+    VecFx32 vCenter;
+    VecFx32 vAxisX;
+    VecFx32 vAxisZ;
+    VecFx32 vAxisY;
     int nExtent;
     int bFlag;
 };
@@ -18,9 +20,9 @@ extern void Ov260_MapHeldItemKindToAnim(int actor, int flag);
 extern void Ov260_AttackSweep(int *state, int kind, void *sphere, void *cyl, void *seg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_HopTick(void);
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
 
 void Ov260_StompTick_2(int *node)
 {
@@ -33,7 +35,7 @@ void Ov260_StompTick_2(int *node)
         Ov260_MapHeldItemKindToAnim(*state, 3);
     }
     if (state[0x1c] <= 0x550) {
-        box.vCenter = *(Vec3 *)(state + 0x15);
+        box.vCenter = *(VecFx32 *)(state + 0x15);
         box.nExtent = (state[0x1c] * 3 << 12) / 0x550;
         box.vAxisX = data_02042270;
         box.vAxisZ = data_02042258;

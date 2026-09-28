@@ -20,6 +20,7 @@
  * three uses (no slot pointer local): the page row is then the compiler's
  * own CSE temp and the base / page / index temps take the ROM's registers.
  */
+
 #include "nitro/types.h"
 
 #define GRID_COLS      5

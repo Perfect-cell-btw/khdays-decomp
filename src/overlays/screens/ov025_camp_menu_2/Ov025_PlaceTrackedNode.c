@@ -13,6 +13,7 @@
  * follow the declaration order (nTop [sp+8], nLeft [sp+0xc], the row counter
  * [sp+0x10]); with the counters declared last the two outer slots swap.
  */
+
 #include "nitro/types.h"
 
 #define GRID_ROWS 8

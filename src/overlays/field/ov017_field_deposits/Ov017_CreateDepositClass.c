@@ -6,6 +6,7 @@
  * (message 0207fb94, init 0207fc08, refresh 0207fd88, release 0207fba8, start 0207fc18, hit
  * 0207fdb4, node 0207fe10, owner 0207fe18, 0207fe24) and stamps kind 0x15.  The deposit is
  * ov017's multi-hit prize object. */
+
 #include "nitro/types.h"
 
 typedef struct Ov017DepositDesc {

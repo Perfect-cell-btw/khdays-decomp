@@ -1,9 +1,10 @@
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
-struct vec3 { int x, y, z; };
 
 extern int QueryActiveStateOrDelegate(void);
 extern void SetIndexedSlot(void *obj, int slot, void *cb);
-extern void func_ov107_020c0b90(int obj, int cmd, struct vec3 v, int flag);
+extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
 extern void Ov234_DispatchSubStateByte(void);
 extern void Ov234_TurnTowardDirection(void);
 extern void Ov234_stAdvanceState_ccedc(void);
@@ -27,7 +28,7 @@ void Ov234_EnterRecoilState(void *param_1) {
     {
         int inner = *node;
         int q = QueryActiveStateOrDelegate();
-        func_ov107_020c0b90(inner, 5, *(struct vec3 *)(inner + 0x74), q & 0xff);
+        func_ov107_020c0b90(inner, 5, *(VecFx32 *)(inner + 0x74), q & 0xff);
     }
     SetIndexedSlot(param_1, 1, Ov234_stAdvanceState_ccedc);
     SetIndexedSlot(param_1, 0, Ov234_DispatchSubStateByte);

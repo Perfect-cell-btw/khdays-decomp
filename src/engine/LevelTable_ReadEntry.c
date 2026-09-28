@@ -2,6 +2,7 @@
  * slot) from "ba/ch/<name>/lv.b.z" (data_02042a70 names) into *out, loading the file from heap 6
  * and freeing it again. */
 #pragma thumb on
+
 #include "nitro/types.h"
 
 typedef struct {

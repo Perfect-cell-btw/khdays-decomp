@@ -10,6 +10,7 @@
  * whole second instead. The leading minutes digit is blanked rather than drawn
  * as a zero.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

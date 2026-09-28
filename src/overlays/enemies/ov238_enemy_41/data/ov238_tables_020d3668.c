@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov238_CarrierTeardown (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov238_CarrierTeardown (not yet decompiled) */
 const u8 data_ov238_020d3668[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 244, 255, 255,
 };

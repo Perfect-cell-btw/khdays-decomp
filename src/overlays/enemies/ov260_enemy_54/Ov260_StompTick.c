@@ -6,15 +6,17 @@
  * ends. Codegen: a signed `thrown` with the post-stomp part in an `else` (no `return` after the
  * loop) keeps the two loop tests apart (`cmp i,#15; popge; cmp thrown,#3; blt`); a `return` after the
  * loop lets mwcc merge them into `cmp; cmplt`. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 struct Ov260Shards { char pad[0x434]; int shards[15]; };
 struct BoxQuery {
-    Vec3 vCenter;
-    Vec3 vAxisX;
-    Vec3 vAxisZ;
-    Vec3 vAxisY;
+    VecFx32 vCenter;
+    VecFx32 vAxisX;
+    VecFx32 vAxisZ;
+    VecFx32 vAxisY;
     int nExtent;
     int bFlag;
 };
@@ -23,14 +25,14 @@ extern void Ov260_MapHeldItemKindToAnim(int actor, int flag);
 extern void Ov260_AttackSweep(int *state, int kind, void *sphere, void *cyl, void *seg);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern int RandNextScaled(int n);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void Ov260_InvokeHookAndRearm2(int shard, Vec3 *at);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Ov260_InvokeHookAndRearm2(int shard, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
@@ -39,7 +41,7 @@ void Ov260_StompTick(int *node)
     int *state = (int *)node[1];
     struct BoxQuery box;
     Mtx33 rot;
-    Vec3 v;
+    VecFx32 v;
 
     state[0x1c] += *(int *)(node[0] + 0x2c);
     if ((*((u8 *)state + 0x7b) & 1) == 0 && state[0x1c] >= 0x198) {
@@ -50,7 +52,7 @@ void Ov260_StompTick(int *node)
         int i;
         int thrown;
 
-        box.vCenter = *(Vec3 *)(state + 0x15);
+        box.vCenter = *(VecFx32 *)(state + 0x15);
         box.nExtent = (state[0x1c] << 14) / 0x550;
         box.vAxisX = data_02042270;
         box.vAxisZ = data_02042258;

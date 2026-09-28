@@ -5,23 +5,25 @@
  * (0, 1.0, -5.0), 0x80) and, when it lands, gets effect 0 at its +0x74 position and its bit set.
  * Any landing hit fires reaction 0/0x51 at the +8 anchor; unless the scene's +0xad flag is set
  * the node moves to 020d5088. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 p0; Vec3 dir; int scale; } Segment;
+
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 p0; VecFx32 dir; int scale; } Segment;
 struct Capsule { Segment seg; int radius; };
 
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern int Ov107_CollectSegmentOverlaps(int actor, struct Capsule *cap, int *out);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_IdleStep_4(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov245_SweepTick(int *node) {
     int *state = (int *)node[1];
     int hits[4];
     struct Capsule cap;
-    Vec3 push;
+    VecFx32 push;
     int any = 0;
     int nHits;
     int i;
@@ -42,7 +44,7 @@ void Ov245_SweepTick(int *node) {
         bit = 1 << *(unsigned short *)(hits[i] + 2);
         if ((*(unsigned char *)(*state + 0x3b0) & bit) == 0) {
             if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x398), 7, &push, 0x80) != 0) {
-                func_ov107_020c0b90(*(int *)(*state + 0x398), 0, *(Vec3 *)(hits[i] + 0x74), 0);
+                func_ov107_020c0b90(*(int *)(*state + 0x398), 0, *(VecFx32 *)(hits[i] + 0x74), 0);
                 *(unsigned char *)(*state + 0x3b0) |= bit;
                 any = 1;
             }

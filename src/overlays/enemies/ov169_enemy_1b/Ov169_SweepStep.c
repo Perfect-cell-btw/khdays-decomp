@@ -1,16 +1,17 @@
 /* Sweep step of the ov169 enemy (x2: ov169/170): while the +0x44 timer stays within 0xbb0 it
  * runs the attack sweep (Ov169_AttackSweep) with a query built from the +8 position raised by
  * 0xc00, the up axis, a 0x3000 range and a 0xc00 radius; afterwards sub-state 0 is requested. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 struct Ov169SweepQuery {
-    Vec3 vPos;
-    Vec3 vAxis;
+    VecFx32 vPos;
+    VecFx32 vAxis;
     int nRange;
     int nRadius;
 };
 
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 extern void Ov169_AttackSweep(int *state, int kind, struct Ov169SweepQuery *query);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
@@ -24,7 +25,7 @@ void Ov169_SweepStep(int *node)
         query.vAxis = data_02042264;
         query.nRadius = 0xc00;
         query.nRange = 0x3000;
-        query.vPos = *(Vec3 *)state[2];
+        query.vPos = *(VecFx32 *)state[2];
         query.vPos.y += query.nRadius;
         Ov169_AttackSweep(state, 0, &query);
         return;

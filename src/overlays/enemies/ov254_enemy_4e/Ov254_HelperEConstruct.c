@@ -3,7 +3,9 @@
  * 3.0, clears +0x58 and the +0x64 pose, builds the +0x384 item (pose 0x44 of the +0x394 pool,
  * subscribed and re-initialised) and places the +0x64 pose on the +0x22c (+0x388) and +0x144
  * (+0x38c) pools. */
+
 #include "nitro/types.h"
+
 typedef void (*Callback)(void);
 
 extern void *Ov107_PackTextureHandle(int pool, int index);

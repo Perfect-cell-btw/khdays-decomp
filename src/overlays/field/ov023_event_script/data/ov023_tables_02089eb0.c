@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov023_CmdAttachWeapons: script command that gives a party actor its (02085d30): const Ov023WeaponMotionTable data_ov023_02089eb0; */
+
 #include "nitro/types.h"
 
-/* read by Ov023_CmdAttachWeapons: script command that gives a party actor its (02085d30): const Ov023WeaponMotionTable data_ov023_02089eb0; */
 const u8 data_ov023_02089eb0[320] = {
     6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,

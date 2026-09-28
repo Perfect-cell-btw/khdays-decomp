@@ -3,14 +3,15 @@
  * (+0x28..+0x30 min, +0x34..+0x3c max), applies hit 0 with a 0x800 push along the normalised
  * direction from the state's +4 origin (flags 0x18). The +0x24 timer advances by the node's
  * +0x2c speed and at 0xa00 the sub-state drops to 0 with the slot cleared. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int victim, int a, int b, int mode, Vec3 *push, int flags);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int victim, int a, int b, int mode, VecFx32 *push, int flags);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 
 void Ov191_ShockwaveTick(int node)
@@ -19,7 +20,7 @@ void Ov191_ShockwaveTick(int node)
     int owner = *(int *)(*state + 4);
     int *pNode;
     int actor;
-    Vec3 push;
+    VecFx32 push;
 
     pNode = List_First((void *)(owner + 0xa8));
     actor = pNode == 0 ? 0 : *pNode;
@@ -29,7 +30,7 @@ void Ov191_ShockwaveTick(int node)
             && *(int *)(actor + 0x7c) >= state[0xc]
             && *(int *)(actor + 0x74) <= state[0xd] && *(int *)(actor + 0x78) <= state[0xe]
             && *(int *)(actor + 0x7c) <= state[0xf]) {
-            VEC_Subtract((Vec3 *)(actor + 0x74), (Vec3 *)state[1], &push);
+            VEC_Subtract((VecFx32 *)(actor + 0x74), (VecFx32 *)state[1], &push);
             push.y = 0;
             VEC_Normalize(&push, &push);
             ScaleVec3Fx12(0x800, &push, &push);

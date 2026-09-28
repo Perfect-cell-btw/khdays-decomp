@@ -3,7 +3,9 @@
  * both the store and the argument, as the ROM does; a separate `obj[8] = 0x500;`
  * statement plus a literal argument is 4 B short, and so is a shared local.
  * `dst` is hoisted for the same reason. House form copied from ov137_020cee94. */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned int b : 8, rest : 24; };
 extern void ScaleVec3Fx12(int scale, int *v, unsigned int *out);
@@ -21,7 +23,7 @@ void Ov154_SeedDashVector(int self) {
     }
     ((struct hw60 *)(*obj + 0x60))->hi &= ~0x8c;
     ((struct b8 *)(*(int *)(*obj + 0x388) + 8))->b |= 1;
-    *(struct vec *)(obj + 5) = *(struct vec *)(*obj + 0x394);
+    *(VecFx32 *)(obj + 5) = *(VecFx32 *)(*obj + 0x394);
     ScaleVec3Fx12(obj[8] = 0x500, dst, (unsigned int *)(obj + 2));
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov154_HomingFlightTick);
 }

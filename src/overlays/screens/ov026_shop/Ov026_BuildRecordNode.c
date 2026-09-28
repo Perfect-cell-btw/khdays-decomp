@@ -2,7 +2,9 @@
  * (param_1) with their native widths (several u16/u8 values widened into u32 slots, two
  * u16 reads truncated to bytes). node[4] is a bool (source field 0xc == 1). Finally parse
  * four sub-values out of param_2 via Ov026_DupWideString, threading the cursor. */
+
 #include "nitro/types.h"
+
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);
 extern void MI_CpuFill8(void *dst, int val, unsigned int size);
 extern short *Ov026_DupWideString(short **cursor, short *in);

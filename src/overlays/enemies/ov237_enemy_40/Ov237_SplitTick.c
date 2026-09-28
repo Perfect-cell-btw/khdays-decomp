@@ -7,17 +7,19 @@
  * the rig flags swap, the partner's +0x60 high byte gets bit 0 and loses bits 1, 2, 6 and 7, its
  * +0x1ae bit 0 clears and it enters move 10. Once the +4 rig is idle bit 1 of the +0x60 high byte
  * clears and the next move is 2. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
-extern Vec3 Ov237_RotateByActorHeading(int *node, Vec3 *target);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern VecFx32 Ov237_RotateByActorHeading(int *node, VecFx32 *target);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, int at);
-extern void Ov107_MoveNodeAndRelayout(int owner, const Vec3 *pos);
+extern void Ov107_MoveNodeAndRelayout(int owner, const VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_ov237_020d1b40;
-extern const Vec3 data_ov237_020d1bdc;
+extern const VecFx32 data_ov237_020d1b40;
+extern const VecFx32 data_ov237_020d1bdc;
 
 /* The partner link at +0x4a4 is read through the typed member; read as a raw int at an offset
  * the statement block after 020c5c54 is scheduled differently (the constant 10 sinks). */
@@ -26,9 +28,9 @@ struct Ov237Actor { char pad[0x4a4]; int partner; };
 void Ov237_SplitTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 aimAlone;
-    Vec3 aimLinked;
-    Vec3 pos;
+    VecFx32 aimAlone;
+    VecFx32 aimLinked;
+    VecFx32 pos;
 
     state[0xc] += *(int *)(node[0] + 0x2c);
     if (*((u8 *)state + 0x55) == 1) {
@@ -37,18 +39,18 @@ void Ov237_SplitTick(int *node)
     }
     if (state[0xc] >= 0x88 && state[0xc] < 0x7f8 && *(int *)(*state + 0x4ac) == 0) {
         aimAlone = data_ov237_020d1bdc;
-        *(Vec3 *)(state + 0xf) = Ov237_RotateByActorHeading(node, &aimAlone);
+        *(VecFx32 *)(state + 0xf) = Ov237_RotateByActorHeading(node, &aimAlone);
     }
     if (state[0xc] >= 0x2398 && state[0xc] < 0x2b90 && *(int *)(*state + 0x4ac) != 0) {
         aimLinked = data_ov237_020d1b40;
-        *(Vec3 *)(state + 0xf) = Ov237_RotateByActorHeading(node, &aimLinked);
+        *(VecFx32 *)(state + 0xf) = Ov237_RotateByActorHeading(node, &aimLinked);
     }
     if (state[0xc] >= 0x2398 && *((u8 *)state + 0x55) == 2 && *(int *)(*state + 0x4ac) != 0) {
         (*((u8 *)state + 0x55))--;
-        func_ov107_020c0b90(*state, 0x12, *(Vec3 *)state[0xe], 0);
+        func_ov107_020c0b90(*state, 0x12, *(VecFx32 *)state[0xe], 0);
         Ov107_BuildAndSendUpdate(*state, 0x12d, 0x10, state[0xe]);
         if (((struct Ov237Actor *)*state)->partner != 0) {
-            pos = *(Vec3 *)state[0xe];
+            pos = *(VecFx32 *)state[0xe];
             {
                 char *actor = (char *)*state;
 

@@ -4,13 +4,9 @@
  * parent's track step (020875b0) is rotated by the parent's heading (FX_SinCosTable_,
  * MTX_RotY43_ / MTX_MultVec43) and added, with the actor's height offset (+0x15ac) on y.
  * The position is then applied to the actor's entity (0202b450). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct MtxFx43 {
     int  a[12];               /* 0x00 */

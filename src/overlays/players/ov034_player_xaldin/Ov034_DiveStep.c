@@ -9,15 +9,17 @@
  * again. Becoming active shows the node and, for the local player, sets bit 1 of +0x464; once
  * that bit is set the enemy hands over to state 0x21 while the emitter at +0x22f8 is busy,
  * otherwise to state 0x25. */
+
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
-typedef struct { int x, y, z; } Vec3;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov034_FireThirdCountBurst(char *self);
 extern int Ov022_ValidateTargetRef(char *self);
-extern Vec3 *func_ov022_020ad0c0(char *self);
+extern VecFx32 *func_ov022_020ad0c0(char *self);
 extern void SceneNode_Enable(void *node);                                          /* SceneNode_Enable */
 extern void SceneNode_Disable(void *node);                                          /* SceneNode_Disable */
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
@@ -27,8 +29,8 @@ extern char *data_ov034_020b5660;
 void *Ov034_DiveStep(char *self)
 {
     int r;
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     void *next = 0;
     char *rig = data_ov034_020b5660 + 0xe4 + 0x2c00;
     unsigned int *node;
@@ -43,7 +45,7 @@ void *Ov034_DiveStep(char *self)
     Ov022_StepAnchorDelta(self, &sample);
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     Ov034_FireThirdCountBurst(self);
     r = (*(int (**)(char *))(self + 0x668))(self);
     ((Flags *)(self + 0x694))->b1 = (unsigned char)r;

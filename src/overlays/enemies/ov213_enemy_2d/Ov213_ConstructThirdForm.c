@@ -5,8 +5,10 @@
  * comes from pool entry 0x42 (subscribed, its four channels bound with (0, 1)), the two sub-items
  * from the data_ov213_020d2f3c entries into a fresh 16-byte slot table (+0x394, attached, bit 1
  * on their +0x5c), and a shape on the +0x144 list (+0x38c) is built from the +0x64 velocity. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
 
 struct Ov213SubitemSlot {
@@ -29,7 +31,7 @@ extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(char *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern const int data_ov213_020d2f3c[2];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov213_ConstructThirdForm(char *self)
 {
@@ -50,7 +52,7 @@ void Ov213_ConstructThirdForm(char *self)
     *(u16 *)(self + 0x60) = (hw & ~0xff00) |
         ((((((unsigned int)hw << 0x10) >> 0x18) | 0x44) << 0x18) >> 0x10);
     *(unsigned char *)(self + 0x1c9) = 2;
-    *(Vec3 *)(self + 0x64) = data_02041dc8;
+    *(VecFx32 *)(self + 0x64) = data_02041dc8;
     *(int *)(self + 0x70) = 0x800;
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
     *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x42));

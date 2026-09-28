@@ -2,14 +2,15 @@
  * 0.69; once the partner holds no queued move pose 6 loops, effect 1 fires at the origin, the +0x14
  * timer starts at 75.0 and is scaled by 1.5 per throw out (+0x24), +0x40 clears and the node moves on
  * to 020cda78. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+#include "nitro/fx.h"
+
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov218_ThrowTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
@@ -18,8 +19,8 @@ void Ov218_ThrowReleaseEntry(int *node)
     int *state = (int *)node[1];
     int i;
 
-    *(Vec3 *)(state + 0xa) = *(Vec3 *)(state + 0xd);
-    ScaleVec3Fx12(0xb00, (Vec3 *)(state + 0xd), (Vec3 *)(state + 0xd));
+    *(VecFx32 *)(state + 0xa) = *(VecFx32 *)(state + 0xd);
+    ScaleVec3Fx12(0xb00, (VecFx32 *)(state + 0xd), (VecFx32 *)(state + 0xd));
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }

@@ -2,12 +2,7 @@
  * transform for the action, updating the tally; other commands go to the base message handler. */
 
 #include "nitro/types.h"
-
-struct Ov234Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Ov234Transform {
     int words[11];
@@ -40,7 +35,7 @@ extern int QueryActiveStateOrDelegate(void);
 extern int GameState_GetField(int, int);
 extern void GameState_SetField(int, int, int);
 extern void SrtTransform_SetIdentity(struct Ov234Transform *);
-extern void Srt_SetTranslation(struct Ov234Transform *, const struct Ov234Vec3 *);
+extern void Srt_SetTranslation(struct Ov234Transform *, const VecFx32 *);
 extern void Ov002_AddMissionTally(int, int, int);
 extern int Ov107_CreateNodeXformTask(int, int, int, int, struct Ov234Transform *);
 extern void Ov107_AiState_OnMessage(struct Ov234Actor *, struct Ov234Command *, int);
@@ -49,7 +44,7 @@ void Ov234_PlaceActorWithTransform(struct Ov234Actor *self, struct Ov234Command 
                          int arg2)
 {
     struct Ov234Transform transform;
-    struct Ov234Vec3 position;
+    VecFx32 position;
     union {
         int words[3];
         u8 bytes[12];

@@ -4,6 +4,7 @@
  * is present -- the cone in degrees (turned into a 16-bit angle by degrees * 0x10000 / 360;
  * 90 by default), then creates a follower piece (Ov016_FollowerCreate 02080810) on the slot's
  * class table (ov002 02076468).  Always consumes the op (1). */
+
 #include "nitro/types.h"
 
 extern int   ScriptVm_ReadOperandInt(int vm, u16 *pc);            /* ScriptVm_ReadOperandInt */

@@ -1,8 +1,10 @@
 /* Ov025_Reports_LoadEntries -- load the report/enemy entry table (mi/mi/eid.z) and the mode sprite
  * file, build the 0x40-byte runtime entries (lengths, texts, sprite cells, name pointers) and, in
  * enemy mode, copy them into the second half of the allocation. */
-struct DbName { short id; short pad; };
+
 #include "nitro/types.h"
+
+struct DbName { short id; short pad; };
 
 typedef struct SpriteResSet {
     void *screen;

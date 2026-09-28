@@ -11,12 +11,9 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define AIM_MIN_REACH 0xb33
-
-struct Vec3 {
-    int x, y, z;
-};
 
 struct Bounds {
     u8 pad00[0x70];
@@ -30,22 +27,22 @@ struct Sub {
 
 struct Actor {
     u8 pad000[0x48c];
-    struct Vec3 vecPos;           /* 0x048c */
+    VecFx32 vecPos;           /* 0x048c */
     u8 pad498[0x54];
     struct Sub *pSub;             /* 0x04ec */
     u8 pad4f0[0x1cc];
     int nHitReaction;             /* 0x06bc */
     u8 pad6c0[0x238];
-    struct Vec3 vecFacing;        /* 0x08f8 */
+    VecFx32 vecFacing;        /* 0x08f8 */
     u8 pad904[0x1db4];
     int nReach;                   /* 0x26b8 */
     u8 pad26bc[0x4f6];
     signed char nAimMode;         /* 0x2bb2 */
 };
 
-void Ov022_ComputeAimPoint(struct Vec3 *pOut, struct Actor *pActor)
+void Ov022_ComputeAimPoint(VecFx32 *pOut, struct Actor *pActor)
 {
-    struct Vec3 vecAim;
+    VecFx32 vecAim;
     int bUseFacing;
     int nOffset;
     int nReach;

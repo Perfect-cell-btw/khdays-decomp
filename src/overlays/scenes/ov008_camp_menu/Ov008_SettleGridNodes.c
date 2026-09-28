@@ -10,6 +10,7 @@
  * set), the snapshot released, the grid hits rebuilt, cursor mode 0x14
  * requested, and the cursor cell re-stepped with the drop sound.
  */
+
 #include "nitro/types.h"
 
 #define CURSOR_MODE_DRAG 0x14

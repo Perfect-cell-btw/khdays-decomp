@@ -4,10 +4,10 @@
  * the bounds (+0xc/+0x10 min, +0x14/+0x18 max). The original initialises the minimum twice (the
  * second pair of stores was meant for the maximum), so the maximum keeps its previous value as
  * the starting point. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
-typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 _00, _01, _10, _11; } MtxFx22;
 typedef struct { fx32 x, z; } XZ;
 

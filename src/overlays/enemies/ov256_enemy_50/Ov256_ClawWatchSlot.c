@@ -5,18 +5,20 @@
  * hand bone's rotation while docked, at the end of a 9-orbit launch (0x550 into it) or early in the
  * first orbit (before 0x908); otherwise the heading. +0xf0 keeps the last +0x10 velocity, which then
  * clears. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int x, y, z, w; } Quat;
 struct Flag17a { u8 b0 : 1; };
 
-extern void Ov107_MoveNodeAndRelayout(int actor, Vec3 *at);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *from, const Vec3 *to);
+extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Multiply(Quat *out, const Quat *a, const Quat *b);
 extern void Srt_SetRotationQuat(char *srt, void *q);
-extern const Vec3 data_02042264;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02041dc8;
 
 #define HAND_BONE(s) (*(u8 *)((s) + 0x394) == 0 ? *(int *)(*(int *)((s) + 0x3ac) + 0x418) \
                                                  : *(int *)(*(int *)((s) + 0x3ac) + 0x424))
@@ -24,14 +26,14 @@ extern const Vec3 data_02041dc8;
 void Ov256_ClawWatchSlot(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 hand;
+    VecFx32 hand;
     Quat q;
     Quat tilt;
 
     if (*(int *)(*state + 0x3a0) == 0 && *(int *)(*state + 0x39c) == 0) {
-        hand = *(Vec3 *)(HAND_BONE(*state) + 0x14);
+        hand = *(VecFx32 *)(HAND_BONE(*state) + 0x14);
         Ov107_MoveNodeAndRelayout(*state, &hand);
-        *(Vec3 *)(state + 0x20) = data_02042264;
+        *(VecFx32 *)(state + 0x20) = data_02042264;
     }
     if (*(int *)(*state + 0x39c) == 0 && *(int *)(*state + 0x3a0) == 0 && *(int *)(*state + 0x398) == 0) {
         state[0x14] = *(int *)(*(int *)(*state + 0x3ac) + 0x458);
@@ -39,7 +41,7 @@ void Ov256_ClawWatchSlot(int *node)
     QuatFromAxisAngle(&q, &data_02042264, state[0x14]);
     if (((struct Flag17a *)(*state + 0x17a))->b0 && *(int *)(*state + 0x3a0) == 0 &&
         *(int *)(*state + 0x39c) == 0 && *(int *)(*state + 0x398) == 0) {
-        Quat_FromTwoVectors(&tilt, &data_02042264, (Vec3 *)(*state + 0x124));
+        Quat_FromTwoVectors(&tilt, &data_02042264, (VecFx32 *)(*state + 0x124));
         Quat_Multiply(&q, &tilt, &q);
     }
     if (*(int *)(*state + 0x3a0) == 0 && *(int *)(*state + 0x39c) == 0) {
@@ -59,9 +61,9 @@ void Ov256_ClawWatchSlot(int *node)
         Srt_SetRotationQuat((char *)(*state + 0xa0), &q);
     }
     {
-        Vec3 *vel = (Vec3 *)(state + 4);
+        VecFx32 *vel = (VecFx32 *)(state + 4);
 
-        *(Vec3 *)(*state + 0xf0) = *vel;
+        *(VecFx32 *)(*state + 0xf0) = *vel;
         *vel = data_02041dc8;
     }
 }

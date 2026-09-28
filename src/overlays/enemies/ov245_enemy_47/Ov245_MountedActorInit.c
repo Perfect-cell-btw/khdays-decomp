@@ -6,10 +6,12 @@
  * entries 0x21..0x23 (attached, bit 1 of +0x5c), and from a request along data_02042258 at the
  * +0x70 scale two shapes: rate 5.0 on the pool's +0x22c list (+0x388) and rate 10.0 on the
  * +0x144 list (+0x38c); +0x390 starts empty. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; Vec3 axis; int rate; int value; } ShapeRequest;
-typedef void (*Callback)(void);
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; VecFx32 axis; int rate; int value; } ShapeRequest;
+typedef void (*Callback)(void);
 struct Ov245Slot { int pItem; int pad4; };
 struct Ov245Self { char pad[0x3b4]; struct Ov245Slot slots[3]; };
 
@@ -30,10 +32,10 @@ extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_Mover_New(ShapeRequest *req);
 extern const char data_ov245_020d7254[];
 extern const char data_ov245_020d725c[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
 
-static inline void VEC_Set(Vec3 *v, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -61,7 +63,7 @@ void Ov245_MountedActorInit(int self) {
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0x7c) << 0x18) >> 0x10);
     }
     *(int *)(self + 0x70) = 0x1400;
-    VEC_Set((Vec3 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
+    VEC_Set((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
     *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x14));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov245_020d7254);

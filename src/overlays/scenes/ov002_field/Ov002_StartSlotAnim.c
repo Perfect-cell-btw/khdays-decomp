@@ -1,13 +1,12 @@
-#include "nitro/types.h"
-
-typedef struct Ov002Vec3 {
-    int x, y, z;
-} Ov002Vec3;
 
 /* One object slot, 0x18 bytes. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct Ov002ObjectSlot {
     void *pObject;                      /* +0x00 */
-    Ov002Vec3 vAt;                      /* +0x04 */
+    VecFx32 vAt;                      /* +0x04 */
     int nMode;                          /* +0x10 */
     u8 bEntryIndex;                     /* +0x14 */
     char pad15[3];
@@ -20,7 +19,7 @@ typedef struct Ov002ObjectContext {
 
 /* The block the positional animation start takes: a place and the mode. */
 typedef struct Ov002AnimAt {
-    Ov002Vec3 vAt;                      /* +0x00 */
+    VecFx32 vAt;                      /* +0x00 */
     int nMode;                          /* +0x0c */
 } Ov002AnimAt;
 
@@ -39,7 +38,7 @@ extern void Ov002_SetKeyNodeVisible(int nKey, int nParam, int nFlag);
  * copied into the slot when the caller gave one, the mode and the key are
  * stamped in, and the key's node is made visible.
  */
-void Ov002_StartSlotAnim(int nIndex, int nKey, int nMode, Ov002Vec3 *pAt,
+void Ov002_StartSlotAnim(int nIndex, int nKey, int nMode, VecFx32 *pAt,
                          int nParam)
 {
     Ov002ObjectContext *pCtx;

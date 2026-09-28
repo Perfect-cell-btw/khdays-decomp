@@ -2,6 +2,7 @@
  * set; clearing it, replaying request 0x32 and then acknowledging one request per
  * queued pair, counting up from 50000. The queue length is reset to zero.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

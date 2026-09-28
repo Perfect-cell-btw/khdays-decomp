@@ -4,28 +4,30 @@
  * +0x1ae cleared and bit 0 of the +0x488 rig's +8 flags set (a linked partner takes the actor's
  * health). +0x58 / +0x60 / +0x64 are set, the +0x28 timer rolls between the +0x224 and +0x228
  * bounds and the brain waits on 020ce584. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
-extern Vec3 Ov237_RotateByActorHeading(int *node, Vec3 *target);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void Ov107_MoveNodeAndRelayout(int owner, const Vec3 *pos);
+extern VecFx32 Ov237_RotateByActorHeading(int *node, VecFx32 *target);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Ov107_MoveNodeAndRelayout(int owner, const VecFx32 *pos);
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov237_AiShareHpAndQueue2(void);
-extern const Vec3 data_ov237_020d1bb8;
+extern const VecFx32 data_ov237_020d1bb8;
 
 void Ov237_StartMove(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 pos;
-    Vec3 off;
+    VecFx32 pos;
+    VecFx32 off;
 
     *(int *)(*state + 0x494) = 0;
     state[0x17] = 0;
     if (*(int *)(*state + 0x4ac) == 0) {
-        pos = *(Vec3 *)state[0xe];
+        pos = *(VecFx32 *)state[0xe];
         off = data_ov237_020d1bb8;
         off = Ov237_RotateByActorHeading(node, &off);
         VEC_Add(&pos, &off, &pos);

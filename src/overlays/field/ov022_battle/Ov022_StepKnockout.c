@@ -19,6 +19,7 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define ACTION_BIT 4
 #define NODE_NO_ANIM 0x20
@@ -51,12 +52,6 @@
 #define FLAGS2_REQUEST 0x2ULL
 #define FLAGS3_ENTERED 0x100000000ULL
 #define FLAGS3_MIRROR 0x4000000ULL
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 /* Ov022ActorNode */
 struct ActorNode {
@@ -98,9 +93,9 @@ struct Actor {
     u64 nFlags2;                 /* 0x0464 */
     u64 nFlags3;                 /* 0x046c */
     u8 pad0474[8];
-    struct VecFx32 vecDrift;     /* 0x047c */
+    VecFx32 vecDrift;     /* 0x047c */
     u8 pad0488[0x10];
-    struct VecFx32 vecStep;      /* 0x0498 */
+    VecFx32 vecStep;      /* 0x0498 */
     u8 pad04a4[0x28];
     int nAnimPos;                /* 0x04cc */
     u8 pad04d0[0x194];
@@ -130,23 +125,23 @@ extern int Session_GetLocalPlayerIndex(void);
 extern int Slot_EvalPackedParam(int nId, int nQuery);
 extern int func_ov022_0209d7a4(struct Actor *pActor);
 extern int Ov022_TryPendingAction(struct Actor *pActor, int nArg);
-extern void Ov022_TakeDriftStep(struct Actor *pActor, struct VecFx32 *pOutStep);
+extern void Ov022_TakeDriftStep(struct Actor *pActor, VecFx32 *pOutStep);
 extern void func_ov022_02097038(struct Actor *pActor, int nPos);
 extern void func_ov022_020acf14(struct Actor *pActor, int nPos);
 /* Ov022_ActorSetState */
 extern int Ov022_ActorSetState(struct Actor *pActor, int nState);
 /* scale a vector */
-extern void ScaleVec3Fx12(int nScale, const struct VecFx32 *pSrc,
-                          struct VecFx32 *pDst);
+extern void ScaleVec3Fx12(int nScale, const VecFx32 *pSrc,
+                          VecFx32 *pDst);
 /* SceneNode_Enable */
 extern void SceneNode_Enable(u16 *pAnimFlags);
-extern void VEC_Add(const struct VecFx32 *pA, const struct VecFx32 *pB,
-                    struct VecFx32 *pOut);
+extern void VEC_Add(const VecFx32 *pA, const VecFx32 *pB,
+                    VecFx32 *pOut);
 
 int Ov022_StepKnockout(struct Actor *pActor)
 {
-    struct VecFx32 vecDrift;
-    struct VecFx32 vecMove;
+    VecFx32 vecDrift;
+    VecFx32 vecMove;
     struct SlotBlk *pBlk;
     int nRet;
     int nRecoil;

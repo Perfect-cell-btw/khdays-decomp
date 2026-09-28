@@ -2,8 +2,7 @@
  */
 
 #include "nitro/types.h"
-
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
 
 typedef struct Node {
     unsigned char pad0[0x60];

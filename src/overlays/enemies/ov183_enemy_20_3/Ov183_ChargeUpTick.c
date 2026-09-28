@@ -5,14 +5,16 @@
  * (a 0..0x6489 turn minus 0x3244, i.e. +-pi) become the +0x28 and +0x34 velocities (sine/cosine
  * table, y 0) scaled by 10.0 plus a random 0..5.0; the +4 position is copied into +0x40, +0x4c
  * gets a third random angle, the timer restarts and handler 020cd844 takes over. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct bf { unsigned b : 8; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern int FX_Div(int a, int b);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int RandNextScaled(int bound);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void Ov183_evalHermiteSplinePath(void);
 extern const short data_0203d210[];
@@ -47,14 +49,14 @@ void Ov183_ChargeUpTick(int node)
     state[10] = data_0203d210[(idx >> 4) << 1];                                    /* FX_SinIdx */
     state[11] = 0;
     state[12] = data_0203d210[((idx >> 4) << 1) + 1];                              /* FX_CosIdx */
-    ScaleVec3Fx12(RandNextScaled(0x5001) + 0xa000, (Vec3 *)(state + 10), (Vec3 *)(state + 10));
+    ScaleVec3Fx12(RandNextScaled(0x5001) + 0xa000, (VecFx32 *)(state + 10), (VecFx32 *)(state + 10));
     angle2 = RandNextScaled(0x6489) - 0x3244;
     idx2 = (unsigned short)((0x28BE60DB9391LL * angle2 + 0x80000000000LL) >> 44);   /* FX_RAD_TO_IDX */
     state[13] = data_0203d210[(idx2 >> 4) << 1];                                    /* FX_SinIdx */
     state[14] = 0;
     state[15] = data_0203d210[((idx2 >> 4) << 1) + 1];                              /* FX_CosIdx */
-    ScaleVec3Fx12(RandNextScaled(0x5001) + 0xa000, (Vec3 *)(state + 13), (Vec3 *)(state + 13));
-    *(Vec3 *)(state + 16) = *(Vec3 *)state[1];
+    ScaleVec3Fx12(RandNextScaled(0x5001) + 0xa000, (VecFx32 *)(state + 13), (VecFx32 *)(state + 13));
+    *(VecFx32 *)(state + 16) = *(VecFx32 *)state[1];
     state[19] = RandNextScaled(0x6489) - 0x3244;
     state[7] = 0;
     SetIndexedSlot(node, *(signed char *)(node + 0x20), Ov183_evalHermiteSplinePath);

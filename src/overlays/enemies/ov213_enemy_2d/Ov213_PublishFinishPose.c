@@ -2,7 +2,9 @@
  * point -- the vector at state[1] with y raised by 0x1999 -- to the render hook, reload the two
  * 16-byte parameter blocks (the canned one at data_020420f8 into state+0x38, then a copy of it
  * into state+0x28), latch the pending action byte from +0x1c9 into +0x1c7 and hand off. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { int a, b, c, d; } Ov213Quad;
 
 extern Ov213Quad data_020420f8;

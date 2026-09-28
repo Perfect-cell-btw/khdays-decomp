@@ -5,19 +5,21 @@
  * rotated by the actor's +0xa0 orientation takes the flat part, the flag latches and the +0x394
  * shot is launched (cd484) along it. Once the +0x30 busy byte clears sub-state 2 is requested
  * and the state ends. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 extern int Ov123_FindTarget(int actor, int mode);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void Vec3TransformViaTempMtx(Vec3 *dst, void *quat, const Vec3 *src);
-extern void Ov123_StoreVec3ThenSetupAndSetHw60(int shot, void *from, Vec3 *dir);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, const VecFx32 *src);
+extern void Ov123_StoreVec3ThenSetupAndSetHw60(int shot, void *from, VecFx32 *dir);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 void Ov123_ShotWindup(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int y;
 
     state[9] = Ov123_FindTarget(*state, 0);

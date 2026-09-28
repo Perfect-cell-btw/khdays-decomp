@@ -5,22 +5,24 @@
  * along it; the +0x5c bob phase advances as in the other ticks. An attack chosen by
  * Ov272_DecideAttackByDistanceRoll ends the tick; beyond 5.0 the tick goes back to Ov272_CircleTick, and
  * beyond the owner's +0x2d8 leash sub-state 2 is requested. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Bits40 { int b0 : 1, b1 : 1; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void Quat_FromTwoVectors(void *q, const Vec3 *from, const Vec3 *to);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void Quat_FromTwoVectors(void *q, const VecFx32 *from, const VecFx32 *to);
 extern void Vec4_Normalize(void *q, void *out);
 extern int Ov272_DecideAttackByDistanceRoll(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 extern void Ov272_CircleTick(int *node);
 
 void Ov272_BackOffTick(int *node)
@@ -28,7 +30,7 @@ void Ov272_BackOffTick(int *node)
     int target;
     int *state = (int *)node[1];
     int owner;
-    Vec3 d;
+    VecFx32 d;
     int t;
     int o;
     int gap;
@@ -63,7 +65,7 @@ void Ov272_BackOffTick(int *node)
     } else {
         state[0xd] = 0x80;
     }
-    ScaleVec3Fx12(0x200, &d, (Vec3 *)(state + 0xc));
+    ScaleVec3Fx12(0x200, &d, (VecFx32 *)(state + 0xc));
     Quat_FromTwoVectors(state + 7, &data_02042258, &d);
     Vec4_Normalize(state + 7, state + 7);
     if (Ov272_DecideAttackByDistanceRoll(node) != 0) {

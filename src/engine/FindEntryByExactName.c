@@ -9,6 +9,7 @@
  * which is where mwcc puts it only when the source guards the whole loop. And the source
  * walks the array with its own pointer while returning `&pEntries[i]`, which is why the
  * loop advances a register by 0x14 per iteration yet the return still pays for a multiply. */
+
 #include "nitro/types.h"
 
 typedef struct SymbolEntry {

@@ -5,27 +5,29 @@
  * is pushed out of the world at the target's height (+0x1c7 = 8). Otherwise, once the +0x50 timer
  * reaches 1.0, it releases the target: plays animation 5, clears the grab bits, spawns effect
  * 0x167 at the anchor, hands the rider to 020ad8e0 and moves on to Ov272_HoldTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct lo8 { unsigned int lo : 8; };
 typedef struct { char pad[0x464]; unsigned long long flags; char pad2[0x12]; } Rider;
 
-extern void Ov107_MoveNodeAndRelayout(int actor, Vec3 *pos);
-extern void Mtx33_LookAt(int *dst, const Vec3 *a, const Vec3 *b, const void *c);
+extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *pos);
+extern void Mtx33_LookAt(int *dst, const VecFx32 *a, const VecFx32 *b, const void *c);
 extern void Quat_FromMtx33(void *dst, const int *src);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int  VEC_Mag(const Vec3 *v);
-extern void Ov272_PushOutOfWorld(int world, Vec3 *pos, int rad, int height);
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int  VEC_Mag(const VecFx32 *v);
+extern void Ov272_PushOutOfWorld(int world, VecFx32 *pos, int rad, int height);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov022_ToggleBit13ByMode(int rider, int n);
 extern void Ov272_HoldTick(int *node);
 extern const short data_0203d210[];
-extern const Vec3 data_02042264;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02041dc8;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
@@ -34,19 +36,19 @@ void Ov272_TickHoldTarget(int *node)
 {
     int *state = (int *)node[1];
     int mtx[9];
-    Vec3 pos;
-    Vec3 d;
+    VecFx32 pos;
+    VecFx32 d;
     int target = state[2];
     int yaw = (*(unsigned short *)(*(int *)(*(int *)(target + 0x18c) + 0x20) + 0x80) - 0x8000) & 0xffff;
     int rad = (int)(((long long)yaw * 0x6487f + 0x80000) >> 20);
-    Vec3 *tpos = (Vec3 *)(target + 0x74);
+    VecFx32 *tpos = (VecFx32 *)(target + 0x74);
     int rider;
 
     pos.x = *(int *)(target + 0x74) + FX_MUL(data_0203d210[ANG2IDX(rad) * 2], 0x1680);
     pos.y = tpos->y;
     pos.z = tpos->z + FX_MUL(data_0203d210[ANG2IDX(rad) * 2 + 1], 0x1680);
     Ov107_MoveNodeAndRelayout(*state, &pos);
-    Mtx33_LookAt(mtx, tpos, (Vec3 *)state[0x13], &data_02042264);
+    Mtx33_LookAt(mtx, tpos, (VecFx32 *)state[0x13], &data_02042264);
     Quat_FromMtx33(state + 7, mtx);
     *(Quat *)(state + 3) = *(Quat *)(state + 7);
     if (state[2] == 0 || *(int *)(state[2] + 4) != *(int *)(*state + 4)
@@ -55,7 +57,7 @@ void Ov272_TickHoldTarget(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    VEC_Subtract((Vec3 *)(state + 0x1d), tpos, &d);
+    VEC_Subtract((VecFx32 *)(state + 0x1d), tpos, &d);
     if (VEC_Mag(&d) > 0x1800 || (*(unsigned int *)(state[2] + 0x1e4) & 0x20)
         || ((rider = *(int *)(state[2] + 0x18c)) != 0
             && ((((Rider *)rider)->flags & 0x8000) != 0 || *(unsigned short *)(rider + 0x12) == 0))) {

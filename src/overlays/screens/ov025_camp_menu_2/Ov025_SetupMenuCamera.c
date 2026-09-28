@@ -3,7 +3,8 @@
  * state. */
 
 #include "nitro/types.h"
-typedef struct VecFx32 {int x,y,z;} VecFx32;
+#include "nitro/fx.h"
+
 typedef struct MtxFx33 {int m[9];} MtxFx33;
 typedef struct MtxFx43 {int m[12];} MtxFx43;
 typedef struct MtxFx44 {int m[16];} MtxFx44;

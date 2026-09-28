@@ -4,53 +4,55 @@
  * once with push data_ov237_020d1bac. Every frame the last two segments of both arms (+0x3f4) sweep
  * with push data_ov237_020d1ba0 (radius 0.375). The +0x3c aim point follows the +0x3d8 partner; once
  * the +4 rig is idle poses 9 / partner 5 play and the brain waits on 020cec58. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; Vec3 axis[3]; int ext[3]; } Box;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; VecFx32 axis[3]; int ext[3]; } Box;
 typedef struct { int w[7]; int radius; } Segment;
 struct Arm { int parts[5]; };
 struct Ov237Arms { char pad[0x3f4]; struct Arm arms[2]; char pad41c[0x10]; struct Arm hands[2]; };
 
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, int at);
-extern int Ov237_AttackHitTest(int *node, void *sphere, void *box, void *segment, Vec3 *push, int once, unsigned short effect, int kind);
-extern Vec3 Ov237_RotateByActorHeading(int *node, Vec3 *target);
+extern int Ov237_AttackHitTest(int *node, void *sphere, void *box, void *segment, VecFx32 *push, int once, unsigned short effect, int kind);
+extern VecFx32 Ov237_RotateByActorHeading(int *node, VecFx32 *target);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_StartAnim(int actor, int pose, int c);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov237_LungeTick(void);
-extern const Vec3 data_ov237_020d1ba0;
-extern const Vec3 data_ov237_020d1bac;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042270;
+extern const VecFx32 data_ov237_020d1ba0;
+extern const VecFx32 data_ov237_020d1bac;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042270;
 
 void Ov237_DoubleSlamTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 hand;
+    VecFx32 hand;
     Box box;
-    Vec3 push;
+    VecFx32 push;
     Segment seg;
-    Vec3 sweep;
-    Vec3 aim;
-    Vec3 sweepPush;
+    VecFx32 sweep;
+    VecFx32 aim;
+    VecFx32 sweepPush;
     int k;
     int m;
 
     state[0xc] += *(int *)(node[0] + 0x2c);
     if ((state[0xc] >= 0x770 && state[0xd] == 0) || (state[0xc] >= 0x17e8 && state[0xd] == 1)) {
-        hand = *(Vec3 *)(((struct Ov237Arms *)*state)->hands[state[0xd]].parts[0] + 0x14);
+        hand = *(VecFx32 *)(((struct Ov237Arms *)*state)->hands[state[0xd]].parts[0] + 0x14);
         hand.y -= 0x1500;
         func_ov107_020c0b90(*state, 2, hand, 0);
         Ov107_BuildAndSendUpdate(*state, 0x12d, 4, state[0xe]);
-        *(Vec3 *)(state + 0x12) = hand;
+        *(VecFx32 *)(state + 0x12) = hand;
         state[0xd]++;
     }
     if ((state[0xc] >= 0x6e8 && state[0xc] < 0x6e8 + 0x990) ||
         (state[0xc] >= 0x17e8 && state[0xc] < 0x17e8 + 0x990)) {
         push = data_ov237_020d1bac;
-        box.pos = *(Vec3 *)(state + 0x12);
+        box.pos = *(VecFx32 *)(state + 0x12);
         box.axis[0] = data_02042270;
         box.axis[1] = data_02042264;
         box.axis[2] = data_02042258;
@@ -70,8 +72,8 @@ void Ov237_DoubleSlamTick(int *node)
             }
         }
     }
-    aim = Ov237_RotateByActorHeading(node, (Vec3 *)(*(int *)(*state + 0x3d8) + 0x2c));
-    *(Vec3 *)(state + 0xf) = aim;
+    aim = Ov237_RotateByActorHeading(node, (VecFx32 *)(*(int *)(*state + 0x3d8) + 0x2c));
+    *(VecFx32 *)(state + 0xf) = aim;
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }

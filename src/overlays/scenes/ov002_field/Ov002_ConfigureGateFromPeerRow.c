@@ -2,8 +2,10 @@
  * Keep the u16 selector as &= then >>= to preserve derived-counter scheduling.
  * The five-slot codegen view has a placement in slot0 and four model slots.
  * Preserve the effect pointer across the tint/flag writes to avoid a reload. */
+
 #include "nitro/types.h"
-typedef struct Ov002Vec3 { int x,y,z; } Ov002Vec3;
+#include "nitro/fx.h"
+
 typedef struct Ov002PeerRow {
     u8 nKey,nTargetSlot,pad02;
     s8 nGateState;
@@ -12,14 +14,14 @@ typedef struct Ov002PeerRow {
 } Ov002PeerRow;
 typedef struct Ov002ModelDesc {
     s8 nKind; u8 bEnabled; u16 hTint;
-    int nParams; char pad008[8]; Ov002Vec3 place;
+    int nParams; char pad008[8]; VecFx32 place;
 } Ov002ModelDesc;
 typedef struct Ov002GateModelEntry {
     s8 nKey; char pad001[3]; Ov002ModelDesc aModels[5];
 } Ov002GateModelEntry;
 typedef struct Ov002GatePlacement {
     s8 nKind; u8 bEnabled; u16 hTint;
-    Ov002Vec3 vPosition,vScale;
+    VecFx32 vPosition,vScale;
 } Ov002GatePlacement;
 typedef struct Ov002GateBinding {
     u8 bEffect; s8 nTargetSlot,nKey,nGateState;
@@ -30,7 +32,7 @@ typedef struct Ov002NamedEntry {
 } Ov002NamedEntry;
 typedef struct Ov002GateEffect {
     u16 wFlags; char pad002[0x7a]; u16 hTint; char pad07e[0x26];
-    Ov002Vec3 vPosition,vScale; char pad0bc[0x24];
+    VecFx32 vPosition,vScale; char pad0bc[0x24];
     short aTracks[5]; char pad0ea[0x1e];
 } Ov002GateEffect;
 typedef struct Ov002LinkCtx {

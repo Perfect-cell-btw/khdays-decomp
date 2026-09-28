@@ -41,6 +41,7 @@
  *    sp+0x40 in a 0x4c-byte frame.
  *  - Within a component the bytes are written high, middle, low -- ascending address order.
  */
+
 #include "nitro/types.h"
 
 struct Ov120NodeSlot {

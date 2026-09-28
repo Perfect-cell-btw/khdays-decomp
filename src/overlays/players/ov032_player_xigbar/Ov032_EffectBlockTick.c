@@ -3,6 +3,7 @@
  * +0x7b0 timer to reach 0x1d000, then restarts sequences 0, 2 and 1 from zero and advances
  * to 2; states 2 and 4 poll the block against the +0x2aba rate, 4 ending in state 5 once
  * the poll reports done. */
+
 #include "nitro/types.h"
 
 extern int Ov022_IsState9Or6WithFlag200(void *p);

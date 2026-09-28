@@ -2,11 +2,12 @@
  * spawns effect 1 at the state's +8 position (020c0b90), fires reaction 0x15a of kind 0xc there
  * (020c5af8), clears the actor's +0x3b0 byte, the state's +0x10 byte and +0xc, and moves the
  * node to 020d52b8. */
-typedef struct { int x, y, z; } Vec3;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_SweepTick(void);
@@ -20,7 +21,7 @@ void Ov245_LandingEnter(int *node) {
             ((((((unsigned int)hw << 0x10) >> 0x18) | 2) << 0x18) >> 0x10);
     }
     Ov107_PostTagUpdate(*state, 2, 0);
-    func_ov107_020c0b90(*state, 1, *(Vec3 *)state[2], 0);
+    func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[2], 0);
     Ov107_BuildAndSendUpdate(*state, 0x15a, 0xc, (void *)state[2]);
     *(unsigned char *)(*state + 0x3b0) = 0;
     *(unsigned char *)((char *)state + 0x10) = 0;

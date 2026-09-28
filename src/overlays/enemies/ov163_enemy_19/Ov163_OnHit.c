@@ -1,11 +1,7 @@
 /* Ov163_OnHit: hit handler of the ov163 enemy (x3), ported from the matched ov131 sibling; the health always drops here, and a kind-4 hit in sub-state 7 flattens and normalises the impact direction (falling back to the anchor-to-source direction when it is vertical). */
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct HitState {
     char *pTarget;

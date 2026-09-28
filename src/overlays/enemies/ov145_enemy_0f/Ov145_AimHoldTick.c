@@ -2,7 +2,9 @@
  * target, then, unless the +0x384 item is busy, either plays animation 0 when the +0x4c flag is
  * set or fires the actor's +0x3a4 hook with the target's +0x1b4 id (and the actor) when there is
  * a target. */
+
 #include "nitro/types.h"
+
 typedef void (*IdHook)(int id, int actor);
 
 extern void Ov145_AimYawToTarget(int *state);

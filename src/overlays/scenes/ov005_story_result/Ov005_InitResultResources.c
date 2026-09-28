@@ -2,6 +2,7 @@
  * archives, and computes the gauge range. */
 
 #include "nitro/types.h"
+
 typedef struct Tween {int mode,duration,from,to;long long startTick;unsigned int flags;} Tween;
 typedef struct Ov005ResultTween {Tween tween;int value;char unknown20[12];} Ov005ResultTween;
 typedef struct Ov005TextTable {void *resource;int count;void *entries;} Ov005TextTable;

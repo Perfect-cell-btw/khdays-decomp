@@ -6,10 +6,12 @@
  * 7.0).
  * Codegen: the +0x70 scale and the +0x388 contact slot go through local pointers and the +0x9c body
  * through LoadPtr; the plain spellings colour the constant and copy registers differently. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; Vec3 axis[3]; Vec3 half; } Box;
+typedef struct { VecFx32 pos; VecFx32 axis[3]; VecFx32 half; } Box;
 struct bf { unsigned b : 8; };
 
 /* Reads the word stored at an address. */
@@ -29,10 +31,10 @@ extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void RefreshObjectCallbacks(int item, int a);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_HitShape_NewBox(Box *box);
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
 
 void Ov254_PillarSetup(char *self)
 {

@@ -7,6 +7,7 @@
  * project's usual widened form, `(s64)v * 0x1800 + 0x800 >> 12`, which is what produces the
  * umull/asr/mla/adc sequence -- the same idiom already matched in
  * src/overlays/field/ov022_battle/Ov022_BuildSlotSelection.c. */
+
 #include "nitro/types.h"
 
 extern int EventRecord_Init(u32 *pDst, u32 *pSrc, u32 nDuration, int nMode);

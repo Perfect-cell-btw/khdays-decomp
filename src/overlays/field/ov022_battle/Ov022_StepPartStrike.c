@@ -10,15 +10,11 @@
  * The part ends its run when its own tracks report done.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* Ov022SlotTail: the owner the part hangs off. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct SlotTail {
     u8 pad00[0x1c];
     int nRadius;                     /* 0x1c */
@@ -26,7 +22,7 @@ struct SlotTail {
     int nField2c;                    /* 0x2c */
     int nField30;                    /* 0x30 */
     int nField34;                    /* 0x34 */
-    struct VecFx32 vecField38;       /* 0x38 */
+    VecFx32 vecField38;       /* 0x38 */
     u8 nLevel;                       /* 0x44 */
 };
 
@@ -36,7 +32,7 @@ struct SlotPart {
     u8 pad004[0x18];
     int nSlotFlags;                  /* 0x01c */
     u8 pad020[0xa0];
-    struct VecFx32 vecAt;            /* 0x0c0 */
+    VecFx32 vecAt;            /* 0x0c0 */
     u8 pad0cc[0x7c];
     struct SlotTail *pOwner;         /* 0x148 */
     u8 nState;                       /* 0x14c */
@@ -55,10 +51,10 @@ struct ReactionCtx {
 
 /* Ov022ActionQuery: what the part asks about. */
 struct ActionQuery {
-    struct VecFx32 vecPos;           /* 0x00 */
+    VecFx32 vecPos;           /* 0x00 */
     int nRadius;                     /* 0x0c */
     int nGroup;                      /* 0x10 */
-    struct VecFx32 vecDir;           /* 0x14 */
+    VecFx32 vecDir;           /* 0x14 */
     int nConeLimit;                  /* 0x20 */
     void *pHitIds;                   /* 0x24 */
     int nField28;                    /* 0x28 */
@@ -72,7 +68,7 @@ struct ActionParams {
     int nField0c;                    /* 0x0c */
     u8 nLevel;                       /* 0x10 */
     u8 pad11[3];
-    struct VecFx32 vecField14;       /* 0x14 */
+    VecFx32 vecField14;       /* 0x14 */
     int nField20;                    /* 0x20 */
     u8 nPhase;                       /* 0x24 */
     u8 bFlagA : 1;                   /* 0x25 */

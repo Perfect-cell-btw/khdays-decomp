@@ -2,15 +2,16 @@
  * rate; a pending +0x88 start plays pose 0x20, at 1.43 the +0x89 cue at 5 steps down and sound 0x148/0xf
  * plays at the +8 point; once the partner holds no queued move the owner plays effect 0x10 at the
  * origin, +0x64, +0x86 and +0x88 clear and the node moves on to 020d2944. */
-typedef struct { int x, y, z; } Vec3;
 
-extern int Ov252_CheckTarget(int *node, Vec3 *delta, int face);
+#include "nitro/fx.h"
+
+extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_PartSlamTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov252_PartDescendTick(int *node)
 {

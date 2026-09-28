@@ -1,5 +1,7 @@
 /* Ov002_ScriptSpawnTimedSet: load and instantiate the current state's timed records. */
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct Ov002TimedClassDesc { const char *pName; int nOwnerArg; } Ov002TimedClassDesc;
 typedef struct Ov002TimedSpawnRecord {
     signed char nSlot, nBucket;

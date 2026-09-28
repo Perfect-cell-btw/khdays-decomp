@@ -21,47 +21,49 @@
  * from the pool each iteration and a pre-loop local lands before the loop guard. The slot
  * callback takes `(self, 0)`: the 0 is the zero already in r1 from the velocity clears.
  */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { int a[3]; } Angles;
 typedef struct { int v[6][3]; } PermTable;
 typedef struct {
-    Vec3 pos;
+    VecFx32 pos;
     short f0c, f0e, f10, f12;
     int f14, f18, f1c, f20, f24, f28;
 } Params;
-#include "nitro/types.h"
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern unsigned int Session_RandNextScaled(unsigned int n);
 extern void MTX_RotY33_(Mtx33 *m, int s, int c);
-extern void MTX_MultVec33(const Vec3 *v, const Mtx33 *m, Vec3 *out);
-extern int VEC_Mag(const Vec3 *v);
-extern void VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
+extern int VEC_Mag(const VecFx32 *v);
+extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov022_SendPlacementMessage(char *self, Params *p);
 extern void SceneNode_Enable(void *node);
 extern void *Ov022_ActorSetState(char *self, int state);
 extern char *data_ov081_020b96e0;
-extern Vec3 data_02041dc8;                  /* kVecZero */
-extern Vec3 data_ov081_020b9588;            /* muzzle offset */
+extern VecFx32 data_02041dc8;                  /* kVecZero */
+extern VecFx32 data_ov081_020b9588;            /* muzzle offset */
 extern Angles data_ov081_020b9570;          /* heading offsets of the three shots */
 extern PermTable data_ov081_020b95d4;       /* the six permutations of {0,1,2} */
-extern const Vec3 data_ov081_020b957c;            /* unit z ray */
+extern const VecFx32 data_ov081_020b957c;            /* unit z ray */
 extern short data_0203d210[];
 
 void *Ov081_AttackStep(char *self)
 {
     PermTable perm;
-    Vec3 sample;
-    Vec3 muzzle;
+    VecFx32 sample;
+    VecFx32 muzzle;
     Mtx33 m;
     Params p;
     Angles angles;
-    Vec3 v;
-    Vec3 step;
+    VecFx32 v;
+    VecFx32 step;
     void *next = 0;
     char *rig = data_ov081_020b96e0 + 0x2c + 0x2c00;
     int limit;
@@ -86,7 +88,7 @@ void *Ov081_AttackStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     limit = *(int *)(rig + 8) != 0 ? 0x1b000 : 0xf000;
     if (*(int *)(self + 0x4cc) >= limit && *(int *)(rig + 4) == 0) {
         muzzle = data_ov081_020b9588;
@@ -113,7 +115,7 @@ void *Ov081_AttackStep(char *self)
         idx = (u16)(*(u16 *)(*(char **)(self + 0x20) + 0x80) - 0x8000) >> 4;
         MTX_RotY33_(&m, -data_0203d210[idx * 2], -data_0203d210[idx * 2 + 1]);
         MTX_MultVec33(&muzzle, &m, &p.pos);
-        VEC_Add(&p.pos, (Vec3 *)(self + 0x8c + 0x400), &p.pos);
+        VEC_Add(&p.pos, (VecFx32 *)(self + 0x8c + 0x400), &p.pos);
         for (i = 0; i < count; i++) {
             v = data_ov081_020b957c;
             if (*(int *)(rig + 8) != 0) {

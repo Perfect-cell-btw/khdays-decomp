@@ -16,12 +16,14 @@
  * over to state 0 (with the slot callback) or 2; otherwise a finished state goes to 0x22 for a
  * pending pattern (other than 3) or rewinds the model to 0x9000 and stays.
  */
-typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
-typedef struct { int x, y, z; } Vec3;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Session_GetLocalPlayerIndex(void);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov039_GetBandStepCount(char *self);
 extern int Session_RandNext(void);
 extern void Ov039_PushAttackEvents(char *self);
@@ -34,8 +36,8 @@ extern char *data_ov039_020b5600;
 void *Ov039_IdleStep(char *self)
 {
     int r;
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     char *rig = data_ov039_020b5600 + 0xd4 + 0x2c00;
     void *next = 0;
     int fire;
@@ -58,7 +60,7 @@ void *Ov039_IdleStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     (*(int (**)(char *))(self + 0x668))(self);
     r = (*(int (**)(char *))(self + 0x668))(self);
     ((Flags *)(self + 0x694))->b1 = (unsigned char)r;

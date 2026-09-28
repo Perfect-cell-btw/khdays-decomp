@@ -9,6 +9,7 @@
  * The archive handle is the usual NitroSDK idiom: round the archive base up past 0x8000,
  * keep the 24 bits that address a file, shift into place and tag the low nibble with the
  * file's index. */
+
 #include "nitro/types.h"
 
 typedef struct Ov011Scene {

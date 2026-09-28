@@ -12,10 +12,11 @@
  *
  * Codegen: the position packs go through Fx32 wrapper copies (ov122_020d12f4 idiom); the hit
  * position is a stack copy with y raised in place; the point counter is a signed char. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -28,18 +29,18 @@ struct Ov269Owner {
 };
 
 extern void Ov107_BuildAndSendUpdate(struct Ov269Owner *owner, int a, int id, void *at);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void VEC_Add(const void *a, const void *b, Vec3 *d);
+extern void VEC_Add(const void *a, const void *b, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(struct Ov269Owner *owner, Sphere *sphere, int *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, struct Ov269Owner *a, struct Ov269Owner *b, int kind, Vec3 *push, int z);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, struct Ov269Owner *a, struct Ov269Owner *b, int kind, VecFx32 *push, int z);
 extern void Ov107_PostTagUpdate(struct Ov269Owner *actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct Msg20 data_ov194_020cefa0;
-extern const Vec3 data_02042258;
-extern void Vec3TransformViaTempMtx(Vec3 *dst, void *xfm, Vec3 *src);
+extern const VecFx32 data_02042258;
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
 extern const struct Msg14 data_ov194_020cef90;
 extern void Ov194_AiStep_RollDelayQueueAction2OnAnimEnd_2(void);
 
@@ -52,13 +53,13 @@ void Ov194_ChargeTick(int *node)
 {
     int *state = (int *)node[1];
     struct Ov269Owner *owner;
-    Vec3 d;
+    VecFx32 d;
     struct Msg20 msg20;
     int hits[4];
     Sphere sphere;
-    Vec3 off;
-    Vec3 push;
-    Vec3 raw;
+    VecFx32 off;
+    VecFx32 push;
+    VecFx32 raw;
     struct Msg14 msg;
     struct Msg14 tmpl;
     FxVec vStart;
@@ -66,7 +67,7 @@ void Ov194_ChargeTick(int *node)
     s8 nPoint;
     int nHits;
     int i;
-    Vec3 *pPos;
+    VecFx32 *pPos;
 
     if (*(u8 *)((char *)state + 0x53) == 0) {
         state[0x15] += *(int *)(*node + 0x2c);
@@ -80,7 +81,7 @@ void Ov194_ChargeTick(int *node)
         msg20 = data_ov194_020cefa0;
         VEC_Subtract((char *)*(int *)(*state + 0x398) + 0x14, (void *)state[0xf], &d);
         msg20.w[4] = func_020050b4(d.x, d.z);
-        pPos = (Vec3 *)state[0xf];
+        pPos = (VecFx32 *)state[0xf];
         vStart.x = *(Fx32 *)&pPos->x;
         PACK3(&msg20, 5, vStart.x.value);
         vStart.y = *(Fx32 *)&pPos->y;
@@ -96,7 +97,7 @@ void Ov194_ChargeTick(int *node)
         nPoint = 0;
         tmpl = data_ov194_020cef90;
         do {
-            Vec3TransformViaTempMtx(&off, (char *)*state + 0xa0, (Vec3 *)&data_02042258);
+            Vec3TransformViaTempMtx(&off, (char *)*state + 0xa0, (VecFx32 *)&data_02042258);
             VEC_Normalize(&off, &off);
             ScaleVec3Fx12(nPoint == 0 ? 0x2800 : 0x5000, &off, &off);
             VEC_Add((void *)state[0x10], &off, &sphere.pos);
@@ -112,7 +113,7 @@ void Ov194_ChargeTick(int *node)
                         ScaleVec3Fx12(0x300, &push, &push);
                         if (Ov107_InvokeHitCallback(hits[i], (struct Ov269Owner *)*state, (struct Ov269Owner *)*state, 0, &push, 0) != 0) {
                             msg = tmpl;
-                            raw = *(Vec3 *)(hits[i] + 0x74);
+                            raw = *(VecFx32 *)(hits[i] + 0x74);
                             raw.y += 0x800;
                             vContact.x = *(Fx32 *)&raw.x;
                             PACK3(&msg, 5, vContact.x.value);

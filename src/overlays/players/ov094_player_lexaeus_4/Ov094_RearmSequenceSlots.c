@@ -3,6 +3,7 @@
  * holds, retimes it against the block's period and restarts it from zero. The
  * actor is not touched -- the caller passes it only because every routine in
  * the family takes it first. */
+
 #include "nitro/types.h"
 
 extern void NNS_G3dRenderObjRemoveAnmObj(void *p, int handle);

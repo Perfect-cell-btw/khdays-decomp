@@ -1,10 +1,11 @@
 /* Decision tick of an ov235 state: the +0x40 timer clears and the +0x5c path point is resolved
  * (Ov235_SteerToTarget) into the +0x10 step. Once the +0xc idle byte clears a d101 picks the next
  * sub-state -- 0xc below 40, 9 below 80, else 2 -- and the tick ends. */
-typedef struct { int x, y, z; } Vec3;
 
-extern void Ov235_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+#include "nitro/fx.h"
+
+extern void Ov235_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
@@ -21,13 +22,13 @@ static inline int RandRange(int lo, int hi)
 void Ov235_DecideTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
     int roll;
 
     state[0x10] = 0;
     Ov235_SteerToTarget(state, state[0x17], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     if (*(unsigned char *)state[3] != 0) {
         return;
     }

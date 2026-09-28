@@ -5,6 +5,7 @@
  * otherwise a plain capture of source A. The main screen shows the +8 layer mask and the sub screen
  * shows BG3 as a 256x256 direct-colour bitmap (base 0 with blending, else 0x08000) at priority 0,
  * mosaic off. */
+
 #include "nitro/types.h"
 
 #define reg_GX_DISPCNT      (*(REGType32v *)0x04000000)

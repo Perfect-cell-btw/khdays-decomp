@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* NitroSDK fixed-destination word-send primitive. */
+
+#include "nitro/types.h"
+
 asm void MIi_CpuSend32(register const void *source,
                        register volatile void *destination, register u32 size)
 {

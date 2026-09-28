@@ -2,12 +2,7 @@
  * edge planes and computes the hit fraction on the face's plane, keeping the nearest. */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 {
-    s32 x;
-    s32 y;
-    s32 z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct CollisionEdgePlane {
     s16 x;

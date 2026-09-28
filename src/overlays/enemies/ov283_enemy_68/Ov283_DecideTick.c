@@ -3,11 +3,13 @@
  * +0x50 limit (0x7f80) the next move is 9; otherwise, once the +4 rig is idle, +0x34 rerolls 1.57
  * to 3.14 and the next move is picked: far (over 6.0) by a d100 roll (10 / 9 / 2 / 6), armed with the
  * +0x60 timer spent 5, else 4 (+0x7c = the roll passed 2.36, +0x3c cleared). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { u8 b0 : 1; u8 b1 : 1; } Bits;
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov283_MeasureTargetGap(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Rand16NextScaled(int bound);
@@ -19,9 +21,9 @@ void Ov283_DecideTick(int *node)
     int dist;
 
     {
-        Vec3 *push = (Vec3 *)(state + 7);
+        VecFx32 *push = (VecFx32 *)(state + 7);
 
-        *(Vec3 *)(state + 4) = *push;
+        *(VecFx32 *)(state + 4) = *push;
         ScaleVec3Fx12(0xb00, push, push);
     }
     dist = Ov283_MeasureTargetGap(node);

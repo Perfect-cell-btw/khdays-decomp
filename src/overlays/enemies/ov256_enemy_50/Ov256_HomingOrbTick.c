@@ -7,9 +7,11 @@
  * spawns effect 4 at the +8 point and pose 0 is requested. The mask keeps only the entities still in
  * the sphere. Without a target, past 7.0, or once blocked/grounded (+0x17a bits 0, 1, 3) the orb
  * bursts the same way. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 typedef struct { u16 lo : 8; u16 hi : 8; } Hw60;
 struct Bits17a { unsigned char b0 : 1, b1 : 1, b2 : 1, b3 : 1; };
 
@@ -17,13 +19,13 @@ struct Bits17a { unsigned char b0 : 1, b1 : 1, b2 : 1, b3 : 1; };
 
 extern const short data_0203d210[];
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov256_HomingOrbTick(int *node)
@@ -32,21 +34,21 @@ void Ov256_HomingOrbTick(int *node)
     int n;
     int i;
     u8 seen = 0;
-    Vec3 d;
-    Vec3 aim;
+    VecFx32 d;
+    VecFx32 aim;
     Sphere sphere;
     int hits[4];
-    Vec3 push;
+    VecFx32 push;
 
     state[7] += *(int *)(node[0] + 0x2c);
     state[9] = Ov107_FindNearestObject(*state, 0);
-    aim = *(Vec3 *)(state[9] + 0x190);
+    aim = *(VecFx32 *)(state[9] + 0x190);
     aim.y += 0x1000;
     VEC_Subtract(&aim, (void *)state[2], &d);
     VEC_Normalize(&d, &d);
     state[6] = func_020050b4(d.x, d.z);
     ScaleVec3Fx12(0x480 - (*(int *)(*(int *)(*state + 0x398) + 0x45c) << 7), &d, &d);
-    *(Vec3 *)(state + 3) = d;
+    *(VecFx32 *)(state + 3) = d;
     if (state[5] != 0 && state[4] != 0 && state[3] != 0) {
         if (*((u8 *)state + 0x20) < 2) {
             *((u8 *)state + 0x20) += 1;
@@ -56,7 +58,7 @@ void Ov256_HomingOrbTick(int *node)
         ((Hw60 *)(*state + 0x60))->hi &= ~0x80;
     }
     sphere.nRadius = 0x1000;
-    sphere.center = *(Vec3 *)(*state + 0x74);
+    sphere.center = *(VecFx32 *)(*state + 0x74);
     n = Ov107_CollectSphereOverlaps(*(int *)(*state + 0x398), &sphere, hits);
     for (i = 0; i < n; i++) {
         u8 bit = 1 << *(u16 *)(hits[i] + 2);
@@ -73,7 +75,7 @@ void Ov256_HomingOrbTick(int *node)
             continue;
         }
         *((u8 *)state + 0x21) |= bit;
-        func_ov107_020c0b90(*(int *)(*state + 0x398), 4, *(Vec3 *)state[2], 0);
+        func_ov107_020c0b90(*(int *)(*state + 0x398), 4, *(VecFx32 *)state[2], 0);
         *(u8 *)(*state + 0x1c7) = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
@@ -83,7 +85,7 @@ void Ov256_HomingOrbTick(int *node)
         && ((struct Bits17a *)(*state + 0x17a))->b0 == 0 && ((struct Bits17a *)(*state + 0x17a))->b3 == 0) {
         return;
     }
-    func_ov107_020c0b90(*(int *)(*state + 0x398), 4, *(Vec3 *)state[2], 0);
+    func_ov107_020c0b90(*(int *)(*state + 0x398), 4, *(VecFx32 *)state[2], 0);
     *(u8 *)(*state + 0x1c7) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
 }

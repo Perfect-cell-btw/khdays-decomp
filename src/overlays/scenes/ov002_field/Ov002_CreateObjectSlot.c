@@ -1,4 +1,5 @@
 /* Create and start the next external object slot, then return its index. */
+
 #include "nitro/types.h"
 
 typedef struct Ov107Object {

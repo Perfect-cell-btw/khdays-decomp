@@ -5,6 +5,7 @@
  * again (cancel sound); otherwise, unless a transfer is in flight but not
  * acknowledged, it runs the selection step.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionList {

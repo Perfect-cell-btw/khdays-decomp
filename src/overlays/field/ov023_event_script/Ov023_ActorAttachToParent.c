@@ -4,6 +4,7 @@
  * leaves the parent without a track (+0x15b0 = -1); otherwise the track is found on the
  * parent's entity (+0x15e0; 02087510) and the entity's track pointer (+0x58 of its animation
  * control at +0x24) aimed at the parent's track table (+0xa9c). */
+
 #include "nitro/types.h"
 
 typedef struct Ov023AnimCtl {

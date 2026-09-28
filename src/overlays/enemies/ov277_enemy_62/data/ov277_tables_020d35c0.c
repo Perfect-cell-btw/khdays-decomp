@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Per-frame update of the ov244 enemy. Outside move 6 bit 4 of +0x420 is set; the move effec (020cccec): const Quat data_ov277_020d35c0; */
+
 #include "nitro/types.h"
 
-/* read by Per-frame update of the ov244 enemy. Outside move 6 bit 4 of +0x420 is set; the move effec (020cccec): const Quat data_ov277_020d35c0; */
 const int data_ov277_020d35c0[4] = {
     0, 2896, 2896, 0,
 };

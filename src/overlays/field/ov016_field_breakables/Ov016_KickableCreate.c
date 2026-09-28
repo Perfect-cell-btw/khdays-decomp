@@ -9,9 +9,9 @@
  * (0202d968 on +0x24 from the transform), the zero velocity (+0x64c); kind 2 outside a session
  * (session bits & 4 clear) starts in mode 2 (+0x20); kinds whose byte in the 02082740 table is
  * not -1 mark the bucket with it (ov002 02076968); then register the piece (02076480). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016KickableKindRow {
     void *pfnStep;            /* 0x00 */

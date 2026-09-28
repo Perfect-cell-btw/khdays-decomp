@@ -3,26 +3,28 @@
  * world. When it lands on plain ground the result is whether the hit depth (distance * ray
  * height, in eighths) is within 0x10 of the track height; with no plain hit the result is left
  * undefined, as in the original. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
 
-extern void Ov252_TurnVecY(Vec3 *v, int angle, Vec3 *out);
-extern CollisionHit *Collision_CastRay(void *collision, Vec3 *origin, Vec3 *direction);
-extern const Vec3 data_ov252_020d435c;
+extern void Ov252_TurnVecY(VecFx32 *v, int angle, VecFx32 *out);
+extern CollisionHit *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *direction);
+extern const VecFx32 data_ov252_020d435c;
 
 int Ov252_GroundCheck(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 pos;
+    VecFx32 pos;
     CollisionHit *hit;
     int item;
     int depth;
     int diff;
 
     item = *(int *)(*state + 4);
-    pos = *(Vec3 *)state[2];
+    pos = *(VecFx32 *)state[2];
     {
-    Vec3 ray = data_ov252_020d435c;
+    VecFx32 ray = data_ov252_020d435c;
 
     state[0x1c] = 0;
     Ov252_TurnVecY(&ray, state[0x15], &ray);

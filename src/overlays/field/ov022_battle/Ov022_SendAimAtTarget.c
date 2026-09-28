@@ -11,17 +11,12 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct AimRecord {
     u8 nKind;                    /* 0x00 */
     u8 pad001[3];
-    struct VecFx32 vecPos;       /* 0x04 */
+    VecFx32 vecPos;       /* 0x04 */
     short nField10;              /* 0x10 */
     short nField12;              /* 0x12 */
     u8 nSub;                     /* 0x14 */
@@ -53,13 +48,13 @@ struct Actor {
     struct HitOwner *pHitOwner;  /* 0x26d4 */
 };
 
-extern void func_ov022_020ad44c(struct VecFx32 *pOut, struct Actor *pActor,
-                                struct VecFx32 *pTo, int nHeight);
-extern void VEC_Subtract(struct VecFx32 *pA, struct VecFx32 *pB,
-                         struct VecFx32 *pOut);
-extern int VEC_Normalize(struct VecFx32 *pOut, struct VecFx32 *pIn);
-extern void VEC_Add(struct VecFx32 *pA, struct VecFx32 *pB,
-                    struct VecFx32 *pOut);
+extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pActor,
+                                VecFx32 *pTo, int nHeight);
+extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB,
+                         VecFx32 *pOut);
+extern int VEC_Normalize(VecFx32 *pOut, VecFx32 *pIn);
+extern void VEC_Add(VecFx32 *pA, VecFx32 *pB,
+                    VecFx32 *pOut);
 extern void Ov022_SendAimMessage(void *pOwner, int nSlot,
                                 struct AimRecord *pRec);
 
@@ -71,11 +66,11 @@ extern void Ov022_SendAimMessage(void *pOwner, int nSlot,
 #define HIT_STATE_BUSY 1
 #define HIT_STATE_HELD 2
 
-void Ov022_SendAimAtTarget(struct Actor *pActor, struct VecFx32 *pFrom,
-                         struct VecFx32 *pTo, int nHeight, int bCheck)
+void Ov022_SendAimAtTarget(struct Actor *pActor, VecFx32 *pFrom,
+                         VecFx32 *pTo, int nHeight, int bCheck)
 {
-    struct VecFx32 vecPos;
-    struct VecFx32 vecDir;
+    VecFx32 vecPos;
+    VecFx32 vecDir;
     struct AimRecord rec;
     int bSend;
 

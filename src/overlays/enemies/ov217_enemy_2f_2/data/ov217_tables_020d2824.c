@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by ported from a matched sibling family (same shape, constants and offsets adjusted). (020cfe50): KindTable data_ov217_020d2824; */
+
 #include "nitro/types.h"
 
-/* read by ported from a matched sibling family (same shape, constants and offsets adjusted). (020cfe50): KindTable data_ov217_020d2824; */
 const int data_ov217_020d2824[5] = {
     0, 11, 12, 13, 15,
 };

@@ -1,7 +1,7 @@
 /* Re-evaluates the element's game-state gate, then rebinds its model sequence and animation. */
 
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec;
+#include "nitro/fx.h"
 
 extern unsigned int GameState_GetField(int bitOffset, int bitCount);
 extern void Ov014_ActorRelease(int this_);
@@ -12,7 +12,7 @@ extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);
 void Ov014_Element_Refresh(int this_) {
     char *self = (char *)this_;
     int entry = *(int *)(self + 8);
-    Vec saved;
+    VecFx32 saved;
 
     if (*(signed char *)(self + 0x135) == 0) {
         unsigned int state = GameState_GetField(*(u16 *)(self + 0x14),
@@ -24,9 +24,9 @@ void Ov014_Element_Refresh(int this_) {
     if (*(signed char *)(entry + 0x58) == 0)
         return;
 
-    saved = *(Vec *)(self + 0xd0);
+    saved = *(VecFx32 *)(self + 0xd0);
     RegisterSeqAndInit(this_ + 0x2c, Ov002_LookupChannelEntry(entry + 0x58), 1, 4);
-    *(Vec *)(self + 0xd0) = saved;
+    *(VecFx32 *)(self + 0xd0) = saved;
     *(u16 *)(self + 0xa8) = *(u16 *)(self + 0x18);
     *(u16 *)(self + 0x2c) |= 0x20;
     *(u16 *)(self + 0x12) |= 4;

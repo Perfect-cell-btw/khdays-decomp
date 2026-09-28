@@ -1,4 +1,5 @@
 /* Seven resource names and their tag IDs. */
+
 #include "nitro/types.h"
 
 extern char data_ov002_0207f07c;

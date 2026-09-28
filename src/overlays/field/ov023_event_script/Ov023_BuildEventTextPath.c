@@ -3,6 +3,7 @@
  * character, "S" for 'S' (the shared file), "DP" for 'D', or otherwise the code's fifth and
  * sixth characters one at a time (STD_StrnCat 0201fa6c), then ".p2" (STD_StrCat 0201fa3c).
  * Returns the path, which lives in the caller's frame as a 0x40 stack buffer. */
+
 #include "nitro/types.h"
 
 extern char *STD_StrCat(char *pszDst, const char *pszSrc);           /* STD_StrCat */

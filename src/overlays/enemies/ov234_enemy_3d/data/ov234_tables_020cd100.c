@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov234_InitEffectActor (020cbfc4): const struct Ov234TextureTable data_ov234_020cd100; */
+
 #include "nitro/types.h"
 
-/* read by Ov234_InitEffectActor (020cbfc4): const struct Ov234TextureTable data_ov234_020cd100; */
 const int data_ov234_020cd100[1] = {
     1,
 };

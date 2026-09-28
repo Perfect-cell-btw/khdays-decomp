@@ -1,6 +1,7 @@
 /* Mount-follow tick: while in a positive move and the +0x388 mount has a +0x4dc rider slot, bit 0
  * of the actor's +0x60 high byte is set and bit 7 cleared, the actor lands on the mount's +0xb0
  * point (020c5c54) and takes its +0xa0 pose. */
+
 #include "nitro/types.h"
 
 extern void Ov107_MoveNodeAndRelayout(int actor, void *at);

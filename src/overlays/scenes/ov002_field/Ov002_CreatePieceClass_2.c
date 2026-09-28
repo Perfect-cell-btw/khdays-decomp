@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* The descriptor the caller fills in for this class. */
+
+#include "nitro/types.h"
+
 typedef struct {
     int nOwnerArg;                  /* +0x00 */
     signed char bSlotKind;          /* +0x04 */

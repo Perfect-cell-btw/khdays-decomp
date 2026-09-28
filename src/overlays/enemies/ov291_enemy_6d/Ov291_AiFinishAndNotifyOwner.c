@@ -1,6 +1,7 @@
 /* Posts update 0x16f/6, calls the actor callback and ends the step. */
 
 #include "nitro/types.h"
+
 struct Actor;
 typedef void (*ActorCallback)(u8 val, struct Actor *self);
 

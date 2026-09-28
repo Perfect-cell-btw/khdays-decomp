@@ -21,6 +21,7 @@
  * scene label is not. The offsets and logic below are this function's -- the code is
  * byte-identical to the rep.
  */
+
 #include "nitro/types.h"
 
 struct S5 { int w[5]; };

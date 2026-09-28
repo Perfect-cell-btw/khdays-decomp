@@ -17,36 +17,38 @@
  * probe the ground from 20.0 up (data_ov252_020d4380) and mark impacts (effect 0x27), no lift sets
  * +0xb8, and a stop plays poses 0x34 / 0x38 / 3 with motion 2 and moves on to 020d26dc. Otherwise pose
  * 2 plays and, guarded, it faces the target again. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
 typedef struct { int v[3]; } Offs3;
 
 extern void Ov252_GuardSweep(int *node);
-extern int Ov252_CheckTarget(int *node, Vec3 *delta, int face);
+extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern int RandNextScaled(int bound);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int Ov252_HeadingDelta(int *node, Vec3 *v, int angle, int wantAbs);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int Ov252_HeadingDelta(int *node, VecFx32 *v, int angle, int wantAbs);
 extern void Ov107_PostTagUpdate(int owner, int pose, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern Vec3 Ov252_TurnVecY(int angle, Vec3 *vec);
+extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern int Ov252_DropReward(int *node, int param);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int Ov252_IsAwayFromOrigin(int *node);
 extern int func_020050b4(int x, int z);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
-extern CollisionHit *Collision_CastRay(void *collision, Vec3 *origin, Vec3 *direction);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
+extern CollisionHit *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *direction);
 extern const short data_0203d210[];
-extern const Vec3 data_ov252_020d43d4;
+extern const VecFx32 data_ov252_020d43d4;
 extern const Offs3 data_ov252_020d4344;
-extern const Vec3 data_ov252_020d4380;
-extern const struct Ring { Vec3 v[10]; } data_ov252_020d4428;
+extern const VecFx32 data_ov252_020d4380;
+extern const struct Ring { VecFx32 v[10]; } data_ov252_020d4428;
 extern void Ov252_RiseTick(void);
 extern void Ov252_GuardedDriftTick(void);
 
@@ -63,11 +65,11 @@ void Ov252_CruiseTick(int *node)
     int *state = (int *)node[1];
     struct Ring ring;
     Mtx33 rot;
-    Vec3 base = data_ov252_020d43d4;
-    Vec3 delta;
-    Vec3 dir;
-    Vec3 from;
-    Vec3 to;
+    VecFx32 base = data_ov252_020d43d4;
+    VecFx32 delta;
+    VecFx32 dir;
+    VecFx32 from;
+    VecFx32 to;
     int dist;
     int turn;
 
@@ -80,8 +82,8 @@ void Ov252_CruiseTick(int *node)
     if (state[0x2b] != 0 && dist > 0x20000) {
         Ov252_CheckTarget(node, &delta, 1);
     }
-    from = *(Vec3 *)state[2];
-    to = *(Vec3 *)(*(int *)(*state + 0x4e4) + 0x190);
+    from = *(VecFx32 *)state[2];
+    to = *(VecFx32 *)(*(int *)(*state + 0x4e4) + 0x190);
     to.y = 0;
     from.y = 0;
     VEC_Subtract(&to, &from, &dir);
@@ -117,7 +119,7 @@ void Ov252_CruiseTick(int *node)
             base.z = 0x400;
         }
     }
-    *(Vec3 *)(state + 3) = Ov252_TurnVecY(state[0x15], &base);
+    *(VecFx32 *)(state + 3) = Ov252_TurnVecY(state[0x15], &base);
     if (*(int *)(*(int *)(*state + 0x4e4) + 0x194) > *(int *)(state[2] + 4) + 0x380) {
         state[4] = 0x500;
     } else if (*(int *)(*(int *)(*state + 0x4e4) + 0x194) < *(int *)(state[2] + 4) - 0x380) {
@@ -147,8 +149,8 @@ void Ov252_CruiseTick(int *node)
         offs = data_ov252_020d4344;
         nShots = roll < 0x1e ? 2 : 1;
         for (i = 0; i < nShots; i++) {
-            Vec3 pos = *(Vec3 *)(*(int *)(*state + 0x554) + 0x14);
-            Vec3 off = {0, 0, 0};
+            VecFx32 pos = *(VecFx32 *)(*(int *)(*state + 0x554) + 0x14);
+            VecFx32 off = {0, 0, 0};
 
             off.x = offs.v[i];
             off = Ov252_TurnVecY(state[0x15], &off);
@@ -199,14 +201,14 @@ void Ov252_CruiseTick(int *node)
             }
             for (i = 0; i < 10; i++) {
                 int scene = *(int *)(*state + 4);
-                Vec3 probe;
-                Vec3 ray = data_ov252_020d4380;
+                VecFx32 probe;
+                VecFx32 ray = data_ov252_020d4380;
                 CollisionHit *hit;
 
                 MTX_MultVec33(ring.v + i, &rot, &ring.v[i]);
                 ring.v[i].x += RandRange(-0x3000, 0x3000);
                 ring.v[i].z += RandRange(-0x3000, 0x3000);
-                probe = *(Vec3 *)(*(int *)(*state + 0x4e4) + 0x190);
+                probe = *(VecFx32 *)(*(int *)(*state + 0x4e4) + 0x190);
                 probe.x += ring.v[i].x;
                 probe.z += ring.v[i].z;
                 {

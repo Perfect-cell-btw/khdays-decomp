@@ -4,6 +4,7 @@
  * slot changed the rows are rebuilt (Ov025_BuildMissionListRows 020a8360).  The rebuild is
  * called with the new slot as a second argument the callee ignores: that is what keeps the
  * slot in r1 (`mov r1, r0`) so the byte store can follow the `mov r0, r4` of the call. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionList {

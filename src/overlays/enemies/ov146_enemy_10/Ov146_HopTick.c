@@ -3,21 +3,23 @@
  * partner holds no queued move bit 0 of +0x1ae clears; with a pending move (+0x5c) a partner guard
  * (+0x58) becomes a 3.5 x 100.0 carry (+0x40/+0x44) that frees the partner (its +0x1ae bit 0 and +0x3ac
  * bit 1 clear), and the next move is 8 while carrying, else 2. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov146_HopTick(int *node)
 {
     int *state = (int *)node[1];
 
-    *(Vec3 *)(state + 4) = *(Vec3 *)(state + 7);
+    *(VecFx32 *)(state + 4) = *(VecFx32 *)(state + 7);
     state[5] = state[0x12] - 0x90;
     state[0x12] += *(int *)(node[0] + 0x2c) * -0x90 / 0x88;
-    ScaleVec3Fx12(0xfc0, (Vec3 *)(state + 7), (Vec3 *)(state + 7));
+    ScaleVec3Fx12(0xfc0, (VecFx32 *)(state + 7), (VecFx32 *)(state + 7));
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }

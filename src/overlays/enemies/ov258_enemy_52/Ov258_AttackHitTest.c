@@ -1,17 +1,19 @@
 /* cd104 */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct Nibbles { u8 lo : 4; u8 hi : 4; };
 
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
 extern int Ov107_CollectCapsuleOverlaps(int owner, void *box, int *hits);
 extern int Ov107_CollectSegmentOverlaps(int owner, void *seg, int *hits);
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, void *cyl, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 
-int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *seg, void *cyl, Vec3 *push, int bMask,
+int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *seg, void *cyl, VecFx32 *push, int bMask,
                         u16 effect, int kind)
 {
     int *state = (int *)node[1];
@@ -51,7 +53,7 @@ int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *seg, void *cyl
             if (kind == 1 || kind == 4) {
                 Ov107_BuildAndSendUpdate(*state, *(short *)((u8 *)state + 0x58), 0x10, (void *)(hits[i] + 0x190));
             }
-            func_ov107_020c0b90(*state, effect + 6, *(Vec3 *)(hits[i] + 0x190), 0);
+            func_ov107_020c0b90(*state, effect + 6, *(VecFx32 *)(hits[i] + 0x190), 0);
             return 1;
         }
     }

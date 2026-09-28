@@ -2,11 +2,13 @@
  * (Ov255_SteerToTarget) into the +0x10 step. Once the +0xc idle byte clears a d101 picks the next
  * sub-state -- 0xc below 40; 9 below 80 when the +0x3ec partner is active (bit 1 of its +0x40
  * object's +0x5c) and the path point is closer than 8.0; else 2 -- and the tick ends. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Bits5c { int b0 : 1, b1 : 1; };
 
-extern int Ov255_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov255_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
@@ -23,14 +25,14 @@ static inline int RandRange(int lo, int hi)
 void Ov255_SettleTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int speed;
     int dist;
     int roll;
 
     state[0x10] = 0;
     dist = Ov255_SteerToTarget(state, state[0x17], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     if (*(unsigned char *)state[3] != 0) {
         return;
     }

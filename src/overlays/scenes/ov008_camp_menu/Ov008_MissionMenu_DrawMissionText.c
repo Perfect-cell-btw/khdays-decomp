@@ -3,6 +3,7 @@
  * 6 (+0x34) and is cleared (02030158); the text goes at (3, 3) in colour 0xf5 with shade 0xfb
  * (020302ec) and its measured height (020aa168) is kept at +0x144.  During a page transition
  * (02084e38) an empty text falls back to the alternate node's, when there is one. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionNameNode {

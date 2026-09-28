@@ -6,25 +6,27 @@
  * pose 0x17 plays and the actor is knocked back in place (mode 7) to repeat; otherwise pose 0x18
  * plays, the +0x3e4 shape gains bit 1, +0x50 takes the track height and +0x54 the rise to route
  * point 0xb, and the node moves on to 020d08ec. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 struct Items4ac { char pad[0x4ac]; int item[10]; };
 
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern int RandNextScaled(int n);
-extern void Ov254_InvokeHookAndRearm(int helper, void *from, Vec3 *to);
+extern void Ov254_InvokeHookAndRearm(int helper, void *from, VecFx32 *to);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int Ov254_PanelYForPhase(int *state, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_DiveTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov254_SummonTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 to;
+    VecFx32 to;
     int i;
     int idle;
     int j;
@@ -34,7 +36,7 @@ void Ov254_SummonTick(int *node)
         *((u8 *)state + 0x70) |= 1;
         *(int *)(*state + 0x3dc) = Ov107_FindNearestObject(*state, 0);
         if (*(int *)(*state + 0x3dc) != 0) {
-            to = *(Vec3 *)(*(int *)(*state + 0x3dc) + 0x74);
+            to = *(VecFx32 *)(*(int *)(*state + 0x3dc) + 0x74);
             j = RandNextScaled(0x201) - 0x100;
             to.x += j;
             j = RandNextScaled(0x201) - 0x100;

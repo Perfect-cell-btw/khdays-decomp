@@ -23,9 +23,10 @@
  *  - Ghidra's two "conditional pointers" (piVar8 = &uStack_18 / piVar8 + 6) are DEAD CODE gated
  *    out by the null-return and the counter branch; the buffers are always the stack slots.
  */
-struct Vecx32 { int x, y, z; };
 
-static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
+#include "nitro/fx.h"
+
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
     vec->y = y;
     vec->z = z;
@@ -41,8 +42,8 @@ extern short data_0203d210[];
 
 void Ov121_AimPickMeleeReaction(int *self) {
     int *state = (int *)self[1];
-    struct Vecx32 aim;
-    struct Vecx32 dir;
+    VecFx32 aim;
+    VecFx32 dir;
     int gap;
     int tgt;
     int own;

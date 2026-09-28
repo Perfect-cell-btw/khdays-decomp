@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov268_EnemyConstruct (not yet decompiled) */
+
 #include "nitro/types.h"
 
-/* read by Ov268_EnemyConstruct (not yet decompiled) */
 const int data_ov268_020d47b0[5] = {
     0, 20, 21, 22, 23,
 };

@@ -4,6 +4,7 @@
  * (0201ef9c, heap 0xe), its palette / character / screen cell bound (Res_LoadSpriteSet
  * 02024c94), the palette sent to the BG palette RAM (GX_LoadBGPltt) and the characters to BG3
  * (GX_LoadBG3Char); the file is freed again (NNSi_FndFreeFromDefaultHeap). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;

@@ -17,10 +17,11 @@
  * the function-scope ones stretches their live ranges across all three arms
  * and rotates the three registers this arm uses.
  */
-struct Vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 struct Ov020WallQuery {
-    struct Vec3 vOrigin;                    /* 0x00 */
+    VecFx32 vOrigin;                    /* 0x00 */
     int nRadius0c;                          /* 0x0c */
     int bUpperWall10;                       /* 0x10 */
     int nState14;                           /* 0x14 */
@@ -52,8 +53,8 @@ extern char data_ov020_020800e4[];
 extern char data_ov020_020800f0[];
 
 extern int QueryActiveStateOrDelegate(void);
-extern struct Vec3 *func_ov022_020881f8(int id);
-extern int VEC_Distance(const struct Vec3 *a, const struct Vec3 *b);
+extern VecFx32 *func_ov022_020881f8(int id);
+extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern void SceneNode_Disable(struct Ov020WallNode *node);
 extern struct TrackEntryGroup *GetTrackEntryBase(int track);
 extern void *FindEntryByExactName(void *entry, const char *name);
@@ -68,8 +69,8 @@ int Ov020_StepWallView(struct Ov020WallQuery *query, int unused,
     struct TrackEntryGroup *group;
     struct Ov020WallNode *node;
     void *entry;
-    struct Vec3 *sample;
-    struct Vec3 vGround;
+    VecFx32 *sample;
+    VecFx32 vGround;
     void *upper;
     void *lower;
     int all;

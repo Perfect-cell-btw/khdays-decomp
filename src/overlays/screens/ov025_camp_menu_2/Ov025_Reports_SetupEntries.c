@@ -11,6 +11,7 @@
  * The ten rows (+0xd0, seven entries each: ids 0x33 / 0x3d / 0x47 / 0x51 / 0x5b / 0x6f / 0x65
  * plus the row) release the second pair of four of their cells (020888b0), and entries
  * 0x65..0x6e resolve through Ov025_Reports_OnRowPressed (02088420). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008LayoutTemplate {

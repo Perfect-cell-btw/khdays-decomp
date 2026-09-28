@@ -1,15 +1,12 @@
-#include "nitro/types.h"
-
-typedef struct Ov002Vec3 {
-    s32 x;
-    s32 y;
-    s32 z;
-} Ov002Vec3;
 
 /* The collision cast block, as the matched sources in src/calls spell it. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct CollCastParams {
-    Ov002Vec3 *origin;
-    Ov002Vec3 *direction;
+    VecFx32 *origin;
+    VecFx32 *direction;
     s32 radius;
     u16 directionIsUnit;
     u16 flags;
@@ -31,7 +28,7 @@ typedef struct Ov002PieceElement {
  * was spawned at. */
 typedef struct Ov002SpotStage {
     char pad0000[0x2528];
-    Ov002Vec3 aSpots[1];            /* +0x2528 */
+    VecFx32 aSpots[1];            /* +0x2528 */
 } Ov002SpotStage;
 
 /* The stage pointer sits one word into the holder, and the overlay's own
@@ -40,10 +37,10 @@ extern Ov002SpotStage *data_ov002_0207fa28[];
 
 extern int Ov002_GetCtxTableByte(int nSlot);
 extern void *func_0202c208(u16 nId, CollCastParams *pParams);
-extern void ScaleVec3Fixed27(void *pObject, Ov002Vec3 *pOut, Ov002Vec3 *pIn);
-extern void VEC_Add(const Ov002Vec3 *a, const Ov002Vec3 *b, Ov002Vec3 *ab);
+extern void ScaleVec3Fixed27(void *pObject, VecFx32 *pOut, VecFx32 *pIn);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
 extern void Ov002_SpawnSpot(int nRow, int nColumn, int nId, int nSlot,
-                                Ov002Vec3 *pAt, int nKind, int nFlags);
+                                VecFx32 *pAt, int nKind, int nFlags);
 
 /* Settle where a board slot's marker belongs and hand it to the placer.
  *
@@ -56,8 +53,8 @@ extern void Ov002_SpawnSpot(int nRow, int nColumn, int nId, int nSlot,
 void Ov002_PlaceSlotMarkerOnGround(Ov002PieceElement *pSlot)
 {
     CollCastParams params;
-    Ov002Vec3 vDown;
-    Ov002Vec3 vAt;
+    VecFx32 vDown;
+    VecFx32 vAt;
     void *pHit;
     int nId;
 

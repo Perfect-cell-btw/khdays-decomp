@@ -1,6 +1,7 @@
 /* NitroSDK original assembly (libraries/os/src/os_context.c). */
 
 #include "nitro/types.h"
+
 typedef struct OSContext OSContext;
 extern void CP_SaveContext(void);
 

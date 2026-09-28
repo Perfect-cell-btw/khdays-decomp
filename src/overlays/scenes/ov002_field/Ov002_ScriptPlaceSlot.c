@@ -1,14 +1,13 @@
-#include "nitro/types.h"
-
-typedef struct Ov002Vec3 {
-    int x, y, z;
-} Ov002Vec3;
 
 /* What a named place resolves to: its point and the heading that goes with
    it. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct Ov002PlaceResult {
     char pad000[8];
-    Ov002Vec3 place;
+    VecFx32 place;
     int nExtra;
 } Ov002PlaceResult;
 
@@ -32,7 +31,7 @@ extern void Ov002_ApplyRosterSlotToNode(int nIndex, void *pPlace, int nAngle);
  */
 int Ov002_ScriptPlaceSlot(void *pCtx, int nArgs)
 {
-    Ov002Vec3 vPlace;
+    VecFx32 vPlace;
     int nIndex;
     int nAngle;
     Ov002PlaceResult *pFound;

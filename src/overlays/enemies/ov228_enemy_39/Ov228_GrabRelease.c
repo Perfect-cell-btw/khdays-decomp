@@ -3,22 +3,23 @@
  * hold is dropped; animation 0xc plays, the overlay's animation 9 starts, effect 2 spawns at the
  * origin, reaction 0x12b mode 4 fires at the position, the +0x4c timer and +0x61 flag reset and
  * the tick hands off to d1d14. */
-struct Vecx32 { int x, y, z; };
 
-extern void VEC_Subtract(void *a, void *b, struct Vecx32 *d);
+#include "nitro/fx.h"
+
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int func_020050b4(int x, int z);
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void Ov228_startAnim(int actor, int anim);
-extern void func_ov107_020c0b90(int actor, int a, struct Vecx32 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov228_AiSlamWindup(int *node);
-extern struct Vecx32 data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 void Ov228_GrabRelease(int *node)
 {
     int *state = (int *)node[1];
-    struct Vecx32 d;
+    VecFx32 d;
 
     if (state[2] != 0 && (*(unsigned char *)((char *)state + 0x1c4) & 2) == 0) {
         VEC_Subtract((void *)(state[2] + 0x190), (void *)state[3], &d);

@@ -1,6 +1,7 @@
 /* Ov107_FindMessageHandler -- resolve a message handler by id: fast array lookup in the
  * singleton manager's table when present and id is in range, otherwise fall back
  * to a linear scan of its handler list (same list-walk idiom as Ov107_FindChildById). */
+
 #include "nitro/types.h"
 
 extern int List_First(void *list);

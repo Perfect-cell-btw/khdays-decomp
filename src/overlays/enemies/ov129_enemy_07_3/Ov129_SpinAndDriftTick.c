@@ -16,7 +16,9 @@
  *    it gets hoisted into a callee-saved register (+1 in the push list); left fully inline
  *    it lands in the other scratch than the ROM's. It is used twice (ldm then stm) while
  *    the destination is used once -- the ROM gives lr to the two-use value. */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern int Angle_TurnToward(int a, int b, int c, void *d);
@@ -24,7 +26,7 @@ extern void QuatFromAxisAngle(void *out, void *a, int b);
 extern void Quat_FromTwoVectors(void *out, void *a, void *b);
 extern void Quat_Multiply(void *out, void *a, void *b);
 extern void Srt_SetRotationQuat(void *a, void *b);
-extern struct vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern int data_02042264[];
 
 void Ov129_SpinAndDriftTick(int *self, int p2, int p3, int p4) {
@@ -38,8 +40,8 @@ void Ov129_SpinAndDriftTick(int *self, int p2, int p3, int p4) {
     Quat_FromTwoVectors(m, data_02042264, (void *)(*ctx + 0x124));
     Quat_Multiply(m, m, q);
     Srt_SetRotationQuat((void *)(*ctx + 0xa0), m);
-    { struct vec3 *v = (struct vec3 *)(ctx + 6);
-    *(struct vec3 *)(*ctx + 0xf0) = *v;
+    { VecFx32 *v = (VecFx32 *)(ctx + 6);
+    *(VecFx32 *)(*ctx + 0xf0) = *v;
     *v = data_02041dc8; }
     if ((((struct hw60 *)(*ctx + 0x60))->lo & 1) == 0) {
         return;

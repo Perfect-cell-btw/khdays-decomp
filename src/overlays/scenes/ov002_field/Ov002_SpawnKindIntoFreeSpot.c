@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* The stage's own linear congruential generator. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002Rng {
     int nSeed;
     int nMult;

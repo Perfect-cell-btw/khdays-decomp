@@ -1,14 +1,16 @@
 /* Collect nearby spots for one actor and context. Placed spots dispatch a
  * replicated command; free spots begin homing toward their action owner.
  * Keep the declaration order: it preserves the target's register reuse. */
+
 #include "nitro/types.h"
-typedef struct Ov002Vec3 { int x, y, z; } Ov002Vec3;
+#include "nitro/fx.h"
+
 typedef struct Ov002SpotActionOwner Ov002SpotActionOwner;
 struct Ov002SpotActionOwner {
     char pad000[0x70];
     int nAttractHeight;
     char pad074[0x11c];
-    Ov002Vec3 vAttractPosition;
+    VecFx32 vAttractPosition;
     char pad19c[0x20];
     void (*pfnActivate)(Ov002SpotActionOwner *, int, int, u16);
     char pad1c0[0x1c];
@@ -31,7 +33,7 @@ typedef struct Ov002Spawned {
     s16 nPickupDelay;
     char pad03a[2];
     int nRadius;
-    Ov002Vec3 vPos;
+    VecFx32 vPos;
 } Ov002Spawned;
 typedef struct Ov002SpawnCtx {
     char pad000[0xc];
@@ -51,7 +53,7 @@ extern int Ov002_RunShutdownHook(void);
 extern int Ov002_GetCtxTableByte(int);
 extern u32 Session_GetLocalPlayerIndex(void);
 extern u32 func_ov022_020886f8(int);
-extern int VEC_Distance(const Ov002Vec3 *, const Ov002Vec3 *);
+extern int VEC_Distance(const VecFx32 *, const VecFx32 *);
 extern int Slot_AllEntriesFilled(int);
 extern void Ov022_Member_ShowSpotMessage(int, u32, int);
 extern int Ov002_PostSpotCommand(Ov002Spawned *, int, u8, int);
@@ -83,7 +85,7 @@ void Ov002_CollectNearbySpots(int nCtxIndex, Ov002SpotActionOwner *pOwner, u32 n
     u32 nPlayerFlags;
     int nOwnerRadius;
     int bNotifiedFull;
-    Ov002Vec3 vAttractPosition;
+    VecFx32 vAttractPosition;
     int nRadius;
 
     bNotifiedFull = 0;

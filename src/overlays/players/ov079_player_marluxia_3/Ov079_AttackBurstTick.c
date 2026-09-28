@@ -9,9 +9,9 @@
  * mode as its argument. Codegen: the emit kind is assigned after the direction (its constant
  * is then created after the sine-table pointer, which keeps the table in r6) and the owner flag test
  * is the 64-bit AND truncated to int (low word in r1). */
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Emit {
     char pad00[0xc];
@@ -32,7 +32,7 @@ struct Params {
     int w0c;
     u8 b10;
     u8 pad11[3];
-    struct Vec3 vExtent;
+    VecFx32 vExtent;
     int w20;
     u8 pad24;
     u8 b25;

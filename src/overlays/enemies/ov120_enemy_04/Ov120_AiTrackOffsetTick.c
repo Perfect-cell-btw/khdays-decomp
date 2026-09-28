@@ -1,10 +1,6 @@
 /* Transforms the offset through the owner's matrix and scales it. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3i;
+#include "nitro/fx.h"
 
 extern int Ov107_ActionResource_GetOffsetAndScale(void *src, void *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *base, void *vec);
@@ -27,6 +23,6 @@ void Ov120_AiTrackOffsetTick(void *node)
         return;
     }
 
-    *(Vec3i *)((char *)state + 0x28) = *(Vec3i *)((char *)state + 0x1c);
+    *(VecFx32 *)((char *)state + 0x28) = *(VecFx32 *)((char *)state + 0x1c);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov120_CopyVecThenSetupSubActionAndAdvance);
 }

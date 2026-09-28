@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* NitroSDK fast word-copy primitive. */
+
+#include "nitro/types.h"
+
 asm void MIi_CpuCopyFast(register const void *source,
                          register void *destination, register u32 size)
 {

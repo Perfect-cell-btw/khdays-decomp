@@ -4,7 +4,9 @@
  * the +0x50 pose and is copied to +0x40, +0x20 and +0x30, the target's +0x74 position is kept at
  * +0x70, the +0x18 timer clears with a +0x1c range of 0.8, +0x7c/+0x80/+0x84 clear, effect 0x162
  * (kind 6) spawns at the +4 anchor from the +0x384 model and the node moves to 020d0d8c. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct m4 { int w[4]; };
 struct blk11 { int w[11]; };
 struct Bits394 { unsigned int b0 : 1; };
@@ -34,7 +36,7 @@ void Ov273_EnterSweep(int *self) {
     *(struct m4 *)(state + 0x14) = *(struct m4 *)(*state + 0x398);
     Quat_Multiply(state + 0x14, state + 0x14, &yaw);
     *(struct m4 *)(state + 0x10) = *(struct m4 *)(state + 0x14);
-    *(Vec3 *)(state + 0x1c) = *(Vec3 *)(state[0x18] + 0x74);
+    *(VecFx32 *)(state + 0x1c) = *(VecFx32 *)(state[0x18] + 0x74);
     *(struct m4 *)(state + 8) = *(struct m4 *)(state + 0x14);
     *(struct m4 *)(state + 0xc) = *(struct m4 *)(state + 8);
     state[6] = 0;

@@ -1,6 +1,7 @@
 /* Move entry: the actor's +0x388 latch is set, bits 0 and 7 of its +0x60 high byte are set, pose
  * 0 plays, reaction 0x16d/7 fires at the +8 point, the +0x24 / +0x28 timers and +0x2c / +0x2d
  * flags clear and the node moves to 020d48bc. */
+
 #include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);

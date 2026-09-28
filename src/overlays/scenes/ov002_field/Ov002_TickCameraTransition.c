@@ -1,6 +1,5 @@
-typedef struct {
-    int x, y, z;
-} VecFx32;
+
+#include "nitro/fx.h"
 
 extern int QueryActiveStateOrDelegate(void);
 extern int *GetEntryField20ByIndex(int nPlayer);

@@ -5,7 +5,9 @@
  * data_020420f8; otherwise build a look-at via 0202ed60(slot+8, &data_02042258, param3). Finally wrap
  * the index: {ret, param1[1]} = divmod(index+1, capacity=*(*param1+0x8c)) and return the quotient.
  */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct vec4 { int a, b, c, d; };
 extern void Quat_FromTwoVectors(unsigned int *out, void *basis, int *v);
 extern long long func_02020400(int num, int den);
@@ -17,7 +19,7 @@ int Ov201_RingBufferFillSlot(int *param1, int *param2, int *param3) {
     unsigned long long r;
 
     *(int *)(*(int *)(*param1 + 0x90) + param1[1] * 0x38) = 0x3000;
-    *(struct vec3 *)(slot + 0x2c) = *(struct vec3 *)param2;
+    *(VecFx32 *)(slot + 0x2c) = *(VecFx32 *)param2;
     if (param3 != 0) {
         Quat_FromTwoVectors((unsigned int *)(slot + 8), &data_02042258, param3);
     } else {

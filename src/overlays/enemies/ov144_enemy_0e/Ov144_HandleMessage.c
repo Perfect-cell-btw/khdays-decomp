@@ -10,15 +10,17 @@
  * MATCH NOTE: the sub-state set {4, 6, 7} is tested as the ROM does, a bit mask over the
  * sub-state minus 4 in unsigned-byte arithmetic; `||` chains and switches lower to compare
  * chains, range checks or jump tables instead. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 struct Flags5c { unsigned int b0 : 1, bShow : 1; };
 
 extern void SetSubitemState(int part, int slot, short on, int c);
 extern void RefreshObjectCallbacks(int part, int a);
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern void Srt_SetScaleUniform(SrtTransform *transform, int scale);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero, SrtTransform *transform);
 extern void Ov107_AiState_OnMessage(int owner, u8 *msg, int arg);
@@ -26,7 +28,7 @@ extern void Ov107_AiState_OnMessage(int owner, u8 *msg, int arg);
 void Ov144_HandleMessage(int owner, u8 *msg, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
+    VecFx32 translation;
     union {
         int words[3];
         u8 bytes[12];

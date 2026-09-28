@@ -3,18 +3,14 @@
  * of the panel (+0x510 of the scene work) are placed: each is a 15 x 2 cell block of the source
  * tilemap (Ov027_SetPanelSlot 02083c1c doubles the source row) drawn at column 8 -- the
  * prompt strip (slot 2) at row 14, line 0 at row 16 and line 1 at row 18. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

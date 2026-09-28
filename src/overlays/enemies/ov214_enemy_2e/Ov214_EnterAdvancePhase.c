@@ -8,12 +8,14 @@
  * could write the sin/cos table, which reorders a table load; const is the aliasing fact that
  * matches. One of a 5-member family (ov215/216/217/264); only the chained-state symbol differs.
  */
-struct Vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern void Ov107_PostTagUpdate(int owner, int mode, int b);
 extern int RandNext(void);
 extern const short data_0203d210[];
-extern struct Vec3 data_02041dc8;
-extern void func_ov107_020c0b90(int owner, int mode, struct Vec3 v, int c);
+extern VecFx32 data_02041dc8;
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int c);
 extern int RandNextScaled();
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov214_stActivateWhenReady(void);
@@ -21,7 +23,7 @@ extern void Ov214_stActivateWhenReady(void);
 void Ov214_EnterAdvancePhase(int param_1) {
     int *node = *(int **)(param_1 + 4);
     int idx;
-    struct Vec3 v;
+    VecFx32 v;
     Ov107_PostTagUpdate(*node, 6, 0);
     idx = (int)(((unsigned)(((long long)RandNext() * 0x28be60db9391LL + 0x80000000000LL) >> 0x20) << 4) >> 0x10) >> 4;
     node[5] = data_0203d210[idx * 2];

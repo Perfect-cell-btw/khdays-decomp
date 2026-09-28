@@ -4,21 +4,23 @@
  * point lowered by the +0x80 radius, bit 6 of the +0x60 high byte drops, it is knocked back there
  * (mode 2), effect 0xd starts there, pose 0x1c plays, +0x70 and the +0x79 / +0x7b flags clear and the
  * node moves on to 020cfa38. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 struct Flag17a { u8 b0 : 1; };
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
-extern void Ov260_AttackSweep(int *state, int kind, Vec3 *sphere, void *cyl, void *seg);
+extern void Ov260_AttackSweep(int *state, int kind, VecFx32 *sphere, void *cyl, void *seg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 extern void Ov260_StompTick_2(void);
@@ -28,17 +30,17 @@ void Ov260_TickRecoilFall(int *node)
     int *state = (int *)node[1];
     int lift = *(int *)(*(int *)(*state + 0x428) + 0x30);
 
-    *(Vec3 *)(state + 8) = *(Vec3 *)(state + 0xb);
+    *(VecFx32 *)(state + 8) = *(VecFx32 *)(state + 0xb);
     if (lift != 0) {
         state[0xc] = lift;
         state[9] = lift;
     }
-    Ov260_AttackSweep(state, 4, (Vec3 *)(*state + 0x74), 0, 0);
+    Ov260_AttackSweep(state, 4, (VecFx32 *)(*state + 0x74), 0, 0);
     if (!(!((struct Flag17a *)(*state + 0x17a))->b0)) {
         {
-            Vec3 *land = (Vec3 *)(state + 0x15);
+            VecFx32 *land = (VecFx32 *)(state + 0x15);
 
-            *land = *(Vec3 *)(*state + 0x180);
+            *land = *(VecFx32 *)(*state + 0x180);
             state[0x16] -= *(int *)(*state + 0x80);
             {
                 u16 hw = *(u16 *)(*state + 0x60);

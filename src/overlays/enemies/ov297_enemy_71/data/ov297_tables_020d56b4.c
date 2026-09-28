@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Retreat entry of the ov297 enemy: spawns effect 0 and fires reaction 0x176 mode 4 at the + (020d5394): const struct PointTable data_ov297_020d56b4; */
+
 #include "nitro/types.h"
 
-/* read by Retreat entry of the ov297 enemy: spawns effect 0 and fires reaction 0x176 mode 4 at the + (020d5394): const struct PointTable data_ov297_020d56b4; */
 const int data_ov297_020d56b4[60] = {
     -25772, -2454, 44671,
     -28115, -2454, -14078,

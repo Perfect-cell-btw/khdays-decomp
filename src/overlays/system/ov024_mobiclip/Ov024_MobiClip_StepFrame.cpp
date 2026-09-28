@@ -9,6 +9,7 @@
  *
  * Reports zero once the frame index has caught up with the frame count.
  */
+
 #include "nitro/types.h"
 
 #define OFFSET_MASK 0x3fff

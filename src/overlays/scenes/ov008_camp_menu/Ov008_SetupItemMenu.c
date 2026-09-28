@@ -9,6 +9,7 @@
  * byte 6) is set when flag 0x200b is set, or once day 12 is reached and the
  * flag 0x3c2b + 02079264(0x34) is set; then the markers are armed.
  */
+
 #include "nitro/types.h"
 
 #define FLAG_ITEM_MENU_SEEN 0x200b

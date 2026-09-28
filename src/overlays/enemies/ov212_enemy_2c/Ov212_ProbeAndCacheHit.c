@@ -8,11 +8,7 @@
  * +0x6c is re-armed to Obj_RenderModel either way -- note that is the same function called directly
  * a few lines above, so the pool entry does double duty as a value and as a call target. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad0[0x24];

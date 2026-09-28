@@ -2,7 +2,9 @@
  * is rolled between +0x224 and +0x228 (eight times as long while the +0x4ec shape is hidden), the +0x8e
  * shield regenerates to a ninth of the maximum health, the hit state clears and the queued +0x1c9 move
  * becomes next. */
+
 #include "nitro/types.h"
+
 typedef struct { unsigned f : 8; } B8;
 typedef struct { unsigned short lo : 8; unsigned short hi : 8; } flags16;
 

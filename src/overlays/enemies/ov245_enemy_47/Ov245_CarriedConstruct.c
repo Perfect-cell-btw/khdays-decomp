@@ -1,7 +1,9 @@
 /* Ov245_CarriedConstruct -- constructor of the ov245 carried object. */
-typedef struct { int x, y, z; } Vec3;
-typedef void (*Callback)(void);
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef void (*Callback)(void);
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 struct Ov245Obj {
@@ -17,7 +19,7 @@ struct Ov245Obj {
     int pad34[11];
     u16 flags60;          /* 0x60 */
     u16 pad62;
-    Vec3 pose;            /* 0x64 */
+    VecFx32 pose;            /* 0x64 */
     int scale;            /* 0x70 */
     int pad74[10];
     int pOwner;           /* 0x9c */
@@ -47,7 +49,7 @@ extern void RefreshObjectCallbacks(int item, int a);
 extern void Ov107_EnqueueValue(struct Ov245Obj *self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov245_CarriedConstruct(struct Ov245Obj *self) {
     int pool = self->pool;

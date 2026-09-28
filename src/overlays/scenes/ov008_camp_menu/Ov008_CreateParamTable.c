@@ -7,6 +7,7 @@
  * the game state's blocks (0xfe0, 0x1060), sets bShowAll when GameState field
  * 0x44e is 6, and runs the post-load pass (02089e94).
  */
+
 #include "nitro/types.h"
 
 #define LIST_COUNT      5

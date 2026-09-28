@@ -11,13 +11,14 @@
  * 30.0, the overlay's 14-byte position message (data_ov160_020cf7c8, the +4 point packed as
  * 24-bit values, byte 4 set above 1.0 + 0x100) goes to the +0x24 hook, reaction 0x151 mode 7
  * fires at the +4 point, the sub-state clears and the state ends. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u8 hi, mid, lo; } Fx24;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int q[4]; } Quat;
-typedef struct { Vec3 origin; Vec3 dir; int nLength; int nRadius; } Segment;
+typedef struct { VecFx32 origin; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 typedef struct {
     u16 id;             /* +0x0 */
@@ -39,22 +40,22 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *v);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *v);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_CollectSegmentOverlaps(int item, Segment *query, int *results);
-extern int Ov107_InvokeHitCallback(int ent, int actor, int item, int mode, const Vec3 *dir, int flag);
+extern int Ov107_InvokeHitCallback(int ent, int actor, int item, int mode, const VecFx32 *dir, int flag);
 extern void Ov022_ToggleBit13ByMode(int effect, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Ov107_FindNearestObject(int owner, int flag);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *from, const Vec3 *to);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void Quat_Slerp(Quat *out, int t, Quat *a, Quat *b);
 extern void Vec4_Normalize(Quat *out, Quat *in);
 extern void Ov107_BuildAndSendUpdate(int item, int id, int mode, void *at);
-extern const Vec3 data_02042258;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02041dc8;
 extern void Ov160_GrabTick(int *node);
 extern const PosMsg data_ov160_020cf7c8;
 
@@ -62,10 +63,10 @@ void Ov160_DashTick(int *node)
 {
     int *state = (int *)node[1];
     Segment query;
-    Vec3 fwd;
+    VecFx32 fwd;
     int results[4];
     Quat q;
-    Vec3 d;
+    VecFx32 d;
     PosMsg msg;
     Fx32 scratchZ;
     Fx32 scratchY;
@@ -77,9 +78,9 @@ void Ov160_DashTick(int *node)
 
     state[0xa] += *(int *)(node[0] + 0x2c);
     Vec3TransformViaTempMtx(&fwd, state + 5, &data_02042258);
-    ScaleVec3Fx12(state[9], &fwd, (Vec3 *)(state + 2));
+    ScaleVec3Fx12(state[9], &fwd, (VecFx32 *)(state + 2));
     state[9] += (0x400 - state[9]) / 30;
-    query.origin = *(Vec3 *)state[1];
+    query.origin = *(VecFx32 *)state[1];
     query.dir = fwd;
     query.nLength = state[9];
     query.nRadius = 0x1000;
@@ -97,7 +98,7 @@ void Ov160_DashTick(int *node)
     }
     target = Ov107_FindNearestObject(*state, 0);
     if (target != 0) {
-        VEC_Subtract((Vec3 *)(target + 0x74), (Vec3 *)state[1], &d);
+        VEC_Subtract((VecFx32 *)(target + 0x74), (VecFx32 *)state[1], &d);
         VEC_Normalize(&d, &d);
         Quat_FromTwoVectors(&q, &data_02042258, &d);
         if (VEC_DotProduct(&fwd, &d) >= 0) {

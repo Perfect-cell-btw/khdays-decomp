@@ -45,11 +45,13 @@ Still to do, in this order:
 
 - **Headers**: `include/` with the shared structs (actor, AI task, scene, script context, ...).
   Done so far: the basic types (`nitro/types.h`: `u8`..`s64`, `vu*`, `BOOL`, `TRUE`/`FALSE`;
-  `nitro/fx.h`: `fx16`..`fx64c`; `nitro/os.h`: `OSIntrMode`, `OSTick`) replace the typedefs each
-  source used to repeat. Under mwcc `u32`/`s32` are `long`, as in the SDK the game was built
+  `nitro/fx.h`: `fx16`..`fx64c` and `VecFx32`; `nitro/os.h`: `OSIntrMode`, `OSTick`) replace the
+  typedefs each source used to repeat, and the dozen local names of the 3D vector (`Vec3`,
+  `FxVec`, `Ov002Vec3`, ...) are `VecFx32`. Includes sit at the top of each source. Under mwcc `u32`/`s32` are `long`, as in the SDK the game was built
   with; a few sources that only match with `int` spell `unsigned int`/`int` where it matters.
   Every compile gets `-i include`, and the build tracks header dependencies. Still per source:
-  the vector and matrix types, the function prototypes and the game's own structs.
+  the matrix types, the SDK and NitroSystem structs, the function prototypes and the game's own
+  structs.
 - **Translation units**: grouping functions back into one `.c` per original file (per enemy, per
   menu, ...). The build verifies one function per file today. `src/engine/` gets its subsystem
   folders at that point: the boundaries below are approximate, and a prefix such as `Obj_` or

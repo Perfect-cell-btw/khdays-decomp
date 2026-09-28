@@ -2,9 +2,11 @@
  * guard sphere (its +0x530 model's +0x14 point, radius 8.0) is tested twice against kind-6 targets
  * (020ce0a8); each sweep that has hit anything so far plays sound 0/0x51 at the +8 point, and the
  * +0x85 hit mask keeps only the targets that were hit. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 
 extern u8 Ov252_ReboundHitTest(int *state, int kind, Sphere *sphere, void *cyl, void *box);
@@ -22,7 +24,7 @@ void Ov252_GuardSweep(int *node)
     }
     hit = 0;
     for (i = 0; i < 2; i++) {
-        guard.center = *(Vec3 *)(*(int *)(*state + 0x530) + 0x14);
+        guard.center = *(VecFx32 *)(*(int *)(*state + 0x530) + 0x14);
         guard.nRadius = 0x8000;
         if ((hit |= Ov252_ReboundHitTest(state, 6, &guard, 0, 0)) != 0) {
             Ov107_BuildAndSendUpdate(*state, 0, 0x51, (void *)state[2]);

@@ -1,15 +1,11 @@
 /* Copies the step's stored vector into the actor's movement vector (+0xf0). */
 
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Src {
     int *base;
     int pad;
-    struct Vec3 data;
+    VecFx32 data;
 };
 
 struct Outer {
@@ -19,5 +15,5 @@ struct Outer {
 
 void Ov142_AiApplyMoveVector(struct Outer *p) {
     struct Src *s = p->src;
-    *(struct Vec3 *)((char *)s->base + 0xf0) = s->data;
+    *(VecFx32 *)((char *)s->base + 0xf0) = s->data;
 }

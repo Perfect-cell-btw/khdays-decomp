@@ -6,27 +6,29 @@
  * that lands, knocks the owner back at the part (mode 0), restarts the cooldown (0x198) and flags
  * the owner's +0x4e0 hit. The other cooldowns run down. With a hit, reaction 0x16d/0xc (strong,
  * +0xa8 of the item) or 0/0x50 fires at the box. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; Vec3 axis[3]; int ext[3]; } Box;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; VecFx32 axis[3]; int ext[3]; } Box;
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_CollectCapsuleOverlaps(int owner, Box *box, int *hits);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 void Ov254_AttackSweepTick(int *node)
 {
     int *state = (int *)node[1];
     Box box;
     int hits[4];
-    Vec3 d;
-    Vec3 fallback;
+    VecFx32 d;
+    VecFx32 fallback;
     int nHits;
     long i;
     unsigned int k;
@@ -54,7 +56,7 @@ void Ov254_AttackSweepTick(int *node)
             k = *(u16 *)(hits[i] + 2);
             bit = 1 << k;
             if (k < 4 && state[4 + k] <= 0) {
-                VEC_Subtract((Vec3 *)(hits[i] + 0x74), (Vec3 *)(*state + 0x74), &d);
+                VEC_Subtract((VecFx32 *)(hits[i] + 0x74), (VecFx32 *)(*state + 0x74), &d);
                 d.y = 0;
                 if (VEC_Normalize(&d, &d) == 0) {
                     d = fallback;
@@ -62,7 +64,7 @@ void Ov254_AttackSweepTick(int *node)
                 ScaleVec3Fx12(0x3000, &d, &d);
                 d.y = 0x1000;
                 if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x390), 4, &d, 0) != 0) {
-                    func_ov107_020c0b90(*(int *)(*state + 0x390), 0, *(Vec3 *)(hits[i] + 0x74), 0);
+                    func_ov107_020c0b90(*(int *)(*state + 0x390), 0, *(VecFx32 *)(hits[i] + 0x74), 0);
                     state[4 + k] = 0x198;
                     hitMask |= bit;
                     *(int *)(*(int *)(*state + 0x390) + 0x4e0) = 1;

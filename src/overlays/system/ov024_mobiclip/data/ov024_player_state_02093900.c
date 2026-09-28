@@ -20,6 +20,7 @@
  */
 
 #include "nitro/types.h"
+
 typedef void (*GameClassFn)(void);
 
 typedef struct {

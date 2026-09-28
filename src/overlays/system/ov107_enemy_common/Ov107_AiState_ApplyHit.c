@@ -1,7 +1,9 @@
-#include "nitro/types.h"
-typedef struct { int x, y, z; } VecFx32;
 /* Tentative reconstruction of the coordinate type; wrapper copies retain the
  * unread coordinate stores present in the ROM, as in Ov107_BuildAndSendUpdate. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 

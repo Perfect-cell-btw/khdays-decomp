@@ -1,5 +1,7 @@
 /* Assemble result-screen values, records, ranks and reward factors. */
+
 #include "nitro/types.h"
+
 typedef struct PlayerItemLimit { u16 itemId; short limit; } PlayerItemLimit;
 typedef struct Ov002ResultTally {u16 wId;short nCount;} Ov002ResultTally;
 typedef struct Ov002DayClock {u8 nModeFlags,nArmedKind;u16 nMinutes,nMinutesElapsed;u8 missionMask,pad7;} Ov002DayClock;

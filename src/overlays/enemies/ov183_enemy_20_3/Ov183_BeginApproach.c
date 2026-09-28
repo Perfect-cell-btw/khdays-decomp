@@ -9,7 +9,8 @@
  * add correction), which is not a no-op on the negative side.
  *
  * One of four byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(void *node, int idx, void *cb);

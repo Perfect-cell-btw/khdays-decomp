@@ -11,7 +11,9 @@
  * cursor / repeat words (+0x32 / +0x34) set to 0x35 / 0.  Hands over to
  * 0207ce84.
  */
+
 #include "nitro/types.h"
+
 typedef void (*MissionState)(void);
 
 #define ROW_COUNT       4

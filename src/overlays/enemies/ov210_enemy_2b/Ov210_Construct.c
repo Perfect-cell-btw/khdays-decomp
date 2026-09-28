@@ -7,10 +7,12 @@
  * +0x3d4 slot for the ov210 3cc8 child; reserves the +0x22c and +0x144 collision handles
  * (+0x3b0/+0x3b4) from a zero seed pointing up with scale 1.0 and radius 1.25, and loads sound
  * 0x117. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[8]; } PoseTable;
-typedef struct { Vec3 pos; Vec3 up; int scale; int radius; } Seed;
+typedef struct { VecFx32 pos; VecFx32 up; int scale; int radius; } Seed;
 struct Pair { int res; int handle; };
 
 extern void *Ov107_PackTextureHandle(char *self, int kind);
@@ -34,8 +36,8 @@ extern const char data_ov210_020d47a0[];
 extern const char data_ov210_020d47ac[];
 extern const char data_ov210_020d47bc[];
 extern const char data_ov210_020d47cc[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042264;
 extern void Ov210_Destroy(void);
 extern void Ov210_TickWithChildRefresh(void);
 extern void Ov210_ForwardRegionEventToShield(void);

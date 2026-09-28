@@ -9,13 +9,14 @@
  * requests sub-state 3; otherwise sub-state 5 is broken by a 1|0x10 hit and, outside sub-state 13, a
  * 0x8000 hit requests sub-state 12 and the first drop to half stamina sub-state 13 (+0x80 latched). A
  * sub-state 12 request on a +0x470 carrier is undone. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    Vec3 vPoint;
+    VecFx32 vPoint;
     int nDamage10;
     unsigned char pad014[0xc];
     unsigned int uMode20;
@@ -27,9 +28,9 @@ struct ActorHitEvent {
 struct ModePair { u8 a[2]; };
 struct ModeTable { struct ModePair pair22; struct ModePair pair; };
 
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern int VEC_DotProduct(Vec3 *a, Vec3 *b);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, int at);
 extern int RandNextScaled(int bound);
 extern int Ov107_CalcHitDamage(char *actor, struct ActorHitEvent *hit);
@@ -42,8 +43,8 @@ extern const struct ModeTable data_ov260_020d2a6c;
 int Ov260_OnHit(char *self, int other, struct ActorHitEvent *hit)
 {
     int *state = *(int **)(self + 0x214);
-    Vec3 facing;
-    Vec3 d;
+    VecFx32 facing;
+    VecFx32 d;
     struct ModePair pair;
     struct ModePair pair22;
     int forced;
@@ -59,7 +60,7 @@ int Ov260_OnHit(char *self, int other, struct ActorHitEvent *hit)
     pair22 = data_ov260_020d2a6c.pair22;
     saved = *(signed char *)(*state + 0x1c7);
     state[2] = other;
-    *(Vec3 *)(state + 0xe) = hit->vPoint;
+    *(VecFx32 *)(state + 0xe) = hit->vPoint;
     forced = 0;
     frontal = 0;
     if ((*(u16 *)(self + 0x100 + 0xac) & 1) != 0) {

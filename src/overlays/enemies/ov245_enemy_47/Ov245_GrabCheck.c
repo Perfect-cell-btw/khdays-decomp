@@ -4,14 +4,16 @@
  * through 020c5cfc; when it lands, effect 0 plays at the +0x3b0 item's +0x14 offset, reaction
  * 0/0x53 fires at the state's +0xc anchor, bit 0 of +0x1ae is raised, pose 3 is set and the
  * node moves to 020d47e0. */
-typedef struct { int x, y, z; } Vec3;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 struct HitPacket {
     u32 flagsLo : 16;
     u32 flagsHi : 16;
-    Vec3 normal;
+    VecFx32 normal;
     int field_10 : 16;
     int field_12 : 16;
     int field_14 : 16;
@@ -26,7 +28,7 @@ struct HitPacket {
 };
 
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -56,7 +58,7 @@ void Ov245_GrabCheck(int *node) {
         if (Ov107_AiState_ApplyHit(owner, 0, &packet) == 0) {
             return;
         }
-        func_ov107_020c0b90(*(int *)(*state + 0x3b4), 0, *(Vec3 *)(*(int *)(*state + 0x3b0) + 0x14), 0);
+        func_ov107_020c0b90(*(int *)(*state + 0x3b4), 0, *(VecFx32 *)(*(int *)(*state + 0x3b0) + 0x14), 0);
         Ov107_BuildAndSendUpdate(*state, 0, 0x53, (void *)state[3]);
         *(u16 *)(*state + 0x100 + 0xae) |= 1;
         Ov107_PostTagUpdate(*state, 3, 0);

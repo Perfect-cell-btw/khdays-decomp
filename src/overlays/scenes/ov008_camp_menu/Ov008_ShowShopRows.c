@@ -6,6 +6,7 @@
  * rows from apRows[nFirst + i] while that index is below nCount (row text via
  * 020848e8, row icon via 02084b10).
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT 8

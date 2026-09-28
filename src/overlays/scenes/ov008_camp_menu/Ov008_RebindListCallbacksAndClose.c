@@ -3,6 +3,7 @@
  * rebind the three list callbacks and start the fade.  Twin of 02067640, which
  * skips the secondary list.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MenuContext {

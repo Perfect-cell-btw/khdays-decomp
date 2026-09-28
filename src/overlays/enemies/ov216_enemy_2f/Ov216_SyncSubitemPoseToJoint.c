@@ -12,7 +12,9 @@
  * The 44 byte pose block copy from self+0xa0 to self+0x3c8 runs unconditionally,
  * which is why it sits outside the guard; the copy is then rescaled to 0x199a (1.6).
  */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } MtxFx33;
 
 typedef struct {

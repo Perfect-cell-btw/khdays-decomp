@@ -1,7 +1,9 @@
-#include "nitro/types.h"
 
 /* Ghidra models this as Ov002PanelThresholds at g_ov002PanelThresholds;
    the delink names the same address data_0204c254. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002PanelThresholds {
     char pad000[0x10];
     u32 aThresh[3];                 /* +0x10 */

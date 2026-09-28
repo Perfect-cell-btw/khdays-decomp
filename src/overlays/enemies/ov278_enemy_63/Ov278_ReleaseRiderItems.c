@@ -1,7 +1,9 @@
 /* Rider release (shared): raises flags 0xc2 and clears bit 0 in the actor's +0x60 high byte and
  * sets bits 0-1 of +0x1ae; then, for rider 0 the +0x3b0 / +0x3b4 items' +8 low byte bit 0 and
  * bit 0 of +0x3c0 clear, for any other rider the +0x3c0 / +0x3c4 items' and bit 0 of +0x3d4. */
+
 #include "nitro/types.h"
+
 struct b8 { unsigned f : 8; };
 
 void Ov278_ReleaseRiderItems(int actor, int rider)

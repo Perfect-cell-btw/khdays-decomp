@@ -2,7 +2,9 @@
  * bit 7 of the +0x60 high byte clears and the +0x3ac shape shows; 0: the reverse, with next move 0)
  * and cleared; a queued next move becomes current and starts its slot-1 routine (0: 020cec08,
  * 1: 020cec24, 2: 020ceca0, 3: 020ced1c). The next move always clears. */
+
 #include "nitro/types.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

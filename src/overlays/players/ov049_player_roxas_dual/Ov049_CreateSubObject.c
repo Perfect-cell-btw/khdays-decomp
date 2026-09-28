@@ -3,6 +3,7 @@
  * builds the two-entry parameter table on the stack (the second entry is a copy of the first
  * with two bits added and its own speed 0x1333) and opens it with kind 10; then installs the
  * sub-object's tick handler at +0x20. The assignment order is the ROM's store order. */
+
 #include "nitro/types.h"
 
 struct PanelSubCfg {

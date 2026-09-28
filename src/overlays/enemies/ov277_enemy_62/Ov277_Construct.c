@@ -10,12 +10,14 @@
  * (radius 3.0 / 2.0) at +0x3f8 / +0x3fc on the +0x144 pool; on the +0x22c pool a placement
  * (scale 2.0) at +0x39c and two capsules (radius 1.625, along x) at +0x3a0 / +0x3a4. Loads sound
  * 0x165. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[8]; } IdTable8;
-typedef struct { Vec3 pos; int scale; } Placement;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 pos; int scale; } Placement;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 struct Pair { int res; int handle; };
 struct b1 { unsigned int b0 : 1; };
 
@@ -63,18 +65,18 @@ extern char data_ov277_020d37fc[];
 extern char data_ov277_020d3810[];
 extern char data_ov277_020d3820[];
 extern char data_ov277_020d3830[];
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042264;
-extern const Vec3 data_0204227c;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_0204227c;
 
 void Ov277_Construct(char *self)
 {
     IdTable8 ids = data_ov277_020d35d0;
     Capsule cap;
     Placement place;
-    Vec3 zero;
-    Vec3 axisX;
+    VecFx32 zero;
+    VecFx32 axisX;
     u16 hw;
     int i;
     int *slot;

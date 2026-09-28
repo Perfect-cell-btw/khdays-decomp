@@ -1,4 +1,5 @@
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void ScaleVec3Fx12(int scale, VecFx32 *dst, VecFx32 *src);
 extern int Ov107_PostTagUpdate(int obj, int a, int b);

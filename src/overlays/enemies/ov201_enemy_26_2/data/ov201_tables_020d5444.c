@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Constructor of the ov200 enemy (x2 with ov201). Installs the handlers (+8, +0xc draw, +0x1 (020d1a24): IdTable data_ov201_020d5444; */
+
 #include "nitro/types.h"
 
-/* read by Constructor of the ov200 enemy (x2 with ov201). Installs the handlers (+8, +0xc draw, +0x1 (020d1a24): IdTable data_ov201_020d5444; */
 const int data_ov201_020d5444[4] = {
     1, 6, 7, 7,
 };

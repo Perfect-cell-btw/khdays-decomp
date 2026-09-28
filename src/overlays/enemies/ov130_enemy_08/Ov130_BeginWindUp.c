@@ -8,7 +8,8 @@
  * ROM's `sub r3,sp,#8 / stm r3 / ldm r3,{r2,r3}`. Passing a pointer instead loses all of it.
  *
  * One of four byte-identical siblings (ov127/ov128/ov129/ov130). */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void func_ov107_020c0b90(int obj, int a, VecFx32 v, int d);
 extern void Ov107_BuildAndSendUpdate(int obj, int a, int b, int c);

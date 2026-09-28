@@ -3,6 +3,7 @@
  * timer and +0x84 phase reset, a 6-byte message copied from the overlay's template (+4 of the
  * table block) carries the actor's and the target's +2 ids on channel 4, reaction 0x114 mode 4
  * fires at the +8 position and the tick hands off to the engage state. */
+
 #include "nitro/types.h"
 
 struct Pair { u16 self, kind; };

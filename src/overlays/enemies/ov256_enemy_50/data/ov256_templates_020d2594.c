@@ -3,22 +3,23 @@
  * is why they live here). Objects with a trailing unused vector carry an initializer the function
  * declares but never reads. Q12 fixed point throughout. */
 
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 used; Vec3 unused; } VecPair;
-typedef struct { Vec3 v[4]; } Vec3x4;
-typedef struct { Vec3 spot[5]; Vec3 unused; } SpotTemplates;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 used; VecFx32 unused; } VecPair;
+typedef struct { VecFx32 v[4]; } Vec3x4;
+typedef struct { VecFx32 spot[5]; VecFx32 unused; } SpotTemplates;
 
 /* Ov256_Update (020cd740): arena anchor (-0.25, 3.25, -1.5); an unread point (1.25, 6.5, 7.0). */
 const VecPair data_ov256_020d2594 = { { -0x1000, 0xd000, -0x6000 }, { 0x5000, 0x1a000, 0x1c000 } };
 
 /* Ov256_LungeTick (020cf474): strike direction (0, 1.0, 1.0). */
-const Vec3 data_ov256_020d25ac = { 0, 0x1000, 0x1000 };
+const VecFx32 data_ov256_020d25ac = { 0, 0x1000, 0x1000 };
 
 /* Ov256_SweepTick (020cee70): push direction (0, -1.0, 0.75). */
-const Vec3 data_ov256_020d25b8 = { 0, -0x1000, 0xc00 };
+const VecFx32 data_ov256_020d25b8 = { 0, -0x1000, 0xc00 };
 
 /* 020ce0dc: arena anchor again, for the return flight. */
-const Vec3 data_ov256_020d25c4 = { -0x1000, 0xd000, -0x6000 };
+const VecFx32 data_ov256_020d25c4 = { -0x1000, 0xd000, -0x6000 };
 
 /* 020cea18: the four arena corners a warp picks the nearest of. */
 const Vec3x4 data_ov256_020d25d0 = { {

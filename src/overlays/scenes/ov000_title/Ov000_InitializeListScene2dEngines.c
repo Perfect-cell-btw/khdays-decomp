@@ -23,6 +23,7 @@
  *    while the sub-screen block is the symmetric BG0/BG1/BG3. It looks like an
  *    off-by-one in the original source and is reproduced on purpose.
  */
+
 #include "nitro/types.h"
 
 extern void  Gfx_Reset2DEngines(void);

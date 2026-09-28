@@ -6,6 +6,7 @@
  * (top + height - 2) and the row exists: touching the selected row confirms it,
  * any other row selects it; nScrollB is flagged either way.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionList {

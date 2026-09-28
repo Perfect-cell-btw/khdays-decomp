@@ -6,8 +6,10 @@
  * (020cd3f0), and reaction 0x165 mode 0xe fires at the muzzle. After 0.33, once the +0x30 flag
  * clears, the +0x14 volley count advances: the fourth volley sends the "done" message, plays pose 9
  * and hands over to 020d08a4; any other sends the "next" message, resets the clock and plays pose 8. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 typedef struct { u16 id; u16 arg; } Msg4;
 typedef struct { signed char c[4]; } Counts;
@@ -29,14 +31,14 @@ typedef void (*MsgHook)(int owner, Msg4 *msg, int size);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Quat_Multiply(Quat *out, const Quat *a, const Quat *b);
 extern int func_02020400(int num, int den);
-extern void QuatFromAxisAngle(Quat *q, const Vec3 *axis, int angle);
-extern void Ov277_AttachWithPose(int part, Vec3 *at, Quat *q);
+extern void QuatFromAxisAngle(Quat *q, const VecFx32 *axis, int angle);
+extern void Ov277_AttachWithPose(int part, VecFx32 *at, Quat *q);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int pose, int loop);
 extern void Ov277_WaitNibbleTick(void);
 extern const struct VolleyTable data_ov277_020d36bc;
 extern const Quat data_ov277_020d36fc;
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 void Ov277_VolleyTick(int *node)
 {
@@ -75,7 +77,7 @@ void Ov277_VolleyTick(int *node)
             QuatFromAxisAngle(&spin, &data_02042264,
                           sign * func_02020400(counts.c[*(short *)(state + 5)] * 0x3244, k / 2 + 1) >> 5);
             Quat_Multiply(&spin, &spin, &rot);
-            Ov277_AttachWithPose(((int *)*(int *)(*state + 0x404))[i], (Vec3 *)(*(int *)(*state + 0x3b0) + 0x14), &spin);
+            Ov277_AttachWithPose(((int *)*(int *)(*state + 0x404))[i], (VecFx32 *)(*(int *)(*state + 0x3b0) + 0x14), &spin);
             if (++k == counts.c[*(short *)(state + 5)]) {
                 break;
             }

@@ -1,6 +1,7 @@
-#include "nitro/types.h"
 
-struct Vec3 { int x, y, z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
 struct Ov185Actor {
@@ -18,9 +19,9 @@ struct Ov185ActionState {
     struct Ov185Actor *pOwner;
     struct Ov185Actor *pTarget;
     int aRotation8[4];
-    struct Vec3 vPos18;
+    VecFx32 vPos18;
     char pad024[8];
-    struct Vec3 vForward2c;
+    VecFx32 vForward2c;
     char pad038[0x24];
     int nTurnRate5c;
     int nSpeed60;
@@ -33,17 +34,17 @@ struct Ov185ActionNode {
     signed char bSlot;
 };
 
-extern struct Vec3 data_02042258;
-extern struct Vec3 data_02042264;
+extern VecFx32 data_02042258;
+extern VecFx32 data_02042264;
 
 extern struct Ov185Actor *Ov107_FindNearestObject(struct Ov185Actor *owner, int *pDistSq);
 extern int FX_Sqrt(int x);
-extern void Ov187_LookAtQuat(struct Ov185ActionState *state, struct Vec3 *pos);
-extern void Vec3TransformViaTempMtx(struct Vec3 *dst, void *xfm, struct Vec3 *src);
+extern void Ov187_LookAtQuat(struct Ov185ActionState *state, VecFx32 *pos);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
-extern void VEC_CrossProduct(struct Vec3 *a, struct Vec3 *b, struct Vec3 *out);
-extern void VEC_Add(struct Vec3 *a, struct Vec3 *b, struct Vec3 *out);
-extern int VEC_Normalize(struct Vec3 *v, struct Vec3 *unit);
+extern void VEC_CrossProduct(VecFx32 *a, VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 
 /*
@@ -69,8 +70,8 @@ extern void SetIndexedSlot(void *node, int idx, void *value);
 void Ov187_CircleStrafe_Step(struct Ov185ActionNode *node)
 {
     int nDist;
-    struct Vec3 vForward;
-    struct Vec3 vCross;
+    VecFx32 vForward;
+    VecFx32 vCross;
     struct Ov185ActionState *state;
     struct Ov185Actor *owner;
     struct Ov185Actor *target;

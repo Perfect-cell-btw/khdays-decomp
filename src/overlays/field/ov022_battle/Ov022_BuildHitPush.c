@@ -9,12 +9,7 @@
  */
 
 #include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct MtxFx33 {
     int m[9];
@@ -22,33 +17,33 @@ struct MtxFx33 {
 
 struct SweepHit {
     u8 pad00[0x14];
-    struct VecFx32 vecPush;          /* 0x14 */
+    VecFx32 vecPush;          /* 0x14 */
     int nMode;                       /* 0x20 */
 };
 
 /* Two signed halfwords per angle step: the sine first, then the cosine. */
 extern short data_0203d210[];
 
-extern int VEC_Mag(struct VecFx32 *pVec);
-extern void VEC_Normalize(struct VecFx32 *pIn, struct VecFx32 *pOut);
-extern void ScaleVec3Fx12(int nScale, struct VecFx32 *pIn, struct VecFx32 *pOut);
-extern void VEC_Subtract(struct VecFx32 *pA, struct VecFx32 *pB,
-                         struct VecFx32 *pOut);
+extern int VEC_Mag(VecFx32 *pVec);
+extern void VEC_Normalize(VecFx32 *pIn, VecFx32 *pOut);
+extern void ScaleVec3Fx12(int nScale, VecFx32 *pIn, VecFx32 *pOut);
+extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB,
+                         VecFx32 *pOut);
 extern short FX_Atan2(int x, int y);
 extern void MTX_RotY33_(struct MtxFx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(struct VecFx32 *pIn, struct MtxFx33 *pMtx,
-                          struct VecFx32 *pOut);
+extern void MTX_MultVec33(VecFx32 *pIn, struct MtxFx33 *pMtx,
+                          VecFx32 *pOut);
 
 #define HIT_ALONG_FACING 0
 #define HIT_AWAY_FROM_STRIKER 1
 
-void Ov022_BuildHitPush(struct VecFx32 *pOut, struct SweepHit *pHit,
-                         struct VecFx32 *pAt, struct VecFx32 *pFrom,
-                         struct VecFx32 *pFacing)
+void Ov022_BuildHitPush(VecFx32 *pOut, struct SweepHit *pHit,
+                         VecFx32 *pAt, VecFx32 *pFrom,
+                         VecFx32 *pFacing)
 {
-    struct VecFx32 vecAim;
-    struct VecFx32 vecPush;
-    struct VecFx32 vecOut;
+    VecFx32 vecAim;
+    VecFx32 vecPush;
+    VecFx32 vecOut;
     struct MtxFx33 mtx;
     short nAngle;
     int nIndex;

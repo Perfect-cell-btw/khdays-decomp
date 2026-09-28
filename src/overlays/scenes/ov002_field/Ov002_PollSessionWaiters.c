@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* One waiting entry: its first word is the poll it answers with. */
+
+#include "nitro/types.h"
+
 typedef struct Ov002Waiter {
     int (*pfnPoll)(struct Ov002Waiter *pSelf);   /* +0x00 */
 } Ov002Waiter;

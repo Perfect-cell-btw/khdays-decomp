@@ -7,11 +7,13 @@
  * +0x018 has NO lsl#0x10/lsr#0x10 trunc pair -> explicit extract/reassemble; `&= ~0xc`
  * at +0x03c HAS it -> bitfield. The vec3 goes to ov107_020c0b90 BY VALUE (r2, r3, [sp+0])
  * with the flag at [sp+4]. */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned f : 8; };
 
-extern void func_ov107_020c0b90(int obj, int cmd, struct vec3 v, int flag);
+extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
 extern void SetIndexedSlot(void *self, int idx, void *cb);
 extern void Ov212_WaitThenSpawnEffect(void);
 
@@ -28,7 +30,7 @@ void Ov212_EnterRetreatState(void *self) {
     for (; i < 3; i++) {
         ((struct b8 *)(((int *)*ctx)[i + 0x133] + 8))->f &= ~1;
     }
-    func_ov107_020c0b90(*ctx, 7, *(struct vec3 *)ctx[2], 0);
+    func_ov107_020c0b90(*ctx, 7, *(VecFx32 *)ctx[2], 0);
     ctx[0x10] = 0;
     SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), Ov212_WaitThenSpawnEffect);
 }

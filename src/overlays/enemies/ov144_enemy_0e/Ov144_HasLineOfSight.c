@@ -1,22 +1,23 @@
 /* Line-of-sight test of the ov144 enemy (and its byte-identical twin): casts a 0x40 sphere from
  * the actor's +0x74 position towards the target point, stopping the margin short (at least one
  * unit), and reports 1 when nothing is in the way. */
-struct Vecx32 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void *Collision_CastSphere(void *world, void *from, void *step, int radius);
 
-int Ov144_HasLineOfSight(int *state, struct Vecx32 target, int margin)
+int Ov144_HasLineOfSight(int *state, VecFx32 target, int margin)
 {
-    struct Vecx32 step;
-    struct Vecx32 pos;
+    VecFx32 step;
+    VecFx32 pos;
     int scene;
     int len;
 
     scene = *(int *)(*state + 4);
-    pos = *(struct Vecx32 *)(*state + 0x74);
+    pos = *(VecFx32 *)(*state + 0x74);
     VEC_Subtract(&target, &pos, &step);
     len = VEC_Normalize(&step, &step) - margin;
     if (len <= 0) {

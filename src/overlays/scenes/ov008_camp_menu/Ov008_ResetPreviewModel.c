@@ -1,15 +1,15 @@
+#include "nitro/fx.h"
+
 extern char *data_ov008_02090fac;
 extern char data_ov008_02090dd8;
 extern void Projection_LoadDefaults(void *obj);
 extern void RegisterSeqAndInit(void *obj, void *desc, int a, int b);
 extern void BindAnimTrack(void *dst, int kind, void *src, short value);
 
-typedef struct { int x, y, z; } Ov026Vec3;
-
 /* Resets the preview model: default camera distances, no tint, and the idle pose. */
 void Ov008_ResetPreviewModel(void) {
     char *obj = *(char **)&data_ov008_02090fac + 0xbfb8;
-    Ov026Vec3 zero;
+    VecFx32 zero;
     Projection_LoadDefaults(obj);
     *(int *)(obj + 0x18) = 0xe00;
     *(int *)(obj + 0x24) = 0x1100;
@@ -19,6 +19,6 @@ void Ov008_ResetPreviewModel(void) {
     zero.z = 0;
     zero.y = 0;
     zero.x = 0;
-    *(Ov026Vec3 *)(obj + 0xdc) = zero;
+    *(VecFx32 *)(obj + 0xdc) = zero;
     BindAnimTrack(obj + 0x38, 0, obj + 0x118, 0);
 }

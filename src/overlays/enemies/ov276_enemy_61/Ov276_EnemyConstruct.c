@@ -9,8 +9,9 @@
  * pool, the rest from the actor pool; attached, bit 1, polygon ids 3..0x1e for the last five),
  * registers three reactions (2/3 with a -0x10cc lift, 1/2 and 4/2) and two placements on the
  * +0x22c/+0x144 lists (+0x3ac/+0x3b0) at the zero vector, then loads sound 0x164. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct Box {
     int xmin, ymin, zmin;
@@ -22,7 +23,7 @@ struct PoolIds {
 };
 
 struct Pose {
-    Vec3 pos;
+    VecFx32 pos;
     int scale;
 };
 
@@ -85,10 +86,9 @@ extern const struct PoolIds data_ov276_020d2b88;
 extern const char data_ov276_020d2c2c[];
 extern const char data_ov276_020d2c3c[];
 extern const char data_ov276_020d2c4c[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
-typedef struct { int x, y, z; } VecP_;
-static inline void VecSetP_(VecP_ *v, int x, int y, int z) { v->x = x; v->y = y; v->z = z; }
+static inline void VecSetP_(VecFx32 *v, int x, int y, int z) { v->x = x; v->y = y; v->z = z; }
 
 void Ov276_EnemyConstruct(char *self)
 {
@@ -124,7 +124,7 @@ void Ov276_EnemyConstruct(char *self)
     *(void **)(self + 0x1e4) = Ov276_RequestSubState9IfIdle;
     *(struct Box *)(self + 0x1fc) = box;
     *(int *)(self + 0x70) = 0x10cc;
-    VecSetP_((VecP_ *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
+    VecSetP_((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
     *(u16 *)(self + 0x100 + 0xae) |= 8;
     polyId = 3;
     *(int *)(self + 0x3a8) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(handle, 0));

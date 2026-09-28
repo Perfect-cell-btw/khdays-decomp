@@ -16,6 +16,7 @@
  * 0/1 conditional into a comparison and emits the predicated pair in the other
  * order.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

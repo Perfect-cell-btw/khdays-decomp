@@ -18,15 +18,11 @@
  * roll or runs the pre hook and ends into state 0; flag bit 3 drops.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022ActorNode */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ActorNode {
     u32 nFlags;                  /* 0x00 */
     u16 nAnimFlags;              /* 0x04 */

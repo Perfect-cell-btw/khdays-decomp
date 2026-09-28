@@ -7,6 +7,7 @@
  * that shares its item with the PREVIOUS record shows only when the previous
  * one has a level requirement already met.  Returns 1 / 0.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008ItemDef {

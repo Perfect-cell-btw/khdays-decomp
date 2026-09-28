@@ -5,7 +5,9 @@
  * and 7 of its +0x60 high byte and bit 0 of +0x1ae, sets bit 0 and clears bit 1 of the +0x488 rig's
  * flags and clears bit 6 of the brain's +0x60 byte. Brain slot 1 then runs the move's entry
  * (move 3 also drops +0x4c0), and the next move is cleared. */
+
 #include "nitro/types.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

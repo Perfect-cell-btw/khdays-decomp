@@ -9,15 +9,11 @@
  * hook, so the walker calls Ov022_PlaceWindNode while drawing the model.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* One row of the pose table: the pair the wind strength selects. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct PoseRow {
     int nA;
     int nB;

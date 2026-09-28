@@ -2,6 +2,7 @@
  * result labels for the scene and draws the result gauge. */
 
 #include "nitro/types.h"
+
 typedef void *(*Ov005ResultState)(void);
 typedef struct Ov005Config {u16 sceneId;char unknown02[8];u16 resultLabelIndex,rewardMode;} Ov005Config;
 typedef struct Ov005ResultContext {char unknown00[0x4c4c];int gaugeMaximum,gaugeValue;char unknown4c54[16];} Ov005ResultContext;

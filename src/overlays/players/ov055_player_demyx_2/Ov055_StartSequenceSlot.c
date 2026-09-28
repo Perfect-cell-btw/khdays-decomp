@@ -2,6 +2,7 @@
  * phase 1, binds tracks 0 and 2 of its animation to its own blend table (+0xe4) and rewinds
  * them, draws three random offsets scaled by 0x99a/0x1000 into +0x110/+0x114/+0x118, and resets
  * the rig's state pair at +0x2da0 (the +0x2da4 word only when the state was not 2). */
+
 #include "nitro/types.h"
 
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */

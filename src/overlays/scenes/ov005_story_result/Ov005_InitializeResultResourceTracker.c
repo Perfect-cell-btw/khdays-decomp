@@ -1,5 +1,7 @@
 /* Initialize the result-screen resource tracker and load archive member 3. */
+
 #include "nitro/types.h"
+
 typedef int (*ResourceCallback)(int);
 typedef struct Ov000ResourceTrackerConfig {u32 entryCapacity,nodeCapacity,auxiliaryCapacity;ResourceCallback entryCallback,nodeCallback;} Ov000ResourceTrackerConfig;
 typedef struct Ov000ResourceTracker {char data[76];} Ov000ResourceTracker;

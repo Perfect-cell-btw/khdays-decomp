@@ -27,6 +27,7 @@
  * (the ov006 twin's form): mwcc emits no narrowing for it, but the halfword
  * parameter is what schedules the slot copy after the row loads.
  */
+
 #include "nitro/types.h"
 
 #define MEMBER_COUNT   4

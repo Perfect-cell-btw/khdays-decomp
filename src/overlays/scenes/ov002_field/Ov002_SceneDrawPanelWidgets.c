@@ -13,16 +13,12 @@
  * ARM.
  */
 
+#include "nitro/fx.h"
+
 typedef struct {
     unsigned int pad0 : 2;
     unsigned int bFixedTint : 1;
 } Ov002PanelFlags;
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
 
 extern int data_ov002_0207f628;
 
@@ -79,8 +75,8 @@ void Ov002_SceneDrawPanelWidgets(void)
 
     i = 0;
     do {
-        *(Ov002Vec3 *)((char *)pBase + 0x4a4) =
-            *(Ov002Vec3 *)((char *)ctx + 0x718);
+        *(VecFx32 *)((char *)pBase + 0x4a4) =
+            *(VecFx32 *)((char *)ctx + 0x718);
         nSlot = *(int *)((char *)pBase + i * 4 + 0x73c);
         *(int *)((char *)pBase + 0x4b8) = nSlot;
         *(int *)((char *)pBase + 0x4b4) = nSlot;

@@ -18,9 +18,10 @@
  * Codegen notes as in ov153_cccf8: volatile ints in the sender keep the packed position on the
  * stack, `const` on the sine table lets both table loads precede the direction stores, and the
  * hit packet is zeroed as a whole before its fields are filled. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
 typedef struct {
@@ -45,7 +46,7 @@ struct Flags24 {
 struct HitPacket {
     u32 flagsLo : 16;
     u32 flagsHi : 16;
-    Vec3 normal;
+    VecFx32 normal;
     int field_10 : 16;
     int field_12 : 16;
     int field_14 : 16;
@@ -85,10 +86,10 @@ struct Ov156Actor {
     char pad008[0x1c];
     void (*pfnMessage)(struct Ov156Actor *self, PosMsg *msg, int size);
     char pad028[0x4c];
-    Vec3 vPos74;
+    VecFx32 vPos74;
     int nRadius80;
     char pad084[0x90];
-    Vec3 vNormal114;
+    VecFx32 vNormal114;
     char pad120[0x5a];
     struct Flags17a flags17a;
     u8 nFlags17b;
@@ -103,8 +104,8 @@ struct Ov156Actor {
 struct Ov156DashState {
     struct Ov156Actor *pOwner;
     int pTarget;
-    Vec3 *pPos;
-    Vec3 vStep;
+    VecFx32 *pPos;
+    VecFx32 vStep;
     int nDirX;
     int nDirY;
     int nDirZ;
@@ -114,23 +115,23 @@ struct Ov156DashState {
     int nBounceTimer;
 };
 
-extern int Ov107_CollectSphereOverlaps(struct Ov156Item *item, Vec3 *sphere, struct Ov156Actor **out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(struct Ov156Actor *hit, struct Ov156Actor *a, struct Ov156Item *item, int kind, const Vec3 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov156Actor *owner, u16 a, u16 id, Vec3 *pos);
+extern int Ov107_CollectSphereOverlaps(struct Ov156Item *item, VecFx32 *sphere, struct Ov156Actor **out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(struct Ov156Actor *hit, struct Ov156Actor *a, struct Ov156Item *item, int kind, const VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(struct Ov156Actor *owner, u16 a, u16 id, VecFx32 *pos);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern struct Ov156Actor *Ov107_FindNearestObject(struct Ov156Actor *owner, int mode);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int func_020050b4(int x, int z);
 extern int Angle_TurnToward(int cur, int want, int step, int *state);
-extern char *Ov107_FindEntityHitBySphere(struct Ov156Actor *owner, Vec3 *pos, int *shape);
+extern char *Ov107_FindEntityHitBySphere(struct Ov156Actor *owner, VecFx32 *pos, int *shape);
 extern int Ov107_AiState_ApplyHit(char *other, int source, struct HitPacket *packet);
-extern struct CollisionResult *Collision_CastSphereEx(void *collision, Vec3 *position, Vec3 *direction, int radius, void *ignore);
-extern int VEC_Mag(const Vec3 *v);
+extern struct CollisionResult *Collision_CastSphereEx(void *collision, VecFx32 *position, VecFx32 *direction, int radius, void *ignore);
+extern int VEC_Mag(const VecFx32 *v);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const PosMsg data_ov156_020cedac;
 extern const PosMsg data_ov156_020cedba;
 extern const PosMsg data_ov156_020cedc8;
@@ -143,7 +144,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct Ov156DashState *state, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct Ov156DashState *state, PosMsg *msg, const VecFx32 *src)
 {
     volatile int px;
     volatile int py;
@@ -168,9 +169,9 @@ void Ov156_DashTick(int node)
     struct Ov156Actor *actor;
     struct Ov156DashState *state = *(struct Ov156DashState **)(node + 4);
     struct Ov156Actor *hits[4];
-    Vec3 push;
+    VecFx32 push;
     PosMsg msgA;
-    Vec3 d;
+    VecFx32 d;
     int shape;
     struct Ov156Actor *target;
     struct CollisionResult *result;
@@ -202,7 +203,7 @@ void Ov156_DashTick(int node)
     target = Ov107_FindNearestObject(state->pOwner, 0);
     if (target != 0) {
         VEC_Subtract(&target->vPos74, &actor->vPos74, &d);
-        if (VEC_DotProduct(&d, (Vec3 *)&state->nDirX) > 0) {
+        if (VEC_DotProduct(&d, (VecFx32 *)&state->nDirX) > 0) {
             cur = func_020050b4(state->nDirX, state->nDirZ);
             want = func_020050b4(d.x, d.z);
             angle = Angle_TurnToward(cur, want, *(int *)(*(int *)node + 0x2c) * 30 / 15, 0);
@@ -236,14 +237,14 @@ void Ov156_DashTick(int node)
         state->nBounceTimer -= *(int *)(*(int *)node + 0x2c);
     }
     if (state->nBounceTimer <= 0) {
-        Vec3 n;
-        Vec3 back;
-        Vec3 refl;
+        VecFx32 n;
+        VecFx32 back;
+        VecFx32 refl;
         n = state->pOwner->vNormal114;
         hit = state->pOwner->flags17a.bit1;
         if (hit == 0 && state->pOwner->nFlags17b == 0) {
             char *scene = state->pOwner->pScene;
-            ScaleVec3Fx12(0x500, (Vec3 *)&state->nDirX, &back);
+            ScaleVec3Fx12(0x500, (VecFx32 *)&state->nDirX, &back);
             result = Collision_CastSphereEx(*(void **)(scene + 0x7c), &state->pOwner->vPos74, &back, state->pOwner->nRadius80, 0);
             if (result != 0 && result->field_08 == 0) {
                 hit = 1;
@@ -253,10 +254,10 @@ void Ov156_DashTick(int node)
             }
         }
         if (hit != 0) {
-            ScaleVec3Fx12(-0x1000, (Vec3 *)&state->nDirX, &back);
+            ScaleVec3Fx12(-0x1000, (VecFx32 *)&state->nDirX, &back);
             ScaleVec3Fx12(VEC_DotProduct(&back, &n) << 1, &n, &refl);
             VEC_Subtract(&refl, &back, &refl);
-            VEC_Normalize(&refl, (Vec3 *)&state->nDirX);
+            VEC_Normalize(&refl, (VecFx32 *)&state->nDirX);
             state->nBounceTimer = 0x100;
             Ov107_BuildAndSendUpdate(state->pOwner, 0x13d, 6, state->pPos);
         }

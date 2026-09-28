@@ -11,15 +11,11 @@
  * reaction 3 dispatches frame 0x10000. A negative recoil is scaled by 5/8.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022ActorNode */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ActorNode {
     u32 nFlags;                  /* 0x00 */
     u16 nAnimFlags;              /* 0x04 */

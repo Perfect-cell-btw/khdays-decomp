@@ -6,15 +6,11 @@
  * Finally the cached offset at +0x18 is published to the owner at +0xf0 and reset to the
  * neutral constant. */
 
+#include "nitro/fx.h"
+
 typedef struct {
     int v[4];
 } Ov158_Xform;
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
 
 extern int Angle_TurnToward(int a, int b, int c, int *state);
 extern void QuatFromAxisAngle(Ov158_Xform *out, const Ov158_Xform *src, int v);
@@ -22,7 +18,7 @@ extern void Quat_FromTwoVectors(Ov158_Xform *out, const Ov158_Xform *src, int ri
 extern void Quat_Multiply(Ov158_Xform *out, const Ov158_Xform *a, const Ov158_Xform *b);
 extern void Srt_SetRotationQuat(int dst, const Ov158_Xform *x);
 extern Ov158_Xform data_02042264;
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 void Ov159_AiApplyHeadingAndNormal(int self) {
     int *ctx;
@@ -45,6 +41,6 @@ void Ov159_AiApplyHeadingAndNormal(int self) {
      * is what gives the ROM's post-indexed `ldr r0,[r4],#0x18`. It is ctx's last use. */
     owner = *ctx;
     ctx = (int *)((char *)ctx + 0x18);
-    *(Vec3 *)(owner + 0xf0) = *(Vec3 *)ctx;
-    *(Vec3 *)ctx = data_02041dc8;
+    *(VecFx32 *)(owner + 0xf0) = *(VecFx32 *)ctx;
+    *(VecFx32 *)ctx = data_02041dc8;
 }

@@ -14,6 +14,7 @@
  * with nRow = 0 before the context call; the arrow flags are if/else locals
  * (an inline bool is folded into the call after the entry lookup).
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT       8

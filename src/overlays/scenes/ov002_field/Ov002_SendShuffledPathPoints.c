@@ -1,17 +1,13 @@
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct {
     u8 bCommandKind;
     u8 bMode;
     u8 bReserved;
     u8 bMoveKind;
-    Vec3 vPosition;
+    VecFx32 vPosition;
 } Ov002PathPointCommand;
 
 typedef struct {
@@ -37,7 +33,7 @@ extern u32 Ov002_BuildSessionCommand(int nCommand,
  * live so the script VM can call again and resume at the same point.
  */
 int Ov002_SendShuffledPathPoints(int nSendCount, u8 bMoveKind, int nMode,
-                        u32 nPathCount, Vec3 *pPath)
+                        u32 nPathCount, VecFx32 *pPath)
 {
     Ov002PathPointCommand command;
     Ov002RootContext *pRoot;

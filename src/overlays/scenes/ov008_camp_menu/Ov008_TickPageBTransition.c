@@ -10,6 +10,7 @@
  *
  * Ov008_OffsetActiveListEntries is 3-arg (owner, &point, 0): the ROM's r3 at the call still holds the
  * 0x04001010 register pointer from the scroll writes, which Ghidra mistook for a 4th argument. */
+
 #include "nitro/types.h"
 
 typedef struct Point { int x, y; } Point;

@@ -3,19 +3,21 @@
  * height. Past 0x3555 (once, latched at +0x10), if the actor's +4 target has both bits 0-1 of
  * its +0x40 set, the actor pushes pose 1. Once the owner's +0xad byte clears the node runs the
  * base 0203c640 step. */
-struct Vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct Flags40 { int b0 : 1; int b1 : 1; };
-extern void Srt_SetTranslation(int srt, struct Vec3 *pos);
+extern void Srt_SetTranslation(int srt, VecFx32 *pos);
 extern void Ov107_ForwardVisibleEvent(int self, int a);
 extern void Task_MarkFinished(int self);
 
 void Ov277_PounceRideTick(int *node) {
     int *state = (int *)node[1];
-    struct Vec3 at;
+    VecFx32 at;
 
     state[2] += *(int *)(*node + 0x2c);
     if (state[2] <= 0x3aaa) {
-        at = *(struct Vec3 *)(*(int *)(state[1] + 0x3cc) + 0x14);
+        at = *(VecFx32 *)(*(int *)(state[1] + 0x3cc) + 0x14);
         at.y = *(int *)(state[1] + 0xb4) + 0x200;
         Srt_SetTranslation(*state + 4, &at);
     }

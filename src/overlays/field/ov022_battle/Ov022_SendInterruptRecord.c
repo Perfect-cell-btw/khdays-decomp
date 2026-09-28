@@ -10,6 +10,7 @@
  */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define ANGLE_BIAS 0x8000
 #define ANGLE_SHIFT 4
@@ -17,12 +18,6 @@
 #define UNIT_SCALE 0x1000
 #define RECORD_KIND 2
 #define RECORD_ARG 7
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
 
 /* Ov022ActorNode */
 struct ActorNode {
@@ -36,23 +31,23 @@ struct Actor {
     u8 pad0000[0x20];
     struct ActorNode *pNode;     /* 0x0020 */
     u8 pad0024[0x468];
-    struct VecFx32 vecPos;       /* 0x048c */
+    VecFx32 vecPos;       /* 0x048c */
 };
 
 /* kFxSinCosTable, walked as one flat array of halfwords */
 extern s16 data_0203d210[];
 
-extern void VEC_Add(const struct VecFx32 *pA, const struct VecFx32 *pB,
-                    struct VecFx32 *pOut);
+extern void VEC_Add(const VecFx32 *pA, const VecFx32 *pB,
+                    VecFx32 *pOut);
 /* Ov022_MarshalNetworkRecord */
 extern void Ov022_MarshalNetworkRecord(struct Actor *pActor, int nKind,
-                                struct VecFx32 *pAt, int nScale, u16 nAngle,
+                                VecFx32 *pAt, int nScale, u16 nAngle,
                                 int nArg);
 
 void Ov022_SendInterruptRecord(struct Actor *pActor)
 {
-    struct VecFx32 vecDir;
-    struct VecFx32 vecAt;
+    VecFx32 vecDir;
+    VecFx32 vecAt;
     u16 nAngle;
     int nIndex;
 

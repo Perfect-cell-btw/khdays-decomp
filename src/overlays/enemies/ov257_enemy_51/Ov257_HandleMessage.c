@@ -7,8 +7,10 @@
  * at the message point (Ov257_SpawnHelper2, unpacked from its three 24-bit coordinates), 0xc
  * starts reaction +0x408 mode 0xd on the +0xa0 pose (+0x40c) and 0xd ends it. Every message then
  * goes to the common handler. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct Pair { int res; int handle; };
 
 extern int Ov257_SpawnChildStoreTwoArgs(char *self, int res, void *at);
@@ -16,7 +18,7 @@ extern int Ov257_SpawnTrailHelper(char *self, int res, int res2, void *at);
 extern void TaskList_FinishByTag(int model, int handle);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);
 extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
-extern int Ov257_SpawnHelper2(char *self, int res, Vec3 *at);
+extern int Ov257_SpawnHelper2(char *self, int res, VecFx32 *at);
 extern int Ov257_SpawnChild10AndBackLink(char *self);
 extern int Ov107_CreateSpawnTask(char *self, int id, int mode, int flag, void *pose);
 extern void Ov107_UnlinkNodeFromOwner(int handle);
@@ -63,7 +65,7 @@ void Ov257_HandleMessage(char *self, u8 *msg, int arg)
             PAIRS[11].handle = Ov107_CreateNodeXformTaskFx24(*(int *)(self + 0x3c), PAIRS[11].res, 5, 0, 0x1000, msg + 5);
             break;
         case 11: {
-            Vec3 pos;
+            VecFx32 pos;
             int rawZ;
             int rawY;
             int rawX;

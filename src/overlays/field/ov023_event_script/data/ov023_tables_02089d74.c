@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov023_RequestGroupResources: request the resources the event's actor (02083c14): const Ov023KindResTable data_ov023_02089d74; */
+
 #include "nitro/types.h"
 
-/* read by Ov023_RequestGroupResources: request the resources the event's actor (02083c14): const Ov023KindResTable data_ov023_02089d74; */
 const int data_ov023_02089d74[26] = {
     396, 408, 397, 409, 402, 414, 405, 417,
     398, 410, 403, 415, 404, 416, 400, 412,

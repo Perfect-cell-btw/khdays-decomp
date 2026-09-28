@@ -11,6 +11,7 @@
  */
 
 #include "nitro/types.h"
+
 typedef u32 FSOverlayID;
 
 extern u32 OVERLAY_22_ID[1];

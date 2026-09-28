@@ -10,12 +10,14 @@
  * two +0x434 and five +0x43c helpers and clears +0x45c and +0x468.
  * Codegen: compiled with opt_common_subs off (push/pop scoped); the +0x60 update re-reads the
  * halfword instead of reusing a copy. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[16]; } IdTable;
-typedef struct { Vec3 min; Vec3 max; } Bounds;
-typedef struct { Vec3 pos; int scale; } Placement;
+typedef struct { VecFx32 min; VecFx32 max; } Bounds;
+typedef struct { VecFx32 pos; int scale; } Placement;
 struct Pair { int res; int handle; };
 struct Pairs { char pad[0x46c]; struct Pair pairs[16]; };
 struct Bit0 { unsigned int b0 : 1; };
@@ -51,7 +53,7 @@ extern const char data_ov256_020d26ac[];
 extern const char data_ov256_020d26b4[];
 extern const char data_ov256_020d26c0[];
 extern const char data_ov256_020d26cc[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 #pragma push
 #pragma opt_common_subs off

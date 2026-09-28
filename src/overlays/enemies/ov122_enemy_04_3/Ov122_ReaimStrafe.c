@@ -4,7 +4,8 @@
  * byte and hand off to the next step.
  *
  * Matched byte-exact 2026-07-23, first compile. One of three byte-identical siblings. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern int Ov107_ActionResource_GetOffsetAndScale(int a, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *src, VecFx32 *v);

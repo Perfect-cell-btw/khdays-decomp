@@ -1,7 +1,9 @@
 /* Raise flag 0x80 in the high byte at (*child)+0x60, reset +0x388, clear flag 0 in the high
  * byte at (*child)+0x60, copy the const offset vector into (child)+8, and register the handler. */
-struct Vec3_020d1168 { int x, y, z; };
-extern const struct Vec3_020d1168 data_02041dc8;
+
+#include "nitro/fx.h"
+
+extern const VecFx32 data_02041dc8;
 extern int SetIndexedSlot(int a, int b, void *handler);
 extern void Ov266_ReactionResetIdleStep(int);
 struct node60_020d1168 { unsigned short lo : 8; unsigned short hi : 8; };
@@ -15,6 +17,6 @@ void Ov266_EnterReactionReset(int param_1) {
     }
     *(int *)(*(int *)child + 0x388) = 0;
     ((struct node60_020d1168 *)(*(int *)child + 0x60))->hi &= ~1;
-    *(struct Vec3_020d1168 *)(child + 8) = data_02041dc8;
+    *(VecFx32 *)(child + 8) = data_02041dc8;
     SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), (void *)&Ov266_ReactionResetIdleStep);
 }

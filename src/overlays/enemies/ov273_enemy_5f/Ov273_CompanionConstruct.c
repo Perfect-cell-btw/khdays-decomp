@@ -6,9 +6,11 @@
  * pose (data_ov273_020d6b68; registered, bit 1 of +0x5c), and reserves the +0x144 collision handle
  * (+0x390) from a capsule at the origin along -z (radius 1.82, height 0.31). The shared pose
  * id is read first and kept in the frame across the rig construction. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; Vec3 up; int radius; int height; } Capsule;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; VecFx32 up; int radius; int height; } Capsule;
 
 extern unsigned Ov107_PackTextureHandle(int pool, int kind);
 extern int CreateSubitemInstance0xB4(unsigned res);
@@ -18,8 +20,8 @@ extern void Ov107_EnqueueValue(char *self, int obj);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_Mover_New(Capsule *capsule);
 extern int data_ov273_020d6b68;
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
 extern void Ov273_Destroy(void);
 extern void Ov273_PushPose(void);
 extern void Ov273_CmdSpawnChildAtOffsetB(void);
@@ -29,7 +31,7 @@ extern void Ov273_RearmHitSlots(void);
 void Ov273_CompanionConstruct(char *self)
 {
     volatile int shared;
-    Vec3 zero;
+    VecFx32 zero;
     Capsule capsule;
     u16 v;
     int *p;
@@ -48,7 +50,7 @@ void Ov273_CompanionConstruct(char *self)
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
     zero = data_02041dc8;
-    *(Vec3 *)(self + 0x64) = zero;
+    *(VecFx32 *)(self + 0x64) = zero;
     /* default scale first: the overwritten store is dropped after scheduling but spends the
      * block's scheduling budget, which keeps the ROM's capsule stores ahead of the fca8 call */
     *(int *)(self + 0x70) = 0x1000;

@@ -6,14 +6,16 @@
  * the attack, knock 100, a random reaction 70 % of the time), otherwise the ov107 checker decides.
  * An accepted hit sends message 0 at the entity (or the matching point on the sphere) and marks it;
  * any hit fires reaction 0x4f (attack 6) or 0x51 at the +8 target. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int nRadius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int nRadius; } Sphere;
 struct Bit6 { u8 b0 : 1, b1 : 1, b2 : 1, b3 : 1, b4 : 1, b5 : 1, b6 : 1; };
 
 struct HitPacket40 {
     int nKind;
-    Vec3 vNormal;
+    VecFx32 vNormal;
     int nPower;
     int nReaction;
     u8 bKnock;
@@ -24,17 +26,17 @@ struct HitPacket40 {
 typedef int (*HitHook)(u16 id, struct HitPacket40 *packet);
 
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, void *query, int *out);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern void VEC_Add(Vec3 *a, Vec3 *b, Vec3 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *query, int *out);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int RandNextScaled(int bound);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, u8 kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, u8 kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int a, int id, int at);
 extern const short data_0203d210[];
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
@@ -42,9 +44,9 @@ void Ov227_AttackSweep(int *state, int kind, void *box)
 {
     Sphere sphere;
     int hits[4];
-    Vec3 off;
-    Vec3 push;
-    Vec3 pos;
+    VecFx32 off;
+    VecFx32 push;
+    VecFx32 pos;
     u8 *mask;
     long n;
     int hit;
@@ -62,7 +64,7 @@ void Ov227_AttackSweep(int *state, int kind, void *box)
     if (box != 0) {
         n = Ov107_CollectEntitiesTouchingDisc(*state, box, hits);
     } else {
-        sphere.pos = *(Vec3 *)(**(int **)(*state + 0x3b0) + 0x20);
+        sphere.pos = *(VecFx32 *)(**(int **)(*state + 0x3b0) + 0x20);
         sphere.nRadius = 0x2785;
         if (kind == 7) {
             sphere.nRadius = 0x48f6;
@@ -142,7 +144,7 @@ void Ov227_AttackSweep(int *state, int kind, void *box)
             }
             if (found != 0) {
                 if (box != 0) {
-                    pos = *(Vec3 *)(hits[i] + 0x74);
+                    pos = *(VecFx32 *)(hits[i] + 0x74);
                 } else {
                     ScaleVec3Fx12(sphere.nRadius, &pos, &pos);
                     VEC_Add(&pos, &sphere.pos, &pos);

@@ -3,6 +3,7 @@
  * bytes (+0x18..+0x1b) into the tables they name -- stopping a walk that comes back to the
  * root table nRoot below the top level -- and OR the two 64-bit masks of every table
  * reached (+0x8 and +0x10) into pMask[0] / pMask[1]. */
+
 #include "nitro/types.h"
 
 typedef struct Ov015SpotTable {

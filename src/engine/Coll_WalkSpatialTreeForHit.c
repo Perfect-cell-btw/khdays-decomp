@@ -1,4 +1,5 @@
 /* Quadtree traversal for the model spatial-face ray test. */
+
 #include "nitro/types.h"
 
 typedef struct CollisionFace84 CollisionFace84;

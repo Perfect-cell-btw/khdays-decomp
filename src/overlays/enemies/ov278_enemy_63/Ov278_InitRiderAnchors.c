@@ -3,13 +3,15 @@
  * item's +0x10 and the +0x3c0 handle's target, seat the +0x398 item's +0x58 anchor at the +0x3a8
  * clip's +0x14 position with its +0x64 direction from the +0x3a8 to the +0x3ac position
  * (normalised, length at +0x70); likewise +0x3b4 -> +0x3a4 / +0x3c4 and +0x3b0 -> +0x3a0. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct blk11 { int w[11]; };
 struct Flags5c { int b0 : 1; int b1 : 1; };
-struct Ov236Anchor { Vec3 pos; Vec3 dir; int len; };
+struct Ov236Anchor { VecFx32 pos; VecFx32 dir; int len; };
 extern void Ov107_AiState_DispatchModelCallbacks(void *obj);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 
 void Ov278_InitRiderAnchors(char *obj) {
     struct Ov236Anchor *a;
@@ -19,13 +21,13 @@ void Ov278_InitRiderAnchors(char *obj) {
     *(struct blk11 *)(*(char **)(obj + 0x39c) + 0x10) = *(struct blk11 *)(*(char **)(obj + 0x3ac) + 4);
     *(struct blk11 *)(*(char **)(*(char **)(obj + 0x3c0)) + 0x10) = *(struct blk11 *)(*(char **)(obj + 0x3ac) + 4);
     a = (struct Ov236Anchor *)(*(char **)(obj + 0x398) + 0x58);
-    a->pos = *(Vec3 *)(*(char **)(obj + 0x3a8) + 0x14);
-    VEC_Subtract((Vec3 *)(*(char **)(obj + 0x3ac) + 0x14), (Vec3 *)(*(char **)(obj + 0x3a8) + 0x14), &a->dir);
+    a->pos = *(VecFx32 *)(*(char **)(obj + 0x3a8) + 0x14);
+    VEC_Subtract((VecFx32 *)(*(char **)(obj + 0x3ac) + 0x14), (VecFx32 *)(*(char **)(obj + 0x3a8) + 0x14), &a->dir);
     a->len = VEC_Normalize(&a->dir, &a->dir);
     *(struct blk11 *)(*(char **)(obj + 0x3a4) + 0x10) = *(struct blk11 *)(*(char **)(obj + 0x3b4) + 4);
     *(struct blk11 *)(*(char **)(*(char **)(obj + 0x3c4)) + 0x10) = *(struct blk11 *)(*(char **)(obj + 0x3b4) + 4);
     a = (struct Ov236Anchor *)(*(char **)(obj + 0x3a0) + 0x58);
-    a->pos = *(Vec3 *)(*(char **)(obj + 0x3b0) + 0x14);
-    VEC_Subtract((Vec3 *)(*(char **)(obj + 0x3b4) + 0x14), (Vec3 *)(*(char **)(obj + 0x3b0) + 0x14), &a->dir);
+    a->pos = *(VecFx32 *)(*(char **)(obj + 0x3b0) + 0x14);
+    VEC_Subtract((VecFx32 *)(*(char **)(obj + 0x3b4) + 0x14), (VecFx32 *)(*(char **)(obj + 0x3b0) + 0x14), &a->dir);
     a->len = VEC_Normalize(&a->dir, &a->dir);
 }

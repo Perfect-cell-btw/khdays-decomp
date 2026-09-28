@@ -5,18 +5,19 @@
  * direction, capped at the remaining distance; the +0x34 lift eases by a fiftieth towards 0x2000
  * above the +0x13c height. Within 0x1000 of the point the slot becomes the +0x48 current one,
  * the index advances and, past the +0x70 count, the tick hands off to the release decision. */
+
 #include "nitro/types.h"
-struct Vecx32 { int x, y, z; };
+#include "nitro/fx.h"
 
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
-extern void Ov261_SetFacingAnchor(void *anchor, struct Vecx32 *dir, const struct Vecx32 *pos);
-extern void Vec3TransformViaTempMtx(struct Vecx32 *dst, void *quat, const struct Vecx32 *src);
-extern int VEC_DotProduct(const struct Vecx32 *a, const struct Vecx32 *b);
+extern void Ov261_SetFacingAnchor(void *anchor, VecFx32 *dir, const VecFx32 *pos);
+extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, const VecFx32 *src);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const struct Vecx32 data_02041dc8;
-extern const struct Vecx32 data_02042258;
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
 extern void Ov261_HoverReleaseDecision(int *node);
 
 static inline int FX_Mul(int a, int b)
@@ -27,9 +28,9 @@ static inline int FX_Mul(int a, int b)
 void Ov261_GrabWalk(int *node)
 {
     int *state = (int *)node[1];
-    struct Vecx32 goal;
-    struct Vecx32 dir;
-    struct Vecx32 fwd;
+    VecFx32 goal;
+    VecFx32 dir;
+    VecFx32 fwd;
     int len;
     int speed;
     int d;
@@ -38,7 +39,7 @@ void Ov261_GrabWalk(int *node)
     len = *(int *)(*node + 0x2c) * 30 / 30;
     list = *(int *)(*state + 0x3a0);
     state[0xf] = len;
-    goal = *(struct Vecx32 *)(list + *(u8 *)((char *)state + state[0x1b] + 0x49) * 0x24 + 0x2c);
+    goal = *(VecFx32 *)(list + *(u8 *)((char *)state + state[0x1b] + 0x49) * 0x24 + 0x2c);
     VEC_Subtract(&goal, (void *)state[1], &dir);
     dir.y = 0;
     len = VEC_Normalize(&dir, &dir);

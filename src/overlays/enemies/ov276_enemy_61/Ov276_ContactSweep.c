@@ -4,27 +4,29 @@
  * effect 4 spawns at the entity pushed out of the box, or effect 1 at the sphere surface along
  * the push, and the id bit is set. When anything was hit, reaction 0x164 mode 5 (kinds 0/5),
  * mode 6 (kind 1) or reaction 0 mode 0x53 (kind 2) fires at the +0xc position. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 
 extern int Ov107_CollectEntitiesTouchingDisc(int actor, void *box, int *out);
 extern int Ov107_CollectSphereOverlaps(int actor, Sphere *sphere, int *out);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, u8 kind, Vec3 *push, int z);
-extern void VEC_Add(void *a, void *b, Vec3 *d);
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, u8 kind, VecFx32 *push, int z);
+extern void VEC_Add(void *a, void *b, VecFx32 *d);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 void Ov276_ContactSweep(int *state, int kind, Sphere *sphere, void *box)
 {
     int hits[4];
-    Vec3 push;
-    Vec3 dir;
-    Vec3 fwd;
+    VecFx32 push;
+    VecFx32 dir;
+    VecFx32 fwd;
     int n;
     int hit;
     int i;

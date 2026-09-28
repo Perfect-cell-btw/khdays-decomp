@@ -1,12 +1,8 @@
 /* Node sub-state entry: accumulates the frame timer until 0x6ee, acquires a target, subtracts the
- * target position from the stored reference Vec3, computes and mirrors the horizontal angle, clears
+ * target position from the stored reference VecFx32, computes and mirrors the horizontal angle, clears
  * actor hw60 high-byte bits, runs pose setup, and advances to the next callback. */
 
-typedef struct Vec3 {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
 typedef struct ActorFlags60 {
     unsigned short lo : 8;
@@ -14,14 +10,14 @@ typedef struct ActorFlags60 {
 } ActorFlags60;
 
 extern int Ov107_FindNearestObject(int actor, int arg);
-extern void VEC_Subtract(Vec3 *a, Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void Ov107_PostTagUpdate(int actor, int a, int b);
 extern void SetIndexedSlot(void *node, int idx, void *next);
 extern void Ov163_ConfigSubStateThenAdvanceSlot(void);
 
 void Ov163_TimerAcquireTargetAngleThenAdvance(int *node) {
-    Vec3 delta;
+    VecFx32 delta;
     int *frame = (int *)node[0];
     int *state = (int *)node[1];
     int timer = state[0xc] + frame[0xb];
@@ -34,7 +30,7 @@ void Ov163_TimerAcquireTargetAngleThenAdvance(int *node) {
     target = Ov107_FindNearestObject(*state, 0);
     state[0x2] = target;
     if (target != 0) {
-        VEC_Subtract((Vec3 *)(target + 0x74), (Vec3 *)state[0x15], &delta);
+        VEC_Subtract((VecFx32 *)(target + 0x74), (VecFx32 *)state[0x15], &delta);
         angle = func_020050b4(delta.x, delta.z);
         state[0x3] = state[0x4] = angle;
     }

@@ -3,8 +3,9 @@
  * model's way (heading +0x80 flipped by 0x8000), flags it 0x20 and stores the position at +0xb4
  * before re-registering the node. Then the 2 requests at +0x12c (stride 0x240) are stepped
  * through Ov062_DrawNodesWhileActive. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad0[0x10];
@@ -12,20 +13,20 @@ typedef struct {
     char pad12[0x7a];
     u16 angle;
     char pad8e[0x26];
-    Vec3 vec;
+    VecFx32 vec;
     char padc0[0x11c - 0xc0];
     int kind;
 } Node;
 
 struct b1 { u8 b0 : 1; };
 
-extern void func_ov022_020ad44c(Vec3 *out, char *self);
+extern void func_ov022_020ad44c(VecFx32 *out, char *self);
 extern void Scene_DrawNode(void *node);
 extern void Ov062_DrawNodesWhileActive(char *req);
 
 void Ov062_RelaySlotEvent(char *self, Node *node)
 {
-    Vec3 pos;
+    VecFx32 pos;
     int i;
     char *req;
 

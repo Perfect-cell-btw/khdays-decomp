@@ -13,6 +13,7 @@
  * strength-reduces them into r7 / r6 itself; explicit walking locals colour
  * the other way round).
  */
+
 #include "nitro/types.h"
 
 #define PRESET_COUNT      3

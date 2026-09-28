@@ -13,10 +13,7 @@
  */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x, y, z;
-};
+#include "nitro/fx.h"
 
 struct Node {
     u8 pad00[0x80];
@@ -41,7 +38,7 @@ struct Actor {
     u8 pad069[0x3fb];
     unsigned long long nFlags2;   /* 0x0464 */
     u8 pad46c[0x20];
-    struct Vec3 vecPos;           /* 0x048c */
+    VecFx32 vecPos;           /* 0x048c */
     u8 pad498[0x1d4];
     PfnUpdate pfnUpdate;          /* 0x066c */
     u8 pad670[0x4c];
@@ -74,7 +71,7 @@ struct Actor {
 extern u8 data_0204c240;
 extern u16 data_0204c18c;
 
-extern void func_ov022_020ad44c(struct Vec3 *pOut, struct Actor *pActor);
+extern void func_ov022_020ad44c(VecFx32 *pOut, struct Actor *pActor);
 extern int Session_GetLocalPlayerIndex(void);
 extern int LoadGlobalU16At0(void);
 extern void Ov106_SetSceneAnimEnabled(int bOn);
@@ -94,15 +91,15 @@ extern void Ov022_PlayEntityVoice(struct Actor *pActor, int nA, int nCue);
 extern void Ov022_StepEffectTowardCamera(struct Actor *pActor);
 extern void Ov022_MoveEffectTowardCamera(struct Actor *pActor);
 extern void Ov022_StepReactionPhase(u8 *pBlk);
-extern void Ov022_StepSpinEffect(u8 *pBlk, struct Vec3 *pVec, u16 nAngle,
+extern void Ov022_StepSpinEffect(u8 *pBlk, VecFx32 *pVec, u16 nAngle,
                                 int bReact, int nFrame);
 extern void Ov022_ResetFields135_168_174(u8 *pBlk);
-extern void Ov022_StartSlotEffect(u8 *pBlk, struct Vec3 *pPos, u16 nAngle,
+extern void Ov022_StartSlotEffect(u8 *pBlk, VecFx32 *pPos, u16 nAngle,
                                 int nScale);
 extern void func_ov022_02092808(u8 *pBlk, int nFrame);
-extern void func_ov022_02094224(u8 *pBlk, struct Vec3 *pPos, int nFrame);
+extern void func_ov022_02094224(u8 *pBlk, VecFx32 *pPos, int nFrame);
 extern int Ov022_GetGlobal34(void);
-extern void Ov022_StepDustEmitter(u8 *pBlk, struct Vec3 *pPos, struct Vec3 *pVec,
+extern void Ov022_StepDustEmitter(u8 *pBlk, VecFx32 *pPos, VecFx32 *pVec,
                                 int nDelta, int nReaction, u16 nAngle,
                                 u8 *pColl);
 extern void func_ov022_0209d0b0(struct Actor *pActor, int *pCounter, int nDelta);
@@ -123,7 +120,7 @@ extern void Ov002_AcceptRequestAndNotify(int nWhich);
 
 void Ov022_UpdateSubsystems(struct Actor *pActor)
 {
-    struct Vec3 vecFacing;
+    VecFx32 vecFacing;
     int bLoud;
     int nGauge;
     int bBlocked;

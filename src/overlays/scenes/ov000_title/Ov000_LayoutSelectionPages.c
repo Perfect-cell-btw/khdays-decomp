@@ -13,6 +13,7 @@
  * allocator's colouring (the later the store, the higher the callee-saved
  * register) -- same demotion-ladder crack as Ov000_MatchRecipeAndApply. vec must be
  * declared before pos. */
+
 #include "nitro/types.h"
 
 typedef struct Ov000LayoutTemplate {

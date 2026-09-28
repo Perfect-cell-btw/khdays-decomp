@@ -6,7 +6,9 @@
  * 10 is remembered), otherwise the next move is 0xc and the partner is told (+0x4a8). A damaging hit
  * that is not a blocked special plays alternating hurt sounds 0x12d at the +0x488 rig (flag 0x22
  * picks the first pair). Returns 1 (0 when down or separating). */
+
 #include "nitro/types.h"
+
 typedef struct { u8 a, b; } Pair2;
 typedef struct { short v[3]; } Chance3;
 typedef struct { Pair2 heavy; Pair2 light; Chance3 chance; } Ov237HurtTmpl;

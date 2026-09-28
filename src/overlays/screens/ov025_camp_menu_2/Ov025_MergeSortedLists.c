@@ -5,6 +5,7 @@
  * other one is spliced on whole: its head is linked after the destination's tail, the tail
  * and the count taken over.  The symbol table split the function's shared epilogue off as
  * 0208a4b8; the size is 0x134. */
+
 #include "nitro/types.h"
 
 typedef struct NNSFndList {

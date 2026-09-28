@@ -4,6 +4,7 @@
  * is first set to 1.  Counts 8 and 9 are the 2-bit fields 0x37c7 / 0x35bf
  * modulo 3; count 7 is not loaded.
  */
+
 #include "nitro/types.h"
 
 #define ITEM_LAST_UNLOCK 0x1a0

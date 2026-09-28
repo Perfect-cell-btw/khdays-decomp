@@ -2,7 +2,9 @@
  * 4 spawn args in entry[0..3], copy the owner's two facing vectors (owner->f398+0x14 and
  * owner+0xb0, the latter bumped +0x300 on Y) into entry[4..6]/[7..9], and transform each
  * against its target (Srt_SetTranslation into param_2+4 / param_3+4). Returns the spawn result. */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int CreateRegistryEntry(int list, int a, int b, void *cb2, void *cb1, int **out);
 extern void Srt_SetTranslation(int dst, int *src);
 extern void Ov158_TaskTeardown_FlagParts(void);
@@ -15,9 +17,9 @@ int Ov158_SpawnAndInitRegistryEntry(int param_1, int param_2, int param_3, int p
     entry[1] = param_2;
     entry[2] = param_3;
     entry[3] = param_4;
-    *(struct vec *)(entry + 4) = *(struct vec *)(*(int *)(*entry + 0x398) + 0x14);
+    *(VecFx32 *)(entry + 4) = *(VecFx32 *)(*(int *)(*entry + 0x398) + 0x14);
     Srt_SetTranslation(entry[1] + 4, entry + 4);
-    *(struct vec *)(entry + 7) = *(struct vec *)(*entry + 0xb0);
+    *(VecFx32 *)(entry + 7) = *(VecFx32 *)(*entry + 0xb0);
     entry[8] += 0x300;
     Srt_SetTranslation(entry[2] + 4, entry + 7);
     return r;

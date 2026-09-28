@@ -2,19 +2,14 @@
  * attach slots, and requests its resources. */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/fx.h"
 
 struct Box {
-    struct Vec3 min;
-    struct Vec3 max;
+    VecFx32 min;
+    VecFx32 max;
 };
 
-static inline void Vec3_Set(struct Vec3 *out, int x, int y, int z)
+static inline void Vec3_Set(VecFx32 *out, int x, int y, int z)
 {
     out->x = x;
     out->y = y;
@@ -92,14 +87,14 @@ extern int Ov199_AllocLinkChild3a4(struct Obj *self);
 
 extern char data_ov199_020d614c[];
 extern char data_ov199_020d6154[];
-extern struct Vec3 data_02042264;
+extern VecFx32 data_02042264;
 
 extern void *Ov107_PackTextureHandle(struct Obj *self, int index);
 extern struct Subitem *CreateSubitemInstance0xB4(void *item);
 extern void RegisterSubscriberSlot(void *list, struct Subitem *item);
 extern int FindResourceIndexByName(struct Subitem *item, char *name);
 extern void RefreshObjectCallbacks(struct Subitem *item, int value);
-extern void QuatFromAxisAngle(int *out, struct Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(int *out, VecFx32 *axis, int angle);
 extern void Ov107_Actor_SetAttachSlot(struct Obj *self, int index, int a, int b, int scale);
 extern void Ov107_EnqueueValue(struct Obj *self, struct Subitem *item);
 extern int *List_InsertSorted(void *pool, int size, int count);

@@ -1,4 +1,5 @@
 /* Single-path quadtree traversal for a vertical collision ray. */
+
 #include "nitro/types.h"
 
 typedef struct CollisionFace88 CollisionFace88;

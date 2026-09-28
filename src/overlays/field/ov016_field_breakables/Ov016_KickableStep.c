@@ -14,9 +14,9 @@
  * type-6 velocity message (kind 10, halfwords of the fx32 >> 4) unless one is already pending
  * (bit 3) -- moving bit 2 to bit 3 once it goes out -- and acknowledges itself
  * (Ov016_KickableAckPeer 02081624).  Always 0. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016PeerMessage {
     u8   nType;               /* 0x00: 3 */

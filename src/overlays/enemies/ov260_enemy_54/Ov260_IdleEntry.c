@@ -1,7 +1,9 @@
 /* Idle entry of the ov260 actor while it is active (+0x60 bit 0): the idle time +0x60 is rolled
  * between the +0x224 / +0x228 bounds, +8, +0xc, the +0x470 flag and +0x80 clear, pose 0x1e plays and
  * the default move (+0x1c9) is queued before the node ends. */
+
 #include "nitro/types.h"
+
 struct flags16 { unsigned short lo : 8; unsigned short hi : 8; };
 
 extern int RandNextScaled(int n);

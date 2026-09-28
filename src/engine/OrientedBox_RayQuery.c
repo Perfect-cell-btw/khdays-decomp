@@ -5,9 +5,8 @@
  * Particle_SolvePairConstraint, one -> ClampAxesToBox (each told which axes to use), none -> ClampToLimitsWithPenalty (which
  * also clears the face). The solved local point is mirrored back, rebuilt in world space from the
  * scaled axes and written to the optional out components; the returned value is the solver's. */
-#include "nitro/fx.h"
 
-typedef struct { fx32 x, y, z; } VecFx32;
+#include "nitro/fx.h"
 
 typedef struct OrientedBox {
     VecFx32 centre;                     /* +0x00 */

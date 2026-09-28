@@ -18,6 +18,7 @@
  * by the second); the refusals share a static inline refresh and exit via
  * goto done.
  */
+
 #include "nitro/types.h"
 
 #define GRID_PAGES 3

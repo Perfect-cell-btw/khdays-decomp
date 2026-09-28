@@ -6,9 +6,10 @@
  * the current pane's flag bit 0 and zero the scene's first word.
  */
 
+/* UiLayoutPos */
+
 #include "nitro/types.h"
 
-/* UiLayoutPos */
 struct LayoutPos {
     int nX;                      /* 0x00 */
     int nY;                      /* 0x04 */

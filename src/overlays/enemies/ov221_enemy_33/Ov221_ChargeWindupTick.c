@@ -8,8 +8,9 @@
  * scaled 0.75, +0x58 keeps the heading, the +0x3b0 body raises bit 0 of its +8 low byte, the
  * owner is sent mode 3 (4 without a target) with the zero vector, +0x60 keeps the timer and
  * the tick hands over to Ov221_ChargeTimerThenFire. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct Byte8 { unsigned int lo : 8, rest : 24; };
 
@@ -17,22 +18,22 @@ static inline unsigned short FX_RadToIdx(int rad) {
     return (unsigned short)((0x28BE60DB9391LL * rad + 0x80000000000LL) >> 44);
 }
 
-extern int Ov221_MeasureTargetGap(int *node, Vec3 *dir);
+extern int Ov221_MeasureTargetGap(int *node, VecFx32 *dir);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, u16 mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 v, int flag);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov221_ChargeTimerThenFire(int *node);
 
 void Ov221_ChargeWindupTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 d;
+    VecFx32 d;
     unsigned short idx;
     int mode;
 
@@ -58,7 +59,7 @@ void Ov221_ChargeWindupTick(int *node)
         return;
     }
     Ov107_PostTagUpdate(*state, state[0x1e] != 0 ? 9 : 0xd, 1);
-    VEC_Subtract((Vec3 *)(*(int *)(*state + 0x3e8) + 0x190), (Vec3 *)state[2], &d);
+    VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x3e8) + 0x190), (VecFx32 *)state[2], &d);
     VEC_Normalize(&d, &d);
     idx = FX_RadToIdx(state[0x14]);
     state[8] = data_0203d210[(idx >> 4) * 2];
@@ -66,7 +67,7 @@ void Ov221_ChargeWindupTick(int *node)
     state[0xa] = data_0203d210[(idx >> 4) * 2 + 1];
     state[9] = d.y;
     state[0x16] = state[0x14];
-    ScaleVec3Fx12(0xc00, (Vec3 *)(state + 8), (Vec3 *)(state + 8));
+    ScaleVec3Fx12(0xc00, (VecFx32 *)(state + 8), (VecFx32 *)(state + 8));
     ((struct Byte8 *)(*(int *)(*state + 0x3b0) + 8))->lo |= 1;
     mode = state[0x1e] != 0 ? 3 : 4;
     func_ov107_020c0b90(*state, mode, data_02041dc8, 0);

@@ -5,11 +5,12 @@
  * packed bytes.
  */
 
-#include "nitro/types.h"
-
 /* read by Ov117_OrbitStep (020cd2f4): Pair data_ov117_020cdc28[];
  *   Publish the landing: copy the pending anchor into the live slot and ask the placement help (020cd494): Pair data_ov117_020cdc28[];
  *   Ov117_EmitAtOrbit (020cd78c): Pair16 data_ov117_020cdc28[]; */
+
+#include "nitro/types.h"
+
 const u8 data_ov117_020cdc28[12] = {
     0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 5, 0,
 };

@@ -1,14 +1,15 @@
 /* Recovery tick of the ov260 actor: with a target (+8) the +0x7c flag is raised and brain slot +0x20
  * runs 020d0360 at once. Otherwise, once the +4 rig is idle, pose 9 plays, effect 8 spawns in place,
  * move 0x15 starts (020cd148 with the +0x10 argument) and 020d0360 follows. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_PostTagUpdate(int owner, int pose, int loop);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void Ov260_DashEntryTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov260_TickRecovery(int *node)
 {

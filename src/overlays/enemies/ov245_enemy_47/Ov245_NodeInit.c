@@ -2,7 +2,9 @@
  * clears bit 0 of the +0x388 item's +8 low byte, points the state's +8 at the actor's +0xb0
  * pose, raises bits 1, 2 and 7 and clears bit 0 of the +0x60 high byte, and installs the three
  * slot handlers (1: 020cfdec, 0: 020cfc14, 2: 020cfd54). */
+
 #include "nitro/types.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 

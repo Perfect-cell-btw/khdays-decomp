@@ -1,11 +1,13 @@
 /* Hit entry of the ov146 actor: without a partner guard (+0x58) it plays effect 2 at the partner's
  * +0x74 point; bits 1, 2 and 6 of the +0x60 high byte and bit 0 of +0x1ae are set, the +0x3ac shape
  * hides, sound 0/0x49 plays at the actor, +0x3c clears and the node moves on to 020ce0bc. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov146_RecoverTick(void);
@@ -15,7 +17,7 @@ void Ov146_HitEntry(int *node)
     int *state = (int *)node[1];
 
     if (state[0x16] == 0) {
-        func_ov107_020c0b90(*state, 2, *(Vec3 *)(state[2] + 0x74), 0);
+        func_ov107_020c0b90(*state, 2, *(VecFx32 *)(state[2] + 0x74), 0);
     }
     {
         u16 hw = *(u16 *)(*state + 0x60);

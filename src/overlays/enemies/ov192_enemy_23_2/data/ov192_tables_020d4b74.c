@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Big constructor of the ov192 enemy (x3: ov192/192/193): raises bit 8 of the +0 flags, inst (020d1a24): struct Ov192Vec3 data_ov192_020d4b74; */
+
 #include "nitro/types.h"
 
-/* read by Big constructor of the ov192 enemy (x3: ov192/192/193): raises bit 8 of the +0 flags, inst (020d1a24): struct Ov192Vec3 data_ov192_020d4b74; */
 const int data_ov192_020d4b74[3] = {
     0, 1024, 0,
 };

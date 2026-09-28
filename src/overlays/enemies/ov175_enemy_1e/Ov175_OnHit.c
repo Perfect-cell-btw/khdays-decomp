@@ -7,9 +7,9 @@
  * damage, not 0x80) turns the impact vector into a knockback scaled by 0xc00 / the camera's
  * +0x40 and requests sub-state 0xc; then zero health requests 3 and, outside sub-state 8, an
  * 0x8000 hit goes to 0xd from 0xc/0xd and to 0xc otherwise. */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov175ActionState {
     int pOwner;
@@ -18,7 +18,7 @@ struct Ov175ActionState {
     char pad00c[4];
     int nParam;
     char pad014[0x18];
-    struct Vec3 vHit;
+    VecFx32 vHit;
     char pad038[0x4d];
     u8 nToggle85;
 };
@@ -26,7 +26,7 @@ struct Ov175ActionState {
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     char pad010[8];
     int pSource18;
     char pad01c[4];
@@ -44,10 +44,10 @@ union ImpactSlot { struct ImpactPair sPair; u8 aModes[2]; };
 extern int Ov107_CalcHitDamage(char *actor, struct ActorHitEvent *hit);
 extern void Ov107_BuildAndSendUpdate(char *actor, int id, u8 mode, void *anchor);
 extern const u8 data_ov175_020cea84[];
-extern int VEC_Normalize(struct Vec3 *v, struct Vec3 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern char *func_ov107_020c9848(void);   /* the game's camera-state getter, named after the byte-identical SDK thunk */
 extern int FX_Inv(int x);
-extern void ScaleVec3Fx12(int scale, struct Vec3 *v, struct Vec3 *out);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);
 
 int Ov175_OnHit(char *actor, int nParam, struct ActorHitEvent *hit)
 {

@@ -6,6 +6,7 @@
  * and re-clamps it against Ov025_MenuEntrySubCount(sel) through Ov025_ClampWrapIndex.
  * Either way the cursor cue plays and the menu refreshes.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008SelCtx {

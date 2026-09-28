@@ -5,25 +5,27 @@
  * 0x2a, 5.6 of vortex time, sound 0x12/0x19). At 4.45 the follow-through (+0x50 = 1) plays effect 0x29
  * at the +0x5a4 rig. Once the +4 rig is idle: before 3.98 pose 0xd replays; move 7 continues with
  * 020cf63c; otherwise a follow-up (020cd2cc, without a +0x38 delay) or move 2. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 pos; int radius; } Sphere;
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 pos; int radius; } Sphere;
 
 extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
-extern int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *capsule, void *cylinder, Vec3 *push, int once, u16 effect, int kind);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *capsule, void *cylinder, VecFx32 *push, int once, u16 effect, int kind);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, u16 variant, int at);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int Ov258_PickMove(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov258_EnterLeap(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov258_SlamTick(int *node)
 {
     int *state = (int *)node[1];
     Sphere sphere;
-    Vec3 push;
+    VecFx32 push;
 
     state[0xc] += *(int *)(node[0] + 0x2c);
     state[0x11] += *(int *)(node[0] + 0x2c);
@@ -31,11 +33,11 @@ void Ov258_SlamTick(int *node)
     if (*(u16 *)(state + 0x14) == 2 && state[0xc] >= 0x27d8) {
         push = data_02041dc8;
         push.z += 0x2000;
-        sphere.pos = *(Vec3 *)(*(int *)(*state + 0x454) + 0x190);
+        sphere.pos = *(VecFx32 *)(*(int *)(*state + 0x454) + 0x190);
         sphere.radius = 0x3000;
         (*(u16 *)(state + 0x14))--;
         Ov258_AttackHitTest(node, &sphere, 0, 0, 0, &push, 1, 7, 5);
-        func_ov107_020c0b90(*state, 0x28, *(Vec3 *)(*(int *)(*state + 0x454) + 0x190), 0);
+        func_ov107_020c0b90(*state, 0x28, *(VecFx32 *)(*(int *)(*state + 0x454) + 0x190), 0);
         Ov107_BuildAndSendUpdate(*state, *(short *)(state + 0x16), *(int *)(*state + 0x460) != 0 ? 0x11 : 0x18,
                             *(int *)(*state + 0x454) + 0x190);
         Ov107_BuildAndSendUpdate(*state, 0, 0x4f, *(int *)(*state + 0x454) + 0x190);
@@ -44,7 +46,7 @@ void Ov258_SlamTick(int *node)
             state[7] = 0;
             state[8] = 0xfa00;
             state[9] = 0x8000;
-            func_ov107_020c0b90(*state, 0x2a, *(Vec3 *)(state + 7), 0);
+            func_ov107_020c0b90(*state, 0x2a, *(VecFx32 *)(state + 7), 0);
             *(int *)(*state + 0x428) = 0x5a00;
             Ov107_BuildAndSendUpdate(*state, *(short *)(state + 0x16), *(int *)(*state + 0x460) != 0 ? 0x12 : 0x19,
                                 (int)(state + 7));
@@ -52,7 +54,7 @@ void Ov258_SlamTick(int *node)
     }
     if (state[0xc] >= 0x4730 && *(u16 *)(state + 0x14) == 1) {
         (*(u16 *)(state + 0x14))--;
-        func_ov107_020c0b90(*state, 0x29, *(Vec3 *)(*(int *)(*state + 0x5a4) + 0x14), 0);
+        func_ov107_020c0b90(*state, 0x29, *(VecFx32 *)(*(int *)(*state + 0x5a4) + 0x14), 0);
     }
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;

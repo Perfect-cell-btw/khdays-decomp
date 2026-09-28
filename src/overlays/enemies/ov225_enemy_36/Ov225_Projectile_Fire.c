@@ -1,5 +1,5 @@
 /* Ov225_Projectile_Fire -- retune, notify, and (in mode 1) start the homing move.
- * VARIADIC -- the stmdb {r0,r1,r2,r3} prologue is the tell. Its own varargs are three Vec3 by
+ * VARIADIC -- the stmdb {r0,r1,r2,r3} prologue is the tell. Its own varargs are three VecFx32 by
  * value: the first is handed to Ov107_MoveNodeAndRelayout as a va_list, and the second and third are
  * forwarded BY VALUE to Ov225_Projectile_SetupFlight (itself variadic).
  *
@@ -7,7 +7,7 @@
  * owner's own notify hook (+0xc), which is loaded only if that bit is set. The rig at +0x384 is
  * reset when there is one, +0x38c is raised, and unless +0x50 is exactly 1 that is where it stops.
  *
- * The two forwarded Vec3 explain the tail. 020d43a0 takes (ctx, mode, Vec3, Vec3): the first Vec3
+ * The two forwarded VecFx32 explain the tail. 020d43a0 takes (ctx, mode, VecFx32, VecFx32): the first VecFx32
  * goes in r2/r3 plus the outgoing slot at sp+0, so the SECOND lands at sp+4..0xc -- which is why
  * the frame is 0x10 and why the second is stored before the first.
  *
@@ -22,27 +22,24 @@
  * residue from the same cause.
  *
  * Three more knobs are load-bearing and must be kept:
- * 1. The apparent dead local at sp+4 is 020d43a0's SECOND by-value Vec3. Reading it as a local
+ * 1. The apparent dead local at sp+4 is 020d43a0's SECOND by-value VecFx32. Reading it as a local
  *    costs 28 B and mwcc drops the store as dead.
  * 2. Bit 1 of +0x40 is a SIGNED bitfield -- `int b:1`, giving asrs. As unsigned you get lsrs.
  * 3. The hook must be captured INSIDE the condition (`(notify = *(...)) != 0`): as two separate
  *    expressions mwcc loads +0xc twice, once predicated for the test and again for the call.
  */
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+
+#include "nitro/fx.h"
 
 #define va_start(ap, last) ((ap) = (char *)(&(last) + 1))
 /* Reach a vararg by its offset without keeping a live va_list. Using a held `ap` for these two
  * makes mwcc park it in a callee-saved register (add r4,sp,#0x28 ; add r0,r4,#0xc) and spill the
  * mode; folding each one to its own frame offset gives the ROM's `add r0,sp,#0x34`. */
-#define va_at(last, off) (*(Vec3 *)((char *)&(last) + (off)))
+#define va_at(last, off) (*(VecFx32 *)((char *)&(last) + (off)))
 
 extern void Ov107_MoveNodeAndRelayout(int self, char *ap);
 extern void RefreshObjectCallbacks(int rig, int a);
-extern void Ov225_Projectile_SetupFlight(int ctx, int mode, Vec3 a, Vec3 b);
+extern void Ov225_Projectile_SetupFlight(int ctx, int mode, VecFx32 a, VecFx32 b);
 
 typedef struct {
     char pad[0x40];

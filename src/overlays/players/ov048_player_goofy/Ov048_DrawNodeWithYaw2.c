@@ -1,10 +1,10 @@
 /* When the effect node is in one of its visible states, places it at the locked target's point
  * turned with the character and draws it. */
 
+#include "nitro/fx.h"
+
 extern void func_ov022_020ad44c(void *out, int self);
 extern void Scene_DrawNode(int a);
-
-typedef struct { int x, y, z; } Vec3;
 
 typedef struct {
     char pad0[8];
@@ -13,11 +13,11 @@ typedef struct {
     char pad0e[0x7a];
     unsigned short angle;
     char pad8a[0x26];
-    Vec3 vec;
+    VecFx32 vec;
 } Node;
 
 void Ov048_DrawNodeWithYaw2(int self, Node *node) {
-    Vec3 v;
+    VecFx32 v;
     if (node->kind != 2 && node->kind != 3) return;
     func_ov022_020ad44c(&v, self);
     node->angle = (unsigned short)(*(unsigned short *)(*(int *)(self + 0x20) + 0x80) - 0x8000) + 0x8000;

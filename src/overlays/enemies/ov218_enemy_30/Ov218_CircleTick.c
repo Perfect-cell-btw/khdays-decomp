@@ -5,6 +5,7 @@
  * flight state (020cd098) and runs it at once, and the actor wants animation 1; beyond it a finished
  * idle countdown (020cc7f8) just returns, else animation 0 is wanted. A wanted animation different
  * from the +0x48 one is played. */
+
 #include "nitro/types.h"
 
 extern int Ov218_DistanceToTarget(int *node);

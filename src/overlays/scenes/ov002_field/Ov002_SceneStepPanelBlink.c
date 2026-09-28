@@ -16,18 +16,13 @@
  */
 
 #include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Ov002Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad000[0x78];
     int nList;
     char pad07c[0x28];
-    Ov002Vec3 vPos;
+    VecFx32 vPos;
     int aTint[3];
     char pad0bc[0x4c];
 } Ov002Widget;
@@ -70,7 +65,7 @@ extern void Ov002_DrawAndStepNode(void *pWidget);
 
 void Ov002_SceneStepPanelBlink(void)
 {
-    Ov002Vec3 v;
+    VecFx32 v;
     int nTint = 0;
     int nLevel = 0;
     Ov002BlinkScene *s;

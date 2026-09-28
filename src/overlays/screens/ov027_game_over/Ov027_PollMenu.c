@@ -5,18 +5,14 @@
  * 0x20ea as 2 / 1 (020235e8) -- and returns; slot 1 records the flag as 2 / 0 and sets mode 2;
  * slot 2 sets mode 4.  Every accepted choice then sets bit 4 of the mode word and the highlight
  * (+0x5c0) to 1.  The cursor's slot blinks every frame (Ov027_BlinkPanelSlot 02083918). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

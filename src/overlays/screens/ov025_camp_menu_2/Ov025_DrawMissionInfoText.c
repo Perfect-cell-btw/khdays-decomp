@@ -10,6 +10,7 @@
  * the width.  The text pick is a switch with case 0x6c written before case 10
  * so its body falls straight out of the compare chain, as in the ROM.
  */
+
 #include "nitro/types.h"
 
 #define ROW_COUNT       13

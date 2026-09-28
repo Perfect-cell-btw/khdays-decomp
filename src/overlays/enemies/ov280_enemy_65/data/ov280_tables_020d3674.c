@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Ov280_Construct (020cfc08): KindTable data_ov280_020d3674; */
+
 #include "nitro/types.h"
 
-/* read by Ov280_Construct (020cfc08): KindTable data_ov280_020d3674; */
 const int data_ov280_020d3674[8] = {
     18, 19, 20, 21, 22, 23, 24, 25,
 };

@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* What the caller hands over to describe one class of timed element. */
+
+#include "nitro/types.h"
+
 typedef struct {
     const char *pName;              /* +0x00 */
     int nOwnerArg;                  /* +0x04 */

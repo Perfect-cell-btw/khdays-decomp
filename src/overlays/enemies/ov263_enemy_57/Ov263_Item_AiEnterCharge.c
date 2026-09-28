@@ -12,11 +12,7 @@
  *   - `hi &= ~0x8c` DOES have the trunc pair -> the bitfield form.
  * Reading the pair off the disassembly is the whole trick; do not guess from the operator. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     unsigned short lo : 8;

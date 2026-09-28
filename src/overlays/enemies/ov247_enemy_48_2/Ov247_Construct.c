@@ -9,15 +9,12 @@
  * placement from the +0x64 pose on the +0x22c list (+0x384) and a capsule (zero position, world
  * Y axis, radius 0x1000, height 0x1800) on the +0x144 list (+0x38c); +0x3a0 is built by
  * Ov247_Actor_New and sound 0x158 is loaded. */
-struct Ov246Vec3 {
-    int x;
-    int y;
-    int z;
-};
+
+#include "nitro/fx.h"
 
 struct Ov246Capsule {
-    struct Ov246Vec3 vPos;
-    struct Ov246Vec3 vUp;
+    VecFx32 vPos;
+    VecFx32 vUp;
     int nRadius;
     int nHeight;
 };
@@ -30,8 +27,8 @@ struct Ov246SubitemSlot {
 };
 
 extern struct Ov246Kinds data_ov247_020d4ee0;
-extern struct Ov246Vec3 data_02041dc8;
-extern struct Ov246Vec3 data_02042264;
+extern VecFx32 data_02041dc8;
+extern VecFx32 data_02042264;
 extern const char data_ov247_020d4f4c[];
 extern const char data_ov247_020d4f54[];
 extern const char data_ov247_020d4f58[];

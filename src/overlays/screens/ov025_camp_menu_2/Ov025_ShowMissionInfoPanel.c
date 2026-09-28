@@ -7,6 +7,7 @@
  * and restores the brightness.  The request is remembered at +0x180 and the
  * armed word (+0x184) cleared.
  */
+
 #include "nitro/types.h"
 
 #define ENTRY_INFO_FIRST 0x16

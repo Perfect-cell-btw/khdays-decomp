@@ -8,7 +8,9 @@
  * stock becomes the riders' sum (clamped to +0x218) and at 0 the actor requests move 0xc. A damaging
  * hit that is not the 8|0x80/0x80 special flips the +0x75 parity and fires reaction 0x127 with mode
  * 2/3 (bits 1/5) or 0/1 at the attacker's point. */
+
 #include "nitro/types.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
 typedef struct { u16 id; u8 kind; u8 cmd; } Note4;

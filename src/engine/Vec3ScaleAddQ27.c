@@ -2,12 +2,6 @@
 
 #include "nitro/fx.h"
 
-typedef struct VecFx32 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
-} VecFx32;
-
 void Vec3ScaleAddQ27(fx32 s, const VecFx32 *a, const VecFx32 *b, VecFx32 *c)
 {
     c->x = b->x + (fx32)(((fx64)s * a->x) >> 27);

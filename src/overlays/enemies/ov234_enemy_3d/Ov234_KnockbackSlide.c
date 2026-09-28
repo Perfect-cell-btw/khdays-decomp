@@ -1,8 +1,9 @@
-struct vec3 { int x, y, z; };
+#include "nitro/fx.h"
+
 struct bitguard { unsigned char b0 : 1; };
 
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
-extern void func_ov107_020c0b90(int obj, int cmd, struct vec3 v, int flag);
+extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
 extern int QueryActiveStateOrDelegate(void);
 
 /* Per-frame knockback slide: while the node is airborne (+0x17a bit0) and the
@@ -22,7 +23,7 @@ void Ov234_KnockbackSlide(void *param_1) {
     }
     Ov107_BuildAndSendUpdate(inner, 0x178, 4, piVar1[2]);
     {
-        struct vec3 v = *(struct vec3 *)(*piVar1 + 0x74);
+        VecFx32 v = *(VecFx32 *)(*piVar1 + 0x74);
         v.y -= 0x400;
         func_ov107_020c0b90(*piVar1, 0, v, 0);
     }
@@ -33,7 +34,7 @@ void Ov234_KnockbackSlide(void *param_1) {
         inner = *piVar1;
         q = QueryActiveStateOrDelegate();
         {
-            struct vec3 v = *(struct vec3 *)(inner + 0x74);
+            VecFx32 v = *(VecFx32 *)(inner + 0x74);
             func_ov107_020c0b90(inner, 3, v, q & 0xff);
         }
         *(unsigned char *)(*piVar1 + 0x1c7) = 3;
@@ -43,7 +44,7 @@ void Ov234_KnockbackSlide(void *param_1) {
             inner = *piVar1;
             q = QueryActiveStateOrDelegate();
             {
-                struct vec3 v = *(struct vec3 *)(inner + 0x74);
+                VecFx32 v = *(VecFx32 *)(inner + 0x74);
                 func_ov107_020c0b90(inner, 6, v, q & 0xff);
             }
         }

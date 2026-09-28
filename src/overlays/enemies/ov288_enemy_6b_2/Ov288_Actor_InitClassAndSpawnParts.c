@@ -29,15 +29,12 @@
  *    instructions, never the thirty-eight this function needs), while keeping the stores in
  *    the ROM's 0x70, 0x64, 0x68, 0x6c order that a two-target chain would collapse.
  */
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
 
 /* the 0x3c basis block built on the stack and handed to Ov107_HitShape_NewBox */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ActorSpawnBasis {
     int scale;
     int field04;

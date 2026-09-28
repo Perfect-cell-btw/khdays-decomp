@@ -6,6 +6,7 @@
  * clears the five animation slots (ids +0x2 / +0xca, handles +0xc), and resets the transform:
  * identity rotation (+0x80), zero translation (+0xa4), unit scale (+0xb0), zero offset (+0xbc).
  * Returns TRUE. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
 
@@ -29,7 +30,6 @@ typedef struct {
 } NNSG3dResMdlSet;
 
 typedef struct { fx32 m[9]; } MtxFx33;
-typedef struct { fx32 x, y, z; } VecFx32;
 
 typedef struct ModelResList {
     char pad00[8];

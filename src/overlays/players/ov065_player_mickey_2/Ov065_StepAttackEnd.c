@@ -1,14 +1,10 @@
-#include "nitro/types.h"
 
-struct Vec3 {
-    int x;
-    int y;
-    int z;
-};
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov046StepVectors {
-    struct Vec3 horizontal;
-    struct Vec3 movement;
+    VecFx32 horizontal;
+    VecFx32 movement;
 };
 
 struct Ov044Node {
@@ -41,15 +37,15 @@ struct Ov044Actor {
     u64 flags464;
     u64 flags46c;
     char pad474[0x18];
-    struct Vec3 anchor48c;
-    struct Vec3 accumulated498;
+    VecFx32 anchor48c;
+    VecFx32 accumulated498;
     char pad4a4[0x1c0];
     Ov044ActorCallback callback664;
     Ov044ActorUpdateCallback callback668;
     char pad66c[0x28];
     struct Ov044ActorBits694 bits694;
     char pad695[3];
-    struct Vec3 accumulated698;
+    VecFx32 accumulated698;
     char pad6a4[0x10c];
     int timeline7b0;
     char pad7b4[0x1b44];
@@ -71,7 +67,7 @@ struct Ov044Controller4c14 {
  * +0x2d90 counter is still 2 or more, otherwise clear both accumulated vectors and finish with
  * mode 0 (after the +0x664 callback) or 2 depending on the +0x24 bit. */
 extern u32 Session_GetLocalPlayerIndex(void);
-extern void VEC_Add(const struct Vec3 *a, const struct Vec3 *b, struct Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov022_IsState9Or6WithFlag200(void *context);
 extern void *Ov022_ActorSetState(struct Ov044Actor *actor, int mode);
 extern char *data_ov065_020b7340;

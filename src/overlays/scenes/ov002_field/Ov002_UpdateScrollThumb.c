@@ -9,6 +9,7 @@
  * Both halfwords are read twice rather than cached, the same way
  * Ov002_OpenConfirmPrompt reads the row height.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

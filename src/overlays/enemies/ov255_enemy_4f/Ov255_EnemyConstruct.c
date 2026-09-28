@@ -9,12 +9,14 @@
  * resource, the rest from the data_ov255_020d29d8 poses; all hidden), nine sub-objects (+0x3f0, each
  * told its index at +0x3bc) and loads the voice bank (+0x3f8: 0x17f in the alternate language,
  * else 0x17a). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
-typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[12]; } IdTable;
-typedef struct { Vec3 pos; int scale; } Placement;
-typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
+typedef struct { VecFx32 pos; int scale; } Placement;
+typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 struct Pair { int res; int handle; };
 struct Nib { u8 lo : 4, hi : 4; };
 
@@ -41,10 +43,10 @@ extern const char data_ov255_020d2c14[];
 extern const char data_ov255_020d2c18[];
 extern const char data_ov255_020d2c24[];
 extern const char data_ov255_020d2c28[];
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02041dc8;
 extern u8 data_0204c240;
 extern void Ov255_Destroy(void);
 extern void Ov255_Update(void);
@@ -61,7 +63,7 @@ void Ov255_EnemyConstruct(char *self)
     Capsule cap;
     Placement place;
     IdTable ids = data_ov255_020d29d8;
-    Vec3 up;
+    VecFx32 up;
     int i;
     int *slot;
     u16 hw;

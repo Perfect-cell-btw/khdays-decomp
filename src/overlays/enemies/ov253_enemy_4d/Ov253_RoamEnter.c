@@ -4,12 +4,14 @@
  * 8.0 away from the +0x384 item's +0xb0 along that heading is sent to the actor (020c5c54),
  * the +0x10 / +0x14 headings take another draw from the same bounds, the sub-state takes the
  * +0x1c9 byte and the node slot is released. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
 struct Ov253Bounds { int lo[1]; int hi[4]; };
 
 extern int RandNextScaled(int scale);
-extern void Ov107_MoveNodeAndRelayout(int actor, const Vec3 *pos);
+extern void Ov107_MoveNodeAndRelayout(int actor, const VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct Ov253Bounds data_ov253_020d49b8;
 extern const short data_0203d210[];
@@ -24,7 +26,7 @@ static inline unsigned short FX_RadToIdx(int rad) {
 void Ov253_RoamEnter(int *node) {
     int *state = (int *)node[1];
     struct Ov253Bounds bounds;
-    Vec3 pos;
+    VecFx32 pos;
     int idx;
     int angle;
     int lo;
@@ -46,7 +48,7 @@ void Ov253_RoamEnter(int *node) {
     scale = RandNextScaled(0x8001) + 0x8000;
     item = *(int *)(*state + 0x384);
     sinIdx = FX_RadToIdx(angle);
-    pos = *(Vec3 *)(item + 0xb0);
+    pos = *(VecFx32 *)(item + 0xb0);
     pos.x += FX_Mul(data_0203d210[(sinIdx >> 4) << 1], scale);
     pos.z += FX_Mul(data_0203d210[((sinIdx >> 4) << 1) + 1], scale);
     Ov107_MoveNodeAndRelayout(*state, &pos);

@@ -1,11 +1,7 @@
 /* Anchors the orbit camera at the origin, recomputes its position from angle and radius and
  * re-aims. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     int yOffset;

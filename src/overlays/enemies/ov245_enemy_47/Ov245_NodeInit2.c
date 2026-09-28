@@ -3,7 +3,9 @@
  * points +8 at the actor's +0xb0 pose, raises bits 1, 2 and 4 and clears bits 3
  * and 6 of the +0x60 high byte, and installs the three slot handlers (1: 020cd668, 0: 020ccfa8,
  * 2: 020cd1d0). */
+
 #include "nitro/types.h"
+
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

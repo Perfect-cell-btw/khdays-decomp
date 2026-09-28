@@ -7,13 +7,14 @@
  * packed into the overlay's 14-byte template for the owner's +0x24 message hook and effect 0x53
  * plays there. Entity kinds already in the event's +0x11 mask are skipped; the mask keeps only the
  * kinds still inside the box. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
-typedef struct { int m[9]; Vec3 trans; } Mtx43;
+typedef struct { int m[9]; VecFx32 trans; } Mtx43;
 
 typedef struct {
     u16 id;             /* +0x0 */
@@ -24,10 +25,10 @@ typedef struct {
 } PosMsg;
 
 struct BoxQuery {
-    Vec3 vCenter;
-    Vec3 vAxisX;
-    Vec3 vAxisZ;
-    Vec3 vAxisY;
+    VecFx32 vCenter;
+    VecFx32 vAxisX;
+    VecFx32 vAxisZ;
+    VecFx32 vAxisY;
     int nExtent;
     int bFlag;
 };
@@ -47,16 +48,16 @@ struct SwingEvent {
 };
 
 extern int func_02016320(void *anim, Mtx43 *out, int a, int key);
-extern void VEC_Subtract(void *a, void *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *a, Vec3 *d);
+extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *a, VecFx32 *d);
 extern int Ov107_CollectEntitiesTouchingDisc(struct Owner *owner, struct BoxQuery *query, int *out);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, struct Owner *a, struct Owner *b, int kind, Vec3 *push, int z);
-extern void VEC_Add(void *a, void *b, Vec3 *d);
-extern void Slot_Spawn(int id, int kind, Vec3 *pos, int flag);
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042258;
-extern const Vec3 data_02042264;
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_InvokeHitCallback(int hit, struct Owner *a, struct Owner *b, int kind, VecFx32 *push, int z);
+extern void VEC_Add(void *a, void *b, VecFx32 *d);
+extern void Slot_Spawn(int id, int kind, VecFx32 *pos, int flag);
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042258;
+extern const VecFx32 data_02042264;
 extern const PosMsg data_ov244_020d3716;
 
 static inline void PackFx24(Fx24 *dst, int v) {
@@ -65,7 +66,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void SendPos(struct SwingEvent *ev, PosMsg *msg, const Vec3 *src)
+static inline void SendPos(struct SwingEvent *ev, PosMsg *msg, const VecFx32 *src)
 {
     FxVec vDead;
     vDead.x = *(Fx32 *)&src->x;
@@ -83,11 +84,11 @@ void Ov244_ArmSwingSweep(char *self, struct SwingEvent *ev)
 {
     Mtx43 mtx;
     int hits[4];
-    Vec3 tip;
+    VecFx32 tip;
     struct BoxQuery query;
-    Vec3 dir;
-    Vec3 push;
-    Vec3 pos;
+    VecFx32 dir;
+    VecFx32 push;
+    VecFx32 pos;
     PosMsg msg;
     PosMsg tmpl;
     long i;
@@ -104,7 +105,7 @@ void Ov244_ArmSwingSweep(char *self, struct SwingEvent *ev)
     }
     tip = mtx.trans;
     VEC_Subtract(self + 0x14, &tip, &dir);
-    query.vCenter = *(Vec3 *)(self + 0x14);
+    query.vCenter = *(VecFx32 *)(self + 0x14);
     query.vCenter.y = 0x800;
     query.vAxisX = data_02042270;
     query.vAxisZ = data_02042258;

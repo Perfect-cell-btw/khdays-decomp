@@ -4,8 +4,10 @@
  * kind 0x80) plays alternating hurt sounds 0x125 (flag 0x22 picks the second pair). At 0 health the
  * next move is 3; a heavy hit (flag 0x8000) outside move 9 keeps its 0x22 flags in +0x5c and makes 9
  * next. Returns 1 (0 when already down). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { u8 a, b; } Pair2;
 typedef struct { unsigned lo : 16; unsigned hi : 16; } HitWord;
 
@@ -26,7 +28,7 @@ int Ov146_OnDamage(char *self, int attacker, char *hit)
     if (*(short *)(self + 0x21a) <= 0) {
         return 0;
     }
-    *(Vec3 *)(state + 7) = *(Vec3 *)(hit + 4);
+    *(VecFx32 *)(state + 7) = *(VecFx32 *)(hit + 4);
     *(int *)(hit + 0x28) = Ov107_CalcHitDamage(self, hit);
     hp = *(short *)(self + 0x21a) - *(int *)(hit + 0x28);
     *(short *)(self + 0x21a) = hp < 0 ? 0 : (hp > *(short *)(self + 0x218) ? *(short *)(self + 0x218) : hp);

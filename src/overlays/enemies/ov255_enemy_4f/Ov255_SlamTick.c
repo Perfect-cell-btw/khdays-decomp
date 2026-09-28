@@ -8,13 +8,15 @@
  * and reaction +0x3f8 mode 9 fires there. From 0.7 on the hook receives note 2 of
  * data_ov255_020d2b20 once (+0x62). Once the +0xc idle byte clears, the +0x54 cooldown is
  * re-rolled in [+0x224, +0x228] and sub-state 2 is requested. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo; u16 hi; } Cmd4;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
 typedef struct { int w[4]; } Quat;
-typedef struct { Vec3 c; Vec3 ax; Vec3 ay; Vec3 az; Vec3 ext; } Box;
+typedef struct { VecFx32 c; VecFx32 ax; VecFx32 ay; VecFx32 az; VecFx32 ext; } Box;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -24,21 +26,21 @@ typedef struct { Vec3 c; Vec3 ax; Vec3 ay; Vec3 az; Vec3 ext; } Box;
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern int Ov255_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern int Ov255_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_CollectCapsuleOverlaps(int owner, Box *box, int *hits);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern const Vec3 data_02042270;
-extern const Vec3 data_02042264;
-extern const Vec3 data_02042258;
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern const VecFx32 data_02042270;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02042258;
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov255_020d2b7c;
 extern const Cmd4 data_ov255_020d2b20[];
 extern int RandNextScaled(int n);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 
 static inline int RandRange(int lo, int hi)
 {
@@ -54,7 +56,7 @@ void Ov255_SlamTick(int *node)
 {
     int obj;
     int *state = (int *)node[1];
-    Vec3 dir;
+    VecFx32 dir;
     int hits[4];
     Box box;
     Quat q;
@@ -73,7 +75,7 @@ void Ov255_SlamTick(int *node)
     }
     state[0x10] = 0;
     Ov255_SteerToTarget(state, state[0x17], &dir, &speed);
-    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    ScaleVec3Fx12(speed, &dir, (VecFx32 *)(state + 4));
     state[0x11] += *(int *)(node[0] + 0x2c);
     n = state[0x11];
     if (n > 0x666 && n < 0x1000) {
@@ -88,7 +90,7 @@ void Ov255_SlamTick(int *node)
         box.ext.z = 0x1800;
         n = Ov107_CollectCapsuleOverlaps(*state, &box, hits);
         for (i = 0; i < n; i++) {
-            Vec3 push;
+            VecFx32 push;
             Cmd14 msg;
 
             obj = hits[i];

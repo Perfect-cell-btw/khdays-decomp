@@ -1,6 +1,8 @@
-#include "nitro/types.h"
 
 /* NitroSDK halfword copy primitive. */
+
+#include "nitro/types.h"
+
 asm void MIi_CpuCopy16(register const void *source,
                        register void *destination, register u32 size)
 {

@@ -7,23 +7,25 @@
  * owner's +0x60 bit 14 drops. A latched dive that is five floors away again pulls up: bit 10 drops,
  * message 9 at the target, sub-state 12. Otherwise the dive ends on landing (+0x17a bit 0): pose
  * 0x19, messages 2 and 0xf at the target, wing flap 3, effect 0x14, and 020d13cc runs next. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct b1 { unsigned char b0 : 1; };
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int Ov259_ComputeNormalizedDir(int *node, Vec3 pos);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int Ov259_ComputeNormalizedDir(int *node, VecFx32 pos);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int loop);
-extern void Ov259_ForwardSweep(int body, int a, int b, Vec3 v);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void Ov259_ForwardSweep(int body, int a, int b, VecFx32 v);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
 extern void Ov259_ArmPartnerCue(int *node, int effect, int loop);
 extern void Ov259_SlamSweepTick(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const short data_0203d210[];
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
@@ -31,16 +33,16 @@ extern const short data_0203d210[];
 void Ov259_TickDive(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 zero;
-    Vec3 d;
-    Vec3 n;
+    VecFx32 zero;
+    VecFx32 d;
+    VecFx32 n;
     int dist;
     int owner;
 
     state[0x1a] += *(int *)(node[0] + 0x2c);
     zero = data_02041dc8;
-    *(Vec3 *)(state + 5) = data_02041dc8;
-    VEC_Subtract((Vec3 *)(state + 0xb), (Vec3 *)state[4], &d);
+    *(VecFx32 *)(state + 5) = data_02041dc8;
+    VEC_Subtract((VecFx32 *)(state + 0xb), (VecFx32 *)state[4], &d);
     state[0x1e] = state[0x1f] = func_020050b4(d.x, d.z);
     VEC_Normalize(&d, &n);
     {
@@ -52,9 +54,9 @@ void Ov259_TickDive(int *node)
         state[7] = data_0203d210[idx + 1];
     }
     if (state[0x18] != 0) {
-        *(Vec3 *)(state + 5) = *(Vec3 *)(state + 0xe);
+        *(VecFx32 *)(state + 5) = *(VecFx32 *)(state + 0xe);
     }
-    dist = Ov259_ComputeNormalizedDir(node, *(Vec3 *)(state + 0xb));
+    dist = Ov259_ComputeNormalizedDir(node, *(VecFx32 *)(state + 0xb));
     state[6] += 0x660 - state[0x1a] / 2;
     if (dist < *(int *)(*state + 0x80) * 0x1c && state[0x15] == 0) {
         Ov107_PostTagUpdate(*state, 0x1a, 0);
@@ -64,7 +66,7 @@ void Ov259_TickDive(int *node)
         state[0x15] = 1;
     }
     if (state[0x18] == 0 && dist < *(int *)(*state + 0x80) * 2) {
-        *(Vec3 *)(state + 0xe) = *(Vec3 *)(state + 5);
+        *(VecFx32 *)(state + 0xe) = *(VecFx32 *)(state + 5);
         state[0x18] = 1;
     }
     owner = *state;
@@ -82,7 +84,7 @@ void Ov259_TickDive(int *node)
                 (hw60 & ~0xff00) |
                 (((unsigned int)(u16)((((unsigned int)hw60 << 0x10) >> 0x18) & ~4) << 0x18) >> 0x10);
         }
-        func_ov107_020c0b90(*state, 9, *(Vec3 *)state[4], 0);
+        func_ov107_020c0b90(*state, 9, *(VecFx32 *)state[4], 0);
         state[0x15] = 0;
         *(u8 *)(*state + 0x1c7) = 0xc;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
@@ -91,8 +93,8 @@ void Ov259_TickDive(int *node)
     if (((struct b1 *)(*state + 0x17a))->b0 != 0) {
         Ov107_PostTagUpdate(*state, 0x19, 0);
         Ov259_MirrorPartnerPose(node, 0x19, 0);
-        func_ov107_020c0b90(*state, 2, *(Vec3 *)state[4], 0);
-        func_ov107_020c0b90(*state, 0xf, *(Vec3 *)state[4], 0);
+        func_ov107_020c0b90(*state, 2, *(VecFx32 *)state[4], 0);
+        func_ov107_020c0b90(*state, 0xf, *(VecFx32 *)state[4], 0);
         Ov259_MapHeldItemKindToAnim(*state, 3);
         Ov259_ArmPartnerCue(node, 0x14, 0);
         state[0x1a] = 0;

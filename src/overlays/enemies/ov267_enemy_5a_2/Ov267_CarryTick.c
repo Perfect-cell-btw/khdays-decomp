@@ -7,13 +7,15 @@
  * +0x50 timer counts the owner's rate and, once past 0x2a8 -- or with nothing to carry -- an idle
  * enemy runs the pass, queues sub-state 2 and ends. Otherwise the speed decays per 0x88 slice of
  * the frame by 1.0 - 0x140 x (slice / 0x88). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Flags464 { char pad[0x464]; unsigned long long flags; };
 
-extern int *Collision_CastRay(void *world, Vec3 *origin, Vec3 *dir);
-extern void ScaleVec3Fixed27(int scale, Vec3 *in, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void Actor_SetVecAndSyncChild(int node, Vec3 *pos);
+extern int *Collision_CastRay(void *world, VecFx32 *origin, VecFx32 *dir);
+extern void ScaleVec3Fixed27(int scale, VecFx32 *in, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Actor_SetVecAndSyncChild(int node, VecFx32 *pos);
 extern void Ov022_ToggleBit13ByMode(int actor, int a);
 extern void Ov267_FlagSlotsDirty(int *state);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -27,9 +29,9 @@ static inline int FX_Mul(int a, int b)
 void Ov267_CarryTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 pos;
-    Vec3 from;
-    Vec3 down;
+    VecFx32 pos;
+    VecFx32 from;
+    VecFx32 down;
     int bIdle = 0;
     char *owner;
     int radius;
@@ -43,7 +45,7 @@ void Ov267_CarryTick(int *node)
     if (*(int *)(*state + 0x5ac) != 0 && state[3] != 0) {
         if ((((struct Flags464 *)state[3])->flags & 0x8000) != 0) {
             owner = *(char **)(*state + 4);
-            pos = *(Vec3 *)(*(int *)(*state + 0x5d4) + 0xb0);
+            pos = *(VecFx32 *)(*(int *)(*state + 0x5d4) + 0xb0);
             radius = *(int *)(*(int *)(*state + 0x5d4) + 0x80);
             from = pos;
             from.y += radius;

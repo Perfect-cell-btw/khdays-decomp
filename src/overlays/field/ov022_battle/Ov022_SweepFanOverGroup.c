@@ -13,15 +13,11 @@
  * way to it.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022FanQuery */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct FanQuery {
     VecFx32 vecOrigin;           /* 0x00 */
     int nRadius;                 /* 0x0c */

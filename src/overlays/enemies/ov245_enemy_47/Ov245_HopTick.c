@@ -12,16 +12,18 @@
  * anchor is re-clamped. A solid floor probe (01fff8e8, radius 0.1875) fires reaction 0x15a/6;
  * otherwise within 100.0 of the origin the +0x24 timer runs up and under 20.0 the hop goes on.
  * Ending plays effect 1 at the anchor, sub-state 0 and frees the node slot. */
-typedef struct { int x, y, z; } Vec3;
-struct Sphere { Vec3 centre; int radius; };
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+struct Sphere { VecFx32 centre; int radius; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
-#include "nitro/types.h"
 
 struct HitPacket {
     u32 flagsLo : 16;
     u32 flagsHi : 16;
-    Vec3 normal;
+    VecFx32 normal;
     int field_10 : 16;
     int field_12 : 16;
     int field_14 : 16;
@@ -36,31 +38,31 @@ struct HitPacket {
 };
 
 extern int Ov107_CollectSphereOverlaps(int actor, struct Sphere *sphere, int *out);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(int shape, struct Sphere *sphere, int a);
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
-extern void Ov107_MoveNodeAndRelayout(int actor, Vec3 *pos);
-extern int Collision_CastRay(int collision, const Vec3 *from, const Vec3 *step);
-extern int Collision_CastSphereEx(int collision, const Vec3 *from, const Vec3 *step, int radius, void *ignore);
-extern int VEC_Mag(const Vec3 *v);
-extern const Vec3 data_02041dc8;
+extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *pos);
+extern int Collision_CastRay(int collision, const VecFx32 *from, const VecFx32 *step);
+extern int Collision_CastSphereEx(int collision, const VecFx32 *from, const VecFx32 *step, int radius, void *ignore);
+extern int VEC_Mag(const VecFx32 *v);
+extern const VecFx32 data_02041dc8;
 
-static inline void VEC_Set(Vec3 *p, int x, int y, int z) { p->x = x; p->y = y; p->z = z; }
+static inline void VEC_Set(VecFx32 *p, int x, int y, int z) { p->x = x; p->y = y; p->z = z; }
 
 void Ov245_HopTick(int *node) {
     int *state = (int *)node[1];
     struct Sphere sphere;
-    Vec3 step;
+    VecFx32 step;
     int hits[4];
-    Vec3 push;
+    VecFx32 push;
     int scene = *(int *)(*state + 4);
     long n;
     int nHits;
@@ -73,14 +75,14 @@ void Ov245_HopTick(int *node) {
     if (state[0x11] == 0) {
         nHits = Ov107_CollectSphereOverlaps(*state, &sphere, hits);
         for (n = 0; n < nHits; n++) {
-            VEC_Subtract((Vec3 *)(hits[n] + 0x74), (Vec3 *)(*state + 0x74), &push);
+            VEC_Subtract((VecFx32 *)(hits[n] + 0x74), (VecFx32 *)(*state + 0x74), &push);
             push.y = 0;
             VEC_Normalize(&push, &push);
             if (state[0x13] != 0) {
                 ScaleVec3Fx12(0x800, &push, &push);
             }
             if (Ov107_InvokeHitCallback(hits[n], *state, *(int *)(*state + 0x390), 2, &push, 0) != 0) {
-                func_ov107_020c0b90(*state, 1, *(Vec3 *)state[2], 0);
+                func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[2], 0);
                 Ov107_BuildAndSendUpdate(*state, 0x15a, 5, (void *)state[2]);
                 *(unsigned char *)(*state + 0x1c7) = 0;
                 SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
@@ -114,7 +116,7 @@ void Ov245_HopTick(int *node) {
                     shape = List_Next((void *)(other + 0x22c));
                 }
                 if (n != 0) {
-                    func_ov107_020c0b90(*state, 1, *(Vec3 *)state[2], 0);
+                    func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[2], 0);
                     Ov107_BuildAndSendUpdate(*state, 0x15a, 5, (void *)state[2]);
                     *(unsigned char *)(*state + 0x1c7) = 0;
                     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
@@ -125,17 +127,17 @@ void Ov245_HopTick(int *node) {
             other = entry == 0 ? 0 : *entry;
         }
     }
-    VEC_Subtract((Vec3 *)state[2], (Vec3 *)(state + 14), &step);
-    *(Vec3 *)(state + 14) = *(Vec3 *)state[2];
+    VEC_Subtract((VecFx32 *)state[2], (VecFx32 *)(state + 14), &step);
+    *(VecFx32 *)(state + 14) = *(VecFx32 *)state[2];
     if (state[0x11] == 0) {
-        Vec3 flatAnchor;
+        VecFx32 flatAnchor;
         int *anchor = (int *)state[2];
         VEC_Set(&flatAnchor, anchor[0], 0, anchor[2]);
         if (state[0x13] != 0) {
-            *(Vec3 *)(state + 3) = data_02041dc8;
+            *(VecFx32 *)(state + 3) = data_02041dc8;
             Ov107_MoveNodeAndRelayout(*state, &flatAnchor);
-        } else if (Collision_CastRay(*(int *)(scene + 0x7c), (Vec3 *)state[2], &step) != 0) {
-            Vec3 at = *(Vec3 *)state[2];
+        } else if (Collision_CastRay(*(int *)(scene + 0x7c), (VecFx32 *)state[2], &step) != 0) {
+            VecFx32 at = *(VecFx32 *)state[2];
             at.y = 0;
             Ov107_BuildAndSendUpdate(*state, 0x15a, 6, (void *)state[2]);
             {
@@ -144,11 +146,11 @@ void Ov245_HopTick(int *node) {
                     ((((((unsigned int)hw << 0x10) >> 0x18) | 0x80) << 0x18) >> 0x10);
             }
             if (state[0x12] != 0) {
-                *(Vec3 *)(state + 3) = data_02041dc8;
+                *(VecFx32 *)(state + 3) = data_02041dc8;
                 Ov107_MoveNodeAndRelayout(*state, &flatAnchor);
                 state[0x13] = 1;
                 func_ov107_020c0b90(*state, 1, at, 0);
-                func_ov107_020c0b90(*state, 2, *(Vec3 *)state[2], 0);
+                func_ov107_020c0b90(*state, 2, *(VecFx32 *)state[2], 0);
             } else {
                 func_ov107_020c0b90(*state, 1, at, 0);
                 *(unsigned char *)(*state + 0x1c7) = 0;
@@ -157,16 +159,16 @@ void Ov245_HopTick(int *node) {
             }
         }
     }
-    hit = Collision_CastSphereEx(*(int *)(scene + 0x7c), (Vec3 *)state[2], &step, 0x300, 0);
+    hit = Collision_CastSphereEx(*(int *)(scene + 0x7c), (VecFx32 *)state[2], &step, 0x300, 0);
     if (hit != 0 && *(int *)(hit + 8) == 0) {
         Ov107_BuildAndSendUpdate(*state, 0x15a, 6, (void *)state[2]);
-    } else if (VEC_Mag((Vec3 *)state[2]) <= 0x64000) {
+    } else if (VEC_Mag((VecFx32 *)state[2]) <= 0x64000) {
         state[9] += *(int *)(node[0] + 0x2c);
         if (state[9] < 0x14000) {
             return;
         }
     }
-    func_ov107_020c0b90(*state, 1, *(Vec3 *)state[2], 0);
+    func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[2], 0);
     *(unsigned char *)(*state + 0x1c7) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
 }

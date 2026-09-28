@@ -28,6 +28,7 @@
  * 1 .. 8 with the default on the plain format inside the `stage >= 0 &&
  * record != -1` branch.
  */
+
 #include "nitro/types.h"
 
 #define MODE_INFO       6

@@ -4,7 +4,9 @@
  * less its distance, the unit directions scaled by those weights are summed by their share of the
  * total (64-bit ratios), and the +0xa0 pose is placed at the +0xb0 point plus that sum (c4ecc
  * afterwards). The base draw handler always runs. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
+
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
 
 extern void Ov107_RefreshAndSelectChild(int clip);

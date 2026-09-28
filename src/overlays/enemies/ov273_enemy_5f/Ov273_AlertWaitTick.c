@@ -3,7 +3,9 @@
  * flattened, normalised direction from the +4 anchor to the target's +0x74 position
  * (data_02042258 when degenerate) and copies it up to +0x38. Flags 0x82 clear in the actor's
  * +0x60 high byte, pose 0x1a plays and the node moves to 020cda00. */
+
 #include "nitro/types.h"
+
 struct m4 { int w[4]; };
 struct S213 { char pad[0x28]; struct m4 lo; struct m4 hi; };
 extern int  Ov107_FindNearestObject(int obj, int flag);

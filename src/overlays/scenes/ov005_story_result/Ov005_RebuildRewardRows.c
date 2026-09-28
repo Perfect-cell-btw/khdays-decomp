@@ -1,6 +1,7 @@
 /* Rebuilds both reward columns from the items that have a quantity in them; returns the counts. */
 
 #include "nitro/types.h"
+
 typedef struct Ov005MenuItemHeader {u16 itemId;char pad2[0x246];u8 quantities[2];u16 quantityLimit;} Ov005MenuItemHeader;
 typedef struct Ov005Context {char pad0[0x4c98];Ov005MenuItemHeader firstMenuItem[636];Ov005MenuItemHeader *firstItemSlot[2][636];} Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;

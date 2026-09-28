@@ -1,12 +1,13 @@
 /* Move entry: the actor plays pose 0x13, is knocked back with mode 3 in place, the +0x44 timer and
  * the +0x70 / +0x74 flags clear and the node moves to 020d0ad4. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov254_AiWindupTrackTick(void);
 
 void Ov254_KnockbackEntry(int *node)

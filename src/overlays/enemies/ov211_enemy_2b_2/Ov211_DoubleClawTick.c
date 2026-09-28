@@ -6,11 +6,13 @@
  * flags 3, carries the part point to the +0x24 hook and reaction 0 mode 0x4e fires there. Once the
  * +0xc idle byte clears, the +0x6c delay is drawn from the owner's [+0x224, +0x228] range and
  * sub-state 2 is requested. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flagLo : 4; u8 flagHi : 4; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \
@@ -19,14 +21,14 @@ typedef struct { Vec3 center; int nRadius; } Sphere;
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern const Vec3 data_02041dc8;
-extern const Vec3 data_02042258;
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern const VecFx32 data_02041dc8;
+extern const VecFx32 data_02042258;
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -54,9 +56,9 @@ void Ov211_DoubleClawTick(int *node)
     Fx32 scratch2X;
     int hits[4];
     Sphere sphere;
-    Vec3 push1;
+    VecFx32 push1;
     Cmd14 msg1;
-    Vec3 push2;
+    VecFx32 push2;
     Cmd14 msg2;
     int n;
     int i;
@@ -70,11 +72,11 @@ void Ov211_DoubleClawTick(int *node)
     }
     state[0xb] += *(int *)(node[0] + 0x2c);
     if (state[0xb] >= 0x1666 && state[0xb] <= 0x1aaa) {
-        sphere.center = *(Vec3 *)(*(int *)(*state + 0x3cc) + 0x14);
+        sphere.center = *(VecFx32 *)(*(int *)(*state + 0x3cc) + 0x14);
         sphere.nRadius = 0x6aa;
         n = Ov107_CollectSphereOverlaps(*state, &sphere, hits);
         for (i = 0; i < n; i++) {
-            Vec3 *at;
+            VecFx32 *at;
 
             VEC_Subtract((void *)(hits[i] + 0x74), (void *)(*state + 0x74), &push1);
             push1.y = 0;
@@ -86,7 +88,7 @@ void Ov211_DoubleClawTick(int *node)
                 continue;
             }
             msg1 = data_ov211_020d6538;
-            at = (Vec3 *)(*(int *)(*state + 0x3cc) + 0x14);
+            at = (VecFx32 *)(*(int *)(*state + 0x3cc) + 0x14);
             PACK(msg1, scratch1X, *(Fx32 *)&at->x, 5);
             PACK(msg1, scratch1Y, *(Fx32 *)&at->y, 8);
             PACK(msg1, scratch1Z, *(Fx32 *)&at->z, 11);
@@ -97,11 +99,11 @@ void Ov211_DoubleClawTick(int *node)
             }
             Ov107_BuildAndSendUpdate(*state, 0, 0x4e, (void *)(*(int *)(*state + 0x3cc) + 0x14));
         }
-        sphere.center = *(Vec3 *)(*(int *)(*state + 0x3c8) + 0x14);
+        sphere.center = *(VecFx32 *)(*(int *)(*state + 0x3c8) + 0x14);
         sphere.nRadius = 0x6aa;
         n = Ov107_CollectSphereOverlaps(*state, &sphere, hits);
         for (i = 0; i < n; i++) {
-            Vec3 *at;
+            VecFx32 *at;
 
             VEC_Subtract((void *)(hits[i] + 0x74), (void *)(*state + 0x74), &push2);
             push2.y = 0;
@@ -113,7 +115,7 @@ void Ov211_DoubleClawTick(int *node)
                 continue;
             }
             msg2 = data_ov211_020d6570;
-            at = (Vec3 *)(*(int *)(*state + 0x3c8) + 0x14);
+            at = (VecFx32 *)(*(int *)(*state + 0x3c8) + 0x14);
             PACK(msg2, scratch2X, *(Fx32 *)&at->x, 5);
             PACK(msg2, scratch2Y, *(Fx32 *)&at->y, 8);
             PACK(msg2, scratch2Z, *(Fx32 *)&at->z, 11);

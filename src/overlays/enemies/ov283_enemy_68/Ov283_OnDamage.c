@@ -4,8 +4,10 @@
  * picks the first pair) at the +8 point. The +0x50 stagger clock gains 1.99; at or below the +0x3e8
  * percentage of the maximum (or at 0 health) the next move is 3, else a heavy hit (flag 0x8000) makes
  * it 0xb. Returns 1 (0 when already down). */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { u8 a, b; } Pair2;
 typedef struct { unsigned lo : 16; unsigned hi : 16; } HitWord;
 
@@ -31,7 +33,7 @@ int Ov283_OnDamage(char *self, int attacker, char *hit)
     hp = *(short *)(self + 0x21a) - *(int *)(hit + 0x28);
     *(short *)(self + 0x21a) = hp < 0 ? 0 : (hp > *(short *)(self + 0x218) ? *(short *)(self + 0x218) : hp);
     state[3] = attacker;
-    *(Vec3 *)(state + 7) = *(Vec3 *)(hit + 4);
+    *(VecFx32 *)(state + 7) = *(VecFx32 *)(hit + 4);
     if (*(int *)(hit + 0x28) > 0) {
         if (((HitWord *)hit)->lo & 0x22) {
             Ov283_PostItemUpdate(self, 0x173, pickA[*((u8 *)state + 0x80)], state[2]);

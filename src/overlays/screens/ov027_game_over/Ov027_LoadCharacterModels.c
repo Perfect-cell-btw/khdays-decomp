@@ -8,18 +8,14 @@
  * on the row of data_ov027_02083e10 for that many characters.  In single player only the
  * player is loaded (Roxas, or Xion after byte 3 of data_0204c678 is set: entry 19), with
  * animation entry 2 and the position data_ov027_02083e04. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

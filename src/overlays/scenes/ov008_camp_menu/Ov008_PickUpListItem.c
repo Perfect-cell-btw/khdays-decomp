@@ -9,6 +9,7 @@
  * mode 0x14 is requested, the grid refreshed and the pending word cleared.
  * Returns 1.
  */
+
 #include "nitro/types.h"
 
 #define ENTRY_KIND_FIXED 2

@@ -2,9 +2,9 @@
  * creates its models and subitems, its three linked sub-actors and its resources. */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
-struct Vec3 { int x, y, z; };
-struct Box { struct Vec3 min, max; };
+struct Box { VecFx32 min, max; };
 
 struct Subitem {
     char pad00[0x5c];
@@ -77,14 +77,14 @@ extern int Ov147_AllocLinkChild3a4(struct Obj *self);
 
 extern char data_ov147_020ce8cc[];
 extern char data_ov147_020ce8d4[];
-extern struct Vec3 data_02042264;
+extern VecFx32 data_02042264;
 
 extern void *Ov107_PackTextureHandle(struct Obj *self, int index);
 extern struct Subitem *CreateSubitemInstance0xB4(void *item);
 extern void RegisterSubscriberSlot(void *list, struct Subitem *item);
 extern int FindResourceIndexByName(struct Subitem *item, char *name);
 extern void RefreshObjectCallbacks(struct Subitem *item, int value);
-extern void QuatFromAxisAngle(int *out, struct Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(int *out, VecFx32 *axis, int angle);
 extern void Ov107_Actor_SetAttachSlot(struct Obj *self, int index, int a, int b, int scale);
 extern void Ov107_EnqueueValue(struct Obj *self, struct Subitem *item);
 extern int *List_InsertSorted(void *pool, int size, int count);

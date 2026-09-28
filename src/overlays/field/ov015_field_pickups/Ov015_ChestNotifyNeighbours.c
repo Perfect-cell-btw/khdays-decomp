@@ -7,11 +7,12 @@
  * position when the class has a +0x24 handler.  A piece within range receives a hit
  * record (ov002 02076dac) carrying the opener (+0x726), kind 5, 10, 8 and mask 0x80 (def
  * class 0x1b) or 8, and its bit is set. */
-#include "nitro/types.h"
-
-typedef struct VecFx32 { int x, y, z; } VecFx32;
 
 /* Ov002HitShape: a sphere (shape 0) at the chest position */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct Ov015HitShape {
     s8   nShape;              /* 0x00: 0 sphere */
     u8   pad_01[3];

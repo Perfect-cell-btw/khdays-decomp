@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+
 typedef struct Vec3
 {
   int x;

@@ -8,7 +8,9 @@
  * (VEC_DotProduct >= 0xf00) clear *(*state[0]+0x384)+0xa8 and fire the transition (0203c634 with
  * the 020ce328 continuation); otherwise keep waiting.
  */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
@@ -21,8 +23,8 @@ extern int  data_02041dc8;
 
 void Ov275_FaceTargetAndGate(int *self) {
     int *state = (int *)self[1];
-    struct vec v;
-    struct vec dir;
+    VecFx32 v;
+    VecFx32 dir;
     int target;
 
     target = Ov107_FindNearestObject(*state, 0);
@@ -44,7 +46,7 @@ void Ov275_FaceTargetAndGate(int *self) {
         dir.y = 0;
         dir.z = (&data_0203d210)[idx * 2 + 1];
     }
-    *(struct vec *)(state + 5) = *(struct vec *)&data_02041dc8;
+    *(VecFx32 *)(state + 5) = *(VecFx32 *)&data_02041dc8;
     if (VEC_DotProduct(&dir, &v) < 0xf00) {
         return;
     }

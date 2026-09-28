@@ -6,17 +6,19 @@
  * +0x44 and clears +0x24. Returns 1 when handled.
  * Codegen: the part is read again from the owner's table inside the taken branch (a single `part`
  * read before the test swaps its register with the &v address). */
-typedef struct { int x, y, z; } Vec3;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct Ov245Owner { char pad[0x420]; int parts[3]; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern int RandNextScaled(int scale);
-extern void Ov245_PlanHop(int *state, Vec3 *target, int step);
+extern void Ov245_PlanHop(int *state, VecFx32 *target, int step);
 
 int Ov245_HopToPartHitFilter(int self, int a, unsigned int *hit) {
     int *state = *(int **)(self + 0x214);
-    Vec3 v;
+    VecFx32 v;
     int i;
     int j;
 
@@ -29,7 +31,7 @@ int Ov245_HopToPartHitFilter(int self, int a, unsigned int *hit) {
             if ((((struct hw60 *)(((struct Ov245Owner *)*(int *)(*state + 0x390))->parts[i] + 0x60))->lo & 1) != 0) {
                 int part = ((struct Ov245Owner *)*(int *)(*state + 0x390))->parts[i];
 
-                v = *(Vec3 *)(part + 0xb0);
+                v = *(VecFx32 *)(part + 0xb0);
                 v.y += *(int *)(part + 0x80);
                 Ov245_PlanHop(state, &v, 0x1000);
                 state[3] = (int)((*(s64 *)(state + 0xc) * state[6] + 0x80000000LL) >> 32);

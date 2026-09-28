@@ -4,6 +4,7 @@
  * list header and posts a join request (player index, target 0xff, arg 0) on
  * gate 0xd.  Returns the next state handler.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008JoinPacket {

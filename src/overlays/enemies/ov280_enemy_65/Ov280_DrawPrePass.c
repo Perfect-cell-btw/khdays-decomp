@@ -5,8 +5,10 @@
  * pieces follow: piece 0 takes the +0x3cc part's transform and passes it on to the +0x3bc part;
  * pieces 1/2 take the +0x3d4/+0x3d8 part's transform moved 0.5 back/forward and scaled out
  * sideways by the same ratio. Finally the base pre-pass (020c7ca4) runs. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { int m[4]; Vec3 trans; int pad[4]; } Srt;
+
+#include "nitro/fx.h"
+
+typedef struct { int m[4]; VecFx32 trans; int pad[4]; } Srt;
 struct Pieces { char pad[0x3c0]; int piece[3]; };
 struct Piece { char pad[0x10]; Srt srt; };
 struct Part { char pad[4]; Srt srt; };
@@ -14,16 +16,16 @@ struct Part { char pad[4]; Srt srt; };
 extern int FX_Div(int num, int den);
 extern void Srt_SetScaleXYZ(void *srt, int x, int y, int z);
 extern void TaskList_FinishByTag(void *taskList, void *handle);
-extern void Vec3TransformViaTempMtx(Vec3 *out, const Srt *m, const Vec3 *in);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void Srt_SetTranslation(Srt *t, const Vec3 *v);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, const Srt *m, const VecFx32 *in);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Srt_SetTranslation(Srt *t, const VecFx32 *v);
 extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov280_DrawPrePass(char *self)
 {
     int w = FX_Div(0x2908, 0x1119);
     Srt xf;
-    Vec3 off;
+    VecFx32 off;
     signed char i;
 
     *(Srt *)(self + 0x3dc) = *(Srt *)(self + 0xa0);

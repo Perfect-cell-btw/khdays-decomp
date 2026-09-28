@@ -6,26 +6,27 @@
  * by the +0x84 sense x 0x80, plus the retreat when closer than 6.0. A 1/257 roll requests
  * sub-state 5; otherwise beyond 7.0 a second 1/257 roll (or an expired +0x74 timer) requests
  * sub-state 4, and inside 7.0 an expired timer requests 9 (beyond 3.0), 8 (beyond 1.0) or 7. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);
 extern int FX_Sqrt(int x);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 void Ov184_CircleTick(int node)
 {
     int *state = *(int **)(node + 4);
     int dist;
-    Vec3 d;
-    Vec3 back;
+    VecFx32 d;
+    VecFx32 back;
     int obj;
     int target;
 
@@ -40,18 +41,18 @@ void Ov184_CircleTick(int node)
     if (dist > *(int *)(*state + 0x2d8)) {
         return;
     }
-    VEC_Subtract((Vec3 *)(state[4] + 0x190), (Vec3 *)state[1], &d);
+    VEC_Subtract((VecFx32 *)(state[4] + 0x190), (VecFx32 *)state[1], &d);
     ScaleVec3Fx12(-0x1000, &d, &back);
     VEC_Normalize(&back, &back);
     ScaleVec3Fx12(0x80, &back, &back);
     state[6] = func_020050b4(d.x, d.z);
     d.y = 0;
     VEC_Normalize(&d, &d);
-    VEC_CrossProduct(&d, &data_02042264, (Vec3 *)(state + 0x15));
-    VEC_Normalize((Vec3 *)(state + 0x15), (Vec3 *)(state + 0x15));
-    ScaleVec3Fx12(state[0x21] << 7, (Vec3 *)(state + 0x15), (Vec3 *)(state + 0x15));
+    VEC_CrossProduct(&d, &data_02042264, (VecFx32 *)(state + 0x15));
+    VEC_Normalize((VecFx32 *)(state + 0x15), (VecFx32 *)(state + 0x15));
+    ScaleVec3Fx12(state[0x21] << 7, (VecFx32 *)(state + 0x15), (VecFx32 *)(state + 0x15));
     if (dist < 0x6000) {
-        VEC_Add((Vec3 *)(state + 0x15), &back, (Vec3 *)(state + 0x15));
+        VEC_Add((VecFx32 *)(state + 0x15), &back, (VecFx32 *)(state + 0x15));
     }
     if (RandNextScaled(0x101) + (dist - dist) == 0) {
         *(unsigned char *)(*state + 0x1c7) = 5;

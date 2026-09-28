@@ -1,10 +1,12 @@
 /* Consume the ov106 scene's queued points that `target` reaches (020b7e38): each live one of the four
  * +0x8dd8 slots it hits is freed. */
-typedef struct { int x, y, z; } Vec3;
-struct Ov106Scene { char pad[0x8dd8]; Vec3 points[4]; int used[4]; };
+
+#include "nitro/fx.h"
+
+struct Ov106Scene { char pad[0x8dd8]; VecFx32 points[4]; int used[4]; };
 
 extern struct Ov106Scene *data_ov106_020b8b60;
-extern int Ov106_TestPointAgainstWidget(void *target, Vec3 *point);
+extern int Ov106_TestPointAgainstWidget(void *target, VecFx32 *point);
 
 void Ov106_ConsumeReachedPoints(void *target)
 {

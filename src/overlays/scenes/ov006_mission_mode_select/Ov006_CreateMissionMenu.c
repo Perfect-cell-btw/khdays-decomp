@@ -3,6 +3,7 @@
  * setup path and returns the next state callback. */
 
 #include "nitro/types.h"
+
 typedef void (*MissionState)(void);
 
 typedef struct {

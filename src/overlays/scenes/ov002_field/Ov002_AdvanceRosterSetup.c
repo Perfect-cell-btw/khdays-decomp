@@ -1,16 +1,13 @@
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
 
 /* The roster block the overlay keeps at +0x8bcc of its root.  The seats it
    points at are Ov002RosterSlot records: vecBase at +0, nBaseValue at +0xc,
    nSeatId at +0x10, aSeatData at +0x14, vecTarget at +0x34 and nTargetValue
    at +0x40.  They are reached here through a walking byte offset rather than
    an index, which is what keeps the multiply out of the loops. */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct Ov002RosterBlock {
     void *pInstance;                /* +0x00, -1 until the class is made */
     char *pSeats;                   /* +0x04, four 0x44 byte seats */
@@ -31,7 +28,7 @@ typedef struct Ov002SessionCmd {
     u8 bSeat;                       /* +0x01 */
     u8 bSeatId;                     /* +0x02 */
     char pad03[1];
-    Vec3 vPos;                      /* +0x04 */
+    VecFx32 vPos;                      /* +0x04 */
     int nBaseValue;                 /* +0x10 */
     char aName[0x10];               /* +0x14 */
 } Ov002SessionCmd;                  /* 0x24 */
@@ -255,7 +252,7 @@ int Ov002_AdvanceRosterSetup(int nMode)
                                  + (*(s8 *)(pRoot + 0x8db6) - 1) * 0x44;
                         cmd.bSeat = (u8)(*(s8 *)(pRoot + 0x8db6) - 1);
                         cmd.bSeatId = (u8)*(int *)(pEntry + 0x10);
-                        cmd.vPos = *(Vec3 *)pEntry;
+                        cmd.vPos = *(VecFx32 *)pEntry;
                         cmd.nBaseValue = *(int *)(pEntry + 0xc);
                         strcpy(cmd.aName, pEntry + 0x14);
                         if (Ov002_BuildSessionCommand(6, &cmd) == 0xffff) {

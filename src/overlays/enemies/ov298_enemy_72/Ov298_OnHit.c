@@ -8,13 +8,14 @@
  * stamina to 1 and request sub-state 9; spent stamina is pinned at 1; a hit count at the
  * actor's +0x398 threshold with a valid +0x95 mode requests sub-state 8 and resets the count;
  * a 0x8000 hit requests sub-state 6. */
+
 #include "nitro/types.h"
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    Vec3 vPoint;
+    VecFx32 vPoint;
     int nDamage10;
     char pad014[0xc];
     unsigned int uMode20;
@@ -67,7 +68,7 @@ int Ov298_OnHit(char *actor, int nParam, struct ActorHitEvent *hit)
     }
     *(short *)(actor + 0x21a) = (short)rem;
     state[3] = nParam;
-    *(Vec3 *)(state + 7) = hit->vPoint;
+    *(VecFx32 *)(state + 7) = hit->vPoint;
     if (hit->nDamage > 0) {
         if ((hit->uFlagsLo & 8) == 0 || (hit->uFlagsLo & 0x80) == 0 || hit->uFlagsHi != 0x80) {
             if ((hit->uFlagsLo & 0x22) != 0) {

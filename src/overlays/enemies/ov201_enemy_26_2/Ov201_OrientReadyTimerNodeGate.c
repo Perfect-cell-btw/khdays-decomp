@@ -16,7 +16,9 @@
  * use gap with it) while mwcc sinks it past the `cb != 0` branch, where it is first needed. Binding
  * it to a local pointer and copying THROUGH that pointer makes it live from the top of the block.
  */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
+
 struct h2 { unsigned short a, b; };
 extern int  Ov201_GetState(int obj);
 extern void VEC_Add(void *a, void *b, void *c);
@@ -26,7 +28,7 @@ extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern int  Ov201_IsMode1(int obj);
 extern int  data_02042264;
-extern struct vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern struct h2 data_ov201_020d546c[];
 extern void Ov201_AiRollTimerOnAnimEnd(void);
 
@@ -48,7 +50,7 @@ void Ov201_OrientReadyTimerNodeGate(int *self) {
     }
     Mtx33_LookAt(v, (void *)(state + 0xc), state[0x13], &data_02042264);
     Quat_FromMtx33((void *)(state + 0x25), v);
-    *(struct vec3 *)(state + 9) = data_02041dc8;
+    *(VecFx32 *)(state + 9) = data_02041dc8;
     state[0x14] += *(int *)(*self + 0x2c);
     if (state[0x14] >= 0x2a80) {
         struct h2 *ps = &scratch;

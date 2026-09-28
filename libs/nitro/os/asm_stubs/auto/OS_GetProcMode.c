@@ -1,6 +1,7 @@
 /* NitroSDK original assembly (libraries/os/src/os_system.c). */
 
 #include "nitro/types.h"
+
 typedef unsigned int OSProcMode;
 
 #define HW_PSR_CPU_MODE_MASK         0x1f

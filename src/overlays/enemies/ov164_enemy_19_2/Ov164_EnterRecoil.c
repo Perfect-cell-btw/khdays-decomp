@@ -8,6 +8,9 @@
  * overwrite of its first halfword; that is what makes mwcc emit the two loads before the
  * two stores, in descending address order, as the ROM does. Written field by field the
  * loads pair up with their stores and the order flips. */
+
+#include "nitro/fx.h"
+
 extern void func_02031384(int a, void *p, int c);
 extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
@@ -16,7 +19,6 @@ extern unsigned short data_ov164_020d2c88[];
 extern int data_02041dc8[];
 
 typedef struct { unsigned short a, b; } Ov163Pair;
-typedef struct { int x, y, z; } VecFx32;
 
 void Ov164_EnterRecoil(int *node) {
     int *state = (int *)node[1];

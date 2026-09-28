@@ -1,5 +1,6 @@
 /* Refresh the three panel row headers for the current kind, then replay the
  * 0x5a sub request and re-select entry 0xb. */
+
 #include "nitro/types.h"
 
 typedef struct {

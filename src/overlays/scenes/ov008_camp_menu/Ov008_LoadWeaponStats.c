@@ -7,9 +7,11 @@
  * pageB+0x1e0..0x1e6 (the first field picks buf.he vs buf.h2 by `flag`) and a u32 to pageB+0x1dc.
  * The page-B fields are signed 16-bit (ldrsh), and the 0x1e0/e2/e4/e6 group shares the pageB+0x100
  * base because the halfword store offset cannot reach 0x1e0 directly. */
-#include "nitro/types.h"
 
 /* Weapon-stat record filled by Ov008_LoadCharacterWeapon (0208b890); 32 bytes. */
+
+#include "nitro/types.h"
+
 typedef struct {
     s16  h0, h2, h4, h6;
     int  w8;

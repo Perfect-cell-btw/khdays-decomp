@@ -3,6 +3,7 @@
  * (01fff974) the "opening" flag (bit 2 of +0x464) is cleared and the mask reset.  Returns
  * the expected mask (the callers ignore it; the non-void result is what keeps the mask's
  * register out of the store tail). */
+
 #include "nitro/types.h"
 
 extern u16 GetGlobalU16At6(void);                        /* expected-ack mask of the session */

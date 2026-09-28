@@ -5,28 +5,30 @@
  * actor radius finds no floor, the velocity is zeroed. The velocity is then published to +0xf0 and reset to zero
  * (data_02041dc8); if the 020cf3fc check passes the +0x44 timer resets, otherwise it counts
  * the rate up to 0xf000, and the rate is recorded at +0x580. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int q[4]; } Quat;
 typedef struct { unsigned short lo : 8, hi : 8; } Hw60;
 
 extern void Ov267_GrabPhaseMachine(int *state);
 extern int Angle_TurnToward(int cur, int target, int step, int done);
-extern void QuatFromAxisAngle(Quat *out, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(void *srt, Quat *q);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *pose, const Vec3 *in);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int *Collision_CastRay(void *world, Vec3 *origin, Vec3 *dir);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *pose, const VecFx32 *in);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int *Collision_CastRay(void *world, VecFx32 *origin, VecFx32 *dir);
 extern int Ov267_CheckState6c(int *state, int a);
-extern const Vec3 data_02042264;
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02042264;
+extern const VecFx32 data_02041dc8;
 
 void Ov267_FrameStep(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 down;
+    VecFx32 down;
     Quat q;
-    Vec3 next;
-    Vec3 up;
+    VecFx32 next;
+    VecFx32 up;
     char *owner = *(char **)(*state + 4);
 
     if ((((Hw60 *)(*state + 0x60))->lo & 1) != 0) {
@@ -39,18 +41,18 @@ void Ov267_FrameStep(int *node)
         up = data_02041dc8;
         next = data_02041dc8;
         Vec3TransformViaTempMtx(&next, (void *)(state + 0x28), &next);
-        VEC_Add(&next, (Vec3 *)(*state + 0x74), &next);
-        VEC_Add(&next, (Vec3 *)(state + 4), &next);
+        VEC_Add(&next, (VecFx32 *)(*state + 0x74), &next);
+        VEC_Add(&next, (VecFx32 *)(state + 4), &next);
         down.y = -(*(int *)(*state + 0x80) + 0x2000);
         down.x = 0;
         down.z = 0;
         if (Collision_CastRay(*(void **)(owner + 0x7c), &next, &down) == 0) {
-            *(Vec3 *)(state + 4) = up;
+            *(VecFx32 *)(state + 4) = up;
         }
     }
     {
-        Vec3 *pVel = (Vec3 *)(state + 4);
-        *(Vec3 *)(*state + 0xf0) = *pVel;
+        VecFx32 *pVel = (VecFx32 *)(state + 4);
+        *(VecFx32 *)(*state + 0xf0) = *pVel;
         *pVel = data_02041dc8;
     }
     if (Ov267_CheckState6c(state, 1) != 0) {

@@ -9,9 +9,9 @@
  * hits carrying both flag 8 and flag 0x80. An emptied timer ends in sub-state 3; otherwise a
  * 0x8000 hit outside sub-state 8 goes to 0xd from 0xc/0xd and to 0xc from anything else.
  */
-#include "nitro/types.h"
 
-struct Vec3 { int x; int y; int z; };
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 struct Ov166ActionState {
     int pOwner;
@@ -20,7 +20,7 @@ struct Ov166ActionState {
     char pad00c[4];
     int nParam;
     char pad014[0x18];
-    struct Vec3 vHit;
+    VecFx32 vHit;
     char pad038[0x4d];
     u8 nToggle85;
 };
@@ -28,7 +28,7 @@ struct Ov166ActionState {
 struct ActorHitEvent {
     unsigned int uFlagsLo : 16;
     unsigned int uFlagsHi : 16;
-    struct Vec3 vPoint;
+    VecFx32 vPoint;
     char pad010[8];
     int pSource18;
     char pad01c[4];

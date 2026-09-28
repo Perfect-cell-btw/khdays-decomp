@@ -19,6 +19,7 @@
  * counters with the sub count in a u16 local; the sub position is written
  * "slot / 4096 + anchor" (division first).
  */
+
 #include "nitro/types.h"
 
 #define TEXT_DISABLED  3

@@ -7,18 +7,14 @@
  * (+0x5c0) becomes 1, otherwise the cursor.  Every frame the choice slot is either queued
  * (Ov027_EnqueuePanel 02083cb8) while its blink phase (+0x574) is 0 or blinked
  * (Ov027_BlinkPanelSlot 02083918). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

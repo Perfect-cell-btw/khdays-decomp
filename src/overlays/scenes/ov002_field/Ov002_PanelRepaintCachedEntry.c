@@ -1,6 +1,7 @@
 /* Repaint the panel around the cached sub-entry: highlight the slot it lives
  * in, colour the confirm label by whether the entry is actually usable, and
  * flip the confirm/cancel pair to whichever side the current kind wants. */
+
 #include "nitro/types.h"
 
 typedef struct {

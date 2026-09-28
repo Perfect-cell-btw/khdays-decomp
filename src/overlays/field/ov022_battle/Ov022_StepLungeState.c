@@ -16,15 +16,11 @@
  * in flag-3) or frame 0x9000 (dropping flag-2 bit 9) ends into state 0xc.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022ActorNode */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ActorNode {
     u8 pad00[0x80];
     u16 nAngle;                  /* 0x80 */

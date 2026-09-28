@@ -5,33 +5,35 @@
  * partner's pose; alone, the health is saved in +0x4a0 and the same flags change on the actor itself.
  * Then +0x60 / +0x64 are set, effect 0x12 plays, the rig's flag 0 clears, the merge sound (0x12d
  * variant 0x11) plays and the brain waits on 020d09cc. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 typedef struct { u8 b0 : 1; } Bit0;
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void Ov107_MoveNodeAndRelayout(int owner, const Vec3 *pos);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void Ov107_MoveNodeAndRelayout(int owner, const VecFx32 *pos);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, int at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov237_Reaction_DispatchByOwnerFlag(void);
-extern const Vec3 data_ov237_020d1bf4;
+extern const VecFx32 data_ov237_020d1bf4;
 
 void Ov237_TickRejoin(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 from;
-    Vec3 to;
-    Vec3 d;
+    VecFx32 from;
+    VecFx32 to;
+    VecFx32 d;
     int dist;
 
-    from = *(Vec3 *)state[0xe];
-    to = *(Vec3 *)(*state + 0x4c4);
+    from = *(VecFx32 *)state[0xe];
+    to = *(VecFx32 *)(*state + 0x4c4);
     VEC_Subtract(&to, &from, &d);
     dist = VEC_Normalize(&d, &d);
-    *(Vec3 *)(state + 0xf) = data_ov237_020d1bf4;
+    *(VecFx32 *)(state + 0xf) = data_ov237_020d1bf4;
     if (!(dist >= 0x2000 && !((Bit0 *)(*state + 0x17a))->b0)) {
         if (*(int *)(*state + 0x4ac) != 0) {
             int hp = *(short *)(*state + 0x21a);
@@ -54,7 +56,7 @@ void Ov237_TickRejoin(int *node)
                     ((((((unsigned int)hw << 0x10) >> 0x18) | 0xc6) << 0x18) >> 0x10);
             }
             *(u16 *)(*(int *)(*state + 0x4a4) + 0x1ae) |= 1;
-            Ov107_MoveNodeAndRelayout(*state, (Vec3 *)(*(int *)(*state + 0x4a4) + 0xb0));
+            Ov107_MoveNodeAndRelayout(*state, (VecFx32 *)(*(int *)(*state + 0x4a4) + 0xb0));
         } else if (*(int *)(*state + 0x4ac) == 0) {
             *(short *)(*state + 0x4a0) = *(short *)(*state + 0x21a);
             *(int *)(*state + 0x4b0) = 0;
@@ -75,7 +77,7 @@ void Ov237_TickRejoin(int *node)
         }
         state[0x19] = 1;
         state[0x18] = 1;
-        func_ov107_020c0b90(*state, 0x12, *(Vec3 *)state[0xe], 0);
+        func_ov107_020c0b90(*state, 0x12, *(VecFx32 *)state[0xe], 0);
         ((B8 *)(*(int *)(*state + 0x488) + 8))->f &= ~1;
         Ov107_BuildAndSendUpdate(*state, 0x12d, 0x11, state[0xe]);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov237_Reaction_DispatchByOwnerFlag);

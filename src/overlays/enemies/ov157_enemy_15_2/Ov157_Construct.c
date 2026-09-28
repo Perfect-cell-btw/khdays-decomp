@@ -8,8 +8,10 @@
  * +0x394 at y 0xb00 with scale 0xb00) and two on the +0x22c list (+0x38c at the origin with
  * scale 0xd33, +0x388 at y 0xb00 with scale 0x266, bit 1 raised on its +8 flags), two held items
  * (cdee4) into an 8-byte table (+0x3a4) and loads sound 0x13d. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef void (*Callback)(void);
 
 struct bf { unsigned int b : 8; };
@@ -19,7 +21,7 @@ struct PoolIds {
 };
 
 struct Pose {
-    Vec3 pos;
+    VecFx32 pos;
     int scale;
 };
 
@@ -44,23 +46,23 @@ extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int a, const char *name);
 extern void *CallocInstance(int size);
 extern void Ov107_EnqueueValue(char *self, int item);
-extern void Ov107_Actor_SetAttachSlot(char *self, int a, int b, Vec3 *lift, int id);
+extern void Ov107_Actor_SetAttachSlot(char *self, int a, int b, VecFx32 *lift, int id);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(struct Pose *pose);
 extern int Ov157_Actor_New(char *self);
 extern void Res_RequestIdPair(int id);
 extern const struct PoolIds data_ov157_020d0ba0;
-extern const Vec3 data_ov157_020d0b94;
+extern const VecFx32 data_ov157_020d0b94;
 extern const char data_ov157_020d0c0c[];
 extern const char data_ov157_020d0c14[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov157_Construct(char *self)
 {
     struct PoolIds pools;
     struct Pose pose;
-    Vec3 lift;
-    Vec3 zero;
+    VecFx32 lift;
+    VecFx32 zero;
     int *p;
     int i;
 

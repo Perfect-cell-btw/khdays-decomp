@@ -2,6 +2,7 @@
  * excluded), walks the candidate lists to the next one, and updates the selection state. */
 
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov022LowByteBits {
     unsigned short lowByte : 8;
@@ -13,12 +14,6 @@ typedef struct Ov022RegisterState {
     int index;
     struct Ov022Candidate *candidate;
 } Ov022RegisterState;
-
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
 
 typedef struct Ov022SelectionRecord {
     int distance;

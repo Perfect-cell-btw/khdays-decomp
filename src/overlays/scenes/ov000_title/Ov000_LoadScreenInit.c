@@ -2,6 +2,7 @@
  * the load tick. */
 
 #include "nitro/types.h"
+
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

@@ -2,11 +2,7 @@
  * accepts. Ghidra models the object as Ov002ParkOwner; the struct below is the
  * codegen view of the same fields. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct {
     char pad0000[0x1434];

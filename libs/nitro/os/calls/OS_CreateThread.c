@@ -1,7 +1,7 @@
-#define NULL ((void *)0)
-
 #include "nitro/types.h"
 #include "nitro/os.h"
+
+#define NULL ((void *)0)
 
 typedef void (*OSThreadFunc)(void *pArg);
 

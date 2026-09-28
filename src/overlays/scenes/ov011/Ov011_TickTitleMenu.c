@@ -20,7 +20,9 @@
  *      two globals reads; the named base flips the register order so the `ldm` that
  *      loads {nTimer, pScene} together is emitted -- the last 16 words of the residue.
  */
+
 #include "nitro/types.h"
+
 typedef void (*Ov011StateFn)(void);
 
 typedef struct Ov011Scene {

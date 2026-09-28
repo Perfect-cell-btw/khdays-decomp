@@ -6,6 +6,7 @@
  * resource, attaches subfile 7 (02055534), then registers four cells (tags 0,1,2,4 -- 3 is
  * deliberately skipped) by looking each up (02055808) and adding it (0205589c).
  * Resource-cell layout mirrors the ov000 loader (screen/character/palette pointer trio). */
+
 #include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;

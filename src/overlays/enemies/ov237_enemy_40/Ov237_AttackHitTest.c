@@ -3,22 +3,23 @@
  * marked it in the +0x57 mask, is pushed (020ca918, kind `kind`). The first target hit spawns effect
  * `effect` 1.25 above it, plays hit sound 0x12d (variant 5 for kind 0, 0xc for kinds 2 / 4) and
  * returns 1; 0 when nothing is hit. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
 extern int Ov107_CollectCapsuleOverlaps(int owner, void *box, int *hits);
 extern int Ov107_CollectSegmentOverlaps(int owner, void *segment, int *hits);
-extern Vec3 Ov237_RotateByActorHeading(int *node, Vec3 *target);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern VecFx32 Ov237_RotateByActorHeading(int *node, VecFx32 *target);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, int at);
 
-int Ov237_AttackHitTest(int *node, void *sphere, void *box, void *segment, Vec3 *push, int once, u16 effect, u16 kind)
+int Ov237_AttackHitTest(int *node, void *sphere, void *box, void *segment, VecFx32 *push, int once, u16 effect, u16 kind)
 {
     int *state = (int *)node[1];
     int hits[4];
-    Vec3 pos;
+    VecFx32 pos;
     long n;
     long i;
     u8 bit;
@@ -39,7 +40,7 @@ int Ov237_AttackHitTest(int *node, void *sphere, void *box, void *segment, Vec3 
         if (Ov107_InvokeHitCallback(hits[i], *state, *state, kind, push, 0) == 0) {
             continue;
         }
-        pos = *(Vec3 *)(hits[i] + 0x190);
+        pos = *(VecFx32 *)(hits[i] + 0x190);
         pos.y += 0x1400;
         if (once != 0) {
             *((u8 *)state + 0x57) |= bit;

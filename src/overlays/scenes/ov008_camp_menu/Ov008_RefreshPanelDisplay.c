@@ -6,6 +6,7 @@
  * fresh cell (Ov008_FindEntryByTag tag 0x3e8 -> Ov008_TagTracker_InvokeCallback) to the list at ctx+0x5c,
  * closes the four render surfaces (ctx+0xc19c/0xc1d8/0xc214/0xc160), clears the scroll on the two
  * widget groups (ctx+0x7530 and ctx+0x2ab0), and tears down the two sub-panels (ctx+0x5c, ctx+0x10). */
+
 #include "nitro/types.h"
 
 extern char *data_ov008_02090fac;

@@ -5,11 +5,12 @@
  * interpolated (Vec3ScaleAddQ27), clamped to the segment ends. The point must lie inside the box's
  * XZ bounds and, for a box not turned by a multiple of 90 degrees, inside its rotated footprint.
  * Returns the new ratio (also stored as the best hit) or -1.0 when there is no better hit. */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
+
 typedef u64 REGType64;           /* the SDK register type is not volatile */
 
-typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 _00, _01, _10, _11; } MtxFx22;
 typedef struct { fx32 x, z; } XZ;
 

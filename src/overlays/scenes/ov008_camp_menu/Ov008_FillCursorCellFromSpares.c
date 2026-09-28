@@ -11,6 +11,7 @@
  * dispatched by kind; the grid hits are rebuilt and 1 returned.  Returns 0
  * otherwise.
  */
+
 #include "nitro/types.h"
 
 #define GRID_PAGES 3

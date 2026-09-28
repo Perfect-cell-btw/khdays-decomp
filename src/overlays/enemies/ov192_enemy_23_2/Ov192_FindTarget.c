@@ -3,14 +3,16 @@
  * the surface distance (squared distance between the +0x74 positions minus both +0x80 radii
  * squared, floored at zero). Without bit 2 of the 0204c240 flags the first candidate not marked
  * at +0x1b4 wins; with it the nearest of all candidates does. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct flags40 { int bit0 : 1, bit1 : 1; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern unsigned char data_0204c240;
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 
 int Ov192_FindTarget(int self, int *out)
 {
@@ -19,8 +21,8 @@ int Ov192_FindTarget(int self, int *out)
     int owner = *(int *)(self + 4);
     int *pNode;
     int actor;
-    Vec3 dNear;
-    Vec3 dAll;
+    VecFx32 dNear;
+    VecFx32 dAll;
     long long distSq;
     long long radSq;
     int dist;
@@ -31,7 +33,7 @@ int Ov192_FindTarget(int self, int *out)
         while (actor != 0) {
             if (((struct flags40 *)(actor + 0x40))->bit1 && (((struct hw60 *)(actor + 0x60))->lo & 1) != 0
                 && *(unsigned char *)(actor + 0x1b4) == 0) {
-                VEC_Subtract((Vec3 *)(actor + 0x74), (Vec3 *)(self + 0x74), &dNear);
+                VEC_Subtract((VecFx32 *)(actor + 0x74), (VecFx32 *)(self + 0x74), &dNear);
                 distSq = (long long)dNear.x * dNear.x + (long long)dNear.y * dNear.y
                        + (long long)dNear.z * dNear.z;
                 radSq = (long long)*(int *)(self + 0x80) * *(int *)(self + 0x80)
@@ -51,7 +53,7 @@ int Ov192_FindTarget(int self, int *out)
         actor = pNode == 0 ? 0 : *pNode;
         while (actor != 0) {
             if (((struct flags40 *)(actor + 0x40))->bit1 && (((struct hw60 *)(actor + 0x60))->lo & 1) != 0) {
-                VEC_Subtract((Vec3 *)(actor + 0x74), (Vec3 *)(self + 0x74), &dAll);
+                VEC_Subtract((VecFx32 *)(actor + 0x74), (VecFx32 *)(self + 0x74), &dAll);
                 distSq = (long long)dAll.x * dAll.x + (long long)dAll.y * dAll.y
                        + (long long)dAll.z * dAll.z;
                 radSq = (long long)*(int *)(self + 0x80) * *(int *)(self + 0x80)

@@ -3,13 +3,14 @@
  * are scaled to a random reach between 20.0 and 40.0, the +0x30 one stays a unit vector. +0x3c
  * becomes 2.0 or 12.0 at random, bit 0 of the +0x60 high byte is raised, +0x48 takes another
  * random angle, +0x40 clears and the tick hands over to Ov210_AiSwoopDelay. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern long long RandNextScaled(int bound);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern void Ov210_AiSwoopDelay(int *node);
@@ -29,12 +30,12 @@ void Ov210_SetupScatter(int *node)
     state[2] = data_0203d210[idx * 2];
     state[3] = 0;
     state[4] = data_0203d210[idx * 2 + 1];
-    ScaleVec3Fx12(RandRange(0x14000, 0x28000), (Vec3 *)(state + 2), (Vec3 *)(state + 2));
+    ScaleVec3Fx12(RandRange(0x14000, 0x28000), (VecFx32 *)(state + 2), (VecFx32 *)(state + 2));
     idx2 = ANG2IDX(RandRange(-0x3244, 0x3244));
     state[5] = data_0203d210[idx2 * 2];
     state[6] = 0;
     state[7] = data_0203d210[idx2 * 2 + 1];
-    ScaleVec3Fx12(RandRange(0x14000, 0x28000), (Vec3 *)(state + 5), (Vec3 *)(state + 5));
+    ScaleVec3Fx12(RandRange(0x14000, 0x28000), (VecFx32 *)(state + 5), (VecFx32 *)(state + 5));
     idx = ANG2IDX(RandRange(-0x3244, 0x3244));
     state[0xc] = data_0203d210[idx * 2];
     state[0xd] = 0;

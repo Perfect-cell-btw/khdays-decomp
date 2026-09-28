@@ -7,6 +7,7 @@
  * `const` on the two rect tables lets their loads float above the stack-argument
  * stores (ROM order); the first visibility is `!bOn` (evaluated last, in place).
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008PanelContext {

@@ -2,11 +2,7 @@
  * from up to four sphere contacts, then cast vertically and settle pPosition at the returned
  * surface. */
 
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct SphereFx32 {
     VecFx32 center;

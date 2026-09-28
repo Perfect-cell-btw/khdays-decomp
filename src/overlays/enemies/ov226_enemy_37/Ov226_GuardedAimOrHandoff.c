@@ -3,16 +3,18 @@
  * busy flag (*obj->f0+0x384 +0xad) is clear: try Ov226_ChooseMove; on failure dispatch
  * null, otherwise latch owner+0x1c7=2 and dispatch null. If the flag is set, hand the angle
  * to Ov226_Steer. */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int Ov226_MeasureTargetGap(int self, int a);
 extern void SetIndexedSlot(int self, int index, void *cb);
-extern void VEC_Subtract(int *a, int *b, struct vec *out);
+extern void VEC_Subtract(int *a, int *b, VecFx32 *out);
 extern int func_020050b4(int dx, int dz);
 extern int Ov226_ChooseMove(int self, int r);
 extern void Ov226_Steer(int self, int arg);
 void Ov226_GuardedAimOrHandoff(int self) {
     int *obj = *(int **)(self + 4);
-    struct vec buf;
+    VecFx32 buf;
     int r = Ov226_MeasureTargetGap(self, 0);
     if (r < 0) {
         SetIndexedSlot(self, *(signed char *)(self + 0x20), 0);

@@ -5,7 +5,8 @@
  * Once the +0x50 delay runs out, animation 1 plays (looping), the delay is re-rolled in
  * [+0x224, +0x228], the +0x2c rate becomes the frame rate x 3, the +0x1c facing turns to a random
  * heading and the tick hands over to Ov279_HoverTick. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
@@ -14,9 +15,9 @@ extern int Ov279_PickBestFacingTarget(int owner);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern int RandNextScaled(int n);
-extern void QuatFromAxisAngle(void *q, const Vec3 *axis, int angle);
+extern void QuatFromAxisAngle(void *q, const VecFx32 *axis, int angle);
 extern const short data_0203d210[];
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 extern void Ov279_HoverTick(int *node);
 
 static inline int RandRange(int low, int high)

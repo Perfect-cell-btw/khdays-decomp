@@ -1,6 +1,7 @@
 /* Formats the value into a UTF-16 string with the overlay's template and draws it with a shadow. */
 
 #include "nitro/types.h"
+
 extern void Text_FormatUtf16(u16 *dst, int count, const void *tmpl, unsigned int a);
 extern void Ov008_DrawStringShadowed(int p1, int table, int p3, int p4, int p5, int p6);
 extern int data_ov008_02090ea0;

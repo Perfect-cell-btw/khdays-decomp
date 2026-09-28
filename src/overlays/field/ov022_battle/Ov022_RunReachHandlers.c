@@ -11,14 +11,11 @@
  */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x, y, z;
-};
+#include "nitro/fx.h"
 
 struct Command {
-    struct Vec3 vecFrom;         /* 0x00 */
-    struct Vec3 vecTo;           /* 0x0c */
+    VecFx32 vecFrom;         /* 0x00 */
+    VecFx32 vecTo;           /* 0x0c */
 };
 
 struct Actor {
@@ -37,13 +34,13 @@ extern int Ov022_SweepCapsuleOverEntries(struct Actor *pActor, struct Command *p
 extern int func_ov022_020a1c80(struct Actor *pActor, struct Command *pCmd,
                                int *pHit);
 extern int func_ov022_0209e4a4(struct Actor *pActor, void *pCtx,
-                               struct Vec3 *pDelta);
-extern void VEC_Subtract(const struct Vec3 *pA, const struct Vec3 *pB,
-                         struct Vec3 *pOut);
+                               VecFx32 *pDelta);
+extern void VEC_Subtract(const VecFx32 *pA, const VecFx32 *pB,
+                         VecFx32 *pOut);
 
 int Ov022_RunReachHandlers(struct Actor *pActor, struct Command *pCmd, void *pCtx)
 {
-    struct Vec3 vDelta;
+    VecFx32 vDelta;
     int bTaken;
 
     bTaken = 0;

@@ -5,6 +5,7 @@
  * time since its press (VBlank count minus the per-key press stamp data_0204c194, indexed through
  * data_02042218) passes the delay, each full interval past the delay beyond the counter's step fires
  * a repeat and the counter becomes the number of intervals elapsed plus one. */
+
 #include "nitro/types.h"
 
 typedef struct KeyRepeat {

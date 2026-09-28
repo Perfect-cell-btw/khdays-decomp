@@ -1,6 +1,7 @@
 /* Brain start of the ov237 actor: move 1 with no next move, kind 1, the +0x38 point is the actor's
  * +0xb0 pose, bits 1-2 of the +0x60 high byte are set and the three brain slots get 020ce378 (1),
  * 020cd554 (0) and 020cdda8 (2). */
+
 #include "nitro/types.h"
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

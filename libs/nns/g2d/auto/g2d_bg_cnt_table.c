@@ -1,5 +1,6 @@
 /* NitroSystem g2di_BGManipulator.c: NNSiG2dBGCNTTable, the BGnCNT register of each of the eight
  * BGs (main 0-3, sub 0-3) by NNSG2dBGSelect. */
+
 #include "nitro/types.h"
 
 #define REG_BG0CNT_ADDR    0x04000008

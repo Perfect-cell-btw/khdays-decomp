@@ -3,6 +3,7 @@
  * Whole character rows (n / 8) move up at once; then inside every row the remaining n % 8 pixel
  * lines move up and each cell's freed bottom lines are refilled from the top of the cell below.
  * The uncovered strip at the bottom is cleared through the char canvas (+0x4, vtable pClearArea). */
+
 #include "nitro/types.h"
 
 struct NNSG2dCharCanvas;

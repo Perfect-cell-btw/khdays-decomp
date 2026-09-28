@@ -3,7 +3,9 @@
  * the three +0x38c parts stores its +0x3a4 anchor's +0x14 position at +0x58, normalises the
  * offset from there to the next anchor's +0x14 into +0x64 and keeps the length at +0x70;
  * then the base teardown (020c7ca4). */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int m[11]; } Pose44;
 struct Ov245Item { char pad[0x10]; Pose44 pose; };
 struct Ov245Src { char pad[4]; Pose44 pose; };
@@ -14,21 +16,21 @@ struct Ov245Chain {
     int anchors[4];    /* +0x3a4: each part spans anchors[i]..anchors[i + 1] */
 };
 
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov245_ChainTeardown(int self) {
-    Vec3 d;
+    VecFx32 d;
     int i;
 
     ((struct Ov245Item *)*(int *)(self + 0x398))->pose = ((struct Ov245Src *)*(int *)(self + 0x3b0))->pose;
     ((struct Ov245Item *)**(int **)(self + 0x388))->pose = ((struct Ov245Item *)*(int *)(self + 0x398))->pose;
     for (i = 0; i < 3; i++) {
         int part = ((struct Ov245Chain *)self)->parts[i];
-        *(Vec3 *)(part + 0x58) = *(Vec3 *)(((struct Ov245Chain *)self)->anchors[i] + 0x14);
-        VEC_Subtract((Vec3 *)(((struct Ov245Chain *)self)->anchors[i + 1] + 0x14), (Vec3 *)(part + 0x58), &d);
-        *(int *)(part + 0x70) = VEC_Normalize(&d, (Vec3 *)(part + 0x64));
+        *(VecFx32 *)(part + 0x58) = *(VecFx32 *)(((struct Ov245Chain *)self)->anchors[i] + 0x14);
+        VEC_Subtract((VecFx32 *)(((struct Ov245Chain *)self)->anchors[i + 1] + 0x14), (VecFx32 *)(part + 0x58), &d);
+        *(int *)(part + 0x70) = VEC_Normalize(&d, (VecFx32 *)(part + 0x64));
     }
     Ov107_AiState_PostTickBase(self);
 }

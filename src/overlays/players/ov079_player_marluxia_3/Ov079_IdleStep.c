@@ -11,13 +11,15 @@
  * over: a pending pattern goes to 0x23 (alternate mode, rig +0) or 0x22, otherwise the
  * velocities are cleared, bit 2 set and state 0 (after the slot callback) or 2 follows.
  */
-typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
-typedef struct { int x, y, z; } Vec3;
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
+typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_StepAnchorDelta(char *self, void *out);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Anim_SetFrameWrapped(char *anim, int track, int frame);
 extern void *Ov022_ActorSetState(char *self, int state);
 extern char *data_ov079_020b9a00;
@@ -25,8 +27,8 @@ extern char *data_ov079_020b9a00;
 void *Ov079_IdleStep(char *self)
 {
     int r;
-    Vec3 sample;
-    Vec3 step;
+    VecFx32 sample;
+    VecFx32 step;
     char *rig = data_ov079_020b9a00 + 0xc50 + 0x2000;
     void *next = 0;
 
@@ -48,7 +50,7 @@ void *Ov079_IdleStep(char *self)
     }
     step = sample;
     step.y = 0;
-    VEC_Add((Vec3 *)(self + 0x98 + 0x400), &step, (Vec3 *)(self + 0x98 + 0x400));
+    VEC_Add((VecFx32 *)(self + 0x98 + 0x400), &step, (VecFx32 *)(self + 0x98 + 0x400));
     (*(int (**)(char *))(self + 0x668))(self);
     if (*(int *)(rig + 4) == 0
         && (*(u16 *)(self + 0x1c) == 5 || *(u16 *)(self + 0x1c) == 6 || *(u16 *)(self + 0x1c) == 1)) {

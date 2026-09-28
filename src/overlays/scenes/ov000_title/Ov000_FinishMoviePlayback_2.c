@@ -12,7 +12,9 @@
  * an ARM immediate: written as a plain `12` the function is 4 bytes short.  Same idiom as
  * Ov001_CreateMainAndSubHeaps.
  */
+
 #include "nitro/types.h"
+
 typedef u32 FSOverlayID;
 typedef void *StateFn;
 

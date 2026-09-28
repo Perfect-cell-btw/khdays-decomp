@@ -2,6 +2,7 @@
  * arrives. */
 
 #include "nitro/types.h"
+
 typedef struct { short nSin, nCos; } FxSinCos;
 typedef struct { unsigned char opaque[0x4a38]; } Ov004SpriteManager;
 typedef struct {

@@ -5,13 +5,15 @@
  * floors and airborne, the owner switches to move 12 (+0xad latched). Otherwise the two wing flaps
  * fire once each at 0.23 and 0.56 (020cd2c8, +0xac bits 0/1) and, once the +4 rig is idle, pose 1
  * and rig motion 1 restart the flap cycle. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 struct b1 { unsigned char b0 : 1; };
 
 extern int Ov259_FaceTargetGap(int *node);
 extern int Ov259_RefreshAim(int *node);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
@@ -29,7 +31,7 @@ void Ov259_RiseTick(int *node)
     state[0x1b] += *(int *)(node[0] + 0x2c);
     ground = Ov259_FaceTargetGap(node);
     Ov259_RefreshAim(node);
-    ScaleVec3Fx12(0x1d00, (Vec3 *)(state + 5), (Vec3 *)(state + 5));
+    ScaleVec3Fx12(0x1d00, (VecFx32 *)(state + 5), (VecFx32 *)(state + 5));
     owner = *state;
     floor = *(int *)(owner + 0x80);
     if (ground <= floor) {

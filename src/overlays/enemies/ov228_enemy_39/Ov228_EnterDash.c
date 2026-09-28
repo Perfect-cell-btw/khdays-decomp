@@ -4,14 +4,16 @@
  * at the +4 point, animation 0 plays, effect 0 spawns at the owner's +0x74 position, and the dash
  * state (+0x20 = 0, +0x24 = 0xc0, +0x2c = 0, +0x30 = 0x700, +0x38 = 1, +0x34 = 0) is armed before
  * the tick hands over to Ov228_AiDashWindup. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 typedef struct { unsigned int lo : 8, rest : 24; } Byte8;
 
 extern int func_020050b4(int x, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
+extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov228_AiDashWindup(int *node);
 
@@ -21,14 +23,14 @@ void Ov228_EnterDash(int *node)
     unsigned short v;
 
     state[0xa] = func_020050b4(*(int *)(*state + 0x398), *(int *)(*state + 0x3a0));
-    *(Vec3 *)(state + 5) = *(Vec3 *)(*state + 0x398);
+    *(VecFx32 *)(state + 5) = *(VecFx32 *)(*state + 0x398);
     v = *(unsigned short *)(*state + 0x60);
     *(unsigned short *)(*state + 0x60) = (unsigned short)((v & ~0xff00) | (((((unsigned int)v << 0x10) >> 0x18 | 1) << 0x18) >> 0x10));
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x8c;
     ((Byte8 *)(*(int *)(*state + 0x388) + 8))->lo |= 1;
     Ov107_BuildAndSendUpdate(state[0], 0x12b, 0xd, (void *)state[1]);
     Ov107_PostTagUpdate(*state, 0, 0);
-    func_ov107_020c0b90(*state, 0, *(Vec3 *)(*state + 0x74), 0);
+    func_ov107_020c0b90(*state, 0, *(VecFx32 *)(*state + 0x74), 0);
     state[8] = 0;
     state[9] = 0xc0;
     state[0xb] = 0;

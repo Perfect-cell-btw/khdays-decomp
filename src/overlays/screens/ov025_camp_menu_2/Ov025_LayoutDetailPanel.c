@@ -5,6 +5,7 @@
  * widget 0x16 to the top and the footer 0x17 to top + height - 0x10; then the
  * scroll arrows are refreshed.
  */
+
 #include "nitro/types.h"
 
 typedef struct UiLayoutPos {

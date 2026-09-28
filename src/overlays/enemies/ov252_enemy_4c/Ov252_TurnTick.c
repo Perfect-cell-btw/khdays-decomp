@@ -1,10 +1,11 @@
 /* Turn tick of the ov252 actor: it faces the target (020cdfe8 0, 1); once the partner holds no queued
  * move bit 3 of the +0x60 high byte clears and bit 2 is set, and with a +0xa4 retreat pending pose 3
  * and part motion 2 start and the node moves on to 020d1428, else the next move is 4. */
-#include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
 
-extern int Ov252_CheckTarget(int *node, Vec3 *delta, int face);
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
+extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

@@ -6,6 +6,7 @@
  * object is up or touch is disabled.  Nothing happens if the target is the
  * current selection.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008MissionList {

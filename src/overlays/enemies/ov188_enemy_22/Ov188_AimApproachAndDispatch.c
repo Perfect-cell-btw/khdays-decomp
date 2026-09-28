@@ -32,9 +32,10 @@
  *    `v` (the step vector, sp+0). Declared the other way the two swap slots and every sp-relative
  *    access in the function is off -- it looks catastrophic and is one line.
  */
-struct Vecx32 { int x, y, z; };
 
-static inline void VEC_Set(struct Vecx32 *vec, int x, int y, int z) {
+#include "nitro/fx.h"
+
+static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
     vec->y = y;
     vec->z = z;
@@ -50,8 +51,8 @@ extern short data_0203d210[];
 
 void Ov188_AimApproachAndDispatch(int *self) {
     int *state = (int *)self[1];
-    struct Vecx32 d;
-    struct Vecx32 v;
+    VecFx32 d;
+    VecFx32 v;
     int len;
     int gap;
     int idx;

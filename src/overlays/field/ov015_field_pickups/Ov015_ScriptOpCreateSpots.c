@@ -7,9 +7,9 @@
  * 0207679c).  The entries are gathered in a 128-entry stack array, the tables in a spec
  * block handed to Ov015_CreateSpotClass (02080df8) on the slot, and the class table is
  * stored on the target (ov002 0207643c).  Always consumes the op (1). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov015SpotEntry {
     s8  nId;                  /* 0x00 */

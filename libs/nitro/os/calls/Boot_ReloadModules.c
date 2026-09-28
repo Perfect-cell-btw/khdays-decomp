@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 extern void func_01ff84b8(u32 rom_offset, u32 dest, u32 size);

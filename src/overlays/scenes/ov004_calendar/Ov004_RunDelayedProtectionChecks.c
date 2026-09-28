@@ -2,6 +2,7 @@
  * then unloads it and moves on. */
 
 #include "nitro/types.h"
+
 typedef void (*Ov004AlarmCallback)(void *arg);
 typedef struct {
     unsigned char opaque0000[0xaf8];

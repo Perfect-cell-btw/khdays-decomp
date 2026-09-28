@@ -13,6 +13,7 @@
  * compare reads ctx->view.nRow (a second address path, so the earlier load
  * is not reused); declarations i, nOffset, tab constants, pRecord.
  */
+
 #include "nitro/types.h"
 
 #define KIND_RECIPE  3

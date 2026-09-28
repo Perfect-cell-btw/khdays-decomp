@@ -2,19 +2,21 @@
  * target whose kind bit (1 << +2) is not yet in the +0x28 mask is pushed along the flattened unit
  * direction from the owner (hit kind 1) and, when that lands, records its kind bit. After any hit
  * reaction 0x14d mode 0x10 fires at the +4 point. Returns whether anything was hit. */
-typedef struct { int x, y, z; } Vec3;
-typedef struct { Vec3 c; int r; } Sphere;
+
+#include "nitro/fx.h"
+
+typedef struct { VecFx32 c; int r; } Sphere;
 
 extern int Ov107_CollectSphereOverlaps(int body, Sphere *src, int *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, int mode, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int mode, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 
 int Ov227_HitSweep(int *part, Sphere *sphere)
 {
     int hits[4];
-    Vec3 dir;
+    VecFx32 dir;
     int n;
     int i;
     int hit;

@@ -11,6 +11,7 @@
  * selects the saved scroll row ((field 0x35d5 + 8) / 16 when set) and the saved cursor row
  * (field 0x35c5; Ov025_ScrollList_SelectRow 020adee0), draws the heading (0208e000) and the
  * arrows, knob bar, offset and markers (020adcbc / 020add28 / 020ade14 / 020ade68). */
+
 #include "nitro/types.h"
 
 typedef struct Ov025ScrollList {

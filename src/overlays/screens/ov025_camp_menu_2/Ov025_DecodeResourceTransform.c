@@ -2,12 +2,7 @@
  * applying identity defaults for omitted components. */
 
 #include "nitro/types.h"
-
-typedef struct VecFx32 {
-    int x;
-    int y;
-    int z;
-} VecFx32;
+#include "nitro/fx.h"
 
 typedef struct MtxFx33 {
     int m[9];

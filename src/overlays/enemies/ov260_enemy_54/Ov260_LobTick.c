@@ -6,31 +6,33 @@
  * 1.46 turned by the +0xa0 pose, from the +0x10 point) along the heading to a spot 0.5 short of to
  * 3.0 past the target (020d09a4). Afterwards it waits while the part is still in flight (+0x60 bit 0);
  * a landed part (+0x38c) queues move 7, otherwise once the partner holds no queued move, move 2. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int m[9]; } Mtx33;
 struct Ov260Parts { char pad[0x430]; int parts[2]; };
 struct flags16 { unsigned short lo : 8; unsigned short hi : 8; };
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
-extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void Ov260_MapHeldItemKindToAnim(int actor, int flag);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int y);
 extern int RandNextScaled(int n);
-extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *q, const Vec3 *in);
-extern void Ov260_PlacePartSpan(int part, Vec3 *at, Vec3 *from, Vec3 *to);
+extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
+extern void Ov260_PlacePartSpan(int part, VecFx32 *at, VecFx32 *from, VecFx32 *to);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-static inline void VecSet(Vec3 *v, int x, int y, int z)
+static inline void VecSet(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -41,17 +43,17 @@ void Ov260_LobTick(int *node)
 {
     int *state = (int *)node[1];
     Mtx33 rot;
-    Vec3 d;
-    Vec3 hand;
-    Vec3 dir;
-    Vec3 dst;
+    VecFx32 d;
+    VecFx32 hand;
+    VecFx32 dir;
+    VecFx32 dst;
 
     {
         int idx = ANG2IDX(state[0x19]) * 2;
 
         MTX_RotY33_(&rot, data_0203d210[idx], data_0203d210[idx + 1]);
     }
-    MTX_MultVec33((Vec3 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (Vec3 *)(state + 8));
+    MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (VecFx32 *)(state + 8));
     state[0x1c] += *(int *)(node[0] + 0x2c);
     if ((*((u8 *)state + 0x7b) & 1) == 0 && state[0x1c] >= 0xaa0) {
         *((u8 *)state + 0x7b) |= 1;
@@ -75,7 +77,7 @@ void Ov260_LobTick(int *node)
         Ov260_MapHeldItemKindToAnim(*state, 3);
     }
     if ((*((u8 *)state + 0x7b) & 0x80) == 0) {
-        VEC_Subtract((Vec3 *)(*(int *)(*state + 0x420) + 0x190), (Vec3 *)state[4], &d);
+        VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x420) + 0x190), (VecFx32 *)state[4], &d);
         state[0x1a] = func_020050b4(d.x, d.z);
         if (state[0x1c] < 0x2a80) {
             return;
@@ -91,10 +93,10 @@ void Ov260_LobTick(int *node)
             dir.z = sc[1];
         }
         ScaleVec3Fx12(RandNextScaled(0x3801) - 0x800, &dir, &dst);
-        VEC_Add(&dst, (Vec3 *)(*(int *)(*state + 0x420) + 0x190), &dst);
+        VEC_Add(&dst, (VecFx32 *)(*(int *)(*state + 0x420) + 0x190), &dst);
         VecSet(&hand, -0x28a, 0x1545, 0x1545 + 0x214);
         Vec3TransformViaTempMtx(&hand, (void *)(*state + 0xa0), &hand);
-        VEC_Add(&hand, (Vec3 *)state[4], &hand);
+        VEC_Add(&hand, (VecFx32 *)state[4], &hand);
         Ov260_PlacePartSpan(*(int *)(*state + 0x430), &hand, &dir, &dst);
         return;
     }

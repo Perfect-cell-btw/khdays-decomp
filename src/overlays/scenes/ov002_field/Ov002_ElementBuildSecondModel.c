@@ -1,10 +1,6 @@
-#include "nitro/types.h"
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern int Ov002_LookupChannelEntry(void *pName);
 extern void RegisterSeqAndInit(char *pNode, int nRes, int a, int b);
@@ -23,18 +19,18 @@ extern void Res_RequestIdPair(int nId);
 void Ov002_ElementBuildSecondModel(char *pElement)
 {
     char *pOwner;
-    Vec3 vPos;
+    VecFx32 vPos;
 
     pOwner = *(char **)(pElement + 8);
     *(u16 *)(pElement + 0x12) |= 4;
 
     if (*(signed char *)(pOwner + 0x58) != 0) {
-        vPos = *(Vec3 *)(pElement + 0xe0);
+        vPos = *(VecFx32 *)(pElement + 0xe0);
 
         RegisterSeqAndInit(pElement + 0x1b0,
                       Ov002_LookupChannelEntry(pOwner + 0x58), 1, 4);
 
-        *(Vec3 *)(pElement + 0x254) = vPos;
+        *(VecFx32 *)(pElement + 0x254) = vPos;
         *(u16 *)(pElement + 0x22c) = *(u16 *)(pElement + 0x18);
         *(u16 *)(pElement + 0x1b0) |= 0x20;
 

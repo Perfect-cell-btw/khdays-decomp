@@ -1,7 +1,8 @@
 /* Returns the number of sub-entries of a menu table entry. */
 
-extern void Ov008_GetMenuContext(void);
 #include "nitro/types.h"
+
+extern void Ov008_GetMenuContext(void);
 
 typedef struct Ov008MenuSubEntry {
     s16 nId;                  /* 0x00 */

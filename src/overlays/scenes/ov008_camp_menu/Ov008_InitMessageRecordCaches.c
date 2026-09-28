@@ -1,4 +1,5 @@
 /* Allocate and populate the five message-record caches used by the main menu. */
+
 #include "nitro/types.h"
 
 typedef struct Ov008Message15Record { char data[0x9c]; } Ov008Message15Record;

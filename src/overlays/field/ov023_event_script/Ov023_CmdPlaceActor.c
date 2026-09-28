@@ -8,13 +8,9 @@
  * the setter as the anchor.  The entity is then shown (0202beb8 1) and, when the actor table
  * (+0x440) exists and the entity's bit 5 (0202c424) is clear, the actor's model is placed too
  * (Ov023_PlaceActorModel 020887dc).  Returns 1. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov023Actor {
     u8   pad_0000[0x1a64];

@@ -2,6 +2,7 @@
  * (flagging the local player when idle). */
 
 #include "nitro/types.h"
+
 struct Part { int header; u16 flags; };
 struct StreamGroup { u8 bytes[0x30]; };
 struct Scroll { u8 bytes[8]; };

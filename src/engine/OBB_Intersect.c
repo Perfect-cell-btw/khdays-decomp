@@ -2,9 +2,8 @@
  * test in fixed point: the three axes of each box and, unless some pair of axes is parallel (a
  * |cos| above the cutoff 0xffff), the nine cross products. A box is a centre, three unit axes and
  * three half extents. Returns 1 when no axis separates the boxes. */
-#include "nitro/fx.h"
 
-typedef struct { fx32 x, y, z; } VecFx32;
+#include "nitro/fx.h"
 
 typedef struct Box {
     VecFx32 center;                     /* +0x00 */

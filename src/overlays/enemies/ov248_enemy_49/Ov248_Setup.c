@@ -2,7 +2,9 @@
  * and +0x34 release (020d0534) handlers, sets bits 1-3 of the +0x60 high byte and bits 2 and 4 of
  * +0x1ae, the +0x70 scale to 0.875, and builds the two +0x388 slot models from the +0x384 pool (kinds
  * from data_ov248_020d0c04), attached and hidden (bit 1 on their +0x5c). */
+
 #include "nitro/types.h"
+
 typedef void (*Callback)(void);
 struct Slot { int model; int effect; };
 struct Ov248Actor { char pad[0x388]; struct Slot slots[2]; };

@@ -4,15 +4,16 @@
  * returns the distance -- and cache that distance at +0x28, capped at 0x9000. Mark the
  * target slot live (owner+0x1c7 = 1), store the caller's aim vector at +0x14 and its
  * tag at +0x30, and clear the accumulated offset at +8. */
-struct vec3 { int x, y, z; };
+
+#include "nitro/fx.h"
 
 extern int *Ov107_FindNearestObject(int a, int b);
 extern int VEC_Subtract(void *a, void *b, void *out);
-extern int VEC_Normalize(const struct vec3 *v, struct vec3 *out);
-extern struct vec3 data_02041dc8;
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern VecFx32 data_02041dc8;
 
-void Ov212_LockOnTarget(int *self, struct vec3 *param_2, int param_3) {
-    struct vec3 d;
+void Ov212_LockOnTarget(int *self, VecFx32 *param_2, int param_3) {
+    VecFx32 d;
     int *tgt = Ov107_FindNearestObject(self[0], 0);
 
     if (tgt == 0) {
@@ -25,7 +26,7 @@ void Ov212_LockOnTarget(int *self, struct vec3 *param_2, int param_3) {
         self[0xa] = 0x9000;
     }
     *(char *)(self[0] + 0x1c7) = 1;
-    *(struct vec3 *)((char *)self + 0x14) = *param_2;
+    *(VecFx32 *)((char *)self + 0x14) = *param_2;
     self[0xc] = param_3;
-    *(struct vec3 *)((char *)self + 8) = data_02041dc8;
+    *(VecFx32 *)((char *)self + 8) = data_02041dc8;
 }

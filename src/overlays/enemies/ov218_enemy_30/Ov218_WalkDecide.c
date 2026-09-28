@@ -2,7 +2,9 @@
  * rate; when it expires a roll is drawn, the wait is rerolled between +0x224 and +0x228 and, if one of
  * the two +0x394 partners is unguarded, far away (16.0+) the next move is 5, at mid range (above 7.0)
  * it is 5 on a 68 % roll (else 6). Returns 1 when a next move is set. */
+
 #include "nitro/types.h"
+
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 struct Ov218Actor { char pad[0x394]; int partners[2]; };
 

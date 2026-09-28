@@ -7,12 +7,13 @@
  * 24-bit values to the item's +0x24 hook; reaction 0x151 mode 8 fires at the +4 point, the
  * sub-state clears and the state ends. Without such a body the +0x30 timer accumulates the
  * rate and past 0x2a8 the state ends the same way. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 typedef struct { u8 hi, mid, lo; } Fx24;
-typedef struct { int x, y, z; } Vec3;
 
 typedef struct {
     u16 id;             /* +0x0 */
@@ -31,8 +32,8 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-extern void Actor_SetVecAndSyncChild(int object, Vec3 *at);
-extern void Ov107_MoveNodeAndRelayout(int ent, Vec3 *at);
+extern void Actor_SetVecAndSyncChild(int object, VecFx32 *at);
+extern void Ov107_MoveNodeAndRelayout(int ent, VecFx32 *at);
 extern void Ov022_ToggleBit13ByMode(int body, int a);
 extern void Ov107_BuildAndSendUpdate(int item, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -42,18 +43,18 @@ void Ov160_GrabTick(int *node)
 {
     int *state = (int *)node[1];
     PosMsg msg;
-    Vec3 raw;
+    VecFx32 raw;
     FxVec vContact;
     int e;
     int item;
 
     if (state[0xb] != 0 && (((struct Ov160Flags464 *)state[0xb])->flags & 0x8000) != 0) {
         msg = data_ov160_020cf7d6;
-        Actor_SetVecAndSyncChild(*(int *)(state[0xb] + 0x20), (Vec3 *)(*(int *)(*state + 0x38c) + 0xb0));
+        Actor_SetVecAndSyncChild(*(int *)(state[0xb] + 0x20), (VecFx32 *)(*(int *)(*state + 0x38c) + 0xb0));
         e = *(int *)(state[0xb] + 0x4ec);
         if (e != 0) {
-            *(Vec3 *)(e + 0x190) = *(Vec3 *)(*(int *)(*state + 0x38c) + 0xb0);
-            Ov107_MoveNodeAndRelayout(e, (Vec3 *)(e + 0x190));
+            *(VecFx32 *)(e + 0x190) = *(VecFx32 *)(*(int *)(*state + 0x38c) + 0xb0);
+            Ov107_MoveNodeAndRelayout(e, (VecFx32 *)(e + 0x190));
             e = *(int *)(state[0xb] + 0x4ec);
             if (((struct Ov160Bits40 *)(e + 0x40))->b1 != 0 && *(void (**)(int, int))(e + 0xc) != 0) {
                 (*(void (**)(int, int))(e + 0xc))(e, 0);
@@ -68,7 +69,7 @@ void Ov160_GrabTick(int *node)
         if (((struct Ov160Bits40 *)(item + 0x40))->b1 != 0 && *(void (**)(int, int))(item + 0xc) != 0) {
             (*(void (**)(int, int))(item + 0xc))(item, 0);
         }
-        raw = *(Vec3 *)(*(int *)(state[0xb] + 0x20) + 0xa8);
+        raw = *(VecFx32 *)(*(int *)(state[0xb] + 0x20) + 0xa8);
         raw.y += 0x1000;
         vContact.x = *(Fx32 *)&raw.x;
         PackFx24(&msg.pos[0], vContact.x.value);

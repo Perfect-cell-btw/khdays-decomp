@@ -5,6 +5,7 @@
  * Codegen: built with `opt_common_subs off` (push/pop scoped); with CSE on mwcc swaps the record
  * base and element pointer registers of the 8-byte header copy. */
 #pragma thumb on
+
 #include "nitro/types.h"
 
 typedef struct {

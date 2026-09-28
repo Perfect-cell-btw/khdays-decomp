@@ -7,11 +7,13 @@
  * The +0x7c step flag alternates: at frame 15 it rises and, with foot 0 alive, note 2 of
  * data_ov236_020d6430 goes to the actor's hook and reaction mode 0xb fires at foot 0; at frame 33 it
  * falls and, with foot 1 alive, note 3 goes out and mode 0xc fires at foot 1. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
-typedef struct { Vec3 center; int nRadius; } Sphere;
+typedef struct { VecFx32 center; int nRadius; } Sphere;
 typedef struct { u16 lo; u16 hi; } Cmd4;
 
 #define PACK(cmd, dead, src, at)                                              \
@@ -24,10 +26,10 @@ typedef struct { u16 lo; u16 hi; } Cmd4;
 extern int queryTableEntry(int part, int channel);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, void *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern const Cmd4 data_ov236_020d6430[];
 extern const Cmd14 data_ov236_020d6470;
 
@@ -41,8 +43,8 @@ void Ov236_StampWalkTick(int *node)
     Fx32 scratchX;
     int hits[4];
     Sphere sphere;
-    Vec3 push;
-    Vec3 raw;
+    VecFx32 push;
+    VecFx32 raw;
     int frame;
     int k;
     int n;
@@ -56,7 +58,7 @@ void Ov236_StampWalkTick(int *node)
         if (!((k == 0 && frame >= 0xf000 && frame <= 0x11000) || (k == 1 && frame >= 0x21000 && frame <= 0x23000))) {
             continue;
         }
-        sphere.center = *(Vec3 *)(*(int *)((int *)*state)[0xf0 + k] + 4);
+        sphere.center = *(VecFx32 *)(*(int *)((int *)*state)[0xf0 + k] + 4);
         n = *(int *)(*(int *)((int *)*state)[0xf0 + k] + 0x90);
         sphere.nRadius = n;
         n = Ov107_CollectSphereOverlaps(*state, &sphere, hits);
@@ -71,7 +73,7 @@ void Ov236_StampWalkTick(int *node)
                 continue;
             }
             msg = data_ov236_020d6470;
-            raw = *(Vec3 *)(hits[i] + 0x74);
+            raw = *(VecFx32 *)(hits[i] + 0x74);
             raw.y += 0x800;
             PACK(msg, scratchX, *(Fx32 *)&raw.x, 5);
             PACK(msg, scratchY, *(Fx32 *)&raw.y, 8);

@@ -1,20 +1,21 @@
 /* d0e14 */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, void *cyl, int *hits);
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, Vec3 *push, int z);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 
 int Ov260_AttackHitTest(int *state, void *sphere, void *cyl)
 {
     int hit = 0;
     int hits[4];
-    Vec3 push;
+    VecFx32 push;
     long i;
     long n;
     u8 bit;
@@ -45,7 +46,7 @@ int Ov260_AttackHitTest(int *state, void *sphere, void *cyl)
         if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x390), 6, &push, 0) == 0) {
             continue;
         }
-        func_ov107_020c0b90(*(int *)(*state + 0x390), 7, *(Vec3 *)state[6], 0);
+        func_ov107_020c0b90(*(int *)(*state + 0x390), 7, *(VecFx32 *)state[6], 0);
         *((u8 *)state + 0x48) |= bit;
         hit = 1;
         *(int *)(*state + 0x38c) = 1;

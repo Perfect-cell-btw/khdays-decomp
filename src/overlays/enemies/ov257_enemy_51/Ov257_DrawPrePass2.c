@@ -3,26 +3,28 @@
  * items gets a pose placed at its +0x3dc bone and turned to face its +0x3ec bone. While the kind
  * (+0x1c6) is not 0xc a running pair-6 effect is stopped; then the common draw handler runs. The
  * bone arrays are indexed as ((int *)self)[base + i] for the ROM's addressing. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } Srt;
 struct Part { char pad[0x10]; Srt pose; };
 struct Rig { int pad; Srt srt; };
 
 extern void SrtTransform_SetIdentity(Srt *srt);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *a, const Vec3 *b);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *a, const VecFx32 *b);
 extern void Srt_SetTranslation(Srt *srt, const void *pos);
 extern void Srt_SetRotationQuat(Srt *srt, const Quat *q);
 extern void TaskList_FinishByTag(int model, int handle);
 extern void Ov107_AiState_PostTickBase(char *self);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 void Ov257_DrawPrePass2(char *self)
 {
     Srt srt;
-    Vec3 d;
+    VecFx32 d;
     Quat q;
     int i;
 

@@ -3,6 +3,7 @@
  * of the control word (+0x344) cleared unless the word at +0x37c is set, the owner pointer
  * (+0x378) cleared, the animation released (0202a7dc on +0x324) -- and bit 8 dropped; then
  * bit 7 is dropped and the five queued effects (+0x45c) wiped. */
+
 #include "nitro/types.h"
 
 typedef struct Ov023MotionState {  /* at +4 of the actor */

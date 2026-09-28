@@ -19,11 +19,9 @@
  * `span = hi - lo` all emit `lsl`, and a width computed inside the loop's
  * roll helper hoists `-half` ahead of the width. Tentative reconstruction of
  * how the original split its random-in-range routine. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 {
-    int x, y, z;
-} VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct TargetList {
     u8  pad00[0x20];

@@ -2,7 +2,8 @@
  * the actor (mode 5), fire reaction 0x141 mode 7 there, then set bit 1 and bit 7 of the +0x60
  * high byte around raising bit 0 of +0x1ae, clear the +0x48 counter and advance to
  * Ov173_DashTick. */
-typedef struct { int x, y, z; } VecFx32;
+
+#include "nitro/fx.h"
 
 extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void func_ov107_020c0b90(int obj, int a, VecFx32 v, int d);

@@ -4,6 +4,7 @@
  * target: the touch row centred on a row (y - height/2) relative to the current
  * scroll, clamped to [0, extent - height], committed with the immediate flag.
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008ScrollList {

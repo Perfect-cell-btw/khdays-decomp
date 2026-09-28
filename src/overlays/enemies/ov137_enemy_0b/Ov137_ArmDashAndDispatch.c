@@ -11,9 +11,11 @@
  * because the bitfield form adds a truncation the ROM does not have here (mwcc can prove
  * `hi | 1` still fits 8 bits, but not `hi & ~0x8c`); both spellings are byte-identical
  * where they apply. */
+
+#include "nitro/fx.h"
+
 struct hw60 { unsigned short lo:8, hi:8; };
 struct b8 { unsigned int b:8; };
-struct vec { int x, y, z; };
 extern void ScaleVec3Fx12(int scale, int *v, unsigned int *out);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov137_SweepStrikeTick(void);
@@ -29,7 +31,7 @@ void Ov137_ArmDashAndDispatch(int self) {
     }
     ((struct hw60 *)(*obj + 0x60))->hi &= ~0x8c;
     ((struct b8 *)(*(int *)(*obj + 0x388) + 8))->b |= 1;
-    *(struct vec *)(obj + 5) = *(struct vec *)(*obj + 0x394);
+    *(VecFx32 *)(obj + 5) = *(VecFx32 *)(*obj + 0x394);
     ScaleVec3Fx12(obj[8] = 0x1000, dst, (unsigned int *)(obj + 2));
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov137_SweepStrikeTick);
 }

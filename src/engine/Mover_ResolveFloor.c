@@ -15,10 +15,9 @@
  * register the ROM subtracts 0x50000 from), `count = 0` follows it, `i` is declared before `count`,
  * the ring offset multiplies through an inline (sin * radius operand order) and the height copy of
  * the second cast is an int (an s16 delays the fall load past the spill stores). */
+
 #include "nitro/types.h"
 #include "nitro/fx.h"
-
-typedef struct { fx32 x, y, z; } VecFx32;
 
 typedef struct CollCastParams {
     VecFx32 *origin;                    /* +0x00 */

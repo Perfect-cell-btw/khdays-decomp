@@ -6,8 +6,10 @@
  * position (its +0x4ec rider too, with the rider's +0x40 bit-1 hook), the target is released via
  * Ov022_ToggleBit13ByMode, the item is moved to the settled drop point (same hook), and the state
  * ends with sub-state 0. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
+
 typedef void (*Hook)(int obj, int a);
 
 extern void Ov172_SettleCarryPosition(int scene, VecFx32 *pos, int actor);

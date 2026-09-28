@@ -1,8 +1,9 @@
+#include "nitro/fx.h"
+
 extern int Ov107_PostTagUpdate();
 extern int Ov107_StartAnim();
 extern int Ov250_SteerSweep();
 
-struct Vec3 { int x, y, z; };
 struct NodeBits { unsigned char ready : 1; };
 extern int SetIndexedSlot();
 
@@ -16,7 +17,7 @@ void Ov250_BeginSteerSweep(int this_)
     int m;
     unsigned int config;
 
-    *(struct Vec3 *)(holder + 0x54) = *(struct Vec3 *)(holder + 0x78);
+    *(VecFx32 *)(holder + 0x54) = *(VecFx32 *)(holder + 0x78);
 
     m = *(int *)(*(int *)this_ + 0x2c) * 0x1e;
     *(int *)(holder + 0x7c) -= (int)((((long long)m << 7) + 0x800) >> 12);

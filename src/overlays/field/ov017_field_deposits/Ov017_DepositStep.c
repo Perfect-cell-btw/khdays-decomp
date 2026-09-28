@@ -21,9 +21,9 @@
  * frame, the crack and hit-effect sequences run, and at 0x800 the state returns to 0.  States
  * 1 and 3 wait.  Finally, while the model is bound (bit 2 of +0x12), the idle sequence is
  * drawn (0202aa9c) and the hit effect / cracks too while their flags are set.  Returns 0. */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov017DepositDef {
     u8   pad_00[0x58];

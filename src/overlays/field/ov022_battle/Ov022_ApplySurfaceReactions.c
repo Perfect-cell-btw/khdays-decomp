@@ -14,10 +14,7 @@
  */
 
 #include "nitro/types.h"
-
-struct Vec3 {
-    int x, y, z;
-};
+#include "nitro/fx.h"
 
 struct Surface {
     u8 pad00[0xc];
@@ -53,8 +50,8 @@ struct Actor {
     unsigned long long nFlags2;  /* 0x464 */
     unsigned long long nFlags3;  /* 0x46c */
     u8 pad474[0x24];
-    struct Vec3 vecStep;         /* 0x498 */
-    struct Vec3 vecPush;         /* 0x4a4 */
+    VecFx32 vecStep;         /* 0x498 */
+    VecFx32 vecPush;         /* 0x4a4 */
     u8 pad4b0[0x208];
     int nRecoilDecay;            /* 0x6b8 */
     u8 pad6bc[0x1fac];
@@ -64,12 +61,12 @@ struct Actor {
 extern struct Surface *Actor_GetRecord(int *pHandle, u32 nIndex);
 extern int Ov002_RunShutdownHook(void);
 extern int Session_GetLocalPlayerIndex(void);
-extern void VecFx32FromVecS16(int nHandle, short *pTri, struct Vec3 *pOut);
-extern void VEC_Normalize(const struct Vec3 *pIn, struct Vec3 *pOut);
-extern void ScaleVec3Fx12(int nScale, const struct Vec3 *pIn, struct Vec3 *pOut);
-extern struct Vec3 *Ov002_GetElementVelocity(void);
-extern void VEC_Add(const struct Vec3 *pA, const struct Vec3 *pB,
-                    struct Vec3 *pOut);
+extern void VecFx32FromVecS16(int nHandle, short *pTri, VecFx32 *pOut);
+extern void VEC_Normalize(const VecFx32 *pIn, VecFx32 *pOut);
+extern void ScaleVec3Fx12(int nScale, const VecFx32 *pIn, VecFx32 *pOut);
+extern VecFx32 *Ov002_GetElementVelocity(void);
+extern void VEC_Add(const VecFx32 *pA, const VecFx32 *pB,
+                    VecFx32 *pOut);
 
 void Ov022_ApplySurfaceReactions(struct Actor *pActor)
 {
@@ -77,9 +74,9 @@ void Ov022_ApplySurfaceReactions(struct Actor *pActor)
     int i;
     int nDrop;
     int nScale;
-    struct Vec3 vecNormal;
-    struct Vec3 vecTmp;
-    struct Vec3 *pDrift;
+    VecFx32 vecNormal;
+    VecFx32 vecTmp;
+    VecFx32 *pDrift;
 
     pActor->nFlags &= ~(1ULL << 43);
     if (pActor->pContacts == 0) {

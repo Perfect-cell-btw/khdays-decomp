@@ -3,6 +3,7 @@
  * (Ov008_GetEntryPos 02088544) and go 8 pixels apart from 16 below the knob top (+0x2dc of
  * the list, plus 16); entry 2 (the knob's top cap) sits at the knob top and entry 3 (its bottom
  * cap) at the top plus the knob height (+0x2e0) less 16 (Ov008_SetEntryPos 02088500). */
+
 #include "nitro/types.h"
 
 typedef struct UiLayoutPos {

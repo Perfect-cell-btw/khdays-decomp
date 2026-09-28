@@ -4,16 +4,17 @@
  * through a stack Fx32 first), the current item's +0x54 low halfword at 0x26, and for the last
  * item its +0x54 height (x1.0) turned by its +0x30 pose and added to its position, packed at
  * 0x31. Then the base forwarder (020c7a90) runs. */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
-typedef struct { Fx32 x, y, z; } FxVec;
 typedef struct { u8 hi, mid, lo; } Fx24;
-typedef struct { int x, y, z; } Vec3;
 struct b2 { int b0 : 1, b1 : 1; };
 struct Items { char pad[0x38c]; char *items[16]; };
 
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *pose, const Vec3 *in);
-extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *pose, const VecFx32 *in);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov107_AiState_SendPose(int self, unsigned char *msg, int arg);
 
 static inline void PackFx24(Fx24 *dst, int v) {
@@ -22,7 +23,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
     dst->lo = v;
 }
 
-static inline void VEC_Set(Vec3 *v, int x, int y, int z) {
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z) {
     v->x = x;
     v->y = y;
     v->z = z;
@@ -34,7 +35,7 @@ static inline int FX_Mul(int a, int b)
 }
 
 void Ov267_HandleMessagePack(int self, unsigned char *msg, int arg) {
-    Vec3 w;
+    VecFx32 w;
     Fx32 scratchZ;
     Fx32 scratchY;
     Fx32 scratchX;
@@ -61,7 +62,7 @@ void Ov267_HandleMessagePack(int self, unsigned char *msg, int arg) {
                 if (i == 15) {
                     VEC_Set(&w, 0, 0, FX_Mul(*(int *)(item + 0x54), 0x1000));
                     Vec3TransformViaTempMtx(&w, item + 0x30, &w);
-                    VEC_Add(&w, (Vec3 *)(item + 0x40), &w);
+                    VEC_Add(&w, (VecFx32 *)(item + 0x40), &w);
                     tipX = *(Fx32 *)&w.x;
                     PackFx24((Fx24 *)(slot + 0x31), tipX.value);
                     tipY = *(Fx32 *)&w.y;

@@ -7,18 +7,19 @@
  * grounded reaction mode 0x10 fires and mode 9 is sent (bit 0), and at 0x1980 mode 7 is sent
  * (bit 1). Once the +4 owner's +0xad byte clears sub-state 2 is requested -- 0xc from sub-state
  * 0xd in game mode 2 -- and the action ends. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b1 { unsigned char b0 : 1; };
-static inline void VEC_Set(Vec3 *v, int x, int y, int z) { v->x = x; v->y = y; v->z = z; }
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z) { v->x = x; v->y = y; v->z = z; }
 
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *at);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 v, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern int Ov002_GetCtxModeByte(void);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov225_RetreatTick(int *node)
 {
@@ -28,7 +29,7 @@ void Ov225_RetreatTick(int *node)
     state[0x17] += *(int *)(*node + 0x2c);
     if (*(signed char *)(*state + 0x1c6) != 0xd) {
         ((struct hw60 *)(*state + 0x60))->hi &= ~0x40;
-        VEC_Set((Vec3 *)(state + 5), 0, state[0x1b] - 0x90, 0);
+        VEC_Set((VecFx32 *)(state + 5), 0, state[0x1b] - 0x90, 0);
         state[0x1b] += *(int *)(*node + 0x2c) * -0x90 / 0x88;
         if ((*(u8 *)((char *)state + 0x75) & 1) == 0 && state[0x17] >= 0x1a90) {
             *(u8 *)((char *)state + 0x75) |= 1;
@@ -44,7 +45,7 @@ void Ov225_RetreatTick(int *node)
             func_ov107_020c0b90(*state, 9, data_02041dc8, 1);
         }
     } else {
-        VEC_Set((Vec3 *)(state + 5), 0, state[0x1b] - 0x90, 0);
+        VEC_Set((VecFx32 *)(state + 5), 0, state[0x1b] - 0x90, 0);
         state[0x1b] += *(int *)(*node + 0x2c) * -0x90 / 0x88;
         if ((*(u8 *)((char *)state + 0x75) & 1) == 0 && state[0x17] >= 0xdd0
             && ((struct b1 *)(*state + 0x17a))->b0 != 0) {

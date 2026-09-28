@@ -12,15 +12,11 @@
  * step runs last; the answer is always 0.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022ActorNode */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct ActorNode {
     u32 nFlags;                  /* 0x00 */
     u16 nAnimFlags;              /* 0x04 */

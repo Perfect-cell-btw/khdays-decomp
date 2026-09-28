@@ -1,12 +1,14 @@
 /* Move entry: the actor's +0x390 link clears, bit 7 of its +0x60 high byte is set and bit 0
  * cleared, the +0x388 shape is disarmed, the +0x1c velocity resets to zero and the node moves to
  * 020d3408. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern void Ov254_UnlinkBEntryIdleStep(void);
 
 void Ov254_UnlinkBEntry(int *node)
@@ -26,6 +28,6 @@ void Ov254_UnlinkBEntry(int *node)
             (((unsigned int)(unsigned short)((((unsigned int)hw << 0x10) >> 0x18) & ~1) << 0x18) >> 0x10);
     }
     ((B8 *)(*(int *)(*state + 0x388) + 8))->f &= ~1;
-    *(Vec3 *)(state + 7) = data_02041dc8;
+    *(VecFx32 *)(state + 7) = data_02041dc8;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov254_UnlinkBEntryIdleStep);
 }

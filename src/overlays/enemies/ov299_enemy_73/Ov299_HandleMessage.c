@@ -3,23 +3,25 @@
  * attach the matching +0x394 part model to it as the +0x398 effect (kind 0x15, or 0x17 for
  * parts 1/2) under the +0x3c owner, and part 1 spawning within 0xa000 of the player (the
  * manager's first actor +0x88) fires effect 1 on the actor. The base handler always runs. */
+
+#include "nitro/fx.h"
+
 typedef struct { int w[11]; } SrtTransform;
-typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
-extern void Srt_SetTranslation(SrtTransform *transform, const Vec3 *translation);
+extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, unsigned char kind, int zero, SrtTransform *transform);
 extern int *func_ov107_020c9848(void);
-extern void VEC_Subtract(const void *a, const Vec3 *b, Vec3 *d);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
+extern void VEC_Subtract(const void *a, const VecFx32 *b, VecFx32 *d);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void Ov107_ForwardVisibleEvent(int owner, int effect);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 
 void Ov299_HandleMessage(int owner, unsigned char *command, int arg)
 {
     SrtTransform transform;
-    Vec3 translation;
-    Vec3 d;
+    VecFx32 translation;
+    VecFx32 d;
     union {
         int words[3];
         unsigned char bytes[12];

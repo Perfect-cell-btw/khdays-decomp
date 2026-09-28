@@ -1,32 +1,32 @@
 /* Posts update 0x177/4, stops, moves the actor to the fixed arena spot and queues action 2. */
 
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
-extern void func_ov107_020c0b90(int obj, int flag, Vec3 v);
+extern void func_ov107_020c0b90(int obj, int flag, VecFx32 v);
 extern void Ov107_BuildAndSendUpdate(int obj, int b, int c, void *d);
-extern void Ov107_MoveNodeAndRelayout(int node, Vec3 *pos);
+extern void Ov107_MoveNodeAndRelayout(int node, VecFx32 *pos);
 extern void SetIndexedSlot(int obj, int idx, int cb);
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 
 void Ov298_AiWarpToArenaSpot(int *this)
 {
     int node = this[1];
     struct {
         int field_00;
-        Vec3 pos;
+        VecFx32 pos;
     } dest;
 
     dest.field_00 = 0;
 
-    func_ov107_020c0b90(*(int *)node, 0, **(Vec3 **)(node + 8));
-    Ov107_BuildAndSendUpdate(*(int *)node, 0x177, 4, (void *)(*(Vec3 **)(node + 8)));
+    func_ov107_020c0b90(*(int *)node, 0, **(VecFx32 **)(node + 8));
+    Ov107_BuildAndSendUpdate(*(int *)node, 0x177, 4, (void *)(*(VecFx32 **)(node + 8)));
 
     dest.pos.x = 0;
     dest.pos.y = (int)0xffffda42;
     dest.pos.z = 0x2d077;
     *(int *)(node + 0x84) = 1;
 
-    *(Vec3 *)(node + 0x10) = data_02041dc8;
+    *(VecFx32 *)(node + 0x10) = data_02041dc8;
     Ov107_MoveNodeAndRelayout(*(int *)node, &dest.pos);
 
     *(int *)(node + 0x38) = 0;

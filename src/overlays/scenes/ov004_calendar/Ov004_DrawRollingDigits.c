@@ -1,7 +1,8 @@
 /* Draws the calendar's rolling day digits. */
 
 #include "nitro/types.h"
-typedef struct { int x, y, z; } VecFx32;
+#include "nitro/fx.h"
+
 typedef struct {
     unsigned char opaque000[0xa4];
     VecFx32 position;

@@ -8,6 +8,7 @@
  * 0x1d000 the item is spent: bit 1 of its GameState field is set, its taken field / bit
  * (+0x1ba / +0x1bc) written 1, the piece retired (ov002 02076bd8), state 7, the host queues
  * a type-4 message and the terminal state (ov002 0207cea4) is returned.  Otherwise 0. */
+
 #include "nitro/types.h"
 
 typedef struct Ov017ItemMessage {

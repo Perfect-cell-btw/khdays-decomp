@@ -2,7 +2,9 @@
  * and marks the buffer dirty. */
 
 #pragma opt_strength_reduction off
+
 #include "nitro/types.h"
+
 typedef struct NNSG2dScreenData {
     u16 screenWidth,screenHeight,colorMode,screenFormat;
     unsigned int size;

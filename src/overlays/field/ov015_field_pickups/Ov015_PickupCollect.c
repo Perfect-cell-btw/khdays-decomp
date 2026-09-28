@@ -6,6 +6,7 @@
  * (bit 7 of +0x14d clear) shows that object's node (first key +0x14e, ov002 02073ed0 show
  * 1 priority -1) and reports 1; otherwise its taken sequence (+0x30) is started (0207fa40,
  * spin 0x1e000) and 0 is reported.  The collected bit (bit 1 of +0x14d) is set either way. */
+
 #include "nitro/types.h"
 
 extern u8   data_0204c240;                                          /* session bits */

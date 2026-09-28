@@ -6,7 +6,9 @@
  * state[0x11] = atan2(dir.x, dir.z). While the sub-node byte *(char*)state[3] is still set, return.
  * Once idle: fire attack 0xc (020c9264, flag 0) and hand off to the 020cde58 continuation.
  */
-struct vec { int x, y, z; };
+
+#include "nitro/fx.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
@@ -17,7 +19,7 @@ extern void Ov275_DecisionTick(void);
 
 void Ov275_FireAttackCOnIdle(int *self) {
     int *state = (int *)self[1];
-    struct vec v;
+    VecFx32 v;
     int target;
 
     target = Ov107_FindNearestObject(*state, 0);

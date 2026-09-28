@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by ov050 actor: fire the attack. Marks the two effect slots busy, asks ov022_0209fe20 (020b6a00): Vec3 data_ov050_020b7448; */
+
 #include "nitro/types.h"
 
-/* read by ov050 actor: fire the attack. Marks the two effect slots busy, asks ov022_0209fe20 (020b6a00): Vec3 data_ov050_020b7448; */
 const u8 data_ov050_020b7448[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0,
 };

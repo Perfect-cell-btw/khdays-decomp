@@ -8,6 +8,7 @@
  * dead-store demotion ladder under #pragma opt_dead_assignments off, the
  * `off = j2 = 0` init chain, and `item` declared after `j2`).
  */
+
 #include "nitro/types.h"
 
 typedef struct Ov008RecipeIngredient {

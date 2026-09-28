@@ -16,6 +16,7 @@
  * original emits; assigning it to a local first gives that value a different
  * register and sinks the +0xc load to the bottom of its block.
  */
+
 #include "nitro/types.h"
 
 typedef struct {

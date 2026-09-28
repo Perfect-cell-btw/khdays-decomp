@@ -12,15 +12,11 @@
  * 0x1a scaled by 0.5 and the power, raising the same flag bit on each.
  */
 
-#include "nitro/types.h"
-
-struct VecFx32 {
-    int x;
-    int y;
-    int z;
-};
-
 /* the damage-over-time record after the actor body */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct DotRecord {
     int nTimer;                      /* 0x00 */
     int nRemaining;                  /* 0x04 */
@@ -47,7 +43,7 @@ struct Actor {
 struct ActorSlot {
     u8 nKind;                        /* 0x000 */
     u8 pad001[0xab];
-    struct VecFx32 vecAim;           /* 0x0ac */
+    VecFx32 vecAim;           /* 0x0ac */
     u8 pad0b8[0x58];
     s8 nSlotIndex;                   /* 0x110 */
     u8 pad111[0xf];
@@ -84,11 +80,11 @@ extern int Ov022_GetActorValue(struct Actor *pActor, int nScale, int nActionLeve
 extern void Ov022_ApplyDamageAndFlagHit(struct Actor *pActor, int nDamage, int nMode);
 extern int func_ov022_020882f8(void);
 extern int Ov022_GetEntryField66(int nOwner);
-extern struct VecFx32 *func_ov022_020881f8(int nOwner);
+extern VecFx32 *func_ov022_020881f8(int nOwner);
 extern struct Actor *GetEntryField20ByIndex(int nOwner);
-extern void VEC_Subtract(struct VecFx32 *a, struct VecFx32 *b,
-                         struct VecFx32 *pOut);
-extern int VEC_Mag(struct VecFx32 *pVec);
+extern void VEC_Subtract(VecFx32 *a, VecFx32 *b,
+                         VecFx32 *pOut);
+extern int VEC_Mag(VecFx32 *pVec);
 
 static inline int FxMul(int nScale, int nValue)
 {
@@ -97,8 +93,8 @@ static inline int FxMul(int nScale, int nValue)
 
 void Ov022_ApplyReactionHit(struct ReactionCtx *pCtx, struct ActorSlot *pSlot)
 {
-    struct VecFx32 vecAim;
-    struct VecFx32 vecDelta;
+    VecFx32 vecAim;
+    VecFx32 vecDelta;
     struct Actor *pActor;
     int bArea;
     int nOwner;

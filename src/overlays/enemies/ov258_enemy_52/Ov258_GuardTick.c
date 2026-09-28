@@ -6,11 +6,12 @@
  * 2.52 for 0.8 an aim marker (020cede0, alternating sides) is dropped every 0x110 after re-acquiring
  * the target. Once the +4 rig is idle: before 3.98 pose 0xd replays; move 6 continues with 020ce5d8;
  * otherwise a follow-up (020cd2cc, without a +0x38 delay) or move 2. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
 
 extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, u16 variant, int at);
 extern int Ov258_AcquireTarget(int *node, int face);
 extern void Ov258_AimMarker(int *node, u8 side);
@@ -18,7 +19,7 @@ extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int Ov258_PickMove(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov258_EnterBarrage(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov258_GuardTick(int *node)
 {
@@ -30,7 +31,7 @@ void Ov258_GuardTick(int *node)
     Ov258_StepCue(node, 8, 2, *(int *)(*state + 0x460) != 0 ? 0x1b : 0x14);
     Ov258_StepCue(node, 0x4a, 1, 10);
     if (state[0xc] >= 0x550 && *(u16 *)(state + 0x14) == 2) {
-        Vec3 origin;
+        VecFx32 origin;
 
         (*(u16 *)(state + 0x14))--;
         origin = data_02041dc8;
@@ -39,8 +40,8 @@ void Ov258_GuardTick(int *node)
     }
     if (state[0xc] >= 0x27d8 && state[0xc] < 0x42f0 && *(u16 *)(state + 0x14) != 0) {
         (*(u16 *)(state + 0x14))--;
-        func_ov107_020c0b90(*state, 0x19, *(Vec3 *)(*(int *)(*state + 0x44c) + 0x14), 0);
-        func_ov107_020c0b90(*state, 0x1a, *(Vec3 *)(*(int *)(*state + 0x450) + 0x14), 0);
+        func_ov107_020c0b90(*state, 0x19, *(VecFx32 *)(*(int *)(*state + 0x44c) + 0x14), 0);
+        func_ov107_020c0b90(*state, 0x1a, *(VecFx32 *)(*(int *)(*state + 0x450) + 0x14), 0);
         Ov107_BuildAndSendUpdate(*state, *(short *)(state + 0x16), *(int *)(*state + 0x460) != 0 ? 0x13 : 0x1a,
                             *(int *)(*state + 0x430) + 0x14);
         if (*(signed char *)(*state + 0x1c6) == 6) {
@@ -50,7 +51,7 @@ void Ov258_GuardTick(int *node)
             state[9] = 0x8000;
             Ov107_BuildAndSendUpdate(*state, *(short *)(state + 0x16), *(int *)(*state + 0x460) != 0 ? 0x12 : 0x19,
                                 (int)(state + 7));
-            func_ov107_020c0b90(*state, 0x2a, *(Vec3 *)(state + 7), 0);
+            func_ov107_020c0b90(*state, 0x2a, *(VecFx32 *)(state + 7), 0);
             *(int *)(*state + 0x428) = 0x8000;
         }
     }

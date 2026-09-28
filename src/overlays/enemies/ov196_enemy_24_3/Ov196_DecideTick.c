@@ -8,25 +8,26 @@
  * requests 0xa and of 1 requests 0xb, each with a 1..3 repeat count in +0x48. With the +0x34
  * timer expired: inside 3.0 request 6, else arm the +0x44 timer (1 if not positive) and
  * request 4. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);
 extern int FX_Sqrt(int x);
-extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void SetIndexedSlot(int node, int slot, void *cb);
-extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
-extern void Vec3TransformViaTempMtx(Vec3 *out, void *rotation, const Vec3 *in);
-extern int VEC_DotProduct(const Vec3 *a, const Vec3 *b);
+extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int RandNextScaled(int bound);
-extern const Vec3 data_02042258;
+extern const VecFx32 data_02042258;
 
 void Ov196_DecideTick(int node)
 {
     int *state = *(int **)(node + 4);
     int dist;
-    Vec3 d;
-    Vec3 fwd;
+    VecFx32 d;
+    VecFx32 fwd;
     int obj;
     int target;
     int roll;
@@ -41,7 +42,7 @@ void Ov196_DecideTick(int node)
     if (dist > *(int *)(*state + 0x2d8)) {
         return;
     }
-    VEC_Subtract((Vec3 *)(state[2] + 0x190), (Vec3 *)(*state + 0xb0), &d);
+    VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)(*state + 0xb0), &d);
     state[4] = func_020050b4(d.x, d.z);
     if (state[0x11] > 0) {
         *(unsigned char *)(*state + 0x1c7) = 4;

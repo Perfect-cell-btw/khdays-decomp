@@ -1,3 +1,5 @@
+#include "nitro/fx.h"
+
 typedef unsigned int uint;
 typedef unsigned short ushort;
 typedef long long longlong;
@@ -9,7 +11,6 @@ typedef int bool;
 #define false 0
 #define true 1
 typedef struct { short nSin; short nCos; } FxSinCos;
-typedef struct { int x; int y; int z; } VecFx32;
 typedef struct {
   unsigned short x;
   unsigned short y;
@@ -98,7 +99,6 @@ extern unsigned short data_0204c18c;
 extern unsigned short data_0204c190;
 extern unsigned char data_0204c240;
 extern const short data_0203d210[];
-
 
 /* WARNING: Removing unreachable block (ram,0x0204d280) */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */

@@ -2,15 +2,16 @@
  * a pending +0x88 start plays pose 0x26, at 1.66 a pending +0x89 cue plays sound 0x148/0xd at the +8
  * point, and at 5.98 pose 0x30 plays, the owner plays effect 0xd at the origin and the node moves on to
  * 020d19b8. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
 
 extern void Ov252_GuardSweep(int *node);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
-extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
+extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_AiStep_QueueAction13OnAnimEnd(void);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 void Ov252_PartHoverTick(int *node)
 {

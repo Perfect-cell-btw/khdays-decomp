@@ -7,9 +7,9 @@
  * argument (+0x2c0 / +0x2c4), bucket (+0x10), the step function (+0xc = 02080b08), bit 3 of
  * the piece flags (+0x12), the GameState field / bit (+0x14 / +0x16); set binding byte 1 of
  * the node's +0x148 block to 3 (02029438) and register the piece (02076480). */
-#include "nitro/types.h"
 
-typedef struct VecFx32 { int x, y, z; } VecFx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Ov016BreakableDef {
     u8 pad_00[0x84];

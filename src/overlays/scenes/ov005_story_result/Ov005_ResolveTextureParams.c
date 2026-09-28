@@ -2,6 +2,7 @@
  * palette-base words a menu quad draws with (4x4-compressed textures use their own VRAM key). */
 
 #include "nitro/types.h"
+
 typedef struct NNSG3dResDict {
     u8 revision, numEntry;
     u16 sizeDictBlk, dummy, ofsEntry;

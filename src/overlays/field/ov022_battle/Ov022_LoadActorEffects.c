@@ -9,9 +9,10 @@
  * slot pool and the action owner's run.
  */
 
+/* Ov022Actor */
+
 #include "nitro/types.h"
 
-/* Ov022Actor */
 struct Actor {
     u8 pad0000[9];
     u8 nId;                          /* 0x0009 */

@@ -3,26 +3,28 @@
  * the +0x90 table is drawn with the +0x88 model's +0x78 mesh at its +0x2c point, scaled by its
  * offset, with polygon id = its handle, alpha = strength x 31 and a colour fading from white to
  * red with the strength. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
-struct Shake { int offset; int strength; char pad08[0x10]; int handle; char pad1c[0x10]; Vec3 at; };
-struct G3Glb { char pad[0xc4]; Vec3 scale; };
+struct Shake { int offset; int strength; char pad08[0x10]; int handle; char pad1c[0x10]; VecFx32 at; };
+struct G3Glb { char pad[0xc4]; VecFx32 scale; };
 
 extern int *func_ov107_020c9848(void);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *a, const Vec3 *b);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *a, const VecFx32 *b);
 extern void Mtx33_FromQuat(void *mtx, const Quat *q);
-extern void NNS_G3dGlbSetBaseTrans(const Vec3 *v);
+extern void NNS_G3dGlbSetBaseTrans(const VecFx32 *v);
 extern void Gfx_ApplyBaseTransform(void);
 extern void NNS_G3dMdlSetMdlPolygonIDAll(int model, int id);
 extern void NNS_G3dMdlSetMdlAlpha(int model, int mat, int alpha);
 extern void NNS_G3dMdlSetMdlDiffAll(int model, u16 rgb);
 extern void NNS_G3dDraw1Mat1Shp(int model, int a, int b, int c);
-extern const Vec3 data_0204227c;
+extern const VecFx32 data_0204227c;
 extern char data_02047428[];
 extern struct G3Glb data_02047394;
 
-static inline void VEC_Set(Vec3 *v, int x, int y, int z)
+static inline void VEC_Set(VecFx32 *v, int x, int y, int z)
 {
     v->x = x;
     v->y = y;
@@ -45,7 +47,7 @@ void Ov255_DrawShakes(char *self)
     int i;
     int off;
 
-    Quat_FromTwoVectors(&q, &data_0204227c, (Vec3 *)(*func_ov107_020c9848() + 0x7c));
+    Quat_FromTwoVectors(&q, &data_0204227c, (VecFx32 *)(*func_ov107_020c9848() + 0x7c));
     Mtx33_FromQuat(data_02047428, &q);
     i = 0;
     if (*(int *)(self + 0x8c) > 0) {

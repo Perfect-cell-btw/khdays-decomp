@@ -1,18 +1,14 @@
 /* Ov027_UpdateModels -- Ov027_UpdateModels: advance the game-over screen's model animations.
  * For each of the scene's models (+0x28, 0x108 bytes each, count at +0x5d0) the animation is
  * advanced by one frame (0202a818 with 1.0) and its state applied (0202aa9c). */
+
 #include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */
     int  y;                   /* 0x04 */
 } Fx32Pair;
-
-typedef struct VecFx32 {
-    int  x;                   /* 0x00 */
-    int  y;                   /* 0x04 */
-    int  z;                   /* 0x08 */
-} VecFx32;
 
 typedef struct Ov027ScreenBlock {
     u16  nWidth;              /* 0x00: in cells */

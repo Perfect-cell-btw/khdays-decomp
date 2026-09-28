@@ -5,9 +5,10 @@
  * packed bytes.
  */
 
+/* read by Constructor of the ov123 enemy (and its byte-identical twin): raises bit 8 of the +0 flags (020cfc04): const int data_ov124_020d1ed8[2]; */
+
 #include "nitro/types.h"
 
-/* read by Constructor of the ov123 enemy (and its byte-identical twin): raises bit 8 of the +0 flags (020cfc04): const int data_ov124_020d1ed8[2]; */
 const int data_ov124_020d1ed8[2] = {
     1, 2,
 };

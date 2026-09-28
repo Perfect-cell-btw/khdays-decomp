@@ -7,11 +7,7 @@
  * the global actually survives. Finally the caller's action (+0x20) is dispatched through
  * SetIndexedSlot with Ov275_FallTick as the continuation. */
 
-typedef struct {
-    int x;
-    int y;
-    int z;
-} Vec3;
+#include "nitro/fx.h"
 
 typedef struct {
     unsigned short lo;
@@ -22,7 +18,7 @@ extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void func_02031384(int a, Ov206_EffectDesc *desc, int n, int v);
 extern void SetIndexedSlot(int self, int action, void (*cb)(void));
 extern void Ov275_FallTick(void);
-extern Vec3 data_02041dc8;
+extern VecFx32 data_02041dc8;
 extern unsigned short data_ov275_020d600c[];
 
 void Ov275_AiSpawnEffectOnIdle(int self) {
@@ -31,7 +27,7 @@ void Ov275_AiSpawnEffectOnIdle(int self) {
     unsigned short id;
 
     ctx = *(int **)(self + 4);
-    *(Vec3 *)((char *)ctx + 0x14) = data_02041dc8;
+    *(VecFx32 *)((char *)ctx + 0x14) = data_02041dc8;
     if (**(unsigned char **)(ctx + 3) != 0) {
         return;
     }

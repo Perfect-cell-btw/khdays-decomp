@@ -5,9 +5,10 @@
  * +0x39c node) from the +0x18 source, the kind-0x30 message with the point 3.0 from the +0x1c
  * anchor towards the player goes out through the actor's +0x24 hook, reaction 0x113/0xf fires at
  * the arrival point, the move request clears and the owner's +0x420 level goes up by one. */
-#include "nitro/types.h"
 
-typedef struct Vec3 { int x, y, z; } Vec3;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 struct Msg14 { u16 h[7]; };
@@ -17,7 +18,7 @@ struct Level { int n : 4; };
 struct HitPacket {
     u32 flagsLo : 16;
     u32 flagsHi : 16;
-    Vec3 normal;
+    VecFx32 normal;
     int field_10 : 16;
     int field_12 : 16;
     int field_14 : 16;
@@ -41,16 +42,16 @@ static inline int FX_Mul(int a, int b) {
 }
 
 extern int FX_Div(int num, int den);
-extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);
-extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern void Srt_SetTranslation(int srt, Vec3 *pos);
+extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
+extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void Srt_SetTranslation(int srt, VecFx32 *pos);
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
 extern int *func_ov107_020c9848(void);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 extern const struct Msg14 data_ov244_020d36f8;
 
 #define PACK3(msg, base, v) \
@@ -61,26 +62,26 @@ extern const struct Msg14 data_ov244_020d36f8;
 void Ov244_LeapToCoreTick(int *node)
 {
     int *state = (int *)node[1];
-    Vec3 target;
-    Vec3 acc;
-    Vec3 tmp;
+    VecFx32 target;
+    VecFx32 acc;
+    VecFx32 tmp;
     int t;
     int t2;
     int t3;
     int t2x3;
 
-    target = *(Vec3 *)(*(int *)(*(int *)(*state + 0x384) + 0x3bc) + 0x14);
+    target = *(VecFx32 *)(*(int *)(*(int *)(*state + 0x384) + 0x3bc) + 0x14);
     state[0xb] += *(int *)(node[0] + 0x2c);
     t = FX_Div(state[0xb], state[0xc]);
     t2 = FX_Mul(t, t);
     t3 = FX_Mul(t2, t);
     t2x3 = 3 * t2;
-    ScaleVec3Fx12(2 * t3 - t2x3 + 0x1000, (Vec3 *)(state + 0x13), &acc);
+    ScaleVec3Fx12(2 * t3 - t2x3 + 0x1000, (VecFx32 *)(state + 0x13), &acc);
     ScaleVec3Fx12(-(t3 + t3) + t2x3, &target, &tmp);
     VEC_Add(&acc, &tmp, &acc);
-    ScaleVec3Fx12(t3 - 2 * t2 + t, (Vec3 *)(state + 0xd), &tmp);
+    ScaleVec3Fx12(t3 - 2 * t2 + t, (VecFx32 *)(state + 0xd), &tmp);
     VEC_Add(&acc, &tmp, &acc);
-    ScaleVec3Fx12(t3 - t2, (Vec3 *)(state + 0x10), &tmp);
+    ScaleVec3Fx12(t3 - t2, (VecFx32 *)(state + 0x10), &tmp);
     VEC_Add(&acc, &tmp, &acc);
     Srt_SetTranslation(*state + 0xa0, &acc);
     if (state[0xb] < state[0xc]) {
@@ -96,8 +97,8 @@ void Ov244_LeapToCoreTick(int *node)
         Ov107_AiState_ApplyHit(*(int *)(*state + 0x384), state[6], &packet);
     }
     {
-    Vec3 c;
-    Vec3 d;
+    VecFx32 c;
+    VecFx32 d;
     struct Msg14 msg;
     FxVec vContact;
     msg = data_ov244_020d36f8;

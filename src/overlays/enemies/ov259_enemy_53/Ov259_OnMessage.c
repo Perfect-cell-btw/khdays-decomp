@@ -6,20 +6,22 @@
  * slots 5 and 7 anchor effects 1 / 7 on the +0x410 bone, slot 8 a looping effect 7 on the +0xa0 pose;
  * slot 15 raises the owner flag (020c0b14), and slots 16/17 hide / show the +0x390 wing rig (+0x42c).
  * The base hook always runs. */
+
 #include "nitro/types.h"
-typedef struct { int x, y, z; } Vec3;
+#include "nitro/fx.h"
+
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } SrtTransform;
 typedef union { int words[3]; u8 bytes[12]; } Packed;
 struct Pair { int res; int handle; };
 struct Ov259 { char pad[0x430]; struct Pair pairs[13]; };
 
-extern void QuatFromAxisAngle(Quat *q, const Vec3 *axis, int angle);
-extern void Quat_FromTwoVectors(Quat *out, const Vec3 *forward, const Vec3 *direction);
+extern void QuatFromAxisAngle(Quat *q, const VecFx32 *axis, int angle);
+extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *forward, const VecFx32 *direction);
 extern void Quat_Multiply(Quat *out, const Quat *a, const Quat *b);
 extern void Srt_SetRotationQuat(SrtTransform *t, const Quat *q);
 extern void SrtTransform_SetIdentity(SrtTransform *t);
-extern void Srt_SetTranslation(SrtTransform *t, const Vec3 *pos);
+extern void Srt_SetTranslation(SrtTransform *t, const VecFx32 *pos);
 extern void Srt_SetScaleUniform(SrtTransform *t, int scale);
 extern void Srt_SetScaleXYZ(void *pose, int x, int y, int z);
 extern int Ov107_CreateNodeXformTask(int model, int res, int kind, u8 flag, void *at);
@@ -27,12 +29,12 @@ extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, u8 f
 extern void Ov107_ForwardVisibleEvent(char *self, int on);
 extern void Ov259_SwapShells(int body, int on);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
-extern const Vec3 data_02042264;
+extern const VecFx32 data_02042264;
 
 void Ov259_OnMessage(char *self, u8 *msg, int arg)
 {
     SrtTransform t;
-    Vec3 v;
+    VecFx32 v;
     Quat spin;
     Quat q;
     Packed packedA;
@@ -113,7 +115,7 @@ void Ov259_OnMessage(char *self, u8 *msg, int arg)
             SrtTransform_SetIdentity(&t);
             Srt_SetTranslation(&t, &v);
             QuatFromAxisAngle(&spin, &data_02042264, 0);
-            Quat_FromTwoVectors(&q, &data_02042264, (Vec3 *)(*(int *)(self + 0x384) + 0x124));
+            Quat_FromTwoVectors(&q, &data_02042264, (VecFx32 *)(*(int *)(self + 0x384) + 0x124));
             Quat_Multiply(&q, &q, &spin);
             Srt_SetRotationQuat(&t, &q);
             ((struct Ov259 *)self)->pairs[2].handle =

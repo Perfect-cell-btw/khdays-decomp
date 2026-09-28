@@ -13,15 +13,11 @@
  * 0, 2, 15, is replaced by the actor's handler id, and plays it.
  */
 
-#include "nitro/types.h"
-
-typedef struct {
-    int x;
-    int y;
-    int z;
-} VecFx32;
-
 /* Ov022VoiceCue */
+
+#include "nitro/types.h"
+#include "nitro/fx.h"
+
 struct VoiceCue {
     u16 nVoice;                  /* 0x00 */
     u16 nArg;                    /* 0x02 */

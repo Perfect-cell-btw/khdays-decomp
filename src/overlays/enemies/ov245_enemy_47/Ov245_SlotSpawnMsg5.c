@@ -3,14 +3,16 @@
  * or of the +0x398 rider's +0x44c anchor (020c09a0), landing in +0x3b8; slot 0 also attaches
  * resource 0x15a of kind 0xb at the actor's +0xa0 placement (020cb040) into +0x3ac. Slot 4 resets
  * the +0x3a0 vector and starts motion 0 of the +0x39c item (020c9ee8). Then the state filter. */
-typedef struct { int x, y, z; } Vec3;
+
+#include "nitro/fx.h"
+
 struct Ov245Slots { char pad[0x3b4]; struct { int pParent; int pChild; } slots[3]; };
 
 extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *at, int a, int b);
 extern int Ov107_CreateSpawnTask(int owner, int resourceId, int kind, int zero, void *work);
 extern void Ov107_StartAnim(int item, int motion, int flag);
 extern int Ov245_FilterStateMsg(int self, unsigned char *msg, int extra);
-extern const Vec3 data_02041dc8;
+extern const VecFx32 data_02041dc8;
 
 int Ov245_SlotSpawnMsg5(int self, unsigned char *msg, int extra) {
     int at;
@@ -34,7 +36,7 @@ int Ov245_SlotSpawnMsg5(int self, unsigned char *msg, int extra) {
             }
             break;
         case 4:
-            *(Vec3 *)(self + 0x3a0) = data_02041dc8;
+            *(VecFx32 *)(self + 0x3a0) = data_02041dc8;
             Ov107_StartAnim(*(int *)(self + 0x39c), 0, 0);
             break;
         }

@@ -1,3 +1,4 @@
+
 #include "nitro/types.h"
 
 extern int Ov002_IsSessionOpen(void);

@@ -7,6 +7,7 @@
  * entry 9's sub-items and the 0208acd8 refresh follow, entries 0x10..0x12, 0xe and 0xf are shown
  * again, entry 0x15 gets its saved slots back and entry 9 takes the overrides, the hover and the
  * focus. */
+
 #include "nitro/types.h"
 
 typedef struct Ov025HubScene {
