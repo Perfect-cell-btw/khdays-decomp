@@ -3,7 +3,8 @@
 
 This module intentionally contains no original payload bytes.  Its JSON mode
 is suitable for comparing coefficients and reconstructed blocks captured from
-an emulator with the isolated C++ reconstruction in mobiclip_reference.cpp.
+an emulator with the isolated C++ reconstruction in
+libs/mobiclip/video/portable/mobiclip_reference.cpp.
 """
 
 from __future__ import annotations

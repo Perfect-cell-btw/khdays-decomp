@@ -73,7 +73,7 @@ def verify_capture(
         raise ValueError("captured decoder state has the wrong size")
 
     previous_quantizer = _u32(before_state, 0x3B4)
-    previous_format_variant = bool(_u32(before_state, 0x3BC))
+    previous_format_variant = bool(_u32(before_state, 0x48))
     histories = []
     for index in range(1, 6):
         luma = (directory / f"{stem}_before_luma{index}.bin").read_bytes()
@@ -122,7 +122,7 @@ def verify_capture(
         "chroma": decoded_chroma == observed_chroma,
         "decoderReturnBytes": returned_bytes == int(manifest["decoderReturnBytes"]),
         "quantizerState": _u32(after_state, 0x3B4) == decoded.header.quantizer,
-        "formatState": bool(_u32(after_state, 0x3BC)) == decoded.header.format_variant,
+        "formatState": bool(_u32(after_state, 0x48)) == decoded.header.format_variant,
         "coefficientTableState": _u32(after_state, 0x3B8) == selected_table,
         "historyBuffersUnchanged": unchanged_histories,
     }

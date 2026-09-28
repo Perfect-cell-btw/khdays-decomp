@@ -287,12 +287,36 @@ three escape forms, run/level placement and dequantization, packed quant/scan
 construction, 4x4 and 8x8 inverse transforms, residual addition, byte clipping,
 intra prediction, recursive motion compensation, complete I/P frame decode and
 RGB555 presentation. Its allocation-free frame API takes caller-owned output,
-history, coefficient-table and motion-workspace buffers, so it can serve both
-host validation and the eventual Nintendo DS integration.
+history, coefficient-table and motion-workspace buffers, so it serves both host
+validation and the entry below.
 
-`tools/mobiclip_reference.cpp` and its header contain the first isolated C++
-reconstruction and deliberately uses a general separable transform instead of
-reproducing the ARM routine's sparsity specializations.
+`libs/mobiclip/video/portable/mobiclip_reference.cpp` and its header contain the
+isolated C++ reconstruction and deliberately use a general separable transform
+instead of reproducing the ARM routine's sparsity specializations.
+
+## The frame decoder entry in portable C++
+
+`libs/mobiclip/video/portable/mobiclip_frame_core.{h,cpp}` define
+`int MobiClip_DecodeFrameCore(MobiClipDecoderState *)`: the routine the game
+calls through owner `+0x38`, written on top of the reconstruction above. It
+takes the same `0x454`-byte state (the ARM9 layout, 32-bit pointers), decodes
+into `lumaHistory[0]`/`chromaHistory[0]` with `[1..5]` as the previous frames
+newest first, and returns the bytes consumed rounded up to 16-bit words, which
+the owner adds to the bitstream pointer. Like the payload it records the
+quantizer (`+0x3b4`), the coefficient table in use (`+0x3b8`), the I-frame
+format bit (`+0x048`, kept by P-frames) and the quant/scan tables (`+0x074`,
+`+0x174`); the rest of the state is per-frame scratch. The ROM build still
+links the mnemonic payload; these files are not part of it.
+
+`tools/tests/mobiclip_frame_core_test.cpp` checks the entry the way the game
+uses it, built for a 32-bit target (the file names the command):
+
+- `capture`: a DeSmuME capture from `tools/mobiclip_capture.lua` (state and
+  planes before the call) must give the captured planes, state fields and
+  return value; both captured P-frames (returns 456 and 462) match;
+- `stream`: a whole `.mods` video through six rotating plane buffers against
+  FFmpeg's planar output; `802`, `808` and the five `839_*` streams match,
+  4859 frames (184 I + 4675 P).
 
 `tools/mobiclip_reference.py` implements the same semantics as a test oracle.
 It accepts a JSON object with `size`, `coefficients` and an optional

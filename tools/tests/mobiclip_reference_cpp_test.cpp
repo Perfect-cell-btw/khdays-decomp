@@ -1,3 +1,4 @@
+// Build with the decoder in libs/mobiclip/video/portable on the include path (/I or -I).
 #include "mobiclip_reference.hpp"
 
 using namespace khdays::mobiclip;
