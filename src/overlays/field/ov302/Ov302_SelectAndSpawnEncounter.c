@@ -5,12 +5,13 @@ extern void NNS_FndAppendListObject(void *list, void *obj);
  * level window brackets `param_3` (or that starts above it), preferring the
  * lowest window start; if one is found, instantiate it via Ov302_CreateEncounterRecord
  * and append to the list at param_1+0x18. Returns 1 if an entry was appended. */
-int Ov302_SelectAndSpawnEncounter(int param_1, unsigned short *param_2, unsigned int param_3, unsigned int param_4) {
+int Ov302_SelectAndSpawnEncounter(int param_1, unsigned short *param_2, unsigned int param_3) {
     int i;
     int ret;
     unsigned short *best;
     unsigned short *bestsub;
     int count;
+    unsigned int stride;
 
     ret = 0;
     bestsub = 0;
@@ -25,9 +26,9 @@ int Ov302_SelectAndSpawnEncounter(int param_1, unsigned short *param_2, unsigned
                 bestsub = param_2 + 0x18;
                 best = param_2;
             }
-            param_4 = *param_2;
+            stride = *param_2;
             i = i + 1;
-            param_2 = (unsigned short *)((char *)param_2 + param_4);
+            param_2 = (unsigned short *)((char *)param_2 + stride);
         } while (i < count);
     }
     if (best != 0) {

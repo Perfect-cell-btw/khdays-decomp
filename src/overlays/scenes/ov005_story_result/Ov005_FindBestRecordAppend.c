@@ -4,7 +4,7 @@
  * the list at param_1+0x18. Returns whether a record was appended. */
 extern int *Ov005_BuildRecordNode(unsigned short *rec, short *sub);
 extern void NNS_FndAppendListObject(void *list, int *obj);
-int Ov005_FindBestRecordAppend(int param_1, unsigned short *param_2, unsigned int param_3, unsigned int param_4) {
+int Ov005_FindBestRecordAppend(int param_1, unsigned short *param_2, unsigned int param_3) {
     int i;
     int found = 0;
     short *bestSub = 0;
