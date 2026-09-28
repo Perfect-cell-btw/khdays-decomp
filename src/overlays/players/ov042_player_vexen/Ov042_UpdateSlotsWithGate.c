@@ -1,3 +1,6 @@
+/* Drops the effect block when the character leaves the guard state, and advances the seven effect
+ * slots. */
+
 extern int Ov022_IsState9Or6WithFlag200(int a);
 extern void Ov042_ClearState1IfReady(int a, int b);
 

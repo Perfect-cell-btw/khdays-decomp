@@ -1,3 +1,6 @@
+/* Marks the owner's manager dirty (bit 1 of +0x5c) and clears the word the entry (+0x3e0) holds at
+ * +4. */
+
 void Ov206_ResetEntryMarkDirty(char *obj) {
     char *node = *(char **)(obj + 4);
     char *mgr = *(char **)(node + 4);

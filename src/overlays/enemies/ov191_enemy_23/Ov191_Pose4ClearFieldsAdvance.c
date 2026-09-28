@@ -1,3 +1,5 @@
+/* State step: posts pose 4, clears the timer and the leap flags and installs the leap step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov191_LeapTick();

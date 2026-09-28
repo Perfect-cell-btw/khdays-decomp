@@ -1,3 +1,6 @@
+/* Timed step: advances the timer by the owner's frame step until it passes 0xd48; then sets bit 7
+ * and clears bit 0 of the high flag byte, clears the pending action and clears the step handler. */
+
 struct hw { unsigned short lo:8, hi:8; };
 
 extern void SetIndexedSlot(int node, int slot, void *cb);

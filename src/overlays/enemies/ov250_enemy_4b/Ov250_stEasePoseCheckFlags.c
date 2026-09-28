@@ -1,3 +1,6 @@
+/* AI step: keeps the previous velocity, damps the current one by 0xb00, and once the gate byte is
+ * clear and the actor touches ground or a wall posts pose 9 and installs the next step. */
+
 struct v3 { int x, y, z; };
 struct b1 { unsigned char b:1; };
 

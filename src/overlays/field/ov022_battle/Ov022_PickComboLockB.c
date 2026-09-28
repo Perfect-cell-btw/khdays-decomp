@@ -1,3 +1,6 @@
+/* Picks the combo lock record for the current step: at the end of the chain the finisher (or its
+ * fallback), otherwise the regular one. */
+
 int Ov022_PickComboLockB(int arg0) {
     if (*(int *)(arg0 + 0x474) >= 0 &&
         *(int *)(arg0 + 0x474) + 1 >= *(int *)(*(int *)(arg0 + 0x468) + 0x14)) {

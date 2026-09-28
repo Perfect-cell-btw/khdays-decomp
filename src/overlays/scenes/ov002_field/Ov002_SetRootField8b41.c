@@ -1,3 +1,5 @@
+/* Stores a byte into the root field object a global points to. */
+
 extern int data_ov002_0207fa00;
 
 void Ov002_SetRootField8b41(int arg0) {

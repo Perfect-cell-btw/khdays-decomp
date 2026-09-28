@@ -1,3 +1,6 @@
+/* Region exit: passes the event to each of the three part objects (+0x398), then detaches the actor
+ * from the region. */
+
 extern void Ov107_InvokeSlot0x74();
 extern void Ov107_Actor_DetachFromRegion();
 

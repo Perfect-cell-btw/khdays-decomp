@@ -1,3 +1,6 @@
+/* State step: posts pose 4, clears the timer and the hit flags and installs the charge wind-up
+ * step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov157_ChargeWindup();

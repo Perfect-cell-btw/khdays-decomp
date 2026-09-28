@@ -1,3 +1,5 @@
+/* Returns a byte of the object a global points to. */
+
 extern char *data_ov008_02090f24;
 int Ov008_IsMissionMenuExitRequested(void)
 {

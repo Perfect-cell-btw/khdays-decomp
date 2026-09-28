@@ -1,3 +1,5 @@
+/* Points the effect block's two animation sets at the character's two rig attachments. */
+
 extern int data_ov103_020bc120;
 
 void Ov103_InitTwoGlobalChannelSlots(int this_) {

@@ -1,3 +1,6 @@
+/* While the character is shown and the effect node is visible, places it at the character's
+ * position turned with the character and draws it. */
+
 extern void Scene_DrawNode(int a);
 
 typedef struct { int x, y, z; } Vec3;

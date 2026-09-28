@@ -1,3 +1,6 @@
+/* Spawns the effect at the point with a speed that grows with the effect's timer (capped), using
+ * the stronger variant when flagged, through a placement message to the battle module. */
+
 extern void Ov022_SendPlacementMessage(int self, void *p);
 
 typedef struct { int x, y, z; } Vec3;

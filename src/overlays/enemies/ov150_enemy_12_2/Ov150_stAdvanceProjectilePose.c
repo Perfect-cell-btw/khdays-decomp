@@ -1,3 +1,7 @@
+/* Projectile step: sets the velocity from the action resource's offset and scale in the actor's
+ * frame plus the damped push velocity; once the gate byte is clear and the actor touches ground or
+ * a wall, queues action 2 and clears the step handler. */
+
 struct b1 { unsigned char b : 1; };
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
 extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);

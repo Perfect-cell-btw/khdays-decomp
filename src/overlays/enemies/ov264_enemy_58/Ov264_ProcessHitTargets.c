@@ -1,3 +1,6 @@
+/* Attack hit step: unless the actor is paused, collects the objects in its sphere (or touching its
+ * disc) and hits each one once, pushing it away and playing the hit effect. */
+
 #pragma opt_dead_assignments off
 
 typedef unsigned char u8;

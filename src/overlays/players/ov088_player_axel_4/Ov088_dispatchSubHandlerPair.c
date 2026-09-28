@@ -1,3 +1,5 @@
+/* Updates the character's two sub-objects (and rebinds them when needed), then draws them. */
+
 extern void Ov088_updateSubObjectsAndRebind(int a, int b, int c);
 extern void Ov088_tickSubObjectsIfFlagged(int a, int b);
 

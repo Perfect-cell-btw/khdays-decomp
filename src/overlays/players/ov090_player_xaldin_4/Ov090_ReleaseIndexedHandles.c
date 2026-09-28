@@ -1,3 +1,6 @@
+/* Removes the three animation objects the character's rig binds from its render object and marks
+ * their slots free. */
+
 extern void NNS_G3dRenderObjRemoveAnmObj(int a, int b);
 
 typedef struct { int a[3]; } Idx3;

@@ -1,3 +1,6 @@
+/* Begins the special attack: picks the effect timing for the game mode, records the attack variant
+ * and switches to state 0x21. */
+
 extern int func_02023c40(int p);
 extern void Ov022_ActorSetState(int a, int b);
 extern int data_ov055_020b7740;

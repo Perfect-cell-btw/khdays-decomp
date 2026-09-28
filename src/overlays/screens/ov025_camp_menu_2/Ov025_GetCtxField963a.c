@@ -1,3 +1,5 @@
+/* Returns a halfword field of the camp-menu context. */
+
 extern int data_ov025_020b5744;
 
 int Ov025_GetCtxField963a(void) {

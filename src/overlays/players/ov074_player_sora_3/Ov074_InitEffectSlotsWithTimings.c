@@ -1,3 +1,6 @@
+/* Initialises the character's effect slots: sets their timings, registers the effect sequence for
+ * the owner's palette slot, allocates its slot class and sets up the channel blocks. */
+
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern void Ov022_AllocateSlotWithClass(int a, int b, int c, void *d);
 extern void Ov074_SetupChannelBlocks(int self);

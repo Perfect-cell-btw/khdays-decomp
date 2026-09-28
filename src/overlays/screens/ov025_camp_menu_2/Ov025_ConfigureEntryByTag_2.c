@@ -1,3 +1,5 @@
+/* Finds the element with the tag, moves it to the position and runs its callback. */
+
 extern int Ov025_FindEntryByTag();
 extern void Ov025_Elem_SetPos();
 extern void Ov025_InvokeCallback40();

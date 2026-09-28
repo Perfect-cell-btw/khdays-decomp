@@ -1,3 +1,6 @@
+/* Reloads the character's message container and, unless a story flag blocks it, re-claims its
+ * battle slot and rebuilds its panel id summary and animation tables; frees the old container. */
+
 extern int GameState_IsFlagSet(int a);
 extern int Msg_OpenContainerAndReadHeader(void *a, int b);
 extern void func_ov022_0209fb60(int a, int b, int c);

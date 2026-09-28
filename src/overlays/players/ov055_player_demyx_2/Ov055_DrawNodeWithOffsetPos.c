@@ -1,3 +1,6 @@
+/* When the effect node is in one of its visible states, places it at the character's position plus
+ * its offset, turns it with the character and draws it. */
+
 extern void VEC_Add(const void *a, const void *b, void *ab);
 extern void Scene_DrawNode(int a);
 

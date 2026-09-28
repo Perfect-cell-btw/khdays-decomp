@@ -1,3 +1,5 @@
+/* Releases the animation sub-block of this overlay's shared battle object. */
+
 extern int ReleaseField74AndCleanup(int);
 extern int data_ov053_020b7e60;
 

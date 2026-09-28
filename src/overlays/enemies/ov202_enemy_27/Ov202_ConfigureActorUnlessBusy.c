@@ -1,3 +1,6 @@
+/* AI step: unless the model is busy (+0xad), starts its track-0 animation and installs the release
+ * step. */
+
 extern void SetSubitemState();
 extern void SetIndexedSlot();
 extern void Ov202_ReleaseSubitemStep();

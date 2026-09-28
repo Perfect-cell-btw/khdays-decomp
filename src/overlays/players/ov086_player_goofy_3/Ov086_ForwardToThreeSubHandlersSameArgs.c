@@ -1,3 +1,6 @@
+/* Advances the character's effect block: the active tracks, the sequence slot and the charge
+ * sequence. */
+
 extern void Ov086_UpdateTracksWhileActive();
 extern void Ov086_StepSequenceSlot();
 extern void Ov086_DriveChargeSequence();

@@ -1,3 +1,5 @@
+/* Stores the value into the object a global points to, when it exists. */
+
 extern int data_0204c22c;
 
 void func_02030e64(int arg0) {

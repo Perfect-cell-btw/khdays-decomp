@@ -1,3 +1,6 @@
+/* Sets up the first slot of the shared battle object: claims it in the battle module and marks it
+ * ready when its enable byte is set. */
+
 extern void func_ov022_0209fb60(int a, int b, int c);
 extern void Ov022_SetSlotClaim(int a, int b, int c);
 void Ov061_initFlagStateObj(int obj) {

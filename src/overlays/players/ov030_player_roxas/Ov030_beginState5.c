@@ -1,3 +1,6 @@
+/* Puts the emitter object into state 5: rebinds its effect slots for the ending and clears its
+ * timer. */
+
 extern void Ov030_RebindEmitterSlots(void *this, int arg);
 
 void Ov030_beginState5(char *this) {

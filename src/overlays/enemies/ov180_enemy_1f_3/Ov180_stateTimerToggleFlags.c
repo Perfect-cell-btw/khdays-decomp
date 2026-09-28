@@ -1,3 +1,7 @@
+/* State step: advances the timer by the owner's frame step and waits for it to pass its threshold;
+ * then updates the state bits in the high byte of the actor's flags (+0x60), clears the pending
+ * action (+0x1c7) and clears the step handler. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 void Ov180_stateTimerToggleFlags(int *node) {

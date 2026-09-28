@@ -1,3 +1,6 @@
+/* Thrown arc step: advances the shot's timer, resolves hits along its path, and when its animation
+ * ends marks it landed (state 3) and releases it. */
+
 extern void Ov022_ResolveShotHit(int self, char *node, void *v, void *w);
 extern int func_ov022_02091540(int a, int b);
 extern void func_ov022_02091d80(int self, char *node, int c);

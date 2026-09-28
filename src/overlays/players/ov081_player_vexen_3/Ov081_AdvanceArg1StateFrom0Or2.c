@@ -1,3 +1,5 @@
+/* Moves an idle (0) or finished (2) effect to state 1, binding the rig first when it was idle. */
+
 extern void Ov081_BindRig();
 
 void Ov081_AdvanceArg1StateFrom0Or2(int this_, int *arg1) {

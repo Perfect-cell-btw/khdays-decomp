@@ -1,3 +1,6 @@
+/* Collects up to four objects near the box: for every child region not flagged 0x2000, runs the
+ * quad-tree sphere query over it; returns how many were found. */
+
 extern int Ov163_collectObjectsInSphereRec(int *pair, int a, int b, int c, int *box2, int *box, int *counter, int p3);
 int Ov163_collectChildrenInBox(int param_1, int *param_2, int param_3) {
     int f[7];   /* f[0..1]=pair, f[2]=counter, f[3..6]=box */

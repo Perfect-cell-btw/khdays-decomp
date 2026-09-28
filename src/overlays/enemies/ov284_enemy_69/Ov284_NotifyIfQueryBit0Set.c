@@ -1,3 +1,5 @@
+/* Advances the child model's animation tracks and marks the task finished when they end. */
+
 extern int Sequence_UpdateTracks(int arg0, int arg1);
 extern void Task_MarkFinished(void *node);
 

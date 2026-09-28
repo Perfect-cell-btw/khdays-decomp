@@ -1,3 +1,6 @@
+/* Returns the address of a block inside the field state (the object data_ov002_0207f62c points to).
+ */
+
 extern int data_ov002_0207f62c;
 
 int Ov002_GetMissionProgress(void) {

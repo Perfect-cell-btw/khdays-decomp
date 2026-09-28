@@ -1,3 +1,5 @@
+/* Empty hook: does nothing. */
+
 void func_ov025_020b0814(void)
 {
 }

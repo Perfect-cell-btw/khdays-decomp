@@ -1,3 +1,6 @@
+/* Keeps the effect's tracks in step with the character's animation: resets it outside the attack
+ * states, and in the synced state moves tracks 0-2 to the character's frame minus 1.0. */
+
 extern int Anim_GetFrame(int a, int b);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 

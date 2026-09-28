@@ -1,3 +1,5 @@
+/* Releases the character's secondary effect sequence and its two effect streams. */
+
 extern void ReleaseField74AndCleanup(int p);
 extern void func_ov022_02091228(int p);
 extern int data_ov075_020b9e20;

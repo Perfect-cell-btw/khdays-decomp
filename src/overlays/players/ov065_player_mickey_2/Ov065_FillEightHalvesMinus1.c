@@ -1,3 +1,5 @@
+/* Marks the eight slot ids free (-1). */
+
 void Ov065_FillEightHalvesMinus1(short *base)
 {
     int i;

@@ -1,3 +1,6 @@
+/* Points the effect block's animation set at the character's rig attachment, binds the rig and
+ * clears the effect's timer. */
+
 extern int data_ov104_020bc2a0;
 extern void Ov104_BindRig();
 

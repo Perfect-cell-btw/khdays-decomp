@@ -1,3 +1,7 @@
+/* State step: sets bits 0x82 and clears 0xc in the high byte of the actor's flags (+0x60), sets bit
+ * 0 of +0x1ae, clears bit 0 of the part's flag byte, sends a state update, clears the timer and
+ * installs the timed step. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct bf { unsigned b : 8; };
 extern void Ov107_BuildAndSendUpdate();

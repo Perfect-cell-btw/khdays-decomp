@@ -1,3 +1,5 @@
+/* Copies the step's stored vector into the actor's movement vector (+0xf0). */
+
 struct Vec3 {
     int x;
     int y;

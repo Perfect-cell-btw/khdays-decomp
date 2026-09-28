@@ -1,3 +1,6 @@
+/* Timed step: waits for the timer (advanced by the owner's frame step) to pass 0x999, then launches
+ * the attack node along the heading and installs the queue-when-free step. */
+
 extern void Ov149_RelayoutAndStoreVec();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern short data_0203d210[];

@@ -1,3 +1,6 @@
+/* Hit reaction: on a hit with bit 0 set and no pending activation, queues action 2 and records the
+ * activation and its source; returns whether it did. */
+
 int Ov277_ActivateEntryIfFlagged(char *obj, int param2, int *flags) {
     char *base = *(char **)(obj + 0x214);
     unsigned v = (unsigned short)*flags;

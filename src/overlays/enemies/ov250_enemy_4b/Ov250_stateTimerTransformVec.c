@@ -1,3 +1,7 @@
+/* Timed step: advances the timer; once the gate byte is clear, launches the actor forward (its
+ * facing times 0.5, with a fixed upward speed), posts a pose, clears the timer and the swing flag
+ * and installs the leap step. */
+
 extern void Vec3TransformViaTempMtx();
 extern void ScaleVec3Fx12();
 extern void Ov107_PostTagUpdate();

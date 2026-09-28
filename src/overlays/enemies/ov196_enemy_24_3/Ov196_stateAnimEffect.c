@@ -1,3 +1,6 @@
+/* State step: derives the speed from the owner's frame step, posts a pose, starts the effect
+ * animation and installs the offset-tracking step. */
+
 extern void Ov107_PostTagUpdate();
 extern void Ov107_StartAnim();
 extern void SetIndexedSlot(void *obj, int idx, void *value);

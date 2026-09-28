@@ -1,3 +1,5 @@
+/* Returns the distance from the actor to the point (normalising the direction vector). */
+
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(void *dst, void *src);
 

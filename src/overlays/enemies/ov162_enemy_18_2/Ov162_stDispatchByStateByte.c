@@ -1,3 +1,6 @@
+/* State dispatcher: when an action is pending (+0x1c7 not -1) resets the per-action flags, makes it
+ * current (+0x1c6) and installs the step that starts that action; then marks nothing pending. */
+
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov162_stateSetFlagsClearBit(void);
 extern void Ov162_BeginRecoveryStance(void);

@@ -1,3 +1,6 @@
+/* AI step: once the model's animation ends, starts its tracks 2 and 0 on their next animations and
+ * clears the step handler. */
+
 extern void SetSubitemState();
 extern void SetIndexedSlot();
 

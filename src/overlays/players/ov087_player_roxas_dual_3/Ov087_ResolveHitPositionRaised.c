@@ -1,3 +1,6 @@
+/* Finds the ground under the point with a long downward ray cast from above it: returns the hit
+ * point slightly raised, or the point lowered by the search height when nothing is hit. */
+
 extern void *EntityMgr_RunRayCast(int a, void *b, void *c, int d);
 extern void Vec3ScaleAddQ27(int a, void *b, void *c, void *d);
 extern int data_ov087_020b9be0;

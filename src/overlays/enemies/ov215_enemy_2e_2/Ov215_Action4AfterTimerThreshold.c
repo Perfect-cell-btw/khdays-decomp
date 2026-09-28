@@ -1,3 +1,7 @@
+/* AI step: advances the timer by the owner's frame step until it passes 0x6ee; then clears bit 7 of
+ * the high flag byte, posts pose 0, sends a state update and installs the wait-for-animation step.
+ */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);

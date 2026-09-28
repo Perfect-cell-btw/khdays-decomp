@@ -1,3 +1,7 @@
+/* Character constructor: builds the panel object and, outside the restricted mode, loads the
+ * character's archive file and binds it to its resource slot, resetting the animation state; then
+ * initialises the effect state and requests the two voice ids; returns the decoder step. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov044_InitPanelObject(int *ctx);
 extern int Archive_LoadFile(void *tbl, int n);

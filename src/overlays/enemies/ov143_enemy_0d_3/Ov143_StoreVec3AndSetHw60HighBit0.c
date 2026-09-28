@@ -1,3 +1,6 @@
+/* Moves the node and re-lays it out, stores the vector at +0x38c and sets bit 0 of the high byte of
+ * its flags (+0x60). */
+
 extern void Ov107_MoveNodeAndRelayout();
 
 struct w3 { int a, b, c; };

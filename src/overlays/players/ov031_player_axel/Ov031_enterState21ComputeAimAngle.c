@@ -1,3 +1,6 @@
+/* State 0x21 handler: picks the attack command by variant, faces the locked target (turning the
+ * display object once) and returns the fire-attack step. */
+
 extern int Ov022_ValidateTargetRef(int this);
 extern int func_ov022_020ad0c0(int this);
 extern void VEC_Subtract(void *a, void *b, void *out);

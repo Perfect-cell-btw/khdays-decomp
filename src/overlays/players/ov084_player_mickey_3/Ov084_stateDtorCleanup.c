@@ -1,3 +1,6 @@
+/* Tears the character down: frees its resource tables and effect nodes, destroys the root object
+ * and clears the overlay's global pointer. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov002_FreeResourceTables(int a, int b);
 extern void Ov084_DestroyNodesAndFree(int a);

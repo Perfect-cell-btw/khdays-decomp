@@ -1,3 +1,7 @@
+/* AI step: moves the actor along a cubic Hermite curve from its start point to a point beside the
+ * target, capping the per-frame step at 0x800 and facing the target; at the end of the curve posts
+ * pose 7 and installs the fade-in step. Without a target it queues action 2 instead. */
+
 struct hw60 { unsigned short lo:8, hi:8; };
 
 extern void SetIndexedSlot(void *node, int slot, void *cb);

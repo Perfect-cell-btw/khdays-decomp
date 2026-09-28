@@ -1,3 +1,6 @@
+/* State step: sets bit 0 of +0x1ae, clears bit 0 of the model's flag byte, sets bit 1 in the high
+ * byte of the actor's flags, posts pose 5, clears the timer and installs the next step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int *self, int idx, void *cb);
 extern void Ov184_GuardFieldCClearField1cAdvance_2(void);

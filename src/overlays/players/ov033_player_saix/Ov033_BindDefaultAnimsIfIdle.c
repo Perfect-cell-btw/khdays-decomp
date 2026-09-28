@@ -1,3 +1,6 @@
+/* When the sub-object is idle, binds its default animation tracks 0 and 2, rewinds them and marks
+ * it active. */
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 

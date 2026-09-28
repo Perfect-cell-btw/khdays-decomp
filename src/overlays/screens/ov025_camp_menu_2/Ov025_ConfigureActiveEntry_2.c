@@ -1,3 +1,6 @@
+/* Finds the active element with the tag, reapplies its edits at the position and arms its tag
+ * tracker. */
+
 extern int Ov025_FindActiveEntryByTag();
 extern void Ov025_ReapplyEditsAndCommit();
 extern void Ov025_SetTagTrackerNodeArmed();

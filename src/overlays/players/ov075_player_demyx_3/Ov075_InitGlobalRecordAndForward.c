@@ -1,3 +1,6 @@
+/* Initialises the secondary effect record, registers its sequence for the owner's palette slot and
+ * opens the secondary sub-objects. */
+
 extern void RegisterSeqAndInit(int a, int b, int c, int d);
 extern void Ov075_OpenSecondarySubObjects(int p);
 extern int data_ov075_020b9e20;

@@ -1,3 +1,6 @@
+/* Tears the character down: releases the active widget sequence, frees the effect resources,
+ * destroys the root object and clears the overlay's global pointer. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void ReleaseField74AndCleanup(int a);
 extern void Ov064_ReleaseChannelListAndSubObjects(int a);

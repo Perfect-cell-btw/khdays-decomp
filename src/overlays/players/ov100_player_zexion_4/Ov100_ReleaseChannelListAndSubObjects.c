@@ -1,3 +1,6 @@
+/* Frees the character's effect stream and buffer, its two resource tables and its effect sequence.
+ */
+
 extern void func_ov022_02091228(int p);
 extern void NNSi_FndFreeFromDefaultHeap(int p);
 extern void Ov002_FreeResourceTables(int a, int b);

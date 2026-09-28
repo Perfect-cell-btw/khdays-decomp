@@ -1,3 +1,5 @@
+/* Queues action 8 unless it is the current one; returns whether it did. */
+
 struct actor_substate { signed char _pad[0x1c6]; signed char cur; signed char req; };
 
 int Ov239_RequestSubState8IfNotAlready(int this_) {

@@ -1,3 +1,5 @@
+/* Stores the value into a field of the object a global points to, when it exists. */
+
 extern int data_0204be08;
 
 void StoreToGlobalPtr4FieldE4IfSet(int arg0) {

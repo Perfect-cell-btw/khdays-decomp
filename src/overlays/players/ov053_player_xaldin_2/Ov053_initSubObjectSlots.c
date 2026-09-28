@@ -1,3 +1,6 @@
+/* Initialises the character's effect block: clears its state, registers its effect sequence for the
+ * owner's palette slot and binds tracks 0 and 2. */
+
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern int *data_ov053_020b7e60;

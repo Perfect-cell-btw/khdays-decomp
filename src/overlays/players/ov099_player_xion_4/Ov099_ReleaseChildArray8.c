@@ -1,3 +1,5 @@
+/* Releases the eight emitter objects' sequences. */
+
 extern void ReleaseField74AndCleanup(void *);
 
 void Ov099_ReleaseChildArray8(char *obj) {

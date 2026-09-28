@@ -1,3 +1,6 @@
+/* Per-frame camp-menu manager: creates and runs the current page handler, starts the secondary
+ * handler the story state calls for (tutorial cues, flags), and runs it. */
+
 extern int data_ov025_020b5744[];
 
 #define CTXV (*(int *)((char *)data_ov025_020b5744 + 4))

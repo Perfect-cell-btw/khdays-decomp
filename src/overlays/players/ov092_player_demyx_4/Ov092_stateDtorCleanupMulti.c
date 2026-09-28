@@ -1,3 +1,6 @@
+/* Tears the character down: releases the charge effect, frees its resource tables, the secondary
+ * effect and the emitter, destroys the root object and clears the overlay's global pointer. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov092_ClearFlagAndReleaseChild(int a);
 extern void Ov002_FreeResourceTables(int a, int b);

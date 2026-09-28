@@ -1,3 +1,7 @@
+/* Homing shot step: advances the shot toward its target, resolves hits, and once it has flown too
+ * far or too long, or has hit, bursts it (spawn effect, triple spread, local rumble), marks it
+ * finished and releases its rig slots. */
+
 struct vec3 { int x, y, z; };
 struct bits1 { unsigned char b0 : 1; };
 

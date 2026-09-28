@@ -1,3 +1,7 @@
+/* AI step: once the actor touches ground or a wall, sets bit 0x40 in the high byte of its flags,
+ * starts the action resource's animation, posts pose 7, sends a state update and installs the
+ * scale-until-ready step. */
+
 extern void Ov107_StartAnim(int a, int b, int c);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);

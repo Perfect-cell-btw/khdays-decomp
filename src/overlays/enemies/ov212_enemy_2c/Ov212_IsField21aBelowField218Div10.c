@@ -1,3 +1,5 @@
+/* Whether the actor's hit points (+0x21a) are below a tenth of its maximum (+0x218). */
+
 int Ov212_IsField21aBelowField218Div10(int *obj)
 {
     int base = *obj;

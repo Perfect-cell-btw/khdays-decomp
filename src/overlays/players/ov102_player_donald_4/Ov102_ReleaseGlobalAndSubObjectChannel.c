@@ -1,3 +1,5 @@
+/* Releases the character's effect sequence, then frees its effect stream and buffer. */
+
 extern int data_ov102_020bb920;
 extern void ReleaseField74AndCleanup();
 extern void func_ov022_02091228();

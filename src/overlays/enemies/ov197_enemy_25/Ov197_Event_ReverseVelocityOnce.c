@@ -1,3 +1,6 @@
+/* Hit reaction: when the hit flags have bits 0 and 4 set and the velocity has not been reversed
+ * yet, reverses it, marks it reversed and clears the timer; returns whether it did. */
+
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 
 int Ov197_Event_ReverseVelocityOnce(int node, int arg2, unsigned int *arg3) {

@@ -1,3 +1,6 @@
+/* AI step: decays the spin; once the actor is on the ground, clears flag 0x40 in the high byte of
+ * its flags, posts pose 6 and installs the wait-for-child step. */
+
 extern void Ov127_DecaySpinOverElapsed(int self);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, void *cb);

@@ -1,3 +1,5 @@
+/* Whether a sphere cast from the stored position hits the world collision of the actor's owner. */
+
 extern int Collision_CastSphere();
 
 int Ov204_TestSubObjectHelperNonzero(int this_, int arg1) {

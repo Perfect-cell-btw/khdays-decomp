@@ -1,3 +1,8 @@
+/* Hit handler: when the actor still has hit points (+0x21a), records the hit direction and source,
+ * applies the damage clamped to the maximum (+0x218), plays the hit reaction (alternating sides, a
+ * separate set for flagged hits) and queues defeat (action 3) at zero or the knockback action (6)
+ * for a flagged hit; returns 1 when it handled the hit. */
+
 typedef struct {
     int x;
     int y;

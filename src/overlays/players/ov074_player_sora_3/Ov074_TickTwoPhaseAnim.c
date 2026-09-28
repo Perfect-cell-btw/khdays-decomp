@@ -1,3 +1,6 @@
+/* Two-phase effect: waits for the delay to pass, then binds and rewinds tracks 0 and 2 and plays
+ * them to the end, returning to idle. */
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 extern int Sequence_UpdateTracks(int a, int b);

@@ -1,3 +1,5 @@
+/* Copies the 44-byte transform block from the source node into the destination object (+0x30). */
+
 typedef struct { int w[11]; } Blk44;
 
 void Ov255_CopyBlock44(char *obj) {

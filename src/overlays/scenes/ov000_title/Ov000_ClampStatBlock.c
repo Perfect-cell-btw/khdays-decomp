@@ -1,3 +1,6 @@
+/* Clamps a character's stat block to its display limits: level 99, four stats 999, experience
+ * 0x64000, one byte-sized stat 255 and the fourteen counters 0x64000. */
+
 struct S {
     char pad[0x4c];
     int a;     /* 0x4c */

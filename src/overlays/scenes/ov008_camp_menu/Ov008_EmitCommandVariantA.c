@@ -1,3 +1,6 @@
+/* Requests a save-card stream command with the fixed parameters of this variant
+ * (CARDi_RequestStreamCommand). */
+
 extern void CARDi_RequestStreamCommand(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8);
 
 void Ov008_EmitCommandVariantA(int arg0, int arg1, int arg2)

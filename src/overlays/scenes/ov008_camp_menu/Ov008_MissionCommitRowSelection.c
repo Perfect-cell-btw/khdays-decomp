@@ -1,3 +1,7 @@
+/* Commits the selected mission row when it is complete and ready: with the session alive, switches
+ * to the select state, makes the row the active record and clears the input and work buffers;
+ * otherwise goes idle and drives the sound; returns whether it committed. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

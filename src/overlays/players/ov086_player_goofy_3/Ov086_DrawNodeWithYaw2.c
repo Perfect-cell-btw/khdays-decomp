@@ -1,3 +1,6 @@
+/* When the effect node is in one of its visible states, places it at the locked target's point
+ * turned with the character and draws it. */
+
 extern void func_ov022_020ad44c(void *out, int self);
 extern void Scene_DrawNode(int a);
 

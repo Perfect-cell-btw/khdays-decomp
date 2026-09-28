@@ -1,3 +1,7 @@
+/* Orientation step: turns the heading toward its target, writes it into the model's SRT, hands the
+ * step velocity to the actor (+0xf0) keeping a copy, and after a long enough stretch in action 2 or
+ * 4 queues action 5. */
+
 struct m1 { int m[4]; };
 struct v3 { int a, b, c; };
 extern int Angle_TurnToward(int a, int b, int c, int d);

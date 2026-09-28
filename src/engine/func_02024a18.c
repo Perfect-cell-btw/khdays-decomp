@@ -1,3 +1,5 @@
+/* Returns the indexed entry of a table. */
+
 extern int data_02041e6c;
 
 int func_02024a18(int index) {

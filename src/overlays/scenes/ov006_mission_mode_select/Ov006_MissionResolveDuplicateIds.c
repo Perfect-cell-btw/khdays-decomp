@@ -1,3 +1,7 @@
+/* Resolves duplicate character ids among the four mission slots: a slot that just changed to
+ * another slot's id reverts to its previous one, and any duplicates left get a random id; then
+ * remembers the ids. */
+
 typedef signed char s8;
 typedef unsigned char u8;
 

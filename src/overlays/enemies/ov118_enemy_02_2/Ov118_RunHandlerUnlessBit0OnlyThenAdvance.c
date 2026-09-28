@@ -1,3 +1,6 @@
+/* Post-tick: unlinks the held node when the actor is inactive or flagged, then runs the base
+ * post-tick. */
+
 extern void Ov118_UnlinkHeldNode();
 extern void Ov107_AiState_PostTickBase();
 

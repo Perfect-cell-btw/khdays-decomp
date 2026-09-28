@@ -1,3 +1,7 @@
+/* Hit handler: while the actor has hit points, sets the hit mode from the current action, applies
+ * the damage (a counter-flagged hit queues action 5 instead), clamps the hit points to the maximum
+ * outside the invulnerable action, and plays the reaction. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

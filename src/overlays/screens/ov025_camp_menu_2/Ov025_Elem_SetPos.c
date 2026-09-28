@@ -1,3 +1,5 @@
+/* Sets both coordinates of the element's position. */
+
 extern int Ov025_Elem_SetX();
 extern int Ov025_Elem_SetY();
 

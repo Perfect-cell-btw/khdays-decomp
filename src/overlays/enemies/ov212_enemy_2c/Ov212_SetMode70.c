@@ -1,3 +1,5 @@
+/* Sets the mode word (+0x70): 4 (clearing the timer) when the argument is set, 2 otherwise. */
+
 void Ov212_SetMode70(char *obj, int arg) {
     if (arg) {
         *(int *)(obj + 0x44) = 0;

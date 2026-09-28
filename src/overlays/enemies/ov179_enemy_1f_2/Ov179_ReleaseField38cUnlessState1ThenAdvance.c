@@ -1,3 +1,5 @@
+/* Post-tick: outside action 1 unlinks the attachment at +0x38c; then runs the base post-tick. */
+
 extern void Ov107_UnlinkNodeFromOwner();
 extern void Ov107_AiState_PostTickBase();
 

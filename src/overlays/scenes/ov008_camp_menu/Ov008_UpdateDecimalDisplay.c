@@ -1,3 +1,6 @@
+/* Draws a decimal value with digit glyph entries, right to left from the given width, clamped to
+ * the maximum and to zero. */
+
 typedef unsigned short u16;
 typedef signed short s16;
 

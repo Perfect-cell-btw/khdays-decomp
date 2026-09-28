@@ -1,3 +1,7 @@
+/* State step: sets bit 0 of +0x1ae, clears bit 0 of the model's flag byte, sets bit 0x40 in the
+ * high byte of the actor's flags, posts pose 7, starts the action resource's animation and installs
+ * the fixed-angle step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_StartAnim(int a, int b, int c);
 extern void SetIndexedSlot(int *self, int idx, void *cb);

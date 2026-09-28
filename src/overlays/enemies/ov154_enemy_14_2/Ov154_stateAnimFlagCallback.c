@@ -1,3 +1,7 @@
+/* State step: posts pose 3, sets flag 0x40 of +0x1ae, clears the timer and its flag, derives the
+ * speed from the owner's frame step, sends the animation pair from the overlay's table to the
+ * actor's event callback and installs the aim step. */
+
 struct pair { unsigned short a, b; };
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);

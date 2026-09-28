@@ -1,3 +1,5 @@
+/* Clears the effect block's active word and points it at the character's two rig matrices. */
+
 extern int data_ov053_020b7e60;
 
 void Ov053_initGlobalSlotBaseRefs(int this) {

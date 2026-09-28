@@ -1,3 +1,6 @@
+/* In its visible states, uploads the effect's bone matrix, scale and matrix to the geometry FIFO
+ * and runs its animation channels. */
+
 extern void MI_Copy48B(int dst, int src);
 extern void GX_SendFifoWords(int a, void *b, int c);
 extern void Gfx_SubmitCachedCommandBlock(void);

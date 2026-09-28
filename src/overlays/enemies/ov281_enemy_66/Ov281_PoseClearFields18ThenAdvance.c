@@ -1,3 +1,6 @@
+/* AI step: when the model's animation ends, posts a pose, clears the timer and the two hit flags
+ * and installs the aimed hit step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov281_UpdateAimedHitAction();

@@ -1,3 +1,6 @@
+/* Draws a textured menu quad through the geometry FIFO: colour (dimmed or full), texture, polygon
+ * attributes and the four textured vertices relative to the screen origin. */
+
 typedef unsigned int u32;
 typedef unsigned short u16;
 typedef signed short s16;

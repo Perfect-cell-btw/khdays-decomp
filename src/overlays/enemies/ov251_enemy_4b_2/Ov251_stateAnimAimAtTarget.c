@@ -1,3 +1,6 @@
+/* State step: posts a pose and, when a target is set, turns the heading toward it; installs the
+ * eased-pose step. */
+
 extern void Ov107_PostTagUpdate();
 extern void VEC_Subtract();
 extern int func_020050b4();

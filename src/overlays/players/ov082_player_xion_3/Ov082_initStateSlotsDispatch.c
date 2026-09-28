@@ -1,3 +1,7 @@
+/* Initialises the character's effect state: links the owner, registers the two effect sequences
+ * (the second one depends on the owner's mode), allocates the owner's slot class and initialises
+ * the eight emitter objects. */
+
 struct s5 { int a, b, c, d, e; };
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern void Ov022_AllocateSlotWithClass(int a, int b, int c, void *d);

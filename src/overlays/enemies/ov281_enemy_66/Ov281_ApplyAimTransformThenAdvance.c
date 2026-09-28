@@ -1,3 +1,7 @@
+/* AI step: sets the velocity from the action resource's offset and scale in the actor's frame; when
+ * the model's animation ends posts pose 8, starts the action resource's animation and installs the
+ * next aimed step. */
+
 extern int Ov107_ActionResource_GetOffsetAndScale(int a, void *out);
 extern void Vec3TransformViaTempMtx(int a, int b, void *c);
 extern void ScaleVec3Fx12(int a, int b, int c);

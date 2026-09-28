@@ -1,3 +1,7 @@
+/* Creates the camp-menu context: allocates and clears it, loads its overlay and message containers,
+ * starts touch sampling, instantiates its classes and lists, sets up its surfaces and header
+ * limits, and restores the saved selections. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 

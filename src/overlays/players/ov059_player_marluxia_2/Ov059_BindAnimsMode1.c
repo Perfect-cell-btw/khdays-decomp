@@ -1,3 +1,6 @@
+/* Switches the object to an animation mode: records the mode, clears its timer, binds tracks 0 and
+ * 2 to the object's animation set and rewinds them. */
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 

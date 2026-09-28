@@ -1,3 +1,5 @@
+/* Returns the indexed entry of a list inside the object a global points to. */
+
 extern int data_ov002_0207fa20;
 
 int Ov002_GetListEntry(int arg0) {

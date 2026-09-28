@@ -1,3 +1,6 @@
+/* Pose message override: for message kind 0 stamps the actor's action and two state bytes into the
+ * message, then sends it through the shared handler. */
+
 extern void *Ov107_AiState_SendPose();
 
 struct actor_1c6 {

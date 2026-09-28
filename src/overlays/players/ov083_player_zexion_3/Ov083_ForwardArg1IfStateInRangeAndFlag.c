@@ -1,3 +1,5 @@
+/* While the character is shown, draws the effect node in its visible states. */
+
 extern void Scene_DrawNode();
 
 struct b1 { unsigned char b : 1; };

@@ -1,3 +1,6 @@
+/* Formats the variable record with the given index into the buffer (wide vsnprintf) and returns the
+ * buffer. */
+
 extern int Ov008_GetVarRecordByIndex(int arg0, int arg1);
 extern void Text_VSNPrintfWide(int arg0, int arg1, int arg2, int arg3);
 

@@ -1,3 +1,6 @@
+/* Starts the save-card read of a save slot: resets the card state, records the slot and starts the
+ * card thread on that slot's block (0x2018 bytes each). */
+
 extern int func_02020904(void);
 extern void Ov000_StartCardThread(int arg0, int arg1, int arg2);
 

@@ -1,3 +1,7 @@
+/* AI step: once the actor is active, places the tracking node 0x2000 above the actor's position
+ * (+0xb0), records whether the context mode where it lands is 8, then makes the stored action
+ * (+0x1c9) pending and clears the step handler. */
+
 struct Vec3 { int x, y, z; };
 
 struct Node {

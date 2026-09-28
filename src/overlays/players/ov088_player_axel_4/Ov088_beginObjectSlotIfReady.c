@@ -1,3 +1,7 @@
+/* Begins the character's special attack: for the local player sets bit 16 of the two 64-bit flag
+ * words, records the attack variant, and switches to state 0x21 unless the variant needs the two
+ * effect streams and they are still busy; returns the state result. */
+
 extern int data_ov088_020bc360;
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_AreStreamsIdle(int x);

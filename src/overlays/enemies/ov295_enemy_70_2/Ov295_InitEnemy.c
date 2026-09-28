@@ -1,3 +1,6 @@
+/* Enemy initialiser: installs its callbacks, sets its stored action, camera pose and flags, creates
+ * its model (lowered) with its animation tracks and attach slots, and its transform entries. */
+
 typedef signed int s32;
 typedef unsigned short u16;
 typedef unsigned char u8;

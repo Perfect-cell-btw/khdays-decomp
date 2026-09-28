@@ -1,3 +1,6 @@
+/* Draws the character's effect objects while the owner is shown: the eight emitters, the node at
+ * the owner, and the main effect at the owner's position when it is active. */
+
 struct b1 { unsigned char b : 1; };
 struct v3 { int a, b, c; };
 extern void Ov030_DrawWithFadePolygonId(void *p);

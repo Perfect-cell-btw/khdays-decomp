@@ -1,3 +1,7 @@
+/* Forwards the global command to the three effect streams and runs their callbacks; when any stream
+ * is still busy, sets bit 16 of the local player's two 64-bit flag words; then finishes the
+ * battle-module update. */
+
 extern int Ov022_GetGlobal34(void);
 extern void Ov022_ForwardToNodeHandler(int a, int b);
 extern void Ov022_InvokeCallback24IfBit0(int a);

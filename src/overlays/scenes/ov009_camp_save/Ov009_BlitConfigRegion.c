@@ -1,3 +1,5 @@
+/* Configures and starts the context's region tween toward the given position. */
+
 extern void Tween_Configure();
 extern void Tween_Start();
 extern int data_ov009_020563e4;

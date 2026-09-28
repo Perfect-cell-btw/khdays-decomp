@@ -1,3 +1,6 @@
+/* AI step: keeps the previous velocity and damps the current one by 0xb00; once it is almost still
+ * (magnitude below 0x10) posts a pose and installs the queue-on-flag-clear step. */
+
 struct v3 { int a, b, c; };
 extern void ScaleVec3Fx12();
 extern int VEC_Mag();

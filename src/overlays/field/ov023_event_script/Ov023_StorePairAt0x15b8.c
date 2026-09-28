@@ -1,3 +1,5 @@
+/* Stores a pair of words into the object. */
+
 void Ov023_StorePairAt0x15b8(int p, int a, int b)
 {
     *(int *)(p + 0x15b8) = a;

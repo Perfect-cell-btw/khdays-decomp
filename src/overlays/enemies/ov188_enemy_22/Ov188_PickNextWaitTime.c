@@ -1,3 +1,6 @@
+/* State step: posts tag 1, picks a new random wait between the actor's limits when the last one has
+ * run out, and installs the aim-and-pick step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int self, int idx, void *cb);

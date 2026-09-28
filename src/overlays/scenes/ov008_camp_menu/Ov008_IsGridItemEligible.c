@@ -1,3 +1,6 @@
+/* Whether an item may appear in the grid: items 513-630 and a fixed list of special items are
+ * excluded. */
+
 int Ov008_IsGridItemEligible(int itemId)
 {
     if (513 <= itemId && itemId <= 630) {

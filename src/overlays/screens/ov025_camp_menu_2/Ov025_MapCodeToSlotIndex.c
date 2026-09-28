@@ -1,3 +1,5 @@
+/* Maps a menu code to its slot index (0-6), or -1 for any other code. */
+
 int Ov025_MapCodeToSlotIndex(int code)
 {
     int r = -1;

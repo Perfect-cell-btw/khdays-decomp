@@ -1,4 +1,5 @@
-/* Forward to 02056874 (full args) and 0205687c (a, b, d). */
+/* Sets both coordinates of the element's position. */
+
 extern void Ov000_Elem_SetX(int a, int b, int c, int d);
 extern void Ov000_Elem_SetY(int a, int b, int d);
 void Ov000_Elem_SetPos(int param_1, int param_2, int param_3, int param_4) {

@@ -1,3 +1,5 @@
+/* Shows a grid page when the menu has at least two entries and is idle. */
+
 extern void *Ov008_GetMenuContext(void);
 extern void Ov008_ShowGridPage(void *context, int arg1, int arg2);
 

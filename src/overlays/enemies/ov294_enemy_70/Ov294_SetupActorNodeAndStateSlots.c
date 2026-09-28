@@ -1,3 +1,7 @@
+/* Init state: clears the current and pending actions, records pointers to the actor's velocity and
+ * model busy flag, sets the initial flag bits and installs the first action, the dispatcher and an
+ * empty step. */
+
 extern void SetIndexedSlot();
 extern void Ov294_stSetDispFlagsde(void);
 extern void Ov294_DispatchSubStateByte(void);

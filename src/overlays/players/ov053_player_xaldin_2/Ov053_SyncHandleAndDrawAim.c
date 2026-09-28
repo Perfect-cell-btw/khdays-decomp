@@ -1,3 +1,7 @@
+/* Per-frame special-attack update: keeps the ground-follow rumble running only for the local player
+ * in the charge states (stopping it otherwise), scrolls the charge widget with the animation frame,
+ * draws the animation and finishes the battle-module update. */
+
 extern int Anim_GetFrame(int a, int b);
 extern int func_ov022_02083f0c(void);
 extern void Ov002_StoreVAndToggleBit25(int a, int b, int c);

@@ -1,3 +1,5 @@
+/* Draws the shots of every live entry of the object's list (types other than 0, 2 and 3). */
+
 extern void Ov022_DrawShot();
 
 void Ov081_DispatchActiveEntriesByStatus(int this_) {

@@ -1,3 +1,6 @@
+/* State step: derives the speed from the owner's frame step, posts pose 2, clears the timer, starts
+ * the child selector's animation and installs the chase step. */
+
 extern void Ov107_PostTagUpdate();
 extern void Ov107_StartAnim();
 extern void SetIndexedSlot(void *obj, int idx, void *value);

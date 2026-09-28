@@ -1,3 +1,6 @@
+/* State step: without a target queues action 2 and ends the step; otherwise faces it, posts pose 3,
+ * sends a state update and installs the next step. */
+
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(void *dst, void *src);
 extern int func_020050b4(int x, int y);

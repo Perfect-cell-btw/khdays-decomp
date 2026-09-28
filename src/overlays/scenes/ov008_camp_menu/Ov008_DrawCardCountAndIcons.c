@@ -1,3 +1,6 @@
+/* Checks that a card's count, shape and record can be drawn at the position; returns whether all of
+ * them fit. */
+
 extern int Ov008_PlaceNodeShape(int p1, char *caption, int a, int p4, int p5, int one);
 extern int Ov008_CanPlaceShape(int p1, int count, int a, int p4, int p5);
 extern int Ov008_CanPlaceRecord(int p1, int a, unsigned int b, unsigned int c, unsigned int d, int one);

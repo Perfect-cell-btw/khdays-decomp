@@ -1,3 +1,5 @@
+/* Drops a reference to a resource slot, releasing the slot when the last reference goes. */
+
 extern void ResSlot_Release_2();
 extern int data_ov008_02090f04;
 

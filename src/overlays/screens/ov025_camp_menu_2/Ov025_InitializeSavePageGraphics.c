@@ -1,3 +1,6 @@
+/* Sets up the save page's graphics: resets the 2D engines, assigns the VRAM banks, sets the display
+ * modes, the background controls and priorities, the windows and the blending. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

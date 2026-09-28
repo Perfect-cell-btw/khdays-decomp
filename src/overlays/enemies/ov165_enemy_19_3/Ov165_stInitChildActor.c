@@ -1,3 +1,7 @@
+/* State step: binds the child actor (+0x3c4's subitem) to this state: installs its render callback
+ * and back pointer, clears its flag bit 1, starts its animation tracks, resets the timer and
+ * installs the timer step. */
+
 extern void SetSubitemState(void *child, int cmd, int arg, int flag);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov165_RenderAtOwnerScaled(void);

@@ -1,3 +1,6 @@
+/* For every live entry of the object's list (types other than 0 and 3) sets the model's polygon id
+ * from the entry index and draws the entry's shot. */
+
 extern void NNS_G3dMdlSetMdlPolygonID(int a, int b, int c);
 extern void Ov022_DrawShot(int e);
 

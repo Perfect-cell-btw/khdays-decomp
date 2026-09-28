@@ -1,3 +1,7 @@
+/* State step: sets bits 0x82 in the high byte of the actor's flags (+0x60) and bit 0 of +0x1ae,
+ * clears bit 0 of its model's flag byte, clears the timer, sends a state update and installs the
+ * aiming timer step. */
+
 struct bf { unsigned b : 8; };
 extern void Ov107_BuildAndSendUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);

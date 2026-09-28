@@ -1,3 +1,6 @@
+/* State step: unless the actor's animation state (+0x310) is 0xa, starts the subitem's tracks 2 and
+ * 0 on their next animations and installs the finishing step. */
+
 extern void SetSubitemState();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov165_FinishIfSubFlagClear(void);

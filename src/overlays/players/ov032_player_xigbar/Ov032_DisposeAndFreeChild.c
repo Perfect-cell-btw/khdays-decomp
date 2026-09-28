@@ -1,3 +1,5 @@
+/* Frees the character's two effect streams and their buffer. */
+
 extern void func_ov022_02091228(void *);
 extern void NNSi_FndFreeFromDefaultHeap(void *);
 

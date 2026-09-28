@@ -1,3 +1,6 @@
+/* AI step: steers toward the target's centre and advances the timer by the owner's frame step; when
+ * it passes 0x1188 fires the three-way spread and installs the wait-for-animation step. */
+
 extern void VEC_Subtract(void *a, int b, void *out);
 extern void VEC_Normalize(void *a, void *b);
 extern int func_020050b4(int a, int b);

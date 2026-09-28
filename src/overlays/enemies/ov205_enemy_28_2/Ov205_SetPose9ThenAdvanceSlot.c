@@ -1,3 +1,5 @@
+/* Posts a tag update for a pose, then installs the next step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov205_GuardField28Pose10ClearAdvance();

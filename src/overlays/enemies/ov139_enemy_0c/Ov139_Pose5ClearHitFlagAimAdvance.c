@@ -1,3 +1,6 @@
+/* State step: posts pose 5, clears flag 0x40 in the high byte of the actor's flags, faces the
+ * target when one is set and installs the damped-move step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int y);

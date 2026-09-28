@@ -1,3 +1,7 @@
+/* AI state step: advances the timer by the owner's frame step and waits until it passes 0x6ee; then
+ * turns toward the nearest object (look-at matrix to quaternion), clears flags 0x82 in the high
+ * byte of the actor's flags, posts a tag update and installs the next step. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct blk16 { int a, b, c, d; };
 extern int Ov107_FindNearestObject(int a, int b);

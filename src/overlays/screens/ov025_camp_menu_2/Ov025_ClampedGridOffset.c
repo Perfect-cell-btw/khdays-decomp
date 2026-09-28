@@ -1,3 +1,6 @@
+/* Offset of a cell in a grid laid out in 32-column pages: cells past the first page's width
+ * continue on the next page. */
+
 int Ov025_ClampedGridOffset(int pos, int stride, int width, int height) {
     int w = width;
     if (w > 0x20) w = 0x20;

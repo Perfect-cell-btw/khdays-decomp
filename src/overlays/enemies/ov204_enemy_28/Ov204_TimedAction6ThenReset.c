@@ -1,3 +1,7 @@
+/* Timed step: sends a state update once when the timer passes its threshold; once the gate byte is
+ * clear starts the charge animation, posts a pose, clears the timers and flags and installs the
+ * charge step. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void Ov107_StartAnim(int a, int b, int c);
 extern void Ov107_PostTagUpdate(int a, int b, int c);

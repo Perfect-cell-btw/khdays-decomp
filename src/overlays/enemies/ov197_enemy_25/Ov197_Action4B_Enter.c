@@ -1,3 +1,7 @@
+/* State step: clears bit 0 and sets the stance bits in the high byte of the actor's flags (+0x60),
+ * sets bits 0-1 of +0x1ae, clears bit 0 of the model's flag byte, sends a state update and installs
+ * the queue-action-0 step. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov197_AiStep_QueueAction0(void);

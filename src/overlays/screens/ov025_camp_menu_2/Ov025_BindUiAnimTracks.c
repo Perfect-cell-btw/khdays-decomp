@@ -1,3 +1,5 @@
+/* Binds the UI animation tracks listed in the overlay's table to the object's animation set. */
+
 typedef unsigned short u16;
 extern void BindAnimTrack(int obj, unsigned int trackId, int animBlock, int param_2);
 extern const u16 data_ov025_020b3ba4[];

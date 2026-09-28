@@ -1,3 +1,6 @@
+/* State step: posts pose 4, sends a state update, clears the step flag and installs the target-hook
+ * step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *value);

@@ -1,3 +1,6 @@
+/* State step: once the model's animation ends, posts pose 4, loads the wait time of the current
+ * slot and installs the countdown step. */
+
 struct row3d4 { char _pad[0x3d4]; int f; };
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *value);

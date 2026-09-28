@@ -1,3 +1,5 @@
+/* Reports a global counter to the field root, then returns whether it is at least the value. */
+
 extern void Ov002_SetRootField85ac(int a, int b);
 extern int data_0204be18;
 

@@ -1,3 +1,7 @@
+/* Begins the special attack: for the local player sets bit 16 of the two 64-bit flag words, records
+ * whether the slot is ready and switches to state 0x21 unless that variant's effect stream is still
+ * busy; returns the state result. */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_IsSlotReady(int a);
 extern int Ov022_AreStreamsIdle(int a);

@@ -1,3 +1,6 @@
+/* AI step: once the model's animation ends, posts pose 7, clears the timer and installs the timed
+ * step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov134_AiStep_WaitTimerThenTag8();

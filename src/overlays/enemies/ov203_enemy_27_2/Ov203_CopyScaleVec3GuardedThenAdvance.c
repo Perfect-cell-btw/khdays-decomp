@@ -1,3 +1,7 @@
+/* AI step: keeps the previous velocity (+0x14), damps the current one (+0x20) by 0xb00, and once
+ * the gate byte is clear and the actor touches ground or a wall (flags at +0x17a/+0x17c), queues
+ * action 2 and clears the step handler. */
+
 struct w3 { int a, b, c; };
 struct b1 { unsigned char b : 1; };
 extern void ScaleVec3Fx12(int factor, void *src, void *dst);

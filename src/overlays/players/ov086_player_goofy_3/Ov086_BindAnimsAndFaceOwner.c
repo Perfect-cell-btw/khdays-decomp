@@ -1,3 +1,6 @@
+/* Starts the attack effect at the locked target's point: binds and rewinds its tracks, turns it
+ * with the character and activates it; the local player also gets a short rumble. */
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 extern void func_ov022_020ad44c(void *out, int self);

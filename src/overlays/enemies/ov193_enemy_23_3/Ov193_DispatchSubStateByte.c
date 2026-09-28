@@ -1,3 +1,7 @@
+/* State dispatcher: first turns a hurt flag into the hit action (5), or into defeat (3) when the
+ * hit points are gone; then, when an action is pending, makes it current, resets the per-action
+ * flags and installs the step that starts it. */
+
 struct bf { unsigned b : 8; };
 struct st1c7 { signed char _pad[0x1c7]; signed char sub; };
 struct hw60 { unsigned short lo : 8, hi : 8; };

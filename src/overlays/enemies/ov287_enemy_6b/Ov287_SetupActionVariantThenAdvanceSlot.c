@@ -1,3 +1,7 @@
+/* State step: posts pose 3, sets flags 0x11 of +0x1ae, clears bit 0 of the model's flag byte, sends
+ * the attack update for the rolled variant, clears the alpha, timers and hit state and installs the
+ * area-sweep step. */
+
 struct bf { unsigned b : 8; };
 extern void Ov107_PostTagUpdate(int node, int a, int b);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);

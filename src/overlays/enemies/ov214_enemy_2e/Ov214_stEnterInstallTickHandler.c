@@ -1,3 +1,6 @@
+/* Child task init: installs the cooldown tick on the child object, links it back, clears its flag
+ * bit 1, binds its animation track, clears every entry of its ring and installs the empty tick. */
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void Ov214_tickActiveEntryCooldowns(void);

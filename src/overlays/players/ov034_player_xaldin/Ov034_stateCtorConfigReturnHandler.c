@@ -1,3 +1,6 @@
+/* Character constructor: clears its effect state, boots the character, requests its two voice ids,
+ * initialises its effect block and returns the decoder step. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov034_Boot(int a);
 extern void Ov022_RequestVoiceIds(int a, int b, int c);

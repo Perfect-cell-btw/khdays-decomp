@@ -1,3 +1,6 @@
+/* Special-attack request handler: resets the attack block, sends the matching animation command and
+ * returns the approach step (0x21, also clearing the slot ids) or the pursuit step (0x22). */
+
 extern void Ov022_FillEightHalvesMinus1At0x2bd4(int self);
 extern void Ov080_ApproachStep(void);
 extern void Ov080_PursuitStep(void);

@@ -1,3 +1,6 @@
+/* Reaction check: during an attack action, queues action 0xf when no action is pending; returns
+ * whether it did. */
+
 int Ov213_ReserveNodeIfStateActive(char *obj) {
     char *node = *(char **)*(char **)(obj + 0x214);
     signed char state = *(signed char *)(node + 0x1c6);

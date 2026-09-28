@@ -1,3 +1,7 @@
+/* Timed attack step: after a delay probes the ground below and later shows the second model; during
+ * the active window sweeps a box that pushes what it touches; when the model's animation ends picks
+ * a random wait, queues action 2 and clears the step handler. */
+
 struct bf { unsigned b : 8; };
 extern void Ov192_ProbeGroundBelowNode(void *state, void *p);
 extern long long FX_DivFx64c(int a, int b);

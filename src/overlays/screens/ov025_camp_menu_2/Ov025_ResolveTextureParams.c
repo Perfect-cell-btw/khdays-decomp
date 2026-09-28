@@ -1,3 +1,6 @@
+/* Resolves a G3D texture resource's first texture and palette into the TEXIMAGE_PARAM and
+ * palette-base words a menu quad draws with (4x4-compressed textures use their own VRAM key). */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned long u32;

@@ -1,3 +1,6 @@
+/* State step: once the model's animation ends, posts pose 7, starts the child selector's animation
+ * and installs the advance step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_StartAnim(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *value);

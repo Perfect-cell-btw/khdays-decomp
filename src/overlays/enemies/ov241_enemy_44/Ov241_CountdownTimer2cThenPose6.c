@@ -1,3 +1,6 @@
+/* AI step: counts the timer down and, when the model's animation ends, posts pose 6 and installs
+ * the next step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov241_ConfigSubStateThenAdvanceSlot();

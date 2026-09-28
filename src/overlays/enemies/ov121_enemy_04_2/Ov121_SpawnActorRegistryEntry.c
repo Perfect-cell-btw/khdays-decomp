@@ -1,3 +1,6 @@
+/* Creates the object's state-machine registry entry (starting in its AI init state), links it to
+ * the object and its model (+0x384) and stores it at +0x214. */
+
 extern void CreateRegistryEntry();
 extern void Ov121_InitAiState(void);
 

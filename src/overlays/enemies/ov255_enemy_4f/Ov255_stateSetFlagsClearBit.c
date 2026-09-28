@@ -1,3 +1,6 @@
+/* State step: sets the stance bits in the high byte of the actor's flags (+0x60), clears bit 0 of
+ * the part's flag byte and installs the wake-check step. */
+
 struct bf { unsigned b : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov255_WakeCheck(void);

@@ -1,3 +1,6 @@
+/* Reaction check: requests a fixed sub-state as the pending action (+0x1c7) when no action is
+ * pending; returns whether it did. */
+
 struct Inner {
     char field[0x1c8];
 };

@@ -1,3 +1,7 @@
+/* State step: sets the visibility bits in the high byte of the actor's flags (+0x60), clears bit 0
+ * of its model's flag byte, sets the alpha to its minimum and installs the resume-stored-action
+ * step. */
+
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov244_AiStep_ResumeStoredAction(void);
 

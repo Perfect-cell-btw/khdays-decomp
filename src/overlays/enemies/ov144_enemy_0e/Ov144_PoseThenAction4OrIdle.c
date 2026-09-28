@@ -1,3 +1,6 @@
+/* State step: faces the target, posts the idle pose in action 7 or the attack pose with a state
+ * update otherwise, and installs the aim-hold step. */
+
 extern void Ov144_AimYawToTarget(int *state);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);

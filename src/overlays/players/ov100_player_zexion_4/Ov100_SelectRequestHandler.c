@@ -1,3 +1,6 @@
+/* Special-attack request handler: 0x21 sends the attack command for the variant and returns the
+ * descent step; 0x22 returns the hover step. */
+
 extern int data_ov100_020bc1c0;
 extern void Ov100_HoverStep(void);
 extern void Ov100_DescentStep(void);

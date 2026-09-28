@@ -1,3 +1,6 @@
+/* Publishes the step velocity to the actor's movement vector (+0xf0), zeroing it first outside
+ * action 2. */
+
 extern int data_02041dc8;
 
 struct w3 { int a, b, c; };

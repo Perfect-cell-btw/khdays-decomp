@@ -1,3 +1,6 @@
+/* Begins the special attack: for the local player sets bit 16 of the two 64-bit flag words, picks
+ * the range for the game mode, faces the locked target and switches to state 0x21. */
+
 extern int Session_GetLocalPlayerIndex();
 extern int func_02023c40();
 extern int Ov022_ValidateTargetRef();

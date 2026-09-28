@@ -1,3 +1,7 @@
+/* Hit reaction: when the model has no pending source yet and the hit flags have bits 0 and 4 set,
+ * records the source and its position on the model; returns 1 either way unless a source was
+ * already pending. */
+
 struct blk3 { int a, b, c; };
 int Ov266_TryCommitPending190(char *obj, char *src, int *flags) {
     char *ptrA = *(char **)(obj + 0x214);

@@ -1,3 +1,5 @@
+/* Puts the effect in mode 2 and binds its tracks 0, 2 and 1, rewound. */
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 

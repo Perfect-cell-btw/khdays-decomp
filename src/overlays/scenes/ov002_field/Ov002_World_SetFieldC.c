@@ -1,3 +1,5 @@
+/* Stores the value into a field of the world object when it exists. */
+
 extern int data_ov002_0207f60c;
 
 void Ov002_World_SetFieldC(int arg0) {

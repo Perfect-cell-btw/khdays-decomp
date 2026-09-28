@@ -1,3 +1,6 @@
+/* Reaction check: unless the current action is a fixed blocking one, queues action 0xa when no
+ * action is pending; returns whether it did. */
+
 struct actor_ss { signed char _pad[0x1c6]; signed char cur; signed char req; };
 
 int Ov139_RequestSubState10IfIdle(int this_) {

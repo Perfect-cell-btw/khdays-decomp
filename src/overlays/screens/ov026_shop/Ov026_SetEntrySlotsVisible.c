@@ -1,3 +1,6 @@
+/* Shows or hides the element's two slots (+0x14, +0x18) and records the visibility in bit 1 of its
+ * flags (+0x84). */
+
 extern int Slot_SetVisible();
 
 void Ov026_SetEntrySlotsVisible(int a, int *b, int c) {

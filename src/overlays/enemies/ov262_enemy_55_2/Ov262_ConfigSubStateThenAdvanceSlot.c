@@ -1,3 +1,6 @@
+/* State step: without a grabbed object queues action 2 and ends the step; otherwise finds the path
+ * to its grab slot and installs the aim step. */
+
 extern int Ov262_FindGrabSlotPath(int *state, int flag);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov262_AimTick(void);

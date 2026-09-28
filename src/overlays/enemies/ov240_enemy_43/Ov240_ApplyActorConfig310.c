@@ -1,3 +1,6 @@
+/* Starts the child model's animation for the actor's animation state and refreshes its callbacks.
+ */
+
 extern void SetSubitemState();
 extern void RefreshObjectCallbacks();
 

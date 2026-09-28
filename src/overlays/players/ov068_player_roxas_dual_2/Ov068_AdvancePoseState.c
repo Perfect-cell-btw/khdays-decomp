@@ -1,3 +1,6 @@
+/* Advances the effect's pose state: idle or finished effects restart (timers cleared, state 1); in
+ * state 3 binds tracks 0 and 2 to the follow-up animation and moves to state 4. */
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 
 void Ov068_AdvancePoseState(int a, char *node) {

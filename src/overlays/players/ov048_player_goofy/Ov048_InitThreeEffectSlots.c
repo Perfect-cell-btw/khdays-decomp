@@ -1,3 +1,6 @@
+/* Initialises the character's effect slots: clears their states, registers the three effect
+ * sequences for the owner's palette slot and allocates its slot class. */
+
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern void Ov022_AllocateSlotWithClass(int a, int b, int c, void *d);
 extern int data_ov048_020b4b80;

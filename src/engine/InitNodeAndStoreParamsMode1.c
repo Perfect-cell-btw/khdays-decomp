@@ -1,3 +1,6 @@
+/* Initialises a record node for one of its modes: runs the base init, marks it initialised, points
+ * it at the mode's handler table and stores the two parameters. */
+
 extern void Record_Init();
 extern char data_02042940[];
 

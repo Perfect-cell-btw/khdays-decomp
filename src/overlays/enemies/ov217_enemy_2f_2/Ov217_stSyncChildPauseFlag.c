@@ -1,3 +1,6 @@
+/* Post-tick: outside action 5 releases the held handles; in action 5 mirrors the actor's pause bit
+ * into the two held effect objects; then runs the base post-tick. */
+
 extern void Ov217_releaseHandles(void *this);
 extern void Ov107_AiState_PostTickBase(void *this);
 

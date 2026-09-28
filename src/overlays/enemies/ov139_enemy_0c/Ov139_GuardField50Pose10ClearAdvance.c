@@ -1,3 +1,6 @@
+/* AI step: once the gate byte is clear, posts a pose, clears the timer and installs the wait step.
+ */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov139_AiWaitThenAnim11();

@@ -1,3 +1,6 @@
+/* Destructor: destroys the model (+0x384), the action resource (+0x390) and every part instance in
+ * the table at +0x394, frees the table, then destroys the base object. */
+
 extern void DestroyInstance();
 extern void Ov107_ActionResource_Destroy();
 extern void FreeInstanceMemory();

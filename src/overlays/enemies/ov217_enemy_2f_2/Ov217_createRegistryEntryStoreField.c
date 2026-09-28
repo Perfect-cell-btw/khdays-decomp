@@ -1,3 +1,6 @@
+/* Creates a child task entry (starting in its tick-handler install state) bound to the object's
+ * child (+0x3c4) and returns it. */
+
 extern void CreateRegistryEntry(int a, int b, int c, void *cb, int e5, int **out);
 extern void Ov217_stEnterInstallTickHandler(void);
 

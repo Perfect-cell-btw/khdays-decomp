@@ -1,3 +1,6 @@
+/* Applies an animation state, starting the effect block first when entering the 0x2f/0x30 attack
+ * states. */
+
 extern void Ov061_AdvanceArg1StateFrom0Or2();
 extern void Ov022_SetAnimState();
 

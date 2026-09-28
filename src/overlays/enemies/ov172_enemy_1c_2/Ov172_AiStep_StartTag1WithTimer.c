@@ -1,3 +1,6 @@
+/* AI step: posts tag 1, starts a timer of 0x78 frames plus a random offset and installs the next
+ * movement step. */
+
 extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern int RandNextScaled(unsigned int mul);
 extern void SetIndexedSlot(void *obj, int idx, void *value);

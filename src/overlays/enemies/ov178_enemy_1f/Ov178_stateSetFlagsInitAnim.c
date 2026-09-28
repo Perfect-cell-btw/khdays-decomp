@@ -1,3 +1,7 @@
+/* State step: sets and clears state bits in the high byte of the actor's flags (+0x60), sets bit 0
+ * of the flags at +0x1ae, clears bit 0 of its model's flag byte, sends a state update, resets the
+ * timer and installs the timed turn-toward-target step. */
+
 struct bf { unsigned b : 8; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);

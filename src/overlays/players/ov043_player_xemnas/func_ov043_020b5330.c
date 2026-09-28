@@ -1,3 +1,5 @@
+/* Draws the request effect of every live entry of the object's list (types other than 0 and 3). */
+
 extern void Ov043_DrawRequestEffect(int arg0);
 void func_ov043_020b5330(int arg0) {
     int i = 0;

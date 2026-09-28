@@ -1,3 +1,6 @@
+/* Draws a text run for the mission menu with the style's glyph flags, in the normal or alternate
+ * text bank, with an optional one-pixel shadow. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 

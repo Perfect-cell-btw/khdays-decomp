@@ -1,3 +1,6 @@
+/* AI step: once the actor is active (bit 0 of its flags at +0x60), rolls the 10% variant flag
+ * (+0x38c), posts pose 1, makes the stored action (+0x1c9) pending and clears the step handler. */
+
 extern unsigned int RandNextScaled(int);
 extern void Ov107_PostTagUpdate(int node, int a, int b);
 extern void SetIndexedSlot();

@@ -1,3 +1,5 @@
+/* Whether the record's handler table (+0x1c) is a given mode's table. */
+
 extern int data_02042940;
 
 int IsField1cEqualData42940(int arg0) {

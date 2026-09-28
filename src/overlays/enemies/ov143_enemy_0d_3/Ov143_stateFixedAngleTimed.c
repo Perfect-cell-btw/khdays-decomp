@@ -1,3 +1,6 @@
+/* Timed step: waits for the timer (advanced by the owner's frame step) to pass 0x999, then launches
+ * the slam along the heading and installs the queue-when-free step. */
+
 extern void Ov143_StoreVec3AndSetHw60HighBit0();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern short data_0203d210[];

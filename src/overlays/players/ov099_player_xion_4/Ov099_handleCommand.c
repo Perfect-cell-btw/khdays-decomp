@@ -1,3 +1,6 @@
+/* Handles a character command: 0x2e binds the part rigs, 0x2f starts the animation tracks, 0x30
+ * starts them and sets up the move parameters; a command equal to the current one is ignored. */
+
 extern void Ov099_BindPartRigs(void *this);
 extern void Ov099_StartAnimTracks(void *this);
 extern void Ov099_InitMoveParams(void *this);

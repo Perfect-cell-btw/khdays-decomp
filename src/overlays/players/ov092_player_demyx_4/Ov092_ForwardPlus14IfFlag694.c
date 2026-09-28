@@ -1,3 +1,5 @@
+/* While the character is shown, draws its effect node at its offset position. */
+
 extern void Ov092_DrawNodeWithOffsetPos();
 struct b1_694 { unsigned char b : 1; };
 void Ov092_ForwardPlus14IfFlag694(int param_1, int param_2)

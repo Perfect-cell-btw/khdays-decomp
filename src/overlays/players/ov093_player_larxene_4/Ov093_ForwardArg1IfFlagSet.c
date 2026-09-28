@@ -1,3 +1,6 @@
+/* While the character is shown, draws the effect node when it is in its visible state and the
+ * sub-node turned with the character. */
+
 extern void Scene_DrawNode();
 extern void Ov093_SetYawAndDrawSubNode();
 

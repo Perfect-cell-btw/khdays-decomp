@@ -1,3 +1,6 @@
+/* Empties the element list: clears the active bit of every element and removes it from the list,
+ * then clears the list's current element (+0x18). */
+
 extern int NNS_FndRemoveListObject();
 extern int *NNS_FndGetNextListObject();
 

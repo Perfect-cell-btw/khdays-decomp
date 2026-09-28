@@ -1,3 +1,5 @@
+/* Refreshes and dispatches the child's callbacks (+0x420), then runs the shared object tick. */
+
 extern void RefreshObjectCallbacks(void *p);
 extern void DispatchObjectCallbacks(void *p, int a);
 extern void Ov107_ProcessObjectTick(void *this, int a);

@@ -1,3 +1,6 @@
+/* AI step: when the model's animation ends, clears bit 0 of +0x1ae, queues action 2 and clears the
+ * step handler. */
+
 extern void SetIndexedSlot();
 void Ov239_stClearReadyFlag(int node) {
     int *s = *(int **)(node + 4);

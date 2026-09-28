@@ -1,3 +1,6 @@
+/* Creates a child task entry that binds, for each type id in the list (up to 16, 0 ends it), the
+ * first subitem of the model with that id. */
+
 extern int CreateRegistryEntry(int obj, int a, int b, void *cb1, void *cb2, int **out);
 extern int *List_First(int p);
 extern int *List_Next(int p);

@@ -1,3 +1,6 @@
+/* AI step: fades the actor out with the timer (alpha at +0x394, down to a floor of 0xcc); when the
+ * timer runs out queues action 0xc and clears the step handler. */
+
 extern int FX_Div(int a, int b);
 extern void SetIndexedSlot();
 

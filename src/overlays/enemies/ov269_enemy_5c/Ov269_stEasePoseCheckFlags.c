@@ -1,3 +1,7 @@
+/* AI step: keeps the previous velocity and damps the current one by 0xb00; when the model's
+ * animation ends and the actor touches ground or a wall, records the landing, queues action 2 and
+ * clears the step handler. */
+
 struct v3 { int a, b, c; };
 struct b1 { unsigned char b : 1; };
 extern void ScaleVec3Fx12(int scale, void *v, void *out);

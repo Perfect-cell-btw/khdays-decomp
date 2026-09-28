@@ -1,3 +1,5 @@
+/* While the character is shown, draws its three effect nodes. */
+
 extern void Ov103_DrawNodeWhileActive();
 extern void Ov103_DrawNodeWithYaw2();
 extern void Ov103_DrawSubNodeWithYaw3();

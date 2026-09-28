@@ -1,3 +1,6 @@
+/* AI step: while the counter at +0x14 is below 0x80, clears the timer, posts pose 2 and installs
+ * the fixed-angle move step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov149_stateFixedAngleMove();

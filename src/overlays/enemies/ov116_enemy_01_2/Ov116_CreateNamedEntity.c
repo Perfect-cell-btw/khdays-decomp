@@ -1,3 +1,7 @@
+/* Entity factory: allocates the enemy object, records its class id, opens its Ms/ resource by the
+ * formatted class name, installs the class constructor as the state callback (+0x18c) and hands the
+ * object to the shared enemy framework. */
+
 extern int CallocInstance(int a);
 extern void OS_SPrintf(char *buf, const char *fmt, int a);
 extern int Ov107_OpenCachedResourceByName(char *buf);

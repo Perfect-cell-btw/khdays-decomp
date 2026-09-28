@@ -1,3 +1,6 @@
+/* Maps a character code through this description record's fixed table (codes 0xc0-0xec); any other
+ * code comes back unchanged. */
+
 int Ov026_RemapCharCode11(int code) {
     switch (code) {
     case 0xc0: return 0xc0;

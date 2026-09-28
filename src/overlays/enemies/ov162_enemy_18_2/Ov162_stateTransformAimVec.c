@@ -1,3 +1,7 @@
+/* AI step: sets the velocity from the action resource's offset and scale in the actor's frame; once
+ * the gate byte is clear sends the animation pair from the overlay's table to the actor's event
+ * callback, posts pose 10, sets the dash speed and installs the homing-dash step. */
+
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
 extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);

@@ -1,3 +1,7 @@
+/* Sets up the menu's 3D camera: an orthographic projection, unit base scale, identity base rotation
+ * and zero translation, and a camera on the z axis looking at the origin; then flushes the G3D
+ * state. */
+
 typedef unsigned int u32;
 typedef struct VecFx32 {int x,y,z;} VecFx32;
 typedef struct MtxFx33 {int m[9];} MtxFx33;

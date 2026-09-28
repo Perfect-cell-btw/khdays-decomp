@@ -1,3 +1,7 @@
+/* State dispatcher: when an action is pending (+0x1c7 not -1) makes it the current action (+0x1c6),
+ * resets the per-action flags (+0x1ae, the model's flag byte, the high byte of the flags at +0x60)
+ * and installs the step that starts that action; then marks nothing pending. */
+
 struct bf { unsigned b : 8; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);

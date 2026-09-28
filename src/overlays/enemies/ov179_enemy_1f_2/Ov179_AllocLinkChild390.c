@@ -1,3 +1,6 @@
+/* Allocates a sub-object linked to this object (+0x388), installs its initialiser as the state
+ * callback and hands it to the shared enemy framework. */
+
 extern int CallocInstance();
 extern void func_ov107_020c6624();
 extern void Ov179_Construct_2();

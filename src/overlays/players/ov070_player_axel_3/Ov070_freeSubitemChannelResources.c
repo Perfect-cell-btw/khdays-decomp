@@ -1,3 +1,6 @@
+/* Frees the character's three effect streams and their buffer, then releases the two sub-objects'
+ * sequences. */
+
 extern void func_ov022_02091228(int a);
 extern void NNSi_FndFreeFromDefaultHeap(int a);
 extern void ReleaseField74AndCleanup(int a);

@@ -1,3 +1,5 @@
+/* Shows the tagged entry's slots when the menu is enabled and page B is in the matching state. */
+
 extern int Ov025_GetPageB();
 extern int Ov025_GetBlock4a80();
 extern int data_ov025_020b575c;

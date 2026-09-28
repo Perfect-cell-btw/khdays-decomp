@@ -1,3 +1,6 @@
+/* AI step: counts the timer down and, when the model's animation ends, posts pose 0 and installs
+ * the waypoint-wait step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov241_AiWaypointWait(void);

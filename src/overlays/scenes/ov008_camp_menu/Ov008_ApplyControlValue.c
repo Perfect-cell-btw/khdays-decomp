@@ -1,3 +1,6 @@
+/* Applies a control value to the camp-menu context: sets its flag bit and both control bits and
+ * stores it (+0x9600). */
+
 extern void Ov008_SetFlagBit0();
 extern void Ov008_SetControlBit1AtA7C();
 extern void Ov008_SetControlBit0AtA7C();

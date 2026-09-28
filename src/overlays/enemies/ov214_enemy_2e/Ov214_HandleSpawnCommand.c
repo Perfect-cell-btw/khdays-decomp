@@ -1,3 +1,7 @@
+/* Message override: message 5 carries a packed position and a slot kind; it creates the slot's body
+ * or transform task there (some kinds also a spawn task or a visibility event); then passes the
+ * message to the shared handler. */
+
 typedef unsigned char u8;
 typedef signed char s8;
 

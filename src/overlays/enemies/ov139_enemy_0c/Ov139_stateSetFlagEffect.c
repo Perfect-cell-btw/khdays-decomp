@@ -1,3 +1,7 @@
+/* State step: derives the speed from the owner's frame step, sets bit 0x40 in the high byte of the
+ * actor's flags, starts the action resource's animation, posts a pose, sends a state update and
+ * installs the next step. */
+
 extern void Ov107_StartAnim();
 extern void Ov107_PostTagUpdate();
 extern void Ov107_BuildAndSendUpdate();

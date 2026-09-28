@@ -1,3 +1,6 @@
+/* Character constructor: boots the character, sets up its effect sequence slots, requests its two
+ * voice ids and returns the decoder step. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov095_Boot(int a);
 extern void Ov095_SetupSequenceSlots(int a);

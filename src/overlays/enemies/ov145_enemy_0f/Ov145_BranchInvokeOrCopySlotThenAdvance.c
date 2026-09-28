@@ -1,3 +1,6 @@
+/* AI step: when the piece lure succeeds queues action 4; otherwise, once the path table is ready,
+ * takes the next path point and queues action 3; either way clears the step handler. */
+
 struct w3 { int a, b, c; };
 extern int Ov145_LureToPiece(int holder, int flag);
 extern void SetIndexedSlot();

@@ -1,3 +1,7 @@
+/* State dispatcher: when an action is pending (+0x1c7 not -1) resets the per-action flags, makes it
+ * current (+0x1c6; action 1 becomes 2) and installs the step that runs it; then marks nothing
+ * pending. */
+
 struct bf { unsigned b : 8; };
 struct st1c6 { signed char _pad[0x1c6]; signed char sub; };
 struct hw60 { unsigned short lo : 8, hi : 8; };

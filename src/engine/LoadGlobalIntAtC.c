@@ -1,3 +1,5 @@
+/* Returns a word at a fixed offset of a global object. */
+
 extern int data_0204bda4;
 
 int LoadGlobalIntAtC(void) {

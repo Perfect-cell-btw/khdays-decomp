@@ -1,3 +1,5 @@
+/* State step: posts tag 1, starts a random timer and installs the hover step. */
+
 extern void Ov107_PostTagUpdate();
 extern int RandNextScaled();
 extern void SetIndexedSlot();

@@ -1,3 +1,7 @@
+/* Tears the character down: outside the restricted mode frees its archive resources, then frees its
+ * resource tables and effect state, destroys the root object and clears the overlay's global
+ * pointer. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void FreeAllResourceTables(int a);
 extern void NNSi_FndFreeFromDefaultHeap(int a);

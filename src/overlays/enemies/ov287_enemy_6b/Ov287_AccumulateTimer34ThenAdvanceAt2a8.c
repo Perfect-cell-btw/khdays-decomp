@@ -1,3 +1,7 @@
+/* Timed step: advances the timer by the owner's frame step until it passes 0x2a8; then clears bit 7
+ * of the high flag byte, sets the alpha to its minimum, rolls the 10% variant flag (+0x38c), posts
+ * pose 0 and installs the wait-for-animation step. */
+
 extern unsigned int RandNextScaled(int);
 extern void Ov107_PostTagUpdate(int node, int a, int b);
 extern void SetIndexedSlot();

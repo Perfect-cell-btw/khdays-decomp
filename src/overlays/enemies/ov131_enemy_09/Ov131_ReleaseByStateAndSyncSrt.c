@@ -1,3 +1,7 @@
+/* Post-tick: when the actor is flagged hurt outside its safe actions queues action 5; releases the
+ * held tasks and the attachment that the current action no longer uses, copies the action
+ * resource's transform to both models and runs the base post-tick. */
+
 typedef struct { int w[11]; } SrtTransform;   /* 44 bytes, the node's SRT block */
 
 extern void TaskList_FinishByTag(int owner, int handle);

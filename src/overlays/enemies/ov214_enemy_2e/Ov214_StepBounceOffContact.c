@@ -1,3 +1,6 @@
+/* Bounce step: moves the actor, casts a sphere against the world and, on contact, reflects its
+ * direction off the contact normal, turning and slowing; tracks grounding and bounces. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef signed short s16;

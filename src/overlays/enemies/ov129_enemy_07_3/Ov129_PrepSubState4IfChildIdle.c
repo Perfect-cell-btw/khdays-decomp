@@ -1,3 +1,6 @@
+/* AI step: keeps facing the chase target; when the child's animation ends queues action 4 and
+ * clears the step handler. */
+
 extern void Ov129_UpdateChaseFacing();
 extern void SetIndexedSlot();
 

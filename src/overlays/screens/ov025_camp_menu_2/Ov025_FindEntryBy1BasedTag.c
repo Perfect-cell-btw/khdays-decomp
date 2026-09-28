@@ -1,3 +1,6 @@
+/* Finds the entry with the tag (1-based, 0 is kept) among the 0xd1 entries at +0x390; NULL when
+ * absent. */
+
 struct e16 { unsigned short tag; unsigned char pad[14]; };
 
 int Ov025_FindEntryBy1BasedTag(int arg0, unsigned int arg1) {

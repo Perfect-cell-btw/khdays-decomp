@@ -1,3 +1,6 @@
+/* Runs the model callbacks, then copies the two action resources' transforms into the two models.
+ */
+
 extern void Ov107_AiState_DispatchModelCallbacks(void *obj);
 struct blk11 { int w[11]; };
 void Ov262_RefreshAndCopyTwoBlocks(char *obj) {

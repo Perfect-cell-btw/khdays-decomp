@@ -1,3 +1,7 @@
+/* Timed step: advances the timer by the owner's frame step until it passes 0xd48; then updates the
+ * state bits in the high byte of the actor's flags, runs and clears its pending callback (+0x1e8),
+ * clears +0x2d4 and clears the step handler. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void SetIndexedSlot();
 

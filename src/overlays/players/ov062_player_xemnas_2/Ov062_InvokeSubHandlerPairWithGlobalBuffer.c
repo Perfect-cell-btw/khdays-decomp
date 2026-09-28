@@ -1,3 +1,6 @@
+/* Runs the character's two effect handlers on its shared battle object's block: the node tick and
+ * the slot-event relay. */
+
 extern int data_ov062_020b80e0;
 extern void Ov062_NodeRequestTick();
 extern void Ov062_RelaySlotEvent();

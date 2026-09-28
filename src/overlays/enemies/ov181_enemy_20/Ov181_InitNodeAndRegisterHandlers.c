@@ -1,3 +1,8 @@
+/* Init state: clears the current and pending actions, clears bit 0 of the model's flag byte,
+ * records pointers to the actor's velocity, position and model busy flag, sets the alpha to its
+ * minimum and the initial flag bits, and installs the first action, the dispatcher and the heading
+ * step. */
+
 extern void SetIndexedSlot(int *self, int idx, void *cb);
 extern void Ov181_stateSetFlagsClearBitInit(void);
 extern void Ov181_stDispatchByStateByte(void);

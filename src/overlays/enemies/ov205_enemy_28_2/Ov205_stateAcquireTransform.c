@@ -1,3 +1,7 @@
+/* State step: acquires the nearest target (or queues action 2 and ends the step without one),
+ * derives the speed from the owner's frame step, sets the velocity from the action resource, and
+ * once the gate byte is clear posts pose 4 and installs the queue-on-flag-clear step. */
+
 extern int Ov107_FindNearestObject();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern int Ov107_ActionResource_GetOffsetAndScale();

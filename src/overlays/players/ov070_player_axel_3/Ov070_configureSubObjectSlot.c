@@ -1,3 +1,7 @@
+/* Draws one sub-object slot in its visible states: loads its matrix for the entry, sets the polygon
+ * id from the slot index, sends its scale and matrix to the geometry FIFO and runs its animation
+ * channels. */
+
 extern void MI_Copy48B(int a, int b);
 extern void NNS_G3dMdlSetMdlPolygonID(int a, int b, int c);
 extern void GX_SendFifoWords(int tag, int *buf, int count);

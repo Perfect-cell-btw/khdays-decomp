@@ -1,3 +1,7 @@
+/* Hit handler: ignores hits while dead or invulnerable; sets the hit mode from the current action
+ * (no damage while guarding), applies the damage clamped to the maximum and plays the reaction
+ * facing the attacker, queueing defeat or stagger. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef signed short s16;

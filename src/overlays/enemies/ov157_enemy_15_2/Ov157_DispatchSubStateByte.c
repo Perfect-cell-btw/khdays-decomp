@@ -1,3 +1,7 @@
+/* State dispatcher: turns a hurt flag into the hit action (5); then, when an action is pending,
+ * makes it current, resets the per-action flags and installs the step that starts it; marks nothing
+ * pending. */
+
 struct bf { unsigned b : 8; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);

@@ -1,3 +1,7 @@
+/* Maps a state-transition code to the character's animation variant (0x2e rebinds the arm,
+ * 0x2f/0x33 and 0x30/0x31 pick the variant flag), applies it and keeps 0x33 as the current code
+ * when asked. */
+
 extern void BindAnimTrack();
 extern void Ov071_BindDefaultAnimsIfIdle();
 extern void Ov022_SetAnimState();

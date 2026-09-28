@@ -1,3 +1,6 @@
+/* Refreshes the child selector, runs the shared object tick and copies the actor's transform to its
+ * linked model (+0x390). */
+
 extern void Ov107_RefreshAndSelectChild(void *p);
 extern void Ov107_ProcessObjectTick(void *obj, int arg2);
 struct blk11 { int w[11]; };

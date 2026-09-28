@@ -1,3 +1,6 @@
+/* Timed step: derives the speed from the owner's frame step, eases the lift toward 1.0, faces the
+ * anchor, and when the timer reaches 1.0 queues action 2 and clears the step handler. */
+
 extern void Ov261_SetFacingAnchor();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 void Ov261_stateDualTimerDivide(int *node) {

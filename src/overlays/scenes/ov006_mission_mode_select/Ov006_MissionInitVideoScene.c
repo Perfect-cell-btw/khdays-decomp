@@ -1,3 +1,7 @@
+/* Tears the mission scene's video down: clears the backdrops and layers, resets the 2D engines and
+ * resources, waits for the wireless session to wind down, fades both screens to white and hands the
+ * session state on. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 

@@ -1,3 +1,6 @@
+/* State step: posts pose 1, sets the alpha to its minimum, remembers the start position, clears the
+ * velocity and counters and installs the throw step. */
+
 extern int data_02041dc8;
 extern void Ov107_PostTagUpdate(int node, int a, int b);
 extern void SetIndexedSlot();

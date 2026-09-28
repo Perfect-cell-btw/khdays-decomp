@@ -1,3 +1,6 @@
+/* Runs the model callbacks, copies the clip's pose into the object and applies its rotation to the
+ * bones. */
+
 extern void Ov107_AiState_DispatchModelCallbacks(void *self);
 extern void Srt_SetRotationQuat(void *pose, void *bones);
 

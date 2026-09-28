@@ -1,3 +1,5 @@
+/* Clears one entry of a global array. */
+
 extern void ClearGlobalArrayInt(int arg0);
 
 void func_ov022_02094c20(void) {

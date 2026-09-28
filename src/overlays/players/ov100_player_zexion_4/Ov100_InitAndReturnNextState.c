@@ -1,3 +1,6 @@
+/* Character constructor: boots the character, initialises its effect record, requests its two voice
+ * ids and returns the decoder step. */
+
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov100_Boot(void *obj);
 extern void Ov100_InitActorTwoRegionsAndForward(void *heap);

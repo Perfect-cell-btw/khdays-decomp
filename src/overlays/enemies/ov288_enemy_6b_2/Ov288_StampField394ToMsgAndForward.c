@@ -1,3 +1,6 @@
+/* Pose message override: for message kind 0 stamps the actor's alpha (+0x394) into the message,
+ * then sends it through the shared handler. */
+
 extern void *Ov107_AiState_SendPose();
 
 void *Ov288_StampField394ToMsgAndForward(int this_, unsigned char *msg, int arg3) {

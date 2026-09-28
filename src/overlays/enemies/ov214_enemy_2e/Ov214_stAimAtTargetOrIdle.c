@@ -1,3 +1,6 @@
+/* State step: without a target queues action 2 and ends the step; otherwise faces it (recording the
+ * distance), posts pose 3, sends a state update and installs the next step. */
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(void *v, void *v2);

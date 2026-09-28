@@ -1,3 +1,6 @@
+/* AI step: once the actor is active, points the step at its current waypoint, makes the stored
+ * action pending and clears the step handler. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void SetIndexedSlot();
 

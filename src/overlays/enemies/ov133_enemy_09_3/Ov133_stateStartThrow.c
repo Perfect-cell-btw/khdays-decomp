@@ -1,3 +1,7 @@
+/* State step: once the gate byte is clear, sends the throw message, posts pose 7, clears the
+ * release flag and the thrown object's motion, clears flag 0x40 in the high byte of the actor's
+ * flags and installs the throw step. */
+
 struct v3 { int a, b, c; };
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
 struct pair { unsigned short a, b; };

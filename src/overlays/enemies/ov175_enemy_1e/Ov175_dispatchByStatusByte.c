@@ -1,3 +1,6 @@
+/* State dispatcher: when an action is pending (+0x1c7 not -1) makes it current (+0x1c6), installs
+ * the step that starts it and marks nothing pending. */
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov175_ConfigHw60CopyVec3ConstThenAdvance(void);
 extern void Ov175_Action5ThenScaleVec(void);

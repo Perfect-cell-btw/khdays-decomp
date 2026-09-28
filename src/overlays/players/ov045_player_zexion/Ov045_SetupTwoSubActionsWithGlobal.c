@@ -1,3 +1,5 @@
+/* Per-frame update: sets the widget's tag, advances the effect slot and draws it. */
+
 extern void Widget_SetTagWord(int a, int b);
 extern void Ov045_StepEffectSlot(int a, int b, int c);
 extern void Ov045_ForwardArg1IfStateInRangeAndFlag(int a, int b);

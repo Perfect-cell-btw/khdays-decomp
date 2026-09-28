@@ -1,3 +1,5 @@
+/* Formats the value into a UTF-16 string with the overlay's template and draws it with a shadow. */
+
 typedef unsigned short u16;
 
 extern void Text_FormatUtf16(u16 *dst, int count, const void *tmpl, unsigned int p6);

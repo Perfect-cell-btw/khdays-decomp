@@ -1,3 +1,7 @@
+/* Resets the mission menu's link input: with the session alive switches to the peer-sync state and
+ * clears the input and work buffers (returns 1); otherwise goes idle and drives the sound (returns
+ * 0). */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 

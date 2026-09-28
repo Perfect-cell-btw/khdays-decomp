@@ -1,3 +1,6 @@
+/* AI step: once the actor is active, copies its stored vector into the step, queues action 1 and
+ * clears the step handler. */
+
 extern void SetIndexedSlot();
 
 struct hw60 { unsigned short lo : 8, hi : 8; };

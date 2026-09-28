@@ -1,3 +1,6 @@
+/* Reaction check: unless the current action (+0x1c6) is 6 or 7, requests action 8 when no action is
+ * pending; returns whether it did. */
+
 int Ov159_RequestState8(char *obj) {
     char *base = *(char **)(*(char **)(obj + 0x214));
     int s = *(signed char *)(base + 0x1c6);

@@ -1,3 +1,6 @@
+/* State step: binds the child subitem (+0x3c4) to this state (render callback and back pointer),
+ * clears its flag bit 1, rewinds its animation tracks 2 and 0 and installs the next step. */
+
 extern void SetSubitemState(void *p, int a, int b, int c);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov203_RenderAtOwnerModel(void);

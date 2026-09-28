@@ -1,3 +1,7 @@
+/* State step: once the counter is below 0x100, sends an animation pair from the overlay's table to
+ * the actor's event callback, derives the speed from the owner's frame step, posts pose 5, resets
+ * the timer, sends an effect update and installs the summon step. */
+
 extern void Ov107_PostTagUpdate();
 extern void Ov107_BuildAndSendUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);

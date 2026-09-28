@@ -1,3 +1,5 @@
+/* While the character is shown, draws its two effect nodes at their attack anchors. */
+
 extern void Ov095_DrawNodeWithResolvedPos();
 
 struct b1 { unsigned char b : 1; };

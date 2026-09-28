@@ -1,3 +1,6 @@
+/* State step: picks a new random wait between the actor's limits when the last one has run out,
+ * posts pose 2, clears the timer and installs the approach step. */
+
 extern int RandNextScaled(int range);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, void *cb);

@@ -1,3 +1,5 @@
+/* While the character is shown, recenters its effect sub-object on it and draws it. */
+
 extern void Ov054_RecenterSubObjectAndCopyVec();
 struct b1_694 { unsigned char b : 1; };
 void Ov054_ForwardPlus10IfFlag694(int param_1, int param_2)

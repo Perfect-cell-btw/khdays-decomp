@@ -1,3 +1,6 @@
+/* Picks the charge level from the charge time in the charging states and applies it once; while the
+ * charge effect is active, draws it (when shown) and advances it until its tracks finish. */
+
 extern void Ov075_ApplyChargeLevelOnce(int self, int lvl);
 extern void Scene_DrawNode(int a);
 extern int Sequence_UpdateTracks(int a, int b);

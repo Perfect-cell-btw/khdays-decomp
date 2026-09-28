@@ -1,3 +1,6 @@
+/* Creates the object's state-machine registry entry (starting in its init state), links it to the
+ * object and to the object's model (+0x9c) and stores it at +0x214. */
+
 extern void CreateRegistryEntry(int a, int b, int c, void *cb, int d, void *out);
 extern void Ov171_stateInitClearSlots(void);
 

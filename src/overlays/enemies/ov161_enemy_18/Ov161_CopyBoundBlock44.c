@@ -1,3 +1,6 @@
+/* Copies the 44-byte transform block from the actor's bound source (+0x3c0) into the step's child.
+ */
+
 typedef struct { int w[11]; } Blk44;
 
 void Ov161_CopyBoundBlock44(char *obj) {

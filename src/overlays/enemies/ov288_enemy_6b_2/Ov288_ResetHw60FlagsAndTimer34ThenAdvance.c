@@ -1,3 +1,6 @@
+/* State step: sets bit 7 and clears bit 0 of the high flag byte, clears bit 0 of the model's flag
+ * byte and the alpha, clears the timer and installs the charge-and-pick-target step. */
+
 struct bf { unsigned b : 8; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void SetIndexedSlot();

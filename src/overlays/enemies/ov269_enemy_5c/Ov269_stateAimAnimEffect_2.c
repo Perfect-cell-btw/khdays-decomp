@@ -1,3 +1,6 @@
+/* State step: derives the speed from the owner's frame step, aims at the nearest target, posts a
+ * pose, starts the effect animation and installs the spin-and-retreat step. */
+
 extern int Ov107_FindNearestObject();
 extern void VEC_Subtract();
 extern int func_020050b4();

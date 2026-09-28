@@ -1,3 +1,6 @@
+/* Splits a count of seconds into hours, minutes and seconds (any of the outputs may be NULL); past
+ * 999 hours shows 999:;;. */
+
 void Ov008_SplitTimeUnitsHMS(unsigned int value, unsigned short *hours, char *minutes, char *seconds)
 {
     if (seconds != 0)

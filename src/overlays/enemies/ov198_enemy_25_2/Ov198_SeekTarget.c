@@ -1,3 +1,7 @@
+/* Charging attack step: clears bit 7 of the high flag byte, then hits whatever it overlaps (sphere
+ * contacts or, in the alternate mode, a hit query with a hit command) and ends with an effect and
+ * update 0x53; otherwise advances along its movement, ending when a ray cast hits the world. */
+
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;

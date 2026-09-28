@@ -1,3 +1,5 @@
+/* Stores a fixed byte into the root field object. */
+
 extern int data_ov002_0207fa00;
 
 void Ov002_World_ClearByte8C98(void) {

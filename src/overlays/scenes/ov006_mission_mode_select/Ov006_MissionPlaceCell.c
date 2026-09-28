@@ -1,3 +1,6 @@
+/* Places a menu cell: sets its slot entry unless it keeps the current one, then moves it to the
+ * position (negative coordinates leave it at 0). */
+
 typedef struct {
     int x;
     int y;

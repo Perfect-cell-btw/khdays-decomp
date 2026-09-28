@@ -1,3 +1,5 @@
+/* Stores the value into a field of the context object a global points to. */
+
 extern int data_0204c058;
 
 void StoreToGlobalPtr4Field28(int arg0) {

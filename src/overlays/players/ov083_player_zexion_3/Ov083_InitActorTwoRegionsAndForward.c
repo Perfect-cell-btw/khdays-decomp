@@ -1,3 +1,6 @@
+/* Initialises the character's effect record: clears its states, registers its sequence for the
+ * owner's palette slot and builds the emitter descriptor. */
+
 extern void RegisterSeqAndInit(int a, int b, int c, int d);
 extern void Ov083_BuildEmitterDescriptor(int p);
 extern int data_ov083_020b9ad4;

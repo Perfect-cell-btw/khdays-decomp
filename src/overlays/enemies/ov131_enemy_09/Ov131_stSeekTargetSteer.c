@@ -1,3 +1,7 @@
+/* AI step: steers toward the nearest target: gives up (action 2) without one or when it is out of
+ * reach, otherwise sets the heading and a speed along the facing, and once within 0x1000 posts pose
+ * 9 and installs the attack step. */
+
 extern void *Ov107_FindNearestObject(void *obj, int a);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void VEC_Subtract(void *a, void *b, void *out);

@@ -1,3 +1,6 @@
+/* State step: posts a pose, sends a state update, clears the timer and the swing flag, and installs
+ * the wind-up step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *value);

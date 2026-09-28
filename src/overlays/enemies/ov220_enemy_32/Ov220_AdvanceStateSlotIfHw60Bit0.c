@@ -1,3 +1,6 @@
+/* AI step: once the actor is active (bit 0 of its flags at +0x60), clears the timer, makes the
+ * stored action (+0x1c9) pending and clears the step handler. */
+
 extern void SetIndexedSlot();
 
 struct hw60 { unsigned short lo : 8, hi : 8; };

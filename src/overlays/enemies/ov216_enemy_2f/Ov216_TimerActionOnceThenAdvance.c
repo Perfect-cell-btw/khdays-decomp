@@ -1,3 +1,6 @@
+/* Timed step: advances the timer, sends a state update once when it passes 0x7f8, and when the
+ * model's animation ends queues action 2, stores the frame step and clears the step handler. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot();
 

@@ -1,3 +1,6 @@
+/* State step: posts pose 6, sends the two-halfword animation pair from the overlay's table to the
+ * actor's event callback (+0x24) and installs the idle step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern unsigned short data_ov270_020d6854[];

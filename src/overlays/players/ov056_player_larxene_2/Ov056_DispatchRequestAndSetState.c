@@ -1,3 +1,7 @@
+/* Maps an animation request to the effect block (0x2e anchors, 0x2f starts the tracks, 0x30
+ * activates and starts them), applies the animation state and keeps 0x30 as the current code when
+ * asked. */
+
 extern void Ov056_BindAttachAnchor(int a, int *b);
 extern void Ov056_StartAnimTracks(int a, int *b);
 extern void Ov056_Activate(int a, int *b);

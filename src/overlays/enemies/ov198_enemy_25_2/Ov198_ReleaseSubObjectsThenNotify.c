@@ -1,3 +1,6 @@
+/* Destructor: destroys the model (+0x384), the second model (+0x388) and the trail instance
+ * (+0x3f0), then the base object. */
+
 extern void DestroyInstance();
 extern void Ov107_DestroyObject();
 

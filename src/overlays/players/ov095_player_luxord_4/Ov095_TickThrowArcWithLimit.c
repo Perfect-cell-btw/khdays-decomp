@@ -1,3 +1,6 @@
+/* Thrown-card arc step: advances the shot's timer, resolves hits until close to the end of its
+ * animation, and marks it finished (state 3, then 4) when the animation ends, releasing it. */
+
 extern int Anim_GetLengthQ12(int a, int b);
 extern void Ov022_ResolveShotHit(int self, char *node, void *v, void *w);
 extern int func_ov022_02091540(int a, int b);

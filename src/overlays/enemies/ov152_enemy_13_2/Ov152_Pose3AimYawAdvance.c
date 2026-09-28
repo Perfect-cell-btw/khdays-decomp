@@ -1,3 +1,6 @@
+/* State step: posts pose 3, faces the target when one is set, starts the action resource's
+ * animation and installs the offset-tracking step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int y);

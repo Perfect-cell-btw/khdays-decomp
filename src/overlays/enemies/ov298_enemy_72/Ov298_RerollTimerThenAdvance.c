@@ -1,3 +1,6 @@
+/* AI step: once the actor is active, picks a random wait between the actor's limits, clears the
+ * counter, makes the stored action pending and clears the step handler. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern int RandNextScaled(int range);

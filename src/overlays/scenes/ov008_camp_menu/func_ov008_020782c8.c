@@ -1,3 +1,5 @@
+/* Sweeps the elements of one camp-menu context block. */
+
 extern int Ov008_GetCtxBlock954c();
 extern int Ov008_SweepElements();
 

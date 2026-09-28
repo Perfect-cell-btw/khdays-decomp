@@ -1,3 +1,5 @@
+/* Sets bit 7 and clears bit 0 of the high flag byte, then clears the step handler. */
+
 extern void SetIndexedSlot(int self, int idx, int cb);
 
 void Ov283_EnterRecoverPose(int param_1) {

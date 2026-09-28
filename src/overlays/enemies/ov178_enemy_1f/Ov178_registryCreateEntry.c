@@ -1,3 +1,6 @@
+/* Creates the object's state-machine registry entry (0x8c bytes, starting in its init state), links
+ * it to the object and to the object's model (+0x384) and stores it at +0x214. */
+
 extern void CreateRegistryEntry();
 extern void Ov178_stateInitTransformSlots(void);
 void Ov178_registryCreateEntry(int param_1, int param_2, int param_3, int param_4) {

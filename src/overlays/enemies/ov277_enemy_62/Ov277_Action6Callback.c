@@ -1,3 +1,7 @@
+/* AI step: clears bit 0 and sets the stance bits in the high byte of the actor's flags (+0x60),
+ * sets bits 0-1 of +0x1ae, clears bit 0 of its model's flag byte, sends a state update, clears the
+ * pending action and clears the step handler. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 

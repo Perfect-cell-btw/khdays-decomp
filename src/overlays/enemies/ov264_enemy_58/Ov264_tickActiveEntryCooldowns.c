@@ -1,3 +1,6 @@
+/* Counts the ring entries' cooldowns down each frame and frees an entry once its value drops below
+ * 0x80. */
+
 void Ov264_tickActiveEntryCooldowns(char *obj) {
     int i = 0;
     if (*(int *)(obj + 0x8c) > 0) {

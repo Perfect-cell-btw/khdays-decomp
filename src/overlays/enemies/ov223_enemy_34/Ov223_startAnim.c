@@ -1,3 +1,5 @@
+/* Starts an animation on the child selector through the shared framework (Ov107_StartAnim). */
+
 extern int Ov107_StartAnim();
 
 int Ov223_startAnim(int *r0, int r1)

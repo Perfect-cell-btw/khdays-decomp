@@ -1,3 +1,6 @@
+/* Marks the node active, or, when deactivated and of type 1, marks it finished (the 4-bit state at
+ * +0x34). */
+
 typedef struct {
     char pad[0x38];
     int type : 4;

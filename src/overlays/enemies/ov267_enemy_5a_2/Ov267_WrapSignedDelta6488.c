@@ -1,3 +1,6 @@
+/* Signed difference of two angles wrapped into the half turn (0x6488 is a full turn in these
+ * units). */
+
 int Ov267_WrapSignedDelta6488(int a, int b)
 {
     int diff = a - b;

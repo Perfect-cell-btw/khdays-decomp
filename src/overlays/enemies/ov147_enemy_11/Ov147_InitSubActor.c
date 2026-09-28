@@ -1,3 +1,6 @@
+/* Sub-actor initialiser: installs its callbacks and flags, binds the owner's textures to its two
+ * child models, registers them and enqueues them with the shared framework. */
+
 typedef unsigned short u16;
 
 struct ChildIds {

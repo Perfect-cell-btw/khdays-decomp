@@ -1,3 +1,6 @@
+/* Computes the character's aim: faces the locked target (turning the display node once) and derives
+ * the movement direction from the input and the anchor. */
+
 #pragma opt_propagation off
 #pragma opt_common_subs off
 

@@ -1,3 +1,6 @@
+/* Destructor: frees the resource tables (+0x388), destroys the model, the child selector, the child
+ * and the five part instances, then the base object. */
+
 struct row8 { void *p, *q; };
 extern void FreeAllResourceTables(void *p);
 extern void DestroyInstance(void *p);

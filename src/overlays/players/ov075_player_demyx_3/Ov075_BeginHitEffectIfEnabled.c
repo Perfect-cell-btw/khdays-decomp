@@ -1,3 +1,6 @@
+/* Hit effect: marks the shot finished and, while the owner is shown, spawns the hit effect at the
+ * shot's position in the variant its kind selects (with the local-player flag). */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern void Slot_Spawn(int a, int b, int c, int d);
 extern int data_ov075_020b9e20;

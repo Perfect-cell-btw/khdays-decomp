@@ -1,3 +1,5 @@
+/* Activates the effect and binds its track 2 to the given animation index, rewound. */
+
 extern void BindAnimTrack();
 extern void Anim_SetFrameWrapped();
 

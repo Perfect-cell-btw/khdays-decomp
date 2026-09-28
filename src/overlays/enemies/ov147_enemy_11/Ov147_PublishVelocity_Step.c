@@ -1,3 +1,6 @@
+/* Publishes the actor's velocity for the step: zero in action 0, the stored vector scaled down in
+ * action 1, then copies it into the movement vector (+0xf0). */
+
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 
 struct vec3 { int a, b, c; };

@@ -1,3 +1,5 @@
+/* AI step: once the gate byte is clear, clears the timer and installs the next step. */
+
 extern void SetIndexedSlot();
 extern void Ov181_TimerInterp394ThenAdvance();
 

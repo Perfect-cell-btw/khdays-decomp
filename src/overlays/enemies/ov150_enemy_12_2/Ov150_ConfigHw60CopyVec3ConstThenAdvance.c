@@ -1,3 +1,7 @@
+/* State step: clears bit 0 and sets bits 0x82 in the high byte of the actor's flags (+0x60), clears
+ * bit 0 of its model's flag byte (+8), resets the step vector from the constant default at
+ * data_02041dc8 and installs the queue-action-when-active step. */
+
 extern int SetIndexedSlot();
 extern int Ov150_AiStep_QueueAction1IfActive();
 

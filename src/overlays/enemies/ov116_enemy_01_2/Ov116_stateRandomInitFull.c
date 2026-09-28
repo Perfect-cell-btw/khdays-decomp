@@ -1,3 +1,6 @@
+/* State step: posts a tag update, then randomises the movement: a direction sign, a starting phase,
+ * a radius between the actor's limits at +0x224 and +0x228 and a timer; installs the orbit step. */
+
 extern void Ov107_PostTagUpdate();
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(void *obj, int idx, void *value);

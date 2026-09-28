@@ -1,3 +1,6 @@
+/* State step: aims away from the target at half speed, posts pose 6, sends a state update, sets the
+ * flight distance and queues action 0xb; clears the step handler. */
+
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(void *dst, void *src);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);

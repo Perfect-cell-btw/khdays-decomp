@@ -1,3 +1,7 @@
+/* State step: moves along the heading at a fixed speed until the timer (advanced by the owner's
+ * frame step) reaches 1.0, then clears the model's movement byte (+0xa8) and installs the strafe
+ * step. */
+
 extern void ScaleVec3Fx12();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern short data_0203d210[];

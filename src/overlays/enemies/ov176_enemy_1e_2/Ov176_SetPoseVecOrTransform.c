@@ -1,3 +1,6 @@
+/* Publishes the actor's velocity: in action 1 a scaled copy of the stored direction, with the model
+ * turned to face it; otherwise zero; then copies it into the movement vector (+0xf0). */
+
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void Quat_FromTwoVectors(void *out, void *mtx, void *vec);
 extern void Srt_SetRotationQuat(void *a, void *b);

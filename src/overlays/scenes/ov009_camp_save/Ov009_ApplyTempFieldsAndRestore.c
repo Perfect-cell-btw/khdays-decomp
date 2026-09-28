@@ -1,3 +1,6 @@
+/* Runs the element's callback at a temporary position: moves it, invokes its tag-tracker callback
+ * and moves it back. */
+
 extern void Ov009_Elem_SetPos(void *context, void *entry, int arg2, int arg3);
 extern void Ov009_TagTracker_InvokeCallback(void *context, void *entry);
 

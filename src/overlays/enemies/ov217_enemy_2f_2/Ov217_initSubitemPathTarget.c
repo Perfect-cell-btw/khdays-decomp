@@ -1,3 +1,7 @@
+/* Renders the sub-item and tracks its path: samples the joint to get its movement since the last
+ * frame and its speed; when its animation ends, chains to the next phase or resets the tracked
+ * vectors. */
+
 struct v3 { int x, y, z; };
 
 extern void Obj_RenderModel(int a, int b, int c, int d);

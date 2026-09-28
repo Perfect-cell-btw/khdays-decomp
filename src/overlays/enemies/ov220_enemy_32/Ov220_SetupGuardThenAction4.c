@@ -1,3 +1,6 @@
+/* State step: without a reachable target ends the step; otherwise posts pose 3, sends a state
+ * update, clears the timer and hit flag and installs the chase-decision step. */
+
 extern int Ov220_DistanceToTarget(void *node);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);

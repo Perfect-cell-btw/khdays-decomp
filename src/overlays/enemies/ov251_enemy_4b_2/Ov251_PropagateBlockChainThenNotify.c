@@ -1,3 +1,6 @@
+/* Post-tick: copies the 44-byte transform down the chain of attached nodes (+0x3c0 -> +0x3b0 ->
+ * +0x3ac), then runs the base post-tick. */
+
 extern void Ov107_AiState_PostTickBase(void *obj);
 struct blk11 { int w[11]; };
 void Ov251_PropagateBlockChainThenNotify(char *obj) {

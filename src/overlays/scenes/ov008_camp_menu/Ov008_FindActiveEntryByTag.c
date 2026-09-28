@@ -1,3 +1,6 @@
+/* Returns the first active entry (bit 1 of its flag byte) of the 0x30-byte entry array at +0x10
+ * whose u16 tag matches, or the end of the array when none does. */
+
 struct tagentry {
     unsigned short tag;
     unsigned char _pad[0x22];

@@ -1,3 +1,7 @@
+/* Init state: clears the current and pending actions, clears bit 0 of the model's flag byte,
+ * records pointers to the actor's velocity and position, sets the initial flag bits and installs
+ * the first action, the dispatcher and the spin-and-drift step. */
+
 struct bf { unsigned b : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov128_stateSetFlagsClearBit(void);

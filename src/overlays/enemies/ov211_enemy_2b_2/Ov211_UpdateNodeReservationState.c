@@ -1,3 +1,6 @@
+/* Reaction check: after the finishing action queues action 0 and reports it; otherwise, when the
+ * actor is on the ground during an attack action, queues the landing action. */
+
 typedef struct { unsigned char flag : 1; } BitByte;
 
 int Ov211_UpdateNodeReservationState(char *obj) {

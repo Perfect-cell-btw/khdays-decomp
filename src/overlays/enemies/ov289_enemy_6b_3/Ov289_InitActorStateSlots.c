@@ -1,3 +1,7 @@
+/* Init state: clears the current and pending actions, records the actor's velocity pointer, clears
+ * bit 0 of the model's flag byte and the alpha, and installs the first action, the dispatcher and
+ * the velocity step. */
+
 struct bf { unsigned b : 8; };
 extern void SetIndexedSlot();
 extern void Ov289_SetHw60Bit15ClearSubBit0ThenAdvanceSlot(void);

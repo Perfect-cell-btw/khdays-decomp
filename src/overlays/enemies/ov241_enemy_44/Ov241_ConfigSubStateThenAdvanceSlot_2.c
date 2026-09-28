@@ -1,3 +1,6 @@
+/* State step: posts tag 1, starts the child selector's walk animation, clears the step flag and
+ * installs the walk step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_StartAnim(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *value);

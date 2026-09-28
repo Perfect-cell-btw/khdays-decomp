@@ -1,3 +1,6 @@
+/* AI step: sets the stance bits in the high byte of the actor's flags (+0x60) and bit 0 of the
+ * flags at +0x1ae, clears bit 0 of its model's flag byte, then clears the step handler. */
+
 extern int SetIndexedSlot();
 
 struct D {

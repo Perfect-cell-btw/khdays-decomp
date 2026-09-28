@@ -1,3 +1,7 @@
+/* Shows or hides the camp-menu status entries (four main, two secondary); when shown, draws the
+ * counter and the play time (saved time plus the ticks since it was latched), otherwise runs the
+ * closing callback of tag 2. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef unsigned long long u64;

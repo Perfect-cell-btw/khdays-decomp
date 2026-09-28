@@ -1,3 +1,6 @@
+/* Ticks the character's two sub-objects and, in states 9/6 with flag 0x200, re-arms their animation
+ * channels when they are idle. */
+
 extern void Ov031_ActorNodeTick(int this, int slot, int p3);
 extern int Ov022_IsState9Or6WithFlag200(int x);
 extern int Ov022_IsSlotReady(int x);

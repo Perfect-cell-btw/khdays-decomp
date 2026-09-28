@@ -1,3 +1,6 @@
+/* Runs the element's close callback (+0x40) when asked to and one is installed, then marks the
+ * element inactive (+0x14 = 0). */
+
 struct A {
     char pad[0x40];
     void (*fn)(void *);

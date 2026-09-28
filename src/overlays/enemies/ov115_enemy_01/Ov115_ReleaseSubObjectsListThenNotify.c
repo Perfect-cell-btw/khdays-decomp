@@ -1,3 +1,6 @@
+/* Destructor: destroys the model (+0x384) and every part instance in the table at +0x39c, frees the
+ * table, then destroys the base object. */
+
 extern void DestroyInstance();
 extern void FreeInstanceMemory();
 extern void Ov107_DestroyObject();

@@ -1,3 +1,6 @@
+/* State step: posts pose 2, resets the pose vectors, picks a random delay between the actor's
+ * limits at +0x224 and +0x228 and installs the steer-toward-target step. */
+
 extern void Ov107_PostTagUpdate();
 extern void Ov264_loadDefaultPoseVecs();
 extern int RandNextScaled(int);

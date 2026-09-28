@@ -1,3 +1,5 @@
+/* Number of decimal digits of a non-negative value (1 for 0). */
+
 int Ov025_CountDecimalDigits(int arg0) {
     int count = 0;
     do {

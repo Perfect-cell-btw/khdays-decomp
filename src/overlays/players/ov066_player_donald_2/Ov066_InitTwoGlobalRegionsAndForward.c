@@ -1,3 +1,6 @@
+/* Initialises the character's effect record: clears its state, registers its effect sequence for
+ * the owner's palette slot and creates the sub-object. */
+
 extern void RegisterSeqAndInit(int a, int b, int c, int d);
 extern void Ov066_CreateSubObject(int p);
 extern int data_ov066_020b6b80;

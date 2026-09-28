@@ -1,3 +1,6 @@
+/* Enters a state: marks it active, rewinds animation tracks 0 and 2, resets the scale to 1.0 and
+ * sets the cull mode of each model part (the first parts shown, the last three hidden). */
+
 extern int Anim_SetFrameWrapped(int, int, int);
 extern int NNS_G3dMdlSetMdlCullMode(int, int, int);
 

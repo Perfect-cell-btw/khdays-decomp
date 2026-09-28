@@ -1,3 +1,5 @@
+/* Draws the effect node when it is active. */
+
 extern void Scene_DrawNode();
 
 void Ov042_ForwardToHandlerIfHeadSet(int this_) {

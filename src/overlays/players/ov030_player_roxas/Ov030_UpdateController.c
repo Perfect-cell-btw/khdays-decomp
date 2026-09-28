@@ -1,3 +1,6 @@
+/* Per-frame character controller: updates the aim toward the locked target and the movement
+ * vectors, and runs the character's update callback. */
+
 #pragma opt_propagation off
 #pragma opt_common_subs off
 

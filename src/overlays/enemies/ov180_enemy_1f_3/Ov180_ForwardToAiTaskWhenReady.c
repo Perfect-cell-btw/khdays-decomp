@@ -1,3 +1,5 @@
+/* When the object is armed (+0x50 == 1), sets the AI task's timer. */
+
 extern void Ov180_SetTimerA000(int v);
 
 void Ov180_ForwardToAiTaskWhenReady(char *p) {

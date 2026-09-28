@@ -1,3 +1,6 @@
+/* Destructor: destroys the model (+0x384), the action resource (+0x3c0) and the four part
+ * instances, then the base object. */
+
 extern void DestroyInstance();
 extern void Ov107_ActionResource_Destroy();
 extern void Ov107_DestroyObject();

@@ -1,3 +1,7 @@
+/* Charge effect step: drops it when the slot class is gone or the character leaves the charge
+ * states, starts it once the charge time passes 0x9000, then keeps its track 2 in step with the
+ * charge time. */
+
 extern int func_ov022_020923dc(int a, int b);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 

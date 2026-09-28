@@ -1,3 +1,6 @@
+/* When the effect node is in its visible state, places it at the character's mark point, turns it
+ * with the character and draws it. */
+
 struct w3 { int a, b, c; };
 extern void Ov035_GetMarkPoint(void *out, int this_);
 extern void Scene_DrawNode(int p);

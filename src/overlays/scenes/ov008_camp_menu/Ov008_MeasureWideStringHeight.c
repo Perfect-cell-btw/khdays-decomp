@@ -1,3 +1,5 @@
+/* Height of a UTF-16 string in half-line units: 0 for an empty string, else two per line. */
+
 int Ov008_MeasureWideStringHeight(unsigned short *str) {
     int count;
     unsigned short c;

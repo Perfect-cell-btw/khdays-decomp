@@ -1,3 +1,6 @@
+/* Initialises the character's effect block: clears the states and registers the six effect
+ * sequences for the owner's palette slot. */
+
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern int data_ov080_020b9b8c;
 extern int data_ov080_020b9ba0;

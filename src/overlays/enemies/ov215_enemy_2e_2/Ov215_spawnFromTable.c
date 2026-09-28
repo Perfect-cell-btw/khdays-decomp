@@ -1,3 +1,6 @@
+/* Spawns the projectile for the current animation state: picks its texture from the overlay's
+ * table, initialises the child projectile model and refreshes its callbacks. */
+
 struct nine { int w[9]; };
 struct b1 { unsigned char b : 1; };
 extern int Ov107_PackTextureHandle(void *this, int v);

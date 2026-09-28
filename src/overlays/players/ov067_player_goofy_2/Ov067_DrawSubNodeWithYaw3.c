@@ -1,3 +1,6 @@
+/* When the effect node is in one of its visible states, places it at the character's position
+ * turned with the character and draws it. */
+
 extern void Scene_DrawNode(int a);
 
 typedef struct { int x, y, z; } Vec3;

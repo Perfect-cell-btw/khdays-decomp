@@ -1,3 +1,6 @@
+/* AI step: once the actor is on the ground, queues action 4 when the step's flag is set, or action
+ * 2 otherwise, and clears the step handler. */
+
 struct b1 { unsigned char b : 1; };
 extern void SetIndexedSlot();
 

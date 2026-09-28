@@ -1,3 +1,5 @@
+/* Draws the character's two sub-objects while the owner is shown. */
+
 struct bit1 { unsigned char b : 1; };
 
 extern void Ov088_configureSubObjectSlot(int this, int slot, int i);

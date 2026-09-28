@@ -1,3 +1,5 @@
+/* Releases the three animation sub-blocks of this overlay's shared battle object. */
+
 extern void ReleaseField74AndCleanup();
 extern int data_ov103_020bc120;
 void Ov103_ReleaseThreeSubBlocks2c2c(void)

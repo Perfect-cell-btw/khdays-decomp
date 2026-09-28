@@ -1,3 +1,6 @@
+/* Special-attack request handler: for each request kind sets the attack block's phase and variant,
+ * sends the matching animation command and returns the step to run (idle or charge). */
+
 extern void Ov055_IdleStep(void);
 extern void Ov055_ChargeStep(void);
 extern int data_ov055_020b7740;

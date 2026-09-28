@@ -1,3 +1,5 @@
+/* Destructor: destroys the model (+0x384) and the three part instances, then the base object. */
+
 extern void DestroyInstance();
 extern void Ov107_DestroyObject();
 

@@ -1,3 +1,7 @@
+/* State step: sets state bits in the high byte of the actor's flags (+0x60), clears bit 0 of its
+ * model's flag byte (+8) and installs the step that queues the stored action once the actor is
+ * active. */
+
 struct bf { unsigned b : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov259_AiStep_QueueStoredActionIfActive(void);

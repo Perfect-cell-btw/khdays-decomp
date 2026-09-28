@@ -1,3 +1,6 @@
+/* Decays the ring entries each frame (by 0x168, mirrored into the second word) and frees an entry
+ * once it drops below 0x80. */
+
 void Ov201_DecayActiveEntriesMirror(char *obj) {
     int i = 0;
     if (*(int *)(obj + 0x8c) > 0) {

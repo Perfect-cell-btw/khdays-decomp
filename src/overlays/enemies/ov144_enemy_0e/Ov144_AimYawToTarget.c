@@ -1,3 +1,5 @@
+/* Turns the heading toward the stored point, or toward the target when there is no point. */
+
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int y);
 

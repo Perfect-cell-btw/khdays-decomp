@@ -1,3 +1,6 @@
+/* AI step: once the actor is active (bit 0 of its flags at +0x60), sets its pending action (+0x1c7)
+ * and clears the step handler. */
+
 extern int SetIndexedSlot();
 
 struct Sub {

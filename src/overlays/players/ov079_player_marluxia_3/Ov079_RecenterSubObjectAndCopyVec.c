@@ -1,3 +1,6 @@
+/* When the effect node is in its visible state, places it at the locked target's point turned with
+ * the character and draws it. */
+
 struct w3 { int a, b, c; };
 extern void func_ov022_020ad44c(void *out, int this_);
 extern void Scene_DrawNode(int p);

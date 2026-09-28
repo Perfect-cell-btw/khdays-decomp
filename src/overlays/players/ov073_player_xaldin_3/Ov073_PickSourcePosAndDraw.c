@@ -1,3 +1,6 @@
+/* While the character is shown, places the effect node at the source its kind names (the
+ * character's position, raised or not, or the locked target's point) and draws it. */
+
 extern void func_ov022_020ad44c(void *out, int self);
 extern void Scene_DrawNode(int a);
 

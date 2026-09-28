@@ -1,3 +1,6 @@
+/* Finds the list element with the given id in the context's element list; NULL for a negative id or
+ * when absent. */
+
 extern int *NNS_FndGetNextListObject();
 
 int *Ov009_FindEntryById(char *r4, int r5) {

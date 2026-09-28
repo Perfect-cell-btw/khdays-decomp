@@ -1,3 +1,6 @@
+/* Hit reaction: in action 1, when the hit flags have bits 0 and 4 set, fires the effect at the
+ * stored position and queues action 0; returns whether it did. */
+
 struct Vec3 {
     int x;
     int y;

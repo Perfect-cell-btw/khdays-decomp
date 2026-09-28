@@ -1,3 +1,6 @@
+/* Initialises the character's effect block: clears the states, registers the main effect and six
+ * slot sequences for the owner's palette slot and creates the sub-object. */
+
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern void Ov101_CreateSubObject(int base);
 extern int data_ov101_020bc0e0;

@@ -1,3 +1,6 @@
+/* State step: acquires the nearest target, or queues action 2 and ends the step without one; posts
+ * pose 6, fires the trail effects at the tracked position and installs the steer-trail step. */
+
 extern int Ov107_FindNearestObject(int a, int b);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int *self, int idx, void *cb);

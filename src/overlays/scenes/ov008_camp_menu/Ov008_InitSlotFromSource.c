@@ -1,3 +1,6 @@
+/* Initialises a slot from its source: marks it used and records the source, its id and its value.
+ */
+
 void Ov008_InitSlotFromSource(char *obj, char *src) {
     *(int *)obj = 1;
     *(int *)(obj + 0xc) = (int)src;

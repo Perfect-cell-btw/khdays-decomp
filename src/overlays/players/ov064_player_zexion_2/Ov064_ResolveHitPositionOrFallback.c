@@ -1,3 +1,6 @@
+/* Finds the ground under the point with a downward cast: returns the hit point slightly raised, or
+ * the point 0x5000 higher when nothing is hit. */
+
 extern void *EntityMgr_RunCastSimple(int a, void *b, void *c, int d);
 extern void Vec3ScaleAddQ27(int a, void *b, void *c, void *d);
 extern int data_ov064_020b7420;

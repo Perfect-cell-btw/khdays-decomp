@@ -1,3 +1,6 @@
+/* Destructor: destroys the model (+0x384), the action resource (+0x390) and the part instance with
+ * its table (+0x394), destroys the list at +0x398, then the base object. */
+
 extern void DestroyInstance();
 extern void Ov107_ActionResource_Destroy();
 extern void FreeInstanceMemory();

@@ -1,3 +1,6 @@
+/* Samples a joint matrix of the owner's model; when it is available, copies its translation into
+ * the tracked position (+0x3d8). */
+
 extern int func_02016320();
 
 struct w3 { int a, b, c; };

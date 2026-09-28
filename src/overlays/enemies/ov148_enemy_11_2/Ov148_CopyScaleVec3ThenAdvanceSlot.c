@@ -1,3 +1,6 @@
+/* AI step: keeps the previous velocity, damps the current one by 0xb00, and when the model's
+ * animation ends queues action 2 and clears the step handler. */
+
 struct w3 { int a, b, c; };
 extern void ScaleVec3Fx12(int factor, void *src, void *dst);
 extern void SetIndexedSlot();

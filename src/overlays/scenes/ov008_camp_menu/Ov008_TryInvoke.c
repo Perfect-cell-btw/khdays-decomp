@@ -1,3 +1,5 @@
+/* Calls the function with the argument when it is set; returns whether it did. */
+
 int Ov008_TryInvoke(void *fp, void *arg) {
     int r = 0;
     if (fp) {

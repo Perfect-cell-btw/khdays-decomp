@@ -1,3 +1,6 @@
+/* While the character is shown, draws its five effect nodes (the matrix-driven one uploads the bone
+ * matrices). */
+
 extern void Ov077_DrawNodeWithOwnerPos2(int a, int b);
 extern void Ov077_DrawNodeWithOwnerPos(int a, int b);
 extern void Ov077_UploadBoneMatrices(int a, int b);

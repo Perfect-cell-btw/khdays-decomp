@@ -1,3 +1,6 @@
+/* While the effect slot is in state 1, advances its tracks and returns it to idle when they finish.
+ */
+
 extern int Sequence_UpdateTracks();
 
 void Ov042_ClearState1IfReady(int this_) {

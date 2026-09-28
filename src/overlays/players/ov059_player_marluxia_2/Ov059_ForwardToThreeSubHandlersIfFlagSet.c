@@ -1,3 +1,5 @@
+/* While the character is shown, draws its three effect nodes at the locked target's point. */
+
 extern void Ov059_RecenterSubObjectAndCopyVec();
 extern void Ov059_DrawSubNodeWithYaw();
 extern void Ov059_DrawSubNodeWithYaw2();

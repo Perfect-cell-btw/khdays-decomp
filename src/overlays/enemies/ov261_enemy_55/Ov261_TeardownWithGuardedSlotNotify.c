@@ -1,3 +1,6 @@
+/* Destructor: when it still holds a grabbed spot object outside action 2, reports the spot as
+ * reached; then frees the spot table, destroys the three models and the base object. */
+
 extern void Ov015_SpotArrive(int a, int b, int c, int d);
 extern void FreeInstanceMemory(int p);
 extern void DestroyInstance(int p);

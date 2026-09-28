@@ -1,3 +1,5 @@
+/* AI step: once the gate byte is clear, posts a pose and installs the queue-on-flag-clear step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov121_AiStep_QueueAction2OnFlag48Clear_3();

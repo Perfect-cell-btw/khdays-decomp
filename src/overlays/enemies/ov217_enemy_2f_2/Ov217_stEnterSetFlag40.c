@@ -1,3 +1,6 @@
+/* AI step: when the model's animation ends, sets bit 0x40 in the high byte of the actor's flags,
+ * posts pose 4, resets the pose vectors for the launch and installs the charge-launch step. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void Ov107_PostTagUpdate();
 extern void Ov217_loadDefaultPoseVecs();

@@ -1,3 +1,6 @@
+/* Begins the special attack: for the local player sets bit 16 of the two 64-bit flag words, records
+ * the variant and switches to state 0x22 for the alternate variant or 0x21 otherwise. */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ActorSetState(int *self, int state);
 extern int data_ov093_020bc3c0;

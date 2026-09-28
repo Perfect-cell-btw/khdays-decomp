@@ -1,3 +1,6 @@
+/* Character constructor: builds the rig object, sets up its effect sequence slots, requests its two
+ * voice ids and returns the decoder step. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov096_BuildRigObject(int a);
 extern void Ov096_SetupSequenceSlots(int a);

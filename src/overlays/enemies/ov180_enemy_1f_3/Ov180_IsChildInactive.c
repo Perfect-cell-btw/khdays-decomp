@@ -1,3 +1,6 @@
+/* Returns 1 when one of the object's child actors (+0x3ac) is not active (bit 0 of its flags at
+ * +0x60 clear), else 0. */
+
 struct Inner {
     char pad[0x60];
     unsigned short field60 : 8;

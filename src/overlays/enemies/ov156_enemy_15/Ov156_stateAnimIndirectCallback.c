@@ -1,3 +1,7 @@
+/* State step: posts pose 3, clears the timer and hit flags, derives the speed from the owner's
+ * frame step, sends the animation pair from the overlay's table to the actor's event callback and
+ * installs the throw wind-up step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern unsigned short data_ov156_020ced90[];

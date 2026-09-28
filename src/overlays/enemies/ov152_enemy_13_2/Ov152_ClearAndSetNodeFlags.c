@@ -1,3 +1,6 @@
+/* State step: clears bit 0 and sets bits 0x82 in the high byte of the actor's flags, clears bit 0
+ * of its model's flag byte and installs the wait-until-active step. */
+
 extern void SetIndexedSlot(int *self, int idx, void *cb);
 extern void Ov152_CopyBlock394ThenAdvance(void);
 

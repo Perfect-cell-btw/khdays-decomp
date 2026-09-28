@@ -1,3 +1,7 @@
+/* Tears the mission menu display down: hides all layers, rebuilds the backgrounds, text cells,
+ * sprites and screen cells, clears the backdrop colours, blacks out both screens and requests state
+ * 0xe. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

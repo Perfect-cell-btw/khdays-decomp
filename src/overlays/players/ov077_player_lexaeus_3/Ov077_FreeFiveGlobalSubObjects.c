@@ -1,3 +1,5 @@
+/* Releases the character's five effect sequences. */
+
 extern void ReleaseField74AndCleanup(int p);
 extern int data_ov077_020b9b80;
 

@@ -1,3 +1,6 @@
+/* Starts the timed effect (state 1, timer cleared) and plays the character's attack voice, keeping
+ * its handle. */
+
 extern int data_ov038_020b4ca0;
 extern int Ov022_PlayEntityVoice();
 

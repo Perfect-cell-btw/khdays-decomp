@@ -1,3 +1,6 @@
+/* Initialises the character's effect slot: clears its state, registers its effect sequence for the
+ * owner's palette slot, allocates its slot class and creates the sub-object. */
+
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern void Ov022_AllocateSlotWithClass(int a, int b, int c, void *d);
 extern void Ov049_CreateSubObject(int a);

@@ -1,3 +1,6 @@
+/* Queues action 1 and starts moving along the given vector (stored, and half of it as the
+ * velocity). */
+
 extern void ScaleVec3Fx12();
 
 struct w3 { int a, b, c; };

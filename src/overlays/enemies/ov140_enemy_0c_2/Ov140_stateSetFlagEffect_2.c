@@ -1,3 +1,7 @@
+/* State step: derives the speed from the owner's frame step, sets bit 0x40 in the high byte of the
+ * actor's flags, starts the slam animation, posts a pose, clears the hit flags and timer, sends a
+ * state update and installs the slam step. */
+
 extern void Ov107_StartAnim();
 extern void Ov107_PostTagUpdate();
 extern void Ov107_BuildAndSendUpdate();

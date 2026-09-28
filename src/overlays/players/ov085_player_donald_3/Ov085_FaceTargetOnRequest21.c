@@ -1,3 +1,6 @@
+/* State 0x21 handler: sends the attack command for the variant, faces the locked target (turning
+ * the display object once) and returns the panel update step. */
+
 extern void Ov085_PanelUpdate(void);
 extern int Ov022_ValidateTargetRef(int self);
 extern int func_ov022_020ad0c0(int self);

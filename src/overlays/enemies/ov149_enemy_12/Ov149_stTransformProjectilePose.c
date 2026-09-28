@@ -1,3 +1,7 @@
+/* Projectile step: sets the velocity from the action resource's offset and scale in the actor's
+ * frame; once the gate byte is clear sends the animation pair from the overlay's table to the
+ * actor's event callback, queues action 2 and clears the step handler. */
+
 extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
 extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);

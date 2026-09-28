@@ -1,3 +1,5 @@
+/* Defeat handler: unlinks the held node, then runs the shared defeat handler. */
+
 extern void Ov117_UnlinkHeldNode();
 extern void Ov107_AiState_OnDefeat();
 

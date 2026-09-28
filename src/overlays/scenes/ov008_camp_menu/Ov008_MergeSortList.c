@@ -1,3 +1,6 @@
+/* Sorts an NNS FND list with a merge sort: splits it at the middle (slow/fast walk), sorts both
+ * halves and merges them with the comparison. */
+
 typedef unsigned short u16;
 
 typedef struct NNSFndList {

@@ -1,3 +1,5 @@
+/* AI step: once the gate byte is clear, queues a fixed action and clears the step handler. */
+
 extern void SetIndexedSlot();
 
 void Ov165_PrepSubState9GuardField58(int this_) {

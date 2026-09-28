@@ -1,3 +1,6 @@
+/* Destructor: destroys the model (+0x384) and the two part instances that exist, destroys the list
+ * at +0x398, then the base object. */
+
 extern void DestroyInstance();
 extern void NNSi_FndDestroyDoubleList();
 extern void Ov107_DestroyObject();

@@ -1,3 +1,6 @@
+/* Moves the sub-object to its owner's position (re-laying it out), then runs the shared object
+ * tick. */
+
 extern void Ov107_MoveNodeAndRelayout();
 extern void Ov107_ProcessObjectTick();
 

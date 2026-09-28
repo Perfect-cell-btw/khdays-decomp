@@ -1,3 +1,7 @@
+/* Commits the trail node's orientation: turns the heading toward its target unless the actor is
+ * locked, combines it with the ground-normal rotation into the model's SRT, speeds up while
+ * flagged, and hands the step velocity to the actor (+0xf0), clearing it. */
+
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(void *dst, void *src, int t);
 extern void Quat_FromTwoVectors(void *dst, void *src, int m);

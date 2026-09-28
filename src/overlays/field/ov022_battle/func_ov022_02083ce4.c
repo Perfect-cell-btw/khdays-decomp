@@ -1,3 +1,5 @@
+/* Instantiates a class (InstantiateClass) and stores the instance in a global. */
+
 extern int InstantiateClass(void *cls, int arg0);
 extern int data_ov022_020b2894;
 extern int data_ov022_020b2e60;

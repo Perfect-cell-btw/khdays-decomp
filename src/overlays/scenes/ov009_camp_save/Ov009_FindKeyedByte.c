@@ -1,3 +1,6 @@
+/* Looks the key up in the five keyed records after the first one and returns that record's byte
+ * value (+8), or 0 when absent. */
+
 struct S {
     int key;
     char _pad[4];

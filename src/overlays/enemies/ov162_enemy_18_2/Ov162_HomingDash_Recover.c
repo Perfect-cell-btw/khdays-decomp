@@ -1,3 +1,7 @@
+/* Homing dash recovery: unlinks the dash node when one is attached, recomputes the velocity from
+ * the action resource's offset and scale in the actor's frame, and once the actor is on the ground
+ * and the gate byte is clear queues action 2 and clears the step handler. */
+
 extern int Ov107_UnlinkNodeFromOwner();
 extern int Ov107_ActionResource_GetOffsetAndScale();
 extern int Vec3TransformViaTempMtx();

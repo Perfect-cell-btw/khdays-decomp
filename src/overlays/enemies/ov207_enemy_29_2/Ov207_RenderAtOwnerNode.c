@@ -1,3 +1,6 @@
+/* Renders the object at its owner's model: copies the owner model's 44-byte transform block (+0x30)
+ * into the object, then draws it (Obj_RenderModel). */
+
 extern int Obj_RenderModel();
 
 struct S { int x[11]; };

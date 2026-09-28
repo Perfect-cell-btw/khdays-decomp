@@ -1,3 +1,7 @@
+/* Initialises a child projectile model: frees its old resource tables, sets up its render object,
+ * registers its sequence, resets its slot rows, starts its first animation and refreshes its
+ * callbacks. */
+
 extern void FreeAllResourceTables(void *p);
 extern void NNS_G3dRenderObjInit(void *a, int b);
 extern void Snd_RegisterSeqAndBind(void *a, void *b, int c, int d);

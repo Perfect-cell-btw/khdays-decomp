@@ -1,3 +1,5 @@
+/* Releases the element's two slot handles (+0x14, +0x18) that are set. */
+
 extern int Slot_ClearFlagBit1();
 
 void Ov005_ReleaseTwoSlots(int a, int *b) {

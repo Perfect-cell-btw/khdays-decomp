@@ -1,3 +1,5 @@
+/* Deactivates the charge effect and releases its sequence. */
+
 extern int ReleaseField74AndCleanup(void *);
 int Ov036_ClearFlagAndReleaseChild(void *obj) {
     char *p = (char *)obj + 0x2c80;

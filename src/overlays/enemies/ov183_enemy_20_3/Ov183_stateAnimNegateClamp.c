@@ -1,3 +1,6 @@
+/* State step: posts a pose, mirrors the sweep (negates its two rates and keeps the third
+ * non-positive) and installs the steering sweep step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov183_BeginSteerSweep(void);

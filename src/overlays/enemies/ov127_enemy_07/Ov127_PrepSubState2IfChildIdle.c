@@ -1,3 +1,6 @@
+/* AI step: decays the spin; when the child's animation ends queues action 2 and clears the step
+ * handler. */
+
 extern void Ov127_DecaySpinOverElapsed();
 extern void SetIndexedSlot();
 

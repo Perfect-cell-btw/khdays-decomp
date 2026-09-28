@@ -1,3 +1,6 @@
+/* Reaction check: during action 2 or 4 (and not already in 0xd), queues action 0xd; returns whether
+ * it did. */
+
 int Ov232_TryRequestState13(char *obj) {
     char *base = *(char **)(*(char **)(obj + 0x214));
     signed char v = *(signed char *)(base + 0x1c6);

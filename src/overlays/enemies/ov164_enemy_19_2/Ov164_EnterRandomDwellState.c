@@ -1,3 +1,8 @@
+/* Init state: clears the current and pending actions, clears bit 0 of the model's flag byte,
+ * records pointers to the actor's velocity, position and model busy flag, sets the initial flag
+ * bits, picks a random dwell time and installs the first action, the dispatcher and the heading
+ * step. */
+
 extern int RandNextScaled(int);
 extern void SetIndexedSlot(int, int, void *);
 extern void Ov164_stateSetFlagsClearBit(void);

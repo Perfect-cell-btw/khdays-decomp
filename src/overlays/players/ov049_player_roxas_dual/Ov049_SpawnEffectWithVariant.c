@@ -1,3 +1,6 @@
+/* Spawns the landing effect at the point through a placement message to the battle module, using
+ * the stronger variant when flagged. */
+
 extern void Ov022_SendPlacementMessage(int self, void *p);
 
 typedef struct { int x, y, z; } Vec3;

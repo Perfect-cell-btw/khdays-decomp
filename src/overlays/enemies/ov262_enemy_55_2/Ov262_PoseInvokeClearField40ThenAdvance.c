@@ -1,3 +1,6 @@
+/* State step: posts tag 1, sends a state update, clears the timer and installs the dual-timer step.
+ */
+
 extern void Ov107_PostTagUpdate();
 extern void Ov107_BuildAndSendUpdate();
 extern void SetIndexedSlot();

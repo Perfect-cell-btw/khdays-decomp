@@ -1,3 +1,6 @@
+/* Hit reaction: for hit flags with bit 0, marks the velocity reversed, reverses it, clears the
+ * timer and sets the knockback distance; returns whether it handled the hit. */
+
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 
 struct bf1 { unsigned char b : 1; };

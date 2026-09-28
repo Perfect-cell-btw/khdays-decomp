@@ -1,3 +1,6 @@
+/* Emits a timeline effect at the character's anchor: scales the row's values, runs the command
+ * handlers and sends the aim messages for the effect's shots. */
+
 #pragma opt_propagation off
 #pragma opt_common_subs off
 #pragma opt_dead_assignments off

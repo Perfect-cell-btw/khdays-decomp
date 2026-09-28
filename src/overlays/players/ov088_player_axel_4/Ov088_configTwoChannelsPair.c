@@ -1,3 +1,6 @@
+/* Binds animation tracks 0 and 2 of the sub-object to its animation set and moves both to the given
+ * frame. */
+
 extern void BindAnimTrack(int a, int b, int c, short d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 

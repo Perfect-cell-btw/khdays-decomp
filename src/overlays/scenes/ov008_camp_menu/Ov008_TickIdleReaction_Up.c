@@ -1,3 +1,6 @@
+/* Idle input reaction: when nothing is busy and the key is pressed, toggles the mode widgets or
+ * pages the mission list. */
+
 extern void Ov008_ApplyModeWidgets(int obj, unsigned int flag);
 extern void Ov008_MissionListPage(int *obj, int dir);
 extern unsigned short data_0204c18c;

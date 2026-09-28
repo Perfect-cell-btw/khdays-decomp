@@ -1,3 +1,6 @@
+/* Maps a touch position in the grid area to its tile cell (5 columns, 8 rows); returns whether the
+ * point was inside the grid. */
+
 typedef unsigned short u16;
 
 int Ov025_PixelToTileCell(u16 *pTileX, u16 *pTileY, unsigned int px, unsigned int py) {

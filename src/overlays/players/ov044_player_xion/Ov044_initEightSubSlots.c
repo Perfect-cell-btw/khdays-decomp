@@ -1,3 +1,6 @@
+/* Initialises the eight emitter objects (+0x234, 0x170 bytes each): registers each one's effect
+ * sequence for the owner's palette slot and records its index in state 0. */
+
 extern void RegisterSeqAndInit(int a, void *b, int c, int d);
 extern int data_ov044_020b55c4[];
 void Ov044_initEightSubSlots(int this) {

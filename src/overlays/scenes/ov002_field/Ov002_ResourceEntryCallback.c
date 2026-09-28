@@ -1,3 +1,5 @@
+/* Resource callback: draws the entry's sprite quad. */
+
 extern int Ov002_DrawSpriteQuad();
 
 int Ov002_ResourceEntryCallback(int arg0) {

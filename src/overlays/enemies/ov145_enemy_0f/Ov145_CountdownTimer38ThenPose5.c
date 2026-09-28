@@ -1,3 +1,6 @@
+/* Countdown step: counts the timer down by the owner's frame step; at zero posts pose 5 and
+ * installs the slot-scan step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov145_stateScanSlotRoundRobin();

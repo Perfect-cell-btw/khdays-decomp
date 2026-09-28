@@ -1,3 +1,5 @@
+/* Releases the character's six effect sequences (three emitters and three singles). */
+
 extern void ReleaseField74AndCleanup(int p);
 
 void Ov060_FreeSubObjectArrayAndTailSlots(int this_) {

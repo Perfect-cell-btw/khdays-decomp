@@ -1,3 +1,6 @@
+/* Whether the value is at most the player's amount of a fixed resource (game-state field 0x140b).
+ */
+
 extern unsigned int GameState_GetField(int id, int n);
 
 int Ov069_ResourceGE(unsigned int arg) {

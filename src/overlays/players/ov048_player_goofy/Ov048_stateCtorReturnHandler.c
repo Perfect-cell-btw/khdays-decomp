@@ -1,3 +1,6 @@
+/* Character constructor: boots the character, initialises its three effect slots, requests its two
+ * voice ids and returns the decoder step. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov048_Boot(int a);
 extern void Ov048_InitThreeEffectSlots(int a);

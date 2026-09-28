@@ -1,3 +1,6 @@
+/* Character constructor: boots the character, initialises its charge record, allocates its effect
+ * emitter and secondary effects, requests its two voice ids and returns the decoder step. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov092_Boot(int a);
 extern void Ov092_InitRegionRecordAndZero(int a);

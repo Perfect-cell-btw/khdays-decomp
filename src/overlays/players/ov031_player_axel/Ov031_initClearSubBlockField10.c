@@ -1,3 +1,5 @@
+/* Binds the character's rig and clears the active word of its two sub-objects. */
+
 extern void Ov031_BindRig(int a);
 
 void Ov031_initClearSubBlockField10(int param_1, int param_2) {

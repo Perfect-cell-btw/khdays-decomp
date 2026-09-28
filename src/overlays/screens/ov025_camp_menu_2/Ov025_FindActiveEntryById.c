@@ -1,3 +1,6 @@
+/* Returns the first active entry (non-zero word at +0xc) with the given id, or the end of the entry
+ * array when none matches. */
+
 struct Entry {
     unsigned short id;
     short pad;

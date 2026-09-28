@@ -1,3 +1,7 @@
+/* Lands the character: steps its anchor to get the vertical offset, asks its landing callback
+ * whether it touched down, and on landing sets the landed flags, shows its display node and flags
+ * the local player. */
+
 extern int Ov022_StepAnchorDelta(int self, void *out);
 extern void SceneNode_Enable(int a);
 extern int Session_GetLocalPlayerIndex(void);

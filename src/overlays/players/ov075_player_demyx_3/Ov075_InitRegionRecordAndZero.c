@@ -1,3 +1,6 @@
+/* Initialises the charge effect record: clears it and registers its sequence for the owner's
+ * palette slot. */
+
 extern void RegisterSeqAndInit(int a, int b, int c, int d);
 extern int data_ov075_020b9de4;
 

@@ -1,3 +1,5 @@
+/* Returns the address of an entry of a six-entry table, or NULL out of range. */
+
 extern int data_ov025_020b4ed0;
 
 int Ov025_GetItemTableEntry(int arg0) {

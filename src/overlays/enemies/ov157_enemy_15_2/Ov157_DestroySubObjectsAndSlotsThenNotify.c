@@ -1,3 +1,6 @@
+/* Destructor: frees the path table, destroys the model and the four part instances, frees their
+ * table, then destroys the base object. */
+
 struct row8 { int a, b; };
 extern void FreeInstanceMemory(int p);
 extern void DestroyInstance(int p);

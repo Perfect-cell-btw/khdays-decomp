@@ -1,3 +1,5 @@
+/* State step: posts pose 2, drops the grabbed object and installs the float-height step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov261_FloatHeightTick();

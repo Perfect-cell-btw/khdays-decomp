@@ -1,3 +1,6 @@
+/* Creates the object's state-machine registry entry (starting in its init state), links it back to
+ * the object and stores it at +0x214. */
+
 extern void CreateRegistryEntry();
 extern void Ov139_EnterAimStateInstallCallbacks(void);
 

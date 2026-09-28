@@ -1,3 +1,7 @@
+/* Actor constructor: installs the class's callbacks, sets its camera pose, creates its model with
+ * subitems and action resource, its five part instances and attach slots, and its transform
+ * entries; requests its resource ids. */
+
 struct v5 { int w[5]; };
 struct v3 { int a, b, c; };
 struct slot { void *ptr; int pad; };

@@ -1,3 +1,7 @@
+/* Applies a charge level once: when the level's bit is not set yet and the charge time has reached
+ * the threshold, binds and rewinds the charge effect's tracks, places it at the character facing
+ * its way and marks it active. */
+
 extern void BindAnimTrack(int a, unsigned short b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, unsigned short b, int c);
 

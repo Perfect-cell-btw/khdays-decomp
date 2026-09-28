@@ -1,3 +1,5 @@
+/* Starts the animation event on track 0 of the model subitem (+0x384). */
+
 extern int SetSubitemState();
 
 int Ov291_ForwardAnimEvent(int *r0, int r1, int r2) {

@@ -1,3 +1,6 @@
+/* Scrolls the charge widget with the character's animation frame, then finishes the battle-module
+ * update. */
+
 extern int Anim_GetFrame(int a, int b);
 extern void Ov002_WidgetScrollCommit(int a, int b, int c, int d);
 extern void func_ov022_020ad588(int this_);

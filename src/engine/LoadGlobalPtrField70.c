@@ -1,3 +1,5 @@
+/* Returns a word at a fixed offset of the object a global points to. */
+
 extern int data_0204c22c;
 
 int LoadGlobalPtrField70(void) {

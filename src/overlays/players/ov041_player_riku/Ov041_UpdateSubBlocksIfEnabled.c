@@ -1,3 +1,6 @@
+/* While the character is shown, draws its effect nodes: the one at the owner, the three emitters,
+ * the matrix-driven one and the anchored one. */
+
 extern void Ov041_DrawNodeAtOwner(int a, int b);
 extern void Ov041_DrawNodeCallback(int a, int b);
 extern void Ov041_UploadBoneMatrices(int a, int b);

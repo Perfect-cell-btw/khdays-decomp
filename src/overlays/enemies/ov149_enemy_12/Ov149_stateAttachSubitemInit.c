@@ -1,3 +1,6 @@
+/* State step: binds the model's subitem (+0x390) to this state (render callback and back pointer),
+ * rewinds its animation tracks, clears its flag bit 1 and installs the finishing step. */
+
 extern void SetSubitemState(int obj, int idx, int a, int b);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov149_RenderPerSphere(void);

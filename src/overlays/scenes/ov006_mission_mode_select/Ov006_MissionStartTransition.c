@@ -1,3 +1,7 @@
+/* Starts the mission link as parent: resolves the session id, picks the next group id, sets the
+ * receive buffer, connects and installs the receiver and packet filter; marks the transition
+ * requested. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

@@ -1,3 +1,5 @@
+/* Moves the mission cell with the tag to the position and runs its callback. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

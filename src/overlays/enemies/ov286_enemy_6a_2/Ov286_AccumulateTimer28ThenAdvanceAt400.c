@@ -1,3 +1,6 @@
+/* AI step: advances the timer; once the actor is on the ground and the timer passes 0x400, queues
+ * action 2 and clears the step handler. */
+
 extern void SetIndexedSlot();
 
 struct b1 { unsigned char b : 1; };

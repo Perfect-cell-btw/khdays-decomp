@@ -1,3 +1,6 @@
+/* AI step: once the actor touches ground or a wall, starts the sweep animation, posts pose 8, sends
+ * a state update, clears the hit flag and timer and installs the sweep step. */
+
 extern void Ov107_StartAnim(int a, int b, int c);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);

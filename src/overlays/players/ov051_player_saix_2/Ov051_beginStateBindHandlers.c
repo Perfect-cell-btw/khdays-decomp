@@ -1,3 +1,6 @@
+/* Per-frame effect handler: rebinds the idle arm animation when the character is free to, then
+ * updates and draws its effect block. */
+
 extern int Ov022_IsState9Or6WithFlag200();
 extern void BindAnimTrack();
 extern void Ov051_UpdateGuardedSlots();

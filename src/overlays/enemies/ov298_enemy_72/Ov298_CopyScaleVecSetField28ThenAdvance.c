@@ -1,3 +1,6 @@
+/* AI step: keeps the previous velocity, lowers the vertical speed, damps the velocity; when the
+ * model's animation ends picks a random spin, queues action 4 and clears the step handler. */
+
 struct w3 { int a, b, c; };
 extern void ScaleVec3Fx12(int factor, void *src, void *dst);
 extern int Rand16NextScaled(int p);

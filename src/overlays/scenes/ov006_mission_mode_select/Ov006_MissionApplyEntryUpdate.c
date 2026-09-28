@@ -1,3 +1,6 @@
+/* Applies a mission entry update received over the link: copies the entry in when it changed
+ * (unless the block is locked), updates its flags and marks it for redraw. */
+
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;

@@ -1,3 +1,6 @@
+/* Hit effect: marks the shot finished with a 0x3000 linger time and, while the owner is shown,
+ * spawns the hit effect at the shot's position (the loud variant for flagged shots). */
+
 extern int Slot_Spawn(int a, int b, int c, int d);
 
 typedef struct { unsigned char b0 : 1; } Flags;

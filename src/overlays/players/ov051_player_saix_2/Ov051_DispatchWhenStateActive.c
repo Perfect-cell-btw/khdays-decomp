@@ -1,3 +1,5 @@
+/* While the effect slot is active, sets its polygon id and draws it. */
+
 extern void NNS_G3dMdlSetMdlPolygonID();
 extern void Scene_DrawNode();
 

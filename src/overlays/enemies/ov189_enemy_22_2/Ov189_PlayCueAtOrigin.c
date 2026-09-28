@@ -1,3 +1,6 @@
+/* State step: posts a pose, plays an effect cue at the actor's origin and installs the next step.
+ */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 typedef struct { int x, y, z; } Vec3;
 extern void func_ov107_020c0b90(int a, int b, Vec3 v, int d);

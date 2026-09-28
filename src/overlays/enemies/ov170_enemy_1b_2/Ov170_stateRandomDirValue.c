@@ -1,3 +1,6 @@
+/* State step: posts tag 1, picks a random direction sign and a random radius between the actor's
+ * limits at +0x224 and +0x228, and installs the circle-strafe step. */
+
 extern void Ov107_PostTagUpdate();
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(void *obj, int idx, void *value);

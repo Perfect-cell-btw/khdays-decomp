@@ -1,3 +1,6 @@
+/* Sets up this overlay's shared battle object (slot claims in the battle module, ready bit when
+ * enabled), then builds its panel id summary and loads its animation tables. */
+
 extern void func_ov022_0209fb60(int a, int b, int c);
 extern void Ov022_SetSlotClaim(int a, int b, int c);
 extern void Ov002_BuildPanelIdSummary(int a, int b, int c);

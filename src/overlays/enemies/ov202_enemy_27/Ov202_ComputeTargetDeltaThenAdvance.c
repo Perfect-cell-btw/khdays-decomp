@@ -1,3 +1,6 @@
+/* AI step: posts pose 3 and, when a target is set, points the heading at it (angle of the target's
+ * position minus the actor's); installs the damped-move step. */
+
 struct v3 { int x, y, z; };
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void VEC_Subtract(const void *a, const void *b, void *c);

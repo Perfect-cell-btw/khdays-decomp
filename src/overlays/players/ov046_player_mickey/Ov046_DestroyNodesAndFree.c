@@ -1,3 +1,6 @@
+/* Releases the character's effect sequences (the main one and six slots), then frees its effect
+ * stream and buffer. */
+
 extern void ReleaseField74AndCleanup(int a);
 extern void func_ov022_02091228(int a);
 extern void NNSi_FndFreeFromDefaultHeap(int a);

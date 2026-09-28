@@ -1,3 +1,6 @@
+/* Fires three shots spread 120 degrees apart around the direction, each through a placement message
+ * to the battle module. */
+
 extern int data_ov070_020b9ca0;
 extern short data_0203d210[];
 

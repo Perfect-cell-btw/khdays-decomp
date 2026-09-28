@@ -1,3 +1,7 @@
+/* Allocates and configures the character's effect emitter: takes a channel block and publishes its
+ * fixed parameters (speed, lifetime, ranges), enabling the extra flag when the owner's slot option
+ * is set. */
+
 extern int NNSi_FndAllocFromDefaultExpHeap(int size);
 extern void Ov022_TakeChannelBlock(int a, int b, int c);
 extern int Slot_EvalPackedParam(int a, int b);

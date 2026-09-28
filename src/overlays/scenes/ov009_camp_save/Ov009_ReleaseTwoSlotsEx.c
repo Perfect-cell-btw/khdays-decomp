@@ -1,3 +1,5 @@
+/* Moves the element's two slots (+0x14, +0x18) that are set to the position. */
+
 extern int Slot_SetPosition();
 
 void Ov009_ReleaseTwoSlotsEx(int a, int *b, int c) {

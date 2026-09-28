@@ -1,3 +1,5 @@
+/* Returns the record's data (+0x1c) unless the game-state flag it names has bit 1 set. */
+
 extern int GameState_GetField();
 
 void *Ov017_GetField1cIfQueryBit1Clear(int this_) {

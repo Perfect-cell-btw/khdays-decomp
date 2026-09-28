@@ -1,3 +1,7 @@
+/* Finishes the mission input transition: releases the service, and either restarts it in exit mode
+ * or pushes the display config (with the key block when needed), restarts it and installs the
+ * entry-update handler; marks it active. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

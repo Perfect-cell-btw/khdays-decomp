@@ -1,3 +1,6 @@
+/* Restarts the effect when it is idle or finished: binds and rewinds tracks 0 and 2, clears its
+ * timers and puts it in state 1. */
+
 extern void BindAnimTrack(int a, int b, int c, int d);
 extern void Anim_SetFrameWrapped(int a, int b, int c);
 

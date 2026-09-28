@@ -1,3 +1,7 @@
+/* Init state: clears the current and pending actions, clears bit 0 of the part's flag byte
+ * (+0x3ac), records the actor's velocity pointer, sets the initial flag bits and installs the first
+ * action, the dispatcher and the orientation step. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct bf { unsigned b : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);

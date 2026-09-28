@@ -1,3 +1,6 @@
+/* Character constructor: builds the panel object, initialises its effect record, requests its two
+ * voice ids and returns the decoder step. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov047_PanelCtor(int a);
 extern void Ov047_InitTwoGlobalRegionsAndForward(int a);

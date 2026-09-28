@@ -1,3 +1,7 @@
+/* State step: clears bit 0 and sets the stance bits in the high byte of the actor's flags (+0x60),
+ * clears bit 0 of its model's flag byte, sends a state update, clears the pending action and clears
+ * the step handler. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct bf { unsigned b : 8; };
 extern void Ov107_BuildAndSendUpdate();

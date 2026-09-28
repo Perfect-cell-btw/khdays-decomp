@@ -1,3 +1,5 @@
+/* Forwards the global command to the effect stream, then runs the group callback. */
+
 extern void Ov022_ForwardToNodeHandler();
 extern void Ov076_InvokeGroupCallback();
 

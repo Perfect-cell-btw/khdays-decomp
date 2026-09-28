@@ -1,3 +1,7 @@
+/* AI step: advances the timer by the owner's frame step until it passes 0x6ee; then acquires a
+ * target and faces it, clears flags 0x82 in the high byte of the actor's flags, posts pose 0 and
+ * installs the random-delay step. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern int Ov192_FindTarget(void *obj, int flag);
 extern void VEC_Subtract(void *a, void *b, void *out);

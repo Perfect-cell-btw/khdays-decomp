@@ -1,3 +1,5 @@
+/* Sets the step speed, queues action 4 and clears the step handler. */
+
 extern void SetIndexedSlot();
 void Ov219_stAdvanceState(int node) {
     int *s = *(int **)(node + 4);

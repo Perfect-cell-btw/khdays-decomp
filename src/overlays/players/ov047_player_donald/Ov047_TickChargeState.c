@@ -1,3 +1,6 @@
+/* Charge effect step: drops it when the character leaves the charge state, starts it once its timer
+ * passes 0x12000, then advances its tracks. */
+
 extern void Sequence_UpdateTracks(int a, int b);
 
 void Ov047_TickChargeState(int self, int *node, int dt) {

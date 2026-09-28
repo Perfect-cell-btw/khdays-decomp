@@ -1,3 +1,6 @@
+/* Message override: message 5 carries a packed position; it spawns a node-transform task at that
+ * position and a spawn task; other messages go to the shared handler (Ov107_AiState_OnMessage). */
+
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int x, y, z; } Vec3;
 

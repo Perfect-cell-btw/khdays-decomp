@@ -1,3 +1,7 @@
+/* AI step: fades the actor in (the alpha at +0x390 grows with the timer up to 1.0); once the gate
+ * byte clears, picks a random range between the limits at +0x224/+0x228, queues action 2 and clears
+ * the step handler. */
+
 extern int FX_Div();
 extern int RandNextScaled();
 extern int SetIndexedSlot();

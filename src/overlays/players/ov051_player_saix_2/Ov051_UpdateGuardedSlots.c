@@ -1,3 +1,7 @@
+/* Advances the character's effect block: drops the guard state when the owner leaves it, advances
+ * the main effect (copying the owner's matrix) until its tracks finish, and ticks the six secondary
+ * slots. */
+
 extern int Ov022_IsState9Or6WithFlag200(int a);
 extern void MI_Copy48B(int dst, int src);
 extern int Sequence_UpdateTracks(int a, int b);

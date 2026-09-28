@@ -1,3 +1,5 @@
+/* Ordering predicate: compares two records by the halfword at +6, then by the word at +0x18. */
+
 int Ov025_CompareByField6ThenField18(char *a, char *b) {
     unsigned short hb = *(unsigned short *)(b + 6);
     unsigned short ha = *(unsigned short *)(a + 6);

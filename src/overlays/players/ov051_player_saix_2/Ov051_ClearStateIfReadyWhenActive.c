@@ -1,3 +1,5 @@
+/* While the effect slot is active, advances its tracks and marks it idle when they finish. */
+
 extern int Sequence_UpdateTracks();
 
 void Ov051_ClearStateIfReadyWhenActive(int this_) {

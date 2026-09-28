@@ -1,3 +1,6 @@
+/* Quad-tree query: walks the node's object list and then its four child quadrants, collecting up to
+ * four objects whose bounding sphere overlaps the given sphere. */
+
 struct v3 { int x, y, z; };
 struct nodeinfo { struct v3 pos; int radius; };
 struct pair { int x, y; };

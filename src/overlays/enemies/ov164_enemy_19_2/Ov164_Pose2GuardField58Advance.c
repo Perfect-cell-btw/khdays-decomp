@@ -1,3 +1,5 @@
+/* AI step: once the gate byte is clear, posts pose 2 and installs the seek-and-steer step. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov164_stSeekTargetSteer();

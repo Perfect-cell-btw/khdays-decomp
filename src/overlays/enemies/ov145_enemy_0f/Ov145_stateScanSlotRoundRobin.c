@@ -1,3 +1,6 @@
+/* AI step: once the model's animation ends, advances round-robin to the next usable slot of five,
+ * makes the stored action pending and clears the step handler. */
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 void Ov145_stateScanSlotRoundRobin(int *node) {
     int *state = (int *)node[1];

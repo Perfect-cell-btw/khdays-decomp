@@ -1,3 +1,6 @@
+/* Init state: clears the current and pending actions, records the actor's velocity pointer and
+ * installs the first action, the dispatcher and the orientation step. */
+
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov145_stSetDispFlags86(void);
 extern void Ov145_SubStateDispatch(void);

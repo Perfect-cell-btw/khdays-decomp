@@ -1,3 +1,6 @@
+/* Walks the object's entry list (count at +0x19, 0x1c8-byte entries at +0xc) and calls, for every
+ * entry with a non-zero type byte (+2), that type's handler from the overlay's handler table. */
+
 extern void (*data_ov031_020b4ce8[])();
 void Ov031_dispatchEntryList(int param_1, int param_2) {
     int i = 0;

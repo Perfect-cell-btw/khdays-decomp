@@ -1,3 +1,6 @@
+/* AI step: once the actor is active, copies its stored block (+0x394) into the step, queues action
+ * 1 and clears the step handler. */
+
 struct w4 { int a, b, c, d; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void SetIndexedSlot();

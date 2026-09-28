@@ -1,3 +1,6 @@
+/* State step: sets bit 7 of the high flag byte, clears bit 0 of the model's flag byte and the
+ * alpha, and installs the roll-variant step. */
+
 struct bf { unsigned b : 8; };
 extern void SetIndexedSlot(int obj, int idx, void *cb, int flag);
 extern void Ov287_RollFlag38cCopySubStateThenAdvanceSlot(void);

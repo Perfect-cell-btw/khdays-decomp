@@ -1,3 +1,6 @@
+/* Decays the ring entries each frame (value by 0x78, timer by 0x3c) and frees an entry once its
+ * timer runs out. */
+
 void Ov267_DecayActiveEntriesDual(char *obj) {
     int i = 0;
     if (*(int *)(obj + 0x8c) > 0) {

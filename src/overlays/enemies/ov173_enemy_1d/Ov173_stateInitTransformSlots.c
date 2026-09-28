@@ -1,3 +1,7 @@
+/* Init state: clears the current and pending actions, clears bit 0 of the model's flag byte, points
+ * the state at the actor's position (+0x74), sets the initial flag bits, zeroes the rotation and
+ * installs the dispatcher, the first action step and the timer step. */
+
 struct bf { unsigned b : 8; };
 struct blk16 { int a, b, c, d; };
 extern void Obj_SetFourWords(void *p, int a, int b, int c, int d);

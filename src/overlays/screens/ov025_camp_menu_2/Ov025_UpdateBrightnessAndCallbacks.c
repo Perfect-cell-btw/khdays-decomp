@@ -1,3 +1,7 @@
+/* Per-frame camp-menu update: samples the brightness tween and applies it to the screens it drives
+ * (dimming the main screen in the save mode), then runs the update callbacks, dropping the ones
+ * that finish. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 

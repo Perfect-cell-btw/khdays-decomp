@@ -1,3 +1,6 @@
+/* Advances the character's four effect handlers: the sequence slot, the projectiles (firing the
+ * volley), the emitter state machine and the synced tracks. */
+
 extern void Ov097_StepSequenceSlot(int a, int b, int c);
 extern void Ov097_StepProjectilesAndFireVolley(int a, int b, int c);
 extern void Ov097_DriveEmitterStateMachine(int a, int b, int c);

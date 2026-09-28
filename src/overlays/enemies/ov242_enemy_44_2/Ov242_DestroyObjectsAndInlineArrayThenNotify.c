@@ -1,3 +1,6 @@
+/* Destructor: destroys the models, the action resource and the three part instances, frees the
+ * waypoint table, then destroys the base object. */
+
 extern void DestroyInstance(int p);
 extern void Ov107_ActionResource_Destroy(int p);
 extern void FreeInstanceMemory(int p);

@@ -1,3 +1,5 @@
+/* Draws the character's seven effect nodes. */
+
 extern void Ov061_ForwardToHandlerIfHeadSet();
 
 void Ov061_InvokeHandlerFor7SubObjects(int this_, int base) {

@@ -1,3 +1,5 @@
+/* Resets the tracked position and movement vectors to zero and starts the child's animation. */
+
 struct v3 { int a, b, c; };
 extern void SetSubitemState(void *p, int a, int b, int c);
 extern int data_02041dc8[];

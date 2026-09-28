@@ -1,3 +1,5 @@
+/* Releases the character's two effect sequences, then frees its attached group. */
+
 extern int data_ov095_020bcba0;
 extern void ReleaseField74AndCleanup();
 extern void Ov095_FreeAttachedGroup();

@@ -1,3 +1,6 @@
+/* Advances the character's effect block: the sequence slot, the mode-dependent tracks and the
+ * attack slot. */
+
 extern void Ov096_StepSequenceSlot();
 extern void Ov096_UpdateTracksByMode();
 extern void Ov096_StepAttackSlot();

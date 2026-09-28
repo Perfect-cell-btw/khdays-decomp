@@ -1,3 +1,6 @@
+/* State step: sets bit 0x40 in the high byte of the actor's flags (+0x60), starts the action
+ * resource's animation, posts pose 4 and installs the aiming step. */
+
 extern void Ov107_StartAnim();
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);

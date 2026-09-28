@@ -1,3 +1,6 @@
+/* AI step: acquires the nearest target, or queues action 2 and ends the step without one; faces it,
+ * and depending on the countdown (Ov214_AiCountdownQueue6) ends the step or queues action 4. */
+
 extern int Ov107_FindNearestObject(int node, int flag);
 extern int SetIndexedSlot();
 extern int VEC_Subtract();

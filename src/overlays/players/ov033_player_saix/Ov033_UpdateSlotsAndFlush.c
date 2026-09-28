@@ -1,3 +1,6 @@
+/* Draws the character's effect block while the owner is shown: the six secondary slots, then the
+ * main effect when it is active. */
+
 extern void Ov033_DispatchWhenStateActive(int a);
 extern void Gfx_SubmitCachedCommandBlock(void);
 extern void GX_SendFifoWords(int a, int b, int c);

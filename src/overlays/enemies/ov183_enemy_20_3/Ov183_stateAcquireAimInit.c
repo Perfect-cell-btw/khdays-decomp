@@ -1,3 +1,7 @@
+/* State step: acquires the nearest target and faces it, posts pose 0, sets the alpha to its
+ * minimum, sets bit 0 of +0x1ae, clears bit 0 of the model's flag byte, clears the timer and
+ * installs the slow fade-in step. */
+
 struct bf { unsigned b : 8; };
 extern int Ov107_FindNearestObject();
 extern void VEC_Subtract();

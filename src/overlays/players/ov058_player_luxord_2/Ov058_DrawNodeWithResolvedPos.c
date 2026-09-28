@@ -1,3 +1,6 @@
+/* When the effect node is in its visible state, places it at the attack anchor its kind names,
+ * turned with the character, and draws it. */
+
 extern void Ov058_GetAttackAnchor(int self, int kind, void *out);
 extern void Scene_DrawNode(int a);
 

@@ -1,3 +1,5 @@
+/* Polls the page input, then runs the two page handlers. */
+
 extern char *data_ov009_020563e4[];
 extern void Ov009_PollPageInput(void);
 extern void Ov009_HandlerA_Call2(int arg0);
