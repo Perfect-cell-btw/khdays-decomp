@@ -21,8 +21,7 @@
 
 extern int Ov002_GetItemResource(int nItemId);
 extern void Ov002_SelectEntry(int nItemId);
-extern void Ov002_WriteTileQuad9000(int pDst, u16 nTopLeft, u16 nTopRight,
-                                u16 nBottomLeft, u16 nBottomRight);
+extern void Ov002_WriteTileQuad9000(int pDst, int nTopLeft, int nTopRight, int nBottomLeft, u16 nBottomRight);
 
 void Ov002_PanelDrawCounter(int nSlot, int nValue, int nColumn, int bRightAlign,
                          int bShowZero) {
@@ -40,16 +39,15 @@ void Ov002_PanelDrawCounter(int nSlot, int nValue, int nColumn, int bRightAlign,
     if (nValue > 0) {
         if (nTens == 0) {
             if (nOnes > 0) {
-                Ov002_WriteTileQuad9000(pDst, nOnes + 0x201, 0, nOnes + 0x221, 0);
+                Ov002_WriteTileQuad9000(pDst, (u16)(nOnes + 0x201), (u16)0, (u16)(nOnes + 0x221), 0);
             }
         } else {
-            Ov002_WriteTileQuad9000(pDst, nTens + 0x201, nOnes + 0x20b,
-                                nTens + 0x221, nOnes + 0x22b);
+            Ov002_WriteTileQuad9000(pDst, (u16)(nTens + 0x201), (u16)(nOnes + 0x20b), (u16)(nTens + 0x221), nOnes + 0x22b);
         }
     } else if (bShowZero) {
-        Ov002_WriteTileQuad9000(pDst, 0x201, 0, 0x221, 0);
+        Ov002_WriteTileQuad9000(pDst, (u16)0x201, (u16)0, (u16)0x221, 0);
     } else {
-        Ov002_WriteTileQuad9000(pDst, 0x11f, 0, 0x13f, 0);
+        Ov002_WriteTileQuad9000(pDst, (u16)0x11f, (u16)0, (u16)0x13f, 0);
     }
 
     if (bRightAlign == 0) {

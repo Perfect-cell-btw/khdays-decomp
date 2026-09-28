@@ -71,7 +71,7 @@ extern u16 Session_GetLocalPlayerIndex(void);
 extern int func_ov002_0206373c(void);
 extern int Ov002_GetCueEntry(int nStep);
 extern int Ov002_GetCueEntryValue(int nStep);
-extern void Ov002_DrawStamp(int hCanvas, u16 nX, u16 nY, u8 nPen, int a, int b);
+extern void Ov002_DrawStamp(int hCanvas, int nX, int nY, int nPen, int a, int b);
 extern void Ov002_DrawLine(int hCanvas, u16 nX, u16 nY, u16 nX2, u16 nY2, u8 nPen,
                      int nWidth);
 
@@ -120,9 +120,7 @@ void Ov002_PlotStroke(int nSlot, const u16 *pPoint)
             if (nY <= 0x20) {
                 nY = 0x20;
             }
-            Ov002_DrawStamp(func_ov002_0206373c(), nX2, (u16)(nY - 0x20),
-                    pens.aPens[nSlot], Ov002_GetCueEntry(nStep),
-                    Ov002_GetCueEntryValue(nStep));
+            Ov002_DrawStamp(func_ov002_0206373c(), (u16)nX2, (u16)(nY - 0x20), (u8)pens.aPens[nSlot], Ov002_GetCueEntry(nStep), Ov002_GetCueEntryValue(nStep));
             return;
         }
     } else {

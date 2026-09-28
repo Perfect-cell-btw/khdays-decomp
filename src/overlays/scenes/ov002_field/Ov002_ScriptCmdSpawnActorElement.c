@@ -9,10 +9,7 @@ extern int Ov002_GetModuleSlot(int nId);
 /* The state field is declared int here, not u16, on purpose: the value is
  * already truncated when it is unpacked, and declaring the parameter narrow
  * would make the compiler truncate it a second time at the call. */
-extern void Ov002_SpawnActorElement(int nOwner, u16 wA, u16 wB, int nStateField,
-                                int bStateWidth, int nName, int nTrack,
-                                int nSpot, void *pPos, void *pBound,
-                                int nAngle);
+extern void Ov002_SpawnActorElement(int nOwner, int wA, int wB, int nStateField, int bStateWidth, int nName, int nTrack, int nSpot, void *pPos, void *pBound, int nAngle);
 
 /* Script VM command: spawn an actor element from the command's operands.
  *
@@ -79,8 +76,6 @@ int Ov002_ScriptCmdSpawnActorElement(void *pCtx, int nArgs)
 
     nOwner = Ov002_GetModuleSlot(nId);
 
-    Ov002_SpawnActorElement(nOwner, (u16)nA, (u16)nB, wStateField,
-                        bStateWidth, nName, nTrack, nSpot, &aPos[0],
-                        &aBound[0], nAngle);
+    Ov002_SpawnActorElement(nOwner, (u16)nA, (u16)nB, wStateField, bStateWidth, nName, nTrack, nSpot, &aPos[0], &aBound[0], nAngle);
     return 1;
 }

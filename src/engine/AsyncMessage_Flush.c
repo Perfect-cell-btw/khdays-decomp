@@ -16,7 +16,7 @@ extern int Ov105_WM_SetMPDataToPortEx(void (*callback)(void), AsyncMessage *mess
                               void *data, u16 size, u16 mask, int stride,
                               int zero);
 extern void AsyncMessage_FlushHookNoOp(void);
-extern void dispatchByObjTypeBits(void *data, u16 size);
+extern void dispatchByObjTypeBits(void *data, int size);
 
 int AsyncMessage_Flush(AsyncMessage *message)
 {

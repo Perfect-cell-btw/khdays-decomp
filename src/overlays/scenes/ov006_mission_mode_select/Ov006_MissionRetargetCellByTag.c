@@ -12,6 +12,8 @@ typedef struct {
 } Ov006RootContext;
 
 extern Ov006RootContext *data_ov006_02056664;
+/* Defined taking tag as unsigned int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void *Ov006_FindEntryByTag(MissionCellList *list, u16 tag);
 extern void Ov006_Elem_SetPos(MissionCellList *list, void *cell, int x, int y);
 extern void Ov006_TagTracker_InvokeCallback(MissionCellList *list, void *cell);

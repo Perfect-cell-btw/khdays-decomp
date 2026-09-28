@@ -25,7 +25,7 @@ typedef struct Ov016Breakable {
 
 extern void ReleaseField74AndCleanup(void *pNode);                 /* release a sequence node */
 extern void Render_ReleaseNodeItem(void *pNode);                 /* Render_ReleaseNodeItem */
-extern int  GameState_GetField(u16 nField, u8 nBit);        /* GameState_GetField */
+extern int  GameState_GetField(int nField, int nBit);        /* GameState_GetField */
 extern void Ov002_SetFieldBit0(void *pPiece, int nMode); /* retire a piece */
 
 void Ov016_BreakableRelease(Ov016Breakable *pSelf)

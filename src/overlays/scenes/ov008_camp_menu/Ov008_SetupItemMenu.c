@@ -52,11 +52,11 @@ typedef struct Ov008MenuEntryDef {
 
 extern Ov008MenuEntryDef data_ov008_02090598[];
 extern Ov008MenuContext *Ov008_GetMenuContext(void);                     /* Ov008_GetMenuContext */
-extern Ov008SlotTable *Ov008_GetPageTableEntry(u16 nListId);
+extern Ov008SlotTable *Ov008_GetPageTableEntry(unsigned int nListId);
 extern int   Ov008_GetCtxBlock9500(void);                                 /* Ov008_GetCtxBlock9500 */
 extern u32   Ov008_PackSlotTag(int nSlot);                            /* Ov008_PackSlotTag */
 extern void  Ov008_LoadLayoutResource(int nBlock, u32 nHandle);              /* Ov008_LoadLayoutResource */
-extern void  Ov008_RetargetCellByTag(u16 nTag, int nX, int nY);             /* Ov008_RetargetCellByTag */
+extern void  Ov008_RetargetCellByTag(unsigned int nTag, int nX, int nY);             /* Ov008_RetargetCellByTag */
 extern int   Ov008_GetContext(void);                                 /* Ov008_GetContext */
 extern void  Ov008_InitFromDescAndMark(int nCtx, Ov008LayoutTemplate *pLayout);
 extern void  Ov008_LoadBlockProcessAndFree(int nCtx, void *pResource, int nCount);/* Ov008_LoadBlockProcessAndFree */

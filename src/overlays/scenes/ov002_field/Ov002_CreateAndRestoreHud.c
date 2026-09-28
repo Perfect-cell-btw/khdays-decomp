@@ -100,7 +100,7 @@ extern void Ov002_SetPanelField01b8(int);
 extern void Ov002_Field_RequestTransfer(int, int);
 extern void Ov002_ForwardWithOptionalPublish(int, int);
 extern void MI_CpuFill8(void *, int, u32);
-extern void Ov002_Hud_RefreshUnless8(u16);
+extern void Ov002_Hud_RefreshUnless8(int);
 
 static inline int IsExcludedSlot(u16 nId)
 {

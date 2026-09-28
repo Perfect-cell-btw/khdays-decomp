@@ -18,6 +18,8 @@ extern void NNS_G3dGlbSetBaseTrans(const VecFx32 *v);
 extern void Gfx_ApplyBaseTransform(void);
 extern void NNS_G3dMdlSetMdlPolygonIDAll(int model, int id);
 extern void NNS_G3dMdlSetMdlAlpha(int model, int mat, int alpha);
+/* Defined taking rgb as GXRgb: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void NNS_G3dMdlSetMdlDiffAll(int model, u16 rgb);
 extern void NNS_G3dDraw1Mat1Shp(int model, int a, int b, int c);
 extern const VecFx32 data_0204227c;

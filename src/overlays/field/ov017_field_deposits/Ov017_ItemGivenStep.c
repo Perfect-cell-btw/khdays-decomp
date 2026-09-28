@@ -51,12 +51,12 @@ extern int   Ov002_GetModuleScale(void);                               /* frame 
 extern int   Session_GetLocalPlayerIndex(void);                                     /* Session_GetLocalPlayerIndex */
 extern int   Ov002_IsSessionOpen(void);                               /* scene running? */
 extern Ov017PlayerActor *GetEntryField20ByIndex(int nPlayer);                  /* the player's actor */
-extern int   Ov002_FindKeyEntryIndex(short nKey);                         /* key -> entry index */
-extern Ov017KeyEntry *Ov002_GetRootField8d14(short nIndex);              /* entry index -> entry */
+extern int   Ov002_FindKeyEntryIndex(int nKey);                         /* key -> entry index */
+extern Ov017KeyEntry *Ov002_GetRootField8d14(int nIndex);              /* entry index -> entry */
 extern int   Session_IsActive(void);                                     /* Session_IsActive */
 extern int   Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */
-extern int   GameState_GetField(u16 nField, u8 nBit);                      /* GameState_GetField */
-extern void  GameState_SetField(u16 nField, u8 nBit, u16 nValue);          /* GameState_SetField */
+extern int   GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
+extern void  GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);          /* GameState_SetField */
 extern void  Ov002_SetFieldBit0(void *pPiece, int nMode);            /* retire a piece */
 extern void *Ov002_DoneTick(void *pPiece);                       /* terminal state */
 
@@ -78,7 +78,7 @@ void *Ov017_ItemGivenStep(Ov017Item *pSelf)
         pSelf->nState = 6;
         if (Session_GetLocalPlayerIndex() == 0 && Ov002_IsSessionOpen() != 0) {
             pActor = GetEntryField20ByIndex(pSelf->nPlayer);
-            pEntry = Ov002_GetRootField8d14(Ov002_FindKeyEntryIndex(pSelf->nItemKey));
+            pEntry = Ov002_GetRootField8d14((short)(Ov002_FindKeyEntryIndex((short)pSelf->nItemKey)));
             if (Session_IsActive() != 0) {
                 msgGive.nType = 3;
                 Ov002_RecordElementHit(pSelf, &msgGive, 4);
@@ -93,9 +93,9 @@ void *Ov017_ItemGivenStep(Ov017Item *pSelf)
         }
     }
     if (pSelf->nTimer + nDelta >= 0x1d000) {
-        nState = GameState_GetField(pSelf->nStateField, pSelf->nStateBit);
-        GameState_SetField(pSelf->nStateField, pSelf->nStateBit, (nState & 0xffff0001) | 2);
-        GameState_SetField(pSelf->nTakenField, pSelf->nTakenBit, 1);
+        nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
+        GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit, (u16)((nState & 0xffff0001) | 2));
+        GameState_SetField((u16)pSelf->nTakenField, (u8)pSelf->nTakenBit, (u16)1);
         Ov002_SetFieldBit0(pSelf, 0);
         pSelf->nState = 7;
         if (Session_GetLocalPlayerIndex() == 0) {

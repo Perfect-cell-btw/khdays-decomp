@@ -17,7 +17,7 @@ extern void SceneNode_Enable(void *node);
 extern int Ov022_IsState9Or6WithFlag200(char *emitter);
 extern int Ov022_IsSlotReady(char *emitter);
 extern void *Ov022_ActorSetState(char *self, int state);
-extern int Ov022_ClampAngleTowardTarget(char *self, u16 heading);
+extern int Ov022_ClampAngleTowardTarget(char *self, unsigned int heading);
 extern int data_ov032_020b58c0;
 
 void *Ov032_HoverStep(char *self)
@@ -70,7 +70,7 @@ void *Ov032_HoverStep(char *self)
                 heading -= 0xfff;
                 block[2] = 0;
             }
-            a = Ov022_ClampAngleTowardTarget(self, heading);
+            a = Ov022_ClampAngleTowardTarget(self, (u16)heading);
             node = *(unsigned int **)(self + 0x20);
             if ((*node & 0x20) == 0) {
                 *(u16 *)((char *)node + 0x80) = a + 0x8000;

@@ -16,8 +16,8 @@ extern int  Ov015_PickupCollect(void *pPickup);                     /* Ov015_Pic
 extern void Ov002_RebindAnimTracks(u16 *pNode, int nTrack, int nFrame); /* rewind a sequence */
 extern void SceneNode_Disable(u16 *pNode);                              /* SceneNode_Disable */
 extern int  Ov015_PickupPlayTakenSequence(void *pPickup, int nDelta);         /* Ov015_PickupPlayTakenSequence */
-extern int  GameState_GetField(u16 nField, u8 nBit);                     /* GameState_GetField */
-extern void GameState_SetField(u16 nField, u8 nBit, u16 nValue);         /* GameState_SetField */
+extern int  GameState_GetField(int nField, int nBit);                     /* GameState_GetField */
+extern void GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);         /* GameState_SetField */
 extern void Ov002_SetFieldBit0(void *pPiece, int nMode);           /* retire the piece */
 typedef void *Ov015StateFn(void *pPiece);
 extern Ov015StateFn Ov002_DoneTick;                            /* the vanish step */
@@ -67,8 +67,8 @@ Ov015StateFn *Ov015_PickupTakenStep(Ov015Pickup *pPickup)
     if (bDone) {
         pPickup->nStateBits &= ~1;
         pPickup->nState = 4;
-        nField = GameState_GetField(pPickup->nStateField, pPickup->nStateBit);
-        GameState_SetField(pPickup->nStateField, pPickup->nStateBit, (nField & 0xffff0001) | 2);
+        nField = GameState_GetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit);
+        GameState_SetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit, (u16)((nField & 0xffff0001) | 2));
         Ov002_SetFieldBit0(pPickup, 0);
         return Ov002_DoneTick;
     }

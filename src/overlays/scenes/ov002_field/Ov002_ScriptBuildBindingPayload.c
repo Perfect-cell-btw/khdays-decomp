@@ -5,7 +5,7 @@
 typedef struct ScriptVmOperand {u16 nType,pad2;u32 nValue;} ScriptVmOperand;
 extern int ScriptVm_ReadOperandInt(void *,ScriptVmOperand *);
 extern int ScriptVm_ReadOperandFx32(void *,ScriptVmOperand *);
-extern u32 Ov002_List_ScaleEntryTag(u8,u16);
+extern u32 Ov002_List_ScaleEntryTag(int, int);
 extern void Ov002_DriveBinding(int,int,u32 *,int);
 extern int Ov002_ClaimSlotSeat(int,void *);
 extern int Ov002_ResolveActorIfSlotBound(int);
@@ -28,7 +28,7 @@ int Ov002_ScriptBuildBindingPayload(void *pVm,ScriptVmOperand *pOperands)
             int nTable=ScriptVm_ReadOperandInt(pVm,pValues+nOperand++);
             int nIndex=ScriptVm_ReadOperandInt(pVm,pValues+nOperand++);
             if(nTable==-1 && nIndex==-1)aPayloadWords[nWords]=0;
-            else aPayloadWords[nWords]=Ov002_List_ScaleEntryTag((u8)nTable,(u16)nIndex);
+            else aPayloadWords[nWords]=Ov002_List_ScaleEntryTag((u8)nTable, (u16)nIndex);
             nWords++;
             break;
         }

@@ -6,12 +6,12 @@
  * the ROM narrows it at the call site (lsl #16 / lsr #16). Declaring the
  * parameter unsigned short makes the narrowing redundant and drops the pair. */
 extern int Session_IsReady(void);
-extern int Rand16NextScaled(unsigned short id);
-extern int Ov002_PublishStateChange(void *a, void *b, short tag);
+extern int Rand16NextScaled(unsigned int id);
+extern int Ov002_PublishStateChange(void *a, void *b, int tag);
 
 int Ov002_PostMessage(void *a, void *b, int id) {
     if (Session_IsReady() != 0) {
-        return Ov002_PublishStateChange(a, b, (short)Rand16NextScaled(id));
+        return Ov002_PublishStateChange(a, b, (short)Rand16NextScaled((unsigned short)id));
     }
 
     return 1;

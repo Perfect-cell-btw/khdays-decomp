@@ -34,18 +34,7 @@ typedef struct Ov000ListSceneContext {
 } Ov000ListSceneContext;
 
 extern Ov000ListSceneContext *NNSi_FndGetCurrentRootHeap(void);
-extern void func_02013484(
-    void *destination,
-    const u16 *source,
-    u16 width,
-    u16 height,
-    int destinationX,
-    int destinationY,
-    int tileWidth,
-    int tileHeight,
-    int sourceX,
-    int sourceY
-);
+extern void func_02013484(void *destination, const u16 *source, int width, int height, int destinationX, int destinationY, int tileWidth, int tileHeight, int sourceX, int sourceY);
 
 void Ov000_BlitTileRequest(const Ov000TileDrawRequest *request) {
     Ov000ListSceneContext *context = NNSi_FndGetCurrentRootHeap();
@@ -92,15 +81,6 @@ void Ov000_BlitTileRequest(const Ov000TileDrawRequest *request) {
         sourceY = (unsigned int)request->asset->tiles[1] >> 3;
     }
 
-    func_02013484(destination,
-                  request->asset->tiles,
-                  request->width,
-                  request->height,
-                  request->destinationX,
-                  request->destinationY,
-                  0x20,
-                  0x18,
-                  sourceX,
-                  sourceY);
+    func_02013484(destination, request->asset->tiles, request->width, request->height, request->destinationX, request->destinationY, 0x20, 0x18, sourceX, sourceY);
     context->transferFlags |= 1 << bufferIndex;
 }

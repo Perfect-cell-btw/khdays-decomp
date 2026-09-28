@@ -82,26 +82,22 @@ extern int Ov022_ComputeChipGauge(u8 *pBlk);
 extern int Ov002_IsMissionClearFinished(int nWhich);
 extern int Ov002_GetStateWord(void);
 extern void Ov002_SetPanelMode_2(int bOn);
-extern void Ov002_SetScrollPosition(int nWhich, u16 nValue);
+extern void Ov002_SetScrollPosition(int nWhich, int nValue);
 extern int Ov022_ForwardArg1(struct Actor *pActor, int nKind);
-extern int Ov022_GetMarkerState(u8 nId);
+extern int Ov022_GetMarkerState(int nId);
 extern void func_ov022_020ad2e4(struct Actor *pActor, int nMode);
 extern void func_ov022_02093f24(u8 *pBlk, int nBit);
 extern void Ov022_PlayEntityVoice(struct Actor *pActor, int nA, int nCue);
 extern void Ov022_StepEffectTowardCamera(struct Actor *pActor);
 extern void Ov022_MoveEffectTowardCamera(struct Actor *pActor);
 extern void Ov022_StepReactionPhase(u8 *pBlk);
-extern void Ov022_StepSpinEffect(u8 *pBlk, VecFx32 *pVec, u16 nAngle,
-                                int bReact, int nFrame);
+extern void Ov022_StepSpinEffect(u8 *pBlk, VecFx32 *pVec, int nAngle, int bReact, int nFrame);
 extern void Ov022_ResetFields135_168_174(u8 *pBlk);
-extern void Ov022_StartSlotEffect(u8 *pBlk, VecFx32 *pPos, u16 nAngle,
-                                int nScale);
+extern void Ov022_StartSlotEffect(u8 *pBlk, VecFx32 *pPos, int nAngle, int nScale);
 extern void func_ov022_02092808(u8 *pBlk, int nFrame);
 extern void func_ov022_02094224(u8 *pBlk, VecFx32 *pPos, int nFrame);
 extern int Ov022_GetGlobal34(void);
-extern void Ov022_StepDustEmitter(u8 *pBlk, VecFx32 *pPos, VecFx32 *pVec,
-                                int nDelta, int nReaction, u16 nAngle,
-                                u8 *pColl);
+extern void Ov022_StepDustEmitter(u8 *pBlk, VecFx32 *pPos, VecFx32 *pVec, int nDelta, int nReaction, int nAngle, u8 *pColl);
 extern void func_ov022_0209d0b0(struct Actor *pActor, int *pCounter, int nDelta);
 extern void Ov022_TickChargeTimer(struct Actor *pActor, int nDelta);
 extern void func_ov022_02097b78(struct Actor *pActor);
@@ -192,25 +188,19 @@ void Ov022_UpdateSubsystems(struct Actor *pActor)
         Ov022_MoveEffectTowardCamera(pActor);
     }
     Ov022_StepReactionPhase(&pActor->reactionBlk);
-    Ov022_StepSpinEffect(&pActor->reactBlk, &vecFacing,
-                        (u16)(pActor->pNode->nAngle - 0x8000),
-                        pActor->nHitReaction == 0x13, pActor->nAreaFrame);
+    Ov022_StepSpinEffect(&pActor->reactBlk, &vecFacing, (u16)(pActor->pNode->nAngle - 0x8000), pActor->nHitReaction == 0x13, pActor->nAreaFrame);
     if ((pActor->nFlags2 & (1ULL << 27)) != 0
         || (pActor->nFlags2 & (1ULL << 28)) != 0) {
         Ov022_ResetFields135_168_174(&pActor->reactBlk);
     }
     if ((pActor->nFlags2 & (1ULL << 45)) != 0
         || (pActor->nFlags2 & (1ULL << 44)) != 0) {
-        Ov022_StartSlotEffect(&pActor->slotBlk, &pActor->vecPos,
-                            (u16)(pActor->pNode->nAngle - 0x8000), 0x1000);
+        Ov022_StartSlotEffect(&pActor->slotBlk, &pActor->vecPos, (u16)(pActor->pNode->nAngle - 0x8000), 0x1000);
     }
     func_ov022_02092808(&pActor->slotBlk, pActor->nAreaFrame);
     func_ov022_02094224(&pActor->timerBlk, &pActor->vecPos, pActor->nAreaFrame);
     nDelta = Ov022_GetGlobal34();
-    Ov022_StepDustEmitter(&pActor->comboBlk, &pActor->vecPos, &vecFacing, nDelta,
-                        pActor->nHitReaction,
-                        (u16)(pActor->pNode->nAngle - 0x8000),
-                        &pActor->collMain);
+    Ov022_StepDustEmitter(&pActor->comboBlk, &pActor->vecPos, &vecFacing, nDelta, pActor->nHitReaction, (u16)(pActor->pNode->nAngle - 0x8000), &pActor->collMain);
     if (Session_GetLocalPlayerIndex() == 0) {
         if ((data_0204c240 & 2) != 0) {
             if ((pActor->nInputMask & 4) != 0

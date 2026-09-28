@@ -33,7 +33,7 @@ typedef struct Ov023SceneRoot {
     void *pScene;             /* 0x04 */
 } Ov023SceneRoot;
 
-extern Ov023Group *GetTrackEntryBase(u16 nGroup);                       /* the actor group by id */
+extern Ov023Group *GetTrackEntryBase(int nGroup);                       /* the actor group by id */
 extern void  Res_RequestIdPair(int nId);                                /* Res_RequestIdPair */
 extern const Ov023KindResTable data_ov023_02089d74;                 /* resource pair per kind bit */
 extern Ov023SceneRoot data_ov023_0208a784;
@@ -47,7 +47,7 @@ void Ov023_RequestGroupResources(int nGroup, int bExtra)
     int j;
 
     bAny = 0;
-    pGroup = GetTrackEntryBase(nGroup);
+    pGroup = GetTrackEntryBase((u16)nGroup);
     for (i = 0; i < pGroup->wCount; i++) {
         pEntry = pGroup->apEntry[i];
         for (j = 0; j <= 12; j++) {

@@ -112,7 +112,7 @@ extern int Ov002_RequestLinkSlot3(void);
 extern void Ov002_RequestCrawlSkip(void);
 extern int func_ov022_02088648(void);
 extern int func_ov022_020886d0(int a);
-extern int Ov002_List_GetSlot(u16 a);
+extern int Ov002_List_GetSlot(int a);
 extern void Ov002_Roster_Reset(void);
 extern void Ov002_RunPendingCallbacks(void);
 extern void Ov002_SessionChoiceCommitted(void);

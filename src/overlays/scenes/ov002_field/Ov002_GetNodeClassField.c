@@ -1,4 +1,4 @@
-extern int GameState_GetField(unsigned short nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 
 /* Same gate as the node-payload accessor, returning the class field at +0x68
  * instead of the node's own payload.

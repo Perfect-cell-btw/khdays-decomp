@@ -20,7 +20,7 @@ typedef struct Ov008SendCtx {
 
 #define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
-extern int  func_ov105_020bf900(void *buf, u16 size, void *callback);
+extern int  func_ov105_020bf900(void *buf, int size, void *callback);
 extern void Ov006_PacketSentCallback(void);
 
 int Ov006_SendNetworkPacket(const void *src, int size)

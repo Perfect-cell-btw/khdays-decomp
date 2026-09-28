@@ -9,7 +9,7 @@ extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *pos, i
 extern int Ov107_AiState_OnMessage(int self, unsigned char *msg, int extra);
 extern int Ov253_SpawnHandleChild(int self);
 extern int Ov253_SpawnItemChild(int self);
-extern int Ov107_FindMessageHandler(unsigned short handle);
+extern int Ov107_FindMessageHandler(unsigned int handle);
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov253_CreateAimTask(int self, int target);
 extern void TaskList_FinishByTag(int scene, int object);

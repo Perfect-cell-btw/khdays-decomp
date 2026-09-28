@@ -52,8 +52,8 @@ extern void Slot_Spawn(int nSlot, int nArg, VecFx32 *pPos, int nD);  /* Slot_Spa
 extern void ReleaseNodeResources(void *pNode);                                /* ReleaseNodeResources */
 extern void Ov002_RebindAnimTracks(void *pAnim, int nTrack, int nFrame);  /* rewind a sequence */
 extern void SceneNode_Disable(void *pNode);                                /* SceneNode_Disable */
-extern int  GameState_GetField(u16 nField, u8 nBit);                        /* GameState_GetField */
-extern void GameState_SetField(u16 nField, u8 nBit, u16 nValue);            /* GameState_SetField */
+extern int  GameState_GetField(int nField, int nBit);                        /* GameState_GetField */
+extern void GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);            /* GameState_SetField */
 extern void Ov002_SetFieldBit0(void *pPiece, int nMode);              /* retire a piece */
 extern void Scene_DrawNode(void *pNode);                                /* Scene_DrawNode */
 extern int  Ov015_PickupPlayTakenSequence(Ov015Pickup *pPickup, int nDelta);     /* Ov015_PickupPlayTakenSequence */
@@ -94,8 +94,8 @@ Ov015StateFn *Ov015_PickupUpdate(Ov015Pickup *pPickup)
             pPickup->pModel->node.position = pPickup->home;
         }
         if (pPickup->home.y >= 0x1e000) {
-            nField = GameState_GetField(pPickup->nStateField, pPickup->nStateBit);
-            GameState_SetField(pPickup->nStateField, pPickup->nStateBit, (nField & 0xffff0001) | 2);
+            nField = GameState_GetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit);
+            GameState_SetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit, (u16)((nField & 0xffff0001) | 2));
             Ov002_SetFieldBit0(pPickup, 0);
             return Ov002_DoneTick;
         }

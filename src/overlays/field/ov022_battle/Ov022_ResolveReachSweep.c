@@ -66,13 +66,9 @@ struct Scene {
     void *pWorld;                /* 0x20 */
 };
 
-extern struct Hit *EntityMgr_RunSphereCast(u16 nMask, struct Ray *pRay,
-                                 VecFx32 *pFrom, int nRadius,
-                                 void *pWorld);
-extern struct Hit *EntityMgr_RunRayCast(u16 nMask, struct Ray *pRay,
-                                 VecFx32 *pFrom, void *pWorld);
-extern struct Hit *EntityMgr_RunCastSimple(u16 nMask, struct Ray *pRay,
-                                 VecFx32 *pFrom, void *pWorld);
+extern struct Hit *EntityMgr_RunSphereCast(int nMask, struct Ray *pRay, VecFx32 *pFrom, int nRadius, void *pWorld);
+extern struct Hit *EntityMgr_RunRayCast(int nMask, struct Ray *pRay, VecFx32 *pFrom, void *pWorld);
+extern struct Hit *EntityMgr_RunCastSimple(int nMask, struct Ray *pRay, VecFx32 *pFrom, void *pWorld);
 extern struct Thing *Actor_GetRecord(struct Hit *pHit, int nId);
 extern void Vec3ScaleAddQ27(void *pShape, VecFx32 *pFrom, struct Ray *pRay,
                           VecFx32 *pOut);
@@ -97,8 +93,7 @@ int Ov022_ResolveReachSweep(struct Scene *pScene, struct Ray *pRay,
         pOut->nKind = 0;
         pOut->nState = 0;
     }
-    pHit = EntityMgr_RunSphereCast(pRay->nMask, pRay, &pRay->vec, pRay->nRadius,
-                         pScene->pWorld);
+    pHit = EntityMgr_RunSphereCast((u16)pRay->nMask, pRay, &pRay->vec, pRay->nRadius, pScene->pWorld);
     if (pHit != 0) {
         if (pHit->pOwner == 0) {
             for (i = 0; i < PARTS_PER_HIT; i++) {
@@ -123,7 +118,7 @@ int Ov022_ResolveReachSweep(struct Scene *pScene, struct Ray *pRay,
         vFrom.y = nOffset;
         vFrom = pRay->vec;
         vFrom.y = vFrom.y - pRay->nRadius;
-        pHit = EntityMgr_RunRayCast(pRay->nMask, pRay, &vFrom, pScene->pWorld);
+        pHit = EntityMgr_RunRayCast((u16)pRay->nMask, pRay, &vFrom, pScene->pWorld);
         if (pHit != 0) {
             VecFx32FromVecS16(pHit->nFace, pHit->pPart->verts, &vNormal);
             VEC_Normalize(&vNormal, &vNormal);
@@ -146,7 +141,7 @@ int Ov022_ResolveReachSweep(struct Scene *pScene, struct Ray *pRay,
         vFrom.y = nOffset;
         vFrom = pRay->vec;
         vFrom.y = vFrom.y + pRay->nRadius;
-        pHit = EntityMgr_RunCastSimple(pRay->nMask, pRay, &vFrom, pScene->pWorld);
+        pHit = EntityMgr_RunCastSimple((u16)pRay->nMask, pRay, &vFrom, pScene->pWorld);
         if (pHit != 0) {
             nKind = 3;
             Vec3ScaleAddQ27(pHit->pShape, &vFrom, pRay, &vPoint);

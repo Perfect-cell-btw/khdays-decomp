@@ -12,12 +12,12 @@
 #include "nitro/types.h"
 
 extern u8   data_0204c240;
-extern void GameState_SetField(int id, int kind, u16 value);
+extern void GameState_SetField(int id, int kind, unsigned int value);
 
 void Game_ApplyModeFlags(void)
 {
-    GameState_SetField(0x200e, 1, (data_0204c240 & 1) ? 1 : 0);
-    GameState_SetField(0x200f, 1, (data_0204c240 & 2) ? 1 : 0);
-    GameState_SetField(0x2000, 1, (data_0204c240 & 4) ? 1 : 0);
-    GameState_SetField(0x200d, 1, (data_0204c240 & 8) ? 1 : 0);
+    GameState_SetField(0x200e, 1, (u16)((data_0204c240 & 1) ? 1 : 0));
+    GameState_SetField(0x200f, 1, (u16)((data_0204c240 & 2) ? 1 : 0));
+    GameState_SetField(0x2000, 1, (u16)((data_0204c240 & 4) ? 1 : 0));
+    GameState_SetField(0x200d, 1, (u16)((data_0204c240 & 8) ? 1 : 0));
 }

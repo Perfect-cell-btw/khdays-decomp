@@ -4,7 +4,7 @@
 #include "nitro/types.h"
 
 extern void *Ov008_GetCtxBlock9500(void);
-extern void *Ov008_FindEntryByTag(void *context, u16 tag);
+extern void *Ov008_FindEntryByTag(void *context, unsigned int tag);
 extern void Ov008_ApplyTempFieldsAndRestore(void *context, void *entry,
                                 int value, int subId);
 

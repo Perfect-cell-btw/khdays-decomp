@@ -4,7 +4,7 @@
 
 #include "nitro/types.h"
 
-extern void Ov259_PlaySound(int actor, int id, u16 mode, int at);
+extern void Ov259_PlaySound(int actor, int id, int mode, int at);
 
 void Ov259_SoundCueTick(int *node)
 {

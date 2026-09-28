@@ -20,6 +20,8 @@ typedef struct Ov023RampCmd {
 
 extern int   ScriptVm_ReadOperandInt(void *pCtx, Ov023Operand *pOperand);     /* ScriptVm_ReadOperandInt */
 extern int   ScriptVm_ReadOperandFx32(void *pCtx, Ov023Operand *pOperand);     /* ScriptVm_ReadOperandFx32 */
+/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void *ArrayEntryPtrD0(u16 nEntity);                            /* Entity_Get */
 extern void  EntityMgr_SetTransition(u16 nEntity, int bEnable, int nDuration); /* Entity_StartTransition */
 extern int   Anim_GetBlendFactor(int nMode, int nTotal, int nRemaining);  /* Anim_GetBlendFactor */

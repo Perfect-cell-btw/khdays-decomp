@@ -1,6 +1,6 @@
-extern void Ov002_Panel_SelectGroup(unsigned char a);
-extern void Ov002_HandlePanelInput(unsigned char a, int b);
-extern void Ov002_Panel_MoveCursor(unsigned char a);
+extern void Ov002_Panel_SelectGroup(int a);
+extern void Ov002_HandlePanelInput(int a, int b);
+extern void Ov002_Panel_MoveCursor(int a);
 extern void Ov002_PanelSetSecondaryFlag(int a);
 extern unsigned char data_0204c4f0;
 extern unsigned char data_0204c4f2;

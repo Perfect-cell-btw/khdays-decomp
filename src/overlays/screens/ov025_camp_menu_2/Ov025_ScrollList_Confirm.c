@@ -55,7 +55,7 @@ typedef struct Ov025ScrollList {
 
 extern u32   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
 extern void  GameState_SetField(int nField, int nBits, int nValue);      /* GameState_SetField */
-extern void  Ov025_SetCtxFields9638And963a(s16 nMission, s16 nDay);           /* Ov025_SetCtxFields9638And963a */
+extern void  Ov025_SetCtxFields9638And963a(int nMission, int nDay);           /* Ov025_SetCtxFields9638And963a */
 extern void  Ov025_SetGlobalConfigAndInit(int nEntry);                       /* Ov025_SetGlobalConfigAndInit */
 extern void  PlaySound(int nKind, int nSound);                  /* PlaySound */
 
@@ -73,7 +73,7 @@ void Ov025_ScrollList_Confirm(Ov025ScrollList *pList)
     }
     GameState_SetField(0x35c5, 8, pList->nCursor & 0xffff);
     GameState_SetField(0x35d5, 10, pList->nScroll & 0xffff);
-    Ov025_SetCtxFields9638And963a(pRow->nMission, pRow->nDay);
+    Ov025_SetCtxFields9638And963a((s16)pRow->nMission, (s16)pRow->nDay);
     Ov025_SetGlobalConfigAndInit(1);
     PlaySound(0, 1);
 }

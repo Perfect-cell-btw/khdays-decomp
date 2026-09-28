@@ -39,7 +39,7 @@ struct KindIdTable {
 extern u8 data_0204c240;
 extern struct KindIdTable data_ov022_020b2724;
 
-extern void Res_RequestIdPair(short nId);
+extern void Res_RequestIdPair(int nId);
 extern int Session_GetLocalPlayerIndex(void);
 extern unsigned int Slot_EvalPackedParam(int nSlot, int nParam);
 

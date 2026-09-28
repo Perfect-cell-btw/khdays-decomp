@@ -6,8 +6,7 @@ extern u8 data_0204c240;                /* boot-mode flags */
 
 extern void Ov002_SpawnTieredDrop(int nKind, u8 nAmount, int nCtxIndex,
                                 const VecFx32 *pPlace);
-extern void *Ov002_SpawnKindIntoFreeSpot(int nKind, u16 nTier, int nCtxIndex,
-                                 const VecFx32 *pPlace, int nMode);
+extern void *Ov002_SpawnKindIntoFreeSpot(int nKind, int nTier, int nCtxIndex, const VecFx32 *pPlace, int nMode);
 
 /* Spawns the four kinds of drop listed in aAmount, one byte of value each.
 

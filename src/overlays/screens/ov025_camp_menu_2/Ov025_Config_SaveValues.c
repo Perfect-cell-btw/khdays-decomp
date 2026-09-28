@@ -18,7 +18,7 @@ typedef struct GameState {
 
 extern Ov025ConfigPage *Ov025_GetPageA(void);                  /* Ov008_GetPageA */
 extern GameState *data_0204be18;
-extern void  GameState_SetField(int nField, int nBits, s16 nValue);      /* GameState_SetField */
+extern void  GameState_SetField(int nField, int nBits, unsigned int nValue);      /* GameState_SetField */
 extern u32   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
 
 void Ov025_Config_SaveValues(void)
@@ -26,13 +26,13 @@ void Ov025_Config_SaveValues(void)
     Ov025ConfigPage *pPage;
 
     pPage = Ov025_GetPageA();
-    GameState_SetField(0x37c4, 1, pPage->aValue[0] & 1);
-    GameState_SetField(0x37bf, 1, pPage->aValue[1] & 1);
-    GameState_SetField(0x37c0, 2, pPage->aValue[2] & 3);
-    GameState_SetField(0x37c3, 1, pPage->aValue[3] & 1);
-    GameState_SetField(0x37c2, 1, pPage->aValue[4] & 1);
-    GameState_SetField(0x37c5, 1, pPage->aValue[5] & 1);
-    GameState_SetField(0x37c6, 1, pPage->aValue[6] & 1);
-    GameState_SetField(0x37c7, 2, pPage->aValue[8] & 3);
-    GameState_SetField(0x35bf, 2, pPage->aValue[9] & 3);
+    GameState_SetField(0x37c4, 1, (s16)(pPage->aValue[0] & 1));
+    GameState_SetField(0x37bf, 1, (s16)(pPage->aValue[1] & 1));
+    GameState_SetField(0x37c0, 2, (s16)(pPage->aValue[2] & 3));
+    GameState_SetField(0x37c3, 1, (s16)(pPage->aValue[3] & 1));
+    GameState_SetField(0x37c2, 1, (s16)(pPage->aValue[4] & 1));
+    GameState_SetField(0x37c5, 1, (s16)(pPage->aValue[5] & 1));
+    GameState_SetField(0x37c6, 1, (s16)(pPage->aValue[6] & 1));
+    GameState_SetField(0x37c7, 2, (s16)(pPage->aValue[8] & 3));
+    GameState_SetField(0x35bf, 2, (s16)(pPage->aValue[9] & 3));
 }

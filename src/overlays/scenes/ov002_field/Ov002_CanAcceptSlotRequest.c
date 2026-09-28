@@ -62,7 +62,7 @@ extern u8 data_0204c248[];
 extern int GameState_IsFlagSet(int nFlagId);
 extern int func_ov022_020882f8(void);
 extern int *GetEntryField20ByIndex(int nIndex);
-extern int Ov002_List_GetSlot(u16 nIndex);
+extern int Ov002_List_GetSlot(int nIndex);
 extern int QueryActiveStateOrDelegate(void);
 extern int func_ov022_020886d0(int nIndex);
 extern int Ov022_GetEntryField12(int nIndex);

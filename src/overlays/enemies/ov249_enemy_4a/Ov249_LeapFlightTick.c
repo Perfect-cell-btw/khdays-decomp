@@ -21,7 +21,7 @@ extern int FX_Div(int a, int b);
 extern int Ov107_CollectSphereOverlaps(int actor, Sphere *sphere, int *out);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, unsigned char kind, VecFx32 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

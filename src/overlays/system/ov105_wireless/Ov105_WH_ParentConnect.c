@@ -503,7 +503,7 @@ extern WMErrCode Ov105_WM_SetMPDataToPortEx(WMCallbackFunc callback, void *arg, 
 extern WMErrCode Ov105_SetSlotEventHandler(u16 port, WMCallbackFunc callback, void *arg);   /* WM_SetPortCallback */
 extern u16 Ov105_GetTransitionFrame(void);             /* WM_GetAllowedChannel */
 extern u16 Ov105_WM_GetDispersionBeaconPeriod(void);             /* WM_GetDispersionBeaconPeriod */
-extern WMErrCode Ov105_WHi_MeasureChannel(WMCallbackFunc func, u16 channel);   /* MeasureChannel */
+extern WMErrCode Ov105_WHi_MeasureChannel(WMCallbackFunc func, int channel);   /* MeasureChannel */
 extern u16 Ov105_WH_StateInMeasureChannel(u16 channel);      /* WH_StateInMeasureChannel */
 extern void Ov105_WH_StateOutMeasureChannel(void *arg);       /* WH_StateOutMeasureChannel */
 extern BOOL Ov105_RunStep3(void);            /* WH_StateInSetParentParam */

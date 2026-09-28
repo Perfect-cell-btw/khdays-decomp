@@ -28,8 +28,8 @@ typedef struct Ov016Breakable {
     Ov016HitRecord hit;       /* 0x2c8 */
 } Ov016Breakable;
 
-extern int  GameState_GetField(u16 nField, u8 nBit);                      /* GameState_GetField */
-extern void GameState_SetField(u16 nField, u8 nBit, u16 nValue);          /* GameState_SetField */
+extern int  GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
+extern void GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);          /* GameState_SetField */
 extern int  Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */
 extern void MI_CpuCopy8(const void *pSrc, void *pDst, u32 nSize);
 
@@ -38,12 +38,11 @@ int Ov016_BreakableHit(Ov016Breakable *pSelf, Ov016HitRecord *pHit)
     Ov016BrokenMessage message;
     u32 nBits;
 
-    nBits = (u16)((GameState_GetField(pSelf->nStateField, pSelf->nStateBit) & 0xfffe) >> 1);
+    nBits = (u16)((GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit) & 0xfffe) >> 1);
     if ((nBits & 1) == 0) {
         message.nAttacker = pHit->nAttacker;
         if (Ov002_RecordElementHit(pSelf, &message, 6) != 0) {
-            GameState_SetField(pSelf->nStateField, pSelf->nStateBit,
-                          (GameState_GetField(pSelf->nStateField, pSelf->nStateBit) & 0xffff0001) | ((u16)(nBits | 1) << 1));
+            GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit, (u16)((GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit) & 0xffff0001) | ((u16)(nBits | 1) << 1)));
             MI_CpuCopy8(pHit, &pSelf->hit, 0x1c);
             pSelf->bDropPending = 1;
             return 0;

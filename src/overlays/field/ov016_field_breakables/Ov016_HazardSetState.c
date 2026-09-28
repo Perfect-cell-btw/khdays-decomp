@@ -28,11 +28,11 @@ typedef struct Ov016Hazard {
     VecFx32 position;         /* 0xe0 */
 } Ov016Hazard;
 
-extern int  GameState_GetField(u16 nField, u8 nBit);                      /* GameState_GetField */
-extern void GameState_SetField(u16 nField, u8 nBit, u16 nValue);          /* GameState_SetField */
+extern int  GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
+extern void GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);          /* GameState_SetField */
 extern void Ov002_RebindAnimTracks(void *pNode, int nTrack, int nFrame); /* rewind a sequence */
 extern void SceneNode_Disable(void *pNode);                              /* SceneNode_Disable */
-extern int  Slot_Spawn(int nSlot, int nId, VecFx32 *pPos, u16 nFlags); /* Slot_Spawn */
+extern int  Slot_Spawn(int nSlot, int nId, VecFx32 *pPos, unsigned int nFlags); /* Slot_Spawn */
 
 void Ov016_HazardSetState(Ov016Hazard *pSelf, int bState, int bSpawn)
 {
@@ -44,13 +44,13 @@ void Ov016_HazardSetState(Ov016Hazard *pSelf, int bState, int bSpawn)
     nTrack = (bState != 0);
     pDef = pSelf->pDef;
     nOn = (bState ? 1 : 0);
-    nState = GameState_GetField(pSelf->nStateField, pSelf->nStateBit);
-    GameState_SetField(pSelf->nStateField, pSelf->nStateBit, (nOn << 1) | (nState & 0xffff0001));
+    nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
+    GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit, (u16)((nOn << 1) | (nState & 0xffff0001)));
     if (pSelf->nNodeFlags34 & 4) {
         Ov002_RebindAnimTracks(&pSelf->nNodeFlagsB, nTrack, 0);
         SceneNode_Disable(&pSelf->nNodeFlagsB);
     }
     if (bSpawn && pDef->nDropSlot >= 0 && pDef->aDropId[bState == 0] >= 0) {
-        Slot_Spawn(pDef->nDropSlot, pDef->aDropId[bState == 0], &pSelf->position, 0);
+        Slot_Spawn(pDef->nDropSlot, pDef->aDropId[bState == 0], &pSelf->position, (u16)0);
     }
 }

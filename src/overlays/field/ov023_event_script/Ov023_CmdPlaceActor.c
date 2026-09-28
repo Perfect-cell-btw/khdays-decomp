@@ -47,7 +47,11 @@ extern int   func_02020d10(Ov023ScriptCtx *pCtx, int nIndex);      /* resolve an
 /* The quotient is the low half of the helper's long long return; writing `/` emits _s32_div_f,
  * which is not linkable here. */
 extern long long func_02020400(int nNumerator, int nDenominator);
+/* Defined taking nEntity as int, nMode as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void  Entity_SubmitRenderNode(u16 nEntity, u16 nMode, char *pszAnchor, VecFx32 *pPos); /* Entity_SetPosition */
+/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
 extern void  Entity_SetVisible(u16 nEntity, int bVisible);              /* Entity_SetVisible */
 extern int   LoadArrayU8At0cc(u16 nEntity);                            /* Entity_GetFlags */

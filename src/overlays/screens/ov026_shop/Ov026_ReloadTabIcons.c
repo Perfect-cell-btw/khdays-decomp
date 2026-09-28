@@ -1,5 +1,5 @@
 extern char *data_ov026_02091368;
-extern int Ov026_FindEntryByTag(void *p, unsigned short id);
+extern int Ov026_FindEntryByTag(void *p, unsigned int id);
 extern void Ov026_TagTracker_InvokeCallback(void *p, int cell);
 
 /* Reloads every icon of the current tab except the selected one, then the selected one last so it

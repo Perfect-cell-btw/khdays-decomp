@@ -25,8 +25,8 @@ typedef struct Ov023Actor {
 extern void  Ov023_DetachActorModel(Ov023Actor *pActor);               /* Ov023_DetachActorModel */
 extern void  Ov023_ResetActorModel(Ov023Actor *pActor);               /* Ov023_ResetActorModel */
 extern void  Ov023_ResetHistory(Ov023Actor *pActor);               /* Ov023_ResetActorHistory */
-extern int   LoadArrayU8At0cc(u16 nEntity);                            /* Entity_GetFlags */
-extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
+extern int   LoadArrayU8At0cc(int nEntity);                            /* Entity_GetFlags */
+extern Ov023Entity *ArrayEntryPtrD0(int nEntity);                     /* Entity_Get */
 
 void Ov023_ActorFinish(Ov023Actor *pActor)
 {

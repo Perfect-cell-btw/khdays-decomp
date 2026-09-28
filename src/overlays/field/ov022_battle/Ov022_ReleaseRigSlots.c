@@ -3,7 +3,7 @@
 
 extern void NNS_G3dRenderObjRemoveAnmObj(void *tracks, int handle);
 extern void BindAnimTrack(void *anim, unsigned short slot, void *block, short arg);
-extern int *Anim_SetFrameWrapped(void *anim, unsigned short slot, int arg);
+extern int *Anim_SetFrameWrapped(void *anim, int slot, int arg);
 
 struct Ov022Rig {
     char _pad0[0x28];
@@ -28,7 +28,7 @@ void Ov022_ReleaseRigSlots(struct Ov022Rig *obj, int arg1) {
         } else {
             BindAnimTrack(obj->anim, i, obj->block, (short)arg1);
         }
-        Anim_SetFrameWrapped(obj->anim, i, 0);
+        Anim_SetFrameWrapped(obj->anim, (unsigned short)i, 0);
         i = i + 1;
     } while ((int)i < 5);
 }

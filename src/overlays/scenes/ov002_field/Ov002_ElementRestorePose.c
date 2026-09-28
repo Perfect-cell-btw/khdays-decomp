@@ -11,7 +11,7 @@ extern int Ov002_GetLastPositiveSlotValue(u16 *pAnim);
 extern void Ov002_RebindAnimTracks(short *pAnim, int nTrack, int nFrame);
 extern void SceneNode_Enable(u16 *pAnim);
 extern void SceneNode_Disable(u16 *pAnim);
-extern unsigned int GameState_GetField(u16 nId, u8 nSlot);
+extern unsigned int GameState_GetField(int nId, int nSlot);
 extern void Obj_SetFlagBit3(char *pObj, int bOn);
 extern void Ov002_ForwardLinkEventKind1(int nKind, VecFx32 *pPos, int nParam);
 
@@ -71,8 +71,7 @@ void Ov002_ElementRestorePose(char *pElement)
         *(u8 *)(pElement + 0x1b5) |= 1;
     }
 
-    nState = GameState_GetField(*(u16 *)(pElement + 0x14),
-                           *(u8 *)(pElement + 0x16));
+    nState = GameState_GetField(*(u16 *)(pElement + 0x14), *(u8 *)(pElement + 0x16));
     Obj_SetFlagBit3(pElement + 0x2c, (nState & 1) != 0);
 
     bVisible = (GameState_GetField(*(u16 *)(pElement + 0x14),

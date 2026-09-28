@@ -7,7 +7,7 @@
 extern void Ov022_PlayEntityVoice(int self, int cue, int situation);
 extern int Ov022_GetWordAt0x348Plus4(void *p);
 extern void BindAnimTrack(void *p, u16 idx, int a, short b);
-extern void Anim_SetFrameWrapped(void *p, u16 idx, int a);
+extern void Anim_SetFrameWrapped(void *p, int idx, int a);
 
 void Ov052_EffectBlockStop(int self, u8 *block, int alt)
 {

@@ -7,7 +7,7 @@
 
 #include "nitro/types.h"
 
-extern int GameState_GetField(u16 nField, u8 nBit);                   /* GameState_GetField */
+extern int GameState_GetField(int nField, int nBit);                   /* GameState_GetField */
 extern int Ov002_MatchPackedMask(int nMatch, int nMaskHi, int nMaskLo); /* packed hi / lo mask match */
 extern int Ov002_SetLeaveRequest(int bOn);                         /* arm / clear the leave request */
 extern int Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */

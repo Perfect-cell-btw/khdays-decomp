@@ -47,7 +47,7 @@ extern struct CollisionHit *Collision_CastRay(void *collision, VecFx32 *origin, 
 extern int Ov107_CollectSphereOverlaps(int item, Sphere *query, struct Ov223Hit **results);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern int Ov107_InvokeHitCallback(struct Ov223Hit *hit, int owner, int item, u8 kind, VecFx32 *push, int z);
+extern int Ov107_InvokeHitCallback(struct Ov223Hit *hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov223_ForwardVecToOwner(int *state, VecFx32 v);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern const VecFx32 data_02042264;

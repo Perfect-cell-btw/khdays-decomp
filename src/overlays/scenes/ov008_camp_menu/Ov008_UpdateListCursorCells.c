@@ -33,7 +33,7 @@ extern int  Ov008_GetCtxBlock954c(void);                                    /* O
 extern int  Ov008_GetCtxObject9630(void);                                    /* Ov008_GetCtxObject9630 */
 extern int  Ov008_FindEntryByTag(int nTracker, int nTag);                  /* ov008_FindEntryByTag */
 extern void Ov008_TagTracker_InvokeCallback(int nTracker, int nCell);                 /* Ov008_TagTracker_InvokeCallback */
-extern void Ov008_ApplyTempFieldsAndRestore(int nTracker, int nCell, int nFrame, short nY); /* Ov008_ApplyTempFieldsAndRestore */
+extern void Ov008_ApplyTempFieldsAndRestore(int nTracker, int nCell, int nFrame, int nY); /* Ov008_ApplyTempFieldsAndRestore */
 
 void Ov008_UpdateListCursorCells(Ov008MissionList *pList)
 {

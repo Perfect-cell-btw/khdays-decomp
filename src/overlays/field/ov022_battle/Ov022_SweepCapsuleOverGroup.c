@@ -43,7 +43,7 @@ struct Actor {
 
 extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
 extern int Ov002_GetSlotTableByte(int nGroup);
-extern struct GroupMember *Ov002_List_GetWord(u16 nId);
+extern struct GroupMember *Ov002_List_GetWord(int nId);
 extern struct ContactPoint *Ov002_TriggerEntryActive(struct GroupMember *pMember);
 extern int Ov022_TestCapsuleReach(const VecFx32 *pPoint, int nRadius,
                                VecFx32 *pOut, struct Capsule *pCapsule);

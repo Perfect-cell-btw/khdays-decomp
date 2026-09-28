@@ -4,11 +4,11 @@
 typedef int (*Ov002ReserveProc)(char *pCtx, unsigned char bLane, int nKind,
                                 u16 wSlot);
 
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
-extern char *GetEntryField20ByIndex(unsigned char nIndex);
-extern int Ov002_FindKeyEntryIndex(short nId);
-extern char *Ov002_GetRootField8d14(short nIndex);
-extern void Ov022_Member_ShowSpotMessage(unsigned char nIndex, int nSlot, int nLane);
+extern int GameState_GetField(int nId, int nSlot);
+extern char *GetEntryField20ByIndex(int nIndex);
+extern int Ov002_FindKeyEntryIndex(int nId);
+extern char *Ov002_GetRootField8d14(int nIndex);
+extern void Ov022_Member_ShowSpotMessage(int nIndex, int nSlot, int nLane);
 extern void Ov002_RetireWidget(char *pElement);
 
 /* Hand this element's reserved slot over to a new source.
@@ -41,8 +41,7 @@ void *Ov002_ElementHandOverSlot(char *pElement, unsigned char *pSource)
 
     if ((nState & 1) == 0 && *(unsigned char *)(pElement + 0x1b4) == 3) {
         pEntry = GetEntryField20ByIndex(*pSource);
-        pKey = Ov002_GetRootField8d14(
-            (short)Ov002_FindKeyEntryIndex(*(short *)(pElement + 0x1b6)));
+        pKey = Ov002_GetRootField8d14((short)Ov002_FindKeyEntryIndex(*(short *)(pElement + 0x1b6)));
 
         pCtx = *(char **)(pEntry + 0x4ec);
         pProc = *(Ov002ReserveProc *)(pCtx + 0x1c0);
@@ -57,8 +56,7 @@ void *Ov002_ElementHandOverSlot(char *pElement, unsigned char *pSource)
         }
 
         if (nResult == 0) {
-            Ov022_Member_ShowSpotMessage(*pSource, *(short *)(pKey + 0x40),
-                                *(signed char *)(pElement + 0x1b9));
+            Ov022_Member_ShowSpotMessage(*pSource, *(short *)(pKey + 0x40), *(signed char *)(pElement + 0x1b9));
             return 0;
         }
 

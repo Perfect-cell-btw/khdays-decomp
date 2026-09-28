@@ -46,8 +46,8 @@ extern void Ov002_BuildModelSlot(Ov002ModelDesc *,int,int);
 extern int OS_SPrintf(char *,const char *,...);
 extern unsigned int strlen(const char *);
 extern void Ov002_RebindGroupAnimations(char *,unsigned int,int,int);
-extern Ov002NamedEntry *SymbolGroup_FindName(u16,char *);
-extern void EntityMgr_AttachTrackData(u16,char *,const void *,unsigned int);
+extern Ov002NamedEntry *SymbolGroup_FindName(int, char *);
+extern void EntityMgr_AttachTrackData(u16, char *, const void *, unsigned int);
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int);
 extern void *Ov002_LookupChannelEntry(const char *);
 extern void RegisterSeqAndInit(Ov002GateEffect *,void *,int,int);
@@ -95,10 +95,10 @@ void Ov002_ConfigureGateFromPeerRow(Ov002PeerRow *pRow,int nWorld)
     if(data_0204c240 & 4) bEnabled=(pRow->wFlags & 1)!=0;
     OS_SPrintf(szGate,data_ov002_0207f0d4,data_ov002_0207f0e8,pRow->nKey);
     if(!bEnabled) {
-        pNamed=SymbolGroup_FindName((u16)nWorld,szGate);
+        pNamed=SymbolGroup_FindName((u16)nWorld, szGate);
         if(pNamed) pNamed->bEnabled=0;
     } else {
-        pNamed=SymbolGroup_FindName((u16)nWorld,szGate);
+        pNamed=SymbolGroup_FindName((u16)nWorld, szGate);
         if(pNamed) {
             Ov002GateBinding *pBinding;
             pNamed->bEnabled=1;
@@ -108,7 +108,7 @@ void Ov002_ConfigureGateFromPeerRow(Ov002PeerRow *pRow,int nWorld)
                 binding.nKey=pRow->nKey;
                 binding.nGateState=pRow->nGateState;
                 binding.bEffect=bEffect?1:0;
-                EntityMgr_AttachTrackData((u16)nWorld,szGate,&binding,4);
+                EntityMgr_AttachTrackData((u16)nWorld, szGate, &binding, 4);
             }
         }
     }

@@ -94,7 +94,7 @@ extern void Ov002_Element_Deactivate(int held);
 extern void *Ov107_CreateNodeXformTaskFx24(void *animSet, void *subitem, int mode, int blend,
                                  int weight, void *payload);
 extern int Ov002_GetSlotTableByte(void *scene);
-extern void Ov002_SpawnAllDrops(u8 *colour, u16 id, int *vec);
+extern void Ov002_SpawnAllDrops(u8 *colour, int id, int *vec);
 extern void SetSubitemState(void *subitem, int channel, int value, u8 on);
 extern void RefreshObjectCallbacks(void *subitem, int channel);
 extern void Ov107_AiState_OnMessage(struct Actor *actor, struct ActorEventMsg *msg, u32 param);
@@ -175,8 +175,7 @@ void Ov289_Actor_HandleEvent(struct Actor *actor, struct ActorEventMsg *msg, u32
                 w.scratch[2].b[2] = mid;
             }
             w.vec[2] = w.scratch[2].w >> 8;
-            Ov002_SpawnAllDrops(w.colour,
-                                Ov002_GetSlotTableByte(*(void **)((char *)node + 0x78)), w.vec);
+            Ov002_SpawnAllDrops(w.colour, (u16)(Ov002_GetSlotTableByte(*(void **)((char *)node + 0x78))), w.vec);
             break;
         case 4:
             if (actor->mode050 == 2) {

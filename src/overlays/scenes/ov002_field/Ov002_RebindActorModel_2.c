@@ -11,13 +11,12 @@
  * pointer, or through a read-only index variable -- makes mwcc reload the second constant
  * from the pool and costs four bytes. */
 extern int Ov002_GetCtxTableByte(int slot);
-extern int GameState_GetField(unsigned short id, unsigned char kind);
-extern void Render_SubmitNode(void *dst, unsigned short id, int a, void *b);
+extern int GameState_GetField(int id, int kind);
+extern void Render_SubmitNode(void *dst, int id, int a, void *b);
 extern void Ov002_ElementRefreshNamedBindings(void *self);
 
 void Ov002_RebindActorModel_2(char *self) {
-    Render_SubmitNode(self + 0x1c,
-                  (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]), 0, 0);
+    Render_SubmitNode(self + 0x1c, (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]), 0, 0);
     {
         int off = 0x1c2;
 

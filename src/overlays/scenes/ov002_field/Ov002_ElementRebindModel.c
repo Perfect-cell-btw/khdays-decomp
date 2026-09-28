@@ -3,7 +3,7 @@
 
 extern int Ov002_LookupChannelEntry(void *pName);
 extern void Entity_Register(char *pObj, int nRes, int a, int b);
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 extern void Obj_SetFlagBit3(char *pObj, int bOn);
 
 /* Rebind a timed element's model and reset it to a neutral pose.
@@ -35,8 +35,7 @@ void Ov002_ElementRebindModel(char *pElement)
             *(u16 *)(pElement + 0x3c) |= 0x20;
         }
 
-        nState = GameState_GetField(*(u16 *)(pElement + 0x14),
-                               *(unsigned char *)(pElement + 0x16));
+        nState = GameState_GetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16));
         Obj_SetFlagBit3(pElement + 0x2c, (nState & 1) != 0);
     }
 }

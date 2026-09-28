@@ -2,7 +2,7 @@ extern int Ov002_ForwardToSubDc(int id);
 extern void Ov002_ForwardToSubDc_2(int);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int);
 extern int Ov002_FindSlotByKey(int a);
-extern void Ov002_PanelDrawSlotCursor(unsigned short sel, int b);
+extern void Ov002_PanelDrawSlotCursor(unsigned int sel, int b);
 extern void Ov002_TakeLock(int a);
 extern char *data_ov002_0207f620;
 

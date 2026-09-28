@@ -23,7 +23,7 @@ struct Ov022ActiveState {
 extern VecFx32 *func_ov022_020881f8(int kind);
 extern int Ov022_GetEntryField66(int kind);
 extern int Ov002_GetSlotTableByte(int state);
-extern void Ov002_SpawnAllDrops(u8 *color, u16 id, int *vector);
+extern void Ov002_SpawnAllDrops(u8 *color, int id, int *vector);
 extern struct Ov022ActiveState data_ov022_020b2e78;
 
 void Ov022_SpawnMemberDrops(int kind, int channel, int intensity) {
@@ -50,8 +50,5 @@ void Ov022_SpawnMemberDrops(int kind, int channel, int intensity) {
     work.color.channel[channel] = (u8)intensity;
     work.vector = *func_ov022_020881f8(kind);
     work.vector.y += 0x800;
-    Ov002_SpawnAllDrops(
-        work.color.channel,
-        (u16)Ov002_GetSlotTableByte(Ov022_GetEntryField66(kind)),
-        (int *)&work.vector);
+    Ov002_SpawnAllDrops(work.color.channel, (u16)Ov002_GetSlotTableByte(Ov022_GetEntryField66(kind)), (int *)&work.vector);
 }

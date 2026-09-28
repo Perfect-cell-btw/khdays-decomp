@@ -26,9 +26,9 @@ extern Ov023Operand *ScriptVm_ResolveOperand(void *pCtx, Ov023Operand *pOperand)
 /* The quotient is the low half of the helper's long long return; writing `/` emits _s32_div_f,
  * which is not linkable here. */
 extern long long func_02020400(int nNumerator, int nDenominator);
-extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
-extern int   LoadArrayU8At0ce(u16 nEntity);                            /* Entity_GetModelId */
-extern void  EntityMgr_ProbeGround(u16 nModel, char *pszSpot, VecFx32 *pOut); /* Model_GetSpotPosition */
+extern Ov023Entity *ArrayEntryPtrD0(int nEntity);                     /* Entity_Get */
+extern int   LoadArrayU8At0ce(int nEntity);                            /* Entity_GetModelId */
+extern void  EntityMgr_ProbeGround(int nModel, char *pszSpot, VecFx32 *pOut); /* Model_GetSpotPosition */
 extern void  VEC_Add(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
 extern void  VEC_MultAdd(int nScale, const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
 extern const short data_0203d210[];                                 /* FX_SinCosTable_: sin, cos pairs */
@@ -50,7 +50,7 @@ void Ov023_ReadTargetPosition(void *pCtx, Ov023Operand *pOperand, int nActor, Ve
     switch (pOp->nType) {
     case 2:
         pszSpot = ByteCode_ResolveOperand(pCtx, pOp);
-        EntityMgr_ProbeGround(LoadArrayU8At0ce((u16)nActor), pszSpot, pOut);
+        EntityMgr_ProbeGround((u16)(LoadArrayU8At0ce((u16)nActor)), pszSpot, pOut);
         VEC_Add(pOut, &vOffset, pOut);
         break;
     case 1:

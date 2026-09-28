@@ -12,7 +12,7 @@ typedef struct {
 extern OverlayContext *data_ov000_0205ac24;
 extern int Ov000_FindEntryById(void *object, int id);
 extern void Ov000_SetEntrySlotsVisible(void *object, int handle, int enabled);
-extern void Ov000_ReleaseTwoSlotsEx(void *object, int handle, u16 value);
+extern void Ov000_ReleaseTwoSlotsEx(void *object, int handle, int value);
 
 void Ov000_SetHandleActiveState(int id, int value) {
     OverlayContext *context = data_ov000_0205ac24;

@@ -46,7 +46,7 @@ extern Ov002MapPage *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *pDest, u8 nValue, u32 nSize);
 extern void Ov002_ForwardToSubDc_6(int nMode);
 extern void Ov002_FillMapRows(int a, int b, int c, int d, int e);
-extern int Ov002_ForwardToSubDc(u16 nId);
+extern int Ov002_ForwardToSubDc(int nId);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int hSound);
 extern int Ov002_Ctx_FindActiveEntryByTag(int nKind);
 extern void Ov002_Ctx_SetTagTrackerNodeArmed_5(int hItem, int nFlag);

@@ -75,7 +75,7 @@ extern void Ov271_RingBufferFillSlot(int *ring, VecFx32 *pos, VecFx32 *normal);
 extern void Srt_SetScaleXYZ(void *srt, int x, int y, int z);
 extern int Ov107_CollectSegmentOverlaps(int owner, BeamQuery *query, int *hits);
 extern int Segment_ClosestPoint(void *point, Segment *seg, fx64 *t);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, VecFx32 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -227,7 +227,7 @@ scaled:
                 VEC_Normalize(&push, &push);
                 ScaleVec3Fx12(0x800, &push, &push);
                 push.y = 0x800;
-                if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, state->bCharged == 0, &push, 0) != 0) {
+                if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, (u8)(state->bCharged == 0), &push, 0) != 0) {
                     func_ov107_020c0b90(state->pOwner, 0, closest, 0);
                     Ov107_BuildAndSendUpdate(state->pOwner, 0x161, 6, &closest);
                     if (state->bCharged != 0) {

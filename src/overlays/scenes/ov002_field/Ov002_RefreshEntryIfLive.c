@@ -5,7 +5,7 @@
  * GameState_GetField takes TWO arguments: the id halfword at +0x14 and the kind byte
  * at +0x16. */
 extern void Render_ReleaseNodeItem(void *node);
-extern int GameState_GetField(unsigned short id, int kind);
+extern int GameState_GetField(int id, int kind);
 extern void Ov002_SetFieldBit0(void *self, int a);
 
 void Ov002_RefreshEntryIfLive(char *self) {

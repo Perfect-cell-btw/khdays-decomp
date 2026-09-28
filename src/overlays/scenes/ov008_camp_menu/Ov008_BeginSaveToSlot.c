@@ -40,7 +40,7 @@ typedef struct Ov008SaveMenu {
 
 extern u32  GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 extern void GameState_SetField(int nField, int nBits, int nValue);           /* GameState_SetField */
-extern u32  Rand16NextScaled(u16 nRange);                                  /* Rand16NextScaled */
+extern u32  Rand16NextScaled(unsigned int nRange);                                  /* Rand16NextScaled */
 extern int  GameState_IsFlagSet(int nFlag);                                   /* GameState_IsFlagSet */
 extern void func_020235bc(int nFlag);                                   /* GameState_ClearFlag */
 extern int Ov008_CommitSaveToSlot(int nSlot);                             /* Ov008_CommitSaveToSlot */

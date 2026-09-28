@@ -72,9 +72,7 @@ struct ReactionCtx {
 extern int Ov022_TestShotHit(struct ReactionCtx *pCtx, struct Shot *pShot,
                                VecFx32 *pPos, VecFx32 *pDelta);
 extern int FX_Atan2(int x, int z);
-extern void Ov022_MarshalNetworkRecord(struct Actor *pActor, int nKind,
-                                VecFx32 *pAt, int nScale, u16 nAngle,
-                                int nArg);
+extern void Ov022_MarshalNetworkRecord(struct Actor *pActor, int nKind, VecFx32 *pAt, int nScale, unsigned int nAngle, int nArg);
 extern void Ov022_SetBit3IfClear(u32 *pStateFlags);
 extern void Slot_Spawn(int nHandlerId, int nCue, VecFx32 *pPos,
                           int nFlags);
@@ -112,16 +110,13 @@ void Ov022_ResolveShotHit(struct ReactionCtx *pCtx, struct Shot *pShot,
             nId = pShot->nId0;
             if (nId >= 0) {
                 if (pShot->nId1 == 0) {
-                    Ov022_MarshalNetworkRecord(pShooter, 0, &pShooter->vecImpact, FX32_ONE, nAngle,
-                                        nId);
+                    Ov022_MarshalNetworkRecord(pShooter, 0, &pShooter->vecImpact, FX32_ONE, nAngle, nId);
                     if ((pShooter->nHitResult & RESULT_BIT1) != 0) {
-                        Ov022_MarshalNetworkRecord(pShooter, 2, &pShooter->vecImpact, FX32_ONE,
-                                            nAngle, 0);
+                        Ov022_MarshalNetworkRecord(pShooter, 2, &pShooter->vecImpact, FX32_ONE, nAngle, 0);
                     }
                     Ov022_SetBit3IfClear(&pShooter->nStateFlags);
                 } else {
-                    Ov022_MarshalNetworkRecord(pShooter, 5, &pShooter->vecImpact, FX32_ONE, nAngle,
-                                        nId);
+                    Ov022_MarshalNetworkRecord(pShooter, 5, &pShooter->vecImpact, FX32_ONE, nAngle, nId);
                 }
             }
             if ((pDesc->nFlags & DESC_SPAWN) != 0) {
@@ -136,8 +131,7 @@ void Ov022_ResolveShotHit(struct ReactionCtx *pCtx, struct Shot *pShot,
             if (pShot->nId1 == 0) {
                 Ov022_MarshalNetworkRecord(pShooter, 1, &pShooter->vecImpact, FX32_ONE, nAngle, 0);
             } else {
-                Ov022_MarshalNetworkRecord(pShooter, 5, &pShooter->vecImpact, FX32_ONE, nAngle,
-                                    pShot->nId0);
+                Ov022_MarshalNetworkRecord(pShooter, 5, &pShooter->vecImpact, FX32_ONE, nAngle, pShot->nId0);
             }
         }
         pShot->nState = STATE_RETIRED;

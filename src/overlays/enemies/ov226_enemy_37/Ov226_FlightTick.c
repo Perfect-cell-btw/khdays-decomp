@@ -33,7 +33,7 @@ extern void VEC_Add(Vec3 *a, Vec3 *b, Vec3 *d);
 extern int Ov107_CollectCapsuleOverlaps(int owner, Box *box, int *out);
 extern void VEC_Subtract(void *a, void *b, Vec3 *d);
 extern int VEC_Normalize(Vec3 *v, Vec3 *d);
-extern int Ov107_InvokeHitCallback(int hit, int a, int b, u8 kind, Vec3 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, int at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -114,7 +114,7 @@ void Ov226_FlightTick(int *node)
         VEC_Subtract((void *)(hits[i] + 0x74), (void *)(*state + 0x74), &push);
         push.y = 0;
         VEC_Normalize(&push, &push);
-        if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x390), state[0x11], &push, 0) != 0) {
+        if (Ov107_InvokeHitCallback(hits[i], *state, *(int *)(*state + 0x390), (u8)state[0x11], &push, 0) != 0) {
             func_ov107_020c0b90(*state, 0, box.pos, 0);
             Ov107_BuildAndSendUpdate(*state, 0x14c, 8, state[2]);
         }

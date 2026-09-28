@@ -24,8 +24,8 @@ typedef struct {
     void *thread;
 } CardTransferCtx;
 
-extern void CARD_UnlockBackup(unsigned short lockId);
-extern void CardUnlockAfterKeyShare(unsigned short lockId);
+extern void CARD_UnlockBackup(int lockId);
+extern void CardUnlockAfterKeyShare(int lockId);
 extern void func_02020904(void);
 extern void func_020208f0(void);
 extern int Ov009_EmitCommandAndStoreHandle(int a, void *buf, int size);

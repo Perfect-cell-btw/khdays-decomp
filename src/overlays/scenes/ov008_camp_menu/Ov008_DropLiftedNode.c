@@ -87,9 +87,9 @@ extern void  Ov008_RebuildViewAndCountCells(Ov008GridSummary *pSummary, void *pS
 extern void *Ov008_FindGridHit(Ov008MenuContext *pCtx, u32 nPage, u32 nCol, u32 nRow); /* Ov008_FindGridHit */
 extern int   Ov008_PlaceNodeShape(Ov008MenuContext *pCtx, void *pNode, u32 nPage, int nCol, int nRow, int nArg); /* move the node */
 extern int   Ov008_CanPlaceRecord(Ov008MenuContext *pCtx, Ov008Message15Record *pRecord, u32 nPage, u32 nCol, u32 nRow, int nArg); /* record fits */
-extern void  Ov008_ProcessAndCleanup(Ov008MenuContext *pCtx, u16 nPage, u32 nCol, u32 nRow); /* Ov008_ProcessAndCleanup */
+extern void  Ov008_ProcessAndCleanup(Ov008MenuContext *pCtx, unsigned int nPage, u32 nCol, u32 nRow); /* Ov008_ProcessAndCleanup */
 extern int   Ov008_PlaceNodeOnPage(Ov008MenuContext *pCtx, Ov008Message15Record *pRecord, u32 nPage, u32 nCol, u16 nRow); /* place at cell */
-extern void  Ov008_BumpRowCounter(Ov008MenuContext *pCtx, int nItemId, char nDelta); /* Ov008_BumpRowCounter */
+extern void  Ov008_BumpRowCounter(Ov008MenuContext *pCtx, int nItemId, int nDelta); /* Ov008_BumpRowCounter */
 extern Ov008LiftedCell *NNS_FndGetNextListObject(void *pList, void *pObject);
 extern void  Ov008_ResetGridDrag(Ov008MenuContext *pCtx, int nArg);              /* Ov008_ResetGridDrag */
 extern void  Ov008_ClearTrackedGridCells(Ov008MenuContext *pCtx);                        /* Ov008_ClearTrackedGridCells */
@@ -123,14 +123,14 @@ int Ov008_DropLiftedNode(Ov008MenuContext *pCtx)
     pNode = Ov008_FindGridHit(pCtx, pCtx->nDragPage, pCtx->nHomeCol, pCtx->nHomeRow);
     if (pNode == 0 || Ov008_PlaceNodeShape(pCtx, pNode, pCtx->nVisiblePage, nLeft, nTop, 1) != 0) {
         if (Ov008_CanPlaceRecord(pCtx, pCtx->pListNode, pCtx->nVisiblePage, pCtx->nCursorCol, pCtx->nCursorRow, 0) != 0) {
-            Ov008_ProcessAndCleanup(pCtx, pCtx->nVisiblePage, pCtx->nCursorCol, pCtx->nCursorRow);
-            Ov008_ProcessAndCleanup(pCtx, pCtx->nDragPage, pCtx->nHomeCol, pCtx->nHomeRow);
+            Ov008_ProcessAndCleanup(pCtx, (u16)pCtx->nVisiblePage, pCtx->nCursorCol, pCtx->nCursorRow);
+            Ov008_ProcessAndCleanup(pCtx, (u16)pCtx->nDragPage, pCtx->nHomeCol, pCtx->nHomeRow);
             Ov008_PlaceNodeOnPage(pCtx, pCtx->pListNode, pCtx->nVisiblePage, pCtx->nCursorCol, pCtx->nCursorRow);
-            Ov008_BumpRowCounter(pCtx, pCtx->pListNode->nItemId, 1);
+            Ov008_BumpRowCounter(pCtx, pCtx->pListNode->nItemId, (char)1);
             for (pCell = NNS_FndGetNextListObject(pCtx->liftedList, 0); pCell != 0;
                  pCell = NNS_FndGetNextListObject(pCtx->liftedList, pCell)) {
                 Ov008_PlaceNodeOnPage(pCtx, pCell->pRecord, pCtx->nVisiblePage, (u16)(pCtx->nCursorCol + pCell->nColOffset), pCtx->nCursorRow + pCell->nRowOffset);
-                Ov008_BumpRowCounter(pCtx, pCell->pRecord->nItemId, 1);
+                Ov008_BumpRowCounter(pCtx, pCell->pRecord->nItemId, (char)1);
             }
             if (pCtx->pListNode->nPlacedSlot >= 0 || pCtx->pListNode->nCategory == CATEGORY_FIXED) {
                 Ov008_ResetGridDrag(pCtx, 0);

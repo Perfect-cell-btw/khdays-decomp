@@ -57,8 +57,8 @@ extern Ov002SlotContext *data_ov002_0207f99c;
 extern Ov002SlotEntry data_ov002_0207f9a0[];
 
 extern int Ov002_RunShutdownHook(void);
-extern void Ov002_LinkSyncReadPeer(Ov002TouchPoint *pPoint, u8 nSlot);
-extern int Ov002_ForwardToSubDc(u16 nId);
+extern void Ov002_LinkSyncReadPeer(Ov002TouchPoint *pPoint, unsigned int nSlot);
+extern int Ov002_ForwardToSubDc(int nId);
 extern void Ov002_PublishSlotValueA(u32 nValue, int hSound);
 
 void Ov002_MapTouchToCell(int bWithSound)

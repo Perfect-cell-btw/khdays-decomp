@@ -26,6 +26,8 @@ extern Ov002MissionMember data_0204c678[];
 extern u8 data_ov002_0207e610[];
 extern Ov002SurfaceTagTemplate data_ov002_0207e640[];
 extern char data_ov002_0207f0dc[];
+/* Defined taking argument 0 as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int Entity_LoadAndAttach(u16,u32);
 extern signed char Ov002_GetCtxModeByte(void);
 extern void Res_RequestIdPair(int);

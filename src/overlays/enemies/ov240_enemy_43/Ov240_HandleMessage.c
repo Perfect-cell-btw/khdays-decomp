@@ -9,7 +9,7 @@ typedef struct { int w[11]; } SrtTransform;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
-extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, u8 blend, SrtTransform *transform);
+extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int blend, SrtTransform *transform);
 extern void Ov107_AiState_OnMessage(int owner, u8 *msg, int arg);
 
 void Ov240_HandleMessage(int owner, u8 *msg, int arg)
@@ -41,15 +41,15 @@ void Ov240_HandleMessage(int owner, u8 *msg, int arg)
         case 1:
         case 2:
             *(int *)(owner + msg[3] * 8 + 0x3a0) =
-                Ov107_CreateNodeXformTask(*(int *)(owner + 0x3c), *(int *)(owner + msg[3] * 8 + 0x39c), 0x15, msg[3] == 2 ? 1 : 0, &transform);
+                Ov107_CreateNodeXformTask(*(int *)(owner + 0x3c), *(int *)(owner + msg[3] * 8 + 0x39c), 0x15, (u8)(msg[3] == 2 ? 1 : 0), &transform);
             break;
         case 3:
             *(int *)(owner + msg[3] * 8 + 0x3a0) =
-                Ov107_CreateNodeXformTask(*(int *)(owner + 0x3c), *(int *)(owner + msg[3] * 8 + 0x39c), 5, 0, &transform);
+                Ov107_CreateNodeXformTask(*(int *)(owner + 0x3c), *(int *)(owner + msg[3] * 8 + 0x39c), 5, (u8)0, &transform);
             break;
         case 4:
             *(int *)(owner + msg[3] * 8 + 0x3a0) =
-                Ov107_CreateNodeXformTask(*(int *)(owner + 0x3c), *(int *)(owner + msg[3] * 8 + 0x39c), 0x15, 0, &transform);
+                Ov107_CreateNodeXformTask(*(int *)(owner + 0x3c), *(int *)(owner + msg[3] * 8 + 0x39c), 0x15, (u8)0, &transform);
             break;
         }
     }

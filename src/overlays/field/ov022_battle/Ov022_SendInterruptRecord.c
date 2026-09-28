@@ -40,9 +40,7 @@ extern s16 data_0203d210[];
 extern void VEC_Add(const VecFx32 *pA, const VecFx32 *pB,
                     VecFx32 *pOut);
 /* Ov022_MarshalNetworkRecord */
-extern void Ov022_MarshalNetworkRecord(struct Actor *pActor, int nKind,
-                                VecFx32 *pAt, int nScale, u16 nAngle,
-                                int nArg);
+extern void Ov022_MarshalNetworkRecord(struct Actor *pActor, int nKind, VecFx32 *pAt, int nScale, unsigned int nAngle, int nArg);
 
 void Ov022_SendInterruptRecord(struct Actor *pActor)
 {
@@ -59,6 +57,5 @@ void Ov022_SendInterruptRecord(struct Actor *pActor)
     vecDir.z = -data_0203d210[nIndex * 2 + 1];
     vecAt.y = vecAt.y + POINT_RAISE;
     VEC_Add(&vecAt, &vecDir, &vecAt);
-    Ov022_MarshalNetworkRecord(pActor, RECORD_KIND, &vecAt, UNIT_SCALE, nAngle,
-                        RECORD_ARG);
+    Ov022_MarshalNetworkRecord(pActor, RECORD_KIND, &vecAt, UNIT_SCALE, nAngle, RECORD_ARG);
 }

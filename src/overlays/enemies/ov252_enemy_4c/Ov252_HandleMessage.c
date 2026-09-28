@@ -50,7 +50,7 @@ extern int Ov252_SpawnGem(char *self, int owner, VecFx32 *pos, signed char slot,
 extern int Ov252_SpawnBomb(char *self, int owner, VecFx32 *pos, signed char slot, u8 kind);
 extern void Ov107_ForwardVisibleEvent(char *self, int a);
 extern int Ov002_GetSlotTableByte(void *scene);
-extern void Ov002_SpawnAllDrops(u8 *colour, u16 id, VecFx32 *vec);
+extern void Ov002_SpawnAllDrops(u8 *colour, int id, VecFx32 *vec);
 extern int Ov107_CreateSpawnTask(char *self, int id, int mode, void *at, void *pose);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
@@ -205,7 +205,7 @@ void Ov252_HandleMessage(char *self, u8 *msg, int arg)
             colour[4] = 0;
             colour[5] = 0;
             work.colour[2] = 8;
-            Ov002_SpawnAllDrops(work.colour, Ov002_GetSlotTableByte(*(void **)(node + 0x78)), &work.pos);
+            Ov002_SpawnAllDrops(work.colour, (u16)(Ov002_GetSlotTableByte(*(void **)(node + 0x78))), &work.pos);
             break;
         case 0x34:
             *(int *)(self + 0x580) = Ov107_CreateSpawnTask(self, 0x148, 6, at, (void *)(*(int *)(self + 0x560) + 4));

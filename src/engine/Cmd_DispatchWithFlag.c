@@ -1,7 +1,7 @@
 /* Dispatches a command through the eight-entry handler table data_02041e4c: the handler gets the
  * value looked up for the command's pair (LookupPairKey over data_02041e14), whether the command's
  * third halfword is set, and the two extra arguments. Sibling of Gfx_DispatchByPairKeyA. */
-extern int LookupPairKey(void *ptr, unsigned short arg1, unsigned short arg2);
+extern int LookupPairKey(void *ptr, int arg1, int arg2);
 extern void (*const data_02041e4c[])(int value, int flag, int arg1, int arg2);
 extern char data_02041e14;
 

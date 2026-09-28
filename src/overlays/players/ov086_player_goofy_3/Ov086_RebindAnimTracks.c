@@ -12,7 +12,7 @@
 
 extern void NNS_G3dRenderObjRemoveAnmObj(void *renderObj, void *anmObj);                    /* NNS_G3dRenderObjRemoveAnmObj */
 extern void BindAnimTrack(void *animation, u16 track, void *table, s16 mode); /* BindAnimTrack */
-extern void Anim_SetFrameWrapped(void *animation, u16 track, int frame);             /* Anim_SetFrameWrapped */
+extern void Anim_SetFrameWrapped(void *animation, int track, int frame);             /* Anim_SetFrameWrapped */
 
 void Ov086_RebindAnimTracks(char *self, int mode)
 {

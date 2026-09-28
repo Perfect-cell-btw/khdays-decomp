@@ -45,7 +45,7 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov021_CreatePrizeBoxClass(unsigned short count, Ov021EmitParams *params);
+extern int Ov021_CreatePrizeBoxClass(int count, Ov021EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov021_VmCmdEntryList(void *self, char *descs) {

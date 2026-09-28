@@ -5,9 +5,7 @@ extern int ScriptVm_ReadOperandInt(void *pCtx, int nOperand);
 extern int ScriptVm_ReadOperandFx32(void *pCtx, int nOperand);
 extern int func_02020400(int a, int b);
 extern int Ov002_GetModuleSlot(int nId);
-extern void Ov002_CreatePlacedPiece(int nOwner, u16 wA, u16 wB, void *pPos,
-                                short nAngle, short nExtra, u16 wLow,
-                                int bHigh);
+extern void Ov002_CreatePlacedPiece(int nOwner, u16 wA, int wB, void *pPos, short nAngle, short nExtra, u16 wLow, int bHigh);
 
 /* Script VM command: spawn an element from the command's operands.
  *
@@ -46,8 +44,6 @@ int Ov002_ScriptCmdSpawnElement(void *pCtx, int nArgs)
     nA = ScriptVm_ReadOperandInt(pCtx, nArgs + 0x08);
     nB = ScriptVm_ReadOperandInt(pCtx, nArgs + 0x10);
 
-    Ov002_CreatePlacedPiece(nOwner, (u16)nA, (u16)nB, &aPos[0], (short)wAngle,
-                        (short)nExtra, (u16)nPacked,
-                        (unsigned char)(u16)(nPacked >> 0x10));
+    Ov002_CreatePlacedPiece(nOwner, (u16)nA, (u16)nB, &aPos[0], (short)wAngle, (short)nExtra, (u16)nPacked, (unsigned char)(u16)(nPacked >> 0x10));
     return 1;
 }

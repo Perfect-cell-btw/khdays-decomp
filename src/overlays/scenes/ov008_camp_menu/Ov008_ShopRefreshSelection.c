@@ -78,8 +78,8 @@ extern void  Ov008_SetEntrySlotsVisible(void *pWidgets, void *pEntry, int bVisib
 extern UiLayoutPos *Ov008_GetEntryPos(void *pWidgets, void *pEntry);      /* Ov008_GetEntryPos */
 extern void  Ov008_SetEntryPos(void *pWidgets, void *pEntry, UiLayoutPos *pPos); /* Ov008_SetEntryPos */
 extern void  Ov008_ScrollListToRow(u32 nScroll, int nArg);                    /* Ov008_ScrollListToRow */
-extern void *Ov008_FindEntryByTag(void *pTracker, u16 nTag);                 /* ov008_FindEntryByTag */
-extern void  Ov008_StampTileMode(void *pTracker, void *pCell, u8 nMode);    /* Ov008_StampTileMode */
+extern void *Ov008_FindEntryByTag(void *pTracker, unsigned int nTag);                 /* ov008_FindEntryByTag */
+extern void  Ov008_StampTileMode(void *pTracker, void *pCell, int nMode);    /* Ov008_StampTileMode */
 extern void  Ov008_TagTracker_InvokeCallback(void *pTracker, void *pCell);              /* Ov008_TagTracker_InvokeCallback */
 
 void Ov008_ShopRefreshSelection(void)

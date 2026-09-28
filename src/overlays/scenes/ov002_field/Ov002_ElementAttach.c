@@ -6,7 +6,7 @@ extern void *Ov002_LookupChannelEntry(char *pChannel);
 extern void Entity_Register(char *pObj, void *pEntry, int nA, int nB);
 extern void Actor_SetVecAndSyncChild(char *pNode, VecFx32 *pPos);
 extern int Ov002_GetLastPositiveSlotValue(char *pNode);
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 extern void Ov002_ElementRetire(char *pElement);
 extern void Obj_SetFlagBit3(char *pObj, int bOn);
 extern void Res_RequestIdPair(int nId);
@@ -44,8 +44,7 @@ void Ov002_ElementAttach(char *pElement)
     *(unsigned char *)(pElement + 0x1ba) =
         (unsigned char)Ov002_GetLastPositiveSlotValue(pElement + 0x3c);
 
-    nState = GameState_GetField(*(u16 *)(pElement + 0x14),
-                           *(unsigned char *)(pElement + 0x16));
+    nState = GameState_GetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16));
     *(unsigned char *)(pElement + 0x1b8) =
         (unsigned char)((((nState & 0xfffe) << 15) >> 16) & 1);
 
@@ -53,8 +52,7 @@ void Ov002_ElementAttach(char *pElement)
 
     Ov002_ElementRetire(pElement);
 
-    nState = GameState_GetField(*(u16 *)(pElement + 0x14),
-                           *(unsigned char *)(pElement + 0x16));
+    nState = GameState_GetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16));
     Obj_SetFlagBit3(pElement + 0x2c, (nState & 1) != 0);
 
     if (*(unsigned char *)(pElement + 0x16) == 2) {

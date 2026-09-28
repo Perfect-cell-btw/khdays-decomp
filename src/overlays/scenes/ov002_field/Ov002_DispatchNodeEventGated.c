@@ -1,4 +1,4 @@
-extern int GameState_GetField(unsigned short nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 extern int Ov002_Hud_IsPanelOpen(void);
 
 typedef int (*Ov002NodeHandler)(int pNode, int pEvent);

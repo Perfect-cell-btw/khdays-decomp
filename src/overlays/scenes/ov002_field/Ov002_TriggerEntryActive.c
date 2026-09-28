@@ -19,7 +19,7 @@ struct Ov002Entry {
     u8 bKind;
 };
 
-extern int GameState_GetField(u16 key, u8 kind);
+extern int GameState_GetField(int key, int kind);
 
 int Ov002_TriggerEntryActive(Ov002Entry *self)
 {

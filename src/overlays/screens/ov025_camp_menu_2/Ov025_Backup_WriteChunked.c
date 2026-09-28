@@ -6,10 +6,10 @@
  * (data_ov025_020b5760+4) and in the context's own slot (+0x2cc); a clean run leaves that slot 0.
  * THUMB -- the mov/lsl pairs building 0x2c0 and 0x2cc are forced by the ISA, whose load offsets
  * do not reach that far. */
-extern void CARD_UnlockBackup(unsigned short lockId);
+extern void CARD_UnlockBackup(int lockId);
 extern int CARDi_RequestStreamCommand(int src, int dst, int len, int a, int b, int c, int d, int e, int f);
 extern int CARD_GetResultCode(void);
-extern void CardUnlockAfterKeyShare(unsigned short lockId);
+extern void CardUnlockAfterKeyShare(int lockId);
 extern void OS_RescheduleThread(void);
 extern unsigned short data_0204be10;
 extern int data_ov025_020b5760[];

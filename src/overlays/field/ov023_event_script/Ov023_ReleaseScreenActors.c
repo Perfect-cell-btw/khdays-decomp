@@ -27,7 +27,7 @@ typedef struct Ov023SceneRoot {
 extern int  Ov023_IsActivePanelEntry(Ov023Actor *pActor, int nPeer);     /* Ov023_ActorOnScreen */
 extern void Ov023_ActorStep(Ov023Actor *pActor);                /* finish the actor */
 extern int  Ov023_Window_GetFlags(Ov023Actor *pActor);                /* the actor's state word */
-extern void Entity_SetVisible(u16 nId, int bOn);                        /* release a sprite id */
+extern void Entity_SetVisible(int nId, int bOn);                        /* release a sprite id */
 extern Ov023SceneRoot data_ov023_0208a784;
 
 void Ov023_ReleaseScreenActors(void)
@@ -43,7 +43,7 @@ void Ov023_ReleaseScreenActors(void)
                 Ov023_ActorStep((Ov023Actor *)((u8 *)data_ov023_0208a784.pScene->pActors + nOffset));
             }
             if (Ov023_Window_GetFlags((Ov023Actor *)((u8 *)data_ov023_0208a784.pScene->pActors + nOffset)) & 0x420) {
-                Entity_SetVisible(i, 0);
+                Entity_SetVisible((u16)i, 0);
             }
         }
         nOffset += sizeof(Ov023Actor);

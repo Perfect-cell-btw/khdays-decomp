@@ -47,7 +47,7 @@ typedef struct Ov015Pickup {
 
 typedef struct Ov015Spot Ov015Spot;
 
-extern int  GameState_GetField(u16 nField, u8 nBit);                            /* GameState_GetField */
+extern int  GameState_GetField(int nField, int nBit);                            /* GameState_GetField */
 extern VecFx32 *Ov002_Element_CallHook2C(void *pPiece);                          /* piece position */
 extern int  VEC_Distance(const VecFx32 *pA, const VecFx32 *pB);            /* VEC_Distance */
 extern Ov015SpotEntry *Ov015_SpotDefFindEntry(Ov015Spot *pSpot, Ov015SpotDef *pDef, int nTable, int nId, int bByKey); /* Ov015_SpotDefFindEntry */

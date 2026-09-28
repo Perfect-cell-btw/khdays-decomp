@@ -51,7 +51,7 @@ extern int Ov002_Field_IsActive(void);
 extern int Ov002_ScenePanel_IsState4(void);
 extern int Ov002_ScenePanel_IsIdle(void);
 extern int Ov002_ScenePanel_IsState3(void);
-extern void Callbacks_SetByte(u8 step);
+extern void Callbacks_SetByte(int step);
 extern void Callbacks_Run(int a);
 
 int PauseMenu_PollInput(void)
@@ -106,7 +106,7 @@ int PauseMenu_PollInput(void)
                 ctx->request = 1;
                 return 0;
             }
-            Callbacks_SetByte(((data_0204c240 & 4) && (LoadGlobalU16At0() & 2)) ? 2 : 1);
+            Callbacks_SetByte((u8)(((data_0204c240 & 4) && (LoadGlobalU16At0() & 2)) ? 2 : 1));
         }
         Callbacks_Run(0);
     }

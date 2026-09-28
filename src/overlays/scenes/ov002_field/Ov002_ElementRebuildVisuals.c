@@ -10,7 +10,7 @@ typedef struct {
 extern int Ov002_LookupChannelEntry(void *pName);
 extern void Entity_Register(char *pObj, int nRes, int a, int b);
 extern void Actor_SetVecAndSyncChild(char *pNode, Vec3 *pPos);
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 extern void Ov002_ElementRefreshNamedBindings(char *pElement);
 extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);
 extern void SceneNode_Disable(u16 *pNode);

@@ -58,7 +58,7 @@ extern int Ov107_CollectEntitiesTouchingDisc(struct Ov191Actor *owner, struct Bo
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *a, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern int Ov107_InvokeHitCallback(struct Ov191Actor *hit, struct Ov191Actor *a, struct Ov191Actor *b, u8 kind, VecFx32 *push, int z);
+extern int Ov107_InvokeHitCallback(struct Ov191Actor *hit, struct Ov191Actor *a, struct Ov191Actor *b, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(struct Ov191Actor *owner, u16 a, u16 id, VecFx32 *pos);
 extern const VecFx32 data_02042258;
 extern const VecFx32 data_02042264;

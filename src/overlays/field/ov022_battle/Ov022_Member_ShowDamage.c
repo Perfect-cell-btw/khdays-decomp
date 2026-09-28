@@ -41,8 +41,7 @@ extern short Ov002_FindNamedValue(int id);
 extern VecFx32 *func_ov022_020881f8(int index);
 extern void Ov002_ClearSeatBitByKey(int context, int key, int value, u16 id);
 extern int Ov002_GetSlotTableByte(int group);
-extern void *Ov002_SpawnSpot(int index, int value, u16 id, int group,
-                                 const VecFx32 *position, int unused, int level);
+extern void *Ov002_SpawnSpot(int index, int value, int id, int group, const VecFx32 *position, int unused, int level);
 
 void Ov022_Member_ShowDamage(int index, int id, unsigned int value, unsigned int level)
 {
@@ -65,7 +64,5 @@ void Ov022_Member_ShowDamage(int index, int id, unsigned int value, unsigned int
     position.y += 0x800;
 
     Ov002_ClearSeatBitByKey(entry->nActorIndex09, value & 0xff, mappedValue & 0xff, id);
-    Ov002_SpawnSpot(value, mappedValue, id,
-                        (u16)Ov002_GetSlotTableByte(entry->nSlotId66),
-                        &position, 0, level);
+    Ov002_SpawnSpot(value, mappedValue, (u16)id, (u16)Ov002_GetSlotTableByte(entry->nSlotId66), &position, 0, level);
 }

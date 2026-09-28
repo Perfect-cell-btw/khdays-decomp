@@ -39,7 +39,7 @@ typedef struct Ov021PrizeBox {
 } Ov021PrizeBox;
 
 extern int   Ov002_GetCtxTableByte(int nBucket);                       /* bucket -> seat slot */
-extern void  Render_SubmitNode(void *pNode, u16 nId, int nArg, void *pParams); /* Render_SubmitNode */
+extern void  Render_SubmitNode(void *pNode, int nId, int nArg, void *pParams); /* Render_SubmitNode */
 extern int   Ov002_GetStateWord(void);                              /* the mission id */
 extern void  Actor_SetBindingByte(void *pBinding, int nIndex, u8 nValue);   /* Actor_SetBindingByte */
 extern int   Session_GetLocalPlayerIndex(void);                                    /* Session_GetLocalPlayerIndex */
@@ -53,7 +53,7 @@ void Ov021_PrizeBoxRefresh(Ov021PrizeBox *pSelf)
 
     pDef = pSelf->pDef;
     if ((pSelf->nFlags & 1) == 0) {
-        Render_SubmitNode(pSelf->renderNode, Ov002_GetCtxTableByte(pSelf->nBucket), 0, 0);
+        Render_SubmitNode(pSelf->renderNode, (u16)(Ov002_GetCtxTableByte(pSelf->nBucket)), 0, 0);
         if (Ov002_GetStateWord() == 0x41d) {
             Actor_SetBindingByte(pSelf->binding, 3, 1);
         } else {

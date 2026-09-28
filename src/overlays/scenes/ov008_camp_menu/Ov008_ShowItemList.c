@@ -55,11 +55,11 @@ extern Ov008MenuEntryDef data_ov008_02090598[];                  /* the menu ent
 
 extern Ov008MenuContext *Ov008_GetMenuContext(void);               /* Ov008_GetMenuContext */
 extern int  Ov008_GetContext(void);                            /* Ov008_GetContext */
-extern Ov008ItemRing *Ov008_GetItemTableEntry(u16 nListId);           /* item ring of a list */
+extern Ov008ItemRing *Ov008_GetItemTableEntry(unsigned int nListId);           /* item ring of a list */
 extern int  Ov008_FindSelectableItem(s16 nFrom, int nStep);            /* Ov008_FindSelectableItem */
 extern void Ov008_WidgetRef_Init(Ov008WidgetPick *pPick, s16 nId); /* Ov008_Set_9bec: pick a widget */
 extern void Ov008_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible); /* SetEntrySlotsVisible */
-extern void Ov008_DispatchFrom2DTable(Ov008WidgetPick *pPick, s16 nItem, s16 nColumn); /* pick from the 2D table */
+extern void Ov008_DispatchFrom2DTable(Ov008WidgetPick *pPick, int nItem, int nColumn); /* pick from the 2D table */
 extern void Ov008_WidgetRef_Hide(Ov008WidgetPick *pPick);          /* Ov008_Set_9c68 */
 
 void Ov008_ShowItemList(u32 nListId, int bShow)
@@ -76,7 +76,7 @@ void Ov008_ShowItemList(u32 nListId, int bShow)
 
     pCtx = Ov008_GetMenuContext();
     nCtx = Ov008_GetContext();
-    pRing = Ov008_GetItemTableEntry(nListId);
+    pRing = Ov008_GetItemTableEntry((u16)nListId);
     if (bShow != 0) {
         nSel = Ov008_FindSelectableItem(pRing->nFirst, 1);
         if (nSel >= 0) {
@@ -92,10 +92,10 @@ void Ov008_ShowItemList(u32 nListId, int bShow)
         Ov008_WidgetRef_Init(&pick, (int)pItem->nId);
         Ov008_SetEntrySlotsVisible(nCtx, pick.pEntry, bShow);
         for (j = 0; j < pItem->nSubCount; j++) {
-            Ov008_DispatchFrom2DTable(&pick, nItem, (s16)j);
+            Ov008_DispatchFrom2DTable(&pick, (s16)nItem, (s16)j);
             Ov008_SetEntrySlotsVisible(nCtx, pick.pEntry, bShow);
             if (bShow != 0 && pItem->bEnabled != 0) {
-                Ov008_DispatchFrom2DTable(&pick, nItem, pCtx->aItemColumn[nItem]);
+                Ov008_DispatchFrom2DTable(&pick, (s16)nItem, (s16)pCtx->aItemColumn[nItem]);
                 Ov008_WidgetRef_Hide(&pick);
             }
         }

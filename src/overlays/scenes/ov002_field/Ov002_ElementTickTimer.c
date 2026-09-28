@@ -14,7 +14,7 @@ typedef struct {
 
 extern int Ov002_GetModuleScale(void);
 extern short Session_GetLocalPlayerIndex(void);
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 extern int Ov002_RecordElementHit(char *pElement, Ov002TimeoutRecord *pRecord,
                                int nKind);
 extern void Ov002_SetFrameOnActiveTracks(u16 *pTable, int nTime);

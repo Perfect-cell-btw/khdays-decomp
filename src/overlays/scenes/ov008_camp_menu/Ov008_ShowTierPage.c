@@ -18,8 +18,12 @@ typedef struct Ov008PanelContext {
 } Ov008PanelContext;
 
 extern Ov008PanelContext *data_ov008_02090fac;
+/* Defined taking nTag as unsigned int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int Ov008_FindEntryByTag(void *pTracker, u16 nTag);            /* ov008_FindEntryByTag */
 extern void Ov008_TagTracker_InvokeCallback(void *pTracker, int nCell);           /* Ov008_TagTracker_InvokeCallback */
+/* Defined taking nMode as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void Ov008_StampTileMode(void *pTracker, int nCell, u8 nMode);  /* Ov008_StampTileMode */
 
 void Ov008_ShowTierPage(int nTitleMsg, int nBodyMsg, int nCellTag, int nFrameTag, int nFirstTag, int nPalette)

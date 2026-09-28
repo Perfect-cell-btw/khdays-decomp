@@ -14,7 +14,7 @@ typedef struct { int w[11]; } Srt;
 extern void SrtTransform_SetIdentity(Srt *srt);
 extern void Srt_SetTranslation(Srt *srt, const VecFx32 *t);
 extern void Srt_SetScaleUniform(Srt *srt, int scale);
-extern void *Ov107_CreateNodeXformTask(void *owner, void *slot, int kind, u8 flag, const Srt *srt);
+extern void *Ov107_CreateNodeXformTask(void *owner, void *slot, int kind, int flag, const Srt *srt);
 extern void Ov107_ForwardVisibleEvent(void *self, int a2);
 extern void *Ov107_CreateNodeBodyTask(void *owner, void *slot, int kind, void *xform, int a5, int a6);
 extern void *Ov107_CreateSpawnTask(void *self, int id, int a3, int a4, void *xform);
@@ -51,9 +51,7 @@ void Ov228_OnEffectMessage(char *self, u8 *cmd, void *arg3)
         case 7:
         case 8:
             *(void **)(self + (cmd[3] << 3) + 0x4ac) =
-                Ov107_CreateNodeXformTask(*(void **)(self + 0x3c),
-                                    *(void **)(self + (cmd[3] << 3) + 0x4a8),
-                                    0x17, cmd[3] == 0 ? 1 : cmd[4], &srt);
+                Ov107_CreateNodeXformTask(*(void **)(self + 0x3c), *(void **)(self + (cmd[3] << 3) + 0x4a8), 0x17, (u8)(cmd[3] == 0 ? 1 : cmd[4]), &srt);
             if (cmd[3] == 6) {
                 Ov107_ForwardVisibleEvent(self, 1);
             }

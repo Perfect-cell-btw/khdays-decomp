@@ -3,7 +3,7 @@
  * +0x20/+0x24. A zero head means there is nothing to show. */
 extern int Ov002_GetRootField8d18(void);
 extern int Ov002_CountRemainingSlots(void);
-extern void Ov002_DrawPageCounter(unsigned short head, unsigned short span);
+extern void Ov002_DrawPageCounter(int head, int span);
 
 extern char *data_ov002_0207f634;
 

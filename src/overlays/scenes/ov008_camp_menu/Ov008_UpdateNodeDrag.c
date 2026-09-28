@@ -48,7 +48,7 @@ extern void Ov008_CopySourceBlock(void *pOut);                              /* t
 extern int  Ov008_GetContext(void);                                    /* Ov008_GetContext */
 extern void *Ov008_FindEntryById(int nCtx, int nId);                      /* FindEntryById */
 extern void Ov008_SetEntryPos(int nCtx, void *pEntry, UiLayoutPos *pPos); /* Ov008_SetEntryPos */
-extern int  Ov008_PixelToTileCell(u16 *pCol, u16 *pRow, u16 nX, u16 nY);    /* Ov008_PixelToTileCell */
+extern int  Ov008_PixelToTileCell(u16 *pCol, u16 *pRow, unsigned int nX, unsigned int nY);    /* Ov008_PixelToTileCell */
 extern int  Ov008_DropLiftedNode(Ov008MenuContext *pCtx);                  /* drop the dragged node */
 extern void Ov008_ResetGridDrag(Ov008MenuContext *pCtx, int nArg);        /* grid reset */
 extern void Ov008_RebuildGridHits(Ov008MenuContext *pCtx);                  /* Ov008_RebuildGridHits */

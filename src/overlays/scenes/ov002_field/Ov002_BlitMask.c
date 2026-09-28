@@ -33,6 +33,8 @@
 
 #include "nitro/types.h"
 
+/* Defined taking nX as int, nY as int, nColour as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void Ov002_PlotCanvasPixel(int hCanvas, u16 nX, u16 nY, u8 nColour);
 
 void Ov002_BlitMask(int hCanvas, u16 nX, u16 nY, int nWidth, int nHeight,

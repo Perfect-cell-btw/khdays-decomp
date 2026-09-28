@@ -39,7 +39,7 @@ static inline int Ov044_GetBoneBase(char *object)
 }
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void Entity_ForwardToSlot(int, u16, int, void *, int);
+extern void Entity_ForwardToSlot(int, int, int, void *, int);
 extern void TailForwardTrackEntry(int, void *, int, int);
 extern int ArrayEntryPtrD0(int);
 extern void Actor_InitEntityLink(void *, int);
@@ -81,8 +81,7 @@ void Ov031_ActorCtor(struct PanelInitConfig *config)
     params.enabled = 1;
     params.scale = 9 << 8;
     params.limit = 0x17 << 8;
-    Entity_ForwardToSlot(*(signed char *)(object + 0x4bc),
-                  (u16)(1 << *(u8 *)(object + 8)), 0, &params, 0);
+    Entity_ForwardToSlot(*(signed char *)(object + 0x4bc), (u16)(1 << *(u8 *)(object + 8)), 0, &params, 0);
 
     if (config->alternateName == 0) {
         TailForwardTrackEntry(*(signed char *)(object + 0x4bc), (void *)data_ov031_020b4cfc, 1,

@@ -2,7 +2,7 @@
  * change callback. Finds the entry (Ov008_FindEntryByTag), sets its value (Ov008_Elem_SetPos),
  * and invokes its +0x?? handler (Ov008_InvokeCallback40). */
 extern int  Ov008_FindEntryByTag(int owner, unsigned int tag);
-extern void Ov008_Elem_SetPos(int owner, int entry, unsigned short a, unsigned short b);
+extern void Ov008_Elem_SetPos(int owner, int entry, int a, int b);
 extern void Ov008_InvokeCallback40(int owner, int entry);
 
 void Ov008_SetTagValueAndNotify2(int param_1, unsigned int param_2, unsigned short param_3, unsigned short param_4) {

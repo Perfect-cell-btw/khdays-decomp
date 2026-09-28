@@ -202,7 +202,7 @@ extern int Ov022_GetEntryField66(int nIndex);                                   
 extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
 extern int VEC_Normalize(VecFx32 *pIn, VecFx32 *pOut);                          /* VEC_Normalize */
 extern void ScaleVec3Fx12(int nScale, VecFx32 *pIn, VecFx32 *pOut);             /* ScaleVec3Fx12 */
-extern struct Hit *EntityMgr_RunSphereCast(u16 nSlot, VecFx32 *pFrom, VecFx32 *pDir, int nRadius, struct ActorNode *pNode);   /* sphere cast */
+extern struct Hit *EntityMgr_RunSphereCast(int nSlot, VecFx32 *pFrom, VecFx32 *pDir, int nRadius, struct ActorNode *pNode);   /* sphere cast */
 extern int func_ov022_020882f8(void);                                           /* GetActiveField34 (actor count) */
 extern struct Actor *GetEntryField20ByIndex(int nIndex);                                 /* Ov022_GetEntryField20ByIndex */
 extern int VEC_Mag(VecFx32 *pVec);

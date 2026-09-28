@@ -31,7 +31,7 @@ extern int RandNextScaled(int bound);
 extern int Ov107_CalcHitDamage(char *actor, struct ActorHitEvent *hit);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, int at);
-extern void Ov259_PlaySound(char *actor, int id, u16 mode, int at);
+extern void Ov259_PlaySound(char *actor, int id, int mode, int at);
 extern void Ov259_Helper_ReleaseIfReady(int effect);
 extern short data_0203d210[];
 
@@ -121,9 +121,9 @@ int Ov259_OnHit(char *self, int other, struct ActorHitEvent *hit)
         lo = hit->uFlagsLo;
         if ((lo & 8) == 0 || (lo & 0x80) == 0 || hit->uFlagsHi != 0x80) {
             if ((lo & 0x22) != 0) {
-                Ov259_PlaySound(self, 0x172, (++*((u8 *)state + 0xaf) & 1) ? 2 : 3, state[4]);
+                Ov259_PlaySound(self, 0x172, (u16)((++*((u8 *)state + 0xaf) & 1) ? 2 : 3), state[4]);
             } else {
-                Ov259_PlaySound(self, 0x172, (++*((u8 *)state + 0xaf) & 1) == 0, state[4]);
+                Ov259_PlaySound(self, 0x172, (u16)((++*((u8 *)state + 0xaf) & 1) == 0), state[4]);
             }
             *((u8 *)state + 0xaf) ^= 1;
         }

@@ -25,7 +25,7 @@ typedef struct {
 
 extern OperandSlot *ScriptVm_ResolveOperand(void *st, void *operand);
 extern int  ScriptVm_ReadOperandInt(void *st, OperandSlot *slot);
-extern void GameState_SetField(unsigned short a, unsigned short b, unsigned short c);
+extern void GameState_SetField(unsigned int a, unsigned int b, unsigned int c);
 
 int Game_ActionAssign(void *st, short *operand)
 {

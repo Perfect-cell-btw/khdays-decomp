@@ -1,9 +1,13 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
 extern int func_02020d10(int ctx, int arg);
+/* Defined taking index as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern char *ArrayEntryPtrD0(unsigned short index);
 extern void Slot48_StoreAtCurrentIndex(int ctx, int args);
 
+/* Defined taking id as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void EntityMgr_SetTransition(unsigned short id, int kind, int value);
 extern void NNS_G3dMdlSetMdlPolygonIDAll(int anim, int flags);
 

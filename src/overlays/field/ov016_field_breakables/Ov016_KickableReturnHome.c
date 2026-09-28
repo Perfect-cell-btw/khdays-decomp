@@ -42,7 +42,7 @@ typedef struct Ov016Kickable {
     VecFx32 home;             /* 0x634 */
 } Ov016Kickable;
 
-extern int  GameState_GetField(u16 nField, u8 nBit);                      /* GameState_GetField */
+extern int  GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
 extern void Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);          /* Actor_SetVecAndSyncChild */
 
 void Ov016_KickableReturnHome(Ov016Kickable *pSelf)

@@ -42,7 +42,7 @@ extern void  Entity_Register(void *pNode, void *pEntry, int nA, int nB); /* bind
 extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);          /* Actor_SetVecAndSyncChild */
 extern void  Ov002_RebindAnimTracks(void *pNode, int nTrack, int nFrame); /* rewind a sequence */
 extern void  SceneNode_Disable(void *pNode);                              /* SceneNode_Disable */
-extern int   GameState_GetField(u16 nField, u8 nBit);                      /* GameState_GetField */
+extern int   GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
 extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                   /* Obj_SetFlagBit3 */
 
 void Ov016_FollowerStart(Ov016Follower *pSelf)

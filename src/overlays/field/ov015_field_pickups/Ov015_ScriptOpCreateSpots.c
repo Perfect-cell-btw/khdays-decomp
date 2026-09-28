@@ -41,7 +41,7 @@ typedef struct Ov015SpotSpec {
 
 extern int   ScriptVm_ReadOperandInt(int vm, u16 *pc);            /* ScriptVm_ReadOperandInt */
 extern int   ScriptVm_ReadOperandFx32(int vm, u16 *pc);            /* ScriptVm_ReadOperandFx32 */
-extern void *Ov002_List_ScaleEntryTag(u8 nKey, u16 nArg);    /* resolve a pickup piece */
+extern void *Ov002_List_ScaleEntryTag(int nKey, int nArg);    /* resolve a pickup piece */
 extern void *Ov015_CreateSpotClass(u16 nSlot, Ov015SpotSpec *pSpec); /* Ov015_CreateSpotClass */
 extern void  Ov002_SetModuleSlot(int nTarget, void *pValue);       /* store on the target */
 
@@ -105,7 +105,7 @@ int Ov015_ScriptOpCreateSpots(int vm, u16 *pc)
                     pOperand = pc + 4;
                     pc += 8;
                     nArg = ScriptVm_ReadOperandInt(vm, pOperand);
-                    aEntry[nBase].u.pPickup = Ov002_List_ScaleEntryTag(nKey, nArg);
+                    aEntry[nBase].u.pPickup = Ov002_List_ScaleEntryTag((u8)nKey, (u16)nArg);
                     break;
                 }
             }

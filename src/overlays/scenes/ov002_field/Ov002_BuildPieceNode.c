@@ -29,7 +29,7 @@ typedef struct Ov002PieceElement {
 extern void *Ov002_LookupChannelEntry(char *pName);      /* name -> resource entry */
 extern void Entity_Register(char *pObj, void *pEntry, int nA, int nB);
 extern int Ov002_GetLastPositiveSlotValue(u16 *pAnim);         /* how many tracks it has */
-extern int GameState_GetField(u16 nId, u8 nSlot);   /* low bit gates the node */
+extern int GameState_GetField(int nId, int nSlot);   /* low bit gates the node */
 extern void Obj_SetFlagBit3(char *pObj, int bOn);
 extern void Res_RequestIdPair(int nRequestId);
 

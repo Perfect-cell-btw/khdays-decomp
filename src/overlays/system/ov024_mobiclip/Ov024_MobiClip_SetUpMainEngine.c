@@ -15,6 +15,8 @@ struct Mtx22 {
 extern void GX_SetBankForBG(int nBank);
 extern void GX_SetBankForOBJ(int nBank);
 extern void GX_SetBankForBGExtPltt(int nBank);
+/* Defined taking param_1 as GXDispMode: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void GX_SetGraphicsMode(u16 param_1, u32 param_2, int param_3);
 extern void Ov024_MobiClip_LoadSpriteGrid(int bMainScreen);
 extern void MTX_Identity22_(struct Mtx22 *pMtx);

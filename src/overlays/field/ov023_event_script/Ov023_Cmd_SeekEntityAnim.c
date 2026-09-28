@@ -1,7 +1,7 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
 extern int func_02020d10(int ctx, int arg);
-extern char *ArrayEntryPtrD0(unsigned short index);
+extern char *ArrayEntryPtrD0(int index);
 extern void Slot48_StoreAtCurrentIndex(int ctx, int args);
 
 extern void NNS_G3dMdlSetMdlAlphaAll(int anim, int frame);

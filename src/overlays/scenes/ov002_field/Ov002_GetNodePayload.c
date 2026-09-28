@@ -1,4 +1,4 @@
-extern int GameState_GetField(unsigned short nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 
 /* Hand back the node's payload when it is visible, not suppressed, and its
  * state query does not report the blocking bit. Slot 2 skips the query.

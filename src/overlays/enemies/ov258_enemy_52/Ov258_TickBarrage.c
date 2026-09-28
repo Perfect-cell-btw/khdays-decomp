@@ -14,7 +14,7 @@
 typedef struct { int m[9]; } Mtx33;
 
 extern int Ov258_AcquireTarget(int *node, int face);
-extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
+extern void Ov258_StepCue(int *node, int step, int phase, unsigned int variant);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, u16 variant, void *at);
 extern int func_020050b4(int x, int z);
@@ -55,9 +55,9 @@ void Ov258_TickBarrage(int *node)
     state[0xd] += *(int *)(node[0] + 0x2c);
     state[0x11] += *(int *)(node[0] + 0x2c);
     Ov258_AcquireTarget(node, 1);
-    Ov258_StepCue(node, 1, 3, 6);
-    Ov258_StepCue(node, 0x36, 2, *(int *)(*state + 0x460) != 0 ? 0x1b : 0x15);
-    Ov258_StepCue(node, 0x5a, 1, 7);
+    Ov258_StepCue(node, 1, 3, (u16)6);
+    Ov258_StepCue(node, 0x36, 2, (u16)(*(int *)(*state + 0x460) != 0 ? 0x1b : 0x15));
+    Ov258_StepCue(node, 0x5a, 1, (u16)7);
     if (state[0xd] >= 0x550 && *(u16 *)(state + 0x14) == 6) {
         at = *(VecFx32 *)state[3];
         (*(u16 *)(state + 0x14))--;

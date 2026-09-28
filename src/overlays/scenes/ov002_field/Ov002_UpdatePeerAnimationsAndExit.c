@@ -16,8 +16,12 @@ struct Ov002LinkCtx {
 typedef struct Ov002PeerExitCommand { u8 nKind,nSlot,nExitKey; } Ov002PeerExitCommand;
 extern Ov002LinkCtx *data_ov002_0207fa10;
 extern u8 data_0204be04,data_0204c240;
+/* Defined taking argument 0 as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void *GetTrackEntryBase(u16);
 extern u16 Sequence_UpdateTracks(void *,int);
+/* Defined taking argument 1 as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int Anim_GetLengthQ12(void *,u16);
 extern void Anim_SetFrameWrapped(void *,u16,int);
 extern void SceneNode_Enable(void *);

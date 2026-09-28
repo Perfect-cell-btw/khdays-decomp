@@ -76,10 +76,10 @@ typedef struct Ov016Breakable {
 } Ov016Breakable;
 
 extern void  ReleaseNodeResources(void *pNode);                              /* release the node's resources */
-extern void *Ov002_List_ScaleEntryTag(int nKey, u16 nArg);                 /* resolve a pickup piece */
+extern void *Ov002_List_ScaleEntryTag(int nKey, int nArg);                 /* resolve a pickup piece */
 extern int   Ov002_DispatchNodeEvent(void *pPiece, Ov016LaunchRecord *pRecord); /* deliver a hit record */
 extern void  Ov002_SetFieldBit0(void *pPiece, int nMode);            /* retire a piece */
-extern int   Slot_Spawn(int nSlot, int nId, VecFx32 *pPos, u16 nFlags); /* Slot_Spawn */
+extern int   Slot_Spawn(int nSlot, int nId, VecFx32 *pPos, unsigned int nFlags); /* Slot_Spawn */
 extern void  Ov002_RebindAnimTracks(void *pNode, int nTrack, int nFrame); /* rewind a sequence */
 extern void  SceneNode_Enable(void *pNode);                              /* SceneNode_Enable */
 extern void  Scene_DrawNode(void *pNode);                              /* Scene_DrawNode */

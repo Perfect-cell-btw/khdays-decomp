@@ -89,7 +89,7 @@ extern int   Ov008_PlaceNodeOnPage(Ov008MenuContext *pCtx, Ov008Message15Record 
 extern void  Ov008_RefreshInventoryRow(Ov008MenuContext *pCtx, int nItemId);           /* Ov008_RefreshInventoryRow */
 extern void  Ov008_ClearNodeCells(Ov008MenuContext *pCtx, void *pNode);           /* Ov008_ClearNodeCells */
 extern void  Ov008_RemoveAndFreeBlock(Ov008MenuContext *pCtx, void *pNode);           /* unlink the node */
-extern void  Ov008_BumpRowCounter(Ov008MenuContext *pCtx, int nItemId, char nDelta); /* Ov008_BumpRowCounter */
+extern void  Ov008_BumpRowCounter(Ov008MenuContext *pCtx, int nItemId, int nDelta); /* Ov008_BumpRowCounter */
 extern void  func_ov008_02053464(Ov008GridSummary *pSummary);            /* release a summary */
 extern void  EnqueueObjGfxCommand(void *pSurface);                                      /* EnqueueObjGfxCommand */
 extern char  Ov008_CountGridEntriesForOwner(Ov008MenuContext *pCtx, int nItemId);           /* Ov008_CountGridEntriesForOwner */

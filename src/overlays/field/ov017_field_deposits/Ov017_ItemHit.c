@@ -40,13 +40,13 @@ typedef struct Ov017PlayerActor {
     Ov017PlayerSub *pSub;     /* 0x4ec */
 } Ov017PlayerActor;
 
-extern int   GameState_GetField(u16 nField, u8 nBit);                      /* GameState_GetField */
+extern int   GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
 extern int   Ov002_Hud_IsPanelOpen(void);                               /* a panel is open */
 extern int   Ov002_GetRootField8b68Alt(void);                               /* a scene change is pending */
 extern int   Ov002_RunShutdownHook(void);                               /* the shutdown hook's verdict */
 extern Ov017PlayerActor *GetEntryField20ByIndex(int nPlayer);                  /* the player's actor */
-extern int   Ov002_FindKeyEntryIndex(short nKey);                         /* key -> entry index */
-extern Ov017KeyEntry *Ov002_GetRootField8d14(short nIndex);              /* entry index -> entry */
+extern int   Ov002_FindKeyEntryIndex(int nKey);                         /* key -> entry index */
+extern Ov017KeyEntry *Ov002_GetRootField8d14(int nIndex);              /* entry index -> entry */
 extern void  Ov022_Member_ShowSpotMessage(int nPlayer, int nKey, int nSpawnId); /* announce the item */
 extern void  Ov017_ResetState5(Ov017Item *pSelf);                   /* Ov017_ItemBeginGiven */
 
@@ -60,13 +60,13 @@ int Ov017_ItemHit(Ov017Item *pSelf, u8 *pHit)
     int nFlags;
     int nKey;
 
-    nBits = (u16)((GameState_GetField(pSelf->nStateField, pSelf->nStateBit) & 0xfffe) >> 1);
+    nBits = (u16)((GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit) & 0xfffe) >> 1);
     if (Ov002_Hud_IsPanelOpen() != 0 || Ov002_GetRootField8b68Alt() != 0 || Ov002_RunShutdownHook() != 0) {
         return 0;
     }
     if ((nBits & 1) == 0 && pSelf->nState == 3) {
         pActor = GetEntryField20ByIndex(pHit[0]);
-        pEntry = Ov002_GetRootField8d14(Ov002_FindKeyEntryIndex(pSelf->nItemKey));
+        pEntry = Ov002_GetRootField8d14((short)(Ov002_FindKeyEntryIndex((short)pSelf->nItemKey)));
         nFlags = pEntry->nFlags & 0xff;
         nKey = (u16)pEntry->nKey;
         nSpawn = pSelf->nSpawnId;

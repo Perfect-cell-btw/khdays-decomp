@@ -10,7 +10,7 @@ typedef struct { int w[11]; } SrtTransform;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
-extern int Ov107_CreateNodeXformTask(int model, int parent, unsigned char kind, int zero, SrtTransform *transform);
+extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero, SrtTransform *transform);
 extern int *func_ov107_020c9848(void);
 extern void VEC_Subtract(const void *a, const VecFx32 *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
@@ -45,8 +45,7 @@ void Ov299_HandleMessage(int owner, unsigned char *command, int arg)
         Srt_SetTranslation(&transform, &translation);
         switch (command[3]) {
         case 0: case 1: case 2:
-            *(int *)(owner + command[3] * 8 + 0x398) = Ov107_CreateNodeXformTask(*(int *)(owner + 0x3c),
-                *(int *)(owner + command[3] * 8 + 0x394), (command[3] != 0 ? 2 : 0) | 0x15, 0, &transform);
+            *(int *)(owner + command[3] * 8 + 0x398) = Ov107_CreateNodeXformTask(*(int *)(owner + 0x3c), *(int *)(owner + command[3] * 8 + 0x394), (unsigned char)((command[3] != 0 ? 2 : 0) | 0x15), 0, &transform);
             if (command[3] == 1) {
                 manager = func_ov107_020c9848();
                 if (manager != 0 && *manager != 0) {

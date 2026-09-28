@@ -3,7 +3,7 @@
  * the slot handler, 2 just refreshes. Anything else is ignored, and so is any
  * message of another kind (the context is still fetched first, unconditionally). */
 extern int Ov008_GetPageB(void *message);
-extern void Ov008_MissionListSelectRow(int ctx, unsigned short payload, int flags);
+extern void Ov008_MissionListSelectRow(int ctx, int payload, int flags);
 extern void Ov008_MissionListSelect(int ctx);
 
 void Ov008_HandleKind4Message(unsigned int *message, int kind) {

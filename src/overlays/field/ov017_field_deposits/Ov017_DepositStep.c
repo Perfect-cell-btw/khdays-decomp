@@ -74,7 +74,7 @@ typedef struct Ov017Deposit {
 extern int   Ov002_GetModuleScale(void);                               /* frame delta */
 extern int   Ov017_DepositAdvanceFrame(Ov017Deposit *pSelf, void *pNode, int nDelta, int bLoop); /* Ov017_DepositAdvanceFrame */
 extern int   Ov017_DepositAdvanceCrackFrame(Ov017Deposit *pSelf, void *pNode, int nDelta, int bLoop); /* Ov017_DepositAdvanceCrackFrame (the loop flag is ignored) */
-extern void  GameState_SetField(u16 nField, u8 nBit, u16 nValue);          /* GameState_SetField */
+extern void  GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);          /* GameState_SetField */
 extern void  ReleaseNodeResources(void *pNode);                              /* release the node's resources */
 extern void  Ov017_StoreArgsRunTwoSubActionsIfFlag4(Ov017Deposit *pSelf, void *pNode, int nTrack, int nLength, int nFrame); /* Ov017_DepositPlayAnim */
 extern void  Ov017_StoreArgsRunTwoSubActionsIfFlag4_2(Ov017Deposit *pSelf, void *pNode, int nTrack, int nLength, int nFrame); /* Ov017_DepositPlayCrackAnim */

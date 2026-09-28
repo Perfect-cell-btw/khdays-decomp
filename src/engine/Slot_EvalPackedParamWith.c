@@ -9,7 +9,7 @@ struct Params {
 
 extern struct Params data_0204c590[];
 extern unsigned char data_0204c678[];
-extern int BitArray_SetField(unsigned char *p, int hi, int lo, unsigned short d);
+extern int BitArray_SetField(unsigned char *p, int hi, int lo, int d);
 
 int Slot_EvalPackedParamWith(int a, int b, int c) {
     struct Params *v = &data_0204c590[b - 1];

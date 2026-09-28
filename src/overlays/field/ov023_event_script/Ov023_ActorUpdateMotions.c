@@ -46,16 +46,16 @@ typedef struct Ov023Actor {
     int  nEntity;             /* 0x1a38 */
 } Ov023Actor;
 
-extern int  LoadArrayInt244(u16 nEntity);                             /* Entity_GetSpeed */
+extern int  LoadArrayInt244(int nEntity);                             /* Entity_GetSpeed */
 extern int  BuildSlotMask(void *pAnim, int nSpeed);                 /* Anim_GetFinishedMask */
-extern int  Anim_GetFrame(void *pAnim, u16 nTrack);                 /* Anim_GetFrame */
+extern int  Anim_GetFrame(void *pAnim, int nTrack);                 /* Anim_GetFrame */
 extern void Ov023_ActorFlushSounds(Ov023Actor *pActor);                /* Ov023_ActorFlushSounds */
-extern void Anim_SetFrameWrapped(void *pAnim, u16 nTrack, int nFrame);     /* Anim_SetFrameWrapped */
-extern void SNDi_ProcessEntryAlt(u16 nEntity);                      /* Entity_Release (0202bc0c) */
+extern void Anim_SetFrameWrapped(void *pAnim, int nTrack, int nFrame);     /* Anim_SetFrameWrapped */
+extern void SNDi_ProcessEntryAlt(int nEntity);                      /* Entity_Release (0202bc0c) */
 extern void Ov023_ActorFinish(Ov023Actor *pActor);                /* Ov023_ActorFinish */
 extern void Ov023_ActorPopMotion(Ov023Actor *pActor, int nTrack);    /* Ov023_ActorPopMotion */
 extern void Ov023_ResetTimers(Ov023Actor *pActor);                /* Ov023_ActorRestartAnim */
-extern int  Anim_GetLengthQ12(void *pAnim, u16 nTrack);                 /* Anim_GetLengthQ12 */
+extern int  Anim_GetLengthQ12(void *pAnim, int nTrack);                 /* Anim_GetLengthQ12 */
 extern void Ov023_ActorPopEffect(Ov023Actor *pActor);                /* Ov023_ActorPopEffect */
 extern void Ov023_ResetActorModel(Ov023Actor *pActor);                /* Ov023_ResetActorModel */
 extern void Ov023_DetachActorModel(Ov023Actor *pActor);                /* Ov023_DetachActorModel */

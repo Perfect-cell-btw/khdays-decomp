@@ -11,8 +11,8 @@
 struct EffectPair { int res; int handle; };
 struct Ov258Effects { char pad[0x464]; struct EffectPair pair[0x30]; };
 
-extern int Ov107_CreateNodeBodyTask(int model, int res, u8 kind, void *at, int a, int b);
-extern int Ov107_CreateNodeXformTaskFx24(int model, int res, u8 kind, int arg, int scale, u8 *pos);
+extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
+extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, u8 *pos);
 extern int Ov258_SpawnMarker(char *self, int rig, VecFx32 *pos);
 extern int Ov258_SpawnEffectB(char *self, int rig, VecFx32 *pos, int slot);
 extern int Ov258_SpawnEffectA(char *self, int rig, VecFx32 *pos, int slot);
@@ -55,11 +55,10 @@ int Ov258_OnMessage(char *self, u8 *msg, int arg)
         case 3:
         case 4:
         case 5:
-            ((struct Ov258Effects *)self)->pair[msg[3]].handle = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), ((struct Ov258Effects *)self)->pair[msg[3]].res,
-                                                      msg[3] == 0xc ? 1 : 5, self + 0xa0, msg[4], 0);
+            ((struct Ov258Effects *)self)->pair[msg[3]].handle = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), ((struct Ov258Effects *)self)->pair[msg[3]].res, (u8)(msg[3] == 0xc ? 1 : 5), self + 0xa0, msg[4], 0);
             break;
         case 10:
-            ((struct Ov258Effects *)self)->pair[msg[3]].handle = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), ((struct Ov258Effects *)self)->pair[msg[3]].res, 5, self + 0xa0, msg[4], 0);
+            ((struct Ov258Effects *)self)->pair[msg[3]].handle = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), ((struct Ov258Effects *)self)->pair[msg[3]].res, (u8)5, self + 0xa0, msg[4], 0);
             break;
         case 6:
         case 7:
@@ -78,8 +77,7 @@ int Ov258_OnMessage(char *self, u8 *msg, int arg)
             u8 kind = msg[3] >= 0x28 ? 0x17 : (msg[3] >= 0x21 ? 0xd : 5);
             int scale = (msg[3] == 6 || msg[3] == 7 || msg[3] == 0x16) ? 0x1000 : 0x3000;
 
-            ((struct Ov258Effects *)self)->pair[msg[3]].handle = Ov107_CreateNodeXformTaskFx24(
-                *(int *)(self + 0x3c), ((struct Ov258Effects *)self)->pair[msg[3]].res, kind, 0, scale, msg + 5);
+            ((struct Ov258Effects *)self)->pair[msg[3]].handle = Ov107_CreateNodeXformTaskFx24(*(int *)(self + 0x3c), ((struct Ov258Effects *)self)->pair[msg[3]].res, (u8)kind, 0, scale, msg + 5);
         }
             break;
         case 0x2a:
@@ -99,12 +97,10 @@ int Ov258_OnMessage(char *self, u8 *msg, int arg)
             ((struct Ov258Effects *)self)->pair[j + 0xc].handle = Ov258_SpawnEffectB(self, ((struct Ov258Effects *)self)->pair[j + 0xc].res, &pos, j);
             break;
         case 0x17:
-            ((struct Ov258Effects *)self)->pair[msg[3]].handle = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), ((struct Ov258Effects *)self)->pair[msg[3]].res, 5,
-                                                      (void *)(*(int *)(self + 0x44c) + 4), msg[4], 0);
+            ((struct Ov258Effects *)self)->pair[msg[3]].handle = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), ((struct Ov258Effects *)self)->pair[msg[3]].res, (u8)5, (void *)(*(int *)(self + 0x44c) + 4), msg[4], 0);
             break;
         case 0x18:
-            ((struct Ov258Effects *)self)->pair[msg[3]].handle = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), ((struct Ov258Effects *)self)->pair[msg[3]].res, 5,
-                                                      (void *)(*(int *)(self + 0x450) + 4), msg[4], 0);
+            ((struct Ov258Effects *)self)->pair[msg[3]].handle = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), ((struct Ov258Effects *)self)->pair[msg[3]].res, (u8)5, (void *)(*(int *)(self + 0x450) + 4), msg[4], 0);
             break;
         case 0x1b:
             for (j = 0; j < 6; j++) {

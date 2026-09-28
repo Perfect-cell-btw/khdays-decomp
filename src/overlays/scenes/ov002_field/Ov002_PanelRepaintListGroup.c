@@ -48,7 +48,7 @@ extern void Ov002_PanelRepaintListRow(NNSFndList *pList, int nIndex, int nSlot,
                                 int nEntry, int nColumn, int bEnabled,
                                 int bRightAlign, int bAlt);
 extern int Ov002_ForwardToSubDc(int nTag);
-extern void Ov002_PositionSubDcHandle_2(int nHandle, short nValue, short nKind);
+extern void Ov002_PositionSubDcHandle_2(int nHandle, int nValue, int nKind);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int nHandle);
 extern void Ov002_SelectEntry(int nItemId);
 extern Ov002PanelEntry *NNS_FndGetNthListObject(NNSFndList *pList, u16 nIndex);

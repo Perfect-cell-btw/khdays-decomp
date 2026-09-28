@@ -54,7 +54,7 @@ extern Ov008MenuEntryDef data_ov008_02090598[];
 
 extern Ov008SelCtx *Ov008_GetMenuContext(void);                     /* Ov008_GetMenuContext */
 extern int  Ov008_GetContext(void);                             /* Ov008_GetContext */
-extern void Ov008_DispatchFrom2DTable(Ov008WidgetPick *pPick, s16 nItem, int nColumn); /* Ov008_DispatchFrom2DTable */
+extern void Ov008_DispatchFrom2DTable(Ov008WidgetPick *pPick, int nItem, int nColumn); /* Ov008_DispatchFrom2DTable */
 extern void Ov008_SwapParamOverrides(int nCtx, void *pEntry);           /* Ov008_SwapParamOverrides */
 extern void Ov008_ReleaseTwoSlots_2(int nCtx, void *pEntry);           /* Ov008_ReleaseTwoSlots */
 extern void Ov008_PushSubitemSet(int nCtx, void *pEntry, int nValue); /* Ov008_PushSubitemSet */

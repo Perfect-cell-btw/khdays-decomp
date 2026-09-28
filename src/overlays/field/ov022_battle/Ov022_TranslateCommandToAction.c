@@ -72,7 +72,7 @@ extern int Ov022_IsActionAllowed(u8 *pBlk);
 extern int func_ov022_0209fc78(struct Actor *pActor, int nSlot);
 extern int Ov002_IsMissionClearFinished(int nWhich);
 extern int Ov022_GetSubKindIfState2(struct Actor *pActor);
-extern int Ov002_IsObjectFree(struct Equip *pEquip, u8 nId);
+extern int Ov002_IsObjectFree(struct Equip *pEquip, int nId);
 extern int Ov022_GetByte2770(struct Actor *pActor);
 extern void Ov022_FireChargeRelease(struct Actor *pActor);
 extern int Ov022_IsState9Or6WithFlag200(u8 *pBlk);
@@ -80,7 +80,7 @@ extern int Ov022_IsSlotReady(u8 *pBlk);
 extern int func_ov022_02095450(u8 *pBlk);
 extern int Ov022_IsByte2Zero(u8 *pMask);
 extern int Ov022_IsByte1Zero(u8 *pBlk);
-extern int func_ov022_020b1554(u8 nId);
+extern int func_ov022_020b1554(int nId);
 
 void Ov022_TranslateCommandToAction(struct Actor *pActor)
 {

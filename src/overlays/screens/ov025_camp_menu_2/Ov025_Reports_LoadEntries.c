@@ -56,7 +56,7 @@ extern u32 GameState_GetField(int field, int bits);
 extern void *Archive_LoadFile(u32 path, int heap);
 extern void MsgDb_LoadDb(int db, int heap);
 extern int OS_SNPrintf(char *dst, int cap, const char *fmt, ...);
-extern u32 Ov025_PackSlotTag(u8 member);
+extern u32 Ov025_PackSlotTag(int member);
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 size);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
 extern void Res_LoadSpriteSet(SpriteResSet *out, void *file, int screen, int character, int palette);

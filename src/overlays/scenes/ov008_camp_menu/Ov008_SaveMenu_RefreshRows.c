@@ -17,7 +17,7 @@ typedef struct Ov009SaveContext {
 extern int Ov008_GetContext(void);
 extern int Ov008_FindEntryById(int manager, int id);
 extern void Ov008_ReleaseTwoSlotsEx_2(int manager, int entry, int slot);
-extern void Ov008_ReleaseTwoSlotsEx(int manager, int entry, u16 value);
+extern void Ov008_ReleaseTwoSlotsEx(int manager, int entry, int value);
 extern void Ov008_SetEntrySlotsVisible(int manager, int entry, int visible);
 extern const int data_ov008_0208f588[3][8];
 
@@ -37,11 +37,7 @@ void Ov008_SaveMenu_RefreshRows(Ov009SaveContext *ctx)
         entry = Ov008_FindEntryById(manager, rowIndex + 1);
         Ov008_ReleaseTwoSlotsEx_2(manager, entry, 3);
         if (row->state == 1) {
-            Ov008_ReleaseTwoSlotsEx(
-                manager,
-                entry,
-                (u16)(*(int *)((u8 *)ctx + 0x28) + 2)
-            );
+            Ov008_ReleaseTwoSlotsEx(manager, entry, (u16)(*(int *)((u8 *)ctx + 0x28) + 2));
         } else if (row->state == 2) {
             Ov008_ReleaseTwoSlotsEx(manager, entry, 0);
         } else {

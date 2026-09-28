@@ -57,6 +57,8 @@ extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern u8    Ov008_AssignTrackedNodeId(Ov008MenuContext *pCtx, Ov008TrackedNode *pNode); /* Ov008_AssignTrackedNodeId */
 extern int   Ov008_PlaceNodeShape(Ov008MenuContext *pCtx, Ov008TrackedNode *pNode, u32 nPage, int nLeft, int nTop, int nArg); /* place the node */
 extern void  Ov008_RemoveAndFreeBlock(Ov008MenuContext *pCtx, Ov008TrackedNode *pNode); /* unlink a tracked node */
+/* Defined taking nPage as int, nX as int, nY as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void  Ov008_ClearGridSlot(Ov008MenuContext *pCtx, u16 nPage, u16 nX, u16 nY); /* Ov008_ClearGridSlot */
 extern void  NNSi_FndFreeFromDefaultHeap(void *pBlock);
 

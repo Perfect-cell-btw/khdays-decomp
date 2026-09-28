@@ -21,7 +21,7 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov014_Instantiate(unsigned short id, Ov014EmitParams *params);
+extern int Ov014_Instantiate(int id, Ov014EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov014_VmCmd07c4(void *self, char *descs) {

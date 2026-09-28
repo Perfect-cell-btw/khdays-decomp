@@ -25,7 +25,7 @@ extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);
 extern void MI_CpuFill8(void *pDest, u8 nValue, u32 nSize);
 extern void Actor_ArmWithMessage(void *p, int nSlot, int a2, int a3, int a4);
 extern void Entity_Register(void *p, u32 nParam, int a2, int a3);
-extern void Render_SubmitNode(void *p, u16 nId, int a2, void *pParams);
+extern void Render_SubmitNode(void *p, int nId, int a2, void *pParams);
 extern void Obj_SetFlagBit3(void *p, int nMode);
 extern void BindAnimTrack(void *p, u16 nIndex, void *pOut, int nMode);
 

@@ -37,7 +37,7 @@ typedef struct Ov247ActionNode {
 } Ov247ActionNode;
 
 extern void Ov107_PostTagUpdate(void *owner, int anim, int flag);
-extern void SetIndexedSlot(int *node, unsigned short slot, int value);
+extern void SetIndexedSlot(int *node, int slot, int value);
 extern void Ov247_StepLeapMotion(Ov247ActionNode *node);
 extern const short data_0203d210[];
 
@@ -59,8 +59,7 @@ void Ov247_StartLeapMotion(Ov247ActionNode *node)
         Ov247ActionNode *pNextNode = node;
         state->vVelocity.z = FX_Mul(nCos, 0x300);
         state->nPhaseTimer = 0;
-        SetIndexedSlot((int *)pNextNode, pNextNode->nHandlerSlot,
-                      nNextHandler);
+        SetIndexedSlot((int *)pNextNode, (unsigned short)pNextNode->nHandlerSlot, nNextHandler);
     }
 }
 

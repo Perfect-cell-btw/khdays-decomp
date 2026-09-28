@@ -45,8 +45,8 @@ extern u16 LoadGlobalU16At0(void);
 extern int RandNext(void);
 extern u32 Slot_EvalPackedParam(int,int);
 extern int Ov002_TakeEntryOfKind1(void);
-extern int Ov002_FindKeyEntryIndex(s16);
-extern void *Ov002_GetRootField8d14(s16);
+extern int Ov002_FindKeyEntryIndex(int);
+extern void *Ov002_GetRootField8d14(int);
 extern int Ov002_GetSlotTableByte(int);
 extern int Session_RandNextScaled(int);
 

@@ -3,7 +3,7 @@
 
 #include "nitro/types.h"
 
-extern int Anim_GetFrame(int bank, u16 id);
+extern int Anim_GetFrame(int bank, int id);
 
 void Ov252_FetchArmourRecords(int actor, signed char which, int *out)
 {
@@ -13,7 +13,7 @@ void Ov252_FetchArmourRecords(int actor, signed char which, int *out)
     *(signed char *)(actor + which + 0x39c) = *(signed char *)(actor + 0x310);
     for (i = 0; i < 4; i++) {
         if (i != which) {
-            out[i] = Anim_GetFrame(bank, i == 0 ? 0 : i == 1 ? 1 : i == 2 ? 2 : 4);
+            out[i] = Anim_GetFrame(bank, (u16)(i == 0 ? 0 : i == 1 ? 1 : i == 2 ? 2 : 4));
         }
     }
 }

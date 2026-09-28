@@ -36,7 +36,7 @@ static inline int Ov044_GetBoneBase(char *object)
 }
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void Entity_ForwardToSlot(int, u16, int, void *, int);
+extern void Entity_ForwardToSlot(int, int, int, void *, int);
 extern int OS_SPrintf(char *, const char *, const char *);
 extern void TailForwardTrackEntry(int, void *, int, int);
 extern int ArrayEntryPtrD0(int);
@@ -84,8 +84,7 @@ void Ov099_InitPanelObject(struct PanelInitConfig *config)
     params.enabled = 1;
     params.scale = 9 << 8;
     params.limit = 0xf << 8;
-    Entity_ForwardToSlot(*(signed char *)(object + 0x4bc),
-                  (u16)(1 << *(u8 *)(object + 8)), 0, &params, 0);
+    Entity_ForwardToSlot(*(signed char *)(object + 0x4bc), (u16)(1 << *(u8 *)(object + 8)), 0, &params, 0);
 
     nameGroup = config->nameGroup;
     alternateName = config->alternateName;

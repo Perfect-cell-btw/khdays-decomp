@@ -17,7 +17,7 @@ typedef struct Ov015PickupKindRow {
 } Ov015PickupKindRow;
 
 extern int  Ov002_GetCtxTableByte(int nKind);                          /* kind -> table byte */
-extern void Render_SubmitNode(void *pNode, u16 nId, int nArg, void *pParams); /* Render_SubmitNode */
+extern void Render_SubmitNode(void *pNode, int nId, int nArg, void *pParams); /* Render_SubmitNode */
 extern void Actor_SetBindingByte(void *pBinding, int nIndex, u8 nValue);   /* Actor_SetBindingByte */
 extern int  Ov002_FindKeyIndex(int nKey);                           /* record index of a keyed object */
 extern void Ov002_SetKeyNodeVisible(int nKey, int bShow, int nPriority); /* show / hide a keyed object's node */
@@ -53,7 +53,7 @@ void Ov015_PickupShow(Ov015Pickup *pPickup)
     bCollidable = 1;
     pDef = pPickup->pDef;
     if (pPickup->pModel != 0) {
-        Render_SubmitNode(pPickup->pModel, Ov002_GetCtxTableByte(pPickup->nKind), 0, 0);
+        Render_SubmitNode(pPickup->pModel, (u16)(Ov002_GetCtxTableByte(pPickup->nKind)), 0, 0);
         Actor_SetBindingByte(pPickup->pModel + 0x11c, 1, 5);
     }
     if (pPickup->nStateBits & 2) {

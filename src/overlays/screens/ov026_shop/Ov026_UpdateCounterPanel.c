@@ -1,9 +1,9 @@
 extern char *data_ov026_02091368;
 extern char *data_0204be18;
-extern int Ov026_FindEntryByTag(void *p, unsigned short id);
+extern int Ov026_FindEntryByTag(void *p, unsigned int id);
 extern void Ov026_TagTracker_InvokeCallback(void *p, int cell);
 extern void Obj_InvokeInnerVtable8(void *p, int a, int b, int c, int d);
-extern void Ov026_ShowThreeDigitCells(int handle, unsigned short value, void *cells);
+extern void Ov026_ShowThreeDigitCells(int handle, unsigned int value, void *cells);
 
 /* First-time setup of the counter panel: loads its background, lays it out and fills in the two
  * totals from the save header. */
@@ -17,8 +17,6 @@ void Ov026_UpdateCounterPanel(void) {
         Obj_InvokeInnerVtable8(layout, 0, 0, 0xb0, 0x30);
         *(int *)panel = 1;
     }
-    Ov026_ShowThreeDigitCells(handle,
-        *(unsigned short *)(*(char **)&data_0204be18 + 0x196a), panel + 8);
-    Ov026_ShowThreeDigitCells(handle,
-        *(unsigned short *)(*(char **)&data_0204be18 + 0x1968), panel + 0x14);
+    Ov026_ShowThreeDigitCells(handle, *(unsigned short *)(*(char **)&data_0204be18 + 0x196a), panel + 8);
+    Ov026_ShowThreeDigitCells(handle, *(unsigned short *)(*(char **)&data_0204be18 + 0x1968), panel + 0x14);
 }

@@ -28,12 +28,12 @@ extern u8 data_0204c240;
 extern int func_ov022_02083f5c(void);
 extern void func_ov022_0209a68c(u32 *pEnt, int nOn);
 extern u32 Session_GetLocalPlayerIndex(void);
-extern int Ov002_MarkPeerReady(u8 nId);
+extern int Ov002_MarkPeerReady(int nId);
 extern void ForwardToHandlerOrCurrentObject(int a, int b, int c);
 extern void PlaySoundChecked(int a, int nCue);
 extern void Ov022_PlayEntityVoice(u32 *pEnt, int a, int nCue);
 extern void Ov022_SetBit3OnPtr20(int nCtx, int nOn);
-extern void Ov002_GetPanelWord0220(u8 nId, u16 nHp);
+extern void Ov002_GetPanelWord0220(int nId, int nHp);
 
 void Ov022_ActorSetHp(u32 *pEnt, int nValue)
 {

@@ -5,7 +5,7 @@
 #include "nitro/fx_types.h"
 
 extern void BindAnimTrack(int a, unsigned short b, int c, int d);
-extern void Anim_SetFrameWrapped(int a, unsigned short b, int c);
+extern void Anim_SetFrameWrapped(int a, int b, int c);
 
 void Ov036_ApplyChargeLevelOnce(int self, int bit) {
     int *blk = (int *)(self + 0x2c80);
@@ -16,7 +16,7 @@ void Ov036_ApplyChargeLevelOnce(int self, int bit) {
     for (i = 0; i < 5; i++) {
         if (((short *)((char *)blk + 0xec))[(unsigned short)i] > 0) {
             BindAnimTrack((int)blk + 0xc, i, (int)blk + 0xec, 0);
-            Anim_SetFrameWrapped((int)blk + 0xc, i, 0);
+            Anim_SetFrameWrapped((int)blk + 0xc, (unsigned short)i, 0);
         }
     }
     *(VecFx32 *)((char *)blk + 0xb0) = *(VecFx32 *)(self + 0x8c + 0x400);

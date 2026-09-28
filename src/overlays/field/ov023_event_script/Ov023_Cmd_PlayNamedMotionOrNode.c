@@ -1,6 +1,6 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int func_02020d10(int ctx, int arg);
-extern char *ArrayEntryPtrD0(unsigned short index);
+extern char *ArrayEntryPtrD0(int index);
 extern void BindAnimTrack(void *dst, int kind, void *src, short value);
 
 extern void Ov023_ResolveSpeakerOperands(int ctx, char *args, int id, int *kind, char *name);

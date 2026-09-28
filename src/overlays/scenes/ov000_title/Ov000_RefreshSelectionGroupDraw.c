@@ -33,8 +33,7 @@ extern Ov000EntryIdGrid data_ov000_0205a7ac;
 extern int *Ov000_FindEntryById(Ov000ObjectList *objectList, int id);
 extern void Ov000_SetEntrySlotsVisible(Ov000ObjectList *objectList, int *entry,
                                 int visible);
-extern void Ov000_ReleaseTwoSlotsEx(Ov000ObjectList *objectList, int *entry,
-                                u16 mode);
+extern void Ov000_ReleaseTwoSlotsEx(Ov000ObjectList *objectList, int *entry, int mode);
 extern void Ov000_ReleaseTwoSlotsEx_2(Ov000ObjectList *objectList, int *entry,
                                 int mode);
 
@@ -55,9 +54,7 @@ void Ov000_RefreshSelectionGroupDraw(void) {
         if (group >= 3) {
             Ov000_ReleaseTwoSlotsEx(&context->objectList, entry, 5);
         } else if (selectionGroup->state == 1) {
-            Ov000_ReleaseTwoSlotsEx(
-                &context->objectList, entry,
-                (u16)(data_ov000_0205ac24->selectionGroups[group].mode + 2));
+            Ov000_ReleaseTwoSlotsEx(&context->objectList, entry, (u16)(data_ov000_0205ac24->selectionGroups[group].mode + 2));
         } else if (selectionGroup->state == 2) {
             Ov000_ReleaseTwoSlotsEx(&context->objectList, entry, 0);
         } else {

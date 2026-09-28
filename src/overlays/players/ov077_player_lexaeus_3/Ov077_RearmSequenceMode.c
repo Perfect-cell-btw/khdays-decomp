@@ -8,7 +8,7 @@
 
 extern void NNS_G3dRenderObjRemoveAnmObj(void *p, int handle);
 extern void BindAnimTrack(void *p, u16 idx, int a, short b);
-extern void Anim_SetFrameWrapped(void *p, u16 idx, int a);
+extern void Anim_SetFrameWrapped(void *p, int idx, int a);
 
 void Ov077_RearmSequenceMode(int self, int *block, int mode)
 {

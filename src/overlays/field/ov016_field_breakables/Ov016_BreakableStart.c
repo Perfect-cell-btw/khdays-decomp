@@ -38,7 +38,7 @@ extern void *Ov002_LookupChannelEntry(const char *pName);                 /* nam
 extern void  Entity_Register(void *pNode, void *pEntry, int nA, int nB); /* bind a model node */
 extern void  RegisterSeqAndInit(void *pNode, void *pEntry, int nA, int nB); /* RegisterSeqAndInit */
 extern u8    Ov002_GetLastPositiveSlotValue(void *pNode);                        /* frame count of a node */
-extern int   GameState_GetField(u16 nField, u8 nBit);                      /* GameState_GetField */
+extern int   GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
 extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                   /* Obj_SetFlagBit3 */
 extern void  Res_RequestIdPair(int nId);                                  /* Res_RequestIdPair */
 

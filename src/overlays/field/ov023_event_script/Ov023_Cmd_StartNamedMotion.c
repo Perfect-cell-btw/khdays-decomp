@@ -1,7 +1,7 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
 extern int func_02020d10(int ctx, int arg);
-extern char *ArrayEntryPtrD0(unsigned short index);
+extern char *ArrayEntryPtrD0(int index);
 
 extern void Ov023_ResolveSpeakerOperands(int ctx, int args, int id, int *kind, char *name);
 extern void Ov023_ActorQueueMotion(void *entity, char *name, int kind, int a, int b, int c);

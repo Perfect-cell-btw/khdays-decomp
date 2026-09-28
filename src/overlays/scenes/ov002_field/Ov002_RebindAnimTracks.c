@@ -14,7 +14,7 @@
 #include "nitro/types.h"
 
 extern void BindAnimTrack(void *pAnim, u16 nTrack, void *pTable, short nBlend);
-extern void Anim_SetFrameWrapped(void *pAnim, u16 nTrack, int nFrame);
+extern void Anim_SetFrameWrapped(void *pAnim, int nTrack, int nFrame);
 
 /* Rebind and seek every track of an animation that has a table entry. */
 void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame) {

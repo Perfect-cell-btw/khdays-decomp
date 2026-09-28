@@ -9,7 +9,7 @@
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-u32 PMi_WriteRegisterAsync(u16 registerAddr, u16 data, PMCallback callback, void * arg);
+u32 PMi_WriteRegisterAsync(int registerAddr, int data, PMCallback callback, void * arg);
 typedef enum WVRResult {
     WVR_RESULT_SUCCESS = 0,
     WVR_RESULT_OPERATING,
@@ -27,7 +27,7 @@ void PMi_WaitBusy(void);
 void PMi_DummyCallback(u32 result, void * arg);
 extern void PMi_WaitBusy (void);
 extern void PMi_DummyCallback (u32 result, void * arg);
-extern u32 PMi_WriteRegisterAsync (u16 registerAddr, u16 data, PMCallback callback, void * arg);
+extern u32 PMi_WriteRegisterAsync (int registerAddr, int data, PMCallback callback, void * arg);
 
 /* PMi_WriteRegister -- NitroSDK pm.c: PMi_WriteRegister. */
 u32 PMi_WriteRegister (u16 registerAddr, u16 data)

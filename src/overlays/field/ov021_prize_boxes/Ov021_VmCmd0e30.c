@@ -23,7 +23,7 @@ typedef struct {
 
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
-extern int Ov021_CreateEmblemClass(unsigned short id, Ov021EmitParams *params);
+extern int Ov021_CreateEmblemClass(int id, Ov021EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov021_VmCmd0e30(void *self, char *descs) {

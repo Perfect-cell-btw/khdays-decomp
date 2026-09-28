@@ -18,7 +18,7 @@ typedef struct Ov016Kickable {
     u16 nDoorFlags;           /* 0x464: bit 8 = locked */
 } Ov016Kickable;
 
-extern int GameState_GetField(u16 nField, u8 nBit);   /* GameState_GetField */
+extern int GameState_GetField(int nField, int nBit);   /* GameState_GetField */
 
 int Ov016_KickableQueryParamA(Ov016Kickable *pSelf)
 {

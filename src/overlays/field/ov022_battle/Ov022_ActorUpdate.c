@@ -129,11 +129,11 @@ extern void Ov022_UpdateRumble(struct Actor *pActor);
 extern void Ov022_UpdateSubsystems(struct Actor *pActor);
 extern int func_ov022_020ad7b0(struct Actor *pActor);
 extern int Ov022_IsState9Or6WithFlag200(void *pObj);
-extern void Ov002_GetPanelWord0220Alt(u8 nId, int nOn);
+extern void Ov002_GetPanelWord0220Alt(int nId, int nOn);
 extern void Ov022_SpendDecodeBudget(struct Actor *pActor);
 extern void Ov022_ComputeAimPoint(VecFx32 *pOut, struct Actor *pActor);
 extern void Ov107_MoveNodeAndRelayout(struct Sub *pSub, const VecFx32 *pPos);
-extern void Ov002_CollectNearbySpots(int nArea, struct Sub *pSub, u8 nId);
+extern void Ov002_CollectNearbySpots(int nArea, struct Sub *pSub, u32 nId);
 extern void func_ov022_0209a68c(struct Actor *pActor, int nOn);
 extern void Scene_DrawNode(struct NodeAnim *pAnim);
 
@@ -276,8 +276,7 @@ void Ov022_ActorUpdate(struct Actor *pActor)
             pActor->nFlags2 |= (1ULL << 33);
         }
         if (pActor->nSlotIndex >= 0 && pActor->nHp != 0) {
-            Ov002_CollectNearbySpots(Ov002_GetSlotTableByte(pActor->nSlotIndex),
-                                pActor->pSub, pActor->nId);
+            Ov002_CollectNearbySpots(Ov002_GetSlotTableByte(pActor->nSlotIndex), pActor->pSub, pActor->nId);
         }
     }
     if ((pActor->nFlags & (1ULL << 42)) != 0) {

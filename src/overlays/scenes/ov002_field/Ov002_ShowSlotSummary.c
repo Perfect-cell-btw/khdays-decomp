@@ -1,7 +1,7 @@
 extern void Ov002_DestroyOwnedEntry(char *self, int mode);
 extern int Ov002_Field_GetHalf86(void);
 extern char *Ov002_SnapshotChainEntry(int slot, int a, int b);
-extern int Ov002_MakeSecondaryVramKey(unsigned short id);
+extern int Ov002_MakeSecondaryVramKey(unsigned int id);
 extern void Ov002_AppendEntry(int text, void *handler, int arg);
 extern void Ov002_SetCachedString(char *p);
 extern void Ov002_SwapOwnerBlock(void);

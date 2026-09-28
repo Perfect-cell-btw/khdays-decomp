@@ -56,7 +56,7 @@ extern void *Ov008_FindEntryById(void *pWidgets, int nId);                  /* F
 extern void  Ov008_SetEntrySlotsVisible(void *pWidgets, void *pEntry, int bVisible); /* SetEntrySlotsVisible */
 extern void  Obj_InvokeInnerVtable8(void *pSurface, int nX, int nY, int nW, int nH); /* Obj_InvokeInnerVtable8 */
 extern void  INITi_CpuClear32_0x01ff86fc(int nValue, void *pDst, u32 nSize);
-extern void *Ov008_FindEntryByTag(void *pTracker, u16 nTag);                 /* ov008_FindEntryByTag */
+extern void *Ov008_FindEntryByTag(void *pTracker, unsigned int nTag);                 /* ov008_FindEntryByTag */
 extern void  Ov008_InvokeCallback40(void *pTracker, void *pCell);              /* ov008_InvokeCallback40 */
 extern void  Slot_UnlinkIfLinked(int hSlots, int nCell);                          /* Slot_UnlinkIfLinked */
 extern void  Ov008_SetupMenuScreen(void);                                     /* Ov008_SetupMenuScreen */

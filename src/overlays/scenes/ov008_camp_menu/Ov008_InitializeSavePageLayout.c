@@ -23,7 +23,7 @@ extern void *NNSi_FndAllocFromDefaultExpHeap(u32 size);
 extern void MIi_CpuCopyFast(const void *source, void *destination, u32 size);
 extern void NNSi_FndFreeFromDefaultHeap(void *allocation);
 extern void Ov008_LoadLayoutResource(void *context, u32 handle);
-extern void *Ov008_FindEntryByTag(void *context, u16 tag);
+extern void *Ov008_FindEntryByTag(void *context, unsigned int tag);
 extern void Ov008_TagTracker_InvokeCallback(void *context, void *entry);
 extern void Ov008_InitAndAppendTracker(void *context, void *entry,
     u8 x, u8 y, u8 width, u8 height, u16 mask, Ov008TrackerCallback callback);
@@ -68,8 +68,7 @@ void Ov008_InitializeSavePageLayout(Ov008MenuContext *context)
     if (resource != 0) NNSi_FndFreeFromDefaultHeap(resource);
 
     Ov008_LoadLayoutResource(layoutContext, Ov008_PackSlotTag(0x1a));
-    entry = Ov008_FindEntryByTag(layoutContext,
-        data_ov008_0208f130[context->savePageCount - 1] & 0xffff);
+    entry = Ov008_FindEntryByTag(layoutContext, data_ov008_0208f130[context->savePageCount - 1] & 0xffff);
     Ov008_TagTracker_InvokeCallback(layoutContext, entry);
 
     entry = Ov008_FindEntryByTag(layoutContext, 5);

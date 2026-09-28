@@ -20,8 +20,8 @@ struct Owner {
 };
 
 extern int Session_GetLocalPlayerIndex(void);
-extern void Ov002_PanelAddSubEntryAndRepaint(u16 nFirst, u16 nSecond);
-extern void Ov002_RemoveEntryAndReopen(u16 nFirst, u16 nSecond);
+extern void Ov002_PanelAddSubEntryAndRepaint(unsigned int nFirst, int nSecond);
+extern void Ov002_RemoveEntryAndReopen(unsigned int nFirst, unsigned int nSecond);
 extern void Ov002_RefreshMemberPanel(void);
 extern void Ov002_AcceptRequestAndNotify(int nMode);
 extern int GameState_GetField(int nEvent, int nFlag);
@@ -37,12 +37,12 @@ void Ov022_DriveOwnedSound(struct Owner *pOwner, int nSecond, int nFirst,
     aPair[0] = (u16)nFirst;
     if (nDir > 0) {
         if (pOwner->nChannel == Session_GetLocalPlayerIndex()) {
-            Ov002_PanelAddSubEntryAndRepaint(nFirst, nSecond);
+            Ov002_PanelAddSubEntryAndRepaint((u16)nFirst, (u16)nSecond);
         }
         func_020359b4(pOwner->nHandle, aPair);
     } else if (nDir < 0) {
         if (pOwner->nChannel == Session_GetLocalPlayerIndex()) {
-            Ov002_RemoveEntryAndReopen(nFirst, nSecond);
+            Ov002_RemoveEntryAndReopen((u16)nFirst, (u16)nSecond);
             if (GameState_GetField(STOP_EVENT_ID, 1) == 0) {
                 Ov002_AcceptRequestAndNotify(0);
             } else {

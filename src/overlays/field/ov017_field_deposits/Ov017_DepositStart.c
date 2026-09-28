@@ -58,7 +58,7 @@ typedef struct Ov017Deposit {
 extern void *Ov002_LookupChannelEntry(const char *pName);                 /* name -> resource entry */
 extern void  RegisterSeqAndInit(void *pNode, void *pEntry, int nA, int nB); /* RegisterSeqAndInit */
 extern void  Ov017_StoreArgsRunTwoSubActionsIfFlag4(Ov017Deposit *pSelf, void *pNode, int nTrack, int nLength, int nFrame); /* Ov017_DepositPlayAnim */
-extern int   GameState_GetField(u16 nField, u8 nBit);                     /* GameState_GetField */
+extern int   GameState_GetField(int nField, int nBit);                     /* GameState_GetField */
 
 void Ov017_DepositStart(Ov017Deposit *pSelf)
 {

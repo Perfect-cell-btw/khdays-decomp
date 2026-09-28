@@ -36,6 +36,8 @@ typedef struct Ov002SpotStage {
 extern Ov002SpotStage *data_ov002_0207fa28[];
 
 extern int Ov002_GetCtxTableByte(int nSlot);
+/* Defined taking nId as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void *func_0202c208(u16 nId, CollCastParams *pParams);
 extern void ScaleVec3Fixed27(void *pObject, VecFx32 *pOut, VecFx32 *pIn);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);

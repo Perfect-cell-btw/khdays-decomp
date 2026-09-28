@@ -73,6 +73,8 @@ extern void Vec3ScaleAddQ27(int, const Ov002Vec3 *, const Ov002Vec3 *, Ov002Vec3
 extern void Ov002_ReleaseSlotOwner(Ov002Spawned *);
 extern void Ov002_PlaceSlotMarkerOnGround(Ov002Spawned *);
 extern Ov002Vec3 *Ov002_GetElementVelocity(Ov002PieceElement *);
+/* Defined taking argument 0 as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern Hit *func_0202c208(u16, CollCastParams *);
 extern Hit *func_0202c248(u16, CollCastParams *);
 static inline int MulRound(int a, int b) { return (int)(((s64)a * b + 0x800) >> 12); }

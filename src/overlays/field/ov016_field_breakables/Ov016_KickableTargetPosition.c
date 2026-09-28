@@ -18,7 +18,7 @@ typedef struct Ov016Kickable {
     VecFx32 position;         /* 0x488 */
 } Ov016Kickable;
 
-extern int GameState_GetField(u16 nField, u8 nBit);                       /* GameState_GetField */
+extern int GameState_GetField(int nField, int nBit);                       /* GameState_GetField */
 
 VecFx32 *Ov016_KickableTargetPosition(Ov016Kickable *pSelf)
 {

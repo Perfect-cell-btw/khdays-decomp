@@ -34,8 +34,7 @@ extern Ov022SelectionController *NNSi_FndGetCurrentRootHeap(void);
 extern void func_ov022_020847f0(void);
 extern int QueryActiveStateOrDelegate(void);
 extern int Slot_EvalPackedParam(int index, int parameter);
-extern void Ov002_ShowEntryLabel(u16 value21a, u16 value218,
-                                u8 selectionId, int mode);
+extern void Ov002_ShowEntryLabel(int value21a, int value218, int selectionId, int mode);
 
 void Ov022_UpdateSelectionController(void)
 {
@@ -57,10 +56,7 @@ void Ov022_UpdateSelectionController(void)
             if (Slot_EvalPackedParam(QueryActiveStateOrDelegate(), 0x53) != 0) {
                 mode = 1;
             }
-            Ov002_ShowEntryLabel(context->typeOneCandidate->value21a,
-                                context->typeOneCandidate->value218,
-                                context->typeOneCandidate->selectionId19c,
-                                mode);
+            Ov002_ShowEntryLabel(context->typeOneCandidate->value21a, context->typeOneCandidate->value218, context->typeOneCandidate->selectionId19c, mode);
         } else {
             func_ov022_020847f0();
         }

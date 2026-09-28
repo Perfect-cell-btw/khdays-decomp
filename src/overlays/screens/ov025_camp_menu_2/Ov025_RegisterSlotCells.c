@@ -24,10 +24,10 @@ typedef struct Ov008SlotTable {
 
 extern Ov008SlotState *Ov025_GetPageA(void);
 extern void *Ov025_GetCtxBlock9500(void);
-extern Ov008SlotTable *Ov025_GetPageTableEntry(u16 pageId);
+extern Ov008SlotTable *Ov025_GetPageTableEntry(int pageId);
 extern void *Ov025_FindEntryByTag(void *ctx, int tag);
 extern void  Ov025_TagTracker_InvokeCallback(void *ctx, void *cell);
-extern void  Ov025_RetargetCellByTag(u16 tag, int x, int y);
+extern void  Ov025_RetargetCellByTag(unsigned int tag, int x, int y);
 
 void Ov025_RegisterSlotCells(void)
 {

@@ -87,7 +87,7 @@ extern void MsgDb_LoadDb(int db, int mode);
 extern void MsgDb_FetchRecord(GrowthTable **out, int db, int row, int mode);
 extern int FX_Mul(int value, int scale);
 extern int GameState_GetField(int field, int width);                  /* GameState_GetField */
-extern void StoreBytePairKeepMin(int member, int slot, u8 value, u8 *pair);
+extern void StoreBytePairKeepMin(int member, int slot, unsigned int value, u8 *pair);
 extern void Slot_EvalPackedParamWith(int member, int reward, int value);
 extern void ForwardWithFlag1(int member, u16 *pos);
 extern void DispatchByNodeKind(GrowthTable **table);

@@ -2,7 +2,7 @@
  * The guard reads the u16 count into an INT first: comparing the u16 load
  * directly lets mwcc prove it non-negative and emit `beq`, while the ROM
  * branches with the signed `ble`. The loop condition still re-reads it. */
-extern void Ov008_Elem_SetPos(int owner, int entry, unsigned short a, unsigned short b);
+extern void Ov008_Elem_SetPos(int owner, int entry, int a, int b);
 extern void Ov008_TagTracker_InvokeCallback(int owner, int entry);
 
 void Ov008_ReapplyEditsAndCommit(int param_1, int param_2, unsigned short param_3, unsigned short param_4) {

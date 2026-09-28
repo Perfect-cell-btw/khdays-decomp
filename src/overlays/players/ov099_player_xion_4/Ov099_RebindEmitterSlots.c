@@ -13,7 +13,7 @@
  *     int leaves the function short and looks like a codegen difference.
  * The correct prototypes were already written down in ov038's parked file next door.
  */
-extern void Anim_SetFrameWrapped(void *p, unsigned short i, int z);
+extern void Anim_SetFrameWrapped(void *p, int i, int z);
 extern void NNS_G3dRenderObjRemoveAnmObj(void *base, int item);
 extern void BindAnimTrack(void *p, unsigned short i, int a, short m);
 
@@ -25,6 +25,6 @@ void Ov099_RebindEmitterSlots(int r0, int r1) {
             ((int *)r0)[i + 3] = 0;
         }
         BindAnimTrack((void *)r0, i, r0 + 0x108, (short)r1);
-        Anim_SetFrameWrapped((void *)r0, i, 0);
+        Anim_SetFrameWrapped((void *)r0, (unsigned short)i, 0);
     }
 }

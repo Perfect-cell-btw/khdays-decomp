@@ -1,6 +1,6 @@
-extern int Ov002_ForwardToSubDc(unsigned short id);
+extern int Ov002_ForwardToSubDc(int id);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int);
-extern void Ov002_Ctx_SetTagTrackerNodeArmed_3(int handle, unsigned char slot);
+extern void Ov002_Ctx_SetTagTrackerNodeArmed_3(int handle, int slot);
 extern int data_ov002_0207dd14;
 
 /* Prints one help page: the page title, the entry the cursor is on, the "back" line on page 0,
@@ -12,7 +12,6 @@ void Ov002_PrintHelpPage(int page, int *cursor) {
     if (page == 0) {
         Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(1));
     }
-    Ov002_Ctx_SetTagTrackerNodeArmed_3(Ov002_ForwardToSubDc((unsigned short)*(int *)(row + 0x14)),
-                        (unsigned char)(page + 2));
+    Ov002_Ctx_SetTagTrackerNodeArmed_3(Ov002_ForwardToSubDc((unsigned short)*(int *)(row + 0x14)), (unsigned char)(page + 2));
     Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc((unsigned short)*(int *)(row + 0x14)));
 }

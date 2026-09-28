@@ -9,7 +9,11 @@
  *
  * Same for x and y: the mover takes `short`, which is where the pair of lsl/asr comes from. */
 extern int  Ov008_GetCtxBlock9500(void);
+/* Defined taking tag as unsigned int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int  Ov008_FindEntryByTag(int list, unsigned short tag);
+/* Defined taking x as int, y as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void Ov008_Elem_SetPos(int list, int cell, short x, short y);
 extern void Ov008_TagTracker_InvokeCallback(int list, int cell);
 

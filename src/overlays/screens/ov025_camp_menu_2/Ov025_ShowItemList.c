@@ -58,11 +58,11 @@ extern Ov008MenuEntryDef data_ov025_020b4f64[];                  /* the menu ent
 
 extern Ov008MenuContext *Ov025_GetPageA(void);               /* Ov008_GetMenuContext */
 extern int  Ov025_GetContext(void);                            /* Ov008_GetContext */
-extern Ov008ItemRing *Ov025_GetItemTableEntry(u16 nListId);           /* item ring of a list */
+extern Ov008ItemRing *Ov025_GetItemTableEntry(int nListId);           /* item ring of a list */
 extern int  Ov025_FindSelectableItem(s16 nFrom, int nStep);            /* Ov008_FindSelectableItem */
 extern void Ov025_WidgetRef_Init(Ov008WidgetPick *pPick, s16 nId); /* Ov008_Set_9bec: pick a widget */
 extern void Ov025_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible); /* SetEntrySlotsVisible */
-extern void Ov025_DispatchFrom2DTable(Ov008WidgetPick *pPick, s16 nItem, s16 nColumn); /* pick from the 2D table */
+extern void Ov025_DispatchFrom2DTable(Ov008WidgetPick *pPick, s16 nItem, int nColumn); /* pick from the 2D table */
 extern void Ov025_WidgetRef_Hide(Ov008WidgetPick *pPick);          /* Ov008_Set_9c68 */
 
 void Ov025_ShowItemList(u32 nListId, int bShow)
@@ -79,7 +79,7 @@ void Ov025_ShowItemList(u32 nListId, int bShow)
 
     pCtx = Ov025_GetPageA();
     nCtx = Ov025_GetContext();
-    pRing = Ov025_GetItemTableEntry(nListId);
+    pRing = Ov025_GetItemTableEntry((u16)nListId);
     if (bShow != 0) {
         nSel = Ov025_FindSelectableItem(pRing->nFirst, 1);
         if (nSel >= 0) {
@@ -98,7 +98,7 @@ void Ov025_ShowItemList(u32 nListId, int bShow)
             Ov025_DispatchFrom2DTable(&pick, nItem, (s16)j);
             Ov025_SetEntrySlotsVisible(nCtx, pick.pEntry, bShow);
             if (bShow != 0 && pItem->bEnabled != 0) {
-                Ov025_DispatchFrom2DTable(&pick, nItem, pCtx->aItemColumn[nItem]);
+                Ov025_DispatchFrom2DTable(&pick, nItem, (s16)pCtx->aItemColumn[nItem]);
                 Ov025_WidgetRef_Hide(&pick);
             }
         }

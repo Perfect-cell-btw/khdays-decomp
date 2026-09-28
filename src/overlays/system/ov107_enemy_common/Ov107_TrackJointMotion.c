@@ -6,7 +6,7 @@
 typedef struct { fx32 rot[9]; VecFx32 pos; } MtxFx43;
 
 extern void Obj_RenderModel(void *self, int region);
-extern int func_02016320(void *pRenderObj, MtxFx43 *pos, void *nrm, u16 nodeID);
+extern int func_02016320(void *pRenderObj, MtxFx43 *pos, void *nrm, u32 nodeID);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Normalize(const VecFx32 *source, VecFx32 *destination);
 extern void ScaleVec3Fx12(int factor, VecFx32 *src, VecFx32 *dst);

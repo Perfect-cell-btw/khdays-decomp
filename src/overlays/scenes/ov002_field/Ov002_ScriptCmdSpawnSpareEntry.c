@@ -8,11 +8,7 @@ extern int Ov002_GetModuleSlot(int nId);
 /* The narrow arguments are declared int here, not u16 or signed char: every one
  * of them is already narrowed where it is unpacked or read, and a narrow
  * parameter would make the compiler narrow it a second time at the call. */
-extern void Ov002_SpawnSpareEntry(int nOwner, u16 wA, u16 wB, void *pPos,
-                                int nStateField, int nStateWidth,
-                                int nQueuedWidth, int nCount, int nName,
-                                int nLine, int nParamA, int nParamB,
-                                int bArm, int bWide);
+extern void Ov002_SpawnSpareEntry(int nOwner, int wA, int wB, void *pPos, int nStateField, int nStateWidth, int nQueuedWidth, int nCount, int nName, int nLine, int nParamA, int nParamB, int bArm, int bWide);
 
 /* Script VM command: spawn a spare entry from the command's operands.
  *
@@ -79,8 +75,6 @@ int Ov002_ScriptCmdSpawnSpareEntry(void *pCtx, int nArgs)
 
     nOwner = Ov002_GetModuleSlot(nId);
 
-    Ov002_SpawnSpareEntry(nOwner, (u16)nA, (u16)nB, &aPos[0], nStateField,
-                        nStateWidth, nQueuedWidth, nCount, nName, nLine,
-                        nParamA, nParamB, bArm, bWide);
+    Ov002_SpawnSpareEntry(nOwner, (u16)nA, (u16)nB, &aPos[0], nStateField, nStateWidth, nQueuedWidth, nCount, nName, nLine, nParamA, nParamB, bArm, bWide);
     return 1;
 }

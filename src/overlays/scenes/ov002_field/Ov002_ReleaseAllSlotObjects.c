@@ -1,7 +1,7 @@
 extern int Ov002_GetCtxTableByte(int slot);
 extern void Ov002_DetachEntry(void *node);
 extern void Ov002_Element_Deactivate(void *node);
-extern void Ov002_ResetSlotActorPose(unsigned short slot);
+extern void Ov002_ResetSlotActorPose(int slot);
 extern char data_ov002_0207fa20;
 
 /* Releases every object queued on each live spawn slot and then resets the slot's actor pose. */

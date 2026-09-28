@@ -1,8 +1,12 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ByteCode_ResolveOperand(int ctx, void *arg);
 extern int func_02020d10(int ctx, int arg);
+/* Defined taking index as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern char *ArrayEntryPtrD0(unsigned short index);
 
+/* Defined taking id as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int LoadArrayInt244(unsigned short id);
 extern int BuildSlotMask(void *flags, int mask);
 

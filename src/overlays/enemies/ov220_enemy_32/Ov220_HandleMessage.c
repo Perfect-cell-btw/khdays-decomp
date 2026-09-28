@@ -7,7 +7,7 @@
 #include "nitro/types.h"
 
 extern void *Ov107_CreateNodeXformTaskFx24(void *taskList, void *subitem, int mode, int blend, int weight, void *payload);
-extern void *Ov107_CreateNodeBodyTask(void *taskList, void *subitem, u8 kind, void *at, int a, int b);
+extern void *Ov107_CreateNodeBodyTask(void *taskList, void *subitem, int kind, void *at, int a, int b);
 extern void TaskList_FinishByTag(void *taskList, void *handle);
 extern void Ov107_AiState_OnMessage(int actor, u8 *msg, int param);
 
@@ -22,8 +22,7 @@ void Ov220_HandleMessage(int actor, u8 *msg, int param)
         case 1:
         case 2:
             *(void **)(actor + msg[3] * 8 + 0x3c8) =
-                Ov107_CreateNodeBodyTask(*(void **)(actor + 0x3c), *(void **)(actor + msg[3] * 8 + 0x3c4),
-                                    (msg[3] == 2 ? 0x10 : 0) | 5, (void *)(actor + 0x398), 0, 1);
+                Ov107_CreateNodeBodyTask(*(void **)(actor + 0x3c), *(void **)(actor + msg[3] * 8 + 0x3c4), (u8)((msg[3] == 2 ? 0x10 : 0) | 5), (void *)(actor + 0x398), 0, 1);
             break;
         case 4:
             if (*(void **)(actor + msg[4] * 8 + 0x3c8) != 0) {

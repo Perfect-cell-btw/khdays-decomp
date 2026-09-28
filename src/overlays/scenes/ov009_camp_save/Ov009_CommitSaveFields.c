@@ -30,8 +30,8 @@ typedef struct Ov009SaveContext {
 } Ov009SaveContext;
 
 extern int GameState_GetField(int field, int kind);
-extern void GameState_SetField(int field, int kind, u16 value);
-extern int Rand16NextScaled(u16 range);
+extern void GameState_SetField(int field, int kind, unsigned int value);
+extern int Rand16NextScaled(unsigned int range);
 extern int GameState_IsFlagSet(int flag);
 extern void func_020235bc(int flag);
 extern int Ov009_CommitSaveToSlot(int slot);
@@ -44,8 +44,7 @@ int Ov009_CommitSaveFields(Ov009SaveContext *ctx, int slot)
     GameState_SetField(0x452, 9, (u16)GameState_GetField(0, 9));
 
     ctx->slots[slot].fieldC4b =
-        Rand16NextScaled(
-            (u16)((u32)GameState_GetField(0, 9) >= 0x1a ? 3 : 2));
+        Rand16NextScaled((u16)((u32)GameState_GetField(0, 9) >= 0x1a ? 3 : 2));
     GameState_SetField(0xc4b, 2, (u16)ctx->slots[slot].fieldC4b);
     GameState_SetField(0xc98, 2, (u16)slot);
 

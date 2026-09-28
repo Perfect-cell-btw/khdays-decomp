@@ -3,7 +3,7 @@
 #include "nitro/types.h"
 #include "nitro/os.h"
 
-extern void OS_UnlockByWord(u16 lockId, OSLockWord *lock, OSLockCallback onFree);
+extern void OS_UnlockByWord(int lockId, OSLockWord *lock, OSLockCallback onFree);
 extern void OSi_FreeCardBus(void);
 
 /* The card lock word lives at a fixed address in the shared region, so its

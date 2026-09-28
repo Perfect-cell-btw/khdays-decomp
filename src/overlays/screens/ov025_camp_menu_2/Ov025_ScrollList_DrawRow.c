@@ -30,6 +30,8 @@ typedef struct Ov025ScrollList {
 } Ov025ScrollList;
 
 extern int   Ov025_GetCtxBlock954c(void);                             /* Ov025_GetCtxBlock954c: the tag tracker */
+/* Defined taking nColumn as int, nY as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void  Ov025_ApplyTempFieldsByTagB(int nTracker, int nTag, s16 nColumn, s16 nY); /* Ov025_DayList_PlaceDigit */
 extern void  Ov025_ConfigureEntryByTag_3(int nTracker, int nTag, s16 nColumn, s16 nY); /* Ov025_DayList_PlaceBlank */
 extern void  Obj_InvokeInnerVtable4(void *pSurface);                         /* TileSurface_Clear */

@@ -20,6 +20,8 @@
 
 extern int Ov107_CollectSphereOverlaps(int owner, int kind, void **list);
 extern int Ov107_CollectSegmentOverlaps(int owner, void *query, void **list);
+/* Defined taking flags as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int Ov107_InvokeHitCallback(void *cand, int owner, int owner2, unsigned char flags, void *pt, int a);
 extern void func_ov107_020c0b90(int owner, int effect, VecFx32 v, int a);
 

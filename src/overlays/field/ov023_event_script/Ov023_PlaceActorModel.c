@@ -37,8 +37,8 @@ typedef struct Ov023Actor {
     int  nAngleTarget;        /* 0x1a34 */
 } Ov023Actor;
 
-extern void *GetTrackEntryBase(u16 nGroup);                             /* the actor group by id */
-extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
+extern void *GetTrackEntryBase(int nGroup);                             /* the actor group by id */
+extern Ov023Entity *ArrayEntryPtrD0(int nEntity);                     /* Entity_Get */
 extern void  Actor_InitEntityLink(Ov023Entity **ppSlot, Ov023Entity *pEntity); /* bind an entity slot */
 extern int   Collision_ProbeGround(void *pGroup, char *pszSpot, VecFx32 *pOut); /* Group_GetSpotPosition */
 extern void  VEC_Add(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);

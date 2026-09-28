@@ -27,7 +27,7 @@ struct Shot {
 
 extern VecFx32 data_02041dc8;                  /* kVecZero */
 
-extern int Anim_GetLengthQ12(u16 *pAnim, u16 nTrack);
+extern int Anim_GetLengthQ12(u16 *pAnim, int nTrack);
 extern int Ov022_TestShotHit(void *pCtx, struct Shot *pShot,
                                const VecFx32 *pPos, const VecFx32 *pDelta);
 extern unsigned int func_ov022_02091540(u16 *pAnim, int nFrame);

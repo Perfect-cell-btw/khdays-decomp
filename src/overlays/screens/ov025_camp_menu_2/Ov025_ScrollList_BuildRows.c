@@ -28,10 +28,14 @@ typedef struct Ov025ScrollList {
 } Ov025ScrollList;
 
 extern int   Ov025_GetScrollListCapacity(void);                             /* Ov025_DayTable_Count */
+/* Defined taking nEntry as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern u16   Ov025_GetTableValue(u16 nEntry);                       /* Ov025_DayTable_FirstDay */
 extern u16   Ov025_GetTableValueB(u16 nEntry);                       /* Ov025_DayTable_NameString */
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);
 extern u32   GameState_GetField(int nField, int nBits);                  /* GameState_GetField */
+/* Defined taking nFirstDay as int, nLastDay as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int   Ov025_MissionList_HasVisibleInDays(u16 nFirstDay, u16 nLastDay);      /* Ov025_HasVisibleMissionInDays */
 extern const u16 *Ov025_GetVarRecordByIndex(void *pStrings, int nIndex);  /* Ov025_GetString */
 

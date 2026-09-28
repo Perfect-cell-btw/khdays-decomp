@@ -10,11 +10,11 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 
-extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
+extern void Ov258_StepCue(int *node, int step, int phase, unsigned int variant);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, u16 variant, int at);
 extern int Ov258_AcquireTarget(int *node, int face);
-extern void Ov258_AimMarker(int *node, u8 side);
+extern void Ov258_AimMarker(int *node, int side);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int Ov258_PickMove(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -27,9 +27,9 @@ void Ov258_GuardTick(int *node)
 
     state[0xc] += *(int *)(node[0] + 0x2c);
     state[0x11] += *(int *)(node[0] + 0x2c);
-    Ov258_StepCue(node, 1, 3, 9);
-    Ov258_StepCue(node, 8, 2, *(int *)(*state + 0x460) != 0 ? 0x1b : 0x14);
-    Ov258_StepCue(node, 0x4a, 1, 10);
+    Ov258_StepCue(node, 1, 3, (u16)9);
+    Ov258_StepCue(node, 8, 2, (u16)(*(int *)(*state + 0x460) != 0 ? 0x1b : 0x14));
+    Ov258_StepCue(node, 0x4a, 1, (u16)10);
     if (state[0xc] >= 0x550 && *(u16 *)(state + 0x14) == 2) {
         VecFx32 origin;
 
@@ -60,7 +60,7 @@ void Ov258_GuardTick(int *node)
         if (state[0xd] >= 0x110) {
             Ov258_AcquireTarget(node, 0);
             state[0xd] = 0;
-            Ov258_AimMarker(node, state[0xf] % 2 != 0);
+            Ov258_AimMarker(node, (u8)(state[0xf] % 2 != 0));
             state[0xf]++;
         }
     }

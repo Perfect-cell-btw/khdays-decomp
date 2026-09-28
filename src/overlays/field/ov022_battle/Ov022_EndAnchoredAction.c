@@ -53,7 +53,7 @@ struct Actor {
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ActorSetState(struct Actor *pActor, int nState);   /* Ov022_ActorSetState */
-extern int Ov002_List_GetSlot(u16 nIndex);
+extern int Ov002_List_GetSlot(int nIndex);
 extern int Ov022_ValidateTargetRef(struct Actor *pActor);              /* Ov022_ValidateTargetRef */
 extern VecFx32 *func_ov022_020ad0c0(struct Actor *pActor);
 extern void VEC_Subtract(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);

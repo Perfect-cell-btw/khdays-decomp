@@ -56,7 +56,7 @@ typedef struct Ov008MenuContext {
 
 extern void Ov008_InitRecordContext(Ov008GridSummary *pSummary, void *pHooks);        /* init a summary */
 extern void Ov008_RebuildViewAndCountCells(Ov008GridSummary *pSummary, void *pSlots, void *pList); /* RebuildViewAndCountCells */
-extern void Ov008_BumpRowCounter(Ov008MenuContext *pCtx, int nItemId, char nDelta); /* Ov008_BumpRowCounter */
+extern void Ov008_BumpRowCounter(Ov008MenuContext *pCtx, int nItemId, int nDelta); /* Ov008_BumpRowCounter */
 extern void EnqueueObjGfxCommand(void *pSurface);                                        /* EnqueueObjGfxCommand */
 extern void *Ov008_FindGridHit(Ov008MenuContext *pCtx, u32 nPage, u32 nCol, u32 nRow); /* Ov008_FindGridHit */
 extern void Ov008_ClearNodeCells(Ov008MenuContext *pCtx, void *pNode);             /* Ov008_ClearNodeCells */

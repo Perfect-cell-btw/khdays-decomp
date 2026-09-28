@@ -87,7 +87,7 @@ extern void  Ov025_RebuildViewAndCountCells(Ov008GridSummary *pSummary, void *pS
 extern void *Ov025_FindGridHit(Ov008MenuContext *pCtx, u32 nPage, u32 nCol, u32 nRow); /* Ov008_FindGridHit */
 extern int   Ov025_PlaceNodeShape(Ov008MenuContext *pCtx, void *pNode, u32 nPage, int nCol, int nRow, int nArg); /* move the node */
 extern int   Ov025_CanPlaceRecord(Ov008MenuContext *pCtx, Ov008Message15Record *pRecord, u32 nPage, u32 nCol, u32 nRow, int nArg); /* record fits */
-extern void  Ov025_ProcessAndCleanup(Ov008MenuContext *pCtx, u16 nPage, u32 nCol, u32 nRow); /* Ov008_ProcessAndCleanup */
+extern void  Ov025_ProcessAndCleanup(Ov008MenuContext *pCtx, unsigned int nPage, u32 nCol, u32 nRow); /* Ov008_ProcessAndCleanup */
 extern int   Ov025_PlaceNodeOnPage(Ov008MenuContext *pCtx, Ov008Message15Record *pRecord, u32 nPage, u32 nCol, u16 nRow); /* place at cell */
 extern void  Ov025_AdjustAndSyncSlot(Ov008MenuContext *pCtx, int nItemId, char nDelta); /* Ov008_BumpRowCounter */
 extern Ov008LiftedCell *NNS_FndGetNextListObject(void *pList, void *pObject);
@@ -123,8 +123,8 @@ int Ov025_DropLiftedNode(Ov008MenuContext *pCtx)
     pNode = Ov025_FindGridHit(pCtx, pCtx->nDragPage, pCtx->nHomeCol, pCtx->nHomeRow);
     if (pNode == 0 || Ov025_PlaceNodeShape(pCtx, pNode, pCtx->nVisiblePage, nLeft, nTop, 1) != 0) {
         if (Ov025_CanPlaceRecord(pCtx, pCtx->pListNode, pCtx->nVisiblePage, pCtx->nCursorCol, pCtx->nCursorRow, 0) != 0) {
-            Ov025_ProcessAndCleanup(pCtx, pCtx->nVisiblePage, pCtx->nCursorCol, pCtx->nCursorRow);
-            Ov025_ProcessAndCleanup(pCtx, pCtx->nDragPage, pCtx->nHomeCol, pCtx->nHomeRow);
+            Ov025_ProcessAndCleanup(pCtx, (u16)pCtx->nVisiblePage, pCtx->nCursorCol, pCtx->nCursorRow);
+            Ov025_ProcessAndCleanup(pCtx, (u16)pCtx->nDragPage, pCtx->nHomeCol, pCtx->nHomeRow);
             Ov025_PlaceNodeOnPage(pCtx, pCtx->pListNode, pCtx->nVisiblePage, pCtx->nCursorCol, pCtx->nCursorRow);
             Ov025_AdjustAndSyncSlot(pCtx, pCtx->pListNode->nItemId, 1);
             for (pCell = NNS_FndGetNextListObject(pCtx->liftedList, 0); pCell != 0;

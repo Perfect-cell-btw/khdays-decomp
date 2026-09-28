@@ -21,7 +21,7 @@ struct Bits40 { int b0 : 1; int b1 : 1; };
 extern void RefreshObjectCallbacks(int item, int a);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);
 extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
-extern int Slot_Spawn(int slot, int id, VecFx32 *pos, u16 flags);
+extern int Slot_Spawn(int slot, int id, VecFx32 *pos, unsigned int flags);
 extern void Ov107_ForwardVisibleEvent(char *self, int a);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Collision_CastRay(int grid, VecFx32 *pos, VecFx32 *ray);

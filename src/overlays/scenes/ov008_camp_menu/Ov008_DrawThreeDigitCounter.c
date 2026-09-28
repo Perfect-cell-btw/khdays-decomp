@@ -1,6 +1,6 @@
 extern char *data_ov008_02090fac;
 extern void Slot_SetVisible(int handle, int cell, int visible);
-extern void Slot_ForwardToEntry(int handle, int cell, unsigned short digit);
+extern void Slot_ForwardToEntry(int handle, int cell, int digit);
 
 /* Draws a three-digit counter right-aligned, hiding the leading zeros. */
 void Ov008_DrawThreeDigitCounter(unsigned int value, int *cells) {

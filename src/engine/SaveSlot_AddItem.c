@@ -17,7 +17,7 @@ typedef struct {
     char pad9c[0x104 - 0x9c];
 } SlotRecord;
 
-extern ItemEntry *Table_FindKey(int slot, u16 id);
+extern ItemEntry *Table_FindKey(int slot, unsigned int id);
 extern SlotRecord data_0204c678[];
 
 void SaveSlot_AddItem(int slot, ItemEntry *item, int add)

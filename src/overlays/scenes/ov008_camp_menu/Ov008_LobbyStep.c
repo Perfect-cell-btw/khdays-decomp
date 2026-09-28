@@ -100,7 +100,7 @@ extern int   Ov008_GetMissionMenuSelection(void);
 extern void  Ov008_SetMissionCursorSelection(int nSelection);
 extern void  Ov008_MissionApplyParameterRow(int nIcon);                             /* refresh the icon list */
 extern void  Ov008_SetTitleWord(int nSlot, int bSet);
-extern void  Ov008_SetMissionRowSlotValue(int nSlot, u16 nIcon, int bVisible);
+extern void  Ov008_SetMissionRowSlotValue(int nSlot, int nIcon, int bVisible);
 extern void  PlaySound(int nBank, int nSound);                       /* PlaySound */
 extern int   Ov008_Link_Poll(void);                                  /* lobby result */
 extern void  Ov008_RequestMenuState(int nState, int bAnimate, int nValue);  /* Ov008_RequestMenuState */
@@ -194,7 +194,7 @@ checked:
     nSlot = 0;
     for (i = 0; i < MEMBER_COUNT; i++) {
         Ov008_SetTitleWord(nSlot, aRow[i].flags2);
-        Ov008_SetMissionRowSlotValue(nSlot, aRow[i].icon, aRow[i].flags3);
+        Ov008_SetMissionRowSlotValue(nSlot, (u16)aRow[i].icon, aRow[i].flags3);
         if (aRow[i].flags2 != 0) {
             if (i == nLocal && (u8)aRow[i].icon != (u8)data_ov008_02090fa0->aPlayer[i].icon) {
                 PlaySound(0, 0);

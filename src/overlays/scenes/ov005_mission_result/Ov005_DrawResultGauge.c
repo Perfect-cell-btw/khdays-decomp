@@ -9,7 +9,7 @@ typedef struct Ov005ResultGaugeRequest {
     int maximum, value, widthPixels;
 } Ov005ResultGaugeRequest;
 extern int func_02020400(int, int);
-extern void Ov005_DrawResultTile(int, u8, u8);
+extern void Ov005_DrawResultTile(int, int, int);
 void Ov005_DrawResultGauge(Ov005ResultGaugeRequest *request) {
     int remainingPixels;
     int column = 0;
@@ -20,8 +20,7 @@ void Ov005_DrawResultGauge(Ov005ResultGaugeRequest *request) {
     fullTiles = remainingPixels / 8;
     do {
         int tilePixels = fullTiles > 0 ? 8 : remainingPixels % 8;
-        Ov005_DrawResultTile(request->firstTileId + (tilePixels - 1),
-                          (u8)(request->column + column), (u8)request->row);
+        Ov005_DrawResultTile(request->firstTileId + (tilePixels - 1), (u8)(request->column + column), (u8)request->row);
         remainingPixels -= 8;
         fullTiles--;
         column++;

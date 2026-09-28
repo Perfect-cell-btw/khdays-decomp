@@ -84,7 +84,7 @@ typedef struct Ov015ChestNotify {
 
 extern int   Ov002_GetModuleScale(void);                                    /* frame delta */
 extern int   Ov002_GetCtxTableByte(int nKind);                               /* model id of a kind */
-extern void  Render_SubmitNode(void *pNode, u16 nId, int nArg, void *pParams);  /* bind a render node */
+extern void  Render_SubmitNode(void *pNode, int nId, int nArg, void *pParams);  /* bind a render node */
 extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                        /* Obj_SetFlagBit3 */
 extern void  Ov015_PlayAnimIfVisible(void *pChest, void *pNode, int nArg, int nFrame); /* Ov015_ChestSeekSequence */
 extern int   Ov002_AdvanceElementClock(void *pPiece, void *pNode, int nDelta, int nFlag, int nLimit, int *pElapsed); /* drive a sequence */
@@ -123,7 +123,7 @@ Ov015StateFn *Ov015_ChestUpdate(Ov015Chest *pChest)
     if (pChest->nStateBits & 1) {
         pChest->nStateBits = 0;
         if ((pChest->render.nBindBits & 2) == 0) {
-            Render_SubmitNode(&pChest->render, Ov002_GetCtxTableByte(pChest->nKind), 0, 0);
+            Render_SubmitNode(&pChest->render, (u16)(Ov002_GetCtxTableByte(pChest->nKind)), 0, 0);
             pChest->render.nBindBits |= 2;
             if (pChest->nFlags & 4) {
                 Obj_SetFlagBit3(&pChest->render, 0);

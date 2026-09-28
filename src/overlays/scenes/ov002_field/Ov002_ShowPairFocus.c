@@ -10,9 +10,9 @@
 
 #include "nitro/types.h"
 
-extern int Ov002_ForwardToSubDc(u16 nCue);
+extern int Ov002_ForwardToSubDc(int nCue);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int hCue);
-extern void Ov002_Ctx_SetTagTrackerNodeArmed_3(int hCue, u8 nStyle);
+extern void Ov002_Ctx_SetTagTrackerNodeArmed_3(int hCue, int nStyle);
 
 void Ov002_ShowPairFocus(int nKind, int hNode, int bOn)
 {

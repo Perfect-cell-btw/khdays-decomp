@@ -2,7 +2,7 @@
  * 16-bit coordinates, optionally re-anchor it, and always hand the target on to
  * Ov002_Ctx_SetTagTrackerNodeArmed_5. The fifth argument arrives on the stack and is re-read
  * from there for the final call rather than held. */
-extern void Ov002_PositionSubDcHandle_4(void *self, short x, short y);
+extern void Ov002_PositionSubDcHandle_4(void *self, int x, int y);
 extern void Ov002_ForwardToSubDc_3(void *self);
 extern void Ov002_Ctx_SetTagTrackerNodeArmed_5(void *self, int target);
 

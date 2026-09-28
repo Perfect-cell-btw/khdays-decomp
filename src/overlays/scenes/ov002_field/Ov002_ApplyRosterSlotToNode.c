@@ -22,6 +22,8 @@ extern char *data_ov002_0207fa00;
 
 extern int func_ov022_0208840c(int index);
 extern int LoadArrayU8At0cc(unsigned short id);
+/* Defined taking id as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern unsigned int *ArrayEntryPtrD0(unsigned short id);
 extern void func_ov022_02088218(int index, void *slot);
 

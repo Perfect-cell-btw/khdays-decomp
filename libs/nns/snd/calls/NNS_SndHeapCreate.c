@@ -9,7 +9,7 @@
 #define NNS_FndCreateFrmHeap(startAddress, size) func_02010b88(startAddress, size, 0)
 #define ROUNDUP(value, align) (((u32)(value) + ((align) - 1)) & ~((align) - 1))
 
-NNSFndHeapHandle func_02010b88(void * startAddress, u32 size, u16 optFlag);
+NNSFndHeapHandle func_02010b88(void * startAddress, u32 size, int optFlag);
 void NNS_FndDestroyFrmHeap(NNSFndHeapHandle heap);
 extern BOOL InitHeap(NNSSndHeap * heap, NNSFndHeapHandle handle);
 extern BOOL InitHeap (NNSSndHeap * heap, NNSFndHeapHandle handle);

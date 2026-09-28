@@ -83,7 +83,7 @@ typedef struct Mover {
 extern const VecFx32 data_02041dc8;     /* {0, 0, 0} */
 extern const s16 data_0203d210[];       /* sin/cos pairs */
 
-extern void *GetTrackEntryBase(u16 index);  /* collision world */
+extern void *GetTrackEntryBase(int index);  /* collision world */
 extern HitRecord *Collision_RunRayCast(void *world, CollCastParams *params);
 extern void Vec3ScaleAddQ27(fx32 t, const VecFx32 *dir, const VecFx32 *origin, VecFx32 *out);
 extern void VecFx32FromVecS16(void *model, char *face, VecFx32 *normal);
@@ -138,7 +138,7 @@ int Mover_ResolveFloor(VecFx32 *pos, Mover *mover, fx32 *fall)
     if (mover->active < 0) {
         return 0;
     }
-    world = GetTrackEntryBase(mover->active);
+    world = GetTrackEntryBase((u16)mover->active);
     if (mover->height >= 0xb33) {
         lift = mover->height + 0x19a;
     }

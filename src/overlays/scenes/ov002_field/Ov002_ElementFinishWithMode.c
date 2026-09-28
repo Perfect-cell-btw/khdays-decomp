@@ -3,7 +3,7 @@
 
 extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);
 extern void SceneNode_Disable(u16 *pNode);
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 extern void Obj_SetFlagBit3(char *pObj, int bOn);
 extern void Slot_Spawn(int nA, int nB, char *pDst, int nFlag);
 
@@ -39,8 +39,7 @@ void Ov002_ElementFinishWithMode(char *pElement, unsigned char bMode)
         if (nTrack != -1) {
             Ov002_RebindAnimTracks((short *)(pElement + 0x2c), nTrack, 0);
             SceneNode_Disable((u16 *)(pElement + 0x2c));
-            nState = GameState_GetField(*(u16 *)(pElement + 0x14),
-                                   *(unsigned char *)(pElement + 0x16));
+            nState = GameState_GetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16));
             Obj_SetFlagBit3(pElement + 0x1c, (nState & 1) != 0);
         } else {
             Obj_SetFlagBit3(pElement + 0x1c, 0);

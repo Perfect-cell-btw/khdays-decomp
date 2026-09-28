@@ -8,7 +8,7 @@
 
 #include "nitro/types.h"
 
-extern int GameState_GetField(u16 nField, u8 nBit);                    /* GameState_GetField */
+extern int GameState_GetField(int nField, int nBit);                    /* GameState_GetField */
 extern void *GetEntryField20ByIndex(int nPlayer);                          /* the player's actor */
 
 typedef struct Ov015SpotDef {

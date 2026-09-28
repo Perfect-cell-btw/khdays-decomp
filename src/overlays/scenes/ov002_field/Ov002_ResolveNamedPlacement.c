@@ -28,7 +28,7 @@ extern char data_ov002_0207f100[];      /* "pent" */
 
 extern Ov002DayEntry *Ov002_FindPeerRow(int nDay, int nSlotValue);
 extern void OS_SPrintf(char *pDest, const char *pFmt, ...);
-extern Ov002PlaceResult *EntityMgr_FindCollEntry(u16 nSlot, const char *pKey);
+extern Ov002PlaceResult *EntityMgr_FindCollEntry(int nSlot, const char *pKey);
 
 /* Builds a placement key out of the mission name and looks the placement up.
    The day comes from characters 4 and 5 of the name read as two decimal digits,

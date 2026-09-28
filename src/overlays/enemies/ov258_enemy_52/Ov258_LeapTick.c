@@ -6,7 +6,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 
-extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
+extern void Ov258_StepCue(int *node, int step, int phase, unsigned int variant);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -17,8 +17,8 @@ void Ov258_LeapTick(int *node)
     int *state = (int *)node[1];
 
     state[0x11] += *(int *)(node[0] + 0x2c);
-    Ov258_StepCue(node, 1, 5, 0xb);
-    Ov258_StepCue(node, 0x1c, 4, *(int *)(*state + 0x460) != 0 ? 0x1b : 0x16);
+    Ov258_StepCue(node, 1, 5, (u16)0xb);
+    Ov258_StepCue(node, 0x1c, 4, (u16)(*(int *)(*state + 0x460) != 0 ? 0x1b : 0x16));
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }

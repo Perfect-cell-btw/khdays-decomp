@@ -8,6 +8,8 @@ extern char data_02042748[16];
 
 extern int LoadGlobalU16At0(void);
 extern void G2x_SetBlendBrightness_(u16 *dst, u32 attr, int value);
+/* Defined taking param_1 as GXDispMode: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void GX_SetGraphicsMode(u16 param_1, u32 param_2, int param_3);
 extern void VBlank_UnregisterCallback(int unused, const char *name);
 extern void Ov002_UpdatePanelBlend(void);

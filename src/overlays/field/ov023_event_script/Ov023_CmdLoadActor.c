@@ -31,7 +31,7 @@ extern int   ScriptVm_ReadOperandFx32(Ov023ScriptCtx *pCtx, Ov023Operand *pOpera
 extern void  SubResourceTable_Free(u16 *pRecord);                           /* release an entity record */
 extern void  NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern char *ParseSlotQuantityId(void *pTable, char *pszName);            /* resolve a name */
-extern void  Entity_LoadAndAttach(u16 nId, char *pszGroup);                /* register an entity group */
+extern void  Entity_LoadAndAttach(int nId, char *pszGroup);                /* register an entity group */
 extern int   GameState_GetField(int nField, int nArg);                   /* GameState_GetField */
 extern void  Ov023_RequestGroupResources(int nGroup, int bExtra);           /* Ov023_RequestGroupResources */
 extern void  Req_SetPendingFields(int nNear, int nFar, int nArg);          /* set the camera distance */

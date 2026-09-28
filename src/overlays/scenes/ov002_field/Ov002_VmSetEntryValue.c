@@ -7,7 +7,7 @@
 
 extern int ScriptVm_ReadOperandInt(int self, unsigned short *operand);
 extern int ScriptVm_ReadOperandFx32(int self, unsigned short *operand);
-extern void *Ov002_List_ScaleEntryTag(unsigned char id, unsigned short param);
+extern void *Ov002_List_ScaleEntryTag(int id, int param);
 extern void Ov002_ElementSetFade(void *entry, int a, short value);
 
 int Ov002_VmSetEntryValue(int self, unsigned short *op) {

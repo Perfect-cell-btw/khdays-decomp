@@ -72,12 +72,12 @@ extern void  Ov021_StoreArgsRunTwoSubActionsIfFlag4(Ov021PrizeBox *pSelf, void *
 extern void  Ov002_ParkSpareEntry(void *pPiece);                       /* the piece was taken */
 extern void  ReleaseNodeResources(void *pNode);                              /* release the node's resources */
 extern int   Session_GetLocalPlayerIndex(void);                                     /* Session_GetLocalPlayerIndex */
-extern int   Ov002_FindKeyEntryIndex(short nKey);                         /* key -> entry index */
+extern int   Ov002_FindKeyEntryIndex(int nKey);                         /* key -> entry index */
 extern int   Ov002_BuildSessionCommand(int nKind, void *pCommand);          /* Ov002_BuildSessionCommand */
 extern void  Ov002_SpawnAllDrops(const u8 *aAmount, int nCtxIndex, const VecFx32 *pPlace); /* spawn the drops */
 extern void  Ov002_SetKeyNodeVisible(int nKey, int bShow, int nPriority);  /* show / hide a keyed object's node */
 extern int   Ov002_GetStateWord(void);                               /* the mission id */
-extern int   Slot_Spawn(int nSlot, int nId, VecFx32 *pPos, u16 nFlags); /* Slot_Spawn */
+extern int   Slot_Spawn(int nSlot, int nId, VecFx32 *pPos, unsigned int nFlags); /* Slot_Spawn */
 extern void  Scene_DrawNode(void *pNode);                              /* Scene_DrawNode */
 extern void *Ov002_DoneTick(void *pPiece);                       /* terminal state */
 extern const s8 data_ov021_02080f18[];                                /* track lengths in frames */

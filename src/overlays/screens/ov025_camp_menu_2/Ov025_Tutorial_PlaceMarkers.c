@@ -49,7 +49,7 @@ typedef struct Ov025TutorialPage {
 } Ov025TutorialPage;          /* 0x2b0: a view of page A (Ov008_GetPageA) */
 
 extern Ov025TutorialPage *Ov025_GetPageA(void);                /* Ov008_GetPageA */
-extern void  Ov025_Elem_SetPos(int nTracker, void *pCell, s16 nX, s16 nY); /* Ov008_TagTracker_SetCellPos */
+extern void  Ov025_Elem_SetPos(int nTracker, void *pCell, int nX, int nY); /* Ov008_TagTracker_SetCellPos */
 extern void  Ov025_TagTracker_InvokeCallback(int nTracker, void *pCell);        /* Ov008_TagTracker_InvokeCallback */
 
 void Ov025_Tutorial_PlaceMarkers(void)

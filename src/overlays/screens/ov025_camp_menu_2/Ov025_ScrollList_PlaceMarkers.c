@@ -52,7 +52,7 @@ typedef struct Ov025ScrollList {
 } Ov025ScrollList;            /* 0x2e8: the day list view of page B (Ov025_GetPageB) */
 
 extern int   Ov025_GetCtxBlock954c(void);                             /* Ov008_GetCtxBlock954c */
-extern void  Ov025_ApplyTempFieldsByTagB(int nTracker, int nTag, s16 nX, s16 nY); /* Ov008_TagTracker_MoveCell */
+extern void  Ov025_ApplyTempFieldsByTagB(int nTracker, int nTag, int nX, int nY); /* Ov008_TagTracker_MoveCell */
 
 void Ov025_ScrollList_PlaceMarkers(Ov025ScrollList *pList)
 {
@@ -64,8 +64,8 @@ void Ov025_ScrollList_PlaceMarkers(Ov025ScrollList *pList)
     i = 0;
     nY = 0;
     for (; i < 11; i++) {
-        Ov025_ApplyTempFieldsByTagB(nTracker, 0xc, 2, (s16)nY);
+        Ov025_ApplyTempFieldsByTagB(nTracker, 0xc, (s16)2, (s16)nY);
         nY += 2;
     }
-    Ov025_ApplyTempFieldsByTagB(nTracker, 0xd, 2, (pList->nCursor - pList->nScroll / 16) * 2);
+    Ov025_ApplyTempFieldsByTagB(nTracker, 0xd, (s16)2, (s16)((pList->nCursor - pList->nScroll / 16) * 2));
 }

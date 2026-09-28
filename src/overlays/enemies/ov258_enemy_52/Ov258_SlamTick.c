@@ -11,7 +11,7 @@
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 
-extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
+extern void Ov258_StepCue(int *node, int step, int phase, unsigned int variant);
 extern int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *capsule, void *cylinder, VecFx32 *push, int once, u16 effect, int kind);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, u16 variant, int at);
@@ -29,7 +29,7 @@ void Ov258_SlamTick(int *node)
 
     state[0xc] += *(int *)(node[0] + 0x2c);
     state[0x11] += *(int *)(node[0] + 0x2c);
-    Ov258_StepCue(node, 0x36, 3, *(int *)(*state + 0x460) != 0 ? 0x1b : 0x13);
+    Ov258_StepCue(node, 0x36, 3, (u16)(*(int *)(*state + 0x460) != 0 ? 0x1b : 0x13));
     if (*(u16 *)(state + 0x14) == 2 && state[0xc] >= 0x27d8) {
         push = data_02041dc8;
         push.z += 0x2000;

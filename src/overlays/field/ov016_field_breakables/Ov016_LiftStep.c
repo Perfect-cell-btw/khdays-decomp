@@ -52,7 +52,7 @@ static inline int FX_Mul(int a, int b)
     return (int)(((long long)a * b + 0x800) >> 12);
 }
 
-extern int  GameState_GetField(u16 nField, u8 nBit);                       /* GameState_GetField */
+extern int  GameState_GetField(int nField, int nBit);                       /* GameState_GetField */
 extern int  Session_GetLocalPlayerIndex(void);                                      /* Session_GetLocalPlayerIndex */
 extern int  Ov002_RecordElementHit(void *pPiece, void *pMessage, int nKind); /* queue a message on the piece */
 extern int  Ov002_GetModuleScale(void);                                /* frame delta */

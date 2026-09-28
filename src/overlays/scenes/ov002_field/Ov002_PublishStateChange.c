@@ -5,7 +5,7 @@
 extern int Session_IsActive(void);
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov002_BuildSessionCommand(int kind, void *message);
-extern void GameState_SetField(int a, int b, unsigned short c);
+extern void GameState_SetField(int a, int b, unsigned int c);
 
 int Ov002_PublishStateChange(int a, int b, int c) {
     unsigned char message[8];

@@ -3,7 +3,7 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
 extern int func_02020d10(int ctx, int arg);
-extern char *ArrayEntryPtrD0(unsigned short index);
+extern char *ArrayEntryPtrD0(int index);
 
 /* Script command: sets the entity node's scale. A scalar operand scales all three axes; a vector
  * operand (tag non-zero) takes one component per axis. */

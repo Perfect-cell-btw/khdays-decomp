@@ -34,7 +34,7 @@ typedef struct Ov008MenuContext {
     u8 aGrid[GRID_PAGES][GRID_ROWS][GRID_COLS];           /* 0x1e88 */
 } Ov008MenuContext;
 
-extern void Ov008_ClearGridSlot(Ov008MenuContext *pCtx, u16 nPage, u16 nX, u16 nY); /* Ov008_ClearGridSlot */
+extern void Ov008_ClearGridSlot(Ov008MenuContext *pCtx, int nPage, int nX, int nY); /* Ov008_ClearGridSlot */
 extern void EnqueueObjGfxCommand(void *pSurface);                                   /* EnqueueObjGfxCommand */
 
 void Ov008_ClearNodeCells(Ov008MenuContext *pCtx, Ov008TrackedNode *pNode)
@@ -50,7 +50,7 @@ void Ov008_ClearNodeCells(Ov008MenuContext *pCtx, Ov008TrackedNode *pNode)
             nY = pNode->nTop + nRow;
             if ((pNode->pEntry->nCellMask & (1ULL << (nCol + nRow * 8))) != 0) {
                 pCtx->aGrid[pNode->nPage][nY][nX] = 0;
-                Ov008_ClearGridSlot(pCtx, pNode->nPage, nX, nY);
+                Ov008_ClearGridSlot(pCtx, (u16)pNode->nPage, (u16)nX, (u16)nY);
             }
         }
     }

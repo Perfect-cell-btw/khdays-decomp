@@ -1,5 +1,5 @@
-extern void CARD_LockRom(unsigned short lockId);
-extern void CARD_UnlockRom(unsigned short lockId);
+extern void CARD_LockRom(int lockId);
+extern void CARD_UnlockRom(int lockId);
 extern int *data_0204631c[];
 
 int FSi_RomArchiveProc(void *arc, int command, void *param) {

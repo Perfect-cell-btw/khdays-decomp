@@ -56,9 +56,13 @@ typedef struct Ov023Entity {
 extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandInt */
 extern int   ScriptVm_ReadOperandFx32(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandFx32 */
 extern int   func_02020d10(Ov023ScriptCtx *pCtx, int nActor);              /* ScriptVm_ResolveActor */
+/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                            /* Entity_Get */
 extern int   LoadArrayU8At0ce(u16 nEntity);                                   /* Entity_GetModelId */
 extern void  Obj_StepMotionTransform(Ov023Camera *pCamera, VecFx32 *pPos, VecFx32 *pAngle, int *pDistance, int *pRoll); /* Camera_SampleMotion */
+/* Defined taking nEntity as int, nModel as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void  Entity_SubmitRenderNode(u16 nEntity, u16 nModel, char *pszSpot, VecFx32 *pPos); /* Entity_SetPosition */
 extern void  Entity_SetVisible(u16 nEntity, int bVisible);                     /* Entity_SetVisible */
 extern void  Ov023_PlaceActorModel(Ov023Actor *pActor, char *pszAnchor, VecFx32 *pPos, int nModel, int nActor); /* Ov023_PlaceActorModel */

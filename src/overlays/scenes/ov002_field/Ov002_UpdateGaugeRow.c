@@ -28,10 +28,10 @@ typedef struct {
 extern Ov002GaugeLayoutContext *data_ov002_0207f618;
 extern GaugeFlag data_ov002_0207e988;
 
-extern int Ov002_PositionSubDcHandle(Ov002RowStyle *pStyle, u16 nRow, int nKind);
+extern int Ov002_PositionSubDcHandle(Ov002RowStyle *pStyle, int nRow, int nKind);
 extern int Ov002_Ctx_SetTagTrackerNodeArmed(int nHandle, Ov002RowStyle *pStyle);
-extern int Ov002_ForwardToSubDc(u16 nRow);
-extern int Ov002_PositionSubDcHandle_2(int nHandle, short nOffset, short nColour);
+extern int Ov002_ForwardToSubDc(int nRow);
+extern int Ov002_PositionSubDcHandle_2(int nHandle, int nOffset, int nColour);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int nHandle);
 
 void Ov002_UpdateGaugeRow(int nRow, GaugeFlag bFilled, GaugeFlag bLast)
@@ -67,10 +67,8 @@ void Ov002_UpdateGaugeRow(int nRow, GaugeFlag bFilled, GaugeFlag bLast)
                             pContext->aRowStyles[data_ov002_0207e988]);
     } else {
         short nLimit = pContext->aRowStyles[0]->nRowLimit;
-        nHandle = Ov002_PositionSubDcHandle(
-            pContext->aRowStyles[data_ov002_0207e988], nEncodedRow, 0xb);
-        Ov002_PositionSubDcHandle_2(nHandle, (short)(nLimit - nHalfRow),
-                            pContext->aRowStyles[0]->nColour);
+        nHandle = Ov002_PositionSubDcHandle(pContext->aRowStyles[data_ov002_0207e988], nEncodedRow, 0xb);
+        Ov002_PositionSubDcHandle_2(nHandle, (short)(nLimit - nHalfRow), pContext->aRowStyles[0]->nColour);
     }
     Ov002_Ctx_InvokeTagTrackerCallback(nHandle);
     data_ov002_0207e988 = -1;

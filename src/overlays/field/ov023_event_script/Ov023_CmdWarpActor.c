@@ -46,6 +46,8 @@ extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, Ov023Operand *pOperan
 extern int   ScriptVm_ReadOperandFx32(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandFx32 */
 extern char *ByteCode_ResolveOperand(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandString */
 extern int   func_02020d10(Ov023ScriptCtx *pCtx, int nIndex);      /* resolve an actor index */
+/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
 /* The quotient is the low half of the helper's long long return; writing `/` emits _s32_div_f,
  * which is not linkable here. */
@@ -55,6 +57,8 @@ extern void  Entity_SetVisible(u16 nEntity, int bVisible);              /* Entit
 extern int   strncmp(const char *pA, const char *pB, int nCount);
 extern int   func_020200b4(char *pszNumber);                        /* parse a number */
 extern int   FX_Mul(int nA, int nB);                         /* FX_Mul */
+/* Defined taking nGroup as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void *GetTrackEntryBase(u16 nGroup);                             /* the actor group by id */
 extern int   Collision_ProbeGround(void *pGroup, char *pszSpot, VecFx32 *pOut); /* Group_GetSpotPosition */
 extern int   CollModel_GetEntryField14(void *pGroup, char *pszSpot);            /* Group_GetSpotAngle */

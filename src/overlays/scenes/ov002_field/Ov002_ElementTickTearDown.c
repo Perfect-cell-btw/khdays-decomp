@@ -10,10 +10,10 @@ extern short Session_GetLocalPlayerIndex(void);
 extern int Ov002_IsSessionOpen(void);
 extern int Ov002_HasAssignedPeerId(void);
 extern char *GetEntryField20ByIndex(int nIndex);
-extern int Ov002_FindKeyEntryIndex(short nKey);
-extern char *Ov002_GetRootField8d14(short nIndex);
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
-extern void GameState_SetField(u16 nId, unsigned char nSlot, int nValue);
+extern int Ov002_FindKeyEntryIndex(int nKey);
+extern char *Ov002_GetRootField8d14(int nIndex);
+extern int GameState_GetField(int nId, int nSlot);
+extern void GameState_SetField(unsigned int nId, unsigned int nSlot, int nValue);
 extern void Ov002_SetFieldBit0(char *pElement, int nFlag);
 extern void ReleaseNodeResources(char *pNode);
 extern void *Ov002_DoneTick(char *pElement);
@@ -51,8 +51,7 @@ void *Ov002_ElementTickTearDown(char *pElement)
             if (Ov002_IsSessionOpen() != 0 && Ov002_HasAssignedPeerId() != 0) {
 
                 pSession = GetEntryField20ByIndex(*(unsigned char *)(pElement + 0x1b8));
-                pEntry = Ov002_GetRootField8d14(
-                    (short)Ov002_FindKeyEntryIndex(*(short *)(pElement + 0x1b6)));
+                pEntry = Ov002_GetRootField8d14((short)Ov002_FindKeyEntryIndex(*(short *)(pElement + 0x1b6)));
 
                 /* All four values are read before the callback pointer is
                  * tested, and in this order: the original schedules them into
@@ -76,11 +75,8 @@ void *Ov002_ElementTickTearDown(char *pElement)
     }
 
     if (bDone) {
-        nState = GameState_GetField(*(u16 *)(pElement + 0x14),
-                               *(unsigned char *)(pElement + 0x16));
-        GameState_SetField(*(u16 *)(pElement + 0x14),
-                      *(unsigned char *)(pElement + 0x16),
-                      (u16)((nState & ~0xfffe) | 2));
+        nState = GameState_GetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16));
+        GameState_SetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16), (u16)((nState & ~0xfffe) | 2));
         Ov002_SetFieldBit0(pElement, 0);
         ReleaseNodeResources(pElement + 0x2c);
         *(unsigned char *)(pElement + 0x1b4) = 7;

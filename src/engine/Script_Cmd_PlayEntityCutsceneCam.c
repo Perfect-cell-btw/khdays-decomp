@@ -3,7 +3,7 @@ extern int ByteCode_ResolveOperand(int ctx, void *arg);
 extern int func_02020d10(int ctx, int arg);
 extern int ParseSlotQuantityId(void *world, int name);
 extern int ResCache_Acquire(int a, void *b, int c);
-extern void TailForwardTrackEntry_2(unsigned short id, int a, int b, int c);
+extern void TailForwardTrackEntry_2(int id, int a, int b, int c);
 extern void Slot48_StoreAtCurrentIndex(int ctx, int arg);
 
 /* Script command: starts the named cutscene camera on the entity, or yields if the resource is

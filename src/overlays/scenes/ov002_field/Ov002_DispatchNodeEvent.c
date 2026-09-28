@@ -1,4 +1,4 @@
-extern int GameState_GetField(unsigned short nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 
 typedef int (*Ov002NodeHandler)(int pNode, int pEvent);
 

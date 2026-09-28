@@ -47,6 +47,8 @@ extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void VEC_Add(void *a, void *b, void *d);
+/* Defined taking kind as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int Ov107_InvokeHitCallback(struct Ov221Hit *hit, struct Ov221Owner *a, struct Ov221Owner *b,
                                u8 kind, void *push, int z);
 extern void func_ov107_020c0b90(struct Ov221Owner *owner, int a, VecFx32 v, int b);

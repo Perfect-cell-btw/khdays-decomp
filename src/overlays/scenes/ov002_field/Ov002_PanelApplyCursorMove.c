@@ -79,7 +79,7 @@ extern int Ov002_FindSlotByKey(int nKey);
 extern void Ov002_PanelRepaintListRow(NNSFndList *pList, int nSlot, int nSub, int nIndex,
                                 int a, int b, int c, int d);
 extern int Ov002_ModuleHasKey(int nTag);
-extern void Ov002_PanelWriteSlotLabel(int a, int b, int c, u16 nColour, int d);
+extern void Ov002_PanelWriteSlotLabel(int a, int b, int c, int nColour, int d);
 extern void Ov002_PanelPushSlotState(int a, int b, int c);
 extern void Ov002_SelectEntry(int nId);
 
@@ -259,15 +259,13 @@ void Ov002_PanelApplyCursorMove(int nFrom, int nTo) {
             state.bSpecialEnabled = 1;
         }
         if (nTo == 0) {
-            Ov002_PanelWriteSlotLabel(4, 0, 0x3e0,
-                                (u16)(state.bSpecialEnabled != 0 ? 0xf : 0xe), 1);
+            Ov002_PanelWriteSlotLabel(4, 0, 0x3e0, (u16)(state.bSpecialEnabled != 0 ? 0xf : 0xe), 1);
             Ov002_PanelWriteSlotLabel(5, 0, 0x3f0, 0xf, 0);
             Ov002_PanelPushSlotState(4, 0, 0);
             Ov002_PanelPushSlotState(5, 1, 0);
             s->bDefaultKind = 0;
         } else {
-            Ov002_PanelWriteSlotLabel(4, 0, 0x3e0,
-                                (u16)(state.bSpecialEnabled != 0 ? 0xf : 0xe), 0);
+            Ov002_PanelWriteSlotLabel(4, 0, 0x3e0, (u16)(state.bSpecialEnabled != 0 ? 0xf : 0xe), 0);
             Ov002_PanelWriteSlotLabel(5, 0, 0x3f0, 0xf, 1);
             Ov002_PanelPushSlotState(4, 1, 0);
             Ov002_PanelPushSlotState(5, 0, 0);

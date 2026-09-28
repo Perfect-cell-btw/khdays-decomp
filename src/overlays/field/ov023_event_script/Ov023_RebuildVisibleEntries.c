@@ -7,7 +7,7 @@
  * the register the mask wants. And the whole loop sits INSIDE the guard rather than after an
  * early `return 1`, so the single exit is shared. */
 extern void EntityMgr_PopVramState(int obj);
-extern int LoadArrayU8At0cc(unsigned short i);
+extern int LoadArrayU8At0cc(int i);
 extern void Ov023_ActorRelease(int p);
 
 int Ov023_RebuildVisibleEntries(int obj) {

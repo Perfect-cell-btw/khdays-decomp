@@ -145,7 +145,7 @@ typedef struct GameState {
 extern Ov026PanelContext *data_ov026_02091368;
 extern const Ov026CellRect data_ov026_020910dc[2];
 extern GameState *volatile data_0204be18;                                       /* g_pTallySource */
-extern void *Ov026_FindEntryByTag(void *pTracker, u16 nTag);            /* Ov026_FindEntryByTag */
+extern void *Ov026_FindEntryByTag(void *pTracker, unsigned int nTag);            /* Ov026_FindEntryByTag */
 extern void  Ov026_TagTracker_InvokeCallback(void *pTracker, void *pCell);         /* Ov026_TagTracker_InvokeCallback */
 extern int   Ov026_CreateMissionCell(int hSlots, int nKind, int nSlot, int nX, int nY); /* create a cell */
 extern void *Ov026_FindEntryById(void *pWidgets, int nId);             /* FindEntryById */
@@ -199,7 +199,7 @@ int Ov026_OpenSellDialog(void)
     pWidgets = ctx->widgets;
     pWidgetsB = ctx->widgetsB;
     hSlots = ctx->hSlots;
-    Ov026_TagTracker_InvokeCallback(ctx->tagTracker, Ov026_FindEntryByTag(ctx->tagTracker, nTag));
+    Ov026_TagTracker_InvokeCallback(ctx->tagTracker, Ov026_FindEntryByTag(ctx->tagTracker, (u16)nTag));
     for (i = 0; i < 2; i++) {
         pos.nX = (data_ov026_020910dc[i].nX + (data_ov026_020910dc[i].nW >> 1)) << 12;
         pos.nY = (data_ov026_020910dc[i].nY + (data_ov026_020910dc[i].nH >> 1)) << 12;

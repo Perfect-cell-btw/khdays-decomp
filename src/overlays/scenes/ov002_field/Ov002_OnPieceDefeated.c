@@ -44,7 +44,7 @@ typedef void *Ov002StateFn(void *pElement);
 
 extern u8 data_0204c240;                /* boot-mode flags */
 
-extern int Rand16NextScaled(unsigned short nRange);        /* 0 .. nRange-1 */
+extern int Rand16NextScaled(unsigned int nRange);        /* 0 .. nRange-1 */
 extern int Ov002_GetRootField8d94(void);                   /* the drop multiplier */
 extern void Ov002_SpawnAllDrops(const u8 *aAmount, int nCtxIndex,
                                 const VecFx32 *pPlace);

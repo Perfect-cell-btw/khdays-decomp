@@ -4,7 +4,7 @@
 #include "nitro/os_types.h"
 #include "nnsys/snd.h"
 
-void PushCommand_0A(int playerNo, int varNo, s16 var);
+void PushCommand_0A(int playerNo, int varNo, int var);
 inline BOOL NNS_SndHandleIsValid (const struct NNSSndHandle * handle)
 {
     return handle->player != NULL ;

@@ -15,6 +15,8 @@ extern int Ov107_CollectSphereOverlaps(int actor, Sphere *sphere, int *out);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+/* Defined taking kind as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, u8 kind, VecFx32 *push, int z);
 extern void VEC_Add(void *a, void *b, VecFx32 *d);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);

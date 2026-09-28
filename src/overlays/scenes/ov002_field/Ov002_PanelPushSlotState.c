@@ -30,19 +30,17 @@ typedef struct {
 extern Ov002PanelSession *data_ov002_0207f620;
 
 extern void Ov002_PanelApplySlotState(int nSlot, int nState);
-extern void Ov002_PositionSubDcHandle_2(Ov002TagTrackerNode *pNode, short nValue,
-                                short nKind);
+extern void Ov002_PositionSubDcHandle_2(Ov002TagTrackerNode *pNode, int nValue, int nKind);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(Ov002TagTrackerNode *pNode);
 extern int Ov002_Ctx_FindActiveEntryByTag(int nTag);
-extern void Ov002_PositionSubDcHandle_4(int nHandle, short nValue, short nKind);
+extern void Ov002_PositionSubDcHandle_4(int nHandle, int nValue, int nKind);
 
 void Ov002_PanelPushSlotState(int nSlot, int nState, int nValue) {
     Ov002PanelSession *s = data_ov002_0207f620;
     int nHandle;
 
     Ov002_PanelApplySlotState(nSlot, nState);
-    Ov002_PositionSubDcHandle_2(s->aNodes[nSlot], nValue,
-                        s->aNodes[nSlot]->nKind);
+    Ov002_PositionSubDcHandle_2(s->aNodes[nSlot], (short)nValue, (short)s->aNodes[nSlot]->nKind);
     Ov002_Ctx_InvokeTagTrackerCallback(s->aNodes[nSlot]);
 
     if (nState != 0) {
@@ -54,6 +52,5 @@ void Ov002_PanelPushSlotState(int nSlot, int nState, int nValue) {
         }
     }
     nHandle = Ov002_Ctx_FindActiveEntryByTag(2);
-    Ov002_PositionSubDcHandle_4(nHandle, s->aNodes[nSlot]->nValue,
-                        s->aNodes[nSlot]->nKind);
+    Ov002_PositionSubDcHandle_4(nHandle, (short)s->aNodes[nSlot]->nValue, (short)s->aNodes[nSlot]->nKind);
 }

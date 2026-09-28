@@ -71,7 +71,7 @@ extern int VEC_Normalize(VecFx32 *out, VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, VecFx32 *in, VecFx32 *out);
 extern int Ov107_AiState_ApplyHit(struct Obj *obj, void *target, struct HitPacket *packet);
 extern void func_ov107_020c0b90(void *actor, int a, VecFx32 v, int d);
-extern void *Ov107_FindMessageHandler(u16 id);
+extern void *Ov107_FindMessageHandler(unsigned int id);
 extern void func_02031384(int channel, void *packet, int len);
 extern void SetIndexedSlot(struct Node *node, int slot, void *arg);
 

@@ -49,7 +49,7 @@ typedef struct Ov023Entity {
 
 extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, void *pOperand);  /* ScriptVm_ReadOperandInt */
 extern int   LoadGlobalU16At0(void);                                   /* the global mode halfword */
-extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
+extern Ov023Entity *ArrayEntryPtrD0(int nEntity);                     /* Entity_Get */
 extern void  VEC_Add(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
 
 int Ov023_CmdStopCamera(Ov023ScriptCtx *pCtx, void *pOperand)

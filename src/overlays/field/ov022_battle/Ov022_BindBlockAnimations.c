@@ -3,7 +3,7 @@
 
 extern void NNS_G3dRenderObjRemoveAnmObj(unsigned int *pool, int handle);
 extern void BindAnimTrack(int anim, unsigned short slot, int block, short arg);
-extern int *Anim_SetFrameWrapped(unsigned short *anim, unsigned short slot, int frame);
+extern int *Anim_SetFrameWrapped(unsigned short *anim, int slot, int frame);
 
 void Ov022_BindBlockAnimations(int unused, int block, unsigned short *anim,
                          int bindingIndex) {
@@ -16,7 +16,7 @@ void Ov022_BindBlockAnimations(int unused, int block, unsigned short *anim,
             ((int *)anim)[i + 3] = 0;
         }
         BindAnimTrack((int)anim, i, block, (short)bindingIndex);
-        Anim_SetFrameWrapped(anim, i, 0);
+        Anim_SetFrameWrapped(anim, (unsigned short)i, 0);
         i = i + 1;
     } while ((int)i < 5);
 }

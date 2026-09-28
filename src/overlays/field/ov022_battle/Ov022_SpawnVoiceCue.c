@@ -35,8 +35,7 @@ extern u16 QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(unsigned int nId);
 extern int Session_GetLocalPlayerIndex(void);
 extern int VEC_Distance(VecFx32 *pA, VecFx32 *pB);
-extern void Slot_Spawn(int nHandlerId, unsigned int nCue,
-                          VecFx32 *pPos, u16 nFlags);
+extern void Slot_Spawn(int nHandlerId, unsigned int nCue, VecFx32 *pPos, unsigned int nFlags);
 
 #define ACTOR_SILENCED 0x10000
 #define CUE_NEAR 1

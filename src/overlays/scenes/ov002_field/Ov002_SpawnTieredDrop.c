@@ -9,6 +9,8 @@
 
 extern u8 data_ov002_0207e67a;
 
+/* Defined taking nTier as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void *Ov002_SpawnKindIntoFreeSpot(int nKind, u16 nTier, int nCtxIndex,
                                  const VecFx32 *pPlace, int nMode);
 

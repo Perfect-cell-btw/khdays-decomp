@@ -74,7 +74,7 @@ typedef struct Ov015Chest {
     int  nNotifiedMask;       /* 0x734 */
 } Ov015Chest;
 
-extern Ov015Piece *Ov002_List_GetWord(u8 nKind);                          /* first piece of a kind */
+extern Ov015Piece *Ov002_List_GetWord(int nKind);                          /* first piece of a kind */
 extern VecFx32 *Ov002_Element_CallHook2C(void *pPiece);                         /* piece position */
 extern Ov015HitNode *Ov002_TriggerEntryActive(Ov015Piece *pPiece);              /* piece hit node */
 extern int  Ov002_IsWithinRadii(void *pFrom, int nRadius, VecFx32 *pAt, int nExtent); /* sphere test */

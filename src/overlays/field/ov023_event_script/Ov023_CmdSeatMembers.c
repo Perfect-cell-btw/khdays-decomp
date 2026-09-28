@@ -43,9 +43,15 @@ extern int   ScriptVm_ReadOperandFx32(Ov023ScriptCtx *pCtx, Ov023Operand *pOpera
 extern void  TailForwardTrackEntry(u16 nEntity, void *pTable, int nA, int nB); /* Entity_BindResource */
 extern char *Ov023_FormatIndex(int nIndex);                       /* Ov023_FormatSeatName */
 extern void  strcpy(char *pszDst, const char *pszSrc);       /* STD_CopyString */
+/* Defined taking nEntity as int, nMode as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void  Entity_SubmitRenderNode(u16 nEntity, u16 nMode, char *pszSpot, VecFx32 *pPos); /* Entity_SetPosition */
+/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern Ov023Entity *ArrayEntryPtrD0(u16 nEntity);                     /* Entity_Get */
 extern void  Ov023_PlaceActorModel(Ov023Actor *pActor, char *pszAnchor, VecFx32 *pPos, int nMode, int nActor); /* Ov023_PlaceActorModel */
+/* Defined taking nModel as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void  EntityMgr_ProbeGround(u16 nModel, char *pszSpot, VecFx32 *pOut); /* Model_GetSpotPosition */
 extern void  Actor_SetVecAndSyncChild(Ov023Entity *pEntity, VecFx32 *pPos);   /* Entity_SetPositionNow */
 extern const Ov023SeatHeights data_ov023_02089ddc;                  /* the seat heights */

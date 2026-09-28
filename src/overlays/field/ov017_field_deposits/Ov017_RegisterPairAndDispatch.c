@@ -1,7 +1,7 @@
 /* Script command: scales a list entry's tag by the operands; returns 1. */
 
 extern int ScriptVm_ReadOperandInt(void *a, void *b);
-extern void Ov002_List_ScaleEntryTag(unsigned char a, unsigned short b);
+extern void Ov002_List_ScaleEntryTag(int a, int b);
 extern void Ov017_RegisterHookNoOp(void);
 
 int Ov017_RegisterPairAndDispatch(void *arg1, char *arg2) {

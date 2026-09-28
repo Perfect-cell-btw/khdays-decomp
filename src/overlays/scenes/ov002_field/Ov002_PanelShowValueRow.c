@@ -22,7 +22,7 @@ extern Ov002PanelSession *data_ov002_0207f620;
 
 extern void Ov002_Ctx_SetTagTrackerNodeArmed_5(int nHandle, int bArmed);
 extern void Ov002_ForwardToSubDc_3(int nHandle);
-extern void Ov002_PositionSubDcHandle_4(int nHandle, short nValue, int nKind);
+extern void Ov002_PositionSubDcHandle_4(int nHandle, int nValue, int nKind);
 
 void Ov002_PanelShowValueRow(int nTop, int nMain, int nValue, int bRefresh,
                          int bVisible) {
@@ -38,7 +38,7 @@ void Ov002_PanelShowValueRow(int nTop, int nMain, int nValue, int bRefresh,
     }
     Ov002_Ctx_SetTagTrackerNodeArmed_5(nTop, 1);
     if (bVisible != 0) {
-        Ov002_PositionSubDcHandle_4(nMain, nValue, 0x11);
+        Ov002_PositionSubDcHandle_4(nMain, (short)nValue, 0x11);
         if (bRefresh != 0) {
             Ov002_ForwardToSubDc_3(nMain);
         }

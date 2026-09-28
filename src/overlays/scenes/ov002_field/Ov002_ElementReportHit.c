@@ -12,7 +12,7 @@ typedef struct {
     unsigned char pad0a[2];
 } Ov002ElementEvent;                /* 0x0c */
 
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 extern int Ov002_MatchPackedMask(int nLimit, int nA, int nB);
 extern int Ov002_RecordElementHit(char *pElement, Ov002ElementEvent *pEvent,
                                int nSize);

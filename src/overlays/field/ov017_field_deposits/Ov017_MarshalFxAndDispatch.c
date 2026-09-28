@@ -6,7 +6,7 @@
 extern int ScriptVm_ReadOperandInt(void *a, int b);
 extern int ScriptVm_ReadOperandFx32(void *a, int b);
 extern int func_02020400(int a, int b);
-extern int Ov002_List_ScaleEntryTag(unsigned char a, unsigned short b);
+extern int Ov002_List_ScaleEntryTag(int a, int b);
 extern void Ov017_thumbStep(int a, void *b, int c);
 
 int Ov017_MarshalFxAndDispatch(void *arg1, int arg2) {

@@ -27,7 +27,7 @@ extern void Draw_ScaledValue(void *pCtx, int nScreenBase, int a, int b, int c);
 
 extern int Ov002_ForwardToSubDc(int nCue);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int nHandle);
-extern int Ov002_PositionSubDcHandle_3(int nHandle, short nPos, int nMode);
+extern int Ov002_PositionSubDcHandle_3(int nHandle, int nPos, int nMode);
 extern int Ov002_GetItemResource(int nId);
 extern void Ov002_SelectEntry(int nId);
 

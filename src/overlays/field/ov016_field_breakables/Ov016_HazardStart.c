@@ -39,7 +39,7 @@ typedef struct Ov016Hazard {
 extern void *Ov002_LookupChannelEntry(const char *pName);                 /* name -> resource entry */
 extern void  Entity_Register(void *pNode, void *pEntry, int nA, int nB); /* bind a model node */
 extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);         /* Actor_SetVecAndSyncChild */
-extern int   GameState_GetField(u16 nField, u8 nBit);                     /* GameState_GetField */
+extern int   GameState_GetField(int nField, int nBit);                     /* GameState_GetField */
 extern void  Ov016_HazardSetState(Ov016Hazard *pSelf, int bState, int bSpawn); /* Ov016_HazardSetState */
 extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                  /* Obj_SetFlagBit3 */
 extern void  Res_RequestIdPair(int nId);                                 /* Res_RequestIdPair */

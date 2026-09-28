@@ -35,7 +35,7 @@ typedef struct Ov023Actor {
 /* The remainder is the high half of the helper's long long return; writing `%` emits
  * _s32_div_f, which is not linkable here. */
 extern long long func_02020400(int nNumerator, int nDenominator);
-extern int  LoadArrayInt244(u16 nEntity);                             /* Entity_GetSpeed */
+extern int  LoadArrayInt244(int nEntity);                             /* Entity_GetSpeed */
 extern int  Ov023_MotionAdvance(Ov023MotionState *pState, int nStep); /* Ov023_MotionAdvance */
 extern int  Anim_GetFrame(void *pAnim, int nArg);                   /* Anim_GetFrame */
 extern void Ov023_ActorSpawnEffect(Ov023Actor *pActor, int nIndex);    /* Ov023_ActorSpawnEffect */

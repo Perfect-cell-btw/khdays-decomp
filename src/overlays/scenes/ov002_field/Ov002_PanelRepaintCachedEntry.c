@@ -25,8 +25,7 @@ extern void Ov002_Ctx_InvokeTagTrackerCallback(int nEntry);
 extern int Ov002_Panel_IsSlotEnabledA(int nGroup, int nKey);
 extern int Ov002_Panel_IsSlotEnabledB(int nGroup, int nKey);
 extern int Ov002_FindSlotByKey(int nKey);
-extern void Ov002_PanelWriteSlotLabel(int nSlot, int nSub, u16 wValue, u16 nColour,
-                                int bFlag);
+extern void Ov002_PanelWriteSlotLabel(int nSlot, int nSub, int wValue, int nColour, int bFlag);
 typedef enum {
     PANEL_SIDE_LEFT = 0,
     PANEL_SIDE_RIGHT = 1
@@ -54,8 +53,7 @@ void Ov002_PanelRepaintCachedEntry(void) {
         nColour = 0xe;
     }
 
-    Ov002_PanelWriteSlotLabel(3, 0, (u16)(Ov002_FindSlotByKey(nKey) * 0x10 + 0x250),
-                        0xf, 0);
+    Ov002_PanelWriteSlotLabel(3, 0, (u16)(Ov002_FindSlotByKey(nKey) * 0x10 + 0x250), 0xf, 0);
     Ov002_PanelWriteSlotLabel(4, 0, 0x3e0, (u16)nColour, bRightAlign);
     Ov002_PanelWriteSlotLabel(5, 0, 0x3f0, 0xf, bRightAlign == 0);
     Ov002_PanelPushSlotState(4, bRightAlign != 0 ? PANEL_SIDE_LEFT : PANEL_SIDE_RIGHT, 0);

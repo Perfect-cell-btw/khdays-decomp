@@ -12,8 +12,8 @@
 extern u8   data_0204c240;                                          /* session bits */
 extern void GameState_SetFlag(int nFlag);                               /* GameState_SetFlag */
 extern void Ov002_ParkSpareEntry(void *pPiece);                      /* report a collected piece */
-extern int  GameState_GetField(u16 nField, u8 nBit);                     /* GameState_GetField */
-extern void GameState_SetField(u16 nField, u8 nBit, u16 nValue);         /* GameState_SetField */
+extern int  GameState_GetField(int nField, int nBit);                     /* GameState_GetField */
+extern void GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);         /* GameState_SetField */
 extern void Ov015_StoreArgsRunTwoSubActionsIfFlag4(void *pPickup, void *pSequence, int nArg, int nSpin, int nRise); /* Ov015_StoreArgsRunTwoSubActionsIfFlag4 */
 extern void Ov002_SetKeyNodeVisible(int nKey, int bShow, int nPriority); /* show / hide a keyed object's node */
 
@@ -50,8 +50,8 @@ int Ov015_PickupCollect(Ov015Pickup *pPickup)
         GameState_SetFlag(pDef->nFlagBase + pPickup->nFlagOffset);
     }
     Ov002_ParkSpareEntry(pPickup);
-    nField = GameState_GetField(pPickup->nStateField, pPickup->nStateBit);
-    GameState_SetField(pPickup->nStateField, pPickup->nStateBit, (nField & 0xffff0001) | 2);
+    nField = GameState_GetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit);
+    GameState_SetField((u16)pPickup->nStateField, (u8)pPickup->nStateBit, (u16)((nField & 0xffff0001) | 2));
     pPickup->nFlags &= ~8;
     if (pPickup->nStateBits & 0x80) {
         Ov015_StoreArgsRunTwoSubActionsIfFlag4(pPickup, &pPickup->sequence, 0, 0x1e000, 0);

@@ -24,7 +24,7 @@ extern const u16 data_ov002_0207e388[];
 
 extern int Ov002_GetPanelField01ae(void);
 extern int Ov002_ForwardToSubDc(int nCue);
-extern int Ov002_PositionSubDcHandle_2(int nHandle, short nPan, short nColour);
+extern int Ov002_PositionSubDcHandle_2(int nHandle, int nPan, int nColour);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int nHandle);
 extern void Ov002_ForwardToSubDc_2(int nHandle);
 

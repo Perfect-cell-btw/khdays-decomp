@@ -516,7 +516,7 @@ static inline void GX_VRAMCNT_SetSubOBJExtPltt_ (GXVRamSubOBJExtPltt objExtPltt)
 	}
 }
 
-extern void OSi_UnlockVram(u16 vramMap, u16 lockId);
+extern void OSi_UnlockVram(unsigned int vramMap, u16 lockId);
 extern u16 data_020446d2;   /* GXi_VRamLockId */
 #define GXi_VRamLockId data_020446d2
 /* disableBankForX_ -- NitroSDK gx_vramcnt.c: disable the banks of one use and unlock them for other libraries. */

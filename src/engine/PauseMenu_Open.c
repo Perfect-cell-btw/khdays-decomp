@@ -38,7 +38,7 @@ extern unsigned char data_0204c240;
 extern char data_02042748[];            /* "pause_refresh" */
 
 extern int GameState_IsFlagSet(int flag);                 /* GameState_IsFlagSet */
-extern void Callbacks_SetByte(unsigned char step);
+extern void Callbacks_SetByte(int step);
 extern int LoadGlobalU16At0(void);
 extern void *G2_GetBG3ScrPtr(void);
 extern void *G2_GetBG2ScrPtr(void);

@@ -21,7 +21,7 @@ typedef struct Ov107 {
 
 extern unsigned int Session_GetLocalPlayerIndex(void);
 extern void func_02031384(int cmd, Msg *msg, unsigned short val);
-extern Res *Ov107_FindMessageHandler(unsigned char idx);
+extern Res *Ov107_FindMessageHandler(unsigned int idx);
 extern void Ov107_InitObjectFromSource(int obj, int arg1);
 extern void Ov107_InvokeSlot0x74(int obj, int arg1);
 

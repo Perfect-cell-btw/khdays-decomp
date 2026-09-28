@@ -10,8 +10,8 @@
  * comes out as the original has it. */
 extern int Ov008_GetCtxObject9630(void);
 extern int GameState_GetField(int event, int bits);
-extern int Ov008_FindFirstThresholdRow(unsigned short sel);
-extern unsigned short Ov008_GetTableValue(unsigned short node);
+extern int Ov008_FindFirstThresholdRow(unsigned int sel);
+extern unsigned short Ov008_GetTableValue(int node);
 extern int GameState_IsFlagSet(int flag);
 extern void GameState_SetFlag(int flag);
 
@@ -22,7 +22,7 @@ int Ov008_FireNodeTutorialOnce(void) {
     if (Ov008_GetCtxObject9630() != 0) {
         return 0;
     }
-    id = Ov008_GetTableValue(Ov008_FindFirstThresholdRow(GameState_GetField(0, 9)));
+    id = Ov008_GetTableValue((unsigned short)(Ov008_FindFirstThresholdRow((unsigned short)(GameState_GetField(0, 9)))));
     result = 0;
     if (GameState_IsFlagSet(id + 0x3bd5) == 0) {
         GameState_SetFlag(id + 0x3bd5);

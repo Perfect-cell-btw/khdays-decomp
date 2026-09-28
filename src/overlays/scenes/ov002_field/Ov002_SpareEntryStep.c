@@ -13,7 +13,7 @@ extern int Session_IsActive(void);
 extern int Ov002_SetLeaveRequest(int bOn);
 extern void Ov002_StreamFormattedLine(char *pName, void *pText);
 extern void Ov002_SetRootFields8b44And8b48(void *pfnDone, char *pEntry);
-extern void Ov002_SetRootField8b41(unsigned char nBits);
+extern void Ov002_SetRootField8b41(int nBits);
 extern int Ov002_GetRootField8b41(void);
 extern void Ov002_SetRootField8b40(void);
 extern int Ov002_GetPhaseWord(void);
@@ -82,8 +82,7 @@ int Ov002_SpareEntryStep(char *pEntry)
                 if (Session_IsActive() != 0) {
                     Ov002_SetRootField8b41(0);
                 } else {
-                    Ov002_SetRootField8b41(
-                        (unsigned char)(Ov002_GetRootField8b41() & ~0xa));
+                    Ov002_SetRootField8b41((unsigned char)(Ov002_GetRootField8b41() & ~0xa));
                 }
                 Ov002_SetRootField8b40();
 

@@ -11,7 +11,7 @@
 
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
-extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
+extern void Ov258_StepCue(int *node, int step, int phase, unsigned int variant);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov258_ForwardEventIfStateOne(int partner, int from, int to, int d);
@@ -26,12 +26,12 @@ void Ov258_ComboTick(int *node)
     state[0xc] += *(int *)(node[0] + 0x2c);
     state[0x11] += *(int *)(node[0] + 0x2c);
     state[0xc] = *(int *)(*state + 0x460) != 0 ? 0x880 : 0;
-    Ov258_StepCue(node, 0x52, 6, *(int *)(*state + 0x460) != 0 ? 0x1b : 0x11);
-    Ov258_StepCue(node, 0x54, 5, 0);
-    Ov258_StepCue(node, 0x6e, 4, *(int *)(*state + 0x460) != 0 ? 0x1b : 0x12);
-    Ov258_StepCue(node, 0x70, 3, 1);
-    Ov258_StepCue(node, 0xb6, 2, *(int *)(*state + 0x460) != 0 ? 0x1b : 0x13);
-    Ov258_StepCue(node, 0xd2, 1, 2);
+    Ov258_StepCue(node, 0x52, 6, (u16)(*(int *)(*state + 0x460) != 0 ? 0x1b : 0x11));
+    Ov258_StepCue(node, 0x54, 5, (u16)0);
+    Ov258_StepCue(node, 0x6e, 4, (u16)(*(int *)(*state + 0x460) != 0 ? 0x1b : 0x12));
+    Ov258_StepCue(node, 0x70, 3, (u16)1);
+    Ov258_StepCue(node, 0xb6, 2, (u16)(*(int *)(*state + 0x460) != 0 ? 0x1b : 0x13));
+    Ov258_StepCue(node, 0xd2, 1, (u16)2);
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }

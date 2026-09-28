@@ -7,7 +7,7 @@ extern void Entity_Register(char *pObj, int nRes, int a, int b);
 extern void Actor_SetVecAndSyncChild(char *pNode, VecFx32 *pPos);
 extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);
 extern void SceneNode_Disable(u16 *pNode);
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 extern void Obj_SetFlagBit3(char *pObj, int bOn);
 extern void Obj_SetTransition(char *pObj, int bFlag, int nParam);
 
@@ -46,8 +46,7 @@ void Ov002_ElementRestoreModel(char *pElement)
                             *(signed char *)(pElement + 0x1a0), 0);
         SceneNode_Disable((u16 *)(pElement + 0x2c));
 
-        nState = GameState_GetField(*(u16 *)(pElement + 0x14),
-                               *(unsigned char *)(pElement + 0x16));
+        nState = GameState_GetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16));
         Obj_SetFlagBit3(pElement + 0x1c, (nState & 1) != 0);
 
         Obj_SetTransition(pElement + 0x1c,

@@ -2,7 +2,7 @@
 
 extern int ScriptVm_ReadOperandInt(void *a, int b);
 extern int ByteCode_ResolveOperand(void *a, int b);
-extern int Ov016_CreateFollowerClass(unsigned short a, int *b);
+extern int Ov016_CreateFollowerClass(int a, int *b);
 extern void Ov002_SetModuleSlot(int a, int b);
 
 int Ov016_InitTripleAndDispatch(void *arg1, int arg2) {

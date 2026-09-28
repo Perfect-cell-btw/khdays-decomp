@@ -19,8 +19,8 @@ extern /* Retire a timed element.
  * left of the or so it is evaluated first. */
 void Ov002_RebindAnimTracks(short *pTable, int nTime, int nMode);
 extern void SceneNode_Disable(u16 *pNode);
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
-extern void GameState_SetField(u16 nId, unsigned char nSlot, u16 wState);
+extern int GameState_GetField(int nId, int nSlot);
+extern void GameState_SetField(unsigned int nId, unsigned int nSlot, unsigned int wState);
 
 /* Retire a timed element.
  *
@@ -63,12 +63,10 @@ void Ov002_ElementRetire(char *pElement)
                              & 0xfffe) << 15) >> 16;
     nNew = ((*(unsigned char *)(pElement + 0x1b8) & 1) | (nState & ~1)) << 16;
 
-    nRaw = GameState_GetField(*(u16 *)(pElement + 0x14),
-                         *(unsigned char *)(pElement + 0x16));
+    nRaw = GameState_GetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16));
     wNew = (u16)((nNew >> 15) | (nRaw & 0xffff0001));
 
-    GameState_SetField(*(u16 *)(pElement + 0x14),
-                  *(unsigned char *)(pElement + 0x16), wNew);
+    GameState_SetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16), wNew);
 
     *(unsigned char *)(pElement + 0x1b9) = 0;
 

@@ -102,7 +102,7 @@ extern Ov008MissionListEntry *Ov025_GetNextMissionEntry_5(u32 nMissionId);      
 extern int   Ov025_GetCtxObject9630(void);                                  /* Ov008_GetCtxObject9630 */
 extern int   Ov025_GetCtxObject9634(void);                                  /* Ov008_GetCtxObject9634: page transition */
 extern int   GameState_IsFlagSet(int nFlag);                                   /* GameState_IsFlagSet */
-extern void  Ov025_ApplyTempFieldsByTag(int nOwner, u32 nTag, short nX, short nY); /* Ov008_SetTagValueDup */
+extern void  Ov025_ApplyTempFieldsByTag(int nOwner, u32 nTag, int nX, int nY); /* Ov008_SetTagValueDup */
 extern void  Ov025_ConfigureEntryByTag_2(int nOwner, u32 nTag, short nX, short nY); /* Ov008_SetTagValueAndNotify */
 extern u32   GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 extern u32   Ov025_BuildRankMask2(Ov008MissionMenu *pMenu, u32 nWord);    /* Ov008_BuildRankMask2 */
@@ -146,24 +146,24 @@ void Ov025_MissionMenu_DrawTags(Ov008MissionMenu *pMenu)
         bUnlocked = GameState_IsFlagSet(pEntry->nTextSlot + FLAG_TEXT_SLOT_BASE);
     }
     if (bUnlocked == 0) {
-        Ov025_ApplyTempFieldsByTag(nOwner, TAG_LOCKED, 2, 2);
+        Ov025_ApplyTempFieldsByTag(nOwner, TAG_LOCKED, (short)2, (short)2);
     } else {
-        Ov025_ApplyTempFieldsByTag(nOwner, tags.aTag[pEntry->nTextSlot], 2, 2);
+        Ov025_ApplyTempFieldsByTag(nOwner, tags.aTag[pEntry->nTextSlot], (short)2, (short)2);
     }
     if (bTransition != 0) {
         if (pMenu->bTransfer != 0) {
             switch (GameState_GetField(pEntry->missionId * 3 + FIELD_MISSION_TRANSFER, 3)) {
             case 1:
-                Ov025_ApplyTempFieldsByTag(nOwner, TAG_TRANSFER_1, 0x17, 3);
+                Ov025_ApplyTempFieldsByTag(nOwner, TAG_TRANSFER_1, (short)0x17, (short)3);
                 break;
             case 2:
-                Ov025_ApplyTempFieldsByTag(nOwner, TAG_TRANSFER_2, 0x17, 3);
+                Ov025_ApplyTempFieldsByTag(nOwner, TAG_TRANSFER_2, (short)0x17, (short)3);
                 break;
             case 3:
-                Ov025_ApplyTempFieldsByTag(nOwner, TAG_TRANSFER_3, 0x17, 3);
+                Ov025_ApplyTempFieldsByTag(nOwner, TAG_TRANSFER_3, (short)0x17, (short)3);
                 break;
             case 4:
-                Ov025_ApplyTempFieldsByTag(nOwner, TAG_TRANSFER_0, 0x17, 3);
+                Ov025_ApplyTempFieldsByTag(nOwner, TAG_TRANSFER_0, (short)0x17, (short)3);
                 break;
             case 0:
             default:
@@ -177,13 +177,13 @@ void Ov025_MissionMenu_DrawTags(Ov008MissionMenu *pMenu)
             Ov025_ConfigureEntryByTag_2(nOwner, TAG_STAGE, 0x16, 3);
             switch (nStage) {
             case 1:
-                Ov025_ApplyTempFieldsByTag(nOwner, TAG_STAGE_1, nY, 3);
+                Ov025_ApplyTempFieldsByTag(nOwner, TAG_STAGE_1, (short)nY, (short)3);
                 break;
             case 2:
-                Ov025_ApplyTempFieldsByTag(nOwner, TAG_STAGE_2, nY, 3);
+                Ov025_ApplyTempFieldsByTag(nOwner, TAG_STAGE_2, (short)nY, (short)3);
                 break;
             case 3:
-                Ov025_ApplyTempFieldsByTag(nOwner, TAG_STAGE, nY, 3);
+                Ov025_ApplyTempFieldsByTag(nOwner, TAG_STAGE, (short)nY, (short)3);
                 break;
             default:
                 Ov025_ConfigureEntryByTag_2(nOwner, TAG_STAGE, 0x16, 3);
@@ -225,7 +225,7 @@ void Ov025_MissionMenu_DrawTags(Ov008MissionMenu *pMenu)
                 }
             }
             if (nTag != -1) {
-                Ov025_ApplyTempFieldsByTag(nOwner, nTag, (short)(i + TILE_X_FIRST), 2);
+                Ov025_ApplyTempFieldsByTag(nOwner, nTag, (short)(i + TILE_X_FIRST), (short)2);
             } else {
                 Ov025_ConfigureEntryByTag_2(nOwner, TAG_RANK_DONE, (short)(i + TILE_X_FIRST), 2);
             }
@@ -234,27 +234,27 @@ void Ov025_MissionMenu_DrawTags(Ov008MissionMenu *pMenu)
         if (pEntry->bSpecial != 0 || (pEntry->nFlags & 2)) {
             bCleared = GameState_GetField(pEntry->missionId * 3 + FIELD_MISSION_STATUS, 3) == 3;
             if (bCleared) {
-                Ov025_ApplyTempFieldsByTag(nOwner, TAG_BADGE, 0x16, 3);
+                Ov025_ApplyTempFieldsByTag(nOwner, TAG_BADGE, (short)0x16, (short)3);
             } else {
                 bStarted = GameState_GetField(pEntry->missionId * 3 + FIELD_MISSION_STATUS, 3) >= 2;
                 if (bStarted) {
-                    Ov025_ApplyTempFieldsByTag(nOwner, TAG_STARTED, 0x16, 3);
+                    Ov025_ApplyTempFieldsByTag(nOwner, TAG_STARTED, (short)0x16, (short)3);
                 } else {
-                    Ov025_ApplyTempFieldsByTag(nOwner, TAG_STARTED_ALT, 0x17, 3);
+                    Ov025_ApplyTempFieldsByTag(nOwner, TAG_STARTED_ALT, (short)0x17, (short)3);
                 }
             }
         } else {
             bCleared = GameState_GetField(pEntry->missionId * 3 + FIELD_MISSION_STATUS, 3) == 3;
             if (bCleared) {
-                Ov025_ApplyTempFieldsByTag(nOwner, TAG_CLEARED_PLAIN, 0x16, 3);
+                Ov025_ApplyTempFieldsByTag(nOwner, TAG_CLEARED_PLAIN, (short)0x16, (short)3);
             } else {
                 bStarted = GameState_GetField(pEntry->missionId * 3 + FIELD_MISSION_STATUS, 3) >= 2;
                 if (bStarted) {
-                    Ov025_ApplyTempFieldsByTag(nOwner, TAG_STARTED_PLAIN, 0x16, 3);
+                    Ov025_ApplyTempFieldsByTag(nOwner, TAG_STARTED_PLAIN, (short)0x16, (short)3);
                 }
             }
         }
-        Ov025_ApplyTempFieldsByTag(nOwner, TAG_FOLLOW, 0x17, 1);
+        Ov025_ApplyTempFieldsByTag(nOwner, TAG_FOLLOW, (short)0x17, (short)1);
     }
     tierTags = data_ov025_020b46d8;
     nTier = Ov025_UpdateMissionSummaryTier(pEntry);
@@ -277,7 +277,7 @@ void Ov025_MissionMenu_DrawTags(Ov008MissionMenu *pMenu)
     if (bTransition != 0) {
         nTier = 0;
     }
-    Ov025_ApplyTempFieldsByTag(nOwner, tierTags.aTag[nTier], 0x1c, 3);
+    Ov025_ApplyTempFieldsByTag(nOwner, tierTags.aTag[nTier], (short)0x1c, (short)3);
     if (nTier == 0) {
         Ov025_TagTracker_InvokeCallback(nOwner, Ov025_FindEntryByTag(nOwner, 0xf));
     } else {

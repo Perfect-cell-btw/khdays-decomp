@@ -145,7 +145,7 @@ typedef struct GameState {
 extern Ov008PanelContext *data_ov008_02090fac;
 extern const Ov008CellRect data_ov008_0208fe84[2];
 extern GameState *volatile data_0204be18;                                       /* g_pTallySource */
-extern void *Ov008_FindEntryByTag(void *pTracker, u16 nTag);            /* ov008_FindEntryByTag */
+extern void *Ov008_FindEntryByTag(void *pTracker, unsigned int nTag);            /* ov008_FindEntryByTag */
 extern void  Ov008_TagTracker_InvokeCallback(void *pTracker, void *pCell);         /* Ov008_TagTracker_InvokeCallback */
 extern int   Ov008_CreateMissionCell(int hSlots, int nKind, int nSlot, int nX, int nY); /* create a cell */
 extern void *Ov008_FindEntryById(void *pWidgets, int nId);             /* FindEntryById */
@@ -199,7 +199,7 @@ int Ov008_OpenSellDialog(void)
     pWidgets = ctx->widgets;
     pWidgetsB = ctx->widgetsB;
     hSlots = ctx->hSlots;
-    Ov008_TagTracker_InvokeCallback(ctx->tagTracker, Ov008_FindEntryByTag(ctx->tagTracker, nTag));
+    Ov008_TagTracker_InvokeCallback(ctx->tagTracker, Ov008_FindEntryByTag(ctx->tagTracker, (u16)nTag));
     for (i = 0; i < 2; i++) {
         pos.nX = (data_ov008_0208fe84[i].nX + (data_ov008_0208fe84[i].nW >> 1)) << 12;
         pos.nY = (data_ov008_0208fe84[i].nY + (data_ov008_0208fe84[i].nH >> 1)) << 12;

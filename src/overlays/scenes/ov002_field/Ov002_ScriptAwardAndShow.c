@@ -4,7 +4,7 @@
 extern int ScriptVm_ReadOperandInt(void *pCtx, int nArgs);
 /* Read and write the saved counter 0x20ad, slot 8. */
 extern int GameState_GetField(int nId, int nSlot);
-extern void GameState_SetField(int nId, int nSlot, u16 nValue);
+extern void GameState_SetField(int nId, int nSlot, unsigned int nValue);
 /* Non-zero while the counter display is already up. */
 extern int LoadGlobalPtr4FieldDcOrZero(void);
 extern void StoreToGlobalPtr4FieldDcIfSet(int nOn);

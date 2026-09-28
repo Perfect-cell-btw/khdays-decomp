@@ -9,8 +9,8 @@ extern void Ov002_ElementStartTrack(char *pElement, short *pAnim, int nTrack,
                                 int nParamA, int nParamB, int bEffect);
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov002_RecordElementHit(void *pElement, void *pMsg, int nKind);
-extern unsigned int GameState_GetField(u16 nField, u8 nWidth);
-extern void GameState_SetField(u16 nField, u8 nWidth, u16 nValue);
+extern unsigned int GameState_GetField(int nField, int nWidth);
+extern void GameState_SetField(unsigned int nField, unsigned int nWidth, unsigned int nValue);
 extern void Ov002_SetFieldBit0(char *pElement, int nMode);
 extern void ReleaseNodeResources(char *pObj);
 extern void Scene_DrawNode(u16 *pAnim);
@@ -79,11 +79,8 @@ int Ov002_TravelElementStep(char *pElement)
                 *(u8 *)(pElement + 0x2c0) = 2;
                 *(int *)(pElement + 0x2bc) = 0;
 
-                nState = GameState_GetField(*(u16 *)(pElement + 0x14),
-                                       *(u8 *)(pElement + 0x16));
-                GameState_SetField(*(u16 *)(pElement + 0x14),
-                              *(u8 *)(pElement + 0x16),
-                              (u16)((nState & ~0xfffe) | 2));
+                nState = GameState_GetField(*(u16 *)(pElement + 0x14), *(u8 *)(pElement + 0x16));
+                GameState_SetField(*(u16 *)(pElement + 0x14), *(u8 *)(pElement + 0x16), (u16)((nState & ~0xfffe) | 2));
 
                 Ov002_ElementStartTrack(pElement, (short *)(pElement + 0x1b0),
                                     *(u8 *)(pElement + 0x2c0),

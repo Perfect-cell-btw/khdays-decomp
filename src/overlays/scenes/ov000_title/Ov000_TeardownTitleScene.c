@@ -7,7 +7,7 @@ extern void ConstReturn1_2(char *p);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern void ReleaseField74AndCleanup(char *p);
 extern int func_02024e5c(void);
-extern void GameState_SetField(int id, int a, unsigned short b);
+extern void GameState_SetField(int id, int a, unsigned int b);
 extern int data_ov000_0205ac20;
 
 /* Title teardown: stops the two sound channels, releases the layout and the animation block

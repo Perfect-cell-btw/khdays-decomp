@@ -53,6 +53,8 @@ struct ReactionCtx {
 };
 
 extern struct Hit *func_0202c248(u16 nGroup, struct CollCastParams *pCast);
+/* Defined taking nGroup as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern struct Hit *func_0202c208(u16 nGroup, struct CollCastParams *pCast);
 extern struct CollSurfaceAttr *Actor_GetRecord(struct Hit *pHit, unsigned int nSlot);
 extern void Vec3ScaleAddQ27(int nScale, VecFx32 *pDir, VecFx32 *pBase,

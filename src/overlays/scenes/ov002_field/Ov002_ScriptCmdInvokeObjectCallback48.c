@@ -20,7 +20,7 @@ typedef struct {
 extern int ScriptVm_ReadOperandInt(void *pContext, OperandSlot *pOperand);
 extern int ScriptVm_ReadOperandFx32(void *pContext, OperandSlot *pOperand);
 extern int ByteCode_ResolveOperand(void *pContext, OperandSlot *pOperand);
-extern int Ov002_List_ScaleEntryTag(int nKind, u16 wId);
+extern int Ov002_List_ScaleEntryTag(int nKind, int wId);
 extern void Ov002_InvokeCallback48(int nObject, int nCount, void *pVals);
 
 /* Script command with a variable-length operand list: resolve the target

@@ -4,7 +4,7 @@
  * whole to Ov002_RefreshActiveSlots alongside whatever the first call returns.
  * Always reports 1. */
 extern int ScriptVm_ReadOperandInt(void *self, void *arg);
-extern int Ov002_List_ScaleEntryTag(unsigned char a, unsigned short b);
+extern int Ov002_List_ScaleEntryTag(int a, int b);
 extern void Ov002_RefreshActiveSlots(int handle, int c);
 
 int Ov002_ScriptDriveWidget(void *self, char *args) {

@@ -13,7 +13,7 @@
 
 #define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
-extern int  func_ov105_020bf900(void *buf, u16 size, void *callback);
+extern int  func_ov105_020bf900(void *buf, int size, void *callback);
 extern void Ov008_PacketSentCallback(void);
 
 int Ov008_SendPacket(const void *src, int size)

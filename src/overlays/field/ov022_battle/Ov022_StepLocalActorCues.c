@@ -49,7 +49,7 @@ struct Actor {
 #define BIT58 (1ULL << 58)
 
 extern int Session_GetLocalPlayerIndex(void);
-extern int Slot_Spawn(int nKindId, int nCue, VecFx32 *pPos, u16 nFlags);
+extern int Slot_Spawn(int nKindId, int nCue, VecFx32 *pPos, unsigned int nFlags);
 extern int SoundSeqHandle_IsActive(int hSpawn);
 extern void Handle_WritePayloadIfLive(int hSpawn, VecFx32 *pPos);
 extern void Ov022_PlayEntityVoice(struct Actor *pActor, int nA, int nCue);
@@ -70,8 +70,7 @@ void Ov022_StepLocalActorCues(struct Actor *pActor)
                 if ((u32)(pActor->nFlags & FLAG_BIT16) == 0) {
                     nSpawnFlags |= 1;
                 }
-                pActor->hSpawn = Slot_Spawn(pActor->nKindId, 0, &pActor->vecAim,
-                                               nSpawnFlags);
+                pActor->hSpawn = Slot_Spawn(pActor->nKindId, 0, &pActor->vecAim, nSpawnFlags);
             }
         } else if (pActor->hSpawn != 0) {
             if (SoundSeqHandle_IsActive(pActor->hSpawn) != 0) {

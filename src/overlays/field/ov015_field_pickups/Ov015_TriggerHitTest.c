@@ -7,7 +7,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 
-extern int GameState_GetField(u16 nField, u8 nBit);                    /* GameState_GetField */
+extern int GameState_GetField(int nField, int nBit);                    /* GameState_GetField */
 extern int Ov002_PointWithinBoxRange(VecFx32 *pCentre, VecFx32 *pExtent, VecFx32 *pPoint, int nRadius); /* point within the box */
 
 typedef struct Ov015Trigger {

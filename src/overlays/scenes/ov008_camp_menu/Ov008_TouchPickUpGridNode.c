@@ -49,7 +49,7 @@ typedef struct Ov008MenuContext {
 extern Ov008MenuContext *Ov008_GetMenuContext(void);                       /* Ov008_GetMenuContext */
 extern void Ov008_CopySourceBlock(void *pOut);                              /* touch record */
 extern int  Ov008_GetContext(void);                                    /* Ov008_GetContext */
-extern int  Ov008_PixelToTileCell(u16 *pCol, u16 *pRow, u16 nX, u16 nY);    /* Ov008_PixelToTileCell */
+extern int  Ov008_PixelToTileCell(u16 *pCol, u16 *pRow, unsigned int nX, unsigned int nY);    /* Ov008_PixelToTileCell */
 extern int  Ov008_PickUpGridNode(Ov008MenuContext *pCtx);                  /* Ov008_PickUpGridNode */
 extern void *Ov008_FindEntryById(int nCtx, int nId);                      /* FindEntryById */
 extern void Ov008_SetEntrySlotsVisible(int nCtx, void *pEntry, int bVisible);    /* SetEntrySlotsVisible */

@@ -83,12 +83,12 @@ extern int Ov006_SetTitleWord(int slot, int flag);  /* Ov006_SetTitleWord */
 extern int Ov006_RequestMenuState(unsigned int state, int animate, int completion);  /* Ov006_RequestMenuState */
 extern void Ov006_SetMissionCursorSelection(int selection);
 extern int Ov006_SetTitleMode(unsigned int mode);
-extern int Ov006_SetMissionRowSlotValue(int slot, u16 value, int visible);
+extern int Ov006_SetMissionRowSlotValue(int slot, int value, int visible);
 extern int Ov006_MissionSetModelPose(int pose);  /* Ov002_BeginTextCrawl */
 extern void Ov006_MissionSetSlotVisible(int visible);  /* Ov006_MissionSetSlotVisible */
 extern void Ov006_ResetTextLayers(void);  /* Ov006_ResetTextLayers */
 extern void *Ov006_GetVarRecordByIndex(void *resource, int index);  /* GetVarRecordByIndex */
-extern void Ov006_MissionDrawTextRunFwd(void *text, int x, int y, u8 style, int layer,  /* Ov006_MissionDrawTextRunFwd */
+extern void Ov006_MissionDrawTextRunFwd(void *text, int x, int y, int style, int layer, /* Ov006_MissionDrawTextRunFwd */
                             int align, int visible);
 extern void Ov006_FlushTextLayers(void);  /* Ov006_FlushTextLayers */
 
@@ -241,7 +241,7 @@ have_unique:
     do {
         Ov006_SetTitleWord(visibleSlot, rows[i].slotUsed);
         rowPtr = &rows[i];
-        Ov006_SetMissionRowSlotValue(visibleSlot, rowPtr->memberId, rowPtr->readyFlag);
+        Ov006_SetMissionRowSlotValue(visibleSlot, (u16)rowPtr->memberId, rowPtr->readyFlag);
         if (rows[i].slotUsed != 0) {
             if (i == cursorEntry &&
                 (u8)rows[i].memberId != (u8)data_ov006_02056660->rows[i].memberId) {
@@ -305,7 +305,7 @@ have_unique:
         }
 
         record = Ov006_GetVarRecordByIndex(data_ov006_02056660->resource, (int)messageId);
-        Ov006_MissionDrawTextRunFwd(record, 0xfa, 2, 1, 1, 1, 1);
+        Ov006_MissionDrawTextRunFwd(record, 0xfa, 2, (u8)1, 1, 1, 1);
 
         if (resolvedSelection != 0) {
             record = Ov006_GetVarRecordByIndex(data_ov006_02056660->resource,
@@ -313,18 +313,18 @@ have_unique:
         } else {
             record = Ov006_GetVarRecordByIndex(data_ov006_02056660->resource, 0x1e);
         }
-        Ov006_MissionDrawTextRunFwd(record, 0x26, 0x1c, 1, 1, 2, 1);
+        Ov006_MissionDrawTextRunFwd(record, 0x26, 0x1c, (u8)1, 1, 2, 1);
 
         record = Ov006_GetVarRecordByIndex(data_ov006_02056660->resource,
                                  rows[Ov006_MissionGetCursorEntry()].memberId + 0x1f);
-        Ov006_MissionDrawTextRunFwd(record, 0x80, 0x1c, 1, 1, 2, 1);
+        Ov006_MissionDrawTextRunFwd(record, 0x80, 0x1c, (u8)1, 1, 2, 1);
 
         i = 0;
         labelsHi = &labels[3];
         do {
             record = Ov006_GetVarRecordByIndex(data_ov006_02056660->resource,
                                      labelsHi[i]);
-            Ov006_MissionDrawTextRunFwd(record, 0x87, i * 0x10 + 0x38, 1, 1, 1, 1);
+            Ov006_MissionDrawTextRunFwd(record, 0x87, i * 0x10 + 0x38, (u8)1, 1, 1, 1);
             i++;
         } while (i < 4);
 
@@ -332,7 +332,7 @@ have_unique:
         do {
             record = Ov006_GetVarRecordByIndex(data_ov006_02056660->resource,
                                      labels[i]);
-            Ov006_MissionDrawTextRunFwd(record, 0xe4, i * 0x10 + 0x38, 1, 1, 1, 1);
+            Ov006_MissionDrawTextRunFwd(record, 0xe4, i * 0x10 + 0x38, (u8)1, 1, 1, 1);
             i++;
         } while (i < 3);
 
@@ -369,7 +369,7 @@ have_unique:
                     record = Ov006_GetVarRecordByIndex(
                         data_ov006_02056660->resource, 0x1e);
                 }
-                Ov006_MissionDrawTextRunFwd(record, x, y, 1, 1, 2, 1);
+                Ov006_MissionDrawTextRunFwd(record, x, y, (u8)1, 1, 2, 1);
             }
             i++;
         } while (i < 4);
@@ -390,7 +390,7 @@ have_unique:
         }
 
         record = Ov006_GetVarRecordByIndex(data_ov006_02056660->resource, (int)messageId);
-        Ov006_MissionDrawTextRunFwd(record, 0xa, 0xb4, 1, 1, 0, 0);
+        Ov006_MissionDrawTextRunFwd(record, 0xa, 0xb4, (u8)1, 1, 0, 0);
         Ov006_FlushTextLayers();
     }
 

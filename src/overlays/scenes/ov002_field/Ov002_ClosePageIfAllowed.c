@@ -11,7 +11,7 @@ typedef struct {
 } Ov002PageContext;
 
 extern int Ov002_Field_IsActive(void);
-extern void Ov002_LinkPageRefresh(unsigned short id, int a);
+extern void Ov002_LinkPageRefresh(int id, int a);
 
 extern Ov002PageContext *data_ov002_0207f9fc;
 

@@ -22,7 +22,7 @@ extern int Ov002_RemapCodeValue(void *pActor, void *pAnimState, int nNewMode);
 extern void BindAnimTrack(void *pAnim, u16 nTrack, void *pTable, short nBlend);
 extern void Anim_BlendToTrack(void *pAnim, u16 nTrack, void *pTable, short nBlend,
                           int nFlags);
-extern void Anim_SetFrameWrapped(void *pAnim, u16 nTrack, int nFrame);
+extern void Anim_SetFrameWrapped(void *pAnim, int nTrack, int nFrame);
 
 /* Put an actor into a new animation mode.
 

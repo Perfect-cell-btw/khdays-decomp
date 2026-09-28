@@ -7,7 +7,7 @@
  * lsl/lsr pairs rather than an `and`), the same shape as
  * Ov002_ScriptDriveWidget. */
 extern int ScriptVm_ReadOperandInt(void *self, void *arg);
-extern void *Ov002_List_ScaleEntryTag(unsigned char a, unsigned short b);
+extern void *Ov002_List_ScaleEntryTag(int a, int b);
 extern int Ov002_IsAnySlotEnabled(void *entry);
 
 int Ov002_ScriptIsEntryFree(void *self, char *args) {

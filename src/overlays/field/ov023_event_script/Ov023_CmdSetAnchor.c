@@ -26,8 +26,8 @@ typedef struct Ov023ScriptCtx {
 extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandInt */
 extern int   ScriptVm_ReadOperandFx32(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandFx32 */
 extern char *ByteCode_ResolveOperand(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandString */
-extern int   LoadArrayU8At0ce(u16 nEntity);                            /* Entity_GetModelId */
-extern void  EntityMgr_ProbeGround(u16 nModel, char *pszSpot, VecFx32 *pOut); /* Model_GetSpotPosition */
+extern int   LoadArrayU8At0ce(int nEntity);                            /* Entity_GetModelId */
+extern void  EntityMgr_ProbeGround(int nModel, char *pszSpot, VecFx32 *pOut); /* Model_GetSpotPosition */
 
 int Ov023_CmdSetAnchor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
 {
@@ -49,7 +49,7 @@ int Ov023_CmdSetAnchor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
     } else {
         nActor = ScriptVm_ReadOperandInt(pCtx, pOperand + 1);
         pszSpot = ByteCode_ResolveOperand(pCtx, pOperand + 2);
-        EntityMgr_ProbeGround(LoadArrayU8At0ce((u16)nActor), pszSpot, &vPos);
+        EntityMgr_ProbeGround((u16)(LoadArrayU8At0ce((u16)nActor)), pszSpot, &vPos);
     }
     pCtx->pEvent->aAnchorPos[nAnchor] = vPos;
     pCtx->pEvent->aAnchorAngle[nAnchor] = (u16)(nAngle * 0xb6);

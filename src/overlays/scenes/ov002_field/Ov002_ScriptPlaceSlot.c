@@ -15,7 +15,7 @@ extern int ScriptVm_ReadOperandInt(void *pCtx, int nArgs);
 extern int ScriptVm_ReadOperandFx32(void *pCtx, int nArgs);
 extern char *ByteCode_ResolveOperand(void *pCtx, int nArgs);
 extern int func_02020400(int a, int b);
-extern Ov002PlaceResult *EntityMgr_FindCollEntry(u16 nSlot, const char *pKey);
+extern Ov002PlaceResult *EntityMgr_FindCollEntry(int nSlot, const char *pKey);
 extern void Ov002_ApplyRosterSlotToNode(int nIndex, void *pPlace, int nAngle);
 
 /* Script VM command: put one roster slot at a place.

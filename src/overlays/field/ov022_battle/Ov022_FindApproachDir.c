@@ -77,7 +77,7 @@ extern int VEC_Normalize(VecFx32 *pSrc, VecFx32 *pDst);    /* VEC_Normalize, ans
 extern int VEC_DotProduct(VecFx32 *pA, VecFx32 *pB);
 extern void VEC_Add(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
 extern int Ov002_GetSlotTableByte(int nGroup);
-extern struct GroupMember *Ov002_List_GetWord(u16 nId);
+extern struct GroupMember *Ov002_List_GetWord(int nId);
 
 int Ov022_FindApproachDir(struct Actor *pActor, struct Actor *pPartner, VecFx32 *pOut)
 {

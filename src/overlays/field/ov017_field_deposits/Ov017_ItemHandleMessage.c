@@ -51,8 +51,8 @@ extern int   Ov002_IsSessionOpen(void);                               /* scene r
 extern int   Session_GetLocalPlayerIndex(void);                                     /* Session_GetLocalPlayerIndex */
 extern int   QueryActiveStateOrDelegate(void);                                     /* the local peer */
 extern Ov017PlayerActor *GetEntryField20ByIndex(int nPlayer);                  /* the player's actor */
-extern int   Ov002_FindKeyEntryIndex(short nKey);                         /* key -> entry index */
-extern Ov017KeyEntry *Ov002_GetRootField8d14(short nIndex);              /* entry index -> entry */
+extern int   Ov002_FindKeyEntryIndex(int nKey);                         /* key -> entry index */
+extern Ov017KeyEntry *Ov002_GetRootField8d14(int nIndex);              /* entry index -> entry */
 
 void Ov017_ItemHandleMessage(Ov017Item *pSelf, Ov017ItemMessage *pMessage)
 {
@@ -81,7 +81,7 @@ void Ov017_ItemHandleMessage(Ov017Item *pSelf, Ov017ItemMessage *pMessage)
             break;
         }
         pActor = GetEntryField20ByIndex(pSelf->nPlayer);
-        pEntry = Ov002_GetRootField8d14(Ov002_FindKeyEntryIndex(pSelf->nItemKey));
+        pEntry = Ov002_GetRootField8d14((short)(Ov002_FindKeyEntryIndex((short)pSelf->nItemKey)));
         nSpawn = pSelf->nSpawnId;
         nFlags = pEntry->nFlags & 0xff;
         nKey = pEntry->nKey;

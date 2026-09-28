@@ -1,5 +1,5 @@
 extern int Ov002_GetCtxTableByte(int slot);
-extern void EntityMgr_ProbeGround(unsigned short id, void *a, void *b);
+extern void EntityMgr_ProbeGround(int id, void *a, void *b);
 
 /* Resolves the actor's model id on the first tick and, if it has a bone table, binds it. */
 int Ov002_ResolveActorModelAndBones(char *self, int phase) {

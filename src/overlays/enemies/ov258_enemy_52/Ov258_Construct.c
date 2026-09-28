@@ -35,7 +35,7 @@ extern void Snd_RegisterSeqAndBind(void *slot, int bank, void *record, int d);
 extern void MainBlob_ResetSlotRows(int rig, void *slot);
 extern int InsertSortedEntryWithKey(int item, int kind, void *name);
 extern void Ov107_EnqueueValue(char *self, int item);
-extern int Ov258_New(char *self, u8 side);
+extern int Ov258_New(char *self, int side);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_Mover_New(const Capsule *capsule);
 extern int Ov107_CloneResourceTransform(const Placement *placement);
@@ -121,7 +121,7 @@ void Ov258_Construct(char *self)
         *(int *)(((struct Ov258Parts *)self)->items[i].res + 0x5c) |= 2;
     }
     for (i = 0; i < 2; i++) {
-        ((struct Ov258Parts *)self)->hands[i] = Ov258_New(self, i);
+        ((struct Ov258Parts *)self)->hands[i] = Ov258_New(self, (u8)i);
     }
     place = *(Placement *)(self + 0x64);
     zero = data_02041dc8;

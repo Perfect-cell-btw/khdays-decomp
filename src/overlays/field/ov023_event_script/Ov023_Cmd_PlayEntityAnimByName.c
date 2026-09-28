@@ -8,7 +8,7 @@ extern void OS_SPrintf(char *dst, const char *fmt, ...);
 extern int Ov023_Window_OpenMessages(void *entity, char *path);
 extern int Ov023_MakeDescriptorWord(void *entity, int anim);
 extern int ResCache_Acquire(int a, void *b, int c);
-extern void TailForwardTrackEntry_2(unsigned short id, int a, int b, int c);
+extern void TailForwardTrackEntry_2(int id, int a, int b, int c);
 extern void Ov023_ReleaseSubPanelResource(void *entity);
 extern void Slot48_StoreAtCurrentIndex(int ctx, char *args);
 extern char data_ov023_0208a61c[];

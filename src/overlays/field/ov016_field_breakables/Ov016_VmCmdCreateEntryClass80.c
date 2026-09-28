@@ -31,7 +31,7 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov016_CreateEntryClass80(unsigned short id, Ov016EmitParams *params);
+extern int Ov016_CreateEntryClass80(int id, Ov016EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov016_VmCmdCreateEntryClass80(void *self, char *descs) {

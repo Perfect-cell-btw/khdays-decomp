@@ -1,9 +1,15 @@
 extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ByteCode_ResolveOperand(int ctx, void *arg);
 extern int func_02020d10(int ctx, int arg);
+/* Defined taking index as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern char *ArrayEntryPtrD0(unsigned short index);
 extern int LoadArrayU8At0ce(unsigned short id);
+/* Defined taking a as int, b as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void EntityMgr_LinkChild(unsigned short a, unsigned short b, int value);
+/* Defined taking id as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void Entity_SetVisible(unsigned short id, int on);
 extern void Ov023_PlaceActorModel(void *entity, int a, void *d, int h, int id);
 extern void Ov023_DispatchWorkerRequest(void *entity, void *target, int id);

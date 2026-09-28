@@ -27,6 +27,8 @@ typedef struct Ov023SceneRoot {
 extern int  Ov023_IsActivePanelEntry(Ov023Actor *pActor, int nPeer);     /* Ov023_ActorOnScreen */
 extern int  Ov023_Window_GetFlags(Ov023Actor *pActor);                /* the actor's state word */
 extern void Ov023_ActorHookJoints(Ov023Actor *pActor);                /* hide the actor */
+/* Defined taking nId as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern void Entity_SetVisible(u16 nId, int bOn);                        /* arm a sprite id */
 extern void Entity_Tick(u16 nId);
 extern void NNS_G3dRenderObjResetCallBack(void *pModel);                            /* reset a bound model */

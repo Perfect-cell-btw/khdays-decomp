@@ -49,8 +49,8 @@ extern int  func_02020400(int nNumerator, int nDenominator);  /* _s32_div_f */
 extern void Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);   /* Actor_SetVecAndSyncChild */
 extern int  Ov002_GetModuleScale(void);                        /* frame delta */
 extern int  Ov016_FollowerCheckPieces(Ov016Follower *pSelf, VecFx32 *pFrom, VecFx32 *pAt);
-extern int  GameState_GetField(u16 nField, u8 nBit);               /* GameState_GetField */
-extern void GameState_SetField(u16 nField, u8 nBit, u16 nValue);   /* GameState_SetField */
+extern int  GameState_GetField(int nField, int nBit);               /* GameState_GetField */
+extern void GameState_SetField(unsigned int nField, unsigned int nBit, unsigned int nValue);   /* GameState_SetField */
 extern void Ov016_FollowerComplete(Ov016Follower *pSelf);
 extern const short data_0203d210[];                           /* FX_SinCosTable_ */
 
@@ -111,17 +111,17 @@ int Ov016_FollowerStep(Ov016Follower *pSelf)
     pSelf->nHoldTimer += Ov002_GetModuleScale();
     if (!Ov016_FollowerCheckPieces(pSelf, &pos, &target)) {
         pSelf->nHoldTimer = 0;
-        nState = GameState_GetField(pSelf->nStateField, pSelf->nStateBit);
+        nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
         nHeld = (u16)((nState & 0xfffe) >> 1) & ~(1 << pSelf->nPlayer);
-        nState = GameState_GetField(pSelf->nStateField, pSelf->nStateBit);
-        GameState_SetField(pSelf->nStateField, pSelf->nStateBit, (nState & 0xffff0001) | (nHeld << 1));
+        nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
+        GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit, (u16)((nState & 0xffff0001) | (nHeld << 1)));
     }
     if (pSelf->nHoldTimer > pSelf->nDuration) {
-        nState = GameState_GetField(pSelf->nStateField, pSelf->nStateBit);
+        nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
         nOld = (u16)((nState & 0xfffe) >> 1);
         nHeld = (u16)((1 << pSelf->nPlayer) | nOld);
-        nState = GameState_GetField(pSelf->nStateField, pSelf->nStateBit);
-        GameState_SetField(pSelf->nStateField, pSelf->nStateBit, (nState & 0xffff0001) | (nHeld << 1));
+        nState = GameState_GetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit);
+        GameState_SetField((u16)pSelf->nStateField, (u8)pSelf->nStateBit, (u16)((nState & 0xffff0001) | (nHeld << 1)));
         if (nHeld != nOld && (nHeld & 0xf) == 0xf) {
             Ov016_FollowerComplete(pSelf);
         }

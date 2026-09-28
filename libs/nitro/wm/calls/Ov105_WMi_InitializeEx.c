@@ -197,7 +197,7 @@ extern void OS_GetMacAddress(u8 *macAddress);
 #define WM_DEFAULT_BEACON_PERIOD 200
 #define WM_DEFAULT_SCAN_PERIOD 30
 
-extern WMErrCode Ov105_WmInit(void *wmSysBuf, u16 dmaNo);   /* WM_Init */
+extern WMErrCode Ov105_WmInit(void *wmSysBuf, int dmaNo);   /* WM_Init */
 
 /* Ov105_WMi_InitializeEx -- WMi_InitializeEx: WM_Init plus the asynchronous ARM7 INITIALIZE
  * request carrying the ARM7 buffer, the status block, the 7-to-9 fifo and the misc

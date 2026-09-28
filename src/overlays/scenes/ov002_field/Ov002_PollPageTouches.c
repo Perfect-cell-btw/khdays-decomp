@@ -42,7 +42,7 @@ extern Ov002TabSlot data_ov002_0207f9a0[];
 extern void MI_CpuCopy8(const void *pSrc, void *pDst, unsigned int nSize);
 extern int Session_GetLocalPlayerIndex(void);
 
-extern int Ov002_LinkSyncReadPeer(Ov002TouchInput *pOut, u8 nSlot);
+extern int Ov002_LinkSyncReadPeer(Ov002TouchInput *pOut, unsigned int nSlot);
 extern void Ov002_PlotStroke(int nSlot, Ov002TouchInput *pInput);
 extern void Ov002_HandlePageTouch(int nSlot, Ov002TouchInput *pInput);
 

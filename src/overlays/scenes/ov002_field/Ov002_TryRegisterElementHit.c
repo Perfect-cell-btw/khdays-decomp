@@ -11,8 +11,8 @@ typedef struct {
     u16 wPad;                       /* +0x06 */
 } Ov002HitRecord;
 
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
-extern void GameState_SetField(u16 nId, unsigned char nSlot, u16 wState);
+extern int GameState_GetField(int nId, int nSlot);
+extern void GameState_SetField(unsigned int nId, unsigned int nSlot, unsigned int wState);
 extern int Ov002_RecordElementHit(char *pElement, Ov002HitRecord *pRecord, int nKind);
 
 /* Register a hit on this element once.
@@ -54,13 +54,11 @@ extern int Ov002_RecordElementHit(char *pElement, Ov002HitRecord *pRecord, int n
         return 8;
     }
 
-    nRaw = GameState_GetField(*(u16 *)(pElement + 0x14),
-                            *(unsigned char *)(pElement + 0x16));
+    nRaw = GameState_GetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16));
     nField = (u16)(nState | 1) << 1;
     wNew = (u16)(nField | (nRaw & 0xffff0001));
 
-    GameState_SetField(*(u16 *)(pElement + 0x14),
-          *(unsigned char *)(pElement + 0x16), wNew);
+    GameState_SetField(*(u16 *)(pElement + 0x14), *(unsigned char *)(pElement + 0x16), wNew);
     return 0;
 
 refuse:

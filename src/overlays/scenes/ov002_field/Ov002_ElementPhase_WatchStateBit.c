@@ -14,7 +14,7 @@ typedef struct {
 typedef void *(*Ov002ElementProc)(char *pElement);
 
 extern short Session_GetLocalPlayerIndex(void);
-extern int GameState_GetField(u16 nId, unsigned char nSlot);
+extern int GameState_GetField(int nId, int nSlot);
 extern int Ov002_RecordElementHit(char *pElement, Ov002HitRecord *pRecord, int nKind);
 extern void *Ov002_ElementTickFinishing(char *pElement);
 

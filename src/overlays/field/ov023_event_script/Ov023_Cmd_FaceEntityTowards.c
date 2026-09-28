@@ -4,8 +4,8 @@ extern int ScriptVm_ReadOperandInt(int ctx, void *arg);
 extern int ByteCode_ResolveOperand(int ctx, void *arg);
 extern char *ScriptVm_ResolveOperand(int ctx, void *arg);
 extern int func_02020d10(int ctx, int arg);
-extern char *ArrayEntryPtrD0(unsigned short index);
-extern void EntityMgr_ProbeGround(unsigned short id, int a, void *out);
+extern char *ArrayEntryPtrD0(int index);
+extern void EntityMgr_ProbeGround(int id, int a, void *out);
 extern int FX_Atan2(int y, int x);
 extern int Ov023_TurnActorToward(int ctx, int id, int angle);
 

@@ -11,7 +11,7 @@ struct Ov252Rig { char pad[0x3a0]; AnimSlot slots[4]; };
 
 extern void MainBlob_ResetSlotRows(int rig, AnimSlot *slot);
 extern void SetSubitemState(int rig, u16 channel, int a, int b);
-extern void Anim_SetFrameWrapped(int bank, u16 track, int frame);
+extern void Anim_SetFrameWrapped(int bank, int track, int frame);
 
 #define PIECE(i) ((i) == 0 ? 0 : (i) == 1 ? 1 : (i) == 2 ? 2 : 4)
 
@@ -31,6 +31,6 @@ void Ov252_SwapArmourAnim(char *actor, signed char which, int *frames)
         }
         *(AnimSlot **)(*(int *)(actor + 0x384) + 0x8c) = &((struct Ov252Rig *)actor)->slots[i];
         SetSubitemState(*(int *)(actor + 0x384), PIECE(i), 0, *(u8 *)(*(int *)(actor + 0x384) + PIECE(i) + 0xa8));
-        Anim_SetFrameWrapped(bank, PIECE(i), frames[i]);
+        Anim_SetFrameWrapped(bank, (u16)(PIECE(i)), frames[i]);
     }
 }

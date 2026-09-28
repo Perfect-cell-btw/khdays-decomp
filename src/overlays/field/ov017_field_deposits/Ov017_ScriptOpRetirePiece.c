@@ -16,7 +16,7 @@ typedef struct Ov017Piece {
 } Ov017Piece;
 
 extern int   ScriptVm_ReadOperandInt(int vm, u16 *pc);                          /* ScriptVm_ReadOperandInt */
-extern Ov017Piece *Ov002_List_ScaleEntryTag(int nKey, u16 nArg);           /* resolve a piece */
+extern Ov017Piece *Ov002_List_ScaleEntryTag(int nKey, int nArg);           /* resolve a piece */
 extern void  Ov017_ForwardToHandler(Ov017Piece *pPiece);                 /* Ov017_ItemRetire */
 extern void  Ov017_DispatchOnField4c(Ov017Piece *pPiece);                 /* Ov017_RetireByKind */
 

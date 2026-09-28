@@ -18,7 +18,7 @@
 extern void SceneNode_Enable(void *node);                                              /* SceneNode_Enable */
 extern void Anim_SetFrameWrapped(void *animation, int track, int frame);                   /* Anim_SetFrameWrapped */
 extern void func_ov022_020ad44c(VecFx32 *out, char *self);
-extern void Ov022_MarshalNetworkRecord(char *self, int record, VecFx32 *at, int scale, u16 angle, int kind);
+extern void Ov022_MarshalNetworkRecord(char *self, int record, VecFx32 *at, int scale, unsigned int angle, int kind);
 extern char *data_ov040_020b4b20;
 extern void Ov040_PursuitStep(void);
 extern void Ov040_IdleStep(void);

@@ -64,7 +64,7 @@ extern unsigned long long OS_GetTick(void);
 extern void *Ov002_FindFreeListEntry(void);
 extern void *Ov002_BumpCounterEntry(void *pEntry, int nDelta, int nOwner);
 extern int Ov002_ForwardToSubDc(int nId);
-extern void Ov002_PositionSubDcHandle_2(int nEntry, short nField, unsigned short nColour);
+extern void Ov002_PositionSubDcHandle_2(int nEntry, int nField, int nColour);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int nEntry);
 extern void Ov002_RenderDecimalIntoEntry(Ov002PoolEntry *pEntry, int nValue);
 extern void Ov002_RepaintStopwatchEntry(Ov002PoolEntry *pEntry);

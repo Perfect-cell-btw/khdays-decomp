@@ -47,7 +47,11 @@ extern int   strlen(const char *pszString);
 extern int   strcmp(const char *pA, const char *pB);         /* STD_CompareString */
 extern void *Msg_OpenContainerAndReadHeader(const char *pszName, int nHeap);         /* open a text container */
 extern int   Anim_GetLengthQ12(void *pAnim, u16 nTrack);                /* Anim_GetLengthQ12 */
+/* Defined taking nTrack as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int   Anim_GetFrame(void *pAnim, u16 nTrack);                /* Anim_GetFrame */
+/* Defined taking nEntity as int: declared narrower here, which is what makes mwcc truncate the
+ * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int   LoadArrayInt244(u16 nEntity);                            /* Entity_GetSpeed */
 extern char  data_ov023_0208a730[];                                 /* ".p2" */
 

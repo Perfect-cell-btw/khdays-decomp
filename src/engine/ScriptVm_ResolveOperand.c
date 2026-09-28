@@ -44,7 +44,7 @@ typedef struct {
     OperandSlot slot;   /* +0x578: per-state scratch slot for resolved literals */
 } ScriptVmState;
 
-extern int GameState_GetField(unsigned short lo, unsigned short hi);
+extern int GameState_GetField(int lo, int hi);
 
 OperandSlot *ScriptVm_ResolveOperand(ScriptVmState *st, OperandCmd *cmd)
 {

@@ -29,7 +29,7 @@ typedef struct Ov023Actor {
 } Ov023Actor;
 
 extern int  Anim_GetLengthQ12(void *pAnim, int nTrack);                 /* Anim_GetLengthQ12 */
-extern int  LoadArrayInt244(u16 nEntity);                             /* Entity_GetSpeed */
+extern int  LoadArrayInt244(int nEntity);                             /* Entity_GetSpeed */
 extern int  func_02020400(int nNumerator, int nDenominator);        /* the 64-bit divide, low word */
 extern int  Ov023_SubPanelColumnStep(int nKind);                         /* Ov023_MapEffectIndex */
 extern void Ov023_ActorStepEffects(Ov023Actor *pActor);                /* Ov023_ActorStepEffects */

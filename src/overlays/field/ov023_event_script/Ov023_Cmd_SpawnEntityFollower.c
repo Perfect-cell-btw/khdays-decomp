@@ -3,7 +3,7 @@ extern int ByteCode_ResolveOperand(int ctx, void *arg);
 extern int ScriptVm_ReadOperandFx32(int ctx, void *arg);
 extern int func_02020d10(int ctx, int arg);
 
-extern void LoadArrayU8At0ce(unsigned short id);
+extern void LoadArrayU8At0ce(int id);
 extern void Ov023_ReadTargetPosition(int ctx, char *args, int id, void *out);
 extern void Ov023_StoreEntityTransform(void *entity, void *out, int a, int b);
 extern int Ov023_Window_SetFlag4(void *entity, int on);

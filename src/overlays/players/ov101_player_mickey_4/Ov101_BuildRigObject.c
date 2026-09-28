@@ -38,7 +38,7 @@ static inline int Ov044_GetBoneBase(char *object)
 }
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern void Entity_ForwardToSlot(int, u16, int, void *, int);
+extern void Entity_ForwardToSlot(int, int, int, void *, int);
 extern void TailForwardTrackEntry(int, void *, int, int);
 extern int ArrayEntryPtrD0(int);
 extern void Actor_InitEntityLink(void *, int);
@@ -78,8 +78,7 @@ void Ov101_BuildRigObject(struct PanelInitConfig *config)
     params.enabled = 1;
     params.scale = 9 << 8;
     params.limit = 7 << 8;
-    Entity_ForwardToSlot(*(signed char *)(object + 0x4bc),
-                  (u16)(1 << *(u8 *)(object + 8)), 0, &params, 0);
+    Entity_ForwardToSlot(*(signed char *)(object + 0x4bc), (u16)(1 << *(u8 *)(object + 8)), 0, &params, 0);
 
     TailForwardTrackEntry(*(signed char *)(object + 0x4bc), (void *)data_ov101_020bc068, 1,
                   config->objectType + 7);

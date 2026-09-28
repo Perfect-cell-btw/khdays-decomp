@@ -12,7 +12,7 @@ typedef struct { int m[9]; } Mtx33;
 extern int Ov238_TargetGap(int *node);
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
 extern int Ov107_CollectCapsuleOverlaps(int owner, void *box, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, VecFx32 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -43,7 +43,7 @@ int Ov238_AttackHitTest(int *node, void *sphere, void *box, VecFx32 *push, int o
             if (once != 0 && (*((u8 *)state + 0x2f) & bit)) {
                 continue;
             }
-            if (Ov107_InvokeHitCallback(hits[i], *state, *state, kind, push, 0) == 0) {
+            if (Ov107_InvokeHitCallback(hits[i], *state, *state, (u8)kind, push, 0) == 0) {
                 continue;
             }
             pos = *(VecFx32 *)(hits[i] + 0x190);

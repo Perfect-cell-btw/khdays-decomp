@@ -25,7 +25,7 @@ typedef struct {
 extern const Ov002CueTable data_ov002_0207e460;
 extern int *data_ov002_0207f9f0;
 
-extern int Ov002_ForwardToSubDc(u16 nCue);
+extern int Ov002_ForwardToSubDc(int nCue);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int hCue);
 
 void Ov002_SwitchSlotCues(int nSlot, int bPlay)

@@ -36,9 +36,9 @@ typedef struct Ov023ScriptCtx {
 } Ov023ScriptCtx;
 
 extern int   ScriptVm_ReadOperandInt(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand);   /* ScriptVm_ReadOperandInt */
-extern void  func_0202ba44(u16 nEntity);                            /* Entity_DetachText */
+extern void  func_0202ba44(int nEntity);                            /* Entity_DetachText */
 extern int   Obj_IsIdFree(int nHandle);                            /* the handle is ready */
-extern void  TailForwardTrackEntry_2(u16 nEntity, Ov023TextBlock *pText, int nA, int nB); /* Entity_AttachText */
+extern void  TailForwardTrackEntry_2(int nEntity, Ov023TextBlock *pText, int nA, int nB); /* Entity_AttachText */
 extern void  Ov023_ReleaseSubPanelResource(Ov023Actor *pActor);               /* Ov023_ReleaseActorPanel */
 extern void  Slot48_StoreAtCurrentIndex(Ov023ScriptCtx *pCtx, Ov023Operand *pCmd); /* ScriptVm_RequeueCommand */
 

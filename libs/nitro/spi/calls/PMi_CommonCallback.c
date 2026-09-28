@@ -107,7 +107,7 @@ extern void PMi_ExecuteList(PMSleepCallbackInfo *listp);   /* PMi_ExecuteList */
 extern PMLCDPower PM_GetLCDPower(void);   /* PM_GetLCDPower */
 extern u32 PM_GetBackLight(PMBackLightSwitch *top, PMBackLightSwitch *bottom);   /* PM_GetBackLight */
 extern u32 PM_SetBackLight(PMLCDTarget target, PMBackLightSwitch sw);   /* PM_SetBackLight */
-extern u32 PMi_SendSleepStart(u16 trigger, u16 keyIntrData);   /* PMi_SendSleepStart */
+extern u32 PMi_SendSleepStart(unsigned int trigger, unsigned int keyIntrData);   /* PMi_SendSleepStart */
 extern BOOL PMi_SetLCDPower(PMLCDPower sw, PMLEDStatus led, BOOL skip, BOOL isSync);   /* PMi_SetLCDPower */
 extern u32 PMi_SetLED(PMLEDStatus status);   /* PMi_SetLED */
 

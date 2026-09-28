@@ -14,7 +14,7 @@ extern void Ov025_LoadBlockProcessAndFree(int context, void *resource, int size)
 extern void Ov025_StoreWordAt0x4a50(int context, void *callback);
 extern void *Ov025_FindEntryById(int context, int id);
 extern void Ov025_ReleaseTwoSlots(int context, void *entry);
-extern void Ov025_ReleaseTwoSlotsEx_2(int context, void *entry, u16 frame);
+extern void Ov025_ReleaseTwoSlotsEx_2(int context, void *entry, int frame);
 extern void Ov025_SetEntrySlotsVisible(int context, void *entry, int visible);
 extern void Ov025_ResolveEntryStoreWord(int context, int id, void *callback);
 extern int GameState_GetField(int field, int bits);
@@ -60,15 +60,15 @@ void Ov025_Hub_InitializeWidgets(void *scene)
     Ov025_ReleaseTwoSlots(context, Ov025_FindEntryById(context, 0x2b));
     Ov025_ReleaseTwoSlots(context, Ov025_FindEntryById(context, 0x2c));
     day = GameState_GetField(0, 9);
-    Ov025_ReleaseTwoSlotsEx_2(context, Ov025_FindEntryById(context, 0x2a), day % 10);
+    Ov025_ReleaseTwoSlotsEx_2(context, Ov025_FindEntryById(context, 0x2a), (u16)(day % 10));
     tens = day / 10;
     if (tens > 0)
-        Ov025_ReleaseTwoSlotsEx_2(context, Ov025_FindEntryById(context, 0x2b), tens % 10);
+        Ov025_ReleaseTwoSlotsEx_2(context, Ov025_FindEntryById(context, 0x2b), (u16)(tens % 10));
     else
         Ov025_SetEntrySlotsVisible(context, Ov025_FindEntryById(context, 0x2b), 0);
     tens = tens / 10; hundreds = tens;
     if (hundreds > 0)
-        Ov025_ReleaseTwoSlotsEx_2(context, Ov025_FindEntryById(context, 0x2c), hundreds);
+        Ov025_ReleaseTwoSlotsEx_2(context, Ov025_FindEntryById(context, 0x2c), (u16)hundreds);
     else
         Ov025_SetEntrySlotsVisible(context, Ov025_FindEntryById(context, 0x2c), 0);
     Ov025_ResolveEntryStoreWord(context, 1, (void *)Ov025_MenuEntry_SetSlot2AndBeep);

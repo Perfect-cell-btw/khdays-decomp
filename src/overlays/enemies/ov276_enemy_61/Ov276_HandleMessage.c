@@ -13,7 +13,7 @@ typedef struct { int w[11]; } SrtTransform;
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern void Srt_SetScaleUniform(SrtTransform *transform, int scale);
-extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, u8 blend, SrtTransform *transform);
+extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int blend, SrtTransform *transform);
 extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, u8 blend, int b);
 extern int Ov107_CreateSpawnTask(int owner, int resourceId, int kind, int zero, void *work);
 extern void Ov107_AiState_OnMessage(int owner, u8 *msg, int arg);
@@ -48,7 +48,7 @@ void Ov276_HandleMessage(int owner, u8 *msg, int arg)
         case 1:
         case 4:
             *(int *)(owner + msg[3] * 8 + 0x48c) =
-                Ov107_CreateNodeXformTask(*(int *)(owner + 0x3c), *(int *)(owner + msg[3] * 8 + 0x488), 0x17, msg[3] == 0 ? 1 : msg[4], &transform);
+                Ov107_CreateNodeXformTask(*(int *)(owner + 0x3c), *(int *)(owner + msg[3] * 8 + 0x488), 0x17, (u8)(msg[3] == 0 ? 1 : msg[4]), &transform);
             break;
         case 2:
             *(int *)(owner + msg[3] * 8 + 0x48c) =

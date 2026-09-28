@@ -15,7 +15,7 @@ typedef struct { int m[9]; } Mtx33;
 typedef struct { VecFx32 pos; VecFx32 axis[3]; int radius; int flag; } Cylinder;
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
-extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);
+extern void Ov258_StepCue(int *node, int step, int phase, unsigned int variant);
 extern void Ov258_ForwardEventIfStateOne(int partner, int from, int to, int d);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
@@ -44,12 +44,12 @@ void Ov258_StompTick(int *node)
 
     state[0xc] += *(int *)(node[0] + 0x2c);
     state[0x11] += *(int *)(node[0] + 0x2c);
-    Ov258_StepCue(node, 0x3e, 6, *(int *)(*state + 0x460) != 0 ? 0x1b : 0x12);
-    Ov258_StepCue(node, 0x40, 5, 3);
-    Ov258_StepCue(node, 0x60, 4, 5);
-    Ov258_StepCue(node, 0x78, 3, *(int *)(*state + 0x460) != 0 ? 0x1b : 0x11);
-    Ov258_StepCue(node, 0x7a, 2, 4);
-    Ov258_StepCue(node, 0x92, 1, 5);
+    Ov258_StepCue(node, 0x3e, 6, (u16)(*(int *)(*state + 0x460) != 0 ? 0x1b : 0x12));
+    Ov258_StepCue(node, 0x40, 5, (u16)3);
+    Ov258_StepCue(node, 0x60, 4, (u16)5);
+    Ov258_StepCue(node, 0x78, 3, (u16)(*(int *)(*state + 0x460) != 0 ? 0x1b : 0x11));
+    Ov258_StepCue(node, 0x7a, 2, (u16)4);
+    Ov258_StepCue(node, 0x92, 1, (u16)5);
     if ((state[0xc] >= 0x2fd0 && *(u16 *)(state + 0x14) == 3) || (state[0xc] >= 0x3fc0 && *(u16 *)(state + 0x14) == 2)) {
         (*(u16 *)(state + 0x14))--;
         if (state[0xc] < 0x3fc0) {

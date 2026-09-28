@@ -1,6 +1,6 @@
 extern int Ov002_GetCtxTableByte(int slot);
-extern int GameState_GetField(unsigned short id, unsigned char kind);
-extern void Render_SubmitNode(void *dst, unsigned short id, int a, void *b);
+extern int GameState_GetField(int id, int kind);
+extern void Render_SubmitNode(void *dst, int id, int a, void *b);
 extern void Actor_SetBindingByte(void *p, int i, unsigned char v);
 
 static inline int Ov002_IsAnimated(unsigned short id, unsigned char kind) {
@@ -14,8 +14,7 @@ void Ov002_RebindAnimatedActorModel(char *self) {
         if (*(unsigned char *)(self + 0x1b4) == 7) {
             return;
         }
-        Render_SubmitNode(self + 0x2c,
-                      (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]), 0, 0);
+        Render_SubmitNode(self + 0x2c, (unsigned short)Ov002_GetCtxTableByte((unsigned char)self[0x10]), 0, 0);
         Actor_SetBindingByte(self + 0x148, 1, 3);
     }
 }

@@ -160,7 +160,7 @@ extern const short data_02040210[];               /* kFxSinCosTable entry 3072 (
 
 extern int VEC_Mag(VecFx32 *pVec);
 extern void ScaleVec3Fx12(int nScale, VecFx32 *pIn, VecFx32 *pOut);             /* ScaleVec3Fx12 */
-extern struct Hit *EntityMgr_RunSphereCast(u16 nSlot, VecFx32 *pFrom, VecFx32 *pDir, int nRadius, struct ActorNode *pNode);   /* sphere cast */
+extern struct Hit *EntityMgr_RunSphereCast(int nSlot, VecFx32 *pFrom, VecFx32 *pDir, int nRadius, struct ActorNode *pNode);   /* sphere cast */
 extern int IsField1cEqualData42910(struct HitState *pState);                              /* IsField1cEqualData42910 */
 extern void VecFx32FromVecS16(void *pModel, VecS16 *pPacked, VecFx32 *pOut);        /* VecFx32FromVecS16 */
 extern int VEC_DotProduct(VecFx32 *pA, VecFx32 *pB);
@@ -172,8 +172,8 @@ extern struct Hit *Ov022_FindGroundUnder(int nSlot, VecFx32 *pPos, VecFx32 *pOut
 extern struct CollSurfaceAttr *Actor_GetRecord(struct Hit *pHit, int nTag);
 extern void MTX_RotY33_(MtxFx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(VecFx32 *pVec, MtxFx33 *pMtx, VecFx32 *pOut);
-extern struct Hit *func_0202c248(u16 nSlot, struct CollCastParams *pParams);    /* CollCast (sphere) */
-extern struct Hit *func_0202c208(u16 nSlot, struct CollCastParams *pParams);    /* CollCast (ray) */
+extern struct Hit *func_0202c248(int nSlot, struct CollCastParams *pParams);    /* CollCast (sphere) */
+extern struct Hit *func_0202c208(int nSlot, struct CollCastParams *pParams);    /* CollCast (ray) */
 extern short FX_Atan2(int y, int x);
 extern void VEC_Add(VecFx32 *pA, VecFx32 *pB, VecFx32 *pOut);
 
@@ -236,7 +236,7 @@ int Ov022_FindClimbTarget(struct Actor *pActor)
     vecDir.y = 0;
     vecDir.z = -data_0203d210[nTrig + 1];
     ScaleVec3Fx12(VEC_Mag(&vecDir), &vecDir, &vecDir);
-    pHit = EntityMgr_RunSphereCast(pActor->nSlotIndex, &vecFrom, &vecDir, WALL_RADIUS, 0);
+    pHit = EntityMgr_RunSphereCast((u16)pActor->nSlotIndex, &vecFrom, &vecDir, WALL_RADIUS, 0);
     if (pHit == 0) {
         return 0;
     }
@@ -261,7 +261,7 @@ int Ov022_FindClimbTarget(struct Actor *pActor)
     vecDir.y = 0;
     vecDir.z = -vecNormal.z;
     ScaleVec3Fx12(BACK_REACH, &vecDir, &vecDir);
-    pHit = EntityMgr_RunSphereCast(pActor->nSlotIndex, &vecTo, &vecDir, BACK_RADIUS, pActor->pNode);
+    pHit = EntityMgr_RunSphereCast((u16)pActor->nSlotIndex, &vecTo, &vecDir, BACK_RADIUS, pActor->pNode);
     if (pHit == 0) {
         return 0;
     }
@@ -343,7 +343,7 @@ int Ov022_FindClimbTarget(struct Actor *pActor)
             }
             MTX_MultVec33(&vecClimb, &mtx, &vecRot);
             ScaleVec3Fx12(PROBE_RADIUS, &vecRot, &vecRot);
-            if (func_0202c248(pActor->nSlotIndex, &params) != 0) {
+            if (func_0202c248((u16)pActor->nSlotIndex, &params) != 0) {
                 apHit[0] = 0;
                 break;
             }
@@ -374,7 +374,7 @@ int Ov022_FindClimbTarget(struct Actor *pActor)
         params.wFlagE = 0;
         params.pExtra = 0;
         params.wDirIsUnit = 1;
-        pHit = func_0202c208(pActor->nSlotIndex, &params);
+        pHit = func_0202c208((u16)pActor->nSlotIndex, &params);
         if (pHit != 0) {
             nTop = vecTo.y + pActor->nCenterY;
             Vec3ScaleAddQ27(pHit->nNearestHit, &vecDown, &vecTo, &vecHit);

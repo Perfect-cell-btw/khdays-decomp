@@ -25,7 +25,7 @@ typedef void (*CodeFn)(int);
 extern int  NNSi_FndGetCurrentRootHeap(void);
 extern void SetGameMode(int mode);
 extern int  GameState_IsFlagSet(int flag);
-extern void func_02033770(u8 cmd, int b);
+extern void func_02033770(int cmd, int b);
 extern int  Game_RunActionScript(int *p);
 extern void Ov002_ResetWorldSubBlocks(void);
 extern void Ov002_World_SetPendingEntryOnce(int a);
@@ -52,7 +52,7 @@ void *Ov002_TickGameplayState(void)
         int cmd;
         if (*rec == 0x2710) cmd = 0xd;
         else cmd = 2;
-        func_02033770(cmd, 0x1e);
+        func_02033770((u8)cmd, 0x1e);
         rec[1] = -5;
         return (void *)Ov002_EnterResultScene;
     }

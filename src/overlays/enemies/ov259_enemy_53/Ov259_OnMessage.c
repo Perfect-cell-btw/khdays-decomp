@@ -24,7 +24,7 @@ extern void SrtTransform_SetIdentity(SrtTransform *t);
 extern void Srt_SetTranslation(SrtTransform *t, const VecFx32 *pos);
 extern void Srt_SetScaleUniform(SrtTransform *t, int scale);
 extern void Srt_SetScaleXYZ(void *pose, int x, int y, int z);
-extern int Ov107_CreateNodeXformTask(int model, int res, int kind, u8 flag, void *at);
+extern int Ov107_CreateNodeXformTask(int model, int res, int kind, int flag, void *at);
 extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, u8 flag, int loop);
 extern void Ov107_ForwardVisibleEvent(char *self, int on);
 extern void Ov259_SwapShells(int body, int on);

@@ -19,7 +19,7 @@ extern void Ov002_CreateAndRestoreHud(void);
 extern void Ov002_CreatePauseObjectOnce(void);
 extern u8 Ov002_AddPanelCounter(u64, int, Ov002EntrySampleFn);
 extern u8 Ov002_AddPanelValue(int);
-extern void GameState_SetField(int, int, u16);
+extern void GameState_SetField(int, int, unsigned int);
 extern s64 Ov002_GetStartTicks(void);
 extern s64 Ov002_GetEndTicks(void);
 extern s64 Ov002_GetTimeoutTicks(void);
@@ -96,7 +96,7 @@ void Ov002_DispatchHudCounterCommand(int nCommand, int nValue, int nSampler)
         Ov002_AddPanelCounter(0, 0, Ov002_GetRemainingTicks);
         break;
     case 5:
-        GameState_SetField(0x20a9, 4, Ov002_AddPanelValue((s16)nValue) + 1);
+        GameState_SetField(0x20a9, 4, (u16)(Ov002_AddPanelValue((s16)nValue) + 1));
         break;
     }
 }

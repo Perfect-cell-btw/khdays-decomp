@@ -35,7 +35,7 @@ extern void  PlaySoundChecked(int nPair, int nArg);                      /* Play
 extern int   Ov022_GetEntryField66(int nSeat);                          /* seat -> owner slot */
 extern int   Ov002_GetSlotTableByte(int nGroup);                         /* a group's piece kind */
 extern VecFx32 *func_ov022_020881f8(int nSeat);                       /* where the seat is */
-extern int   Slot_Spawn(int nSlot, int nId, VecFx32 *pPos, u16 nFlags); /* Slot_Spawn */
+extern int   Slot_Spawn(int nSlot, int nId, VecFx32 *pPos, unsigned int nFlags); /* Slot_Spawn */
 
 void Ov021_EmblemHandleMessage(Ov021Emblem *pSelf, Ov021EmblemMessage *pMessage)
 {

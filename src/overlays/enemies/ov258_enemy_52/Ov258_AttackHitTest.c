@@ -9,7 +9,7 @@ extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
 extern int Ov107_CollectCapsuleOverlaps(int owner, void *box, int *hits);
 extern int Ov107_CollectSegmentOverlaps(int owner, void *seg, int *hits);
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, void *cyl, int *hits);
-extern int Ov107_InvokeHitCallback(int hit, int owner, int item, u8 kind, VecFx32 *push, int z);
+extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 
@@ -44,7 +44,7 @@ int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *seg, void *cyl
             if (push->y > 0x3000) {
                 push->y = 0x3000;
             }
-            if (Ov107_InvokeHitCallback(hits[i], *state, *state, kind, push, 0) == 0) {
+            if (Ov107_InvokeHitCallback(hits[i], *state, *state, (u8)kind, push, 0) == 0) {
                 continue;
             }
             if (bMask != 0) {

@@ -15,7 +15,7 @@ typedef struct Ov002LinkRequest {
 extern char *data_ov002_0207fa00;
 
 extern int Ov002_PublishStateChange(int nHandle, int nKind, int nTag);
-extern void GameState_SetField(int nHandle, int nKind, unsigned short nTag);
+extern void GameState_SetField(int nHandle, int nKind, unsigned int nTag);
 extern void *NNSi_FndAllocFromDefaultExpHeap(int nSize);
 extern void MI_CpuCopy8(const void *pSrc, void *pDst, unsigned int nSize);
 
