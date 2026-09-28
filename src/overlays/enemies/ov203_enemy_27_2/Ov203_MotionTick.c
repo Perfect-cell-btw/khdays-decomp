@@ -1,4 +1,7 @@
 /* Ov203_MotionTick: motion tick of the ov202 enemy (x2), variant of the matched ov163 sibling: the +0xc angle only advances while the actor's +0x1c4 bit 1 is clear. */
+
+#include "game/actor.h"
+
 extern int Angle_TurnToward();
 extern int QuatFromAxisAngle();
 extern int Quat_FromTwoVectors();
@@ -11,21 +14,12 @@ typedef struct { int a, b, c; } Vec3;
 extern Vec3 data_02042264;
 
 typedef struct {
-    char pad0[0x60];
-    unsigned short f60;
-    char pad62[0x118];
-    unsigned char f17a;
-    char pad17b[0x49];
-    unsigned char f1c4;
-} Node;
-
-typedef struct {
     char pad0[0x2c];
     int f2c;
 } Field0;
 
 typedef struct {
-    Node *n0;
+    Actor *n0;
     char pad4[4];
     int fc;
     int f10;
@@ -47,11 +41,11 @@ void Ov203_MotionTick(Obj *obj)
     char localB[0x10];
     char localA[0x10];
 
-    if ((inner->n0->f1c4 & 2) == 0) {
+    if ((inner->n0->flags1c4 & 2) == 0) {
         inner->fc = Angle_TurnToward(inner->fc, inner->f10, inner->f14, 0);
     }
 
-    if (!((unsigned)(inner->n0->f60 << 24) >> 24 & 0x40) && ((unsigned)(inner->n0->f17a << 31) >> 31)) {
+    if (!((unsigned)(inner->n0->flags60.raw << 24) >> 24 & 0x40) && ((unsigned)(inner->n0->contact17a.raw << 31) >> 31)) {
         QuatFromAxisAngle(localB, &data_02042264, inner->fc);
         Quat_FromTwoVectors(localA, &data_02042264, (char *)inner->n0 + 0x124);
         Quat_Multiply(localA, localA, localB);

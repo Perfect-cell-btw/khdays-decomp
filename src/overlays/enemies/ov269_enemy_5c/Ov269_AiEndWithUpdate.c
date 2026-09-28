@@ -1,6 +1,8 @@
 /* Sets the locked stance flags (|0x86, bit 0 clear), shows the part, posts update 0x49, clears
  * pendingAction and ends the step. */
 
+#include "game/actor.h"
+
 extern int Ov107_BuildAndSendUpdate();
 extern int SetIndexedSlot();
 
@@ -11,12 +13,7 @@ struct Inner2 {
 };
 
 struct Inner {
-    char _pad0[0x60];
-    unsigned short lo : 8;      /* 0x60, bits [7:0] */
-    unsigned short hi : 8;      /* 0x60, bits [15:8] */
-    char _pad1[0x1c7 - 0x62];
-    unsigned char b1c7;         /* 0x1c7 */
-    char _pad2[0x38c - 0x1c8];
+    Actor base;                  /* 0x000 */
     struct Inner2 *p38c;        /* 0x38c */
 };
 
@@ -37,12 +34,12 @@ void Ov269_AiEndWithUpdate(struct A *this)
 {
     struct B *b = this->f4;
 
-    b->p0->hi &= ~1;
-    b->p0->hi |= (unsigned short)0x86;
+    b->p0->base.flags60.bits.hi &= ~1;
+    b->p0->base.flags60.bits.hi |= (unsigned short)0x86;
     b->p0->p38c->bf8 &= ~1u;
 
     Ov107_BuildAndSendUpdate(b->p0, 0, 0x49, b->f40);
 
-    b->p0->b1c7 = 0;
+    b->p0->base.nextState = 0;
     SetIndexedSlot(this, this->f20, 0);
 }

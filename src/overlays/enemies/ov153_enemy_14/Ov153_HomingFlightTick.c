@@ -21,6 +21,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -38,16 +39,7 @@ struct Flags17a {
 };
 
 struct Ov153Actor {
-    char pad000[0x24];
-    void (*pfnMessage)(struct Ov153Actor *self, PosMsg *msg, int size);
-    char pad028[0x4c];
-    VecFx32 vPos74;
-    int nRadius80;
-    char pad084[0xf6];
-    struct Flags17a flags17a;
-    char pad17b[0x4c];
-    u8 nSubState1c7;
-    char pad1c8[0x1c4];
+    Actor base;                  /* 0x000 */
     char *pItem38c;
 };
 
@@ -103,8 +95,8 @@ static inline void SendPos(struct Ov153FlightState *state, PosMsg *msg, const Ve
     x = src->z;
     PackFx24(&msg->pos[2], x);
     pz = x;
-    if (state->pOwner->pfnMessage != 0) {
-        state->pOwner->pfnMessage(state->pOwner, msg, 0xe);
+    if (state->pOwner->base.pfnPostMessage != 0) {
+        ((void (*)(struct Ov153Actor *, PosMsg *, int))state->pOwner->base.pfnPostMessage)(state->pOwner, msg, 0xe);
     }
 }
 
@@ -128,25 +120,25 @@ void Ov153_HomingFlightTick(int node)
     int n;
 
     actor = state->pOwner;
-    n = Ov107_CollectSphereOverlaps(actor->pItem38c, &actor->vPos74, hits);
+    n = Ov107_CollectSphereOverlaps(actor->pItem38c, &actor->base.sphere.center, hits);
     for (i = 0; i < n; i++) {
-        VEC_Subtract(&hits[i]->vPos74, &actor->vPos74, &push);
+        VEC_Subtract(&hits[i]->base.sphere.center, &actor->base.sphere.center, &push);
         push.y = 0;
         VEC_Normalize(&push, &push);
         ScaleVec3Fx12(0x800, &push, &push);
         if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner->pItem38c, 0, &push, 0) != 0) {
             msgA = data_ov153_020ce036;
             SendPos(state, &msgA, state->pPos);
-            state->pOwner->nSubState1c7 = 0;
+            state->pOwner->base.nextState = 0;
             Ov107_BuildAndSendUpdate(state->pOwner, 0x13c, 5, state->pPos);
             SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
             return;
         }
     }
-    if (state->pOwner->flags17a.bit0) {
+    if (state->pOwner->base.contact17a.bits.bit0) {
         target = Ov107_FindNearestObject(state->pOwner, 0);
         if (target != 0) {
-            VEC_Subtract(&target->vPos74, &actor->vPos74, &d);
+            VEC_Subtract(&target->base.sphere.center, &actor->base.sphere.center, &d);
             d.y = 0;
             dir = *(VecFx32 *)&state->nDirX;
             dir.y = 0;
@@ -165,17 +157,17 @@ void Ov153_HomingFlightTick(int node)
     }
     state->nStepX = (int)(((long long)state->nDirX * state->nSpeed + 0x800) >> 12);
     state->nStepZ = (int)(((long long)state->nDirZ * state->nSpeed + 0x800) >> 12);
-    if (!state->pOwner->flags17a.bit0) {
+    if (!state->pOwner->base.contact17a.bits.bit0) {
         state->nHeight -= (int)(((long long)(*(int *)(*(int *)node + 0x2c) * 30) * 0x100 + 0x800) >> 12);
     } else {
         state->nHeight = -(int)(((long long)state->nHeight * 0xd00 + 0x800) >> 12);
         state->nSpeed += (0x10 - state->nSpeed) / 40;
     }
-    if (state->pOwner->flags17a.bit1) {
+    if (state->pOwner->base.contact17a.bits.bit1) {
         msgB = data_ov153_020ce028;
         SendPos(state, &msgB, state->pPos);
         Ov107_BuildAndSendUpdate(state->pOwner, 0x13c, 6, state->pPos);
-        state->pOwner->nSubState1c7 = 0;
+        state->pOwner->base.nextState = 0;
         SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
         return;
     }
@@ -186,6 +178,6 @@ void Ov153_HomingFlightTick(int node)
     msgC = data_ov153_020ce052;
     SendPos(state, &msgC, state->pPos);
     Ov107_BuildAndSendUpdate(state->pOwner, 0x13c, 6, state->pPos);
-    state->pOwner->nSubState1c7 = 0;
+    state->pOwner->base.nextState = 0;
     SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
 }

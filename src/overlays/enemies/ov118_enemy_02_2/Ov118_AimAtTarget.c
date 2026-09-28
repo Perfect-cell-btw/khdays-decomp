@@ -8,13 +8,10 @@
  * components of the flattened delta are read into locals before any of the stores: that is what
  * keeps both loads ahead of the write-back, which is the order the ROM uses. */
 
+#include "game/actor.h"
+
 typedef struct { unsigned char b0 : 1; } Bit0;
-typedef struct {
-    int padding[0x19];
-    int x;
-    int y;
-    int z;
-} ObjState;
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void VEC_Subtract();
@@ -43,11 +40,11 @@ void Ov118_AimAtTarget(int self) {
     Ov118_LookAtQuat((int)obj, obj + 6);
     obj[0xc] = -0x200;
     if (((Bit0 *)(*obj + 0x17a))->b0) {
-        ObjState *state = (ObjState *)obj;
+        Actor *state = (Actor *)obj;
         int z = v[2];
-        state->x = v[0];
-        state->y = 0;
-        state->z = z;
+        state->camera[0] = v[0];
+        state->camera[1] = 0;
+        state->camera[2] = z;
         VEC_Normalize(obj + 0x19, obj + 0x19);
         ScaleVec3Fx12(n / 30, obj + 0x19, obj + 0x19);
         obj[0x18] = 0;

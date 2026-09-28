@@ -18,6 +18,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/actor.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -63,16 +64,7 @@ typedef struct {
     u8 pad004[0x64];
     s16 field_68;
 } HitTable;
-typedef struct LinkedObject LinkedObject;
-struct LinkedObject {
-    u8 pad000[0x18c];
-    void *field_18c;
-    u8 pad190[0x24];
-    u8 field_1b4;
-    u8 pad1b5[0x17];
-    int (*field_1cc)(void *);
-    void (*field_1d0)(LinkedObject *, int);
-};
+
 struct AiState {
     u8 pad000[2];
     u16 field_02;
@@ -96,7 +88,7 @@ struct AiState {
     u8 pad1c6[0x22];
     void (*field_1e8)(AiState *);
     u8 pad1ec[0x70];
-    LinkedObject *field_25c;
+    Actor *field_25c;
     u8 pad260[0x74];
     int field_2d4;
     u8 pad2d8[0x1c];
@@ -144,12 +136,12 @@ void Ov107_AiState_OnDefeat(AiState *self)
     self->field_1c5 &= ~0xf;
 
     if (self->field_25c != 0 &&
-        self->field_25c->field_1d0 != 0 &&
+        self->field_25c->pfnOnHit != 0 &&
         self->field_1a0 != 0) {
         int multiplier = FX_Mul(self->field_1a0->field_68 << 4, self->field_2f8);
         int amount = FX_Mul(multiplier,
             func_ov107_020c9848()->field_8c) + 0x800;
-        self->field_25c->field_1d0(self->field_25c, amount >> 12);
+        ((void (*)(Actor *, int))self->field_25c->pfnOnHit)(self->field_25c, amount >> 12);
     }
 
     notificationAmount = 0;
@@ -196,7 +188,7 @@ void Ov107_AiState_OnDefeat(AiState *self)
     }
 
     if (self->field_25c != 0) {
-        Ov022_SetPlayerScale(self->field_25c->field_1b4,
+        Ov022_SetPlayerScale(self->field_25c->kind,
                             self->field_19f);
     } else {
         Ov022_SetPlayerScale(0, self->field_19f);
@@ -207,11 +199,11 @@ void Ov107_AiState_OnDefeat(AiState *self)
     }
 
     if (self->field_354 != 0) {
-        LinkedObject *resource;
+        Actor *resource;
         notification = data_ov107_020cb628[2];
         resource = self->field_25c;
-        if (resource != 0 && resource->field_1cc != 0 &&
-            resource->field_1cc(resource->field_18c) != 0) {
+        if (resource != 0 && resource->pfnAction != 0 &&
+            ((int (*)(void *))resource->pfnAction)(resource->field_18c) != 0) {
             notification.field_03 -= 1;
         }
         if (self->field_24 != 0) {

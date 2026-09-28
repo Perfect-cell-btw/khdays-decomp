@@ -26,6 +26,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 #define FX32_PI      0x3244
 #define FX32_DEG50   0xdf6
@@ -45,15 +46,7 @@ typedef struct Mtx33 {
 } Mtx33;
 
 typedef struct ChargeActor {
-    u8    pad_000[0x74];
-    Vec4  volume;             /* 0x074 */
-    u8    pad_084[0x17a - 0x84];
-    u8    bGrounded : 1;      /* 0x17a */
-    u8    bBlocked : 1;
-    u8    pad_17b[0x1c7 - 0x17b];
-    u8    nSubState;          /* 0x1c7 */
-    u8    pad_1c8[0x388 - 0x1c8];
-    int   hWorld;             /* 0x388 */
+    Actor base;                  /* 0x000 */
     signed char nTurn;        /* 0x38c */
     u8    pad_38d[3];
     VecFx32  vFacing;            /* 0x390 */
@@ -155,26 +148,26 @@ void Ov232_Item_AiChargeTick(ChargeNode *pNode)
             pState->nProgress += vLocal.z;
         }
     }
-    volume = pState->pSelf->volume;
-    nCount = Ov107_CollectSphereOverlaps(pState->pSelf->hWorld, &volume, apHit);
+    volume = (*(Vec4 *)&pState->pSelf->base.sphere);
+    nCount = Ov107_CollectSphereOverlaps(((int)pState->pSelf->base.pPoolEntry), &volume, apHit);
     for (i = 0; i < nCount; i++) {
         nBit = 1 << apHit[i]->nKind;
         nMask |= nBit;
         if ((pState->nHitMask & nBit) == 0
-            && Ov107_InvokeHitCallback(apHit[i], pState->pSelf, pState->pSelf->hWorld, 0, &pState->vVel, 0) != 0) {
+            && Ov107_InvokeHitCallback(apHit[i], pState->pSelf, ((int)pState->pSelf->base.pPoolEntry), 0, &pState->vVel, 0) != 0) {
             pState->nHitMask |= nBit;
-            func_ov107_020c0b90(pState->pSelf->hWorld, CMD_CHARGE, vAt, 0);
+            func_ov107_020c0b90(((int)pState->pSelf->base.pPoolEntry), CMD_CHARGE, vAt, 0);
             Ov107_BuildAndSendUpdate(pState->pSelf, pState->nId, REACTION_HIT, pState->pAnchor);
         }
     }
     pState->nHitMask &= nMask;
     pState->nTravel += VEC_Mag(&pState->vVel);
     pActor = pState->pSelf;
-    if (pActor->bGrounded == 0 && pActor->bBlocked == 0 && pState->nTravel < CHARGE_RANGE) {
+    if (pActor->base.contact17a.bits.bit0 == 0 && pActor->base.contact17a.bits.bit1 == 0 && pState->nTravel < CHARGE_RANGE) {
         return;
     }
     Ov107_BuildAndSendUpdate(pState->pSelf, pState->nId, REACTION_END, pState->pAnchor);
-    func_ov107_020c0b90(pState->pSelf->hWorld, CMD_CHARGE, vAt, 0);
-    pState->pSelf->nSubState = 0;
+    func_ov107_020c0b90(((int)pState->pSelf->base.pPoolEntry), CMD_CHARGE, vAt, 0);
+    pState->pSelf->base.nextState = 0;
     SetIndexedSlot(pNode, pNode->nSlot, 0);
 }

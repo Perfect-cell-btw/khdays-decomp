@@ -3,20 +3,10 @@
  * (+0x1c9) pending and clears the step handler. */
 
 #include "nitro/fx_types.h"
-
-struct Node {
-    char pad0[0x60];
-    unsigned short f60;
-    char pad62[0x4e];
-    VecFx32 fb0;
-    char padbc[0x10b];
-    signed char f1c7;
-    char pad1c8;
-    signed char f1c9;
-};
+#include "game/actor.h"
 
 struct Holder {
-    struct Node *node;
+    Actor *node;
     char pad4[0x10];
     VecFx32 f14;
     char pad20[0x68];
@@ -36,14 +26,14 @@ extern int SetIndexedSlot();
 
 void Ov175_FlagGatedCopyVec3AndAdvance(struct Obj *this_) {
     struct Holder *h = this_->holder;
-    struct Node *node = h->node;
+    Actor *node = h->node;
 
-    if (((unsigned)(node->f60 << 24) >> 24 & 1) == 0) return;
+    if (((unsigned)(node->flags60.raw << 24) >> 24 & 1) == 0) return;
 
-    h->f14 = node->fb0;
+    h->f14 = node->srt.translation;
     h->f14.y += 0x2000;
     h->f88 = (Ov002_GetCtxModeByte(Ov107_MoveNodeAndRelayout((int)h->node, &h->f14)) == 8);
     node = h->node;
-    node->f1c7 = node->f1c9;
+    node->nextState = node->field_1c9;
     SetIndexedSlot(this_, this_->f20, 0);
 }

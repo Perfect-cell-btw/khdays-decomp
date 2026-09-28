@@ -5,22 +5,11 @@
  * Layout of Ov107Object/Ov107Slot/Actor from Ov107_Spawner_OnActorRetired. */
 
 #include "nitro/types.h"
+#include "game/actor.h"
 
-typedef struct Actor Actor;
 typedef struct Ov107Object Ov107Object;
 
 struct flags16 { u16 lo : 8, hi : 8; };
-
-struct Actor {
-    u8 pad000[0x60];
-    struct flags16 field_60;        /* +0x60 */
-    u8 pad062[0x1ac - 0x62];
-    u16 field_1ac;                  /* +0x1ac */
-    u8 pad1ae[0x1f8 - 0x1ae];
-    void (*field_1f8)(Actor *self); /* +0x1f8 */
-    u8 pad1fc[0x2d4 - 0x1fc];
-    Ov107Object *pSpawner;          /* +0x2d4 */
-};
 
 typedef struct {
     u8 id;
@@ -68,9 +57,9 @@ void Ov107_Spawner_ReleaseDeadActors(Ov107Object *obj)
     for (i = 0; i < obj->count; i++) {
         Actor *actor;
         if (obj->slots[i].bit1 && obj->slots[i].bit0 && (actor = obj->slots[i].pActor) != 0 &&
-            !(actor->field_1ac & 2) && (actor->field_60.lo & 1)) {
+            !(actor->field_1ac & 2) && (actor->flags60.bits.lo & 1)) {
             if (actor->field_1f8 != 0)
-                actor->field_1f8(actor);
+                ((void (*)(Actor *))actor->field_1f8)(actor);
             table->liveCounts[obj->slots[i].id]--;
             obj->slots[i].bit1 = 0;
             obj->slots[i].pActor->pSpawner = 0;

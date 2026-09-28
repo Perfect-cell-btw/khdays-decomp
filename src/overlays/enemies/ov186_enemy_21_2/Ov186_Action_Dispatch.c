@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/actor.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
@@ -9,22 +10,8 @@ struct Ov185Rig {
     unsigned int pad8hi : 24;
 };
 
-struct Ov185Actor {
-    char pad000[0x60];
-    u16 hw60;
-    char pad062[0x14c];
-    u16 hw1ae;
-    char pad1b0[0x16];
-    signed char bCurrent1c6;
-    signed char bPending1c7;
-    char pad1c8[0x1bc];
-    void *pSubitem384;
-    char pad388[0];
-    struct Ov185Rig *pRig388;
-};
-
 struct Ov185ActionState {
-    struct Ov185Actor *pOwner;
+    Actor *pOwner;
 };
 
 struct Ov185ActionNode {
@@ -72,19 +59,19 @@ void Ov186_Action_Dispatch(struct Ov185ActionNode *node)
     u16 v;
 
     state = node->pState;
-    if (state->pOwner->bPending1c7 == -1) {
+    if (state->pOwner->nextState == -1) {
         return;
     }
-    v = state->pOwner->hw60;
-    state->pOwner->hw60 = (u16)((v & ~0xff00)
+    v = state->pOwner->flags60.raw;
+    state->pOwner->flags60.raw = (u16)((v & ~0xff00)
                                 | ((((((unsigned int)v << 0x10) >> 0x18) | 0x40)
                                     << 0x18) >> 0x10));
-    ((struct Hw60 *)&state->pOwner->hw60)->hi &= ~0x8e;
-    state->pOwner->hw1ae &= ~1;
-    state->pOwner->pRig388->bFlags8 |= 1;
-    Srt_SetRotationQuat((char *)state->pOwner->pSubitem384 + 4, data_020420f8);
-    state->pOwner->bCurrent1c6 = state->pOwner->bPending1c7;
-    switch (state->pOwner->bCurrent1c6) {
+    ((struct Hw60 *)&state->pOwner->flags60.raw)->hi &= ~0x8e;
+    state->pOwner->flags1ae &= ~1;
+    ((struct Ov185Rig *)state->pOwner->pPoolEntry)->bFlags8 |= 1;
+    Srt_SetRotationQuat((char *)state->pOwner->pSubitem + 4, data_020420f8);
+    state->pOwner->state = state->pOwner->nextState;
+    switch (state->pOwner->state) {
     case 0:
         SetIndexedSlot(node, 1, Ov186_stateSetFlagsClearBit);
         break;
@@ -116,5 +103,5 @@ void Ov186_Action_Dispatch(struct Ov185ActionNode *node)
         SetIndexedSlot(node, 1, Ov186_AiSetStanceAndEnd);
         break;
     }
-    state->pOwner->bPending1c7 = -1;
+    state->pOwner->nextState = -1;
 }

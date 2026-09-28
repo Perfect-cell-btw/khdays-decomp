@@ -1,6 +1,7 @@
 /* Ov218_DistanceToTarget: ported from a matched sibling family (same shape, constants and offsets adjusted). */
 
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 extern int Ov107_FindNearestObject();
 extern int VEC_Subtract();
@@ -15,13 +16,8 @@ typedef struct {
 } P3bc;
 
 typedef struct {
-    char pad0[0x80];
-    int v80;
-    char pad84[0x2c];
-    VecFx32 vb0;
-    char padbc[0x10b];
-    unsigned char b1c7;
-    char pad1c8[0x1c8];
+    Actor base;                  /* 0x000 */
+    u8 pad38c[0x4];
     P3bc *p3bc;
 } Obj;
 
@@ -54,15 +50,15 @@ int Ov218_DistanceToTarget(Param *param)
         obj = wrap->obj;
         p3bc = obj->p3bc;
         if (p3bc == 0) {
-            obj->b1c7 = 2;
+            obj->base.nextState = 2;
             return -1;
         }
     }
 
-    VEC_Subtract(&p3bc->v190, &obj->vb0, &local);
+    VEC_Subtract(&p3bc->v190, &obj->base.srt.translation, &local);
     diff = VEC_Normalize(&local, &local);
     obj = wrap->obj;
-    diff = diff - (obj->p3bc->v80 + obj->v80);
+    diff = diff - (obj->p3bc->v80 + obj->base.sphere.radius);
     if (diff < 0) {
         diff = 0;
     }

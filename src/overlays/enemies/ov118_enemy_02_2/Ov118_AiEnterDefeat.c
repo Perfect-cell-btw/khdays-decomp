@@ -2,6 +2,7 @@
  * bit 0 of +0x1ae, clears bit 0 of its model's flag byte and clears the step handler. */
 
 #include "nitro/types.h"
+#include "game/actor.h"
 
 extern int SetIndexedSlot();
 
@@ -18,17 +19,8 @@ struct D {
     unsigned int f8 : 8;
 };
 
-struct C {
-    char pad0[0x60];
-    union F f60;
-    char pad62[0x14c];
-    unsigned short f1ae;
-    char pad1b0[0x1d8];
-    struct D *f388;
-};
-
 struct B {
-    struct C *p0;
+    Actor *p0;
 };
 
 struct A {
@@ -43,11 +35,11 @@ void Ov118_AiEnterDefeat(struct A *a)
     struct B *b = a->b;
     struct D *d;
 
-    b->p0->f60.w = (u16)((b->p0->f60.w & ~0xff00) | (((b->p0->f60.bf.hi | 0xce) & 0xff) << 8));
+    b->p0->flags60.raw = (u16)((b->p0->flags60.raw & ~0xff00) | (((b->p0->flags60.bits.hi | 0xce) & 0xff) << 8));
 
-    b->p0->f1ae = b->p0->f1ae | 1;
+    b->p0->flags1ae = b->p0->flags1ae | 1;
 
-    d = b->p0->f388;
+    d = b->p0->pPoolEntry;
     d->f8 = d->f8 & ~1;
 
     SetIndexedSlot(a, a->f20, 0);

@@ -15,6 +15,9 @@
  * have caught this.  tools/audit_arity.py only compared declared-vs-used counts, so a
  * declaration with no parameter list slipped straight through it.
  */
+
+#include "game/actor.h"
+
 extern void TaskList_FinishByTag(int owner, int handle);
 extern void Ov107_AiState_PostTickBase(void *actor);
 extern void Ov107_UnlinkNodeFromOwner(int attachment);
@@ -45,12 +48,7 @@ struct Sub {
 };
 
 struct Obj {
-    char pad0[0x3c];
-    int f3c;               /* 0x3c */
-    char pad40[0x1c6 - 0x40];
-    signed char f1c6;      /* 0x1c6 */
-    char pad1c7[0x388 - 0x1c7];
-    struct P388 **f388;    /* 0x388 */
+    Actor base;                  /* 0x000 */
     struct P388 *f38c;     /* 0x38c */
     struct Sub *f390;      /* 0x390 */
     char pad394[0x398 - 0x394];
@@ -60,17 +58,17 @@ struct Obj {
 };
 
 void Ov142_ReleaseByStateAndSyncSrt(struct Obj *a) {
-    if (a->f1c6 != 5) {
+    if (a->base.state != 5) {
         if (a->f390->m0c != 0) {
-            TaskList_FinishByTag(a->f3c, a->f390->m0c);
+            TaskList_FinishByTag(a->base.field_03c, a->f390->m0c);
             a->f390->m0c = 0;
         }
         if (a->f390->m14 != 0) {
-            TaskList_FinishByTag(a->f3c, a->f390->m14);
+            TaskList_FinishByTag(a->base.field_03c, a->f390->m14);
             a->f390->m14 = 0;
         }
         if (a->f390->m1c != 0) {
-            TaskList_FinishByTag(a->f3c, a->f390->m1c);
+            TaskList_FinishByTag(a->base.field_03c, a->f390->m1c);
             a->f390->m1c = 0;
         }
         if (a->f3d0 != 0) {
@@ -79,12 +77,12 @@ void Ov142_ReleaseByStateAndSyncSrt(struct Obj *a) {
         }
     }
 
-    if (a->f1c6 != 6 && a->f390->m24 != 0) {
-        TaskList_FinishByTag(a->f3c, a->f390->m24);
+    if (a->base.state != 6 && a->f390->m24 != 0) {
+        TaskList_FinishByTag(a->base.field_03c, a->f390->m24);
         a->f390->m24 = 0;
     }
 
-    (*a->f388)->blk = a->f398->blk;
+    (*((struct P388 **)a->base.pPoolEntry))->blk = a->f398->blk;
     a->f38c->blk = a->f398->blk;
 
     Ov107_AiState_PostTickBase(a);

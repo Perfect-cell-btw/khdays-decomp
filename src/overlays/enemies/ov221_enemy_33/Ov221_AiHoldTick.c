@@ -1,14 +1,8 @@
 /* Advances the timer; at 3400 releases the hold flags, clears pendingAction and ends the step. */
 
-extern int SetIndexedSlot();
+#include "game/actor.h"
 
-struct C {
-    char pad0[0x60];
-    unsigned short lo : 8;
-    unsigned short hi : 8;
-    char pad62[0x165];
-    unsigned char f1c7;
-};
+extern int SetIndexedSlot();
 
 struct E {
     char pad0[0x2c];
@@ -16,7 +10,7 @@ struct E {
 };
 
 struct B {
-    struct C *p0;
+    Actor *p0;
     char pad4[0x58];
     int f5c;
 };
@@ -36,10 +30,10 @@ void Ov221_AiHoldTick(struct A *a)
     if (b->f5c < 3400)
         return;
 
-    b->p0->hi |= (unsigned char)0x80;
-    b->p0->hi &= ~1;
+    b->p0->flags60.bits.hi |= (unsigned char)0x80;
+    b->p0->flags60.bits.hi &= ~1;
 
-    b->p0->f1c7 = 0;
+    b->p0->nextState = 0;
 
     SetIndexedSlot(a, a->f20, 0);
 }

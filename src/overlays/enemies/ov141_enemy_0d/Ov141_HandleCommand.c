@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 struct Ov141Cmd {
     u8 pad00[2];
@@ -44,16 +45,8 @@ struct Ov141Other {
 };
 
 struct Ov141Self {
-    char pad00[4];
-    int pScene04;
-    char pad08[0x34];
-    int nResource3c;
-    char pad40[0x10];
-    int nMode50;
-    char pad54[0x20];
-    VecFx32 vPos74;
-    int nRadius80;
-    char pad84[0x30c];
+    Actor base;                  /* 0x000 */
+    u8 pad38c[0x4];
     struct Ov141Slots *pSlots390;
     int *pTransform394;
     char pad398[4];
@@ -88,10 +81,10 @@ void Ov141_HandleCommand(struct Ov141Self *self, struct Ov141Cmd *cmd, int arg2)
         switch (cmd->action03) {
         case 1:
             self->pSlots390->field0c =
-                Ov107_CreateNodeBodyTask(self->nResource3c, self->pSlots390->field08,
+                Ov107_CreateNodeBodyTask(self->base.field_03c, self->pSlots390->field08,
                                     0x17, self->pTransform394 + 1, 0, 0);
             self->pSlots390->field1c =
-                Ov107_CreateNodeBodyTask(self->nResource3c, self->pSlots390->field18,
+                Ov107_CreateNodeBodyTask(self->base.field_03c, self->pSlots390->field18,
                                     0x17, self->aTransform39c, 0, 0);
             self->nEffect3d0 =
                 Ov107_CreateSpawnTask(self, 0x11e, 5, 0,
@@ -99,11 +92,11 @@ void Ov141_HandleCommand(struct Ov141Self *self, struct Ov141Cmd *cmd, int arg2)
             break;
         case 2:
             self->pSlots390->field24 =
-                Ov107_CreateNodeBodyTask(self->nResource3c, self->pSlots390->field20,
+                Ov107_CreateNodeBodyTask(self->base.field_03c, self->pSlots390->field20,
                                     0x17, self->pTransform394 + 1, 0, 0);
             break;
         case 0: {
-            int list = self->pScene04;
+            int list = ((int)self->base.pScene);
             short ids[16] = {0};
             VecFx32 delta;
 
@@ -113,11 +106,11 @@ void Ov141_HandleCommand(struct Ov141Self *self, struct Ov141Cmd *cmd, int arg2)
             while (other != 0) {
                 if ((other->flags60.lo & 1) != 0
                     && (*(u16 *)((char *)other + 0x1ac) & 4) == 0) {
-                    VEC_Subtract(&other->vPos74, &self->vPos74, &delta);
-                    if (VEC_Mag(&delta) - (other->nRadius80 + self->nRadius80)
+                    VEC_Subtract(&other->vPos74, &self->base.sphere.center, &delta);
+                    if (VEC_Mag(&delta) - (other->nRadius80 + self->base.sphere.radius)
                         <= 0x8000) {
                         ids[count++] = other->id02;
-                        if (self->nMode50 == 1) {
+                        if (self->base.mode == 1) {
                             cap = other->nStaggerMax218;
                             n = other->nStagger21a + cap / 2;
                             if (n < 0) {

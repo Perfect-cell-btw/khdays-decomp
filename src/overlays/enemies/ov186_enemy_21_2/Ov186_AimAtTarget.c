@@ -1,23 +1,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-
-struct Ov120Actor {
-    char pad000[0x60];
-    u16 hw60;
-    char pad062[0x4e];
-    VecFx32 vPosb0;
-    char pad0bc[0xbe];
-    u8 bLaunch17a : 1;
-    char pad17b[0x15];
-    VecFx32 vPos190;
-    char pad19c[0x2b];
-    u8 bActionState1c7;
-};
+#include "game/actor.h"
 
 struct Ov185ActionState {
-    struct Ov120Actor *pOwner;
-    struct Ov120Actor *pTarget;
+    Actor *pOwner;
+    Actor *pTarget;
     char pad008[0x10];
     VecFx32 vPos18;
     char pad024[8];
@@ -41,7 +29,7 @@ struct Ov120ActionNode {
 
 extern void Ov186_OrbitStep(void);
 
-extern struct Ov120Actor *Ov107_FindNearestObject(struct Ov120Actor *owner, int *pDistSq);
+extern Actor *Ov107_FindNearestObject(Actor *owner, int *pDistSq);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
@@ -77,18 +65,18 @@ void Ov186_AimAtTarget(struct Ov120ActionNode *node)
     state = node->pState;
     state->pTarget = Ov107_FindNearestObject(state->pOwner, 0);
     if (state->pTarget == 0) {
-        state->pOwner->bActionState1c7 = 2;
+        state->pOwner->nextState = 2;
         SetIndexedSlot(node, node->bSlot, 0);
         return;
     }
-    VEC_Subtract(&state->pTarget->vPos190, &state->pOwner->vPosb0, &vDelta);
+    VEC_Subtract(&state->pTarget->vChaseTarget, &state->pOwner->srt.translation, &vDelta);
     nLen = VEC_Normalize(&vDelta, &vDelta);
     if (nLen > 0x8000) {
         nLen = 0x8000;
     }
     Ov186_LookAtQuat_2(state, &state->vPos18);
     state->vForward2c.y = -0x200;
-    if (state->pOwner->bLaunch17a == 0) {
+    if (state->pOwner->contact17a.bits.bit0 == 0) {
         return;
     }
     nFlatZ = vDelta.z;
@@ -101,8 +89,8 @@ void Ov186_AimAtTarget(struct Ov120ActionNode *node)
     state->nElapsed60 = 0;
     state->nAnim70 = state->pAnim44->nId4;
     {
-        u16 v = state->pOwner->hw60;
-        state->pOwner->hw60 = (u16)((v & ~0xff00)
+        u16 v = state->pOwner->flags60.raw;
+        state->pOwner->flags60.raw = (u16)((v & ~0xff00)
                                    | ((((((unsigned int)v << 0x10) >> 0x18) | 2)
                                        << 0x18) >> 0x10));
     }

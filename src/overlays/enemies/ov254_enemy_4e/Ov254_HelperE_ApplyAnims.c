@@ -1,21 +1,14 @@
 /* Sets model tracks 0, 2, 4 and 1 to the variant animation and refreshes callbacks. */
 
+#include "game/actor.h"
+
 extern int SetSubitemState();
 extern int RefreshObjectCallbacks();
 
-struct S {
-    char pad300[0x310];
-    signed char b310;
-    unsigned char bit0 : 1;
-    unsigned char rest : 7;
-    char pad312[0x72];
-    void *p384;
-};
-
-int Ov254_HelperE_ApplyAnims(struct S *s) {
-    SetSubitemState(s->p384, 0, s->b310, s->bit0);
-    SetSubitemState(s->p384, 2, s->b310, s->bit0);
-    SetSubitemState(s->p384, 4, s->b310, s->bit0);
-    SetSubitemState(s->p384, 1, s->b310, s->bit0);
-    return RefreshObjectCallbacks(s->p384, 0);
+int Ov254_HelperE_ApplyAnims(Actor *s) {
+    SetSubitemState(s->pSubitem, 0, s->mode310, s->flags311.bits.bit0);
+    SetSubitemState(s->pSubitem, 2, s->mode310, s->flags311.bits.bit0);
+    SetSubitemState(s->pSubitem, 4, s->mode310, s->flags311.bits.bit0);
+    SetSubitemState(s->pSubitem, 1, s->mode310, s->flags311.bits.bit0);
+    return RefreshObjectCallbacks(s->pSubitem, 0);
 }

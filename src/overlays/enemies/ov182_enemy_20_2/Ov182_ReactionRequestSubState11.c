@@ -1,16 +1,7 @@
-/* Reaction check: during action 12 queues 0 and returns 1; otherwise, when ready and moving
- * (2/4/7/8), queues 11. */
-
-struct Inner {
-    unsigned char pad[0x17a];
-    unsigned char bf17a : 1;
-    unsigned char pad17a[0x1c6 - 0x17a - 1];
-    signed char b1c6;
-    signed char b1c7;
-};
+#include "game/actor.h"
 
 struct Mid {
-    struct Inner *inner;
+    Actor *inner;
 };
 
 struct Obj {
@@ -19,7 +10,7 @@ struct Obj {
 };
 
 int Ov182_ReactionRequestSubState11(struct Obj *obj) {
-    struct Inner *p = obj->mid->inner;
+    Actor *p = obj->mid->inner;
     int a = *((signed char *)p + 0x1c6);
     int b;
     if (a == 0xc) {
@@ -27,7 +18,7 @@ int Ov182_ReactionRequestSubState11(struct Obj *obj) {
         return 1;
     }
     b = *((signed char *)p + 0x1c7);
-    if (b != 0xb && a != 0xb && p->bf17a) {
+    if (b != 0xb && a != 0xb && p->contact17a.bits.bit0) {
         if (!(a != 2 && a != 4 && a != 7 && a != 8))
             *((signed char *)p + 0x1c7) = 0xb;
     }

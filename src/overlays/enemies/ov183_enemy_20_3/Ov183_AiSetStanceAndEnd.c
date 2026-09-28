@@ -1,6 +1,8 @@
 /* AI step: sets the stance bits in the high byte of the actor's flags (+0x60) and bit 0 of the
  * flags at +0x1ae, clears bit 0 of its model's flag byte, then clears the step handler. */
 
+#include "game/actor.h"
+
 extern int SetIndexedSlot();
 
 struct D {
@@ -8,17 +10,8 @@ struct D {
     unsigned int f8 : 8;
 };
 
-struct C {
-    char pad0[0x60];
-    unsigned short f60;
-    char pad62[0x14c];
-    unsigned short f1ae;
-    char pad1b0[0x1d8];
-    struct D *f388;
-};
-
 struct B {
-    struct C *p0;
+    Actor *p0;
 };
 
 struct A {
@@ -31,18 +24,18 @@ struct A {
 void Ov183_AiSetStanceAndEnd(struct A *a)
 {
     struct B *b = a->b;
-    struct C *c;
+    Actor *c;
     struct D *d;
     unsigned int x;
 
     c = b->p0;
-    x = c->f60;
-    c->f60 = (x & ~0xff00) | (((((x << 16) >> 24) | 0x86) << 24) >> 16);
+    x = c->flags60.raw;
+    c->flags60.raw = (x & ~0xff00) | (((((x << 16) >> 24) | 0x86) << 24) >> 16);
 
     c = b->p0;
-    c->f1ae = c->f1ae | 1;
+    c->flags1ae = c->flags1ae | 1;
 
-    d = b->p0->f388;
+    d = b->p0->pPoolEntry;
     d->f8 = d->f8 & ~1;
 
     SetIndexedSlot(a, a->f20, 0);

@@ -5,6 +5,9 @@
  * 64-bit divide helper, while `(unsigned long long)x >> 12` is the ROM's inline
  * `lsr r2,r2,#0xc ; orr r2,r2,r3,lsl #20`. Worth 12 bytes and three instructions.
  * Byte-identical twin of Ov117_AiReaimStrafe. */
+
+#include "game/actor.h"
+
 extern int Vec3TransformViaTempMtx();
 extern int ScaleVec3Fx12();
 extern int QuatFromAxisAngle();
@@ -16,24 +19,14 @@ extern int data_020420f8;
 extern int data_02042258;
 extern int data_02042270;
 
-struct Inner {
-    char pad0[0x1c7];
-    unsigned char b1c7;        /* 0x1c7 */
-    char pad1c8[0x224 - 0x1c8];
-    int w224;                  /* 0x224 */
-    int w228;                  /* 0x228 */
-    char pad22c[0x384 - 0x22c];
-    int w384;                  /* 0x384 */
-};
-
 struct Sub {
-    struct Inner *inner;       /* 0x00 */
+    Actor *inner;              /* 0x00 */
     char pad4[0x2c - 0x4];
     int w2c;                   /* 0x2c */
 };
 
 struct Mid {
-    struct Inner *inner;       /* 0x00 */
+    Actor *inner;              /* 0x00 */
     char pad4[8 - 4];
     char buf8[0x2c - 8];       /* 0x08 */
     char buf2c[0x38 - 0x2c];   /* 0x2c */
@@ -63,20 +56,20 @@ void Ov186_AiReaimStrafe(struct Obj *o)
                   (int)((unsigned long long)((long long)m->w38 * 0x6488 + 0x800) >> 12));
 
     m->w38 = m->w38 + o->sub->w2c;
-    Srt_SetRotationQuat(m->inner->w384 + 4, local);
+    Srt_SetRotationQuat(((int)m->inner->pSubitem) + 4, local);
 
     if (m->w38 < 0x1000)
         return;
 
     {
-        int lo = m->inner->w224;
-        int hi = m->inner->w228;
+        int lo = m->inner->field_224;
+        int hi = m->inner->field_228;
         int d = hi - lo;
         if (d < 0) d = -d;
         m->w40 = lo + RandNextScaled(d + 1);
     }
 
-    Srt_SetRotationQuat(m->inner->w384 + 4, &data_020420f8);
-    m->inner->b1c7 = 2;
+    Srt_SetRotationQuat(((int)m->inner->pSubitem) + 4, &data_020420f8);
+    m->inner->nextState = 2;
     SetIndexedSlot(o, o->b20, 0);
 }

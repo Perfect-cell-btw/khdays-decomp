@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 struct Sphere {
     VecFx32 centre;
@@ -10,18 +11,6 @@ struct Sphere {
 
 struct ListNode {
     void *item;
-};
-
-struct Obj {
-    u16 flags000;
-    u16 id002;
-    char pad004[0x5c];
-    unsigned short lo060 : 8;
-    unsigned short hi060 : 8;
-    char pad062[0x12];
-    VecFx32 pos074;
-    char pad080[0x12c];
-    u16 attr1ac;
 };
 
 struct HitPacket {
@@ -69,7 +58,7 @@ extern struct ListNode *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(void *part, struct Sphere *shape, int mode);
 extern int VEC_Normalize(VecFx32 *out, VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, VecFx32 *in, VecFx32 *out);
-extern int Ov107_AiState_ApplyHit(struct Obj *obj, void *target, struct HitPacket *packet);
+extern int Ov107_AiState_ApplyHit(Actor *obj, void *target, struct HitPacket *packet);
 extern void func_ov107_020c0b90(void *actor, int a, VecFx32 v, int d);
 extern void *Ov107_FindMessageHandler(unsigned int id);
 extern void func_02031384(int channel, void *packet, int len);
@@ -83,7 +72,7 @@ void Ov289_AreaSweepAttack_Tick(struct Node *node)
     void *actor;
     void *other;
     void *world;
-    struct Obj *obj;
+    Actor *obj;
     struct ListNode *ln;
     struct ListNode *part;
     struct Sphere shape;
@@ -116,21 +105,21 @@ void Ov289_AreaSweepAttack_Tick(struct Node *node)
         scale = *(int *)((char *)st->pActor + 0x38c) != 0 ? 0x6000 : 0x1000;
         shape.radius = (int)(((long long)shape.radius * scale + 0x800) >> 12);
         ln = List_First((char *)world + 0x80);
-        obj = ln == 0 ? 0 : (struct Obj *)ln->item;
+        obj = ln == 0 ? 0 : (Actor *)ln->item;
         if (obj == 0) {
             return;
         }
         slot = hasMode * 6;
         do {
-            if (obj != (struct Obj *)st->pActor && (obj->lo060 & 1) != 0 &&
-                (obj->attr1ac & 3) == 0 &&
-                (st->mask >> obj->id002 & 1) == 0) {
+            if (obj != (Actor *)st->pActor && (obj->flags60.bits.lo & 1) != 0 &&
+                (obj->field_1ac & 3) == 0 &&
+                (st->mask >> obj->id & 1) == 0) {
                 part = List_First((char *)obj + 0x22c);
                 while (part != 0) {
                     if (Ov107_HitShape_TestSphere(part->item, &shape, 0) != 0) {
                         struct HitPacket packet = {0};
                         VecFx32 hitNormal;
-                        VEC_Subtract(&obj->pos074, (VecFx32 *)((char *)st->pActor + 0x74),
+                        VEC_Subtract(&obj->sphere.center, (VecFx32 *)((char *)st->pActor + 0x74),
                                      &packet.normal);
                         VEC_Normalize(&packet.normal, &packet.normal);
                         hitNormal = packet.normal;
@@ -143,7 +132,7 @@ void Ov289_AreaSweepAttack_Tick(struct Node *node)
                                          (u32)*(u8 *)((char *)st->pActor + 0x19c) << 0x10;
                         packet.pPart = part;
                         if (Ov107_AiState_ApplyHit(obj, st->pTarget, &packet) != 0) {
-                            st->mask = st->mask | (unsigned long long)1 << obj->id002;
+                            st->mask = st->mask | (unsigned long long)1 << obj->id;
                             ScaleVec3Fx12(shape.radius, &hitNormal, &hitNormal);
                             VEC_Add(&hitNormal, &shape.centre, &hitNormal);
                             func_ov107_020c0b90(st->pActor, 0, hitNormal, 0);
@@ -153,7 +142,7 @@ void Ov289_AreaSweepAttack_Tick(struct Node *node)
                 }
             }
             ln = List_Next((char *)world + 0x80);
-            obj = ln == 0 ? 0 : (struct Obj *)ln->item;
+            obj = ln == 0 ? 0 : (Actor *)ln->item;
         } while (obj != 0);
         return;
     }
@@ -169,7 +158,7 @@ void Ov289_AreaSweepAttack_Tick(struct Node *node)
         limit = 4;
         do {
             if ((st->mask >> limit & 1) != 0) {
-                obj = (struct Obj *)Ov107_FindMessageHandler((u16)limit);
+                obj = (Actor *)Ov107_FindMessageHandler((u16)limit);
                 if (obj == 0 || *(u8 *)((char *)obj + 0x19c) != 0x6b) {
                     count++;
                 }

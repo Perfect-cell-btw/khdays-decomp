@@ -2,28 +2,20 @@
  * +0x2e8 to 0x800. */
 
 #include "nitro/types.h"
+#include "game/actor.h"
 
-typedef struct Obj88fc {
-    char pad000[0x60];
-    u16 hw60;
-    char pad062[0x1c7 - 0x62];
-    u8 field_1c7;
-    char pad1c8[0x2e8 - 0x1c8];
-    u32 field_2e8;
-} Obj88fc;
-
-void Ov107_ResetStanceBase(Obj88fc *self)
+void Ov107_ResetStanceBase(Actor *self)
 {
     u16 hw;
 
-    self->field_1c7 = 0;
+    self->nextState = 0;
 
-    hw = self->hw60;
-    self->hw60 = (hw & ~0xff00) |
+    hw = self->flags60.raw;
+    self->flags60.raw = (hw & ~0xff00) |
         (((((u32)hw << 0x10) >> 0x18) | 0x82) << 0x18 >> 0x10);
 
-    hw = self->hw60;
-    self->hw60 = (hw & ~0xff00) |
+    hw = self->flags60.raw;
+    self->flags60.raw = (hw & ~0xff00) |
         (((u32)(u16)((((u32)hw << 0x10) >> 0x18) & ~1) << 0x18) >> 0x10);
 
     self->field_2e8 = 0x800;

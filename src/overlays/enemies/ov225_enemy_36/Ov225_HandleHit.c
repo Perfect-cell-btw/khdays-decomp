@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 struct Ov225ModePair { u8 nFirst; u8 nSecond; };
 union Ov225ModeSlot { struct Ov225ModePair sPair; u8 aModes[2]; };
@@ -57,31 +58,22 @@ struct Ov225ReactionWork {
     int target78;
 };
 
-struct Ov225ActorHitState {
-    char pad000[0x1ac];
-    u16 flags1ac;
-    char pad1ae[0x66];
-    struct Ov225ReactionWork *work214;
-    short hitFloor218;
-    short hitPoints21a;
-};
-
 extern const struct Ov225ReactionModes data_ov225_020d50b4;
-extern int Ov107_CalcHitDamage(struct Ov225ActorHitState *self, struct Ov225Hit *hit);
-extern void Ov107_BuildAndSendUpdate(struct Ov225ActorHitState *self, int reactionId, u8 mode, int context);
+extern int Ov107_CalcHitDamage(Actor *self, struct Ov225Hit *hit);
+extern void Ov107_BuildAndSendUpdate(Actor *self, int reactionId, u8 mode, int context);
 
-int Ov225_HandleHit(struct Ov225ActorHitState *self, int source, struct Ov225Hit *hit)
+int Ov225_HandleHit(Actor *self, int source, struct Ov225Hit *hit)
 {
-    struct Ov225ReactionWork *work = self->work214;
+    struct Ov225ReactionWork *work = self->pHitState;
     int delta;
     int remaining;
     struct Ov225HitFlags *flags;
 
     work->source10 = source;
-    if (self->flags1ac & 1) {
+    if (self->field_1ac & 1) {
         return 0;
     }
-    if (self->hitPoints21a <= 0) {
+    if (self->hitPoints <= 0) {
         return 0;
     }
 
@@ -116,16 +108,16 @@ int Ov225_HandleHit(struct Ov225ActorHitState *self, int source, struct Ov225Hit
         return 1;
     }
 
-    delta = self->hitPoints21a - hit->damage28;
+    delta = self->hitPoints - hit->damage28;
     if (delta < 0) {
         remaining = 0;
     } else {
-        remaining = self->hitFloor218;
+        remaining = self->hitPointsCap;
         if (delta <= remaining) {
             remaining = delta;
         }
     }
-    self->hitPoints21a = (short)remaining;
+    self->hitPoints = (short)remaining;
 
     if (hit->damage28 > 0) {
         if ((flags->low & 8) == 0 || (flags->low & 0x80) == 0 || flags->kind != 0x80) {
@@ -144,7 +136,7 @@ int Ov225_HandleHit(struct Ov225ActorHitState *self, int source, struct Ov225Hit
         }
     }
 
-    if (self->hitPoints21a == 0) {
+    if (self->hitPoints == 0) {
         work->object00->nextState1c7 = 3;
         return 1;
     }

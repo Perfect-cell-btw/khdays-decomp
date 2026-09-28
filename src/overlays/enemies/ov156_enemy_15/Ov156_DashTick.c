@@ -21,6 +21,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -81,23 +82,7 @@ struct Ov156Item {
 };
 
 struct Ov156Actor {
-    char pad000[4];
-    char *pScene;
-    char pad008[0x1c];
-    void (*pfnMessage)(struct Ov156Actor *self, PosMsg *msg, int size);
-    char pad028[0x4c];
-    VecFx32 vPos74;
-    int nRadius80;
-    char pad084[0x90];
-    VecFx32 vNormal114;
-    char pad120[0x5a];
-    struct Flags17a flags17a;
-    u8 nFlags17b;
-    char pad17c[0x4b];
-    u8 nSubState1c7;
-    char pad1c8[0x94];
-    int nSource25c;
-    char pad260[0x12c];
+    Actor base;                  /* 0x000 */
     struct Ov156Item *pItem38c;
 };
 
@@ -159,8 +144,8 @@ static inline void SendPos(struct Ov156DashState *state, PosMsg *msg, const VecF
     x = src->z;
     PackFx24(&msg->pos[2], x);
     pz = x;
-    if (state->pOwner->pfnMessage != 0) {
-        state->pOwner->pfnMessage(state->pOwner, msg, 0xe);
+    if (state->pOwner->base.pfnPostMessage != 0) {
+        ((void (*)(struct Ov156Actor *, PosMsg *, int))state->pOwner->base.pfnPostMessage)(state->pOwner, msg, 0xe);
     }
 }
 
@@ -185,9 +170,9 @@ void Ov156_DashTick(int node)
     int nHits;
 
     actor = state->pOwner;
-    nHits = Ov107_CollectSphereOverlaps(actor->pItem38c, &actor->vPos74, hits);
+    nHits = Ov107_CollectSphereOverlaps(actor->pItem38c, &actor->base.sphere.center, hits);
     for (i = 0; i < nHits; i++) {
-        VEC_Subtract(&hits[i]->vPos74, &actor->vPos74, &push);
+        VEC_Subtract(&hits[i]->base.sphere.center, &actor->base.sphere.center, &push);
         push.y = 0;
         VEC_Normalize(&push, &push);
         ScaleVec3Fx12(0x800, &push, &push);
@@ -195,14 +180,14 @@ void Ov156_DashTick(int node)
             msgA = data_ov156_020cedba;
             SendPos(state, &msgA, state->pPos);
             Ov107_BuildAndSendUpdate(state->pOwner, 0x13d, 5, state->pPos);
-            state->pOwner->nSubState1c7 = 0;
+            state->pOwner->base.nextState = 0;
             SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
             return;
         }
     }
     target = Ov107_FindNearestObject(state->pOwner, 0);
     if (target != 0) {
-        VEC_Subtract(&target->vPos74, &actor->vPos74, &d);
+        VEC_Subtract(&target->base.sphere.center, &actor->base.sphere.center, &d);
         if (VEC_DotProduct(&d, (VecFx32 *)&state->nDirX) > 0) {
             cur = func_020050b4(state->nDirX, state->nDirZ);
             want = func_020050b4(d.x, d.z);
@@ -213,7 +198,7 @@ void Ov156_DashTick(int node)
         }
     }
     if (state->flags24.bit0) {
-        other = Ov107_FindEntityHitBySphere(state->pOwner, &actor->vPos74, &shape);
+        other = Ov107_FindEntityHitBySphere(state->pOwner, &actor->base.sphere.center, &shape);
         if (other != 0 && (*(u16 *)(other + 0x1ac) & 4) == 0) {
             struct HitPacket packet = {0};
             PosMsg msgB;
@@ -223,11 +208,11 @@ void Ov156_DashTick(int node)
             packet.field_16 = state->pOwner->pItem38c->nId19c;
             packet.field_18 = (void *)shape;
             if ((((struct w8 *)(shape + 8))->lo & 1) != 0 &&
-                Ov107_AiState_ApplyHit(other, state->pOwner->nSource25c, &packet) != 0) {
+                Ov107_AiState_ApplyHit(other, ((int)state->pOwner->base.field_25c), &packet) != 0) {
                 msgB = data_ov156_020cedac;
                 SendPos(state, &msgB, state->pPos);
                 Ov107_BuildAndSendUpdate(state->pOwner, 0, 0x53, state->pPos);
-                state->pOwner->nSubState1c7 = 0;
+                state->pOwner->base.nextState = 0;
                 SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
                 return;
             }
@@ -240,12 +225,12 @@ void Ov156_DashTick(int node)
         VecFx32 n;
         VecFx32 back;
         VecFx32 refl;
-        n = state->pOwner->vNormal114;
-        hit = state->pOwner->flags17a.bit1;
-        if (hit == 0 && state->pOwner->nFlags17b == 0) {
-            char *scene = state->pOwner->pScene;
+        n = state->pOwner->base.vContactNormal;
+        hit = state->pOwner->base.contact17a.bits.bit1;
+        if (hit == 0 && state->pOwner->base.field_17b == 0) {
+            char *scene = state->pOwner->base.pScene;
             ScaleVec3Fx12(0x500, (VecFx32 *)&state->nDirX, &back);
-            result = Collision_CastSphereEx(*(void **)(scene + 0x7c), &state->pOwner->vPos74, &back, state->pOwner->nRadius80, 0);
+            result = Collision_CastSphereEx(*(void **)(scene + 0x7c), &state->pOwner->base.sphere.center, &back, state->pOwner->base.sphere.radius, 0);
             if (result != 0 && result->field_08 == 0) {
                 hit = 1;
                 n.x = result->pRecord->nx;
@@ -263,7 +248,7 @@ void Ov156_DashTick(int node)
         }
     }
     state->vStep.x = (int)(((long long)state->nDirX * 0x500 + 0x800) >> 12);
-    if (state->pOwner->flags17a.bit0) {
+    if (state->pOwner->base.contact17a.bits.bit0) {
         state->vStep.y = 0;
     } else {
         state->vStep.y -= 0x40;
@@ -278,7 +263,7 @@ void Ov156_DashTick(int node)
         msgC = data_ov156_020cedc8;
         SendPos(state, &msgC, state->pPos);
         Ov107_BuildAndSendUpdate(state->pOwner, 0x13d, 6, state->pPos);
-        state->pOwner->nSubState1c7 = 0;
+        state->pOwner->base.nextState = 0;
         SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
     }
 }

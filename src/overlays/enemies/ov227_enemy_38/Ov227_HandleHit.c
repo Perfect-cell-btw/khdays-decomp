@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 struct Ov227ModePair { u8 nFirst; u8 nSecond; };
 union Ov227ModeSlot { struct Ov227ModePair sPair; u8 aModes[2]; };
@@ -56,32 +57,23 @@ struct Ov227ReactionWork {
     int target78;
 };
 
-struct Ov227ActorHitState {
-    char pad000[0x1ac];
-    u16 flags1ac;
-    char pad1ae[0x66];
-    struct Ov227ReactionWork *work214;
-    short hitFloor218;
-    short hitPoints21a;
-};
-
 extern const struct Ov227ReactionModes data_ov227_020d4b54;
-extern int Ov107_CalcHitDamage(struct Ov227ActorHitState *self, struct Ov227Hit *hit);
-extern void Ov107_BuildAndSendUpdate(struct Ov227ActorHitState *self, int reactionId, u8 mode, int context);
+extern int Ov107_CalcHitDamage(Actor *self, struct Ov227Hit *hit);
+extern void Ov107_BuildAndSendUpdate(Actor *self, int reactionId, u8 mode, int context);
 extern signed char Ov002_GetCtxModeByte(void);
 
-int Ov227_HandleHit(struct Ov227ActorHitState *self, int source, struct Ov227Hit *hit)
+int Ov227_HandleHit(Actor *self, int source, struct Ov227Hit *hit)
 {
-    struct Ov227ReactionWork *work = self->work214;
+    struct Ov227ReactionWork *work = self->pHitState;
     int delta;
     int remaining;
     struct Ov227HitFlags *flags;
 
     work->source10 = source;
-    if (self->flags1ac & 1) {
+    if (self->field_1ac & 1) {
         return 0;
     }
-    if (self->hitPoints21a <= 0) {
+    if (self->hitPoints <= 0) {
         return 0;
     }
 
@@ -102,16 +94,16 @@ int Ov227_HandleHit(struct Ov227ActorHitState *self, int source, struct Ov227Hit
         return 1;
     }
 
-    delta = self->hitPoints21a - hit->damage28;
+    delta = self->hitPoints - hit->damage28;
     if (delta < 0) {
         remaining = 0;
     } else {
-        remaining = self->hitFloor218;
+        remaining = self->hitPointsCap;
         if (delta <= remaining) {
             remaining = delta;
         }
     }
-    self->hitPoints21a = (short)remaining;
+    self->hitPoints = (short)remaining;
 
     if (hit->damage28 > 0) {
         if ((flags->low & 8) == 0 || (flags->low & 0x80) == 0 || flags->kind != 0x80) {
@@ -131,7 +123,7 @@ int Ov227_HandleHit(struct Ov227ActorHitState *self, int source, struct Ov227Hit
         }
     }
 
-    if (self->hitPoints21a == 0) {
+    if (self->hitPoints == 0) {
         work->object00->nextState1c7 = 3;
         return 1;
     }

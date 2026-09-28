@@ -45,6 +45,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 struct SinCos {
     short sin;
@@ -58,18 +59,6 @@ struct Hit {
 
 struct ListNode {
     void *item;
-};
-
-struct Actor {
-    u16 flags000;
-    char pad002[0x5e];
-    unsigned short lo060 : 8;
-    unsigned short hi060 : 8;
-    char pad062[0x12];
-    VecFx32 pos074;
-    char pad080[0x12c];
-    u16 attr1ac;
-    char pad1ae[0x7e];
 };
 
 struct ThrowState {
@@ -137,7 +126,7 @@ void Ov288_Throw_Tick(struct AiStateNode *node)
     struct ThrowState *st;
     void *actor;
     void *world;
-    struct Actor *obj;
+    Actor *obj;
     struct ListNode *ln;
     struct Hit *hit;
     struct Frame f;
@@ -181,11 +170,11 @@ void Ov288_Throw_Tick(struct AiStateNode *node)
             }
         }
         ln = List_First((char *)world + 0x80);
-        obj = ln == 0 ? 0 : (struct Actor *)ln->item;
+        obj = ln == 0 ? 0 : (Actor *)ln->item;
         while (obj != 0) {
-            if (obj != (struct Actor *)st->pActor && (obj->lo060 & 1) != 0 &&
-                (obj->attr1ac & 3) == 0 &&
-                ((obj->attr1ac & 4) == 0 || (obj->flags000 & 0x8000) != 0)) {
+            if (obj != (Actor *)st->pActor && (obj->flags60.bits.lo & 1) != 0 &&
+                (obj->field_1ac & 3) == 0 &&
+                ((obj->field_1ac & 4) == 0 || (obj->flags & 0x8000) != 0)) {
                 ln = List_First((char *)obj + 0x22c);
                 while (ln != 0) {
                     if (Ov107_HitShape_TestSphere(ln->item, (char *)st->pActor + 0x74, 0) != 0) {
@@ -195,7 +184,7 @@ void Ov288_Throw_Tick(struct AiStateNode *node)
                 }
             }
             ln = List_Next((char *)world + 0x80);
-            obj = ln == 0 ? 0 : (struct Actor *)ln->item;
+            obj = ln == 0 ? 0 : (Actor *)ln->item;
         }
         if (st->nPlanned <= 0 || st->nTravelled > st->nPlanned) {
             st->vVelocity.y = st->vVelocity.y + *(int *)((char *)node->pScene + 0x2c) * -0x60 / 136;
@@ -237,14 +226,14 @@ void Ov288_Throw_Tick(struct AiStateNode *node)
     st->nPlanned = 0;
     st->nTravelled = 0;
     ln = List_First((char *)world + 0x80);
-    obj = ln == 0 ? 0 : (struct Actor *)ln->item;
+    obj = ln == 0 ? 0 : (Actor *)ln->item;
     if (obj != 0) {
         f.fwd = data_02042258;
         do {
-            if (obj != (struct Actor *)st->pActor && (obj->lo060 & 1) != 0 &&
-                (obj->attr1ac & 3) == 0 &&
-                ((obj->attr1ac & 4) == 0 || (obj->flags000 & 0x8000) != 0)) {
-                VEC_Subtract(&obj->pos074, (VecFx32 *)((char *)st->pActor + 0x74), &f.toTarget);
+            if (obj != (Actor *)st->pActor && (obj->flags60.bits.lo & 1) != 0 &&
+                (obj->field_1ac & 3) == 0 &&
+                ((obj->field_1ac & 4) == 0 || (obj->flags & 0x8000) != 0)) {
+                VEC_Subtract(&obj->sphere.center, (VecFx32 *)((char *)st->pActor + 0x74), &f.toTarget);
                 f.flat.x = f.toTarget.x;
                 f.flat.y = 0;
                 f.flat.z = f.toTarget.z;
@@ -277,7 +266,7 @@ void Ov288_Throw_Tick(struct AiStateNode *node)
                 }
             }
             ln = List_Next((char *)world + 0x80);
-            obj = ln == 0 ? 0 : (struct Actor *)ln->item;
+            obj = ln == 0 ? 0 : (Actor *)ln->item;
         } while (obj != 0);
     }
     if (st->nPlanned != 0 && st->nPlanned < 0xf000) {

@@ -1,17 +1,11 @@
 /* Sets model track 0 to the variant animation and refreshes callbacks. */
 
+#include "game/actor.h"
+
 extern int SetSubitemState();
 extern int RefreshObjectCallbacks();
 
-struct S {
-    char pad0[0x310];
-    signed char b310;       /* +0x310 */
-    unsigned char bit0 : 1; /* +0x311, bit 0 */
-    char pad312[0x384 - 0x312];
-    void *p384;             /* +0x384 */
-};
-
-void Ov245_FourShape_ApplyAnim(struct S *this) {
-    SetSubitemState(this->p384, 0, this->b310, this->bit0);
-    RefreshObjectCallbacks(this->p384, 0);
+void Ov245_FourShape_ApplyAnim(Actor *this) {
+    SetSubitemState(this->pSubitem, 0, this->mode310, this->flags311.bits.bit0);
+    RefreshObjectCallbacks(this->pSubitem, 0);
 }

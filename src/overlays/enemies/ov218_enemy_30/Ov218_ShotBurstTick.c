@@ -9,22 +9,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 struct Sphere { VecFx32 centre; int radius; };
 struct ListNode { void *item; };
 struct W8 { unsigned int lo : 8; };
-
-struct Obj {
-    u16 flags000;
-    u16 id002;
-    char pad004[0x5c];
-    unsigned short lo060 : 8;
-    unsigned short hi060 : 8;
-    char pad062[0x12];
-    VecFx32 pos074;
-    char pad080[0x12c];
-    u16 attr1ac;
-};
 
 struct HitPacket {
     u32 flags00;
@@ -56,7 +45,7 @@ extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern struct ListNode *List_First(void *list);
 extern struct ListNode *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(void *part, struct Sphere *shape, int flag);
-extern int Ov107_AiState_ApplyHit(struct Obj *obj, int target, struct HitPacket *packet);
+extern int Ov107_AiState_ApplyHit(Actor *obj, int target, struct HitPacket *packet);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, int at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042258;
@@ -72,7 +61,7 @@ void Ov218_ShotBurstTick(int *node)
     int world;
     u8 kind;
     long i;
-    struct Obj *obj;
+    Actor *obj;
     struct ListNode *ln;
     struct ListNode *part;
 
@@ -101,21 +90,21 @@ void Ov218_ShotBurstTick(int *node)
             }
         }
         ln = List_First((char *)world + 0x80);
-        obj = ln == 0 ? 0 : (struct Obj *)ln->item;
+        obj = ln == 0 ? 0 : (Actor *)ln->item;
         if (obj != 0) {
             int power = kind * 6;
 
             do {
-                if (obj != (struct Obj *)st->pOwner && (st->mask >> obj->id002 & 1) == 0) {
-                    st->mask = st->mask | (unsigned long long)1 << obj->id002;
-                    if ((obj->lo060 & 1) != 0 && (obj->attr1ac & 3) == 0) {
+                if (obj != (Actor *)st->pOwner && (st->mask >> obj->id & 1) == 0) {
+                    st->mask = st->mask | (unsigned long long)1 << obj->id;
+                    if ((obj->flags60.bits.lo & 1) != 0 && (obj->field_1ac & 3) == 0) {
                         part = List_First((char *)obj + 0x22c);
                         while (part != 0) {
                             if ((((struct W8 *)((char *)part + 8))->lo & 1) != 0 &&
                                 Ov107_HitShape_TestSphere(part->item, &sphere, 0) != 0) {
                                 struct HitPacket packet = {0};
 
-                                VEC_Subtract(&obj->pos074, (void *)(st->pOwner + 0x74), &packet.normal);
+                                VEC_Subtract(&obj->sphere.center, (void *)(st->pOwner + 0x74), &packet.normal);
                                 if (VEC_Normalize(&packet.normal, &packet.normal) == 0) {
                                     packet.normal = data_02042258;
                                 }
@@ -126,7 +115,7 @@ void Ov218_ShotBurstTick(int *node)
                                                  (u16)*(int *)(st->pOwner + 0x258);
                                 packet.pPart = part;
                                 if (Ov107_AiState_ApplyHit(obj, 0, &packet) != 0) {
-                                    func_ov107_020c0b90(*(int *)(st->pOwner + 0x390), 0, obj->pos074, 0);
+                                    func_ov107_020c0b90(*(int *)(st->pOwner + 0x390), 0, obj->sphere.center, 0);
                                     hit = 1;
                                 }
                             }
@@ -135,7 +124,7 @@ void Ov218_ShotBurstTick(int *node)
                     }
                 }
                 ln = List_Next((char *)world + 0x80);
-                obj = ln == 0 ? 0 : (struct Obj *)ln->item;
+                obj = ln == 0 ? 0 : (Actor *)ln->item;
             } while (obj != 0);
         }
         if (hit != 0) {

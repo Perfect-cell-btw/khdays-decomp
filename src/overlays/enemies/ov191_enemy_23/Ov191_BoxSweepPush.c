@@ -16,6 +16,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -36,31 +37,20 @@ struct BoxQuery {
     int bFlag;
 };
 
-struct Ov191Actor {
-    char pad000[0x24];
-    void (*pfnMessage)(struct Ov191Actor *self, PosMsg *msg, int size);
-    char pad028[0x4c];
-    VecFx32 vPos74;
-    char pad080[0x110];
-    VecFx32 vPos190;
-    char pad19c[0x18];
-    u8 nKind1b4;
-};
-
 struct Ov191ActionState {
-    struct Ov191Actor *pOwner;
+    Actor *pOwner;
     char pad004[0x35];
     u8 bFacing : 1;
     u8 bHitMask : 1;
 };
 
-extern int Ov107_CollectEntitiesTouchingDisc(struct Ov191Actor *owner, struct BoxQuery *query, struct Ov191Actor **out);
+extern int Ov107_CollectEntitiesTouchingDisc(Actor *owner, struct BoxQuery *query, Actor **out);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *a, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern int Ov107_InvokeHitCallback(struct Ov191Actor *hit, struct Ov191Actor *a,
-                                   struct Ov191Actor *b, int kind, VecFx32 *push, int z);
-extern void Ov107_BuildAndSendUpdate(struct Ov191Actor *owner, u16 a, u16 id, VecFx32 *pos);
+extern int Ov107_InvokeHitCallback(Actor *hit, Actor *a,
+                                   Actor *b, int kind, VecFx32 *push, int z);
+extern void Ov107_BuildAndSendUpdate(Actor *owner, u16 a, u16 id, VecFx32 *pos);
 extern const VecFx32 data_02042258;
 extern const VecFx32 data_02042264;
 extern const VecFx32 data_02042270;
@@ -74,7 +64,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
 
 void Ov191_BoxSweepPush(struct Ov191ActionState *state, long long len, const VecFx32 *aim)
 {
-    struct Ov191Actor *hits[4];
+    Actor *hits[4];
     struct BoxQuery query;
     VecFx32 push;
     VecFx32 fxPos;
@@ -96,27 +86,27 @@ void Ov191_BoxSweepPush(struct Ov191ActionState *state, long long len, const Vec
     if (n > 0) {
         tmpl = data_ov191_020d2d74;
         do {
-            if (((state->bHitMask >> hits[i]->nKind1b4) & 1) == 0) {
-                VEC_Subtract(&hits[i]->vPos74, &query.vCenter, &push);
+            if (((state->bHitMask >> hits[i]->kind) & 1) == 0) {
+                VEC_Subtract(&hits[i]->sphere.center, &query.vCenter, &push);
                 push.y = 0;
                 VEC_Normalize(&push, &push);
                 push.y = 0x100;
                 ScaleVec3Fx12(0x800, &push, &push);
                 if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, 1, &push, 0) != 0) {
                     msg = tmpl;
-                    x = hits[i]->vPos190.x;
+                    x = hits[i]->vChaseTarget.x;
                     PackFx24(&msg.pos[0], x);
                     pos.x = x;
-                    x = hits[i]->vPos190.y;
+                    x = hits[i]->vChaseTarget.y;
                     PackFx24(&msg.pos[1], x);
                     pos.y = x;
-                    x = hits[i]->vPos190.z;
+                    x = hits[i]->vChaseTarget.z;
                     PackFx24(&msg.pos[2], x);
                     pos.z = x;
-                    if (state->pOwner->pfnMessage != 0) {
-                        state->pOwner->pfnMessage(state->pOwner, &msg, 0xe);
+                    if (state->pOwner->pfnPostMessage != 0) {
+                        ((void (*)(Actor *, PosMsg *, int))state->pOwner->pfnPostMessage)(state->pOwner, &msg, 0xe);
                     }
-                    state->bHitMask = (u8)((1 << hits[i]->nKind1b4) | state->bHitMask);
+                    state->bHitMask = (u8)((1 << hits[i]->kind) | state->bHitMask);
                     Ov107_BuildAndSendUpdate(state->pOwner, 0, 0x53, &fxPos);
                 }
             }

@@ -4,6 +4,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 typedef struct Vec4 {
     int x, y, z, w;
@@ -17,18 +18,8 @@ struct AuxData {
 };
 
 struct Obj {
-    char pad00[0x04];
-    void *collisionOwner04;
-    char pad08[0x58];
-    u16 flags60;
-    char pad62[0x12];
-    Vec4 position74;
-    char pad84[0x143];
-    u8 state1c7;
-    char pad1c8[0x90];
-    int field258;
-    int field25c;
-    char pad260[0x130];
+    Actor base;                  /* 0x000 */
+    u8 pad38c[0x4];
     struct AuxData *aux390;
 };
 
@@ -97,13 +88,13 @@ extern int VEC_Mag(VecFx32 *vector);
 void Ov147_SeekTarget(struct Node *node)
 {
     struct State *state = node->state;
-    void *collisionOwner = state->owner->collisionOwner04;
+    void *collisionOwner = state->owner->base.pScene;
     Vec4 origin;
     VecFx32 movement;
     VecFx32 ray;
 
-    ((struct Hw60 *)&state->owner->flags60)->high &= ~0x80;
-    origin = state->owner->position74;
+    ((struct Hw60 *)&state->owner->base.flags60.raw)->high &= ~0x80;
+    origin = (*(Vec4 *)&state->owner->base.sphere);
 
     if (state->alternateQuery == 0) {
         struct Obj *results[4];
@@ -113,8 +104,8 @@ void Ov147_SeekTarget(struct Node *node)
 
         count = Ov107_CollectSphereOverlaps(state->owner, &origin, results);
         for (i = 0; i < count; i++) {
-            VEC_Subtract((VecFx32 *)&results[i]->position74,
-                         (VecFx32 *)&state->owner->position74, &direction);
+            VEC_Subtract((VecFx32 *)((Vec4 *)&results[i]->base.sphere),
+                         (VecFx32 *)((Vec4 *)&state->owner->base.sphere), &direction);
             direction.y = 0;
             VEC_Normalize(&direction, &direction);
             ScaleVec3Fx12(0x800, &direction, &direction);
@@ -123,7 +114,7 @@ void Ov147_SeekTarget(struct Node *node)
                                     &direction, 0) != 0) {
                 func_ov107_020c0b90(state->owner, 0, *state->position, 0);
                 Ov107_BuildAndSendUpdate(state->owner, 0, 0x53, state->position);
-                state->owner->state1c7 = 0;
+                state->owner->base.nextState = 0;
                 SetIndexedSlot(node, node->action, 0);
                 return;
             }
@@ -144,14 +135,14 @@ void Ov147_SeekTarget(struct Node *node)
             command.field10 = (command.field10 & 0xffff0000) |
                               (((u32)state->owner->aux390->field290 << 18) >> 16);
             command.field14 = (command.field14 & 0xffff0000) |
-                              (((u32)state->owner->field258 << 16) >> 16);
+                              (((u32)state->owner->base.field_258 << 16) >> 16);
             command.hit18 = queryHit;
             if ((((struct CollisionHit *)queryHit)->flags08 & 1) != 0 &&
-                Ov107_AiState_ApplyHit(target, state->owner->field25c,
+                Ov107_AiState_ApplyHit(target, ((int)state->owner->base.field_25c),
                                     &command) != 0) {
                 func_ov107_020c0b90(state->owner, 0, *state->position, 0);
                 Ov107_BuildAndSendUpdate(state->owner, 0, 0x53, state->position);
-                state->owner->state1c7 = 0;
+                state->owner->base.nextState = 0;
                 SetIndexedSlot(node, node->action, 0);
                 return;
             }
@@ -169,7 +160,7 @@ void Ov147_SeekTarget(struct Node *node)
         if (Collision_CastRay(*(void **)((char *)collisionOwner + 0x7c),
                             state->position, &ray) != 0) {
             func_ov107_020c0b90(state->owner, 1, *state->position, 0);
-            state->owner->state1c7 = 0;
+            state->owner->base.nextState = 0;
             SetIndexedSlot(node, node->action, 0);
             return;
         }
@@ -178,7 +169,7 @@ void Ov147_SeekTarget(struct Node *node)
                                state->position, &movement, 0x300, 0);
         if (result != 0 && result->field08 == 0) {
             func_ov107_020c0b90(state->owner, 1, *state->position, 0);
-            state->owner->state1c7 = 0;
+            state->owner->base.nextState = 0;
             SetIndexedSlot(node, node->action, 0);
             return;
         }
@@ -190,7 +181,7 @@ void Ov147_SeekTarget(struct Node *node)
         if ((state->owner->aux390->flags1c4 & 0xa) == 0) {
             func_ov107_020c0b90(state->owner, 1, *state->position, 0);
         }
-        state->owner->state1c7 = 0;
+        state->owner->base.nextState = 0;
         SetIndexedSlot(node, node->action, 0);
     }
 }

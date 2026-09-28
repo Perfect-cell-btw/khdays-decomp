@@ -1,6 +1,8 @@
 /* Keeps the previous position and damps the velocity by 0xb00; once the animation ends queues
  * action 2 and ends the step. */
 
+#include "game/actor.h"
+
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
 
@@ -8,17 +10,8 @@ struct Vec3 {
     unsigned int a, b, c;
 };
 
-struct Big {
-    char pad17a[0x17a];
-    unsigned char f17a : 1;   /* +0x17a bit0 */
-    char pad17b[0x17c - 0x17b];
-    unsigned char f17c : 1;   /* +0x17c bit0 */
-    char pad17d[0x1c7 - 0x17d];
-    unsigned char f1c7;       /* +0x1c7 */
-};
-
 struct Inner {
-    struct Big *p0;           /* +0x00 */
+    Actor *p0;                /* +0x00 */
     unsigned char *p4;        /* +0x04 */
     char pad8[0x18 - 0x08];
     struct Vec3 dst;          /* +0x18 */
@@ -34,7 +27,7 @@ struct Obj {
 
 void Ov137_AiDecelUntilAnimEnd(struct Obj *o) {
     struct Inner *in = o->inner;
-    struct Big *q;
+    Actor *q;
 
     in->dst = in->src;
     ScaleVec3Fx12(0xb00, &in->src, &in->src);
@@ -43,9 +36,9 @@ void Ov137_AiDecelUntilAnimEnd(struct Obj *o) {
         return;
 
     q = in->p0;
-    if (q->f17a == 0 && q->f17c == 0)
+    if (q->contact17a.bits.bit0 == 0 && q->contact17c.bits.bit0 == 0)
         return;
 
-    q->f1c7 = 2;
+    q->nextState = 2;
     SetIndexedSlot(o, (int)o->b20, 0);
 }

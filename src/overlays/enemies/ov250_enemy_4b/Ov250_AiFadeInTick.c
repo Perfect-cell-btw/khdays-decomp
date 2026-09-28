@@ -2,6 +2,8 @@
  * byte clears, sets full alpha, picks a random range between the limits at +0x224/+0x228, queues
  * action 2 and clears the step handler. */
 
+#include "game/actor.h"
+
 extern int FX_Div();
 extern int RandNextScaled();
 extern int SetIndexedSlot();
@@ -12,12 +14,8 @@ typedef struct {
 } Foo224;
 
 typedef struct {
-    char _pad0[0x1c7];
-    unsigned char field_1c7;  /* +0x1c7 */
-    char _pad1c8[0x224 - 0x1c7 - 1];
-    int field_224;      /* +0x224 */
-    int field_228;      /* +0x228 */
-    char _pad22c[0x394 - 0x228 - 4];
+    Actor base;                  /* 0x000 */
+    u8 pad38c[0x8];
     int field_394;      /* +0x394 */
 } Inner;
 
@@ -57,11 +55,11 @@ void Ov250_AiFadeInTick(Outer *o)
 
     m->p0->field_394 = 0x1000;
     {
-        int base = m->p0->field_224;
-        int d = m->p0->field_228 - base;
+        int base = m->p0->base.field_224;
+        int d = m->p0->base.field_228 - base;
         if (d < 0) d = -d;
         m->field_74 = base + RandNextScaled(d + 1);
     }
-    m->p0->field_1c7 = 2;
+    m->p0->base.nextState = 2;
     SetIndexedSlot(o, o->field_20, 0);
 }

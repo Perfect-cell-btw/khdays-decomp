@@ -4,6 +4,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 typedef struct {
     VecFx32 center;
@@ -17,17 +18,9 @@ typedef struct {
 } Ov281ActionHitScratch;
 
 typedef struct {
-    char pad00[0x74];
-    VecFx32 position;
-    int radius;
-    char pad84[0x143];
-    u8 requestedState;
-} Ov281Actor;
-
-typedef struct {
-    Ov281Actor *actor;
+    Actor *actor;
     void *subState;
-    Ov281Actor *target;
+    Actor *target;
     int hitContext;
     int heading;
     int targetHeading;
@@ -57,7 +50,7 @@ static inline void VecFx32_Set(VecFx32 *vec, int x, int y, int z)
     vec->z = z;
 }
 
-extern Ov281Actor *Ov107_FindNearestObject(Ov281Actor *actor, int index);
+extern Actor *Ov107_FindNearestObject(Actor *actor, int index);
 extern void SetIndexedSlot(Ov281ActionNode *node, int slot, void *callback);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern int func_020050b4(int x, int z);
@@ -65,7 +58,7 @@ extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
 extern void func_ov107_020c0b90();
 extern void *Ov281_ApplyAreaHit(Ov281ActionState *state, unsigned int mask,
                                  Sphere *sphere, VecFx32 *direction, int strength);
-extern void Ov107_PostTagUpdate(Ov281Actor *actor, int mode, int arg);
+extern void Ov107_PostTagUpdate(Actor *actor, int mode, int arg);
 extern short data_0203d210[];
 extern const VecFx32 data_02041dc8;
 extern void Ov281_AiStep_QueueAction2OnAnimEnd_4(void);
@@ -79,7 +72,7 @@ void Ov281_UpdateAimedHitAction(Ov281ActionNode *node)
     state = node->state;
     state->target = Ov107_FindNearestObject(state->actor, 0);
     if (state->target == 0) {
-        state->actor->requestedState = 2;
+        state->actor->nextState = 2;
         SetIndexedSlot(node, node->slot, 0);
         return;
     }
@@ -103,7 +96,7 @@ void Ov281_UpdateAimedHitAction(Ov281ActionNode *node)
     }
 
     if (state->timer >= 0) {
-        scratch.sphere = *(Sphere *)&state->actor->position;
+        scratch.sphere = *(Sphere *)&state->actor->sphere.center;
         Ov281_ApplyAreaHit(state, 2, &scratch.sphere, 0, 0x800);
     }
 

@@ -36,17 +36,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-
-struct Ov120Actor {
-    char pad000[0x80];
-    int nRadius80;
-    char pad084[0x2c];
-    VecFx32 vPos0b0;
-    char pad0bc[0x10b];
-    u8 bActionState1c7;
-    char pad1c8[0x110];
-    int nReach2d8;
-};
+#include "game/actor.h"
 
 struct Ov107LockTarget {
     char pad000[0x80];
@@ -56,7 +46,7 @@ struct Ov107LockTarget {
 };
 
 struct Ov120ActionState {
-    struct Ov120Actor *pOwner;
+    Actor *pOwner;
     char pad004[4];
     struct Ov107LockTarget *pTarget;
     char pad00c[4];
@@ -83,7 +73,7 @@ struct Ov120ActionNode {
 extern const short data_0203d210[];
 extern VecFx32 data_02041dc8;
 
-extern struct Ov107LockTarget *Ov107_FindNearestObject(struct Ov120Actor *owner, int out);
+extern struct Ov107LockTarget *Ov107_FindNearestObject(Actor *owner, int out);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern int VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
@@ -97,7 +87,7 @@ void Ov121_ChargeTowardTarget_Step(struct Ov120ActionNode *node)
     VecFx32 vFacing;
     struct Ov120ActionState *state;
     struct Ov107LockTarget *target;
-    struct Ov120Actor *owner;
+    Actor *owner;
     int gap;
     int idx;
     int dot;
@@ -105,19 +95,19 @@ void Ov121_ChargeTowardTarget_Step(struct Ov120ActionNode *node)
     state = node->pState;
     state->pTarget = Ov107_FindNearestObject(state->pOwner, 0);
     if (state->pTarget == 0) {
-        state->pOwner->bActionState1c7 = 2;
+        state->pOwner->nextState = 2;
         SetIndexedSlot(node, node->bSlot, 0);
         return;
     }
 
-    VEC_Subtract(&state->pTarget->vPos190, &state->pOwner->vPos0b0, &vAim);
+    VEC_Subtract(&state->pTarget->vPos190, &state->pOwner->srt.translation, &vAim);
     vAim.y = 0;
     target = state->pTarget;
     owner = state->pOwner;
-    gap = VEC_Normalize(&vAim, &vAim) - target->nRadius80 - owner->nRadius80;
+    gap = VEC_Normalize(&vAim, &vAim) - target->nRadius80 - owner->sphere.radius;
     state->nHeading14 = func_020050b4(vAim.x, vAim.z);
-    if (gap > state->pOwner->nReach2d8) {
-        state->pOwner->bActionState1c7 = 2;
+    if (gap > state->pOwner->range) {
+        state->pOwner->nextState = 2;
         SetIndexedSlot(node, node->bSlot, 0);
         return;
     }
@@ -138,7 +128,7 @@ void Ov121_ChargeTowardTarget_Step(struct Ov120ActionNode *node)
     if (gap < 0x800) {
         state->vVelocity = data_02041dc8;
         if (VEC_DotProduct(&vFacing, &vAim) >= 0xc00) {
-            state->pOwner->bActionState1c7 = 2;
+            state->pOwner->nextState = 2;
             SetIndexedSlot(node, node->bSlot, 0);
             return;
         }
@@ -146,7 +136,7 @@ void Ov121_ChargeTowardTarget_Step(struct Ov120ActionNode *node)
 
     state->nElapsed40 += node->pClock->nDelta2c;
     if (state->nElapsed40 >= 0x2000) {
-        state->pOwner->bActionState1c7 = 2;
+        state->pOwner->nextState = 2;
         SetIndexedSlot(node, node->bSlot, 0);
     }
 }

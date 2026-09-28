@@ -38,11 +38,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
-struct Ov120Actor;
 
 struct Ov120ActionState {
-    struct Ov120Actor *pOwner;
+    Actor *pOwner;
     char pad004[4];
     void *pTarget;
     void *pEventAnchor;
@@ -52,16 +52,6 @@ struct Ov120ActionState {
     int nHitParam44;
     char pad048[6];
     u8 bFacing : 1;
-};
-
-struct Ov120Actor {
-    char pad000[0x1c6];
-    char actionState;
-    u8 bActionState1c7;
-    char pad1c8[0x4c];
-    struct Ov120ActionState *pActionState214;
-    short nStaggerCap218;
-    short nStaggerTimer21a;
 };
 
 struct ActorHitEvent {
@@ -75,26 +65,26 @@ struct ActorHitEvent {
     int nDamage;
 };
 
-extern int Ov107_CalcHitDamage(struct Ov120Actor *actor, struct ActorHitEvent *hit);
-extern void Ov107_BuildAndSendUpdate(struct Ov120Actor *actor, int id, unsigned short mode,
+extern int Ov107_CalcHitDamage(Actor *actor, struct ActorHitEvent *hit);
+extern void Ov107_BuildAndSendUpdate(Actor *actor, int id, unsigned short mode,
                                 void *anchor);
 
-int Ov121_Actor_OnHit(struct Ov120Actor *actor, int nParam, struct ActorHitEvent *hit)
+int Ov121_Actor_OnHit(Actor *actor, int nParam, struct ActorHitEvent *hit)
 {
-    struct Ov120ActionState *state = actor->pActionState214;
+    struct Ov120ActionState *state = actor->pHitState;
     int taken;
     int delta;
     int rem;
     char actionState;
 
-    if (actor->nStaggerTimer21a <= 0) {
+    if (actor->hitPoints <= 0) {
         return 0;
     }
     state->nHitParam44 = nParam;
     state->vHitPoint = hit->vPoint;
-    actionState = state->pOwner->actionState;
+    actionState = state->pOwner->state;
     if (actionState == 7 && (hit->uFlagsLo & 1) != 0 && (hit->uFlagsLo & 0x10) != 0) {
-        state->pOwner->bActionState1c7 = 8;
+        state->pOwner->nextState = 8;
         return 1;
     }
     switch (actionState) {
@@ -109,23 +99,23 @@ int Ov121_Actor_OnHit(struct Ov120Actor *actor, int nParam, struct ActorHitEvent
     hit->nDamage = taken;
     if ((hit->uFlagsLo & 0x4000) != 0) {
         hit->uResultLo = 1;
-        state->pOwner->bActionState1c7 = 5;
+        state->pOwner->nextState = 5;
         return 1;
     }
-    delta = actor->nStaggerTimer21a - hit->nDamage;
+    delta = actor->hitPoints - hit->nDamage;
     if (delta < 0) {
         rem = 0;
     } else {
-        rem = actor->nStaggerCap218;
+        rem = actor->hitPointsCap;
         if (delta <= rem) {
             rem = delta;
         }
     }
-    actor->nStaggerTimer21a = (short)rem;
-    if (actor->nStaggerTimer21a == 0) {
-        state->pOwner->bActionState1c7 = 3;
+    actor->hitPoints = (short)rem;
+    if (actor->hitPoints == 0) {
+        state->pOwner->nextState = 3;
     } else if ((hit->uFlagsLo & 0x8000) != 0) {
-        state->pOwner->bActionState1c7 = 5;
+        state->pOwner->nextState = 5;
     }
     if (hit->nDamage > 0) {
         if ((hit->uFlagsLo & 8) == 0 || (hit->uFlagsLo & 0x80) == 0

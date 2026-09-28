@@ -1,23 +1,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
-struct Ov120Actor {
-    char pad000[0x60];
-    u16 hw60;
-    char pad062[0x1e];
-    int nRadius80;
-    char pad084[0x143];
-    u8 bActionState1c7;
-    char pad1c8[0x110];
-    int nReach2d8;
-};
-
 struct Ov185ActionState {
-    struct Ov120Actor *pOwner;
-    struct Ov120Actor *pTarget;
+    Actor *pOwner;
+    Actor *pTarget;
     int aRotation8[4];
     VecFx32 vPos18;
     char pad024[8];
@@ -33,7 +23,7 @@ struct Ov120ActionNode {
 
 extern VecFx32 data_02042258;
 
-extern struct Ov120Actor *Ov107_FindNearestObject(struct Ov120Actor *owner, int *pDistSq);
+extern Actor *Ov107_FindNearestObject(Actor *owner, int *pDistSq);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern int FX_Sqrt(int x);
 extern void Ov185_LookAtQuat(struct Ov185ActionState *state, VecFx32 *pos,
@@ -68,43 +58,43 @@ void Ov185_ApproachTarget_Step(struct Ov120ActionNode *node)
     int nTargetRadius;
     int nRange;
     struct Ov185ActionState *state;
-    struct Ov120Actor *owner;
-    struct Ov120Actor *target;
-    struct Ov120Actor *pTail;
+    Actor *owner;
+    Actor *target;
+    Actor *pTail;
 
     state = node->pState;
     state->pTarget = Ov107_FindNearestObject(state->pOwner, &nDist);
     target = state->pTarget;
     if (target == 0) {
-        state->pOwner->bActionState1c7 = 2;
+        state->pOwner->nextState = 2;
         SetIndexedSlot(node, node->bSlot, 0);
         return;
     }
     owner = state->pOwner;
     nRange = FX_Sqrt(nDist);
-    nTargetRadius = target->nRadius80;
-    nDist = nRange - (nTargetRadius + owner->nRadius80);
+    nTargetRadius = target->sphere.radius;
+    nDist = nRange - (nTargetRadius + owner->sphere.radius);
     Ov185_LookAtQuat(state, &state->vPos18, nDist, nTargetRadius);
     Vec3TransformViaTempMtx(&state->vForward2c, state->aRotation8, &data_02042258);
     VEC_Normalize(&state->vForward2c, &state->vForward2c);
     ScaleVec3Fx12(0x100, &state->vForward2c, &state->vForward2c);
     if (nDist <= 0x1000) {
-        u16 v = state->pOwner->hw60;
-        state->pOwner->hw60 = (u16)((v & ~0xff00)
+        u16 v = state->pOwner->flags60.raw;
+        state->pOwner->flags60.raw = (u16)((v & ~0xff00)
                                     | ((((((unsigned int)v << 0x10) >> 0x18) | 2)
                                         << 0x18) >> 0x10));
     } else {
-        ((struct Hw60 *)&state->pOwner->hw60)->hi &= ~2;
+        ((struct Hw60 *)&state->pOwner->flags60.raw)->hi &= ~2;
     }
     pTail = state->pOwner;
-    if (nDist >= pTail->nReach2d8) {
-        pTail->bActionState1c7 = 2;
+    if (nDist >= pTail->range) {
+        pTail->nextState = 2;
         SetIndexedSlot(node, node->bSlot, 0);
         return;
     }
     if (nDist > 0x800) {
         return;
     }
-    pTail->bActionState1c7 = 2;
+    pTail->nextState = 2;
     SetIndexedSlot(node, node->bSlot, 0);
 }

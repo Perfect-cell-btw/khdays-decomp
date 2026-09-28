@@ -14,6 +14,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 typedef struct { int value; } Fx32;
 
@@ -49,17 +50,7 @@ struct Ov125Item {
 };
 
 struct Ov125Actor {
-    char pad000[0x17a];
-    u8 bContact17a;
-    char pad17b[0x31];
-    u16 nFlags1ac;
-    char pad1ae[0x19];
-    u8 bSubState1c7;
-    char pad1c8[0x90];
-    int nKind258;
-    int nLockParam25c;
-    char pad260[0x128];
-    struct Ov125PoolEntry **ppPool388;
+    Actor base;                  /* 0x000 */
     struct Ov125Item *pItem38c;
 };
 
@@ -121,28 +112,28 @@ void Ov126_SpinStrikeTick(struct Ov125Node *node)
     int i;
     int n;
 
-    query = (*state->pActor->ppPool388)->query;
+    query = (*((struct Ov125PoolEntry **)state->pActor->base.pPoolEntry))->query;
 
     if (state->nMode1c == 0) {
         n = Ov107_CollectSegmentOverlaps(state->pActor->pItem38c, &query, results);
         i = 0;
         if (n > 0) {
             do {
-                VEC_Subtract((char *)results[i] + 0x74, &(*state->pActor->ppPool388)->x, &dir);
+                VEC_Subtract((char *)results[i] + 0x74, &(*((struct Ov125PoolEntry **)state->pActor->base.pPoolEntry))->x, &dir);
                 dir.y = 0;
                 VEC_Normalize(&dir, &dir);
                 ScaleVec3Fx12(0x800, &dir, &dir);
                 if (Ov107_InvokeHitCallback(results[i], state->pActor, state->pActor->pItem38c, 0, &dir, 0) != 0) {
                     cmdHit = data_ov126_020d4046;
-                    anchor = *state->pActor->ppPool388;
+                    anchor = *((struct Ov125PoolEntry **)state->pActor->base.pPoolEntry);
                     PACK(cmdHit, hitScratchX, anchor->x, 5);
                     PACK(cmdHit, hitScratchY, anchor->y, 8);
                     PACK(cmdHit, hitScratchZ, anchor->z, 11);
                     if (state->pActor->pItem38c->pMsgHook24 != 0) {
                         state->pActor->pItem38c->pMsgHook24(state->pActor->pItem38c, &cmdHit, 0xe);
                     }
-                    Ov107_BuildAndSendUpdate(state->pActor->pItem38c, 0x11b, 6, &(*state->pActor->ppPool388)->x);
-                    state->pActor->bSubState1c7 = 0;
+                    Ov107_BuildAndSendUpdate(state->pActor->pItem38c, 0x11b, 6, &(*((struct Ov125PoolEntry **)state->pActor->base.pPoolEntry))->x);
+                    state->pActor->base.nextState = 0;
                     SetIndexedSlot(node, node->bSlot, 0);
                     return;
                 }
@@ -152,28 +143,28 @@ void Ov126_SpinStrikeTick(struct Ov125Node *node)
         struct HitCommand spare = { 0 };
 
         if ((lock = Ov107_FindEntityHitBySegment(state->pActor, &query, &handle)) != 0
-            && (lock->nFlags1ac & 4) == 0) {
+            && (lock->base.field_1ac & 4) == 0) {
             struct HitCommand req = { 0 };
 
             req.flags00 = (req.flags00 & 0xffff0000) | 0x2024;
             req.vector04 = data_02041dc8;
             req.field10 = (req.field10 & 0xffff0000) | (u16)state->pActor->pItem38c->nId290;
-            req.field14 = (req.field14 & 0xffff0000) | (u16)state->pActor->nKind258;
+            req.field14 = (req.field14 & 0xffff0000) | (u16)state->pActor->base.field_258;
             req.hit18 = handle;
             if ((((struct Ov125Byte8 *)((char *)handle + 8))->lo & 1) != 0
-                && Ov107_AiState_ApplyHit(lock, state->pActor->nLockParam25c, &req) != 0) {
+                && Ov107_AiState_ApplyHit(lock, ((int)state->pActor->base.field_25c), &req) != 0) {
                 struct Ov125Cmd cmdLock;
 
                 cmdLock = data_ov126_020d4038;
-                anchor = *state->pActor->ppPool388;
+                anchor = *((struct Ov125PoolEntry **)state->pActor->base.pPoolEntry);
                 PACK(cmdLock, lockScratchX, anchor->x, 5);
                 PACK(cmdLock, lockScratchY, anchor->y, 8);
                 PACK(cmdLock, lockScratchZ, anchor->z, 11);
                 if (state->pActor->pItem38c->pMsgHook24 != 0) {
                     state->pActor->pItem38c->pMsgHook24(state->pActor->pItem38c, &cmdLock, 0xe);
                 }
-                Ov107_BuildAndSendUpdate(state->pActor->pItem38c, 0x11b, 6, &(*state->pActor->ppPool388)->x);
-                state->pActor->bSubState1c7 = 0;
+                Ov107_BuildAndSendUpdate(state->pActor->pItem38c, 0x11b, 6, &(*((struct Ov125PoolEntry **)state->pActor->base.pPoolEntry))->x);
+                state->pActor->base.nextState = 0;
                 SetIndexedSlot(node, node->bSlot, 0);
                 return;
             }
@@ -182,12 +173,12 @@ void Ov126_SpinStrikeTick(struct Ov125Node *node)
 
     state->nTimer18 += 0xc00;
     if (state->nTimer18 > 0xa000) {
-        state->pActor->bSubState1c7 = 0;
+        state->pActor->base.nextState = 0;
         SetIndexedSlot(node, node->bSlot, 0);
         return;
     }
-    if (((struct Ov125Contact *)&state->pActor->bContact17a)->bGrounded == 0
-        && ((struct Ov125Contact *)&state->pActor->bContact17a)->bBlocked == 0) {
+    if (((struct Ov125Contact *)&state->pActor->base.contact17a.raw)->bGrounded == 0
+        && ((struct Ov125Contact *)&state->pActor->base.contact17a.raw)->bBlocked == 0) {
         return;
     }
 
@@ -195,14 +186,14 @@ void Ov126_SpinStrikeTick(struct Ov125Node *node)
     struct Ov125Cmd cmdEnd;
 
     cmdEnd = data_ov126_020d4054;
-    anchor = *state->pActor->ppPool388;
+    anchor = *((struct Ov125PoolEntry **)state->pActor->base.pPoolEntry);
     PACK(cmdEnd, endScratchX, anchor->x, 5);
     PACK(cmdEnd, endScratchY, anchor->y, 8);
     PACK(cmdEnd, endScratchZ, anchor->z, 11);
     if (state->pActor->pItem38c->pMsgHook24 != 0) {
         state->pActor->pItem38c->pMsgHook24(state->pActor->pItem38c, &cmdEnd, 0xe);
     }
-    state->pActor->bSubState1c7 = 0;
+    state->pActor->base.nextState = 0;
     SetIndexedSlot(node, node->bSlot, 0);
     }
 }

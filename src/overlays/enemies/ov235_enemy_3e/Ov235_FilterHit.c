@@ -5,6 +5,7 @@
  * in sub-state 8 requests 0xa. */
 
 #include "nitro/types.h"
+#include "game/actor.h"
 
 struct HitFlags {
     unsigned int low : 16;
@@ -24,23 +25,17 @@ struct Brain {
     signed char hits8c;
     signed char blows8d;
 };
-struct Actor {
-    char pad000[0x214];
-    struct Brain *brain214;
-    short hitMax218;
-    short hitPoints21a;
-};
 
-extern int Ov107_CalcHitDamage(struct Actor *self, struct Hit *hit);
+extern int Ov107_CalcHitDamage(Actor *self, struct Hit *hit);
 
-int Ov235_FilterHit(struct Actor *self, int source, struct Hit *hit)
+int Ov235_FilterHit(Actor *self, int source, struct Hit *hit)
 {
-    struct Brain *brain = self->brain214;
+    struct Brain *brain = self->pHitState;
     struct HitFlags *flags;
     int delta;
     int remaining;
 
-    if (self->hitPoints21a <= 0) {
+    if (self->hitPoints <= 0) {
         return 0;
     }
     hit->damage28 = Ov107_CalcHitDamage(self, hit);
@@ -49,16 +44,16 @@ int Ov235_FilterHit(struct Actor *self, int source, struct Hit *hit)
         hit->result24 = (hit->result24 & 0xffff0000) | 1;
         return 1;
     }
-    delta = self->hitPoints21a - hit->damage28;
+    delta = self->hitPoints - hit->damage28;
     if (delta < 0) {
         remaining = 0;
     } else {
-        remaining = self->hitMax218;
+        remaining = self->hitPointsCap;
         if (delta <= remaining) {
             remaining = delta;
         }
     }
-    self->hitPoints21a = (short)remaining;
+    self->hitPoints = (short)remaining;
     brain->source3c = source;
     if ((flags->low & 0x20) != 0) {
         brain->blows8d++;
@@ -66,7 +61,7 @@ int Ov235_FilterHit(struct Actor *self, int source, struct Hit *hit)
     if ((flags->low & 4) != 0 && hit->damage28 > 0) {
         brain->hits8c++;
     }
-    if (self->hitPoints21a == 0) {
+    if (self->hitPoints == 0) {
         *(unsigned char *)(brain->owner + 0x1c7) = 3;
     } else if ((flags->low & 1) != 0 && (flags->low & 0x10) != 0) {
         if (*(signed char *)(brain->owner + 0x1c6) == 8) {

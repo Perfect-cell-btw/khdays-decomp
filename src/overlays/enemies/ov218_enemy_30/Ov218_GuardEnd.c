@@ -3,15 +3,7 @@
  * phase; then the state ends with sub-state 2. */
 
 #include "nitro/types.h"
-
-struct Ov218Actor {
-    char pad000[0x1c6];
-    signed char bPrevSubState1c6;
-    u8 bSubState1c7;
-    char pad1c8[0x50];
-    s16 nStaminaMax218;
-    s16 nStamina21a;
-};
+#include "game/actor.h"
 
 extern int func_02020400(int a, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -19,7 +11,7 @@ extern void SetIndexedSlot(int *node, int slot, void *cb);
 void Ov218_GuardEnd(int *node)
 {
     int *state = (int *)node[1];
-    struct Ov218Actor *actor;
+    Actor *actor;
     int div;
 
     if (*(u8 *)(state[1] + 0xad) != 0) {
@@ -40,13 +32,13 @@ void Ov218_GuardEnd(int *node)
             div = 5;
             break;
         }
-        actor = (struct Ov218Actor *)*state;
-        actor->nStamina21a = func_02020400(actor->nStaminaMax218, div);
-        actor = (struct Ov218Actor *)*state;
-        if (actor->nStamina21a <= 0) {
-            actor->nStamina21a = 1;
+        actor = (Actor *)*state;
+        actor->hitPoints = func_02020400(actor->hitPointsCap, div);
+        actor = (Actor *)*state;
+        if (actor->hitPoints <= 0) {
+            actor->hitPoints = 1;
         }
     }
-    ((struct Ov218Actor *)*state)->bSubState1c7 = 2;
+    ((Actor *)*state)->nextState = 2;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
 }

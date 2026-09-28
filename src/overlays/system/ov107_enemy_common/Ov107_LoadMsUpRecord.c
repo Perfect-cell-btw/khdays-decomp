@@ -11,6 +11,7 @@
  * base; a struct copy folds the +2 into the load offsets. */
 
 #include "nitro/types.h"
+#include "game/actor.h"
 
 typedef struct Record {
     u16 field_00;
@@ -27,19 +28,11 @@ typedef struct RecordLookup {
     Path path;          /* sp+4: file name handed to the loader */
 } RecordLookup;
 
-typedef struct AiState {
-    char pad0[0x19e];
-    u8 field_19e;
-    char pad1[0x224 - 0x19f];
-    int field_224;
-    int field_228;
-} AiState;
-
 extern const char data_ov107_020cb642[10];     /* "Ms/UP.bin" */
 extern void *Archive_LoadFile(char *name, u32 kind);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 
-void Ov107_LoadMsUpRecord(AiState *self, u8 recordIndex)
+void Ov107_LoadMsUpRecord(Actor *self, u8 recordIndex)
 {
     RecordLookup lookup;
 

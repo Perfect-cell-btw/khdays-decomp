@@ -2,20 +2,7 @@
  * camera. */
 
 #include "nitro/fx_types.h"
-
-typedef struct {
-    char pad0[0x60];
-    unsigned short field_60;
-    char pad62[0x74 - 0x62];
-    VecFx32 field_74;
-    int field_80;
-    char pad84[0x1ac - 0x84];
-    unsigned short field_1ac;
-    char pad1ae[0x1c4 - 0x1ae];
-    unsigned char field_1c4;
-    char pad1c5[0x2cc - 0x1c5];
-    void *field_2cc;
-} Node;
+#include "game/actor.h"
 
 typedef struct {
     char pad0[0xc4];
@@ -53,13 +40,13 @@ void Ov107_Region_DrawStatusFx(char *self, int action) {
 
     listNode = List_First(base + 0x80);
     while (listNode != 0) {
-        Node *n = *(Node **)listNode;
+        Actor *n = *(Actor **)listNode;
 
-        if (action & n->field_1c4) {
-            unsigned int f60 = (unsigned)(n->field_60 << 24) >> 24;
+        if (action & n->flags1c4) {
+            unsigned int f60 = (unsigned)(n->flags60.raw << 24) >> 24;
             if ((f60 & 1) != 0) {
                 if ((n->field_1ac & 7) == 0) {
-                    int v = n->field_80 << 1;
+                    int v = n->sphere.radius << 1;
                     VecFx32 *src;
                     void *thread;
                     VecFx32 result;
@@ -68,17 +55,17 @@ void Ov107_Region_DrawStatusFx(char *self, int action) {
                     data_02047394.f_c8 = v;
                     data_02047394.f_cc = 1;
 
-                    src = n->field_2cc != 0 ? (VecFx32 *)n->field_2cc : &n->field_74;
+                    src = n->field_2cc != 0 ? (VecFx32 *)n->field_2cc : &n->sphere.center;
                     *g = *src;
 
                     thread = func_ov107_020c9848();
                     VEC_Subtract((VecFx32 *)((char *)*(void **)thread + 0x88), g, &result);
                     VEC_Normalize(&result, &result);
-                    ScaleVec3Fx12(n->field_80, &result, &result);
+                    ScaleVec3Fx12(n->sphere.radius, &result, &result);
                     VEC_Add(g, &result, g);
 
-                    if (n->field_1c4 & 8) {
-                        g->y += n->field_80;
+                    if (n->flags1c4 & 8) {
+                        g->y += n->sphere.radius;
                     }
 
                     MTX_Identity33_(&data_02047428);

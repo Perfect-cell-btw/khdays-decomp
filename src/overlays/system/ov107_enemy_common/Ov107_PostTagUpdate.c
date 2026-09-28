@@ -2,27 +2,17 @@
  * pose hook. */
 
 #include "nitro/types.h"
+#include "game/actor.h"
 
-typedef struct BaseActor {
-    char pad000[0x50];
-    int state;
-    char pad054[0x1dc - 0x54];
-    void (*onModeChanged)(struct BaseActor *self, int mode, int flag);
-    char pad1e0[0x310 - 0x1e0];
-    u8 mode;
-    u8 modeFlag : 1;
-    u8 modePhase : 7;
-} BaseActor;
-
-void Ov107_PostTagUpdate(BaseActor *self, int mode, int flag)
+void Ov107_PostTagUpdate(Actor *self, int mode, int flag)
 {
-    if (self->state != 1)
+    if (self->mode != 1)
         return;
 
-    self->mode = (u8)mode;
-    self->modeFlag = flag;
-    self->modePhase = 3;
+    self->mode310 = (u8)mode;
+    self->flags311.bits.bit0 = flag;
+    self->flags311.head.rest = 3;
 
-    if (self->onModeChanged != 0)
-        self->onModeChanged(self, mode, flag);
+    if (self->pfnPlayAnim != 0)
+        ((void (*)(Actor *, int, int))self->pfnPlayAnim)(self, mode, flag);
 }

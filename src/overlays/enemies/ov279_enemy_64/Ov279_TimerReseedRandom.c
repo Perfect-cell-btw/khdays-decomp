@@ -14,22 +14,17 @@
  * ROM has it. This is the same conditional-region-versus-early-exit lever documented in
  * the codegen notes, and here it is the ONLY thing that separates a match from a miss.
  */
+
+#include "game/actor.h"
+
 struct Owner {
     char pad00[0x2c];
     int nFrameDelta;            /* 0x2c */
 };
 
-struct OrbitNode {
-    char pad00[0x50];
-    int nWaitTimer;             /* 0x50 */
-    char pad54[0x10];
-    int nOrbitAngle;            /* 0x64 */
-    int nOrbitRadius;           /* 0x68 */
-};
-
 struct AiStateNode {
     struct Owner *pScene;       /* 0x00 */
-    struct OrbitNode *pState;   /* 0x04 */
+    Actor *pState;              /* 0x04 */
     char pad08[0x18];
     signed char bSlot;          /* 0x20 */
 };
@@ -40,16 +35,16 @@ extern void Ov279_TickOrbitTarget(void);
 
 void Ov279_TimerReseedRandom(struct AiStateNode *self)
 {
-    struct OrbitNode *node = self->pState;
+    Actor *node = self->pState;
     int sum;
 
-    sum = node->nWaitTimer + self->pScene->nFrameDelta;
-    node->nWaitTimer = sum;
+    sum = node->mode + self->pScene->nFrameDelta;
+    node->mode = sum;
 
     if (sum >= 0x1000) {
-        node->nWaitTimer = 0;
-        node->nOrbitAngle = 0xffff6216;
-        node->nOrbitRadius = RandNextScaled(0x1001) + 0x2000;
+        node->mode = 0;
+        node->camera[0] = 0xffff6216;
+        node->camera[1] = RandNextScaled(0x1001) + 0x2000;
         SetIndexedSlot(self, self->bSlot, &Ov279_TickOrbitTarget);
     } else {
         return;

@@ -12,36 +12,31 @@
  *     stopped the strength reduction in the ov008 loops;
  *   - the -1 is a VARIABLE, not a literal. The original materialises it with `mvn r1,#0` and
  *     compares register-to-register; a literal -1 compiles to `cmn r0,#1` and no register. */
+
+#include "game/actor.h"
+
 extern int RandNextScaled(int bound);
 extern int SetIndexedSlot(int self, int idx, void *handler);
-
-struct Ov253Actor {
-    char _pad0[0x1c7];
-    signed char bReactState;    /* +0x1c7: -1 idle, 2 reacting */
-    char _pad1[0x224 - 0x1c8];
-    int nHoldMin;               /* +0x224 */
-    int nHoldMax;               /* +0x228 */
-};
 
 void Ov253_EnterReaction(int self) {
     int *node = *(int **)(self + 4);
     int min, span;
     int idle = -1;
-    struct Ov253Actor *actor;
+    Actor *actor;
 
     if (*(unsigned char *)node[2] != 0) {
         return;
     }
-    min = ((struct Ov253Actor *)*node)->nHoldMin;
-    span = ((struct Ov253Actor *)*node)->nHoldMax - min;
+    min = ((Actor *)*node)->field_224;
+    span = ((Actor *)*node)->field_228 - min;
     if (span < 0) {
         span = -span;
     }
     node[0xb] = min + RandNextScaled(span + 1);
 
-    actor = (struct Ov253Actor *)*node;
-    if (actor->bReactState == idle) {
-        actor->bReactState = 2;
+    actor = (Actor *)*node;
+    if (actor->nextState == idle) {
+        actor->nextState = 2;
     }
     SetIndexedSlot(self, *(signed char *)(self + 0x20), 0);
 }

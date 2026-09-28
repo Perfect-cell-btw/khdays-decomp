@@ -1,23 +1,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
-struct Ov185Actor {
-    char pad000[0x60];
-    u16 hw60;
-    char pad062[0x1e];
-    int nRadius80;
-    char pad084[0x143];
-    u8 bActionState1c7;
-    char pad1c8[0x110];
-    int nReach2d8;
-};
-
 struct Ov185ActionState {
-    struct Ov185Actor *pOwner;
-    struct Ov185Actor *pTarget;
+    Actor *pOwner;
+    Actor *pTarget;
     int aRotation8[4];
     VecFx32 vPos18;
     char pad024[8];
@@ -37,7 +27,7 @@ struct Ov185ActionNode {
 extern VecFx32 data_02042258;
 extern VecFx32 data_02042264;
 
-extern struct Ov185Actor *Ov107_FindNearestObject(struct Ov185Actor *owner, int *pDistSq);
+extern Actor *Ov107_FindNearestObject(Actor *owner, int *pDistSq);
 extern int FX_Sqrt(int x);
 extern void Ov185_LookAtQuat(struct Ov185ActionState *state, VecFx32 *pos);
 extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
@@ -73,8 +63,8 @@ void Ov185_CircleStrafe_Step(struct Ov185ActionNode *node)
     VecFx32 vForward;
     VecFx32 vCross;
     struct Ov185ActionState *state;
-    struct Ov185Actor *owner;
-    struct Ov185Actor *target;
+    Actor *owner;
+    Actor *target;
     u16 v;
 
     state = node->pState;
@@ -84,16 +74,16 @@ void Ov185_CircleStrafe_Step(struct Ov185ActionNode *node)
         return;
     }
     owner = state->pOwner;
-    nDist = FX_Sqrt(nDist) - (target->nRadius80 + owner->nRadius80);
+    nDist = FX_Sqrt(nDist) - (target->sphere.radius + owner->sphere.radius);
     if (nDist <= 0x1000) {
-        v = state->pOwner->hw60;
-        state->pOwner->hw60 = (u16)((v & ~0xff00)
+        v = state->pOwner->flags60.raw;
+        state->pOwner->flags60.raw = (u16)((v & ~0xff00)
                                     | ((((((unsigned int)v << 0x10) >> 0x18) | 2)
                                         << 0x18) >> 0x10));
     } else {
-        ((struct Hw60 *)&state->pOwner->hw60)->hi &= ~2;
+        ((struct Hw60 *)&state->pOwner->flags60.raw)->hi &= ~2;
     }
-    if (nDist > state->pOwner->nReach2d8) {
+    if (nDist > state->pOwner->range) {
         return;
     }
     Ov185_LookAtQuat(state, &state->vPos18);
@@ -110,6 +100,6 @@ void Ov185_CircleStrafe_Step(struct Ov185ActionNode *node)
                       &state->vForward2c);
         return;
     }
-    state->pOwner->bActionState1c7 = 4;
+    state->pOwner->nextState = 4;
     SetIndexedSlot(node, node->bSlot, 0);
 }

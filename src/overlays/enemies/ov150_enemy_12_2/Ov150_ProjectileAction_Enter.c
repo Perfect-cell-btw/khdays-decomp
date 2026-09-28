@@ -25,19 +25,15 @@
  */
 
 #include "nitro/types.h"
+#include "game/actor.h"
 
 typedef struct Ov150State Ov150State;
 
 typedef void (*Ov150Callback)(Ov150State *state, u16 *pair, int count);
 
 struct Ov150State {
-    u8 pad_0000[0x24];
-    Ov150Callback callback;              /* +0x024 */
-    u8 pad_0028[0x38];
-    u16 field_0060;                      /* +0x060 */
-    u8 pad_0062[0x14c];
-    u16 flags_01ae;                      /* +0x1ae */
-    u8 pad_01b0[0x21c];
+    Actor base;                  /* 0x000 */
+    u8 pad38c[0x40];
     int field_03cc;                      /* +0x3cc */
 };
 
@@ -66,7 +62,7 @@ void Ov150_ProjectileAction_Enter(Ov150Node *node)
     Ov150Callback cb;
 
     Ov107_PostTagUpdate(state_ref->state, 4, 0);
-    state_ref->state->flags_01ae |= 0x40;
+    state_ref->state->base.flags1ae |= 0x40;
 
     pp = buf;
     {
@@ -78,7 +74,7 @@ void Ov150_ProjectileAction_Enter(Ov150Node *node)
         *(volatile u16 *)&pp[0] = low;
     }
 
-    cb = state_ref->state->callback;
+    cb = state_ref->state->base.pfnPostMessage;
     if (cb != 0) {
         cb(state_ref->state, pp, 4);
     }
@@ -86,8 +82,8 @@ void Ov150_ProjectileAction_Enter(Ov150Node *node)
     Ov107_StartAnim(state_ref->state->field_03cc, 1, 0);
 
     {
-        u16 value = state_ref->state->field_0060;
-        state_ref->state->field_0060 =
+        u16 value = state_ref->state->base.flags60.raw;
+        state_ref->state->base.flags60.raw =
             (u16)((value & ~0xff00) |
                   (((((unsigned int)value << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10));
     }

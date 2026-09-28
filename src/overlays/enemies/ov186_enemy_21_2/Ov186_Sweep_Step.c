@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 struct Quat { int x, y, z, w; };
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
@@ -30,22 +31,8 @@ struct Ov185Scene {
     char listA8[0x10];
 };
 
-struct Ov185Actor {
-    char pad000[0x04];
-    struct Ov185Scene *pScene04;
-    char pad008[0x6c];
-    VecFx32 vPos74;
-    int nRadius80;
-    char pad084[0x1c];
-    struct Quat qSrtA0;
-    char pad0b0[0x40];
-    VecFx32 vDeltaF0;
-    char pad0fc[0xca];
-    signed char bAction1c6;
-};
-
 struct Ov185ActionState {
-    struct Ov185Actor *pOwner;
+    Actor *pOwner;
     char pad004[0x04];
     struct Quat qRot08;
     struct Quat qTarget18;
@@ -79,10 +66,10 @@ extern struct ListNode *List_First(void *list);
 extern struct ListNode *List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *unit);
-extern int Ov107_InvokeHitCallback(struct Ov185Target *candidate, struct Ov185Actor *owner,
-                               struct Ov185Actor *source, int mode,
+extern int Ov107_InvokeHitCallback(struct Ov185Target *candidate, Actor *owner,
+                               Actor *source, int mode,
                                const VecFx32 *v, int flags);
-extern void func_ov107_020c0b90(struct Ov185Actor *owner, int mode, VecFx32 v,
+extern void func_ov107_020c0b90(Actor *owner, int mode, VecFx32 v,
                                 int flag);
 
 /*
@@ -115,7 +102,7 @@ void Ov186_Sweep_Step(struct Ov185ActionNode *node)
     int nAngle;
     int nIndex;
     int nDist;
-    struct Ov185Actor *owner;
+    Actor *owner;
     struct Ov185ActionState *state;
     int bHit;
     struct Ov185Scene *scene;
@@ -125,9 +112,9 @@ void Ov186_Sweep_Step(struct Ov185ActionNode *node)
 
     state = node->pState;
     Quat_Slerp(&state->qRot08, state->nBlend28, &state->qRot08, &state->qTarget18);
-    Srt_SetRotationQuat(&state->pOwner->qSrtA0, &state->qRot08);
+    Srt_SetRotationQuat(((struct Quat *)&state->pOwner->srt.rotation), &state->qRot08);
     owner = state->pOwner;
-    if (owner->bAction1c6 == 2 || owner->bAction1c6 == 4) {
+    if (owner->state == 2 || owner->state == 4) {
         bHit = 0;
         nAngle = state->nAngle40 + node->pFrame->nDelta2c;
         state->nAngle40 = nAngle;
@@ -137,16 +124,16 @@ void Ov186_Sweep_Step(struct Ov185ActionNode *node)
         state->nTimer3c = state->nTimer3c + node->pFrame->nDelta2c;
         if (state->nTimer3c >= 0x800) {
             owner = state->pOwner;
-            scene = owner->pScene04;
+            scene = owner->pScene;
             state->nTimer3c = 0;
             pNode = List_First(scene->listA8);
             target = pNode == 0 ? 0 : pNode->pItem;
             while (target != 0) {
                 if (target->flags40.bSolid
                     && (((struct Hw60 *)&target->hw60)->lo & 1) != 0) {
-                    VEC_Subtract(&target->vPos74, &owner->vPos74, &vDelta);
+                    VEC_Subtract(&target->vPos74, &owner->sphere.center, &vDelta);
                     nDist = VEC_Normalize(&vDelta, &vDelta);
-                    if (nDist - (owner->nRadius80 + target->nRadius80) <= 0xc00) {
+                    if (nDist - (owner->sphere.radius + target->nRadius80) <= 0xc00) {
                         Ov107_InvokeHitCallback(target, state->pOwner, state->pOwner, 0,
                                             &data_02041dc8, 0x10);
                         bHit = 1;
@@ -164,13 +151,13 @@ void Ov186_Sweep_Step(struct Ov185ActionNode *node)
                 state->bEffect6d = 0;
             }
         }
-    } else if (owner->bAction1c6 == 5 && state->bEffect6d != 0) {
+    } else if (owner->state == 5 && state->bEffect6d != 0) {
         func_ov107_020c0b90(state->pOwner, 1, data_02041dc8, 0);
         state->bEffect6d = 0;
     }
     if (state->nCooldown64 > 0) {
         state->nCooldown64 -= node->pFrame->nDelta2c;
     }
-    state->pOwner->vDeltaF0 = state->vForward2c;
+    state->pOwner->vPendingMove = state->vForward2c;
     state->vForward2c = data_02041dc8;
 }

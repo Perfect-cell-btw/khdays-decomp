@@ -1,22 +1,10 @@
 /* Keeps the previous position and damps the velocity by 0xb00; once the animation ends queues
  * action 11 or 5 and ends the step. */
 
+#include "game/actor.h"
+
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
-
-struct C {
-    char pad0[0x60];
-    unsigned short lo8 : 8;
-    unsigned short hi8 : 8;
-    char pad62[0x118];
-    unsigned char f17a0 : 1;
-    unsigned char f17a_rest : 7;
-    unsigned char pad17b;
-    unsigned char f17c0 : 1;
-    unsigned char f17c_rest : 7;
-    char pad17d[0x4a];
-    unsigned char f1c7;
-};
 
 struct E {
     char pad0[0xad];
@@ -30,7 +18,7 @@ struct V {
 };
 
 struct B {
-    struct C *p0;
+    Actor *p0;
     struct E *f4;
     char pad8[0x18];
     struct V at20;
@@ -57,11 +45,11 @@ void Ov174_AiDecelUntilAnimEnd(struct A *a)
     ScaleVec3Fx12(0xb00, &b->at2c, &b->at2c);
 
     if (b->f88 == 0 && b->at20.b < 0x20) {
-        b->p0->hi8 = b->p0->hi8 & ~0x40;
+        b->p0->flags60.bits.hi = b->p0->flags60.bits.hi & ~0x40;
     }
 
-    if (b->f88 == 0 && !b->p0->f17a0) {
-        if (!b->p0->f17c0) {
+    if (b->f88 == 0 && !b->p0->contact17a.bits.bit0) {
+        if (!b->p0->contact17c.bits.bit0) {
             return;
         }
     }
@@ -71,10 +59,10 @@ void Ov174_AiDecelUntilAnimEnd(struct A *a)
     }
 
     if (b->f58 > 0) {
-        b->p0->f1c7 = 11;
+        b->p0->nextState = 11;
         SetIndexedSlot(a, a->f20, 0);
     } else {
-        b->p0->f1c7 = 5;
+        b->p0->nextState = 5;
         SetIndexedSlot(a, a->f20, 0);
     }
 }

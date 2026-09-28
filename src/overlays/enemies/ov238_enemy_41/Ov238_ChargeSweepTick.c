@@ -10,22 +10,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
 struct Atk { u8 b0; u8 bits; u8 r2; u8 r3; u16 power; };
 struct Rider { char pad[0x28c]; struct Atk atk[2]; };
 struct ListNode { void *item; };
 struct W8 { unsigned int lo : 8; };
-
-struct Obj {
-    u16 flags000;
-    u16 id002;
-    char pad004[0x5c];
-    unsigned short lo060 : 8;
-    unsigned short hi060 : 8;
-    char pad062[0x14a];
-    u16 attr1ac;
-};
 
 struct HitPacket40 {
     int nKind;
@@ -66,7 +57,7 @@ extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern struct ListNode *List_First(void *list);
 extern struct ListNode *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(void *part, Sphere *shape, int flag);
-extern int Ov107_AiState_ApplyHit(struct Obj *obj, int target, struct HitPacket *packet);
+extern int Ov107_AiState_ApplyHit(Actor *obj, int target, struct HitPacket *packet);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 
@@ -84,7 +75,7 @@ void Ov238_ChargeSweepTick(int *node)
     long i;
     int partner = *(int *)(st->pOwner + 0x398);
     int bit;
-    struct Obj *obj;
+    Actor *obj;
     struct ListNode *ln;
     struct ListNode *part;
     int world;
@@ -141,24 +132,24 @@ void Ov238_ChargeSweepTick(int *node)
             packet2.bKnock = 100;
             packet2.normal = dir;
             ln = List_First((char *)world + 0x80);
-            obj = ln == 0 ? 0 : (struct Obj *)ln->item;
+            obj = ln == 0 ? 0 : (Actor *)ln->item;
             while (obj != 0) {
-                if ((st->mask >> obj->id002 & 1) == 0 && obj != *(struct Obj **)(st->pOwner + 0x398) &&
-                    (obj->lo060 & 1) != 0 && (obj->attr1ac & 7) == 0) {
+                if ((st->mask >> obj->id & 1) == 0 && obj != *(Actor **)(st->pOwner + 0x398) &&
+                    (obj->flags60.bits.lo & 1) != 0 && (obj->field_1ac & 7) == 0) {
                     for (part = List_First((char *)obj + 0x22c); part != 0;
                          part = List_Next((char *)obj + 0x22c)) {
                         if ((((struct W8 *)((char *)part + 8))->lo & 1) != 0 &&
                             Ov107_HitShape_TestSphere(part->item, &sphere, 0) != 0) {
                             packet2.pPart = part;
                             if (Ov107_AiState_ApplyHit(obj, *(int *)(st->pOwner + 0x25c), &packet2) != 0) {
-                                st->mask = st->mask | (unsigned long long)1 << obj->id002;
+                                st->mask = st->mask | (unsigned long long)1 << obj->id;
                                 break;
                             }
                         }
                     }
                 }
                 ln = List_Next((char *)world + 0x80);
-                obj = ln == 0 ? 0 : (struct Obj *)ln->item;
+                obj = ln == 0 ? 0 : (Actor *)ln->item;
             }
         }
     }

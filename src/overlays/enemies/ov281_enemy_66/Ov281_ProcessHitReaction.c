@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 struct Ov281ReactionModes {
     u8 normal[2];
@@ -38,23 +39,14 @@ struct Ov281ReactionWork {
     u8 facing3e;
 };
 
-struct Ov281ActorHitState {
-    char pad000[0x1ac];
-    u16 flags1ac;
-    char pad1ae[0x66];
-    struct Ov281ReactionWork *work214;
-    short hitFloor218;
-    short hitPoints21a;
-};
-
 extern const struct Ov281ReactionModes data_ov281_020ce468;
-extern int Ov107_CalcHitDamage(struct Ov281ActorHitState *self,
+extern int Ov107_CalcHitDamage(Actor *self,
                                struct Ov281Hit *hit);
-extern void Ov107_BuildAndSendUpdate(struct Ov281ActorHitState *self,
+extern void Ov107_BuildAndSendUpdate(Actor *self,
                                 int reactionId, u8 mode, int context);
 
 /* Apply a hit, alternate its reaction mode and request the actor's resulting state. */
-int Ov281_ProcessHitReaction(struct Ov281ActorHitState *self, int source,
+int Ov281_ProcessHitReaction(Actor *self, int source,
                         struct Ov281Hit *hit)
 {
     u8 normalModes[2] = {
@@ -65,15 +57,15 @@ int Ov281_ProcessHitReaction(struct Ov281ActorHitState *self, int source,
         data_ov281_020ce468.special[0],
         data_ov281_020ce468.special[1]
     };
-    struct Ov281ReactionWork *work = self->work214;
+    struct Ov281ReactionWork *work = self->pHitState;
     int delta;
     int remaining;
     struct Ov281HitFlags *flags;
 
-    if (self->flags1ac & 1) {
+    if (self->field_1ac & 1) {
         return 0;
     }
-    if (self->hitPoints21a <= 0) {
+    if (self->hitPoints <= 0) {
         return 0;
     }
 
@@ -98,16 +90,16 @@ int Ov281_ProcessHitReaction(struct Ov281ActorHitState *self, int source,
         return 1;
     }
 
-    delta = self->hitPoints21a - hit->damage28;
+    delta = self->hitPoints - hit->damage28;
     if (delta < 0) {
         remaining = 0;
     } else {
-        remaining = self->hitFloor218;
+        remaining = self->hitPointsCap;
         if (delta <= remaining) {
             remaining = delta;
         }
     }
-    self->hitPoints21a = (short)remaining;
+    self->hitPoints = (short)remaining;
     work->source38 = source;
 
     if (hit->damage28 > 0) {
@@ -128,7 +120,7 @@ int Ov281_ProcessHitReaction(struct Ov281ActorHitState *self, int source,
         }
     }
 
-    if (self->hitPoints21a == 0) {
+    if (self->hitPoints == 0) {
         work->object00->nextState1c7 = 3;
         return 1;
     }

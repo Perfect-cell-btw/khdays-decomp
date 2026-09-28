@@ -61,6 +61,14 @@ Still to do, in this order:
     `game/ov008_camp_menu.h`). It replaces 36 partial views of the context and the offset
     arithmetic of some 60 more sources in each overlay; the globals are declared with only the
     two words in use, since declared at their full 28 bytes mwcc addresses them differently.
+  - `game/actor.h`, the enemy actor every enemy overlay builds on and ov107 runs (`Actor`,
+    0x38c bytes: handler slots, flags, collision sphere, SRT block, state bytes, hit points, the
+    two sorted lists). 443 sources use it instead of their partial views; a family's own fields
+    after the shared part stay in the source as `struct { Actor base; ... }`. Where a source reads
+    a field with another type than the shared one (a local vector type, a typed pointer, the
+    other signedness), the access keeps that type with a cast. `tools/structconv.py` does the
+    rewrite: it preprocesses a source with mwcc, maps every access through a view by type onto the
+    shared member path, and keeps a source only if it still compiles to the same bytes.
   Every compile gets `-i include`, and the build tracks header dependencies. Still per source:
   the function prototypes and most of the game's own structs.
 - **Translation units**: grouping functions back into one `.c` per original file (per enemy, per

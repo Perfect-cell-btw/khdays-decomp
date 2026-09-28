@@ -1,18 +1,9 @@
 /* Keeps the previous position and damps the velocity by 0xb00 until the watched flag clears. */
 
+#include "game/actor.h"
+
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
-
-struct C {
-    char pad0[0x17a];
-    unsigned char f17a0 : 1;
-    unsigned char f17a_rest : 7;
-    unsigned char pad17b;
-    unsigned char f17c0 : 1;
-    unsigned char f17c_rest : 7;
-    char pad17d[0x4a];
-    unsigned char f1c7;
-};
 
 struct V {
     int a;
@@ -21,7 +12,7 @@ struct V {
 };
 
 struct B {
-    struct C *p0;
+    Actor *p0;
     char pad4[0x14];
     struct V at20;
     struct V at2c;
@@ -39,7 +30,7 @@ struct A {
 void Ov133_AiDecelUntilFlagClear(struct A *a)
 {
     struct B *b = a->b;
-    struct C *c;
+    Actor *c;
 
     b->at20 = b->at2c;
 
@@ -50,12 +41,12 @@ void Ov133_AiDecelUntilFlagClear(struct A *a)
     }
 
     c = b->p0;
-    if (!c->f17a0) {
-        if (!c->f17c0) {
+    if (!c->contact17a.bits.bit0) {
+        if (!c->contact17c.bits.bit0) {
             return;
         }
     }
 
-    c->f1c7 = 2;
+    c->nextState = 2;
     SetIndexedSlot(a, a->f20, 0);
 }

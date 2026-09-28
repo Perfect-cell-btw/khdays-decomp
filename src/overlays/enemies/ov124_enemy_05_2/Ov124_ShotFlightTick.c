@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/actor.h"
 
 typedef struct Vec4 { int x, y, z, w; } Vec4;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
@@ -51,18 +52,7 @@ struct Flags17a {
 };
 
 struct Ov191Actor {
-    char pad000[0x24];
-    void (*pfnMessage)(struct Ov191Actor *self, PosMsg *msg, int size);
-    char pad028[0x4c];
-    Vec4 vSphere74;
-    char pad084[0xf6];
-    struct Flags17a flags17a;
-    char pad17b[0x4c];
-    u8 nSubState1c7;
-    char pad1c8[0x90];
-    int nStrength258;
-    int nHitOwner25c;
-    char pad260[0x12c];
+    Actor base;                  /* 0x000 */
     char *pItem38c;
 };
 
@@ -113,8 +103,8 @@ static inline void SendPos(struct Ov191FlightState *state, PosMsg *msg, const Ve
     x = src->z;
     PackFx24(&msg->pos[2], x);
     pz = x;
-    if (state->pOwner->pfnMessage != 0) {
-        state->pOwner->pfnMessage(state->pOwner, msg, 0xe);
+    if (state->pOwner->base.pfnPostMessage != 0) {
+        ((void (*)(struct Ov191Actor *, PosMsg *, int))state->pOwner->base.pfnPostMessage)(state->pOwner, msg, 0xe);
     }
 }
 
@@ -129,18 +119,18 @@ void Ov124_ShotFlightTick(int node)
     int i;
     int n;
 
-    sphere = state->pOwner->vSphere74;
+    sphere = (*(Vec4 *)&state->pOwner->base.sphere);
     if (state->pTarget == 0) {
         n = Ov107_CollectSphereOverlaps(state->pOwner->pItem38c, &sphere, hits);
         for (i = 0; i < n; i++) {
-            VEC_Subtract(&hits[i]->vSphere74, &state->pOwner->vSphere74, &push);
+            VEC_Subtract(((Vec4 *)&hits[i]->base.sphere), ((Vec4 *)&state->pOwner->base.sphere), &push);
             push.y = 0;
             VEC_Normalize(&push, &push);
             ScaleVec3Fx12(0x800, &push, &push);
             if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner->pItem38c, 0, &push, 0) != 0) {
                 msg1 = data_ov124_020d1f14;
                 SendPos(state, &msg1, state->pPos);
-                state->pOwner->nSubState1c7 = 0;
+                state->pOwner->base.nextState = 0;
                 Ov107_BuildAndSendUpdate(state->pOwner, 0x115, 5, state->pPos);
                 SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
                 return;
@@ -162,15 +152,15 @@ void Ov124_ShotFlightTick(int node)
             command.field10 = (command.field10 & 0xffff0000) |
                               (((u32)*(u16 *)(state->pOwner->pItem38c + 0x290) << 17) >> 16);
             command.field14 = (command.field14 & 0xffff0000) |
-                              (((u32)state->pOwner->nStrength258 << 16) >> 16);
+                              (((u32)state->pOwner->base.field_258 << 16) >> 16);
             command.hit18 = queryHit;
             if ((((struct CollisionHit *)queryHit)->flags08 & 1) != 0 &&
-                Ov107_AiState_ApplyHit(target, state->pOwner->nHitOwner25c, &command) != 0) {
+                Ov107_AiState_ApplyHit(target, ((int)state->pOwner->base.field_25c), &command) != 0) {
                 PosMsg msg2;
                 msg2 = data_ov124_020d1f06;
                 SendPos(state, &msg2, state->pPos);
                 Ov107_BuildAndSendUpdate(state->pOwner, 0, 0x53, state->pPos);
-                state->pOwner->nSubState1c7 = 0;
+                state->pOwner->base.nextState = 0;
                 SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
                 return;
             }
@@ -179,12 +169,12 @@ void Ov124_ShotFlightTick(int node)
 
     VEC_Subtract(state->pPos, &state->vPrev, &step);
     state->vPrev = *state->pPos;
-    if (state->pOwner->flags17a.bit0 || state->pOwner->flags17a.bit1) {
+    if (state->pOwner->base.contact17a.bits.bit0 || state->pOwner->base.contact17a.bits.bit1) {
         PosMsg msg3;
         msg3 = data_ov124_020d1ef8;
         SendPos(state, &msg3, state->pPos);
         Ov107_BuildAndSendUpdate(state->pOwner, 0x115, 6, state->pPos);
-        state->pOwner->nSubState1c7 = 0;
+        state->pOwner->base.nextState = 0;
         SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
         return;
     }
@@ -196,7 +186,7 @@ void Ov124_ShotFlightTick(int node)
         PosMsg msg4;
         msg4 = data_ov124_020d1f22;
         SendPos(state, &msg4, state->pPos);
-        state->pOwner->nSubState1c7 = 0;
+        state->pOwner->base.nextState = 0;
         SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
     }
 }
