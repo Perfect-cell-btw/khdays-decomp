@@ -1,8 +1,8 @@
 #include "game/ov008_camp_menu.h"
 /* Mode byte of the link state (+0x100). */
 
-#define MISSION_CONTEXT ((char *)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 int Ov008_Link_GetMode(void)
 {
-    return *(unsigned char *)(MISSION_CONTEXT + 0x100);
+    return MISSION_CONTEXT->rowCount;
 }

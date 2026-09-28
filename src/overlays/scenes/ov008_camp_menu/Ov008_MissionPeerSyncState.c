@@ -8,44 +8,6 @@
 typedef void (*MissionCallback)(void);
 
 typedef struct {
-    u16 name[11];
-    u8 status;
-    u8 reserved;
-} MissionPeerRecord;
-
-typedef union {
-    MissionPeerRecord all[4];
-    struct {
-        MissionPeerRecord local;
-        MissionPeerRecord remote[3];
-    } split;
-} MissionPeerRecords;
-
-typedef struct {
-    u8 flags;
-    u8 reserved01[3];
-    u32 sessionValue;
-    u16 sessionMask;
-    u16 playerNames[4][11];
-    u8 peerStatus[4];
-    u8 reserved66[2];
-} MissionSelectionSendBlock;
-
-typedef struct {
-    u8 pad_000[0x28];
-    u32 transitionRequested;
-    u32 sendBusy;
-    u8 pad_030[0x10];
-    u8 remotePeerCapacity;
-    u8 pad_041[3];
-    MissionPeerRecords records;
-    u8 remotePeerActive[3];
-    u8 pad_0a7[0x385];
-    MissionSelectionSendBlock selectionSendBlock;
-    u32 refreshRequested;
-} MissionContext;
-
-typedef struct {
     u32 header;
     u8 payload[0x50];
 } MissionSelectionBuffer;
@@ -80,11 +42,11 @@ MissionCallback Ov008_MissionPeerSyncState(void) {
         Ov105_SetParamWord8(0x800356);
         context = MISSION_CONTEXT;
         Game_ReadLocalProfile(&localProfile);
-        StrCopy16(context->records.split.local.name,
+        StrCopy16(context->active.roster.records.split.local.name,
                       (u16 *)localProfile.payload);
-        *(u16 *)&context->records.split.local.status = 1;
-        MISSION_CONTEXT->remotePeerCapacity = 3;
-        MI_CpuCopy8(&MISSION_CONTEXT->records.split.local,
+        *(u16 *)&context->active.roster.records.split.local.status = 1;
+        MISSION_CONTEXT->active.roster.remotePeerCapacity = 3;
+        MI_CpuCopy8(&MISSION_CONTEXT->active.roster.records.split.local,
                     data_ov008_02090f40, sizeof(MissionPeerRecord));
         Ov105_WH_StartMeasureChannel();
         break;
@@ -102,7 +64,7 @@ MissionCallback Ov008_MissionPeerSyncState(void) {
 
         peerIndex = 0;
         remotePeerActive = 0;
-        remotePeerActive = MISSION_CONTEXT->remotePeerActive;
+        remotePeerActive = MISSION_CONTEXT->active.roster.remotePeerActive;
         sessionMask = func_01ff8138();
 
         peerIndex = 1;
@@ -112,7 +74,7 @@ MissionCallback Ov008_MissionPeerSyncState(void) {
             if (Ov008_GetPeerTileUploadPending(peerIndex) != 0) {
                 Ov008_UploadSlotTiles(
                     peerIndex,
-                    MISSION_CONTEXT->records.split.remote[peerIndex - 1].name,
+                    MISSION_CONTEXT->active.roster.records.split.remote[peerIndex - 1].name,
                     sizeof(MissionPeerRecord));
                 remoteIndex = peerIndex - 1;
                 remotePeerActive[remoteIndex] = 1;
@@ -123,12 +85,12 @@ MissionCallback Ov008_MissionPeerSyncState(void) {
                 if (remotePeerActive[remoteIndex] != 0 &&
                     (sessionMask & (1 << peerIndex)) == 0) {
                     remotePeerActive[remoteIndex] = 0;
-                MISSION_CONTEXT->selectionSendBlock.peerStatus[peerIndex] = 0;
+                MISSION_CONTEXT->message.selection.peerStatus[peerIndex] = 0;
                 MI_CpuFill8(
-                    MISSION_CONTEXT->selectionSendBlock.playerNames[peerIndex],
-                    0, sizeof(MISSION_CONTEXT->selectionSendBlock.playerNames[0]));
+                    MISSION_CONTEXT->message.selection.playerNames[peerIndex],
+                    0, sizeof(MISSION_CONTEXT->message.selection.playerNames[0]));
                 MI_CpuFill8(
-                    &MISSION_CONTEXT->records.split.remote[peerIndex - 1], 0,
+                    &MISSION_CONTEXT->active.roster.records.split.remote[peerIndex - 1], 0,
                     sizeof(MissionPeerRecord));
                     MISSION_CONTEXT->refreshRequested = 1;
                 }
@@ -143,7 +105,7 @@ MissionCallback Ov008_MissionPeerSyncState(void) {
         Ov008_RefreshSelectionSendBlock();
         if (Ov008_MissionIsTransitionDone() != 0) {
             Ov008_SendPacket(
-                &MISSION_CONTEXT->selectionSendBlock,
+                &MISSION_CONTEXT->message.selection,
                 sizeof(MissionSelectionSendBlock));
         }
         break;

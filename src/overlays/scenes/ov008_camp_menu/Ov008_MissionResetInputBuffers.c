@@ -1,26 +1,6 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
-/* Resets the mission menu's link input: with the session alive switches to the peer-sync state and
- * clears the input and work buffers (returns 1); otherwise goes idle and drives the sound (returns
- * 0). */
-
-typedef struct {
-    void *buffer;
-    u32 field_4;
-} MissionWorkBuffer;
-
-typedef struct {
-    void *primary_buffer;
-    u8 pad_004[4];
-    MissionWorkBuffer work_buffers[4];
-    u8 pad_028[8];
-    u32 work_states[4];
-    u8 low_state[0x68];
-    u8 pad_0a8[0x384];
-    u8 input_state[0x68];
-} MissionContext;
-
 #define MISSION_CONTEXT (*(MissionContext *volatile *)&data_ov008_02090f24.pContext)
 extern int Game_PollSceneAlive(void);
 extern void Obj_SetField14(void *instance, void (*callback)(void));
@@ -37,18 +17,18 @@ int Ov008_MissionResetInputBuffers(void) {
 
         Obj_SetField14(data_ov008_02090f24.pController,
                       Ov008_MissionPeerSyncState);
-        MI_CpuFill8(MISSION_CONTEXT->input_state, 0,
-                    sizeof(MISSION_CONTEXT->input_state));
-        MI_CpuFill8(MISSION_CONTEXT->primary_buffer, 0, 0x100);
+        MI_CpuFill8(MISSION_CONTEXT->message.raw, 0,
+                    sizeof(MISSION_CONTEXT->message.raw));
+        MI_CpuFill8(MISSION_CONTEXT->primaryBuffer, 0, 0x100);
 
         for (i = 0; i < 4; i++) {
-            MI_CpuFill8(MISSION_CONTEXT->work_buffers[i].buffer,
+            MI_CpuFill8(MISSION_CONTEXT->workBuffers[i].buffer,
                         0, 0x100);
-            MISSION_CONTEXT->work_states[i] = 0;
+            MISSION_CONTEXT->workStates[i] = 0;
         }
 
-        MI_CpuFill8(MISSION_CONTEXT->low_state, 0,
-                    sizeof(MISSION_CONTEXT->low_state));
+        MI_CpuFill8(MISSION_CONTEXT->active.lowState, 0,
+                    sizeof(MISSION_CONTEXT->active.lowState));
         result = 1;
     } else {
         Obj_SetField14(data_ov008_02090f24.pController,

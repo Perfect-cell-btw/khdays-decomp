@@ -5,7 +5,7 @@
  * (and lsl#30/lsr#31 for bit 1). Same crack as ov022 0208868c. */
 extern void MI_CpuFill8(void *dst, int data, unsigned int size);
 extern int  Ov008_MenuEntryToSlot(int icon);
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 #define OBJ ((char *)data_ov008_02090f24.pContext)
 struct Ov006RowFlags { unsigned char b0 : 1, b1 : 1; };
 struct Ov006RowInfo {

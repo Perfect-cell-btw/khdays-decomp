@@ -1,19 +1,12 @@
+#include "nitro/types.h"
+
+#include "game/ov006_mission_mode_select.h"
+
 /* Starts the mission link as parent: resolves the session id, picks the next group id, sets the
  * receive buffer, connects and installs the receiver and packet filter; marks the transition
  * requested. */
 
-#include "nitro/types.h"
-
-typedef struct {
-    u8 pad_000[0x28];
-    u32 transition_requested;
-    u8 pad_02c[0x14];
-    u8 option;
-    u8 pad_041;
-    u16 selection;
-} MissionContext;
-
-extern MissionContext *volatile data_ov006_020565e4;
+#define MISSION_CONTEXT (*(MissionContext *volatile *)&data_ov006_020565e4.pContext)
 extern char data_ov006_02056600[];
 
 extern unsigned short Ov105_EnterState1AndResolveId(void);
@@ -28,15 +21,15 @@ extern void Ov006_MatchMissionStartPacket(void);
 void Ov006_MissionStartTransition(void) {
     int value = Ov105_EnterState1AndResolveId();
 
-    data_ov006_020565e4->selection = (u16)Ov105_WM_GetNextTgid();
+    MISSION_CONTEXT->active.record.selection = (u16)Ov105_WM_GetNextTgid();
     Ov105_SetBuffer(data_ov006_02056600, 0x18);
 
-    if (Ov105_WH_ParentConnect(0, data_ov006_020565e4->selection, value, 2,
-                            data_ov006_020565e4->option) == 0) {
+    if (Ov105_WH_ParentConnect(0, MISSION_CONTEXT->active.record.selection, value, 2,
+                            MISSION_CONTEXT->active.record.option) == 0) {
         return;
     }
 
     Ov105_WH_SetReceiver(Ov006_UpdateSlotCache);
     Ov105_SetPacketFilter(Ov006_MatchMissionStartPacket);
-    data_ov006_020565e4->transition_requested = 1;
+    MISSION_CONTEXT->transitionRequested = 1;
 }

@@ -5,10 +5,10 @@
 extern void func_020235bc(int msg);
 extern void GameState_SetFlag(int msg);
 extern void Ov008_FreeSceneBuffers(void);
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 void Ov008_FireExitMessage(void) {
-    if (*(int *)(MISSION_CONTEXT + 0x4e8) != 0) {
+    if (MISSION_CONTEXT->localMode != 0) {
         GameState_SetFlag(0x200d);
     } else {
         func_020235bc(0x200d);

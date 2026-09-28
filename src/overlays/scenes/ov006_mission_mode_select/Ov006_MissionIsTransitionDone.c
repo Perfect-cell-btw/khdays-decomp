@@ -1,13 +1,11 @@
+#include "game/ov006_mission_mode_select.h"
 /* Ov006_MissionIsTransitionDone -- Mission Mode: is the pending scene transition finished?
- * The scene object at data_ov006_020565e4 carries a transition request at +0x28 and its
- * remaining-frames counter at +0x2c. Returns true only when a transition is pending and its
- * counter has run down to zero. */
-extern int data_ov006_020565e4;
+ * True when a transition is requested and no reliable message is still on its way. */
+#define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 
 int Ov006_MissionIsTransitionDone(void) {
-    int *obj = *(int **)&data_ov006_020565e4;
-    if (obj[0xa] != 0) {
-        return obj[0xb] == 0;
+    if (MISSION_CONTEXT->transitionRequested != 0) {
+        return MISSION_CONTEXT->sendBusy == 0;
     }
     return 0;
 }

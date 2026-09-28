@@ -2,51 +2,7 @@
 
 #include "game/ov008_camp_menu.h"
 #pragma opt_dead_assignments off
-/* Ov006_RefreshSelectionSendBlock -- rebuild the Mission Mode selection-send
- * message from the current session mask and four player records. The four dead
- * initial assignments emit no code under this pragma and reproduce the retail
- * register allocation. */
-
-typedef struct {
-    u16 name[11];
-    u8 status;
-    u8 reserved;
-} MissionPeerRecord;
-
-typedef union {
-    MissionPeerRecord all[4];
-    struct {
-        MissionPeerRecord local;
-        MissionPeerRecord remote[3];
-    } split;
-} MissionPeerRecords;
-
-typedef struct {
-    u8 sendStarted : 1;
-    u8 changed : 1;
-    u8 unused : 6;
-} MissionSelectionFlags;
-
-typedef struct {
-    MissionSelectionFlags flags;
-    u8 reserved01[3];
-    u32 sessionValue;
-    u16 sessionMask;
-    u16 playerNames[4][11];
-    u8 peerStatus[4];
-    u8 reserved66[2];
-} MissionSelectionSendBlock;
-
-typedef struct {
-    u8 pad_000[0x44];
-    MissionPeerRecords records;
-    u8 pad_0a4[0x388];
-    MissionSelectionSendBlock selectionSendBlock;
-    u32 refreshRequested;
-    int refreshTimer;
-} MissionContext;
-
-#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern const u16 data_ov008_02090bc4[];
 extern u16 func_01ff8138(void);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
@@ -69,7 +25,7 @@ void Ov008_RefreshSelectionSendBlock(void) {
     placeholderName = 0;
     name = 0;
 
-    sendBlock = &MISSION_CONTEXT->selectionSendBlock;
+    sendBlock = &MISSION_CONTEXT->message.selection;
     sessionMask = func_01ff8138();
 
     MISSION_CONTEXT->refreshTimer--;
@@ -77,10 +33,10 @@ void Ov008_RefreshSelectionSendBlock(void) {
         MISSION_CONTEXT->refreshTimer = 0;
     }
 
-    MI_CpuFill8(&MISSION_CONTEXT->selectionSendBlock, 0,
+    MI_CpuFill8(&MISSION_CONTEXT->message.selection, 0,
                 sizeof(MissionSelectionSendBlock));
-    MISSION_CONTEXT->selectionSendBlock.sessionValue = VBlank_GetCount();
-    MISSION_CONTEXT->selectionSendBlock.sessionMask = sessionMask;
+    MISSION_CONTEXT->message.selection.sessionValue = VBlank_GetCount();
+    MISSION_CONTEXT->message.selection.sessionMask = sessionMask;
 
     placeholderName = data_ov008_02090bc4;
 
@@ -91,7 +47,7 @@ void Ov008_RefreshSelectionSendBlock(void) {
     context = MISSION_CONTEXT;
     changed = 0;
     for (playerIndex = 1; playerIndex < 4; playerIndex++) {
-        if (context->records.all[playerIndex].status == 1) {
+        if (context->active.roster.records.all[playerIndex].status == 1) {
             changed = 1;
         }
     }
@@ -100,7 +56,7 @@ void Ov008_RefreshSelectionSendBlock(void) {
         context->refreshRequested = 0;
         changed = 1;
     }
-    MISSION_CONTEXT->selectionSendBlock.flags.changed = changed;
+    MISSION_CONTEXT->message.selection.flags.bits.changed = changed;
     if (changed != 0) {
         MISSION_CONTEXT->refreshTimer = 30;
     }
@@ -111,15 +67,13 @@ void Ov008_RefreshSelectionSendBlock(void) {
 
         if ((sessionMask & (1 << playerIndex)) != 0) {
             if (playerIndex == 0) {
-                name = MISSION_CONTEXT->records.split.local.name;
+                name = MISSION_CONTEXT->active.roster.records.split.local.name;
             } else {
                 if (Ov008_IsMissionMenuBusy() == 0) {
-                    name = MISSION_CONTEXT->records.split
-                        .remote[playerIndex - 1].name;
+                    name = MISSION_CONTEXT->active.roster.records.split.remote[playerIndex - 1].name;
                 }
-                status = MISSION_CONTEXT->records
-                    .all[playerIndex].status;
-                if (MISSION_CONTEXT->selectionSendBlock.flags.sendStarted) {
+                status = MISSION_CONTEXT->active.roster.records.all[playerIndex].status;
+                if (MISSION_CONTEXT->message.selection.flags.bits.sendStarted) {
                     status = 0;
                 }
             }

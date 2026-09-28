@@ -1,22 +1,21 @@
 #include "game/ov008_camp_menu.h"
-/* Ov008_FreeSceneBuffers -- free the title scene's dynamic buffers, ov006.
- * Frees the primary buffer (base[0]) if allocated, then walks the 4-entry buffer table at
- * base+8 (8-byte stride), freeing and nulling each non-null pointer. */
-extern void NNSi_FndFreeFromDefaultHeap(int p);
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+/* Ov008_FreeSceneBuffers -- free the mission context's buffers: the packet buffer if allocated,
+ * then each of the four work buffers, nulling what it frees. */
+extern void NNSi_FndFreeFromDefaultHeap(void *p);
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 void Ov008_FreeSceneBuffers(void) {
     unsigned int i;
-    if (*(int *)MISSION_CONTEXT != 0) {
-        NNSi_FndFreeFromDefaultHeap(*(int *)MISSION_CONTEXT);
-        *(int *)MISSION_CONTEXT = 0;
+    if (MISSION_CONTEXT->primaryBuffer != 0) {
+        NNSi_FndFreeFromDefaultHeap(MISSION_CONTEXT->primaryBuffer);
+        MISSION_CONTEXT->primaryBuffer = 0;
     }
     i = 0;
     do {
-        int p = *(int *)(MISSION_CONTEXT + i * 8 + 8);
+        void *p = MISSION_CONTEXT->workBuffers[i].buffer;
         if (p != 0) {
             NNSi_FndFreeFromDefaultHeap(p);
-            *(int *)(MISSION_CONTEXT + i * 8 + 8) = 0;
+            MISSION_CONTEXT->workBuffers[i].buffer = 0;
         }
         i = i + 1 & 0xff;
     } while (i < 4);

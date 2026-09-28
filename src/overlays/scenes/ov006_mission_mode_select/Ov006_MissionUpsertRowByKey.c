@@ -1,28 +1,16 @@
+#include "nitro/types.h"
+
+#include "game/ov006_mission_mode_select.h"
+
 /* Inserts or updates a mission row by its six-byte key: an existing row is overwritten, otherwise
  * the record is appended while there is room (four rows). */
 
-#include "nitro/types.h"
-
-typedef struct {
-    u8 field_00[4];
-    u8 key[6];
-    u8 field_0a[0xb6];
-} MissionRecord;
-
-typedef struct {
-    u8 pad_000[0x100];
-    volatile u8 row_count;
-    u8 pad_101[3];
-    MissionRecord rows[4];
-    u32 row_states[4];
-} MissionContext;
-
-extern MissionContext *data_ov006_020565e4;
+#define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 
 void Ov006_MissionUpsertRowByKey(const MissionRecord *record) {
-    MissionContext *context = data_ov006_020565e4;
-    int initial_count = context->row_count;
+    MissionContext *context = MISSION_CONTEXT;
+    int initial_count = context->rowCount;
     int found = 0;
     int i = 0;
 
@@ -38,24 +26,24 @@ void Ov006_MissionUpsertRowByKey(const MissionRecord *record) {
                 key[5] == record->key[5]) {
                 MI_CpuCopy8(record, &context->rows[i],
                             sizeof(MissionRecord));
-                data_ov006_020565e4->row_states[i] = 0;
+                MISSION_CONTEXT->rowStates[i] = 0;
                 found = 1;
                 break;
             }
             i++;
             key += sizeof(MissionRecord);
-        } while (i < context->row_count);
+        } while (i < context->rowCount);
     }
 
     if (found != 0) {
         return;
     }
-    if (data_ov006_020565e4->row_count >= 4) {
+    if (MISSION_CONTEXT->rowCount >= 4) {
         return;
     }
 
-    MI_CpuCopy8(record, &data_ov006_020565e4->rows[i],
+    MI_CpuCopy8(record, &MISSION_CONTEXT->rows[i],
                 sizeof(MissionRecord));
-    data_ov006_020565e4->row_states[i] = 0;
-    data_ov006_020565e4->row_count++;
+    MISSION_CONTEXT->rowStates[i] = 0;
+    MISSION_CONTEXT->rowCount++;
 }

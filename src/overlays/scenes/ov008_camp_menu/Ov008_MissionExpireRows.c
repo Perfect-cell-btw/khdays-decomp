@@ -1,28 +1,7 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
-/* Age every row, compact rows[4] once a row reaches 600 ticks, and take the ov105 scene branch when
- * the compaction empties the list. 600 is the expiry threshold in ticks; the row stride is the
- * MissionRecord 0xc0 established by the first hand-off. */
-
-typedef struct {
-    u32 field_00[0xf];
-    u16 item_count;
-    u16 field_3e;
-    u16 ready;
-    u16 field_42;
-    u32 field_44[0x1f];
-} MissionRecord;
-
-typedef struct {
-    u8 pad_000[0x100];
-    volatile u8 row_count;
-    u8 pad_101[3];
-    MissionRecord rows[4];
-    u32 row_states[4];
-} MissionContext;
-
-#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern u8 data_ov008_0208fc84[];
 extern int Game_PollSceneAlive(void);
 extern void Ov105_SetParamWord8(u32 value);
@@ -44,21 +23,21 @@ void *Ov008_MissionExpireRows(void) {
         u8 i;
 
         VBlank_GetCount();
-        for (i = 0; i < MISSION_CONTEXT->row_count; i++) {
+        for (i = 0; i < MISSION_CONTEXT->rowCount; i++) {
             u8 j;
 
-            if (MISSION_CONTEXT->row_states[i] < 600) {
-                MISSION_CONTEXT->row_states[i]++;
+            if (MISSION_CONTEXT->rowStates[i] < 600) {
+                MISSION_CONTEXT->rowStates[i]++;
             }
 
-            if (MISSION_CONTEXT->row_states[i] >= 600) {
+            if (MISSION_CONTEXT->rowStates[i] >= 600) {
                 for (j = i;
-                     j < MISSION_CONTEXT->row_count - 1;
+                     j < MISSION_CONTEXT->rowCount - 1;
                      j++) {
                     MISSION_CONTEXT->rows[j] =
                         MISSION_CONTEXT->rows[j + 1];
                 }
-                MISSION_CONTEXT->row_count--;
+                MISSION_CONTEXT->rowCount--;
                 i--;
             }
         }

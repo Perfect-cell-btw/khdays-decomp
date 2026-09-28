@@ -1,7 +1,7 @@
 #include "game/ov008_camp_menu.h"
 /* True only when the global exists, param_1's fields at +2/+8 are 0 and 7, and
  * bit 0 of the global flag byte at +0x42c is clear. */
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 struct b_02079c84 { unsigned char b0 : 1; };
 

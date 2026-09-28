@@ -1,40 +1,7 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
-/* Commits the selected mission row when it is complete and ready: with the session alive, switches
- * to the select state, makes the row the active record and clears the input and work buffers;
- * otherwise goes idle and drives the sound; returns whether it committed. */
-
-typedef struct {
-    u32 field_00[0xf];
-    u16 item_count;
-    u16 field_3e;
-    u16 ready;
-    u16 field_42;
-    u32 field_44[0x1f];
-} MissionRecord;
-
-typedef struct {
-    void *buffer;
-    u32 field_4;
-} MissionWorkBuffer;
-
-typedef struct {
-    void *primary_buffer;
-    u8 pad_004[4];
-    MissionWorkBuffer work_buffers[4];
-    u8 pad_028[8];
-    u32 work_states[4];
-    MissionRecord active_record;
-    volatile u8 row_count;
-    u8 pad_101[3];
-    MissionRecord rows[4];
-    u32 row_states[4];
-    u8 selection_block[0x18];
-    u8 input_state[0x68];
-} MissionContext;
-
-#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern int Game_PollSceneAlive(void);
 extern void Obj_SetField14(void *instance, void (*callback)(void));
 extern void MI_CpuFill8(void *dst, int value, u32 size);
@@ -46,22 +13,22 @@ int Ov008_MissionCommitRowSelection(int index) {
     int result = 0;
     MissionRecord *record = &MISSION_CONTEXT->rows[index];
 
-    if (record->item_count >= 16 && record->ready == 1) {
+    if (record->itemCount >= 16 && record->ready == 1) {
         if (Game_PollSceneAlive() == 1) {
             u8 i;
 
             Obj_SetField14(data_ov008_02090f24.pController,
                           Ov008_MissionSelectStateCallback);
-            MISSION_CONTEXT->active_record =
+            MISSION_CONTEXT->active.record =
                 MISSION_CONTEXT->rows[index];
-            MI_CpuFill8(MISSION_CONTEXT->input_state, 0,
-                        sizeof(MISSION_CONTEXT->input_state));
-            MI_CpuFill8(MISSION_CONTEXT->primary_buffer, 0, 0x100);
+            MI_CpuFill8(MISSION_CONTEXT->message.raw, 0,
+                        sizeof(MISSION_CONTEXT->message.raw));
+            MI_CpuFill8(MISSION_CONTEXT->primaryBuffer, 0, 0x100);
 
             for (i = 0; i < 4; i++) {
-                MI_CpuFill8(MISSION_CONTEXT->work_buffers[i].buffer,
+                MI_CpuFill8(MISSION_CONTEXT->workBuffers[i].buffer,
                             0, 0x100);
-                MISSION_CONTEXT->work_states[i] = 0;
+                MISSION_CONTEXT->workStates[i] = 0;
             }
             result = 1;
         } else {

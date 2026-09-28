@@ -20,7 +20,7 @@ extern void Ov008_MissionUpdateInputTransition(void);
 extern void GameSession_SetSyncEnabled(int a);
 extern void Ov008_MissionIdleStateNoOp(void);
 extern void Ov008_UpdateSelectionConfirmationState(void);
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 #define OBJ ((int *)data_ov008_02090f24.pContext)
 

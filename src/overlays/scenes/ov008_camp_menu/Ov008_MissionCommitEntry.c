@@ -22,7 +22,7 @@ extern void Ov105_WH_SetReceiver(int a);
 extern void Ov008_MissionDriveSound(void);
 extern void Ov008_MissionExpireRows(void);
 extern void Ov008_MissionSceneIdleCallback(void);
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 #define OBJ   ((int *)data_ov008_02090f24.pContext)
 #define SCENE ((int)data_ov008_02090f24.pController)

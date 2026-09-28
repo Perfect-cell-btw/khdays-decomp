@@ -5,7 +5,7 @@
  * "abort" flag byte (base+0x4f0). Either transition returns the next state fn
  * (Ov008_MissionSceneIdleCallback); anything else stays (0). */
 extern int  Game_PollSceneAlive(void);
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern void Ov008_MissionSceneIdleCallback(void);
 
 void *Ov008_HandleSubScenePoll(void) {
@@ -13,11 +13,11 @@ void *Ov008_HandleSubScenePoll(void) {
     int r = Game_PollSceneAlive();
     switch (r) {
     case 1:
-        *(int *)(MISSION_CONTEXT + 0x49c) = 1;
+        MISSION_CONTEXT->busy = 1;
         result = (void *)Ov008_MissionSceneIdleCallback;
         break;
     case 10:
-        *(char *)(MISSION_CONTEXT + 0x4f0) = 1;
+        MISSION_CONTEXT->startFailed = 1;
         result = (void *)Ov008_MissionSceneIdleCallback;
         break;
     }

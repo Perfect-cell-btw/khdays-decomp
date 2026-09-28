@@ -12,27 +12,20 @@
  * plus the redundant `next = 0;` on the failure path is what reproduces the ROM: without
  * that re-assignment the tail shares the leading zero and the function is 4 bytes short.
  */
-typedef struct CardXferOwner {
-    char _pad0000[0x49c];
-    int nBusy;                     /* +0x49c: a transfer is already in flight */
-    char _pad04a0[0x4f0 - 0x49c - 4];
-    unsigned char bStartFailed;    /* +0x4f0: latched when the start is refused */
-} CardXferOwner;
-
 typedef void (*Ov008Handler)(void);
 
-#define MISSION_CONTEXT ((CardXferOwner *)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern int Ov105_WH_Initialize(void);
 extern void Ov008_HandleSubScenePoll(void);
 
 Ov008Handler Ov008_CardXferBeginGate(void) {
     Ov008Handler next = 0;
 
-    if (MISSION_CONTEXT->nBusy == 0) {
+    if (MISSION_CONTEXT->busy == 0) {
         if (Ov105_WH_Initialize() != 0) {
             return &Ov008_HandleSubScenePoll;
         }
-        MISSION_CONTEXT->bStartFailed = 1;
+        MISSION_CONTEXT->startFailed = 1;
         next = 0;
     }
     return next;

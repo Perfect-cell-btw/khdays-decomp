@@ -7,11 +7,7 @@ extern int Game_PollSceneAlive(void);
 extern int Ov105_RunScriptedStepState3(void);
 extern void Ov105_WH_Finalize(void);
 
-struct CardXferOwner {
-    char _pad[0x49c];
-    int nField49c;
-};
-#define MISSION_CONTEXT ((struct CardXferOwner *)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 void Ov008_TickCardTransferScene(void) {
     switch (Game_PollSceneAlive()) {
@@ -19,7 +15,7 @@ void Ov008_TickCardTransferScene(void) {
         return;
     case 1:
         if (Ov105_RunScriptedStepState3() != 0) {
-            MISSION_CONTEXT->nField49c = 0;
+            MISSION_CONTEXT->busy = 0;
         }
         return;
     case 3:

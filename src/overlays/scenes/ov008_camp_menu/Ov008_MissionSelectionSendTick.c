@@ -1,36 +1,6 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
-/* Sends the mission selection to the peers: sets the wireless entry, refreshes the send block and
- * sends it once the transition is done; returns the next state. */
-
-typedef struct {
-    u8 sendStarted : 1;
-    u8 changed : 1;
-    u8 unused : 6;
-} MissionSelectionSendFlags;
-
-typedef struct {
-    MissionSelectionSendFlags flags;
-    u8 reserved01[3];
-    u32 sessionValue;
-    unsigned short sessionMask;
-    unsigned short playerNames[4][11];
-    u8 peerStatus[4];
-    u8 reserved66[2];
-} MissionSelectionSendBlock;
-
-typedef struct {
-    u8 pad_000[0x2c];
-    u32 sendBusy;
-    u8 pad_030[0x3fc];
-    MissionSelectionSendBlock selectionSendBlock;
-    u8 pad_494[0x0c];
-    u32 entryUpdateMask;
-    u8 pad_4a4[0x44];
-    u32 exitRequested;
-} MissionContext;
-
 #define CONTEXT (*(MissionContext **)&data_ov008_02090f24.pContext)
 extern int Ov105_WM_SetEntry();
 extern int Ov008_IsSceneState4(void);
@@ -45,11 +15,11 @@ int Ov008_MissionSelectionSendTick(void)
     int zero = 0;
     int nextState = zero;
 
-    if (CONTEXT->exitRequested != zero) {
+    if (CONTEXT->localMode != zero) {
         nextState = (int)Ov008_MissionMenuOpenTick;
         CONTEXT->sendBusy = zero;
     } else {
-        if (!CONTEXT->selectionSendBlock.flags.sendStarted) {
+        if (!CONTEXT->message.selection.flags.bits.sendStarted) {
             if (Ov105_WM_SetEntry(zero, zero) == zero) {
                 return nextState;
             }
@@ -58,10 +28,10 @@ int Ov008_MissionSelectionSendTick(void)
             return (int)Ov008_MissionIdleStateNoOp;
         }
         Ov008_RefreshSelectionSendBlock();
-        CONTEXT->selectionSendBlock.flags.sendStarted = 1;
+        CONTEXT->message.selection.flags.bits.sendStarted = 1;
         if (Ov008_MissionIsTransitionDone() != zero) {
             if (Ov008_SendPacket(
-                    &CONTEXT->selectionSendBlock,
+                    &CONTEXT->message.selection,
                     sizeof(MissionSelectionSendBlock)) != zero) {
                 CONTEXT->entryUpdateMask = zero;
                 nextState = (int)Ov008_MissionMenuOpenTick;

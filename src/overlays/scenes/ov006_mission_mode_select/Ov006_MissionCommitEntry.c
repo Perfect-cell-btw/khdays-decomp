@@ -1,3 +1,4 @@
+#include "game/ov006_mission_mode_select.h"
 /* Ov006_MissionCommitEntry -- Mission Mode: commit or cancel the highlighted menu entry.
  * When the scene reports state 1 the entry is accepted: the scene object moves to the
  * accept state (Ov006_MissionExpireRows), the 0x3ec-byte selection scratch at obj+0x40 is
@@ -11,10 +12,10 @@ extern void Ov105_WH_SetReceiver(int a);
 extern void Ov006_MissionDriveSound(void);
 extern void Ov006_MissionExpireRows(void);
 extern void Ov006_MissionSceneIdleCallback(void);
-extern int  data_ov006_020565e4;
+#define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 
-#define OBJ   (*(int **)&data_ov006_020565e4)
-#define SCENE (*(int *)((int)&data_ov006_020565e4 + 4))
+#define OBJ   ((int *)data_ov006_020565e4.pContext)
+#define SCENE ((int)data_ov006_020565e4.pController)
 
 int Ov006_MissionCommitEntry(void) {
     int accepted = 0;

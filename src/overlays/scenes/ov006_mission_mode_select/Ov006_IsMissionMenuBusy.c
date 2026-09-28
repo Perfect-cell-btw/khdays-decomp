@@ -1,7 +1,8 @@
-/* Report the +0x498 busy flag or, when idle, bit 1 of the +0x42c byte. */
-extern int data_ov006_020565e4;
-struct bf_byte { unsigned char b0:1, b1:1; };
+#include "game/ov006_mission_mode_select.h"
+/* Busy while the selection-message refresh timer runs; otherwise whether the selection
+ * changed since it was last sent. */
+#define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 int Ov006_IsMissionMenuBusy(void) {
-    if (*(int *)(data_ov006_020565e4 + 0x498) != 0) return 1;
-    return ((struct bf_byte *)(data_ov006_020565e4 + 0x42c))->b1;
+    if (MISSION_CONTEXT->refreshTimer != 0) return 1;
+    return MISSION_CONTEXT->message.selection.flags.bits.changed;
 }

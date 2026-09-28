@@ -14,26 +14,7 @@
 
 #define GATE_LOBBY 0xd
 
-typedef struct Ov008JoinPacket {
-    u8  nPlayer;              /* 0x00 */
-    u8  bJoined : 1;          /* 0x01 bit 0 */
-    u8  bPending : 1;         /*      bit 1 */
-    u8  nSpare : 6;
-    signed char nTarget;      /* 0x02: -1 = any */
-    u8  nPad;                 /* 0x03 */
-    u16 nArg;                 /* 0x04 */
-} Ov008JoinPacket;
-
-typedef struct MissionContext {
-    u8  pad_0000[0x4a0];
-    int nListHeader;          /* 0x4a0 */
-    u8  pad_04a4[0x4ac - 0x4a4];
-    Ov008JoinPacket aPacket[4]; /* 0x4ac: one per player */
-    u8  pad_04c4[0x4e0 - 0x4c4];
-    Ov008JoinPacket join;     /* 0x4e0 */
-} MissionContext;
-
-#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern int  Session_IsReady(void);                                  /* Session_IsReady */
 extern u16  func_01ff8128(void);                             /* local slot */
 extern u32  Session_GetLocalPlayerIndex(void);                                  /* Session_GetLocalPlayerIndex */
@@ -48,22 +29,22 @@ void *Ov008_MissionLobbyJoin(void)
     MissionContext *pCtx;
 
     if (Session_IsReady()) {
-        MISSION_CONTEXT->aPacket[func_01ff8128()].bPending = 0;
+        MISSION_CONTEXT->liveEntries.entries[func_01ff8128()].flags.request = 0;
         pCtx = MISSION_CONTEXT;
-        pCtx->join = pCtx->aPacket[func_01ff8128()];
+        pCtx->localEntry = pCtx->liveEntries.entries[func_01ff8128()];
     } else {
         pCtx = MISSION_CONTEXT;
-        if (pCtx->nListHeader != 0) {
-            if (pCtx->aPacket[Session_GetLocalPlayerIndex()].bPending) {
-                pCtx->nListHeader = 0;
+        if (pCtx->entryUpdateMask != 0) {
+            if (pCtx->liveEntries.entries[Session_GetLocalPlayerIndex()].flags.request) {
+                pCtx->entryUpdateMask = 0;
             } else {
                 pCtx = MISSION_CONTEXT;
-                pCtx->join = pCtx->aPacket[Session_GetLocalPlayerIndex()];
+                pCtx->localEntry = pCtx->liveEntries.entries[Session_GetLocalPlayerIndex()];
             }
         }
-        if (MISSION_CONTEXT->nListHeader == 0) {
-            MISSION_CONTEXT->nListHeader = 0;
-            MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->join, sizeof(Ov008JoinPacket));
+        if (MISSION_CONTEXT->entryUpdateMask == 0) {
+            MISSION_CONTEXT->entryUpdateMask = 0;
+            MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->localEntry, sizeof(MissionEntry));
             return 0;
         }
     }

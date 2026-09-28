@@ -55,10 +55,12 @@ Still to do, in this order:
     and `nnsys/{fnd,gfd,snd,g2d,g3d}.h`, built from those copies (each type in the form most sources
     used). Sources that carry a variant of a type of their own (a partial view, an enum spelled as
     #defines) still declare that part locally, and function prototypes stay per source for now.
-  - the first of the game's own: `game/ov008_camp_menu.h` declares ov008's mission globals
-    (`Ov008MissionGlobals`: the mission context and the controller instance) once, for the 62
-    sources that each carried a view of their own (one keeps the bare pointer: through the
-    struct mwcc allocates it differently).
+  - the first of the game's own: `game/mission_lobby.h`, the Mission Mode session context that
+    ov006 and ov008 share (`MissionContext` with its message, entry and roster blocks) and the
+    two overlays' globals (`MissionGlobals`, declared in `game/ov006_mission_mode_select.h` and
+    `game/ov008_camp_menu.h`). It replaces 36 partial views of the context and the offset
+    arithmetic of some 60 more sources in each overlay; the globals are declared with only the
+    two words in use, since declared at their full 28 bytes mwcc addresses them differently.
   Every compile gets `-i include`, and the build tracks header dependencies. Still per source:
   the function prototypes and most of the game's own structs.
 - **Translation units**: grouping functions back into one `.c` per original file (per enemy, per

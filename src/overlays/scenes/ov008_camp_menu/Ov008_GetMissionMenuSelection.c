@@ -7,11 +7,11 @@
  * framing in that rep is ov006's own scene identity -- ov008 loads the same UI/mlt/* resources,
  * so it is plausible here, but it has not been verified for THIS function. Not asserted. */
 extern int func_ov105_020bf240(void);
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 int Ov008_GetMissionMenuSelection(void) {
     int sel;
-    if (*(int *)(MISSION_CONTEXT + 0x4e8) != 0) {
+    if (MISSION_CONTEXT->localMode != 0) {
         sel = -1;
     } else {
         sel = func_ov105_020bf240();

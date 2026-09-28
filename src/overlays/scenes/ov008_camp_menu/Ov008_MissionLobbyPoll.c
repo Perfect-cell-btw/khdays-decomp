@@ -19,34 +19,12 @@
 #define SLOT_COUNT   4
 #define INFO_KIND_JOINED 1
 
-typedef struct Ov008JoinPacket {
-    u8  nPlayer;              /* 0x00 */
-    u8  bJoined : 1;          /* 0x01 bit 0 */
-    u8  bPending : 1;         /*      bit 1 */
-    u8  nSpare : 6;
-    signed char nTarget;      /* 0x02 */
-    u8  nPad;                 /* 0x03 */
-    u16 nArg;                 /* 0x04 */
-} Ov008JoinPacket;
-
 typedef struct Ov008SlotInfo {
     u32 nKind;                /* 0x00 */
     int nSlot;                /* 0x04 */
 } Ov008SlotInfo;
 
-typedef struct MissionContext {
-    u8  pad_0000[0x4a8];
-    u32 nGroupHeader;         /* 0x4a8 */
-    Ov008JoinPacket aPacket[SLOT_COUNT]; /* 0x4ac */
-    u8  pad_04c4[0x4e0 - 0x4c4];
-    Ov008JoinPacket join;     /* 0x4e0 */
-    u8  pad_04e6[2];
-    int nTransferBusy;        /* 0x4e8 */
-    u8  pad_04ec[8];
-    int nTransferA;           /* 0x4f4 */
-} MissionContext;
-
-#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern void  CopyToSlotTable8(Ov008SlotInfo *pInfo, int nSlot);      /* register a slot info */
 extern int   Ov008_MenuEntryToSlot(int nEntry);                     /* Ov008_MenuEntryToSlot */
@@ -62,9 +40,9 @@ static inline void Ov008_ForwardJoinedSlots(MissionContext *pCtx)
     Ov008SlotInfo info;
     u8 i;
     u8 nSlot;
-    Ov008JoinPacket *pPacket;
+    MissionEntry *pPacket;
 
-    pPacket = pCtx->aPacket;
+    pPacket = pCtx->liveEntries.entries;
     MI_CpuFill8(&info, 0, sizeof(info));
     for (i = 0; i < SLOT_COUNT; i++) {
         CopyToSlotTable8(&info, i);
@@ -72,9 +50,9 @@ static inline void Ov008_ForwardJoinedSlots(MissionContext *pCtx)
     nSlot = 0;
     for (i = 0; i < SLOT_COUNT; i++) {
         MI_CpuFill8(&info, 0, sizeof(info));
-        if (pPacket[i].bJoined) {
+        if (pPacket[i].flags.selectable) {
             info.nKind = INFO_KIND_JOINED;
-            info.nSlot = Ov008_MenuEntryToSlot(pPacket[i].nTarget);
+            info.nSlot = Ov008_MenuEntryToSlot(pPacket[i].characterId);
             CopyToSlotTable8(&info, nSlot);
             nSlot++;
         }
@@ -88,8 +66,8 @@ void *Ov008_MissionLobbyPoll(void)
 
     pNext = 0;
     pCtx = MISSION_CONTEXT;
-    if (pCtx->nTransferBusy != 0) {
-        if (pCtx->nTransferA != 0) {
+    if (pCtx->localMode != 0) {
+        if (pCtx->transferA != 0) {
             Ov008_ForwardJoinedSlots(pCtx);
             pNext = Ov008_RefreshListView;
         }
@@ -97,19 +75,19 @@ void *Ov008_MissionLobbyPoll(void)
         Session_GetLocalPlayerIndex();
         if (Session_IsReady() != 0) {
             pCtx = MISSION_CONTEXT;
-            if (pCtx->nTransferA != 0) {
+            if (pCtx->transferA != 0) {
                 Ov008_ForwardJoinedSlots(pCtx);
                 pNext = Ov008_RefreshListView;
             }
             Ov008_MissionResolveDuplicateIds();
-            MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->nGroupHeader, 0x1c);
+            MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->liveEntries.header.raw, 0x1c);
         } else {
             pCtx = MISSION_CONTEXT;
-            if (pCtx->nTransferA != 0) {
+            if (pCtx->transferA != 0) {
                 Ov008_ForwardJoinedSlots(pCtx);
                 pNext = Ov008_RefreshListView;
             }
-            MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->join, sizeof(Ov008JoinPacket));
+            MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->localEntry, sizeof(MissionEntry));
         }
     }
     if (pNext == Ov008_RefreshListView) {

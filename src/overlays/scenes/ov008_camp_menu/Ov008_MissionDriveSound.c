@@ -17,7 +17,7 @@ extern int  Game_PollSceneAlive(void);
 extern void Ov105_KickIdleHandler(void);
 extern int  Ov105_WH_Initialize(void);
 extern void Ov105_WH_Finalize(void);
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 #define OBJ ((int *)data_ov008_02090f24.pContext)
 

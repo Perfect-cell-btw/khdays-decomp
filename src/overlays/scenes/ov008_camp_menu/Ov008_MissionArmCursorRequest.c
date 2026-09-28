@@ -14,7 +14,7 @@
  * byte-identical to the rep.
  */
 extern int Session_GetLocalPlayerIndex(void);
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 #define OBJ ((int *)data_ov008_02090f24.pContext)
 

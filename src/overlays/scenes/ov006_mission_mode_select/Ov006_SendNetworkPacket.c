@@ -1,5 +1,8 @@
+#include "nitro/types.h"
+
+#include "game/ov006_mission_mode_select.h"
 /* Ov006_SendNetworkPacket -- Ov008_SendPacket (164 B, 4 relocs).
- * Queues one outgoing packet on the singleton send context data_ov006_020565e4, if it is idle.
+ * Queues one outgoing packet on the singleton send context MISSION_CONTEXT, if it is idle.
  * Returns 0 immediately when a send is already in flight (busy != 0). Otherwise it bumps the
  * sequence counter, marks the context busy, writes the sequence into the packet buffer header
  * (word 0), copies the caller's payload right after it (buf + 4, MI_CpuCopy8), and hands the
@@ -8,8 +11,6 @@
  * with the context left busy (cleared later by the callback); if the send call reports failure
  * it clears the busy flag again and returns 0. */
 
-#include "nitro/types.h"
-
 typedef struct Ov008SendCtx {
     char *buf;       /* 0x00: packet buffer: word[0]=seq counter, [4..]=payload */
     int   seq;       /* 0x04: outgoing sequence counter */
@@ -17,24 +18,24 @@ typedef struct Ov008SendCtx {
     int   busy;      /* 0x2c: 1 while a send is in flight */
 } Ov008SendCtx;
 
-extern Ov008SendCtx *data_ov006_020565e4;
+#define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 extern int  func_ov105_020bf900(void *buf, u16 size, void *callback);
 extern void Ov006_PacketSentCallback(void);
 
 int Ov006_SendNetworkPacket(const void *src, int size)
 {
-    if (data_ov006_020565e4->busy != 0) {
+    if (MISSION_CONTEXT->sendBusy != 0) {
         return 0;
     }
-    data_ov006_020565e4->seq += 1;
-    data_ov006_020565e4->busy = 1;
-    *(int *)data_ov006_020565e4->buf = data_ov006_020565e4->seq;
-    MI_CpuCopy8(src, data_ov006_020565e4->buf + 4, size);
-    if (func_ov105_020bf900(data_ov006_020565e4->buf, (u16)(size + 4),
+    MISSION_CONTEXT->sendSeq += 1;
+    MISSION_CONTEXT->sendBusy = 1;
+    *(int *)MISSION_CONTEXT->primaryBuffer = MISSION_CONTEXT->sendSeq;
+    MI_CpuCopy8(src, MISSION_CONTEXT->primaryBuffer + 4, size);
+    if (func_ov105_020bf900(MISSION_CONTEXT->primaryBuffer, (u16)(size + 4),
                                     Ov006_PacketSentCallback) != 0) {
         return 1;
     }
-    data_ov006_020565e4->busy = 0;
+    MISSION_CONTEXT->sendBusy = 0;
     return 0;
 }

@@ -1,32 +1,11 @@
+#include "nitro/types.h"
+
+#include "game/ov006_mission_mode_select.h"
+
 /* Age every row, compact rows[4] once a row reaches 600 ticks, and take the ov105 scene branch when
  * the compaction empties the list. 600 is the expiry threshold in ticks; the row stride is the
  * MissionRecord 0xc0 established by the first hand-off. */
 
-#include "nitro/types.h"
-
-typedef struct {
-    u32 field_00[0xf];
-    u16 item_count;
-    u16 field_3e;
-    u16 ready;
-    u16 field_42;
-    u32 field_44[0x1f];
-} MissionRecord;
-
-typedef struct {
-    u8 pad_000[0x100];
-    volatile u8 row_count;
-    u8 pad_101[3];
-    MissionRecord rows[4];
-    u32 row_states[4];
-} MissionContext;
-
-typedef struct {
-    MissionContext *context;
-    void *controller_instance;
-} MissionGlobals;
-
-extern MissionGlobals data_ov006_020565e4;
 extern u8 data_ov006_020561c8[];
 extern int Game_PollSceneAlive(void);
 extern void Ov105_SetParamWord8(u32 value);
@@ -48,21 +27,21 @@ void *Ov006_MissionExpireRows(void) {
         u8 i;
 
         VBlank_GetCount();
-        for (i = 0; i < data_ov006_020565e4.context->row_count; i++) {
+        for (i = 0; i < data_ov006_020565e4.pContext->rowCount; i++) {
             u8 j;
 
-            if (data_ov006_020565e4.context->row_states[i] < 600) {
-                data_ov006_020565e4.context->row_states[i]++;
+            if (data_ov006_020565e4.pContext->rowStates[i] < 600) {
+                data_ov006_020565e4.pContext->rowStates[i]++;
             }
 
-            if (data_ov006_020565e4.context->row_states[i] >= 600) {
+            if (data_ov006_020565e4.pContext->rowStates[i] >= 600) {
                 for (j = i;
-                     j < data_ov006_020565e4.context->row_count - 1;
+                     j < data_ov006_020565e4.pContext->rowCount - 1;
                      j++) {
-                    data_ov006_020565e4.context->rows[j] =
-                        data_ov006_020565e4.context->rows[j + 1];
+                    data_ov006_020565e4.pContext->rows[j] =
+                        data_ov006_020565e4.pContext->rows[j + 1];
                 }
-                data_ov006_020565e4.context->row_count--;
+                data_ov006_020565e4.pContext->rowCount--;
                 i--;
             }
         }

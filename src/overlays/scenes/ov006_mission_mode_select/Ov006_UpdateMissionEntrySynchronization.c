@@ -1,55 +1,17 @@
+#include "nitro/types.h"
+
+#include "game/ov006_mission_mode_select.h"
+
 /* Synchronises the chosen mission members with the peers: writes the chosen characters to the slot
  * table (resolving duplicates), sends and confirms the entries, then moves on. */
 
-#include "nitro/types.h"
-
 typedef void (*MissionCallback)(void);
-
-typedef struct {
-    u8 selectable : 1;
-    u8 request : 1;
-    u8 flag_2 : 1;
-    u8 acknowledged : 1;
-    u8 unused_4 : 4;
-} MissionEntryFlags;
-
-typedef struct {
-    u8 playerIndex;
-    MissionEntryFlags flags;
-    s8 characterId;
-    u8 reserved;
-    u16 missionId;
-} MissionEntry;
-
-typedef struct {
-    u32 locked : 1;
-    u32 unused : 31;
-    MissionEntry entries[4];
-} MissionEntryBlock;
 
 typedef struct {
     u32 active;
     int resourceSlot;
 } MissionResourceSlot;
 
-typedef struct {
-    u8 pad_000[0x4a0];
-    u32 entryUpdateMask;
-    u32 entryInputReady;
-    MissionEntryBlock liveEntries;
-    MissionEntryBlock sentEntries;
-    MissionEntry localEntry;
-    u8 pad_4e6[2];
-    u32 exitRequested;
-    u16 messageHandle;
-} MissionContext;
-
-typedef struct {
-    MissionContext *context;
-    void *controllerInstance;
-} MissionGlobals;
-
-extern MissionGlobals data_ov006_020565e4;
 extern void MI_CpuFill8(void *dst, int value, u32 size);
 extern void CopyToSlotTable8(void *record, int index);
 extern int Ov006_MenuEntryToSlot(int characterId);
@@ -68,10 +30,10 @@ extern void Ov006_UpdateAndGetIdleHandler(void);
 
 MissionCallback Ov006_UpdateMissionEntrySynchronization(void) {
     MissionCallback result = 0;
-    MissionContext *context = data_ov006_020565e4.context;
+    MissionContext *context = data_ov006_020565e4.pContext;
 
-    if (context->exitRequested != 0) {
-        if (context->liveEntries.locked) {
+    if (context->localMode != 0) {
+        if (context->liveEntries.header.bits.locked) {
             MissionEntry *entries = context->liveEntries.entries;
             MissionResourceSlot slot;
             u8 outputIndex;
@@ -102,17 +64,17 @@ MissionCallback Ov006_UpdateMissionEntrySynchronization(void) {
         }
 
         if (Session_IsReady() != 0) {
-            if (data_ov006_020565e4.context->entryUpdateMask != 0) {
+            if (data_ov006_020565e4.pContext->entryUpdateMask != 0) {
                 u16 sessionMask;
                 u8 entryIndex;
 
-                data_ov006_020565e4.context->entryUpdateMask = 0;
+                data_ov006_020565e4.pContext->entryUpdateMask = 0;
                 Ov006_MissionResolveDuplicateIds();
                 MsgQueue_SendGate(0xd,
-                    (u16 *)&data_ov006_020565e4.context->liveEntries,
+                    (u16 *)&data_ov006_020565e4.pContext->liveEntries,
                     sizeof(MissionEntryBlock));
 
-                if (data_ov006_020565e4.context->liveEntries.locked) {
+                if (data_ov006_020565e4.pContext->liveEntries.header.bits.locked) {
                     MissionResourceSlot slot;
                     MissionEntry *entries;
                     int peerIndex;
@@ -121,7 +83,7 @@ MissionCallback Ov006_UpdateMissionEntrySynchronization(void) {
                     u8 outputIndex;
 
                     sessionMask = GetGlobalU16At6();
-                    context = data_ov006_020565e4.context;
+                    context = data_ov006_020565e4.pContext;
                     peerIndex = 1;
                     peerFlagsBase = (u8 *)&context->liveEntries.entries[0].flags;
                     peerFlags = peerFlagsBase + sizeof(MissionEntry);
@@ -155,16 +117,16 @@ MissionCallback Ov006_UpdateMissionEntrySynchronization(void) {
                 }
             }
         } else {
-            context = data_ov006_020565e4.context;
-            if (context->liveEntries.locked) {
+            context = data_ov006_020565e4.pContext;
+            if (context->liveEntries.header.bits.locked) {
                 if (context->messageHandle == 0xffff) {
                     u16 messageHandle;
 
                     context->localEntry.flags.acknowledged = 1;
                     messageHandle = func_02031384(
-                        0xd, &data_ov006_020565e4.context->localEntry,
+                        0xd, &data_ov006_020565e4.pContext->localEntry,
                         sizeof(MissionEntry));
-                    data_ov006_020565e4.context->messageHandle = messageHandle;
+                    data_ov006_020565e4.pContext->messageHandle = messageHandle;
                     return 0;
                 }
 
@@ -174,8 +136,8 @@ MissionCallback Ov006_UpdateMissionEntrySynchronization(void) {
                     u8 outputIndex;
                     u8 entryIndex;
 
-                    data_ov006_020565e4.context->messageHandle = 0xffff;
-                    context = data_ov006_020565e4.context;
+                    data_ov006_020565e4.pContext->messageHandle = 0xffff;
+                    context = data_ov006_020565e4.pContext;
                     entries = context->liveEntries.entries;
                     MI_CpuFill8(&slot, 0, sizeof(slot));
                     for (entryIndex = 0; entryIndex < 4; entryIndex++) {

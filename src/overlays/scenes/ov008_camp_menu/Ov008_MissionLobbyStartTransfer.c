@@ -21,43 +21,12 @@
 #define GATE_LOBBY   0xd
 #define SLOT_COUNT   4
 
-typedef struct Ov008JoinPacket {
-    u8  nPlayer;              /* 0x00 */
-    u8  bJoined : 1;          /* 0x01 bit 0 */
-    u8  bPending : 1;         /*      bit 1 */
-    u8  nSpare : 6;
-    signed char nTarget;      /* 0x02 */
-    u8  nPad;                 /* 0x03 */
-    u16 nArg;                 /* 0x04 */
-} Ov008JoinPacket;
-
-typedef struct Ov008GroupMessage {
-    u32 nHeader;              /* 0x00 */
-    Ov008JoinPacket aPacket[SLOT_COUNT]; /* 0x04 */
-} Ov008GroupMessage;
-
 typedef struct SessionSlotInfo {
     int bOccupied;            /* 0x00 */
     int nMemberKind;          /* 0x04 */
 } SessionSlotInfo;
 
-typedef struct MissionContext {
-    u8  pad_0000[0x4a0];
-    int nListHeader;          /* 0x4a0 */
-    u8  pad_04a4[4];
-    Ov008GroupMessage group;  /* 0x4a8 */
-    Ov008GroupMessage groupSent; /* 0x4c4 */
-    Ov008JoinPacket join;     /* 0x4e0 */
-    u8  pad_04e6[2];
-    int nTransferBusy;        /* 0x4e8 */
-    u8  pad_04ec[6];
-    u16 nRetryCount;          /* 0x4f2 */
-    u8  pad_04f4[4];
-    int bGroupBuilt;          /* 0x4f8 */
-    int nTransferB;           /* 0x4fc */
-} MissionContext;
-
-#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 extern u16   GetGlobalU16At6(void);                                 /* lobby slot mask */
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern SessionSlotInfo *Slot4_GetIfOccupied(int nSlot);                 /* Slot4_GetIfOccupied */
@@ -70,24 +39,24 @@ extern void *Ov008_MissionLobbyPoll(void);                           /* Ov008_Mi
 
 static inline void Ov008_BuildGroupMessage(MissionContext *pCtx)
 {
-    Ov008JoinPacket *pPacket;
+    MissionEntry *pPacket;
     u16 nMask;
     u8 i;
     SessionSlotInfo *pInfo;
 
-    pPacket = pCtx->group.aPacket;
+    pPacket = pCtx->liveEntries.entries;
     nMask = GetGlobalU16At6();
-    if (MISSION_CONTEXT->bGroupBuilt == 0) {
-        MI_CpuFill8(&MISSION_CONTEXT->group, 0, sizeof(Ov008GroupMessage));
+    if (MISSION_CONTEXT->groupBuilt == 0) {
+        MI_CpuFill8(&MISSION_CONTEXT->liveEntries, 0, sizeof(MissionEntryBlock));
         for (i = 0; i < SLOT_COUNT; i++) {
             pInfo = Slot4_GetIfOccupied(i);
             if (pInfo != 0) {
-                pPacket[i].nTarget = Ov008_MenuSlotToEntry(pInfo->nMemberKind);
+                pPacket[i].characterId = Ov008_MenuSlotToEntry(pInfo->nMemberKind);
             }
-            pPacket[i].bPending = 1;
-            pPacket[i].bJoined = (nMask & (1 << i)) != 0;
+            pPacket[i].flags.request = 1;
+            pPacket[i].flags.selectable = (nMask & (1 << i)) != 0;
         }
-        MISSION_CONTEXT->bGroupBuilt = 1;
+        MISSION_CONTEXT->groupBuilt = 1;
     }
 }
 
@@ -101,36 +70,36 @@ void *Ov008_MissionLobbyStartTransfer(void)
     bStarted = 0;
     pNext = 0;
     pCtx = MISSION_CONTEXT;
-    if (pCtx->nTransferBusy != 0) {
+    if (pCtx->localMode != 0) {
         Ov008_BuildGroupMessage(pCtx);
         bStarted = 1;
         pCtx = MISSION_CONTEXT;
-        pCtx->groupSent = pCtx->group;
+        pCtx->sentEntries = pCtx->liveEntries;
     } else if (Session_IsReady() != 0) {
         pCtx = MISSION_CONTEXT;
         Ov008_BuildGroupMessage(pCtx);
         pCtx = MISSION_CONTEXT;
-        pCtx->groupSent = pCtx->group;
-        MsgQueue_SendGate(GATE_LOBBY, &pCtx->group, sizeof(Ov008GroupMessage));
+        pCtx->sentEntries = pCtx->liveEntries;
+        MsgQueue_SendGate(GATE_LOBBY, &pCtx->liveEntries, sizeof(MissionEntryBlock));
         bStarted = 1;
-    } else if (MISSION_CONTEXT->nListHeader == 1) {
+    } else if (MISSION_CONTEXT->entryUpdateMask == 1) {
         nPlayer = Session_GetLocalPlayerIndex();
         pCtx = MISSION_CONTEXT;
-        pCtx->join = pCtx->group.aPacket[nPlayer];
+        pCtx->localEntry = pCtx->liveEntries.entries[nPlayer];
         bStarted = 1;
-        pCtx->join.nPlayer = nPlayer;
-        MISSION_CONTEXT->nListHeader = 0;
+        pCtx->localEntry.playerIndex = nPlayer;
+        MISSION_CONTEXT->entryUpdateMask = 0;
     } else {
-        MISSION_CONTEXT->nListHeader = 0;
+        MISSION_CONTEXT->entryUpdateMask = 0;
         pCtx = MISSION_CONTEXT;
-        pCtx->join.bPending = pCtx->nRetryCount == 0;
-        MISSION_CONTEXT->join.nPlayer = Session_GetLocalPlayerIndex();
-        MISSION_CONTEXT->join.nTarget = -1;
-        MISSION_CONTEXT->join.nArg = 0;
-        MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->join, sizeof(Ov008JoinPacket));
+        pCtx->localEntry.flags.request = pCtx->retryCount == 0;
+        MISSION_CONTEXT->localEntry.playerIndex = Session_GetLocalPlayerIndex();
+        MISSION_CONTEXT->localEntry.characterId = -1;
+        MISSION_CONTEXT->localEntry.missionId = 0;
+        MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->localEntry, sizeof(MissionEntry));
     }
     if (bStarted != 0) {
-        MISSION_CONTEXT->nTransferB = 1;
+        MISSION_CONTEXT->transferB = 1;
         StoreToGlobalPtr4Field28(2);
         pNext = Ov008_MissionLobbyPoll;
     }

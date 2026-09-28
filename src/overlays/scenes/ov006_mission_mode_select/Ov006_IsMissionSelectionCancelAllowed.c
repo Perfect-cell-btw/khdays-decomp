@@ -1,6 +1,6 @@
-/* Read the 1-bit flag at bit 0 of the word at +0x4a8 of the ov006 global object. */
-extern int data_ov006_020565e4;
-struct bf006 { unsigned int b0 : 1; };
+#include "game/ov006_mission_mode_select.h"
+/* Whether the live entry block is locked (bit 0 of its header). */
+#define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 int Ov006_IsMissionSelectionCancelAllowed(void) {
-    return ((struct bf006 *)(data_ov006_020565e4 + 0x4a8))->b0;
+    return MISSION_CONTEXT->liveEntries.header.bits.locked;
 }

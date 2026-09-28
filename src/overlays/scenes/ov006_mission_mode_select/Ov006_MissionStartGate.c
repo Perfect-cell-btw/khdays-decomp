@@ -1,3 +1,4 @@
+#include "game/ov006_mission_mode_select.h"
 /* Ov006_MissionStartGate -- Mission Mode "start" gate.
  *
  * Reports "no handler yet" (null) while the scene is still blocked (+0x49c) and while
@@ -25,18 +26,18 @@ typedef struct Ov006MissionCtx {
 
 typedef void (*Ov006Handler)(void);
 
-extern Ov006MissionCtx *data_ov006_020565e4;
+#define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 extern int Ov105_WH_Initialize(void);
 extern void Ov006_HandleSubScenePoll(void);
 
 Ov006Handler Ov006_MissionStartGate(void) {
     Ov006Handler next = 0;
 
-    if (data_ov006_020565e4->nStartBlocked == 0) {
+    if (MISSION_CONTEXT->busy == 0) {
         if (Ov105_WH_Initialize() != 0) {
             return &Ov006_HandleSubScenePoll;
         }
-        data_ov006_020565e4->bStartFailed = 1;
+        MISSION_CONTEXT->startFailed = 1;
         next = 0;
     }
     return next;

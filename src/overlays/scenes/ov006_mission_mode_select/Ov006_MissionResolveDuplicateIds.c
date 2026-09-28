@@ -1,58 +1,35 @@
+#include "nitro/types.h"
+
+#include "game/ov006_mission_mode_select.h"
+
 /* Resolves duplicate character ids among the four mission slots: a slot that just changed to
  * another slot's id reverts to its previous one, and any duplicates left get a random id; then
  * remembers the ids. */
 
-#include "nitro/types.h"
-
-typedef struct {
-    u8 field_0;
-    unsigned char active : 1;
-    unsigned char dirty : 1;
-    unsigned char pad_flags : 6;
-    s8 id;
-    u8 pad_3[3];
-} MissionIdEntry;
-
-typedef struct {
-    int header;
-    MissionIdEntry entries[4];
-} MissionIdGroup;
-
-typedef struct {
-    u8 pad_0000[0x4a8];
-    MissionIdGroup current_group;
-    MissionIdGroup previous_group;
-} MissionContext;
-
-typedef struct {
-    MissionContext *context;
-} Ov006Globals;
-
-extern Ov006Globals data_ov006_020565e4;
 extern int RandNextScaled(int bound);
 
 void Ov006_MissionResolveDuplicateIds(void) {
     int i = 0;
     int j;
-    MissionIdEntry *current = data_ov006_020565e4.context->current_group.entries;
-    MissionIdEntry *previous = data_ov006_020565e4.context->previous_group.entries;
+    MissionEntry *current = data_ov006_020565e4.pContext->liveEntries.entries;
+    MissionEntry *previous = data_ov006_020565e4.pContext->sentEntries.entries;
 
     for (; i < 4; i++) {
         for (j = i + 1; j < 4; j++) {
-            MissionIdEntry *left = &current[i];
-            MissionIdEntry *right = &current[j];
+            MissionEntry *left = &current[i];
+            MissionEntry *right = &current[j];
 
-            if (right->id == left->id && left->active && right->active &&
-                (right->id != previous[j].id || left->id != previous[i].id)) {
+            if (right->characterId == left->characterId && left->flags.selectable && right->flags.selectable &&
+                (right->characterId != previous[j].characterId || left->characterId != previous[i].characterId)) {
                 int changed;
 
-                if (right->id != previous[j].id) {
+                if (right->characterId != previous[j].characterId) {
                     changed = j;
                 } else {
                     changed = i;
                 }
-                current[changed].id = previous[changed].id;
-                current[changed].dirty = 0;
+                current[changed].characterId = previous[changed].characterId;
+                current[changed].flags.request = 0;
             }
         }
     }
@@ -60,15 +37,15 @@ void Ov006_MissionResolveDuplicateIds(void) {
 restart_duplicate_scan:
     for (i = 0; i < 4; i++) {
         for (j = i + 1; j < 4; j++) {
-            if (current[j].id == current[i].id && current[i].active &&
-                current[j].active) {
-                current[j].id = RandNextScaled(12);
-                current[j].dirty = 0;
+            if (current[j].characterId == current[i].characterId && current[i].flags.selectable &&
+                current[j].flags.selectable) {
+                current[j].characterId = RandNextScaled(12);
+                current[j].flags.request = 0;
                 goto restart_duplicate_scan;
             }
         }
     }
 
-    data_ov006_020565e4.context->previous_group =
-        data_ov006_020565e4.context->current_group;
+    data_ov006_020565e4.pContext->sentEntries =
+        data_ov006_020565e4.pContext->liveEntries;
 }

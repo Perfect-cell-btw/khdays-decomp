@@ -14,7 +14,7 @@
  */
 extern int  Ov008_CountPlayersInMask(short *keys);
 extern void func_02031600(void *cfg);
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 struct Ov006KeyBlock {
     int f0;

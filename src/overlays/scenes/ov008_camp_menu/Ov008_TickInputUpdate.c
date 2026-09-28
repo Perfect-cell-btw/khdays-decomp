@@ -5,12 +5,12 @@
 extern unsigned short func_01ff8138(void);
 extern void Obj_SetField14(int obj, void *cb);
 extern void Ov008_MissionSelectionSendTick(void);
-#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 int Ov008_TickInputUpdate(void) {
     if (func_01ff8138() <= 1) {
-        *(int *)(MISSION_CONTEXT + 0x4e8) = 1;
+        MISSION_CONTEXT->localMode = 1;
     }
     Obj_SetField14((int)data_ov008_02090f24.pController, Ov008_MissionSelectionSendTick);
-    return *(int *)(MISSION_CONTEXT + 0x4e8);
+    return MISSION_CONTEXT->localMode;
 }

@@ -1,33 +1,12 @@
 #include "nitro/types.h"
 
 #include "game/ov008_camp_menu.h"
-/* Mission selection state: while the scene is waiting, copies the local profile name into the
- * selection block, takes the peers' uploaded selections and, once they have started, moves to the
- * confirmation state; sends the local selection when the transition is done. */
-
-typedef union {
-    u8 raw;
-    struct {
-        u8 send_started : 1;
-        u8 unused : 7;
-    } bits;
-} MissionFlags;
-
-typedef struct {
-    u8 pad_000[0x2c];
-    u32 state;
-    u8 pad_030[0x3e4];
-    u8 selection_block[0x18];
-    MissionFlags flags;
-    u8 send_block[0x67];
-} MissionContext;
-
 typedef struct {
     u32 header;
     u8 payload[0x50];
 } MissionSelectionBuffer;
 
-#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
+#define MISSION_CONTEXT (data_ov008_02090f24.pContext)
 
 extern int Game_PollSceneAlive(void);
 extern void Game_ReadLocalProfile(MissionSelectionBuffer *buffer);
@@ -50,10 +29,10 @@ void *Ov008_MissionUpdateSelectionState(void) {
         break;
     case 4:
         Game_ReadLocalProfile(&buffer);
-        StrCopy16(MISSION_CONTEXT->selection_block, buffer.payload);
+        StrCopy16(MISSION_CONTEXT->selectionBlock, buffer.payload);
         if (Ov008_GetPeerTileUploadPending(0) != 0) {
-            Ov008_UploadSlotTiles(0, &MISSION_CONTEXT->flags, 0x68);
-            if (MISSION_CONTEXT->flags.bits.send_started != 0) {
+            Ov008_UploadSlotTiles(0, &MISSION_CONTEXT->message.selection.flags, 0x68);
+            if (MISSION_CONTEXT->message.selection.flags.bits.sendStarted != 0) {
                 Ov008_MissionUpdateInputTransition();
                 GameSession_SetSyncEnabled(0);
                 next = (void *)Ov008_UpdateSelectionConfirmationState;
@@ -61,11 +40,11 @@ void *Ov008_MissionUpdateSelectionState(void) {
             }
         }
         if (Ov008_MissionIsTransitionDone() != 0) {
-            Ov008_SendPacket(MISSION_CONTEXT->selection_block, 0x18);
+            Ov008_SendPacket(MISSION_CONTEXT->selectionBlock, 0x18);
         }
         break;
     default:
-        MISSION_CONTEXT->state = 0;
+        MISSION_CONTEXT->sendBusy = 0;
         next = (void *)Ov008_MissionIdleStateNoOp;
         break;
     }

@@ -1,51 +1,14 @@
+#include "nitro/types.h"
+
+#include "game/ov006_mission_mode_select.h"
+
 #pragma opt_dead_assignments off
 /* Ov006_RefreshSelectionSendBlock -- rebuild the Mission Mode selection-send
  * message from the current session mask and four player records. The four dead
  * initial assignments emit no code under this pragma and reproduce the retail
  * register allocation. */
 
-#include "nitro/types.h"
-
-typedef struct {
-    u16 name[11];
-    u8 status;
-    u8 reserved;
-} MissionPeerRecord;
-
-typedef union {
-    MissionPeerRecord all[4];
-    struct {
-        MissionPeerRecord local;
-        MissionPeerRecord remote[3];
-    } split;
-} MissionPeerRecords;
-
-typedef struct {
-    u8 sendStarted : 1;
-    u8 changed : 1;
-    u8 unused : 6;
-} MissionSelectionFlags;
-
-typedef struct {
-    MissionSelectionFlags flags;
-    u8 reserved01[3];
-    u32 sessionValue;
-    u16 sessionMask;
-    u16 playerNames[4][11];
-    u8 peerStatus[4];
-    u8 reserved66[2];
-} MissionSelectionSendBlock;
-
-typedef struct {
-    u8 pad_000[0x44];
-    MissionPeerRecords records;
-    u8 pad_0a4[0x388];
-    MissionSelectionSendBlock selectionSendBlock;
-    u32 refreshRequested;
-    int refreshTimer;
-} MissionContext;
-
-extern MissionContext *data_ov006_020565e4;
+#define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 extern const u16 data_ov006_020563d4[];
 extern u16 func_01ff8138(void);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
@@ -68,18 +31,18 @@ void Ov006_RefreshSelectionSendBlock(void) {
     placeholderName = 0;
     name = 0;
 
-    sendBlock = &data_ov006_020565e4->selectionSendBlock;
+    sendBlock = &MISSION_CONTEXT->message.selection;
     sessionMask = func_01ff8138();
 
-    data_ov006_020565e4->refreshTimer--;
-    if (data_ov006_020565e4->refreshTimer < 0) {
-        data_ov006_020565e4->refreshTimer = 0;
+    MISSION_CONTEXT->refreshTimer--;
+    if (MISSION_CONTEXT->refreshTimer < 0) {
+        MISSION_CONTEXT->refreshTimer = 0;
     }
 
-    MI_CpuFill8(&data_ov006_020565e4->selectionSendBlock, 0,
+    MI_CpuFill8(&MISSION_CONTEXT->message.selection, 0,
                 sizeof(MissionSelectionSendBlock));
-    data_ov006_020565e4->selectionSendBlock.sessionValue = VBlank_GetCount();
-    data_ov006_020565e4->selectionSendBlock.sessionMask = sessionMask;
+    MISSION_CONTEXT->message.selection.sessionValue = VBlank_GetCount();
+    MISSION_CONTEXT->message.selection.sessionMask = sessionMask;
 
     placeholderName = data_ov006_020563d4;
 
@@ -87,10 +50,10 @@ void Ov006_RefreshSelectionSendBlock(void) {
         StrCopy16(sendBlock->playerNames[playerIndex], placeholderName);
     }
 
-    context = data_ov006_020565e4;
+    context = MISSION_CONTEXT;
     changed = 0;
     for (playerIndex = 1; playerIndex < 4; playerIndex++) {
-        if (context->records.all[playerIndex].status == 1) {
+        if (context->active.roster.records.all[playerIndex].status == 1) {
             changed = 1;
         }
     }
@@ -99,9 +62,9 @@ void Ov006_RefreshSelectionSendBlock(void) {
         context->refreshRequested = 0;
         changed = 1;
     }
-    data_ov006_020565e4->selectionSendBlock.flags.changed = changed;
+    MISSION_CONTEXT->message.selection.flags.bits.changed = changed;
     if (changed != 0) {
-        data_ov006_020565e4->refreshTimer = 30;
+        MISSION_CONTEXT->refreshTimer = 30;
     }
 
     for (playerIndex = 0; playerIndex < 4; playerIndex++) {
@@ -110,15 +73,13 @@ void Ov006_RefreshSelectionSendBlock(void) {
 
         if ((sessionMask & (1 << playerIndex)) != 0) {
             if (playerIndex == 0) {
-                name = data_ov006_020565e4->records.split.local.name;
+                name = MISSION_CONTEXT->active.roster.records.split.local.name;
             } else {
                 if (Ov006_IsMissionMenuBusy() == 0) {
-                    name = data_ov006_020565e4->records.split
-                        .remote[playerIndex - 1].name;
+                    name = MISSION_CONTEXT->active.roster.records.split.remote[playerIndex - 1].name;
                 }
-                status = data_ov006_020565e4->records
-                    .all[playerIndex].status;
-                if (data_ov006_020565e4->selectionSendBlock.flags.sendStarted) {
+                status = MISSION_CONTEXT->active.roster.records.all[playerIndex].status;
+                if (MISSION_CONTEXT->message.selection.flags.bits.sendStarted) {
                     status = 0;
                 }
             }

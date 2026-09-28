@@ -1,3 +1,4 @@
+#include "game/ov006_mission_mode_select.h"
 /* Character select: should the pending input be handed to the confirm state? Refuses while the
  * manager is gone or the scene is locked out (obj+0x4e8). Scenes already in the confirm
  * (Ov006_UpdateAndGetIdleHandler) or cancel (Ov006_IdleStateNoOp) state are accepted as-is. Otherwise the
@@ -31,7 +32,7 @@ extern int   func_01ff8138(void);
 extern void  Obj_SetField14(int scene, int next);
 extern void  Ov006_UpdateAndGetIdleHandler(void);
 extern void  Ov006_IdleStateNoOp(void);
-extern int   data_ov006_020565e4;
+#define MISSION_CONTEXT (data_ov006_020565e4.pContext)
 
 typedef struct { unsigned char b0 : 1; unsigned char rest : 7; } Bits8;
 
@@ -40,11 +41,11 @@ int Ov006_ShouldEnterConfirmState(void) {
     unsigned int armed;
     int keys;
 
-    if (*(char **)&data_ov006_020565e4 == 0
-        || *(int *)(*(char **)&data_ov006_020565e4 + 0x4e8) != 0) {
+    if ((char *)data_ov006_020565e4.pContext == 0
+        || *(int *)((char *)data_ov006_020565e4.pContext + 0x4e8) != 0) {
         return 0;
     }
-    state = *(int *)(*(int *)((int)&data_ov006_020565e4 + 4) + 0x14);
+    state = *(int *)((int)data_ov006_020565e4.pController + 0x14);
     if ((void (*)(void))state == Ov006_UpdateAndGetIdleHandler) {
         return 1;
     }
@@ -54,7 +55,7 @@ int Ov006_ShouldEnterConfirmState(void) {
     if (func_01ff8128() != 0) {
         goto ret0;
     }
-    armed = ((Bits8 *)(((char **)&data_ov006_020565e4)[0] + 0x42c))->b0;
+    armed = ((Bits8 *)(((char *)data_ov006_020565e4.pContext) + 0x42c))->b0;
     if (armed == 0) {
         goto ret0;
     }
