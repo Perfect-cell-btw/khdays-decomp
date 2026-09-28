@@ -1,8 +1,9 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Age every row, compact rows[4] once a row reaches 600 ticks, and take the ov105 scene branch when
  * the compaction empties the list. 600 is the expiry threshold in ticks; the row stride is the
  * MissionRecord 0xc0 established by the first hand-off. */
-
-#include "nitro/types.h"
 
 typedef struct {
     u32 field_00[0xf];
@@ -21,12 +22,7 @@ typedef struct {
     u32 row_states[4];
 } MissionContext;
 
-typedef struct {
-    MissionContext *context;
-    void *controller_instance;
-} MissionGlobals;
-
-extern MissionGlobals data_ov008_02090f24;
+#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
 extern u8 data_ov008_0208fc84[];
 extern int Game_PollSceneAlive(void);
 extern void Ov105_SetParamWord8(u32 value);
@@ -48,21 +44,21 @@ void *Ov008_MissionExpireRows(void) {
         u8 i;
 
         VBlank_GetCount();
-        for (i = 0; i < data_ov008_02090f24.context->row_count; i++) {
+        for (i = 0; i < MISSION_CONTEXT->row_count; i++) {
             u8 j;
 
-            if (data_ov008_02090f24.context->row_states[i] < 600) {
-                data_ov008_02090f24.context->row_states[i]++;
+            if (MISSION_CONTEXT->row_states[i] < 600) {
+                MISSION_CONTEXT->row_states[i]++;
             }
 
-            if (data_ov008_02090f24.context->row_states[i] >= 600) {
+            if (MISSION_CONTEXT->row_states[i] >= 600) {
                 for (j = i;
-                     j < data_ov008_02090f24.context->row_count - 1;
+                     j < MISSION_CONTEXT->row_count - 1;
                      j++) {
-                    data_ov008_02090f24.context->rows[j] =
-                        data_ov008_02090f24.context->rows[j + 1];
+                    MISSION_CONTEXT->rows[j] =
+                        MISSION_CONTEXT->rows[j + 1];
                 }
-                data_ov008_02090f24.context->row_count--;
+                MISSION_CONTEXT->row_count--;
                 i--;
             }
         }

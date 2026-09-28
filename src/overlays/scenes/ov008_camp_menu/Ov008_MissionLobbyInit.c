@@ -1,3 +1,6 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Ov008_MissionLobbyInit -- Ov008_MissionLobbyInit: create the mission context in
  * the current root heap (0x500 bytes, zeroed), latch whether the transfer flag
  * 0x200d is set, and pick the first lobby state.  A non-zero argument goes
@@ -7,8 +10,6 @@
  * is put in state 0 -> state 0207a1c4; else the context is marked busy, state 1
  * is set, gate 0xd gets its handler -> state 0207a424.
  */
-
-#include "nitro/types.h"
 
 #define CONTEXT_SIZE 0x500
 #define BUFFER_SIZE  0x100
@@ -34,7 +35,7 @@ typedef struct CardXferOwner {
 
 typedef void *(*Ov008StateFn)(void);
 
-extern CardXferOwner *data_ov008_02090f24;
+#define MISSION_CONTEXT ((CardXferOwner *)data_ov008_02090f24.pContext)
 extern CardXferOwner *NNSi_FndGetCurrentRootHeap(void);
 extern void MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern int  GameState_IsFlagSet(int nFlag);                         /* GameState_IsFlagSet */
@@ -53,21 +54,21 @@ void *Ov008_MissionLobbyInit(int bSkip)
 {
     int i;
 
-    data_ov008_02090f24 = NNSi_FndGetCurrentRootHeap();
-    MI_CpuFill8(data_ov008_02090f24, 0, CONTEXT_SIZE);
-    data_ov008_02090f24->nTransferBusy = GameState_IsFlagSet(FLAG_TRANSFER) != 0;
+    data_ov008_02090f24.pContext = NNSi_FndGetCurrentRootHeap();
+    MI_CpuFill8(MISSION_CONTEXT, 0, CONTEXT_SIZE);
+    MISSION_CONTEXT->nTransferBusy = GameState_IsFlagSet(FLAG_TRANSFER) != 0;
     if (bSkip != 0) {
         return (void *)Ov008_MissionSceneIdleCallback;
     }
-    if (data_ov008_02090f24->nTransferBusy != 0 || (Session_Exists() != 0 && Session_IsActive() != 0)) {
-        data_ov008_02090f24->nBusy = 1;
+    if (MISSION_CONTEXT->nTransferBusy != 0 || (Session_Exists() != 0 && Session_IsActive() != 0)) {
+        MISSION_CONTEXT->nBusy = 1;
         StoreToGlobalPtr4Field28(1);
         StoreGlobalPtrArray4At0c(GATE_LOBBY, (void *)Ov008_MissionApplyEntryUpdate);
         return (void *)Ov008_MissionLobbyStartTransfer;
     }
-    data_ov008_02090f24->pHeader = NNS_FndAllocFromDefaultExpHeapEx(BUFFER_SIZE, BUFFER_ALIGN);
+    MISSION_CONTEXT->pHeader = NNS_FndAllocFromDefaultExpHeapEx(BUFFER_SIZE, BUFFER_ALIGN);
     for (i = 0; i < SLOT_COUNT; i++) {
-        data_ov008_02090f24->aSlot[i].pBuffer = NNS_FndAllocFromDefaultExpHeapEx(BUFFER_SIZE, BUFFER_ALIGN);
+        MISSION_CONTEXT->aSlot[i].pBuffer = NNS_FndAllocFromDefaultExpHeapEx(BUFFER_SIZE, BUFFER_ALIGN);
     }
     Overlay105_Load();
     StoreToGlobalPtr4Field28(0);

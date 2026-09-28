@@ -1,3 +1,4 @@
+#include "game/ov008_camp_menu.h"
 /* Ov008_CardXferBeginGate -- card-transfer "begin" gate.
  *
  * While the owner is busy (+0x49c) there is no follow-up handler.  Otherwise ask the
@@ -20,18 +21,18 @@ typedef struct CardXferOwner {
 
 typedef void (*Ov008Handler)(void);
 
-extern CardXferOwner *data_ov008_02090f24;
+#define MISSION_CONTEXT ((CardXferOwner *)data_ov008_02090f24.pContext)
 extern int Ov105_WH_Initialize(void);
 extern void Ov008_HandleSubScenePoll(void);
 
 Ov008Handler Ov008_CardXferBeginGate(void) {
     Ov008Handler next = 0;
 
-    if (data_ov008_02090f24->nBusy == 0) {
+    if (MISSION_CONTEXT->nBusy == 0) {
         if (Ov105_WH_Initialize() != 0) {
             return &Ov008_HandleSubScenePoll;
         }
-        data_ov008_02090f24->bStartFailed = 1;
+        MISSION_CONTEXT->bStartFailed = 1;
         next = 0;
     }
     return next;

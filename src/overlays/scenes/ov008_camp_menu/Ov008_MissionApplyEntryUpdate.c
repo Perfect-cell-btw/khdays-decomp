@@ -1,7 +1,8 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Applies a mission entry update received over the link: copies the entry in when it changed
  * (unless the block is locked), updates its flags and marks it for redraw. */
-
-#include "nitro/types.h"
 
 typedef struct {
     u8 unused_0 : 1;
@@ -34,12 +35,7 @@ typedef struct {
     MissionEntryBlock entry_block;
 } MissionContext;
 
-typedef struct {
-    MissionContext *context;
-    void *controller_instance;
-} MissionGlobals;
-
-extern MissionGlobals data_ov008_02090f24;
+#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
 extern void Obj_GetWord28(void *instance);
 extern int Session_IsReady(void);
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
@@ -47,7 +43,7 @@ extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 void Ov008_MissionApplyEntryUpdate(const void *data, u32 size) {
     const MissionEntry *entry = data;
 
-    Obj_GetWord28(data_ov008_02090f24.controller_instance);
+    Obj_GetWord28(data_ov008_02090f24.pController);
     if (data == 0) {
         return;
     }
@@ -60,40 +56,40 @@ void Ov008_MissionApplyEntryUpdate(const void *data, u32 size) {
         }
 
         index = entry->index;
-        if (!data_ov008_02090f24.context->entry_block.locked &&
+        if (!MISSION_CONTEXT->entry_block.locked &&
             entry->id !=
-                data_ov008_02090f24.context->entry_block.entries[index].id &&
+                MISSION_CONTEXT->entry_block.entries[index].id &&
             entry->state >= 0) {
             MI_CpuCopy8(entry,
-                        &data_ov008_02090f24.context->entry_block.entries[index],
+                        &MISSION_CONTEXT->entry_block.entries[index],
                         sizeof(MissionEntry));
         }
 
-        data_ov008_02090f24.context->entry_block.entries[index].flags.flag_2 =
+        MISSION_CONTEXT->entry_block.entries[index].flags.flag_2 =
             entry->flags.flag_2;
-        data_ov008_02090f24.context->entry_block.entries[index].flags.flag_3 =
+        MISSION_CONTEXT->entry_block.entries[index].flags.flag_3 =
             entry->flags.flag_3;
 
         if (entry->state < 0) {
-            data_ov008_02090f24.context->entry_block.entries[index].flags.flag_1 =
+            MISSION_CONTEXT->entry_block.entries[index].flags.flag_1 =
                 entry->flags.flag_1;
-            data_ov008_02090f24.context->entry_block.entries[index].flags.flag_3 =
+            MISSION_CONTEXT->entry_block.entries[index].flags.flag_3 =
                 0;
         }
 
-        data_ov008_02090f24.context->update_mask |= 1 << index;
+        MISSION_CONTEXT->update_mask |= 1 << index;
         return;
     }
 
-    if (size == sizeof(data_ov008_02090f24.context->input_state)) {
-        MI_CpuCopy8(data, data_ov008_02090f24.context->input_state,
-                    sizeof(data_ov008_02090f24.context->input_state));
-        data_ov008_02090f24.context->input_ready = 1;
+    if (size == sizeof(MISSION_CONTEXT->input_state)) {
+        MI_CpuCopy8(data, MISSION_CONTEXT->input_state,
+                    sizeof(MISSION_CONTEXT->input_state));
+        MISSION_CONTEXT->input_ready = 1;
     }
 
     if (size == sizeof(MissionEntryBlock)) {
-        MI_CpuCopy8(data, &data_ov008_02090f24.context->entry_block,
+        MI_CpuCopy8(data, &MISSION_CONTEXT->entry_block,
                     sizeof(MissionEntryBlock));
-        data_ov008_02090f24.context->update_mask = 1;
+        MISSION_CONTEXT->update_mask = 1;
     }
 }

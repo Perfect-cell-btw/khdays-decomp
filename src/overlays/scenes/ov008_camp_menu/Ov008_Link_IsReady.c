@@ -1,11 +1,12 @@
+#include "game/ov008_camp_menu.h"
 /* Whether the link is local or ready. */
 
-extern char *data_ov008_02090f24;
+#define MISSION_CONTEXT ((char *)data_ov008_02090f24.pContext)
 extern int Ov008_Link_IsLocal(void);
 
 int Ov008_Link_IsReady(void)
 {
-    if (data_ov008_02090f24 == 0) {
+    if (MISSION_CONTEXT == 0) {
         return 1;
     }
 
@@ -13,5 +14,5 @@ int Ov008_Link_IsReady(void)
         return 1;
     }
 
-    return *(int *)(data_ov008_02090f24 + 0x4fc);
+    return *(int *)(MISSION_CONTEXT + 0x4fc);
 }

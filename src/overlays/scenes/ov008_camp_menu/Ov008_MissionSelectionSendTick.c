@@ -1,7 +1,8 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Sends the mission selection to the peers: sets the wireless entry, refreshes the send block and
  * sends it once the transition is done; returns the next state. */
-
-#include "nitro/types.h"
 
 typedef struct {
     u8 sendStarted : 1;
@@ -30,8 +31,7 @@ typedef struct {
     u32 exitRequested;
 } MissionContext;
 
-extern int data_ov008_02090f24;
-#define CONTEXT (*(MissionContext **)&data_ov008_02090f24)
+#define CONTEXT (*(MissionContext **)&data_ov008_02090f24.pContext)
 extern int Ov105_WM_SetEntry();
 extern int Ov008_IsSceneState4(void);
 extern void Ov008_RefreshSelectionSendBlock(void);

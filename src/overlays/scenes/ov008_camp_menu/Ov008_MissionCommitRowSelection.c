@@ -1,8 +1,9 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Commits the selected mission row when it is complete and ready: with the session alive, switches
  * to the select state, makes the row the active record and clears the input and work buffers;
  * otherwise goes idle and drives the sound; returns whether it committed. */
-
-#include "nitro/types.h"
 
 typedef struct {
     u32 field_00[0xf];
@@ -33,12 +34,7 @@ typedef struct {
     u8 input_state[0x68];
 } MissionContext;
 
-typedef struct {
-    MissionContext *context;
-    void *controller_instance;
-} MissionGlobals;
-
-extern MissionGlobals data_ov008_02090f24;
+#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
 extern int Game_PollSceneAlive(void);
 extern void Obj_SetField14(void *instance, void (*callback)(void));
 extern void MI_CpuFill8(void *dst, int value, u32 size);
@@ -48,28 +44,28 @@ extern void Ov008_MissionSceneIdleCallback(void);
 
 int Ov008_MissionCommitRowSelection(int index) {
     int result = 0;
-    MissionRecord *record = &data_ov008_02090f24.context->rows[index];
+    MissionRecord *record = &MISSION_CONTEXT->rows[index];
 
     if (record->item_count >= 16 && record->ready == 1) {
         if (Game_PollSceneAlive() == 1) {
             u8 i;
 
-            Obj_SetField14(data_ov008_02090f24.controller_instance,
+            Obj_SetField14(data_ov008_02090f24.pController,
                           Ov008_MissionSelectStateCallback);
-            data_ov008_02090f24.context->active_record =
-                data_ov008_02090f24.context->rows[index];
-            MI_CpuFill8(data_ov008_02090f24.context->input_state, 0,
-                        sizeof(data_ov008_02090f24.context->input_state));
-            MI_CpuFill8(data_ov008_02090f24.context->primary_buffer, 0, 0x100);
+            MISSION_CONTEXT->active_record =
+                MISSION_CONTEXT->rows[index];
+            MI_CpuFill8(MISSION_CONTEXT->input_state, 0,
+                        sizeof(MISSION_CONTEXT->input_state));
+            MI_CpuFill8(MISSION_CONTEXT->primary_buffer, 0, 0x100);
 
             for (i = 0; i < 4; i++) {
-                MI_CpuFill8(data_ov008_02090f24.context->work_buffers[i].buffer,
+                MI_CpuFill8(MISSION_CONTEXT->work_buffers[i].buffer,
                             0, 0x100);
-                data_ov008_02090f24.context->work_states[i] = 0;
+                MISSION_CONTEXT->work_states[i] = 0;
             }
             result = 1;
         } else {
-            Obj_SetField14(data_ov008_02090f24.controller_instance,
+            Obj_SetField14(data_ov008_02090f24.pController,
                           Ov008_MissionSceneIdleCallback);
             Ov008_MissionDriveSound();
         }

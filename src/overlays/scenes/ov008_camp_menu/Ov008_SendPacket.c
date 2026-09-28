@@ -1,5 +1,8 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Ov008_SendPacket -- Ov008_SendPacket (164 B, 4 relocs).
- * Queues one outgoing packet on the singleton send context data_ov008_02090f24, if it is idle.
+ * Queues one outgoing packet on the singleton send context MISSION_CONTEXT, if it is idle.
  * Returns 0 immediately when a send is already in flight (busy != 0). Otherwise it bumps the
  * sequence counter, marks the context busy, writes the sequence into the packet buffer header
  * (word 0), copies the caller's payload right after it (buf + 4, MI_CpuCopy8), and hands the
@@ -8,8 +11,6 @@
  * with the context left busy (cleared later by the callback); if the send call reports failure
  * it clears the busy flag again and returns 0. */
 
-#include "nitro/types.h"
-
 typedef struct Ov008SendCtx {
     char *buf;       /* 0x00: packet buffer: word[0]=seq counter, [4..]=payload */
     int   seq;       /* 0x04: outgoing sequence counter */
@@ -17,24 +18,24 @@ typedef struct Ov008SendCtx {
     int   busy;      /* 0x2c: 1 while a send is in flight */
 } Ov008SendCtx;
 
-extern Ov008SendCtx *data_ov008_02090f24;
+#define MISSION_CONTEXT ((Ov008SendCtx *)data_ov008_02090f24.pContext)
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 extern int  func_ov105_020bf900(void *buf, u16 size, void *callback);
 extern void Ov008_PacketSentCallback(void);
 
 int Ov008_SendPacket(const void *src, int size)
 {
-    if (data_ov008_02090f24->busy != 0) {
+    if (MISSION_CONTEXT->busy != 0) {
         return 0;
     }
-    data_ov008_02090f24->seq += 1;
-    data_ov008_02090f24->busy = 1;
-    *(int *)data_ov008_02090f24->buf = data_ov008_02090f24->seq;
-    MI_CpuCopy8(src, data_ov008_02090f24->buf + 4, size);
-    if (func_ov105_020bf900(data_ov008_02090f24->buf, (u16)(size + 4),
+    MISSION_CONTEXT->seq += 1;
+    MISSION_CONTEXT->busy = 1;
+    *(int *)MISSION_CONTEXT->buf = MISSION_CONTEXT->seq;
+    MI_CpuCopy8(src, MISSION_CONTEXT->buf + 4, size);
+    if (func_ov105_020bf900(MISSION_CONTEXT->buf, (u16)(size + 4),
                                     Ov008_PacketSentCallback) != 0) {
         return 1;
     }
-    data_ov008_02090f24->busy = 0;
+    MISSION_CONTEXT->busy = 0;
     return 0;
 }

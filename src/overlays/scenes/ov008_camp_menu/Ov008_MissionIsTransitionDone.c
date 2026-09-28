@@ -1,11 +1,12 @@
+#include "game/ov008_camp_menu.h"
 /* Whether the mission transition has started and finished. */
 
-extern char *data_ov008_02090f24;
+#define MISSION_CONTEXT ((char *)data_ov008_02090f24.pContext)
 
 int Ov008_MissionIsTransitionDone(void)
 {
-    if (*(int *)(data_ov008_02090f24 + 0x28) != 0) {
-        return *(int *)(data_ov008_02090f24 + 0x2c) == 0;
+    if (*(int *)(MISSION_CONTEXT + 0x28) != 0) {
+        return *(int *)(MISSION_CONTEXT + 0x2c) == 0;
     }
 
     return 0;

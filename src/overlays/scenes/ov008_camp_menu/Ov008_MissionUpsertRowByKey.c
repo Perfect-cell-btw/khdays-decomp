@@ -17,6 +17,9 @@ typedef struct {
     u32 row_states[4];
 } MissionContext;
 
+/* The mission globals' context word (Ov008MissionGlobals.pContext, include/game/ov008_camp_menu.h),
+ * declared here as the pointer itself: read through the shared struct, mwcc keeps the context in
+ * the pool address's register instead of a second one, and the function no longer matches. */
 extern MissionContext *data_ov008_02090f24;
 extern void MI_CpuCopy8(const void *src, void *dst, u32 size);
 

@@ -1,3 +1,4 @@
+#include "game/ov008_camp_menu.h"
 /* Ov008_MissionIsEntryActive -- is the highlighted menu entry already the active one?
  * True while the scene is locked out (obj+0x4e8 set). Otherwise compares the current
  * selection (obj+0x4e4) against the entry id of the cursor row (obj+0x4b0, stride 6);
@@ -13,9 +14,9 @@
  * byte-identical to the rep.
  */
 extern int Session_GetLocalPlayerIndex(void);
-extern int data_ov008_02090f24;
+#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
 
-#define OBJ (*(int **)&data_ov008_02090f24)
+#define OBJ ((int *)data_ov008_02090f24.pContext)
 
 int Ov008_MissionIsEntryActive(void) {
     unsigned short row;

@@ -1,7 +1,8 @@
+#include "game/ov008_camp_menu.h"
 /* Send completion callback: clears the mission sync context's busy flag (+0x2c). */
 
-extern char *data_ov008_02090f24;
+#define MISSION_CONTEXT ((char *)data_ov008_02090f24.pContext)
 void Ov008_PacketSentCallback(void)
 {
-    *(int *)(data_ov008_02090f24 + 0x2c) = 0;
+    *(int *)(MISSION_CONTEXT + 0x2c) = 0;
 }

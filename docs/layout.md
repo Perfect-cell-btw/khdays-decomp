@@ -55,8 +55,12 @@ Still to do, in this order:
     and `nnsys/{fnd,gfd,snd,g2d,g3d}.h`, built from those copies (each type in the form most sources
     used). Sources that carry a variant of a type of their own (a partial view, an enum spelled as
     #defines) still declare that part locally, and function prototypes stay per source for now.
+  - the first of the game's own: `game/ov008_camp_menu.h` declares ov008's mission globals
+    (`Ov008MissionGlobals`: the mission context and the controller instance) once, for the 62
+    sources that each carried a view of their own (one keeps the bare pointer: through the
+    struct mwcc allocates it differently).
   Every compile gets `-i include`, and the build tracks header dependencies. Still per source:
-  the function prototypes and the game's own structs.
+  the function prototypes and most of the game's own structs.
 - **Translation units**: grouping functions back into one `.c` per original file (per enemy, per
   menu, ...). The build verifies one function per file today. `src/engine/` gets its subsystem
   folders at that point: the boundaries below are approximate, and a prefix such as `Obj_` or

@@ -1,9 +1,10 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Pick the per-state callback, stage the active_record for it, and update the two flag bytes at
  * context+0x4ee and +0x4ef. Those two flags sit just below the 0x4f4 context size that
  * Ov006_MissionCreateContext measures, so they are the last fields of the object rather than
  * something past its end. */
-
-#include "nitro/types.h"
 
 typedef void (*MissionCallback)(void);
 
@@ -33,12 +34,7 @@ typedef struct {
     u8 pad_4f0[4];
 } MissionContext;
 
-typedef struct {
-    MissionContext *context;
-    void *controller_instance;
-} MissionGlobals;
-
-extern MissionGlobals data_ov008_02090f24;
+#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
 extern int Game_PollSceneAlive(void);
 extern void Ov105_WH_SetSsid(u8 *mode, int value);
 extern int Ov105_WH_ChildConnect(int value, MissionRecord *record);
@@ -55,10 +51,10 @@ MissionCallback Ov008_MissionSelectStateCallback(void) {
 
     switch (Game_PollSceneAlive()) {
     case 1:
-        data_ov008_02090f24.context->signal = 0;
-        Ov105_WH_SetSsid(&data_ov008_02090f24.context->mode, 1);
+        MISSION_CONTEXT->signal = 0;
+        Ov105_WH_SetSsid(&MISSION_CONTEXT->mode, 1);
         if (Ov105_WH_ChildConnect(1,
-                &data_ov008_02090f24.context->active_record) == 0) {
+                &MISSION_CONTEXT->active_record) == 0) {
             result = Ov008_MissionIdleStateNoOp;
         }
         break;
@@ -68,23 +64,23 @@ MissionCallback Ov008_MissionSelectStateCallback(void) {
         break;
 
     case 4:
-        data_ov008_02090f24.context->mode = 0;
+        MISSION_CONTEXT->mode = 0;
         Ov105_WH_SetReceiver(Ov008_UpdateSlotCache_2);
-        data_ov008_02090f24.context->transition_requested = 1;
-        data_ov008_02090f24.context->field_02c = 0;
-        data_ov008_02090f24.context->field_030 = 0;
-        MI_CpuFill8(data_ov008_02090f24.context->work_buffers[0].buffer,
+        MISSION_CONTEXT->transition_requested = 1;
+        MISSION_CONTEXT->field_02c = 0;
+        MISSION_CONTEXT->field_030 = 0;
+        MI_CpuFill8(MISSION_CONTEXT->work_buffers[0].buffer,
                     0, 4);
         result = Ov008_MissionUpdateSelectionState;
         break;
 
     default:
         if (Ov105_GetState() == 12) {
-            data_ov008_02090f24.context->signal = 1;
+            MISSION_CONTEXT->signal = 1;
             return Ov008_MissionSceneIdleCallback;
         }
         if (Ov105_GetState() == 11) {
-            data_ov008_02090f24.context->signal = 1;
+            MISSION_CONTEXT->signal = 1;
             return Ov008_MissionSceneIdleCallback;
         }
         result = Ov008_MissionIdleStateNoOp;

@@ -1,8 +1,9 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Resolves duplicate character ids among the four mission slots: a slot that just changed to
  * another slot's id reverts to its previous one, and any duplicates left get a random id; then
  * remembers the ids. */
-
-#include "nitro/types.h"
 
 typedef struct {
     u8 field_0;
@@ -24,18 +25,14 @@ typedef struct {
     MissionIdGroup previous_group;
 } MissionContext;
 
-typedef struct {
-    MissionContext *context;
-} Ov006Globals;
-
-extern Ov006Globals data_ov008_02090f24;
+#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
 extern int RandNextScaled(int bound);
 
 void Ov008_MissionResolveDuplicateIds(void) {
     int i = 0;
     int j;
-    MissionIdEntry *current = data_ov008_02090f24.context->current_group.entries;
-    MissionIdEntry *previous = data_ov008_02090f24.context->previous_group.entries;
+    MissionIdEntry *current = MISSION_CONTEXT->current_group.entries;
+    MissionIdEntry *previous = MISSION_CONTEXT->previous_group.entries;
 
     for (; i < 4; i++) {
         for (j = i + 1; j < 4; j++) {
@@ -69,6 +66,6 @@ restart_duplicate_scan:
         }
     }
 
-    data_ov008_02090f24.context->previous_group =
-        data_ov008_02090f24.context->current_group;
+    MISSION_CONTEXT->previous_group =
+        MISSION_CONTEXT->current_group;
 }

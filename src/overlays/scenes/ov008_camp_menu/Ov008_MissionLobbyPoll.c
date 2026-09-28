@@ -1,3 +1,6 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Ov008_MissionLobbyPoll -- Ov008_MissionLobbyPoll: one poll of the mission
  * lobby's transfer state; returns the next state handler (0207aa40 once a
  * transfer (+0x4f4) is pending, after which field 28 of the global block is
@@ -11,8 +14,6 @@
  * forwarding block is a static inline helper (three copies, each with its own
  * stack info); the packet array is taken through a local pointer.
  */
-
-#include "nitro/types.h"
 
 #define GATE_LOBBY   0xd
 #define SLOT_COUNT   4
@@ -45,7 +46,7 @@ typedef struct MissionContext {
     int nTransferA;           /* 0x4f4 */
 } MissionContext;
 
-extern MissionContext *data_ov008_02090f24;
+#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern void  CopyToSlotTable8(Ov008SlotInfo *pInfo, int nSlot);      /* register a slot info */
 extern int   Ov008_MenuEntryToSlot(int nEntry);                     /* Ov008_MenuEntryToSlot */
@@ -86,7 +87,7 @@ void *Ov008_MissionLobbyPoll(void)
     MissionContext *pCtx;
 
     pNext = 0;
-    pCtx = data_ov008_02090f24;
+    pCtx = MISSION_CONTEXT;
     if (pCtx->nTransferBusy != 0) {
         if (pCtx->nTransferA != 0) {
             Ov008_ForwardJoinedSlots(pCtx);
@@ -95,20 +96,20 @@ void *Ov008_MissionLobbyPoll(void)
     } else {
         Session_GetLocalPlayerIndex();
         if (Session_IsReady() != 0) {
-            pCtx = data_ov008_02090f24;
+            pCtx = MISSION_CONTEXT;
             if (pCtx->nTransferA != 0) {
                 Ov008_ForwardJoinedSlots(pCtx);
                 pNext = Ov008_RefreshListView;
             }
             Ov008_MissionResolveDuplicateIds();
-            MsgQueue_SendGate(GATE_LOBBY, &data_ov008_02090f24->nGroupHeader, 0x1c);
+            MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->nGroupHeader, 0x1c);
         } else {
-            pCtx = data_ov008_02090f24;
+            pCtx = MISSION_CONTEXT;
             if (pCtx->nTransferA != 0) {
                 Ov008_ForwardJoinedSlots(pCtx);
                 pNext = Ov008_RefreshListView;
             }
-            MsgQueue_SendGate(GATE_LOBBY, &data_ov008_02090f24->join, sizeof(Ov008JoinPacket));
+            MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->join, sizeof(Ov008JoinPacket));
         }
     }
     if (pNext == Ov008_RefreshListView) {

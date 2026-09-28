@@ -1,3 +1,6 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Ov008_MissionLobbyStartTransfer -- Ov008_MissionLobbyStartTransfer: start the mission
  * lobby's transfer; returns the poll handler (0207a758, after setting
  * +0x4fc and field 28 of the global block to 2) once a transfer started, or
@@ -14,8 +17,6 @@
  * static inline helper (two copies) taking the packets through a local
  * pointer; the u8 loop counter walks a byte index.
  */
-
-#include "nitro/types.h"
 
 #define GATE_LOBBY   0xd
 #define SLOT_COUNT   4
@@ -56,7 +57,7 @@ typedef struct MissionContext {
     int nTransferB;           /* 0x4fc */
 } MissionContext;
 
-extern MissionContext *data_ov008_02090f24;
+#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
 extern u16   GetGlobalU16At6(void);                                 /* lobby slot mask */
 extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
 extern SessionSlotInfo *Slot4_GetIfOccupied(int nSlot);                 /* Slot4_GetIfOccupied */
@@ -76,8 +77,8 @@ static inline void Ov008_BuildGroupMessage(MissionContext *pCtx)
 
     pPacket = pCtx->group.aPacket;
     nMask = GetGlobalU16At6();
-    if (data_ov008_02090f24->bGroupBuilt == 0) {
-        MI_CpuFill8(&data_ov008_02090f24->group, 0, sizeof(Ov008GroupMessage));
+    if (MISSION_CONTEXT->bGroupBuilt == 0) {
+        MI_CpuFill8(&MISSION_CONTEXT->group, 0, sizeof(Ov008GroupMessage));
         for (i = 0; i < SLOT_COUNT; i++) {
             pInfo = Slot4_GetIfOccupied(i);
             if (pInfo != 0) {
@@ -86,7 +87,7 @@ static inline void Ov008_BuildGroupMessage(MissionContext *pCtx)
             pPacket[i].bPending = 1;
             pPacket[i].bJoined = (nMask & (1 << i)) != 0;
         }
-        data_ov008_02090f24->bGroupBuilt = 1;
+        MISSION_CONTEXT->bGroupBuilt = 1;
     }
 }
 
@@ -99,37 +100,37 @@ void *Ov008_MissionLobbyStartTransfer(void)
 
     bStarted = 0;
     pNext = 0;
-    pCtx = data_ov008_02090f24;
+    pCtx = MISSION_CONTEXT;
     if (pCtx->nTransferBusy != 0) {
         Ov008_BuildGroupMessage(pCtx);
         bStarted = 1;
-        pCtx = data_ov008_02090f24;
+        pCtx = MISSION_CONTEXT;
         pCtx->groupSent = pCtx->group;
     } else if (Session_IsReady() != 0) {
-        pCtx = data_ov008_02090f24;
+        pCtx = MISSION_CONTEXT;
         Ov008_BuildGroupMessage(pCtx);
-        pCtx = data_ov008_02090f24;
+        pCtx = MISSION_CONTEXT;
         pCtx->groupSent = pCtx->group;
         MsgQueue_SendGate(GATE_LOBBY, &pCtx->group, sizeof(Ov008GroupMessage));
         bStarted = 1;
-    } else if (data_ov008_02090f24->nListHeader == 1) {
+    } else if (MISSION_CONTEXT->nListHeader == 1) {
         nPlayer = Session_GetLocalPlayerIndex();
-        pCtx = data_ov008_02090f24;
+        pCtx = MISSION_CONTEXT;
         pCtx->join = pCtx->group.aPacket[nPlayer];
         bStarted = 1;
         pCtx->join.nPlayer = nPlayer;
-        data_ov008_02090f24->nListHeader = 0;
+        MISSION_CONTEXT->nListHeader = 0;
     } else {
-        data_ov008_02090f24->nListHeader = 0;
-        pCtx = data_ov008_02090f24;
+        MISSION_CONTEXT->nListHeader = 0;
+        pCtx = MISSION_CONTEXT;
         pCtx->join.bPending = pCtx->nRetryCount == 0;
-        data_ov008_02090f24->join.nPlayer = Session_GetLocalPlayerIndex();
-        data_ov008_02090f24->join.nTarget = -1;
-        data_ov008_02090f24->join.nArg = 0;
-        MsgQueue_SendGate(GATE_LOBBY, &data_ov008_02090f24->join, sizeof(Ov008JoinPacket));
+        MISSION_CONTEXT->join.nPlayer = Session_GetLocalPlayerIndex();
+        MISSION_CONTEXT->join.nTarget = -1;
+        MISSION_CONTEXT->join.nArg = 0;
+        MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->join, sizeof(Ov008JoinPacket));
     }
     if (bStarted != 0) {
-        data_ov008_02090f24->nTransferB = 1;
+        MISSION_CONTEXT->nTransferB = 1;
         StoreToGlobalPtr4Field28(2);
         pNext = Ov008_MissionLobbyPoll;
     }

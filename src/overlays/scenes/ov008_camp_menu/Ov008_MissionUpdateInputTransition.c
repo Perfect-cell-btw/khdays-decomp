@@ -1,8 +1,9 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Finishes the mission input transition: releases the service, and either restarts it in exit mode
  * or pushes the display config (with the key block when needed), restarts it and installs the
  * entry-update handler; marks it active. */
-
-#include "nitro/types.h"
 
 typedef struct {
     u32 field_0;
@@ -29,7 +30,7 @@ typedef struct {
     u32 exit_requested;
 } MissionContext;
 
-extern MissionContext *data_ov008_02090f24;
+#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
 
 extern void Ov105_WH_SetReceiver(void *callback);
 extern void ReleaseServiceInstance(void);
@@ -45,13 +46,13 @@ void Ov008_MissionUpdateInputTransition(void) {
     MissionDisplayConfig key_config;
     MissionKeyBlock *key_block;
 
-    data_ov008_02090f24->transition_requested = 0;
-    if (data_ov008_02090f24->exit_requested == 0) {
+    MISSION_CONTEXT->transition_requested = 0;
+    if (MISSION_CONTEXT->exit_requested == 0) {
         Ov105_WH_SetReceiver(0);
     }
     ReleaseServiceInstance();
 
-    if (data_ov008_02090f24->exit_requested != 0) {
+    if (MISSION_CONTEXT->exit_requested != 0) {
         exit_config.mode = 1;
         exit_config.keycode = 1;
         func_02031600(&exit_config);
@@ -60,7 +61,7 @@ void Ov008_MissionUpdateInputTransition(void) {
         if (func_01ff8128() == 0) {
             Ov008_MissionPushDisplayConfig();
         } else {
-            key_block = &data_ov008_02090f24->key_block;
+            key_block = &MISSION_CONTEXT->key_block;
             Ov008_MissionPushDisplayConfig();
             key_config.mode = 3;
             key_config.raw_keys = key_block->raw_keys;
@@ -71,5 +72,5 @@ void Ov008_MissionUpdateInputTransition(void) {
         StoreGlobalPtrArray4At0c(0xd, Ov008_MissionApplyEntryUpdate);
     }
 
-    data_ov008_02090f24->active_value = 1;
+    MISSION_CONTEXT->active_value = 1;
 }

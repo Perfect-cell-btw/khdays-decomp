@@ -1,7 +1,8 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Synchronises the mission selection confirmations with the peers: sends the local entry, collects
  * theirs and, once every entry is confirmed, starts the lobby transfer. */
-
-#include "nitro/types.h"
 
 typedef void (*MissionCallback)(void);
 
@@ -53,7 +54,7 @@ typedef struct {
     u16 messageHandle;
 } MissionContext;
 
-extern MissionContext *data_ov008_02090f24;
+#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
 extern int Ov008_IsSceneState4(void);
 extern int Session_IsReady(void);
 extern u16 GetGlobalU16At6(void);
@@ -67,7 +68,7 @@ extern void Ov008_MissionLobbyStartTransfer(void);
 MissionCallback Ov008_UpdateSelectionConfirmationState(void) {
     MissionCallback nextState = 0;
     int synchronizationComplete = 0;
-    MissionContext *context = data_ov008_02090f24;
+    MissionContext *context = MISSION_CONTEXT;
 
     if (context->exitRequested != 0) {
         synchronizationComplete = 1;
@@ -77,7 +78,7 @@ MissionCallback Ov008_UpdateSelectionConfirmationState(void) {
         }
 
         if (Session_IsReady() != 0) {
-            if (data_ov008_02090f24->entryUpdateMask != 0) {
+            if (MISSION_CONTEXT->entryUpdateMask != 0) {
                 u16 sessionMask = GetGlobalU16At6();
                 int connectedCount = 0;
                 int entryOffset = sizeof(MissionEntry);
@@ -86,10 +87,10 @@ MissionCallback Ov008_UpdateSelectionConfirmationState(void) {
 
                 for (playerIndex = 1; playerIndex < 4;
                      playerIndex++, entryOffset += sizeof(MissionEntry)) {
-                    data_ov008_02090f24->sendBlock.peerStatus[playerIndex] = 0;
+                    MISSION_CONTEXT->sendBlock.peerStatus[playerIndex] = 0;
                     if ((sessionMask & (1 << playerIndex)) != 0) {
                         connectedCount++;
-                        if (((MissionEntryFlags *)((u8 *)data_ov008_02090f24 +
+                        if (((MissionEntryFlags *)((u8 *)MISSION_CONTEXT +
                                 0x4ad + entryOffset))->confirmed) {
                             confirmedCount++;
                         }
@@ -99,25 +100,25 @@ MissionCallback Ov008_UpdateSelectionConfirmationState(void) {
                 if (connectedCount != 0 && connectedCount == confirmedCount) {
                     synchronizationComplete = 1;
                 }
-                data_ov008_02090f24->entryUpdateMask = 0;
+                MISSION_CONTEXT->entryUpdateMask = 0;
             }
 
             Ov008_RefreshSelectionSendBlock();
-            context = data_ov008_02090f24;
+            context = MISSION_CONTEXT;
             context->sendBlock.flags.sendStarted = 1;
-            MsgQueue_SendGate(0xd, (u16 *)&data_ov008_02090f24->sendBlock,
+            MsgQueue_SendGate(0xd, (u16 *)&MISSION_CONTEXT->sendBlock,
                           sizeof(MissionSendBlock));
         } else {
             u32 playerIndex;
 
-            context = data_ov008_02090f24;
+            context = MISSION_CONTEXT;
             playerIndex = Session_GetLocalPlayerIndex();
             if (!context->liveEntries.entries[playerIndex].flags.confirmed) {
                 context->localEntry.flags.confirmed = 1;
-                data_ov008_02090f24->localEntry.playerIndex =
+                MISSION_CONTEXT->localEntry.playerIndex =
                     (u8)Session_GetLocalPlayerIndex();
                 MsgQueue_SendGate(0xd,
-                              (u16 *)&data_ov008_02090f24->localEntry,
+                              (u16 *)&MISSION_CONTEXT->localEntry,
                               sizeof(MissionEntry));
             } else {
                 context->messageHandle = 0xffff;

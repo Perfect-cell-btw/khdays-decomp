@@ -1,3 +1,4 @@
+#include "game/ov008_camp_menu.h"
 /* Ov008_MissionPushDisplayConfig -- push the current display config (mode 2) plus the live key
  * state to func_02031600. The scene object carries its key block at +0x42c: the raw key word
  * at +4 and its packed form at +8, which Ov008_CountPlayersInMask turns into the handler's key code.
@@ -13,7 +14,7 @@
  */
 extern int  Ov008_CountPlayersInMask(short *keys);
 extern void func_02031600(void *cfg);
-extern int  data_ov008_02090f24;
+#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
 
 struct Ov006KeyBlock {
     int f0;
@@ -30,7 +31,7 @@ struct Ov006DispCfg {
 
 void Ov008_MissionPushDisplayConfig(void) {
     struct Ov006DispCfg cfg;
-    int *obj = *(int **)&data_ov008_02090f24;
+    int *obj = (int *)data_ov008_02090f24.pContext;
     struct Ov006KeyBlock *kb = (struct Ov006KeyBlock *)((char *)obj + 0x42c);
     cfg.mode = 2;
     cfg.rawkeys = kb->raw;

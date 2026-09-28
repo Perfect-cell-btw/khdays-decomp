@@ -1,11 +1,12 @@
+#include "game/ov008_camp_menu.h"
 /* flag0/flag1 are read through a 1-bit BITFIELD, not `(x << 31) >> 31`. The explicit
  * shift form folds to `and r1,r1,#1` because the destination is an 8-bit field, which
  * makes the shifts redundant; the bitfield read keeps the ROM's lsl#31/lsr#31 pair
  * (and lsl#30/lsr#31 for bit 1). Same crack as ov022 0208868c. */
 extern void MI_CpuFill8(void *dst, int data, unsigned int size);
 extern int  Ov008_MenuEntryToSlot(int icon);
-extern int  data_ov008_02090f24;
-#define OBJ (*(char **)&data_ov008_02090f24)
+#define MISSION_CONTEXT ((int)data_ov008_02090f24.pContext)
+#define OBJ ((char *)data_ov008_02090f24.pContext)
 struct Ov006RowFlags { unsigned char b0 : 1, b1 : 1; };
 struct Ov006RowInfo {
     unsigned short id;

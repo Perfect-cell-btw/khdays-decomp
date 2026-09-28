@@ -1,10 +1,11 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 #pragma opt_dead_assignments off
 /* Ov006_RefreshSelectionSendBlock -- rebuild the Mission Mode selection-send
  * message from the current session mask and four player records. The four dead
  * initial assignments emit no code under this pragma and reproduce the retail
  * register allocation. */
-
-#include "nitro/types.h"
 
 typedef struct {
     u16 name[11];
@@ -45,7 +46,7 @@ typedef struct {
     int refreshTimer;
 } MissionContext;
 
-extern MissionContext *data_ov008_02090f24;
+#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
 extern const u16 data_ov008_02090bc4[];
 extern u16 func_01ff8138(void);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
@@ -68,18 +69,18 @@ void Ov008_RefreshSelectionSendBlock(void) {
     placeholderName = 0;
     name = 0;
 
-    sendBlock = &data_ov008_02090f24->selectionSendBlock;
+    sendBlock = &MISSION_CONTEXT->selectionSendBlock;
     sessionMask = func_01ff8138();
 
-    data_ov008_02090f24->refreshTimer--;
-    if (data_ov008_02090f24->refreshTimer < 0) {
-        data_ov008_02090f24->refreshTimer = 0;
+    MISSION_CONTEXT->refreshTimer--;
+    if (MISSION_CONTEXT->refreshTimer < 0) {
+        MISSION_CONTEXT->refreshTimer = 0;
     }
 
-    MI_CpuFill8(&data_ov008_02090f24->selectionSendBlock, 0,
+    MI_CpuFill8(&MISSION_CONTEXT->selectionSendBlock, 0,
                 sizeof(MissionSelectionSendBlock));
-    data_ov008_02090f24->selectionSendBlock.sessionValue = VBlank_GetCount();
-    data_ov008_02090f24->selectionSendBlock.sessionMask = sessionMask;
+    MISSION_CONTEXT->selectionSendBlock.sessionValue = VBlank_GetCount();
+    MISSION_CONTEXT->selectionSendBlock.sessionMask = sessionMask;
 
     placeholderName = data_ov008_02090bc4;
 
@@ -87,7 +88,7 @@ void Ov008_RefreshSelectionSendBlock(void) {
         StrCopy16(sendBlock->playerNames[playerIndex], placeholderName);
     }
 
-    context = data_ov008_02090f24;
+    context = MISSION_CONTEXT;
     changed = 0;
     for (playerIndex = 1; playerIndex < 4; playerIndex++) {
         if (context->records.all[playerIndex].status == 1) {
@@ -99,9 +100,9 @@ void Ov008_RefreshSelectionSendBlock(void) {
         context->refreshRequested = 0;
         changed = 1;
     }
-    data_ov008_02090f24->selectionSendBlock.flags.changed = changed;
+    MISSION_CONTEXT->selectionSendBlock.flags.changed = changed;
     if (changed != 0) {
-        data_ov008_02090f24->refreshTimer = 30;
+        MISSION_CONTEXT->refreshTimer = 30;
     }
 
     for (playerIndex = 0; playerIndex < 4; playerIndex++) {
@@ -110,15 +111,15 @@ void Ov008_RefreshSelectionSendBlock(void) {
 
         if ((sessionMask & (1 << playerIndex)) != 0) {
             if (playerIndex == 0) {
-                name = data_ov008_02090f24->records.split.local.name;
+                name = MISSION_CONTEXT->records.split.local.name;
             } else {
                 if (Ov008_IsMissionMenuBusy() == 0) {
-                    name = data_ov008_02090f24->records.split
+                    name = MISSION_CONTEXT->records.split
                         .remote[playerIndex - 1].name;
                 }
-                status = data_ov008_02090f24->records
+                status = MISSION_CONTEXT->records
                     .all[playerIndex].status;
-                if (data_ov008_02090f24->selectionSendBlock.flags.sendStarted) {
+                if (MISSION_CONTEXT->selectionSendBlock.flags.sendStarted) {
                     status = 0;
                 }
             }

@@ -1,7 +1,8 @@
+#include "game/ov008_camp_menu.h"
 /* Mode byte of the link state (+0x100). */
 
-extern char *data_ov008_02090f24;
+#define MISSION_CONTEXT ((char *)data_ov008_02090f24.pContext)
 int Ov008_Link_GetMode(void)
 {
-    return *(unsigned char *)(data_ov008_02090f24 + 0x100);
+    return *(unsigned char *)(MISSION_CONTEXT + 0x100);
 }

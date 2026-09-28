@@ -1,8 +1,9 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 #pragma opt_dead_assignments off
 /* Ov006_MissionPeerSyncState -- synchronize Mission Mode peer names and
  * presence latches while the scene connection state advances. */
-
-#include "nitro/types.h"
 
 typedef void (*MissionCallback)(void);
 
@@ -49,7 +50,7 @@ typedef struct {
     u8 payload[0x50];
 } MissionSelectionBuffer;
 
-extern MissionContext *data_ov008_02090f24;
+#define MISSION_CONTEXT (*(MissionContext **)&data_ov008_02090f24.pContext)
 extern u16 data_ov008_02090f40[];
 
 extern int Game_PollSceneAlive(void);
@@ -77,13 +78,13 @@ MissionCallback Ov008_MissionPeerSyncState(void) {
         MissionContext *context;
 
         Ov105_SetParamWord8(0x800356);
-        context = data_ov008_02090f24;
+        context = MISSION_CONTEXT;
         Game_ReadLocalProfile(&localProfile);
         StrCopy16(context->records.split.local.name,
                       (u16 *)localProfile.payload);
         *(u16 *)&context->records.split.local.status = 1;
-        data_ov008_02090f24->remotePeerCapacity = 3;
-        MI_CpuCopy8(&data_ov008_02090f24->records.split.local,
+        MISSION_CONTEXT->remotePeerCapacity = 3;
+        MI_CpuCopy8(&MISSION_CONTEXT->records.split.local,
                     data_ov008_02090f40, sizeof(MissionPeerRecord));
         Ov105_WH_StartMeasureChannel();
         break;
@@ -101,7 +102,7 @@ MissionCallback Ov008_MissionPeerSyncState(void) {
 
         peerIndex = 0;
         remotePeerActive = 0;
-        remotePeerActive = data_ov008_02090f24->remotePeerActive;
+        remotePeerActive = MISSION_CONTEXT->remotePeerActive;
         sessionMask = func_01ff8138();
 
         peerIndex = 1;
@@ -111,25 +112,25 @@ MissionCallback Ov008_MissionPeerSyncState(void) {
             if (Ov008_GetPeerTileUploadPending(peerIndex) != 0) {
                 Ov008_UploadSlotTiles(
                     peerIndex,
-                    data_ov008_02090f24->records.split.remote[peerIndex - 1].name,
+                    MISSION_CONTEXT->records.split.remote[peerIndex - 1].name,
                     sizeof(MissionPeerRecord));
                 remoteIndex = peerIndex - 1;
                 remotePeerActive[remoteIndex] = 1;
-                data_ov008_02090f24->transitionRequested = 1;
-                data_ov008_02090f24->sendBusy = 0;
+                MISSION_CONTEXT->transitionRequested = 1;
+                MISSION_CONTEXT->sendBusy = 0;
             } else {
                 remoteIndex = peerIndex - 1;
                 if (remotePeerActive[remoteIndex] != 0 &&
                     (sessionMask & (1 << peerIndex)) == 0) {
                     remotePeerActive[remoteIndex] = 0;
-                data_ov008_02090f24->selectionSendBlock.peerStatus[peerIndex] = 0;
+                MISSION_CONTEXT->selectionSendBlock.peerStatus[peerIndex] = 0;
                 MI_CpuFill8(
-                    data_ov008_02090f24->selectionSendBlock.playerNames[peerIndex],
-                    0, sizeof(data_ov008_02090f24->selectionSendBlock.playerNames[0]));
+                    MISSION_CONTEXT->selectionSendBlock.playerNames[peerIndex],
+                    0, sizeof(MISSION_CONTEXT->selectionSendBlock.playerNames[0]));
                 MI_CpuFill8(
-                    &data_ov008_02090f24->records.split.remote[peerIndex - 1], 0,
+                    &MISSION_CONTEXT->records.split.remote[peerIndex - 1], 0,
                     sizeof(MissionPeerRecord));
-                    data_ov008_02090f24->refreshRequested = 1;
+                    MISSION_CONTEXT->refreshRequested = 1;
                 }
             }
             peerIndex = (u8)(peerIndex + 1);
@@ -142,13 +143,13 @@ MissionCallback Ov008_MissionPeerSyncState(void) {
         Ov008_RefreshSelectionSendBlock();
         if (Ov008_MissionIsTransitionDone() != 0) {
             Ov008_SendPacket(
-                &data_ov008_02090f24->selectionSendBlock,
+                &MISSION_CONTEXT->selectionSendBlock,
                 sizeof(MissionSelectionSendBlock));
         }
         break;
     }
     default:
-        data_ov008_02090f24->sendBusy = 0;
+        MISSION_CONTEXT->sendBusy = 0;
         nextState = Ov008_MissionIdleStateNoOp;
         break;
     }

@@ -1,3 +1,6 @@
+#include "nitro/types.h"
+
+#include "game/ov008_camp_menu.h"
 /* Ov008_MissionLobbyJoin -- Ov008_MissionLobbyJoin: the lobby state that settles
  * the local join packet.  With the session ready, the local slot's packet
  * (+0x4ac, 6 bytes per player, slot from OS_IsTickAvailable) drops its pending
@@ -8,8 +11,6 @@
  * state stays.  Any other path arms handler 0207a254 on gate 0xd (state 1) and
  * moves on to 0207a424.
  */
-
-#include "nitro/types.h"
 
 #define GATE_LOBBY 0xd
 
@@ -32,7 +33,7 @@ typedef struct MissionContext {
     Ov008JoinPacket join;     /* 0x4e0 */
 } MissionContext;
 
-extern MissionContext *data_ov008_02090f24;
+#define MISSION_CONTEXT ((MissionContext *)data_ov008_02090f24.pContext)
 extern int  Session_IsReady(void);                                  /* Session_IsReady */
 extern u16  func_01ff8128(void);                             /* local slot */
 extern u32  Session_GetLocalPlayerIndex(void);                                  /* Session_GetLocalPlayerIndex */
@@ -47,22 +48,22 @@ void *Ov008_MissionLobbyJoin(void)
     MissionContext *pCtx;
 
     if (Session_IsReady()) {
-        data_ov008_02090f24->aPacket[func_01ff8128()].bPending = 0;
-        pCtx = data_ov008_02090f24;
+        MISSION_CONTEXT->aPacket[func_01ff8128()].bPending = 0;
+        pCtx = MISSION_CONTEXT;
         pCtx->join = pCtx->aPacket[func_01ff8128()];
     } else {
-        pCtx = data_ov008_02090f24;
+        pCtx = MISSION_CONTEXT;
         if (pCtx->nListHeader != 0) {
             if (pCtx->aPacket[Session_GetLocalPlayerIndex()].bPending) {
                 pCtx->nListHeader = 0;
             } else {
-                pCtx = data_ov008_02090f24;
+                pCtx = MISSION_CONTEXT;
                 pCtx->join = pCtx->aPacket[Session_GetLocalPlayerIndex()];
             }
         }
-        if (data_ov008_02090f24->nListHeader == 0) {
-            data_ov008_02090f24->nListHeader = 0;
-            MsgQueue_SendGate(GATE_LOBBY, &data_ov008_02090f24->join, sizeof(Ov008JoinPacket));
+        if (MISSION_CONTEXT->nListHeader == 0) {
+            MISSION_CONTEXT->nListHeader = 0;
+            MsgQueue_SendGate(GATE_LOBBY, &MISSION_CONTEXT->join, sizeof(Ov008JoinPacket));
             return 0;
         }
     }

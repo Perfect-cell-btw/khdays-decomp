@@ -1,3 +1,4 @@
+#include "game/ov008_camp_menu.h"
 /* Ov008_TickKeySharingShutdown -- tick the key-sharing shutdown timer. Does nothing while the session
  * handle at +4 is null. Otherwise counts the halfword at (session + 0x400) + 0xf2 down by one per
  * call and returns; when it reaches zero, ends key sharing for that handle and clears the handle.
@@ -12,24 +13,23 @@
  *    pointer into r1 and produced the "swap".
  *
  * 2. THE BASE MUST BE ADVANCED IN PLACE. Written as one expression,
- *    `base = (char *)(*(int *)&data + 0x400);` mwcc loads the pointer into r1 and lands the sum in
+ *    `base = (char *)pContext + 0x400;` mwcc loads the pointer into r1 and lands the sum in
  *    a fresh r2, then puts the counter in r1 -- the last two registers stay swapped. Split into
- *    `base = (char *)*(int *)&data;` then `base += 0x400;` and mwcc updates r1 in place
+ *    `base = (char *)pContext;` then `base += 0x400;` and mwcc updates r1 in place
  *    (`ldr r1,[r1]` / `add r1,r1,#0x400`), leaving r2 for the counter exactly as the ROM does.
  *    Same total instructions either way; only the register choice differs.
  */
-extern int data_ov008_02090f24;
 extern int func_02023ad0(int handle);
 
 void Ov008_TickKeySharingShutdown(void) {
     char *base;
     unsigned short c;
-    int handle = *(int *)((char *)&data_ov008_02090f24 + 4);
+    int handle = (int)data_ov008_02090f24.pController;
 
     if (handle == 0) {
         return;
     }
-    base = (char *)*(int *)&data_ov008_02090f24;
+    base = (char *)data_ov008_02090f24.pContext;
     base += 0x400;
 
     c = *(unsigned short *)(base + 0xf2);
@@ -38,5 +38,5 @@ void Ov008_TickKeySharingShutdown(void) {
         return;
     }
     func_02023ad0(handle);
-    *(int *)((char *)&data_ov008_02090f24 + 4) = 0;
+    data_ov008_02090f24.pController = 0;
 }
