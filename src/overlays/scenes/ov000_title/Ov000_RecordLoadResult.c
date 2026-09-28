@@ -2,8 +2,7 @@
  * -1) into the entry's mappedResult, latches it into publishedResult if still unset (-1), and on
  * success (result 0) builds the entry's working lists. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov000LoadEntry {
     u16 profileValue;

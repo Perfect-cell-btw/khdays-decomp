@@ -5,10 +5,8 @@
  * scaled by 1/scale is registered as an OBJ affine parameter (TableAppendRecord), and the cell is
  * expanded at +0xc through NNS_G2dMakeCellToOams into a local 128-entry OAM buffer that
  * DispObj_FinishOams hands to the renderer with the parameter index. */
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int fx32;
-typedef int BOOL;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { fx32 _00, _01, _10, _11; } MtxFx22;
 typedef struct { fx32 x, y; } NNSG2dFVec2;

@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Ov002_LookupChannelEntry(void *pName);
 extern void Entity_Register(char *pObj, int nRes, int a, int b);

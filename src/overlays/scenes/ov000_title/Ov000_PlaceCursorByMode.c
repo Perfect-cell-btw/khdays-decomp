@@ -1,7 +1,7 @@
 /* Places the title cursor on the row for the mode (raised when the list is shifted) and shows or
  * hides it. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

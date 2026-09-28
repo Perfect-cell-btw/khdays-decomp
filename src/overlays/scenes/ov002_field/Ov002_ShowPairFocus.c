@@ -8,8 +8,7 @@
  * ARM.
  */
 
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int Ov002_ForwardToSubDc(u16 nCue);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int hCue);

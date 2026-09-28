@@ -1,4 +1,4 @@
-typedef int BOOL;
+#include "nitro/types.h"
 
 /* Arena ids, in the order NitroSDK declares them. Id 1 is the sub-processor's
    private slice of main memory and is not touched here; id 2 is the extended

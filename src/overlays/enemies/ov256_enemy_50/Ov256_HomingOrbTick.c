@@ -7,8 +7,7 @@
  * spawns effect 4 at the +8 point and pose 0 is requested. The mask keeps only the entities still in
  * the sphere. Without a target, past 7.0, or once blocked/grounded (+0x17a bits 0, 1, 3) the orb
  * bursts the same way. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 center; int nRadius; } Sphere;
 typedef struct { u16 lo : 8; u16 hi : 8; } Hw60;

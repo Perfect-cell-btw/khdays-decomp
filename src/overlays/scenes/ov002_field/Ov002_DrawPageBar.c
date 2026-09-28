@@ -8,7 +8,7 @@
  * ARM.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     char pad000[0xc];

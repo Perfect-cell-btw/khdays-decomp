@@ -12,8 +12,7 @@
  *   data_ov008_0208ee5c: Ov008_MainMenu_SetupTextSurfaces
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov008_0208edec[4] = {
     0, 2, 0, 0,

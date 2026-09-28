@@ -3,7 +3,7 @@
  * volleys done (+0x68 >= 2) the actor recovers (020ce8c8). Each volley fires once the clock passes
  * its step (2 then 5 x 0x88): a launch (020cc9e0) that finds no free helper ends in 020ce918,
  * otherwise the volley counts; past 0x440 the clock resets and the actor recovers. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int v[2]; } Steps;
 struct Ov283VolleyTmpl { u8 pairs[4]; Steps steps; };

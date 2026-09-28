@@ -1,9 +1,7 @@
 /* Sends the shared snapshot in chunks as the slowest peer acknowledges them (host) or collects it
  * (clients), then commits it. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MessageHeader {
     u8 messageType : 4;

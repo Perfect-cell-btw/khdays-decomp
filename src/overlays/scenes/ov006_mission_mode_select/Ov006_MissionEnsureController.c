@@ -1,6 +1,6 @@
 /* Creates the mission select controller instance when it does not exist. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u32 field_0;

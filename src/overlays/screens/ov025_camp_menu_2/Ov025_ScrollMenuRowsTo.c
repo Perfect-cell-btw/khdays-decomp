@@ -8,7 +8,7 @@
  * track span is a named local in the first arm (a bare product puts the span in
  * the multiplier slot); the layout helper takes two arguments.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008LayoutCtx2 {
     u8  pad_0000[0x2f8];

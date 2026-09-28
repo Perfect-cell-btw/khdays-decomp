@@ -6,8 +6,7 @@
  * Knocked out the next move is 3; carrying a rider in move 4 the +0x3c grip loses 1.0; a free
  * actor in move 7 shrugs off the first 3 hits (+0x74), otherwise every third hit (+0x73) the next
  * move is 0xa and 9 before. Returns 0 when ignored, else 1. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct ReactionModes { u8 normal[2]; u8 special[2]; };
 struct HitFlags { unsigned int low : 16; unsigned int kind : 16; };

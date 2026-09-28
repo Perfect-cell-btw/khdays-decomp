@@ -6,7 +6,7 @@
  * tilemap layers to it, enables the decoder and the two display hooks, and
  * finally opens the streams. Only a successful open raises the playing bit.
  */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct MobiClipOpenRequest {
     const char *pszStream0;

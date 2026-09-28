@@ -1,6 +1,5 @@
 /* Ov171_ConstructSubitem: sub-item constructor of the ov171 enemy (x2), variant of the matched ov175 sibling (four handlers, latch 0x64c). */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     char pad_0000[0x5c];

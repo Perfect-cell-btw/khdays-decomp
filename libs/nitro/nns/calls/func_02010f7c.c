@@ -1,9 +1,5 @@
-typedef unsigned long u32;
-typedef unsigned short u16;
-typedef int BOOL;
+#include "nitro/types.h"
 
-#define TRUE 1
-#define FALSE 0
 #define NULL ((void *)0)
 
 #define NNS_GFD_TEXSIZE_MIN 0x10

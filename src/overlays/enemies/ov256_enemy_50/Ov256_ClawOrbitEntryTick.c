@@ -3,7 +3,7 @@
  * takes the +0xc anchor. The timer runs and the claw moves (020d1400 1, 3); once the part's animation
  * ends the orbit count +0x64 = 1, the timer and the +0x6c flag clear, the part takes motion 4 and the
  * node moves on to 020d1d88. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

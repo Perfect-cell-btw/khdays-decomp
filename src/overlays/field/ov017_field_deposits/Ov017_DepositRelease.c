@@ -2,8 +2,7 @@
  * node's item (+0x2c, 0202ba18) and each of the three sequence nodes the definition names
  * (+0x1b0 for def +0x58, +0x2b8 for def +0x68, +0x3c0 for def +0x78; 0202a7dc), then drops
  * the model-bound bit (bit 2 of +0x12). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov017DepositDef {
     u8   pad_00[0x58];

@@ -1,8 +1,6 @@
 /* Binds the node animation and maps each animated node name to its model index. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void MIi_CpuClear16(u16 data, void *destp, u32 size);
 extern int NNS_G3dGetResDictIdxByName(void *p, void *q);

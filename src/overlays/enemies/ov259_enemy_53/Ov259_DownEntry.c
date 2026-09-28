@@ -4,7 +4,7 @@
  * +0x1ae are set. Sound 0x172/0x1b fires at the +0x10 point, the actor is knocked back there (mode
  * 4), pose 5 plays on the actor and its partner, the +0x384 rig closes (020d1764), bit 6 of the +0x60
  * high byte drops, pose 0x16 is queued (020cd628) and the node moves on to 020cfc40. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);

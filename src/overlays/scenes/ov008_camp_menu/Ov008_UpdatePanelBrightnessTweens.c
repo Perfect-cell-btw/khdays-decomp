@@ -1,6 +1,4 @@
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed int s32;
+#include "nitro/types.h"
 
 typedef struct TweenFlags {
     u32 started : 1;

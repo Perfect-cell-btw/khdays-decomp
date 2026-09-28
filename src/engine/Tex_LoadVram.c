@@ -2,9 +2,7 @@
  * (data_0204bc08): the plain texel data goes to its vram key (<< 3) and the block is flagged
  * loaded; the 4x4-compressed texels follow at their key, their palette indices at the matching
  * GX_COMP4x4_PLTT_IDX address (half the size), and that part is flagged loaded too. */
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u32 vramKey;        /* 0x00 */

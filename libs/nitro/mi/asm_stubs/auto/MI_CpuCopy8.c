@@ -1,4 +1,4 @@
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* NitroSDK alignment-aware byte-copy primitive. */
 asm void MI_CpuCopy8(register const void *source, register void *destination,

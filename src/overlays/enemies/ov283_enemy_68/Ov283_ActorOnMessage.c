@@ -1,7 +1,7 @@
 /* Message handler of the ov283 actor: a spawn message (kind 5) unpacks its position into a transform
  * and starts the +0x3ec effect pair of the sub id: 0 and 1 at the position scaled 2.0, 2 and 4 on
  * the left hand (+0x394), 3 and 5 on the right hand (+0x398). The base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[11]; } SrtTransform;
 struct EffectPair { int res; int handle; };

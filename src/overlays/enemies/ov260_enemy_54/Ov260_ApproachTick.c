@@ -3,7 +3,7 @@
  * +0x190 point when farther than 5.5, else the point 8.0 short of it along the approach (+0x44), or
  * none. Once the partner holds no queued move pose 2 plays, the part takes motion 1, +0x70 and the
  * +0x7b flag clear and the node moves on to 020cdecc. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

@@ -1,6 +1,5 @@
-typedef signed long fx32;
-typedef signed long long fx64;
-typedef signed long long fx64c;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x, y, z;
@@ -19,8 +18,6 @@ typedef struct MtxFx44 {
     fx32 _20, _21, _22, _23;
     fx32 _30, _31, _32, _33;
 } MtxFx44;
-
-typedef unsigned long u32;
 
 typedef struct NNSG3dGlb {
     u32 cmd0;

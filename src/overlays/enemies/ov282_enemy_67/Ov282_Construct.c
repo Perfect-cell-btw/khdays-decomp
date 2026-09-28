@@ -7,7 +7,7 @@
  * +0x3d4 slot for the ov282 3cdc child; reserves the +0x22c and +0x144 collision handles
  * (+0x3b0/+0x3b4) from a zero seed pointing up with scale 1.0 and radius 1.25, and loads sound
  * 0x117. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[8]; } PoseTable;
 typedef struct { Vec3 pos; Vec3 up; int scale; int radius; } Seed;

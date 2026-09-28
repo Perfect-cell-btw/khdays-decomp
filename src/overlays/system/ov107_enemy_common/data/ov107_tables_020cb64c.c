@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov107_AiState_ApplyHit (020c5cfc): const struct Message12 data_ov107_020cb64c; */
 const u8 data_ov107_020cb64c[12] = {

@@ -9,7 +9,7 @@
  * emits `bic #1`. The root context pointer is held at data_ov002_0207fa00.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int  func_0201e428(void);
 extern void Ov002_LazyInitClass(void);

@@ -9,8 +9,7 @@
  *   - no press: clears both 0xc118 and 0xc11c.
  * If nothing is active or held afterwards it returns; otherwise it writes the found point's
  * coordinates into the current slot (0xc120/0xc122). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct TouchPoint {
     u16 x;       /* 0x0 */

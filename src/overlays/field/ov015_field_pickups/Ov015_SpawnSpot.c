@@ -4,9 +4,7 @@
  * the kind (+0x10), the handler block (+0xc = 02080d30), the collidable flag (bit 3 of
  * +0x12), the GameState field / bit (+0x14 / +0x16), the step 0x84 (+0x17), record it in
  * the table's per-kind slot (+0x154) and register it in bucket nKind (ov002 02076480). */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

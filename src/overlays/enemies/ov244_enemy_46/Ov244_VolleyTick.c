@@ -6,7 +6,7 @@
  * (020cd3f0), and reaction 0x113 mode 0xe fires at the muzzle. After 0.33, once the +0x30 flag
  * clears, the +0x14 volley count advances: the fourth volley sends the "done" message, plays pose 9
  * and hands over to 020d08a4; any other sends the "next" message, resets the clock and plays pose 8. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
 typedef struct { u16 id; u16 arg; } Msg4;

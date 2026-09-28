@@ -3,8 +3,7 @@
  * owner's +0x24 hook receives note 2 of data_ov257_020d325c, animation 0x16 plays looped, +0x44,
  * +0x48 and +0x65 clear, +0x68 takes the owner's hit points (+0x21a) as a fixed-point value and the
  * tick hands over to Ov257_HealBurstTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo; u16 hi; } Cmd4;
 

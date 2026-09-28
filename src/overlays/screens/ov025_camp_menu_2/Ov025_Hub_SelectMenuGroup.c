@@ -4,7 +4,7 @@
  * draw its caption. Twin of ov008 Ov008_SelectMenuGroupAndDrawCaption (byte-identical code; the ov025 build of
  * the same menu unit). The unused zero-initialised static fixes the order mwcc emits the two
  * local initialiser templates in ([12, 13] before [10, 11]). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;
@@ -72,7 +72,6 @@ extern void Text_DrawWithShadow(void *surface, int id, int x, int y,
                           void *buffer, int flags);
 extern void EnqueueObjGfxCommand(void *surface);
 
-
 extern const Ov008MenuIdList7 data_ov025_020b38b8;
 extern const Ov008MenuGroupCounts data_ov025_020b3888;
 
@@ -102,7 +101,6 @@ Ov025_Hub_SelectMenuGroup(Ov008MenuRenderer *renderer, int selectedGroup)
     int count;
     unsigned int selected;
     Ov008MenuEntry *loopEntry;
-
 
     context = Ov025_GetContext();
     groups[0] = group0.ids;
@@ -171,7 +169,4 @@ Ov025_Hub_SelectMenuGroup(Ov008MenuRenderer *renderer, int selectedGroup)
     Text_DrawWithShadow(renderer->surface4c, 0x56, 0, 2, buffer, 1);
     EnqueueObjGfxCommand(renderer->surface4c);
 }
-
-
-
 

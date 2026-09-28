@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov002EventHandler Ov002EventHandler;
 typedef struct Ov002EventSlot Ov002EventSlot;

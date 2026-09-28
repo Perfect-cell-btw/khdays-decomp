@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Bounce-shot flight tick: the shot faces its +0x54 velocity (+0x34), the +0x2c timer accumu (020d4a8c): const Cmd14 data_ov209_020d65fc; */
 const u8 data_ov209_020d65fc[16] = {

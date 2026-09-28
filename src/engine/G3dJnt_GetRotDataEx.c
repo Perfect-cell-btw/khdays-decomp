@@ -1,11 +1,8 @@
 /* NitroSystem G3D: rotation matrix of a joint animation at a frame with interpolation across the
  * loop point. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef signed long fx32;
-typedef int BOOL;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x, y, z;

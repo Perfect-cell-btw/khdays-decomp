@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Advance 02030788, then map the current 020315c0 slot to a priority table, storing its inde (0204ee50): int data_ov009_02055fb0; */
 const int data_ov009_02055fb0[20] = {

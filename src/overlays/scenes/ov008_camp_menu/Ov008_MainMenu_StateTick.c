@@ -22,8 +22,7 @@
  * are leftover-register phantoms; only the registers set here are real.
  */
 
-typedef unsigned int       u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 /* Object-list init parameters: a 3-word template copied from data_ov008_0208edd4, with
  * the last two words overwritten for the main-menu list geometry in state 0. */

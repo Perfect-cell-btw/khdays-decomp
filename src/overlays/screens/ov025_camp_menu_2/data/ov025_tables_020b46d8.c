@@ -26,8 +26,7 @@
  *   data_ov025_020b4962: (no C reader yet)
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov025_020b46d8[4] = {
     47, 44, 45, 46,

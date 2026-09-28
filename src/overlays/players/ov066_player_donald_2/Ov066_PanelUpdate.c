@@ -6,8 +6,7 @@
  * the charge has run its full course, the energy is clamped back down. Finally the
  * registered predicate at +0x668 decides whether the panel has finished: if it has, the
  * cached vectors are cleared and the teardown handler runs. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

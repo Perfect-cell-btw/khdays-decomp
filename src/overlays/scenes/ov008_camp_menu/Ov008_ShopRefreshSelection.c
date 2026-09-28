@@ -13,9 +13,7 @@
  * compare reads ctx->view.nRow (a second address path, so the earlier load
  * is not reused); declarations i, nOffset, tab constants, pRecord.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define KIND_RECIPE  3
 #define ICON_RECIPE  0x3f

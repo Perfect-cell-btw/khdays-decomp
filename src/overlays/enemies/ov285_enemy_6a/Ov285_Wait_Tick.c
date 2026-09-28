@@ -3,8 +3,7 @@
  * horizontal angle from the actor to the target. Finally it clears bits 6 and 7 of the high byte of
  * wFlags60, stops the actor's motion, resets the elapsed counter and installs the next state. */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int nX;

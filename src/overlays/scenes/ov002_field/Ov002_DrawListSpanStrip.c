@@ -15,7 +15,7 @@
  * running accumulators, and the loop bound is left inline: both are
  * load-bearing, because that is what lets the compiler build the induction
  * variables itself and place them where the ROM does. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Ov002_GetItemResource(int nTag);
 extern void Ov002_SelectEntry(int nTag);

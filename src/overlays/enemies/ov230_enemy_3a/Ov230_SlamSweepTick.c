@@ -6,7 +6,7 @@
  * packet whose normal points from the +0x494 point to it (flattened) through its +0x1c4 handler.
  * Once the +4 item's +0xad byte clears, every third slam requests sub-state 9; otherwise a d100
  * picks 6 (below 40), 9 (below 60), 0xa (below 80) or 2, and the state ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 typedef struct { int m[9]; } Mtx33;

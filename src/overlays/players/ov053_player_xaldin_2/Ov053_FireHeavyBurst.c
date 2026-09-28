@@ -5,8 +5,7 @@
  * 0x1d40, flags 0x205, the fixed 0xa00/0x66/0xa00 extent and the extra word set, and submits
  * them; if the submit takes and neither busy bit of +0x26bc is set, it marshals record 0 (kind
  * 1) at the +0x26c8 muzzle with the actor's heading and arms the +0x47a/+0x47b pair. */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

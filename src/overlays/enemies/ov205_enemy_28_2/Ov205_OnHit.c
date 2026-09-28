@@ -7,8 +7,7 @@
  * the parameter and hit point are recorded and a positive +0x10 damage that is not the
  * 8|0x80/0x80 special fires reaction 0x132 with the mode alternating through the +0x46 counter
  * (2/3 for flags 0x22, 1/0 otherwise). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vec3 { int x; int y; int z; };
 

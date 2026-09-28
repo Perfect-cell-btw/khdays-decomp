@@ -1,7 +1,7 @@
 /* Initialises the enemy's sub-actor: installs its handlers and flags, creates its model and links
  * it to its owner. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct ChildIds {
     int values[2];

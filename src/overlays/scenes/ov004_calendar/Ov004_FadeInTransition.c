@@ -1,6 +1,6 @@
 /* Fades the calendar in and, when done, sets the rolling speed from the number of days to roll. */
 
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef struct {
     unsigned char opaque0000[0xaf8];
     int transitionPhase;

@@ -1,4 +1,4 @@
-typedef signed char s8;
+#include "nitro/types.h"
 
 /* One entry of the context's big table: 0x10c bytes with a live flag near the
  * end.  Only the flag and the stride are established here. */

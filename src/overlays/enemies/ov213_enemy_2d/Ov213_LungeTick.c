@@ -6,8 +6,7 @@
  * owner's +0x24 hook, its bit is set and reaction 0x122 mode 7 fires there. The +0x1c distance
  * accumulates the speed; past 16.0 animation 6 plays and the tick hands over to the retreat tick
  * Ov213_RetreatTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

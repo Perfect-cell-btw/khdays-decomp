@@ -2,7 +2,7 @@
  * +0x394 owner is knocked back at the helper's +0x74 position (mode 0xe), sound 0x172/0x14 fires at
  * the +8 point and the node moves on to 020d2498. In flight the +0xc velocity heads for the +0x38c
  * anchor's first point at 0.875 and the flight step runs (020d1cc4). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Flag17a { u8 b0 : 1; };
 

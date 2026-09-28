@@ -1,8 +1,7 @@
 /* Builds the camp menu hub's widgets: loads its layout, sets the entries' frames and visibility
  * from the progress, and installs each entry's callback. */
 
-typedef unsigned int u32;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Ov025LayoutTemplate { u32 words[4]; } Ov025LayoutTemplate;
 extern const Ov025LayoutTemplate data_ov025_020b3894;
 extern int Ov025_GetContext(void);

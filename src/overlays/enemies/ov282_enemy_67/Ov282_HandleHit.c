@@ -6,8 +6,7 @@
  * with +0x68 cleared, a 1|0x10 hit in sub-state 8 asks for 4 with +0x68 raised. A positive damage
  * that is not the 8|0x80/0x80 special advances bit 0 of +0x65 and fires reaction 0x16a with the
  * mode alternating (2/3 for flags 0x22, 1/0 otherwise) at the +4 position. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vec3 { int x; int y; int z; };
 

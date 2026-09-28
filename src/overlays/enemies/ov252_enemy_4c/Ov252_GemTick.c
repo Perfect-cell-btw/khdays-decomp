@@ -6,8 +6,7 @@
  * every live bomb (+0x714 pairs) closer than 1.5, after 16.0, or when the spawner is within 10.0.
  * With the bit clear the layers fade (mode 4), the spawner plays effect 6 at the gem and the node moves
  * on to 020d4204. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 center; Vec3 axisX; Vec3 axisY; Vec3 axisZ; int nExtentX; int nExtentY; int nExtentZ; } Box;
 struct BombPair { int obj; int active; };

@@ -1,6 +1,4 @@
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef signed int s32;
+#include "nitro/types.h"
 
 extern u32 OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(u32);
@@ -17,8 +15,6 @@ struct Data {
 };
 
 extern struct Data data_02046390;
-
-typedef int BOOL;
 
 void TP_RequestSetStabilityAsync(u32 unused, u32 arg) {
     u32 ie = OS_DisableInterrupts();

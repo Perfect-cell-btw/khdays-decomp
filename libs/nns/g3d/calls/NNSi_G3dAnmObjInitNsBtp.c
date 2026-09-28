@@ -1,25 +1,10 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
-
-
-
 
 void MIi_CpuClear16(u16 data, void * destp, u32 size);
 static inline void MI_CpuFill16 (void * dest, u16 data, u32 size)
@@ -30,8 +15,6 @@ static inline void MI_CpuClear16 (void * dest, u32 size)
 {
     MI_CpuFill16(dest, 0, size);
 }
-typedef s32 fx32;
-typedef s16 fx16;
 typedef enum {
     PXI_FIFO_TAG_EX = 0,
     PXI_FIFO_TAG_USER_0,
@@ -246,7 +229,6 @@ void NNSi_G3dAnmObjInitNsBtp (NNSG3dAnmObj * pAnmObj, void * pResAnm, const NNSG
     u32 i;
     NNSG3dResTexPatAnm * tpAnm = (NNSG3dResTexPatAnm *)pResAnm;
     const NNSG3dResMat * mat = NNS_G3dGetMat(pResMdl);
-
 
     pAnmObj->funcAnm = (void *) data_020424a0;
     pAnmObj->numMapData = pResMdl->info.numMat;

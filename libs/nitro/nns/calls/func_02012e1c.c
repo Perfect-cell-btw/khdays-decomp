@@ -1,6 +1,4 @@
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef int BOOL;
+#include "nitro/types.h"
 
 typedef enum GXTexFmt {
     GX_TEXFMT_NONE = 0,

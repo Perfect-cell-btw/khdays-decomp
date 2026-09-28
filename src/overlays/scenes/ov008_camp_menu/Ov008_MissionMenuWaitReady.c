@@ -11,9 +11,7 @@
  * cursor / repeat words (+0x32 / +0x34) set to 0x35 / 0.  Hands over to
  * 0207ce84.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 typedef void (*MissionState)(void);
 
 #define ROW_COUNT       4

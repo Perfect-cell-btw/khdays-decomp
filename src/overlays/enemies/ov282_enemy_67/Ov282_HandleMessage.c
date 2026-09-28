@@ -4,7 +4,7 @@
  * the low nibble of byte 4 with its high nibble; slots 2/7 anchor pairs 2/7 on the +0x9c body's
  * +0x30 point, slots 4/5 anchor pairs 4/5 on the +0x3c0/+0x3bc parts' +4 point; slot 8 starts
  * reaction 0x16a mode 7 on the actor's +0xa0 pose into +0x3d8. The base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Pair { int res; int handle; };
 struct Nib { u8 lo : 4, hi : 4; };

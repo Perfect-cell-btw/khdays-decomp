@@ -3,8 +3,7 @@
  * big-endian bit count (Nh then Nl), hashes it through the block hook data_020422d0 and writes
  * the five state words big-endian into `digest`. The final clear wipes only the 4-byte context
  * pointer itself (sizeof of the parameter, not of the context). */
-typedef unsigned char u8;
-typedef unsigned long u32;
+#include "nitro/types.h"
 
 typedef struct DGTHash2Context {
     u32 h0, h1, h2, h3, h4;

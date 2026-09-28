@@ -1,7 +1,5 @@
-typedef int BOOL;
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/os.h"
 
 struct FSArchive;
 

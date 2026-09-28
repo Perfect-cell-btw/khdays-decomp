@@ -10,9 +10,7 @@
  * three words after them, copy the lid position (+0x54c) into the home (+0x474), clear
  * +0x480 / +0x484, raise the body flag (+0x20) and register the piece in its bucket.
  * Returns the chest. */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

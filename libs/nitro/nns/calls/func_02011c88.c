@@ -1,11 +1,6 @@
-typedef unsigned long u32;
-typedef unsigned short u16;
-typedef signed long fx32;
-typedef signed long long s64;
-typedef int BOOL;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
-#define TRUE 1
-#define FALSE 0
 #define FX32_ONE 0x1000
 
 typedef enum NNSG2dAnimationPlayMode {

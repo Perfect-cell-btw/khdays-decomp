@@ -4,7 +4,7 @@
  * right of +0x64; the landing point (+0x14) is the target's +0x190 point stepped back 4.0 along it
  * (2.0 from the fifth circle), pushed off the scene's walls within the body radius, the recoil entry
  * is armed (+0xc = 020cebe4) and the node moves on to 020cf484. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

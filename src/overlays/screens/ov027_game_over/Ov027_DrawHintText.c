@@ -3,10 +3,7 @@
  * 5.  The renderer at +0x5e4 of the scene work is cleared (0202fa20), the hint for the current
  * language (data_ov027_02083f0c by 02024e5c) widened into a stack buffer (0202fcb8) and drawn at
  * x 0x80, colours 3 / 1, height 0x10 (0202fa38), and the renderer flushed (0202f9f8). */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

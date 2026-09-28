@@ -1,7 +1,7 @@
 /* Charge tick of the ov237 actor: the +0x30 clock runs up at the frame rate and past 1.99 the charge
  * releases (020cf2b0); once the +4 rig is idle the charge sound (0x12d variant 10) plays at the +0x38
  * point with pose 0x17 and effect 0xb, and the brain waits on 020cf674. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov237_ChargeRelease(int *node);

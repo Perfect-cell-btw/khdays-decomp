@@ -2,7 +2,7 @@
  * one (+0x1c6), the +0x4c turn rate resets to 1, bit 6 of the +0x60 high byte is set and bits 1 and 7
  * cleared, bits 0-1 of +0x1ae clear and flag 0 of the +0x3d4 rig is set; brain slot 1 then runs the
  * move's entry (1-4, 5-8 guard, 9, 10). The next move is cleared. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { unsigned f : 8; } B8;
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

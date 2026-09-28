@@ -6,9 +6,7 @@
  * animation 6 plays, the +0x2c/+0x30 timers clear, the +4 point is kept at +0x34 and sent packed
  * in the overlay's 14-byte message (data_ov282_020d4710, flag 0) to the owner's +0x24 hook; the
  * +0x60 timer and +0x66 byte clear and the tick hands over to Ov282_AiSinkTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;

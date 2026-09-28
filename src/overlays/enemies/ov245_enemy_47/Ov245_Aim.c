@@ -2,7 +2,7 @@
  * it by 0.875 into the +0xc velocity and, unless the actor's kind byte is 1, raises bit 0 of the
  * +0x60 high byte and requests sub-state 1. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
 

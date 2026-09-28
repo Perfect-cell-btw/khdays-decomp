@@ -36,6 +36,8 @@ CFLAGS = [
     "-lang", "c99", "-enum", "int", "-char", "signed",
     "-inline", "on,noauto", "-Cpp_exceptions", "off", "-gccext,on",
 ]
+# Shared headers (include/nitro/types.h, ...): the game and library sources include them.
+CFLAGS += ["-i", str(ROOT / "include")]
 
 def discover_modules():
     """Every module that has a delinks.txt and at least one matched
@@ -154,6 +156,9 @@ def emit_ninja(ninja_path: Path, src_files):
         "  command = $python tools/_run_mwcc.py $out $in --mode=$mode --cc=$cc",
         "  description = MWCC $in",
         "  restat = 1",
+        # _run_mwcc.py lists the headers a source includes, so a header edit rebuilds its users.
+        "  depfile = $out.d",
+        "  deps = gcc",
         "",
         "rule armasm",
         "  command = $python tools/_run_armasm.py $out $in",

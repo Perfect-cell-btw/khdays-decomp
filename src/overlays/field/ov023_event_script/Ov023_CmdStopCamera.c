@@ -7,8 +7,7 @@
  * angles, position, distance and roll are rewound to their "from" copies (+0xb8 -> +0xa0,
  * +0xac -> +0x94, +0xe4 -> +0xdc, the angles once more, +0xe8 -> +0xe0) and the duration
  * (+0xf0) cleared.  Returns 1. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

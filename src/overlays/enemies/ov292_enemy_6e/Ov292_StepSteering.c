@@ -11,7 +11,7 @@
  * to the target drops below the speed, the step zeroes the velocity, advances
  * the point index modulo the lap count, and walks the point list to the new
  * index. */
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

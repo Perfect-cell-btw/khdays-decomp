@@ -22,8 +22,8 @@
  * the hit count is a u8 incremented with `and #0xff`; the four vectors
  * are declared heading, axis copy, forward, facing.
  */
-typedef unsigned char u8;
-typedef int           fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define FX32_PI      0x3244
 #define FX32_PI_HALF 0x1922

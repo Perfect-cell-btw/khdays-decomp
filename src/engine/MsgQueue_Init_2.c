@@ -5,8 +5,7 @@
  * with the first one active. Table6_ResetAll (Table6_ResetAll) then clears the send state, and the two
  * transfer tasks are instantiated (InstantiateClass, InstantiateClass) from the descriptor template
  * data_02042110 with the class ids of data_02042108. Returns MsgQueue_GetHeap (MsgQueue_GetHeap). */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*GameClassFn)(void);
 
 typedef struct MsgQueueBuf {

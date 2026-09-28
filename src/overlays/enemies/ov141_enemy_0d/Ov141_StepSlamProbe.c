@@ -16,8 +16,7 @@
  * wrapped value is a struct copy, which mwcc keeps, and that is the ROM's unread
  * twelve-byte stack copy of the anchor position.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

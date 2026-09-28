@@ -12,8 +12,7 @@
  * block. Every command, handled or not, falls through to the shared actor
  * command handler.
  */
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct { int x, y, z; } VecFx32;
 typedef struct { int w[11]; } Srt;

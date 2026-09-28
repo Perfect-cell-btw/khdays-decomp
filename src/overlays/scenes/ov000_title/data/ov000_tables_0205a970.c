@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov000_QueueResourceTransfers (02059d78): const void *data_ov000_0205a970[7]; */
 const int data_ov000_0205a970[7] = {

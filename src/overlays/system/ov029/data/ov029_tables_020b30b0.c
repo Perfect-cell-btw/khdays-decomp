@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by * Ov029_AcquireOverlaySlot -- overlay slot allocator.  THUMB. (020b2ee0): OverlayGroup   data_ov029_020b30b0[]; */
 const int data_ov029_020b30b0[20][4] = {

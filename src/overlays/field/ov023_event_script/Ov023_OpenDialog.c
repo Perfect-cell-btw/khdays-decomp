@@ -5,7 +5,7 @@
  * the ov002 dialog hooks are pointed at the scene's message-box poster (02083d58) and its
  * query (02083d88), the dialog state (+0x875e4) becomes 1 and the global byte 0204bd85 is
  * cleared (02020878 0).  Ov023_StepDialog (02083e08) drives it from there. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov023Scene {
     u8   pad_00000[0x10c];

@@ -3,9 +3,7 @@
  * angle in degrees (x 182, kept as a u16); the position is operands 3..5, or, when operand 2
  * names a spot, that spot on the model (0202c3e4 with the model id 0202bf84) of the actor in
  * operand 1.  Returns 1. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

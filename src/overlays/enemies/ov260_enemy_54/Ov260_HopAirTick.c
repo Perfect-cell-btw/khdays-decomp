@@ -4,7 +4,7 @@
  * motion 0x11 (+0x7b bit 0); after that, farther than 1.0 (flat) from the +0x420 target it lands at
  * the target's point raised by its +0x13c height plus 3.82 (+0x14), arms the recoil entry (+0xc =
  * 020cf89c) and moves on to 020cf484, otherwise it moves on to the recoil entry directly. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int FX_Div(int num, int den);

@@ -6,8 +6,7 @@
  * rows from apRows[nFirst + i] while that index is below nCount (row text via
  * 020848e8, row icon via 02084b10).
  */
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT 8
 #define TAB_BUY   0

@@ -4,10 +4,7 @@
  * the cursor is its ninth row, and otherwise the window follows the cursor upward; either
  * scroll resets the row base (+0x64).  The phase bits (0-1 of +0xc) become 1, the cursor
  * sound plays (02033b78 0 / 0) and the rows are refreshed (0209e3f8). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025TutorialList {
     void *pHeader;            /* 0x00 */

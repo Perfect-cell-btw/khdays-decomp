@@ -6,9 +6,7 @@
  * from entry 0 with touch disabled, and from either when a modal object is up.
  * Nothing happens if the target is the current selection.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionList {
     int nSelected;            /* 0x000: -1 = none */

@@ -38,8 +38,7 @@
  *    original's coordinate type. Copying a wrapped value is a struct copy, which mwcc keeps, and
  *    that is the ROM's unread stack copy of the body position.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 typedef struct { int value; } Fx32;

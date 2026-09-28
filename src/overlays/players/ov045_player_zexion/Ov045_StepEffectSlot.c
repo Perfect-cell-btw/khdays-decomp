@@ -4,7 +4,7 @@
  * slot on the actor (heading and origin); 1 waits for the +0x7b0 timer to reach 0x9000, 2
  * advances the tracks and on completion rebinds them in mode 1 for phase 3, 3 only advances,
  * and 4 advances until completion into phase 5. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);   /* BindAnimTrack */

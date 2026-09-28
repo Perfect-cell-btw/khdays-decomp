@@ -4,8 +4,7 @@
  * decays by 0xe80 on the ground with no source (+4) or 0xfb0 otherwise; the +0x20 vertical speed
  * falls by the frame rate * 0xd0 / 0x88 (zeroed when landed and not rising); on the ground a
  * velocity under 1/16 is zeroed and the bounce flag +0x44 is set. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 struct Flag17a { u8 b0 : 1; };

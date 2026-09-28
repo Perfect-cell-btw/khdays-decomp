@@ -1,7 +1,7 @@
 /* Start of the ov283 actor's brain: no move is current or next, the +0x388 shape hides, +0x50 clears,
  * the +8 point tracks the actor's +0xb0 position (copied to +0x28), bits 1-2 of the +0x60 high byte are
  * set and the three brain slots start (020cd108 in slot 1, 020ccdfc in slot 0, 020ccfb8 in slot 2). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

@@ -1,6 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
+#include "nitro/types.h"
 
 u16 func_01ff9fd4(const void *resource, u32 info, u32 frame)
 {

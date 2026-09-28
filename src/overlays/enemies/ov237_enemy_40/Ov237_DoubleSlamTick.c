@@ -4,7 +4,7 @@
  * once with push data_ov237_020d1bac. Every frame the last two segments of both arms (+0x3f4) sweep
  * with push data_ov237_020d1ba0 (radius 0.375). The +0x3c aim point follows the +0x3d8 partner; once
  * the +4 rig is idle poses 9 / partner 5 play and the brain waits on 020cec58. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 axis[3]; int ext[3]; } Box;
 typedef struct { int w[7]; int radius; } Segment;

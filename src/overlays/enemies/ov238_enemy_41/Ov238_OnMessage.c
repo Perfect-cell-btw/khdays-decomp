@@ -1,6 +1,6 @@
 /* Message handler of the ov238 actor: a spawn message (kind 5, sub 0) attaches its +0x3a4 effect to the
  * actor pose (+0xa0, variant byte 4) into +0x3a8; the base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);

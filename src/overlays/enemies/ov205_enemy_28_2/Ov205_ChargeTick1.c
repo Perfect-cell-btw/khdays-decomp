@@ -7,10 +7,7 @@
  * there; the phase accumulates the frame-time and drives the ground sweep (phase over 0x600 as a
  * 64-bit fraction); past 0x800 the +0x390 part runs action 6, animation 0xf plays, the +0x44
  * mask and the phase reset and the tick hands off to the second variant. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef long long s64;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */

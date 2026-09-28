@@ -3,7 +3,7 @@
  * clear and its +0x3ac shape hides. A point 0.75 above the actor, turned by its +0xa0 rotation and
  * offset from the +0xc point, gets effect 0; sound 0/0x48 plays at the actor, +0x3c clears and the node
  * moves on to 020ccfe8. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

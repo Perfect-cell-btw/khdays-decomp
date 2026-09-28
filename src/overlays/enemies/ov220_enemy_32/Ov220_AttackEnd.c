@@ -2,7 +2,7 @@
  * shrinks to 0xb00 of itself. Once the +4 item is idle the actor plays animation 8 (looped),
  * publishes a zero vector with mode 2, the +0x14 timer becomes 0x4b000 scaled by 1.5 per +0x1c
  * phase, the +0x3e flag is cleared and the tick hands off to the guard tick. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 
 extern void ScaleVec3Fx12(int scale, void *v, void *d);

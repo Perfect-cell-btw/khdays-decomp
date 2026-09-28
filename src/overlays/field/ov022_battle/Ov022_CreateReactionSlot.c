@@ -13,9 +13,7 @@
  * finished, so it stays inert until an entry arms it.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define REACTION_KIND 0xb
 #define REACTION_TAG 0xc0

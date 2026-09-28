@@ -4,8 +4,7 @@
  * gets effect 0xb at its +0x74 point and pose 0 is requested (the original also scales and adds two
  * uninitialised scratch vectors there, whose result is unused). Otherwise the +0x24 timer
  * accumulates the frame rate and past 0.6, or once blocked (+0x17a bit 1), pose 0 is requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 struct Bits17a { unsigned char b0 : 1, b1 : 1; };

@@ -1,7 +1,7 @@
 /* Starts the exit synchronisation task: the host waits for every client's exit message, clients
  * wait for the host; registers the exit message handler. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void *(*ExitTaskState)(void);
 typedef struct Ov005ExitTask {
     unsigned receivedPlayerMask;

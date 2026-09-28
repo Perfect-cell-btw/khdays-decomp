@@ -4,8 +4,7 @@
  * given kind. On acceptance the contact point (the actor's position plus the radius along the
  * unflattened direction plus the push) is published with mode 0 and the id bit is set. Reaction
  * 0x137 mode 5 fires at the +8 position when anything was hit; returns whether it did. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 struct Sphere { struct Vecx32 pos; int radius; };
 

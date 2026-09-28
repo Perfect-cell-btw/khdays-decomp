@@ -1,9 +1,7 @@
 /* When the calendar ends, sets the new day, resets the day state and the party, and requests the
  * next scene. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct BootModeState {
     u8 flags;

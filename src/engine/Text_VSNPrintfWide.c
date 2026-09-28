@@ -3,11 +3,7 @@
  * (the NitroSDK's STD_TVSNPrintf plus %f for 20.12 fixed point, formatted by Fx64_FormatWide), without
  * the SJIS double-byte pass. Returns the length in characters the full text would have; %n stores
  * the length in bytes. Only the %c padding uses wide literals, the other characters stay char. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef long long s64;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef unsigned int size_t;
 
 typedef char *va_list;

@@ -4,7 +4,7 @@
  * +0x1ae cleared and bit 0 of the +0x488 rig's +8 flags set (a linked partner takes the actor's
  * health). +0x58 / +0x60 / +0x64 are set, the +0x28 timer rolls between the +0x224 and +0x228
  * bounds and the brain waits on 020ce584. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

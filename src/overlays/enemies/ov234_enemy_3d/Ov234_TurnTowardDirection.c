@@ -1,7 +1,7 @@
 /* Turns the enemy towards its target direction at a limited rate (or snaps), updates its rotation
  * and moves its node along the new facing. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Ov234Vec3 {
     int x;

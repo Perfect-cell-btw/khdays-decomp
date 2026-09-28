@@ -3,8 +3,7 @@
  * its +0x190 point, its height clamped to [-0.5, 0.25] (the flat part grows by the excess over 0.75)
  * and renormalised, then scaled to 2.0. The +0x390 part takes motion 0, +0x80 rests on the vertical
  * axis, the +0x6c flag and +0x60 clear and the node moves on to 020d21d0. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov107_FindNearestObject(int obj, int kind);

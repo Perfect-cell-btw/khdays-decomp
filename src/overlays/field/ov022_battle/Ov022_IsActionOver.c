@@ -17,10 +17,7 @@
  * of that register.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 /* Both bits have to be up for a run to count as cut short. */
 #define FLAGS_CUTSHORT 0x10000ULL

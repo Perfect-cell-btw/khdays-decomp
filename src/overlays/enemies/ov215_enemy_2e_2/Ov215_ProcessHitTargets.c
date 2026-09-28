@@ -3,8 +3,7 @@
 
 #pragma opt_dead_assignments off
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vecx32 { int x, y, z; };
 struct Vec4 { int x, y, z, w; };

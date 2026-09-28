@@ -5,7 +5,7 @@
  * direction, capped at the remaining distance; the +0x34 lift eases by a fiftieth towards 0x2000
  * above the +0x13c height. Within 0x1000 of the point the slot becomes the +0x48 current one,
  * the index advances and, past the +0x70 count, the tick hands off to the release decision. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 
 extern void VEC_Subtract(void *a, void *b, void *d);

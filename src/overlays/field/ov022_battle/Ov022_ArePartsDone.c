@@ -8,9 +8,7 @@
  * round: a live slot is one that has NOT finished.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Actor;
 

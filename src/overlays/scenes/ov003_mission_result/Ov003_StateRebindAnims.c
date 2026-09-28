@@ -1,9 +1,7 @@
 /* Advances each result character's rank timer and binds its pose when it reaches its rank group's
  * threshold; moves on when all are done. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u8 raw[0x108];

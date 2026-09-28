@@ -12,9 +12,7 @@
  * (a pText local there ages the page pointer's register); pPage is declared
  * after the counter, the text buffer and pText (20 of 120 orders match).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT   7
 #define MODE_FULL   0x11

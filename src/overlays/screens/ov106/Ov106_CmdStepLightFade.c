@@ -5,7 +5,7 @@
  * count reaches the frame count, else 0. *
  * PROVENANCE: byte-identical twin of ov023's Ov023_CmdStepLightFade (Ov023_CmdStepLightFade), same code and
  * callees, verified byte-exact in this overlay. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov023EventBlock {
     u8   pad_00[0x14];

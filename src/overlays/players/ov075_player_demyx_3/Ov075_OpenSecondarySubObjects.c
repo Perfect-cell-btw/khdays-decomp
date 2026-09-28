@@ -2,8 +2,7 @@
  * 2 of the sub-object block at +0x2644, then opens each from a parameter block rebuilt on the
  * stack (slot 1: flags 0x1c9, speed 0x119a, spin 5; slot 2: flags 0x3c9, speed 0x2f9a, spin
  * 0x25; both kind 12) and installs the shared tick handler at +0x50 / +0x80. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct ActorSubCfg {
     int flags00;

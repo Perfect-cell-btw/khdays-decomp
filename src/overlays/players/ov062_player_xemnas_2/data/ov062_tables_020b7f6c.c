@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Seeds the two request rows of the node (+0x12c, stride 0x240) from the local tables: (020b73d8): const IntTable4 data_ov062_020b7f6c; */
 const u8 data_ov062_020b7f6c[16] = {

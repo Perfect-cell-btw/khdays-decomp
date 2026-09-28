@@ -8,7 +8,7 @@
  *
  * MATCH NOTE: the pool index read is a `const` global copied into a `volatile` local, which
  * hoists the load above the handler stores and parks the value on the stack across the calls. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Subitem {
     char pad000[0x5c];

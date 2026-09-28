@@ -7,8 +7,7 @@
  * Only the horizontal part is committed.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Vec3 {
     int x, y, z;

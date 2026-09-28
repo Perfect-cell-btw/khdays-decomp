@@ -2,7 +2,7 @@
  * the group's handles, enabling each and stepping the Y position down by 0x8000 per entry, and
  * finally places the closing handle at the position reached. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct OverlayVector {
     int x;

@@ -8,7 +8,7 @@
  * the rig's duration (+0x2f98) or the burst asks for it (step 1, or step 2 which also marks the
  * alternate ending): the enemy hands over to state 0x24 (0x23 for the alternate ending);
  * otherwise an activation rewinds the animation to 0x15000, clears the bit and raises bit 29. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 

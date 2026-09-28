@@ -9,8 +9,7 @@
  *
  * Codegen: the packed positions go through Fx32 wrapper copies (ov122_020d12f4 idiom) -- the
  * unread word stores at the frame bottom are the ROM's. */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 

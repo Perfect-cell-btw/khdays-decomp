@@ -13,9 +13,7 @@
  * rebuilt and the display refreshed.  Codegen: the touch boxes are a 4-byte
  * struct array (walking pointer); the tab order is a 15-byte struct copy.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define BTN_UP       0x40
 #define BTN_DOWN     0x80

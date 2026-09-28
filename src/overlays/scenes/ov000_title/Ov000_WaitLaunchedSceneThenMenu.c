@@ -11,8 +11,7 @@
  * immediates, so written as plain integers the two pool words vanish and the function comes
  * out 8 bytes short.
  */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef u32 FSOverlayID;
 typedef void (*Ov000StateFn)(void);
 

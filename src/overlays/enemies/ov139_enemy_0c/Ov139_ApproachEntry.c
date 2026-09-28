@@ -3,7 +3,7 @@
  * to the target's +0x74, the +0x14 velocity is 0x100 along the +8 yaw's (sin, 0, cos) and, once
  * the +0x50 busy byte clears, the +0x390 part restarts action 0, animation 3 (looped) plays and
  * the tick hands off to the approach tick. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 
 extern int Ov107_FindNearestObject(int actor, int mode);

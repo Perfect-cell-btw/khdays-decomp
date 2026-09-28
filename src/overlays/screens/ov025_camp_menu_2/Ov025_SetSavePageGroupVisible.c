@@ -2,7 +2,7 @@
  * plus the fixed id 7, either all visible (mode 1) or all hidden (mode 0).
  * Any other mode leaves the page alone. The first parameter is the caller's
  * own object and is dead here: the list comes from the shared context. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int ids[10];

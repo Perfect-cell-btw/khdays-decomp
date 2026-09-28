@@ -1,7 +1,7 @@
 /* Steps the row scale tweens and, when the header tween ends, records the time and moves to the
  * dwell timer. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov022TweenFlags {
     u32 unknown0 : 2;

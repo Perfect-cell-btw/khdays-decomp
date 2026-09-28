@@ -1,9 +1,7 @@
 /* Waits for the local player's action to settle (sound, element list, crawl score), then re-anchors
  * the camera on the actor, resets the member and fades in; returns the finish-action step. */
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef void *(*Ov022StateCallback)(void);
 

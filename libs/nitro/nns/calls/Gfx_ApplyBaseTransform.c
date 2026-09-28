@@ -1,6 +1,5 @@
-typedef unsigned char u8;
-typedef unsigned long u32;
-typedef long fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct MtxFx44 {
     fx32 m[4][4];

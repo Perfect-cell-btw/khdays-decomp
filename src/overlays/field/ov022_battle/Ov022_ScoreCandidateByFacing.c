@@ -1,8 +1,7 @@
 /* Scores the panel targets as lock-on candidates by the local actor's facing and distance; returns
  * the best distance. */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;

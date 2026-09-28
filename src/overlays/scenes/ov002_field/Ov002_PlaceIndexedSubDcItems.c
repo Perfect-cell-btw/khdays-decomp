@@ -1,5 +1,5 @@
 /* Acquire and place up to five indexed sub-display resources. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern u16 data_ov002_0207db84[];
 extern int Ov002_ForwardToSubDc(int nId);

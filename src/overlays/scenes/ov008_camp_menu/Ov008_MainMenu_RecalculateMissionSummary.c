@@ -1,9 +1,7 @@
 /* Selects three mission-summary tier values from the day-threshold table and sums completion
  * weights for missions with progress greater than one. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionListEntry {
     u8 pad00[2];

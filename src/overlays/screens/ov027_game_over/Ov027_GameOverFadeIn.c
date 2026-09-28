@@ -9,10 +9,7 @@
  * (020315f4); then the camera (+0x4d8) is committed (02023cc0).  While the mode word at +0x24
  * is not 1 the main display's BG mode is forced to 1 and Ov027_GameOverIdle (02083068) is
  * returned instead. */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

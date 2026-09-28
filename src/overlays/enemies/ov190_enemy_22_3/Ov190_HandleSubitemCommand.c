@@ -2,7 +2,7 @@
  * creates or transforms subitems for actions 0-3, creates the special resource for action 5,
  * releases it for action 6, then forwards to the base actor handler. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Ov190Vec3 {
     int x;
@@ -125,9 +125,4 @@ void Ov190_HandleSubitemCommand(struct Ov190Actor *self,
 
     Ov107_AiState_OnMessage(self, command, arg2);
 }
-
-
-
-
-
 

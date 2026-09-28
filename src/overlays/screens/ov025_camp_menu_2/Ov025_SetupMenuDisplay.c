@@ -5,7 +5,7 @@
  * cell (Ov025_ResolveEntryAndConfigure) and re-links it (Ov025_SwapParamOverrides / Ov025_ConfigureSlotWithHeight on the
  * widget from Ov025_FindEntryById), then registers the screen via Ov025_RepaintTextRow with the
  * count from Ov025_GetVarRecordByIndex(p+0x28c, 8). Takes 5 args (arg5 on the stack). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Ov008Setup {
     u8  pad_0000[0x124];
     u8  field124[0x250 - 0x124];   /* 0x124: SRT/display object A */

@@ -4,8 +4,7 @@
  * raises the +0x9c part's +0x44 height by 0x400, and rebuilds the +0x398 transform's +0x30
  * child from the actor's +0xa0 rotation at (+0xb0, part height, +0xb8); the node's +0x24 word
  * and +0x92 byte are cleared. */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 struct MtxFx43 { int m[9]; struct Vecx32 t; };
 

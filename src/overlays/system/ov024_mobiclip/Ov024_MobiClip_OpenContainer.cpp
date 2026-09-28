@@ -6,10 +6,7 @@
  * buffers, the audio ring when the stream has sound, and the frame index.
  * Reports zero on the first read or allocation that fails.
  */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define HEADER_BYTES  0x30
 #define MAX_WIDTH     0x100

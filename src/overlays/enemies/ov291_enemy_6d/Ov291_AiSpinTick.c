@@ -1,8 +1,7 @@
 /* Tracks the part offset, posts updates 0x16f/4 and /5 as the spin crosses 0x6000/0xc000; on anim
  * end queues 4 or 7. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Elem16 {
     u8 pad00[0xc];

@@ -4,7 +4,7 @@
  * damaging flag-4 hit from a source raises +0x79, blow hits (0x20) count in +0x89 and damaging
  * flag-4 hits in +0x88. A knockout requests sub-state 3; falling under 60% of the maximum the
  * first time (+0x7a) requests 0xb; a flag 1+0x10 hit on a kind-8 owner requests 0xa. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct HitFlags {
     unsigned int low : 16;

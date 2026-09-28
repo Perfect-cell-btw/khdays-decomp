@@ -8,10 +8,7 @@
  * reflects the velocity at 0.625 of its speed. The +0x30 clock starts the rumble pose at 8.0 and, at
  * 12.0 or when landed with +0x48 set, the ball bursts: a doubled sphere hits everything once more,
  * the velocity stops and the node moves back to state 0. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct Sphere { Vec3 pos; int radius; } Sphere;

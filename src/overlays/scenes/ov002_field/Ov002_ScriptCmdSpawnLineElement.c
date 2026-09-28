@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* The id, the state field and the position share one addressed block whose
  * address the call already takes. That is a codegen device: it makes those

@@ -1,7 +1,7 @@
 /* Orbit step: moves the actor around its target on the orbit axis, steering its orientation, and
  * emits the effect on its timer. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

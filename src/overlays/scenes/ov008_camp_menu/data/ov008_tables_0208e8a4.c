@@ -10,7 +10,7 @@
  *   data_ov008_0208e8f8: Ov008_LoadElemsFromLayout
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 const int data_ov008_0208e8a4[20] = {
     10, 0, 16, 11, 14, 12, 1, 4,

@@ -11,9 +11,7 @@
  * folds the nRow read onto the ctx+0xc000 partial and keeps the apRows one on
  * the materialised ctx+0xc3c4, which is the ROM's prologue.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define TAB_BUY    0
 #define TAB_SELL   1

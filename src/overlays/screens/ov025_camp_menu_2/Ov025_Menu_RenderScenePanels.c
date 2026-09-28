@@ -15,9 +15,7 @@
  * scale constants Ghidra threads into SubmitObjectGfx are only live on the state-0xd path.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 extern void Sequence_UpdateTracks(u16 *node, int scrollBase);
 extern void Scene_DrawNode(u16 *node);

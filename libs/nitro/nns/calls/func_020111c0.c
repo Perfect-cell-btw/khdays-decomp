@@ -1,8 +1,4 @@
-typedef unsigned long u32;
-typedef int BOOL;
-
-#define TRUE 1
-#define FALSE 0
+#include "nitro/types.h"
 
 #define NNS_GFD_PLTTSIZE_MIN 8
 #define NNS_GFD_PLTTSIZE_MAX 0x7fff8

@@ -5,7 +5,7 @@
  * floors and airborne, the owner switches to move 12 (+0xad latched). Otherwise the two wing flaps
  * fire once each at 0.23 and 0.56 (020cd2c8, +0xac bits 0/1) and, once the +4 rig is idle, pose 1
  * and rig motion 1 restart the flap cycle. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct b1 { unsigned char b0 : 1; };
 

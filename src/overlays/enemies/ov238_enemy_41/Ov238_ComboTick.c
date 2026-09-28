@@ -8,7 +8,7 @@
  * partner's +0x190 point, counting hits with reaction 0x50. Once the +4 rig is idle a hit round
  * before the third +0x2d strike hands over to 020d18a4, a missed one replays pose 0xb + strike and
  * restarts (020d1e74), and after the third strike sub-state 2 follows. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { Vec3 pos; int nRadius; } Sphere;

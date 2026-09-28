@@ -14,10 +14,7 @@
  * read as a u32; declaration order nOffset, pScene, pHooks, hooks, pPane; the timeout
  * blend passes an explicit 0 that shares the zero stored into the delta byte.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed char    s8;
+#include "nitro/types.h"
 
 #define FADE_ALPHA_MAX 0x10
 #define FLAGS_MODE_BIT 0x10

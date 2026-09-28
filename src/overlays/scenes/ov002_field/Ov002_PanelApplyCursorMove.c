@@ -5,8 +5,7 @@
 #pragma opt_common_subs off
 #pragma opt_dead_assignments off
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef enum {
     PANEL_CLASS_PRIMARY = 0,

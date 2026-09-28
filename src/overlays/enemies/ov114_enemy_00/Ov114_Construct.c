@@ -5,7 +5,7 @@
  * overlay's kind pair in a fresh 16-byte slot table (+0x394, attached, bit 1 on their +0x5c),
  * configures action 2 (mode 2, rate 0x1000) and creates two placements from the actor's +0x64
  * pose: +0x388 on the +0x22c list and +0x38c on the +0x144 list; sound 0x112 is loaded. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov114Kinds {
     int a;

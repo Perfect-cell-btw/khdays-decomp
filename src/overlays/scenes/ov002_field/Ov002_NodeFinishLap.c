@@ -1,4 +1,4 @@
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct Ov002TaskNode Ov002TaskNode;
 

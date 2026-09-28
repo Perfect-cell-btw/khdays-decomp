@@ -2,7 +2,7 @@
  * until the +0x30 latch is set the +0x3bc target's +0x18c rider (its +0x20 child) is seated at
  * the actor's +0x3ac joint anchor and the +0x1c timer runs up; past 0.667 the latch is raised,
  * bit 7 of the target's +0x60 high byte set and the node moves to 020d0410. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Actor_SetVecAndSyncChild(int node, void *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

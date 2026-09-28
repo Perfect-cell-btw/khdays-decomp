@@ -2,8 +2,7 @@
  * heading from its entity (+0x15e0; +0x80) plus the actor's angle offset (+0x15a8), as a u16,
  * as both the current and target angle (+0x1a30 / +0x1a34), push it back onto the entity
  * (+0x80, flag bit 5 of +4) unless the entity's bit 5 at +0 is set, and leave state 0. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov023Entity {
     int  nFlags;              /* 0x00 */

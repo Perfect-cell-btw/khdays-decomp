@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by ported from a matched sibling family (same shape, constants and offsets adjusted). (020cbfc8): struct v5 data_ov202_020cef50; */
 const int data_ov202_020cef50[5] = {

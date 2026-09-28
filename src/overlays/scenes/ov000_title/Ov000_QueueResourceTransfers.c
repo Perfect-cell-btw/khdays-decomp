@@ -2,10 +2,7 @@
  * (stride 0x800), then clear the pending mask at +0x966c. Stride 0x800 with a 0x600 payload means
  * each slot has 0x200 of slack, so the buffers are fixed-size slots rather than a packed array. */
 
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u8 data[0x800];

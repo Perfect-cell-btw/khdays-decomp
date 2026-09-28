@@ -6,7 +6,7 @@
  * +0x22f8 hands over to state 0x25, otherwise the actor's hook runs and becoming active rewinds
  * the animation, clears the timer and raises bit 29; finally a +0x1c state of 5 or 6 hands over
  * to state 0x22. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 

@@ -2,7 +2,7 @@
  * into variants 0 and 1, steps the actor cue track to 200, and marks the build state ready with
  * flags 0x0b. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Ov038BuildBlock {
     char pad000[0x334];

@@ -41,9 +41,7 @@
  *    sp+0x40 in a 0x4c-byte frame.
  *  - Within a component the bytes are written high, middle, low -- ascending address order.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Ov120NodeSlot {
     void *pSubitem;

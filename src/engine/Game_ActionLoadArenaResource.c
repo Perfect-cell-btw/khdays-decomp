@@ -22,9 +22,7 @@
  * stride is 0x48 and the arena offset 0x594 is kept in one register so 0x590 is derived as 0x594-4.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 extern int   ByteCode_ResolveOperand(int st, short *cmd);
 extern void  Game_PushObjectSlot(int *st, int *slot, int a, u32 *operand);

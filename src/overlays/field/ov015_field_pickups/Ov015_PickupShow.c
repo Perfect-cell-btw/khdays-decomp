@@ -7,10 +7,7 @@
  * priority -1) and the pickup stays collidable.
  * Finally the model's sequence is started at the kind's spin speed (kind row 020828d4 by the
  * class's kind byte +0x84, << 12) with the pickup's rise speed (+0x138). */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov015PickupKindRow {
     void *pHandlers;          /* 0x00: state function of the kind */

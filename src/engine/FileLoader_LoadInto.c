@@ -4,7 +4,7 @@
  * decompressed into `buffer` (Loader_SetupLZDecompress, failing if it exceeds `maxSize`), anything else is
  * read raw when it fits. On success the request goes to the loader queue and the byte count is
  * returned; 0 when no request slot is free, -1 when the data does not fit. */
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern int *Loader_PopFreeRequest(void);
 extern void FS_InitFile(void *file);

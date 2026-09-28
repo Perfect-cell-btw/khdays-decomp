@@ -7,9 +7,7 @@
  * widget group is shown with frame nIcon when nIcon is below 0x3f, hidden
  * otherwise.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define TEXT_X0   8
 #define TEXT_Y0   0xa4

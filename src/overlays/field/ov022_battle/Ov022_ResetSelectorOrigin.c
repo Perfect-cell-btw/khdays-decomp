@@ -1,10 +1,7 @@
 /* Resets the lock-on selector's origin from the current selection (the selected candidate part,
  * entry or fixed target) and the local actor's position and heading. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;
@@ -214,5 +211,4 @@ void Ov022_ResetSelectorOrigin(void)
         Ov022_SetSelectionEnabled(0);
     }
 }
-
 

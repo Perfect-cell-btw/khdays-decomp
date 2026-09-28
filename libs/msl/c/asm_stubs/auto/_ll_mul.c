@@ -1,4 +1,4 @@
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 asm u64 _ll_mul(u64 left, u64 right)
 {

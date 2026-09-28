@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* The queue record this element hands to the collector. */
 typedef struct {

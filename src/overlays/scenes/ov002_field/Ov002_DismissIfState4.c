@@ -10,7 +10,7 @@
  * one where it is declared, ahead of the null check, with only the not-equal arm clearing it.
  */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207f624;
 extern void Ov002_SelectEntryByKey(int key);

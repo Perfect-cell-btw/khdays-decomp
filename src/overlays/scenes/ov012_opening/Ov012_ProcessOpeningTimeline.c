@@ -1,9 +1,7 @@
 /* Runs all opening-timeline events whose thread-count delta has elapsed, advances the event index
  * when a handler accepts an event, and applies the current master brightness. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov012OpeningEvent {
     u32 nTriggerThreadDelta;

@@ -5,7 +5,7 @@
  * buffer as a looping 16-bit stream, and an alarm is armed to fire every half
  * buffer so the decoder can refill the half that just played.
  */
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct MobiClipAudioStream {
     int pad0000;

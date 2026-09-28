@@ -12,8 +12,7 @@
  * actually taken is reported, capped at a hundred so it fits the packet.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* Ov022Actor */
 struct Actor {

@@ -1,7 +1,7 @@
 /* Chase decision of the ov219 enemy (and its byte-identical twin): a negative distance to the
  * target ends the state; otherwise, once the +4 item is idle, the actor plays animation 4
  * (looped), publishes a zero vector to the item with mode 1 and hands off to the chase tick. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 
 extern int Ov220_DistanceToTarget(int *node);

@@ -6,9 +6,7 @@
  * +0x1a34) and is pushed back onto it unless locked.  The actor is then reset
  * (Ov023_ActorInit 02088714) and, unless it already had flag bit 13 (+0x1a28), given its five
  * 0x24-byte animation slots (+0x1a20, 0xb4 bytes from the default heap, cleared). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

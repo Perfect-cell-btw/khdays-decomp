@@ -11,7 +11,7 @@
  * ARM.
  */
 
-typedef volatile unsigned int vu32;
+#include "nitro/types.h"
 
 extern int data_ov002_0207f614;
 

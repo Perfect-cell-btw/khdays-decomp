@@ -27,8 +27,7 @@
  * case bodies in source order, so the cases are listed 5,6,4,0x6c,0x6f,0x514,0x72,0x515 to match.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int   data_ov002_0207fa00;
 extern short data_0204c23c;

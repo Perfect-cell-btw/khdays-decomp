@@ -4,7 +4,7 @@
  * the other way round.  Then, unless a transfer is pending, rebinds the three
  * list callbacks and plays the confirm cue.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008MenuContext {
     u8   pad_0000[0x30];

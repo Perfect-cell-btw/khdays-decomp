@@ -3,7 +3,7 @@
  * (0203c400); the +0x64 pose takes 2/3 of the owner's (+0x18c) scale, bit 1 of the +0x60 high byte
  * is raised, and the +0x190 model (item 0x24 of the given pool, hidden flag) is subscribed to +0x9c
  * with actions 0/2/4/1 enabled. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 struct Bit0 { unsigned int b0 : 1; };
 

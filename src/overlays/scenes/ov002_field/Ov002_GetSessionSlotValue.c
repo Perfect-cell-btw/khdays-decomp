@@ -8,7 +8,7 @@
  * Ghidra carries the layout as Ov002SessionSlot inside Ov002SessionBlock.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int nHandle;                /* +0x00 */

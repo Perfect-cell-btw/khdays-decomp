@@ -5,8 +5,7 @@
  * 0x2a, 5.6 of vortex time, sound 0x12/0x19). At 4.45 the follow-through (+0x50 = 1) plays effect 0x29
  * at the +0x5a4 rig. Once the +4 rig is idle: before 3.98 pose 0xd replays; move 7 continues with
  * 020cf63c; otherwise a follow-up (020cd2cc, without a +0x38 delay) or move 2. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 

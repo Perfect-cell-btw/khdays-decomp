@@ -23,10 +23,8 @@
  * is the loop counter's zero kept in a register; declaration order i,
  * nCount, nMask, nBit.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef short          s16;
-typedef int            fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define FX32_PI      0x3244
 #define FX32_DEG50   0xdf6

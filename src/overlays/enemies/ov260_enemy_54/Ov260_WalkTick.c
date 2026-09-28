@@ -5,7 +5,7 @@
  * within 1/8 of the range, pose 3 plays, the part takes motion 2 and the node moves on to 020ce198.
  * Otherwise the +0x70 timer runs with step cues at 0 and 0x4c8 (020cd04c 0 / 1), and once the partner
  * holds no queued move pose 2 plays, the part takes motion 1 and the timer and cues restart. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };

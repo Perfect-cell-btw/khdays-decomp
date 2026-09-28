@@ -14,8 +14,7 @@
  * which is what settles the two into the registers the original uses.
  */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207fa14;
 extern short Session_GetLocalPlayerIndex(void);

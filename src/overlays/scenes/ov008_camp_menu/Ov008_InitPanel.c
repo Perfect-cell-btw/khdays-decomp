@@ -7,7 +7,7 @@
  * clears the panel's field 0x5c8 (= -1) and sets bit 0x100 in the u16 flags at 0x5c6.
  * (Session_GetLocalPlayerIndex's result must stay live into Slot4_GetIfOccupied, which is why the panel-pointer
  * store lands between the two calls.) */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void *data_ov008_02090f1c;
 extern int   Session_GetLocalPlayerIndex(void);

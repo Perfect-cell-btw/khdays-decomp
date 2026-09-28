@@ -12,11 +12,7 @@
  * step runs last; the answer is always 0.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

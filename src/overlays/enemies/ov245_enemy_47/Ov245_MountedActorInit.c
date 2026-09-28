@@ -9,7 +9,7 @@
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 axis; int rate; int value; } ShapeRequest;
 typedef void (*Callback)(void);
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct Ov245Slot { int pItem; int pad4; };
 struct Ov245Self { char pad[0x3b4]; struct Ov245Slot slots[3]; };
 

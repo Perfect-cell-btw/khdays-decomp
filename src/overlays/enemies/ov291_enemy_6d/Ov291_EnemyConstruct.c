@@ -8,7 +8,7 @@
  * channels 0/1 bound), a placement on the +0x144 list (+0x38c), a shape on the +0x22c list
  * (+0x390, active), clears bits 1-3 of the +0x60 high byte and loads sound 0x16f. Finally a
  * 7-entry hit table (kind + offset each) is handed to the +0x38 hit callback and freed. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Bit0 {
     unsigned bit0 : 1;

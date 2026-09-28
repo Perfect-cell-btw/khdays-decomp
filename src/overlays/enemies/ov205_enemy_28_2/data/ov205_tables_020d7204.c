@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Constructor of the ov204 enemy (and its byte-identical twin ov205; variant of the ov139/14 (020d3844): const Vec3 data_ov205_020d7204; */
 const int data_ov205_020d7204[3] = {

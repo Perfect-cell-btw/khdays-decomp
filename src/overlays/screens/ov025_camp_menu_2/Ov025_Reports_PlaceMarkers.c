@@ -4,10 +4,7 @@
  * count +4) has been read (word +0xc) uses the selection cell (+0x268), the others cell 3
  * (+0x260); each is put at column 1, row 2 + 2 * i in the page's tag tracker (+0xb4; 0208951c)
  * and its callback invoked (Ov008_TagTracker_InvokeCallback 02089544). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025ReportsList {
     void *pHeader;            /* 0x00 */

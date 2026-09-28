@@ -6,8 +6,7 @@
  * rows are refilled, laid out, the cursor placed, the list ticked and the scroll
  * arrows refreshed.
  */
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 #define NO_TARGET  0x7fffffff
 #define ROW_HEIGHT 32

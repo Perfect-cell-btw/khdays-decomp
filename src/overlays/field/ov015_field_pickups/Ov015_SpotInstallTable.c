@@ -10,11 +10,7 @@
  * status nStatus (ov107 020c5c14) and, when the class's current link table (+0x178) is
  * this spot's kind, the first callback (+0x44) runs on the actor, the spot is armed
  * (bit 0 of +0x40) and, without a player (+0x180 == -1), also live (bit 1). */
-typedef signed char        s8;
-typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef unsigned int       u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

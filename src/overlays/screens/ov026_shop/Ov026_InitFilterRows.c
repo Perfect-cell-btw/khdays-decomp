@@ -15,7 +15,7 @@
  * loop-invariant temp r4 = ctx+0x130 the ROM has, and only then does the
  * rows completion add schedule before the widget-context add.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define FILTER_ROWS 5
 #define TAG_FILTER_FRAME 0x3e9

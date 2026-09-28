@@ -1,6 +1,6 @@
 /* Whether a menu page is unlocked: some need a progress level, two need a key item. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct GameState {
     u8 pad0000[0x810];

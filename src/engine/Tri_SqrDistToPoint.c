@@ -5,9 +5,7 @@
  * result is the absolute value of the squared distance. Region 3 (s < 0 <= t) computes its distance
  * with the unnormalised t instead of the clamped one, as in the ROM. The determinant's absolute
  * value is a ternary: the if form spills it after the 64-bit sign-extended pairs instead of first. */
-typedef int fx32;
-typedef long long fx64;
-typedef long long fx64c;
+#include "nitro/fx.h"
 
 typedef struct { fx32 x, y, z; } VecFx32;
 

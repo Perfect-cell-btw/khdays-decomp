@@ -5,8 +5,7 @@
  * ternary after the item lookup -- the `!=` polarity defers the subtract); the tail word is
  * cleared.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov008ParamRecord {
     u8  pad_00[0xc];

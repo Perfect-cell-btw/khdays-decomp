@@ -10,9 +10,7 @@
  * 0x16, 0x13 and the slot at +0x209c dereferenced, the pending bit ranges
  * forwarded and the context callback word cleared.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GRID_PAGES 3
 #define PAGE_SLOTS 40

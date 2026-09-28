@@ -1,7 +1,4 @@
-typedef signed long s32;
-typedef unsigned long u32;
-typedef unsigned char u8;
-typedef int BOOL;
+#include "nitro/types.h"
 typedef s32 PXIFifoTag;
 
 enum {

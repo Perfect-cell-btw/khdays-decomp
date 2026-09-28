@@ -7,10 +7,7 @@
  * is 10000 or more, else the first placement (+0x44) -- and then the first placement is stored
  * anyway; the scale is the descriptor's (+0x10) and the angle (+0x30) and the two words at
  * +0x34 / +0x38 are cleared. */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

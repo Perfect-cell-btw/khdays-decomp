@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Constructor of the ov171 enemy (twins by byte identity). Installs the handlers (+8 release (020cfc60): IdTable data_ov172_020d2aec; */
 const int data_ov172_020d2aec[3] = {

@@ -8,9 +8,7 @@
  * frame 0, restores the brightness and locks the list (+0x500).  The request is
  * remembered at +0x4f8 and the armed word (+0x4fc) cleared.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ENTRY_INFO_FIRST 2
 #define ENTRY_INFO_LAST  0x13

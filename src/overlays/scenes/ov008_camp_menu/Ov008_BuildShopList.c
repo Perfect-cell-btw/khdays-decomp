@@ -9,9 +9,7 @@
  * met by the level slot (+0x4) in the game state (0x1168 + 2 * slot).  The
  * count goes to *pCount; returns the array (0 when empty).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008ParamRecord {
     u8  pad_00[4];

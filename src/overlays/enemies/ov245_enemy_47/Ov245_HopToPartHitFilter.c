@@ -7,7 +7,7 @@
  * Codegen: the part is read again from the owner's table inside the taken branch (a single `part`
  * read before the test swaps its register with the &v address). */
 typedef struct { int x, y, z; } Vec3;
-typedef long long s64;
+#include "nitro/types.h"
 struct Ov245Owner { char pad[0x420]; int parts[3]; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 

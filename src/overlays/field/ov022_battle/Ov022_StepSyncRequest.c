@@ -9,8 +9,7 @@
  * acknowledged bit and then clears the request back to idle.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* Ov022SyncRequest: one of the twelve 0x38-byte requests */
 struct SyncRequest {

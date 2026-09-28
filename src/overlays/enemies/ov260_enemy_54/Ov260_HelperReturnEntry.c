@@ -3,8 +3,7 @@
  * the rest axis to the owner's +0x3b0 aim, the owner's +0x38c link clears, bit 0 of its +0x60 high
  * byte is set and bits 2 and 7 drop, the +0x388 shape shows, the +0x48 flag and +0x40 clear, the
  * +0x28 velocity rests, +0x1c starts at the +0x390 part's position and the node moves on to 020d13ac. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { unsigned f : 8; } B8;

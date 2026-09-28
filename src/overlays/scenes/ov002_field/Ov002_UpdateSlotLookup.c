@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 
 /* One row of the marker table, sixteen bytes. The kind is a four bit field:
  * the ROM extracts it with a shift pair rather than a mask. */

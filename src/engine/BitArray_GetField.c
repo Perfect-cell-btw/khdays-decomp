@@ -7,7 +7,7 @@
  * bitOffset in r1 and the accumulator in r3 (moved to r0 on return), matching
  * the ROM register allocation and instruction schedule exactly.
  */
-typedef unsigned int u32;
+#include "nitro/types.h"
 u32 BitArray_GetField(u32 *base, u32 bitOffset, u32 bitCount)
 {
     u32 result = 0;

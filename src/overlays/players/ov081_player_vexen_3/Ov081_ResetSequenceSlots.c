@@ -7,7 +7,7 @@
  * with the second loop's counter), loop 2 walks a plain pointer to the sequence bumped by
  * sizeof(slot), and ONE counter variable serves both loops (two counters swap self/j between
  * r4 and r5). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     char pad00[0x14];

@@ -1,5 +1,5 @@
 /* Ov002_CreatePairCompareNode: instantiate a progress-pair comparison node. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Ov002NodePair { u16 a, b; } Ov002NodePair;
 typedef int (*Ov002NodeSampleFn)(int nValue, int nArg, int bReady);
 typedef struct Ov002TaskNode {

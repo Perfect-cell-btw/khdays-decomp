@@ -2,8 +2,7 @@
  * at 1 x 0x88 (variant 0xb) and 0x1c x 0x88 (variant 0x1b with a +0x460 partner, else 0x16); once the
  * +4 rig is idle pose 8 plays with effect 0x22 at the +0x1c point, the +0x30 timer clears and the
  * brain waits on 020cf894. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);

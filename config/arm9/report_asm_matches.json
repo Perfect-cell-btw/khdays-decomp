@@ -33,7 +33,7 @@
       "mode": "thumb",
       "size": 4,
       "source": "libs/nitro/os/asm_stubs/auto/CpuFastSet.c",
-      "source_sha256": "d22d5110d1f5942fb01d47dacbe06e334cd0aac6a2d8c6e48861a9a0206a51d8",
+      "source_sha256": "9cd7e494183e2e138edd7ebb108bab5e17a3115875ea17888031007b1e0e1967",
       "target_sha256": "dedc152a89df8aadc9dc9526881c29e92f681504cf9bf438bbac1c6362fd9b42"
     },
     "CpuSet": {
@@ -42,7 +42,7 @@
       "mode": "thumb",
       "size": 4,
       "source": "libs/nitro/os/asm_stubs/auto/CpuSet.c",
-      "source_sha256": "5abe466f4042e3a68594170a35ee27b619207fff683ee7532c81199834657240",
+      "source_sha256": "30238221dfa146b7cfe64b2071dd6ff061855f7f793a3081250c4af34a80228f",
       "target_sha256": "07967ebdc3979cd4fd4de37fd22b3e6de8965b00dae4ac5585577c9709839652"
     },
     "DC_FlushAll": {
@@ -51,7 +51,7 @@
       "mode": "arm",
       "size": 52,
       "source": "libs/nitro/os/asm_stubs/auto/DC_FlushAll.c",
-      "source_sha256": "abf6bf2807bbf3a6a7a4a1fa3f345f53da50cb3f82627c3cb746bec1ef730665",
+      "source_sha256": "f9c0802bb347ceb5cda07901606e97a011a361bd2c96744b5dc708cbb46177f0",
       "target_sha256": "b630a9f2607ee24a57aee9567fc0bd28e7639a47c11c81fcbd50c73829e309f9"
     },
     "DC_InvalidateAll": {
@@ -60,7 +60,7 @@
       "mode": "arm",
       "size": 12,
       "source": "libs/nitro/os/asm_stubs/auto/DC_InvalidateAll.c",
-      "source_sha256": "98fde4d7d5043da27dc638dcd9d4f2fbeac5b2d16bafc0e95923e437be105161",
+      "source_sha256": "b772e8d18a85821e6b812ddb8c1cfcaa8579271bfc81a06b5a2791b547264868",
       "target_sha256": "87350088fc719c962c49919a6028cbdc10b61366d416c37fcabfd86f05a3341f"
     },
     "DC_InvalidateRange": {
@@ -69,7 +69,7 @@
       "mode": "arm",
       "size": 28,
       "source": "libs/nitro/os/asm_stubs/auto/DC_InvalidateRange.c",
-      "source_sha256": "4cdaec5dc37b4cc5b42dfbaa6021c829442b62dd8bf47243ed2e0eabaad7b4e9",
+      "source_sha256": "3d550d9db64b6d4a7b69ce946723cf9cf0d309b09040d25e5cccfe2d04f8842d",
       "target_sha256": "48901f21488a7733a2d5bd5ebf22720782c22fc6b02adb500e923c60c4bd8a20"
     },
     "DC_StoreAll": {
@@ -78,7 +78,7 @@
       "mode": "arm",
       "size": 44,
       "source": "libs/nitro/os/asm_stubs/auto/DC_StoreAll.c",
-      "source_sha256": "25c6932411058ca65db2d51ec1f48ac93017c493735b0768e53772b45c0c508c",
+      "source_sha256": "d1308e75772f82f784bac438885bf2a1e371dd233e1a3e327d16b3f4f2ae6a50",
       "target_sha256": "982e7f61332a95eacb9182a4e7b554a7d652a4fa704ed02157320885035f3f22"
     },
     "DC_StoreRange": {
@@ -87,7 +87,7 @@
       "mode": "arm",
       "size": 28,
       "source": "libs/nitro/os/asm_stubs/auto/DC_StoreRange.c",
-      "source_sha256": "3bcbd6bc3842e72cdbc849a2dc655f7693c016ce40cb7dec1ec713dd00e57491",
+      "source_sha256": "20eba5c211e15d6e4478f2762ecd540e051c994179d3e2c25575aca7e7d81232",
       "target_sha256": "73c490c748591560c32073177db61f3e23b90fb4814786885fd11b1277df2f0b"
     },
     "DC_WaitWriteBufferEmpty": {
@@ -96,7 +96,7 @@
       "mode": "arm",
       "size": 12,
       "source": "libs/nitro/os/asm_stubs/auto/DC_WaitWriteBufferEmpty.c",
-      "source_sha256": "38ffd1c71d046d0e816912823f0ed77e1cb10daf96efc1b397b020c8650f505b",
+      "source_sha256": "51e9c6991285648c5395ed45c61905a576ff100567c83664c31447324c4d5884",
       "target_sha256": "c27ce0bc897baa92f297f607f9677de717c8702b912841eeb8cfc4a5d7d4a16c"
     },
     "DGTi_Hash2ProcessBlock": {
@@ -114,7 +114,7 @@
       "mode": "thumb",
       "size": 4,
       "source": "libs/nitro/os/asm_stubs/auto/Div.c",
-      "source_sha256": "86e0c5d79a9f86ea91273832d7fd62c0652db92118e6436c6ea1ed129e5db0ff",
+      "source_sha256": "fa4b8f59e7925af6c9ad6a1d8b17a42dfffa95649c9e19dcaa0e6468a4f055c9",
       "target_sha256": "8911c2f5cca009dc112aed3996c2516b5949669109b1c79881bfb940b0f14e7c"
     },
     "Entry": {
@@ -141,7 +141,7 @@
       "mode": "arm",
       "size": 148,
       "source": "libs/nitro/gx/asm_stubs/auto/GXi_NopClearFifo128_.c",
-      "source_sha256": "84fb7bf8ba8e7b8c3f0dd908e5c2d89ff94972f97955579bfc90724f61a032ac",
+      "source_sha256": "69b69b1babcba326ddccfd7d9d38dfeea7b34985de5b3cc4c9be7e3f884f4a5a",
       "target_sha256": "b829db3b5e40e87e4edeacb39c8554be4fe06384eeab2ad0264f0bc532378f82"
     },
     "GetCRC16": {
@@ -150,7 +150,7 @@
       "mode": "thumb",
       "size": 4,
       "source": "libs/nitro/os/asm_stubs/auto/GetCRC16.c",
-      "source_sha256": "44a409f205a7107c41be46c70c410718038ee805de24b64e2f9972063fd35724",
+      "source_sha256": "110c3d79ae15f5003012df3b5d542598558d7d617f723684d4d852e59d5bc840",
       "target_sha256": "7db5376a9255b6f3b335a2a0553165e6f8fb14695e62f9b3797fb876191ee72a"
     },
     "Halt": {
@@ -177,7 +177,7 @@
       "mode": "arm",
       "size": 12,
       "source": "libs/nitro/os/asm_stubs/auto/IC_InvalidateAll.c",
-      "source_sha256": "365f2e3135303af4ac16ba7a8e140d1c0f0eb6da17f7da01835c1e92e4241f0a",
+      "source_sha256": "35468e58cb27dccc77189fff87c421a15c31ce457950c8b749da09767a193287",
       "target_sha256": "1b9b31e8b186194b339e53e686f9c6caf9dffc7cfaed0250cb22939a495ff93e"
     },
     "IC_InvalidateRange": {
@@ -186,7 +186,7 @@
       "mode": "arm",
       "size": 28,
       "source": "libs/nitro/os/asm_stubs/auto/IC_InvalidateRange.c",
-      "source_sha256": "012e37a3a21d59d8a01c7a6a339e5adb058a04571ca4ffc0d0353c1c12e385bf",
+      "source_sha256": "92e0b20ccfdb88ee4baa6e4bd69170d7b0a2c3e85b1242bf23ba7083996ba30b",
       "target_sha256": "ffca60a25c2f00ded333c78f7bd5a9d3af59108f936fdb2c75b675bc8eadf992"
     },
     "INITi_CpuClear32": {
@@ -195,7 +195,7 @@
       "mode": "arm",
       "size": 20,
       "source": "libs/nitro/os/asm_stubs/auto/INITi_CpuClear32.c",
-      "source_sha256": "6d5287203c65bcdd6434b90dbfed252d47c3abfb7e4c93d678608bc78661e0a4",
+      "source_sha256": "915d1276214aae37c048a9b69076838e1daffba89bbeb28a45f972c8ea470b82",
       "target_sha256": "3cfd563af82d5813c8180f4b189a1e34d77a9c562334d174657e0d116c7d988e"
     },
     "INITi_CpuClear32_0x01ff86fc": {
@@ -204,7 +204,7 @@
       "mode": "arm",
       "size": 20,
       "source": "libs/nitro/os/asm_stubs/auto/INITi_CpuClear32_0x01ff86fc.c",
-      "source_sha256": "019e854cdcf54e0763cf3d873f2eceed51c14ccf768bf7cd4aa4975148e15d19",
+      "source_sha256": "ac623ff1850d4577032f9854a5bc732d6212cbff91ce5adecb814d547862d7ad",
       "target_sha256": "3cfd563af82d5813c8180f4b189a1e34d77a9c562334d174657e0d116c7d988e"
     },
     "INITi_CpuClear32_0x0200093c": {
@@ -213,7 +213,7 @@
       "mode": "arm",
       "size": 20,
       "source": "libs/nitro/os/asm_stubs/auto/INITi_CpuClear32_0x0200093c.c",
-      "source_sha256": "45e4e7991bcffb2c5dfa1b0daf7f3cfe63b1249fe024352c269f78feafdf68fc",
+      "source_sha256": "64b90ad932d450ed88358c1fded4dcdaf85038368f831440bd55362316bc875c",
       "target_sha256": "3cfd563af82d5813c8180f4b189a1e34d77a9c562334d174657e0d116c7d988e"
     },
     "IntrWait": {
@@ -222,7 +222,7 @@
       "mode": "thumb",
       "size": 4,
       "source": "libs/nitro/os/asm_stubs/auto/IntrWait.c",
-      "source_sha256": "0170fe090b6153692d34eecbb6e14d83dfdb6879f5a0f592486feff1b1a068d3",
+      "source_sha256": "f787d766144defeab0fcb8eb0fb3f8ae701c42adeefb8b51aabee9b6cc7d03aa",
       "target_sha256": "485d13214d02ed051e795d47865ceea1fe4d5b310e8efae318bee4a62cb63b47"
     },
     "IsDebugger": {
@@ -285,7 +285,7 @@
       "mode": "arm",
       "size": 304,
       "source": "libs/nitro/mi/asm_stubs/auto/MI_CpuCopy8.c",
-      "source_sha256": "99d93b5c1a8224a9e9ec0c8191618fd99705a0fbe44db691f9b50d1bfab16b10",
+      "source_sha256": "fdb28b1d0b62032ab4ca1ac7fff42ce75b0f3f521e6b1721a053d1ff30bc4c76",
       "target_sha256": "9c23b2fac113088842e50833d03da93628c9e0a12066d5136299ea38f1df8c0b"
     },
     "MI_CpuFill8": {
@@ -294,7 +294,7 @@
       "mode": "arm",
       "size": 148,
       "source": "libs/nitro/mi/asm_stubs/auto/MI_CpuFill8.c",
-      "source_sha256": "b75e444d78a08d2dac84be6253835fb276311fb153de35e9a8e7e8e91451ca6e",
+      "source_sha256": "db4b7706bcb414d446449b33b092c6035ebed1cd2ae403bea0ba4e4cae5cf7d9",
       "target_sha256": "c88796aaf6fcd87ae6cbd3d7000128d6e4035339a3b826a851053a0ba02d07a8"
     },
     "MI_SwapWord": {
@@ -321,7 +321,7 @@
       "mode": "arm",
       "size": 24,
       "source": "libs/nitro/mi/asm_stubs/auto/MIi_CpuClear16.c",
-      "source_sha256": "624db4cbadd3995cec63d8c0ee073554438561d3d4fa2ed3d85d75730d62c076",
+      "source_sha256": "91888b3f0d44a470bb6a5a80a1f91c41fd52cd1d43888f01f7a127f0e49e3d35",
       "target_sha256": "d2d14fd6d81c53ad277449040bee12a49b3865b82e204ddf1788ba2d8b785bc7"
     },
     "MIi_CpuClearFast": {
@@ -330,7 +330,7 @@
       "mode": "arm",
       "size": 76,
       "source": "libs/nitro/mi/asm_stubs/auto/MIi_CpuClearFast.c",
-      "source_sha256": "471648d05af276792ef8479f5ee7bc013f2bd7b9053aa123a5c17e10d305d51a",
+      "source_sha256": "d1dfd9b6fc145968d5e86a650da51050b1f5a2564caab6e2254e538c98403354",
       "target_sha256": "78d9fa528b10650a11d403d7be899508367353e15fa6b5fb691566cf9b9e2f71"
     },
     "MIi_CpuCopy16": {
@@ -339,7 +339,7 @@
       "mode": "arm",
       "size": 28,
       "source": "libs/nitro/mi/asm_stubs/auto/MIi_CpuCopy16.c",
-      "source_sha256": "5ec8262fee83dc27c4b2ee9a281d2849dd61b8fd3a308338c6f6950af28291fc",
+      "source_sha256": "8dfd0b802ef599598e60ee3be7e80d5b7a8e9d699b7e0a339daf1c6e666f9867",
       "target_sha256": "b13a643d9bdfb04665304652c4e2d7e061e91b77f7832e6f3e9f50e62e37bda8"
     },
     "MIi_CpuCopy32": {
@@ -348,7 +348,7 @@
       "mode": "arm",
       "size": 24,
       "source": "libs/nitro/mi/asm_stubs/auto/MIi_CpuCopy32.c",
-      "source_sha256": "e6afdce5bf86fc957654906bd98ee41b3c0b05eeb91d26b9acfcdc59cfeb1d5e",
+      "source_sha256": "0304c9ca47b4e4ac5777c25d1c8eed7ec90d008e76e416f0b82d1bc3258829e3",
       "target_sha256": "11b33393cb66eec6392d208c96cdea91fc66ad9d1ea9b3ad8d32a727d66489b8"
     },
     "MIi_CpuCopyFast": {
@@ -357,7 +357,7 @@
       "mode": "arm",
       "size": 56,
       "source": "libs/nitro/mi/asm_stubs/auto/MIi_CpuCopyFast.c",
-      "source_sha256": "89ec46e5f682efacb1296dcb5bb1c6754537aee9ef1b8180b9ac1154d8af6b36",
+      "source_sha256": "3768ab1d5f6b9def68212c1b3015cb9db21d341b4299767a25f0823b5d65c5a7",
       "target_sha256": "03dedb056d93e4d67f696cbce2aa102d149753258cf8d227ad819003781b5a3d"
     },
     "MIi_CpuSend32": {
@@ -366,7 +366,7 @@
       "mode": "arm",
       "size": 24,
       "source": "libs/nitro/mi/asm_stubs/auto/MIi_CpuSend32.c",
-      "source_sha256": "2ec608007531c937058bbc683bb91d60efb944f13adcbf42aba56fb0773304b4",
+      "source_sha256": "36b1b2da390ab265a5513eba6ab9327ef17120dc5a28f47874a15d1ba7858314",
       "target_sha256": "ed10452abe309f9ccabb5a302958ab0346751b510769f47abc86894b97589a5f"
     },
     "MIi_UncompressBackward": {
@@ -375,7 +375,7 @@
       "mode": "arm",
       "size": 172,
       "source": "libs/nitro/init/asm_stubs/auto/MIi_UncompressBackward.c",
-      "source_sha256": "f8d2c9f157fa8e842691db590a3dba31d633cd33e3799bdf024de9fdf0df1795",
+      "source_sha256": "e6daf4a0b931fca50f486a134102d69e1c9c779ad851aafcb8ac9d729afb3268",
       "target_sha256": "c3979e93bb0e390fbef9cf64dd91479895dee1945ad61c964af19e34fefb976f"
     },
     "MTX_Copy43To44_": {
@@ -438,7 +438,7 @@
       "mode": "thumb",
       "size": 30,
       "source": "libs/nitro/mtx/asm_stubs/auto/MTX_RotX43_.c",
-      "source_sha256": "9dda368f7541aaeddc0d7aa0a5c5e4d8d60cc856c4957e62b9cc5f932299049c",
+      "source_sha256": "a10684fc26745d53d6aada107773057d79504b5805adf8c7c9d940ce33e6b687",
       "target_sha256": "714d2cd17ba947201e28b76261c3db637fcdccc56d609e5fbb637c0677f3fab3"
     },
     "MTX_RotY33_": {
@@ -483,7 +483,7 @@
       "mode": "thumb",
       "size": 6,
       "source": "libs/nitro/os/asm_stubs/auto/Mod.c",
-      "source_sha256": "38ba7c701c31aefe99a68da897c8184cc468cd8ed4515a2f347586fe6fef536a",
+      "source_sha256": "50331976d34da0e1f910a9e0fadaf584b12748505652360300602793fb92e03c",
       "target_sha256": "60fbe450e50aaefd910a0b8dc4b96ebf7f2e159fcf32ef9592c6641842f866e6"
     },
     "OS_DisableInterrupts": {
@@ -492,7 +492,7 @@
       "mode": "arm",
       "size": 20,
       "source": "libs/nitro/os/asm_stubs/auto/OS_DisableInterrupts.c",
-      "source_sha256": "fb4f085e9b6165be751bda9e4791eb96791ee849e7f0d2ae1e09a18264fd075e",
+      "source_sha256": "4c409fb7ccebad20457c9ed2973624be1b91d184019372eb4dd29499559aafed",
       "target_sha256": "a8cdb747f9936730571b220bb9570615892665b120713ffc59b1cb2d7dee76ff"
     },
     "OS_DisableInterrupts_IrqAndFiq": {
@@ -501,7 +501,7 @@
       "mode": "arm",
       "size": 20,
       "source": "libs/nitro/os/asm_stubs/auto/OS_DisableInterrupts_IrqAndFiq.c",
-      "source_sha256": "34d09cfb5f4ad70f9c03130104720fb108808fda5f07e67d556eeec7875e02c9",
+      "source_sha256": "7062a563d552fd77db5e288f69a42fe33c639eee6e2ca0dac857f843f13ad871",
       "target_sha256": "a28a74d99483b6248b1f1a2ab98c2761d430292a639b4809dbd943f8933db59b"
     },
     "OS_DisableProtectionUnit": {
@@ -510,7 +510,7 @@
       "mode": "arm",
       "size": 16,
       "source": "libs/nitro/os/asm_stubs/auto/OS_DisableProtectionUnit.c",
-      "source_sha256": "d8a76d540f3b591ee3b76c704d5566232e604c55beb2783fd6667518a56f44fa",
+      "source_sha256": "be6e1dd09bc21f3a8e9bcf8b00e05329d8c85c00785b7a64cc04d33dc620de13",
       "target_sha256": "e2198bc0e9e6362a947b8f7f58b87509a209bd79c12981f1c91eb3fc6b2838ec"
     },
     "OS_EnableInterrupts": {
@@ -519,7 +519,7 @@
       "mode": "arm",
       "size": 20,
       "source": "libs/nitro/os/asm_stubs/auto/OS_EnableInterrupts.c",
-      "source_sha256": "e49bb48677e6e7040f2853b5e47895904fc02c0292ffd698078f22dfbfa04501",
+      "source_sha256": "1bf772568ef5261ad0d84391ab7b23439d14fcb727d19392667142b037a9eda2",
       "target_sha256": "7c5724bfdbcfb52c6253bb57b74c12bf1e98e4526cb4ecdb0fade4c9e10dbfa2"
     },
     "OS_EnableProtectionUnit": {
@@ -528,7 +528,7 @@
       "mode": "arm",
       "size": 16,
       "source": "libs/nitro/os/asm_stubs/auto/OS_EnableProtectionUnit.c",
-      "source_sha256": "336fcb390d8cae4e18afcc4d353318afe0549f1d335dd891cc0de6bebb8a3c49",
+      "source_sha256": "f29350346f273c2ec87cf4d1e82bd6cd8d099642e1afe3d7a187881ba8a74aa1",
       "target_sha256": "a54f1f3201a56509e6a0727e44f68ca4f479e222921ff268e2372feb98b6f8d8"
     },
     "OS_GetCpsrIrq": {
@@ -537,7 +537,7 @@
       "mode": "arm",
       "size": 12,
       "source": "libs/nitro/os/asm_stubs/auto/OS_GetCpsrIrq.c",
-      "source_sha256": "9c1999947a1d3341edd4c241dbac97c3d6eee4c7e30c6b24c4a7480329e868c0",
+      "source_sha256": "aef987f7f214ba711920e7e68f4863c60e44ae04abf5ba6b7e069ff6ebcbf15b",
       "target_sha256": "9c3668b7089a9adbfd85879f1c4689241aea4f8bd7af68fb26cdf12657eda6ee"
     },
     "OS_GetDTCMAddress": {
@@ -546,7 +546,7 @@
       "mode": "arm",
       "size": 20,
       "source": "libs/nitro/os/asm_stubs/auto/OS_GetDTCMAddress.c",
-      "source_sha256": "550aaf7213955a006ba6a71da8d2ff43245d465a57480666ebf2fdd40f70e643",
+      "source_sha256": "4ee9c4f0db47720449395f4b1a22e8a5560a94bfc7decd047b15f184c67b1b90",
       "target_sha256": "f59481cb320d1a0506d614cd603b2fe6dee8c06b1ef7bf7859a0afb9e040c93e"
     },
     "OS_GetLockID": {
@@ -564,7 +564,7 @@
       "mode": "arm",
       "size": 12,
       "source": "libs/nitro/os/asm_stubs/auto/OS_GetProcMode.c",
-      "source_sha256": "3796ba4b095f6e7bd6db838d6c5149bed121654e880301fc85886f0d2667ae7a",
+      "source_sha256": "bb4949b305f441858405a2ec60a025b7886de2c611c2eb651fc8f2a546d6fb29",
       "target_sha256": "0528e878357410ab14fe859cfd2b9c50d32a6916d00f23c08e44f3882139c53a"
     },
     "OS_Halt": {
@@ -573,7 +573,7 @@
       "mode": "arm",
       "size": 12,
       "source": "libs/nitro/os/asm_stubs/auto/OS_Halt.c",
-      "source_sha256": "d0528d677e11c1f095a953ef7dd35bb0783e1adc2d7d599812608f5502626d56",
+      "source_sha256": "f6b33023c051650fa056960c8813eb5ac09ccec5b785d72f59625b64fac30d5f",
       "target_sha256": "41cf2639ff0928e5c67f842db7e28825020db50d66cef85d75c3943ce8b4b6ac"
     },
     "OS_InitContext": {
@@ -582,7 +582,7 @@
       "mode": "arm",
       "size": 108,
       "source": "libs/nitro/os/asm_stubs/auto/OS_InitContext.c",
-      "source_sha256": "730f6066ccd60b348103e5eb45547e57328fe7caf96f15d91e2b76e7f6d2a3c0",
+      "source_sha256": "e15bc604d54781032995dea5c65d68865b6037094fc77eabe49ef95d0ae9d855",
       "target_sha256": "397c43c4f0dd1e0478f46d5a36e8578b9f91f08371ca5fd143250e3da104f8d4"
     },
     "OS_LoadContext": {
@@ -591,7 +591,7 @@
       "mode": "arm",
       "size": 68,
       "source": "libs/nitro/os/asm_stubs/calls/OS_LoadContext.c",
-      "source_sha256": "220968f347390cd043c1c94dc3320c9dd4685a08e4e7b2bacea5bd836e0998d5",
+      "source_sha256": "778e6fc0b13d31d871b4952df6a471058f8585e461390213358cf029342bb7b8",
       "target_sha256": "3e940de39cb1c121fe9c49f8c471b38819d2c59b43adfa2fb2cb22a5e4e474da"
     },
     "OS_ReleaseLockID": {
@@ -609,7 +609,7 @@
       "mode": "arm",
       "size": 24,
       "source": "libs/nitro/os/asm_stubs/auto/OS_RestoreInterrupts.c",
-      "source_sha256": "66e6062d4b8687bc1a43efe8cb297d24706483134b45d3f5437758822d3815b3",
+      "source_sha256": "7b5cbb6962a7abb95f568f6b0171be74d127a18e73aef79b7c9269bfcd66dafc",
       "target_sha256": "46b5111b6fad094dfff177dca974d33b477cb72772ecfe95b74b1c7f656bc4fd"
     },
     "OS_RestoreInterrupts_IrqAndFiq": {
@@ -618,7 +618,7 @@
       "mode": "arm",
       "size": 24,
       "source": "libs/nitro/os/asm_stubs/auto/OS_RestoreInterrupts_IrqAndFiq.c",
-      "source_sha256": "0a54ae01ca0adff5c85fa2328820d0c7c48d44f9a1c354689e33cf9b9dd66efc",
+      "source_sha256": "7e4b571b2d2f598ba061bc27d40832b8784406aceabe27dedc919810140636bf",
       "target_sha256": "1af689f0cb6ad8ac8c2e194779405f35aa692853028b83859dd018f50008f229"
     },
     "OS_SaveContext": {
@@ -627,7 +627,7 @@
       "mode": "arm",
       "size": 76,
       "source": "libs/nitro/os/asm_stubs/calls/OS_SaveContext.c",
-      "source_sha256": "548a76fb9d90cee5ae5c36cdb026aa40995361ab834fabd20eaba936b3bb3d70",
+      "source_sha256": "6bbd9d2912fe4b817b9aba0dd52fd09190c38cedd3f80a81ab704df39f6fe7fd",
       "target_sha256": "99f47ad97c2d20e9e5e68bfff9112cc41f6dd14d1d981bac94daf3c1f611b6c0"
     },
     "OS_SetDPermissionsForProtectionRegion": {
@@ -636,7 +636,7 @@
       "mode": "arm",
       "size": 20,
       "source": "libs/nitro/os/asm_stubs/auto/OS_SetDPermissionsForProtectionRegion.c",
-      "source_sha256": "394a98ba1051b0b235dcdc9b8137e9cc16999a0a8af9c7facf1cf72f96a1ae78",
+      "source_sha256": "b79af08ae12997dd2ab7d19e2b62e74d464135de723b01986287e8ab586103ea",
       "target_sha256": "03852eb39b240892992253f91e56625e6b0f3b021e5d759a193c7045594e30ac"
     },
     "OS_SetProtectionRegion1": {
@@ -645,7 +645,7 @@
       "mode": "arm",
       "size": 8,
       "source": "libs/nitro/os/asm_stubs/auto/OS_SetProtectionRegion1.c",
-      "source_sha256": "4fb45957c785875f3ac9467644dc2d1f5a6dba9adf6bf594a8d050ee709c10fa",
+      "source_sha256": "df2fcee00a5b6598f73e3d7ccc156bbfdfebd639d47ad6211575dd02400e78e7",
       "target_sha256": "6e9918c3ae85c4beba206bb22bdbbbc76808da64f56d439644a4df5843bb707b"
     },
     "OS_SetProtectionRegion2": {
@@ -654,7 +654,7 @@
       "mode": "arm",
       "size": 8,
       "source": "libs/nitro/os/asm_stubs/auto/OS_SetProtectionRegion2.c",
-      "source_sha256": "a3e9f088e343c3ce3bef48ecd59e7c6aeb1536e4c58b323a34561b9abbdb95e9",
+      "source_sha256": "780d69aaecc5ea0795f86ee9f7ab702eb10f48f0ab35bdd40168496888452598",
       "target_sha256": "92431ce8a41e4a29855e6b5e9757ee5c9798e357db757638f24b6a14f5f09791"
     },
     "OS_SpinWait": {
@@ -699,7 +699,7 @@
       "mode": "arm",
       "size": 116,
       "source": "libs/nitro/os/asm_stubs/calls/OSi_ExceptionHandler.c",
-      "source_sha256": "763080802f75cde07b4f00c73a55740a2d467fd3b5eac23305053a1c8b0d5d15",
+      "source_sha256": "5f3646bb2da44362eda3d1546572f6e4906092fc9e7e58d8975a03730faf0611",
       "target_sha256": "f18b5fe3712b733d8f4b0811c76cef32dc0ecf20ce6d05d51b587dd6010bf7f8"
     },
     "OSi_GetAndDisplayContext": {
@@ -717,7 +717,7 @@
       "mode": "arm",
       "size": 144,
       "source": "libs/nitro/os/asm_stubs/calls/OSi_SetExContext.c",
-      "source_sha256": "ef742b34b67f8e4c5f145d338cf537d34caf0c531a79de0e27223a9e2dd5e558",
+      "source_sha256": "2b2d482c3e9d33050c1185e4ce5abd4f0d64663a7d33860723d9510f256a6218",
       "target_sha256": "f1c9d65881093a91c734dd4d6c3a54f4f4ec9d533df20ded4630fdb2547e8faf"
     },
     "OsCountZeroBits": {
@@ -734,7 +734,7 @@
       "mode": "arm",
       "size": 132,
       "source": "src/overlays/scenes/ov002_field/Ov002_FindFreeSpotId.c",
-      "source_sha256": "71a2319dde8a26e51a582b7ba1f400c0e9fe0e5f3dcfb46e1505f82290a87b34",
+      "source_sha256": "3027a04bcd4547be0cd348d0d876302891fc368655b45723e45b3b4127e733a9",
       "target_sha256": "952e8b2925837566aa0a639f1785105356e8ba50bf12113c2f82a17e8a56c230"
     },
     "Ov003_RankPlayers": {
@@ -742,7 +742,7 @@
       "mode": "arm",
       "size": 576,
       "source": "src/overlays/scenes/ov003_mission_result/Ov003_RankPlayers.c",
-      "source_sha256": "2acf18c100aad1ac0f169cff4f27c8642f8818cdf5381f16559cdf6f01d4941a",
+      "source_sha256": "87917ced64d7fda70f943c6e065dc934c35be9e0d0c15255b1767695cf71f1f1",
       "target_sha256": "b97dbd98de132ddcd2afe50d2e898935fc1de228f0fd88c3b5485ad9c419404d"
     },
     "Ov024_MobiClip_AudioTransformDecode": {
@@ -814,7 +814,7 @@
       "mode": "arm",
       "size": 648,
       "source": "libs/nitro/math/asm_stubs/auto/Util_QuickSortWithWork.c",
-      "source_sha256": "a57cee8a00f9b88250790439c168624354aa3ae7c0be24ff1577fcbfa2778406",
+      "source_sha256": "7aab7bf288480bdf71ecdeeeda366fde41995f5d23ffb11d36b8326b432d7cf7",
       "target_sha256": "54aa3756d22c704c48e99081f6fbc020ea68f4be1fe4787f5f2564b841ad4502"
     },
     "VBlankIntrWait": {
@@ -841,7 +841,7 @@
       "mode": "arm",
       "size": 32,
       "source": "libs/msl/c/asm_stubs/auto/_ll_mul.c",
-      "source_sha256": "64ef86f37b34a691e47430c1b364a9e8d8416e7f83e95fe97114e870ff1937ea",
+      "source_sha256": "29666bee83b2db41bc09ac54710971502a7e377adeb4cf5303696b18db3ca0bb",
       "target_sha256": "661b48b2adf3a6af3987ca653b5aaa2172d0d5137c91c6658cf18189b776a714"
     },
     "func_01ff8148": {
@@ -865,7 +865,7 @@
       "mode": "arm",
       "size": 204,
       "source": "libs/nitro/os/asm_stubs/calls/func_01ff8330.c",
-      "source_sha256": "df57f07776df9413585a41cc2987d2b3bf3f3087da97e0688174052bc352c1db",
+      "source_sha256": "09312d91c147f87c37be540a5cd57a124102b0d936de0e0201ed9f42712a6d5a",
       "target_sha256": "e9aa4710e4f3edf8d3b6cf84fce31e928cc13108750becc7d3acf63970920879"
     },
     "func_020009fc": {
@@ -910,7 +910,7 @@
       "mode": "arm",
       "size": 388,
       "source": "libs/nitro/mi/asm_stubs/calls/func_02004484.c",
-      "source_sha256": "af028c2187cf507b643dfb64208fded7b5d936561edeec6ffc8c2c2ad8d9e254",
+      "source_sha256": "28128ee37406dbae337be5486e9c1cc8965113d074fd7826846d8ee9c2089dcf",
       "target_sha256": "3bc1beb64a0de5abb0c883eda6b32c6e2028ec260ca0ea071439d34692e15b8c"
     },
     "func_020201a8": {

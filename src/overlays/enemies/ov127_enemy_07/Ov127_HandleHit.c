@@ -5,8 +5,7 @@
    the specific flag combination that suppresses them. Requests state 3 when the
    points run out and state 6 otherwise. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct HitState {
     char *pOwner;

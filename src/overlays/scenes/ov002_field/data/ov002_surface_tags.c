@@ -1,5 +1,5 @@
 /* Seven resource names and their tag IDs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern char data_ov002_0207f07c;
 extern char data_ov002_0207f09c;

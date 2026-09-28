@@ -1,7 +1,7 @@
 /* Recovery entry: once the +4 item's +0xad byte clears the actor plays pose 0x17 and is knocked
  * back with mode 7 in place, the +0x3e4 shape loses bit 1, the +0x44 / +0x40 timers and the +0x70
  * flag clear, the +0xc velocity resets to zero and the node moves to 020d06d0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

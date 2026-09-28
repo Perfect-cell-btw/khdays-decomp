@@ -7,9 +7,7 @@
  * packed into the overlay's 14-byte template for the owner's +0x24 message hook and effect 0x53
  * plays there. Entity kinds already in the event's +0x11 mask are skipped; the mask keeps only the
  * kinds still inside the box. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */

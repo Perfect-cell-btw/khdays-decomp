@@ -5,7 +5,6 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u16 data_ov004_0205136c[10] = { 0xff5e /* fullwidth ~ */, '%', 'l', 's', 0xff5e /* fullwidth ~ */, 0, 0, 0, 0, 0 };

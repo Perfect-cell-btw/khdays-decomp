@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Ov002_GetModuleScale(void);
 extern int Ov002_AdvanceElementClock(char *pElement, u16 *pTable, int nDelta,

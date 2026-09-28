@@ -1,8 +1,7 @@
 /* Waits for the action-0x48 windup timer, faces the current target when present, clears actor
  * flags60 high-byte mask 0x82, starts reaction 0x12f mode 6 and advances the action node. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;

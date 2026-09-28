@@ -2,10 +2,7 @@
  * block at +0x4d8 of the scene work is initialised (02023c60), its angle (+0x4f0) advanced by
  * 0xccd and copied to the target (+0x4fc), the distance (+0x500) set to 1.0 << 2, the near /
  * far (+0x4d8 / +0x4dc) to 0x579 / 0xf09, and the camera committed (02023cc0). */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

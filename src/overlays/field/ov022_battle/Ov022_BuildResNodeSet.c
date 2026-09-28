@@ -11,9 +11,7 @@
  * the set's tag is the request's count plus seven.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* Ov022ResNodeSet: what this function fills (embedded at request+4) */
 struct ResNodeSet {

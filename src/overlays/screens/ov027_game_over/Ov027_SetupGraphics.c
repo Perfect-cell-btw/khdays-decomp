@@ -11,10 +11,7 @@
  * blends BG0 against the backdrop at 1 / 0x26 / 0 / 16 (G2x_SetBlendAlpha_ on BLDCNT), runs in
  * graphics mode 0 with VRAM bank 0x180 for its BGs, BG1 control 0x1508 and DISPCNT showing
  * BG1 only. */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 static volatile u32 *const REG_DISPCNT = (volatile u32 *)0x04000000;
 static volatile u16 *const REG_BG0CNT = (volatile u16 *)0x04000008;

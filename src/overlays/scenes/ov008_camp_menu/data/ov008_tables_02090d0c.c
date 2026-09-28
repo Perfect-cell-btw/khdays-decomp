@@ -8,8 +8,7 @@
  *   data_ov008_02090d0c: Ov008_UpdateMissionMenuConfirmScreen, Ov008_UpdateMissionMenuSelectionScreen
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u8 data_ov008_02090d0c[16] = {
     45, 0, 45, 0, 45, 0, 45, 0, 45, 0, 45, 0, 0, 0, 0, 0,

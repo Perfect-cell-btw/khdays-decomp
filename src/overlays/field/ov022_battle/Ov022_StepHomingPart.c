@@ -1,9 +1,7 @@
 /* Steers a launched part towards its target: when the target is valid and ahead, turns its velocity
  * towards it within its turn rate, moves it and plays its reaction on reach. */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

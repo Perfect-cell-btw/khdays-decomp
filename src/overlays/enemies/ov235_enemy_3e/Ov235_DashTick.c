@@ -7,9 +7,8 @@
  * +0x3c8 mode 0xa fires there. The +0x44 timer accumulates the frame rate; past 0.25 the hook
  * receives note 4 of data_ov235_020d24d0, animation 0x21 plays and the tick hands over to
  * Ov235_HoverTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef long long fx64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo; u16 hi; } Cmd4;

@@ -14,10 +14,7 @@
  * input bit 2, a ready reaction block and slot rule 0x33 open phase 5.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 /* Ov022ComboRecord */
 struct ComboRecord {

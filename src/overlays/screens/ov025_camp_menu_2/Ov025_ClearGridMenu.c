@@ -5,8 +5,7 @@
  * cell of the visible page up to the first blocked (0xff) cell of every row,
  * and all nine column-header cells.
  */
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 #define GRID_PAGES 3
 #define GRID_ROWS  8

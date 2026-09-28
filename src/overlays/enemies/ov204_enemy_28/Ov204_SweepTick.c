@@ -7,9 +7,7 @@
  * the actor's +0x24 message hook, reaction 0x132 mode 4 fires there and the id bit is set
  * (through `1 >> id`, as the original does). Once the +0x28 busy byte clears, sub-state 2 is
  * requested and the tick hands off to a null callback. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;

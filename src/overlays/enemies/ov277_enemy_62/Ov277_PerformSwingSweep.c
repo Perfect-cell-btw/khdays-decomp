@@ -1,8 +1,6 @@
 /* Swing sweep for ov114: probe the forward volume, notify each accepted hit,
  * spawn reaction 0x112 at the target position, and report whether any hit was accepted. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

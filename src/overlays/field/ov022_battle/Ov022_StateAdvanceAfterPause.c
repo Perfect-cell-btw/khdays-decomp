@@ -1,9 +1,7 @@
 /* Fades both screens out (or waits for the scene when not fading) and moves to ending the key
  * sharing session. */
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef void *(*Ov022StateCallback)(void);
 

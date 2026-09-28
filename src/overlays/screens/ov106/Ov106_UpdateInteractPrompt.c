@@ -3,7 +3,7 @@
  * the selected player's entity present, an actor that is not free to act (ov022 02086620/02086888) is
  * left alone; otherwise its prompt is shown when the entity may act on its target (020b79dc), or hidden
  * while the prompt is up. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int GameState_IsFlagSet(int flag);
 extern u8 data_0204be04;

@@ -7,9 +7,7 @@
  * ctx object 95c0, either targets slot 0 and sets flag 0x200a or targets no
  * slot with 0x5dc.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionListEntry {
     u16 nWord;                /* 0x00 */

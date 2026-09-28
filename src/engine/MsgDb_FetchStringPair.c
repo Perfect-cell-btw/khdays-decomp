@@ -3,8 +3,7 @@
  * ptrA/cntA and ptrB/cntB; fails (0) if either extraction fails. A record whose id (+0x00) is not
  * negative keeps the two strings (+0x04 / +0x08); otherwise both are cleared. Returns 1. The ROM
  * re-reads `index` from its stack slot for each call, hence the volatile parameter. */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct MsgRecord {
     short id;                           /* +0x00 */

@@ -10,8 +10,7 @@
  * Publishing NULL to the context global last is what makes the scene unreachable.
  */
 
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov000DestroyContext {
     u8 pad_0000[0x4c];

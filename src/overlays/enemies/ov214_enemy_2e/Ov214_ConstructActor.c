@@ -2,7 +2,7 @@
  * the effect subitem it drives, five attachment subitems and the two nodes it publishes its pose
  * through. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } VecFx32;
 typedef struct { void *node; int pad; } Slot;
 typedef struct { int w[5]; } KindTable;

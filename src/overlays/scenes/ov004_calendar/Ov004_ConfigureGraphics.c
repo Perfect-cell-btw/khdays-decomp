@@ -1,11 +1,8 @@
 /* Initializes ov004 display banks, BG priorities and maps, blend planes, 3D control and display
  * selection; clears three BG screen buffers and restores brightness. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef volatile u16 vu16;
-typedef volatile u32 vu32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct {
     vu16 nBg0Control;
@@ -80,8 +77,6 @@ typedef enum {
     GX_BLEND_PLANEMASK_OBJ = 0x10,
     GX_BLEND_PLANEMASK_BD = 0x20
 } GXBlendPlaneMask;
-
-typedef int fx32;
 
 extern void Gfx_Reset2DEngines(void);
 extern void SetMasterBrightnessMain(int nBrightness);

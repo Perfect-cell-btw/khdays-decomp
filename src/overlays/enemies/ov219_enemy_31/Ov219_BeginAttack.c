@@ -3,8 +3,7 @@
  * +0x388 item's +8 byte gets bit 1, and with a +0x40 target the +0xc/+0x10 yaw turns towards it
  * (from the actor's +0xb0 point to the target's +0x190 point). The target is cleared and the
  * tick hands off to the attack tick. */
-typedef unsigned char u8;
-typedef short s16;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 struct b8 { unsigned f : 8; };
 

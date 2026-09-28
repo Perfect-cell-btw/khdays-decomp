@@ -10,8 +10,7 @@
  *   data_ov008_0209051c: Ov008_GetPageTableEntry
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u8 data_ov008_020904f8[12] = {
     37, 0, 48, 0, 50, 0, 100, 0, 0, 0, 0, 0,

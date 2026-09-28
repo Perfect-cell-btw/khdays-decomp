@@ -27,9 +27,7 @@
  * (`if (elapsed > 0x69) { ...; return next; } return 0;`); with the early-out spelling mwcc
  * schedules the pool load of the next state ahead of the counter store.
  */
-typedef unsigned char u8;
-typedef signed char   s8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 typedef void         *StateFn;
 
 typedef struct Ov000MenuContext {

@@ -1,9 +1,7 @@
 /* Bounce step: moves the actor, casts a sphere against the world and, on contact, reflects its
  * direction off the contact normal, turning and slowing; tracks grounding and bounces. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 struct VecFx32 { int x, y, z; };
 struct MtxFx33 { int m[3][3]; };

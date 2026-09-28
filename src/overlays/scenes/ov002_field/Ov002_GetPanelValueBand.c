@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* Ghidra models this as Ov002PanelThresholds at g_ov002PanelThresholds;
    the delink names the same address data_0204c254. */

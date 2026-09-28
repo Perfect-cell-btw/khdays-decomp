@@ -5,7 +5,7 @@
  * +0x38c model on track 2 and re-attach the +0x398 bank on track 0 if its pose is set; other poses do
  * the reverse. The frame carries over (01fff774). Combat poses (9-11, 14, 16-21, 26) also rebuild the
  * hit volume (020cc194, pose + 0x21). +0x418 clears and +0x41c records the pose. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Flag { u8 b0 : 1; };
 typedef struct { char pad[0xc]; int clip; char rest[0x24 - 0x10]; } AnimSlot;
 struct Ov259Model { char pad[0x398]; AnimSlot banks[2]; };

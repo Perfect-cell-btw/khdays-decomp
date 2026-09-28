@@ -18,8 +18,7 @@
  * the value and a full pointer across the compare).
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int  NNSi_FndGetCurrentRootHeap(void);
 extern int  Session_IsActive(void);

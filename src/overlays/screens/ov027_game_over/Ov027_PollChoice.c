@@ -7,10 +7,7 @@
  * (+0x5c0) becomes 1, otherwise the cursor.  Every frame the choice slot is either queued
  * (Ov027_EnqueuePanel 02083cb8) while its blink phase (+0x574) is 0 or blinked
  * (Ov027_BlinkPanelSlot 02083918). */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

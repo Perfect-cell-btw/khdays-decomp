@@ -9,8 +9,7 @@
    `add r0, r0, #0`. FX_Inv is the reloc's own name for 01ff8a04 even though it
    takes two arguments and divides. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int nX;

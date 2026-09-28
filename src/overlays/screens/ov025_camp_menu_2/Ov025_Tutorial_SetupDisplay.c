@@ -7,9 +7,7 @@
  * display mode, all layers (0x1f00) and its LCD is powered off (POWCNT1 bit 15).  BG1 / BG3 of
  * the main engine get their control words (0x4410 / 0x4008 over the two preserved bits),
  * the shared entry contexts are reset (02084ab4) and the first BG1 tile cleared. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct DisplayRegisters {
     volatile u32 dispcnt;      /* +0x00 */
@@ -19,7 +17,6 @@ typedef struct DisplayRegisters {
     volatile u16 bg2cnt;       /* +0x0c */
     volatile u16 bg3cnt;       /* +0x0e */
 } DisplayRegisters;
-typedef short          s16;
 
 static volatile u32 *const REG_DISPCNT = (volatile u32 *)0x04000000;
 static volatile u16 *const REG_BG1CNT = (volatile u16 *)0x0400000a;

@@ -4,7 +4,7 @@
  * 4 px, any other digit 5 px.  Each glyph is drawn once offset by (+1, +1) in
  * colour 1 and once at the pen position in nColour.
  */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define DIGIT_COUNT   3
 #define DIGIT_ADVANCE 5

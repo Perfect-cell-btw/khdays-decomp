@@ -1,6 +1,6 @@
 /* NitroSDK fs_overlay.c: the default HMAC-SHA1 key of the overlay digests (fsi_def_digest_key) and the
  * key pointer / length pair the loader reads (fsi_digest_key_ptr, fsi_digest_key_len). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 const u8 data_02041880[64] = {
     0x21, 0x06, 0xc0, 0xde,

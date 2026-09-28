@@ -2,9 +2,7 @@
  * the compaction empties the list. 600 is the expiry threshold in ticks; the row stride is the
  * MissionRecord 0xc0 established by the first hand-off. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u32 field_00[0xf];

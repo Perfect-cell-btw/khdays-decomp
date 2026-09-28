@@ -15,8 +15,7 @@
  * MsgQueue_Contains (it is not a no-arg call), which is what keeps it in r0 across the poll.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int  Session_IsReady(void);
 extern int  GetGlobalU16At6(void);

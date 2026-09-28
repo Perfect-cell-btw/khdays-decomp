@@ -2,7 +2,7 @@
  * hit yet (+0x4da == 0) a 16-byte type-1 message (kind 0x10) carrying the hit record's player byte
  * (+0xc) is queued on the piece (ov002 020766e0); once it goes out the hit byte is set to 1
  * and the hit accepted (0).  Otherwise the hit is refused with 8. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov017HitInfo {
     u8   pad_00[0xc];

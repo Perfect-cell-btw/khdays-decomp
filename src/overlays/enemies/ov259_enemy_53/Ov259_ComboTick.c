@@ -5,7 +5,7 @@
  * 0x440-0x660 for 0x7f8, 1 pose 0xa sweeping 0x880-0xbb0 for 0xcc0, 2 pose 0xb sweeping 0x220-0x440
  * for 0x13a8 with +0x424 set (+0x420 = 0 each time); the timer restarts and the step count grows.
  * After the third swing the node moves on to 020cef48. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov259_FaceTargetGap(int *node);

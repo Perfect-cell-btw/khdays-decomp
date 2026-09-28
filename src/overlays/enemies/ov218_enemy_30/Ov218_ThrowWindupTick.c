@@ -1,7 +1,7 @@
 /* Throw windup tick of the ov218 actor: the +0x28 velocity is its +0x3ac part's +0x2c vector turned by
  * the +0xc heading; once the partner holds no queued move, in move 5 with an unguarded +0x394 partner
  * the node moves on to 020cd3a8, otherwise the next move is 4 and the node ends. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;

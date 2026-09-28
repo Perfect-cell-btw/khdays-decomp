@@ -10,8 +10,7 @@
  * (flying): once Ov021_EmblemFlyToPlayer (02080828) reports arrival, state 4 and the terminal
  * state (ov002 0207cea4).  Finally, unless collected (state 4), the sequence node (+0x1c) is
  * drawn (0202aa9c) while the model is bound.  Returns 0. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov021EmblemMessage {
     u8   nType;               /* 0x00: 0 = reached */

@@ -1,22 +1,8 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned long long vu64;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
@@ -104,7 +90,6 @@ struct OSMutex {
     s32 count;
     OSMutexLink link;
 };
-typedef u64 OSTick;
 typedef void (*OSAlarmHandler) (void *);
 struct OSiAlarm {
     OSAlarmHandler handler;
@@ -130,8 +115,6 @@ OSThread ** OSi_CurrentThreadPtr = 0;   /* OSi_CurrentThreadPtr */
 u32 OSi_RescheduleCount = 0;   /* OSi_RescheduleCount */
 void * data_0204430c = 0;   /* data_0204430c */
 OSThreadInfo data_02044330 = {0};   /* data_02044330 */
-
-
 
 /* OSi_ExitThread_ArgSpecified -- NitroSDK os_thread.c: OSi_ExitThread_ArgSpecified. */
 void OSi_ExitThread_ArgSpecified (OSThread * thread, void * arg)

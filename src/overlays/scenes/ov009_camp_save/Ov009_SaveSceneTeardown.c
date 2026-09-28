@@ -1,7 +1,6 @@
 /* Tears the save scene down: blanks both screens and turns the displays off. */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void *data_ov009_020563e0;
 extern void Ov009_PageTeardown(int mode);

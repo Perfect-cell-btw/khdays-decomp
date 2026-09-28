@@ -10,7 +10,7 @@
  * declares it short: the truncation belongs to the callee prototype, not to a
  * cast here. All three list classes of the panel repaint converge on this call.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[0x10];

@@ -1,10 +1,7 @@
 /* Handles the mission member selection input: moves the cursor on the member grid (skipping taken
  * members), confirms or cancels, and returns the action and resolved selection. */
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u16 id;

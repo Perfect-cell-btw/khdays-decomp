@@ -9,7 +9,7 @@
  * 020cbfc4, bit 1), a 32-byte slot table (+0x3b0) holding the four sub-items of the 0x020cd594
  * ids (attached, bit 1), a placement on the +0x22c list (+0x3a8) from the zero pose at scale
  * 1.0, then loads sound 0x16c. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[4]; } IdTable;

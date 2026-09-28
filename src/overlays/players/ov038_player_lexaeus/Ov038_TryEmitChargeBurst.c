@@ -7,10 +7,7 @@
  * heading through the shared sin/cos table, builds the burst parameters with a
  * scaled extent, and submits them. If the submit takes and neither of the two
  * busy bits is set, it also pushes the muzzle position out as event 5. */
-typedef unsigned short u16;
-typedef unsigned char u8;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

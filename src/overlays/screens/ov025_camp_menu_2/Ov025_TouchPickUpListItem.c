@@ -12,9 +12,7 @@
  * pick-up plays sound 4.  Either way the row is highlighted (0205f084) and
  * becomes the selected row (+0x9c).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define LIST_TOP      0x18
 #define ROW_HEIGHT    16

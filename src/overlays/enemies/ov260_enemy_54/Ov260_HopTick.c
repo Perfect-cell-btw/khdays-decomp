@@ -3,7 +3,7 @@
  * becomes the flat direction to it at half the distance in body radii (capped at 1.0) with a 0.5 lift;
  * +0x70 and the +0x7b flag clear and the node moves on to 020cf2d4. Until then the +0x70 timer runs
  * and the cue fires once at 0xcc0 (020cd04c 2). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

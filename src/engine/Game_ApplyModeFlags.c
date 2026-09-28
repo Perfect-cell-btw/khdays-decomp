@@ -9,8 +9,7 @@
  * (2 << 12); the other three ids come from the literal pool.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern u8   data_0204c240;
 extern void GameState_SetField(int id, int kind, u16 value);

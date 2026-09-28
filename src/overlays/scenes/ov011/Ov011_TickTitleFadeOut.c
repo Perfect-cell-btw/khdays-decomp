@@ -15,9 +15,7 @@
  * The fade-complete threshold is written timer-first (`nTimer >= end`) to get the ROM's
  * `cmp timer,end; blo` rather than the reversed `cmp end,timer; bhi`.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 typedef void (*Ov011StateFn)(void);
 
 typedef struct Ov011FadePane { u16 startTime; u16 endTime; } Ov011FadePane;

@@ -1,9 +1,7 @@
 #pragma opt_dead_assignments off
 /* Ov006_MissionPeerSyncState -- synchronize Mission Mode peer names and
  * presence latches while the scene connection state advances. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*MissionCallback)(void);
 
 typedef struct {

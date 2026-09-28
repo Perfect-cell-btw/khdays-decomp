@@ -4,7 +4,7 @@
  * on acceptance effect 8 spawns at the entity pushed out of the box, or effect 1 at the sphere
  * surface along the push, and the id bit is set. When anything was hit, reaction 0x12b mode 5
  * (kinds 0/5), mode 6 (kind 1) or reaction 0 mode 0x53 (kind 2) fires at the +0xc position. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 

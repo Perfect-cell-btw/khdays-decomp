@@ -15,10 +15,7 @@
  * PROVENANCE: byte-identical twin of Ov008_ShowItemList (ov008), propagated with this
  * overlay's own callees and globals and verified byte-exact here.
  */
-typedef unsigned char  u8;
-typedef signed short   s16;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008ItemRing {
     u16 nFirst;               /* 0x00 */

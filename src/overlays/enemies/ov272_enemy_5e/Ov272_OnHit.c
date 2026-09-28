@@ -5,8 +5,7 @@
  * stamina requests sub-state 3 and a 0x8000 hit sub-state 4. A damaging hit that is not the
  * 8|0x80/0x80 special flips the +0x71 parity and fires reaction 0x167 at the +0x4c point with mode
  * 2/3 (bits 1/5) or 0/1 picked by it. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 
 struct ActorHitEvent {

@@ -5,8 +5,7 @@
  * this screen, the same affine reset sixteen scanlines up, and the same
  * hide-everything-then-reorder finish.
  */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Mtx22 {
     int m[4];

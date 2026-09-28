@@ -9,11 +9,7 @@
  * The next deadline comes from the frame count and the stream's time base
  * rather than from this firing, so rounding never accumulates.
  */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned int u32;
-typedef unsigned long long u64;
-typedef long long s64;
+#include "nitro/types.h"
 
 #define TICKS_PER_FRAME_NUMERATOR 0x000007fd88400000ULL
 

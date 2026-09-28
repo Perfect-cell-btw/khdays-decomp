@@ -10,9 +10,7 @@
  * (0202aef8 - 1.0) is stored, and a queued effect is popped (02088010) or, with flag bit 7,
  * the model reset (02089174).  With every queue empty afterwards flag bit 9 is dropped and,
  * with bit 6, the model detached (02088f90). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct Ov023Entity {
     int  nFlags;              /* 0x00 */

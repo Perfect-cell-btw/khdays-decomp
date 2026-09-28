@@ -13,10 +13,8 @@
  * direction and ends the search. Phase +0x45 0 waits for the +0x28 busy byte to clear and
  * plays animation 0xa (looped); phase 1 plays animation 0xb once the speed drops below 0x200
  * and hands off to d2728. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef long long fx64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;

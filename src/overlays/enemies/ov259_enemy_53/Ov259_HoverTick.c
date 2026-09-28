@@ -3,7 +3,7 @@
  * (+4 -> +0xad == 0) the actor is knocked back at the +0x10 point (mode 9), the drift clears, it is
  * placed three radii above the target's +0xb0 anchor (020c5c54), the timer restarts, it is knocked
  * back again (mode 0xc) and the node moves on to 020cf1d4. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov259_RefreshAim(int *node);

@@ -9,7 +9,7 @@
  * pool, the rest from the actor pool; attached, bit 1, polygon ids 3..0x1e for the last five),
  * registers three reactions (2/3 with a -0x10cc lift, 1/2 and 4/2) and two placements on the
  * +0x22c/+0x144 lists (+0x3ac/+0x3b0) at the zero vector, then loads sound 0x164. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 struct Box {

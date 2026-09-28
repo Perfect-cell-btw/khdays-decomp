@@ -10,7 +10,7 @@
  * Ghidra carries the box as Ov002EmitBox.
  */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern int Session_GetLocalPlayerIndex(void);
 extern void *func_ov022_020881f8(int player);

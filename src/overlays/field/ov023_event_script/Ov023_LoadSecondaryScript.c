@@ -6,8 +6,7 @@
  * container into the script (02020c7c with the packed descriptor, the argument as source and
  * the staging tail at +0x1d6b0), closes the container (02024fd4), restores the two blocks and
  * marks the secondary script running (+0x875e8). */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov023Scene {
     u8   pad_00000[0x1511c];

@@ -3,7 +3,7 @@
  * +0x70 scale to 0.625 and clears +0x54/+0x58 and the +0x64 pose; the +0x9c body gets flag 2. The main
  * model (+0x384, pool item 0x24) is subscribed with actions 0/2/4/1 enabled, the +0x390 slot model
  * (kind from data_ov249_020d4988) attached and hidden, and the +0x388 contact built from the pose. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int w[1]; } KindTable;
 struct bf { unsigned b : 8; };

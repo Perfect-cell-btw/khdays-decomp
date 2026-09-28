@@ -1,6 +1,6 @@
 /* Collapse entry of the ov252 actor: poses 0x2f, 0x31 and 0x35 are stacked, bits 1 and 7 of the +0x60
  * high byte are set, the +0xc velocity rests and the node moves on to 020cf150. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

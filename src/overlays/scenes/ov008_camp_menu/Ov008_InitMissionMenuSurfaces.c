@@ -7,8 +7,7 @@
  * from template fa4c (e5c pixels, no transfer) or fa74 (transfer, +0x150),
  * and the fifth (fac4, 968c pixels) at 0x1b0 or 0x1b6 accordingly.
  */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define SURFACE_COUNT 5
 #define SLOT_FIRST    0x1a

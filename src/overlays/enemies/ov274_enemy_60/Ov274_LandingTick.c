@@ -7,9 +7,7 @@
  * carries the entity's +0x74 position added to the centre and scaled 0.5 to the owner's
  * +0x24 hook, where reaction 0x163 mode 0xa fires. Once the +0xc idle byte clears sub-state 2
  * is requested and the state ends. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;

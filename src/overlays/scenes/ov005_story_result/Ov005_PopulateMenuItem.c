@@ -1,8 +1,7 @@
 /* Fills a reward list item from the item database (or the special reward texts): name, description,
  * icon, quantity and new-item state. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Ov005MenuItemHeader {
     u16 itemId,textureResourceId;
     u16 name[32];

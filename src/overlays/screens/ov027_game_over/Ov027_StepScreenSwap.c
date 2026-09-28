@@ -2,10 +2,7 @@
  * A frame counter (+0x5dc of the scene work) runs 0..29; every 30 frames it restarts and the main
  * display's BG mode bits (DISPCNT 8-12) become 3, otherwise they become 1 on the frames where
  * the counter is a multiple of 15 (the remainder of func_02020400). */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

@@ -3,7 +3,7 @@
  * requested source/phase, and restarts its frame from zero. The
  * actor is not touched -- the caller passes it only because every routine in
  * the family takes it first. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void NNS_G3dRenderObjRemoveAnmObj(void *p, int handle);
 extern void BindAnimTrack(void *p, u16 idx, int a, short b);

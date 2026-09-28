@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Session_IsActive(void);
 extern void Ov002_ApplyTimerCommand(int nSlot, int nValue);

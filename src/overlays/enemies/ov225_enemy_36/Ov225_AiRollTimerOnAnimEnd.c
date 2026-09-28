@@ -4,10 +4,7 @@
 extern int RandNextScaled();
 extern int SetIndexedSlot();
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct S2 {
     u8 pad0[0x60];

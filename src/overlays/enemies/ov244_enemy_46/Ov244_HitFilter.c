@@ -4,8 +4,7 @@
  * parity and fires reaction 0x113 with mode 2/3 (bits 1/5) or 0/1 at the hit body's +4 point (the
  * +0x74 position of the +0x214 state's actor without one). Once that actor's stock is empty it
  * requests move 3. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct HitWord { unsigned int lo : 16, hi : 16; };
 struct Parity { u8 b0 : 1; };

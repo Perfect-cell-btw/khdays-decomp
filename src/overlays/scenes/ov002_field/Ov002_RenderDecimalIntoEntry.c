@@ -7,7 +7,7 @@
  * is left of the field is blanked with the -1 glyph. Zero is a special case:
  * one zero digit plus one blank, and no sign.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 bKey;                /* +0x00 */

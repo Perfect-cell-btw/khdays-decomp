@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct { int x, y, z; } VecFx32;
 typedef struct { int w[11]; } Blk44;

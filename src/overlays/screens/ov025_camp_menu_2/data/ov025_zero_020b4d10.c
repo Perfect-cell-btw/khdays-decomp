@@ -4,8 +4,7 @@
  * where the ROM has them instead of moving to .bss.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #pragma explicit_zero_data on
 u8 data_ov025_020b4d10[4] = { 0, 0, 0, 0 };

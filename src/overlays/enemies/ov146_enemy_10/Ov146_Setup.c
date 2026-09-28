@@ -3,7 +3,7 @@
  * the +0x60 high byte and bits 2/4 of +0x1ae are set, the +0x384 model is taken from the +0x388 set
  * (+0x3dc), made visible and given the 020ced34 hook with the actor as owner, and the +0x9c model's
  * +0x5c bit 1 clears. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { unsigned b0 : 1; } Bit0;
 
 extern void Ov146_Update(void);

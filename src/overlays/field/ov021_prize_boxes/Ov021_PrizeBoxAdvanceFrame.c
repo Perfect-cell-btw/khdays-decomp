@@ -4,8 +4,7 @@
  * frame back by the length, a one-shot one clamps to the last frame and stops advancing.
  * Answers 1 while the animation still runs, 0 once a one-shot has finished.  The prize box is
  * ov021's class-0x11 object: a box holding one prize of a list shuffled across the boxes. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov021PrizeBox {
     u8   pad_000[0x12];

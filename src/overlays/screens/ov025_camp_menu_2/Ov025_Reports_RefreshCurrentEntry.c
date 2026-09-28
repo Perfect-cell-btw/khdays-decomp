@@ -1,9 +1,7 @@
 /* Refreshes the reports page: scrollbar, markers, row texts and entries, and selects the current
  * report (or its read version). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef short s16;
+#include "nitro/types.h"
 typedef struct Entry {
     u16 id:9;
     u16 flag9:1;

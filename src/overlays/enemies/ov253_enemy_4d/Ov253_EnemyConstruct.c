@@ -12,7 +12,7 @@
  * and the two +0x468 slot models (kinds of data_ov253_020d482c) are built, and sound 0x16b loads.
  * Codegen: the first name table is copied after the capsule request is complete, and the +0x60
  * halfword is read through an explicit int conversion. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[2]; } IdTable;

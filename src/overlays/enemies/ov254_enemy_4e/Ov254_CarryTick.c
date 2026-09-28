@@ -6,7 +6,7 @@
  * +0xad byte clears +0x78 is cleared, move 0xb is prepared (020cd920), the +0x3c grip becomes
  * 8.0 (rider) or 15.0 and the next move is 4. Otherwise, before 0x2000, every 0x580 of the +0x40
  * countdown knocks the actor back in place again. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

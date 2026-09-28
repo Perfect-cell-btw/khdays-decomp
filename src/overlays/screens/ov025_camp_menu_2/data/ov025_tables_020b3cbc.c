@@ -38,8 +38,7 @@
  *   data_ov025_020b421c: Ov025_Reports_HandleInput
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov025_020b3cbc[9] = {
     0, 1, 0, 0, 2, 3, 4, 14,

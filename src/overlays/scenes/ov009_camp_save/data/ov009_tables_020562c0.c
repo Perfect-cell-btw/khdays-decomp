@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* The menu archive path ("UI/cm/cmo_&.p2", '&' = language code) followed by an end marker. */
 struct {

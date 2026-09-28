@@ -8,11 +8,7 @@
  * Each input byte yields two samples, packed low half first into one output
  * word, so the caller gets a stereo-shaped pair per byte.
  */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef short s16;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define INDEX_MAX   0x58
 #define SAMPLE_MIN  (-0x8000)

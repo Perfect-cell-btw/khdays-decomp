@@ -2,7 +2,7 @@
  * to the alternate slot. Sits next to Ov006_MissionSetSlotVisible (Ov006_MissionSetSlotVisible),
  * which sets the bit outright; this one toggles and keeps the alternate slot opposite. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     unsigned pad_0 : 2;

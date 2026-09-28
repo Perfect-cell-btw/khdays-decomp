@@ -1,20 +1,8 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef unsigned short vu16;
-typedef unsigned int vu32;
-typedef unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
 
 /* NitroSDK FS library (file system / archives / overlays), as linked into the main binary.
@@ -381,8 +369,8 @@ typedef struct {
     u32 pos;
 } FSiSyncReadParam;
 #define BIT_MASK(n) ((1 << (n)) - 1)
-static inline u8 MI_ReadByte(const void *address) { return *(const vu8 *)address; }
-static inline void MI_WriteByte(void *address, u8 value) { *(vu8 *)address = value; }
+static inline u8 MI_ReadByte(const void *address) { return *(const u8 *)address; }
+static inline void MI_WriteByte(void *address, u8 value) { *(u8 *)address = value; }
 extern FSResult FSi_ReadTable(FSiSyncReadParam *p, void *dst, u32 len);
 extern void FSi_SeekDirDirect(FSFile *p_dir, u32 id);
 extern int FSi_StrNICmp(const char *str1, const char *str2, u32 len);
@@ -408,7 +396,6 @@ extern FSDirPos data_0204630c;   /* current_dir_pos */
 BOOL FSi_FindPath (FSFile *p_dir, const char *path, FSFileID *p_file_id, FSDirPos *p_dir_pos)
 {
 	FSDirPos pos;
-
 
 	if (FSi_IsSlash(MI_ReadByte(path))) {
 

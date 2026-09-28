@@ -3,8 +3,7 @@
  * word at +0x344 gets bit 0 and the animation is advanced (020279e0).  Then the nine track
  * slots (+0x42c, an index into the 0x58-byte tracks at +0x58 or -1) are scanned for the first
  * whose track position has a y of 0xcd or more; its slot index is returned, else -1. */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

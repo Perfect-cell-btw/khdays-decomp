@@ -2,7 +2,7 @@
  * remembers the spawner and the owner, starts at the spawner's +0x570 model point with velocity `vel`,
  * its model moves there (0203ca30), the spawner plays effect 3 there and the shard keeps its slot.
  * Returns the node handle. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Shard { int owner; char *spawner; Vec3 pos; Vec3 vel; char pad20[4]; u8 slot; };
 

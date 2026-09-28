@@ -18,11 +18,7 @@
  * three marks and, unless two flags say otherwise, clears the drift.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
-typedef short s16;
+#include "nitro/types.h"
 
 #define ACTION_BIT 4
 #define NODE_NO_ANIM 0x20

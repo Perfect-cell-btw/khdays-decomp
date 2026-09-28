@@ -8,10 +8,7 @@
  * is drawn in its blink phase (Ov027_DrawPanelSlotShifted 02083c78); in a session only the
  * "waiting" strip is placed (slot 2, source row 7, at row 19, 14 cells wide) and the panel is
  * queued (Ov027_EnqueuePanel 02083cb8). */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

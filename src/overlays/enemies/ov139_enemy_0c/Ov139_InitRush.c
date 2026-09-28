@@ -1,7 +1,7 @@
 /* AI step: posts pose 9, aims the rush at the target (or along its stored direction), sends the
  * rush update (0x11f, mode 8) and continues with the rush tick. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Vec3 {
     int x;

@@ -1,7 +1,7 @@
 /* Shed tick of the ov252 actor: the +0xc velocity follows the +0x574 part's +0x2c vector turned by the
  * +0x54 heading; once the partner holds no queued move the +0x93 armour piece's shape (+0x4f4) shows,
  * the next move is 5 and the node ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 struct Ov252Armour { char pad[0x4e8]; int shapes[16]; };

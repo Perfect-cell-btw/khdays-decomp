@@ -3,7 +3,7 @@
  * slope and curvature (all fx32, FX_Mul = FX_Mul). Codegen: the curvature term of the second
  * branch is written inline in the final sum; as a named local the last add swaps its operands. */
 #pragma thumb on
-typedef int fx32;
+#include "nitro/fx.h"
 
 extern fx32 FX_Mul(fx32 a, fx32 b);   /* FX_Mul */
 

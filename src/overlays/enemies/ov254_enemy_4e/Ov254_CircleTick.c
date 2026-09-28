@@ -9,7 +9,7 @@
  * probe along the +0x38 heading ahead of the target ends the dash (+0x70 bit 7, heading kept in
  * +0x34) when it hits far enough, or the heading turns on; before the third lap 020cd128 runs. Not
  * dashing, sub-state 5 lands (020cd474, helper mode 2) or restarts the circle (020cd3c4). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 struct CollisionResult { int pad00; int pad04; int field08; int nAlong; };
 

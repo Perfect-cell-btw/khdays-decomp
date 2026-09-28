@@ -2,7 +2,7 @@
  * both rigs clear bit 1 of their +0x5c flags, the beam plays tracks 0, 2 and 3 and the glow rig loops
  * tracks 0 and 2, the beam is stretched 3.0 x 3.0 x 1.0 (glow 1.0) and posed; the +0x28 / +0x2c / +0x34
  * timers and the +0x48 flag clear and the brain waits on 020d0fe0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(void *transform);

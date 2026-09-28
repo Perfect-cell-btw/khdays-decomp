@@ -1,4 +1,4 @@
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* NitroSDK word copy primitive. */
 asm void MIi_CpuCopy32(register const void *source,

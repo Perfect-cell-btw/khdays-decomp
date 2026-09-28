@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov231_ChaseTick (020cd510): const Vec3 data_ov231_020cfa34; */
 const u8 data_ov231_020cfa34[12] = {

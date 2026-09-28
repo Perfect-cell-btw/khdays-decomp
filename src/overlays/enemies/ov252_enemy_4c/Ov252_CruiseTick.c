@@ -17,8 +17,7 @@
  * probe the ground from 20.0 up (data_ov252_020d4380) and mark impacts (effect 0x27), no lift sets
  * +0xb8, and a stop plays poses 0x34 / 0x38 / 3 with motion 2 and moves on to 020d26dc. Otherwise pose
  * 2 plays and, guarded, it faces the target again. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;

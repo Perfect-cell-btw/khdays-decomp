@@ -1,9 +1,8 @@
 /* Tests a segment against the hit shape (sphere, capsule or box); stores the contact point. Returns
  * 1 on a hit. */
 
-typedef int fx32;
-typedef long long fx64;
-typedef unsigned char u8;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x;

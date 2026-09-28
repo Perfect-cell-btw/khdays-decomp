@@ -1,9 +1,7 @@
 /* Sets the milestone bit of each fully cleared mission range and reports the new ones; returns the
  * number of changes. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef u32 FSOverlayID;
 
 extern u32 OVERLAY_302_ID[1];

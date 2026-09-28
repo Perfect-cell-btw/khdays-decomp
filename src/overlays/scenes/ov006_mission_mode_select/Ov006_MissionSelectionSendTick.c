@@ -1,8 +1,7 @@
 /* Sends the mission selection to the peers: sets the wireless entry, refreshes the send block and
  * sends it once the transition is done; returns the next state. */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u8 sendStarted : 1;

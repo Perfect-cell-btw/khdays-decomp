@@ -3,7 +3,7 @@
  * landing height stays above the target's +4 height, aims the +0x18 direction at the target (normalised, its length kept at +0x30 as a
  * 64-bit value) and divides that length by the number of hops (64-bit divide). */
 typedef struct { int x, y, z; } Vec3;
-typedef long long s64;
+#include "nitro/types.h"
 
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
 extern int VEC_Normalize(const Vec3 *v, Vec3 *out);

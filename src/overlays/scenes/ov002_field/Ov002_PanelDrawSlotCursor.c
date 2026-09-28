@@ -2,8 +2,7 @@
  * first, then eight tile pairs are written starting at the slot's base tile;
  * the flag shifts the frame one cell further left. The 0xffff slot is the
  * "no slot" sentinel and only clears. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void MIi_CpuClear16(int nValue, void *pDest, int nSize);
 extern void *Ov002_GetItemResource(int nResource);

@@ -1,4 +1,4 @@
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct {
     char pad00[4];

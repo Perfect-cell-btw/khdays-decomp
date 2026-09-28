@@ -3,7 +3,7 @@
  * (cases in the ROM's block order 0x1c8, 0x1c9, 0x1a0, 0xe8) gives mwcc's binary compare
  * tree with the four returns out of line; an if-chain never does.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008ParamTable {
     u8  pad_000[0x148];

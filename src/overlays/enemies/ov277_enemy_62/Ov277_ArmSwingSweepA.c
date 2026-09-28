@@ -5,9 +5,7 @@
  * centre (kind 0) and, on acceptance, the point that far from the centre towards the entity is
  * packed into the overlay's 14-byte template for the owner's +0x24 message hook and effect 0x53
  * plays there. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */

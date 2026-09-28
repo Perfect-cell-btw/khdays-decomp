@@ -12,7 +12,7 @@
  * THUMB.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int aRect[4];                       /* +0x668 */

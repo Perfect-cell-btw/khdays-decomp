@@ -14,10 +14,7 @@
  * stored.  Codegen: materialised bools for the two field tests; the second
  * delay is a u64 local chosen by a (degenerate) row test.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define REVEAL_TICKS  0x7fd88
 #define ROW_COUNT     6

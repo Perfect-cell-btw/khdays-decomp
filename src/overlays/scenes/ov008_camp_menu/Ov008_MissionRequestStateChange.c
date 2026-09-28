@@ -1,7 +1,7 @@
 /* Requests a menu state change: with a duration, tweens the brightness between the clamped start
  * and end values and switches when it finishes; without one, switches at once. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 bytes[0x1c];

@@ -1,7 +1,6 @@
 /* Builds a 4-byte panel-refresh packet and forwards it via func_02031384, but only when bit 2
  * of the entry's flags at +0x40 is set; clears that bit afterward. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int pad[16];

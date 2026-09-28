@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by * Attack step: the per-frame body of the ov042 enemy's attack state. (020b87b4): PermTable data_ov081_020b95d4; */
 const int data_ov081_020b95d4[18] = {

@@ -2,8 +2,7 @@
 
 extern void GFXi_EnqueueCommand(int type, int a, void *src, int size);
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov000LogoPaletteContext {
     u8 pad_0000[0x4c6c];

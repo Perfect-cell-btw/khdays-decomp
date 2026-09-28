@@ -6,8 +6,7 @@
  * toggles it too. The +0x7c part follows the shot (0203ca30). Past 1.0, or once its bit is set,
  * the bit toggles, the owner spawns effect 0 at the shot, the slot's +0x640 entry clears and the
  * node is released (0203c640). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 center; int nRadius; } Sphere;
 

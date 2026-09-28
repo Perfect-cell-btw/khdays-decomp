@@ -1,7 +1,7 @@
 /* Rotates the action motion vector, starts resource 0x169 once at timer 0x2a8, applies repeated
  * area hits from 0xff0, clears motion after a hit, and advances when the substate ends. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

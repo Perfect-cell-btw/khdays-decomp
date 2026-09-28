@@ -3,8 +3,7 @@
  * (pFrom) holds; one in state 3 or 6 (+0x179), or flagged 2 / 4 at +0x1ac, does not; otherwise
  * it holds only when it is within nRange + 0x1800 of the anchor pAt and the angle between
  * (pFrom - pAt) and (piece - pAt) is inside the half-cone nCone / 2 (cos from the sin/cos table).  nAngle is not used. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

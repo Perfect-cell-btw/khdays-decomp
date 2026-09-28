@@ -3,7 +3,7 @@
  * drops, pose 0x10 plays on the actor and its partner, the shot is armed (020cd628: pose 0xd after
  * 0x660), the body sweeps 0x660-0x908 flat (020d1700, +0x424 = 1, +0x420 = 2), the actor is knocked
  * back at the +0x10 point (mode 9), sound 0x172/0x20 fires there and the node moves on to 020cf324. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);

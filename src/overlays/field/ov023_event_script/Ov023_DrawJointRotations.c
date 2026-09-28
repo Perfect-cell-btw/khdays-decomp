@@ -7,8 +7,7 @@
  * keeping its translation), and both matrices are re-sent to the geometry engine
  * (GX_SendFifoWords: matrix mode 2, the vector matrix, mode 1, the position matrix,
  * mode 2). */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

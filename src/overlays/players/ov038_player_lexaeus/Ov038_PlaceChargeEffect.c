@@ -5,7 +5,7 @@
  * table and added to the anchor at +0x48c. The heading is stored back on the
  * record, the visible bit is raised and the state advances to 2, where the
  * emitter runs until it reports done. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 struct Mtx33 { int m[9]; };

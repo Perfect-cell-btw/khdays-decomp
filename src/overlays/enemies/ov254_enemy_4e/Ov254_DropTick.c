@@ -4,7 +4,7 @@
  * and in place (mode 0xa, +0x70 bit 0). Once the +4 item's +0xad byte clears pose 0x1b plays,
  * the +0x3e4 shape loses bit 1, the +0x44 timer, +0x40, +0x58 and the +0x70 flags clear and the
  * node moves on to 020cf684. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

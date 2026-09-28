@@ -3,7 +3,7 @@
  * finished (Ov023_ActorFinish 02087160) and its animation slots (+0x1a20, five of 0x24 bytes)
  * released one by one where loaded (handle +0xc, 0202a440) and freed
  * (NNSi_FndFreeFromDefaultHeap); the flags end as 0. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov023AnimSlot {
     int  aField[3];           /* 0x00 */

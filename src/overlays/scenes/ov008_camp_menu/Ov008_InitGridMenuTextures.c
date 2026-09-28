@@ -9,9 +9,7 @@
  * palette 0x10.  Codegen: cell x / y are written as expressions of the
  * counters (mwcc strength-reduces them into its own induction registers).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GRID_ROWS      8
 #define GRID_COLS      5

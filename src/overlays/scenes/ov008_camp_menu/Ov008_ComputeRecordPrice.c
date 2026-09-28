@@ -6,11 +6,7 @@
  * and applied to the base price (+0x8).  The product is brought back to fx32 as
  * `(prod << 12) >> 24` (the ROM's byte-split tail; a plain `>> 12` is shorter).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef long long      s64;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define FX32_ONE   0x1000
 #define FX32_SHIFT 12

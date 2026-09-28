@@ -1,7 +1,7 @@
 /* Moves the reward list selection with the D-pad, playing the move sound, and refreshes the
  * indicators; returns whether it moved. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct MenuLimitHeader { u16 inputMask; short limits[2]; char opaque[20]; } MenuLimitHeader;
 typedef struct Ov005Context { char opaque00[0x4c12]; MenuLimitHeader menuLimitHeader; } Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;

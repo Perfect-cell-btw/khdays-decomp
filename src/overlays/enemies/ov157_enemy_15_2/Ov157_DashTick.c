@@ -18,9 +18,7 @@
  * Codegen notes as in ov153_cccf8: volatile ints in the sender keep the packed position on the
  * stack, `const` on the sine table lets both table loads precede the direction stores, and the
  * hit packet is zeroed as a whole before its fields are filled. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */

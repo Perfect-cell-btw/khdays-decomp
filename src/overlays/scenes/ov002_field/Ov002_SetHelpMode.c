@@ -6,7 +6,7 @@
  * the panel context, which Ghidra carries as nHelpMode.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207f614;
 extern u16 data_ov002_0207db78[];

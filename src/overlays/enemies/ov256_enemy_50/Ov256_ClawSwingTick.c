@@ -3,7 +3,7 @@
  * Each time the part's animation ends the swing count (+0x64) grows: on the second swing the timer
  * clears, the +0x1c spin reverses, the part takes motion 2 and the node moves on to 020d2368;
  * otherwise the part restarts motion 1. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov256_RotateByOwnerHeading(int *out, int param_2, int *vec);

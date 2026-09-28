@@ -13,9 +13,7 @@
  *     the counter is zeroed after it and the two setup instructions swap;
  *   - the count is copied into the table before either, which is what puts the file's
  *     count load where the ROM has it. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov011PackedEntry {
     u8  nA;

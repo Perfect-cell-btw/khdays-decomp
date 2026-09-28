@@ -1,9 +1,8 @@
 /* main .rodata 0x02042124-0x02042288: script-slot kinds, party reward/skill tables, the key-repeat
  * key tables and the six signed unit axes. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef int fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x, y, z;

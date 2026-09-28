@@ -1,28 +1,12 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
-
 
 /* NitroSDK SPI library, touch panel (tp.c): the ARM9 side of the PXI touch-panel protocol. */
 typedef int PXIFifoTag;
-typedef volatile u16 REGType16v;
-typedef volatile u32 REGType32v;
 typedef u32 REGType32;
 typedef u64 REGType64;   /* the SDK divider registers are written through plain u64 (the pair may merge into stm) */
 typedef int TPRequestCommand;
@@ -199,7 +183,6 @@ BOOL TP_GetUserInfo (TPCalibrateParam * calibrate)
     NVRAMConfig * info = (NVRAMConfig *)OS_GetSystemWork_nvramUserInfo();
 
     u16 x1, y1, x2, y2, dx1, dy1, dx2, dy2;
-
 
     x1 = info->ncd.tp.raw_x1;
     y1 = info->ncd.tp.raw_y1;

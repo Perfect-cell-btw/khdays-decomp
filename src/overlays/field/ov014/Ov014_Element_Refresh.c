@@ -1,6 +1,6 @@
 /* Re-evaluates the element's game-state gate, then rebinds its model sequence and animation. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec;
 
 extern unsigned int GameState_GetField(int bitOffset, int bitCount);

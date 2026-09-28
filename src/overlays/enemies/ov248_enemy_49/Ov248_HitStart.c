@@ -1,7 +1,7 @@
 /* Entry of the ov248 actor's hit move: bit 0 of the owner's +0x60 high byte is set and bit 7 cleared,
  * the owner plays effect 1 in place and cue 0x146 (13) on the +8 target, the +0x1c flag and the +0x18
  * clock reset, and brain slot +0x20 runs 020d08a0. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);

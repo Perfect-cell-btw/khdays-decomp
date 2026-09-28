@@ -14,9 +14,7 @@
  * (+0x23c) then draws the phase-4 prompt, hides the confirm prompt, enters
  * phase 5 and clears field 95fc.  The page scroll and the slot rows tick last.
  */
-typedef unsigned char      u8;
-typedef unsigned int       u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define PHASE_PICK     0
 #define PHASE_SAVING   2

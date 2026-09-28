@@ -1,7 +1,7 @@
 /* Light (`lit`) or dim armour marker `i` of the ov252 actor: lit hides its +0x38c model (+0x5c bit 1),
  * shows its +0x4f4 shape and sets bit 0 of its +0x518 record's high nibble; dim does the reverse and
  * the actor plays effect 0xb at the marker's +0x53c anchor. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;

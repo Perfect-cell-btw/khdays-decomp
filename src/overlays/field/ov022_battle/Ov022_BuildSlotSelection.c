@@ -2,10 +2,7 @@
  * within the scan distance (larger with ability 0x55) and encodes the result; returns whether one
  * was found. */
 
-typedef signed int s32;
-typedef signed long long s64;
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov022SelectionResult {
     u32 selectionFlags00;

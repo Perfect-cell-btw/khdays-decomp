@@ -11,10 +11,7 @@
  * materialises the address of the register the source writes FIRST (the control word)
  * and reaches the reload counter at -2, which is why the control write has to come
  * before the counter write for the addresses to collapse. */
-typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef unsigned int       u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct OsAlarmState {
     u8  pad_00[4];

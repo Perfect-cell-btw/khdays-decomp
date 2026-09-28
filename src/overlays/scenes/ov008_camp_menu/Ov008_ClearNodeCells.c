@@ -4,9 +4,7 @@
  * (page, top + row, left + col) is cleared and the cell is released through
  * Ov008_ClearGridSlot; then the grid surface upload is queued.
  */
-typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define GRID_PAGES 3
 #define GRID_ROWS  8

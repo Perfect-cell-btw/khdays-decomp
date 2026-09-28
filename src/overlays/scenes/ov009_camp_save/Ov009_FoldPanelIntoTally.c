@@ -27,11 +27,7 @@
  *
  * Byte-identical in ov004/005/008/009/025/069.
  */
-typedef unsigned char      u8;
-typedef signed char        s8;
-typedef unsigned short     u16;
-typedef short              s16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov000TallySlot {
     int a;

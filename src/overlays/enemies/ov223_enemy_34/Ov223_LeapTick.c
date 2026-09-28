@@ -8,7 +8,7 @@
  * ov221 0a2c with mode 3. Past the duration the tick waits for the +4 owner's +0xad byte to
  * clear, requests sub-state 2 -- or 8 with a lock when none of the +0x3ec family's four
  * members has a +0x388 item -- and ends the action. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 struct Ov221Family { char pad[0x3ec]; char *aMembers[4]; };

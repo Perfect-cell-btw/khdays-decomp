@@ -1,21 +1,8 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
@@ -34,7 +21,6 @@ typedef volatile unsigned char vu8;
 #define REG_GX_DISPCNT_BGMODE_SHIFT 0
 #define REG_GX_DISPCNT_BGMODE_MASK 0x00000007
 
-typedef vu32 REGType32v;
 typedef enum {
     GX_BGMODE_0 = 0,
     GX_BGMODE_1 = 1,
@@ -63,7 +49,6 @@ extern u16 data_020422b4;
 void GX_SetGraphicsMode (GXDispMode dispMode, GXBGMode bgMode, GXBG0As bg0_2d3d)
 {
 	u32 cnt = reg_GX_DISPCNT;
-
 
 	data_020446d0 = (u16)dispMode;
 	if (!data_020422b4) {

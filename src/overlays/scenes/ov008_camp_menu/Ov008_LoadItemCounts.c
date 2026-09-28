@@ -4,10 +4,7 @@
  * is first set to 1.  Counts 8 and 9 are the 2-bit fields 0x37c7 / 0x35bf
  * modulo 3; count 7 is not loaded.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define ITEM_LAST_UNLOCK 0x1a0
 #define FIELD_LAST_UNLOCK 0x3c29

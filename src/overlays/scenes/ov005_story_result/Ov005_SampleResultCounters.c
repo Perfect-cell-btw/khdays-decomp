@@ -1,5 +1,5 @@
 /* Sample active result tweens and refresh the gauge from the current reward counter. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct TweenFlags { unsigned int started:1, paused:1, finished:1, reserved:29; } TweenFlags;
 typedef struct Tween { char unknown00[24]; TweenFlags flags; } Tween;
 typedef struct Ov005ResultTween { Tween tween; int duration, currentValue, fromValue, toValue; } Ov005ResultTween;

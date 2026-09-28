@@ -2,9 +2,7 @@
  * transitions through state 0x22 when the scene phase is above 1 or clears both motion vectors and
  * returns the actor to mode 0 or 2. */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Vec3 {
     int x;
@@ -30,7 +28,6 @@ int Ov094_WaitForActionCompletion(int actor)
     int result = 0;
     int canFinish = 0;
     int clear;
-
 
     if (Session_GetLocalPlayerIndex() == 0) {
         *(u64 *)(actor + 0x464) |= 0x10000ULL;

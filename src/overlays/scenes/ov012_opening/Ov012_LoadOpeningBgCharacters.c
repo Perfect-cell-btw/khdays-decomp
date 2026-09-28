@@ -1,9 +1,7 @@
 /* Loads the selected opening sprite character resource into BG0, BG1 or BG2, sets sub-screen
  * brightness to -16, and advances the opening timeline. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov012OpeningEvent {
     u32 nTriggerThreadDelta;

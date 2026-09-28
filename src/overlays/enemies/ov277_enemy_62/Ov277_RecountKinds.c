@@ -1,6 +1,6 @@
 /* Recount the +0x410 kind histogram (four words) of the actor's +0x404 slot table: each of the
  * six slots that holds a +0x390 item adds one to the bucket of that item's +0x1b4 kind. */
-typedef unsigned int u32;
+#include "nitro/types.h"
 extern void MI_CpuFill8(void *dst, u32 data, u32 size);
 
 void Ov277_RecountKinds(int *node) {

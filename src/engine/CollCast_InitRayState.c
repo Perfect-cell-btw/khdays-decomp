@@ -1,10 +1,7 @@
 /* Initialises a ray cast: copies the origin, direction, flags and exclusion from the parameters,
  * normalises the direction when needed and resets the nearest hit. */
 
-typedef signed int s32;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { s32 x; s32 y; s32 z; } VecFx32;
 

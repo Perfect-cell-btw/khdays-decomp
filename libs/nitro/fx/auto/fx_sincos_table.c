@@ -19,7 +19,7 @@
  * claims otherwise.
  */
 
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct {
     s16 sin;

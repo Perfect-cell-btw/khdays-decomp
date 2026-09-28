@@ -1,7 +1,6 @@
 /* Updates each used row's number tags (three digits, value and availability). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov009PageCursor {
     u8 pad000[0x14];

@@ -30,8 +30,7 @@
  * separate knobs even when they happen to want the same spelling.
  */
 
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov000Pair {
     int x;

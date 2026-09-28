@@ -9,7 +9,7 @@
  * NOTE: the surface address is spelled &pCtx->aSurface[nRow] at every use; a
  * local for it swaps the base / product registers.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define ROW_ENTRIES   4
 #define TEXT_STYLE    0x412

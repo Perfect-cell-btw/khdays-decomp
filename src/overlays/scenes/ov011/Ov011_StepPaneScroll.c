@@ -7,11 +7,7 @@
  * a table of Ov011_DrawTitleLine that mwcc laid out inside this one, so both are externs here.
  * Levers: both positions as ternaries (the X if/else scheduled the join differently), the row
  * flag in its own block (otherwise it and nY swap r7/sl), and the declaration order below. */
-typedef signed char    s8;
-typedef short          s16;
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov011Pane {
     void *pBuffer;

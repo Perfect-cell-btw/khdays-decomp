@@ -1,11 +1,6 @@
-typedef signed long s32;
-typedef unsigned long u32;
-typedef unsigned char u8;
-typedef int BOOL;
+#include "nitro/types.h"
 
 enum {
-    FALSE = 0,
-    TRUE = 1,
     CARD_RESULT_SUCCESS = 0,
     CARD_STAT_BUSY = 1 << 2,
     CARD_STAT_TASK = 1 << 3,

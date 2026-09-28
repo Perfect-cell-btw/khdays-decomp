@@ -9,7 +9,7 @@ extern void Slot_ClearFlagBit1(void *mgr, int obj);
 extern void Slot_SetMode2Bit(void *mgr, int obj, int);
 extern void Slot_SetPosition(void *mgr, int obj, int *params);
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov000ResourceDescriptor {
     unsigned int address;

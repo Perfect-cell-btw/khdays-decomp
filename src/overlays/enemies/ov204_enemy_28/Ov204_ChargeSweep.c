@@ -3,9 +3,7 @@
  * hit with the +8 velocity as push; on acceptance the entity's +0x74 position is packed into the
  * overlay's 14-byte template and delivered to the actor's +0x24 message hook, reaction 0x132
  * mode 4 fires there and the id bit is set (through `1 >> id`, as the original does). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;

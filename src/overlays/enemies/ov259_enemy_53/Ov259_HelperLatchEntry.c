@@ -1,7 +1,7 @@
 /* Latch entry of an ov259 helper: +0x34 and the +0x38 flag clear, the +0x18 point resets, the +0x38c
  * shape shows, the +0x394 owner is knocked back at the helper's +0x74 position (mode 5) and the node
  * moves on to 020d23c4. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

@@ -9,9 +9,7 @@
  * the list node at +0x170 is removed and freed; and the sub engine's BG2 /
  * BG3 scroll registers are zeroed.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define TAG_COUNT 5
 #define WIDGET_A  0x40

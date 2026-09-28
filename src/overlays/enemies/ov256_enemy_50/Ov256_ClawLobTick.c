@@ -3,7 +3,7 @@
  * 2) and the next claw of the +0x43c set (+0x54 counter) is thrown from 2.19 above that point
  * (020d0334). Once the partner holds no queued move, after boost + 1 claws (+0x45c) the next move is
  * the +0x74 mode + 2 and the node ends; otherwise the timer restarts with two charges and pose 9. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);

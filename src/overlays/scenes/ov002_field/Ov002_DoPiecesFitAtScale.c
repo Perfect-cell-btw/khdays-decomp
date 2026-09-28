@@ -1,5 +1,4 @@
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 typedef struct Ov002Piece {
     char pad000[0x1ac];

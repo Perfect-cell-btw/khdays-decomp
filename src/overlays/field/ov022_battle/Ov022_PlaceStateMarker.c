@@ -8,7 +8,7 @@
  * slot, records the state and restarts its timer.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

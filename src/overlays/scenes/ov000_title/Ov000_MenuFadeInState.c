@@ -21,9 +21,7 @@
  * the read first, the value the `>= 0x3c` test already loaded is reused, which is the
  * ROM's one-instruction-shorter form.
  */
-typedef unsigned char u8;
-typedef unsigned int  u32;
-typedef volatile u32  vu32;
+#include "nitro/types.h"
 typedef void         *StateFn;
 
 typedef struct Ov000MenuContext {

@@ -1,7 +1,6 @@
 /* ov012 .data opening scene descriptor, palette and timed event stream,
  * 0x0205c2bc-0x0205cac0. */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef void (*Ov012OpeningLifecycleFn)(void);
 

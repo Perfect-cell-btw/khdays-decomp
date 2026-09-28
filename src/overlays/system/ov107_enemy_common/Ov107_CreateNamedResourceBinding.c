@@ -1,8 +1,7 @@
 /* Creates a joint binding: a sub-item instance tracking the joint's motion, bound to the named
  * resource. */
 
-typedef unsigned int u32;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void *CallocInstance(u32 size);
 extern void *CreateSubitemInstance0xB4(void *arg0);

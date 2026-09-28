@@ -7,8 +7,7 @@
  * owner is sent mode 0 at the entity's +0x74 (with a query) or at the sphere's edge along the
  * unit direction (without), and the bit is set. Any acceptance fires reaction 0x4f (mode 6) or
  * 0x51 at the +8 point. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vecx32 { int x, y, z; };
 struct Sphere { struct Vecx32 pos; int nRadius; };

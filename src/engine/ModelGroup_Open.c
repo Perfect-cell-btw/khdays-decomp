@@ -3,7 +3,7 @@
  * pointers (+4, count at +2) are allocated from the default heap and each one is prepared
  * (Coll_ResolveModelBlobPointers). Returns 1. */
 #pragma thumb on
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 flags;          /* 0x00 */

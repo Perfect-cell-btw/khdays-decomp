@@ -5,9 +5,7 @@
  * position is packed into the overlay's 14-byte template (data_ov206_020d062e) for the owner's
  * +0x24 hook, reaction 0x116 mode 0xc fires there and the kind bit is set. Once the +0xc idle
  * byte clears sub-state 2 is requested and the state ends. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;

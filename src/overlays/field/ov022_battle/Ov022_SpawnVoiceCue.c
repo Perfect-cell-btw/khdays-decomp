@@ -8,8 +8,7 @@
  * close enough to the point and not silenced.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

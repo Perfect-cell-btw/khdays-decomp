@@ -10,9 +10,7 @@
  * overlay's hit message with the +8 position, reaction 0x14f mode 5, sub-state 0 and the slot
  * released. Past 0xf000 on the clock the end message goes out with reaction 0x14f mode 6,
  * sub-state 0 and the slot released. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;

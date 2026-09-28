@@ -5,7 +5,7 @@
  * while there is room to scroll in that direction.  The row content is then
  * refreshed for nPos.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define ROWS_VISIBLE  8
 #define ROW_UNITS     16

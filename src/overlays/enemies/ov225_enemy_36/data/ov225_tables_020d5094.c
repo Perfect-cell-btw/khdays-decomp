@@ -5,7 +5,7 @@
  * it; 020d0710 (Ov225_HandleHit) picks the reaction mode from the idle/hurt pair by the
  * work's +0x77 side; 020cfdbc copies the eight poses to its frame and builds one sub-item per
  * non-negative entry. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Ov225ModePair { u8 nFirst; u8 nSecond; };
 struct Ov225ReactionModes { struct Ov225ModePair idle; struct Ov225ModePair hurt; };

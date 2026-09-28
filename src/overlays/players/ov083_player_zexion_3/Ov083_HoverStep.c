@@ -8,7 +8,7 @@
  * at +0x2f04) or ends the hover: bit 49 dropped, node hidden, animation set 0xf000 before its
  * end, bit 29 raised; otherwise it stops, raises bit 2 and lands (state 0 with the slot
  * callback when grounded, else state 2). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 

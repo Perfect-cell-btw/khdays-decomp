@@ -7,7 +7,7 @@
  * unless paired and merged), the +0x494 grab time takes the shorter side, both sides at 0 health start
  * move 3 (+0x4c0). The +0x10 heading turns toward +0x14 at the +0x20 rate and orients the pose, and the
  * +0x3c velocity is handed to the actor (+0xf0) and cleared. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { int m[9]; } Mtx33;

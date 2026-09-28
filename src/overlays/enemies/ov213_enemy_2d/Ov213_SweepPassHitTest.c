@@ -4,8 +4,8 @@
  * downwards, on behalf of the actor's +0x384 rider (kind 2); on acceptance the 14-byte message
  * data_ov213_020d2f2c carries its +0x74 point to the actor's +0x24 hook, its bit is set and the
  * rider's reaction 0x122 mode 7 fires at the +4 point. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -17,8 +17,6 @@ typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
                               | ((unsigned int)(dead).value >> 0x18 & 0x80)); \
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
-
-typedef long long fx64;
 
 extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern int Segment_ClosestPoint(void *point, Segment *seg, fx64 *outDist);

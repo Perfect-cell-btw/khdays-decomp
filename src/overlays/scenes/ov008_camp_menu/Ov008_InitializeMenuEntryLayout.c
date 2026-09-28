@@ -1,7 +1,7 @@
 /* Builds the camp menu's entry layout: loads its layout and resources, hides the optional entries,
  * and installs each entry's selection callback. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008LayoutTemplate {
     u32 words[4];

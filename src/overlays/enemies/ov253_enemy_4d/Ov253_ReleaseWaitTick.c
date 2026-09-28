@@ -5,9 +5,7 @@
  * free bits 1 and 7 of the +0x60 high byte and bit 0 of +0x1ae are raised, the timer takes a
  * random 2.0 and the node moves to 020cf830. Codegen: the position is packed through Fx32
  * wrapper copies (ov269_3930 idiom); `+ (v - v)` is the documented random copy artifact. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

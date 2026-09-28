@@ -1,7 +1,6 @@
 /* NitroSDK original assembly (libraries/os/src/os_exception.c). */
 
-typedef int BOOL;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct OSContext {
     u32 cpsr;

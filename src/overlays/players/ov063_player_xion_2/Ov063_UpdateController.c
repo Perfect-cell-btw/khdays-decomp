@@ -4,10 +4,7 @@
 #pragma opt_propagation off
 #pragma opt_common_subs off
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 struct Vec3 {
     int x;
@@ -97,7 +94,6 @@ void *Ov063_UpdateController(struct Ov063Controller4908 *self)
 {
     void *result = 0;
     struct Ov063Actor *actor = self->actorDb4;
-
 
     if (Session_GetLocalPlayerIndex() == 0) {
         actor->flags464 |= 0x10000ULL;

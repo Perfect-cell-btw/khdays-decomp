@@ -17,7 +17,7 @@
  * ARM.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int strlen(const char *s);
 

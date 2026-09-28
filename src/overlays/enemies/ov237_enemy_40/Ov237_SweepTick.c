@@ -5,7 +5,7 @@
  * data_ov237_020d1b4c push is turned by the +0x10 heading; a 1.0 sphere 6.5 out from the +0x444 rig and
  * a box 3.5 out along the direction (0.27 / 0.27 / 3.5) hit once each (effect 1, kind 2) and the +0x55
  * hold drops. Once the +4 rig is idle +0x58 is set and the next move is 2. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { int m[9]; } Mtx33;

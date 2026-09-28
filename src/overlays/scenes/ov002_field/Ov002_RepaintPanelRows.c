@@ -6,8 +6,7 @@
  * pending and from the row count otherwise, and bit 3 of bStateFlags is raised so the tick pushes
  * the result. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 wField0000;

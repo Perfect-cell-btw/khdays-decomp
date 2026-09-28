@@ -5,11 +5,7 @@
  * Algorithm cross-checked against pret/pokediamond's
  * arm9/lib/NitroSDK/src/GX.c (GX_Init); verified byte-exact against this ROM.
  */
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int s32;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
+#include "nitro/types.h"
 
 #define reg_GX_POWCNT        (*(vu16 *)0x04000304)
 #define reg_GX_DISPCNT       (*(vu32 *)0x04000000)

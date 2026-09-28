@@ -16,7 +16,7 @@
  * THUMB.
  */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef u32 FSOverlayID;
 
 extern u32 OVERLAY_69_ID[1];

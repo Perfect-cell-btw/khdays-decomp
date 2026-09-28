@@ -8,9 +8,7 @@
  * (a11 + 2 * b1) by t twice. The result is the absolute value of the squared distance.
  * Codegen: as in the original, fS holds the unnormalised s and then s itself (Eberly's fS *= fInvDet),
  * and the determinant's absolute value goes through the FX64_Abs inline. */
-typedef int fx32;
-typedef long long fx64;
-typedef long long fx64c;
+#include "nitro/fx.h"
 
 typedef struct { fx32 x, y, z; } VecFx32;
 

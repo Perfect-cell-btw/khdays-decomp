@@ -18,9 +18,7 @@
  * inline sender (allocated after the address-taken queryHit, one triple per call site), with the
  * owner read from the state only after the packing.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct Vec4 { int x, y, z, w; } Vec4;

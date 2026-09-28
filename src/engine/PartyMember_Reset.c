@@ -5,8 +5,7 @@
  * Codegen: built with `opt_common_subs off` (push/pop scoped); with CSE on mwcc swaps the record
  * base and element pointer registers of the 8-byte header copy. */
 #pragma thumb on
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 f0;

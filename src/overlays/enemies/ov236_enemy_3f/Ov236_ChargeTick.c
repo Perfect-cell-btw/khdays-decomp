@@ -3,7 +3,7 @@
  * cross of the up axis with that direction scaled by the +0x30 side (x 1/8), the +0x3a8 part drops
  * bit 1 and when the +0x2c run time is out the actor requests move 0xb. With a free rider the +0x24
  * timer runs down instead and at its end the actor requests move 9. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct PartFlags { unsigned int lo : 8; };
 

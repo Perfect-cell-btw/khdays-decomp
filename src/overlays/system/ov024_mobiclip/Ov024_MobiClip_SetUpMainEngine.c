@@ -5,8 +5,7 @@
  * affine transform sixteen scanlines up, and finally hides every layer and
  * puts the backgrounds back in priority order.
  */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Mtx22 {
     int m[4];

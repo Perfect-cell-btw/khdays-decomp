@@ -3,8 +3,7 @@
  * the two ids at +0xec/+0xee, clears the two progress words and runs the two
  * setup passes. Bit 1 of +0x28 marks the scene as restarted.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[0x28];

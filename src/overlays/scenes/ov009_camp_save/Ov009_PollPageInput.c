@@ -1,7 +1,6 @@
 /* Polls the input source and routes presses to the enabled pages A/B. */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov009InputContext {
     u8 pad_0000[0x959c];

@@ -1,5 +1,5 @@
 /* Ov217_Construct: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } VecFx32;
 typedef struct { void *node; int pad; } Slot;
 typedef struct { int w[5]; } KindTable;

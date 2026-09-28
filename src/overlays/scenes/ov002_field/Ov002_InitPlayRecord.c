@@ -13,8 +13,7 @@
  * unsigned lvalues would force a separate 0xffff constant and add instructions.
  */
 
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 extern void MI_CpuFill8(void *dst, int val, int size);
 extern u32  GameState_GetField(int field, int a);

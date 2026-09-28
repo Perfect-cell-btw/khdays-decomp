@@ -4,9 +4,7 @@
  * archive subfile #3, and the sub-screen palette/char from subfile #0. Sets graphicsFlags|=4,
  * clears a 0x40 span of BG2 char and fills the sub-screen map with 0xc8. */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 typedef struct Ov000CharacterBlock {
     u8 pad_0000[0x10];

@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 

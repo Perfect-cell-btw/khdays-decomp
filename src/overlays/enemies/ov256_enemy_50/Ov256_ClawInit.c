@@ -5,8 +5,7 @@
  * part is the owner's "move_buki_L/R" motion (0x47 / 0x48). A hit capsule (length 0x2a00, radius 0xa00)
  * goes into a +0x22c pool slot at +0x388 (bit 1 set), bit 3 of +0x1ae is set and a second capsule in a
  * +0x144 slot is also kept at +0x38c. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;

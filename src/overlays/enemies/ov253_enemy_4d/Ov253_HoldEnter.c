@@ -1,6 +1,6 @@
 /* Ov253_HoldEnter -- hold entry: raises bits 1 and 7 of the actor's +0x60 high byte, clears
  * bit 0 and raises bit 1 of the +0x444 item's +8 low byte and moves the node to 020cd638. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

@@ -6,10 +6,7 @@
  * the prompt line (slot 1, source column 15) at row 16 when the retry prompt (+0x5e0) is on,
  * which pushes the quit line down to row 18 -- a client without the prompt lifts it to row 15;
  * the quit line (slot 2, source row 3) only below room 10000. */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

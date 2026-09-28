@@ -1,9 +1,7 @@
 /* Computes a 1-based summary tier from completed mission weight, optionally including an unfinished
  * entry, stores it in the session board, and returns it. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionListEntry {
     u8 pad00[2];

@@ -7,7 +7,7 @@
  * scale and position, and the model is submitted.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

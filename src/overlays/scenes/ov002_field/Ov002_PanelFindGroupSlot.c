@@ -16,8 +16,7 @@
  * group-3 body out of line with a predicated return, even though mwcc still
  * emits the comparison against 3 first.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 nGroup;             /* +0x00 */

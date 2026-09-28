@@ -31,9 +31,7 @@
  * ARM.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 extern void Ov002_PlotCanvasPixel(int hCanvas, u16 nX, u16 nY, u8 nColour);
 

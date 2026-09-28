@@ -1,7 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed int s32;
+#include "nitro/types.h"
 
 typedef void (*JointScaleCallback)(u32 *result, u32 *scratch,
                                    void *render_context, u32 flags);

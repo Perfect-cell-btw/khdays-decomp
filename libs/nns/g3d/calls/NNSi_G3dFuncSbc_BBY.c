@@ -4,10 +4,8 @@
  * lengths in its own command template (data_0204288c), but also rebuilds the template rotation
  * from the normalised Y row (or the Z row when Y has no Y/Z part) so the billboard only turns
  * about the Y axis. */
-typedef unsigned char u8;
-typedef unsigned int u32;
-typedef int fx32;
-typedef volatile u32 vu32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22, _30, _31, _32; } MtxFx43;

@@ -1,9 +1,7 @@
 /* Network sync: applies a remote state update (flags, packed position, rotation, velocity) or a
  * remote hit. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct {
     unsigned bit0 : 1;

@@ -15,7 +15,7 @@
  * Ghidra carries the blob as Ov002OffsetTable and the slot as pOffsetTable.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207fa00;
 extern char data_ov002_0207efe8[];

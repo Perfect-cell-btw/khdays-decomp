@@ -1,13 +1,8 @@
 /* SND_GetNextInstData -- NitroSDK snd_bank.c: SND_GetNextInstData. Walks the bank's instrument table
  * from `pos`, returning the next single instrument, drum-set member or key-split member in
  * `inst`; FALSE once every program is exhausted. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef int BOOL;
+#include "nitro/types.h"
 
-#define TRUE 1
-#define FALSE 0
 #define SND_BANK_TO_WAVEARC_MAX 4
 #define SND_INST_KEYSPLIT_MAX 8
 

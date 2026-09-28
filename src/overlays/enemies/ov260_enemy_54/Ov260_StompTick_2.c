@@ -3,7 +3,7 @@
  * flagged) is swept for hits (020cd2a0 kind 4). Then, once (+0x7b bit 1), the +0x78 stomp count drops
  * and while stomps remain the partner's queued move clears and the node goes back to the hop
  * (020cf17c); otherwise, once the partner holds no queued move, the next move is 2 and the node ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct BoxQuery {
     Vec3 vCenter;

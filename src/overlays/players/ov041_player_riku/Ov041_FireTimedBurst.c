@@ -4,8 +4,7 @@
  * 0x3000, range 0x1000, no anchor), builds the burst parameters with spin 0x12c0, flags 0x625
  * and the fixed 0xa00/0x66/0xa00 extent, and submits them; if the submit takes and busy bit 0
  * of +0x26bc is clear, it plays 0xd7 (variant 1) at +0x26c8. */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

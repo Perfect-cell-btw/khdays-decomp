@@ -2,8 +2,7 @@
  * previous sub-state was 3 and the +0x21a stamina is spent, the +0x18 phase advances and the
  * stamina is refilled from the +0x218 maximum divided by 2, 3 or 5 (at least 1) according to the
  * phase; then the state ends with sub-state 2. */
-typedef unsigned char u8;
-typedef short s16;
+#include "nitro/types.h"
 
 struct Ov219Actor {
     char pad000[0x1c6];

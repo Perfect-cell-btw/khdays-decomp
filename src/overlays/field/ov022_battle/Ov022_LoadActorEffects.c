@@ -9,7 +9,7 @@
  * slot pool and the action owner's run.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 /* Ov022Actor */
 struct Actor {

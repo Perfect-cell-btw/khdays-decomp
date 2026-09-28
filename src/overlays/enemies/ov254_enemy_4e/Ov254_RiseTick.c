@@ -3,7 +3,7 @@
  * side 1) and in place (mode 0xa, +0x70 bit 0). Once the +4 item's +0xad byte clears, every shape
  * of the ten +0x4ac items' +0x22c lists loses bit 1, the +0x45c partner is resumed (020d2050) and
  * the next move is 4. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 struct Items4ac { char pad[0x4ac]; int item[10]; };

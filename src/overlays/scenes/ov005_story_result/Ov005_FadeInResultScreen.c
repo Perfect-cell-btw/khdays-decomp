@@ -1,5 +1,5 @@
 /* Fade in the sub-screen and start the first result-count animation. */
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef struct Tween { char data[28]; } Tween;
 typedef struct Ov005ResultTween { Tween tween; int value; char unknown20[12]; } Ov005ResultTween;
 typedef struct Ov005SpriteManager { char data[0x4a80]; } Ov005SpriteManager;

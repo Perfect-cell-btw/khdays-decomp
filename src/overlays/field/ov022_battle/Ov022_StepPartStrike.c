@@ -10,7 +10,7 @@
  * The part ends its run when its own tracks report done.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

@@ -2,8 +2,7 @@
 
 #pragma opt_propagation off
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov022ColorVector {
     int x;

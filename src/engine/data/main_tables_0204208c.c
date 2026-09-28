@@ -1,11 +1,8 @@
 /* main .rodata 0x0204208c-0x02042124: NNS G3D material masks, matrix/quaternion helper constants
  * and the class descriptor of the session's transfer-channel task. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef short fx16;
-typedef int fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx16 {
     fx16 x, y, z;

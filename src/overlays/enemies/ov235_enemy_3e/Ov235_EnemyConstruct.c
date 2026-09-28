@@ -8,8 +8,7 @@
  * (hidden), then the eleven effect pairs of +0x3bc (the first eight from the effect resource, the
  * rest from the data_ov235_020d22d0 poses; all hidden) and loads the voice bank (+0x3c8: 0x17f
  * in the alternate language, else 0x17a). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[11]; } IdTable;

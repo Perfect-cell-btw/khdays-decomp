@@ -3,7 +3,7 @@
  * along the +0x30 yaw is cast through the +4 item's +0x7c world (radius 0x3d98) into +0xc; when
  * the hit normal faces the actor's +0x114 direction (dot below -0.5) the actor is knocked back in
  * place (mode 0xa), the next move is 0xa and 1 is returned; otherwise 0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 

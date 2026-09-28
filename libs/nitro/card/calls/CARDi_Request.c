@@ -1,7 +1,4 @@
-typedef signed long s32;
-typedef unsigned long u32;
-typedef unsigned char u8;
-typedef int BOOL;
+#include "nitro/types.h"
 typedef s32 PXIFifoTag;
 typedef s32 PXIProc;
 typedef s32 CARDResult;
@@ -10,7 +7,6 @@ typedef s32 CARDRequest;
 typedef u32 OSIntrMode;
 
 enum {
-    TRUE = 1,
     PXI_FIFO_TAG_FS = 11,
     PXI_PROC_ARM7 = 1,
     CARD_RESULT_SUCCESS = 0,

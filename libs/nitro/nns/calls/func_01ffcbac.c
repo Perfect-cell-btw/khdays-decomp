@@ -1,5 +1,4 @@
-typedef unsigned int u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct RenderCommandState {
     u8 *stream00;

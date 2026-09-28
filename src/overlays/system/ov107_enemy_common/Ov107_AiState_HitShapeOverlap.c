@@ -15,9 +15,8 @@
  * in-place redefinition is what puts the subtraction ahead of them, as in
  * ROM. */
 
-typedef unsigned char u8;
-typedef int fx32;
-typedef long long fx64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x;

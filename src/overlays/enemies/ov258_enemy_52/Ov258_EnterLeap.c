@@ -1,7 +1,7 @@
 /* Enter the ov258 actor's leap: the actor's +0x424 clears, the +0x53 step countdown is 5 and the
  * +0x44 clock clears, the rig switches (020cd028 mode 1), the +0x1c point is (0, 15.6, 11.0), pose 5
  * plays with effect 0x21 there and the brain waits on 020cf7c8. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 

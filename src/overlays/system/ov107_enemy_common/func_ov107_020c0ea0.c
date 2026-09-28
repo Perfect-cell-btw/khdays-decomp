@@ -1,10 +1,7 @@
 /* Spawner tick: waits out its timer, finds the nearest active actor within range and, when the
  * spawn conditions hold, runs the spawn step. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed char s8;
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct Ov107Object Ov107Object;
 typedef struct Ov107Actor Ov107Actor;

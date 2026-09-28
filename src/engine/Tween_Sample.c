@@ -2,9 +2,7 @@
  * ticks, marks it finished when it reaches the duration, and writes the eased value between its
  * endpoints. */
 
-typedef unsigned int u32;
-typedef signed int s32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 /* Same Tween/TweenFlags shape already established by the callers in the tree
  * (e.g. src/overlays/scenes/ov008_camp_menu/Ov008_TickInfoWindowTransition.c, which declares this

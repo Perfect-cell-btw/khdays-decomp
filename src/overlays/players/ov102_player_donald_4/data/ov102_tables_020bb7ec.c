@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Spawns the ov102 panel's effect instances around the actor. Builds a rotation matrix (020bb1f4): struct SpawnRing4 data_ov102_020bb7ec; */
 const u8 data_ov102_020bb7ec[48] = {

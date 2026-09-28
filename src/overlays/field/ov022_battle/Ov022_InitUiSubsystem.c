@@ -1,9 +1,7 @@
 /* Initialises the battle UI sprites: binds the four entry sprites and two extra sprites from the
  * archive members and sets their sizes, priorities and default values. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov022DefaultValues {
     u32 values[4];

@@ -6,8 +6,7 @@
  * assignment order is NOT the ROM's store order: each entry is filled in turn and the order
  * inside cfg[0] (zeros, then the single-use constants, then 0x100, 5, 10) is the pre-image that
  * gives the ROM's constant registers (found by sweeping the constant groups). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct PanelSubCfg {
     int flags00;

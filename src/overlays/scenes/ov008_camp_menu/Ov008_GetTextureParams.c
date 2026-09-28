@@ -1,9 +1,7 @@
 /* Looks up a texture and its palette in a G3D texture resource and returns their image parameter
  * and palette base. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
+#include "nitro/types.h"
 
 typedef struct NNSG3dResDict {
     u8 revision, numEntry;

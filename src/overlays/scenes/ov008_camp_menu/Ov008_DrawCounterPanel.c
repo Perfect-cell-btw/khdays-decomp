@@ -18,9 +18,7 @@
  * are locals; the digit rows are a 3 x 3 array and the quantity row is
  * picked as (&aDigit[1])[tab != 1]; the tab test is an int bool.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define DIGIT_COUNT   3
 #define TAG_COUNTER   0x3f3

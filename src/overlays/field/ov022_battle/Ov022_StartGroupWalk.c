@@ -7,8 +7,7 @@
  * Whichever entry it lands on has its count handed straight to the step call.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define GROUP_COUNT 2
 #define FLAG_GROUP0 2

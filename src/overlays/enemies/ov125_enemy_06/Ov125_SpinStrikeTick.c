@@ -11,9 +11,7 @@
  *
  * Codegen as in ov143: coordinates are packed through Fx32 wrapper copies whose unread scratch
  * words are nine separate values declared z, y, x per site. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 

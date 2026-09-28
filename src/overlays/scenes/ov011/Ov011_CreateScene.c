@@ -16,10 +16,7 @@
  * through a volatile view so the argument chain reloads; the enabled flag is stored
  * before that read.
  */
-typedef signed char   s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 typedef u32 FSOverlayID;
 typedef void (*Ov011StateFn)(void);
 

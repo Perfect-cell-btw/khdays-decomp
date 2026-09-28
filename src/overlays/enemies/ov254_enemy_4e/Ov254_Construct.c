@@ -8,8 +8,7 @@
  * (length 8.4, radius 1.57); each goes both into the +0x144 pool (kept in +0x3f4) and the +0x22c pool
  * (kept in +0x3e0). The four helpers (+0x468, +0x45c, +0x460, +0x464), sixteen +0x46c shards and ten
  * +0x4ac debris pieces are created and sound 0x16d loads. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[8]; } IdTable8;

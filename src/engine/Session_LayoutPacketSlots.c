@@ -4,8 +4,7 @@
  * slot buffers. The slot sizes follow the link mode (Session_GetLinkMode): modes 1/2 give the first two slots 0x3d8 bytes and the rest 0xc0, mode 3 gives every
  * slot 0x3c0. Each slot then gets its word-aligned buffer, a zero length and a zero state, and a
  * 0x3c0-byte scratch block is allocated from the default heap (+0x5c). */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct PacketSlot {
     void *buf;                          /* +0x0 */

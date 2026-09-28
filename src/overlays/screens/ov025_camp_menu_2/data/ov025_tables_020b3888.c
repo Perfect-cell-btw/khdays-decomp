@@ -12,8 +12,7 @@
  *   data_ov025_020b38fc: Ov025_Hub_SetupTextSurfaces
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov025_020b3888[3] = {
     7, 2, 2,

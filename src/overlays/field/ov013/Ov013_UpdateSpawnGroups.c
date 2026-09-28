@@ -1,7 +1,7 @@
 /* Spawns an effect for each entry of the current group (types 2, 15 and 28 within the value limit)
  * that has not spawned yet. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int value;

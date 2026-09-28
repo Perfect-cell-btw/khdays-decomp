@@ -4,7 +4,7 @@
  * height of the target's +0x194 above the actor's +0xb4 clamped to +-0x200 (0 without a
  * target). Once the +4 item's +0xad byte clears, bit 0 of the actor's +0x1ae drops, the timer
  * resets and sub-state 6 is configured (part action 2, flag 1) before handing off to cd54c. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

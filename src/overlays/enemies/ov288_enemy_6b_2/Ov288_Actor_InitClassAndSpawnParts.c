@@ -29,9 +29,7 @@
  *    instructions, never the thirty-eight this function needs), while keeping the stores in
  *    the ROM's 0x70, 0x64, 0x68, 0x6c order that a two-target chain would collapse.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

@@ -1,7 +1,7 @@
 /* Physics tick of the ov238 actor: with a target (+0x390) its pose is the rotation from up to its
  * +0x124 normal combined with the +0x24 spin about the +0x40 axis; landed in move 2 the ground normal is
  * copied to +0x30. Its +0xf0 velocity takes the +0xc velocity, which then rests. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { u8 b0 : 1; } Bit0;

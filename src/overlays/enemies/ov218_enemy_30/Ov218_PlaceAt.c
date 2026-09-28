@@ -1,6 +1,6 @@
 /* Place the ov218 actor at `pos` for `owner`: +0x398 clears, it is registered there (020c5c54), the
  * spawn point is kept in +0x3ac and its guard flag (+0x60 high byte bit 0) is set. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov107_MoveNodeAndRelayout(char *self, int owner, Vec3 *pos);

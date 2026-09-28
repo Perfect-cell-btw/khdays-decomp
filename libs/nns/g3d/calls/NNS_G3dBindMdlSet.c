@@ -1,28 +1,11 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
 
-
-
-
-typedef s32 fx32;
-typedef s16 fx16;
 typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
 typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
 typedef enum {
@@ -269,7 +252,6 @@ BOOL NNS_G3dBindMdlSet (NNSG3dResMdlSet * pMdlSet, const NNSG3dResTex * pTex)
 {
     u32 i;
     BOOL result = TRUE;
-
 
     for (i = 0; i < pMdlSet->dict.numEntry; ++i) {
         NNSG3dResMdl * mdl = NNS_G3dGetMdlByIdx(pMdlSet, i);

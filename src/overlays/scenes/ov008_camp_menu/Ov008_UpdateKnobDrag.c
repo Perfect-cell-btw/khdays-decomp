@@ -8,8 +8,7 @@
  * the selected row (+0x9c) inside the eight visible rows from +0x74, moving
  * the highlight (0205f084) to the row's slot; mode 1 only clears the drag flag.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define LIST_MODE_PAGE 0
 #define LIST_MODE_BUSY 1

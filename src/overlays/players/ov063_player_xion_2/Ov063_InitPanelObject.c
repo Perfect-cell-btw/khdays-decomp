@@ -1,8 +1,7 @@
 /* Initialises the player actor from its configuration: model, bones and named resources, entity
  * links, and its handler table. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov063InitConfig {
     int objectType;

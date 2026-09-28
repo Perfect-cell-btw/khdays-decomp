@@ -1,8 +1,7 @@
 /* Handles a tap on a save page entry: positions the cursor and, in the save page state, shows the
  * entry's caption (or switches the save page) with a sound. */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MenuEntry {
     u8 pad00[0x0c];
@@ -119,5 +118,4 @@ void Ov025_HandleSavePageInput(Ov008MenuEntry *entry, u32 inputFlags)
         return;
     }
 }
-
 

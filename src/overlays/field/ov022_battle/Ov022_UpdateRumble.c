@@ -15,9 +15,7 @@
  * strength.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define RUMBLE_TICKS_PER_STEP  0x01ff6210u
 #define RUMBLE_MAX_AHEAD       0x004fe752

@@ -5,7 +5,7 @@
  * are reset to frame 0 and shown -- an unknown tab selects none.  The page
  * widget is kept at +0x54 and the tab recorded.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define TAB_COUNT     7
 #define WIDGET_FIRST  0x79

@@ -9,9 +9,7 @@
  *
  * The work is confined to the vertical blank proper, scanlines 0xa0 to 0x103.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define DISPCNT_LAYERS   0x1f00
 #define LAYERS_AS_BG     0x0f00

@@ -1,7 +1,7 @@
 /* Rider release (first rider): raises flags 0xc2 and clears bit 0 in the actor's +0x60 high
  * byte, sets bits 0-1 of +0x1ae, clears bit 0 of the +0x3b0 / +0x3b4 items' +8 low byte and bit
  * 0 of +0x3c0, then dispatches null. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct b8 { unsigned f : 8; };
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 

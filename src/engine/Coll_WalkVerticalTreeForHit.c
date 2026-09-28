@@ -1,9 +1,5 @@
 /* Single-path quadtree traversal for a vertical collision ray. */
-typedef signed short s16;
-typedef unsigned short u16;
-typedef signed int s32;
-typedef unsigned int u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct CollisionFace88 CollisionFace88;
 typedef struct CollCastState CollCastState;
@@ -124,7 +120,6 @@ void *Coll_WalkVerticalTreeForHit(CollisionNode *node, CollCastState *query)
                 data_027e0764.object08 = (CollisionObject *)workValue;
             }
         }
-
 
         nodeFlags = node->flags00;
         frame = data_027e06e0;

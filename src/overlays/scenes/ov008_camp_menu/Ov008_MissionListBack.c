@@ -5,8 +5,7 @@
  * shared mode record (flag bytes 0, timer 10000, extra 0), marks the save record's
  * byte 0x4f, clears the target slot and plays the cancel sound.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionList {
     u8  pad_000[0x40];

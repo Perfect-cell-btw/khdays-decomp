@@ -3,8 +3,7 @@
  * the second slot's (sub-kind 1) with the actor's own +0xb0 position packed as three big-endian
  * 24-bit values; the base handler always runs. Coordinates are copied through the Fx32 wrapper
  * (the ROM's unread stack copy of the position), as in ov122_020d12f4. */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 

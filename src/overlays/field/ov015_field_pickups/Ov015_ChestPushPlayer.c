@@ -5,10 +5,7 @@
  * (class 0x1b) or 8, base half the actor's HP (+0x218), no damage, the opener (+0x726)
  * as id, the given part node and strength 100, sends it to the actor (ov107 020c5cfc)
  * and marks the player's bit.  Always returns 1. */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

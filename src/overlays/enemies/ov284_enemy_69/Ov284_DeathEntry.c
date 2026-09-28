@@ -2,8 +2,7 @@
  * clears bit 0 and sets bits 1/7 of the +0x60 high byte, sets bits 0/1 of +0x1ae, clears bit 0
  * of the +0x3a8 item's +8 flags, fires reaction 0x16c mode 6 at the +4 anchor, requests
  * sub-state 0 and ends the state. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct hw60 { u16 lo : 8, hi : 8; };
 struct bf { unsigned int b : 8; };
 typedef struct { u16 id; u16 arg; } ShortMsg;

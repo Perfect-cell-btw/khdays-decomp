@@ -5,11 +5,8 @@
  * matrices to identity, restores the default BG priorities (0..3), closes the windows, turns
  * blending off and sets the 3D clear colour to black at the far depth. The bank releases use the
  * SDK's GX_DisableBankFor* entry points, some of which carry other names in the symbol table. */
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int fx32;
-typedef volatile u16 vu16;
-typedef volatile u32 vu32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { fx32 _00, _01, _10, _11; } MtxFx22;
 

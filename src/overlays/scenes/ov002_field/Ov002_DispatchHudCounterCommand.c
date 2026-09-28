@@ -1,8 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned long long u64;
-typedef signed long long s64;
+#include "nitro/types.h"
 typedef s64 (*Ov002EntrySampleFn)(void);
 
 typedef struct Ov002PauseSlot {

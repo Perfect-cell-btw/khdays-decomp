@@ -2,8 +2,7 @@
  * (dimming the main screen in the save mode), then runs the update callbacks, dropping the ones
  * that finish. */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef union Ov008DisplayFlags {
     u32 raw;

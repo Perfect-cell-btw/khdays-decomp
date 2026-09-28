@@ -5,8 +5,7 @@
  * and the button-3 state.  Always redraws the menu, masks the latched key word
  * (+0x2098) with the keys still held and marks the frame drawn (+0x3c).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define MODE_COUNT 4
 

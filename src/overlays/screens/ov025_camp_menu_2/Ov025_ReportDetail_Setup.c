@@ -6,7 +6,7 @@
  * context (+0x48; 02084a8c) taken, the sprites bound (Ov025_ReportDetail_SetupEntries 020afef4),
  * the text surface built (Ov025_ReportDetail_SetupSurface 020b0090) and the view drawn
  * (Ov025_ReportDetail_Refresh 020b0484).  Always returns 1. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov025ReportDetailPage {
     int  nField00;            /* 0x00 */

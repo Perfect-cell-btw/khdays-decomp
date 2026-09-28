@@ -1,9 +1,7 @@
 /* Scrolls the sub screen's background and window by the offset, reconfiguring its layers and
  * blending when the display state changes. */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov000SceneContext {
     u8 pad_0000[0x4b08];

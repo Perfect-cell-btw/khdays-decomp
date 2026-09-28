@@ -8,7 +8,7 @@
  *
  * The phase byte then advances: it resets to 1 while the context is idle and
  * otherwise cycles 0, 1, 2. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[0x64];

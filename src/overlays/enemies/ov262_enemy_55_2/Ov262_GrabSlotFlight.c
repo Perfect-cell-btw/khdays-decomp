@@ -7,7 +7,7 @@
  * the axis-cross-direction, blended back towards the direction beyond 0x1800 and towards its
  * reverse under 0x800 of distance; the +0x3c rate is the frame-time * 30 / 5 and the anchor
  * faces the velocity. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 
 extern void VEC_Subtract(void *a, void *b, void *d);

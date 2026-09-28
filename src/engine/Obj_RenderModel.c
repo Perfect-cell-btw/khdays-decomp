@@ -1,10 +1,8 @@
 /* Loads the object's transform (position, quaternion, scale) into the current matrix, draws the
  * model, then moves each attached node to its joint. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Quat { fx32 w, x, y, z; } Quat;
 typedef struct VecFx32 { fx32 x, y, z; } VecFx32;

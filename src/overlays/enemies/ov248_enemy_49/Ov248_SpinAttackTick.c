@@ -7,7 +7,7 @@
  * Reaction 0x146 modes 7 (from 0xbb0) and 8 (from 0x1430) fire once each (bits 0/1) at the
  * +0xc position; once the +4 item's +0xad byte clears sub-state 2 is requested and the state
  * ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 

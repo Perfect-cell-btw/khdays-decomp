@@ -1,10 +1,5 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef int BOOL;
+#include "nitro/types.h"
 
-#define FALSE 0
-#define TRUE 1
 #define NNS_G2D_BINFILE_SIG_FONTDATA 0x4e465452
 #define NNS_G2D_NFTR_VER 0x0101
 #define NNS_G2D_NFTR_PREV_VER 0x0100

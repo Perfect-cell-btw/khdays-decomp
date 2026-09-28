@@ -8,7 +8,7 @@
  * down set the stamina to 1 and request sub-state 10; with stamina left a 0x8000 hit outside
  * sub-state 6 requests sub-state 6, anything else arms the +0x5c chase clock at 0x2fd0 and
  * requests sub-state 7; spent stamina is pinned at 1. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 
 struct ActorHitEvent {

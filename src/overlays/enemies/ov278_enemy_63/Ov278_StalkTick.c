@@ -11,8 +11,7 @@
  * off, jittered by up to +-(1 - |t|) x 45 degrees. The +0x3c8 part's motion step, turned by the
  * +0xa0 orientation, becomes the +8 velocity. Once the +0x14 countdown runs out past 1.67 on the
  * step timer, the +0x388 part's +0xa8 flag clears and the tick hands over to Ov278_AiEnterStomp. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

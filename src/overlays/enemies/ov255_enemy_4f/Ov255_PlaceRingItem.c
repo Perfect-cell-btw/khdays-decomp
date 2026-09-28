@@ -2,7 +2,7 @@
  * forward axis turned by q, the item's +0x390 point sits 0.5 out from the centre plus the forward
  * axis, its +0x3a8 orientation faces along the cross of the forward and outward axes, the angle is
  * kept at +0x3b8 and bit 0 of the +0x60 high byte is raised. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
 

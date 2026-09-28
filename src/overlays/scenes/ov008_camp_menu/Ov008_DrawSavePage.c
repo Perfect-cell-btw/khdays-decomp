@@ -13,8 +13,7 @@
  * The draw helpers take their buffer/record argument as a pointer (a6 is void *, not an int): that
  * makes mwcc re-materialize the frame-relative text address fresh before each draw instead of
  * caching it in a callee-saved register -- the (int)-cast form is 8 bytes short. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Tmpl3 { unsigned a, b, c; } Tmpl3;
 

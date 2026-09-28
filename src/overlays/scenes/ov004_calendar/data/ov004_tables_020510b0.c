@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov004_LoadSceneGraphics (0204fd60): char data_ov004_020510b0[]; */
 const u8 data_ov004_020510b0[8] = {

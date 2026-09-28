@@ -30,6 +30,8 @@ MWCC = os.path.join(ROOT, "tools", "mwccarm", "3.0_patch4", "mwccarm.exe")
 BASE = ["-proc", "arm946e", "-interworking", "-lang", "c99",
         "-enum", "int", "-char", "signed", "-inline", "on,noauto",
         "-Cpp_exceptions", "off", "-gccext,on"]
+# Shared headers (include/nitro/types.h, ...): the game and library sources include them.
+BASE += ["-i", os.path.join(ROOT, "include")]
 
 LEVELS = ["-O0", "-O1", "-O2", "-O3", "-O4",
           "-O1,p", "-O2,p", "-O3,p", "-O4,p",

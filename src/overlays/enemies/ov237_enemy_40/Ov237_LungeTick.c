@@ -2,8 +2,7 @@
  * (020cdb50); once the +4 rig finishes the next pose is picked by the +0x3dc target's height: above
  * 3.0 bit 6 of the +0x60 high byte is set with poses 0x16 / partner 9, else poses 10 / partner 6; the
  * +0x30 timer and the +0x57 flag clear, +0x34 = 1 and the brain waits on 020ced4c. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern Vec3 Ov237_RotateByActorHeading(int *node, Vec3 *target);

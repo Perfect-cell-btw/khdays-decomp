@@ -8,8 +8,7 @@
  * along +0x3c at 0.25 (double speed while retreating, rising at 0.5) and its body sphere (radius 6.5)
  * hits kind-2 targets with sound 0/0x53. Once grounded, idle, past 1.49 and with the +0x17a bit 3 set,
  * pose 0x19 plays, the velocity rests and the node moves on to 020d1350. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 center; int nRadius; } Sphere;
 typedef struct { unsigned f : 8; } B8;

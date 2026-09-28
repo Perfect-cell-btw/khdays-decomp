@@ -11,9 +11,7 @@
  * reaction 0 mode 0x53 fires there. Once the +0x50 busy byte clears with bit 0 of +0x17a or
  * +0x17c set, the +0x40 cooldown is re-armed at random between the actor's +0x224 and +0x228,
  * sub-state 2 is requested and the state ends. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */

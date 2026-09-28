@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Constructor of the ov210 enemy (x3 with ov211/ov282). Installs the handlers, clears +0x1f4 (020d1a24): const PoseTable data_ov211_020d6484; */
 const int data_ov211_020d6484[8] = {

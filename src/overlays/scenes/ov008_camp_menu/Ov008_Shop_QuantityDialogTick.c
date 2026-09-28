@@ -37,10 +37,7 @@
  * remainder and the affordable quotient are the two halves of
  * Math_DivMod; declaration order i, nPressed, pfnNext, nRow, pBox, nKeys.
  */
-typedef signed short   s16;
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT       4
 #define KEY_A           1

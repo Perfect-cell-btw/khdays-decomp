@@ -5,7 +5,7 @@
  * bits 4/5) the contact sweep runs with kind 1. The +0x14 velocity is the +0x398 part's +0x2c
  * motion turned by the +0x10 yaw; once the +4 item's +0xad byte clears sub-state 2 is
  * requested and the state ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

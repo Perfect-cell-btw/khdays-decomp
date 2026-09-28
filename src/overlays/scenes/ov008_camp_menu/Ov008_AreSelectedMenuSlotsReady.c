@@ -1,8 +1,7 @@
 /* Whether every selected peer's menu slot is ready (always when local, never while not busy or with
  * no one selected). */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Ov008MenuSlot {
     u8 pad00[2];

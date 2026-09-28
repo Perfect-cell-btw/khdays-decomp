@@ -2,7 +2,7 @@
  * knocked back in place (mode 5). When not aggressive, every shape of the ten +0x4ac items' +0x22c
  * lists gains bit 1 and the +0x45c partner is released (020d206c). The +0x70 flag clears and the
  * node moves to 020d121c. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 struct Items4ac { char pad[0x4ac]; int item[10]; };

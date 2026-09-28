@@ -7,7 +7,7 @@
  * bit 1 of its +0x5c). The pool entry is a one-word wrapper struct copied to the stack early
  * (the ROM's [sp] spill). */
 typedef void (*Callback)(void);
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov273_Destroy_3(void);
 extern void Ov273_SendMessage24_2(void);

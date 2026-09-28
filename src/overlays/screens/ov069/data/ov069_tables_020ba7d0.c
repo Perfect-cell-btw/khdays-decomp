@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const u8 data_ov069_020ba7d0[8] = {
     93, 2, 252, 0, 200, 1, 255, 255,

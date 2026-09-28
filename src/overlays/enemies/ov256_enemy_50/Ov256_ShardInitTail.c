@@ -3,7 +3,7 @@
  * +0x1ae, +0x70 = 0xa00, +0x54 / +0x58 clear; its model (+0x384) loads from the +0x398 owner's kit
  * entry 0x53, registers with the +0x9c scene and plays tracks 0-2 looped, the +0xa0 pose scales 2.0 and
  * a placement goes into a +0x22c pool slot at +0x388 (bit 1 set). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { unsigned f : 8; } B8;
 
 extern int Ov107_PackTextureHandle(char *self, int kind);

@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Compute one of this enemy's attack anchor points into `out`: the plain offset {0, 0x2000, (020bb5f0): const Ov039SidePair data_ov095_020bc950; */
 const u8 data_ov095_020bc950[24] = {

@@ -1,9 +1,7 @@
 /* Initialise all 19 renderer cells, then enable and position the entries that belong to the current
  * selection. */
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad_0000[0x4a8c];

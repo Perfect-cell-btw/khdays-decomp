@@ -7,8 +7,7 @@
  * rider); on acceptance the message data_ov253_020d49a8 carries the +0x3ac part's +0x14 point to the
  * +0x24 hook, the slot bit is set and reaction 0x16c mode 5 fires there. Once the +8 idle byte
  * clears, animation 7 plays and the tick hands over to Ov253_WaitTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

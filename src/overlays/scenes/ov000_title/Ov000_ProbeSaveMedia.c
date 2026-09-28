@@ -3,7 +3,7 @@
  * offset 0x20 (3 groups x 2 lanes) reading each into a scratch buffer. Returns 1 when every access
  * succeeds, 0 on the first failure. Frees the scratch buffer on the way out. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov000ProbeTemplate {
     void *reserved;

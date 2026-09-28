@@ -23,9 +23,7 @@
  *     strh r0, [sp, #2]
  *     strh r2, [sp]
  */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov149State Ov149State;
 

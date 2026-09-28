@@ -5,8 +5,7 @@
  * is in move 4); if it takes the hit (020ca918, the owner's move as kind) the owner plays sound
  * 0x172/5 (charged, +0x424) or 4 at the +8 point and is knocked back at the entity (mode 6 for
  * moves 3-7, else 0), and the entity is marked. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
 

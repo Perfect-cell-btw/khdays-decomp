@@ -6,7 +6,7 @@
  * point) is still on the phase's side (020ce42c) with the +0x84 pose replayed; in phases 3 and 4 it
  * rises or sinks at 0.625. Advancing plays the next +0x84 pose, motion 5 (phase 1) or 8 (phase 2),
  * clears +0x64 and moves on to 020cfa28. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov252_TurnVecY(Vec3 *out, int angle, Vec3 *vec);

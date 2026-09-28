@@ -5,8 +5,7 @@
  * back at its position (mode 0xb), queues pose 7 (020cd628) and is marked; entities no longer
  * touched are forgotten. Past 0xaa0, once the partner holds no queued move, +0x54 clears, the next
  * move is 2 when grounded (+0x17a bit 0) else 0xc, and the node ends. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Flag17a { u8 b0 : 1; };
 struct BoxQuery {

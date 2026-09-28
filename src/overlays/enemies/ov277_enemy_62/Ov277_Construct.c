@@ -10,7 +10,7 @@
  * (radius 3.0 / 2.0) at +0x3f8 / +0x3fc on the +0x144 pool; on the +0x22c pool a placement
  * (scale 2.0) at +0x39c and two capsules (radius 1.625, along x) at +0x3a0 / +0x3a4. Loads sound
  * 0x165. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[8]; } IdTable8;

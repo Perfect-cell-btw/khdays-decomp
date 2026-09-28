@@ -2,7 +2,7 @@
  * the global counter, install the four default vtable callbacks, zero the working fields, clear
  * the low 3 bits of the state word at +0x40, and link into the manager list. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct StateFlags {
     unsigned int f0 : 1;

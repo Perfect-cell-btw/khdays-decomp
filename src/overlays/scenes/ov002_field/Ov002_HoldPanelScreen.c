@@ -20,8 +20,7 @@
  * ARM.
  */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     char pad0000[0xf8];

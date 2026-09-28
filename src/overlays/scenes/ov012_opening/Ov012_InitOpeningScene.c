@@ -2,9 +2,7 @@
  * archives, builds 41 sprite resource sets, starts op/scr.z and returns the opening-scene update
  * callback. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct SpriteResSet {
     int words[3];

@@ -2,10 +2,7 @@
  * it misses the model's area, walks the quad tree and records the hit (letting the hit object's
  * callback react); returns whether it hit. */
 
-typedef signed short s16;
-typedef unsigned short u16;
-typedef signed int s32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct CollisionRegion {
     s32 centerX00;

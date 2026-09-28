@@ -6,9 +6,7 @@
  * pending it resets the column to 4 and closes the secondary list (mode 1
  * unless the list at +0x19b4 is up, then 0) with cue 0.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define KEY_LEFT   0x20
 #define SOUND_MOVE 0x35

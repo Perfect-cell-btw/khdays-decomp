@@ -14,10 +14,7 @@
  * (+0xc538) is cleared and the choice (+0xc53c) set to 1.  Codegen: the
  * selection as a ternary (predicated), the choice cells as a [2][2] array.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define TAG_DETAIL_OPEN 0x135
 #define WIDGET_CURSOR   1

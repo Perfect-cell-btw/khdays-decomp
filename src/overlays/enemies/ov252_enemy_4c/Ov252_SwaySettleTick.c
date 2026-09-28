@@ -5,7 +5,7 @@
  * phase 5, a target within the turn cone (020cdb88 under 1.05) marks a pending turn while one outside
  * it (or a +0xb4 hit) makes 0xd current and moves on to 020d1abc. With a turn or reward pending pose 3
  * and motion 2 start and the phase becomes 0 (reward) or 5; otherwise the node goes back to 020cf3b8. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov252_TurnVecY(Vec3 *out, int angle, Vec3 *vec);

@@ -2,7 +2,7 @@
  * once each (+0x7b bits): at 0x1540 the actor is knocked back at the origin (mode 0xb), at 0x1870
  * pose 0x1f plays, at 0x1430 and 0x1ed0 the cue fires (020cd04c 2 / 3). Once the partner holds no
  * queued move the next move is 2 and the node ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);

@@ -4,7 +4,7 @@
  * and the state ends with sub-state 0. Otherwise a set +0x17a bit 0 or bit 1 publishes the
  * position with mode 1, fires reaction 0x142 mode 7 and ends the same way; else the +0x20 travel
  * accumulates the +8 velocity's length and ends the dash once it passes 0x15000. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vecx32 { int x, y, z; };
 struct Sphere { struct Vecx32 vCentre; int nRadius; };

@@ -1,8 +1,7 @@
 /* Save cancel state: shows the cancel message, restores the variant and display, then fades out or
  * cleans up. */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov009SaveChoiceVisual {
     int value;

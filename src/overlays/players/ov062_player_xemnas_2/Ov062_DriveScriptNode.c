@@ -6,8 +6,7 @@
  * latches bit 0 once the frame passes 0xc000. Whenever the node is live it is re-registered
  * for a flagged actor (+0x694 bit 0), and outside those two modes it is stepped at 0x1800
  * (difficulty 1) or 0x1000 until it completes, which retires it. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct b2 { u8 b0 : 1, b1 : 1; };
 

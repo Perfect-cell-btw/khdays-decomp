@@ -1,7 +1,6 @@
 /* NitroSDK original assembly (libraries/os/src/os_protectionUnit.c). */
 
-typedef int BOOL;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define HW_C1_PROTECT_UNIT_ENABLE    0x00000001
 

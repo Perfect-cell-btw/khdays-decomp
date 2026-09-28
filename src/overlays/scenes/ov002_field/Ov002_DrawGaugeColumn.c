@@ -8,7 +8,7 @@
  * ARM.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 aStyle[3][2];

@@ -4,7 +4,7 @@
  * part's motion step rotated by the actor's +0xa0 orientation and, unless the target distance is
  * within the actor's +0x2d8 reach yet beyond 0x5000, the +0x384 item's +0xa8 byte is cleared and
  * the tick hands off to the next approach state. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 
 extern int Ov107_FindNearestObject(int actor, int *dist);

@@ -3,7 +3,7 @@
  * attached to (+0x28 of the attachment's model), one against the scene link it was spawned from
  * -- clears the 0xc9-byte work block at +0xda0, then latches the ready bits 0xb and returns
  * them. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern void Ov022_ConfigureGridSlotMode(int slot, int mode);
 extern u8 *Ov022_AcquireGridSlot(char *descriptor, int slot, int variant, void *parameters);

@@ -5,8 +5,7 @@
  * the node is simply disarmed. nCursor is updated last in both paths, which is why the old value is
  * still readable above. */
 
-typedef unsigned char u8;
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[0x69c];

@@ -11,8 +11,7 @@
  * the raw offsets here are what reproduces the original codegen.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207f62c[];
 extern void Ov002_Panel_QueueGraphicsIfAny(void);

@@ -4,7 +4,7 @@
  * placeholder, so only one is expected), terminates it and returns the buffer. The ROM reloads the
  * character at the top of the loop body instead of reusing the loop test's load, hence the
  * volatile read. */
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct LangPath {
     s16 lang;                           /* +0x00 */

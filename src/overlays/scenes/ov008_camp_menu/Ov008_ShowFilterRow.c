@@ -7,7 +7,7 @@
  * `const` on the two rect tables lets their loads float above the stack-argument
  * stores (ROM order); the first visibility is `!bOn` (evaluated last, in place).
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008PanelContext {
     u8 pad_0000[0xbfb0];

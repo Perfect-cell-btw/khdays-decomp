@@ -2,7 +2,7 @@
  * installed, bits 1-3 and 6 of the +0x60 high byte and bits 2/4 of +0x1ae are set, the body radius is
  * 0.25; model 2 of the +0x38c set becomes the +0x384 rig (subscribed to the scene, pose reset) and the
  * data_ov283_020cfbc8 model becomes the attached, hidden +0x390 model. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int id; } Ids;
 
 extern const Ids data_ov283_020cfbc8;

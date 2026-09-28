@@ -12,11 +12,7 @@
  * tracker invoked.  Codegen: pFile declared before ctx (ctx takes r5 after
  * the config copy's source pointer).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed char    s8;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define HEAP_FILE   0xe
 #define CELL_MASK   0x00fffffc

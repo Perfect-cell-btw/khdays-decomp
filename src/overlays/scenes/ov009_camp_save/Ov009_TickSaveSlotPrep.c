@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov009SaveSlot {
     u8 pad_00[0x10];

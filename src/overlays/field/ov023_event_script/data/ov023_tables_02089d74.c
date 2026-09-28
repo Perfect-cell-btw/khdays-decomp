@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov023_RequestGroupResources: request the resources the event's actor (02083c14): const Ov023KindResTable data_ov023_02089d74; */
 const int data_ov023_02089d74[26] = {

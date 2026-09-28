@@ -10,7 +10,7 @@
  * round predicates the even arm instead and swaps all five predicated instructions.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 void Ov002_SetNibble(u8 *buf, int x, int y, int value) {
     u8 *p = &buf[y * 4 + x / 2];

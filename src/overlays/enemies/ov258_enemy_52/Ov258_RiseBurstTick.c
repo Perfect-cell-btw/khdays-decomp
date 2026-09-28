@@ -1,6 +1,5 @@
 /* d0bbc */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 center; int nRadius; } Sphere;
 

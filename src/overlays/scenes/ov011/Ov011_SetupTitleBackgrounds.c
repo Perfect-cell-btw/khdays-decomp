@@ -8,9 +8,7 @@
  * The SDK inlines (absolute register macros, `tmp |= 0x20` under `if (effect)`) are what give the
  * ROM's two pool anchors and the unfolded `orr #0x1f; orr #0x20`; the loop counters need `col` at
  * function scope and row / counter / rowBase zeroed in that order. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov011Scene {
     u8    pad_0000[0x0c];
@@ -27,7 +25,6 @@ typedef struct Ov011Globals {
     int         nTimer;
     Ov011Scene *pScene;
 } Ov011Globals;
-
 
 #define reg_G2_WIN0H       (*(volatile u16 *)0x04000040)
 #define reg_G2_WIN0V       (*(volatile u16 *)0x04000044)

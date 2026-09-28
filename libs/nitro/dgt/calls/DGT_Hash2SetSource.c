@@ -3,8 +3,7 @@
  * blocks are hashed straight from a word-aligned input (or through the block buffer one by one
  * when it is not aligned), and the remainder waits in the block buffer. Blocks go through the
  * replaceable process-block hook data_020422d0. */
-typedef unsigned char u8;
-typedef unsigned long u32;
+#include "nitro/types.h"
 
 typedef struct DGTHash2Context {
     u32 h0, h1, h2, h3, h4;

@@ -3,7 +3,7 @@
  * +0x5c timer clears and the aim tick (ov225 2908) runs again; otherwise the point is sent to
  * the owner as mode 5, reaction 0x14b mode 0x12 fires there, sub-state 2 is requested and the
  * action ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct vec3 { int x, y, z; };
 
 extern void Vec3TransformViaTempMtx(struct vec3 *out, const void *pose, struct vec3 *in);

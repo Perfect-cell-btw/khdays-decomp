@@ -1,7 +1,7 @@
 /* Drop reward of the ov252 actor: the last armour piece whose shape (+0x4f4) is still shown gives the
  * point (its +0x59c record) where the reward appears; sound 0x148/8 plays at the +8 point and the owner
  * spawns effect 0x1b there with `param`. Returns 1 (2 when no piece was picked). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 struct Ov252Pieces {

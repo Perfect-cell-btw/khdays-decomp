@@ -42,8 +42,7 @@
  * function for the construct that OWNS it. The owner routinely has no textual
  * relationship to the diff.
  */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 /* Same five-word shape the matched Ov000_LoadPageSubScreenLayer passes to this initialiser. */
 typedef struct Ov000ResourceTrackerConfig {

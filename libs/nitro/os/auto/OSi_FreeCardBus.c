@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* External memory control. Bit 11 holds the NDS-slot access rights: 0 gives the
    card bus to the ARM9, 1 to the ARM7. */

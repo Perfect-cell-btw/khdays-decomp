@@ -14,9 +14,7 @@
  * which no direct spelling of the test reproduces. And the two re-reads at +0x04
  * and +0x06 go through a signed short view, because the ROM reloads them with
  * ldrsh. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void InstallHandlerPairByFlag(int bEnable);
 extern void G3dRes_DefaultSetup(void *pRes);

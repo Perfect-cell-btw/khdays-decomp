@@ -16,11 +16,9 @@
  * entries 0 to 83; the third carries the remaining 4012 entries and the
  * residue bytes, so it is declared as the struct that shape describes.
  */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define VLC(bits, level, run, last)     ((u16)((bits) | ((level) << 4) | ((run) << 9) | ((last) << 15)))
-
 
 typedef struct {
     u16 entries[4012];   /* prefix entries 84 through 4095 */

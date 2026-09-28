@@ -3,8 +3,7 @@
  * +0x2f mask. Each hit spawns effect `effect` 1.0 above the victim, offset for kind 0 by the push
  * turned by the +0x18 heading (a 0x180-deep push reaching 0.5 further). Returns whether anything was
  * hit (with `once`: whether the mask holds any hit). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

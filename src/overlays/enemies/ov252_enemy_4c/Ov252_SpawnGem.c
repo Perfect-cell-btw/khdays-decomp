@@ -1,7 +1,7 @@
 /* Spawn an ov252 gem at `pos` for `owner` (0203c5c0: 0x64/0x40 node, tick 020d326c, class 020d3454):
  * it remembers the spawner, the owner and the point, its model moves there (0203ca30), and it keeps
  * its slot, its kind and a live flag. Returns the node handle. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Gem { int owner; char *spawner; char pad8[4]; Vec3 pos; char pad18[0x1c]; u8 slot; u8 kind; u8 live; };
 

@@ -1,10 +1,7 @@
 /* Collects lock-on candidates for an actor: scores them by facing or distance (by ability), then
  * scans the candidate container's list; returns whether one was selected. */
 
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov022LowByte16 {
     unsigned short lowByte : 8;

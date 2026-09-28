@@ -10,8 +10,7 @@
  * Ghidra carries the layout as Ov002TaskNodeBank and Ov002TaskRegistry.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern u8 *data_ov002_0207fa04;
 

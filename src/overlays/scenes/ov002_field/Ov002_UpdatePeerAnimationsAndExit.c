@@ -1,9 +1,6 @@
 /* Ov002_UpdatePeerAnimationsAndExit: step the selected seat's entries, stop
  * completed one-shot tracks, and broadcast a shared exit when allowed. */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Ov002LinkEntry { char pad0[0x108]; u8 bActive; char pad109[3]; } Ov002LinkEntry;
 typedef struct Ov002GateEffect Ov002GateEffect;
 typedef struct Ov002LinkCtx Ov002LinkCtx;

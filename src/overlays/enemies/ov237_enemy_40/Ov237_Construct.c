@@ -11,8 +11,7 @@
  * shot (020d0ab0, +0x3e0), the 0x3b effect rig (+0x3e4, hooked to 020cbfc4) and the spark emitter
  * (+0x3e8). The first one built also creates its partner ("Ms/40", +0x4a4, +0x4ac / +0x4b0 set), then
  * loads sound 0x12d. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 min; Vec3 max; } Bounds;

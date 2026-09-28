@@ -1,8 +1,6 @@
 /* Binds the animation resource and fills the per-track index table from its track offsets. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void MIi_CpuClear16(u16 data, void *destp, u32 size);
 extern u32 data_02042498;

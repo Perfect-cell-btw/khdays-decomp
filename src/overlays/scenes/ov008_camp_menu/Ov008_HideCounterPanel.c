@@ -12,8 +12,7 @@
  * the context pointer is coloured r7 and the panel / slots / index registers
  * rotate one down; the pragma reproduces the ROM's r4..r7 assignment.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define DIGIT_COUNT   3
 #define TAB_SPECIAL   3

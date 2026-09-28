@@ -17,10 +17,7 @@
  * data_ov107_020cb628 is in ov107's .rodata range, so its declaration is const.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef short s16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -52,7 +49,6 @@ static inline void EncodeCoordinate(PackedFx24 *packed, int coordinate)
     packed->mid = (u8)((u32)coordinate >> 8);
     packed->lo = (u8)coordinate;
 }
-
 
 /* Partial layouts: only accesses established by this function and its siblings. */
 typedef struct AiState AiState;

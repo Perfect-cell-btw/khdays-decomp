@@ -4,8 +4,7 @@
  * 0 while the parent's entity (+0x1a38) has flag bit 2 (0202c424), clears bits 3 / 4 of the
  * entity's halfword at +4 (0202bfcc) and bit 11 of its own flags (+0x1a28); the parent link
  * is cleared.  The flags end as 0x2000. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov023Entity {
     int  nFlags;              /* 0x00 */

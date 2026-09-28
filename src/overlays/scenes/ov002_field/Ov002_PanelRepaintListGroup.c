@@ -15,8 +15,7 @@
  * before the slot lookup -- left in the argument list it is evaluated after the
  * call, and the ROM does it before.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     void *pHead;

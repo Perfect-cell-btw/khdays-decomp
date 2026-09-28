@@ -11,9 +11,7 @@
  * bitfields. As `b & 0xf` and `b >> 4` mwcc emits `and #0xf` and folds the shift into the
  * subtraction, which is one instruction shorter than the ROM in each vertical arm; a
  * 4-bit bitfield read is exactly the shift-left/shift-right pair the ROM uses. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct Ov011Size {
     u16 wRows;

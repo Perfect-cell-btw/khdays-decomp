@@ -6,7 +6,7 @@
  * actor is flagged (+0x60 bit 2), it is placed both radii ahead along the heading from the +0xc anchor
  * (020c5c54); the held flags are cleared. The owner then takes the rotation, the +0x10 velocity moves
  * to its +0xf0 and is cleared, and the +0x40 / +0x44 timers run down to zero. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } Xform;

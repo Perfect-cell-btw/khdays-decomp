@@ -9,9 +9,7 @@
  * mode 0x14 is requested, the grid refreshed and the pending word cleared.
  * Returns 1.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ENTRY_KIND_FIXED 2
 #define WIDGET_LIST      3

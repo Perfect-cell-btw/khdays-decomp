@@ -7,8 +7,7 @@
  * nulls globals->pScene. The overlay id must be taken as &OVERLAY_24_ID (an absolute
  * symbol) so it goes through the literal pool, matching the constructor.
  */
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 typedef u32 FSOverlayID;
 
 extern u32 OVERLAY_24_ID[1];

@@ -23,8 +23,7 @@
  *   data_ov025_020b4578: Ov025_MissionList_PlaceCursor
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov025_020b4240[4] = {
     0, 1, 0, 0,

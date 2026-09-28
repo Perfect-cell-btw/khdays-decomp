@@ -6,7 +6,7 @@
  * +0x3b4 part, clears +0x3c4 and starts pair 10 there (Ov235_CreateHelperTask), 9 plays pair 9 at the
  * +0x3b0 part's point, 0xb raises +0x3c4, 0xc starts reaction +0x3c8 mode 0xd on the +0xa0 pose
  * (+0x3cc) and 0xd ends it. Every message then goes to the common handler. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 struct Pair { int res; int handle; };
 

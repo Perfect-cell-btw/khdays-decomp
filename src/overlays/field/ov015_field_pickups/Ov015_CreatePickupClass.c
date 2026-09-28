@@ -6,9 +6,7 @@
  * 0207fab0, show 0207fb8c, teardown 0207fa90, load 0207fac0, hit 0207fc40, 0207fcbc,
  * 0207fcc4, position 0207fcd0), tag the class 0x10 and clear the mission-flag base (+0x86 =
  * 0xffff, resolved when the first piece spawns). */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov015PickupParams {
     const char *pModel;       /* 0x00: may be 0 */

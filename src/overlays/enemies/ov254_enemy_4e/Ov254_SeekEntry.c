@@ -3,8 +3,7 @@
  * (aggressive) or 0xc / 7 (+0x75 / +0x76) and plays (partner looping); aggressive also starts the
  * +0x460 / +0x464 helpers and knocks the actor back in place (mode 0xb). The +0x10 / +0x60
  * counters and +0x71 flag clear and the node moves to 020ce7a0. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov254_PickRoutePoint(int *state);

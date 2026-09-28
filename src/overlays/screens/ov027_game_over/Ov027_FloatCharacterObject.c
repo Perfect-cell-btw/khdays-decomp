@@ -9,10 +9,7 @@
  * object's position (+0x10) unless bit 1 of its flags (+0x30) is set, when the scene's character
  * object (+0x588) steers toward it (Ov027_ObjectAimAt 020835b8) and the object moves by its
  * step (+0x3c). */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

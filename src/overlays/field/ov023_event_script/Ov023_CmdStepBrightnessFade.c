@@ -4,7 +4,7 @@
  * -16..16, then goes to both engines (0201e374 / 0201e3cc); in global mode 0xc (02020a9c) it is
  * also pushed onto both fade tweens (02083d2c 0 / 1, no duration).  Returns 1 once the elapsed
  * count reaches the frame count, else 0. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov023EventBlock {
     u8   pad_00[0x14];

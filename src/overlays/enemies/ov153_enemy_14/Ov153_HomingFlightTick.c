@@ -18,9 +18,7 @@
  * add; the SDK macros are spelled literally (FX_RAD_TO_IDX with `>> 44`, FX_SinIdx/CosIdx as
  * table[(idx >> 4) << 1] and +1).
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */

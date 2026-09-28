@@ -9,10 +9,7 @@
  * +0x1ae sets, the +0x3b4 part's hit volume turns off, reaction 0x16c mode 5 fires at the hand, the
  * timer clears and the tick hands over to Ov253_CarryHoldTick; without one, pose 7 plays and the tick
  * hands over to Ov253_EnterReaction. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Fx32 x, y, z; } FxVec;

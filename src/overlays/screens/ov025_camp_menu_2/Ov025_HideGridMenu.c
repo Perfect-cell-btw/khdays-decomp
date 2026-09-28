@@ -4,7 +4,7 @@
  * hides the seven widgets of data_ov025_020b3d10 (41..47, copied to the
  * stack), the segment widgets 0xd..0x1a, 0x37..0x38 and 0x50..0x5f.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define ROW_COUNT   8
 #define EXTRA_COUNT 7

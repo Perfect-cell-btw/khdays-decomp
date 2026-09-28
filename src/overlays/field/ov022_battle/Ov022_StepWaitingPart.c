@@ -13,9 +13,7 @@
  * step always reports that it has not finished.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define RAISE 0xc00
 

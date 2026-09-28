@@ -7,8 +7,7 @@
  * owner's +0x60 bit 14 drops. A latched dive that is five floors away again pulls up: bit 10 drops,
  * message 9 at the target, sub-state 12. Otherwise the dive ends on landing (+0x17a bit 0): pose
  * 0x19, messages 2 and 0xf at the target, wing flap 3, effect 0x14, and 020d13cc runs next. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct b1 { unsigned char b0 : 1; };
 

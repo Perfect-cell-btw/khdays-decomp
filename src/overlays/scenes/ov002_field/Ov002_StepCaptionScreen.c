@@ -16,7 +16,7 @@
  * ARM.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     void (*aStep[4])(void);

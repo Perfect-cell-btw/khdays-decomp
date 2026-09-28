@@ -3,7 +3,7 @@
  * context), the three list callbacks of data_ov025_020b4d4c are rebound (done 020988c0, select
  * 020984ac, cancel 020985b8) and the confirm sound plays (02033b78 0 / 1).  Sibling of 02099558
  * without the list closing. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov008MenuContext {
     u8   pad_0000[0x30];

@@ -6,9 +6,7 @@
  * flips to the next page ((page + 1) mod page count) and, when that took and
  * there is more than one page, plays cue 0.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define KEY_DOWN   0x80
 #define SOUND_MOVE 0x35

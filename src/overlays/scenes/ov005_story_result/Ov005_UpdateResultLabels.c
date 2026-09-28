@@ -1,7 +1,6 @@
 /* Refresh the result status message and configured title, then mark their buffer dirty. */
 #pragma opt_propagation off
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct TileSurface { char data[60]; } TileSurface;
 typedef struct Ov005TextTable { void *resource; int count; void *entries; } Ov005TextTable;
 typedef struct Ov005Config { u16 sceneId, missionIndex; const u16 *resultTitle; } Ov005Config;

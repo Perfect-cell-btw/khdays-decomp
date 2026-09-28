@@ -3,8 +3,7 @@
  * the effect list's scratch buffer (+0x5c) and handed to the registered handler (+0xc table) with
  * its size. A packet whose records do not end exactly at its length is walked again (the release
  * build keeps the empty check loop). The packet is then emptied and marked idle. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 flag : 1;

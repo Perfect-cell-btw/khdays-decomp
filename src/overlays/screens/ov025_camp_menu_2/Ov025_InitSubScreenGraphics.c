@@ -1,8 +1,6 @@
 /* Resets the texture VRAM managers and configures DISPCNT and the BG layers for the sub screen. */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 extern void  Gfx_Reset2DEngines(void);
 extern void  NNS_GfdResetFrmTexVramState(void);

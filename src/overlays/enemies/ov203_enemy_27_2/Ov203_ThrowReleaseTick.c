@@ -1,7 +1,5 @@
 /* Ov203_ThrowReleaseTick: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /*
  * Coordinates are held in a one-value wrapper type (Fx32), a tentative
@@ -94,7 +92,6 @@ extern void SetIndexedSlot(struct Node *node, int slot, int arg);
 
 extern const struct Msg data_ov203_020d67ec;
 extern const struct Msg data_ov203_020d6808;
-
 
 static inline void ov131_packImpact(struct Msg *msg, FxVec *v)
 {

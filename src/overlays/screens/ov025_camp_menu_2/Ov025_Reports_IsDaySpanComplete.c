@@ -5,9 +5,7 @@
  * field 0x2a4c + 3 * id.  Returns 1 / 0; the reports page unlocks the read variant of a report
  * with it (0209f860).  Codegen: the two bounds are int locals (u16 locals are coloured after
  * the entry pointer and swap r4..r6). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionListState {
     u8   data[0x24];

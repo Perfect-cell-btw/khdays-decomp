@@ -8,8 +8,7 @@
  *   data_ov025_020b5270: (no C reader yet)
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u8 data_ov025_020b5270[20] = {
     63, 0, 63, 0, 63, 0, 63, 0, 63, 0, 63, 0, 63, 0, 63, 0,

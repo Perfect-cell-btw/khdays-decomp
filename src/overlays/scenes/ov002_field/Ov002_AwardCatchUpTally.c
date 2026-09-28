@@ -21,8 +21,7 @@
  * THUMB.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov002TallyEntry {
     char pad000[2];

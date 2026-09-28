@@ -6,9 +6,7 @@
  * the current pane's flag bit 0 and zero the scene's first word.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* UiLayoutPos */
 struct LayoutPos {
@@ -36,7 +34,6 @@ struct Scene {
     u8 managerB[0x4a38];         /* 0x28508 */
     int nCursorObject;           /* 0x2cf40 */
 };
-
 
 #define REG_DISPCNT (*(volatile u32 *)0x04000000)
 #define REG_DISPCNT_SUB (*(volatile u32 *)0x04001000)

@@ -2,9 +2,7 @@
  * quad-tree nodes and their child links, face arrays, named records) and builds the faces' planes,
  * once. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef union CollisionRelPtr {
     u32 offset;

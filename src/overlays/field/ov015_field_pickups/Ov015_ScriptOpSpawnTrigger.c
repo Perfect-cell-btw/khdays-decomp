@@ -3,10 +3,7 @@
  * a parameter word, the centre (three fx32), a shape, the extent (three fx32) and the
  * name (a resolved operand), then spawns a trigger piece (0208061c) on the slot's class
  * table (ov002 02076468).  Always consumes the op (1). */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

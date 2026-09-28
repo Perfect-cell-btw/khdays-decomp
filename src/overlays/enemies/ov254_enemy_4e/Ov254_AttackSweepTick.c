@@ -6,8 +6,7 @@
  * that lands, knocks the owner back at the part (mode 0), restarts the cooldown (0x198) and flags
  * the owner's +0x4e0 hit. The other cooldowns run down. With a hit, reaction 0x16d/0xc (strong,
  * +0xa8 of the item) or 0/0x50 fires at the box. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 axis[3]; int ext[3]; } Box;
 

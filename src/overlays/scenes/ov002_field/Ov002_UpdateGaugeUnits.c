@@ -1,9 +1,7 @@
 /* Converts the requested unit count into the gauge-cell target, starts a tween between the two
  * panel records and marks the scene for repaint. The unchanged count exits early. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef void (*Ov002CellFn)(int nHandle, int nCell, int nMode);
 

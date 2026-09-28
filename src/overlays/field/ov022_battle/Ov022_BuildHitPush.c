@@ -8,7 +8,7 @@
  * caller's buffer already held.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

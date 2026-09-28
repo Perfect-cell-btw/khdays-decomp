@@ -3,7 +3,7 @@
  * the ground with a 0x7000 probe (resting 0x19a above a hit, or the full probe depth without one)
  * and a record request is built there: kind 7, the rig's pattern (+0x2d a4) as its tag, and a
  * speed of 0x1980 / 0x2200 / 0x2400 by pattern (pattern 2 also sets the homing flag). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct {

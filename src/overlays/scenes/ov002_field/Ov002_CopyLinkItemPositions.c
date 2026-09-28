@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct Vec3 {
     int x;

@@ -7,7 +7,7 @@
  * actor's +0x3dc target (020cab14) is visible from it (ray through the +4 item's world, radius
  * 0x3d98), in which case the other; +0x18 becomes that point. The node then moves on to
  * 020cf3a4. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov254_KnockbackAtFeet(int actor, int side);

@@ -6,8 +6,7 @@
  * member kind (+4) of the occupant found -- 0 without one -- is returned; from slot 4 on the
  * value itself is.  When operand 3 is the string instead, it is copied and operand 2 read;
  * with neither, operand 3 is read. */
-typedef unsigned char  u8;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct Ov023Operand {
     s16  nType;               /* 0x00 */

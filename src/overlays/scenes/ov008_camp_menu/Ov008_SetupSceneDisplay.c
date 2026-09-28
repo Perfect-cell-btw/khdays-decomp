@@ -2,9 +2,7 @@
  * programs main/sub display controls and BG layers, clears BG1 character data, and configures
  * window 0 bounds and masks. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void Gfx_Reset2DEngines(void);
 extern void GX_SetBankForTex(int bank);

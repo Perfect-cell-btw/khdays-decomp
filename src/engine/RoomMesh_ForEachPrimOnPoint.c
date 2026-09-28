@@ -2,8 +2,7 @@
  * references the named point `pEntry`. The kind mask picks the lists: bit 0 the 0x88-byte
  * primitives at +0xa0 (point refs 1..2), bit 1 and bit 2 the 0x84-byte ones at +0xa4 and +0xa8
  * (point refs 0..3). A ref of 0xff is unused; each primitive is reported at most once. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct SymbolEntry {
     char aName[0xc];

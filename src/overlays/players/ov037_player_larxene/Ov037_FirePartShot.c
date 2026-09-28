@@ -4,7 +4,7 @@
  * it, takes the kind from the part's +0x19 byte and the speed from its first word (record 2),
  * and marks the request 2 when the caller asks for the alternate shot and 1 for bit 1 of the
  * part's +0x14 byte. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { u8 b0 : 1, b1 : 1; } PartBits;

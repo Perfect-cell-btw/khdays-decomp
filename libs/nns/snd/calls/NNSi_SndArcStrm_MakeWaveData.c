@@ -1,23 +1,9 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
-
 
 #define NNS_FND_HEAP_INVALID_HANDLE NULL
 #define NNS_SND_HEAP_INVALID_HANDLE NNS_FND_HEAP_INVALID_HANDLE
@@ -97,7 +83,6 @@ struct OSMutex {
     s32 count;
     OSMutexLink link;
 };
-typedef u64 OSTick;
 typedef void (*OSAlarmHandler) (void *);
 struct OSiAlarm {
     OSAlarmHandler handler;
@@ -649,7 +634,6 @@ static inline s16 DecodeAdpcm (int code, AdpcmState * state)
 
     return (s16)sample;
 }
-
 
 /* NNSi_SndArcStrm_MakeWaveData -- NitroSystem sndarc_stream.c: MakeWaveData. Codegen: `destOffset` is a `long`; as the
  * source's u32 mwcc spills it last instead of in its declaration-order stack slot. */

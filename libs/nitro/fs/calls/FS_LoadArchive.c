@@ -11,8 +11,7 @@
  * ARM.
  */
 
-typedef int BOOL;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef int (*FSArchiveReadProc)(char **arc, void *dst, u32 off, u32 len);
 typedef int (*FSArchiveWriteProc)(char **arc, const void *src, u32 off, u32 len);

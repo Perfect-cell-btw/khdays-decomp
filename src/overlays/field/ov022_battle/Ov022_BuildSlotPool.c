@@ -10,9 +10,7 @@
  * records the kind in its mask. The archive goes back once every kind is done.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define SLOT_KINDS 15
 #define MAX_PARTS 5

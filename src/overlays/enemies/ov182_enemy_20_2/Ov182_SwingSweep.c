@@ -12,9 +12,7 @@
  * Codegen: the impact point is packed through per-component Fx32 wrapper copies (ov122_020d12f4
  * spelling); `pMsg = &msg` taken after the template copy keeps the message address in r8 across
  * the side test, and the command byte is spelled `flip == 0 ? 0 : 2`. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

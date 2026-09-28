@@ -5,8 +5,7 @@
  * origin and the +0x458 hand arms its 0.5 to 0.83 window; the final swing also arms the +0x45c hand.
  * With no swing left, without a +0x38 delay a follow-up (020cd2cc) may be picked, else the next move
  * is 2. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 

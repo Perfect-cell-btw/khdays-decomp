@@ -11,9 +11,7 @@
  * contact itself, and only if that handle exists.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define STEEP_LIMIT 0x100
 #define PARTS_PER_HIT 4

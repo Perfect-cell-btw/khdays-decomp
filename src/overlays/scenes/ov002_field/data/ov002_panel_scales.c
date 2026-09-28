@@ -4,7 +4,7 @@
  * with 8192 meaning exactly 2.0. The last five are zero and unused.
  */
 
-typedef int fx32;
+#include "nitro/fx.h"
 
 const fx32 data_ov002_0207dcc0[21] = {
      8888,  7987,  9380,  9011,  9708,  7905,  8192,

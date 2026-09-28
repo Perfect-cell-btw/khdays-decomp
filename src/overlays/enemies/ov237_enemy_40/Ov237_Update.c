@@ -6,7 +6,7 @@
  * pending +0x498 item is dropped (020cb100). Each segment of both arms (+0x3f4) points along its joint
  * chain (+0x41c, from the +0x44c joint for the first) and takes its joint's transform; the +0x45c
  * transform copies the actor's, the +0x470 clock advances by 2.5 and the base update runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int w[8]; } Pose32;

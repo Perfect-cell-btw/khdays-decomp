@@ -13,10 +13,7 @@
  * follow the declaration order (nTop [sp+8], nLeft [sp+0xc], the row counter
  * [sp+0x10]); with the counters declared last the two outer slots swap.
  */
-typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef unsigned int       u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define GRID_ROWS 8
 #define GRID_COLS 5

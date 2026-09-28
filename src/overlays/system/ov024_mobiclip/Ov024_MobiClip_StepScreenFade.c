@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 /* The player object. The fade state sits far into it, which is why every access
  * below compiles to a base-plus-offset split rather than a single load. */

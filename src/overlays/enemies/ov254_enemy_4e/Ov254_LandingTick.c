@@ -2,7 +2,7 @@
  * knocked back in place (mode 5, flag 2). While aggressive (+0x78) the next move is 6; otherwise
  * pose 0x12 plays, the +0x3e4 shape gains bit 1 and the +0x3e0 one loses it, the +0x44 timer and
  * +0x70 flag clear and the node moves to 020d151c. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

@@ -1,7 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed short s16;
+#include "nitro/types.h"
 
 /* STRANGE, AND LIKELY NOT HOW THE ORIGINAL WAS WRITTEN. Kept by owner decision
  * (2026-09-12) because it is the only form found that matches.

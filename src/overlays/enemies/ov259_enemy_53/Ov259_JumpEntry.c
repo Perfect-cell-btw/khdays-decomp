@@ -2,7 +2,7 @@
  * sound 0x172/0x21 fires at the +0x10 point, pose 0xe plays on the actor and its partner, the shot
  * is armed (020cd628: pose 0xc after 0xff0), the body sweeps 0x1078-0x1430 flat (+0x420 = 1) and the
  * node moves on to 020cf5d8. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov259_PlaySound(int actor, int id, int variant, void *at);

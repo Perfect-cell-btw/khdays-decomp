@@ -8,6 +8,7 @@ Usage: _run_mwcc.py <out.o> <in.c>
 """
 import json
 import os
+import re
 import subprocess
 import time
 import sys
@@ -21,6 +22,8 @@ FLAGS = [
     "-lang", "c99", "-enum", "int", "-char", "signed",
     "-inline", "on,noauto", "-Cpp_exceptions", "off", "-gccext,on",
 ]
+# Shared headers (include/nitro/types.h, ...): the game and library sources include them.
+FLAGS += ["-i", str(ROOT / "include")]
 
 
 def load_json_retry(path, attempts=20):
@@ -35,6 +38,38 @@ def load_json_retry(path, attempts=20):
             if attempt + 1 == attempts:
                 raise
             time.sleep(0.05 * (attempt + 1))
+
+def write_depfile(out, src, include_dirs):
+    """Ninja depfile ($out.d): every header the source includes with #include "...", directly or
+    through another header, so that editing a header rebuilds the objects that use it."""
+    found = []
+    seen = set()
+    todo = [src]
+    while todo:
+        path = todo.pop()
+        try:
+            text = path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        for m in re.finditer(r'^[ \t]*#[ \t]*include[ \t]*"([^"]+)"', text, re.M):
+            for base in (path.parent, *include_dirs):
+                header = base / m.group(1)
+                if header.is_file():
+                    header = header.resolve()
+                    if header not in seen:
+                        seen.add(header)
+                        found.append(header)
+                        todo.append(header)
+                    break
+    deps = []
+    for header in found:
+        try:
+            deps.append(header.relative_to(ROOT).as_posix())
+        except ValueError:
+            deps.append(header.as_posix())
+    escaped = " ".join(d.replace(" ", "\\ ") for d in deps)
+    Path(out + ".d").write_text(out + ": " + escaped + "\n", encoding="utf-8")
+
 
 # Path of this source file relative to the repo root — used for both the
 # thumb/arm mode map and the per-file compiler override map.
@@ -120,6 +155,7 @@ for attempt in range(8):
         from share_bss import share, wants_sharing
         if wants_sharing(src_path):
             share(out_path)
+        write_depfile(sys.argv[1], src_path.resolve(), [ROOT / "include"])
         sys.exit(0)
     time.sleep(0.25 * (attempt + 1))
 

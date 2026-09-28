@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* Shift-JIS text "dango daikazoku", a placeholder title. */
 char data_ov005_0205b7a8[16] = "\x82\xbe\x82\xf1\x82\xb2\x91\xe5\x89\xc6\x91\xb0";

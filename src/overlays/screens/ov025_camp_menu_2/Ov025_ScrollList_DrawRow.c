@@ -6,10 +6,7 @@
  * than one day, always for day 355 and never for day 358.  The surface is cleared (02030158),
  * the row name drawn at (0, 3) in colour 0xf1 with a shadow (Text_DrawWithShadow 02030278) and
  * VRAM slot 0x1a marked (Ov025_MarkSlotUsed 02084964). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025ScrollRow {
     int  nFirstDay;           /* 0x00: the day span of the row */

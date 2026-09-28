@@ -10,7 +10,7 @@
  * The early return hands back whatever the counter bump returned, which is its
  * 0/1 flag rather than an entry pointer. That is what the ROM does.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 bKey;                            /* +0x00 */

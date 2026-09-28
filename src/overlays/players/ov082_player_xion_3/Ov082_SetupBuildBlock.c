@@ -1,7 +1,7 @@
 /* Sets up the actor's build block: configures its grid slot and acquires its two grid slots, and
  * starts its cue track. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Ov082BuildBlock {
     char pad000[0x334];

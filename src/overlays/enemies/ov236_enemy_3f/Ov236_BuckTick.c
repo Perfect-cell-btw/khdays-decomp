@@ -6,7 +6,7 @@
  * +0x60 high byte and bit 0 of +0x1ae clear, the mount is told to land (020c5c54), the mount's
  * +0x3bc bit 0 is set when exactly one rider counter is left, the actor's +0x3c0 bit 0 is set
  * and the node moves to 020d30f4. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct m4 { int w[4]; };
 struct Bits3bc { unsigned char b0 : 1; };

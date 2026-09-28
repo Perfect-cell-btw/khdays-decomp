@@ -11,9 +11,7 @@
  * sequence starts from nothing rather than from whatever the last one left.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define SCENE_BIT 4
 #define SEQ_ENABLED 1

@@ -7,7 +7,7 @@
  * (Ov255_SpawnHelper2, unpacked from its three 24-bit coordinates), 0xc starts reaction +0x3f8
  * mode 0xd on the +0xa0 pose (+0x3fc) and 0xd ends it. Every message then goes to the common
  * handler. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Pair { int res; int handle; };
 

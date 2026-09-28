@@ -2,7 +2,7 @@
  * the +4 item's +0x5c, clears the owner's +0x38c, clears bit 0 of the +0x60 high byte and of
  * the +0x388 sub-item's +8 low byte, zeroes the +0x18 velocity and hands the tick over to
  * Ov226_ChargeIdleStep. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };

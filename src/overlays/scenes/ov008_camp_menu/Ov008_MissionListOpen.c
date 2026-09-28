@@ -7,9 +7,7 @@
  * updated; not found: the cursor slot is cleared, and when the list has no
  * entries either, the cursor steps to the first accepted slot.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define SLOT_COUNT     12
 #define FLAG_SLOT_BASE 0x3bc9

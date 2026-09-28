@@ -7,7 +7,7 @@
  * with no explicit target, sets the entry's game flag
  * (0x3c2b + the page's flag base) and plays the confirm sound.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008PageB {
     int nFlagBase;            /* 0x000 */

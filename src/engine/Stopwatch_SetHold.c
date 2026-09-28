@@ -1,5 +1,4 @@
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 /* A stopwatch over the 64-bit tick counter: while it is running, nTick holds
    the tick it was started at; while it is held, nTick holds the span that has

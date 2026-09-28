@@ -1,7 +1,7 @@
 /* Walks the shape list (boxes/cylinders), collecting the contact points and push direction for the
  * sphere. */
 
-typedef int fx32;
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x;

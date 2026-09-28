@@ -14,7 +14,7 @@
  * Ov000_LayOutHandleRow(0) re-lays-out from row 0.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int *pFirstHandle;   /* +0x00 */

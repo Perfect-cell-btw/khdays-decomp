@@ -2,8 +2,7 @@
  * frame. On landing (+0x17a bit 0) the owner's +0x180 point is kept in +0x54, lowered by the +0x80
  * floor, bit 6 of the +0x60 high byte clears, effect 6 spawns there, move 0xb starts at it (020cd148),
  * pose 0x11 plays, the +0x70/+0x74 clocks and the +0x79/+0x7b flags reset and 020cee94 runs next. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 

@@ -1,4 +1,4 @@
-typedef int fx32;
+#include "nitro/fx.h"
 
 typedef struct MtxFx33_0203cf0c {
     fx32 m[9];

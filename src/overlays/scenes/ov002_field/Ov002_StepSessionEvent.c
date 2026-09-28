@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern u8 data_0204be04;                /* the step is skipped while this is set */
 extern u8 data_0204c240;                /* g_modeAndDayClock */

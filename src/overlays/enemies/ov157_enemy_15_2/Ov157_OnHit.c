@@ -5,8 +5,7 @@
  * sub-state 3 and a 0x8000 hit for 5; a positive damage that is not the 8|0x80/0x80 special
  * toggles bit 1 of +0x39 and fires reaction 0x13d with the mode alternating (2/3 for flags 0x22,
  * 0/1 otherwise) at the +0xc position. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vec3 { int x; int y; int z; };
 

@@ -14,11 +14,7 @@
  * reach block counts clears the reach timer.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 /* Ov022AimState: the aim bytes at actor+0x2bb0 */
 struct AimState {

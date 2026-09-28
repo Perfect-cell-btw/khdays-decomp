@@ -6,7 +6,7 @@
  * clears pose 5 / partner motion 4 (move 5, which also restarts the +0x460 helper with 5) or
  * pose 2 / motion 1 play, the timers and flags reset, +0x38 takes the +0x30 yaw, the +0x58 /
  * +0x5c scales return to 1.0 and the node moves on to 020cff0c. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

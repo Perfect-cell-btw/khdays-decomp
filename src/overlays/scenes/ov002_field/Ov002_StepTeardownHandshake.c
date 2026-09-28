@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207fa14;   /* g_pOv002ObjectContext */
 

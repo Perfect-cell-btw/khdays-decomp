@@ -2,7 +2,7 @@
  * speed 0.125 (no rise), +0x80 is set, the +0x44 timer clears, the +0x50 start takes the +8
  * track's +4 position and +0x54 the distance to route point 0xb (020cd840); the +0x70 flag clears
  * and the node moves to 020cf064. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern int Ov254_PanelYForPhase(int *state, int a);

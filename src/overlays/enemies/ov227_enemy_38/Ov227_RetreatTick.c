@@ -6,7 +6,7 @@
  * vector (bit 2). In sub-state 0xd the same step and sink apply, at 0xdd0 with the owner
  * grounded mode 9 is sent (bit 0), and at 0x1980 mode 7 is sent (bit 1). Once the +4 owner's
  * +0xad byte clears sub-state 2 is requested and the tick ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 struct hw60 { unsigned short lo : 8, hi : 8; };

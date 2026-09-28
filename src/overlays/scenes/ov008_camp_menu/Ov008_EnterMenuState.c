@@ -10,9 +10,7 @@
  * switched to -- on failure row 0 is highlighted and the selection cleared --
  * and cursor mode 0x14 with 0 requested; then the grid is refreshed.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define STATE_LIST   0
 #define STATE_GRID   1

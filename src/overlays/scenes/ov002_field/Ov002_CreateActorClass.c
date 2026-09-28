@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* The descriptor the caller fills in for one actor-element class. */
 typedef struct {

@@ -9,8 +9,7 @@
  * mode as its argument. Codegen: the emit kind is assigned after the direction (its constant
  * is then created after the sine-table pointer, which keeps the table in r6) and the owner flag test
  * is the 64-bit AND truncated to int (low word in r1). */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

@@ -1,6 +1,6 @@
 /* Move entry: bits 2 and 0 of the actor's +0x60 high byte are set, the +0x38c shape is disarmed
  * (bit 0 of its +8 byte), the +0xc velocity resets to zero and the node moves to 020d2254. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

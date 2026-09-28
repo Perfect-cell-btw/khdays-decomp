@@ -2,7 +2,7 @@
  * model's shape shows and +0x394 is set; effect 1 fires at the origin, pose 0 loops, the +0x28
  * velocity starts at the +0x3ac point and half of it goes to +0x10, the +0x38/+0x14 timers start at
  * 0.125, the rest clears and the node moves on to 020ce9b0. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

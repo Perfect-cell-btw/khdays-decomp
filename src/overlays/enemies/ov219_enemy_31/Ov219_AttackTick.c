@@ -3,8 +3,7 @@
  * zero vector with mode 2; the +0x14 timer becomes 0x7000 after sub-state 8, 0x3000 while the
  * +0x21a stamina is positive, else 0x4b000 scaled by 1.5 per +0x18 phase; the +0x3e flag is
  * cleared and the tick hands off to the guard state. */
-typedef unsigned char u8;
-typedef short s16;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 
 extern void MTX_RotY33_(void *mtx, int sin, int cos);

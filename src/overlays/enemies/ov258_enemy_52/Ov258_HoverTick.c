@@ -3,8 +3,7 @@
  * time the +4 rig finishes: after 1.0 pose 9 plays with the wind-up sound (variant 0x1b with a +0x460
  * partner, else 0x17) at the +0x430 rig, the +0x30 clock clears, effect 0x23 plays and the brain
  * waits on 020cf9f8; before that pose 8 replays with effect 0x22. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 

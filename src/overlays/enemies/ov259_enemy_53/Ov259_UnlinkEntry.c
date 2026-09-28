@@ -1,7 +1,7 @@
 /* Move entry: the actor's +0x388 link clears, bit 7 of its +0x60 high byte is set and bit 0
  * cleared, the +0x384 shape is disarmed (bit 0 of its +8 byte), the +0xc velocity resets to zero
  * and the node's handler is cleared. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

@@ -10,8 +10,7 @@
  * THUMB.
  */
 
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern int Ov002_TickSessionRequest(void);

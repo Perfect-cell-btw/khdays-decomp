@@ -3,7 +3,7 @@
  * animation 6 (looped). Two random headings (yaw within +-0x3244, scaled to 10.0 plus a random
  * 0..4.0) go to +0x1c and +0x28, the +4 position is copied to +0x34, a third random yaw to
  * +0x40 and +0x44 is cleared before the cd560 tick takes over. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 struct w8 { unsigned int lo : 8, rest : 24; };
 

@@ -1,6 +1,6 @@
 /* Pulses the selected save slot's brightness back and forth with a tween. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov009TweenFlags {
     unsigned int pad0 : 2;

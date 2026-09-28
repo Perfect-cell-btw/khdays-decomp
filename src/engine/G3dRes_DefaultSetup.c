@@ -4,10 +4,7 @@
  * own loaders (Tex_LoadVram / Gfx_UploadBlock); a model file then binds its model set to the
  * textures. Any failed allocation frees all three keys and fails. Animation files need nothing;
  * unknown signatures fail. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int BOOL;
+#include "nitro/types.h"
 typedef u32 NNSG3dTexKey;
 typedef u32 NNSG3dPlttKey;
 

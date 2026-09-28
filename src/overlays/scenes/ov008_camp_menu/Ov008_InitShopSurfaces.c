@@ -6,9 +6,7 @@
  * text loader (+0xc130) at "UI/shop/shp_&.s.z" and cache variable records
  * 0x1a, 0x1b, 0x1c, 0x1e and 0x1d at +0xc5c8.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008PanelContext {
     u8   pad_0000[0xa8];

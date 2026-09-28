@@ -5,8 +5,7 @@
  * (data_ov282_020d473a, flag 1) carries the +4 point raised 6.0, packed as 24-bit values. The
  * +0x50 height becomes 10.0, +0x60 and the +0x66/+0x64 bytes clear and the tick hands over to
  * Ov282_LeapTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;

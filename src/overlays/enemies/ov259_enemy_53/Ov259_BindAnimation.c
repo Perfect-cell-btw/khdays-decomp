@@ -2,7 +2,7 @@
  * item's +0x88 animation set rewinds (02014b5c), the list is refilled with pose `poseIndex` of the
  * actor's pool (0202a388) and attached to the item, which starts on channel 0 (looping per bit 0 of
  * the actor's +0x311) and is re-initialised. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Flag311 { u8 loop : 1; };
 
 extern void FreeAllResourceTables(void *list);

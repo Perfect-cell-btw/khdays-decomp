@@ -3,7 +3,7 @@
  * 0xa000 as the target, the enemy's owner id (+0x66 of the shared object), a 0x1000 range and the
  * part's +0x110 anchor; the hit parameters get flags 0x625 and an extent of {0xa00, 0x66, 0xa00}
  * with both busy bits cleared, and the spin comes from the object's 0x2400 pair. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vec3 { int x, y, z; };
 struct Launch {
     struct Vec3 vFrom;

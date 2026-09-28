@@ -4,8 +4,7 @@
  * kind `db` and copy the entry's id, its flag bit (+6), mode (+2) and extra byte (+4) and its data
  * pointer (+8). A plain entry (mode 0) clears the four extracted-string slots; otherwise the
  * strings are extracted (MsgDb_FetchStringPair) and a failure frees the record again. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 id;                             /* +0x00 */

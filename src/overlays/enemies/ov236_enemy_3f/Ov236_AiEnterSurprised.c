@@ -1,8 +1,6 @@
 /* Plays the surprised cue and anim 0xd, then installs the rolling charge start. */
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 soundId;

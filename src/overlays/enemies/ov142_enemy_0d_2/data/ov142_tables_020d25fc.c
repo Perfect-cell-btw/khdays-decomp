@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by ov141 actor initializer: install the callback table, seed the camera pose, (020cfc04): struct Ov142KindTable data_ov142_020d25fc; */
 const int data_ov142_020d25fc[5] = {

@@ -5,8 +5,7 @@
  * flags clear, owns a slot (ov022 02088474), sits in the emblem's bucket (the bucket's current
  * piece kind, ov002 02072754) and its seat (ov022 020881f8) is within reach of the emblem's
  * position (+0x2a8, VEC_Distance 01ff8e94). */
-typedef unsigned char  u8;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

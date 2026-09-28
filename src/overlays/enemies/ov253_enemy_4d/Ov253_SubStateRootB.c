@@ -3,7 +3,7 @@
  * +0xc / +0x10 angles with atan2(0, 1.0) and atan2(1.0, 0), clears bit 0 of the +0x444 item's
  * +8 low byte, raises bits 1, 2 and 4 of the +0x60 high byte and installs the three sub-nodes
  * (slot 1: 020cd5a8, slot 0: 020cd2a4, slot 2: 020cd484). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern int func_020050b4(int y, int x);

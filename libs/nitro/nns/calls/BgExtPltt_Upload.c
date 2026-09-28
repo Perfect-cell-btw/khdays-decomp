@@ -1,7 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef int BOOL;
+#include "nitro/types.h"
 
 #define NULL ((void *)0)
 

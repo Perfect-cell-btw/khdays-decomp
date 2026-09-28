@@ -3,7 +3,7 @@
  * explicit_zero_data so it stays where the ROM has it.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #pragma explicit_zero_data on
 u16 data_ov025_020b5474[2] = { 0, 0 };

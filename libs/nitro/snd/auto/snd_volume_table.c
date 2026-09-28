@@ -3,7 +3,7 @@
  * (d in tenths) is 127 * 10^(d/200), doubled for each data shift the -6/-12/-24 dB thresholds add
  * (d = -60 gives 64, -61 gives 126, -241 gives 127). Byte for byte the ARM7 BIOS GetVolumeTable
  * (SWI 1Ch); same unit as snd_decibel_table.c. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 #define SND_VOLUME_DB_MIN (-723)
 #define SND_VOLUME_DB_MAX 0
 #define SND_VOLUME_TABLE_SIZE (SND_VOLUME_DB_MAX - SND_VOLUME_DB_MIN + 1)

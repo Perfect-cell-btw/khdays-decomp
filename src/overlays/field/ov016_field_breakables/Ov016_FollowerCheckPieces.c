@@ -3,7 +3,7 @@
  * (020801a0) for each piece with the follower's position pFrom, range (+0x1ac), anchor pAt,
  * angle (+0x1b8) and cone (+0x1c8); the first piece that does not hold answers 0, an empty
  * list answers 0, otherwise 1. Without a record set (ov002 0207386c == -1) or an owner: 0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

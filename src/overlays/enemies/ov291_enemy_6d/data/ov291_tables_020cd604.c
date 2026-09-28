@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov291_HeadBoneCallback (020cbfc4): char data_ov291_020cd604[]; */
 const int data_ov291_020cd604[4] = {

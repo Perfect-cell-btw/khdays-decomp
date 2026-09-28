@@ -8,8 +8,7 @@
  * tag-tracker callbacks of tags 3 and 6 in block 954c fire and resource slots
  * 0x19, 0x1a and 0x1b are marked used.
  */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define HEAP_FILE     0xe
 #define CHAR_OFFSET   0x2000

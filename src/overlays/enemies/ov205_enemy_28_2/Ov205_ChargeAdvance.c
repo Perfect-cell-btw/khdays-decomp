@@ -3,7 +3,7 @@
  * the target is re-acquired (the +0x38 yaw aimed at it from the +0x24 position), the +0x3c turn
  * rate is the step over 0x3000 capped at 0x200 and the +0x2c travel grows by the step. Once the
  * +0x28 busy byte clears the actor plays animation 0x12 and the tick hands off to d30e0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 
 extern int Ov107_ActionResource_GetOffsetAndScale(void *part, struct Vecx32 *out);

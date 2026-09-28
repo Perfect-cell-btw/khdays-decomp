@@ -1,5 +1,5 @@
 /* Advance result counters, honor completion requests, and update the result display. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Tween { char data[28]; } Tween;
 typedef struct Ov005ResultTween { Tween tween; int duration, currentValue, fromValue, toValue; } Ov005ResultTween;
 typedef struct Ov005SpriteManager { char data[0x4a80]; } Ov005SpriteManager;

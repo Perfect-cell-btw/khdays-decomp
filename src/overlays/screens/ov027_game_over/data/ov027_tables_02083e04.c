@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov027_LoadCharacterModels: load the fallen characters shown on the (02083168): VecFx32 data_ov027_02083e04; */
 const u8 data_ov027_02083e04[12] = {

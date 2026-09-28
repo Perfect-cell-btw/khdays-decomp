@@ -1,7 +1,6 @@
 /* NitroSDK original assembly (libraries/os/src/os_system.c). */
 
-typedef int BOOL;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef unsigned int OSIntrMode_Irq;
 
 #define HW_PSR_IRQ_DISABLE           0x80

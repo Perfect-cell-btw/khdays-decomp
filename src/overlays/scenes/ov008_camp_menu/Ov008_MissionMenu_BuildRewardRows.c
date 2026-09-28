@@ -21,9 +21,7 @@
  * register local (pItem) for the length test; the two status tests are
  * bools negated in a second step; the seen-list search is a for loop.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT       13
 #define ROW_TEXT_MAX    0x19

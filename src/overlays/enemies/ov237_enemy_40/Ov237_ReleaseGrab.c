@@ -2,7 +2,7 @@
  * actor's +0x494 clear, pose 4 plays, bit 1 of the +0x488 rig's +8 flags is set and bit 6 of the
  * +0x60 high byte cleared; the release sound (0x12d variant 0xf) plays at the +0x38 point and the
  * brain waits on 020d039c. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

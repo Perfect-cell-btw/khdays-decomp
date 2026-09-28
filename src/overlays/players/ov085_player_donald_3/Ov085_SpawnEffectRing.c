@@ -10,7 +10,7 @@
  * this spawn-request idiom does it. That is what pins the layout: the two rings, the
  * matrix, the anchor, the rotated offset and the request are all at fixed offsets of a
  * 0xf8-byte frame, and declaring them as separate locals lets mwcc reorder them. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

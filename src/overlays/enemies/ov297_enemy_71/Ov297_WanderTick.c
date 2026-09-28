@@ -12,7 +12,7 @@
  * velocity, counts +0x78 (sub-state 2 after two), re-arming the timer at 0xff0. The clock then
  * plays the held-item animations 0 (from 0x4c8) and 1 (from 0x908, resetting the clock and the
  * +0x93 marks); animation 1 plays while the +4 item's +0xad byte is clear. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Bits17a { u8 bit0 : 1, bit1 : 1; };
 

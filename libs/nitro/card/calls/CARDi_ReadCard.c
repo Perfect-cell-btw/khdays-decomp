@@ -1,12 +1,6 @@
-typedef signed long s32;
-typedef unsigned long u32;
-typedef unsigned char u8;
-typedef volatile unsigned long vu32;
-typedef int BOOL;
+#include "nitro/types.h"
 
 enum {
-    FALSE = 0,
-    TRUE = 1,
     CARD_ROM_PAGE_SIZE = 512,
     CARD_DATA_READY = 0x00800000,
     CARD_START = 0x80000000,

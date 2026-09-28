@@ -1,4 +1,4 @@
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* NitroSDK fast word-fill primitive. */
 asm void MIi_CpuClearFast(register u32 value,

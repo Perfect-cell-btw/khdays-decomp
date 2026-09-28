@@ -3,8 +3,7 @@
  * of the object it is attached to -- clears the 0xd3-byte work block at +0xda0, then latches the
  * three ready bits and returns them. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct GridEntry;
 struct PartBlock { int header; u16 flags; };
 struct Model { u8 pad00[0x28]; u16 flags; };

@@ -22,10 +22,7 @@
  * it.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed long long s64;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

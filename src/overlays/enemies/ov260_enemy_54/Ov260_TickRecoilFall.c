@@ -4,8 +4,7 @@
  * point lowered by the +0x80 radius, bit 6 of the +0x60 high byte drops, it is knocked back there
  * (mode 2), effect 0xd starts there, pose 0x1c plays, +0x70 and the +0x79 / +0x7b flags clear and the
  * node moves on to 020cfa38. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 struct Flag17a { u8 b0 : 1; };

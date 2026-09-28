@@ -13,9 +13,7 @@
  * opt_dead_assignments off only orders the counter/count webs (i -> r4, n -> r5).
  */
 #pragma opt_dead_assignments off
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */

@@ -8,7 +8,7 @@
  * data_ov253_020d49e0 poses (registered, bit 1 of +0x5c raised), links a +0x144 list slot to
  * the +0x64 pose as +0x3d4, clears the +0x3d8 latch and the queue counters (+0x3e0 sequence 1)
  * and allocates the 16-entry queue table cleared to -1. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct Ov253Entry { signed char a; signed char b; short c; };
 struct Ov253Queue { char pad[0x3dc]; signed char count; signed char head; signed char tail; char pad3df; short seq; char pad3e2[2]; struct Ov253Entry *table; };
 struct Ov253Poses { int w[2]; };

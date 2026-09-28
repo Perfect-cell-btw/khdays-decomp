@@ -8,9 +8,7 @@
  * phase 4 (done) record 0xa, or 0xd when the sub-state (+0x240) is 0, in
  * style 4.  The surface is then queued for the graphics engine.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define PHASE_PICK     0
 #define PHASE_CONFIRM  1

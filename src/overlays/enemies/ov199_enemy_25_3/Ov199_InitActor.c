@@ -1,7 +1,7 @@
 /* Initialises the enemy actor: installs its handlers, hit box and flags, creates its models and
  * attach slots, and requests its resources. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vec3 {
     int x;

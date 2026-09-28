@@ -18,10 +18,7 @@
  * 5 and 6 go to 0x18 and 0x19.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 struct Actor;
 

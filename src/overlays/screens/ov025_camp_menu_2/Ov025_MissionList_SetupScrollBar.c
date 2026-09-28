@@ -7,9 +7,7 @@
  * knob.  Of the bar entries 4..0x13 of the 4a80 block (02084a8c) those within the knob less 16
  * are shown (0208884c), the caps 2 and 3 shown, the second pair of every entry 2..0x13 released
  * (020888b0), and the bar laid out (020a685c) with its arrows (020a67dc). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionList {
     int  nSelected;           /* 0x000 */

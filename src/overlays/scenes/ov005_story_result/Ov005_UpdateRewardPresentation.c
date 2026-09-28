@@ -1,8 +1,7 @@
 /* Runs the reward multiplier presentation: steps the banner tween, multiplies the rewards when it
  * lands (with a sound) and redraws the list. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Tween {
     int mode,duration,from,to;
     long long startTick;

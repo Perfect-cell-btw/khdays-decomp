@@ -22,9 +22,7 @@
  * flat 0x80 per frame, with it the remaining vertical speed is scaled and the
  * forward speed decays, both inside that same arm.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

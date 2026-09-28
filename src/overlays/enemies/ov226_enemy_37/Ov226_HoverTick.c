@@ -10,7 +10,7 @@
  * launched (+0x400 bit 7), accumulates +0x41c up to 0xc38: within it the strike sweep (ov221
  * 0a2c mode 6) runs from the +0x410 landing with the three axes and a reach growing from 0x1933
  * to 0x4333 across the window. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int q[4]; } Quat;
 

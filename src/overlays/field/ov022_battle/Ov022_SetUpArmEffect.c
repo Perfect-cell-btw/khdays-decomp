@@ -7,8 +7,7 @@
  * flags.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Anim {
     u8 pad0000[0xe0];

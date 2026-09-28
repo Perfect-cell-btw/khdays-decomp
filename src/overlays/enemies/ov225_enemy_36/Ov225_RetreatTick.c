@@ -7,7 +7,7 @@
  * grounded reaction mode 0x10 fires and mode 9 is sent (bit 0), and at 0x1980 mode 7 is sent
  * (bit 1). Once the +4 owner's +0xad byte clears sub-state 2 is requested -- 0xc from sub-state
  * 0xd in game mode 2 -- and the action ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 struct hw60 { unsigned short lo : 8, hi : 8; };

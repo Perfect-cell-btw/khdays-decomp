@@ -2,7 +2,7 @@
  * accumulates the frame rate; the cue pulses once 0x330 before the end (020cd2c8 2, +0xac bit 0).
  * Past 0x27d8 the timer, cue flags and +0x60 clear, +0x38 resets, +0x2c takes the target's +0x190
  * point, pose 0x18 loops on the actor and its partner and the node moves on to 020d105c. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov259_FaceTarget(int *node);

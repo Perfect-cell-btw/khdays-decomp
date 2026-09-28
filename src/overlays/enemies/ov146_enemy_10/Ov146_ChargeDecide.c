@@ -3,8 +3,7 @@
  * the node ends. With one the charge timer (+0x3c) and stage (+0x50) reset, both play pose 3, the
  * partner is grabbed (020ce2b4), effect 4 plays at the actor, sound 0x125/4 at its +0xc point and the
  * node moves on to 020cdaa4. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 

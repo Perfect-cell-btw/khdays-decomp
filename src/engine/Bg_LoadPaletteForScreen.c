@@ -1,6 +1,4 @@
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef int BOOL;
+#include "nitro/types.h"
 
 typedef enum BGSelect {
     BGSELECT_MAIN0,

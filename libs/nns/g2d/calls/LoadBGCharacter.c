@@ -1,29 +1,13 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
 
-
-
-typedef vu16 REGType16v;
-typedef vu32 REGType32v;
 typedef struct CPContext {
     u64 div_numer;
     u64 div_denom;
@@ -96,7 +80,6 @@ struct OSMutex {
     s32 count;
     OSMutexLink link;
 };
-typedef u64 OSTick;
 typedef void (*OSAlarmHandler) (void *);
 struct OSiAlarm {
     OSAlarmHandler handler;
@@ -113,7 +96,6 @@ static inline void MI_CpuCopy16 (const void * src, void * dest, u32 size)
 {
     MIi_CpuCopy16(src, dest, size);
 }
-typedef s32 fx32;
 extern u32 data_020422b8;
 void DC_FlushRange(const void * startAddr, u32 nBytes);
 void MI_DmaCopy16(u32 dmaNo, const void * src, void * dest, u32 size);
@@ -729,7 +711,6 @@ inline void LoadBGnChar (NNSG2dBGSelect n, const void * pSrc, u32 offset, u32 sz
 void LoadBGCharacter (NNSG2dBGSelect bg, const NNSG2dCharacterData * pChrData, const NNSG2dCharacterPosInfo * pPosInfo)
 {
     u32 offset = 0;
-
 
     if (pPosInfo != NULL) {
         int offsetChars = pPosInfo->srcPosY * pPosInfo->srcW;

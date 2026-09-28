@@ -4,8 +4,7 @@
  * palette base of the noise state (data_ov023_0208a7c0 +0x74 / +0x78, commands 0x2a / 0x2b in
  * one word), a polygon attribute 0x3d0000c0 with the active screen's light level (+0x68 by
  * data_0204be04) as alpha, and the colour 0x7fff (GX_SendFifoWords 01ff9f00). */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

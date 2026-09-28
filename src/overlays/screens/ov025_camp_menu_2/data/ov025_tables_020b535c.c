@@ -8,8 +8,7 @@
  *   data_ov025_020b535c: Ov025_DrawMissionRow
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u8 data_ov025_020b535c[16] = {
     37, 0, 48, 0, 50, 0, 100, 0, 37, 0, 99, 0, 0, 0, 0, 0,

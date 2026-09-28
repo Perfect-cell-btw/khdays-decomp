@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 char data_ov027_02084238[92] = "Coinc\xc3\xa9 ? Vous pouvez abandonner et consulter\nles profils ennemis pour obtenir des astuces.";
 

@@ -1,6 +1,5 @@
-typedef int fx32;
-typedef short fx16;
-typedef long long s64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x;

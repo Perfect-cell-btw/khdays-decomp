@@ -48,8 +48,7 @@
  *   data_ov008_0208f8c8: Ov008_PositionListCursor
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov008_0208f15c[9] = {
     0, 1, 0, 0, 2, 3, 4, 14,

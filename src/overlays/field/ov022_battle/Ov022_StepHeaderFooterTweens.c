@@ -1,7 +1,7 @@
 /* Steps the header and footer tweens, copies their values into the four rows' scales and advances
  * the fade state when they end. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov022TweenFlags {
     u32 unknown0 : 2;

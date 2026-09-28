@@ -1,8 +1,7 @@
 /* Wait entry of the ov259 actor: the +0x68 timer, +0x60 and the +0xac cue flags clear, +0x94 = 30,
  * bit 6 of the actor's +0x60 high byte is set, pose 0xf plays on the actor and its partner
  * (020cd524) and the node moves on to 020cf0bc. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);

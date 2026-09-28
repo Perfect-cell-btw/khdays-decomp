@@ -32,12 +32,7 @@
  * an aim, the pre-draw hook with 1 and state 0.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
-typedef signed long long s64;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

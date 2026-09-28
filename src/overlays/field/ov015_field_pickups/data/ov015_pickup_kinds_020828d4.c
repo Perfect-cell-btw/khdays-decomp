@@ -4,7 +4,7 @@
  * Ov015_PickupUpdate (0207fe0c, rise scale 0x3c), kind 1 a model-less pickup whose
  * state function is Ov015_PickupTakenStep (0207ffd0).  The rise byte of row 0 is also
  * addressed as data_ov015_020828d8. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov015PickupKindRow {
     void *pHandlers;          /* 0x00: state function of the kind */

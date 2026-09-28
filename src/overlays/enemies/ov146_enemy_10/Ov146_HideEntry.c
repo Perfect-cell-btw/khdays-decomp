@@ -1,6 +1,6 @@
 /* Hide entry of the ov146 actor: its partner (+8) is released from mode 0 (020ce298), bits 1, 2 and 7 of
  * the +0x60 high byte are set, the +0x3ac shape hides and the node moves on to 020ccdf4. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { unsigned f : 8; } B8;
 
 extern int Ov146_Rider_SetFlagIfReady(int a, int b);

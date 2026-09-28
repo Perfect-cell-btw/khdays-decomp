@@ -1,7 +1,7 @@
 /* Message handler of the ov240 enemy: a "spawned" message (kind 5) unpacks the 24-bit position
  * into a fresh transform and starts the +0x39c sub-item named by the payload (0-2 with kind
  * 0x15, blend 1 for payload 2, 3 with kind 5, 4 with kind 0x15) under the +0x3c owner into +0x3a0. The base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int x, y, z; } Vec3;
 

@@ -1,6 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 /* Which value the mission panel shows.  The fetcher's return says which way
  * that value runs, and Ov002_GetPanelValueBand turns it into the direction of

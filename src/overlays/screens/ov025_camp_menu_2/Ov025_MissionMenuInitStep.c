@@ -20,9 +20,7 @@
  * call then reuses the incoming r0 (no `mov r0, r5`), and that keeps r0 live
  * through the switch chain so the step temporary takes r1 as the ROM does.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define SCROLL_HIDDEN (-0x40)
 

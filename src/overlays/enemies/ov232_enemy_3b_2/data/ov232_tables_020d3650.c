@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Constructor of the ov231 enemy (x5 with ov232/ov263/ov265/ov280). Installs the handlers (+ (020cfc08): KindTable data_ov232_020d3650; */
 const int data_ov232_020d3650[8] = {

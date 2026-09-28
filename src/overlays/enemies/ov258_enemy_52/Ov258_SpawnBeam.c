@@ -2,7 +2,7 @@
  * end 020d0fc8) holds `rig`, the owner's +0x464 effect record 0x26 (kind 0x19) or 0x27, the owner and
  * its nearest target (020cab14; none aborts with 0). The rig moves to `pos` (kept in +0x10), the kind
  * is stored in +0x49 and +0x4a marks the second variant. Returns the node handle. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct EffectPair { int res; int handle; };
 struct Ov258Effects { char pad[0x464]; struct EffectPair pair[0x30]; };

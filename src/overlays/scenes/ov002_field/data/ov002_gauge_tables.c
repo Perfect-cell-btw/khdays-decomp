@@ -6,8 +6,7 @@
  * the words are packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const u8 data_ov002_0207dd7c[8] = {
     1, 15, 15, 15, 15, 1, 0, 0,

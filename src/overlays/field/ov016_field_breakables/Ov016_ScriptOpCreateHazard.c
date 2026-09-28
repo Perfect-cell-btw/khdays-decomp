@@ -3,9 +3,7 @@
  * the call) and an angle in degrees (facing = angle * 0x10000 / 360), then the slot's class
  * table (ov002 02076468 on the first operand), the kind and the index, and creates a hazard
  * piece (Ov016_HazardCreate 02082664).  Always consumes the op (1). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

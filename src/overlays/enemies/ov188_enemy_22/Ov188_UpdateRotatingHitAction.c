@@ -2,7 +2,7 @@
  * once, tests the actor sphere for hits, and advances the node when its asynchronous substate ends.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

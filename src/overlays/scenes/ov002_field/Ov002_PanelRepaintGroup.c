@@ -13,7 +13,7 @@
  * it into an induction variable and increments it, while the ROM keeps the base
  * fixed and recomputes base + i.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 bFirst;

@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov125_Construct (020cbfc4): IdTable data_ov125_020d03a8; */
 const int data_ov125_020d03a8[9] = {

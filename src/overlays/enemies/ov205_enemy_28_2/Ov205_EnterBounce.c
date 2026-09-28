@@ -4,7 +4,7 @@
  * sets the speed to 0x1000, clears the phase and the clock, fires reaction 0x132 mode 8 at the
  * reaction point and hands off to the bounce tick. The flattening store is written at the end
  * of both branches: the tail-merged block keeps it ahead of the normalise argument. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 typedef struct {

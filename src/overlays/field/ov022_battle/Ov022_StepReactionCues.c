@@ -13,10 +13,7 @@
  * 0, 2, 15, is replaced by the actor's handler id, and plays it.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

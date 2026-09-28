@@ -11,8 +11,7 @@
  * note 0 of data_ov255_020d2b20 once (+0x62). Once the +0xc idle byte clears, animation 0xf plays,
  * the +0x3a4 part plays motion 0xe, +0x44, +0x63, +0x65 and +0x62 clear and the tick hands over
  * to Ov255_BiteTick3. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo; u16 hi; } Cmd4;

@@ -5,7 +5,7 @@
  * hand bone's rotation while docked, at the end of a 9-orbit launch (0x550 into it) or early in the
  * first orbit (before 0x908); otherwise the heading. +0xf0 keeps the last +0x10 velocity, which then
  * clears. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 struct Flag17a { u8 b0 : 1; };

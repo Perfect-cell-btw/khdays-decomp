@@ -11,9 +11,7 @@
  * hSlots, pPanel, pWidgets, pSurface; the selection is the low 16 bits of an
  * int (ldr + lsl/asr).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROW_CELLS 8
 #define TEXT_STYLE 4

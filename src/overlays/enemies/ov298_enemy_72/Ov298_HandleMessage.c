@@ -2,7 +2,7 @@
  * transform scaled by 2.0 at the packet's 24-bit position and starts the +0x39c sub-item of
  * that slot under the +0x3c owner (kind 0x17, the packet's blend) into +0x3a0. The base handler
  * always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int x, y, z; } Vec3;
 

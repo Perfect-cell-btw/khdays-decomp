@@ -2,7 +2,7 @@
  * width / height pair (12 x 2) copied by Ov025_SetupContext 02083e84.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov008HeaderLimits {
     u16 width;                /* 0x00 */

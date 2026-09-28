@@ -8,9 +8,7 @@
  * sweeps for actors above the point; the first that takes a kind-1 hit gets the +0xe template
  * message with the point raised by 0x1000, reaction 0x114 mode 6, and the task is released.
  * Otherwise the task is released once the actor's +0xad flag is clear. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
@@ -57,7 +55,6 @@ extern const PosMsg data_ov115_020ceb54;
 extern const PosMsg data_ov115_020ceb62;
 extern const Vec3 data_02042264;
 extern const Vec3 data_02041dc8;
-
 
 typedef struct { int value; } Fx32;
 

@@ -23,8 +23,7 @@
  * ctx[0] is re-read before each use rather than cached in a local: the stores through it may alias
  * *ctx, so the ROM reloads and so must the C (codegen-cracks.md). */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

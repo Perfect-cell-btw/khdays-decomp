@@ -34,9 +34,7 @@
  *  - RefreshObjectCallbacks takes two arguments, not four. Declaring the extra two makes mwcc reload
  *    r2 and r3 after the preceding call; the original just leaves them where they were.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct ActorSubitemSlot {
     void *pSubitem;

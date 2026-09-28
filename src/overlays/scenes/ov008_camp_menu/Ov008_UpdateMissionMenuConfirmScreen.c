@@ -1,9 +1,7 @@
 /* Mission confirmation screen: leaves when asked, follows the scene state, and draws the
  * confirmation text and cursor; returns the next state. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*MissionState)(void);
 
 typedef struct {

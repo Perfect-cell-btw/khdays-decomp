@@ -6,7 +6,7 @@
  * dependent state (Ov025_DrawStatusPanelLabels), and disables the confirm/back buttons (ids 0x47, 0x48).
  * The offset ternary is written `newSel == 0 ? 0 : 0xc0000` so mwcc emits moveq(#0) before
  * movne(#0xc0000) as the ROM does (the != form flips the two conditional movs). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008SelState {
     u8  pad_0000[0x1c];

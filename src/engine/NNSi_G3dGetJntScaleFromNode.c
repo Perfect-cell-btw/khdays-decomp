@@ -1,11 +1,8 @@
 /* NitroSystem G3D: joint scale taken from the model's node data through the render state's scale
  * function. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef signed short fx16;
-typedef signed long fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x, y, z;
@@ -94,7 +91,6 @@ static inline const NNSG3dResNodeData *NNS_G3dGetNodeDataByIdx(const NNSG3dResNo
     }
     return 0;
 }
-
 
 void NNSi_G3dGetJntScaleFromNode(NNSG3dJntAnmResult *pResult)
 {

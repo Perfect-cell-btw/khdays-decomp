@@ -9,8 +9,7 @@
  * into a hit record and handed on, and the actor keeps the contact point.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

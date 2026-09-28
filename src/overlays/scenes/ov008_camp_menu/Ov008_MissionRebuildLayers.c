@@ -1,8 +1,7 @@
 /* Rebuild the layers and cells for the current state: reset the input entries, configure which
  * planes are visible, and arm the opening tween. */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad_0000[8];

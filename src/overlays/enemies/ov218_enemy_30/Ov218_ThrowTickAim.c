@@ -4,7 +4,7 @@
  * by the +0xc heading, and the first unguarded +0x394 partner is thrown at it (020cdff8, 30 % spin).
  * After the throw, once the partner holds no queued move, the second throw (+0x20) re-runs 020cd658;
  * then the next move is 4. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;

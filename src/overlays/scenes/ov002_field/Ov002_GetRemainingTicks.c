@@ -1,5 +1,4 @@
-typedef unsigned long long u64;
-typedef signed long long s64;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207fa00;
 

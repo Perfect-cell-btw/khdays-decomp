@@ -7,7 +7,7 @@
  * back as the contact point.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

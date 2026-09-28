@@ -1,7 +1,6 @@
 /* c = b + s * a, with the products shifted by 27 bits. */
 
-typedef int fx32;
-typedef long long fx64;
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x;

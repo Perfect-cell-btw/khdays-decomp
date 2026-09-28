@@ -1,8 +1,5 @@
-typedef unsigned long u32;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef signed long fx32;
-typedef int BOOL;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define NULL ((void *)0)
 #define NNS_G2D_INVALID_CELL_TRANSFER_STATE_HANDLE 0xffffffff

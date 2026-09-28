@@ -1,5 +1,5 @@
 /* Configure the four result counters, converting their endpoints to 20.12 values. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Tween { char data[28]; } Tween;
 typedef struct Ov005ResultTween { Tween tween; int duration, unknown20, fromValue, toValue; } Ov005ResultTween;
 typedef struct Ov005ResultContext { char unknown00[0x4b84]; Ov005ResultTween resultTweens[4]; } Ov005ResultContext;

@@ -1,5 +1,4 @@
-typedef unsigned short u16;
-typedef unsigned long u32;
+#include "nitro/types.h"
 
 typedef enum NNSG2dBGSelect {
     NNS_G2D_BGSELECT_MAIN0,

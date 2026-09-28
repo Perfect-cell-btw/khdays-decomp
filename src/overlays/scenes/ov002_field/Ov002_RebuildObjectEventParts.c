@@ -1,8 +1,6 @@
 /* Ov002_RebuildObjectEventParts: preserve selected parts of an object across
  * its event reset, then restart its animation or clear it when none remain. */
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Ov002Vec3 { int x,y,z; } Ov002Vec3;
 typedef struct Ov002PartOwnerTagFields {
     u8 nGroupIndex,nSlotIndex; unsigned short wReserved;

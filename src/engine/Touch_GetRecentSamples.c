@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* TPData: x, y, touch, validity -- the touch-panel sample layout TP_GetCalibratedPoint
  * (TP_GetCalibratedPoint) converts. */

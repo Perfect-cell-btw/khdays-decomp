@@ -3,7 +3,7 @@
  * +0x3e flag is clear, the +4 item's +0xa8 byte is cleared and the flag set. Once the item is
  * idle the actor plays animation 8, publishes a zero vector to it with mode 4 (flag 2) and hands
  * off to the next guard state. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);

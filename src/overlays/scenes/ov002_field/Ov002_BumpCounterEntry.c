@@ -6,7 +6,7 @@
  * same bytes as one 64-bit accumulator; here they are a deadline and a pair of
  * 32-bit fields.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[0x24];

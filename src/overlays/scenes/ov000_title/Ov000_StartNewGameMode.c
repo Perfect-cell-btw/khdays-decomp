@@ -2,8 +2,7 @@
  * (Msg_OpenContainerAndReadHeader) and sets up the resource tracker/cell from the template at
  * data_ov000_0205a858. */
 
-typedef unsigned char  u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 typedef struct Ov000ResourceBlock {
     u8 pad_0000[0x10];

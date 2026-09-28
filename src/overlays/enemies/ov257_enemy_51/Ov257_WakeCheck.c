@@ -1,7 +1,7 @@
 /* Wake check of an ov257 state: once bit 0 of the owner's +0x60 low byte is set, +0x70 clears,
  * +0x74 is raised, the +0x54 cooldown is rolled in [+0x224, +0x228] and the owner's +0x1c9 default
  * sub-state is requested (+0x1c7). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct Flags60 { u16 lo : 8; u16 hi : 8; };
 
 extern int RandNextScaled(int n);

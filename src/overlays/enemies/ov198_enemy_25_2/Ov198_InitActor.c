@@ -1,7 +1,7 @@
 /* Actor initialiser: installs the class's callbacks, sets its flags, camera pose and bounds,
  * creates its models and subitems, its three linked sub-actors and its resources. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 struct Box { struct Vec3 min, max; };
@@ -166,6 +166,4 @@ void Ov198_InitActor(struct Obj *self)
 
     Res_RequestIdPair(0x130);
 }
-
-
 

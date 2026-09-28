@@ -4,9 +4,7 @@
  * is hidden.  Leading zeros are hidden until the first non-zero digit (the last
  * cell is always shown); each shown cell gets its digit frame.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define VALUE_MAX   999999
 #define CELL_COUNT  8

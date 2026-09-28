@@ -14,9 +14,7 @@
  * declaration order nY, nLeft, nDigit, nSpare, nX, pFont, nGlyph colours
  * the first loop (5040-permutation sweep).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GLYPH_MISSING   0xffff
 #define ROW_HEIGHT      16

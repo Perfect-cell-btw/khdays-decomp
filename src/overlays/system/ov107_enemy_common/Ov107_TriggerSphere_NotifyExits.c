@@ -1,8 +1,7 @@
 /* Notifies each active actor that has left the trigger sphere (calls its exit callback with 2). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef int fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct {
     unsigned pad0 : 1;

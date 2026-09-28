@@ -5,10 +5,7 @@
  * priorities, runs the object/text init (Ov000_RefreshMenuLayout / Ov000_RegisterLogoObjects)
  * and the scroll-bounds setup (Camera_CommitMatricesEx), then hands off to Ov000_TickBootFadeIn. */
 
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef volatile u16   vu16;
-typedef volatile u32   vu32;
+#include "nitro/types.h"
 typedef void          *StateFn;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);

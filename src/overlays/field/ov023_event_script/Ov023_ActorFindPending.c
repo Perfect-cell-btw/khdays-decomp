@@ -1,7 +1,7 @@
 /* Ov023_ActorFindPending -- Ov023_ActorFindRotTween: find the rotation tween slot of a joint among the actor's seven
  * rotation tweens (+0x984, 0x28 bytes each, joint at +0x18).  Returns the index of the tween
  * already on the joint, else the first free tween (joint -1), else -1. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov023RotTween {
     u8   pad_00[0x18];

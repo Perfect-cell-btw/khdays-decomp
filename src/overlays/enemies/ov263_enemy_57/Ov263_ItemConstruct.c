@@ -4,7 +4,7 @@
  * +0x384 sub-item is built from pose 0x14 of the owner, the +0xa0 pose is scaled by 1.3, the
  * sub-item is subscribed to +0x9c, uniformly scaled by 0x189e/0x1119, its channels 0 and 2 are
  * enabled and it is reset. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 

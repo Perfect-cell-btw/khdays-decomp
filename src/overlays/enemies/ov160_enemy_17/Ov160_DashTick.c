@@ -11,9 +11,7 @@
  * 30.0, the overlay's 14-byte position message (data_ov160_020cf7c8, the +4 point packed as
  * 24-bit values, byte 4 set above 1.0 + 0x100) goes to the +0x24 hook, reaction 0x151 mode 7
  * fires at the +4 point, the sub-state clears and the state ends. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u8 hi, mid, lo; } Fx24;

@@ -5,9 +5,7 @@
  * The overwritten `nMode = 0` store is removed by the optimiser but still spends mwcc's per-block
  * IR budget; without it the pane base `pTop + 0x10000` is kept across the fade calls and every
  * register in the display block shifts. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov011Pane {
     void *pBuffer;

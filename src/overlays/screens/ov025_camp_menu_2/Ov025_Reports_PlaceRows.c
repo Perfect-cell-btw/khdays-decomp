@@ -2,10 +2,7 @@
  * header entry (+8 of the page) goes to x 0xf0 (fx32 0xf0000), y = nRow + 16 cells; each of the
  * visible row entries (+0x10, count +0x54) is shown (0208884c) and placed a cell lower, then
  * every half cell (Ov008_SetEntryPos 02088500); the footer (+0xc) follows the last row. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct UiLayoutPos {
     int  x;                   /* 0x00 */

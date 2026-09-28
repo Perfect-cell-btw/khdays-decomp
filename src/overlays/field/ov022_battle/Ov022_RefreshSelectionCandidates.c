@@ -1,10 +1,7 @@
 /* Rescans the lock-on candidates for the local player (by facing or distance, then the actor's
  * candidate list); returns whether one was selected. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov022LowByte16 {
     unsigned short lowByte : 8;

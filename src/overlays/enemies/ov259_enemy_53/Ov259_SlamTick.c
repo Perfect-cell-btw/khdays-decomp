@@ -3,7 +3,7 @@
  * (+0x50): sound 0x172/0x19 at the +0x10 point unless muted (+0x428), the +0x384 rig shakes
  * (020d17b8) and +0x94 = 400. The cue pulses at 0x330 (bit 0, 2) and 0x1650 (bit 1, 3). Once the
  * partner has no queued move the timer restarts, pose 0x16 plays and the node moves on to 020d0cb4. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int Ov259_FaceTargetGap(int *node);
 extern void Ov259_RefreshAim(int *node);

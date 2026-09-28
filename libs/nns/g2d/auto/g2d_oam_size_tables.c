@@ -1,6 +1,6 @@
 /* NitroSystem g2d (g2d_Oam_data.h, instantiated by g2d_CellAnimation.c): the OBJ height / width
  * tables indexed by [shape][size] (NNS_G2D_DEFINE_NNSI_OBJSIZEHTBL / ...WTBL). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* NNSi_objSizeHTbl */
 const u16 data_020419c4[3][4] = {

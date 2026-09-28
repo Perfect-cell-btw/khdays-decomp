@@ -4,7 +4,7 @@
  * seventh and eighth at (8,0x12), (0xd,0x12), (0x13,0x12), otherwise the fifth
  * at (0x14,2); all with palette 0xf.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define SLOT_TUTORIAL 0x1b
 #define PALETTE_TUTORIAL 0xf

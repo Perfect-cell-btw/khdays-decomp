@@ -16,7 +16,7 @@
  * ARM.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov002PageChars {
     char pad000[0x10];

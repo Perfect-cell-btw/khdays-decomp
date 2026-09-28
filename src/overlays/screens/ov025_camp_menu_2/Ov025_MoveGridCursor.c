@@ -22,9 +22,7 @@
  * the "lifted" branches come first; the record local is reused for the
  * cell record.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GRID_COLS      5
 #define GRID_ROWS      8

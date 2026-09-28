@@ -1,8 +1,7 @@
 /* Applies the brightness tween to the screens and updates the active widgets (dropping the finished
  * ones). */
 
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 typedef struct Ov009MenuContext {
     u8 pad_0000[0x95d4];

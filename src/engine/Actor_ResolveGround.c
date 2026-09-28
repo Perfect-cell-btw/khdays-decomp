@@ -38,10 +38,8 @@
  *     components chained. Using VEC_Set there instead costs 8 bytes.
  */
 
-typedef int fx32;
-typedef long long fx64;
-typedef unsigned short u16;
-typedef short s16;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x;

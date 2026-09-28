@@ -6,9 +6,7 @@
  * (Ov023_SplitPath 0208552c), widened (0202fcb8) and requested as a choice-less ov002 panel
  * (02057300, mode 0, selection = the event's word at +0x484); on success the screen's model
  * flag (scene +0x875d8, Ov023_SetScreenModel 02083a68) is raised. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct Ov023Operand {
     s16  nType;               /* 0x00 */

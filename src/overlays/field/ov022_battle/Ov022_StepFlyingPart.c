@@ -11,10 +11,7 @@
  * every 0x36000 timer units. The sequence tracks are updated on the way out.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef signed short s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

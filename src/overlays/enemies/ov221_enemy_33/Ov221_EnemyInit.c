@@ -8,7 +8,7 @@
  * places five spheres at the origin (radius 0.375, 1.63, 1.19 and twice 1.0, all scaled by 0.75),
  * each reserved in the +0x22c pool (kept in +0x3ac) and the +0x144 pool (kept in +0x3c0), raises
  * bit 1 of the second one, creates the four +0x3ec helpers (020d3fec) and loads sound 0x12a. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[8]; } IdTable8;

@@ -8,8 +8,7 @@
  * (kind 0x14) carrying the position, the player (7 bits) and bit 5 of the hit flags is queued
  * on the piece (ov002 020766e0); once accepted the ack mask (+0x61d) is cleared and sync flag
  * bit 4 raised.  Answers 0. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

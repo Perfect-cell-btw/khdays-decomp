@@ -1,7 +1,7 @@
 /* Ov245_ChargeUpTick_2 -- charge-up tick: flags the actor's +0x38c, holds the state's +0x18 at
  * 10 and advances +0x1c by the scene's +0x2c step; after 0.5 raises bit 0 of the +0x60 high
  * byte, plays pose 0 and moves the node to 020d24bc. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

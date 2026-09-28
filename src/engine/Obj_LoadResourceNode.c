@@ -1,7 +1,7 @@
 /* Allocates a sprite resource node, loads the resource into it and appends it to the object's
  * resource list (+0x4620); returns its index. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Node {
     char _00[0x5c];

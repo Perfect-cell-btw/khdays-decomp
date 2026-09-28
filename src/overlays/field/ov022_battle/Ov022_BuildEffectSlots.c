@@ -12,9 +12,7 @@
  * kind 1). The track count is cleared and the charge started.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define FLAG_BIT16 (1 << 16)
 #define GLOBAL_BIT2 0x4

@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct Ov002Entry {
     char pad000[1];

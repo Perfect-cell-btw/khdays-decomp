@@ -9,8 +9,7 @@
  * requests sub-state 3; otherwise sub-state 5 is broken by a 1|0x10 hit and, outside sub-state 13, a
  * 0x8000 hit requests sub-state 12 and the first drop to half stamina sub-state 13 (+0x80 latched). A
  * sub-state 12 request on a +0x470 carrier is undone. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 
 struct ActorHitEvent {

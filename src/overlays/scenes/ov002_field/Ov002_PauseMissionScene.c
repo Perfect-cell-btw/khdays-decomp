@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207fa00;
 /* Boot mode flags; bit 2 marks a run that came up without the front end. */

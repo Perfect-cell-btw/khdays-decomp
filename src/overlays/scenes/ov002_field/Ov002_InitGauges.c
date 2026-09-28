@@ -4,8 +4,7 @@
  * copied and a private allocation filled from it, which raises that gauge's bit in bStateFlags so
  * the tick repaints it. Every gauge, empty or not, is handed to the shared setter with mode 7. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 wA;

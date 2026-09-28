@@ -9,8 +9,7 @@
  * bounce point mirrored off its plane), when falling onto open ground, or past 3.0: animation 0xe,
  * effect 5 and reaction 0x154 mode 0xc at the end point unless the owner is flagged (+0x1c4 & 0xa),
  * and the tick hands over to Ov208_ShockwaveTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

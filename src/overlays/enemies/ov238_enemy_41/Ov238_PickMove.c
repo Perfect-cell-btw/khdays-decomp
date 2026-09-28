@@ -1,7 +1,7 @@
 /* Move pick of the ov238 actor: with a target (020d0878 gives its distance) a roll decides: under 3.0
  * mostly 6 (30 % a front swipe 7, from ahead of -15.0 on z, else 6); under 6.0 5 % 6, 60 % 7/8 by the
  * front test, else 8; under 9.0 20 % 7/8, else 8. When a move is set +0x28 is 3.0 and 1 is returned. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Ov238_TargetGap(int *node);
 extern int RandNextScaled(int bound);

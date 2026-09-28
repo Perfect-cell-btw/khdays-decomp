@@ -1,8 +1,7 @@
 /* Scores the hit parts of a candidate as lock-on targets (enabled, within range, reachable and in
  * line of sight); returns whether one was selected. */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;

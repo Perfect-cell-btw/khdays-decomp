@@ -1,8 +1,7 @@
 /* Destroys an event slot (bit 0x1000 selects the second bank): calls its close hook, stops its lap
  * timer (first bank only), frees it, and frees its node tree. */
 
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct Ov002Slot {
     u8 pad0000[4];

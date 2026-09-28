@@ -5,7 +5,7 @@
  * - the NitroSystem FND allocator callback pairs of the expanded heap (allocate / free), which
  *   NNS_FndInitAllocatorFor*Heap install into an NNSFndAllocator. */
 
-typedef unsigned long u32;
+#include "nitro/types.h"
 
 typedef struct MATHiHMACFuncs {
     u32 dlength;

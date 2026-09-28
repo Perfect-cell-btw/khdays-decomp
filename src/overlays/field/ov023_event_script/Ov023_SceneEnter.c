@@ -4,7 +4,7 @@
  * copy of the request (strcpy) followed by the request's byte at +0x7f -- and creates
  * the scene's main object (InstantiateClass on the class descriptor data_ov023_0208a038), kept at
  * context +4.  Moves on to the first-frame gate Ov023_SceneFirstFrame (02082a44). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov023SceneContext {
     u16  nStatus;             /* 0x00 */

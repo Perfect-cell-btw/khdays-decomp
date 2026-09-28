@@ -10,9 +10,7 @@
  */
 #pragma opt_dead_assignments off
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Ent {
     unsigned long long nFlags;   /* 0x00 */

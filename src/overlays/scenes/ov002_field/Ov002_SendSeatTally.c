@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern char data_0204c300[];
 extern int data_0204be18;     /* an address kept as an integer */

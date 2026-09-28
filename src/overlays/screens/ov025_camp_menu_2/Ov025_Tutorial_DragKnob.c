@@ -5,10 +5,7 @@
  * than the track the remainder becomes the row base (+0x64).  The cursor (+2) is kept within
  * the nine visible rows, the list scrolled (Ov025_Tutorial_ScrollTo 0209dcd0) and, when the
  * window moved, the rows refreshed (0209e3f8). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025TutorialList {
     void *pHeader;            /* 0x00 */

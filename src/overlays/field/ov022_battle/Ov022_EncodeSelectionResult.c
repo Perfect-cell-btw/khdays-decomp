@@ -1,9 +1,7 @@
 /* Encodes a lock-on selection into a 3-byte message: its type, the candidate id and the index of
  * the selected part (or the element kind and index for sources). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov022Candidate {
     u16 field00;

@@ -22,11 +22,7 @@
  *     involved, the call has to be spelled with the address symbol the config uses.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef long long      s64;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov000CardSlot {
     u8  pad_00[0x10];

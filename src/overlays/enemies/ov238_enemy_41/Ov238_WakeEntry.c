@@ -1,6 +1,6 @@
 /* Wake entry of the ov238 actor: its guard flag (+0x60 bit 0) is set, the +0x388 shape shows, effect 0
  * fires at the origin, the +0xc velocity rests, +0x2c clears and the node moves on to 020d2dd0. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

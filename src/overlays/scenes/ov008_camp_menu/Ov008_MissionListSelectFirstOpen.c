@@ -6,9 +6,7 @@
  * When every mission is cleared nSel is never written: the ROM hands whatever
  * r4 held to the commit -- an original bug, kept as is.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionList {
     u8  pad_000[0x38];

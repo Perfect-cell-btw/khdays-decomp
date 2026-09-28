@@ -1,4 +1,4 @@
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* NitroSDK fixed-destination word-send primitive. */
 asm void MIi_CpuSend32(register const void *source,

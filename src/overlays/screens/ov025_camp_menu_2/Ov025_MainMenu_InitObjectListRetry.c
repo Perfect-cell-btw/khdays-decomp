@@ -15,7 +15,7 @@
  * args (list, params) - Ghidra's trailing r2/r3 args are leftover-register phantoms.
  */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int f0; int f4; int f8; } ObjListParams;
 

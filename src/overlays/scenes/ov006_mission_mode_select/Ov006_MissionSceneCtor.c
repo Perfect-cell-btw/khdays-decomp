@@ -12,8 +12,7 @@
  * function (Ov006_UpdateMissionModeFrame).
  *
  * Resource paths confirmed by reading RAM at runtime. */
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
+#include "nitro/types.h"
 
 struct S5 { int w[5]; };
 

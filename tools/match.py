@@ -19,6 +19,8 @@ LIC  = os.path.join(ROOT, "tools", "mwccarm", "license.dat")
 FLAGS = ["-O4,p", "-proc", "arm946e", "-interworking", "-lang", "c99",
          "-enum", "int", "-char", "signed", "-inline", "on,noauto",
          "-Cpp_exceptions", "off", "-gccext,on"]
+# Shared headers (include/nitro/types.h, ...): the game and library sources include them.
+FLAGS += ["-i", os.path.join(ROOT, "include")]
 
 def source_flags(cpath):
     """Per-source language selection.

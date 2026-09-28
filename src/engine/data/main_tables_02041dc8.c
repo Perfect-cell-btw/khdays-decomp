@@ -1,8 +1,8 @@
 /* main .rodata 0x02041dc8-0x02041e2c: the shared zero vector and the 2D BG tables of the
  * screen/palette helpers (0x020242cc, 0x02024844..0x020248e0). */
 
-typedef unsigned short u16;
-typedef int fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x, y, z;

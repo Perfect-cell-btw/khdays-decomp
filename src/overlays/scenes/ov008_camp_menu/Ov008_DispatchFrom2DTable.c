@@ -3,8 +3,7 @@
 extern void Ov008_GetMenuContext(void);
 extern void Ov008_GetContext(void);
 extern void Ov008_WidgetRef_Init(int arg0, int arg1);
-typedef unsigned char u8;
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct Ov008MenuSubEntry {
     s16 nId;                  /* 0x00 */

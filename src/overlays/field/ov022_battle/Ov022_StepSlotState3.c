@@ -11,9 +11,7 @@
  * report done the half-bound mark is cleared and the slot moves to state four.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed char s8;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

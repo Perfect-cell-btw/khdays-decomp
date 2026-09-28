@@ -1,7 +1,7 @@
 /* Initialises the reward list selection from the column counts (starting on the second column when
  * the first is empty) and the scrollbar. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Ov005Context {
     char opaque[0x4bfc];
     u8 unknown4bfc,activeRow,firstVisibleItem,unknown4bff;

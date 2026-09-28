@@ -1,7 +1,7 @@
 /* Start of the ov258 burst effect: its rig transform resets and moves to the stored position, bit 1
  * of the rig's +0x5c flags clears, tracks 0 and 2 play, the transform scales to 2.0 and the rig is
  * posed; the +0x14 timer and +0x18 flag clear, +0x19 is set and the brain waits on 020d0bbc. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(void *transform);

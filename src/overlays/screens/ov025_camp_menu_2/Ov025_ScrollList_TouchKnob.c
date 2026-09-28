@@ -4,10 +4,7 @@
  * the stylus is still down (word +6 zero) the knob (+0x2dc) follows the touch row less half the
  * knob height (+0x2e0) and 16, within 0..+0x2e4, keeping the pixel scroll (0x7fffffff) and
  * clamping the cursor into view (Ov025_ScrollList_SetKnob 020adfb0). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct TileBlock {
     u8   pad_00[0x20];

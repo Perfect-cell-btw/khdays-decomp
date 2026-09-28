@@ -7,9 +7,7 @@
  * its +0x190 is taken, or, when that is degenerate, the sine/cosine of the +0x40 heading, and
  * the direction is scaled by a twentieth of the length; y then becomes 1.0, +0x44 takes the
  * heading of the direction and the tick hands over to Ov206_AiBallisticTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { u8 hi, mid, lo; } Fx24;
 typedef struct { int x, y, z; } Vec3;

@@ -8,9 +8,7 @@
  * direction clears. Past 0x100 with bit 0 of +0x17a set, animation 0x10 plays, bit 6 of the
  * +0x60 high byte clears and the state hands off to d2440; otherwise a negative height plays
  * animation 0xf once (+0x50). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;

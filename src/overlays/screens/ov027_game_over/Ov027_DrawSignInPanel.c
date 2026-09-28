@@ -5,7 +5,7 @@
  * followed by the cells at +0xc) with 02013484, taking the column (3 - the local peer's slot,
  * 020bf240) * 2 as the source x and the buffer's own width / height as the destination size,
  * then queues the buffer for the BG at 0x19 (GFXi_EnqueueCommand with the byte count at +8). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov023PanelScreen {
     u16  nWidth;              /* 0x00 */

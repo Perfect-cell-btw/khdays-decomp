@@ -9,9 +9,7 @@
  *
  * Reports zero once the frame index has caught up with the frame count.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define OFFSET_MASK 0x3fff
 #define PLANE_SLOTS 6

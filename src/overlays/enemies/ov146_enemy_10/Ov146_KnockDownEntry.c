@@ -2,7 +2,7 @@
  * guard (+0x58), the actor plays effect 1 at the partner's +0x74 point; bit 0 of the +0x60 high byte
  * clears, bits 0-1 of +0x1ae and bits 1, 2 and 7 of the high byte are set, the +0x3ac shape hides,
  * sound 0/0x4a plays at the actor, the +0x3bc effect stops, the next move is 0 and the node ends. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

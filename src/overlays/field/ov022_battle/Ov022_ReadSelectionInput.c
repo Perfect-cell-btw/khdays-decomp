@@ -2,9 +2,7 @@
  * cycles targets with repeat, refreshes candidates and markers, and updates the caption and panel;
  * returns whether the selection is active. */
 
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov022ActiveActor {
     u64 flags0;

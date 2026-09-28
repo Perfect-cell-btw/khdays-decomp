@@ -4,7 +4,7 @@
  * track. After 0x1a90 of the timer the +0x428 shape loses bit 1, pose 0x18 / partner motion 0xa
  * play, the actor is knocked back at the track (mode 6), +0x69 is set and the node moves on to
  * 020cec64. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 v[5]; } Spots5;
 typedef struct { Vec3 v[4]; } Corners4;

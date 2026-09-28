@@ -6,12 +6,8 @@
  * clears the five animation slots (ids +0x2 / +0xca, handles +0xc), and resets the transform:
  * identity rotation (+0x80), zero translation (+0xa4), unit scale (+0xb0), zero offset (+0xbc).
  * Returns TRUE. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef short s16;
-typedef unsigned int u32;
-typedef int fx32;
-typedef int BOOL;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct {
     u8 revision;

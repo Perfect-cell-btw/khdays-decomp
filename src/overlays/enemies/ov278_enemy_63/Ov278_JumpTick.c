@@ -2,9 +2,7 @@
  * once falling, and only if the actor's +0x17a bit 0 (grounded) is set, the landing cue
  * (first halfword pair of data_ov278_020d6374) is sent through the +0x24 hook, effect 0x166 of kind 9
  * fires at the +0x38 anchor, pose request 5 is queued and the node dispatches null. */
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct Vec3 { int x, y, z; };
 struct Bits17a { u8 b0 : 1; };
 

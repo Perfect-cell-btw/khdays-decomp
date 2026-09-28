@@ -2,7 +2,7 @@
  * bits 2 and 7 cleared, bit 0 of the +0x388 rig's +8 flags is set, the +0x2c start point takes the +8
  * point, the +0xc velocity is the +0x18 direction at 0.25 with the +0x24 speed 0.25, and the brain
  * waits on 020d1050. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

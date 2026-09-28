@@ -14,8 +14,7 @@
  * than copied, and the result was checked against the delinked image.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define CT_ALPHA  0x0001
 #define CT_BLANK  0x0002

@@ -1,6 +1,6 @@
 /* Whether the point lies outside the node's 60-degree view cone. */
 
-typedef int fx32;
+#include "nitro/fx.h"
 
 typedef struct {
     fx32 x;

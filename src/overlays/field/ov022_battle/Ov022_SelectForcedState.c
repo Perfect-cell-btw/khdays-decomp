@@ -14,9 +14,7 @@
  * the 64-bit word, unlike every other test here, so it is spelled as a cast.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Vec3 {
     int x, y, z;

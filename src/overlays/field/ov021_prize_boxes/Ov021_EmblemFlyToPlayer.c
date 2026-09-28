@@ -8,8 +8,7 @@
  * to the direction scaled by the spiral (VEC_MultAdd), the result scaled by twice the distance
  * (at most 0x800) and applied for the frame delta to the position (+0x2a8), which the sequence
  * node (+0xc0) follows.  0 while flying. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

@@ -4,8 +4,7 @@
  * actor scaled to 0x800, raised to 0x1000) with mode 0, and on success the +8 position is
  * published to the item (mode 2), reaction 0/0x53 fires there and the bit is recorded. When
  * anything was hit reaction 0x13f mode 6 fires and 1 is returned. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vecx32 { int x, y, z; };
 

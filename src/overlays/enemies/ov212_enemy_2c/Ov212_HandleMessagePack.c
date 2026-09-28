@@ -4,8 +4,7 @@
  * through a stack Fx32 first), the current item's +0x54 low halfword at 0x26, and for the last
  * item its +0x54 height (x0.85) turned by its +0x30 pose and added to its position, packed at
  * 0x31. Then the base forwarder (020c7a90) runs. */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 typedef struct { u8 hi, mid, lo; } Fx24;

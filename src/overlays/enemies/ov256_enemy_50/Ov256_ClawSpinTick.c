@@ -2,7 +2,7 @@
  * +0x1c spin vector scaled by 1 + the owner's +0x3ac part's +0x45c boost (x 1/8), the claw moves
  * (020d1400 1, 2). Once the +0x390 part's animation (+0x3c -> +0xad) ends the timers clear, the +0x6d
  * flag is set, the part takes motion 1 and the node moves on to 020d227c. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);

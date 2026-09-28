@@ -3,9 +3,7 @@
  * BEGIN_VTXS (quads) and four TEXCOORD / VTX_16 pairs around the unit square (-0.5..0.5 as
  * 4.12) with the texture's width and height (+0x7c / +0x80 of the noise state, in 1/16 texel
  * units) as the coordinates, then END_VTXS (GX_SendFifoWords 01ff9f00). */
-typedef unsigned int   u32;
-typedef signed short   s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

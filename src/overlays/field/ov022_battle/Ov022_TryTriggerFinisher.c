@@ -10,7 +10,7 @@
  * finisher bit goes into the sixty-four bit flag word.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 /* Ov022Actor */
 struct Actor {

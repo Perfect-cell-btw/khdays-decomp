@@ -10,9 +10,7 @@
  * grid is rebuilt (02060e3c) and the pending, drag-active and +0x50 words are
  * set.  Returns 1.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define PAGE_COLS   5
 #define WIDGET_DRAG 3

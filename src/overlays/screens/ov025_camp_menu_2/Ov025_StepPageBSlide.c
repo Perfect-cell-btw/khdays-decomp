@@ -6,7 +6,7 @@
  * refreshes; an opening panel (state 1) whose tween has finished returns to idle.
  * The done flag is a 1-bit field (extract + movs), not a mask test.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008PageB {
     u8  pad_000[0x10];

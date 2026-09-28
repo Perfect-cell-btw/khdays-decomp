@@ -2,9 +2,7 @@
  * Keep the u16 selector as &= then >>= to preserve derived-counter scheduling.
  * The five-slot codegen view has a placement in slot0 and four model slots.
  * Preserve the effect pointer across the tint/flag writes to avoid a reload. */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Ov002Vec3 { int x,y,z; } Ov002Vec3;
 typedef struct Ov002PeerRow {
     u8 nKey,nTargetSlot,pad02;

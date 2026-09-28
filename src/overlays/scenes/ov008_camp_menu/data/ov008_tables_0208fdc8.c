@@ -19,8 +19,7 @@
  *   data_ov008_0208feb8: Ov008_RebuildShopList
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov008_0208fdc8[38] = {
     32, 64, 56, 64, 80, 64, 104, 64,

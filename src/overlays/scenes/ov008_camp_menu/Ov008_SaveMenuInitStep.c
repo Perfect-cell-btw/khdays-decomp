@@ -11,9 +11,7 @@
  * the row digits, clears the tween (+0x218) and shows the points.  Step 3 is
  * the end: a pending card state (+0x23c) draws prompt 4 and enters phase 5.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define SLOT_COUNT   3
 #define STEP_DONE    3

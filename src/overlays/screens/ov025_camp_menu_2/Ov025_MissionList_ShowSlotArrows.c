@@ -3,10 +3,7 @@
  * 0208dc74), reselect the cursor's slot (+0x54) and, with two or more, show entries 4 / 5 of the
  * 4a7c block (02084a7c) and 0x47 / 0x48 of the 4a80 block (02084a8c): the slot arrows
  * (FindEntryById 0208843c / SetEntrySlotsVisible 0208884c). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionList {
     int  nSelected;           /* 0x000 */

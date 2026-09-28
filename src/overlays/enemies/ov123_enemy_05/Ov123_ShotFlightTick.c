@@ -9,9 +9,7 @@
  * releases the slot. The step from the +0x2c previous position (then refreshed) grows the
  * +0x28 distance: a wall or floor contact (bits 0/1 of +0x17a) ends the flight with reaction
  * 0x115 mode 6, and past 0x14000 the end message goes out (sub-state 0, slot released). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct Vec4 { int x, y, z, w; } Vec4;

@@ -1,5 +1,4 @@
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov002PlayerRecord {
     u64 nFlags;                 /* 0x000 */

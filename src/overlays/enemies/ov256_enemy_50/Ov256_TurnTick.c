@@ -2,7 +2,7 @@
  * heading (020cd054); once the partner holds no queued move a side is rolled (0 or 2) and the target
  * re-picked (020ccd54); a heading change of more than 35 degrees forces side 2. Pose 0x1f + side plays,
  * the +0x450 part takes motion 0x10 + side and the node moves on to 020ce650. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);

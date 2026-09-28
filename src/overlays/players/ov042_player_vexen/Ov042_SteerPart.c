@@ -6,7 +6,7 @@
  * (variant 1) at the landing point if the owner's +0x694 bit is set, the part's +0xc word is
  * set to 0x2080 and its eight +0x13c bone links cleared to -1, its +0x3c animation restarted,
  * and the local player queues reaction 3/1 on the owner. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 b0 : 1; } Bits1;
 

@@ -4,7 +4,7 @@
  * bit 1 of the +0x4cc target's +8 word and bit 4 of +0x1ae and enters 1; 4 plays animation 2,
  * fires mode 7, clears those two bits and enters 5; 5 waits for the item and plays animation 0
  * back to phase 0. */
-typedef unsigned int u32;
+#include "nitro/types.h"
 struct w8 { u32 lo : 8, rest : 24; };
 
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);

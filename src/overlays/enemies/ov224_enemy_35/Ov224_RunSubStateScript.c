@@ -6,8 +6,7 @@
  * +0x80 radius, a 5/6 message with that point is broadcast, effect 9 spawns at the origin and
  * +0x41c/+0x420 clear. When the rig is free and either held or grounded, Ov224_SetModeAndResetCounters (with
  * the +0x408 hold) finishes the script. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov238_CarrierTeardown (not yet decompiled) */
 const u8 data_ov238_020d3668[12] = {

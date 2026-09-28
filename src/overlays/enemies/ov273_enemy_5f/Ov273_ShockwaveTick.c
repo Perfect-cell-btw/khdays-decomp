@@ -5,10 +5,7 @@
  * (swept at three times it) and every entity not yet in the +0x69 mask that accepts a kind-3 hit pushed
  * 1.0 outwards and 0.5 up gets the overlay's 14-byte message with its +0x74 position, its mask
  * bit and reaction 0/0x53 there. Once the +8 flag byte clears the next move is 6. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 axis[3]; int radius; int flag; } Cyl;

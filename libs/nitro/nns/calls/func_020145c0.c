@@ -1,5 +1,4 @@
-typedef signed char s8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct NNSG2dCharCanvas NNSG2dCharCanvas;
 typedef struct NNSG2dFontInformation {

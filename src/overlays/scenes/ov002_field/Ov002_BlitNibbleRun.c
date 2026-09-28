@@ -13,7 +13,7 @@
  * base in early and loses a callee-saved register; only this permutation gives
  * both the final add and the frame.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 void Ov002_BlitNibbleRun(u8 *pDst, int nRight, int nCount, int nWidth,
                          int nPad, int nRow, const u8 *pSrc) {

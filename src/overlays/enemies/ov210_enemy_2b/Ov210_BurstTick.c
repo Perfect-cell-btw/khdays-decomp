@@ -5,8 +5,7 @@
  * (data_ov210_020d4734, low nibble of byte 4 = 6) carries its +0x74 point to the owner's +0x24
  * hook and reaction 0/0x53 fires there. Once the +0xc idle byte clears, the +0x6c think timer is
  * re-armed between the actor's +0x224 and +0x228, sub-state 2 is requested and the action ends. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
@@ -15,7 +14,6 @@ typedef struct { u16 id; u8 kind; u8 cmd; struct Nib flag; u8 pos[9]; } Cmd14;
 typedef struct { Vec3 pos; int nRadius; } Sphere;
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
-
 
 #define PACK(cmd, dead, src, at)                                              \
     (dead) = (src);                                                           \

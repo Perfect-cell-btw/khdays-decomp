@@ -8,7 +8,7 @@
  * facing bit (+0x50 bit 0) and fires reaction 0x11a at the state's +8 anchor, modes 2/3 for
  * flag-0x22 hits and 0/1 otherwise, except for kind-0x80 hits carrying both flag 8 and flag
  * 0x80. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x; int y; int z; };
 

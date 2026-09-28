@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov199_ResolveHitReaction (020d4078): const struct ReactionModes data_ov199_020d6114; */
 const u8 data_ov199_020d6114[8] = {

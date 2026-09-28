@@ -5,7 +5,7 @@
  * beyond 5 move 0x10, and the node ends; otherwise the first step (+0x98 == 0) plays pose 0x13
  * sweeping 0x550-0xee0 and restarts, and the second plays pose 0x14 sweeping 0x330-0x550, resets the
  * step and moves on to 020d06b0 (+0x420 = 5 both times). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov259_FaceTargetGap(int *node);

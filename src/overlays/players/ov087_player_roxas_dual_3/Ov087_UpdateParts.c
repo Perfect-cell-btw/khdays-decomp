@@ -3,8 +3,7 @@
  * the handler table; kind 0 is skipped. A kind-2 part whose +4 word is zero arms the actor's
  * +0x47a/+0x47b pair (3, and 1 or 0 after bit 0x200 of the part's +0x138 target) when 02030788
  * reports idle and the actor's flag 0x10000 is clear. */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern int Session_GetLocalPlayerIndex(void);
 extern void (*data_ov087_020b9b28[])(char *pGroup, char *pPart, int nArg);

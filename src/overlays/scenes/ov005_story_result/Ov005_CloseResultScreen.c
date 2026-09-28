@@ -1,7 +1,7 @@
 /* Closes the result screen: commits the mission results and frees its text, sprites, font,
  * surfaces, archives and row buffers, then resets the 2D engines. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Ov000ResourceTracker {char opaque[76];} Ov000ResourceTracker;
 typedef struct Ov005SpriteManager {char opaque[0x4a80];} Ov005SpriteManager;
 typedef struct FontInfo {char opaque[12];} FontInfo;

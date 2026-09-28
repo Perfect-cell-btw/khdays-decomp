@@ -1,7 +1,7 @@
 /* Spawns the effect (once at a time) just behind the origin along a direction, at the actor's
  * height, scaled up and oriented along the direction. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

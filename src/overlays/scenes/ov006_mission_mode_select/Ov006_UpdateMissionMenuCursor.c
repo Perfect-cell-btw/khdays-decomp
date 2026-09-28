@@ -1,7 +1,7 @@
 /* Updates the Mission Menu cursor from latched and held left/right input, including delayed
  * two-frame auto-repeat and movement sound. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad_00[0x38];

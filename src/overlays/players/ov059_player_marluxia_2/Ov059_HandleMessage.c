@@ -11,7 +11,7 @@
  * `kind = 0; if (flag) kind = 1;` (mov #0 / movne #1 after the ldrh -- `!= 0` gives
  * movne/moveq and the angle arithmetic sinks below the argument moves); `at` declared before
  * `v` (first declared local = highest stack address). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void SceneNode_Enable(void *node);                                              /* SceneNode_Enable */

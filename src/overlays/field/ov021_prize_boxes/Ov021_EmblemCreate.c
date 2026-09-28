@@ -4,8 +4,7 @@
  * a timer of 300 seconds (+0x2b8 = 0x12c000), bucket, the step function (+0xc =
  * Ov021_EmblemStep 020809e0), the GameState field / bit (+0x14 / +0x16) and +0x17 = 0xff --
  * and registers it (ov002 02076480). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

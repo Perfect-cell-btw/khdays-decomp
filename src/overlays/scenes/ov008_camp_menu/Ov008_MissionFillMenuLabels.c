@@ -6,8 +6,7 @@
  * exactly: rows[4] fill 0x104..0x403, aRowStates[4] fill 0x404..0x413, and the selection block
  * follows at 0x414. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 text[0x60];

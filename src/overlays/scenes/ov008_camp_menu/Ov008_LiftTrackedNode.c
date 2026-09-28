@@ -8,9 +8,7 @@
  * 0x10 and the next drag cell (+0x184c, 0x28 each) activated in state 0x10
  * with the texture of the record's 1-based tag (+0x20).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GRID_PAGES 3
 #define GRID_ROWS  8
@@ -67,19 +65,19 @@ typedef struct Ov008MenuContext {
 } Ov008MenuContext;
 
 extern void  Ov008_ClearTrackedGridCells(Ov008MenuContext *pCtx);                /* Ov008_ClearTrackedGridCells */
-extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);                 /* AllocDefault */
-extern void  MI_CpuFill8(void *pDst, int nValue, u32 nSize);
+extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int nSize);                 /* AllocDefault */
+extern void  MI_CpuFill8(void *pDst, int nValue, unsigned int nSize);
 extern void  NNS_FndAppendListObject(void *pList, void *pObject);
-extern Ov008TextureEntry *Ov008_FindEntryBy1BasedTag(Ov008MenuContext *pCtx, u32 nTag); /* Ov008_FindEntryBy1BasedTag */
+extern Ov008TextureEntry *Ov008_FindEntryBy1BasedTag(Ov008MenuContext *pCtx, unsigned int nTag); /* Ov008_FindEntryBy1BasedTag */
 extern void  Ov008_GetTextureParams(int *pTexture, int *pParams);           /* Ov008_GetTextureParams */
 
 void Ov008_LiftTrackedNode(Ov008MenuContext *pCtx, Ov008TrackedNode *pNode)
 {
-    u32 nPage;
+    unsigned int nPage;
     int nRow;
     int nCol;
-    u32 nGridCol;
-    u32 nGridRow;
+    unsigned int nGridCol;
+    unsigned int nGridRow;
     Ov008LiftedCell *pCell;
     int nLifted;
 

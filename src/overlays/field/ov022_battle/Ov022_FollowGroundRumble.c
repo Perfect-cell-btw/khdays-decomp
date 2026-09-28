@@ -11,10 +11,7 @@
  * Either way the rumble is told the answer, on with a fixed strength or off.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef short s16;
+#include "nitro/types.h"
 
 #define FLAT_MIN 0xfc0
 #define RUMBLE_STRENGTH 0x333

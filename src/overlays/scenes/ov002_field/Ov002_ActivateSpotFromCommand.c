@@ -4,11 +4,7 @@
  * The third router payload is intentionally unused. ARM, 444 bytes.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov002SpotActionOwner Ov002SpotActionOwner;
 typedef struct Ov022SeatEntry {

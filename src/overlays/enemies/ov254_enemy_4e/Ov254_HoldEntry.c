@@ -1,8 +1,7 @@
 /* Move entry: the actor's +0x38c latch is set, bit 7 of its +0x60 high byte clears and bit 0 is
  * set, the +0x388 shape is armed, pose 0 plays, the +0xc counter, the +0x20 flag and the four
  * +0x10 slots clear and the node moves to 020d26e4. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 typedef struct { unsigned f : 8; } B8;
 

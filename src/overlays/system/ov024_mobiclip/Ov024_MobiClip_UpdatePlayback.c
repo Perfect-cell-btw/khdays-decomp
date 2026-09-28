@@ -6,8 +6,7 @@
  * closes both streams, tears the video layers down and hands back the state
  * that follows.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define REG_KEYINPUT   (*(volatile u16 *)0x04000130)
 #define KEYS_EXTRA     (*(volatile u16 *)0x027fffa8)

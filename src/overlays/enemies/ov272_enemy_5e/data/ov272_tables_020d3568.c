@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by refresh sub-node #0's local transform, then publish it. (020cfc04): struct blk4 data_ov272_020d3568; */
 const int data_ov272_020d3568[4] = {

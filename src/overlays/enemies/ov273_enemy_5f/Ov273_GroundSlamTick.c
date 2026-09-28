@@ -7,8 +7,7 @@
  * rider's reaction 0 mode 0x4f fires there. The tick ends once the +0x388 part's rig is idle or
  * the rider's +0x1c4 flags have bit 1 or 3 set; in the latter case the part's animation 0 is
  * advanced by one frame step. Ending requests pose 0. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

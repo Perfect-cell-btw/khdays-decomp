@@ -8,8 +8,7 @@
  *   data_ov008_0209018c: Ov008_Menu_ApplyFlagPresets
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 int data_ov008_0209018c[28] = {
     7, 3, 8, 1, 9, 1, 10, 1,

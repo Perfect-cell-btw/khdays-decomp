@@ -20,8 +20,7 @@
  * declaration placed after the tile: either alone leaves it one register away
  * from the ROM's choice, and only the two together land on it.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u8 bFirst;

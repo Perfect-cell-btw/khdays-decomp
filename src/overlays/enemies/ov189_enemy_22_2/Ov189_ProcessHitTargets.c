@@ -2,9 +2,7 @@
  * computes and scales a hit direction, publishes the impact position and emits the mode-specific
  * reaction effect. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;

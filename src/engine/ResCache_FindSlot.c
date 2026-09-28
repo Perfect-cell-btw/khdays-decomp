@@ -3,7 +3,7 @@
  * the entries' ids (bit 31 set too), any other key is a name compared (strcmp) with the named
  * entries. Returns the entry, or else the last unused entry seen (0 when the table is full); the
  * caller takes a reference by bumping refCount. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct ResCacheEntry {
     u16 refCount;       /* 0x00: 0 = unused */

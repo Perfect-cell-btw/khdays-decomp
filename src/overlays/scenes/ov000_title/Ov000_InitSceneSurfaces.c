@@ -12,8 +12,7 @@
  * rather than forking a rival name.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u8 unknown_00[0x18];

@@ -32,9 +32,7 @@
  * branch is written first; the tier's byte store is a second test after
  * the callback if / else.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define FLAG_TEXT_SLOT_BASE 0x3bc9
 #define FIELD_MISSION_STATUS 0x28e4

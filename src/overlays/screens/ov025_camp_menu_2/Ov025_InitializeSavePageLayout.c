@@ -1,9 +1,7 @@
 /* Builds the save page layout: loads the background characters (keeping a backup) and palette, the
  * layout resource, and installs the touch trackers of the list and grid. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;
 typedef struct Ov008PaletteBlock { u8 pad0000[0x08]; u32 size; void *data; } Ov008PaletteBlock;

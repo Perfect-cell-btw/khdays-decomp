@@ -2,8 +2,7 @@
  * guard sphere (its +0x530 model's +0x14 point, radius 8.0) is tested twice against kind-6 targets
  * (020ce0a8); each sweep that has hit anything so far plays sound 0/0x51 at the +8 point, and the
  * +0x85 hit mask keeps only the targets that were hit. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 center; int nRadius; } Sphere;
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;

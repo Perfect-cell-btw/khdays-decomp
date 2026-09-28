@@ -15,8 +15,7 @@
  * so 0x79 lands it past both, in the fully-lit steady state.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

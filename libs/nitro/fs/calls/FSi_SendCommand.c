@@ -1,20 +1,8 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef unsigned short vu16;
-typedef unsigned int vu32;
-typedef unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
 
 /* NitroSDK FS library (file system / archives / overlays), as linked into the main binary.
@@ -379,7 +367,7 @@ extern void OS_WakeupThread(OSThreadQueue *queue);
 #define BIT_MASK(n) ((1 << (n)) - 1)
 #define ALIGN_MASK(a)   ((a) - 1)
 #define ALIGN_BYTE(n, a)    (((u32)(n) + ALIGN_MASK(a)) & ~ALIGN_MASK(a))
-static inline u8 MI_ReadByte(const void *address) { return *(const vu8 *)address; }
+static inline u8 MI_ReadByte(const void *address) { return *(const u8 *)address; }
 typedef int MIProcessor;
 #define MI_PROCESSOR_ARM9 0
 #define MI_PROCESSOR_ARM7 1

@@ -5,10 +5,7 @@
  * info): rotations 0/7 step right, 1/2 down, 3/4 left, 5/6 up. With `shadow`, the string is drawn
  * one pixel down-right in the shadow area first; then it is drawn in place. Both passes go
  * through func_020145c0 with the glyph callback TextCanvas_ResolveColor. */
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef int BOOL;
+#include "nitro/types.h"
 
 typedef struct { u8 cellWidth, cellHeight; u16 cellSize; s8 baselinePos; u8 maxCharWidth, bpp, flags; } FontGlyph;
 typedef struct { u8 pad00[8]; FontGlyph *pGlyph; } FontInfo;

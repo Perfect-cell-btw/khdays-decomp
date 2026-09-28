@@ -11,7 +11,7 @@
  * materialised with the lsl#24/lsr#24 zero-extend pair, i.e. (unsigned char)id.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int  ScriptVm_ReadOperandInt(int st, u16 *cmd);   /* ScriptVm_ReadOperandInt */
 extern void func_02033770(int id, int arg);

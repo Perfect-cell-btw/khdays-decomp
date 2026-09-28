@@ -1,7 +1,7 @@
 /* Ov023_ActorFlushSounds -- Ov023_ActorFlushSounds: fire the actor's two queued sound requests
  * (+0x498, 0x10 bytes each): kind 1 plays the pair (02033b24), kind 2 forwards the three words
  * (02033bb4); each request's kind is then cleared. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov023SoundRequest {
     int  nA;                  /* 0x00 */

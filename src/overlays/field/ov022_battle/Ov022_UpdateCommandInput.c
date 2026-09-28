@@ -11,9 +11,7 @@
  * Both 64-bit flag words are read here: the one at 0x00 and the one at 0x464.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Equip {
     u8 pad00[0x17];

@@ -1,7 +1,7 @@
 /* Locks the camp-menu options the player has not unlocked yet (by story flags, level and linked
  * objects) and draws the category caption for the current progress. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Ov008MenuRenderer {
     u8 field00[4];

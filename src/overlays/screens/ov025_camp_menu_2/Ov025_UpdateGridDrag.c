@@ -6,8 +6,7 @@
  * refused).  Either way mode 2 is entered, menu button 5 refreshed and the drag
  * flag (+0x28) cleared.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct UiLayoutPos {
     int nX;

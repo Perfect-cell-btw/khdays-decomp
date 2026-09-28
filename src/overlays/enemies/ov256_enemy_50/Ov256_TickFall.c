@@ -2,7 +2,7 @@
  * heading (020cd054); once the partner holds no queued move and it has landed (+0x17a bit 0) +0x4c
  * clears, pose 0x1b plays, it is knocked back at the +0xc point (mode 9), the +0x450 part takes motion
  * 0xc and the node moves on to 020d0144. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Flag17a { u8 b0 : 1; };
 

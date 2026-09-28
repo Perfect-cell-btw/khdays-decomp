@@ -4,8 +4,7 @@
  * 0x3000 from two units ahead of the origin and 0x333 above it; 0x30 shoots at 0x9000 from the
  * origin itself; 0x31 shoots at 0xc000 from the anchor sample (kind 2, always grounded). The
  * common post-update runs afterwards. */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void VEC_MultAdd(int scale, const Vec3 *a, const Vec3 *b, Vec3 *out);

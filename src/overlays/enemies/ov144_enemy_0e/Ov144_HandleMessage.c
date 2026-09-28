@@ -10,7 +10,7 @@
  * MATCH NOTE: the sub-state set {4, 6, 7} is tested as the ROM does, a bit mask over the
  * sub-state minus 4 in unsigned-byte arithmetic; `||` chains and switches lower to compare
  * chains, range checks or jump tables instead. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int x, y, z; } Vec3;
 struct Flags5c { unsigned int b0 : 1, bShow : 1; };

@@ -4,9 +4,7 @@
  * through the actor's +0x24 hook and the latch is raised. Once the +8 item's animation is free
  * sub-state 2 is requested and the node slot released. Codegen: the position is packed through
  * Fx32 wrapper copies (ov269_3930 idiom) -- the three unread word stores are the ROM's. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

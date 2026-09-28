@@ -19,10 +19,7 @@
  *
  * Finally the local rows are written back to the shared context and the next state
  * function is returned (0 to stay, or the menu-state entry point after a confirm). */
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* One mission-menu row. Eight bytes, so the ROM indexes it with `lsl #3`.
  * The same layout backs the twin loop in ov008; the offsets are what the
@@ -81,9 +78,9 @@ extern int Ov006_UpdateMissionMemberSelectionInput(MissionMenuRow *rows, int *re
 extern int Ov006_MissionScene_IsFlagSet(void);
 extern int Ov006_MissionScene_GetState(void);
 extern int Ov006_SetTitleWord(int slot, int flag);  /* Ov006_SetTitleWord */
-extern int Ov006_RequestMenuState(u32 state, int animate, int completion);  /* Ov006_RequestMenuState */
+extern int Ov006_RequestMenuState(unsigned int state, int animate, int completion);  /* Ov006_RequestMenuState */
 extern void Ov006_SetMissionCursorSelection(int selection);
-extern int Ov006_SetTitleMode(u32 mode);
+extern int Ov006_SetTitleMode(unsigned int mode);
 extern int Ov006_SetMissionRowSlotValue(int slot, u16 value, int visible);
 extern int Ov006_MissionSetModelPose(int pose);  /* Ov002_BeginTextCrawl */
 extern void Ov006_MissionSetSlotVisible(int visible);  /* Ov006_MissionSetSlotVisible */
@@ -106,10 +103,10 @@ void *Ov006_UpdateMissionMemberMenuScreen(void)
     MissionMenuRow probeA;
     void *result;
     int canConfirm;
-    u32 cursorEntry;
-    u32 pollKeys;
-    u32 messageId;
-    u32 allSame;
+    unsigned int cursorEntry;
+    unsigned int pollKeys;
+    unsigned int messageId;
+    unsigned int allSame;
     int slotVisible;
     u8 i;
     u8 j;
@@ -126,7 +123,7 @@ void *Ov006_UpdateMissionMemberMenuScreen(void)
 
     result = 0;
     cursorEntry = Ov006_MissionGetCursorEntry();
-    pollKeys = (u32)Ov006_CountPlayers();
+    pollKeys = (unsigned int)Ov006_CountPlayers();
     allSame = 0;
     slotVisible = 0;
     resolvedSelection = 0;
@@ -171,7 +168,7 @@ void *Ov006_UpdateMissionMemberMenuScreen(void)
             }
             i++;
         } while (i < 4);
-        if (count != (u32)Ov006_CountPlayers()) {
+        if (count != (unsigned int)Ov006_CountPlayers()) {
             allSame = 0;
         } else {
             allSame = 1;
@@ -302,7 +299,7 @@ have_unique:
                     data_ov006_02056660->messageId = 0x34;
                 }
             }
-            messageId = (u32)(data_ov006_02056660->messageId & 0xff);
+            messageId = (unsigned int)(data_ov006_02056660->messageId & 0xff);
         }
 
         record = Ov006_GetVarRecordByIndex(data_ov006_02056660->resource, (int)messageId);

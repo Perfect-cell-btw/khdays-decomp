@@ -2,7 +2,7 @@
  * and zero translation, and a camera on the z axis looking at the origin; then flushes the G3D
  * state. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct VecFx32 {int x,y,z;} VecFx32;
 typedef struct MtxFx33 {int m[9];} MtxFx33;
 typedef struct MtxFx43 {int m[12];} MtxFx43;

@@ -1,9 +1,7 @@
 /* Decodes one variable-size resource transform record into scale, rotation, and translation fields,
  * applying identity defaults for omitted components. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;

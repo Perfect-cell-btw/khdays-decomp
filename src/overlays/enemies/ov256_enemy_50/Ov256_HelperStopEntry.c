@@ -1,6 +1,6 @@
 /* Stop entry of an ov256 helper: bit 7 of the owner's +0x60 high byte is set and bit 0 dropped, the
  * +0x388 shape hides, the +0x10 velocity rests and the node ends. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

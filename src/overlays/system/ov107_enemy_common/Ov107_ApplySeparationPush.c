@@ -9,7 +9,7 @@
    accumulator (field_16c), each side's counter (field_178) is bumped, and
    each side's flag (field_17a bit 4) is marked. */
 
-typedef int fx32;
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x;

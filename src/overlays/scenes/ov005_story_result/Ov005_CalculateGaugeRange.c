@@ -9,7 +9,7 @@
  * lower would silently discard the chosen lower bound. No wide-zero idiom is
  * needed. ARM: 292 bytes, 10 relocations, byte-exact.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov005ThresholdRecord {
     char header[12];

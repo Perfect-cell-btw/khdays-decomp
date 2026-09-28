@@ -1,6 +1,6 @@
 /* Pick the landing spot of the ov252 actor: of the five arena points (data_ov252_020d43ec) the one
  * nearest to the +0x4e4 target's +0x190 position. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 v[5]; } Vec3x5;
 

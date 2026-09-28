@@ -4,9 +4,7 @@
  * otherwise, once the +0x30 flag byte clears, the next note (+0x18) goes out, the actor plays
  * pose 8, the +0x14 wave counter, the one-shot and the timer reset and the node moves to the
  * summon tick 020d061c. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed char s8;
+#include "nitro/types.h"
 struct Level { int n : 4; };
 
 struct Ov244Actor {

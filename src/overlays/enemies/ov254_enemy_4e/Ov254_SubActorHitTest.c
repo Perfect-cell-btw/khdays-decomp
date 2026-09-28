@@ -3,8 +3,7 @@
  * clear in the +0x2c mask is pushed 1.0 horizontally away from the sub-actor, lifted by 1.0 (kind 2,
  * on behalf of the owner); on acceptance the owner spawns effect 0 at the entity's +0x74 point (or
  * at the sphere centre), reaction 0x16d mode 8 fires at the +8 point and the bit is set. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov107_CollectSegmentOverlaps(int owner, void *seg, int *hits);

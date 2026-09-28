@@ -8,8 +8,7 @@
  *   data_ov025_020b4a64: Ov025_InitCampaignMenuContext
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u8 data_ov025_020b4a64[20] = {
     85, 73, 47, 99, 109, 47, 99, 109, 111, 95, 38, 46, 112, 50, 0, 0,

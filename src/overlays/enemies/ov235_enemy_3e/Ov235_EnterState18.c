@@ -2,8 +2,7 @@
  * data_ov235_020d24d0 table, bit 6 of the owner's +0x60 high byte is raised, animation 0x18 plays,
  * the +0x44 and +0x54 timers and the +0x65 flag clear and the tick hands over to
  * Ov235_GustTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { u16 lo; u16 hi; } Cmd4;
 
 extern const struct { Cmd4 n[4]; } data_ov235_020d24d0;

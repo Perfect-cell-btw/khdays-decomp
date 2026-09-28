@@ -11,9 +11,7 @@
  * anything to do.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* one of the 0x150-byte parts the slot owns */
 struct SlotPart {

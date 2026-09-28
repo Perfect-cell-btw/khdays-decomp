@@ -16,9 +16,7 @@
  * of the two secondary binds (`lsl/asr` per call), which a `(short)` cast at the call sites CSEs
  * into one truncation.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */

@@ -13,9 +13,7 @@
  * three release loops end on the inclusive bounds; the loops keep their
  * constant arguments in registers.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROW_WIDGET_BASE  400
 #define MARK_WIDGET_BASE 500

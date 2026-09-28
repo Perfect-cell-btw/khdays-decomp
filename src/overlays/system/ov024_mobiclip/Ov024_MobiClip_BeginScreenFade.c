@@ -4,7 +4,7 @@
  * counter to -1 so the stepper's first tick lands on 0, and hands each stream
  * that is still open over to the fade-out path.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct MobiClipPlayer {
     char pad0000[0x8bd8];

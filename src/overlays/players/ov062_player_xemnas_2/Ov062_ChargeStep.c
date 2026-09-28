@@ -7,8 +7,7 @@
  * and the block's +4 latch set; the attack burst ticks; a quiet emitter at +0x22f8 hands over
  * to state 0x23, otherwise the actor's hook runs and becoming active either hands over to 0x23
  * (quiet emitter) or winds the animation and timer to 0x9000. */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 

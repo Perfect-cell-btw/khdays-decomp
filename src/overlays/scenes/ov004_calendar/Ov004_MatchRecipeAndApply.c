@@ -25,9 +25,7 @@
  *    materialisation exactly as retail schedules it.
  *  - `item` must be declared after `j2`.
  */
-typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef short              s16;
+#include "nitro/types.h"
 
 typedef struct Ov000RecipeIngredient {
     int id;

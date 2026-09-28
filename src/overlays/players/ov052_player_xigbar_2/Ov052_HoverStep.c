@@ -8,7 +8,7 @@
  * 1 of +0x18 goes to 0x23. Without bit 2 of +0x24 the actor is marked unrestricted (bit 46) with
  * a cleared +0x58. */
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */
 extern void SceneNode_Enable(void *node);

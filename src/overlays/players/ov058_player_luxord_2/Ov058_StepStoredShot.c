@@ -6,7 +6,7 @@
  * at the contact fraction, else it just moves. Every 0x6000 of accumulated time (+0x10) it fires
  * (Ov039_FireStoredShot); the shot level (+4) goes up and, once it reaches the count at +0,
  * the shot fires charged and the record is closed. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov022_ValidateTargetRef(char *self);

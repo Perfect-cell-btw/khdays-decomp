@@ -1,23 +1,10 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
-
 
 #define NNS_GFD_TEXKEY_ADDR_SHIFT 3
 #define FX32_SHIFT 12
@@ -25,7 +12,6 @@ typedef volatile unsigned char vu8;
 #define REG_G3_TEXIMAGE_PARAM_TEXFMT_SHIFT 26
 #define REG_G3_TEXIMAGE_PARAM_TEXFMT_MASK 0x1c000000
 
-typedef s32 fx32;
 typedef int (*MIDeviceReadFunction)(void * userdata, void * buffer, u32 offset, u32 length);
 typedef int (*MIDeviceWriteFunction)(void * userdata, const void * buffer, u32 offset, u32 length);
 typedef enum {
@@ -197,7 +183,6 @@ void bindMdlTex_Internal_ (NNSG3dResMat * pMat, NNSG3dResDictTexToMatIdxData * p
     u8 * base = (u8 *)pMat + pBindData->offset;
     u32 vramOffset;
     u32 j;
-
 
     if ((pTexData->texImageParam & REG_G3_TEXIMAGE_PARAM_TEXFMT_MASK) !=
         (GX_TEXFMT_COMP4x4 << REG_G3_TEXIMAGE_PARAM_TEXFMT_SHIFT)) {

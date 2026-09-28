@@ -21,8 +21,7 @@
  * scene label is not. The offsets and logic below are this function's -- the code is
  * byte-identical to the rep.
  */
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
+#include "nitro/types.h"
 
 struct S5 { int w[5]; };
 

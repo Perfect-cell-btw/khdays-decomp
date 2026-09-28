@@ -14,9 +14,7 @@
  * static inline helper (two copies) taking the packets through a local
  * pointer; the u8 loop counter walks a byte index.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GATE_LOBBY   0xd
 #define SLOT_COUNT   4

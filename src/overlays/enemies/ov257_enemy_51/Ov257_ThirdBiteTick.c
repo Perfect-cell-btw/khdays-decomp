@@ -8,8 +8,7 @@
  * the owner's +0x24 hook, their bit is set and reaction +0x408 mode 9 fires there. Once the +0xc
  * idle byte clears, the +0x4c delay is drawn from the owner's [+0x224, +0x228] range and sub-state
  * 2 is requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

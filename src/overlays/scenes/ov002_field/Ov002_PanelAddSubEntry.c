@@ -2,8 +2,7 @@
  * record, copy the object pointer out of the slot the key resolves to, and
  * splice the record into the list in ascending key order. Fails when the key
  * has no slot, the slot index is out of range or every record is taken. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 nKey;

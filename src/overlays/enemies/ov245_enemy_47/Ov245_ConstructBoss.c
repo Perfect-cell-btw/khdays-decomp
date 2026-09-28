@@ -11,7 +11,7 @@
  * +0x43c riders (020d54f0), the four +0x42c..+0x438 helpers and loads sound 0x15a. */
 typedef struct { int x, y, z; } Vec3;
 typedef void (*Callback)(void);
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct Flags5c { int bit0 : 1; };
 struct Ov245Track { char pad[0x88]; int track; };
 struct Ov245Query { Vec3 pos; Vec3 a; Vec3 b; Vec3 c; int w0; int w1; int w2; };

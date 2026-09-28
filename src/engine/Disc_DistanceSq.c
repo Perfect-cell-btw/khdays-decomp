@@ -4,10 +4,8 @@
  * otherwise -- and always for a bare ring -- the nearest point is on the rim: the radial direction is
  * scaled to the radius (FX_Sqrt, the fx64c divider, FX_Mul32x64c) and the squared distance to that
  * rim point is returned. A point on the ring's axis is radius^2 + height^2 away. */
-typedef int fx32;
-typedef long long s64;
-typedef s64 fx64;
-typedef s64 fx64c;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { fx32 x, y, z; } VecFx32;
 

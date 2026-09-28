@@ -16,10 +16,7 @@
  * counters of the first pass (page in j, column in i) -- the registers follow
  * the variables; the category test is written !(a != 4 && a != 5).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define GRID_PAGES  3
 #define GRID_ROWS   8

@@ -3,8 +3,7 @@
  * pointer per record allocated, and each record is marked locked (+0x20 = 1) when its required
  * level (+0x10) is above the player's (GameState field 0x44e, 3 bits) or its item (+0xc) fails
  * 0208a55c; the count goes to *pCount and the array is returned. */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008ItemDef {
     char pad_00[0x14];

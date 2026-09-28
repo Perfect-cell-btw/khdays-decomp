@@ -16,8 +16,7 @@
  * it is a codegen tool, and the honest layout is the one described above and modelled in Ghidra.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad_0000[0x4c];

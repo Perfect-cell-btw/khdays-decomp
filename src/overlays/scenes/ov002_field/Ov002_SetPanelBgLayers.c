@@ -16,7 +16,7 @@
  * BG2 and BG3 as [r1,#2] and [r1,#4].
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     char pad0000[0x5c];

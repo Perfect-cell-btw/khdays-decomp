@@ -8,7 +8,7 @@
  * else 0x300), the +0x2e7c/+0x2e80 pair cleared and, for 0x22 with a target, the node turned
  * to face it unless locked. 0x23 tells 0x31 and hands over to the fire attempt; 0x24 sets the
  * +0x64 halfword to 0x1800, tells 0x30 (+0x2e78 set) or 0x32 and hands over to the shot. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 struct ActorBits {

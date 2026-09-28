@@ -11,8 +11,7 @@
  * the twelve effect pairs of +0x400 (nine from the effect resource, three from the
  * data_ov257_020d3094 poses) and loads the voice bank (+0x408: 0x17f in the alternate language,
  * else 0x17a). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[12]; } IdTable;

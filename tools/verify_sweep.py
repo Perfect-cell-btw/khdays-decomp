@@ -13,6 +13,8 @@ LIC = os.path.join(ROOT, "tools", "mwccarm", "license.dat")
 FLAGS = ["-O4,p", "-proc", "arm946e", "-interworking", "-lang", "c99",
          "-enum", "int", "-char", "signed", "-inline", "on,noauto",
          "-Cpp_exceptions", "off", "-gccext,on"]
+# Shared headers (include/nitro/types.h, ...): the game and library sources include them.
+FLAGS += ["-i", os.path.join(ROOT, "include")]
 OV_BASE = {"003": 0x0204cac0, "010": 0x0204cac0, "013": 0x0207fa40,
            "019": 0x0207fa40, "029": 0x020b2ee0, "302": 0x020cbf20,
            "294": 0x020d1980, "295": 0x020d37a0, "296": 0x020d55c0,

@@ -1,8 +1,5 @@
 /* Ov002_FlushPendingObjectCommands: clear queued commands only after submission. */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct VecFx32 {int x,y,z;} VecFx32;
 typedef struct Ov002PartRetireCmd {u8 nKind,nEntryIndex,nGroupIndex;} Ov002PartRetireCmd;
 typedef struct Ov002SessionSlotCmd {u8 nKind,nSlot;} Ov002SessionSlotCmd;

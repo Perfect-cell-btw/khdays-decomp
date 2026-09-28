@@ -9,9 +9,7 @@
  * The counter's contribution is written `(v << 24) >> 8`, not `(u8)v << 16`. The two are
  * the same value, but mwcc compiles the cast to `and #0xff` plus a shift, while the ROM
  * truncates with the shift pair. Every other line of the function is identical either way. */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct Ov011Scene {
     u8  pad_00000[0x10948];

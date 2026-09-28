@@ -9,8 +9,7 @@
  * clears the turn step is zeroed, the velocity kept at +0x28 and d31b0 takes over.
  *
  * Same shape as ov122_020d12f4: Fx32-wrapped coordinates, `long` counters, two point cursors. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 typedef struct { int value; } Fx32;

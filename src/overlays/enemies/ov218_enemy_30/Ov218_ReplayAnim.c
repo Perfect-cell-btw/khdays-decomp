@@ -1,6 +1,6 @@
 /* Replay the ov218 actor's animation: layer 0 of its +0x384 rig restarts on the +0x310 kind with the
  * +0x311 loop bit, layer 2 on the +0x398 pose, and the rig pose resets. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { u8 b0 : 1; } Bit0;
 
 extern void SetSubitemState(int rig, int channel, int a, int b);

@@ -12,8 +12,7 @@
  * ROM does.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void BindAnimTrack(void *a, u16 index, void *table, int flag);
 

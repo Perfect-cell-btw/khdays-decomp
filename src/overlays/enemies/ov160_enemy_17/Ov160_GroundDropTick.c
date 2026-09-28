@@ -9,9 +9,7 @@
  * owner placed at (0.5, 5.0, 0) and the overlay's 14-byte message (data_ov160_020cf7b4) with
  * the object's +0xa8 point lifted 1.0 goes to the owner's +0x24 hook; +0x34 is then set. The
  * state ends once the +0xc sub-object goes idle (+0xad). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

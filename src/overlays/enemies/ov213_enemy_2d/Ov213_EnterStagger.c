@@ -6,7 +6,7 @@
  *
  * Coordinates are held in a one-value wrapper type (Fx32): copying a wrapped value is a struct
  * copy, which mwcc keeps, and that is the ROM's unread stack copy of the position. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 struct Msg { unsigned short h[7]; };

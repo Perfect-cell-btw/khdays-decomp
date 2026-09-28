@@ -8,7 +8,7 @@
  * stamina to 1 and request sub-state 9; spent stamina is pinned at 1; a hit count at the
  * actor's +0x398 threshold with a valid +0x95 mode requests sub-state 8 and resets the count;
  * a 0x8000 hit requests sub-state 6. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 
 struct ActorHitEvent {

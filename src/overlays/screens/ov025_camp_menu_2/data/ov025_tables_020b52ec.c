@@ -9,8 +9,7 @@
  *   data_ov025_020b52f8: Ov025_DrawStatusField
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u8 data_ov025_020b52ec[12] = {
     37, 0, 100, 0, 47, 0, 37, 0, 100, 0, 0, 0,

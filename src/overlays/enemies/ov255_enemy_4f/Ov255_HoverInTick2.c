@@ -2,8 +2,7 @@
  * point is resolved (Ov255_SteerToTarget) into the +0x10 step. Once the +0xc idle byte clears, the
  * owner's +0x24 hook receives note 7 of data_ov255_020d2b20, animation 0x19 plays, +0x44 and +0x65
  * clear and the tick hands over to Ov255_RingTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo; u16 hi; } Cmd4;
 

@@ -17,7 +17,7 @@
  * materialised pointer, matching the original.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern void Camera_CommitMatrices(void *xform);
 extern void Obj_PrepAltTransform(int);

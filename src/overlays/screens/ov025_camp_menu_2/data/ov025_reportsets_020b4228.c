@@ -7,7 +7,7 @@
  * Readers: 0209eb28, 0209ebb4.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov025ReportsSet {
     u8   nBgMember;           /* 0x00: the background archive member */

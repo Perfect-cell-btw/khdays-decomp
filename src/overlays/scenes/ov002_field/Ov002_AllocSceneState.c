@@ -17,7 +17,7 @@
  * 0x41<<2 materialisation the original uses.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int  data_ov002_0207fa10;
 extern int  NNSi_FndAllocFromDefaultExpHeap(int size);

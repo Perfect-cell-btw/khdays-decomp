@@ -1,7 +1,7 @@
 /* Hop entry of the ov283 actor: +0x74 clears, the +0x60 timer starts at 5.98, bit 6 of the +0x60 high
  * byte is set, pose 2 plays, the +0x1c drift points along the +0x38 heading at 0.875, +0x58 is 0.3125
  * and the node moves on to 020cd9e0. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

@@ -8,8 +8,7 @@
  * relocation), attaches a second descriptor (data_ov025_020b4e88) to the cell-list context via
  * Ov025_LoadBlockDispatchThreeThenFree, and registers cells for tags {0,1}. Resource-cell / character-block
  * layout matches Ov008_SetupMenuBgCells; Res_LoadSpriteSet takes five args. */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;
 typedef struct Ov008PaletteBlock   { u8 pad_0000[0x08]; u32 size; void *data; } Ov008PaletteBlock;

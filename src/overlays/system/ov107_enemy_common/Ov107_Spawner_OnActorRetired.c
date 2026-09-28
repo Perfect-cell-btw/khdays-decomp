@@ -1,10 +1,7 @@
 /* Releases the spawner slot held by an actor: finds the slot whose actor is
  * this one, notifies ov002 of the retirement, decrements the per-id live
  * count, clears the slot's two flag bits and unlinks actor and slot. */
-typedef unsigned char u8;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct Actor Actor;
 typedef struct Ov107Object Ov107Object;

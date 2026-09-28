@@ -5,7 +5,7 @@
  * handle (data_ov023_0208a000 = -1) and the context pointer (data_ov023_0208a780 = 0) before
  * 0208b200 runs; ov028 is unloaded again.  The overlay id is the linker-absolute
  * OVERLAY_28_ID, loaded from the pool and CSE'd into r4 across both calls. */
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef u32 FSOverlayID;
 
 typedef struct Ov023SceneContext {

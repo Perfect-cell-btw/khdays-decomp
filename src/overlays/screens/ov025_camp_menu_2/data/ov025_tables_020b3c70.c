@@ -12,8 +12,7 @@
  *   data_ov025_020b3c9c: Ov025_ShowGridPage
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov025_020b3c70[2] = {
     62, 63,

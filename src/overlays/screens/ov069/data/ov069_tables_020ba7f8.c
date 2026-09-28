@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Whether the game flag of the current level (235d0 kind 9) is set: the first entry of the (020b8704): const struct LevelFlagEntry data_ov069_020ba7f8[]; */
 const u16 data_ov069_020ba7f8[1] = {

@@ -8,9 +8,7 @@
  * list, the binds and the tags go too; the flag drops.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT 0x10
 #define ROW_INDEX_NONE (-1)

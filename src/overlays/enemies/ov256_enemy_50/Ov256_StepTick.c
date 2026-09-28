@@ -2,7 +2,7 @@
  * heading (020cd054); once the partner holds no queued move +0x54, +0x4c and the +0x69 charges clear,
  * the +0x70 turn direction is rolled (+1 or -1), pose 1 plays, the +0x450 part takes motion 0 and the
  * node moves on to 020cdc98. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);

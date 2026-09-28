@@ -2,10 +2,7 @@
  * spawns the emitters at the right moment, updates its path motion and animation, and its
  * sub-objects. */
 
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 struct TimelineActor {
     char pad000[8];

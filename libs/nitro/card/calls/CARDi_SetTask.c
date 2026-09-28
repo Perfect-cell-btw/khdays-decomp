@@ -1,6 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned long u32;
-typedef signed long s32;
+#include "nitro/types.h"
 
 struct CARDiCommon {
     void *cmd;

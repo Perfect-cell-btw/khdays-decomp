@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 int data_ov027_02083ee0[6] = {
     1, -1, 724992, 524288, 4096, 4096,

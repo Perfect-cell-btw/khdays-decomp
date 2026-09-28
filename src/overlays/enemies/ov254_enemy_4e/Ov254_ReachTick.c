@@ -6,7 +6,7 @@
  * the tip is traced through the item's world (ground ray, then a swept sphere); on contact or at
  * full reach +0x18 takes the tip, the owner is knocked back there (mode 0) and it latches.
  * Latched, for 0xdd0 more (+0x28) a sphere at +0x18 grows to 10.0 and is tested instead. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[4]; Vec3 trans; int pad[4]; } Srt;
 typedef struct { Vec3 a; Vec3 d; int len; int r; } Capsule;

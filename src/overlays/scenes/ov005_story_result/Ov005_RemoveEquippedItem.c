@@ -1,8 +1,7 @@
 /* Removes up to a quantity of an item from the equipment slots (last first) and lowers its count.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct InventoryView {
     char opaque0[0x810];
     u8 firstItemCount;

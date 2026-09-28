@@ -1,5 +1,4 @@
-typedef unsigned int u32;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct NnsFndLink {
     void *previousObject;

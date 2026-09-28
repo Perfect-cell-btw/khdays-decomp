@@ -14,7 +14,7 @@
  * of length 1.0 and radius 2.0, then two placements of scale 1.0), creates the two +0x5cc
  * trails (Ov267_New) and the +0x5d4 shadow (Ov267_New_2), and loads sound
  * 0x15e. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;

@@ -3,10 +3,7 @@
  * kept at +0x258) reads the eight 16-bit "seen" words of game field 0x3c6a, the story set those
  * of field 0x45b (GameState_GetField, 16 bits each, 0x10 apart) into +0x248; the page starts in
  * state 1 (+0xc8). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025ReportsRow {
     void *pTitle;             /* 0x00: entry 0x33 + row */

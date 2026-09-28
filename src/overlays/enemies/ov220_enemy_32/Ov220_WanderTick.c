@@ -4,7 +4,7 @@
  * +0x4c is cleared, the tick hands off to the approach state and runs it at once, and the actor
  * wants animation 1; beyond it the idle countdown may end the state, else animation 0 is wanted.
  * A wanted animation different from the +0x44 one is played. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int Ov220_DistanceToTarget(int *node);
 extern int RandNextScaled(int bound);

@@ -4,7 +4,7 @@
  * finishes: out of steps, blocked (+0x17a bit 1), after five hits or with a +0x4b4 hold the charge
  * ends (pose 0x14, effect 0x11 unless held, then 020cfe70); otherwise a step is spent and pose 0x13
  * replays (effect 0x10 unless held). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 typedef struct { u8 b0 : 1; u8 b1 : 1; } Bits;

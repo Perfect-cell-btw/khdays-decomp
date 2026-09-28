@@ -1,9 +1,6 @@
 /* Sends a placement for a shot from the muzzle with a random spread (wider when charged). */
 
-typedef unsigned short u16;
-typedef unsigned char u8;
-typedef unsigned int u32;
-typedef long long s64;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 p; short a,b,c; short scale; int f14,f18,f1c,f20,f24,f28; } Placement;
 typedef struct { int m[9]; } MtxFx33;

@@ -5,8 +5,7 @@
  * acceptance the actor spawns effect 0 at the rebound point (the entity pushed out, or the sphere's
  * surface) and the entity's bit joins the result. The hits are added to the mask; returns the new
  * hit bits. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern const Vec3 data_02042258;

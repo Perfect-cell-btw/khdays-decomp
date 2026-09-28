@@ -8,7 +8,7 @@
  * into data_02047428 with MI_Copy36B); the matching dirty bits are cleared each time.
  * PROVENANCE: byte-identical twin of ov023's Ov023_SetupNoiseDraw (Ov023_SetupNoiseDraw), same code and
  * pool layout in the ov106 event scene; the ov023 source is the analysed one. */
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

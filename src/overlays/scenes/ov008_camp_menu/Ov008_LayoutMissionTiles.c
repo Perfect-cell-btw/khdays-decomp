@@ -20,11 +20,7 @@
  * third count then spills); the badge tests are two separate ifs; the x
  * counter is an int stepped before the index.
  */
-typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef unsigned int       u32;
-typedef short              s16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define FIELD_MISSION_STATUS 0x28e4
 #define TILE_COUNT     12

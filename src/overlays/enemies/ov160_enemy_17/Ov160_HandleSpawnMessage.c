@@ -5,7 +5,7 @@
  * (kind 0x15, c0794) there; 4 builds pair 4 through Ov160_SpawnAndInitRegistryEntry from pairs 6 and 5; 5 starts pair 8 (kind 0x15,
  * blend from byte 4, weight 1.0) with the message's +5 payload.
  * The base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Ov160Pair { int pItem; int pChild; };
 
 extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *at, int a, int b);

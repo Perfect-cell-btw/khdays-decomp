@@ -13,7 +13,7 @@
  * and the occupancy loop is a for so the signed `j < count` entry test yields the ble guard.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern void GameState_SetField(int field, int a, int val);
 extern int  Session_GetSlotTable(void);

@@ -8,7 +8,7 @@
  * and the direction (ov226 3eb4). The owner is then sent mode 2 with the zero vector, flagged
  * when there is no target, and reaction 0x14c mode 7 fires at the +8 point. Otherwise, once
  * the +4 owner's +0xad byte clears, sub-state 2 is requested and the action ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int q[4]; } Quat;
 enum { SPAWN_FAN = 0, SPAWN_AIM = 1 };

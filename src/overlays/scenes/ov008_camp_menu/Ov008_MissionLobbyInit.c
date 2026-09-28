@@ -7,8 +7,7 @@
  * is put in state 0 -> state 0207a1c4; else the context is marked busy, state 1
  * is set, gate 0xd gets its handler -> state 0207a424.
  */
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 #define CONTEXT_SIZE 0x500
 #define BUFFER_SIZE  0x100

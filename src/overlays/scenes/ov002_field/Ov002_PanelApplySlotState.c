@@ -8,7 +8,7 @@
  *
  * This is the first call of the slot state push.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[2];

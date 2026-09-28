@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov003_StateRebindAnims (0204e9d8): int data_ov003_0204f724[]; */
 const u8 data_ov003_0204f724[16] = {

@@ -1,7 +1,6 @@
 /* Whether item `id` (below 0x400) is still available: its +0x810 stock count in the save
  * block minus one for every slot of the three 40-entry +0xee0 rows that already holds it. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern char *data_0204be18;
 

@@ -10,8 +10,7 @@
  * 0206a8e0, 0206a9a8, 0206aa6c, 0206ac8c, 0206ad9c.
  */
 
-typedef unsigned char u8;
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct Ov008MenuSubEntry {
     s16 nId;                  /* 0x00 */

@@ -3,7 +3,7 @@
  * are scaled to a random reach between 20.0 and 40.0, the +0x30 one stays a unit vector. +0x3c
  * becomes 2.0 or 12.0 at random, bit 0 of the +0x60 high byte is raised, +0x48 takes another
  * random angle, +0x40 clears and the tick hands over to Ov282_AiSwoopDelay. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 struct hw60 { unsigned short lo : 8, hi : 8; };

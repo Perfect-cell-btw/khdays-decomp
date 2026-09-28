@@ -5,8 +5,7 @@
  * the class's sequence (+0x28 from def +0x6e), bucket (+0x10), the step function (+0xc =
  * Ov016_HazardStep 02082444), +0x17 = 0 and the GameState field / bit (+0x14 / +0x16); finally
  * register the piece (02076480). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

@@ -6,7 +6,7 @@
  * bit 0 dropped, the +0x388 shape hides, the velocity rests, the timer restarts and the node moves on
  * to 020d16e4. A blocked path from the last point (+0x1c) or 5.0 of flight also end it (knock-back
  * mode 1, the blocked path with effect 0x14); otherwise +0x1c follows the anchor. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

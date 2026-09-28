@@ -8,8 +8,7 @@
  *   data_ov025_020b5724: Ov025_ReportDetail_DrawLines, Ov025_ReportDetail_Refresh
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u8 data_ov025_020b5724[28] = {
     63, 0, 63, 0, 63, 0, 63, 0, 63, 0, 63, 0, 63, 0, 63, 0,

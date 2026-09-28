@@ -4,10 +4,7 @@
  * mask is pushed away on the ground plane by 0x800 (lifted by 0x100) through the ov107 checker
  * (kind 2); on acceptance its +0x74 position is packed into the overlay's 14-byte template for
  * the actor's +0x24 message hook, reaction 0x132 mode 4 fires there and the kind bit is set. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef long long s64;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */

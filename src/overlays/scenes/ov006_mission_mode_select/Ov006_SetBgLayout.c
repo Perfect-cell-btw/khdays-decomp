@@ -4,7 +4,7 @@
  * sub-states 1/2/3/11/14, and the attract/logo layout for sub-states 4..7. All other states
  * (0/8/9/10/12/13 and out of range) leave the registers untouched. The last sub-BG3 base is
  * (v + 0x4f0) where v is the layout's shared base constant (0x524 vs 0x5a4). */
-typedef volatile unsigned short vu16;
+#include "nitro/types.h"
 
 void Ov006_SetBgLayout(int state) {
     vu16 *bg2 = (vu16 *)0x04000008;

@@ -1,6 +1,6 @@
 /* Ticks the sub-menu; on result 4 rebuilds the logo, on 5 starts the transition out. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

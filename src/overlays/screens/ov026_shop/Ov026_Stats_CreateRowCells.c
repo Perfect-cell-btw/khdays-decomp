@@ -2,8 +2,7 @@
 
 #pragma opt_dead_assignments off
 
-typedef signed short s16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad_0000[0x7000];

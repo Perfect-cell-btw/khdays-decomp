@@ -3,7 +3,7 @@
  * degenerate) and scaled to 0.5, offered as a kind-4 hit. On acceptance effect 1 spawns at the +0x494
  * point pushed out by the +0x4a0 radius along the direction plus that offset, and reaction 0x147 mode
  * 6 fires at the +0xc position. Returns whether the hit landed. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);

@@ -1,11 +1,7 @@
 /* Collect nearby spots for one actor and context. Placed spots dispatch a
  * replicated command; free spots begin homing toward their action owner.
  * Keep the declaration order: it preserves the target's register reuse. */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Ov002Vec3 { int x, y, z; } Ov002Vec3;
 typedef struct Ov002SpotActionOwner Ov002SpotActionOwner;
 struct Ov002SpotActionOwner {

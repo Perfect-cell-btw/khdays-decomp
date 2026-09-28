@@ -1,6 +1,6 @@
 /* Sizes the reward list's scrollbar thumb from the visible fraction and shows its segments. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Ov005SelectionState {
     u8 unknown00,activeRow,firstVisibleItem,unknown03;
     int maxFirstVisibleItem,cachedRowItemCounts[2],scrollThumbHeight;

@@ -1,5 +1,5 @@
 /* Initialize the refresh-window subsystem and register its named task. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov002RefreshWindowState {
     unsigned int uFlags;

@@ -15,7 +15,7 @@
  * 0x1c below it (heap+0x8b8c).
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*CbFn)(int);
 
 extern int  NNSi_FndGetCurrentRootHeap(void);

@@ -14,7 +14,7 @@
  * Ghidra carries the record as Ov002NamedEntry.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int strncmp(const char *a, const char *b, int n);
 

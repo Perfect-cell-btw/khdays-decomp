@@ -4,7 +4,7 @@
  * 10.0 plus a random 0..10.0 with a 40.0 rise, the +0x4c one along another random yaw at 10.0
  * plus a random 0..10.0 and flat, clears the +0x14 timer, +0x78 word and +0x7c stage and
  * moves the node to 020d528c. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 struct m4 { int w[4]; };
 struct w8 { unsigned int lo : 8, rest : 24; };

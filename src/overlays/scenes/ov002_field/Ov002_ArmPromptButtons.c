@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int LoadGlobalU16At0(void);                 /* LoadGlobalU16At0 */
 extern void InvokeSubStructAndStampByte(int nArg0, int nArg1);  /* the sound call */

@@ -5,7 +5,6 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 char data_ov277_020d37b8[8] = "Bip01_R_";

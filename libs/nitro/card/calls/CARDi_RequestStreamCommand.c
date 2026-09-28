@@ -1,9 +1,6 @@
 /* NitroSDK CARDi_RequestStreamCommand (src, dst, len, callback, arg, async, type, retry, mode). */
 
-typedef signed long s32;
-typedef unsigned long u32;
-typedef unsigned char u8;
-typedef int BOOL;
+#include "nitro/types.h"
 
 enum {
     CARD_STAT_BUSY = 1 << 2

@@ -3,7 +3,7 @@
  * at its +4 point, once per bit 0 of +0x49) and its +0x68 sphere, scaled 1.5, is swept with
  * kind 0; in [0xded, 0x1199] the +0x3c8 part does the same under bit 1. Once the +4 animator's
  * +0xad flag drops, the actor's +0x1c7 request becomes 2 and the tick is cleared. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 

@@ -7,7 +7,7 @@
  * every two steps the count grows and the stance flips; the stance picks pose 1 / motion 0 or pose 3 /
  * motion 2. Codegen: the stance flip is `(u8)(++stance) % 2`; `(u8)(stance + 1) % 2` adds in place
  * instead of into the ROM's fresh r3. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 

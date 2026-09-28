@@ -33,7 +33,7 @@
  *  - nElapsed40 is accumulated and compared in that order: the ROM stores the new value
  *    unconditionally and branches on it, which is what the single statement produces.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 {
     int x;

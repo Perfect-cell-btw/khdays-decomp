@@ -4,10 +4,7 @@
  * (+0xb4714). A negative id rebuilds all four heaps, provided every bank holds the same id and the
  * first one is loaded (state >= 2). Otherwise, unless the context is busy (+0xb47b6), the id's bank
  * loses a reference and, at zero, is cleared and forgotten; the id is unmapped either way. */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef short s16;
-typedef int BOOL;
+#include "nitro/types.h"
 typedef struct NNSSndHeap *NNSSndHeapHandle;
 
 #define SND_BANK_NUM 4

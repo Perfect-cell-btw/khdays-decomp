@@ -1,7 +1,7 @@
 /* Physics tick of the ov146 actor: with no current move the +0xc velocity rests; the velocity is
  * mirrored to the actor's +0xf0 and then damped for the frame in 0x88-sized slices, by 0.08 per slice
  * on the ground (+0x17a bit 0) and 0.02 in the air. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 b0 : 1; } Bit0;
 

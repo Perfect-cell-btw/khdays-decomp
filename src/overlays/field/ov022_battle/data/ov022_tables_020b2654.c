@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by ov022: pick the cue for a slot, given what the actor is doing. (02098134): const short data_ov022_020b2654[]; */
 const u16 data_ov022_020b2654[15] = {

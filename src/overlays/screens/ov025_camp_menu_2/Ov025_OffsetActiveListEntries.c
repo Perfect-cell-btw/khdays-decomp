@@ -1,7 +1,6 @@
 /* Moves every visible layout entry by an offset from its base position (or from zero). */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Point {
     int x;

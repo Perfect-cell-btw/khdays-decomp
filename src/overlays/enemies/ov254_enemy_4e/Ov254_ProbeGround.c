@@ -1,7 +1,7 @@
 /* Ground probe: cast a ray 200.0 down from `pos` raised to a height of 100.0 through the actor
  * list's +0x7c collision grid. Without a hit returns -1; otherwise, when `outY` is given, stores
  * the height of the hit point, and returns the hit face's +0x83 material byte. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Collision_CastRay(int grid, Vec3 *pos, Vec3 *ray);

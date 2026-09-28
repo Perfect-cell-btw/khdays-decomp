@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Ov002_NewTextItem(int bSub, int nValue);
 extern int Ov002_CreateHandlerRecord(u16 nA, u16 nB, short nC, u16 nD);

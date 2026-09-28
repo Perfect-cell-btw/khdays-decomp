@@ -5,8 +5,7 @@
  * with `bCharged` and a shot level above 1 the placement's +0x24 counter and the reaction
  * variant go up by one; shot level 1 selects kind 3. The first shot also rings cue 0xcd at the
  * shot's position, latched in the shared rig's +0x2ce4. */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 p; short a, b, c; short scale; int f14, f18, f1c, f20, f24, f28; } Placement;
 

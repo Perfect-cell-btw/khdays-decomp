@@ -7,7 +7,7 @@
  * damage, not 0x80) turns the impact vector into a knockback scaled by 0xc00 / the camera's
  * +0x40 and requests sub-state 0xc; then zero health requests 3 and, outside sub-state 8, an
  * 0x8000 hit goes to 0xd from 0xc/0xd and to 0xc otherwise. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x; int y; int z; };
 

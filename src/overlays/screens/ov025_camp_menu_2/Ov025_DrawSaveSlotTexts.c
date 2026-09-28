@@ -9,9 +9,7 @@
  * data_ov025_020b4ec4) at +0x89 / +0x92 / +0xa0, and the separator (record
  * 8) at +0x8c and +0x9a; shadows 0 / 1 / 1 / 2 / 2 / 1 / 1.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define SLOT_COUNT     3
 #define TEXT_CAP       0x80

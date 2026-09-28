@@ -10,11 +10,7 @@
  * to table 0208fef0's slot (else cell 2).  Handles are
  * (((src + 0x8000) & 0xfffffc) << 7) | 0x80000000 | slot.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed char    s8;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define CELL_MASK   0x00fffffc
 #define SLOT_MASK   0x1ff

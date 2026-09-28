@@ -7,7 +7,7 @@
  * set their game flags, and the op is cleared.  Result 2 also re-arms the card
  * poll (Ov008_SetupWorkArea(1)).
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define CARD_OP_NONE     0
 #define CARD_OP_LOAD     1

@@ -3,7 +3,7 @@
  * passes its step (x 0x88): a launch (020cc9e0) that finds no free helper ends in 020ce97c, otherwise
  * the shot counts. Each time the +4 rig goes idle the next pose of the +0x6c sequence plays (sounds
  * 8 / 7 / 9 of bank 0x173 with poses 10 / 9 / 11) and the sequence advances. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int v[16]; } Steps16;
 
 extern int Ov283_MeasureTargetGap(int *node);

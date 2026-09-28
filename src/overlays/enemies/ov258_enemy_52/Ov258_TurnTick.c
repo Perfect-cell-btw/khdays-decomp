@@ -3,7 +3,7 @@
  * when spent. The +0x2c goal heading is capped at 0.26 from straight ahead (020cd8c0), the +0x4c turn
  * rate grows by 2 up to 3/4 of the frame rate and the +0x28 heading (mirrored to the actor's +0x420)
  * turns toward the goal and orients the pose about up. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 struct Ov258Vortex { char pad[0x428]; int time; };

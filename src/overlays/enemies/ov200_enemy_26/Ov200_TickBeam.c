@@ -10,11 +10,8 @@
  * world's +0x80 list whose shapes the capsule crosses receives a 4 packet (straight up) once per
  * activation (64-bit +0x3c mask). The end point shows the impact and glow models (hidden when
  * nothing was hit). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef long long fx64;
-typedef unsigned long long u64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 typedef struct Quat { int x, y, z, w; } Quat;

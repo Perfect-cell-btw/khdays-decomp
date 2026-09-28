@@ -7,7 +7,7 @@
  * buffer (+4), then both sub-panels' displays and buffers, and clears the
  * context pointer.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern char *data_ov026_02091368;
 

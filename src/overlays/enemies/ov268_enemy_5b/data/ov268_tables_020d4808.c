@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov268_BounceShotTick (020d2c88): const Cmd14 data_ov268_020d4808; */
 const u8 data_ov268_020d4808[16] = {

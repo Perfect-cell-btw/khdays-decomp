@@ -2,9 +2,7 @@
  * return the next callback. Calls Ov000_CreateSceneContext, so +0x9660 is inside that same 0xd18c
  * object. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

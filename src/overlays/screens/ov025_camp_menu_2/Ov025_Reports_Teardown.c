@@ -6,10 +6,7 @@
  * bits each, 0x10 apart (GameState_SetField 020235e8).  In enemy-profile mode the six lines
  * allocated per record (+0x28) are freed; then the records (+0x1e8) and the table (+0x230), and
  * the 3D offset is reset (G3X_SetHOffset). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025ReportsEntry {
     u16  nId : 9;             /* 0x00 bits 0-8 */

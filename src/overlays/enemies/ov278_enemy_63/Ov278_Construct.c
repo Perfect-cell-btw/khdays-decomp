@@ -10,7 +10,7 @@
  * team byte, and reserves the +0x144 / +0x22c shape handles: a capsule (0.5 below, length 1.0,
  * radius 0.45) at +0x394 and +0x3a4 (radius scaled by 1.25), and a placement (scale 0.75) at
  * +0x398 and +0x3a8 (scaled by 1.5). Loads sound 0x166. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[10]; } IdTable;

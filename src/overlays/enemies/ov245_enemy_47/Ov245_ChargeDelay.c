@@ -2,7 +2,7 @@
  * 0.3125 raises bit 0 of the actor's +0x60 high byte and bit 0 of the +0x388 item's +8 low byte,
  * fires reaction 0x15a of kind 0xf at the +8 position (020c5af8), clears the timer and moves the
  * node to 020cef98. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);

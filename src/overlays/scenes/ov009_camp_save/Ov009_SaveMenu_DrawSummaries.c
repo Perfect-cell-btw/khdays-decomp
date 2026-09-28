@@ -1,8 +1,6 @@
 /* Draws each save slot's summary text (empty label or level, munny, play time). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov009SummaryRow {
     u16 pad000;

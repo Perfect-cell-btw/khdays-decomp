@@ -1,7 +1,7 @@
 /* Swoop enter tick of an ov257 state: the owner's +0x24 hook receives note 1 of
  * data_ov257_020d325c, animation 0x1f plays, the +0x3d0 part plays motion 0x1c, +0x44, +0x74,
  * +0x75, the +0x54 timer and +0x76 clear and the tick hands over to Ov257_DoubleStrikeTick. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { u16 lo; u16 hi; } Cmd4;
 
 /* the note table seen as a word-aligned record: its note 1 follows a 4-byte word */

@@ -7,7 +7,7 @@
  * [-0x165, 0x165]. In every case reaction 0x13f mode 5 fires, the +0x60 flags drop bit 7 and set
  * bit 0 of the high byte, the +0x388 item's +8 low byte sets bit 0, the +0x24 origin copies the
  * +8 position and the tick hands off to the leap state. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vecx32 { int x, y, z; };
 struct hw60 { unsigned short lo : 8, hi : 8; };

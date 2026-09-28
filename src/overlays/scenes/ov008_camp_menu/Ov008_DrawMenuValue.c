@@ -6,7 +6,7 @@
  * reports idle, else -1; a negative value aborts the draw. Otherwise it builds a cell from the
  * value (Ov008_GetVarRecordByIndex on arg0+4) and renders it onto the surface
  * (Obj_InvokeInnerVtable4 / Text_DrawWithShadow(.., 0x56, 0, 2, cell, 1) / EnqueueObjGfxCommand). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void *Ov008_GetContext(void);
 extern void *Ov008_GetWordAt0x4a70(void *ctx);

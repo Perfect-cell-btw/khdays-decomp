@@ -3,7 +3,7 @@
  * point is reset and the actor is knocked back at the tracked point (mode 8). Once the partner holds
  * no queued move the stomp count +0x54 grows: at 4 the next move is the +0x74 mode + 2 and the node
  * ends, otherwise the timer restarts with a new charge and pose 0x19. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov256_PickTarget(int *node);

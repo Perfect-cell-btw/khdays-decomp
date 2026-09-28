@@ -18,7 +18,7 @@
  * The table lives in .data rather than .rodata, so it is not const.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u16 data_020422a0[8] = {
      8,  9, 10, 11,   /* DMA 0, 1, 2, 3   */

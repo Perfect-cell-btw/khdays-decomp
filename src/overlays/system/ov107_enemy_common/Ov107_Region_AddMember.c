@@ -1,6 +1,6 @@
 /* Files the member into the actor, player or item list by its flags, then links it as a child. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int *List_InsertSorted(int list, int stride, int max);
 extern void Ov107_LinkChildNode(int owner, int child);

@@ -1,8 +1,7 @@
 /* Initialises the enemy actor: installs its handlers, camera and flags, creates its models and
  * attach slots, and requests its resources. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Obj;
 typedef void (*ObjCallback)(struct Obj *self);

@@ -4,7 +4,7 @@
  * around zero it is clamped to the bound and the speed reversed. Rows 0/1 yaw by the angle;
  * row 2 yaws by minus three times it and row 3 by three times it, both then pitching by the
  * angle less the bound. The effect's +0x1c offset rotated by the result is written to out. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } MtxFx33;
 

@@ -4,10 +4,7 @@
  * otherwise 0xa0 / nTotal clamped to 4..20 (the 64-bit divide 02020400), and the loop bound
  * (+0x54) is that count less four.  The header and footer entries are shown and the rows are
  * placed from the top (Ov025_Reports_PlaceRows 0209f488 with row 0). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025ReportsList {
     void *pHeader;            /* 0x00 */

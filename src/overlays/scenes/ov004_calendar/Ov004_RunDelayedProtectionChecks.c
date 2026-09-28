@@ -1,7 +1,7 @@
 /* After a delay, loads ov028 and runs its three DS Protect checks, arming the alarm when one fails,
  * then unloads it and moves on. */
 
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef void (*Ov004AlarmCallback)(void *arg);
 typedef struct {
     unsigned char opaque0000[0xaf8];

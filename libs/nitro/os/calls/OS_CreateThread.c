@@ -1,8 +1,7 @@
 #define NULL ((void *)0)
 
-typedef unsigned char u8;
-typedef unsigned int u32;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/os.h"
 
 typedef void (*OSThreadFunc)(void *pArg);
 

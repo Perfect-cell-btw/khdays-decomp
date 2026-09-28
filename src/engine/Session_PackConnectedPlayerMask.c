@@ -1,7 +1,6 @@
 /* Packs the connection bits of the session's members into a compact 4-bit mask in member order. */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Foo {
     u32 a;

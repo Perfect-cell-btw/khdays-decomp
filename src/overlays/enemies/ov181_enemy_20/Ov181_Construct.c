@@ -6,7 +6,7 @@
  * (+0x398, attached, bit 1 on their +0x5c), configures action 2 (mode 2, rate 0x3000) and
  * creates two placements from the actor's +0x64 pose: +0x388 on the +0x22c list and +0x38c on
  * the +0x144 list; sound 0x131 is loaded. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov181Vec3 {
     int x;

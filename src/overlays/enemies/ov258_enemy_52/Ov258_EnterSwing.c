@@ -2,7 +2,7 @@
  * +0x50 = 3, the +0x53 step countdown 6 with the +0x44 clock cleared and the +0x52 low nibble 0, the
  * rig switches (020cd028 mode 1), pose 2 plays with effect 1 at the origin, the +0x45c partner arms
  * its 2.16 to 2.32 window (mode 1, 020cfd3c) and the brain waits on 020ce0a0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 

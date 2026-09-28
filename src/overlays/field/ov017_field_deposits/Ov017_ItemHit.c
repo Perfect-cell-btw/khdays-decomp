@@ -8,8 +8,7 @@
  * refuses (0) the item is announced instead (ov022 02088c10 with the player, the entry's key
  * and the spawn id); when it accepts, the piece enters the given state (Ov017_ItemBeginGiven
  * 020804d4), leaves the room (bit 3 of +0x12) and records the player (+0x1b8).  Always 0. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov017Item {
     u8   pad_000[0x12];

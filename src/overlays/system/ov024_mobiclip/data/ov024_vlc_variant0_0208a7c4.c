@@ -13,11 +13,9 @@
  * takes when the twelve-bit lookup is not enough on its own.
  *
  */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define VLC(bits, level, run, last)     ((u16)((bits) | ((level) << 4) | ((run) << 9) | ((last) << 15)))
-
 
 typedef struct {
     u16 entries[4096];

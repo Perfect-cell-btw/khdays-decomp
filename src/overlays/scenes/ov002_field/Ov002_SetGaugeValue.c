@@ -2,8 +2,7 @@
  * tweens the main gauge or redraws the gauge cells (the first gauge also records its shown and
  * target counts). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 wTotal;                         /* +0x00 */

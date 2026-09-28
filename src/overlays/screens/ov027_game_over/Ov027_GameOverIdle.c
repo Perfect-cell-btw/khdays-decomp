@@ -7,10 +7,7 @@
  * panel is drawn unless the slot table's word is 1 (020315f4; Ov027_DrawSignInPanel 02082ba4),
  * the models animate (Ov027_UpdateModels 02083308), the camera (+0x4d8) is committed (02023cc0)
  * and, outside a session, the hint text drawn (Ov027_DrawHintText 02083d50). */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

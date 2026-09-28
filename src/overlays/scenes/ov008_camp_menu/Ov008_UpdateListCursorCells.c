@@ -6,8 +6,7 @@
  * (selection - scroll / 32) * 4, remembering that row at +8.  Always marks
  * the cells refreshed (+0x4c).
  */
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionList {
     int nSelected;            /* 0x000 */

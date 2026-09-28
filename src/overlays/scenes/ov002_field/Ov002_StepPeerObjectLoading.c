@@ -2,11 +2,7 @@
  * render entry, then configure the peer's gate rows. The explicit descriptor
  * array cursor preserves the original reload across the request call. The
  * chained zero assignment stores x, y, z in ascending stack order. */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef short s16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct VecFx32 { int x,y,z; } VecFx32;
 typedef struct Slot_0201f468 { char pad0[12]; int nRequestId; } Slot_0201f468;
 typedef struct Ov002PeerObjectDesc { u8 bFlags,nArchiveMember; } Ov002PeerObjectDesc;

@@ -3,7 +3,7 @@
  * page/row/column order are free (0), the rest are blocked (0xff); the grid is
  * then copied into the working grid.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define GRID_PAGES 3
 #define GRID_ROWS  8

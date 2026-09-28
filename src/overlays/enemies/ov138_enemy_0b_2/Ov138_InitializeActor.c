@@ -1,8 +1,7 @@
 /* Construction of the ov138 actor: installs its five handlers, configures the
  * actor and parent flags, creates and registers the primary and secondary
  * subitems, and links the actor's pose into its sorted registry. */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Ov138Pose {
     int w;

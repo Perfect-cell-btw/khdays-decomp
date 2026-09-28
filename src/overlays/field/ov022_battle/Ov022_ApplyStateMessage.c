@@ -10,9 +10,7 @@
  * set only runs while it is up.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Actor;
 typedef void (*PfnState)(struct Actor *pActor);

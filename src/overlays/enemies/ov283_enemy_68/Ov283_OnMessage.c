@@ -1,6 +1,6 @@
 /* Message handler of the ov283 actor: a spawn message (kind 5) unpacks its position into a transform
  * and, for sub 0, starts the +0x390 effect pair there (kind 0xf). The base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[11]; } SrtTransform;
 struct EffectPair { int res; int handle; };

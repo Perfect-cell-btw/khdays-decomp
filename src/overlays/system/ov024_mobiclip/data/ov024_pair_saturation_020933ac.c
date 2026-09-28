@@ -8,7 +8,7 @@
  *
  * The 32 entries below the bias and the 32 above are the clamp's flat ends.
  */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define PAIR(lo) ((u16)((((lo) + 1) << 8) | (lo)))
 

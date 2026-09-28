@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov023_CreateHintSprites (not yet decompiled) */
 const u8 data_ov023_02089cfc[24] = {

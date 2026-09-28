@@ -3,8 +3,7 @@
  * animation's length in frames (0202aef8 on +0x15e0, divided by the entity speed 0202c6a8 on
  * +0x1a38), the effect index (+8) the mapped kind (Ov023_MapEffectIndex 02089080), the timer
  * (+0x454) -1, and the first frame is run at once (Ov023_ActorStepEffects 02087bc8). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov023Entity {
     int  nFlags;              /* 0x00 */

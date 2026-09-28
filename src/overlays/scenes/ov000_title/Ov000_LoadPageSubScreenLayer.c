@@ -10,9 +10,7 @@
  * context+0x4c, and opens windows 0/1 (WININ=0x3f, WINOUT=0x3a, DISPCNT bit13).
  * Declaration order resource < alternate < container is register-allocation
  * load-bearing (r4/r5/r6). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov000ResourceBlock {
     u8 pad_0000[0x10];

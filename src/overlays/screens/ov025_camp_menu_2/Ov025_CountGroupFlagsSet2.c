@@ -5,9 +5,7 @@
  * pOwner->pTable (no table local); the entries are indexed, which walks a pointer
  * from the group with the +8 folded into the load.  Twin of 0206fc24 (table at +0x58).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008FlagEntry {
     short nFlag;               /* 0x00: game flag - 9 */

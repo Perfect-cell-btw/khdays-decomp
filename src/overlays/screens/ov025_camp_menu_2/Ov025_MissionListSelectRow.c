@@ -10,8 +10,7 @@
  * modal object and touch is off) and row texts are refreshed; finally the
  * cursor cells are updated.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define ROW_HEIGHT 32
 

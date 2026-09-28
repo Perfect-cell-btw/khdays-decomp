@@ -4,7 +4,7 @@
  * link, or 0 without a link (a `!= 0 ? lookup : 0` ternary; the if/else form colours
  * the shared zero one register up).
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008ParamRecord {
     u8  pad_00[0xc];

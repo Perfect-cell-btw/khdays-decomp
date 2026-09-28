@@ -8,8 +8,7 @@
  *
  * Codegen: the record's actor is read a second time through an `int *` view of the record
  * ((int *)&record)[2]) for the owner comparison; a plain field re-read is CSE'd into one load. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 
 struct Ov293Owner {

@@ -7,9 +7,7 @@
  * from RandNextScaled(-1), two handles are opened (InstantiateClass), the member mask is compacted
  * (+0x6) and the own position among the members is recorded (+0x22). Returns the session
  * callback Session_CheckSceneLoop. */
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct MATHRandContext32 {
     u64 x;

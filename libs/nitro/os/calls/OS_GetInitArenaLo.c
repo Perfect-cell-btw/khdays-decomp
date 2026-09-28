@@ -1,4 +1,4 @@
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* Bit 0..1 of the console type is the main-memory size; 1 means the 4 MB retail
    part, which has no extended region above it. */

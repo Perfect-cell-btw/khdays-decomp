@@ -3,8 +3,7 @@
  * Ov012_RunOpeningScene then never sets the movie state 3 and the scene script, waiting on
  * Ov012_MayWaitFrames, waits forever -- the game does not recover from a movie that fails to open. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct MobiClipHeader {
     u16 destinationX;

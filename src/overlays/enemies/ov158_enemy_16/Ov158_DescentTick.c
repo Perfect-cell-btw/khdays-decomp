@@ -8,8 +8,7 @@
  * one along the segment, the +0xc sub-object goes there, the +0x28 distance clears, reaction
  * 0x150 mode 8 fires and the same hand-over happens; without, the +0x10 point tracks the +0x1c
  * x / +0x24 z while its y sinks by the probe and the +4 sub-object follows. */
-typedef int fx32;
-typedef long long fx64;
+#include "nitro/fx.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int q[4]; } Quat;
 typedef struct { Vec3 origin; Vec3 dir; int nLength; int nRadius; } Segment;

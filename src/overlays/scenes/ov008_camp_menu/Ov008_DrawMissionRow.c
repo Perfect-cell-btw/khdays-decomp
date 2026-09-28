@@ -34,9 +34,7 @@
  * call) for the refresh and the reward branch -- two base registers; the
  * slot is loaded into a local before the three unlock tests.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROWS_PER_PAGE   6
 #define FLAG_TEXT_SLOT_BASE 0x3bc9

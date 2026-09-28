@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef void (*Ov002NotifyProc)(char *pBase, int nUnit, int nKind, int nId);
 

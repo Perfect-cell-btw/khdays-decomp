@@ -7,9 +7,7 @@
  * 14-byte template for the actor's +0x24 message hook, the kind bit is set and reaction 0x11f
  * mode 4 fires there. Once the +0x50 busy byte clears the +0x40 timer is re-armed at random
  * between the actor's +0x224 and +0x228, sub-state 2 is requested and the state ends. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;

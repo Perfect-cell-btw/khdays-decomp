@@ -8,7 +8,7 @@
  * eases towards 0x100 by a twentieth, otherwise the lift drops by 0x100. A set bit 1 publishes the
  * position with mode 1, fires reaction 0x13e mode 7 and ends; else the +0x28 travel accumulates
  * the velocity's length and ends the dash (mode 1, no reaction) once it passes 0x20000. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vecx32 { int x, y, z; };
 struct Flags17a { u8 b0 : 1, b1 : 1; };

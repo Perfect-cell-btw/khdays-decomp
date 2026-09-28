@@ -1,7 +1,7 @@
 /* Release entry of an ov256 claw: bits 1-3 and 7 of the owner's +0x60 high byte are set and bit 0
  * dropped, the +0x388 shape hides, the +0xc velocity rests, the owner's +0x394 link clears and the node
  * ends. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

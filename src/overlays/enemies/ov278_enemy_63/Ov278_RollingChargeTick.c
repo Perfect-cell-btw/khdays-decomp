@@ -9,8 +9,7 @@
  * 8 ticks, reaction 0 mode 0x4e fires there and the velocity bounces off it at full speed. The +0x28
  * timer accumulates the frame rate; past 5.0 the +4 part's +0xa8 flag clears and the tick hands
  * over to Ov278_ReactDecayAimAndCancelAction. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

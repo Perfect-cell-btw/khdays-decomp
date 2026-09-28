@@ -9,9 +9,7 @@
  * the low half with 0x80 and the high half with nothing at all.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Actor {
     u8 pad000[0x464];

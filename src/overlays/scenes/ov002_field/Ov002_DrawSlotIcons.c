@@ -19,7 +19,7 @@
  * the two apart.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     char pad0000[0x220];

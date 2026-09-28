@@ -16,7 +16,7 @@
  * THUMB.
  */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     void *hFlipClass;                   /* +0x000 */

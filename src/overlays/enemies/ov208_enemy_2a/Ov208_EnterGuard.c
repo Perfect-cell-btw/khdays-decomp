@@ -3,7 +3,7 @@
  * commands 2 and 3 with the zero vector, fires reaction 0x154 mode 0xd at the +8 point, keeps the
  * +0x394 partner's sub-state in the +0x44 byte, clears the +0x40 timer, keeps the +8 point at
  * +0x24, clears the +0x45 byte and hands the tick over to Ov208_ItemSweepTick. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 struct hw60 { unsigned short lo : 8, hi : 8; };

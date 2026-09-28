@@ -1,7 +1,6 @@
 /* Answers a query with the actor's level and its refresh hook, then emits the id event. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 id;

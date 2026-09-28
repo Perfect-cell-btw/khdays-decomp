@@ -13,11 +13,7 @@
  * did, modes 0xb and 0xc finish by driving a cue or a sound.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 struct Actor {
     u64 nFlags;                  /* 0x0000 */

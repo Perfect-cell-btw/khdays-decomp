@@ -8,9 +8,7 @@
  * position (new pixel scroll clamped to [0, nScrollScale], track position
  * scale * max / trackMax) and the cursor cue plays.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionListEntry {
     u8  pad_00[4];

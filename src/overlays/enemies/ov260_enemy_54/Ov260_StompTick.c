@@ -6,7 +6,7 @@
  * ends. Codegen: a signed `thrown` with the post-stomp part in an `else` (no `return` after the
  * loop) keeps the two loop tests apart (`cmp i,#15; popge; cmp thrown,#3; blt`); a `return` after the
  * loop lets mwcc merge them into `cmp; cmplt`. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 struct Ov260Shards { char pad[0x434]; int shards[15]; };

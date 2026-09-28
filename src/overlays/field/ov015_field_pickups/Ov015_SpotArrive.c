@@ -9,9 +9,7 @@
  * +0x15) resolved, the linked spot (+0x154 of the table) armed, the link table (+0x178)
  * and the linked entry (+0x17c) recorded and the linked spot's target set to the linked
  * entry's position (+0x8). */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

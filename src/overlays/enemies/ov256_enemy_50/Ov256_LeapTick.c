@@ -5,8 +5,7 @@
  * position hits along the +0x34 direction (020cd0e8, mask 1). At 0x6e8 it lands: on a claw the +0xc
  * point takes the +0x1c spot, otherwise it is knocked back there (mode 7); the timer and charge flags
  * clear and the node moves on to 020cee70. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 typedef struct { Vec3 pos; int nRadius; } Sphere;

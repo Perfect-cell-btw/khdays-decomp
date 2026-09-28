@@ -4,7 +4,7 @@
  * 0x20-byte tile and the sheet's second half (+0x200) holds the alternate row.
  * A wide column copies all eight words, a narrow one only seven.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[0x10];

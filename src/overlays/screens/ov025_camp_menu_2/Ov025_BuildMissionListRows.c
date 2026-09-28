@@ -11,8 +11,7 @@
  * strength-reduces it into the ROM's six induction registers itself -- explicit
  * walking pointers / counters colour them differently.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define ROW_COUNT 6
 #define GRID_SLOT 0x1a

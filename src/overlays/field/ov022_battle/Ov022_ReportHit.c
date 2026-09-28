@@ -13,8 +13,7 @@
  * folded into the actor's hit result.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

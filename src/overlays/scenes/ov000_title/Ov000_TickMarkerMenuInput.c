@@ -5,8 +5,7 @@
  * back (action 2) it re-enables the primary and reselects. Finally drops the highlight, notifies
  * Ov000_PushSubWidgetValue and latches nextState=action. No-ops when nothing is pending. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov000Marker {
     int position;

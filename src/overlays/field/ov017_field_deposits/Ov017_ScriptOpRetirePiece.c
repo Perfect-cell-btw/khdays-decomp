@@ -2,8 +2,7 @@
  * by its two operands (key and argument, ov002 0207679c) and retires it: an item piece (class
  * kinds 0x1d / 0x1e) through Ov017_ItemRetire (02080a60), any other through the kind dispatch
  * Ov017_RetireByKind (020804b4).  Always 1. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov017PieceDef {
     u8   pad_00[0x4c];

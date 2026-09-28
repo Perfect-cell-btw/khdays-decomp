@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* The resource group the track id resolves to: a count and a vector of
  * entries. Same shape the matched EntityMgr_AttachTrackData walks. */

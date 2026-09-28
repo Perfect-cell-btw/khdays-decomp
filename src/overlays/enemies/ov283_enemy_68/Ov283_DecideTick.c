@@ -3,7 +3,7 @@
  * +0x50 limit (0x7f80) the next move is 9; otherwise, once the +4 rig is idle, +0x34 rerolls 1.57
  * to 3.14 and the next move is picked: far (over 6.0) by a d100 roll (10 / 9 / 2 / 6), armed with the
  * +0x60 timer spent 5, else 4 (+0x7c = the roll passed 2.36, +0x3c cleared). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 b0 : 1; u8 b1 : 1; } Bits;
 

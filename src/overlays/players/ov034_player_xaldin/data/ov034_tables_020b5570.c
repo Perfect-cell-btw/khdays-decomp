@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov034_ReleaseIndexedHandles (020b3c04): Idx3 data_ov034_020b5570; */
 const int data_ov034_020b5570[3] = {

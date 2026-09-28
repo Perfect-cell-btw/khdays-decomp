@@ -1,8 +1,6 @@
 /* Copies a clipped tile rectangle from the source into the destination tile buffer. */
 
-typedef signed short   s16;
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov009Tilemap {
     u16 pixelWidth;

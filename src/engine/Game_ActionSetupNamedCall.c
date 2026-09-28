@@ -14,7 +14,7 @@
  * callee-saved register across the two ReadOperandInt calls.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern short *ScriptVm_ResolveOperand(int st, u16 *cmd);   /* ScriptVm_ResolveOperand */
 extern int    ScriptVm_ReadOperandInt(int st, u16 *cmd);   /* ScriptVm_ReadOperandInt */

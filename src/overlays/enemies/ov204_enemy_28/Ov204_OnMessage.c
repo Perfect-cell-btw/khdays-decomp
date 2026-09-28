@@ -4,8 +4,7 @@
  * payload 1 the +0x28 item into +0x2c at the actor's position lowered by its +0x13c height
  * (packed as 24-bit fixed point), payload 3 the first of the overlay's four listed +4 slots
  * whose handle is not alive. The base handler always runs. */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */

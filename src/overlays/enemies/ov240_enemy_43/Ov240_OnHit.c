@@ -6,7 +6,7 @@
  * 8|0x80/0x80 special fires reaction 0x139 with the mode taken from the overlay's pairs (0x22
  * hits use the second pair) alternated by the +0x31 toggle. Spent stamina requests sub-state 3;
  * a 1|0x10 hit in sub-state 6 marks +0x30; a 0x8000 hit requests sub-state 7. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 
 struct ActorHitEvent {

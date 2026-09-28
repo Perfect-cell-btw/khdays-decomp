@@ -5,9 +5,7 @@
  * player byte (+0x4) is acknowledged (02081824).  Type 5 (open request): unless the chest
  * is refreshing or already opening / rising (bits 5 / 6), the opened bit is dropped, the
  * open-request bit raised and the player byte recorded as the opener. */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

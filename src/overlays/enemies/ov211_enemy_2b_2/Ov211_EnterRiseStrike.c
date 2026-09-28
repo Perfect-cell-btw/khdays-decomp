@@ -5,8 +5,7 @@
  * data_ov211_020d650c (kind 5, command 7) goes to the owner's +0x24 hook. Reaction 0x117 mode 6
  * fires at the +4 point with the +0x64 byte raised around it and the tick hands over to
  * Ov211_AiFollowLeaderTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;

@@ -2,10 +2,7 @@
  * file, build the 0x40-byte runtime entries (lengths, texts, sprite cells, name pointers) and, in
  * enemy mode, copy them into the second half of the allocation. */
 struct DbName { short id; short pad; };
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct SpriteResSet {
     void *screen;
@@ -211,6 +208,4 @@ void Ov025_Reports_LoadEntries(void)
         NNSi_FndFreeFromDefaultHeap(itemFile);
     }
 }
-
-
 

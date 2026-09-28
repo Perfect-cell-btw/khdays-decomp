@@ -1,7 +1,5 @@
 /* Commit menu item quantities and mission flags, then cap the mode-specific reward total. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct GameState {
     char opaque00[0x810];
     u8 itemCounts[1024];

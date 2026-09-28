@@ -11,7 +11,7 @@
  * +0x17a flags bits 0/1/3 already report a wall; a hit publishes the position (mode 1) with
  * reaction 0x140 mode 7 and ends; else the +0x48 travel accumulates the step length and ends the
  * dash past 0x15000. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vecx32 { int x, y, z; };
 struct Vecx32_4 { int x, y, z, w; };

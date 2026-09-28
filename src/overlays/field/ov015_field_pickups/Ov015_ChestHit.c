@@ -7,8 +7,7 @@
  * with the toucher's player byte (+0xc) and answers 0 once accepted; any other hit queues
  * a type-1 open message (kind 0x14) carrying the position and the player, and once accepted
  * clears the ack mask (+0x725), raises the opening flag and answers 0.  Otherwise 8. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

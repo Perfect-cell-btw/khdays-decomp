@@ -27,10 +27,7 @@
  * (the ov006 twin's form): mwcc emits no narrowing for it, but the halfword
  * parameter is what schedules the slot copy after the row loads.
  */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define MEMBER_COUNT   4
 #define STATE_LOBBY    5

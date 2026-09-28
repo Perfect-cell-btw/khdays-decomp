@@ -3,7 +3,7 @@
  * height. While the goal is farther than 0.5 (020cddbc) and the actor is airborne on neither flag of
  * +0x17a the drift scales by 0.4375; otherwise +0x60 stops it, and a stopped actor's drift clears.
  * Once the partner holds no queued move the node moves on to 020cf474. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 

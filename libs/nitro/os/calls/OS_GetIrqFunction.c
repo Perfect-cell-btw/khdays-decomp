@@ -1,17 +1,16 @@
-typedef unsigned int u32;
-typedef signed int s32;
+#include "nitro/types.h"
 
 typedef void (*OSIrqFunction)(void *arg);
 
 /* One 12-byte record per callback slot; see OSi_IrqCallback, which consumes it. */
 typedef struct {
     OSIrqFunction pfnHandler;
-    u32 bKeepEnabled;
+    unsigned int bKeepEnabled;
     void *pArg;
 } OSiIrqSlot;
 
 extern OSiIrqSlot data_020442a8[];
-extern u32 data_027e0000;
+extern unsigned int data_027e0000;
 
 /* The flat vector table sits at the very start of DTCM, one entry per interrupt bit. */
 #define OSi_IrqTable ((OSIrqFunction *)&data_027e0000)
@@ -24,9 +23,9 @@ extern u32 data_027e0000;
  * bits 8..11 are DMA 0..3 in slots 0..3 and bits 3..6 are Timer 0..3 in slots 4..7,
  * while every other bit is a plain entry of the DTCM vector table.
  */
-OSIrqFunction OS_GetIrqFunction(u32 intrBits)
+OSIrqFunction OS_GetIrqFunction(unsigned int intrBits)
 {
-    s32 i;
+    int i;
     OSIrqFunction *entry = OSi_IrqTable;
 
     for (i = 0; i < OS_IRQ_TABLE_MAX; i++, intrBits >>= 1, entry++) {

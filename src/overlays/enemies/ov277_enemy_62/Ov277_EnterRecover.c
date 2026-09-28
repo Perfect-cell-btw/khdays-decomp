@@ -1,6 +1,6 @@
 /* Clears bit 0 and raises flags 0x82 in the actor's +0x60 high byte, clears bit 0 of the
  * +0x38c item's +8 low byte and the +0x390 word, then re-arms 020cda68. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct b8 { unsigned f : 8; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void SetIndexedSlot(int *node, int slot, void *cb);

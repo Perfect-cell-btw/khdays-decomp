@@ -10,7 +10,7 @@
  * with effect 0. */
 typedef struct { int x, y, z; } Vec3;
 struct Sphere { Vec3 centre; int radius; };
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Bit0 { unsigned char b0 : 1; };
 

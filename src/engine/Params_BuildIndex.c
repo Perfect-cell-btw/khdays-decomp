@@ -3,7 +3,7 @@
  * position of the highest bit set in its +0x24 mask (4 bits, `lo`) and the start is the running sum
  * of the previous widths (12 bits, `hi`). */
 #pragma thumb on
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Params {
     unsigned short lo : 4;

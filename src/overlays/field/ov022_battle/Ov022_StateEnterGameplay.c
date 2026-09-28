@@ -1,8 +1,7 @@
 /* Enters gameplay: submits the row mask, updates the current slot flags and busy state, and returns
  * the gameplay hub step. */
 
-typedef signed char s8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef void *(*Ov022StateCallback)(void);
 

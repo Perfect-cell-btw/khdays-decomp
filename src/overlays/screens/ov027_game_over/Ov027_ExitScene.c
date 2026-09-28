@@ -7,10 +7,7 @@
  * (GX_Init 0201e1d0).  Mode bit 2 (+0x24, a wireless session) also ends the session
  * (02030788 / ov002 0206d8a0).  Finally the published scene work is cleared and the scene handle
  * (second word of the static block data_ov027_02083ee0) becomes -1. */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

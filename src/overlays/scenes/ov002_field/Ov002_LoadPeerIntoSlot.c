@@ -5,10 +5,7 @@
  * order j, group, blob fixes the three spills at +18, +14, +10 respectively.
  * The unsigned-byte comparison against -1 is retained exactly as in the ROM.
  */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Ov002PeerRecord { s8 bKind,nRows,nObjects,nArchiveMember; } Ov002PeerRecord;
 typedef struct Ov002RosterTable { u8 nCount; char pad1[3]; Ov002PeerRecord *entries[1]; } Ov002RosterTable;
 typedef struct Ov002LinkCtx {

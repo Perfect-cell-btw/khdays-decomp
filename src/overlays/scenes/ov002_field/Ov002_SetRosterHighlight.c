@@ -11,7 +11,7 @@
  * need their own locals, or the single add takes its operands the other way round.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int Ov002_GetPhaseWord(void);
 extern int func_ov022_020882f8(void);

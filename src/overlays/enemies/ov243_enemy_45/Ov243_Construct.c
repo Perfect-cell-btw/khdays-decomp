@@ -6,7 +6,7 @@
  * mode 0/6/3), translates the item's +4 placement by (0, 0x200, 0), keeps the "move" motion
  * handle (+0x390), creates an effect node (+0x394, subscribed, bit 0) hosting the kind-2 item
  * (+0x388), a placement on the +0x144 list (+0x38c) and loads sound 0x13b. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Bit0 {
     unsigned bit0 : 1;

@@ -1,7 +1,7 @@
 /* Collapse entry of the ov238 actor: bit 7 of the +0x60 high byte is set, the +0x388 shape hides, its
  * +0x398 partner plays effect 2 at the +8 point, sound 0x12e/9 plays there, the +0x2c/+0x1c/+0x20
  * timers clear and the node moves on to 020d3184. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

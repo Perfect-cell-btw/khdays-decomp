@@ -1,9 +1,7 @@
 /* Rolls the calendar digits towards the target day with an eased curve and moves on when it
  * arrives. */
 
-typedef unsigned short u16;
-typedef unsigned long long u64;
-typedef long long s64;
+#include "nitro/types.h"
 typedef struct { short nSin, nCos; } FxSinCos;
 typedef struct { unsigned char opaque[0x4a38]; } Ov004SpriteManager;
 typedef struct {

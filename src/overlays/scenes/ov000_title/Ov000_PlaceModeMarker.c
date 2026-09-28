@@ -9,7 +9,7 @@
  * OverlayPoint {x,y} is a 2-D 16.16 point; kept local (no 2-D fx32 type exists in the tree yet).
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

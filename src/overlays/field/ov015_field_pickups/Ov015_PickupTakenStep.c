@@ -8,9 +8,7 @@
  * vanish step (ov002 0207cea4); otherwise 0 is returned.
  * Codegen: the done flag is zeroed after the delta call and the case-3 result is folded
  * through an if (not `!= 0`); both are needed for the parameter to stay in r5. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 extern int  Ov002_GetModuleScale(void);                              /* frame delta */
 extern int  Ov015_PickupCollect(void *pPickup);                     /* Ov015_PickupCollect */

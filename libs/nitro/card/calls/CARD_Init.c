@@ -1,6 +1,4 @@
-typedef signed long s32;
-typedef unsigned long u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 enum {
     CARD_STAT_INIT = 1 << 0

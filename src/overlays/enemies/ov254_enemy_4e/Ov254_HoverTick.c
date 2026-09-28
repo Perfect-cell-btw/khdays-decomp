@@ -6,7 +6,7 @@
  * roughly ahead of the flattened velocity (dot >= 0.875) makes it dive: the velocity keeps
  * 1.5 x its speed towards the target's +0x190 point, the owner cooldown restarts (0x580) and the
  * next move is 3. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 struct Hw60 { u16 lo : 8; u16 hi : 8; };

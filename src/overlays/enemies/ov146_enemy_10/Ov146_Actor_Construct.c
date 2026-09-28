@@ -6,9 +6,7 @@
  * the ids of data_ov146_020cf4f8 -- the first three relative to the running thread's resource, the
  * last two from the pool; actions 2, 1 and 4 at 2.0; the pose as a hit shape on the +0x22c (+0x3ac)
  * and +0x144 (+0x3b0) lists; the two helpers 020ce308 / 020cee30 (+0x3b8 / +0x3bc) and sound 0x125. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef void (*Callback)(void);
 typedef struct { Vec3 min; Vec3 max; } Box;

@@ -11,10 +11,7 @@
  * pointer, which has to be re-read after every call. Both name the same object.
  */
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

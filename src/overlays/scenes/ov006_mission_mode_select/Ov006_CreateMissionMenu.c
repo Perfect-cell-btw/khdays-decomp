@@ -2,9 +2,7 @@
  * input header and resource record, creates the scene object, selects the immediate/session/local
  * setup path and returns the next state callback. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*MissionState)(void);
 
 typedef struct {

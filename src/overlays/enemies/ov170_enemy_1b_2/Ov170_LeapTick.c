@@ -9,7 +9,7 @@
  * item's +8 byte, zeroes the +0x44 timer and hands off to the landing state. Without a ray hit,
  * a blocked sphere cast (0x300) or an item with any of bits 1/3 set at +0x1c4 publishes mode 1
  * (the reaction only when those bits are clear) and ends with sub-state 0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vecx32 { int x, y, z; };
 struct hw60 { unsigned short lo : 8, hi : 8; };

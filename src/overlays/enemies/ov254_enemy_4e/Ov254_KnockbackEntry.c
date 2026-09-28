@@ -1,6 +1,6 @@
 /* Move entry: the actor plays pose 0x13, is knocked back with mode 3 in place, the +0x44 timer and
  * the +0x70 / +0x74 flags clear and the node moves to 020d0ad4. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);

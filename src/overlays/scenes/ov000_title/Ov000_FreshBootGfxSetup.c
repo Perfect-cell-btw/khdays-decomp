@@ -6,11 +6,7 @@
  * animation/sequence players (Bg_LoadPaletteForScreen/ae0), copies a 0x200-byte palette, and
  * returns the scene's running state fn. arg selects the entry variant (0=fresh). */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef volatile u16   vu16;
-typedef volatile u32   vu32;
+#include "nitro/types.h"
 typedef void          *StateFn;
 
 #define reg_GX_DISPCNT  (*(vu32 *)0x04000000)

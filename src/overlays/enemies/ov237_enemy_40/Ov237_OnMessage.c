@@ -4,7 +4,7 @@
  * 0x1f at the position for 0xf / 0x11 or on the actor for 0x10; 7 emits a spark at the position
  * (+0x3e8 emitter, 4.0), 0x14 starts effect set 1 and 0x15 creates the +0x498 item (0x12d, 0xb). The
  * base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct EffectPair { int res; int handle; };
 

@@ -1,8 +1,7 @@
 /* Creates the calendar's objects: records the start and target day (as rolling values), loads its
  * text and graphics, and starts the first state. */
 
-typedef long long s64;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern char *data_ov004_02051384;
 extern char data_ov004_0205135c[];

@@ -4,8 +4,7 @@
  * it touches once (+0x18 mask) away from the centre (a vertical offset spread sideways) at 0.5, kind 2,
  * with sound 0xe and effect 0x16. Once the owner's rig is idle the owner's effect slot 0xc + the +0x1a
  * index is released and the node ends (0203c640). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
 struct EffectPair { int res; int handle; };

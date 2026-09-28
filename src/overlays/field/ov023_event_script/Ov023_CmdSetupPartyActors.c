@@ -10,9 +10,7 @@
  * 0x13 to seat + 8 with the flags raised by 0x50; the container is closed (02024fd4).  Finally
  * the local player's kind picks game field 0x2485 (2 bits: 0 for kinds 0x10 / 0x11, 1, 2 or 3
  * by group) and field 0x2487 (5 bits) takes the kind itself.  Returns 1. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov023SessionSlot {
     int  nField00;            /* 0x00 */

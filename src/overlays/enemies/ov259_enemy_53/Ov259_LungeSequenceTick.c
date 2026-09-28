@@ -7,7 +7,7 @@
  * range, goes to move 0x12 (over 12x) or 0x10 (over 5x) or plays pose 0x15 with a lifted sweep
  * (+0x420 = 6, +0x424) and restarts via 020d0b6c. The six +0xac flags pulse the cue (020cd2c8 0, 1,
  * 0, 1, 2, 3) at 0x550, 0x7f8, 0xaa0, 0xff0, 0x1298 and 0x1a90. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 

@@ -19,7 +19,7 @@
  * ARM.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int nFlipGate;                      /* +0x000 */

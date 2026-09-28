@@ -35,7 +35,7 @@
  * Ov002_PanelStepCursor, which steps the panel cursor for this same screen.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int data_ov002_0207f624;
 extern u16 data_ov002_0207deb8[];

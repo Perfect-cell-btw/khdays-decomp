@@ -1,8 +1,7 @@
 /* Commits a mission's results to the game state: its clear/complete status and the
  * all-cleared/all-complete flags, the best rank, and adds the scaled rewards (capped). */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Ov005Config {
     u16 sceneId,missionIndex;
     char unknown04[8];

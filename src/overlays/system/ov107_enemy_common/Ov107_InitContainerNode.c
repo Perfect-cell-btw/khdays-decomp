@@ -2,7 +2,7 @@
  * install three callbacks, allocate and init a 0x28-byte child list at +0xb0, clear the tracking
  * fields, and attach a fresh object at +0x3c. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov107_InitBehaviorNode(u16 *node);
 extern void *CallocInstance(int size);

@@ -6,7 +6,7 @@
  * positive non-8/0x80/0x80 hit fires reaction 0x141 with the impact-table mode picked by the
  * alternating +0x85 counter, a grab in sub-state 9 requests 0xa, zero health requests 3 and,
  * outside sub-state 8, an 0x8000 hit goes to 0xd from 0xc/0xd and to 0xc otherwise. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x; int y; int z; };
 

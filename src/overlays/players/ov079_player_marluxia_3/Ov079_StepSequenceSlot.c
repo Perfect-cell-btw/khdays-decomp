@@ -4,9 +4,7 @@
  * picks the blend mode), tracks 0 and 2 are bound to the blend table and rewound, and the slot
  * enters state 2; in state 2 the timer keeps counting while the tracks play, and the slot goes
  * idle when they finish. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef short s16;
+#include "nitro/types.h"
 
 extern void Ov022_PlayEntityVoice(char *self, int nSound, int nVariant);
 extern void BindAnimTrack(void *animation, int track, void *table, s16 mode);   /* BindAnimTrack */

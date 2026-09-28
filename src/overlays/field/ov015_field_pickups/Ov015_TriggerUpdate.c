@@ -4,8 +4,7 @@
  * 0207c788) arms the session's leave request (ov002 0206b88c) and queues a 4-byte type-1
  * message on itself (ov002 020766e0); if the message is refused the request is cleared
  * again, otherwise the trigger is marked fired (+0x50 = 1).  Always returns 8. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int GameState_GetField(u16 nField, u8 nBit);                   /* GameState_GetField */
 extern int Ov002_MatchPackedMask(int nMatch, int nMaskHi, int nMaskLo); /* packed hi / lo mask match */

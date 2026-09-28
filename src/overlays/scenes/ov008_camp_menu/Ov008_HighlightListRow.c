@@ -10,9 +10,7 @@
  * game flag 0x37c9 + id is set), the new highlight drawn (0205f050 1) and
  * the row remembered.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define VISIBLE_ROWS  8
 #define STATE_DRAG    2

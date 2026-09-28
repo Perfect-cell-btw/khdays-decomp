@@ -6,7 +6,7 @@
  * 0x19f, 6: 0x194 / 0x1a0, 3: 0x195 / 0x1a1, 10: 0x196 / 0x1a2, others 0x18d / 0x199 -- the
  * first for actor indices below 4, the second from 4 on; except for kind 10, an extra set
  * (data_ov023_0208a784 byte 0) overrides with 0x197 / 0x1a3. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

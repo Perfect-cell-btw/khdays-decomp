@@ -27,8 +27,7 @@
  *   data_ov008_0208fd48: Ov008_MissionBuildScreenCells
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov008_0208fa28[4] = {
     47, 44, 45, 46,

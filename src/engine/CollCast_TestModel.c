@@ -1,11 +1,7 @@
 /* Tests the cast against a collision model's quad tree (after a bounds check); records the nearest
  * face. */
 
-typedef signed short s16;
-typedef unsigned short u16;
-typedef signed int s32;
-typedef unsigned int u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct CollisionRegion {
     s32 centerX00;

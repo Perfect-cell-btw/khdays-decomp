@@ -5,9 +5,7 @@
  * units) as the coordinates, then END_VTXS (GX_SendFifoWords 01ff9f00).
  * PROVENANCE: byte-identical twin of ov023's Ov023_DrawNoiseQuad (Ov023_DrawNoiseQuad), same code and
  * pool layout in the ov106 event scene; the ov023 source is the analysed one. */
-typedef unsigned int   u32;
-typedef signed short   s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

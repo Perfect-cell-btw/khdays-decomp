@@ -3,8 +3,7 @@
  * whose track-0 entry holds a motion (frame not -1) and that depth's two 0x10-byte sound
  * requests (+0x498, 0x20 per depth) get the first free one (kind 0) filled with the pair,
  * the kind and the extra word. */
-typedef unsigned char  u8;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct Ov023SoundRequest {
     int  nA;                  /* 0x00 */

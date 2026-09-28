@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 typedef struct Ov002SessionMarker {
     VecFx32 place;

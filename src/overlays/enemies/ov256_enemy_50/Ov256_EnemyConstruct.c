@@ -10,8 +10,7 @@
  * two +0x434 and five +0x43c helpers and clears +0x45c and +0x468.
  * Codegen: compiled with opt_common_subs off (push/pop scoped); the +0x60 update re-reads the
  * halfword instead of reusing a copy. */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[16]; } IdTable;

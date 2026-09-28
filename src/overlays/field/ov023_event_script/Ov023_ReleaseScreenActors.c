@@ -3,8 +3,7 @@
  * currently tracks the departed peer (+0x87590; Ov023_ActorOnScreen 02088ec0), finish it
  * (0208895c) unless the scene's dialog state (+0x875e4) is 2 or 3 (an ov002 dialog up), and release its sprite id
  * (0202beb8 with the actor index) when its state word (02088eb4) has bit 5 or bit 10 set. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov023Actor {
     u8   pad_0000[0x1a64];

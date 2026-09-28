@@ -4,7 +4,7 @@
  * offsets of the 16-entry table (10 entries while +0x2e14 is clear) is picked at random,
  * rotated by the actor's heading, scaled by 5, added to the actor origin and jittered on x/z;
  * the point is raised to the ground and handed to the spawner with the rig. */
-typedef long long s64;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { Vec3 v[16]; } OffsetTable;

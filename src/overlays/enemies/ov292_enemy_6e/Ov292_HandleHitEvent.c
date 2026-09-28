@@ -13,8 +13,7 @@
    spelled as an ordinary pair of equalities mwcc range-reduces it to
    (unsigned)(x - 5) <= 1, and the ROM keeps the cmp/cmpne cascade. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct HitState {
     char *pOwner;

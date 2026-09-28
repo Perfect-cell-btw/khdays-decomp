@@ -9,7 +9,7 @@
  * the +0x22c pool and an oriented box (half-extents 0.85 / 1.7 / 0.68) at +0x3d8 on the +0x144
  * pool. Creates the 020d0574 companion (+0x3dc) and eight 020d1628 / 020d238c children (+0x3e0 /
  * +0x3e4), then loads sound 0x162. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[8]; } IdTable8;

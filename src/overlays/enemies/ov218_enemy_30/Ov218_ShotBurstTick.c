@@ -6,9 +6,7 @@
  * owner, the body's +0x290 power for that kind, the owner's +0x258 reaction, the part) through
  * 020c5cfc and message 0 on acceptance. Any hit fires reaction 0x135 mode 5 at the +8 target. Once
  * the +4 rig is idle sub-state 0 follows. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Sphere { Vec3 centre; int radius; };
 struct ListNode { void *item; };

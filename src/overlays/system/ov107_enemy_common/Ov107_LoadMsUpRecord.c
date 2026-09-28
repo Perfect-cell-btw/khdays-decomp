@@ -9,9 +9,7 @@
  * As separate locals the pair would be forwarded in registers. Reading the
  * record field by field (not as a struct copy) keeps file + 2 as its own
  * base; a struct copy folds the +2 into the load offsets. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Record {
     u16 field_00;

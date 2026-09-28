@@ -1,8 +1,7 @@
 /* Whether every flag of the offset-table row set for `key` is raised: the table is loaded, the
  * rows (0x14 apart, count in the set's +2) whose flag (+8 id plus nine) is clear are counted,
  * the count is reported through e700 (kind 1) and the table released; 1 when none is missing. */
-typedef signed char s8;
-typedef short s16;
+#include "nitro/types.h"
 
 extern void Ov002_LoadOffsetTableOnce(int nWhich);
 extern char *Ov002_FindHandlerByKey(int nKey);

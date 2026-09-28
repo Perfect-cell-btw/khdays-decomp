@@ -10,7 +10,7 @@
  * +0x3bc) from a zero capsule pointing up (radius 1.32, height 1.47), the +0x22c/+0x144 placements
  * +0x3b8 (0.76), +0x3c0 (1.0) and +0x3c4/+0x3c8 (1.43); spawns the item into +0x3b0 and loads
  * sound 0x154. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[5]; } PoseTable;
 typedef struct { Vec3 min; Vec3 max; } Bounds;

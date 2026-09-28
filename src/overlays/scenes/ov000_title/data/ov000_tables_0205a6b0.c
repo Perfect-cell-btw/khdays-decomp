@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov000_StepMenuSelection (0204d244): const OverlayCountTable data_ov000_0205a6b0; */
 const int data_ov000_0205a6b0[3] = {

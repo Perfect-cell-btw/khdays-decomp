@@ -4,7 +4,7 @@
  * entry id, the rest a count and two timings; the last rows are 0xff terminators.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 nId;

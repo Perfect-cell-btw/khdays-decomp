@@ -8,9 +8,7 @@
  * its own induction variable and spills the base; the signed add keeps the ROM's
  * base register + j.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define LIST_COUNT      2
 #define LIST_FIRST      3

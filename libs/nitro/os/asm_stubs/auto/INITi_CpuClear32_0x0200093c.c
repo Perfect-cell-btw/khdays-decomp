@@ -1,4 +1,4 @@
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* Third linked copy of the NitroSDK startup clear primitive. */
 asm void INITi_CpuClear32_0x0200093c(register u32 value,

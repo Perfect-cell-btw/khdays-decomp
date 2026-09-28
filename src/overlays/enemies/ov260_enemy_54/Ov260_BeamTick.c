@@ -4,8 +4,7 @@
  * is pushed 0.5 horizontally away from the actor (kind 4); on acceptance the owner spawns effect 7 at
  * the +8 point and the bit is set. After any hit reaction 0 mode 0x53 fires there. Once the +4
  * part's rig is idle (+0xad), pose 0 is requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 

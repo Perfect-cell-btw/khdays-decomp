@@ -6,8 +6,7 @@
  * 020cfd58 hands (+0x458). Shapes: eight 15.0-long upright capsules / placements (radii 1.875, 1.3125,
  * 1.5; placements 2.625 / 4.125) at +0x3d8, the first also mirrored on the +0x22c pool (+0x3d4). The
  * +0x460 partner flag comes from bit 2 of the save flags and picks sound 0x180 or 0x17b. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[43]; } IdTable43;

@@ -6,7 +6,7 @@
  * block pointer must be declared before the build block pointer: the other order gives the same
  * instructions with two registers swapped. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Ov030BuildBlock {
     char pad000[0x334];

@@ -3,10 +3,7 @@
  * when the context object (02084dd8) is 1 the menu is left entirely (ov002 0206d970 with
  * payload 0) and the target slot becomes -1 / -1 (02084798), otherwise 0 / -1; the cancel sound
  * plays (02033b78 0 / 3). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 extern void  GameState_SetField(int nField, int nBits, int nValue);      /* GameState_SetField */
 extern int   Ov025_GetCtxObject95c0(void);                             /* Ov008_GetCtxObject95c0 */

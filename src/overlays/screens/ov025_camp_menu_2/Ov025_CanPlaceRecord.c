@@ -24,10 +24,7 @@
  * entry pointer declared after k and j, with the anchor kind declared last;
  * the table hit sets the result and jumps to the end.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define GRID_PAGES 3
 #define GRID_ROWS  8

@@ -5,9 +5,7 @@
  * are applied (the entry's own column from data_ov025_020b4520 forced to 0) and the cursor (+0x50)
  * is put back on the row it was on, or clamped to the last row. The ov008 copy's page-10 special
  * case is absent here. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct { u16 h0, h1, h2, h3, h4, h5; u32 w; } Ov025WeaponStat;
 typedef struct { int a[22]; } Ov025StatColTable;

@@ -10,7 +10,7 @@
  * arms swapped still predicates, so it is the `switch` that does it, not the block order.
  * This is the documented "if the ROM branches to out-of-line arms, reach for switch" rule, and it
  * applies to a two-arm select and not only to the three-way ones it was first written for. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 extern void Ov008_GetMissionRowInfo(int param_1, void *out);
 
 struct Entry {

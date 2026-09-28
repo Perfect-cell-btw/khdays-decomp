@@ -2,10 +2,7 @@
  * the fade via PlaySound only on an actual change). Any other input dispatches on the external code
  * (data_0204c190) into a mode (2/5/...), restarting the fade as needed. */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov000SubSceneContext {
     u8 pad_0000[0x14];

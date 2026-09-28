@@ -19,9 +19,7 @@
  * and stored after nDirY, which is what holds it in r1 across the table lookups. And the flag
  * test is the 64-bit spelling from the ov044 twin: the low word of a u64 AND loads into r1.
  */
-typedef long long s64;
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

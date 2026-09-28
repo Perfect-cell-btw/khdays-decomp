@@ -2,7 +2,7 @@
  * no queued move the windup count +0x54 grows with pose 0xb, and at 2 +0x4c clears, a charge is armed
  * (+0x69 = 1), the actor is knocked back at the origin twice (modes 0xa and 0xb), both claws (+0x434,
  * +0x438) aim at the +0x34 direction (020d108c), pose 0xc plays and the node moves on to 020cf88c. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov256_PickTarget(int *node);

@@ -2,7 +2,7 @@
  * +0x30 020d25e0, +0x1dc 020d2538), sets bits 1-3 and 6 of the +0x60 high byte and bits 2 and 4 of
  * +0x1ae, +0x70 = 0x800, +0x64 rests at the origin, +0x54 / +0x58 clear, and its model (+0x384)
  * loads from the +0x38c owner's kit entry 0x31 and registers with the +0x9c scene. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov107_PackTextureHandle(char *self, int kind);

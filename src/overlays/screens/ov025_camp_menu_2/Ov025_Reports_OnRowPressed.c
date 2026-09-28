@@ -6,10 +6,7 @@
  * held (+0x25c), the byte at +0x22c cleared, the rows re-highlighted (020a0a14), the cursor's
  * report marked read, the cursor sound played once (02033b78 0 / 0 while +0xcc is 0) and the
  * rows refreshed (020a076c) before the page's request 0 is issued (020b07dc). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025ReportsList {
     void *pHeader;            /* 0x00 */

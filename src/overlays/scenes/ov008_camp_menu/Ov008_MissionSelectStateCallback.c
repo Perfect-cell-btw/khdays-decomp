@@ -3,9 +3,7 @@
  * Ov006_MissionCreateContext measures, so they are the last fields of the object rather than
  * something past its end. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*MissionCallback)(void);
 
 typedef struct {

@@ -8,9 +8,7 @@
  * state stays.  Any other path arms handler 0207a254 on gate 0xd (state 1) and
  * moves on to 0207a424.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GATE_LOBBY 0xd
 

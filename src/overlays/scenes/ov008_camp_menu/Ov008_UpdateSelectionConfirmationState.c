@@ -1,10 +1,7 @@
 /* Synchronises the mission selection confirmations with the peers: sends the local entry, collects
  * theirs and, once every entry is confirmed, starts the lobby transfer. */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*MissionCallback)(void);
 
 typedef struct {

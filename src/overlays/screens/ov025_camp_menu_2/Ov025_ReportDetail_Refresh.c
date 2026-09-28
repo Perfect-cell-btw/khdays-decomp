@@ -13,10 +13,7 @@
  * slot 0x1a filled with tile 0xa0: on the first text page of a record with a picture (+8 >= 0)
  * its palette and characters are queued (GFXi_EnqueueCommand 0x1f / 0x16) and the 11 x 8 screen
  * block copied to rows 5..12 at column 0x13 (MIi_CpuCopy16). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;
 typedef struct Ov008PaletteBlock   { u8 pad_0000[0x08]; u32 size; void *data; } Ov008PaletteBlock;

@@ -1,7 +1,7 @@
 /* Charge tick of the ov146 actor: +0x3c accumulates the frame rate; stage 0 (+0x50) starts the +0x3bc
  * effect after 1.33, stage 1 plays sound 0x125/5 at the +0xc point after 2.76; afterwards, once the
  * partner holds no queued move, bit 0 of +0x1ae clears, the next move is 2 and the node ends. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Ov146_Mount_SetStateIfReady(int param_1, int param_2);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);

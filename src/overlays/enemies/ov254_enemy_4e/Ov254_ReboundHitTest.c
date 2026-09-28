@@ -4,8 +4,7 @@
  * actor spawns effect 0 at the rebound point (the volume's surface or segment end, pushed out) and the
  * entity's bit joins the result. The hits are added to the mask and, if any, reaction 0 mode 0x50
  * fires at the +8 point. Returns the new hit bits. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 

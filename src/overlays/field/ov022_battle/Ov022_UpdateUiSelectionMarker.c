@@ -1,7 +1,7 @@
 /* Animates the lock-on marker sprite through its states: tweens the corner markers towards the
  * point, then settles and holds it. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov022SelectionPoint {
     int x;

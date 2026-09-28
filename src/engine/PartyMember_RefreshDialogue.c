@@ -5,7 +5,7 @@
  * progress queries (GameState_GetField): 0x37c7 gives 0 = record marked (+0x30), 1 = 0x800, 2 = 0x1;
  * 0x35bf gives 1 = 0x1000|0x200, 2 = 0x2; a member whose table entry (data_0204c678, stride
  * 0x104, byte +3) is 0xe also gets 0x1 once flag 0x208c is set. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct PartyMsgRec {
     char pad00[0x30];

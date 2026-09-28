@@ -1,7 +1,7 @@
 /* Wait tick of the ov230 actor: the +0x10 delay runs down at the frame rate; when it expires bit 0 of
  * the owner's +0x60 high byte is raised and bit 7 cleared, pose 0 plays, the +0xc clock and the +0x14
  * flag reset and brain slot +0x20 runs 020d61d0. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov106_LayoutMarkerWidget (not yet decompiled) */
 const u8 data_ov106_020b8a6c[12] = {

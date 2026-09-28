@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov022_InitUiSubsystem (02085f9c): Ov022DefaultValues data_ov022_020b226c; */
 const u8 data_ov022_020b226c[16] = {

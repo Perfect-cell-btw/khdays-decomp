@@ -6,8 +6,7 @@
  * raise bit 2 of the flags; the last four leave animation set 3/4/3/3. Both +0xdac animation
  * blocks are then rebound to that set on channels 0/1 from their +0x2ee4 tables, and the mode is
  * handed down either as a secondary id (020a3c78, caching the mode) or plainly (020a384c). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void BindAnimTrack(void *p, u16 channel, void *table, short set);
 extern int Session_GetLocalPlayerIndex(void);                                                /* Session_GetLocalPlayerIndex */

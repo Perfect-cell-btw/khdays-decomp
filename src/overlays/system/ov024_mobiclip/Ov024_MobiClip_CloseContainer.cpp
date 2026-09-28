@@ -9,8 +9,7 @@
  * a virtual call and the release is a plain delete whose null check is part of
  * the expression.
  */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 class MobiClipReaderRef {
 public:

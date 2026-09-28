@@ -5,10 +5,7 @@
  * Codegen: the value parameter is declared s16 here so the field load is
  * evaluated before the id / width constants (mwcc argument order).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct Ov008SelCtx {
     u8  pad_0000[0x4c];

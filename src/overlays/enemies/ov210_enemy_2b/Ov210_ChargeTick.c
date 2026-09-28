@@ -7,8 +7,7 @@
  * timer accumulates the rate; once the owner reports contact (+0x17a bits 0, 1 or 3) or the
  * timer reaches 1.0, bit 6 of the +0x60 high byte clears, animation 9 plays and the tick hands
  * over to Ov210_AiRetarget. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;

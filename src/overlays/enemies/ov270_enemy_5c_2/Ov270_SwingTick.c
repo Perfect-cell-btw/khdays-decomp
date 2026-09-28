@@ -14,9 +14,7 @@
  * Codegen: the contact position is a stack copy (`raw`, y raised in place) packed through the
  * Fx32 wrapper copies (ov122_020d12f4 idiom) -- the three unread word stores at the frame
  * bottom are the ROM's; the ca918 push is the zero vector. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;

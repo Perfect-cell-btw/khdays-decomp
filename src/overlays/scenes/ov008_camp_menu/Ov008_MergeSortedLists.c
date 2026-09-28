@@ -1,6 +1,6 @@
 /* Merges two sorted lists into the destination list with the comparison function. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct NNSFndList {
     void *head;

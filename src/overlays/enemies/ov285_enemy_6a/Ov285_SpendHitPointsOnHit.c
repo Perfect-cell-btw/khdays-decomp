@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 /* The hit state hanging off the actor; only its owner pointer is used here. */
 struct HitState {

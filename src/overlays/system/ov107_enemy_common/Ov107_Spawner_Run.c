@@ -12,11 +12,7 @@
  *       live count is decremented on unbind.
  * Layout of Ov107Object/Ov107Slot from Ov107_Spawner_OnActorRetired, Ov107_Spawner_AddSlot,
  * Ov107_Spawner_AddDataBlock and Ov107_InitMovementNode. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

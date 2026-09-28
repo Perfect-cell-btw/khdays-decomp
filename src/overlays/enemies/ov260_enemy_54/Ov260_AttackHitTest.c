@@ -1,6 +1,5 @@
 /* d0e14 */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, void *cyl, int *hits);

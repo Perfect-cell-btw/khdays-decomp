@@ -4,7 +4,7 @@
  * whose shape meets the sphere (ov107 020c3504) is handed to pfn(index, piece, node, nArg)
  * and a 0 answer stops the walk.  Nothing happens while the record set is settled
  * (0207386c == -1) or the seat has no owner. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

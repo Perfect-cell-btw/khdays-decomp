@@ -1,4 +1,4 @@
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef void (*OSIrqFunction)(void *arg);
 

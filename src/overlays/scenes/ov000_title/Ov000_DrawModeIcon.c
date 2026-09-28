@@ -10,7 +10,7 @@
  * an early return: the enqueue has to happen either way.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad_0000[0x4b04];

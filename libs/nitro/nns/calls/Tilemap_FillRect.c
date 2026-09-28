@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void NNS_G2dMapScrToChar256x16Pltt(u16 *dst, int width, int height, int mapW,
                           int tile, int palette);

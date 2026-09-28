@@ -1,9 +1,6 @@
 /* Fills the pose message (gauge flags, part visibility bits, HP, action) and sends it. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef short s16;
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad_00[2];

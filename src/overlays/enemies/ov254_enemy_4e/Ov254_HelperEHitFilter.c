@@ -3,7 +3,7 @@
  * +0x394 owner when it points within ~50 degrees of the hit's own direction, else the hit
  * direction. A sourced hit resets the +0x40 / +0x44 timers, sets +0x4c and clears the +0x34 hit
  * mask; an unsourced one adds bit (short)hit[4] to that 64-bit mask. Returns 1. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct HitWord { unsigned int lo : 16, hi : 16; };
 

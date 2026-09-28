@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* One seat row of the session board, as the readers at 0206bdcc see it. */
 typedef struct Ov002SeatRow {

@@ -6,9 +6,7 @@
  * out through the actor's +0x24 hook, the companion plays pose 1 (looping), the +0x1c timer
  * clears, bit 1 of the +0x60 high byte and bit 0 of +0x1ae are set, the +0x3d4 shape is disarmed
  * and the node moves to 020ceb2c. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { int w[4]; } Quat;

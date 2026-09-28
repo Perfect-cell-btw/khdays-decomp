@@ -15,8 +15,7 @@
  * sets +0x1ae bit 0 and 1.0 of invulnerability, and every fourth bounce requests move 0xc.
  * A damaging hit that is not the 8|0x80/0x80 special flips the +0x50 parity and fires reaction
  * 0x166 with mode 2/3 (bits 1/5) or 0/1 at the +0x38 point. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 struct HitWord { unsigned int lo : 16, hi : 16; };

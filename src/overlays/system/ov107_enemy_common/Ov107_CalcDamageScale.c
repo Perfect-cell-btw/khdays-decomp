@@ -1,6 +1,6 @@
 /* Damage scale from the attacker and defender stats (defense floor of 1.0). */
 
-typedef int fx32;
+#include "nitro/fx.h"
 
 static inline fx32 FX_Mul(fx32 a, fx32 b) {
     return (int)(((long long)a * b + 0x800) >> 12);

@@ -18,10 +18,7 @@
  * by the second); the refusals share a static inline refresh and exit via
  * goto done.
  */
-typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef unsigned int       u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define GRID_PAGES 3
 #define GRID_ROWS  8

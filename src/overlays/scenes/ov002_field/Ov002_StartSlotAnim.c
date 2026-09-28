@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov002Vec3 {
     int x, y, z;

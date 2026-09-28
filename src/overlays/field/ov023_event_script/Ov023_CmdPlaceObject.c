@@ -2,8 +2,7 @@
  * model objects (Ov023_PlaceObject 02083afc).  Operand 1 is the object's index, 2 / 3 its
  * position and 4 / 5 its angles in degrees; operand 0, when given, names the resource to start
  * it on.  Returns 1. */
-typedef unsigned char  u8;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct Ov023Operand {
     s16  nType;               /* 0x00 */

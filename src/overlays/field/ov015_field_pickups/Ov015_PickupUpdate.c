@@ -11,9 +11,7 @@
  * (ov002 02076bd8) and the terminal state function (ov002 0207cea4) returned.  Otherwise
  * a visible pickup draws its model node (0202aa9c) and advances the taken sequence
  * (0207fdc4), and 0 is returned. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

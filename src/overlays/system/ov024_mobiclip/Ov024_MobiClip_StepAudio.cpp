@@ -9,9 +9,7 @@
  *
  * Reports zero once this frame's samples have all been produced.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define TRACK_BYTES  0x14f8
 #define PCM_BYTES    0x200

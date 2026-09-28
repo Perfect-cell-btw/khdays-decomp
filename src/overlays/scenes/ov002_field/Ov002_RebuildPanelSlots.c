@@ -22,9 +22,7 @@
  * table address in two separate entries, and mwcc emits two only for two distinct
  * symbols. With one name the second read reuses the register already holding the
  * base and the second entry never exists. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u16 nKey;                       /* +0x00 */
@@ -154,7 +152,6 @@ int Ov002_RebuildPanelSlots(int nRaw) {
             s->aSlots[i] = 7;
         }
         break;
-
 
     case 5:
         if (s->pCachedEntry == 0) {

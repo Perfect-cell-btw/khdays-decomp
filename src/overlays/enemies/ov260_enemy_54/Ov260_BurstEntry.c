@@ -1,7 +1,7 @@
 /* Burst entry of the ov260 actor: it is knocked back at its own +0x74 position (mode 3), effect 0xc
  * starts there, bits 1 and 7 of the +0x60 high byte are set, +0x70 clears and the node moves on to
  * 020cf518. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);

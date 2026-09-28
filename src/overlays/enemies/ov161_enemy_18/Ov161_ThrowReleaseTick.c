@@ -1,8 +1,6 @@
 /* Ov161_ThrowReleaseTick: throw-release tick of the ov161 enemy (x2), ported from the matched ov202 sibling (radius = timer * 4 + 0x800, pushes raised to 0x1000, kind bit 0x20000, +0x60 bit 7 set at the end). */
 /* Ov161_ThrowReleaseTick: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /*
  * Coordinates are held in a one-value wrapper type (Fx32), a tentative
@@ -95,7 +93,6 @@ extern void SetIndexedSlot(struct Node *node, int slot, int arg);
 
 extern const struct Msg data_ov161_020cf280;
 extern const struct Msg data_ov161_020cf29c;
-
 
 static inline void ov131_packImpact(struct Msg *msg, FxVec *v)
 {

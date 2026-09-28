@@ -10,10 +10,7 @@
  * (Ov027_InitHintText 02083ccc) are set up; single player also builds the character object at
  * +0x588 (Ov027_InitCharacterObject 020833b4), a session host loads the sign-in panel
  * (Ov027_LoadSignInPanel 02082b54).  Returns the first state, Ov027_WaitSceneReady 02082d8c. */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

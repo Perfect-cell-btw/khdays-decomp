@@ -3,7 +3,7 @@
  * velocity damps to 0.906 on the ground (0.969 in the air) and gravity pulls 0.94 per frame. On the
  * ground a slow roll (under 0.0625) stops; otherwise the +0x38 bounce speed damps by 0.094 per 0x88
  * slice and becomes the vertical velocity. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { u8 b0 : 1; } Bit0;

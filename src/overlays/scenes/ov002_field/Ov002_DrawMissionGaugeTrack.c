@@ -23,7 +23,7 @@
  * cell on a late callee-saved register instead of an early one.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int nTotal;

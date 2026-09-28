@@ -2,10 +2,7 @@
  * phase 1 can arm the local pending trigger. When the scene spawn bit is set, spawn slot id 0xd6.
  */
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;

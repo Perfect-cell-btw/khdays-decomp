@@ -8,9 +8,7 @@
  * the call site changes address reuse and scheduling in mwccarm.
  * Both external vector constants are in their modules' .rodata sections.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

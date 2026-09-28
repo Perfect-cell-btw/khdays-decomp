@@ -7,7 +7,7 @@
  * the original dereferences the global into the same register that later holds the node, so the
  * two lifetimes never overlap. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207f624;
 extern void *Ov002_Ctx_FindActiveEntryByTag(int tag);

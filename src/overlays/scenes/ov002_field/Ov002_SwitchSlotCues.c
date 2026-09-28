@@ -9,7 +9,7 @@
  * ARM.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int a[2];

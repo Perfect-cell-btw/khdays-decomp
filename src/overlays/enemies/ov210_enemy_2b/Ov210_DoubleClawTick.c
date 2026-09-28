@@ -6,8 +6,7 @@
  * flags 3, carries the part point to the +0x24 hook and reaction 0 mode 0x4e fires there. Once the
  * +0xc idle byte clears, the +0x6c delay is drawn from the owner's [+0x224, +0x228] range and
  * sub-state 2 is requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flagLo : 4; u8 flagHi : 4; u8 pos[9]; } Cmd14;

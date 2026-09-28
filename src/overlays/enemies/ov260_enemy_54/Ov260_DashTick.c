@@ -2,8 +2,7 @@
  * the cue fires once at 0x4c8 (020cd04c 3, +0x7b bit 0), the +0x20 velocity is its +0x428 part's
  * +0x2c vector turned by the +0x64 heading and the body sweeps for hits (020cd2a0 kind 7). Once the
  * partner holds no queued move the next move is 2 and the node ends. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 struct Flag17a { u8 b0 : 1; };

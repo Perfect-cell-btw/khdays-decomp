@@ -1,9 +1,7 @@
 /* Finishes an action: fades both screens back in (or waits for the scene) and returns to the
  * gameplay hub when input is free. */
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef void *(*Ov022StateCallback)(void);
 

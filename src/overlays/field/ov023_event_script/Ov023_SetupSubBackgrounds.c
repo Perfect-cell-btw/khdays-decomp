@@ -3,8 +3,7 @@
  * then BG1..BG3 of the sub engine get their control words (text layers 0x1508 / 0x1600 /
  * 0x1700 over the two preserved bits 0 and 6), DISPCNT_SUB shows BG1..BG3 (bits 9..11) and
  * the priorities are set: BG3 2, BG2 1, BG1 0. */
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 static volatile u32 *const REG_DISPCNT_SUB = (volatile u32 *)0x04001000;
 static volatile u16 *const REG_BG1CNT_SUB = (volatile u16 *)0x0400100a;

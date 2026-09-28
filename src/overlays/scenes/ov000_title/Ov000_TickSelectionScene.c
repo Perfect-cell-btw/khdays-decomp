@@ -1,7 +1,7 @@
 /* Load/select scene tick: runs the current state's callback, hides the markers during a transition,
  * draws the page text, scrolls the page and places the selection markers. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

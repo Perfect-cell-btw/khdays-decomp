@@ -1,5 +1,4 @@
-typedef signed char s8;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Item Item;
 typedef void (*ItemCallback)(Item *item);

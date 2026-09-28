@@ -2,7 +2,7 @@
  * from time zero, and ends the action at timer 0x1800. Requests actor state 2 when no target
  * exists. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

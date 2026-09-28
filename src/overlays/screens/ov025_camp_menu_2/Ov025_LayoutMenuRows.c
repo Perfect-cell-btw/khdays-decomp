@@ -5,7 +5,7 @@
  * and widget 3 at y = r5 + ctx->field24 - 0x10, each pushed through Ov025_ReleaseTwoSlotsEx with the
  * {base, pos} pair. The row-offset add is written `p += r5` so the freshly-built offset (not the
  * loop-invariant r5) is the dying operand mwcc reuses for the destination register. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct WidgetPos {
     int base;   /* 0x0: shared base value from Ov025_GetEntryBlock2c */

@@ -3,7 +3,7 @@
  * clock reaches 0x10000, bit 1 of the actor's +0x17a flags is set or the sweep hit something,
  * the actor plays animation 5, starts sub-animation 0, publishes a zero vector with mode 4
  * (flag 1) and hands off to the next chase state. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 struct Flags17a { u8 b0 : 1, b1 : 1; };
 

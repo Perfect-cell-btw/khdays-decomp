@@ -1,10 +1,7 @@
 /* Updates one swinging request effect: computes its slot and swept collision position, arms the
  * visual row, advances animation, and tears it down when its state changes. */
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

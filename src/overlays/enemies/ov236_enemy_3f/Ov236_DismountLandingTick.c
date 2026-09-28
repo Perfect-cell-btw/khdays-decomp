@@ -4,8 +4,7 @@
  * +0x3d0), the last step both. Once the +0x20 flag byte clears the actor plays pose 0x10, a lost
  * front / rear rider is announced with the 4-byte notes at data_ov236_020d6430 + 0x10 / + 4
  * through the actor's +0x24 hook, the +0x14 timer clears and the node moves to 020d57a4. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov236Actor {
     char pad000[0x24];

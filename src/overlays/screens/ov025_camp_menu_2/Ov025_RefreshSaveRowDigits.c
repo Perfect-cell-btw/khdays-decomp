@@ -4,9 +4,7 @@
  * the "empty" sign (-1 when the row's flag at +0x24 is clear, else 0) to the
  * row's tags 5..7, 4 and 3 through Ov008_ConfigureTagBySign.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT   3
 #define DIGIT_COUNT 3

@@ -1,6 +1,6 @@
 /* Frees the scene's lookup list and tables, then the base region teardown. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Obj {
     char pad0[0x94];

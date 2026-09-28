@@ -5,7 +5,7 @@
  * data_ov253_020d4964 + 0x14 (kind 6, with the target's +2 id) goes through the actor's +0x24
  * hook, the latch and timer clear, pose 7 plays, the rider is released (020ad838) and the node
  * moves to 020d0344; otherwise the rider is only refreshed (020ad8e0). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct htriple { unsigned short a, b, c; };
 struct Ov253Rider { char pad[0x464]; unsigned long long flags; };
 

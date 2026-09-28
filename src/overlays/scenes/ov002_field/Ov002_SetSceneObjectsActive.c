@@ -14,7 +14,7 @@
  * bit result is stored once after the merge (int temp, so no u8 and-#0xff truncation before strb).
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*Fn)(int obj, int active);
 
 extern int data_ov002_0207fa20[];

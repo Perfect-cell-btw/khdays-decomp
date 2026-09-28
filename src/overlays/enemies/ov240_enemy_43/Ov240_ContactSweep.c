@@ -4,7 +4,7 @@
  * ground plane (forward when on top of it); on acceptance effect 3 spawns at the sphere surface
  * along the push and the id bit is set. When anything was hit, reaction 0x139 mode 9 fires at
  * the +8 point. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 

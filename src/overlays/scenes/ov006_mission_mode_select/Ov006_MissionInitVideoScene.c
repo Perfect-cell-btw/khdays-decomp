@@ -2,8 +2,7 @@
  * resources, waits for the wireless session to wind down, fades both screens to white and hands the
  * session state on. */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void Gfx_Reset2DEngines(void);
 extern void Res_TearDownBlock(void);

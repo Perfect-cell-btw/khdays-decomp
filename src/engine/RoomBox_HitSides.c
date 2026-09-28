@@ -7,8 +7,8 @@
  * crossing ratio of each face the start is beyond is divided out and the latest crossing wins,
  * recording the face (0 -Z, 1 +Z, 2 -X, 3 +X) at +0x80. The hit only counts when it is closer
  * than the best hit so far (+0x78); returns the ratio, or -1.0. */
-typedef int fx32;
-typedef long long s64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 _00, _01, _10, _11; } MtxFx22;

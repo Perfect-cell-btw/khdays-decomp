@@ -1,7 +1,7 @@
 /* Landing tick of the ov238 actor: +0x20 accumulates the frame rate, the +0xc velocity follows the
  * +0x3e0 part's +0x2c vector turned by the heading and sound 0x12e/0xa cues after 15 frames; once the
  * partner holds no queued move pose 0 loops, bits 0-1 of +0x1ae are set and the +0x38c shape hides. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

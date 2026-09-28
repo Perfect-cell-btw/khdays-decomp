@@ -15,8 +15,7 @@
  * and that only happens when the field is a real variable.
  */
 
-typedef volatile unsigned int vu32;
-typedef volatile unsigned short vu16;
+#include "nitro/types.h"
 
 #define REG_DISPCNT   (*(vu32 *)0x04000000)
 #define REG_BLDALPHA  (*(vu16 *)0x04000052)

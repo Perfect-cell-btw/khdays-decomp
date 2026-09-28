@@ -8,8 +8,7 @@
  * 0xc4 + 8 * i, x = 0xb0.  The ready word is cleared and the panel marked
  * visible.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define DIGIT_COUNT   3
 #define TAB_SPECIAL   3

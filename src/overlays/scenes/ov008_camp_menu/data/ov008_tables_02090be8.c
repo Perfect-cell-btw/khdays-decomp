@@ -10,8 +10,7 @@
  *   data_ov008_02090c60: Ov008_UpdateMissionMemberSelectionInput
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 int data_ov008_02090be8[6] = {
     13, 16, 15, 14, 17, 18,

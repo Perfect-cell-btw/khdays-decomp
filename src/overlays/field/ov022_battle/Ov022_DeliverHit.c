@@ -19,10 +19,7 @@
  * bit 1, and under flag bit 12 an answered request bit 2.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

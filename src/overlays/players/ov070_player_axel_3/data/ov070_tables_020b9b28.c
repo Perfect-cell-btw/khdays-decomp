@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by ov070 actor: fire the attack. Marks the two effect slots busy, asks ov022_0209fe20 (020b90e0): Vec3 data_ov070_020b9b28; */
 const u8 data_ov070_020b9b28[12] = {

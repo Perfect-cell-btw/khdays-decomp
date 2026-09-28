@@ -8,8 +8,7 @@
  * aborts: message 0xd, the overlay's short note to the hook, the part flag dropped, pose 0x1d, the
  * +0x3a4 rig motion 0x18, +0x6c cleared and 020d054c. After 4.5 the tick ends the same way (without
  * the note) and unmarks the owner. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 c; int r; } Sphere;

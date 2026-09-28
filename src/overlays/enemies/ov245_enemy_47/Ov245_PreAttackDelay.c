@@ -1,7 +1,7 @@
 /* Ov245_PreAttackDelay -- pre-attack delay: counts the state's +0x24 timer up by the scene step;
  * at 0.3125 raises bit 0 of the actor's +0x60 high byte and bit 0 of the +0x388 item's +8 low
  * byte, plays pose 0, clears the +0x30 byte and moves the node to 020d1950. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);

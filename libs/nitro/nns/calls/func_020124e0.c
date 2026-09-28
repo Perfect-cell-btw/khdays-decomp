@@ -1,14 +1,7 @@
-typedef unsigned long u32;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef signed long s32;
-typedef signed long fx32;
-typedef signed long long s64;
-typedef int BOOL;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define FX32_SHIFT 12
 #define FX32_ONE (1 << FX32_SHIFT)
 

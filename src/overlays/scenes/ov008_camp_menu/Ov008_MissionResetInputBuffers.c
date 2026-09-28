@@ -2,8 +2,7 @@
  * clears the input and work buffers (returns 1); otherwise goes idle and drives the sound (returns
  * 0). */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     void *buffer;

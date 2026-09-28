@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* The seat window of the root context.  It starts at the offset table because
  * that is the anchor the compiler builds the two field addresses from. */

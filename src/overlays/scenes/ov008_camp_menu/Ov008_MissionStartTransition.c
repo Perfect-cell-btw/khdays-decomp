@@ -2,9 +2,7 @@
  * receive buffer, connects and installs the receiver and packet filter; marks the transition
  * requested. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad_000[0x28];

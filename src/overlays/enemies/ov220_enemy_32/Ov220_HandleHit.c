@@ -9,7 +9,7 @@
  * asks for 0xa, a 1|0x10 hit from sub-state 5 asks for 6, and a 0x8000 hit stores the 0x22
  * knockback bits and asks for 8. Codegen: the impact table is held through a `T *const` local so
  * its pool load is created before the actor parameter is homed (r3, not r0). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x; int y; int z; };
 

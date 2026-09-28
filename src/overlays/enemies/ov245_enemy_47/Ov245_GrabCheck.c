@@ -5,9 +5,7 @@
  * 0/0x53 fires at the state's +0xc anchor, bit 0 of +0x1ae is raised, pose 3 is set and the
  * node moves to 020d47e0. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 struct HitPacket {

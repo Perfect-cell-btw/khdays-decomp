@@ -5,10 +5,7 @@
  * divide 02020400; Ov025_ScrollList_SetKnob 020adfb0).  With bSound the cursor sound plays
  * (02033b78 0 / 0); the markers are re-placed (020ade68) and the list and its marker screen
  * marked dirty (+0x2c4, +0x18). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct TileBlock {
     u8   pad_00[0x20];

@@ -1,9 +1,7 @@
 /* Waits for the peers to be ready for the snapshot transfer (host) or for the host's start
  * (clients), then starts the shared snapshot transfer. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MessageHeader {
     u8 messageType : 4;

@@ -2,7 +2,7 @@
  * a non-positive id) is fulfilled: the record file is loaded (kind 0xe), each id looked up in it
  * and its value x 3 + 0x28e4 queried through 235d0 (kind 3) for a level of at least 2; the
  * file is freed on the way out of a complete walk. */
-typedef short s16;
+#include "nitro/types.h"
 
 extern void *Archive_LoadFile(void *name, int mode);
 extern int Ov069_LookupRecordValue(char *table, int id);

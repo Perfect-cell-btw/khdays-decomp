@@ -5,9 +5,7 @@
  * pc + 0x60 is present -- the wait in seconds (times 30 frames; 60 seconds by default),
  * then creates a lift piece (Ov016_LiftCreate 0207ff40) on the slot's class table (ov002
  * 02076468).  Always consumes the op (1). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

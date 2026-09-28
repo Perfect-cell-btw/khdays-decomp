@@ -12,8 +12,7 @@
  * Ghidra carries the two fields as wSlotCount and wSlotKey on Ov002PanelSession.
  */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207f620;
 

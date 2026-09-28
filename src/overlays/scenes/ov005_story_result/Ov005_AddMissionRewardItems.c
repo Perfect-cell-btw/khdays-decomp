@@ -1,9 +1,7 @@
 /* Adds a mission's reward items: the completion reward when newly completed, the clear rewards when
  * newly cleared, and a random pick from each of its weighted tables. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Ov005MenuItemHeader {char data[0x24c];} Ov005MenuItemHeader;
 typedef struct RewardRecord {char header[0x10];int missionId;char pad14[12];u32 items[5];u32 weightedTables[5];} RewardRecord;
 typedef struct Ov005Config {u16 sceneId,missionIndex;char pad4[8];u16 mode;} Ov005Config;

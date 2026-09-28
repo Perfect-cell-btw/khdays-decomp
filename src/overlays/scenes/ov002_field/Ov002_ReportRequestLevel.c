@@ -1,6 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov002RequestBlock {
     int nPauseObject;       /* -1 while there is nothing to report */

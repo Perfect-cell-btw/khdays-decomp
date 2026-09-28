@@ -3,8 +3,7 @@
  * five tracks, 0x2c bytes each) and pop the queue: the head is cleared (frame -1, empty name)
  * and every queued entry behind it moves one depth up (frame, blend, name) until an empty
  * one. */
-typedef unsigned char  u8;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct Ov023Motion {
     int  nField00;            /* 0x00 */

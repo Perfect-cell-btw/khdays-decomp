@@ -1,23 +1,10 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
-
 
 #define FX32_ONE ((fx32) 0x0000000000001000L)         // 1.000000000000
 
@@ -26,8 +13,6 @@ typedef struct {
     u32 enable;
     void * arg;
 } OSIrqCallbackInfo;
-typedef s32 fx32;
-typedef s16 fx16;
 typedef enum {
     TP_REQUEST_COMMAND_SAMPLING         = 0x0,
     TP_REQUEST_COMMAND_AUTO_ON          = 0x1,
@@ -234,7 +219,6 @@ void NNS_G3dAnmObjInit (NNSG3dAnmObj * pAnmObj, void * pResAnm, const NNSG3dResM
 {
     const NNSG3dResAnmHeader * hdr;
     u32 i;
-
 
     pAnmObj->frame = 0;
     pAnmObj->resAnm = (void *)pResAnm;

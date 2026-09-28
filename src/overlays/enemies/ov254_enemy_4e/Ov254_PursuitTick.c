@@ -10,7 +10,7 @@
  * grab meter or an expired +0x3c timer ends the move (pose +0x75+2, rig motion +0x76+2 looping,
  * flight extras) into 020cee30; otherwise pose +0x75+1 plays and, with the rig idle, rig motion
  * +0x76+1 follows (the climb resets while flying). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { Vec3 pos; int nRadius; } Sphere;

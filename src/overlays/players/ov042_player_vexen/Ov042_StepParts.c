@@ -6,7 +6,7 @@
  * owner unless it is in state 0x10000. The owner's state is a 64-bit flag word: the test masks
  * it as a long long and truncates, which loads only the low word (into r1, keeping the player
  * index in r0), as in ov031 020b453c and ov045 020b4968. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct OwnerFlags694 {
     u8 bSpawnEffect : 1;

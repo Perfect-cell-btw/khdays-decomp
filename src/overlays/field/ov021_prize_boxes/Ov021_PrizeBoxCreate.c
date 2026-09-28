@@ -11,9 +11,7 @@
  * item's resources (ov002 0206cf4c); a peer waits for the prize (+0x1be = -1).  Registers the
  * piece (ov002 02076480) and, in mission 0x41d (ov002 0206b84c), marks the bucket (02076968
  * mode 1). */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

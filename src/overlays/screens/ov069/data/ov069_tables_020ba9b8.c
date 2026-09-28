@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov069_LookupTypeCode (020b88c0): int data_ov069_020ba9b8; */
 const int data_ov069_020ba9b8[20] = {

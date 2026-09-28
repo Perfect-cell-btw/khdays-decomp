@@ -1,5 +1,5 @@
 /* Resolve a message-record pointer from ov008 caches or the generic database. */
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MessageCacheContextView {
     char unknown0000[0x207c];

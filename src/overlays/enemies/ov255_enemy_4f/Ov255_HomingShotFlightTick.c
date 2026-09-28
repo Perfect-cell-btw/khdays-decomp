@@ -9,8 +9,7 @@
  * reaction 0x15 there and hands over to Ov255_DriftTick. Hitting a plain wall on the way from
  * the owner's +0x39c point reports that point (data_ov255_020d2bb6) and ends the shot, as does
  * running for more than 5.0 (+0x1c); ending clears +0x1c and requests the owner's sub-state 0. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;

@@ -3,7 +3,7 @@
  * that slot under the +0x3c owner (kind 0x17, the packet's blend) into +0x39c; payload 1 does the
  * same unscaled with kind 7 and no blend. The base handler
  * always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int x, y, z; } Vec3;
 

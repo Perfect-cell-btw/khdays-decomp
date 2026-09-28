@@ -8,8 +8,7 @@
  * counter here (the reading the type's +0 comment records).
  */
 
-typedef unsigned char u8;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

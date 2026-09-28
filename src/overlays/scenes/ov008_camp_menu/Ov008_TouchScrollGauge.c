@@ -7,8 +7,7 @@
  * eight visible rows; the row flag (+4) is raised.  Widget 5 is hidden and the
  * drag flag (+0) set.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov008ScrollMenu {
     int bDragging;            /* 0x000 */

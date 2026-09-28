@@ -1,6 +1,4 @@
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 extern int  MI_CpuFill8(void *dest, int data, int size);
 extern int  func_02023c40(void);

@@ -1,8 +1,7 @@
 /* Applies an actor hit event: selects the reaction mode, computes and clamps damage, updates hit
  * points, emits the alternating reaction effect and requests the next actor state. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov190Vec3 {
     int x;
@@ -153,8 +152,4 @@ int Ov190_HandleHitEvent(struct Ov190ActorHitState *self, int source,
     }
     return 1;
 }
-
-
-
-
 

@@ -4,7 +4,7 @@
  * the list at ctx+4 (Ov008_VarTable_Load), overrides the template's field18
  * (Ov008_ResetEntry(9)) and field20 (Ov008_GetCtxBlock968c()), and applies it with TileSurface_InitAndUpload4bpp.
  * The one-surface counterpart of Ov008_SetupMenuSurfaces (Ov008_SetupMenuSurfaces). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Style28 {
     u8  pad_0000[0x18];

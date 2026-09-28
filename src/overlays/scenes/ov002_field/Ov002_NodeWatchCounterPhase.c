@@ -1,5 +1,4 @@
-typedef signed char s8;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov002TaskNode Ov002TaskNode;
 

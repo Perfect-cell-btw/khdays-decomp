@@ -7,8 +7,7 @@
  * the rig flags swap, the partner's +0x60 high byte gets bit 0 and loses bits 1, 2, 6 and 7, its
  * +0x1ae bit 0 clears and it enters move 10. Once the +4 rig is idle bit 1 of the +0x60 high byte
  * clears and the next move is 2. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

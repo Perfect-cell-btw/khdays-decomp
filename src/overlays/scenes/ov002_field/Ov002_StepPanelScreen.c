@@ -19,7 +19,7 @@
  * ARM.
  */
 
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct {
     void (*aSteps[12])(void);

@@ -3,7 +3,7 @@
  * load the burn/frost/shock effect models plus one more, attach each to the second group and
  * point each back at this node. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 
 typedef struct List28 { int w[10]; } List28; /* initialised by List_Init */

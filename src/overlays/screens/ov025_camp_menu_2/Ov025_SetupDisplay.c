@@ -3,8 +3,7 @@
  * (8..12), the sub engine goes to graphics mode 0 and the ov002 display to the top screen
  * (02076028); the BG priorities become main BG0 3, BG1 0, BG2 1, BG3 2 and sub BG0 0, BG1 1,
  * BG2 2, BG3 3. */
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 static volatile u32 *const REG_DISPCNT = (volatile u32 *)0x04000000;
 static volatile u16 *const REG_BG0CNT = (volatile u16 *)0x04000008;

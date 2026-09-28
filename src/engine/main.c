@@ -25,7 +25,7 @@
  *         and loop.  The active scene id lives in data_027e0060.
  * ==========================================================================*/
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef u32 FSOverlayID;
 
 extern u32 OVERLAY_1_ID[1];

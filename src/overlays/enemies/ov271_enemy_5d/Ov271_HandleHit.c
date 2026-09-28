@@ -6,7 +6,7 @@
  * (and a 0x2000 one also raises +0x68). A damaging hit that is not the 8/0x80/kind-0x80 kind
  * fires reaction 0x161 with the +0x58 bit-0 side's mode from the overlay's hurt (bits 1/5) or
  * idle pair at the +0x48 point, then flips the side. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x; int y; int z; };
 

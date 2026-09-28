@@ -7,9 +7,7 @@
  * that shares its item with the PREVIOUS record shows only when the previous
  * one has a level requirement already met.  Returns 1 / 0.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008ItemDef {
     u8  pad_00[0x14];

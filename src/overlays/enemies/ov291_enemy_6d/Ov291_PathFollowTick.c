@@ -8,8 +8,7 @@
  * 30 x dt / 25. Within 0x1000 of the node its kind decides: 1/2 clears the +0x384 item's +0xa8
  * flag and hands off to cd100, 3 clears bit 0 of the +0x60 high byte and requests sub-state 0
  * (slot released), otherwise the index advances modulo the path's count. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 struct hw60 { unsigned short lo : 8, hi : 8; };

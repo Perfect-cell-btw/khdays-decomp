@@ -4,7 +4,7 @@
  * objects carry a second initializer the function declares but never reads; mwcc keeps its
  * template even though the copy is dropped. Q12 fixed point throughout. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 /* Ov252_HitFilter (020ce5c4): reaction mode pairs, then three unread tuning words (the blast

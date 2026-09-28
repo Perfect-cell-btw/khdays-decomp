@@ -8,9 +8,7 @@
  * op 3 and returns the write's result (kept live across the store: that is
  * why the constant 3 goes to r1).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008SaveTierEntry {
     u32 nTier;                /* +0 (= save entry +0x18) */

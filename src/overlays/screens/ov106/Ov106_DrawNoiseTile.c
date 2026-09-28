@@ -6,8 +6,7 @@
  * data_0204be04) as alpha, and the colour 0x7fff (GX_SendFifoWords 01ff9f00).
  * PROVENANCE: byte-identical twin of ov023's Ov023_DrawNoiseTile (Ov023_DrawNoiseTile), same code and
  * pool layout in the ov106 event scene; the ov023 source is the analysed one. */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

@@ -2,7 +2,7 @@
  * clears bit 0 of the +0x3c0 / +0x3c4 items' +8 low byte, points the state's +0x1c at the
  * actor's +0xb0 pose and +0x20 at the +0x388 item's +0xad, raises bits 1-2 of the +0x60 high
  * byte and installs the three slot handlers (1: 020d4010, 0: 020d3c90, 2: 020d3f50). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

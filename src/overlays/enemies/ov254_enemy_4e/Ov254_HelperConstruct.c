@@ -2,7 +2,7 @@
  * sets bits 1-3 and 6 of the +0x60 high byte and bits 2 and 4 of +0x1ae, zeroes the +0x64 pose
  * with a tiny scale, clears +0x54 / +0x58, builds the +0x384 item (pose 0x41 of the +0x38c pool,
  * subscribed to +0x9c) and the hidden +0x390 item (pose 0x42, registered). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 

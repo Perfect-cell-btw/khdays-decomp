@@ -1,6 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* One entry of a code entry's item list. */
 typedef struct Ov002CodeItem {

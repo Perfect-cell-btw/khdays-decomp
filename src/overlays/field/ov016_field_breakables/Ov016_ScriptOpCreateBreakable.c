@@ -3,9 +3,7 @@
  * angle in degrees (turned into a 16-bit facing by angle * 0x10000 / 360) and the drop key
  * and argument, then creates a breakable piece (Ov016_BreakableCreate 02080ec0) on the
  * slot's class table (ov002 02076468).  Always consumes the op (1). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

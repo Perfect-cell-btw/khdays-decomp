@@ -6,9 +6,7 @@
  * and re-clamps it against Ov008_MenuEntrySubCount(sel) through Ov008_ClampWrapIndex.
  * Either way the cursor cue plays and the menu refreshes.
  */
-typedef unsigned char  u8;
-typedef signed short   s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov008SelCtx {
     u8  pad_0000[0x4c];

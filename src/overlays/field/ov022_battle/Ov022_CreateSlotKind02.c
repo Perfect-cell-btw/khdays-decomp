@@ -7,9 +7,7 @@
  * and its two hundreds are three rather than one.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define SLOT_KIND 2
 #define SLOT_TAG 0xb7

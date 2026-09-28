@@ -7,9 +7,7 @@
  * 24-bit values to the item's +0x24 hook; reaction 0x151 mode 8 fires at the +4 point, the
  * sub-state clears and the state ends. Without such a body the +0x30 timer accumulates the
  * rate and past 0x2a8 the state ends the same way. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

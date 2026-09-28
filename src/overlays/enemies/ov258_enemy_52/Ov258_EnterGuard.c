@@ -2,7 +2,7 @@
  * step countdowns become 0 and 3 with the +0x44 clock cleared, the rig switches (020cd028 mode 1);
  * in moves 7 and 8 the brain continues with 020cf324, otherwise +0x34 / +0x3c clear and it waits on
  * 020cef90. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
 extern void Ov107_PostTagUpdate(int a, int b, int c);

@@ -7,8 +7,7 @@
  * bound+row >= count), does nothing. Otherwise it shows entries 0x29/0x51, hides 0x80, applies the
  * control value, drives the scroll (Ov025_ScrollMenuMoveTo), plays a click, hides entry 5, and marks
  * ctx+0x14 dirty. */
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 extern int  data_ov025_020b575c;
 

@@ -13,8 +13,7 @@
  * reaction mode 0x1c fires at the +4 point and +0x72 is set. Once the +0xc idle byte clears on the
  * ground, the +0x4c delay is drawn from the owner's [+0x224, +0x228] range and sub-state 2 is
  * requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;

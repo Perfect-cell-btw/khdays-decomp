@@ -2,9 +2,7 @@
  * cases 0 and 27 through an explicit switch. +0xd118 is the interpolator sub-object
  * Ov000_CreateSceneContext initialises, so this is the same 0xd18c scene context. */
 
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     s16 value_0;

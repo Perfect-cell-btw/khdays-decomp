@@ -4,7 +4,7 @@
  * (slot 1), there; 2 starts pair 2 (kind 0x15) at the +0x394 bone's transform and 3 pair 3
  * (kind 0x15, c0794) there; 4 builds pair 4 through Ov246_SpawnAndInitRegistryEntry from pairs 6 and 5.
  * The base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Ov246Pair { int pItem; int pChild; };
 
 extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *at, int a, int b);

@@ -6,7 +6,7 @@
  * ticks Ov008_Menu_UpdateDirectionalPrompt, renders a cell built from Ov008_GetVarRecordByIndex(arg0+4, 9) onto the
  * arg0+0x4c surface (Text_DrawWithShadow(.., 0x56, 0, 2, cell, 0)), flushes both surfaces
  * (EnqueueObjGfxCommand), and releases slot 9 (Ov008_MarkSlotUsed). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Style28 {
     u8  pad_0000[0x18];

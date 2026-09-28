@@ -3,7 +3,7 @@
  * radius (3), the body at the origin with no speed; model 0x28 of the owner's +0x390 set becomes the
  * +0x384 rig (subscribed to +0x9c) and a 13.9-long upright capsule of radius 0.7 is registered in the
  * +0x144 pool (+0x388). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;

@@ -3,10 +3,7 @@
  * work) steps down one notch a frame; once it reaches -16 the counter is reset, the scene's
  * flag word is updated (Ov027_SetLeaving 02082b24 with 0) and the terminal state
  * (Ov027_ConstReturn0) is returned; both screens get the brightness on those frames.  0 to stay. */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

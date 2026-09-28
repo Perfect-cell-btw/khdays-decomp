@@ -1,8 +1,7 @@
 /* Find the entry with this key in the panel's first list, and hand back its
  * position through the optional out-parameter. Returns null when the key is not
  * on the list; the position then counts the whole list. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 nKey;

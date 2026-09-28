@@ -13,8 +13,7 @@
  * addressing, since the two THUMB accesses past the immediate range index off the base.
  */
 
-typedef unsigned short u16;
-typedef short s16;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207fa00;
 

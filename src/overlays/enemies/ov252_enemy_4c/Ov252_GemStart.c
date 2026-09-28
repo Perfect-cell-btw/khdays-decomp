@@ -2,7 +2,7 @@
  * of the model's +0x5c flags clears, the owner's +0x57e mask gains the gem's bit (+0x24 index), layers
  * 0, 2, 4 and 1 play (mode 0, 0), the model is scaled 2.5/4.06 (big gem, +0x25) or 2.0/3.25, the rig pose
  * resets, +0x20 clears, the first-blink flag (+0x26) is set and the node moves on to 020d3d10. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(void *srt);

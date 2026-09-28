@@ -12,9 +12,7 @@
  * The drift itself is decayed at the end, whatever happened to the step.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define DRIFT_FLOOR 0x200
 #define STEP_CAP 0x900

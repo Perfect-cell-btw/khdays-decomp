@@ -4,7 +4,7 @@
  * half-extents growing 1.0 per 0x88 of the timer up to 5.0) strikes along (0, -1.0, 0.75) turned
  * by the +0x40 heading (020cd0e8). Once the +4 item's +0xad byte clears, a leash request without
  * +0x7c sends it to move 7; otherwise +0x7c clears and the next move is +0x74 + 2. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { Vec3 pos; Vec3 axis[3]; int ext[3]; } Box;

@@ -7,8 +7,7 @@
  * +0x77 side's mode from the overlay's hurt (bits 1/5) or idle table, then flips the side.
  * Empty hit points request sub-state 3; sub-state 9 with a target and a 1/0x10 hit requests 0xa;
  * the hit is otherwise accepted. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov223Vec3 { int x, y, z; };
 

@@ -14,8 +14,7 @@
  * hoisted by hand. Read the ROM: an incremented register means write the affine
  * expression, a recomputed one means hoist the base.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     void *pHead;

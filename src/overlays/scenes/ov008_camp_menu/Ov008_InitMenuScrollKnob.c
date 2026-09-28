@@ -5,7 +5,7 @@
  * (knob - 0x10) rows (fx32) below cap 0xd's block position.  Then the eased
  * scroll (0205f388) is kicked with target 0.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define SEGMENT_FIRST 0xf
 #define SEGMENT_COUNT 0xc

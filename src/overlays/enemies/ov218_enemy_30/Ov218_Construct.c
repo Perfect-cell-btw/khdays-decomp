@@ -4,7 +4,7 @@
  * subscribed to +0x9c) with its +0x3a8 bone, the +0x3ac bone of pose 1, the two +0x3dc slot models
  * (kinds of data_ov218_020cf30c) attached and hidden, the +0x388 / +0x38c placements from the pose,
  * the two +0x394 helpers (020ce040), and loads sound 0x135. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int w[6]; } Bounds;
 typedef struct { u8 id[2]; } Kinds;

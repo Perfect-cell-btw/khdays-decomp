@@ -1,8 +1,7 @@
 /* Overlap test of a hit shape against a segment query; contact point optionally written out. */
 
-typedef int fx32;
-typedef long long fx64;
-typedef unsigned char u8;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x;

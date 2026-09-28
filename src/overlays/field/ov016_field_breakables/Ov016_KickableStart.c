@@ -5,9 +5,7 @@
  * at the rest position (0202b450), enables the node (0202bedc) only if the kickable's GameState
  * bit is set, marks the model bound (bit 2 of +0x12) and plays the current track (+0x61e) with
  * its two animation words (+0x624 / +0x620) through Ov016_KickableSetAnim (020815e8). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

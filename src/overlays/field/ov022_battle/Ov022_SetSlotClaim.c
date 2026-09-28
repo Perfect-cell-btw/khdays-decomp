@@ -8,9 +8,7 @@
  * call because it is a local with an initialiser.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define SLOT_STRIDE 0x164
 

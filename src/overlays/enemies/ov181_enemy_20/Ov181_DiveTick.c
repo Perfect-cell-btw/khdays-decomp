@@ -11,9 +11,7 @@
  * The impact point is packed through per-component Fx32 wrapper copies taken right before
  * each byte triple (the ov122_020d12f4 spelling).
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

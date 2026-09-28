@@ -2,8 +2,7 @@
  * another slot's id reverts to its previous one, and any duplicates left get a random id; then
  * remembers the ids. */
 
-typedef signed char s8;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 field_0;

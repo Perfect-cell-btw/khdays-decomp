@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int ScriptVm_ReadOperandInt(int pOwner, int pSlot);
 extern void Ov002_SubmitTaskNode(int bReady, int nFirst, int nKind, void *pArgs);

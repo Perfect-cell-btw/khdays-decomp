@@ -15,9 +15,7 @@
  * THUMB.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov002Rec {
     char pad000[0x10];

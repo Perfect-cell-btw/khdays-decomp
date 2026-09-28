@@ -10,8 +10,7 @@
  * sphere pairs (8.0 / 4.0) and two boxes (13.0 / 8.0 by 15.0), each on the +0x22c (+0x4e8) and +0x144
  * (+0x50c) lists. Finally arms the +0x504 / +0x508 volumes, shows the four armour pieces (020cc134)
  * and loads sound 0x148. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef void (*Callback)(void);
 typedef struct { int min[3]; int max[3]; } Bounds;

@@ -7,7 +7,7 @@
  * twelve +0x478 hidden parts (kits of data_ov260_020d2a3c), two placements (+0x418 on the +0x22c
  * pool, +0x41c on the +0x144 pool), the +0x42c / +0x430 helpers and the fifteen +0x434 shards, and
  * loads sound bank 0x17c or 0x174. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int id[12]; } PartKits;
 typedef struct { int min[3]; int max[3]; } Bounds;

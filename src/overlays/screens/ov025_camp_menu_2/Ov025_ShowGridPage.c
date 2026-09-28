@@ -13,10 +13,7 @@
  * statement at the top of the inner body; the palette is an int narrowed at
  * the store (hoisted); the page switch lists case 3 before case 2.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define GRID_ROWS   8
 #define GRID_COLS   5

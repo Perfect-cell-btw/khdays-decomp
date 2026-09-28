@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* External memory control. Bit 7 holds the GBA-slot access rights: 0 gives the
    cartridge bus to the ARM9, 1 to the ARM7. */

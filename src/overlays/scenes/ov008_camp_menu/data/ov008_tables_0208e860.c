@@ -8,8 +8,7 @@
  *   data_ov008_0208e860: Ov008_FlushDirtyCells
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov008_0208e860[7] = {
     9, 10, 11, 24, 25, 26, 27,

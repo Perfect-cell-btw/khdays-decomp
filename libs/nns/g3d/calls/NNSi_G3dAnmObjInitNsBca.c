@@ -1,25 +1,10 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/fx.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
-
-
-
 
 void MIi_CpuClear16(u16 data, void * destp, u32 size);
 static inline void MI_CpuFill16 (void * dest, u16 data, u32 size)
@@ -30,8 +15,6 @@ static inline void MI_CpuClear16 (void * dest, u32 size)
 {
     MI_CpuFill16(dest, 0, size);
 }
-typedef s32 fx32;
-typedef s16 fx16;
 typedef struct {
     fx32 x;
     fx32 y;
@@ -241,7 +224,6 @@ void NNSi_G3dAnmObjInitNsBca (NNSG3dAnmObj * pAnmObj, void * pResAnm, const NNSG
     NNSG3dResJntAnm * jntAnm;
     const NNSG3dResNodeInfo * jnt;
 
-
     pAnmObj->resAnm = pResAnm;
     jntAnm = (NNSG3dResJntAnm *)pResAnm;
     jnt = NNS_G3dGetNodeInfo(pResMdl);
@@ -251,7 +233,6 @@ void NNSi_G3dAnmObjInitNsBca (NNSG3dAnmObj * pAnmObj, void * pResAnm, const NNSG
     MI_CpuClear16(&pAnmObj->mapData[0], sizeof(u16) * pAnmObj->numMapData);
 
     ofsArray = (u16 *)((u8 *)jntAnm + sizeof(NNSG3dResJntAnm));
-
 
     for (i = 0; i < jntAnm->numNode; ++i)
     {

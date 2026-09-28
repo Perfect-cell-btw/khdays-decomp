@@ -1,7 +1,7 @@
 /* Place an ov260 part at `at` (020c5c54), tell its +0xc handler when +0x40 bit 1 allows it, restart
  * the +0x384 model's frame, store the +0x3a0 anchor from `anchor` and set bit 0 of the +0x60 high
  * byte. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Flags40 { int b0 : 1; int b1 : 1; };
 

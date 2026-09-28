@@ -14,7 +14,7 @@
  * three copies); the unpack and the transform are built before the
  * switch; byte 4 is always an unsigned read.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct SrtTransform {
     int w[11];

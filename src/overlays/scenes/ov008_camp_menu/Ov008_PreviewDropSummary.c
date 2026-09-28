@@ -27,11 +27,7 @@
  * are while loops on the next call (a for inner loop rotates the outer);
  * kind 3 passes the old HP twice.
  */
-typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef unsigned int       u32;
-typedef unsigned long long u64;
-typedef short              s16;
+#include "nitro/types.h"
 
 #define GRID_PAGES  3
 #define GRID_ROWS   8

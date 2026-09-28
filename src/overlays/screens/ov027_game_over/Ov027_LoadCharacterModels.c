@@ -8,10 +8,7 @@
  * on the row of data_ov027_02083e10 for that many characters.  In single player only the
  * player is loaded (Roxas, or Xion after byte 3 of data_0204c678 is set: entry 19), with
  * animation entry 2 and the position data_ov027_02083e04. */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

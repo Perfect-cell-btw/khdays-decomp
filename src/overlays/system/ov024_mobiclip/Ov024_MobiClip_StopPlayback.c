@@ -6,10 +6,7 @@
  * its two channel buffers are freed, and each slot has its stream closed, its
  * file closed and the slot itself released.
  */
-typedef unsigned char u8;
-typedef unsigned int u32;
-typedef unsigned long long u64;
-typedef long long s64;
+#include "nitro/types.h"
 
 struct MobiClipAudioStream {
     void *pStream;

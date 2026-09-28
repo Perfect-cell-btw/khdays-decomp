@@ -6,8 +6,7 @@
  * capture is armed (DISPCAPCNT 0xc0330010), and the game flag set (02023560 1).  With no frames
  * the end weight is applied at once (Ov023_ScreenBlendDone 02085258) and 1 returned, else the
  * command is re-queued (020219b4) for Ov023_CmdStepScreenBlend (02085310) and 0 returned. */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 static volatile u32 *const REG_DISPCAPCNT = (volatile u32 *)0x04000064;
 

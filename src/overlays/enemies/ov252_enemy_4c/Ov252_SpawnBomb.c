@@ -4,7 +4,7 @@
  * and diagonal) whose ground, probed 3.125 down from 16.0 up, sits within 0x10. The bomb then
  * rests at height 0 on the owner's +4 transform and records its slot (+0x24) and kind (+0x25).
  * Returns the spawn handle. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 v[8]; } Ring8;
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;

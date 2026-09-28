@@ -11,9 +11,7 @@
  * remainder (the high word of the 64-bit return); the status test is kept as a
  * materialised bool (cmp/movcs/movcc).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define FIELD_MISSION_STATUS 0x28e4
 

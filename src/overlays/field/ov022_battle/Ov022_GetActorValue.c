@@ -7,9 +7,7 @@
  * answer is handed back in whole units again.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed long long s64;
+#include "nitro/types.h"
 
 #define VALUE_CAP 0x3e7000
 #define PARTNER_QUERY 0x48

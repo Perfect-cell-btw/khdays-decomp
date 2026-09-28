@@ -6,7 +6,7 @@
  * counters (+0x94) marks its "appeared" word (+0x38) when the old count was 0
  * and the new one is positive.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define CATEGORY_COUNT 14
 

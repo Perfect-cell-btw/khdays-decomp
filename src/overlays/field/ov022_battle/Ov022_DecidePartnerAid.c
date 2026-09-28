@@ -16,10 +16,7 @@
  * state drops back to following as well.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define SLOT_MUTED 0x10
 #define SLOT_ARMED 0x200

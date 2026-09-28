@@ -8,7 +8,7 @@
  * (flag 1/3), slots 3/8 effect 5 and slot 7 effect 0x15 with byte 4 as flag; slots 2/4 anchor
  * effect 0x15 on the +0x54c pose (looping in slot 2), slot 5 effect 5 there, slots 6/9 effect 5 on
  * the +0x520 pose. The base hook always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } SrtTransform;

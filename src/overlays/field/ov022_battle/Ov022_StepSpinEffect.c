@@ -13,7 +13,7 @@
  * whatever angle is left as a whole number.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

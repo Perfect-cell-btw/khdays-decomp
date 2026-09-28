@@ -6,8 +6,7 @@
  * +0x24 vector and the +0x30 counter runs: past 3 with the +0x17a bit-0 flag set the latch clears,
  * otherwise +0x28 sinks by 30 frames * 0x80 per frame; with the latch clear bit 6 is set and the
  * counter reset. A set +0x3cc bit 0 on the actor ends the state with sub-state 8. */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 struct ListNode {

@@ -27,9 +27,7 @@
  * local before the first test; the three-argument prototypes of the drawers
  * copy the node into r2.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define COLOUR_NORMAL   0xf1
 #define COLOUR_ACTIVE   0xf3

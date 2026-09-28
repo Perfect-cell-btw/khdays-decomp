@@ -1,9 +1,7 @@
 /* Rebuilds the gameplay rules and thresholds (option flags, limits and values) from the game-state
  * option fields. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct GameplayThresholds {
     u8 pad_00[4];

@@ -8,8 +8,7 @@
  * rate; past +0x18 the next move is 1.
  * Codegen: the +0x390 owner is read through the OwnerOf accessor (the plain dereference swaps the
  * owner and record-index registers). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[7]; int radius; } Segment;
 typedef struct { short mode[5]; } Short5;
@@ -68,7 +67,6 @@ void Ov258_SwingTick_2(int *node)
                 Vec3 push;
                 short modes[5];
                 u8 *rec;
-
 
                 bit = 1 << *(u16 *)(hits[i] + 2);
                 if (((unsigned long long)bit & *((u8 *)state + 0x10)) != 0) {

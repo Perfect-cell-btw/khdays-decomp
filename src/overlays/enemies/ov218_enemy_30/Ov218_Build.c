@@ -5,8 +5,7 @@
  * +0x384 rig (subscribed to the +0x9c scene) and the two data_ov218_020cf314 models go into the
  * +0x39c pairs, attached (020c9074) and hidden. Two collision cylinders from the sphere are registered
  * in the +0x22c (16) and +0x144 (4) pools; the second is kept in +0x38c. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 a, b; } Pair2;
 struct EffectPair { int res; int handle; };

@@ -13,9 +13,7 @@
  * counter cleared.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define FLAGS_BIT36 0x1000000000ULL
 

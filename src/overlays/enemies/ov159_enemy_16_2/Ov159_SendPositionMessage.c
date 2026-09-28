@@ -2,9 +2,7 @@
  * with the +4 point packed into bytes 5..13 as 24-bit fixed values (each copied through a stack
  * Fx32 first) and byte 4 set when the owner's +0x13c height is more than 0x100 above 0xe00, sent
  * through the owner's +0x24 hook (length 0xe). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

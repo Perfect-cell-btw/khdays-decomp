@@ -19,9 +19,7 @@
  * with an int result, which is what keeps the group-2 pointer derivation
  * out of the sub-DISPCNT load's delay slot.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct DisplayRegisters {
     volatile u32 dispcnt;      /* +0x00 */

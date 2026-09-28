@@ -1,7 +1,7 @@
 /* Initialises the enemy actor: installs its handlers, creates its models, joint model and attach
  * slots, registers its sequence and requests its resources. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } VecFx32;
 typedef struct { void *node; int pad; } Slot;
 typedef struct { int w[5]; } KindTable;

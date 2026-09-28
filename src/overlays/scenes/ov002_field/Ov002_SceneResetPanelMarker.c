@@ -13,7 +13,7 @@
  * keeps it in a register from the start, which is what the ROM does.
  */
 
-typedef signed long fx32;
+#include "nitro/fx.h"
 
 typedef struct {
     fx32 x;

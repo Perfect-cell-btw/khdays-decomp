@@ -1,7 +1,6 @@
 /* Updates the three number displays (three digits, value and sign). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 value;

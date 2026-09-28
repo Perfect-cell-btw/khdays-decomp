@@ -2,12 +2,14 @@
  * tracker handle, applies its metrics and invokes the tracker callback; the final/odd row flushes
  * pending state. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
+/* The flags are an enum here, not BOOL: mwcc treats the two differently, and only the enum gives
+ * the ROM's code. */
 typedef enum {
-    FALSE = 0,
-    TRUE = 1
-} BOOL;
+    GAUGE_NO = 0,
+    GAUGE_YES = 1
+} GaugeFlag;
 
 typedef struct {
     short nOrigin;
@@ -23,7 +25,7 @@ typedef struct {
 } Ov002GaugeLayoutContext;
 
 extern Ov002GaugeLayoutContext *data_ov002_0207f618;
-extern BOOL data_ov002_0207e988;
+extern GaugeFlag data_ov002_0207e988;
 
 extern int Ov002_PositionSubDcHandle(Ov002RowStyle *pStyle, u16 nRow, int nKind);
 extern int Ov002_Ctx_SetTagTrackerNodeArmed(int nHandle, Ov002RowStyle *pStyle);
@@ -31,7 +33,7 @@ extern int Ov002_ForwardToSubDc(u16 nRow);
 extern int Ov002_PositionSubDcHandle_2(int nHandle, short nOffset, short nColour);
 extern void Ov002_Ctx_InvokeTagTrackerCallback(int nHandle);
 
-void Ov002_UpdateGaugeRow(int nRow, BOOL bFilled, BOOL bLast)
+void Ov002_UpdateGaugeRow(int nRow, GaugeFlag bFilled, GaugeFlag bLast)
 {
     int nParity = nRow % 2;
     Ov002GaugeLayoutContext *pContext = data_ov002_0207f618;
@@ -45,7 +47,7 @@ void Ov002_UpdateGaugeRow(int nRow, BOOL bFilled, BOOL bLast)
                 data_ov002_0207e988 = 2;
             }
         } else {
-            data_ov002_0207e988 = bFilled ? FALSE : TRUE;
+            data_ov002_0207e988 = bFilled ? GAUGE_NO : GAUGE_YES;
         }
     } else {
         data_ov002_0207e988 = bFilled != 0 ? 3 : 4;

@@ -9,10 +9,7 @@
  * depth raised; the first hit is returned, else -1.  Codegen: the depth parameter is a short
  * raised in place; the second walk reuses the distance temporary as its index and keeps its
  * entry pointer block-scoped. */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

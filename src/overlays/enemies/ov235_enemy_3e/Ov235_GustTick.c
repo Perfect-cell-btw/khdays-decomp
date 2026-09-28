@@ -5,7 +5,7 @@
  * the owner: 0.75 scaled by how close it is, added to its +0xe4 push. Once the +0xc idle byte
  * clears, animation 0x19 plays, the +0x3a8 part plays motion 0x13 and the tick hands over to
  * Ov235_SwoopTick. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { void *item; } ListNode;
 struct Bits40 { int b0 : 1, b1 : 1; };

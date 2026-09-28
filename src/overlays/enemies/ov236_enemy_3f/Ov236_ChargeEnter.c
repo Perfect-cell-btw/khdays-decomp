@@ -3,7 +3,7 @@
  * the +0x30 turn side at random (+1 / -1), the +0x2c run time (rand(7.0) + 3.0), clears the +0x28
  * clock and gives the actor 3.0 of +0x54 invulnerability. With a free rider the +0x3a8 part raises
  * bit 1; the +0x5c height is taken from the +0x34 point and the node moves to 020d05dc. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct PartFlags { unsigned int lo : 8; };
 
 extern void Ov107_PostTagUpdate(int owner, int pose, int loop);

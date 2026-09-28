@@ -3,9 +3,7 @@
  * (+0x1b0, 0202a7dc) when the definition has one (def +0x68 non-zero), release the render
  * node (+0x2c, 0202ba18); when the breakable's GameState field has any of bits 1..15 set (it was
  * taken / consumed) retire the piece (ov002 02076bd8 mode 0); clear the active byte (+0x2be). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov016BreakableDef {
     u8 pad_00[0x68];

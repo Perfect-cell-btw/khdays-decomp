@@ -15,7 +15,7 @@
  * what reproduces the jump-table targets and body layout.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef unsigned int   uint;
 
 extern int  Session_IsReady(void);

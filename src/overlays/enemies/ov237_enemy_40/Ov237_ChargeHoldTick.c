@@ -2,7 +2,7 @@
  * pending +0x54 flare (effect 0x15 at the +0x38 point) fires once. When the +4 rig is idle a charge
  * step is spent (+0x34), the clock and the +0x55 / +0x57 flags clear, pose 0x13 plays (effect 0x10
  * without a +0x4b4 hold) and the brain waits on 020cfc88. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov107_PostTagUpdate(int a, int b, int c);

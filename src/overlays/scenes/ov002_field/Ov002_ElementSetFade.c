@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Obj_SetTransition(char *pObj, int bFade, int nDuration);
 

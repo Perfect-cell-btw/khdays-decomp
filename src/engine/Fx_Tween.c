@@ -25,11 +25,7 @@
  * letting it schedule in among them.
  */
 
-typedef signed int s32;
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef signed long long s64;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define DIVCNT        (*(volatile u16 *)0x04000280)
 #define DIV_NUMER     (*(s64 *)0x04000290)

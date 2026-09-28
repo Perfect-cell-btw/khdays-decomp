@@ -11,10 +11,7 @@
  * 36, or the actor carries flag bit 14 or 26; any of those stalls the slot.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

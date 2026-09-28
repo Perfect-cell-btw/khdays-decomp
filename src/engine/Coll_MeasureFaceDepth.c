@@ -1,11 +1,7 @@
 /* Measures how far a vertical ray reaches a collision face: rejects faces outside its bounds or
  * edge planes and computes the hit fraction on the face's plane, keeping the nearest. */
 
-typedef signed short s16;
-typedef unsigned short u16;
-typedef signed int s32;
-typedef unsigned int u32;
-typedef signed long long s64;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     s32 x;

@@ -2,8 +2,7 @@
  * the roster result (records the world, posts the result link message, fires the slot hooks, clears
  * the lists and releases the link collections) and picks the next state. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef void *(*Ov022StateCallback)(void);
 

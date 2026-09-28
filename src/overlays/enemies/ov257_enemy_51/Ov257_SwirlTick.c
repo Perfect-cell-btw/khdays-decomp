@@ -2,7 +2,7 @@
  * world's +0xa8 list within 12.0 of the helper's +0xc point is swirled: its direction to the point
  * is bent by the cross with data_02042240, normalised and scaled to 0.28 by how close it is, then
  * added to its +0xe4 push. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { void *item; } ListNode;
 struct Bits40 { int b0 : 1, b1 : 1; };

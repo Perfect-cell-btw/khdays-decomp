@@ -9,8 +9,7 @@
  *   data_ov025_020b52cc: Ov025_DrawListEntryRow, Ov025_BuildTableAndDelegate
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u8 data_ov025_020b52c4[8] = {
     37, 0, 43, 0, 100, 0, 0, 0,

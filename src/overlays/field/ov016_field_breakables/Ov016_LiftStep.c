@@ -10,8 +10,7 @@
  * message; 15 idles; 16 rests at the top; 17 counts the wait then returns to state 2.  The
  * transform (+0x38) is put at the position (0202b450) and the sequence node (+0x1b0) drawn
  * (0202aa9c) while the model is bound (bit 2 of +0x12).  Always 0. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

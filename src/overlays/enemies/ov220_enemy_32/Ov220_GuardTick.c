@@ -1,7 +1,7 @@
 /* Guard tick of the ov220 enemy: the +0x14 timer accumulates the frame-time; at 0x7000 with
  * the +0x3e flag clear, the +4 item's +0xa8 byte is cleared and the flag set. Once the item is
  * idle the actor plays animation 12 and hands off to the next guard state. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

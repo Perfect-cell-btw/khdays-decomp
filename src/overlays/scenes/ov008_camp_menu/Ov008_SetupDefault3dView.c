@@ -1,7 +1,7 @@
 /* Sets up the default 3D view for the menu: orthographic projection, unit scale, identity rotation,
  * zero translation and a camera looking down the Z axis. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x, y, z;

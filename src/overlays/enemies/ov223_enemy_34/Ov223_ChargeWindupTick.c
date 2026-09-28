@@ -8,8 +8,7 @@
  * scaled 0.75, +0x58 keeps the heading, the +0x3b0 body raises bit 0 of its +8 low byte, the
  * owner is sent mode 3 (4 without a target) with the zero vector, +0x60 keeps the timer and
  * the tick hands over to Ov223_ChargeTimerThenFire. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 struct Byte8 { unsigned int lo : 8, rest : 24; };

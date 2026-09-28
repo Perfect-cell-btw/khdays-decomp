@@ -1,7 +1,5 @@
 /* Ov011_BlitTileRow -- copy one tileset row into a pane's 32x32-tile VRAM image. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov011Tileset {
     u16 wRows;

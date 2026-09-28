@@ -1,10 +1,7 @@
 /* Draws the lock-on markers of the current selection: positions the three marker sprites over the
  * focused target and animates them with the activation tween and the target's deadline. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov022SelectionPoint {
     int x;

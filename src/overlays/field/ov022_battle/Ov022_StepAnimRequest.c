@@ -10,9 +10,7 @@
  * the request that was queued behind it.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct AnimTrack {
     u8 pad00[4];

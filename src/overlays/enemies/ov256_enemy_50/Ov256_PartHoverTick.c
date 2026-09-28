@@ -1,7 +1,7 @@
 /* Hover tick of an ov256 part: the +0x10 velocity is the +0x450 owner's +0x2c vector turned by the
  * part's heading (020cd054); once the partner holds no queued move bit 6 of the +0x60 high byte is
  * set, the next move is 2 and the node ends. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);

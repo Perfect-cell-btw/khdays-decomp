@@ -7,7 +7,7 @@
  * ranges ahead the +0x3c drift grows by 0.2 toward the +0x7c side (up to 1.57). Unless the swipe
  * window (020ccca8) is open, a d100 roll up to 10 makes the next move 9; otherwise +0x34 rerolls
  * (1.57 to 3.14) and one time in five the actor faces the target (+0x38 / +0x40) and dashes (5). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov283_MapHeldItemKindToAnim(int actor, int part);

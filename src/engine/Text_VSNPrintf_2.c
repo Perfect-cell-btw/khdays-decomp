@@ -4,10 +4,7 @@
  * fraction digits (default 6) through Fx64_FormatText, right-aligned in the width. '+' always sets
  * the plus flag here. Returns the length the full text would have. The 64-bit decimal path keeps
  * its quotient signed: the product goes through the signed multiply helper (_ll_mul). */
-typedef unsigned char u8;
-typedef unsigned int u32;
-typedef long long s64;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef unsigned int size_t;
 
 typedef char *va_list;

@@ -9,8 +9,7 @@
  * overlay's permission, and it only latches the request (+0xd8) in mode bit 3 with data_0204be04
  * clear or when an entry (+0xdc) finds none of the three overlay states; a real open pushes step 1
  * or 2 (Callbacks_SetByte) before Callbacks_Run(0). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     char pad0000[0xc8];

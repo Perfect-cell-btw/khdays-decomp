@@ -7,8 +7,7 @@
  * is accepted (0).  Any other hit, in state 0 only, sends gate message 5 {1, the byte at
  * +0x11, the box's index in its class} (02031258) and moves to state 1, accepting the hit.
  * Otherwise 8. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov021HitInfo {
     u8   pad_00[0xc];

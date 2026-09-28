@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov074_Weapon_FireStraightShot (020b8dd0): Vec3 data_ov074_020b9a40; */
 const u8 data_ov074_020b9a40[12] = {

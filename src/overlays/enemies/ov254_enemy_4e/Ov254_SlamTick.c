@@ -6,8 +6,7 @@
  * effect 0 (flag 1) and the owner's effect 1 at the +8 point, reaction 0 mode 0x50 there, and the
  * tick hands over to Ov254_AiStep_QueueAction0OnAnimEnd. Past 0.5 without a hit it ends the same way without the
  * hit effects. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 typedef struct { u16 lo : 8; u16 hi : 8; } Hw60;

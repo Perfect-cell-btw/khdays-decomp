@@ -10,8 +10,7 @@
  * mwcc schedules the third upload's arguments the other way round (add r0 before
  * add r1); no source form changed that, the pragma reproduces the ROM.
  */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define SURFACE_COUNT 6
 #define VRAM_SLOT_MAIN 0x18

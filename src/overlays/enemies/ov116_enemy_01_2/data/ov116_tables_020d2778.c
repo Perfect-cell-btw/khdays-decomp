@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov116_EnemyConstruct (020cfc60): void data_ov116_020d2778(void); */
 const int data_ov116_020d2778[7] = {

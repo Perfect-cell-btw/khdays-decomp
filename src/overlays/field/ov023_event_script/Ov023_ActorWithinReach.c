@@ -2,7 +2,7 @@
  * within 0x19a of the position pPos would reach after one step of pStep scaled by nScale
  * (VEC_MultAdd-like: nScale * step + pos).  With flag bit 4 (+0x1a28) the height is ignored.
  * Returns 1 when the remaining distance (VEC_Mag) is below 0x19a. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

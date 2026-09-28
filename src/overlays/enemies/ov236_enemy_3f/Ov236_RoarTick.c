@@ -2,7 +2,7 @@
  * +0x51) effect 0x127 of kind 0x13 fires at the +0x38 anchor. When the +4 child's +0xad byte
  * clears, the +0x14 word resets, bit 0 of the actor's +0x1ae clears, pose request 2 is queued
  * and the node dispatches null. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 

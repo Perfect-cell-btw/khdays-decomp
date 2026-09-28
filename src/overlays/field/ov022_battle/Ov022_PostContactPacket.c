@@ -8,9 +8,7 @@
  * is why every one of its stores reads it back first.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define PACKET_CHANNEL 0xa
 #define PACKET_MODE 6

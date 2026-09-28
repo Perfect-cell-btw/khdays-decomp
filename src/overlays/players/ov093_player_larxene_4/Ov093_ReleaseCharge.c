@@ -5,8 +5,7 @@
  * submits the pair; if the submit takes and busy bit 0 of +0x26bc is clear, it queues effect
  * record 5 on the emitter at +0x2648: the +0x26c8 muzzle jittered by 0x99a/0x4cd/0x99a, the
  * actor's heading, a random variant, cue 0xcf, kind 2. */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

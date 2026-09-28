@@ -1,8 +1,7 @@
 /* Applies the fade tween to both screens' brightness and, when done, picks the next step by mode;
  * ticks the widgets. */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

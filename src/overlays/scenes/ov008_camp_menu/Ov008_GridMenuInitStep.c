@@ -19,9 +19,7 @@
  * sentinels are one chained assignment (the constant is formed before the
  * current-cell store).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define LIST_COUNT   8
 #define CELLS_PER_PAGE 40

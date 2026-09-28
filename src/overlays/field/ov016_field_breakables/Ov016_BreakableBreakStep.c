@@ -5,8 +5,7 @@
  * reached the track (+0x2bf) advances: past the last track (+0x2be) the piece is retired
  * (ov002 02076bd8 mode 0) and the terminal state (ov002 0207cea4) returned, otherwise the node
  * is rewound to the new track (ov002 0207c618) and enabled (0202af1c).  Returns 0 to stay. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef void *Ov016StateFn(void *pPiece);
 

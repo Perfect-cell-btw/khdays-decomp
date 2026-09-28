@@ -4,8 +4,7 @@
  * drawn in the third style instead of the caller's, which is what dims the part
  * of the bar that is about to drain. The style table has six bytes per entry
  * and the row helper is asked for that same six-byte span. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[6];

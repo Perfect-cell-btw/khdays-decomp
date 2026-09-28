@@ -12,9 +12,7 @@
  * between them. The last argument picks which way round that direction runs.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

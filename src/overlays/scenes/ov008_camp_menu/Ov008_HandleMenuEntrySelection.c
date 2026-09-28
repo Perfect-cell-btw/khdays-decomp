@@ -1,9 +1,7 @@
 /* Handles a menu-entry selection event: moves selector entry 0x15, plays the change sound, records
  * the selected value, maps its icon, and redraws the caption surface. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

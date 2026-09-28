@@ -12,7 +12,7 @@
  * Codegen: the tail's `else if` repeats `!done` (ROM predicates the partner test on the done
  * compare: ldreq/ldrbeq/cmpeq), and `grounded` is held as an `int *` read through `(int)` casts,
  * which gives the ROM's r1/r2 split between the mode byte and the flag. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 

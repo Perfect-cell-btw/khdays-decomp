@@ -3,9 +3,7 @@
  * their size) hold a mission whose day span (halfwords +6 / +8) lies within nFirstDay..nLastDay
  * and whose hidden halfword (+0xc) is clear?  Returns 1 / 0.  The day list (020ad918) asks this
  * for every day span before it gives the span a row. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov025MissionDayRecord {
     u16  nSize;               /* 0x00: bytes to the next record */

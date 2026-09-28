@@ -1,8 +1,7 @@
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
+#include "nitro/os.h"
 
 typedef struct OSAlarm OSAlarm;
-typedef u64 OSTick;
 typedef void (*OSAlarmHandler)(void *arg);
 
 extern void OS_CreateAlarm(OSAlarm *alarm);

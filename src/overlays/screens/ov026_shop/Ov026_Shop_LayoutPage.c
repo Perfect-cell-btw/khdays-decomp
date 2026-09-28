@@ -30,10 +30,7 @@
  * struct copies (adjusted after the copy), the anchor's x cached; the later
  * tab tests re-read the context.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define TAB_SHOP    0
 #define TAB_ITEMS   1

@@ -1,8 +1,5 @@
-typedef unsigned char u8;
-typedef unsigned long u32;
-typedef signed short fx16;
-typedef signed long fx32;
-typedef signed long long fx64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct NNSG3dResJntAnm NNSG3dResJntAnm;
 

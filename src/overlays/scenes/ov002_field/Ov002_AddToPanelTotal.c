@@ -16,7 +16,7 @@
  * ARM.
  */
 
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct {
     char pad000[0x4c];

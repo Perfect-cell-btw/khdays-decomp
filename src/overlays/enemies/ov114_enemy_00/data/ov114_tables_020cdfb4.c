@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Constructor of the ov114 enemy: installs the handlers (+8 tick, +0xc draw, +0x1c/+0x20 (020cbfc4): struct Ov114Kinds data_ov114_020cdfb4; */
 const int data_ov114_020cdfb4[2] = {

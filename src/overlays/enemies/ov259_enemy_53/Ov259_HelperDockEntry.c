@@ -1,6 +1,6 @@
 /* Dock entry of an ov259 helper: bits 2 and 0 of the owner's +0x60 high byte are set, the +0x38c
  * shape hides, the +0xc step resets and the node ends. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

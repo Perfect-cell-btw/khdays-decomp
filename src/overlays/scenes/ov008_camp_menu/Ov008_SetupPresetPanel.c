@@ -13,9 +13,7 @@
  * strength-reduces them into r7 / r6 itself; explicit walking locals colour
  * the other way round).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define PRESET_COUNT      3
 #define FLAG_PRESET_BASE  0x3c67

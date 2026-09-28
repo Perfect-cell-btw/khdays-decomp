@@ -4,10 +4,7 @@
  * 0xf from data_02042958, 0x20 bytes), and the tile text renderer at +0x5e4 is set up on layer 2
  * with a 0x20 x 3 cell box at (0, 0x14), palette 1, spacing 0xd, kind 1 (0202f834), cleared
  * (0202fa20) and flushed (0202f9f8). */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

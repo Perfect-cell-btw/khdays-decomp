@@ -15,9 +15,7 @@
  * and the draw is submitted (material triple from +0xdd0, cached block, optional +0xeb0
  * parameter, the +0xeb4 matrix, then the channels at +0xf30).
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 
 extern int Anim_GetFrame(void *animation, int track);                          /* Anim_GetFrame */

@@ -5,7 +5,7 @@
  * -- before the tick hands over to Ov235_DashTick.
  * Codegen: compiled with opt_dead_assignments off (push/pop scoped); the note's high half is read
  * right after the mode table copy and stored last, as in the ROM's load/store order. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { u16 lo; u16 hi; } Cmd4;
 typedef struct { int mode[3]; } ModeTable;
 

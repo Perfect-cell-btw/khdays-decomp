@@ -5,7 +5,7 @@
  * within 0x1800; the vertical part of the step becomes the vertical speed; without bit 33 an
  * airborne enemy raises bit 46 and clears the speed. Past 0x18000 on the +0x4cc counter, or once
  * in range, it hands over to state 0x22. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Session_GetLocalPlayerIndex(void);

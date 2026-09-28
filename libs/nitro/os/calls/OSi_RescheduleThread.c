@@ -1,4 +1,4 @@
-typedef int BOOL;
+#include "nitro/types.h"
 
 typedef struct OSContext {
     char dummy[1];

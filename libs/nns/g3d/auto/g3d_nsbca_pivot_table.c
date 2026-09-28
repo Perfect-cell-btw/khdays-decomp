@@ -1,6 +1,6 @@
 /* NitroSystem nsbca.c: pivotUtil_, the four off-pivot matrix cells written by a pivot-compressed
  * joint rotation (getRotData_ / getRotDataEx_), indexed by the pivot position 0-8. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 const u8 data_02041ae0[9][4] = {
     {4, 5, 7, 8},

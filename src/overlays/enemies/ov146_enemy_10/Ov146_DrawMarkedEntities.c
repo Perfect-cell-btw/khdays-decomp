@@ -2,7 +2,7 @@
  * of the owner's scene list (+0x388 set's +4 grid, +0x80 list) flagged 0x10 (+0x1c4) is drawn with it:
  * the model's +0x78 animation takes frame n % 28 + 3, and the model is scaled to twice the entity's
  * radius and placed on its +0x74 point before the draw (0203bc78). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(void *srt);

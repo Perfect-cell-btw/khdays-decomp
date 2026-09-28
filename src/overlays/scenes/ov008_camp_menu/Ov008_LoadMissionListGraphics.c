@@ -9,8 +9,7 @@
  * 0x19, 0x1a and 0x1b are marked used.  pList (the mission list, passed by
  * Ov008_MissionListInitStep) is unused.
  */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define HEAP_FILE     0xe
 #define CHAR_OFFSET   0x2000

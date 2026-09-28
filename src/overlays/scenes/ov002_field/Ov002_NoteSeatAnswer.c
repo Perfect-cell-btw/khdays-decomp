@@ -1,7 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 /* The question the board is showing and who has answered it. */
 typedef struct Ov002Board {

@@ -25,9 +25,7 @@
  * THUMB.
  */
 
-typedef unsigned short u16;
-
-typedef unsigned long u32;
+#include "nitro/types.h"
 
 typedef struct NNSG2dScreenData {
     u16 screenWidth;

@@ -9,10 +9,7 @@
  * flag (+0x4) raised, the save-page group shown or hidden for the mode, and
  * the mode recorded (+0x8, previous one kept at +0xc).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef int            s32;
+#include "nitro/types.h"
 
 #define STATE_IDLE     2
 #define CURSOR_MODE_DRAG 0x14

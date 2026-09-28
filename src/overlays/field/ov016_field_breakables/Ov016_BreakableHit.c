@@ -4,9 +4,7 @@
  * when the message goes out the broken bit is set (the field's bits 1..15 shifted back into
  * place), the 0x1c-byte hit record is kept at +0x2c8 and the drop is marked pending (+0x2bd),
  * answering 0.  Otherwise the hit is refused with 8. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov016HitRecord {
     u8 pad_00[0xc];

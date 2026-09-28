@@ -2,7 +2,7 @@
  * partner holds no queued move a fresh pick (020ccdf0) ends the node. Otherwise a target farther than
  * 5.0 queues move 3, first choosing the retreat mode when the +0xc anchor is high (y >= 17.0): 2 unless
  * the +0x45c boost is 3, else 3 within 10.0. Closer, a pending retreat (+0x6b) queues move 4, else 3. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int Ov256_PickTarget(int *node);
 extern int Ov256_PickMove(int *node);

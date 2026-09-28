@@ -14,8 +14,7 @@
  *   data_ov025_020b5464: Ov025_DrawMissionDetail
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 int data_ov025_020b5410[1] = {
     10,

@@ -1,6 +1,6 @@
 /* Entry of the ov248 actor's follow move: the owner's +0x398 position is kept in +0xc, bit 7 of the
  * owner's +0x60 high byte is set and bit 0 cleared, then brain slot +0x20 runs 020d079c. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

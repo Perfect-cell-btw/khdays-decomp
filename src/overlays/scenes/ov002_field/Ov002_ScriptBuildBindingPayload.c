@@ -1,7 +1,5 @@
 /* Ov002_ScriptBuildBindingPayload: expand tagged script operands into binding words. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct ScriptVmOperand {u16 nType,pad2;u32 nValue;} ScriptVmOperand;
 extern int ScriptVm_ReadOperandInt(void *,ScriptVmOperand *);
 extern int ScriptVm_ReadOperandFx32(void *,ScriptVmOperand *);

@@ -6,8 +6,7 @@
  * (02033b24 pair 0 / 0xf); otherwise, if the local peer's owner slot (ov022 02088474) is the
  * bucket's current piece kind (ov002 02072754), the pickup effect (slot 0 / kind 0xf) is
  * spawned where that peer sits (ov022 020881f8; 02033d0c). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

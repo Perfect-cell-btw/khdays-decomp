@@ -19,7 +19,7 @@
  * of the block is zero.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*GameClassFn)(void);
 
 typedef struct {

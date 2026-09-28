@@ -1,8 +1,5 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef signed long fx32;
-typedef int BOOL;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct MtxFx43 {
     fx32 m[4][3];

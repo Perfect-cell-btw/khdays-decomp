@@ -12,10 +12,7 @@
  * conversion node keeps &pick out of the outer loop's invariants (the ROM
  * recomputes it for the first call and hoists it only over the inner loop).
  */
-typedef unsigned char  u8;
-typedef signed short   s16;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008ItemRing {
     u16 nFirst;               /* 0x00 */

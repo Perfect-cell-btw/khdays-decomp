@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov236_HandleMessage (020cc86c): const struct Ov236SlotMap data_ov236_020d627c; */
 const u8 data_ov236_020d627c[4] = {

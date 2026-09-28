@@ -16,7 +16,7 @@ typedef struct { Vec3 vector; int scalar; } CameraWork;
 typedef struct { int w[6]; } Bounds;
 typedef struct { int id[3]; } IdTable;
 typedef struct { int subitem; int pad; } Slot;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 
 extern void Ov176_Actor_DestroyWithParts(void);

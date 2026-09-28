@@ -5,8 +5,7 @@
  * list's array is then freed and cleared.  Finally the listed-pointer array
  * (+0x38) and the table itself are freed.
  */
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 #define LIST_COUNT 5
 #define LIST_SHOP  0

@@ -1,5 +1,4 @@
-typedef unsigned int u32;
-typedef volatile u32 vu32;
+#include "nitro/types.h"
 
 void func_01ff8664(u32 channel, u32 source, u32 destination, u32 control)
 {

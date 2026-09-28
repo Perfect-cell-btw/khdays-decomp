@@ -1,11 +1,8 @@
 /* NitroSystem G3D: joint translation taken from the model's node data (flags identity when it has
  * none). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef signed short fx16;
-typedef signed long fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x, y, z;

@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov009_UpdateCompletionMilestones (020557dc): const u16 data_ov009_02056114[60][2]; */
 const u8 data_ov009_02056114[240] = {

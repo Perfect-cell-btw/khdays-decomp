@@ -1,5 +1,4 @@
-typedef unsigned int u32;
-typedef volatile unsigned int vu32;
+#include "nitro/types.h"
 
 typedef struct Ov002ScreenCtx {
     char pad000[0xc];

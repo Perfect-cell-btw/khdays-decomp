@@ -2,9 +2,7 @@
  * to the select state, makes the row the active record and clears the input and work buffers;
  * otherwise goes idle and drives the sound; returns whether it committed. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u32 field_00[0xf];

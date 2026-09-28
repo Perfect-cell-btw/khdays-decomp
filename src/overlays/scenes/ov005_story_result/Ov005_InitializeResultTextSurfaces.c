@@ -1,8 +1,6 @@
 /* Loads the reward menu's two fonts and sets up its four text surfaces. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct FontInfo {char data[12];} FontInfo;
 typedef struct TileSurface {char pad0[40];int nUnk28;char pad2c[16];} TileSurface;
 typedef struct TileSurfaceCfg {int nUnk00,nUnk04,nWidthTiles,nHeightTiles,nRowTiles,nPaletteIndex;void *nVramTarget;int nUnk1c;FontInfo *pPixels;int nUnk24;} TileSurfaceCfg;

@@ -3,7 +3,7 @@
  * round, at most 0x1000 (1/16 turn) a frame, and store it (02088ea8).  Once the target is
  * reached the actor's speed pair (+0x15b8) is set to 0x1000 / -1 (020895dc) and 1 returned,
  * else 0. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov023Actor {
     u8   pad_0000[0x1a30];

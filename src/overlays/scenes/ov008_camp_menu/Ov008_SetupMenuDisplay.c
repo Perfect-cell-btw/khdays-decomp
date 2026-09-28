@@ -2,10 +2,7 @@
  * powers the LCD, assigns VRAM banks (BG A=3, sub-BG=4, OBJ=0x70, sub-OBJ=8), sets the
  * sub graphics mode, and programs the BG priorities on both engines (main BG0..3 = 1/3/2/-,
  * sub BG1..3 = 2/1/-). */
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef volatile u16   vu16;
-typedef volatile u32   vu32;
+#include "nitro/types.h"
 
 #define reg_GX_DISPCNT (*(vu32 *)0x04000000)
 

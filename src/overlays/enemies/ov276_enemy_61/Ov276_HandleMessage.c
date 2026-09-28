@@ -4,7 +4,7 @@
  * transform with the packet's blend, 2 at the +0x3ec anchor and 3/5 at the +0xa0 transform
  * with the packet's blend; payload 7 registers effect 0x164 (kind 9) on the +0xa0 node into
  * +0x484. The base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int x, y, z; } Vec3;
 

@@ -2,7 +2,7 @@
  * +0x30 (020d5f04) and +0x1dc (020d5e6c) handlers, sets bits 1-3 of the +0x60 high byte and bits 2 and
  * 4 of +0x1ae and the +0x64 pose (scale 0.5); the main model (+0x384, item 0x23 of the +0x388 pool) is
  * subscribed to +0x9c and the +0x38c slot model (kind from data_ov230_020d6464) attached and hidden. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int w[1]; } KindTable;
 

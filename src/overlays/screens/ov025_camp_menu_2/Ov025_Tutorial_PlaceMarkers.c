@@ -3,10 +3,7 @@
  * uses the lit cell (+0x2a0), the others the plain cell (+0x29c); each is put at column 2, row
  * 4 + 2 * i in the page's tag tracker (+0xc4; 0208951c) and its callback invoked
  * (Ov008_TagTracker_InvokeCallback 02089544). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025TutorialList {
     void *pHeader;            /* 0x00 */

@@ -1,5 +1,4 @@
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern void *Ov002_GetModuleScale(char *pElement);
 extern int SoundBank_Release(int nSlot, int nId);

@@ -2,7 +2,7 @@
  * its heading (020cd054); once the partner holds no queued move, in retreat mode 2 (+0x6b) a fresh
  * pick (020ccdf0) other than move 9 just ends the node; otherwise mode 2 is set, the next move is the
  * +0x74 mode + 2 and the node ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);

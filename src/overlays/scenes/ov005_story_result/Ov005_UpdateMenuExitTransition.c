@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 /* Codegen view of the existing Ov002DayClock global; +2 is set for the next scene. */
 typedef struct SceneTransition {u8 flags,submode;u16 transitionValue,parameter;} SceneTransition;
 typedef struct ModeSource {char opaque[8];int mode;} ModeSource;

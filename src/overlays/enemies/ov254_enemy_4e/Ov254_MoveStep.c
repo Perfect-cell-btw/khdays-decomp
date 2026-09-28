@@ -5,9 +5,7 @@
  * part's +0x14 point slides the velocity along the wall (+0x114 normal, +0x120 plane, height
  * kept) unless bit 2, and a ground probe 7.7 below the same point (unless bit 3) lands the actor
  * (+0x17a bit 0, +0x180 contact). The position (+0xb0 + velocity) is then applied to +0xa0. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;

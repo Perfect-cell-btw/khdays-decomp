@@ -8,8 +8,7 @@
  *   data_ov008_0208ff78: Ov008_IsShopRecordListed
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const u8 data_ov008_0208ff78[16] = {
     0, 0, 26, 0, 117, 0, 172, 0, 225, 0, 40, 1, 101, 1, 0, 0,

@@ -1,8 +1,7 @@
 /* Starts the parameter tweens for the selected mission row: four value tweens and three channel
  * tweens from the row's table, then marks the parameters ready. */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u8 values[9];

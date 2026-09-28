@@ -15,9 +15,7 @@
  * RdLo/RdHi != Rm rule lands them in r2/r1 with the rounded high word in r0.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define ACTOR_FLAGS2(p) (*(unsigned long long *)(p)->aFlags2)
 

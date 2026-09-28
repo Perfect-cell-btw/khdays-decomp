@@ -7,9 +7,7 @@
  * that row's own resource. The container goes back once the rows are done.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT 0x10
 #define CONTAINER_HEAP 6

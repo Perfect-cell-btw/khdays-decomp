@@ -11,9 +11,7 @@
  * base is declared after it; the per-list total is read inline from the
  * stack array so the compiler hoists it itself.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define LIST_COUNT       2
 #define LIST_FIRST       3

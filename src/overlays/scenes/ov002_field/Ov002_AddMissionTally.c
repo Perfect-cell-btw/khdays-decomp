@@ -13,8 +13,7 @@
  *
  * Called from ov022 and ov234 as well as from inside ov002.
  */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 /* The record the deferred handler consumes: kind, index and value. */
 typedef struct {

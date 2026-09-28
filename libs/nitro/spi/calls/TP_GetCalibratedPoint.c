@@ -1,6 +1,4 @@
-typedef unsigned short u16;
-typedef int s32;
-typedef long long s64;
+#include "nitro/types.h"
 
 /* Four packed u16 fields; shared layout for both the raw input record and
  * the (possibly transformed) output record. */

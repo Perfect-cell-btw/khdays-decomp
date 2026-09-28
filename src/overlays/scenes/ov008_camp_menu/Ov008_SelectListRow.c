@@ -9,9 +9,7 @@
  * otherwise the rows are rebuilt from the new first row (0205e2e0).  Finally
  * the row is highlighted relative to the scroll row.  Returns 1.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define VISIBLE_ROWS  8
 #define TRACK_END     0x7f

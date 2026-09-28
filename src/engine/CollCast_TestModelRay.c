@@ -2,11 +2,7 @@
  * misses the model's area, and walks the model's quad tree (vertical casts use the vertical
  * walker); returns whether it hit. */
 
-typedef signed short s16;
-typedef unsigned short u16;
-typedef signed int s32;
-typedef unsigned int u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { s32 x; s32 y; s32 z; } VecFx32;
 typedef struct CollisionRegion { s32 centerX00; s32 centerZ04; s32 size08; } CollisionRegion;

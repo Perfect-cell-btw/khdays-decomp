@@ -1,8 +1,7 @@
 /* Redraws one of the reward menu's text surfaces: the header message, the item names and
  * quantities, the column labels or the selected item's description. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct FontInfo { int opaque[3]; } FontInfo;
 typedef struct TileSurface {
     void *pixels;

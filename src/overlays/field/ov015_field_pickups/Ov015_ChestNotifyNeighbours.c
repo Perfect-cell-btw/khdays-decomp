@@ -7,10 +7,7 @@
  * position when the class has a +0x24 handler.  A piece within range receives a hit
  * record (ov002 02076dac) carrying the opener (+0x726), kind 5, 10, 8 and mask 0x80 (def
  * class 0x1b) or 8, and its bit is set. */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

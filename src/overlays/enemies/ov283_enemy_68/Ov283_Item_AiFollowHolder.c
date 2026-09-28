@@ -1,6 +1,6 @@
 /* While held (action 1) follows the holder's hand position and rotation. */
 
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct { int a, b, c, d; } T4;
 typedef struct { T4 t; char pad[0x28 - 16]; unsigned char flag; } S;

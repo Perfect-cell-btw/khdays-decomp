@@ -6,7 +6,7 @@
  * 1.46 turned by the +0xa0 pose, from the +0x10 point) along the heading to a spot 0.5 short of to
  * 3.0 past the target (020d09a4). Afterwards it waits while the part is still in flight (+0x60 bit 0);
  * a landed part (+0x38c) queues move 7, otherwise once the partner holds no queued move, move 2. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 struct Ov260Parts { char pad[0x430]; int parts[2]; };

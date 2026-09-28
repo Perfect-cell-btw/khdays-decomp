@@ -4,7 +4,7 @@
  * kind and rewound, copies the spawn position to +0xac, and builds its orientation at +0x88 as
  * identity rotated by the heading about Y and, unless grounded, by random pitch and roll within
  * +/- 0x1555. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

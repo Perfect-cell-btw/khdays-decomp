@@ -3,9 +3,7 @@
  * (+0x15c0 / +0x15cc), the walk speed (+0x15d8) cleared, +0x15bc -1 and +0x15b8 1.0, no
  * parent (+0) or children (+0x1a3c); the pending entries (+0x984) are wiped with ids -1 and
  * the whole motion set (+0x538) wiped with frames -1. */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

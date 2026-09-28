@@ -7,7 +7,7 @@
  * through to the mission start.  The middle arm re-tests the pending word (the ROM
  * keeps the redundant beq).
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionMenu {
     u8  pad_000[8];

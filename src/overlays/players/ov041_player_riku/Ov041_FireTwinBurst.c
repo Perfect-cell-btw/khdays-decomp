@@ -4,8 +4,7 @@
  * burst parameters with spin 0x1b00, flags 0x225 and the fixed 0xa00/0x66/0xa00 extent, and
  * submits the pair; if the submit takes and busy bit 0 of +0x26bc is clear, it draws a random
  * (discarded) and marshals record 0 (kind 1) at the +0x26c8 muzzle with the actor's heading. */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

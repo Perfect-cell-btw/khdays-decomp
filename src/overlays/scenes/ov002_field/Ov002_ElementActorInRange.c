@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Ov002_IsSessionOpen(void);
 extern int Ov002_GetRootField8b68Alt(void);

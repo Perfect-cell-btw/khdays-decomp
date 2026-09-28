@@ -1,7 +1,7 @@
 /* Constructor of an ov254 marker object: installs its handlers (+8, +0x30 update, +0x1dc), sets
  * bits 1-3, 5 and 6 of the +0x60 high byte and bits 2-4 of +0x1ae, the +0x64 pose (0, 1, 0, tiny
  * scale), builds the +0x384 item from pose 0x45 of the +0x388 pool and subscribes it to +0x9c. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 

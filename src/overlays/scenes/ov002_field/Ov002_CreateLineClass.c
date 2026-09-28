@@ -1,5 +1,4 @@
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 /* The descriptor the caller fills in for one element class. */
 typedef struct {

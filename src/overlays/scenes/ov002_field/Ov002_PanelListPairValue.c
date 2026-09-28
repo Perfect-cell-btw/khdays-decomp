@@ -6,8 +6,7 @@
  * cells. A non-zero bSuppress skips the lookup entirely, so the formatter sees
  * a zero pair; the panel repaint passes 1 there for its third list class.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     void *pHead;

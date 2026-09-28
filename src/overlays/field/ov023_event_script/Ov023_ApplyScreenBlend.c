@@ -4,8 +4,7 @@
  * active (+0x87590 == 0); otherwise, while the weight is not the full 16, VRAM bank D is given
  * to the LCDC (GX_SetBankForLCDC 8) and a 256x192 display capture of the A+B blend is armed
  * into it (DISPCAPCNT 0xc0330000 with EVA = weight and EVB = 16 - weight). */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 static volatile u32 *const REG_DISPCAPCNT = (volatile u32 *)0x04000064;
 

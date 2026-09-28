@@ -1,6 +1,6 @@
 /* Sets the slide targets of the two save panels for the current page. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov009SaveContext {
     u8 pad000[0x68];

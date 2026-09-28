@@ -8,7 +8,7 @@
  * +0x394 at y 0xb00 with scale 0xb00) and two on the +0x22c list (+0x38c at the origin with
  * scale 0xd33, +0x388 at y 0xb00 with scale 0x266, bit 1 raised on its +8 flags), two held items
  * (cdee4) into an 8-byte table (+0x3a4) and loads sound 0x13d. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef void (*Callback)(void);
 

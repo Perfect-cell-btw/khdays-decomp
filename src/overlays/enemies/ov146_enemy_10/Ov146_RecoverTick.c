@@ -1,7 +1,7 @@
 /* Recover tick of the ov146 actor: +0x3c accumulates the frame rate; after 0.83 the partner (+8) is
  * released from mode 0, bit 0 of the +0x60 high byte clears and bit 7 is set, the +0x3bc effect stops
  * (020cee14), the next move is 0 and the node ends. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Ov146_Rider_SetFlagIfReady(int a, int b);
 extern int Ov146_Mount_SetStateIfReady(int param_1, int param_2);

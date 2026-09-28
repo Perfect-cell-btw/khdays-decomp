@@ -5,9 +5,7 @@
  * has the highest u16 rank at +0x92.  Returns the record, or 0 when the node has
  * no list or nothing qualifies.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define DB_ITEM_LISTS 0x16
 #define DB_SLOT_LISTS 0xe

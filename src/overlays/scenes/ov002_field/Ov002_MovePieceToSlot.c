@@ -1,6 +1,4 @@
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* The description a piece works from; the two slots a piece can occupy each
    have their own binding and their own spawn argument. */

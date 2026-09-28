@@ -13,8 +13,7 @@
  * Ov025_Hub_SelectMenuGroup and is emitted by that unit.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov025_020b3808[20] = {
     10, 0, 16, 11, 14, 12, 1, 4,

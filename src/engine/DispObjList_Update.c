@@ -4,7 +4,7 @@
  * (0x04000052). Then walks the object chain from base[0] (next at +4): flag bit2 at +0x78 ->
  * DispObj_WriteOam(base,node); bit1 -> NNS_G2dTickCellAnimation(&node[0x14], 0x1000). Finally clears
  * base[0x4634] and hands over to OamBuffer_Flush(base, arg). */
-typedef volatile unsigned short vu16;
+#include "nitro/types.h"
 #define REG_BLDALPHA    (*(vu16 *)0x04000052)
 #define REG_DB_BLDALPHA (*(vu16 *)0x04001052)
 

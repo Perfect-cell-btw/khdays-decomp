@@ -2,7 +2,7 @@
  * Twin of Ov008_ApplyModeWidgets: identical two-state widget reconfiguration of menu widgets
  * 0x35..0x38, differing only in the state field it tracks (ctx->selected at 0x184 here vs 0x4fc
  * there). See Ov008_ApplyModeWidgets for the full per-widget breakdown. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008ModeCtx {
     u8  pad_0000[0x184];

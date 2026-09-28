@@ -5,7 +5,7 @@
  * (+0x3b4 front / +0x3b8 rear) that is free (its +0x1ac bit 1 clear) and present (+0x3c0 / +0x3d4
  * bit 0); move 9 instead sends each free, absent rider move 8 with +0x1ae bit 0 set. The pending
  * slot is always reset to -1. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct {
     unsigned short lo : 8;
     unsigned short hi : 8;

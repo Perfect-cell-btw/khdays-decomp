@@ -8,9 +8,7 @@
  * position is added, its angle (0202b150) being the facing.  The facing goes to the model
  * (02088e78) when there is one, else onto the entity (+0x80, flag bit 5 of +4) unless its
  * bit 5 at +0 is set.  The entity is then shown (0202beb8 1).  Returns 1. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */
@@ -94,7 +92,6 @@ int Ov023_CmdWarpActor(Ov023ScriptCtx *pCtx, Ov023Operand *pOperand)
     int nCos;
     int nZ;
     int nIdx;
-
 
     nActor = ScriptVm_ReadOperandInt(pCtx, pOperand);
     pEntity = ArrayEntryPtrD0((u16)nActor);

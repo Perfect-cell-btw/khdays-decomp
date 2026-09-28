@@ -3,8 +3,7 @@
  * fixed-point vector library -- worth noting because the two conventions coexist in this codebase.
  */
 
-typedef unsigned char u8;
-typedef signed short s16;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

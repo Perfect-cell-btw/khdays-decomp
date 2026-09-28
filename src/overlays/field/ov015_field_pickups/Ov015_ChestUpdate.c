@@ -22,10 +22,7 @@
  * 2 (finished) acknowledges the local player (02081824) and, outside a session (02030670),
  * drops the opening flag -- a remote player instead queues a type-3 message (kind 6) with
  * its index and drops the flag once accepted.  Returns 0. */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

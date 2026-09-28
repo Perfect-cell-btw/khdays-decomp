@@ -20,8 +20,7 @@
  * ROM's slot.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 aText[0x20];                    /* +0x00 */

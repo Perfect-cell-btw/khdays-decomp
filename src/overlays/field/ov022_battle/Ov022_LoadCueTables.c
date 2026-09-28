@@ -11,9 +11,7 @@
  * of entry pointers. The file and container go back.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define TABLE_SLOTS 54
 #define CONTAINER_HEAP 6

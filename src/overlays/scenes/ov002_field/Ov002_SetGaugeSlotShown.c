@@ -10,8 +10,7 @@
  * owns the looping sound: it starts on the way up and stops on the way down,
  * unless the shutdown hook has already taken over.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     unsigned long long qwStart;         /* +0x00 */

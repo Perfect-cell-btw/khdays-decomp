@@ -1,7 +1,6 @@
 /* Show or hide the first reward multiplier; the original retains unused switch cases. */
 #pragma opt_propagation off
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Ov005SpriteManager { char data[0x4a80]; } Ov005SpriteManager;
 typedef struct Ov005ResultContext { char unknown00[0x54]; Ov005SpriteManager spriteManager; } Ov005ResultContext;
 typedef struct Ov005Config { char unknown00[0x4c]; u32 rewardScales[3]; } Ov005Config;

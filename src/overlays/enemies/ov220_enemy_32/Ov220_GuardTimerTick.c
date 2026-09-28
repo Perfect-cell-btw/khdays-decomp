@@ -3,7 +3,7 @@
  * frame-time (floored at zero); when it has run out and the +0x3e flag is clear, the +4 item's
  * +0xa8 byte is cleared and the flag set. Once the item is idle the actor plays animation 9,
  * publishes a zero vector to it with mode 4 (flag 2) and hands off to the guard end. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 
 extern void ScaleVec3Fx12(int scale, void *v, void *d);

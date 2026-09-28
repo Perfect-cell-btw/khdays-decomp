@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Constructor of the ov156 enemy (and its byte-identical twin): sets bit 8 of the +0 flags, (020cbfc4): const Vec3 data_ov156_020ced74; */
 const int data_ov156_020ced74[3] = {

@@ -18,7 +18,7 @@
  * signed divide-by-10 (val % 10 / val / 10), quotient kept to 16 bits.
  */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { u32 f0, f4, f8, fc; } Block4;
 

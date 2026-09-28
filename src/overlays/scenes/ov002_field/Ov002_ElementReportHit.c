@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* The 12 byte event this path posts to the element's owner. */
 typedef struct {

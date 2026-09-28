@@ -11,10 +11,7 @@
  * word, a count of one, and the caller's own point.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef short s16;
+#include "nitro/types.h"
 
 #define ANGLE_BIAS 0x8000
 #define ANGLE_SHIFT 4

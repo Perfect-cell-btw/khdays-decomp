@@ -6,7 +6,7 @@
  * menu's horizontal slide (-nSlideX, +0x38) applied as an offset sum.  The
  * knob offset (+0x48) records nPos.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 #define SEGMENT_FIRST 0x30
 #define SEGMENT_LAST  0x3d

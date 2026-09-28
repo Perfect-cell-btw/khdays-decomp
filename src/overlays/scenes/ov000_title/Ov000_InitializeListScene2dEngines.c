@@ -23,8 +23,7 @@
  *    while the sub-screen block is the symmetric BG0/BG1/BG3. It looks like an
  *    off-by-one in the original source and is reproduced on purpose.
  */
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 extern void  Gfx_Reset2DEngines(void);
 extern void *G2_GetBG1ScrPtr(void);

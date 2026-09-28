@@ -15,9 +15,7 @@
  * +0x68).  Step 2 selects the current entry unless animating, draws heading
  * 2 and fades both engines in.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define FLAG_LIST_OPEN 0x200a
 #define SCROLL_NOW     0x7fffffff

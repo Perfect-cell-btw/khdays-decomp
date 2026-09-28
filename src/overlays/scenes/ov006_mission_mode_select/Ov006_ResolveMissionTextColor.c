@@ -1,7 +1,7 @@
 /* Resolves a requested Mission Mode text color to the palette index used by the current state and
  * alternate text layout. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad_0000[0x94f4];

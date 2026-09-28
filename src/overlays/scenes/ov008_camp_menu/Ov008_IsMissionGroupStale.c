@@ -4,9 +4,7 @@
  * one recorded marks the group dirty and answers yes; with one, a group already
  * marked dirty answers yes.  Otherwise yes unless the scene poll reports 4.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct MissionContext {
     u8  pad_0000[0x4a8];

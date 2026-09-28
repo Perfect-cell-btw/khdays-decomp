@@ -2,8 +2,7 @@
  * starts touch sampling, instantiates its classes and lists, sets up its surfaces and header
  * limits, and restores the saved selections. */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008SurfaceConfig {
     u32 words[5];

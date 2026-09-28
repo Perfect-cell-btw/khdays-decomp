@@ -4,7 +4,7 @@
  * the actor plays pose 8 (aggressive) or 0x11 (looping) and is knocked back in place (mode 5,
  * flag 1), the +0x3e4 shape loses bit 1 and the +0x3e0 one gains it, the +0x44 timer clears and
  * the node moves to 020d1384. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

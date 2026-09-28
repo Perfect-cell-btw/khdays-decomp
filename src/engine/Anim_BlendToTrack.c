@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* Per-track candidate table: numBlends[track] gates whether blendAnms[track]
    is valid, blendAnms[track][blendCode] -> NNSG3dAnmObj*. Matches the

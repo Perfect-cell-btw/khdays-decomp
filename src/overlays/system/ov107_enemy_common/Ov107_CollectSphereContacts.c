@@ -3,10 +3,7 @@
  * observed read. No normal calculation has been inferred for it.
  * The child-offset table is read-only in the ROM (rodata).
  */
-typedef signed short s16;
-typedef unsigned short u16;
-typedef unsigned char u8;
-typedef signed long long s64;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

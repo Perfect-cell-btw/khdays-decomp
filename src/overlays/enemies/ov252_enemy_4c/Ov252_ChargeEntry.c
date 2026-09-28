@@ -2,7 +2,7 @@
  * +0xac guard up); unguarded and below the ground it gets a 1.3125 upward +0x10 velocity and bits 3-4
  * of the +0x60 high byte are set. The owner plays effect 2 at its +0x560 model's +0x14 point, the
  * +0x60/+0x6c/+0x64 timers clear, +0x88 = 1 and the node moves on to 020cfdd8. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);

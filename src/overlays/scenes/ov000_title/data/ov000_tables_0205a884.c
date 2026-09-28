@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov000_SetupLogoTileSurfaces (020535b4): const TileSurfaceCfg data_ov000_0205a884; */
 const int data_ov000_0205a884[10] = {

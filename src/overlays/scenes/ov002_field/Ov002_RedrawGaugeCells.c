@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef void (*Ov002CellFn)(int nTarget, int nCell, int bClearing);
 

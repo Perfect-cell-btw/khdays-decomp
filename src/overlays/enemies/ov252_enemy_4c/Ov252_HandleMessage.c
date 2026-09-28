@@ -5,8 +5,7 @@
  * pose (then attached through 020c09a0), from the payload (0xb), or spawns a shard, gem or bomb into
  * the first free pair of its range; 0x32 knocks the actor back, 0x33 plays the owner's sound at the
  * position and 0x34 starts the +0x580 sound 0x148/6. The base handler always runs. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int b0 : 1; int b1 : 1; } Bits;

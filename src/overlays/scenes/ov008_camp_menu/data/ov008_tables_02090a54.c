@@ -8,8 +8,7 @@
  *   data_ov008_02090a54: Ov008_OpenTutorialPage, Ov008_ConfirmPageBSelection, Ov008_GetSlideTableValue
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 int data_ov008_02090a54[59] = {
     0, 1, 2, 3, 5, 6, 7, 8,

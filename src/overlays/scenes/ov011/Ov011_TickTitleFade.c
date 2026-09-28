@@ -19,9 +19,7 @@
  * calls, both interpolations) matches under either return type; only r0 avoidance in
  * the two low-pressure windows depends on the non-void return.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov011FadePane {
     u16 startTime;   /* +0x00 */

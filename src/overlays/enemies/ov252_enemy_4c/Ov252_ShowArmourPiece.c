@@ -1,6 +1,6 @@
 /* Show armour piece `i` of the ov252 actor when `show` is set: its +0x38c model unhides (+0x5c bit 1),
  * its +0x4f4 shape hides (bit 0) and its +0x518 record's high nibble gains bit 0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { unsigned f : 8; } B8;
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 

@@ -9,9 +9,7 @@
  * Codegen: the victim position is a plain stack copy (`raw`, y raised in place) and each
  * component is packed through an Fx32 wrapper copy taken right before its bytes (the three
  * unread word stores are the ROM's); this is what puts x/y+0x800/z in r1/r2/ip. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

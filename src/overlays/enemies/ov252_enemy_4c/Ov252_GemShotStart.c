@@ -4,7 +4,7 @@
  * +8) the layers fade out (mode 2) and the node moves on to 020d38e8; otherwise the spawner plays effect
  * 5 at the origin, a target below 10.0 sets +0x38, the +0x18 heading (and its +0x24 copy) points from
  * the +0xc point to the target, +0x30 clears and the node moves on to 020d346c. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(void *srt);

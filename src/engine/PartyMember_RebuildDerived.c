@@ -11,9 +11,7 @@
  * 0x14000, the table is released and db 0x1d closed. The fixed-rewards loop is a do-while whose
  * first store alone is guarded by `i < 3` (always true), which is the ROM's in-loop bge; the
  * indexed reward of the else call is reread (volatile read). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct RecHeader {
     u8 pad00[3];

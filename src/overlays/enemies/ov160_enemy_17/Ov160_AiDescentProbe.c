@@ -22,9 +22,8 @@
  * nearest distance is a signed 64-bit compare with the min in a register
  * pair (counter declared before the count); the hit branches come first.
  */
-typedef unsigned char u8;
-typedef int fx32;
-typedef long long fx64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct Vec3 {
     fx32 x;

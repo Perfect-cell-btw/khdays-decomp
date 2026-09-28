@@ -3,7 +3,7 @@
  * (kind 5) attaches the +0x398 pair named by its slot: slots 0/1 anchor it on the +0x38c/+0x390
  * part's +4 point (kind 0x17, flag 1); slots 2/3 take the +0x394 part's +0xa0 transform moved
  * 2.0 along its forward axis. The base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[4]; Vec3 trans; int pad[4]; } SrtTransform;
 struct b2 { int b0 : 1, b1 : 1; };

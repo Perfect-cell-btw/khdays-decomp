@@ -2,8 +2,7 @@
  * else -1) matches the actor's +0x414 slot, the +0x3e4 transform is rebuilt from the actor's +0xa0
  * rotation at the current matrix's translation; a match on the +0x410 slot does the same for the
  * +0x3b8 transform. */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 struct MtxFx43 { int m[9]; struct Vecx32 t; };
 

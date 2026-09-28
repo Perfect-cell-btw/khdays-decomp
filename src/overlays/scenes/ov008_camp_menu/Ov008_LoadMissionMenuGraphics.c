@@ -10,8 +10,7 @@
  * The menu pointer is the parameter its only caller (Ov008_MissionMenuInitStep)
  * passes; it is not read.
  */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define HEAP_FILE     0xe
 #define CHAR_OFFSET   0x2000

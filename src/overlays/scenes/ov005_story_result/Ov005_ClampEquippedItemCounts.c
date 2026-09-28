@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct NNSFndList {void *head,*tail;u16 count,offset;} NNSFndList;
 typedef struct Ov005PanelView {char opaque[0x20];NNSFndList itemQuantities;char tail[0x100-0x2c];} Ov005PanelView;
 typedef struct Ov005ItemQuantity {int itemId,quantity;} Ov005ItemQuantity;

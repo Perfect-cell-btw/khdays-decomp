@@ -9,10 +9,7 @@
  * BG1 / BG3 control words become 0x410 / 8 and the sub BG0..BG3 ones 0 / 0x210 / 0x10c / 4
  * over the two preserved bits; the render mode word is cleared (02084ab4) and the first BG1
  * tile blanked. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct DisplayRegisters {
     volatile u32 dispcnt;      /* +0x00 */

@@ -6,7 +6,7 @@
  * 020ced9c helpers (+0x39c) and sixteen 020cf21c helpers (+0x3a4), builds the six hidden sub-items of
  * data_ov283_020cfb4c into the +0x3ec pair table, sets the +0x3e8 threshold to 70 % and loads sound
  * 0x17e (with a +0x3e4 partner) or 0x173. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[6]; } IdTable6;

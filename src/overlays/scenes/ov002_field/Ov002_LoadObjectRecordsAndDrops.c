@@ -1,9 +1,6 @@
 /* Ov002_LoadObjectRecordsAndDrops: relocate the loaded em0 table and fill
  * marker drop defaults from the selected eid variant. */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef short s16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Ov002MarkerRow {
     u8 bId;u8 nKind:4,nHigh:4;char pad2[3];s8 nParam;char pad6[4];
     s16 nDropKey,nDropChance;s8 nDropEntry;char padf;

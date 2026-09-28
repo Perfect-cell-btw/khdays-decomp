@@ -1,5 +1,4 @@
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* NitroSDK halfword clear primitive. */
 asm void MIi_CpuClear16(register u16 value, register void *destination,

@@ -10,7 +10,7 @@
  * THUMB.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int *data_ov002_0207f9fc;
 extern u16 data_0204c190;

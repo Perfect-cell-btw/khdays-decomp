@@ -1,7 +1,7 @@
 /* Fall tick of the ov260 actor: the +0x20 velocity is its +0x428 part's +0x2c vector turned by the
  * +0x64 heading, the +0x24 height takes the +0x30 fall speed which grows by 1/32 each frame. Landing
  * (+0x17a bit 0) or a partner with no queued move plays pose 0x10 and moves on to 020ced8c. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Flag17a { u8 b0 : 1; };
 typedef struct { int m[9]; } Mtx33;

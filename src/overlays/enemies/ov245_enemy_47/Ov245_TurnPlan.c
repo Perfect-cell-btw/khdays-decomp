@@ -6,7 +6,7 @@
  * are cleared and the node moves to 020d4248. */
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);

@@ -5,9 +5,7 @@
  * heading (sin, 0, cos from FX_SinCosTable_; VEC_MultAdd); as a string (type 2) it is that
  * spot on the actor's model (0202c3e4 with the entity's model id 0202bf84) plus the offset
  * (VEC_Add). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

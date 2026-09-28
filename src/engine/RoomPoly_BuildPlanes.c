@@ -5,8 +5,7 @@
  * gets an inward plane (+0x20, 12 bytes each) whose normal is the normalised cross product of the
  * edge with the face normal (func_01ffcf48) and whose distance is taken at the edge's first
  * vertex. The first parameter is unused. */
-typedef short fx16;
-typedef int fx32;
+#include "nitro/fx.h"
 
 typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx16 x, y, z; } VecFx16;

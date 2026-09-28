@@ -19,10 +19,7 @@
  * if/else; the "== 0" cell tests are if/else, the "!= 0" ones inline bools;
  * the pending nibble is a 4-bit bitfield; case 1 falls into case 2.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define TEXT_STYLE   4
 #define LABEL_STYLE  2

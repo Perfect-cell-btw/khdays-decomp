@@ -3,7 +3,7 @@
  * Ov023_ActorResourceId (02087870), 0x298 for index 8; indices 0 / 4 / 13, 1 / 5 and 2 / 6
  * pick a variant from the actor's alternation flag (+0x458: the flag plus 0, 6 or 2) and flip
  * the flag; other indices use variant 0. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

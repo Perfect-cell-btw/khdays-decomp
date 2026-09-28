@@ -4,8 +4,7 @@
  * x 5.0 box (kind 1); every entity whose +2 id bit is clear in the +0x1c mask and that accepts the
  * zero push gets its bit set. Once the part's rig is idle (+0xad), the owner's +0x4b0 slot clears
  * and the node is released (0203c640). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 typedef struct { Vec3 center; Vec3 axisX; Vec3 axisY; Vec3 axisZ; int nExtentX; int nExtentY; int nExtentZ; } Box;

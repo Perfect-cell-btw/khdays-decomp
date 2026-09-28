@@ -18,7 +18,7 @@
  */
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov022_ValidateTargetRef(char *self);

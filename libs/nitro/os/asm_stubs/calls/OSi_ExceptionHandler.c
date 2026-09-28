@@ -1,7 +1,6 @@
 /* NitroSDK original assembly (libraries/os/src/os_exception.c). */
 
-typedef int BOOL;
-typedef unsigned int u32;
+#include "nitro/types.h"
 extern void OSi_GetAndDisplayContext(void);
 extern void *data_020445b4;             /* OSi_DebuggerHandler (.bss) */
 

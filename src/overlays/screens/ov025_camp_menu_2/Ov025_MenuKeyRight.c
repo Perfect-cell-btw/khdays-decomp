@@ -8,9 +8,7 @@
  * block, refreshes the equip panel (+0x1f78) and plays cue 0x35.  Mode 2 does
  * nothing (an empty case the compiler still tests).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define KEY_RIGHT  0x10
 #define SOUND_MOVE 0x35

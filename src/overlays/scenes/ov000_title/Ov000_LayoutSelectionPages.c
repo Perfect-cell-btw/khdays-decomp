@@ -13,8 +13,7 @@
  * allocator's colouring (the later the store, the higher the callee-saved
  * register) -- same demotion-ladder crack as Ov000_MatchRecipeAndApply. vec must be
  * declared before pos. */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov000LayoutTemplate {
     u32 handle;

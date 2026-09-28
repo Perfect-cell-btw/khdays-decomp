@@ -2,10 +2,7 @@
  * row's number entry (+0x18 of the rows at +0xd0; Ov008_PushSubitemPair 020889e4) when it is
  * the entry under the stylus (+0x25c) or, with A held (bit 0 of data_0204c18c), the cursor's
  * row (+2 less +0); the other rows get the first pair. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025ReportsList {
     void *pHeader;            /* 0x00 */

@@ -6,9 +6,7 @@
  * its slot in the +0x4c hit table and reaction 0/0x53 at that point. Past 0x8d55 reaction
  * 0x127/0x12 fires once at the +0x38 point (+0x51). Once the +4 item's +0xad byte clears the next
  * move is 10 when the +0x3bd flag is up, else 8 (consuming +0x52 bit 1) or 2. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 axis[3]; int radius; int flag; } Cyl;

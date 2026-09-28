@@ -1,7 +1,7 @@
 /* Guard entry: raise flag 0x80 and clear bit 0 in the high byte at (*holder)+0x60, set bits
  * 0-1 of the +0x1ae halfword, clear bit 0 in the low byte of the +0x3d4 slot's +8 word, spawn
  * effect 0 (kind 0x4d) at the +4 anchor, reset the +0x1c7 request and dispatch null. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct bf { unsigned b : 8; };
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot();

@@ -3,7 +3,7 @@
  * two timers at +0xc/+0x10 and advance to the hold handler (020cecdc). Codegen: the bit-0 set is the
  * explicit u16 form and the bit-7 clear the hw60 bitfield form (the mix fixes the ip/lr roles).
  * hw60 = *(u16*)(*state+0x60), reloaded each op (the Ov283_ResetReactionFlags spelling). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct vec3 { int x, y, z; };
 
 extern void func_ov107_020c0b90(int obj, int cmd, struct vec3 v, int flag);

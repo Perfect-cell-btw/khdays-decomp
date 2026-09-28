@@ -4,7 +4,7 @@
  * +4) and the prize index (+0x1be, the byte at +5); the host also posts one point of kind 3
  * to the opening player (the top two bits of that byte; ov002 0206bbb8).  Any other type does
  * nothing. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov021PrizeBoxMessage {
     u8   nType;               /* 0x00: 1 accepted, 2 taken, 3 opened */

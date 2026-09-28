@@ -16,8 +16,7 @@
  * Returns the next scene callback, as the rest of this chain does.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

@@ -6,8 +6,7 @@
  * handed to the requested engine, and the scratch buffer is given straight
  * back.
  */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define OAM_BYTES        0x400
 #define OAM_ENTRIES      0x80

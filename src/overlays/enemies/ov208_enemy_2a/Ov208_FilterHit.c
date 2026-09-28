@@ -9,8 +9,7 @@
  * A hit on the +0x3b4 guard from a source whose slot is clear only fires reaction 0x154 mode 5
  * (when +0x10 is positive), zeroes the damage and sets bit 0 of the result. Returns 1 when
  * the hit was taken. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct HitWord { unsigned int lo : 16, hi : 16; };
 struct Parity { u8 b0 : 1; };
 

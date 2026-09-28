@@ -1,8 +1,5 @@
 /* Assemble result-screen values, records, ranks and reward factors. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef struct PlayerItemLimit { u16 itemId; short limit; } PlayerItemLimit;
 typedef struct Ov002ResultTally {u16 wId;short nCount;} Ov002ResultTally;
 typedef struct Ov002DayClock {u8 nModeFlags,nArmedKind;u16 nMinutes,nMinutesElapsed;u8 missionMask,pad7;} Ov002DayClock;

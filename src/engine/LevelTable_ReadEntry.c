@@ -2,7 +2,7 @@
  * slot) from "ba/ch/<name>/lv.b.z" (data_02042a70 names) into *out, loading the file from heap 6
  * and freeing it again. */
 #pragma thumb on
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 f0;

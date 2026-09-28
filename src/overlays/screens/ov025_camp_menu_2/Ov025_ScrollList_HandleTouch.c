@@ -4,10 +4,7 @@
  * list set; Ov025_ScrollList_TouchKnob 020ae634); otherwise, above y 0xae, the row under the
  * stylus (y less 16 plus the pixel scroll +0x2d0, 16 a row) is confirmed when it is the cursor
  * (020ae0f0) or selected with sound (020adee0), and the press flag (+0x10) set. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct TileBlock {
     u8   pad_00[0x20];

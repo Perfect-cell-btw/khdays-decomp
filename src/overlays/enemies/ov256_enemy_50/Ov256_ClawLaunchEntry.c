@@ -2,8 +2,7 @@
  * start point is the owner's +0x3ac part's hand bone (+0x418, or +0x424 for the second claw, +0x394)
  * position, bits 1-4 of the +0x60 high byte are set, the +0x390 part takes motion 3, the timers and
  * the +0x6c flag clear and the node moves on to 020d1c50. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov107_StartAnim(int part, int motion, int mode);

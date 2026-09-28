@@ -4,9 +4,7 @@
  * list header and posts a join request (player index, target 0xff, arg 0) on
  * gate 0xd.  Returns the next state handler.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008JoinPacket {
     u8  nPlayer;              /* 0x00 */

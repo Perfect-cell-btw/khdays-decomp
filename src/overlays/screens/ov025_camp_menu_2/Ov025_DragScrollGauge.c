@@ -6,8 +6,7 @@
  * When the pen is up, widget 5 is reset to frame 0 and shown and the drag flag
  * cleared.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov008ScrollMenu {
     int bDragging;            /* 0x000 */

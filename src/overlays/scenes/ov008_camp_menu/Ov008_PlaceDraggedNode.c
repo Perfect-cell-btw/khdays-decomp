@@ -20,9 +20,7 @@
  * three uses (no slot pointer local): the page row is then the compiler's
  * own CSE temp and the base / page / index temps take the ROM's registers.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GRID_COLS      5
 #define WIDGET_HINT_A  100

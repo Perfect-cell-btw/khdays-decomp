@@ -7,7 +7,7 @@
  * (-0x80 * step / 0x88) accumulates in y. The horizontal velocity is the +0x18 direction
  * scaled by the speed. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct Bit0 { unsigned char b0 : 1; };
 
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);

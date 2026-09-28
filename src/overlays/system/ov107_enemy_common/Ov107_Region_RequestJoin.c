@@ -1,8 +1,6 @@
 /* Marks a pending join of the member and posts the join request (message 4, kind 1). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { u16 f0; u8 f2; u8 f3; } LocalBuf;
 

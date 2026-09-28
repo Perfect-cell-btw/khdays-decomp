@@ -3,10 +3,7 @@
  * phase toggles between 1 and 2, the timer restarts, the slot is redrawn shifted by the phase
  * (Ov027_DrawPanelSlotShifted 02083c78 on the panel at +0x510); the panel is queued for the
  * screen every frame (Ov027_EnqueuePanel 02083cb8). */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

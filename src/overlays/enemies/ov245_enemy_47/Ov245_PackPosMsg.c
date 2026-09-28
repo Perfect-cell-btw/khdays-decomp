@@ -1,8 +1,7 @@
 /* Ov245_PackPosMsg -- message hook: a kind-0 message carries the actor's +0x3b4 position
  * packed as three 24-bit fixed values at bytes 0x26..0x2e (each copied through a stack Fx32
  * first) and the low halfword of the +0x3c0 word at 0x24, then goes to the base forwarder (020c7a90). */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 typedef struct { u8 hi, mid, lo; } Fx24;

@@ -1,7 +1,7 @@
 /* Roar tick of the ov256 actor: the +0x4c timer accumulates the frame rate; at 0x6e8 the last charge
  * (+0x69 == 1) is spent and the actor is knocked back at the origin twice (modes 0xc and 0xd). Once the
  * partner holds no queued move +0x54 clears, pose 0xd plays and the node moves on to 020cf974. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);

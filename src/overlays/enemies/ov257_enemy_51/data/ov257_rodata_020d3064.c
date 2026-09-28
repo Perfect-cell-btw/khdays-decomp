@@ -2,8 +2,7 @@
  * pointer tables are all zero in the ROM image (every entry is a relocation onto the unit's
  * resource name strings); the other tables are written in the width their contents are in. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int data_ov257_020d3360;
 extern int data_ov257_020d336c;

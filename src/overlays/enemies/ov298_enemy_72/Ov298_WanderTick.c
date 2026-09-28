@@ -12,7 +12,7 @@
  * clock then plays the held-item animations 0 (from 0x440) and 1 (from 0x908, resetting the
  * clock and the +0x97 marks and playing animation 1); animation 1 also plays while the +4 item's
  * +0xad byte is clear. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Bits17a { u8 bit0 : 1, bit1 : 1; };
 

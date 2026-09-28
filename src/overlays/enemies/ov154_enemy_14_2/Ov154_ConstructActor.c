@@ -7,7 +7,7 @@
  * 0x3e66/0x1f33/0x1f33/0x1f33 rates, then creates two capsule placements from one request
  * (position (0, 0xa00, 0), world Y axis, radius and height 0xa00): +0x390 on the +0x144 list,
  * +0x388 on the +0x22c list; +0x398 is built by Ov154_Actor_New and sound 0x13c is loaded. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov153Vec3 {
     int x;

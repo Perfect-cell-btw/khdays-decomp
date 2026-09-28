@@ -6,7 +6,7 @@
  * slots 5 and 7 anchor effects 1 / 7 on the +0x410 bone, slot 8 a looping effect 7 on the +0xa0 pose;
  * slot 15 raises the owner flag (020c0b14), and slots 16/17 hide / show the +0x390 wing rig (+0x42c).
  * The base hook always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } SrtTransform;

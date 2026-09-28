@@ -3,8 +3,8 @@
  * to find which pair of axes to work in, and LineBox_Face is called with that axis order (0/1/2,
  * 1/2/0 or 2/0/1) together with the point, the normal, the shape, the offset and the two extra
  * arguments. */
-typedef int fx32;
-typedef long long s64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { fx32 x, y, z; } VecFx32;
 

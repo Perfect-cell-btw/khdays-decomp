@@ -1,7 +1,7 @@
 /* Enter the lunge of the ov237 actor: the +0x3c aim point is taken from the +0x3d8 partner's +0x2c
  * point (020cdb50); once the +4 rig is idle pose 8 plays, the partner takes pose 4, the +0x30 / +0x34
  * timers and the +0x57 flag clear and the brain waits on 020ce980. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern Vec3 Ov237_RotateByActorHeading(int *node, Vec3 *target);

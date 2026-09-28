@@ -3,7 +3,7 @@
  * reactions 0x11a/6 and 0/0x48 at the state's +0xc position (020c5af8), spawns effect 0 there
  * (020c0b90), clears +0x40 and moves the node to 020d61f4. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);

@@ -8,8 +8,7 @@
  * shot is retired and the retirement marshalled out to the other players.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

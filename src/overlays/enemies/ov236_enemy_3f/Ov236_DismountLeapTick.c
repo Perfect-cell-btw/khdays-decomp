@@ -5,7 +5,7 @@
  * (data_02042258) sets the +0x28 / +0x2c headings. At t = 1 bits 1-2 of the actor's +0x60 high
  * byte and bit 0 of +0x1ae clear, the mount's +0x3bc bit 0 is set when exactly one rider counter
  * (+0x3d0 / +0x3d2) is left, the actor's +0x3d4 bit 0 is set and the node moves to 020d54e0. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct m4 { int w[4]; };
 struct Bits3bc { unsigned char b0 : 1; };

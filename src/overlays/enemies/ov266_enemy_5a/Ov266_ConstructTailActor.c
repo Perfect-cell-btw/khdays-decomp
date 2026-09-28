@@ -6,8 +6,7 @@
  * register) into a local BEFORE the zero stores, which keeps the zero in r0 and the half in r1
  * and gives the ROM's store order. */
 typedef void (*Callback)(void);
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int value;

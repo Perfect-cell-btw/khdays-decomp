@@ -15,10 +15,7 @@
  * register that already holds 0x10 rather than loading two literals.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define SCENE_TAG 0x6c
 #define SCENE_BIT 4

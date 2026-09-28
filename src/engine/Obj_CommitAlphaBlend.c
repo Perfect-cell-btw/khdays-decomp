@@ -4,7 +4,7 @@
  * (EVA=count, EVB=0x10-count) and writes it to the sub engine (0x04001052) when
  * base[0x4604]==2, else the main engine (0x04000052). Then, per the entry's flag bits at
  * +0x78: bit2 -> DispObj_WriteOam(base,entry); bit1 -> NNS_G2dTickCellAnimation(&entry[0x14], 0x1000). */
-typedef volatile unsigned short vu16;
+#include "nitro/types.h"
 struct Flags { unsigned f0 : 1, f1 : 1, f2 : 1; };
 extern void DispObj_WriteOam(int base, int entry);
 extern void NNS_G2dTickCellAnimation(unsigned int *p, int size);

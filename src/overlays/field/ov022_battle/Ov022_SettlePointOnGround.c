@@ -9,8 +9,7 @@
  * whatever it finds. With no floor under it the lift is simply taken back.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

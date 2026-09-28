@@ -5,7 +5,7 @@
  * comes from pool entry 0x42 (subscribed, its four channels bound with (0, 1)), the two sub-items
  * from the data_ov213_020d2f3c entries into a fresh 16-byte slot table (+0x394, attached, bit 1
  * on their +0x5c), and a shape on the +0x144 list (+0x38c) is built from the +0x64 velocity. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef void (*Callback)(void);
 

@@ -5,7 +5,7 @@
  * counter cleared and its speed set to 0x800 (0xc00 in hard mode, scaled by 1.2 in mode 4),
  * the fall speed to 0x180 (0x240 in hard mode), the node turns to face the target unless locked,
  * and the attack step takes over. 0x23/0x24 tell 0x31/0x30 and hand over to the landing step. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int func_02023c40(void);                                                /* game mode: 1 = hard */

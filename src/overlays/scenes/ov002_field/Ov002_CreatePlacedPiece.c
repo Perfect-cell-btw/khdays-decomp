@@ -1,7 +1,5 @@
 /* Ov002_CreatePlacedPiece: claim, position and register a destructible piece. */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Ov002Vec3 {int x,y,z;} Ov002Vec3;
 typedef struct Ov002PlaceParams {int nKind,nParamB,nParamA,nParamC,nAngle;} Ov002PlaceParams;
 typedef struct Ov002PiecePlacementBytes {s8 bPlaceKind,bSlotKind;} Ov002PiecePlacementBytes;

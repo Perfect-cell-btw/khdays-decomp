@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Shot step of the ov032 enemy (and its byte-identical twins): on the local player both 64-b (020ba088): Vec3 data_ov072_020ba5c8; */
 const u8 data_ov072_020ba5c8[12] = {

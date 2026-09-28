@@ -12,10 +12,7 @@
  * that clock back down to idle. The firing routine runs afterwards either way.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 struct Anim {
     u8 pad0000[0x108];

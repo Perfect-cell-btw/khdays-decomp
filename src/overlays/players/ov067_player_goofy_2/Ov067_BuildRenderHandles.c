@@ -2,7 +2,7 @@
  * animation set 3, binds three render handles -- one against the scene link the enemy was
  * spawned from, two against the rig's own models at +0x2c38 and +0x2e78 -- clears the
  * 0xd5-byte work block at +0xda0, then latches the ready bits 0xf and returns them. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern void Ov022_ConfigureGridSlotMode(int slot, int mode);
 extern u8 *Ov022_AcquireGridSlot(char *descriptor, int slot, int variant, void *parameters);

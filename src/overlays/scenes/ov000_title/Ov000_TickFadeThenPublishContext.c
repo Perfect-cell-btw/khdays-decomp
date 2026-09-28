@@ -3,7 +3,7 @@
  * steps is 0..16 inclusive -- the same ramp the other fades in this overlay produce as -(elapsed /
  * 0x4cb5), which is independent corroboration that 16 is the range and not a coincidence. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef int (*OverlayCallback)(void);
 
 typedef struct {

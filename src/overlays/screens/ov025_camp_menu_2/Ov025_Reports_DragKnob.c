@@ -7,10 +7,7 @@
  * cursor moved, the report under it is marked read (0209e820) -- an enemy profile only once
  * its record (0x40 bytes at +0x1e8, bits 6..15 of its first word) has no pending count -- and
  * the byte at +0x22c cleared; when the window moved the rows are refreshed (020a076c). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025ReportsList {
     void *pHeader;            /* 0x00 */

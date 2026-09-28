@@ -4,7 +4,7 @@
  * part strikes along (0, 1.0, 1.0) through 020cd0e8. Once the +4 item's +0xad byte clears: past
  * the +0x58 mark plus 5.0 pose 0x16 / partner motion 8 play and the node moves on to 020cf68c;
  * before it pose 0x15 / motion 7 replay with another knock-back (mode 0xf). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { Vec3 pos; int radius; } Sphere;

@@ -31,9 +31,7 @@
  * is why the three components of each site are declared z, y, x, and why the
  * loop bound is declared after the loop counter.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

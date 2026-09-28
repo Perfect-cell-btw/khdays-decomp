@@ -2,7 +2,7 @@
  * +0xc aim target it faces it (+0x78 / +0x7c heading); +0x58 is set, pose 0xc plays on the actor
  * and its partner (020cd524), the shot is armed (020cd628: pose 0xf after 0x2a8) and the node moves
  * on to 020ce944. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);

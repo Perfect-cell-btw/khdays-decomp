@@ -4,7 +4,7 @@
  * picks the first pair) at the +8 point. The +0x50 stagger clock gains 1.99; at or below the +0x3e8
  * percentage of the maximum (or at 0 health) the next move is 3, else a heavy hit (flag 0x8000) makes
  * it 0xb. Returns 1 (0 when already down). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 a, b; } Pair2;
 typedef struct { unsigned lo : 16; unsigned hi : 16; } HitWord;

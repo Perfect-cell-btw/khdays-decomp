@@ -2,7 +2,7 @@
  * the current language), sets up LZ decompression for compressed files or allocates the buffer
  * otherwise, and posts the request to the loader thread; returns the destination buffer. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern int *Loader_PopFreeRequest(void);
 extern void FS_InitFile(void *file);

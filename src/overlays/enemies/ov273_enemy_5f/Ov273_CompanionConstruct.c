@@ -6,7 +6,7 @@
  * pose (data_ov273_020d6b68; registered, bit 1 of +0x5c), and reserves the +0x144 collision handle
  * (+0x390) from a capsule at the origin along -z (radius 1.82, height 0.31). The shared pose
  * id is read first and kept in the frame across the rig construction. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 up; int radius; int height; } Capsule;
 

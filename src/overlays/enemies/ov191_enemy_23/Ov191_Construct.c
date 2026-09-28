@@ -8,7 +8,7 @@
  * +0x144 list (+0x394 at the origin, scale 0xc00; +0x390 at y 0xc00, scale 0xc00) and two on the
  * +0x22c list (+0x38c at the origin, scale 0xa00; +0x388 at y 0x800, scale 0x800, bit 1 on its
  * +8 flags), fills the +0x3a4 table with four Ov191_Actor_New records and loads sound 0x133. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov191Vec3 {
     int x;

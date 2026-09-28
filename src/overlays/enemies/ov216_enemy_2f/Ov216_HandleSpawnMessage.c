@@ -1,6 +1,5 @@
 /* Ov216_HandleSpawnMessage: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct { int x, y, z; } VecFx32;
 typedef struct { int w[11]; } Srt;

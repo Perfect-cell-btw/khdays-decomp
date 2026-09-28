@@ -4,9 +4,7 @@
  * blanked (G2S_GetBGnScrPtr / MIi_CpuClearFast), the text surface (+4) released (0202ffbc), the
  * tag tracker (+0x44) cleared (020895b8) and the entry context (+0x48) unwound (020883a0 /
  * 020883d4). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov025ReportsEntry {
     u16  nId : 9;             /* 0x00 bits 0-8 */

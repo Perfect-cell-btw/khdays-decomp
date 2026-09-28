@@ -7,8 +7,7 @@
  * to the owner is pulled out to 4.5, raised by k/16 over -1.0 and fired (effect 0xc). Once the rig is
  * idle, 50 shots end in a follow-up (020cd2cc, without a +0x38 delay) or move 2; before that the rig
  * replays pose 0xc (first shot) or 0. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

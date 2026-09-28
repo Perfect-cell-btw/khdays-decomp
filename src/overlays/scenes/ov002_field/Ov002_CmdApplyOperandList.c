@@ -11,7 +11,7 @@
  * or the two tails come out the other way round.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int ScriptVm_ReadOperandInt(void *vm, char *operand);
 extern void Ov002_ResetPendingIds(void *items, int count);

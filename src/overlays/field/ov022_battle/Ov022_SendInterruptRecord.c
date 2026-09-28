@@ -9,10 +9,7 @@
  * does not have to unbias it again.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef short s16;
+#include "nitro/types.h"
 
 #define ANGLE_BIAS 0x8000
 #define ANGLE_SHIFT 4

@@ -1,7 +1,6 @@
 /* Allocates the two channel blocks and configures the actor sub-parameters. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct ActorSubCfg {
     int field00;

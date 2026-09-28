@@ -9,9 +9,7 @@
  * byte 6) is set when flag 0x200b is set, or once day 12 is reached and the
  * flag 0x3c2b + 02079264(0x34) is set; then the markers are armed.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define FLAG_ITEM_MENU_SEEN 0x200b
 #define FLAG_TIER_BASE      0x3c2b
@@ -34,7 +32,6 @@ typedef struct Ov008SlotTable {
 } Ov008SlotTable;
 
 extern Ov008LayoutTemplate data_ov008_0208f5e8;
-typedef short s16;
 typedef struct Ov008MenuSubEntry {
     s16 nId;                  /* 0x00 */
     u8  nText;                /* 0x02 */

@@ -8,7 +8,7 @@
  * plain stack slot ([sp]) instead, matching the original's split addressing.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern void EntityMgr_AllocRecords(int n);
 extern void StoreToGlobalIndexedIfSet(int index, int *record);

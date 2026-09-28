@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by For each variable-stride record, build a sprite via Ov026_AddElem (kind-mapped prior (02082bfc): unsigned char data_ov026_020910b0; */
 const u8 data_ov026_020910b0[4] = {

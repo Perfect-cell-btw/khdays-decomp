@@ -1,8 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned int u32;
-typedef int s32;
-typedef volatile u8 vu8;
-typedef volatile u32 vu32;
+#include "nitro/types.h"
 
 #define reg_CARD_MASTERCNT (*(vu8 *)0x040001a1)
 #define reg_CARD_CMD       (*(vu8 *)0x040001a8)

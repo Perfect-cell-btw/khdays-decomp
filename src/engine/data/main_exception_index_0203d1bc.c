@@ -2,7 +2,7 @@
  * with exception tables.  Each entry names the function, its code size with bit 0 set (the
  * unwind descriptor is stored inline, not through a pointer) and that inline descriptor. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct ExceptionTableIndex {
     void (*function)(void);   /* 0x00: function start */

@@ -6,7 +6,7 @@
  * velocity, +0x80 wide). Once the partner holds no queued move, stage 2 ends the glide (pose 0x18,
  * motion 0xe, on to 020ce70c); earlier stages re-aim (020cd794), turn to the target, advance and play
  * pose 0x13 + 2 x stage, motion 9 + 2 x stage and effect 0x17 (stage 1) or 0x1a. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;

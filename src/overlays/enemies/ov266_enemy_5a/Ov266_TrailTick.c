@@ -10,8 +10,7 @@
  * step's heading and the packed point goes through the owner's +0x24 hook, and sub-state 2 ends
  * the tick when the step hits a wall, finds no floor within 0x300, or the +0x20 distance reaches
  * 32.0. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;

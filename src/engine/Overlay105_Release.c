@@ -3,9 +3,8 @@
  * The mirror image of Overlay105_Load: the same data_027e0060 latch, cleared instead of
  * set, and the same linker-absolute FS_OVERLAY_ID pool word. See that file for why the
  * id cannot be spelled as the integer 105. */
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef u32 FSOverlayID;
-typedef signed char s8;
 
 extern u32 OVERLAY_105_ID[1];
 #define FS_OVERLAY_ID_ov105 ((FSOverlayID)(u32) & (OVERLAY_105_ID))

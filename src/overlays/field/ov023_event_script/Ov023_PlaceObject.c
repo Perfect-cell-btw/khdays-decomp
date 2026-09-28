@@ -3,8 +3,7 @@
  * on it (ov002 02050cd4) and its alpha set to 0x3c; then its two angles come from the degrees
  * given (x 65536 / 360), its depth is its index x 128 and its position the pair given in whole
  * units (x 4096). */
-typedef unsigned char  u8;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

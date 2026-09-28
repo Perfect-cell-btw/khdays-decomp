@@ -7,9 +7,7 @@
  * too and reset.  Then the pick is re-resolved with id 1 and the widget moved
  * to its layout position raised by 8 px (fx32 0x8000).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct UiLayoutPos {
     int nX;

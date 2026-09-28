@@ -1,8 +1,7 @@
 /* Inserts or updates a mission row by its six-byte key: an existing row is overwritten, otherwise
  * the record is appended while there is room (four rows). */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u8 field_00[4];

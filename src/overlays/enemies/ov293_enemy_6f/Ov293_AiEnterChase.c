@@ -1,7 +1,7 @@
 /* Finds the nearest target (none: queues action 2), loops anim 2, rolls the chase timer and
  * installs the chase tick. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct State {
     char *pActor;       /* 0x00 */

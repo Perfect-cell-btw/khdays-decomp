@@ -4,8 +4,7 @@
  * `1 << id` of the +0x38 mask) that takes the hit (020ca918 kind 7, push 0.375 up) knocks the +0x394
  * owner back at its position (mode 0xb), plays sound 0x172/7 at the +8 point and is marked; entities
  * no longer touched are forgotten. The +0xc velocity then clears. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct BoxQuery {
     Vec3 vCenter;

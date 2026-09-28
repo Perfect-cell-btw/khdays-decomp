@@ -1,9 +1,7 @@
 /* Builds the mission mode option rows for the current progress (unlocked modes by level), and
  * handles leaving the menu. */
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 id;

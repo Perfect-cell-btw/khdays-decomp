@@ -1,7 +1,7 @@
 /* Tracks the nearest target; queues action 4 on the check interval, or once the gap reaches 0x3000.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct State {
     char *pActor;          /* 0x00 */

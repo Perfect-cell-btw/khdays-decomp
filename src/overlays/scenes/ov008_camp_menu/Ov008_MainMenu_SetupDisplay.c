@@ -19,9 +19,7 @@
  * clear-colour argument, matching the ROM's single pooled constant + runtime lsr.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 extern void  Gfx_Reset2DEngines(void);
 extern void  GX_DisableBankForOBJExtPltt(void);

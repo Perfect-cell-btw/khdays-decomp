@@ -4,8 +4,7 @@
  * it is not 0 the blend factor is eased by mode -- 2: linear, 3: half-sine eased both ends,
  * 4: sine eased, 5: cosine -- exactly as Anim_GetBlendFactor (0202136c) does, and the angles
  * are start + (target - start) * factor; at 0 they are the target.  Returns pOut. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

@@ -8,8 +8,7 @@
  * out two interactive items via Ov025_InitAndAppendTracker -- each taking a cell, geometry, a 0xffff
  * mask, and a draw/action callback (Ov025_TouchScrollGauge and Ov025_ScrollPageDown). Returns 0.
  * Resource-cell / character-block layout matches Ov008_SetupMenuBgCells. */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008CharacterBlock { u8 pad_0000[0x10]; u32 size; void *data; } Ov008CharacterBlock;
 typedef struct Ov008PaletteBlock   { u8 pad_0000[0x08]; u32 size; void *data; } Ov008PaletteBlock;

@@ -1,9 +1,8 @@
 /* Scales the frame delta by the game speed mode, then runs the scene's tick, host update, post-tick
  * and late hooks. */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
-typedef int fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct {
     unsigned pad0 : 1;

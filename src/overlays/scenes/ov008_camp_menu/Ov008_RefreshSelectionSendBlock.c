@@ -3,9 +3,7 @@
  * message from the current session mask and four player records. The four dead
  * initial assignments emit no code under this pragma and reproduce the retail
  * register allocation. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u16 name[11];
@@ -131,5 +129,4 @@ void Ov008_RefreshSelectionSendBlock(void) {
         sendBlock->peerStatus[playerIndex] = status;
     }
 }
-
 

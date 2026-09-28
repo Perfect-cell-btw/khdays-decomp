@@ -31,8 +31,7 @@
  * register like the original.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef int (*Fn)(void *st, int arg);
 
 extern int  Game_UnwindActionStack(void *st);

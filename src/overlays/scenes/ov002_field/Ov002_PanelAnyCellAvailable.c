@@ -1,8 +1,7 @@
 /* Whether the panel has an available cell: always when field 0x58 is set, otherwise when a column's
  * second flag is set while the enabled mask is non-empty. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u8 bFirst;

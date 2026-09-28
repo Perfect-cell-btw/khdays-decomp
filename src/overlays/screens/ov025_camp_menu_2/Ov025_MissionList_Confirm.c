@@ -7,9 +7,7 @@
  * +0x40) / 020a50d0 reject it; else it becomes the current mission (02084fd8), the selection and
  * scroll are saved to fields 0x35cd / 0x35df (8 bits each) and entry 2 opens (02084830) with
  * the confirm sound. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionListEntry {
     u16  nWord;               /* 0x00 */

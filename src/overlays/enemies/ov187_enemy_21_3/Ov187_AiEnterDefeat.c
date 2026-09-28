@@ -1,9 +1,7 @@
 /* AI step: enters defeat: sets the defeat bits in the high byte of the actor's flags (+0x60) and
  * bit 0 of +0x1ae, clears bit 0 of its model's flag byte and clears the step handler. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern int SetIndexedSlot();
 

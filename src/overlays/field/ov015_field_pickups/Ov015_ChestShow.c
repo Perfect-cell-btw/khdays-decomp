@@ -7,8 +7,7 @@
  * gets flag bit 3 cleared (0202bedc); the chest becomes visible (bit 2 of +0x12); the node
  * matching the opened bit (bit 4 of +0x724: open node, else closed node) is started at the
  * saved time (+0x728, 020817f0); and resource pair 0x2e (class 0x1b) or 0x2f is requested. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

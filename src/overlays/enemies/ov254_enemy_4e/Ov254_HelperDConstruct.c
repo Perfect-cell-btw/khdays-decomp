@@ -2,7 +2,7 @@
  * sets bits 1-3, 5 and 6 of the +0x60 high byte and bit 2 of +0x1ae, a tiny scale, clears +0x54 /
  * +0x58, marks the +0x9c parent, builds the +0x384 item (pose 0x4a of the +0x38c pool, subscribed
  * and re-initialised) and the hidden +0x390 item (pose 0x4b, registered). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 
 extern void *Ov107_PackTextureHandle(int pool, int index);

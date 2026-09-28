@@ -1,7 +1,7 @@
 /* Charge tick of the ov256 actor: the +0x4c timer accumulates the frame rate and while charges remain
  * (+0x69) one is spent on each of the +0x434 / +0x438 claws (020d1068). Once the partner holds no
  * queued move pose 0x10 plays, +0x54 and the +0x6a flag clear and the node moves on to 020cfafc. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern void Ov256_FlagDoneAndNotify(int claw);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

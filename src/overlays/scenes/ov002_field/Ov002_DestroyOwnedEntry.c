@@ -13,7 +13,7 @@
  * Ghidra carries the layout as Ov002OwnedEntry.
  */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207f608;
 extern void NNS_FndRemoveListObject(void *list, void *object);

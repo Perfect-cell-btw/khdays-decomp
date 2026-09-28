@@ -1,7 +1,6 @@
 /* Drop the (key, tag) pair from the panel's second entry list and refresh the
  * row offset the cursor stepper reads. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 nKey;

@@ -8,7 +8,7 @@
  * +0x394 value is forwarded into the attach call (`mov r1,r0`) and the handler pool loads
  * interleave differently; the ROM reloads +0x394. */
 typedef void (*Callback)(void);
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov267_Destroy(void);
 extern void func_ov267_020d4854(void);

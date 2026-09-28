@@ -8,10 +8,7 @@
  * (Ov039_StartFlight), tells the callback 0x33 and hands over to the flight step. Anything else
  * is refused (null). Codegen: `next` is assigned before the zero stores of a case, which keeps
  * the shared zero (next's initial value) ahead of the self copy in the prologue schedule. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov022_IsSlotReady(void *context);

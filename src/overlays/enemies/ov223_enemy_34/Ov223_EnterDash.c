@@ -1,7 +1,7 @@
 /* Dash entry of the ov223 enemy: raises bit 7 of the owner's +0x60 high byte, clears the
  * owner's +0x388, clears bit 0 of the +0x60 high byte, zeroes the +0x14 velocity and +0x40,
  * and hands the tick over to Ov223_DashIdleStep. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 

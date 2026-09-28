@@ -3,9 +3,7 @@
  * Keeping that ownership sequence and an explicit object cursor reproduces
  * the original THUMB register lifetimes without a spilled context pointer.
  */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Ov002PeerRow Ov002PeerRow;
 typedef struct Ov002PeerRecord {
     s8 bKind,nRows,nObjects; char pad003[0x19];

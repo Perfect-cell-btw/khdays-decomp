@@ -11,9 +11,7 @@
  *
  * Session_IsActive (session-active) takes Session_Exists's result implicitly: the ROM leaves it in r0,
  * so both read as zero-arg calls here. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct W4 { u32 a, b, c, d; } W4;
 typedef struct Point { int x, y; } Point;

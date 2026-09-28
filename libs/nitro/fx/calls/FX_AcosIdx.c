@@ -3,8 +3,7 @@
  * search range by the sign of nCos (upper vs lower half of the circle).
  * Converts the matching (or nearest, if no exact match) index back to a
  * 16-bit angle. */
-typedef short s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern short data_0203d210[];
 

@@ -28,9 +28,7 @@
  *    `add r0, sp, #0` and `add r0, sp, #2`; indexing one array with `i` and `i + 2` makes mwcc
  *    add to the index instead.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

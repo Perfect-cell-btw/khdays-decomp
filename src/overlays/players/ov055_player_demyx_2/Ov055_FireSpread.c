@@ -2,7 +2,7 @@
  * many shots go out and how far apart (0: one straight ahead; 1: two at half a turn; 2: three at
  * a third; 3/5: four at a quarter; 4: four at a quarter starting an eighth turn off). Each shot is
  * a record 1 request (kind 7, speed 0xe00) two units from the origin along its own heading. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct {

@@ -7,8 +7,7 @@
  * otherwise each list is walked by the filtered helper, list 2 with its
  * alternate mode.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     void *pHead;

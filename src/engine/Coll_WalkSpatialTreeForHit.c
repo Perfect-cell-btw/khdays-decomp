@@ -1,9 +1,5 @@
 /* Quadtree traversal for the model spatial-face ray test. */
-typedef signed short s16;
-typedef unsigned short u16;
-typedef signed int s32;
-typedef unsigned int u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct CollisionFace84 CollisionFace84;
 typedef struct CollCastState CollCastState;
@@ -66,7 +62,6 @@ typedef struct CollisionTraversalFrame {
     s32 centerZ08;
     s32 size0c;
 } CollisionTraversalFrame;
-
 
 extern s32 Coll_TestSpatialRayFace(CollisionFace84 *, CollCastState *);
 extern CollisionTraversalFrame *data_027e06e0;

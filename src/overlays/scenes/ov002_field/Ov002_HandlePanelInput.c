@@ -13,7 +13,7 @@
  * any read, and the pushed r3 slot is only ever the classifier's out parameter.
  * The normaliser likewise takes one argument.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 bKind;           /* +0 */

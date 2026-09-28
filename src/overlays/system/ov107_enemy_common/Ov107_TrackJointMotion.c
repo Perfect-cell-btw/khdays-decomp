@@ -1,7 +1,7 @@
 /* Follows the bound joint's position, updating the node's previous position and motion delta. */
 
-typedef int fx32;
-typedef unsigned short u16;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 rot[9]; VecFx32 pos; } MtxFx43;
 

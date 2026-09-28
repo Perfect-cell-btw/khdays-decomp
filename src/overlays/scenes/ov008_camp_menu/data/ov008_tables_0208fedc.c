@@ -17,8 +17,7 @@
  *   data_ov008_0208ff64: Ov008_MergePendingUnlockBits
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const u8 data_ov008_0208fedc[1] = {
     80,

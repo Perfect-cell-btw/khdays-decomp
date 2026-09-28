@@ -9,8 +9,7 @@
  * data_ov235_020d24d0 to the hook, the shape hidden, animation 0x24, motion 0x1a on the +0x3a8
  * part, +0x88 cleared and Ov235_GlideTick25 takes over. Past 4.5 the burst ends the same way,
  * clearing bit 0 of +0x1ae instead. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 c; int r; } Sphere;

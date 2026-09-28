@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Constructor of the ov151 enemy (and its byte-identical twin): installs the handlers (+8 ti (020cbfc4): const struct PoolIds data_ov151_020cebe0; */
 const int data_ov151_020cebe0[5] = {

@@ -1,10 +1,5 @@
 #pragma thumb on
-typedef unsigned char u8;
-typedef signed char s8;
-typedef short s16;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int BOOL;
+#include "nitro/types.h"
 typedef struct NNSSndHeap *NNSSndHeapHandle;
 typedef struct { void *player; } NNSSndHandle;
 typedef struct { void *player; } NNSSndStrmHandle;

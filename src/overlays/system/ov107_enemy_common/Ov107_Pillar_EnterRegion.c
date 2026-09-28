@@ -1,8 +1,7 @@
 /* Pillar +0x28 handler: sets stance bit 0, registers in the region and snaps to the source anchor.
  */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int x, y, z; } VecFx32;
 

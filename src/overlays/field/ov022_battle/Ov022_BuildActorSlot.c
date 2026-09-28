@@ -8,8 +8,7 @@
  * container goes back as soon as the slot exists.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define CONTAINER_HEAP 6
 #define BLOCK_COUNT 2

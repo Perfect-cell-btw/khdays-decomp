@@ -1,6 +1,6 @@
 /* Hover entry of an ov252 part: it is knocked back at the origin (mode 0xc), +0x78 = 28.0, +0x64
  * clears, the +0x88 / +0x89 flags are set and the node moves on to 020d18c0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);

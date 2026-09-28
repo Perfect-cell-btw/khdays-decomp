@@ -6,10 +6,7 @@
  * rejected callback (+0x50) fires; otherwise the entry becomes current (+0x179), the
  * assigned callback (+0x48) fires with it and the live bit (bit 1 of +0x40) is dropped.
  * Always returns 0. */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

@@ -3,7 +3,7 @@
  * height difference to route point 0xb, clamped to +-0x7fff. Within 10.0 pose 0x1a plays, the
  * +0x44 timer clears, the +0x50 start takes the track's +4 and +0x54 the distance to route point
  * 5; the +0x70 flag clears and the node moves to 020cf4e8. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void VEC_Subtract(const void *a, const void *b, Vec3 *out);

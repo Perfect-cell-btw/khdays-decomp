@@ -4,7 +4,7 @@
  * buttons (0x200, 0x100) and Start (8).  The menu context getter is called for
  * its side effect only.
  */
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define KEY_A      0x0001
 #define KEY_B      0x0002

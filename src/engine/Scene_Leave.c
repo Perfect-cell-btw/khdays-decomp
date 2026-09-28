@@ -6,8 +6,7 @@
  * +0xe0 object holds it, stream 0 restarted from the playback position saved at +0xc4. In mode bit 1 the sound fades out (InvokeSubStructAndStampByte(0x7f, 10)). A +0xdc
  * scene drops its +0xe0 object; the scene state (+0xc8) becomes 5 and Gfx_RestoreAfterPause is queued as
  * the next task. */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define REG_DISPCNT (*(volatile u32 *)0x04000000)
 

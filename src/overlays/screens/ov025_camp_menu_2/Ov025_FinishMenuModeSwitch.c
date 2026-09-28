@@ -11,10 +11,7 @@
  * is marked used, the slide tween runs back from -10.0 (fx32) to 0 over 100
  * frames and the transition word (+0x4) becomes 2.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef int            s32;
+#include "nitro/types.h"
 
 #define TWEEN_DONE     0x7fffffff
 #define SLIDE_START    (-0xa0000)

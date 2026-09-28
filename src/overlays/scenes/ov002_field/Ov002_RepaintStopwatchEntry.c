@@ -10,7 +10,7 @@
  * whole second instead. The leading minutes digit is blanked rather than drawn
  * as a zero.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[1];

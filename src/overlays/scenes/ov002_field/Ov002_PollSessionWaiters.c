@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* One waiting entry: its first word is the poll it answers with. */
 typedef struct Ov002Waiter {

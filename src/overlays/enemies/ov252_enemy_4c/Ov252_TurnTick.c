@@ -1,7 +1,7 @@
 /* Turn tick of the ov252 actor: it faces the target (020cdfe8 0, 1); once the partner holds no queued
  * move bit 3 of the +0x60 high byte clears and bit 2 is set, and with a +0xa4 retreat pending pose 3
  * and part motion 2 start and the node moves on to 020d1428, else the next move is 4. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov252_CheckTarget(int *node, Vec3 *delta, int face);

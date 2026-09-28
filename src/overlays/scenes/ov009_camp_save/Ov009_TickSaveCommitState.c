@@ -1,9 +1,7 @@
 /* Save commit state: shows the running play time, polls the save transfer and, when it finishes,
  * refreshes the slots and shows the result with a sound. */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov009GameState {
     int value0;

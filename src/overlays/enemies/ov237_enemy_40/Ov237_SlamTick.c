@@ -4,8 +4,7 @@
  * world, half-extents 1.5 / 0.5 / 1.5) hits once with push data_ov237_020d1b88 (hit sound variant 5).
  * The +0x3c aim point follows the +0x3d8 partner (020cdb50); once the +4 rig is idle bit 6 of the +0x60
  * high byte clears and the next move is 2. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { Vec3 pos; Vec3 axis[3]; int ext[3]; } Box;

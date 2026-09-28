@@ -8,10 +8,7 @@
  * If no slot could be taken, or any file failed to open, everything taken so
  * far is handed back and the caller is told the movie will not play.
  */
-typedef unsigned char u8;
-typedef unsigned int u32;
-typedef unsigned long long u64;
-typedef long long s64;
+#include "nitro/types.h"
 
 #define TICK_BASE   0x00ffb0ffu
 #define FRAME_TRIES 10

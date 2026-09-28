@@ -3,8 +3,7 @@
  * clear, the +0x3c cooldown restarts (8.0), +0x6c clears, the next waypoint is picked into +0x34
  * and copied to +0x30, the +0x18 point is dropped to the ground (height into +0x1c) and the actor
  * lands there; the actor's +0x1c9 move becomes the pending one and the handler is cleared. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 

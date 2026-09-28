@@ -6,7 +6,7 @@
  * fires reaction 0x14d mode 0x11 at the position, clears the velocity, the +0x24 timer and +0x28, and
  * hands over to 020d4a94. On landing (+0x17a bit 1) or after 5.0 the rock breaks the same way as a
  * touch (landing also fires reaction 0x14d). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 struct Bits17a { unsigned char bit0 : 1, bit1 : 1; };
 struct CollisionResult { int pad00; int pad04; int pad08; int nAlong; };

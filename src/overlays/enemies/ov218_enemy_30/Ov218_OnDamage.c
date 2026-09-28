@@ -4,7 +4,7 @@
  * blocked special plays alternating hurt sounds 0x135 (flag 0x22 picks the first pair). At 0 health the
  * next move is 3; otherwise, outside move 9, an unattributed hit makes 9 next and a heavy hit (flag
  * 0x8000) keeps its 0x22 flags in +0x64 and makes 7 next. Returns 1 (0 when ignored). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 a, b; } Pair2;
 typedef struct { unsigned lo : 16; unsigned hi : 16; } HitWord;

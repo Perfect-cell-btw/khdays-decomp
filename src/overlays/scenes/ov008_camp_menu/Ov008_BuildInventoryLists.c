@@ -9,8 +9,7 @@
  * the category's count (+0x7c) bumped.  The word at +0x78 is cleared once per
  * category.
  */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define CATEGORY_COUNT 8
 #define CATEGORY_ANY   7

@@ -1,8 +1,7 @@
 /* Derives the projection coefficients and viewport scale from the view parameters. */
 
-typedef int fx32;
-typedef short s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 extern void FX_DivAsync(fx32 num, fx32 denom);
 extern fx32 FX_GetDivResult(void);

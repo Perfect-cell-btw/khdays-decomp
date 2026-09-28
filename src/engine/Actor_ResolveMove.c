@@ -1,21 +1,16 @@
-typedef signed int s32;
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned char u8;
-typedef s32 fx32;
-typedef long long fx64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
-    fx32 x;
-    fx32 y;
-    fx32 z;
+    int x;
+    int y;
+    int z;
 } VecFx32;
 
 typedef struct CollCastParams {
     VecFx32 *origin;
     VecFx32 *direction;
-    s32 radius;
+    int radius;
     u16 directionIsUnit;
     u16 flags;
     void *exclude;
@@ -24,8 +19,8 @@ typedef struct CollCastParams {
 typedef struct HitFull {
     void *model;
     void *face;
-    s32 unknown08;
-    s32 distance;
+    int unknown08;
+    int distance;
     u8 rest[0x98 - 0x10];
 } HitFull;
 
@@ -33,7 +28,7 @@ typedef struct Body {
     u8 field_00[0x80];
     u16 heading;
     u8 field_82[0x148 - 0x82];
-    fx32 radius;
+    int radius;
 } Body;
 
 /* Every recorded cast is one HitFull, the world-space contact point, and a
@@ -67,15 +62,15 @@ typedef struct Obj {
 
 extern void *GetTrackEntryBase(int id);
 extern void ScaleVec3Fx12(int factor, int *src, int *dst);
-extern fx32 VEC_Normalize(const VecFx32 *source, VecFx32 *destination);
+extern int VEC_Normalize(const VecFx32 *source, VecFx32 *destination);
 extern HitFull *Collision_RunSphereCast(void *world, CollCastParams *params);
-extern void Vec3ScaleAddQ27(fx32 s, const VecFx32 *a, const VecFx32 *b, VecFx32 *c);
+extern void Vec3ScaleAddQ27(int s, const VecFx32 *a, const VecFx32 *b, VecFx32 *c);
 extern void VecFx32FromVecS16(int r0, short *r1, int *r2);
 extern void VEC_MultAdd(int scale, const VecFx32 *v, const VecFx32 *add, VecFx32 *dst);
 extern HitFull *Collision_RunRayCast(void *world, CollCastParams *params);
-extern fx32 VEC_Distance(const VecFx32 *a, const VecFx32 *b);
+extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
 extern int func_02023c40(void);
-extern fx32 VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern HitFull *Collision_CastNearest(void *world, CollCastParams *params);
 
 extern short data_0203d210[];
@@ -104,10 +99,10 @@ int Actor_ResolveMove(const Obj *obj, VecFx32 *pOut, Actor *self)
     int dx, dz;
     int closeRange;
     HitFull *hit;
-    fx32 moveLen;
-    fx32 mag;
-    fx32 baseY, baseZ;
-    fx32 groundY;
+    int moveLen;
+    int mag;
+    int baseY, baseZ;
+    int groundY;
     int resolved;
     int pushScale;
 
@@ -195,14 +190,14 @@ haveMoveVec:
         castOrigin.y = castOrigin.y + 0x333;
         hit = Collision_RunRayCast(world, &params);
         if (hit != 0) {
-            fx32 slope;
+            int slope;
             VecFx32FromVecS16((int)hit->model, (short *)((u8 *)hit->face + 0x14), (int *)&faceNormal);
             VEC_Normalize(&faceNormal, &faceNormal);
             slope = faceNormal.y;
             if ((slope < 0x100 && slope > -0x100) || slope > 0xfae) {
                 hit = 0;
             } else {
-                fx32 reach;
+                int reach;
                 self->casts[CAST_FALLBACK].kind = (hit->unknown08 != 0) ? 1 : 2;
                 self->casts[CAST_FALLBACK].hit = *hit;
                 Vec3ScaleAddQ27(hit->distance, &castDir, &castOrigin, &self->casts[CAST_FALLBACK].pos);
@@ -228,14 +223,14 @@ haveMoveVec:
         castOrigin.y = castOrigin.y + 0x66 + 0xd00;
         hit = Collision_CastNearest(world, &params);
         if (hit != 0) {
-            fx32 slope;
+            int slope;
             VecFx32FromVecS16((int)hit->model, (short *)((u8 *)hit->face + 0x14), (int *)&faceNormal);
             VEC_Normalize(&faceNormal, &faceNormal);
             slope = faceNormal.y;
             if ((slope < 0x100 && slope > -0x100) || slope < -0xfae) {
                 hit = 0;
             } else {
-                fx32 reach;
+                int reach;
                 self->casts[CAST_STEP].kind = (hit->unknown08 != 0) ? 1 : 2;
                 self->casts[CAST_STEP].hit = *hit;
                 Vec3ScaleAddQ27(hit->distance, &castDir, &castOrigin, &self->casts[CAST_STEP].pos);
@@ -340,7 +335,7 @@ haveMoveVec:
         }
 
         if (resolved) {
-            fx32 gap;
+            int gap;
             anchorBase.y = obj->pos.y;
             gap = VEC_Distance(&anchorBase, &obj->pos);
             if (heightScale > gap) {
@@ -349,7 +344,7 @@ haveMoveVec:
                     pushScale = -2;
                 }
                 if (gap < 0x19a) {
-                    pushScale = gap - (fx32)(((fx64)heightScale * 0x600 + 0x800) >> 12);
+                    pushScale = gap - (int)(((fx64)heightScale * 0x600 + 0x800) >> 12);
                     self->flags |= 0x200;
                 } else {
                     self->flags &= ~0x200;

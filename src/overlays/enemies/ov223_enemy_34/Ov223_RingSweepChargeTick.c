@@ -5,7 +5,7 @@
  * (ov223 442c, mode 0) runs with a segment from the point to the target of length 16.0 and
  * radius 0.5. The +0x3c timer accumulates the owner's rate; past 1.0 it clears and the tick
  * hands over to Ov223_AiFastCountdownQueue0. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 struct hw60 { unsigned short lo : 8, hi : 8; };

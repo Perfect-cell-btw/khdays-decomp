@@ -9,9 +9,7 @@
  * smallest.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define SLOT_FREE (-1)
 #define SIZE_SMALL 0x1000

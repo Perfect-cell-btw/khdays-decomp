@@ -3,7 +3,7 @@
  * +8 position at +0x28, spawns effect 0 there (020c0b90), fires reaction 0x15a of kind 9 there
  * (020c5af8) and moves the node to 020d0fa0. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);

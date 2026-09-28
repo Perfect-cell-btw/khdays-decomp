@@ -34,9 +34,7 @@
  * created at the loop would be coloured before the touch-y load (r2 / r3
  * swapped); an earlier-defined variable takes r3 the way the ROM does.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define TAB_ITEMS   1
 #define TAB_RECIPES 2

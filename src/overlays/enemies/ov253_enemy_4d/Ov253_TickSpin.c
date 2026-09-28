@@ -5,9 +5,7 @@
  * data_ov253_020d4900 message with its packed position (through the owner's +0x24 message hook) and
  * reaction 0 mode 0x4e at it. Past 0.73 reaction 0x16b mode 4 fires once (+0x38) at the +0x398 bone.
  * Once the +4 rig is idle, +0x30 rerolls within the owner's +0x224..+0x228 range and move 2 follows. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 typedef struct { int value; } Fx32;

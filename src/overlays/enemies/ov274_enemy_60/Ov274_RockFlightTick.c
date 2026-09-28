@@ -10,8 +10,7 @@
  * resting, or after 3.0 of flight: the landing message of data_ov274_020d41f4 is broadcast with
  * the point, animation 0x10 plays, reaction 0x163 mode 0x10 fires there and the tick hands over
  * to Ov274_ShockwaveTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 c; int r; } Sphere;
@@ -84,7 +83,6 @@ void Ov274_RockFlightTick(int *node)
     int m;
     int j;
     int done;
-
 
     int landed;
     int *wall;

@@ -8,7 +8,7 @@
  * with +-0.5 jitter. When that point is on the ground (020ccfd4 == 3) the shell is launched there
  * (020d189c). Once the +4 item's +0xad byte clears the third run plays pose 0x1c / partner motion
  * 0xb and moves on to 020cfb24; earlier runs replay pose 0x1b. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 struct Items46c { char pad[0x46c]; int item[16]; };

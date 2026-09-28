@@ -8,9 +8,7 @@
  * select node armed when it is the last, or the down node rewound and armed
  * when more rows follow.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define TAG_UP     0x15
 #define TAG_DOWN   0x16

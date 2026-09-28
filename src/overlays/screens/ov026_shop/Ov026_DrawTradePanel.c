@@ -32,9 +32,7 @@
  * PROVENANCE: byte-identical twin of Ov008_DrawTradePanel (ov008), propagated with this
  * overlay's own callees and globals and verified byte-exact here.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define TAG_TRADE      0x3f4
 #define INGREDIENTS    4

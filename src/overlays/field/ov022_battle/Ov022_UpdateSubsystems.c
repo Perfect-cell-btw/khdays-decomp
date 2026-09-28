@@ -12,9 +12,7 @@
  * the area id is fetched three times rather than cached.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Vec3 {
     int x, y, z;

@@ -12,10 +12,7 @@
  * +0x5e) are reset with their tick (+0x60), and GameState field 0 (9 bits)
  * at 0x47 or more runs ov008_helper_6fe4c.
  */
-typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef unsigned int       u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define FIELD_RANK_BASE 0x28e4
 #define FIELD_BITS      3

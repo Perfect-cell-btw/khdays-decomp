@@ -4,7 +4,7 @@
  * which is what confirms the pairing. Distinct from Ov006_MissionSceneDtor, which tears down the
  * scene rather than this context. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 first;

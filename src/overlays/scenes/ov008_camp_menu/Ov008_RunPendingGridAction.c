@@ -10,9 +10,7 @@
  * clears the grid: mode 8, the summary rebuilt from the slots and the tracked
  * node list, the equip panel refreshed, the row block disabled, sound 0x37.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GRID_PAGES   3
 #define PAGE_SLOTS   40

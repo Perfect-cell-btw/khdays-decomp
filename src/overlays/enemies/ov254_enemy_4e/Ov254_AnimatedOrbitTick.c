@@ -2,7 +2,7 @@
  * +0x30 yaw and scaled by 0.75, kept level. Once the +4 item's +0xad byte clears the actor plays
  * pose +0x75 + 1 and the partner motion +0x76 + 1, the +0x44 timer clears and the node moves to
  * 020ce8a0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

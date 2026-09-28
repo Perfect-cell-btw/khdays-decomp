@@ -3,7 +3,7 @@
  * 0.125 sphere at the origin with no speed, model 1 of the +0x388 set becomes the +0x384 rig
  * (subscribed to the scene) and a 1.0-long upright capsule of that radius is registered in the
  * +0x144 pool (+0x38c). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;
 

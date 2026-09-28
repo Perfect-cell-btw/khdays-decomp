@@ -1,6 +1,6 @@
 /* Submits the calendar's three sprites with alpha blending. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov004Context {
     u8 pad_0000[0x5544];

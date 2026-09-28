@@ -9,9 +9,7 @@
  * Ov275_AiQueue2OnFlagClear); otherwise the +0x20 step counter fires reaction 0x163 mode 4 at 5 and
  * mode 5 at 10 (wrapping), and the +0x24 timer, fed by the owner's rate, ends the charge the
  * same way past 3.0 or once the owner reports a wall (+0x17a bit 1). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;

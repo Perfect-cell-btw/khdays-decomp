@@ -2,7 +2,7 @@
  * model point, bit 1 of the model's +0x5c flags clears, the spawner's +0x57a mask gains the shard's bit
  * (+0x24 index), layers 0, 2, 4 and 1 play (mode 0, 1), the rig pose resets, the +0x14 velocity is
  * scaled by 3.0, +0x20 clears and the node moves on to 020d2f6c. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void SrtTransform_SetIdentity(void *srt);

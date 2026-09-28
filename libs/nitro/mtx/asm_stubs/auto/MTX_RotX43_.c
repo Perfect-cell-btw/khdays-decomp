@@ -1,4 +1,4 @@
-typedef signed long fx32;
+#include "nitro/fx.h"
 
 typedef struct MtxFx43 {
     fx32 _00, _01, _02;

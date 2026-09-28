@@ -1,7 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207fa04;   /* the ov002 event context */
 

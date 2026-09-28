@@ -2,8 +2,7 @@
  * (FreeAllListNodeSubBuffers), and frees the resource4b00 allocation if present, clearing its slot.
  */
 
-typedef unsigned char  u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov000SubSceneContext {
     void *heapBuffers[4];

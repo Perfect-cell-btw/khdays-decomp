@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov023_CmdAttachWeapons: script command that gives a party actor its (02085d30): const Ov023WeaponMotionTable data_ov023_02089eb0; */
 const u8 data_ov023_02089eb0[320] = {

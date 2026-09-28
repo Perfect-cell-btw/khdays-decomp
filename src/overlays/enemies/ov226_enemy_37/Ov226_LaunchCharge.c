@@ -4,8 +4,7 @@
  * +0x40 (0x200..0x700) spans. A 1.0 cast from the +8 point towards the +0x390 pool's +0xb0
  * point that hits sends the point raised 1.49 to the owner as mode 0, requests sub-state 0 and
  * ends the action; a clear cast hands the tick over to Ov226_FlightTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct w8 { unsigned int lo : 8, rest : 24; };
 struct hw60 { unsigned short lo : 8, hi : 8; };

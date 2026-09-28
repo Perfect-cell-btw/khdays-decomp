@@ -6,8 +6,7 @@
  * "tag00_1" node, both register with the +0x9c scene, the shell hides and the body shows at full
  * scale. A hit capsule (length 0x1a00, radius 0x400) goes into a +0x22c pool slot at +0x38c (bit 1
  * set) and a second one into a +0x144 slot, also kept at +0x390. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 typedef struct { Vec3 pos; Vec3 axis; int length; int radius; } Capsule;

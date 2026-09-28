@@ -7,7 +7,7 @@
  * moves from its +0x2c point probing the floor (0x300): a floor hit ends it with effect 1 and the sound;
  * after 32.0 of travel (or on a +0x17a bit-1 contact, which also clears the owner's +0x38c) it pops with
  * effect 1. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 b0 : 1; u8 b1 : 1; } Bits;
 

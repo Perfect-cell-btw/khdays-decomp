@@ -11,8 +11,7 @@
  * the body's transform, modes 2/3 for flag-0x22 hits and 0/1 otherwise, except for kind-0x80
  * hits carrying both flag 8 and flag 0x80; an emptied timer ends in sub-state 3.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vec3 { int x; int y; int z; };
 

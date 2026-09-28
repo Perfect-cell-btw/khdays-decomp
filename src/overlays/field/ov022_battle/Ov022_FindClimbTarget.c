@@ -22,9 +22,7 @@
  * 0x26b0 reach turned to it and added to the wall point gives the target.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

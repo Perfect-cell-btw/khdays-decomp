@@ -1,8 +1,5 @@
 /* Ov002_CreateActorFromMarker: initialize a marker actor and its record properties. */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct VecFx32 {int x,y,z;} VecFx32;
 typedef struct ActorFlags40 {int pad:1;int bActive:1;} ActorFlags40;
 typedef struct Actor Actor;

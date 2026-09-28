@@ -2,7 +2,7 @@
  * accumulate the frame rate; once the partner holds no queued move pose 0x1b plays, the +0x10 velocity
  * clears, bits 3-4 of the +0x60 high byte clear unless the +0xac guard is up, the timers reset, +0x89 =
  * 1, +0x88 clears and the node moves on to 020cfea8. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov252_CheckTarget(int *node, Vec3 *delta, int face);

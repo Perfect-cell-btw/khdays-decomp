@@ -7,7 +7,7 @@
  * with the same id plus 13 and plus 26, and 255 marks the end of the used entries.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int nSlot;

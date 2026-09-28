@@ -2,10 +2,7 @@
  * contacts or, in the alternate mode, a hit query with a hit command) and ends with an effect and
  * update 0x53; otherwise advances along its movement, ending when a ray cast hits the world. */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 {
     int x, y, z;
@@ -200,5 +197,4 @@ void Ov197_SeekTarget(struct Node *node)
         SetIndexedSlot(node, node->action, 0);
     }
 }
-
 

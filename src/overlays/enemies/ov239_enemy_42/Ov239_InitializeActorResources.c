@@ -1,7 +1,7 @@
 /* Install callbacks and bounds; create actor resources, six subitems and two transform descriptors;
  * request pair 0x138. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;

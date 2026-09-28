@@ -8,9 +8,8 @@
  * integer 105 the pool word disappears and the function comes out 4 bytes short, even
  * though 105 is perfectly encodable as an ARM immediate. A pooled small constant is the
  * tell: mwcc pools it because it is a relocation, not a literal. */
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef u32 FSOverlayID;
-typedef signed char s8;
 
 extern u32 OVERLAY_105_ID[1];
 #define FS_OVERLAY_ID_ov105 ((FSOverlayID)(u32) & (OVERLAY_105_ID))

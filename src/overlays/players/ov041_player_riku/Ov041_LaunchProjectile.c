@@ -3,7 +3,7 @@
  * bound to its own blend table (+0xe4) and rewound, places it one unit behind the anchor sample
  * along the actor's heading (+0xa8), and builds its orientation at +0x84 as identity rotated by
  * the heading about Y and by the given roll about Z. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

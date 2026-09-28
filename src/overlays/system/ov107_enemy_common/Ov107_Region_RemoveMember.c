@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* Combatant/creature instance: only the fields this function touches. Same
  * type is used both for the "target" argument and for the payload each list

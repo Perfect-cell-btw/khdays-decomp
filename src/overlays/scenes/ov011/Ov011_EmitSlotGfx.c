@@ -38,8 +38,7 @@
  * pool-load into the template copy (ROM loads &data_e960 into scratch r1 early; mine defers to ip).
  * NOT PARKED; selected function, best form held here.
  */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov011GfxTemplate { int a[4][4]; } Ov011GfxTemplate;
 

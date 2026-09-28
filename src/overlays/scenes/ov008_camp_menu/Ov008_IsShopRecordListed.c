@@ -9,9 +9,7 @@
  * record at that slot.  Returns 1 when listed.  nIndex (the record's index,
  * passed by Ov008_IsShopRecordShown) is unused.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define CATEGORY_ANY   -1
 #define DAY_FINAL      0x165

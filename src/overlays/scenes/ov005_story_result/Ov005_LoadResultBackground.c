@@ -1,6 +1,6 @@
 /* Loads the result background's palette and character data for both layers. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct PaletteData {char pad0[8];u32 size;void *data;} PaletteData;
 typedef struct CharacterData {char pad0[16];u32 size;void *data;} CharacterData;
 typedef struct SpriteResSet {void *screen;CharacterData *character;PaletteData *palette;} SpriteResSet;

@@ -6,7 +6,7 @@
  * timer is within 0xf000 of the animation's end the enemy hands over: to state 0x22 without the
  * marker, otherwise it stops, raises bit 2 and goes to state 2 (or tells the slot callback and
  * goes to state 0 when grounded). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Session_GetLocalPlayerIndex(void);

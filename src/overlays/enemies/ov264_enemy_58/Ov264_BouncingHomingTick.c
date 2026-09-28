@@ -3,9 +3,7 @@
  * projectile either homes on its target or sweeps a rotating search direction, according to
  * bHoming78. Phase progress is a divide by one less than nPhaseMax6f. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 struct VecFx32 { int x, y, z; };
 struct MtxFx33 { int m[3][3]; };

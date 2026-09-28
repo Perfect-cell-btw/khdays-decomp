@@ -12,9 +12,7 @@
  * becomes the slot's own flag.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define SLOT_KIND 0xc
 #define SLOT_TAG 0xc1

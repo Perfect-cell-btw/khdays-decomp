@@ -14,10 +14,7 @@
  * the no-linked-object bit (bit 7 of +0x14d) set and dropped again by any non-negative link
  * key copied from aKey, the first GameState field / bit (+0x14 / +0x16), state 0 (+0x14c)
  * and limit 0 (+0x13c); the piece is registered in bucket nKind (ov002 02076480). */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

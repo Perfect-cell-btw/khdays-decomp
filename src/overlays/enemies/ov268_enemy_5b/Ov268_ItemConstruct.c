@@ -6,7 +6,7 @@
  * and its two set-3 bones resolved into +0x38c/+0x390; the four poses of data_ov268_020d4838
  * build the +0x398 pair table (registered, bit 1 of +0x5c), and the +0x22c collision handle
  * (+0x388) is reserved from the +0x64 pose with bit 1 of its flag byte raised. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct PoseIds {
     int values[4];

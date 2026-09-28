@@ -2,7 +2,7 @@
  * transform records (fixed-point identity matrices and zero vectors) that 02027b18 / 02027d7c /
  * 020287e8 copy when they set up an object.
  */
-typedef int fx32;
+#include "nitro/fx.h"
 typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22; } MtxFx33;
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22, _30, _31, _32; } MtxFx43;

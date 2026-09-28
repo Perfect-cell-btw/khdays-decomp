@@ -12,9 +12,7 @@
  * of the locals -- all 720 were tried -- puts them back.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define CHANNEL_COUNT 5
 #define BIND_STRIDE 0x24

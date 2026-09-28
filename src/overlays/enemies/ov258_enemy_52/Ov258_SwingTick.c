@@ -2,8 +2,7 @@
  * (020cf6dc) runs until 0x330; a pending +0x50 flare (1) fires effect 0x25 at the +0x1c point. Once
  * the +4 rig is idle, without a +0x38 delay a follow-up (020cd2cc) may be picked, otherwise the next
  * move is 2. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov258_SwingHitTest(int *node);

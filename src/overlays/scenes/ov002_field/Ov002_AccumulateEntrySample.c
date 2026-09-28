@@ -3,7 +3,7 @@
  * accumulator and the stored reading are reset to the new value. The stamp is
  * always refreshed. Passing a non-zero flag also repaints the entry.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[0x2c];

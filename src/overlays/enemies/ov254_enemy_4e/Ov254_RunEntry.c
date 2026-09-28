@@ -2,7 +2,7 @@
  * position and +0x54 the distance to the end (020cd840); the actor plays pose 4 (move 5) or 1 and
  * its +0x430 part motion 3 or 0; in move 5 the +0x460 / +0x464 helpers are started too. The +0x70
  * flag clears and the node moves to 020cfcac. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int Ov254_PanelYForPhase(int *state, int a);
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);

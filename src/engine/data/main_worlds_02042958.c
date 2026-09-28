@@ -1,8 +1,7 @@
 /* main .data, 0x02042958-0x02042a70: a 16-colour text palette, three task descriptors, the sound
  * archive and message database paths and the two-letter world directory codes.
  */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*GameClassFn)(void);
 
 typedef struct GameClassDescriptor {

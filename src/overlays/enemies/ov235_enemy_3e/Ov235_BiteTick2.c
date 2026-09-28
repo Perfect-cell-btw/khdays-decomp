@@ -9,8 +9,7 @@
  * +0x24 hook, its bit is set and reaction +0x3c8 mode 9 fires there. Once the +0xc idle byte
  * clears, animation 0xf plays, the +0x3a8 part plays motion 0xe, +0x44, +0x63 and +0x65 clear and
  * the tick hands over to Ov235_BiteTick3. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

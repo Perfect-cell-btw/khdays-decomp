@@ -7,9 +7,7 @@
  * when there is one (unpacked with 020119d4, flushed and uploaded), else from the cell.  The
  * files are freed, the 0x40 bytes at +0x2800 of the sub BG2 characters cleared and the sub BG2
  * screen filled with tile 0xa0. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov025ReportsEntry {
     u16  nId : 9;             /* 0x00 bits 0-8 */

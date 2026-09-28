@@ -8,9 +8,7 @@
  * the 8-bit fields 0x35cd / 0x35df, global config 2 is initialised and cue 1
  * plays.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define FIELD_MISSION_STATUS 0x28e4
 #define FIELD_SCROLL_A       0x35cd

@@ -7,8 +7,7 @@
  * turns to the +0x68 direction (0202ed60 from data_02042258), +0x74 and +0x78 clear, bit 6 of
  * the owner's +0x60 high byte is raised, reaction +0x3c8 mode 0xf fires at the +4 point and the
  * tick hands over to Ov235_AimTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
 typedef struct { u16 lo; u16 hi; } Cmd4;

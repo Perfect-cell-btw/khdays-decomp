@@ -5,8 +5,7 @@
  * the owner's +0x24 hook receives note 1 of data_ov235_020d24d0, animation 0x20 plays, +0x63,
  * +0x44 and the owner's +0x64 velocity clear, reaction +0x3c8 fires with modes 0x22 and 0x10 at
  * the +4 point and the tick hands over to Ov235_DashTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
 typedef struct { int m[9]; } Mtx33;

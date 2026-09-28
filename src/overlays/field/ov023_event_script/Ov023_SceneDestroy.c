@@ -8,9 +8,7 @@
  * +0x87580 ended (02023ad0) when present; the message and script-command tables are
  * unregistered (02020aa8 slots 1 / 0x14) and the scene pointer (data_ov023_0208a784[1])
  * cleared. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 static volatile u16 *const REG_BLDCNT = (volatile u16 *)0x04000040;
 static volatile u16 *const REG_BLDY = (volatile u16 *)0x04000044;

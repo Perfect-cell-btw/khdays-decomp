@@ -22,9 +22,7 @@
  * The result is which cast landed, or zero.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define CAST_FLAGS 0xf
 #define GROUND_BAND 0x100

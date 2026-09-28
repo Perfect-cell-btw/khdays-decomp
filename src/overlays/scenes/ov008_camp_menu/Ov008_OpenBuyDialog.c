@@ -15,9 +15,7 @@
  * as (0xc0 + i * 8) << 12; the description call split so the item def is
  * re-read after the text lookup; hSlots declared before pDialog.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define DIGIT_CELLS   3
 #define TAG_BUY_SECONDARY 0x3ed

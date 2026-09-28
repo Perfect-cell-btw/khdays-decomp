@@ -6,7 +6,7 @@
  * enabled and it is reset (c7ac); the three poses of data_ov244_020d36d0 build the +0x3a4 pair
  * table (registered, bit 1 of +0x5c), and the +0x22c collision handle (+0x38c) is reserved from
  * the +0x64 pose with bit 1 of its flag byte raised. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct PoseIds {
     int values[3];

@@ -5,9 +5,7 @@
  * the callback is fired with the arriving player's sub-actor (01fffde0 of +0x180, +0x4ec)
  * and the entry id, and the entry's pickup (entry +0x8, via 020807f4) has its position
  * handler invoked three times; otherwise the spot is marked pending (bit 6 of +0x40). */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

@@ -10,7 +10,7 @@
  * and two (radius scaled by 1.125, along z and x) at +0x3c0 / +0x3c4 on the +0x22c pool. Both
  * rider counters (+0x3d0 / +0x3d2) start at 1, +0x3d4 bit 0 is set, the presence hook runs and
  * both rigs re-init. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[4]; } IdTable4;

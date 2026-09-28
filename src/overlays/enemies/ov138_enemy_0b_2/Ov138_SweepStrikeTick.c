@@ -8,9 +8,7 @@
  * mode 7 (0 / 0x53 for the lock) at the +4 point and clears the sub-state. Otherwise the +0x28
  * distance advances by the length and the action ends once the object reports contact or the
  * distance passes 30.0. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 struct Segment { struct Vec3 origin; struct Vec3 dir; int nLength; int nRadius; };

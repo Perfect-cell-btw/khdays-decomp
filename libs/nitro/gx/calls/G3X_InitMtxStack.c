@@ -1,6 +1,4 @@
-typedef int s32;
-typedef unsigned int u32;
-typedef volatile u32 REGType32v;
+#include "nitro/types.h"
 
 #define reg_G3_MTX_MODE       (*(REGType32v *)0x4000440)
 #define reg_G3_MTX_POP        (*(REGType32v *)0x4000448)

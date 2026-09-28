@@ -6,7 +6,7 @@
  * because they are read one per pass.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Anim {
     u8 pad0000[0x108];

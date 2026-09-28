@@ -5,7 +5,7 @@
  * and the twelve tiles drawn (Ov023_DrawNoiseQuad 02089ae0).
  * PROVENANCE: byte-identical twin of ov023's Ov023_DrawNoiseOverlay (Ov023_DrawNoiseOverlay), same code and
  * pool layout in the ov106 event scene; the ov023 source is the analysed one. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

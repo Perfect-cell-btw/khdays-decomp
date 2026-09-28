@@ -4,8 +4,7 @@
  * mask is pushed 1.25 away horizontally (kind 3); on acceptance the actor spawns effect 0xb at its
  * +0x74 point and its bit is set. The mask then keeps only the entities still inside the sphere.
  * Once the +4 part's rig is idle (+0xad), pose 2 is requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 center; int nRadius; } Sphere;
 

@@ -10,8 +10,7 @@
  * the stack slots. The local sits after the allocation call because that is
  * where the original builds it.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

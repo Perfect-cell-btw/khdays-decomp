@@ -1,7 +1,7 @@
 /* Turn entry of the ov260 actor: with a +8 target it faces it from the +0x10 point (+0x64 / +0x68
  * heading), pose 8 plays, +0x7c, the target and the +0x79 flag clear and the node moves on to
  * 020d02ac. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);

@@ -8,7 +8,7 @@
  * below are one table.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const u16 data_ov002_0207deb8[1] = { 0 };
 

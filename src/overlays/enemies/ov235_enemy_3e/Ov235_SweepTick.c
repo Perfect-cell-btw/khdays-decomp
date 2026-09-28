@@ -7,8 +7,7 @@
  * of data_ov235_020d2518 carries its +0x74 point to the owner's +0x24 hook, its bit is set and
  * reaction +0x3c8 mode 9 fires there. Once the +0xc idle byte clears, the +0x4c cooldown is
  * re-rolled in [+0x224, +0x228] and sub-state 2 is requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

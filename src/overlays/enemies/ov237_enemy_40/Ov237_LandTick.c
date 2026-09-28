@@ -1,7 +1,7 @@
 /* Land tick of the ov237 actor: the +0x3c aim point resets to data_ov237_020d1be8; once the +4 rig
  * is idle (or the +0x17a bit 3 lands early) the actor is placed at its +0x4c4 point at the +0x38
  * point's height with effect 0x12, +0x4bc is set, pose 0x10 plays and the brain waits on 020d06e0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 b0 : 1; u8 b1 : 1; u8 b2 : 1; u8 b3 : 1; } Bits;
 

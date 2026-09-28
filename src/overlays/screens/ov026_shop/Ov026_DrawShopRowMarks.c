@@ -12,9 +12,7 @@
  * when that fails, past the category's free count (+0xc578 + 2 * tab) with
  * the record's byte +0x12 clear nothing more shows, else cell B / C[row].
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT   8
 #define TAB_RECIPES 3

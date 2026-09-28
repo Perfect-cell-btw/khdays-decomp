@@ -1,7 +1,7 @@
 /* Constructs an AI node of one behaviour type: base-init, set flag bit 3, install the eight
  * callback function pointers into the node's vtable slots, and init its child list at +0x44. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov107_InitNodeBase(u16 *node);
 extern void List_Init(void *list);

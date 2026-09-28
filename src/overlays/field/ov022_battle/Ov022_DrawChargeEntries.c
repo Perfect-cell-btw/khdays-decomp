@@ -7,8 +7,7 @@
  * page. Each one has its position written and is then rendered on its own.
  */
 
-typedef unsigned char u8;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define AIM_FLAG_A 0x2000000000000ULL
 #define AIM_FLAG_B 0x4000000000000ULL

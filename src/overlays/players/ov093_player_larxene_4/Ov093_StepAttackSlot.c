@@ -5,7 +5,7 @@
  * elapsed frame, the slot is pinned to the actor's heading and origin, 0xcf is told and phase 2
  * begins; phase 2 keeps the slot pinned and advances the tracks until they finish. The slot's
  * time step runs afterwards. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov022_IsSlotReady(char *context);

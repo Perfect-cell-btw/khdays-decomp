@@ -1,6 +1,6 @@
 /* Loads the icon texture of every item and the special reward icons. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct MsgDbItemRecord {char pad0[32];u16 icon;} MsgDbItemRecord;
 typedef struct Ov005TextureResource {void *resource;unsigned int textureKey,paletteKey;} Ov005TextureResource;
 typedef struct Ov005Context {char pad0[0x6154c];Ov005TextureResource textures[213];} Ov005Context;

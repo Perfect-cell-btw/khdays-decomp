@@ -3,10 +3,7 @@
  * and from 0x28 ramping down while adjusting both screens' blend brightness, clearing the blend
  * registers past 0x30. */
 
-typedef signed char  s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*Ov000StateFn)(void);
 
 typedef struct Ov000BootContext {

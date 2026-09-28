@@ -23,8 +23,7 @@
  * this pair of stack stores in reverse source order.
  */
 
-typedef unsigned char u8;
-typedef signed char   s8;
+#include "nitro/types.h"
 
 typedef struct OverlayVector {
     int x;

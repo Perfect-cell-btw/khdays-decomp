@@ -5,8 +5,7 @@
  * and one from the owner. The message goes out on gate 9 as 0x18 bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Owner {
     u8 pad000[9];

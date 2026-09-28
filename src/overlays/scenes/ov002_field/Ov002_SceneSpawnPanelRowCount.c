@@ -13,8 +13,7 @@
  * ARM.
  */
 
-typedef unsigned short u16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct {
     int nMode;

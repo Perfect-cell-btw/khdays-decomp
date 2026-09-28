@@ -6,8 +6,7 @@
  * and 5 of the context and 0x47 / 0x48 of block 4a80 are then set visible
  * only when their current visibility (field 0x84 bit 1) differs.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define PICK_COUNT     12
 #define LIST_STATE_END 7

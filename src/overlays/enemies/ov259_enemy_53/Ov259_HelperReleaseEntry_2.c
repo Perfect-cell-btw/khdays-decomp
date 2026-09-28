@@ -1,7 +1,7 @@
 /* Release entry of an ov259 helper: +0x2c and +0x24 clear, the owner's +0x60 high byte sets bit 0
  * and drops bit 7, the +0x384 rig shows, the +0x38c shape is knocked back at the +8 point (mode 3),
  * sound 0x172/0x13 fires there and the node moves on to 020d2d3c. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

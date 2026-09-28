@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov008_InitFilterRows: build the five filter rows of the (02086314): const Ov008RowRect data_ov026_02091134[];
  *   Ov008_ShowFilterRow: flip row nRow of the filter panel (02086438): const u8 data_ov026_02091134[];

@@ -2,9 +2,7 @@
  * its text pack (and, for the lower ids, its second pack) from the packed archives into the table
  * entry; returns whether it succeeded. */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct {
     int   pBuf0;

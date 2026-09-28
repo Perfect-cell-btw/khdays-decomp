@@ -3,7 +3,7 @@
  * bits 1 and 7 of the +0x60 high byte and bit 0 of +0x1ae are raised, the +0x5c timer clears
  * and the tick hands over to Ov225_SlamAimTick. */
 struct vec3 { int x, y, z; };
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Vec3TransformViaTempMtx(struct vec3 *out, const void *pose, struct vec3 *in);
 extern void VEC_Add(struct vec3 *a, struct vec3 *b, struct vec3 *c);

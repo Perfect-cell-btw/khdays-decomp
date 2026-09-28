@@ -5,7 +5,7 @@
  * also +0x94 = 200 and +0x424); step 4 moves the node on to 020d02b8. Otherwise +0x94 grades the
  * target count against the actor's +0x80 range (100 / 10 / 2), and the six +0xac flags pulse the
  * cue (020cd2c8, alternating 0 / 1) at 0x550, 0xaa0, 0xff0, 0x1430, 0x17e8 and 0x1ed0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov259_FaceTargetGap(int *node);

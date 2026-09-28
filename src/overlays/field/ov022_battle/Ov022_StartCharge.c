@@ -8,8 +8,7 @@
  * only survives until here.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 
 #define ENTRY_STRIDE 0x108
 #define ENTRY_COUNT 3

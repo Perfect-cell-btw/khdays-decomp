@@ -13,8 +13,7 @@
  * (the ROM's first update) and the raw form does not (the second). The +0x64
  * vector goes through a named pointer, which keeps its address in a register
  * for the Y and Z stores as the ROM does. */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int x, y, z; } VecFx32;
 

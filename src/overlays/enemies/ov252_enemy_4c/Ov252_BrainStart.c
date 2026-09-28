@@ -2,7 +2,7 @@
  * position, +0x7c is half the frame rate, bit 1 of the +0x60 high byte is set, the +0x500 shape hides
  * and the three brain slots start: collapse (020cf0c4) in slot 1, the main loop (020cea38) in slot 0
  * and the reaction loop (020cec2c) in slot 2. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { unsigned f : 8; } B8;
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

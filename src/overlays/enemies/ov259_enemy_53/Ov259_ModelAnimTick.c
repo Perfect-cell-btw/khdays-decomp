@@ -4,8 +4,7 @@
  * finds its track in the first of the owner's two banks (+0x398, 0x24 each) that has it, advances
  * it by rate x the channel speed (+0x94[i]), forward or backward (+0xb2 bit 0), and at the end
  * wraps when looping (+0xa8[i]) or clamps and stops. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct Flags5c { int b0 : 1; int b1 : 1; };
 struct Flag { u8 b0 : 1; };
 typedef struct { int frame; int pad; char *clip; } Track;

@@ -2,7 +2,7 @@
  * aim, bit 0 of the owner's +0x60 high byte is set, its +0x388 shape shows, bit 7 drops, the +0x28
  * velocity clears, +0x34 = 0 and +0x38 = 0xa00, +0x1c starts at the +0x38c owner's position and the
  * node moves on to 020d1fa0. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { unsigned f : 8; } B8;

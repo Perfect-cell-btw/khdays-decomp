@@ -3,7 +3,7 @@
  * partner holds no queued move bit 0 of +0x1ae clears; with a pending move (+0x5c) a partner guard
  * (+0x58) becomes a 3.5 x 100.0 carry (+0x40/+0x44) that frees the partner (its +0x1ae bit 0 and +0x3ac
  * bit 1 clear), and the next move is 8 while carrying, else 2. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

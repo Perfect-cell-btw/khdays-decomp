@@ -6,8 +6,7 @@
  * handle is kept at +0x2cf40 and cleared of flag bit 1.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* ObjNodeDesc */
 struct ObjDesc {

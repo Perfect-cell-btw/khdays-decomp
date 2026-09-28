@@ -3,7 +3,7 @@
  * and at the +0x10 point (mode 9), effect 0x1c starts there, +0x70 and the +0x7b flag clear, the dash
  * starts (+0x7c) and the node moves on to 020d04bc. Without one, once the partner holds no queued move,
  * pose 0xb plays, the origin knock-back (mode 0xd, 8) runs and the node moves on the same way. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);

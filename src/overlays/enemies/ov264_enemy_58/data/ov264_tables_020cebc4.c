@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov264_initActor (020cc1fc): KindTable data_ov264_020cebc4; */
 const int data_ov264_020cebc4[5] = {

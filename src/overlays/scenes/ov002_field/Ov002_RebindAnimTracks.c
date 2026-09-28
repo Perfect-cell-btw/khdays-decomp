@@ -6,7 +6,7 @@
  * the whole animation restarts in step. This is the shared entry the area
  * overlays reach through their common 0207fa40 wrapper.
  */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* The blend argument is a short, the same signature proved on
    Ov002_ApplyAnimMode, so the narrowing belongs to the call rather than to a

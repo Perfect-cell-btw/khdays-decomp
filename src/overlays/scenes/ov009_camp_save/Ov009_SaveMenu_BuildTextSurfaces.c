@@ -1,8 +1,6 @@
 /* Creates the three text surfaces of the save page and draws its captions. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct TileSurfaceCfg {
     u32 field00;

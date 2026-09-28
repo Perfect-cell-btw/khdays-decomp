@@ -3,10 +3,7 @@
  * the slot array at +0xa110 of the scene context (rows 9..18), and raises bit 1 of the transfer
  * flags so the next frame consumes them. */
 
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov000TransferSource {
     u8 pad_0000[0xc];

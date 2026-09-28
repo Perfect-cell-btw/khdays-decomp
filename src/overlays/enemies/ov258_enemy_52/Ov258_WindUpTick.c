@@ -2,8 +2,7 @@
  * third step (+0x53 countdown 3) plays sound variant 0xc of the +0x58 bank at the +0x1c point, and
  * from 0x1298 the swing hit test runs (020cf6dc). Once the +4 rig is idle the +0x34 timer clears,
  * +0x50 = 1, pose 6 plays with effect 0x24 at the +0x1c point and the brain waits on 020cfb10. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 

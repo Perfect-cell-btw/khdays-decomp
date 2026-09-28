@@ -2,9 +2,7 @@
  * it; skipped while paused), draws the local group's view lists and link seats, updates the peers'
  * animations and applies the scene scale to the views. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov022Context {
     u16 flags;

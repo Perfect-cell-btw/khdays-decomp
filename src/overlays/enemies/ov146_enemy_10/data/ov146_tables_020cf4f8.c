@@ -1,6 +1,6 @@
 /* ov146 .rodata 0x020cf4f8-0x020cf514: the two initializer templates of the ov146 actor. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct PartIds {
     int id[5];

@@ -5,7 +5,7 @@
  * id 3 (Ov025_SetEntrySlotsVisible on the widget from Ov025_FindEntryById). Finally, when p->field10 == 2
  * it re-enables widget 3 and re-links widget 0x51 (only if p->field8 == 1); otherwise it just
  * re-enables widget 3. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Ov008EndState {
     u8  pad_0000[4];
     int field4;          /* 0x4 */

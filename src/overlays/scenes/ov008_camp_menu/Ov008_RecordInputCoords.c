@@ -6,8 +6,7 @@
  * reports the recording is enabled, it snapshots the current triple into the per-slot history
  * (entries[idx], stride 6) and signals mode 3 to Ov008_SendMenuMessage; otherwise it signals
  * mode 2. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct InputCoords {
     u16 x;   /* 0x0 */

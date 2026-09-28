@@ -1,23 +1,9 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
-
 
 /* NitroSDK OS library: arena defaults (os_arena.c), the thread system init (os_thread.c) and the
  * owner info (os_ownerInfo.c). The SDK_* figures are link-time constants of the SDK build; the ROM
@@ -160,7 +146,6 @@ void OS_InitThread (void)
 
     OSi_IsThreadInitialized = TRUE;
 
-
     OSi_CurrentThreadPtr = &(OSi_ThreadInfo.current);
     OSi_LauncherThread.priority = OS_THREAD_LAUNCHER_PRIORITY;
     OSi_LauncherThread.id = 0;
@@ -176,7 +161,6 @@ void OS_InitThread (void)
               (void *)((u32)OSi_LAUNCHER_STACK_LO_DEFAULT - OSi_SYS_STACKSIZE) :
               (void *)((u32)OSi_LAUNCHER_STACK_HI_MAX - OSi_SYS_STACKSIZE);
 
-
     OSi_LauncherThread.stackBottom = (u32)OSi_LAUNCHER_STACK_BOTTOM;
     OSi_LauncherThread.stackTop = (u32)stackLo;
     OSi_LauncherThread.stackWarningOffset = 0;
@@ -185,7 +169,6 @@ void OS_InitThread (void)
     *(u32 *)OSi_LauncherThread.stackTop = OSi_STACK_CHECKNUM_TOP;
 
     OS_InitThreadQueue(&OSi_LauncherThread.joinQueue);
-
 
     OSi_ThreadInfo.isNeedRescheduling = FALSE;
     OSi_ThreadInfo.irqDepth = 0;

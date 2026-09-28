@@ -3,8 +3,7 @@
  * equals nKey and return its id byte (+0); -1 when the table holds no such entry.
  * Codegen: the loop counter reuses the nTable parameter once the table pointer is
  * taken -- a fresh counter colours away from the parameter's register. */
-typedef signed char s8;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov015SpotEntry {
     s8  nId;                  /* 0x00 */

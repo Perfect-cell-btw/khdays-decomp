@@ -1,10 +1,7 @@
 /* Moves the lock-on selector to a new target: validates the candidate (alive, visible, not
  * excluded), walks the candidate lists to the next one, and updates the selection state. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef signed long long s64;
+#include "nitro/types.h"
 
 typedef struct Ov022LowByteBits {
     unsigned short lowByte : 8;

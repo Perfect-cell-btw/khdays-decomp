@@ -2,7 +2,7 @@
  * +0x54 heading; once the partner holds no queued move pose 0x16 plays, the part takes motion 0x15,
  * bit 3 of the +0x60 high byte is set and bit 2 clears, +0x64 clears and the node moves on to
  * 020d0c28. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov252_TurnVecY(Vec3 *out, int angle, Vec3 *vec);

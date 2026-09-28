@@ -2,11 +2,7 @@
  * palette VRAM banks, then loads the font resource, the tile-text renderer, the message archive and
  * the text frame for the given mode. */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef volatile u16 vu16;
-typedef volatile u32 vu32;
+#include "nitro/types.h"
 
 typedef struct Ov000MessageArchive {
     u32 words[3];

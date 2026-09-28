@@ -4,9 +4,7 @@
  * target: the touch row centred on a row (y - height/2) relative to the current
  * scroll, clamped to [0, extent - height], committed with the immediate flag.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov008ScrollList {
     u32 nWord;                /* 0x00 */

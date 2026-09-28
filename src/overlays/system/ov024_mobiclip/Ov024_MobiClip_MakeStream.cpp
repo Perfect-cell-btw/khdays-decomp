@@ -16,7 +16,7 @@
  * The allocator and the deallocator carry misleading WM_ names from the symbol
  * table; the bytes are a plain operator new and delete pair.
  */
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct MobiClipReaderRaw {
     const void *pVtable;

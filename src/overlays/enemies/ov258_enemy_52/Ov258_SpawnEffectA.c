@@ -1,7 +1,7 @@
 /* Spawn an ov258 effect task (priority 100, 0x1c bytes, 020d0af4 / 020d0ba4): it keeps the owner,
  * the item and the start position (the item is placed there) and the kind byte at +0x1a; returns
  * the task handle. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct {
     int item;

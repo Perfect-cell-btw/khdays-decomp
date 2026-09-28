@@ -1,9 +1,6 @@
 /* Ov002_CreateSlotObjectAndStart: create a slot, initialize its object and
  * install the record's permitted marker parts before activating special links. */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Ov002Vec3 {int x,y,z;} Ov002Vec3;
 typedef struct Ov107Object Ov107Object;
 struct Ov107Object {

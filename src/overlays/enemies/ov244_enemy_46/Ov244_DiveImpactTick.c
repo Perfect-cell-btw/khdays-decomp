@@ -5,8 +5,7 @@
  * pose 0 is requested. Otherwise the +0x14 timer accumulates the frame rate and, once grounded
  * (+0x17a bit 0) or past 10.0, the message data_ov244_020d378e carries the +4 point lowered by 1.5,
  * reaction 0x113 mode 9 fires there, the hook receives the message and pose 0 is requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

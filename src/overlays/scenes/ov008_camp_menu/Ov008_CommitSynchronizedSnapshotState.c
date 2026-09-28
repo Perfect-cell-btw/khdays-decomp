@@ -1,9 +1,7 @@
 /* Commits the synchronized snapshot: when the session is ready (or local), copies the shared
  * mission members, thresholds, rules and day clock into the game state and acknowledges it. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov002MissionMemberHeader {
     u8 memberId;

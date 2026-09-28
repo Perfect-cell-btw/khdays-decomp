@@ -1,7 +1,7 @@
 /* Idle countdown of the ov219 enemy (and its byte-identical twin). The +0x1c timer loses the
  * frame-time; once it runs out it is re-rolled to +0x224 + rand(|+0x228 - +0x224| + 1), a caller
  * value above 0x4000 forces sub-state 5, and the call reports 1 when a sub-state is pending. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int RandNextScaled(int bound);
 

@@ -4,9 +4,7 @@
  * 1-based and its raw records are not released after use; every other db is
  * 0-based and each raw record is freed.  Returns the db release result.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define DB_SLOT      0xf
 #define DB_ONE_BASED 0x15

@@ -10,7 +10,7 @@
  * Ghidra carries the destination as Ov002LayoutContext.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 wOriginX;               /* +0x00 */

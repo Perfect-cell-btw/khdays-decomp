@@ -1,7 +1,7 @@
 /* Update of the ov256 model: +0x460 takes the body's (+0x384) current frame on track 0; while the body
  * animates (+0xad) its track-0 frame and the +0x3ac part's are clamped to +0x460 plus the +0x45c
  * offset (x 512). Then the +0x450 part and the base update run. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int queryTableEntry(int model, int track);
 extern int Obj_GetCellScaledField(int model, int track, int a);

@@ -29,9 +29,7 @@
  * unassigned count reuses nOwned -- a fresh local would colour the counter
  * and the count the other way round (sl / sb).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define TAG_TRADE      0x3f4
 #define INGREDIENTS    4

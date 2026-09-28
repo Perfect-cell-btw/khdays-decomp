@@ -7,8 +7,7 @@
  * stomps the +0x52 low mask clears. Each time the +4 rig finishes a remaining stomp (+0x52 high nibble)
  * replays pose 0xb (last) or 0xe with effect 3 or 4; with none left a follow-up (020cd2cc, without a
  * +0x38 delay) or move 2 follows. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 typedef struct { Vec3 pos; Vec3 axis[3]; int radius; int flag; } Cylinder;

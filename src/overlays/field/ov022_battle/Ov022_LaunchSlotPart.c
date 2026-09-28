@@ -1,10 +1,7 @@
 /* Launches a part from an actor slot: rotates its offset by the actor's heading to place it, sets
  * its velocity and lifetime, binds its animations and plays its launch reaction. */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

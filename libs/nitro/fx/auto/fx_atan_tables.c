@@ -14,7 +14,7 @@
  * Every entry is the rounded formula above, checked against the delinked image.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const u16 data_02041210[130] = {
         0,    32,    64,    96,   128,   160,   192,   224,

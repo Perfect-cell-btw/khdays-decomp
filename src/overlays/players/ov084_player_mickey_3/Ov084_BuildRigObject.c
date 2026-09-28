@@ -4,8 +4,7 @@
  * installs the handler table at +0x664, binds the rig, invalidates the five cached
  * slots at +0x514, resolves four bone indices off the rig, and finally raises the
  * three optional feature flags the config asked for. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct PanelInitConfig {
     int objectType;

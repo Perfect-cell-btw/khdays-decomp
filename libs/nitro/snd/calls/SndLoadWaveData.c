@@ -1,7 +1,4 @@
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int s32;
-typedef int BOOL;
+#include "nitro/types.h"
 
 typedef struct SNDBinaryFileHeader {
     u32 signature;

@@ -5,9 +5,7 @@
  * shop record it names (1-based) and takes that record's text pointers, while
  * one with text allocates one buffer for both UTF-16 strings and copies them.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define RECORD_KIND_REWARD 3
 #define RAW_KIND_ITEM      0x18

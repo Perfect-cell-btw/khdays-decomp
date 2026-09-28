@@ -5,10 +5,7 @@
  * of the nDots dots (x = 2 + 2 * i): done dots use tag 0x3c, the open one the
  * active tag 0xb, the rest tag 0x41, all at y = 2.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef short          s16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define FIELD_MISSION_STATUS 0x28e4
 #define TAG_DOT_ACTIVE 0xb

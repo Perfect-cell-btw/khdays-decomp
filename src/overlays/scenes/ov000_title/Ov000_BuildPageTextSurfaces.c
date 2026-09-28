@@ -6,8 +6,7 @@
  * +0x4cc0/+0x4cfc/+0x4d38, then draw records 0..2 (header at 0x8e/0 selected,
  * two body lines at 0x10/0xf and 0x10/0x1e) and enqueue the three surfaces.
  * config1's first word is decremented when flag +0x4acc is set. */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct TileSurfaceCfg {
     u32 nUnk00;

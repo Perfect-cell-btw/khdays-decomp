@@ -1,4 +1,4 @@
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern char data_027e0000[];
 extern void INITi_CpuClear32(u32 data, void *destination, u32 size);

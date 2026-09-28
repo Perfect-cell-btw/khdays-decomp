@@ -8,9 +8,7 @@
  * one static inline helper per case (the state pointer is re-read after the
  * byte store); every case returns.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ITEM_COUNT_MAX  99
 #define FLAG_ITEM_OWNED 0x4db

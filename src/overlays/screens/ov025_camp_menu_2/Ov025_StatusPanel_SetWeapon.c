@@ -4,10 +4,7 @@
  * by ov002 020522c8 (slot 0x13 / index 0 for no weapon, nWeapon < 0) and its halfwords +2 (or
  * +0xe with bAlt), +4, +6, the word +8 and the halfword +0xc are copied to +0x1e0.. / +0x1dc of
  * the page, the weapon index to +0x1d8. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionList {
     int  nSelected;           /* 0x000 */

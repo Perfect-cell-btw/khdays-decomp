@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Constructor of the ov284 enemy: raises bit 8 of the +0 flag halfword, installs the handler (020cc0a0): const IdTable data_ov284_020cd594; */
 const int data_ov284_020cd594[4] = {

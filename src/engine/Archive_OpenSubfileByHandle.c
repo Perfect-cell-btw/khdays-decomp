@@ -1,12 +1,7 @@
 /* Opens a file inside a packed archive by its handle: the handle encodes the archive header's
  * address and the entry index, whose offset and size are read from the header's tables. */
 
-typedef int BOOL;
-typedef int s32;
-typedef short s16;
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct FSArchive FSArchive;
 typedef struct FSFile FSFile;

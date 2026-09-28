@@ -4,8 +4,7 @@
  * Res_RequestIdPair 0203355c).  With the extra flag the pair 0x197 / 0x1a3 is requested too and
  * the root byte data_ov023_0208a784[0] set, else cleared; when nothing at all was requested
  * the default pair 0x18d / 0x199 is. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov023GroupEntry {
     u8   pad_00[0x70];

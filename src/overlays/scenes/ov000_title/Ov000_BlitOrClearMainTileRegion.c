@@ -24,9 +24,7 @@
  * registers by declaration rank), and so is `layer` living in the inner block.
  */
 #pragma opt_strength_reduction off
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov000TileSource {
     u8   pad_00[8];

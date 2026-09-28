@@ -2,9 +2,7 @@
  * (no damage while guarding), applies the damage clamped to the maximum and plays the reaction
  * facing the attacker, queueing defeat or stagger. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 typedef struct { int x, y, z; } VecFx32;
 typedef struct { u8 a, b; } Pair2;

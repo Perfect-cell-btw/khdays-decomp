@@ -3,8 +3,7 @@
  * +0x2c30 / +0x2c38 / +0x2c3c, and, if there is a target, turns the node to face it (target minus
  * the +0x48c origin, normalised, atan2 of the negated x/z, +0x8000) unless the node's bit 0x20
  * says the facing is locked; then hands over to the per-frame step. Other messages are refused. */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov022_IsSlotReady(void *context);

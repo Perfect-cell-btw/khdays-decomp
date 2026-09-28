@@ -4,8 +4,7 @@
  * entity that accepts a 0.5 horizontal push away from the actor (kind 3) gets effect 8 at its +0x74
  * point, reaction 0 mode 0x53 fires at the +8 point and pose 0 is requested. Otherwise, once the +4
  * part's rig is idle (+0xad), pose 0 is requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 

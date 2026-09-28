@@ -3,8 +3,7 @@
  * ("abc", the 56-character string, one million 'a', "01234567" x 8 ten times) -- read by the
  * update / final routines 0200b79c and 0200b8f0.
  */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void DGTi_Hash2ProcessBlock(void);   /* the SHA-1 block transform */
 extern u8 data_02042338[24], data_02042350[24], data_02042308[24], data_02042320[24];

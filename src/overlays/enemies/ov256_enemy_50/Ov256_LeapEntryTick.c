@@ -3,8 +3,7 @@
  * holds no queued move, or on the fourth +0x17a flag, +0x4c clears, bits 1-2 and 7 of the +0x60 high
  * byte are set on both claws (+0x434, +0x438) and the actor, the +0x428 shape hides and is flagged
  * (bit 1), the actor is knocked back at the +0xc point (mode 6) and the node moves on to 020cea18. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; u8 b2 : 1; u8 b3 : 1; };

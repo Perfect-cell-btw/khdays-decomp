@@ -4,7 +4,7 @@
  * velocity is the +0x390 part's motion step rotated by the actor's +0xa0 orientation and, unless
  * the gap is within the actor's +0x2d8 range but beyond 0x3000, the +0x384 item's +0xa8 byte
  * clears and the tick hands off to cd224. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 
 extern int Ov107_FindNearestObject(int actor, int *dist);

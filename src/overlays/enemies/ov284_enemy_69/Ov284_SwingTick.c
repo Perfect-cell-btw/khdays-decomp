@@ -7,9 +7,7 @@
  * template with the +0x3a4 item's +0x14 point goes to the actor's +0x24 message hook, the kind
  * bit is set and reaction 0x16c mode 5 fires there. Once the +8 busy byte clears animation 7
  * plays and the tick hands off to cd020. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
@@ -29,8 +27,6 @@ struct Ov284Owner {
     char pad000[0x24];
     void (*pfnMessage)(struct Ov284Owner *self, PosMsg *msg, int size);
 };
-
-typedef long long s64;
 
 struct Ov284SwingState {
     struct Ov284Owner *pOwner;  /* +0x00 */

@@ -10,7 +10,7 @@
  * accumulates +0x434: up to 0x2fd0 the strike sweep (020d0a10 mode 6) runs from the +0x428 landing
  * with the three axes and a reach growing from 0x333 across the window, and past 0x1800 effect 9 fires
  * once (+0x418 bit 6); beyond it effect 9 is stopped (0xff) and the launch bit clears. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int q[4]; } Quat;
 

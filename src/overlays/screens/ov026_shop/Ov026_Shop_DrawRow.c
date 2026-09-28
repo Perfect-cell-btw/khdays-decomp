@@ -21,9 +21,7 @@
  * (its dead branch survives); the listed test is an int bool; the two texts
  * are arrays (their addresses are the arguments); recipe block in the else.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define TAB_BUY      0
 #define TAB_SELL     1

@@ -2,11 +2,7 @@
  * faces and their attached collision objects (through each object's test callback), and keeps the
  * nearest hit. */
 
-typedef signed short s16;
-typedef unsigned short u16;
-typedef signed int s32;
-typedef unsigned int u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct CollisionFace88 CollisionFace88;
 typedef struct CollisionRayQuery CollisionRayQuery;

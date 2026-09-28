@@ -19,8 +19,7 @@
  * the branch target.
  */
 
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 typedef void (*CodeFn)(void);
 
 extern int  NNSi_FndGetCurrentRootHeap(void);

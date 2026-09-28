@@ -8,9 +8,7 @@
  * 3 * id is 0 clears 0xe8.  Then the 200 fields from 0x2ca4 (3 apart) above 1
  * are counted and 0x1a0 becomes "that count >= the kind-4 count".
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define FIELD_RANK_BASE     0x28e4
 #define FIELD_PROGRESS_BASE 0x2a4c

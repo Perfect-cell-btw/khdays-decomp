@@ -1,8 +1,7 @@
 /* Ov025_DispatchFrom2DTable -- Ov008_DispatchFrom2DTable: pick sub-entry nColumn of menu entry nItem
  * (data_ov025_020b4f64) and hand its id to Ov008_Set_9bec (0209bfcc) for the widget pick; the
  * two context getters are called first (their results unused). */
-typedef unsigned char u8;
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct Ov008MenuSubEntry {
     s16 nId;                  /* 0x00 */

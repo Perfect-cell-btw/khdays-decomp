@@ -10,7 +10,7 @@
 typedef struct { int id[9]; } IdTable;
 typedef struct { int subitem; int pad; } Slot;
 typedef struct { char pad[0x3a0]; int nodes[2]; } SubEntries;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 
 extern void Ov126_Destroy(void);

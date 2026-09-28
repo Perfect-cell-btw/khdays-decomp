@@ -4,8 +4,7 @@
  * facing (sin, 0, cos of the +0x30 yaw) as seen from 0x2800 behind the actor, and that is in
  * line of sight past its +0x80 margin; a piece whose +0x1b4 entry has flag 0x10000 set is not
  * a candidate but is reported to the actor's +0x3a8 hook instead. Returns the piece or 0. */
-typedef unsigned char u8;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 typedef struct Vecx32 { int x, y, z; } Vecx32;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 

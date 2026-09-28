@@ -1,9 +1,7 @@
 /* Sends a menu message of the given type to the peers with the session state and local player in
  * its header. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MessageHeader {
     u8 messageType : 4;

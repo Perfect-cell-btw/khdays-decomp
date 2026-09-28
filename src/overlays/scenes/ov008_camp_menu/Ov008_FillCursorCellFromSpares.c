@@ -11,9 +11,7 @@
  * dispatched by kind; the grid hits are rebuilt and 1 returned.  Returns 0
  * otherwise.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GRID_PAGES 3
 #define GRID_ROWS  8

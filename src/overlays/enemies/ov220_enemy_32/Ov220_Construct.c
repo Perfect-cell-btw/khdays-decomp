@@ -9,7 +9,7 @@
  * from the min corner (min.x - 0xd6, min.x + 0xa9d, min.y + 0xd34, min.z + 0x8b9), which is
  * what makes mwcc chain the constants from the one pool word; the slot store is chained
  * through `item` so the call result is stored before the copy. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int w[6]; } Bounds;
 typedef struct { u8 id[3]; } Kinds;

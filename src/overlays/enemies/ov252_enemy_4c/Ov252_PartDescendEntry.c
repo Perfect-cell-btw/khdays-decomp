@@ -1,6 +1,6 @@
 /* Descend entry of an ov252 part: +0x6c clears, +0x89 = 5, +0x88 = 1, the owner plays effects 0xe and
  * 0xf at the origin and the node moves on to 020d2848. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);

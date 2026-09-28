@@ -1,7 +1,7 @@
 /* Selects one of three menu groups, updates entry visibility and selection, moves the selection
  * marker, and draws the group's caption when present. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;
@@ -96,7 +96,6 @@ Ov008_SelectMenuGroupAndDrawCaption(Ov008MenuRenderer *renderer, int selectedGro
     int count;
     unsigned int selected;
     Ov008MenuEntry *loopEntry;
-
 
     context = Ov008_GetContext();
     groups[0] = group0.ids;

@@ -6,8 +6,7 @@
  * mode byte and a resource / argument word.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov011AnimEntry {
     u8  nTargets : 4;

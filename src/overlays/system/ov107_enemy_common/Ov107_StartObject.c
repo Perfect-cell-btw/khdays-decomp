@@ -1,6 +1,6 @@
 /* Resets the spawner's eight slots and its slot count. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void MI_CpuFill8(void *dst, u32 data, u32 size);
 

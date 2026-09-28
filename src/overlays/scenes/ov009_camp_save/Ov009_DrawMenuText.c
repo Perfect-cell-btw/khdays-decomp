@@ -1,8 +1,7 @@
 /* Draws the save menu's message text for the mode (prompts, confirmations, results) and uploads it.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov009SlotRecord {
     int status;

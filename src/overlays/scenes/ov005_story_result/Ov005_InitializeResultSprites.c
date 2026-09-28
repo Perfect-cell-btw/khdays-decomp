@@ -1,7 +1,7 @@
 /* Initialises the reward menu's sprites: loads the sprite set, disables the entries, creates the 14
  * new-item indicators and installs the touch callbacks. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*EntryCallback)(void);
 typedef struct Ov005SpriteManager {char data[0x4a80];} Ov005SpriteManager;
 typedef struct Ov005Context {u32 resultArchive,localizedResultArchive;char pad8[76];Ov005SpriteManager embeddedManager;Ov005SpriteManager *spriteManager;char pad4ad8[0x5d668];int indicatorSlots[2][7];} Ov005Context;

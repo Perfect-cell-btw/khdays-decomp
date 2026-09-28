@@ -16,10 +16,7 @@
  * in flag-3) or frame 0x9000 (dropping flag-2 bit 9) ends into state 0xc.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

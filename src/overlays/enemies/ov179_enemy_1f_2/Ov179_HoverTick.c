@@ -4,7 +4,7 @@
  * +0x17c bit 0) to continue; then, once the actor's +0xad flag is clear, a positive +0x58
  * counter goes to sub-state 0xb, otherwise an 80 % roll with a free target (020ccb8c) goes to
  * sub-state 8 and the rest to 5 -- each with the slot cleared. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct v3 { int x, y, z; };
 struct b1 { unsigned char b:1; };
 

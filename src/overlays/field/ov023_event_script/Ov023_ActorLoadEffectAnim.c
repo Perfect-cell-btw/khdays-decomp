@@ -5,8 +5,7 @@
  * 13_walk01, 13_dash00, 13_dash01, 13_hakusyu00; 02087510 into +0x42c), the state's owner
  * pointer (+0x378) aimed at the actor's word at +0x10 and bit 1 of its control word (+0x344)
  * set. */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov023MotionState {  /* at +4 of the actor */
     int  nPeriod;             /* 0x000 */

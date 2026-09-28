@@ -1,7 +1,7 @@
 /* Ov245_EnterState5088 -- entry of the sub-state: raises bit 7 and clears bit 0 of the actor's
  * +0x60 high byte, clears +0x390, bit 0 of +0x1ae and bit 0 of the +0x388 item's +8 low byte,
  * and installs 020d4038 in the node's slot. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 

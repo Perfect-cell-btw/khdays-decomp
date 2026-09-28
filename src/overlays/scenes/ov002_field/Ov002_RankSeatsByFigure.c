@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207fa00;
 extern u8 data_0204c248[];              /* [1] gates showing ranks at all */

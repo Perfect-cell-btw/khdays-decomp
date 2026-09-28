@@ -5,10 +5,7 @@
  * +0x39c node) from the +0x18 source, the kind-0x30 message with the point 3.0 from the +0x1c
  * anchor towards the player goes out through the actor's +0x24 hook, reaction 0x113/0xf fires at
  * the arrival point, the move request clears and the owner's +0x420 level goes up by one. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { int value; } Fx32;

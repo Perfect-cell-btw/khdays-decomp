@@ -5,7 +5,7 @@
  * spawns effect 0 and fires reaction 0/0x48 at the actor's +0x74 position, and moves the node
  * to 020cff94. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern int RandNextScaled(int scale);

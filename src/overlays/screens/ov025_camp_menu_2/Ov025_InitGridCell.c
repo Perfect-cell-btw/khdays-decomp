@@ -3,7 +3,7 @@
  * scale fields are one chained assignment (the 0x10 constant is created before the
  * second zero store); the rest are plain stores in field order.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008GridCell {
     int   nState;        /* 0x00 */

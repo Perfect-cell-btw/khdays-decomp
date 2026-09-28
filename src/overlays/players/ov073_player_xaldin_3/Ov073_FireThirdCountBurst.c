@@ -5,8 +5,7 @@
  * submits them; if the submit takes and neither busy bit of +0x26bc is set, it marshals record
  * 0 at the +0x26c8 muzzle with the actor's heading. The return value is only defined on the
  * firing path (0), as in the ROM. */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

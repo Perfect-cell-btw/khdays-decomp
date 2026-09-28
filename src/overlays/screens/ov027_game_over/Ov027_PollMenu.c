@@ -5,10 +5,7 @@
  * 0x20ea as 2 / 1 (020235e8) -- and returns; slot 1 records the flag as 2 / 0 and sets mode 2;
  * slot 2 sets mode 4.  Every accepted choice then sets bit 4 of the mode word and the highlight
  * (+0x5c0) to 1.  The cursor's slot blinks every frame (Ov027_BlinkPanelSlot 02083918). */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

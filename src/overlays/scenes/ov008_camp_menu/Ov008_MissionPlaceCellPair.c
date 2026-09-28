@@ -1,8 +1,7 @@
 /* Places the slot's two cells at the offset its selector maps to, or off screen when the selector
  * is out of range. */
 
-typedef signed char s8;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

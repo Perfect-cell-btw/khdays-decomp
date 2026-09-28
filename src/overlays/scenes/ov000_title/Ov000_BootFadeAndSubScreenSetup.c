@@ -13,9 +13,7 @@ extern void *InstantiateClass(void *class_desc, int arg);
 extern int data_ov000_0205aa34;
 extern void Ov000_TickBootTeardown(void);
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov000SceneNextField {
     int value;

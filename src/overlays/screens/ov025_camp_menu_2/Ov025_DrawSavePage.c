@@ -4,8 +4,7 @@
  * `count` is reused for the alternate font handle after the count text is drawn;
  * this preserves the original MWCC register assignment in the portrait block.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Tmpl3 { unsigned a, b, c; } Tmpl3;
 

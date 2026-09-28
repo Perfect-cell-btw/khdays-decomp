@@ -11,7 +11,7 @@
  * Every entry is the rounded formula above, checked against the delinked image.
  */
 
-typedef short s16;
+#include "nitro/types.h"
 
 const s16 data_02041488[128] = {
     -32768,   -421,   -361,   -325,   -300,   -281,   -265,   -252,

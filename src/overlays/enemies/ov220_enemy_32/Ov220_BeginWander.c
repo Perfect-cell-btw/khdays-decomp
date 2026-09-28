@@ -2,7 +2,7 @@
  * actor's +0x390 slot: without one the state ends with sub-state 2. Otherwise the +0x48 side is
  * rolled (0/1) after the +0x44 slot is cleared to -1 and the +0x5c clock zeroed, the +0x18 timer
  * is set to +0x224 + rand(|+0x228 - +0x224| + 1) and the tick hands off to the wander state. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);

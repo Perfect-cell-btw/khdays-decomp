@@ -2,8 +2,7 @@
  * the 15 byte pairs (+0x9c) and the 5 counters (+0x28). Codegen: every loop indexes the global
  * record directly; a `rec` pointer local puts the record address in r1 instead of the ROM's r2. */
 #pragma thumb on
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct SlotEntry {
     u16 nId;
@@ -28,7 +27,6 @@ extern struct SlotRecord data_0204c678[];
 void PartyMember_ClearLists(int slot)
 {
     int i = 0;
-
 
     for (; i < 24; i++) {
         data_0204c678[slot].aEntry[i].nId = 0;

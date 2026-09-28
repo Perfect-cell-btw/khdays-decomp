@@ -11,8 +11,7 @@
  * 0x8000 hit that is not the 8|0x80/0x80 special fires reaction 0x145 with the mode taken from the
  * overlay's pairs (0x22 hits use the second pair) alternated by the +0x63 toggle; spent stamina
  * requests sub-state 3. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 
 struct ActorHitEvent {

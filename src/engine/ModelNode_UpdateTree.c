@@ -2,7 +2,7 @@
  * (Node_ComposeWorldSrt) a node whose bit 2 (+0x5c) is set drops its +0x70 animation id; otherwise a
  * changed id (+0x70 vs the +0xb0 copy) is pushed to every child. Each child is then updated in
  * turn (RefreshObjectCallbacks). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int b0 : 1; int b1 : 1; int b2 : 1; } NodeFlags;
 
 extern void Node_ComposeWorldSrt(char *node, int arg);

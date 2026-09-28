@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Big constructor of the ov193 enemy (x3: ov193/192/193): raises bit 8 of the +0 flags, inst (020d3844): struct Ov193Vec3 data_ov193_020d6994; */
 const int data_ov193_020d6994[3] = {

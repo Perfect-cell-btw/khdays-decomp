@@ -4,8 +4,7 @@
  * present) must have its item's "seen" flag (0x4db + item id) set, and the
  * product's item id must pass Ov026_IsRewardItemShown.  Returns 1 when listed.
  */
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 #define CATEGORY_ANY -1
 #define FLAG_ITEM_SEEN_BASE 0x4db

@@ -10,7 +10,7 @@
  * burst ticks when not sampling, and the actor's hook decides bit 1 of +0x694: becoming active
  * hands over to state 0x22 (finished emitter) or 0x23 (quiet emitter), or in mode 0x2f rewinds
  * the animation and timer to 0x18000. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 

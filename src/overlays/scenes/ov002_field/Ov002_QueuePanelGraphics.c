@@ -19,7 +19,7 @@
  * THUMB.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov002DayClock {
     unsigned char nFlags;

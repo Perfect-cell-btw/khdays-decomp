@@ -18,7 +18,7 @@
  * st + depth*0x48 + 0x14 (the compiler folds the +4 base into the offset).
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef int (*Fn)(void *st, int arg);
 
 extern int  LoadGlobalIntAtC(void);

@@ -1,7 +1,7 @@
 /* Finds an active VBlank callback slot by registration-name prefix, unlinks it from the doubly
  * linked callback list under IRQ masking, clears the slot and updates the list head. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct VBlankCallbackEntry VBlankCallbackEntry;
 

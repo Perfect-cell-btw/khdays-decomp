@@ -1,7 +1,6 @@
 #define NULL ((void *)0)
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* Threads carry their queue links inline: the scheduler never allocates nodes.
    Only the three fields this file touches are named; the rest of the thread

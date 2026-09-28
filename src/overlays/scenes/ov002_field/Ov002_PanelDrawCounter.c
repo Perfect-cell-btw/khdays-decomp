@@ -16,7 +16,7 @@
  * one being mutated, and otherwise sinks it past the call and spends an extra
  * callee-saved register on it.
  */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Ov002_GetItemResource(int nItemId);
 extern void Ov002_SelectEntry(int nItemId);

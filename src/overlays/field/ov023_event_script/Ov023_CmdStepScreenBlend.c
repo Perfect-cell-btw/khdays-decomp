@@ -5,7 +5,7 @@
  * 1..16 and is published as the blend weight (+0x2c).  Once the elapsed count reaches the frame
  * count, a full weight of 16 finishes the blend (Ov023_ScreenBlendDone 02085258) and 1 is
  * returned, else 0. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov023EventBlock {
     u8   pad_00[0x14];

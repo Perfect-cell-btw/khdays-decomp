@@ -6,7 +6,7 @@
  * another draw from the same bounds plus 3.14, the timer and +0x30 latch clear, reaction
  * 0x16c/7 fires at the +4 anchor and the node moves to 020cfa44. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct Ov253Bounds { int lo[1]; int hi[4]; };
 
 extern int RandNextScaled(int scale);

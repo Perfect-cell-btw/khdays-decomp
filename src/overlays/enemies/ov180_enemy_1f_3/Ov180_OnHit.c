@@ -9,7 +9,7 @@
  * hits carrying both flag 8 and flag 0x80. An emptied timer ends in sub-state 3; otherwise a
  * 0x8000 hit outside sub-state 8 goes to 0xd from 0xc/0xd and to 0xc from anything else.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x; int y; int z; };
 

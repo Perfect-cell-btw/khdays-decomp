@@ -6,9 +6,7 @@
  * (0202bfcc +0xa8, 020887dc).  With operand 0 (the actor) and operand 1 (an extra height)
  * only that actor is moved to its chair spot (0202c3e4) raised by the extra, the seat height
  * and 0xda01 (0202b450).  Returns 1. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

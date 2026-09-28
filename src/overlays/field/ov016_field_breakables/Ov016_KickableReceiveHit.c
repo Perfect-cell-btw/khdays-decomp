@@ -5,8 +5,7 @@
  * a kickable already in flight (bit 0) ignores hits.  Otherwise, when the hit lands within its
  * range of the rest position (+0x54c, 01ff8e94 = VEC_Distance), the source is remembered and
  * a kind-0x10 message {4, hit position} is queued on the piece (ov002 020766e0).  0 either way. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

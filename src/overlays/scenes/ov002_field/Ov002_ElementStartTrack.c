@@ -1,5 +1,4 @@
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern void Ov002_RebindAnimTracks(short *pAnim, int nTrack, int nFrame);
 extern void SceneNode_Enable(u16 *pAnim);

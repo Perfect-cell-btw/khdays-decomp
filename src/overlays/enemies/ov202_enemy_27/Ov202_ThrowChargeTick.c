@@ -1,7 +1,5 @@
 /* Ov202_ThrowChargeTick: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

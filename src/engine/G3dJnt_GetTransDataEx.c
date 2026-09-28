@@ -1,11 +1,8 @@
 /* NitroSystem G3D: translation component at a frame with interpolation across the loop point (last
  * frame blends to the first). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef signed short fx16;
-typedef signed long fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct NNSG3dResAnmHeader {
     u8 category0;

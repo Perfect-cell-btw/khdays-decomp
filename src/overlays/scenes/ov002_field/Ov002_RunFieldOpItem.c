@@ -1,5 +1,4 @@
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 /* An event slot carrying one arithmetic step on a game-state field: the record
  * builder allocates 0x24 bytes and fills the four halfwords behind the slot's

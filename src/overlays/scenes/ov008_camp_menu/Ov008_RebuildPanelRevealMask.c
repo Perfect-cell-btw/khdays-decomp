@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 /* The 3-page x 8-row x 5-column panel grid also used by ov000's tally subsystem. */
 typedef struct Ov008PanelRevealCtx {

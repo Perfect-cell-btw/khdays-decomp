@@ -6,7 +6,7 @@
  * data_ov002_0207f9fc.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int nUnk00;

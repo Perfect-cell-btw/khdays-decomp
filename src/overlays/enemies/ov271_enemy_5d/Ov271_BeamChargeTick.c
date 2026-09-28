@@ -9,8 +9,7 @@
  * mode 1 with a target kind of 0 or 2, the overlay's 4-byte command (data_ov271_020d36b4, byte
  * 3 = 5 for kind 0 / 6 otherwise) goes to the owner's +0x24 hook. +0x50 is set and the tick
  * hands over to Ov271_BeamFireTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int q[4]; } Quat;
 typedef struct { u16 lo; u16 hi; } Cmd4;

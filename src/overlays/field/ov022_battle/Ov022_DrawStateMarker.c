@@ -10,7 +10,7 @@
  * once it reaches three units.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

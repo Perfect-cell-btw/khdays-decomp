@@ -1,6 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 typedef struct Ov002Vec3 {
     int x;

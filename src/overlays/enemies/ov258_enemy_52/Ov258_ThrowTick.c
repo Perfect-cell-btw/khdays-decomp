@@ -3,8 +3,7 @@
  * (0, 15.6, 11.0), the throw sound (+0x58 bank, variant 0x12 with a +0x460 partner else 0x19) and
  * effect 0x2a play there and the actor's +0x428 becomes 7.0. Once the +4 rig is idle the +0x30 timer
  * clears, +0x50 = 1, pose 7 plays and the brain waits on 020cfc20. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov258_SwingHitTest(int *node);

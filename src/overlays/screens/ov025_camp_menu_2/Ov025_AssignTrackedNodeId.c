@@ -3,7 +3,7 @@
  * sorted position: before the first node whose id is not the next expected one,
  * or appended at the end.  Returns the id, or 0 when all 255 are taken.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct NNSFndList {
     u8 pad[12];

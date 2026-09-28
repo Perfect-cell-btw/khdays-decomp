@@ -13,8 +13,7 @@
  * the zero and the registry table ahead of the constant 3, as the ROM does
  * (found with decomp-permuter).
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct MobiClipPlayer {
     u16 wState;                 /* 0x0000 */

@@ -1,7 +1,6 @@
 /* Ov016_KickableQueryParamA -- Ov016_KickableQueryParamA: the definition's word at +0x68 while the
  * kickable's GameState bit is set and it is not locked (bit 8 of +0x464); else 0. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov016KickableDef {
     u8 pad_00[0x68];

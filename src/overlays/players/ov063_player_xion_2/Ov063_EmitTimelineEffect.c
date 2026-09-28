@@ -5,11 +5,7 @@
 #pragma opt_common_subs off
 #pragma opt_dead_assignments off
 
-typedef long long s64;
-typedef unsigned long long u64;
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Vec3;
 struct Ov063Actor4498;

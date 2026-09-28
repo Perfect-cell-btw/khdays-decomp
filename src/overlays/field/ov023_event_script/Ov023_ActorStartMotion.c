@@ -8,10 +8,7 @@
  * descriptor), otherwise the name (as is when it ends in ".z", else "mi/mo/<name>.z") is
  * loaded (0202a388) and its frame, when not negative, kept; the track is then played from
  * the slot set.  Track 0 also records the frame (+0x1a40) and name (+0x1a44) on the actor. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef signed short   s16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov023Motion {
     int  nField00;            /* 0x00 */

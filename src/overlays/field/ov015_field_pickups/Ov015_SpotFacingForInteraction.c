@@ -2,7 +2,7 @@
  * while the spot is live (bit 1 of +0x40) and the local player's actor is in interaction
  * state 0xc; 0 otherwise.  Sibling of Ov015_GetTargetIfInRange, which hands out the spot's
  * position (+0x1c) under the same test. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int QueryActiveStateOrDelegate(void);                         /* the local peer */
 extern void *GetEntryField20ByIndex(int nPlayer);                /* the player's actor */

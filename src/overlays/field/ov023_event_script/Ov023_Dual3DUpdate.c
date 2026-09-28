@@ -8,8 +8,7 @@
  * of data_0204c240) and an idle lobby (data_0204c254 + 0xe), the display mode is re-entered
  * (Ov023_EnterDisplayMode 020839b8) and mode bit 4 set.  Finally the block's screen
  * becomes the active one and is published in data_0204be04. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov023Scene {
     u8   pad_00000[0x87554];

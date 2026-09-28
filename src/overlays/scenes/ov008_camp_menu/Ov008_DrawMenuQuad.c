@@ -1,9 +1,7 @@
 /* Draws a textured menu quad with the 3D engine (dimmed or full colour), offset by the draw origin.
  */
 
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 typedef struct Ov008TextureParams {
     u32 texImageParam;

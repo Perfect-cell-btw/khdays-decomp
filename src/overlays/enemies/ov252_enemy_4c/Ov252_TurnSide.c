@@ -1,7 +1,7 @@
 /* Side of the ov252 actor that the ground-plane vector `v` points to: 0 when it is within the facing
  * cone (turn below 0x1a87) or shorter than twice the actor's +0x80 radius, else 2 for a turn to one
  * side and 1 for the other (turn from the +0x54 heading, 0203cd20). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int func_020050b4(int x, int z);

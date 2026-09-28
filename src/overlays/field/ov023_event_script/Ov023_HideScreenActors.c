@@ -3,8 +3,7 @@
  * (+0x87590; Ov023_ActorOnScreen 02088ec0) whose state word (02088eb4) has bit 10 but not
  * bit 5, hide it (02088d18), re-arm its sprite id (0202beb8 index / 1, 0202c624) and reset
  * the model bound at +0x24 of its resource block (+0x15e0; 02014e2c). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov023Actor {
     u8   pad_0000[0x15e0];

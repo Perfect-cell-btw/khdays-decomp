@@ -1,7 +1,7 @@
 /* Slam entry of the ov260 actor: bit 6 of the +0x60 high byte is set, pose 0xd plays, its +0x428
  * part takes motion 5, effects 9 and 0x20 start at the +0x10 point, the actor is knocked back at its
  * feet (+0x74 lowered by the +0x13c height, mode 4), +0x74 clears and the node moves on to 020ce8b0. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

@@ -5,7 +5,7 @@
  * two other (3) +0x390 parts (Ov201_SetNodeActiveState) and start reaction 0x157 mode 7 on the +0xa0 pose
  * into +0x3b0, slots 2/4 disable them again; slots 5/6 start modes 4/5 (looping) into +0x3b4/
  * +0x3b8. The base hook always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int x, y, z; } Vec3;

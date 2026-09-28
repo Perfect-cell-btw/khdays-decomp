@@ -1,6 +1,6 @@
 /* Sets the all-missions-complete field once missions 1 to 93 are all complete. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern u32 GameState_GetField(u32 field, int width);
 extern void GameState_SetField(u32 field, int width, u32 value);

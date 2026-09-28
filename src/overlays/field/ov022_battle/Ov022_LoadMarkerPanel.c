@@ -9,8 +9,7 @@
  * marked 0x3f, with the slot's state cleared. The archive goes back.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define KIND_INFO 0
 #define KIND_STATE 1

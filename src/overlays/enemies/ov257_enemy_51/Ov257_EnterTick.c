@@ -1,7 +1,7 @@
 /* Enter tick of an ov257 state: bit 6 of the owner's +0x60 high byte is raised, the +0x40 rate,
  * the +0x54 timer and the +0x88/+0x89 flags clear, animation 0x15 plays, the +0x3d0 part plays
  * motion 0x12 and the tick hands over to Ov257_RiseTick. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_StartAnim(int part, int motion, int mode);

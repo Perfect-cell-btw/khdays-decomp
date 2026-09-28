@@ -4,7 +4,7 @@
  * +0x13c height. When the +0x3a8 part's +4 owner matches the actor's, bit 7 of the +0x60 flag
  * high byte clears, animation 0 (looped) plays, the +0x6c index resets and the tick hands off to
  * the grab walk. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 

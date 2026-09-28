@@ -8,9 +8,8 @@
  * comparisons give an integer; 13 and 14 are && and ||. Returns the value left on top. The fixed
  * point addition adds the lower operand to itself, as in the original. The ROM rereads the opcode
  * for the dispatch instead of reusing the loop test's load, hence the volatile read. */
-typedef short s16;
-typedef unsigned short u16;
-typedef int fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct ScriptValue {
     s16 type;                           /* +0x00 */

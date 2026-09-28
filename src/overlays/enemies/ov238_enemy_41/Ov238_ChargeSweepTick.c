@@ -7,9 +7,7 @@
  * of the world list (not the partner) with a shown part inside the sphere then gets a kind-4 44-byte
  * packet through 020c5cfc (random reaction, partner power, owner +0x258 reaction, knock 100) and is
  * marked on acceptance. Once the clock reaches 2.0 +0x390 clears and sub-state 0 follows. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int nRadius; } Sphere;
 struct Atk { u8 b0; u8 bits; u8 r2; u8 r3; u16 power; };

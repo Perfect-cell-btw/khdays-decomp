@@ -4,10 +4,7 @@
  * the camera's flags. It then recurses: with the recurse bit set and a child present it either runs
  * the node's own callback or walks the children in turn, giving each its joint matrix. */
 
-typedef unsigned short u16;
-typedef signed short s16;
-typedef signed int s32;
-typedef signed long long s64;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     s32 x, y, z;

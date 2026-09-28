@@ -1,6 +1,5 @@
-typedef int BOOL;
-typedef int OSIntrMode;
-typedef unsigned int u32;
+#include "nitro/types.h"
+#include "nitro/os.h"
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(OSIntrMode state);

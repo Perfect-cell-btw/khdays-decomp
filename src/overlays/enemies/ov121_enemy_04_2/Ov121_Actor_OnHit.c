@@ -35,7 +35,7 @@
  *    handler records; reading them as a plain word with masks changes the shifts. The same
  *    goes for the state's facing bit, which is a one-bit field, not a byte masked by hand.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 {
     int x;

@@ -3,7 +3,7 @@
  * +0x3ac part's +0x45c boost. Once the +0x390 part's animation ends (or the +0x39c hold is gone) the
  * hold clears, the owner snaps back to its hand bone (+0x418, or +0x424 for the second claw), the next
  * move is 1 and the node ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov256_AttackHitTestB(int *node, int a, int b);

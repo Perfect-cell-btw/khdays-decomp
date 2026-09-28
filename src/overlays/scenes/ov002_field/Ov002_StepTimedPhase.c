@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 /* The overlay's stopwatch.  Only the first three words matter here; the rest
  * of the context carries the total, the run, the split and the laps. */

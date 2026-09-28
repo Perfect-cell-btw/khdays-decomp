@@ -1,6 +1,6 @@
 /* NitroSystem g2di_BGManipulator.c: NNSiG2dBGCNTTable, the BGnCNT register of each of the eight
  * BGs (main 0-3, sub 0-3) by NNSG2dBGSelect. */
-typedef volatile unsigned short REGType16v;
+#include "nitro/types.h"
 
 #define REG_BG0CNT_ADDR    0x04000008
 #define REG_BG1CNT_ADDR    0x0400000a

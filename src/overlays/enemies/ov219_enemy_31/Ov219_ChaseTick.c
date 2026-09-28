@@ -2,7 +2,7 @@
  * 0x800 and the +0x14 clock grows by 0x800 per tick. Below 0x11000 without bit 1 of the actor's
  * +0x17a flags the attack sweep runs (kind 0); otherwise the actor plays animation 5, publishes
  * a zero vector with mode 4 (flag 1) and hands off to the next chase state. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Vecx32 { int x, y, z; };
 struct Flags17a { u8 b0 : 1, b1 : 1; };
 

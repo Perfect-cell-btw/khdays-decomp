@@ -16,9 +16,7 @@
  * two, and state three notifies the point first when the answer is one.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

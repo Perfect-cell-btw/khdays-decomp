@@ -10,11 +10,7 @@
  * 02080734 (+0x2c), 0208073c (+0x30); class kind 0xe; the current entry pointer (+0x17c)
  * cleared, player (+0x180) and current entry (+0x179) -1, the link table (+0x178) 1 -- or 5 in
  * mission 0x25a (ov002 0206b84c).  Returns the table. */
-typedef signed char        s8;
-typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef unsigned int       u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov015SpotEntry {
     s8  nId;                  /* 0x00 */

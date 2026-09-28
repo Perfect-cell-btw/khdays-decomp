@@ -32,8 +32,7 @@
  * only together do they come out exact.
  */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void GXS_SetGraphicsMode(int nMode);
 extern void *G2S_GetBG0ScrPtr(void);

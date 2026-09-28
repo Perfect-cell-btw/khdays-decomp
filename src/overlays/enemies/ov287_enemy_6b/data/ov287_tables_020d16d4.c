@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by * Ov287_Actor_ResolveHit -- Ov287_Actor_ResolveHit. (020d0304): const struct ImpactIdPairs data_ov287_020d16d4; */
 const u8 data_ov287_020d16d4[8] = {

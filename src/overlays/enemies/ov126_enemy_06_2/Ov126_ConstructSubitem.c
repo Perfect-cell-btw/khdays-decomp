@@ -1,7 +1,6 @@
 /* Ov126_ConstructSubitem: sub-item constructor of the ov125 enemy (four handlers, speed 0x200,
  * capsule 0x1000/0x200 on the data_02041dc8 / data_02042240 axes). */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int x, y, z; } Vec3;
 

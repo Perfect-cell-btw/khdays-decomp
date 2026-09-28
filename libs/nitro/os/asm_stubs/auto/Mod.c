@@ -1,4 +1,4 @@
-typedef signed int s32;
+#include "nitro/types.h"
 
 /* Nintendo DS BIOS signed divide/remainder veneer. */
 asm s32 Mod(register s32 numerator, register s32 denominator)

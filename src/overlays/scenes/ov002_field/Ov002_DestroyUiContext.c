@@ -13,7 +13,7 @@
  * declaration order is what colours the eight locals the ROM's way.
  */
 
-typedef volatile unsigned short vu16;
+#include "nitro/types.h"
 
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void *NNS_FndGetNextListObject(void *pList, void *pObj);

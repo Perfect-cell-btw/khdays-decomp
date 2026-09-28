@@ -5,9 +5,7 @@
  * value, remainder in the high word). Deselects the old entry list[3 + ctx->field0] and selects
  * the new list[3 + wrapped] via Ov025_ShowItemList(entry, 0/1). Stores the new index, recomputes
  * the cursor pos (Ov025_SelectTierIfActive -> ctx->field_b4), clears ctx->field_b8, and refreshes. */
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct MenuCursor {
     s16 field0;         /* 0x0: selection index */

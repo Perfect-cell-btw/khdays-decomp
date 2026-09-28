@@ -1,6 +1,5 @@
 /* NitroSDK spi (pm.c): PMi_ReadRegisterAsync -- PXI command 0x65 (PM_REG_READ). */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef void (*PMCallback)(u32 result, void *argument);
 
 typedef struct PMData16 {

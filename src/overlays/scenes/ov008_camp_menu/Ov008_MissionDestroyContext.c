@@ -1,7 +1,7 @@
 /* Destroys the mission scene: releases its objects, elements, fonts and text renderers, frees its
  * resources and work buffers. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 first;

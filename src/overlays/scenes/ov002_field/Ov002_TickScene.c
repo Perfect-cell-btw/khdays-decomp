@@ -2,8 +2,7 @@
  * gauge slots (uploading their graphics and flashing icons when their hold expires) and handles the
  * pending prompt sound; returns whether everything is idle. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     unsigned long long qwStart;

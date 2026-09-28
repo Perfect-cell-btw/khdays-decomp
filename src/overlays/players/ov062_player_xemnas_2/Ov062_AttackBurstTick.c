@@ -3,8 +3,7 @@
  * pointed backwards along the heading (kind 0x2333, range 0x1000, no anchor); the burst takes
  * spin 0x1900, flags 0x205, the fixed 0xa00/0x66/0xa00 extent and no second block. A successful
  * submit that is not busy spawns effect 0xc4 (arg 2) at +0x26c8. */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

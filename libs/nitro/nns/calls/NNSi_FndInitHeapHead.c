@@ -1,6 +1,4 @@
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef signed long s32;
+#include "nitro/types.h"
 
 struct NNSFndLink {
     void *prev_object;

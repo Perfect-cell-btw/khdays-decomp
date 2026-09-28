@@ -6,8 +6,7 @@
  * to sixteen ids of live actors whose surface distance is within 0x8000, halving
  * their stagger timer when this enemy is in mode 1, firing reaction 0x11e at each,
  * and handing the collected list to Ov152_bindSubitemsByTypeId. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov151Vec3 {
     int x;

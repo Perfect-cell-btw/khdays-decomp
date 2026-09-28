@@ -8,7 +8,7 @@
  * place, reset to 0 each pass) with a separate local n = 32 - bitOffset, and keep
  * the store as `*base = ...; base++;` so it lowers to str rX,[r0],#4.
  */
-typedef unsigned int u32;
+#include "nitro/types.h"
 void BitArray_SetField(u32 *base, u32 bitOffset, u32 bitCount, int value)
 {
     u32 mask;

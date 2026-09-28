@@ -3,7 +3,7 @@
  * the +0x90 table is drawn with the +0x88 model's +0x78 mesh at its +0x2c point, scaled by its
  * offset, with polygon id = its handle, alpha = strength x 31 and a colour fading from white to
  * red with the strength. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[4]; } Quat;
 struct Shake { int offset; int strength; char pad08[0x10]; int handle; char pad1c[0x10]; Vec3 at; };

@@ -15,9 +15,7 @@
  * masks the high half with nothing.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define ACTOR_FLAGS(pActor) (*(unsigned long long *)(pActor)->aFlags)
 #define ACTOR_FLAGS2(pActor) (*(unsigned long long *)(pActor)->aFlags2)

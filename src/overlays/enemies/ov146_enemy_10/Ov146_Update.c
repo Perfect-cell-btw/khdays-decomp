@@ -2,8 +2,7 @@
  * of the owner's scene list (other than the owner and its +0x3b8 partner) within 48.0 of the owner is
  * marked (+0x1c5 bit 4); when the effect state changes to off the marks clear. The +0x38c state is
  * remembered in +0x390 and the base update runs. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 

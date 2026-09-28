@@ -14,9 +14,7 @@
  * and the registration's is int (the reload r8 feeds both the index and
  * that call); u32 on either side re-colours the row temps.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define PAGE_STRIDE 0xa0
 #define PAGE_COLS   5

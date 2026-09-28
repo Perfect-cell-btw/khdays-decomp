@@ -10,8 +10,7 @@
  * width x height tiles), then the extra surface: template f938 (+4) while
  * the gate is clear, template f960 (+10) while it is set.
  */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT       6
 #define CHAR_BASE_FIRST 0x120

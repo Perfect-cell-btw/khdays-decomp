@@ -4,7 +4,7 @@
  * the +0x3e0 point (kind 0x17, param 3), slots 2/3 spawn pair 2 on the actor's +0xa0 pose (flag
  * set for slot 3), slots 1/4/5 spawn pair 1/3/4 at the transform, and slot 5 also sets pose 1.
  * The base hook always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int x, y, z; } Vec3;

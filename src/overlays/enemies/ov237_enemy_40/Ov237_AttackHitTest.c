@@ -3,8 +3,7 @@
  * marked it in the +0x57 mask, is pushed (020ca918, kind `kind`). The first target hit spawns effect
  * `effect` 1.25 above it, plays hit sound 0x12d (variant 5 for kind 0, 0xc for kinds 2 / 4) and
  * returns 1; 0 when nothing is hit. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);

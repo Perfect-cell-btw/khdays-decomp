@@ -4,9 +4,7 @@
  * a track frame is pending (+0x38 of it), the track pointer (+0x34) cleared, bit 6 dropped, the
  * track (+0x15b0) set to -1, the turn state (+0x15b4), the last track sample (+0x159c) and the
  * angle offset (+0x15a8) cleared. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

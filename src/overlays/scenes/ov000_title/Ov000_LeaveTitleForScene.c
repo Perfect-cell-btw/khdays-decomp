@@ -11,7 +11,7 @@
  * `OVERLAY_12_ID = 12;`.  Spelled as plain integers the two pool words disappear and the
  * function comes out 8 bytes short.
  */
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef u32 FSOverlayID;
 typedef void *StateFn;
 

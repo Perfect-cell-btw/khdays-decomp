@@ -2,7 +2,7 @@
  * that owns the 0x5c-byte trigger pieces, install its four handlers in the slots every
  * piece class uses (arm 02080408, update 020804a4, 0208041c, hit test 02080424) and tag
  * it as class kind 0xd. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
 extern void Ov015_SetByte0x50To2IfQ1(void);

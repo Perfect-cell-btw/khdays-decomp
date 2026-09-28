@@ -12,9 +12,7 @@
  * MATCH NOTE: the halfword tests MUST be bitfield reads, not (short)/>>16
  * casts of a u32 -- the cast form allocates the word to a fresh register while
  * the bitfield form reuses the address register (6-byte residue otherwise). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov000PageSlot {
     int base;

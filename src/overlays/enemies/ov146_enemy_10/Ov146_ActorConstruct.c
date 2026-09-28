@@ -5,7 +5,7 @@
  * rig, subscribed to the +0x9c scene, its data_ov146_020cf534 sub-part goes to +0x3b8, the rig pose
  * resets and record 0xc binds to the +0x388 slot. Two collision cylinders from the +0x64 sphere at the
  * origin are registered in the +0x22c (16) and +0x144 (4) pools; the second is kept in +0x3b0. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 center; int nRadius; } Sphere;
 typedef struct { char data[0x24]; } AnimSlot;

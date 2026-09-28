@@ -11,7 +11,7 @@
  * part; when that point lies on ground 3.5 below 32.0 the actor is knocked back there (mode 0x27).
  * Codegen: compiled with opt_dead_assignments off (push/pop scoped) and the products through the FX_Mul
  * inline; either one alone leaves the climb's difference and low word in swapped registers. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { unsigned f : 8; } B8;

@@ -7,8 +7,7 @@
  * the 14-byte message of data_ov255_020d2b60 carries its +0x74 point to the hook, its bit is set
  * and reaction +0x3f8 mode 9 fires there. Once the +0xc idle byte clears, the +0x54 cooldown is
  * re-rolled in [+0x224, +0x228] and sub-state 2 is requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo; u16 hi; } Cmd4;

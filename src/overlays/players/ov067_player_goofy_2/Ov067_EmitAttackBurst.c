@@ -8,8 +8,7 @@
  * result then picks the follow-up: 1 arms the +0x47a/+0x47b pair and asks for step 2
  * when busy or step 1 outside pattern 2, 2 asks for step 1, 4 asks for step 2 unless +0x26c0
  * says 2. */
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 

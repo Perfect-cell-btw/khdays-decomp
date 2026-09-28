@@ -1,6 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
+#include "nitro/types.h"
 typedef u16 GXScrFmtText;
 
 #define PLANE_WIDTH 32

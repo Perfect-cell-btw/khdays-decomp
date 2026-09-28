@@ -2,7 +2,7 @@
  * more only for local player 0), clear the movement fields, seed the scale at +0x118 to 0x1000, and
  * copy the zero vector into the position at +0x104. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int nX;

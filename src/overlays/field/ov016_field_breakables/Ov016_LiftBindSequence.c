@@ -3,8 +3,7 @@
  * unless the render node (+0x28) already carries a palette (bit 5 of +0x38), copy the lift's
  * palette id (+0x18) into it (+0xb8) and flag it (bit 5 of +0x3c); the sequence node gets
  * the palette id (+0x22c) and its flag (bit 5 of +0x1b0) unconditionally. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov016LiftDef {
     u8 pad_00[0x58];

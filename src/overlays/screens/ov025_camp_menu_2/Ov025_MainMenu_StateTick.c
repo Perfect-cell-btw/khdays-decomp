@@ -9,10 +9,7 @@
  * (020891dc), the sub-object (+4) is reset (0208e5a4) and told the transition direction 4 (0
  * from day 357 on; 0208eaf8, kept at +0x14ec).  State 1 runs 0208d05c / 0208d2a4 / 0208d454
  * and stamps the opening tick (+0x14d4).  The sub-object ticks every call (0208ea58). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionResourceDescriptor {
     const char *pszPath;      /* 0x00 */

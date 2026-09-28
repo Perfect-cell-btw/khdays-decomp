@@ -11,8 +11,7 @@
  * keeps the unread stack copy of the position the ROM has. About 24 other
  * functions in the game carry the same unread copy.
  */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

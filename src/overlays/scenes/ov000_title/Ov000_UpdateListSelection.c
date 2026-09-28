@@ -11,9 +11,7 @@
  * fields -- kept as a local view rather than merged into Ov000SceneContext.
  */
 
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 unknown_0;

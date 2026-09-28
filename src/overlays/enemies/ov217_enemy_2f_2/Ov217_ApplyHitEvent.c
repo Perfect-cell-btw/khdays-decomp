@@ -1,7 +1,5 @@
 /* Ov217_ApplyHitEvent: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 typedef struct { int x, y, z; } VecFx32;
 typedef struct { u8 a, b; } Pair2;

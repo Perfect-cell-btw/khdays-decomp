@@ -4,8 +4,7 @@
  * of the +0x390 pool (subscribed), the three +0x394 sub-items from the pool entries named by the
  * overlay's kind table (attached, bit 1), a shape on the +0x22c list (+0x388, bit 1) and clears
  * +0x38c. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct w8 { unsigned int lo : 8, rest : 24; };
 

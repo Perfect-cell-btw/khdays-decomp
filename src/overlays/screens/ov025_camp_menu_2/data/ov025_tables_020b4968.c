@@ -9,8 +9,7 @@
  *   data_ov025_020b4978: Ov025_ReportDetail_SetupSurface
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const int data_ov025_020b4968[4] = {
     0, 2, 0, 0,

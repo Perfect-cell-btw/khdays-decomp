@@ -2,7 +2,7 @@
  * +4 rig finishes, a remaining charge step (+0x34) replays the charge sound (0x12d variant 10) with
  * pose 0x17 and effect 0xb, and the last one clears the +0x30 clock, plays pose 0x18 with effect 0xc
  * (both effects skipped in +0x49e mode 3) and waits on 020cf784. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov237_ChargeRelease(int *node);

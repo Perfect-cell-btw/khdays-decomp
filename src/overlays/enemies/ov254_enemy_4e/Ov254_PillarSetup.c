@@ -6,7 +6,7 @@
  * 7.0).
  * Codegen: the +0x70 scale and the +0x388 contact slot go through local pointers and the +0x9c body
  * through LoadPtr; the plain spellings colour the constant and copy registers differently. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; Vec3 axis[3]; Vec3 half; } Box;

@@ -1,8 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 /* One entry of the tally at the tail of the result. */
 typedef struct {

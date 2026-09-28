@@ -6,8 +6,7 @@
  * FX_AcosIdx 02005430): turn state 1 rewinds the actor's angle (+0x1a30 / +0x1a34) by the
  * heading's change since the last offset (+0x15a8) and pushes it onto the entity, and the
  * heading, negated when the entry's third word is not negative, becomes the new offset. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

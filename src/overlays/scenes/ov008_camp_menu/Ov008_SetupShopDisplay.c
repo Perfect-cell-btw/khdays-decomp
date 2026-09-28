@@ -11,9 +11,7 @@
  *
  * MMIO through held volatile register pointers as in Ov008_MainMenu_SetupDisplay.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct DisplayRegisters {
     volatile u32 dispcnt;      /* +0x00 */

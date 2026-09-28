@@ -6,7 +6,7 @@
  * the sampler's reading into both the current and previous slots and stamp the
  * tick, and they disarm again once the gate closes.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

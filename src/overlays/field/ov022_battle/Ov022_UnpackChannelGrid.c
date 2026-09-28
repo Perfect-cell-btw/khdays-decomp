@@ -10,10 +10,7 @@
  * then reset with every cell cleared.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define MODE_COUNT 3
 #define LEVEL_MAX 3

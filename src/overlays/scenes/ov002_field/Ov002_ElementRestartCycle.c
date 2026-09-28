@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);
 extern int GameState_GetField(u16 nId, unsigned char nSlot);

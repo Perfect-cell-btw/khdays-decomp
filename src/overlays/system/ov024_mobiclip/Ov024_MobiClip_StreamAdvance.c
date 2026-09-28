@@ -4,7 +4,7 @@
  * says this frame carries. If stepping again would run past the window limit
  * the position is put back and the reader is asked for more data first.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct MobiClipStream {
     u8 _pad00[0x44];

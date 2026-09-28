@@ -1,4 +1,4 @@
-typedef int OSIntrMode;
+#include "nitro/os.h"
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(OSIntrMode state);

@@ -12,10 +12,7 @@
  * a fifth of its member's full health, past 50 when under half.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* Ov002MissionMemberBody: the member's own stored stat row */
 struct StatRow {

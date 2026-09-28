@@ -1,8 +1,6 @@
 /* DispOamBuffer_Push -- append one OAM entry (attr01 + attr2) to the object's bounded OAM buffer
  * (count +0x4630, capacity +0x462c, 8-byte entries from +0x4638). Returns TRUE when stored. */
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int BOOL;
+#include "nitro/types.h"
 
 typedef struct {
     u32 attr01;

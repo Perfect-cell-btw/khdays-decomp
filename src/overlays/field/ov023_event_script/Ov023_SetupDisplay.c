@@ -7,8 +7,7 @@
  * colour is reset (G3X_SetClearColor); the sub engine gets banks 0x180 / 8 and its DISPCNT
  * bits 4 and 21 with mode 1 (bits 8..12); finally the sprite layer is reset (02010f08,
  * 02010e80 3 / 1, 0201133c, 02011174 0x8000 / 1). */
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 static volatile u16 *const REG_DISP3DCNT = (volatile u16 *)0x04000060;
 static volatile u32 *const REG_DISPCNT = (volatile u32 *)0x04000000;

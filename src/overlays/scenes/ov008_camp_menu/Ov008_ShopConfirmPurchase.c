@@ -7,8 +7,7 @@
  * and runs its grant hook.  The panel is redrawn and the next state
  * (Ov008_CommitSelection) is returned, or 0 when nothing was pressed.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define KEY_CONFIRM_MASK 0xb
 #define FLAG_ITEM_SEEN_BASE 0x4db

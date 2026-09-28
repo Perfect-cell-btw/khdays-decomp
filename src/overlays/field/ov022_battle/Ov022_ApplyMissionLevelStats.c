@@ -22,9 +22,7 @@
  * in place before the table lookup, as the original does.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define FLAGS_RESCALE 0x8000000000ULL   /* bit 39: rescale to half the tally */
 #define MODE_MISSION 2

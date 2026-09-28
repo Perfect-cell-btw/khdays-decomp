@@ -4,8 +4,7 @@
  * (+0x72c / +0x730 / +0x734), the chest flags (+0x464), the timer (+0x728) and the ack
  * mask (+0x725) are cleared, the handler block (+0xc) points at the chest update
  * (02081ca8), the piece flags get 0x48 and the refresh bit (bit 0 of +0x724) is set. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

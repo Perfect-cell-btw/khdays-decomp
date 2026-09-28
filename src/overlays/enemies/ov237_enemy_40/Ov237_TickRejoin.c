@@ -5,8 +5,7 @@
  * partner's pose; alone, the health is saved in +0x4a0 and the same flags change on the actor itself.
  * Then +0x60 / +0x64 are set, effect 0x12 plays, the rig's flag 0 clears, the merge sound (0x12d
  * variant 0x11) plays and the brain waits on 020d09cc. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 typedef struct { u8 b0 : 1; } Bit0;

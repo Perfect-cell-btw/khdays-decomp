@@ -4,8 +4,7 @@
  * the second GameState field / bit (+0x1ba / +0x1bc), bucket (+0x10), the step function
  * (+0xc = Ov017_ItemStep 02080720), piece flag bit 3, the GameState field / bit (+0x14 /
  * +0x16) and +0x17 = 1; then registers the piece (ov002 02076480). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

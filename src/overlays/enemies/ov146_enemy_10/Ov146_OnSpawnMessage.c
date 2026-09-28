@@ -2,7 +2,7 @@
  * and starts the +0x3c4 effect pair of the sub id: 0 at the transform scaled 2.0, 1 and 2 at the
  * partner chain's (+0x3b8 of +0x3b8) +0x14 point scaled 2.0 (variant 0 / 2), 4 attached to the actor
  * pose (+0xa0). The base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[11]; } SrtTransform;
 struct EffectPair { int res; int handle; };

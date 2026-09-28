@@ -3,7 +3,7 @@
  * +0x38 at its +0x74 position, raises bits 1-2 and clears bit 7 of the +0x60 high byte, sets
  * bit 2 of the state's +0x52 and installs the three slot handlers (1: 020cfa88, 0: 020cf4b4,
  * 2: 020cf984). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

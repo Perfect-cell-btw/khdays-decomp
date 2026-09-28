@@ -1,9 +1,7 @@
 /* Sets up the save page's graphics: resets the 2D engines, assigns the VRAM banks, sets the display
  * modes, the background controls and priorities, the windows and the blending. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void Gfx_Reset2DEngines(void);
 extern void GX_SetBankForTex(int bank);
@@ -98,5 +96,4 @@ void Ov025_InitializeSavePageGraphics(void)
     GX_SetBankForSubBGExtPltt(0);
     G2x_SetBlendAlpha_((volatile u16 *)0x04000050, 1, 0x1e, 0x10, 0x10);
 }
-
 

@@ -1,7 +1,7 @@
 /* Hides the unused OAM entries, then uploads the buffer now (engine A or B) or enqueues the upload.
  */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void DC_FlushRange(const void *addr, u32 size);
 extern void GX_LoadOAM(const void *src, u32 offset, u32 size);

@@ -10,8 +10,7 @@
  * down to whole units, and the three trailing words this kind adds follow.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define SLOT_KIND 0xe
 #define SLOT_TAG 0xc3

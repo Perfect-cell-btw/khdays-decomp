@@ -2,10 +2,7 @@
  * heading to place it, aims its velocity at the target, binds its animations and plays its launch
  * reaction. */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

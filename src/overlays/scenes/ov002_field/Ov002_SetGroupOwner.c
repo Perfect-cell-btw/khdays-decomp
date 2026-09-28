@@ -13,7 +13,7 @@
  * Ghidra carries the layout as Ov002GroupEntry and Ov002GroupMember.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207fa14;
 

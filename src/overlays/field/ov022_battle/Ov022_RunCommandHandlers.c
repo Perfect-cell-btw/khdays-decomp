@@ -11,9 +11,7 @@
  * leave the previous frame's answer behind.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct Command {
     u8 pad00[0x14];

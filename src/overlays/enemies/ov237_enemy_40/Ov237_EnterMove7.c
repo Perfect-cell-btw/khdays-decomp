@@ -1,7 +1,7 @@
 /* Enter move 7 of the ov237 actor: the +0x30 timer clears, the +0x54 flag is set and pose 0x12
  * plays; without a +0x4b4 hold an effect 0xf plays at the +0x38 point, then the brain waits on
  * 020cfb98. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov107_PostTagUpdate(int a, int b, int c);

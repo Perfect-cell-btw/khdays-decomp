@@ -1,7 +1,7 @@
 /* Once the menu is ready, starts the reward multiplier presentation when it applies, otherwise goes
  * straight to the list. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Ov005Context {
     char opaque00[0x4bf0];
     int menuState;

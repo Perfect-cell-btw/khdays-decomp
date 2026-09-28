@@ -7,8 +7,7 @@
  * the slot is read as `((void **)(self + 0x258))[i]` but cleared through a differently spelt
  * address (`self + i * sizeof(void *) + 0x258`) -- the same spelling on both sides lets mwcc
  * keep the address in a callee-saved register across the remove call, the ROM recomputes it. */
-typedef unsigned short u16;
-typedef short s16;
+#include "nitro/types.h"
 
 extern void NNS_G3dRenderObjRemoveAnmObj(void *renderObj, void *anmObj);                    /* NNS_G3dRenderObjRemoveAnmObj */
 extern void BindAnimTrack(void *animation, u16 track, void *table, s16 mode); /* BindAnimTrack */

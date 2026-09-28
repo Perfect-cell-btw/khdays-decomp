@@ -4,9 +4,7 @@
  * base pointer p = &ctx->sel, but it INCREMENTS the item's count (restoring it) instead of
  * decrementing, and on the unavailable path it refreshes first (Ov025_RefreshMenuPage) then plays
  * the cue (PlaySound(0,4)). See the confirm twin for the addressing-form notes. */
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov008SelCtx {
     u8  pad_0000[0x4c];

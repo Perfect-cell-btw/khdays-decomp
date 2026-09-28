@@ -7,7 +7,7 @@
  * (+0x78) forces mode 5. Mode 0 plays pose 2 / partner motion 1 and moves on to 020cf7d8; other
  * modes play pose 3m+1 (partner motion 3 or 6 for modes 1 / 2), clear +0x64 and move on to
  * 020cf6a0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
 

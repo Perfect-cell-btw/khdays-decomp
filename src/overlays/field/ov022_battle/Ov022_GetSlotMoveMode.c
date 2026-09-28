@@ -16,10 +16,7 @@
  * A state outside the table answers -1.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 #define MODE_UNKNOWN (-1)
 #define MODE_WALK 0x17

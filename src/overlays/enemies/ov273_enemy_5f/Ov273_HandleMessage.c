@@ -8,8 +8,7 @@
  * angle and distance around the actor and runs its +0x1cc hook; 5 attaches pair 7 at the body
  * rig's +0x30; 6 plays pair 2 at the unpacked point; 7 / 9 / 8 register effect 0x162 (modes
  * 0xc / 5 / 0xa) on the +0xa0 pose into +0x424 / +0x428 / +0x42c. The base handler always runs. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int w[11]; } Srt;
 struct Pair { int res; int handle; };

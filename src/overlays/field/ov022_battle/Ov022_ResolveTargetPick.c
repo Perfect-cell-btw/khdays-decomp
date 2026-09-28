@@ -10,7 +10,7 @@
  * A pick that resolves to nothing is wiped, so nobody reads a stale pointer.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct ActorSub {
     u8 pad00[4];

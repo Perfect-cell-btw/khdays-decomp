@@ -11,9 +11,7 @@
  * when it has.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define ANCHOR_RAISE 0x200
 #define ANCHOR_REACH 0x800

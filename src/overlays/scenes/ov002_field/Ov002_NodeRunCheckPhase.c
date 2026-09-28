@@ -1,5 +1,4 @@
-typedef signed char s8;
-typedef signed short s16;
+#include "nitro/types.h"
 
 typedef struct Ov002TaskNode Ov002TaskNode;
 

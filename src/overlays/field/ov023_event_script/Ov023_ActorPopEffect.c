@@ -4,8 +4,7 @@
  * effect as track 0 of the actor's own animation (+0x328, blend table +0x408; 0202accc) and
  * rewinds it to frame 1.0 (01fff774); mode 1 takes half the entity animation's length in
  * frames (0202aef8) as the period.  The queue then moves up one entry until an empty one. */
-typedef unsigned char  u8;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 typedef struct Ov023Entity {
     int  nFlags;              /* 0x00 */

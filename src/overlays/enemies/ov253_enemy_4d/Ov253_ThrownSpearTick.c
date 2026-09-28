@@ -7,8 +7,7 @@
  * solid (+0x60 bit 0), not ghosted (bit 7) and not disabled (+0x1ac bit 2), with the same result.
  * Past 45.0, or once blocked/grounded (+0x17a bits 0, 1, 3), the owner's reaction mode 7 fires and
  * pose 2 is requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 typedef struct { Vec3 p0; Vec3 dir; int nLength; } Ray;

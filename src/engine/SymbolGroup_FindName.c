@@ -11,8 +11,7 @@
  * the branch. Unlike that sibling this one returns the walking pointer itself, so there is
  * no index multiply on the return path. Declaration order of the locals is load-bearing for
  * the callee-saved colouring: ppTables must be declared ahead of nTableCount. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct SymbolEntry {
     char aName[8];

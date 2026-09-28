@@ -11,9 +11,7 @@
  * the panel sub-object (+0x31c) is cleared, set up for the scene (0208c434) and its id summary
  * (+0x480) built (0208c65c), its byte 0 taking bit 0 when its byte 1 is set.  Codegen: the "ro"
  * name in a local shared by the three OS_SPrintf calls (as the ov008 twin). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov025ModelActor {
     u8   pad_000[0x18];

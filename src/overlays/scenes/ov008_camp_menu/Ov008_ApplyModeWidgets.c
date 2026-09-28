@@ -6,7 +6,7 @@
  * values of 0x35 and 0x36 (Ov008_ReleaseTwoSlotsEx). If the applied mode changed since last time
  * (ctx->selected), it fires PlaySound(0, 0), then stores the new mode. Twin of
  * Ov008_ApplyModeWidgets2 (same shape, ctx->selected at 0x184 there). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008ModeCtx {
     u8  pad_0000[0x4fc];

@@ -4,7 +4,7 @@
  * the arena anchor (-0.25, 3.25, -1.5) +0x6b becomes 4, below height 12.0 of the +0xc track 0,
  * above 19.0 it becomes 1, each setting the +0x74 request. Past x 12.0 +0x78 / +0x7c are set.
  * The +0x48 timer advances and, in moves 2-4, the +0x50 countdown runs down to 0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 

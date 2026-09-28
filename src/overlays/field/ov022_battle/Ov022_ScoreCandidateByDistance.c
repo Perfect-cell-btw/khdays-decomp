@@ -1,10 +1,7 @@
 /* Scores the other players of the same group within range as lock-on candidates (visible, in line
  * of sight); returns the best distance. */
 
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;

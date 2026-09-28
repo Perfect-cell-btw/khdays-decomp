@@ -6,9 +6,7 @@
  * handed to the spawner, the slot is marked active, and the follow-up runs.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define RELEASE_ID 0xe4a
 #define RELEASE_KIND 0xb

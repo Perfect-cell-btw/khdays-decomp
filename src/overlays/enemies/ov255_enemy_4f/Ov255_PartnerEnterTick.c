@@ -2,7 +2,7 @@
  * and bit 1 is raised, the low byte of its +0x38c rig's +8 word gets bit 0, +0x18 becomes 0.25,
  * +0x1c and +0x14 clear, effect 2 is spawned at the origin and the tick hands over to
  * Ov255_HomingShotFlightTick. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct hw60 { u16 lo : 8, hi : 8; };
 struct Word8 { unsigned int lo : 8; };

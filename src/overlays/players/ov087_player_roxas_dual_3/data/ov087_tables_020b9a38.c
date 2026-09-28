@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Spawns the ov049 enemy's next effect (x4: ov049/068/087/104) when the rig's countdown at (020b8fa4): OffsetTable data_ov087_020b9a38; */
 const u8 data_ov087_020b9a38[192] = {

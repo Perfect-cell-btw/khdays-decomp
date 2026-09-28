@@ -1,16 +1,9 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef short s16;
-typedef int s32;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
 typedef void (*WMCallbackFunc)(void *arg);
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 
 /* NitroSDK WM (wireless manager) library, ARM9 side, as linked into ov105. */
 #define WM_FIFO_BUF_SIZE        256
@@ -211,7 +204,6 @@ typedef struct WMArm9Buf {
     u32 connectedAidBitmap;                             /* 0x14c */
     u16 myAid;                                          /* 0x150 */
 } WMArm9Buf;
-
 
 typedef struct WMMpRecvBuf {
     u16 rsv1[3];

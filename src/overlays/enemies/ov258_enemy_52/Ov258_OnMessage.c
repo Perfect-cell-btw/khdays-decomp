@@ -4,7 +4,7 @@
  * the message position (bank 5 / 0xd / 0x17, scale 1.0 for 6, 7 and 0x16 else 3.0); 12 and 0x1b fill the
  * first free shot (020d06a0, ten from 12) or burst (020d0a5c, six from 0x1b) slot (the slot index is passed on), 0x19 / 0x1a spawn a
  * beam (020d0dbc) and 0x2a a marker (020d14e4, +0x5b8) at the position. The base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct EffectPair { int res; int handle; };
 struct Ov258Effects { char pad[0x464]; struct EffectPair pair[0x30]; };

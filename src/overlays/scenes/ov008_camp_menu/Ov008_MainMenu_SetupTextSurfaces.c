@@ -17,7 +17,7 @@
  * land at the ROM's sp offsets.
  */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u32 nUnk00, nUnk04, nWidthTiles, nHeightTiles, nRowTiles, nPaletteIndex;

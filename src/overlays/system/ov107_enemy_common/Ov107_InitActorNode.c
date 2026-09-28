@@ -4,7 +4,7 @@
  * fresh sub-object at +0x9c (with its own flag bit 1), set hw60 bit 15, and init the child list.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     int nX;

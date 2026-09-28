@@ -5,8 +5,7 @@
  * hook in the 14-byte message of data_ov257_020d32f6 and reaction +0x408 mode 0x2b fires there.
  * Animation 0x10 plays, the +0x50 timer and +0x65 clear and the tick hands over to
  * Ov257_StrikeWindUpTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 lo; u16 hi; } Cmd4;

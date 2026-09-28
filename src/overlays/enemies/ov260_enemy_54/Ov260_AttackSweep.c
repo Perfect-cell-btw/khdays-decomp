@@ -4,8 +4,7 @@
  * is pushed away flat at half strength (020ca918 with `kind`); an accepted hit spawns the impact
  * effect (7 for cylinder/sphere, 0 otherwise) at the sphere's scaled contact or the victim, and is
  * marked struck. Any hit sounds the attack (020cd148 mode 4). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 

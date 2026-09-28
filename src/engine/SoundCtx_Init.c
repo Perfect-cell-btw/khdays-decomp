@@ -5,12 +5,7 @@
  * free, unreferenced and unmapped), a 0x4b000-byte stream heap and a 0x4000-byte effect heap. Then
  * ClearGlobalFields80to84 runs and the playback defaults are set (volumes 0xa000 / 0x32000, levels 0x7f,
  * scale 1.0). Returns TRUE. */
-typedef unsigned char u8;
-typedef signed char s8;
-typedef short s16;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int BOOL;
+#include "nitro/types.h"
 typedef struct NNSSndHeap *NNSSndHeapHandle;
 
 #define SND_BANK_NUM 4

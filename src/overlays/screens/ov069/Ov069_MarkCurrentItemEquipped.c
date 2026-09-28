@@ -1,6 +1,6 @@
 /* Marks game flag 0x20e1 according to whether the current item id (2021980) occupies any slot
  * of the save block's three 40-entry +0xee0 rows: set when found, cleared otherwise. Always 1. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int ScriptVm_ReadOperandInt(void *, int);
 extern void GameState_SetFlag(int flag);

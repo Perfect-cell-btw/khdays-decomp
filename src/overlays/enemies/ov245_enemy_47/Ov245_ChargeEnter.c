@@ -1,7 +1,7 @@
 /* Ov245_ChargeEnter -- charge entry: raises bit 7 and clears bit 0 of the actor's +0x60 high
  * byte, clears bit 0 of the +0x388 item's +8 low byte, zeroes the state's +0xc vector, keeps
  * the +8 origin at +0x34, clears the +0x30 timer and installs the charge delay (020ceef0). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };

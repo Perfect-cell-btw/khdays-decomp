@@ -6,8 +6,7 @@
  * hidden otherwise; a +0x3ac grab is let go (ov022 020ad8e0) outside sub-state 0xa. Then the
  * segment from the +0x39c bone's +0x14 to the +0x3a0 bone's +0x14 (unit direction, length, radius
  * 0x399) is written into the +0x38c item's and the +0x388 part's +0x58 and the base tick runs. */
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 origin; Vec3 dir; int nLength; int nRadius; } Segment;
 typedef struct { char pad[0x58]; Segment seg; } Ov272Item;

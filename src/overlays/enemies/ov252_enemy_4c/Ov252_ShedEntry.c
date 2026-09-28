@@ -1,6 +1,6 @@
 /* Shed entry of the ov252 actor: bits 0-1 of +0x1ae are set, the nine +0x4e8 armour shapes hide, sound
  * 0/0x4a plays at its +0x74 position and the node moves on to 020d2d88. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { unsigned f : 8; } B8;
 struct Ov252Armour { char pad[0x4e8]; int shapes[9]; };
 

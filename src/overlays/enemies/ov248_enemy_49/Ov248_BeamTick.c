@@ -5,8 +5,7 @@
  * beam: effect 1 (flag 3), the owner's effect 8 and the actor's effect 0 (flag 1) at its +0x74
  * point, reaction 0 mode 0x53 at the +8 point, and the tick hands over to Ov248_AiStep_QueueAction0OnAnimEnd. Past
  * 3.0 without a hit the beam ends the same way without the hit effects. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 p0; Vec3 dir; int nLength; int nRadius; } Segment;
 

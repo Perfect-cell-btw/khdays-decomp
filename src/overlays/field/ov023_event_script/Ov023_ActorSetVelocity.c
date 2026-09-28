@@ -3,8 +3,7 @@
  * (+0x1a34) becomes 0x13fff minus the heading of the normalised vector (VEC_Normalize,
  * FX_Atan2 of z / x), as a u16.  The horizontal step (+0x15e8 x, +0x15ec 0, +0x15f0 z) is the
  * velocity, or zero when it is no longer than 0x10 (VEC_Mag). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

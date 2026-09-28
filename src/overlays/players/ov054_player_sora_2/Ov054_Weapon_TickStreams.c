@@ -1,9 +1,7 @@
 /* Commits the widget scroll for the frame and, outside mode 0x2a, feeds both stream groups
  * (flagging the local player when idle). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 struct Part { int header; u16 flags; };
 struct StreamGroup { u8 bytes[0x30]; };
 struct Scroll { u8 bytes[8]; };

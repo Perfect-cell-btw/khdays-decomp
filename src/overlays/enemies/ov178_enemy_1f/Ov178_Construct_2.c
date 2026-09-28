@@ -3,7 +3,7 @@
  * +0x60 high byte, bit 2 of the +0x1ae flags, the +0x70 latch, clears the two +0x54/+0x58
  * counters, raises bit 2 on the subscriber's +0x5c, then builds the model item from table
  * entry 3 of the +0x388 pool, subscribes it and clears its state. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 
 extern void Ov178_OnDespawn(void);

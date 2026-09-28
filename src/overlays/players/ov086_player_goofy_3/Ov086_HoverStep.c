@@ -9,7 +9,7 @@
  *
  * Lever: the slot callback takes (self, 0) -- the zero of the six velocity stores is still live
  * in r1 at the blx, which is why the ROM colours it r1 and re-materialises it for state 0. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Session_GetLocalPlayerIndex(void);

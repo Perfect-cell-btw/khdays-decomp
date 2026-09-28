@@ -5,9 +5,7 @@
  * texture image parameter plus the VRAM key of its format (+0x74, with bit 29 set), the
  * palette base (+0x78, offset plus key, halved for 16-colour palettes), the width (+0x7c) and
  * height (+0x80) fields of the extra parameter; the resource file is freed. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
+#include "nitro/types.h"
 typedef struct NNSG3dResDict {
     u8 revision, numEntry;
     u16 sizeDictBlk, dummy, ofsEntry;

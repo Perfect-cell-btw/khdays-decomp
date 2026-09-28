@@ -6,10 +6,7 @@
  * (02084a8c) those within the knob height less 16 are shown (0208884c), the caps 2 and 3
  * shown, the second pair of every entry 2..0x13 released (020888b0) and the bar placed
  * (Ov025_ScrollList_PlaceKnobBar 020add28). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct TileBlock {
     u8   pad_00[0x20];

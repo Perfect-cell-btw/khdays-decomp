@@ -1,10 +1,6 @@
 /* NitroSystem G3D material SBC handler, including the game RGB scale extension. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef signed short s16;
-typedef signed long s32;
-typedef signed long fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct NNSG3dResDictTreeNode {
     u8 refBit;

@@ -1,6 +1,4 @@
-typedef signed long fx32;
-typedef signed long long fx64;
-typedef signed long long fx64c;
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x, y, z;

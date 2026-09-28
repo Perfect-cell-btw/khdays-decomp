@@ -3,10 +3,7 @@
  * topic's string from the text at +0x78, GetVarRecordByIndex 02089894, and its id) and the
  * count (+4) stored; the table is then bubble-sorted by the display order of each id
  * (data_ov025_020b41dc), lowest first. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025TutorialList {
     void *pHeader;            /* 0x00 */

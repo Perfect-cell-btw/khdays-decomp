@@ -7,7 +7,7 @@
  * +0x144 list; the +0x3b8 effect (item 0x2c, callback 020ce3f8) is attached and hidden; the five
  * +0x3b0 slot models (kinds of data_ov253_020d4950) are attached and hidden, the second one also
  * flagged; a placement at the origin (scale 1.0) fills +0x3b4, +0x3c0 clears and sound 0x16c loads. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int id[5]; } IdTable;

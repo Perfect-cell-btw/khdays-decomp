@@ -3,8 +3,7 @@
  * banks are laid out (sub OBJ bank D, LCDC bank C) and DISPCAPCNT is programmed: with blending
  * (flag 1) capture of A+B into bank +4 with EVA = +0xc and EVB = 16 - EVA, otherwise a plain 3D
  * capture into bank +4. The main screen's layers take the +8 mask and the sub screen shows OBJ. */
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u32 flags;          /* 0x00 */

@@ -9,8 +9,7 @@
  * entry whose id it names. The record pointers go back.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define GROUP_COUNT 2
 #define LIST_COUNT 3

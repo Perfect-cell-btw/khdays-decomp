@@ -17,8 +17,7 @@
  * position is a wrapped-value copy (FxVec) so the unread stack copy survives; the two-pass
  * counter is a signed char; the entity id at +0x1b4 is read unsigned.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Vec3 { int x, y, z; };
 typedef struct { int value; } Fx32;

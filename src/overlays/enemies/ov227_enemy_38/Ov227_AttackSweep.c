@@ -6,8 +6,7 @@
  * the attack, knock 100, a random reaction 70 % of the time), otherwise the ov107 checker decides.
  * An accepted hit sends message 0 at the entity (or the matching point on the sphere) and marks it;
  * any hit fires reaction 0x4f (attack 6) or 0x51 at the +8 target. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int nRadius; } Sphere;
 struct Bit6 { u8 b0 : 1, b1 : 1, b2 : 1, b3 : 1, b4 : 1, b5 : 1, b6 : 1; };

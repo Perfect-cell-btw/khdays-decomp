@@ -5,8 +5,7 @@
  * sphere's surface towards it to the owner's +0x24 hook. The head point is then remembered in +0x24.
  * Once the +0x30 idle byte clears, animation 2 plays once, +0x12, +0x1c and +0x20 clear and the
  * tick hands over to Ov277_SummonTick. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

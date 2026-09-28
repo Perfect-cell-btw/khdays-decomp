@@ -15,10 +15,7 @@
  * Codegen: the position packs go through Fx32 wrapper copies (ov122_020d12f4 idiom); the hit
  * position is a stack copy with y raised in place; the point counter is a signed char and the
  * ca918 call's trailing zero is a local set before each hit loop (it lives in fp). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;

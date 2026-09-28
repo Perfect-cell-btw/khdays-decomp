@@ -7,8 +7,7 @@
  * engine's BG palette, BG1 characters and BG1 screen; then the file is closed
  * and freed.
  */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ENTRY_ALT_ARCHIVE 0x10000
 #define ENTRY_MEMBER_MASK 0x1ff

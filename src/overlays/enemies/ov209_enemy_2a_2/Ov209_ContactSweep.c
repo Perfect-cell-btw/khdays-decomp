@@ -3,7 +3,7 @@
  * on the ground plane (forward when on top of it); on acceptance effect 1 spawns at the entity
  * pushed out of the box, or at the sphere surface along the push. When anything was hit,
  * reaction 0x154 fires at the +8 position, mode 7 for kind 0 and mode 9 otherwise. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 

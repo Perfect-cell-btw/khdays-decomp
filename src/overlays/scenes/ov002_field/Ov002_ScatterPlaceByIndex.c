@@ -1,4 +1,4 @@
-typedef signed short s16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;

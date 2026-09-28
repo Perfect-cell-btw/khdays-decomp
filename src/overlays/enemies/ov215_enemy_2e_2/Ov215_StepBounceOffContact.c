@@ -13,9 +13,7 @@
  * mode field as a plain statement drops the compare the original emits and the
  * function comes out four bytes short.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "nitro/types.h"
 
 struct VecFx32 { int x, y, z; };
 struct MtxFx33 { int m[3][3]; };

@@ -26,9 +26,7 @@
  * SceneNode_SetFlag40 takes 2, Archive_LoadFile (Archive_LoadFile) takes 2.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 extern void  RegisterSeqAndInit(void *node, u32 desc, int a, int b);
 extern void  NNS_G3dMdlSetMdlPolygonIDAll(int list, int a);

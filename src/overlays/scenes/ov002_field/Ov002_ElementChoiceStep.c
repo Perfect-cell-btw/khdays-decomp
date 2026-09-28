@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern u8 data_0204be04;
 extern const char data_ov002_0207f480[];

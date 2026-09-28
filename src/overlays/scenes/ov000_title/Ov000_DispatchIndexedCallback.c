@@ -1,7 +1,7 @@
 /* Copy six callbacks into locals, invoke the one selected by the index at context+0x4bc4, then
  * reset the sub-objects at +0x2c and +0x78. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*OverlayCallback)(void);
 
 typedef struct {

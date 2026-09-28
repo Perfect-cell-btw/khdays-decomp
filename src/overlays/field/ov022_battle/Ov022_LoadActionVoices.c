@@ -13,8 +13,7 @@
  * A container opened here goes back.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define TAG_MAX 16
 #define TAG_NONE (-1)

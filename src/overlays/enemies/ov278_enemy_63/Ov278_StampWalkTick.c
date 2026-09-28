@@ -7,8 +7,7 @@
  * The +0x7c step flag alternates: at frame 15 it rises and, with foot 0 alive, note 2 of
  * data_ov278_020d63e4 goes to the actor's hook and reaction mode 0xb fires at foot 0; at frame 33 it
  * falls and, with foot 1 alive, note 3 goes out and mode 0xc fires at foot 1. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

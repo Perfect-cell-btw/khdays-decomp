@@ -4,9 +4,7 @@
  * with its digit frame (value % 10) while the value is non-zero, the units cell
  * always; leading cells with nothing left are hidden.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define VALUE_MAX 999
 #define DIGIT_CELLS 3

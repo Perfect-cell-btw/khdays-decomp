@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 
 extern void SetIndexedSlot(int *a, int i, int v);
 extern void Ov291_stSetDispFlags86(int node);

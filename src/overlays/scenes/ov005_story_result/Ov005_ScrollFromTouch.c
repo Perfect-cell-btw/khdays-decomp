@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct TouchPoint {u16 x,y,valid,flags;} TouchPoint;
 typedef struct Vec2Fx32 {int x,y;} Vec2Fx32;
 typedef struct Ov005SpriteManager {char opaque[0x4a44];TouchPoint touchPoint;char tail[0x34];} Ov005SpriteManager;

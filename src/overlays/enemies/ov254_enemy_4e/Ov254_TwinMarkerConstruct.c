@@ -2,7 +2,7 @@
  * sets bits 1-3, 5 and 6 of the +0x60 high byte and bits 2-4 of +0x1ae, the +0x64 pose (0, 1, 0,
  * tiny scale), builds the two +0x384 / +0x388 items (poses 0x46 / 0x47 of the +0x38c pool), flags
  * them (+0x5c bit 0) and subscribes both to +0x9c. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 typedef struct { int x, y, z; } Vec3;
 struct Items { char pad[0x384]; int item[2]; };

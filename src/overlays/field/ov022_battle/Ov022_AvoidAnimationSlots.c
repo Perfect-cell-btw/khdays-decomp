@@ -1,8 +1,6 @@
 /* Pushes the position away (in view space) from every active animation slot within the radius. */
 
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;

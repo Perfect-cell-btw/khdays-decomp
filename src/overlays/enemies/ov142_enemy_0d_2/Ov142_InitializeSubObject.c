@@ -10,7 +10,7 @@
  * rather than 0x46), its camera scale of 0x800, and the owner and slot pointers
  * moved from +0x38c/+0x390 to +0x398/+0x39c.
  */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov142ChildIds {
     int values[2];

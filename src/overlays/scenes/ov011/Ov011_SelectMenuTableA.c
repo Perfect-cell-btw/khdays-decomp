@@ -6,8 +6,7 @@
  * The two halfwords sit at struct offsets past what a strh immediate can encode, so mwcc
  * pools the full offset and uses a register-offset store, deriving the second field as
  * that offset minus two. That is ordinary field access, not a hand-computed address. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov011Scene {
     u8  pad_00000[0x23abd];

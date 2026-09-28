@@ -52,9 +52,7 @@
  *    LL suffixes, unsigned rounding, a split shift, the multiplier or the rounding value in a
  *    local, and a static inline helper all compile to the same bytes.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

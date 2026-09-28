@@ -17,8 +17,7 @@
  * original. state==0||3 is a materialized bool.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct { u16 a, b, c, d; } Head;
 

@@ -7,8 +7,7 @@
  * the shot, a pending +0x36 start plays the layers (mode 1, 1), and past its range (2.5 / 5.75 / 3.5)
  * the bit flips, +0x3c is set and effect 1 plays. With the bit clear the layers fade and the node moves
  * on to 020d38e8. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 center; int nRadius; } Sphere;
 

@@ -3,7 +3,7 @@
  * (floored at 0, capped at the +0x218 maximum), the source is kept at +0x3c of the brain, a 0x20 hit
  * counts at +0x8d and a damaging 4 hit at +0x8c. Empty hit points request sub-state 3; a 1|0x10 hit
  * in sub-state 8 requests 0xa. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct HitFlags {
     unsigned int low : 16;

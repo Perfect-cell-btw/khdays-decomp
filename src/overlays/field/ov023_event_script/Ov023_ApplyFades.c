@@ -2,7 +2,7 @@
  * 0x14 * the active screen +0x87590) while its elapsed counter (+8) is short of its duration
  * (+0xc; Ov023_StepTween 020836c0) and push both brightness values: the active screen's to
  * the main engine (0201e374) and the other screen's to the sub engine (0201e3cc). */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov023Tween {
     int  nStart;              /* 0x00 */

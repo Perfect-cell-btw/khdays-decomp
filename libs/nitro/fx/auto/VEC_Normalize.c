@@ -1,13 +1,5 @@
-typedef signed long s32;
-typedef unsigned long u32;
-typedef signed long long s64;
-typedef unsigned long long u64;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned long vu32;
-typedef volatile signed long long vs64;
-typedef volatile unsigned long long vu64;
-
-typedef s32 fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x;

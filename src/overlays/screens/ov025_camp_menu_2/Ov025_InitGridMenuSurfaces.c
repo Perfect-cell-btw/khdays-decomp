@@ -9,8 +9,7 @@
  * buffer (+0x2f4, size at +0x2ec).  Then the five row surfaces (+0x160, 0x3c
  * each) are created on slot 9 and their text rows drawn.
  */
-typedef unsigned char  u8;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT   5
 #define SLOT_PANEL  10

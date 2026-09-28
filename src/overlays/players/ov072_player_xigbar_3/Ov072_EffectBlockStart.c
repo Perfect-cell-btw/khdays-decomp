@@ -2,8 +2,7 @@
  * running outside states 4/5: releases the five handles it still holds, retimes sequences 0, 2
  * and 1 against the owner's +0x22f8 period from zero, resets the three +0xbc scales to 1.0 and
  * enters state 1. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void NNS_G3dRenderObjRemoveAnmObj(void *p, int handle);
 extern int Ov022_GetWordAt0x348Plus4(void *p);

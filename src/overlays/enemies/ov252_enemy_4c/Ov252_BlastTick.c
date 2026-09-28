@@ -4,7 +4,7 @@
  * in place once (mode 0x12, +0x88) and a sphere 2.0 ahead of its +0xb0 position (turned by the
  * +0x54 angle) grows from 4.5 to 14.5 and strikes (020ce0a8, kind 3). Once the +4 item's +0xad
  * byte clears poses 0x33 / 0x37 loop and the next move is 0xb (+0xac set, +0xa0 cleared) or 0xd. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 

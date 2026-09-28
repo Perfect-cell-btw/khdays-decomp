@@ -7,7 +7,7 @@
  * +0x44c / +0x450 hand (by +0x49) stretched to 1/3 + 1/7 of the length, the glow rig at the tip
  * (3.0), and the rotation is copied to the owner's +0x410. After 0x500 once the rig is idle, the
  * beam releases its owner effect slots (+0x49 and 0x26 / 0x27), hides the glow and ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { int m[9]; } Mtx33;

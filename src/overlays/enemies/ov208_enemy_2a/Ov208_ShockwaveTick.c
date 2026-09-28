@@ -4,7 +4,7 @@
  * mask away by 0x800 (kind 1); on acceptance effect 1 spawns at the entity's +0x74 position,
  * reaction 0x154 mode 9 fires there and the kind bit is set. Once the +0x50 idle byte clears
  * sub-state 2 is requested and the state ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 

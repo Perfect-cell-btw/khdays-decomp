@@ -2,8 +2,7 @@
  * or transform task there (some kinds also a spawn task or a visibility event); then passes the
  * message to the shared handler. */
 
-typedef unsigned char u8;
-typedef signed char s8;
+#include "nitro/types.h"
 
 typedef struct { int x, y, z; } VecFx32;
 typedef struct { int w[11]; } Srt;

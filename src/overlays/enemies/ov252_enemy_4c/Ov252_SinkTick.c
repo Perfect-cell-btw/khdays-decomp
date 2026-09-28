@@ -6,8 +6,7 @@
  * partner motion 0x16 play. Deeper, the last shown one of the +0x4f4 shapes (+0x93) is hidden,
  * +0x88 becomes 2, the counters and velocity reset, the +0x60 high byte loses bit 0, the actor is
  * placed 3.0 below the origin (020c5c54) and the node moves on to 020d0f14. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 struct Hw60 { u16 lo : 8; u16 hi : 8; };

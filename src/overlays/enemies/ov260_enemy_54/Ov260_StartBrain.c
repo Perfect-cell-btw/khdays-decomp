@@ -2,7 +2,7 @@
  * (+0x1c6 = 0, +0x1c7 = -1), bit 6 of the +0x60 high byte is set and bit 0 dropped, bit 0 of +0x1ae
  * clears and the three slots take the think (020d10a0), watch (020d1178) and facing (020d1118)
  * handlers. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_dispatchByStatusByte(void);

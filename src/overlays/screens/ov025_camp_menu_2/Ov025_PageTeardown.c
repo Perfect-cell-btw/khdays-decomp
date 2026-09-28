@@ -1,9 +1,7 @@
 /* Tears down the page: cancels the pending request, frees the tile buffers and restores the saved
  * BG controls and display state. */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef union GXBg01Control {
     u16 raw;

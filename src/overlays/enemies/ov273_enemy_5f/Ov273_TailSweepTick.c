@@ -6,8 +6,7 @@
  * away from the owner, never downwards (kind 0); on acceptance the 14-byte message
  * data_ov273_020d6aec carries its +0x74 point to the owner's +0x24 hook, its bit is set and
  * reaction 0x162 mode 7 fires there. Once the +8 idle byte clears, pose 5 is requested. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

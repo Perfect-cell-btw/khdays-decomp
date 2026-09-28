@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* What the caller hands over to describe one class of timed element. */
 typedef struct {

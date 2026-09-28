@@ -6,9 +6,7 @@
  * entity's +0x74 position to the owner's +0x24 hook and reaction 0x4f fires at the owner. At the end of
  * the curve, on landing (+0x17a bit 1) or after a hit, the landing template carries the owner's
  * position to the hook, reaction 0x162 mode 0xd fires when nothing was hit, and sub-state 0 follows. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;

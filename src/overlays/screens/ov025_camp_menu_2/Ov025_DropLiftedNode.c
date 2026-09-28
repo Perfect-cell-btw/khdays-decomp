@@ -17,9 +17,7 @@
  * completed drop, 0 otherwise; the snapshot is released either way.
  * Codegen: both inner conditions are written with the reset case first.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define CATEGORY_FIXED 6
 

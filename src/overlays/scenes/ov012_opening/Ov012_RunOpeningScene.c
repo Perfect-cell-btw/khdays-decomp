@@ -2,9 +2,7 @@
  * waits for the brightness transition, then resets the script/display state and selects the next
  * scene. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int VBlank_GetCount(void);

@@ -9,9 +9,7 @@
  * free, which start out the same.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define ENTRY_SIZE 0x50
 #define SLOT_SIZE 0x1c8

@@ -5,7 +5,7 @@
  * gets the widget context (02050c64), looks up widget id 5, then: if param_1 != 0 it primes the
  * widget (Ov008_ReleaseTwoSlotsEx(ctx, widget, 0)) and enables it (Ov008_SetEntrySlotsVisible(ctx, widget,
  * 1)); otherwise it just disables it (Ov008_SetEntrySlotsVisible(ctx, widget, 0)). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008Ctx1 { u8 pad_0000[0xc]; int fieldC; } Ov008Ctx1;
 

@@ -10,7 +10,7 @@
  * simply what writing them inline in the loop condition and body produces.
  */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov002_UpdateNode(void *item);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);

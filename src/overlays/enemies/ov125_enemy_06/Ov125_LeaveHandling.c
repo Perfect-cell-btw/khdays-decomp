@@ -2,8 +2,7 @@
  * +0x3ac / +0x3a8 are released, the aim node deactivated and, with no pending mode, mode 8 is
  * queued unless the current mode is 0/1/3/8/9. Outside mode 6 an active aim node is
  * deactivated and both handles released. Then the shared pre-update runs. */
-typedef signed char s8;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov125AimNode Ov125AimNode;
 

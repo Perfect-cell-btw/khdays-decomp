@@ -1,7 +1,6 @@
 /* NitroSDK original assembly (libraries/os/src/os_tcm.c). */
 
-typedef int BOOL;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define OSi_TCM_REGION_BASE_MASK     0xfffff000
 

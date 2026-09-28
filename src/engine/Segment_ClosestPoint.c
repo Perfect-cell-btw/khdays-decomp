@@ -13,8 +13,7 @@
  * ARM.
  */
 
-typedef int fx32;
-typedef long long fx64;
+#include "nitro/fx.h"
 
 typedef struct VecFx32 {
     fx32 x;

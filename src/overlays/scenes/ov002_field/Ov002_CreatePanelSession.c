@@ -21,8 +21,7 @@
  * walker, which is what fixes the order the two initialisations come out in.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 *pKeys;                         /* +0x00 */

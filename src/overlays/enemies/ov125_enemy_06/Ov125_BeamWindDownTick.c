@@ -15,11 +15,8 @@
  *
  * Codegen: nLen is declared first and the hit flags before the two result pointers -- that is
  * the ROM's callee-saved assignment (nLen r6, nBest r7, bHit1 r8, r1/bHit2 r5, owner/r2 sb). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef int fx32;
-typedef long long fx64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;

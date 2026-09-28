@@ -1,6 +1,6 @@
 /* Frees every session buffer and releases both service instances. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern void func_02023728(u32 a, u32 b);
 extern void Session_ShutdownHookNoOp(void);

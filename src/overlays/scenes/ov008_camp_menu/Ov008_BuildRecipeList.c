@@ -4,8 +4,7 @@
  * one pointer per listed recipe and fill it with pointers into the recipe
  * records.  The count goes to *pCount; returns the array (0 when empty).
  */
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 typedef struct Ov008RecipeRecord {
     u8 pad[0x34];

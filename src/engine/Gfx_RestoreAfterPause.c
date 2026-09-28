@@ -1,8 +1,7 @@
 /* Re-enables the BG layers of both engines, resets the brightness, restores the graphics mode and
  * VBlank callback and refreshes the scene. */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern char *data_0204be08;
 extern char data_02042748[16];

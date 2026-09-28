@@ -5,7 +5,7 @@
  * When field0 < 0 it uses the stored default point data_ov008_0208f8c8[0..1] (y assigned before
  * x, matching the ROM's store order). The widget is fetched with Ov008_FindEntryById(ctx, 1) and
  * moved with Ov008_ApplyOffsetSum(ctx, widget, &point). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec2 { int x; int y; } Vec2;
 typedef struct Ov008PosState { int field0; u8 pad_0004[8]; int field0C; } Ov008PosState;
 

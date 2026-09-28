@@ -6,7 +6,7 @@
  * from entries 0x1c / 0x1b / 0x25 (attached, bit 1 of +0x5c), and a +0x22c placement (+0x388)
  * from the +0x64 pose with bit 1 of its +8 low byte; +0x38c starts empty. */
 typedef void (*Callback)(void);
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 struct Ov245Slot { int pItem; int pad4; };
 struct Ov245Self { char pad[0x394]; struct Ov245Slot slots[3]; };

@@ -7,7 +7,7 @@
  *
  * MATCH NOTE: the pool index pair is a `const` global copied into a local array, which hoists
  * the pair load above the handler stores and parks the values on the stack for the loop. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Subitem {
     char pad000[0x5c];

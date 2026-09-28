@@ -17,10 +17,7 @@
  * bit 2 or into state 2 without it; any other mode ends into state 0x22.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

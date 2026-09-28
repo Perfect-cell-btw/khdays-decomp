@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov158_Construct (020cbfc4): struct Ov158Kinds data_ov158_020cf520; */
 const int data_ov158_020cf520[8] = {

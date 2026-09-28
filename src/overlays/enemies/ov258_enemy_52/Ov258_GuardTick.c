@@ -6,8 +6,7 @@
  * 2.52 for 0.8 an aim marker (020cede0, alternating sides) is dropped every 0x110 after re-acquiring
  * the target. Once the +4 rig is idle: before 3.98 pose 0xd replays; move 6 continues with 020ce5d8;
  * otherwise a follow-up (020cd2cc, without a +0x38 delay) or move 2. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov258_StepCue(int *node, int step, int phase, u16 variant);

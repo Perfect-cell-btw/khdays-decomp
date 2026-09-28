@@ -12,8 +12,7 @@
  *   data_ov008_020903e8: Ov008_DrawSavePage
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u8 data_ov008_020903c4[12] = {
     37, 0, 100, 0, 47, 0, 37, 0, 100, 0, 0, 0,

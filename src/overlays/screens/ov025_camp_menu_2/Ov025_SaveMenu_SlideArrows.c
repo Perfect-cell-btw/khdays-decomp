@@ -1,6 +1,6 @@
 /* Slides the two page arrows in or out depending on the pending state. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov009SaveContext {
     u8 pad000[0x64];

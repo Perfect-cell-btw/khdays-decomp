@@ -2,7 +2,7 @@
  * data_ov255_020d2b20, the +0x40 rate clears, bit 6 of the owner's +0x60 high byte is raised,
  * animation 0x18 plays, the +0x3a4 part plays motion 0x13, reaction +0x3f8 mode 0xf fires at the
  * +4 point, the +0x50 timer clears and the tick hands over to Ov255_RiseTick3. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { u16 lo; u16 hi; } Cmd4;
 
 extern const struct { Cmd4 n[8]; } data_ov255_020d2b20;

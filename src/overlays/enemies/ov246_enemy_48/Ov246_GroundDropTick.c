@@ -4,7 +4,7 @@
  * the unit direction from the anchor (scaled 0x800) and, once accepted, fires reaction 0 mode
  * 0x53 at the anchor and marks its bit. The state ends once the +0xc sub-object goes idle
  * (+0xad). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int nRadius; } Sphere;
 

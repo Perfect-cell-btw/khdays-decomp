@@ -14,9 +14,7 @@
  * with nRow = 0 before the context call; the arrow flags are if/else locals
  * (an inline bool is folded into the call after the entry lookup).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT       8
 #define WIDGET_ROW_BASE 400

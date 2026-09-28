@@ -6,12 +6,7 @@
 #pragma opt_propagation off
 #pragma opt_common_subs off
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef signed short s16;
-typedef signed long long s64;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad000[2];
@@ -42,7 +37,6 @@ typedef struct {
     u8 pad006[2];
     int adjustment;
 } ReactionMessage;
-
 
 typedef struct {
     int field_00;

@@ -6,14 +6,7 @@
  * or clears 0x48 of wFlags60 and gives up. Every non-giving-up path ends in SetIndexedSlot(task,
  * task->nIndex, 0). Q12 multiply throughout: ((s64)a * b + 0x800) >> 12. */
 
-typedef signed char s8;
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
-typedef signed int s32;
-typedef unsigned int u32;
-typedef signed long long s64;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 struct Vec3 {
     s32 x;

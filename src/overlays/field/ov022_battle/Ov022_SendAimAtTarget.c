@@ -10,8 +10,7 @@
  * its hit owner's flag are set.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

@@ -1,7 +1,7 @@
 /* Evaluates the animation and returns how far the camera moved (position, target, up, fovy) since
  * the last frame. */
 
-typedef long fx32;
+#include "nitro/fx.h"
 typedef struct { fx32 x, y, z; } VecFx32;
 
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);

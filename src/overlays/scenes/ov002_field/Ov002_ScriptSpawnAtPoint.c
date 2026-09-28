@@ -1,4 +1,4 @@
-typedef signed short s16;
+#include "nitro/types.h"
 
 /* The place request as it goes out over the link.  The leading halfword is
    left alone; the sender fills only what follows. */

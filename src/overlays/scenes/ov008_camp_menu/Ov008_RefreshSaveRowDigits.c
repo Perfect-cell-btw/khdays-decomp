@@ -5,9 +5,7 @@
  * row's tags 5..7, 4 and 3 through Ov008_ConfigureTagBySign.  pMenu (the save
  * menu, passed by Ov008_SaveMenuTick) is unused.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ROW_COUNT   3
 #define DIGIT_COUNT 3

@@ -7,7 +7,7 @@
  * slot 1. While moving: in moves 2 and 4 with a rider above the floor less 7.7 the +0x3f0 shape
  * gains bit 0 and loses bit 1; in move 0xa without a rider bit 3 of the +0x60 high byte follows
  * the solid ground. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 typedef struct { unsigned f : 8; } B8;

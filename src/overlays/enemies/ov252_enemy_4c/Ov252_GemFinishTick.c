@@ -1,8 +1,7 @@
 /* Finish tick of an ov252 gem: once its +0 part stops animating (+0xad) a pending +0x3c burst plays
  * effect 1 at its +0xc point, the owner's (+4) gem mask (+0x57c) toggles its bit (+0x34 index), its
  * +0x6f8 slot clears and the node ends (0203c640). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Ov252Slots { char pad[0x640]; struct { int handle; int pad; } slot[0x40]; };
 

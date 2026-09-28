@@ -34,8 +34,7 @@
  * an induction variable and sits below the help-palette walker.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     void *pScreen;

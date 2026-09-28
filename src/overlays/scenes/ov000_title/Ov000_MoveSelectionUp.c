@@ -6,8 +6,7 @@
  * and the list is 28 rows because the wrap target is 27, which agrees with the existing rows[28].
  */
 
-typedef unsigned char u8;
-typedef signed short s16;
+#include "nitro/types.h"
 
 typedef struct {
     s16 limit;

@@ -16,9 +16,7 @@ typedef struct { int x, y, z; } Vec3;
 struct Sphere { Vec3 centre; int radius; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct HitPacket {
     u32 flagsLo : 16;

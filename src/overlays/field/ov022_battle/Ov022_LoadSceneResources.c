@@ -1,8 +1,7 @@
 /* Sets up the render state, loads ov106, creates its registration instance from the template and
  * loads the shop table. */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern u32 OVERLAY_106_ID[1];
 #define FS_OVERLAY_ID_ov106 ((u32)(u32)&OVERLAY_106_ID)

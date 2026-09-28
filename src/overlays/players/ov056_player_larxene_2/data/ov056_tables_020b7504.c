@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Fires one part of the ov037 enemy (x4: ov037/055/075/092) unless actor flag bit 27 forbids (020b623c): Vec3 data_ov056_020b7504; */
 const u8 data_ov056_020b7504[12] = {

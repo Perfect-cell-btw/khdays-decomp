@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov008_IsShopRecordListed: whether shop record pRecord (0208d4f0): const u16 data_ov026_020911d0[]; */
 const u8 data_ov026_020911d0[16] = {

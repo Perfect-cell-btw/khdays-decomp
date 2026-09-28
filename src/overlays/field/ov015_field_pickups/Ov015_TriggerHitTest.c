@@ -3,9 +3,7 @@
  * on a box trigger (shape +0x3c == 1) with a zero message type tests the message's point
  * (+0x4) and radius (+0x10) against the box (centre +0x30, extent +0x40, ov002 0207c824)
  * and answers 1 / 0; any other kind answers -1. */
-typedef signed char    s8;
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 { int x, y, z; } VecFx32;
 

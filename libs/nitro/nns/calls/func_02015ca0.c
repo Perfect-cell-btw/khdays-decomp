@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned long u32;
+#include "nitro/types.h"
 
 typedef struct NNSG3dGlb {
     u8 pad00_8c[0x8c];

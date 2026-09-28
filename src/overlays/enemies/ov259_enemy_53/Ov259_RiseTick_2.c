@@ -4,8 +4,7 @@
  * of the +0x60 high byte is set, pose 2 loops on the actor and its partner, the timer restarts, sound
  * 0x172/0x23 fires at the +0x10 point, it is knocked back again (mode 0xc) and the node moves on to
  * 020d0f88. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov259_RefreshAim(int *node);

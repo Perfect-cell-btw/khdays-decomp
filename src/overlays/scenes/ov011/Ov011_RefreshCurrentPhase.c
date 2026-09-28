@@ -7,7 +7,7 @@
  * values are adjacent and turns the test into a range check -- add #0xfd, and #0xff,
  * cmp #1, bhi -- which is one instruction longer than the ROM's cmp/cmpne/bne pair. A
  * switch with two fallthrough labels keeps the comparisons literal. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov011Scene {
     u8 pad_00000[0x10945];

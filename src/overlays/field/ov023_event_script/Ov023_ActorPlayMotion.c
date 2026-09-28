@@ -7,10 +7,7 @@
  * (Ov023_ActorStartMotion 02087298); the rest of that track's queue is emptied (frames -1).
  * With no track holding a motion afterwards flag bit 9 (+0x1a28) is dropped, and on track 0
  * with bit 7 the model is reset (02089174). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef signed short   s16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov023Anim {  /* at +4 of the entity */
     u16  wFlags;              /* 0x00 */

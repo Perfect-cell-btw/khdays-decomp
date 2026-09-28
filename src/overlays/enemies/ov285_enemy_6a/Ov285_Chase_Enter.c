@@ -2,7 +2,7 @@
  * slot. Otherwise it resets the phase, kicks the actor's motion, rolls a chase duration of 0x1000
  * plus rand(0x3001), and installs the chase tick. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct State {
     char *pActor;

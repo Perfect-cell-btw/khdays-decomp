@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int ScriptVm_ReadOperandInt(void *pCtx, int nArgs);
 /* Read and write the saved counter 0x20ad, slot 8. */

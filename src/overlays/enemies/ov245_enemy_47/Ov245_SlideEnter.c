@@ -4,7 +4,7 @@
  * item's +8 low byte, scales the +0x18 direction by 1.1 into the +0xc velocity and moves the
  * node to 020d31a4. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);

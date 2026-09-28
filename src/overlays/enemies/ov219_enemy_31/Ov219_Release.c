@@ -1,7 +1,7 @@
 /* Release of the ov219 enemy (and its byte-identical twin): sets bits 1-2 of the +0x60 flag
  * high byte and bit 0 of the +0x1ae halfword, clears bit 0 of the +0x388 item's +8 byte, sets
  * bit 7 and clears bit 0 of the flag high byte, and ends the state with sub-state 0. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned f : 8; };
 

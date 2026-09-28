@@ -4,9 +4,7 @@
  * +0x20 timer is armed with 0.5, the +8 velocity takes half the +0x14 direction, +0x44 and
  * +0x24 clear and the node moves to 020d425c. Codegen: the position is packed through Fx32
  * wrapper copies (ov269_3930 idiom). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;

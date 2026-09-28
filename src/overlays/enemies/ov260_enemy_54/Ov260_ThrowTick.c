@@ -4,7 +4,7 @@
  * target (+0x68); at 0x2a80 the +0x42c part is released from the hand point (-0.11, 1.08, 1.43 turned
  * by the +0xa0 pose, from the +0x10 point) along the +0x64 heading (020d17b4) and effect 0x19 starts.
  * After the throw, once the partner holds no queued move, the next move is 2 and the node ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void func_ov107_020c0b90(int owner, int mode, Vec3 at, int flag);

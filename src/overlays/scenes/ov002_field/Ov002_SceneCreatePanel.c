@@ -16,8 +16,7 @@
  * is what leaves the second statement to materialise the field offset again.
  */
 
-typedef unsigned short u16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct {
     u16 wStart;

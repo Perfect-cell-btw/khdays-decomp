@@ -17,9 +17,7 @@
  * flag word and the three carried values sit at the same distance in both.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define SEQ_TRACKS 5
 

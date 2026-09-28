@@ -5,7 +5,7 @@
  * whose id bit is clear in the +0x62 mask gets the bit set and receives a 0xa8 hit packet whose
  * normal points from the +0x474 point to it (flattened) through its +0x1c4 handler. Once the +4
  * item's +0xad byte clears, sub-state 6 (roll below 80) or 2 is requested and the state ends. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 typedef struct { int m[9]; } Mtx33;

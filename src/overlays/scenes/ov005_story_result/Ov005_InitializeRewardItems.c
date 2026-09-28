@@ -1,9 +1,7 @@
 /* Builds the reward list: the items obtained during the mission, its reward items, the special
  * items and the mode's special reward, then the two columns. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct Ov005MenuItemHeader {char data[0x24c];} Ov005MenuItemHeader;
 typedef struct PlayerItemLimit {u16 itemId;short limit;} PlayerItemLimit;
 typedef struct Ov005Config {

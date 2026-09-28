@@ -1,9 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned int u32;
-typedef signed long long s64;
+#include "nitro/types.h"
 typedef struct Ov002Vec3 { int x, y, z; } Ov002Vec3;
 typedef struct VecFx16 { s16 x, y, z; } VecFx16;
 typedef struct Ov002PieceClass { char pad000[0x4c]; u16 wClassFlags; } Ov002PieceClass;

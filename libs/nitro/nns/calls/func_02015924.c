@@ -1,7 +1,5 @@
-typedef long s32;
-typedef long fx32;
-typedef long long fx64;
-typedef long long fx64c;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct MtxFx44 {
     fx32 m[4][4];

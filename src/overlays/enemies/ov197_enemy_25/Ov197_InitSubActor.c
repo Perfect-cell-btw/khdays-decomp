@@ -1,7 +1,7 @@
 /* Sub-actor initialiser: installs its callbacks and flags, binds the owner's textures to its two
  * child models, registers them and enqueues them with the shared framework. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct ChildIds {
     int values[2];
@@ -108,5 +108,4 @@ void Ov197_InitSubActor(struct Obj *self)
     self->poolEntry388->flags |= 2;
     self->field38c = 0;
 }
-
 

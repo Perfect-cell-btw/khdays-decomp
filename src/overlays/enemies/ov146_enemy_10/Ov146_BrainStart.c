@@ -2,7 +2,7 @@
  * or next, bit 1 of the +0x60 high byte is set and bit 0 clears, bit 0 of +0x1ae clears, the +0x3ac
  * shape hides and the three brain slots start (020ce930 in slot 0, 020cec08 in slot 1, 020ceaf0 in
  * slot 2). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { unsigned f : 8; } B8;
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);

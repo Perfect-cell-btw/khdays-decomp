@@ -4,7 +4,7 @@
  * zero vector, flags 0x10) to everything it finds. The +0xc timer runs to 0xa000 -- or ends
  * early when the pool's +0x60 low byte has bit 7 set -- and then the target position (+8) is
  * pushed to the render hook (cmd 1), pose 2 plays and the release handler (020cee40) follows. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct vec3 { int x, y, z; };
 typedef struct { int w[4]; } Vec4;
 struct hw60 { unsigned short lo : 8, hi : 8; };

@@ -6,8 +6,7 @@
  * 02080600, start 02080660), clears the other slots and stamps kind 0x1f.  The emblem is the
  * mission-mode collectable that shrinks as its timer runs out and, once a player reaches it,
  * spirals into that player. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov021EmblemDesc {
     const char *pszSequence;  /* 0x00 */

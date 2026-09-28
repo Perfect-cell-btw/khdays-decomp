@@ -1,26 +1,11 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef signed char s8;
-typedef short s16;
-typedef int s32;
-typedef unsigned long long u64;
-typedef long long s64;
-typedef int BOOL;
-typedef int OSIntrMode;
+#include "nitro/types.h"
+#include "nitro/os.h"
 typedef void *OSMessage;
-typedef volatile unsigned short vu16;
-typedef volatile unsigned int vu32;
-typedef volatile unsigned char vu8;
 
 #define NULL ((void *)0)
-#define TRUE 1
-#define FALSE 0
 #define HW_MAIN_MEM 0x02000000
 
 #define offsetof(type, member) ((u32)&(((type *)0)->member))
-
-
 
 typedef enum {
     GX_TEXFMT_NONE       = 0,
@@ -91,7 +76,6 @@ extern void BgCharVram_Upload (NNSG2dBGSelect bg, const NNSG2dScreenData * pScnD
 /* NNS_G2dBGLoadElementsEx -- NitroSystem g2d_Screen.c: NNS_G2dBGLoadElementsEx. */
 void NNS_G2dBGLoadElementsEx (NNSG2dBGSelect bg, const NNSG2dScreenData * pScnData, const NNSG2dCharacterData * pChrData, const NNSG2dPaletteData * pPltData, const NNSG2dCharacterPosInfo * pPosInfo, const NNSG2dPaletteCompressInfo * pCmpInfo)
 {
-
 
     if (pPltData != NULL && pScnData != NULL) {
         func_02012e1c(bg, pPltData, pScnData, pCmpInfo);

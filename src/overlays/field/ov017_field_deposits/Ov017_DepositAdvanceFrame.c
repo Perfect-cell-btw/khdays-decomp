@@ -3,8 +3,7 @@
  * +0x12).  Past the last frame (length +0x4cc minus one frame) a looping animation wraps the
  * frame back by the length, a one-shot one clamps to the last frame and stops advancing.
  * Answers 1 while the animation still runs, 0 once a one-shot has finished. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov017Deposit {
     u8   pad_000[0x12];

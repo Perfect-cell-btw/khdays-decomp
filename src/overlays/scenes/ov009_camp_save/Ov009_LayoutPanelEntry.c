@@ -33,10 +33,7 @@
  *    `if (type != 4) { ...; return; } <type 4>` so the type-4 block lands at the end of the
  *    function the way the ROM has it.
  */
-typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef short              s16;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct NNSFndLink {
     void *prev;

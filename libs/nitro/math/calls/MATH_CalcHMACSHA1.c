@@ -1,7 +1,7 @@
 /* MATH_CalcHMACSHA1 (NitroSDK): HMAC-SHA1 of `bin` keyed by `key` into `digest`, through the generic
  * keyed-hash driver (func_0200bb80 = MATHi_CalcHMAC) with the SHA-1 context ops
  * (DGT_Hash2Reset init, DGT_Hash2SetSource update, DGT_Hash2GetDigest get-hash). */
-typedef unsigned long u32;
+#include "nitro/types.h"
 
 typedef struct MATHSHA1Context {
     u32 data[0x68 / 4];

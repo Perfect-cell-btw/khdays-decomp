@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct NNSFndLink {
     void *prev_object;

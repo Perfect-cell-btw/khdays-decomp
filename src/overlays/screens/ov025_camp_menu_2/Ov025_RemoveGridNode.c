@@ -11,9 +11,7 @@
  * disabled and the equip panel refreshed.  The snapshot is released and the
  * grid hits rebuilt; returns 1.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define PAGE_COLS 5
 

@@ -11,8 +11,7 @@
  * ARM.
  */
 
-typedef unsigned char u8;
-typedef volatile unsigned int vu32;
+#include "nitro/types.h"
 
 #define REG_BG3OFS_SUB (*(vu32 *)0x0400101c)
 

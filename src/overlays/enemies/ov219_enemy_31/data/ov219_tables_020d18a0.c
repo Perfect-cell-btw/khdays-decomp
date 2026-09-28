@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Constructor of the ov219 enemy (twin of the ov220 constructor, sound 0x136): installs the  (020cfc04): const Kinds data_ov219_020d18a0; */
 const u8 data_ov219_020d18a0[4] = {

@@ -3,8 +3,7 @@
  * via TileSurface_InitAndUpload4bpp, and arms the three surface slots with
  * Ov000_DispatchLogoAction(i, 2). */
 
-typedef unsigned char  u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct TileSurfaceCfg {
     u8 unknown_00[0x18];

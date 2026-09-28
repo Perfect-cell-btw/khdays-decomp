@@ -7,7 +7,7 @@
  * +0x44 the item's +0x1c7 request is cleared and the tick ends; otherwise effects 2 (item) and 3
  * spawn at the origin, reaction 0x154 mode 0xe fires at the +8 point, the timer restarts and
  * the tick hands over to Ov208_TimerFlagFirePushTwice. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 

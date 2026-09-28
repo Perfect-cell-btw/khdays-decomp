@@ -6,10 +6,7 @@
  * (func_02013408 with the resources at +0xa0/+0xa4/+0xa8), shows BG0 with the menu BG, darkens
  * both screens by 8 (the sub screen to the overlay's darker level in mode 0x2a), pauses the channels
  * outside the mode-bit-1 case of data_0204c240 bit 2, plays sound 2 and queues "pause_refresh". */
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef volatile u16 vu16;
-typedef volatile u32 vu32;
+#include "nitro/types.h"
 
 typedef struct {
     int debounce;                       /* +0x00 */

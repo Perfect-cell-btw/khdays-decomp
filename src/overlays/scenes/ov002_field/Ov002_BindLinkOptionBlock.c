@@ -1,7 +1,6 @@
 /* Store the four-byte link option block and bind it to either the active
  * external roster entry or every available entry. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov002LinkCtx {
     u8 gap0000[0x13];

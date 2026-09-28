@@ -8,10 +8,7 @@
  * (Ov025_Reports_IsDaySpanComplete 0209f774, final chapter only) becomes the read variant (+0xc)
  * of the counted record with the same id.  A first record with nothing pending marks item 0 as
  * owned (Ov025_QueryItemFlags 0209e820). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov008MissionResourceDescriptor {
     const char *pszPath;      /* 0x00: "UI/cm/msl_&.msi.z" */

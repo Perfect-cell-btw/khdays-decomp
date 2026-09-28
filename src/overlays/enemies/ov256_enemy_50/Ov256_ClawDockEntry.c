@@ -1,8 +1,7 @@
 /* Dock entry of an ov256 claw: +0x1c and the +0x20 / +0x21 flags clear, bits 1-3 of the owner's
  * +0x60 high byte drop and bit 0 is set, the +0x388 shape shows, the +0xc velocity rests and the node
  * moves on to 020d0934. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

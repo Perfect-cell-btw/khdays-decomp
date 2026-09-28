@@ -1,9 +1,7 @@
 /* Loads the calendar's graphics: the ten digit models, the camera, the sprites, the label text
  * renderer and the palette. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int x;

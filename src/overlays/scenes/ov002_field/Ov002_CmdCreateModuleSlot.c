@@ -12,10 +12,7 @@
  * Ghidra carries the block as Ov002ModuleSlotArg and the operands as OperandSlot.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 wValue;

@@ -7,9 +7,7 @@
  * and restores the brightness.  The request is remembered at +0x180 and the
  * armed word (+0x184) cleared.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define ENTRY_INFO_FIRST 0x16
 #define ENTRY_INFO_LAST  0x20

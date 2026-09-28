@@ -1,8 +1,6 @@
 /* Loads the five resistance triples (percent) of the actor kind. */
 
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef short s16;
+#include "nitro/types.h"
 
 extern int func_ov107_020c9848(void);
 extern void *Archive_LoadFile(u32 flags, int heap);

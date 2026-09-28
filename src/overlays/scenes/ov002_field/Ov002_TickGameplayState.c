@@ -18,7 +18,7 @@
  * fall-through and a single shared return-in-r6 epilogue.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef void (*CodeFn)(int);
 
 extern int  NNSi_FndGetCurrentRootHeap(void);

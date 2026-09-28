@@ -3,8 +3,7 @@
  * slot (three members, forty slots each) that holds it.  Nothing when the child has
  * no item.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define MEMBER_COUNT 3
 #define SLOT_COUNT   40

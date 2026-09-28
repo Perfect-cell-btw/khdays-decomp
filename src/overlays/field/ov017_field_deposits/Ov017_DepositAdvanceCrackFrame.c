@@ -2,8 +2,7 @@
  * frame (+0x4d0) by nDelta and play it on pNode (ov002 0207c67c) while the model is bound
  * (bit 2 of +0x12); the frame clamps to the last one (length +0x4d4 minus one frame) and then
  * stops advancing.  Answers 1 while the animation still runs, 0 once it has finished. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov017Deposit {
     u8   pad_000[0x12];

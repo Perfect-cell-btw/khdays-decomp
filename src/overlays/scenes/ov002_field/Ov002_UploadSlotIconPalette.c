@@ -16,7 +16,7 @@
  * original emits; assigning it to a local first gives that value a different
  * register and sinks the +0xc load to the bottom of its block.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int nId;                            /* +0x00 */

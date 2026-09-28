@@ -4,7 +4,7 @@
  * the target takes reaction 1 from the item with a 2.0 push along data_02042264 (020ca918); the
  * node then moves to 020d0884. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, const Vec3 *push, int z);

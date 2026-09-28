@@ -25,10 +25,7 @@
  * the value; the negative branch of 0xf and the capped branch of 0x11 are
  * written first.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define COLOUR_TEXT    0xf2
 #define COLOUR_VALUE   0xf4

@@ -14,9 +14,7 @@
  * Both registers come off ONE pool word: the FIFO control halfword at 0x04000184 and the
  * send word four bytes later, reached as fields of a held pointer. Two independent
  * volatile casts would pool two addresses and the function grows. */
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed int     s32;
+#include "nitro/types.h"
 
 typedef struct PxiPacket {
     u32 nTag  : 5;

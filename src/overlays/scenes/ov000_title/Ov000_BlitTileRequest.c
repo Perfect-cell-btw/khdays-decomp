@@ -1,9 +1,7 @@
 /* Blits a tile-draw request into one of the seven tile buffers, selected by request->kind (9/10/11
  * -> 0/1/2, 25/26/27 -> 4/5/6, else none), via func_02013484. */
 
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov000TileAsset {
     u8 pad_0000[8];

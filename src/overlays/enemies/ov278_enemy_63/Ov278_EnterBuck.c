@@ -3,7 +3,7 @@
  * +0x1c anchor's position at +0x58, throws the +0x40 velocity along a random yaw (+-0x3244)
  * at 20.0 plus a random 0..10.0, the +0x4c one straight down (-1.0 in y) at 40.0 plus a random
  * 0..10.0, clears the +0x14 timer and moves the node to 020d2ed4. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 struct m4 { int w[4]; };
 struct w8 { unsigned int lo : 8, rest : 24; };

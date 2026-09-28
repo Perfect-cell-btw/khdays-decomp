@@ -2,7 +2,7 @@
  * current (+0x1c6), bit 0 of the actor's +0x60 high byte is set and bit 7 cleared, and the handler
  * of move 0 / 1 / 2 (020d5790 / 020d5800 / 020d5884) is registered in slot 1; the pending slot is
  * then reset to -1. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
 extern void SetIndexedSlot(int self, int slot, void (*cb)(void));

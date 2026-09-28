@@ -2,7 +2,7 @@
  * area hits while active, and advances after timer 0x1800; requests state 2 when no target exists.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

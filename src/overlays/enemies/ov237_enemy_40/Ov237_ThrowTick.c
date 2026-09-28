@@ -4,7 +4,7 @@
  * 4 / 5 at the +0x42c / +0x440 hands, and from 0x28e8 the last one is thrown: the +0x3e0 shot leaves
  * the +0x42c hand toward the +0x3dc target (020d0a4c), effect 6 plays 3.5 above the +0x38 point offset
  * by data_ov237_020d1b7c turned by the +0x10 heading, and the throw sound (0x12d variant 7). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[9]; } Mtx33;
 

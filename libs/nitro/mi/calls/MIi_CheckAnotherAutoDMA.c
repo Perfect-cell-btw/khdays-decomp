@@ -1,5 +1,4 @@
-typedef unsigned int u32;
-typedef volatile u32 vu32;
+#include "nitro/types.h"
 
 extern void OS_Terminate(void);
 

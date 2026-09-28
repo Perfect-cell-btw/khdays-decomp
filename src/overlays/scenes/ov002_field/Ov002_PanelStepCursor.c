@@ -16,8 +16,7 @@
  * of letting mwcc cache the running value in a callee-saved register across the
  * calls in cases 2 and 3.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u16 nKey;

@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* The actor's animation state block. The table array and its count were named
    by the teardown at 02051fc8; the mode byte and the changed flag are proved

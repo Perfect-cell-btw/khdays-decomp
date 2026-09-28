@@ -2,7 +2,7 @@
  * move is 2 and 0 is returned. Otherwise returns the ground-plane gap between the two bodies (distance
  * minus both +0x80 radii, at least 0); with `face` the +0x58 heading turns toward the target, and
  * `delta` (when given) receives the ground-plane offset to it. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov107_FindNearestObject(int actor, int *distOut);

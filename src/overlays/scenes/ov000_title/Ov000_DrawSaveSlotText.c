@@ -35,9 +35,7 @@
  * loop-local it takes r8 and pushes `rec` to r7, the exact reverse of the ROM.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov000Pair {
     int x;

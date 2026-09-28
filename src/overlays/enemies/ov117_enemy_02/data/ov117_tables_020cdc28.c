@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov117_OrbitStep (020cd2f4): Pair data_ov117_020cdc28[];
  *   Publish the landing: copy the pending anchor into the live slot and ask the placement help (020cd494): Pair data_ov117_020cdc28[];

@@ -15,12 +15,8 @@
  *
  * Verified byte-exact against this ROM: 332 bytes, 4 relocs.
  */
-typedef signed int s32;
-typedef unsigned int u32;
-typedef signed long long s64;
-typedef unsigned long long u64;
-typedef s32 fx32;
-typedef s64 fx64c;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 /* The symbol named FX_Inv in this tree is really the two-argument divide: every
  * existing caller externs it with (numerator, denominator). Its own one-argument

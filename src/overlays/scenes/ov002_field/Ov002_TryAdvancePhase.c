@@ -14,7 +14,7 @@
  * base is what lands it in r4 and the base in r5, matching the original allocation.
  */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef int (*Fn)(void);
 
 extern int  NNSi_FndGetCurrentRootHeap(void);

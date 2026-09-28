@@ -27,10 +27,7 @@
  * local assigned in each branch; the buy test is a chain of flag locals
  * (pair.c for the first two recipe fields, then bRecipe, bOk, bLast, bAfford).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define MUNNY_MAX      999999
 enum { COL_OFF = 0, COL_ON = 1 };

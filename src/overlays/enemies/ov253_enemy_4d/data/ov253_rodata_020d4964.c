@@ -1,7 +1,6 @@
 /* ov253 .rodata tables 0x020d4964-0x020d49a8 (split by alignment so the objects tile their run). */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const u16 data_ov253_020d4964[13] = {
     0, 1541, 0, 517, 0, 1029, 0, 261,

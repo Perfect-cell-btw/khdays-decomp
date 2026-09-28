@@ -1,6 +1,5 @@
 /* Update reward sprite sequences and multiplier indicators as counters finish. */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct TweenFlags { u32 started:1, paused:1, finished:1, reserved:29; } TweenFlags;
 typedef struct Tween { char unknown00[24]; TweenFlags flags; } Tween;
 typedef struct Ov005ResultTween { Tween tween; int duration, currentValue, fromValue, toValue; } Ov005ResultTween;

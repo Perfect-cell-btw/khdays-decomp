@@ -1,6 +1,6 @@
 /* Shows or hides the region's node and broadcasts the value to the children. */
 
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int bit0 : 1;

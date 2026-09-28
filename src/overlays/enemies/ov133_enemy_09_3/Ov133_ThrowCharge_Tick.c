@@ -2,9 +2,7 @@
  * and applies gravity; ends the flight after the second landing; once the release flag is set
  * queues action 8 and clears the step handler. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

@@ -5,7 +5,7 @@
  * step clear, pose 0x14 plays, the +0x450 part takes motion 6, flag 0x20b7 is set (020235e8, width 8)
  * and the node moves on to 020cf3b4; before that pose 0x13 / motion 5 restart and it is knocked back
  * at the +0xc point (mode 0xe). */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Ov256_PickTarget(int *node);

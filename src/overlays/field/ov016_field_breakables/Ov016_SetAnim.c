@@ -1,6 +1,6 @@
 /* Stores the animation type and parameters and, when visible, rebinds and enables it. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov002_RebindAnimTracks(short *pAnim, int nBlend, int nFrame);
 extern void SceneNode_Enable(u16 *p);

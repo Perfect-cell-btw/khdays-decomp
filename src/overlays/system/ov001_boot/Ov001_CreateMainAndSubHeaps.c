@@ -15,9 +15,7 @@
  * r4/r5/r6 and the match is lost.
  */
 
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef int BOOL;
+#include "nitro/types.h"
 
 typedef u32 FSOverlayID;
 typedef void *NNSFndHeapHandle;

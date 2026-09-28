@@ -1,8 +1,7 @@
 /* NitroSystem g2d_CharCanvas.c: the two `const u32 fullbits = ~0` words its OBJ canvas
  * initialisers keep in .rodata, the BG canvas vtable (the OBJ vtables are not linked in) and
  * GetMaxObjectSize's OBJ shape table. */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct NNSG2dCharCanvas;
 struct NNSG2dFont;

@@ -1,7 +1,7 @@
 /* Effect message hook of an ov227 part: a "spawned" message (kind 5) picks by byte 3 -- slot 0
  * anchors effect 0x17 of the +0x390 pair table on the +0xa0 pose (byte 4 as flag), slot 1 spawns
  * it at the packed position (bytes 5..) scaled 0.67. The base hook always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 struct Pair { int res; int handle; };
 struct Ov227Part { char pad[0x390]; struct Pair pairs[2]; };
 

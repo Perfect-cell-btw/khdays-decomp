@@ -5,7 +5,7 @@
  * (+0x18), operand 1 the frame count (+0x1c) and the elapsed count (+0x24) is cleared.  The
  * command is re-queued (020219b4) for Ov023_CmdStepLightFade (02087018); with no frames the
  * end level is applied at once and 1 returned, else 0. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Ov023EventBlock {
     u8   pad_00[0x14];

@@ -4,8 +4,7 @@
  * palette 7. The row is placed by column and line, counting back from the
  * entry's width so it grows leftwards.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[1];

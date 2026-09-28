@@ -1,10 +1,6 @@
 /* NitroSystem G3D NODEDESC: joint animation and optional matrix restore/store. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef signed short s16;
-typedef signed long s32;
-typedef signed long fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct VecFx32 { fx32 x, y, z; } VecFx32;
 typedef struct MtxFx33 { fx32 aM[9]; } MtxFx33;

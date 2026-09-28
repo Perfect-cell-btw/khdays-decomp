@@ -16,7 +16,7 @@ typedef struct { Vec3 vector; int scalar; } CameraWork;
 typedef struct { int w[6]; } Bounds;
 typedef struct { int id[6]; } IdTable;
 typedef struct { int subitem; int pad; } Slot;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 
 extern void Ov180_ReleaseSubObjectsListThenNotify(void);
@@ -112,5 +112,4 @@ void Ov180_Construct(char *self)
     *(int **)(self + 0x3ac) = Ov180_AllocLinkChild390(self);
     Res_RequestIdPair(0x143);
 }
-
 

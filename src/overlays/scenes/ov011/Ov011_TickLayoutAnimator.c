@@ -1,9 +1,7 @@
 /* Runs the title layout animation script: executes each due entry (timed fades, sprite shows,
  * sounds and music) up to the current time. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov011AnimEntry {
     u8 nTargets : 4;

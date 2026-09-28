@@ -1,9 +1,7 @@
 /* Handles a menu message from a peer: records its header and, by type, stores its player record,
  * input, transfer chunk or acknowledgement in the menu context. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Ov008MessageHeader {
     u8 messageType : 4;

@@ -2,9 +2,8 @@
 /* MTX_MakeRotXY43 -- build a rotation matrix from X and Y angles, MAIN (THUMB). Starts from identity
  * and concatenates a rotation about X by `angleX`, then one about Y by `angleY` (16-bit angles, sine
  * and cosine from the SDK table). The angles arrive as ints and are cut to 16 bits on entry. */
-typedef unsigned short u16;
-typedef short fx16;
-typedef int fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22, _30, _31, _32; } MtxFx43;
 

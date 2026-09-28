@@ -2,10 +2,7 @@
  * three entries, restarts the fade (PlaySound) and refreshes the mode slots via
  * Ov000_DispatchLogoAction. */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov000ModeSelectContext {
     u8 pad_0000[0x14];

@@ -2,7 +2,7 @@
  * set; clearing it, replaying request 0x32 and then acknowledging one request per
  * queued pair, counting up from 50000. The queue length is reset to zero.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[0x3c];

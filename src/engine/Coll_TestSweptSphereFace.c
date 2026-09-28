@@ -1,11 +1,7 @@
 /* Swept sphere versus a polygon face: plane contact followed by finite-edge tests.
  * The wide address carrier and vertex declaration order preserve retail register
  * lifetimes. The carrier holds an ARM9 pointer, not a new game-object layout. */
-typedef signed short s16;
-typedef unsigned short u16;
-typedef signed int s32;
-typedef unsigned char u8;
-typedef signed long long s64;
+#include "nitro/types.h"
 typedef struct VecFx32 { s32 x,y,z; } VecFx32;
 typedef struct VecFx16 { s16 x,y,z; } VecFx16;
 typedef struct CollisionPlane { VecFx16 normal; s16 pad06; s32 distance; } CollisionPlane;

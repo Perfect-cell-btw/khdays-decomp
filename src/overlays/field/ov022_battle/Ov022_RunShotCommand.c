@@ -19,8 +19,7 @@
  * is what leaves the other three arms out of line behind it.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct ShotDir2 {
     short nDirX;

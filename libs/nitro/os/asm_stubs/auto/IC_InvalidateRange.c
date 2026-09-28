@@ -1,7 +1,6 @@
 /* NitroSDK original assembly (libraries/os/src/os_cache.c). */
 
-typedef int BOOL;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define HW_CACHE_LINE_SIZE           32
 

@@ -11,8 +11,7 @@
  * `+ (nFactor - nFactor)` on the RNG result emits the ROM's `add r0, r0, #0` (RandNextScaled
  * returns long long). FX_Inv is the reloc's own name for 01ff8a04. The record's actor is read
  * again through an `int *` view for the owner comparison (a field re-read is CSE'd). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct { int nX; int nY; int nZ; } Vec3;
 

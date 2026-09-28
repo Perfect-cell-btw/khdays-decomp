@@ -6,8 +6,7 @@
  * collect passes it dispatches on the iterator's result at +0x2c: non-zero runs GameState_SetFlag,
  * zero runs func_020235bc, both with 0x2010. Ends by collecting (Ov008_ReleaseHandleGridAndList) and
  * finalizing (func_02053464). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct NNSFndList {
     u16   numObjects;

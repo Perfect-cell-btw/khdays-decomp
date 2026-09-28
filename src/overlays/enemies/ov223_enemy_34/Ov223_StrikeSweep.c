@@ -7,9 +7,7 @@
  * pushed along the flattened unit direction from the owner's +0x74 with the +0x48 variant as
  * the kind; on acceptance the entity's +0x74 (or the sphere's point) goes to ov223 43e4,
  * reaction 0x149 mode 8 fires at the +8 point and the bit is set. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int q[4]; } Quat;

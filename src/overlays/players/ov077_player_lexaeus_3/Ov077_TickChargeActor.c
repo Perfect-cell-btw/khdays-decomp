@@ -1,9 +1,7 @@
 /* Ticks the actor charge phase, waits for the charge sequence or action gate, then transitions to
  * mode 0x22 or clears both motion positions and finishes the actor. */
 
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Vec3 {
     int x;
@@ -29,7 +27,6 @@ int Ov077_TickChargeActor(int actor)
     int result = 0;
     int canFinish = 0;
     int clear;
-
 
     if (Session_GetLocalPlayerIndex() == 0) {
         *(u64 *)(actor + 0x464) |= 0x10000ULL;

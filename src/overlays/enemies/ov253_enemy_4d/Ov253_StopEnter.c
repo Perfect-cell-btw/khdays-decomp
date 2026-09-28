@@ -1,7 +1,7 @@
 /* Ov253_StopEnter -- stop entry: raises bits 1 and 7 and clears bit 0 of the actor's +0x60
  * high byte, zeroes the state's +8 vector and moves the node to 020d407c. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Vec3 data_02041dc8;

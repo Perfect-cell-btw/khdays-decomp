@@ -4,7 +4,7 @@
  * while a target closer than 0x333 or no target at all leaves it in place; the vertical speed is
  * set to 0x1333 and the actor's hook runs; past 0x6000 on the +0x4cc counter it hands over to
  * state 0x24. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Session_GetLocalPlayerIndex(void);

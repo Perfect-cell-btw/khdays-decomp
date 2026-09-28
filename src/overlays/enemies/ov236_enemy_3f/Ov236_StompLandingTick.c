@@ -5,9 +5,7 @@
  * away from the box centre gets the overlay's 14-byte message (its kind, its +0x74 position with
  * y raised by 0x800) through the +0x394 target's +0x24 hook, reaction 0x127/0xd at that point and
  * its mask bit. Once the +0x24 flag byte clears the next move is 9. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 center; Vec3 axis[3]; int ext[3]; } Box;

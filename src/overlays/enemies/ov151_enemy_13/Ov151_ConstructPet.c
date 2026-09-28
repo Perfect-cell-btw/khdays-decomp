@@ -7,7 +7,7 @@
  * table (+0x390, attached to the owner, bit 1 on their +0x5c), the +0x388 list node gets a
  * placement built from the +0x64 pose with bit 1 raised on its +8 flags and a second placement
  * on the +0x144 list is kept in +0x3a4. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef void (*Callback)(void);
 
 struct Ov191SubitemSlot {

@@ -9,8 +9,7 @@
  * hook, so the walker calls Ov022_PlaceWindNode while drawing the model.
  */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

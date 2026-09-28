@@ -9,8 +9,7 @@
  * maximum, the target kept, and a damaging hit (except the 8|0x80 / 0x80 special) plays hurt sound
  * 0x172 alternating on +0xaf (0x22 hits use modes 2/3). Spent stamina sets +0x44 and sub-state 3; an
  * exhausted shield (+0x9c) drops the +0x50 shield effect and requests sub-state 15. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct Vec3 { int x, y, z; } Vec3;
 
 struct ActorHitEvent {

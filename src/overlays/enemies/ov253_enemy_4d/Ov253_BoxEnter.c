@@ -3,9 +3,7 @@
  * bits 1-4 and 7 of the +0x60 high byte are raised, the +0x2c..+0x40 box spans 1.5 around the
  * position, the +0x24 / +0x28 timers clear and the node moves to 020d46e0. Codegen: the
  * position is packed through Fx32 wrapper copies (ov269_3930 idiom). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;

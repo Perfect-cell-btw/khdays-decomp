@@ -12,11 +12,7 @@
  * 0x1a scaled by 0.5 and the power, raising the same flag bit on each.
  */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned long long u64;
-typedef long long s64;
+#include "nitro/types.h"
 
 struct VecFx32 {
     int x;

@@ -6,7 +6,7 @@
  * stamina asks for sub-state 3 and a 0x8000 hit for 6; a positive damage that is not the
  * 8|0x80/0x80 special toggles bit 0 of +0x51 and fires reaction 0x159 with the mode alternating
  * (2/3 for flags 0x22, 0/1 otherwise) at the +8 position. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 struct Vec3 { int x; int y; int z; };
 

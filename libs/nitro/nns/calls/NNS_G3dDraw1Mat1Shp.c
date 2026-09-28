@@ -1,10 +1,6 @@
 /* NitroSystem immediate draw of one material and one shape. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
-typedef signed short s16;
-typedef signed long s32;
-typedef signed long fx32;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct NNSG3dResDictTreeNode {
     u8 refBit;
@@ -73,7 +69,6 @@ typedef struct NNSG3dMatAnmResult {
     fx32 magW;
     fx32 magH;
 } NNSG3dMatAnmResult;
-
 
 typedef struct NNSG3dResMdl {
     u32 size, ofsSbc, ofsMat, ofsShp, ofsEvpMtx;

@@ -5,7 +5,7 @@
  * also flag the actor (020c0b14); 1 and 8 on the +0x3e4 node (mode 0x1f, 8 looped); 5 and 0xa on the
  * +0x3b8 node; 0xb on the +0x424 part; 0xd releases the effect in slot byte 4. The base handler
  * always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int x, y, z; } Vec3;
 

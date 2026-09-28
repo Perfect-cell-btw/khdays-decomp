@@ -28,9 +28,7 @@
  * 1 .. 8 with the default on the plain format inside the `stage >= 0 &&
  * record != -1` branch.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define MODE_INFO       6
 #define COLOUR_TEXT     0xf5

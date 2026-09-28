@@ -11,9 +11,7 @@
  * forwarding block is a static inline helper (three copies, each with its own
  * stack info); the packet array is taken through a local pointer.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GATE_LOBBY   0xd
 #define SLOT_COUNT   4

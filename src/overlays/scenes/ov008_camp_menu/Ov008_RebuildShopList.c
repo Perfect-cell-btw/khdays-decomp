@@ -14,10 +14,7 @@
  * 16-byte one as a halfword loop, the others unrolled); the reset branch is
  * written first; pView declared before pShop.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef signed short   s16;
+#include "nitro/types.h"
 
 #define TAB_SHOP    0
 #define TAB_ITEMS   1

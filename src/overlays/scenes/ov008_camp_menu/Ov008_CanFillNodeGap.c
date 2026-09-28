@@ -3,9 +3,7 @@
  * The anchor record category selects which spare-record lookup to call.
  * Return 1 if a lookup succeeds, 0 otherwise.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define GRID_PAGES 3
 #define GRID_ROWS  8

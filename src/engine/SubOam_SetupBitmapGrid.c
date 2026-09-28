@@ -3,9 +3,7 @@
  * of 64x64 bitmap OBJs covering the sub screen (priority 3, alpha 15), each naming the bitmap
  * character at (x / 8) + (y / 8) * 32, and loads the table into the sub OAM. */
 #pragma thumb on
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u32 attr01;

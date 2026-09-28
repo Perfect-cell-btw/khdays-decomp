@@ -7,8 +7,7 @@
  * Empty hit points request sub-state 3; sub-state 9 with a target and a 1/0x10 hit requests 0xa;
  * otherwise, off game mode 8 with a target and outside sub-state 0xd, a damaging hit counts
  * down the +0x74 hits and requests 0xd when they run out or the hit's +0x14 kind is 0x6b. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Ov227Vec3 { int x, y, z; };
 

@@ -1,7 +1,6 @@
 /* NitroSDK original assembly (libraries/os/src/os_protectionRegion.c). */
 
-typedef int BOOL;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 asm void OS_SetDPermissionsForProtectionRegion (register u32 setMask, register u32 flags)
 {

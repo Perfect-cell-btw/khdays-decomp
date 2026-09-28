@@ -2,7 +2,7 @@
  * the +0x450 owner's +0x2c vector turned by its heading (020cd054). After 5.0 of wandering, once the
  * partner holds no queued move, pose 0x1d plays, the +0x450 part takes motion 0xe and the node moves
  * on to 020d02a0; before that each idle partner restarts pose 0x1c / motion 0xd. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);

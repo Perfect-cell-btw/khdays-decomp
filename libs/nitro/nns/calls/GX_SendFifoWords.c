@@ -1,4 +1,4 @@
-typedef unsigned long u32;
+#include "nitro/types.h"
 
 typedef struct NNSG3dGeBuffer {
     u32 idx;

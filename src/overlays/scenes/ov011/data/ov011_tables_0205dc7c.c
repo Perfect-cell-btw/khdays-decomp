@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Ov011_StepPaneScroll (0205bb58): void data_ov011_0205dc7c(void); */
 const u16 data_ov011_0205dc7c[3] = {

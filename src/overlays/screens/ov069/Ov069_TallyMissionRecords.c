@@ -4,8 +4,7 @@
  * holds, [1] how many of them are done (+0xc flag or bit 1 of +0x14), [2] how many are unlocked
  * (their +2 id x 3 + 0x28e4 at kind-3 level 2 or more) and [0] how many are both. The overlay is
  * loaded around the walk. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct RecordInit {
     int nFile;

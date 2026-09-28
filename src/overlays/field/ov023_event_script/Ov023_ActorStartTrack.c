@@ -5,9 +5,7 @@
  * by name on the entity (02087510, +0x15b0), the turn state (+0x15b4) taken from the argument,
  * the entity's track pointer aimed at the actor's track table (+0xa9c), and the last track
  * sample (+0x159c) and angle offset (+0x15a8) cleared. */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int  x;                   /* 0x00 */

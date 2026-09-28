@@ -3,10 +3,7 @@
  * (+0x78) "UI/tutorial/root_&.s.z" (0208985c); the 32 x 24 text surface at +0x84 is built from
  * the template data_ov025_020b41b4 with the shared tile pixel buffer (02084c84) and VRAM slot 9
  * (02084aa4) and uploaded as 4bpp tiles (0202ff8c). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct TileSurfaceCfg {
     u32  nUnk00;

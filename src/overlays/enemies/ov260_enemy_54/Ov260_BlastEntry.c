@@ -1,7 +1,7 @@
 /* Blast entry of the ov260 actor: pose 0xc plays, the actor is knocked back at the origin (mode 0xa),
  * effects 0x16 and 0x1d start at the +0x10 point, +0x70 and the +0x7b flag clear and the node moves
  * on to 020d0834. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);

@@ -6,7 +6,7 @@
  * (0203281c 0).
  * Codegen: the manager pointer is a local initialised once; mwcc propagates it into every use (base
  * + 0x144 re-added per call) and strength-reduces the slot array off it. */
-typedef unsigned char  u8;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

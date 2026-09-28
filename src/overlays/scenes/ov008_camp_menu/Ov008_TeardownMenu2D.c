@@ -2,8 +2,7 @@
  * Releases the menu's object/graphics engine binding (Ov008_PageTeardown), restores the
  * two capture/blend engines (SetMasterBrightnessMain/3cc with -0x10), clears the BG-mode/screen-base
  * bits of both DISPCNT registers, and re-enables the LCD via POWCNT1. Returns 0. */
-typedef volatile unsigned int   vu32;
-typedef volatile unsigned short vu16;
+#include "nitro/types.h"
 extern void Ov008_PageTeardown(int a);
 extern void SetMasterBrightnessMain(int a);
 extern void SetMasterBrightnessSub(int a);

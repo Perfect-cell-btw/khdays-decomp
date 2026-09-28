@@ -1,7 +1,7 @@
 /* Ov245_CarriedConstruct -- constructor of the ov245 carried object. */
 typedef struct { int x, y, z; } Vec3;
 typedef void (*Callback)(void);
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct w8 { unsigned int lo : 8, rest : 24; };
 
 struct Ov245Obj {

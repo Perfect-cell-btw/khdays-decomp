@@ -10,10 +10,7 @@
  * 0209d6c4) starts the drag, otherwise a press on one of the nine visible rows (x 16..0xd7, 16
  * pixels each from y 0x30) moves the cursor there, plays the cursor sound, opens the topic,
  * cancels the viewer and refreshes the rows (0209e3f8). */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef short          s16;
+#include "nitro/types.h"
 
 typedef struct Ov025TutorialList {
     void *pHeader;            /* 0x00 */

@@ -1,7 +1,6 @@
 /* Message hook of the ov223 enemy: a kind-0 message carries the actor's +0xbc position packed
  * as three 24-bit values at 0x24 (x first), then goes to the base forwarder (020c7a90). */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
 typedef struct { u8 hi, mid, lo; } Fx24;

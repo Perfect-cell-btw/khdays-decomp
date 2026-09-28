@@ -1,10 +1,7 @@
 /* Applies a mission entry update received over the link: copies the entry in when it changed
  * (unless the block is locked), updates its flags and marks it for redraw. */
 
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u8 unused_0 : 1;

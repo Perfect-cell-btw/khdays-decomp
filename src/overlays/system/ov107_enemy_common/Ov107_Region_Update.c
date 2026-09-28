@@ -1,8 +1,7 @@
 /* Runs the members' attach hooks, their pairwise contact hooks and trigger hooks (host only), then
  * the children and callbacks. */
 
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Node2 {
     struct Node2 *prev;

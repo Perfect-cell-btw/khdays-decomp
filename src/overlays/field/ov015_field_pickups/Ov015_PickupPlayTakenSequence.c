@@ -2,8 +2,7 @@
  * sequence is running (bit 0 of +0x14d), advance its tracks by nDelta; once it ends the
  * bit is cleared and 1 returned, otherwise the sequence node (+0x30) is drawn.  0 when
  * nothing was running or the sequence is still going. */
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 extern u32  Sequence_UpdateTracks(void *pNode, int nDelta);   /* Sequence_UpdateTracks */
 extern void Scene_DrawNode(void *pNode);               /* Scene_DrawNode */

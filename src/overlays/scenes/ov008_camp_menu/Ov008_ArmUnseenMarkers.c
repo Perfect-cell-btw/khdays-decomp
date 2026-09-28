@@ -1,8 +1,7 @@
 /* Unless story flag 0x200d is set, arm four "unseen" markers in the ov008 UI state block; and
  * whenever the shared game-state bit at +0x9b0 is set, arm a fifth. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 extern int GameState_IsFlagSet(int flagId);
-typedef short s16;
 typedef struct Ov008MenuSubEntry {
     s16 nId;                  /* 0x00 */
     u8  nText;                /* 0x02 */

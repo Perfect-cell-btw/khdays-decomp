@@ -1,6 +1,5 @@
 ﻿typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Vec3 {
     int x;
@@ -28,7 +27,6 @@ int Ov057_TickChargeActor(int pActor)
     int result = 0;
     int actionEnded = 0;
     int zeroValue;
-
 
     if (Session_GetLocalPlayerIndex() == 0) {
         *(u64 *)(pActor + 0x464) |= 0x10000ULL;

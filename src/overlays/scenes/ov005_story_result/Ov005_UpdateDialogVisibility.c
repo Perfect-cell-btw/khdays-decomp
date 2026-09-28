@@ -1,7 +1,7 @@
 /* Shows the exit dialog's or the waiting message's sprites for the menu state, and the list cursor
  * when neither is up. */
 
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Ov005Context {
     char header[0x54];
     char embeddedManager[0x4a80];

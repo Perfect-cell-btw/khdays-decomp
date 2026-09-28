@@ -4,8 +4,7 @@
  * the step since the last tick (+0x20) is tested against the owner's +4 +0x7c stage grid (01fff920)
  * and a 0.19 sweep (01fff8e8, solid hits only); a wall ends the shot with reaction mode 6. The
  * +0x1c distance accumulates the step length; past 21.0 the shot fizzles (effect 0, pose 0). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 center; int nRadius; } Sphere;
 

@@ -1,4 +1,4 @@
-typedef int fx32;
+#include "nitro/fx.h"
 
 typedef struct Quat_0202ec2c {
     fx32 w;

@@ -5,8 +5,7 @@
  * the +0x430 partner motion 6; the timer, +0x40 and the +0x70 flags clear, the +0xc velocity
  * resets and the +0x54 drop becomes the height from the track to the actor's +0x4d4 floor + 7.7
  * (at least 15.0); the node moves on to 020d0e58. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 

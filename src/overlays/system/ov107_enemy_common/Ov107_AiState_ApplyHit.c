@@ -1,6 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } VecFx32;
 /* Tentative reconstruction of the coordinate type; wrapper copies retain the
  * unread coordinate stores present in the ROM, as in Ov107_BuildAndSendUpdate. */
@@ -119,7 +117,6 @@ struct FourBytes { u8 bytes[4]; };
 struct ReactionConstants { struct FourBytes masks, values; u8 field_08[8]; };
 extern const struct ReactionConstants data_ov107_020cb628;
 extern const struct Message12 data_ov107_020cb64c;
-
 
 static inline int FX_Mul(int a, int b)
 {

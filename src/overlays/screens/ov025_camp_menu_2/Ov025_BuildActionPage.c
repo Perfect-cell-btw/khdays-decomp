@@ -22,9 +22,7 @@
  * the caption colour is an if/else local (set case first); the row switch
  * has cases 3 and 4; case bodies are laid out 0, 1, 4, 2, 5, 7, 3, 6, 8.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define PAGE_SLOT        9
 #define ROW_COUNT        5

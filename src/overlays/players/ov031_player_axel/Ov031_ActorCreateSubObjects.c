@@ -17,8 +17,7 @@
  * block's zero run and the 0x48/0x4a halfword pair sit where they do because of that
  * reordering, and moving any single assignment breaks the block. Treat this order as
  * load-bearing and do not tidy it. */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct ActorSubCfg {
     int flags00;

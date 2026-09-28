@@ -21,10 +21,7 @@
  * case stops being the fall-through and needs its own branch.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
-typedef unsigned long long u64;
+#include "nitro/types.h"
 
 typedef struct Ov000SaveSlot {
     u8  pad_00[0x10];

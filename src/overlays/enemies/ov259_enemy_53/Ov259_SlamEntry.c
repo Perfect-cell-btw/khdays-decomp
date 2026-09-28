@@ -2,7 +2,7 @@
  * +0xae becomes 0x11; sound 0x172/0x22 fires at the +0x10 point, pose 0x12 plays on the actor and
  * its partner (020cd524), the body sweeps 0x908-0xb28 flat (020d1700, +0x420 = 5), +0x94 = 50 and
  * the node moves on to 020d0400. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov259_PlaySound(int actor, int id, int variant, void *at);

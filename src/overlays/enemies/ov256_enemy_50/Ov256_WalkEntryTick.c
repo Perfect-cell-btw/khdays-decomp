@@ -3,7 +3,7 @@
  * heading swings by 70 degrees (and +0x40 follows), a pending retreat (+0x6b) re-picks the target, the
  * step count +0x54 = 5, +0x4c and +0x74 clear, the +0x71 turn direction is rolled, pose 2 plays, the
  * +0x450 part takes motion 1 and the node moves on to 020ce050. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);

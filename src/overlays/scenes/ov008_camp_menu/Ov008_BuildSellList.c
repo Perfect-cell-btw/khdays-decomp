@@ -13,9 +13,7 @@
  * index -- that declaration order is what gives the buffer r6 above the
  * table address r5.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define CATEGORY_ANY (-1)
 

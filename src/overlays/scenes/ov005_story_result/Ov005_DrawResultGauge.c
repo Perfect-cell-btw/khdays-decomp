@@ -1,5 +1,5 @@
 /* Draw the filled part of the result gauge in tiles of up to eight pixels. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct Ov005ResultGaugeRequest {
     int firstTileId;
     short column;

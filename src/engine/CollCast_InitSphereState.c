@@ -1,10 +1,7 @@
 /* Initialises a sphere cast: copies the origin, direction, radius, flags and exclusion, normalises
  * the direction, and resets the nearest hit and the shared hit record. */
 
-typedef signed int s32;
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     s32 x;

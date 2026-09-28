@@ -2,10 +2,7 @@
  * its source row moved down by nShift cells (2 half-rows each) and put back afterwards
  * (Ov027_DrawPanelSlot 02083c40).  Slot 1, the prompt line, is left out while the scene is in
  * state 3 (+0x5d4 of the scene work) without the prompt flag (+0x5e0). */
-typedef unsigned char  u8;
-typedef signed char    s8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Fx32Pair {
     int  x;                   /* 0x00 */

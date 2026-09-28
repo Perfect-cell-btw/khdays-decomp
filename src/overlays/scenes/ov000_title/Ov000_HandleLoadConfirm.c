@@ -27,9 +27,7 @@
  *     written the natural way round the two blocks swap places.
  */
 
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 typedef struct Ov000GameSave {
     u32 aData[0x1cac / 4];

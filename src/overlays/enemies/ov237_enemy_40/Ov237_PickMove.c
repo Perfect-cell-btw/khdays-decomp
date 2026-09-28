@@ -4,7 +4,7 @@
  * 5 / 6 / 7 / 9; under 28.0 5 / 6 / 9. Alone (or with a busy partner): under 7.0 5 / 7 / 9 / 5, under
  * 20.0 5 / 6 / 7 / 9 / 5, under 32.0 6 / 9 / 6, where 7 and 9 also need no +0x4b8 hold. A picked move
  * restarts the cooldown (4.0) and returns 1. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int Ov237_TargetGap(int *node);
 extern int RandNextScaled(int bound);

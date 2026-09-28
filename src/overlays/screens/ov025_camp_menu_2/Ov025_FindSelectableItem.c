@@ -8,9 +8,7 @@
  * `nFrom = nIndex` stays a separate lsl/asr (an explicit (s16) on both would be
  * CSE'd into one truncation and an mla).
  */
-typedef unsigned char  u8;
-typedef signed short   s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct Ov008MenuContext {
     s16 nSelection;           /* 0x000 */

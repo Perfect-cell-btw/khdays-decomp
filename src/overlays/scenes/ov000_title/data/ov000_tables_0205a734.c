@@ -5,8 +5,7 @@
  * packed bytes.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 /* read by Scene 1: build the three text surfaces of the page. (020500d0): const TileSurfaceCfg data_ov000_0205a734; */
 const int data_ov000_0205a734[10] = {

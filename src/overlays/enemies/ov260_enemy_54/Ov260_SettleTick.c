@@ -5,7 +5,7 @@
  * one radius above, reflected by the floor plane). The actor is placed there (020c5c54), knocked back
  * one radius above it (mode 3), effect 0xc starts there, bits 1 and 7 of the +0x60 high byte drop and
  * the node moves on to the armed +0xc entry, if any. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } VecFx32;
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
 

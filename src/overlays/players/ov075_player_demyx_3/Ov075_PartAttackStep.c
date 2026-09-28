@@ -4,7 +4,7 @@
  * definition asks for the high variant); the part then goes to kind 4, the actor's +0x26c4 gate
  * (neither 0 nor 4) plays 0xcc at +0x26c8, the animation is stepped, and once it reports done the
  * part becomes kind 3, its timer is cleared and the finish handler runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 
 extern int Anim_GetLengthQ12(void *animation, int track);                                 /* Anim_GetLengthQ12 */

@@ -10,8 +10,7 @@
  * in a register and reused with lsr #15, so it is written as one literal used twice.
  */
 
-typedef unsigned int  u32;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern void Ov002_FormatResultLine(int a, char *out);
 extern u32  MsgArchive_FindEntryByName(int a, char *b);

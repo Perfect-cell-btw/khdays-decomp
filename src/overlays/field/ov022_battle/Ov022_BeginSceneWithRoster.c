@@ -2,9 +2,7 @@
  * party roster, then sets up the scene like Ov022_BeginScene; returns the battle entry poll step.
  */
 
-typedef signed char s8;
-typedef short s16;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef int (*Ov022StateCallback)(void);
 

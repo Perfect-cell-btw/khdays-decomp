@@ -1,6 +1,5 @@
 /* cd104 */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 struct Nibbles { u8 lo : 4; u8 hi : 4; };
 

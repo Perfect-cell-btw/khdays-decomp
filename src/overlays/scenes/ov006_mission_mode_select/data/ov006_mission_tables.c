@@ -18,8 +18,7 @@
  *                                 y=0x80, both 0x18 apart
  */
 
-typedef signed char s8;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

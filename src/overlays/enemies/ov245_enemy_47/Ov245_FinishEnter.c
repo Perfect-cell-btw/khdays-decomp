@@ -3,7 +3,7 @@
  * +0xc position (020c0b90, flag 1), fires reaction 0x49 there (020c5af8), requests sub-state 0
  * and releases the node's slot. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 

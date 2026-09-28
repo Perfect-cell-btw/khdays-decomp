@@ -6,7 +6,7 @@
  * +0x694 and, with the emitter at +0x22f8 busy, an activation rewinds the animation, clears the
  * timer and the bit and raises bit 29; the forward burst is tried; an active enemy hands over to
  * state 0x23, and a +0x1c state of 5 or 6 to state 0x22. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 

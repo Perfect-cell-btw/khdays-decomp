@@ -9,8 +9,7 @@
  * runs); the single-byte fields (+0xbe/+0xb8/+0xbf) are byte stores.
  */
 
-typedef unsigned char u8;
-typedef unsigned int  u32;
+#include "nitro/types.h"
 
 extern void INITi_CpuClear32_0x01ff86fc(int val, void *dst, int count);
 extern void MI_CpuFill8(void *dst, int val, int size);

@@ -1,7 +1,7 @@
 /* GameSession_SetSyncEnabled -- GameSession_SetSyncEnabled, MAIN. Bit 0 of the shared session's +0x2c
  * halfword gates the member synchronisation used by the mission menus (ov006/ov008): enabling
  * clears it, disabling raises it. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct GameSession {
     char pad00[0x2c];

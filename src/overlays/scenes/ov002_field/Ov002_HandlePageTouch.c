@@ -10,8 +10,7 @@
  * ARM.
  */
 
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef void (*Ov002CueProc)(int nHandle);
 

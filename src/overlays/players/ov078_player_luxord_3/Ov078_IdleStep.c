@@ -18,8 +18,7 @@
  */
 typedef struct { unsigned char b0 : 1, b1 : 1; } Flags;
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 extern int Session_GetLocalPlayerIndex(void);
 extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);

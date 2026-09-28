@@ -4,13 +4,8 @@
  * data_020473e0 and loads it, sets the polygon attributes (alpha +0x20, polygon id +0x22, both
  * faces) and emits one textured quad, width +0x18 centred and height +0x1a, with texture
  * corners (+0x1c,+0x1d) and (+0x1e,+0x1f). */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef short s16;
-typedef short fx16;
-typedef int fx32;
-typedef volatile u32 REGType32v;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 _00, _01, _02, _10, _11, _12, _20, _21, _22, _30, _31, _32; } MtxFx43;

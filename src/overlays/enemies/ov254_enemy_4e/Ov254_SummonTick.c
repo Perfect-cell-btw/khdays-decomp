@@ -6,7 +6,7 @@
  * pose 0x17 plays and the actor is knocked back in place (mode 7) to repeat; otherwise pose 0x18
  * plays, the +0x3e4 shape gains bit 1, +0x50 takes the track height and +0x54 the rise to route
  * point 0xb, and the node moves on to 020d08ec. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { unsigned f : 8; } B8;
 struct Items4ac { char pad[0x4ac]; int item[10]; };

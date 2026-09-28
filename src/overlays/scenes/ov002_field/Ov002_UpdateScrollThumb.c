@@ -9,8 +9,7 @@
  * Both halfwords are read twice rather than cached, the same way
  * Ov002_OpenConfirmPrompt reads the row height.
  */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad0000[0x3a];

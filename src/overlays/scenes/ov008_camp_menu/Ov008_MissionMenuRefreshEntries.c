@@ -9,9 +9,7 @@
  * 0x28e4 + 3 * id below 2 without a modal object, or during a transition the
  * rank cap / helper 020742ec -- bumps the selectable count (+0x17a).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define FIELD_MISSION_STATUS 0x28e4
 #define ENTRY_FLAG_LOCKED    2

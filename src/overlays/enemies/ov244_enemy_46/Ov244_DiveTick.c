@@ -8,8 +8,7 @@
  * +0x384 rider: the first entity that accepts the velocity as its push (kind 2) gets the message
  * data_ov244_020d36dc, flag 0x10, with the point of its +0x80 radius towards the actor, reaction
  * 0x113 mode 0xf fires and pose 0 is requested. Past 10.0 the dive gives up (pose 0). */
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct { int value; } Fx32;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;

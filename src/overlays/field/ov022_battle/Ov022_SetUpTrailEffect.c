@@ -7,8 +7,7 @@
  * its value, also clamped to nine, sets the entry's span.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Anim {
     u8 pad0000[0xe0];

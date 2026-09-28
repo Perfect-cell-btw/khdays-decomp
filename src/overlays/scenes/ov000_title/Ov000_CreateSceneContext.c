@@ -2,9 +2,7 @@
  * initialise the interpolator sub-object at +0xd118. 0xd18c is measured off the MI_CpuFill8, not
  * inferred from the fields this function happens to touch. */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u16 width;

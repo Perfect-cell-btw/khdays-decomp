@@ -16,8 +16,7 @@
  * is declared first and the selection is read through it (through the
  * context it shares the +0xc000 partial with the flags).
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define FILTER_ROWS 5
 #define ROW_PITCH   0x18

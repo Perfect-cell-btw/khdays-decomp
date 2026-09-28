@@ -6,7 +6,7 @@
  * commits the pending change (Ov025_ChangeMenuSelection, direction from ctx+0x44) with a confirm sound,
  * hides the up/down arrows (0x29/0x51), swaps entry 5 in, re-runs the layer object, shows entry
  * 0x80 (and the optional ctx+0x54 entry), and clears the busy flag ctx+8. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern u16  data_0204c18c;
 

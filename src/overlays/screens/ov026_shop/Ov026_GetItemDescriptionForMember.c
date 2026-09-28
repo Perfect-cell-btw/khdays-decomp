@@ -1,5 +1,5 @@
 /* Resolve an item description for the local session member, releasing prior cached records. */
-typedef unsigned short u16;
+#include "nitro/types.h"
 typedef struct MsgDbItemRecord {
     char header[12];
     u16 *name,*description;

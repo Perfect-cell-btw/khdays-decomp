@@ -1,4 +1,4 @@
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 /* NitroSDK alignment-aware byte-fill primitive. */
 asm void MI_CpuFill8(register void *destination, register u32 value,

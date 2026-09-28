@@ -3,7 +3,7 @@
  * (020c5af8), clears the actor's +0x3b0 byte, the state's +0x10 byte and +0xc, and moves the
  * node to 020d52b8. */
 typedef struct { int x, y, z; } Vec3;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void func_ov107_020c0b90(int actor, int effect, Vec3 v, int flag);

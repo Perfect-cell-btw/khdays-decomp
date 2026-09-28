@@ -20,9 +20,7 @@
  * comparing the width of the range.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define CTX_IN_ACTOR 0x2288
 #define FLAG_CLASS0 0x4

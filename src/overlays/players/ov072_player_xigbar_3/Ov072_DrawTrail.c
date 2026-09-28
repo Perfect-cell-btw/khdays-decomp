@@ -5,8 +5,7 @@
  * keys take their translation from older slots (head - index, two and four more for the last two).
  * Both matrices are loaded back into the geometry engine (projection, then position), and the last
  * key advances the count and the ring head. */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int m[4][3]; } MtxFx43;
 typedef struct { int m[3][3]; } MtxFx33;

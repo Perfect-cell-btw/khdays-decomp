@@ -7,8 +7,7 @@
  * caller that only wants to know whether there is ground can pass neither.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 #define CAST_FLAGS 0xf
 #define CAST_RISE 0x800

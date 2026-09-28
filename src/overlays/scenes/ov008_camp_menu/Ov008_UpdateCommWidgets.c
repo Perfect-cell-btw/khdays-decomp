@@ -4,7 +4,7 @@
  * (Session_Exists / Session_IsActive) is false. Reads a signed 8-bit value from the WM query: when
  * it is valid (>= 0) both widgets are set to that value via Ov008_ReleaseTwoSlotsEx; when it is
  * unavailable (< 0) both widgets are disabled via Ov008_SetEntrySlotsVisible(..., 0). */
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern void *Ov008_GetCtxBlock4a80(void);
 extern int   Session_Exists(void);

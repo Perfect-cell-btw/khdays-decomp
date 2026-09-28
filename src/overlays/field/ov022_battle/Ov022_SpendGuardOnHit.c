@@ -18,9 +18,7 @@
  * is created above it.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 #define ACTOR_FLAGS2(p) (*(unsigned long long *)(p)->aFlags2)
 #define ACTOR_FLAGS3(p) (*(unsigned long long *)(p)->aFlags3)

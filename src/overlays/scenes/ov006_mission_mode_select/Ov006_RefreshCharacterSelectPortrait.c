@@ -1,8 +1,7 @@
 /* During character-select states 4-6, reloads BG0 portrait character tiles when the selected
  * portrait changes, retargets the portrait cell tag and records the uploaded index. */
 
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     u8 pad_00[0x10];

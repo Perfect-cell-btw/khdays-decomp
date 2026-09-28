@@ -1,6 +1,6 @@
 /* Converts an fx32 factor to a rounded percentage. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 u16 Ov005_RoundRewardPercent(int factorQ12) {
     int scaledQ12=(int)(((long long)factorQ12*0x3e8000+0x800)>>12);
     int tenthsPercent=scaledQ12>>12;

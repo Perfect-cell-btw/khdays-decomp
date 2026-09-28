@@ -1,6 +1,6 @@
 /* Enables the global colour scale and sets each channel to its RGB555 component + 1. */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct MaterialColorScale {
     u16 red;

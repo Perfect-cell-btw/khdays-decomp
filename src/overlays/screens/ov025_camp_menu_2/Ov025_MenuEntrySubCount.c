@@ -1,7 +1,6 @@
 /* Ov025_MenuEntrySubCount -- Ov008_MenuEntrySubCount: the sub-entry count of menu entry nItem
  * (data_ov025_020b4f64); the menu context getter is called first (its result unused). */
-typedef unsigned char u8;
-typedef short s16;
+#include "nitro/types.h"
 
 typedef struct Ov008MenuSubEntry {
     s16 nId;                  /* 0x00 */

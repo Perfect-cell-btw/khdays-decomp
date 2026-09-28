@@ -1,4 +1,4 @@
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 extern int ScriptVm_ReadOperandInt(void *pCtx, int nArgs);
 extern int ScriptVm_ReadOperandFx32(void *pCtx, int nArgs);

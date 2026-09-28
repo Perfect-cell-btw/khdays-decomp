@@ -6,9 +6,7 @@
  * overlay's 14-byte message goes to the owner's +0x24 hook with that position, reaction 0x14f
  * mode 6 fires there, sub-state 0 is requested and the state ends; otherwise the shot tick
  * (cd3ac) takes over. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;

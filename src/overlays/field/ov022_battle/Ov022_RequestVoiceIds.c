@@ -10,8 +10,7 @@
  * came out valid is requested.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 struct Actor;
 

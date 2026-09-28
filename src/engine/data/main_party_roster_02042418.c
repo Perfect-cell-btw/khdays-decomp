@@ -1,7 +1,7 @@
 /* main .data, 0x02042418-0x02042490: the five party roster entries (0x18 bytes each; 02010e38 points
  * the active-party slots at them, 02010f08 / 020110f4 / 02011134 walk them).
  */
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct PartyRosterEntry {
     u32 field00;

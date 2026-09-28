@@ -5,9 +5,7 @@
  * to, and marks the entry busy.
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 struct GridEntry {
     u8 nFlags;                   /* 0x00 */

@@ -5,8 +5,7 @@
  * the locked fallback text or the entry-specific record, remeasures it, draws it, and flushes
  * the tile-text surface.
  */
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 extern u8 *Ov008_GetMenuContext(void);
 extern void Ov008_StartSelectionTransition(void *state, u32 entryId, int fastTransition);

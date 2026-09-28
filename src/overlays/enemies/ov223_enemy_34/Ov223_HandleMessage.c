@@ -4,7 +4,7 @@
  * transform and starts the +0x398 sub-item under the +0x3c owner with kind 0x17 into +0x39c;
  * with slot 2 the 0x14 position goes to the +0x390 ring's writer (ov223 4e70) along with the
  * message's +4 pose. The base handler always runs. */
-typedef unsigned char u8;
+#include "nitro/types.h"
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int x, y, z; } Vec3;
 typedef struct { int q[4]; } Quat;

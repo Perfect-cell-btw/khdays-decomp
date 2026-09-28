@@ -11,9 +11,7 @@
  * scene's +0x7c collision along the step stops at the contact (effect 1 there, reaction 0x170/6,
  * effect 2 too on a 0xd-typed surface) and, past 0x3c000 of +0x24 flight time, the flight ends
  * with effect 1 at the position. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct Vec3 { int x, y, z; } Vec3;
 struct hw60 { unsigned short lo : 8, hi : 8; };

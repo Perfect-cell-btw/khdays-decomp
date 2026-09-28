@@ -13,9 +13,7 @@
  * record at +0xc5fc set up with the handlers 0208b838 / 0208b870.  Returns
  * the tick function 02087cac.
  */
-typedef unsigned char  u8;
-typedef unsigned short u16;
-typedef unsigned int   u32;
+#include "nitro/types.h"
 
 #define CONTEXT_SIZE   0xc608
 #define STORY_BITS     9

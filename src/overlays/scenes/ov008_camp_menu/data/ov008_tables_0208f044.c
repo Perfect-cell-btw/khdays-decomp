@@ -9,8 +9,7 @@
  *   data_ov008_0208f050: Ov008_UpdatePanelBrightnessTweens, Ov008_MainMenu_InitPanelContext, Ov008_ReleaseRowSurfaces, Ov008_DrawMenuPanels
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 const u8 data_ov008_0208f044[12] = {
     0, 0, 1, 0, 2, 0, 4, 0, 3, 0, 0, 0,

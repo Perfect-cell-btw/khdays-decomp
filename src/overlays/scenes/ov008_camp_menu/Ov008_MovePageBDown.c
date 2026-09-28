@@ -4,7 +4,7 @@
  * rows); without one the row only advances while a row below exists.  Any real
  * move starts the collapse slide and plays the move sound.
  */
-typedef unsigned char u8;
+#include "nitro/types.h"
 
 typedef struct Ov008PageB {
     u8  pad_000[0x1e8];

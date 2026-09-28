@@ -1,4 +1,4 @@
-typedef signed short s16;
+#include "nitro/types.h"
 
 extern char *data_ov002_0207fa04;   /* the ov002 event context */
 

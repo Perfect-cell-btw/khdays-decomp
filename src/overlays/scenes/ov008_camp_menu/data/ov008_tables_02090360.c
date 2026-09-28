@@ -9,8 +9,7 @@
  *   data_ov008_02090370: Ov008_EnqueueRowPalette
  */
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 u8 data_ov008_02090360[16] = {
     196, 36, 196, 36, 196, 36, 196, 36, 109, 102, 232, 85, 70, 61, 228, 44,

@@ -1,7 +1,5 @@
 /* Ov202_OnHit: hit handler of the ov202 enemy (x2: ov202/203), variant of the matched ov131 sibling with the health always dropping and the state one word shorter. */
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
+#include "nitro/types.h"
 
 typedef struct {
     int x;

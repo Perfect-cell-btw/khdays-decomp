@@ -10,9 +10,8 @@
  * falling, capped at -(+0x40)) and the frame's fall is resolved against floors and ceilings
  * (Mover_ResolveFloor / Actor_ResolveGround, in falling or rising order); an unresolved fall moves pos.y. A
  * speed of 0x80000000 only snaps to the floor. Flags 0x40 and 0x1000 are cleared and 1 returned. */
-typedef short s16;
-typedef int fx32;
-typedef long long s64;
+#include "nitro/types.h"
+#include "nitro/fx.h"
 
 typedef struct { fx32 x, y, z; } VecFx32;
 

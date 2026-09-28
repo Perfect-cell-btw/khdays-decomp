@@ -1,7 +1,7 @@
 /* Whether the local player has line of sight to a position (no collision in the way of a sphere
  * cast from just above the player). */
 
-typedef unsigned short u16;
+#include "nitro/types.h"
 
 typedef struct VecFx32 {
     int x;
