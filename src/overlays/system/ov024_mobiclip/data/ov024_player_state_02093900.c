@@ -1,3 +1,6 @@
+#include "nitro/types.h"
+
+#include "game/class_descriptor.h"
 /* ov024 .data, 0x02093900-0x02093958: the three static objects of the movie
  * player.
  *
@@ -18,19 +21,6 @@
  * dark grey. Only the low half is ever written, which is why the second half
  * of the block is zero.
  */
-
-#include "nitro/types.h"
-
-typedef void (*GameClassFn)(void);
-
-typedef struct {
-    u16 nClassId;
-    u16 nGroupId;
-    GameClassFn pfnOpen;
-    GameClassFn pfnClose;
-    int nAuxSize;
-    int *pArena;
-} GameClassDescriptor;
 
 #define BGR555(r, g, b) ((u16)(((b) << 10) | ((g) << 5) | (r)))
 

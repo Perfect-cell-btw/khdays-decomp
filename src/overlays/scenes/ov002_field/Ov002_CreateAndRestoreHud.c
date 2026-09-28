@@ -1,5 +1,7 @@
 #include "nitro/types.h"
 
+#include "game/class_descriptor.h"
+
 typedef struct Ov002PanelSlot {
     int nId, nIcon;
     u16 wRecordedValue, wCurrentValue, wState, wReserved;
@@ -66,14 +68,6 @@ typedef struct Ov002RootContext {
 } Ov002RootContext;
 typedef struct Ov002DayClock { u8 nModeFlags; } Ov002DayClock;
 typedef struct Ov002PanelThresholds { char pad000[4]; u16 wHiddenGroups; char pad006[8]; u16 nMetric; } Ov002PanelThresholds;
-typedef struct GameClassDescriptor {
-    u16 nClassId, nGroupId;
-    int (*pfnOpen)(void *);
-    void (*pfnClose)(void);
-    int nAuxSize;
-    int *pArena;
-} GameClassDescriptor;
-
 extern Ov002RootContext *data_ov002_0207fa00;
 extern Ov002MissionMember data_0204c678[];
 extern const s8 data_ov002_0207ef68[];

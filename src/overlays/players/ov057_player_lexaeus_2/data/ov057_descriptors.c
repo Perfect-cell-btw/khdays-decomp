@@ -1,20 +1,10 @@
+#include "game/class_descriptor.h"
 /* ov057 semantic descriptors.
  *
  * gOv057SlotInitParams initializes actor slot 5 from the le/li_e3 resource.
  * gOv057SceneClass registers scene class 10/group 6 with a 0x3180-byte
  * auxiliary state block and the overlay's THUMB open/close hooks.
  */
-
-typedef void (*GameClassFn)(void);
-
-typedef struct {
-    unsigned short nClassId;
-    unsigned short nGroupId;
-    GameClassFn pfnOpen;
-    GameClassFn pfnClose;
-    int nAuxSize;
-    int *pArena;
-} GameClassDescriptor;
 
 typedef struct {
     char *pszResourcePath;

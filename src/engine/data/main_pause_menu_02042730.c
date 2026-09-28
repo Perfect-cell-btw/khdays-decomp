@@ -1,20 +1,10 @@
+#include "game/class_descriptor.h"
 /* main .data, 0x02042730-0x020427d4: the pause menu task's descriptor and resource names.
  *
  * The task class (0x12 / group 0xf, constructor 02022708, method 020227c0, 0xec-byte state) is
  * instantiated by 02022eb0; the screen files are the pause background (one per language, '&'
  * replaced by the two-letter code below), the icon and message tilemaps and the misc icons.
  */
-typedef void (*GameClassFn)(void);
-
-typedef struct GameClassDescriptor {
-    unsigned short nClassId;  /* 0x00 */
-    unsigned short nGroupId;  /* 0x02 */
-    GameClassFn pfnCtor;      /* 0x04: returns the object's first state fn */
-    GameClassFn pfnMethod;    /* 0x08 */
-    int nAuxSize;             /* 0x0c: zero-filled state block */
-    int *pArena;              /* 0x10 */
-} GameClassDescriptor;
-
 extern void Boot3DSubsystem(void);
 extern void Shutdown3DSubsystem(void);
 

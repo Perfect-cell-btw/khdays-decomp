@@ -1,3 +1,6 @@
+#include "nitro/types.h"
+
+#include "game/class_descriptor.h"
 #pragma thumb on
 /* MsgQueue_Init_2 = MsgQueue_Init (THUMB). Sets up the message-queue context: it lives at the base of
  * the current root heap and is published in data_0204c230. The queue gets two entries (0x20 bytes
@@ -5,10 +8,6 @@
  * with the first one active. Table6_ResetAll (Table6_ResetAll) then clears the send state, and the two
  * transfer tasks are instantiated (InstantiateClass, InstantiateClass) from the descriptor template
  * data_02042110 with the class ids of data_02042108. Returns MsgQueue_GetHeap (MsgQueue_GetHeap). */
-
-#include "nitro/types.h"
-
-typedef void (*GameClassFn)(void);
 
 typedef struct MsgQueueBuf {
     int state;                          /* +0x0 */
@@ -30,15 +29,6 @@ typedef struct MsgQueueCtx {
     char pad00c[0x758 - 0xc];
     int classHandle[2];                 /* +0x758: the two transfer tasks */
 } MsgQueueCtx;
-
-typedef struct GameClassDescriptor {
-    u16 nClassId;                       /* 0x00 */
-    u16 nGroupId;                       /* 0x02 */
-    GameClassFn pfnCtor;                /* 0x04 */
-    GameClassFn pfnMethod;              /* 0x08 */
-    int nAuxSize;                       /* 0x0c */
-    int ***pArena;                      /* 0x10 */
-} GameClassDescriptor;
 
 typedef struct MsgQueueClassIds {
     int id[2];

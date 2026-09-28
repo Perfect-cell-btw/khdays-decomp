@@ -1,3 +1,4 @@
+#include "game/class_descriptor.h"
 /* ov022 class descriptor data_ov022_020b2db0, 0x020b2db0-0x020b2dc4 (.data).
  *
  * InstantiateClass (02023930 / 02023960) builds a task object from it: the
@@ -5,17 +6,6 @@
  * function, the method slot, the size of the zero-filled auxiliary block and
  * the arena reference.  Constructor 020b0f2c, method 020b0ff8, 0x2bc-byte state.
  */
-
-typedef void (*GameClassFn)(void);
-
-typedef struct GameClassDescriptor {
-    unsigned short nClassId;  /* 0x00 */
-    unsigned short nGroupId;  /* 0x02 */
-    GameClassFn pfnCtor;      /* 0x04: returns the object's first state fn */
-    GameClassFn pfnMethod;    /* 0x08 */
-    int nAuxSize;             /* 0x0c: zero-filled state block */
-    int *pArena;              /* 0x10 */
-} GameClassDescriptor;
 
 extern void Ov022_InitSyncSession(void);
 extern void func_ov022_020b0ff8(void);

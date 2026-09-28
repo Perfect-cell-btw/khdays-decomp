@@ -1,8 +1,9 @@
-/* main .rodata 0x0204208c-0x02042124: NNS G3D material masks, matrix/quaternion helper constants
- * and the class descriptor of the session's transfer-channel task. */
-
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+
+#include "game/class_descriptor.h"
+/* main .rodata 0x0204208c-0x02042124: NNS G3D material masks, matrix/quaternion helper constants
+ * and the class descriptor of the session's transfer-channel task. */
 
 typedef struct VecFx16 {
     fx16 x, y, z;
@@ -14,21 +15,9 @@ typedef struct Quat {
     fx32 w, x, y, z;
 } Quat;
 
-typedef void (*GameClassFn)(void);
-
-/* InstantiateClass (02023930 / 02023960) descriptor, as in the overlay class files. */
-typedef struct GameClassDescriptor {
-    u16 nClassId;             /* 0x00 */
-    u16 nGroupId;             /* 0x02 */
-    GameClassFn pfnCtor;      /* 0x04: returns the object's first state fn */
-    GameClassFn pfnMethod;    /* 0x08 */
-    int nAuxSize;             /* 0x0c: zero-filled state block */
-    int ***pArena;            /* 0x10 */
-} GameClassDescriptor;
-
 extern void ContextEntry_Set(void);
 extern void func_0203123c(void);
-extern int **data_0204c024;
+extern int data_0204c024;
 
 /* NitroSystem G3D material SBC (NNSi_G3dFuncSbcMAT): the diffuse/ambient colour-field mask selected by
  * the material's three flag bits. */

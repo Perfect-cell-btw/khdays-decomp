@@ -1,19 +1,9 @@
+#include "nitro/types.h"
+
+#include "game/class_descriptor.h"
 /* main .data, 0x02042958-0x02042a70: a 16-colour text palette, three task descriptors, the sound
  * archive and message database paths and the two-letter world directory codes.
  */
-
-#include "nitro/types.h"
-
-typedef void (*GameClassFn)(void);
-
-typedef struct GameClassDescriptor {
-    unsigned short nClassId;  /* 0x00 */
-    unsigned short nGroupId;  /* 0x02 */
-    GameClassFn pfnCtor;      /* 0x04: returns the object's first state fn */
-    GameClassFn pfnMethod;    /* 0x08 */
-    int nAuxSize;             /* 0x0c: zero-filled state block */
-    int *pArena;              /* 0x10 */
-} GameClassDescriptor;
 
 extern void Session_Init(void);
 extern void Session_Destroy(void);

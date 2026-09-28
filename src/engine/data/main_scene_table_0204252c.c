@@ -1,3 +1,4 @@
+#include "game/class_descriptor.h"
 /* main .data, 0x0204252c-0x020425ec: the root task descriptor main() instantiates (BootTask,
  * 02020928 / 02020974) and the scene table the scene switcher 0202099c indexes by scene id: each
  * row names the overlay to load (-1 = none) and the InstantiateClass descriptor of the scene task
@@ -12,17 +13,6 @@
  * black, still in scene 2, until A is pressed; scene 6 then shows the mission as cancelled, and
  * closing it returns to the lobby (19).
  */
-typedef void (*GameClassFn)(void);
-
-typedef struct GameClassDescriptor {
-    unsigned short nClassId;  /* 0x00 */
-    unsigned short nGroupId;  /* 0x02 */
-    GameClassFn pfnCtor;      /* 0x04: returns the object's first state fn */
-    GameClassFn pfnMethod;    /* 0x08 */
-    int nAuxSize;             /* 0x0c: zero-filled state block */
-    int *pArena;              /* 0x10 */
-} GameClassDescriptor;
-
 typedef struct SceneEntry {
     int overlayId;            /* 0x00: overlay to load, -1 = none */
     void *classDesc;          /* 0x04: InstantiateClass descriptor */
