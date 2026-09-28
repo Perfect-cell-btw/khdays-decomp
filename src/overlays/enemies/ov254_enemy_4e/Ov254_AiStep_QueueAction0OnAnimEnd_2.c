@@ -20,5 +20,5 @@ void Ov254_AiStep_QueueAction0OnAnimEnd_2(struct Obj *obj) {
         return;
     }
     *(char *)(inner->p0 + 0x1c7) = 0;
-    SetIndexedSlot(obj, obj->b20);
+    SetIndexedSlot(obj, obj->b20, 0);
 }

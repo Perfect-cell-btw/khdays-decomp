@@ -16,7 +16,7 @@
  * the ROM did.
  */
 extern void ScaleVec3Fx12(int t, const int *src, int *dst);
-extern void Ov183_SwingSweep(int *ctx);
+extern void Ov183_SwingSweep(int *ctx, int kind);
 extern int RandNextScaled();
 extern void SetIndexedSlot(int *self, int action, void *cb);
 extern const short data_0203d210[];
@@ -41,7 +41,7 @@ void Ov183_StepWindUp(int *self) {
     ctx[7] = ctx[7] + *(int *)(self[0] + 0x2c);
     if (ctx[7] >= 0x1000 && *(unsigned char *)((char *)ctx + 0x50) == 0) {
         *(unsigned char *)((char *)ctx + 0x50) = 1;
-        Ov183_SwingSweep(ctx);
+        Ov183_SwingSweep(ctx, 1);
     }
 
     if (*(unsigned char *)ctx[3] != 0) {

@@ -13,8 +13,8 @@ typedef struct {
 extern int Ov002_GetItemResource(int kind);
 extern void Draw_ScaledValue(void *list, int handle, int a, int b, int mask);
 extern void Ov002_TakeLock(int a);
-extern void Ov002_ForwardToSubDc(int event);
-extern void Ov002_Ctx_InvokeTagTrackerCallback(void);
+extern int Ov002_ForwardToSubDc(int event);
+extern void Ov002_Ctx_InvokeTagTrackerCallback(int);
 extern void Ov002_SelectEntry(int kind);
 
 extern Ov002PanelContext *data_ov002_0207f614;
@@ -29,7 +29,6 @@ void Ov002_PublishRequestKind9(void) {
 
     Draw_ScaledValue(ctx->aDisplayList, handle, 8, 0, 0xf);
     Ov002_TakeLock(1);
-    Ov002_ForwardToSubDc(0x48);
-    Ov002_Ctx_InvokeTagTrackerCallback();
+    Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(0x48));
     Ov002_SelectEntry(9);
 }

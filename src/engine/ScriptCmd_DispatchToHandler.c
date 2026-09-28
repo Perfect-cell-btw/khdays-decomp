@@ -1,12 +1,11 @@
 /* Script command: resolves the operand and dispatches to the handler. */
 
-extern int ScriptVm_ResolveOperand(void *p);
-extern void ScriptVm_ReadOperandInt(void *p, int x);
-extern void dispatchToHandlerAtOffset(void);
+extern int ScriptVm_ResolveOperand(void *p, void *cmd);
+extern int ScriptVm_ReadOperandInt(void *p, int x);
+extern void dispatchToHandlerAtOffset(int);
 
-int ScriptCmd_DispatchToHandler(void *arg0) {
-    int r = ScriptVm_ResolveOperand(arg0);
-    ScriptVm_ReadOperandInt(arg0, r);
-    dispatchToHandlerAtOffset();
+int ScriptCmd_DispatchToHandler(void *arg0, void *cmd) {
+    int r = ScriptVm_ResolveOperand(arg0, cmd);
+    dispatchToHandlerAtOffset(ScriptVm_ReadOperandInt(arg0, r));
     return 1;
 }

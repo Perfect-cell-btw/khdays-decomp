@@ -1,5 +1,5 @@
 extern char *NNSi_FndGetCurrentRootHeap(void);
-extern void Ov032_DisposeAndFreeChild(void);
+extern void Ov032_DisposeAndFreeChild(char *obj);
 extern void Ov032_ReleaseChildFromGlobal(char *heap);
 extern void func_02023ad0(int h);
 extern void ReleaseField74AndCleanup(char *p);
@@ -10,7 +10,7 @@ extern void Ov022_DestroyRoot(char *heap);
  * then hands the heap back to the shared unloader. */
 void Ov032_UnloadEnemyOverlay(void) {
     char *heap = NNSi_FndGetCurrentRootHeap();
-    Ov032_DisposeAndFreeChild();
+    Ov032_DisposeAndFreeChild(heap);
     Ov032_ReleaseChildFromGlobal(heap);
     func_02023ad0(*(int *)(heap + 0x2c2c));
     ReleaseField74AndCleanup(heap + 0x2c34);

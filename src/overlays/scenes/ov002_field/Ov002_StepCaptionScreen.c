@@ -38,8 +38,8 @@ extern const int data_ov002_0207e368[];
 extern int Session_IsActive(void);
 extern int Ov105_WM_GetLinkLevel(void);
 
-extern void Ov002_ForwardToSubDc(int nSound);
-extern void Ov002_Ctx_InvokeTagTrackerCallback(void);
+extern int Ov002_ForwardToSubDc(int nSound);
+extern void Ov002_Ctx_InvokeTagTrackerCallback(int);
 extern void Ov002_StepProgressBar(void);
 
 int Ov002_StepCaptionScreen(void)
@@ -56,8 +56,7 @@ int Ov002_StepCaptionScreen(void)
         } else {
             pTable = data_ov002_0207e368;
         }
-        Ov002_ForwardToSubDc((u16)pTable[Ov105_WM_GetLinkLevel()]);
-        Ov002_Ctx_InvokeTagTrackerCallback();
+        Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc((u16)pTable[Ov105_WM_GetLinkLevel()]));
     }
 
     if (s->nBar != 0) {

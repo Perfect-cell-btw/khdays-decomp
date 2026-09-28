@@ -2,8 +2,8 @@ typedef void (*CARDFunc)(void *);
 typedef void (*CARDCallback)(void *);
 
 extern int  CARDi_ReadFromCache(void *p);
-extern void CARDi_ReadRomIDCore(void);
-extern void CARDi_CheckPulledOutCore(void);
+extern int CARDi_ReadRomIDCore(void);
+extern void CARDi_CheckPulledOutCore(int);
 extern void OS_WakeupThread(void *queue);
 extern void OS_WakeupThreadDirect(void *thread);
 extern int  OS_DisableInterrupts(void);
@@ -26,8 +26,7 @@ void CARDi_ReadRomSyncCore(void)
     }
 
     p = (char *)&data_020464e0;
-    CARDi_ReadRomIDCore();
-    CARDi_CheckPulledOutCore();
+    CARDi_CheckPulledOutCore(CARDi_ReadRomIDCore());
 
     *(*(int **)p) = 0;
     cb    = *(CARDCallback *)(p + 0x38);

@@ -1,8 +1,9 @@
-/* Looks up the entry in the collision model's name table (case-insensitive). */
+/* Looks up the entry in the collision model's name table (case-insensitive). Returns the entry, or
+ * NULL when no name matches. */
 
-extern void FindEntryByNameNoCase(int arg0);
+extern char *FindEntryByNameNoCase(int arg0);
 
-void CollModel_FindEntry(void *p)
+char *CollModel_FindEntry(void *p)
 {
-    FindEntryByNameNoCase(*(int *)*(int **)((char *)p + 4));
+    return FindEntryByNameNoCase(*(int *)*(int **)((char *)p + 4));
 }

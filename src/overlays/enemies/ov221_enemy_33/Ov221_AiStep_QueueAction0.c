@@ -11,5 +11,5 @@ struct A {
 
 int Ov221_AiStep_QueueAction0(struct A *a) {
     (*a->p)[0x1c7] = 0;
-    return SetIndexedSlot(a, a->b);
+    return SetIndexedSlot(a, a->b, 0);
 }

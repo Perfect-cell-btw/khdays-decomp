@@ -5,7 +5,7 @@
  * +0x4c delay is rolled in [+0x224, +0x228] of the actor, sub-state 2 is requested and the
  * state ends with no successor. */
 extern void ScaleVec3Fx12(int t, const int *src, int *dst);
-extern int Ov114_PerformSwingSweep(int *ctx);
+extern int Ov114_PerformSwingSweep(int *ctx, int kind);
 extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int *self, int action, void *cb);
 extern const short data_0203d210[];
@@ -29,7 +29,7 @@ void Ov114_WindupTick(int *self)
     ctx[0x11] = ctx[0x11] + *(int *)(self[0] + 0x2c);
     if (*(unsigned char *)((char *)ctx + 0x49) == 0 && ctx[0x11] >= 0x1000) {
         *(unsigned char *)((char *)ctx + 0x49) = 1;
-        if (Ov114_PerformSwingSweep(ctx) != 0) {
+        if (Ov114_PerformSwingSweep(ctx, 1) != 0) {
             ctx[0x1a] = 0;
         }
     }

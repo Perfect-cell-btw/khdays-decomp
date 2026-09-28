@@ -1,8 +1,9 @@
-/* Walks the record list appending the records whose kind byte (+0x23) is 0. */
+/* Walks the record list appending the records whose kind byte (+0x23) is 0. Returns what
+ * Ov302_ParseRecordListAppendMatches returns. */
 
-extern void Ov302_ParseRecordListAppendMatches(void *a, void *b, void *c, void *cb);
+extern int Ov302_ParseRecordListAppendMatches(void *a, void *b, void *c, void *cb);
 extern void Ov302_RecordFilter_KindZero(void);
 
-void Ov302_AppendRecordsKindZero(void *a, void *b, void *c) {
-    Ov302_ParseRecordListAppendMatches(a, b, c, Ov302_RecordFilter_KindZero);
+int Ov302_AppendRecordsKindZero(void *a, void *b, void *c) {
+    return Ov302_ParseRecordListAppendMatches(a, b, c, Ov302_RecordFilter_KindZero);
 }

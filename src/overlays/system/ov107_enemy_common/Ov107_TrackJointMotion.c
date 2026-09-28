@@ -5,7 +5,7 @@ typedef unsigned short u16;
 typedef struct { fx32 x, y, z; } VecFx32;
 typedef struct { fx32 rot[9]; VecFx32 pos; } MtxFx43;
 
-extern void Obj_RenderModel(void *self);
+extern void Obj_RenderModel(void *self, int region);
 extern int func_02016320(void *pRenderObj, MtxFx43 *pos, void *nrm, u16 nodeID);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern fx32 VEC_Normalize(const VecFx32 *source, VecFx32 *destination);
@@ -38,11 +38,11 @@ typedef struct {
     int f38;                         /* +0x38 */
 } Node;
 
-void Ov107_TrackJointMotion(char *self)
+void Ov107_TrackJointMotion(char *self, int region)
 {
     Node *node = *(Node **)(self + 0x84);
 
-    Obj_RenderModel(self);
+    Obj_RenderModel(self, region);
 
     if (((unsigned)(node->field_04 << 0x1c)) >> 0x1f) {
         node->f38 = 0;

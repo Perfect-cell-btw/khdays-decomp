@@ -1,4 +1,5 @@
-/* Builds a sphere-cast argument block and runs Collision_RunSphereCast on entity slot index. */
+/* Builds a sphere-cast argument block and runs Collision_RunSphereCast on entity slot index.
+ * Returns the nearest hit record, or NULL when nothing is hit. */
 
 typedef struct {
     int word0;
@@ -10,9 +11,9 @@ typedef struct {
 } func_0202c2ac_args;
 
 extern char *data_0204c208;
-extern void Collision_RunSphereCast(void *ptr, func_0202c2ac_args *args);
+extern void *Collision_RunSphereCast(void *ptr, func_0202c2ac_args *args);
 
-void EntityMgr_RunSphereCast(int index, int arg1, int arg2, int arg3, int arg4) {
+void *EntityMgr_RunSphereCast(int index, int arg1, int arg2, int arg3, int arg4) {
     func_0202c2ac_args args;
 
     args.word0 = arg1;
@@ -21,5 +22,5 @@ void EntityMgr_RunSphereCast(int index, int arg1, int arg2, int arg3, int arg4) 
     args.halfc = 0;
     args.halfe = 0;
     args.word10 = arg4;
-    Collision_RunSphereCast(data_0204c208 + 4 + index * 8, &args);
+    return Collision_RunSphereCast(data_0204c208 + 4 + index * 8, &args);
 }

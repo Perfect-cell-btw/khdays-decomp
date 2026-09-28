@@ -2,7 +2,7 @@
 
 extern int ScriptVm_ReadOperandInt();
 
-int Ov002_ScriptCmd_SkipIntOperand_2(int arg0) {
-    ScriptVm_ReadOperandInt(arg0);
+int Ov002_ScriptCmd_SkipIntOperand_2(int arg0, int arg1) {
+    ScriptVm_ReadOperandInt(arg0, arg1);
     return 1;
 }

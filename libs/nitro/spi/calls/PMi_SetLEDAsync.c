@@ -1,8 +1,8 @@
 /* NitroSDK spi (pm.c): PMi_SetLEDAsync -- maps the LED status to a PM utility command and sends it
  * through PM_SendUtilityCommandAsync (callback/arg pass through in r1/r2); 0xffff = PM_INVALID_COMMAND. */
-extern int PM_SendUtilityCommandAsync(int arg);
+extern int PM_SendUtilityCommandAsync(int arg, int arg1, int arg2);
 
-int PMi_SetLEDAsync(int arg0)
+int PMi_SetLEDAsync(int arg0, int arg1, int arg2)
 {
     int v;
     switch (arg0) {
@@ -12,5 +12,5 @@ int PMi_SetLEDAsync(int arg0)
     default: v = 0; break;
     }
     if (v == 0) return 0xffff;
-    return PM_SendUtilityCommandAsync(v);
+    return PM_SendUtilityCommandAsync(v, arg1, arg2);
 }

@@ -1,5 +1,5 @@
 /* Casts a ray against the world's collision (Collision_RunRayCast) with the direction treated as a
- * unit vector. */
+ * unit vector. Returns the nearest hit record, or NULL when nothing is hit. */
 
 typedef struct {
     int word0;
@@ -10,13 +10,13 @@ typedef struct {
     int word10;
 } func_01fff920_args;
 
-extern void Collision_RunRayCast(int arg0, func_01fff920_args *args);
+extern void *Collision_RunRayCast(int arg0, func_01fff920_args *args);
 
-void Collision_CastRay(int arg0, int arg1, int arg2) {
+void *Collision_CastRay(int arg0, int arg1, int arg2) {
     func_01fff920_args args;
 
     args.word0 = arg1;
     args.word4 = arg2;
     args.halfc = 1;
-    Collision_RunRayCast(arg0, &args);
+    return Collision_RunRayCast(arg0, &args);
 }

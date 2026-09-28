@@ -1,10 +1,10 @@
 /* Reads a script operand as fx32: integers are converted, fx32 values are returned as they are,
  * anything else is 0. */
 
-extern short *ScriptVm_ResolveOperand(void);
+extern short *ScriptVm_ResolveOperand(void *, void *);
 
-int ScriptVm_ReadOperandFx32(void) {
-    short *ptr = ScriptVm_ResolveOperand();
+int ScriptVm_ReadOperandFx32(void *st, void *cmd) {
+    short *ptr = ScriptVm_ResolveOperand(st, cmd);
     int value = 0;
 
     if (ptr[0] == 1) {

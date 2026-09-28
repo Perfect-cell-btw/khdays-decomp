@@ -2,7 +2,7 @@
  * appends it; returns its index. */
 
 extern void INITi_CpuClear32_0x01ff86fc(unsigned int data, void *dst, unsigned int size);
-extern int SlotTable_FindFree(void);
+extern int SlotTable_FindFree(char *);
 extern void SlotTable_InitCellAnim(void *dst, int a, int b, int c);
 extern void *List_Nth(void *a, int b);
 extern void NNS_FndAppendDoubleListObject(void *a, void *b);
@@ -12,7 +12,7 @@ int SlotTable_AddEntry(void *a0, int a1, int a2) {
     char *p;
     char *q;
 
-    idx = SlotTable_FindFree();
+    idx = SlotTable_FindFree(a0);
     p = (char *)a0 + 4 + idx * 0x8c;
 
     *(unsigned int *)(p + 0x78) &= ~1u;

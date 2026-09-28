@@ -1,8 +1,8 @@
 extern int Ov002_Ctx_FindActiveEntryByTag(int id);
 extern void Ov002_Ctx_SetTagTrackerNodeArmed_5(int handle, int a);
 extern int Ov002_GetPanelField005c(void);
-extern void Ov002_ForwardToSubDc(int id);
-extern void Ov002_Ctx_InvokeTagTrackerCallback(void);
+extern int Ov002_ForwardToSubDc(int id);
+extern void Ov002_Ctx_InvokeTagTrackerCallback(int);
 extern void func_ov002_02067944(char *p);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 extern void ZeroHalfThenFree(int h);
@@ -20,10 +20,8 @@ void Ov002_TeardownBriefing(void) {
     Ov002_Ctx_SetTagTrackerNodeArmed_5(Ov002_Ctx_FindActiveEntryByTag(0x15), 0);
     Ov002_Ctx_SetTagTrackerNodeArmed_5(Ov002_Ctx_FindActiveEntryByTag(0x17), 0);
     if (Ov002_GetPanelField005c() == 0) {
-        Ov002_ForwardToSubDc(0x57);
-        Ov002_Ctx_InvokeTagTrackerCallback();
-        Ov002_ForwardToSubDc(0x53);
-        Ov002_Ctx_InvokeTagTrackerCallback();
+        Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(0x57));
+        Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(0x53));
     }
     func_ov002_02067944(self + 0xc);
     {

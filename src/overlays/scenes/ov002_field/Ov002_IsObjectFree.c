@@ -14,7 +14,7 @@ typedef struct Ov002Obj {
 } Ov002Obj;
 
 extern int Ov002_GetRootField8b68(int nSlot);
-extern int Ov002_Element_IsAllowed(Ov002Obj *pObj);
+extern int Ov002_Element_IsAllowed(Ov002Obj *pObj, int arg1);
 
 /* Say whether an object is free to act right now.
  *
@@ -38,7 +38,7 @@ int Ov002_IsObjectFree(Ov002Obj *pObj, int nSlot)
         return Ov002_GetRootField8b68(nSlot) == 0;
 
     case 0x21:
-        return Ov002_Element_IsAllowed(pObj);
+        return Ov002_Element_IsAllowed(pObj, nSlot);
     }
 
     return 1;

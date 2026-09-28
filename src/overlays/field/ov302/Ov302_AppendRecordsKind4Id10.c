@@ -1,8 +1,9 @@
-/* Walks the record list appending the records of kind 4 with id (+2) 10. */
+/* Walks the record list appending the records of kind 4 with id (+2) 10. Returns what
+ * Ov302_ParseRecordListAppendMatches returns. */
 
-extern void Ov302_ParseRecordListAppendMatches(void *a, void *b, void *c, void *cb);
+extern int Ov302_ParseRecordListAppendMatches(void *a, void *b, void *c, void *cb);
 extern void Ov302_RecordFilter_Kind4Id10(void);
 
-void Ov302_AppendRecordsKind4Id10(void *a, void *b, void *c) {
-    Ov302_ParseRecordListAppendMatches(a, b, c, Ov302_RecordFilter_Kind4Id10);
+int Ov302_AppendRecordsKind4Id10(void *a, void *b, void *c) {
+    return Ov302_ParseRecordListAppendMatches(a, b, c, Ov302_RecordFilter_Kind4Id10);
 }

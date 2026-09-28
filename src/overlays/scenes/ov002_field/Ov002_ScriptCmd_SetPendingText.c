@@ -3,8 +3,8 @@
 extern int ByteCode_ResolveOperand();
 extern int Ov106_SetPendingText();
 
-int Ov002_ScriptCmd_SetPendingText(int arg0) {
-    ByteCode_ResolveOperand(arg0);
+int Ov002_ScriptCmd_SetPendingText(int arg0, unsigned short *arg1) {
+    ByteCode_ResolveOperand(arg0, arg1);
     Ov106_SetPendingText();
     return 1;
 }

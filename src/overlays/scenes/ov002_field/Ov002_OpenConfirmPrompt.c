@@ -4,8 +4,8 @@
  * event 0x4f. The row height is read TWICE rather than cached. */
 extern int Ov002_Ctx_FindActiveEntryByTag(int tag);
 extern void Ov002_Ctx_SetTagTrackerNodeArmed_5(int node, int armed);
-extern void Ov002_ForwardToSubDc(int event);
-extern void Ov002_Ctx_InvokeTagTrackerCallback(void);
+extern int Ov002_ForwardToSubDc(int event);
+extern void Ov002_Ctx_InvokeTagTrackerCallback(int);
 
 extern char *data_ov002_0207f618;
 
@@ -19,6 +19,5 @@ void Ov002_OpenConfirmPrompt(int a, int b) {
     *(short *)(ctx + 0x182) = *(unsigned short *)(ctx + 0x3a);
 
     Ov002_Ctx_SetTagTrackerNodeArmed_5(Ov002_Ctx_FindActiveEntryByTag(0x1a), 0);
-    Ov002_ForwardToSubDc(0x4f);
-    Ov002_Ctx_InvokeTagTrackerCallback();
+    Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(0x4f));
 }

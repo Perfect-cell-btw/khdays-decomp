@@ -51,7 +51,7 @@ void Ov236_HandleMessage(char *self, u8 *cmd, void *arg3)
                 Ov107_CreateNodeXformTaskFx24(*(int *)(self + 0x3c), *(int *)(*(int *)(self + 0x3b0) + 0x38), 0x17, 0, 0x1000, cmd + 5);
             break;
         case 4:
-            *(int *)(*(int *)(self + 0x3b0) + 0x44) = Ov236_SpawnReactionTaskFromHit();
+            *(int *)(*(int *)(self + 0x3b0) + 0x44) = Ov236_SpawnReactionTaskFromHit(self);
             break;
         case 5:
             *(int *)(self + 0x3c4) = Ov107_CreateSpawnTask(self, 0x127, 0xf, 1, *(int *)(self + 0x39c) + 4);

@@ -2,8 +2,8 @@
 
 extern int ObjNode_InitFromDesc();
 
-void Ov000_InitFromDescAndMark(char *p)
+void Ov000_InitFromDescAndMark(char *p, int *desc)
 {
-    ObjNode_InitFromDesc(p);
+    ObjNode_InitFromDesc(p, desc);
     *(int *)(p + 0x4a7c) |= 4;
 }

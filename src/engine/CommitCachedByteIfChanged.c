@@ -4,13 +4,13 @@
  * Always reports success. */
 extern int data_020425e8;
 
-extern int ScriptVm_ReadOperandInt(void *arg);
+extern int ScriptVm_ReadOperandInt(void *arg, int);
 extern int LoadGlobalU16At0(void);
 extern void InvokeSubStructAndStampByte(int a, int b);
 extern void SetSelectionIfChanged(int v);
 
-int CommitCachedByteIfChanged(void *arg) {
-    int v = ScriptVm_ReadOperandInt(arg);
+int CommitCachedByteIfChanged(void *arg, int arg1) {
+    int v = ScriptVm_ReadOperandInt(arg, arg1);
 
     if (v != *(signed char *)&data_020425e8) {
         if ((LoadGlobalU16At0() & 0x100) != 0) {

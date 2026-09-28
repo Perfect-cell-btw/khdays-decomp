@@ -55,7 +55,7 @@ extern void Ov002_ForwardToSubDc_2(int hSound);
 extern int Ov002_Res_GetCount(void *pSub);
 extern int Ov002_Res_GetDataBlock(void *pSub);
 extern int Ov002_NextStreamRecord(void *pSub);
-extern int Ov002_CountTextLines(void);
+extern int Ov002_CountTextLines(void *pRecord);
 extern void Text_DrawDirectional_2(void *pWidget, int a, int b, int c, int d, int e);
 extern void EnqueueObjGfxCommand(void *pWidget);
 extern void Ov002_VariadicMapForward(void *pWidget, int a, void *pOut, int b,
@@ -127,12 +127,12 @@ void Ov002_LinkPageRefresh(int nStep, int nArg)
 
     nSlot = Ov002_NextStreamRecord(pCtx->sub00c);
     Ov002_DrawOnSurface(&pCtx->aWidgets[2], 0,
-                        (Ov002_CountTextLines() > 1 ? 0 : 5) + 4, 2,
+                        (Ov002_CountTextLines((void *)nSlot) > 1 ? 0 : 5) + 4, 2,
                         (void *)nSlot);
 
     nSlot = Ov002_NextStreamRecord(pCtx->sub00c);
     Ov002_DrawOnSurface(&pCtx->aWidgets[3], nBias,
-                        nKind + (Ov002_CountTextLines() > 1 ? 0 : 5), 2,
+                        nKind + (Ov002_CountTextLines((void *)nSlot) > 1 ? 0 : 5), 2,
                         (void *)nSlot);
 
     if (pCtx->bExtra != 0) {

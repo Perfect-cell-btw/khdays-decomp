@@ -1,8 +1,8 @@
-/* Polls the link service instance. */
+/* Polls the link service instance. Returns the word it reads at +0x28 of the object. */
 
 extern int data_ov008_02090f24[];
-extern void Obj_GetWord28(int);
-void Ov008_Link_Poll(void)
+extern int Obj_GetWord28(int);
+int Ov008_Link_Poll(void)
 {
-    Obj_GetWord28(data_ov008_02090f24[1]);
+    return Obj_GetWord28(data_ov008_02090f24[1]);
 }

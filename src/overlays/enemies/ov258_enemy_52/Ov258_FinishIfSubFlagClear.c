@@ -8,7 +8,7 @@ struct Obj { char pad0[4]; struct Mid *mid; };
 
 int Ov258_FinishIfSubFlagClear(struct Obj *obj) {
     if (obj->mid->sub->flag == 0) {
-        return Task_MarkFinished();
+        return Task_MarkFinished(obj);
     }
     return (int)obj;
 }

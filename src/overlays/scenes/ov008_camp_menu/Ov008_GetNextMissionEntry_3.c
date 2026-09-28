@@ -1,8 +1,8 @@
 /* Returns the record of an entry of the menu's mission list. */
 
 extern int Ov008_GetMenuContext(void);
-extern void Ov008_VarTable_GetRecordOfEntry(int, int);
-void Ov008_GetNextMissionEntry_3(int value)
+extern int Ov008_VarTable_GetRecordOfEntry(int, int);
+int Ov008_GetNextMissionEntry_3(int value)
 {
-    Ov008_VarTable_GetRecordOfEntry(Ov008_GetMenuContext() + 0x13fc, value);
+    return Ov008_VarTable_GetRecordOfEntry(Ov008_GetMenuContext() + 0x13fc, value);
 }

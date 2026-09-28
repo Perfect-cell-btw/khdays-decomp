@@ -3,8 +3,7 @@
 extern int ScriptVm_ReadOperandInt();
 extern int Ov002_EnterPhase();
 
-int Ov002_ScriptCmd_EnterPhase(int arg0) {
-    ScriptVm_ReadOperandInt(arg0);
-    Ov002_EnterPhase();
+int Ov002_ScriptCmd_EnterPhase(int arg0, void *cmd) {
+        Ov002_EnterPhase(ScriptVm_ReadOperandInt(arg0, cmd));
     return 1;
 }

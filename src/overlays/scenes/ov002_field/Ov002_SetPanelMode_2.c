@@ -17,8 +17,8 @@ typedef struct {
 extern int Ov002_Ctx_FindActiveEntryByTag(int tag);
 extern void Ov002_Ctx_SetTagTrackerNodeArmed_5(int node, int armed);
 extern void Ov002_RepaintPanelRows(void);
-extern void Ov002_ForwardToSubDc(int event);
-extern void Ov002_Ctx_InvokeTagTrackerCallback(void);
+extern int Ov002_ForwardToSubDc(int event);
+extern void Ov002_Ctx_InvokeTagTrackerCallback(int);
 extern int Ov002_RunShutdownHook(void);
 extern void PlaySoundChecked(int a, int id);
 
@@ -42,7 +42,6 @@ void Ov002_SetPanelMode_2(int mode) {
             PlaySoundChecked(0, 0x10);
         }
     } else {
-        Ov002_ForwardToSubDc(0x4f);
-        Ov002_Ctx_InvokeTagTrackerCallback();
+        Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(0x4f));
     }
 }

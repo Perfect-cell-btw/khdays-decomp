@@ -15,7 +15,7 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int factor, const VecFx32 *source, VecFx32 *destination);
 extern long long FX_DivFx64c(int numerator, int denominator);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void *Collision_CastRayEx(void *collision, VecFx32 *origin, VecFx32 *direction);
+extern void *Collision_CastRayEx(void *collision, VecFx32 *origin, VecFx32 *direction, int arg3);
 extern void ScaleVec3Fixed27(int plane, VecFx32 *in, VecFx32 *out);
 extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
@@ -95,7 +95,7 @@ void Ov260_SettleTick(int *node)
     sphere.pos.y += sphere.nRadius;
     direction.y = -sphere.nRadius * 2;
     direction.z = 0;
-    hit = Collision_CastRayEx(*(void **)(scene + 0x7c), &sphere.pos, &direction);
+    hit = Collision_CastRayEx(*(void **)(scene + 0x7c), &sphere.pos, &direction, 0);
     if (hit != 0) {
         ScaleVec3Fixed27(*(int *)((char *)hit + 0xc), &direction, &direction);
         VEC_Add(&sphere.pos, &direction, (VecFx32 *)(state + 5));

@@ -1,7 +1,7 @@
 extern void Ov022_UpdateCameraAndViews(int mode);
 extern int Ov002_StepPeerObjectLoading(void);
-extern void QueryActiveStateOrDelegate(void);
-extern int Ov022_GetEntryField66(void);
+extern int QueryActiveStateOrDelegate(void);
+extern int Ov022_GetEntryField66(int);
 extern void Ov002_ReadRosterSeat(int a, int b, int *out);
 extern void Ov002_RunSeatHooks(void);
 extern void Ov002_ClearListA(unsigned short id);
@@ -24,8 +24,7 @@ void *Ov022_StartPauseMenu(void) {
     }
     Ov022_UpdateCameraAndViews(0);
     if (Ov002_StepPeerObjectLoading() != 0) {
-        QueryActiveStateOrDelegate();
-        Ov002_ReadRosterSeat(Ov022_GetEntryField66(), 0, &entry);
+        Ov002_ReadRosterSeat(Ov022_GetEntryField66(QueryActiveStateOrDelegate()), 0, &entry);
         Ov002_RunSeatHooks();
         Ov002_ClearListA((unsigned short)entry);
         alpha = Session_IsActive() != 0 ? 0x66 : 0x7f;

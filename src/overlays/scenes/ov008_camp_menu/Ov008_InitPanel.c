@@ -15,8 +15,8 @@ extern void *Slot4_GetIfOccupied(unsigned int a);
 extern void *Ov008_GetSharedRecord(void);
 extern void  Ov008_PrimeSubSceneFromCursor(int a);
 extern int   Ov008_IsSessionReady(void);
-extern void  GameState_IsFlagSet(int flag);
-extern void  Ov008_SetBusyFlag(void);
+extern int GameState_IsFlagSet(int flag);
+extern void  Ov008_SetBusyFlag(int);
 
 void Ov008_InitPanel(void *arg0, int *arg1)
 {
@@ -26,8 +26,7 @@ void Ov008_InitPanel(void *arg0, int *arg1)
     *(u16 *)((char *)Ov008_GetSharedRecord() + 4) = *arg1;
     Ov008_PrimeSubSceneFromCursor(0);
     if (Ov008_IsSessionReady() != 0) {
-        GameState_IsFlagSet(0x200a);
-        Ov008_SetBusyFlag();
+        Ov008_SetBusyFlag(GameState_IsFlagSet(0x200a));
     }
     *(int *)((char *)data_ov008_02090f1c + 0x5c8) = -1;
     *(u16 *)((char *)data_ov008_02090f1c + 0x5c6) |= 0x100;

@@ -48,8 +48,8 @@ extern int InstantiateClass(int nSound, int nArg);
 extern void func_02023ad0(int hVoice);
 
 extern void Ov002_ClearWorldElements(void);
-extern void Ov002_ForwardToSubDc(int nSound);
-extern void Ov002_Ctx_InvokeTagTrackerCallback(void);
+extern int Ov002_ForwardToSubDc(int nSound);
+extern void Ov002_Ctx_InvokeTagTrackerCallback(int);
 
 void Ov002_StartCaptionVoice(void)
 {
@@ -79,8 +79,7 @@ void Ov002_StartCaptionVoice(void)
     }
 
     if (s->bChime != 0) {
-        Ov002_ForwardToSubDc(0x3e9);
-        Ov002_Ctx_InvokeTagTrackerCallback();
+        Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(0x3e9));
     }
     s->nState = 2;
 }

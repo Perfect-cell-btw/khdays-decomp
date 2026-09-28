@@ -1,5 +1,5 @@
 /* Casts a ray against the collision of the indexed entity-manager world, with flags and an object
- * to exclude. */
+ * to exclude. Returns the nearest hit record, or NULL when nothing is hit. */
 
 typedef struct {
     int word0;
@@ -11,9 +11,9 @@ typedef struct {
 } func_0202c268_args;
 
 extern char *data_0204c208;
-extern void Collision_RunRayCast(void *ptr, func_0202c268_args *args);
+extern void *Collision_RunRayCast(void *ptr, func_0202c268_args *args);
 
-void EntityMgr_RunRayCast(int index, int arg1, int arg2, int arg3) {
+void *EntityMgr_RunRayCast(int index, int arg1, int arg2, int arg3) {
     func_0202c268_args args;
 
     args.word0 = arg1;
@@ -21,5 +21,5 @@ void EntityMgr_RunRayCast(int index, int arg1, int arg2, int arg3) {
     args.halfc = 0;
     args.halfe = 0;
     args.word10 = arg3;
-    Collision_RunRayCast(data_0204c208 + 4 + index * 8, &args);
+    return Collision_RunRayCast(data_0204c208 + 4 + index * 8, &args);
 }

@@ -6,8 +6,8 @@ typedef struct {
 extern void Ov002_PlayCaptionCues(int a, int b);
 extern int Ov002_Ctx_FindActiveEntryByTag(int id);
 extern void Ov002_Ctx_SetTagTrackerNodeArmed_5(int handle, int a);
-extern void Ov002_ForwardToSubDc(int id);
-extern void Ov002_ForwardToSubDc_2(void);
+extern int Ov002_ForwardToSubDc(int id);
+extern void Ov002_ForwardToSubDc_2(int);
 extern void Ov002_ForwardToSubDc_5(int a);
 extern char *data_ov002_0207f62c;
 
@@ -24,12 +24,9 @@ void Ov002_RedrawOptionsPage(void) {
         Ov002_PlayCaptionCues(0, 0);
         Ov002_Ctx_SetTagTrackerNodeArmed_5(Ov002_Ctx_FindActiveEntryByTag(8), 0);
         Ov002_Ctx_SetTagTrackerNodeArmed_5(Ov002_Ctx_FindActiveEntryByTag(0xb), 0);
-        Ov002_ForwardToSubDc(0x5e1);
-        Ov002_ForwardToSubDc_2();
-        Ov002_ForwardToSubDc(0x5ed);
-        Ov002_ForwardToSubDc_2();
+        Ov002_ForwardToSubDc_2(Ov002_ForwardToSubDc(0x5e1));
+        Ov002_ForwardToSubDc_2(Ov002_ForwardToSubDc(0x5ed));
     }
-    Ov002_ForwardToSubDc(0x5e3);
-    Ov002_ForwardToSubDc_2();
+    Ov002_ForwardToSubDc_2(Ov002_ForwardToSubDc(0x5e3));
     Ov002_ForwardToSubDc_5(1);
 }

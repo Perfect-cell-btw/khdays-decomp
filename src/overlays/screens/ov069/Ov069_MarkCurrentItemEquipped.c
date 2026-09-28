@@ -2,19 +2,19 @@
  * of the save block's three 40-entry +0xee0 rows: set when found, cleared otherwise. Always 1. */
 typedef unsigned short u16;
 
-extern int ScriptVm_ReadOperandInt(void);
+extern int ScriptVm_ReadOperandInt(void *, int);
 extern void GameState_SetFlag(int flag);
 extern void func_020235bc(int flag);
 extern char *data_0204be18;
 
-int Ov069_MarkCurrentItemEquipped(void)
+int Ov069_MarkCurrentItemEquipped(void *arg0, int arg1)
 {
     int id;
     int i;
     int j;
     char *row;
 
-    id = ScriptVm_ReadOperandInt();
+    id = ScriptVm_ReadOperandInt(arg0, arg1);
     row = data_0204be18;
     for (i = 0; i < 3; i++) {
         j = 0;

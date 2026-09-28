@@ -1,5 +1,5 @@
 extern int Ov002_GetPanelRequestBlock(void);
-extern int Ov002_World_IsFlagBitSet(void);
+extern int Ov002_World_IsFlagBitSet(int bit);
 extern void Ov002_SetPanelField003c(int a);
 extern void Ov002_SetSeatFlag(int a, int b);
 extern int Ov002_GetPanelField018c(void);
@@ -12,7 +12,7 @@ extern void Ov002_ReleaseBattleViewFocus(void);
 int Ov002_ConfirmMission(void) {
     int sel = Ov002_GetPanelRequestBlock();
     if (sel >= 0) {
-        if (Ov002_World_IsFlagBitSet() != 0) {
+        if (Ov002_World_IsFlagBitSet(sel) != 0) {
             Ov002_SetPanelField003c(1);
             Ov002_SetSeatFlag(sel, 0);
         }

@@ -2,8 +2,8 @@
 
 extern int *Anim_GetChannelState();
 
-int Anim_GetFrame(void) {
-    int *p = Anim_GetChannelState();
+int Anim_GetFrame(unsigned short *r0, int r1) {
+    int *p = Anim_GetChannelState(r0, r1);
     if (p == 0) return 0;
     return *p;
 }

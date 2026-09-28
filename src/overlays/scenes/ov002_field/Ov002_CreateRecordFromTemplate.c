@@ -1,5 +1,6 @@
 /*
- * Ov002_CreateRecordFromTemplate - allocate and initialise a record from a template (ARM).
+ * Ov002_CreateRecordFromTemplate - allocate and initialise a record from a template (ARM). Returns
+ * the record.
  *
  * Allocates a new record via Ov002_FindFreeElem(param_1), then fills it: the type word from `type`,
  * seven template fields copied from `tpl` (a/b/e/f signed, c/d unsigned halfwords, extra word), the
@@ -18,7 +19,7 @@ typedef struct {
 
 extern int Ov002_FindFreeElem(int param_1);
 
-void Ov002_CreateRecordFromTemplate(int param_1, Ov002Rec *tpl, int type, int payload)
+Ov002Rec *Ov002_CreateRecordFromTemplate(int param_1, Ov002Rec *tpl, int type, int payload)
 {
     Ov002Rec *o = (Ov002Rec *)Ov002_FindFreeElem(param_1);
     o->type = type;
@@ -31,4 +32,5 @@ void Ov002_CreateRecordFromTemplate(int param_1, Ov002Rec *tpl, int type, int pa
     o->payload = payload;
     o->extra = tpl->extra;
     o->active = 1;
+    return o;
 }

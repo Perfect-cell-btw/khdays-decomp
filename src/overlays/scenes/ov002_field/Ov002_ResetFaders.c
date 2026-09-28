@@ -11,7 +11,7 @@ typedef struct {
 
 extern void Ov002_PushMapSnapshot(int a);
 extern int Ov002_ForwardToSubDc(int a);
-extern void Ov002_Ctx_InvokeTagTrackerCallback(void);
+extern void Ov002_Ctx_InvokeTagTrackerCallback(int);
 extern void Tween_Configure(void *p, int a1, int a2, int a3, int a4);
 extern void Tween_Start(void *p);
 extern void Ov002_SelectEntryByKey(int a);
@@ -22,8 +22,7 @@ void Ov002_ResetFaders(void) {
     Ov002Ctx *c = data_ov002_0207f614;
 
     Ov002_PushMapSnapshot(0);
-    Ov002_ForwardToSubDc(0x50);
-    Ov002_Ctx_InvokeTagTrackerCallback();
+    Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(0x50));
     Tween_Configure(&c->fade[0], 2, 0x18000, 0, 300);
     Tween_Configure(&c->fade[1], 0, 0, 0, 0);
     Tween_Start(&c->fade[0]);

@@ -20,7 +20,7 @@
 typedef unsigned char u8;
 
 extern void Camera_CommitMatrices(void *xform);
-extern void Obj_PrepAltTransform(void);
+extern void Obj_PrepAltTransform(int);
 extern void Obj_StepMotionTransform(void *obj, int a, int b, int c, int d);
 extern void CamAnim_EvalDelta(void *src, void *dst, int arg);
 extern void MI_CpuCopy8(void *src, void *dst, int n);
@@ -37,7 +37,7 @@ void Game_UpdateObjectMotion(char *obj)
         Camera_CommitMatrices(obj + 4);
         return;
     case 1:
-        Obj_PrepAltTransform();
+        Obj_PrepAltTransform(obj);
         Camera_CommitMatrices(obj + 0x4c);
         return;
     default:

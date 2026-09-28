@@ -1,4 +1,5 @@
-/* Builds a cast parameter block from the arguments and runs the collision cast. */
+/* Builds a cast parameter block from the arguments and runs the collision cast. Returns the nearest
+ * hit record, or NULL when nothing is hit. */
 
 typedef struct {
     int word0;
@@ -9,9 +10,9 @@ typedef struct {
     int word10;
 } func_01fff8b8_args;
 
-extern void Collision_CastNearest(int arg0, func_01fff8b8_args *args);
+extern void *Collision_CastNearest(int arg0, func_01fff8b8_args *args);
 
-void Collision_CastSimple(int arg0, int arg1, int arg2, int arg3) {
+void *Collision_CastSimple(int arg0, int arg1, int arg2, int arg3) {
     func_01fff8b8_args args;
 
     args.word0 = arg1;
@@ -19,5 +20,5 @@ void Collision_CastSimple(int arg0, int arg1, int arg2, int arg3) {
     args.halfc = 0;
     args.halfe = 0;
     args.word10 = arg3;
-    Collision_CastNearest(arg0, &args);
+    return Collision_CastNearest(arg0, &args);
 }

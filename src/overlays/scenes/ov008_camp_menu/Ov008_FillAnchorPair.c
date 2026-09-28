@@ -1,13 +1,13 @@
 /* Fill a 2-word buffer for Ov008_SetEntryPos: for each slot, if the matching
  * param_2 flag bit 2 (+0x64 / +0x80) is set, copy from the Ov008_GetEntryPos
  * result; otherwise compute it via Tween_Sample from param_2->+0x4c / +0x68. */
-extern int Ov008_GetEntryPos(int param_1);
+extern int Ov008_GetEntryPos(int param_1, int *r1);
 extern void Tween_Sample(int src, void *dst);
 extern void Ov008_SetEntryPos(int param_1, int param_2, void *buf);
 struct bf3 { unsigned int b0:1, b1:1, b2:1; };
 void Ov008_FillAnchorPair(int param_1, int param_2) {
     int buf[2];
-    int *r = (int *)Ov008_GetEntryPos(param_1);
+    int *r = (int *)Ov008_GetEntryPos(param_1, param_2);
     if (((struct bf3 *)(param_2 + 0x64))->b2) {
         buf[0] = r[0];
     } else {

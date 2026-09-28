@@ -1,8 +1,8 @@
-/* Id of the menu context's current list. */
+/* Id of the menu context's current list. Returns the list's id. */
 
 extern int Ov025_GetPageA();
 extern int Ov025_GetId10();
 
-void Ov025_GetCurrentListId(int arg0) {
-    Ov025_GetId10(Ov025_GetPageA(arg0) + 0x13fc);
+int Ov025_GetCurrentListId(int arg0) {
+    return Ov025_GetId10(Ov025_GetPageA(arg0) + 0x13fc);
 }

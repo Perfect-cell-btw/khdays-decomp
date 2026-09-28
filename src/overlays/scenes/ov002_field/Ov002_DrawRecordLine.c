@@ -53,7 +53,7 @@ extern u32 strlen(const char *pStr);
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);
 extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void Utf8_ToUcs2(char *pSrc, char *pDest);
-extern void Ov002_TryBeginPanelRequest(Ov002TextReq *pReq);
+extern void Ov002_TryBeginPanelRequest(Ov002TextReq *pReq, int nValue);
 
 void Ov002_DrawRecordLine(Ov002Ctx *pCtx, void *pArg)
 {
@@ -87,7 +87,7 @@ void Ov002_DrawRecordLine(Ov002Ctx *pCtx, void *pArg)
     req.hFont = hFont;
     req.n14 = -1;
     req.n18 = 0;
-    Ov002_TryBeginPanelRequest(&req);
+    Ov002_TryBeginPanelRequest(&req, 0);
 
     NNSi_FndFreeFromDefaultHeap(pOut);
 }

@@ -21,5 +21,5 @@ void Ov180_AiStep_QueueAction0OnAnimEnd(struct Obj *obj) {
         return;
     }
     *(char *)(inner->p0 + 0x1c7) = 0;
-    SetIndexedSlot(obj, obj->b20);
+    SetIndexedSlot(obj, obj->b20, 0);
 }

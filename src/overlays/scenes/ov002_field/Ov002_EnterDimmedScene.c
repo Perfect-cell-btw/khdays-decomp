@@ -34,7 +34,7 @@ extern void MI_CpuFill8(void *dst, unsigned char value, unsigned int size);
 extern void *Msg_OpenContainerAndReadHeader(const void *res, int a);
 extern void Ov002_InitResourceRecord(void *dst, const void *src);
 extern int Ov002_ForwardToSubDc(int id);
-extern void Ov002_Ctx_InvokeTagTrackerCallback(void);
+extern void Ov002_Ctx_InvokeTagTrackerCallback(int);
 extern void Ov002_SetUpSubScreen(void);
 extern void Ov002_UploadFileToSubBg1Char(void);
 extern void Ov002_OpenCaptionSurfaces(void);
@@ -67,8 +67,7 @@ void *Ov002_EnterDimmedScene(void) {
     ctx->pAnimA = Msg_OpenContainerAndReadHeader(data_ov002_0207ed20, 0xe);
     ctx->pAnimB = Msg_OpenContainerAndReadHeader(data_ov002_0207ed30, 0xe);
     Ov002_InitResourceRecord(ctx->aSubCtx, data_ov002_0207ed44);
-    Ov002_ForwardToSubDc(0x3e8);
-    Ov002_Ctx_InvokeTagTrackerCallback();
+    Ov002_Ctx_InvokeTagTrackerCallback(Ov002_ForwardToSubDc(0x3e8));
     Ov002_SetUpSubScreen();
     Ov002_UploadFileToSubBg1Char();
     Ov002_OpenCaptionSurfaces();

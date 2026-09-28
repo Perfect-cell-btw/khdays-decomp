@@ -1,8 +1,9 @@
-/* Reads a bit field of the game state's flag array (BitArray_GetField). */
+/* Reads a bit field of the game state's flag array (BitArray_GetField). Returns the field's value.
+ */
 
-extern void BitArray_GetField();
+extern int BitArray_GetField();
 extern int data_0204be18;
 
-void GameState_GetField(int arg0, int arg1) {
-    BitArray_GetField(data_0204be18 + 0x10, arg0, arg1);
+int GameState_GetField(int arg0, int arg1) {
+    return BitArray_GetField(data_0204be18 + 0x10, arg0, arg1);
 }

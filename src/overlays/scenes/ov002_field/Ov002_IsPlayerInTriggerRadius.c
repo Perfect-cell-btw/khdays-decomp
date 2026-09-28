@@ -1,6 +1,6 @@
 extern int Ov002_GetCtxTableByte(int slot);
-extern void QueryActiveStateOrDelegate(void);
-extern char *GetEntryField20ByIndex(void);
+extern int QueryActiveStateOrDelegate(void);
+extern char *GetEntryField20ByIndex(int);
 extern int VEC_Distance(void *a, void *b);
 
 typedef struct { int x, y, z; } Ov002Vec3;
@@ -10,8 +10,7 @@ int Ov002_IsPlayerInTriggerRadius(char *self) {
     char *player;
     int id;
     Ov002Vec3 pos;
-    QueryActiveStateOrDelegate();
-    player = GetEntryField20ByIndex();
+    player = GetEntryField20ByIndex(QueryActiveStateOrDelegate());
     if (player == 0) {
         return 0;
     }

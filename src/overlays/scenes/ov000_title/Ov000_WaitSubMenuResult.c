@@ -16,8 +16,8 @@ typedef struct {
 
 extern OverlayContext *NNSi_FndGetCurrentRootHeap(void);
 extern void func_020362ec(void *image);
-extern void Mem_ReadU16(void *image);
-extern void Ov000_SetSubSceneHalf1C(void);
+extern int Mem_ReadU16(void *image);
+extern void Ov000_SetSubSceneHalf1C(int);
 extern void Scene_DrawNode(void *object);
 extern int Ov000_GetSubSceneResult(void);
 extern void func_02023ad0(int handle);
@@ -33,8 +33,7 @@ OverlayCallback Ov000_WaitSubMenuResult(void) {
     OverlayContext *context = NNSi_FndGetCurrentRootHeap();
 
     func_020362ec(context->overlay_image);
-    Mem_ReadU16(context->overlay_image);
-    Ov000_SetSubSceneHalf1C();
+    Ov000_SetSubSceneHalf1C(Mem_ReadU16(context->overlay_image));
     Scene_DrawNode(context->update_object);
 
     switch (Ov000_GetSubSceneResult()) {

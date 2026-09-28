@@ -1,7 +1,7 @@
-/* Ov024_MobiClip_ResetStreamState -- MobiClip: reset the stream-reader state on the decoder context.
- * Clears the source object slot, the per-stream cursors (ctx[0x16..0x1d]) and the frame
- * cursor (ctx[0x25]), leaving the frame counters alone. */
-void Ov024_MobiClip_ResetStreamState(int *ctx) {
+/* Ov024_MobiClip_ResetStreamState -- MobiClip: reset the stream-reader state on the decoder
+ * context. Clears the source object slot, the per-stream cursors (ctx[0x16..0x1d]) and the frame
+ * cursor (ctx[0x25]), leaving the frame counters alone. Returns the stream. */
+int *Ov024_MobiClip_ResetStreamState(int *ctx) {
     ctx[0] = 0;
     ctx[0x17] = 0;
     ctx[0x18] = 0;
@@ -12,4 +12,5 @@ void Ov024_MobiClip_ResetStreamState(int *ctx) {
     ctx[0x19] = 0;
     ctx[0x16] = 0;
     ctx[0x25] = 0;
+    return ctx;
 }

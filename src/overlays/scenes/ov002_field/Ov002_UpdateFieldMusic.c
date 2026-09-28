@@ -6,9 +6,10 @@ extern int Ov002_RunShutdownHook(void);
 extern void func_ov022_02083fa4(int a);
 extern char *data_ov002_0207fa00;
 
-/* Keeps the field music in step with the mission state: switches to the alternate track while
- * the trigger is armed, otherwise restores the normal one and re-arms the ambience. */
-void Ov002_UpdateFieldMusic(void) {
+/* Keeps the field music in step with the mission state: switches to the alternate track while the
+ * trigger is armed, otherwise restores the normal one and re-arms the ambience. Returns whether
+ * game-state flag 0x20e2 is set once the update is done. */
+int Ov002_UpdateFieldMusic(void) {
     char *self = data_ov002_0207fa00 + 0x8c94;
     if (GameState_IsFlagSet(0x2086) != 0 && func_ov022_02086ef4() != 0 &&
         func_ov022_02086f24() == 0) {
@@ -19,5 +20,5 @@ void Ov002_UpdateFieldMusic(void) {
             func_ov022_02083fa4(0);
         }
     }
-    GameState_IsFlagSet(0x20e2);
+    return GameState_IsFlagSet(0x20e2);
 }
