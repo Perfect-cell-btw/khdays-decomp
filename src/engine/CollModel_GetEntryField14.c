@@ -1,7 +1,7 @@
-/* Field +0x14 of the collision model's entry. */
+/* Field +0x14 of the collision model's entry named `key`. */
 
-extern int *CollModel_FindEntry(void *);
+extern int *CollModel_FindEntry(void *model, void *key);
 
-int CollModel_GetEntryField14(void *arg0) {
-    return CollModel_FindEntry(arg0)[5];
+int CollModel_GetEntryField14(void *model, void *key) {
+    return CollModel_FindEntry(model, key)[5];
 }

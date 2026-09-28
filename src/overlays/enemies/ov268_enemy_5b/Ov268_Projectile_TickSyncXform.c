@@ -19,9 +19,9 @@ struct obj {
     char **p388;
 };
 
-void Ov268_Projectile_TickSyncXform(struct obj *o)
+void Ov268_Projectile_TickSyncXform(struct obj *o, int delta)
 {
-    Ov107_ProcessObjectTick(o);
+    Ov107_ProcessObjectTick(o, delta);
     *(struct s44 *)(*(o->p388) + 0x10) = o->src1;
     *(struct s16 *)(*(o->p388) + 0x58) = o->src2;
     *(struct s16 *)(*(o->p388) + 0x68) = o->src2;

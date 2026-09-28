@@ -14,9 +14,9 @@ struct obj {
     char *p38c;
 };
 
-void Ov186_TickAndSyncChildren(struct obj *o)
+void Ov186_TickAndSyncChildren(struct obj *o, int delta)
 {
-    Ov107_ProcessObjectTick(o);
+    Ov107_ProcessObjectTick(o, delta);
     *(struct s44 *)(*(char **)(o->p388) + 0x10) = o->src;
     *(struct s44 *)(o->p38c + 0x10) = o->src;
 }

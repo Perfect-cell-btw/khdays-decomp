@@ -11,7 +11,7 @@ struct Obj {
     struct Block **pp;
 };
 
-void Ov244_Item_TickSyncXform(struct Obj *this) {
-    Ov107_ProcessObjectTick(this);
+void Ov244_Item_TickSyncXform(struct Obj *this, int delta) {
+    Ov107_ProcessObjectTick(this, delta);
     *(struct Block *)((char *)(*this->pp) + 0x10) = this->block;
 }

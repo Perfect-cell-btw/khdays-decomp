@@ -1,8 +1,8 @@
-/* Forwards to a battle-module routine (ov022) without arguments. */
+/* Forwards to a battle-module routine (ov022) passing its arguments on. */
 
-extern void func_ov022_020ad588(void);
+extern int func_ov022_020ad588(int param_1);
 
-void func_ov096_020babb4(void)
+int func_ov096_020babb4(int param_1)
 {
-	func_ov022_020ad588();
+    return func_ov022_020ad588(param_1);
 }

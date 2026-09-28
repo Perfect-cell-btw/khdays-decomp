@@ -17,10 +17,10 @@ typedef struct {
     char pad[28];
 } Obj;
 
-void Ov203_InitModelPose(Obj *obj) {
+void Ov203_InitModelPose(Obj *obj, int flag) {
     int tmp[3];
 
-    Ov107_AiState_DispatchModelCallbacks(obj);
+    Ov107_AiState_DispatchModelCallbacks(obj, flag);
 
     obj->mat = *(Mat *)(obj->src + 4);
 

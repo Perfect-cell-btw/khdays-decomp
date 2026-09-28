@@ -15,9 +15,9 @@ struct obj {
     char *p38c;
 };
 
-void Ov114_TickAndSyncTwoModelXforms(struct obj *o)
+void Ov114_TickAndSyncTwoModelXforms(struct obj *o, int delta)
 {
-    Ov107_ProcessObjectTick(o);
+    Ov107_ProcessObjectTick(o, delta);
     *(struct s44 *)(*(char **)(o->p388) + 0x10) = o->src;
     *(struct s44 *)(o->p38c + 0x10) = o->src;
 }

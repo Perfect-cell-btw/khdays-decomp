@@ -1,10 +1,10 @@
 /* Hit-point sync: after the base 020c8500 step, each of the two riders (+0x3b4 / +0x3b8) gets
  * half of this actor's +0x218 max as both its +0x218 max and +0x21a current, and half of its
  * own current plus one written to its +0x3be threshold and copied to +0x3bc / +0x3d2 -> +0x3d0. */
-extern void Ov107_AiState_LoadStats(int self);
+extern void Ov107_AiState_LoadStats(int self, int);
 
-void Ov278_SyncRiderHitPoints(int self) {
-    Ov107_AiState_LoadStats(self);
+void Ov278_SyncRiderHitPoints(int self, int recordIndex) {
+    Ov107_AiState_LoadStats(self, recordIndex);
     if (*(int *)(self + 0x3b4) != 0) {
         int rider = *(int *)(self + 0x3b4);
         short v = (short)(*(short *)(self + 0x200 + 0x18) / 2);

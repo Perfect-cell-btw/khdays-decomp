@@ -5,13 +5,13 @@ typedef struct { int w[11]; } Srt;
 struct Part { char pad[0x30]; Srt pose; };
 struct Bone { int pad; Srt srt; };
 
-extern void Ov107_AiState_DispatchModelCallbacks(char *self);
+extern void Ov107_AiState_DispatchModelCallbacks(char *self, int);
 
-void Ov257_DrawPrePass(char *self)
+void Ov257_DrawPrePass(char *self, int flag)
 {
     int i;
 
-    Ov107_AiState_DispatchModelCallbacks(self);
+    Ov107_AiState_DispatchModelCallbacks(self, flag);
     for (i = 0; i < 4; i++) {
         ((struct Part **)self)[0xe9 + i]->pose = ((struct Bone **)self)[0xfb + i]->srt;
     }

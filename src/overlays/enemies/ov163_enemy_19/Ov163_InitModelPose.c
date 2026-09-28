@@ -14,7 +14,7 @@ typedef struct {
     char *src;
 } Obj;
 
-extern void Ov107_AiState_DispatchModelCallbacks(Obj *obj);
+extern void Ov107_AiState_DispatchModelCallbacks(Obj *obj, int);
 extern char *func_ov107_020c9848(void);   /* the game's camera-state getter, named after the byte-identical SDK thunk */
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
@@ -22,11 +22,11 @@ extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Srt_SetTranslation(Mat *mat, VecFx32 *translation);
 
-void Ov163_InitModelPose(Obj *obj) {
+void Ov163_InitModelPose(Obj *obj, int flag) {
     VecFx32 at;
     VecFx32 dir;
 
-    Ov107_AiState_DispatchModelCallbacks(obj);
+    Ov107_AiState_DispatchModelCallbacks(obj, flag);
 
     obj->mat = *(Mat *)(obj->src + 4);
 

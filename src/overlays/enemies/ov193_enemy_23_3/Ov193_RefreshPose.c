@@ -6,7 +6,7 @@
  * call, four bytes short. One of six byte-identical siblings across two layouts (clip at +0x39c,
  * pose at +0x3ac). */
 
-extern void Ov107_AiState_DispatchModelCallbacks(void *self);
+extern void Ov107_AiState_DispatchModelCallbacks(void *self, int);
 extern void Srt_SetRotationQuat(void *pose, void *bones);
 
 typedef struct {
@@ -21,8 +21,8 @@ typedef struct {
     Ov191Pose pose;     /* +0x3ac */
 } Ov191Object;
 
-void Ov193_RefreshPose(Ov191Object *self) {
-    Ov107_AiState_DispatchModelCallbacks(self);
+void Ov193_RefreshPose(Ov191Object *self, int flag) {
+    Ov107_AiState_DispatchModelCallbacks(self, flag);
 
     self->pose = *(Ov191Pose *)((char *)self->pClip + 4);
 

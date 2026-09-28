@@ -1,5 +1,5 @@
-/* Casts a ray 5 units down from just above the entry's position; stores the hit point (or the
- * position) in out. Returns 1 on a hit. */
+/* Casts a ray 5 units down from just above the position of the entry named `key`; stores the hit
+ * point (or the position) in out. Returns 1 on a hit. */
 
 #include "nitro/fx_types.h"
 
@@ -13,12 +13,12 @@ typedef struct Hit {
     int distance0c;
 } Hit;
 
-extern Entry *CollModel_FindEntry(void *cont);
+extern Entry *CollModel_FindEntry(void *cont, void *key);
 extern Hit *Collision_CastRay(void *world, VecFx32 *from, VecFx32 *dir);
 extern void Vec3ScaleAddQ27(int s, const VecFx32 *dir, const VecFx32 *from, VecFx32 *out);
 
-int Collision_ProbeGround(void *cont, int p3, void *out) {
-    Entry *entry = CollModel_FindEntry(cont);
+int Collision_ProbeGround(void *cont, void *key, void *out) {
+    Entry *entry = CollModel_FindEntry(cont, key);
     VecFx32 from;
     VecFx32 dir;
     Hit *hit;

@@ -9,14 +9,14 @@
 struct blk11 { int w[11]; };
 struct Flags5c { int b0 : 1; int b1 : 1; };
 struct Ov236Anchor { VecFx32 pos; VecFx32 dir; int len; };
-extern void Ov107_AiState_DispatchModelCallbacks(void *obj);
+extern void Ov107_AiState_DispatchModelCallbacks(void *obj, int);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 
-void Ov278_InitRiderAnchors(char *obj) {
+void Ov278_InitRiderAnchors(char *obj, int flag) {
     struct Ov236Anchor *a;
 
-    Ov107_AiState_DispatchModelCallbacks(obj);
+    Ov107_AiState_DispatchModelCallbacks(obj, flag);
     ((struct Flags5c *)(*(int *)(obj + 0x390) + 0x5c))->b1 = ((struct Flags5c *)(*(int *)(obj + 0x9c) + 0x5c))->b1;
     *(struct blk11 *)(*(char **)(obj + 0x39c) + 0x10) = *(struct blk11 *)(*(char **)(obj + 0x3ac) + 4);
     *(struct blk11 *)(*(char **)(*(char **)(obj + 0x3c0)) + 0x10) = *(struct blk11 *)(*(char **)(obj + 0x3ac) + 4);

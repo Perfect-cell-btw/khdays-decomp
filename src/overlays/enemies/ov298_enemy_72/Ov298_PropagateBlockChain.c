@@ -1,10 +1,10 @@
 /* After refreshing (Ov107_RefreshAndSelectChild/6980), copies obj+0xa0 into the child node then
  * propagates the child into the linked node. Two chained 11-word block copies. */
 
-extern void Ov107_ProcessObjectTick(void *obj);
+extern void Ov107_ProcessObjectTick(void *obj, int);
 struct blk11 { int w[11]; };
-void Ov298_PropagateBlockChain(char *obj) {
-    Ov107_ProcessObjectTick(obj);
+void Ov298_PropagateBlockChain(char *obj, int delta) {
+    Ov107_ProcessObjectTick(obj, delta);
     *(struct blk11 *)(*(char **)(obj + 0x390) + 0x10) = *(struct blk11 *)(obj + 0xa0);
     *(struct blk11 *)(*(char **)(*(char **)(obj + 0x38c)) + 0x10) =
         *(struct blk11 *)(*(char **)(obj + 0x390) + 0x10);

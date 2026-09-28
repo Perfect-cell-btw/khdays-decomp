@@ -1,7 +1,7 @@
 /* Runs the model callbacks, copies the clip's pose into the object and applies its rotation to the
  * bones. */
 
-extern void Ov107_AiState_DispatchModelCallbacks(void *self);
+extern void Ov107_AiState_DispatchModelCallbacks(void *self, int);
 extern void Srt_SetRotationQuat(void *pose, void *bones);
 
 typedef struct {
@@ -16,8 +16,8 @@ typedef struct {
     Ov191Pose pose;     /* +0x3a8 */
 } Ov191Object;
 
-void Ov156_RefreshPose(Ov191Object *self) {
-    Ov107_AiState_DispatchModelCallbacks(self);
+void Ov156_RefreshPose(Ov191Object *self, int flag) {
+    Ov107_AiState_DispatchModelCallbacks(self, flag);
 
     self->pose = *(Ov191Pose *)((char *)self->pClip + 4);
 

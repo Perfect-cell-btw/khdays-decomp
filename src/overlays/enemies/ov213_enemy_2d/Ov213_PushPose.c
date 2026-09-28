@@ -1,7 +1,7 @@
 /* Push the object's own bone table back into the current clip: run the animator,
  * then copy the 44 bytes at +0xa0 over the clip's slot at +0x10. Mirror of the
  * RefreshPose family, which copies the other way. */
-extern void Ov107_ProcessObjectTick(void *self);
+extern void Ov107_ProcessObjectTick(void *self, int);
 
 typedef struct {
     int words[11];      /* 44 bytes */
@@ -19,8 +19,8 @@ typedef struct {
     Ov213Clip *pClip;   /* +0x390 */
 } Ov213Object;
 
-void Ov213_PushPose(Ov213Object *self) {
-    Ov107_ProcessObjectTick(self);
+void Ov213_PushPose(Ov213Object *self, int delta) {
+    Ov107_ProcessObjectTick(self, delta);
 
     self->pClip->pose = self->bones;
 }

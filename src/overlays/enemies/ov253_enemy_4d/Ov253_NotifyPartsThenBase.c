@@ -3,15 +3,15 @@
  *
  * The first hook's argument is read out of +0x19d BEFORE the null check -- the ROM's
  * `ldrb r1,[r6,#0x19d]` sits above the branch, not inside it. */
-extern void Ov107_AiState_LoadStats(char *self);
+extern void Ov107_AiState_LoadStats(char *self, int);
 
-void Ov253_NotifyPartsThenBase(char *self) {
+void Ov253_NotifyPartsThenBase(char *self, int recordIndex) {
     int i;
     int five;
     void (*f)(char *, int);
     char *o;
     int arg;
-    Ov107_AiState_LoadStats(self);
+    Ov107_AiState_LoadStats(self, recordIndex);
     i = 0;
     five = 5;
     do {
