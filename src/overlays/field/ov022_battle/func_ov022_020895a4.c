@@ -1,3 +1,5 @@
+/* Enables the effect pool's avoidance with a radius, or disables it for 0. */
+
 struct bf_020895a4 { unsigned char f : 2; unsigned char rest : 6; };
 void func_ov022_020895a4(int arg0, int arg1) {
     struct bf_020895a4 *p = *(struct bf_020895a4 **)(arg0 + 0x20);

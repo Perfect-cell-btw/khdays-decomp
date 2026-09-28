@@ -1,3 +1,6 @@
+/* Exit dialog input: moves between yes and no, cancels, or confirms (starting the exit
+ * synchronisation in a session, or leaving at once). */
+
 typedef unsigned short u16;
 typedef struct MenuLimitHeader { u16 inputMask; short limits[2]; char opaque[20]; } MenuLimitHeader;
 typedef struct Ov005Context {

@@ -1,3 +1,6 @@
+/* Holds for 30 frames, then binds each character's pose for its rank group and moves on once every
+ * character is ready. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

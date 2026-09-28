@@ -1,3 +1,6 @@
+/* Returns a player's actor when it is alive, in the group and not in the exclusion list; otherwise
+ * 0. */
+
 extern int Ov022_GetEntryField12(int a);
 extern int Ov022_GetEntryField66(int a);
 extern int GetEntryField20ByIndex(int a);

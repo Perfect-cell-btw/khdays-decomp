@@ -1,3 +1,5 @@
+/* Returns the row buffer for a buffer handle (and its index), or NULL. */
+
 typedef struct Ov005Context {char pad0[0x4be4];void *rowBuffers[3];} Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;
 extern int Ov005_GetRowBufferIndex(int);

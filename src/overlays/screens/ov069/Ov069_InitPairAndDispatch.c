@@ -1,3 +1,6 @@
+/* Script command: runs a condition from the table and stores the result in a game flag; returns 1.
+ */
+
 extern int ScriptVm_ReadOperandInt(void *a, void *b);
 extern void Ov069_DispatchTableEntry(int a, int b, int c);
 

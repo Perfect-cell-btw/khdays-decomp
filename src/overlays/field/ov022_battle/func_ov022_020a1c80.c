@@ -1,3 +1,5 @@
+/* Resolves a reach sweep between two points (start and direction). */
+
 extern void VEC_Subtract(const void *a, const void *b, void *out);
 extern void Ov022_ResolveReachSweep(int arg0, void *arg1, int arg2);
 

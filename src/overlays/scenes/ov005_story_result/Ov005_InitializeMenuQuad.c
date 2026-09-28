@@ -1,3 +1,5 @@
+/* Initialises a 16x16 menu quad at a position with an alpha. */
+
 typedef struct Ov005MenuQuad {
     unsigned int texture[2];
     short x,y,z,width,height,u,v,texWidth,texHeight,alpha,polygonId;

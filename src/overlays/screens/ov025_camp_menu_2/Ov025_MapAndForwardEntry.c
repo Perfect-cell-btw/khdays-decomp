@@ -1,3 +1,5 @@
+/* Formats a text record with the arguments into the buffer; returns the buffer. */
+
 extern int Ov025_GetVarRecordByIndex();
 extern void Text_VSNPrintfWide();
 

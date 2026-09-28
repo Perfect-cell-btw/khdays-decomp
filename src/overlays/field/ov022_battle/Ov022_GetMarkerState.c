@@ -1,3 +1,5 @@
+/* Returns the indexed marker's state, or -1 when the marker is unused. */
+
 extern int data_ov022_020b2ec0;
 struct Ent020b2240 { char pad0[4]; unsigned char tag; unsigned char v; char pad6[6]; };
 int Ov022_GetMarkerState(int arg0) {

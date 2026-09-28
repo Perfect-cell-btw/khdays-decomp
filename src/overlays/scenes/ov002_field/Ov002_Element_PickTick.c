@@ -1,3 +1,6 @@
+/* Picks an element's tick handler from its state (+0x1b4): teardown for 5, done for 7, none
+ * otherwise. */
+
 extern int Ov002_ElementTickTearDown();
 extern int Ov002_DoneTick();
 

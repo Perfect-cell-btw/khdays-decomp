@@ -1,3 +1,5 @@
+/* Whether an animation slot is busy (not idle, and in state 3 only with an id). */
+
 int func_ov022_020b1d54(unsigned char *arg0) {
     int r = 1;
     switch (*arg0) {

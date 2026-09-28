@@ -1,3 +1,6 @@
+/* Game over input step: updates the models and screens, draws the sign-in panel in multiplayer, and
+ * on A plays the confirm sound and moves to the idle step. */
+
 typedef int (*Ov027Handler)(void);
 
 typedef struct {

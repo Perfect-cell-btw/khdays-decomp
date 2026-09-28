@@ -1,3 +1,6 @@
+/* Claims a pool slot for a spawn at the position (moved clear of the animation slots when the
+ * dispatcher asks for it) and stores its value in the slot's entry; returns the slot or -1. */
+
 struct Ov022SpawnRecord {
     int x;
     int y;

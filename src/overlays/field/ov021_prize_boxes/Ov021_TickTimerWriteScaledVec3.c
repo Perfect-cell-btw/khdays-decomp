@@ -1,3 +1,5 @@
+/* Counts the prize box's timer down and, while visible, scales it by the time left. */
+
 void Ov021_TickTimerWriteScaledVec3(int actor, int delta)
 {
     int flag;

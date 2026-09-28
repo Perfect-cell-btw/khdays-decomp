@@ -1,3 +1,5 @@
+/* When the menu is ready and not busy, rebuilds the page's query list for the key and sorts it. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_GetCtxObject9634();
 extern int Ov025_GetCtxObject9630();

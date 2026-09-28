@@ -1,3 +1,5 @@
+/* Sizes the reward list's scrollbar thumb from the visible fraction and shows its segments. */
+
 typedef unsigned char u8;
 typedef struct Ov005SelectionState {
     u8 unknown00,activeRow,firstVisibleItem,unknown03;

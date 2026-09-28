@@ -1,3 +1,6 @@
+/* Queues a sound request of kind 1 with the value, updating a queued request of that kind instead
+ * when there is one; returns 1. */
+
 extern unsigned char *SoundMgr_PeekQueued(int arg);
 extern void ScriptQueue_Push(int arg0, int arg1, int arg2);
 

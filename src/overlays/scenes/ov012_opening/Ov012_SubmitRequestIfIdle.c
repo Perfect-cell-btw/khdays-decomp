@@ -1,3 +1,5 @@
+/* Records a movie request and, when the player is waiting, starts it. */
+
 extern int data_ov012_0205cb20;
 extern void Ov024_MobiClip_KickPlayerSlot();
 

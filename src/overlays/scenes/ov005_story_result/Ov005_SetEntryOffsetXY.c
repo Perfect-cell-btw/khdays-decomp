@@ -1,3 +1,5 @@
+/* Offsets a sprite entry by a pixel amount. */
+
 typedef struct UiLayoutPos { int x,y; } UiLayoutPos;
 typedef struct Ov005Context { char header[0x54]; char embeddedManager[0x4a80]; } Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;

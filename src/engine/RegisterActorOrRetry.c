@@ -1,3 +1,6 @@
+/* Script command: when the actor's sequence is loaded, stores it in the current slot and continues;
+ * otherwise requests it and asks to retry. */
+
 extern int ScriptVm_ReadOperandInt(void *a);
 extern int IsSubStructValidAndReady(int x);
 extern void Slot48_StoreAtCurrentIndex(void *a, int b);

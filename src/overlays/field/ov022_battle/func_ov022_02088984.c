@@ -1,3 +1,5 @@
+/* Host only: adds a positive value to a player's mission tally (kind 5). */
+
 extern short Session_GetLocalPlayerIndex(void);
 extern int GetEntryField20ByIndex(int arg0);
 extern void Ov002_AddMissionTally(int arg0, int arg1, int arg2);

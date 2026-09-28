@@ -1,3 +1,6 @@
+/* Applies the regen penalty of ability 0x34: lowers the actor's HP by 5% of its maximum (keeping at
+ * least 1), and counts the hit statistic for player 0 outside mode 4. */
+
 struct LinkedState_02095c58 {
     unsigned char pad000[2];
     unsigned char state002;

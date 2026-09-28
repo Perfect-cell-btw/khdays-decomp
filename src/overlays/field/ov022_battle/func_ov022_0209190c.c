@@ -1,3 +1,5 @@
+/* Sends an object state message (kind 9, sub-kind 2) with its owner, group and index. */
+
 extern int func_02031384(int a, void *b, int c);
 
 struct marshal_0209190c {

@@ -1,3 +1,6 @@
+/* Rolls the calendar digits towards the target day with an eased curve and moves on when it
+ * arrives. */
+
 typedef unsigned short u16;
 typedef unsigned long long u64;
 typedef long long s64;

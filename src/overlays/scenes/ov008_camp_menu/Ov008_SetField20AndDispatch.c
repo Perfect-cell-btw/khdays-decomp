@@ -1,3 +1,5 @@
+/* Selects a save page and rebuilds the action page for the current mode, with a sound. */
+
 extern void Ov008_BuildActionPage(void *context, int arg1);
 extern void PlaySound(int arg0, int arg1);
 

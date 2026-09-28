@@ -1,3 +1,6 @@
+/* Prepares the save: records the play time and slot, rolls the save variant, bumps the save
+ * sequence number, clears two transient flags (restored later) and writes the slot. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

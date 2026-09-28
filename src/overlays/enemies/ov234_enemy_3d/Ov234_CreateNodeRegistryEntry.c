@@ -1,3 +1,5 @@
+/* Creates the actor's AI registry entry (entering recoil on trigger) and links it. */
+
 extern void CreateRegistryEntry(void *ctx, int a, int b, void *callback, int zero, void *out);
 extern void Ov234_EnterRecoilState(void);
 

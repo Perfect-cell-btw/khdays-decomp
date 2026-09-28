@@ -1,3 +1,6 @@
+/* Handles a tap on a save page entry: positions the cursor and, in the save page state, shows the
+ * entry's caption (or switches the save page) with a sound. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 

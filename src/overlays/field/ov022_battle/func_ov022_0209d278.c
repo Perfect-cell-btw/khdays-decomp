@@ -1,3 +1,5 @@
+/* Mode 4 only: releases the actor's hit flash model and clears its timer. */
+
 extern unsigned char data_0204c240;
 extern void ReleaseField74AndCleanup(int arg0, unsigned char *arg1, int arg2, int arg3);
 void func_ov022_0209d278(int arg0, int arg1, int arg2, int arg3) {

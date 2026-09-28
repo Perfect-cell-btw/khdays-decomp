@@ -1,3 +1,5 @@
+/* Initialises a widget reference from the menu table's sub-entry id. */
+
 extern void Ov008_GetMenuContext(void);
 extern void Ov008_GetContext(void);
 extern void Ov008_WidgetRef_Init(int arg0, int arg1);

@@ -1,3 +1,6 @@
+/* Releases the pending service instance, rebuilds the menu list and, when the persistent flag
+ * 0x2010 changed, starts syncing it before committing the page. */
+
 typedef unsigned char u8;
 
 typedef union Ov008FlagsByte {

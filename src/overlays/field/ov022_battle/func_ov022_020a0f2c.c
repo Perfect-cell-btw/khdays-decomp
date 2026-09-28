@@ -1,3 +1,5 @@
+/* Requests the actor's region join when it belongs to the local player. */
+
 extern unsigned char func_ov022_020882bc(int arg0);
 extern unsigned short QueryActiveStateOrDelegate(void);
 extern void Ov107_Region_RequestJoin(int arg0, int arg1);

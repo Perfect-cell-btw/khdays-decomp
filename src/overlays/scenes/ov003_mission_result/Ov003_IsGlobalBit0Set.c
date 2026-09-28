@@ -1,3 +1,5 @@
+/* Whether the A button is pressed. */
+
 extern unsigned short data_0204c190;
 
 int Ov003_IsGlobalBit0Set(void) {

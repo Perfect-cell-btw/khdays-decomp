@@ -1,3 +1,5 @@
+/* Draws the calendar's rolling day digits. */
+
 typedef unsigned short u16;
 typedef struct { int x, y, z; } VecFx32;
 typedef struct {

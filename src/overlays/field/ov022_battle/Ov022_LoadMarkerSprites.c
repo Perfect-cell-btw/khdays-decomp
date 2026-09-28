@@ -1,3 +1,6 @@
+/* Loads the three lock-on marker sprites from the archive, sets their sizes, priorities and alpha,
+ * and clears their tween. */
+
 typedef struct Ov022DisplayRecord {
     char pad00[4];
     unsigned short width;

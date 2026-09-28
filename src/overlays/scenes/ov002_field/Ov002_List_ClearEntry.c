@@ -1,3 +1,5 @@
+/* Clears an entry of the list table (+0x17c). */
+
 extern int data_ov002_0207fa20;
 
 void Ov002_List_ClearEntry(int arg0) {

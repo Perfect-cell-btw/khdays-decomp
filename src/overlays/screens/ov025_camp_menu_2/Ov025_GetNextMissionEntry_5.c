@@ -1,3 +1,5 @@
+/* Finds an entry by id in page A's list. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_FindListObjectById();
 

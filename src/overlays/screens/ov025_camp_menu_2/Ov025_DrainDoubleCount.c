@@ -1,3 +1,5 @@
+/* Skips twice the count of stream records in page B's second resource block. */
+
 extern int Ov025_GetPageB();
 extern void Ov025_Res_BindSecondBlock();
 extern void Ov025_NextStreamRecord();

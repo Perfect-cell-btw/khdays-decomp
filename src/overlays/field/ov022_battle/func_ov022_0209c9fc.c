@@ -1,3 +1,6 @@
+/* Draws the actor's attached parts at their attachment points, then its gauge (or its own draw
+ * hook). */
+
 extern int func_ov022_0209c774(int a, int b);
 extern void Ov002_SetMatrix43(int a, int b);
 extern void Ov002_SubmitActorDraw(int a);

@@ -1,3 +1,5 @@
+/* AI step: sets the stance bits 0x82, clears the model flag and continues with queuing action 1. */
+
 struct bf { unsigned b : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov258_AiStep_QueueAction1IfActive(void);

@@ -1,3 +1,5 @@
+/* Whether the mission transition has started and finished. */
+
 extern char *data_ov008_02090f24;
 
 int Ov008_MissionIsTransitionDone(void)

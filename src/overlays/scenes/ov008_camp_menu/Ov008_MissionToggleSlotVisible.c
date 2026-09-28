@@ -1,3 +1,6 @@
+/* Shows or hides the mission scene's cursor sprites (the primary and linked slots, the alternate
+ * slot the opposite way). */
+
 typedef unsigned char u8;
 
 typedef struct {

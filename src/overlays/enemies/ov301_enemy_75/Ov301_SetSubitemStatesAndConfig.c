@@ -1,3 +1,5 @@
+/* Sets two sub-item states of the actor's model and refreshes it. */
+
 extern void SetSubitemState(void *obj, int state, short subitem, int value);
 extern void RefreshObjectCallbacks(void *obj, int value);
 

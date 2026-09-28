@@ -1,3 +1,6 @@
+/* Mission selection screen: reads the menu input, requests the chosen menu state with a sound, and
+ * draws the option text rows and cursor; returns the next state. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

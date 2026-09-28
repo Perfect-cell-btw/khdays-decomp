@@ -1,3 +1,6 @@
+/* Binds an animation sequence to the node: clears flag 0x20, registers the sequence on the child
+ * and, when flag 8 is set, restores the saved position; always returns 1. */
+
 extern void StoreField74ThenForward();
 
 struct vec3 { int x, y, z; };

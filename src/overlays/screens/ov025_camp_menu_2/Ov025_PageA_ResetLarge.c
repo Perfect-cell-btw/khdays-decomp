@@ -1,3 +1,5 @@
+/* Clears page A (0x2b0 bytes). */
+
 extern int Ov025_GetPageA();
 extern void MI_CpuFill8();
 

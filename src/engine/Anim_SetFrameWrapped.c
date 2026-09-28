@@ -1,3 +1,6 @@
+/* Sets an animation channel's frame, wrapping it once past the end of the animation; returns the
+ * channel state. */
+
 extern int *Anim_GetChannelState(int a0, int a1, int a2);
 
 int *Anim_SetFrameWrapped(int arg0, int arg1, int arg2)

@@ -1,3 +1,6 @@
+/* Initialises the battle's animation slots: registers each slot's sequence with the resource,
+ * resets its scale, binds its tracks and clears its state. */
+
 #pragma opt_dead_assignments off
 
 typedef unsigned char u8;

@@ -1,3 +1,5 @@
+/* Fades the calendar's background in over the first frames of the phase. */
+
 typedef struct Ov004Context {
     char pad_0000[0xafc];
     int phaseFrame;

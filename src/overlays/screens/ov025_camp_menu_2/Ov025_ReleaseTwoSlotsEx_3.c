@@ -1,3 +1,5 @@
+/* Sets the mode bit on the object's two slots that are in use. */
+
 extern void Slot_SetMode2Bit();
 
 void Ov025_ReleaseTwoSlotsEx_3(int arg0, int arg1, unsigned int arg2) {

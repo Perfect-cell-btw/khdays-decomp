@@ -1,3 +1,5 @@
+/* Sets bit 1 of a slot's flags (negative indices are ignored). */
+
 int Slot_SetFlagBit1(int r0, int r1)
 {
     int *p;

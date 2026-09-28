@@ -1,3 +1,7 @@
+/* Walks a collision quad tree for a ray: visits the nodes the ray's bounds overlap, tests their
+ * faces and their attached collision objects (through each object's test callback), and keeps the
+ * nearest hit. */
+
 typedef signed short s16;
 typedef unsigned short u16;
 typedef signed int s32;

@@ -1,3 +1,6 @@
+/* Projects a world position to screen coordinates (fx32, 8 pixels up); returns -1 when it is off
+ * screen or behind the camera. */
+
 typedef unsigned int u32;
 
 typedef struct VecFx32 {

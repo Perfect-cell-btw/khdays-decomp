@@ -1,3 +1,6 @@
+/* Posts an animation request, recording its extended index; returns whether it completed at once.
+ */
+
 extern void Ov022_PostAnimRequest(int *arg0, int arg1, int arg2, int arg3);
 int func_ov022_020b19ec(int *arg0, int arg1, int arg2, int arg3) {
     int r = 0;

@@ -1,3 +1,5 @@
+/* Reads a bit field of the game state's flag array (BitArray_GetField). */
+
 extern void BitArray_GetField();
 extern int data_0204be18;
 

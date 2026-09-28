@@ -1,3 +1,5 @@
+/* Whether the battle accepts input (no busy flags and the local player is not locked). */
+
 extern int *data_ov022_020b2e60;
 extern unsigned short QueryActiveStateOrDelegate(void);
 extern int func_ov022_020886d0(unsigned int arg0);

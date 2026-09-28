@@ -1,3 +1,6 @@
+/* Returns the length of an animation channel's animation in fx32 frames, or 0 when the channel is
+ * unbound. */
+
 extern unsigned short **Anim_GetChannelState(void);
 
 int Anim_GetLengthQ12(void) {

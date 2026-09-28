@@ -1,3 +1,5 @@
+/* Binds the model's five animation tracks from the table to the binding and rewinds them. */
+
 extern void BindAnimTrack(int anim, unsigned short slot, int block, short binding);
 extern int *Anim_SetFrameWrapped(unsigned short *anim, unsigned int slot, int frame);
 

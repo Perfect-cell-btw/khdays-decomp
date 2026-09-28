@@ -1,3 +1,5 @@
+/* Places a player's actor at a position (syncing its child) and resets it after the move. */
+
 typedef struct { int a, b, c; } T3_02088218;
 extern int GetEntryField20ByIndex(int arg0);
 extern void Actor_SetVecAndSyncChild(unsigned int *arg0, unsigned int *arg1);

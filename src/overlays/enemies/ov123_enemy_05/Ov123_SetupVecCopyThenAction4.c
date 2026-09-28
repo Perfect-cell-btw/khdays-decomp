@@ -1,3 +1,6 @@
+/* AI step: resets the shot, clears the stance and contact bits, records its start position, sends
+ * the shot update (0x115, mode 4) and continues with the shot flight. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov123_ShotFlightTick(void);

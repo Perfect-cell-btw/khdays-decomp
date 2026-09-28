@@ -1,3 +1,5 @@
+/* Rotates one result character's three models about the Y axis. */
+
 extern void MTX_RotY33_(void *buf, int a, int b);
 extern void MTX_Concat33(void *dst, void *buf, void *src);
 extern short data_0203d210[];

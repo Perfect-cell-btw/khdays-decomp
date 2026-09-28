@@ -1,3 +1,5 @@
+/* Returns the buffer the current index selects (+0x88). */
+
 int Ov024_GetIndexedWordAt0x88(int p)
 {
     int i = *(int *)(p + 0x90);

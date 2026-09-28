@@ -1,3 +1,6 @@
+/* AI step: rotates the offset by the heading, runs the contact sweep during its active window and,
+ * when the animation ends, queues action 2. */
+
 extern void MTX_RotY33_();
 extern void MTX_MultVec33();
 extern void Ov240_ContactSweep();

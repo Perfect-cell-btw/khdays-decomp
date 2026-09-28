@@ -1,3 +1,5 @@
+/* Continues a backward iteration: returns the previous element, or NULL at the start. */
+
 struct Node {
     char pad[0xc];
     void *data;

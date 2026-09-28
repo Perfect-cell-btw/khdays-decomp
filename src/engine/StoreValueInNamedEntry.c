@@ -1,3 +1,6 @@
+/* Stores a value (+0xc) into the first track entry with the given name among the indexed track's
+ * entries. */
+
 extern int GetTrackEntryBase();
 extern unsigned char *FindEntryByExactName();
 void StoreValueInNamedEntry(int param_1, unsigned char *param_2, int *param_3)

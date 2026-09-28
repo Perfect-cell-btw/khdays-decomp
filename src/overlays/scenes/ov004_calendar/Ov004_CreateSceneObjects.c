@@ -1,3 +1,6 @@
+/* Creates the calendar's objects: records the start and target day (as rolling values), loads its
+ * text and graphics, and starts the first state. */
+
 typedef long long s64;
 typedef unsigned int u32;
 

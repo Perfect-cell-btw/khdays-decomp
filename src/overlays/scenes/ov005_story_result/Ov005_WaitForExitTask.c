@@ -1,3 +1,5 @@
+/* Waits for the exit synchronisation task to finish, then releases it and leaves. */
+
 typedef struct Ov005Context {
     char opaque00[0x4bf0];
     int menuState;

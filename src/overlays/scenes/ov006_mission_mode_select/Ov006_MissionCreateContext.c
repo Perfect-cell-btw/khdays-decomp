@@ -1,3 +1,6 @@
+/* Creates the mission select context: either syncs the members for a session or a forced exit, or
+ * allocates its buffers, loads the wireless overlay and waits to start. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef void (*MissionCallback)(void);

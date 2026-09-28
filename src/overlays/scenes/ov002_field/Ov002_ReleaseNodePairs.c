@@ -1,3 +1,5 @@
+/* Frees the node pair buffer (+0x1c) when set and clears the pointer. */
+
 extern void NNSi_FndFreeFromDefaultHeap();
 
 void Ov002_ReleaseNodePairs(int arg0) {

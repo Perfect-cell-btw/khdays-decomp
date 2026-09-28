@@ -1,3 +1,5 @@
+/* Returns an action resource's scale (+0x38), copying its offset out when asked. */
+
 struct w3 { int a, b, c; };
 /* Optionally copy +0x14 vector out; return +0x38. */
 int Ov107_ActionResource_GetOffsetAndScale(int param_1, int param_2) {

@@ -1,3 +1,5 @@
+/* When the list is idle and Down is pressed alone, selects the next row (wrapping). */
+
 extern int data_0204c18c;
 extern void Ov025_ScrollList_SelectRow();
 

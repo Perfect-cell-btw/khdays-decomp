@@ -1,3 +1,6 @@
+/* Runs the encounter query the selector names (range, spawn, limits, eligibility, trigger, kinds)
+ * and stores the resulting count. */
+
 extern int Ov302_AppendRecordsInRange(int this_, int list, int arg);
 extern int Ov302_SelectAndSpawnEncounter(int this_, int list, int arg);
 extern int Ov302_AppendRecordsBelowMax(int this_, int list, int arg);

@@ -1,3 +1,7 @@
+/* Tests a ray cast against one collision model: moves the cast into model space, rejects it when it
+ * misses the model's area, and walks the model's quad tree (vertical casts use the vertical
+ * walker); returns whether it hit. */
+
 typedef signed short s16;
 typedef unsigned short u16;
 typedef signed int s32;

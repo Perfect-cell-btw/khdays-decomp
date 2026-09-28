@@ -1,3 +1,5 @@
+/* Queues action 2 when the current or pending action is 1. */
+
 struct s { signed char _pad[0x1c6]; signed char a; signed char b; };
 void Ov254_SetSubStateByte2IfEitherIs1(int *p)
 {

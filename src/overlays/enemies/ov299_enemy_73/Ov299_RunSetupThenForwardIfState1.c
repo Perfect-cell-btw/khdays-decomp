@@ -1,3 +1,5 @@
+/* Moves the actor's node and, in state 1, aims it at the target. */
+
 extern void Ov107_MoveNodeAndRelayout();
 extern void Ov299_AimAtTarget();
 

@@ -1,3 +1,6 @@
+/* AI dispatcher: when an action is pending, resets the actor's stance and contact, makes it current
+ * and installs its step handler. */
+
 extern void SetIndexedSlot(int, int, void *);
 extern void Ov131_stateSetFlagsClearBit(void);
 extern void Ov131_Action48Callback(void);

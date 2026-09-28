@@ -1,3 +1,6 @@
+/* Reward menu tick: updates key repeat and the widgets, runs the current state, draws the frame and
+ * uploads the dirty text. */
+
 typedef void (*Ov005MenuStateHandler)(void);
 typedef struct Ov005MenuStateTable { Ov005MenuStateHandler states[9]; } Ov005MenuStateTable;
 typedef struct Ov000ResourceTracker { char opaque[76]; } Ov000ResourceTracker;

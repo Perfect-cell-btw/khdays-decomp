@@ -1,3 +1,7 @@
+/* Builds the lock-on selection for a slot when input is allowed: collects the actor's candidates
+ * within the scan distance (larger with ability 0x55) and encodes the result; returns whether one
+ * was found. */
+
 typedef signed int s32;
 typedef signed long long s64;
 typedef unsigned char u8;

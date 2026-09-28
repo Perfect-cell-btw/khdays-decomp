@@ -1,3 +1,5 @@
+/* Invokes the field context's tag tracker (+0xdc) callback with the argument. */
+
 extern int data_ov002_0207f60c;
 extern int Ov002_TagTracker_InvokeCallback();
 

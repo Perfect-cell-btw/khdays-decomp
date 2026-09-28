@@ -1,3 +1,5 @@
+/* Binds the five animation tracks of the indexed animation slot to its block. */
+
 extern void BindAnimTrack(void *arg0, unsigned short arg1, void *arg2, short arg3);
 
 struct Ov022AnimSlot {

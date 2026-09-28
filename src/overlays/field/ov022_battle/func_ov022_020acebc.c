@@ -1,3 +1,5 @@
+/* Sets the actor's animation speed factor (flagging non-default speeds) and its per-frame step. */
+
 extern int Ov022_GetGlobal34(void);
 extern int FX_Div(int arg0, int arg1);
 

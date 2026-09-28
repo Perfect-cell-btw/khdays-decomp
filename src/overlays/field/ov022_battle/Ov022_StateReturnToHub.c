@@ -1,3 +1,6 @@
+/* Fades both screens to white and moves to ending the key sharing session, clearing game-state
+ * field 0x20e6. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

@@ -1,3 +1,5 @@
+/* Starts dragging the info panel unless it is locked. */
+
 extern int Ov025_GetPageB();
 extern int Ov025_DragInfoPanel();
 

@@ -1,3 +1,6 @@
+/* Applies an action to a battle actor unless it is down or blocked: action kinds 6-12 drive its
+ * owned sound when its slots allow it, others are forwarded; returns whether it was applied. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

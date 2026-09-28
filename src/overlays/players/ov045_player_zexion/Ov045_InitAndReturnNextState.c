@@ -1,3 +1,6 @@
+/* Initialises the player actor: boots it, sets up its extra model, requests its voices; returns the
+ * decoder step. */
+
 extern void *NNSi_FndGetCurrentRootHeap();
 extern void Ov045_Boot();
 extern void Ov045_InitActorTwoRegionsAndForward();

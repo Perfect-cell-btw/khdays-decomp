@@ -1,3 +1,5 @@
+/* Whether the chip damage would take all of the actor's HP. */
+
 extern int Ov022_ComputeChipGauge(int arg0);
 int func_ov022_02094bec(int arg0) {
     int r = 0;

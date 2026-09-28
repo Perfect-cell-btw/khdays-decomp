@@ -1,3 +1,6 @@
+/* Rolls an actor's stat from its configuration row plus its gauge bonuses (halved outside mode,
+ * boosted by ability 0x3d); returns the scaled value or 0 when the roll fails. */
+
 extern int Slot_EvalPackedParam(int kind, int property);
 extern int func_ov022_020ad7b0(int obj);
 extern unsigned int Session_RandNextScaled(int value);

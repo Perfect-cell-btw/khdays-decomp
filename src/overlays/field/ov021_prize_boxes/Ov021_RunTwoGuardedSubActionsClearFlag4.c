@@ -1,3 +1,5 @@
+/* When visible, releases the element's model instance and render node item and hides it. */
+
 extern void ReleaseField74AndCleanup();
 extern void Render_ReleaseNodeItem();
 

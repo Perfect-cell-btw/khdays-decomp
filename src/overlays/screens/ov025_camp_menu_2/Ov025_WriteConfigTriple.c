@@ -1,3 +1,6 @@
+/* Samples the menu cursor's three tweens, updates its shadow projection and commits the camera
+ * matrices. */
+
 extern void Tween_Sample();
 extern void Ov025_MenuCursor_UpdateShadowProj();
 extern void Camera_CommitMatrices();

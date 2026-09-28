@@ -1,3 +1,6 @@
+/* Opens a file inside a packed archive by its handle: the handle encodes the archive header's
+ * address and the entry index, whose offset and size are read from the header's tables. */
+
 typedef int BOOL;
 typedef int s32;
 typedef short s16;

@@ -1,3 +1,6 @@
+/* Destroys the enemy: its models and action resource, frees its waypoint table and destroys the
+ * base object. */
+
 extern void DestroyInstance();
 extern void Ov107_ActionResource_Destroy();
 extern void FreeInstanceMemory();

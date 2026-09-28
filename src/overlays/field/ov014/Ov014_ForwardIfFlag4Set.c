@@ -1,3 +1,5 @@
+/* Draws the element's node while it is visible; returns 0. */
+
 extern void Scene_DrawNode();
 
 int Ov014_ForwardIfFlag4Set(int this_) {

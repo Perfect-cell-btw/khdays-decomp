@@ -1,3 +1,6 @@
+/* AI step: rotates the guard offset by the heading and, when the animation ends, posts pose 0xb and
+ * continues with the guard tick. */
+
 extern void MTX_RotY33_();
 extern void MTX_MultVec33();
 extern void Ov107_PostTagUpdate();

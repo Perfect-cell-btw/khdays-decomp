@@ -1,3 +1,6 @@
+/* Runs the frame and, once the scene is idle, broadcasts the current cue, marks the context state
+ * and disables the sound listeners; returns the gameplay hub step. */
+
 extern void Ov022_SetActorInputEnabled(int a);
 extern int Ov002_Scene_IsIdle(void);
 extern int Ov022_GetGlobalPlus4(void);

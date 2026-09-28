@@ -1,3 +1,6 @@
+/* Returns the configured start time converted from milliseconds to OS ticks, or 0 when the link
+ * flag 2 is not set. */
+
 typedef struct {
     unsigned char pad0000[0x10];
     unsigned int nStartMs;

@@ -1,3 +1,5 @@
+/* Returns the mission screen's flag byte for the current value. */
+
 extern char *data_ov008_02090f24;
 extern int func_01ff8128(void);
 

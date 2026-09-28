@@ -1,3 +1,6 @@
+/* Refreshes the battle slot rows from the players' nodes: records each node's position, group and
+ * heading, and updates the saved masks and state bits of the root. */
+
 typedef struct Ov022BitByte {
     unsigned char bit0 : 1;
     unsigned char bit1 : 1;

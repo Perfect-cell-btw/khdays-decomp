@@ -1,3 +1,5 @@
+/* Requests a card stream command and stores its result code. */
+
 extern void CARDi_RequestStreamCommand();
 extern int CARD_GetResultCode();
 extern int data_ov025_020b5760;

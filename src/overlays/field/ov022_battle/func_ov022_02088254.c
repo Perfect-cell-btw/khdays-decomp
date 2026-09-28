@@ -1,3 +1,5 @@
+/* Returns a player's heading (0 when it has no actor). */
+
 extern int GetEntryField20ByIndex(int arg0);
 unsigned short func_ov022_02088254(int arg0) {
     int e = GetEntryField20ByIndex(arg0);

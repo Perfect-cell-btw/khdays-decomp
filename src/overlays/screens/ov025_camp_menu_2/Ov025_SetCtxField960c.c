@@ -1,3 +1,5 @@
+/* Marks the menu active and clears its word at +0x960c. */
+
 extern int data_ov025_020b5744;
 
 void Ov025_SetCtxField960c(void) {

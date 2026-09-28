@@ -1,3 +1,6 @@
+/* Stamps a palette mode into the upper bits of every tile of a rectangle of the request's tilemap.
+ */
+
 void Ov008_StampTileMode(int unused, unsigned char *request, int mode)
 {
     unsigned short *header;

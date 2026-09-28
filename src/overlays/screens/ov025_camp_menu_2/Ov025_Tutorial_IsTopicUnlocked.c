@@ -1,3 +1,5 @@
+/* Checks whether a tutorial topic's unlock flag is set. */
+
 extern int Ov025_GetSlideTableValue();
 extern int GameState_IsFlagSet();
 

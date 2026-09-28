@@ -1,3 +1,5 @@
+/* Finds a named entry in a message archive's name table; returns its index or -1. */
+
 extern int strlen(void *a);
 extern int func_0202019c(void *a, void *b, int c);
 

@@ -1,3 +1,5 @@
+/* Hides a player's render entity, stops its sound and clears its group. */
+
 extern int GetEntryField20ByIndex(int arg0);
 extern void Entity_SetVisible(int arg0, int arg1);
 extern void SNDi_ProcessEntryAlt(int arg0);

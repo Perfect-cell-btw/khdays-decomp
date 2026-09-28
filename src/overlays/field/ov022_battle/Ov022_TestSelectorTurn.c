@@ -1,3 +1,6 @@
+/* Whether a position lies between the current turn and the bound on the selector's side (left or
+ * right of the local player's facing); returns the new bound. */
+
 typedef signed long long s64;
 
 typedef struct VecFx32 {

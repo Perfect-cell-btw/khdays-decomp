@@ -1,3 +1,5 @@
+/* Packs the connection bits of the session's members into a compact 4-bit mask in member order. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 

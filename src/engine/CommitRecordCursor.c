@@ -1,3 +1,6 @@
+/* Script step: evaluates the current record's expression and, when it yields no value, moves the
+ * record's cursor by the step's offset; returns 2 when it moved, 1 otherwise. */
+
 extern int Script_EvalExpr();
 int CommitRecordCursor(int param_1, int *param_2)
 {

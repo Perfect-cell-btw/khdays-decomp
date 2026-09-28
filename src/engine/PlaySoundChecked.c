@@ -1,3 +1,6 @@
+/* Starts a sound effect sequence from the sound archive unless the same sound was just played
+ * (recent-sound ring). */
+
 extern unsigned char *data_0204c234;
 extern int RecentRing_Record(void *ptr, int arg);
 extern void NNS_SndArcPlayerStartSeqArc(void *ptr, void *arg1, int arg2);

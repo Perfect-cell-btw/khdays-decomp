@@ -1,3 +1,5 @@
+/* Starts page B's fade-out tween when the entry is free. */
+
 extern int Ov025_GetPageB();
 extern int Ov025_IsEntryBusyOrInactive();
 extern void Tween_Configure();

@@ -1,3 +1,6 @@
+/* Scales a vector's selected components and a scalar by a clamped factor according to the control's
+ * flags. */
+
 typedef struct FxVec3_020b0c24 {
     int x;
     int y;

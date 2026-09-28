@@ -1,3 +1,5 @@
+/* Submits the element's render node with its bucket's table value. */
+
 extern int Ov002_GetCtxTableByte();
 extern void Render_SubmitNode();
 

@@ -1,3 +1,5 @@
+/* Moves entry 3 next to the first valid slot of an entry. */
+
 extern int Ov025_GetContext();
 extern int Ov025_ApplyFirstValidSlot();
 extern int Ov025_FindEntryById();

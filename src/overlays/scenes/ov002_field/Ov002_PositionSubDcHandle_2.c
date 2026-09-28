@@ -1,3 +1,5 @@
+/* Sets the position of an element of the field context's tag tracker (+0xdc). */
+
 extern int data_ov002_0207f60c;
 extern int Ov002_Elem_SetPos();
 

@@ -1,3 +1,5 @@
+/* Releases the actor's service instances, its effect set and its effect models. */
+
 extern void func_02023ad0(int arg0);
 extern void func_ov022_02092354(int *arg0);
 extern void func_ov022_0209aed0(int arg0);

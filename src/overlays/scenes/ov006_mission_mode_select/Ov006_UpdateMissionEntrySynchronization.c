@@ -1,3 +1,6 @@
+/* Synchronises the chosen mission members with the peers: writes the chosen characters to the slot
+ * table (resolving duplicates), sends and confirms the entries, then moves on. */
+
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;

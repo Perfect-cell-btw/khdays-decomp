@@ -1,3 +1,6 @@
+/* Marks the first task of the list with the given tag (+0x1c) as finished; returns whether one was
+ * found (tag 0 never matches). */
+
 extern unsigned char *List_First(void *ptr);
 extern unsigned char *List_Next(void *ptr);
 

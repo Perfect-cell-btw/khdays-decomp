@@ -1,3 +1,5 @@
+/* Creates the overlay's class instance with the argument. */
+
 extern void *InstantiateClass();
 extern int data_ov098_020bbce0;
 

@@ -1,3 +1,5 @@
+/* Copies a 16-byte block into a global (data_020429b8). */
+
 extern void MI_CpuCopy8();
 extern int data_020429b8;
 

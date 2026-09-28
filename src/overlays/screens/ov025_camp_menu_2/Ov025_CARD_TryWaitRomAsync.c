@@ -1,3 +1,5 @@
+/* Waits for the card ROM transfer (CARD_TryWaitRomAsync). */
+
 extern int CARD_TryWaitRomAsync();
 
 int Ov025_CARD_TryWaitRomAsync(int arg0) {

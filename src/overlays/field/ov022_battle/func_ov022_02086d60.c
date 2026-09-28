@@ -1,3 +1,5 @@
+/* Sets the main screen brightness from an fx32 value (and the sub screen's in mode 0x2a). */
+
 extern void SetMasterBrightnessMain(int arg0);
 extern short LoadGlobalU16At0(void);
 extern void SetMasterBrightnessSub(int arg0);

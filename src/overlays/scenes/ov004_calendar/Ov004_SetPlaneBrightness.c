@@ -1,3 +1,5 @@
+/* Sets the brightness blend of a background plane (or all planes), clamped to -16..16. */
+
 extern void G2x_SetBlendBrightnessExt_(unsigned int reg, int firstMask,
                                        int secondMask, int eva, int evb,
                                        int brightness);

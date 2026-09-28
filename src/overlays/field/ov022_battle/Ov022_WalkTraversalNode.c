@@ -1,3 +1,6 @@
+/* Advances a selection to the next enabled part after the target node in the object's part list;
+ * returns whether one was found. */
+
 typedef struct Ov022NodeFlags {
     unsigned int lowByte : 8;
     unsigned int rest : 24;

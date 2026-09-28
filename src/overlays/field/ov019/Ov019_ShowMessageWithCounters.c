@@ -1,3 +1,6 @@
+/* Script command: formats a message with the player names and two counters from the game state, and
+ * shows it in the panel. */
+
 extern char *ByteCode_ResolveOperand(int a, unsigned short *b);
 extern int ScriptVm_ReadOperandInt(int a, unsigned short *b);
 extern void MIi_CpuClear16(int val, void *buf, int n);

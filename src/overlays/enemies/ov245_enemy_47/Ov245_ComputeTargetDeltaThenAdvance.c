@@ -1,3 +1,5 @@
+/* AI step: posts pose 3, turns towards the target and continues with the glide tick. */
+
 struct v3 { int x, y, z; };
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void VEC_Subtract(const void *a, const void *b, void *c);

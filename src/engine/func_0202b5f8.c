@@ -1,3 +1,6 @@
+/* Pushes a node on the front of the entity manager's indexed list (+0xa4) and records the list
+ * index in the node. */
+
 extern int data_0204c208;
 
 void func_0202b5f8(int arg0, int *arg1) {

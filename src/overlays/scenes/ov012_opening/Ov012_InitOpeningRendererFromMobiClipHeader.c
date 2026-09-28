@@ -1,3 +1,5 @@
+/* Initialises a tile text renderer with the size taken from a MobiClip header. */
+
 extern void Ov012_MobiClip_InitFromHeader();
 extern void TileTextRenderer_Init();
 

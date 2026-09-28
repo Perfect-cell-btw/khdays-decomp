@@ -1,3 +1,5 @@
+/* Shows the entry tagged 0x48 on page B when the page is idle. */
+
 extern int Ov008_GetPageB();
 extern int Ov008_GetCtxBlock4a80();
 extern int data_ov008_02090f20;

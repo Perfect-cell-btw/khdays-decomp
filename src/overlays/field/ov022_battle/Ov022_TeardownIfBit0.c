@@ -1,3 +1,5 @@
+/* When the entry is active, releases its model instance and clears its state byte. */
+
 extern void ReleaseField74AndCleanup();
 extern void Ov022_ClearByte();
 void Ov022_TeardownIfBit0(unsigned char *arg0, unsigned int arg1, unsigned int arg2, unsigned int arg3) {

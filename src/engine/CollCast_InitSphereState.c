@@ -1,3 +1,6 @@
+/* Initialises a sphere cast: copies the origin, direction, radius, flags and exclusion, normalises
+ * the direction, and resets the nearest hit and the shared hit record. */
+
 typedef signed int s32;
 typedef unsigned int u32;
 typedef unsigned short u16;

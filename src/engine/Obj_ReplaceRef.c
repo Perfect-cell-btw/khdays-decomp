@@ -1,3 +1,6 @@
+/* Replaces a counted reference: drops the old object's reference count and takes one on the new
+ * object. */
+
 struct Obj {
     char pad[0x60];
     unsigned char refcount;

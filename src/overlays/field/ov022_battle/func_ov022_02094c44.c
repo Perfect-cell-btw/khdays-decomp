@@ -1,3 +1,5 @@
+/* Releases an active effect's three model instances and clears it. */
+
 extern void ReleaseField74AndCleanup(int arg0);
 extern void Ov022_ClearFields(unsigned int *arg0);
 

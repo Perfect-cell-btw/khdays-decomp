@@ -1,3 +1,5 @@
+/* Clears the mission scene's two text layers. */
+
 extern char *data_ov008_02090fa4;
 extern void CallVirtSlot1(void *object, int arg1);
 

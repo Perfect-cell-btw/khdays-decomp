@@ -1,3 +1,5 @@
+/* Loads the result background's palette and character data for both layers. */
+
 typedef unsigned int u32;
 typedef struct PaletteData {char pad0[8];u32 size;void *data;} PaletteData;
 typedef struct CharacterData {char pad0[16];u32 size;void *data;} CharacterData;

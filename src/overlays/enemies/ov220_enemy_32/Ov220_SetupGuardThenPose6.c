@@ -1,3 +1,6 @@
+/* AI step: when a target is in range, faces it, posts pose 6 and continues; otherwise ends the
+ * step. */
+
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov107_PostTagUpdate(int actor, int mode, int flag);
 extern int Ov220_DistanceToTarget(void *node);

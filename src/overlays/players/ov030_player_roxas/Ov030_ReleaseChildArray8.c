@@ -1,3 +1,5 @@
+/* Releases the object's eight child model instances. */
+
 extern void ReleaseField74AndCleanup(void *p);
 
 struct Sub { char data[0x170]; };

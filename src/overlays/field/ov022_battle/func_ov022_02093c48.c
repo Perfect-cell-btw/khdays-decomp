@@ -1,3 +1,6 @@
+/* Queues a command in a free or cancelled slot: records its kind, id and value, resets its
+ * animation group, and marks it pending. */
+
 extern int Ov022_KindToGroup(int arg0);
 extern void Ov022_ResetSlotTracks(int arg0, int arg1);
 

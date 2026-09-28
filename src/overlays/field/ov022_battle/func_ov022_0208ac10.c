@@ -1,3 +1,6 @@
+/* Runs the actor's command handlers; returns 2 for a flagged command, 1 for a plain one (0 when a
+ * guarded target is not the special kind 0x6b). */
+
 extern int Ov022_RunCommandHandlers(unsigned int *a, int *b, unsigned int *c);
 
 int func_ov022_0208ac10(int param_1, int *param_2, unsigned int *param_3) {

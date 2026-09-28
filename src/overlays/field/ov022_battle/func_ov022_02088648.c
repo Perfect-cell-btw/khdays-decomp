@@ -1,3 +1,5 @@
+/* Runs a check on the local player's actor (0 when it has none). */
+
 extern unsigned short QueryActiveStateOrDelegate(void);
 extern int GetEntryField20ByIndex(int arg0);
 extern int func_ov022_020ab350(int arg0);

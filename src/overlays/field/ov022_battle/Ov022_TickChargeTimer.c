@@ -1,3 +1,6 @@
+/* Ticks an actor's damage-over-time timer: when its period elapses, applies the accumulated damage
+ * (keeping the fraction) and increases the rate, while the effect lasts. */
+
 extern void Ov022_ApplyDamageAndFlagHit(int obj, int v, int mode);
 
 struct Bit3_0209d118 { unsigned char lo : 3; unsigned char b3 : 1; };

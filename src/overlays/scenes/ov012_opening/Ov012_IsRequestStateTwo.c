@@ -1,3 +1,5 @@
+/* Whether either movie request is in state 2. */
+
 extern int NNSi_FndGetCurrentRootHeap();
 
 int Ov012_IsRequestStateTwo(void) {

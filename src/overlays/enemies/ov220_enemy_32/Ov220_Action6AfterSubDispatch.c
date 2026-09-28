@@ -1,3 +1,6 @@
+/* AI step: posts pose 0xa, starts the animation, sends the attack update (0x137, mode 6) and
+ * continues with the guard matrix step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov220_startAnim(int a, int b);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);

@@ -1,3 +1,7 @@
+/* Starts the battle scene with a roster: sets up the context, creates its two child objects and the
+ * party roster, then sets up the scene like Ov022_BeginScene; returns the battle entry poll step.
+ */
+
 typedef signed char s8;
 typedef short s16;
 typedef unsigned short u16;

@@ -1,3 +1,6 @@
+/* AI step: sets the contact flag, posts pose 2, sends the update (0x16c, mode 7) and continues with
+ * the timed queue. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);

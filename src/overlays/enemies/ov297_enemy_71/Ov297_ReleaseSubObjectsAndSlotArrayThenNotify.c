@@ -1,3 +1,5 @@
+/* Destroys the enemy: its models, its two part instances and the base object. */
+
 extern void DestroyInstance();
 extern void Ov107_DestroyObject();
 

@@ -1,3 +1,6 @@
+/* Waits until the exit message has been delivered (host) or answered (clients, resending
+ * meanwhile), then finishes the exit. */
+
 typedef void *(*ExitTaskState)(void);
 typedef struct Ov005ExitClientMessage { unsigned char playerIndex; char text[22]; } Ov005ExitClientMessage;
 typedef struct Ov005ExitTask {

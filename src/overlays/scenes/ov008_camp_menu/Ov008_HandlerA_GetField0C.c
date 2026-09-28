@@ -1,3 +1,5 @@
+/* Returns the word at +0xc of the current handler's object. */
+
 struct ov008_ptr_slot {
     char *ptr;
     int _pad;

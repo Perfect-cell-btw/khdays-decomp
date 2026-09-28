@@ -1,3 +1,5 @@
+/* Submits the calendar's three sprites with alpha blending. */
+
 typedef unsigned char u8;
 
 typedef struct Ov004Context {

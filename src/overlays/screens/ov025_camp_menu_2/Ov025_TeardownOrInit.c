@@ -1,3 +1,6 @@
+/* Closes the mission info panel when it is open, otherwise leaves the menu; plays the cancel sound.
+ */
+
 extern void Ov025_ShowMissionInfoPanel();
 extern void PlaySound();
 extern void Ov025_SetGlobalConfigAndInit();

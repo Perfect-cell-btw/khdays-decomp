@@ -1,3 +1,6 @@
+/* Returns the current lock-on target's position source by selection type (candidate part, panel
+ * target, or player), or 0. */
+
 extern int func_ov022_02083f5c(void);
 extern int Ov002_TriggerEntryActive(int arg0);
 

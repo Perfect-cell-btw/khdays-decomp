@@ -1,3 +1,6 @@
+/* Scans the save slots at startup: loads each slot's summary and picks the latest one, then builds
+ * the save menu's layout and text. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 

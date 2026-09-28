@@ -1,3 +1,6 @@
+/* Registers a named frame task: fills a free entry of the four-entry task table with the name and
+ * callback and links it at the end of the task chain (with interrupts masked). */
+
 extern int OS_DisableIrqMask();
 extern int OS_EnableIrqMask();
 extern int strncpy();

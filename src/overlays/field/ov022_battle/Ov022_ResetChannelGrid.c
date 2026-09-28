@@ -1,3 +1,5 @@
+/* Stops the channel grid, clears its 4x8 cells (-1) and resets each channel for the grid's mode. */
+
 #pragma opt_strength_reduction off
 
 extern void func_ov022_020b06d8(unsigned char *channel, int mode);

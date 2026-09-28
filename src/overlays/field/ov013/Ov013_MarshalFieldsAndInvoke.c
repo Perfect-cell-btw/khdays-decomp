@@ -1,3 +1,6 @@
+/* Script command: reads its operands and submits a task node (kind 6) with three values; returns 1.
+ */
+
 extern int ScriptVm_ReadOperandInt(void *a, int b);
 extern void Ov002_SubmitTaskNode(int a, int b, int c, void *d);
 

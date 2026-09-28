@@ -1,3 +1,6 @@
+/* Requests a BGM load by id: marks the request pending, records the id, clears the BGM sound heap
+ * and posts the id request to the loader. */
+
 extern void NNS_SndHeapClear(void *node);
 extern void Loader_PostIdRequest(unsigned int a, void *node, void *dst);
 extern char *data_0204c234;

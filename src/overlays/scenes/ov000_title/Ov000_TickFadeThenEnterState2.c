@@ -1,3 +1,5 @@
+/* Fades the sub screen in over time and, when done, enters state 2. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef unsigned long long u64;

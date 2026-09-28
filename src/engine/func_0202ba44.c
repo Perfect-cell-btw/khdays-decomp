@@ -1,3 +1,6 @@
+/* Registers the texture data of the indexed entity record's model (0x184 bytes each) of the entity
+ * manager. */
+
 extern void func_0202ba68();
 extern int data_0204c208;
 

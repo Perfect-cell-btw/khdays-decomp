@@ -1,3 +1,5 @@
+/* Enables the reward list's cursor entries once. */
+
 typedef struct Ov005Context {
     char header[0x54];
     char embeddedManager[0x4a80];

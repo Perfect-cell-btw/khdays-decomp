@@ -1,3 +1,6 @@
+/* Copies (or clears) a rectangle of a resource tilemap into its row buffer, clipped to the screen,
+ * and marks the buffer dirty. */
+
 #pragma opt_strength_reduction off
 typedef unsigned short u16;
 typedef struct NNSG2dScreenData {

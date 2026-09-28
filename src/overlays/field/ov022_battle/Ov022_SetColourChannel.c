@@ -1,3 +1,5 @@
+/* Spawns drops of one kind (up to 100) above a player's position for the player's group. */
+
 #pragma opt_propagation off
 
 typedef unsigned char u8;

@@ -1,3 +1,6 @@
+/* Runs the actor's reach handlers; returns 2 when a flagged reach succeeded, 1 for a plain one, 0
+ * otherwise. */
+
 extern int Ov022_RunReachHandlers(unsigned int *arg0, int *arg1, unsigned int *arg2);
 int Ov022_TrySpawnAction(int arg0, int *arg1, unsigned int *arg2) {
     unsigned int *p = *(unsigned int **)(arg0 + 0x58);

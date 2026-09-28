@@ -1,3 +1,5 @@
+/* Copies the 0x44-byte parameter block into the target (+0x30). */
+
 typedef struct { int w[11]; } Blk44;
 
 void Ov235_CopyBlock44Alt(char *obj) {

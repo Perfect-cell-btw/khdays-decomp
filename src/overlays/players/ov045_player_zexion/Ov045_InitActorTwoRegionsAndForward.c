@@ -1,3 +1,5 @@
+/* Initialises the actor's extra model region and creates its sub-object. */
+
 extern void RegisterSeqAndInit(int a, int b, int c, int d);
 extern void Ov045_CreateSubObject(int p);
 extern int data_ov045_020b4bf4;

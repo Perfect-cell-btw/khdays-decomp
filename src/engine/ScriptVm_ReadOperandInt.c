@@ -1,3 +1,5 @@
+/* Reads a script operand as an integer (0 when it is not one). */
+
 extern void *ScriptVm_ResolveOperand(void *arg);
 
 int ScriptVm_ReadOperandInt(void *arg) {

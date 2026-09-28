@@ -1,3 +1,5 @@
+/* Initialises an empty list (the sentinel node points to itself) and resets its iterator. */
+
 struct S {
     int a;          /* 0x00 */
     void *b;        /* 0x04 */

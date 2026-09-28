@@ -1,3 +1,6 @@
+/* Runs a received member event by its selector: shows damage on a member (clients only), sets a
+ * colour channel, or runs the member's kind handler (clients only). */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern void Ov022_Member_ShowDamage(int kind, int id, int a2, int a3);
 extern void Ov022_SetColourChannel(int kind, int a2, int id);

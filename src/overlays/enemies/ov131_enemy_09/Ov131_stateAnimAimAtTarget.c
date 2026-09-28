@@ -1,3 +1,5 @@
+/* AI step: posts pose 3, turns towards the target and continues with decelerating. */
+
 extern void Ov107_PostTagUpdate();
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int z);

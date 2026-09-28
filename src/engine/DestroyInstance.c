@@ -1,3 +1,6 @@
+/* Destroys an instance: drops its class's reference count, runs its destructor (+0x64) when it has
+ * one, counts it out and frees it. */
+
 extern int data_0204caa8;
 extern void FreeInstanceMemory(int obj);
 

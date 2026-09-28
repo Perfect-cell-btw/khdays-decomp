@@ -1,3 +1,5 @@
+/* Returns 1 when a == b or c is nonzero, otherwise 0. */
+
 int Ov002_EqualOrNonzero(int a, int b, int c)
 {
     if (a == b) goto one;

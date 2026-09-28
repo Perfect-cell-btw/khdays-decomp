@@ -1,3 +1,6 @@
+/* Opening per-frame update: runs the pending task queue step, updates the brightness and the sound
+ * manager. */
+
 extern int data_ov012_0205cb20;
 extern void FrameStep_UpdateTaskQueue();
 extern void Ov012_UpdateOpeningBrightness();

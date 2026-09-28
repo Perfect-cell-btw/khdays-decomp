@@ -1,3 +1,6 @@
+/* Sets up the result screen's texture VRAM, loads the icon archive and reserves texture and palette
+ * space for every icon, and places the reward list quads. */
+
 typedef unsigned int u32;
 typedef struct Ov005TextureResource {void *resource;u32 textureKey,paletteKey;} Ov005TextureResource;
 typedef struct Ov005MenuQuad {char data[36];} Ov005MenuQuad;

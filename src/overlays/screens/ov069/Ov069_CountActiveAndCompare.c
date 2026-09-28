@@ -1,3 +1,6 @@
+/* Counts the set game-state flags 9-0x408, records the count and returns whether it reaches the
+ * value. */
+
 extern int GameState_IsFlagSet(int i);
 extern void Ov002_SetRootField85ac(int a, int count);
 

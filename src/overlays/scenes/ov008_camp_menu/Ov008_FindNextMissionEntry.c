@@ -1,3 +1,5 @@
+/* Returns the next list entry after the start whose count (+0x10) is zero, or NULL. */
+
 extern void *NNS_FndGetNextListObject(void *list, void *object);
 
 void *Ov008_FindNextMissionEntry(void *object, void *start)

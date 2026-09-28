@@ -1,3 +1,5 @@
+/* Marks the element triggered and, when visible, rebinds its animation and enables its node. */
+
 extern void Ov002_RebindAnimTracks();
 extern void SceneNode_Enable();
 

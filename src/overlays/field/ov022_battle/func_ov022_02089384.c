@@ -1,3 +1,5 @@
+/* Sets the frame of the model's animation tracks listed in the table (those that exist). */
+
 extern void Anim_SetFrameWrapped(unsigned short *arg0, unsigned int idx, int arg2);
 
 struct tbl5_02089384 {

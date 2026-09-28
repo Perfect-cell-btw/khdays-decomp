@@ -1,3 +1,5 @@
+/* Pushes a node at the front of a doubly linked list. */
+
 void ListPushFront(int *head, int *node)
 {
     node[1] = 0;

@@ -1,3 +1,6 @@
+/* Stores a pair of halfwords into the first free pair of a global 2D table row (0x104-byte rows,
+ * capped count). */
+
 extern int Slot_CalcRangeCap18();
 extern int data_0204c678;
 

@@ -1,3 +1,5 @@
+/* Initialises a cursor over a resource block: its data, table and entry count. */
+
 extern void MI_CpuFill8();
 
 void Ov025_InitBlockCursor(int *arg0, int *arg1) {

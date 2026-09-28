@@ -1,3 +1,6 @@
+/* Checks a lock-on candidate against the local player's position: scans its hit parts with a sphere
+ * around the player and records the closest accepted part in the selection. */
+
 typedef unsigned char u8;
 
 typedef struct VecFx32 {

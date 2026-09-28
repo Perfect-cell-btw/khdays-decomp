@@ -1,3 +1,7 @@
+/* Per-frame update of a player motion controller: follows the ground rumble in the special state,
+ * spawns the emitters at the right moment, updates its path motion and animation, and its
+ * sub-objects. */
+
 typedef unsigned char u8;
 typedef signed short s16;
 typedef unsigned int u32;

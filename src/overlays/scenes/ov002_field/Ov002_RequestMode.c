@@ -1,3 +1,6 @@
+/* Marks a mode as pending in the root context and announces it with its sound (0x1c2 + mode, capped
+ * at 2). */
+
 typedef struct {
     unsigned char bPending;
     unsigned char pad01[3];

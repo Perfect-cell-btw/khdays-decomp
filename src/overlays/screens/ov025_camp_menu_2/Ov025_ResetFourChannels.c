@@ -1,3 +1,5 @@
+/* Frees the menu's four fonts. */
+
 extern void FreeFieldAt8();
 extern int data_ov025_020b5744;
 

@@ -1,3 +1,6 @@
+/* Starts the menu sequence: resets its state, enables its two objects, sets the target slot and
+ * plays the open sound. */
+
 extern void Ov008_SetCtxField9678(int arg0);
 extern void Ov008_SetCtxObject9630(int arg0);
 extern void Ov008_SetCtxObject9634(int arg0);

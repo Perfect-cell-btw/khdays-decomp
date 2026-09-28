@@ -1,3 +1,6 @@
+/* Selects a slot for the local player (its sprite depends on whether the object is free) and
+ * restarts the selection tween when the slot changes. */
+
 extern int QueryActiveStateOrDelegate(void);
 extern int GetEntryField20ByIndex(int a);
 extern int Ov002_IsObjectFree(int a, int b);

@@ -1,3 +1,5 @@
+/* Creates the mission select controller instance when it does not exist. */
+
 typedef unsigned int u32;
 
 typedef struct {

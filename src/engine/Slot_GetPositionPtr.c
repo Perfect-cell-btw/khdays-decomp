@@ -1,3 +1,5 @@
+/* Returns the address of a slot's position (NULL for a negative index). */
+
 int Slot_GetPositionPtr(int r0, int r1)
 {
     if (r1 < 0)

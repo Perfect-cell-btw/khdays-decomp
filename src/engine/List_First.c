@@ -1,3 +1,6 @@
+/* Starts iterating a list: returns the first element (or NULL when empty) and remembers the
+ * position. */
+
 struct Node {
     int field0;
     struct Node *next;

@@ -1,3 +1,5 @@
+/* Whether the renderer's current entry is active (mode 0 checks its byte; modes 1-4 always are). */
+
 int Ov012_IsModeEntryActive(int this_) {
     switch (*(int *)(this_ + 0x6c)) {
     case 0:

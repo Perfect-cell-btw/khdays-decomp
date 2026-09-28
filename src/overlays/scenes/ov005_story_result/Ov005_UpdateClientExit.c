@@ -1,3 +1,6 @@
+/* Client exit step: once the host has answered, sends the client's exit message and waits for its
+ * delivery. */
+
 typedef void *(*ExitTaskState)(void);
 typedef struct Ov005ExitClientMessage { unsigned char playerIndex; char text[22]; } Ov005ExitClientMessage;
 typedef struct Ov005ExitTask {

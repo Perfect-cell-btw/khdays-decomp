@@ -1,3 +1,5 @@
+/* Frees the buffer the slot holds, when set. */
+
 extern void NNSi_FndFreeFromDefaultHeap(void *);
 void Ov008_FreeResourceRecordBuffer(void **slot)
 {

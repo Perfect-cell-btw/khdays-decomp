@@ -1,3 +1,6 @@
+/* Initialises the reward menu: allocates its row buffers and textures, loads its text and archives,
+ * and sets up the input limits. */
+
 typedef unsigned char u8;
 typedef struct Ov005Context {void *resultArchive,*localizedResultArchive;char pad8[0x4bdc];void *rowBuffers[3];char pad4bf0[0x22];char inputHeader[26];char pad4c2c[0x5d550];char menuText[12];} Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;

@@ -1,3 +1,6 @@
+/* Initialises the spawner actor: installs its handlers, stance, scale and hit box, creates its
+ * three children and requests its resources. */
+
 typedef unsigned short u16;
 
 struct Box {

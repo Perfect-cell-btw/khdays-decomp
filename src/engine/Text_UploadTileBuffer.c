@@ -1,3 +1,6 @@
+/* Enqueues the upload of a text surface's tile buffer (rows times row size bytes) to its VRAM
+ * destination. */
+
 extern int GFXi_EnqueueCommand(void *a, int b, int c, int d);
 
 typedef struct {

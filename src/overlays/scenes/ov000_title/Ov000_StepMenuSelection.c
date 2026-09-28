@@ -1,3 +1,6 @@
+/* Moves a title menu selection up or down with wrap-around (the counts depend on the unlocked
+ * options), playing the move sound. */
+
 typedef unsigned char u8;
 
 typedef struct {

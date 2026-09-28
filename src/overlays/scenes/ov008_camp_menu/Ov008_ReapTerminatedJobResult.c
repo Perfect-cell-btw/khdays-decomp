@@ -1,3 +1,5 @@
+/* When the background job's thread has finished, frees it and returns its result; otherwise -1. */
+
 extern char data_ov008_02090fb4[];
 extern int OS_IsThreadTerminated(void *thread);
 extern void NNSi_FndFreeFromDefaultHeap(void *block);

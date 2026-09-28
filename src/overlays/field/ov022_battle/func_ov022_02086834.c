@@ -1,3 +1,6 @@
+/* Turns the lock-on selection on or off in the selection controller (flags and activation state).
+ */
+
 extern void Ov022_ClearMaskBitsAndReset(unsigned int *arg0, int arg1);
 void func_ov022_02086834(int arg0, int arg1) {
     unsigned int *p = *(unsigned int **)(arg0 + 0x20);

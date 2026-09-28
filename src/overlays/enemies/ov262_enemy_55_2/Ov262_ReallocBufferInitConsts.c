@@ -1,3 +1,6 @@
+/* Replaces the object's data with a copy of the source and installs the four action request
+ * callbacks. */
+
 typedef void (*Callback262)(void);
 
 typedef struct {

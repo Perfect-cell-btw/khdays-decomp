@@ -1,3 +1,6 @@
+/* Copies data into the entity manager's track-data pool and attaches it to the first track entry
+ * with the given name. */
+
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 extern void *FindEntryByExactName(void *entry, void *arg1);
 

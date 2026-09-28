@@ -1,3 +1,5 @@
+/* Host only: forwards a value to a player's actor. */
+
 extern short Session_GetLocalPlayerIndex(void);
 extern int GetEntryField20ByIndex(int arg0);
 extern void func_ov022_020ad838(int arg0, int arg1);

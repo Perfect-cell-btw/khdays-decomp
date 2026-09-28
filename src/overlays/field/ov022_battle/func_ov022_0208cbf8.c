@@ -1,3 +1,6 @@
+/* Steps the current sub-object's animation and, when it ends, binds its idle block and sets state
+ * 2. */
+
 extern int Sequence_UpdateTracks(unsigned short *arg0, int arg1);
 extern void Ov022_BindBlockAnimations(int arg0, int arg1, unsigned short *arg2, int arg3);
 

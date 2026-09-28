@@ -1,3 +1,6 @@
+/* Counts the result characters' rank timers down and binds each top-ranked character's victory pose
+ * on the beat; moves to the display state when done. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

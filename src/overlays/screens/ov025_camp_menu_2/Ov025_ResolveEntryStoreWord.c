@@ -1,3 +1,5 @@
+/* Finds a layout entry by id and stores its callback (+0x98). */
+
 extern int Ov025_FindEntryById();
 extern void Ov025_StoreWordAt0x98();
 

@@ -1,3 +1,6 @@
+/* Initialises the actor's AI node: action 0, nothing pending, its position pointer and its three
+ * step handlers. */
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov299_CommitSubStateAndReset(void);
 extern void Ov299_AiSlot2NoOp(void);

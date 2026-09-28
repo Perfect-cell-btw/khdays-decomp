@@ -1,3 +1,5 @@
+/* Parks the element as a spare entry when its kind is 8 or 0x15. */
+
 extern void Ov002_ParkSpareEntry(void *obj);
 
 void Ov017_DispatchOnField4c(void *obj) {

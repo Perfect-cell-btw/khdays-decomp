@@ -1,3 +1,6 @@
+/* Initialises an encounter query: sets up its list and resource record, loads its table and runs
+ * the query for the selector. */
+
 extern void MI_CpuFill8(void *dst, int value, int size);
 extern void NNS_FndInitList(void *list, int objectSize);
 extern void Ov002_InitResourceRecord(void *this_, void *vtable);

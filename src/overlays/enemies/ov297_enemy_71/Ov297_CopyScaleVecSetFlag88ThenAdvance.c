@@ -1,3 +1,6 @@
+/* AI step: keeps and scales up the velocity, measures the target, notes ground contact and ends the
+ * step when the animation ends. */
+
 struct w3 { int a, b, c; };
 struct b1_1 { unsigned char pad : 1, b : 1; };
 extern void ScaleVec3Fx12(int factor, void *src, void *dst);

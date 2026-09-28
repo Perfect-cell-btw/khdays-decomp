@@ -1,3 +1,5 @@
+/* Tears the save scene down: blanks both screens and turns the displays off. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 

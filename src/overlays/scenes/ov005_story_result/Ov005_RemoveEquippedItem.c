@@ -1,3 +1,6 @@
+/* Removes up to a quantity of an item from the equipment slots (last first) and lowers its count.
+ */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef struct InventoryView {

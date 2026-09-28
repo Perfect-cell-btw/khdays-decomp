@@ -1,3 +1,6 @@
+/* Builds the four battle panel rows from the preset table for the current variant and starts their
+ * tweens. */
+
 typedef struct Ov022Pair {
     int a;
     int b;

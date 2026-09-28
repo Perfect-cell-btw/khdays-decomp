@@ -1,3 +1,5 @@
+/* Destroys every node of the list, then the list itself, and frees it. */
+
 extern void *List_First();
 extern void DestroyListNode();
 extern void NNSi_FndDestroyDoubleList();

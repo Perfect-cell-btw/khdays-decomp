@@ -1,3 +1,5 @@
+/* When page B is free, clears the target slot and the selection flags with a sound. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_PageB_IsBusyOrInactive();
 extern void PlaySound();

@@ -1,3 +1,6 @@
+/* Returns bit 0 of the attached object's flags (+0x38), or 0 when the handle is -1 or has no
+ * object. */
+
 int Ov002_GetBit0OfField38IfValid(int p)
 {
     if (p == -1)

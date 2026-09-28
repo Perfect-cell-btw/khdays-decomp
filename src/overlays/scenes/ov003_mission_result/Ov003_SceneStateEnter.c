@@ -1,3 +1,6 @@
+/* Mission result entry state: draws the characters, accumulates each player's stats, plays the
+ * result music and moves on once the characters are in place. */
+
 typedef struct Ov003RootContextView {
     unsigned char pad0000[0x1290];
     int secondaryPresent[4];

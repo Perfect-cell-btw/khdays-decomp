@@ -1,3 +1,6 @@
+/* AI step: computes the velocity from the action resource and heading and, when the action ends,
+ * records it and continues. */
+
 typedef struct {
     int x;
     int y;

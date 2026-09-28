@@ -1,3 +1,6 @@
+/* Destroys a shot pool: releases the shared array when it is the last one, runs its destructor and
+ * frees its buffer. */
+
 extern void ClearGlobalArrayInt(int arg0);
 extern void NNSi_FndFreeFromDefaultHeap(int arg0);
 extern int data_ov022_020b2ea8;

@@ -1,3 +1,6 @@
+/* AI step: posts pose 7, starts animation 2, resets the spin counters and continues with the spin
+ * tick. */
+
 extern void Ov107_PostTagUpdate();
 extern void Ov240_startAnim();
 extern void SetIndexedSlot();

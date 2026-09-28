@@ -1,3 +1,6 @@
+/* AI step: once the actor is active, resets its counters, calls its hook when enabled, queues its
+ * stored action and ends the step. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct sb2 { int pad : 2; int b : 1; };
 extern void SetIndexedSlot();

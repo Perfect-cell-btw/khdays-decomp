@@ -1,3 +1,5 @@
+/* Moves the list cursor to the current row's scrolled position. */
+
 extern int Ov025_GetBlock4a80();
 extern int Ov025_FindEntryById();
 extern void Ov025_ApplyOffsetSum();

@@ -1,3 +1,6 @@
+/* Whether the actor's state allows the action (a set of states, state 0xe only with a part
+ * attached). */
+
 extern int func_ov022_0209fc78(int param_1, int arg1);
 
 int func_ov022_0209fcd4(int param_1) {

@@ -1,3 +1,5 @@
+/* Aims every part of the current sub-object and draws its extra node. */
+
 extern void Ov022_AimAngleThenNotify(int arg0);
 extern void func_ov022_02090070(int arg0);
 

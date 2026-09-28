@@ -1,3 +1,5 @@
+/* Sets the frame of the listed animation tracks of an effect pool entry. */
+
 extern void func_ov022_02089384(unsigned short *arg0, int arg1);
 void func_ov022_020894cc(int arg0, int arg1, int arg2) {
     int b = *(int *)(arg0 + 0x20);

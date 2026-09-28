@@ -1,3 +1,5 @@
+/* Allocates and constructs a joint model (0x94 bytes). */
+
 extern void *CallocInstance(int size);
 extern void JointModel_Construct(void *p, int a1, int a2);
 

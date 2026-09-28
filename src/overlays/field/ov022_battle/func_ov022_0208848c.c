@@ -1,3 +1,5 @@
+/* Returns the mask of the groups the players belong to. */
+
 extern int func_ov022_020882f8(void);
 extern int data_ov022_020b2e78;
 

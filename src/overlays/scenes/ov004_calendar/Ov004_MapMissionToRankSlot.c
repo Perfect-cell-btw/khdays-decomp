@@ -1,3 +1,6 @@
+/* Maps a day to the calendar's rank slot (a table of special days, otherwise resolved from the
+ * missions). */
+
 extern int Ov004_ResolveMissionRank(int value);
 
 int Ov004_MapMissionToRankSlot(int value) {

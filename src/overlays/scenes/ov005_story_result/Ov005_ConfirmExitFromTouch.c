@@ -1,3 +1,5 @@
+/* Touch handler: picks "yes" in the exit dialog and plays the confirm sound. */
+
 typedef struct Ov005Context {
     char opaque00[0x4bf0];
     int menuState;

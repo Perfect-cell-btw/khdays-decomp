@@ -1,3 +1,7 @@
+/* Relocates a loaded collision model blob: turns its stored offsets into pointers (tables,
+ * quad-tree nodes and their child links, face arrays, named records) and builds the faces' planes,
+ * once. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

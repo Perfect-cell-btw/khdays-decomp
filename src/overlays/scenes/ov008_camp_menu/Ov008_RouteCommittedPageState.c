@@ -1,3 +1,6 @@
+/* Once the page is committed, picks the next menu state by the pending mode (shop, sub-menu, leave,
+ * scene pick) or syncs the persistent flag before committing the selected page. */
+
 typedef unsigned char u8;
 
 typedef union Ov008FlagsByte {

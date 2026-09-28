@@ -1,3 +1,6 @@
+/* Redraws the equipment panel: the level and stats of the current character, the equipped weapon,
+ * the stat bars and the item list, then uploads the page's surfaces. */
+
 typedef unsigned char  u8;
 typedef unsigned short u16;
 typedef unsigned int   u32;

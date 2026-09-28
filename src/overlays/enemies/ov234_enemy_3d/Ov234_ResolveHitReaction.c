@@ -1,3 +1,6 @@
+/* Resolves a hit on the enemy: computes the damage and, when it lands, picks a reaction (knockback
+ * direction from the hit, random stagger) and sends it; returns whether the hit counts. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

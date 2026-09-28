@@ -1,3 +1,6 @@
+/* AI step: ends when the target is gone; queues action 2 when the animation ends; otherwise keeps
+ * the offset rotated by the heading. */
+
 extern int Ov276_DistanceToTarget();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void MTX_RotY33_();

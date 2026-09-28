@@ -1,3 +1,6 @@
+/* Shows the damage of the four members whose damage messages have been processed, and clears them.
+ */
+
 extern int MsgQueue_Contains(unsigned int arg0);
 extern void Ov022_Member_ShowDamage(int i, unsigned short a, unsigned int b, unsigned int c);
 extern int data_ov022_020b2ea4;

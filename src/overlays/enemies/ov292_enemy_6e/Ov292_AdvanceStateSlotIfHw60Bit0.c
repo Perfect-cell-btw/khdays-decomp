@@ -1,3 +1,6 @@
+/* AI step: once the actor is active, resets its motion values, queues its stored action and ends
+ * the step. */
+
 extern void SetIndexedSlot();
 
 struct hw60 { unsigned short lo : 8, hi : 8; };

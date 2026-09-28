@@ -1,3 +1,6 @@
+/* Loads ov024 (MobiClip), installs its stream source interface into the root context and calls its
+ * entry hook. */
+
 typedef void (*Ov002OverlayHook)(void);
 typedef unsigned int FSOverlayID;
 

@@ -1,3 +1,6 @@
+/* Returns the address of a page table entry (3 entries of 0x12 bytes), or NULL when out of range.
+ */
+
 struct ov008_size12_entry {
     unsigned char _pad[0x12];
 };

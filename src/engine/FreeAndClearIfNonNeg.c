@@ -1,3 +1,6 @@
+/* Frees the buffer the pointer holds (when the owner's count is not negative) and clears the
+ * pointer. */
+
 extern int NNSi_FndFreeFromDefaultHeap();
 
 void FreeAndClearIfNonNeg(int *arg0, int arg1) {

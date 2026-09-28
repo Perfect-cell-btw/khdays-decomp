@@ -1,3 +1,6 @@
+/* Tears an effect set down when it is active: releases its nine model instances and its service
+ * (when loaded) and resets it. */
+
 extern void ReleaseField74AndCleanup(int arg0);
 extern void func_02023ad0(int arg0);
 extern void Ov022_ResetBlock94c(unsigned char *arg0);

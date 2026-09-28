@@ -1,3 +1,6 @@
+/* Synchronises the mission selection confirmations with the peers: once every connected peer has
+ * confirmed (or on a forced exit), moves on to syncing the entries. */
+
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;

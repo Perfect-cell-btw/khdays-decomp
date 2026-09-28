@@ -1,3 +1,5 @@
+/* Creates a record from a template in the field context's tag tracker (+0xdc). */
+
 extern int data_ov002_0207f60c;
 extern int Ov002_CreateRecordFromTemplate();
 

@@ -1,3 +1,6 @@
+/* Adds an item to the actor's save slot and, for the local player's actor, tags the panel entry
+ * with the item's display pair (or the raw id). */
+
 extern void ForwardWithFlag1(int kind, unsigned short *pair);
 extern unsigned short *Table_FindKey(int kind, unsigned int id);
 extern int Session_GetLocalPlayerIndex(void);

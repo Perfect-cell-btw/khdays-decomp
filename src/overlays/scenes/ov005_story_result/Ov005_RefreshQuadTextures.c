@@ -1,3 +1,5 @@
+/* Points each visible reward quad at its item's icon texture. */
+
 typedef unsigned char u8;
 typedef struct NNSG3dResFileHeader NNSG3dResFileHeader;
 typedef struct Ov005TextureParams {unsigned int texImageParam,texPlttBase;} Ov005TextureParams;

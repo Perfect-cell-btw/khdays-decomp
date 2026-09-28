@@ -1,3 +1,6 @@
+/* AI step: moves the actor in front of its grab target, posts pose 0x13, starts the charge
+ * animation and continues with the charge tick. */
+
 extern void ScaleVec3Fx12();
 extern void VEC_Subtract();
 extern void Ov107_MoveNodeAndRelayout();

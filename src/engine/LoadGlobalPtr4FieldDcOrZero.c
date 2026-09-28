@@ -1,3 +1,5 @@
+/* Returns a field (+0xdc) of the object a global points to, or 0 when there is none. */
+
 extern int data_0204be08;
 
 int LoadGlobalPtr4FieldDcOrZero(void) {

@@ -1,3 +1,5 @@
+/* Sets the actor's carry offset: rotated by its stored rotation in action 1, zero otherwise. */
+
 extern void Srt_SetRotationQuat(void *a, void *b);
 
 struct vec3 { int a, b, c; };

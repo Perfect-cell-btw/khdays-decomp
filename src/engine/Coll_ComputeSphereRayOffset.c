@@ -1,3 +1,7 @@
+/* Ray-sphere intersection: from the ray origin and direction and the sphere centre and radius,
+ * computes the offset along the direction to the far intersection; returns 0 when the ray misses.
+ */
+
 typedef int fx32;
 typedef struct { fx32 x, y, z; } Vec;
 

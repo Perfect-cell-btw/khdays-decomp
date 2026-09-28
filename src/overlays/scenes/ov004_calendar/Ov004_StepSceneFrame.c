@@ -1,3 +1,6 @@
+/* Calendar frame: runs the current phase, scales the logo, slides it and fades in the label, and
+ * draws the sprites and digits. */
+
 typedef void (*Ov004StateHandler)(void);
 
 typedef struct Ov004StateHandlerTable {

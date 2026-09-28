@@ -1,3 +1,6 @@
+/* AI step: keeps the previous velocity and scales it up; when the animation ends, queues action 9.
+ */
+
 typedef struct Vec3 {
     int x;
     int y;

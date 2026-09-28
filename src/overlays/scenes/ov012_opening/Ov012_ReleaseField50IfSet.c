@@ -1,3 +1,5 @@
+/* Uploads the renderer's pending tile buffer and clears it. */
+
 extern void Text_UploadTileBuffer();
 
 void Ov012_ReleaseField50IfSet(int this_) {

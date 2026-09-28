@@ -1,3 +1,5 @@
+/* Sets an SRT's scale per axis and marks it non-identity and non-uniform. */
+
 struct S {
     char pad[0x1c];
     int field_1c;

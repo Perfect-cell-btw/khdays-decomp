@@ -1,3 +1,5 @@
+/* Merges two sorted lists into the destination list with the comparison function. */
+
 typedef unsigned short u16;
 
 typedef struct NNSFndList {

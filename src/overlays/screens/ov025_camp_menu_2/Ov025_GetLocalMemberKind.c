@@ -1,3 +1,5 @@
+/* Returns the local player's member kind, or -1 when the slot is empty. */
+
 extern int Session_GetLocalPlayerIndex();
 extern int Slot4_GetIfOccupied();
 

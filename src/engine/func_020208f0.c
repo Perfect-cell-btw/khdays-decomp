@@ -1,3 +1,5 @@
+/* Decrements a global counter (data_0204bda0) when it is positive; returns its value. */
+
 extern int data_0204bda0;
 
 int func_020208f0(void) {

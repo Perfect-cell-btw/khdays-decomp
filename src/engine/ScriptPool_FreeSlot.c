@@ -1,3 +1,6 @@
+/* Returns a sound handle entry to the free pool: unlinks it from the active list (fixing the tail)
+ * and pushes it on the free list, marking it unused. */
+
 extern char *data_0204c234;
 
 typedef struct SlotLink {

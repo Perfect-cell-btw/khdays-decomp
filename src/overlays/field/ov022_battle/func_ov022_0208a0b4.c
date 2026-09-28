@@ -1,3 +1,5 @@
+/* Host only: sends a member colour event (kind 1) with its values. */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern int func_02031384(int a, void *b, int c);
 extern int data_ov022_020b2ea4;

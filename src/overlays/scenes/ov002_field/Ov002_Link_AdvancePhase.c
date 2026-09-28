@@ -1,3 +1,6 @@
+/* When the session is ready, advances the slot phase (3 for the host, 4 otherwise); returns 1 while
+ * it is not ready. */
+
 extern int Session_IsReady();
 extern int Ov002_AdvanceSlotPhase();
 

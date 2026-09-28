@@ -1,3 +1,5 @@
+/* Rebuilds the object's horizontal bounds (min/max x and z) from its centre and radius. */
+
 void Bounds_FromCenterRadius(int *p)
 {
     int v = p[0x38 / 4];

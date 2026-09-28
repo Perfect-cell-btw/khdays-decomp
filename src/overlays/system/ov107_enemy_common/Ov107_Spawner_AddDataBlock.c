@@ -1,3 +1,5 @@
+/* Copies a data block into the spawner's next block slot (up to 8); returns its index or -1. */
+
 extern void *CallocInstance(int size);
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 

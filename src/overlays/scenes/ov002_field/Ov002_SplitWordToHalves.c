@@ -1,3 +1,5 @@
+/* Splits a word into its high and low halfwords. */
+
 void Ov002_SplitWordToHalves(int a, short *hi, short *lo)
 {
     *hi = (short)(a >> 0x10);

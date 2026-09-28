@@ -1,3 +1,6 @@
+/* AI step: sends the attack update (0x139, mode 4) once its time comes and, when the animation
+ * ends, posts pose 6, starts animation 1 and continues. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov240_startAnim(int a, int b);

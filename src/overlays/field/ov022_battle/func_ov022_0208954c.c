@@ -1,3 +1,5 @@
+/* Stores a value (+0x10c) of an effect pool entry. */
+
 void func_ov022_0208954c(int arg0, int arg1, int arg2) {
     int b = *(int *)(arg0 + 0x20);
     if (arg1 < 0) return;

@@ -1,3 +1,5 @@
+/* Once the shop context's ready flag is set, clears it and returns the sub-scene wait step. */
+
 extern int NNSi_FndGetCurrentRootHeap();
 extern void Ov026_SubSceneWait();
 

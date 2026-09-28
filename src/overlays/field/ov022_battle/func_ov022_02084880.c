@@ -1,3 +1,5 @@
+/* Records a player in a lock-on selection (type 3) with its approach point. */
+
 typedef struct { int a, b, c; } T3_02084880;
 void func_ov022_02084880(int *arg0, int arg1, T3_02084880 *arg2) {
     *(T3_02084880 *)(arg0 + 7) = *arg2;

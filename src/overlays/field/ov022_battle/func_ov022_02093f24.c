@@ -1,3 +1,5 @@
+/* Marks a command kind's group as used and resets its animation tracks. */
+
 extern unsigned int Ov022_KindToGroup(int arg0);
 extern void Ov022_ResetSlotTracks(int arg0, int arg1);
 void func_ov022_02093f24(int arg0, int arg1) {

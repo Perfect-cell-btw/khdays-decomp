@@ -1,3 +1,6 @@
+/* Runs the reward multiplier presentation: steps the banner tween, multiplies the rewards when it
+ * lands (with a sound) and redraws the list. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef struct Tween {

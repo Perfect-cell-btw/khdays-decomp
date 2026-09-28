@@ -1,3 +1,6 @@
+/* Initialises the actor's AI node: action 0, nothing pending, clears the model flag, sets its
+ * position pointer and its three step handlers. */
+
 struct flag8 {
     unsigned value : 8;
 };

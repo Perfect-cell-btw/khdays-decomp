@@ -1,3 +1,7 @@
+/* Advances the battle context's fade state: from 1 to 2 (resetting its counters) or from 4 to 5
+ * (starting the selection schedule and playing its sound the first time); returns the next step
+ * handler or 0. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void func_ov022_02086d0c(int a);
 extern int GameState_IsFlagSet(int id);

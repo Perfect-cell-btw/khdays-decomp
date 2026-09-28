@@ -1,3 +1,5 @@
+/* Frees the object's buffer at +0x58 when set and clears the pointer. */
+
 extern void NNSi_FndFreeFromDefaultHeap(void *block);
 
 void Ov008_Set_fcbc(void *object)

@@ -1,3 +1,6 @@
+/* Per-frame update of a sequence node: tears the attached node down when needed (unless flag 0x10),
+ * then advances its tracks unless paused (flags 0x20/0x40); returns the track result. */
+
 extern void TeardownNodeIfBit0Set();
 extern unsigned int Sequence_UpdateTracks();
 unsigned int DetachThenApplyNode(int param_1, unsigned int *param_2, int param_3)

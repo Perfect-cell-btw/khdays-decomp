@@ -1,3 +1,5 @@
+/* Polls the page input and runs the two current handlers. */
+
 extern void Ov025_PollPageInput();
 extern void Ov025_HandlerA_Call2();
 extern void Ov025_HandlerB_Call2();

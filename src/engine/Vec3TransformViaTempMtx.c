@@ -1,3 +1,6 @@
+/* Transforms a vector by a rotation: builds the 3x3 matrix of the quaternion and multiplies the
+ * vector by it. */
+
 extern void Mtx33_FromQuat(void *mtx);
 extern void MTX_MultVec33(void *out, void *mtx, void *in);
 

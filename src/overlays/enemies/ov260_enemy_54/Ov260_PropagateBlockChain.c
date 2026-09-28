@@ -1,3 +1,5 @@
+/* Refreshes the child model, runs the object tick and copies the transform down the model chain. */
+
 extern void Ov107_RefreshAndSelectChild(void *p);
 extern void Ov107_ProcessObjectTick(void *obj, int arg2);
 struct blk11 { int w[11]; };

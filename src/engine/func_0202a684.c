@@ -1,3 +1,5 @@
+/* Registers the texture data of the model's resource (+0x74). */
+
 extern int ForwardType7RecordSpan();
 
 int func_0202a684(int arg0) {

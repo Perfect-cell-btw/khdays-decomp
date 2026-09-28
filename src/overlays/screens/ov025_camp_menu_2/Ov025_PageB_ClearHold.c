@@ -1,3 +1,5 @@
+/* Clears page B's hold flag. */
+
 extern int Ov025_GetPageB();
 
 void Ov025_PageB_ClearHold(int arg0) {

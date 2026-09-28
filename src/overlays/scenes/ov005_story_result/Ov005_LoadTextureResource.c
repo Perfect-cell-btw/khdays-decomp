@@ -1,3 +1,5 @@
+/* Loads an icon texture from the archive into its reserved VRAM. */
+
 typedef struct NNSG3dResFileHeader NNSG3dResFileHeader;
 typedef struct NNSG3dResTex NNSG3dResTex;
 typedef struct Ov005TextureResource {NNSG3dResFileHeader *resource;unsigned int textureKey,paletteKey;} Ov005TextureResource;

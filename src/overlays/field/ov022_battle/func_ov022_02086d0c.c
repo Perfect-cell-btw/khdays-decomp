@@ -1,3 +1,5 @@
+/* Starts the selection fade tween in (to full) or out (to zero) over 400 ms. */
+
 extern void Tween_Configure(unsigned int *arg0, int arg1, int arg2, int arg3, int arg4);
 extern void Tween_Start(int arg0);
 extern int data_ov022_020b2e74;

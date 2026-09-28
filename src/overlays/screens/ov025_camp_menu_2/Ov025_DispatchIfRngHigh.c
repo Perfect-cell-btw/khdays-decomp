@@ -1,3 +1,5 @@
+/* Opens menu group 2 from day 8 onwards (with a sound); before that, plays the refusal sound. */
+
 extern int Ov025_GetPageA();
 extern int GameState_GetField();
 extern void PlaySound();

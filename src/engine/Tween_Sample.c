@@ -1,3 +1,7 @@
+/* Samples a tween: converts the time elapsed since it started (or the frozen time while paused) to
+ * ticks, marks it finished when it reaches the duration, and writes the eased value between its
+ * endpoints. */
+
 typedef unsigned int u32;
 typedef signed int s32;
 typedef unsigned long long u64;

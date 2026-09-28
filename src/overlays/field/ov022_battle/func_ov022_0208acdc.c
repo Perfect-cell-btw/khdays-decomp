@@ -1,3 +1,6 @@
+/* Spawns an effect at a position when the current sub-object belongs to the local player's group.
+ */
+
 extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(unsigned int arg0);
 extern void Slot_Spawn(unsigned int arg0, unsigned int arg1, unsigned int *arg2, int arg3);

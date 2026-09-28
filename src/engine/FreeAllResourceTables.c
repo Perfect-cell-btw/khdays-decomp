@@ -1,3 +1,6 @@
+/* Frees a resource set: releases every resource of its five tables (last to first), frees the
+ * tables' storage and releases its resource slot. */
+
 extern int func_0201696c();
 extern void ResSlot_Release(int a);
 extern void ResSlot_ReleaseResource(void);

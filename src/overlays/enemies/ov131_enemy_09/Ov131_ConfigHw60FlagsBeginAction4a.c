@@ -1,3 +1,6 @@
+/* AI step: sets the stance bits 0x86 and contact flags, sends the action 0x4a update, queues action
+ * 0 and ends the step. */
+
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
 struct flagword { unsigned int f8 : 8; };
 

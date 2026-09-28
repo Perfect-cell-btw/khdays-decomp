@@ -1,3 +1,5 @@
+/* Touch handler: picks "no" in the exit dialog, closes it and plays the cancel sound. */
+
 typedef struct Ov005Context {
     char opaque00[0x4bf0];
     int menuState;

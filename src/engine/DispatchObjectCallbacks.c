@@ -1,3 +1,6 @@
+/* Runs an object's draw callbacks: the render callback (+0x6c) and the per-owner callback (+0x74)
+ * with its owner, unless the object is hidden (bit 1 of +0x5c). */
+
 struct flags_5c { int b0:1; int b1:1; };
 
 void DispatchObjectCallbacks(int this_, int arg1) {

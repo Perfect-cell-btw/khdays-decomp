@@ -1,3 +1,5 @@
+/* Releases the context's service instance. */
+
 extern void func_02023ad0(int arg0);
 extern int data_ov022_020b2e60;
 

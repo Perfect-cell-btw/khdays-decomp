@@ -1,3 +1,6 @@
+/* Loads the part's screen palette and enqueues its two graphics tables, for the pieces that are
+ * present. */
+
 extern void Bg_LoadPaletteForScreen();
 extern void Gfx_EnqueueTableCmdAt14();
 extern void Gfx_EnqueueTableCmdAtC();

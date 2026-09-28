@@ -1,3 +1,5 @@
+/* Enqueues the global surface update and hands its result to the sound manager's update. */
+
 extern long long Gfx_EnqueueSurface(int a);
 extern void SoundMgr_Update(long long v);
 extern int data_0204be08[];

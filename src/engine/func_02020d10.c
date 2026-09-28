@@ -1,3 +1,6 @@
+/* Resolves a player index: -1 is the default index from the object, and -3 and lower are counted
+ * from the local player (wrapping at four players). */
+
 extern unsigned short Session_GetLocalPlayerIndex();
 
 int func_02020d10(int arg0, int arg1) {

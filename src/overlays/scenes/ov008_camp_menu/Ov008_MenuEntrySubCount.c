@@ -1,3 +1,5 @@
+/* Returns the number of sub-entries of a menu table entry. */
+
 extern void Ov008_GetMenuContext(void);
 typedef unsigned char u8;
 typedef short s16;

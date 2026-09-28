@@ -1,3 +1,5 @@
+/* Returns a global halfword. */
+
 extern int data_0204bda4;
 
 int LoadGlobalU16At0(void) {

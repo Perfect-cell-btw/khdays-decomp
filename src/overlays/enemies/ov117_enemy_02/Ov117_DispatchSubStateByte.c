@@ -1,3 +1,6 @@
+/* AI dispatcher: when an action is pending, resets the actor's stance, contact and rotation, makes
+ * it current and installs its step handler. */
+
 struct bf { unsigned b : 8; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);

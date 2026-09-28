@@ -1,3 +1,6 @@
+/* Initialises the enemy's sub-actor: installs its handlers and flags, creates its model and links
+ * it to its owner. */
+
 typedef unsigned short u16;
 
 struct ChildIds {

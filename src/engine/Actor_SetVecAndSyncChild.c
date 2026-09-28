@@ -1,3 +1,6 @@
+/* Sets the actor's position (+0xa8), first notifying its node of the move unless the actor is
+ * detached (flag 0x10). */
+
 typedef struct {
     int x;
     int y;

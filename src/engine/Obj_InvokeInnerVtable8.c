@@ -1,3 +1,5 @@
+/* Calls the inner object's third virtual method with the arguments. */
+
 typedef void (*func_0203011c_cb)(void *ptr, int zero, int arg1, int arg2, int arg3, int arg4);
 
 void Obj_InvokeInnerVtable8(int *ptr, int arg1, int arg2, int arg3, int arg4) {

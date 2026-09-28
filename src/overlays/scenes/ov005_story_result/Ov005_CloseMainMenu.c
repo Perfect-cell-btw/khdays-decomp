@@ -1,3 +1,6 @@
+/* Closes the reward menu: commits the rewards and frees its buffers, text, sprites, fonts, surfaces
+ * and archives. */
+
 typedef struct Ov000ResourceTracker { char opaque[76]; } Ov000ResourceTracker;
 typedef struct Ov005SpriteManager { char opaque[0x4a80]; } Ov005SpriteManager;
 typedef struct FontInfo { char opaque[12]; } FontInfo;

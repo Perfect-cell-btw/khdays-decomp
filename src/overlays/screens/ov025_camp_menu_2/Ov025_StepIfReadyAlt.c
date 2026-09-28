@@ -1,3 +1,5 @@
+/* When page B's mission is selected and ready, applies its widgets and confirms it. */
+
 extern int Ov025_GetPageB();
 extern void Ov025_ApplyModeWidgets();
 extern void Ov025_MissionList_Confirm();

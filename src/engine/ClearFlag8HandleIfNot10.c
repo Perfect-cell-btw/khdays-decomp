@@ -1,3 +1,6 @@
+/* Removes the node from its collision quad tree (unless detached) and clears its registered flag
+ * (8). */
+
 extern void QuadTree_RemoveObject();
 
 void ClearFlag8HandleIfNot10(int this_) {

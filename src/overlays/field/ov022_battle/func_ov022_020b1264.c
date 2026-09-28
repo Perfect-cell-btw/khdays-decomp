@@ -1,3 +1,5 @@
+/* Relocates the object's sections with the relocation flag forced on. */
+
 extern int data_020427f0;
 extern void Obj_RelocateSections(int *arg0, int arg1, int *arg2, int arg3);
 void func_ov022_020b1264(int arg0, int arg1, int arg2, int arg3) {

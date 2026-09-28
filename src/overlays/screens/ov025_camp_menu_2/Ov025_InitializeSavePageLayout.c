@@ -1,3 +1,6 @@
+/* Builds the save page layout: loads the background characters (keeping a backup) and palette, the
+ * layout resource, and installs the touch trackers of the list and grid. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

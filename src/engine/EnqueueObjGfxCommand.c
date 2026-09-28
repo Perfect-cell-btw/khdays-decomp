@@ -1,3 +1,5 @@
+/* Enqueues the object's graphics transfer command (GFXi_EnqueueCommand) with its parameters. */
+
 extern int GFXi_EnqueueCommand(int a, int b, int c, int d);
 
 typedef struct {

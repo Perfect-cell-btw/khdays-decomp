@@ -1,3 +1,6 @@
+/* Rebinds the rig's five animation tracks: removes the bound animations when it uses a shared
+ * block, binds each track to the shared or own block and rewinds it. */
+
 extern void NNS_G3dRenderObjRemoveAnmObj(void *tracks, int handle);
 extern void BindAnimTrack(void *anim, unsigned short slot, void *block, short arg);
 extern int *Anim_SetFrameWrapped(void *anim, unsigned short slot, int arg);

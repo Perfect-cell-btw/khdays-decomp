@@ -1,3 +1,6 @@
+/* Destroys a layout object: clears it as the current one, unlinks its two slots, removes it from
+ * the list and frees it. */
+
 extern int Slot_UnlinkIfLinked();
 extern int NNS_FndRemoveListObject();
 extern int NNSi_FndFreeFromDefaultHeap();

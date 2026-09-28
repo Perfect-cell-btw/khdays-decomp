@@ -1,3 +1,6 @@
+/* AI step: keeps and scales up the velocity and, when the animation ends, rolls a timer and picks
+ * approaching (far or not ready) or attacking. */
+
 typedef struct { int x, y, z; } Vec3;
 struct b2 { unsigned char b0:1, b1:1; };
 

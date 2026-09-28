@@ -1,3 +1,6 @@
+/* Sends a sync request message (kind 8) with the local player and the request's values; stores the
+ * message handle. */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern int func_02031384(int arg0, void *arg1, int arg2);
 

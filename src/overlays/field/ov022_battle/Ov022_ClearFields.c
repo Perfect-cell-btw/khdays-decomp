@@ -1,3 +1,5 @@
+/* Clears a record's first two words and its counters at +0x334..+0x337. */
+
 void Ov022_ClearFields(unsigned int *arg0) {
     arg0[0] = 0;
     arg0[1] = 0;

@@ -1,3 +1,6 @@
+/* Adds a spawn slot with its id, mask, mode and owner tag (up to 8, terminating otherwise); returns
+ * its index. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

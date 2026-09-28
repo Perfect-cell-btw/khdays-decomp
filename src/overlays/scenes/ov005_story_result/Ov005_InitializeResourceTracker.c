@@ -1,3 +1,5 @@
+/* Initialises the reward menu's resource tracker and loads its sections from the result archive. */
+
 typedef unsigned int u32;
 typedef int (*ResourceCallback)(int);
 typedef struct Ov000ResourceTrackerConfig {u32 entryCapacity,nodeCapacity,auxiliaryCapacity;ResourceCallback entryCallback,nodeCallback;} Ov000ResourceTrackerConfig;

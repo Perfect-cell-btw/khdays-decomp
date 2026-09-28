@@ -1,3 +1,5 @@
+/* Stores an indexed word of the root context (+0x8a28). */
+
 extern int data_ov002_0207fa00;
 
 void Ov002_SetRootWord8a28(int arg0, int arg1) {

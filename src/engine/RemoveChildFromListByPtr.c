@@ -1,3 +1,6 @@
+/* Removes a child object from the object's child list (+0x88), dropping the list's reference;
+ * returns its former index or -1. */
+
 extern int *List_First();
 extern void Obj_ReplaceRef();
 extern void List_RemoveByHandle();

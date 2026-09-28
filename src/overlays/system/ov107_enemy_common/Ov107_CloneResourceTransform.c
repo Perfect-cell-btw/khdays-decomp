@@ -1,3 +1,5 @@
+/* Allocates a transform node initialised from a resource transform (identity SRT). */
+
 typedef struct { int w[4]; } Src4;
 typedef struct { int w[3]; } Src3;
 

@@ -1,3 +1,6 @@
+/* Rebuilds the gameplay rules and thresholds (option flags, limits and values) from the game-state
+ * option fields. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

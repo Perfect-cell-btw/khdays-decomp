@@ -1,3 +1,7 @@
+/* Mission selection state: while the scene is waiting, copies the local profile name into the
+ * selection block, takes the peers' uploaded selections and, once they have started, moves to the
+ * confirmation state; sends the local selection when the transition is done. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 

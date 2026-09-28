@@ -1,3 +1,6 @@
+/* Main battle state: waits out its delay, runs the frame, updates progress flags and picks the next
+ * state (action, results, leave, crawl skip) from the context flags and players. */
+
 typedef signed char s8;
 typedef unsigned char u8;
 typedef unsigned short u16;

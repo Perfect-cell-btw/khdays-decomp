@@ -1,3 +1,6 @@
+/* Handles a counter message: adds to the element's count (kind 1) or resets and locks it (kind 2);
+ * clears its pending flag. */
+
 void Ov014_HandleCounterMessage(int actor, unsigned char *msg)
 {
     switch (msg[0]) {

@@ -1,3 +1,6 @@
+/* AI step: runs the dash and, when the animation ends, clears the model flag and queues action 4.
+ */
+
 struct bf { unsigned b : 8; };
 
 extern void Ov298_DashSetup(void *node);

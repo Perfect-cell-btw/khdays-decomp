@@ -1,3 +1,6 @@
+/* Draws the result scene and each player's character models (rotating the winners), accumulating
+ * their stats. */
+
 extern void Scene_DrawNode(void *p);
 extern void Ov003_AccumulateThreeGlobalStats(int i, int v);
 extern void Ov003_ApplyRotationToLayers(int i, int v);

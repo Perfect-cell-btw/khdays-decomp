@@ -1,3 +1,6 @@
+/* Posts a pose change to an active actor: records the pose and flag, marks it pending and calls its
+ * pose hook. */
+
 typedef unsigned char u8;
 
 typedef struct BaseActor {

@@ -1,3 +1,6 @@
+/* Per-frame network send: the host sends the actor states and pending damage, everyone sends the
+ * control packet (unless paused). */
+
 extern unsigned int *NNSi_FndGetCurrentRootHeap(void);
 extern short Session_GetLocalPlayerIndex(void);
 extern void Ov022_SendActorStatePacket(void);

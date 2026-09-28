@@ -1,3 +1,5 @@
+/* Sets an SRT's scale to the same value on every axis and marks it uniform. */
+
 struct S {
     int pad[7];
     int a;       /* 0x1c */

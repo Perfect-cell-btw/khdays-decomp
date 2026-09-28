@@ -1,3 +1,5 @@
+/* Replaces the object's data with a copy of the source and its two values. */
+
 typedef struct {
     char pad[0x3a0];
     void *data;

@@ -1,3 +1,5 @@
+/* Slides the reward multiplier banner with its tween and shows it with the multiplier's frame. */
+
 typedef unsigned char u8;
 typedef struct Tween {int mode,duration,from,to;long long startTick;unsigned int flags;} Tween;
 typedef struct Ov005Context {char header[0x54];char embeddedManager[0x4a80];char opaque4ad4[0x19c];Tween statusTween;} Ov005Context;

@@ -1,3 +1,6 @@
+/* Casts a ray against the collision of the indexed entity-manager world, with flags and an object
+ * to exclude. */
+
 typedef struct {
     int word0;
     int word4;

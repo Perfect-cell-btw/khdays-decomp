@@ -1,3 +1,6 @@
+/* When the node system is active and the tile is idle and has a cell, appends the tile's cell to
+ * the channel buffer (flagged). */
+
 extern void ChannelBuf_Append();
 extern int data_0204c22c;
 

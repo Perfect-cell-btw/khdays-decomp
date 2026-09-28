@@ -1,3 +1,6 @@
+/* AI step: advances the timer and rotates the offset; when the animation ends, posts pose 0xd and
+ * continues. */
+
 extern void MTX_RotY33_();
 extern void MTX_MultVec33();
 extern void Ov107_PostTagUpdate();

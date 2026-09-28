@@ -1,3 +1,5 @@
+/* Whether the title scene is missing or in state 5. */
+
 extern int data_ov011_0205e960;
 
 int Ov011_IsBootStateReady(void) {

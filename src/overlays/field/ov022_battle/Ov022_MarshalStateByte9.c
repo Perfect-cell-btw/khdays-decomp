@@ -1,3 +1,6 @@
+/* Sends an object state message (kind 9) with the owner and value when the session is ready and the
+ * object is networked. */
+
 extern int Session_IsReady(void);
 extern void func_02031384(int a, void *buf, int c);
 

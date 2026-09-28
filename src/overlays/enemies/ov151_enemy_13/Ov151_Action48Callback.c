@@ -1,3 +1,6 @@
+/* AI step: sets the stance bits 0x80, flags the actor, sends the action 0x48 update and continues
+ * with acquiring the target angle. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov151_TimerAcquireTargetAngleThenAdvance(void);

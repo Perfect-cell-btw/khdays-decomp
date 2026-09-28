@@ -1,3 +1,6 @@
+/* Returns the end offset of a slot's data (its base plus the size recorded for the slot), aligned
+ * to the 32/64/128/256-byte boundary its flags select. */
+
 extern int func_02031b2c();
 extern int IntArray_Get();
 unsigned int ComputeAlignedEndOffset(int param_1, int *param_2)

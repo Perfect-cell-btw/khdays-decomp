@@ -1,3 +1,5 @@
+/* Allocates a sprite slot for a cell and hides it. */
+
 extern int func_02032444();
 extern void Slot_SetMode2Bit();
 extern void Slot_SetVisible();

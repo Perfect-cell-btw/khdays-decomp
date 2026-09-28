@@ -1,3 +1,6 @@
+/* Whether the actor's animation is within its last frames (at least two steps, more in the slow
+ * mode). */
+
 extern int Anim_GetFrame(unsigned short *arg0, int arg1);
 extern int Anim_GetLengthQ12(unsigned short *arg0, int arg1);
 extern int func_02023c40(void);

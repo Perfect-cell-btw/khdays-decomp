@@ -1,3 +1,5 @@
+/* Clears the sync block's member records and marks the four members unset. */
+
 extern int data_ov022_020b2ea4;
 extern void MI_CpuFill8(void *dest, int value, int size);
 

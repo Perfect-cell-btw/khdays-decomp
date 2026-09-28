@@ -1,3 +1,7 @@
+/* The first time it runs outside shutdown, sets game flag 0x2086, notifies the party when the root
+ * counter at +0x8ca4 is positive, and updates the rate panel in mode 4 unless flag 0x20e8 is set;
+ * returns whether flag 0x2086 is set. */
+
 extern int GameState_IsFlagSet(int flag);
 extern int GameState_SetFlag(int flag);
 extern int Ov002_RunShutdownHook(void);

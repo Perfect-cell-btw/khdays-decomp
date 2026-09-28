@@ -1,3 +1,5 @@
+/* Frees memory to the given expanded heap, or to the current heap when none is given. */
+
 extern int NNS_FndFreeToExpHeap();
 extern int data_0204c028;
 

@@ -1,3 +1,5 @@
+/* Whether the context's service instance has a value at +0x28. */
+
 extern int Obj_GetWord28(int arg0);
 extern int data_ov022_020b2e60;
 int func_ov022_02083da8(void) {

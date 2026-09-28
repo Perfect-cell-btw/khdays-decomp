@@ -1,3 +1,5 @@
+/* Encodes the current lock-on selection into a message; returns whether there is one. */
+
 extern int func_ov022_02083f5c(void);
 extern void Ov022_EncodeSelectionResult(unsigned char *arg0, int arg1);
 int func_ov022_02086654(unsigned char *arg0) {

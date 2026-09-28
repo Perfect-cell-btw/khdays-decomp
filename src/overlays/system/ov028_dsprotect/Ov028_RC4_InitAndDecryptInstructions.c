@@ -1,3 +1,5 @@
+/* Initialises RC4 with a 16-byte key and decrypts a block of instructions; returns 0 or -1. */
+
 struct Rc4 {
     int i;
     int j;

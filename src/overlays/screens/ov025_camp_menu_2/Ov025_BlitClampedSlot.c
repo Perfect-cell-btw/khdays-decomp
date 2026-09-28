@@ -1,3 +1,5 @@
+/* Starts the tween of a slot (clamped to 0-11) towards a value over a duration. */
+
 extern void Tween_Configure();
 extern void Tween_Start();
 

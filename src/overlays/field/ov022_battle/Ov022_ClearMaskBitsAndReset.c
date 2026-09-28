@@ -1,3 +1,5 @@
+/* Clears the mask bits from the flags and resets the record's words. */
+
 void Ov022_ClearMaskBitsAndReset(int p, int mask)
 {
     int v = *(int *)p;

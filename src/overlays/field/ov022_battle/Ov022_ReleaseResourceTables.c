@@ -1,3 +1,5 @@
+/* Frees the object's six resource sets that are allocated (tables and storage). */
+
 #pragma opt_common_subs off
 
 struct ResourceTable_02097cd0 {

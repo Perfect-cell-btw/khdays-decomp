@@ -1,3 +1,6 @@
+/* AI step: sets the stance bits 0x86, clears the model flag and the step flag, and continues with
+ * queuing its stored action. */
+
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov134_AiStep_QueueStoredActionIfActive(void);
 

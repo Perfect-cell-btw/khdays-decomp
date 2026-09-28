@@ -1,3 +1,6 @@
+/* Selects the current heap: the given one, or the default heap for 0; returns the previous current
+ * heap. */
+
 extern int data_0204c028;
 
 int func_0202362c(int arg0) {

@@ -1,3 +1,5 @@
+/* Releases the model instances of every part and frees the part array. */
+
 extern void ReleaseField74AndCleanup(int arg0);
 extern void NNSi_FndFreeFromDefaultHeap(int arg0);
 void func_ov022_0208bb98(int arg0) {

@@ -1,3 +1,5 @@
+/* Clears a record node and sets its kind and parameter; its handle starts invalid (-1). */
+
 extern void INITi_CpuClear32_0x01ff86fc(unsigned int data, void *dst, unsigned int size);
 
 int Record_Init(void *p, int field22_short, int field28) {

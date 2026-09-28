@@ -1,3 +1,5 @@
+/* Frees the buffers of every element that has one. */
+
 extern void Ov008_FreeElementBuffer(void *context, void *entry);
 
 void Ov008_SweepFreeElementBuffers(void *context)

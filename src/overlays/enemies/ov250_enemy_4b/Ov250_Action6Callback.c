@@ -1,3 +1,6 @@
+/* AI step: sets the stance bits 0x86 and contact flags, sends the update (0x159, mode 6), queues
+ * action 0 and ends the step. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 

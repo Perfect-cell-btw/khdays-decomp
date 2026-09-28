@@ -1,3 +1,5 @@
+/* Returns the number of players in the setup context (0 without a context). */
+
 extern int data_ov022_020b2e78;
 unsigned char func_ov022_020882f8(void) {
     int p = ((int *)&data_ov022_020b2e78)[1];

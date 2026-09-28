@@ -1,3 +1,5 @@
+/* Releases the battle helper instance when it exists. */
+
 extern void func_02023ad0(int arg0);
 extern int data_ov022_020b2eb8;
 

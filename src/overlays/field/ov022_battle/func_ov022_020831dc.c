@@ -1,3 +1,5 @@
+/* Releases the three child service instances of the context and the ov002 service. */
+
 extern void func_02023ad0(int arg0);
 extern void func_ov002_020518d0(void);
 extern int data_ov022_020b2e60;

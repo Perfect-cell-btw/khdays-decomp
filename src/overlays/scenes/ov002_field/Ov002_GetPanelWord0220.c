@@ -1,3 +1,5 @@
+/* Sets the indexed panel gauge (+0x220 handles) to the value with the default style (7). */
+
 extern int data_ov002_0207f614;
 extern int Ov002_SetGaugeValueDefault();
 

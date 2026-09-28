@@ -1,3 +1,6 @@
+/* When the entry's game-state field is set, runs its owner's activation callback; returns its
+ * result or 0. */
+
 typedef unsigned short u16;
 typedef unsigned char u8;
 

@@ -1,3 +1,6 @@
+/* Adds to the vector either the scale on every axis (flag set) or the second vector times the scale
+ * (fx32). */
+
 void AccumulateVec3Scaled(int *a, int *b, int scale, int flag) {
     if (flag) {
         a[0] += scale;

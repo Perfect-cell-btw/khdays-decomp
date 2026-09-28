@@ -1,3 +1,5 @@
+/* Marks the calendar transition as complete. */
+
 typedef struct {
     unsigned char opaque0000[0x5550];
     int transitionComplete;

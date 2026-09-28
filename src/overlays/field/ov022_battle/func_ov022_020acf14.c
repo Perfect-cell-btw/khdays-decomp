@@ -1,3 +1,5 @@
+/* Sets the actor's animation frame and flags the change (the host also marks it for sync). */
+
 extern void Anim_SetFrameWrapped(unsigned short *a, unsigned int b, unsigned int c);
 extern int Session_GetLocalPlayerIndex(void);
 

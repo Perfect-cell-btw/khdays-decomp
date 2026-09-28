@@ -1,3 +1,6 @@
+/* Tears an effect model down when it is active: resets its render callback, releases its model
+ * instance, frees its resources and clears it. */
+
 extern void NNS_G3dRenderObjResetCallBack(int arg0);
 extern void ReleaseField74AndCleanup(int arg0);
 extern void FreeAllResourceTables(int arg0);

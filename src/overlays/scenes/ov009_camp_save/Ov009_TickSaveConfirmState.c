@@ -1,3 +1,6 @@
+/* Save confirm state: shows the confirmation, and on confirm prepares and starts the save; handles
+ * cancel. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 

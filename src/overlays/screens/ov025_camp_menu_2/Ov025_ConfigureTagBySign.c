@@ -1,3 +1,5 @@
+/* Shows an entry with a frame, or hides it for a negative frame. */
+
 extern int Ov025_GetContext();
 extern int Ov025_FindEntryById();
 extern void Ov025_SetEntrySlotsVisible();

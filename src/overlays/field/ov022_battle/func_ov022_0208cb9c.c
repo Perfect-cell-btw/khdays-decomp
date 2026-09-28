@@ -1,3 +1,6 @@
+/* Resets the current sub-object's camera matrix when it belongs to the local player's group and is
+ * active. */
+
 extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(unsigned int arg0);
 extern void Ov022_CopyMtxClearFlagThenNotify_2(int arg0);

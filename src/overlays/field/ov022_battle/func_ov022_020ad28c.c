@@ -1,3 +1,5 @@
+/* Posts a contact packet for the actor with the position and values. */
+
 extern void Ov022_PostContactPacket(int arg0, void *buf, int arg2, int arg3);
 
 typedef struct { int a; int b; int c; } Vec3w;

@@ -1,3 +1,6 @@
+/* Fills a reward list item from the item database (or the special reward texts): name, description,
+ * icon, quantity and new-item state. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef struct Ov005MenuItemHeader {

@@ -1,3 +1,5 @@
+/* Runs an active message record's handler from the handler table. */
+
 extern int func_ov022_0209029c(short *arg0, unsigned int arg1);
 extern int data_ov022_020b2a98;
 void func_ov022_0209093c(short *arg0, int arg1, unsigned int arg2) {

@@ -1,3 +1,6 @@
+/* Destroys a registry node: runs its teardown callback unless it was already finished, frees its
+ * state block and removes it from the list. */
+
 extern void FreeInstanceMemory();
 extern void List_RemoveByHandle();
 

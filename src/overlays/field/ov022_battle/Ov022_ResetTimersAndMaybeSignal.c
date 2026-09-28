@@ -1,3 +1,6 @@
+/* Resets the actor's timers, flags it on the host, counts the statistic for player 0 outside mode 4
+ * (unless forced) and sets its state to 1. */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern void Ov002_World_AddStat(int a, int b);
 extern void Ov022_ActorSetState(int obj, int a);

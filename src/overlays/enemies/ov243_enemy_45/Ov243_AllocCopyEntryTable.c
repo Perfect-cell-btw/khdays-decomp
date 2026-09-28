@@ -1,3 +1,6 @@
+/* Replaces the object's entry table (0x14 bytes each) with a copy of the source table and its two
+ * values. */
+
 typedef struct {
     int word0;
     int word1;

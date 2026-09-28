@@ -1,3 +1,5 @@
+/* Stores bit 1 of the setup context's flags. */
+
 extern int data_ov022_020b2e78;
 void func_ov022_0208872c(int arg0) {
     int p = ((int *)&data_ov022_020b2e78)[1];

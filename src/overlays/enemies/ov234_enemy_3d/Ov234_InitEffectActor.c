@@ -1,3 +1,6 @@
+/* Initialises the enemy actor: installs its handlers and hit box, creates its model and attach
+ * slots, and requests its resources. */
+
 typedef unsigned short u16;
 typedef unsigned char u8;
 

@@ -1,3 +1,7 @@
+/* Roster state: runs the frame and, once the scene is idle, either starts the session or applies
+ * the roster result (records the world, posts the result link message, fires the slot hooks, clears
+ * the lists and releases the link collections) and picks the next state. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

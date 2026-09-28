@@ -1,3 +1,5 @@
+/* Sets a transform's base position (+0x48). */
+
 struct T { int a, b, c; };
 struct S { int pad[18]; struct T t; };
 

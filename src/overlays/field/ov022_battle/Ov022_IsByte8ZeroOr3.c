@@ -1,3 +1,5 @@
+/* Whether the byte at +8 is 0 or 3. */
+
 int Ov022_IsByte8ZeroOr3(int p)
 {
     int b = *(unsigned char *)(p + 8);

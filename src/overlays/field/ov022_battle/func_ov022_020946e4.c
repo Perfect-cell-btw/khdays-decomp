@@ -1,3 +1,6 @@
+/* Computes the gauge rate from the hit count (and the HP when the actor has the double ability),
+ * storing the first part. */
+
 extern int func_ov022_02094678(unsigned int arg0, unsigned int arg1);
 extern int func_ov022_02095618(int arg0);
 int func_ov022_020946e4(int arg0) {

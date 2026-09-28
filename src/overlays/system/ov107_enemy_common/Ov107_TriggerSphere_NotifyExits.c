@@ -1,3 +1,5 @@
+/* Notifies each active actor that has left the trigger sphere (calls its exit callback with 2). */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef int fx32;

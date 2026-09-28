@@ -1,3 +1,6 @@
+/* Special attack finishing step: turns the actor towards its target, emits the timeline effects and
+ * ends the attack when its slot is ready. */
+
 #pragma opt_propagation off
 #pragma opt_common_subs off
 

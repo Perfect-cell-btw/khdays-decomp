@@ -1,3 +1,5 @@
+/* Enables (1) or disables (0) a scene node. */
+
 extern int SceneNode_Disable();
 extern int SceneNode_Enable();
 

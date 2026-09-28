@@ -1,3 +1,6 @@
+/* Handles an exit synchronisation message: the host records each client, clients record the host's
+ * replies. */
+
 typedef unsigned char u8;
 typedef struct Ov005ExitTask { unsigned receivedPlayerMask; int protocolPhase; } Ov005ExitTask;
 extern Ov005ExitTask *data_ov005_0205b8d0;

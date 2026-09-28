@@ -1,3 +1,5 @@
+/* Leaves the mission sub-menu: clears the wireless receiver and installs the idle handler. */
+
 extern int data_ov008_02090f24[];
 extern void Ov105_WH_SetReceiver(int arg0);
 extern void Obj_SetField14(int arg0, void (*callback)(void));

@@ -1,3 +1,5 @@
+/* Loads a file (kind 0xe) from an archive and initialises the stream reader over it; returns 1. */
+
 extern int Archive_LoadFile();
 extern void StreamReader_InitU16();
 

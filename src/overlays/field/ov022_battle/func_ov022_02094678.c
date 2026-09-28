@@ -1,3 +1,5 @@
+/* Returns the gauge rate for a count out of a total, scaled by the frame-rate mode. */
+
 extern int FX_Div(int arg0, int arg1);
 extern int data_0204c058;
 

@@ -1,3 +1,5 @@
+/* Draws the visible reward item icons of both columns and their new-item indicators. */
+
 typedef unsigned char u8;
 typedef struct Ov005MenuQuad Ov005MenuQuad;
 typedef struct Ov005ListWindow {char opaque[2];signed char firstVisible;} Ov005ListWindow;

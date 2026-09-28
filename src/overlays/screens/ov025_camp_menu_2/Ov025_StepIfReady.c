@@ -1,3 +1,5 @@
+/* When page B's mission is selected and ready, applies its widgets and starts the mission. */
+
 extern int Ov025_GetPageB();
 extern void Ov025_ApplyModeWidgets2();
 extern void Ov025_MissionList_StartMission();

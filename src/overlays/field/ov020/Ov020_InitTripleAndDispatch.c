@@ -1,3 +1,5 @@
+/* Script command: creates a script task and stores it in a module slot; returns 1. */
+
 extern int ScriptVm_ReadOperandInt(void *a, int b);
 extern int ByteCode_ResolveOperand(void *a, int b);
 extern int Ov020_CreateScriptTask(unsigned short a, int *b);

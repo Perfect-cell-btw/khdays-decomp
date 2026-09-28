@@ -1,3 +1,5 @@
+/* Copies a record's fields at +6..+0xc and +0x18 into another record; returns the destination. */
+
 int Ov002_CopyRecordFields6to18(int a0, int dst, int src)
 {
     *(unsigned short *)(dst + 6) = *(unsigned short *)(src + 6);

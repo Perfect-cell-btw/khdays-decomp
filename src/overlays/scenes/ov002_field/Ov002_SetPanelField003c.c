@@ -1,3 +1,5 @@
+/* Stores the panel's word at +0x3c. */
+
 extern int data_ov002_0207f614;
 
 void Ov002_SetPanelField003c(int arg0) {

@@ -1,3 +1,5 @@
+/* AI step: posts pose 0, resets the idle timers and continues with the idle tick. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov298_IdleTick(void);

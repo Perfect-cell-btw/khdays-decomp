@@ -1,3 +1,6 @@
+/* Whether an active object can act at the distance: in range (or close when flagged) and not
+ * cooling down. */
+
 extern int Ov022_IsBit0Set_5(unsigned char *p);
 extern int Ov022_IsActiveAndCountPositive(unsigned char *p);
 

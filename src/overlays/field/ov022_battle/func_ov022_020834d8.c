@@ -1,3 +1,6 @@
+/* Enables the sound listeners, records the local player's pending object, flags the dispatcher,
+ * runs the frame and resets the camera; returns the roster step. */
+
 extern void SoundMgr_SetListenersEnabled(int arg0);
 extern int QueryActiveStateOrDelegate(void);
 extern int GetEntryField20ByIndex(unsigned int arg0);

@@ -1,3 +1,5 @@
+/* Creates enemy 0x69's actor: opens its cached resource by name and initialises it. */
+
 extern void OS_SPrintf(void *buffer, void *format);
 extern int data_ov284_020cd600;
 extern void *CallocInstance(int size);

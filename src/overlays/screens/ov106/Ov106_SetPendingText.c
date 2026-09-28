@@ -1,3 +1,5 @@
+/* Formats a pending text into the ov106 context and flags it. */
+
 extern void OS_SPrintf(char *dst, const char *fmt);
 extern int data_ov106_020b8b60;
 

@@ -1,3 +1,5 @@
+/* Slides the result table into place and moves to the display state. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern int Ov105_WM_GetLinkLevel(void);
 extern void Ov003_UpdateLayers(void *p);

@@ -1,3 +1,6 @@
+/* Steps the selection tween and, when the schedule is enabled, records the time and moves to the
+ * elapsed gate. */
+
 typedef signed int s32;
 typedef unsigned int u32;
 typedef unsigned long long u64;

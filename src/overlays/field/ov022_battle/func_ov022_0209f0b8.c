@@ -1,3 +1,5 @@
+/* Frees the actor's two buffers and its 54 resource nodes. */
+
 extern void NNSi_FndFreeFromDefaultHeap(int arg0);
 
 void func_ov022_0209f0b8(int arg0) {

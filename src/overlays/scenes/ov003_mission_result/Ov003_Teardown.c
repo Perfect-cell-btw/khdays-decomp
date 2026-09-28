@@ -1,3 +1,6 @@
+/* Tears the mission result scene down: unregisters its VBlank callback, stops touch sampling, and
+ * frees its buffers, resources, models and camera. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void VBlank_UnregisterCallback(int a, void *b);
 extern void TP_RequestAutoSamplingStopAsync(void);

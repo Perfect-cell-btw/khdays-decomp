@@ -1,3 +1,5 @@
+/* Scales an actor's configured and gauge stats (capped) by a factor. */
+
 struct Row020a23a4 {
     char _pad00[8];
     unsigned short scaleA;

@@ -1,3 +1,5 @@
+/* Adds to an indexed world statistic (root context +0x8d84). */
+
 extern int data_ov002_0207fa00;
 
 void Ov002_World_AddStat(int arg0, int arg1) {

@@ -1,3 +1,6 @@
+/* AI step: unless in state 10, switches the model's sub-items to their finishing states and
+ * continues with finishing. */
+
 extern void SetSubitemState(void *p, int a, int b, int c);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov131_FinishIfSubFlagClear(void);

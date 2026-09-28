@@ -1,3 +1,6 @@
+/* Adds an entry to the model's sorted-entry list (creating the list when needed) with the key and
+ * the index of the named resource. */
+
 extern void *CallocInstance();
 extern void List_Init();
 extern void *List_InsertSorted();

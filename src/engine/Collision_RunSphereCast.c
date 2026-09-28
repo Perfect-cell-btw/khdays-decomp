@@ -1,3 +1,6 @@
+/* Casts a sphere against the world's collision models; returns the shared hit record with the
+ * nearest distance, or NULL. */
+
 typedef signed int s32;
 typedef unsigned short u16;
 typedef unsigned char u8;

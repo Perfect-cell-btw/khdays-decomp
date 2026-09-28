@@ -1,3 +1,5 @@
+/* Returns the indexed player's HP (+0x12), or 0 when the player has no entry. */
+
 extern int GetEntryField20ByIndex();
 
 int Ov022_GetEntryField12(int arg0) {

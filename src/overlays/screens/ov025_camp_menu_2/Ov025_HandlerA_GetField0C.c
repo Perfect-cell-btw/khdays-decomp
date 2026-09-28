@@ -1,3 +1,5 @@
+/* Returns the word at +0xc of the current handler's object. */
+
 extern int data_ov025_020b574c;
 extern int data_ov025_020b4ab0;
 

@@ -1,3 +1,6 @@
+/* Draws page B's element 0x14 and, when it did, uploads its surface and clears the object's flag.
+ */
+
 extern int Ov008_DrawPageBElement(int arg0, int arg1, int arg2);
 extern void Ov008_PageB_UploadSurface154(void);
 

@@ -1,3 +1,5 @@
+/* Returns the first threshold row whose limit is above the value (0 when none). */
+
 extern int data_ov025_020b39e4;
 
 unsigned int Ov025_FindFirstThresholdRow(unsigned int arg0) {

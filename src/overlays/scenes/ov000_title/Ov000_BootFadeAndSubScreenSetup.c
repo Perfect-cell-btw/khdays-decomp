@@ -1,3 +1,6 @@
+/* Boot step: draws the logo and fades the sub screen in, then sets up the sub screen backgrounds,
+ * releases the text engine and creates the next scene. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Camera_CommitMatricesEx(int p, int a, int b, int c, int d);
 extern void Scene_DrawNode(unsigned short *p);

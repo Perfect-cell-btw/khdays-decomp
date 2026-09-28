@@ -1,3 +1,6 @@
+/* AI step: once the actor is active, flags its rider, queues its stored action and ends the step.
+ */
+
 extern void Ov146_Rider_SetFlagIfReady(int a, int b);
 extern void SetIndexedSlot(int self, int index, void *cb);
 struct hw60 { unsigned short lo:8, hi:8; };

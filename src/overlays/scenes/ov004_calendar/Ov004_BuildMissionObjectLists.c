@@ -1,3 +1,6 @@
+/* Checks the equipment grid against the inventory and removes equipped items beyond what the player
+ * still owns. */
+
 typedef unsigned short u16;
 
 extern unsigned char *data_0204be18;

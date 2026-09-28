@@ -1,3 +1,5 @@
+/* Creates a child actor (enemy 0x73) owned by the object. */
+
 extern int CallocInstance();
 extern void func_ov107_020c6624();
 extern void Ov299_Construct();

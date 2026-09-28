@@ -1,3 +1,5 @@
+/* Host only: sets or clears a player's flags 0x80 and 0x1000000. */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern int GetEntryField20ByIndex(int a);
 

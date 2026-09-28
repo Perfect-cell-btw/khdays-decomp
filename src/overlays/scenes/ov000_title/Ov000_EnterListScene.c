@@ -1,3 +1,6 @@
+/* Enters the list scene once the previous object is gone: sets up the 2D engines, graphics, menu
+ * objects, surfaces and rows, starts touch sampling and the music, and starts the fade-in. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef void (*OverlayCallback)(void);

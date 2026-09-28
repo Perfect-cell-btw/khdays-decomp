@@ -1,3 +1,5 @@
+/* Initialises the camp menu context and returns the first step. */
+
 extern int NNSi_FndGetCurrentRootHeap();
 extern void Ov025_InitCampaignMenuContext();
 extern int Ov025_ConsumeHeapFlag3Handler();

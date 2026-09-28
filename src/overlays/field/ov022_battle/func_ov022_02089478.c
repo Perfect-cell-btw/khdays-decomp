@@ -1,3 +1,5 @@
+/* Stores the position of an effect pool entry (0x114 bytes each). */
+
 typedef struct { int a, b, c; } T3_02089478;
 void func_ov022_02089478(int arg0, int arg1, T3_02089478 *arg2) {
     int b = *(int *)(arg0 + 0x20);

@@ -1,3 +1,7 @@
+/* Queues a file load: takes a free request, opens the file (a packed-archive handle or a path in
+ * the current language), sets up LZ decompression for compressed files or allocates the buffer
+ * otherwise, and posts the request to the loader thread; returns the destination buffer. */
+
 typedef unsigned int u32;
 
 extern int *Loader_PopFreeRequest(void);

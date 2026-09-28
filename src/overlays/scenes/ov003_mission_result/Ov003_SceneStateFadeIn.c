@@ -1,3 +1,5 @@
+/* Fades both screens out over 16 frames and then finishes the scene. */
+
 typedef struct {
     unsigned char pad0000[0x1774];
     int nFadeTicks;

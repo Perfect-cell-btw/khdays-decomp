@@ -1,3 +1,5 @@
+/* Reapplies the edits of an element of the field context's tag tracker (+0xdc) and commits them. */
+
 extern int data_ov002_0207f60c;
 extern int Ov002_ReapplyEditsAndCommit();
 

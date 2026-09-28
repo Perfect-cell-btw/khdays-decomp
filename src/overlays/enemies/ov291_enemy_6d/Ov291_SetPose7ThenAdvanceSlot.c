@@ -1,3 +1,5 @@
+/* AI step: posts pose 7 and continues with the wrap counter. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov291_AdvanceWrapCounterThenSubState3_2();

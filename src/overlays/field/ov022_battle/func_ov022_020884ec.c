@@ -1,3 +1,5 @@
+/* Marks the setup context ready and clears the player's two counters. */
+
 extern int data_ov022_020b2e78;
 extern int GetEntryField20ByIndex(int arg0);
 void func_ov022_020884ec(int arg0) {

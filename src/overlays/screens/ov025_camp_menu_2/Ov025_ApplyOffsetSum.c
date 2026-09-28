@@ -1,3 +1,5 @@
+/* Moves a sprite entry by an offset from its base position. */
+
 extern int Ov025_GetEntryBlock2c();
 extern void Ov025_ReleaseTwoSlotsEx();
 

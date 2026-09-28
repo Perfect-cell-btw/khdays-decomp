@@ -1,3 +1,6 @@
+/* Per-frame battle update: updates the local actor (unless paused), draws the local group's view
+ * lists and link seats, updates peer animations and applies the scene scale to the views. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

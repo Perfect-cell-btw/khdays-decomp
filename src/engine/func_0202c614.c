@@ -1,3 +1,5 @@
+/* Unlinks the node (+0xc) from its list. */
+
 extern int DList_Unlink();
 
 int func_0202c614(int arg0) {

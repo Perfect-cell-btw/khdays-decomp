@@ -1,3 +1,5 @@
+/* Clears a grid slot and the block under it, then uploads the grid. */
+
 extern void Ov025_ClearGridSlot();
 extern int Ov025_FindGridHit();
 extern void Ov025_ClearNodeCells();

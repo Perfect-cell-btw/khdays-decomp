@@ -1,3 +1,5 @@
+/* Rebuilds both reward columns from the items that have a quantity in them; returns the counts. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef struct Ov005MenuItemHeader {u16 itemId;char pad2[0x246];u8 quantities[2];u16 quantityLimit;} Ov005MenuItemHeader;

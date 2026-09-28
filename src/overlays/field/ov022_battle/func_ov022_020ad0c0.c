@@ -1,3 +1,6 @@
+/* Returns the actor's target position by target type (candidate part, panel target, or fixed
+ * point). */
+
 extern int Ov002_TriggerEntryActive(int arg0);
 int func_ov022_020ad0c0(int arg0) {
     int r = 0;

@@ -1,3 +1,5 @@
+/* Sets an SRT's scale from a vector and marks it non-identity and non-uniform. */
+
 struct Vec3 { int x, y, z; };
 
 struct Obj {

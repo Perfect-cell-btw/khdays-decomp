@@ -1,3 +1,6 @@
+/* Allocates memory with the given alignment from the given expanded heap, or from the default game
+ * heap when none is given. */
+
 extern void *NNS_FndAllocFromExpHeapEx(int heap, unsigned size, int align);
 extern int **data_0204c028;
 

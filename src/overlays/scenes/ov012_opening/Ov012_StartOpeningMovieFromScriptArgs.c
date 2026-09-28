@@ -1,3 +1,5 @@
+/* Script command: resolves its operands and starts the opening movie. */
+
 extern int ByteCode_ResolveOperand(void *a, void *b);
 extern void Ov012_StartOpeningMovie(int x);
 

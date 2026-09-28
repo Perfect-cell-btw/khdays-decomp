@@ -1,3 +1,5 @@
+/* Clears a pointer of the global object and the two halfword counters before it. */
+
 extern int data_0204be08;
 
 void ClearGlobalPtrE8AndHead(void) {

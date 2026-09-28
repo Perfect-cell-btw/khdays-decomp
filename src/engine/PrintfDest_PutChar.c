@@ -1,3 +1,6 @@
+/* Printf output for byte strings: stores the character while there is room and always advances the
+ * cursor. */
+
 int PrintfDest_PutChar(int *arg0, char arg1) {
     if (arg0[0] != 0) {
         *(char *)arg0[1] = arg1;

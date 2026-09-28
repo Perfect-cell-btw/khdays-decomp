@@ -1,3 +1,6 @@
+/* Copies the actor's target tag onto its widget and its two attached parts (0x7fff when it has
+ * none). */
+
 extern void Widget_SetTagWord(int a, int b);
 
 void func_ov022_020965b8(int param_1) {

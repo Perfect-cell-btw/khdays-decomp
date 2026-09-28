@@ -1,3 +1,7 @@
+/* Per-frame HUD tick: steps the gauge tweens and repaints the panels they change, advances the four
+ * gauge slots (uploading their graphics and flashing icons when their hold expires) and handles the
+ * pending prompt sound; returns whether everything is idle. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

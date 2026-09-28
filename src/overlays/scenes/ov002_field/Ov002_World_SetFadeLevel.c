@@ -1,3 +1,5 @@
+/* Sets the field's fade level (capped at 16) and its fade state (1 when fading, 2 when clear). */
+
 extern int data_ov002_0207f60c;
 
 void Ov002_World_SetFadeLevel(int arg0) {

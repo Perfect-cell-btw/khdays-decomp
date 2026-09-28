@@ -1,3 +1,6 @@
+/* Tears the battle scene down: releases the service instances and slot objects, retires pending
+ * slot entries, pops the VRAM state, tears the context down and disables the sound listeners. */
+
 extern void func_ov022_020831dc(void);
 extern void Ov002_ReleaseAllSlotObjects(void);
 extern void Ov002_RetirePendingSlotEntries(void);

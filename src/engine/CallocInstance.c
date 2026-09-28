@@ -1,3 +1,5 @@
+/* Allocates zeroed memory from the default game heap and counts the allocation. */
+
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);
 extern void MI_CpuFill8(void *dst, unsigned char val, unsigned int size);
 

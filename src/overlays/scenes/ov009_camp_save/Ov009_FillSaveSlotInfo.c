@@ -1,3 +1,6 @@
+/* Fills a save slot's summary from its load result: the status, and for a valid slot its progress,
+ * play time and party. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

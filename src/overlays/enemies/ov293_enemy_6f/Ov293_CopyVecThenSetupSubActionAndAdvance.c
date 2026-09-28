@@ -1,3 +1,6 @@
+/* AI step: follows the part's motion and, on ground contact, posts pose 8, starts animation 2 and
+ * continues. */
+
 typedef struct Vec3 {
     int x;
     int y;

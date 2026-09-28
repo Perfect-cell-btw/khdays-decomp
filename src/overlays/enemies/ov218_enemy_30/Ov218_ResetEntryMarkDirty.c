@@ -1,3 +1,5 @@
+/* Marks the manager dirty and clears two of the actor's fields. */
+
 void Ov218_ResetEntryMarkDirty(char *obj) {
     char *node = *(char **)(obj + 4);
     char *mgr = *(char **)(node + 4);

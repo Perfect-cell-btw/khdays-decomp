@@ -1,3 +1,5 @@
+/* Moves the menu cursor to a slot over 1000 ms (500 ms when fast). */
+
 extern int Ov025_MenuCursor_MoveToSlot();
 
 int Ov025_StartSelectionTransition(int arg0, int arg1, int arg2) {

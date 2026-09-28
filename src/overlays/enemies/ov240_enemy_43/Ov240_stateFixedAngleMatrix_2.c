@@ -1,3 +1,5 @@
+/* AI step: turns towards the target, rotates the offset and, once close enough, queues action 2. */
+
 extern void VEC_Subtract();
 extern int func_020050b4();
 extern int VEC_Normalize();

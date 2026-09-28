@@ -1,3 +1,5 @@
+/* Moves the scrollbar thumb to the list's scroll position. */
+
 typedef unsigned char u8;
 typedef struct Ov005SelectionState {
     signed char selectedItem,activeRow,firstVisibleItem,unknown03;

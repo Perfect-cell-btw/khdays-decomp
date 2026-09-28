@@ -1,3 +1,5 @@
+/* Returns an indexed byte of the menu state (+0x9751). */
+
 extern int data_ov008_02090f04[];
 int Ov008_GetCtxByte9751(int offset)
 {

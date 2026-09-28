@@ -1,3 +1,6 @@
+/* Returns the element's payload address when bit 1 of its game-state field is set, otherwise NULL.
+ */
+
 extern int GameState_GetField();
 
 void *Ov014_GetField1cIfQueryBit1Set(int this_) {

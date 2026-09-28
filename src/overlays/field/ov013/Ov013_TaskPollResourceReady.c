@@ -1,3 +1,6 @@
+/* Task step: waits until the kind's resources are all released (with a timeout), then starts a lap
+ * with the task's callbacks; returns -2 while waiting. */
+
 typedef struct TaskNode TaskNode;
 typedef int (*TaskCallback)(TaskNode *node);
 

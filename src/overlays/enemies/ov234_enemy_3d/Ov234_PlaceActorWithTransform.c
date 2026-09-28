@@ -1,3 +1,6 @@
+/* Handles a placement command (type 5): unpacks its position and creates or moves the actor's node
+ * transform for the action, updating the tally; other commands go to the base message handler. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

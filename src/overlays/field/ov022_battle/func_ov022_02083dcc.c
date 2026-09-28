@@ -1,3 +1,5 @@
+/* Sets or clears flag 8 of the battle context. */
+
 extern int func_ov022_02083f0c(void);
 extern int *data_ov022_020b2e60;
 void func_ov022_02083dcc(int arg0) {

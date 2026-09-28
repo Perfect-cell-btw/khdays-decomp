@@ -1,3 +1,6 @@
+/* Runs an object's refresh callbacks: the update callback (+0x68) and the per-owner callback
+ * (+0x78) with its owner. */
+
 typedef void (*func_0203c7ac_cb1)(void *ptr, int arg);
 typedef void (*func_0203c7ac_cb2)(void *ptr, int arg, int value);
 

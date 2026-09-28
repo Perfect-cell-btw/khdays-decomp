@@ -1,3 +1,5 @@
+/* AI step: turns towards the target, starts the landing effect and continues with the landing. */
+
 typedef struct { int x, y, z; } Vec3;
 
 extern void VEC_Subtract(int *a, int *b, int *out);

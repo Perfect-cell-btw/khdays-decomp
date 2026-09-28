@@ -1,3 +1,5 @@
+/* Frees the object's five buffers. */
+
 extern void NNSi_FndFreeFromDefaultHeap();
 
 void Ov025_FreeFiveBuffers(int arg0) {

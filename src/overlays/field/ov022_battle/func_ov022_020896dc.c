@@ -1,3 +1,5 @@
+/* Clears the battle's global arrays 0, 2, 3 and 0xf and the sync block pointer. */
+
 extern void ClearGlobalArrayInt(int arg0);
 extern int data_ov022_020b2ea4;
 

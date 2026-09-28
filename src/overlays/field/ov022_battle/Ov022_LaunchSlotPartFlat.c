@@ -1,3 +1,7 @@
+/* Launches a part from an actor slot along the ground: rotates its offset by the actor's heading to
+ * place it, sets its flat velocity and lifetime, binds its animations and plays its launch
+ * reaction. */
+
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;

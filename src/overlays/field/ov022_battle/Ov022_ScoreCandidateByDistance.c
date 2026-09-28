@@ -1,3 +1,6 @@
+/* Scores the other players of the same group within range as lock-on candidates (visible, in line
+ * of sight); returns the best distance. */
+
 typedef unsigned short u16;
 typedef signed short s16;
 typedef unsigned int u32;

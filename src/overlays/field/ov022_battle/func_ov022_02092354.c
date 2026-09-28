@@ -1,3 +1,6 @@
+/* Destroys an effect set: releases the shared array when it is the last one and the six service
+ * instances. */
+
 extern void ClearGlobalArrayInt(int arg0);
 extern void func_02023ad0(int arg0);
 extern int data_ov022_020b2eac;

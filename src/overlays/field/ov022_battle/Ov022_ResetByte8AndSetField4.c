@@ -1,3 +1,5 @@
+/* Clears the state byte, resets the slot bytes and stores the value (+4). */
+
 extern void Ov022_ResetSlotBytes();
 void Ov022_ResetByte8AndSetField4(int arg0, int arg1) {
     *(unsigned char *)(arg0 + 8) = 0;

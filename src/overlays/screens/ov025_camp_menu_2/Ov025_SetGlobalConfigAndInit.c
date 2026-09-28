@@ -1,3 +1,6 @@
+/* Stores the menu configuration value, sets the state to 7, blits the configuration region and
+ * enables both screen halves. */
+
 extern void Ov025_SetCtxField95cc();
 extern void Ov025_BlitConfigRegion();
 extern void Ov025_EnableBothHalves();

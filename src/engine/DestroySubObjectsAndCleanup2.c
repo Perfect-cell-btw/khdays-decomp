@@ -1,3 +1,6 @@
+/* Node destructor: releases and frees its animation sequence (+0x88), destroys and frees its
+ * sorted-entry list (+0x90), then runs the base node destructor. */
+
 extern void ReleaseField74AndCleanup();
 extern void FreeInstanceMemory();
 extern void NNSi_FndDestroyDoubleList();

@@ -1,3 +1,6 @@
+/* Steps the cursor tween and, when it ends, either returns to the fade state or builds the preset
+ * rows and starts the scale tweens; updates the cursor with the value. */
+
 typedef unsigned int u32;
 
 typedef struct Ov022RootFlags {

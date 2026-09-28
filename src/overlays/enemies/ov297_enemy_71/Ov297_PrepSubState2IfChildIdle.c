@@ -1,3 +1,5 @@
+/* AI step: measures the target and, when the animation ends, queues action 2. */
+
 extern void Ov297_AcquireTargetGapAndAngle();
 extern void SetIndexedSlot();
 

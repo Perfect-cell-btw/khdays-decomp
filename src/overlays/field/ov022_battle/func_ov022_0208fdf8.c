@@ -1,3 +1,5 @@
+/* Enters the block reaction for the current sub-object: sets its state, timer, speed and scale. */
+
 extern void Ov022_EnterBlockReaction(int arg0, int arg1, int arg2, int arg3);
 void func_ov022_0208fdf8(int arg0, int arg1, int arg2, int arg3) {
     int e = arg0 + *(int *)(arg0 + 0xc) * 4;

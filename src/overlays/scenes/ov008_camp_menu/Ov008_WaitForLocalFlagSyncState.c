@@ -1,3 +1,6 @@
+/* Waits until the local player's persistent flag state matches the shared one, then refreshes the
+ * save slot widget and commits the page. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 

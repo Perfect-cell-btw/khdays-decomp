@@ -1,3 +1,5 @@
+/* Frees memory CallocInstance allocated and counts it out; NULL is ignored. */
+
 extern void NNSi_FndFreeFromDefaultHeap(void *);
 extern int data_0204caac;
 

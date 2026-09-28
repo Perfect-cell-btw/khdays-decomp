@@ -1,3 +1,5 @@
+/* Runs the callback of the tracker tagged 0x42. */
+
 extern int Ov008_GetCtxBlock954c(void);
 extern int Ov008_FindEntryByTag(int, int);
 extern void Ov008_TagTracker_InvokeCallback(int, int);

@@ -1,3 +1,5 @@
+/* Draws the current sub-object's extra node and resets the camera matrix of each of its parts. */
+
 extern void func_ov022_02090070(int arg0, int arg1, int arg2, int arg3);
 extern void Ov022_CopyMtxClearFlagThenNotify(int arg0);
 

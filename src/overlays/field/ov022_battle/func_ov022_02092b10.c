@@ -1,3 +1,5 @@
+/* Whether an active object is below its count limit and has no pending value. */
+
 extern int Ov022_IsBit0Set_3(unsigned char *arg0);
 int func_ov022_02092b10(unsigned char *arg0, int arg1) {
     unsigned short *pf = (unsigned short *)(arg0 + 0x178);

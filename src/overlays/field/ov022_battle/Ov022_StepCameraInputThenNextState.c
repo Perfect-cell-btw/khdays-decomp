@@ -1,3 +1,6 @@
+/* Runs the frame and prepares the fade out: captures the current brightness (or waits for the
+ * scene); returns the step that advances after the pause. */
+
 extern void Ov022_SetActorInputEnabled(int a);
 extern int func_0201e428(void);
 extern int func_0201e438(void);

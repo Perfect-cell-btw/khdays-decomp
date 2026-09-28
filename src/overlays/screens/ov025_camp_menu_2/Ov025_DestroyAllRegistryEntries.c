@@ -1,3 +1,5 @@
+/* Removes and frees every entry of the menu's list. */
+
 extern int NNS_FndGetNextListObject();
 extern void Ov025_ListRemoveAndFree();
 extern int data_ov025_020b5744;

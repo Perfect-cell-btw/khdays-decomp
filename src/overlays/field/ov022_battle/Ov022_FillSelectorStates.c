@@ -1,3 +1,7 @@
+/* Sets up each player's battle state from the configuration records: resolves special kinds, fills
+ * the setup arguments, acquires the player's overlay slot and creates its controller, then applies
+ * the configured limits and metadata flags to the player's entry. */
+
 typedef int (*Ov022InitCallback)(void *object);
 
 typedef struct Ov022CameraRoot {

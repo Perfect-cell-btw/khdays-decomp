@@ -1,3 +1,5 @@
+/* Clears a grid slot: updates its item count and the current page's cell, and empties the slot. */
+
 extern void Ov025_AdjustAndSyncSlot(int obj, int val, int delta);
 
 void Ov025_ClearGridSlot(int param_1, int param_2, int param_3, int param_4) {

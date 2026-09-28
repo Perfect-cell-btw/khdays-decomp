@@ -1,3 +1,5 @@
+/* Returns the first list entry whose count (+0x10) is positive, or NULL. */
+
 extern void *NNS_FndGetNextListObject(void *list, void *object);
 
 void *Ov008_FirstPositiveCountNode(void *context)

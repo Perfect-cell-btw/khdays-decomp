@@ -1,3 +1,6 @@
+/* Per-frame battle housekeeping: refreshes the root entries (when the replay flag matches) and,
+ * when the local player is ready and not paused, sweeps the heap blocks. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov022_RefreshRootEntries(void);
 extern int func_ov022_02088338(void);

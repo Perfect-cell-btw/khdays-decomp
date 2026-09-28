@@ -1,3 +1,5 @@
+/* Sets a flag of the game state's flag array (BitArray_SetBit). */
+
 extern int data_0204be18;
 extern int BitArray_SetBit();
 

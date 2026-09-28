@@ -1,3 +1,6 @@
+/* Adds a mission's reward items: the completion reward when newly completed, the clear rewards when
+ * newly cleared, and a random pick from each of its weighted tables. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

@@ -1,3 +1,6 @@
+/* At set points of the actor's timeline, emits an attack effect in a random direction around it and
+ * sends it to the peers. */
+
 #pragma opt_propagation off
 #pragma opt_common_subs off
 #pragma opt_dead_assignments off

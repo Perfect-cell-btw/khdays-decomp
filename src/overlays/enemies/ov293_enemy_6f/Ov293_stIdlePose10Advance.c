@@ -1,3 +1,5 @@
+/* AI step: when the action ends, posts pose 0xa and continues. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov293_AdvanceStateSetField18_3();

@@ -1,3 +1,5 @@
+/* Draws text on a surface, with a drop shadow when asked. */
+
 typedef unsigned short u16;
 typedef struct TileSurface TileSurface;
 extern void Text_DrawDirectional_2(TileSurface *,int,int,int,unsigned int,const u16 *);

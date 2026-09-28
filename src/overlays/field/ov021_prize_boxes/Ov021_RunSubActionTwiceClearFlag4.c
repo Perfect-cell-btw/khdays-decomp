@@ -1,3 +1,5 @@
+/* Releases the element's render node item (twice with models) and hides it. */
+
 extern void Render_ReleaseNodeItem();
 
 void Ov021_RunSubActionTwiceClearFlag4(int this_) {

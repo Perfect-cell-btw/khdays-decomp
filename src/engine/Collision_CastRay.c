@@ -1,3 +1,6 @@
+/* Casts a ray against the world's collision (Collision_RunRayCast) with the direction treated as a
+ * unit vector. */
+
 typedef struct {
     int word0;
     int word4;

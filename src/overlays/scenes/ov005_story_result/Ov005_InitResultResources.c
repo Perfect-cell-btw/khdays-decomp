@@ -1,3 +1,6 @@
+/* Initialises the result screen: allocates its row buffers, resets its tweens, loads its text and
+ * archives, and computes the gauge range. */
+
 typedef unsigned char u8;
 typedef struct Tween {int mode,duration,from,to;long long startTick;unsigned int flags;} Tween;
 typedef struct Ov005ResultTween {Tween tween;int value;char unknown20[12];} Ov005ResultTween;

@@ -1,3 +1,5 @@
+/* When an object is flagged as moved, re-inserts it into the quadtree and clears the flag. */
+
 extern void QuadTree_RemoveObject();
 extern void QuadTree_InsertObject();
 

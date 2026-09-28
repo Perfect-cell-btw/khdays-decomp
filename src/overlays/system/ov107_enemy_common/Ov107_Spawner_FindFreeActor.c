@@ -1,3 +1,6 @@
+/* Finds an idle actor of the slot's kind (and sub-kinds) that can be spawned within the kind's
+ * limit, counting it; returns it or 0. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

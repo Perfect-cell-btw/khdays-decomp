@@ -1,3 +1,5 @@
+/* Returns the actor's record for reactions 0x17-0x19. */
+
 int func_ov022_0208a96c(int arg0) {
     int base = *(int *)(arg0 + 0x58);
     switch (*(int *)(arg0 + 0x14)) {

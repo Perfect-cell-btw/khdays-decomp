@@ -1,3 +1,5 @@
+/* Clears the element list, then runs the callback of every flagged element. */
+
 extern void Ov008_ClearElementList(void *context, int arg1);
 extern void Ov008_InvokeElementCallback(void *context, void *entry, int arg2);
 

@@ -1,3 +1,5 @@
+/* Host only: delivers a hit to a player's actor; returns the result. */
+
 extern short Session_GetLocalPlayerIndex(void);
 extern int GetEntryField20ByIndex(int arg0);
 extern int Ov022_ReceiveHit(int arg0, unsigned int *arg1);

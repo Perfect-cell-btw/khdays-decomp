@@ -1,3 +1,5 @@
+/* Frees the buffer the record holds, when set. */
+
 extern void NNSi_FndFreeFromDefaultHeap();
 
 void Ov000_FreeResourceRecordBuffer(void **p)

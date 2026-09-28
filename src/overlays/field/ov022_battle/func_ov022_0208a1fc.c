@@ -1,3 +1,6 @@
+/* Updates each player's pressed buttons from the held ones (new presses since the last frame),
+ * except for locked players. */
+
 extern int func_ov022_020882f8(void);
 extern int func_ov022_020886f8(int i);
 extern int func_ov022_020882bc(int i);

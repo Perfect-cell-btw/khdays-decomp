@@ -1,3 +1,5 @@
+/* Runs the context's once-only notification (flag 0x40). */
+
 extern int *data_ov022_020b2e60;
 extern void func_ov022_02086ec0(int arg0);
 void func_ov022_02083fa4(int arg0) {

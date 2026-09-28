@@ -1,3 +1,5 @@
+/* Adjusts an item's count and updates its list row (and the inventory row outside the shop). */
+
 extern int Ov025_FindListObjectByKey();
 extern void Ov025_RefreshInventoryRow();
 

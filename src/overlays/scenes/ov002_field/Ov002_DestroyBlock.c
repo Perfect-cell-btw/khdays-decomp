@@ -1,3 +1,6 @@
+/* Destroys the field block: stops its sound when active, frees its six buffers, releases its owner
+ * and clears the block pointer. */
+
 typedef struct {
     void *owner;      /* +0x00 */
     char pad04[4];

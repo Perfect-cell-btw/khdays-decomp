@@ -1,3 +1,6 @@
+/* Arc cosine of an fx32 value as an angle index (0 for 1.0 and above, a half turn for -1.0 and
+ * below), via the angle of (sqrt(1 - x^2), x). */
+
 extern int FX_Sqrt(int x);
 extern int func_020050b4(int x, int y);
 

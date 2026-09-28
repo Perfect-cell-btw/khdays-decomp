@@ -1,3 +1,5 @@
+/* Creates the actor's AI registry entry (seeding its vector and arming it) and links it. */
+
 extern void CreateRegistryEntry();
 extern void Ov117_SeedVecAndArm();
 

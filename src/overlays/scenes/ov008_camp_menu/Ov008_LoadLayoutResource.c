@@ -1,3 +1,5 @@
+/* Loads a layout file and builds its resources, elements and tag table from its three sections. */
+
 extern char *Archive_LoadFile(void *source, int count);
 extern void Ov008_LoadLayoutResources(void *context, void *data);
 extern void Ov008_LoadElemsFromLayout(void *context, void *data);

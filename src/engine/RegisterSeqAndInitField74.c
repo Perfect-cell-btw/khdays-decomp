@@ -1,3 +1,6 @@
+/* Registers the model's animation sequence (+0x74) and initialises the model instance with its
+ * resource. */
+
 extern int SND_RegisterSeq();
 extern void ModelInst_Init();
 

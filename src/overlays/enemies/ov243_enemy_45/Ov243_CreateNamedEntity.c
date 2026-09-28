@@ -1,3 +1,5 @@
+/* Creates enemy 0x45's actor: opens its cached resource by name and initialises it. */
+
 extern int data_ov243_020d476c;
 extern void OS_SPrintf(void *buffer, void *format);
 extern void *CallocInstance(int size);

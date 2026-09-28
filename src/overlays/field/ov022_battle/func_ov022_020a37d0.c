@@ -1,3 +1,6 @@
+/* Idle step: steps the actor (or steers it by its aim), runs its check hook and resets its
+ * animation frame when the check passes in mode 1. */
+
 extern unsigned int Ov022_StepIdleActor(unsigned int *p);
 extern unsigned int Ov022_SteerIdleByAim(unsigned int *p, unsigned int a);
 extern void func_ov022_020acf14(unsigned int *p, int a);

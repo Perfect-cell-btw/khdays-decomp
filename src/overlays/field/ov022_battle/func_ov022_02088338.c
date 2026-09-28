@@ -1,3 +1,5 @@
+/* Whether the local player is the host or has been marked ready in the setup context. */
+
 extern int data_ov022_020b2e78;
 extern short Session_GetLocalPlayerIndex(void);
 unsigned int func_ov022_02088338(void) {

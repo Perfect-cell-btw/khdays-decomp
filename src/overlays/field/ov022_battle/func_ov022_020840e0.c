@@ -1,3 +1,5 @@
+/* Waits three frames, then moves to reading the selection input. */
+
 extern int data_ov022_020b2e6c;
 extern void Ov022_ReadSelectionInput(void);
 

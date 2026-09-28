@@ -1,3 +1,6 @@
+/* Host exit step: once every connected client has reported, sends the final exit message and waits
+ * for its delivery; otherwise keeps asking. */
+
 typedef void *(*ExitTaskState)(void);
 typedef struct Ov005ExitTask {
     unsigned receivedPlayerMask;

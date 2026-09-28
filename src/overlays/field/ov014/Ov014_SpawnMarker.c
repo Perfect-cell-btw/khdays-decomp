@@ -1,3 +1,5 @@
+/* Spawns a marker element from the pool at a position with a heading and puts it in its bucket. */
+
 extern void *Ov002_ClaimPoolEntry(void *pool, int index);
 extern void Ov002_PushBucketNode(int idx, int *node);
 extern void Ov014_Element_Tick(void);

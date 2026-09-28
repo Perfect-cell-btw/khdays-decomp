@@ -1,3 +1,6 @@
+/* Decides the actor's reaction to entering: in action 9 cancels the request; in action 2 (when
+ * allowed) requests action 8; returns whether it cancelled. */
+
 struct actor_ext {
     signed char _pad0[0x17a];
     unsigned char flag_b0 : 1;

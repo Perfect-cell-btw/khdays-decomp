@@ -1,3 +1,5 @@
+/* Returns the longest step duration of the actor's current combo (unbounded for kind 2 combos). */
+
 int Ov022_LongestComboSlot(int arg0) {
     int mx = 0;
     int base = *(int *)(*(int *)(arg0 + 0x470) + 0x14);

@@ -1,3 +1,5 @@
+/* Releases every element marked for release. */
+
 extern void Ov008_ReleaseElement(void *context, void *entry);
 
 void Ov008_SweepReleasePendingElements(void *context)

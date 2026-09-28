@@ -1,3 +1,5 @@
+/* Destroys the enemy: its model, its list and the base object. */
+
 extern void DestroyInstance();
 extern void NNSi_FndDestroyDoubleList();
 extern void Ov107_DestroyObject();

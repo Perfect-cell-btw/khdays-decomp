@@ -1,3 +1,5 @@
+/* Sets a slot's position (negative indices are ignored). */
+
 struct Pair {
     int a;
     int b;

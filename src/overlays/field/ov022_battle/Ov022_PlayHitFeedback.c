@@ -1,3 +1,6 @@
+/* Mode 4 only: refreshes the actor's gauge and runs its hit flash (restarts it on a new hit, counts
+ * its timer down and stops the animation when it ends). */
+
 typedef unsigned char u8;
 typedef signed short s16;
 typedef unsigned short u16;

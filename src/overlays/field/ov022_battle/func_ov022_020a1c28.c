@@ -1,3 +1,5 @@
+/* Resolves a reach sweep from a sweep record (reordering its fields). */
+
 extern void Ov022_ResolveReachSweep(int arg0, void *arg1, int arg2);
 
 typedef struct { int a; int b; int c; } Vec3w;

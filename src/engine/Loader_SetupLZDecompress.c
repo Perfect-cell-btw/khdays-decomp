@@ -1,3 +1,6 @@
+/* Reads an LZ-compressed file's header, allocates (or checks) the destination buffer for its
+ * decompressed size and initialises the decompression context; returns the buffer. */
+
 extern int FS_ReadFile(void *file, void *buf, int size);
 extern void MI_InitUncompContextLZ(void *a, void *buf, void *hdr);
 extern void *ExpHeap_AllocOrDefault(unsigned size, int align, int **heapPP);

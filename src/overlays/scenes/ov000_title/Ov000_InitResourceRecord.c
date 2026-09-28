@@ -1,3 +1,5 @@
+/* Loads a resource file into a record: its data, count and table address. */
+
 extern void MI_CpuFill8();
 extern int *Archive_LoadFile();
 

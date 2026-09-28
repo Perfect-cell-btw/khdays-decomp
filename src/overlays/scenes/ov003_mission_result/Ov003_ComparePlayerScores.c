@@ -1,3 +1,5 @@
+/* Sort comparison: orders players by score, highest first. */
+
 
 int Ov003_ComparePlayerScores(unsigned short *a, unsigned short *b)
 {

@@ -1,3 +1,6 @@
+/* Sets up the battle's 3D rendering: VRAM banks, display control, texture and palette VRAM
+ * managers, display swap and clear colour, then loads the shop table. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 

@@ -1,3 +1,6 @@
+/* Builds the reward list: the items obtained during the mission, its reward items, the special
+ * items and the mode's special reward, then the two columns. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

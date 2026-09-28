@@ -1,3 +1,5 @@
+/* Initialises a value record from its descriptors and clamps its value to the limit. */
+
 extern int Ov025_GetDescriptor0();
 extern void Ov025_SetWord0And20();
 extern int Ov025_GetDescriptor2();

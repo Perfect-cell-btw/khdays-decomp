@@ -1,3 +1,6 @@
+/* Moves the reward list cursor to the selection (hidden when the list is empty) and updates the
+ * scrollbar. */
+
 typedef struct Ov005SelectionState {
     signed char selectedItem,activeRow,firstVisibleItem,unknown03;
     int maxFirstVisibleItem,cachedRowItemCounts[2],scrollThumbHeight;

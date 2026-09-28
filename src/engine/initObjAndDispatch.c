@@ -1,3 +1,6 @@
+/* Initialises an animation object: clears its state, sets its resource, speed 1.0 and default
+ * ratio, then builds its track table. */
+
 extern void AnmObj_InitTrackTable();
 void initObjAndDispatch(int *p, int v) {
     p[0] = 0;

@@ -1,3 +1,5 @@
+/* Stores a byte into a global 2D table (0x104-byte rows). */
+
 extern int data_0204c690;
 
 void Store2DArrayU8(int arg0, int arg1, char arg2) {

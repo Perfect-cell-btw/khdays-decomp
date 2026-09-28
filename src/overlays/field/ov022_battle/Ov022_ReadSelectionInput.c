@@ -1,3 +1,7 @@
+/* Reads the lock-on input for the local player: toggles the selection with the shoulder button,
+ * cycles targets with repeat, refreshes candidates and markers, and updates the caption and panel;
+ * returns whether the selection is active. */
+
 typedef unsigned char u8;
 typedef signed short s16;
 typedef unsigned long long u64;

@@ -1,3 +1,6 @@
+/* Loads the save menu background's palette and its variant character set, then the layout's
+ * resources. */
+
 typedef unsigned char u8;
 typedef unsigned int  u32;
 

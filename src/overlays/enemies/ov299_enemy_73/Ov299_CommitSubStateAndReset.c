@@ -1,3 +1,5 @@
+/* AI dispatcher: when an action is pending, makes it current and installs its step handler. */
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov299_AiStep_QueueStoredActionIfActive(void);
 extern void Ov299_SetRandomFieldFromScaled390(void);

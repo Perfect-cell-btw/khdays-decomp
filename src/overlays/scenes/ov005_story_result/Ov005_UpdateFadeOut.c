@@ -1,3 +1,5 @@
+/* Fades the reward menu out over time, then requests the next scene and moves to state 8. */
+
 typedef unsigned long long u64;
 typedef struct Ov005Context { char opaque00[0x4bf0]; int menuState; u64 startTick; } Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;

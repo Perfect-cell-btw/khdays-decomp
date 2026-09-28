@@ -1,3 +1,6 @@
+/* AI step: sends the debris update (0x138, mode 4) once its time comes and, when the animation
+ * ends, posts pose 4 and continues with the falling debris. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *cb);

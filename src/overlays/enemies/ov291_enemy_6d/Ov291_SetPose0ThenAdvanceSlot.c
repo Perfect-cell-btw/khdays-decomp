@@ -1,3 +1,5 @@
+/* AI step: posts pose 0 and continues. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov291_stAdvanceState();

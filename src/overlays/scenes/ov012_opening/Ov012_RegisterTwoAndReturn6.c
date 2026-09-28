@@ -1,3 +1,5 @@
+/* Script command: submits a movie request with two operands; returns 6. */
+
 extern int ScriptVm_ReadOperandInt(void *a, int b);
 extern void Ov012_SubmitRequestIfIdle(int x, int y);
 

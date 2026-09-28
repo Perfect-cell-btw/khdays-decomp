@@ -1,3 +1,5 @@
+/* Moves the actor's effect pool entry to its position and forgets it once it is freed. */
+
 extern void func_ov022_02089478(int arg0, int arg1, void *arg2);
 extern int Ov022_IsIndexedRecordByteZero(unsigned int arg0, int arg1);
 

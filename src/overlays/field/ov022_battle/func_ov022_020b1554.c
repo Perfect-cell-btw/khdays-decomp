@@ -1,3 +1,5 @@
+/* Whether none of a player's three animation slots is busy. */
+
 extern int data_ov022_020b2eb8;
 int func_ov022_020b1554(int arg0) {
     int r = 1;

@@ -1,3 +1,5 @@
+/* Creates enemy 0x75's actor: opens its cached resource by name and initialises it. */
+
 extern void *CallocInstance(int size);
 extern void OS_SPrintf(void *buffer, void *format);
 extern int Ov107_OpenCachedResourceByName(void *name);

@@ -1,3 +1,7 @@
+/* Sets a HUD gauge's value: scales it to cells, flashes the slot icon when it drops, and either
+ * tweens the main gauge or redraws the gauge cells (the first gauge also records its shown and
+ * target counts). */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 

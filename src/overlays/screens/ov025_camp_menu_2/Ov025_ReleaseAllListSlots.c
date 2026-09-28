@@ -1,3 +1,5 @@
+/* Sets the mode bit on the slots of every layout entry. */
+
 extern int NNS_FndGetNextListObject();
 extern void Ov025_ReleaseTwoSlotsEx_3();
 

@@ -1,3 +1,5 @@
+/* Sets the volume of the BGM player. */
+
 extern int data_0204c234;
 extern void *NNS_SndPlayerSetVolume();
 void *dispatchToHandlerAtOffset(int param_1) {

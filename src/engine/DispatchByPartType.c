@@ -1,3 +1,6 @@
+/* Loads a graphics part by its type (command, pair key A or pair key B), then its palette and
+ * tables. */
+
 extern void Cmd_DispatchWithFlag();
 extern void Gfx_DispatchByPairKeyA();
 extern void Gfx_DispatchByPairKeyB();

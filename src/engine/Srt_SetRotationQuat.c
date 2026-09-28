@@ -1,3 +1,5 @@
+/* Sets an SRT's rotation quaternion and marks the rotation as non-identity. */
+
 struct T { int a, b, c, d; };
 
 struct S {

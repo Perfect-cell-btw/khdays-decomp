@@ -1,3 +1,5 @@
+/* Creates the ov014 element pool from its parameters and installs its handler table. */
+
 typedef struct {
     int nField00;
     int nField04;

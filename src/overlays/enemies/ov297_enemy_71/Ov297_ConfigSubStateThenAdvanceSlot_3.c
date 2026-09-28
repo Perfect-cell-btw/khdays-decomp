@@ -1,3 +1,5 @@
+/* AI step: posts pose 0, sets the long idle timers and continues with the idle step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov297_SubStateIdleStep(void);

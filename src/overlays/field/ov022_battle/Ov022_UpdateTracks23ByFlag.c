@@ -1,3 +1,6 @@
+/* When the object belongs to the local player's side, posts its update with its model's culling
+ * adjusted for materials 2 and 3. */
+
 extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(int state);
 extern void NNS_G3dMdlSetMdlCullMode(int a, int b, int c);

@@ -1,3 +1,6 @@
+/* Initialises the enemy actor: installs its handlers and camera, creates its model and attach slot,
+ * and requests its resources. */
+
 typedef signed int s32;
 typedef unsigned short u16;
 typedef unsigned char u8;

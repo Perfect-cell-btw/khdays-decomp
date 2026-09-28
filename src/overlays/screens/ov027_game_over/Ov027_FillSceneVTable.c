@@ -1,3 +1,5 @@
+/* Fills the game over scene's interface table. */
+
 extern void Ov027_SetupGraphics(void);
 extern void func_ov027_02082ac0(void);
 extern void Ov027_EndKeySharingIfOpen(void);

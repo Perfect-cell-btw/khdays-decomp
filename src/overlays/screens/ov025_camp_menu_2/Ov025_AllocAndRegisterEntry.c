@@ -1,3 +1,5 @@
+/* Allocates a list entry for a value and appends it to the menu's list; returns it. */
+
 extern int NNSi_FndAllocFromDefaultExpHeap();
 extern void MI_CpuFill8();
 extern void NNS_FndAppendListObject();

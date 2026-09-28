@@ -1,3 +1,5 @@
+/* Sets the style of a slot table entry. */
+
 extern void Obj_SetField14_2(int, int);
 
 void SlotTable_SetEntryStyle(int param_1, int param_2, int param_3) {

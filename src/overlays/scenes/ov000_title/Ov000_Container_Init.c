@@ -1,3 +1,6 @@
+/* Initialises an element container: clears it, sets up its list and allocates its three zeroed
+ * element pools from the given counts. */
+
 extern void MI_CpuFill8();
 extern void NNS_FndInitList();
 extern void *NNSi_FndAllocFromDefaultExpHeap();

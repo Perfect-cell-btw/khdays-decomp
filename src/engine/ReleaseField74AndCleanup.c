@@ -1,3 +1,6 @@
+/* Releases a model instance: frees its resource tables, releases its animation sequence (+0x74) and
+ * detaches its scene node. */
+
 extern void FreeAllResourceTables();
 extern void ResSlot_ReleaseResource();
 extern void ResSlot_Release();

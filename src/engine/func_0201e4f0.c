@@ -1,3 +1,5 @@
+/* Pushes a node on the front of a global singly linked list (data_0204bbfc + 0x18). */
+
 extern int data_0204bbfc;
 
 void func_0201e4f0(int *arg0) {

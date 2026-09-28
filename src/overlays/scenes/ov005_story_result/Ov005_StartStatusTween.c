@@ -1,3 +1,5 @@
+/* Starts the status banner tween for a step (slide in, hold, slide out). */
+
 typedef struct Tween {
     int mode,duration,from,to;
     long long startTick;

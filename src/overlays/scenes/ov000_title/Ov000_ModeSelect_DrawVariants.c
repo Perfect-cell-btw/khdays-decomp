@@ -1,3 +1,6 @@
+/* Draws the mode select variants: the three options (the selected one indented) or the chosen
+ * variant under its heading, then uploads the text. */
+
 typedef unsigned char u8;
 
 typedef struct {

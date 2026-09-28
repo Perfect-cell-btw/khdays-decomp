@@ -1,3 +1,5 @@
+/* Fades the calendar out over time and moves to the final phase. */
+
 typedef unsigned long long u64;
 typedef struct {
     unsigned char opaque0000[0xaf8];

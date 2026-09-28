@@ -1,3 +1,6 @@
+/* AI step: counts the timer down while the animation runs and then posts pose 0 and continues with
+ * waiting at the waypoint. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov243_AiWaypointWaitB(void);

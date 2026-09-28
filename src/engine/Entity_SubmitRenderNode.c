@@ -1,3 +1,5 @@
+/* Submits the indexed entity's render node (Render_SubmitNode). */
+
 extern void Render_SubmitNode(int, int, int, int);
 extern int data_0204c208;
 

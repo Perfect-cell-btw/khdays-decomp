@@ -1,3 +1,6 @@
+/* Ticks an active object's timers and, while it is animating, moves it to the position and steps
+ * its animation. */
+
 extern int Ov022_IsBit0Set_5(int a);
 extern int Sequence_UpdateTracks(unsigned short *a, int b);
 

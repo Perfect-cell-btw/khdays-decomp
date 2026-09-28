@@ -1,3 +1,5 @@
+/* Stores bit 0 of the flags at +0x40. */
+
 struct b1 { unsigned int b0 : 1; };
 void Ov107_SetBit0OfField0x40(int p, int flag)
 {

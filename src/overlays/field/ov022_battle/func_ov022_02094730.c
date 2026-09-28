@@ -1,3 +1,6 @@
+/* Sends a gauge message (kind 0x10) with the actor, the local player and the value; stores the
+ * message handle. */
+
 extern int QueryActiveStateOrDelegate(void);
 extern int func_02031384(int arg0, void *arg1, int arg2);
 

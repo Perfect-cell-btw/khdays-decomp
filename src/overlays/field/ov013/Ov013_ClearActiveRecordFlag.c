@@ -1,3 +1,5 @@
+/* Clears the flag of the first active record and rebinds the group's animations. */
+
 typedef struct {
     char padding00[0x108];
     unsigned char flags;

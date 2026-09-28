@@ -1,3 +1,6 @@
+/* Updates the motion of the current player's record (0x104 bytes each) of the object's player
+ * table. */
+
 extern void Game_UpdateObjectMotion();
 extern unsigned char data_0204be04;
 

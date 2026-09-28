@@ -1,3 +1,6 @@
+/* Requests a BGM change when the selection differs from the current one (or a change is forced):
+ * updates a queued change request or pushes a new one; returns 1. */
+
 extern int data_0204c234;
 extern unsigned char *SoundMgr_PeekQueued(int a);
 extern void ScriptQueue_Push(int a, int b, int c);

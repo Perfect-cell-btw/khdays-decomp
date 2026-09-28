@@ -1,3 +1,5 @@
+/* Draws a glyph with the object's inner text engine (Text_DrawGlyph). */
+
 extern void Text_DrawGlyph(void *ptr, int word0, int arg1, int arg2, int arg3, unsigned short arg4);
 
 void Obj_ForwardInnerPayload(int *ptr, int arg1, int arg2, int arg3, unsigned short arg4) {

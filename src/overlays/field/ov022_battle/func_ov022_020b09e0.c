@@ -1,3 +1,6 @@
+/* Picks the next combo lock (set A), advances the combo index (wrapping), resets its channel grid
+ * and updates the repeat count. */
+
 extern unsigned int Ov022_PickComboLockA(int a);
 extern void Ov022_ResetChannelGrid(int a);
 

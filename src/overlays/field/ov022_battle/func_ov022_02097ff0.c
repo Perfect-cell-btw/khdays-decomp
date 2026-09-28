@@ -1,3 +1,5 @@
+/* Resets the actor's two combo records and its related flags. */
+
 struct field4e8 { unsigned char b0 : 1; unsigned char b1 : 1; unsigned char b2 : 1; unsigned char b3 : 1; unsigned char b4 : 1; unsigned char rest : 3; };
 
 void func_ov022_02097ff0(int arg0) {

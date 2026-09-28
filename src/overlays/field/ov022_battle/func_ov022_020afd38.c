@@ -1,3 +1,5 @@
+/* Whether a height is within the actor's reach (3.0, or 6.0 while boosted). */
+
 extern int Ov022_IsBit0Set_3(unsigned char *arg0);
 int func_ov022_020afd38(int arg0, int arg1) {
     int r = 0;

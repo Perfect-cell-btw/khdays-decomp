@@ -1,3 +1,5 @@
+/* Loads a resource file into a record: its data, count and table address. */
+
 extern void MI_CpuFill8(void *p, int a, int b);
 extern int *Archive_LoadFile(int arg, int b);
 void Ov007_ReleaseAndFreeField2644(int *out, int arg) {

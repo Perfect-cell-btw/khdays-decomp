@@ -1,3 +1,5 @@
+/* Sets an SRT's translation from a vector and marks the transform as non-identity. */
+
 struct T { int a, b, c; };
 
 struct S {

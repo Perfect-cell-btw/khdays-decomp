@@ -1,3 +1,5 @@
+/* Moves the BGM player's volume to the target over the frames and records the target volume. */
+
 extern int data_0204c234;
 extern void NNS_SndPlayerMoveVolume();
 

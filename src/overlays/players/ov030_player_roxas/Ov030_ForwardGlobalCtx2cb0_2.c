@@ -1,3 +1,5 @@
+/* Computes the aim angle on the global player context. */
+
 extern int data_ov030_020b5a00;
 extern void *Ov030_ComputeAimAngle();
 

@@ -1,3 +1,5 @@
+/* Copies the next line (up to a newline or the end) from the text buffer into the line buffer. */
+
 typedef struct {
     char pad00[0x74];
     unsigned short *src;

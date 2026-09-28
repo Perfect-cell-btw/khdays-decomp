@@ -1,3 +1,6 @@
+/* Returns the heading the held direction bits point to (averaged for diagonals), or -1 when none is
+ * held. */
+
 int func_ov022_020a0814(int arg0) {
     unsigned short f = *(unsigned short *)(arg0 + 0x1a);
     int r = -1;

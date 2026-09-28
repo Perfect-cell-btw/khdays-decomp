@@ -1,3 +1,5 @@
+/* Sets the actor's visible bit, propagates it to its effects and calls its visibility hook. */
+
 extern void func_ov022_0209ccb0(int arg0, int arg1);
 void func_ov022_020a0678(int arg0, int arg1) {
     unsigned char v = arg1;

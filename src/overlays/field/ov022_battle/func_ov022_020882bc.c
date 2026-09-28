@@ -1,3 +1,5 @@
+/* Returns a player's value from the setup context's per-player table (0 without a context). */
+
 extern int data_ov022_020b2e78;
 unsigned char func_ov022_020882bc(int arg0) {
     int p = ((int *)&data_ov022_020b2e78)[1];

@@ -1,3 +1,5 @@
+/* Requests a card stream command with the second argument set (CARDi_RequestStreamCommand). */
+
 extern int CARDi_RequestStreamCommand();
 
 int Ov025_EmitCommandVariantA(unsigned int arg0, unsigned int arg1, unsigned int arg2) {

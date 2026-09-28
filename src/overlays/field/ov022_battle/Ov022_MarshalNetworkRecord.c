@@ -1,3 +1,5 @@
+/* Packs an actor's aim message (position, two values, flag) and sends it. */
+
 extern void Ov022_SendAimMessage(int a, int b, void *c);
 
 struct words3_020ad208 {

@@ -1,3 +1,5 @@
+/* Runs the object tick and copies its transform to its two models. */
+
 extern void Ov107_ProcessObjectTick(void *obj);
 struct blk11 { int w[11]; };
 void Ov294_BroadcastTransform(char *obj) {

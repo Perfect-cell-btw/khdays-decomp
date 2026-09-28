@@ -1,3 +1,6 @@
+/* AI step: sets the stance bits 0x86 and contact flags, sends the action 0x4a update and continues
+ * with queuing action 0. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov147_AiStep_QueueAction0(void);

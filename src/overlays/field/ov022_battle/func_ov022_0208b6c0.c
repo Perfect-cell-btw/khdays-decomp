@@ -1,3 +1,6 @@
+/* Starts a reaction: spawns its effect, binds its block animations, sets its scale from the entry
+ * and marks it in state 3. */
+
 extern void func_ov022_0208acdc(int arg0, unsigned int *arg1, unsigned int arg2);
 extern void Ov022_BindBlockAnimations(int arg0, int arg1, unsigned short *arg2, int arg3);
 extern void func_ov022_0208a6b0(int arg0);

@@ -1,3 +1,5 @@
+/* Loads the icon texture of every item and the special reward icons. */
+
 typedef unsigned short u16;
 typedef struct MsgDbItemRecord {char pad0[32];u16 icon;} MsgDbItemRecord;
 typedef struct Ov005TextureResource {void *resource;unsigned int textureKey,paletteKey;} Ov005TextureResource;

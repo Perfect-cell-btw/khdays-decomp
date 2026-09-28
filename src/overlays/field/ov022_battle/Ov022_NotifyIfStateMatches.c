@@ -1,3 +1,6 @@
+/* When the object belongs to the local player's side and is active, sets its model's polygon id and
+ * posts its update. */
+
 extern int QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(int state);
 extern void NNS_G3dMdlSetMdlPolygonID(int a, int b, int c);

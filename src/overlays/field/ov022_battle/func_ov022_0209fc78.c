@@ -1,3 +1,5 @@
+/* Whether the actor's indexed part (or any part for -1) is attached. */
+
 int func_ov022_0209fc78(int arg0, int arg1) {
     int r;
     int i;

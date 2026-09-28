@@ -1,3 +1,5 @@
+/* Copies a peer's uploaded slot data out and clears its pending flag. */
+
 extern void MI_CpuCopy8(void *src, void *dst, int size);
 extern char *data_ov008_02090f24[];
 

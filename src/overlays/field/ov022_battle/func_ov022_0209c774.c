@@ -1,3 +1,5 @@
+/* Returns the attachment point for the actor's indexed part kind. */
+
 int func_ov022_0209c774(int arg0, int arg1) {
     int r = 0;
     switch (*(char *)(arg1 * 0x164 + arg0 + 0xda9)) {

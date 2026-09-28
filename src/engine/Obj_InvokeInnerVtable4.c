@@ -1,3 +1,5 @@
+/* Calls the inner object's second virtual method. */
+
 typedef void (*func_02030158_cb)(void *ptr, int value);
 
 void Obj_InvokeInnerVtable4(int *ptr) {

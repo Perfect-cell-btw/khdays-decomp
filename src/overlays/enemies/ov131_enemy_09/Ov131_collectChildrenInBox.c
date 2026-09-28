@@ -1,3 +1,6 @@
+/* Collects the objects of the tree's nodes that fall within the box (up to 4); returns the count.
+ */
+
 extern void Ov131_collectObjectsInSphereRec(void *pt, int a, int b, int c, int *bounds, int *rect, int *count, int param3);
 
 int Ov131_collectChildrenInBox(int param_1, int *param_2, int param_3) {

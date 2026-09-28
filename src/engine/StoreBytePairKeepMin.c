@@ -1,3 +1,6 @@
+/* Stores a pair of bytes into a global 2D table row, keeping the first no larger than the second,
+ * then updates the packed slot parameter. */
+
 extern void Slot_EvalPackedParamWith();
 extern char data_0204c678[];
 void StoreBytePairKeepMin(int param_1, int param_2, unsigned int param_3, unsigned char *param_4)

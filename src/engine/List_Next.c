@@ -1,3 +1,5 @@
+/* Continues an iteration: returns the next element, or NULL at the end. */
+
 int List_Next(int *r0)
 {
     int *node;

@@ -1,3 +1,6 @@
+/* AI step: sets the stance bits 0x82, flags the actor, sends the action 0x48 update and continues
+ * with aiming at the target. */
+
 extern void Ov107_BuildAndSendUpdate(int, int, int, int);
 extern void SetIndexedSlot(int, int, void *);
 extern void Ov131_stAdvanceTimerAimTarget(void);

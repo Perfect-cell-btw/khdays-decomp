@@ -1,3 +1,6 @@
+/* Destroys an enemy object: its instance, its registry entry, its part list and lists, its eight
+ * attached nodes, and the base node. */
+
 typedef struct Self68ec {
     char pad00[0x3c];
     void *field_3c;

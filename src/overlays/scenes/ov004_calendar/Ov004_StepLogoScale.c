@@ -1,3 +1,5 @@
+/* Grows the calendar logo's scale towards full size with a slowing step. */
+
 typedef struct Ov004Context {
     char pad_0000[0x5544];
     int objectHandles[3];

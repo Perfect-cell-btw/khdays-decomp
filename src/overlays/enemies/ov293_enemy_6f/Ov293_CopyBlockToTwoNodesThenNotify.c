@@ -1,3 +1,5 @@
+/* Copies the actor's transform to its two models, then runs the base post-tick. */
+
 extern void Ov107_AiState_PostTickBase(void *obj);
 struct blk11 { int w[11]; };
 void Ov293_CopyBlockToTwoNodesThenNotify(char *obj) {

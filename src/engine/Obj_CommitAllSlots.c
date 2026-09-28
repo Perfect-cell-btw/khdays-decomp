@@ -1,3 +1,5 @@
+/* Flushes the object's OAM buffer and resets its slot count. */
+
 extern void OamBuffer_Flush(void *p, int x);
 
 void Obj_CommitAllSlots(char *arg0) {

@@ -1,3 +1,6 @@
+/* Stops the sequence a sound handle refers to when the handle is still valid (same serial), and
+ * frees the handle's entry. */
+
 extern unsigned char *data_0204c234;
 extern void NNS_SndPlayerStopSeq(void *ptr, int value);
 extern void ScriptPool_FreeSlot(void *ptr);

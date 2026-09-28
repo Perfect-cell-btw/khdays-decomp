@@ -1,3 +1,6 @@
+/* AI step: rotates the offset by the heading, clears stance bit 0x40 and, when the animation ends,
+ * queues action 2. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void MTX_RotY33_();
 extern void MTX_MultVec33();

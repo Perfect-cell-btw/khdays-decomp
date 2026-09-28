@@ -1,3 +1,5 @@
+/* Removes and frees every item of the object's list (+0x1cc). */
+
 extern int NNS_FndGetNextListObject();
 extern void Ov025_RemoveAndFreeItem();
 

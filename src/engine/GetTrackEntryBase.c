@@ -1,3 +1,5 @@
+/* Returns the address of the indexed track entry header of the entity manager. */
+
 extern char *data_0204c208;
 
 void *GetTrackEntryBase(int idx)

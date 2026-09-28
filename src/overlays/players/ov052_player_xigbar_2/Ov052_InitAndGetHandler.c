@@ -1,3 +1,6 @@
+/* Initialises the player actor: boots it, registers its sequence, requests its voices and starts
+ * the mission; returns the decoder step. */
+
 typedef void (*Ov052Handler)(void);
 
 extern unsigned char *NNSi_FndGetCurrentRootHeap(void);

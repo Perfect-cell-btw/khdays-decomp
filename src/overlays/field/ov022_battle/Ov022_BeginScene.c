@@ -1,3 +1,6 @@
+/* Starts the battle scene: sets up the context and session object, pushes the VRAM state, sets the
+ * scene scale and markers, and returns the battle entry poll step. */
+
 typedef signed char s8;
 typedef short s16;
 typedef unsigned short u16;

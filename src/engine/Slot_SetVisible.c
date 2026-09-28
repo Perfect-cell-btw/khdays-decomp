@@ -1,3 +1,5 @@
+/* Shows or hides a slot (its visible bit; negative indices are ignored). */
+
 struct Inner {
     unsigned int b0 : 2;
     unsigned int flag : 1;

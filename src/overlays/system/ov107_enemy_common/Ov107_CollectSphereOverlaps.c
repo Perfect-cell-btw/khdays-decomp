@@ -1,3 +1,5 @@
+/* Collects the container's elements whose hit shape overlaps the sphere; returns the count. */
+
 typedef struct {
     char pad0[4];
     int f4;

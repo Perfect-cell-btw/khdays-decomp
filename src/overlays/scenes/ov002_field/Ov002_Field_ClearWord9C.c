@@ -1,3 +1,5 @@
+/* Clears a word (+0x9c) of the field object. */
+
 extern int data_ov002_0207f62c;
 
 void Ov002_Field_ClearWord9C(void) {

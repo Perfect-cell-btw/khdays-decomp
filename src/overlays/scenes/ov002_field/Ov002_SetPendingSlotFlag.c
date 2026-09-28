@@ -1,3 +1,5 @@
+/* Sets a slot's pending bit in the field context (+0x54). */
+
 extern int data_ov002_0207fa14;
 
 void Ov002_SetPendingSlotFlag(int arg0) {

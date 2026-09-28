@@ -1,3 +1,5 @@
+/* Maps a menu command kind to its label message id (0 when it has none). */
+
 int func_ov022_02093a7c(int arg0) {
     int r = 0;
     switch (arg0) {

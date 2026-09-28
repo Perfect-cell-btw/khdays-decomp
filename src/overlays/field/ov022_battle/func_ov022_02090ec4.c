@@ -1,3 +1,5 @@
+/* Draws every live shot of the pool. */
+
 extern void Ov022_DrawShot(int arg0);
 void func_ov022_02090ec4(int arg0) {
     int i = 0;

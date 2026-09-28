@@ -1,3 +1,6 @@
+/* AI step: when the animation ends, sets stance bit 0x40, posts pose 4, loads its default pose and
+ * continues with the fall. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void Ov107_PostTagUpdate();
 extern void Ov264_loadDefaultPoseVecs();

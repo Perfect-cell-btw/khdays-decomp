@@ -1,3 +1,5 @@
+/* AI step: continues with the idle step. */
+
 extern void SetIndexedSlot();
 extern void Ov234_AdvanceStateIdleStep(void);
 void Ov234_stAdvanceState(int node) {

@@ -1,3 +1,5 @@
+/* Runs the frame without input for three frames, then moves on. */
+
 extern int Ov022_SetActorInputEnabled(int arg0);
 extern int func_ov022_02083758(void);
 extern int *data_ov022_020b2e60;

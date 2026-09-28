@@ -1,3 +1,5 @@
+/* Clears the slot bit of the current code in the menu state. */
+
 extern int Ov025_MapCodeToSlotIndex();
 extern int data_ov025_020b5744;
 

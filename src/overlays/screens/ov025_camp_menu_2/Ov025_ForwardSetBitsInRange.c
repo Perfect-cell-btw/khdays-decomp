@@ -1,3 +1,5 @@
+/* Marks every item in the bitset as seen (game-state flags 0x37ca onwards). */
+
 extern int Ov025_TestBitInBitset();
 extern void GameState_SetFlag();
 

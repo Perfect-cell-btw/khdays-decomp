@@ -1,3 +1,5 @@
+/* Sets an SRT's rotation from an axis and angle and marks the rotation as non-identity. */
+
 extern void QuatFromAxisAngle(void *);
 
 void Srt_SetRotationAxisAngle(void *param_1) {

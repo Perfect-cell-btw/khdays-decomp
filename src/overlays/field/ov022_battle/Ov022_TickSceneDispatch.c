@@ -1,3 +1,6 @@
+/* Per-frame battle tick: updates key repeat, then refreshes the slot rows (host) or syncs the party
+ * (clients), or steps the replay target, and shows nearby names. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern int func_02023c40(void);
 extern void Ov022_SetGlobalByte(int on);

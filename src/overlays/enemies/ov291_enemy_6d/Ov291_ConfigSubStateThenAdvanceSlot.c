@@ -1,3 +1,5 @@
+/* AI step: posts pose 1, starts the action animation and continues with the path setup. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_StartAnim(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *value);

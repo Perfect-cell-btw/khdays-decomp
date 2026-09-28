@@ -1,3 +1,6 @@
+/* When the node system is active and the node's owner record still points at this node, clears the
+ * record. */
+
 extern int data_0204c230;
 
 void ClearNodeIfHeadMatches(int p) {

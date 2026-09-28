@@ -1,3 +1,6 @@
+/* Computes where an actor approaches a target from: the distance and its facing relative to the
+ * direction to the target, within the scan distance (larger with ability 0x55). */
+
 typedef signed short s16;
 typedef unsigned char u8;
 typedef unsigned short u16;

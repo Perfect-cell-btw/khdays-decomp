@@ -1,3 +1,5 @@
+/* Maps a menu state to its marker index (0 when it has none). */
+
 int Ov022_MenuStateToMarker(int arg0) {
     int r = 0;
     switch (arg0) {

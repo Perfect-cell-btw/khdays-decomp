@@ -1,3 +1,5 @@
+/* Sets the animation sequence of a 2D slot's cell animation from its resource's sequence list. */
+
 extern int List_Nth(int a, int b);
 extern int NNS_G2dGetAnimSequenceByIdx(void *a, int b);
 extern void NNS_G2dSetCellAnimationSequence(int a, int b);

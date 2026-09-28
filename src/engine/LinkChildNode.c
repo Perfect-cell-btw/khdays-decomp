@@ -1,3 +1,6 @@
+/* Attaches a child entity's scene node to a joint of its parent's model, marks it linked, and
+ * splices it into the parent's first or second entity list depending on the parent's flag 0x20. */
+
 extern void SceneNode_AttachToModelJoint();
 extern void EntityMgr_SpliceIntoListA();
 extern void EntityMgr_SpliceIntoListB();

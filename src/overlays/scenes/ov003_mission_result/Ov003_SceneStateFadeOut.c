@@ -1,3 +1,5 @@
+/* Mission result fade state: fills the remaining rank rows and slides the table out. */
+
 typedef struct Ov003RootTail {
     unsigned char pad0000[0x1774];
     int nStateTicks;

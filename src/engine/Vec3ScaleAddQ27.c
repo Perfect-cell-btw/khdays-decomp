@@ -1,3 +1,5 @@
+/* c = b + s * a, with the products shifted by 27 bits. */
+
 typedef int fx32;
 typedef long long fx64;
 

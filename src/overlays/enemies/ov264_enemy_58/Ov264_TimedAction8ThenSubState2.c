@@ -1,3 +1,6 @@
+/* AI step: sends the attack update (0x15d, mode 8) once its time comes and, when the animation
+ * ends, queues action 2. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 

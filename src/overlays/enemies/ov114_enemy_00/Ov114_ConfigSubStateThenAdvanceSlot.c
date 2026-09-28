@@ -1,3 +1,6 @@
+/* AI step: posts pose 0xb, sends the swing update (0x112, mode 4), resets the swing counters and
+ * continues with the swing tick. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *value);

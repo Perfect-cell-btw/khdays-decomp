@@ -1,3 +1,5 @@
+/* Highlights the exit dialog's current choice. */
+
 typedef struct Ov005Context {
     char header[0x54];
     char embeddedManager[0x4a80];

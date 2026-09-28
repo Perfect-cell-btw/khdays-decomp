@@ -1,3 +1,5 @@
+/* Blends the actor's first animation track to a new sequence and rewinds it. */
+
 extern void Anim_BlendToTrack(unsigned short *arg0, int arg1, unsigned short *arg2, int arg3, int arg4);
 extern void func_ov022_02097038(int arg0, int arg1);
 

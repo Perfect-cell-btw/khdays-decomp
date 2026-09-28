@@ -1,3 +1,5 @@
+/* AI step: once the actor is active, queues its stored action, posts pose 0 and ends the step. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *value);

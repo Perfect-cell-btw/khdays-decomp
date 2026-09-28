@@ -1,3 +1,6 @@
+/* Script command: opens the message container the operand names and stores it in the script
+ * context's indexed slot. */
+
 extern int ScriptVm_ReadOperandInt(int obj, void *key);
 extern void *ByteCode_ResolveOperand(int obj, void *key);
 extern void *Msg_OpenContainerAndReadHeader(void *res, int type);

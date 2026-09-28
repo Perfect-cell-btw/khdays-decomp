@@ -1,3 +1,5 @@
+/* AI step: counts the timer down while the animation runs and then posts pose 6 and continues. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov243_ConfigSubStateThenAdvanceSlot_2();

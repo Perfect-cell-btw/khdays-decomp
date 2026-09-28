@@ -1,3 +1,6 @@
+/* Requests the resource pairs of the field context's enabled entries (bits of +0x229c, 15 entries),
+ * plus pair 0x19 in context modes 4 and 7. */
+
 extern int Ov002_GetCtxModeByte(void);
 extern void Res_RequestIdPair(int id);
 extern int BitArray_TestBit(void *base, unsigned int bit);

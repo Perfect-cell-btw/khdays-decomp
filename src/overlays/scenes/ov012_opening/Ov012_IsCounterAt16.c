@@ -1,3 +1,5 @@
+/* Whether the opening's fade counter has reached 16. */
+
 extern char *data_ov012_0205cb20;
 
 int Ov012_IsCounterAt16(void) {

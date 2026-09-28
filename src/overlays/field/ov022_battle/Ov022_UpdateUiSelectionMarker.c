@@ -1,3 +1,6 @@
+/* Animates the lock-on marker sprite through its states: tweens the corner markers towards the
+ * point, then settles and holds it. */
+
 typedef unsigned int u32;
 
 typedef struct Ov022SelectionPoint {

@@ -1,3 +1,6 @@
+/* When the object is active, stores its position (+0xa8), rewinds its four animation tracks,
+ * restores its base value unless flag 0x10, and marks it updated. */
+
 extern int Ov022_IsBit0Set_5(int arg0);
 extern void Anim_SetFrameWrapped(int arg0, int arg1, int arg2);
 

@@ -1,3 +1,6 @@
+/* Raises the actor's ability levels for the abilities it has (15 rows) by the amount; the host
+ * flags the actor when any changed. */
+
 extern int Slot_EvalPackedParam(unsigned int a, int b);
 extern int Load2DArrayU8(unsigned int a, int b);
 extern void ClampAndStoreLevelEntry(unsigned int a, int b, int c);

@@ -1,3 +1,5 @@
+/* Resets a regen timer, setting its period only in mode 2. */
+
 extern unsigned char data_0204c240;
 void func_ov022_0209d08c(int arg0, int *arg1, short arg2) {
     *(short *)((char *)arg1 + 4) = 0;

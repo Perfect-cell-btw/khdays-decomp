@@ -1,3 +1,6 @@
+/* AI step: measures the target, counts the move, posts pose 7 and continues with picking the next
+ * move. */
+
 extern void Ov297_AcquireTargetGapAndAngle(int *node);
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *value);

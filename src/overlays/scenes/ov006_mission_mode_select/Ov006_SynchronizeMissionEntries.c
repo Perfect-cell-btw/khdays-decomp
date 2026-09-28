@@ -1,3 +1,6 @@
+/* Builds the mission member entries from the session's connected players (or the forced default)
+ * and exchanges them with the peers before the entry sync. */
+
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;

@@ -1,3 +1,5 @@
+/* Returns the width of a text in the text object's font (with its spacing). */
+
 extern int NNSi_G2dFontGetTextWidth();
 
 int func_020303bc(int arg0, int arg1) {

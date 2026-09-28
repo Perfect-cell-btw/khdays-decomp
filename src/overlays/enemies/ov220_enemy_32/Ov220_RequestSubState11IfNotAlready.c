@@ -1,3 +1,5 @@
+/* Requests action 0xb unless it is the current one; returns whether it did. */
+
 struct actor_ss { signed char _pad[0x1c6]; signed char cur; signed char req; };
 
 int Ov220_RequestSubState11IfNotAlready(int this_) {

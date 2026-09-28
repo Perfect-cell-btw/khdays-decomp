@@ -1,3 +1,5 @@
+/* Returns a text record of page A's text table. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_GetVarRecordByIndex();
 

@@ -1,3 +1,5 @@
+/* Stores two values and, when visible, rebinds the node's animation and enables it. */
+
 extern void Ov002_RebindAnimTracks();
 extern void SceneNode_Enable();
 

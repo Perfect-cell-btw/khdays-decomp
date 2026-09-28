@@ -1,3 +1,5 @@
+/* Moves the result fade to state 3 (and its sub-state to 4 when needed); returns the fade step. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void Ov022_AdvanceFadeStateThenNextStep(void);
 

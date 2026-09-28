@@ -1,3 +1,6 @@
+/* Mission result display state: draws the stat grid, slides the table in and animates the
+ * characters, then waits for input to fade out. */
+
 typedef struct Ov003RootTail {
     unsigned char pad0000[0x1774];
     int nStateTicks;

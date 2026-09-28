@@ -1,3 +1,5 @@
+/* Sets a row's four rank tile indices for the current rank. */
+
 extern char data_ov003_0204f9a0[];
 struct Row0204cb44 { unsigned short a, b; char pad[0x40 - 4]; };
 void Ov003_SetFourTileBases(int obj) {

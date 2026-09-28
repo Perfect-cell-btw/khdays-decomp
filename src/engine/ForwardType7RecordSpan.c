@@ -1,3 +1,5 @@
+/* Finds the archive's texture member (type 7) and registers its texture data span. */
+
 extern int Archive_GetMember(int a, int b, int c);
 extern int NNS_G3dGetTex(int entry);
 extern void func_02023768(int a, int b, int c, int d);

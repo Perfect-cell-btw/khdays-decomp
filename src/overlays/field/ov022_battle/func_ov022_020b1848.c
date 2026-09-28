@@ -1,3 +1,6 @@
+/* Finishes an animation request: when nothing is queued, reposts it as done; otherwise starts the
+ * queued one. */
+
 extern int func_ov022_020b1510(unsigned char *p);
 extern void Ov022_PostAnimRequest(unsigned int *a, int b, unsigned int c, unsigned int d);
 extern void Ov022_StartAnimRequest(unsigned int *a, int b);

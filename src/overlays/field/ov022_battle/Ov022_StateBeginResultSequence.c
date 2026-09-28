@@ -1,3 +1,6 @@
+/* Starts the result sequence outside mode 4: sets its duration, updates the HUD, flags the object,
+ * queues the result event and sets game-state field 0x20e6; returns the timer step. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned long long u64;

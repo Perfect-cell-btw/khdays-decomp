@@ -1,3 +1,5 @@
+/* Refreshes the shared panel for the indexed player's entry when it exists. */
+
 extern int GetEntryField20ByIndex();
 extern void Ov022_RefreshSharedPanel();
 void Ov022_CleanupEntry(int arg0) {

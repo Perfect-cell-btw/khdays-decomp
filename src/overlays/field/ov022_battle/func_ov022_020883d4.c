@@ -1,3 +1,5 @@
+/* Forwards a value to a player's actor when it has one. */
+
 extern int GetEntryField20ByIndex(int arg0);
 extern void func_ov022_020a0f2c(int arg0, int arg1);
 void func_ov022_020883d4(int arg0, int arg1) {

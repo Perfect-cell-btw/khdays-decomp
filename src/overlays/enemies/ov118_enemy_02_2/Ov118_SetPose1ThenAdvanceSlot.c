@@ -1,3 +1,5 @@
+/* AI step: posts pose 1 and continues with keeping its distance. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov118_KeepDistanceOrRetreat();

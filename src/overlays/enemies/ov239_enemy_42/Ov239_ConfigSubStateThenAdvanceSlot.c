@@ -1,3 +1,5 @@
+/* AI step: posts a pose, starts the matching animation and continues with the given step. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_StartAnim(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *value);

@@ -1,3 +1,6 @@
+/* Sets up the render state, loads ov106, creates its registration instance from the template and
+ * loads the shop table. */
+
 typedef unsigned char u8;
 typedef unsigned int u32;
 

@@ -1,3 +1,5 @@
+/* AI step: measures the target and counts the timer down; when it runs out, queues action 2. */
+
 extern void Ov297_AcquireTargetGapAndAngle(void *node);
 
 void Ov297_TickTimerOrEnterSubState2(int *node) {

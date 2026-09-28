@@ -1,3 +1,5 @@
+/* Loads the gate model table file (kind 2). */
+
 extern int data_ov002_0207fa0c;
 extern int Archive_LoadFile();
 

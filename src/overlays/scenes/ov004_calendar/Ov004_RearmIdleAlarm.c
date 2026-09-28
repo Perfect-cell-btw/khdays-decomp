@@ -1,3 +1,5 @@
+/* Arms a periodic alarm that re-arms itself (used by the protection checks). */
+
 typedef long long s64;
 typedef unsigned int u32;
 

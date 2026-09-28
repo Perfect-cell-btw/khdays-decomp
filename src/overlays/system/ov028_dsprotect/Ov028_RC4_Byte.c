@@ -1,3 +1,5 @@
+/* Fills the 256-byte opcode table with each index XOR 1. */
+
 int Ov028_RC4_Byte(unsigned char *s) {
     int i;
     for (i = 0; i < 0x100; i++) {

@@ -1,3 +1,6 @@
+/* Menu top state: updates the cursor and either commits the selected page locally or exchanges the
+ * player records with the peers before entering it. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

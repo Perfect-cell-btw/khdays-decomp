@@ -1,3 +1,6 @@
+/* Boot teardown step: updates the key repeat, draws the logo, and when loading ends either records
+ * the saved scene and builds the title logo, or starts the fade to the next scene. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

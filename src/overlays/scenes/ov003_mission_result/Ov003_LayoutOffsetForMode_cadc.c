@@ -1,3 +1,5 @@
+/* Returns the tile column of a result row for the player count. */
+
 extern char data_ov003_0204f9a0[];
 
 int Ov003_LayoutOffsetForMode_cadc(int param) {

@@ -1,3 +1,5 @@
+/* Waits 800 ms after the scale tweens, then starts the header and footer tweens. */
+
 typedef struct Ov022Tween {
     int values[7];
 } Ov022Tween;

@@ -1,3 +1,6 @@
+/* Whether the actor's target is reachable from its anchor: above it by at least 0.5, within 1.5
+ * horizontally, and the actor is not in state 1. */
+
 struct Vec3_02095dc8 {
     long x;
     long y;

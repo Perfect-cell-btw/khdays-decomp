@@ -1,3 +1,6 @@
+/* Picks the selector's target by the selection type: the current candidate's part, the entry's
+ * activation result, or the fixed target; then moves the selector to it. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef signed short s16;

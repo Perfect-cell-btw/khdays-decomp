@@ -1,3 +1,6 @@
+/* Polls the save card transfer; when it ends, restores the transient flags after a write and resets
+ * the transfer state; returns the result (-1 while busy). */
+
 typedef unsigned char u8;
 
 typedef struct Ov009SaveSlot {

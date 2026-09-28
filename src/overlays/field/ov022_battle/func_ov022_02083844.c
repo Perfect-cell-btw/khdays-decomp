@@ -1,3 +1,6 @@
+/* Flags the dispatcher, runs the frame, enables the sound listeners and resets the camera; returns
+ * the session start step. */
+
 extern int QueryActiveStateOrDelegate(void);
 extern void func_ov022_020884ec(unsigned int arg0);
 extern void Ov022_SetBit3OnPtr20(int arg0, int arg1);

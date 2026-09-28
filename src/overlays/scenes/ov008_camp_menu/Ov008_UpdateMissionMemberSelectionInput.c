@@ -1,3 +1,6 @@
+/* Handles the mission member selection input: moves the cursor on the member grid (skipping taken
+ * members), confirms or cancels, and returns the action and resolved selection. */
+
 typedef signed char s8;
 typedef unsigned char u8;
 typedef unsigned short u16;

@@ -1,3 +1,6 @@
+/* Creates the calendar scene for a day: records the day, awards the all-missions flags, fixes the
+ * equipment, sets up the graphics and starts the calendar animation. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

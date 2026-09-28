@@ -1,3 +1,6 @@
+/* Measures how far a vertical ray reaches a collision face: rejects faces outside its bounds or
+ * edge planes and computes the hit fraction on the face's plane, keeping the nearest. */
+
 typedef signed short s16;
 typedef unsigned short u16;
 typedef signed int s32;

@@ -1,3 +1,6 @@
+/* AI step: counts the timer down while the animation runs, keeping pose 1; when it expires, queues
+ * action 4. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 

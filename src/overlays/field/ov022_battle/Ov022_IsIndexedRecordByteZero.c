@@ -1,3 +1,5 @@
+/* Whether the indexed pool entry (0x114 bytes each) is free. */
+
 int Ov022_IsIndexedRecordByteZero(int p, int i)
 {
     int base = *(int *)(p + 0x20);

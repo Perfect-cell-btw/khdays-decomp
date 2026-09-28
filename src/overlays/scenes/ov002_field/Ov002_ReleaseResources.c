@@ -1,3 +1,6 @@
+/* Releases the field resources: detaches and frees the actor node and unloads the actor overlay
+ * when one is loaded, frees the two buffers and resets the entry table. */
+
 typedef struct {
     char pad00[0x18];
     int nodeId;     /* +0x18, -1 when none */

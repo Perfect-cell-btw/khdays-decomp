@@ -1,3 +1,5 @@
+/* When the list is idle and Up is pressed alone, selects the previous row (wrapping). */
+
 extern int data_0204c18c;
 extern void Ov025_ScrollList_SelectRow();
 

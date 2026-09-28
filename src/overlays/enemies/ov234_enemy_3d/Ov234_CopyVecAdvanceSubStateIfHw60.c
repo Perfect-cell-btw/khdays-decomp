@@ -1,3 +1,6 @@
+/* AI step: once the actor is active, records its position, queues its stored action and ends the
+ * step. */
+
 extern void SetIndexedSlot();
 
 struct hw60 { unsigned short lo : 8, hi : 8; };

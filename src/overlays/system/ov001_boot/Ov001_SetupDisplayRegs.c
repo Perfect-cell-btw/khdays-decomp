@@ -1,3 +1,6 @@
+/* Boot display setup: initialises the 3D engine, VRAM banks, graphics mode, backgrounds, blending,
+ * viewport and the sub screen. */
+
 extern void NNS_G3dInit(void);
 extern void G3X_InitMtxStack(void);
 extern void GX_SetBankForTex(int bank);

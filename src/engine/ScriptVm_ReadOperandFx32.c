@@ -1,3 +1,6 @@
+/* Reads a script operand as fx32: integers are converted, fx32 values are returned as they are,
+ * anything else is 0. */
+
 extern short *ScriptVm_ResolveOperand(void);
 
 int ScriptVm_ReadOperandFx32(void) {

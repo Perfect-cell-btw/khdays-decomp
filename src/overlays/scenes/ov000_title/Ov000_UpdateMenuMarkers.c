@@ -1,3 +1,6 @@
+/* Shows or hides the title menu's cursor and group markers, and slides the non-selected markers
+ * away when positioning. */
+
 typedef unsigned char u8;
 
 typedef struct {

@@ -1,3 +1,5 @@
+/* Hides the entries 0xc9-0xdc of the layout. */
+
 extern int data_ov025_020b575c;
 extern int Ov025_GetBlock4a80();
 extern int Ov025_FindEntryById();

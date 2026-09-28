@@ -1,3 +1,5 @@
+/* AI step: posts pose 0 and continues with the timer. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov297_TickTimerOrEnterSubState2();

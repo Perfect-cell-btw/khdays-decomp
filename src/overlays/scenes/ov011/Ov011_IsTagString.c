@@ -1,3 +1,5 @@
+/* Whether a string is a markup tag (starts with '<' or ends with '>', or the mode is 2). */
+
 int Ov011_IsTagString(unsigned short *s, int arg1) {
     unsigned short c;
     if (s == 0) {

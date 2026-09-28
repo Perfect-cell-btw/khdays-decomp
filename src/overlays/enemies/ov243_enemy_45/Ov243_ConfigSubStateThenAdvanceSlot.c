@@ -1,3 +1,6 @@
+/* AI step: once the actor is active, picks the current waypoint, queues the stored action and ends
+ * the step. */
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void SetIndexedSlot(void *node, int idx, void *value);
 

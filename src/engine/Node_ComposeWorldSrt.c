@@ -1,3 +1,6 @@
+/* Composes the node's world transform: the parent's world SRT combined with the node's local SRT,
+ * or the local SRT for a root node; skipped when the node is frozen. */
+
 extern void Srt_Concat(void *dst, void *src, void *arg);
 
 typedef struct {

@@ -1,3 +1,6 @@
+/* When the actor is in tail state 3 and its target is at the same height (or its tail state is 2),
+ * switches it to state 0xf. */
+
 struct Obj_020a7018;
 extern _Bool Ov022_ValidateTargetRef(struct Obj_020a7018 *obj);
 struct Vec3_020a7018;

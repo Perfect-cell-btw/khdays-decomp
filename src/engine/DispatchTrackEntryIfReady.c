@@ -1,3 +1,6 @@
+/* When the entity's track object id is free, forwards the track entry to it; returns whether it
+ * did. */
+
 extern int Obj_IsIdFree();
 extern void TailForwardTrackEntry_2();
 int DispatchTrackEntryIfReady(int param_1, unsigned int param_2)

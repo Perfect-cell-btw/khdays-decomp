@@ -1,3 +1,5 @@
+/* Returns the actor's target's height by its shape kind (-1.0 without a target, 2.0 by default). */
+
 extern int FX_Div(int a, int b);
 
 struct hdr_020afd78 {

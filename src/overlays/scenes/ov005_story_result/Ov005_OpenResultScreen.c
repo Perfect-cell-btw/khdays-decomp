@@ -1,3 +1,6 @@
+/* Opens the mission result screen: sets up its resources, graphics, sprites and text, shows the
+ * result labels for the scene and draws the result gauge. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 typedef void *(*Ov005ResultState)(void);

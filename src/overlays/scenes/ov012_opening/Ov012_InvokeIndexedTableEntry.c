@@ -1,3 +1,5 @@
+/* Loads the background palette of the indexed table entry; returns 1. */
+
 extern void GX_LoadBGPltt();
 
 int Ov012_InvokeIndexedTableEntry(int arg0, int arg1, int arg2) {

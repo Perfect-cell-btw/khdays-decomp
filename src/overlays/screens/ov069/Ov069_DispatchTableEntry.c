@@ -1,3 +1,5 @@
+/* Runs an entry of the condition table and sets or clears a game flag with its result. */
+
 extern void GameState_SetFlag(void *obj);
 extern void func_020235bc(void *obj);
 extern int data_ov069_020baa2c;

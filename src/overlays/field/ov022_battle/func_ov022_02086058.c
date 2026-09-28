@@ -1,3 +1,5 @@
+/* Frees the UI subsystem's six sprites, clears its selection and its tween. */
+
 extern void Ov002_FreeBufferAndClearStatus(int arg0);
 extern void Tween_Clear(unsigned int *arg0);
 

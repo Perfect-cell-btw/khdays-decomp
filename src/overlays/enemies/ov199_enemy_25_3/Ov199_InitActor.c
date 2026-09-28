@@ -1,3 +1,6 @@
+/* Initialises the enemy actor: installs its handlers, hit box and flags, creates its models and
+ * attach slots, and requests its resources. */
+
 typedef unsigned short u16;
 
 struct Vec3 {

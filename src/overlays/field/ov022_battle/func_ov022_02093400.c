@@ -1,3 +1,5 @@
+/* Draws the nine models of a loaded effect set, each with its own scale. */
+
 extern void NNS_G3dGlbSetBaseScale(int *arg0);
 extern void Scene_DrawNode(unsigned short *arg0);
 void func_ov022_02093400(unsigned char *arg0) {

@@ -1,3 +1,6 @@
+/* Finds a layout entry by id, pushes its sub-item set (when hiding) and sets its slots' visibility.
+ */
+
 extern int Ov025_FindEntryById();
 extern void Ov025_PushSubitemSet();
 extern void Ov025_SetEntrySlotsVisible();

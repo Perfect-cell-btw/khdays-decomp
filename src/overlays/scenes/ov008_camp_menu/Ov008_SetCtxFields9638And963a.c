@@ -1,3 +1,5 @@
+/* Stores the menu state's position (+0x9638, +0x963a). */
+
 extern volatile int data_ov008_02090f04[];
 void Ov008_SetCtxFields9638And963a(int x, int y)
 {

@@ -1,3 +1,5 @@
+/* Script command: creates an entity in a module slot's context with the operands; returns 1. */
+
 extern int ScriptVm_ReadOperandInt(void *a, int b);
 extern int Ov002_GetModuleSlot(int a);
 extern void Ov020_CreateEntity(int a, unsigned short b, unsigned short c, unsigned short d, int e);

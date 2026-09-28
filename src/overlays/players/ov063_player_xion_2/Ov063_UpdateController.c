@@ -1,3 +1,6 @@
+/* Special attack controller step: flags the actor, locks its action at the end of the timeline,
+ * turns it towards its target at the key frame and emits the timeline effects. */
+
 #pragma opt_propagation off
 #pragma opt_common_subs off
 

@@ -1,3 +1,6 @@
+/* Counts the setup context's timer down by the battle scale (clearing its state when it is idle).
+ */
+
 extern int data_ov022_020b2e78;
 extern int Ov022_GetGlobal34(void);
 void func_ov022_02087f30(void) {

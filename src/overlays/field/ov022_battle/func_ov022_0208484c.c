@@ -1,3 +1,5 @@
+/* Records a candidate part in a lock-on selection (type 1) with its approach point. */
+
 typedef struct { int a, b, c; } T3_0208484c;
 void func_ov022_0208484c(int *arg0, int arg1, int arg2, T3_0208484c *arg3) {
     *(T3_0208484c *)(arg0 + 7) = *arg3;

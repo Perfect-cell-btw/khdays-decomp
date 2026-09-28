@@ -1,3 +1,5 @@
+/* When the rotation is active, deactivates it and resets its timer and speed. */
+
 struct s { unsigned char _pad[0x135]; unsigned char flag; };
 void Ov022_ResetFields135_168_174(int p)
 {

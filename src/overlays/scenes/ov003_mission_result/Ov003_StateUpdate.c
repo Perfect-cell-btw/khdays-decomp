@@ -1,3 +1,6 @@
+/* Mission result title state: draws the header, pulses the prompt, animates the characters and
+ * waits for the A button to move on. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern int Ov105_WM_GetLinkLevel(void);
 extern void Ov003_UpdateLayers(void *p);

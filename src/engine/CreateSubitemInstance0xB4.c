@@ -1,3 +1,5 @@
+/* Allocates and constructs a model object (0xb4 bytes) for the resource. */
+
 extern void *CallocInstance(int size);
 extern void ModelObj_Construct(void *self, void *arg);
 

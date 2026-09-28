@@ -1,3 +1,6 @@
+/* AI step: computes the path velocity from the action resource and heading and, when the action
+ * ends, posts pose 2 and continues with following the path. */
+
 extern int Ov107_ActionResource_GetOffsetAndScale();
 extern void Vec3TransformViaTempMtx();
 extern void ScaleVec3Fx12();

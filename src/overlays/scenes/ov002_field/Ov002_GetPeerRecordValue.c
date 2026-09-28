@@ -1,3 +1,5 @@
+/* Returns the value (+0xc) of the indexed peer record of the field context. */
+
 extern int data_ov002_0207fa10;
 
 int Ov002_GetPeerRecordValue(int arg0) {

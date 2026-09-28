@@ -1,3 +1,5 @@
+/* Copies an effect anchor position out. */
+
 typedef struct { int a, b, c; } T3_020ad44c;
 extern void Ov022_GetEffectAnchor(T3_020ad44c *out, int arg1, int arg2, int arg3);
 void func_ov022_020ad44c(int *arg0, int arg1, int arg2, int arg3) {

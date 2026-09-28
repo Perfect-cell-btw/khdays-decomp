@@ -1,3 +1,6 @@
+/* Switches a text object to the narrow font when the text is wider than 112 pixels (back
+ * otherwise). */
+
 extern int NNSi_G2dFontGetStringWidth();
 extern int Ov025_GetDescriptor3();
 extern int Ov025_GetCtxBlock968c();

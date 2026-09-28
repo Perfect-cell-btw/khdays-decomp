@@ -1,3 +1,5 @@
+/* Returns the signed byte at data_027e0084 + 1. */
+
 extern int data_027e0084;
 
 int func_0201e438(void) {

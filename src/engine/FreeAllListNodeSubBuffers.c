@@ -1,3 +1,5 @@
+/* Frees every node of the object's list along with each node's buffer. */
+
 extern void *NNS_FndGetNextListObject(void *list, void *object);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);
 

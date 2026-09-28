@@ -1,3 +1,5 @@
+/* Stores the mission slot byte (also into the screen flags for the host). */
+
 extern char *data_ov008_02090f24;
 extern int func_01ff8128(void);
 

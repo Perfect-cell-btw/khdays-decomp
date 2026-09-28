@@ -1,3 +1,6 @@
+/* When the object is active, starts a rotation about the Y axis by the angle around the given
+ * point. */
+
 struct MtxFx33_02092b60 { int m[3][3]; };
 extern void MTX_RotY33_(struct MtxFx33_02092b60 *a, int b, int c);
 extern const short data_0203d210[];

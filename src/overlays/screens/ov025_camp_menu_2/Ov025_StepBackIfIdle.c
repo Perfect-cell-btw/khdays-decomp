@@ -1,3 +1,5 @@
+/* Steps the mission menu back one entry when it is idle and not at the start, with a sound. */
+
 extern void Ov025_MissionMenuStep();
 extern void PlaySound();
 

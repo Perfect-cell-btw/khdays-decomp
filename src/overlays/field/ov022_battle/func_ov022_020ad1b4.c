@@ -1,3 +1,5 @@
+/* Returns the actor's target handle, or 0 in state 5. */
+
 extern int Ov022_GetByte2770();
 int func_ov022_020ad1b4(int arg0) {
     return Ov022_GetByte2770(arg0) == 5 ? 0 : *(int *)(arg0 + 0x4f4);

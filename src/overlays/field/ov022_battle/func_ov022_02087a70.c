@@ -1,3 +1,5 @@
+/* Reloads the selected slot's node from its resource, keeping the context's byte at +0x10. */
+
 extern int data_ov022_020b2e78;
 extern int Ov002_PollSession(void);
 extern int Ov022_GetGlobalPlus14(void);

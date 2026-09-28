@@ -1,3 +1,6 @@
+/* Sends a gauge gate message (kind 0x10, sub-kind 5) with the actor, the local player and the
+ * value. */
+
 extern int QueryActiveStateOrDelegate(void);
 extern void MsgQueue_SendGate(int arg0, unsigned short *arg1, int arg2);
 

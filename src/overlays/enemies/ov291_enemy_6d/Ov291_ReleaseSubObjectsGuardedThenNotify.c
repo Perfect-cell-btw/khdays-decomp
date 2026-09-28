@@ -1,3 +1,6 @@
+/* Destroys the enemy: frees its path data, destroys its models and action resource, and the base
+ * object. */
+
 extern void FreeInstanceMemory();
 extern void DestroyInstance();
 extern void Ov107_ActionResource_Destroy();

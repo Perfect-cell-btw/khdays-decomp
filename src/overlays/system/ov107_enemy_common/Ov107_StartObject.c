@@ -1,3 +1,5 @@
+/* Resets the spawner's eight slots and its slot count. */
+
 typedef unsigned int u32;
 
 extern void MI_CpuFill8(void *dst, u32 data, u32 size);

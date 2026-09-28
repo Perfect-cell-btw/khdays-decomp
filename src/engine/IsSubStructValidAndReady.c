@@ -1,3 +1,5 @@
+/* Whether the BGM player has a sequence and it is still playing. */
+
 extern int data_0204c234;
 extern int NNS_SndPlayerGetSeqNo();
 extern int NNS_SndPlayerCountPlayingSeqBySeqNo();

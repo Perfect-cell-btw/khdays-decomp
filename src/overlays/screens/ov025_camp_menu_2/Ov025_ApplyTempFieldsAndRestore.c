@@ -1,3 +1,5 @@
+/* Runs an element's callback at a temporary position, then restores its position. */
+
 extern void Ov025_Elem_SetPos();
 extern void Ov025_TagTracker_InvokeCallback();
 

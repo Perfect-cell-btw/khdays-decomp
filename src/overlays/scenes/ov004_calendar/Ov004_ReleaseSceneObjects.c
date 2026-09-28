@@ -1,3 +1,6 @@
+/* Releases the calendar's text renderer, font, digit models, sprites and text, and turns the
+ * windows off. */
+
 typedef unsigned int u32;
 
 extern char *data_ov004_02051384;

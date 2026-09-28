@@ -1,3 +1,5 @@
+/* Starts the scene's tween from one value to another over a duration. */
+
 extern int NNSi_FndGetCurrentRootHeap();
 extern void Tween_Clear();
 extern void Tween_Configure();

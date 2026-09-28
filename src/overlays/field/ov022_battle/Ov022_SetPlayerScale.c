@@ -1,3 +1,6 @@
+/* Adds to the mission tally for a player's value, scaled by the player's step (5% per step, full at
+ * 10) outside replay. */
+
 #pragma opt_propagation off
 #pragma opt_common_subs off
 #pragma opt_dead_assignments off

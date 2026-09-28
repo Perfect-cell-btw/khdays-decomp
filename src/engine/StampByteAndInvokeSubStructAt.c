@@ -1,3 +1,5 @@
+/* Starts a stream on one of the stream players and records the stream id. */
+
 extern void NNS_SndArcStrmStart();
 extern int data_0204c234;
 

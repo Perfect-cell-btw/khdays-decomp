@@ -1,3 +1,5 @@
+/* Returns the first list entry whose id (+0x1c) matches, or NULL (also for id 0). */
+
 extern void *List_First();
 extern void *List_Next();
 

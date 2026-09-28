@@ -1,3 +1,5 @@
+/* Frees the cue table when allocated and clears its pointer. */
+
 extern void NNSi_FndFreeFromDefaultHeap();
 extern int data_ov002_0207f9f8;
 

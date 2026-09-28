@@ -1,3 +1,5 @@
+/* Initialises a command slot's state and links it to its actor. */
+
 void func_ov022_02093b10(unsigned char *arg0, int arg1) {
     *arg0 = 0;
     arg0[1] = 0;

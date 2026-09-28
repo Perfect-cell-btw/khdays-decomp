@@ -1,3 +1,6 @@
+/* AI step: adjusts the stance bits (0x9e), clears the model flag and continues with waiting for the
+ * partner. */
+
 extern void SetIndexedSlot(int *self, int idx, void *cb);
 extern void Ov255_Partner_AiWaitActive(void);
 

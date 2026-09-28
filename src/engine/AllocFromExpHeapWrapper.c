@@ -1,3 +1,6 @@
+/* Allocates 4-byte-aligned memory from the given expanded heap, or from the default game heap when
+ * none is given. */
+
 extern int NNS_FndAllocFromExpHeapEx();
 extern int data_0204c028;
 

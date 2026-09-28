@@ -1,3 +1,5 @@
+/* Triggers event 0x1a on a player's timer when it is idle. */
+
 extern int GetEntryField20ByIndex(int arg0);
 extern int Ov022_IsByte8ZeroOr3(int arg0);
 extern int func_ov022_020b19ec(int *arg0, int arg1);

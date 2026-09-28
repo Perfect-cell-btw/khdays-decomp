@@ -1,3 +1,6 @@
+/* Runs the frame and picks the next step from the context state: fade out, nothing, or ending the
+ * key sharing session. */
+
 extern void func_ov022_02083f0c(void);
 extern void Ov022_SetActorInputEnabled(int arg0);
 extern void StoreToGlobalPtr4Field28(int arg0);

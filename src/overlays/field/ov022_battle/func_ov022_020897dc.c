@@ -1,3 +1,5 @@
+/* Clients: copies a received member state block into the sync block and marks it received. */
+
 extern int data_ov022_020b2ea4;
 extern short Session_GetLocalPlayerIndex(void);
 extern void MI_CpuCopy8(unsigned short *arg0, unsigned short *arg1, unsigned int arg2);

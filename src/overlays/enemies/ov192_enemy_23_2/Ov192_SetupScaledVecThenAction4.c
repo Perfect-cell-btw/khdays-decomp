@@ -1,3 +1,6 @@
+/* AI step: resets the flight, adjusts its stance, sets its velocity from its direction, sends the
+ * flight update (0x133, mode 4) and continues with the flight tick. */
+
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);

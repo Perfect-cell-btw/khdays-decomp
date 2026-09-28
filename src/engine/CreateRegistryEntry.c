@@ -1,3 +1,7 @@
+/* Creates a task in the registry: inserts a 0x28-byte entry, allocates its zeroed state block of
+ * the given size, records its start and teardown callbacks and a new id; returns the id and
+ * optionally the state block. */
+
 extern int List_InsertSorted();
 extern int *CallocInstance();
 extern int data_02042ad8;

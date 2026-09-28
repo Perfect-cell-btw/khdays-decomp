@@ -1,3 +1,6 @@
+/* Enables or disables the lock-on selection: updates the caption, the controller, the flags and
+ * plays the on/off sound. */
+
 typedef unsigned char u8;
 
 typedef struct Ov022ModeContext {

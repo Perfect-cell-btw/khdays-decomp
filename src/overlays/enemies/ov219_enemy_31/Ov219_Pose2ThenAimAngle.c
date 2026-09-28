@@ -1,3 +1,6 @@
+/* AI step: posts pose 2, sends the attack update when armed, turns towards the target and
+ * continues. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void VEC_Subtract(void *a, void *b, void *out);

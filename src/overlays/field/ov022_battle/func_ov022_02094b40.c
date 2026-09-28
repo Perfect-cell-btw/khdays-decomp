@@ -1,3 +1,5 @@
+/* Starts an object's animation: marks it running and rewinds tracks 0 and 2. */
+
 extern void Anim_SetFrameWrapped(unsigned short *arg0, int arg1, int arg2);
 void func_ov022_02094b40(int arg0) {
     *(int *)(arg0 + 8) = 1;

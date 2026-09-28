@@ -1,3 +1,6 @@
+/* Creates a joint binding: a sub-item instance tracking the joint's motion, bound to the named
+ * resource. */
+
 typedef unsigned int u32;
 typedef unsigned short u16;
 

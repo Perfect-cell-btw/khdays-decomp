@@ -1,3 +1,5 @@
+/* Releases the service instance held at data_ov002_0207f600 + 4. */
+
 extern int data_ov002_0207f600;
 extern int func_02023ad0();
 

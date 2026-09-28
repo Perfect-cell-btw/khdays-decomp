@@ -1,3 +1,6 @@
+/* AI step: advances the timer and, after a while, clears the model's flag and continues with the
+ * idle pose. */
+
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov293_stIdlePose10Advance(void);
 

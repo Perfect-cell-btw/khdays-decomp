@@ -1,3 +1,5 @@
+/* Returns the configured slot of a code (and its index), or 0 when it has none. */
+
 extern int Ov025_MapCodeToSlotIndex();
 extern int data_ov025_020b5744;
 

@@ -1,3 +1,6 @@
+/* Sends a player state message (kind 0xc) with the local player, the entry's group and the value.
+ */
+
 extern int QueryActiveStateOrDelegate(void);
 extern void func_02031384(int a, void *buf, int c);
 

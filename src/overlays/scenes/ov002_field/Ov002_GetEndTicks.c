@@ -1,3 +1,6 @@
+/* Returns the configured end time converted from milliseconds to OS ticks, or 0 when the link flag
+ * 2 is not set. */
+
 typedef struct {
     unsigned char pad0000[0x14];
     unsigned int nEndMs;

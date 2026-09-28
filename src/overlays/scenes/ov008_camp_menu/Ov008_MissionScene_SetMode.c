@@ -1,3 +1,5 @@
+/* Sets the mission scene's mode (1-4); returns whether it did. */
+
 extern char *data_ov008_02090fa4[];
 
 int Ov008_MissionScene_SetMode(unsigned int value)

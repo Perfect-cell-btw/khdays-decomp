@@ -1,3 +1,5 @@
+/* AI step: posts pose 1, seeks the current path point and continues. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov292_SeekPointAtIndex(int *state);
 extern void SetIndexedSlot(void *node, int idx, void *value);

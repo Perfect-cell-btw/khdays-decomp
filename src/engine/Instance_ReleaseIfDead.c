@@ -1,3 +1,6 @@
+/* When the instance is marked dead (-2), releases it (if still live); returns whether it was dead.
+ */
+
 extern void func_02023ad0(int *arg);
 
 int Instance_ReleaseIfDead(int *p) {

@@ -1,3 +1,6 @@
+/* Updates the lock-on marker for the current selection type: projects the target to the screen and
+ * draws the markers, or clears the selection when the target is gone. */
+
 typedef unsigned short u16;
 typedef unsigned int u32;
 typedef unsigned long long u64;

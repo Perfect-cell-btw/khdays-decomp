@@ -1,3 +1,5 @@
+/* Sets the eight halfwords at +0x5c to -1. */
+
 void func_ov022_0208a6b0(int arg0) {
     int i = 0;
     do {

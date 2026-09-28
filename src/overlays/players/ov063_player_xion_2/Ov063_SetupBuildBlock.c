@@ -1,3 +1,6 @@
+/* Sets up the actor's build block: configures its grid slot and acquires its two grid slots, and
+ * starts its cue track. */
+
 typedef unsigned char u8;
 
 struct Ov063BuildBlock {

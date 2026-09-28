@@ -1,3 +1,6 @@
+/* Initialises the actor's AI node: action 0, nothing pending, its position and animation-end
+ * pointers, stance bits 0x16, and its three step handlers. */
+
 extern void SetIndexedSlot();
 extern void Ov284_stSetDispFlags82(void);
 extern void Ov284_DispatchSubStateByte(void);

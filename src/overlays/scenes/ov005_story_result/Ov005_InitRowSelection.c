@@ -1,3 +1,6 @@
+/* Initialises the reward list selection from the column counts (starting on the second column when
+ * the first is empty) and the scrollbar. */
+
 typedef unsigned char u8;
 typedef struct Ov005Context {
     char opaque[0x4bfc];

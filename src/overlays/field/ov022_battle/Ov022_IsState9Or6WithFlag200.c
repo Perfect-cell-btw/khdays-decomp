@@ -1,3 +1,5 @@
+/* Whether the state is 9, or 6 with flag 0x200. */
+
 int Ov022_IsState9Or6WithFlag200(int p)
 {
     int t = *(int *)(p + 4);

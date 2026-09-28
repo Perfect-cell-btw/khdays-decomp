@@ -1,3 +1,6 @@
+/* Script command: starts the opening movie player, drains its stream to the given point and uploads
+ * its text. */
+
 extern int ByteCode_ResolveOperand(void *a);
 extern void Ov012_ArmAndStart(int x);
 extern void Ov012_MobiClip_DrainStream(int x, int y);

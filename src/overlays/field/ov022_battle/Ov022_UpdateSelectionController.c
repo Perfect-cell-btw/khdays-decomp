@@ -1,3 +1,6 @@
+/* Updates the lock-on label when the selected candidate changes: shows its entry label (or hides
+ * it) and marks it as seen. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

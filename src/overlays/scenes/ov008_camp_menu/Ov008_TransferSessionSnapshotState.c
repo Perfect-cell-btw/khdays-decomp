@@ -1,3 +1,6 @@
+/* Sends the session snapshot to the peers in chunks (host) or receives it (clients): player
+ * records, thresholds, rules and configuration, then moves on once everyone has it. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

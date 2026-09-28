@@ -1,3 +1,6 @@
+/* AI step: sets stance bit 0x40, posts pose 7, starts the launch animation and continues with the
+ * launch tick. */
+
 extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_StartAnim(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *cb);

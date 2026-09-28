@@ -1,3 +1,5 @@
+/* Returns the next RC4 keystream byte (advancing the state). */
+
 struct Rc4 {
     int i;
     int j;

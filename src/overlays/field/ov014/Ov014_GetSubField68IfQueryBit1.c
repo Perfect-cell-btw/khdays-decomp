@@ -1,3 +1,6 @@
+/* Returns the pool's value (+0x68) when bit 1 of the element's game-state field is set, otherwise
+ * NULL. */
+
 extern int GameState_GetField();
 
 void *Ov014_GetSubField68IfQueryBit1(int this_) {

@@ -1,3 +1,5 @@
+/* Requests leaving the reward menu. */
+
 typedef struct Ov005Context { char opaque00[0x4c34]; int exitRequested; } Ov005Context;
 extern Ov005Context *data_ov005_0205b80c;
 void Ov005_MarkMenuExitRequested(void) {

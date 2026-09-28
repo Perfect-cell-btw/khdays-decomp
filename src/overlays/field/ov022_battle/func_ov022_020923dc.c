@@ -1,3 +1,5 @@
+/* Whether every entry of an effect set's pool is free. */
+
 extern int Ov022_GetHi6BitsOfByteVia0x20(int arg0);
 extern int Ov022_IsIndexedRecordByteZero(unsigned int arg0, int arg1);
 

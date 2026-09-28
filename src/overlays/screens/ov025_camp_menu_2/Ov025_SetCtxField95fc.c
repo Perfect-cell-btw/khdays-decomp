@@ -1,3 +1,5 @@
+/* Enables both screen halves and stores the menu state's word at +0x95fc. */
+
 extern int Ov025_EnableBothHalves();
 extern int data_ov025_020b5744;
 

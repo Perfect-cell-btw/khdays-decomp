@@ -1,3 +1,6 @@
+/* AI step: sets the stance bits 0x46, flags the actor, sends the action 0x49 update and continues
+ * with the timed gate. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov292_TimerGateHw60FlipThenAdvance(void);

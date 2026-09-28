@@ -1,3 +1,5 @@
+/* Writes a bit field of the game state's flag array (BitArray_SetField). */
+
 extern void BitArray_SetField();
 extern int data_0204be18;
 

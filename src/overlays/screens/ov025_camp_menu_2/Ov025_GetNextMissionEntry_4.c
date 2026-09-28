@@ -1,3 +1,5 @@
+/* Looks an entry up in page A's list (func_ov025_0208a26c). */
+
 extern int Ov025_GetPageA();
 extern int func_ov025_0208a26c();
 

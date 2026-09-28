@@ -1,3 +1,6 @@
+/* Whether the session is live and the local actor and its target are valid, with the target's flag
+ * set. */
+
 extern int Ov002_PollSession(void);
 extern int func_ov022_02083f0c(void);
 extern int func_ov022_02083f5c(void);

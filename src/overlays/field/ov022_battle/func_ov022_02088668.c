@@ -1,3 +1,5 @@
+/* Returns bit 4 of the setup context's flags (0 without a context). */
+
 extern int data_ov022_020b2e78;
 unsigned int func_ov022_02088668(void) {
     int p = ((int *)&data_ov022_020b2e78)[1];

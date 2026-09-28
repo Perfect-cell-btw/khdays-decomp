@@ -1,3 +1,5 @@
+/* Clears two halfwords of the game state (+0x196c, +0x196e); returns 1. */
+
 extern int data_0204be18;
 
 int Ov069_ShiftGlobalHalfword(void) {

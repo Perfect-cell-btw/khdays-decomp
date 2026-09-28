@@ -1,3 +1,5 @@
+/* Appends a tile's cell to the channel buffer, flagged when its kind is 1 or 4. */
+
 extern int IsKind1Or4(int x);
 extern void ChannelBuf_Append(int a, int b, int c, int d);
 void dispatchByObjTypeBits(int param_1, int param_2) {

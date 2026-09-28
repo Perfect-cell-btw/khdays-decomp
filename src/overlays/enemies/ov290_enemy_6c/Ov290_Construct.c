@@ -1,3 +1,5 @@
+/* Initialises the actor's scale values and sets stance bits 6. */
+
 void Ov290_Construct(char *p) {
     *(int *)(p + 0x70) = 0x800;
     *(int *)(p + 0x64) = 0;

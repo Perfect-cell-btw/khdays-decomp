@@ -1,3 +1,5 @@
+/* Binds an object's tracks 0, 2 and 1 to its block. */
+
 extern void BindAnimTrack(int arg0, int arg1, int arg2, short arg3);
 
 void func_ov022_02094b80(int arg0, int arg1) {

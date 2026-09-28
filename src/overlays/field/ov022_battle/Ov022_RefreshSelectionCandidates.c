@@ -1,3 +1,6 @@
+/* Rescans the lock-on candidates for the local player (by facing or distance, then the actor's
+ * candidate list); returns whether one was selected. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef signed short s16;

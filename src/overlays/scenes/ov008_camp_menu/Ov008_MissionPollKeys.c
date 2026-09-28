@@ -1,3 +1,6 @@
+/* Feeds the key state (the session's in a session, the local one otherwise) to the menu's input
+ * handler. */
+
 extern int Session_Exists(void);
 extern int GetGlobalU16At6(void);
 extern int func_01ff8138(void);

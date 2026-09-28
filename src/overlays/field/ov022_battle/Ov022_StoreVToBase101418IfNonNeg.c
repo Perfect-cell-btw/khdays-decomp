@@ -1,3 +1,6 @@
+/* Stores the value into the dispatcher's three words at +0x10..+0x18 when the index is not
+ * negative. */
+
 void Ov022_StoreVToBase101418IfNonNeg(int p, int a, int v)
 {
     int base = *(int *)(p + 0x20);

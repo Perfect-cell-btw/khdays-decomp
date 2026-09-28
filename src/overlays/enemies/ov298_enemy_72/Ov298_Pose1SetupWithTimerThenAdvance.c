@@ -1,3 +1,6 @@
+/* AI step: measures the target, posts pose 1, sets up the wander heading and a random timer and
+ * continues with the wander tick. */
+
 extern void Ov298_AcquireTargetGapAndAngle(void *node);
 extern void Ov107_PostTagUpdate(int obj, int arg1, int arg2);
 extern int Rand16NextScaled(void);

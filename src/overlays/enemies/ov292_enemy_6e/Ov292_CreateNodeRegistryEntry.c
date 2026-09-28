@@ -1,3 +1,5 @@
+/* Creates the actor's AI registry entry (entering the chase on trigger) and links it. */
+
 extern void CreateRegistryEntry();
 extern void Ov292_EnterChase(void);
 

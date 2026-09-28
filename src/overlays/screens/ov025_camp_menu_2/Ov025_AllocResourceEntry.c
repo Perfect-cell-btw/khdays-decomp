@@ -1,3 +1,5 @@
+/* Takes a free resource entry and fills it with a screen resource. */
+
 extern int Ov025_FindFirstUnusedElem();
 extern void MI_CpuFill8();
 extern void NNS_G2dGetUnpackedScreenData();

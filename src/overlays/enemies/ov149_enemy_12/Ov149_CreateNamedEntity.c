@@ -1,3 +1,5 @@
+/* Creates enemy 18's actor: opens its cached resource by name and initialises it. */
+
 extern int CallocInstance(int a);
 extern void OS_SPrintf(char *buf, const char *fmt, int a);
 extern int Ov107_OpenCachedResourceByName(char *buf);

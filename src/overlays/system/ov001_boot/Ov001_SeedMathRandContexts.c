@@ -1,3 +1,5 @@
+/* Seeds the game's 32-bit and 64-bit random generators from the system's low-entropy data. */
+
 typedef struct { unsigned long long x, mul, add; } Rand64;
 typedef struct { unsigned x, mul, add; } Rand32;
 extern void OS_GetLowEntropyData(unsigned *buf);

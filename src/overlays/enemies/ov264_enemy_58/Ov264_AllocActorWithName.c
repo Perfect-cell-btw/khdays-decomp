@@ -1,3 +1,5 @@
+/* Creates enemy 0x58's actor: opens its cached resource by name and initialises it. */
+
 extern void OS_SPrintf(void *buffer, void *format);
 extern int data_ov264_020cec20;
 extern void *CallocInstance(int size);

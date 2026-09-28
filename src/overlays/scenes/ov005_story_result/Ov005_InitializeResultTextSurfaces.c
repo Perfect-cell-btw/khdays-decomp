@@ -1,3 +1,5 @@
+/* Loads the reward menu's two fonts and sets up its four text surfaces. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

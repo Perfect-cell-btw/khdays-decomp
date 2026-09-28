@@ -1,3 +1,5 @@
+/* Sets the all-missions-complete field once missions 1 to 93 are all complete. */
+
 typedef unsigned int u32;
 extern u32 GameState_GetField(u32,u32);
 extern void GameState_SetField(u32,u32,u32);

@@ -1,3 +1,6 @@
+/* Slides the calendar logo down into place (or stops it when motion is disabled) and moves on when
+ * it arrives. */
+
 typedef struct Fx32Pair {
     int x;
     int y;

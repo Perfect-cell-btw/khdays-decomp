@@ -1,3 +1,5 @@
+/* Claims the actor's attached parts that are not yet claimed and flags it (0x8000). */
+
 extern int Ov022_IsIndexedRecordBit0Set(int a, int i);
 extern void Ov022_SetSlotClaim(int a, int i, int one);
 

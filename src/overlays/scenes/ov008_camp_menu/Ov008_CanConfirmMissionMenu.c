@@ -1,3 +1,5 @@
+/* Whether the mission menu can be confirmed (not busy and the mission group is stale). */
+
 extern char *data_ov008_02090fa0;
 extern int Ov008_IsMissionGroupStale(void);
 

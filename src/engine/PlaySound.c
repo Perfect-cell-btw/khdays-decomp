@@ -1,3 +1,6 @@
+/* Starts a sound effect sequence from the sound archive (on the default bank when none is given).
+ */
+
 extern char *data_0204c234;
 extern int NNS_SndArcPlayerStartSeqArc(void *ptr, int arg1, int arg2);
 

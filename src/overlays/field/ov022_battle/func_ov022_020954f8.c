@@ -1,3 +1,5 @@
+/* In states 6 and 8, flags the object (0x200) and binds its tracks. */
+
 extern void func_ov022_02094b80(int arg0, int arg1);
 void func_ov022_020954f8(unsigned int *arg0) {
     if (arg0[1] != 8 && arg0[1] != 6) return;

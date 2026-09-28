@@ -1,3 +1,5 @@
+/* Once the context's ready flag is set, clears it and returns the idle step. */
+
 extern int NNSi_FndGetCurrentRootHeap();
 extern void Ov025_GetIdleHandler();
 

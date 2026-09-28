@@ -1,3 +1,5 @@
+/* Ticks a drain timer: each period takes one HP from the actor (keeping at least 1). */
+
 extern void Ov022_ActorSetHp(unsigned int *arg0, int arg1);
 
 void func_ov022_0209d0b0(unsigned int *arg0, int *arg1, int arg2) {

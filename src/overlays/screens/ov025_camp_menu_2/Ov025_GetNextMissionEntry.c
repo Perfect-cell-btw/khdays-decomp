@@ -1,3 +1,5 @@
+/* Finds the next entry after the value with a zero count in page A's list. */
+
 extern int Ov025_GetPageA();
 extern int Ov025_FindListObjectWithField10Zero();
 

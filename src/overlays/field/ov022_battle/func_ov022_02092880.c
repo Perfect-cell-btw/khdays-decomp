@@ -1,3 +1,6 @@
+/* Loads a level's four values (clamped to level 9) from the battle table file into the record and
+ * marks it loaded. */
+
 extern int Archive_LoadFile(void *arg0, int arg1, int arg2, int arg3);
 extern void NNSi_FndFreeFromDefaultHeap(int arg0);
 extern int data_ov022_020b2b88;

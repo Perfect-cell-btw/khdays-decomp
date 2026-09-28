@@ -1,3 +1,6 @@
+/* AI dispatcher: when an action is pending, makes it current and installs its step handler (rest or
+ * attack). */
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov299_AiEnterRest(void);
 extern void Ov299_AttackEntry(void);

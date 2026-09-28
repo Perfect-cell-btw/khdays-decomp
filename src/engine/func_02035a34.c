@@ -1,3 +1,5 @@
+/* Clears the 18 halfword pairs of a global 2D table row (0x104-byte rows). */
+
 extern int data_0204c678;
 
 void func_02035a34(int arg0) {

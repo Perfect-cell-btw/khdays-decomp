@@ -1,3 +1,6 @@
+/* Returns the nearest live object of the actor's manager (by squared distance minus their radii),
+ * and that distance. */
+
 extern int *List_First(int list);
 extern int *List_Next(int list);
 extern void VEC_Subtract(int *a, int *b, int *out);

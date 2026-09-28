@@ -1,3 +1,5 @@
+/* Whether a player's actor is locked (flag 0x8000000). */
+
 extern int GetEntryField20ByIndex(int arg0);
 int func_ov022_020886d0(int arg0) {
     int e = GetEntryField20ByIndex(arg0);

@@ -1,3 +1,5 @@
+/* AI step: posts pose 1, sets the wait time and continues with waiting near the target. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov293_AiWaitNearTargetTick(void);

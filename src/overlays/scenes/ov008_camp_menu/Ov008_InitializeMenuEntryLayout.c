@@ -1,3 +1,6 @@
+/* Builds the camp menu's entry layout: loads its layout and resources, hides the optional entries,
+ * and installs each entry's selection callback. */
+
 typedef unsigned int u32;
 
 typedef struct Ov008LayoutTemplate {

@@ -1,3 +1,5 @@
+/* Switches the menu to a page with items when it is not already there, with a sound. */
+
 extern int Ov025_ListHasItems();
 extern void Ov025_Menu_ChangePage();
 extern void PlaySound();

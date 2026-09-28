@@ -1,3 +1,5 @@
+/* Starts dragging the info panel unless it is locked. */
+
 extern char *Ov008_GetPageB(void);
 extern void Ov008_DragInfoPanel(char *);
 void Ov008_BeginInfoPanelDrag(void)

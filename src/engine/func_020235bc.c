@@ -1,3 +1,5 @@
+/* Clears a bit of a global bit array (data_0204be18 + 0x10). */
+
 extern void BitArray_ClearBit();
 extern int data_0204be18;
 

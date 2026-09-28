@@ -1,3 +1,6 @@
+/* Resolves the calendar rank value for a day from the missions available on it and how many are
+ * cleared. */
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;

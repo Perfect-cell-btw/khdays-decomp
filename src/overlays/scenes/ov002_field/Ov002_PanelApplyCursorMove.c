@@ -1,3 +1,7 @@
+/* Moves the panel cursor from one row to another: classifies the panel mode, repaints the mode,
+ * then clears the old row's highlight and draws the new one for the panel's class (primary rows,
+ * grid, item lists, entries). */
+
 #pragma opt_common_subs off
 #pragma opt_dead_assignments off
 

@@ -1,3 +1,5 @@
+/* Picks a random item from a weighted item table and adds it to the reward list. */
+
 typedef unsigned int u32;
 typedef unsigned short u16;
 typedef struct Ov005MenuItemHeader {char data[0x24c];} Ov005MenuItemHeader;

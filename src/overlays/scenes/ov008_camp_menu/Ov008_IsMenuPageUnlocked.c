@@ -1,3 +1,5 @@
+/* Whether a menu page is unlocked: some need a progress level, two need a key item. */
+
 typedef unsigned char u8;
 
 struct GameState {

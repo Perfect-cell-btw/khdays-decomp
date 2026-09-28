@@ -1,3 +1,6 @@
+/* Allocates and clears the message-database table (33 entries) and sets each entry's default mode.
+ */
+
 extern void *AllocFromExpHeapWrapper(unsigned int size, int heap);
 extern void MI_CpuFill8(void *dst, unsigned char val, unsigned int size);
 

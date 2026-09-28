@@ -1,3 +1,6 @@
+/* Starts an object's current sub-state: flags the local player's entry, resets the sub-state's
+ * target, runs the sub-state's entry handler and decrements its level counter (outside replay). */
+
 extern int Session_GetLocalPlayerIndex(void);
 extern void func_ov022_0208a6b0(int obj);
 extern int Load2DArrayU8(int kind, int idx);

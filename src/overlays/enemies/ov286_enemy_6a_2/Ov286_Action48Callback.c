@@ -1,3 +1,6 @@
+/* AI step: sets the stance bits 0xc0, flags the actor, sends the action 0x48 update and continues
+ * with the wait tick. */
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov286_Wait_Tick(void);

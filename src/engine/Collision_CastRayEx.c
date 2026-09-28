@@ -1,3 +1,6 @@
+/* Casts a ray against the world's collision (Collision_RunRayCast) with flags and an object to
+ * exclude. */
+
 typedef struct {
     int word0;
     int word4;

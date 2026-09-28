@@ -1,3 +1,5 @@
+/* Stores a pair of words into a global object. */
+
 extern int data_0204bda4;
 
 void StoreGlobalPairAt10(int arg0, int arg1) {

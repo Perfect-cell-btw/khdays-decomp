@@ -1,3 +1,5 @@
+/* Whether the HUD panel's state (+0x18c) is between 1 and 8 (open). */
+
 extern int data_ov002_0207f614;
 
 int Ov002_Hud_IsPanelOpen(void) {

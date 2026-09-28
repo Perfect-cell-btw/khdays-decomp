@@ -1,3 +1,5 @@
+/* Sets a bit of the list table's active mask (0xffff sets every bit). */
+
 typedef struct {
     unsigned char pad0000[0x1fc];
     unsigned int dwActiveMask;

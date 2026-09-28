@@ -1,3 +1,5 @@
+/* Maps a menu object type to its icon (8 by default, -1 for none). */
+
 int
 Ov008_MapMenuObjectTypeToIcon(int value)
 {

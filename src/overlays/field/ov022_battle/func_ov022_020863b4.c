@@ -1,3 +1,5 @@
+/* Frees the three lock-on marker sprites. */
+
 extern void Ov002_FreeBufferAndClearStatus(int arg0);
 
 void func_ov022_020863b4(int arg0) {

@@ -1,3 +1,5 @@
+/* Enables the lock-on selection when it is already active or when a candidate is found. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern int func_ov022_02083f0c(void);
 extern void Ov022_SetSelectionEnabled(int arg0);

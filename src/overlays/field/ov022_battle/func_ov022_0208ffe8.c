@@ -1,3 +1,5 @@
+/* Draws a node unless it is right next to the camera. */
+
 extern int VEC_Distance(int *a, int *b);
 extern void Scene_DrawNode(unsigned short *p);
 

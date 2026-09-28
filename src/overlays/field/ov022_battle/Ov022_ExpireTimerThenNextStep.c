@@ -1,3 +1,6 @@
+/* Re-enables actor input, and once the context's timer has run for its duration returns to the hub
+ * step (clearing the timer); does nothing during replay. */
+
 extern void Ov022_SetActorInputEnabled(int a);
 extern unsigned long long OS_GetTick(void);
 extern void Ov022_StateReturnToHub(void);

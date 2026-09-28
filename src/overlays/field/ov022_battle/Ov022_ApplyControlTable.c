@@ -1,3 +1,6 @@
+/* Runs an object's control word: notifies a peer hit, queues a point (or parks the value) for the
+ * local side, or plays the control record its selector picks from the actor's table. */
+
 extern unsigned int *GetEntryField20ByIndex(int kind);
 extern void Ov022_NotifyPeerHit(unsigned int *base, int obj, int a, int b);
 extern int QueryActiveStateOrDelegate(void);

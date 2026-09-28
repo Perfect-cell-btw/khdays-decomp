@@ -1,3 +1,5 @@
+/* Creates the actor's AI registry entry and links it. */
+
 extern void CreateRegistryEntry();
 extern void Ov299_InitStateSlots(void);
 

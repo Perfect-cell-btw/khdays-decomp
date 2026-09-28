@@ -1,3 +1,6 @@
+/* Applies an actor's recoil: adds its horizontal velocity to the position, halves the velocity, and
+ * flags the actor while it is still strong (clearing it when it becomes negligible). */
+
 extern void VEC_Add(int *a, int *b, int *c);
 extern void ScaleVec3Fx12(int scale, int *src, int *dst);
 extern int VEC_Mag(int *v);

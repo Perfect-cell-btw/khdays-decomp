@@ -1,3 +1,7 @@
+/* Initialises the battle state: resets the camera and selector fields, registers the network
+ * handlers, loads the marker panels and ov029, sets up each player's state and the header limits;
+ * returns the scene dispatch step. */
+
 typedef struct Ov022InitHeader {
     short values[13];
 } Ov022InitHeader;

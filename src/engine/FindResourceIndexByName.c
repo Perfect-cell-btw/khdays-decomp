@@ -1,3 +1,6 @@
+/* Looks a name up in the model's G3D resource dictionary (the name is padded to 16 bytes first);
+ * returns its index or -1. */
+
 extern void MI_CpuFill8(void *dst, unsigned char val, unsigned int size);
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int size);
 extern int strlen(void *p);

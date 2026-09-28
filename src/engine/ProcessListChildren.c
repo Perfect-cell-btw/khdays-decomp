@@ -1,3 +1,5 @@
+/* Calls the hook of every child in the object's child list (+0x88). */
+
 extern void *List_First();
 extern void Node_CallHook80();
 extern void *List_Next();

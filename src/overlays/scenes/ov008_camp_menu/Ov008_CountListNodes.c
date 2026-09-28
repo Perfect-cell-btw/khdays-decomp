@@ -1,3 +1,5 @@
+/* Returns the number of objects in the object's list. */
+
 extern void *NNS_FndGetNextListObject(void *list, void *object);
 
 int Ov008_CountListNodes(void *object)

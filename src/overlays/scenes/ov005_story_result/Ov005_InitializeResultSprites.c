@@ -1,3 +1,6 @@
+/* Initialises the reward menu's sprites: loads the sprite set, disables the entries, creates the 14
+ * new-item indicators and installs the touch callbacks. */
+
 typedef unsigned int u32;
 typedef void (*EntryCallback)(void);
 typedef struct Ov005SpriteManager {char data[0x4a80];} Ov005SpriteManager;

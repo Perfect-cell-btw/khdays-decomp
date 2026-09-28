@@ -1,3 +1,5 @@
+/* Mirrors the brightness check into the battle context's flag 0x200; returns it. */
+
 extern int func_ov022_02083e54(void);
 extern int *data_ov022_020b2e60;
 int func_ov022_02083fdc(void) {

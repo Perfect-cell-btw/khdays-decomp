@@ -1,3 +1,6 @@
+/* Whether an approach point beats the current best (no best yet, higher score, or same score and
+ * closer). */
+
 int func_ov022_02085cc0(int *arg0, int *arg1) {
     int ip = 0;
     if (arg0[2] == 0) ip = 1;

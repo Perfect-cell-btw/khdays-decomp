@@ -1,3 +1,5 @@
+/* AI step: steers the actor and, when the animation ends, queues action 4. */
+
 extern void Ov292_StepSteering();
 extern void SetIndexedSlot();
 

@@ -1,3 +1,6 @@
+/* Creates the main and sub expanded heaps and their allocators, and sets the default and current
+ * heaps. */
+
 extern void Ov001_CreateMainAndSubHeaps(void **out_heap0, void **out_heap1);
 extern void NNS_FndInitAllocatorForExpHeap(void *allocator, void *heap, int align);
 extern void **data_0204c024;

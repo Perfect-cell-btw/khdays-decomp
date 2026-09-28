@@ -1,3 +1,5 @@
+/* Whether the panel's state (+0x18c) is outside 9..11. */
+
 extern int data_ov002_0207f614;
 
 int Ov002_GetPanelField018c(void) {

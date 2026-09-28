@@ -1,3 +1,5 @@
+/* Clears three fields of the global state block. */
+
 extern int data_0204c234;
 
 void ClearGlobalFields80to84(void) {

@@ -1,3 +1,5 @@
+/* Resets the actor's two counters and timers when flag 4 is set. */
+
 void func_ov022_02097de4(int arg0) {
     char *p = (char *)(arg0 + 0x2bb0);
     if ((*(unsigned int *)(arg0 + 0x24) & 4) == 0) return;

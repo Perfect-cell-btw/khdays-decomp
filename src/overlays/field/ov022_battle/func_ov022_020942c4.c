@@ -1,3 +1,5 @@
+/* Draws an active object's node while it is animating. */
+
 extern int Ov022_IsBit0Set_5(unsigned char *arg0);
 extern void Scene_DrawNode(unsigned short *arg0);
 void func_ov022_020942c4(unsigned char *arg0) {

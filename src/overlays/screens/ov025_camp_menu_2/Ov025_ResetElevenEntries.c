@@ -1,3 +1,5 @@
+/* Frees the buffers of the eleven text surfaces. */
+
 extern void FreeAllListNodeSubBuffers();
 
 void Ov025_ResetElevenEntries(int arg0) {

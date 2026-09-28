@@ -1,3 +1,6 @@
+/* Moves the reward list selection in a direction (scrolling and switching columns as needed) and
+ * marks the selected item as seen; returns whether it moved. */
+
 typedef struct Ov005SelectionState {
     signed char selectedItem,activeRow,firstVisibleItem,unknown03;
     int maxFirstVisibleItem,cachedRowItemCounts[2],scrollThumbHeight;

@@ -1,3 +1,6 @@
+/* Sends the player's state message (kind 0xc, sub-kind 3) with its current value; stores the
+ * message handle. */
+
 extern int QueryActiveStateOrDelegate(void);
 extern int func_02031384(int a, void *b, int c);
 

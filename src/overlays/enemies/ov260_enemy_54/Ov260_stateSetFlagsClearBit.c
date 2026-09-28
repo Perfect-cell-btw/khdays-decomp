@@ -1,3 +1,5 @@
+/* AI step: sets the stance bits 0x86, clears the model flag and continues with the idle entry. */
+
 struct bf { unsigned b : 8; };
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov260_IdleEntry(void);

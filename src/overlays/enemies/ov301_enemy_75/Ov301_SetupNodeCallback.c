@@ -1,3 +1,5 @@
+/* AI step: sets the contact flags, clamps the actor's value and continues with the idle step. */
+
 extern int SetIndexedSlot(void *obj, int slot, void *cb);
 extern void Ov301_NodeCallbackIdleStep(void);
 

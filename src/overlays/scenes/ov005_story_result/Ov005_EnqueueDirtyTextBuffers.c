@@ -1,3 +1,5 @@
+/* Uploads the text row buffers marked dirty and clears the marks. */
+
 typedef struct Ov005Context {
     char opaque00[0x4be4];
     void *rowBuffers[3];

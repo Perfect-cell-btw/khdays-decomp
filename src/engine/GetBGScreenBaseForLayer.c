@@ -1,3 +1,6 @@
+/* Returns the screen base of a background layer through the layer's callback in the table, or 0
+ * when it has none. */
+
 extern char data_02041fd4[];
 
 int GetBGScreenBaseForLayer(int index) {

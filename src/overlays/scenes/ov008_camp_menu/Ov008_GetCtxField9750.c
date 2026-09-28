@@ -1,3 +1,5 @@
+/* Returns the menu state's byte at +0x9750. */
+
 extern int data_ov008_02090f04[];
 int Ov008_GetCtxField9750(void)
 {

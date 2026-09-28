@@ -1,3 +1,5 @@
+/* AI step: counts the timer down and then posts pose 0x15 and continues. */
+
 extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov276_AiStep_QueueAction2OnAnimEnd();

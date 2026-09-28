@@ -1,3 +1,6 @@
+/* Clears the context's flag 2, takes over the pending world state byte and sets the context step to
+ * 4. */
+
 extern unsigned char Ov002_GetRootField8bad(void);
 extern void Ov002_World_SetByte8BAD(int arg0);
 extern int data_ov022_020b2e60;

@@ -1,3 +1,5 @@
+/* Sets bit 1 on the object's two slots that are in use. */
+
 extern int Slot_SetFlagBit1();
 
 void Ov005_ReleaseTwoSlots_2(int a, int *b) {

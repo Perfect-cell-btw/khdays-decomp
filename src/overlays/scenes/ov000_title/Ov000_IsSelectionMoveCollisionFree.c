@@ -1,3 +1,5 @@
+/* Whether moving the selected list entry by the offset keeps it clear of every other entry. */
+
 typedef unsigned char u8;
 
 typedef struct {

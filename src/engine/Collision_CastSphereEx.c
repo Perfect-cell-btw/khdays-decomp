@@ -1,3 +1,6 @@
+/* Casts a sphere against the world's collision (Collision_RunSphereCast) with flags and an object
+ * to exclude. */
+
 typedef struct {
     int word0;
     int word4;

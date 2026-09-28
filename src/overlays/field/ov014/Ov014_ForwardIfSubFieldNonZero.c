@@ -1,3 +1,5 @@
+/* Releases the element's model instance when its pool has models. */
+
 extern void ReleaseField74AndCleanup();
 
 void Ov014_ForwardIfSubFieldNonZero(int this_) {

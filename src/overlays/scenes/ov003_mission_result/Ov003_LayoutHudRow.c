@@ -1,3 +1,6 @@
+/* Lays out a player's row of the result table: the frame, the rank icons and the four stat numbers.
+ */
+
 #pragma opt_strength_reduction off
 
 typedef unsigned char u8;

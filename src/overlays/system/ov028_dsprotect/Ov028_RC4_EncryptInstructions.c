@@ -1,3 +1,6 @@
+/* Encrypts ARM instructions word by word: the two low bytes with the RC4 keystream, the third
+ * through the opcode table, the condition byte kept. */
+
 extern void Ov028_RC4_Byte(unsigned char *table);
 extern unsigned char Ov028_RC4_InitSBox(unsigned int *ctx);
 

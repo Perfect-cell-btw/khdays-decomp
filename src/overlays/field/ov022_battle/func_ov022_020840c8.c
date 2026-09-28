@@ -1,3 +1,5 @@
+/* Frees the lock-on marker sprites and the UI sprites of the selection controller. */
+
 extern int NNSi_FndGetCurrentRootHeap(void);
 extern void func_ov022_020863b4(int arg0);
 extern void func_ov022_02086058(int arg0);

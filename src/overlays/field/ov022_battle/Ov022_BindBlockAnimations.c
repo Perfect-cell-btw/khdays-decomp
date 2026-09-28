@@ -1,3 +1,6 @@
+/* Rebinds the model's five animation tracks to a block: removes each bound animation, binds the new
+ * one and rewinds it. */
+
 extern void NNS_G3dRenderObjRemoveAnmObj(unsigned int *pool, int handle);
 extern void BindAnimTrack(int anim, unsigned short slot, int block, short arg);
 extern int *Anim_SetFrameWrapped(unsigned short *anim, unsigned short slot, int frame);

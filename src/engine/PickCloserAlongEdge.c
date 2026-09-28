@@ -1,3 +1,6 @@
+/* Projects a point onto an edge: returns the fraction along the edge (and the projected point), or
+ * -1 when the projection falls outside it. */
+
 extern void VEC_Subtract();
 extern int VEC_DotProduct();
 extern int FX_Div();

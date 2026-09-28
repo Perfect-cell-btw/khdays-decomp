@@ -1,3 +1,6 @@
+/* Starts the save menu's screen transition to a value (fading out over the duration, or at once
+ * when no transition is running). */
+
 typedef unsigned char u8;
 
 typedef struct MenuContext {

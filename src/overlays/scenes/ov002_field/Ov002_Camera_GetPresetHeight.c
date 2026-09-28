@@ -1,3 +1,5 @@
+/* Returns the camera preset height for the index (table of 0xc-byte presets). */
+
 extern int QueryActiveStateOrDelegate();
 extern int GetEntryField20ByIndex();
 extern int data_ov002_0207e768;

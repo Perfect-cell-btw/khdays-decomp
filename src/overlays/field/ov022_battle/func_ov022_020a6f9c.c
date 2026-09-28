@@ -1,3 +1,5 @@
+/* Runs the actor's pending action or tail state unless its guard object is busy. */
+
 extern int Ov022_IsBit0Set_5(unsigned char *p);
 extern int func_ov022_02094074(unsigned char *p);
 extern int Ov022_TryPendingAction(unsigned int *p, int a);

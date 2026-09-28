@@ -1,3 +1,5 @@
+/* Returns the local player's index in the active wireless session, or 0 outside a session. */
+
 extern int Session_IsActive(void *p);
 extern unsigned char *data_0204c228;
 

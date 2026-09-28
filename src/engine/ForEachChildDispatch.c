@@ -1,3 +1,5 @@
+/* Runs the draw callbacks of every child in the object's child list (+0x88). */
+
 extern void *List_First();
 extern void DispatchObjectCallbacks();
 extern void *List_Next();

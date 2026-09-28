@@ -1,3 +1,5 @@
+/* Records a panel target in a lock-on selection (type 2) with its approach point. */
+
 typedef struct { int a, b, c; } T3_02084810;
 void func_ov022_02084810(int *arg0, int arg1, T3_02084810 *arg2) {
     *(T3_02084810 *)(arg0 + 7) = *arg2;
