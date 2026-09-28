@@ -45,7 +45,7 @@ extern void  SceneNode_Enable(void *pNode);                             /* Scene
 extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                  /* Obj_SetFlagBit3 */
 extern void  Ov021_StoreArgsRunTwoSubActionsIfFlag4(Ov021PrizeBox *pSelf, void *pNode, int nTrack, int nLength, int nFrame); /* Ov021_PrizeBoxPlayAnim */
 extern int   Ov002_GetStateWord(void);                              /* the mission id */
-extern void  Res_RequestIdPair(int nId);                                 /* Res_RequestIdPair */
+extern void Res_RequestIdPair(int nId);                                 /* Res_RequestIdPair */
 
 void Ov021_PrizeBoxStart(Ov021PrizeBox *pSelf)
 {

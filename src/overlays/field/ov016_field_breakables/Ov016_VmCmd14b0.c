@@ -21,13 +21,13 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov016_CreateHazardClass(int id, Ov016EmitParams *params);
+extern int Ov016_CreateHazardClass(int nCount, Ov016EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov016_VmCmd14b0(void *self, char *descs) {
     Ov016EmitParams params;
     int target;
-    int id;
+    int nCount;
 
     params.nField00 = ByteCode_ResolveOperand(self, descs + 0x10);
     params.nField04 = ScriptVm_ReadOperandInt(self, descs + 0x18);
@@ -38,7 +38,7 @@ int Ov016_VmCmd14b0(void *self, char *descs) {
     params.bField0e = ScriptVm_ReadOperandInt(self, descs + 0x40);
     params.bField0f = ScriptVm_ReadOperandInt(self, descs + 0x48);
     target = ScriptVm_ReadOperandInt(self, descs);
-    id = ScriptVm_ReadOperandInt(self, descs + 0x8);
-    Ov002_SetModuleSlot(target, Ov016_CreateHazardClass((unsigned short)id, &params));
+    nCount = ScriptVm_ReadOperandInt(self, descs + 0x8);
+    Ov002_SetModuleSlot(target, Ov016_CreateHazardClass((unsigned short)nCount, &params));
     return 1;
 }

@@ -18,7 +18,7 @@ typedef struct {
     signed char bRelease;           /* +0x1a */
 } Ov002TravelClassDesc;
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
 
 extern void Ov002_ApplyInputEvent(void);
@@ -37,11 +37,11 @@ extern void Ov002_AddrOfField0xE0_4(void);
  * blanks the name and copies the descriptor's one over it when there is one,
  * carries the class's parameters across and installs its nine handlers.
  */
-void *Ov002_CreateTravelClass(void *pCtx, const Ov002TravelClassDesc *pDesc)
+void *Ov002_CreateTravelClass(int nCount, const Ov002TravelClassDesc *pDesc)
 {
     char *pTable;
 
-    pTable = (char *)Ov002_CreateEntryPool(0x80, 0x2c8, pCtx);
+    pTable = (char *)Ov002_CreateEntryPool(0x80, 0x2c8, nCount);
 
     *(char *)(pTable + 0x58) = 0;
     if (pDesc->pName != 0) {

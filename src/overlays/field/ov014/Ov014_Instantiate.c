@@ -1,8 +1,9 @@
-/* Instantiate the ov014 object: allocate class 0x70 (0x138 bytes) on the given
- * owner, copy the descriptor's 0x10-byte name into +0x58, carry its two extra
- * words to +0x68/+0x6c, then fill the handler table at +0x8..+0x2c and +0x3c
- * with this overlay's entry points and set the type tag at +0x4c to 0x12. */
-extern void *Ov002_CreateEntryPool(int cls, int size, int owner);
+/* Instantiate the ov014 object class: allocate its 0x70-byte table with room for `nCount`
+ * 0x138-byte entries (Ov002_CreateEntryPool), copy the descriptor's 0x10-byte name into
+ * +0x58, carry its two extra words to +0x68/+0x6c, then fill the handler table at
+ * +0x8..+0x2c and +0x3c with this overlay's entry points and set the type tag at +0x4c to
+ * 0x12. */
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *dst, const char *src, unsigned int n);
 
 extern void Ov014_OnMessage(void);
@@ -16,8 +17,8 @@ extern void Ov014_GetOwnerIfFlag8(void);
 extern void Ov014_AddrOfField0x1C(void);
 extern void Ov014_InstanceHookNoOp_3(void);
 
-void *Ov014_Instantiate(int owner, int *desc) {
-    char *self = (char *)Ov002_CreateEntryPool(0x70, 0x70 + 0xc8, owner);
+void *Ov014_Instantiate(int nCount, int *desc) {
+    char *self = (char *)Ov002_CreateEntryPool(0x70, 0x70 + 0xc8, nCount);
 
     strncpy(self + 0x58, (const char *)desc[0], 0x10);
     *(int *)(self + 0x68) = desc[1];

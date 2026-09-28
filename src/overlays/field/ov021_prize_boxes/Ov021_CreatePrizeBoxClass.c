@@ -1,13 +1,13 @@
-/* Ov021_CreatePrizeBoxClass -- Ov021_CreatePrizeBoxClass: allocates the class-0x11 definition (ov002
- * object class 0x158, 0x1c0 bytes per piece, one piece per prize), copies the descriptor's
- * model name into +0x58 (emptied first, copied only when the descriptor names one), its
- * parameter word (+0x68), node kind (+0x6c), three placement shorts (+0x6e..+0x72), halfword
+/* Ov021_CreatePrizeBoxClass -- Ov021_CreatePrizeBoxClass: allocates the class-0x11 definition (a
+ * 0x158-byte table with room for `nCount` 0x1c0-byte pieces, one per prize), copies the
+ * descriptor's model name into +0x58 (emptied first, copied only when the descriptor names one),
+ * its parameter word (+0x68), node kind (+0x6c), three placement shorts (+0x6e..+0x72), halfword
  * (+0x74) and byte (+0x76); on the host it builds the prize order (+0x138: 0..n-1, then 32
  * random swaps, Rand16NextScaled 02023e80) so each box of the class gets a different prize;
  * copies the descriptor's six-byte prizes into +0x78 (MI_CpuCopy8) and installs the ten
- * prize-box handlers (message 0207faf8, init 0207fbb8, refresh 0207fca0, release 0207fb80,
- * start 0207fbc8, hit 0207fd98, node 0207fec0, owner 0207fed4, 0207fee0, 0207fee8 at +0x3c)
- * and stamps kind 0x11.  The prize box is ov021's box holding one prize of a shuffled list. */
+ * prize-box handlers (message 0207faf8, init 0207fbb8, refresh 0207fca0, release 0207fb80, start
+ * 0207fbc8, hit 0207fd98, node 0207fec0, owner 0207fed4, 0207fee0, 0207fee8 at +0x3c) and stamps
+ * kind 0x11.  The prize box is ov021's box holding one prize of a shuffled list. */
 
 #include "nitro/types.h"
 
@@ -69,7 +69,7 @@ typedef struct Ov021PrizeBoxDef {
     s8   aOrder[0x20];        /* 0x138: which prize each box gets */
 } Ov021PrizeBoxDef;
 
-extern void *Ov002_CreateEntryPool(int nClass, int nSize, int nCount);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nLen);
 extern int   Session_GetLocalPlayerIndex(void);                                     /* Session_GetLocalPlayerIndex */
 extern int   Rand16NextScaled(int nRange);                               /* Rand16NextScaled */

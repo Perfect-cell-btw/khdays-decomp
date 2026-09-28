@@ -43,7 +43,7 @@ extern void *InsertSortedEntryWithKey();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern int Ov107_CloneResourceTransform();
-extern void Res_RequestIdPair();
+extern void Res_RequestIdPair(int nId);
 extern void List_Init();
 
 void Ov292_InitNamedEntityActor(char *self)

@@ -80,9 +80,9 @@ extern void Srt_SetScaleUniform(void *, int);
 extern void Ov107_EnqueueValue(struct Ov234Actor *, int);
 extern int *List_InsertSorted(void *, int, int);
 extern int Ov107_CloneResourceTransform(void *);
-extern int Res_RequestIdPair(int);
+extern void Res_RequestIdPair(int nId);
 
-int Ov234_InitEffectActor(struct Ov234Actor *arg0)
+void Ov234_InitEffectActor(struct Ov234Actor *arg0)
 {
     struct Ov234Actor *self;
     int minY = 0x17;
@@ -152,5 +152,5 @@ int Ov234_InitEffectActor(struct Ov234Actor *arg0)
     self->handle38c = *slot;
 
     self->value3b8 = 0;
-    return Res_RequestIdPair(0x178);
+    Res_RequestIdPair(0x178);
 }

@@ -35,7 +35,8 @@ typedef struct {
 extern void Ov263_rotateVecByOwnerYaw(VecFx32 *out, int self, const VecFx32 *ref);
 extern void func_ov107_020c0b90(int owner, int effect, VecFx32 v, int a);
 extern void Ov263_AcquireTarget(int self);
-extern void Ov263_Item_RelayoutAndStoreVec(int muzzle, int a, const VecFx32 *dir, signed char spin, int pt);
+extern void Ov263_Item_RelayoutAndStoreVec(int muzzle, const VecFx32 *pos, const VecFx32 *dir,
+                                    signed char spin, int pt);
 extern void SetIndexedSlot(int self, int action, void *cb);
 extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov107_StartAnim(int owner, int mode, int arg);
@@ -80,7 +81,7 @@ void Ov263_AiFireVolleyTick(int self) {
             dir.z = data_0203d210[idx * 2 + 1];
 
             Ov263_Item_RelayoutAndStoreVec(*(int *)(ctx[0] + *(unsigned char *)((char *)ctx + 0x4b) * 4 + 0x38c),
-                                ctx[3], &dir,
+                                (const VecFx32 *)ctx[3], &dir,
                                 *(unsigned char *)((char *)ctx + 0x4b) == 1 ? -1 : 1,
                                 ctx[5] + 0x190);
         }

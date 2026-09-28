@@ -21,7 +21,7 @@ extern void *Ov002_LookupChannelEntry(const char *pName);                 /* nam
 extern void  Entity_Register(void *pNode, void *pEntry, int nA, int nB); /* bind a model node */
 extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);         /* Actor_SetVecAndSyncChild */
 extern void  Ov015_StoreArgsRunTwoSubActionsIfFlag4(void *pPickup, void *pSequence, int nArg, int nSpin, int nRise); /* Ov015_StoreArgsRunTwoSubActionsIfFlag4 */
-extern void  Res_RequestIdPair(int nId);                                 /* Res_RequestIdPair */
+extern void Res_RequestIdPair(int nId);                                 /* Res_RequestIdPair */
 extern void  RegisterSeqAndInit(void *pNode, void *pEntry, int nA, int nB); /* RegisterSeqAndInit */
 extern const Ov015PickupKindRow data_ov015_020828d4[];              /* per-kind pickup rows */
 

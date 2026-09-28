@@ -7,9 +7,9 @@ extern char *Ov105_GetContext(void);
 extern unsigned short Ov105_GetSessionLinkState(void);
 extern int Ov105_GetSessionChannel(void);
 
-/* Installs the per-slot wireless event handler and fires an initial "state" event at it so the
+/* Installs the wireless event handler of one port and fires an initial "state" event at it so the
  * caller sees the current channel and link state straight away. */
-int Ov105_SetSlotEventHandler(int slot, void (*callback)(void *), void *arg) {
+int Ov105_SetSlotEventHandler(unsigned short port, void (*callback)(void *), void *arg) {
     char event[0x44];
     char *state;
     int enabled;
@@ -19,7 +19,7 @@ int Ov105_SetSlotEventHandler(int slot, void (*callback)(void *), void *arg) {
         *(short *)event = 0x82;
         *(short *)(event + 2) = 0;
         *(short *)(event + 4) = 0x19;
-        *(short *)(event + 6) = (short)slot;
+        *(short *)(event + 6) = (short)port;
         *(int *)(event + 8) = 0;
         *(int *)(event + 0xc) = 0;
         *(short *)(event + 0x10) = 0;
@@ -34,7 +34,7 @@ int Ov105_SetSlotEventHandler(int slot, void (*callback)(void *), void *arg) {
         OS_RestoreInterrupts(enabled);
         return err;
     }
-    state = Ov105_GetContext() + slot * 4;
+    state = Ov105_GetContext() + port * 4;
     *(void **)(state + 0xcc) = (void *)callback;
     *(void **)(state + 0x10c) = arg;
     if (callback != 0) {

@@ -62,7 +62,7 @@ extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern int Ov107_CloneResourceTransform();
 extern void *Ov150_Actor_New();
-extern void Res_RequestIdPair();
+extern void Res_RequestIdPair(int nId);
 
 void Ov150_ActorInit(int param)
 {

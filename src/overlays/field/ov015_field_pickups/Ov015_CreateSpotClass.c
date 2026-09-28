@@ -59,7 +59,7 @@ typedef struct Ov015SpotSpec {
     Ov015SpotSpecRow aRow[1]; /* 0x04 */
 } Ov015SpotSpec;
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx); /* build a class table */
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count); /* build a class table */
 extern void *NNSi_FndAllocFromDefaultExpHeap(u32 nSize);
 extern void  MI_CpuCopy8(const void *pSrc, void *pDst, u32 nSize);
 extern u64   func_020203d0(u64 nValue, int nShift);                             /* 64-bit shift left */
@@ -73,7 +73,7 @@ extern void  Ov015_SpotFacingForInteraction(void);
 extern void  Ov015_AddrOfField0x30_2(void);
 extern void  Ov015_Spot_SetPosition(void);
 
-Ov015SpotDef *Ov015_CreateSpotClass(void *pCtx, Ov015SpotSpec *pSpec)
+Ov015SpotDef *Ov015_CreateSpotClass(int nCount, Ov015SpotSpec *pSpec)
 {
     int nId;
     int m;
@@ -86,7 +86,7 @@ Ov015SpotDef *Ov015_CreateSpotClass(void *pCtx, Ov015SpotSpec *pSpec)
     int nTable;
     char nLink;    /* the link id as a plain char (s8 codes differently), compared and stored in the table */
     int j;
-    pDef = Ov002_CreateEntryPool(sizeof(Ov015SpotDef), 0x58, pCtx);
+    pDef = Ov002_CreateEntryPool(sizeof(Ov015SpotDef), 0x58, nCount);
     for (i = 0; i < pSpec->nRows; i++) {
         row = pSpec->aRow[i];
         nTable = row.nTable;

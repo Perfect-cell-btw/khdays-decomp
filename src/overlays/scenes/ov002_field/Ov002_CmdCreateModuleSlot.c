@@ -21,13 +21,13 @@ typedef struct {
 } Ov002SlotArg;
 
 extern int ScriptVm_ReadOperandInt(void *vm, char *operand);
-extern int Ov002_CreateSpareClass(u16 kind, Ov002SlotArg *arg);
+extern int Ov002_CreateSpareClass(int nCount, Ov002SlotArg *arg);
 extern void Ov002_SetModuleSlot(int slot, int handle);
 
 int Ov002_CmdCreateModuleSlot(void *vm, char *table) {
     Ov002SlotArg arg;
     int slot = ScriptVm_ReadOperandInt(vm, table);
-    int kind = ScriptVm_ReadOperandInt(vm, table + 8);
+    int nCount = ScriptVm_ReadOperandInt(vm, table + 8);
 
     if (*(s16 *)(table + 0x10) != 0) {
         arg.wValue = (u16)*(u32 *)(table + 0x14);
@@ -37,6 +37,6 @@ int Ov002_CmdCreateModuleSlot(void *vm, char *table) {
         arg.bHigh = 0;
     }
     arg.bZero = 0;
-    Ov002_SetModuleSlot(slot, Ov002_CreateSpareClass((u16)kind, &arg));
+    Ov002_SetModuleSlot(slot, Ov002_CreateSpareClass((u16)nCount, &arg));
     return 1;
 }

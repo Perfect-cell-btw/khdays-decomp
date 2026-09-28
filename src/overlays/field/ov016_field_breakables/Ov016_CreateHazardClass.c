@@ -1,10 +1,10 @@
-/* Ov016_CreateHazardClass -- Ov016_CreateHazardClass: allocate the kind-1 definition (ov002 object
- * class 0x74, 0x2c0 bytes), copy the descriptor's model name into +0x58, carry its four shorts
- * (+0x68, +0x6a, +0x6c and the sequence at +0x6e, stored out of order), the target flags
- * (+0x70) and the target slot / index bytes (+0x72 / +0x73) across, install the six hazard
- * handlers (init 02082294, release 020822cc, rebind 02082380, 020822c0, start 020822e0,
- * 020823a8) and stamp kind 1.  The hazard is the modelled object that delivers hits to the
- * pieces of the target slot (Ov016_HazardStep 02082444). */
+/* Ov016_CreateHazardClass -- Ov016_CreateHazardClass: allocate the kind-1 definition (a 0x74-byte
+ * table with room for `nCount` 0x2c0-byte pieces, Ov002_CreateEntryPool), copy the descriptor's
+ * model name into +0x58, carry its four shorts (+0x68, +0x6a, +0x6c and the sequence at +0x6e,
+ * stored out of order), the target flags (+0x70) and the target slot / index bytes (+0x72 /
+ * +0x73) across, install the six hazard handlers (init 02082294, release 020822cc, rebind
+ * 02082380, 020822c0, start 020822e0, 020823a8) and stamp kind 1.  The hazard is the modelled
+ * object that delivers hits to the pieces of the target slot (Ov016_HazardStep 02082444). */
 
 #include "nitro/types.h"
 
@@ -51,7 +51,7 @@ typedef struct Ov016HazardDef {
     s8    nTargetIndex;       /* 0x73 */
 } Ov016HazardDef;
 
-extern void *Ov002_CreateEntryPool(int nClass, int nSize, int nOwner);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nLen);
 extern void Ov016_OnHazardMessage(void);
 extern void Ov016_ReleaseNodeAndMark(void);
@@ -60,11 +60,11 @@ extern void Ov016_ReleaseEmbeddedRenderItem(void);
 extern void Ov016_HazardStart(void);
 extern void Ov016_AddrOfField0xE0_3(void);
 
-Ov016HazardDef *Ov016_CreateHazardClass(int nOwner, Ov016HazardDesc *pDesc)
+Ov016HazardDef *Ov016_CreateHazardClass(int nCount, Ov016HazardDesc *pDesc)
 {
     Ov016HazardDef *pDef;
 
-    pDef = Ov002_CreateEntryPool(0x74, 0xb << 6, nOwner);
+    pDef = Ov002_CreateEntryPool(0x74, 0xb << 6, nCount);
     strncpy(pDef->szModel, pDesc->pszModel, 0x10);
     pDef->nSequence = pDesc->nSequence;
     pDef->nParamA = pDesc->nParamA;

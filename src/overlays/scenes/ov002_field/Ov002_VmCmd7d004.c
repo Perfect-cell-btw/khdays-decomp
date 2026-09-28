@@ -28,16 +28,16 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov002_CreateElementClass(unsigned short id, Ov002EmitParams *params);
+extern int Ov002_CreateElementClass(int nCount, Ov002EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov002_VmCmd7d004(void *self, char *descs) {
     Ov002EmitParams params;
     int target;
-    int id;
+    int nCount;
 
     target = ScriptVm_ReadOperandInt(self, descs);
-    id = ScriptVm_ReadOperandInt(self, descs + 0x8);
+    nCount = ScriptVm_ReadOperandInt(self, descs + 0x8);
     params.nField00 = ByteCode_ResolveOperand(self, descs + 0x10);
     params.nField20 = ScriptVm_ReadOperandFx32(self, descs + 0x18);
     params.nField24 = ScriptVm_ReadOperandFx32(self, descs + 0x20);
@@ -52,6 +52,6 @@ int Ov002_VmCmd7d004(void *self, char *descs) {
     params.nField10 = ScriptVm_ReadOperandInt(self, descs + 0x68);
     params.nField14 = ScriptVm_ReadOperandInt(self, descs + 0x70);
     params.nField18 = ScriptVm_ReadOperandInt(self, descs + 0x78);
-    Ov002_SetModuleSlot(target, Ov002_CreateElementClass((unsigned short)id, &params));
+    Ov002_SetModuleSlot(target, Ov002_CreateElementClass((unsigned short)nCount, &params));
     return 1;
 }

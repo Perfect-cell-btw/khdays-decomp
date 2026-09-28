@@ -63,7 +63,7 @@ extern void  Ov026_ResetPreviewModel(void);                                   /*
 extern void  Ov026_InitColumnCells(void);                                   /* Ov008_InitColumnCells */
 extern void  NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern void  FSi_BindCardTransfer(int nArg);                                     /* FSi_BindCardTransfer */
-extern void  Res_RequestIdPair(int nPair);                                    /* Res_RequestIdPair */
+extern void Res_RequestIdPair(int nPair);                                    /* Res_RequestIdPair */
 extern void  PlaySoundChecked(int nPair, int nArg);                          /* PlaySoundChecked */
 extern void  Ov026_CreateParamTable(void);                                   /* Ov008_CreateParamTable */
 extern void  Touch_StartAutoSampling(void);

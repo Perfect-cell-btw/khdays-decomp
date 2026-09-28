@@ -25,16 +25,16 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov014_CreatePool(unsigned short id, Ov014EmitParams *params);
+extern int Ov014_CreatePool(int nCount, Ov014EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov014_VmCmd0664(void *self, char *descs) {
     Ov014EmitParams params;
     int target;
-    int id;
+    int nCount;
 
     target = ScriptVm_ReadOperandInt(self, descs);
-    id = ScriptVm_ReadOperandInt(self, descs + 0x8);
+    nCount = ScriptVm_ReadOperandInt(self, descs + 0x8);
     params.nField00 = ByteCode_ResolveOperand(self, descs + 0x10);
     params.nField04 = ScriptVm_ReadOperandFx32(self, descs + 0x18);
     params.bField08 = ScriptVm_ReadOperandInt(self, descs + 0x20);
@@ -45,6 +45,6 @@ int Ov014_VmCmd0664(void *self, char *descs) {
     params.bField1c = ScriptVm_ReadOperandInt(self, descs + 0x48);
     params.nField14 = ScriptVm_ReadOperandFx32(self, descs + 0x50);
     params.nField18 = ScriptVm_ReadOperandFx32(self, descs + 0x58);
-    Ov002_SetModuleSlot(target, Ov014_CreatePool((unsigned short)id, &params));
+    Ov002_SetModuleSlot(target, Ov014_CreatePool((unsigned short)nCount, &params));
     return 1;
 }

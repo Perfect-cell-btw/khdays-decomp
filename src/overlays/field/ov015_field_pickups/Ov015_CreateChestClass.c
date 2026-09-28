@@ -21,7 +21,7 @@ typedef struct Ov015ChestParams {
     u8   pad_1d[3];
 } Ov015ChestParams;
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
 extern void Ov015_ChestHandleMessage(void);
 extern void Ov015_ReleaseNodeAndInvalidate(void);
@@ -34,12 +34,12 @@ extern void Ov015_GetField8Field78_2(void);
 extern void Ov015_GetField54cPtr(void);
 extern void Ov015_ChestReset(void);
 
-void *Ov015_CreateChestClass(void *pCtx, const Ov015ChestParams *pParams)
+void *Ov015_CreateChestClass(int nCount, const Ov015ChestParams *pParams)
 {
     char *pTable;
     u16 nClass;
 
-    pTable = (char *)Ov002_CreateEntryPool(0x90, 0x744, pCtx);
+    pTable = (char *)Ov002_CreateEntryPool(0x90, 0x744, nCount);
     strncpy(pTable + 0x58, pParams->pModel, 0x10);
     strncpy(pTable + 0x68, pParams->pSequence, 0x10);
     *(int *)(pTable + 0x78) = pParams->nHeight;

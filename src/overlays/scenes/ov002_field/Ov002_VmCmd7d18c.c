@@ -21,13 +21,13 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov002_CreateActorClass(unsigned short id, Ov002EmitParams18 *params);
+extern int Ov002_CreateActorClass(int nCount, Ov002EmitParams18 *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov002_VmCmd7d18c(void *self, char *descs) {
     Ov002EmitParams18 params;
     int target;
-    int id;
+    int nCount;
 
     params.nField00 = ByteCode_ResolveOperand(self, descs + 0x10);
     params.nField04 = ScriptVm_ReadOperandInt(self, descs + 0x18);
@@ -37,7 +37,7 @@ int Ov002_VmCmd7d18c(void *self, char *descs) {
     params.nField10 = ScriptVm_ReadOperandFx32(self, descs + 0x38);
     params.bField14 = ScriptVm_ReadOperandInt(self, descs + 0x40);
     target = ScriptVm_ReadOperandInt(self, descs);
-    id = ScriptVm_ReadOperandInt(self, descs + 0x8);
-    Ov002_SetModuleSlot(target, Ov002_CreateActorClass((unsigned short)id, &params));
+    nCount = ScriptVm_ReadOperandInt(self, descs + 0x8);
+    Ov002_SetModuleSlot(target, Ov002_CreateActorClass((unsigned short)nCount, &params));
     return 1;
 }

@@ -8,7 +8,7 @@ typedef struct {
     int nOwnerArg;                  /* +0x04 */
 } Ov002TimedClassDesc;
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
 
 extern void Ov002_ReleaseEmbeddedNode_3(void);
@@ -27,11 +27,11 @@ extern void Ov002_SetEmbeddedSceneNodeEnabled_2(void);
  * blanks the name and copies the descriptor's one over it when there is one,
  * then installs the class's nine handlers.
  */
-void *Ov002_CreateTimedClass(void *pCtx, const Ov002TimedClassDesc *pDesc)
+void *Ov002_CreateTimedClass(int nCount, const Ov002TimedClassDesc *pDesc)
 {
     char *pTable;
 
-    pTable = (char *)Ov002_CreateEntryPool(0x6c, 0x1bc, pCtx);
+    pTable = (char *)Ov002_CreateEntryPool(0x6c, 0x1bc, nCount);
 
     *(unsigned char *)(pTable + 0x58) = 0;
     if (pDesc->pName != 0) {

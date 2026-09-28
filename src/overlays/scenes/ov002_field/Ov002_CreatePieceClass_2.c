@@ -15,7 +15,7 @@ typedef struct {
     int nExtraC;                    /* +0x18 */
 } Ov002PieceClassDesc;
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
 
 extern void Ov002_ReleaseEmbeddedNode_6(void);
@@ -36,11 +36,11 @@ extern void Ov002_Element_SetNodeEnabled(void);
  * copies the rest of the descriptor, stamps the unset track marker and
  * installs the class's ten handlers.
  */
-void *Ov002_CreatePieceClass_2(void *pCtx, const Ov002PieceClassDesc *pDesc)
+void *Ov002_CreatePieceClass_2(int nCount, const Ov002PieceClassDesc *pDesc)
 {
     char *pTable;
 
-    pTable = (char *)Ov002_CreateEntryPool(0x7c, 0x1b0, pCtx);
+    pTable = (char *)Ov002_CreateEntryPool(0x7c, 0x1b0, nCount);
 
     *(unsigned char *)(pTable + 0x58) = 0;
     if (pDesc->pName != 0) {

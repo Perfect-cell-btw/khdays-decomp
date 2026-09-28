@@ -5,7 +5,7 @@
  * two already-known wrinkles stacked:
  *   - the first operand is OPTIONAL (16-bit type tag at descs+0x10, 0 = absent),
  *     which must be a ternary so both arms share one store;
- *   - `id` is truncated at the ASSIGNMENT here (lsls/lsrs straight into r6),
+ *   - `nCount` is truncated at the ASSIGNMENT here (lsls/lsrs straight into r6),
  *     because the tag test intervenes between the fetch and the use.
  * See tools/gen_vm_emit.py and the family notes for both.
  */
@@ -30,16 +30,16 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov002_CreateTravelClass(unsigned short id, Ov002EmitParams1c *params);
+extern int Ov002_CreateTravelClass(int nCount, Ov002EmitParams1c *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov002_VmCmd7d950(void *self, char *descs) {
     Ov002EmitParams1c params;
     int target;
-    unsigned short id;
+    unsigned short nCount;
 
     target = ScriptVm_ReadOperandInt(self, descs);
-    id = ScriptVm_ReadOperandInt(self, descs + 0x8);
+    nCount = ScriptVm_ReadOperandInt(self, descs + 0x8);
     params.nField00 = (*(short *)(descs + 0x10) == 0)
                       ? 0 : ByteCode_ResolveOperand(self, descs + 0x10);
     params.nField04 = ScriptVm_ReadOperandFx32(self, descs + 0x18);
@@ -53,6 +53,6 @@ int Ov002_VmCmd7d950(void *self, char *descs) {
     params.nField16 = ScriptVm_ReadOperandInt(self, descs + 0x58);
     params.nField18 = ScriptVm_ReadOperandInt(self, descs + 0x60);
     params.bField1a = ScriptVm_ReadOperandInt(self, descs + 0x68);
-    Ov002_SetModuleSlot(target, Ov002_CreateTravelClass(id, &params));
+    Ov002_SetModuleSlot(target, Ov002_CreateTravelClass(nCount, &params));
     return 1;
 }

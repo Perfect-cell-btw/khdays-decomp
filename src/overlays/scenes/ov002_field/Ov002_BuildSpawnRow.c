@@ -79,7 +79,7 @@ extern u8 data_0204c058;                    /* 0 = easy, 1 = hard, 2 = normal */
 
 extern void BitArray_ClearBit(u32 *pBits, int nIndex);      /* clear the free bit */
 extern int Ov002_GetCtxTableByte(int nCtxIndex);          /* ctx -> model id */
-extern void Entity_Activate(Ov002SpawnCtx *pCtx, u16 nModel);
+extern void Entity_Activate(Ov002SpawnCtx *pCtx, int nList);
 extern void func_0202c604(Ov002SpawnCtx *pCtx, Ov002Spawned *pRow);
 
 /* Fills in the row for one spot and hands it back.  The spot's bit is cleared

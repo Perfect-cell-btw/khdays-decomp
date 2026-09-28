@@ -21,20 +21,20 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov014_Instantiate(int id, Ov014EmitParams *params);
+extern int Ov014_Instantiate(int nCount, Ov014EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov014_VmCmd07c4(void *self, char *descs) {
     Ov014EmitParams params;
     int target;
-    unsigned short id;
+    unsigned short nCount;
 
     target = ScriptVm_ReadOperandInt(self, descs);
-    id = ScriptVm_ReadOperandInt(self, descs + 0x8);
+    nCount = ScriptVm_ReadOperandInt(self, descs + 0x8);
     params.nField00 = (*(short *)(descs + 0x10) == 0)
                       ? 0 : ByteCode_ResolveOperand(self, descs + 0x10);
     params.nField04 = ScriptVm_ReadOperandFx32(self, descs + 0x18);
     params.nField08 = ScriptVm_ReadOperandFx32(self, descs + 0x20);
-    Ov002_SetModuleSlot(target, Ov014_Instantiate(id, &params));
+    Ov002_SetModuleSlot(target, Ov014_Instantiate(nCount, &params));
     return 1;
 }

@@ -12,7 +12,7 @@ typedef struct {
 
 extern u8 data_0204c240;
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
 extern void Utf8_ToUcs2(const char *pNarrow, u16 *pWide);
 extern int Wcslen(const u16 *pWide);
@@ -45,7 +45,7 @@ extern void Ov002_Line_SetNodeEnabled(void);
  * order the exit test reads its two operands in; both are codegen tools, not
  * hardware accesses.
  */
-void *Ov002_CreateLineClass(void *pCtx, const Ov002LineClassDesc *pDesc)
+void *Ov002_CreateLineClass(int nEntries, const Ov002LineClassDesc *pDesc)
 {
     struct {
         volatile int nIndex;
@@ -58,7 +58,7 @@ void *Ov002_CreateLineClass(void *pCtx, const Ov002LineClassDesc *pDesc)
     char *pSlot;
     const Ov002LineClassDesc *pWalk;
 
-    pTable = (char *)Ov002_CreateEntryPool(0x8c, 0x1c4, pCtx);
+    pTable = (char *)Ov002_CreateEntryPool(0x8c, 0x1c4, nEntries);
 
     if (pDesc->pName == 0) {
         *(char *)(pTable + 0x58) = 0;

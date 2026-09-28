@@ -30,18 +30,18 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov002_CreateLineClass(unsigned short id, Ov002ListParams *params);
+extern int Ov002_CreateLineClass(int nEntries, Ov002ListParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov002_VmCmdList7d610(void *self, char *descs) {
     Ov002ListParams params;
     int target;
-    int id;
+    int nEntries;
     int i;
     char *pCountDesc;
 
     target = ScriptVm_ReadOperandInt(self, descs);
-    id = ScriptVm_ReadOperandInt(self, descs + 0x8);
+    nEntries = ScriptVm_ReadOperandInt(self, descs + 0x8);
     params.nField00 = ByteCode_ResolveOperand(self, descs + 0x10);
     params.nField04 = ScriptVm_ReadOperandFx32(self, descs + 0x18);
     pCountDesc = descs + 0x20;
@@ -51,6 +51,6 @@ int Ov002_VmCmdList7d610(void *self, char *descs) {
         params.aItems[i] = ByteCode_ResolveOperand(self, descs);
         descs += 8;
     }
-    Ov002_SetModuleSlot(target, Ov002_CreateLineClass((unsigned short)id, &params));
+    Ov002_SetModuleSlot(target, Ov002_CreateLineClass((unsigned short)nEntries, &params));
     return 1;
 }

@@ -1,12 +1,12 @@
-/* Construct an ov016 list entry of CLASS 0x80: allocate 0x658 bytes through the
- * ov002 object allocator, copy the descriptor's name into the 0x10-byte field at
- * +0x58, carry its five parameters across, install thirteen handlers and stamp
- * kind 2.
+/* Construct an ov016 list-entry class: allocate its 0x80-byte table with room for
+ * `nCount` 0x658-byte entries (Ov002_CreateEntryPool), copy the descriptor's name into
+ * the 0x10-byte field at +0x58, carry its five parameters across, install thirteen
+ * handlers and stamp kind 2.
  *
- * Sibling of Ov016_CreateEntry (Ov016_CreateEntry), which is the same shape for
- * CLASS 0x70: 0x2f4 bytes, nine handlers, kind 0x13. The two differ in class id,
+ * Sibling of Ov016_CreateEntry, which is the same shape with a 0x70-byte table:
+ * 0x2f4-byte entries, nine handlers, kind 0x13. The two differ in table and entry
  * size, handler set and kind stamp, so they are distinct object kinds rather than
- * one routine called twice -- hence the class in the name.
+ * one routine called twice; the 80 in the name is the table size.
  *
  * This closes a pair: its parameter block is exactly the Ov016EmitParams that
  * the script-VM handler Ov016_VmCmdCreateEntryClass80 assembles, which is what confirms
@@ -58,7 +58,7 @@ typedef struct {
     char pad7d[3];
 } Ov016Entry;
 
-extern void *Ov002_CreateEntryPool(int cls, int size, int owner);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *dst, const char *src, unsigned int n);
 extern void Ov016_KickableHandleMessage(void);
 extern void Ov016_ReleaseNodeAndInvalidate(void);
@@ -74,8 +74,8 @@ extern void Ov016_KickableReceiveHit(void);
 extern void Ov016_Entry80_SetNodeEnabled(void);
 extern void Ov016_AddrOfField0x64c(void);
 
-Ov016Entry *Ov016_CreateEntryClass80(int owner, Ov016EmitParams *desc) {
-    Ov016Entry *self = Ov002_CreateEntryPool(0x80, 0x658, owner);
+Ov016Entry *Ov016_CreateEntryClass80(int nCount, Ov016EmitParams *desc) {
+    Ov016Entry *self = Ov002_CreateEntryPool(0x80, 0x658, nCount);
 
     strncpy(self->szName, desc->pszName, 0x10);
     self->nParamA = desc->nParamA;

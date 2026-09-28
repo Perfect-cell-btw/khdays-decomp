@@ -82,7 +82,7 @@ extern int List_Init(void *list);
 extern int Ov107_EnqueueValue(void *actor, void *sub);
 extern u32 List_InsertSorted(int pool, int itemSize, int count);
 extern void *Ov107_HitShape_NewBox(struct ActorSpawnBasis *basis);
-extern void Res_RequestIdPair(short resId, void *entry);
+extern void Res_RequestIdPair(int n);
 
 extern void Ov287_TeardownActorSlotsAndDoubleList(void);
 extern void Ov287_CopyBlockThenNotify(void);
@@ -160,5 +160,5 @@ void Ov287_Actor_InitClassAndSpawnParts(struct Actor *actor)
     node = Ov107_HitShape_NewBox(&basis);
     entry = *(void ***)((char *)actor + 0x388);
     *entry = node;
-    Res_RequestIdPair((short)0x15b, entry);
+    Res_RequestIdPair(0x15b);
 }

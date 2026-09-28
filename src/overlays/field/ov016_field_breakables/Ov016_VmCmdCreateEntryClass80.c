@@ -12,9 +12,9 @@
  * wrong:
  *   - `adds r4, #N` advances the descriptor BASE and it STAYS advanced, so the
  *     last fetch reads descs+N, not descs.
- *   - the builder id is kept as a full word and truncated AT THE USE. Declaring
+ *   - the builder's entry count is kept as a full word and truncated AT THE USE. Declaring
  *     it `unsigned short` truncates at the assignment instead and reorders two
- *     instructions on every member that fetches the id early.
+ *     instructions on every member that fetches the count early.
  */
 typedef struct {
     int nField00;            /* +0x00 */
@@ -31,13 +31,13 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov016_CreateEntryClass80(int id, Ov016EmitParams *params);
+extern int Ov016_CreateEntryClass80(int nCount, Ov016EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov016_VmCmdCreateEntryClass80(void *self, char *descs) {
     Ov016EmitParams params;
     int target;
-    int id;
+    int nCount;
 
     params.nField00 = ByteCode_ResolveOperand(self, descs + 0x10);
     params.nField04 = ScriptVm_ReadOperandFx32(self, descs + 0x18);
@@ -47,7 +47,7 @@ int Ov016_VmCmdCreateEntryClass80(void *self, char *descs) {
     params.nField14 = ScriptVm_ReadOperandFx32(self, descs + 0x38);
     params.bField18 = ScriptVm_ReadOperandInt(self, descs + 0x40);
     target = ScriptVm_ReadOperandInt(self, descs);
-    id = ScriptVm_ReadOperandInt(self, descs + 0x8);
-    Ov002_SetModuleSlot(target, Ov016_CreateEntryClass80((unsigned short)id, &params));
+    nCount = ScriptVm_ReadOperandInt(self, descs + 0x8);
+    Ov002_SetModuleSlot(target, Ov016_CreateEntryClass80((unsigned short)nCount, &params));
     return 1;
 }

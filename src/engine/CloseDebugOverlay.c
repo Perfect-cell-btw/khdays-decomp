@@ -1,6 +1,6 @@
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern int Session_IsActive(void);
-extern void Ov105_SetSlotEventHandler(int a, int b, int c);
+extern int Ov105_SetSlotEventHandler(unsigned short port, void (*callback)(void *), void *arg);
 extern void func_02023728(int a, int b);
 extern int data_0204c22c;
 extern int data_0204c024;

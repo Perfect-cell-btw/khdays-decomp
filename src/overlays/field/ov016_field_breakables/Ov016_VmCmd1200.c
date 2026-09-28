@@ -22,16 +22,16 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov016_CreateBreakableClass(int id, Ov016EmitParams *params);
+extern int Ov016_CreateBreakableClass(int nCount, Ov016EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov016_VmCmd1200(void *self, char *descs) {
     Ov016EmitParams params;
     int target;
-    int id;
+    int nCount;
 
     target = ScriptVm_ReadOperandInt(self, descs);
-    id = ScriptVm_ReadOperandInt(self, descs + 0x8);
+    nCount = ScriptVm_ReadOperandInt(self, descs + 0x8);
     params.nField00 = ByteCode_ResolveOperand(self, descs + 0x10);
     params.nField04 = ByteCode_ResolveOperand(self, descs + 0x18);
     params.nField08 = ScriptVm_ReadOperandInt(self, descs + 0x20);
@@ -41,6 +41,6 @@ int Ov016_VmCmd1200(void *self, char *descs) {
     params.nField14 = ScriptVm_ReadOperandFx32(self, descs + 0x40);
     params.nField18 = ScriptVm_ReadOperandFx32(self, descs + 0x48);
     params.nField1c = ScriptVm_ReadOperandFx32(self, descs + 0x50);
-    Ov002_SetModuleSlot(target, Ov016_CreateBreakableClass((unsigned short)id, &params));
+    Ov002_SetModuleSlot(target, Ov016_CreateBreakableClass((unsigned short)nCount, &params));
     return 1;
 }

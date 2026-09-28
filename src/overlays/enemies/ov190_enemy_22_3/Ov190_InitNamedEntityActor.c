@@ -42,7 +42,7 @@ extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern long long Ov107_CloneResourceTransform();
-extern void Res_RequestIdPair();
+extern void Res_RequestIdPair(int nId);
 
 void Ov190_InitNamedEntityActor(int param_1) {
     struct Box box;
@@ -128,7 +128,7 @@ void Ov190_InitNamedEntityActor(int param_1) {
         *p = (int)r;
         self[0xe3] = (int)r;
     }
-    Res_RequestIdPair(0x12f, (int)((unsigned long long)r >> 32));
+    Res_RequestIdPair(0x12f);
 }
 
 

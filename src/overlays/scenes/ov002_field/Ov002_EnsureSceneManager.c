@@ -19,7 +19,7 @@
  */
 
 extern volatile int data_ov002_0207fa28[];
-extern int  Ov002_CreateEntryPool(int tag, int count, int elemSize);
+extern int  Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern int  NNSi_FndAllocFromDefaultExpHeap(int size);
 extern void INITi_CpuClear32_0x01ff86fc(int value, int dest, int numBytes);
 extern void BitArray_ClearBit(int buf, int size);

@@ -59,7 +59,7 @@ extern void Ov107_Actor_SetAttachSlot(int *self, int nChannel, int b, int c, int
 extern int List_InsertSorted(void *a, int b, int c);
 extern int Ov107_CloneResourceTransform(void *a);
 extern long long Ov107_Mover_New(VecFx32 *pReq);
-extern void Res_RequestIdPair(int nId, int nHigh);
+extern void Res_RequestIdPair(int nId);
 
 extern const char data_ov127_020cd76c[];
 extern const VecFx32 data_02041dc8;
@@ -118,5 +118,5 @@ void Ov127_ChaserInit(int *self)
     idPair = Ov107_Mover_New(&req.vPos);
     *pSlot = (int)idPair;
     self[0xe3] = (int)idPair;
-    Res_RequestIdPair(0x118, (int)(idPair >> 32));
+    Res_RequestIdPair(0x118);
 }

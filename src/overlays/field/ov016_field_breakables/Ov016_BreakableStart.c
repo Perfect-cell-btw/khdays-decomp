@@ -40,7 +40,7 @@ extern void  RegisterSeqAndInit(void *pNode, void *pEntry, int nA, int nB); /* R
 extern u8    Ov002_GetLastPositiveSlotValue(void *pNode);                        /* frame count of a node */
 extern int   GameState_GetField(int nField, int nBit);                      /* GameState_GetField */
 extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                   /* Obj_SetFlagBit3 */
-extern void  Res_RequestIdPair(int nId);                                  /* Res_RequestIdPair */
+extern void Res_RequestIdPair(int nId);                                  /* Res_RequestIdPair */
 
 void Ov016_BreakableStart(Ov016Breakable *pSelf)
 {

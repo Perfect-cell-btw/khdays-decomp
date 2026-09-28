@@ -1,15 +1,19 @@
-/* Attach the sub-actor (020c5c54), store the spawn position (param_3 -> +0x390) and slot
- * (param_4 -> +0x38c), and raise flag 0 in the high byte at (param_1)+0x60. */
+/* Move the shot to `pos` (its translation; Ov107_MoveNodeAndRelayout), store its direction
+ * (-> +0x390) and spin (-> +0x38c), and raise flag 0 in the high byte at +0x60.
+ *
+ * The callers (Ov280_AiFireVolleyTick) pass a fifth argument, a point, which the ROM puts on
+ * the stack (`str r0, [sp]` before the call) and this function never reads. */
 
 #include "nitro/fx_types.h"
 
-extern void Ov107_MoveNodeAndRelayout(int a, int b);
-void Ov280_Item_RelayoutAndStoreVec(int param_1, int param_2, int param_3, int param_4) {
-    Ov107_MoveNodeAndRelayout(param_1, param_2);
-    *(VecFx32 *)(param_1 + 0x390) = *(VecFx32 *)param_3;
-    *(signed char *)(param_1 + 0x38c) = param_4;
+extern int Ov107_MoveNodeAndRelayout(int node, const VecFx32 *v);
+void Ov280_Item_RelayoutAndStoreVec(int muzzle, const VecFx32 *pos, const VecFx32 *dir,
+                                    signed char spin, int unusedPoint) {
+    Ov107_MoveNodeAndRelayout(muzzle, pos);
+    *(VecFx32 *)(muzzle + 0x390) = *dir;
+    *(signed char *)(muzzle + 0x38c) = spin;
     {
-        unsigned short *p = (unsigned short *)(param_1 + 0x60);
+        unsigned short *p = (unsigned short *)(muzzle + 0x60);
         unsigned int hi = ((unsigned int)*p << 0x10) >> 0x18;
         hi |= 1;
         *p = (unsigned short)((*p & ~0xff00) | ((hi << 0x18) >> 16));

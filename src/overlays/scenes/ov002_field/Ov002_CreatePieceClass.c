@@ -17,7 +17,7 @@ typedef struct {
     int nExtraC;                    /* +0x18, not read here */
 } Ov002PieceClassDesc;              /* 0x1c */
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
 
 extern void Ov002_SetBit0OfByte0x1b6(void);
@@ -40,11 +40,11 @@ extern void Ov002_SetEmbeddedSceneNodeEnabled(void);
  * The variant byte at +0x75 is written last, after the three shorts that sit
  * above it, which is the order the ROM stores them in.
  */
-void *Ov002_CreatePieceClass(void *pCtx, const Ov002PieceClassDesc *pDesc)
+void *Ov002_CreatePieceClass(int nCount, const Ov002PieceClassDesc *pDesc)
 {
     char *pTable;
 
-    pTable = (char *)Ov002_CreateEntryPool(0x7c, 0x1b8, pCtx);
+    pTable = (char *)Ov002_CreateEntryPool(0x7c, 0x1b8, nCount);
 
     strncpy(pTable + 0x58, pDesc->pName, 0x10);
 

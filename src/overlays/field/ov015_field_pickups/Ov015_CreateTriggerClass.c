@@ -5,17 +5,17 @@
 
 #include "nitro/types.h"
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern void Ov015_SetByte0x50To2IfQ1(void);
 extern void Ov015_TriggerUpdate(void);
 extern void Ov015_AddrOfField0x30(void);
 extern void Ov015_TriggerHitTest(void);
 
-void *Ov015_CreateTriggerClass(void *pCtx)
+void *Ov015_CreateTriggerClass(int nCount, const void *pUnusedDesc)
 {
     char *pTable;
 
-    pTable = (char *)Ov002_CreateEntryPool(0x58, 0x5c, pCtx);
+    pTable = (char *)Ov002_CreateEntryPool(0x58, 0x5c, nCount);
     *(int *)(pTable + 0x00) = 0;
     *(int *)(pTable + 0x04) = 0;
     *(int *)(pTable + 0x08) = (int)Ov015_SetByte0x50To2IfQ1;

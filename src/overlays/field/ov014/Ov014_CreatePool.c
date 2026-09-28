@@ -29,8 +29,8 @@ extern void Ov014_GetSubField68IfQueryBit1(void);
 extern void Ov014_AddrOfField0xE0(void);
 extern void Ov014_DispatchTouchAction(void);
 
-void *Ov014_CreatePool(unsigned short id, Ov014Params *params) {
-    char *self = (char *)Ov002_CreateEntryPool(0x84, 0x1d4, id);
+void *Ov014_CreatePool(int nCount, Ov014Params *params) {
+    char *self = (char *)Ov002_CreateEntryPool(0x84, 0x1d4, nCount);
 
     strncpy(self + 0x58, (const char *)params->nField00, 0x10);
     *(int *)(self + 0x68) = params->nField04;

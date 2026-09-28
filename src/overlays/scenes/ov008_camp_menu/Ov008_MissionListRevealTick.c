@@ -57,7 +57,7 @@ extern void  Ov008_RefillListRows(Ov008MissionList *pList);               /* Ov0
 extern int   Ov008_GetTagIndex(void *pEntry);                          /* Ov008_GetTagIndex */
 extern u32   GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 extern void  GameState_SetField(int nField, int nBits, u32 nValue);           /* GameState_SetField */
-extern void  Ov008_DrawMissionRow(Ov008MissionList *pList, u16 nRow, void *pEntry, int nCount); /* draw a row */
+extern void  Ov008_DrawMissionRow(Ov008MissionList *pList, int nIndex, void *pEntry); /* draw a row */
 extern void  EnqueueObjGfxCommand(void *pSurface);                              /* EnqueueObjGfxCommand */
 
 void Ov008_MissionListRevealTick(Ov008MissionList *pList)
@@ -114,7 +114,7 @@ void Ov008_MissionListRevealTick(Ov008MissionList *pList)
                 }
             }
             nRow = pList->nRevealRow % ROW_COUNT;
-            Ov008_DrawMissionRow(pList, nRow, pEntry, ROW_COUNT);
+            Ov008_DrawMissionRow(pList, nRow, pEntry);
             EnqueueObjGfxCommand(&pList->aRowNameSurface[nRow]);
             EnqueueObjGfxCommand(&pList->aRowExtraSurface[nRow]);
             EnqueueObjGfxCommand(&pList->aRowDotSurface[nRow]);

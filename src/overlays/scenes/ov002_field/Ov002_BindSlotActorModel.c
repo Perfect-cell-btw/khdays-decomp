@@ -1,7 +1,7 @@
 extern int Ov002_GetCtxTableByte(int slot);
 extern char data_ov002_0207fa28;
 
-extern void Entity_Activate(void *actor, unsigned short id);
+extern void Entity_Activate(void *actor, int nList);
 
 /* Same as Ov002_ResetSlotActorPose but binds the resolved model id instead. */
 void Ov002_BindSlotActorModel(int slot) {

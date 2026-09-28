@@ -23,7 +23,7 @@ extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern long long Ov107_CloneResourceTransform();
-extern void Res_RequestIdPair();
+extern void Res_RequestIdPair(int nId);
 
 void Ov162_Construct(int param_1) {
     struct v5 tbl;
@@ -69,5 +69,5 @@ void Ov162_Construct(int param_1) {
         *p = (int)r;
         *(int *)(param_1 + 0x38c) = (int)r;
     }
-    Res_RequestIdPair(0x152, (int)((unsigned long long)r >> 32));
+    Res_RequestIdPair(0x152);
 }

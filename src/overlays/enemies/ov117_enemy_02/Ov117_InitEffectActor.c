@@ -99,7 +99,7 @@ extern void NNS_G3dMdlSetMdlPolygonID(void *config, unsigned int index,
 extern void Ov107_Actor_SetAttachSlot(struct Obj *, int, unsigned int, struct Vec4 *);
 extern struct PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *camera);
-extern void Res_RequestIdPair(int resourceId, int value);
+extern void Res_RequestIdPair(int resourceId);
 
 void Ov117_InitEffectActor(struct Obj *self)
 {
@@ -143,6 +143,6 @@ void Ov117_InitEffectActor(struct Obj *self)
         result = (slot->value = Ov107_CloneResourceTransform(&frame.work));
         self->poolValue38c = result;
 
-        Res_RequestIdPair(0x120, result);
+        Res_RequestIdPair(0x120);
     }
 }

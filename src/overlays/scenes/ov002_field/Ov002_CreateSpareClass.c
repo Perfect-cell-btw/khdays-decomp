@@ -9,7 +9,7 @@ typedef struct {
     unsigned char bWide;            /* +0x03 */
 } Ov002SpareClassDesc;
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 
 extern void Ov002_SpareEntryHandleMessage(void);
 extern void Ov002_SpareEntryTryBegin(void);
@@ -23,11 +23,11 @@ extern void Ov002_AddrOfField0x1C_2(void);
  * the game-state field the class reports through, installs its five handlers
  * and picks the wide or narrow slot mask.
  */
-void *Ov002_CreateSpareClass(void *pCtx, const Ov002SpareClassDesc *pDesc)
+void *Ov002_CreateSpareClass(int nCount, const Ov002SpareClassDesc *pDesc)
 {
     char *pTable;
 
-    pTable = (char *)Ov002_CreateEntryPool(0x5c, 0x48, pCtx);
+    pTable = (char *)Ov002_CreateEntryPool(0x5c, 0x48, nCount);
 
     *(u16 *)(pTable + 0x58) = pDesc->wStateField;
     *(unsigned char *)(pTable + 0x5a) = pDesc->bStateWidth;

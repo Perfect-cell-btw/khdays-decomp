@@ -54,7 +54,7 @@ extern void SetSubitemState(void *, int, int, int);
 extern void Ov107_Actor_SetAttachSlot(struct Obj *, int, int, int, int);
 extern int *List_InsertSorted(void *, int, int);
 extern int Ov107_CloneResourceTransform(void *);
-extern void Res_RequestIdPair(int, int);
+extern void Res_RequestIdPair(int nId);
 
 void Ov295_InitEnemy(struct Obj *arg0)
 {
@@ -93,5 +93,5 @@ void Ov295_InitEnemy(struct Obj *arg0)
     result = (*slot = Ov107_CloneResourceTransform(&work));
     arg0->p390 = result;
 
-    Res_RequestIdPair(0x171, result);
+    Res_RequestIdPair(0x171);
 }

@@ -21,7 +21,7 @@ typedef struct {
     int nExtraB;                    /* +0x24 */
 } Ov002ElementClassDesc;            /* 0x28 */
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
 
 extern void Ov002_Element_OnMessage(void);
@@ -43,11 +43,11 @@ extern void Ov002_Element_SetNodeEnabled_2(void);
  * class's eleven handlers. A negative first resource id means the class has
  * none, and all three ids are stamped -1.
  */
-void *Ov002_CreateElementClass(void *pCtx, const Ov002ElementClassDesc *pDesc)
+void *Ov002_CreateElementClass(int nCount, const Ov002ElementClassDesc *pDesc)
 {
     char *pTable;
 
-    pTable = (char *)Ov002_CreateEntryPool(0x8c, 0x1bc, pCtx);
+    pTable = (char *)Ov002_CreateEntryPool(0x8c, 0x1bc, nCount);
 
     strncpy(pTable + 0x58, pDesc->pName, 0x10);
 

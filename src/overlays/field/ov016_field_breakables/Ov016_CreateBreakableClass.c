@@ -1,9 +1,10 @@
 /* Ov016_CreateBreakableClass -- Ov016_CreateBreakableClass: allocate the class-0x17 definition
- * (ov002 object class 0x90, 0x2e4 bytes), copy the descriptor's model name into +0x58 and its
- * sequence name into +0x68 (empty when the descriptor's is empty), carry the drop slot / id
- * (+0x78 / +0x7a, shorts), the parameter word (+0x7c) and the four placement parameters
- * (+0x80..+0x8c) across, install the ten handlers of the breakable (the object that spawns
- * its drop and plays its sequence when hit) and stamp kind 0x17. */
+ * (a 0x90-byte table with room for `nCount` 0x2e4-byte pieces, Ov002_CreateEntryPool), copy
+ * the descriptor's model name into +0x58 and its sequence name into +0x68 (empty when the
+ * descriptor's is empty), carry the drop slot / id (+0x78 / +0x7a, shorts), the parameter word
+ * (+0x7c) and the four placement parameters (+0x80..+0x8c) across, install the ten handlers of
+ * the breakable (the object that spawns its drop and plays its sequence when hit) and stamp
+ * kind 0x17. */
 
 #include "nitro/types.h"
 
@@ -52,7 +53,7 @@ typedef struct Ov016BreakableDef {
     int nPlaceD;              /* 0x8c */
 } Ov016BreakableDef;
 
-extern void *Ov002_CreateEntryPool(int nClass, int nSize, int nOwner);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nLen);
 extern int   strlen(const char *pStr);
 extern void Ov016_SetByteAt0x2bcTo1(void);
@@ -66,12 +67,12 @@ extern void Ov016_GetWordVia8Then0x80(void);
 extern void Ov016_AddrOfField0xE0_2(void);
 extern void Ov016_SetEmbeddedSceneNodeEnabled_2(void);
 
-Ov016BreakableDef *Ov016_CreateBreakableClass(int nOwner, Ov016BreakableDesc *pDesc)
+Ov016BreakableDef *Ov016_CreateBreakableClass(int nCount, Ov016BreakableDesc *pDesc)
 {
     Ov016BreakableDef *pDef;
     char *pszSequence;
 
-    pDef = Ov002_CreateEntryPool(0x90, 0xb9 * 4, nOwner);
+    pDef = Ov002_CreateEntryPool(0x90, 0xb9 * 4, nCount);
     strncpy(pDef->szModel, pDesc->pszModel, 0x10);
     pszSequence = pDesc->pszSequence;
     if (strlen(pszSequence) != 0) {

@@ -30,7 +30,7 @@ extern char data_ov002_0207f0dc[];
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int Entity_LoadAndAttach(u16,u32);
 extern signed char Ov002_GetCtxModeByte(void);
-extern void Res_RequestIdPair(int);
+extern void Res_RequestIdPair(int nId);
 extern TrackEntryGroup *GetTrackEntryBase(u16);
 extern void BitArray_SetBit(void *,int);
 extern int BitArray_TestBit(void *,int);

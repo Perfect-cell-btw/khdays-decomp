@@ -1,11 +1,11 @@
-/* Ov017_CreateDepositClass -- Ov017_CreateDepositClass: allocates the class-0x15 definition (ov002
- * object class 0x94, 0x4e4 bytes per piece), copies the descriptor's three sequence names into
- * +0x58 (idle), +0x68 (hit effect) and +0x78 (cracks) -- each field emptied first and only
- * copied when the descriptor names one -- and carries its parameter word (+0x88), node kind
- * (+0x8c) and three placement shorts (+0x8e..+0x92) across; installs the nine deposit handlers
- * (message 0207fb94, init 0207fc08, refresh 0207fd88, release 0207fba8, start 0207fc18, hit
- * 0207fdb4, node 0207fe10, owner 0207fe18, 0207fe24) and stamps kind 0x15.  The deposit is
- * ov017's multi-hit prize object. */
+/* Ov017_CreateDepositClass -- Ov017_CreateDepositClass: allocates the class-0x15 definition (a
+ * 0x94-byte table with room for `nCount` 0x4e4-byte pieces, Ov002_CreateEntryPool), copies the
+ * descriptor's three sequence names into +0x58 (idle), +0x68 (hit effect) and +0x78 (cracks)
+ * -- each field emptied first and only copied when the descriptor names one -- and carries its
+ * parameter word (+0x88), node kind (+0x8c) and three placement shorts (+0x8e..+0x92) across;
+ * installs the nine deposit handlers (message 0207fb94, init 0207fc08, refresh 0207fd88,
+ * release 0207fba8, start 0207fc18, hit 0207fdb4, node 0207fe10, owner 0207fe18, 0207fe24) and
+ * stamps kind 0x15.  The deposit is ov017's multi-hit prize object. */
 
 #include "nitro/types.h"
 
@@ -54,7 +54,7 @@ typedef struct Ov017DepositDef {
     short nPlaceC;            /* 0x92 */
 } Ov017DepositDef;
 
-extern void *Ov002_CreateEntryPool(int nClass, int nSize, int nOwner);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nLen);
 extern void Ov017_Deposit_OnMessage(void);
 extern void Ov017_tailDispatch(void);
@@ -66,11 +66,11 @@ extern void Ov017_AddrOfField0x1C(void);
 extern void Ov017_Deposit_GetOwner(void);
 extern void Ov017_AddrOfField0xE0(void);
 
-Ov017DepositDef *Ov017_CreateDepositClass(int nOwner, Ov017DepositDesc *pDesc)
+Ov017DepositDef *Ov017_CreateDepositClass(int nCount, Ov017DepositDesc *pDesc)
 {
     Ov017DepositDef *pDef;
 
-    pDef = Ov002_CreateEntryPool(0x94, 0x4e4, nOwner);
+    pDef = Ov002_CreateEntryPool(0x94, 0x4e4, nCount);
     pDef->szSeqA[0] = 0;
     if (pDesc->pszSeqA != 0) {
         strncpy(pDef->szSeqA, pDesc->pszSeqA, 0x10);

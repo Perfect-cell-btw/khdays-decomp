@@ -51,7 +51,7 @@ extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern int Ov107_Mover_New(struct Ov153Capsule *req);
-extern void Res_RequestIdPair();
+extern void Res_RequestIdPair(int nId);
 
 void Ov124_Construct(int param)
 {

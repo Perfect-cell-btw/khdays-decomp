@@ -1,9 +1,10 @@
-/* Ov016_CreateFollowerClass -- Ov016_CreateFollowerClass: allocate the class-0x16 definition (class
- * 0x68 of the ov002 object allocator, 0x1cc bytes), copy the descriptor's name into the
- * 0x10-byte field at +0x58 when there is one (the field is emptied first), install the nine
- * handlers of the follower (the object that trails a player) and stamp kind 0x16.
+/* Ov016_CreateFollowerClass -- Ov016_CreateFollowerClass: allocate the class-0x16 definition (a
+ * 0x68-byte table with room for `nCount` 0x1cc-byte pieces, Ov002_CreateEntryPool), copy the
+ * descriptor's name into the 0x10-byte field at +0x58 when there is one (the field is emptied
+ * first), install the nine handlers of the follower (the object that trails a player) and stamp
+ * kind 0x16.
  *
- * Sibling of Ov016_CreateEntry (0207feb8, class 0x13) and Ov016_CreateEntryClass80 (02081f64);
+ * Sibling of Ov016_CreateEntry (0207feb8, kind 0x13) and Ov016_CreateEntryClass80 (02081f64);
  * the size is written 0x73 * 4 because that is how the ROM materialises it. */
 
 #include "nitro/types.h"
@@ -37,7 +38,7 @@ typedef struct Ov016FollowerDef {
     char szName[0x10];        /* 0x58 */
 } Ov016FollowerDef;
 
-extern void *Ov002_CreateEntryPool(int nClass, int nSize, int nOwner);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nLen);
 extern void Ov016_ReleaseEmbeddedNode_3(void);
 extern void Ov016_SubmitNodeUnlessHidden(void);
@@ -49,11 +50,11 @@ extern void Ov016_AddrOfField0x1A0(void);
 extern void Ov016_AddrOfField0x1C(void);
 extern void Ov016_SetNodeEnabled(void);
 
-Ov016FollowerDef *Ov016_CreateFollowerClass(int nOwner, Ov016FollowerDesc *pDesc)
+Ov016FollowerDef *Ov016_CreateFollowerClass(int nCount, Ov016FollowerDesc *pDesc)
 {
     Ov016FollowerDef *pDef;
 
-    pDef = Ov002_CreateEntryPool(0x68, 0x73 * 4, nOwner);
+    pDef = Ov002_CreateEntryPool(0x68, 0x73 * 4, nCount);
     pDef->szName[0] = 0;
     if (pDesc->pszName != 0) {
         strncpy(pDef->szName, pDesc->pszName, 0x10);

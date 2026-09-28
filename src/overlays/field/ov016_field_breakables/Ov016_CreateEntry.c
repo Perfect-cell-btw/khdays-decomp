@@ -1,7 +1,7 @@
-/* Construct one ov016 list entry: allocate 0x2f4 bytes through the ov002 object
- * allocator, copy the caller's name into the 0x10-byte field at +0x58, install
- * the nine handlers, stamp kind 0x13, and carry the descriptor's two parameters
- * across.
+/* Construct an ov016 list-entry class: allocate its 0x70-byte table with room for
+ * `nCount` 0x2f4-byte entries (Ov002_CreateEntryPool), copy the caller's name into the
+ * 0x10-byte field at +0x58, install the nine handlers, stamp kind 0x13, and carry the
+ * descriptor's two parameters across.
  *
  * The size is written 0xbd * 4 because that is how the ROM materialises it --
  * movs #0xbd + lsls #2, the THUMB idiom for a constant that will not fit in an
@@ -44,7 +44,7 @@ typedef struct {
     int nParamB;            /* +0x6c */
 } Ov016Entry;
 
-extern void *Ov002_CreateEntryPool(int cls, int size, int owner);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *dst, const char *src, unsigned int n);
 extern void Ov016_StoreByteAt0x2b8FromByte(void);
 extern void Ov016_ReleaseEmbeddedNode(void);
@@ -56,8 +56,8 @@ extern void Ov016_AddrOfField0x2C4(void);
 extern void Ov016_AddrOfField0xE0(void);
 extern void Ov016_SetEmbeddedSceneNodeEnabled(void);
 
-Ov016Entry *Ov016_CreateEntry(int owner, Ov016EntryDesc *desc) {
-    Ov016Entry *self = Ov002_CreateEntryPool(0x70, 0xbd * 4, owner);
+Ov016Entry *Ov016_CreateEntry(int nCount, Ov016EntryDesc *desc) {
+    Ov016Entry *self = Ov002_CreateEntryPool(0x70, 0xbd * 4, nCount);
 
     strncpy(self->szName, desc->pszName, 0x10);
     self->nField00 = 0;

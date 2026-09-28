@@ -32,7 +32,7 @@ extern unsigned char data_0204c240;
 extern int Ov002_GetStateWord(void);
 extern void Ov002_LoadOffsetTableOnce(int bAlternate);
 extern Ov002TimedSpawnSet *Ov002_FindHandlerByKey(int wKey);
-extern void *Ov002_CreateTimedClass(void *pCount, const Ov002TimedClassDesc *pDesc);
+extern void *Ov002_CreateTimedClass(int nCount, const Ov002TimedClassDesc *pDesc);
 extern void Ov002_SetModuleSlot(int nModuleId, void *pClass);
 extern int GameState_IsFlagSet(int nFlag);
 extern int func_02020400(int nNumerator, int nDenominator);
@@ -69,7 +69,7 @@ void Ov002_ScriptSpawnTimedSet(int nModuleId, const char *pName, int nOwnerArg)
         pSeats->cModuleId = nModuleId;
         desc.pName = pName;
         desc.nOwnerArg = nOwnerArg;
-        pClass = Ov002_CreateTimedClass((void *)(int)pSet->nCount, &desc);
+        pClass = Ov002_CreateTimedClass(pSet->nCount, &desc);
         Ov002_SetModuleSlot(nModuleId, pClass);
         pRoot->nTimedSpawnCount = pSet->nCount;
         nIndex = 0;

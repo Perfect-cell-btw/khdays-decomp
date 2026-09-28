@@ -42,7 +42,7 @@ typedef struct Ov015SpotSpec {
 extern int   ScriptVm_ReadOperandInt(int vm, u16 *pc);            /* ScriptVm_ReadOperandInt */
 extern int   ScriptVm_ReadOperandFx32(int vm, u16 *pc);            /* ScriptVm_ReadOperandFx32 */
 extern void *Ov002_List_ScaleEntryTag(int nKey, int nArg);    /* resolve a pickup piece */
-extern void *Ov015_CreateSpotClass(u16 nSlot, Ov015SpotSpec *pSpec); /* Ov015_CreateSpotClass */
+extern void *Ov015_CreateSpotClass(int nEntries, Ov015SpotSpec *pSpec); /* Ov015_CreateSpotClass */
 extern void  Ov002_SetModuleSlot(int nTarget, void *pValue);       /* store on the target */
 
 #pragma push
@@ -56,12 +56,12 @@ int Ov015_ScriptOpCreateSpots(int vm, u16 *pc)
     int nBase = 0;
     int i;
     int nTarget;
-    int nSlot;
+    int nEntries;
     u16 *pOperand;
     int j;
 
     nTarget = ScriptVm_ReadOperandInt(vm, pc);
-    nSlot = ScriptVm_ReadOperandInt(vm, pc + 4);
+    nEntries = ScriptVm_ReadOperandInt(vm, pc + 4);
     pOperand = pc + 8;
     pc += 0xc;
     spec.nRows = ScriptVm_ReadOperandInt(vm, pOperand);
@@ -111,7 +111,7 @@ int Ov015_ScriptOpCreateSpots(int vm, u16 *pc)
             }
         }
     }
-    Ov002_SetModuleSlot(nTarget, Ov015_CreateSpotClass(nSlot, &spec));
+    Ov002_SetModuleSlot(nTarget, Ov015_CreateSpotClass((u16)nEntries, &spec));
     return 1;
 }
 #pragma pop

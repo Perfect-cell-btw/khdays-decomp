@@ -42,7 +42,7 @@ extern void  Actor_SetVecAndSyncChild(void *pTransform, VecFx32 *pVec);         
 extern int   GameState_GetField(int nField, int nBit);                     /* GameState_GetField */
 extern void  Ov016_HazardSetState(Ov016Hazard *pSelf, int bState, int bSpawn); /* Ov016_HazardSetState */
 extern void  Obj_SetFlagBit3(void *pNode, int nFlag);                  /* Obj_SetFlagBit3 */
-extern void  Res_RequestIdPair(int nId);                                 /* Res_RequestIdPair */
+extern void Res_RequestIdPair(int nId);                                 /* Res_RequestIdPair */
 
 void Ov016_HazardStart(Ov016Hazard *pSelf)
 {

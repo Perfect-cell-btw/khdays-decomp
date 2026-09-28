@@ -47,7 +47,8 @@ extern int OS_SPrintf(char *,const char *,...);
 extern unsigned int strlen(const char *);
 extern void Ov002_RebindGroupAnimations(char *,unsigned int,int,int);
 extern Ov002NamedEntry *SymbolGroup_FindName(int, char *);
-extern void EntityMgr_AttachTrackData(u16, char *, const void *, unsigned int);
+extern void EntityMgr_AttachTrackData(unsigned int nTrack, const char *pName, const void *pSrc,
+                                      unsigned int nSize);
 extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int);
 extern void *Ov002_LookupChannelEntry(const char *);
 extern void RegisterSeqAndInit(Ov002GateEffect *,void *,int,int);

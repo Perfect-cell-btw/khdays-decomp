@@ -34,18 +34,17 @@ struct Ov020TaskDesc {
     char *pName;                    /* 0x00 */
 };
 
-extern struct Ov020ScriptTask *Ov002_CreateEntryPool(int kind, int size, int arg);
+extern struct Ov020ScriptTask *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *dst, const char *src, unsigned int n);
 extern void Ov020_tailDispatch(void);
 extern void Ov020_BindTaskAnimation(void);
 extern void Ov020_OnSceneNodeState(void);
 
-struct Ov020ScriptTask *Ov020_CreateScriptTask(unsigned short id,
-                                            struct Ov020TaskDesc *desc)
+struct Ov020ScriptTask *Ov020_CreateScriptTask(int nCount, struct Ov020TaskDesc *desc)
 {
     struct Ov020ScriptTask *task;
 
-    task = Ov002_CreateEntryPool(0x68, 0x15c, id);
+    task = Ov002_CreateEntryPool(0x68, 0x15c, nCount);
     task->aName58[0] = 0;
     if (desc->pName != 0) {
         strncpy(task->aName58, desc->pName, 0x10);

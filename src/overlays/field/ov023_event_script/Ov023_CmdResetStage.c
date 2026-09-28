@@ -50,7 +50,7 @@ extern void  EntityMgr_PushVramState(void);
 extern void  Ov023_RebuildSubObject(void);                             /* Ov023_RebuildSubObject */
 extern void  GameState_SetField(int nField, int nBits, int nValue);      /* GameState_SetField */
 extern void  ClearGlobalPtrE8AndHead(void);
-extern void  Res_RequestIdPair(int nId);                                /* Res_RequestIdPair */
+extern void Res_RequestIdPair(int nId);                                /* Res_RequestIdPair */
 extern u8    data_0204c240;                                         /* session bits */
 
 int Ov023_CmdResetStage(Ov023ScriptCtx *pCtx, void *pOperand)

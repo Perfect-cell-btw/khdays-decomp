@@ -2,7 +2,7 @@
  * Builder: Ov002_CreatePieceClass.
  *
  * One field is NOT fed by a fetcher: params.bField11 is a literal 0, stored
- * right after the last operand and before the target/id fetches. The generator
+ * right after the last operand and before the target/count fetches. The generator
  * cannot see fields like that -- it only knows about slots written from a
  * fetcher's return value -- so it produced C that was 4 bytes short with every
  * instruction otherwise correct. Worth knowing for the rest of the family:
@@ -25,13 +25,13 @@ typedef struct {
 extern int ByteCode_ResolveOperand(void *self, void *desc);
 extern int ScriptVm_ReadOperandInt(void *self, void *desc);
 extern int ScriptVm_ReadOperandFx32(void *self, void *desc);
-extern int Ov002_CreatePieceClass(unsigned short id, Ov002EmitParams *params);
+extern int Ov002_CreatePieceClass(int nCount, Ov002EmitParams *params);
 extern void Ov002_SetModuleSlot(int target, int value);
 
 int Ov002_VmCmd7ceac(void *self, char *descs) {
     Ov002EmitParams params;
     int target;
-    int id;
+    int nCount;
 
     params.nField00 = ByteCode_ResolveOperand(self, descs + 0x10);
     params.nField04 = ScriptVm_ReadOperandInt(self, descs + 0x18);
@@ -44,7 +44,7 @@ int Ov002_VmCmd7ceac(void *self, char *descs) {
     params.nField16 = ScriptVm_ReadOperandFx32(self, descs + 0x50);
     params.bField11 = 0;
     target = ScriptVm_ReadOperandInt(self, descs);
-    id = ScriptVm_ReadOperandInt(self, descs + 0x8);
-    Ov002_SetModuleSlot(target, Ov002_CreatePieceClass((unsigned short)id, &params));
+    nCount = ScriptVm_ReadOperandInt(self, descs + 0x8);
+    Ov002_SetModuleSlot(target, Ov002_CreatePieceClass((unsigned short)nCount, &params));
     return 1;
 }

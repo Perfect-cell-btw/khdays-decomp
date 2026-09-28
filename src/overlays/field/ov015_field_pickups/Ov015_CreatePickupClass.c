@@ -25,7 +25,7 @@ typedef struct Ov015PickupParams {
     u8   pad_1d[3];
 } Ov015PickupParams;
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
 extern void Ov015_FreeBlock0x2c(void);
 extern void Ov015_SetByte0x14cTo2IfQ1(void);
@@ -38,11 +38,11 @@ extern void Ov015_AddrOfField0x1C(void);
 extern void Ov015_GetField8Field78(void);
 extern void Ov015_AddrOfField0x140(void);
 
-void *Ov015_CreatePickupClass(void *pCtx, const Ov015PickupParams *pParams)
+void *Ov015_CreatePickupClass(int nCount, const Ov015PickupParams *pParams)
 {
     char *pTable;
 
-    pTable = (char *)Ov002_CreateEntryPool(0x8c, 0x154, pCtx);
+    pTable = (char *)Ov002_CreateEntryPool(0x8c, 0x154, nCount);
     pTable[0x58] = 0;
     if (pParams->pModel != 0) {
         strncpy(pTable + 0x58, pParams->pModel, 0x10);

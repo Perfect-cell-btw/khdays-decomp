@@ -14,7 +14,7 @@ typedef struct {
     signed char bKind;              /* +0x14 */
 } Ov002ActorClassDesc;
 
-extern void *Ov002_CreateEntryPool(int nTableSize, int nElementSize, void *pCtx);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nSize);
 
 extern void Ov002_Element_OnFinishMessage(void);
@@ -31,11 +31,11 @@ extern void Ov002_Actor_SetNodeEnabled(void);
  * copies the descriptor's fields into it - the name only when there is one -
  * and installs the class's seven handlers.
  */
-void *Ov002_CreateActorClass(void *pCtx, const Ov002ActorClassDesc *pDesc)
+void *Ov002_CreateActorClass(int nCount, const Ov002ActorClassDesc *pDesc)
 {
     char *pTable;
 
-    pTable = (char *)Ov002_CreateEntryPool(0x84, 0x1d4, pCtx);
+    pTable = (char *)Ov002_CreateEntryPool(0x84, 0x1d4, nCount);
 
     if (pDesc->pName != 0) {
         strncpy(pTable + 0x58, pDesc->pName, 0x10);

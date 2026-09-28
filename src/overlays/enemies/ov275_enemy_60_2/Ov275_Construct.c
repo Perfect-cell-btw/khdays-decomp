@@ -69,7 +69,7 @@ extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern int Ov107_CloneResourceTransform();
 extern int Ov107_Mover_New(struct Ov274Capsule *req);
-extern void Res_RequestIdPair();
+extern void Res_RequestIdPair(int nId);
 
 void Ov275_Construct(int param)
 {

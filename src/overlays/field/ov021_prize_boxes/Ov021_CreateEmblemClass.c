@@ -1,11 +1,11 @@
-/* Ov021_CreateEmblemClass -- Ov021_CreateEmblemClass: allocates the class-0x1f definition (ov002
- * object class 0x78, 0x2c0 bytes per piece) and keeps it in the overlay's class slot
- * (data_ov021_02080f40, the one Ov021_EmblemResetOthers walks); copies the descriptor's
- * sequence name into +0x58 and its model name into +0x68 (each field emptied first), installs
- * the five emblem handlers (message 02080540, init 02080650, refresh 02080738, release
- * 02080600, start 02080660), clears the other slots and stamps kind 0x1f.  The emblem is the
- * mission-mode collectable that shrinks as its timer runs out and, once a player reaches it,
- * spirals into that player. */
+/* Ov021_CreateEmblemClass -- Ov021_CreateEmblemClass: allocates the class-0x1f definition (a
+ * 0x78-byte table with room for `nCount` 0x2c0-byte pieces, Ov002_CreateEntryPool) and keeps
+ * it in the overlay's class slot (data_ov021_02080f40, the one Ov021_EmblemResetOthers
+ * walks); copies the descriptor's sequence name into +0x58 and its model name into +0x68
+ * (each field emptied first), installs the five emblem handlers (message 02080540, init
+ * 02080650, refresh 02080738, release 02080600, start 02080660), clears the other slots and
+ * stamps kind 0x1f.  The emblem is the mission-mode collectable that shrinks as its timer
+ * runs out and, once a player reaches it, spirals into that player. */
 
 #include "nitro/types.h"
 
@@ -40,7 +40,7 @@ typedef struct Ov021EmblemDef {
     char szModel[0x10];       /* 0x68 */
 } Ov021EmblemDef;
 
-extern void *Ov002_CreateEntryPool(int nClass, int nSize, int nCount);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nLen);
 extern void Ov021_EmblemHandleMessage(void);
 extern void Ov021_thumbStep(void);

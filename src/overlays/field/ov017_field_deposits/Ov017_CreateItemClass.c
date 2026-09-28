@@ -1,10 +1,11 @@
-/* Ov017_CreateItemClass -- Ov017_CreateItemClass: allocates the item definition (ov002 object
- * class 0x6c, 0x1c0 bytes per piece), copies the descriptor's model name into +0x58 (emptied
- * first, copied only when the descriptor names one) and its parameter word into +0x68,
- * installs the ten item handlers (message 020804e8, init 020805c4, refresh 020805cc, release
- * 020805c0, start 020805c8, hit 020805d0, node 020806d0, owner 02080708, 02080714 and
- * 0208071c at +0x3c) and stamps kind 0x1d, or 0x1e when the descriptor's flag byte (+0x8) is
- * set.  The item is the piece that hands an item to the player who touches it. */
+/* Ov017_CreateItemClass -- Ov017_CreateItemClass: allocates the item definition (a 0x6c-byte
+ * table with room for `nCount` 0x1c0-byte pieces, Ov002_CreateEntryPool), copies the
+ * descriptor's model name into +0x58 (emptied first, copied only when the descriptor names
+ * one) and its parameter word into +0x68, installs the ten item handlers (message 020804e8,
+ * init 020805c4, refresh 020805cc, release 020805c0, start 020805c8, hit 020805d0, node
+ * 020806d0, owner 02080708, 02080714 and 0208071c at +0x3c) and stamps kind 0x1d, or 0x1e
+ * when the descriptor's flag byte (+0x8) is set.  The item is the piece that hands an item
+ * to the player who touches it. */
 
 #include "nitro/types.h"
 
@@ -40,7 +41,7 @@ typedef struct Ov017ItemDef {
     int  nParam;              /* 0x68 */
 } Ov017ItemDef;
 
-extern void *Ov002_CreateEntryPool(int nClass, int nSize, int nOwner);
+extern void *Ov002_CreateEntryPool(int headerSize, int entrySize, int count);
 extern char *strncpy(char *pDst, const char *pSrc, unsigned int nLen);
 extern void Ov017_ItemHandleMessage(void);
 extern void Ov017_ItemInitNoOp(void);
@@ -53,11 +54,11 @@ extern void Ov017_GetField8Field68(void);
 extern void Ov017_AddrOfField0x1C_2(void);
 extern void Ov017_ItemGetBNoOp(void);
 
-Ov017ItemDef *Ov017_CreateItemClass(int nOwner, Ov017ItemDesc *pDesc)
+Ov017ItemDef *Ov017_CreateItemClass(int nCount, Ov017ItemDesc *pDesc)
 {
     Ov017ItemDef *pDef;
 
-    pDef = Ov002_CreateEntryPool(0x6c, 7 << 6, nOwner);
+    pDef = Ov002_CreateEntryPool(0x6c, 7 << 6, nCount);
     pDef->szModel[0] = 0;
     if (pDesc->pszModel != 0) {
         strncpy(pDef->szModel, pDesc->pszModel, 0x10);

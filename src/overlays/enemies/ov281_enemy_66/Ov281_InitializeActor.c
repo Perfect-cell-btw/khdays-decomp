@@ -61,7 +61,7 @@ extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern long long Ov107_CloneResourceTransform();
-extern void Res_RequestIdPair();
+extern void Res_RequestIdPair(int nId);
 
 void Ov281_InitializeActor(struct Ov281Actor *actor) {
     int minX;
@@ -166,6 +166,6 @@ void Ov281_InitializeActor(struct Ov281Actor *actor) {
             *p = (int)r;
             self[0xe3] = (int)r;
         }
-        Res_RequestIdPair(0x169, (int)((unsigned long long)r >> 32));
+        Res_RequestIdPair(0x169);
     }
 }
