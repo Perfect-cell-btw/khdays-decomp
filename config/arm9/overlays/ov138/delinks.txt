@@ -4,266 +4,266 @@
     .data       start:0x020d3000 end:0x020d3020 kind:data align:32
     .bss        start:0x020d3020 end:0x020d3020 kind:bss align:32
 
-src/overlays/ov138/calls/Ov138_RegisterEntityClass.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov138/calls/Ov138_CreateNamedEntity.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov138/calls/Ov138_Construct.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_Construct.c:
     complete
     .text       start:0x020cfc04 end:0x020cfe88
 
-src/overlays/ov138/calls/Ov138_Destroy.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_Destroy.c:
     complete
     .text       start:0x020cfe88 end:0x020cfed0
 
-src/overlays/ov138/calls/Ov138_RebindClip.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_RebindClip.c:
     complete
     .text       start:0x020cfed0 end:0x020cff1c
 
-src/overlays/ov138/calls/Ov138_PlayAnimSpawnBody.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_PlayAnimSpawnBody.c:
     complete
     .text       start:0x020cff1c end:0x020cffd8
 
-src/overlays/ov138/calls/Ov138_HandleSpawnMessage.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_HandleSpawnMessage.c:
     complete
     .text       start:0x020cffd8 end:0x020d017c
 
-src/overlays/ov138/calls/Ov138_ForwardEventToChild.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_ForwardEventToChild.c:
     complete
     .text       start:0x020d017c end:0x020d01a4
 
-src/overlays/ov138/calls/Ov138_NotifyPartThenBase.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_NotifyPartThenBase.c:
     complete
     .text       start:0x020d01a4 end:0x020d01cc
 
-src/overlays/ov138/calls/Ov138_TickHandler.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_TickHandler.c:
     complete
     .text       start:0x020d01cc end:0x020d0368
 
-src/overlays/ov138/calls/Ov138_CreateAiTask.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_CreateAiTask.c:
     complete
     .text       start:0x020d0368 end:0x020d03c4
 
-src/overlays/ov138/calls/Ov138_HandleHit.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_HandleHit.c:
     complete
     .text       start:0x020d03c4 end:0x020d05dc
 
-src/overlays/ov138/auto/Ov138_RequestState8.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_RequestState8.c:
     complete
     .text       start:0x020d05dc end:0x020d0620
 
-src/overlays/ov138/calls/Ov138_PickApproachDir.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_PickApproachDir.c:
     complete
     .text       start:0x020d0620 end:0x020d07bc
 
-src/overlays/ov138/calls/Ov138_InitChase.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_InitChase.c:
     complete
     .text       start:0x020d07bc end:0x020d0890
 
-src/overlays/ov138/calls/Ov138_AiDispatchAction.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AiDispatchAction.c:
     complete
     .text       start:0x020d0890 end:0x020d0a30
 
-src/overlays/ov138/calls/Ov138_AdvanceMotionPublish.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AdvanceMotionPublish.c:
     complete
     .text       start:0x020d0a30 end:0x020d0ae4
 
-src/overlays/ov138/calls/Ov138_SetHwFlagsAndDispatch.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_SetHwFlagsAndDispatch.c:
     complete
     .text       start:0x020d0ae4 end:0x020d0b4c
 
-src/overlays/ov138/calls/Ov138_PickRandomOffsetThenAdvanceSlot.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_PickRandomOffsetThenAdvanceSlot.c:
     complete
     .text       start:0x020d0b4c end:0x020d0bb4
 
-src/overlays/ov138/calls/Ov138_SpawnEffect48ReconfigureFlags.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_SpawnEffect48ReconfigureFlags.c:
     complete
     .text       start:0x020d0bb4 end:0x020d0c7c
 
-src/overlays/ov138/calls/Ov138_Reaction_ChargeThenAim.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_Reaction_ChargeThenAim.c:
     complete
     .text       start:0x020d0c7c end:0x020d0d44
 
-src/overlays/ov138/calls/Ov138_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d0d44 end:0x020d0d78
 
-src/overlays/ov138/calls/Ov138_AiEnterReach.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AiEnterReach.c:
     complete
     .text       start:0x020d0d78 end:0x020d0db4
 
-src/overlays/ov138/calls/Ov138_ReachCheckTick.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_ReachCheckTick.c:
     complete
     .text       start:0x020d0db4 end:0x020d0e48
 
-src/overlays/ov138/calls/Ov138_AimAtTargetAndDispatch.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020d0e48 end:0x020d0f18
 
-src/overlays/ov138/calls/Ov138_StartLeapMotion.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_StartLeapMotion.c:
     complete
     .text       start:0x020d0f18 end:0x020d1054
 
-src/overlays/ov138/calls/Ov138_StepLeapMotion.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_StepLeapMotion.c:
     complete
     .text       start:0x020d1054 end:0x020d1098
 
-src/overlays/ov138/calls/Ov138_AiJumpRiseTick.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AiJumpRiseTick.c:
     complete
     .text       start:0x020d1098 end:0x020d1154
 
-src/overlays/ov138/calls/Ov138_AiJumpFallTick.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AiJumpFallTick.c:
     complete
     .text       start:0x020d1154 end:0x020d11e4
 
-src/overlays/ov138/calls/Ov138_AiLandPickAction.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AiLandPickAction.c:
     complete
     .text       start:0x020d11e4 end:0x020d1250
 
-src/overlays/ov138/calls/Ov138_AiEnterTurnToTarget.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AiEnterTurnToTarget.c:
     complete
     .text       start:0x020d1250 end:0x020d12c0
 
-src/overlays/ov138/calls/Ov138_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020d12c0 end:0x020d133c
 
-src/overlays/ov138/calls/Ov138_FaceTargetSetTurnRate.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_FaceTargetSetTurnRate.c:
     complete
     .text       start:0x020d133c end:0x020d1428
 
-src/overlays/ov138/calls/Ov138_ArmMovePhase2.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_ArmMovePhase2.c:
     complete
     .text       start:0x020d1428 end:0x020d14f4
 
-src/overlays/ov138/calls/Ov138_AttackWaitTick.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AttackWaitTick.c:
     complete
     .text       start:0x020d14f4 end:0x020d1640
 
-src/overlays/ov138/calls/Ov138_Reaction_AimAtTargetAndDispatch.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_Reaction_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020d1640 end:0x020d1704
 
-src/overlays/ov138/calls/Ov138_ScheduleFollowUpMove.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_ScheduleFollowUpMove.c:
     complete
     .text       start:0x020d1704 end:0x020d17e0
 
-src/overlays/ov138/calls/Ov138_AimedAttackWaitTick.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AimedAttackWaitTick.c:
     complete
     .text       start:0x020d17e0 end:0x020d19b4
 
-src/overlays/ov138/calls/Ov138_SpawnEffect4aReconfigureFlagsB.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_SpawnEffect4aReconfigureFlagsB.c:
     complete
     .text       start:0x020d19b4 end:0x020d1a7c
 
-src/overlays/ov138/calls/Ov138_EnterReturn.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_EnterReturn.c:
     complete
     .text       start:0x020d1a7c end:0x020d1b04
 
-src/overlays/ov138/calls/Ov138_SpawnAndInitRegistryEntry.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_SpawnAndInitRegistryEntry.c:
     complete
     .text       start:0x020d1b04 end:0x020d1bdc
 
-src/overlays/ov138/calls/Ov138_ProbeGround.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_ProbeGround.c:
     complete
     .text       start:0x020d1bdc end:0x020d1dd0
 
-src/overlays/ov138/calls/Ov138_Reaction_ResetTwoSubObjects.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_Reaction_ResetTwoSubObjects.c:
     complete
     .text       start:0x020d1dd0 end:0x020d1e74
 
-src/overlays/ov138/auto/Ov138_TaskTeardown_FlagParts.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_TaskTeardown_FlagParts.c:
     complete
     .text       start:0x020d1e74 end:0x020d1eac
 
-src/overlays/ov138/calls/Ov138_DescentTick.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_DescentTick.c:
     complete
     .text       start:0x020d1eac end:0x020d2008
 
-src/overlays/ov138/calls/Ov138_AiDescentProbe.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AiDescentProbe.c:
     complete
     .text       start:0x020d2008 end:0x020d22cc
 
-src/overlays/ov138/calls/Ov138_EnterGroundDrop.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_EnterGroundDrop.c:
     complete
     .text       start:0x020d22cc end:0x020d23dc
 
-src/overlays/ov138/calls/Ov138_GroundDropTick.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_GroundDropTick.c:
     complete
     .text       start:0x020d23dc end:0x020d2530
 
-src/overlays/ov138/calls/Ov138_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d2530 end:0x020d2570
 
-src/overlays/ov138/calls/Ov138_Actor_New.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_Actor_New.c:
     complete
     .text       start:0x020d2570 end:0x020d25a4
 
-src/overlays/ov138/calls/Ov138_InitializeActor.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_InitializeActor.c:
     complete
     .text       start:0x020d25a4 end:0x020d2730
 
-src/overlays/ov138/calls/Ov138_SubObject_Destroy.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_SubObject_Destroy.c:
     complete
     .text       start:0x020d2730 end:0x020d2760
 
-src/overlays/ov138/calls/Ov138_TickAndSyncModelXform.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d2760 end:0x020d2798
 
-src/overlays/ov138/calls/Ov138_HandleMessage.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_HandleMessage.c:
     complete
     .text       start:0x020d2798 end:0x020d280c
 
-src/overlays/ov138/calls/Ov138_HandleBounce.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_HandleBounce.c:
     complete
     .text       start:0x020d280c end:0x020d2868
 
-src/overlays/ov138/calls/Ov138_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d2868 end:0x020d28b4
 
-src/overlays/ov138/calls/Ov138_stateInitClearSlots.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_stateInitClearSlots.c:
     complete
     .text       start:0x020d28b4 end:0x020d295c
 
-src/overlays/ov138/calls/Ov138_dispatchByStatusByte.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_dispatchByStatusByte.c:
     complete
     .text       start:0x020d295c end:0x020d29d4
 
-src/overlays/ov138/auto/Ov138_AiApplyMoveVector.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AiApplyMoveVector.c:
     complete
     .text       start:0x020d29d4 end:0x020d29ec
 
-src/overlays/ov138/calls/Ov138_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d29ec end:0x020d2a9c
 
-src/overlays/ov138/calls/Ov138_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d2a9c end:0x020d2ad4
 
-src/overlays/ov138/auto/Ov138_ArmDashAndDispatch.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_ArmDashAndDispatch.c:
     complete
     .text       start:0x020d2ad4 end:0x020d2ba8
 
-src/overlays/ov138/calls/Ov138_SweepStrikeTick.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_SweepStrikeTick.c:
     complete
     .text       start:0x020d2ba8 end:0x020d2e94
 
-src/overlays/ov138/calls/Ov138_SendPositionMessage.c:
+src/overlays/enemies/ov138_enemy_0b_2/Ov138_SendPositionMessage.c:
     complete
     .text       start:0x020d2e94 end:0x020d2f9c
 
-src/overlays/ov138/data/ov138_strings_020d3000.c:
+src/overlays/enemies/ov138_enemy_0b_2/data/ov138_strings_020d3000.c:
     complete
     .data       start:0x020d3000 end:0x020d3020
 
-src/overlays/ov138/data/ov138_tables_020d2f9c.c:
+src/overlays/enemies/ov138_enemy_0b_2/data/ov138_tables_020d2f9c.c:
     complete
     .rodata     start:0x020d2f9c end:0x020d2ff0

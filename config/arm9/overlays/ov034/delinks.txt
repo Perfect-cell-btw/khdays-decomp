@@ -4,150 +4,150 @@
     .data       start:0x020b55c0 end:0x020b5660 kind:data align:32
     .bss        start:0x020b5660 end:0x020b5680 kind:bss align:32
 
-src/overlays/ov034/calls/func_ov034_020b3220.c:
+src/overlays/players/ov034_player_xaldin/func_ov034_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov034/calls/Ov034_stateCtorConfigReturnHandler.c:
+src/overlays/players/ov034_player_xaldin/Ov034_stateCtorConfigReturnHandler.c:
     complete
     .text       start:0x020b3234 end:0x020b3268
 
-src/overlays/ov034/calls/Ov034_initTwoRegionsClearGlobal.c:
+src/overlays/players/ov034_player_xaldin/Ov034_initTwoRegionsClearGlobal.c:
     complete
     .text       start:0x020b3268 end:0x020b32ac
 
-src/overlays/ov034/calls/Ov034_Boot.c:
+src/overlays/players/ov034_player_xaldin/Ov034_Boot.c:
     complete
     .text       start:0x020b32ac end:0x020b3494
 
-src/overlays/ov034/calls/Ov034_BindChannelsAndSlotMaps.c:
+src/overlays/players/ov034_player_xaldin/Ov034_BindChannelsAndSlotMaps.c:
     complete
     .text       start:0x020b3494 end:0x020b35e4
 
-src/overlays/ov034/auto/Ov034_MapSlotKindToAnim.c:
+src/overlays/players/ov034_player_xaldin/Ov034_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b35e4 end:0x020b360c
 
-src/overlays/ov034/calls/Ov034_ApplyModeChange.c:
+src/overlays/players/ov034_player_xaldin/Ov034_ApplyModeChange.c:
     complete
     .text       start:0x020b360c end:0x020b3784
 
-src/overlays/ov034/calls/Ov034_SyncHandleAndDrawAim.c:
+src/overlays/players/ov034_player_xaldin/Ov034_SyncHandleAndDrawAim.c:
     complete
     .text       start:0x020b3784 end:0x020b3844
 
-src/overlays/ov034/calls/Ov034_UpdateAnimationAndDraw.c:
+src/overlays/players/ov034_player_xaldin/Ov034_UpdateAnimationAndDraw.c:
     complete
     .text       start:0x020b3844 end:0x020b3c04
 
-src/overlays/ov034/calls/Ov034_ReleaseIndexedHandles.c:
+src/overlays/players/ov034_player_xaldin/Ov034_ReleaseIndexedHandles.c:
     complete
     .text       start:0x020b3c04 end:0x020b3c70
 
-src/overlays/ov034/calls/Ov034_InvokeSubHandlerPairWithGlobalBuffer.c:
+src/overlays/players/ov034_player_xaldin/Ov034_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b3c70 end:0x020b3ca8
 
-src/overlays/ov034/calls/Ov034_HandleMessage.c:
+src/overlays/players/ov034_player_xaldin/Ov034_HandleMessage.c:
     complete
     .text       start:0x020b3ca8 end:0x020b3e94
 
-src/overlays/ov034/calls/Ov034_BuildRenderHandles.c:
+src/overlays/players/ov034_player_xaldin/Ov034_BuildRenderHandles.c:
     complete
     .text       start:0x020b3e94 end:0x020b3f30
 
-src/overlays/ov034/calls/Ov034_SetTimingsAndEnterState21.c:
+src/overlays/players/ov034_player_xaldin/Ov034_SetTimingsAndEnterState21.c:
     complete
     .text       start:0x020b3f30 end:0x020b3fdc
 
-src/overlays/ov034/calls/Ov034_IdleStep.c:
+src/overlays/players/ov034_player_xaldin/Ov034_IdleStep.c:
     complete
     .text       start:0x020b3fdc end:0x020b424c
 
-src/overlays/ov034/calls/Ov034_AttackPhaseStep.c:
+src/overlays/players/ov034_player_xaldin/Ov034_AttackPhaseStep.c:
     complete
     .text       start:0x020b424c end:0x020b4400
 
-src/overlays/ov034/calls/Ov034_StepAndCheckTimer.c:
+src/overlays/players/ov034_player_xaldin/Ov034_StepAndCheckTimer.c:
     complete
     .text       start:0x020b4400 end:0x020b4510
 
-src/overlays/ov034/calls/Ov034_ApproachStep.c:
+src/overlays/players/ov034_player_xaldin/Ov034_ApproachStep.c:
     complete
     .text       start:0x020b4510 end:0x020b4720
 
-src/overlays/ov034/calls/Ov034_DiveStep.c:
+src/overlays/players/ov034_player_xaldin/Ov034_DiveStep.c:
     complete
     .text       start:0x020b4720 end:0x020b4a20
 
-src/overlays/ov034/calls/Ov034_LandingStep.c:
+src/overlays/players/ov034_player_xaldin/Ov034_LandingStep.c:
     complete
     .text       start:0x020b4a20 end:0x020b4bf8
 
-src/overlays/ov034/calls/Ov034_FireRapidBurst.c:
+src/overlays/players/ov034_player_xaldin/Ov034_FireRapidBurst.c:
     complete
     .text       start:0x020b4bf8 end:0x020b4d7c
 
-src/overlays/ov034/calls/Ov034_FireHeavyBurst.c:
+src/overlays/players/ov034_player_xaldin/Ov034_FireHeavyBurst.c:
     complete
     .text       start:0x020b4d7c end:0x020b4f38
 
-src/overlays/ov034/calls/Ov034_FireThirdCountBurst.c:
+src/overlays/players/ov034_player_xaldin/Ov034_FireThirdCountBurst.c:
     complete
     .text       start:0x020b4f38 end:0x020b50b4
 
-src/overlays/ov034/calls/Ov034_initSubObjectSlots.c:
+src/overlays/players/ov034_player_xaldin/Ov034_initSubObjectSlots.c:
     complete
     .text       start:0x020b50b4 end:0x020b510c
 
-src/overlays/ov034/calls/Ov034_ReleaseChildFromGlobal.c:
+src/overlays/players/ov034_player_xaldin/Ov034_ReleaseChildFromGlobal.c:
     complete
     .text       start:0x020b510c end:0x020b5124
 
-src/overlays/ov034/calls/Ov034_initGlobalSlotBaseRefs.c:
+src/overlays/players/ov034_player_xaldin/Ov034_initGlobalSlotBaseRefs.c:
     complete
     .text       start:0x020b5124 end:0x020b5164
 
-src/overlays/ov034/calls/Ov034_enterState5ConfigAnims.c:
+src/overlays/players/ov034_player_xaldin/Ov034_enterState5ConfigAnims.c:
     complete
     .text       start:0x020b5164 end:0x020b51e0
 
-src/overlays/ov034/calls/Ov034_enterState1ConfigAnims.c:
+src/overlays/players/ov034_player_xaldin/Ov034_enterState1ConfigAnims.c:
     complete
     .text       start:0x020b51e0 end:0x020b5278
 
-src/overlays/ov034/calls/Ov034_enterState3ConfigAnims.c:
+src/overlays/players/ov034_player_xaldin/Ov034_enterState3ConfigAnims.c:
     complete
     .text       start:0x020b5278 end:0x020b5310
 
-src/overlays/ov034/auto/Ov034_ClearTimer.c:
+src/overlays/players/ov034_player_xaldin/Ov034_ClearTimer.c:
     complete
     .text       start:0x020b5310 end:0x020b531c
 
-src/overlays/ov034/calls/Ov034_DriveGuardSequence.c:
+src/overlays/players/ov034_player_xaldin/Ov034_DriveGuardSequence.c:
     complete
     .text       start:0x020b531c end:0x020b5490
 
-src/overlays/ov034/calls/Ov034_PickSourcePosAndDraw.c:
+src/overlays/players/ov034_player_xaldin/Ov034_PickSourcePosAndDraw.c:
     complete
     .text       start:0x020b5490 end:0x020b5558
 
-src/overlays/ov034/calls/Ov034_InvokeWithDataTable.c:
+src/overlays/players/ov034_player_xaldin/Ov034_InvokeWithDataTable.c:
     complete
     .text       start:0x020b5558 end:0x020b5570
 
-src/overlays/ov034/data/ov034_class_020b55c0.c:
+src/overlays/players/ov034_player_xaldin/data/ov034_class_020b55c0.c:
     complete
     .data       start:0x020b55c0 end:0x020b55d4
 
-src/overlays/ov034/data/ov034_strings_020b557c.c:
+src/overlays/players/ov034_player_xaldin/data/ov034_strings_020b557c.c:
     complete
     .rodata     start:0x020b557c end:0x020b55ac
 
-src/overlays/ov034/data/ov034_strings_020b55d4.c:
+src/overlays/players/ov034_player_xaldin/data/ov034_strings_020b55d4.c:
     complete
     .data       start:0x020b55d4 end:0x020b5660
 
-src/overlays/ov034/data/ov034_tables_020b5570.c:
+src/overlays/players/ov034_player_xaldin/data/ov034_tables_020b5570.c:
     complete
     .rodata     start:0x020b5570 end:0x020b557c

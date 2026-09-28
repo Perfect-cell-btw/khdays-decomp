@@ -4,150 +4,150 @@
     .data       start:0x020cd5e0 end:0x020cd620 kind:data align:32
     .bss        start:0x020cd620 end:0x020cd620 kind:bss align:32
 
-src/overlays/ov284/calls/Ov284_RegisterEntityClass.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov284/calls/Ov284_CreateNamedEntity.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov284/calls/Ov284_RenderMarkers.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_RenderMarkers.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc044
 
-src/overlays/ov284/calls/Ov284_UpdateSegmentDirections.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_UpdateSegmentDirections.c:
     complete
     .text       start:0x020cc044 end:0x020cc0a0
 
-src/overlays/ov284/calls/Ov284_InitializeActor.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_InitializeActor.c:
     complete
     .text       start:0x020cc0a0 end:0x020cc37c
 
-src/overlays/ov284/calls/Ov284_Destroy.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_Destroy.c:
     complete
     .text       start:0x020cc37c end:0x020cc3c4
 
-src/overlays/ov284/calls/Ov284_CopyBlockToLinkedNode.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_CopyBlockToLinkedNode.c:
     complete
     .text       start:0x020cc3c4 end:0x020cc400
 
-src/overlays/ov284/calls/Ov284_HandleMessage.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_HandleMessage.c:
     complete
     .text       start:0x020cc400 end:0x020cc53c
 
-src/overlays/ov284/calls/Ov284_PostTickCancelStaleTasks.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_PostTickCancelStaleTasks.c:
     complete
     .text       start:0x020cc53c end:0x020cc5b0
 
-src/overlays/ov284/calls/Ov284_ForwardAnimEvent.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_ForwardAnimEvent.c:
     complete
     .text       start:0x020cc5b0 end:0x020cc5d0
 
-src/overlays/ov284/calls/Ov284_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cc5d0 end:0x020cc61c
 
-src/overlays/ov284/calls/Ov284_OnHitStaggerFlip.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_OnHitStaggerFlip.c:
     complete
     .text       start:0x020cc61c end:0x020cc770
 
-src/overlays/ov284/auto/Ov284_ArbitrateSubStateEntry.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_ArbitrateSubStateEntry.c:
     complete
     .text       start:0x020cc770 end:0x020cc7cc
 
-src/overlays/ov284/calls/Ov284_SetupActorNodeAndStateSlots.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_SetupActorNodeAndStateSlots.c:
     complete
     .text       start:0x020cc7cc end:0x020cc86c
 
-src/overlays/ov284/calls/Ov284_DispatchSubStateByte.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_DispatchSubStateByte.c:
     complete
     .text       start:0x020cc86c end:0x020cc9d8
 
-src/overlays/ov284/calls/Ov284_TurnTick.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_TurnTick.c:
     complete
     .text       start:0x020cc9d8 end:0x020cca5c
 
-src/overlays/ov284/calls/Ov284_stSetDispFlags82.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_stSetDispFlags82.c:
     complete
     .text       start:0x020cca5c end:0x020cca9c
 
-src/overlays/ov284/calls/Ov284_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cca9c end:0x020ccad8
 
-src/overlays/ov284/calls/Ov284_SetFlag1aeThenAction7.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_SetFlag1aeThenAction7.c:
     complete
     .text       start:0x020ccad8 end:0x020ccb30
 
-src/overlays/ov284/calls/Ov284_AiRollTimerQueue2WhenReady.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_AiRollTimerQueue2WhenReady.c:
     complete
     .text       start:0x020ccb30 end:0x020ccba0
 
-src/overlays/ov284/calls/Ov284_SetReadyBitThenAdvance.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_SetReadyBitThenAdvance.c:
     complete
     .text       start:0x020ccba0 end:0x020ccbfc
 
-src/overlays/ov284/calls/Ov284_IdleTick.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_IdleTick.c:
     complete
     .text       start:0x020ccbfc end:0x020ccc9c
 
-src/overlays/ov284/calls/Ov284_BeginAnim3AndReset.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_BeginAnim3AndReset.c:
     complete
     .text       start:0x020ccc9c end:0x020ccd08
 
-src/overlays/ov284/calls/Ov284_SwingTick.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_SwingTick.c:
     complete
     .text       start:0x020ccd08 end:0x020cd020
 
-src/overlays/ov284/calls/Ov284_AiRollTimerQueue2OnAnimEnd.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_AiRollTimerQueue2OnAnimEnd.c:
     complete
     .text       start:0x020cd020 end:0x020cd080
 
-src/overlays/ov284/calls/Ov284_DeathEntry.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_DeathEntry.c:
     complete
     .text       start:0x020cd080 end:0x020cd178
 
-src/overlays/ov284/calls/Ov284_AiEnterAnim1AndLock.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_AiEnterAnim1AndLock.c:
     complete
     .text       start:0x020cd178 end:0x020cd1e8
 
-src/overlays/ov284/calls/Ov284_PrepSubState9IfChildIdle.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_PrepSubState9IfChildIdle.c:
     complete
     .text       start:0x020cd1e8 end:0x020cd21c
 
-src/overlays/ov284/calls/Ov284_AiSetStanceFlags86AndFinish.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_AiSetStanceFlags86AndFinish.c:
     complete
     .text       start:0x020cd21c end:0x020cd294
 
-src/overlays/ov284/calls/Ov284_CreateChainTask.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_CreateChainTask.c:
     complete
     .text       start:0x020cd294 end:0x020cd2fc
 
-src/overlays/ov284/calls/Ov284_LayoutChain.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_LayoutChain.c:
     complete
     .text       start:0x020cd2fc end:0x020cd508
 
-src/overlays/ov284/auto/Ov284_ResetEntryList.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_ResetEntryList.c:
     complete
     .text       start:0x020cd508 end:0x020cd55c
 
-src/overlays/ov284/calls/Ov284_NotifyIfQueryBit0Set.c:
+src/overlays/enemies/ov284_enemy_69/Ov284_NotifyIfQueryBit0Set.c:
     complete
     .text       start:0x020cd55c end:0x020cd594
 
-src/overlays/ov284/data/ov284_pointers_020cd5a4.c:
+src/overlays/enemies/ov284_enemy_69/data/ov284_pointers_020cd5a4.c:
     complete
     .rodata     start:0x020cd5a4 end:0x020cd5b4
 
-src/overlays/ov284/data/ov284_strings_020cd5e0.c:
+src/overlays/enemies/ov284_enemy_69/data/ov284_strings_020cd5e0.c:
     complete
     .data       start:0x020cd5e0 end:0x020cd620
 
-src/overlays/ov284/data/ov284_tables_020cd594.c:
+src/overlays/enemies/ov284_enemy_69/data/ov284_tables_020cd594.c:
     complete
     .rodata     start:0x020cd594 end:0x020cd5a4
 
-src/overlays/ov284/data/ov284_tables_020cd5b4.c:
+src/overlays/enemies/ov284_enemy_69/data/ov284_tables_020cd5b4.c:
     complete
     .rodata     start:0x020cd5b4 end:0x020cd5c8

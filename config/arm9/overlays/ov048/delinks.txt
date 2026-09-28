@@ -4,154 +4,154 @@
     .data       start:0x020b4ac0 end:0x020b4b80 kind:data align:32
     .bss        start:0x020b4b80 end:0x020b4ba0 kind:bss align:32
 
-src/overlays/ov048/calls/func_ov048_020b3220.c:
+src/overlays/players/ov048_player_goofy/func_ov048_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov048/calls/Ov048_stateCtorReturnHandler.c:
+src/overlays/players/ov048_player_goofy/Ov048_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b3234 end:0x020b325c
 
-src/overlays/ov048/calls/Ov048_setupTriple.c:
+src/overlays/players/ov048_player_goofy/Ov048_setupTriple.c:
     complete
     .text       start:0x020b325c end:0x020b327c
 
-src/overlays/ov048/calls/Ov048_Boot.c:
+src/overlays/players/ov048_player_goofy/Ov048_Boot.c:
     complete
     .text       start:0x020b327c end:0x020b3474
 
-src/overlays/ov048/calls/Ov048_initSharedObjSetReadyFlag.c:
+src/overlays/players/ov048_player_goofy/Ov048_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020b3474 end:0x020b34ac
 
-src/overlays/ov048/auto/Ov048_MapSlotKindToAnim.c:
+src/overlays/players/ov048_player_goofy/Ov048_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b34ac end:0x020b34cc
 
-src/overlays/ov048/calls/Ov048_ApplyMode.c:
+src/overlays/players/ov048_player_goofy/Ov048_ApplyMode.c:
     complete
     .text       start:0x020b34cc end:0x020b359c
 
-src/overlays/ov048/calls/Ov048_SyncLocalPlayerHandle.c:
+src/overlays/players/ov048_player_goofy/Ov048_SyncLocalPlayerHandle.c:
     complete
     .text       start:0x020b359c end:0x020b360c
 
-src/overlays/ov048/calls/Ov048_HandleMessage.c:
+src/overlays/players/ov048_player_goofy/Ov048_HandleMessage.c:
     complete
     .text       start:0x020b360c end:0x020b3850
 
-src/overlays/ov048/calls/Ov048_StepAttackSlotAndForward.c:
+src/overlays/players/ov048_player_goofy/Ov048_StepAttackSlotAndForward.c:
     complete
     .text       start:0x020b3850 end:0x020b3888
 
-src/overlays/ov048/calls/Ov048_BuildRenderHandles.c:
+src/overlays/players/ov048_player_goofy/Ov048_BuildRenderHandles.c:
     complete
     .text       start:0x020b3888 end:0x020b3934
 
-src/overlays/ov048/calls/Ov048_InitThreeEffectSlots.c:
+src/overlays/players/ov048_player_goofy/Ov048_InitThreeEffectSlots.c:
     complete
     .text       start:0x020b3934 end:0x020b39f4
 
-src/overlays/ov048/calls/Ov048_ReleaseThreeSubBlocks2c2c.c:
+src/overlays/players/ov048_player_goofy/Ov048_ReleaseThreeSubBlocks2c2c.c:
     complete
     .text       start:0x020b39f4 end:0x020b3a28
 
-src/overlays/ov048/calls/Ov048_InitTwoGlobalChannelSlots.c:
+src/overlays/players/ov048_player_goofy/Ov048_InitTwoGlobalChannelSlots.c:
     complete
     .text       start:0x020b3a28 end:0x020b3a5c
 
-src/overlays/ov048/calls/Ov048_ForwardToThreeSubHandlersSameArgs.c:
+src/overlays/players/ov048_player_goofy/Ov048_ForwardToThreeSubHandlersSameArgs.c:
     complete
     .text       start:0x020b3a5c end:0x020b3a94
 
-src/overlays/ov048/calls/Ov048_RunThreeSubHandlersIfFlagSet.c:
+src/overlays/players/ov048_player_goofy/Ov048_RunThreeSubHandlersIfFlagSet.c:
     complete
     .text       start:0x020b3a94 end:0x020b3ad0
 
-src/overlays/ov048/calls/Ov048_BindAnimsAndFaceOwner.c:
+src/overlays/players/ov048_player_goofy/Ov048_BindAnimsAndFaceOwner.c:
     complete
     .text       start:0x020b3ad0 end:0x020b3bb0
 
-src/overlays/ov048/calls/Ov048_UpdateTracksWhileActive.c:
+src/overlays/players/ov048_player_goofy/Ov048_UpdateTracksWhileActive.c:
     complete
     .text       start:0x020b3bb0 end:0x020b3be0
 
-src/overlays/ov048/calls/Ov048_DrawNodeWhileActive.c:
+src/overlays/players/ov048_player_goofy/Ov048_DrawNodeWhileActive.c:
     complete
     .text       start:0x020b3be0 end:0x020b3bfc
 
-src/overlays/ov048/calls/Ov048_PlayVoiceAndBindThreeAnims.c:
+src/overlays/players/ov048_player_goofy/Ov048_PlayVoiceAndBindThreeAnims.c:
     complete
     .text       start:0x020b3bfc end:0x020b3cb4
 
-src/overlays/ov048/calls/Ov048_StepSequenceSlot.c:
+src/overlays/players/ov048_player_goofy/Ov048_StepSequenceSlot.c:
     complete
     .text       start:0x020b3cb4 end:0x020b3df0
 
-src/overlays/ov048/calls/Ov048_DrawNodeWithYaw2.c:
+src/overlays/players/ov048_player_goofy/Ov048_DrawNodeWithYaw2.c:
     complete
     .text       start:0x020b3df0 end:0x020b3e68
 
-src/overlays/ov048/calls/Ov048_Activate.c:
+src/overlays/players/ov048_player_goofy/Ov048_Activate.c:
     complete
     .text       start:0x020b3e68 end:0x020b3e7c
 
-src/overlays/ov048/calls/Ov048_Deactivate.c:
+src/overlays/players/ov048_player_goofy/Ov048_Deactivate.c:
     complete
     .text       start:0x020b3e7c end:0x020b3e88
 
-src/overlays/ov048/calls/Ov048_DriveChargeSequence.c:
+src/overlays/players/ov048_player_goofy/Ov048_DriveChargeSequence.c:
     complete
     .text       start:0x020b3e88 end:0x020b3fcc
 
-src/overlays/ov048/calls/Ov048_DrawSubNodeWithYaw3.c:
+src/overlays/players/ov048_player_goofy/Ov048_DrawSubNodeWithYaw3.c:
     complete
     .text       start:0x020b3fcc end:0x020b4050
 
-src/overlays/ov048/calls/Ov048_RebindAnimTracks.c:
+src/overlays/players/ov048_player_goofy/Ov048_RebindAnimTracks.c:
     complete
     .text       start:0x020b4050 end:0x020b40c8
 
-src/overlays/ov048/calls/Ov048_EmitAttackBurst.c:
+src/overlays/players/ov048_player_goofy/Ov048_EmitAttackBurst.c:
     complete
     .text       start:0x020b40c8 end:0x020b4340
 
-src/overlays/ov048/calls/Ov048_FlagLocalAndEnterState21.c:
+src/overlays/players/ov048_player_goofy/Ov048_FlagLocalAndEnterState21.c:
     complete
     .text       start:0x020b4340 end:0x020b43a8
 
-src/overlays/ov048/calls/Ov048_HoverStep.c:
+src/overlays/players/ov048_player_goofy/Ov048_HoverStep.c:
     complete
     .text       start:0x020b43a8 end:0x020b458c
 
-src/overlays/ov048/calls/Ov048_AttackStep.c:
+src/overlays/players/ov048_player_goofy/Ov048_AttackStep.c:
     complete
     .text       start:0x020b458c end:0x020b4848
 
-src/overlays/ov048/calls/Ov048_LandingStep.c:
+src/overlays/players/ov048_player_goofy/Ov048_LandingStep.c:
     complete
     .text       start:0x020b4848 end:0x020b4a34
 
-src/overlays/ov048/calls/Ov048_InvokeWithDataTable.c:
+src/overlays/players/ov048_player_goofy/Ov048_InvokeWithDataTable.c:
     complete
     .text       start:0x020b4a34 end:0x020b4a4c
 
-src/overlays/ov048/data/ov048_class_020b4ad4.c:
+src/overlays/players/ov048_player_goofy/data/ov048_class_020b4ad4.c:
     complete
     .data       start:0x020b4ad4 end:0x020b4ae8
 
-src/overlays/ov048/data/ov048_ctorargs_020b4a8c.c:
+src/overlays/players/ov048_player_goofy/data/ov048_ctorargs_020b4a8c.c:
     complete
     .rodata     start:0x020b4a8c end:0x020b4aa0
 
-src/overlays/ov048/data/ov048_strings_020b4a4c.c:
+src/overlays/players/ov048_player_goofy/data/ov048_strings_020b4a4c.c:
     complete
     .rodata     start:0x020b4a4c end:0x020b4a8c
 
-src/overlays/ov048/data/ov048_strings_020b4ac0.c:
+src/overlays/players/ov048_player_goofy/data/ov048_strings_020b4ac0.c:
     complete
     .data       start:0x020b4ac0 end:0x020b4ad4
 
-src/overlays/ov048/data/ov048_strings_020b4ae8.c:
+src/overlays/players/ov048_player_goofy/data/ov048_strings_020b4ae8.c:
     complete
     .data       start:0x020b4ae8 end:0x020b4b80

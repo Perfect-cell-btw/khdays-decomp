@@ -4,150 +4,150 @@
     .data       start:0x020b7580 end:0x020b7620 kind:data align:32
     .bss        start:0x020b7620 end:0x020b7640 kind:bss align:32
 
-src/overlays/ov056/calls/func_ov056_020b5a20.c:
+src/overlays/players/ov056_player_larxene_2/func_ov056_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov056/calls/Ov056_CreateTaggedObjectHandler46Cf.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_CreateTaggedObjectHandler46Cf.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a5c
 
-src/overlays/ov056/calls/Ov056_initSubitemsClear.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_initSubitemsClear.c:
     complete
     .text       start:0x020b5a5c end:0x020b5a80
 
-src/overlays/ov056/calls/Ov056_Boot.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_Boot.c:
     complete
     .text       start:0x020b5a80 end:0x020b5cc8
 
-src/overlays/ov056/calls/Ov056_initDualFlagStateThenCall.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_initDualFlagStateThenCall.c:
     complete
     .text       start:0x020b5cc8 end:0x020b5d34
 
-src/overlays/ov056/auto/Ov056_MapSlotKindToAnim.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5d34 end:0x020b5d5c
 
-src/overlays/ov056/calls/Ov056_DispatchRequestAndSetState.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_DispatchRequestAndSetState.c:
     complete
     .text       start:0x020b5d5c end:0x020b5e28
 
-src/overlays/ov056/calls/Ov056_UpdateTargetAndTimers.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_UpdateTargetAndTimers.c:
     complete
     .text       start:0x020b5e28 end:0x020b5f30
 
-src/overlays/ov056/calls/Ov056_StepAttackSlotAndForward.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_StepAttackSlotAndForward.c:
     complete
     .text       start:0x020b5f30 end:0x020b5f68
 
-src/overlays/ov056/calls/Ov056_BuildRenderHandles.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_BuildRenderHandles.c:
     complete
     .text       start:0x020b5f68 end:0x020b5ff8
 
-src/overlays/ov056/calls/Ov056_HandleMsgAndLaunch.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_HandleMsgAndLaunch.c:
     complete
     .text       start:0x020b5ff8 end:0x020b6134
 
-src/overlays/ov056/calls/Ov056_BuildPeerGroup.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_BuildPeerGroup.c:
     complete
     .text       start:0x020b6134 end:0x020b61ec
 
-src/overlays/ov056/calls/Ov056_ReleaseAndFreeField2644.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_ReleaseAndFreeField2644.c:
     complete
     .text       start:0x020b61ec end:0x020b6208
 
-src/overlays/ov056/calls/Ov056_CallSubObjThenAdvance.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_CallSubObjThenAdvance.c:
     complete
     .text       start:0x020b6208 end:0x020b6228
 
-src/overlays/ov056/calls/Ov056_InvokeGroupCallback.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_InvokeGroupCallback.c:
     complete
     .text       start:0x020b6228 end:0x020b623c
 
-src/overlays/ov056/calls/Ov056_FirePartShot.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_FirePartShot.c:
     complete
     .text       start:0x020b623c end:0x020b6398
 
-src/overlays/ov056/calls/Ov056_InitEffectSlotsAlt.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_InitEffectSlotsAlt.c:
     complete
     .text       start:0x020b6398 end:0x020b6444
 
-src/overlays/ov056/calls/Ov056_ReleaseBothSlots.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_ReleaseBothSlots.c:
     complete
     .text       start:0x020b6444 end:0x020b6470
 
-src/overlays/ov056/calls/Ov056_PublishAltAndEnterState.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_PublishAltAndEnterState.c:
     complete
     .text       start:0x020b6470 end:0x020b6508
 
-src/overlays/ov056/calls/Ov056_ApproachStep.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_ApproachStep.c:
     complete
     .text       start:0x020b6508 end:0x020b6904
 
-src/overlays/ov056/calls/Ov056_ChargeStep.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_ChargeStep.c:
     complete
     .text       start:0x020b6904 end:0x020b6b40
 
-src/overlays/ov056/auto/Ov056_BindAttachAnchor.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_BindAttachAnchor.c:
     complete
     .text       start:0x020b6b40 end:0x020b6b54
 
-src/overlays/ov056/calls/Ov056_Activate.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_Activate.c:
     complete
     .text       start:0x020b6b54 end:0x020b6b60
 
-src/overlays/ov056/calls/Ov056_StepAttackSlot.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_StepAttackSlot.c:
     complete
     .text       start:0x020b6b60 end:0x020b6d5c
 
-src/overlays/ov056/calls/Ov056_ForwardArg1IfFlagSet.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_ForwardArg1IfFlagSet.c:
     complete
     .text       start:0x020b6d5c end:0x020b6d9c
 
-src/overlays/ov056/calls/Ov056_StartAnimTracks.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_StartAnimTracks.c:
     complete
     .text       start:0x020b6d9c end:0x020b6e1c
 
-src/overlays/ov056/calls/Ov056_AdvanceTrackTime.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_AdvanceTrackTime.c:
     complete
     .text       start:0x020b6e1c end:0x020b6e9c
 
-src/overlays/ov056/calls/Ov056_SetYawAndDrawSubNode.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_SetYawAndDrawSubNode.c:
     complete
     .text       start:0x020b6e9c end:0x020b6efc
 
-src/overlays/ov056/calls/Ov056_FireTimedVolley.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_FireTimedVolley.c:
     complete
     .text       start:0x020b6efc end:0x020b7274
 
-src/overlays/ov056/calls/Ov056_ReleaseCharge.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_ReleaseCharge.c:
     complete
     .text       start:0x020b7274 end:0x020b74ec
 
-src/overlays/ov056/calls/Ov056_InvokeWithDataTable.c:
+src/overlays/players/ov056_player_larxene_2/Ov056_InvokeWithDataTable.c:
     complete
     .text       start:0x020b74ec end:0x020b7504
 
-src/overlays/ov056/data/ov056_class_020b7594.c:
+src/overlays/players/ov056_player_larxene_2/data/ov056_class_020b7594.c:
     complete
     .data       start:0x020b7594 end:0x020b75a8
 
-src/overlays/ov056/data/ov056_ctorargs_020b7510.c:
+src/overlays/players/ov056_player_larxene_2/data/ov056_ctorargs_020b7510.c:
     complete
     .rodata     start:0x020b7510 end:0x020b7524
 
-src/overlays/ov056/data/ov056_strings_020b7524.c:
+src/overlays/players/ov056_player_larxene_2/data/ov056_strings_020b7524.c:
     complete
     .rodata     start:0x020b7524 end:0x020b7574
 
-src/overlays/ov056/data/ov056_strings_020b7580.c:
+src/overlays/players/ov056_player_larxene_2/data/ov056_strings_020b7580.c:
     complete
     .data       start:0x020b7580 end:0x020b7594
 
-src/overlays/ov056/data/ov056_strings_020b75a8.c:
+src/overlays/players/ov056_player_larxene_2/data/ov056_strings_020b75a8.c:
     complete
     .data       start:0x020b75a8 end:0x020b7620
 
-src/overlays/ov056/data/ov056_tables_020b7504.c:
+src/overlays/players/ov056_player_larxene_2/data/ov056_tables_020b7504.c:
     complete
     .rodata     start:0x020b7504 end:0x020b7510

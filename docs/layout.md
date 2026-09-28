@@ -1,62 +1,64 @@
-# Code layout: what is where, and where it is going
+# Code layout: what is where
 
-This document maps the binary to the source tree. It is the plan the repository is being
-reorganised against, so a reader can find a system without knowing its address.
+This document maps the binary to the source tree, so a reader can find a system without knowing
+its address.
 
 ## How finished decompilations lay out their code
 
-| | zeldaret/oot | n64decomp/sm64 | pret/pokeplatinum | this repo today |
+| | zeldaret/oot | n64decomp/sm64 | pret/pokeplatinum | this repo |
 |---|---|---|---|---|
-| Game code | `src/code/` plus `src/overlays/{actors,effects,gamestates,misc}/ovl_<Name>/` | `src/{engine,game,menu,audio,...}/` | `src/{battle,applications,savedata,...}/`, named overlays | `src/{auto,calls}/`, `src/overlays/ovNNN/{auto,calls}/` |
-| System libraries | `src/libultra/` | `lib/` | `lib/` plus NitroSDK | `libs/{nitro,nns,msl}/` |
+| Game code | `src/code/` plus `src/overlays/{actors,effects,gamestates,misc}/ovl_<Name>/` | `src/{engine,game,menu,audio,...}/` | `src/{battle,applications,savedata,...}/`, named overlays | `src/engine/` plus `src/overlays/{scenes,screens,field,players,enemies,system}/ovNNN_<name>/` |
+| System libraries | `src/libultra/` | `lib/` | `lib/` plus NitroSDK | `libs/{nitro,nns,msl,mobiclip}/` |
 | Files | one per original translation unit (`z_en_horse.c` + `.h`) | one per translation unit | one per translation unit | one per function |
-| Headers | `include/` with the shared structs | `include/` | `include/` mirroring `src/` | none |
+| Headers | `include/` with the shared structs | `include/` | `include/` mirroring `src/` | not yet |
 | Unknown names | stay `func_8xxxxxxx` until documented | same | `unk_*`, `ov5_021D*` | same |
 
 The common points are: directories say what the code does, not how it was matched; overlays sit
 in named directories grouped by kind; shared types live in `include/`. KH Days fits the OoT model
 closely -- every enemy is its own overlay, like OoT's actors.
 
-## Today's layout
+## Layout
 
 ```
-src/auto/, src/calls/                 main (arm9) game code, split by "has relocations or not"
-src/overlays/ovNNN/{auto,calls,data}/ 297 overlays, one directory each
-libs/nitro/<module>/                  NitroSDK (os, gx, fx, snd, card, fs, spi, rtc, wm, ...)
-libs/nns/<module>/                    NitroSystem (fnd, g3d, gfd, snd)
-libs/msl/                             Metrowerks runtime and C library
-```
-
-`auto/` versus `calls/` is a working-process artifact (a function with or without relocations)
-and means nothing about the game. It goes away.
-
-## Target layout
-
-```
-src/engine/<subsystem>/          main's game code (0x02020834-0x0203d194), one folder per subsystem
-src/overlays/scenes/ovNNN_<name>/    overlays loaded through the scene table
-src/overlays/screens/ovNNN_<name>/   screens and menus loaded by a scene
-src/overlays/field/ovNNN_<name>/     modules loaded inside the field scene (ov002)
-src/overlays/players/ovNNN_<name>/   playable characters (four load slots each)
-src/overlays/enemies/ovNNN_<name>/   one overlay per enemy or boss class
-src/overlays/system/ovNNN_<name>/    boot, wireless, video, anti-tamper, shared enemy framework
-include/                         shared structs (actor, AI task, scene, script context, ...)
-libs/                            unchanged
+src/engine/                           the main module's game code, ITCM included
+src/engine/data/                      its reconstructed DATA
+src/overlays/scenes/ovNNN_<name>/     overlays loaded through the scene table
+src/overlays/screens/ovNNN_<name>/    screens and menus loaded by a scene
+src/overlays/field/ovNNN_<name>/      modules loaded inside the field scene (ov002)
+src/overlays/players/ovNNN_<name>/    playable characters (four load slots each)
+src/overlays/enemies/ovNNN_<name>/    one overlay per enemy or boss class
+src/overlays/system/ovNNN_<name>/     boot, wireless, video, anti-tamper, shared enemy framework
+    <overlay>/data/                   the overlay's reconstructed DATA
+libs/<vendor>/<module>/{auto,calls}/  NitroSDK, NitroSystem, MSL and MobiClip C
+libs/<vendor>/<module>/asm_stubs/     the libraries' own assembly
 docs/
 ```
 
-Overlay directories keep the `ovNNN_` prefix: the number is the FS overlay id the game loads by,
-and the build and tools key on it. Overlays whose purpose is not established keep the bare
-`ovNNN` (the pret convention). Grouping functions back into translation units (one `.c` per
-enemy, per menu, ...) is a later step: the build currently verifies one function per file.
+Every function is one `.c` named after it. Overlay directories keep the `ovNNN` prefix: the number
+is the FS overlay id the game loads by, and the build and tools key on it (`tools/srctree.py`
+finds the directories). Overlays whose purpose is not established keep the bare `ovNNN` (the pret
+convention); the confidence column below says which. `auto/` versus `calls/` (a function with or
+without relocations) was a working-process split and is gone from `src/`; `libs/` still uses it.
+
+Still to do, in this order:
+
+- **Headers**: `include/` with the shared structs (actor, AI task, scene, script context, ...).
+  Today every source declares the part of each struct it touches.
+- **Translation units**: grouping functions back into one `.c` per original file (per enemy, per
+  menu, ...). The build verifies one function per file today. `src/engine/` gets its subsystem
+  folders at that point: the boundaries below are approximate, and a prefix such as `Obj_` or
+  `Game_` turns up in several of them, so splitting by address now would scatter each system.
+- **`libs/` cleanup**: `libs/nitro/nns/` holds NitroSystem code filed under the NitroSDK, and
+  several library functions still carry shallow names that describe their shape
+  (`Party_SetActiveSlots` sits inside NitroSystem GFD).
 
 ## main (arm9)
 
-| Range | Contents | Destination |
+| Range | Contents | Where |
 |---|---|---|
-| 0x02000000-0x02020808 | NitroSDK, NitroSystem and MSL runtime, in link order (crt0, OS, MI, GX, FX, SND, FS, CARD, CTRDG, PM/TP, RTC, fnd, gfd, g3d, snd, MSL) | `libs/` (already there) |
-| 0x02020834-0x0203d194 | the game's own engine, 810 functions | `src/engine/` |
-| ITCM 0x01ff8000 | hot SDK/NitroSystem code copied to ITCM (CP/FX, MI copies, G3D geometry) | `libs/` |
+| 0x02000000-0x02020808 | NitroSDK, NitroSystem and MSL runtime, in link order (crt0, OS, MI, GX, FX, SND, FS, CARD, CTRDG, PM/TP, RTC, fnd, gfd, g3d, snd, MSL) | `libs/`, apart from two game blocks linked into the range: `main()` and the frame/VBlank setup (0x02000bcc-0x0200108c) and the file loader and resource cache (0x0201e1d0-0x0201f79c), both in `src/engine/`. Library functions not yet identified by name sit in the `libs/` module their neighbours in link order belong to. |
+| 0x02020834-0x0203d1bc | the game's own engine | `src/engine/` |
+| ITCM 0x01ff8000 | hot SDK/NitroSystem code copied to ITCM (CP/FX, MI copies, G3D geometry), then the game's own hot code (0x01ffd0e8-0x01fffe68: collision casts, lists) | `libs/`, and the game block in `src/engine/` |
 
 The engine range is laid out by translation unit, so subsystems come in contiguous runs
 (approximate boundaries, to be refined when functions are grouped back into files):
@@ -88,10 +90,13 @@ two or three identical copies for the same reason. Enemy names are not establish
 directories use the class id; strings that hint at a boss (`XionShare`, `xig_h_*`, `sa_h_R`) are
 listed as evidence.
 
-Confidence: H = proven from code or runtime, M = strong evidence, L = best guess (to confirm
-before the directory is renamed).
+Each directory sits in the group its kind names: scene -> `scenes/`, sub-screen -> `screens/`,
+field module -> `field/`, player -> `players/`, enemy -> `enemies/`, system -> `system/`.
 
-| Overlay | Proposed directory | Kind | Functions | Evidence | Confidence |
+Confidence: H = proven from code or runtime, M = strong evidence, L = best guess (the directory
+keeps the bare `ovNNN` until it is confirmed).
+
+| Overlay | Directory | Kind | Functions | Evidence | Confidence |
 |---|---|---|---|---|---|
 | ov000 | `ov000_title` | scene | 262 | Scene 1 (g_SceneTable); boot logo, title, new-game/load menus (/ttl/ttl.p2, UI/newgame, cm_save); runtime-verified | H |
 | ov001 | `ov001_boot` | system | 8 | hardware/VRAM/touch init at boot (ov001_BootInit); DS Protect decrypts it | M |
@@ -100,20 +105,20 @@ before the directory is renamed).
 | ov004 | `ov004_calendar` | scene | 83 | Scene 5; UI/cal/*.pak | M |
 | ov005 | `ov005_story_result` | scene | 289 | Scene 6; UI/srslt result screens | M |
 | ov006 | `ov006_mission_mode_select` | scene | 194 | Scene 7; UI/mlt; runtime-verified Mission Mode character select (NOT the title) | H |
-| ov007 | `ov007_manual` | scene | 14 | Scene 10; ui/mnl | L |
+| ov007 | `ov007` (proposed `ov007_manual`) | scene | 14 | Scene 10; ui/mnl | L |
 | ov008 | `ov008_camp_menu` | scene | 1235 | Scene 19; CAMPMENUMNGR (the KH pause/"camp" menu), mission list, shop, grid pages | M |
 | ov009 | `ov009_camp_save` | scene | 255 | Scene 9; UI/cm/cm.p2 + cm_save | M |
-| ov010 | `ov010_system_message` | scene | 7 | Scene 12; /UI/sys/sys_&.s.z | L |
-| ov011 | `ov011_staff_roll` | scene | 40 | Scene 8; UI/sf (sf.p2, sffont) scrolling panes | L |
+| ov010 | `ov010` (proposed `ov010_system_message`) | scene | 7 | Scene 12; /UI/sys/sys_&.s.z | L |
+| ov011 | `ov011` (proposed `ov011_staff_roll`) | scene | 40 | Scene 8; UI/sf (sf.p2, sffont) scrolling panes | L |
 | ov012 | `ov012_opening` | scene | 42 | Scene 11; /op/op.p2 + MobiClip stream | M |
-| ov013 | `ov013_battle_collision` | field module | 7 | col_btl resource task | L |
-| ov014 | `ov014_field_movers` | field module | 37 | height-motion platforms, instance pools | L |
+| ov013 | `ov013` (proposed `ov013_battle_collision`) | field module | 7 | col_btl resource task | L |
+| ov014 | `ov014` (proposed `ov014_field_movers`) | field module | 37 | height-motion platforms, instance pools | L |
 | ov015 | `ov015_field_pickups` | field module | 70 | spots, pickups, chests | M |
 | ov016 | `ov016_field_breakables` | field module | 82 | kickable/breakable objects, followers | M |
 | ov017 | `ov017_field_deposits` | field module | 45 | item deposit objects | M |
-| ov018 | (keep `ov018`) | empty | 0 | no code or data | H |
-| ov019 | (keep `ov019`) | field module | 5 | record/stat high-water message (5 functions) | L |
-| ov020 | `ov020_field_walls` | field module | 11 | col_wall script entities | L |
+| ov018 | (no code or data) | empty | 0 | no code or data | H |
+| ov019 | `ov019` | field module | 5 | record/stat high-water message (5 functions) | L |
+| ov020 | `ov020` (proposed `ov020_field_walls`) | field module | 11 | col_wall script entities | L |
 | ov021 | `ov021_prize_boxes` | field module | 31 | prize boxes and emblems | M |
 | ov022 | `ov022_battle` | field module | 758 | player/party battle system: command input, hits, stun, actor update (/ba/ef) | M |
 | ov023 | `ov023_event_script` | field module | 224 | event-script VM commands on actors/entities | H |
@@ -122,7 +127,7 @@ before the directory is renamed).
 | ov026 | `ov026_shop` | sub-screen | 256 | UI/shop | M |
 | ov027 | `ov027_game_over` | sub-screen | 43 | /gameover/data | H |
 | ov028 | `ov028_dsprotect` | system | 9 | DS Protect anti-tamper (encrypted blocks) | H |
-| ov029 | (keep `ov029`) | system | 2 | overlay slot acquire/release (2 functions) | L |
+| ov029 | `ov029` | system | 2 | overlay slot acquire/release (2 functions) | L |
 | ov030 | `ov030_player_roxas` | player | 41 | ba/ch/ro/ character resources | H |
 | ov031 | `ov031_player_axel` | player | 33 | ba/ch/ax/ character resources | H |
 | ov032 | `ov032_player_xigbar` | player | 34 | ba/ch/xi/ character resources | H |
@@ -162,7 +167,7 @@ before the directory is renamed).
 | ov066 | `ov066_player_donald_2` | player | 24 | ba/ch/do/ character resources | H |
 | ov067 | `ov067_player_goofy_2` | player | 33 | ba/ch/go/ character resources | H |
 | ov068 | `ov068_player_roxas_dual_2` | player | 29 | ba/ch/r2/ character resources | H |
-| ov069 | (keep `ov069`) | sub-screen | 49 | item/recipe tallies over the mission list (UI/cm/msl) | L |
+| ov069 | `ov069` | sub-screen | 49 | item/recipe tallies over the mission list (UI/cm/msl) | L |
 | ov070 | `ov070_player_axel_3` | player | 33 | ba/ch/ax/ character resources | H |
 | ov071 | `ov071_player_saix_3` | player | 27 | ba/ch/sa/ character resources | H |
 | ov072 | `ov072_player_xigbar_3` | player | 34 | ba/ch/xi/ character resources | H |
@@ -199,14 +204,14 @@ before the directory is renamed).
 | ov103 | `ov103_player_goofy_4` | player | 33 | ba/ch/go/ character resources | H |
 | ov104 | `ov104_player_roxas_dual_4` | player | 29 | ba/ch/r2/ character resources | H |
 | ov105 | `ov105_wireless` | system | 80 | NitroSDK WM + wh.c wireless session | H |
-| ov106 | (keep `ov106`) | sub-screen | 50 | ev/EV_DP.p2, tex_noise, dual3d_update, UI/hcnt | L |
+| ov106 | `ov106` | sub-screen | 50 | ev/EV_DP.p2, tex_noise, dual3d_update, UI/hcnt | L |
 | ov107 | `ov107_enemy_common` | system | 193 | shared enemy/object framework: AI tasks, regions, hit spheres, spawners (Ms/SharedEffect) | H |
-| ov108 | (keep `ov108`) | empty | 0 | no code or data | H |
-| ov109 | (keep `ov109`) | empty | 0 | no code or data | H |
-| ov110 | (keep `ov110`) | empty | 0 | no code or data | H |
-| ov111 | (keep `ov111`) | empty | 0 | no code or data | H |
-| ov112 | (keep `ov112`) | empty | 0 | no code or data | H |
-| ov113 | (keep `ov113`) | empty | 0 | no code or data | H |
+| ov108 | (no code or data) | empty | 0 | no code or data | H |
+| ov109 | (no code or data) | empty | 0 | no code or data | H |
+| ov110 | (no code or data) | empty | 0 | no code or data | H |
+| ov111 | (no code or data) | empty | 0 | no code or data | H |
+| ov112 | (no code or data) | empty | 0 | no code or data | H |
+| ov113 | (no code or data) | empty | 0 | no code or data | H |
 | ov114 | `ov114_enemy_00` | enemy | 43 | entity class 0x00, Ms/00.p | H |
 | ov115 | `ov115_enemy_01` | enemy | 47 | entity class 0x01, Ms/01.p | H |
 | ov116 | `ov116_enemy_01_2` | enemy | 47 | entity class 0x01, Ms/01.p | H |
@@ -395,4 +400,4 @@ before the directory is renamed).
 | ov299 | `ov299_enemy_73` | enemy | 31 | entity class 0x73, Ms/73.p | H |
 | ov300 | `ov300_enemy_74` | enemy | 3 | entity class 0x74, Ms/74.p | H |
 | ov301 | `ov301_enemy_75` | enemy | 18 | entity class 0x75, Ms/75.p | H |
-| ov302 | (keep `ov302`) | field module | 25 | world-id record filters | L |
+| ov302 | `ov302` | field module | 25 | world-id record filters | L |

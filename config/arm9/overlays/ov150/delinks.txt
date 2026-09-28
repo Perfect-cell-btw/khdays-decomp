@@ -4,246 +4,246 @@
     .data       start:0x020d25c0 end:0x020d2600 kind:data align:32
     .bss        start:0x020d2600 end:0x020d2600 kind:bss align:32
 
-src/overlays/ov150/calls/Ov150_RegisterEntityClass.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov150/calls/Ov150_CreateNamedEntity.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov150/calls/Ov150_ActorInit.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_ActorInit.c:
     complete
     .text       start:0x020cfc04 end:0x020cfe74
 
-src/overlays/ov150/calls/Ov150_ReleaseSubObjectsAndListThenNotify.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020cfe74 end:0x020cfebc
 
-src/overlays/ov150/calls/Ov150_TickAndSyncMarkerSrt.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_TickAndSyncMarkerSrt.c:
     complete
     .text       start:0x020cfebc end:0x020cff04
 
-src/overlays/ov150/calls/Ov150_Model_SetTrack0.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_Model_SetTrack0.c:
     complete
     .text       start:0x020cff04 end:0x020cff34
 
-src/overlays/ov150/calls/Ov150_HandleCommand.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_HandleCommand.c:
     complete
     .text       start:0x020cff34 end:0x020d0190
 
-src/overlays/ov150/calls/Ov150_ForwardEventToChild.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_ForwardEventToChild.c:
     complete
     .text       start:0x020d0190 end:0x020d01b8
 
-src/overlays/ov150/calls/Ov150_NotifyPartThenBase.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_NotifyPartThenBase.c:
     complete
     .text       start:0x020d01b8 end:0x020d01e0
 
-src/overlays/ov150/calls/Ov150_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020d01e0 end:0x020d030c
 
-src/overlays/ov150/calls/Ov150_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d030c end:0x020d0358
 
-src/overlays/ov150/calls/Ov150_TickStaggerAndFlipFacing.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_TickStaggerAndFlipFacing.c:
     complete
     .text       start:0x020d0358 end:0x020d04f4
 
-src/overlays/ov150/auto/Ov150_RequestSubState8IfIdle.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_RequestSubState8IfIdle.c:
     complete
     .text       start:0x020d04f4 end:0x020d0524
 
-src/overlays/ov150/calls/Ov150_stInitSlotsFlags6.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stInitSlotsFlags6.c:
     complete
     .text       start:0x020d0524 end:0x020d05f8
 
-src/overlays/ov150/calls/Ov150_DispatchSubStateByte.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_DispatchSubStateByte.c:
     complete
     .text       start:0x020d05f8 end:0x020d0788
 
-src/overlays/ov150/calls/Ov150_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020d0788 end:0x020d0820
 
-src/overlays/ov150/calls/Ov150_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0820 end:0x020d0888
 
-src/overlays/ov150/calls/Ov150_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d0888 end:0x020d08c4
 
-src/overlays/ov150/calls/Ov150_stSetFlagsEffectClear82.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stSetFlagsEffectClear82.c:
     complete
     .text       start:0x020d08c4 end:0x020d0960
 
-src/overlays/ov150/calls/Ov150_stTickAimTimer.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stTickAimTimer.c:
     complete
     .text       start:0x020d0960 end:0x020d0a28
 
-src/overlays/ov150/calls/Ov150_AiStep_QueueAction2OnFlag44Clear.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_AiStep_QueueAction2OnFlag44Clear.c:
     complete
     .text       start:0x020d0a28 end:0x020d0a5c
 
-src/overlays/ov150/calls/Ov150_stateTimerRandomRange.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stateTimerRandomRange.c:
     complete
     .text       start:0x020d0a5c end:0x020d0adc
 
-src/overlays/ov150/calls/Ov150_TriggerWhenTargetInRange.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_TriggerWhenTargetInRange.c:
     complete
     .text       start:0x020d0adc end:0x020d0b68
 
-src/overlays/ov150/calls/Ov150_PickApproachHeading.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_PickApproachHeading.c:
     complete
     .text       start:0x020d0b68 end:0x020d0d04
 
-src/overlays/ov150/calls/Ov150_PoseAdvanceUnlessField14AtLeast80.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_PoseAdvanceUnlessField14AtLeast80.c:
     complete
     .text       start:0x020d0d04 end:0x020d0d4c
 
-src/overlays/ov150/calls/Ov150_stateFixedAngleMove.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stateFixedAngleMove.c:
     complete
     .text       start:0x020d0d4c end:0x020d0e20
 
-src/overlays/ov150/calls/Ov150_PickStrafeDirection.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_PickStrafeDirection.c:
     complete
     .text       start:0x020d0e20 end:0x020d0ef4
 
-src/overlays/ov150/calls/Ov150_ProjectileAction_Enter.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_ProjectileAction_Enter.c:
     complete
     .text       start:0x020d0ef4 end:0x020d0fa8
 
-src/overlays/ov150/calls/Ov150_stTransformProjectilePose.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stTransformProjectilePose.c:
     complete
     .text       start:0x020d0fa8 end:0x020d105c
 
-src/overlays/ov150/calls/Ov150_stAimAngleToTarget.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stAimAngleToTarget.c:
     complete
     .text       start:0x020d105c end:0x020d10e0
 
-src/overlays/ov150/calls/Ov150_stAdvanceProjectilePose.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stAdvanceProjectilePose.c:
     complete
     .text       start:0x020d10e0 end:0x020d11a4
 
-src/overlays/ov150/calls/Ov150_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d11a4 end:0x020d126c
 
-src/overlays/ov150/calls/Ov150_FaceTarget.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_FaceTarget.c:
     complete
     .text       start:0x020d126c end:0x020d1330
 
-src/overlays/ov150/calls/Ov150_stateAnimCallbackEffect.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stateAnimCallbackEffect.c:
     complete
     .text       start:0x020d1330 end:0x020d13f4
 
-src/overlays/ov150/calls/Ov150_stateFixedAngleTimed.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stateFixedAngleTimed.c:
     complete
     .text       start:0x020d13f4 end:0x020d14c8
 
-src/overlays/ov150/calls/Ov150_AiStep_QueueAction2WhenFree.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_AiStep_QueueAction2WhenFree.c:
     complete
     .text       start:0x020d14c8 end:0x020d14fc
 
-src/overlays/ov150/calls/Ov150_stClearFlag1SetFlags86.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stClearFlag1SetFlags86.c:
     complete
     .text       start:0x020d14fc end:0x020d15b0
 
-src/overlays/ov150/calls/Ov150_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d15b0 end:0x020d15f0
 
-src/overlays/ov150/calls/Ov150_Actor_New.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_Actor_New.c:
     complete
     .text       start:0x020d15f0 end:0x020d1624
 
-src/overlays/ov150/calls/Ov150_EnemyConstruct.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_EnemyConstruct.c:
     complete
     .text       start:0x020d1624 end:0x020d17cc
 
-src/overlays/ov150/calls/Ov150_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020d17cc end:0x020d180c
 
-src/overlays/ov150/calls/Ov150_TickAndSyncModelXform.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d180c end:0x020d1844
 
-src/overlays/ov150/calls/Ov150_AiState_OnMessage.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_AiState_OnMessage.c:
     complete
     .text       start:0x020d1844 end:0x020d18f8
 
-src/overlays/ov150/calls/Ov150_BroadcastPositionMessage.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_BroadcastPositionMessage.c:
     complete
     .text       start:0x020d18f8 end:0x020d1a20
 
-src/overlays/ov150/calls/Ov150_CreateRegistryEntryAndLink_2.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020d1a20 end:0x020d1a6c
 
-src/overlays/ov150/calls/Ov150_stateInitClearSlots.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stateInitClearSlots.c:
     complete
     .text       start:0x020d1a6c end:0x020d1b14
 
-src/overlays/ov150/calls/Ov150_dispatchByStatusByte.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_dispatchByStatusByte.c:
     complete
     .text       start:0x020d1b14 end:0x020d1b8c
 
-src/overlays/ov150/auto/Ov150_AiApplyMoveVector.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_AiApplyMoveVector.c:
     complete
     .text       start:0x020d1b8c end:0x020d1ba4
 
-src/overlays/ov150/calls/Ov150_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d1ba4 end:0x020d1c54
 
-src/overlays/ov150/calls/Ov150_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d1c54 end:0x020d1c8c
 
-src/overlays/ov150/calls/Ov150_SeedDashVector.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_SeedDashVector.c:
     complete
     .text       start:0x020d1c8c end:0x020d1d5c
 
-src/overlays/ov150/calls/Ov150_ChargeStep.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_ChargeStep.c:
     complete
     .text       start:0x020d1d5c end:0x020d2318
 
-src/overlays/ov150/calls/Ov150_bindSubitemsByTypeId.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_bindSubitemsByTypeId.c:
     complete
     .text       start:0x020d2318 end:0x020d23fc
 
-src/overlays/ov150/calls/Ov150_RenderPerSphere.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_RenderPerSphere.c:
     complete
     .text       start:0x020d23fc end:0x020d2468
 
-src/overlays/ov150/calls/Ov150_stateAttachSubitemInit.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_stateAttachSubitemInit.c:
     complete
     .text       start:0x020d2468 end:0x020d2510
 
-src/overlays/ov150/calls/Ov150_ChildTaskTeardown.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_ChildTaskTeardown.c:
     complete
     .text       start:0x020d2510 end:0x020d2538
 
-src/overlays/ov150/calls/Ov150_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov150_enemy_12_2/Ov150_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d2538 end:0x020d2558
 
-src/overlays/ov150/data/ov150_const_020d25cc.c:
+src/overlays/enemies/ov150_enemy_12_2/data/ov150_const_020d25cc.c:
     complete
     .data       start:0x020d25cc end:0x020d25d0
 
-src/overlays/ov150/data/ov150_strings_020d25c0.c:
+src/overlays/enemies/ov150_enemy_12_2/data/ov150_strings_020d25c0.c:
     complete
     .data       start:0x020d25c0 end:0x020d25cc
 
-src/overlays/ov150/data/ov150_strings_020d25d0.c:
+src/overlays/enemies/ov150_enemy_12_2/data/ov150_strings_020d25d0.c:
     complete
     .data       start:0x020d25d0 end:0x020d2600
 
-src/overlays/ov150/data/ov150_tables_020d2558.c:
+src/overlays/enemies/ov150_enemy_12_2/data/ov150_tables_020d2558.c:
     complete
     .rodata     start:0x020d2558 end:0x020d25b8

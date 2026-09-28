@@ -4,130 +4,130 @@
     .data       start:0x020bc120 end:0x020bc1c0 kind:data align:32
     .bss        start:0x020bc1c0 end:0x020bc1e0 kind:bss align:32
 
-src/overlays/ov100/calls/func_ov100_020ba7c0.c:
+src/overlays/players/ov100_player_zexion_4/func_ov100_020ba7c0.c:
     complete
     .text       start:0x020ba7c0 end:0x020ba7d4
 
-src/overlays/ov100/calls/Ov100_InitAndReturnNextState.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_InitAndReturnNextState.c:
     complete
     .text       start:0x020ba7d4 end:0x020ba7fc
 
-src/overlays/ov100/calls/Ov100_stateDtorCleanup.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_stateDtorCleanup.c:
     complete
     .text       start:0x020ba7fc end:0x020ba838
 
-src/overlays/ov100/calls/Ov100_Boot.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_Boot.c:
     complete
     .text       start:0x020ba838 end:0x020baa20
 
-src/overlays/ov100/calls/Ov100_BindChannelsAndSlotMap.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_BindChannelsAndSlotMap.c:
     complete
     .text       start:0x020baa20 end:0x020babb8
 
-src/overlays/ov100/calls/Ov100_MapSlotKindToAnim.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_MapSlotKindToAnim.c:
     complete
     .text       start:0x020babb8 end:0x020bac24
 
-src/overlays/ov100/calls/Ov100_ApplyModeChange.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_ApplyModeChange.c:
     complete
     .text       start:0x020bac24 end:0x020bad00
 
-src/overlays/ov100/calls/Ov100_UpdateAnchorsAndChannels.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_UpdateAnchorsAndChannels.c:
     complete
     .text       start:0x020bad00 end:0x020bb08c
 
-src/overlays/ov100/calls/Ov100_SetupTwoSubActionsWithGlobal.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_SetupTwoSubActionsWithGlobal.c:
     complete
     .text       start:0x020bb08c end:0x020bb0dc
 
-src/overlays/ov100/calls/Ov100_SelectRequestHandler.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_SelectRequestHandler.c:
     complete
     .text       start:0x020bb0dc end:0x020bb144
 
-src/overlays/ov100/calls/Ov100_BuildRenderHandles.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_BuildRenderHandles.c:
     complete
     .text       start:0x020bb144 end:0x020bb1cc
 
-src/overlays/ov100/calls/Ov100_StoreArgToGlobalSlotAndForward.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_StoreArgToGlobalSlotAndForward.c:
     complete
     .text       start:0x020bb1cc end:0x020bb1fc
 
-src/overlays/ov100/calls/Ov100_DescentStep.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_DescentStep.c:
     complete
     .text       start:0x020bb1fc end:0x020bb3d8
 
-src/overlays/ov100/calls/Ov100_HoverStep.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_HoverStep.c:
     complete
     .text       start:0x020bb3d8 end:0x020bb6d0
 
-src/overlays/ov100/calls/Ov100_InitActorTwoRegionsAndForward.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_InitActorTwoRegionsAndForward.c:
     complete
     .text       start:0x020bb6d0 end:0x020bb718
 
-src/overlays/ov100/calls/Ov100_ReleaseChannelListAndSubObjects.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_ReleaseChannelListAndSubObjects.c:
     complete
     .text       start:0x020bb718 end:0x020bb768
 
-src/overlays/ov100/calls/Ov100_BindAnimsOnPoseReset.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_BindAnimsOnPoseReset.c:
     complete
     .text       start:0x020bb768 end:0x020bb7f4
 
-src/overlays/ov100/calls/Ov100_StepEffectSlot.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_StepEffectSlot.c:
     complete
     .text       start:0x020bb7f4 end:0x020bb9f0
 
-src/overlays/ov100/calls/Ov100_ForwardArg1IfStateInRangeAndFlag.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_ForwardArg1IfStateInRangeAndFlag.c:
     complete
     .text       start:0x020bb9f0 end:0x020bba24
 
-src/overlays/ov100/calls/Ov100_SpawnNextEffect.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_SpawnNextEffect.c:
     complete
     .text       start:0x020bba24 end:0x020bbbd0
 
-src/overlays/ov100/calls/Ov100_SpawnEffectWithFalloff.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_SpawnEffectWithFalloff.c:
     complete
     .text       start:0x020bbbd0 end:0x020bbc70
 
-src/overlays/ov100/calls/Ov100_ResolveHitPositionOrFallback.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_ResolveHitPositionOrFallback.c:
     complete
     .text       start:0x020bbc70 end:0x020bbd0c
 
-src/overlays/ov100/calls/Ov100_BuildEmitterDescriptor.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_BuildEmitterDescriptor.c:
     complete
     .text       start:0x020bbd0c end:0x020bbe54
 
-src/overlays/ov100/calls/Ov100_BindRig.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_BindRig.c:
     complete
     .text       start:0x020bbe54 end:0x020bbea0
 
-src/overlays/ov100/calls/Ov100_ReleaseSlotHandles.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_ReleaseSlotHandles.c:
     complete
     .text       start:0x020bbea0 end:0x020bbf08
 
-src/overlays/ov100/calls/Ov100_StepParts.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_StepParts.c:
     complete
     .text       start:0x020bbf08 end:0x020bc004
 
-src/overlays/ov100/calls/Ov100_InvokeWithDataTable.c:
+src/overlays/players/ov100_player_zexion_4/Ov100_InvokeWithDataTable.c:
     complete
     .text       start:0x020bc004 end:0x020bc01c
 
-src/overlays/ov100/data/ov100_class_020bc120.c:
+src/overlays/players/ov100_player_zexion_4/data/ov100_class_020bc120.c:
     complete
     .data       start:0x020bc120 end:0x020bc134
 
-src/overlays/ov100/data/ov100_pointers_020bc134.c:
+src/overlays/players/ov100_player_zexion_4/data/ov100_pointers_020bc134.c:
     complete
     .data       start:0x020bc134 end:0x020bc148
 
-src/overlays/ov100/data/ov100_strings_020bc01c.c:
+src/overlays/players/ov100_player_zexion_4/data/ov100_strings_020bc01c.c:
     complete
     .rodata     start:0x020bc01c end:0x020bc04c
 
-src/overlays/ov100/data/ov100_strings_020bc148.c:
+src/overlays/players/ov100_player_zexion_4/data/ov100_strings_020bc148.c:
     complete
     .data       start:0x020bc148 end:0x020bc1c0
 
-src/overlays/ov100/data/ov100_tables_020bc04c.c:
+src/overlays/players/ov100_player_zexion_4/data/ov100_tables_020bc04c.c:
     complete
     .rodata     start:0x020bc04c end:0x020bc10c

@@ -4,178 +4,178 @@
     .data       start:0x020b9aa0 end:0x020b9b80 kind:data align:32
     .bss        start:0x020b9b80 end:0x020b9ba0 kind:bss align:32
 
-src/overlays/ov077/calls/func_ov077_020b8100.c:
+src/overlays/players/ov077_player_lexaeus_3/func_ov077_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov077/calls/Ov077_InitAndReturnNextState.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_InitAndReturnNextState.c:
     complete
     .text       start:0x020b8114 end:0x020b813c
 
-src/overlays/ov077/calls/Ov077_setupTriple.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_setupTriple.c:
     complete
     .text       start:0x020b813c end:0x020b815c
 
-src/overlays/ov077/calls/Ov077_BuildRigObject.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_BuildRigObject.c:
     complete
     .text       start:0x020b815c end:0x020b8370
 
-src/overlays/ov077/calls/Ov077_initSharedObjSetReadyFlag.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020b8370 end:0x020b83a8
 
-src/overlays/ov077/auto/Ov077_MapSlotKindToAnim.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b83a8 end:0x020b83d0
 
-src/overlays/ov077/calls/Ov077_SwitchAnimationSet.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_SwitchAnimationSet.c:
     complete
     .text       start:0x020b83d0 end:0x020b84ec
 
-src/overlays/ov077/calls/func_ov077_020b84ec.c:
+src/overlays/players/ov077_player_lexaeus_3/func_ov077_020b84ec.c:
     complete
     .text       start:0x020b84ec end:0x020b84f8
 
-src/overlays/ov077/calls/Ov077_HandleMsgAndReaim.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_HandleMsgAndReaim.c:
     complete
     .text       start:0x020b84f8 end:0x020b8638
 
-src/overlays/ov077/calls/Ov077_StepAttackSlotAndForward.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_StepAttackSlotAndForward.c:
     complete
     .text       start:0x020b8638 end:0x020b8670
 
-src/overlays/ov077/calls/Ov077_BuildScene.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_BuildScene.c:
     complete
     .text       start:0x020b8670 end:0x020b8700
 
-src/overlays/ov077/calls/Ov077_InitSceneResources.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_InitSceneResources.c:
     complete
     .text       start:0x020b8700 end:0x020b8810
 
-src/overlays/ov077/calls/Ov077_FreeFiveGlobalSubObjects.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_FreeFiveGlobalSubObjects.c:
     complete
     .text       start:0x020b8810 end:0x020b8858
 
-src/overlays/ov077/calls/Ov077_PublishAttachAnchor.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_PublishAttachAnchor.c:
     complete
     .text       start:0x020b8858 end:0x020b887c
 
-src/overlays/ov077/calls/Ov077_UpdateAllPartsAndFlagLocal.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_UpdateAllPartsAndFlagLocal.c:
     complete
     .text       start:0x020b887c end:0x020b894c
 
-src/overlays/ov077/calls/Ov077_UpdatePartsIfEnabled.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_UpdatePartsIfEnabled.c:
     complete
     .text       start:0x020b894c end:0x020b89a8
 
-src/overlays/ov077/calls/Ov077_EnterStateAndPlayVoice.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_EnterStateAndPlayVoice.c:
     complete
     .text       start:0x020b89a8 end:0x020b89e4
 
-src/overlays/ov077/calls/Ov077_ReleaseGlobalSlotIfSet.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_ReleaseGlobalSlotIfSet.c:
     complete
     .text       start:0x020b89e4 end:0x020b8a20
 
-src/overlays/ov077/calls/Ov077_UpdateChargeSequence.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_UpdateChargeSequence.c:
     complete
     .text       start:0x020b8a20 end:0x020b8bdc
 
-src/overlays/ov077/calls/Ov077_BindDefaultAnims.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_BindDefaultAnims.c:
     complete
     .text       start:0x020b8bdc end:0x020b8c38
 
-src/overlays/ov077/calls/Ov077_UpdateTracksWhileActive.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_UpdateTracksWhileActive.c:
     complete
     .text       start:0x020b8c38 end:0x020b8c68
 
-src/overlays/ov077/calls/Ov077_DrawNodeWithOwnerPos.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_DrawNodeWithOwnerPos.c:
     complete
     .text       start:0x020b8c68 end:0x020b8ce0
 
-src/overlays/ov077/calls/Ov077_BindDefaultAnimsAtBase.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_BindDefaultAnimsAtBase.c:
     complete
     .text       start:0x020b8ce0 end:0x020b8d3c
 
-src/overlays/ov077/calls/Ov077_UpdateChargeEmitter.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_UpdateChargeEmitter.c:
     complete
     .text       start:0x020b8d3c end:0x020b8eac
 
-src/overlays/ov077/calls/Ov077_DrawNodeCallback.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_DrawNodeCallback.c:
     complete
     .text       start:0x020b8eac end:0x020b8ec8
 
-src/overlays/ov077/calls/Ov077_BindAnimsWithIndex.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_BindAnimsWithIndex.c:
     complete
     .text       start:0x020b8ec8 end:0x020b8f30
 
-src/overlays/ov077/calls/Ov077_TickChargeStateGuarded.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_TickChargeStateGuarded.c:
     complete
     .text       start:0x020b8f30 end:0x020b8fc8
 
-src/overlays/ov077/calls/Ov077_DrawNodeAtOwner.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_DrawNodeAtOwner.c:
     complete
     .text       start:0x020b8fc8 end:0x020b9040
 
-src/overlays/ov077/calls/Ov077_DrawNodeWithOwnerPos2.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_DrawNodeWithOwnerPos2.c:
     complete
     .text       start:0x020b9040 end:0x020b90c0
 
-src/overlays/ov077/calls/Ov077_SetSequenceAnimation.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_SetSequenceAnimation.c:
     complete
     .text       start:0x020b90c0 end:0x020b9114
 
-src/overlays/ov077/calls/Ov077_RearmSequenceMode.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_RearmSequenceMode.c:
     complete
     .text       start:0x020b9114 end:0x020b91d4
 
-src/overlays/ov077/calls/Ov077_ResetSequenceState.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_ResetSequenceState.c:
     complete
     .text       start:0x020b91d4 end:0x020b91e0
 
-src/overlays/ov077/calls/Ov077_DriveSwingSequence.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_DriveSwingSequence.c:
     complete
     .text       start:0x020b91e0 end:0x020b9310
 
-src/overlays/ov077/calls/Ov077_UploadBoneMatrices.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_UploadBoneMatrices.c:
     complete
     .text       start:0x020b9310 end:0x020b9388
 
-src/overlays/ov077/calls/Ov077_FireChargeBurst.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_FireChargeBurst.c:
     complete
     .text       start:0x020b9388 end:0x020b960c
 
-src/overlays/ov077/calls/Ov077_FlagLocalAndEnterState21.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_FlagLocalAndEnterState21.c:
     complete
     .text       start:0x020b960c end:0x020b9674
 
-src/overlays/ov077/calls/Ov077_TickChargeActor.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_TickChargeActor.c:
     complete
     .text       start:0x020b9674 end:0x020b9820
 
-src/overlays/ov077/calls/Ov077_TickFinishAction.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_TickFinishAction.c:
     complete
     .text       start:0x020b9820 end:0x020b9a14
 
-src/overlays/ov077/calls/Ov077_InvokeWithDataTable.c:
+src/overlays/players/ov077_player_lexaeus_3/Ov077_InvokeWithDataTable.c:
     complete
     .text       start:0x020b9a14 end:0x020b9a2c
 
-src/overlays/ov077/data/ov077_class_020b9ab4.c:
+src/overlays/players/ov077_player_lexaeus_3/data/ov077_class_020b9ab4.c:
     complete
     .data       start:0x020b9ab4 end:0x020b9ac8
 
-src/overlays/ov077/data/ov077_ctorargs_020b9a6c.c:
+src/overlays/players/ov077_player_lexaeus_3/data/ov077_ctorargs_020b9a6c.c:
     complete
     .rodata     start:0x020b9a6c end:0x020b9a80
 
-src/overlays/ov077/data/ov077_strings_020b9a2c.c:
+src/overlays/players/ov077_player_lexaeus_3/data/ov077_strings_020b9a2c.c:
     complete
     .rodata     start:0x020b9a2c end:0x020b9a6c
 
-src/overlays/ov077/data/ov077_strings_020b9aa0.c:
+src/overlays/players/ov077_player_lexaeus_3/data/ov077_strings_020b9aa0.c:
     complete
     .data       start:0x020b9aa0 end:0x020b9ab4
 
-src/overlays/ov077/data/ov077_strings_020b9ac8.c:
+src/overlays/players/ov077_player_lexaeus_3/data/ov077_strings_020b9ac8.c:
     complete
     .data       start:0x020b9ac8 end:0x020b9b80

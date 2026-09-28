@@ -4,122 +4,122 @@
     .data       start:0x020b4b00 end:0x020b4b80 kind:data align:32
     .bss        start:0x020b4b80 end:0x020b4ba0 kind:bss align:32
 
-src/overlays/ov033/calls/func_ov033_020b3220.c:
+src/overlays/players/ov033_player_saix/func_ov033_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov033/calls/Ov033_ClassCtor.c:
+src/overlays/players/ov033_player_saix/Ov033_ClassCtor.c:
     complete
     .text       start:0x020b3234 end:0x020b325c
 
-src/overlays/ov033/calls/Ov033_ClassTeardown.c:
+src/overlays/players/ov033_player_saix/Ov033_ClassTeardown.c:
     complete
     .text       start:0x020b325c end:0x020b3270
 
-src/overlays/ov033/calls/Ov033_Boot.c:
+src/overlays/players/ov033_player_saix/Ov033_Boot.c:
     complete
     .text       start:0x020b3270 end:0x020b34ac
 
-src/overlays/ov033/calls/Ov033_initSharedObjSetReadyFlag.c:
+src/overlays/players/ov033_player_saix/Ov033_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020b34ac end:0x020b34e4
 
-src/overlays/ov033/auto/Ov033_MapSlotKindToAnim.c:
+src/overlays/players/ov033_player_saix/Ov033_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b34e4 end:0x020b350c
 
-src/overlays/ov033/calls/Ov033_BuildRenderHandle.c:
+src/overlays/players/ov033_player_saix/Ov033_BuildRenderHandle.c:
     complete
     .text       start:0x020b350c end:0x020b356c
 
-src/overlays/ov033/calls/Ov033_initSubObjectSlots.c:
+src/overlays/players/ov033_player_saix/Ov033_initSubObjectSlots.c:
     complete
     .text       start:0x020b356c end:0x020b3608
 
-src/overlays/ov033/calls/Ov033_refreshSubObjectSlots.c:
+src/overlays/players/ov033_player_saix/Ov033_refreshSubObjectSlots.c:
     complete
     .text       start:0x020b3608 end:0x020b364c
 
-src/overlays/ov033/calls/Ov033_dispatchStateTransitionCode.c:
+src/overlays/players/ov033_player_saix/Ov033_dispatchStateTransitionCode.c:
     complete
     .text       start:0x020b364c end:0x020b3710
 
-src/overlays/ov033/calls/Ov033_UpdateShotsByMode.c:
+src/overlays/players/ov033_player_saix/Ov033_UpdateShotsByMode.c:
     complete
     .text       start:0x020b3710 end:0x020b38e0
 
-src/overlays/ov033/calls/Ov033_beginStateBindHandlers.c:
+src/overlays/players/ov033_player_saix/Ov033_beginStateBindHandlers.c:
     complete
     .text       start:0x020b38e0 end:0x020b3970
 
-src/overlays/ov033/calls/Ov033_HandleMsgAndReaimArc.c:
+src/overlays/players/ov033_player_saix/Ov033_HandleMsgAndReaimArc.c:
     complete
     .text       start:0x020b3970 end:0x020b3abc
 
-src/overlays/ov033/calls/Ov033_activateAndComputeAimAngle.c:
+src/overlays/players/ov033_player_saix/Ov033_activateAndComputeAimAngle.c:
     complete
     .text       start:0x020b3abc end:0x020b3bc4
 
-src/overlays/ov033/calls/Ov033_IdleStep.c:
+src/overlays/players/ov033_player_saix/Ov033_IdleStep.c:
     complete
     .text       start:0x020b3bc4 end:0x020b3e10
 
-src/overlays/ov033/calls/Ov033_AttackStep.c:
+src/overlays/players/ov033_player_saix/Ov033_AttackStep.c:
     complete
     .text       start:0x020b3e10 end:0x020b4038
 
-src/overlays/ov033/calls/Ov033_LandingStep.c:
+src/overlays/players/ov033_player_saix/Ov033_LandingStep.c:
     complete
     .text       start:0x020b4038 end:0x020b4220
 
-src/overlays/ov033/calls/Ov033_FireForwardBurst.c:
+src/overlays/players/ov033_player_saix/Ov033_FireForwardBurst.c:
     complete
     .text       start:0x020b4220 end:0x020b43dc
 
-src/overlays/ov033/calls/Ov033_FireRecoilBurst.c:
+src/overlays/players/ov033_player_saix/Ov033_FireRecoilBurst.c:
     complete
     .text       start:0x020b43dc end:0x020b4528
 
-src/overlays/ov033/calls/Ov033_FireSustainedBurst.c:
+src/overlays/players/ov033_player_saix/Ov033_FireSustainedBurst.c:
     complete
     .text       start:0x020b4528 end:0x020b4688
 
-src/overlays/ov033/calls/Ov033_BindDefaultAnimsIfIdle.c:
+src/overlays/players/ov033_player_saix/Ov033_BindDefaultAnimsIfIdle.c:
     complete
     .text       start:0x020b4688 end:0x020b46f0
 
-src/overlays/ov033/calls/Ov033_UpdateGuardedSlots.c:
+src/overlays/players/ov033_player_saix/Ov033_UpdateGuardedSlots.c:
     complete
     .text       start:0x020b46f0 end:0x020b47a0
 
-src/overlays/ov033/calls/Ov033_UpdateSlotsAndFlush.c:
+src/overlays/players/ov033_player_saix/Ov033_UpdateSlotsAndFlush.c:
     complete
     .text       start:0x020b47a0 end:0x020b4804
 
-src/overlays/ov033/calls/Ov033_LaunchProjectile.c:
+src/overlays/players/ov033_player_saix/Ov033_LaunchProjectile.c:
     complete
     .text       start:0x020b4804 end:0x020b4a34
 
-src/overlays/ov033/calls/Ov033_ClearStateIfReadyWhenActive.c:
+src/overlays/players/ov033_player_saix/Ov033_ClearStateIfReadyWhenActive.c:
     complete
     .text       start:0x020b4a34 end:0x020b4a60
 
-src/overlays/ov033/calls/Ov033_DispatchWhenStateActive.c:
+src/overlays/players/ov033_player_saix/Ov033_DispatchWhenStateActive.c:
     complete
     .text       start:0x020b4a60 end:0x020b4a90
 
-src/overlays/ov033/calls/Ov033_InvokeWithDataTable.c:
+src/overlays/players/ov033_player_saix/Ov033_InvokeWithDataTable.c:
     complete
     .text       start:0x020b4a90 end:0x020b4aa8
 
-src/overlays/ov033/data/ov033_class_020b4b00.c:
+src/overlays/players/ov033_player_saix/data/ov033_class_020b4b00.c:
     complete
     .data       start:0x020b4b00 end:0x020b4b14
 
-src/overlays/ov033/data/ov033_strings_020b4aa8.c:
+src/overlays/players/ov033_player_saix/data/ov033_strings_020b4aa8.c:
     complete
     .rodata     start:0x020b4aa8 end:0x020b4af8
 
-src/overlays/ov033/data/ov033_strings_020b4b14.c:
+src/overlays/players/ov033_player_saix/data/ov033_strings_020b4b14.c:
     complete
     .data       start:0x020b4b14 end:0x020b4b80

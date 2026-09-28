@@ -733,7 +733,7 @@
       "kind": "authorized_clz",
       "mode": "arm",
       "size": 132,
-      "source": "src/overlays/ov002/calls/Ov002_FindFreeSpotId.c",
+      "source": "src/overlays/scenes/ov002_field/Ov002_FindFreeSpotId.c",
       "source_sha256": "71a2319dde8a26e51a582b7ba1f400c0e9fe0e5f3dcfb46e1505f82290a87b34",
       "target_sha256": "952e8b2925837566aa0a639f1785105356e8ba50bf12113c2f82a17e8a56c230"
     },
@@ -741,7 +741,7 @@
       "kind": "authorized_clz",
       "mode": "arm",
       "size": 576,
-      "source": "src/overlays/ov003/calls/Ov003_RankPlayers.c",
+      "source": "src/overlays/scenes/ov003_mission_result/Ov003_RankPlayers.c",
       "source_sha256": "2acf18c100aad1ac0f169cff4f27c8642f8818cdf5381f16559cdf6f01d4941a",
       "target_sha256": "b97dbd98de132ddcd2afe50d2e898935fc1de228f0fd88c3b5485ad9c419404d"
     },

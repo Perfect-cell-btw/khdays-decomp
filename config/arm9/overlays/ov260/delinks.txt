@@ -4,450 +4,450 @@
     .data       start:0x020d2aa0 end:0x020d2ae0 kind:data align:32
     .bss        start:0x020d2ae0 end:0x020d2ae0 kind:bss align:32
 
-src/overlays/ov260/calls/Ov260_RegisterEntityClass.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov260/calls/Ov260_CreateNamedEntity.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/ov260/calls/Ov260_ModelNodeCallback.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_ModelNodeCallback.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc078
 
-src/overlays/ov260/calls/Ov260_ArmModelCallback.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_ArmModelCallback.c:
     complete
     .text       start:0x020cc078 end:0x020cc0b4
 
-src/overlays/ov260/calls/Ov260_Construct.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_Construct.c:
     complete
     .text       start:0x020cc0b4 end:0x020cc440
 
-src/overlays/ov260/calls/Ov260_Actor_Destroy.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_Actor_Destroy.c:
     complete
     .text       start:0x020cc440 end:0x020cc4a8
 
-src/overlays/ov260/calls/Ov260_PropagateBlockChain.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_PropagateBlockChain.c:
     complete
     .text       start:0x020cc4a8 end:0x020cc51c
 
-src/overlays/ov260/calls/Ov260_AttachHook.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AttachHook.c:
     complete
     .text       start:0x020cc51c end:0x020cc570
 
-src/overlays/ov260/calls/Ov260_DetachHook.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_DetachHook.c:
     complete
     .text       start:0x020cc570 end:0x020cc5c4
 
-src/overlays/ov260/calls/Ov260_ActorMessageHandler.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_ActorMessageHandler.c:
     complete
     .text       start:0x020cc5c4 end:0x020cc808
 
-src/overlays/ov260/calls/Ov260_Teardown.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_Teardown.c:
     complete
     .text       start:0x020cc808 end:0x020cc88c
 
-src/overlays/ov260/calls/Ov260_BindClip.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_BindClip.c:
     complete
     .text       start:0x020cc88c end:0x020cc8fc
 
-src/overlays/ov260/calls/Ov260_SetPose.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_SetPose.c:
     complete
     .text       start:0x020cc8fc end:0x020ccb90
 
-src/overlays/ov260/calls/Ov260_CreateAiTask.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_CreateAiTask.c:
     complete
     .text       start:0x020ccb90 end:0x020ccbec
 
-src/overlays/ov260/calls/Ov260_OnHit.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_OnHit.c:
     complete
     .text       start:0x020ccbec end:0x020cd04c
 
-src/overlays/ov260/calls/Ov260_MapHeldItemKindToAnim.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_MapHeldItemKindToAnim.c:
     complete
     .text       start:0x020cd04c end:0x020cd148
 
-src/overlays/ov260/calls/Ov260_PlaySound.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_PlaySound.c:
     complete
     .text       start:0x020cd148 end:0x020cd2a0
 
-src/overlays/ov260/calls/Ov260_AttackSweep.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AttackSweep.c:
     complete
     .text       start:0x020cd2a0 end:0x020cd540
 
-src/overlays/ov260/calls/Ov260_PickMove.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_PickMove.c:
     complete
     .text       start:0x020cd540 end:0x020cd794
 
-src/overlays/ov260/calls/Ov260_PickTarget.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_PickTarget.c:
     complete
     .text       start:0x020cd794 end:0x020cd810
 
-src/overlays/ov260/calls/Ov260_AiStateInit.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiStateInit.c:
     complete
     .text       start:0x020cd810 end:0x020cd8c8
 
-src/overlays/ov260/calls/Ov260_AiDispatchAction.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiDispatchAction.c:
     complete
     .text       start:0x020cd8c8 end:0x020cdac0
 
-src/overlays/ov260/calls/Ov260_WatchSlot.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_WatchSlot.c:
     complete
     .text       start:0x020cdac0 end:0x020cdb8c
 
-src/overlays/ov260/calls/Ov260_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cdb8c end:0x020cdbf4
 
-src/overlays/ov260/calls/Ov260_IdleEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_IdleEntry.c:
     complete
     .text       start:0x020cdbf4 end:0x020cdc80
 
-src/overlays/ov260/calls/Ov260_AiEnterPlay.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiEnterPlay.c:
     complete
     .text       start:0x020cdc80 end:0x020cdcb4
 
-src/overlays/ov260/calls/Ov260_AiRetargetOnAnimEnd.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiRetargetOnAnimEnd.c:
     complete
     .text       start:0x020cdcb4 end:0x020cdd04
 
-src/overlays/ov260/calls/Ov260_AiEnterTakeOff.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiEnterTakeOff.c:
     complete
     .text       start:0x020cdd04 end:0x020cdd4c
 
-src/overlays/ov260/calls/Ov260_ApproachTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_ApproachTick.c:
     complete
     .text       start:0x020cdd4c end:0x020cdecc
 
-src/overlays/ov260/calls/Ov260_WalkTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_WalkTick.c:
     complete
     .text       start:0x020cdecc end:0x020ce198
 
-src/overlays/ov260/calls/Ov260_DriftCheckStep.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_DriftCheckStep.c:
     complete
     .text       start:0x020ce198 end:0x020ce27c
 
-src/overlays/ov260/calls/Ov260_AiEnterSwoop.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiEnterSwoop.c:
     complete
     .text       start:0x020ce27c end:0x020ce2f0
 
-src/overlays/ov260/calls/Ov260_GlideTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_GlideTick.c:
     complete
     .text       start:0x020ce2f0 end:0x020ce3dc
 
-src/overlays/ov260/calls/Ov260_GlideComboTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_GlideComboTick.c:
     complete
     .text       start:0x020ce3dc end:0x020ce70c
 
-src/overlays/ov260/calls/Ov260_DriftStep.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_DriftStep.c:
     complete
     .text       start:0x020ce70c end:0x020ce7cc
 
-src/overlays/ov260/calls/Ov260_SlamEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_SlamEntry.c:
     complete
     .text       start:0x020ce7cc end:0x020ce8b0
 
-src/overlays/ov260/calls/Ov260_TickTurn.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_TickTurn.c:
     complete
     .text       start:0x020ce8b0 end:0x020ce9d4
 
-src/overlays/ov260/calls/Ov260_CircleTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_CircleTick.c:
     complete
     .text       start:0x020ce9d4 end:0x020cebe4
 
-src/overlays/ov260/calls/Ov260_AiEndCircle.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiEndCircle.c:
     complete
     .text       start:0x020cebe4 end:0x020cec1c
 
-src/overlays/ov260/calls/Ov260_HoverEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HoverEntry.c:
     complete
     .text       start:0x020cec1c end:0x020cec98
 
-src/overlays/ov260/calls/Ov260_FallTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_FallTick.c:
     complete
     .text       start:0x020cec98 end:0x020ced8c
 
-src/overlays/ov260/calls/Ov260_TickFall.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_TickFall.c:
     complete
     .text       start:0x020ced8c end:0x020cee94
 
-src/overlays/ov260/calls/Ov260_StompTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_StompTick.c:
     complete
     .text       start:0x020cee94 end:0x020cf0e8
 
-src/overlays/ov260/calls/Ov260_StaggerEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_StaggerEntry.c:
     complete
     .text       start:0x020cf0e8 end:0x020cf17c
 
-src/overlays/ov260/calls/Ov260_HopTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HopTick.c:
     complete
     .text       start:0x020cf17c end:0x020cf2d4
 
-src/overlays/ov260/calls/Ov260_HopAirTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HopAirTick.c:
     complete
     .text       start:0x020cf2d4 end:0x020cf484
 
-src/overlays/ov260/calls/Ov260_BurstEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_BurstEntry.c:
     complete
     .text       start:0x020cf484 end:0x020cf518
 
-src/overlays/ov260/calls/Ov260_SettleTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_SettleTick.c:
     complete
     .text       start:0x020cf518 end:0x020cf89c
 
-src/overlays/ov260/calls/Ov260_RecoilEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_RecoilEntry.c:
     complete
     .text       start:0x020cf89c end:0x020cf90c
 
-src/overlays/ov260/calls/Ov260_TickRecoilFall.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_TickRecoilFall.c:
     complete
     .text       start:0x020cf90c end:0x020cfa38
 
-src/overlays/ov260/calls/Ov260_StompTick_2.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_StompTick_2.c:
     complete
     .text       start:0x020cfa38 end:0x020cfbac
 
-src/overlays/ov260/calls/Ov260_AiEnterAnim6.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiEnterAnim6.c:
     complete
     .text       start:0x020cfbac end:0x020cfbec
 
-src/overlays/ov260/calls/Ov260_ThrowTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_ThrowTick.c:
     complete
     .text       start:0x020cfbec end:0x020cfe20
 
-src/overlays/ov260/calls/Ov260_AiEnterAnim7.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiEnterAnim7.c:
     complete
     .text       start:0x020cfe20 end:0x020cfe84
 
-src/overlays/ov260/calls/Ov260_LobTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_LobTick.c:
     complete
     .text       start:0x020cfe84 end:0x020d0230
 
-src/overlays/ov260/calls/Ov260_TurnEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_TurnEntry.c:
     complete
     .text       start:0x020d0230 end:0x020d02ac
 
-src/overlays/ov260/calls/Ov260_TickRecovery.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_TickRecovery.c:
     complete
     .text       start:0x020d02ac end:0x020d0360
 
-src/overlays/ov260/calls/Ov260_DashEntryTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_DashEntryTick.c:
     complete
     .text       start:0x020d0360 end:0x020d04bc
 
-src/overlays/ov260/calls/Ov260_DashTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_DashTick.c:
     complete
     .text       start:0x020d04bc end:0x020d05ec
 
-src/overlays/ov260/calls/Ov260_SwipeEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_SwipeEntry.c:
     complete
     .text       start:0x020d05ec end:0x020d06ec
 
-src/overlays/ov260/calls/Ov260_HurtTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HurtTick.c:
     complete
     .text       start:0x020d06ec end:0x020d07a0
 
-src/overlays/ov260/calls/Ov260_BlastEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_BlastEntry.c:
     complete
     .text       start:0x020d07a0 end:0x020d0834
 
-src/overlays/ov260/calls/Ov260_BlastTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_BlastTick.c:
     complete
     .text       start:0x020d0834 end:0x020d0978
 
-src/overlays/ov260/calls/Ov260_AiStep_SetFlags3AndEnd.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiStep_SetFlags3AndEnd.c:
     complete
     .text       start:0x020d0978 end:0x020d09a4
 
-src/overlays/ov260/calls/Ov260_PlacePartSpan.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_PlacePartSpan.c:
     complete
     .text       start:0x020d09a4 end:0x020d0a24
 
-src/overlays/ov260/calls/Ov260_New_2.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_New_2.c:
     complete
     .text       start:0x020d0a24 end:0x020d0a58
 
-src/overlays/ov260/calls/Ov260_SubPartAConstruct.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_SubPartAConstruct.c:
     complete
     .text       start:0x020d0a58 end:0x020d0c28
 
-src/overlays/ov260/calls/Ov260_Destroy.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_Destroy.c:
     complete
     .text       start:0x020d0c28 end:0x020d0c60
 
-src/overlays/ov260/calls/Ov260_TickAndSyncModelXform.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d0c60 end:0x020d0c98
 
-src/overlays/ov260/calls/Ov260_MessageHandler.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_MessageHandler.c:
     complete
     .text       start:0x020d0c98 end:0x020d0d8c
 
-src/overlays/ov260/calls/Ov260_SubPartAHitFilter.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_SubPartAHitFilter.c:
     complete
     .text       start:0x020d0d8c end:0x020d0e14
 
-src/overlays/ov260/calls/Ov260_AttackHitTest.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AttackHitTest.c:
     complete
     .text       start:0x020d0e14 end:0x020d0f88
 
-src/overlays/ov260/calls/Ov260_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d0f88 end:0x020d0fd4
 
-src/overlays/ov260/calls/Ov260_StartBrain.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_StartBrain.c:
     complete
     .text       start:0x020d0fd4 end:0x020d10a0
 
-src/overlays/ov260/calls/Ov260_dispatchByStatusByte.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_dispatchByStatusByte.c:
     complete
     .text       start:0x020d10a0 end:0x020d1118
 
-src/overlays/ov260/calls/Ov260_FaceDrift.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_FaceDrift.c:
     complete
     .text       start:0x020d1118 end:0x020d1178
 
-src/overlays/ov260/calls/Ov260_HaltEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HaltEntry.c:
     complete
     .text       start:0x020d1178 end:0x020d1228
 
-src/overlays/ov260/calls/Ov260_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d1228 end:0x020d1260
 
-src/overlays/ov260/calls/Ov260_HelperReturnEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HelperReturnEntry.c:
     complete
     .text       start:0x020d1260 end:0x020d13ac
 
-src/overlays/ov260/calls/Ov260_HelperFlightTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HelperFlightTick.c:
     complete
     .text       start:0x020d13ac end:0x020d16e4
 
-src/overlays/ov260/calls/Ov260_ShockwaveTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_ShockwaveTick.c:
     complete
     .text       start:0x020d16e4 end:0x020d17b4
 
-src/overlays/ov260/calls/Ov260_PlacePart.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_PlacePart.c:
     complete
     .text       start:0x020d17b4 end:0x020d1824
 
-src/overlays/ov260/calls/Ov260_New_3.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_New_3.c:
     complete
     .text       start:0x020d1824 end:0x020d1858
 
-src/overlays/ov260/calls/Ov260_SubPartBConstruct.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_SubPartBConstruct.c:
     complete
     .text       start:0x020d1858 end:0x020d1a28
 
-src/overlays/ov260/calls/Ov260_Destroy_2.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_Destroy_2.c:
     complete
     .text       start:0x020d1a28 end:0x020d1a60
 
-src/overlays/ov260/calls/Ov260_TickSyncXform.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_TickSyncXform.c:
     complete
     .text       start:0x020d1a60 end:0x020d1a98
 
-src/overlays/ov260/calls/Ov260_PartMessageHandler.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_PartMessageHandler.c:
     complete
     .text       start:0x020d1a98 end:0x020d1b94
 
-src/overlays/ov260/calls/Ov260_SubPartBHitFilter.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_SubPartBHitFilter.c:
     complete
     .text       start:0x020d1b94 end:0x020d1c1c
 
-src/overlays/ov260/calls/Ov260_CreateRegistryEntryAndLink_2.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020d1c1c end:0x020d1c68
 
-src/overlays/ov260/calls/Ov260_AiStateInit_2.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiStateInit_2.c:
     complete
     .text       start:0x020d1c68 end:0x020d1d10
 
-src/overlays/ov260/calls/Ov260_dispatchByStatusByte_2.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_dispatchByStatusByte_2.c:
     complete
     .text       start:0x020d1d10 end:0x020d1d88
 
-src/overlays/ov260/calls/Ov260_Item_ApplyOrientation.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_Item_ApplyOrientation.c:
     complete
     .text       start:0x020d1d88 end:0x020d1dc8
 
-src/overlays/ov260/calls/Ov260_HaltEntry_2.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HaltEntry_2.c:
     complete
     .text       start:0x020d1dc8 end:0x020d1e78
 
-src/overlays/ov260/calls/Ov260_Item_AiWaitActive.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_Item_AiWaitActive.c:
     complete
     .text       start:0x020d1e78 end:0x020d1eb0
 
-src/overlays/ov260/calls/Ov260_HelperLaunchEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HelperLaunchEntry.c:
     complete
     .text       start:0x020d1eb0 end:0x020d1fa0
 
-src/overlays/ov260/calls/Ov260_HomingShotTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HomingShotTick.c:
     complete
     .text       start:0x020d1fa0 end:0x020d23d0
 
-src/overlays/ov260/calls/Ov260_InvokeHookAndRearm2.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_InvokeHookAndRearm2.c:
     complete
     .text       start:0x020d23d0 end:0x020d2424
 
-src/overlays/ov260/calls/Ov260_New.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_New.c:
     complete
     .text       start:0x020d2424 end:0x020d2458
 
-src/overlays/ov260/calls/Ov260_HelperInitTail.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HelperInitTail.c:
     complete
     .text       start:0x020d2458 end:0x020d2510
 
-src/overlays/ov260/calls/Ov260_OnDespawn.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_OnDespawn.c:
     complete
     .text       start:0x020d2510 end:0x020d252c
 
-src/overlays/ov260/calls/func_ov260_020d252c.c:
+src/overlays/enemies/ov260_enemy_54/func_ov260_020d252c.c:
     complete
     .text       start:0x020d252c end:0x020d2538
 
-src/overlays/ov260/calls/Ov260_Model_ReapplyTracks.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_Model_ReapplyTracks.c:
     complete
     .text       start:0x020d2538 end:0x020d25d0
 
-src/overlays/ov260/auto/Ov260_QueueAction1.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_QueueAction1.c:
     complete
     .text       start:0x020d25d0 end:0x020d25e0
 
-src/overlays/ov260/calls/Ov260_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d25e0 end:0x020d263c
 
-src/overlays/ov260/calls/Ov260_stateInitClearSlots.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_stateInitClearSlots.c:
     complete
     .text       start:0x020d263c end:0x020d26e4
 
-src/overlays/ov260/calls/Ov260_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d26e4 end:0x020d275c
 
-src/overlays/ov260/calls/Ov260_AiSlot2_ClearVelocity.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_AiSlot2_ClearVelocity.c:
     complete
     .text       start:0x020d275c end:0x020d277c
 
-src/overlays/ov260/calls/Ov260_ResetReactionFlags.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_ResetReactionFlags.c:
     complete
     .text       start:0x020d277c end:0x020d27ec
 
-src/overlays/ov260/calls/Ov260_HelperDockEntry.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_HelperDockEntry.c:
     complete
     .text       start:0x020d27ec end:0x020d2888
 
-src/overlays/ov260/calls/Ov260_BeamTick.c:
+src/overlays/enemies/ov260_enemy_54/Ov260_BeamTick.c:
     complete
     .text       start:0x020d2888 end:0x020d2a3c
 
-src/overlays/ov260/data/ov260_strings_020d2aa0.c:
+src/overlays/enemies/ov260_enemy_54/data/ov260_strings_020d2aa0.c:
     complete
     .data       start:0x020d2aa0 end:0x020d2ae0
 
-src/overlays/ov260/data/ov260_tables_020d2a3c.c:
+src/overlays/enemies/ov260_enemy_54/data/ov260_tables_020d2a3c.c:
     complete
     .rodata     start:0x020d2a3c end:0x020d2a90

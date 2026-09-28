@@ -4,22 +4,22 @@
     .data       start:0x020b3200 end:0x020b3220 kind:data align:32
     .bss        start:0x020b3220 end:0x020b3220 kind:bss align:32
 
-src/overlays/ov029/calls/Ov029_AcquireOverlaySlot.c:
+src/overlays/system/ov029/Ov029_AcquireOverlaySlot.c:
     complete
     .text       start:0x020b2ee0 end:0x020b2f40
 
-src/overlays/ov029/calls/Ov029_ReleaseOverlaySlot.c:
+src/overlays/system/ov029/Ov029_ReleaseOverlaySlot.c:
     complete
     .text       start:0x020b2f40 end:0x020b2f70
 
-src/overlays/ov029/data/ov029_pointers_020b2f70.c:
+src/overlays/system/ov029/data/ov029_pointers_020b2f70.c:
     complete
     .rodata     start:0x020b2f70 end:0x020b30b0
 
-src/overlays/ov029/data/ov029_tables_020b30b0.c:
+src/overlays/system/ov029/data/ov029_tables_020b30b0.c:
     complete
     .rodata     start:0x020b30b0 end:0x020b31f0
 
-src/overlays/ov029/data/ov029_tables_020b3200.c:
+src/overlays/system/ov029/data/ov029_tables_020b3200.c:
     complete
     .data       start:0x020b3200 end:0x020b3220

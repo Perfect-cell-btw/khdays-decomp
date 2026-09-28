@@ -4,178 +4,178 @@
     .data       start:0x020cdc40 end:0x020cdc80 kind:data align:32
     .bss        start:0x020cdc80 end:0x020cdc80 kind:bss align:32
 
-src/overlays/ov239/calls/Ov239_RegisterEntityClass.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov239/calls/Ov239_CreateNamedEntity.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov239/calls/Ov239_InitializeActorResources.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_InitializeActorResources.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc234
 
-src/overlays/ov239/calls/Ov239_ReleaseSubObjectsAndSlotsThenNotify.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_ReleaseSubObjectsAndSlotsThenNotify.c:
     complete
     .text       start:0x020cc234 end:0x020cc27c
 
-src/overlays/ov239/calls/Ov239_PropagateBlockChain.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_PropagateBlockChain.c:
     complete
     .text       start:0x020cc27c end:0x020cc2f0
 
-src/overlays/ov239/calls/Ov239_HandleMessage.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_HandleMessage.c:
     complete
     .text       start:0x020cc2f0 end:0x020cc424
 
-src/overlays/ov239/calls/Ov239_MaybeForceSubState7ThenAdvance.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_MaybeForceSubState7ThenAdvance.c:
     complete
     .text       start:0x020cc424 end:0x020cc458
 
-src/overlays/ov239/calls/Ov239_ApplyActorConfig310.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_ApplyActorConfig310.c:
     complete
     .text       start:0x020cc458 end:0x020cc490
 
-src/overlays/ov239/calls/Ov239_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020cc490 end:0x020cc4ec
 
-src/overlays/ov239/calls/Ov239_OnHit.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_OnHit.c:
     complete
     .text       start:0x020cc4ec end:0x020cc71c
 
-src/overlays/ov239/auto/Ov239_RequestSubState8IfNotAlready.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_RequestSubState8IfNotAlready.c:
     complete
     .text       start:0x020cc71c end:0x020cc748
 
-src/overlays/ov239/auto/Ov239_RequestSubState9IfIdle.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_RequestSubState9IfIdle.c:
     complete
     .text       start:0x020cc748 end:0x020cc778
 
-src/overlays/ov239/calls/Ov239_ContactSweep.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_ContactSweep.c:
     complete
     .text       start:0x020cc778 end:0x020cc94c
 
-src/overlays/ov239/calls/Ov239_IdleCountdown.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_IdleCountdown.c:
     complete
     .text       start:0x020cc94c end:0x020cc9f0
 
-src/overlays/ov239/calls/Ov239_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cc9f0 end:0x020cca38
 
-src/overlays/ov239/calls/Ov239_DistanceToTarget.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_DistanceToTarget.c:
     complete
     .text       start:0x020cca38 end:0x020ccad0
 
-src/overlays/ov239/calls/Ov239_AiStateInit.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_AiStateInit.c:
     complete
     .text       start:0x020ccad0 end:0x020ccb88
 
-src/overlays/ov239/calls/Ov239_DispatchSubStateByte.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_DispatchSubStateByte.c:
     complete
     .text       start:0x020ccb88 end:0x020ccd28
 
-src/overlays/ov239/calls/Ov239_OrientationTick.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_OrientationTick.c:
     complete
     .text       start:0x020ccd28 end:0x020ccddc
 
-src/overlays/ov239/calls/Ov239_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccddc end:0x020cce44
 
-src/overlays/ov239/calls/Ov239_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cce44 end:0x020cce80
 
-src/overlays/ov239/calls/Ov239_RecoverEntry.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_RecoverEntry.c:
     complete
     .text       start:0x020cce80 end:0x020ccf0c
 
-src/overlays/ov239/calls/Ov239_stClearReadyFlag.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_stClearReadyFlag.c:
     complete
     .text       start:0x020ccf0c end:0x020ccf54
 
-src/overlays/ov239/calls/Ov239_AiEnterIdle.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_AiEnterIdle.c:
     complete
     .text       start:0x020ccf54 end:0x020ccf90
 
-src/overlays/ov239/calls/Ov239_AiIdleCountdown.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_AiIdleCountdown.c:
     complete
     .text       start:0x020ccf90 end:0x020ccfcc
 
-src/overlays/ov239/calls/Ov239_WanderEntry.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_WanderEntry.c:
     complete
     .text       start:0x020ccfcc end:0x020cd028
 
-src/overlays/ov239/calls/Ov239_WanderTick.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_WanderTick.c:
     complete
     .text       start:0x020cd028 end:0x020cd14c
 
-src/overlays/ov239/calls/Ov239_AiEnterAnim8.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_AiEnterAnim8.c:
     complete
     .text       start:0x020cd14c end:0x020cd190
 
-src/overlays/ov239/calls/Ov239_TimedRequestThenPose4.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_TimedRequestThenPose4.c:
     complete
     .text       start:0x020cd190 end:0x020cd224
 
-src/overlays/ov239/calls/Ov239_TickFallingDebris.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_TickFallingDebris.c:
     complete
     .text       start:0x020cd224 end:0x020cd324
 
-src/overlays/ov239/calls/Ov239_AttackEntry.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_AttackEntry.c:
     complete
     .text       start:0x020cd324 end:0x020cd3a0
 
-src/overlays/ov239/calls/Ov239_AttackWindupTick.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_AttackWindupTick.c:
     complete
     .text       start:0x020cd3a0 end:0x020cd54c
 
-src/overlays/ov239/calls/Ov239_ChargeTick.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_ChargeTick.c:
     complete
     .text       start:0x020cd54c end:0x020cd6c8
 
-src/overlays/ov239/calls/Ov239_stateFixedAngleMatrix.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_stateFixedAngleMatrix.c:
     complete
     .text       start:0x020cd6c8 end:0x020cd7b4
 
-src/overlays/ov239/calls/Ov239_BeginAimAtTarget.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_BeginAimAtTarget.c:
     complete
     .text       start:0x020cd7b4 end:0x020cd830
 
-src/overlays/ov239/calls/Ov239_ConfigSubStateThenAdvanceSlot_2.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020cd830 end:0x020cd88c
 
-src/overlays/ov239/calls/Ov239_GuardBreakEntry.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_GuardBreakEntry.c:
     complete
     .text       start:0x020cd88c end:0x020cd980
 
-src/overlays/ov239/calls/Ov239_AiStep_QueueAction0.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_AiStep_QueueAction0.c:
     complete
     .text       start:0x020cd980 end:0x020cd9a0
 
-src/overlays/ov239/calls/Ov239_BeginPushAway.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_BeginPushAway.c:
     complete
     .text       start:0x020cd9a0 end:0x020cda74
 
-src/overlays/ov239/calls/Ov239_WaitThenSetFlagsAndAdvance.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_WaitThenSetFlagsAndAdvance.c:
     complete
     .text       start:0x020cda74 end:0x020cdb08
 
-src/overlays/ov239/calls/Ov239_BeginSubActionWithCallback.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_BeginSubActionWithCallback.c:
     complete
     .text       start:0x020cdb08 end:0x020cdb2c
 
-src/overlays/ov239/calls/Ov239_AimAndSteerTick.c:
+src/overlays/enemies/ov239_enemy_42/Ov239_AimAndSteerTick.c:
     complete
     .text       start:0x020cdb2c end:0x020cdc20
 
-src/overlays/ov239/data/ov239_const_020cdc20.c:
+src/overlays/enemies/ov239_enemy_42/data/ov239_const_020cdc20.c:
     complete
     .rodata     start:0x020cdc20 end:0x020cdc24
 
-src/overlays/ov239/data/ov239_strings_020cdc40.c:
+src/overlays/enemies/ov239_enemy_42/data/ov239_strings_020cdc40.c:
     complete
     .data       start:0x020cdc40 end:0x020cdc80

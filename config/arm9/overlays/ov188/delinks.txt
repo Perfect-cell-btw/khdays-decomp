@@ -4,202 +4,202 @@
     .data       start:0x020d0280 end:0x020d0340 kind:data align:32
     .bss        start:0x020d0340 end:0x020d0340 kind:bss align:32
 
-src/overlays/ov188/calls/Ov188_RegisterEntityClass.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_RegisterEntityClass.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd58
 
-src/overlays/ov188/calls/Ov188_CreateNamedEntity.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_CreateNamedEntity.c:
     complete
     .text       start:0x020cdd58 end:0x020cdde4
 
-src/overlays/ov188/calls/Ov188_InitNamedEntityActor.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_InitNamedEntityActor.c:
     complete
     .text       start:0x020cdde4 end:0x020ce1f0
 
-src/overlays/ov188/calls/Ov188_ReleaseSubObjectsAndSlotArrayThenNotify.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_ReleaseSubObjectsAndSlotArrayThenNotify.c:
     complete
     .text       start:0x020ce1f0 end:0x020ce230
 
-src/overlays/ov188/calls/Ov188_TickWithChildRefresh.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_TickWithChildRefresh.c:
     complete
     .text       start:0x020ce230 end:0x020ce254
 
-src/overlays/ov188/calls/Ov188_HandleSubitemCommand.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_HandleSubitemCommand.c:
     complete
     .text       start:0x020ce254 end:0x020ce450
 
-src/overlays/ov188/calls/func_ov188_020ce450.c:
+src/overlays/enemies/ov188_enemy_22/func_ov188_020ce450.c:
     complete
     .text       start:0x020ce450 end:0x020ce45c
 
-src/overlays/ov188/calls/func_ov188_020ce45c.c:
+src/overlays/enemies/ov188_enemy_22/func_ov188_020ce45c.c:
     complete
     .text       start:0x020ce45c end:0x020ce468
 
-src/overlays/ov188/calls/Ov188_Model_ReapplyTrack0.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020ce468 end:0x020ce4a0
 
-src/overlays/ov188/calls/Ov188_ReleaseByStateAndPublishPose.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_ReleaseByStateAndPublishPose.c:
     complete
     .text       start:0x020ce4a0 end:0x020ce5f0
 
-src/overlays/ov188/calls/Ov188_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020ce5f0 end:0x020ce64c
 
-src/overlays/ov188/calls/Ov188_HandleHitEvent.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_HandleHitEvent.c:
     complete
     .text       start:0x020ce64c end:0x020ce89c
 
-src/overlays/ov188/auto/Ov188_RequestSubState10IfNotCurrent.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_RequestSubState10IfNotCurrent.c:
     complete
     .text       start:0x020ce89c end:0x020ce8c8
 
-src/overlays/ov188/auto/Ov188_RequestSubState11IfIdle.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_RequestSubState11IfIdle.c:
     complete
     .text       start:0x020ce8c8 end:0x020ce8f8
 
-src/overlays/ov188/calls/Ov188_ProcessHitTargets.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_ProcessHitTargets.c:
     complete
     .text       start:0x020ce8f8 end:0x020ceb78
 
-src/overlays/ov188/calls/Ov188_InitReactionSlots.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_InitReactionSlots.c:
     complete
     .text       start:0x020ceb78 end:0x020cec30
 
-src/overlays/ov188/calls/Ov188_DispatchSubStateByte.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_DispatchSubStateByte.c:
     complete
     .text       start:0x020cec30 end:0x020cee00
 
-src/overlays/ov188/calls/Ov188_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020cee00 end:0x020cee9c
 
-src/overlays/ov188/calls/Ov188_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cee9c end:0x020cef04
 
-src/overlays/ov188/calls/Ov188_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cef04 end:0x020cef40
 
-src/overlays/ov188/calls/Ov188_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020cef40 end:0x020cf00c
 
-src/overlays/ov188/calls/Ov188_CompleteAction48Windup.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_CompleteAction48Windup.c:
     complete
     .text       start:0x020cf00c end:0x020cf0f0
 
-src/overlays/ov188/calls/Ov188_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cf0f0 end:0x020cf124
 
-src/overlays/ov188/calls/Ov188_PickNextWaitTime.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_PickNextWaitTime.c:
     complete
     .text       start:0x020cf124 end:0x020cf188
 
-src/overlays/ov188/calls/Ov188_AimPickAttack.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_AimPickAttack.c:
     complete
     .text       start:0x020cf188 end:0x020cf2d8
 
-src/overlays/ov188/calls/Ov188_PickWaitAndResetCounter.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_PickWaitAndResetCounter.c:
     complete
     .text       start:0x020cf2d8 end:0x020cf344
 
-src/overlays/ov188/calls/Ov188_AimApproachAndDispatch.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_AimApproachAndDispatch.c:
     complete
     .text       start:0x020cf344 end:0x020cf538
 
-src/overlays/ov188/calls/Ov188_ComputeTargetDeltaThenAdvance.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020cf538 end:0x020cf5a8
 
-src/overlays/ov188/calls/Ov188_CopyScaleVec3GuardedThenAdvance.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_CopyScaleVec3GuardedThenAdvance.c:
     complete
     .text       start:0x020cf5a8 end:0x020cf624
 
-src/overlays/ov188/calls/Ov188_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cf624 end:0x020cf680
 
-src/overlays/ov188/calls/Ov188_WindUpCharge.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_WindUpCharge.c:
     complete
     .text       start:0x020cf680 end:0x020cf79c
 
-src/overlays/ov188/calls/Ov188_ConfigSubStateThenAdvanceSlot_2.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020cf79c end:0x020cf818
 
-src/overlays/ov188/calls/Ov188_UpdateRotatingHitAction.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_UpdateRotatingHitAction.c:
     complete
     .text       start:0x020cf818 end:0x020cf9ac
 
-src/overlays/ov188/calls/Ov188_AiStep_QueueAction2OnAnimEnd_2.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_AiStep_QueueAction2OnAnimEnd_2.c:
     complete
     .text       start:0x020cf9ac end:0x020cf9e0
 
-src/overlays/ov188/calls/Ov188_EnterWindDown.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_EnterWindDown.c:
     complete
     .text       start:0x020cf9e0 end:0x020cfa54
 
-src/overlays/ov188/calls/Ov188_ApplyAimTransformThenAdvance.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_ApplyAimTransformThenAdvance.c:
     complete
     .text       start:0x020cfa54 end:0x020cfaf0
 
-src/overlays/ov188/calls/Ov188_ApplyAimThenClearFlag.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_ApplyAimThenClearFlag.c:
     complete
     .text       start:0x020cfaf0 end:0x020cfba4
 
-src/overlays/ov188/calls/Ov188_AiDelayThenAnim10.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_AiDelayThenAnim10.c:
     complete
     .text       start:0x020cfba4 end:0x020cfbf0
 
-src/overlays/ov188/calls/Ov188_AiStep_QueueAction2OnAnimEnd_3.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_AiStep_QueueAction2OnAnimEnd_3.c:
     complete
     .text       start:0x020cfbf0 end:0x020cfc24
 
-src/overlays/ov188/calls/Ov188_PlayCueAtOrigin.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_PlayCueAtOrigin.c:
     complete
     .text       start:0x020cfc24 end:0x020cfc8c
 
-src/overlays/ov188/calls/Ov188_PoseClearFields18ThenAdvance.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_PoseClearFields18ThenAdvance.c:
     complete
     .text       start:0x020cfc8c end:0x020cfce0
 
-src/overlays/ov188/calls/Ov188_UpdateAimedHitAction.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_UpdateAimedHitAction.c:
     complete
     .text       start:0x020cfce0 end:0x020cfed4
 
-src/overlays/ov188/calls/Ov188_AiStep_QueueAction2OnAnimEnd_4.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_AiStep_QueueAction2OnAnimEnd_4.c:
     complete
     .text       start:0x020cfed4 end:0x020cff08
 
-src/overlays/ov188/calls/Ov188_ConfigHw60FlagsBeginAction4b.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_ConfigHw60FlagsBeginAction4b.c:
     complete
     .text       start:0x020cff08 end:0x020cffd0
 
-src/overlays/ov188/calls/Ov188_BeginChargeStance.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_BeginChargeStance.c:
     complete
     .text       start:0x020cffd0 end:0x020d0094
 
-src/overlays/ov188/calls/Ov188_TimerGateHw60FlipThenAdvance.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_TimerGateHw60FlipThenAdvance.c:
     complete
     .text       start:0x020d0094 end:0x020d0128
 
-src/overlays/ov188/calls/Ov188_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d0128 end:0x020d015c
 
-src/overlays/ov188/calls/Ov188_ReaimAndClose.c:
+src/overlays/enemies/ov188_enemy_22/Ov188_ReaimAndClose.c:
     complete
     .text       start:0x020d015c end:0x020d0278
 
-src/overlays/ov188/data/ov188_const_020d0278.c:
+src/overlays/enemies/ov188_enemy_22/data/ov188_const_020d0278.c:
     complete
     .rodata     start:0x020d0278 end:0x020d027c
 
-src/overlays/ov188/data/ov188_strings_020d0280.c:
+src/overlays/enemies/ov188_enemy_22/data/ov188_strings_020d0280.c:
     complete
     .data       start:0x020d0280 end:0x020d0340

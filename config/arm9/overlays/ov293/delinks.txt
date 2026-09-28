@@ -4,158 +4,158 @@
     .data       start:0x020d3620 end:0x020d3660 kind:data align:32
     .bss        start:0x020d3660 end:0x020d3680 kind:bss align:32
 
-src/overlays/ov293/calls/Ov293_RegisterEntityClass.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/ov293/calls/Ov293_CreateNamedEntity.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a24
 
-src/overlays/ov293/calls/Ov293_Construct.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_Construct.c:
     complete
     .text       start:0x020d1a24 end:0x020d1c74
 
-src/overlays/ov293/calls/Ov293_ReleaseSubObjectsAndListThenNotify.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020d1c74 end:0x020d1cbc
 
-src/overlays/ov293/calls/Ov293_TickWithChildRefresh.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_TickWithChildRefresh.c:
     complete
     .text       start:0x020d1cbc end:0x020d1ce0
 
-src/overlays/ov293/calls/Ov293_HandleMessage.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_HandleMessage.c:
     complete
     .text       start:0x020d1ce0 end:0x020d1e1c
 
-src/overlays/ov293/calls/Ov293_ForwardAnimEvent.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_ForwardAnimEvent.c:
     complete
     .text       start:0x020d1e1c end:0x020d1e3c
 
-src/overlays/ov293/calls/Ov293_CopyBlockToTwoNodesThenNotify.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_CopyBlockToTwoNodesThenNotify.c:
     complete
     .text       start:0x020d1e3c end:0x020d1ea4
 
-src/overlays/ov293/calls/Ov293_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d1ea4 end:0x020d1ef0
 
-src/overlays/ov293/calls/Ov293_OnHit.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_OnHit.c:
     complete
     .text       start:0x020d1ef0 end:0x020d213c
 
-src/overlays/ov293/calls/Ov293_AiStateInit.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_AiStateInit.c:
     complete
     .text       start:0x020d213c end:0x020d2204
 
-src/overlays/ov293/calls/Ov293_DispatchSubStateByte.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_DispatchSubStateByte.c:
     complete
     .text       start:0x020d2204 end:0x020d237c
 
-src/overlays/ov293/calls/Ov293_ApplyFacingAndFlushMove.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_ApplyFacingAndFlushMove.c:
     complete
     .text       start:0x020d237c end:0x020d244c
 
-src/overlays/ov293/calls/Ov293_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d244c end:0x020d24b4
 
-src/overlays/ov293/calls/Ov293_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d24b4 end:0x020d24f0
 
-src/overlays/ov293/calls/Ov293_AiEnterAttackStance.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_AiEnterAttackStance.c:
     complete
     .text       start:0x020d24f0 end:0x020d25d4
 
-src/overlays/ov293/calls/Ov293_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d25d4 end:0x020d269c
 
-src/overlays/ov293/calls/Ov293_AdvanceStateSetField18.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_AdvanceStateSetField18.c:
     complete
     .text       start:0x020d269c end:0x020d26d8
 
-src/overlays/ov293/calls/Ov293_stateAnimTimer.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_stateAnimTimer.c:
     complete
     .text       start:0x020d26d8 end:0x020d273c
 
-src/overlays/ov293/calls/Ov293_AiWaitNearTargetTick.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_AiWaitNearTargetTick.c:
     complete
     .text       start:0x020d273c end:0x020d2828
 
-src/overlays/ov293/calls/Ov293_AiEnterChase.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_AiEnterChase.c:
     complete
     .text       start:0x020d2828 end:0x020d28b4
 
-src/overlays/ov293/calls/Ov293_ChaseTick.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_ChaseTick.c:
     complete
     .text       start:0x020d28b4 end:0x020d2b8c
 
-src/overlays/ov293/calls/Ov293_ComputeTargetDeltaThenAdvance.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020d2b8c end:0x020d2bfc
 
-src/overlays/ov293/calls/Ov293_CopyScaleVecCheckMagThenAdvance.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_CopyScaleVecCheckMagThenAdvance.c:
     complete
     .text       start:0x020d2bfc end:0x020d2c8c
 
-src/overlays/ov293/calls/Ov293_AiEnterIdle.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_AiEnterIdle.c:
     complete
     .text       start:0x020d2c8c end:0x020d2cc8
 
-src/overlays/ov293/calls/Ov293_IdleTick.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_IdleTick.c:
     complete
     .text       start:0x020d2cc8 end:0x020d2e54
 
-src/overlays/ov293/calls/Ov293_SwingTick.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_SwingTick.c:
     complete
     .text       start:0x020d2e54 end:0x020d31b0
 
-src/overlays/ov293/calls/Ov293_DecayCopyPosFireOnHitFlag.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_DecayCopyPosFireOnHitFlag.c:
     complete
     .text       start:0x020d31b0 end:0x020d3210
 
-src/overlays/ov293/calls/Ov293_AdvanceStateSetField18_2.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_AdvanceStateSetField18_2.c:
     complete
     .text       start:0x020d3210 end:0x020d324c
 
-src/overlays/ov293/calls/Ov293_SetVisFlagPose7PlayAdvance.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_SetVisFlagPose7PlayAdvance.c:
     complete
     .text       start:0x020d324c end:0x020d32b8
 
-src/overlays/ov293/calls/Ov293_TransformScaleVecCopyThenAdvance.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_TransformScaleVecCopyThenAdvance.c:
     complete
     .text       start:0x020d32b8 end:0x020d3340
 
-src/overlays/ov293/calls/Ov293_CopyVecThenSetupSubActionAndAdvance.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_CopyVecThenSetupSubActionAndAdvance.c:
     complete
     .text       start:0x020d3340 end:0x020d33b4
 
-src/overlays/ov293/calls/Ov293_AiFollowPartUntilAnimEnd.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_AiFollowPartUntilAnimEnd.c:
     complete
     .text       start:0x020d33b4 end:0x020d3470
 
-src/overlays/ov293/calls/Ov293_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d3470 end:0x020d34b4
 
-src/overlays/ov293/calls/Ov293_stIdlePose10Advance.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_stIdlePose10Advance.c:
     complete
     .text       start:0x020d34b4 end:0x020d34f8
 
-src/overlays/ov293/calls/Ov293_AdvanceStateSetField18_3.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_AdvanceStateSetField18_3.c:
     complete
     .text       start:0x020d34f8 end:0x020d3534
 
-src/overlays/ov293/calls/Ov293_ConfigHw60FlagsBeginAction4a.c:
+src/overlays/enemies/ov293_enemy_6f/Ov293_ConfigHw60FlagsBeginAction4a.c:
     complete
     .text       start:0x020d3534 end:0x020d35fc
 
-src/overlays/ov293/data/ov293_strings_020d3620.c:
+src/overlays/enemies/ov293_enemy_6f/data/ov293_strings_020d3620.c:
     complete
     .data       start:0x020d3620 end:0x020d3660
 
-src/overlays/ov293/data/ov293_tables_020d35fc.c:
+src/overlays/enemies/ov293_enemy_6f/data/ov293_tables_020d35fc.c:
     complete
     .rodata     start:0x020d35fc end:0x020d3618

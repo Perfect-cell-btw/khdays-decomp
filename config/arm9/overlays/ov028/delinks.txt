@@ -3,58 +3,58 @@
     .ctor       start:0x0208b568 end:0x0208b568 kind:rodata align:4
     .bss        start:0x0208b580 end:0x0208b580 kind:bss align:32
 
-src/overlays/ov028/calls/Ov028_DSProt_Encryptor_StartRange.c:
+src/overlays/system/ov028_dsprotect/Ov028_DSProt_Encryptor_StartRange.c:
     complete
     .text       start:0x0208a7e0 end:0x0208a8ac
 
-src/overlays/ov028/calls/Ov028_DSProt_Encryptor_EndRange.c:
+src/overlays/system/ov028_dsprotect/Ov028_DSProt_Encryptor_EndRange.c:
     complete
     .text       start:0x0208a8ac end:0x0208a994
 
-src/overlays/ov028/auto/Ov028_RC4_Init.c:
+src/overlays/system/ov028_dsprotect/Ov028_RC4_Init.c:
     complete
     .text       start:0x0208a994 end:0x0208aa08
 
-src/overlays/ov028/auto/Ov028_RC4_InitSBox.c:
+src/overlays/system/ov028_dsprotect/Ov028_RC4_InitSBox.c:
     complete
     .text       start:0x0208aa08 end:0x0208aa54
 
-src/overlays/ov028/auto/Ov028_RC4_Byte.c:
+src/overlays/system/ov028_dsprotect/Ov028_RC4_Byte.c:
     complete
     .text       start:0x0208aa54 end:0x0208aa78
 
-src/overlays/ov028/calls/Ov028_RC4_EncryptInstructions.c:
+src/overlays/system/ov028_dsprotect/Ov028_RC4_EncryptInstructions.c:
     complete
     .text       start:0x0208aa78 end:0x0208ab14
 
-src/overlays/ov028/calls/func_ov028_0208ab14.c:
+src/overlays/system/ov028_dsprotect/func_ov028_0208ab14.c:
     complete
     .text       start:0x0208ab14 end:0x0208ab20
 
-src/overlays/ov028/calls/Ov028_RC4_InitAndEncryptInstructions.c:
+src/overlays/system/ov028_dsprotect/Ov028_RC4_InitAndEncryptInstructions.c:
     complete
     .text       start:0x0208ab20 end:0x0208ab78
 
-src/overlays/ov028/calls/Ov028_RC4_InitAndDecryptInstructions.c:
+src/overlays/system/ov028_dsprotect/Ov028_RC4_InitAndDecryptInstructions.c:
     complete
     .text       start:0x0208ab78 end:0x0208abd0
 
-src/overlays/ov028/data/ov028_dsprot_bad_mac_0208b560.c:
+src/overlays/system/ov028_dsprotect/data/ov028_dsprot_bad_mac_0208b560.c:
     complete
     .rodata     start:0x0208b560 end:0x0208b568
 
-src/overlays/ov028/dsprot/dsprot_mac_owner.c:
+src/overlays/system/ov028_dsprotect/dsprot/dsprot_mac_owner.c:
     complete
     .rodata     start:0x0208abd0 end:0x0208acf0
 
-src/overlays/ov028/dsprot/dsprot_main.c:
+src/overlays/system/ov028_dsprotect/dsprot/dsprot_main.c:
     complete
     .rodata     start:0x0208b040 end:0x0208b560
 
-src/overlays/ov028/dsprot/dsprot_rom_test.c:
+src/overlays/system/ov028_dsprotect/dsprot/dsprot_rom_test.c:
     complete
     .rodata     start:0x0208af30 end:0x0208b040
 
-src/overlays/ov028/dsprot/dsprot_rom_util.c:
+src/overlays/system/ov028_dsprotect/dsprot/dsprot_rom_util.c:
     complete
     .rodata     start:0x0208acf0 end:0x0208af30

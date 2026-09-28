@@ -4,150 +4,150 @@
     .data       start:0x020b9940 end:0x020b9a00 kind:data align:32
     .bss        start:0x020b9a00 end:0x020b9a20 kind:bss align:32
 
-src/overlays/ov079/calls/func_ov079_020b8100.c:
+src/overlays/players/ov079_player_marluxia_3/func_ov079_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov079/calls/Ov079_stateCtorReturnHandler.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b813c
 
-src/overlays/ov079/calls/Ov079_setupTriple.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_setupTriple.c:
     complete
     .text       start:0x020b813c end:0x020b815c
 
-src/overlays/ov079/calls/Ov079_BuildRigObject.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_BuildRigObject.c:
     complete
     .text       start:0x020b815c end:0x020b8370
 
-src/overlays/ov079/calls/Ov079_initSharedObjSetReadyFlag.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020b8370 end:0x020b83a8
 
-src/overlays/ov079/auto/Ov079_MapSlotKindToAnim.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b83a8 end:0x020b83d0
 
-src/overlays/ov079/calls/Ov079_SwitchAnimationSet.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_SwitchAnimationSet.c:
     complete
     .text       start:0x020b83d0 end:0x020b84f4
 
-src/overlays/ov079/calls/func_ov079_020b84f4.c:
+src/overlays/players/ov079_player_marluxia_3/func_ov079_020b84f4.c:
     complete
     .text       start:0x020b84f4 end:0x020b8500
 
-src/overlays/ov079/calls/Ov079_InvokeSubHandlerPairWithGlobalBuffer.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b8500 end:0x020b8538
 
-src/overlays/ov079/calls/Ov079_HandleMessage.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_HandleMessage.c:
     complete
     .text       start:0x020b8538 end:0x020b86b8
 
-src/overlays/ov079/calls/Ov079_BuildRenderHandles.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_BuildRenderHandles.c:
     complete
     .text       start:0x020b86b8 end:0x020b8748
 
-src/overlays/ov079/calls/Ov079_SetupSequenceSlots.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_SetupSequenceSlots.c:
     complete
     .text       start:0x020b8748 end:0x020b8848
 
-src/overlays/ov079/calls/Ov079_ReleaseThreeSubBlocks2c50.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_ReleaseThreeSubBlocks2c50.c:
     complete
     .text       start:0x020b8848 end:0x020b887c
 
-src/overlays/ov079/calls/Ov079_PublishAttachAnchor.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_PublishAttachAnchor.c:
     complete
     .text       start:0x020b887c end:0x020b88a0
 
-src/overlays/ov079/calls/Ov079_ForwardToThreeSubHandlers.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_ForwardToThreeSubHandlers.c:
     complete
     .text       start:0x020b88a0 end:0x020b88dc
 
-src/overlays/ov079/calls/Ov079_ForwardToThreeSubHandlersIfFlagSet.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_ForwardToThreeSubHandlersIfFlagSet.c:
     complete
     .text       start:0x020b88dc end:0x020b891c
 
-src/overlays/ov079/calls/Ov079_ArmWithValue.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_ArmWithValue.c:
     complete
     .text       start:0x020b891c end:0x020b8934
 
-src/overlays/ov079/calls/Ov079_StepSequenceSlot.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_StepSequenceSlot.c:
     complete
     .text       start:0x020b8934 end:0x020b8a38
 
-src/overlays/ov079/calls/Ov079_RecenterSubObjectAndCopyVec.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_RecenterSubObjectAndCopyVec.c:
     complete
     .text       start:0x020b8a38 end:0x020b8aac
 
-src/overlays/ov079/calls/Ov079_PlayVoiceAndBindAnims.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_PlayVoiceAndBindAnims.c:
     complete
     .text       start:0x020b8aac end:0x020b8b4c
 
-src/overlays/ov079/calls/Ov079_UpdateTracksByMode.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_UpdateTracksByMode.c:
     complete
     .text       start:0x020b8b4c end:0x020b8b80
 
-src/overlays/ov079/calls/Ov079_DrawSubNodeWithYaw.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_DrawSubNodeWithYaw.c:
     complete
     .text       start:0x020b8b80 end:0x020b8bf8
 
-src/overlays/ov079/calls/Ov079_BindAnimsMode1.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_BindAnimsMode1.c:
     complete
     .text       start:0x020b8bf8 end:0x020b8c58
 
-src/overlays/ov079/calls/Ov079_BindAnimsMode3.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_BindAnimsMode3.c:
     complete
     .text       start:0x020b8c58 end:0x020b8cb8
 
-src/overlays/ov079/calls/Ov079_StepAttackSlot.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_StepAttackSlot.c:
     complete
     .text       start:0x020b8cb8 end:0x020b8ea0
 
-src/overlays/ov079/calls/Ov079_DrawSubNodeWithYaw2.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_DrawSubNodeWithYaw2.c:
     complete
     .text       start:0x020b8ea0 end:0x020b8f20
 
-src/overlays/ov079/calls/Ov079_AttackBurstTick.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_AttackBurstTick.c:
     complete
     .text       start:0x020b8f20 end:0x020b9138
 
-src/overlays/ov079/calls/Ov079_PublishAndEnterState21.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_PublishAndEnterState21.c:
     complete
     .text       start:0x020b9138 end:0x020b91bc
 
-src/overlays/ov079/calls/Ov079_IdleStep.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_IdleStep.c:
     complete
     .text       start:0x020b91bc end:0x020b9458
 
-src/overlays/ov079/calls/Ov079_FinishActionTick.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_FinishActionTick.c:
     complete
     .text       start:0x020b9458 end:0x020b964c
 
-src/overlays/ov079/calls/Ov079_PursuitStep.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_PursuitStep.c:
     complete
     .text       start:0x020b964c end:0x020b98cc
 
-src/overlays/ov079/calls/Ov079_InvokeWithDataTable.c:
+src/overlays/players/ov079_player_marluxia_3/Ov079_InvokeWithDataTable.c:
     complete
     .text       start:0x020b98cc end:0x020b98e4
 
-src/overlays/ov079/data/ov079_class_020b9954.c:
+src/overlays/players/ov079_player_marluxia_3/data/ov079_class_020b9954.c:
     complete
     .data       start:0x020b9954 end:0x020b9968
 
-src/overlays/ov079/data/ov079_ctorargs_020b9924.c:
+src/overlays/players/ov079_player_marluxia_3/data/ov079_ctorargs_020b9924.c:
     complete
     .rodata     start:0x020b9924 end:0x020b9938
 
-src/overlays/ov079/data/ov079_strings_020b98e4.c:
+src/overlays/players/ov079_player_marluxia_3/data/ov079_strings_020b98e4.c:
     complete
     .rodata     start:0x020b98e4 end:0x020b9924
 
-src/overlays/ov079/data/ov079_strings_020b9940.c:
+src/overlays/players/ov079_player_marluxia_3/data/ov079_strings_020b9940.c:
     complete
     .data       start:0x020b9940 end:0x020b9954
 
-src/overlays/ov079/data/ov079_strings_020b9968.c:
+src/overlays/players/ov079_player_marluxia_3/data/ov079_strings_020b9968.c:
     complete
     .data       start:0x020b9968 end:0x020b9a00

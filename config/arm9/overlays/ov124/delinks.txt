@@ -4,198 +4,198 @@
     .data       start:0x020d1f40 end:0x020d1f60 kind:data align:32
     .bss        start:0x020d1f60 end:0x020d1f60 kind:bss align:32
 
-src/overlays/ov124/calls/Ov124_RegisterEntityClass.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov124/calls/Ov124_CreateNamedEntity.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov124/calls/Ov124_Construct.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_Construct.c:
     complete
     .text       start:0x020cfc04 end:0x020cfe94
 
-src/overlays/ov124/calls/Ov124_ReleaseSubObjectsListThenNotify.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020cfe94 end:0x020cfed4
 
-src/overlays/ov124/calls/func_ov124_020cfed4.c:
+src/overlays/enemies/ov124_enemy_05_2/func_ov124_020cfed4.c:
     complete
     .text       start:0x020cfed4 end:0x020cfee0
 
-src/overlays/ov124/calls/Ov124_HandleMessage.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_HandleMessage.c:
     complete
     .text       start:0x020cfee0 end:0x020cff7c
 
-src/overlays/ov124/calls/Ov124_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cff7c end:0x020cffa4
 
-src/overlays/ov124/calls/Ov124_NotifyPartsThenBase.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cffa4 end:0x020cffcc
 
-src/overlays/ov124/calls/Ov124_Model_SetTracks0And3.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_Model_SetTracks0And3.c:
     complete
     .text       start:0x020cffcc end:0x020d001c
 
-src/overlays/ov124/calls/Ov124_RefreshPose.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_RefreshPose.c:
     complete
     .text       start:0x020d001c end:0x020d0060
 
-src/overlays/ov124/calls/Ov124_Tick.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_Tick.c:
     complete
     .text       start:0x020d0060 end:0x020d0158
 
-src/overlays/ov124/calls/Ov124_Slot38_SetFlag3C8.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_Slot38_SetFlag3C8.c:
     complete
     .text       start:0x020d0158 end:0x020d0164
 
-src/overlays/ov124/calls/Ov124_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d0164 end:0x020d01b0
 
-src/overlays/ov124/calls/Ov124_OnHit.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_OnHit.c:
     complete
     .text       start:0x020d01b0 end:0x020d0328
 
-src/overlays/ov124/auto/Ov124_TryClaimReactionSlot.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_TryClaimReactionSlot.c:
     complete
     .text       start:0x020d0328 end:0x020d0358
 
-src/overlays/ov124/calls/Ov124_InitNode.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_InitNode.c:
     complete
     .text       start:0x020d0358 end:0x020d0428
 
-src/overlays/ov124/calls/Ov124_DispatchSubStateByte.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_DispatchSubStateByte.c:
     complete
     .text       start:0x020d0428 end:0x020d0588
 
-src/overlays/ov124/calls/Ov124_OrientationTick.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_OrientationTick.c:
     complete
     .text       start:0x020d0588 end:0x020d0630
 
-src/overlays/ov124/calls/Ov124_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0630 end:0x020d0698
 
-src/overlays/ov124/calls/Ov124_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d0698 end:0x020d06d4
 
-src/overlays/ov124/calls/Ov124_Action48Callback.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_Action48Callback.c:
     complete
     .text       start:0x020d06d4 end:0x020d0774
 
-src/overlays/ov124/calls/Ov124_AimTimerTick.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_AimTimerTick.c:
     complete
     .text       start:0x020d0774 end:0x020d0838
 
-src/overlays/ov124/calls/Ov124_AiQueue2OnFlagClear.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020d0838 end:0x020d086c
 
-src/overlays/ov124/calls/Ov124_AiEnterAnim1WithTimer.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_AiEnterAnim1WithTimer.c:
     complete
     .text       start:0x020d086c end:0x020d08c4
 
-src/overlays/ov124/calls/Ov124_ApproachDecision.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_ApproachDecision.c:
     complete
     .text       start:0x020d08c4 end:0x020d0ab4
 
-src/overlays/ov124/calls/Ov124_ResetAndInvokeMethodThenAdvance.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_ResetAndInvokeMethodThenAdvance.c:
     complete
     .text       start:0x020d0ab4 end:0x020d0b2c
 
-src/overlays/ov124/calls/Ov124_ShotWindup.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_ShotWindup.c:
     complete
     .text       start:0x020d0b2c end:0x020d0c58
 
-src/overlays/ov124/calls/Ov124_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d0c58 end:0x020d0c8c
 
-src/overlays/ov124/calls/Ov124_stDiv5Store.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_stDiv5Store.c:
     complete
     .text       start:0x020d0c8c end:0x020d0ce8
 
-src/overlays/ov124/calls/Ov124_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d0ce8 end:0x020d0db0
 
-src/overlays/ov124/calls/Ov124_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d0db0 end:0x020d0e64
 
-src/overlays/ov124/calls/Ov124_FindTarget.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_FindTarget.c:
     complete
     .text       start:0x020d0e64 end:0x020d10c4
 
-src/overlays/ov124/calls/Ov124_StoreVec3ThenSetupAndSetHw60.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_StoreVec3ThenSetupAndSetHw60.c:
     complete
     .text       start:0x020d10c4 end:0x020d110c
 
-src/overlays/ov124/calls/Ov124_Actor_New.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_Actor_New.c:
     complete
     .text       start:0x020d110c end:0x020d1140
 
-src/overlays/ov124/calls/Ov124_ConstructShot.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_ConstructShot.c:
     complete
     .text       start:0x020d1140 end:0x020d1328
 
-src/overlays/ov124/calls/Ov124_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020d1328 end:0x020d1368
 
-src/overlays/ov124/calls/Ov124_TickAndSyncModelXform.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d1368 end:0x020d13a0
 
-src/overlays/ov124/calls/Ov124_AiState_OnMessage.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_AiState_OnMessage.c:
     complete
     .text       start:0x020d13a0 end:0x020d1454
 
-src/overlays/ov124/calls/Ov124_InvertVecOnceIfFlagSet.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_InvertVecOnceIfFlagSet.c:
     complete
     .text       start:0x020d1454 end:0x020d14b0
 
-src/overlays/ov124/calls/Ov124_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d14b0 end:0x020d150c
 
-src/overlays/ov124/calls/Ov124_stateInitClearSlots.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_stateInitClearSlots.c:
     complete
     .text       start:0x020d150c end:0x020d15b4
 
-src/overlays/ov124/calls/Ov124_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d15b4 end:0x020d162c
 
-src/overlays/ov124/calls/Ov124_SetPoseVecFromStateOrConst.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_SetPoseVecFromStateOrConst.c:
     complete
     .text       start:0x020d162c end:0x020d1690
 
-src/overlays/ov124/calls/Ov124_ClearAndSetNodeFlags.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_ClearAndSetNodeFlags.c:
     complete
     .text       start:0x020d1690 end:0x020d1724
 
-src/overlays/ov124/calls/Ov124_CopyVecSetSubState1IfHw60.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_CopyVecSetSubState1IfHw60.c:
     complete
     .text       start:0x020d1724 end:0x020d1778
 
-src/overlays/ov124/calls/Ov124_SetupVecCopyThenAction4.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_SetupVecCopyThenAction4.c:
     complete
     .text       start:0x020d1778 end:0x020d1838
 
-src/overlays/ov124/calls/Ov124_ShotFlightTick.c:
+src/overlays/enemies/ov124_enemy_05_2/Ov124_ShotFlightTick.c:
     complete
     .text       start:0x020d1838 end:0x020d1ed8
 
-src/overlays/ov124/data/ov124_strings_020d1f40.c:
+src/overlays/enemies/ov124_enemy_05_2/data/ov124_strings_020d1f40.c:
     complete
     .data       start:0x020d1f40 end:0x020d1f60
 
-src/overlays/ov124/data/ov124_tables_020d1ed8.c:
+src/overlays/enemies/ov124_enemy_05_2/data/ov124_tables_020d1ed8.c:
     complete
     .rodata     start:0x020d1ed8 end:0x020d1f30

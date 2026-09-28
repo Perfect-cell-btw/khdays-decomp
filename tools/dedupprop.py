@@ -14,6 +14,8 @@ import os as _os
 _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 ROOT = _ROOT
 WRITE = "--write" in sys.argv
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import srctree  # noqa: E402  (where sources live: docs/layout.md)
 
 idx = json.load(open(os.path.join(ROOT, "build", "func_index.json")))
 
@@ -125,15 +127,11 @@ for rep, twin in cands:
     new = subst(src, rep, twin)
     if new is None:
         continue
-    # same dir kind as the rep (auto/ vs calls/), under the twin's own overlay
-    m = re.match(r"func_(ov\d+)_", twin)
-    ovl = m.group(1) if m else None
-    kind = "auto" if not idx[twin]["relocs"] else "calls"
-    if ovl:
-        d = os.path.join(ROOT, "src", "overlays", ovl, kind)
-    else:
-        d = os.path.join(ROOT, "src", kind)
-    if not os.path.isdir(d):
+    # the twin's own module directory (src/engine or its overlay's directory, tools/srctree.py);
+    # the module comes from the index, since a renamed function no longer spells it out
+    m = re.search(r"(?:^|@)(ov\d{3}|main|itcm|dtcm)", idx[twin].get("module", ""))
+    d = srctree.module_dir(m.group(1), ROOT) if m else None
+    if d is None or not os.path.isdir(d):
         continue
     path = os.path.join(d, twin + ".c")
     if os.path.exists(path):

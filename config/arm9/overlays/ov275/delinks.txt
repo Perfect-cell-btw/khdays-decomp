@@ -4,262 +4,262 @@
     .data       start:0x020d60e0 end:0x020d6160 kind:data align:32
     .bss        start:0x020d6160 end:0x020d6160 kind:bss align:32
 
-src/overlays/ov275/calls/Ov275_RegisterEntityClass.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/ov275/calls/Ov275_CreateNamedEntity.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a24
 
-src/overlays/ov275/calls/Ov275_Construct.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_Construct.c:
     complete
     .text       start:0x020d1a24 end:0x020d1ea0
 
-src/overlays/ov275/calls/Ov275_Destroy.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_Destroy.c:
     complete
     .text       start:0x020d1ea0 end:0x020d1ef8
 
-src/overlays/ov275/calls/Ov275_DrawHandler.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_DrawHandler.c:
     complete
     .text       start:0x020d1ef8 end:0x020d2150
 
-src/overlays/ov275/calls/Ov275_HandleResourceMessage.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_HandleResourceMessage.c:
     complete
     .text       start:0x020d2150 end:0x020d2264
 
-src/overlays/ov275/calls/Ov275_FinishPartTasksThenBase.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_FinishPartTasksThenBase.c:
     complete
     .text       start:0x020d2264 end:0x020d22bc
 
-src/overlays/ov275/calls/Ov275_BindClip.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_BindClip.c:
     complete
     .text       start:0x020d22bc end:0x020d2328
 
-src/overlays/ov275/calls/Ov275_MessageArmEmitterTable.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_MessageArmEmitterTable.c:
     complete
     .text       start:0x020d2328 end:0x020d2414
 
-src/overlays/ov275/calls/Ov275_TickHandler.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_TickHandler.c:
     complete
     .text       start:0x020d2414 end:0x020d25d8
 
-src/overlays/ov275/calls/Ov275_RenderAtOwnerNode.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_RenderAtOwnerNode.c:
     complete
     .text       start:0x020d25d8 end:0x020d2620
 
-src/overlays/ov275/calls/Ov275_SpawnAndLinkNode.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_SpawnAndLinkNode.c:
     complete
     .text       start:0x020d2620 end:0x020d269c
 
-src/overlays/ov275/calls/Ov275_ResetRigTracks.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_ResetRigTracks.c:
     complete
     .text       start:0x020d269c end:0x020d2720
 
-src/overlays/ov275/auto/Ov275_ResetEntryMarkDirty.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_ResetEntryMarkDirty.c:
     complete
     .text       start:0x020d2720 end:0x020d2748
 
-src/overlays/ov275/calls/Ov275_WaitRigIdle.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_WaitRigIdle.c:
     complete
     .text       start:0x020d2748 end:0x020d27c8
 
-src/overlays/ov275/calls/Ov275_WaitNotStaggered.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_WaitNotStaggered.c:
     complete
     .text       start:0x020d27c8 end:0x020d2854
 
-src/overlays/ov275/calls/Ov275_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d2854 end:0x020d2874
 
-src/overlays/ov275/calls/Ov275_TestEntitiesAgainstRect.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_TestEntitiesAgainstRect.c:
     complete
     .text       start:0x020d2874 end:0x020d2954
 
-src/overlays/ov275/calls/Ov275_collectObjectsInSphereRec.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020d2954 end:0x020d2b08
 
-src/overlays/ov275/calls/Ov275_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d2b08 end:0x020d2b54
 
-src/overlays/ov275/calls/Ov275_HandleHit.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_HandleHit.c:
     complete
     .text       start:0x020d2b54 end:0x020d2e7c
 
-src/overlays/ov275/auto/Ov275_RequestSubState12IfIdleIn2Or4.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_RequestSubState12IfIdleIn2Or4.c:
     complete
     .text       start:0x020d2e7c end:0x020d2ec4
 
-src/overlays/ov275/calls/Ov275_EnterMoveState.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_EnterMoveState.c:
     complete
     .text       start:0x020d2ec4 end:0x020d2f7c
 
-src/overlays/ov275/calls/Ov275_AiDispatchAction.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiDispatchAction.c:
     complete
     .text       start:0x020d2f7c end:0x020d318c
 
-src/overlays/ov275/calls/Ov275_MotionTickTimers.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_MotionTickTimers.c:
     complete
     .text       start:0x020d318c end:0x020d3278
 
-src/overlays/ov275/calls/Ov275_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d3278 end:0x020d3320
 
-src/overlays/ov275/calls/Ov275_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d3320 end:0x020d335c
 
-src/overlays/ov275/calls/Ov275_AiEnterHold.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiEnterHold.c:
     complete
     .text       start:0x020d335c end:0x020d3424
 
-src/overlays/ov275/calls/Ov275_AiWaitThenTarget.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiWaitThenTarget.c:
     complete
     .text       start:0x020d3424 end:0x020d34ec
 
-src/overlays/ov275/calls/Ov275_AiStep_QueueAction2OnFlag0cClear.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d34ec end:0x020d3520
 
-src/overlays/ov275/calls/Ov275_SetPoseThenAdvanceSlot.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020d3520 end:0x020d3554
 
-src/overlays/ov275/calls/Ov275_AiWaitForTarget.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiWaitForTarget.c:
     complete
     .text       start:0x020d3554 end:0x020d35a0
 
-src/overlays/ov275/calls/Ov275_AiQueue4OnFlagClear.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiQueue4OnFlagClear.c:
     complete
     .text       start:0x020d35a0 end:0x020d35d4
 
-src/overlays/ov275/calls/Ov275_AiEnterSteer.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiEnterSteer.c:
     complete
     .text       start:0x020d35d4 end:0x020d3634
 
-src/overlays/ov275/calls/Ov275_AiSteerStart.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiSteerStart.c:
     complete
     .text       start:0x020d3634 end:0x020d368c
 
-src/overlays/ov275/calls/Ov275_SteerHeadingGate.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_SteerHeadingGate.c:
     complete
     .text       start:0x020d368c end:0x020d37d8
 
-src/overlays/ov275/calls/Ov275_FireAttackCOnIdle.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_FireAttackCOnIdle.c:
     complete
     .text       start:0x020d37d8 end:0x020d38b8
 
-src/overlays/ov275/calls/Ov275_DecisionTick.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_DecisionTick.c:
     complete
     .text       start:0x020d38b8 end:0x020d3af8
 
-src/overlays/ov275/calls/Ov275_AiEnterAttack2.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiEnterAttack2.c:
     complete
     .text       start:0x020d3af8 end:0x020d3b34
 
-src/overlays/ov275/calls/Ov275_FireAttack2OnIdle.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_FireAttack2OnIdle.c:
     complete
     .text       start:0x020d3b34 end:0x020d3c28
 
-src/overlays/ov275/calls/Ov275_FaceTargetAndGate.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_FaceTargetAndGate.c:
     complete
     .text       start:0x020d3c28 end:0x020d3d88
 
-src/overlays/ov275/calls/Ov275_AiSpawnEffectOnIdle.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiSpawnEffectOnIdle.c:
     complete
     .text       start:0x020d3d88 end:0x020d3e20
 
-src/overlays/ov275/calls/Ov275_FallTick.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_FallTick.c:
     complete
     .text       start:0x020d3e20 end:0x020d3ed4
 
-src/overlays/ov275/calls/Ov275_ChargeTick.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_ChargeTick.c:
     complete
     .text       start:0x020d3ed4 end:0x020d4284
 
-src/overlays/ov275/calls/Ov275_AiQueue2OnFlagClear.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020d4284 end:0x020d42b8
 
-src/overlays/ov275/calls/Ov275_AiEnterLanding.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiEnterLanding.c:
     complete
     .text       start:0x020d42b8 end:0x020d42fc
 
-src/overlays/ov275/calls/Ov275_LandingTick.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_LandingTick.c:
     complete
     .text       start:0x020d42fc end:0x020d4820
 
-src/overlays/ov275/calls/Ov275_AiEnterChargeBreak.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiEnterChargeBreak.c:
     complete
     .text       start:0x020d4820 end:0x020d4874
 
-src/overlays/ov275/calls/Ov275_Reaction_ChargeThenBreak.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_Reaction_ChargeThenBreak.c:
     complete
     .text       start:0x020d4874 end:0x020d4978
 
-src/overlays/ov275/calls/Ov275_AiChargeTimeout.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiChargeTimeout.c:
     complete
     .text       start:0x020d4978 end:0x020d49c8
 
-src/overlays/ov275/calls/Ov275_AiQueue8OnFlagClear.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiQueue8OnFlagClear.c:
     complete
     .text       start:0x020d49c8 end:0x020d49fc
 
-src/overlays/ov275/calls/Ov275_SpawnEffect4dTwoNodeClearB.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_SpawnEffect4dTwoNodeClearB.c:
     complete
     .text       start:0x020d49fc end:0x020d4aec
 
-src/overlays/ov275/calls/Ov275_AiEnterStomp.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiEnterStomp.c:
     complete
     .text       start:0x020d4aec end:0x020d4b48
 
-src/overlays/ov275/calls/Ov275_StompTick.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_StompTick.c:
     complete
     .text       start:0x020d4b48 end:0x020d5014
 
-src/overlays/ov275/calls/Ov275_AiEnterIdle.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiEnterIdle.c:
     complete
     .text       start:0x020d5014 end:0x020d5050
 
-src/overlays/ov275/calls/Ov275_AiIdleTimer.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiIdleTimer.c:
     complete
     .text       start:0x020d5050 end:0x020d508c
 
-src/overlays/ov275/calls/Ov275_AiEnterThrow.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiEnterThrow.c:
     complete
     .text       start:0x020d508c end:0x020d50ec
 
-src/overlays/ov275/calls/Ov275_JumpWindupTick.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_JumpWindupTick.c:
     complete
     .text       start:0x020d50ec end:0x020d5378
 
-src/overlays/ov275/calls/Ov275_AiBallisticTick.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiBallisticTick.c:
     complete
     .text       start:0x020d5378 end:0x020d5420
 
-src/overlays/ov275/calls/Ov275_AiEnterRockFlight.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiEnterRockFlight.c:
     complete
     .text       start:0x020d5420 end:0x020d54a4
 
-src/overlays/ov275/calls/Ov275_RockFlightTick.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_RockFlightTick.c:
     complete
     .text       start:0x020d54a4 end:0x020d5c08
 
-src/overlays/ov275/calls/Ov275_ShockwaveTick.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_ShockwaveTick.c:
     complete
     .text       start:0x020d5c08 end:0x020d5ed8
 
-src/overlays/ov275/calls/Ov275_AiLockAndPostUpdateB.c:
+src/overlays/enemies/ov275_enemy_60_2/Ov275_AiLockAndPostUpdateB.c:
     complete
     .text       start:0x020d5ed8 end:0x020d5fb4
 
-src/overlays/ov275/data/ov275_strings_020d60e0.c:
+src/overlays/enemies/ov275_enemy_60_2/data/ov275_strings_020d60e0.c:
     complete
     .data       start:0x020d60e0 end:0x020d6160
 
-src/overlays/ov275/data/ov275_tables_020d5fb4.c:
+src/overlays/enemies/ov275_enemy_60_2/data/ov275_tables_020d5fb4.c:
     complete
     .rodata     start:0x020d5fb4 end:0x020d60c0

@@ -5,7 +5,7 @@ libs/nitro/os/calls/OSi_VBlankInterruptHandler.c:
     complete
     .text       start:0x01ff8000 end:0x01ff80a8
 
-src/calls/func_01ff80a8.c:
+libs/nitro/os/calls/func_01ff80a8.c:
     complete
     .text       start:0x01ff80a8 end:0x01ff80b8
 
@@ -45,7 +45,7 @@ libs/nitro/os/asm_stubs/auto/INITi_CpuClear32.c:
     complete
     .text       start:0x01ff83fc end:0x01ff8410
 
-src/calls/Boot_ReloadModules.c:
+libs/nitro/os/calls/Boot_ReloadModules.c:
     complete
     .text       start:0x01ff8410 end:0x01ff84b8
 
@@ -293,11 +293,11 @@ libs/nitro/nns/auto/func_01ff9fd4.c:
     complete
     .text       start:0x01ff9fd4 end:0x01ffa13c
 
-src/calls/UploadNodeMatricesByFlags.c:
+libs/nitro/nns/calls/UploadNodeMatricesByFlags.c:
     complete
     .text       start:0x01ffa13c end:0x01ffa1b8
 
-src/calls/Node_SeedTransform.c:
+libs/nitro/nns/calls/Node_SeedTransform.c:
     complete
     .text       start:0x01ffa1b8 end:0x01ffa1f8
 
@@ -309,7 +309,7 @@ libs/nitro/nns/calls/func_01ffa2dc.c:
     complete
     .text       start:0x01ffa2dc end:0x01ffa42c
 
-src/auto/Mtx44_SetIdentity2D.c:
+libs/nitro/nns/auto/Mtx44_SetIdentity2D.c:
     complete
     .text       start:0x01ffa42c end:0x01ffa450
 
@@ -317,7 +317,7 @@ libs/nitro/nns/calls/NNSi_G3dSendTexMtxMode0.c:
     complete
     .text       start:0x01ffa450 end:0x01ffa598
 
-src/auto/Mtx44_SetIdentity2D_2.c:
+libs/nitro/nns/auto/Mtx44_SetIdentity2D_2.c:
     complete
     .text       start:0x01ffa5b8 end:0x01ffa5dc
 
@@ -325,7 +325,7 @@ libs/nitro/nns/calls/NNSi_G3dSendTexMtxMode2.c:
     complete
     .text       start:0x01ffa5dc end:0x01ffa724
 
-src/calls/ScaleVec3Fx12.c:
+libs/nitro/nns/calls/ScaleVec3Fx12.c:
     complete
     .text       start:0x01ffa724 end:0x01ffa764
 
@@ -365,7 +365,7 @@ libs/nitro/nns/auto/func_01ffba90.c:
     complete
     .text       start:0x01ffba90 end:0x01ffbbac
 
-src/calls/NNSi_G3dSbcCmdSetPolygonAttr.c:
+libs/nitro/nns/calls/NNSi_G3dSbcCmdSetPolygonAttr.c:
     complete
     .text       start:0x01ffbbac end:0x01ffbbf0
 
@@ -393,7 +393,7 @@ libs/nitro/nns/calls/NNS_G3dDraw1Mat1Shp.c:
     complete
     .text       start:0x01ffcc1c end:0x01ffcec0
 
-src/calls/MaterialColorScale_SetRgb555.c:
+libs/nitro/nns/calls/MaterialColorScale_SetRgb555.c:
     complete
     .text       start:0x01ffcec0 end:0x01ffcf0c
 
@@ -409,171 +409,171 @@ libs/nitro/fx/auto/func_01ffcfd0.c:
     complete
     .text       start:0x01ffcfd0 end:0x01ffd0e8
 
-src/calls/Vec3ScaleAddQ27.c:
+src/engine/Vec3ScaleAddQ27.c:
     complete
     .text       start:0x01ffd0e8 end:0x01ffd144
 
-src/auto/ScaleVec3Fixed27.c:
+src/engine/ScaleVec3Fixed27.c:
     complete
     .text       start:0x01ffd144 end:0x01ffd184
 
-src/calls/Coll_TestRayFace.c:
+src/engine/Coll_TestRayFace.c:
     complete
     .text       start:0x01ffd184 end:0x01ffd4a4
 
-src/calls/Coll_WalkTreeForHit.c:
+src/engine/Coll_WalkTreeForHit.c:
     complete
     .text       start:0x01ffd4a4 end:0x01ffd824
 
-src/calls/Coll_MeasureFaceDepth.c:
+src/engine/Coll_MeasureFaceDepth.c:
     complete
     .text       start:0x01ffd824 end:0x01ffdb54
 
-src/calls/Coll_WalkVerticalTreeForHit.c:
+src/engine/Coll_WalkVerticalTreeForHit.c:
     complete
     .text       start:0x01ffdb54 end:0x01ffdd58
 
-src/calls/Coll_TestSpatialRayFace.c:
+src/engine/Coll_TestSpatialRayFace.c:
     complete
     .text       start:0x01ffdd58 end:0x01ffe0f0
 
-src/calls/Coll_WalkSpatialTreeForHit.c:
+src/engine/Coll_WalkSpatialTreeForHit.c:
     complete
     .text       start:0x01ffe0f0 end:0x01ffe3c8
 
-src/calls/Coll_ComputeSphereRayOffset.c:
+src/engine/Coll_ComputeSphereRayOffset.c:
     complete
     .text       start:0x01ffe3c8 end:0x01ffe460
 
-src/calls/PickCloserAlongEdge.c:
+src/engine/PickCloserAlongEdge.c:
     complete
     .text       start:0x01ffe460 end:0x01ffe4f4
 
-src/calls/Coll_TestSweptSphereFace.c:
+src/engine/Coll_TestSweptSphereFace.c:
     complete
     .text       start:0x01ffe4f4 end:0x01ffe82c
 
-src/calls/Coll_WalkSphereTreeForHit.c:
+src/engine/Coll_WalkSphereTreeForHit.c:
     complete
     .text       start:0x01ffe82c end:0x01ffeba0
 
-src/calls/CollCast_SetupModelSpace.c:
+src/engine/CollCast_SetupModelSpace.c:
     complete
     .text       start:0x01ffeba0 end:0x01ffec0c
 
-src/calls/CollCast_InitRayState.c:
+src/engine/CollCast_InitRayState.c:
     complete
     .text       start:0x01ffec0c end:0x01ffed08
 
-src/calls/CollCast_TestModelRay.c:
+src/engine/CollCast_TestModelRay.c:
     complete
     .text       start:0x01ffed08 end:0x01ffedf4
 
-src/calls/CollCast_Init.c:
+src/engine/CollCast_Init.c:
     complete
     .text       start:0x01ffedf4 end:0x01ffee50
 
-src/calls/CollCast_TestModel.c:
+src/engine/CollCast_TestModel.c:
     complete
     .text       start:0x01ffee50 end:0x01ffef34
 
-src/calls/CollCast_InitSphereState.c:
+src/engine/CollCast_InitSphereState.c:
     complete
     .text       start:0x01ffef34 end:0x01ffefb4
 
-src/calls/CollCast_TestModelSphere.c:
+src/engine/CollCast_TestModelSphere.c:
     complete
     .text       start:0x01ffefb4 end:0x01fff0e0
 
-src/calls/Coll_TestRayAgainstFlatCap.c:
+src/engine/Coll_TestRayAgainstFlatCap.c:
     complete
     .text       start:0x01fff0e0 end:0x01fff290
 
-src/calls/Coll_TestSphereAgainstCylinder.c:
+src/engine/Coll_TestSphereAgainstCylinder.c:
     complete
     .text       start:0x01fff290 end:0x01fff554
 
-src/calls/Coll_TestRayAgainstRoundedCap.c:
+src/engine/Coll_TestRayAgainstRoundedCap.c:
     complete
     .text       start:0x01fff554 end:0x01fff75c
 
-src/auto/Anim_GetChannelState.c:
+src/engine/Anim_GetChannelState.c:
     complete
     .text       start:0x01fff75c end:0x01fff774
 
-src/calls/Anim_SetFrameWrapped.c:
+src/engine/Anim_SetFrameWrapped.c:
     complete
     .text       start:0x01fff774 end:0x01fff7a4
 
-src/calls/Collision_RunRayCast.c:
+src/engine/Collision_RunRayCast.c:
     complete
     .text       start:0x01fff7a4 end:0x01fff7f0
 
-src/calls/Collision_CastNearest.c:
+src/engine/Collision_CastNearest.c:
     complete
     .text       start:0x01fff7f0 end:0x01fff83c
 
-src/calls/Collision_RunSphereCast.c:
+src/engine/Collision_RunSphereCast.c:
     complete
     .text       start:0x01fff83c end:0x01fff888
 
-src/calls/Collision_CastRayEx.c:
+src/engine/Collision_CastRayEx.c:
     complete
     .text       start:0x01fff888 end:0x01fff8b8
 
-src/calls/Collision_CastSimple.c:
+src/engine/Collision_CastSimple.c:
     complete
     .text       start:0x01fff8b8 end:0x01fff8e8
 
-src/calls/Collision_CastSphereEx.c:
+src/engine/Collision_CastSphereEx.c:
     complete
     .text       start:0x01fff8e8 end:0x01fff920
 
-src/calls/Collision_CastRay.c:
+src/engine/Collision_CastRay.c:
     complete
     .text       start:0x01fff920 end:0x01fff948
 
-src/calls/Collision_CastSphere.c:
+src/engine/Collision_CastSphere.c:
     complete
     .text       start:0x01fff948 end:0x01fff974
 
-src/calls/GetGlobalU16At6.c:
+src/engine/GetGlobalU16At6.c:
     complete
     .text       start:0x01fff974 end:0x01fff988
 
-src/calls/GetGlobalU16At4.c:
+src/engine/GetGlobalU16At4.c:
     complete
     .text       start:0x01fff988 end:0x01fff99c
 
-src/calls/IsKind1Or4.c:
+src/engine/IsKind1Or4.c:
     complete
     .text       start:0x01fff99c end:0x01fff9b8
 
-src/calls/SubmitEntryIfActive.c:
+src/engine/SubmitEntryIfActive.c:
     complete
     .text       start:0x01fff9b8 end:0x01fffa04
 
-src/calls/DrawTileIfReady.c:
+src/engine/DrawTileIfReady.c:
     complete
     .text       start:0x01fffa04 end:0x01fffa60
 
-src/calls/ChannelBuf_Append.c:
+src/engine/ChannelBuf_Append.c:
     complete
     .text       start:0x01fffa60 end:0x01fffac0
 
-src/calls/Node_FlipDoubleBuffer.c:
+src/engine/Node_FlipDoubleBuffer.c:
     complete
     .text       start:0x01fffac0 end:0x01fffaf4
 
-src/calls/AsyncMessage_Flush.c:
+src/engine/AsyncMessage_Flush.c:
     complete
     .text       start:0x01fffaf4 end:0x01fffbf4
 
-src/calls/ClearNodeIfHeadMatches.c:
+src/engine/ClearNodeIfHeadMatches.c:
     complete
     .text       start:0x01fffbf4 end:0x01fffc24
 
-src/auto/List_Init.c:
+src/engine/List_Init.c:
     complete
     .text       start:0x01fffc24 end:0x01fffc5c
 
@@ -581,38 +581,38 @@ libs/nitro/nns/calls/NNSi_FndDestroyDoubleList.c:
     complete
     .text       start:0x01fffc5c end:0x01fffca8
 
-src/calls/List_InsertSorted.c:
+src/engine/List_InsertSorted.c:
     complete
     .text       start:0x01fffca8 end:0x01fffd0c
 
-src/calls/List_RemoveByHandle.c:
+src/engine/List_RemoveByHandle.c:
     complete
     .text       start:0x01fffd0c end:0x01fffd70
 
-src/auto/List_First.c:
+src/engine/List_First.c:
     complete
     .text       start:0x01fffd70 end:0x01fffd8c
 
-src/auto/List_Next.c:
+src/engine/List_Next.c:
     complete
     .text       start:0x01fffd8c end:0x01fffdac
 
-src/auto/List_Last.c:
+src/engine/List_Last.c:
     complete
     .text       start:0x01fffdac end:0x01fffdc4
 
-src/auto/List_Prev.c:
+src/engine/List_Prev.c:
     complete
     .text       start:0x01fffdc4 end:0x01fffde0
 
-src/calls/GetEntryField20ByIndex.c:
+src/engine/GetEntryField20ByIndex.c:
     complete
     .text       start:0x01fffde0 end:0x01fffe14
 
-src/calls/QueryActiveStateOrDelegate.c:
+src/engine/QueryActiveStateOrDelegate.c:
     complete
     .text       start:0x01fffe14 end:0x01fffe68
 
-src/calls/Obj_CaptureSelectedJointMtx.c:
+src/engine/Obj_CaptureSelectedJointMtx.c:
     complete
     .text       start:0x01fffe68 end:0x01fffed0

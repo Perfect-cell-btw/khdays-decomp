@@ -4,154 +4,154 @@
     .data       start:0x020bc060 end:0x020bc120 kind:data align:32
     .bss        start:0x020bc120 end:0x020bc140 kind:bss align:32
 
-src/overlays/ov103/calls/func_ov103_020ba7c0.c:
+src/overlays/players/ov103_player_goofy_4/func_ov103_020ba7c0.c:
     complete
     .text       start:0x020ba7c0 end:0x020ba7d4
 
-src/overlays/ov103/calls/Ov103_stateCtorReturnHandler.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_stateCtorReturnHandler.c:
     complete
     .text       start:0x020ba7d4 end:0x020ba7fc
 
-src/overlays/ov103/calls/Ov103_setupTriple.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_setupTriple.c:
     complete
     .text       start:0x020ba7fc end:0x020ba81c
 
-src/overlays/ov103/calls/Ov103_Boot.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_Boot.c:
     complete
     .text       start:0x020ba81c end:0x020baa14
 
-src/overlays/ov103/calls/Ov103_initSharedObjSetReadyFlag.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020baa14 end:0x020baa4c
 
-src/overlays/ov103/auto/Ov103_MapSlotKindToAnim.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_MapSlotKindToAnim.c:
     complete
     .text       start:0x020baa4c end:0x020baa6c
 
-src/overlays/ov103/calls/Ov103_ApplyMode.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_ApplyMode.c:
     complete
     .text       start:0x020baa6c end:0x020bab3c
 
-src/overlays/ov103/calls/Ov103_SyncLocalPlayerHandle.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_SyncLocalPlayerHandle.c:
     complete
     .text       start:0x020bab3c end:0x020babac
 
-src/overlays/ov103/calls/Ov103_HandleMessage.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_HandleMessage.c:
     complete
     .text       start:0x020babac end:0x020badf0
 
-src/overlays/ov103/calls/Ov103_StepAttackSlotAndForward.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_StepAttackSlotAndForward.c:
     complete
     .text       start:0x020badf0 end:0x020bae28
 
-src/overlays/ov103/calls/Ov103_BuildRenderHandles.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_BuildRenderHandles.c:
     complete
     .text       start:0x020bae28 end:0x020baed4
 
-src/overlays/ov103/calls/Ov103_InitThreeEffectSlots.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_InitThreeEffectSlots.c:
     complete
     .text       start:0x020baed4 end:0x020baf94
 
-src/overlays/ov103/calls/Ov103_ReleaseThreeSubBlocks2c2c.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_ReleaseThreeSubBlocks2c2c.c:
     complete
     .text       start:0x020baf94 end:0x020bafc8
 
-src/overlays/ov103/calls/Ov103_InitTwoGlobalChannelSlots.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_InitTwoGlobalChannelSlots.c:
     complete
     .text       start:0x020bafc8 end:0x020baffc
 
-src/overlays/ov103/calls/Ov103_ForwardToThreeSubHandlersSameArgs.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_ForwardToThreeSubHandlersSameArgs.c:
     complete
     .text       start:0x020baffc end:0x020bb034
 
-src/overlays/ov103/calls/Ov103_RunThreeSubHandlersIfFlagSet.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_RunThreeSubHandlersIfFlagSet.c:
     complete
     .text       start:0x020bb034 end:0x020bb070
 
-src/overlays/ov103/calls/Ov103_BindAnimsAndFaceOwner.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_BindAnimsAndFaceOwner.c:
     complete
     .text       start:0x020bb070 end:0x020bb150
 
-src/overlays/ov103/calls/Ov103_UpdateTracksWhileActive.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_UpdateTracksWhileActive.c:
     complete
     .text       start:0x020bb150 end:0x020bb180
 
-src/overlays/ov103/calls/Ov103_DrawNodeWhileActive.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_DrawNodeWhileActive.c:
     complete
     .text       start:0x020bb180 end:0x020bb19c
 
-src/overlays/ov103/calls/Ov103_PlayVoiceAndBindThreeAnims.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_PlayVoiceAndBindThreeAnims.c:
     complete
     .text       start:0x020bb19c end:0x020bb254
 
-src/overlays/ov103/calls/Ov103_StepSequenceSlot.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_StepSequenceSlot.c:
     complete
     .text       start:0x020bb254 end:0x020bb390
 
-src/overlays/ov103/calls/Ov103_DrawNodeWithYaw2.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_DrawNodeWithYaw2.c:
     complete
     .text       start:0x020bb390 end:0x020bb408
 
-src/overlays/ov103/calls/Ov103_Activate.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_Activate.c:
     complete
     .text       start:0x020bb408 end:0x020bb41c
 
-src/overlays/ov103/calls/Ov103_Deactivate.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_Deactivate.c:
     complete
     .text       start:0x020bb41c end:0x020bb428
 
-src/overlays/ov103/calls/Ov103_DriveChargeSequence.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_DriveChargeSequence.c:
     complete
     .text       start:0x020bb428 end:0x020bb56c
 
-src/overlays/ov103/calls/Ov103_DrawSubNodeWithYaw3.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_DrawSubNodeWithYaw3.c:
     complete
     .text       start:0x020bb56c end:0x020bb5f0
 
-src/overlays/ov103/calls/Ov103_RebindAnimTracks.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_RebindAnimTracks.c:
     complete
     .text       start:0x020bb5f0 end:0x020bb668
 
-src/overlays/ov103/calls/Ov103_EmitAttackBurst.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_EmitAttackBurst.c:
     complete
     .text       start:0x020bb668 end:0x020bb8e0
 
-src/overlays/ov103/calls/Ov103_FlagLocalAndEnterState21.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_FlagLocalAndEnterState21.c:
     complete
     .text       start:0x020bb8e0 end:0x020bb948
 
-src/overlays/ov103/calls/Ov103_HoverStep.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_HoverStep.c:
     complete
     .text       start:0x020bb948 end:0x020bbb2c
 
-src/overlays/ov103/calls/Ov103_AttackStep.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_AttackStep.c:
     complete
     .text       start:0x020bbb2c end:0x020bbde8
 
-src/overlays/ov103/calls/Ov103_LandingStep.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_LandingStep.c:
     complete
     .text       start:0x020bbde8 end:0x020bbfd4
 
-src/overlays/ov103/calls/Ov103_InvokeWithDataTable.c:
+src/overlays/players/ov103_player_goofy_4/Ov103_InvokeWithDataTable.c:
     complete
     .text       start:0x020bbfd4 end:0x020bbfec
 
-src/overlays/ov103/data/ov103_class_020bc074.c:
+src/overlays/players/ov103_player_goofy_4/data/ov103_class_020bc074.c:
     complete
     .data       start:0x020bc074 end:0x020bc088
 
-src/overlays/ov103/data/ov103_ctorargs_020bc02c.c:
+src/overlays/players/ov103_player_goofy_4/data/ov103_ctorargs_020bc02c.c:
     complete
     .rodata     start:0x020bc02c end:0x020bc040
 
-src/overlays/ov103/data/ov103_strings_020bbfec.c:
+src/overlays/players/ov103_player_goofy_4/data/ov103_strings_020bbfec.c:
     complete
     .rodata     start:0x020bbfec end:0x020bc02c
 
-src/overlays/ov103/data/ov103_strings_020bc060.c:
+src/overlays/players/ov103_player_goofy_4/data/ov103_strings_020bc060.c:
     complete
     .data       start:0x020bc060 end:0x020bc074
 
-src/overlays/ov103/data/ov103_strings_020bc088.c:
+src/overlays/players/ov103_player_goofy_4/data/ov103_strings_020bc088.c:
     complete
     .data       start:0x020bc088 end:0x020bc120

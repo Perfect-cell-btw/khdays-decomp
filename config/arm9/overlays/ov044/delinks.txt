@@ -4,186 +4,186 @@
     .data       start:0x020b5500 end:0x020b5620 kind:data align:32
     .bss        start:0x020b5620 end:0x020b5640 kind:bss align:32
 
-src/overlays/ov044/calls/func_ov044_020b3220.c:
+src/overlays/players/ov044_player_xion/func_ov044_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov044/calls/Ov044_InitSubsystemAndReturnTick.c:
+src/overlays/players/ov044_player_xion/Ov044_InitSubsystemAndReturnTick.c:
     complete
     .text       start:0x020b3234 end:0x020b32b4
 
-src/overlays/ov044/calls/Ov044_ShutdownAndFree.c:
+src/overlays/players/ov044_player_xion/Ov044_ShutdownAndFree.c:
     complete
     .text       start:0x020b32b4 end:0x020b3314
 
-src/overlays/ov044/calls/Ov044_InitPanelObject.c:
+src/overlays/players/ov044_player_xion/Ov044_InitPanelObject.c:
     complete
     .text       start:0x020b3314 end:0x020b355c
 
-src/overlays/ov044/calls/Ov044_ReloadSceneResources.c:
+src/overlays/players/ov044_player_xion/Ov044_ReloadSceneResources.c:
     complete
     .text       start:0x020b355c end:0x020b35fc
 
-src/overlays/ov044/auto/Ov044_MapSlotKindToAnim.c:
+src/overlays/players/ov044_player_xion/Ov044_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b35fc end:0x020b3634
 
-src/overlays/ov044/calls/Ov044_ApplyModeChange.c:
+src/overlays/players/ov044_player_xion/Ov044_ApplyModeChange.c:
     complete
     .text       start:0x020b3634 end:0x020b394c
 
-src/overlays/ov044/calls/Ov044_CommitScrollForFrame.c:
+src/overlays/players/ov044_player_xion/Ov044_CommitScrollForFrame.c:
     complete
     .text       start:0x020b394c end:0x020b3990
 
-src/overlays/ov044/calls/Ov044_tailDispatch.c:
+src/overlays/players/ov044_player_xion/Ov044_tailDispatch.c:
     complete
     .text       start:0x020b3990 end:0x020b39ac
 
-src/overlays/ov044/calls/Ov044_SetupBuildBlock.c:
+src/overlays/players/ov044_player_xion/Ov044_SetupBuildBlock.c:
     complete
     .text       start:0x020b39ac end:0x020b3a2c
 
-src/overlays/ov044/calls/Ov044_BeginActionStep.c:
+src/overlays/players/ov044_player_xion/Ov044_BeginActionStep.c:
     complete
     .text       start:0x020b3a2c end:0x020b3a7c
 
-src/overlays/ov044/calls/Ov044_ForwardArmPlayerTarget.c:
+src/overlays/players/ov044_player_xion/Ov044_ForwardArmPlayerTarget.c:
     complete
     .text       start:0x020b3a7c end:0x020b3a90
 
-src/overlays/ov044/calls/Ov044_ForwardUpdateController.c:
+src/overlays/players/ov044_player_xion/Ov044_ForwardUpdateController.c:
     complete
     .text       start:0x020b3a90 end:0x020b3aa4
 
-src/overlays/ov044/calls/Ov044_ForwardComputeAimAngle.c:
+src/overlays/players/ov044_player_xion/Ov044_ForwardComputeAimAngle.c:
     complete
     .text       start:0x020b3aa4 end:0x020b3ab8
 
-src/overlays/ov044/calls/Ov044_InvokeWithDataTable.c:
+src/overlays/players/ov044_player_xion/Ov044_InvokeWithDataTable.c:
     complete
     .text       start:0x020b3ab8 end:0x020b3ad0
 
-src/overlays/ov044/calls/Ov044_initEightSubSlots.c:
+src/overlays/players/ov044_player_xion/Ov044_initEightSubSlots.c:
     complete
     .text       start:0x020b3ad0 end:0x020b3b10
 
-src/overlays/ov044/calls/Ov044_ReleaseChildArray8.c:
+src/overlays/players/ov044_player_xion/Ov044_ReleaseChildArray8.c:
     complete
     .text       start:0x020b3b10 end:0x020b3b2e
 
-src/overlays/ov044/calls/Ov044_BindPartRigs.c:
+src/overlays/players/ov044_player_xion/Ov044_BindPartRigs.c:
     complete
     .text       start:0x020b3b30 end:0x020b3b64
 
-src/overlays/ov044/calls/Ov044_SpawnEmitters.c:
+src/overlays/players/ov044_player_xion/Ov044_SpawnEmitters.c:
     complete
     .text       start:0x020b3b64 end:0x020b3c34
 
-src/overlays/ov044/calls/Ov044_beginState5.c:
+src/overlays/players/ov044_player_xion/Ov044_beginState5.c:
     complete
     .text       start:0x020b3c34 end:0x020b3c58
 
-src/overlays/ov044/auto/Ov044_ResetSlotIds.c:
+src/overlays/players/ov044_player_xion/Ov044_ResetSlotIds.c:
     complete
     .text       start:0x020b3c58 end:0x020b3c7c
 
-src/overlays/ov044/calls/Ov044_RebindEmitterSlots.c:
+src/overlays/players/ov044_player_xion/Ov044_RebindEmitterSlots.c:
     complete
     .text       start:0x020b3c7c end:0x020b3cf4
 
-src/overlays/ov044/calls/Ov044_ov030_UpdatePathMotionState.c:
+src/overlays/players/ov044_player_xion/Ov044_ov030_UpdatePathMotionState.c:
     complete
     .text       start:0x020b3cf4 end:0x020b3ff4
 
-src/overlays/ov044/calls/Ov044_DrawWithFadePolygonId.c:
+src/overlays/players/ov044_player_xion/Ov044_DrawWithFadePolygonId.c:
     complete
     .text       start:0x020b3ff4 end:0x020b4044
 
-src/overlays/ov044/calls/Ov044_RequestSpawnAtObject.c:
+src/overlays/players/ov044_player_xion/Ov044_RequestSpawnAtObject.c:
     complete
     .text       start:0x020b4044 end:0x020b4168
 
-src/overlays/ov044/calls/Ov044_ProbeLandingPoint.c:
+src/overlays/players/ov044_player_xion/Ov044_ProbeLandingPoint.c:
     complete
     .text       start:0x020b4168 end:0x020b4288
 
-src/overlays/ov044/calls/Ov044_InitMoveParams.c:
+src/overlays/players/ov044_player_xion/Ov044_InitMoveParams.c:
     complete
     .text       start:0x020b4288 end:0x020b42c0
 
-src/overlays/ov044/calls/Ov044_updateSubObjects.c:
+src/overlays/players/ov044_player_xion/Ov044_updateSubObjects.c:
     complete
     .text       start:0x020b42c0 end:0x020b4330
 
-src/overlays/ov044/calls/Ov044_StartAnimTracks.c:
+src/overlays/players/ov044_player_xion/Ov044_StartAnimTracks.c:
     complete
     .text       start:0x020b4330 end:0x020b43b0
 
-src/overlays/ov044/calls/Ov044_UpdateNodeActiveByMode.c:
+src/overlays/players/ov044_player_xion/Ov044_UpdateNodeActiveByMode.c:
     complete
     .text       start:0x020b43b0 end:0x020b4434
 
-src/overlays/ov044/calls/Ov044_DrawNodeAtOwner.c:
+src/overlays/players/ov044_player_xion/Ov044_DrawNodeAtOwner.c:
     complete
     .text       start:0x020b4434 end:0x020b4498
 
-src/overlays/ov044/calls/Ov044_EmitTimelineEffect.c:
+src/overlays/players/ov044_player_xion/Ov044_EmitTimelineEffect.c:
     complete
     .text       start:0x020b4498 end:0x020b47d0
 
-src/overlays/ov044/calls/Ov044_initStateSlotsDispatch.c:
+src/overlays/players/ov044_player_xion/Ov044_initStateSlotsDispatch.c:
     complete
     .text       start:0x020b47d0 end:0x020b4868
 
-src/overlays/ov044/calls/Ov044_setupTriple.c:
+src/overlays/players/ov044_player_xion/Ov044_setupTriple.c:
     complete
     .text       start:0x020b4868 end:0x020b4884
 
-src/overlays/ov044/calls/Ov044_ArmPlayerTarget.c:
+src/overlays/players/ov044_player_xion/Ov044_ArmPlayerTarget.c:
     complete
     .text       start:0x020b4884 end:0x020b4908
 
-src/overlays/ov044/calls/Ov044_ComputeAimAngle.c:
+src/overlays/players/ov044_player_xion/Ov044_ComputeAimAngle.c:
     complete
     .text       start:0x020b4908 end:0x020b4c14
 
-src/overlays/ov044/calls/Ov044_UpdateController.c:
+src/overlays/players/ov044_player_xion/Ov044_UpdateController.c:
     complete
     .text       start:0x020b4c14 end:0x020b5110
 
-src/overlays/ov044/calls/Ov044_SetActionAnimation.c:
+src/overlays/players/ov044_player_xion/Ov044_SetActionAnimation.c:
     complete
     .text       start:0x020b5110 end:0x020b5204
 
-src/overlays/ov044/calls/Ov044_handleCommand.c:
+src/overlays/players/ov044_player_xion/Ov044_handleCommand.c:
     complete
     .text       start:0x020b5204 end:0x020b5280
 
-src/overlays/ov044/calls/Ov044_UpdateMotionController.c:
+src/overlays/players/ov044_player_xion/Ov044_UpdateMotionController.c:
     complete
     .text       start:0x020b5280 end:0x020b5494
 
-src/overlays/ov044/data/ov044_class_020b5500.c:
+src/overlays/players/ov044_player_xion/data/ov044_class_020b5500.c:
     complete
     .data       start:0x020b5500 end:0x020b5514
 
-src/overlays/ov044/data/ov044_const_020b54b4.c:
+src/overlays/players/ov044_player_xion/data/ov044_const_020b54b4.c:
     complete
     .rodata     start:0x020b54b4 end:0x020b54b8
 
-src/overlays/ov044/data/ov044_ctorargs_020b54d4.c:
+src/overlays/players/ov044_player_xion/data/ov044_ctorargs_020b54d4.c:
     complete
     .rodata     start:0x020b54d4 end:0x020b54e8
 
-src/overlays/ov044/data/ov044_strings_020b5494.c:
+src/overlays/players/ov044_player_xion/data/ov044_strings_020b5494.c:
     complete
     .rodata     start:0x020b5494 end:0x020b54b4
 
-src/overlays/ov044/data/ov044_strings_020b54b8.c:
+src/overlays/players/ov044_player_xion/data/ov044_strings_020b54b8.c:
     complete
     .rodata     start:0x020b54b8 end:0x020b54d4
 
-src/overlays/ov044/data/ov044_strings_020b5514.c:
+src/overlays/players/ov044_player_xion/data/ov044_strings_020b5514.c:
     complete
     .data       start:0x020b5514 end:0x020b5620

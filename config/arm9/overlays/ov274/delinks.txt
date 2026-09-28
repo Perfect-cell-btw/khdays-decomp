@@ -4,262 +4,262 @@
     .data       start:0x020d42c0 end:0x020d4340 kind:data align:32
     .bss        start:0x020d4340 end:0x020d4340 kind:bss align:32
 
-src/overlays/ov274/calls/Ov274_RegisterEntityClass.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov274/calls/Ov274_CreateNamedEntity.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov274/calls/Ov274_Construct.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_Construct.c:
     complete
     .text       start:0x020cfc04 end:0x020d0080
 
-src/overlays/ov274/calls/Ov274_Destroy.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_Destroy.c:
     complete
     .text       start:0x020d0080 end:0x020d00d8
 
-src/overlays/ov274/calls/Ov274_DrawHandler.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_DrawHandler.c:
     complete
     .text       start:0x020d00d8 end:0x020d0330
 
-src/overlays/ov274/calls/Ov274_HandleResourceMessage.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_HandleResourceMessage.c:
     complete
     .text       start:0x020d0330 end:0x020d0444
 
-src/overlays/ov274/calls/Ov274_FinishPartTasksThenBase.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_FinishPartTasksThenBase.c:
     complete
     .text       start:0x020d0444 end:0x020d049c
 
-src/overlays/ov274/calls/Ov274_BindClip.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_BindClip.c:
     complete
     .text       start:0x020d049c end:0x020d0508
 
-src/overlays/ov274/calls/Ov274_MessageArmEmitterTable.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_MessageArmEmitterTable.c:
     complete
     .text       start:0x020d0508 end:0x020d05f4
 
-src/overlays/ov274/calls/Ov274_TickHandler.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_TickHandler.c:
     complete
     .text       start:0x020d05f4 end:0x020d07b8
 
-src/overlays/ov274/calls/Ov274_RenderAtOwnerNode.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_RenderAtOwnerNode.c:
     complete
     .text       start:0x020d07b8 end:0x020d0800
 
-src/overlays/ov274/calls/Ov274_SpawnAndLinkNode.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_SpawnAndLinkNode.c:
     complete
     .text       start:0x020d0800 end:0x020d087c
 
-src/overlays/ov274/calls/Ov274_ResetRigTracks.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_ResetRigTracks.c:
     complete
     .text       start:0x020d087c end:0x020d0900
 
-src/overlays/ov274/auto/Ov274_ResetEntryMarkDirty.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_ResetEntryMarkDirty.c:
     complete
     .text       start:0x020d0900 end:0x020d0928
 
-src/overlays/ov274/calls/Ov274_WaitRigIdle.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_WaitRigIdle.c:
     complete
     .text       start:0x020d0928 end:0x020d09a8
 
-src/overlays/ov274/calls/Ov274_WaitNotStaggered.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_WaitNotStaggered.c:
     complete
     .text       start:0x020d09a8 end:0x020d0a34
 
-src/overlays/ov274/calls/Ov274_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d0a34 end:0x020d0a54
 
-src/overlays/ov274/calls/Ov274_TestEntitiesAgainstRect.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_TestEntitiesAgainstRect.c:
     complete
     .text       start:0x020d0a54 end:0x020d0b34
 
-src/overlays/ov274/calls/Ov274_collectObjectsInSphereRec.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020d0b34 end:0x020d0ce8
 
-src/overlays/ov274/calls/Ov274_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d0ce8 end:0x020d0d34
 
-src/overlays/ov274/calls/Ov274_HandleHit.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_HandleHit.c:
     complete
     .text       start:0x020d0d34 end:0x020d105c
 
-src/overlays/ov274/auto/Ov274_RequestSubState12IfIdleIn2Or4.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_RequestSubState12IfIdleIn2Or4.c:
     complete
     .text       start:0x020d105c end:0x020d10a4
 
-src/overlays/ov274/calls/Ov274_EnterMoveState.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_EnterMoveState.c:
     complete
     .text       start:0x020d10a4 end:0x020d115c
 
-src/overlays/ov274/calls/Ov274_AiDispatchAction.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiDispatchAction.c:
     complete
     .text       start:0x020d115c end:0x020d136c
 
-src/overlays/ov274/calls/Ov274_MotionTickTimers.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_MotionTickTimers.c:
     complete
     .text       start:0x020d136c end:0x020d1458
 
-src/overlays/ov274/calls/Ov274_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d1458 end:0x020d1500
 
-src/overlays/ov274/calls/Ov274_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d1500 end:0x020d153c
 
-src/overlays/ov274/calls/Ov274_AiEnterHold.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiEnterHold.c:
     complete
     .text       start:0x020d153c end:0x020d1604
 
-src/overlays/ov274/calls/Ov274_AiWaitThenTarget.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiWaitThenTarget.c:
     complete
     .text       start:0x020d1604 end:0x020d16cc
 
-src/overlays/ov274/calls/Ov274_AiStep_QueueAction2OnFlag0cClear.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d16cc end:0x020d1700
 
-src/overlays/ov274/calls/Ov274_SetPoseThenAdvanceSlot.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020d1700 end:0x020d1734
 
-src/overlays/ov274/calls/Ov274_AiWaitForTarget.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiWaitForTarget.c:
     complete
     .text       start:0x020d1734 end:0x020d1780
 
-src/overlays/ov274/calls/Ov274_AiQueue4OnFlagClear.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiQueue4OnFlagClear.c:
     complete
     .text       start:0x020d1780 end:0x020d17b4
 
-src/overlays/ov274/calls/Ov274_AiEnterSteer.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiEnterSteer.c:
     complete
     .text       start:0x020d17b4 end:0x020d1814
 
-src/overlays/ov274/calls/Ov274_AiSteerStart.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiSteerStart.c:
     complete
     .text       start:0x020d1814 end:0x020d186c
 
-src/overlays/ov274/calls/Ov274_SteerHeadingGate.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_SteerHeadingGate.c:
     complete
     .text       start:0x020d186c end:0x020d19b8
 
-src/overlays/ov274/calls/Ov274_FireAttackCOnIdle.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_FireAttackCOnIdle.c:
     complete
     .text       start:0x020d19b8 end:0x020d1a98
 
-src/overlays/ov274/calls/Ov274_DecisionTick.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_DecisionTick.c:
     complete
     .text       start:0x020d1a98 end:0x020d1cd8
 
-src/overlays/ov274/calls/Ov274_AiEnterAttack2.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiEnterAttack2.c:
     complete
     .text       start:0x020d1cd8 end:0x020d1d14
 
-src/overlays/ov274/calls/Ov274_FireAttack2OnIdle.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_FireAttack2OnIdle.c:
     complete
     .text       start:0x020d1d14 end:0x020d1e08
 
-src/overlays/ov274/calls/Ov274_FaceTargetAndGate.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_FaceTargetAndGate.c:
     complete
     .text       start:0x020d1e08 end:0x020d1f68
 
-src/overlays/ov274/calls/Ov274_AiSpawnEffectOnIdle.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiSpawnEffectOnIdle.c:
     complete
     .text       start:0x020d1f68 end:0x020d2000
 
-src/overlays/ov274/calls/Ov274_FallTick.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_FallTick.c:
     complete
     .text       start:0x020d2000 end:0x020d20b4
 
-src/overlays/ov274/calls/Ov274_ChargeTick.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_ChargeTick.c:
     complete
     .text       start:0x020d20b4 end:0x020d2464
 
-src/overlays/ov274/calls/Ov274_AiQueue2OnFlagClear.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020d2464 end:0x020d2498
 
-src/overlays/ov274/calls/Ov274_AiEnterLanding.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiEnterLanding.c:
     complete
     .text       start:0x020d2498 end:0x020d24dc
 
-src/overlays/ov274/calls/Ov274_LandingTick.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_LandingTick.c:
     complete
     .text       start:0x020d24dc end:0x020d2a00
 
-src/overlays/ov274/calls/Ov274_AiEnterChargeBreak.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiEnterChargeBreak.c:
     complete
     .text       start:0x020d2a00 end:0x020d2a54
 
-src/overlays/ov274/calls/Ov274_Reaction_ChargeThenBreak.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_Reaction_ChargeThenBreak.c:
     complete
     .text       start:0x020d2a54 end:0x020d2b58
 
-src/overlays/ov274/calls/Ov274_AiChargeTimeout.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiChargeTimeout.c:
     complete
     .text       start:0x020d2b58 end:0x020d2ba8
 
-src/overlays/ov274/calls/Ov274_AiQueue8OnFlagClear.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiQueue8OnFlagClear.c:
     complete
     .text       start:0x020d2ba8 end:0x020d2bdc
 
-src/overlays/ov274/calls/Ov274_SpawnEffect4dTwoNodeClearB.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_SpawnEffect4dTwoNodeClearB.c:
     complete
     .text       start:0x020d2bdc end:0x020d2ccc
 
-src/overlays/ov274/calls/Ov274_AiEnterStomp.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiEnterStomp.c:
     complete
     .text       start:0x020d2ccc end:0x020d2d28
 
-src/overlays/ov274/calls/Ov274_StompTick.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_StompTick.c:
     complete
     .text       start:0x020d2d28 end:0x020d31f4
 
-src/overlays/ov274/calls/Ov274_AiEnterIdle.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiEnterIdle.c:
     complete
     .text       start:0x020d31f4 end:0x020d3230
 
-src/overlays/ov274/calls/Ov274_AiIdleTimer.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiIdleTimer.c:
     complete
     .text       start:0x020d3230 end:0x020d326c
 
-src/overlays/ov274/calls/Ov274_AiEnterThrow.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiEnterThrow.c:
     complete
     .text       start:0x020d326c end:0x020d32cc
 
-src/overlays/ov274/calls/Ov274_JumpWindupTick.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_JumpWindupTick.c:
     complete
     .text       start:0x020d32cc end:0x020d3558
 
-src/overlays/ov274/calls/Ov274_AiBallisticTick.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiBallisticTick.c:
     complete
     .text       start:0x020d3558 end:0x020d3600
 
-src/overlays/ov274/calls/Ov274_AiEnterRockFlight.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiEnterRockFlight.c:
     complete
     .text       start:0x020d3600 end:0x020d3684
 
-src/overlays/ov274/calls/Ov274_RockFlightTick.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_RockFlightTick.c:
     complete
     .text       start:0x020d3684 end:0x020d3de8
 
-src/overlays/ov274/calls/Ov274_ShockwaveTick.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_ShockwaveTick.c:
     complete
     .text       start:0x020d3de8 end:0x020d40b8
 
-src/overlays/ov274/calls/Ov274_AiLockAndPostUpdateB.c:
+src/overlays/enemies/ov274_enemy_60/Ov274_AiLockAndPostUpdateB.c:
     complete
     .text       start:0x020d40b8 end:0x020d4194
 
-src/overlays/ov274/data/ov274_strings_020d42c0.c:
+src/overlays/enemies/ov274_enemy_60/data/ov274_strings_020d42c0.c:
     complete
     .data       start:0x020d42c0 end:0x020d4340
 
-src/overlays/ov274/data/ov274_tables_020d4194.c:
+src/overlays/enemies/ov274_enemy_60/data/ov274_tables_020d4194.c:
     complete
     .rodata     start:0x020d4194 end:0x020d42a0

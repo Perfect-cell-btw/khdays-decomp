@@ -4,146 +4,146 @@
     .data       start:0x020b7460 end:0x020b7500 kind:data align:32
     .bss        start:0x020b7500 end:0x020b7520 kind:bss align:32
 
-src/overlays/ov060/calls/func_ov060_020b5a20.c:
+src/overlays/players/ov060_player_riku_2/func_ov060_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov060/calls/Ov060_stateCtorReturnHandler.c:
+src/overlays/players/ov060_player_riku_2/Ov060_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a5c
 
-src/overlays/ov060/calls/Ov060_stateDtorCleanup.c:
+src/overlays/players/ov060_player_riku_2/Ov060_stateDtorCleanup.c:
     complete
     .text       start:0x020b5a5c end:0x020b5a90
 
-src/overlays/ov060/calls/Ov060_BuildRigObject.c:
+src/overlays/players/ov060_player_riku_2/Ov060_BuildRigObject.c:
     complete
     .text       start:0x020b5a90 end:0x020b5ca4
 
-src/overlays/ov060/calls/Ov060_initFlagStateRegionMarshal.c:
+src/overlays/players/ov060_player_riku_2/Ov060_initFlagStateRegionMarshal.c:
     complete
     .text       start:0x020b5ca4 end:0x020b5d10
 
-src/overlays/ov060/auto/Ov060_MapSlotKindToAnim.c:
+src/overlays/players/ov060_player_riku_2/Ov060_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5d10 end:0x020b5d30
 
-src/overlays/ov060/calls/Ov060_ApplyModeChange.c:
+src/overlays/players/ov060_player_riku_2/Ov060_ApplyModeChange.c:
     complete
     .text       start:0x020b5d30 end:0x020b5e28
 
-src/overlays/ov060/calls/Ov060_SetupAndForwardToVecBuilder.c:
+src/overlays/players/ov060_player_riku_2/Ov060_SetupAndForwardToVecBuilder.c:
     complete
     .text       start:0x020b5e28 end:0x020b5e6c
 
-src/overlays/ov060/calls/Ov060_InvokeSubHandlerPairWithBuffer.c:
+src/overlays/players/ov060_player_riku_2/Ov060_InvokeSubHandlerPairWithBuffer.c:
     complete
     .text       start:0x020b5e6c end:0x020b5e98
 
-src/overlays/ov060/calls/Ov060_BuildRenderHandle.c:
+src/overlays/players/ov060_player_riku_2/Ov060_BuildRenderHandle.c:
     complete
     .text       start:0x020b5e98 end:0x020b5ef8
 
-src/overlays/ov060/calls/Ov060_SelectRequestHandler2.c:
+src/overlays/players/ov060_player_riku_2/Ov060_SelectRequestHandler2.c:
     complete
     .text       start:0x020b5ef8 end:0x020b5f6c
 
-src/overlays/ov060/calls/Ov060_ResetAndBindFourSlotSets.c:
+src/overlays/players/ov060_player_riku_2/Ov060_ResetAndBindFourSlotSets.c:
     complete
     .text       start:0x020b5f6c end:0x020b6040
 
-src/overlays/ov060/calls/Ov060_FreeSubObjectArrayAndTailSlots.c:
+src/overlays/players/ov060_player_riku_2/Ov060_FreeSubObjectArrayAndTailSlots.c:
     complete
     .text       start:0x020b6040 end:0x020b6088
 
-src/overlays/ov060/calls/Ov060_FireTwinBurst.c:
+src/overlays/players/ov060_player_riku_2/Ov060_FireTwinBurst.c:
     complete
     .text       start:0x020b6088 end:0x020b6238
 
-src/overlays/ov060/calls/Ov060_FireTimedBurst.c:
+src/overlays/players/ov060_player_riku_2/Ov060_FireTimedBurst.c:
     complete
     .text       start:0x020b6238 end:0x020b63c8
 
-src/overlays/ov060/calls/Ov060_DispatchToFourSubHandlers.c:
+src/overlays/players/ov060_player_riku_2/Ov060_DispatchToFourSubHandlers.c:
     complete
     .text       start:0x020b63c8 end:0x020b6410
 
-src/overlays/ov060/calls/Ov060_UpdateSubBlocksIfEnabled.c:
+src/overlays/players/ov060_player_riku_2/Ov060_UpdateSubBlocksIfEnabled.c:
     complete
     .text       start:0x020b6410 end:0x020b6470
 
-src/overlays/ov060/calls/Ov060_Activate.c:
+src/overlays/players/ov060_player_riku_2/Ov060_Activate.c:
     complete
     .text       start:0x020b6470 end:0x020b6484
 
-src/overlays/ov060/calls/Ov060_StepSequenceSlot.c:
+src/overlays/players/ov060_player_riku_2/Ov060_StepSequenceSlot.c:
     complete
     .text       start:0x020b6484 end:0x020b6584
 
-src/overlays/ov060/calls/Ov060_DrawNodeAtOwner.c:
+src/overlays/players/ov060_player_riku_2/Ov060_DrawNodeAtOwner.c:
     complete
     .text       start:0x020b6584 end:0x020b65fc
 
-src/overlays/ov060/calls/Ov060_StepProjectilesAndFireVolley.c:
+src/overlays/players/ov060_player_riku_2/Ov060_StepProjectilesAndFireVolley.c:
     complete
     .text       start:0x020b65fc end:0x020b66e4
 
-src/overlays/ov060/calls/Ov060_LaunchProjectile.c:
+src/overlays/players/ov060_player_riku_2/Ov060_LaunchProjectile.c:
     complete
     .text       start:0x020b66e4 end:0x020b68ac
 
-src/overlays/ov060/calls/Ov060_UpdateTracksWhileState2.c:
+src/overlays/players/ov060_player_riku_2/Ov060_UpdateTracksWhileState2.c:
     complete
     .text       start:0x020b68ac end:0x020b68dc
 
-src/overlays/ov060/calls/Ov060_DrawNodeCallback.c:
+src/overlays/players/ov060_player_riku_2/Ov060_DrawNodeCallback.c:
     complete
     .text       start:0x020b68dc end:0x020b68f8
 
-src/overlays/ov060/calls/Ov060_DriveEmitterStateMachine.c:
+src/overlays/players/ov060_player_riku_2/Ov060_DriveEmitterStateMachine.c:
     complete
     .text       start:0x020b68f8 end:0x020b6a24
 
-src/overlays/ov060/calls/Ov060_UploadBoneMatrices.c:
+src/overlays/players/ov060_player_riku_2/Ov060_UploadBoneMatrices.c:
     complete
     .text       start:0x020b6a24 end:0x020b6aa0
 
-src/overlays/ov060/calls/Ov060_BindAnimsMode2.c:
+src/overlays/players/ov060_player_riku_2/Ov060_BindAnimsMode2.c:
     complete
     .text       start:0x020b6aa0 end:0x020b6b20
 
-src/overlays/ov060/calls/Ov060_AdvanceTrackTime.c:
+src/overlays/players/ov060_player_riku_2/Ov060_AdvanceTrackTime.c:
     complete
     .text       start:0x020b6b20 end:0x020b6b9c
 
-src/overlays/ov060/calls/Ov060_SetYawAndDrawNode.c:
+src/overlays/players/ov060_player_riku_2/Ov060_SetYawAndDrawNode.c:
     complete
     .text       start:0x020b6b9c end:0x020b6bf8
 
-src/overlays/ov060/calls/Ov060_FlagLocalAndEnterState.c:
+src/overlays/players/ov060_player_riku_2/Ov060_FlagLocalAndEnterState.c:
     complete
     .text       start:0x020b6bf8 end:0x020b6c78
 
-src/overlays/ov060/calls/Ov060_ApproachStep.c:
+src/overlays/players/ov060_player_riku_2/Ov060_ApproachStep.c:
     complete
     .text       start:0x020b6c78 end:0x020b7020
 
-src/overlays/ov060/calls/Ov060_PursuitStep.c:
+src/overlays/players/ov060_player_riku_2/Ov060_PursuitStep.c:
     complete
     .text       start:0x020b7020 end:0x020b73f4
 
-src/overlays/ov060/calls/Ov060_InvokeWithDataTable.c:
+src/overlays/players/ov060_player_riku_2/Ov060_InvokeWithDataTable.c:
     complete
     .text       start:0x020b73f4 end:0x020b740c
 
-src/overlays/ov060/data/ov060_class_020b7460.c:
+src/overlays/players/ov060_player_riku_2/data/ov060_class_020b7460.c:
     complete
     .data       start:0x020b7460 end:0x020b7474
 
-src/overlays/ov060/data/ov060_strings_020b740c.c:
+src/overlays/players/ov060_player_riku_2/data/ov060_strings_020b740c.c:
     complete
     .rodata     start:0x020b740c end:0x020b744c
 
-src/overlays/ov060/data/ov060_strings_020b7474.c:
+src/overlays/players/ov060_player_riku_2/data/ov060_strings_020b7474.c:
     complete
     .data       start:0x020b7474 end:0x020b7500

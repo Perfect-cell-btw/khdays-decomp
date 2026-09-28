@@ -5,13 +5,12 @@ Two traps this avoids, both of which produced wrong targets before:
 
   1. Counting only `asm_stubs/` + `nonmatching/` as pending IGNORES functions that have
      no source file at all (the delinker's "gap"), which are usually the majority.
-  2. A function's source does NOT have to live under `src/overlays/ovNNN/`. Shared
+  2. A function's source does NOT have to live in its overlay's directory. Shared
      directories satisfy an overlay's delink too, and they are NOT all under src/:
-     `src/calls`, `src/auto` AND `libs/**/calls` all appear in overlay delinks.txt
-     files. Walk src/ and libs/ both.
+     `src/engine` AND `libs/**/calls` both appear in overlay delinks.txt files.
 
-The source of truth is the same one `gen_delinks.py` uses: an overlay function counts as
-done when SOME `.c` named after it exists under any `calls/` or `auto/` directory.
+The source of truth is the same one `gen_delinks.py` uses (tools/srctree.py): an overlay
+function counts as done when SOME `.c` named after it exists in a function source directory.
 
     python tools/overlay_progress.py            # ranking of incomplete overlays
     python tools/overlay_progress.py ov000      # detail for one overlay
@@ -23,21 +22,14 @@ import json
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CFG = os.path.join(ROOT, "config", "arm9", "overlays")
-ROOTS = [os.path.join(ROOT, "src"), os.path.join(ROOT, "libs")]
 
 
 def all_sources():
-    """Every function name that has a .c under ANY calls/ or auto/ directory."""
-    have = set()
-    for base in ROOTS:
-      for dirpath, _dirs, files in os.walk(base):
-        parts = dirpath.replace("\\", "/").split("/")
-        if parts[-1] not in ("calls", "auto") or "asm_stubs" in parts:
-            continue
-        for f in files:
-            if f.endswith(".c"):
-                have.add(f[:-2])
-    return have
+    """Every function name that has C source (src/engine, an overlay directory, libs/**/{auto,calls})."""
+    sys.path.insert(0, os.path.join(ROOT, "tools"))
+    import srctree
+    return {name for name, path in srctree.function_sources(ROOT, (".c",)).items()
+            if not srctree.is_asm_stub(path)}
 
 
 def overlay_functions(ov):

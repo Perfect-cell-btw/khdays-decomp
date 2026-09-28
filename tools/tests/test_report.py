@@ -1,5 +1,4 @@
 import json
-import re
 import sys
 import tempfile
 import unittest
@@ -7,6 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import gen_report
+import srctree
 import report_asm
 import update_readme
 
@@ -105,8 +105,8 @@ class ReportTests(unittest.TestCase):
         for name, entry in entries.items():
             # the overlay comes from the source path: since 2026-09-28 functions carry real names
             # (Ov002_FindFreeSpotId), so the name no longer spells out func_ov002_<addr>
-            ov = re.search(r"/overlays/(ov\d{3})/", entry["source"])
-            unit = ov.group(1) if entry["kind"] == "authorized_clz" and ov else "itcm"
+            ov = srctree.overlay_of(entry["source"])
+            unit = ov if entry["kind"] == "authorized_clz" and ov else "itcm"
             f = function(name, "asm_stub_matched", unit, entry["source"], entry["size"])
             f["mode"] = entry["mode"]
             functions.append(f)

@@ -4,262 +4,262 @@
     .data       start:0x020cf800 end:0x020cf820 kind:data align:32
     .bss        start:0x020cf820 end:0x020cf820 kind:bss align:32
 
-src/overlays/ov160/calls/Ov160_RegisterEntityClass.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov160/calls/Ov160_CreateNamedEntity.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov160/calls/Ov160_Construct.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc24c
 
-src/overlays/ov160/calls/Ov160_Destroy.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_Destroy.c:
     complete
     .text       start:0x020cc24c end:0x020cc294
 
-src/overlays/ov160/calls/Ov160_RebindClip.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_RebindClip.c:
     complete
     .text       start:0x020cc294 end:0x020cc2e0
 
-src/overlays/ov160/calls/Ov160_RetuneRigRearmEmitter.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_RetuneRigRearmEmitter.c:
     complete
     .text       start:0x020cc2e0 end:0x020cc39c
 
-src/overlays/ov160/calls/Ov160_HandleSpawnMessage.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc39c end:0x020cc578
 
-src/overlays/ov160/calls/Ov160_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cc578 end:0x020cc5a0
 
-src/overlays/ov160/calls/Ov160_NotifyPartsThenBase.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc5a0 end:0x020cc5c8
 
-src/overlays/ov160/calls/Ov160_TickHandler.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_TickHandler.c:
     complete
     .text       start:0x020cc5c8 end:0x020cc764
 
-src/overlays/ov160/calls/Ov160_stCreateRegistryEntry.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_stCreateRegistryEntry.c:
     complete
     .text       start:0x020cc764 end:0x020cc7c0
 
-src/overlays/ov160/calls/Ov160_HandleHit.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_HandleHit.c:
     complete
     .text       start:0x020cc7c0 end:0x020cc9d8
 
-src/overlays/ov160/auto/Ov160_RequestState8.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_RequestState8.c:
     complete
     .text       start:0x020cc9d8 end:0x020cca1c
 
-src/overlays/ov160/calls/Ov160_PickApproachDir.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_PickApproachDir.c:
     complete
     .text       start:0x020cca1c end:0x020ccbb8
 
-src/overlays/ov160/calls/Ov160_InitChase.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_InitChase.c:
     complete
     .text       start:0x020ccbb8 end:0x020cccb8
 
-src/overlays/ov160/calls/Ov160_AiDispatchAction.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiDispatchAction.c:
     complete
     .text       start:0x020cccb8 end:0x020cce58
 
-src/overlays/ov160/calls/Ov160_AdvanceMotionPublish.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AdvanceMotionPublish.c:
     complete
     .text       start:0x020cce58 end:0x020ccf0c
 
-src/overlays/ov160/calls/Ov160_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccf0c end:0x020ccf74
 
-src/overlays/ov160/calls/Ov160_PickRandomOffsetThenAdvanceSlot.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_PickRandomOffsetThenAdvanceSlot.c:
     complete
     .text       start:0x020ccf74 end:0x020ccfdc
 
-src/overlays/ov160/calls/Ov160_SpawnEffect48ReconfigureFlags.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_SpawnEffect48ReconfigureFlags.c:
     complete
     .text       start:0x020ccfdc end:0x020cd0a4
 
-src/overlays/ov160/calls/Ov160_Reaction_ChargeThenAim.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_Reaction_ChargeThenAim.c:
     complete
     .text       start:0x020cd0a4 end:0x020cd16c
 
-src/overlays/ov160/calls/Ov160_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd16c end:0x020cd1a0
 
-src/overlays/ov160/calls/Ov160_AiEnterReach.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiEnterReach.c:
     complete
     .text       start:0x020cd1a0 end:0x020cd1dc
 
-src/overlays/ov160/calls/Ov160_ReachCheckTick.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_ReachCheckTick.c:
     complete
     .text       start:0x020cd1dc end:0x020cd26c
 
-src/overlays/ov160/calls/Ov160_AimAtTargetAndDispatch.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020cd26c end:0x020cd33c
 
-src/overlays/ov160/calls/Ov160_StartLeapMotion.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_StartLeapMotion.c:
     complete
     .text       start:0x020cd33c end:0x020cd478
 
-src/overlays/ov160/calls/Ov160_StepLeapMotion.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_StepLeapMotion.c:
     complete
     .text       start:0x020cd478 end:0x020cd4bc
 
-src/overlays/ov160/calls/Ov160_AiJumpRiseTick.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiJumpRiseTick.c:
     complete
     .text       start:0x020cd4bc end:0x020cd578
 
-src/overlays/ov160/calls/Ov160_AiJumpFallTick.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiJumpFallTick.c:
     complete
     .text       start:0x020cd578 end:0x020cd608
 
-src/overlays/ov160/calls/Ov160_AiLandPickAction.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiLandPickAction.c:
     complete
     .text       start:0x020cd608 end:0x020cd674
 
-src/overlays/ov160/calls/Ov160_AiEnterTurnToTarget.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiEnterTurnToTarget.c:
     complete
     .text       start:0x020cd674 end:0x020cd6e4
 
-src/overlays/ov160/calls/Ov160_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020cd6e4 end:0x020cd760
 
-src/overlays/ov160/calls/Ov160_FaceTargetSetTurnRate.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_FaceTargetSetTurnRate.c:
     complete
     .text       start:0x020cd760 end:0x020cd84c
 
-src/overlays/ov160/calls/Ov160_ArmMovePhase2.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_ArmMovePhase2.c:
     complete
     .text       start:0x020cd84c end:0x020cd918
 
-src/overlays/ov160/calls/Ov160_AttackWaitTick.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AttackWaitTick.c:
     complete
     .text       start:0x020cd918 end:0x020cda64
 
-src/overlays/ov160/calls/Ov160_Reaction_AimAtTargetAndDispatch.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_Reaction_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020cda64 end:0x020cdb28
 
-src/overlays/ov160/calls/Ov160_ScheduleFollowUpMove.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_ScheduleFollowUpMove.c:
     complete
     .text       start:0x020cdb28 end:0x020cdc04
 
-src/overlays/ov160/calls/Ov160_AimedAttackWaitTick.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AimedAttackWaitTick.c:
     complete
     .text       start:0x020cdc04 end:0x020cddd8
 
-src/overlays/ov160/calls/Ov160_SpawnEffect4aReconfigureFlagsB.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_SpawnEffect4aReconfigureFlagsB.c:
     complete
     .text       start:0x020cddd8 end:0x020cdea0
 
-src/overlays/ov160/calls/Ov160_SpawnEffectReconfigureFlags.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_SpawnEffectReconfigureFlags.c:
     complete
     .text       start:0x020cdea0 end:0x020cdf54
 
-src/overlays/ov160/calls/Ov160_SpawnAndInitRegistryEntry.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_SpawnAndInitRegistryEntry.c:
     complete
     .text       start:0x020cdf54 end:0x020ce02c
 
-src/overlays/ov160/calls/Ov160_ProbeGround.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_ProbeGround.c:
     complete
     .text       start:0x020ce02c end:0x020ce220
 
-src/overlays/ov160/calls/Ov160_Reaction_ResetTwoSubObjects.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_Reaction_ResetTwoSubObjects.c:
     complete
     .text       start:0x020ce220 end:0x020ce2c4
 
-src/overlays/ov160/calls/Ov160_ReleaseAction.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_ReleaseAction.c:
     complete
     .text       start:0x020ce2c4 end:0x020ce31c
 
-src/overlays/ov160/calls/Ov160_AiDescentProbe_2.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiDescentProbe_2.c:
     complete
     .text       start:0x020ce31c end:0x020ce474
 
-src/overlays/ov160/calls/Ov160_AiDescentProbe.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiDescentProbe.c:
     complete
     .text       start:0x020ce474 end:0x020ce738
 
-src/overlays/ov160/calls/Ov160_EnterGroundDrop.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_EnterGroundDrop.c:
     complete
     .text       start:0x020ce738 end:0x020ce834
 
-src/overlays/ov160/calls/Ov160_GroundDropTick.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_GroundDropTick.c:
     complete
     .text       start:0x020ce834 end:0x020ceb4c
 
-src/overlays/ov160/calls/Ov160_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020ceb4c end:0x020ceb8c
 
-src/overlays/ov160/calls/Ov160_Actor_New.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_Actor_New.c:
     complete
     .text       start:0x020ceb8c end:0x020cebc0
 
-src/overlays/ov160/calls/Ov160_ConstructItem.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_ConstructItem.c:
     complete
     .text       start:0x020cebc0 end:0x020ced50
 
-src/overlays/ov160/calls/Ov160_SubObject_Destroy.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_SubObject_Destroy.c:
     complete
     .text       start:0x020ced50 end:0x020ced80
 
-src/overlays/ov160/calls/Ov160_TickAndSyncModelXform.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_TickAndSyncModelXform.c:
     complete
     .text       start:0x020ced80 end:0x020cedb8
 
-src/overlays/ov160/calls/Ov160_EventArmEmitterPayload.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_EventArmEmitterPayload.c:
     complete
     .text       start:0x020cedb8 end:0x020cee2c
 
-src/overlays/ov160/calls/Ov160_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cee2c end:0x020cee78
 
-src/overlays/ov160/calls/Ov160_stateInitClearSlots.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_stateInitClearSlots.c:
     complete
     .text       start:0x020cee78 end:0x020cef20
 
-src/overlays/ov160/calls/Ov160_SubAi_DispatchAction.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_SubAi_DispatchAction.c:
     complete
     .text       start:0x020cef20 end:0x020cefc0
 
-src/overlays/ov160/auto/Ov160_AiApplyMoveVector.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiApplyMoveVector.c:
     complete
     .text       start:0x020cefc0 end:0x020cefd8
 
-src/overlays/ov160/calls/Ov160_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020cefd8 end:0x020cf088
 
-src/overlays/ov160/calls/Ov160_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020cf088 end:0x020cf0c0
 
-src/overlays/ov160/calls/Ov160_EnterDash.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_EnterDash.c:
     complete
     .text       start:0x020cf0c0 end:0x020cf1a4
 
-src/overlays/ov160/calls/Ov160_DashTick.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_DashTick.c:
     complete
     .text       start:0x020cf1a4 end:0x020cf4f4
 
-src/overlays/ov160/calls/Ov160_GrabTick.c:
+src/overlays/enemies/ov160_enemy_17/Ov160_GrabTick.c:
     complete
     .text       start:0x020cf4f4 end:0x020cf770
 
-src/overlays/ov160/data/ov160_strings_020cf800.c:
+src/overlays/enemies/ov160_enemy_17/data/ov160_strings_020cf800.c:
     complete
     .data       start:0x020cf800 end:0x020cf820
 
-src/overlays/ov160/data/ov160_tables_020cf770.c:
+src/overlays/enemies/ov160_enemy_17/data/ov160_tables_020cf770.c:
     complete
     .rodata     start:0x020cf770 end:0x020cf7e4

@@ -4,150 +4,150 @@
     .data       start:0x020b9c60 end:0x020b9d00 kind:data align:32
     .bss        start:0x020b9d00 end:0x020b9d20 kind:bss align:32
 
-src/overlays/ov076/calls/func_ov076_020b8100.c:
+src/overlays/players/ov076_player_larxene_3/func_ov076_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov076/calls/Ov076_CreateTaggedObjectHandler46Cf.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_CreateTaggedObjectHandler46Cf.c:
     complete
     .text       start:0x020b8114 end:0x020b813c
 
-src/overlays/ov076/calls/Ov076_initSubitemsClear.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_initSubitemsClear.c:
     complete
     .text       start:0x020b813c end:0x020b8160
 
-src/overlays/ov076/calls/Ov076_Boot.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_Boot.c:
     complete
     .text       start:0x020b8160 end:0x020b83a8
 
-src/overlays/ov076/calls/Ov076_initDualFlagStateThenCall.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_initDualFlagStateThenCall.c:
     complete
     .text       start:0x020b83a8 end:0x020b8414
 
-src/overlays/ov076/auto/Ov076_MapSlotKindToAnim.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b8414 end:0x020b843c
 
-src/overlays/ov076/calls/Ov076_DispatchRequestAndSetState.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_DispatchRequestAndSetState.c:
     complete
     .text       start:0x020b843c end:0x020b8508
 
-src/overlays/ov076/calls/Ov076_UpdateTargetAndTimers.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_UpdateTargetAndTimers.c:
     complete
     .text       start:0x020b8508 end:0x020b8610
 
-src/overlays/ov076/calls/Ov076_StepAttackSlotAndForward.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_StepAttackSlotAndForward.c:
     complete
     .text       start:0x020b8610 end:0x020b8648
 
-src/overlays/ov076/calls/Ov076_BuildRenderHandles.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_BuildRenderHandles.c:
     complete
     .text       start:0x020b8648 end:0x020b86d8
 
-src/overlays/ov076/calls/Ov076_HandleMsgAndLaunch.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_HandleMsgAndLaunch.c:
     complete
     .text       start:0x020b86d8 end:0x020b8814
 
-src/overlays/ov076/calls/Ov076_BuildPeerGroup.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_BuildPeerGroup.c:
     complete
     .text       start:0x020b8814 end:0x020b88cc
 
-src/overlays/ov076/calls/Ov076_ReleaseAndFreeField2644.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_ReleaseAndFreeField2644.c:
     complete
     .text       start:0x020b88cc end:0x020b88e8
 
-src/overlays/ov076/calls/Ov076_CallSubObjThenAdvance.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_CallSubObjThenAdvance.c:
     complete
     .text       start:0x020b88e8 end:0x020b8908
 
-src/overlays/ov076/calls/Ov076_InvokeGroupCallback.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_InvokeGroupCallback.c:
     complete
     .text       start:0x020b8908 end:0x020b891c
 
-src/overlays/ov076/calls/Ov076_FirePartShot.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_FirePartShot.c:
     complete
     .text       start:0x020b891c end:0x020b8a78
 
-src/overlays/ov076/calls/Ov076_InitEffectSlotsAlt.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_InitEffectSlotsAlt.c:
     complete
     .text       start:0x020b8a78 end:0x020b8b24
 
-src/overlays/ov076/calls/Ov076_ReleaseBothSlots.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_ReleaseBothSlots.c:
     complete
     .text       start:0x020b8b24 end:0x020b8b50
 
-src/overlays/ov076/calls/Ov076_PublishAltAndEnterState.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_PublishAltAndEnterState.c:
     complete
     .text       start:0x020b8b50 end:0x020b8be8
 
-src/overlays/ov076/calls/Ov076_ApproachStep.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_ApproachStep.c:
     complete
     .text       start:0x020b8be8 end:0x020b8fe4
 
-src/overlays/ov076/calls/Ov076_ChargeStep.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_ChargeStep.c:
     complete
     .text       start:0x020b8fe4 end:0x020b9220
 
-src/overlays/ov076/auto/Ov076_BindAttachAnchor.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_BindAttachAnchor.c:
     complete
     .text       start:0x020b9220 end:0x020b9234
 
-src/overlays/ov076/calls/Ov076_Activate.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_Activate.c:
     complete
     .text       start:0x020b9234 end:0x020b9240
 
-src/overlays/ov076/calls/Ov076_StepAttackSlot.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_StepAttackSlot.c:
     complete
     .text       start:0x020b9240 end:0x020b943c
 
-src/overlays/ov076/calls/Ov076_ForwardArg1IfFlagSet.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_ForwardArg1IfFlagSet.c:
     complete
     .text       start:0x020b943c end:0x020b947c
 
-src/overlays/ov076/calls/Ov076_StartAnimTracks.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_StartAnimTracks.c:
     complete
     .text       start:0x020b947c end:0x020b94fc
 
-src/overlays/ov076/calls/Ov076_AdvanceTrackTime.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_AdvanceTrackTime.c:
     complete
     .text       start:0x020b94fc end:0x020b957c
 
-src/overlays/ov076/calls/Ov076_SetYawAndDrawSubNode.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_SetYawAndDrawSubNode.c:
     complete
     .text       start:0x020b957c end:0x020b95dc
 
-src/overlays/ov076/calls/Ov076_FireTimedVolley.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_FireTimedVolley.c:
     complete
     .text       start:0x020b95dc end:0x020b9954
 
-src/overlays/ov076/calls/Ov076_ReleaseCharge.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_ReleaseCharge.c:
     complete
     .text       start:0x020b9954 end:0x020b9bcc
 
-src/overlays/ov076/calls/Ov076_InvokeWithDataTable.c:
+src/overlays/players/ov076_player_larxene_3/Ov076_InvokeWithDataTable.c:
     complete
     .text       start:0x020b9bcc end:0x020b9be4
 
-src/overlays/ov076/data/ov076_class_020b9c74.c:
+src/overlays/players/ov076_player_larxene_3/data/ov076_class_020b9c74.c:
     complete
     .data       start:0x020b9c74 end:0x020b9c88
 
-src/overlays/ov076/data/ov076_ctorargs_020b9bf0.c:
+src/overlays/players/ov076_player_larxene_3/data/ov076_ctorargs_020b9bf0.c:
     complete
     .rodata     start:0x020b9bf0 end:0x020b9c04
 
-src/overlays/ov076/data/ov076_strings_020b9c04.c:
+src/overlays/players/ov076_player_larxene_3/data/ov076_strings_020b9c04.c:
     complete
     .rodata     start:0x020b9c04 end:0x020b9c54
 
-src/overlays/ov076/data/ov076_strings_020b9c60.c:
+src/overlays/players/ov076_player_larxene_3/data/ov076_strings_020b9c60.c:
     complete
     .data       start:0x020b9c60 end:0x020b9c74
 
-src/overlays/ov076/data/ov076_strings_020b9c88.c:
+src/overlays/players/ov076_player_larxene_3/data/ov076_strings_020b9c88.c:
     complete
     .data       start:0x020b9c88 end:0x020b9d00
 
-src/overlays/ov076/data/ov076_tables_020b9be4.c:
+src/overlays/players/ov076_player_larxene_3/data/ov076_tables_020b9be4.c:
     complete
     .rodata     start:0x020b9be4 end:0x020b9bf0

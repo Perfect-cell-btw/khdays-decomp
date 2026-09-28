@@ -4,326 +4,326 @@
     .data       start:0x020d34e0 end:0x020d3500 kind:data align:32
     .bss        start:0x020d3500 end:0x020d3500 kind:bss align:32
 
-src/overlays/ov186/calls/Ov186_RegisterEntityClass.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov186/calls/Ov186_CreateNamedEntity_2.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_CreateNamedEntity_2.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc08
 
-src/overlays/ov186/calls/Ov186_Actor_Construct.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_Actor_Construct.c:
     complete
     .text       start:0x020cfc08 end:0x020cfe54
 
-src/overlays/ov186/calls/Ov186_Destroy.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_Destroy.c:
     complete
     .text       start:0x020cfe54 end:0x020cfe78
 
-src/overlays/ov186/calls/Ov186_TickAndSyncTwoModelXforms.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_TickAndSyncTwoModelXforms.c:
     complete
     .text       start:0x020cfe78 end:0x020cfed4
 
-src/overlays/ov186/calls/Ov186_RetuneRigKindSlots03.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_RetuneRigKindSlots03.c:
     complete
     .text       start:0x020cfed4 end:0x020cff98
 
-src/overlays/ov186/calls/Ov186_NotifySubNodesRunCallbacks.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_NotifySubNodesRunCallbacks.c:
     complete
     .text       start:0x020cff98 end:0x020d0000
 
-src/overlays/ov186/calls/Ov186_PingAllSubNodes.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_PingAllSubNodes.c:
     complete
     .text       start:0x020d0000 end:0x020d003c
 
-src/overlays/ov186/calls/Ov186_EventCreateDestroySubObject.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_EventCreateDestroySubObject.c:
     complete
     .text       start:0x020d003c end:0x020d00c4
 
-src/overlays/ov186/calls/Ov186_CancelPendingRequest.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_CancelPendingRequest.c:
     complete
     .text       start:0x020d00c4 end:0x020d0104
 
-src/overlays/ov186/calls/Ov186_NotifyAndDoubleAngle.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_NotifyAndDoubleAngle.c:
     complete
     .text       start:0x020d0104 end:0x020d0164
 
-src/overlays/ov186/calls/Ov186_RunSubNodeCallbacksArg.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_RunSubNodeCallbacksArg.c:
     complete
     .text       start:0x020d0164 end:0x020d01a4
 
-src/overlays/ov186/calls/Ov186_RunSubNodeCallbacksClose.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_RunSubNodeCallbacksClose.c:
     complete
     .text       start:0x020d01a4 end:0x020d01e0
 
-src/overlays/ov186/calls/Ov186_CreateAiTask.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_CreateAiTask.c:
     complete
     .text       start:0x020d01e0 end:0x020d022c
 
-src/overlays/ov186/calls/Ov186_ApplyHitReaction.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_ApplyHitReaction.c:
     complete
     .text       start:0x020d022c end:0x020d03bc
 
-src/overlays/ov186/auto/Ov186_DriveExitModes.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_DriveExitModes.c:
     complete
     .text       start:0x020d03bc end:0x020d051c
 
-src/overlays/ov186/calls/Ov186_LookAtQuat.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_LookAtQuat.c:
     complete
     .text       start:0x020d051c end:0x020d0558
 
-src/overlays/ov186/calls/Ov186_SeedVecAndArm.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_SeedVecAndArm.c:
     complete
     .text       start:0x020d0558 end:0x020d0644
 
-src/overlays/ov186/calls/Ov186_Action_Dispatch.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_Action_Dispatch.c:
     complete
     .text       start:0x020d0644 end:0x020d0854
 
-src/overlays/ov186/calls/Ov186_Sweep_Step.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_Sweep_Step.c:
     complete
     .text       start:0x020d0854 end:0x020d0b30
 
-src/overlays/ov186/calls/Ov186_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0b30 end:0x020d0b98
 
-src/overlays/ov186/calls/Ov186_PublishLandingPose.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_PublishLandingPose.c:
     complete
     .text       start:0x020d0b98 end:0x020d0c10
 
-src/overlays/ov186/calls/Ov186_AcquireAimTransform.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AcquireAimTransform.c:
     complete
     .text       start:0x020d0c10 end:0x020d0ce0
 
-src/overlays/ov186/calls/Ov186_AiRollTimerQueue2.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiRollTimerQueue2.c:
     complete
     .text       start:0x020d0ce0 end:0x020d0d40
 
-src/overlays/ov186/calls/Ov186_SeedRandomStrafe.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_SeedRandomStrafe.c:
     complete
     .text       start:0x020d0d40 end:0x020d0dc8
 
-src/overlays/ov186/calls/Ov186_CircleStrafe_Step.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_CircleStrafe_Step.c:
     complete
     .text       start:0x020d0dc8 end:0x020d0f38
 
-src/overlays/ov186/calls/Ov186_AiEnterApproach.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiEnterApproach.c:
     complete
     .text       start:0x020d0f38 end:0x020d0f94
 
-src/overlays/ov186/calls/Ov186_ApproachTarget_Step.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_ApproachTarget_Step.c:
     complete
     .text       start:0x020d0f94 end:0x020d10d0
 
-src/overlays/ov186/calls/Ov186_BuildTransformMatrixThenAdvance.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_BuildTransformMatrixThenAdvance.c:
     complete
     .text       start:0x020d10d0 end:0x020d114c
 
-src/overlays/ov186/calls/Ov186_DecayOffsetGiveUp.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_DecayOffsetGiveUp.c:
     complete
     .text       start:0x020d114c end:0x020d1200
 
-src/overlays/ov186/calls/Ov186_AiEndWithUpdate.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiEndWithUpdate.c:
     complete
     .text       start:0x020d1200 end:0x020d12c8
 
-src/overlays/ov186/calls/Ov186_AiEnterGuard.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiEnterGuard.c:
     complete
     .text       start:0x020d12c8 end:0x020d135c
 
-src/overlays/ov186/calls/Ov186_AiStep_QueueAction9OnFlag48Clear.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiStep_QueueAction9OnFlag48Clear.c:
     complete
     .text       start:0x020d135c end:0x020d1390
 
-src/overlays/ov186/calls/Ov186_AiEnterStagger.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiEnterStagger.c:
     complete
     .text       start:0x020d1390 end:0x020d1408
 
-src/overlays/ov186/calls/Ov186_RingBurst_Begin.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_RingBurst_Begin.c:
     complete
     .text       start:0x020d1408 end:0x020d15a4
 
-src/overlays/ov186/calls/Ov186_AiEnterBoneSpin.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiEnterBoneSpin.c:
     complete
     .text       start:0x020d15a4 end:0x020d15d0
 
-src/overlays/ov186/calls/Ov186_BoneSpin_Step.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_BoneSpin_Step.c:
     complete
     .text       start:0x020d15d0 end:0x020d1748
 
-src/overlays/ov186/calls/Ov186_AiSetStanceAndEnd.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiSetStanceAndEnd.c:
     complete
     .text       start:0x020d1748 end:0x020d17c0
 
-src/overlays/ov186/calls/Ov186_CreateNamedEntity.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_CreateNamedEntity.c:
     complete
     .text       start:0x020d17c0 end:0x020d184c
 
-src/overlays/ov186/calls/Ov186_InitEffectActor.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_InitEffectActor.c:
     complete
     .text       start:0x020d184c end:0x020d19d8
 
-src/overlays/ov186/calls/Ov186_OnDespawn.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_OnDespawn.c:
     complete
     .text       start:0x020d19d8 end:0x020d19f4
 
-src/overlays/ov186/calls/Ov186_TickAndSyncChildren.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_TickAndSyncChildren.c:
     complete
     .text       start:0x020d19f4 end:0x020d1a50
 
-src/overlays/ov186/calls/Ov186_UnlinkHeldNode.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_UnlinkHeldNode.c:
     complete
     .text       start:0x020d1a50 end:0x020d1a6c
 
-src/overlays/ov186/calls/Ov186_SpawnAuraOnTag5.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_SpawnAuraOnTag5.c:
     complete
     .text       start:0x020d1a6c end:0x020d1ae0
 
-src/overlays/ov186/calls/Ov186_CallSetupThenSharedHandler.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_CallSetupThenSharedHandler.c:
     complete
     .text       start:0x020d1ae0 end:0x020d1af8
 
-src/overlays/ov186/calls/Ov186_PlayAnimPair.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_PlayAnimPair.c:
     complete
     .text       start:0x020d1af8 end:0x020d1bdc
 
-src/overlays/ov186/calls/Ov186_RunHandlerUnlessBit0OnlyThenAdvance.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_RunHandlerUnlessBit0OnlyThenAdvance.c:
     complete
     .text       start:0x020d1bdc end:0x020d1c14
 
-src/overlays/ov186/calls/Ov186_CreateRegistryEntryForActor.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_CreateRegistryEntryForActor.c:
     complete
     .text       start:0x020d1c14 end:0x020d1c60
 
-src/overlays/ov186/auto/Ov186_TickStaggerAndFlipFacing.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_TickStaggerAndFlipFacing.c:
     complete
     .text       start:0x020d1c60 end:0x020d1df0
 
-src/overlays/ov186/auto/Ov186_ReactionRequestSubState8.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_ReactionRequestSubState8.c:
     complete
     .text       start:0x020d1df0 end:0x020d1e48
 
-src/overlays/ov186/calls/Ov186_LookAtQuat_2.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_LookAtQuat_2.c:
     complete
     .text       start:0x020d1e48 end:0x020d1e84
 
-src/overlays/ov186/calls/Ov186_SeedVecAndArm_2.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_SeedVecAndArm_2.c:
     complete
     .text       start:0x020d1e84 end:0x020d1f70
 
-src/overlays/ov186/calls/Ov186_DispatchSubStateByte.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_DispatchSubStateByte.c:
     complete
     .text       start:0x020d1f70 end:0x020d2180
 
-src/overlays/ov186/calls/Ov186_AiSlerpHeading.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiSlerpHeading.c:
     complete
     .text       start:0x020d2180 end:0x020d2284
 
-src/overlays/ov186/calls/Ov186_stateSetFlagsClearBit_2.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_stateSetFlagsClearBit_2.c:
     complete
     .text       start:0x020d2284 end:0x020d22ec
 
-src/overlays/ov186/calls/Ov186_PublishFinishPose.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_PublishFinishPose.c:
     complete
     .text       start:0x020d22ec end:0x020d2384
 
-src/overlays/ov186/calls/Ov186_AcquireAimTransform_2.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AcquireAimTransform_2.c:
     complete
     .text       start:0x020d2384 end:0x020d2454
 
-src/overlays/ov186/calls/Ov186_AiRollTimerQueue2B.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiRollTimerQueue2B.c:
     complete
     .text       start:0x020d2454 end:0x020d24b4
 
-src/overlays/ov186/calls/Ov186_PickRandomSignedSpeed.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_PickRandomSignedSpeed.c:
     complete
     .text       start:0x020d24b4 end:0x020d253c
 
-src/overlays/ov186/calls/Ov186_ChaseTargetOrReposition.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_ChaseTargetOrReposition.c:
     complete
     .text       start:0x020d253c end:0x020d2648
 
-src/overlays/ov186/calls/Ov186_SetPoseThenAdvanceSlot.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020d2648 end:0x020d267c
 
-src/overlays/ov186/calls/Ov186_KeepDistanceOrRetreat.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_KeepDistanceOrRetreat.c:
     complete
     .text       start:0x020d267c end:0x020d27c0
 
-src/overlays/ov186/calls/Ov186_BuildTransformMatrixThenAdvance_2.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_BuildTransformMatrixThenAdvance_2.c:
     complete
     .text       start:0x020d27c0 end:0x020d283c
 
-src/overlays/ov186/calls/Ov186_AiDecelUntilSlow.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiDecelUntilSlow.c:
     complete
     .text       start:0x020d283c end:0x020d2914
 
-src/overlays/ov186/calls/Ov186_AiEndWithUpdate_2.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiEndWithUpdate_2.c:
     complete
     .text       start:0x020d2914 end:0x020d29dc
 
-src/overlays/ov186/calls/Ov186_SeedTimerFireThenAdvanceSlot.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_SeedTimerFireThenAdvanceSlot.c:
     complete
     .text       start:0x020d29dc end:0x020d2a38
 
-src/overlays/ov186/calls/Ov186_AimAtTarget.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AimAtTarget.c:
     complete
     .text       start:0x020d2a38 end:0x020d2b7c
 
-src/overlays/ov186/calls/Ov186_OrbitStep.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_OrbitStep.c:
     complete
     .text       start:0x020d2b7c end:0x020d2d1c
 
-src/overlays/ov186/calls/Ov186_PublishLanding.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_PublishLanding.c:
     complete
     .text       start:0x020d2d1c end:0x020d2e1c
 
-src/overlays/ov186/calls/Ov186_AiReaimStrafe.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiReaimStrafe.c:
     complete
     .text       start:0x020d2e1c end:0x020d2f20
 
-src/overlays/ov186/calls/Ov186_BeginTumble.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_BeginTumble.c:
     complete
     .text       start:0x020d2f20 end:0x020d3014
 
-src/overlays/ov186/calls/Ov186_EmitAtOrbit.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_EmitAtOrbit.c:
     complete
     .text       start:0x020d3014 end:0x020d32e0
 
-src/overlays/ov186/calls/Ov186_AiFallTick.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiFallTick.c:
     complete
     .text       start:0x020d32e0 end:0x020d3370
 
-src/overlays/ov186/calls/Ov186_AiEnterDown.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiEnterDown.c:
     complete
     .text       start:0x020d3370 end:0x020d3404
 
-src/overlays/ov186/calls/Ov186_AiQueue9OnFlagClear.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiQueue9OnFlagClear.c:
     complete
     .text       start:0x020d3404 end:0x020d3438
 
-src/overlays/ov186/calls/Ov186_AiEnterDefeat.c:
+src/overlays/enemies/ov186_enemy_21_2/Ov186_AiEnterDefeat.c:
     complete
     .text       start:0x020d3438 end:0x020d34b0
 
-src/overlays/ov186/data/ov186_const_020d34e0.c:
+src/overlays/enemies/ov186_enemy_21_2/data/ov186_const_020d34e0.c:
     complete
     .data       start:0x020d34e0 end:0x020d34e4
 
-src/overlays/ov186/data/ov186_const_020d34f0.c:
+src/overlays/enemies/ov186_enemy_21_2/data/ov186_const_020d34f0.c:
     complete
     .data       start:0x020d34f0 end:0x020d34f4
 
-src/overlays/ov186/data/ov186_strings_020d34e4.c:
+src/overlays/enemies/ov186_enemy_21_2/data/ov186_strings_020d34e4.c:
     complete
     .data       start:0x020d34e4 end:0x020d34f0
 
-src/overlays/ov186/data/ov186_strings_020d34f4.c:
+src/overlays/enemies/ov186_enemy_21_2/data/ov186_strings_020d34f4.c:
     complete
     .data       start:0x020d34f4 end:0x020d3500
 
-src/overlays/ov186/data/ov186_tables_020d34b0.c:
+src/overlays/enemies/ov186_enemy_21_2/data/ov186_tables_020d34b0.c:
     complete
     .rodata     start:0x020d34b0 end:0x020d34dc

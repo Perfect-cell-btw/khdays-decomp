@@ -4,234 +4,234 @@
     .data       start:0x020d6860 end:0x020d68a0 kind:data align:32
     .bss        start:0x020d68a0 end:0x020d68a0 kind:bss align:32
 
-src/overlays/ov203/calls/Ov203_RegisterEntityClass.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov203/calls/Ov203_AllocActorWithName.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_AllocActorWithName.c:
     complete
     .text       start:0x020d37b8 end:0x020d3848
 
-src/overlays/ov203/calls/Ov203_Construct.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_Construct.c:
     complete
     .text       start:0x020d3848 end:0x020d3a98
 
-src/overlays/ov203/calls/Ov203_Destroy.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_Destroy.c:
     complete
     .text       start:0x020d3a98 end:0x020d3ae0
 
-src/overlays/ov203/calls/Ov203_TickWithChildRefresh.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_TickWithChildRefresh.c:
     complete
     .text       start:0x020d3ae0 end:0x020d3b04
 
-src/overlays/ov203/calls/Ov203_InitModelPose.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_InitModelPose.c:
     complete
     .text       start:0x020d3b04 end:0x020d3b78
 
-src/overlays/ov203/calls/Ov203_HandleSpawnMessage.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_HandleSpawnMessage.c:
     complete
     .text       start:0x020d3b78 end:0x020d3ccc
 
-src/overlays/ov203/calls/Ov203_Model_SetTrack0.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_Model_SetTrack0.c:
     complete
     .text       start:0x020d3ccc end:0x020d3cfc
 
-src/overlays/ov203/calls/Ov203_ReleaseTasks.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_ReleaseTasks.c:
     complete
     .text       start:0x020d3cfc end:0x020d3e08
 
-src/overlays/ov203/calls/Ov203_collectChildrenInBox.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_collectChildrenInBox.c:
     complete
     .text       start:0x020d3e08 end:0x020d3ee8
 
-src/overlays/ov203/calls/Ov203_collectObjectsInSphereRec.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020d3ee8 end:0x020d409c
 
-src/overlays/ov203/calls/Ov203_CreateRegistryEntryTwoCallbacks.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_CreateRegistryEntryTwoCallbacks.c:
     complete
     .text       start:0x020d409c end:0x020d40ec
 
-src/overlays/ov203/calls/Ov203_OnHit.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_OnHit.c:
     complete
     .text       start:0x020d40ec end:0x020d4388
 
-src/overlays/ov203/auto/Ov203_RequestSubState10IfIdleUnless7Or8.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_RequestSubState10IfIdleUnless7Or8.c:
     complete
     .text       start:0x020d4388 end:0x020d43cc
 
-src/overlays/ov203/calls/Ov203_EnterRandomDwellState.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_EnterRandomDwellState.c:
     complete
     .text       start:0x020d43cc end:0x020d44c8
 
-src/overlays/ov203/auto/Ov203_EntryReleaseNoOp.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_EntryReleaseNoOp.c:
     complete
     .text       start:0x020d44c8 end:0x020d44cc
 
-src/overlays/ov203/calls/Ov203_DispatchSubStateByte.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_DispatchSubStateByte.c:
     complete
     .text       start:0x020d44cc end:0x020d4684
 
-src/overlays/ov203/calls/Ov203_MotionTick.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_MotionTick.c:
     complete
     .text       start:0x020d4684 end:0x020d4770
 
-src/overlays/ov203/calls/Ov203_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d4770 end:0x020d47d8
 
-src/overlays/ov203/calls/Ov203_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d47d8 end:0x020d4814
 
-src/overlays/ov203/calls/Ov203_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020d4814 end:0x020d48e0
 
-src/overlays/ov203/calls/Ov203_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d48e0 end:0x020d49a8
 
-src/overlays/ov203/calls/Ov203_RerollTimerThenSubState2.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_RerollTimerThenSubState2.c:
     complete
     .text       start:0x020d49a8 end:0x020d4a08
 
-src/overlays/ov203/calls/Ov203_stDiv30Store.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_stDiv30Store.c:
     complete
     .text       start:0x020d4a08 end:0x020d4a68
 
-src/overlays/ov203/calls/Ov203_ReactWhenTargetInReach.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_ReactWhenTargetInReach.c:
     complete
     .text       start:0x020d4a68 end:0x020d4ad8
 
-src/overlays/ov203/calls/Ov203_stDiv30Store_2.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_stDiv30Store_2.c:
     complete
     .text       start:0x020d4ad8 end:0x020d4b38
 
-src/overlays/ov203/calls/Ov203_AiLoopAnim2OnFlagClear.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_AiLoopAnim2OnFlagClear.c:
     complete
     .text       start:0x020d4b38 end:0x020d4b7c
 
-src/overlays/ov203/calls/Ov203_CloseOnTarget.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_CloseOnTarget.c:
     complete
     .text       start:0x020d4b7c end:0x020d4d20
 
-src/overlays/ov203/calls/Ov203_AdvanceNodeWhenGateClear.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_AdvanceNodeWhenGateClear.c:
     complete
     .text       start:0x020d4d20 end:0x020d4d54
 
-src/overlays/ov203/calls/Ov203_AiEnterAim.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_AiEnterAim.c:
     complete
     .text       start:0x020d4d54 end:0x020d4dd8
 
-src/overlays/ov203/calls/Ov203_OrbitTarget.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_OrbitTarget.c:
     complete
     .text       start:0x020d4dd8 end:0x020d4fc0
 
-src/overlays/ov203/calls/Ov203_ComputeTargetDeltaThenAdvance.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020d4fc0 end:0x020d5030
 
-src/overlays/ov203/calls/Ov203_CopyScaleVec3GuardedThenAdvance.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_CopyScaleVec3GuardedThenAdvance.c:
     complete
     .text       start:0x020d5030 end:0x020d50ac
 
-src/overlays/ov203/calls/Ov203_stateSetFlagEffect.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_stateSetFlagEffect.c:
     complete
     .text       start:0x020d50ac end:0x020d5118
 
-src/overlays/ov203/calls/Ov203_stateTransformAimVec.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_stateTransformAimVec.c:
     complete
     .text       start:0x020d5118 end:0x020d51e4
 
-src/overlays/ov203/calls/Ov203_HomingDashTick.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_HomingDashTick.c:
     complete
     .text       start:0x020d51e4 end:0x020d5678
 
-src/overlays/ov203/calls/Ov203_AiReleaseHeldAndTrack.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_AiReleaseHeldAndTrack.c:
     complete
     .text       start:0x020d5678 end:0x020d572c
 
-src/overlays/ov203/calls/Ov203_SetPose6ThenAdvanceSlot.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_SetPose6ThenAdvanceSlot.c:
     complete
     .text       start:0x020d572c end:0x020d5760
 
-src/overlays/ov203/calls/Ov203_BeginRecoil.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_BeginRecoil.c:
     complete
     .text       start:0x020d5760 end:0x020d5840
 
-src/overlays/ov203/calls/Ov203_ThrowChargeTick.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_ThrowChargeTick.c:
     complete
     .text       start:0x020d5840 end:0x020d5934
 
-src/overlays/ov203/calls/Ov203_BeginThrowRelease.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_BeginThrowRelease.c:
     complete
     .text       start:0x020d5934 end:0x020d5b00
 
-src/overlays/ov203/calls/Ov203_ThrowReleaseTick.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_ThrowReleaseTick.c:
     complete
     .text       start:0x020d5b00 end:0x020d6240
 
-src/overlays/ov203/calls/Ov203_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d6240 end:0x020d6308
 
-src/overlays/ov203/calls/Ov203_AiEndWithUpdate.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_AiEndWithUpdate.c:
     complete
     .text       start:0x020d6308 end:0x020d63bc
 
-src/overlays/ov203/calls/Ov203_SpawnChild10AndBackLink.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_SpawnChild10AndBackLink.c:
     complete
     .text       start:0x020d63bc end:0x020d6404
 
-src/overlays/ov203/calls/Ov203_RenderAtOwnerScaled.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_RenderAtOwnerScaled.c:
     complete
     .text       start:0x020d6404 end:0x020d645c
 
-src/overlays/ov203/calls/Ov203_stInitChildActor.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_stInitChildActor.c:
     complete
     .text       start:0x020d645c end:0x020d6508
 
-src/overlays/ov203/auto/Ov203_ChildTaskTeardownAndFlag.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_ChildTaskTeardownAndFlag.c:
     complete
     .text       start:0x020d6508 end:0x020d6544
 
-src/overlays/ov203/calls/Ov203_TickTimerAdvanceSubState.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_TickTimerAdvanceSubState.c:
     complete
     .text       start:0x020d6544 end:0x020d65a8
 
-src/overlays/ov203/calls/Ov203_SpawnChild0cAndBackLink.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_SpawnChild0cAndBackLink.c:
     complete
     .text       start:0x020d65a8 end:0x020d65f0
 
-src/overlays/ov203/calls/Ov203_RenderAtOwnerModel.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_RenderAtOwnerModel.c:
     complete
     .text       start:0x020d65f0 end:0x020d6638
 
-src/overlays/ov203/calls/Ov203_stateInitSubitem.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_stateInitSubitem.c:
     complete
     .text       start:0x020d6638 end:0x020d66b8
 
-src/overlays/ov203/calls/Ov203_ChildTaskTeardown.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_ChildTaskTeardown.c:
     complete
     .text       start:0x020d66b8 end:0x020d66e0
 
-src/overlays/ov203/calls/Ov203_ConfigureActorUnlessBusy.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_ConfigureActorUnlessBusy.c:
     complete
     .text       start:0x020d66e0 end:0x020d6724
 
-src/overlays/ov203/calls/Ov203_ReleaseSubitemStep.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_ReleaseSubitemStep.c:
     complete
     .text       start:0x020d6724 end:0x020d67b0
 
-src/overlays/ov203/calls/Ov203_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov203_enemy_27_2/Ov203_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d67b0 end:0x020d67d0
 
-src/overlays/ov203/data/ov203_strings_020d6860.c:
+src/overlays/enemies/ov203_enemy_27_2/data/ov203_strings_020d6860.c:
     complete
     .data       start:0x020d6860 end:0x020d68a0
 
-src/overlays/ov203/data/ov203_tables_020d67d0.c:
+src/overlays/enemies/ov203_enemy_27_2/data/ov203_tables_020d67d0.c:
     complete
     .rodata     start:0x020d67d0 end:0x020d6844

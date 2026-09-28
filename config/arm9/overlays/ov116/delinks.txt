@@ -4,198 +4,198 @@
     .data       start:0x020d27c0 end:0x020d27e0 kind:data align:32
     .bss        start:0x020d27e0 end:0x020d27e0 kind:bss align:32
 
-src/overlays/ov116/calls/Ov116_RegisterEntityClass.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov116/calls/Ov116_CreateNamedEntity.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov116/calls/Ov116_OrientPartAlongDirection.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cfc04 end:0x020cfc60
 
-src/overlays/ov116/calls/Ov116_EnemyConstruct.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_EnemyConstruct.c:
     complete
     .text       start:0x020cfc60 end:0x020cff74
 
-src/overlays/ov116/calls/Ov116_ReleaseSubObjectsListThenNotify.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020cff74 end:0x020cffb4
 
-src/overlays/ov116/calls/func_ov116_020cffb4.c:
+src/overlays/enemies/ov116_enemy_01_2/func_ov116_020cffb4.c:
     complete
     .text       start:0x020cffb4 end:0x020cffc0
 
-src/overlays/ov116/calls/func_ov116_020cffc0.c:
+src/overlays/enemies/ov116_enemy_01_2/func_ov116_020cffc0.c:
     complete
     .text       start:0x020cffc0 end:0x020cffcc
 
-src/overlays/ov116/calls/func_ov116_020cffcc.c:
+src/overlays/enemies/ov116_enemy_01_2/func_ov116_020cffcc.c:
     complete
     .text       start:0x020cffcc end:0x020cffd8
 
-src/overlays/ov116/calls/Ov116_HandleSpawnMessage.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_HandleSpawnMessage.c:
     complete
     .text       start:0x020cffd8 end:0x020d02ac
 
-src/overlays/ov116/calls/Ov116_Model_SetTrack0.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_Model_SetTrack0.c:
     complete
     .text       start:0x020d02ac end:0x020d02dc
 
-src/overlays/ov116/calls/Ov116_ReleaseTasks.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_ReleaseTasks.c:
     complete
     .text       start:0x020d02dc end:0x020d0478
 
-src/overlays/ov116/calls/Ov116_SpawnActionEntry.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_SpawnActionEntry.c:
     complete
     .text       start:0x020d0478 end:0x020d0538
 
-src/overlays/ov116/calls/Ov116_ActionEntry.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_ActionEntry.c:
     complete
     .text       start:0x020d0538 end:0x020d05d4
 
-src/overlays/ov116/calls/Ov116_ChildTaskTeardown.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_ChildTaskTeardown.c:
     complete
     .text       start:0x020d05d4 end:0x020d05fc
 
-src/overlays/ov116/calls/Ov116_DropStrikeTick.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_DropStrikeTick.c:
     complete
     .text       start:0x020d05fc end:0x020d0a1c
 
-src/overlays/ov116/calls/Ov116_registryCreateEntry.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_registryCreateEntry.c:
     complete
     .text       start:0x020d0a1c end:0x020d0a78
 
-src/overlays/ov116/calls/Ov116_OnHit.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_OnHit.c:
     complete
     .text       start:0x020d0a78 end:0x020d0c98
 
-src/overlays/ov116/auto/Ov116_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d0c98 end:0x020d0cc4
 
-src/overlays/ov116/calls/Ov116_FaceTargetGetClearance.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_FaceTargetGetClearance.c:
     complete
     .text       start:0x020d0cc4 end:0x020d0d5c
 
-src/overlays/ov116/auto/Ov116_IsHeldSlotEmpty.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_IsHeldSlotEmpty.c:
     complete
     .text       start:0x020d0d5c end:0x020d0d7c
 
-src/overlays/ov116/calls/Ov116_stateInitTransformSlots.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_stateInitTransformSlots.c:
     complete
     .text       start:0x020d0d7c end:0x020d0e68
 
-src/overlays/ov116/calls/Ov116_ov115_DispatchSubStateByte.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_ov115_DispatchSubStateByte.c:
     complete
     .text       start:0x020d0e68 end:0x020d1068
 
-src/overlays/ov116/calls/Ov116_stDivStoreField.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_stDivStoreField.c:
     complete
     .text       start:0x020d1068 end:0x020d1108
 
-src/overlays/ov116/calls/Ov116_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d1108 end:0x020d1170
 
-src/overlays/ov116/calls/Ov116_FlagGatedCopyVec3AndAdvance.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020d1170 end:0x020d11f4
 
-src/overlays/ov116/calls/Ov116_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020d11f4 end:0x020d12c0
 
-src/overlays/ov116/calls/Ov116_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020d12c0 end:0x020d1398
 
-src/overlays/ov116/calls/Ov116_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d1398 end:0x020d13cc
 
-src/overlays/ov116/calls/Ov116_stateRandomInitFull.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_stateRandomInitFull.c:
     complete
     .text       start:0x020d13cc end:0x020d1458
 
-src/overlays/ov116/calls/Ov116_OrbitTick.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_OrbitTick.c:
     complete
     .text       start:0x020d1458 end:0x020d17ec
 
-src/overlays/ov116/calls/Ov116_AiStep_StartTag1WithTimer.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020d17ec end:0x020d1830
 
-src/overlays/ov116/calls/Ov116_HoverBobTick.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_HoverBobTick.c:
     complete
     .text       start:0x020d1830 end:0x020d1a24
 
-src/overlays/ov116/calls/Ov116_AiStep_StartTag1.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_AiStep_StartTag1.c:
     complete
     .text       start:0x020d1a24 end:0x020d1a60
 
-src/overlays/ov116/calls/Ov116_HoverApproachTick.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_HoverApproachTick.c:
     complete
     .text       start:0x020d1a60 end:0x020d1c2c
 
-src/overlays/ov116/calls/Ov116_stateRandomDirValue.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_stateRandomDirValue.c:
     complete
     .text       start:0x020d1c2c end:0x020d1c9c
 
-src/overlays/ov116/calls/Ov116_CircleTick.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_CircleTick.c:
     complete
     .text       start:0x020d1c9c end:0x020d1e4c
 
-src/overlays/ov116/calls/Ov116_BeginGuardPose.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_BeginGuardPose.c:
     complete
     .text       start:0x020d1e4c end:0x020d1f24
 
-src/overlays/ov116/calls/Ov116_TrackTargetUntilCharge.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_TrackTargetUntilCharge.c:
     complete
     .text       start:0x020d1f24 end:0x020d2048
 
-src/overlays/ov116/calls/Ov116_DashTick.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_DashTick.c:
     complete
     .text       start:0x020d2048 end:0x020d221c
 
-src/overlays/ov116/calls/Ov116_EngageEnter.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_EngageEnter.c:
     complete
     .text       start:0x020d221c end:0x020d22f0
 
-src/overlays/ov116/calls/Ov116_SteerCircleAttack.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_SteerCircleAttack.c:
     complete
     .text       start:0x020d22f0 end:0x020d23fc
 
-src/overlays/ov116/calls/Ov116_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d23fc end:0x020d2430
 
-src/overlays/ov116/calls/Ov116_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d2430 end:0x020d2464
 
-src/overlays/ov116/calls/Ov116_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020d2464 end:0x020d2558
 
-src/overlays/ov116/calls/Ov116_AiEndWithUpdate.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_AiEndWithUpdate.c:
     complete
     .text       start:0x020d2558 end:0x020d2644
 
-src/overlays/ov116/calls/Ov116_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020d2644 end:0x020d26e4
 
-src/overlays/ov116/calls/Ov116_stateTimerToggleFlags.c:
+src/overlays/enemies/ov116_enemy_01_2/Ov116_stateTimerToggleFlags.c:
     complete
     .text       start:0x020d26e4 end:0x020d2778
 
-src/overlays/ov116/data/ov116_strings_020d27c0.c:
+src/overlays/enemies/ov116_enemy_01_2/data/ov116_strings_020d27c0.c:
     complete
     .data       start:0x020d27c0 end:0x020d27e0
 
-src/overlays/ov116/data/ov116_tables_020d2778.c:
+src/overlays/enemies/ov116_enemy_01_2/data/ov116_tables_020d2778.c:
     complete
     .rodata     start:0x020d2778 end:0x020d27bc

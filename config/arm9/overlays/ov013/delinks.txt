@@ -3,38 +3,38 @@
     .data       start:0x0207fec0 end:0x0207fee0 kind:data align:32
     .bss        start:0x0207fee0 end:0x0207fee0 kind:bss align:32
 
-src/overlays/ov013/calls/Ov013_TaskPollResourceReady.c:
+src/overlays/field/ov013/Ov013_TaskPollResourceReady.c:
     complete
     .text       start:0x0207fa40 end:0x0207fba4
 
-src/overlays/ov013/calls/Ov013_CreateTaskNode.c:
+src/overlays/field/ov013/Ov013_CreateTaskNode.c:
     complete
     .text       start:0x0207fba4 end:0x0207fbe4
 
-src/overlays/ov013/calls/Ov013_ClearActiveRecordFlag.c:
+src/overlays/field/ov013/Ov013_ClearActiveRecordFlag.c:
     complete
     .text       start:0x0207fbe4 end:0x0207fc2c
 
-src/overlays/ov013/calls/Ov013_UpdateSpawnGroups.c:
+src/overlays/field/ov013/Ov013_UpdateSpawnGroups.c:
     complete
     .text       start:0x0207fc2c end:0x0207fd2c
 
-src/overlays/ov013/calls/Ov013_SpawnAtOrientedOffset.c:
+src/overlays/field/ov013/Ov013_SpawnAtOrientedOffset.c:
     complete
     .text       start:0x0207fd2c end:0x0207fe40
 
-src/overlays/ov013/calls/Ov013_MarshalFieldsAndInvoke.c:
+src/overlays/field/ov013/Ov013_MarshalFieldsAndInvoke.c:
     complete
     .text       start:0x0207fe40 end:0x0207fe98
 
-src/overlays/ov013/calls/Ov013_CopyEquipTables.c:
+src/overlays/field/ov013/Ov013_CopyEquipTables.c:
     complete
     .text       start:0x0207fe98 end:0x0207fea6
 
-src/overlays/ov013/data/ov013_pointers_0207fec8.c:
+src/overlays/field/ov013/data/ov013_pointers_0207fec8.c:
     complete
     .data       start:0x0207fec8 end:0x0207fee0
 
-src/overlays/ov013/data/ov013_strings_0207fec0.c:
+src/overlays/field/ov013/data/ov013_strings_0207fec0.c:
     complete
     .data       start:0x0207fec0 end:0x0207fec8

@@ -4,210 +4,210 @@
     .data       start:0x020b5800 end:0x020b58e0 kind:data align:32
     .bss        start:0x020b58e0 end:0x020b5900 kind:bss align:32
 
-src/overlays/ov043/calls/func_ov043_020b3220.c:
+src/overlays/players/ov043_player_xemnas/func_ov043_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov043/calls/Ov043_ClassCtor.c:
+src/overlays/players/ov043_player_xemnas/Ov043_ClassCtor.c:
     complete
     .text       start:0x020b3234 end:0x020b3264
 
-src/overlays/ov043/calls/Ov043_ClassTeardown.c:
+src/overlays/players/ov043_player_xemnas/Ov043_ClassTeardown.c:
     complete
     .text       start:0x020b3264 end:0x020b3290
 
-src/overlays/ov043/calls/Ov043_Construct.c:
+src/overlays/players/ov043_player_xemnas/Ov043_Construct.c:
     complete
     .text       start:0x020b3290 end:0x020b34c4
 
-src/overlays/ov043/calls/Ov043_MissionStart.c:
+src/overlays/players/ov043_player_xemnas/Ov043_MissionStart.c:
     complete
     .text       start:0x020b34c4 end:0x020b351c
 
-src/overlays/ov043/calls/Ov043_MapSlotKindToAnim.c:
+src/overlays/players/ov043_player_xemnas/Ov043_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b351c end:0x020b3544
 
-src/overlays/ov043/calls/Ov043_HandleModeChange.c:
+src/overlays/players/ov043_player_xemnas/Ov043_HandleModeChange.c:
     complete
     .text       start:0x020b3544 end:0x020b3628
 
-src/overlays/ov043/calls/Ov043_UpdateTick.c:
+src/overlays/players/ov043_player_xemnas/Ov043_UpdateTick.c:
     complete
     .text       start:0x020b3628 end:0x020b36cc
 
-src/overlays/ov043/calls/Ov043_ResolveStateHandler.c:
+src/overlays/players/ov043_player_xemnas/Ov043_ResolveStateHandler.c:
     complete
     .text       start:0x020b36cc end:0x020b37a4
 
-src/overlays/ov043/calls/Ov043_InvokeSubHandlerPairWithGlobalBuffer.c:
+src/overlays/players/ov043_player_xemnas/Ov043_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b37a4 end:0x020b37dc
 
-src/overlays/ov043/calls/Ov043_ResetScriptRequest.c:
+src/overlays/players/ov043_player_xemnas/Ov043_ResetScriptRequest.c:
     complete
     .text       start:0x020b37dc end:0x020b3810
 
-src/overlays/ov043/calls/Ov043_ReleaseBoundObject.c:
+src/overlays/players/ov043_player_xemnas/Ov043_ReleaseBoundObject.c:
     complete
     .text       start:0x020b3810 end:0x020b3828
 
-src/overlays/ov043/calls/Ov043_DriveScriptNode.c:
+src/overlays/players/ov043_player_xemnas/Ov043_DriveScriptNode.c:
     complete
     .text       start:0x020b3828 end:0x020b3a18
 
-src/overlays/ov043/calls/Ov043_BuildPeerGroup.c:
+src/overlays/players/ov043_player_xemnas/Ov043_BuildPeerGroup.c:
     complete
     .text       start:0x020b3a18 end:0x020b3ad0
 
-src/overlays/ov043/calls/Ov043_ReleaseAndFreeField2644.c:
+src/overlays/players/ov043_player_xemnas/Ov043_ReleaseAndFreeField2644.c:
     complete
     .text       start:0x020b3ad0 end:0x020b3aec
 
-src/overlays/ov043/calls/Ov043_PushAnimArg.c:
+src/overlays/players/ov043_player_xemnas/Ov043_PushAnimArg.c:
     complete
     .text       start:0x020b3aec end:0x020b3b24
 
-src/overlays/ov043/calls/Ov043_InvokeBothGroupCallbacks.c:
+src/overlays/players/ov043_player_xemnas/Ov043_InvokeBothGroupCallbacks.c:
     complete
     .text       start:0x020b3b24 end:0x020b3b4c
 
-src/overlays/ov043/calls/Ov043_SpawnProjectile.c:
+src/overlays/players/ov043_player_xemnas/Ov043_SpawnProjectile.c:
     complete
     .text       start:0x020b3b4c end:0x020b3c98
 
-src/overlays/ov043/calls/Ov043_BuildStep.c:
+src/overlays/players/ov043_player_xemnas/Ov043_BuildStep.c:
     complete
     .text       start:0x020b3c98 end:0x020b3d50
 
-src/overlays/ov043/calls/Ov043_EnterState21.c:
+src/overlays/players/ov043_player_xemnas/Ov043_EnterState21.c:
     complete
     .text       start:0x020b3d50 end:0x020b3e24
 
-src/overlays/ov043/calls/Ov043_HoverStep.c:
+src/overlays/players/ov043_player_xemnas/Ov043_HoverStep.c:
     complete
     .text       start:0x020b3e24 end:0x020b4168
 
-src/overlays/ov043/calls/Ov043_ChargeStep.c:
+src/overlays/players/ov043_player_xemnas/Ov043_ChargeStep.c:
     complete
     .text       start:0x020b4168 end:0x020b43dc
 
-src/overlays/ov043/calls/Ov043_LandingStep.c:
+src/overlays/players/ov043_player_xemnas/Ov043_LandingStep.c:
     complete
     .text       start:0x020b43dc end:0x020b45b8
 
-src/overlays/ov043/calls/Ov043_AttackBurstTick.c:
+src/overlays/players/ov043_player_xemnas/Ov043_AttackBurstTick.c:
     complete
     .text       start:0x020b45b8 end:0x020b4734
 
-src/overlays/ov043/calls/Ov043_OpenMissionBlock.c:
+src/overlays/players/ov043_player_xemnas/Ov043_OpenMissionBlock.c:
     complete
     .text       start:0x020b4734 end:0x020b47fc
 
-src/overlays/ov043/calls/Ov043_ReleaseMissionBlock.c:
+src/overlays/players/ov043_player_xemnas/Ov043_ReleaseMissionBlock.c:
     complete
     .text       start:0x020b47fc end:0x020b4860
 
-src/overlays/ov043/calls/Ov043_BindMissionBlock.c:
+src/overlays/players/ov043_player_xemnas/Ov043_BindMissionBlock.c:
     complete
     .text       start:0x020b4860 end:0x020b4898
 
-src/overlays/ov043/calls/Ov043_NodeRequestTick.c:
+src/overlays/players/ov043_player_xemnas/Ov043_NodeRequestTick.c:
     complete
     .text       start:0x020b4898 end:0x020b4a68
 
-src/overlays/ov043/calls/Ov043_RelaySlotEvent.c:
+src/overlays/players/ov043_player_xemnas/Ov043_RelaySlotEvent.c:
     complete
     .text       start:0x020b4a68 end:0x020b4b20
 
-src/overlays/ov043/calls/Ov043_ActivateAndStep.c:
+src/overlays/players/ov043_player_xemnas/Ov043_ActivateAndStep.c:
     complete
     .text       start:0x020b4b20 end:0x020b4b44
 
-src/overlays/ov043/calls/Ov043_EnterState4.c:
+src/overlays/players/ov043_player_xemnas/Ov043_EnterState4.c:
     complete
     .text       start:0x020b4b44 end:0x020b4b60
 
-src/overlays/ov043/calls/Ov043_RebindAnimTracks.c:
+src/overlays/players/ov043_player_xemnas/Ov043_RebindAnimTracks.c:
     complete
     .text       start:0x020b4b60 end:0x020b4bd8
 
-src/overlays/ov043/calls/Ov043_SeedRequestRows.c:
+src/overlays/players/ov043_player_xemnas/Ov043_SeedRequestRows.c:
     complete
     .text       start:0x020b4bd8 end:0x020b4cd4
 
-src/overlays/ov043/calls/Ov043_SwingRequestEffect.c:
+src/overlays/players/ov043_player_xemnas/Ov043_SwingRequestEffect.c:
     complete
     .text       start:0x020b4cd4 end:0x020b4ef0
 
-src/overlays/ov043/calls/Ov043_ComputeSlotPosition.c:
+src/overlays/players/ov043_player_xemnas/Ov043_ComputeSlotPosition.c:
     complete
     .text       start:0x020b4ef0 end:0x020b4fb8
 
-src/overlays/ov043/calls/Ov043_ArmRequestRow.c:
+src/overlays/players/ov043_player_xemnas/Ov043_ArmRequestRow.c:
     complete
     .text       start:0x020b4fb8 end:0x020b50ac
 
-src/overlays/ov043/calls/Ov043_AdvanceRequest.c:
+src/overlays/players/ov043_player_xemnas/Ov043_AdvanceRequest.c:
     complete
     .text       start:0x020b50ac end:0x020b50f8
 
-src/overlays/ov043/calls/Ov043_DrawNodesWhileActive.c:
+src/overlays/players/ov043_player_xemnas/Ov043_DrawNodesWhileActive.c:
     complete
     .text       start:0x020b50f8 end:0x020b5120
 
-src/overlays/ov043/calls/Ov043_FireBothRows.c:
+src/overlays/players/ov043_player_xemnas/Ov043_FireBothRows.c:
     complete
     .text       start:0x020b5120 end:0x020b51ec
 
-src/overlays/ov043/calls/Ov043_OpenSecondarySub.c:
+src/overlays/players/ov043_player_xemnas/Ov043_OpenSecondarySub.c:
     complete
     .text       start:0x020b51ec end:0x020b5274
 
-src/overlays/ov043/calls/Ov043_BindRig.c:
+src/overlays/players/ov043_player_xemnas/Ov043_BindRig.c:
     complete
     .text       start:0x020b5274 end:0x020b52cc
 
-src/overlays/ov043/calls/Ov043_dispatchEntryList.c:
+src/overlays/players/ov043_player_xemnas/Ov043_dispatchEntryList.c:
     complete
     .text       start:0x020b52cc end:0x020b5330
 
-src/overlays/ov043/calls/func_ov043_020b5330.c:
+src/overlays/players/ov043_player_xemnas/func_ov043_020b5330.c:
     complete
     .text       start:0x020b5330 end:0x020b5380
 
-src/overlays/ov043/calls/Ov043_DrawRequestEffect.c:
+src/overlays/players/ov043_player_xemnas/Ov043_DrawRequestEffect.c:
     complete
     .text       start:0x020b5380 end:0x020b547c
 
-src/overlays/ov043/calls/Ov043_UpdateSwingRequestEffect.c:
+src/overlays/players/ov043_player_xemnas/Ov043_UpdateSwingRequestEffect.c:
     complete
     .text       start:0x020b547c end:0x020b5724
 
-src/overlays/ov043/calls/Ov043_InvokeWithDataTable.c:
+src/overlays/players/ov043_player_xemnas/Ov043_InvokeWithDataTable.c:
     complete
     .text       start:0x020b5724 end:0x020b573c
 
-src/overlays/ov043/data/ov043_class_020b5800.c:
+src/overlays/players/ov043_player_xemnas/data/ov043_class_020b5800.c:
     complete
     .data       start:0x020b5800 end:0x020b5814
 
-src/overlays/ov043/data/ov043_pointers_020b5814.c:
+src/overlays/players/ov043_player_xemnas/data/ov043_pointers_020b5814.c:
     complete
     .data       start:0x020b5814 end:0x020b5828
 
-src/overlays/ov043/data/ov043_strings_020b573c.c:
+src/overlays/players/ov043_player_xemnas/data/ov043_strings_020b573c.c:
     complete
     .rodata     start:0x020b573c end:0x020b576c
 
-src/overlays/ov043/data/ov043_strings_020b57d4.c:
+src/overlays/players/ov043_player_xemnas/data/ov043_strings_020b57d4.c:
     complete
     .rodata     start:0x020b57d4 end:0x020b57f4
 
-src/overlays/ov043/data/ov043_strings_020b5828.c:
+src/overlays/players/ov043_player_xemnas/data/ov043_strings_020b5828.c:
     complete
     .data       start:0x020b5828 end:0x020b58e0
 
-src/overlays/ov043/data/ov043_tables_020b576c.c:
+src/overlays/players/ov043_player_xemnas/data/ov043_tables_020b576c.c:
     complete
     .rodata     start:0x020b576c end:0x020b57d4

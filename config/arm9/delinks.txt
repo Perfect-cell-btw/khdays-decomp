@@ -108,35 +108,35 @@ libs/nitro/init/auto/OSi_ReferSymbol.c:
     complete
     .text       start:0x02000b64 end:0x02000b68
 
-src/calls/main.c:
+src/engine/main.c:
     complete
     .text       start:0x02000bcc end:0x02000f1c
 
-src/calls/Boot_InitVBlank.c:
+src/engine/Boot_InitVBlank.c:
     complete
     .text       start:0x02000f1c end:0x02000f48
 
-src/calls/RegisterNamedTask.c:
+src/engine/RegisterNamedTask.c:
     complete
     .text       start:0x02000f48 end:0x02000fb4
 
-src/calls/VBlank_UnregisterCallback.c:
+src/engine/VBlank_UnregisterCallback.c:
     complete
     .text       start:0x02000fb4 end:0x02001020
 
-src/calls/func_02001020.c:
+src/engine/func_02001020.c:
     complete
     .text       start:0x02001020 end:0x02001030
 
-src/calls/Game_PollSceneAlive.c:
+src/engine/Game_PollSceneAlive.c:
     complete
     .text       start:0x02001030 end:0x02001054
 
-src/calls/Overlay105_Load.c:
+src/engine/Overlay105_Load.c:
     complete
     .text       start:0x02001054 end:0x0200108c
 
-src/calls/Overlay105_Release.c:
+src/engine/Overlay105_Release.c:
     complete
     .text       start:0x0200108c end:0x020010c4
 
@@ -308,7 +308,7 @@ libs/nitro/os/calls/OS_SNPrintf.c:
     complete
     .text       start:0x020018b8 end:0x020018e0
 
-src/calls/Text_VSNPrintf.c:
+libs/nitro/os/calls/Text_VSNPrintf.c:
     complete
     .text       start:0x020018e0 end:0x020018ec
 
@@ -404,7 +404,7 @@ libs/nitro/os/calls/OSi_SleepAlarmCallback.c:
     complete
     .text       start:0x02002178 end:0x02002198
 
-src/calls/OS_SetIrqWorkField30.c:
+libs/nitro/os/calls/OS_SetIrqWorkField30.c:
     complete
     .text       start:0x02002198 end:0x020021c0
 
@@ -436,7 +436,7 @@ libs/nitro/os/asm_stubs/calls/OS_LoadContext.c:
     complete
     .text       start:0x020022f8 end:0x0200233c
 
-src/auto/CommandPort_IsEnabled.c:
+libs/nitro/os/auto/CommandPort_IsEnabled.c:
     complete
     .text       start:0x0200233c end:0x02002344
 
@@ -504,7 +504,7 @@ libs/nitro/os/asm_stubs/auto/DC_StoreRange.c:
     complete
     .text       start:0x0200275c end:0x02002778
 
-src/calls/DC_FlushRange.c:
+libs/nitro/os/calls/DC_FlushRange.c:
     complete
     .text       start:0x02002778 end:0x0200279c
 
@@ -636,7 +636,7 @@ libs/nitro/os/calls/OSi_ClearAlarmBit.c:
     complete
     .text       start:0x020030c4 end:0x020030e4
 
-src/calls/OS_InitTick.c:
+libs/nitro/os/calls/OS_InitTick.c:
     complete
     .text       start:0x020030e4 end:0x0200315c
 
@@ -656,7 +656,7 @@ libs/nitro/os/calls/OS_GetTickLo.c:
     complete
     .text       start:0x02003274 end:0x02003284
 
-src/calls/SetupTimer0Reload.c:
+libs/nitro/os/calls/SetupTimer0Reload.c:
     complete
     .text       start:0x02003284 end:0x020032f4
 
@@ -664,7 +664,7 @@ libs/nitro/os/calls/OSi_SetTimer.c:
     complete
     .text       start:0x020032f4 end:0x02003380
 
-src/calls/OS_InitAlarm.c:
+libs/nitro/os/calls/OS_InitAlarm.c:
     complete
     .text       start:0x02003380 end:0x020033c0
 
@@ -684,11 +684,11 @@ libs/nitro/os/calls/OS_SetAlarm.c:
     complete
     .text       start:0x0200353c end:0x020035a8
 
-src/calls/OS_SetPeriodicAlarm.c:
+libs/nitro/os/calls/OS_SetPeriodicAlarm.c:
     complete
     .text       start:0x020035a8 end:0x02003618
 
-src/calls/OS_CancelAlarm.c:
+libs/nitro/os/calls/OS_CancelAlarm.c:
     complete
     .text       start:0x02003618 end:0x020036a0
 
@@ -700,7 +700,7 @@ libs/nitro/os/calls/OSi_ArrangeTimer.c:
     complete
     .text       start:0x020036b0 end:0x020037a0
 
-src/calls/OS_InitVAlarm.c:
+libs/nitro/os/calls/OS_InitVAlarm.c:
     complete
     .text       start:0x020037a0 end:0x020037e8
 
@@ -740,11 +740,11 @@ libs/nitro/os/calls/OS_WaitVBlankIntr.c:
     complete
     .text       start:0x02003878 end:0x02003894
 
-src/calls/OS_InitReset.c:
+libs/nitro/os/calls/OS_InitReset.c:
     complete
     .text       start:0x02003894 end:0x020038e8
 
-src/calls/OSi_CommonCallback.c:
+libs/nitro/os/calls/OSi_CommonCallback.c:
     complete
     .text       start:0x020038e8 end:0x0200391c
 
@@ -760,7 +760,7 @@ libs/nitro/os/calls/OS_GetMacAddress.c:
     complete
     .text       start:0x02003a04 end:0x02003a20
 
-src/calls/Game_ReadLocalProfile.c:
+libs/nitro/os/calls/Game_ReadLocalProfile.c:
     complete
     .text       start:0x02003a20 end:0x02003aa4
 
@@ -820,7 +820,7 @@ libs/nitro/mi/calls/MI_StopDma.c:
     complete
     .text       start:0x02003f84 end:0x02004000
 
-src/calls/MIi_CheckAnotherAutoDMA.c:
+libs/nitro/mi/calls/MIi_CheckAnotherAutoDMA.c:
     complete
     .text       start:0x02004000 end:0x02004084
 
@@ -836,7 +836,7 @@ libs/nitro/mi/calls/MIi_FIFOCallback.c:
     complete
     .text       start:0x020041d0 end:0x0200427c
 
-src/calls/MIi_DMACallback.c:
+libs/nitro/mi/calls/MIi_DMACallback.c:
     complete
     .text       start:0x0200427c end:0x020042dc
 
@@ -892,11 +892,11 @@ libs/nitro/mtx/auto/MTX_Concat44.c:
     complete
     .text       start:0x020046fc end:0x02004d60
 
-src/calls/Camera_BuildProjectionMtx.c:
+libs/nitro/mtx/calls/Camera_BuildProjectionMtx.c:
     complete
     .text       start:0x02004d60 end:0x02004eac
 
-src/calls/MTX_OrthoW.c:
+libs/nitro/mtx/calls/MTX_OrthoW.c:
     complete
     .text       start:0x02004eac end:0x020050b4
 
@@ -904,23 +904,23 @@ libs/nitro/fx/calls/func_020050b4.c:
     complete
     .text       start:0x020050b4 end:0x0200526c
 
-src/calls/FX_Atan2.c:
+libs/nitro/fx/calls/FX_Atan2.c:
     complete
     .text       start:0x0200526c end:0x02005414
 
-src/auto/BootInitHookNoOp.c:
+libs/nitro/fx/auto/BootInitHookNoOp.c:
     complete
     .text       start:0x02005414 end:0x02005418
 
-src/auto/FX_Mul.c:
+libs/nitro/fx/auto/FX_Mul.c:
     complete
     .text       start:0x02005418 end:0x02005430
 
-src/calls/FX_AcosIdx.c:
+libs/nitro/fx/calls/FX_AcosIdx.c:
     complete
     .text       start:0x02005430 end:0x020054b0
 
-src/calls/GX_Init.c:
+libs/nitro/gx/calls/GX_Init.c:
     complete
     .text       start:0x020054b0 end:0x020055fc
 
@@ -928,11 +928,11 @@ libs/nitro/gx/auto/GX_VBlankIntr.c:
     complete
     .text       start:0x020055fc end:0x02005630
 
-src/auto/GX_DispOff.c:
+libs/nitro/gx/calls/GX_DispOff.c:
     complete
     .text       start:0x02005630 end:0x0200566c
 
-src/calls/DispCnt_ApplyPendingMode.c:
+libs/nitro/gx/calls/DispCnt_ApplyPendingMode.c:
     complete
     .text       start:0x0200566c end:0x020056b4
 
@@ -952,7 +952,7 @@ libs/nitro/gx/auto/GXx_GetMasterBrightness_.c:
     complete
     .text       start:0x02005760 end:0x020057a4
 
-src/calls/GX_InitGXState.c:
+libs/nitro/gx/calls/GX_InitGXState.c:
     complete
     .text       start:0x020057a4 end:0x02005804
 
@@ -1156,7 +1156,7 @@ libs/nitro/gx/auto/G2S_GetBG3CharPtr.c:
     complete
     .text       start:0x02006a98 end:0x02006ae0
 
-src/calls/G2x_SetBGyAffine_.c:
+libs/nitro/gx/calls/G2x_SetBGyAffine_.c:
     complete
     .text       start:0x02006ae0 end:0x02006b90
 
@@ -1188,11 +1188,11 @@ libs/nitro/gx/calls/G3X_ClearFifo.c:
     complete
     .text       start:0x02006dd8 end:0x02006e00
 
-src/calls/G3X_InitMtxStack.c:
+libs/nitro/gx/calls/G3X_InitMtxStack.c:
     complete
     .text       start:0x02006e00 end:0x02006e98
 
-src/calls/G3X_ResetMtxStack_2.c:
+libs/nitro/gx/calls/G3X_ResetMtxStack_2.c:
     complete
     .text       start:0x02006e98 end:0x02006f28
 
@@ -1404,7 +1404,7 @@ libs/nitro/snd/calls/SND_PrepareSeq.c:
     complete
     .text       start:0x020080c0 end:0x020080e8
 
-src/calls/SND_StartPreparedSeq.c:
+libs/nitro/snd/calls/SND_StartPreparedSeq.c:
     complete
     .text       start:0x020080e8 end:0x02008108
 
@@ -1412,7 +1412,7 @@ libs/nitro/snd/calls/SND_PauseSeq.c:
     complete
     .text       start:0x02008108 end:0x02008128
 
-src/calls/SND_SetPlayerVolume.c:
+libs/nitro/snd/calls/SND_SetPlayerVolume.c:
     complete
     .text       start:0x02008128 end:0x02008140
 
@@ -1420,11 +1420,11 @@ libs/nitro/snd/calls/SND_SetPlayerChannelPriority.c:
     complete
     .text       start:0x02008140 end:0x02008158
 
-src/calls/PushCommand_0A.c:
+libs/nitro/snd/calls/PushCommand_0A.c:
     complete
     .text       start:0x02008158 end:0x02008180
 
-src/calls/SND_SetTrackParam0A.c:
+libs/nitro/snd/calls/SND_SetTrackParam0A.c:
     complete
     .text       start:0x02008180 end:0x0200819c
 
@@ -1440,7 +1440,7 @@ libs/nitro/snd/calls/SND_StartTimer.c:
     complete
     .text       start:0x020081e0 end:0x02008208
 
-src/calls/SND_StopTimer.c:
+libs/nitro/snd/calls/SND_StopTimer.c:
     complete
     .text       start:0x02008208 end:0x0200826c
 
@@ -1464,7 +1464,7 @@ libs/nitro/snd/calls/SND_SetChannelPan.c:
     complete
     .text       start:0x02008314 end:0x02008334
 
-src/calls/SND_SetupChannelPcm.c:
+libs/nitro/snd/calls/SND_SetupChannelPcm.c:
     complete
     .text       start:0x02008334 end:0x02008380
 
@@ -1492,7 +1492,7 @@ libs/nitro/snd/calls/SNDi_SetTrackParam.c:
     complete
     .text       start:0x02008430 end:0x02008458
 
-src/calls/PushCommand_16.c:
+libs/nitro/snd/calls/PushCommand_16.c:
     complete
     .text       start:0x02008458 end:0x02008478
 
@@ -1524,11 +1524,11 @@ libs/nitro/snd/calls/SND_AllocCommand.c:
     complete
     .text       start:0x02008700 end:0x02008788
 
-src/calls/SND_PushCommand.c:
+libs/nitro/snd/calls/SND_PushCommand.c:
     complete
     .text       start:0x02008788 end:0x020087c0
 
-src/calls/SND_FlushCommand.c:
+libs/nitro/snd/calls/SND_FlushCommand.c:
     complete
     .text       start:0x020087c0 end:0x0200897c
 
@@ -1536,11 +1536,11 @@ libs/nitro/snd/calls/SND_WaitForCommandProc.c:
     complete
     .text       start:0x0200897c end:0x020089e8
 
-src/calls/SND_GetCurrentCommandTag.c:
+libs/nitro/snd/calls/SND_GetCurrentCommandTag.c:
     complete
     .text       start:0x020089e8 end:0x02008a14
 
-src/calls/SND_IsFinishedCommandTag.c:
+libs/nitro/snd/calls/SND_IsFinishedCommandTag.c:
     complete
     .text       start:0x02008a14 end:0x02008a64
 
@@ -1548,7 +1548,7 @@ libs/nitro/snd/calls/SND_CountReservedCommand.c:
     complete
     .text       start:0x02008a64 end:0x02008aa0
 
-src/calls/func_02008aa0.c:
+libs/nitro/snd/calls/func_02008aa0.c:
     complete
     .text       start:0x02008aa0 end:0x02008adc
 
@@ -1568,11 +1568,11 @@ libs/nitro/snd/calls/RequestCommandProc.c:
     complete
     .text       start:0x02008b7c end:0x02008ba4
 
-src/calls/SND_PopFreeCommand.c:
+libs/nitro/snd/calls/SND_PopFreeCommand.c:
     complete
     .text       start:0x02008ba4 end:0x02008bec
 
-src/calls/IsCommandAvailable.c:
+libs/nitro/snd/calls/IsCommandAvailable.c:
     complete
     .text       start:0x02008bec end:0x02008c2c
 
@@ -1596,7 +1596,7 @@ libs/nitro/snd/calls/SND_GetPlayerStatus.c:
     complete
     .text       start:0x02008cf0 end:0x02008d1c
 
-src/calls/SND_GetPlayerLocalVariable.c:
+libs/nitro/snd/calls/SND_GetPlayerLocalVariable.c:
     complete
     .text       start:0x02008d1c end:0x02008d64
 
@@ -1604,7 +1604,7 @@ libs/nitro/snd/calls/SNDi_GetFinishedCommandTag.c:
     complete
     .text       start:0x02008d64 end:0x02008d8c
 
-src/calls/SNDi_InitSharedWork.c:
+libs/nitro/snd/calls/SNDi_InitSharedWork.c:
     complete
     .text       start:0x02008d8c end:0x02008e08
 
@@ -1660,7 +1660,7 @@ libs/nitro/pxi/auto/PXI_IsCallbackReady.c:
     complete
     .text       start:0x020093c4 end:0x020093e8
 
-src/calls/PXI_SendWordByFifo.c:
+libs/nitro/pxi/calls/PXI_SendWordByFifo.c:
     complete
     .text       start:0x020093e8 end:0x02009470
 
@@ -1768,7 +1768,7 @@ libs/nitro/fs/calls/FS_RegisterArchiveName.c:
     complete
     .text       start:0x0200a6bc end:0x0200a770
 
-src/calls/FS_LoadArchive.c:
+libs/nitro/fs/calls/FS_LoadArchive.c:
     complete
     .text       start:0x0200a770 end:0x0200a7e0
 
@@ -1836,7 +1836,7 @@ libs/nitro/fs/calls/FS_ReadFile.c:
     complete
     .text       start:0x0200ae4c end:0x0200ae5c
 
-src/calls/FS_SeekFile.c:
+libs/nitro/fs/calls/FS_SeekFile.c:
     complete
     .text       start:0x0200ae5c end:0x0200aec8
 
@@ -1844,19 +1844,19 @@ libs/nitro/fs/calls/FSi_OnRomReadDone.c:
     complete
     .text       start:0x0200aec8 end:0x0200aeec
 
-src/calls/FSi_ReadRomCallback.c:
+libs/nitro/fs/calls/FSi_ReadRomCallback.c:
     complete
     .text       start:0x0200aeec end:0x0200af34
 
-src/auto/DefaultStepDone.c:
+libs/nitro/fs/auto/DefaultStepDone.c:
     complete
     .text       start:0x0200af34 end:0x0200af3c
 
-src/calls/FSi_RomArchiveProc.c:
+libs/nitro/fs/calls/FSi_RomArchiveProc.c:
     complete
     .text       start:0x0200af3c end:0x0200afa8
 
-src/auto/DefaultStepDone_2.c:
+libs/nitro/fs/auto/DefaultStepDone_2.c:
     complete
     .text       start:0x0200afa8 end:0x0200afb0
 
@@ -2152,7 +2152,7 @@ libs/nitro/rtc/auto/RtcBCD2HEX.c:
     complete
     .text       start:0x0200dc70 end:0x0200dce0
 
-src/calls/StoreGlobalIntAt2c.c:
+libs/nitro/rtc/calls/StoreGlobalIntAt2c.c:
     complete
     .text       start:0x0200dce0 end:0x0200dcf0
 
@@ -2176,7 +2176,7 @@ libs/nitro/rtc/auto/RTC_GetDayOfWeek.c:
     complete
     .text       start:0x0200dd50 end:0x0200de0c
 
-src/calls/CARDi_SetTask.c:
+libs/nitro/card/calls/CARDi_SetTask.c:
     complete
     .text       start:0x0200de0c end:0x0200de48
 
@@ -2192,7 +2192,7 @@ libs/nitro/card/calls/CARDi_InitCommon.c:
     complete
     .text       start:0x0200df58 end:0x0200e068
 
-src/calls/func_0200e068.c:
+libs/nitro/card/calls/func_0200e068.c:
     complete
     .text       start:0x0200e068 end:0x0200e078
 
@@ -2200,7 +2200,7 @@ libs/nitro/card/calls/CARD_CheckEnabled.c:
     complete
     .text       start:0x0200e078 end:0x0200e090
 
-src/calls/func_0200e090.c:
+libs/nitro/card/calls/func_0200e090.c:
     complete
     .text       start:0x0200e090 end:0x0200e0a0
 
@@ -2228,11 +2228,11 @@ libs/nitro/card/calls/CARD_UnlockBackup.c:
     complete
     .text       start:0x0200e154 end:0x0200e164
 
-src/calls/CardUnlockAfterKeyShare.c:
+libs/nitro/card/calls/CardUnlockAfterKeyShare.c:
     complete
     .text       start:0x0200e164 end:0x0200e18c
 
-src/calls/StoreGlobalPairAt118.c:
+libs/nitro/card/calls/StoreGlobalPairAt118.c:
     complete
     .text       start:0x0200e18c end:0x0200e1a0
 
@@ -2244,7 +2244,7 @@ libs/nitro/card/calls/CARDi_RequestStreamCommandCore.c:
     complete
     .text       start:0x0200e4e8 end:0x0200e6d8
 
-src/calls/CARDi_RequestStreamCommand.c:
+libs/nitro/card/calls/CARDi_RequestStreamCommand.c:
     complete
     .text       start:0x0200e6d8 end:0x0200e7c0
 
@@ -2292,7 +2292,7 @@ libs/nitro/card/calls/CARDi_ReadRomIDCore.c:
     complete
     .text       start:0x0200edb0 end:0x0200ee0c
 
-src/calls/CARDi_ReadRomSyncCore.c:
+libs/nitro/card/calls/CARDi_ReadRomSyncCore.c:
     complete
     .text       start:0x0200ee0c end:0x0200eea4
 
@@ -2324,15 +2324,15 @@ libs/nitro/card/calls/CARDi_Request.c:
     complete
     .text       start:0x0200f0a0 end:0x0200f1f4
 
-src/calls/CARD_InitPulledOutCallback.c:
+libs/nitro/card/calls/CARD_InitPulledOutCallback.c:
     complete
     .text       start:0x0200f1f4 end:0x0200f220
 
-src/calls/CARDi_PulledOutCallback.c:
+libs/nitro/card/calls/CARDi_PulledOutCallback.c:
     complete
     .text       start:0x0200f220 end:0x0200f274
 
-src/calls/func_0200f274.c:
+libs/nitro/card/calls/func_0200f274.c:
     complete
     .text       start:0x0200f274 end:0x0200f284
 
@@ -2348,7 +2348,7 @@ libs/nitro/card/calls/CARDi_SendtoPxi.c:
     complete
     .text       start:0x0200f370 end:0x0200f3c0
 
-src/calls/CTRDGi_InitCommon.c:
+libs/nitro/ctrdg/calls/CTRDGi_InitCommon.c:
     complete
     .text       start:0x0200f3c0 end:0x0200f3f8
 
@@ -2388,7 +2388,7 @@ libs/nitro/nitro/calls/CTRDG_Enable.c:
     complete
     .text       start:0x0200f690 end:0x0200f6d8
 
-src/calls/CTRDG_Init.c:
+libs/nitro/ctrdg/calls/CTRDG_Init.c:
     complete
     .text       start:0x0200f6d8 end:0x0200f78c
 
@@ -2396,11 +2396,11 @@ libs/nitro/ctrdg/calls/CTRDGi_InitModuleInfo.c:
     complete
     .text       start:0x0200f78c end:0x0200f980
 
-src/calls/CTRDGi_InitCallback.c:
+libs/nitro/ctrdg/calls/CTRDGi_InitCallback.c:
     complete
     .text       start:0x0200f980 end:0x0200f9ac
 
-src/calls/CTRDGi_PulledOutCallback.c:
+libs/nitro/ctrdg/calls/CTRDGi_PulledOutCallback.c:
     complete
     .text       start:0x0200f9ac end:0x0200fa08
 
@@ -2408,11 +2408,11 @@ libs/nitro/ctrdg/calls/CTRDG_TerminateForPulledOut.c:
     complete
     .text       start:0x0200fa08 end:0x0200fa1c
 
-src/calls/func_0200fa1c.c:
+libs/nitro/ctrdg/calls/func_0200fa1c.c:
     complete
     .text       start:0x0200fa1c end:0x0200fa30
 
-src/calls/CTRDGi_InitTaskThread.c:
+libs/nitro/ctrdg/calls/CTRDGi_InitTaskThread.c:
     complete
     .text       start:0x0200fa30 end:0x0200fabc
 
@@ -2420,7 +2420,7 @@ libs/nitro/mi/calls/MIi_CpuFill24.c:
     complete
     .text       start:0x0200fabc end:0x0200fad0
 
-src/calls/JobQueue_WorkerLoop.c:
+libs/nitro/mi/calls/JobQueue_WorkerLoop.c:
     complete
     .text       start:0x0200fad0 end:0x0200fbc0
 
@@ -2432,7 +2432,7 @@ libs/nitro/math/asm_stubs/auto/Util_QuickSortWithWork.c:
     complete
     .text       start:0x0200fc00 end:0x0200fe88
 
-src/calls/CTRDGi_IsAgbCartridge.c:
+libs/nitro/ctrdg/calls/CTRDGi_IsAgbCartridge.c:
     complete
     .text       start:0x0200fe88 end:0x0200ff20
 
@@ -2552,7 +2552,7 @@ libs/nns/fnd/calls/NNS_FndFreeToExpHeap.c:
     complete
     .text       start:0x0201098c end:0x020109c8
 
-src/calls/NNS_FndGetAllocatableSizeForExpHeapEx.c:
+libs/nns/fnd/calls/NNS_FndGetAllocatableSizeForExpHeapEx.c:
     complete
     .text       start:0x020109c8 end:0x02010a4c
 
@@ -2568,15 +2568,15 @@ libs/nitro/nns/calls/NNSi_AllocFromTailOfExpHeap.c:
     complete
     .text       start:0x02010af0 end:0x02010b48
 
-src/auto/NNS_FndResetFrmHeapHead.c:
+libs/nns/fnd/auto/NNS_FndResetFrmHeapHead.c:
     complete
     .text       start:0x02010b48 end:0x02010b5c
 
-src/calls/NNS_FndResetFrmHeapTail.c:
+libs/nns/fnd/calls/NNS_FndResetFrmHeapTail.c:
     complete
     .text       start:0x02010b5c end:0x02010b88
 
-src/calls/func_02010b88.c:
+libs/nitro/nns/calls/func_02010b88.c:
     complete
     .text       start:0x02010b88 end:0x02010bc0
 
@@ -2604,11 +2604,11 @@ libs/nns/fnd/auto/PopMBlock.c:
     complete
     .text       start:0x02010ccc end:0x02010ce4
 
-src/calls/NNS_FndAllocFromUnitHeap.c:
+libs/nns/fnd/calls/NNS_FndAllocFromUnitHeap.c:
     complete
     .text       start:0x02010ce4 end:0x02010d24
 
-src/auto/NNS_FndFreeToUnitHeap.c:
+libs/nns/fnd/auto/NNS_FndFreeToUnitHeap.c:
     complete
     .text       start:0x02010d24 end:0x02010d34
 
@@ -2672,7 +2672,7 @@ libs/nns/gfd/auto/Gfd_DefaultFreePlttVram.c:
     complete
     .text       start:0x02010e30 end:0x02010e38
 
-src/calls/Party_SetActiveSlots.c:
+libs/nns/gfd/calls/Party_SetActiveSlots.c:
     complete
     .text       start:0x02010e38 end:0x02010e80
 
@@ -2700,7 +2700,7 @@ libs/nns/gfd/calls/NNS_GfdSetFrmTexVramState.c:
     complete
     .text       start:0x02011134 end:0x02011174
 
-src/calls/NNS_GfdInitFrmPlttVramManager.c:
+libs/nns/gfd/calls/NNS_GfdInitFrmPlttVramManager.c:
     complete
     .text       start:0x02011174 end:0x020111c0
 
@@ -2716,11 +2716,11 @@ libs/nitro/gx/calls/GFXi_SaveStateTo.c:
     complete
     .text       start:0x02011304 end:0x02011320
 
-src/calls/NNS_GfdSetFrmPlttVramState.c:
+libs/nns/gfd/calls/NNS_GfdSetFrmPlttVramState.c:
     complete
     .text       start:0x02011320 end:0x0201133c
 
-src/calls/NNS_GfdResetFrmPlttVramState.c:
+libs/nns/gfd/calls/NNS_GfdResetFrmPlttVramState.c:
     complete
     .text       start:0x0201133c end:0x02011358
 
@@ -2736,11 +2736,11 @@ libs/nns/gfd/auto/IsVramTransferTaskQueueEmpty_.c:
     complete
     .text       start:0x02011390 end:0x020113a4
 
-src/calls/Gfd_LoadTex.c:
+libs/nns/gfd/calls/Gfd_LoadTex.c:
     complete
     .text       start:0x020113a4 end:0x020113d0
 
-src/calls/Gfd_LoadTexPltt.c:
+libs/nns/gfd/calls/Gfd_LoadTexPltt.c:
     complete
     .text       start:0x020113d0 end:0x020113fc
 
@@ -2752,15 +2752,15 @@ libs/nns/gfd/calls/DoTransfer2dBGExtPlttMain.c:
     complete
     .text       start:0x02011428 end:0x02011454
 
-src/calls/Gfd_LoadSubObjExtPltt.c:
+libs/nns/gfd/calls/Gfd_LoadSubObjExtPltt.c:
     complete
     .text       start:0x02011454 end:0x02011480
 
-src/calls/Gfd_LoadSubBgExtPltt.c:
+libs/nns/gfd/calls/Gfd_LoadSubBgExtPltt.c:
     complete
     .text       start:0x02011480 end:0x020114ac
 
-src/calls/Gfd_RunTransferTask.c:
+libs/nns/gfd/calls/Gfd_RunTransferTask.c:
     complete
     .text       start:0x020114ac end:0x020114e4
 
@@ -2784,11 +2784,11 @@ libs/nns/gfd/calls/NNSi_GfdPopVramTransferTaskQueue.c:
     complete
     .text       start:0x02011558 end:0x02011594
 
-src/calls/GfxQueue_Configure.c:
+libs/nns/gfd/calls/GfxQueue_Configure.c:
     complete
     .text       start:0x02011594 end:0x020115b8
 
-src/calls/FrameStep_UpdateTaskQueue.c:
+libs/nns/gfd/calls/FrameStep_UpdateTaskQueue.c:
     complete
     .text       start:0x020115b8 end:0x02011640
 
@@ -2800,7 +2800,7 @@ libs/nns/g2d/calls/GetUnpackedAnimBankImpl_.c:
     complete
     .text       start:0x020116a8 end:0x020116e4
 
-src/calls/func_020116e4.c:
+libs/nns/g2d/calls/func_020116e4.c:
     complete
     .text       start:0x020116e4 end:0x020116f0
 
@@ -2832,19 +2832,19 @@ libs/nns/g2d/calls/NNS_G2dUnpackNCE.c:
     complete
     .text       start:0x020118ec end:0x02011988
 
-src/calls/GetResourceSubBlock_CHAR.c:
+libs/nns/g2d/calls/GetResourceSubBlock_CHAR.c:
     complete
     .text       start:0x02011988 end:0x020119c4
 
-src/auto/Res_RelocateField14.c:
+libs/nns/g2d/auto/Res_RelocateField14.c:
     complete
     .text       start:0x020119c4 end:0x020119d4
 
-src/calls/GetResourceSubBlock_CHAR2.c:
+libs/nns/g2d/calls/GetResourceSubBlock_CHAR2.c:
     complete
     .text       start:0x020119d4 end:0x02011a10
 
-src/auto/Res_RelocateField14B.c:
+libs/nns/g2d/auto/Res_RelocateField14B.c:
     complete
     .text       start:0x02011a10 end:0x02011a20
 
@@ -2912,11 +2912,11 @@ libs/nns/g2d/auto/NNS_G2dInitImageProxy.c:
     complete
     .text       start:0x02011f3c end:0x02011f58
 
-src/auto/IntArray_Set.c:
+libs/nns/g2d/auto/IntArray_Set.c:
     complete
     .text       start:0x02011f58 end:0x02011f60
 
-src/auto/IntArray_Get.c:
+libs/nns/g2d/auto/IntArray_Get.c:
     complete
     .text       start:0x02011f60 end:0x02011f68
 
@@ -2924,7 +2924,7 @@ libs/nns/g2d/auto/NNS_G2dInitImagePaletteProxy.c:
     complete
     .text       start:0x02011f68 end:0x02011f88
 
-src/auto/SetIndexedSlot_2.c:
+libs/nns/g2d/auto/SetIndexedSlot_2.c:
     complete
     .text       start:0x02011f88 end:0x02011f94
 
@@ -2932,7 +2932,7 @@ libs/nns/g2d/calls/NNS_G2dLoadImage1DMapping.c:
     complete
     .text       start:0x02011f94 end:0x020121c0
 
-src/calls/Pltt_Upload.c:
+libs/nns/g2d/calls/Pltt_Upload.c:
     complete
     .text       start:0x020121c0 end:0x020122b8
 
@@ -2976,7 +2976,7 @@ libs/nns/g2d/calls/NNS_G2dSetCellAnimationCurrentFrame.c:
     complete
     .text       start:0x020124b8 end:0x020124d8
 
-src/auto/Obj_SetField14_2.c:
+libs/nns/g2d/auto/Obj_SetField14_2.c:
     complete
     .text       start:0x020124d8 end:0x020124e0
 
@@ -2984,7 +2984,7 @@ libs/nitro/nns/calls/func_020124e0.c:
     complete
     .text       start:0x020124e0 end:0x02012844
 
-src/calls/GlobalArrayEntryPtr30.c:
+libs/nitro/nns/calls/GlobalArrayEntryPtr30.c:
     complete
     .text       start:0x02012844 end:0x0201285c
 
@@ -3088,7 +3088,7 @@ libs/nns/g2d/auto/GetGlyphIndex.c:
     complete
     .text       start:0x020135e8 end:0x020136b0
 
-src/calls/StreamReader_InitU16.c:
+libs/nns/g2d/calls/StreamReader_InitU16.c:
     complete
     .text       start:0x020136b0 end:0x020136d4
 
@@ -3136,7 +3136,7 @@ libs/nns/g2d/auto/InitCharCanvas.c:
     complete
     .text       start:0x02013ffc end:0x02014024
 
-src/calls/Text_DrawGlyph.c:
+libs/nns/g2d/calls/Text_DrawGlyph.c:
     complete
     .text       start:0x02014024 end:0x02014148
 
@@ -3152,15 +3152,15 @@ libs/nns/g2d/auto/NNS_G2dMapScrToChar256x16Pltt.c:
     complete
     .text       start:0x02014224 end:0x02014280
 
-src/calls/Text_DrawLine.c:
+libs/nns/g2d/calls/Text_DrawLine.c:
     complete
     .text       start:0x02014280 end:0x02014334
 
-src/calls/Text_DrawAlignedLines.c:
+libs/nns/g2d/calls/Text_DrawAlignedLines.c:
     complete
     .text       start:0x02014334 end:0x0201449c
 
-src/calls/Text_AlignAnchor.c:
+libs/nns/g2d/calls/Text_AlignAnchor.c:
     complete
     .text       start:0x0201449c end:0x020145c0
 
@@ -3172,7 +3172,7 @@ libs/nitro/nns/calls/func_02014720.c:
     complete
     .text       start:0x02014720 end:0x02014874
 
-src/auto/FontResource_Relocate.c:
+libs/nitro/nns/auto/FontResource_Relocate.c:
     complete
     .text       start:0x02014874 end:0x02014950
 
@@ -3180,7 +3180,7 @@ libs/nns/g2d/calls/NNSi_G2dBitReaderRead.c:
     complete
     .text       start:0x02014950 end:0x020149b0
 
-src/auto/Stream_ReadU16.c:
+libs/nns/g2d/auto/Stream_ReadU16.c:
     complete
     .text       start:0x020149b0 end:0x020149c4
 
@@ -3296,11 +3296,11 @@ libs/nns/g3d/calls/NNS_G3dReleaseMdlSet.c:
     complete
     .text       start:0x0201559c end:0x02015630
 
-src/calls/NNS_G3dGlbInit.c:
+libs/nns/g3d/calls/NNS_G3dGlbInit.c:
     complete
     .text       start:0x02015630 end:0x0201571c
 
-src/calls/Gfx_SubmitCachedCommandBlock.c:
+libs/nns/g3d/calls/Gfx_SubmitCachedCommandBlock.c:
     complete
     .text       start:0x0201571c end:0x0201574c
 
@@ -3312,15 +3312,15 @@ libs/nitro/nns/calls/NNS_G3dGlbFlushP.c:
     complete
     .text       start:0x020157c4 end:0x02015880
 
-src/calls/NNS_G3dGlbSetBaseTrans.c:
+libs/nitro/nns/calls/NNS_G3dGlbSetBaseTrans.c:
     complete
     .text       start:0x02015880 end:0x020158b0
 
-src/calls/NNS_G3dGlbSetBaseScale.c:
+libs/nitro/nns/calls/NNS_G3dGlbSetBaseScale.c:
     complete
     .text       start:0x020158b0 end:0x020158e0
 
-src/calls/G3d_GetInverseCameraMtx.c:
+libs/nitro/nns/calls/G3d_GetInverseCameraMtx.c:
     complete
     .text       start:0x020158e0 end:0x02015924
 
@@ -3328,23 +3328,23 @@ libs/nitro/nns/calls/func_02015924.c:
     complete
     .text       start:0x02015924 end:0x02015b2c
 
-src/calls/G3d_GetInverseProjMtx.c:
+libs/nitro/nns/calls/G3d_GetInverseProjMtx.c:
     complete
     .text       start:0x02015b2c end:0x02015b70
 
-src/calls/G3dGlb_ComputeInvBaseMtx.c:
+libs/nitro/nns/calls/G3dGlb_ComputeInvBaseMtx.c:
     complete
     .text       start:0x02015b70 end:0x02015bc8
 
-src/calls/GetOrInitResource749c.c:
+libs/nitro/nns/calls/GetOrInitResource749c.c:
     complete
     .text       start:0x02015bc8 end:0x02015c00
 
-src/calls/GetOrInitResource74cc.c:
+libs/nitro/nns/calls/GetOrInitResource74cc.c:
     complete
     .text       start:0x02015c00 end:0x02015c38
 
-src/calls/G3d_GetInverseViewProjMtx.c:
+libs/nitro/nns/calls/G3d_GetInverseViewProjMtx.c:
     complete
     .text       start:0x02015c38 end:0x02015ca0
 
@@ -3368,11 +3368,11 @@ libs/nns/g3d/auto/NNSi_G3dAnmBlendVis.c:
     complete
     .text       start:0x020161dc end:0x02016264
 
-src/calls/func_02016264.c:
+libs/nns/g3d/calls/func_02016264.c:
     complete
     .text       start:0x02016264 end:0x02016284
 
-src/calls/func_02016284.c:
+libs/nns/g3d/calls/func_02016284.c:
     complete
     .text       start:0x02016284 end:0x02016294
 
@@ -3404,7 +3404,7 @@ libs/nns/g3d/calls/NNS_G3dAllocAnmObj.c:
     complete
     .text       start:0x02016948 end:0x0201696c
 
-src/calls/func_0201696c.c:
+libs/nns/g3d/calls/func_0201696c.c:
     complete
     .text       start:0x0201696c end:0x02016978
 
@@ -3540,7 +3540,7 @@ libs/nns/g3d/auto/GetMatColAnmuAlphaValue_.c:
     complete
     .text       start:0x02018830 end:0x0201891c
 
-src/calls/AnmObj_InitMatTable.c:
+libs/nns/g3d/calls/AnmObj_InitMatTable.c:
     complete
     .text       start:0x0201891c end:0x020189f0
 
@@ -3560,7 +3560,7 @@ libs/nns/g3d/calls/GetTexSRTAnm_.c:
     complete
     .text       start:0x02018cec end:0x02018dec
 
-src/calls/AnmObj_InitVisTable.c:
+libs/nns/g3d/calls/AnmObj_InitVisTable.c:
     complete
     .text       start:0x02018dec end:0x02018ec0
 
@@ -3612,7 +3612,7 @@ libs/nns/g3d/calls/texmtxCalc_flagT_.c:
     complete
     .text       start:0x020194b4 end:0x02019594
 
-src/calls/G3d_ComputeFrustumPlanes.c:
+libs/nns/g3d/calls/G3d_ComputeFrustumPlanes.c:
     complete
     .text       start:0x02019594 end:0x0201964c
 
@@ -3648,7 +3648,7 @@ libs/nns/g3d/auto/texmtxCalc_flagTR__2.c:
     complete
     .text       start:0x02019b18 end:0x02019b68
 
-src/calls/NNS_SndInit.c:
+libs/nns/snd/calls/NNS_SndInit.c:
     complete
     .text       start:0x02019b68 end:0x02019bf0
 
@@ -3664,7 +3664,7 @@ libs/nns/snd/calls/BeginSleep.c:
     complete
     .text       start:0x02019c74 end:0x02019cac
 
-src/calls/func_02019cac.c:
+libs/nns/snd/calls/func_02019cac.c:
     complete
     .text       start:0x02019cac end:0x02019cb8
 
@@ -3688,7 +3688,7 @@ libs/nitro/snd/calls/SND_ClearChannelBit.c:
     complete
     .text       start:0x02019d94 end:0x02019db4
 
-src/calls/SndCapture_Reset.c:
+libs/nitro/snd/calls/SndCapture_Reset.c:
     complete
     .text       start:0x02019db4 end:0x02019dd0
 
@@ -3732,7 +3732,7 @@ libs/nns/snd/calls/NNS_SndPlayerPauseAll.c:
     complete
     .text       start:0x0201a014 end:0x0201a064
 
-src/auto/Word_Clear.c:
+libs/nns/snd/auto/Word_Clear.c:
     complete
     .text       start:0x0201a064 end:0x0201a070
 
@@ -3804,7 +3804,7 @@ libs/nns/snd/calls/NNSi_SndPlayerAllocSeqPlayer.c:
     complete
     .text       start:0x0201a4c4 end:0x0201a55c
 
-src/calls/func_0201a55c.c:
+libs/nns/snd/calls/func_0201a55c.c:
     complete
     .text       start:0x0201a55c end:0x0201a568
 
@@ -3944,7 +3944,7 @@ libs/nitro/snd/calls/SND_SetActiveSlotSwap.c:
     complete
     .text       start:0x0201b3c0 end:0x0201b3d8
 
-src/calls/func_0201b3d8.c:
+libs/nitro/snd/calls/func_0201b3d8.c:
     complete
     .text       start:0x0201b3d8 end:0x0201b3e8
 
@@ -4192,7 +4192,7 @@ libs/nns/snd/calls/NNS_SndArcStrmStopAll.c:
     complete
     .text       start:0x0201cb80 end:0x0201cbc4
 
-src/auto/Word_ClearB.c:
+libs/nns/snd/auto/Word_ClearB.c:
     complete
     .text       start:0x0201cbc4 end:0x0201cbd0
 
@@ -4344,115 +4344,115 @@ libs/nns/snd/auto/NNSi_SndFaderIsFinished.c:
     complete
     .text       start:0x0201e1b8 end:0x0201e1d0
 
-src/calls/Gfx_Reset2DEngines.c:
+src/engine/Gfx_Reset2DEngines.c:
     complete
     .text       start:0x0201e1d0 end:0x0201e374
 
-src/calls/SetMasterBrightnessMain.c:
+src/engine/SetMasterBrightnessMain.c:
     complete
     .text       start:0x0201e374 end:0x0201e3cc
 
-src/calls/SetMasterBrightnessSub.c:
+src/engine/SetMasterBrightnessSub.c:
     complete
     .text       start:0x0201e3cc end:0x0201e428
 
-src/calls/func_0201e428.c:
+src/engine/func_0201e428.c:
     complete
     .text       start:0x0201e428 end:0x0201e438
 
-src/calls/func_0201e438.c:
+src/engine/func_0201e438.c:
     complete
     .text       start:0x0201e438 end:0x0201e448
 
-src/calls/Loader_LoadOverlayInfo.c:
+src/engine/Loader_LoadOverlayInfo.c:
     complete
     .text       start:0x0201e448 end:0x0201e470
 
-src/calls/LoadOverlaySync.c:
+src/engine/LoadOverlaySync.c:
     complete
     .text       start:0x0201e470 end:0x0201e490
 
-src/calls/Loader_LoadOverlayImage.c:
+src/engine/Loader_LoadOverlayImage.c:
     complete
     .text       start:0x0201e490 end:0x0201e4a8
 
-src/calls/UnloadOverlaySync.c:
+src/engine/UnloadOverlaySync.c:
     complete
     .text       start:0x0201e4a8 end:0x0201e4c8
 
-src/calls/Loader_PopFreeRequest.c:
+src/engine/Loader_PopFreeRequest.c:
     complete
     .text       start:0x0201e4c8 end:0x0201e4f0
 
-src/calls/func_0201e4f0.c:
+src/engine/func_0201e4f0.c:
     complete
     .text       start:0x0201e4f0 end:0x0201e508
 
-src/calls/Stream_StartUncomp.c:
+src/engine/Stream_StartUncomp.c:
     complete
     .text       start:0x0201e508 end:0x0201e5fc
 
-src/calls/Loader_SetupLZDecompress.c:
+src/engine/Loader_SetupLZDecompress.c:
     complete
     .text       start:0x0201e5fc end:0x0201e670
 
-src/calls/FileLoader_ThreadMain.c:
+src/engine/FileLoader_ThreadMain.c:
     complete
     .text       start:0x0201e670 end:0x0201e9e4
 
-src/calls/EnqueueGfxCmd0.c:
+src/engine/EnqueueGfxCmd0.c:
     complete
     .text       start:0x0201e9e4 end:0x0201e9fc
 
-src/calls/Gfd_LoadTexB.c:
+src/engine/Gfd_LoadTexB.c:
     complete
     .text       start:0x0201e9fc end:0x0201ea28
 
-src/calls/EnqueueGfxCmd1.c:
+src/engine/EnqueueGfxCmd1.c:
     complete
     .text       start:0x0201ea28 end:0x0201ea40
 
-src/calls/Gfd_LoadTexPlttB.c:
+src/engine/Gfd_LoadTexPlttB.c:
     complete
     .text       start:0x0201ea40 end:0x0201ea6c
 
-src/calls/FileLoader_Init.c:
+src/engine/FileLoader_Init.c:
     complete
     .text       start:0x0201ea6c end:0x0201ebdc
 
-src/calls/Loader_RequestFile.c:
+src/engine/Loader_RequestFile.c:
     complete
     .text       start:0x0201ebdc end:0x0201ed3c
 
-src/calls/FileLoader_LoadInto.c:
+src/engine/FileLoader_LoadInto.c:
     complete
     .text       start:0x0201ed3c end:0x0201eea8
 
-src/calls/Obj_IsIdFree.c:
+src/engine/Obj_IsIdFree.c:
     complete
     .text       start:0x0201eea8 end:0x0201ef58
 
-src/calls/Loader_SleepIfBusy.c:
+src/engine/Loader_SleepIfBusy.c:
     complete
     .text       start:0x0201ef58 end:0x0201ef9c
 
-src/calls/Archive_LoadFile.c:
+src/engine/Archive_LoadFile.c:
     complete
     .text       start:0x0201ef9c end:0x0201f1a8
 
-src/calls/FileLoader_LoadSync.c:
+src/engine/FileLoader_LoadSync.c:
     complete
     .text       start:0x0201f1a8 end:0x0201f390
 
-src/calls/InstallHandlerPairByFlag.c:
+src/engine/InstallHandlerPairByFlag.c:
     complete
     .text       start:0x0201f390 end:0x0201f3d8
 
-src/calls/ResCache_FindSlot.c:
+src/engine/ResCache_FindSlot.c:
     complete
     .text       start:0x0201f3d8 end:0x0201f468
 
-src/calls/ResCache_Acquire.c:
+src/engine/ResCache_Acquire.c:
     complete
     .text       start:0x0201f468 end:0x0201f510
 
@@ -4460,27 +4460,27 @@ libs/nitro/snd/calls/SND_RegisterSeq.c:
     complete
     .text       start:0x0201f510 end:0x0201f5ac
 
-src/calls/ResSlot_Release.c:
+src/engine/ResSlot_Release.c:
     complete
     .text       start:0x0201f5ac end:0x0201f634
 
-src/calls/ResSlot_Acquire.c:
+src/engine/ResSlot_Acquire.c:
     complete
     .text       start:0x0201f634 end:0x0201f6b0
 
-src/calls/ResSlot_ReleaseResource.c:
+src/engine/ResSlot_ReleaseResource.c:
     complete
     .text       start:0x0201f6b0 end:0x0201f70c
 
-src/calls/Loader_PostIdRequest.c:
+src/engine/Loader_PostIdRequest.c:
     complete
     .text       start:0x0201f70c end:0x0201f750
 
-src/calls/Loader_PostTypedRequest.c:
+src/engine/Loader_PostTypedRequest.c:
     complete
     .text       start:0x0201f750 end:0x0201f79c
 
-src/calls/StackAlloc_FreeIfSet.c:
+src/engine/StackAlloc_FreeIfSet.c:
     complete
     .text       start:0x0201f79c end:0x0201f7b0
 
@@ -4488,15 +4488,15 @@ libs/msl/c/auto/abs.c:
     complete
     .text       start:0x0201f7b0 end:0x0201f7bc
 
-src/calls/StrNCaseCmp.c:
+libs/msl/c/calls/StrNCaseCmp.c:
     complete
     .text       start:0x0201f7bc end:0x0201f844
 
-src/auto/Mem_CompareBytes.c:
+libs/msl/c/auto/Mem_CompareBytes.c:
     complete
     .text       start:0x0201f844 end:0x0201f884
 
-src/calls/CharCursor_Control.c:
+libs/msl/c/calls/CharCursor_Control.c:
     complete
     .text       start:0x0201f884 end:0x0201f908
 
@@ -4512,11 +4512,11 @@ libs/msl/c/auto/strncpy.c:
     complete
     .text       start:0x0201f9ec end:0x0201fa3c
 
-src/auto/STD_StrCat.c:
+libs/msl/c/auto/STD_StrCat.c:
     complete
     .text       start:0x0201fa3c end:0x0201fa6c
 
-src/auto/STD_StrnCat.c:
+libs/msl/c/auto/STD_StrnCat.c:
     complete
     .text       start:0x0201fa6c end:0x0201fabc
 
@@ -4536,23 +4536,23 @@ libs/msl/c/calls/strtol.c:
     complete
     .text       start:0x0201ffec end:0x020200b4
 
-src/calls/func_020200b4.c:
+libs/msl/c/calls/func_020200b4.c:
     complete
     .text       start:0x020200b4 end:0x020200c8
 
-src/auto/Wcslen.c:
+libs/msl/c/auto/Wcslen.c:
     complete
     .text       start:0x020200c8 end:0x020200e4
 
-src/auto/StrCopy16.c:
+libs/msl/c/auto/StrCopy16.c:
     complete
     .text       start:0x020200e4 end:0x02020104
 
-src/auto/StrNCopy16.c:
+libs/msl/c/auto/StrNCopy16.c:
     complete
     .text       start:0x02020104 end:0x02020154
 
-src/auto/STD_WStrCat.c:
+libs/msl/c/auto/STD_WStrCat.c:
     complete
     .text       start:0x02020154 end:0x02020184
 
@@ -4560,7 +4560,7 @@ libs/nitro/os/calls/OSi_FreeStackAlloc.c:
     complete
     .text       start:0x02020184 end:0x0202019c
 
-src/calls/func_0202019c.c:
+libs/nitro/os/calls/func_0202019c.c:
     complete
     .text       start:0x0202019c end:0x020201a8
 
@@ -4600,7 +4600,7 @@ libs/msl/runtime/auto/_fp_init.c:
     complete
     .text       start:0x020207f0 end:0x020207f4
 
-src/calls/StackAlloc_FreeIfSetB.c:
+libs/msl/runtime/calls/StackAlloc_FreeIfSetB.c:
     complete
     .text       start:0x020207f4 end:0x02020808
 
@@ -4608,491 +4608,491 @@ libs/msl/runtime/calls/__call_static_initializers.c:
     complete
     .text       start:0x02020808 end:0x02020834
 
-src/auto/Callbacks_Init.c:
+src/engine/Callbacks_Init.c:
     complete
     .text       start:0x02020834 end:0x02020878
 
-src/calls/func_02020878.c:
+src/engine/func_02020878.c:
     complete
     .text       start:0x02020878 end:0x02020888
 
-src/calls/setDualArrayEntry.c:
+src/engine/setDualArrayEntry.c:
     complete
     .text       start:0x02020888 end:0x020208a4
 
-src/calls/Callbacks_Run.c:
+src/engine/Callbacks_Run.c:
     complete
     .text       start:0x020208a4 end:0x020208d0
 
-src/calls/Callbacks_SetByte.c:
+src/engine/Callbacks_SetByte.c:
     complete
     .text       start:0x020208d0 end:0x020208e0
 
-src/calls/func_020208e0.c:
+src/engine/func_020208e0.c:
     complete
     .text       start:0x020208e0 end:0x020208f0
 
-src/calls/func_020208f0.c:
+src/engine/func_020208f0.c:
     complete
     .text       start:0x020208f0 end:0x02020904
 
-src/calls/func_02020904.c:
+src/engine/func_02020904.c:
     complete
     .text       start:0x02020904 end:0x02020914
 
-src/calls/func_02020914.c:
+src/engine/func_02020914.c:
     complete
     .text       start:0x02020914 end:0x02020928
 
-src/calls/Boot_InitScene.c:
+src/engine/Boot_InitScene.c:
     complete
     .text       start:0x02020928 end:0x02020974
 
-src/auto/func_02020974.c:
+src/engine/func_02020974.c:
     complete
     .text       start:0x02020974 end:0x02020976
 
-src/calls/Scene_StepAndContinue.c:
+src/engine/Scene_StepAndContinue.c:
     complete
     .text       start:0x02020978 end:0x02020988
 
-src/calls/Scene_ClearPending.c:
+src/engine/Scene_ClearPending.c:
     complete
     .text       start:0x02020988 end:0x0202099c
 
-src/calls/Scene_AdvanceToPending.c:
+src/engine/Scene_AdvanceToPending.c:
     complete
     .text       start:0x0202099c end:0x02020a78
 
-src/calls/StoreGlobalPairAt10.c:
+src/engine/StoreGlobalPairAt10.c:
     complete
     .text       start:0x02020a78 end:0x02020a84
 
-src/calls/LoadGlobalIntAtC.c:
+src/engine/LoadGlobalIntAtC.c:
     complete
     .text       start:0x02020a84 end:0x02020a90
 
-src/calls/StoreGlobalShortAt0.c:
+src/engine/StoreGlobalShortAt0.c:
     complete
     .text       start:0x02020a90 end:0x02020a9c
 
-src/calls/LoadGlobalU16At0.c:
+src/engine/LoadGlobalU16At0.c:
     complete
     .text       start:0x02020a9c end:0x02020aa8
 
-src/calls/StoreGlobalArrayEntry.c:
+src/engine/StoreGlobalArrayEntry.c:
     complete
     .text       start:0x02020aa8 end:0x02020ab4
 
-src/calls/Archive_FindNameIndex.c:
+src/engine/Archive_FindNameIndex.c:
     complete
     .text       start:0x02020ab4 end:0x02020aee
 
-src/calls/ParseSlotQuantityId.c:
+src/engine/ParseSlotQuantityId.c:
     complete
     .text       start:0x02020af0 end:0x02020b64
 
-src/calls/Script_Start.c:
+src/engine/Script_Start.c:
     complete
     .text       start:0x02020b64 end:0x02020c7c
 
-src/calls/Stream_DecodeIntoStagingBuffer.c:
+src/engine/Stream_DecodeIntoStagingBuffer.c:
     complete
     .text       start:0x02020c7c end:0x02020cc6
 
-src/calls/Obj_ResetBothSubBlocksAndArm.c:
+src/engine/Obj_ResetBothSubBlocksAndArm.c:
     complete
     .text       start:0x02020cc8 end:0x02020cf8
 
-src/calls/StoreGlobalByteAt0.c:
+src/engine/StoreGlobalByteAt0.c:
     complete
     .text       start:0x02020cf8 end:0x02020d04
 
-src/calls/LoadGlobalS8At0.c:
+src/engine/LoadGlobalS8At0.c:
     complete
     .text       start:0x02020d04 end:0x02020d10
 
-src/calls/func_02020d10.c:
+src/engine/func_02020d10.c:
     complete
     .text       start:0x02020d10 end:0x02020d44
 
-src/calls/Game_UnwindActionStack.c:
+src/engine/Game_UnwindActionStack.c:
     complete
     .text       start:0x02020d44 end:0x02020e20
 
-src/calls/Camera_UpdateSoundListener.c:
+src/engine/Camera_UpdateSoundListener.c:
     complete
     .text       start:0x02020e20 end:0x02020e56
 
-src/calls/Game_RunActionScript.c:
+src/engine/Game_RunActionScript.c:
     complete
     .text       start:0x02020e58 end:0x02021048
 
-src/auto/SetWordAt0x588To1.c:
+src/engine/SetWordAt0x588To1.c:
     complete
     .text       start:0x02021048 end:0x02021054
 
-src/auto/GetWordAt0x58c.c:
+src/engine/GetWordAt0x58c.c:
     complete
     .text       start:0x02021054 end:0x02021060
 
-src/calls/Camera_Init.c:
+src/engine/Camera_Init.c:
     complete
     .text       start:0x02021060 end:0x0202119c
 
-src/calls/MTX_MakeRotXY43.c:
+src/engine/MTX_MakeRotXY43.c:
     complete
     .text       start:0x0202119c end:0x02021208
 
-src/calls/Anim_InterpEased.c:
+src/engine/Anim_InterpEased.c:
     complete
     .text       start:0x02021208 end:0x02021292
 
-src/calls/Obj_PrepAltTransform.c:
+src/engine/Obj_PrepAltTransform.c:
     complete
     .text       start:0x02021294 end:0x0202136c
 
-src/calls/Anim_GetBlendFactor.c:
+src/engine/Anim_GetBlendFactor.c:
     complete
     .text       start:0x0202136c end:0x02021404
 
-src/calls/ScaleAroundPivot.c:
+src/engine/ScaleAroundPivot.c:
     complete
     .text       start:0x02021404 end:0x02021416
 
-src/calls/Obj_StepMotionTransform.c:
+src/engine/Obj_StepMotionTransform.c:
     complete
     .text       start:0x02021418 end:0x020217d2
 
-src/calls/Game_UpdateObjectMotion.c:
+src/engine/Game_UpdateObjectMotion.c:
     complete
     .text       start:0x020217d4 end:0x02021884
 
-src/calls/func_02021884.c:
+src/engine/func_02021884.c:
     complete
     .text       start:0x02021884 end:0x020218a4
 
-src/calls/ScriptVm_ResolveOperand.c:
+src/engine/ScriptVm_ResolveOperand.c:
     complete
     .text       start:0x020218a4 end:0x02021948
 
-src/calls/ByteCode_ResolveOperand.c:
+src/engine/ByteCode_ResolveOperand.c:
     complete
     .text       start:0x02021948 end:0x0202197e
 
-src/calls/ScriptVm_ReadOperandInt.c:
+src/engine/ScriptVm_ReadOperandInt.c:
     complete
     .text       start:0x02021980 end:0x02021994
 
-src/calls/ScriptVm_ReadOperandFx32.c:
+src/engine/ScriptVm_ReadOperandFx32.c:
     complete
     .text       start:0x02021994 end:0x020219b2
 
-src/auto/Slot48_StoreAtCurrentIndex.c:
+src/engine/Slot48_StoreAtCurrentIndex.c:
     complete
     .text       start:0x020219b4 end:0x020219c4
 
-src/auto/func_020219c4.c:
+src/engine/func_020219c4.c:
     complete
     .text       start:0x020219c4 end:0x020219dc
 
-src/auto/GetField4UnlessState2.c:
+src/engine/GetField4UnlessState2.c:
     complete
     .text       start:0x020219dc end:0x020219ea
 
-src/calls/Script_EvalExpr.c:
+src/engine/Script_EvalExpr.c:
     complete
     .text       start:0x020219ec end:0x02021e82
 
-src/calls/Game_ActionAssign.c:
+src/engine/Game_ActionAssign.c:
     complete
     .text       start:0x02021e84 end:0x02021ed6
 
-src/auto/ScriptCmd_SetElemOffset.c:
+src/engine/ScriptCmd_SetElemOffset.c:
     complete
     .text       start:0x02021ed8 end:0x02021ef2
 
-src/calls/Game_PushObjectSlot.c:
+src/engine/Game_PushObjectSlot.c:
     complete
     .text       start:0x02021ef4 end:0x02021f7c
 
-src/calls/Game_ActionLoadArenaResource.c:
+src/engine/Game_ActionLoadArenaResource.c:
     complete
     .text       start:0x02021f7c end:0x020220dc
 
-src/calls/Game_ActionInitObject.c:
+src/engine/Game_ActionInitObject.c:
     complete
     .text       start:0x020220dc end:0x02022148
 
-src/auto/Game_ActionReturn4.c:
+src/engine/Game_ActionReturn4.c:
     complete
     .text       start:0x02022148 end:0x0202214c
 
-src/auto/ResetRequestRecord.c:
+src/engine/ResetRequestRecord.c:
     complete
     .text       start:0x0202214c end:0x0202216a
 
-src/calls/CommitRecordCursor.c:
+src/engine/CommitRecordCursor.c:
     complete
     .text       start:0x0202216c end:0x0202219e
 
-src/auto/ScriptVm_RunCallback.c:
+src/engine/ScriptVm_RunCallback.c:
     complete
     .text       start:0x020221a0 end:0x020221de
 
-src/auto/IsDerefZero.c:
+src/engine/IsDerefZero.c:
     complete
     .text       start:0x020221e0 end:0x020221ee
 
-src/auto/ConstReturn0.c:
+src/engine/ConstReturn0.c:
     complete
     .text       start:0x020221f0 end:0x020221f4
 
-src/auto/ConstReturn0_2.c:
+src/engine/ConstReturn0_2.c:
     complete
     .text       start:0x020221f4 end:0x020221f8
 
-src/auto/Game_ActionSetBranchTarget.c:
+src/engine/Game_ActionSetBranchTarget.c:
     complete
     .text       start:0x020221f8 end:0x0202223c
 
-src/calls/ScriptCmd_StoreDoubled.c:
+src/engine/ScriptCmd_StoreDoubled.c:
     complete
     .text       start:0x0202223c end:0x0202225a
 
-src/calls/DeferredAction_Gate.c:
+src/engine/DeferredAction_Gate.c:
     complete
     .text       start:0x0202225c end:0x02022290
 
-src/calls/ScriptCmd_ArmPair.c:
+src/engine/ScriptCmd_ArmPair.c:
     complete
     .text       start:0x02022290 end:0x020222bc
 
-src/calls/Game_ActionSetupNamedCall.c:
+src/engine/Game_ActionSetupNamedCall.c:
     complete
     .text       start:0x020222bc end:0x02022324
 
-src/calls/CommitCachedByteIfChanged.c:
+src/engine/CommitCachedByteIfChanged.c:
     complete
     .text       start:0x02022324 end:0x02022360
 
-src/calls/ScriptCmd_RequestKind3.c:
+src/engine/ScriptCmd_RequestKind3.c:
     complete
     .text       start:0x02022360 end:0x0202237c
 
-src/calls/Game_ActionEnqueueCmdIfChanged.c:
+src/engine/Game_ActionEnqueueCmdIfChanged.c:
     complete
     .text       start:0x0202237c end:0x020223dc
 
-src/calls/RegisterActorOrRetry.c:
+src/engine/RegisterActorOrRetry.c:
     complete
     .text       start:0x020223dc end:0x02022410
 
-src/calls/ScriptCmd_SetSelection.c:
+src/engine/ScriptCmd_SetSelection.c:
     complete
     .text       start:0x02022410 end:0x02022434
 
-src/calls/ScriptCmd_QueueSoundKind1.c:
+src/engine/ScriptCmd_QueueSoundKind1.c:
     complete
     .text       start:0x02022434 end:0x02022446
 
-src/calls/Script_StepAndIsIdle.c:
+src/engine/Script_StepAndIsIdle.c:
     complete
     .text       start:0x02022448 end:0x0202245e
 
-src/calls/ScriptCmd_PlaySound.c:
+src/engine/ScriptCmd_PlaySound.c:
     complete
     .text       start:0x02022460 end:0x02022482
 
-src/calls/ScriptCmd_ForwardThreeToHandler.c:
+src/engine/ScriptCmd_ForwardThreeToHandler.c:
     complete
     .text       start:0x02022484 end:0x020224b4
 
-src/calls/ScriptCmd_DispatchToHandler.c:
+src/engine/ScriptCmd_DispatchToHandler.c:
     complete
     .text       start:0x020224b4 end:0x020224cc
 
-src/calls/ScriptCmd_RequestResPair.c:
+src/engine/ScriptCmd_RequestResPair.c:
     complete
     .text       start:0x020224cc end:0x020224ec
 
-src/calls/ScriptCmd_StartStream.c:
+src/engine/ScriptCmd_StartStream.c:
     complete
     .text       start:0x020224ec end:0x0202250e
 
-src/calls/QueryAndRegisterNode.c:
+src/engine/QueryAndRegisterNode.c:
     complete
     .text       start:0x02022510 end:0x02022544
 
-src/calls/ScriptCmd_FreeSlotEntry.c:
+src/engine/ScriptCmd_FreeSlotEntry.c:
     complete
     .text       start:0x02022544 end:0x02022578
 
-src/calls/Script_Cmd_PlayEntityCutsceneCamWait.c:
+src/engine/Script_Cmd_PlayEntityCutsceneCamWait.c:
     complete
     .text       start:0x02022578 end:0x020225f0
 
-src/calls/Game_ActionTurnHandler.c:
+src/engine/Game_ActionTurnHandler.c:
     complete
     .text       start:0x020225f0 end:0x02022652
 
-src/calls/Loader_WaitAndReleaseSlot.c:
+src/engine/Loader_WaitAndReleaseSlot.c:
     complete
     .text       start:0x02022654 end:0x0202266e
 
-src/calls/Script_Cmd_PlayEntityCutsceneCam.c:
+src/engine/Script_Cmd_PlayEntityCutsceneCam.c:
     complete
     .text       start:0x02022670 end:0x020226d2
 
-src/calls/DispatchTrackEntryIfReady.c:
+src/engine/DispatchTrackEntryIfReady.c:
     complete
     .text       start:0x020226d4 end:0x02022708
 
-src/calls/Boot3DSubsystem.c:
+src/engine/Boot3DSubsystem.c:
     complete
     .text       start:0x02022708 end:0x020227c0
 
-src/calls/Shutdown3DSubsystem.c:
+src/engine/Shutdown3DSubsystem.c:
     complete
     .text       start:0x020227c0 end:0x0202281c
 
-src/calls/PauseMenu_PollInput.c:
+src/engine/PauseMenu_PollInput.c:
     complete
     .text       start:0x0202281c end:0x020229c4
 
-src/calls/Game_EnterPauseScene.c:
+src/engine/Game_EnterPauseScene.c:
     complete
     .text       start:0x020229c4 end:0x02022af4
 
-src/calls/PauseMenu_Open.c:
+src/engine/PauseMenu_Open.c:
     complete
     .text       start:0x02022af4 end:0x02022cb0
 
-src/calls/TabPanel_HandleUpDown.c:
+src/engine/TabPanel_HandleUpDown.c:
     complete
     .text       start:0x02022cb0 end:0x02022d7c
 
-src/calls/PauseMenu_Frame.c:
+src/engine/PauseMenu_Frame.c:
     complete
     .text       start:0x02022d7c end:0x02022eb0
 
-src/calls/PauseMenu_ConfirmFrame.c:
+src/engine/PauseMenu_ConfirmFrame.c:
     complete
     .text       start:0x02022eb0 end:0x02022fe4
 
-src/calls/PauseMenu_OpenIfAllowed.c:
+src/engine/PauseMenu_OpenIfAllowed.c:
     complete
     .text       start:0x02022fe4 end:0x02023008
 
-src/calls/Callbacks_ClearByteAndRun2.c:
+src/engine/Callbacks_ClearByteAndRun2.c:
     complete
     .text       start:0x02023008 end:0x02023018
 
-src/calls/Scene_Leave.c:
+src/engine/Scene_Leave.c:
     complete
     .text       start:0x02023018 end:0x020230e8
 
-src/calls/ForwardQuery64Result.c:
+src/engine/ForwardQuery64Result.c:
     complete
     .text       start:0x020230e8 end:0x02023100
 
-src/calls/Gfx_RestoreAfterPause.c:
+src/engine/Gfx_RestoreAfterPause.c:
     complete
     .text       start:0x02023100 end:0x02023198
 
-src/calls/Pause_LoadResources.c:
+src/engine/Pause_LoadResources.c:
     complete
     .text       start:0x02023198 end:0x02023204
 
-src/calls/SubObject_SetupDrawsForMode.c:
+src/engine/SubObject_SetupDrawsForMode.c:
     complete
     .text       start:0x02023204 end:0x020232d8
 
-src/calls/SubObject_SetupDraws.c:
+src/engine/SubObject_SetupDraws.c:
     complete
     .text       start:0x020232d8 end:0x02023340
 
-src/calls/SubObject_SetDrawParams.c:
+src/engine/SubObject_SetDrawParams.c:
     complete
     .text       start:0x02023340 end:0x02023364
 
-src/calls/Input_DebounceSlot.c:
+src/engine/Input_DebounceSlot.c:
     complete
     .text       start:0x02023364 end:0x020233b0
 
-src/calls/SubObject_DispatchDraw.c:
+src/engine/SubObject_DispatchDraw.c:
     complete
     .text       start:0x020233b0 end:0x020233fe
 
-src/calls/SubObject_NudgeAndRedraw.c:
+src/engine/SubObject_NudgeAndRedraw.c:
     complete
     .text       start:0x02023400 end:0x02023448
 
-src/calls/Gfx_EnqueueSurface.c:
+src/engine/Gfx_EnqueueSurface.c:
     complete
     .text       start:0x02023448 end:0x0202346e
 
-src/calls/GameConfig_Load.c:
+src/engine/GameConfig_Load.c:
     complete
     .text       start:0x02023470 end:0x02023480
 
-src/calls/SetGlobalShort2To1.c:
+src/engine/SetGlobalShort2To1.c:
     complete
     .text       start:0x02023480 end:0x0202348c
 
-src/calls/PollAndLatchRequest.c:
+src/engine/PollAndLatchRequest.c:
     complete
     .text       start:0x0202348c end:0x020234e8
 
-src/calls/LatchPendingRequestOnce.c:
+src/engine/LatchPendingRequestOnce.c:
     complete
     .text       start:0x020234e8 end:0x02023534
 
-src/calls/LoadGlobalPtr4FieldDcOrZero.c:
+src/engine/LoadGlobalPtr4FieldDcOrZero.c:
     complete
     .text       start:0x02023534 end:0x0202354c
 
-src/calls/StoreToGlobalPtr4FieldDcIfSet.c:
+src/engine/StoreToGlobalPtr4FieldDcIfSet.c:
     complete
     .text       start:0x0202354c end:0x02023560
 
-src/calls/StoreToGlobalPtr4FieldE4IfSet.c:
+src/engine/StoreToGlobalPtr4FieldE4IfSet.c:
     complete
     .text       start:0x02023560 end:0x02023574
 
-src/calls/ClearGlobalPtrE8AndHead.c:
+src/engine/ClearGlobalPtrE8AndHead.c:
     complete
     .text       start:0x02023574 end:0x02023588
 
-src/calls/GameState_IsFlagSet.c:
+src/engine/GameState_IsFlagSet.c:
     complete
     .text       start:0x02023588 end:0x020235a8
 
-src/calls/GameState_SetFlag.c:
+src/engine/GameState_SetFlag.c:
     complete
     .text       start:0x020235a8 end:0x020235bc
 
-src/calls/func_020235bc.c:
+src/engine/func_020235bc.c:
     complete
     .text       start:0x020235bc end:0x020235d0
 
-src/calls/GameState_GetField.c:
+src/engine/GameState_GetField.c:
     complete
     .text       start:0x020235d0 end:0x020235e8
 
-src/calls/GameState_SetField.c:
+src/engine/GameState_SetField.c:
     complete
     .text       start:0x020235e8 end:0x02023604
 
-src/calls/HeapState_Recreate.c:
+src/engine/HeapState_Recreate.c:
     complete
     .text       start:0x02023604 end:0x0202362c
 
-src/calls/func_0202362c.c:
+src/engine/func_0202362c.c:
     complete
     .text       start:0x0202362c end:0x02023650
 
-src/calls/func_02023650.c:
+src/engine/func_02023650.c:
     complete
     .text       start:0x02023650 end:0x02023660
 
@@ -5108,15 +5108,15 @@ libs/nitro/nns/calls/NNSi_FndFreeFromDefaultHeap.c:
     complete
     .text       start:0x020236ac end:0x020236cc
 
-src/calls/AllocFromExpHeapWrapper.c:
+src/engine/AllocFromExpHeapWrapper.c:
     complete
     .text       start:0x020236cc end:0x020236f8
 
-src/calls/ExpHeap_AllocOrDefault.c:
+src/engine/ExpHeap_AllocOrDefault.c:
     complete
     .text       start:0x020236f8 end:0x02023728
 
-src/calls/func_02023728.c:
+src/engine/func_02023728.c:
     complete
     .text       start:0x02023728 end:0x02023750
 
@@ -5124,55 +5124,55 @@ libs/nitro/nns/calls/NNSi_FndGetAllocatorForDefaultHeap.c:
     complete
     .text       start:0x02023750 end:0x02023768
 
-src/calls/func_02023768.c:
+src/engine/func_02023768.c:
     complete
     .text       start:0x02023768 end:0x02023778
 
-src/calls/Obj_LinkNode.c:
+src/engine/Obj_LinkNode.c:
     complete
     .text       start:0x02023778 end:0x02023890
 
-src/calls/Obj_UnlinkNode.c:
+src/engine/Obj_UnlinkNode.c:
     complete
     .text       start:0x02023890 end:0x0202390c
 
-src/calls/Obj_InitSystem.c:
+src/engine/Obj_InitSystem.c:
     complete
     .text       start:0x0202390c end:0x02023930
 
-src/calls/InstantiateClass.c:
+src/engine/InstantiateClass.c:
     complete
     .text       start:0x02023930 end:0x02023960
 
-src/calls/RunClassConstructor.c:
+src/engine/RunClassConstructor.c:
     complete
     .text       start:0x02023960 end:0x02023a3c
 
-src/auto/Word_Set.c:
+src/engine/Word_Set.c:
     complete
     .text       start:0x02023a3c end:0x02023a44
 
-src/auto/Obj_SetField14.c:
+src/engine/Obj_SetField14.c:
     complete
     .text       start:0x02023a44 end:0x02023a4c
 
-src/calls/Obj_Destroy.c:
+src/engine/Obj_Destroy.c:
     complete
     .text       start:0x02023a4c end:0x02023ad0
 
-src/calls/func_02023ad0.c:
+src/engine/func_02023ad0.c:
     complete
     .text       start:0x02023ad0 end:0x02023adc
 
-src/calls/Obj_UpdateAll.c:
+src/engine/Obj_UpdateAll.c:
     complete
     .text       start:0x02023adc end:0x02023bbc
 
-src/calls/Instance_ReleaseIfDead.c:
+src/engine/Instance_ReleaseIfDead.c:
     complete
     .text       start:0x02023bbc end:0x02023bf0
 
-src/calls/func_02023bf0.c:
+src/engine/func_02023bf0.c:
     complete
     .text       start:0x02023bf0 end:0x02023c00
 
@@ -5180,395 +5180,395 @@ libs/nitro/nns/calls/NNSi_FndGetCurrentRootHeap.c:
     complete
     .text       start:0x02023c00 end:0x02023c14
 
-src/calls/StoreToGlobalPtr4Field28.c:
+src/engine/StoreToGlobalPtr4Field28.c:
     complete
     .text       start:0x02023c14 end:0x02023c28
 
-src/auto/Obj_GetWord28.c:
+src/engine/Obj_GetWord28.c:
     complete
     .text       start:0x02023c28 end:0x02023c30
 
-src/calls/SetGameMode.c:
+src/engine/SetGameMode.c:
     complete
     .text       start:0x02023c30 end:0x02023c40
 
-src/calls/func_02023c40.c:
+src/engine/func_02023c40.c:
     complete
     .text       start:0x02023c40 end:0x02023c50
 
-src/calls/func_02023c50.c:
+src/engine/func_02023c50.c:
     complete
     .text       start:0x02023c50 end:0x02023c60
 
-src/auto/Projection_LoadDefaults.c:
+src/engine/Projection_LoadDefaults.c:
     complete
     .text       start:0x02023c60 end:0x02023cc0
 
-src/calls/Camera_CommitMatrices.c:
+src/engine/Camera_CommitMatrices.c:
     complete
     .text       start:0x02023cc0 end:0x02023d70
 
-src/calls/Camera_CommitMatricesEx.c:
+src/engine/Camera_CommitMatricesEx.c:
     complete
     .text       start:0x02023d70 end:0x02023e34
 
-src/auto/Rng_Seed.c:
+src/engine/Rng_Seed.c:
     complete
     .text       start:0x02023e34 end:0x02023e80
 
-src/auto/Rand16NextScaled.c:
+src/engine/Rand16NextScaled.c:
     complete
     .text       start:0x02023e80 end:0x02023eb4
 
-src/calls/RandNextScaled.c:
+src/engine/RandNextScaled.c:
     complete
     .text       start:0x02023eb4 end:0x02023f08
 
-src/auto/RandNext.c:
+src/engine/RandNext.c:
     complete
     .text       start:0x02023f08 end:0x02023f58
 
-src/calls/InputState_Init.c:
+src/engine/InputState_Init.c:
     complete
     .text       start:0x02023f58 end:0x02023f78
 
-src/calls/Pad_Sample.c:
+src/engine/Pad_Sample.c:
     complete
     .text       start:0x02023f78 end:0x02024030
 
-src/auto/PackDisplayReg0x400100e.c:
+src/engine/PackDisplayReg0x400100e.c:
     complete
     .text       start:0x02024030 end:0x0202405c
 
-src/auto/PackDisplayReg0x400100c.c:
+src/engine/PackDisplayReg0x400100c.c:
     complete
     .text       start:0x0202405c end:0x02024088
 
-src/calls/func_02024088.c:
+src/engine/func_02024088.c:
     complete
     .text       start:0x02024088 end:0x020240bc
 
-src/calls/func_020240bc.c:
+src/engine/func_020240bc.c:
     complete
     .text       start:0x020240bc end:0x020240f0
 
-src/calls/PackDisplayReg0x400000e.c:
+src/engine/PackDisplayReg0x400000e.c:
     complete
     .text       start:0x020240f0 end:0x0202411c
 
-src/calls/PackDisplayReg0x400000c.c:
+src/engine/PackDisplayReg0x400000c.c:
     complete
     .text       start:0x0202411c end:0x02024148
 
-src/calls/func_02024148.c:
+src/engine/func_02024148.c:
     complete
     .text       start:0x02024148 end:0x0202417c
 
-src/calls/func_0202417c.c:
+src/engine/func_0202417c.c:
     complete
     .text       start:0x0202417c end:0x020241b0
 
-src/auto/LookupPairKey.c:
+src/engine/LookupPairKey.c:
     complete
     .text       start:0x020241b0 end:0x020241f8
 
-src/calls/DispMode_LookupWordAndDispatch.c:
+src/engine/DispMode_LookupWordAndDispatch.c:
     complete
     .text       start:0x020241f8 end:0x0202423c
 
-src/calls/SetSubEngineGraphicsModeFromTable.c:
+src/engine/SetSubEngineGraphicsModeFromTable.c:
     complete
     .text       start:0x0202423c end:0x02024264
 
-src/calls/Gfx_EnqueueBgCharUpload.c:
+src/engine/Gfx_EnqueueBgCharUpload.c:
     complete
     .text       start:0x02024264 end:0x0202429c
 
-src/calls/Gfx_EnqueueBgScreenUpload.c:
+src/engine/Gfx_EnqueueBgScreenUpload.c:
     complete
     .text       start:0x0202429c end:0x020242cc
 
-src/calls/remapIndexIfHwFlagSet.c:
+src/engine/remapIndexIfHwFlagSet.c:
     complete
     .text       start:0x020242cc end:0x020242f8
 
-src/calls/Bg_SetMainBg0Control.c:
+src/engine/Bg_SetMainBg0Control.c:
     complete
     .text       start:0x020242f8 end:0x02024368
 
-src/calls/Bg_SetMainBg1Control.c:
+src/engine/Bg_SetMainBg1Control.c:
     complete
     .text       start:0x02024368 end:0x020243f4
 
-src/calls/Bg_SetMainBg2TextControl.c:
+src/engine/Bg_SetMainBg2TextControl.c:
     complete
     .text       start:0x020243f4 end:0x0202443c
 
-src/calls/Bg_SetMainBg3TextControl.c:
+src/engine/Bg_SetMainBg3TextControl.c:
     complete
     .text       start:0x0202443c end:0x02024484
 
-src/calls/Bg_SetMainBg2AffineControl.c:
+src/engine/Bg_SetMainBg2AffineControl.c:
     complete
     .text       start:0x02024484 end:0x020244d4
 
-src/calls/Bg_SetMainBg3AffineControl.c:
+src/engine/Bg_SetMainBg3AffineControl.c:
     complete
     .text       start:0x020244d4 end:0x02024524
 
-src/calls/Bg_SetMainBg2ExtControl.c:
+src/engine/Bg_SetMainBg2ExtControl.c:
     complete
     .text       start:0x02024524 end:0x02024574
 
-src/calls/Bg_SetMainBg3ExtControl.c:
+src/engine/Bg_SetMainBg3ExtControl.c:
     complete
     .text       start:0x02024574 end:0x020245c4
 
-src/calls/Bg_SetSubBg0Control.c:
+src/engine/Bg_SetSubBg0Control.c:
     complete
     .text       start:0x020245c4 end:0x0202461c
 
-src/calls/Bg_SetSubBg1Control.c:
+src/engine/Bg_SetSubBg1Control.c:
     complete
     .text       start:0x0202461c end:0x02024674
 
-src/calls/Bg_SetSubBg2TextControl.c:
+src/engine/Bg_SetSubBg2TextControl.c:
     complete
     .text       start:0x02024674 end:0x020246bc
 
-src/calls/Bg_SetSubBg3TextControl.c:
+src/engine/Bg_SetSubBg3TextControl.c:
     complete
     .text       start:0x020246bc end:0x02024704
 
-src/calls/Bg_SetSubBg2AffineControl.c:
+src/engine/Bg_SetSubBg2AffineControl.c:
     complete
     .text       start:0x02024704 end:0x02024754
 
-src/calls/Bg_SetSubBg3AffineControl.c:
+src/engine/Bg_SetSubBg3AffineControl.c:
     complete
     .text       start:0x02024754 end:0x020247a4
 
-src/calls/Bg_SetSubBg2ExtControl.c:
+src/engine/Bg_SetSubBg2ExtControl.c:
     complete
     .text       start:0x020247a4 end:0x020247f4
 
-src/calls/Bg_SetSubBg3ExtControl.c:
+src/engine/Bg_SetSubBg3ExtControl.c:
     complete
     .text       start:0x020247f4 end:0x02024844
 
-src/calls/Cmd_DispatchWithFlag.c:
+src/engine/Cmd_DispatchWithFlag.c:
     complete
     .text       start:0x02024844 end:0x0202489c
 
-src/calls/Gfx_DispatchByPairKeyA.c:
+src/engine/Gfx_DispatchByPairKeyA.c:
     complete
     .text       start:0x0202489c end:0x020248e0
 
-src/calls/Gfx_DispatchByPairKeyB.c:
+src/engine/Gfx_DispatchByPairKeyB.c:
     complete
     .text       start:0x020248e0 end:0x02024924
 
-src/calls/Gfx_EnqueueBgUpload.c:
+src/engine/Gfx_EnqueueBgUpload.c:
     complete
     .text       start:0x02024924 end:0x02024950
 
-src/calls/GetBGScreenBaseForLayer.c:
+src/engine/GetBGScreenBaseForLayer.c:
     complete
     .text       start:0x02024950 end:0x0202497c
 
-src/calls/Callbacks_RunTableEntry.c:
+src/engine/Callbacks_RunTableEntry.c:
     complete
     .text       start:0x0202497c end:0x020249b0
 
-src/calls/Callbacks_RunTableEntryB.c:
+src/engine/Callbacks_RunTableEntryB.c:
     complete
     .text       start:0x020249b0 end:0x020249e4
 
-src/calls/Callbacks_RunTableEntryC.c:
+src/engine/Callbacks_RunTableEntryC.c:
     complete
     .text       start:0x020249e4 end:0x02024a18
 
-src/calls/func_02024a18.c:
+src/engine/func_02024a18.c:
     complete
     .text       start:0x02024a18 end:0x02024a28
 
-src/auto/Gfx_BgLayerCommand.c:
+src/engine/Gfx_BgLayerCommand.c:
     complete
     .text       start:0x02024a28 end:0x02024a6c
 
-src/calls/Bg_LoadPaletteForScreen.c:
+src/engine/Bg_LoadPaletteForScreen.c:
     complete
     .text       start:0x02024a6c end:0x02024ae0
 
-src/calls/Gfx_EnqueueTableCmdAt14.c:
+src/engine/Gfx_EnqueueTableCmdAt14.c:
     complete
     .text       start:0x02024ae0 end:0x02024b04
 
-src/calls/Gfx_EnqueueTableCmdAtC.c:
+src/engine/Gfx_EnqueueTableCmdAtC.c:
     complete
     .text       start:0x02024b04 end:0x02024b28
 
-src/calls/DispatchThreeOptionalOpsB.c:
+src/engine/DispatchThreeOptionalOpsB.c:
     complete
     .text       start:0x02024b28 end:0x02024ba4
 
-src/calls/DispatchByPartType.c:
+src/engine/DispatchByPartType.c:
     complete
     .text       start:0x02024ba4 end:0x02024c1c
 
-src/calls/AllocAndRegisterOrFree.c:
+src/engine/AllocAndRegisterOrFree.c:
     complete
     .text       start:0x02024c1c end:0x02024c58
 
-src/calls/AllocAndRegisterOrFree2.c:
+src/engine/AllocAndRegisterOrFree2.c:
     complete
     .text       start:0x02024c58 end:0x02024c94
 
-src/calls/Res_LoadSpriteSet.c:
+src/engine/Res_LoadSpriteSet.c:
     complete
     .text       start:0x02024c94 end:0x02024d68
 
-src/calls/Touch_StartAutoSampling.c:
+src/engine/Touch_StartAutoSampling.c:
     complete
     .text       start:0x02024d68 end:0x02024da4
 
-src/calls/Touch_GetRecentSamples.c:
+src/engine/Touch_GetRecentSamples.c:
     complete
     .text       start:0x02024da4 end:0x02024e34
 
-src/calls/Record_EnsureAllocatedAndSetId.c:
+src/engine/Record_EnsureAllocatedAndSetId.c:
     complete
     .text       start:0x02024e34 end:0x02024e5c
 
-src/calls/func_02024e5c.c:
+src/engine/func_02024e5c.c:
     complete
     .text       start:0x02024e5c end:0x02024e6c
 
-src/calls/Msg_BuildLangPath.c:
+src/engine/Msg_BuildLangPath.c:
     complete
     .text       start:0x02024e6c end:0x02024ee8
 
-src/calls/Msg_OpenContainerAndReadHeader.c:
+src/engine/Msg_OpenContainerAndReadHeader.c:
     complete
     .text       start:0x02024ee8 end:0x02024fd4
 
-src/calls/ZeroHalfThenFree.c:
+src/engine/ZeroHalfThenFree.c:
     complete
     .text       start:0x02024fd4 end:0x02024fe8
 
-src/calls/MsgArchive_FindEntryByName.c:
+src/engine/MsgArchive_FindEntryByName.c:
     complete
     .text       start:0x02024fe8 end:0x02025074
 
-src/auto/Archive_SubfileIsCompressed.c:
+src/engine/Archive_SubfileIsCompressed.c:
     complete
     .text       start:0x02025074 end:0x020250bc
 
-src/calls/Archive_OpenSubfileByHandle.c:
+src/engine/Archive_OpenSubfileByHandle.c:
     complete
     .text       start:0x020250bc end:0x02025138
 
-src/calls/G3dRes_DefaultSetup.c:
+src/engine/G3dRes_DefaultSetup.c:
     complete
     .text       start:0x02025138 end:0x02025364
 
-src/calls/Tex_LoadVram.c:
+src/engine/Tex_LoadVram.c:
     complete
     .text       start:0x02025364 end:0x02025420
 
-src/calls/Gfx_UploadBlock.c:
+src/engine/Gfx_UploadBlock.c:
     complete
     .text       start:0x02025420 end:0x02025464
 
-src/calls/Obj_RelocateSections.c:
+src/engine/Obj_RelocateSections.c:
     complete
     .text       start:0x02025464 end:0x0202552c
 
-src/calls/ResGroup_Release.c:
+src/engine/ResGroup_Release.c:
     complete
     .text       start:0x0202552c end:0x020255bc
 
-src/auto/Obj_GetIndirectWord.c:
+src/engine/Obj_GetIndirectWord.c:
     complete
     .text       start:0x020255bc end:0x020255d4
 
-src/auto/Archive_GetMember.c:
+src/engine/Archive_GetMember.c:
     complete
     .text       start:0x020255d4 end:0x020255f0
 
-src/calls/ForwardType7RecordSpan.c:
+src/engine/ForwardType7RecordSpan.c:
     complete
     .text       start:0x020255f0 end:0x02025640
 
-src/auto/BitArray_SetBit.c:
+src/engine/BitArray_SetBit.c:
     complete
     .text       start:0x02025640 end:0x02025668
 
-src/auto/BitArray_ClearBit.c:
+src/engine/BitArray_ClearBit.c:
     complete
     .text       start:0x02025668 end:0x02025694
 
-src/auto/BitArray_TestBit.c:
+src/engine/BitArray_TestBit.c:
     complete
     .text       start:0x02025694 end:0x020256b8
 
-src/auto/BitArray_GetField.c:
+src/engine/BitArray_GetField.c:
     complete
     .text       start:0x020256b8 end:0x02025754
 
-src/auto/BitArray_SetField.c:
+src/engine/BitArray_SetField.c:
     complete
     .text       start:0x02025754 end:0x02025800
 
-src/calls/PrintfDest_PutChar.c:
+src/engine/PrintfDest_PutChar.c:
     complete
     .text       start:0x02025800 end:0x02025818
 
-src/calls/PrintfDestWide_PutChar.c:
+src/engine/PrintfDestWide_PutChar.c:
     complete
     .text       start:0x02025818 end:0x02025830
 
-src/auto/PrintfDest_FillChar.c:
+src/engine/PrintfDest_FillChar.c:
     complete
     .text       start:0x02025830 end:0x0202585e
 
-src/auto/PrintfDestWide_FillChar.c:
+src/engine/PrintfDestWide_FillChar.c:
     complete
     .text       start:0x02025860 end:0x02025894
 
-src/auto/PrintfDest_PutString.c:
+src/engine/PrintfDest_PutString.c:
     complete
     .text       start:0x02025894 end:0x020258c4
 
-src/auto/PrintfDestWide_PutString.c:
+src/engine/PrintfDestWide_PutString.c:
     complete
     .text       start:0x020258c4 end:0x020258fc
 
-src/calls/Fx64_FormatText.c:
+src/engine/Fx64_FormatText.c:
     complete
     .text       start:0x020258fc end:0x02025a50
 
-src/calls/Fx64_FormatWide.c:
+src/engine/Fx64_FormatWide.c:
     complete
     .text       start:0x02025a50 end:0x02025aaa
 
-src/calls/Text_VSNPrintf_2.c:
+src/engine/Text_VSNPrintf_2.c:
     complete
     .text       start:0x02025aac end:0x0202629e
 
-src/calls/Text_FormatUtf16.c:
+src/engine/Text_FormatUtf16.c:
     complete
     .text       start:0x020262a0 end:0x020262ba
 
-src/calls/Text_VSNPrintfWide.c:
+src/engine/Text_VSNPrintfWide.c:
     complete
     .text       start:0x020262bc end:0x02026a44
 
-src/calls/NNSi_G3dGetJntTransFromNode.c:
+src/engine/NNSi_G3dGetJntTransFromNode.c:
     complete
     .text       start:0x02026a44 end:0x02026adc
 
-src/calls/NNSi_G3dGetJntScaleFromNode.c:
+src/engine/NNSi_G3dGetJntScaleFromNode.c:
     complete
     .text       start:0x02026adc end:0x02026b70
 
@@ -5576,23 +5576,23 @@ libs/nns/g3d/calls/NNSi_G3dGetMdlRot.c:
     complete
     .text       start:0x02026b70 end:0x02026cd0
 
-src/auto/G3dJnt_GetTransData.c:
+src/engine/G3dJnt_GetTransData.c:
     complete
     .text       start:0x02026cd0 end:0x02026e28
 
-src/calls/G3dJnt_GetTransDataEx.c:
+src/engine/G3dJnt_GetTransDataEx.c:
     complete
     .text       start:0x02026e28 end:0x02026f84
 
-src/auto/G3dJnt_GetScaleData.c:
+src/engine/G3dJnt_GetScaleData.c:
     complete
     .text       start:0x02026f84 end:0x0202716c
 
-src/calls/G3dJnt_GetScaleDataEx.c:
+src/engine/G3dJnt_GetScaleDataEx.c:
     complete
     .text       start:0x0202716c end:0x02027300
 
-src/calls/G3dJnt_GetRotDataEx.c:
+src/engine/G3dJnt_GetRotDataEx.c:
     complete
     .text       start:0x02027300 end:0x02027668
 
@@ -5600,7 +5600,7 @@ libs/nns/g3d/calls/getJntSRTAnmResult__2.c:
     complete
     .text       start:0x02027668 end:0x02027908
 
-src/auto/AccumulateVec3Scaled.c:
+src/engine/AccumulateVec3Scaled.c:
     complete
     .text       start:0x02027908 end:0x02027978
 
@@ -5608,7 +5608,7 @@ libs/nns/g3d/auto/updateHintVec__2.c:
     complete
     .text       start:0x02027978 end:0x020279e0
 
-src/calls/Obj_InitChannelsAndRun.c:
+src/engine/Obj_InitChannelsAndRun.c:
     complete
     .text       start:0x020279e0 end:0x02027ac8
 
@@ -5640,407 +5640,407 @@ libs/nns/g3d/calls/NNSi_G3dFuncSbc_PRJMAP.c:
     complete
     .text       start:0x02028314 end:0x020285f0
 
-src/calls/PublishArchiveVTableAndSeedRng.c:
+src/engine/PublishArchiveVTableAndSeedRng.c:
     complete
     .text       start:0x020285f0 end:0x02028670
 
-src/calls/Tex0_GetTexPlttParams.c:
+src/engine/Tex0_GetTexPlttParams.c:
     complete
     .text       start:0x02028670 end:0x02028724
 
-src/auto/Word_ClearReturn1.c:
+src/engine/Word_ClearReturn1.c:
     complete
     .text       start:0x02028724 end:0x0202872c
 
-src/auto/ListPushFront.c:
+src/engine/ListPushFront.c:
     complete
     .text       start:0x0202872c end:0x02028740
 
-src/auto/DList_Unlink.c:
+src/engine/DList_Unlink.c:
     complete
     .text       start:0x02028740 end:0x02028766
 
-src/calls/G3d_ResetGlobalState.c:
+src/engine/G3d_ResetGlobalState.c:
     complete
     .text       start:0x02028768 end:0x020287e8
 
-src/calls/Billboard_DrawList.c:
+src/engine/Billboard_DrawList.c:
     complete
     .text       start:0x020287e8 end:0x02028924
 
-src/calls/RoomPoly_BuildPlanes.c:
+src/engine/RoomPoly_BuildPlanes.c:
     complete
     .text       start:0x02028924 end:0x02028a64
 
-src/calls/RoomPoly_BuildPlanesVertical.c:
+src/engine/RoomPoly_BuildPlanesVertical.c:
     complete
     .text       start:0x02028a64 end:0x02028bb4
 
-src/calls/Coll_ResolveModelBlobPointers.c:
+src/engine/Coll_ResolveModelBlobPointers.c:
     complete
     .text       start:0x02028bb4 end:0x02028d6e
 
-src/auto/SubResourceTable_FreeHookNoOp.c:
+src/engine/SubResourceTable_FreeHookNoOp.c:
     complete
     .text       start:0x02028d70 end:0x02028d74
 
-src/auto/VecFx32FromVecS16.c:
+src/engine/VecFx32FromVecS16.c:
     complete
     .text       start:0x02028d74 end:0x02028d90
 
-src/calls/FindEntryByNameNoCase.c:
+src/engine/FindEntryByNameNoCase.c:
     complete
     .text       start:0x02028d90 end:0x02028df0
 
-src/calls/FindEntryByExactName.c:
+src/engine/FindEntryByExactName.c:
     complete
     .text       start:0x02028df0 end:0x02028e4c
 
-src/auto/RoomMesh_ForEachPrimOnPoint.c:
+src/engine/RoomMesh_ForEachPrimOnPoint.c:
     complete
     .text       start:0x02028e4c end:0x02028ff4
 
-src/calls/QuadTree_Insert.c:
+src/engine/QuadTree_Insert.c:
     complete
     .text       start:0x02028ff4 end:0x02029158
 
-src/auto/Node_UnlinkAndClearRefs.c:
+src/engine/Node_UnlinkAndClearRefs.c:
     complete
     .text       start:0x02029158 end:0x0202922c
 
-src/calls/QuadTree_InsertObject.c:
+src/engine/QuadTree_InsertObject.c:
     complete
     .text       start:0x0202922c end:0x02029250
 
-src/calls/QuadTree_RemoveObject.c:
+src/engine/QuadTree_RemoveObject.c:
     complete
     .text       start:0x02029250 end:0x0202926c
 
-src/calls/Record_Init.c:
+src/engine/Record_Init.c:
     complete
     .text       start:0x0202926c end:0x020292a4
 
-src/calls/InitNodeAndStoreParamsMode1.c:
+src/engine/InitNodeAndStoreParamsMode1.c:
     complete
     .text       start:0x020292a4 end:0x020292d8
 
-src/calls/Record_InitMode2.c:
+src/engine/Record_InitMode2.c:
     complete
     .text       start:0x020292d8 end:0x0202930c
 
-src/calls/InitNodeAndStoreParamsMode2.c:
+src/engine/InitNodeAndStoreParamsMode2.c:
     complete
     .text       start:0x0202930c end:0x02029344
 
-src/calls/InitNodeAndStoreParams.c:
+src/engine/InitNodeAndStoreParams.c:
     complete
     .text       start:0x02029344 end:0x0202938c
 
-src/calls/IsField1cEqualData42940.c:
+src/engine/IsField1cEqualData42940.c:
     complete
     .text       start:0x0202938c end:0x020293a8
 
-src/calls/IsField1cEqualData42910.c:
+src/engine/IsField1cEqualData42910.c:
     complete
     .text       start:0x020293a8 end:0x020293c4
 
-src/calls/TeardownNodeIfBit0Set.c:
+src/engine/TeardownNodeIfBit0Set.c:
     complete
     .text       start:0x020293c4 end:0x020293fc
 
-src/calls/Node_SetPosAndNotify.c:
+src/engine/Node_SetPosAndNotify.c:
     complete
     .text       start:0x020293fc end:0x02029438
 
-src/auto/Actor_SetBindingByte.c:
+src/engine/Actor_SetBindingByte.c:
     complete
     .text       start:0x02029438 end:0x02029444
 
-src/auto/Bounds_FromCenterRadius.c:
+src/engine/Bounds_FromCenterRadius.c:
     complete
     .text       start:0x02029444 end:0x0202947c
 
-src/auto/Collider_Slot1NoOp_2.c:
+src/engine/Collider_Slot1NoOp_2.c:
     complete
     .text       start:0x0202947c end:0x02029480
 
-src/auto/Collider_InitPlaneY.c:
+src/engine/Collider_InitPlaneY.c:
     complete
     .text       start:0x02029480 end:0x020294b0
 
-src/calls/Collider_InitCylinderContact.c:
+src/engine/Collider_InitCylinderContact.c:
     complete
     .text       start:0x020294b0 end:0x0202951c
 
-src/auto/Collider_Slot1NoOp.c:
+src/engine/Collider_Slot1NoOp.c:
     complete
     .text       start:0x0202951c end:0x02029520
 
-src/calls/Collider_InitSphereContact.c:
+src/engine/Collider_InitSphereContact.c:
     complete
     .text       start:0x02029520 end:0x0202958c
 
-src/calls/RoomBox_UpdateBounds.c:
+src/engine/RoomBox_UpdateBounds.c:
     complete
     .text       start:0x0202958c end:0x0202980c
 
-src/auto/RoomBox_Slot1NoOp.c:
+src/engine/RoomBox_Slot1NoOp.c:
     complete
     .text       start:0x0202980c end:0x02029810
 
-src/calls/RoomBox_HitTop.c:
+src/engine/RoomBox_HitTop.c:
     complete
     .text       start:0x02029810 end:0x02029a7c
 
-src/calls/RoomBox_HitSides.c:
+src/engine/RoomBox_HitSides.c:
     complete
     .text       start:0x02029a7c end:0x02029f3c
 
-src/calls/RoomBox_WallPlane.c:
+src/engine/RoomBox_WallPlane.c:
     complete
     .text       start:0x02029f3c end:0x0202a1b8
 
-src/auto/NitroFile_GetSection0Byte9.c:
+src/engine/NitroFile_GetSection0Byte9.c:
     complete
     .text       start:0x0202a1b8 end:0x0202a208
 
-src/calls/ModelAnimSet_Bind.c:
+src/engine/ModelAnimSet_Bind.c:
     complete
     .text       start:0x0202a208 end:0x0202a388
 
-src/calls/Snd_RegisterSeqAndBind.c:
+src/engine/Snd_RegisterSeqAndBind.c:
     complete
     .text       start:0x0202a388 end:0x0202a3cc
 
-src/calls/Resource_BindFileToSlot.c:
+src/engine/Resource_BindFileToSlot.c:
     complete
     .text       start:0x0202a3cc end:0x0202a440
 
-src/calls/FreeAllResourceTables.c:
+src/engine/FreeAllResourceTables.c:
     complete
     .text       start:0x0202a440 end:0x0202a4d0
 
-src/calls/ModelInst_Init.c:
+src/engine/ModelInst_Init.c:
     complete
     .text       start:0x0202a4d0 end:0x0202a634
 
-src/calls/RegisterSeqAndInit.c:
+src/engine/RegisterSeqAndInit.c:
     complete
     .text       start:0x0202a634 end:0x0202a66c
 
-src/calls/StoreField74ThenForward.c:
+src/engine/StoreField74ThenForward.c:
     complete
     .text       start:0x0202a66c end:0x0202a684
 
-src/calls/func_0202a684.c:
+src/engine/func_0202a684.c:
     complete
     .text       start:0x0202a684 end:0x0202a6a0
 
-src/calls/RegisterSeqAndInitField74.c:
+src/engine/RegisterSeqAndInitField74.c:
     complete
     .text       start:0x0202a6a0 end:0x0202a6d8
 
-src/auto/SceneNode_Detach.c:
+src/engine/SceneNode_Detach.c:
     complete
     .text       start:0x0202a6d8 end:0x0202a75c
 
-src/calls/Anim_StepCrossFade.c:
+src/engine/Anim_StepCrossFade.c:
     complete
     .text       start:0x0202a75c end:0x0202a7dc
 
-src/calls/ReleaseField74AndCleanup.c:
+src/engine/ReleaseField74AndCleanup.c:
     complete
     .text       start:0x0202a7dc end:0x0202a818
 
-src/calls/Sequence_UpdateTracks.c:
+src/engine/Sequence_UpdateTracks.c:
     complete
     .text       start:0x0202a818 end:0x0202a928
 
-src/auto/BuildSlotMask.c:
+src/engine/BuildSlotMask.c:
     complete
     .text       start:0x0202a928 end:0x0202a984
 
-src/calls/Mtx33_ApplyFixedRotation.c:
+src/engine/Mtx33_ApplyFixedRotation.c:
     complete
     .text       start:0x0202a984 end:0x0202a9d0
 
-src/calls/SceneNode_JointCallback.c:
+src/engine/SceneNode_JointCallback.c:
     complete
     .text       start:0x0202a9d0 end:0x0202aa9c
 
-src/calls/Scene_DrawNode.c:
+src/engine/Scene_DrawNode.c:
     complete
     .text       start:0x0202aa9c end:0x0202accc
 
-src/calls/BindAnimTrack.c:
+src/engine/BindAnimTrack.c:
     complete
     .text       start:0x0202accc end:0x0202ad74
 
-src/calls/Anim_BlendToTrack.c:
+src/engine/Anim_BlendToTrack.c:
     complete
     .text       start:0x0202ad74 end:0x0202aee0
 
-src/calls/Anim_GetFrame.c:
+src/engine/Anim_GetFrame.c:
     complete
     .text       start:0x0202aee0 end:0x0202aef8
 
-src/calls/Anim_GetLengthQ12.c:
+src/engine/Anim_GetLengthQ12.c:
     complete
     .text       start:0x0202aef8 end:0x0202af1c
 
-src/auto/SceneNode_Enable.c:
+src/engine/SceneNode_Enable.c:
     complete
     .text       start:0x0202af1c end:0x0202af2c
 
-src/auto/SceneNode_Disable.c:
+src/engine/SceneNode_Disable.c:
     complete
     .text       start:0x0202af2c end:0x0202af3c
 
-src/calls/SceneNode_AttachToModelJoint.c:
+src/engine/SceneNode_AttachToModelJoint.c:
     complete
     .text       start:0x0202af3c end:0x0202afc4
 
-src/auto/SceneNode_SetFlag40.c:
+src/engine/SceneNode_SetFlag40.c:
     complete
     .text       start:0x0202afc4 end:0x0202afdc
 
-src/auto/Widget_SetTagWord.c:
+src/engine/Widget_SetTagWord.c:
     complete
     .text       start:0x0202afdc end:0x0202afe8
 
-src/calls/func_0202afe8.c:
+src/engine/func_0202afe8.c:
     complete
     .text       start:0x0202afe8 end:0x0202aff4
 
-src/calls/ModelGroup_Open.c:
+src/engine/ModelGroup_Open.c:
     complete
     .text       start:0x0202aff4 end:0x0202b064
 
-src/calls/SubResourceTable_Free.c:
+src/engine/SubResourceTable_Free.c:
     complete
     .text       start:0x0202b064 end:0x0202b0a4
 
-src/calls/CollModel_FindEntry.c:
+src/engine/CollModel_FindEntry.c:
     complete
     .text       start:0x0202b0a4 end:0x0202b0b8
 
-src/calls/Collision_ProbeGround.c:
+src/engine/Collision_ProbeGround.c:
     complete
     .text       start:0x0202b0b8 end:0x0202b150
 
-src/calls/CollModel_GetEntryField14.c:
+src/engine/CollModel_GetEntryField14.c:
     complete
     .text       start:0x0202b150 end:0x0202b160
 
-src/auto/Obj_GetSub2c.c:
+src/engine/Obj_GetSub2c.c:
     complete
     .text       start:0x0202b160 end:0x0202b168
 
-src/auto/Obj_ResetSize30.c:
+src/engine/Obj_ResetSize30.c:
     complete
     .text       start:0x0202b168 end:0x0202b178
 
-src/calls/ClearFlag20InitChildAndSyncTransform.c:
+src/engine/ClearFlag20InitChildAndSyncTransform.c:
     complete
     .text       start:0x0202b178 end:0x0202b1c0
 
-src/calls/Render_ReleaseItemOnce.c:
+src/engine/Render_ReleaseItemOnce.c:
     complete
     .text       start:0x0202b1c0 end:0x0202b1ec
 
-src/calls/ClearFlag20InitChildAndSyncTransform2.c:
+src/engine/ClearFlag20InitChildAndSyncTransform2.c:
     complete
     .text       start:0x0202b1ec end:0x0202b234
 
-src/calls/Actor_ApplyMessage.c:
+src/engine/Actor_ApplyMessage.c:
     complete
     .text       start:0x0202b234 end:0x0202b330
 
-src/calls/ModelObj_Place.c:
+src/engine/ModelObj_Place.c:
     complete
     .text       start:0x0202b330 end:0x0202b3b0
 
-src/calls/ClearFlag8HandleIfNot10.c:
+src/engine/ClearFlag8HandleIfNot10.c:
     complete
     .text       start:0x0202b3b0 end:0x0202b3f0
 
-src/calls/DetachThenApplyNode.c:
+src/engine/DetachThenApplyNode.c:
     complete
     .text       start:0x0202b3f0 end:0x0202b450
 
-src/calls/Actor_SetVecAndSyncChild.c:
+src/engine/Actor_SetVecAndSyncChild.c:
     complete
     .text       start:0x0202b450 end:0x0202b480
 
-src/calls/RenderList_PushEarly.c:
+src/engine/RenderList_PushEarly.c:
     complete
     .text       start:0x0202b480 end:0x0202b4b8
 
-src/calls/EntityMgr_SpliceIntoListA.c:
+src/engine/EntityMgr_SpliceIntoListA.c:
     complete
     .text       start:0x0202b4b8 end:0x0202b540
 
-src/calls/RenderList_PushMain.c:
+src/engine/RenderList_PushMain.c:
     complete
     .text       start:0x0202b540 end:0x0202b570
 
-src/calls/EntityMgr_SpliceIntoListB.c:
+src/engine/EntityMgr_SpliceIntoListB.c:
     complete
     .text       start:0x0202b570 end:0x0202b5f8
 
-src/calls/func_0202b5f8.c:
+src/engine/func_0202b5f8.c:
     complete
     .text       start:0x0202b5f8 end:0x0202b628
 
-src/calls/EntityMgr_UnlinkFromListA.c:
+src/engine/EntityMgr_UnlinkFromListA.c:
     complete
     .text       start:0x0202b628 end:0x0202b684
 
-src/calls/EntityMgr_UnlinkFromListB.c:
+src/engine/EntityMgr_UnlinkFromListB.c:
     complete
     .text       start:0x0202b684 end:0x0202b6e0
 
-src/calls/EntityMgr_UnlinkFromListC.c:
+src/engine/EntityMgr_UnlinkFromListC.c:
     complete
     .text       start:0x0202b6e0 end:0x0202b73c
 
-src/calls/EntityManager_ResetSingleton.c:
+src/engine/EntityManager_ResetSingleton.c:
     complete
     .text       start:0x0202b73c end:0x0202b788
 
-src/calls/EntityManager_ReleaseViews.c:
+src/engine/EntityManager_ReleaseViews.c:
     complete
     .text       start:0x0202b788 end:0x0202b80c
 
-src/calls/StoreToGlobalDblPtr.c:
+src/engine/StoreToGlobalDblPtr.c:
     complete
     .text       start:0x0202b80c end:0x0202b820
 
-src/calls/Entity_LoadAndAttach.c:
+src/engine/Entity_LoadAndAttach.c:
     complete
     .text       start:0x0202b820 end:0x0202b850
 
-src/calls/Entity_ForwardToSlot.c:
+src/engine/Entity_ForwardToSlot.c:
     complete
     .text       start:0x0202b850 end:0x0202b87c
 
-src/calls/Actor_ArmWithMessage.c:
+src/engine/Actor_ArmWithMessage.c:
     complete
     .text       start:0x0202b87c end:0x0202b914
 
-src/calls/TailForwardTrackEntry.c:
+src/engine/TailForwardTrackEntry.c:
     complete
     .text       start:0x0202b914 end:0x0202b930
 
-src/calls/Entity_Register.c:
+src/engine/Entity_Register.c:
     complete
     .text       start:0x0202b930 end:0x0202b984
 
-src/calls/TailForwardTrackEntry_2.c:
+src/engine/TailForwardTrackEntry_2.c:
     complete
     .text       start:0x0202b984 end:0x0202b9a0
 
-src/calls/Actor_StartMotion.c:
+src/engine/Actor_StartMotion.c:
     complete
     .text       start:0x0202b9a0 end:0x0202b9f4
 
@@ -6048,31 +6048,31 @@ libs/nitro/snd/calls/SNDi_ProcessEntry.c:
     complete
     .text       start:0x0202b9f4 end:0x0202ba18
 
-src/calls/Render_ReleaseNodeItem.c:
+src/engine/Render_ReleaseNodeItem.c:
     complete
     .text       start:0x0202ba18 end:0x0202ba44
 
-src/calls/func_0202ba44.c:
+src/engine/func_0202ba44.c:
     complete
     .text       start:0x0202ba44 end:0x0202ba68
 
-src/calls/func_0202ba68.c:
+src/engine/func_0202ba68.c:
     complete
     .text       start:0x0202ba68 end:0x0202ba78
 
-src/calls/Entity_SubmitRenderNode.c:
+src/engine/Entity_SubmitRenderNode.c:
     complete
     .text       start:0x0202ba78 end:0x0202ba9c
 
-src/calls/Render_SubmitNode.c:
+src/engine/Render_SubmitNode.c:
     complete
     .text       start:0x0202ba9c end:0x0202bb7c
 
-src/calls/EntityMgr_LinkChild.c:
+src/engine/EntityMgr_LinkChild.c:
     complete
     .text       start:0x0202bb7c end:0x0202bba4
 
-src/calls/LinkChildNode.c:
+src/engine/LinkChildNode.c:
     complete
     .text       start:0x0202bba4 end:0x0202bc0c
 
@@ -6080,791 +6080,791 @@ libs/nitro/snd/calls/SNDi_ProcessEntryAlt.c:
     complete
     .text       start:0x0202bc0c end:0x0202bc30
 
-src/calls/ReleaseNodeResources.c:
+src/engine/ReleaseNodeResources.c:
     complete
     .text       start:0x0202bc30 end:0x0202bc90
 
-src/calls/Render_DrawViewLists.c:
+src/engine/Render_DrawViewLists.c:
     complete
     .text       start:0x0202bc90 end:0x0202bda4
 
-src/calls/Render_ApplyFactorToViews.c:
+src/engine/Render_ApplyFactorToViews.c:
     complete
     .text       start:0x0202bda4 end:0x0202beb8
 
-src/calls/Entity_SetVisible.c:
+src/engine/Entity_SetVisible.c:
     complete
     .text       start:0x0202beb8 end:0x0202bedc
 
-src/auto/Obj_SetFlagBit3.c:
+src/engine/Obj_SetFlagBit3.c:
     complete
     .text       start:0x0202bedc end:0x0202bef4
 
-src/calls/EntityMgr_SetTransition.c:
+src/engine/EntityMgr_SetTransition.c:
     complete
     .text       start:0x0202bef4 end:0x0202bf18
 
-src/calls/Obj_SetTransition.c:
+src/engine/Obj_SetTransition.c:
     complete
     .text       start:0x0202bf18 end:0x0202bf84
 
-src/calls/LoadArrayU8At0ce.c:
+src/engine/LoadArrayU8At0ce.c:
     complete
     .text       start:0x0202bf84 end:0x0202bfa0
 
-src/calls/GetTrackEntryBase.c:
+src/engine/GetTrackEntryBase.c:
     complete
     .text       start:0x0202bfa0 end:0x0202bfb8
 
-src/calls/func_0202bfb8.c:
+src/engine/func_0202bfb8.c:
     complete
     .text       start:0x0202bfb8 end:0x0202bfcc
 
-src/calls/ArrayEntryPtrD0.c:
+src/engine/ArrayEntryPtrD0.c:
     complete
     .text       start:0x0202bfcc end:0x0202bfe8
 
-src/calls/SymbolGroup_FindName.c:
+src/engine/SymbolGroup_FindName.c:
     complete
     .text       start:0x0202bfe8 end:0x0202c06c
 
-src/calls/EntityMgr_AllocRecords.c:
+src/engine/EntityMgr_AllocRecords.c:
     complete
     .text       start:0x0202c06c end:0x0202c0a4
 
-src/calls/EntityMgr_GetRecord.c:
+src/engine/EntityMgr_GetRecord.c:
     complete
     .text       start:0x0202c0a4 end:0x0202c0dc
 
-src/calls/StoreValueInNamedEntry.c:
+src/engine/StoreValueInNamedEntry.c:
     complete
     .text       start:0x0202c0dc end:0x0202c13c
 
-src/calls/EntityMgr_AttachTrackData.c:
+src/engine/EntityMgr_AttachTrackData.c:
     complete
     .text       start:0x0202c13c end:0x0202c1d8
 
-src/calls/StoreToGlobalIndexedIfSet.c:
+src/engine/StoreToGlobalIndexedIfSet.c:
     complete
     .text       start:0x0202c1d8 end:0x0202c208
 
-src/calls/func_0202c208.c:
+src/engine/func_0202c208.c:
     complete
     .text       start:0x0202c208 end:0x0202c228
 
-src/calls/func_0202c228.c:
+src/engine/func_0202c228.c:
     complete
     .text       start:0x0202c228 end:0x0202c248
 
-src/calls/func_0202c248.c:
+src/engine/func_0202c248.c:
     complete
     .text       start:0x0202c248 end:0x0202c268
 
-src/calls/EntityMgr_RunRayCast.c:
+src/engine/EntityMgr_RunRayCast.c:
     complete
     .text       start:0x0202c268 end:0x0202c2ac
 
-src/calls/EntityMgr_RunSphereCast.c:
+src/engine/EntityMgr_RunSphereCast.c:
     complete
     .text       start:0x0202c2ac end:0x0202c2f8
 
-src/calls/EntityMgr_RunCastSimple.c:
+src/engine/EntityMgr_RunCastSimple.c:
     complete
     .text       start:0x0202c2f8 end:0x0202c33c
 
-src/calls/EntityMgr_RunSphereCastSimple.c:
+src/engine/EntityMgr_RunSphereCastSimple.c:
     complete
     .text       start:0x0202c33c end:0x0202c37c
 
-src/calls/Actor_GetRecord.c:
+src/engine/Actor_GetRecord.c:
     complete
     .text       start:0x0202c37c end:0x0202c3c4
 
-src/calls/EntityMgr_FindCollEntry.c:
+src/engine/EntityMgr_FindCollEntry.c:
     complete
     .text       start:0x0202c3c4 end:0x0202c3e4
 
-src/calls/EntityMgr_ProbeGround.c:
+src/engine/EntityMgr_ProbeGround.c:
     complete
     .text       start:0x0202c3e4 end:0x0202c404
 
-src/calls/EntityMgr_GetCollEntryField14.c:
+src/engine/EntityMgr_GetCollEntryField14.c:
     complete
     .text       start:0x0202c404 end:0x0202c424
 
-src/calls/LoadArrayU8At0cc.c:
+src/engine/LoadArrayU8At0cc.c:
     complete
     .text       start:0x0202c424 end:0x0202c440
 
-src/calls/EntityMgr_PushVramState.c:
+src/engine/EntityMgr_PushVramState.c:
     complete
     .text       start:0x0202c440 end:0x0202c4b0
 
-src/calls/EntityMgr_PopVramState.c:
+src/engine/EntityMgr_PopVramState.c:
     complete
     .text       start:0x0202c4b0 end:0x0202c57c
 
-src/calls/func_0202c57c.c:
+src/engine/func_0202c57c.c:
     complete
     .text       start:0x0202c57c end:0x0202c594
 
-src/calls/Obj_MarkIfSubObjectReady.c:
+src/engine/Obj_MarkIfSubObjectReady.c:
     complete
     .text       start:0x0202c594 end:0x0202c5b8
 
-src/calls/Entity_Activate.c:
+src/engine/Entity_Activate.c:
     complete
     .text       start:0x0202c5b8 end:0x0202c5e4
 
-src/calls/Entity_Deactivate.c:
+src/engine/Entity_Deactivate.c:
     complete
     .text       start:0x0202c5e4 end:0x0202c604
 
-src/calls/func_0202c604.c:
+src/engine/func_0202c604.c:
     complete
     .text       start:0x0202c604 end:0x0202c614
 
-src/calls/func_0202c614.c:
+src/engine/func_0202c614.c:
     complete
     .text       start:0x0202c614 end:0x0202c624
 
-src/calls/Entity_Tick.c:
+src/engine/Entity_Tick.c:
     complete
     .text       start:0x0202c624 end:0x0202c68c
 
-src/calls/StoreArrayInt244.c:
+src/engine/StoreArrayInt244.c:
     complete
     .text       start:0x0202c68c end:0x0202c6a8
 
-src/calls/LoadArrayInt244.c:
+src/engine/LoadArrayInt244.c:
     complete
     .text       start:0x0202c6a8 end:0x0202c6c4
 
-src/calls/Actor_ResolveMove.c:
+src/engine/Actor_ResolveMove.c:
     complete
     .text       start:0x0202c6c4 end:0x0202cf64
 
-src/calls/Mover_ResolveFloor.c:
+src/engine/Mover_ResolveFloor.c:
     complete
     .text       start:0x0202cf64 end:0x0202d660
 
-src/calls/Actor_ResolveGround.c:
+src/engine/Actor_ResolveGround.c:
     complete
     .text       start:0x0202d660 end:0x0202d968
 
-src/calls/Actor_InitEntityLink.c:
+src/engine/Actor_InitEntityLink.c:
     complete
     .text       start:0x0202d968 end:0x0202da08
 
-src/calls/Mover_Step.c:
+src/engine/Mover_Step.c:
     complete
     .text       start:0x0202da08 end:0x0202de3c
 
-src/calls/Mover_StepActor.c:
+src/engine/Mover_StepActor.c:
     complete
     .text       start:0x0202de3c end:0x0202de74
 
-src/calls/ModelFile_LoadFirst.c:
+src/engine/ModelFile_LoadFirst.c:
     complete
     .text       start:0x0202de74 end:0x0202ded8
 
-src/calls/DeferredDraw_Release.c:
+src/engine/DeferredDraw_Release.c:
     complete
     .text       start:0x0202ded8 end:0x0202df00
 
-src/calls/EventRecord_Init.c:
+src/engine/EventRecord_Init.c:
     complete
     .text       start:0x0202df00 end:0x0202df30
 
-src/auto/ConstReturn1.c:
+src/engine/ConstReturn1.c:
     complete
     .text       start:0x0202df30 end:0x0202df34
 
-src/calls/ShadowVolume_Draw.c:
+src/engine/ShadowVolume_Draw.c:
     complete
     .text       start:0x0202df34 end:0x0202e084
 
-src/calls/CamAnim_ResetProjection.c:
+src/engine/CamAnim_ResetProjection.c:
     complete
     .text       start:0x0202e084 end:0x0202e0ec
 
-src/calls/AnmObj_InitTrackTable.c:
+src/engine/AnmObj_InitTrackTable.c:
     complete
     .text       start:0x0202e0ec end:0x0202e168
 
-src/calls/initObjAndDispatch.c:
+src/engine/initObjAndDispatch.c:
     complete
     .text       start:0x0202e168 end:0x0202e198
 
-src/calls/CamAnim_AllocPlayer.c:
+src/engine/CamAnim_AllocPlayer.c:
     complete
     .text       start:0x0202e198 end:0x0202e1b0
 
-src/calls/CamAnim_FreePlayer.c:
+src/engine/CamAnim_FreePlayer.c:
     complete
     .text       start:0x0202e1b0 end:0x0202e1cc
 
-src/calls/CamAnim_ApplyPosition.c:
+src/engine/CamAnim_ApplyPosition.c:
     complete
     .text       start:0x0202e1cc end:0x0202e2b0
 
-src/calls/CamAnim_ApplyFovy.c:
+src/engine/CamAnim_ApplyFovy.c:
     complete
     .text       start:0x0202e2b0 end:0x0202e358
 
-src/calls/CamAnim_Start.c:
+src/engine/CamAnim_Start.c:
     complete
     .text       start:0x0202e358 end:0x0202e3c4
 
-src/calls/CamAnim_Release.c:
+src/engine/CamAnim_Release.c:
     complete
     .text       start:0x0202e3c4 end:0x0202e3f4
 
-src/auto/CamAnim_IsActive.c:
+src/engine/CamAnim_IsActive.c:
     complete
     .text       start:0x0202e3f4 end:0x0202e400
 
-src/auto/AnimStream_Advance.c:
+src/engine/AnimStream_Advance.c:
     complete
     .text       start:0x0202e400 end:0x0202e474
 
-src/calls/RigWork_Update.c:
+src/engine/RigWork_Update.c:
     complete
     .text       start:0x0202e474 end:0x0202e4f4
 
-src/calls/DispatchWithReentrantScratch.c:
+src/engine/DispatchWithReentrantScratch.c:
     complete
     .text       start:0x0202e4f4 end:0x0202e53c
 
-src/calls/CamAnim_EvalDelta.c:
+src/engine/CamAnim_EvalDelta.c:
     complete
     .text       start:0x0202e53c end:0x0202e5c4
 
-src/auto/Obj_GetWordC.c:
+src/engine/Obj_GetWordC.c:
     complete
     .text       start:0x0202e5c4 end:0x0202e5cc
 
-src/auto/Obj_SetIndirectWord.c:
+src/engine/Obj_SetIndirectWord.c:
     complete
     .text       start:0x0202e5cc end:0x0202e5d8
 
-src/auto/Transform_SetBasePos.c:
+src/engine/Transform_SetBasePos.c:
     complete
     .text       start:0x0202e5d8 end:0x0202e5e8
 
-src/calls/CamAnim_SelectAnim.c:
+src/engine/CamAnim_SelectAnim.c:
     complete
     .text       start:0x0202e5e8 end:0x0202e618
 
-src/auto/Obj_SetWord54.c:
+src/engine/Obj_SetWord54.c:
     complete
     .text       start:0x0202e618 end:0x0202e620
 
-src/calls/Gfx_SetupSubScreenCapture.c:
+src/engine/Gfx_SetupSubScreenCapture.c:
     complete
     .text       start:0x0202e620 end:0x0202e760
 
-src/calls/Gfx_SetupBlendCapture.c:
+src/engine/Gfx_SetupBlendCapture.c:
     complete
     .text       start:0x0202e760 end:0x0202e844
 
-src/calls/SubOam_SetupBitmapGrid.c:
+src/engine/SubOam_SetupBitmapGrid.c:
     complete
     .text       start:0x0202e844 end:0x0202e8ec
 
-src/calls/Gfx_ResetDisplayAndVram.c:
+src/engine/Gfx_ResetDisplayAndVram.c:
     complete
     .text       start:0x0202e8ec end:0x0202e944
 
-src/calls/Gfx_SetupSubEngine.c:
+src/engine/Gfx_SetupSubEngine.c:
     complete
     .text       start:0x0202e944 end:0x0202e9b8
 
-src/calls/Gfx_ToggleCaptureMode.c:
+src/engine/Gfx_ToggleCaptureMode.c:
     complete
     .text       start:0x0202e9b8 end:0x0202ea14
 
-src/auto/Obj_SetWord8.c:
+src/engine/Obj_SetWord8.c:
     complete
     .text       start:0x0202ea14 end:0x0202ea1c
 
-src/auto/Obj_SetWord4.c:
+src/engine/Obj_SetWord4.c:
     complete
     .text       start:0x0202ea1c end:0x0202ea24
 
-src/auto/AnmPlayer_SetFrameStep.c:
+src/engine/AnmPlayer_SetFrameStep.c:
     complete
     .text       start:0x0202ea24 end:0x0202ea34
 
-src/auto/Obj_SetFourWords.c:
+src/engine/Obj_SetFourWords.c:
     complete
     .text       start:0x0202ea34 end:0x0202ea48
 
-src/calls/Quat_FromMtx33.c:
+src/engine/Quat_FromMtx33.c:
     complete
     .text       start:0x0202ea48 end:0x0202ec2c
 
-src/calls/Mtx33_FromQuat.c:
+src/engine/Mtx33_FromQuat.c:
     complete
     .text       start:0x0202ec2c end:0x0202ed60
 
-src/calls/Quat_FromTwoVectors.c:
+src/engine/Quat_FromTwoVectors.c:
     complete
     .text       start:0x0202ed60 end:0x0202ef10
 
-src/auto/func_0202ef10.c:
+src/engine/func_0202ef10.c:
     complete
     .text       start:0x0202ef10 end:0x0202ef54
 
-src/calls/Quat_Multiply.c:
+src/engine/Quat_Multiply.c:
     complete
     .text       start:0x0202ef54 end:0x0202f110
 
-src/auto/Vec4_ScaleFx12.c:
+src/engine/Vec4_ScaleFx12.c:
     complete
     .text       start:0x0202f110 end:0x0202f188
 
-src/calls/QuatFromAxisAngle.c:
+src/engine/QuatFromAxisAngle.c:
     complete
     .text       start:0x0202f188 end:0x0202f240
 
-src/calls/Quat_ToAxisAngle.c:
+src/engine/Quat_ToAxisAngle.c:
     complete
     .text       start:0x0202f240 end:0x0202f384
 
-src/calls/Vec3TransformViaTempMtx.c:
+src/engine/Vec3TransformViaTempMtx.c:
     complete
     .text       start:0x0202f384 end:0x0202f3b4
 
-src/auto/Vec4_DotFx12.c:
+src/engine/Vec4_DotFx12.c:
     complete
     .text       start:0x0202f3b4 end:0x0202f430
 
-src/calls/Quat_Length.c:
+src/engine/Quat_Length.c:
     complete
     .text       start:0x0202f430 end:0x0202f4a4
 
-src/calls/Vec4_Normalize.c:
+src/engine/Vec4_Normalize.c:
     complete
     .text       start:0x0202f4a4 end:0x0202f55c
 
-src/calls/Quat_Slerp.c:
+src/engine/Quat_Slerp.c:
     complete
     .text       start:0x0202f55c end:0x0202f7fc
 
-src/calls/func_0202f7fc.c:
+src/engine/func_0202f7fc.c:
     complete
     .text       start:0x0202f7fc end:0x0202f816
 
-src/calls/FontResource_Destroy.c:
+src/engine/FontResource_Destroy.c:
     complete
     .text       start:0x0202f818 end:0x0202f834
 
-src/calls/TileTextRenderer_Init.c:
+src/engine/TileTextRenderer_Init.c:
     complete
     .text       start:0x0202f834 end:0x0202f9ec
 
-src/calls/TileTextRenderer_Destroy.c:
+src/engine/TileTextRenderer_Destroy.c:
     complete
     .text       start:0x0202f9ec end:0x0202f9f8
 
-src/calls/Text_UploadTileBuffer.c:
+src/engine/Text_UploadTileBuffer.c:
     complete
     .text       start:0x0202f9f8 end:0x0202fa20
 
-src/calls/CallVirtSlot1.c:
+src/engine/CallVirtSlot1.c:
     complete
     .text       start:0x0202fa20 end:0x0202fa38
 
-src/calls/Text_DrawDirectional.c:
+src/engine/Text_DrawDirectional.c:
     complete
     .text       start:0x0202fa38 end:0x0202fae8
 
-src/auto/MobiClip_GetStreamStepDelta.c:
+src/engine/MobiClip_GetStreamStepDelta.c:
     complete
     .text       start:0x0202fae8 end:0x0202fafc
 
-src/calls/MobiClip_ResolveGlyphRecord.c:
+src/engine/MobiClip_ResolveGlyphRecord.c:
     complete
     .text       start:0x0202fafc end:0x0202fb58
 
-src/calls/CallVirtSlot0.c:
+src/engine/CallVirtSlot0.c:
     complete
     .text       start:0x0202fb58 end:0x0202fb8c
 
-src/calls/TextWindow_ScrollUp.c:
+src/engine/TextWindow_ScrollUp.c:
     complete
     .text       start:0x0202fb8c end:0x0202fcb8
 
-src/calls/Utf8_ToUcs2.c:
+src/engine/Utf8_ToUcs2.c:
     complete
     .text       start:0x0202fcb8 end:0x0202fd90
 
-src/auto/TextCanvas_ResolveColor.c:
+src/engine/TextCanvas_ResolveColor.c:
     complete
     .text       start:0x0202fd90 end:0x0202fdac
 
-src/calls/TextCanvas_DrawShadowed.c:
+src/engine/TextCanvas_DrawShadowed.c:
     complete
     .text       start:0x0202fdac end:0x0202fec8
 
-src/calls/TileSurface_Init.c:
+src/engine/TileSurface_Init.c:
     complete
     .text       start:0x0202fec8 end:0x0202ff56
 
-src/calls/Resource_BindByName.c:
+src/engine/Resource_BindByName.c:
     complete
     .text       start:0x0202ff58 end:0x0202ff7a
 
-src/calls/FreeFieldAt8.c:
+src/engine/FreeFieldAt8.c:
     complete
     .text       start:0x0202ff7c end:0x0202ff8a
 
-src/calls/TileSurface_InitAndUpload4bpp.c:
+src/engine/TileSurface_InitAndUpload4bpp.c:
     complete
     .text       start:0x0202ff8c end:0x0202ff98
 
-src/calls/TileSurface_InitAndUpload8bpp.c:
+src/engine/TileSurface_InitAndUpload8bpp.c:
     complete
     .text       start:0x0202ff98 end:0x0202ffa4
 
-src/calls/TileSurface_Init4bpp.c:
+src/engine/TileSurface_Init4bpp.c:
     complete
     .text       start:0x0202ffa4 end:0x0202ffb0
 
-src/calls/TileSurface_Init8bpp.c:
+src/engine/TileSurface_Init8bpp.c:
     complete
     .text       start:0x0202ffb0 end:0x0202ffbc
 
-src/calls/FreeAllListNodeSubBuffers.c:
+src/engine/FreeAllListNodeSubBuffers.c:
     complete
     .text       start:0x0202ffbc end:0x0202fff8
 
-src/calls/TileSurface_AddCanvas.c:
+src/engine/TileSurface_AddCanvas.c:
     complete
     .text       start:0x0202fff8 end:0x02030094
 
-src/calls/TileSurface_SetCurrentItem.c:
+src/engine/TileSurface_SetCurrentItem.c:
     complete
     .text       start:0x02030094 end:0x020300f8
 
-src/calls/EnqueueObjGfxCommand.c:
+src/engine/EnqueueObjGfxCommand.c:
     complete
     .text       start:0x020300f8 end:0x0203011c
 
-src/calls/Obj_InvokeInnerVtable8.c:
+src/engine/Obj_InvokeInnerVtable8.c:
     complete
     .text       start:0x0203011c end:0x02030158
 
-src/calls/Obj_InvokeInnerVtable4.c:
+src/engine/Obj_InvokeInnerVtable4.c:
     complete
     .text       start:0x02030158 end:0x02030178
 
-src/auto/InvokeSubObjectMethod.c:
+src/engine/InvokeSubObjectMethod.c:
     complete
     .text       start:0x02030178 end:0x02030194
 
-src/calls/Obj_ForwardInnerPayload.c:
+src/engine/Obj_ForwardInnerPayload.c:
     complete
     .text       start:0x02030194 end:0x020301c8
 
-src/calls/Text_DrawDirectional_2.c:
+src/engine/Text_DrawDirectional_2.c:
     complete
     .text       start:0x020301c8 end:0x02030278
 
-src/calls/Text_DrawWithShadow.c:
+src/engine/Text_DrawWithShadow.c:
     complete
     .text       start:0x02030278 end:0x020302ec
 
-src/calls/Obj_ForwardToSub1c.c:
+src/engine/Obj_ForwardToSub1c.c:
     complete
     .text       start:0x020302ec end:0x0203031c
 
-src/calls/TextCanvas_DrawShadowedAt.c:
+src/engine/TextCanvas_DrawShadowedAt.c:
     complete
     .text       start:0x0203031c end:0x0203034c
 
-src/calls/Draw_ScaledValue.c:
+src/engine/Draw_ScaledValue.c:
     complete
     .text       start:0x0203034c end:0x020303b4
 
-src/auto/Obj_GetWord18.c:
+src/engine/Obj_GetWord18.c:
     complete
     .text       start:0x020303b4 end:0x020303bc
 
-src/calls/func_020303bc.c:
+src/engine/func_020303bc.c:
     complete
     .text       start:0x020303bc end:0x020303d8
 
-src/calls/Game_RunSceneLoop.c:
+src/engine/Game_RunSceneLoop.c:
     complete
     .text       start:0x020303d8 end:0x02030478
 
-src/calls/Session_Init.c:
+src/engine/Session_Init.c:
     complete
     .text       start:0x02030478 end:0x02030550
 
-src/calls/Session_Destroy.c:
+src/engine/Session_Destroy.c:
     complete
     .text       start:0x02030550 end:0x02030570
 
-src/calls/Session_CheckSceneLoop.c:
+src/engine/Session_CheckSceneLoop.c:
     complete
     .text       start:0x02030570 end:0x020305d8
 
-src/calls/EnsureServiceInstance.c:
+src/engine/EnsureServiceInstance.c:
     complete
     .text       start:0x020305d8 end:0x02030610
 
-src/calls/ReleaseServiceInstance.c:
+src/engine/ReleaseServiceInstance.c:
     complete
     .text       start:0x02030610 end:0x02030640
 
-src/calls/Session_Exists.c:
+src/engine/Session_Exists.c:
     complete
     .text       start:0x02030640 end:0x0203065c
 
-src/calls/func_0203065c.c:
+src/engine/func_0203065c.c:
     complete
     .text       start:0x0203065c end:0x02030670
 
-src/calls/Session_IsActive.c:
+src/engine/Session_IsActive.c:
     complete
     .text       start:0x02030670 end:0x02030694
 
-src/calls/Session_IsReady.c:
+src/engine/Session_IsReady.c:
     complete
     .text       start:0x02030694 end:0x020306b4
 
-src/calls/Session_IsSceneInterruptible.c:
+src/engine/Session_IsSceneInterruptible.c:
     complete
     .text       start:0x020306b4 end:0x0203070c
 
-src/calls/Session_PackConnectedPlayerMask.c:
+src/engine/Session_PackConnectedPlayerMask.c:
     complete
     .text       start:0x0203070c end:0x02030788
 
-src/calls/Session_GetLocalPlayerIndex.c:
+src/engine/Session_GetLocalPlayerIndex.c:
     complete
     .text       start:0x02030788 end:0x020307b8
 
-src/calls/GameSession_SetSyncEnabled.c:
+src/engine/GameSession_SetSyncEnabled.c:
     complete
     .text       start:0x020307b8 end:0x020307f0
 
-src/auto/AsyncMessage_FlushHookNoOp.c:
+src/engine/AsyncMessage_FlushHookNoOp.c:
     complete
     .text       start:0x020307f0 end:0x020307f4
 
-src/calls/Session_RandNextScaled.c:
+src/engine/Session_RandNextScaled.c:
     complete
     .text       start:0x020307f4 end:0x0203084c
 
-src/calls/Session_RandNext.c:
+src/engine/Session_RandNext.c:
     complete
     .text       start:0x0203084c end:0x020308a0
 
-src/calls/Session_LayoutPacketSlots.c:
+src/engine/Session_LayoutPacketSlots.c:
     complete
     .text       start:0x020308a0 end:0x02030988
 
-src/calls/Session_Init_2.c:
+src/engine/Session_Init_2.c:
     complete
     .text       start:0x02030988 end:0x020309f0
 
-src/calls/CloseDebugOverlay.c:
+src/engine/CloseDebugOverlay.c:
     complete
     .text       start:0x020309f0 end:0x02030a2c
 
-src/calls/EffectList_StepIfIdle.c:
+src/engine/EffectList_StepIfIdle.c:
     complete
     .text       start:0x02030a2c end:0x02030a4c
 
-src/calls/CmdPacket_Dispatch.c:
+src/engine/CmdPacket_Dispatch.c:
     complete
     .text       start:0x02030a4c end:0x02030b58
 
-src/calls/MsgQueue_RecvDispatch.c:
+src/engine/MsgQueue_RecvDispatch.c:
     complete
     .text       start:0x02030b58 end:0x02030ccc
 
-src/calls/MsgQueue_Init.c:
+src/engine/MsgQueue_Init.c:
     complete
     .text       start:0x02030ccc end:0x02030cf8
 
-src/calls/StoreGlobalPtrArray4At0c.c:
+src/engine/StoreGlobalPtrArray4At0c.c:
     complete
     .text       start:0x02030cf8 end:0x02030d10
 
-src/calls/ClearGlobalArrayInt.c:
+src/engine/ClearGlobalArrayInt.c:
     complete
     .text       start:0x02030d10 end:0x02030d2c
 
-src/calls/dispatchByObjTypeBits.c:
+src/engine/dispatchByObjTypeBits.c:
     complete
     .text       start:0x02030d2c end:0x02030d60
 
-src/calls/EffectList_Step.c:
+src/engine/EffectList_Step.c:
     complete
     .text       start:0x02030d60 end:0x02030de4
 
-src/calls/List_TryInvokeEntry.c:
+src/engine/List_TryInvokeEntry.c:
     complete
     .text       start:0x02030de4 end:0x02030e50
 
-src/calls/LoadGlobalPtrField70.c:
+src/engine/LoadGlobalPtrField70.c:
     complete
     .text       start:0x02030e50 end:0x02030e64
 
-src/calls/func_02030e64.c:
+src/engine/func_02030e64.c:
     complete
     .text       start:0x02030e64 end:0x02030e7c
 
-src/calls/MsgQueue_Init_2.c:
+src/engine/MsgQueue_Init_2.c:
     complete
     .text       start:0x02030e7c end:0x02030f58
 
-src/calls/Session_Shutdown.c:
+src/engine/Session_Shutdown.c:
     complete
     .text       start:0x02030f58 end:0x02030fcc
 
-src/calls/MsgQueue_GetHeap.c:
+src/engine/MsgQueue_GetHeap.c:
     complete
     .text       start:0x02030fcc end:0x02030fdc
 
-src/calls/MsgQueue_Enqueue.c:
+src/engine/MsgQueue_Enqueue.c:
     complete
     .text       start:0x02030fdc end:0x020310e8
 
-src/auto/Table6_ResetAll.c:
+src/engine/Table6_ResetAll.c:
     complete
     .text       start:0x020310e8 end:0x0203112c
 
-src/auto/Session_ShutdownHookNoOp.c:
+src/engine/Session_ShutdownHookNoOp.c:
     complete
     .text       start:0x0203112c end:0x02031130
 
-src/calls/MsgQueue_ResendForPeer.c:
+src/engine/MsgQueue_ResendForPeer.c:
     complete
     .text       start:0x02031130 end:0x02031228
 
-src/calls/ContextEntry_Set.c:
+src/engine/ContextEntry_Set.c:
     complete
     .text       start:0x02031228 end:0x0203123c
 
-src/auto/func_0203123c.c:
+src/engine/func_0203123c.c:
     complete
     .text       start:0x0203123c end:0x0203123e
 
-src/calls/ContextEntry_InitForRootHeap.c:
+src/engine/ContextEntry_InitForRootHeap.c:
     complete
     .text       start:0x02031240 end:0x02031258
 
-src/calls/MsgQueue_SendGate.c:
+src/engine/MsgQueue_SendGate.c:
     complete
     .text       start:0x02031258 end:0x02031384
 
-src/calls/func_02031384.c:
+src/engine/func_02031384.c:
     complete
     .text       start:0x02031384 end:0x02031440
 
-src/calls/MsgQueue_Contains.c:
+src/engine/MsgQueue_Contains.c:
     complete
     .text       start:0x02031440 end:0x020314a4
 
-src/calls/MsgQueue_MarkSlotReceived.c:
+src/engine/MsgQueue_MarkSlotReceived.c:
     complete
     .text       start:0x020314a4 end:0x02031574
 
-src/calls/func_02031574.c:
+src/engine/func_02031574.c:
     complete
     .text       start:0x02031574 end:0x0203158c
 
-src/calls/InitContextEntryOnce.c:
+src/engine/InitContextEntryOnce.c:
     complete
     .text       start:0x0203158c end:0x020315c0
 
-src/auto/Slot4_GetIfOccupied.c:
+src/engine/Slot4_GetIfOccupied.c:
     complete
     .text       start:0x020315c0 end:0x020315f4
 
-src/calls/Session_GetSlotTable.c:
+src/engine/Session_GetSlotTable.c:
     complete
     .text       start:0x020315f4 end:0x02031600
 
-src/calls/func_02031600.c:
+src/engine/func_02031600.c:
     complete
     .text       start:0x02031600 end:0x02031618
 
-src/calls/CopyToSlotTable8.c:
+src/engine/CopyToSlotTable8.c:
     complete
     .text       start:0x02031618 end:0x02031644
 
-src/auto/Oam_GetObjHeight.c:
+src/engine/Oam_GetObjHeight.c:
     complete
     .text       start:0x02031644 end:0x02031730
 
-src/auto/Oam_GetObjWidth.c:
+src/engine/Oam_GetObjWidth.c:
     complete
     .text       start:0x02031730 end:0x02031818
 
-src/calls/DispObj_MirrorOam.c:
+src/engine/DispObj_MirrorOam.c:
     complete
     .text       start:0x02031818 end:0x02031930
 
-src/calls/OamBuffer_Flush.c:
+src/engine/OamBuffer_Flush.c:
     complete
     .text       start:0x02031930 end:0x020319fc
 
-src/auto/TableAppendRecord.c:
+src/engine/TableAppendRecord.c:
     complete
     .text       start:0x020319fc end:0x02031a74
 
-src/auto/DispOamBuffer_Push.c:
+src/engine/DispOamBuffer_Push.c:
     complete
     .text       start:0x02031a74 end:0x02031ac4
 
-src/calls/SlotTable_FindFree.c:
+src/engine/SlotTable_FindFree.c:
     complete
     .text       start:0x02031ac4 end:0x02031af4
 
-src/calls/SlotTable_InitCellAnim.c:
+src/engine/SlotTable_InitCellAnim.c:
     complete
     .text       start:0x02031af4 end:0x02031b2c
 
-src/auto/func_02031b2c.c:
+src/engine/func_02031b2c.c:
     complete
     .text       start:0x02031b2c end:0x02031b50
 
-src/calls/ComputeAlignedEndOffset.c:
+src/engine/ComputeAlignedEndOffset.c:
     complete
     .text       start:0x02031b50 end:0x02031bc8
 
-src/auto/CountBlocksForSpan.c:
+src/engine/CountBlocksForSpan.c:
     complete
     .text       start:0x02031bc8 end:0x02031c30
 
-src/calls/List_Nth.c:
+src/engine/List_Nth.c:
     complete
     .text       start:0x02031c30 end:0x02031c58
 
-src/calls/SpriteRes_Load.c:
+src/engine/SpriteRes_Load.c:
     complete
     .text       start:0x02031c58 end:0x02031d90
 
-src/calls/Obj_LoadResourceNode.c:
+src/engine/Obj_LoadResourceNode.c:
     complete
     .text       start:0x02031d90 end:0x02031df0
 
-src/auto/func_02031df0.c:
+src/engine/func_02031df0.c:
     complete
     .text       start:0x02031df0 end:0x02031e30
 
-src/auto/DList_InsertAfter.c:
+src/engine/DList_InsertAfter.c:
     complete
     .text       start:0x02031e30 end:0x02031e50
 
-src/calls/PrioList_Resort.c:
+src/engine/PrioList_Resort.c:
     complete
     .text       start:0x02031e50 end:0x02031ee0
 
@@ -6872,279 +6872,279 @@ libs/nitro/nns/calls/NNS_FndAppendDoubleListObject.c:
     complete
     .text       start:0x02031ee0 end:0x02031f2c
 
-src/calls/DispObj_FinishOams.c:
+src/engine/DispObj_FinishOams.c:
     complete
     .text       start:0x02031f2c end:0x02032078
 
-src/calls/DispObj_WriteOam.c:
+src/engine/DispObj_WriteOam.c:
     complete
     .text       start:0x02032078 end:0x020321c0
 
-src/calls/DispObjList_Update.c:
+src/engine/DispObjList_Update.c:
     complete
     .text       start:0x020321c0 end:0x02032288
 
-src/calls/SlotTable_AddEntry.c:
+src/engine/SlotTable_AddEntry.c:
     complete
     .text       start:0x02032288 end:0x02032334
 
-src/calls/SlotNode_FreeBuffers.c:
+src/engine/SlotNode_FreeBuffers.c:
     complete
     .text       start:0x02032334 end:0x02032362
 
-src/calls/SlotNodeList_FreeAll.c:
+src/engine/SlotNodeList_FreeAll.c:
     complete
     .text       start:0x02032364 end:0x02032388
 
-src/calls/ObjNode_InitFromDesc.c:
+src/engine/ObjNode_InitFromDesc.c:
     complete
     .text       start:0x02032388 end:0x02032428
 
-src/calls/Obj_Release.c:
+src/engine/Obj_Release.c:
     complete
     .text       start:0x02032428 end:0x0203243a
 
-src/calls/func_0203243c.c:
+src/engine/func_0203243c.c:
     complete
     .text       start:0x0203243c end:0x02032444
 
-src/calls/func_02032444.c:
+src/engine/func_02032444.c:
     complete
     .text       start:0x02032444 end:0x02032450
 
-src/calls/Slot_UnlinkIfLinked.c:
+src/engine/Slot_UnlinkIfLinked.c:
     complete
     .text       start:0x02032450 end:0x02032494
 
-src/calls/Slot_UnlinkAll.c:
+src/engine/Slot_UnlinkAll.c:
     complete
     .text       start:0x02032494 end:0x020324aa
 
-src/calls/Obj_CommitAlphaBlend.c:
+src/engine/Obj_CommitAlphaBlend.c:
     complete
     .text       start:0x020324ac end:0x0203253c
 
-src/calls/Obj_CommitAllSlots.c:
+src/engine/Obj_CommitAllSlots.c:
     complete
     .text       start:0x0203253c end:0x0203255c
 
-src/calls/func_0203255c.c:
+src/engine/func_0203255c.c:
     complete
     .text       start:0x0203255c end:0x0203256c
 
-src/calls/func_0203256c.c:
+src/engine/func_0203256c.c:
     complete
     .text       start:0x0203256c end:0x0203257c
 
-src/auto/Slot_SetPosition.c:
+src/engine/Slot_SetPosition.c:
     complete
     .text       start:0x0203257c end:0x020325a0
 
-src/auto/Slot_GetPositionPtr.c:
+src/engine/Slot_GetPositionPtr.c:
     complete
     .text       start:0x020325a0 end:0x020325b8
 
-src/calls/SlotTable_SetEntryVelocity.c:
+src/engine/SlotTable_SetEntryVelocity.c:
     complete
     .text       start:0x020325b8 end:0x020325ec
 
-src/calls/Slot_ForwardToEntry.c:
+src/engine/Slot_ForwardToEntry.c:
     complete
     .text       start:0x020325ec end:0x02032610
 
-src/calls/SlotTable_GetEntryFrame.c:
+src/engine/SlotTable_GetEntryFrame.c:
     complete
     .text       start:0x02032610 end:0x02032634
 
-src/calls/SetSubitemValueFromIndex.c:
+src/engine/SetSubitemValueFromIndex.c:
     complete
     .text       start:0x02032634 end:0x02032680
 
-src/calls/SlotTable_SetEntryStyle.c:
+src/engine/SlotTable_SetEntryStyle.c:
     complete
     .text       start:0x02032680 end:0x020326a8
 
-src/auto/Slot_SetFlagBit1.c:
+src/engine/Slot_SetFlagBit1.c:
     complete
     .text       start:0x020326a8 end:0x020326cc
 
-src/auto/Slot_ClearFlagBit1.c:
+src/engine/Slot_ClearFlagBit1.c:
     complete
     .text       start:0x020326cc end:0x020326f0
 
-src/auto/SlotTable_SetEntryPair.c:
+src/engine/SlotTable_SetEntryPair.c:
     complete
     .text       start:0x020326f0 end:0x02032710
 
-src/auto/Slot_SetVisible.c:
+src/engine/Slot_SetVisible.c:
     complete
     .text       start:0x02032710 end:0x02032748
 
-src/auto/Slot_IsVisible.c:
+src/engine/Slot_IsVisible.c:
     complete
     .text       start:0x02032748 end:0x02032760
 
-src/auto/SlotTable_SetEntryFlag.c:
+src/engine/SlotTable_SetEntryFlag.c:
     complete
     .text       start:0x02032760 end:0x02032798
 
-src/calls/SlotTable_SetBlendAlpha.c:
+src/engine/SlotTable_SetBlendAlpha.c:
     complete
     .text       start:0x02032798 end:0x020327e0
 
-src/auto/ClampToRange0to16At0x4628.c:
+src/engine/ClampToRange0to16At0x4628.c:
     complete
     .text       start:0x020327e0 end:0x02032800
 
-src/auto/SlotTable_SetEntryPriority.c:
+src/engine/SlotTable_SetEntryPriority.c:
     complete
     .text       start:0x02032800 end:0x0203281c
 
-src/auto/Slot_SetMode2Bit.c:
+src/engine/Slot_SetMode2Bit.c:
     complete
     .text       start:0x0203281c end:0x02032838
 
-src/auto/SlotTable_SetMode.c:
+src/engine/SlotTable_SetMode.c:
     complete
     .text       start:0x02032838 end:0x02032844
 
-src/calls/ClearGlobalFields80to84.c:
+src/engine/ClearGlobalFields80to84.c:
     complete
     .text       start:0x02032844 end:0x02032870
 
-src/calls/SoundMgr_ExpireRequests.c:
+src/engine/SoundMgr_ExpireRequests.c:
     complete
     .text       start:0x02032870 end:0x02032928
 
-src/calls/RecentRing_Record.c:
+src/engine/RecentRing_Record.c:
     complete
     .text       start:0x02032928 end:0x020329e8
 
-src/calls/ScriptPool_AllocSlot.c:
+src/engine/ScriptPool_AllocSlot.c:
     complete
     .text       start:0x020329e8 end:0x02032a7c
 
-src/calls/ScriptPool_FreeSlot.c:
+src/engine/ScriptPool_FreeSlot.c:
     complete
     .text       start:0x02032a7c end:0x02032af0
 
-src/calls/Sound_UpdateSpatial.c:
+src/engine/Sound_UpdateSpatial.c:
     complete
     .text       start:0x02032af0 end:0x02032be8
 
-src/calls/ScriptQueue_Push.c:
+src/engine/ScriptQueue_Push.c:
     complete
     .text       start:0x02032be8 end:0x02032c40
 
-src/calls/SoundMgr_PopQueued.c:
+src/engine/SoundMgr_PopQueued.c:
     complete
     .text       start:0x02032c40 end:0x02032cbc
 
-src/auto/SoundMgr_PeekQueued.c:
+src/engine/SoundMgr_PeekQueued.c:
     complete
     .text       start:0x02032cbc end:0x02032d10
 
-src/calls/StoreU16FieldAndRefresh.c:
+src/engine/StoreU16FieldAndRefresh.c:
     complete
     .text       start:0x02032d10 end:0x02032d6c
 
-src/calls/SoundMgr_StopBgm.c:
+src/engine/SoundMgr_StopBgm.c:
     complete
     .text       start:0x02032d6c end:0x02032db8
 
-src/calls/SoundCtx_Init.c:
+src/engine/SoundCtx_Init.c:
     complete
     .text       start:0x02032db8 end:0x02032f0c
 
-src/calls/Res_TearDownBlock.c:
+src/engine/Res_TearDownBlock.c:
     complete
     .text       start:0x02032f0c end:0x02032f5c
 
-src/calls/SoundMgr_Update.c:
+src/engine/SoundMgr_Update.c:
     complete
     .text       start:0x02032f5c end:0x020333c8
 
-src/calls/SoundSys_Start.c:
+src/engine/SoundSys_Start.c:
     complete
     .text       start:0x020333c8 end:0x02033500
 
-src/calls/FSi_BindCardTransfer.c:
+src/engine/FSi_BindCardTransfer.c:
     complete
     .text       start:0x02033500 end:0x0203355c
 
-src/calls/Res_RequestIdPair.c:
+src/engine/Res_RequestIdPair.c:
     complete
     .text       start:0x0203355c end:0x0203358c
 
-src/calls/SoundMgr_WaitLoaderIfState1.c:
+src/engine/SoundMgr_WaitLoaderIfState1.c:
     complete
     .text       start:0x0203358c end:0x020335a4
 
-src/calls/SoundMgr_IsState1.c:
+src/engine/SoundMgr_IsState1.c:
     complete
     .text       start:0x020335a4 end:0x020335c8
 
-src/calls/func_020335c8.c:
+src/engine/func_020335c8.c:
     complete
     .text       start:0x020335c8 end:0x020335ec
 
-src/calls/SetSelectionIfChanged.c:
+src/engine/SetSelectionIfChanged.c:
     complete
     .text       start:0x020335ec end:0x02033660
 
-src/calls/SoundMgr_QueueKind1.c:
+src/engine/SoundMgr_QueueKind1.c:
     complete
     .text       start:0x02033660 end:0x020336a4
 
-src/calls/RequestQueue_SetOrPushKind3.c:
+src/engine/RequestQueue_SetOrPushKind3.c:
     complete
     .text       start:0x020336a4 end:0x020336e8
 
-src/calls/SoundMgr_QueueRequest.c:
+src/engine/SoundMgr_QueueRequest.c:
     complete
     .text       start:0x020336e8 end:0x02033758
 
-src/calls/func_02033758.c:
+src/engine/func_02033758.c:
     complete
     .text       start:0x02033758 end:0x02033770
 
-src/calls/func_02033770.c:
+src/engine/func_02033770.c:
     complete
     .text       start:0x02033770 end:0x02033788
 
-src/calls/SoundBank_Acquire.c:
+src/engine/SoundBank_Acquire.c:
     complete
     .text       start:0x02033788 end:0x020339b0
 
-src/calls/SoundBank_Release.c:
+src/engine/SoundBank_Release.c:
     complete
     .text       start:0x020339b0 end:0x02033b24
 
-src/calls/PlaySoundChecked.c:
+src/engine/PlaySoundChecked.c:
     complete
     .text       start:0x02033b24 end:0x02033b78
 
-src/calls/PlaySound.c:
+src/engine/PlaySound.c:
     complete
     .text       start:0x02033b78 end:0x02033bb4
 
-src/calls/ForwardToHandlerOrCurrentObject.c:
+src/engine/ForwardToHandlerOrCurrentObject.c:
     complete
     .text       start:0x02033bb4 end:0x02033bd4
 
-src/calls/SoundMgr_StopAllSePlayers.c:
+src/engine/SoundMgr_StopAllSePlayers.c:
     complete
     .text       start:0x02033bd4 end:0x02033bfc
 
-src/calls/dispatchToHandlerAtOffset.c:
+src/engine/dispatchToHandlerAtOffset.c:
     complete
     .text       start:0x02033bfc end:0x02033c24
 
-src/calls/InvokeSubStructAndStampByte.c:
+src/engine/InvokeSubStructAndStampByte.c:
     complete
     .text       start:0x02033c24 end:0x02033c64
 
-src/calls/SoundMgr_PauseBgm.c:
+src/engine/SoundMgr_PauseBgm.c:
     complete
     .text       start:0x02033c64 end:0x02033ca0
 
@@ -7152,699 +7152,699 @@ libs/nitro/snd/calls/SNDi_BroadcastChannelOp.c:
     complete
     .text       start:0x02033ca0 end:0x02033cc8
 
-src/calls/IsSubStructValidAndReady.c:
+src/engine/IsSubStructValidAndReady.c:
     complete
     .text       start:0x02033cc8 end:0x02033d0c
 
-src/calls/Slot_Spawn.c:
+src/engine/Slot_Spawn.c:
     complete
     .text       start:0x02033d0c end:0x02033e00
 
-src/auto/Handle_WritePayloadIfLive.c:
+src/engine/Handle_WritePayloadIfLive.c:
     complete
     .text       start:0x02033e00 end:0x02033e48
 
-src/calls/SoundSeqHandle_Stop.c:
+src/engine/SoundSeqHandle_Stop.c:
     complete
     .text       start:0x02033e48 end:0x02033ea0
 
-src/auto/SoundSeqHandle_IsActive.c:
+src/engine/SoundSeqHandle_IsActive.c:
     complete
     .text       start:0x02033ea0 end:0x02033ef8
 
-src/calls/SoundMgr_SetListener.c:
+src/engine/SoundMgr_SetListener.c:
     complete
     .text       start:0x02033ef8 end:0x02033f50
 
-src/auto/Req_SetPendingFields.c:
+src/engine/Req_SetPendingFields.c:
     complete
     .text       start:0x02033f50 end:0x02033f88
 
-src/calls/SoundMgr_PrepareStream.c:
+src/engine/SoundMgr_PrepareStream.c:
     complete
     .text       start:0x02033f88 end:0x02033fb4
 
-src/calls/StampByteAndInvokeSubStructAt.c:
+src/engine/StampByteAndInvokeSubStructAt.c:
     complete
     .text       start:0x02033fb4 end:0x02033fec
 
-src/calls/Table_TailCallWithEntry.c:
+src/engine/Table_TailCallWithEntry.c:
     complete
     .text       start:0x02033fec end:0x02034014
 
-src/calls/SoundStrm_HasPlaybackPos.c:
+src/engine/SoundStrm_HasPlaybackPos.c:
     complete
     .text       start:0x02034014 end:0x02034048
 
-src/calls/SoundMgr_GetStreamNextPos.c:
+src/engine/SoundMgr_GetStreamNextPos.c:
     complete
     .text       start:0x02034048 end:0x0203409c
 
-src/calls/SoundMgr_StartStream.c:
+src/engine/SoundMgr_StartStream.c:
     complete
     .text       start:0x0203409c end:0x020340d0
 
-src/calls/SoundMgr_SetListenersEnabled.c:
+src/engine/SoundMgr_SetListenersEnabled.c:
     complete
     .text       start:0x020340d0 end:0x02034138
 
-src/calls/func_02034138.c:
+src/engine/func_02034138.c:
     complete
     .text       start:0x02034138 end:0x02034150
 
-src/calls/MsgDb_LoadDb.c:
+src/engine/MsgDb_LoadDb.c:
     complete
     .text       start:0x02034150 end:0x02034258
 
-src/calls/ResSlot_Release_2.c:
+src/engine/ResSlot_Release_2.c:
     complete
     .text       start:0x02034258 end:0x020342b4
 
-src/calls/MsgDb_IsLoaded.c:
+src/engine/MsgDb_IsLoaded.c:
     complete
     .text       start:0x020342b4 end:0x020342d4
 
-src/calls/LoadArrayU16Stride14At0c.c:
+src/engine/LoadArrayU16Stride14At0c.c:
     complete
     .text       start:0x020342d4 end:0x020342e8
 
-src/calls/MsgDb_FetchRecord.c:
+src/engine/MsgDb_FetchRecord.c:
     complete
     .text       start:0x020342e8 end:0x020343cc
 
-src/calls/DispatchByNodeKind.c:
+src/engine/DispatchByNodeKind.c:
     complete
     .text       start:0x020343cc end:0x020343ea
 
-src/calls/MsgDb_InitTable.c:
+src/engine/MsgDb_InitTable.c:
     complete
     .text       start:0x020343ec end:0x02034428
 
-src/calls/MsgDb_AllocRecord.c:
+src/engine/MsgDb_AllocRecord.c:
     complete
     .text       start:0x02034428 end:0x0203445a
 
-src/calls/MsgDb_LoadRecord15.c:
+src/engine/MsgDb_LoadRecord15.c:
     complete
     .text       start:0x0203445c end:0x02034660
 
-src/calls/MsgDb_DecodeDb16.c:
+src/engine/MsgDb_DecodeDb16.c:
     complete
     .text       start:0x02034660 end:0x02034730
 
-src/calls/MsgDb_DecodeDb13.c:
+src/engine/MsgDb_DecodeDb13.c:
     complete
     .text       start:0x02034730 end:0x020347ec
 
-src/calls/MsgDb_DecodeDb19.c:
+src/engine/MsgDb_DecodeDb19.c:
     complete
     .text       start:0x020347ec end:0x0203488c
 
-src/calls/MsgDb_DecodeDb1A.c:
+src/engine/MsgDb_DecodeDb1A.c:
     complete
     .text       start:0x0203488c end:0x02034918
 
-src/calls/MsgDb_FetchEntryPair0x1b.c:
+src/engine/MsgDb_FetchEntryPair0x1b.c:
     complete
     .text       start:0x02034918 end:0x0203498c
 
-src/calls/MsgDb_DecodeDb1C.c:
+src/engine/MsgDb_DecodeDb1C.c:
     complete
     .text       start:0x0203498c end:0x020349ec
 
-src/calls/MsgDb_DecodeDb14.c:
+src/engine/MsgDb_DecodeDb14.c:
     complete
     .text       start:0x020349ec end:0x02034ac0
 
-src/calls/MsgDb_DecodeDb1D.c:
+src/engine/MsgDb_DecodeDb1D.c:
     complete
     .text       start:0x02034ac0 end:0x02034b5c
 
-src/calls/MsgDb_DecodeDb1E.c:
+src/engine/MsgDb_DecodeDb1E.c:
     complete
     .text       start:0x02034b5c end:0x02034c04
 
-src/calls/MsgDb_DecodeDb1F.c:
+src/engine/MsgDb_DecodeDb1F.c:
     complete
     .text       start:0x02034c04 end:0x02034ca0
 
-src/calls/MsgDb_DecodeDb20.c:
+src/engine/MsgDb_DecodeDb20.c:
     complete
     .text       start:0x02034ca0 end:0x02034d40
 
-src/calls/MsgDb_BuildEntryRecord.c:
+src/engine/MsgDb_BuildEntryRecord.c:
     complete
     .text       start:0x02034d40 end:0x02034e3c
 
-src/calls/MsgDb_DecodeGenericRecord.c:
+src/engine/MsgDb_DecodeGenericRecord.c:
     complete
     .text       start:0x02034e3c end:0x02034f44
 
-src/calls/P2_ExtractString.c:
+src/engine/P2_ExtractString.c:
     complete
     .text       start:0x02034f44 end:0x02034fc4
 
-src/calls/MsgDb_FetchStringPair.c:
+src/engine/MsgDb_FetchStringPair.c:
     complete
     .text       start:0x02034fc4 end:0x02035028
 
-src/calls/FreeNodeAndChildLists.c:
+src/engine/FreeNodeAndChildLists.c:
     complete
     .text       start:0x02035028 end:0x02035070
 
-src/calls/Record_ReleaseSlot.c:
+src/engine/Record_ReleaseSlot.c:
     complete
     .text       start:0x02035070 end:0x020350ae
 
-src/calls/FreeAndClearIfNonNeg.c:
+src/engine/FreeAndClearIfNonNeg.c:
     complete
     .text       start:0x020350b0 end:0x020350c8
 
-src/calls/Game_ApplyModeFlags.c:
+src/engine/Game_ApplyModeFlags.c:
     complete
     .text       start:0x020350c8 end:0x0203514c
 
-src/calls/SaveSlot_AddItem.c:
+src/engine/SaveSlot_AddItem.c:
     complete
     .text       start:0x0203514c end:0x020351dc
 
-src/calls/Params_BuildIndex.c:
+src/engine/Params_BuildIndex.c:
     complete
     .text       start:0x020351dc end:0x02035278
 
-src/calls/PartyMember_ClearLists.c:
+src/engine/PartyMember_ClearLists.c:
     complete
     .text       start:0x02035278 end:0x020352c0
 
-src/calls/PartyState_Reset.c:
+src/engine/PartyState_Reset.c:
     complete
     .text       start:0x020352c0 end:0x020352cc
 
-src/calls/PartyState_ResetBuffers.c:
+src/engine/PartyState_ResetBuffers.c:
     complete
     .text       start:0x020352cc end:0x02035328
 
-src/calls/PartyMember_Reset.c:
+src/engine/PartyMember_Reset.c:
     complete
     .text       start:0x02035328 end:0x020353e0
 
-src/calls/PartyMember_ResetWithKind.c:
+src/engine/PartyMember_ResetWithKind.c:
     complete
     .text       start:0x020353e0 end:0x02035444
 
-src/calls/PartyMember_RebuildDerived.c:
+src/engine/PartyMember_RebuildDerived.c:
     complete
     .text       start:0x02035444 end:0x02035638
 
-src/calls/PartyMember_RefreshDialogue.c:
+src/engine/PartyMember_RefreshDialogue.c:
     complete
     .text       start:0x02035638 end:0x02035708
 
-src/calls/PartyState_ReleaseNodes.c:
+src/engine/PartyState_ReleaseNodes.c:
     complete
     .text       start:0x02035708 end:0x02035730
 
-src/calls/LevelTable_ReadEntry.c:
+src/engine/LevelTable_ReadEntry.c:
     complete
     .text       start:0x02035730 end:0x02035794
 
-src/calls/StoreBytePairKeepMin.c:
+src/engine/StoreBytePairKeepMin.c:
     complete
     .text       start:0x02035794 end:0x020357c8
 
-src/auto/ClampAndStoreLevelEntry.c:
+src/engine/ClampAndStoreLevelEntry.c:
     complete
     .text       start:0x020357c8 end:0x020357f4
 
-src/calls/Load2DArrayU8.c:
+src/engine/Load2DArrayU8.c:
     complete
     .text       start:0x020357f4 end:0x02035808
 
-src/calls/Store2DArrayU8.c:
+src/engine/Store2DArrayU8.c:
     complete
     .text       start:0x02035808 end:0x0203581c
 
-src/calls/Load2DArrayU8_2.c:
+src/engine/Load2DArrayU8_2.c:
     complete
     .text       start:0x0203581c end:0x02035830
 
-src/calls/ForwardWithFlag1.c:
+src/engine/ForwardWithFlag1.c:
     complete
     .text       start:0x02035830 end:0x0203583c
 
-src/calls/Table_FindKey.c:
+src/engine/Table_FindKey.c:
     complete
     .text       start:0x0203583c end:0x02035874
 
-src/auto/Slot_GetEntryIfBothSet.c:
+src/engine/Slot_GetEntryIfBothSet.c:
     complete
     .text       start:0x02035874 end:0x020358a4
 
-src/calls/GetPlayerSlotTableEntry.c:
+src/engine/GetPlayerSlotTableEntry.c:
     complete
     .text       start:0x020358a4 end:0x020358c0
 
-src/calls/Slot_EvalPackedParamWith.c:
+src/engine/Slot_EvalPackedParamWith.c:
     complete
     .text       start:0x020358c0 end:0x020358f4
 
-src/calls/Slot_EvalPackedParam.c:
+src/engine/Slot_EvalPackedParam.c:
     complete
     .text       start:0x020358f4 end:0x02035924
 
-src/calls/Slot_AllEntriesFilled.c:
+src/engine/Slot_AllEntriesFilled.c:
     complete
     .text       start:0x02035924 end:0x0203595c
 
-src/calls/Slot_CalcRangeCap18.c:
+src/engine/Slot_CalcRangeCap18.c:
     complete
     .text       start:0x0203595c end:0x02035978
 
-src/calls/Slot_GetEntryIfCounted.c:
+src/engine/Slot_GetEntryIfCounted.c:
     complete
     .text       start:0x02035978 end:0x020359b4
 
-src/calls/func_020359b4.c:
+src/engine/func_020359b4.c:
     complete
     .text       start:0x020359b4 end:0x020359f0
 
-src/calls/Slot_ClearMatchingEntry.c:
+src/engine/Slot_ClearMatchingEntry.c:
     complete
     .text       start:0x020359f0 end:0x02035a34
 
-src/calls/func_02035a34.c:
+src/engine/func_02035a34.c:
     complete
     .text       start:0x02035a34 end:0x02035a58
 
-src/calls/PlayRecord_FoldFrame.c:
+src/engine/PlayRecord_FoldFrame.c:
     complete
     .text       start:0x02035a58 end:0x02035c28
 
-src/calls/PartyState_AllocRecord.c:
+src/engine/PartyState_AllocRecord.c:
     complete
     .text       start:0x02035c28 end:0x02035c44
 
-src/calls/func_02035c44.c:
+src/engine/func_02035c44.c:
     complete
     .text       start:0x02035c44 end:0x02035c60
 
-src/calls/Save_StoreSlotTables.c:
+src/engine/Save_StoreSlotTables.c:
     complete
     .text       start:0x02035c60 end:0x02035cac
 
-src/calls/PartyState_CopyEquipTables.c:
+src/engine/PartyState_CopyEquipTables.c:
     complete
     .text       start:0x02035cac end:0x02035d04
 
-src/calls/IsArgEqualGlobalHalf4.c:
+src/engine/IsArgEqualGlobalHalf4.c:
     complete
     .text       start:0x02035d04 end:0x02035d18
 
-src/calls/func_02035d18.c:
+src/engine/func_02035d18.c:
     complete
     .text       start:0x02035d18 end:0x02035d30
 
-src/calls/ClearGlobalShort4.c:
+src/engine/ClearGlobalShort4.c:
     complete
     .text       start:0x02035d30 end:0x02035d3c
 
-src/calls/PartyState_SaveTables.c:
+src/engine/PartyState_SaveTables.c:
     complete
     .text       start:0x02035d3c end:0x02035d78
 
-src/calls/LoadActorOverlay.c:
+src/engine/LoadActorOverlay.c:
     complete
     .text       start:0x02035d78 end:0x02035d90
 
-src/calls/UnloadActorOverlay.c:
+src/engine/UnloadActorOverlay.c:
     complete
     .text       start:0x02035d90 end:0x02035da8
 
-src/calls/Fx_Tween.c:
+src/engine/Fx_Tween.c:
     complete
     .text       start:0x02035da8 end:0x02035f84
 
-src/calls/Tween_Clear.c:
+src/engine/Tween_Clear.c:
     complete
     .text       start:0x02035f84 end:0x02035fb0
 
-src/calls/Tween_Configure.c:
+src/engine/Tween_Configure.c:
     complete
     .text       start:0x02035fb0 end:0x02035ffc
 
-src/calls/Tween_Start.c:
+src/engine/Tween_Start.c:
     complete
     .text       start:0x02035ffc end:0x0203602c
 
-src/calls/Tween_Sample.c:
+src/engine/Tween_Sample.c:
     complete
     .text       start:0x0203602c end:0x02036104
 
-src/calls/Stopwatch_SetHold.c:
+src/engine/Stopwatch_SetHold.c:
     complete
     .text       start:0x02036104 end:0x0203617c
 
-src/calls/KeyRepeat_Update.c:
+src/engine/KeyRepeat_Update.c:
     complete
     .text       start:0x0203617c end:0x02036298
 
-src/calls/Header_InitWithLimits.c:
+src/engine/Header_InitWithLimits.c:
     complete
     .text       start:0x02036298 end:0x020362e6
 
-src/auto/ConstReturn1_2.c:
+src/engine/ConstReturn1_2.c:
     complete
     .text       start:0x020362e8 end:0x020362ec
 
-src/calls/func_020362ec.c:
+src/engine/func_020362ec.c:
     complete
     .text       start:0x020362ec end:0x020362fc
 
-src/auto/Mem_ReadU16.c:
+src/engine/Mem_ReadU16.c:
     complete
     .text       start:0x020362fc end:0x02036304
 
-src/calls/Segment_ClosestPoint.c:
+src/engine/Segment_ClosestPoint.c:
     complete
     .text       start:0x02036304 end:0x02036494
 
-src/calls/Seg_SqrDistToSegment.c:
+src/engine/Seg_SqrDistToSegment.c:
     complete
     .text       start:0x02036494 end:0x02037188
 
-src/calls/OBB_DistSqToPoint.c:
+src/engine/OBB_DistSqToPoint.c:
     complete
     .text       start:0x02037188 end:0x020372cc
 
-src/calls/Disc_DistanceSq.c:
+src/engine/Disc_DistanceSq.c:
     complete
     .text       start:0x020372cc end:0x02037550
 
-src/calls/LineBox_Face.c:
+src/engine/LineBox_Face.c:
     complete
     .text       start:0x02037550 end:0x02038a7c
 
-src/calls/Shape_ProjectDominantAxis.c:
+src/engine/Shape_ProjectDominantAxis.c:
     complete
     .text       start:0x02038a7c end:0x02038c90
 
-src/calls/Particle_SolvePairConstraint.c:
+src/engine/Particle_SolvePairConstraint.c:
     complete
     .text       start:0x02038c90 end:0x02039150
 
-src/calls/ClampAxesToBox.c:
+src/engine/ClampAxesToBox.c:
     complete
     .text       start:0x02039150 end:0x020392ac
 
-src/calls/ClampToLimitsWithPenalty.c:
+src/engine/ClampToLimitsWithPenalty.c:
     complete
     .text       start:0x020392ac end:0x02039428
 
-src/calls/OrientedBox_RayQuery.c:
+src/engine/OrientedBox_RayQuery.c:
     complete
     .text       start:0x02039428 end:0x02039700
 
-src/calls/Capsule_ClosestToBox.c:
+src/engine/Capsule_ClosestToBox.c:
     complete
     .text       start:0x02039700 end:0x02039824
 
-src/auto/SphereToAABB.c:
+src/engine/SphereToAABB.c:
     complete
     .text       start:0x02039824 end:0x02039874
 
-src/calls/Capsule_GetBounds.c:
+src/engine/Capsule_GetBounds.c:
     complete
     .text       start:0x02039874 end:0x02039958
 
-src/calls/OrientedBox_GetBounds.c:
+src/engine/OrientedBox_GetBounds.c:
     complete
     .text       start:0x02039958 end:0x02039ba0
 
-src/calls/OBB_Intersect.c:
+src/engine/OBB_Intersect.c:
     complete
     .text       start:0x02039ba0 end:0x0203ae14
 
-src/calls/Tri_SqrDistToPoint.c:
+src/engine/Tri_SqrDistToPoint.c:
     complete
     .text       start:0x0203ae14 end:0x0203b898
 
-src/calls/CreateSubitemInstance0xB4.c:
+src/engine/CreateSubitemInstance0xB4.c:
     complete
     .text       start:0x0203b898 end:0x0203b8bc
 
-src/calls/ModelObj_Construct.c:
+src/engine/ModelObj_Construct.c:
     complete
     .text       start:0x0203b8bc end:0x0203b968
 
-src/calls/DestroySubObjectsAndCleanup2.c:
+src/engine/DestroySubObjectsAndCleanup2.c:
     complete
     .text       start:0x0203b968 end:0x0203b9ac
 
-src/auto/MainBlob_ResetSlotRows.c:
+src/engine/MainBlob_ResetSlotRows.c:
     complete
     .text       start:0x0203b9ac end:0x0203b9fc
 
-src/calls/SetSubitemState.c:
+src/engine/SetSubitemState.c:
     complete
     .text       start:0x0203b9fc end:0x0203babc
 
-src/calls/AnimObj_BindTrackAtLastFrame.c:
+src/engine/AnimObj_BindTrackAtLastFrame.c:
     complete
     .text       start:0x0203babc end:0x0203bb34
 
-src/calls/Obj_AdvanceGauges.c:
+src/engine/Obj_AdvanceGauges.c:
     complete
     .text       start:0x0203bb34 end:0x0203bc78
 
-src/calls/Obj_RenderModel.c:
+src/engine/Obj_RenderModel.c:
     complete
     .text       start:0x0203bc78 end:0x0203bdfc
 
-src/calls/FindResourceIndexByName.c:
+src/engine/FindResourceIndexByName.c:
     complete
     .text       start:0x0203bdfc end:0x0203be68
 
-src/auto/Obj_GetCellScaledField.c:
+src/engine/Obj_GetCellScaledField.c:
     complete
     .text       start:0x0203be68 end:0x0203be9c
 
-src/calls/callIfTableEntrySet.c:
+src/engine/callIfTableEntrySet.c:
     complete
     .text       start:0x0203be9c end:0x0203bec0
 
-src/calls/queryTableEntry.c:
+src/engine/queryTableEntry.c:
     complete
     .text       start:0x0203bec0 end:0x0203bee8
 
-src/calls/InsertSortedEntryWithKey.c:
+src/engine/InsertSortedEntryWithKey.c:
     complete
     .text       start:0x0203bee8 end:0x0203bf44
 
-src/calls/ModelNode_New.c:
+src/engine/ModelNode_New.c:
     complete
     .text       start:0x0203bf44 end:0x0203bf60
 
-src/calls/ModelNode_Init.c:
+src/engine/ModelNode_Init.c:
     complete
     .text       start:0x0203bf60 end:0x0203bfb4
 
-src/calls/RegisterSubscriberSlot.c:
+src/engine/RegisterSubscriberSlot.c:
     complete
     .text       start:0x0203bfb4 end:0x0203bfe8
 
-src/calls/RemoveChildFromListByPtr.c:
+src/engine/RemoveChildFromListByPtr.c:
     complete
     .text       start:0x0203bfe8 end:0x0203c054
 
-src/calls/ModelNode_Destroy.c:
+src/engine/ModelNode_Destroy.c:
     complete
     .text       start:0x0203c054 end:0x0203c070
 
-src/calls/ModelNode_UpdateTree.c:
+src/engine/ModelNode_UpdateTree.c:
     complete
     .text       start:0x0203c070 end:0x0203c10c
 
-src/calls/ForEachChildDispatch.c:
+src/engine/ForEachChildDispatch.c:
     complete
     .text       start:0x0203c10c end:0x0203c148
 
-src/calls/invokeObjCallbackList.c:
+src/engine/invokeObjCallbackList.c:
     complete
     .text       start:0x0203c148 end:0x0203c17c
 
-src/calls/ProcessListChildren.c:
+src/engine/ProcessListChildren.c:
     complete
     .text       start:0x0203c17c end:0x0203c1b0
 
-src/calls/JointModel_New.c:
+src/engine/JointModel_New.c:
     complete
     .text       start:0x0203c1b0 end:0x0203c1dc
 
-src/calls/JointModel_Construct.c:
+src/engine/JointModel_Construct.c:
     complete
     .text       start:0x0203c1dc end:0x0203c2c4
 
-src/calls/DestroySubObjectsAndCleanup.c:
+src/engine/DestroySubObjectsAndCleanup.c:
     complete
     .text       start:0x0203c2c4 end:0x0203c304
 
-src/calls/InstancedModel_Draw.c:
+src/engine/InstancedModel_Draw.c:
     complete
     .text       start:0x0203c304 end:0x0203c3f8
 
-src/auto/JointModel_DefaultHook7C.c:
+src/engine/JointModel_DefaultHook7C.c:
     complete
     .text       start:0x0203c3f8 end:0x0203c3fc
 
-src/auto/JointModel_DefaultHook80.c:
+src/engine/JointModel_DefaultHook80.c:
     complete
     .text       start:0x0203c3fc end:0x0203c400
 
-src/calls/ObjList_New.c:
+src/engine/ObjList_New.c:
     complete
     .text       start:0x0203c400 end:0x0203c424
 
-src/calls/DestroyListNode.c:
+src/engine/DestroyListNode.c:
     complete
     .text       start:0x0203c424 end:0x0203c468
 
-src/calls/ClearListAndDestroy.c:
+src/engine/ClearListAndDestroy.c:
     complete
     .text       start:0x0203c468 end:0x0203c4a8
 
-src/calls/ObjList_Update.c:
+src/engine/ObjList_Update.c:
     complete
     .text       start:0x0203c4a8 end:0x0203c5c0
 
-src/calls/CreateRegistryEntry.c:
+src/engine/CreateRegistryEntry.c:
     complete
     .text       start:0x0203c5c0 end:0x0203c634
 
-src/auto/SetIndexedSlot.c:
+src/engine/SetIndexedSlot.c:
     complete
     .text       start:0x0203c634 end:0x0203c640
 
-src/auto/Task_MarkFinished.c:
+src/engine/Task_MarkFinished.c:
     complete
     .text       start:0x0203c640 end:0x0203c650
 
-src/calls/TaskList_FinishByTag.c:
+src/engine/TaskList_FinishByTag.c:
     complete
     .text       start:0x0203c650 end:0x0203c6a4
 
-src/calls/FindListEntryByField4.c:
+src/engine/FindListEntryByField4.c:
     complete
     .text       start:0x0203c6a4 end:0x0203c6e0
 
-src/calls/FindListEntryByField1c.c:
+src/engine/FindListEntryByField1c.c:
     complete
     .text       start:0x0203c6e0 end:0x0203c724
 
-src/calls/Node_BaseInit.c:
+src/engine/Node_BaseInit.c:
     complete
     .text       start:0x0203c724 end:0x0203c7ac
 
-src/calls/RefreshObjectCallbacks.c:
+src/engine/RefreshObjectCallbacks.c:
     complete
     .text       start:0x0203c7ac end:0x0203c7e8
 
-src/calls/DestroyInstance.c:
+src/engine/DestroyInstance.c:
     complete
     .text       start:0x0203c7e8 end:0x0203c83c
 
-src/auto/Obj_ReplaceRef.c:
+src/engine/Obj_ReplaceRef.c:
     complete
     .text       start:0x0203c83c end:0x0203c86c
 
-src/auto/DispatchObjectCallbacks.c:
+src/engine/DispatchObjectCallbacks.c:
     complete
     .text       start:0x0203c86c end:0x0203c8b0
 
-src/calls/invokeObjCallbackGuarded.c:
+src/engine/invokeObjCallbackGuarded.c:
     complete
     .text       start:0x0203c8b0 end:0x0203c8e4
 
-src/calls/Node_CallHook80.c:
+src/engine/Node_CallHook80.c:
     complete
     .text       start:0x0203c8e4 end:0x0203c8fc
 
-src/auto/Node_DefaultHook6C.c:
+src/engine/Node_DefaultHook6C.c:
     complete
     .text       start:0x0203c8fc end:0x0203c900
 
-src/auto/Node_BaseOnDestroy.c:
+src/engine/Node_BaseOnDestroy.c:
     complete
     .text       start:0x0203c900 end:0x0203c904
 
-src/calls/Node_ComposeWorldSrt.c:
+src/engine/Node_ComposeWorldSrt.c:
     complete
     .text       start:0x0203c904 end:0x0203c960
 
-src/auto/SrtTransform_SetIdentity.c:
+src/engine/SrtTransform_SetIdentity.c:
     complete
     .text       start:0x0203c960 end:0x0203c9b4
 
-src/calls/Srt_SetRotationAxisAngle.c:
+src/engine/Srt_SetRotationAxisAngle.c:
     complete
     .text       start:0x0203c9b4 end:0x0203c9d0
 
-src/auto/Srt_SetRotationQuat.c:
+src/engine/Srt_SetRotationQuat.c:
     complete
     .text       start:0x0203c9d0 end:0x0203c9ec
 
-src/calls/Node_SetRotationFromMtx.c:
+src/engine/Node_SetRotationFromMtx.c:
     complete
     .text       start:0x0203c9ec end:0x0203ca14
 
-src/auto/Srt_SetTranslationXYZ.c:
+src/engine/Srt_SetTranslationXYZ.c:
     complete
     .text       start:0x0203ca14 end:0x0203ca30
 
-src/auto/Srt_SetTranslation.c:
+src/engine/Srt_SetTranslation.c:
     complete
     .text       start:0x0203ca30 end:0x0203ca50
 
-src/auto/Srt_SetScaleXYZ.c:
+src/engine/Srt_SetScaleXYZ.c:
     complete
     .text       start:0x0203ca50 end:0x0203ca74
 
-src/auto/Srt_SetScaleVec.c:
+src/engine/Srt_SetScaleVec.c:
     complete
     .text       start:0x0203ca74 end:0x0203ca9c
 
-src/auto/Srt_SetScaleUniform.c:
+src/engine/Srt_SetScaleUniform.c:
     complete
     .text       start:0x0203ca9c end:0x0203cac0
 
-src/calls/Srt_Concat.c:
+src/engine/Srt_Concat.c:
     complete
     .text       start:0x0203cac0 end:0x0203cc64
 
-src/calls/Obj_LocalToWorld.c:
+src/engine/Obj_LocalToWorld.c:
     complete
     .text       start:0x0203cc64 end:0x0203cd20
 
-src/calls/Fx_Acos.c:
+src/engine/Fx_Acos.c:
     complete
     .text       start:0x0203cd20 end:0x0203cd7c
 
-src/calls/Mtx33_LookAt.c:
+src/engine/Mtx33_LookAt.c:
     complete
     .text       start:0x0203cd7c end:0x0203cf0c
 
-src/calls/Mtx33_ScaleColumns.c:
+src/engine/Mtx33_ScaleColumns.c:
     complete
     .text       start:0x0203cf0c end:0x0203d040
 
-src/calls/Angle_TurnToward.c:
+src/engine/Angle_TurnToward.c:
     complete
     .text       start:0x0203d040 end:0x0203d15c
 
-src/calls/CallocInstance.c:
+src/engine/CallocInstance.c:
     complete
     .text       start:0x0203d15c end:0x0203d194
 
-src/calls/FreeInstanceMemory.c:
+src/engine/FreeInstanceMemory.c:
     complete
     .text       start:0x0203d194 end:0x0203d1bc
 
@@ -7937,102 +7937,102 @@ libs/nns/snd/auto/sndarc_stream_adpcm_tables.c:
     complete
     .rodata     start:0x02041b04 end:0x02041bc8
 
-src/data/main_exception_index_0203d1bc.c:
+src/engine/data/main_exception_index_0203d1bc.c:
     complete
     .rodata     start:0x0203d1bc end:0x0203d210
 
-src/data/main_hmac_alloc_020418c0.c:
+src/engine/data/main_hmac_alloc_020418c0.c:
     complete
     .rodata     start:0x020418c0 end:0x02041924
 
-src/data/main_overlay_digests_02042ac0.c:
+src/engine/data/main_overlay_digests_02042ac0.c:
     complete
     .data       start:0x02042ac0 end:0x020442a0
 
-src/data/main_party_roster_02042418.c:
+src/engine/data/main_party_roster_02042418.c:
     complete
     .data       start:0x02042418 end:0x02042490
 
-src/data/main_pause_menu_02042730.c:
+src/engine/data/main_pause_menu_02042730.c:
     complete
     .data       start:0x02042730 end:0x020427d4
 
-src/data/main_pointers_0204185c.c:
+src/engine/data/main_pointers_0204185c.c:
     complete
     .rodata     start:0x0204185c end:0x02041880
 
-src/data/main_pointers_02041924.c:
+src/engine/data/main_pointers_02041924.c:
     complete
     .rodata     start:0x02041924 end:0x020419c4
 
-src/data/main_pointers_02041e2c.c:
+src/engine/data/main_pointers_02041e2c.c:
     complete
     .rodata     start:0x02041e2c end:0x02041e6c
 
-src/data/main_pointers_02041eac.c:
+src/engine/data/main_pointers_02041eac.c:
     complete
     .rodata     start:0x02041eac end:0x02041ecc
 
-src/data/main_pointers_02041fd4.c:
+src/engine/data/main_pointers_02041fd4.c:
     complete
     .rodata     start:0x02041fd4 end:0x0204208c
 
-src/data/main_pointers_020423ec.c:
+src/engine/data/main_pointers_020423ec.c:
     complete
     .data       start:0x020423ec end:0x02042418
 
-src/data/main_pointers_02042494.c:
+src/engine/data/main_pointers_02042494.c:
     complete
     .data       start:0x02042494 end:0x020424b4
 
-src/data/main_pointers_02042504.c:
+src/engine/data/main_pointers_02042504.c:
     complete
     .data       start:0x02042504 end:0x0204252c
 
-src/data/main_pointers_020425ec.c:
+src/engine/data/main_pointers_020425ec.c:
     complete
     .data       start:0x020425ec end:0x02042730
 
-src/data/main_pointers_020427d4.c:
+src/engine/data/main_pointers_020427d4.c:
     complete
     .data       start:0x020427d4 end:0x020427f0
 
-src/data/main_pointers_02042910.c:
+src/engine/data/main_pointers_02042910.c:
     complete
     .data       start:0x02042910 end:0x02042958
 
-src/data/main_pointers_02042a70.c:
+src/engine/data/main_pointers_02042a70.c:
     complete
     .data       start:0x02042a70 end:0x02042ac0
 
-src/data/main_scene_table_0204252c.c:
+src/engine/data/main_scene_table_0204252c.c:
     complete
     .data       start:0x0204252c end:0x020425ec
 
-src/data/main_tables_02041dc8.c:
+src/engine/data/main_tables_02041dc8.c:
     complete
     .rodata     start:0x02041dc8 end:0x02041e2c
 
-src/data/main_tables_02041e6c.c:
+src/engine/data/main_tables_02041e6c.c:
     complete
     .rodata     start:0x02041e6c end:0x02041eac
 
-src/data/main_tables_02041ecc.c:
+src/engine/data/main_tables_02041ecc.c:
     complete
     .rodata     start:0x02041ecc end:0x02041fd4
 
-src/data/main_tables_0204208c.c:
+src/engine/data/main_tables_0204208c.c:
     complete
     .rodata     start:0x0204208c end:0x02042124
 
-src/data/main_tables_02042124.c:
+src/engine/data/main_tables_02042124.c:
     complete
     .rodata     start:0x02042124 end:0x02042288
 
-src/data/main_transform_defaults_020427f0.c:
+src/engine/data/main_transform_defaults_020427f0.c:
     complete
     .data       start:0x020427f0 end:0x02042910
 
-src/data/main_worlds_02042958.c:
+src/engine/data/main_worlds_02042958.c:
     complete
     .data       start:0x02042958 end:0x02042a70

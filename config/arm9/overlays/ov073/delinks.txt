@@ -4,150 +4,150 @@
     .data       start:0x020ba4a0 end:0x020ba540 kind:data align:32
     .bss        start:0x020ba540 end:0x020ba560 kind:bss align:32
 
-src/overlays/ov073/calls/func_ov073_020b8100.c:
+src/overlays/players/ov073_player_xaldin_3/func_ov073_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov073/calls/Ov073_stateCtorConfigReturnHandler.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_stateCtorConfigReturnHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b8148
 
-src/overlays/ov073/calls/Ov073_initTwoRegionsClearGlobal.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_initTwoRegionsClearGlobal.c:
     complete
     .text       start:0x020b8148 end:0x020b818c
 
-src/overlays/ov073/calls/Ov073_Boot.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_Boot.c:
     complete
     .text       start:0x020b818c end:0x020b8374
 
-src/overlays/ov073/calls/Ov073_BindChannelsAndSlotMaps.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_BindChannelsAndSlotMaps.c:
     complete
     .text       start:0x020b8374 end:0x020b84c4
 
-src/overlays/ov073/auto/Ov073_MapSlotKindToAnim.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b84c4 end:0x020b84ec
 
-src/overlays/ov073/calls/Ov073_ApplyModeChange.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_ApplyModeChange.c:
     complete
     .text       start:0x020b84ec end:0x020b8664
 
-src/overlays/ov073/calls/Ov073_SyncHandleAndDrawAim.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_SyncHandleAndDrawAim.c:
     complete
     .text       start:0x020b8664 end:0x020b8724
 
-src/overlays/ov073/calls/Ov073_UpdateAnimationAndDraw.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_UpdateAnimationAndDraw.c:
     complete
     .text       start:0x020b8724 end:0x020b8ae4
 
-src/overlays/ov073/calls/Ov073_ReleaseIndexedHandles.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_ReleaseIndexedHandles.c:
     complete
     .text       start:0x020b8ae4 end:0x020b8b50
 
-src/overlays/ov073/calls/Ov073_InvokeSubHandlerPairWithGlobalBuffer.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b8b50 end:0x020b8b88
 
-src/overlays/ov073/calls/Ov073_HandleMessage.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_HandleMessage.c:
     complete
     .text       start:0x020b8b88 end:0x020b8d74
 
-src/overlays/ov073/calls/Ov073_BuildRenderHandles.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_BuildRenderHandles.c:
     complete
     .text       start:0x020b8d74 end:0x020b8e10
 
-src/overlays/ov073/calls/Ov073_SetTimingsAndEnterState21.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_SetTimingsAndEnterState21.c:
     complete
     .text       start:0x020b8e10 end:0x020b8ebc
 
-src/overlays/ov073/calls/Ov073_IdleStep.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_IdleStep.c:
     complete
     .text       start:0x020b8ebc end:0x020b912c
 
-src/overlays/ov073/calls/Ov073_AttackPhaseStep.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_AttackPhaseStep.c:
     complete
     .text       start:0x020b912c end:0x020b92e0
 
-src/overlays/ov073/calls/Ov073_StepAndCheckTimer.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_StepAndCheckTimer.c:
     complete
     .text       start:0x020b92e0 end:0x020b93f0
 
-src/overlays/ov073/calls/Ov073_ApproachStep.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_ApproachStep.c:
     complete
     .text       start:0x020b93f0 end:0x020b9600
 
-src/overlays/ov073/calls/Ov073_DiveStep.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_DiveStep.c:
     complete
     .text       start:0x020b9600 end:0x020b9900
 
-src/overlays/ov073/calls/Ov073_LandingStep.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_LandingStep.c:
     complete
     .text       start:0x020b9900 end:0x020b9ad8
 
-src/overlays/ov073/calls/Ov073_FireRapidBurst.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_FireRapidBurst.c:
     complete
     .text       start:0x020b9ad8 end:0x020b9c5c
 
-src/overlays/ov073/calls/Ov073_FireHeavyBurst.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_FireHeavyBurst.c:
     complete
     .text       start:0x020b9c5c end:0x020b9e18
 
-src/overlays/ov073/calls/Ov073_FireThirdCountBurst.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_FireThirdCountBurst.c:
     complete
     .text       start:0x020b9e18 end:0x020b9f94
 
-src/overlays/ov073/calls/Ov073_initSubObjectSlots.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_initSubObjectSlots.c:
     complete
     .text       start:0x020b9f94 end:0x020b9fec
 
-src/overlays/ov073/calls/Ov073_ReleaseChildFromGlobal.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_ReleaseChildFromGlobal.c:
     complete
     .text       start:0x020b9fec end:0x020ba004
 
-src/overlays/ov073/calls/Ov073_initGlobalSlotBaseRefs.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_initGlobalSlotBaseRefs.c:
     complete
     .text       start:0x020ba004 end:0x020ba044
 
-src/overlays/ov073/calls/Ov073_enterState5ConfigAnims.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_enterState5ConfigAnims.c:
     complete
     .text       start:0x020ba044 end:0x020ba0c0
 
-src/overlays/ov073/calls/Ov073_enterState1ConfigAnims.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_enterState1ConfigAnims.c:
     complete
     .text       start:0x020ba0c0 end:0x020ba158
 
-src/overlays/ov073/calls/Ov073_enterState3ConfigAnims.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_enterState3ConfigAnims.c:
     complete
     .text       start:0x020ba158 end:0x020ba1f0
 
-src/overlays/ov073/calls/Ov073_ClearTimer.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_ClearTimer.c:
     complete
     .text       start:0x020ba1f0 end:0x020ba1fc
 
-src/overlays/ov073/calls/Ov073_DriveGuardSequence.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_DriveGuardSequence.c:
     complete
     .text       start:0x020ba1fc end:0x020ba370
 
-src/overlays/ov073/calls/Ov073_PickSourcePosAndDraw.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_PickSourcePosAndDraw.c:
     complete
     .text       start:0x020ba370 end:0x020ba438
 
-src/overlays/ov073/calls/Ov073_InvokeWithDataTable.c:
+src/overlays/players/ov073_player_xaldin_3/Ov073_InvokeWithDataTable.c:
     complete
     .text       start:0x020ba438 end:0x020ba450
 
-src/overlays/ov073/data/ov073_class_020ba4a0.c:
+src/overlays/players/ov073_player_xaldin_3/data/ov073_class_020ba4a0.c:
     complete
     .data       start:0x020ba4a0 end:0x020ba4b4
 
-src/overlays/ov073/data/ov073_strings_020ba45c.c:
+src/overlays/players/ov073_player_xaldin_3/data/ov073_strings_020ba45c.c:
     complete
     .rodata     start:0x020ba45c end:0x020ba48c
 
-src/overlays/ov073/data/ov073_strings_020ba4b4.c:
+src/overlays/players/ov073_player_xaldin_3/data/ov073_strings_020ba4b4.c:
     complete
     .data       start:0x020ba4b4 end:0x020ba540
 
-src/overlays/ov073/data/ov073_tables_020ba450.c:
+src/overlays/players/ov073_player_xaldin_3/data/ov073_tables_020ba450.c:
     complete
     .rodata     start:0x020ba450 end:0x020ba45c

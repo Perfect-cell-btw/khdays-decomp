@@ -4,190 +4,190 @@
     .data       start:0x020d1cc0 end:0x020d1ce0 kind:data align:32
     .bss        start:0x020d1ce0 end:0x020d1ce0 kind:bss align:32
 
-src/overlays/ov154/calls/Ov154_RegisterEntityClass.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov154/calls/Ov154_CreateNamedEntity.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov154/calls/Ov154_ConstructActor.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_ConstructActor.c:
     complete
     .text       start:0x020cfc04 end:0x020cfe90
 
-src/overlays/ov154/calls/Ov154_Destroy.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_Destroy.c:
     complete
     .text       start:0x020cfe90 end:0x020cfed0
 
-src/overlays/ov154/calls/func_ov154_020cfed0.c:
+src/overlays/enemies/ov154_enemy_14_2/func_ov154_020cfed0.c:
     complete
     .text       start:0x020cfed0 end:0x020cfedc
 
-src/overlays/ov154/calls/Ov154_Model_SetTracks0And3.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_Model_SetTracks0And3.c:
     complete
     .text       start:0x020cfedc end:0x020cff2c
 
-src/overlays/ov154/calls/Ov154_HandleMessage.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_HandleMessage.c:
     complete
     .text       start:0x020cff2c end:0x020cffc8
 
-src/overlays/ov154/calls/Ov154_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cffc8 end:0x020cfff0
 
-src/overlays/ov154/calls/Ov154_NotifyPartsThenBase.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cfff0 end:0x020d0018
 
-src/overlays/ov154/calls/Ov154_RefreshPose.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_RefreshPose.c:
     complete
     .text       start:0x020d0018 end:0x020d005c
 
-src/overlays/ov154/calls/Ov154_Tick.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_Tick.c:
     complete
     .text       start:0x020d005c end:0x020d0154
 
-src/overlays/ov154/calls/Ov154_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d0154 end:0x020d0194
 
-src/overlays/ov154/calls/Ov154_Actor_New.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_Actor_New.c:
     complete
     .text       start:0x020d0194 end:0x020d01c8
 
-src/overlays/ov154/calls/Ov154_Construct.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_Construct.c:
     complete
     .text       start:0x020d01c8 end:0x020d03a8
 
-src/overlays/ov154/calls/Ov154_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020d03a8 end:0x020d03e8
 
-src/overlays/ov154/calls/Ov154_TickAndSyncModelXform.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d03e8 end:0x020d0420
 
-src/overlays/ov154/calls/Ov154_AiState_OnMessage.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_AiState_OnMessage.c:
     complete
     .text       start:0x020d0420 end:0x020d04d4
 
-src/overlays/ov154/calls/Ov154_BroadcastPositionMessage.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_BroadcastPositionMessage.c:
     complete
     .text       start:0x020d04d4 end:0x020d05fc
 
-src/overlays/ov154/calls/Ov154_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d05fc end:0x020d0648
 
-src/overlays/ov154/calls/Ov154_stateInitClearSlots.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_stateInitClearSlots.c:
     complete
     .text       start:0x020d0648 end:0x020d06f0
 
-src/overlays/ov154/calls/Ov154_dispatchByStatusByte.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_dispatchByStatusByte.c:
     complete
     .text       start:0x020d06f0 end:0x020d0768
 
-src/overlays/ov154/auto/Ov154_AiApplyMoveVector.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_AiApplyMoveVector.c:
     complete
     .text       start:0x020d0768 end:0x020d0780
 
-src/overlays/ov154/calls/Ov154_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d0780 end:0x020d0830
 
-src/overlays/ov154/calls/Ov154_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d0830 end:0x020d0868
 
-src/overlays/ov154/calls/Ov154_SeedDashVector.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_SeedDashVector.c:
     complete
     .text       start:0x020d0868 end:0x020d0938
 
-src/overlays/ov154/calls/Ov154_HomingFlightTick.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_HomingFlightTick.c:
     complete
     .text       start:0x020d0938 end:0x020d0f30
 
-src/overlays/ov154/calls/Ov154_CreateRegistryEntryAndLink_2.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020d0f30 end:0x020d0f7c
 
-src/overlays/ov154/calls/Ov154_OnHit.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_OnHit.c:
     complete
     .text       start:0x020d0f7c end:0x020d10b0
 
-src/overlays/ov154/auto/Ov154_TryBeginSubState4.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_TryBeginSubState4.c:
     complete
     .text       start:0x020d10b0 end:0x020d10e0
 
-src/overlays/ov154/calls/Ov154_InitNode.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_InitNode.c:
     complete
     .text       start:0x020d10e0 end:0x020d11b0
 
-src/overlays/ov154/calls/Ov154_DispatchSubStateByte.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_DispatchSubStateByte.c:
     complete
     .text       start:0x020d11b0 end:0x020d1310
 
-src/overlays/ov154/calls/Ov154_UpdateFacing.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_UpdateFacing.c:
     complete
     .text       start:0x020d1310 end:0x020d1394
 
-src/overlays/ov154/calls/Ov154_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d1394 end:0x020d13fc
 
-src/overlays/ov154/calls/Ov154_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d13fc end:0x020d1438
 
-src/overlays/ov154/calls/Ov154_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020d1438 end:0x020d1504
 
-src/overlays/ov154/calls/Ov154_AiWaitThenTarget.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_AiWaitThenTarget.c:
     complete
     .text       start:0x020d1504 end:0x020d15d0
 
-src/overlays/ov154/calls/Ov154_AiStep_QueueAction2OnFlag0cClear.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d15d0 end:0x020d1604
 
-src/overlays/ov154/calls/Ov154_AiEnterStalk.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_AiEnterStalk.c:
     complete
     .text       start:0x020d1604 end:0x020d165c
 
-src/overlays/ov154/calls/Ov154_StalkTick.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_StalkTick.c:
     complete
     .text       start:0x020d165c end:0x020d1848
 
-src/overlays/ov154/calls/Ov154_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1848 end:0x020d187c
 
-src/overlays/ov154/calls/Ov154_stDiv5Store.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_stDiv5Store.c:
     complete
     .text       start:0x020d187c end:0x020d18d8
 
-src/overlays/ov154/calls/Ov154_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d18d8 end:0x020d19a0
 
-src/overlays/ov154/calls/Ov154_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d19a0 end:0x020d1a54
 
-src/overlays/ov154/calls/Ov154_stateAnimFlagCallback.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_stateAnimFlagCallback.c:
     complete
     .text       start:0x020d1a54 end:0x020d1b04
 
-src/overlays/ov154/calls/Ov154_AimTick.c:
+src/overlays/enemies/ov154_enemy_14_2/Ov154_AimTick.c:
     complete
     .text       start:0x020d1b04 end:0x020d1c4c
 
-src/overlays/ov154/data/ov154_strings_020d1cc0.c:
+src/overlays/enemies/ov154_enemy_14_2/data/ov154_strings_020d1cc0.c:
     complete
     .data       start:0x020d1cc0 end:0x020d1ce0
 
-src/overlays/ov154/data/ov154_tables_020d1c4c.c:
+src/overlays/enemies/ov154_enemy_14_2/data/ov154_tables_020d1c4c.c:
     complete
     .rodata     start:0x020d1c4c end:0x020d1ca4

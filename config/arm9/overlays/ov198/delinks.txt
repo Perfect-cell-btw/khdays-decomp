@@ -4,258 +4,258 @@
     .data       start:0x020d2500 end:0x020d2520 kind:data align:32
     .bss        start:0x020d2520 end:0x020d2520 kind:bss align:32
 
-src/overlays/ov198/calls/Ov198_RegisterEntityClass.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov198/calls/Ov198_CreateNamedEntity.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov198/calls/Ov198_QueryAndCopyVecIfHit.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_QueryAndCopyVecIfHit.c:
     complete
     .text       start:0x020cfc04 end:0x020cfc4c
 
-src/overlays/ov198/calls/Ov198_TickSwingArc.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_TickSwingArc.c:
     complete
     .text       start:0x020cfc4c end:0x020cfdc8
 
-src/overlays/ov198/calls/Ov198_InitActor.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_InitActor.c:
     complete
     .text       start:0x020cfdc8 end:0x020d0090
 
-src/overlays/ov198/calls/Ov198_ReleaseSubObjectsThenNotify.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_ReleaseSubObjectsThenNotify.c:
     complete
     .text       start:0x020d0090 end:0x020d00bc
 
-src/overlays/ov198/calls/Ov198_ResetSetupAndPropagate.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_ResetSetupAndPropagate.c:
     complete
     .text       start:0x020d00bc end:0x020d013c
 
-src/overlays/ov198/calls/Ov198_AttachThreeSubNodesThenFinalize.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_AttachThreeSubNodesThenFinalize.c:
     complete
     .text       start:0x020d013c end:0x020d0178
 
-src/overlays/ov198/calls/Ov198_AttachThreeSubNodesThenFinalize_2.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_AttachThreeSubNodesThenFinalize_2.c:
     complete
     .text       start:0x020d0178 end:0x020d01b4
 
-src/overlays/ov198/calls/Ov198_ReleaseAttachmentsOnStop.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_ReleaseAttachmentsOnStop.c:
     complete
     .text       start:0x020d01b4 end:0x020d0284
 
-src/overlays/ov198/calls/Ov198_IssueSpawnCommand.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_IssueSpawnCommand.c:
     complete
     .text       start:0x020d0284 end:0x020d03a4
 
-src/overlays/ov198/calls/Ov198_Model_ReapplyTrack0.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020d03a4 end:0x020d03dc
 
-src/overlays/ov198/calls/Ov198_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d03dc end:0x020d0438
 
-src/overlays/ov198/calls/Ov198_ResolveHitReaction.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_ResolveHitReaction.c:
     complete
     .text       start:0x020d0438 end:0x020d0598
 
-src/overlays/ov198/auto/Ov198_RequestSubState7IfNotCurrent.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_RequestSubState7IfNotCurrent.c:
     complete
     .text       start:0x020d0598 end:0x020d05c4
 
-src/overlays/ov198/auto/Ov198_RequestSubState8IfIdle.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_RequestSubState8IfIdle.c:
     complete
     .text       start:0x020d05c4 end:0x020d05f4
 
-src/overlays/ov198/calls/Ov198_SeedDefaultPoseAndAdvance.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_SeedDefaultPoseAndAdvance.c:
     complete
     .text       start:0x020d05f4 end:0x020d065c
 
-src/overlays/ov198/calls/Ov198_FireThreeWaySpread.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_FireThreeWaySpread.c:
     complete
     .text       start:0x020d065c end:0x020d0764
 
-src/overlays/ov198/calls/Ov198_BuildHeadingRotation.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_BuildHeadingRotation.c:
     complete
     .text       start:0x020d0764 end:0x020d0864
 
-src/overlays/ov198/calls/Ov198_InitReactionSlots.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_InitReactionSlots.c:
     complete
     .text       start:0x020d0864 end:0x020d091c
 
-src/overlays/ov198/calls/Ov198_DispatchSubStateByte.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_DispatchSubStateByte.c:
     complete
     .text       start:0x020d091c end:0x020d0aa4
 
-src/overlays/ov198/calls/Ov198_CommitTrailTransform.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_CommitTrailTransform.c:
     complete
     .text       start:0x020d0aa4 end:0x020d0b88
 
-src/overlays/ov198/calls/Ov198_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0b88 end:0x020d0bf0
 
-src/overlays/ov198/calls/Ov198_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d0bf0 end:0x020d0c2c
 
-src/overlays/ov198/calls/Ov198_EnterAttackFacingTarget.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_EnterAttackFacingTarget.c:
     complete
     .text       start:0x020d0c2c end:0x020d0d78
 
-src/overlays/ov198/calls/Ov198_ClearMoveTimerAndFire.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_ClearMoveTimerAndFire.c:
     complete
     .text       start:0x020d0d78 end:0x020d0e40
 
-src/overlays/ov198/calls/Ov198_AimAtTargetAfterWindup.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_AimAtTargetAfterWindup.c:
     complete
     .text       start:0x020d0e40 end:0x020d0f60
 
-src/overlays/ov198/calls/Ov198_AiEnterHold.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_AiEnterHold.c:
     complete
     .text       start:0x020d0f60 end:0x020d0f9c
 
-src/overlays/ov198/calls/Ov198_TickHoldTimer.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_TickHoldTimer.c:
     complete
     .text       start:0x020d0f9c end:0x020d1000
 
-src/overlays/ov198/calls/Ov198_BeginMoveOrRequestState2.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_BeginMoveOrRequestState2.c:
     complete
     .text       start:0x020d1000 end:0x020d10d8
 
-src/overlays/ov198/calls/Ov198_ApplyTransformThenReseedIfFree.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_ApplyTransformThenReseedIfFree.c:
     complete
     .text       start:0x020d10d8 end:0x020d1140
 
-src/overlays/ov198/calls/Ov198_StepChargeUntilSettled.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_StepChargeUntilSettled.c:
     complete
     .text       start:0x020d1140 end:0x020d1224
 
-src/overlays/ov198/calls/Ov198_PointHeadingCheckPose.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_PointHeadingCheckPose.c:
     complete
     .text       start:0x020d1224 end:0x020d129c
 
-src/overlays/ov198/calls/Ov198_InvokeWithVec3ThenSetSubState5.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_InvokeWithVec3ThenSetSubState5.c:
     complete
     .text       start:0x020d129c end:0x020d12f0
 
-src/overlays/ov198/calls/Ov198_SpawnTrailOrFail.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_SpawnTrailOrFail.c:
     complete
     .text       start:0x020d12f0 end:0x020d13c8
 
-src/overlays/ov198/calls/Ov198_SteerTrailThenAdvance.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_SteerTrailThenAdvance.c:
     complete
     .text       start:0x020d13c8 end:0x020d14a8
 
-src/overlays/ov198/calls/Ov198_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d14a8 end:0x020d14dc
 
-src/overlays/ov198/calls/Ov198_SetPose5ThenAdvanceSlot.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_SetPose5ThenAdvanceSlot.c:
     complete
     .text       start:0x020d14dc end:0x020d1510
 
-src/overlays/ov198/calls/Ov198_CopyScaleVec3ThenAdvanceSlot.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_CopyScaleVec3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1510 end:0x020d156c
 
-src/overlays/ov198/calls/Ov198_Action4B_Enter.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_Action4B_Enter.c:
     complete
     .text       start:0x020d156c end:0x020d1630
 
-src/overlays/ov198/calls/Ov198_AiStep_QueueAction0.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_AiStep_QueueAction0.c:
     complete
     .text       start:0x020d1630 end:0x020d1650
 
-src/overlays/ov198/calls/Ov198_BeginGuardPose.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_BeginGuardPose.c:
     complete
     .text       start:0x020d1650 end:0x020d16f0
 
-src/overlays/ov198/calls/Ov198_TimerGateHw60FlipThenAdvance.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_TimerGateHw60FlipThenAdvance.c:
     complete
     .text       start:0x020d16f0 end:0x020d1784
 
-src/overlays/ov198/calls/Ov198_AiEnterFaceTarget.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_AiEnterFaceTarget.c:
     complete
     .text       start:0x020d1784 end:0x020d17c4
 
-src/overlays/ov198/calls/Ov198_FaceTargetThenIdle.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_FaceTargetThenIdle.c:
     complete
     .text       start:0x020d17c4 end:0x020d184c
 
-src/overlays/ov198/calls/Ov198_FaceTargetCheckReach.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_FaceTargetCheckReach.c:
     complete
     .text       start:0x020d184c end:0x020d18d0
 
-src/overlays/ov198/calls/Ov198_RunPreDispatchHook.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_RunPreDispatchHook.c:
     complete
     .text       start:0x020d18d0 end:0x020d1934
 
-src/overlays/ov198/calls/Ov198_AllocLinkChild3a4.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_AllocLinkChild3a4.c:
     complete
     .text       start:0x020d1934 end:0x020d1968
 
-src/overlays/ov198/calls/Ov198_InitSubActor.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_InitSubActor.c:
     complete
     .text       start:0x020d1968 end:0x020d1b34
 
-src/overlays/ov198/calls/Ov198_Destroy.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_Destroy.c:
     complete
     .text       start:0x020d1b34 end:0x020d1b6c
 
-src/overlays/ov198/calls/Ov198_TickAndSyncModelXform.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d1b6c end:0x020d1ba4
 
-src/overlays/ov198/calls/Ov198_PlaceNodeFromCommand.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_PlaceNodeFromCommand.c:
     complete
     .text       start:0x020d1ba4 end:0x020d1c9c
 
-src/overlays/ov198/calls/Ov198_SetSubStateAndScaleVec.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_SetSubStateAndScaleVec.c:
     complete
     .text       start:0x020d1c9c end:0x020d1cd0
 
-src/overlays/ov198/calls/Ov198_Event_ReverseVelocityOnce.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_Event_ReverseVelocityOnce.c:
     complete
     .text       start:0x020d1cd0 end:0x020d1d34
 
-src/overlays/ov198/calls/Ov198_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d1d34 end:0x020d1d80
 
-src/overlays/ov198/calls/Ov198_stateInitClearSlots.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_stateInitClearSlots.c:
     complete
     .text       start:0x020d1d80 end:0x020d1e28
 
-src/overlays/ov198/calls/Ov198_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d1e28 end:0x020d1ea0
 
-src/overlays/ov198/calls/Ov198_PublishVelocity_Step.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_PublishVelocity_Step.c:
     complete
     .text       start:0x020d1ea0 end:0x020d1f04
 
-src/overlays/ov198/calls/Ov198_ResetPoseAndFlags.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_ResetPoseAndFlags.c:
     complete
     .text       start:0x020d1f04 end:0x020d1fc0
 
-src/overlays/ov198/auto/Ov198_ResetPoseIdleStep.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_ResetPoseIdleStep.c:
     complete
     .text       start:0x020d1fc0 end:0x020d1fc4
 
-src/overlays/ov198/calls/Ov198_ResetOrientationAndAdvance.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_ResetOrientationAndAdvance.c:
     complete
     .text       start:0x020d1fc4 end:0x020d2050
 
-src/overlays/ov198/calls/Ov198_SeekTarget.c:
+src/overlays/enemies/ov198_enemy_25_2/Ov198_SeekTarget.c:
     complete
     .text       start:0x020d2050 end:0x020d24d4
 
-src/overlays/ov198/data/ov198_strings_020d2500.c:
+src/overlays/enemies/ov198_enemy_25_2/data/ov198_strings_020d2500.c:
     complete
     .data       start:0x020d2500 end:0x020d2520
 
-src/overlays/ov198/data/ov198_tables_020d24d4.c:
+src/overlays/enemies/ov198_enemy_25_2/data/ov198_tables_020d24d4.c:
     complete
     .rodata     start:0x020d24d4 end:0x020d24e4

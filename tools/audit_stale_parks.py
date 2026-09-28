@@ -8,7 +8,7 @@ that persuades the next session not to look.
 
 The one found on 2026-07-22 claimed "no natural C form reproduces the split
 (constant*constant always folds; tried raw *0x30, *0x4030, (idx<<1)*0x2018 ...)"
-while src/overlays/ov000/calls/Ov000_BeginCardTransfer.c matched using precisely
+while src/overlays/scenes/ov000_title/Ov000_BeginCardTransfer.c matched using precisely
 `(data[1] << 1) * 0x2018`. Ten more were sitting alongside it, four of them left
 behind by hand-offs earlier the same day.
 

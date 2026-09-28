@@ -3,62 +3,62 @@
     .data       start:0x020d4340 end:0x020d4360 kind:data align:32
     .bss        start:0x020d4360 end:0x020d4360 kind:bss align:32
 
-src/overlays/ov295/calls/Ov295_RegisterEntityClass.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov295/calls/Ov295_CreateNamedEntity.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov295/calls/Ov295_InitEnemy.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_InitEnemy.c:
     complete
     .text       start:0x020d3844 end:0x020d39a0
 
-src/overlays/ov295/calls/Ov295_OnDespawn.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_OnDespawn.c:
     complete
     .text       start:0x020d39a0 end:0x020d39bc
 
-src/overlays/ov295/calls/Ov295_CopyPoseBlockToTwoNodes.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_CopyPoseBlockToTwoNodes.c:
     complete
     .text       start:0x020d39bc end:0x020d3a20
 
-src/overlays/ov295/calls/Ov295_CreateRegistryEntryForActor.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_CreateRegistryEntryForActor.c:
     complete
     .text       start:0x020d3a20 end:0x020d3a6c
 
-src/overlays/ov295/auto/Ov295_TickStaggerAndFlipFacing.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_TickStaggerAndFlipFacing.c:
     complete
     .text       start:0x020d3a6c end:0x020d3bc4
 
-src/overlays/ov295/calls/Ov295_SetupActorNodeAndStateSlots.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_SetupActorNodeAndStateSlots.c:
     complete
     .text       start:0x020d3bc4 end:0x020d3c64
 
-src/overlays/ov295/calls/Ov295_DispatchSubStateByte.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_DispatchSubStateByte.c:
     complete
     .text       start:0x020d3c64 end:0x020d3d70
 
-src/overlays/ov295/auto/Ov295_AiSlot2NoOp.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_AiSlot2NoOp.c:
     complete
     .text       start:0x020d3d70 end:0x020d3d74
 
-src/overlays/ov295/calls/Ov295_stSetDispFlagsde.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_stSetDispFlagsde.c:
     complete
     .text       start:0x020d3d74 end:0x020d3db4
 
-src/overlays/ov295/calls/Ov295_LatchStateAndRender.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_LatchStateAndRender.c:
     complete
     .text       start:0x020d3db4 end:0x020d3e28
 
-src/overlays/ov295/calls/Ov295_TickEnemyAi.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_TickEnemyAi.c:
     complete
     .text       start:0x020d3e28 end:0x020d4274
 
-src/overlays/ov295/calls/Ov295_ConfigHw60FlagsAndBeginAction4.c:
+src/overlays/enemies/ov295_enemy_70_2/Ov295_ConfigHw60FlagsAndBeginAction4.c:
     complete
     .text       start:0x020d4274 end:0x020d433c
 
-src/overlays/ov295/data/ov295_strings_020d4340.c:
+src/overlays/enemies/ov295_enemy_70_2/data/ov295_strings_020d4340.c:
     complete
     .data       start:0x020d4340 end:0x020d4360

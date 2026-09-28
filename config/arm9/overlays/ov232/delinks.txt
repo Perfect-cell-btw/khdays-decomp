@@ -4,275 +4,275 @@
     .data       start:0x020d36a0 end:0x020d3700 kind:data align:32
     .bss        start:0x020d3700 end:0x020d3700 kind:bss align:32
 
-src/overlays/ov232/calls/Ov232_RegisterEntityClass.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov232/calls/Ov232_CreateNamedEntity.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc08
 
-src/overlays/ov232/calls/Ov232_Construct.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_Construct.c:
     complete
     .text       start:0x020cfc08 end:0x020d009c
 
-src/overlays/ov232/calls/Ov232_Destroy.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_Destroy.c:
     complete
     .text       start:0x020d009c end:0x020d00f4
 
-src/overlays/ov232/calls/Ov232_TickWithChildRefresh.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_TickWithChildRefresh.c:
     complete
     .text       start:0x020d00f4 end:0x020d0118
 
-src/overlays/ov232/calls/Ov232_RebindClip.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_RebindClip.c:
     complete
     .text       start:0x020d0118 end:0x020d019c
 
-src/overlays/ov232/calls/Ov232_OnEffectMessage.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_OnEffectMessage.c:
     complete
     .text       start:0x020d019c end:0x020d02cc
 
-src/overlays/ov232/calls/Ov232_ForwardEventToChildren.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_ForwardEventToChildren.c:
     complete
     .text       start:0x020d02cc end:0x020d0308
 
-src/overlays/ov232/calls/Ov232_NotifyPartsThenBase.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d0308 end:0x020d0344
 
-src/overlays/ov232/calls/Ov232_DrawPrePass.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_DrawPrePass.c:
     complete
     .text       start:0x020d0344 end:0x020d05bc
 
-src/overlays/ov232/calls/Ov232_CreateAiTask.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_CreateAiTask.c:
     complete
     .text       start:0x020d05bc end:0x020d0620
 
-src/overlays/ov232/calls/Ov232_AcquireTarget.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AcquireTarget.c:
     complete
     .text       start:0x020d0620 end:0x020d06b4
 
-src/overlays/ov232/calls/Ov232_rotateVecByOwnerYaw.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_rotateVecByOwnerYaw.c:
     complete
     .text       start:0x020d06b4 end:0x020d0748
 
-src/overlays/ov232/calls/Ov232_ProbeGround.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_ProbeGround.c:
     complete
     .text       start:0x020d0748 end:0x020d0888
 
-src/overlays/ov232/calls/Ov232_ProbeSpawnPoint.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_ProbeSpawnPoint.c:
     complete
     .text       start:0x020d0888 end:0x020d0998
 
-src/overlays/ov232/calls/Ov232_FilterHit.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_FilterHit.c:
     complete
     .text       start:0x020d0998 end:0x020d0bf8
     .rodata     start:0x020d3670 end:0x020d3674
 
-src/overlays/ov232/calls/Ov232_ChooseAttack.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_ChooseAttack.c:
     complete
     .text       start:0x020d0bf8 end:0x020d0cd4
 
-src/overlays/ov232/calls/Ov232_PlayPoseAnims.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_PlayPoseAnims.c:
     complete
     .text       start:0x020d0cd4 end:0x020d0d1c
 
-src/overlays/ov232/auto/Ov232_TryRequestState13.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_TryRequestState13.c:
     complete
     .text       start:0x020d0d1c end:0x020d0d58
 
-src/overlays/ov232/calls/Ov232_AiStateInit.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiStateInit.c:
     complete
     .text       start:0x020d0d58 end:0x020d0e54
 
-src/overlays/ov232/calls/Ov232_AiEnterStandby.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterStandby.c:
     complete
     .text       start:0x020d0e54 end:0x020d0ebc
 
-src/overlays/ov232/calls/Ov232_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d0ebc end:0x020d0ef4
 
-src/overlays/ov232/calls/Ov232_AiDispatchAction.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiDispatchAction.c:
     complete
     .text       start:0x020d0ef4 end:0x020d1150
 
-src/overlays/ov232/calls/Ov232_ChaseTick.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_ChaseTick.c:
     complete
     .text       start:0x020d1150 end:0x020d13a8
 
-src/overlays/ov232/calls/Ov232_AiEnterWait.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterWait.c:
     complete
     .text       start:0x020d13a8 end:0x020d144c
 
-src/overlays/ov232/calls/Ov232_AiWaitTick.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiWaitTick.c:
     complete
     .text       start:0x020d144c end:0x020d14cc
 
-src/overlays/ov232/calls/Ov232_AiFollowUntilAnimEnd.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiFollowUntilAnimEnd.c:
     complete
     .text       start:0x020d14cc end:0x020d153c
 
-src/overlays/ov232/calls/Ov232_AiEnterIdle.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterIdle.c:
     complete
     .text       start:0x020d153c end:0x020d1560
 
-src/overlays/ov232/calls/Ov232_AiIdleTick.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiIdleTick.c:
     complete
     .text       start:0x020d1560 end:0x020d16e8
 
-src/overlays/ov232/calls/Ov232_AiEnterStrafe.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterStrafe.c:
     complete
     .text       start:0x020d16e8 end:0x020d18d0
 
-src/overlays/ov232/calls/Ov232_UpdateAimPoint.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_UpdateAimPoint.c:
     complete
     .text       start:0x020d18d0 end:0x020d197c
 
-src/overlays/ov232/calls/Ov232_AiDiveTick.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiDiveTick.c:
     complete
     .text       start:0x020d197c end:0x020d1c3c
 
-src/overlays/ov232/calls/Ov232_Reaction_BiasFramesAndDispatch.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_Reaction_BiasFramesAndDispatch.c:
     complete
     .text       start:0x020d1c3c end:0x020d1d4c
 
-src/overlays/ov232/calls/Ov232_AiFollowThenChooseAttack.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiFollowThenChooseAttack.c:
     complete
     .text       start:0x020d1d4c end:0x020d1e14
 
-src/overlays/ov232/calls/Ov232_AiEnterFireVolley.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterFireVolley.c:
     complete
     .text       start:0x020d1e14 end:0x020d1e50
 
-src/overlays/ov232/calls/Ov232_AiFireVolleyTick.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiFireVolleyTick.c:
     complete
     .text       start:0x020d1e50 end:0x020d20ac
 
-src/overlays/ov232/calls/Ov232_AiEnterLunge.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterLunge.c:
     complete
     .text       start:0x020d20ac end:0x020d20f0
 
-src/overlays/ov232/calls/Ov232_LungeTick.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_LungeTick.c:
     complete
     .text       start:0x020d20f0 end:0x020d2358
 
-src/overlays/ov232/calls/Ov232_AiEnterLungeB.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterLungeB.c:
     complete
     .text       start:0x020d2358 end:0x020d2390
 
-src/overlays/ov232/calls/Ov232_LungeTick_2.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_LungeTick_2.c:
     complete
     .text       start:0x020d2390 end:0x020d25dc
 
-src/overlays/ov232/calls/Ov232_AiEnterSlam.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterSlam.c:
     complete
     .text       start:0x020d25dc end:0x020d2610
 
-src/overlays/ov232/calls/Ov232_AiSlamWindupTick.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiSlamWindupTick.c:
     complete
     .text       start:0x020d2610 end:0x020d272c
 
-src/overlays/ov232/calls/Ov232_AiSlamDashTick.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiSlamDashTick.c:
     complete
     .text       start:0x020d272c end:0x020d286c
 
-src/overlays/ov232/calls/Ov232_AiFollowThenQueueAction9.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiFollowThenQueueAction9.c:
     complete
     .text       start:0x020d286c end:0x020d28dc
 
-src/overlays/ov232/calls/Ov232_AiEnterPoseSequence.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterPoseSequence.c:
     complete
     .text       start:0x020d28dc end:0x020d2908
 
-src/overlays/ov232/calls/Ov232_AiPoseSequenceTick.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiPoseSequenceTick.c:
     complete
     .text       start:0x020d2908 end:0x020d29e0
 
-src/overlays/ov232/calls/Ov232_AiEnterPoseSequenceB.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterPoseSequenceB.c:
     complete
     .text       start:0x020d29e0 end:0x020d2a34
 
-src/overlays/ov232/calls/Ov232_AiPoseSequenceTickB.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiPoseSequenceTickB.c:
     complete
     .text       start:0x020d2a34 end:0x020d2ae0
 
-src/overlays/ov232/calls/Ov232_AiEnterAim.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterAim.c:
     complete
     .text       start:0x020d2ae0 end:0x020d2b10
 
-src/overlays/ov232/calls/Ov232_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d2b10 end:0x020d2bd8
 
-src/overlays/ov232/calls/Ov232_AiEnterHold.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiEnterHold.c:
     complete
     .text       start:0x020d2bd8 end:0x020d2c88
 
-src/overlays/ov232/calls/Ov232_AiHoldTick.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_AiHoldTick.c:
     complete
     .text       start:0x020d2c88 end:0x020d2d1c
 
-src/overlays/ov232/calls/Ov232_Item_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_Item_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d2d1c end:0x020d2d64
 
-src/overlays/ov232/calls/Ov232_Item_New.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_Item_New.c:
     complete
     .text       start:0x020d2d64 end:0x020d2d98
 
-src/overlays/ov232/calls/Ov232_ItemConstruct.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_ItemConstruct.c:
     complete
     .text       start:0x020d2d98 end:0x020d2ec8
 
-src/overlays/ov232/calls/Ov232_OnDespawn.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_OnDespawn.c:
     complete
     .text       start:0x020d2ec8 end:0x020d2ee4
 
-src/overlays/ov232/auto/Ov232_SetField1cIfFlags1And10.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_SetField1cIfFlags1And10.c:
     complete
     .text       start:0x020d2ee4 end:0x020d2f1c
 
-src/overlays/ov232/calls/Ov232_Item_CreateAiTask.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_Item_CreateAiTask.c:
     complete
     .text       start:0x020d2f1c end:0x020d2f78
 
-src/overlays/ov232/calls/Ov232_stateInitClearSlots.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_stateInitClearSlots.c:
     complete
     .text       start:0x020d2f78 end:0x020d3020
 
-src/overlays/ov232/calls/Ov232_dispatchByStatusByte.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_dispatchByStatusByte.c:
     complete
     .text       start:0x020d3020 end:0x020d3098
 
-src/overlays/ov232/calls/Ov232_Item_ApplyOrientation.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_Item_ApplyOrientation.c:
     complete
     .text       start:0x020d3098 end:0x020d30f8
 
-src/overlays/ov232/calls/Ov232_Item_AiEnterWait.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_Item_AiEnterWait.c:
     complete
     .text       start:0x020d30f8 end:0x020d3180
 
-src/overlays/ov232/calls/Ov232_Item_AiWaitActive.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_Item_AiWaitActive.c:
     complete
     .text       start:0x020d3180 end:0x020d31b8
 
-src/overlays/ov232/calls/Ov232_Item_AiEnterCharge.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_Item_AiEnterCharge.c:
     complete
     .text       start:0x020d31b8 end:0x020d32ac
 
-src/overlays/ov232/calls/Ov232_Item_AiChargeTick.c:
+src/overlays/enemies/ov232_enemy_3b_2/Ov232_Item_AiChargeTick.c:
     complete
     .text       start:0x020d32ac end:0x020d3650
 
-src/overlays/ov232/data/ov232_strings_020d36a0.c:
+src/overlays/enemies/ov232_enemy_3b_2/data/ov232_strings_020d36a0.c:
     complete
     .data       start:0x020d36a0 end:0x020d3700
 
-src/overlays/ov232/data/ov232_tables_020d3650.c:
+src/overlays/enemies/ov232_enemy_3b_2/data/ov232_tables_020d3650.c:
     complete
     .rodata     start:0x020d3650 end:0x020d3670
 
-src/overlays/ov232/data/ov232_tables_020d3674.c:
+src/overlays/enemies/ov232_enemy_3b_2/data/ov232_tables_020d3674.c:
     complete
     .rodata     start:0x020d3674 end:0x020d3698

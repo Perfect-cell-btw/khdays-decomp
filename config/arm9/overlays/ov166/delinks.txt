@@ -4,230 +4,230 @@
     .data       start:0x020ceb00 end:0x020ceb20 kind:data align:32
     .bss        start:0x020ceb20 end:0x020ceb20 kind:bss align:32
 
-src/overlays/ov166/calls/Ov166_RegisterEntityClass.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov166/calls/Ov166_CreateNamedEntity.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov166/calls/Ov166_OrientPartAlongDirection.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc020
 
-src/overlays/ov166/calls/Ov166_Construct.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_Construct.c:
     complete
     .text       start:0x020cc020 end:0x020cc33c
 
-src/overlays/ov166/calls/Ov166_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020cc33c end:0x020cc37c
 
-src/overlays/ov166/calls/func_ov166_020cc37c.c:
+src/overlays/enemies/ov166_enemy_1a/func_ov166_020cc37c.c:
     complete
     .text       start:0x020cc37c end:0x020cc388
 
-src/overlays/ov166/calls/Ov166_ForwardEventToChild.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_ForwardEventToChild.c:
     complete
     .text       start:0x020cc388 end:0x020cc3b0
 
-src/overlays/ov166/calls/Ov166_NotifyPartThenBase.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_NotifyPartThenBase.c:
     complete
     .text       start:0x020cc3b0 end:0x020cc3d8
 
-src/overlays/ov166/calls/Ov166_HandleSpawnMessage.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc3d8 end:0x020cc5f4
 
-src/overlays/ov166/calls/Ov166_Model_SetTrack0.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_Model_SetTrack0.c:
     complete
     .text       start:0x020cc5f4 end:0x020cc624
 
-src/overlays/ov166/calls/Ov166_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020cc624 end:0x020cc75c
 
-src/overlays/ov166/calls/Ov166_registryCreateEntry.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_registryCreateEntry.c:
     complete
     .text       start:0x020cc75c end:0x020cc7b8
 
-src/overlays/ov166/calls/Ov166_OnHit.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_OnHit.c:
     complete
     .text       start:0x020cc7b8 end:0x020cc9dc
 
-src/overlays/ov166/auto/Ov166_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020cc9dc end:0x020cca08
 
-src/overlays/ov166/calls/Ov166_FaceTargetGetClearance.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_FaceTargetGetClearance.c:
     complete
     .text       start:0x020cca08 end:0x020ccaa0
 
-src/overlays/ov166/auto/Ov166_IsChildInactive.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_IsChildInactive.c:
     complete
     .text       start:0x020ccaa0 end:0x020ccae0
 
-src/overlays/ov166/calls/Ov166_stateInitTransformSlots.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_stateInitTransformSlots.c:
     complete
     .text       start:0x020ccae0 end:0x020ccbcc
 
-src/overlays/ov166/calls/Ov166_stDispatchByStateByte_ccbcc.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020ccbcc end:0x020ccdb8
 
-src/overlays/ov166/calls/Ov166_stDivStoreField.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_stDivStoreField.c:
     complete
     .text       start:0x020ccdb8 end:0x020cce58
 
-src/overlays/ov166/calls/Ov166_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cce58 end:0x020ccec0
 
-src/overlays/ov166/calls/Ov166_AnchorAndAdvance.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_AnchorAndAdvance.c:
     complete
     .text       start:0x020ccec0 end:0x020ccf44
 
-src/overlays/ov166/calls/Ov166_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020ccf44 end:0x020cd010
 
-src/overlays/ov166/calls/Ov166_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020cd010 end:0x020cd0e8
 
-src/overlays/ov166/calls/Ov166_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd0e8 end:0x020cd11c
 
-src/overlays/ov166/calls/Ov166_stateRandomInitFull.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_stateRandomInitFull.c:
     complete
     .text       start:0x020cd11c end:0x020cd1a8
 
-src/overlays/ov166/calls/Ov166_OrbitTick.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_OrbitTick.c:
     complete
     .text       start:0x020cd1a8 end:0x020cd524
 
-src/overlays/ov166/calls/Ov166_AiStep_StartTag1WithTimer.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020cd524 end:0x020cd568
 
-src/overlays/ov166/calls/Ov166_HoverBobTick.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_HoverBobTick.c:
     complete
     .text       start:0x020cd568 end:0x020cd75c
 
-src/overlays/ov166/calls/Ov166_AiStep_StartTag1.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_AiStep_StartTag1.c:
     complete
     .text       start:0x020cd75c end:0x020cd798
 
-src/overlays/ov166/calls/Ov166_HoverApproachTick.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_HoverApproachTick.c:
     complete
     .text       start:0x020cd798 end:0x020cd964
 
-src/overlays/ov166/calls/Ov166_stateRandomDirValue.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_stateRandomDirValue.c:
     complete
     .text       start:0x020cd964 end:0x020cd9d4
 
-src/overlays/ov166/calls/Ov166_CircleTick.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_CircleTick.c:
     complete
     .text       start:0x020cd9d4 end:0x020cdb50
 
-src/overlays/ov166/calls/Ov166_AcquireTargetOrGiveUp.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020cdb50 end:0x020cdbec
 
-src/overlays/ov166/calls/Ov166_HoverHoldTick.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_HoverHoldTick.c:
     complete
     .text       start:0x020cdbec end:0x020cddb8
 
-src/overlays/ov166/calls/Ov166_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cddb8 end:0x020cddec
 
-src/overlays/ov166/calls/Ov166_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020cddec end:0x020cde20
 
-src/overlays/ov166/calls/Ov166_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020cde20 end:0x020cdf14
 
-src/overlays/ov166/calls/Ov166_AiEndWithUpdate.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_AiEndWithUpdate.c:
     complete
     .text       start:0x020cdf14 end:0x020ce000
 
-src/overlays/ov166/calls/Ov166_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020ce000 end:0x020ce0a0
 
-src/overlays/ov166/calls/Ov166_stateTimerToggleFlags.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_stateTimerToggleFlags.c:
     complete
     .text       start:0x020ce0a0 end:0x020ce134
 
-src/overlays/ov166/calls/Ov166_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020ce134 end:0x020ce174
 
-src/overlays/ov166/calls/Ov166_Actor_New.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_Actor_New.c:
     complete
     .text       start:0x020ce174 end:0x020ce1a8
 
-src/overlays/ov166/calls/Ov166_SubObject_Construct.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_SubObject_Construct.c:
     complete
     .text       start:0x020ce1a8 end:0x020ce308
 
-src/overlays/ov166/calls/Ov166_OnDespawn.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_OnDespawn.c:
     complete
     .text       start:0x020ce308 end:0x020ce324
 
-src/overlays/ov166/calls/Ov166_TickAndSyncModelXform.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_TickAndSyncModelXform.c:
     complete
     .text       start:0x020ce324 end:0x020ce35c
 
-src/overlays/ov166/calls/func_ov166_020ce35c.c:
+src/overlays/enemies/ov166_enemy_1a/func_ov166_020ce35c.c:
     complete
     .text       start:0x020ce35c end:0x020ce368
 
-src/overlays/ov166/calls/Ov166_TryTriggerEffect.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_TryTriggerEffect.c:
     complete
     .text       start:0x020ce368 end:0x020ce3f0
 
-src/overlays/ov166/calls/Ov166_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020ce3f0 end:0x020ce43c
 
-src/overlays/ov166/calls/Ov166_stateInitClearSlots.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_stateInitClearSlots.c:
     complete
     .text       start:0x020ce43c end:0x020ce4e4
 
-src/overlays/ov166/calls/Ov166_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020ce4e4 end:0x020ce55c
 
-src/overlays/ov166/auto/Ov166_AiApplyMoveVector.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_AiApplyMoveVector.c:
     complete
     .text       start:0x020ce55c end:0x020ce574
 
-src/overlays/ov166/calls/Ov166_ConfigHw60CopyVec3ConstToCThenAdvance.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_ConfigHw60CopyVec3ConstToCThenAdvance.c:
     complete
     .text       start:0x020ce574 end:0x020ce624
 
-src/overlays/ov166/calls/Ov166_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020ce624 end:0x020ce65c
 
-src/overlays/ov166/calls/Ov166_BeginDash.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_BeginDash.c:
     complete
     .text       start:0x020ce65c end:0x020ce744
 
-src/overlays/ov166/calls/Ov166_DashTick.c:
+src/overlays/enemies/ov166_enemy_1a/Ov166_DashTick.c:
     complete
     .text       start:0x020ce744 end:0x020cead0
 
-src/overlays/ov166/data/ov166_strings_020ceb00.c:
+src/overlays/enemies/ov166_enemy_1a/data/ov166_strings_020ceb00.c:
     complete
     .data       start:0x020ceb00 end:0x020ceb20
 
-src/overlays/ov166/data/ov166_tables_020cead0.c:
+src/overlays/enemies/ov166_enemy_1a/data/ov166_tables_020cead0.c:
     complete
     .rodata     start:0x020cead0 end:0x020ceae0

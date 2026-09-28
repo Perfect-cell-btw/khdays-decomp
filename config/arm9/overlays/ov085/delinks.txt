@@ -4,118 +4,118 @@
     .data       start:0x020b91c0 end:0x020b9260 kind:data align:32
     .bss        start:0x020b9260 end:0x020b9280 kind:bss align:32
 
-src/overlays/ov085/calls/func_ov085_020b8100.c:
+src/overlays/players/ov085_player_donald_3/func_ov085_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov085/calls/Ov085_stateCtorReturnHandler.c:
+src/overlays/players/ov085_player_donald_3/Ov085_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b813c
 
-src/overlays/ov085/calls/Ov085_setupTriple.c:
+src/overlays/players/ov085_player_donald_3/Ov085_setupTriple.c:
     complete
     .text       start:0x020b813c end:0x020b815c
 
-src/overlays/ov085/calls/Ov085_PanelCtor.c:
+src/overlays/players/ov085_player_donald_3/Ov085_PanelCtor.c:
     complete
     .text       start:0x020b815c end:0x020b8354
 
-src/overlays/ov085/calls/Ov085_initSharedObjSetReadyFlag.c:
+src/overlays/players/ov085_player_donald_3/Ov085_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020b8354 end:0x020b838c
 
-src/overlays/ov085/auto/Ov085_MapSlotKindToAnim.c:
+src/overlays/players/ov085_player_donald_3/Ov085_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b838c end:0x020b83ac
 
-src/overlays/ov085/calls/Ov085_RequestState.c:
+src/overlays/players/ov085_player_donald_3/Ov085_RequestState.c:
     complete
     .text       start:0x020b83ac end:0x020b8510
 
-src/overlays/ov085/calls/Ov085_PanelTick.c:
+src/overlays/players/ov085_player_donald_3/Ov085_PanelTick.c:
     complete
     .text       start:0x020b8510 end:0x020b85a8
 
-src/overlays/ov085/calls/Ov085_FaceTargetOnRequest21.c:
+src/overlays/players/ov085_player_donald_3/Ov085_FaceTargetOnRequest21.c:
     complete
     .text       start:0x020b85a8 end:0x020b8684
 
-src/overlays/ov085/calls/Ov085_InvokeSubHandlerPairWithGlobalBuffer.c:
+src/overlays/players/ov085_player_donald_3/Ov085_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b8684 end:0x020b86bc
 
-src/overlays/ov085/calls/Ov085_SetupBuildBlock.c:
+src/overlays/players/ov085_player_donald_3/Ov085_SetupBuildBlock.c:
     complete
     .text       start:0x020b86bc end:0x020b8744
 
-src/overlays/ov085/calls/Ov085_InitTwoGlobalRegionsAndForward.c:
+src/overlays/players/ov085_player_donald_3/Ov085_InitTwoGlobalRegionsAndForward.c:
     complete
     .text       start:0x020b8744 end:0x020b8794
 
-src/overlays/ov085/calls/Ov085_ReleaseGlobalAndSubObjectChannel.c:
+src/overlays/players/ov085_player_donald_3/Ov085_ReleaseGlobalAndSubObjectChannel.c:
     complete
     .text       start:0x020b8794 end:0x020b87d0
 
-src/overlays/ov085/calls/Ov085_BindDefaultAnimsAtBase.c:
+src/overlays/players/ov085_player_donald_3/Ov085_BindDefaultAnimsAtBase.c:
     complete
     .text       start:0x020b87d0 end:0x020b8830
 
-src/overlays/ov085/calls/Ov085_TickChargeState.c:
+src/overlays/players/ov085_player_donald_3/Ov085_TickChargeState.c:
     complete
     .text       start:0x020b8830 end:0x020b8890
 
-src/overlays/ov085/calls/Ov085_DrawNodeIfEnabled.c:
+src/overlays/players/ov085_player_donald_3/Ov085_DrawNodeIfEnabled.c:
     complete
     .text       start:0x020b8890 end:0x020b891c
 
-src/overlays/ov085/calls/Ov085_CreateSubObject.c:
+src/overlays/players/ov085_player_donald_3/Ov085_CreateSubObject.c:
     complete
     .text       start:0x020b891c end:0x020b8a20
 
-src/overlays/ov085/calls/Ov085_BindRig.c:
+src/overlays/players/ov085_player_donald_3/Ov085_BindRig.c:
     complete
     .text       start:0x020b8a20 end:0x020b8a78
 
-src/overlays/ov085/calls/Ov085_dispatchEntryList.c:
+src/overlays/players/ov085_player_donald_3/Ov085_dispatchEntryList.c:
     complete
     .text       start:0x020b8a78 end:0x020b8adc
 
-src/overlays/ov085/calls/Ov085_PlayHitVoiceIfEnabled.c:
+src/overlays/players/ov085_player_donald_3/Ov085_PlayHitVoiceIfEnabled.c:
     complete
     .text       start:0x020b8adc end:0x020b8b34
 
-src/overlays/ov085/calls/Ov085_SpawnEffectRing.c:
+src/overlays/players/ov085_player_donald_3/Ov085_SpawnEffectRing.c:
     complete
     .text       start:0x020b8b34 end:0x020b8d14
 
-src/overlays/ov085/calls/Ov085_ArmPlayerBlock.c:
+src/overlays/players/ov085_player_donald_3/Ov085_ArmPlayerBlock.c:
     complete
     .text       start:0x020b8d14 end:0x020b8db0
 
-src/overlays/ov085/calls/Ov085_PanelUpdate.c:
+src/overlays/players/ov085_player_donald_3/Ov085_PanelUpdate.c:
     complete
     .text       start:0x020b8db0 end:0x020b90d4
 
-src/overlays/ov085/calls/Ov085_InvokeWithDataTable.c:
+src/overlays/players/ov085_player_donald_3/Ov085_InvokeWithDataTable.c:
     complete
     .text       start:0x020b90d4 end:0x020b90ec
 
-src/overlays/ov085/data/ov085_class_020b91d4.c:
+src/overlays/players/ov085_player_donald_3/data/ov085_class_020b91d4.c:
     complete
     .data       start:0x020b91d4 end:0x020b91e8
 
-src/overlays/ov085/data/ov085_pointers_020b91c0.c:
+src/overlays/players/ov085_player_donald_3/data/ov085_pointers_020b91c0.c:
     complete
     .data       start:0x020b91c0 end:0x020b91d4
 
-src/overlays/ov085/data/ov085_strings_020b90ec.c:
+src/overlays/players/ov085_player_donald_3/data/ov085_strings_020b90ec.c:
     complete
     .rodata     start:0x020b90ec end:0x020b912c
 
-src/overlays/ov085/data/ov085_strings_020b91e8.c:
+src/overlays/players/ov085_player_donald_3/data/ov085_strings_020b91e8.c:
     complete
     .data       start:0x020b91e8 end:0x020b9260
 
-src/overlays/ov085/data/ov085_tables_020b912c.c:
+src/overlays/players/ov085_player_donald_3/data/ov085_tables_020b912c.c:
     complete
     .rodata     start:0x020b912c end:0x020b91bc

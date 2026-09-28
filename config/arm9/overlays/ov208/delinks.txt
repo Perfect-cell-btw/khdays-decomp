@@ -4,343 +4,343 @@
     .data       start:0x020d4820 end:0x020d48a0 kind:data align:32
     .bss        start:0x020d48a0 end:0x020d48a0 kind:bss align:32
 
-src/overlays/ov208/calls/Ov208_RegisterEntityClass.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov208/calls/Ov208_CreateNamedEntity.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov208/calls/Ov208_SnapshotNudgeMatrix.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_SnapshotNudgeMatrix.c:
     complete
     .text       start:0x020cfc04 end:0x020cfc80
 
-src/overlays/ov208/calls/Ov208_EnemyConstruct.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_EnemyConstruct.c:
     complete
     .text       start:0x020cfc80 end:0x020d0138
 
-src/overlays/ov208/calls/Ov208_Destroy.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_Destroy.c:
     complete
     .text       start:0x020d0138 end:0x020d0188
 
-src/overlays/ov208/calls/Ov208_DrawPushAway.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_DrawPushAway.c:
     complete
     .text       start:0x020d0188 end:0x020d03e8
 
-src/overlays/ov208/calls/Ov208_OnEffectMessage.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_OnEffectMessage.c:
     complete
     .text       start:0x020d03e8 end:0x020d059c
 
-src/overlays/ov208/calls/Ov208_ForwardRegionEventToPart.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_ForwardRegionEventToPart.c:
     complete
     .text       start:0x020d059c end:0x020d05c4
 
-src/overlays/ov208/calls/Ov208_DetachSubNodesHandOff.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_DetachSubNodesHandOff.c:
     complete
     .text       start:0x020d05c4 end:0x020d0628
 
-src/overlays/ov208/calls/Ov208_BindClip.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_BindClip.c:
     complete
     .text       start:0x020d0628 end:0x020d0694
 
-src/overlays/ov208/calls/Ov208_MessageMapTableForward.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_MessageMapTableForward.c:
     complete
     .text       start:0x020d0694 end:0x020d070c
 
-src/overlays/ov208/calls/Ov208_Update.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_Update.c:
     complete
     .text       start:0x020d070c end:0x020d0888
 
-src/overlays/ov208/calls/Ov208_TestEntitiesAgainstRect.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_TestEntitiesAgainstRect.c:
     complete
     .text       start:0x020d0888 end:0x020d0968
 
-src/overlays/ov208/calls/Ov208_collectObjectsInSphereRec.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020d0968 end:0x020d0b1c
 
-src/overlays/ov208/calls/Ov208_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d0b1c end:0x020d0b78
 
-src/overlays/ov208/calls/Ov208_FilterHit.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_FilterHit.c:
     complete
     .text       start:0x020d0b78 end:0x020d0e5c
     .rodata     start:0x020d47d4 end:0x020d47dc
 
-src/overlays/ov208/auto/Ov208_RequestSubState12IfIdleIn2Or4.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_RequestSubState12IfIdleIn2Or4.c:
     complete
     .text       start:0x020d0e5c end:0x020d0ea4
 
-src/overlays/ov208/calls/Ov208_PickBestFacingNode.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_PickBestFacingNode.c:
     complete
     .text       start:0x020d0ea4 end:0x020d0f8c
 
-src/overlays/ov208/calls/Ov208_ContactSweep.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_ContactSweep.c:
     complete
     .text       start:0x020d0f8c end:0x020d119c
 
-src/overlays/ov208/calls/Ov208_InitSubStateRegister3.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_InitSubStateRegister3.c:
     complete
     .text       start:0x020d119c end:0x020d124c
 
-src/overlays/ov208/calls/Ov208_AiDispatchAction.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiDispatchAction.c:
     complete
     .text       start:0x020d124c end:0x020d14c4
 
-src/overlays/ov208/calls/Ov208_MotionTickTimers.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_MotionTickTimers.c:
     complete
     .text       start:0x020d14c4 end:0x020d15b0
 
-src/overlays/ov208/calls/Ov208_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d15b0 end:0x020d1640
 
-src/overlays/ov208/calls/Ov208_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d1640 end:0x020d167c
 
-src/overlays/ov208/calls/Ov208_SpawnEffect48TwoNodeClear.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_SpawnEffect48TwoNodeClear.c:
     complete
     .text       start:0x020d167c end:0x020d1744
 
-src/overlays/ov208/calls/Ov208_WindUpFaceReset.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_WindUpFaceReset.c:
     complete
     .text       start:0x020d1744 end:0x020d180c
 
-src/overlays/ov208/calls/Ov208_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d180c end:0x020d1840
 
-src/overlays/ov208/calls/Ov208_SetPose1ThenAdvanceSlot.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_SetPose1ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1840 end:0x020d1874
 
-src/overlays/ov208/calls/Ov208_AiPickFacingNode.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiPickFacingNode.c:
     complete
     .text       start:0x020d1874 end:0x020d18d4
 
-src/overlays/ov208/calls/Ov208_AiEnterAim.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiEnterAim.c:
     complete
     .text       start:0x020d18d4 end:0x020d1934
 
-src/overlays/ov208/calls/Ov208_AiAimStart.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiAimStart.c:
     complete
     .text       start:0x020d1934 end:0x020d19b8
 
-src/overlays/ov208/calls/Ov208_AimSteerDotGate.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AimSteerDotGate.c:
     complete
     .text       start:0x020d19b8 end:0x020d1afc
 
-src/overlays/ov208/calls/Ov208_FaceTargetFireReadyC.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_FaceTargetFireReadyC.c:
     complete
     .text       start:0x020d1afc end:0x020d1be0
 
-src/overlays/ov208/calls/Ov208_AiChooseAttack.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiChooseAttack.c:
     complete
     .text       start:0x020d1be0 end:0x020d1e84
 
-src/overlays/ov208/calls/Ov208_FaceTargetFireGate.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_FaceTargetFireGate.c:
     complete
     .text       start:0x020d1e84 end:0x020d2024
 
-src/overlays/ov208/calls/Ov208_FaceTargetFireReady.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_FaceTargetFireReady.c:
     complete
     .text       start:0x020d2024 end:0x020d20c0
 
-src/overlays/ov208/calls/Ov208_FaceTargetFireReadyB.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_FaceTargetFireReadyB.c:
     complete
     .text       start:0x020d20c0 end:0x020d215c
 
-src/overlays/ov208/calls/Ov208_FireRangedShot.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_FireRangedShot.c:
     complete
     .text       start:0x020d215c end:0x020d227c
 
-src/overlays/ov208/calls/Ov208_KickFixedMotion.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_KickFixedMotion.c:
     complete
     .text       start:0x020d227c end:0x020d22e0
 
-src/overlays/ov208/calls/Ov208_AiStrikeWindup.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiStrikeWindup.c:
     complete
     .text       start:0x020d22e0 end:0x020d2334
 
-src/overlays/ov208/calls/Ov208_DoubleStrikeTick.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_DoubleStrikeTick.c:
     complete
     .text       start:0x020d2334 end:0x020d24d4
 
-src/overlays/ov208/calls/Ov208_AiEnterChargeBreak.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiEnterChargeBreak.c:
     complete
     .text       start:0x020d24d4 end:0x020d2528
 
-src/overlays/ov208/calls/Ov208_Reaction_ChargeThenBreak.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_Reaction_ChargeThenBreak.c:
     complete
     .text       start:0x020d2528 end:0x020d2628
 
-src/overlays/ov208/calls/Ov208_AiChargeTimeout.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiChargeTimeout.c:
     complete
     .text       start:0x020d2628 end:0x020d2678
 
-src/overlays/ov208/calls/Ov208_AiQueue8OnAnimEnd.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiQueue8OnAnimEnd.c:
     complete
     .text       start:0x020d2678 end:0x020d26ac
 
-src/overlays/ov208/calls/Ov208_EnterSlam.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_EnterSlam.c:
     complete
     .text       start:0x020d26ac end:0x020d2728
 
-src/overlays/ov208/calls/Ov208_AiDriveWindup.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiDriveWindup.c:
     complete
     .text       start:0x020d2728 end:0x020d277c
 
-src/overlays/ov208/calls/Ov208_MidWindowDriveAnchors.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_MidWindowDriveAnchors.c:
     complete
     .text       start:0x020d277c end:0x020d289c
 
-src/overlays/ov208/calls/Ov208_AiEnterIdle.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiEnterIdle.c:
     complete
     .text       start:0x020d289c end:0x020d28d8
 
-src/overlays/ov208/calls/Ov208_AiIdleTimer.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiIdleTimer.c:
     complete
     .text       start:0x020d28d8 end:0x020d2914
 
-src/overlays/ov208/calls/Ov208_AiEnterThrow.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiEnterThrow.c:
     complete
     .text       start:0x020d2914 end:0x020d2974
 
-src/overlays/ov208/calls/Ov208_LeapWindUpTick.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_LeapWindUpTick.c:
     complete
     .text       start:0x020d2974 end:0x020d2b44
 
-src/overlays/ov208/calls/Ov208_AdvanceAimGiveUp.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AdvanceAimGiveUp.c:
     complete
     .text       start:0x020d2b44 end:0x020d2bec
 
-src/overlays/ov208/calls/Ov208_AiEnterBounceShot.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiEnterBounceShot.c:
     complete
     .text       start:0x020d2bec end:0x020d2c6c
 
-src/overlays/ov208/calls/Ov208_BounceShotTick.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_BounceShotTick.c:
     complete
     .text       start:0x020d2c6c end:0x020d3244
 
-src/overlays/ov208/calls/Ov208_ShockwaveTick.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_ShockwaveTick.c:
     complete
     .text       start:0x020d3244 end:0x020d3420
 
-src/overlays/ov208/calls/Ov208_SpawnEffect4dTwoNodeClear.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_SpawnEffect4dTwoNodeClear.c:
     complete
     .text       start:0x020d3420 end:0x020d3510
 
-src/overlays/ov208/calls/Ov208_SpawnEffect49KickMotion.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_SpawnEffect49KickMotion.c:
     complete
     .text       start:0x020d3510 end:0x020d362c
 
-src/overlays/ov208/calls/Ov208_WaitThenSetFlagsAndAdvance.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_WaitThenSetFlagsAndAdvance.c:
     complete
     .text       start:0x020d362c end:0x020d36c0
 
-src/overlays/ov208/calls/Ov208_NodeUpdateApplyMotion.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_NodeUpdateApplyMotion.c:
     complete
     .text       start:0x020d36c0 end:0x020d3734
 
-src/overlays/ov208/calls/Ov208_Item_New.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_Item_New.c:
     complete
     .text       start:0x020d3734 end:0x020d3768
 
-src/overlays/ov208/calls/Ov208_ItemConstruct.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_ItemConstruct.c:
     complete
     .text       start:0x020d3768 end:0x020d393c
 
-src/overlays/ov208/calls/Ov208_Item_Destroy.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_Item_Destroy.c:
     complete
     .text       start:0x020d393c end:0x020d3974
 
-src/overlays/ov208/calls/Ov208_Projectile_TickSyncXform.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_Projectile_TickSyncXform.c:
     complete
     .text       start:0x020d3974 end:0x020d39d8
 
-src/overlays/ov208/calls/Ov208_OnItemMessage.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_OnItemMessage.c:
     complete
     .text       start:0x020d39d8 end:0x020d3b40
 
-src/overlays/ov208/auto/Ov208_SendMessage26.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_SendMessage26.c:
     complete
     .text       start:0x020d3b40 end:0x020d3ba8
 
-src/overlays/ov208/calls/Ov208_LatchBitFlagTailTick.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_LatchBitFlagTailTick.c:
     complete
     .text       start:0x020d3ba8 end:0x020d3bd4
 
-src/overlays/ov208/calls/Ov208_ReleaseTwoSubObjects.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_ReleaseTwoSubObjects.c:
     complete
     .text       start:0x020d3bd4 end:0x020d3c30
 
-src/overlays/ov208/calls/Ov208_Model_ReapplyTracks.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_Model_ReapplyTracks.c:
     complete
     .text       start:0x020d3c30 end:0x020d3cc8
 
-src/overlays/ov208/calls/Ov208_SetTargetOrient.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_SetTargetOrient.c:
     complete
     .text       start:0x020d3cc8 end:0x020d3d10
 
-src/overlays/ov208/calls/Ov208_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d3d10 end:0x020d3d6c
 
-src/overlays/ov208/calls/Ov208_stateInitClearSlots.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_stateInitClearSlots.c:
     complete
     .text       start:0x020d3d6c end:0x020d3e14
 
-src/overlays/ov208/calls/Ov208_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d3e14 end:0x020d3e8c
 
-src/overlays/ov208/calls/Ov208_Item_ApplyOrientation.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_Item_ApplyOrientation.c:
     complete
     .text       start:0x020d3e8c end:0x020d3ebc
 
-src/overlays/ov208/calls/Ov208_EnterReaction.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_EnterReaction.c:
     complete
     .text       start:0x020d3ebc end:0x020d3f6c
 
-src/overlays/ov208/auto/Ov208_ReactionIdleStep.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_ReactionIdleStep.c:
     complete
     .text       start:0x020d3f6c end:0x020d3f70
 
-src/overlays/ov208/calls/Ov208_EnterGuard.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_EnterGuard.c:
     complete
     .text       start:0x020d3f70 end:0x020d40b8
 
-src/overlays/ov208/calls/Ov208_ItemSweepTick.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_ItemSweepTick.c:
     complete
     .text       start:0x020d40b8 end:0x020d42f4
 
-src/overlays/ov208/calls/Ov208_TimerFlagFirePushTwice.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_TimerFlagFirePushTwice.c:
     complete
     .text       start:0x020d42f4 end:0x020d442c
 
-src/overlays/ov208/calls/Ov208_ItemFlightTick.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_ItemFlightTick.c:
     complete
     .text       start:0x020d442c end:0x020d4754
 
-src/overlays/ov208/calls/Ov208_AiStep_QueueAction0OnAnimEnd.c:
+src/overlays/enemies/ov208_enemy_2a/Ov208_AiStep_QueueAction0OnAnimEnd.c:
     complete
     .text       start:0x020d4754 end:0x020d4784
 
-src/overlays/ov208/data/ov208_strings_020d4820.c:
+src/overlays/enemies/ov208_enemy_2a/data/ov208_strings_020d4820.c:
     complete
     .data       start:0x020d4820 end:0x020d487c
 
-src/overlays/ov208/data/ov208_tables_020d4784.c:
+src/overlays/enemies/ov208_enemy_2a/data/ov208_tables_020d4784.c:
     complete
     .rodata     start:0x020d4784 end:0x020d47d4
 
-src/overlays/ov208/data/ov208_tables_020d47dc.c:
+src/overlays/enemies/ov208_enemy_2a/data/ov208_tables_020d47dc.c:
     complete
     .rodata     start:0x020d47dc end:0x020d481c
 
-src/overlays/ov208/data/ov208_tables_020d487c.c:
+src/overlays/enemies/ov208_enemy_2a/data/ov208_tables_020d487c.c:
     complete
     .data       start:0x020d487c end:0x020d48a0

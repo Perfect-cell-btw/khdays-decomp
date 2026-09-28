@@ -4,226 +4,226 @@
     .data       start:0x020b8aa0 end:0x020b8b60 kind:data align:32
     .bss        start:0x020b8b60 end:0x020b8b80 kind:bss align:32
 
-src/overlays/ov106/calls/Ov106_StartScene.c:
+src/overlays/screens/ov106/Ov106_StartScene.c:
     complete
     .text       start:0x020b74c0 end:0x020b75c0
 
-src/overlays/ov106/calls/Ov106_WaitPendingText.c:
+src/overlays/screens/ov106/Ov106_WaitPendingText.c:
     complete
     .text       start:0x020b75c0 end:0x020b75e4
 
-src/overlays/ov106/calls/Ov106_LoadFontAndCaption.c:
+src/overlays/screens/ov106/Ov106_LoadFontAndCaption.c:
     complete
     .text       start:0x020b75e4 end:0x020b768c
 
-src/overlays/ov106/calls/Ov106_TeardownScene.c:
+src/overlays/screens/ov106/Ov106_TeardownScene.c:
     complete
     .text       start:0x020b768c end:0x020b7728
 
-src/overlays/ov106/calls/Ov106_ApplySlotFlags.c:
+src/overlays/screens/ov106/Ov106_ApplySlotFlags.c:
     complete
     .text       start:0x020b7728 end:0x020b7758
 
-src/overlays/ov106/calls/Ov106_PlaceWidget.c:
+src/overlays/screens/ov106/Ov106_PlaceWidget.c:
     complete
     .text       start:0x020b7758 end:0x020b7792
 
-src/overlays/ov106/calls/Ov106_BindNodeTracks02.c:
+src/overlays/screens/ov106/Ov106_BindNodeTracks02.c:
     complete
     .text       start:0x020b7794 end:0x020b77b4
 
-src/overlays/ov106/calls/Ov106_SetupView.c:
+src/overlays/screens/ov106/Ov106_SetupView.c:
     complete
     .text       start:0x020b77b4 end:0x020b782c
 
-src/overlays/ov106/calls/Ov106_LayoutMarkerWidget.c:
+src/overlays/screens/ov106/Ov106_LayoutMarkerWidget.c:
     complete
     .text       start:0x020b782c end:0x020b78bc
 
-src/overlays/ov106/calls/Ov106_ResetTargetWidget.c:
+src/overlays/screens/ov106/Ov106_ResetTargetWidget.c:
     complete
     .text       start:0x020b78bc end:0x020b7918
 
-src/overlays/ov106/calls/Ov106_MainState.c:
+src/overlays/screens/ov106/Ov106_MainState.c:
     complete
     .text       start:0x020b7918 end:0x020b79dc
 
-src/overlays/ov106/calls/Ov106_CanActOnTarget.c:
+src/overlays/screens/ov106/Ov106_CanActOnTarget.c:
     complete
     .text       start:0x020b79dc end:0x020b7a3c
 
-src/overlays/ov106/calls/Ov106_UpdateInteractPrompt.c:
+src/overlays/screens/ov106/Ov106_UpdateInteractPrompt.c:
     complete
     .text       start:0x020b7a3c end:0x020b7b08
 
-src/overlays/ov106/calls/Ov106_FrameTask.c:
+src/overlays/screens/ov106/Ov106_FrameTask.c:
     complete
     .text       start:0x020b7b08 end:0x020b7c50
 
-src/overlays/ov106/calls/Ov106_SelectScreenLayers.c:
+src/overlays/screens/ov106/Ov106_SelectScreenLayers.c:
     complete
     .text       start:0x020b7c50 end:0x020b7cf8
 
-src/overlays/ov106/calls/Ov106_ProjectToScreen.c:
+src/overlays/screens/ov106/Ov106_ProjectToScreen.c:
     complete
     .text       start:0x020b7cf8 end:0x020b7dc4
 
-src/overlays/ov106/calls/Ov106_ConsumeReachedPoints.c:
+src/overlays/screens/ov106/Ov106_ConsumeReachedPoints.c:
     complete
     .text       start:0x020b7dc4 end:0x020b7e38
 
-src/overlays/ov106/calls/Ov106_TestPointAgainstWidget.c:
+src/overlays/screens/ov106/Ov106_TestPointAgainstWidget.c:
     complete
     .text       start:0x020b7e38 end:0x020b7ec0
 
-src/overlays/ov106/calls/Ov106_ResetMarkerWidget.c:
+src/overlays/screens/ov106/Ov106_ResetMarkerWidget.c:
     complete
     .text       start:0x020b7ec0 end:0x020b7f08
 
-src/overlays/ov106/calls/Ov106_CameraStep.c:
+src/overlays/screens/ov106/Ov106_CameraStep.c:
     complete
     .text       start:0x020b7f08 end:0x020b7fa4
 
-src/overlays/ov106/calls/Ov106_StepBrightnessFade.c:
+src/overlays/screens/ov106/Ov106_StepBrightnessFade.c:
     complete
     .text       start:0x020b7fa4 end:0x020b80a8
 
-src/overlays/ov106/calls/Ov106_ApplyFadeBlend.c:
+src/overlays/screens/ov106/Ov106_ApplyFadeBlend.c:
     complete
     .text       start:0x020b80a8 end:0x020b8108
 
-src/overlays/ov106/calls/Ov106_SetPendingText.c:
+src/overlays/screens/ov106/Ov106_SetPendingText.c:
     complete
     .text       start:0x020b8108 end:0x020b8130
 
-src/overlays/ov106/calls/Ov106_ArmObject.c:
+src/overlays/screens/ov106/Ov106_ArmObject.c:
     complete
     .text       start:0x020b8130 end:0x020b8140
 
-src/overlays/ov106/calls/Ov106_QueuePoint.c:
+src/overlays/screens/ov106/Ov106_QueuePoint.c:
     complete
     .text       start:0x020b8140 end:0x020b8194
 
-src/overlays/ov106/calls/Ov106_SetField8CCC.c:
+src/overlays/screens/ov106/Ov106_SetField8CCC.c:
     complete
     .text       start:0x020b8194 end:0x020b81ac
 
-src/overlays/ov106/calls/Ov106_SetSceneAnimEnabled.c:
+src/overlays/screens/ov106/Ov106_SetSceneAnimEnabled.c:
     complete
     .text       start:0x020b81ac end:0x020b81e4
 
-src/overlays/ov106/calls/Ov106_PushTransitionTarget.c:
+src/overlays/screens/ov106/Ov106_PushTransitionTarget.c:
     complete
     .text       start:0x020b81e4 end:0x020b8208
 
-src/overlays/ov106/calls/Ov106_GetBrightness.c:
+src/overlays/screens/ov106/Ov106_GetBrightness.c:
     complete
     .text       start:0x020b8208 end:0x020b821c
 
-src/overlays/ov106/calls/Ov106_ScriptCmd_SetGateFlagWithSound.c:
+src/overlays/screens/ov106/Ov106_ScriptCmd_SetGateFlagWithSound.c:
     complete
     .text       start:0x020b821c end:0x020b823c
 
-src/overlays/ov106/calls/Ov106_CmdSetGateFlag.c:
+src/overlays/screens/ov106/Ov106_CmdSetGateFlag.c:
     complete
     .text       start:0x020b823c end:0x020b825c
 
-src/overlays/ov106/calls/Ov106_CmdStartLightFade.c:
+src/overlays/screens/ov106/Ov106_CmdStartLightFade.c:
     complete
     .text       start:0x020b825c end:0x020b82c8
 
-src/overlays/ov106/calls/Ov106_CmdStepLightFade.c:
+src/overlays/screens/ov106/Ov106_CmdStepLightFade.c:
     complete
     .text       start:0x020b82c8 end:0x020b833a
 
-src/overlays/ov106/calls/Ov106_CmdSetGameMode2.c:
+src/overlays/screens/ov106/Ov106_CmdSetGameMode2.c:
     complete
     .text       start:0x020b833c end:0x020b834c
 
-src/overlays/ov106/auto/Ov106_ConstReturn0.c:
+src/overlays/screens/ov106/Ov106_ConstReturn0.c:
     complete
     .text       start:0x020b834c end:0x020b8350
 
-src/overlays/ov106/calls/Ov106_CmdSaveGame.c:
+src/overlays/screens/ov106/Ov106_CmdSaveGame.c:
     complete
     .text       start:0x020b8350 end:0x020b83c4
 
-src/overlays/ov106/calls/Ov106_VmCmdApplyByFlag.c:
+src/overlays/screens/ov106/Ov106_VmCmdApplyByFlag.c:
     complete
     .text       start:0x020b83c4 end:0x020b8410
 
-src/overlays/ov106/calls/Ov106_SubSceneEnter.c:
+src/overlays/screens/ov106/Ov106_SubSceneEnter.c:
     complete
     .text       start:0x020b8410 end:0x020b8448
 
-src/overlays/ov106/calls/Ov106_ClassTeardown.c:
+src/overlays/screens/ov106/Ov106_ClassTeardown.c:
     complete
     .text       start:0x020b8448 end:0x020b8454
 
-src/overlays/ov106/calls/Ov106_InitNoiseOverlay.c:
+src/overlays/screens/ov106/Ov106_InitNoiseOverlay.c:
     complete
     .text       start:0x020b8454 end:0x020b84b8
 
-src/overlays/ov106/calls/Ov106_LoadNoiseTexture.c:
+src/overlays/screens/ov106/Ov106_LoadNoiseTexture.c:
     complete
     .text       start:0x020b84b8 end:0x020b85a0
 
-src/overlays/ov106/calls/Ov106_SubSceneTick.c:
+src/overlays/screens/ov106/Ov106_SubSceneTick.c:
     complete
     .text       start:0x020b85a0 end:0x020b85d8
 
-src/overlays/ov106/calls/Ov106_SetupNoiseDraw.c:
+src/overlays/screens/ov106/Ov106_SetupNoiseDraw.c:
     complete
     .text       start:0x020b85d8 end:0x020b8790
 
-src/overlays/ov106/calls/Ov106_DrawNoiseTile.c:
+src/overlays/screens/ov106/Ov106_DrawNoiseTile.c:
     complete
     .text       start:0x020b8790 end:0x020b8838
 
-src/overlays/ov106/calls/Ov106_DrawNoiseQuad.c:
+src/overlays/screens/ov106/Ov106_DrawNoiseQuad.c:
     complete
     .text       start:0x020b8838 end:0x020b8990
 
-src/overlays/ov106/calls/Ov106_DrawNoiseOverlay.c:
+src/overlays/screens/ov106/Ov106_DrawNoiseOverlay.c:
     complete
     .text       start:0x020b8990 end:0x020b8a24
 
-src/overlays/ov106/calls/Ov106_SetGateFlag.c:
+src/overlays/screens/ov106/Ov106_SetGateFlag.c:
     complete
     .text       start:0x020b8a24 end:0x020b8a34
 
-src/overlays/ov106/calls/Ov106_GetSlotWord.c:
+src/overlays/screens/ov106/Ov106_GetSlotWord.c:
     complete
     .text       start:0x020b8a34 end:0x020b8a4c
 
-src/overlays/ov106/calls/Ov106_SetGateValue.c:
+src/overlays/screens/ov106/Ov106_SetGateValue.c:
     complete
     .text       start:0x020b8a4c end:0x020b8a5c
 
-src/overlays/ov106/calls/Ov106_GetGateValue.c:
+src/overlays/screens/ov106/Ov106_GetGateValue.c:
     complete
     .text       start:0x020b8a5c end:0x020b8a6c
 
-src/overlays/ov106/data/ov106_class_020b8aa0.c:
+src/overlays/screens/ov106/data/ov106_class_020b8aa0.c:
     complete
     .data       start:0x020b8aa0 end:0x020b8ab4
 
-src/overlays/ov106/data/ov106_class_020b8b20.c:
+src/overlays/screens/ov106/data/ov106_class_020b8b20.c:
     complete
     .data       start:0x020b8b20 end:0x020b8b34
 
-src/overlays/ov106/data/ov106_pointers_020b8af0.c:
+src/overlays/screens/ov106/data/ov106_pointers_020b8af0.c:
     complete
     .data       start:0x020b8af0 end:0x020b8b20
 
-src/overlays/ov106/data/ov106_strings_020b8ab4.c:
+src/overlays/screens/ov106/data/ov106_strings_020b8ab4.c:
     complete
     .data       start:0x020b8ab4 end:0x020b8af0
 
-src/overlays/ov106/data/ov106_strings_020b8b34.c:
+src/overlays/screens/ov106/data/ov106_strings_020b8b34.c:
     complete
     .data       start:0x020b8b34 end:0x020b8b60
 
-src/overlays/ov106/data/ov106_tables_020b8a6c.c:
+src/overlays/screens/ov106/data/ov106_tables_020b8a6c.c:
     complete
     .rodata     start:0x020b8a6c end:0x020b8a84

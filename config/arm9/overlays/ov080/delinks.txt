@@ -4,146 +4,146 @@
     .data       start:0x020b9b40 end:0x020b9be0 kind:data align:32
     .bss        start:0x020b9be0 end:0x020b9c00 kind:bss align:32
 
-src/overlays/ov080/calls/func_ov080_020b8100.c:
+src/overlays/players/ov080_player_riku_3/func_ov080_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov080/calls/Ov080_stateCtorReturnHandler.c:
+src/overlays/players/ov080_player_riku_3/Ov080_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b813c
 
-src/overlays/ov080/calls/Ov080_stateDtorCleanup.c:
+src/overlays/players/ov080_player_riku_3/Ov080_stateDtorCleanup.c:
     complete
     .text       start:0x020b813c end:0x020b8170
 
-src/overlays/ov080/calls/Ov080_BuildRigObject.c:
+src/overlays/players/ov080_player_riku_3/Ov080_BuildRigObject.c:
     complete
     .text       start:0x020b8170 end:0x020b8384
 
-src/overlays/ov080/calls/Ov080_initFlagStateRegionMarshal.c:
+src/overlays/players/ov080_player_riku_3/Ov080_initFlagStateRegionMarshal.c:
     complete
     .text       start:0x020b8384 end:0x020b83f0
 
-src/overlays/ov080/auto/Ov080_MapSlotKindToAnim.c:
+src/overlays/players/ov080_player_riku_3/Ov080_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b83f0 end:0x020b8410
 
-src/overlays/ov080/calls/Ov080_ApplyModeChange.c:
+src/overlays/players/ov080_player_riku_3/Ov080_ApplyModeChange.c:
     complete
     .text       start:0x020b8410 end:0x020b8508
 
-src/overlays/ov080/calls/Ov080_SetupAndForwardToVecBuilder.c:
+src/overlays/players/ov080_player_riku_3/Ov080_SetupAndForwardToVecBuilder.c:
     complete
     .text       start:0x020b8508 end:0x020b854c
 
-src/overlays/ov080/calls/Ov080_InvokeSubHandlerPairWithBuffer.c:
+src/overlays/players/ov080_player_riku_3/Ov080_InvokeSubHandlerPairWithBuffer.c:
     complete
     .text       start:0x020b854c end:0x020b8578
 
-src/overlays/ov080/calls/Ov080_BuildRenderHandle.c:
+src/overlays/players/ov080_player_riku_3/Ov080_BuildRenderHandle.c:
     complete
     .text       start:0x020b8578 end:0x020b85d8
 
-src/overlays/ov080/calls/Ov080_SelectRequestHandler2.c:
+src/overlays/players/ov080_player_riku_3/Ov080_SelectRequestHandler2.c:
     complete
     .text       start:0x020b85d8 end:0x020b864c
 
-src/overlays/ov080/calls/Ov080_ResetAndBindFourSlotSets.c:
+src/overlays/players/ov080_player_riku_3/Ov080_ResetAndBindFourSlotSets.c:
     complete
     .text       start:0x020b864c end:0x020b8720
 
-src/overlays/ov080/calls/Ov080_FreeSubObjectArrayAndTailSlots.c:
+src/overlays/players/ov080_player_riku_3/Ov080_FreeSubObjectArrayAndTailSlots.c:
     complete
     .text       start:0x020b8720 end:0x020b8768
 
-src/overlays/ov080/calls/Ov080_FireTwinBurst.c:
+src/overlays/players/ov080_player_riku_3/Ov080_FireTwinBurst.c:
     complete
     .text       start:0x020b8768 end:0x020b8918
 
-src/overlays/ov080/calls/Ov080_FireTimedBurst.c:
+src/overlays/players/ov080_player_riku_3/Ov080_FireTimedBurst.c:
     complete
     .text       start:0x020b8918 end:0x020b8aa8
 
-src/overlays/ov080/calls/Ov080_DispatchToFourSubHandlers.c:
+src/overlays/players/ov080_player_riku_3/Ov080_DispatchToFourSubHandlers.c:
     complete
     .text       start:0x020b8aa8 end:0x020b8af0
 
-src/overlays/ov080/calls/Ov080_UpdateSubBlocksIfEnabled.c:
+src/overlays/players/ov080_player_riku_3/Ov080_UpdateSubBlocksIfEnabled.c:
     complete
     .text       start:0x020b8af0 end:0x020b8b50
 
-src/overlays/ov080/calls/Ov080_Activate.c:
+src/overlays/players/ov080_player_riku_3/Ov080_Activate.c:
     complete
     .text       start:0x020b8b50 end:0x020b8b64
 
-src/overlays/ov080/calls/Ov080_StepSequenceSlot.c:
+src/overlays/players/ov080_player_riku_3/Ov080_StepSequenceSlot.c:
     complete
     .text       start:0x020b8b64 end:0x020b8c64
 
-src/overlays/ov080/calls/Ov080_DrawNodeAtOwner.c:
+src/overlays/players/ov080_player_riku_3/Ov080_DrawNodeAtOwner.c:
     complete
     .text       start:0x020b8c64 end:0x020b8cdc
 
-src/overlays/ov080/calls/Ov080_StepProjectilesAndFireVolley.c:
+src/overlays/players/ov080_player_riku_3/Ov080_StepProjectilesAndFireVolley.c:
     complete
     .text       start:0x020b8cdc end:0x020b8dc4
 
-src/overlays/ov080/calls/Ov080_LaunchProjectile.c:
+src/overlays/players/ov080_player_riku_3/Ov080_LaunchProjectile.c:
     complete
     .text       start:0x020b8dc4 end:0x020b8f8c
 
-src/overlays/ov080/calls/Ov080_UpdateTracksWhileState2.c:
+src/overlays/players/ov080_player_riku_3/Ov080_UpdateTracksWhileState2.c:
     complete
     .text       start:0x020b8f8c end:0x020b8fbc
 
-src/overlays/ov080/calls/Ov080_DrawNodeCallback.c:
+src/overlays/players/ov080_player_riku_3/Ov080_DrawNodeCallback.c:
     complete
     .text       start:0x020b8fbc end:0x020b8fd8
 
-src/overlays/ov080/calls/Ov080_DriveEmitterStateMachine.c:
+src/overlays/players/ov080_player_riku_3/Ov080_DriveEmitterStateMachine.c:
     complete
     .text       start:0x020b8fd8 end:0x020b9104
 
-src/overlays/ov080/calls/Ov080_UploadBoneMatrices.c:
+src/overlays/players/ov080_player_riku_3/Ov080_UploadBoneMatrices.c:
     complete
     .text       start:0x020b9104 end:0x020b9180
 
-src/overlays/ov080/calls/Ov080_BindAnimsMode2.c:
+src/overlays/players/ov080_player_riku_3/Ov080_BindAnimsMode2.c:
     complete
     .text       start:0x020b9180 end:0x020b9200
 
-src/overlays/ov080/calls/Ov080_AdvanceTrackTime.c:
+src/overlays/players/ov080_player_riku_3/Ov080_AdvanceTrackTime.c:
     complete
     .text       start:0x020b9200 end:0x020b927c
 
-src/overlays/ov080/calls/Ov080_SetYawAndDrawNode.c:
+src/overlays/players/ov080_player_riku_3/Ov080_SetYawAndDrawNode.c:
     complete
     .text       start:0x020b927c end:0x020b92d8
 
-src/overlays/ov080/calls/Ov080_FlagLocalAndEnterState.c:
+src/overlays/players/ov080_player_riku_3/Ov080_FlagLocalAndEnterState.c:
     complete
     .text       start:0x020b92d8 end:0x020b9358
 
-src/overlays/ov080/calls/Ov080_ApproachStep.c:
+src/overlays/players/ov080_player_riku_3/Ov080_ApproachStep.c:
     complete
     .text       start:0x020b9358 end:0x020b9700
 
-src/overlays/ov080/calls/Ov080_PursuitStep.c:
+src/overlays/players/ov080_player_riku_3/Ov080_PursuitStep.c:
     complete
     .text       start:0x020b9700 end:0x020b9ad4
 
-src/overlays/ov080/calls/Ov080_InvokeWithDataTable.c:
+src/overlays/players/ov080_player_riku_3/Ov080_InvokeWithDataTable.c:
     complete
     .text       start:0x020b9ad4 end:0x020b9aec
 
-src/overlays/ov080/data/ov080_class_020b9b40.c:
+src/overlays/players/ov080_player_riku_3/data/ov080_class_020b9b40.c:
     complete
     .data       start:0x020b9b40 end:0x020b9b54
 
-src/overlays/ov080/data/ov080_strings_020b9aec.c:
+src/overlays/players/ov080_player_riku_3/data/ov080_strings_020b9aec.c:
     complete
     .rodata     start:0x020b9aec end:0x020b9b2c
 
-src/overlays/ov080/data/ov080_strings_020b9b54.c:
+src/overlays/players/ov080_player_riku_3/data/ov080_strings_020b9b54.c:
     complete
     .data       start:0x020b9b54 end:0x020b9be0

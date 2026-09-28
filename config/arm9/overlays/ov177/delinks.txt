@@ -4,230 +4,230 @@
     .data       start:0x020d6320 end:0x020d6340 kind:data align:32
     .bss        start:0x020d6340 end:0x020d6340 kind:bss align:32
 
-src/overlays/ov177/calls/Ov177_RegisterEntityClass.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov177/calls/Ov177_CreateNamedEntity.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov177/calls/Ov177_OrientPartAlongDirection.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_OrientPartAlongDirection.c:
     complete
     .text       start:0x020d3844 end:0x020d38a0
 
-src/overlays/ov177/calls/Ov177_Construct.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_Construct.c:
     complete
     .text       start:0x020d38a0 end:0x020d3bbc
 
-src/overlays/ov177/calls/Ov177_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020d3bbc end:0x020d3bfc
 
-src/overlays/ov177/calls/func_ov177_020d3bfc.c:
+src/overlays/enemies/ov177_enemy_1e_3/func_ov177_020d3bfc.c:
     complete
     .text       start:0x020d3bfc end:0x020d3c08
 
-src/overlays/ov177/calls/Ov177_ForwardEventToChild.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_ForwardEventToChild.c:
     complete
     .text       start:0x020d3c08 end:0x020d3c30
 
-src/overlays/ov177/calls/Ov177_NotifyPartThenBase.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_NotifyPartThenBase.c:
     complete
     .text       start:0x020d3c30 end:0x020d3c58
 
-src/overlays/ov177/calls/Ov177_HandleSpawnMessage.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_HandleSpawnMessage.c:
     complete
     .text       start:0x020d3c58 end:0x020d3e74
 
-src/overlays/ov177/calls/Ov177_Model_SetTrack0.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_Model_SetTrack0.c:
     complete
     .text       start:0x020d3e74 end:0x020d3ea4
 
-src/overlays/ov177/calls/Ov177_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020d3ea4 end:0x020d3fdc
 
-src/overlays/ov177/calls/Ov177_registryCreateEntry.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_registryCreateEntry.c:
     complete
     .text       start:0x020d3fdc end:0x020d4038
 
-src/overlays/ov177/calls/Ov177_OnHit.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_OnHit.c:
     complete
     .text       start:0x020d4038 end:0x020d42f0
 
-src/overlays/ov177/auto/Ov177_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d42f0 end:0x020d431c
 
-src/overlays/ov177/calls/Ov177_FaceTargetGetClearance.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_FaceTargetGetClearance.c:
     complete
     .text       start:0x020d431c end:0x020d43b4
 
-src/overlays/ov177/auto/Ov177_IsChildInactive.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_IsChildInactive.c:
     complete
     .text       start:0x020d43b4 end:0x020d43f4
 
-src/overlays/ov177/calls/Ov177_stateInitTransformSlots.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_stateInitTransformSlots.c:
     complete
     .text       start:0x020d43f4 end:0x020d44e0
 
-src/overlays/ov177/calls/Ov177_stDispatchByStateByte_ccbcc.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020d44e0 end:0x020d46cc
 
-src/overlays/ov177/calls/Ov177_stDivStoreField.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_stDivStoreField.c:
     complete
     .text       start:0x020d46cc end:0x020d476c
 
-src/overlays/ov177/calls/Ov177_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d476c end:0x020d47d4
 
-src/overlays/ov177/calls/Ov177_FlagGatedCopyVec3AndAdvance.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020d47d4 end:0x020d4858
 
-src/overlays/ov177/calls/Ov177_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020d4858 end:0x020d4924
 
-src/overlays/ov177/calls/Ov177_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020d4924 end:0x020d49fc
 
-src/overlays/ov177/calls/Ov177_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d49fc end:0x020d4a30
 
-src/overlays/ov177/calls/Ov177_stateRandomInitFull.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_stateRandomInitFull.c:
     complete
     .text       start:0x020d4a30 end:0x020d4abc
 
-src/overlays/ov177/calls/Ov177_OrbitTick.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_OrbitTick.c:
     complete
     .text       start:0x020d4abc end:0x020d4e3c
 
-src/overlays/ov177/calls/Ov177_AiStep_StartTag1WithTimer.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020d4e3c end:0x020d4e80
 
-src/overlays/ov177/calls/Ov177_HoverBobTick.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_HoverBobTick.c:
     complete
     .text       start:0x020d4e80 end:0x020d5078
 
-src/overlays/ov177/calls/Ov177_AiStep_StartTag1.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_AiStep_StartTag1.c:
     complete
     .text       start:0x020d5078 end:0x020d50b4
 
-src/overlays/ov177/calls/Ov177_HoverApproachTick.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_HoverApproachTick.c:
     complete
     .text       start:0x020d50b4 end:0x020d5280
 
-src/overlays/ov177/calls/Ov177_stateRandomDirValue.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_stateRandomDirValue.c:
     complete
     .text       start:0x020d5280 end:0x020d52f0
 
-src/overlays/ov177/calls/Ov177_CircleStrafeTarget.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_CircleStrafeTarget.c:
     complete
     .text       start:0x020d52f0 end:0x020d546c
 
-src/overlays/ov177/calls/Ov177_AcquireTargetOrGiveUp.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020d546c end:0x020d5508
 
-src/overlays/ov177/calls/Ov177_HoverHoldTick.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_HoverHoldTick.c:
     complete
     .text       start:0x020d5508 end:0x020d56d4
 
-src/overlays/ov177/calls/Ov177_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d56d4 end:0x020d5708
 
-src/overlays/ov177/calls/Ov177_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d5708 end:0x020d573c
 
-src/overlays/ov177/calls/Ov177_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020d573c end:0x020d5830
 
-src/overlays/ov177/calls/Ov177_AiEndWithUpdate.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_AiEndWithUpdate.c:
     complete
     .text       start:0x020d5830 end:0x020d591c
 
-src/overlays/ov177/calls/Ov177_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020d591c end:0x020d59bc
 
-src/overlays/ov177/calls/Ov177_stateTimerToggleFlags.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_stateTimerToggleFlags.c:
     complete
     .text       start:0x020d59bc end:0x020d5a50
 
-src/overlays/ov177/calls/Ov177_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d5a50 end:0x020d5a90
 
-src/overlays/ov177/calls/Ov177_Actor_New.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_Actor_New.c:
     complete
     .text       start:0x020d5a90 end:0x020d5ac4
 
-src/overlays/ov177/calls/Ov177_SubObject_ConstructB.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_SubObject_ConstructB.c:
     complete
     .text       start:0x020d5ac4 end:0x020d5c24
 
-src/overlays/ov177/calls/Ov177_OnDespawn.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_OnDespawn.c:
     complete
     .text       start:0x020d5c24 end:0x020d5c40
 
-src/overlays/ov177/calls/Ov177_TickAndSyncModelXform.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d5c40 end:0x020d5c78
 
-src/overlays/ov177/calls/func_ov177_020d5c78.c:
+src/overlays/enemies/ov177_enemy_1e_3/func_ov177_020d5c78.c:
     complete
     .text       start:0x020d5c78 end:0x020d5c84
 
-src/overlays/ov177/calls/Ov177_OnHitMessage.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_OnHitMessage.c:
     complete
     .text       start:0x020d5c84 end:0x020d5d0c
 
-src/overlays/ov177/calls/Ov177_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d5d0c end:0x020d5d58
 
-src/overlays/ov177/calls/Ov177_stateInitClearSlots.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_stateInitClearSlots.c:
     complete
     .text       start:0x020d5d58 end:0x020d5e00
 
-src/overlays/ov177/calls/Ov177_dispatchByStatusByte.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_dispatchByStatusByte.c:
     complete
     .text       start:0x020d5e00 end:0x020d5e78
 
-src/overlays/ov177/calls/Ov177_SetPoseVecOrTransform.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_SetPoseVecOrTransform.c:
     complete
     .text       start:0x020d5e78 end:0x020d5f00
 
-src/overlays/ov177/calls/Ov177_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d5f00 end:0x020d5fb0
 
-src/overlays/ov177/calls/Ov177_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d5fb0 end:0x020d5fe8
 
-src/overlays/ov177/calls/Ov177_Action5ThenScaleVec.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_Action5ThenScaleVec.c:
     complete
     .text       start:0x020d5fe8 end:0x020d60c4
 
-src/overlays/ov177/calls/Ov177_DashTick.c:
+src/overlays/enemies/ov177_enemy_1e_3/Ov177_DashTick.c:
     complete
     .text       start:0x020d60c4 end:0x020d62f8
 
-src/overlays/ov177/data/ov177_strings_020d6320.c:
+src/overlays/enemies/ov177_enemy_1e_3/data/ov177_strings_020d6320.c:
     complete
     .data       start:0x020d6320 end:0x020d6340
 
-src/overlays/ov177/data/ov177_tables_020d62f8.c:
+src/overlays/enemies/ov177_enemy_1e_3/data/ov177_tables_020d62f8.c:
     complete
     .rodata     start:0x020d62f8 end:0x020d6308

@@ -3,98 +3,98 @@
     .data       start:0x020d2760 end:0x020d2780 kind:data align:32
     .bss        start:0x020d2780 end:0x020d2780 kind:bss align:32
 
-src/overlays/ov285/calls/Ov285_RegisterEntityClass.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/ov285/calls/Ov285_CreateNamedEntity.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a24
 
-src/overlays/ov285/calls/Ov285_ClassInit.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_ClassInit.c:
     complete
     .text       start:0x020d1a24 end:0x020d1b64
 
-src/overlays/ov285/calls/Ov285_OnDespawn.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_OnDespawn.c:
     complete
     .text       start:0x020d1b64 end:0x020d1b80
 
-src/overlays/ov285/calls/Ov285_CopyBlockToTwoNodes.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_CopyBlockToTwoNodes.c:
     complete
     .text       start:0x020d1b80 end:0x020d1bdc
 
-src/overlays/ov285/calls/Ov285_ForwardAnimEvent.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_ForwardAnimEvent.c:
     complete
     .text       start:0x020d1bdc end:0x020d1bfc
 
-src/overlays/ov285/calls/Ov285_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d1bfc end:0x020d1c48
 
-src/overlays/ov285/calls/Ov285_SpendHitPointsOnHit.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_SpendHitPointsOnHit.c:
     complete
     .text       start:0x020d1c48 end:0x020d1cbc
 
-src/overlays/ov285/auto/Ov285_TryBeginSubState5IfIdle.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_TryBeginSubState5IfIdle.c:
     complete
     .text       start:0x020d1cbc end:0x020d1cec
 
-src/overlays/ov285/calls/Ov285_AiStateInit.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_AiStateInit.c:
     complete
     .text       start:0x020d1cec end:0x020d1db0
 
-src/overlays/ov285/calls/Ov285_DispatchSubStateByte.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_DispatchSubStateByte.c:
     complete
     .text       start:0x020d1db0 end:0x020d1ef8
 
-src/overlays/ov285/calls/Ov285_ApplyFacingAndFlushMove.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_ApplyFacingAndFlushMove.c:
     complete
     .text       start:0x020d1ef8 end:0x020d1f8c
 
-src/overlays/ov285/calls/Ov285_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d1f8c end:0x020d1ff4
 
-src/overlays/ov285/calls/Ov285_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d1ff4 end:0x020d2030
 
-src/overlays/ov285/calls/Ov285_Action48_Enter.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_Action48_Enter.c:
     complete
     .text       start:0x020d2030 end:0x020d20f8
 
-src/overlays/ov285/calls/Ov285_Wait_Tick.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_Wait_Tick.c:
     complete
     .text       start:0x020d20f8 end:0x020d21c8
 
-src/overlays/ov285/calls/Ov285_AccumulateTimer28ThenAdvanceAt400.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_AccumulateTimer28ThenAdvanceAt400.c:
     complete
     .text       start:0x020d21c8 end:0x020d2218
 
-src/overlays/ov285/calls/Ov285_stDiv5Store.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_stDiv5Store.c:
     complete
     .text       start:0x020d2218 end:0x020d227c
 
-src/overlays/ov285/calls/Ov285_Chase_DecideAttack.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_Chase_DecideAttack.c:
     complete
     .text       start:0x020d227c end:0x020d2368
 
-src/overlays/ov285/calls/Ov285_Chase_Enter.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_Chase_Enter.c:
     complete
     .text       start:0x020d2368 end:0x020d23f0
 
-src/overlays/ov285/calls/Ov285_Chase_Tick.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_Chase_Tick.c:
     complete
     .text       start:0x020d23f0 end:0x020d25cc
 
-src/overlays/ov285/calls/Ov285_ConfigHw60FlagsBeginAction4a.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_ConfigHw60FlagsBeginAction4a.c:
     complete
     .text       start:0x020d25cc end:0x020d2694
 
-src/overlays/ov285/calls/Ov285_ConfigHw60BeginAction49.c:
+src/overlays/enemies/ov285_enemy_6a/Ov285_ConfigHw60BeginAction49.c:
     complete
     .text       start:0x020d2694 end:0x020d2748
 
-src/overlays/ov285/data/ov285_strings_020d2760.c:
+src/overlays/enemies/ov285_enemy_6a/data/ov285_strings_020d2760.c:
     complete
     .data       start:0x020d2760 end:0x020d2780

@@ -4,822 +4,822 @@
     .data       start:0x020563c0 end:0x020565e0 kind:data align:32
     .bss        start:0x020565e0 end:0x02056680 kind:bss align:32
 
-src/overlays/ov006/calls/Ov006_LoadLayoutResources.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_LoadLayoutResources.c:
     complete
     .text       start:0x0204cac0 end:0x0204cafe
 
-src/overlays/ov006/calls/Ov006_LoadElemsFromLayout.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_LoadElemsFromLayout.c:
     complete
     .text       start:0x0204cb00 end:0x0204cb68
 
-src/overlays/ov006/calls/Ov006_BuildLayoutFromTagTable.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_BuildLayoutFromTagTable.c:
     complete
     .text       start:0x0204cb68 end:0x0204cba0
 
-src/overlays/ov006/auto/Ov006_IsPointInBox.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_IsPointInBox.c:
     complete
     .text       start:0x0204cba0 end:0x0204cbdc
 
-src/overlays/ov006/auto/Ov006_FindActiveEntryById.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FindActiveEntryById.c:
     complete
     .text       start:0x0204cbdc end:0x0204cc2c
 
-src/overlays/ov006/auto/Ov006_FindFreeElem.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FindFreeElem.c:
     complete
     .text       start:0x0204cc2c end:0x0204cc6c
 
-src/overlays/ov006/auto/Ov006_FindFirstUnusedEntry.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FindFirstUnusedEntry.c:
     complete
     .text       start:0x0204cc6c end:0x0204ccb0
 
-src/overlays/ov006/auto/Ov006_FindFirstUnusedElem.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FindFirstUnusedElem.c:
     complete
     .text       start:0x0204ccb0 end:0x0204ccec
 
-src/overlays/ov006/calls/Ov006_Touch_GetLatestValidSample.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_Touch_GetLatestValidSample.c:
     complete
     .text       start:0x0204ccec end:0x0204cd60
 
-src/overlays/ov006/calls/Ov006_FlushOrRegisterBlock.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FlushOrRegisterBlock.c:
     complete
     .text       start:0x0204cd60 end:0x0204cdd0
 
-src/overlays/ov006/auto/Ov006_TickTagTrackerNodes.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_TickTagTrackerNodes.c:
     complete
     .text       start:0x0204cdd0 end:0x0204cf70
 
-src/overlays/ov006/auto/Ov006_ResolveHoveredEntryAndNotify.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ResolveHoveredEntryAndNotify.c:
     complete
     .text       start:0x0204cf70 end:0x0204d098
 
-src/overlays/ov006/calls/Ov006_Container_Init.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_Container_Init.c:
     complete
     .text       start:0x0204d098 end:0x0204d10e
 
-src/overlays/ov006/calls/Ov006_TickSelectionWidget.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_TickSelectionWidget.c:
     complete
     .text       start:0x0204d110 end:0x0204d138
 
-src/overlays/ov006/calls/Ov006_ReleaseThreeBuffers.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ReleaseThreeBuffers.c:
     complete
     .text       start:0x0204d138 end:0x0204d160
 
-src/overlays/ov006/calls/Ov006_LoadAndInitResourceSections.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_LoadAndInitResourceSections.c:
     complete
     .text       start:0x0204d160 end:0x0204d198
 
-src/overlays/ov006/calls/Ov006_AddElem.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_AddElem.c:
     complete
     .text       start:0x0204d198 end:0x0204d208
 
-src/overlays/ov006/auto/Ov006_InvokeElementCallback.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_InvokeElementCallback.c:
     complete
     .text       start:0x0204d208 end:0x0204d234
 
-src/overlays/ov006/calls/Ov006_FlushFlaggedElements.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FlushFlaggedElements.c:
     complete
     .text       start:0x0204d234 end:0x0204d266
 
-src/overlays/ov006/calls/Ov006_BuildTagTrackerNode.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_BuildTagTrackerNode.c:
     complete
     .text       start:0x0204d268 end:0x0204d334
 
-src/overlays/ov006/calls/Ov006_ReleaseElement.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ReleaseElement.c:
     complete
     .text       start:0x0204d334 end:0x0204d364
 
-src/overlays/ov006/calls/Ov006_SweepReleasePendingElements.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SweepReleasePendingElements.c:
     complete
     .text       start:0x0204d364 end:0x0204d396
 
-src/overlays/ov006/calls/Ov006_AllocResourceEntry.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_AllocResourceEntry.c:
     complete
     .text       start:0x0204d398 end:0x0204d3dc
 
-src/overlays/ov006/calls/Ov006_FreeElementBuffer.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FreeElementBuffer.c:
     complete
     .text       start:0x0204d3dc end:0x0204d408
 
-src/overlays/ov006/calls/Ov006_SweepFreeElementBuffers.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SweepFreeElementBuffers.c:
     complete
     .text       start:0x0204d408 end:0x0204d432
 
-src/overlays/ov006/auto/Ov006_FindEntryByTag.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FindEntryByTag.c:
     complete
     .text       start:0x0204d434 end:0x0204d490
 
-src/overlays/ov006/auto/Ov006_Elem_SetX.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_Elem_SetX.c:
     complete
     .text       start:0x0204d490 end:0x0204d498
 
-src/overlays/ov006/auto/Ov006_Elem_SetY.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_Elem_SetY.c:
     complete
     .text       start:0x0204d498 end:0x0204d4a0
 
-src/overlays/ov006/calls/Ov006_Elem_SetPos.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_Elem_SetPos.c:
     complete
     .text       start:0x0204d4a0 end:0x0204d4c8
 
-src/overlays/ov006/auto/Ov006_TagTracker_InvokeCallback.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_TagTracker_InvokeCallback.c:
     complete
     .text       start:0x0204d4c8 end:0x0204d4e4
 
-src/overlays/ov006/calls/Ov006_SweepElements.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SweepElements.c:
     complete
     .text       start:0x0204d4e4 end:0x0204d4fc
 
-src/overlays/ov006/calls/Ov006_ClearElementList.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ClearElementList.c:
     complete
     .text       start:0x0204d4fc end:0x0204d554
 
-src/overlays/ov006/calls/Ov006_InitResourceRecord.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_InitResourceRecord.c:
     complete
     .text       start:0x0204d554 end:0x0204d57a
 
-src/overlays/ov006/calls/Ov006_FreeResourceRecordBuffer.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FreeResourceRecordBuffer.c:
     complete
     .text       start:0x0204d57c end:0x0204d58a
 
-src/overlays/ov006/auto/Ov006_GetVarRecordByIndex.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_GetVarRecordByIndex.c:
     complete
     .text       start:0x0204d58c end:0x0204d5c4
 
-src/overlays/ov006/calls/Ov006_CopySourceBlock.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CopySourceBlock.c:
     complete
     .text       start:0x0204d5c4 end:0x0204d5f8
 
-src/overlays/ov006/calls/Ov006_IsSceneState4.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_IsSceneState4.c:
     complete
     .text       start:0x0204d5f8 end:0x0204d610
 
-src/overlays/ov006/auto/Ov006_MenuEntryToSlot.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MenuEntryToSlot.c:
     complete
     .text       start:0x0204d610 end:0x0204d700
 
-src/overlays/ov006/auto/Ov006_MenuSlotToEntry.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MenuSlotToEntry.c:
     complete
     .text       start:0x0204d700 end:0x0204d800
 
-src/overlays/ov006/calls/Ov006_MissionUpsertRowByKey.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionUpsertRowByKey.c:
     complete
     .text       start:0x0204d800 end:0x0204d914
 
-src/overlays/ov006/calls/Ov006_UpdateSlotCache.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateSlotCache.c:
     complete
     .text       start:0x0204d914 end:0x0204d97c
 
-src/overlays/ov006/calls/Ov006_UpdateSlotCache_2.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateSlotCache_2.c:
     complete
     .text       start:0x0204d97c end:0x0204d9e4
 
-src/overlays/ov006/calls/Ov006_PacketSentCallback.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_PacketSentCallback.c:
     complete
     .text       start:0x0204d9e4 end:0x0204d9fc
 
-src/overlays/ov006/calls/Ov006_UploadSlotTiles.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UploadSlotTiles.c:
     complete
     .text       start:0x0204d9fc end:0x0204da3c
 
-src/overlays/ov006/calls/Ov006_SendNetworkPacket.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SendNetworkPacket.c:
     complete
     .text       start:0x0204da3c end:0x0204dae0
 
-src/overlays/ov006/calls/Ov006_MissionIsTransitionDone.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionIsTransitionDone.c:
     complete
     .text       start:0x0204dae0 end:0x0204db14
 
-src/overlays/ov006/calls/Ov006_GetPeerTileUploadPending.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_GetPeerTileUploadPending.c:
     complete
     .text       start:0x0204db14 end:0x0204db2c
 
-src/overlays/ov006/calls/Ov006_MissionDriveSound.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionDriveSound.c:
     complete
     .text       start:0x0204db2c end:0x0204dbb4
 
-src/overlays/ov006/calls/Ov006_TickCardTransferScene.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_TickCardTransferScene.c:
     complete
     .text       start:0x0204dbb4 end:0x0204dc04
 
-src/overlays/ov006/calls/Ov006_FreeSceneBuffers.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FreeSceneBuffers.c:
     complete
     .text       start:0x0204dc04 end:0x0204dc78
 
-src/overlays/ov006/calls/Ov006_MissionResolveDuplicateIds.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionResolveDuplicateIds.c:
     complete
     .text       start:0x0204dc78 end:0x0204de18
 
-src/overlays/ov006/calls/Ov006_MatchMissionStartPacket.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MatchMissionStartPacket.c:
     complete
     .text       start:0x0204de18 end:0x0204de5c
 
-src/overlays/ov006/calls/Ov006_MissionStartTransition.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionStartTransition.c:
     complete
     .text       start:0x0204de5c end:0x0204def4
 
-src/overlays/ov006/calls/Ov006_RefreshSelectionSendBlock.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_RefreshSelectionSendBlock.c:
     complete
     .text       start:0x0204def4 end:0x0204e0c4
 
-src/overlays/ov006/calls/Ov006_MissionPushDisplayConfig.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionPushDisplayConfig.c:
     complete
     .text       start:0x0204e0c4 end:0x0204e114
 
-src/overlays/ov006/calls/Ov006_MissionUpdateInputTransition.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionUpdateInputTransition.c:
     complete
     .text       start:0x0204e114 end:0x0204e1ec
 
-src/overlays/ov006/calls/Ov006_MissionCreateContext.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionCreateContext.c:
     complete
     .text       start:0x0204e1ec end:0x0204e300
 
-src/overlays/ov006/calls/Ov006_HandleSubScenePoll.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_HandleSubScenePoll.c:
     complete
     .text       start:0x0204e300 end:0x0204e35c
 
-src/overlays/ov006/calls/Ov006_MissionStartGate.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionStartGate.c:
     complete
     .text       start:0x0204e35c end:0x0204e3a8
 
-src/overlays/ov006/calls/Ov006_FireExitMessage.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FireExitMessage.c:
     complete
     .text       start:0x0204e3a8 end:0x0204e3ec
 
-src/overlays/ov006/calls/Ov006_MissionApplyEntryUpdate.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionApplyEntryUpdate.c:
     complete
     .text       start:0x0204e3ec end:0x0204e5bc
 
-src/overlays/ov006/calls/Ov006_CanAdvancePastIntro.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CanAdvancePastIntro.c:
     complete
     .text       start:0x0204e5bc end:0x0204e5e4
 
-src/overlays/ov006/calls/Ov006_SynchronizeMissionEntries.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SynchronizeMissionEntries.c:
     complete
     .text       start:0x0204e5e4 end:0x0204e8b0
 
-src/overlays/ov006/calls/Ov006_UpdateMissionEntrySynchronization.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateMissionEntrySynchronization.c:
     complete
     .text       start:0x0204e8b0 end:0x0204eca4
 
-src/overlays/ov006/calls/Ov006_GetIdleHandlerGated.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_GetIdleHandlerGated.c:
     complete
     .text       start:0x0204eca4 end:0x0204ecdc
 
-src/overlays/ov006/auto/Ov006_MissionSceneIdleCallback.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionSceneIdleCallback.c:
     complete
     .text       start:0x0204ecdc end:0x0204ece4
 
-src/overlays/ov006/calls/Ov006_UpdateAndGetIdleHandler.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateAndGetIdleHandler.c:
     complete
     .text       start:0x0204ece4 end:0x0204ed24
 
-src/overlays/ov006/auto/Ov006_IdleStateNoOp.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_IdleStateNoOp.c:
     complete
     .text       start:0x0204ed24 end:0x0204ed2c
 
-src/overlays/ov006/calls/Ov006_GetIdleHandler.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_GetIdleHandler.c:
     complete
     .text       start:0x0204ed2c end:0x0204ed5c
 
-src/overlays/ov006/auto/Ov006_IdleHandlerNoOp.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_IdleHandlerNoOp.c:
     complete
     .text       start:0x0204ed5c end:0x0204ed64
 
-src/overlays/ov006/calls/Ov006_MissionSelectSceneCallback.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionSelectSceneCallback.c:
     complete
     .text       start:0x0204ed64 end:0x0204eda4
 
-src/overlays/ov006/calls/Ov006_MissionExpireRows.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionExpireRows.c:
     complete
     .text       start:0x0204eda4 end:0x0204eecc
 
-src/overlays/ov006/calls/Ov006_MissionSelectStateCallback.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionSelectStateCallback.c:
     complete
     .text       start:0x0204eecc end:0x0204f008
 
-src/overlays/ov006/calls/Ov006_MissionUpdateSelectionState.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionUpdateSelectionState.c:
     complete
     .text       start:0x0204f008 end:0x0204f0f4
 
-src/overlays/ov006/calls/Ov006_MissionPeerSyncState.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionPeerSyncState.c:
     complete
     .text       start:0x0204f0f4 end:0x0204f2f4
 
-src/overlays/ov006/calls/Ov006_ShouldEnterConfirmState.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ShouldEnterConfirmState.c:
     complete
     .text       start:0x0204f2f4 end:0x0204f3ac
 
-src/overlays/ov006/calls/Ov006_MissionGetCursorEntry.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionGetCursorEntry.c:
     complete
     .text       start:0x0204f3ac end:0x0204f3f0
 
-src/overlays/ov006/calls/Ov006_MissionCommitEntry.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionCommitEntry.c:
     complete
     .text       start:0x0204f3f0 end:0x0204f470
 
-src/overlays/ov006/calls/Ov006_MissionResetInputBuffers.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionResetInputBuffers.c:
     complete
     .text       start:0x0204f470 end:0x0204f554
 
-src/overlays/ov006/calls/Ov006_MissionCommitRowSelection.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionCommitRowSelection.c:
     complete
     .text       start:0x0204f554 end:0x0204f674
 
-src/overlays/ov006/calls/Ov006_TickInputUpdate.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_TickInputUpdate.c:
     complete
     .text       start:0x0204f674 end:0x0204f6bc
 
-src/overlays/ov006/calls/Ov006_MissionSelectionSendTick.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionSelectionSendTick.c:
     complete
     .text       start:0x0204f6bc end:0x0204f788
 
-src/overlays/ov006/calls/Ov006_MissionMenuOpenTick.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionMenuOpenTick.c:
     complete
     .text       start:0x0204f788 end:0x0204f810
 
-src/overlays/ov006/calls/Ov006_UpdateSelectionConfirmationState.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateSelectionConfirmationState.c:
     complete
     .text       start:0x0204f810 end:0x0204f9b0
 
-src/overlays/ov006/calls/Ov006_MissionFillMenuLabels.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionFillMenuLabels.c:
     complete
     .text       start:0x0204f9b0 end:0x0204fa1c
 
-src/overlays/ov006/calls/Ov006_Link_GetMode.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_Link_GetMode.c:
     complete
     .text       start:0x0204fa1c end:0x0204fa30
 
-src/overlays/ov006/calls/Ov006_CopyMissionOptionTextRows.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CopyMissionOptionTextRows.c:
     complete
     .text       start:0x0204fa30 end:0x0204fa58
 
-src/overlays/ov006/calls/Ov006_GetMissionMenuSelection.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_GetMissionMenuSelection.c:
     complete
     .text       start:0x0204fa58 end:0x0204fa88
 
-src/overlays/ov006/calls/Ov006_MissionPollKeys.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionPollKeys.c:
     complete
     .text       start:0x0204fa88 end:0x0204fab8
 
-src/overlays/ov006/calls/Ov006_ForwardRtcAvailability.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ForwardRtcAvailability.c:
     complete
     .text       start:0x0204fab8 end:0x0204fad0
 
-src/overlays/ov006/calls/Ov006_GetMissionOptionMask.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_GetMissionOptionMask.c:
     complete
     .text       start:0x0204fad0 end:0x0204faf0
 
-src/overlays/ov006/calls/Ov006_MissionEnsureController.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionEnsureController.c:
     complete
     .text       start:0x0204faf0 end:0x0204fb24
 
-src/overlays/ov006/calls/Ov006_ReleaseSecondaryResource.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ReleaseSecondaryResource.c:
     complete
     .text       start:0x0204fb24 end:0x0204fb50
 
-src/overlays/ov006/calls/Ov006_Link_Poll.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_Link_Poll.c:
     complete
     .text       start:0x0204fb50 end:0x0204fb68
 
-src/overlays/ov006/calls/Ov006_SetPendingInput.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SetPendingInput.c:
     complete
     .text       start:0x0204fb68 end:0x0204fbb4
 
-src/overlays/ov006/calls/Ov006_IsMissionSelectionCancelAllowed.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_IsMissionSelectionCancelAllowed.c:
     complete
     .text       start:0x0204fbb4 end:0x0204fbd0
 
-src/overlays/ov006/calls/Ov006_GetMissionRowInfo.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_GetMissionRowInfo.c:
     complete
     .text       start:0x0204fbd0 end:0x0204fc78
 
-src/overlays/ov006/calls/Ov006_MissionIsEntryActive.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionIsEntryActive.c:
     complete
     .text       start:0x0204fc78 end:0x0204fcd8
 
-src/overlays/ov006/calls/Ov006_MissionArmCursorRequest.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionArmCursorRequest.c:
     complete
     .text       start:0x0204fcd8 end:0x0204fd68
 
-src/overlays/ov006/calls/Ov006_MissionLeaveSubMenu.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionLeaveSubMenu.c:
     complete
     .text       start:0x0204fd68 end:0x0204fd94
 
-src/overlays/ov006/calls/Ov006_IsSceneState0.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_IsSceneState0.c:
     complete
     .text       start:0x0204fd94 end:0x0204fdac
 
-src/overlays/ov006/calls/Ov006_MissionLeaveSubMenu_Ov105.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionLeaveSubMenu_Ov105.c:
     complete
     .text       start:0x0204fdac end:0x0204fdd8
 
-src/overlays/ov006/calls/Ov006_IsSubMenuSceneReady.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_IsSubMenuSceneReady.c:
     complete
     .text       start:0x0204fdd8 end:0x0204fdf0
 
-src/overlays/ov006/calls/Ov006_SetTickSlotByte.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SetTickSlotByte.c:
     complete
     .text       start:0x0204fdf0 end:0x0204fe2c
 
-src/overlays/ov006/calls/Ov006_GetMissionScreenFlag.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_GetMissionScreenFlag.c:
     complete
     .text       start:0x0204fe2c end:0x0204fe4c
 
-src/overlays/ov006/calls/Ov006_IsMissionMenuBusy.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_IsMissionMenuBusy.c:
     complete
     .text       start:0x0204fe4c end:0x0204fe74
 
-src/overlays/ov006/calls/Ov006_IsMissionMenuExitRequested.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_IsMissionMenuExitRequested.c:
     complete
     .text       start:0x0204fe74 end:0x0204fe88
 
-src/overlays/ov006/calls/Ov006_Link_GetField49C.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_Link_GetField49C.c:
     complete
     .text       start:0x0204fe88 end:0x0204fe9c
 
-src/overlays/ov006/calls/Ov006_Link_GetField4F0.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_Link_GetField4F0.c:
     complete
     .text       start:0x0204fe9c end:0x0204feb0
 
-src/overlays/ov006/calls/Ov006_CountPlayersInMask.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CountPlayersInMask.c:
     complete
     .text       start:0x0204feb0 end:0x0204fef4
 
-src/overlays/ov006/calls/Ov006_BlankScreensAndTeardownText.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_BlankScreensAndTeardownText.c:
     complete
     .text       start:0x0204fef4 end:0x0204ff34
 
-src/overlays/ov006/calls/Ov006_MissionApplyParameterRow.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionApplyParameterRow.c:
     complete
     .text       start:0x0204ff34 end:0x0204fffc
 
-src/overlays/ov006/calls/Ov006_ResolveMissionSelection.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ResolveMissionSelection.c:
     complete
     .text       start:0x0204fffc end:0x02050034
 
-src/overlays/ov006/calls/Ov006_IsMissionSelectionAvailable.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_IsMissionSelectionAvailable.c:
     complete
     .text       start:0x02050034 end:0x02050090
 
-src/overlays/ov006/calls/Ov006_CanConfirmMissionMenu.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CanConfirmMissionMenu.c:
     complete
     .text       start:0x02050090 end:0x020500c4
 
-src/overlays/ov006/calls/Ov006_CreateMissionMenu.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CreateMissionMenu.c:
     complete
     .text       start:0x020500c4 end:0x0205028c
 
-src/overlays/ov006/calls/Ov006_MissionSceneDtor.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionSceneDtor.c:
     complete
     .text       start:0x0205028c end:0x020502e4
 
-src/overlays/ov006/calls/Ov006_MissionMenuTick.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionMenuTick.c:
     complete
     .text       start:0x020502e4 end:0x02050360
 
-src/overlays/ov006/calls/Ov006_UpdateMissionMenuOptionScreen.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateMissionMenuOptionScreen.c:
     complete
     .text       start:0x02050360 end:0x020505b0
 
-src/overlays/ov006/calls/func_ov006_020505b0.c:
+src/overlays/scenes/ov006_mission_mode_select/func_ov006_020505b0.c:
     complete
     .text       start:0x020505b0 end:0x020505bc
 
-src/overlays/ov006/calls/Ov006_CheckMissionMenuConfirmInput.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CheckMissionMenuConfirmInput.c:
     complete
     .text       start:0x020505bc end:0x02050630
 
-src/overlays/ov006/calls/Ov006_UpdateMissionMenuConfirmScreen.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateMissionMenuConfirmScreen.c:
     complete
     .text       start:0x02050630 end:0x020508e0
 
-src/overlays/ov006/calls/Ov006_UpdateMissionMenuSelectionScreen.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateMissionMenuSelectionScreen.c:
     complete
     .text       start:0x020508e0 end:0x02050e1c
 
-src/overlays/ov006/calls/Ov006_MissionBuildOptionRows.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionBuildOptionRows.c:
     complete
     .text       start:0x02050e1c end:0x02050fc8
 
-src/overlays/ov006/calls/Ov006_UpdateMissionMemberMenuScreen.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateMissionMemberMenuScreen.c:
     complete
     .text       start:0x02050fc8 end:0x02051878
 
-src/overlays/ov006/auto/Ov006_MemberMenuNextStateNoOp.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MemberMenuNextStateNoOp.c:
     complete
     .text       start:0x02051878 end:0x0205187c
 
-src/overlays/ov006/auto/Ov006_OptionMenuNextStateNoOp.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_OptionMenuNextStateNoOp.c:
     complete
     .text       start:0x0205187c end:0x02051884
 
-src/overlays/ov006/calls/Ov006_MissionInitVideoScene.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionInitVideoScene.c:
     complete
     .text       start:0x02051884 end:0x02051970
 
-src/overlays/ov006/calls/Ov006_UpdateMissionMenuCursor.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateMissionMenuCursor.c:
     complete
     .text       start:0x02051970 end:0x02051ab0
 
-src/overlays/ov006/calls/Ov006_ReadMissionMenuAction.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ReadMissionMenuAction.c:
     complete
     .text       start:0x02051ab0 end:0x02051b34
 
-src/overlays/ov006/calls/Ov006_UpdateMissionMemberSelectionInput.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateMissionMemberSelectionInput.c:
     complete
     .text       start:0x02051b34 end:0x02051f6c
 
-src/overlays/ov006/calls/Ov006_PollInput.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_PollInput.c:
     complete
     .text       start:0x02051f6c end:0x02051fbc
 
-src/overlays/ov006/calls/Ov006_MissionPlaceCell.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionPlaceCell.c:
     complete
     .text       start:0x02051fbc end:0x02052054
 
-src/overlays/ov006/calls/Ov006_IsMissionSelectionEnabled.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_IsMissionSelectionEnabled.c:
     complete
     .text       start:0x02052054 end:0x02052090
 
-src/overlays/ov006/calls/Ov006_ResolveMissionTextColor.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ResolveMissionTextColor.c:
     complete
     .text       start:0x02052090 end:0x020521a0
 
-src/overlays/ov006/calls/Ov006_MissionDrawTextRun.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionDrawTextRun.c:
     complete
     .text       start:0x020521a0 end:0x0205227c
 
-src/overlays/ov006/calls/Ov006_MissionBuildScreenCells.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionBuildScreenCells.c:
     complete
     .text       start:0x0205227c end:0x0205341c
 
-src/overlays/ov006/calls/Ov006_UploadTextCells.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UploadTextCells.c:
     complete
     .text       start:0x0205341c end:0x02053734
 
-src/overlays/ov006/auto/Ov006_SetBgLayout.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SetBgLayout.c:
     complete
     .text       start:0x02053734 end:0x020538a4
 
-src/overlays/ov006/calls/Ov006_Menu_SetupSprites.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_Menu_SetupSprites.c:
     complete
     .text       start:0x020538a4 end:0x02053b24
 
-src/overlays/ov006/calls/Ov006_RebindBgLayers.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_RebindBgLayers.c:
     complete
     .text       start:0x02053b24 end:0x02053cdc
 
-src/overlays/ov006/calls/Ov006_MissionRetargetCellByTag.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionRetargetCellByTag.c:
     complete
     .text       start:0x02053cdc end:0x02053d54
 
-src/overlays/ov006/calls/Ov006_RefreshCharacterSelectPortrait.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_RefreshCharacterSelectPortrait.c:
     complete
     .text       start:0x02053d54 end:0x02053fd0
 
-src/overlays/ov006/calls/Ov006_CommitMissionModeUiSlots.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CommitMissionModeUiSlots.c:
     complete
     .text       start:0x02053fd0 end:0x0205454c
 
-src/overlays/ov006/calls/Ov006_MissionSceneCtor.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionSceneCtor.c:
     complete
     .text       start:0x0205454c end:0x0205487c
 
-src/overlays/ov006/calls/Ov006_MissionDestroyContext.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionDestroyContext.c:
     complete
     .text       start:0x0205487c end:0x02054a00
 
-src/overlays/ov006/calls/Ov006_UpdateMissionModeFrame.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateMissionModeFrame.c:
     complete
     .text       start:0x02054a00 end:0x02054a90
 
-src/overlays/ov006/calls/Ov006_CopyCellBufferRegion.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CopyCellBufferRegion.c:
     complete
     .text       start:0x02054a90 end:0x02054aa0
 
-src/overlays/ov006/calls/Ov006_ClearCellBufferRegion.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ClearCellBufferRegion.c:
     complete
     .text       start:0x02054aa0 end:0x02054ab0
 
-src/overlays/ov006/calls/Ov006_FlushDirtyCells.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FlushDirtyCells.c:
     complete
     .text       start:0x02054ab0 end:0x02054b28
 
-src/overlays/ov006/calls/Ov006_BlitCellBufferRegion.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_BlitCellBufferRegion.c:
     complete
     .text       start:0x02054b28 end:0x02054d68
 
-src/overlays/ov006/calls/Ov006_UpdateCharacterSelectTweens.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_UpdateCharacterSelectTweens.c:
     complete
     .text       start:0x02054d68 end:0x02054fb8
 
-src/overlays/ov006/calls/Ov006_MissionPlaceCellPair.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionPlaceCellPair.c:
     complete
     .text       start:0x02054fb8 end:0x02055104
 
-src/overlays/ov006/calls/Ov006_CommitPendingSubState.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CommitPendingSubState.c:
     complete
     .text       start:0x02055104 end:0x020551a4
 
-src/overlays/ov006/calls/Ov006_MissionRequestStateChange.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionRequestStateChange.c:
     complete
     .text       start:0x020551a4 end:0x020552ac
 
-src/overlays/ov006/calls/Ov006_MissionEnterPage1.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionEnterPage1.c:
     complete
     .text       start:0x020552ac end:0x02055340
 
-src/overlays/ov006/auto/Ov006_MissionStep1NoOp.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionStep1NoOp.c:
     complete
     .text       start:0x02055340 end:0x02055344
 
-src/overlays/ov006/calls/Ov006_MissionEnterPage2.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionEnterPage2.c:
     complete
     .text       start:0x02055344 end:0x020553d8
 
-src/overlays/ov006/auto/Ov006_MissionStep3NoOp.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionStep3NoOp.c:
     complete
     .text       start:0x020553d8 end:0x020553dc
 
-src/overlays/ov006/calls/Ov006_MissionRebuildLayers.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionRebuildLayers.c:
     complete
     .text       start:0x020553dc end:0x02055560
 
-src/overlays/ov006/calls/Ov006_MissionInitCells.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionInitCells.c:
     complete
     .text       start:0x02055560 end:0x020556b8
 
-src/overlays/ov006/auto/Ov006_MissionStep6NoOp.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionStep6NoOp.c:
     complete
     .text       start:0x020556b8 end:0x020556bc
 
-src/overlays/ov006/auto/Ov006_MissionStep7NoOp.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionStep7NoOp.c:
     complete
     .text       start:0x020556bc end:0x020556c0
 
-src/overlays/ov006/calls/Ov006_MissionStep8SetModeIfFlagged.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionStep8SetModeIfFlagged.c:
     complete
     .text       start:0x020556c0 end:0x020556e8
 
-src/overlays/ov006/auto/Ov006_MissionStep9NoOp.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionStep9NoOp.c:
     complete
     .text       start:0x020556e8 end:0x020556ec
 
-src/overlays/ov006/calls/Ov006_MissionInitDisplayResources.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionInitDisplayResources.c:
     complete
     .text       start:0x020556ec end:0x020557d4
 
-src/overlays/ov006/auto/Ov006_ConfigDispcntBothEngines.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ConfigDispcntBothEngines.c:
     complete
     .text       start:0x020557d4 end:0x02055800
 
-src/overlays/ov006/auto/Ov006_MissionStep12NoOp.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionStep12NoOp.c:
     complete
     .text       start:0x02055800 end:0x02055804
 
-src/overlays/ov006/calls/Ov006_MissionShutdownDisplayResources.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionShutdownDisplayResources.c:
     complete
     .text       start:0x02055804 end:0x020558e0
 
-src/overlays/ov006/calls/Ov006_ResetTweensAndBlank.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ResetTweensAndBlank.c:
     complete
     .text       start:0x020558e0 end:0x02055924
 
-src/overlays/ov006/calls/Ov006_MissionScene_IsFlagSet.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionScene_IsFlagSet.c:
     complete
     .text       start:0x02055924 end:0x02055950
 
-src/overlays/ov006/calls/Ov006_MissionScene_GetState.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionScene_GetState.c:
     complete
     .text       start:0x02055950 end:0x02055970
 
-src/overlays/ov006/calls/Ov006_FindMissionGridPosition.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FindMissionGridPosition.c:
     complete
     .text       start:0x02055970 end:0x02055998
 
-src/overlays/ov006/calls/Ov006_SetTitleWord.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SetTitleWord.c:
     complete
     .text       start:0x02055998 end:0x020559dc
 
-src/overlays/ov006/calls/Ov006_StartWipeToSubState.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_StartWipeToSubState.c:
     complete
     .text       start:0x020559dc end:0x02055a54
 
-src/overlays/ov006/calls/Ov006_RequestMenuState.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_RequestMenuState.c:
     complete
     .text       start:0x02055a54 end:0x02055af4
 
-src/overlays/ov006/calls/Ov006_MissionScene_SetByte9520.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionScene_SetByte9520.c:
     complete
     .text       start:0x02055af4 end:0x02055b0c
 
-src/overlays/ov006/calls/Ov006_SetMissionCursorSelection.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SetMissionCursorSelection.c:
     complete
     .text       start:0x02055b0c end:0x02055b30
 
-src/overlays/ov006/calls/Ov006_SetTitleMode.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SetTitleMode.c:
     complete
     .text       start:0x02055b30 end:0x02055b70
 
-src/overlays/ov006/calls/Ov006_SetMissionRowSlotValue.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_SetMissionRowSlotValue.c:
     complete
     .text       start:0x02055b70 end:0x02055c38
 
-src/overlays/ov006/calls/Ov006_MissionSetModelPose.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionSetModelPose.c:
     complete
     .text       start:0x02055c38 end:0x02055cfc
 
-src/overlays/ov006/calls/Ov006_StartChannelTween.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_StartChannelTween.c:
     complete
     .text       start:0x02055cfc end:0x02055d80
 
-src/overlays/ov006/calls/Ov006_MissionStartTween.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionStartTween.c:
     complete
     .text       start:0x02055d80 end:0x02055e04
 
-src/overlays/ov006/calls/Ov006_MissionSetSlotVisible.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionSetSlotVisible.c:
     complete
     .text       start:0x02055e04 end:0x02055e9c
 
-src/overlays/ov006/auto/Ov006_MissionToggleSlotVisible.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionToggleSlotVisible.c:
     complete
     .text       start:0x02055e9c end:0x02055fe8
 
-src/overlays/ov006/calls/Ov006_MissionScene_SetByte95AC.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionScene_SetByte95AC.c:
     complete
     .text       start:0x02055fe8 end:0x02056000
 
-src/overlays/ov006/calls/Ov006_MissionScene_SetByte95AD.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionScene_SetByte95AD.c:
     complete
     .text       start:0x02056000 end:0x02056018
 
-src/overlays/ov006/calls/Ov006_MissionScene_SetHalf95C2.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionScene_SetHalf95C2.c:
     complete
     .text       start:0x02056018 end:0x02056030
 
-src/overlays/ov006/calls/Ov006_ResetTextLayers.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_ResetTextLayers.c:
     complete
     .text       start:0x02056030 end:0x0205606c
 
-src/overlays/ov006/calls/Ov006_MissionDrawTextRunFwd.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionDrawTextRunFwd.c:
     complete
     .text       start:0x0205606c end:0x02056098
 
-src/overlays/ov006/calls/Ov006_FlushTextLayers.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_FlushTextLayers.c:
     complete
     .text       start:0x02056098 end:0x020560cc
 
-src/overlays/ov006/calls/Ov006_CreateSubObject.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CreateSubObject.c:
     complete
     .text       start:0x020560cc end:0x02056118
 
-src/overlays/ov006/calls/Ov006_MissionBootWatchdog.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionBootWatchdog.c:
     complete
     .text       start:0x02056118 end:0x02056154
 
-src/overlays/ov006/calls/Ov006_TopState.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_TopState.c:
     complete
     .text       start:0x02056154 end:0x020561c0
 
-src/overlays/ov006/data/ov006_class_020563c0.c:
+src/overlays/scenes/ov006_mission_mode_select/data/ov006_class_020563c0.c:
     complete
     .data       start:0x020563c0 end:0x020563d4
 
-src/overlays/ov006/data/ov006_class_020563e4.c:
+src/overlays/scenes/ov006_mission_mode_select/data/ov006_class_020563e4.c:
     complete
     .data       start:0x020563e4 end:0x020563f8
 
-src/overlays/ov006/data/ov006_class_0205652c.c:
+src/overlays/scenes/ov006_mission_mode_select/data/ov006_class_0205652c.c:
     complete
     .data       start:0x0205652c end:0x02056540
 
-src/overlays/ov006/data/ov006_class_020565c0.c:
+src/overlays/scenes/ov006_mission_mode_select/data/ov006_class_020565c0.c:
     complete
     .data       start:0x020565c0 end:0x020565e0
 
-src/overlays/ov006/data/ov006_mission_tables.c:
+src/overlays/scenes/ov006_mission_mode_select/data/ov006_mission_tables.c:
     complete
     .rodata     start:0x0205628c end:0x020563a4
 
-src/overlays/ov006/data/ov006_strings_02056508.c:
+src/overlays/scenes/ov006_mission_mode_select/data/ov006_strings_02056508.c:
     complete
     .data       start:0x02056508 end:0x0205651c
 
-src/overlays/ov006/data/ov006_strings_02056540.c:
+src/overlays/scenes/ov006_mission_mode_select/data/ov006_strings_02056540.c:
     complete
     .data       start:0x02056540 end:0x020565c0
 
-src/overlays/ov006/data/ov006_tables_020561c0.c:
+src/overlays/scenes/ov006_mission_mode_select/data/ov006_tables_020561c0.c:
     complete
     .rodata     start:0x020561c0 end:0x0205628c
 
-src/overlays/ov006/data/ov006_tables_020563d4.c:
+src/overlays/scenes/ov006_mission_mode_select/data/ov006_tables_020563d4.c:
     complete
     .data       start:0x020563d4 end:0x020563e4
 
-src/overlays/ov006/data/ov006_tables_020563f8.c:
+src/overlays/scenes/ov006_mission_mode_select/data/ov006_tables_020563f8.c:
     complete
     .data       start:0x020563f8 end:0x02056508
 
-src/overlays/ov006/data/ov006_tables_0205651c.c:
+src/overlays/scenes/ov006_mission_mode_select/data/ov006_tables_0205651c.c:
     complete
     .data       start:0x0205651c end:0x0205652c

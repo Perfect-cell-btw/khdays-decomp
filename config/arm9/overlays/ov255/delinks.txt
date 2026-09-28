@@ -4,466 +4,466 @@
     .data       start:0x020d2be0 end:0x020d2c40 kind:data align:32
     .bss        start:0x020d2c40 end:0x020d2c40 kind:bss align:32
 
-src/overlays/ov255/calls/Ov255_RegisterEntityClass.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov255/calls/Ov255_CreateNamedEntity.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov255/calls/Ov255_EnemyConstruct.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_EnemyConstruct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc4f8
 
-src/overlays/ov255/calls/Ov255_Destroy.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_Destroy.c:
     complete
     .text       start:0x020cc4f8 end:0x020cc570
 
-src/overlays/ov255/calls/Ov255_Update.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_Update.c:
     complete
     .text       start:0x020cc570 end:0x020cc608
 
-src/overlays/ov255/calls/Ov255_HandleMessage.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_HandleMessage.c:
     complete
     .text       start:0x020cc608 end:0x020cc94c
 
-src/overlays/ov255/calls/Ov255_PingAllSubNodes.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_PingAllSubNodes.c:
     complete
     .text       start:0x020cc94c end:0x020cc988
 
-src/overlays/ov255/calls/Ov255_PingAllSubNodes_2.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_PingAllSubNodes_2.c:
     complete
     .text       start:0x020cc988 end:0x020cc9c4
 
-src/overlays/ov255/calls/Ov255_DrawPrePass.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_DrawPrePass.c:
     complete
     .text       start:0x020cc9c4 end:0x020cca7c
 
-src/overlays/ov255/calls/Ov255_SetMotion.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_SetMotion.c:
     complete
     .text       start:0x020cca7c end:0x020ccb64
 
-src/overlays/ov255/calls/Ov255_AppendWorkEntry.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_AppendWorkEntry.c:
     complete
     .text       start:0x020ccb64 end:0x020ccbbc
 
-src/overlays/ov255/calls/Ov255_CreateAiTask.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_CreateAiTask.c:
     complete
     .text       start:0x020ccbbc end:0x020ccc08
 
-src/overlays/ov255/calls/Ov255_FilterHit.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_FilterHit.c:
     complete
     .text       start:0x020ccc08 end:0x020ccdac
 
-src/overlays/ov255/calls/Ov255_SteerToTarget.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_SteerToTarget.c:
     complete
     .text       start:0x020ccdac end:0x020cce6c
 
-src/overlays/ov255/calls/Ov255_StepAttackCues.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_StepAttackCues.c:
     complete
     .text       start:0x020cce6c end:0x020cd084
 
-src/overlays/ov255/calls/Ov255_InitState.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_InitState.c:
     complete
     .text       start:0x020cd084 end:0x020cd134
 
-src/overlays/ov255/calls/Ov255_AiDispatchAction.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_AiDispatchAction.c:
     complete
     .text       start:0x020cd134 end:0x020cd328
 
-src/overlays/ov255/calls/Ov255_CommonUpdate.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_CommonUpdate.c:
     complete
     .text       start:0x020cd328 end:0x020cd3b8
 
-src/overlays/ov255/calls/Ov255_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cd3b8 end:0x020cd420
 
-src/overlays/ov255/calls/Ov255_WakeCheck.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_WakeCheck.c:
     complete
     .text       start:0x020cd420 end:0x020cd49c
 
-src/overlays/ov255/calls/Ov255_AiEnterDecide.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_AiEnterDecide.c:
     complete
     .text       start:0x020cd49c end:0x020cd4d8
 
-src/overlays/ov255/calls/Ov255_DecideTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_DecideTick.c:
     complete
     .text       start:0x020cd4d8 end:0x020cd7f4
 
-src/overlays/ov255/calls/Ov255_AiEnterTakeOff.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_AiEnterTakeOff.c:
     complete
     .text       start:0x020cd7f4 end:0x020cd83c
 
-src/overlays/ov255/calls/Ov255_TakeOffTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_TakeOffTick.c:
     complete
     .text       start:0x020cd83c end:0x020cd934
 
-src/overlays/ov255/calls/Ov255_WindUpTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_WindUpTick.c:
     complete
     .text       start:0x020cd934 end:0x020cdac8
 
-src/overlays/ov255/calls/Ov255_ApproachStartTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_ApproachStartTick.c:
     complete
     .text       start:0x020cdac8 end:0x020cdbb0
 
-src/overlays/ov255/calls/Ov255_ApproachTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_ApproachTick.c:
     complete
     .text       start:0x020cdbb0 end:0x020cdcd4
 
-src/overlays/ov255/calls/Ov255_CheckTarget.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_CheckTarget.c:
     complete
     .text       start:0x020cdcd4 end:0x020cdd64
 
-src/overlays/ov255/calls/Ov255_GlideTick5.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_GlideTick5.c:
     complete
     .text       start:0x020cdd64 end:0x020cde10
 
-src/overlays/ov255/calls/Ov255_DiveTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_DiveTick.c:
     complete
     .text       start:0x020cde10 end:0x020cdf08
 
-src/overlays/ov255/calls/Ov255_SettleTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_SettleTick.c:
     complete
     .text       start:0x020cdf08 end:0x020cdfd8
 
-src/overlays/ov255/calls/Ov255_AiEnterGlide.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_AiEnterGlide.c:
     complete
     .text       start:0x020cdfd8 end:0x020ce050
 
-src/overlays/ov255/calls/Ov255_GlideTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_GlideTick.c:
     complete
     .text       start:0x020ce050 end:0x020ce0f0
 
-src/overlays/ov255/calls/Ov255_GlideToLandTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_GlideToLandTick.c:
     complete
     .text       start:0x020ce0f0 end:0x020ce1c8
 
-src/overlays/ov255/calls/Ov255_UpdateMotionAndFinish.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_UpdateMotionAndFinish.c:
     complete
     .text       start:0x020ce1c8 end:0x020ce258
 
-src/overlays/ov255/calls/Ov255_AiEnterGlideB.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_AiEnterGlideB.c:
     complete
     .text       start:0x020ce258 end:0x020ce2d0
 
-src/overlays/ov255/calls/Ov255_GlideTick_2.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_GlideTick_2.c:
     complete
     .text       start:0x020ce2d0 end:0x020ce370
 
-src/overlays/ov255/calls/Ov255_GlideToLandTick2.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_GlideToLandTick2.c:
     complete
     .text       start:0x020ce370 end:0x020ce448
 
-src/overlays/ov255/calls/Ov255_UpdateMotionAndFinish_2.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_UpdateMotionAndFinish_2.c:
     complete
     .text       start:0x020ce448 end:0x020ce4d8
 
-src/overlays/ov255/calls/Ov255_AiEnterBite.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_AiEnterBite.c:
     complete
     .text       start:0x020ce4d8 end:0x020ce534
 
-src/overlays/ov255/calls/Ov255_BiteTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_BiteTick.c:
     complete
     .text       start:0x020ce534 end:0x020ce8f8
 
-src/overlays/ov255/calls/Ov255_BiteTick2.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_BiteTick2.c:
     complete
     .text       start:0x020ce8f8 end:0x020cedd0
 
-src/overlays/ov255/calls/Ov255_BiteTick3.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_BiteTick3.c:
     complete
     .text       start:0x020cedd0 end:0x020cf1c0
 
-src/overlays/ov255/calls/Ov255_GroundStrikeEnterTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_GroundStrikeEnterTick.c:
     complete
     .text       start:0x020cf1c0 end:0x020cf3c4
 
-src/overlays/ov255/calls/Ov255_StrikeWindUpTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_StrikeWindUpTick.c:
     complete
     .text       start:0x020cf3c4 end:0x020cf460
 
-src/overlays/ov255/calls/Ov255_StrikeTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_StrikeTick.c:
     complete
     .text       start:0x020cf460 end:0x020cf51c
 
-src/overlays/ov255/calls/Ov255_SlamTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_SlamTick.c:
     complete
     .text       start:0x020cf51c end:0x020cf914
 
-src/overlays/ov255/calls/Ov255_AiEnterGlideC.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_AiEnterGlideC.c:
     complete
     .text       start:0x020cf914 end:0x020cf950
 
-src/overlays/ov255/calls/Ov255_GlideTick_3.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_GlideTick_3.c:
     complete
     .text       start:0x020cf950 end:0x020cfa28
 
-src/overlays/ov255/calls/Ov255_LungeTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_LungeTick.c:
     complete
     .text       start:0x020cfa28 end:0x020cfdb8
 
-src/overlays/ov255/calls/Ov255_EnterTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_EnterTick.c:
     complete
     .text       start:0x020cfdb8 end:0x020cfe34
 
-src/overlays/ov255/calls/Ov255_RiseTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_RiseTick.c:
     complete
     .text       start:0x020cfe34 end:0x020cfecc
 
-src/overlays/ov255/calls/Ov255_RiseTick2.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_RiseTick2.c:
     complete
     .text       start:0x020cfecc end:0x020cff68
 
-src/overlays/ov255/calls/Ov255_HoverInTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_HoverInTick.c:
     complete
     .text       start:0x020cff68 end:0x020d0044
 
-src/overlays/ov255/calls/Ov255_HealBurstTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_HealBurstTick.c:
     complete
     .text       start:0x020d0044 end:0x020d054c
 
-src/overlays/ov255/calls/Ov255_GlideTick2.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_GlideTick2.c:
     complete
     .text       start:0x020d054c end:0x020d0600
 
-src/overlays/ov255/calls/Ov255_GlideToLandTick3.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_GlideToLandTick3.c:
     complete
     .text       start:0x020d0600 end:0x020d06a4
 
-src/overlays/ov255/calls/Ov255_AimAndLaunchHoming.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_AimAndLaunchHoming.c:
     complete
     .text       start:0x020d06a4 end:0x020d0710
 
-src/overlays/ov255/calls/Ov255_TakeOffEnterTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_TakeOffEnterTick.c:
     complete
     .text       start:0x020d0710 end:0x020d07d4
 
-src/overlays/ov255/calls/Ov255_RiseTick3.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_RiseTick3.c:
     complete
     .text       start:0x020d07d4 end:0x020d086c
 
-src/overlays/ov255/calls/Ov255_RiseTick4.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_RiseTick4.c:
     complete
     .text       start:0x020d086c end:0x020d0908
 
-src/overlays/ov255/calls/Ov255_HoverInTick2.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_HoverInTick2.c:
     complete
     .text       start:0x020d0908 end:0x020d09cc
 
-src/overlays/ov255/calls/Ov255_RingTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_RingTick.c:
     complete
     .text       start:0x020d09cc end:0x020d0ae8
 
-src/overlays/ov255/calls/Ov255_GlideTick3.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_GlideTick3.c:
     complete
     .text       start:0x020d0ae8 end:0x020d0bac
 
-src/overlays/ov255/calls/Ov255_GlideToLandTick4.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_GlideToLandTick4.c:
     complete
     .text       start:0x020d0bac end:0x020d0c60
 
-src/overlays/ov255/calls/Ov255_LandingTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_LandingTick.c:
     complete
     .text       start:0x020d0c60 end:0x020d0d04
 
-src/overlays/ov255/calls/Ov255_KickMotionSetReadyFlags.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_KickMotionSetReadyFlags.c:
     complete
     .text       start:0x020d0d04 end:0x020d0d6c
 
-src/overlays/ov255/calls/Ov255_SpawnChildStoreTwoArgs.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_SpawnChildStoreTwoArgs.c:
     complete
     .text       start:0x020d0d6c end:0x020d0dc0
 
-src/overlays/ov255/calls/Ov255_SnapshotPoseRegister2.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_SnapshotPoseRegister2.c:
     complete
     .text       start:0x020d0dc0 end:0x020d0e8c
 
-src/overlays/ov255/auto/Ov255_TaskTeardown_FlagOwner.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_TaskTeardown_FlagOwner.c:
     complete
     .text       start:0x020d0e8c end:0x020d0ea4
 
-src/overlays/ov255/auto/Ov255_CopyBlock44.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_CopyBlock44.c:
     complete
     .text       start:0x020d0ea4 end:0x020d0ed0
 
-src/overlays/ov255/calls/Ov255_TickRearmPart.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_TickRearmPart.c:
     complete
     .text       start:0x020d0ed0 end:0x020d0f58
 
-src/overlays/ov255/calls/Ov255_TickWindDownPart.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_TickWindDownPart.c:
     complete
     .text       start:0x020d0f58 end:0x020d0fec
 
-src/overlays/ov255/calls/Ov255_FinishAfterDelay.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_FinishAfterDelay.c:
     complete
     .text       start:0x020d0fec end:0x020d1014
 
-src/overlays/ov255/calls/Ov255_SpawnTrailHelper.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_SpawnTrailHelper.c:
     complete
     .text       start:0x020d1014 end:0x020d1074
 
-src/overlays/ov255/calls/Ov255_StartHelper.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_StartHelper.c:
     complete
     .text       start:0x020d1074 end:0x020d1184
 
-src/overlays/ov255/auto/Ov255_SetField5cBit1Pair.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_SetField5cBit1Pair.c:
     complete
     .text       start:0x020d1184 end:0x020d11ac
 
-src/overlays/ov255/auto/Ov255_TrailHelperFollow.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_TrailHelperFollow.c:
     complete
     .text       start:0x020d11ac end:0x020d11fc
 
-src/overlays/ov255/calls/Ov255_TickWindUp.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_TickWindUp.c:
     complete
     .text       start:0x020d11fc end:0x020d1314
 
-src/overlays/ov255/calls/Ov255_TickRampUpPart.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_TickRampUpPart.c:
     complete
     .text       start:0x020d1314 end:0x020d13a8
 
-src/overlays/ov255/calls/Ov255_FinishIfOwnerIdle.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_FinishIfOwnerIdle.c:
     complete
     .text       start:0x020d13a8 end:0x020d13c8
 
-src/overlays/ov255/calls/Ov255_SpawnHelper2.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_SpawnHelper2.c:
     complete
     .text       start:0x020d13c8 end:0x020d1464
 
-src/overlays/ov255/calls/Ov255_StartHelper2.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_StartHelper2.c:
     complete
     .text       start:0x020d1464 end:0x020d14d4
 
-src/overlays/ov255/auto/Ov255_TaskTeardown_FlagPart.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_TaskTeardown_FlagPart.c:
     complete
     .text       start:0x020d14d4 end:0x020d14ec
 
-src/overlays/ov255/calls/Ov255_SwirlTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_SwirlTick.c:
     complete
     .text       start:0x020d14ec end:0x020d1638
 
-src/overlays/ov255/calls/Ov255_ShowReactionReady.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_ShowReactionReady.c:
     complete
     .text       start:0x020d1638 end:0x020d1690
 
-src/overlays/ov255/calls/Ov255_HideReactionIcons.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_HideReactionIcons.c:
     complete
     .text       start:0x020d1690 end:0x020d16f0
 
-src/overlays/ov255/calls/Ov255_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d16f0 end:0x020d1710
 
-src/overlays/ov255/calls/Ov255_PlaceRingItem.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_PlaceRingItem.c:
     complete
     .text       start:0x020d1710 end:0x020d1848
 
-src/overlays/ov255/calls/Ov255_Partner_New.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_Partner_New.c:
     complete
     .text       start:0x020d1848 end:0x020d187c
 
-src/overlays/ov255/calls/Ov255_PartnerCtor.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_PartnerCtor.c:
     complete
     .text       start:0x020d187c end:0x020d1a20
 
-src/overlays/ov255/calls/Ov255_Partner_Destroy.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_Partner_Destroy.c:
     complete
     .text       start:0x020d1a20 end:0x020d1a60
 
-src/overlays/ov255/calls/Ov255_TickSyncXform.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_TickSyncXform.c:
     complete
     .text       start:0x020d1a60 end:0x020d1a98
 
-src/overlays/ov255/calls/Ov255_PartnerHandleMessage.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_PartnerHandleMessage.c:
     complete
     .text       start:0x020d1a98 end:0x020d1b6c
 
-src/overlays/ov255/calls/func_ov255_020d1b6c.c:
+src/overlays/enemies/ov255_enemy_4f/func_ov255_020d1b6c.c:
     complete
     .text       start:0x020d1b6c end:0x020d1b78
 
-src/overlays/ov255/auto/Ov255_ClearSubPhaseIfRequested.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_ClearSubPhaseIfRequested.c:
     complete
     .text       start:0x020d1b78 end:0x020d1ba8
 
-src/overlays/ov255/calls/Ov255_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d1ba8 end:0x020d1bf4
 
-src/overlays/ov255/calls/Ov255_Partner_AiStateInit.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_Partner_AiStateInit.c:
     complete
     .text       start:0x020d1bf4 end:0x020d1c5c
 
-src/overlays/ov255/calls/Ov255_Partner_AiDispatchAction.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_Partner_AiDispatchAction.c:
     complete
     .text       start:0x020d1c5c end:0x020d1cd0
 
-src/overlays/ov255/calls/Ov255_PublishPoseAndReset.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_PublishPoseAndReset.c:
     complete
     .text       start:0x020d1cd0 end:0x020d1d00
 
-src/overlays/ov255/calls/Ov255_ClearAndSetNodeFlags.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_ClearAndSetNodeFlags.c:
     complete
     .text       start:0x020d1d00 end:0x020d1d94
 
-src/overlays/ov255/calls/Ov255_Partner_AiWaitActive.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_Partner_AiWaitActive.c:
     complete
     .text       start:0x020d1d94 end:0x020d1df8
 
-src/overlays/ov255/calls/Ov255_PartnerEnterTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_PartnerEnterTick.c:
     complete
     .text       start:0x020d1df8 end:0x020d1ed8
 
-src/overlays/ov255/calls/Ov255_HomingShotFlightTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_HomingShotFlightTick.c:
     complete
     .text       start:0x020d1ed8 end:0x020d24bc
 
-src/overlays/ov255/calls/Ov255_DriftTick.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_DriftTick.c:
     complete
     .text       start:0x020d24bc end:0x020d2530
 
-src/overlays/ov255/calls/Ov255_DrawShakes.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_DrawShakes.c:
     complete
     .text       start:0x020d2530 end:0x020d26b8
 
-src/overlays/ov255/calls/Ov255_CreateShakeTask.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_CreateShakeTask.c:
     complete
     .text       start:0x020d26b8 end:0x020d270c
 
-src/overlays/ov255/calls/Ov255_DecayShakes.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_DecayShakes.c:
     complete
     .text       start:0x020d270c end:0x020d27cc
 
-src/overlays/ov255/auto/Ov255_ArmSlot.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_ArmSlot.c:
     complete
     .text       start:0x020d27cc end:0x020d280c
 
-src/overlays/ov255/auto/Ov255_SetWordAt0x3ccTo1.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_SetWordAt0x3ccTo1.c:
     complete
     .text       start:0x020d280c end:0x020d281c
 
-src/overlays/ov255/calls/Ov255_ShakeTask_Init.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_ShakeTask_Init.c:
     complete
     .text       start:0x020d281c end:0x020d2878
 
-src/overlays/ov255/calls/Ov255_EmitShakes.c:
+src/overlays/enemies/ov255_enemy_4f/Ov255_EmitShakes.c:
     complete
     .text       start:0x020d2878 end:0x020d29d8
 
-src/overlays/ov255/data/ov255_const_020d2c24.c:
+src/overlays/enemies/ov255_enemy_4f/data/ov255_const_020d2c24.c:
     complete
     .data       start:0x020d2c24 end:0x020d2c28
 
-src/overlays/ov255/data/ov255_strings_020d2be0.c:
+src/overlays/enemies/ov255_enemy_4f/data/ov255_strings_020d2be0.c:
     complete
     .data       start:0x020d2be0 end:0x020d2c24
 
-src/overlays/ov255/data/ov255_strings_020d2c28.c:
+src/overlays/enemies/ov255_enemy_4f/data/ov255_strings_020d2c28.c:
     complete
     .data       start:0x020d2c28 end:0x020d2c40
 
-src/overlays/ov255/data/ov255_tables_020d29d8.c:
+src/overlays/enemies/ov255_enemy_4f/data/ov255_tables_020d29d8.c:
     complete
     .rodata     start:0x020d29d8 end:0x020d2bc4

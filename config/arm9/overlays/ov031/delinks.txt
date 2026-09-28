@@ -4,158 +4,158 @@
     .data       start:0x020b4cc0 end:0x020b4dc0 kind:data align:32
     .bss        start:0x020b4dc0 end:0x020b4de0 kind:bss align:32
 
-src/overlays/ov031/calls/func_ov031_020b3220.c:
+src/overlays/players/ov031_player_axel/func_ov031_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov031/calls/Ov031_ClassCtor.c:
+src/overlays/players/ov031_player_axel/Ov031_ClassCtor.c:
     complete
     .text       start:0x020b3234 end:0x020b325c
 
-src/overlays/ov031/calls/Ov031_ClassTeardown.c:
+src/overlays/players/ov031_player_axel/Ov031_ClassTeardown.c:
     complete
     .text       start:0x020b325c end:0x020b3270
 
-src/overlays/ov031/calls/Ov031_ActorCtor.c:
+src/overlays/players/ov031_player_axel/Ov031_ActorCtor.c:
     complete
     .text       start:0x020b3270 end:0x020b34b0
 
-src/overlays/ov031/calls/Ov031_ClaimBothSlots.c:
+src/overlays/players/ov031_player_axel/Ov031_ClaimBothSlots.c:
     complete
     .text       start:0x020b34b0 end:0x020b350c
 
-src/overlays/ov031/auto/Ov031_MapSlotKindToAnim.c:
+src/overlays/players/ov031_player_axel/Ov031_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b350c end:0x020b3534
 
-src/overlays/ov031/calls/Ov031_ActorApplyModeChange.c:
+src/overlays/players/ov031_player_axel/Ov031_ActorApplyModeChange.c:
     complete
     .text       start:0x020b3534 end:0x020b3610
 
-src/overlays/ov031/calls/Ov031_initSubObjectsSetU64Flags.c:
+src/overlays/players/ov031_player_axel/Ov031_initSubObjectsSetU64Flags.c:
     complete
     .text       start:0x020b3610 end:0x020b3728
 
-src/overlays/ov031/calls/Ov031_dispatchSubHandlerPair.c:
+src/overlays/players/ov031_player_axel/Ov031_dispatchSubHandlerPair.c:
     complete
     .text       start:0x020b3728 end:0x020b3758
 
-src/overlays/ov031/calls/Ov031_enterState21ComputeAimAngle.c:
+src/overlays/players/ov031_player_axel/Ov031_enterState21ComputeAimAngle.c:
     complete
     .text       start:0x020b3758 end:0x020b3830
 
-src/overlays/ov031/calls/Ov031_ActorBuildStep.c:
+src/overlays/players/ov031_player_axel/Ov031_ActorBuildStep.c:
     complete
     .text       start:0x020b3830 end:0x020b38e0
 
-src/overlays/ov031/calls/Ov031_initTwoEntrySlots.c:
+src/overlays/players/ov031_player_axel/Ov031_initTwoEntrySlots.c:
     complete
     .text       start:0x020b38e0 end:0x020b395c
 
-src/overlays/ov031/calls/Ov031_freeSubitemChannelResources.c:
+src/overlays/players/ov031_player_axel/Ov031_freeSubitemChannelResources.c:
     complete
     .text       start:0x020b395c end:0x020b39d4
 
-src/overlays/ov031/calls/Ov031_initClearSubBlockField10.c:
+src/overlays/players/ov031_player_axel/Ov031_initClearSubBlockField10.c:
     complete
     .text       start:0x020b39d4 end:0x020b3a00
 
-src/overlays/ov031/calls/Ov031_ResetChannelsAndArm.c:
+src/overlays/players/ov031_player_axel/Ov031_ResetChannelsAndArm.c:
     complete
     .text       start:0x020b3a00 end:0x020b3a20
 
-src/overlays/ov031/auto/Ov031_ArmState3.c:
+src/overlays/players/ov031_player_axel/Ov031_ArmState3.c:
     complete
     .text       start:0x020b3a20 end:0x020b3a38
 
-src/overlays/ov031/calls/Ov031_configTwoChannelsPair.c:
+src/overlays/players/ov031_player_axel/Ov031_configTwoChannelsPair.c:
     complete
     .text       start:0x020b3a38 end:0x020b3a9c
 
-src/overlays/ov031/calls/Ov031_ActorNodeTick.c:
+src/overlays/players/ov031_player_axel/Ov031_ActorNodeTick.c:
     complete
     .text       start:0x020b3a9c end:0x020b3c60
 
-src/overlays/ov031/calls/Ov031_configureSubObjectSlot.c:
+src/overlays/players/ov031_player_axel/Ov031_configureSubObjectSlot.c:
     complete
     .text       start:0x020b3c60 end:0x020b3d30
 
-src/overlays/ov031/calls/Ov031_updateSubObjectsAndRebind.c:
+src/overlays/players/ov031_player_axel/Ov031_updateSubObjectsAndRebind.c:
     complete
     .text       start:0x020b3d30 end:0x020b3dbc
 
-src/overlays/ov031/calls/Ov031_tickSubObjectsIfFlagged.c:
+src/overlays/players/ov031_player_axel/Ov031_tickSubObjectsIfFlagged.c:
     complete
     .text       start:0x020b3dbc end:0x020b3e00
 
-src/overlays/ov031/calls/Ov031_ActorCreateSubObjects.c:
+src/overlays/players/ov031_player_axel/Ov031_ActorCreateSubObjects.c:
     complete
     .text       start:0x020b3e00 end:0x020b408c
 
-src/overlays/ov031/calls/Ov031_BindRig.c:
+src/overlays/players/ov031_player_axel/Ov031_BindRig.c:
     complete
     .text       start:0x020b408c end:0x020b4120
 
-src/overlays/ov031/calls/Ov031_beginObjectSlotIfReady.c:
+src/overlays/players/ov031_player_axel/Ov031_beginObjectSlotIfReady.c:
     complete
     .text       start:0x020b4120 end:0x020b4200
 
-src/overlays/ov031/calls/Ov031_ActorFireAttack.c:
+src/overlays/players/ov031_player_axel/Ov031_ActorFireAttack.c:
     complete
     .text       start:0x020b4200 end:0x020b453c
 
-src/overlays/ov031/calls/Ov031_ActorPartsUpdatePass.c:
+src/overlays/players/ov031_player_axel/Ov031_ActorPartsUpdatePass.c:
     complete
     .text       start:0x020b453c end:0x020b4630
 
-src/overlays/ov031/calls/Ov031_dispatchEntryList.c:
+src/overlays/players/ov031_player_axel/Ov031_dispatchEntryList.c:
     complete
     .text       start:0x020b4630 end:0x020b4694
 
-src/overlays/ov031/calls/Ov031_HomingApproachTriggerStep.c:
+src/overlays/players/ov031_player_axel/Ov031_HomingApproachTriggerStep.c:
     complete
     .text       start:0x020b4694 end:0x020b4820
 
-src/overlays/ov031/calls/Ov031_HomingApproachStep.c:
+src/overlays/players/ov031_player_axel/Ov031_HomingApproachStep.c:
     complete
     .text       start:0x020b4820 end:0x020b4930
 
-src/overlays/ov031/calls/Ov031_advanceProjectileAndSteer.c:
+src/overlays/players/ov031_player_axel/Ov031_advanceProjectileAndSteer.c:
     complete
     .text       start:0x020b4930 end:0x020b4a08
 
-src/overlays/ov031/calls/Ov031_emitTripleSpreadShots.c:
+src/overlays/players/ov031_player_axel/Ov031_emitTripleSpreadShots.c:
     complete
     .text       start:0x020b4a08 end:0x020b4b08
 
-src/overlays/ov031/calls/Ov031_ComputeApproachVelocity.c:
+src/overlays/players/ov031_player_axel/Ov031_ComputeApproachVelocity.c:
     complete
     .text       start:0x020b4b08 end:0x020b4c2c
 
-src/overlays/ov031/calls/Ov031_InvokeWithDataTable.c:
+src/overlays/players/ov031_player_axel/Ov031_InvokeWithDataTable.c:
     complete
     .text       start:0x020b4c2c end:0x020b4c44
 
-src/overlays/ov031/data/ov031_class_020b4cc0.c:
+src/overlays/players/ov031_player_axel/data/ov031_class_020b4cc0.c:
     complete
     .data       start:0x020b4cc0 end:0x020b4cd4
 
-src/overlays/ov031/data/ov031_const_020b4c44.c:
+src/overlays/players/ov031_player_axel/data/ov031_const_020b4c44.c:
     complete
     .rodata     start:0x020b4c44 end:0x020b4c48
 
-src/overlays/ov031/data/ov031_pointers_020b4cd4.c:
+src/overlays/players/ov031_player_axel/data/ov031_pointers_020b4cd4.c:
     complete
     .data       start:0x020b4cd4 end:0x020b4cfc
 
-src/overlays/ov031/data/ov031_strings_020b4c60.c:
+src/overlays/players/ov031_player_axel/data/ov031_strings_020b4c60.c:
     complete
     .rodata     start:0x020b4c60 end:0x020b4cb0
 
-src/overlays/ov031/data/ov031_strings_020b4cfc.c:
+src/overlays/players/ov031_player_axel/data/ov031_strings_020b4cfc.c:
     complete
     .data       start:0x020b4cfc end:0x020b4dc0
 
-src/overlays/ov031/data/ov031_tables_020b4c48.c:
+src/overlays/players/ov031_player_axel/data/ov031_tables_020b4c48.c:
     complete
     .rodata     start:0x020b4c48 end:0x020b4c60

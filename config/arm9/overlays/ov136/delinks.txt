@@ -4,174 +4,174 @@
     .data       start:0x020d3a40 end:0x020d3a80 kind:data align:32
     .bss        start:0x020d3a80 end:0x020d3a80 kind:bss align:32
 
-src/overlays/ov136/calls/Ov136_RegisterEntityClass.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/ov136/calls/Ov136_CreateNamedEntity.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a24
 
-src/overlays/ov136/calls/Ov136_Construct.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_Construct.c:
     complete
     .text       start:0x020d1a24 end:0x020d1c88
 
-src/overlays/ov136/calls/Ov136_Destroy.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_Destroy.c:
     complete
     .text       start:0x020d1c88 end:0x020d1cd0
 
-src/overlays/ov136/calls/Ov136_ReleaseAndDestroy.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_ReleaseAndDestroy.c:
     complete
     .text       start:0x020d1cd0 end:0x020d1cf4
 
-src/overlays/ov136/calls/Ov136_Model_SetTrack0.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_Model_SetTrack0.c:
     complete
     .text       start:0x020d1cf4 end:0x020d1d24
 
-src/overlays/ov136/calls/Ov136_HandleSpawnMessage.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_HandleSpawnMessage.c:
     complete
     .text       start:0x020d1d24 end:0x020d1ea8
 
-src/overlays/ov136/calls/Ov136_ReleaseSoundAndPublishPose.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_ReleaseSoundAndPublishPose.c:
     complete
     .text       start:0x020d1ea8 end:0x020d1fa4
 
-src/overlays/ov136/calls/Ov136_registryCreateEntry.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_registryCreateEntry.c:
     complete
     .text       start:0x020d1fa4 end:0x020d2000
 
-src/overlays/ov136/calls/Ov136_OnHit.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_OnHit.c:
     complete
     .text       start:0x020d2000 end:0x020d2258
 
-src/overlays/ov136/auto/Ov136_RequestSubState9IfIdle.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_RequestSubState9IfIdle.c:
     complete
     .text       start:0x020d2258 end:0x020d2288
 
-src/overlays/ov136/calls/Ov136_AiStateInit.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_AiStateInit.c:
     complete
     .text       start:0x020d2288 end:0x020d234c
 
-src/overlays/ov136/calls/Ov136_DispatchSubStateByte.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_DispatchSubStateByte.c:
     complete
     .text       start:0x020d234c end:0x020d24f4
 
-src/overlays/ov136/calls/Ov136_OrientFromYaw.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_OrientFromYaw.c:
     complete
     .text       start:0x020d24f4 end:0x020d258c
 
-src/overlays/ov136/calls/Ov136_SetHw60Flag86ClearBitsThenAdvance.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_SetHw60Flag86ClearBitsThenAdvance.c:
     complete
     .text       start:0x020d258c end:0x020d2600
 
-src/overlays/ov136/calls/Ov136_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d2600 end:0x020d263c
 
-src/overlays/ov136/calls/Ov136_Action48Callback.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_Action48Callback.c:
     complete
     .text       start:0x020d263c end:0x020d2704
 
-src/overlays/ov136/calls/Ov136_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d2704 end:0x020d27cc
 
-src/overlays/ov136/calls/Ov136_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d27cc end:0x020d2800
 
-src/overlays/ov136/calls/Ov136_stateTimerRandomRange.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_stateTimerRandomRange.c:
     complete
     .text       start:0x020d2800 end:0x020d2880
 
-src/overlays/ov136/calls/Ov136_IdleTick.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_IdleTick.c:
     complete
     .text       start:0x020d2880 end:0x020d29e8
 
-src/overlays/ov136/calls/Ov136_ComputeTargetDeltaThenAdvance.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020d29e8 end:0x020d2a58
 
-src/overlays/ov136/calls/Ov136_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020d2a58 end:0x020d2ad4
 
-src/overlays/ov136/calls/Ov136_stDivPoseEffect.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_stDivPoseEffect.c:
     complete
     .text       start:0x020d2ad4 end:0x020d2b4c
 
-src/overlays/ov136/calls/Ov136_ChaseTick.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_ChaseTick.c:
     complete
     .text       start:0x020d2b4c end:0x020d2d08
 
-src/overlays/ov136/calls/Ov136_AimSpinPickAttack.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_AimSpinPickAttack.c:
     complete
     .text       start:0x020d2d08 end:0x020d2e80
 
-src/overlays/ov136/calls/Ov136_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d2e80 end:0x020d2f48
 
-src/overlays/ov136/calls/Ov136_AiEnterBurst.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_AiEnterBurst.c:
     complete
     .text       start:0x020d2f48 end:0x020d2f8c
 
-src/overlays/ov136/calls/Ov136_BurstAttackTick.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_BurstAttackTick.c:
     complete
     .text       start:0x020d2f8c end:0x020d33c0
 
-src/overlays/ov136/calls/Ov136_AiStep_QueueAction2OnAnimEnd_2.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_AiStep_QueueAction2OnAnimEnd_2.c:
     complete
     .text       start:0x020d33c0 end:0x020d33f4
 
-src/overlays/ov136/calls/Ov136_AiEnterSubState.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_AiEnterSubState.c:
     complete
     .text       start:0x020d33f4 end:0x020d3438
 
-src/overlays/ov136/calls/Ov136_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d3438 end:0x020d34b4
 
-src/overlays/ov136/calls/Ov136_SwingTick.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_SwingTick.c:
     complete
     .text       start:0x020d34b4 end:0x020d3794
 
-src/overlays/ov136/calls/Ov136_BranchByFlag42SetStateThenAdvance.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_BranchByFlag42SetStateThenAdvance.c:
     complete
     .text       start:0x020d3794 end:0x020d37f0
 
-src/overlays/ov136/calls/Ov136_stateAnimPairCallback.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_stateAnimPairCallback.c:
     complete
     .text       start:0x020d37f0 end:0x020d3858
 
-src/overlays/ov136/calls/Ov136_stIdlePose7ClearTimerAdvance.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_stIdlePose7ClearTimerAdvance.c:
     complete
     .text       start:0x020d3858 end:0x020d38a4
 
-src/overlays/ov136/calls/Ov136_AiStep_WaitTimerThenTag8.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_AiStep_WaitTimerThenTag8.c:
     complete
     .text       start:0x020d38a4 end:0x020d38f0
 
-src/overlays/ov136/calls/Ov136_AiStep_QueueAction2OnAnimEnd_3.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_AiStep_QueueAction2OnAnimEnd_3.c:
     complete
     .text       start:0x020d38f0 end:0x020d3924
 
-src/overlays/ov136/calls/Ov136_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov136_enemy_0a_3/Ov136_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d3924 end:0x020d39d8
 
-src/overlays/ov136/data/ov136_const_020d3a60.c:
+src/overlays/enemies/ov136_enemy_0a_3/data/ov136_const_020d3a60.c:
     complete
     .data       start:0x020d3a60 end:0x020d3a64
 
-src/overlays/ov136/data/ov136_strings_020d3a40.c:
+src/overlays/enemies/ov136_enemy_0a_3/data/ov136_strings_020d3a40.c:
     complete
     .data       start:0x020d3a40 end:0x020d3a60
 
-src/overlays/ov136/data/ov136_strings_020d3a64.c:
+src/overlays/enemies/ov136_enemy_0a_3/data/ov136_strings_020d3a64.c:
     complete
     .data       start:0x020d3a64 end:0x020d3a80
 
-src/overlays/ov136/data/ov136_tables_020d39d8.c:
+src/overlays/enemies/ov136_enemy_0a_3/data/ov136_tables_020d39d8.c:
     complete
     .rodata     start:0x020d39d8 end:0x020d3a20

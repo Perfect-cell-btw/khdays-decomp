@@ -19,6 +19,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
+import srctree  # noqa: E402  (where sources live: docs/layout.md)
 BUILD = ROOT / "build"
 # objdiff.json expects `base_path` = build/<same relative src path>.o
 COMPILE_OUT = BUILD
@@ -48,20 +50,15 @@ def discover_modules():
         if (d / "delinks.txt").exists():
             modules.append(d)
     ov_cfg = cfg_root / "overlays"
-    ov_src = ROOT / "src" / "overlays"
+    ov_src = srctree.overlay_dirs(ROOT)
     if ov_cfg.is_dir():
         for ov_dir in sorted(ov_cfg.iterdir()):
             if not (ov_dir / "delinks.txt").exists():
                 continue
-            src_ov = ov_src / ov_dir.name
-            if not src_ov.exists():
+            src_ov = ov_src.get(ov_dir.name)
+            if src_ov is None:
                 continue
-            has_c = any(
-                p.is_file()
-                for sub in ("auto", "calls", "asm_stubs/auto", "asm_stubs/calls")
-                for pattern in ("*.c", "*.cpp")
-                for p in (src_ov / sub).glob(pattern) if (src_ov / sub).exists()
-            )
+            has_c = any(p.is_file() for pattern in ("*.c", "*.cpp") for p in src_ov.glob(pattern))
             if has_c:
                 modules.append(ov_dir)
     return modules

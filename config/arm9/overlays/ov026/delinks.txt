@@ -4,1070 +4,1070 @@
     .data       start:0x02091200 end:0x02091360 kind:data align:32
     .bss        start:0x02091360 end:0x02091380 kind:bss align:32
 
-src/overlays/ov026/calls/Ov026_SubScene9_Create.c:
+src/overlays/screens/ov026_shop/Ov026_SubScene9_Create.c:
     complete
     .text       start:0x02082960 end:0x020829a0
 
-src/overlays/ov026/calls/Ov026_ClassTeardown.c:
+src/overlays/screens/ov026_shop/Ov026_ClassTeardown.c:
     complete
     .text       start:0x020829a0 end:0x020829b4
 
-src/overlays/ov026/calls/Ov026_ConsumeHeapFlag3Handler.c:
+src/overlays/screens/ov026_shop/Ov026_ConsumeHeapFlag3Handler.c:
     complete
     .text       start:0x020829b4 end:0x020829e0
 
-src/overlays/ov026/calls/Ov026_SubSceneWait.c:
+src/overlays/screens/ov026_shop/Ov026_SubSceneWait.c:
     complete
     .text       start:0x020829e0 end:0x02082a3c
 
-src/overlays/ov026/auto/Ov026_SubSceneIdleHandler.c:
+src/overlays/screens/ov026_shop/Ov026_SubSceneIdleHandler.c:
     complete
     .text       start:0x02082a3c end:0x02082a44
 
-src/overlays/ov026/calls/Ov026_BlankScreens.c:
+src/overlays/screens/ov026_shop/Ov026_BlankScreens.c:
     complete
     .text       start:0x02082a44 end:0x02082a84
 
-src/overlays/ov026/calls/Ov026_CreateService.c:
+src/overlays/screens/ov026_shop/Ov026_CreateService.c:
     complete
     .text       start:0x02082a84 end:0x02082aac
 
-src/overlays/ov026/calls/Ov026_CloseKeySharing.c:
+src/overlays/screens/ov026_shop/Ov026_CloseKeySharing.c:
     complete
     .text       start:0x02082aac end:0x02082ad0
 
-src/overlays/ov026/calls/Ov026_SceneIsIdle.c:
+src/overlays/screens/ov026_shop/Ov026_SceneIsIdle.c:
     complete
     .text       start:0x02082ad0 end:0x02082af0
 
-src/overlays/ov026/calls/Ov026_SceneActivate.c:
+src/overlays/screens/ov026_shop/Ov026_SceneActivate.c:
     complete
     .text       start:0x02082af0 end:0x02082b10
 
-src/overlays/ov026/calls/Ov026_SetMenuFlag4.c:
+src/overlays/screens/ov026_shop/Ov026_SetMenuFlag4.c:
     complete
     .text       start:0x02082b10 end:0x02082b2c
 
-src/overlays/ov026/calls/Ov026_SceneIsActive.c:
+src/overlays/screens/ov026_shop/Ov026_SceneIsActive.c:
     complete
     .text       start:0x02082b2c end:0x02082b44
 
-src/overlays/ov026/auto/Ov026_SceneHook24NoOp.c:
+src/overlays/screens/ov026_shop/Ov026_SceneHook24NoOp.c:
     complete
     .text       start:0x02082b44 end:0x02082b4c
 
-src/overlays/ov026/calls/Ov026_FillSceneHooks.c:
+src/overlays/screens/ov026_shop/Ov026_FillSceneHooks.c:
     complete
     .text       start:0x02082b4c end:0x02082bbc
 
-src/overlays/ov026/calls/Ov026_LoadLayoutResources.c:
+src/overlays/screens/ov026_shop/Ov026_LoadLayoutResources.c:
     complete
     .text       start:0x02082bbc end:0x02082bfa
 
-src/overlays/ov026/calls/Ov026_LoadElemsFromLayout.c:
+src/overlays/screens/ov026_shop/Ov026_LoadElemsFromLayout.c:
     complete
     .text       start:0x02082bfc end:0x02082c64
 
-src/overlays/ov026/calls/Ov026_BuildLayoutFromTagTable.c:
+src/overlays/screens/ov026_shop/Ov026_BuildLayoutFromTagTable.c:
     complete
     .text       start:0x02082c64 end:0x02082c9c
 
-src/overlays/ov026/auto/Ov026_IsPointInBox.c:
+src/overlays/screens/ov026_shop/Ov026_IsPointInBox.c:
     complete
     .text       start:0x02082c9c end:0x02082cd8
 
-src/overlays/ov026/auto/Ov026_FindActiveEntryById.c:
+src/overlays/screens/ov026_shop/Ov026_FindActiveEntryById.c:
     complete
     .text       start:0x02082cd8 end:0x02082d28
 
-src/overlays/ov026/auto/Ov026_FindFreeElem.c:
+src/overlays/screens/ov026_shop/Ov026_FindFreeElem.c:
     complete
     .text       start:0x02082d28 end:0x02082d68
 
-src/overlays/ov026/auto/Ov026_FindFirstUnusedEntry.c:
+src/overlays/screens/ov026_shop/Ov026_FindFirstUnusedEntry.c:
     complete
     .text       start:0x02082d68 end:0x02082dac
 
-src/overlays/ov026/auto/Ov026_FindFirstUnusedElem.c:
+src/overlays/screens/ov026_shop/Ov026_FindFirstUnusedElem.c:
     complete
     .text       start:0x02082dac end:0x02082de8
 
-src/overlays/ov026/calls/Ov026_Touch_GetLatestValidSample.c:
+src/overlays/screens/ov026_shop/Ov026_Touch_GetLatestValidSample.c:
     complete
     .text       start:0x02082de8 end:0x02082e5c
 
-src/overlays/ov026/calls/Ov026_FlushOrRegisterBlock.c:
+src/overlays/screens/ov026_shop/Ov026_FlushOrRegisterBlock.c:
     complete
     .text       start:0x02082e5c end:0x02082ecc
 
-src/overlays/ov026/auto/Ov026_TickTagTrackerNodes.c:
+src/overlays/screens/ov026_shop/Ov026_TickTagTrackerNodes.c:
     complete
     .text       start:0x02082ecc end:0x0208306c
 
-src/overlays/ov026/auto/Ov026_ResolveHoveredEntryAndNotify.c:
+src/overlays/screens/ov026_shop/Ov026_ResolveHoveredEntryAndNotify.c:
     complete
     .text       start:0x0208306c end:0x02083194
 
-src/overlays/ov026/calls/Ov026_Container_Init.c:
+src/overlays/screens/ov026_shop/Ov026_Container_Init.c:
     complete
     .text       start:0x02083194 end:0x0208320a
 
-src/overlays/ov026/calls/Ov026_TickSelectionWidget.c:
+src/overlays/screens/ov026_shop/Ov026_TickSelectionWidget.c:
     complete
     .text       start:0x0208320c end:0x02083234
 
-src/overlays/ov026/calls/Ov026_ReleaseThreeBuffers.c:
+src/overlays/screens/ov026_shop/Ov026_ReleaseThreeBuffers.c:
     complete
     .text       start:0x02083234 end:0x0208325c
 
-src/overlays/ov026/calls/Ov026_LoadAndInitResourceSections.c:
+src/overlays/screens/ov026_shop/Ov026_LoadAndInitResourceSections.c:
     complete
     .text       start:0x0208325c end:0x02083294
 
-src/overlays/ov026/calls/Ov026_AddElem.c:
+src/overlays/screens/ov026_shop/Ov026_AddElem.c:
     complete
     .text       start:0x02083294 end:0x02083304
 
-src/overlays/ov026/auto/Ov026_InvokeElementCallback.c:
+src/overlays/screens/ov026_shop/Ov026_InvokeElementCallback.c:
     complete
     .text       start:0x02083304 end:0x02083330
 
-src/overlays/ov026/calls/Ov026_FlushFlaggedElements.c:
+src/overlays/screens/ov026_shop/Ov026_FlushFlaggedElements.c:
     complete
     .text       start:0x02083330 end:0x02083362
 
-src/overlays/ov026/calls/Ov026_BuildTagTrackerNode.c:
+src/overlays/screens/ov026_shop/Ov026_BuildTagTrackerNode.c:
     complete
     .text       start:0x02083364 end:0x02083430
 
-src/overlays/ov026/calls/Ov026_ReleaseElement.c:
+src/overlays/screens/ov026_shop/Ov026_ReleaseElement.c:
     complete
     .text       start:0x02083430 end:0x02083460
 
-src/overlays/ov026/calls/Ov026_SweepReleasePendingElements.c:
+src/overlays/screens/ov026_shop/Ov026_SweepReleasePendingElements.c:
     complete
     .text       start:0x02083460 end:0x02083492
 
-src/overlays/ov026/calls/Ov026_AllocResourceEntry.c:
+src/overlays/screens/ov026_shop/Ov026_AllocResourceEntry.c:
     complete
     .text       start:0x02083494 end:0x020834d8
 
-src/overlays/ov026/calls/Ov026_FreeElementBuffer.c:
+src/overlays/screens/ov026_shop/Ov026_FreeElementBuffer.c:
     complete
     .text       start:0x020834d8 end:0x02083504
 
-src/overlays/ov026/calls/Ov026_SweepFreeElementBuffers.c:
+src/overlays/screens/ov026_shop/Ov026_SweepFreeElementBuffers.c:
     complete
     .text       start:0x02083504 end:0x0208352e
 
-src/overlays/ov026/auto/Ov026_FindEntryByTag.c:
+src/overlays/screens/ov026_shop/Ov026_FindEntryByTag.c:
     complete
     .text       start:0x02083530 end:0x0208358c
 
-src/overlays/ov026/auto/Ov026_Elem_SetX.c:
+src/overlays/screens/ov026_shop/Ov026_Elem_SetX.c:
     complete
     .text       start:0x0208358c end:0x02083594
 
-src/overlays/ov026/auto/Ov026_Elem_SetY.c:
+src/overlays/screens/ov026_shop/Ov026_Elem_SetY.c:
     complete
     .text       start:0x02083594 end:0x0208359c
 
-src/overlays/ov026/calls/Ov026_Elem_SetPos.c:
+src/overlays/screens/ov026_shop/Ov026_Elem_SetPos.c:
     complete
     .text       start:0x0208359c end:0x020835c4
 
-src/overlays/ov026/auto/Ov026_TagTracker_InvokeCallback.c:
+src/overlays/screens/ov026_shop/Ov026_TagTracker_InvokeCallback.c:
     complete
     .text       start:0x020835c4 end:0x020835e0
 
-src/overlays/ov026/auto/Ov026_InvokeCallback40.c:
+src/overlays/screens/ov026_shop/Ov026_InvokeCallback40.c:
     complete
     .text       start:0x020835e0 end:0x020835fc
 
-src/overlays/ov026/auto/Ov026_FillTilemapRegionPalette.c:
+src/overlays/screens/ov026_shop/Ov026_FillTilemapRegionPalette.c:
     complete
     .text       start:0x020835fc end:0x02083694
 
-src/overlays/ov026/calls/Ov026_SweepElements.c:
+src/overlays/screens/ov026_shop/Ov026_SweepElements.c:
     complete
     .text       start:0x02083694 end:0x020836ac
 
-src/overlays/ov026/calls/Ov026_ClearElementList.c:
+src/overlays/screens/ov026_shop/Ov026_ClearElementList.c:
     complete
     .text       start:0x020836ac end:0x02083704
 
-src/overlays/ov026/auto/Ov026_SetFlagBit0.c:
+src/overlays/screens/ov026_shop/Ov026_SetFlagBit0.c:
     complete
     .text       start:0x02083704 end:0x02083720
 
-src/overlays/ov026/calls/Ov026_BuildNodeWithChildren.c:
+src/overlays/screens/ov026_shop/Ov026_BuildNodeWithChildren.c:
     complete
     .text       start:0x02083720 end:0x0208377c
 
-src/overlays/ov026/calls/Ov026_ProjectWorldPos.c:
+src/overlays/screens/ov026_shop/Ov026_ProjectWorldPos.c:
     complete
     .text       start:0x0208377c end:0x02083818
 
-src/overlays/ov026/calls/Ov026_Widget_HitTest.c:
+src/overlays/screens/ov026_shop/Ov026_Widget_HitTest.c:
     complete
     .text       start:0x02083818 end:0x020838d0
 
-src/overlays/ov026/calls/Ov026_Touch_GetLatestValidSampleB.c:
+src/overlays/screens/ov026_shop/Ov026_Touch_GetLatestValidSampleB.c:
     complete
     .text       start:0x020838d0 end:0x0208393c
 
-src/overlays/ov026/calls/Ov026_RouteNewPressToWidget.c:
+src/overlays/screens/ov026_shop/Ov026_RouteNewPressToWidget.c:
     complete
     .text       start:0x0208393c end:0x02083a1c
 
-src/overlays/ov026/calls/Ov026_MoveFocusByDpad.c:
+src/overlays/screens/ov026_shop/Ov026_MoveFocusByDpad.c:
     complete
     .text       start:0x02083a1c end:0x02083cac
 
-src/overlays/ov026/calls/Ov026_FillAnchorPair.c:
+src/overlays/screens/ov026_shop/Ov026_FillAnchorPair.c:
     complete
     .text       start:0x02083cac end:0x02083d24
 
-src/overlays/ov026/calls/Ov026_ProcessAllListNodes.c:
+src/overlays/screens/ov026_shop/Ov026_ProcessAllListNodes.c:
     complete
     .text       start:0x02083d24 end:0x02083d6c
 
-src/overlays/ov026/calls/Ov026_UpdateWidgetLayer.c:
+src/overlays/screens/ov026_shop/Ov026_UpdateWidgetLayer.c:
     complete
     .text       start:0x02083d6c end:0x02083e30
 
-src/overlays/ov026/calls/Ov026_InitSubsystemObject.c:
+src/overlays/screens/ov026_shop/Ov026_InitSubsystemObject.c:
     complete
     .text       start:0x02083e30 end:0x02083eb8
 
-src/overlays/ov026/calls/Ov026_DestroyObjectsAndRelease.c:
+src/overlays/screens/ov026_shop/Ov026_DestroyObjectsAndRelease.c:
     complete
     .text       start:0x02083eb8 end:0x02083ee4
 
-src/overlays/ov026/calls/Ov026_UpdateWidgetLayerDefault.c:
+src/overlays/screens/ov026_shop/Ov026_UpdateWidgetLayerDefault.c:
     complete
     .text       start:0x02083ee4 end:0x02083ef4
 
-src/overlays/ov026/calls/Ov026_CreateWidget.c:
+src/overlays/screens/ov026_shop/Ov026_CreateWidget.c:
     complete
     .text       start:0x02083ef4 end:0x0208417c
 
-src/overlays/ov026/calls/Ov026_InstantiateAndLinkElements.c:
+src/overlays/screens/ov026_shop/Ov026_InstantiateAndLinkElements.c:
     complete
     .text       start:0x0208417c end:0x020841ba
 
-src/overlays/ov026/calls/Ov026_LoadBlockProcessAndFree.c:
+src/overlays/screens/ov026_shop/Ov026_LoadBlockProcessAndFree.c:
     complete
     .text       start:0x020841bc end:0x020841e2
 
-src/overlays/ov026/calls/Ov026_DestroyObject.c:
+src/overlays/screens/ov026_shop/Ov026_DestroyObject.c:
     complete
     .text       start:0x020841e4 end:0x02084230
 
-src/overlays/ov026/calls/Ov026_DestroyAllListObjects.c:
+src/overlays/screens/ov026_shop/Ov026_DestroyAllListObjects.c:
     complete
     .text       start:0x02084230 end:0x02084264
 
-src/overlays/ov026/calls/Ov026_InitFromDescAndMark.c:
+src/overlays/screens/ov026_shop/Ov026_InitFromDescAndMark.c:
     complete
     .text       start:0x02084264 end:0x0208427c
 
-src/overlays/ov026/calls/Ov026_FindEntryById.c:
+src/overlays/screens/ov026_shop/Ov026_FindEntryById.c:
     complete
     .text       start:0x0208427c end:0x020842cc
 
-src/overlays/ov026/auto/Ov026_Widget_IsShownAndEnabled.c:
+src/overlays/screens/ov026_shop/Ov026_Widget_IsShownAndEnabled.c:
     complete
     .text       start:0x020842cc end:0x020842f8
 
-src/overlays/ov026/calls/Ov026_ApplyFirstValidSlot.c:
+src/overlays/screens/ov026_shop/Ov026_ApplyFirstValidSlot.c:
     complete
     .text       start:0x020842f8 end:0x02084330
 
-src/overlays/ov026/calls/Ov026_ReleaseTwoSlotsEx.c:
+src/overlays/screens/ov026_shop/Ov026_ReleaseTwoSlotsEx.c:
     complete
     .text       start:0x02084330 end:0x02084374
 
-src/overlays/ov026/auto/Ov026_GetEntryBlock2c.c:
+src/overlays/screens/ov026_shop/Ov026_GetEntryBlock2c.c:
     complete
     .text       start:0x02084374 end:0x0208437c
 
-src/overlays/ov026/calls/Ov026_EmitSplinePair.c:
+src/overlays/screens/ov026_shop/Ov026_EmitSplinePair.c:
     complete
     .text       start:0x0208437c end:0x020843e8
 
-src/overlays/ov026/calls/Ov026_SetEntrySlotsVisible.c:
+src/overlays/screens/ov026_shop/Ov026_SetEntrySlotsVisible.c:
     complete
     .text       start:0x020843e8 end:0x0208444c
 
-src/overlays/ov026/calls/Ov026_ReleaseTwoSlots.c:
+src/overlays/screens/ov026_shop/Ov026_ReleaseTwoSlots.c:
     complete
     .text       start:0x0208444c end:0x02084488
 
-src/overlays/ov026/calls/Ov026_ReleaseTwoSlotsEx_2.c:
+src/overlays/screens/ov026_shop/Ov026_ReleaseTwoSlotsEx_2.c:
     complete
     .text       start:0x02084488 end:0x020844cc
 
-src/overlays/ov026/calls/Ov026_SwapParamOverrides.c:
+src/overlays/screens/ov026_shop/Ov026_SwapParamOverrides.c:
     complete
     .text       start:0x020844cc end:0x02084544
 
-src/overlays/ov026/calls/Ov026_DupWideString.c:
+src/overlays/screens/ov026_shop/Ov026_DupWideString.c:
     complete
     .text       start:0x02084544 end:0x02084588
 
-src/overlays/ov026/calls/Ov026_BuildRecordNode.c:
+src/overlays/screens/ov026_shop/Ov026_BuildRecordNode.c:
     complete
     .text       start:0x02084588 end:0x020846d0
 
-src/overlays/ov026/calls/Ov026_FreeWorkBuffers.c:
+src/overlays/screens/ov026_shop/Ov026_FreeWorkBuffers.c:
     complete
     .text       start:0x020846d0 end:0x0208473c
 
-src/overlays/ov026/auto/Ov026_RecordFilter_InRange.c:
+src/overlays/screens/ov026_shop/Ov026_RecordFilter_InRange.c:
     complete
     .text       start:0x0208473c end:0x02084768
 
-src/overlays/ov026/auto/Ov026_RecordFilter_BelowMax.c:
+src/overlays/screens/ov026_shop/Ov026_RecordFilter_BelowMax.c:
     complete
     .text       start:0x02084768 end:0x0208478c
 
-src/overlays/ov026/calls/Ov026_IsEncounterEligible.c:
+src/overlays/screens/ov026_shop/Ov026_IsEncounterEligible.c:
     complete
     .text       start:0x0208478c end:0x020848e0
 
-src/overlays/ov026/calls/Ov026_CanTriggerActionInRange.c:
+src/overlays/screens/ov026_shop/Ov026_CanTriggerActionInRange.c:
     complete
     .text       start:0x020848e0 end:0x02084960
 
-src/overlays/ov026/auto/Ov026_RecordFilter_KindZero.c:
+src/overlays/screens/ov026_shop/Ov026_RecordFilter_KindZero.c:
     complete
     .text       start:0x02084960 end:0x02084974
 
-src/overlays/ov026/auto/Ov026_RecordFilter_KindNonZero.c:
+src/overlays/screens/ov026_shop/Ov026_RecordFilter_KindNonZero.c:
     complete
     .text       start:0x02084974 end:0x02084988
 
-src/overlays/ov026/auto/Ov026_RecordFilter_Kind4Id10.c:
+src/overlays/screens/ov026_shop/Ov026_RecordFilter_Kind4Id10.c:
     complete
     .text       start:0x02084988 end:0x020849ac
 
-src/overlays/ov026/calls/Ov026_WalkRecordsAppendMatching.c:
+src/overlays/screens/ov026_shop/Ov026_WalkRecordsAppendMatching.c:
     complete
     .text       start:0x020849ac end:0x02084a34
 
-src/overlays/ov026/calls/Ov026_AppendRecordsInRange.c:
+src/overlays/screens/ov026_shop/Ov026_AppendRecordsInRange.c:
     complete
     .text       start:0x02084a34 end:0x02084a48
 
-src/overlays/ov026/calls/Ov026_FindBestRecordAppend.c:
+src/overlays/screens/ov026_shop/Ov026_FindBestRecordAppend.c:
     complete
     .text       start:0x02084a48 end:0x02084ae4
 
-src/overlays/ov026/calls/Ov026_AppendEligibleRecords.c:
+src/overlays/screens/ov026_shop/Ov026_AppendEligibleRecords.c:
     complete
     .text       start:0x02084ae4 end:0x02084af8
 
-src/overlays/ov026/calls/Ov026_AppendRecordsBelowMax.c:
+src/overlays/screens/ov026_shop/Ov026_AppendRecordsBelowMax.c:
     complete
     .text       start:0x02084af8 end:0x02084b0c
 
-src/overlays/ov026/calls/Ov026_AppendTriggerableInRange.c:
+src/overlays/screens/ov026_shop/Ov026_AppendTriggerableInRange.c:
     complete
     .text       start:0x02084b0c end:0x02084b20
 
-src/overlays/ov026/calls/Ov026_AppendRecordsKindZero.c:
+src/overlays/screens/ov026_shop/Ov026_AppendRecordsKindZero.c:
     complete
     .text       start:0x02084b20 end:0x02084b34
 
-src/overlays/ov026/calls/Ov026_AppendRecordsKindNonZero.c:
+src/overlays/screens/ov026_shop/Ov026_AppendRecordsKindNonZero.c:
     complete
     .text       start:0x02084b34 end:0x02084b48
 
-src/overlays/ov026/calls/Ov026_AppendRecordsKind4Id10.c:
+src/overlays/screens/ov026_shop/Ov026_AppendRecordsKind4Id10.c:
     complete
     .text       start:0x02084b48 end:0x02084b5c
 
-src/overlays/ov026/calls/Ov026_DestroyAllListObjects_2.c:
+src/overlays/screens/ov026_shop/Ov026_DestroyAllListObjects_2.c:
     complete
     .text       start:0x02084b5c end:0x02084bbc
 
-src/overlays/ov026/calls/Ov026_QueryFieldBySelector.c:
+src/overlays/screens/ov026_shop/Ov026_QueryFieldBySelector.c:
     complete
     .text       start:0x02084bbc end:0x02084c70
 
-src/overlays/ov026/calls/Ov026_InitObjectWithList.c:
+src/overlays/screens/ov026_shop/Ov026_InitObjectWithList.c:
     complete
     .text       start:0x02084c70 end:0x02084cd0
 
-src/overlays/ov026/calls/Ov026_DestroyMissionList.c:
+src/overlays/screens/ov026_shop/Ov026_DestroyMissionList.c:
     complete
     .text       start:0x02084cd0 end:0x02084d00
 
-src/overlays/ov026/calls/Ov026_FindListObjectWithField10Zero.c:
+src/overlays/screens/ov026_shop/Ov026_FindListObjectWithField10Zero.c:
     complete
     .text       start:0x02084d00 end:0x02084d3c
 
-src/overlays/ov026/calls/Ov026_InitResourceRecord.c:
+src/overlays/screens/ov026_shop/Ov026_InitResourceRecord.c:
     complete
     .text       start:0x02084d3c end:0x02084d62
 
-src/overlays/ov026/calls/Ov026_FreeResourceRecordBuffer.c:
+src/overlays/screens/ov026_shop/Ov026_FreeResourceRecordBuffer.c:
     complete
     .text       start:0x02084d64 end:0x02084d72
 
-src/overlays/ov026/auto/Ov026_GetVarRecordByIndex.c:
+src/overlays/screens/ov026_shop/Ov026_GetVarRecordByIndex.c:
     complete
     .text       start:0x02084d74 end:0x02084dac
 
-src/overlays/ov026/calls/Ov026_CopySourceBlock.c:
+src/overlays/screens/ov026_shop/Ov026_CopySourceBlock.c:
     complete
     .text       start:0x02084dac end:0x02084de0
 
-src/overlays/ov026/calls/Ov026_SetupShopDisplay.c:
+src/overlays/screens/ov026_shop/Ov026_SetupShopDisplay.c:
     complete
     .text       start:0x02084de0 end:0x02084fdc
 
-src/overlays/ov026/calls/Ov026_ResetPreviewModel.c:
+src/overlays/screens/ov026_shop/Ov026_ResetPreviewModel.c:
     complete
     .text       start:0x02084fdc end:0x02085070
 
-src/overlays/ov026/calls/Ov026_PanelRefresh.c:
+src/overlays/screens/ov026_shop/Ov026_PanelRefresh.c:
     complete
     .text       start:0x02085070 end:0x020850c4
 
-src/overlays/ov026/calls/Ov026_Shop_ReleaseModel.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_ReleaseModel.c:
     complete
     .text       start:0x020850c4 end:0x020850e4
 
-src/overlays/ov026/auto/Ov026_PanelAlpha.c:
+src/overlays/screens/ov026_shop/Ov026_PanelAlpha.c:
     complete
     .text       start:0x020850e4 end:0x02085124
 
-src/overlays/ov026/auto/Ov026_ItemIdToSlot.c:
+src/overlays/screens/ov026_shop/Ov026_ItemIdToSlot.c:
     complete
     .text       start:0x02085124 end:0x020851ac
 
-src/overlays/ov026/calls/Ov026_BlitQueuedImage.c:
+src/overlays/screens/ov026_shop/Ov026_BlitQueuedImage.c:
     complete
     .text       start:0x020851ac end:0x0208529c
 
-src/overlays/ov026/calls/Ov026_FlushDirtyVramBanks.c:
+src/overlays/screens/ov026_shop/Ov026_FlushDirtyVramBanks.c:
     complete
     .text       start:0x0208529c end:0x0208530c
 
-src/overlays/ov026/calls/Ov026_ResourceEntryCallback.c:
+src/overlays/screens/ov026_shop/Ov026_ResourceEntryCallback.c:
     complete
     .text       start:0x0208530c end:0x0208531c
 
-src/overlays/ov026/calls/Ov026_ResourceNodeCallback.c:
+src/overlays/screens/ov026_shop/Ov026_ResourceNodeCallback.c:
     complete
     .text       start:0x0208531c end:0x0208532c
 
-src/overlays/ov026/calls/Ov026_LoadShopResources.c:
+src/overlays/screens/ov026_shop/Ov026_LoadShopResources.c:
     complete
     .text       start:0x0208532c end:0x020855c4
 
-src/overlays/ov026/calls/Ov026_InitPanelSlotManagers.c:
+src/overlays/screens/ov026_shop/Ov026_InitPanelSlotManagers.c:
     complete
     .text       start:0x020855c4 end:0x02085828
 
-src/overlays/ov026/calls/Ov026_UploadTileSurface.c:
+src/overlays/screens/ov026_shop/Ov026_UploadTileSurface.c:
     complete
     .text       start:0x02085828 end:0x02085884
 
-src/overlays/ov026/calls/Ov026_InitShopSurfaces.c:
+src/overlays/screens/ov026_shop/Ov026_InitShopSurfaces.c:
     complete
     .text       start:0x02085884 end:0x02085a7c
 
-src/overlays/ov026/calls/Ov026_Shop_ClearTotals.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_ClearTotals.c:
     complete
     .text       start:0x02085a7c end:0x02085aa4
 
-src/overlays/ov026/calls/Ov026_UpdateTouchState.c:
+src/overlays/screens/ov026_shop/Ov026_UpdateTouchState.c:
     complete
     .text       start:0x02085aa4 end:0x02085b9c
 
-src/overlays/ov026/calls/Ov026_CursorInBox.c:
+src/overlays/screens/ov026_shop/Ov026_CursorInBox.c:
     complete
     .text       start:0x02085b9c end:0x02085bf4
 
-src/overlays/ov026/calls/Ov026_DrawStringShadowed.c:
+src/overlays/screens/ov026_shop/Ov026_DrawStringShadowed.c:
     complete
     .text       start:0x02085bf4 end:0x02085c48
 
-src/overlays/ov026/calls/Ov026_BuildTable9AndDelegate.c:
+src/overlays/screens/ov026_shop/Ov026_BuildTable9AndDelegate.c:
     complete
     .text       start:0x02085c48 end:0x02085ca0
 
-src/overlays/ov026/calls/Ov026_DrawNumber3Shadowed.c:
+src/overlays/screens/ov026_shop/Ov026_DrawNumber3Shadowed.c:
     complete
     .text       start:0x02085ca0 end:0x02085d7c
 
-src/overlays/ov026/calls/Ov026_CreateMissionCell.c:
+src/overlays/screens/ov026_shop/Ov026_CreateMissionCell.c:
     complete
     .text       start:0x02085d7c end:0x02085ddc
 
-src/overlays/ov026/calls/Ov026_DrawTitleBar.c:
+src/overlays/screens/ov026_shop/Ov026_DrawTitleBar.c:
     complete
     .text       start:0x02085ddc end:0x02085e58
 
-src/overlays/ov026/calls/Ov026_DrawDescriptionText.c:
+src/overlays/screens/ov026_shop/Ov026_DrawDescriptionText.c:
     complete
     .text       start:0x02085e58 end:0x02085f78
 
-src/overlays/ov026/calls/Ov026_AreRequirementsMet.c:
+src/overlays/screens/ov026_shop/Ov026_AreRequirementsMet.c:
     complete
     .text       start:0x02085f78 end:0x02085fc8
 
-src/overlays/ov026/calls/Ov026_InitColumnCells.c:
+src/overlays/screens/ov026_shop/Ov026_InitColumnCells.c:
     complete
     .text       start:0x02085fc8 end:0x020860f8
 
-src/overlays/ov026/calls/Ov026_ShowEightDigitCells.c:
+src/overlays/screens/ov026_shop/Ov026_ShowEightDigitCells.c:
     complete
     .text       start:0x020860f8 end:0x02086210
 
-src/overlays/ov026/calls/Ov026_RedrawBothColumns.c:
+src/overlays/screens/ov026_shop/Ov026_RedrawBothColumns.c:
     complete
     .text       start:0x02086210 end:0x020862b0
 
-src/overlays/ov026/calls/Ov026_RebuildSpriteCells.c:
+src/overlays/screens/ov026_shop/Ov026_RebuildSpriteCells.c:
     complete
     .text       start:0x020862b0 end:0x02086314
 
-src/overlays/ov026/calls/Ov026_InitFilterRows.c:
+src/overlays/screens/ov026_shop/Ov026_InitFilterRows.c:
     complete
     .text       start:0x02086314 end:0x02086438
 
-src/overlays/ov026/calls/Ov026_ShowFilterRow.c:
+src/overlays/screens/ov026_shop/Ov026_ShowFilterRow.c:
     complete
     .text       start:0x02086438 end:0x02086504
 
-src/overlays/ov026/calls/Ov026_RefreshFilterRows.c:
+src/overlays/screens/ov026_shop/Ov026_RefreshFilterRows.c:
     complete
     .text       start:0x02086504 end:0x020866a8
 
-src/overlays/ov026/calls/Ov026_Shop_HideRows.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_HideRows.c:
     complete
     .text       start:0x020866a8 end:0x02086778
 
-src/overlays/ov026/calls/Ov026_DrawThreeDigitCounter.c:
+src/overlays/screens/ov026_shop/Ov026_DrawThreeDigitCounter.c:
     complete
     .text       start:0x02086778 end:0x02086820
 
-src/overlays/ov026/calls/Ov026_ShowThreeDigitCells.c:
+src/overlays/screens/ov026_shop/Ov026_ShowThreeDigitCells.c:
     complete
     .text       start:0x02086820 end:0x02086910
 
-src/overlays/ov026/calls/Ov026_ShowCounterPanel.c:
+src/overlays/screens/ov026_shop/Ov026_ShowCounterPanel.c:
     complete
     .text       start:0x02086910 end:0x02086af4
 
-src/overlays/ov026/calls/Ov026_DrawCounterPanel.c:
+src/overlays/screens/ov026_shop/Ov026_DrawCounterPanel.c:
     complete
     .text       start:0x02086af4 end:0x02086ebc
 
-src/overlays/ov026/calls/Ov026_UpdateCounterPanel.c:
+src/overlays/screens/ov026_shop/Ov026_UpdateCounterPanel.c:
     complete
     .text       start:0x02086ebc end:0x02086f70
 
-src/overlays/ov026/calls/Ov026_HideCounterPanel.c:
+src/overlays/screens/ov026_shop/Ov026_HideCounterPanel.c:
     complete
     .text       start:0x02086f70 end:0x02087134
 
-src/overlays/ov026/calls/Ov026_CreateListCells.c:
+src/overlays/screens/ov026_shop/Ov026_CreateListCells.c:
     complete
     .text       start:0x02087134 end:0x020871d4
 
-src/overlays/ov026/calls/Ov026_Shop_HideCells.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_HideCells.c:
     complete
     .text       start:0x020871d4 end:0x02087234
 
-src/overlays/ov026/calls/Ov026_HideListCells.c:
+src/overlays/screens/ov026_shop/Ov026_HideListCells.c:
     complete
     .text       start:0x02087234 end:0x020872a4
 
-src/overlays/ov026/calls/Ov026_LayoutListAtScroll.c:
+src/overlays/screens/ov026_shop/Ov026_LayoutListAtScroll.c:
     complete
     .text       start:0x020872a4 end:0x0208737c
 
-src/overlays/ov026/calls/Ov026_ResetListTo.c:
+src/overlays/screens/ov026_shop/Ov026_ResetListTo.c:
     complete
     .text       start:0x0208737c end:0x0208744c
 
-src/overlays/ov026/calls/Ov026_ScrollListToRow.c:
+src/overlays/screens/ov026_shop/Ov026_ScrollListToRow.c:
     complete
     .text       start:0x0208744c end:0x020874b4
 
-src/overlays/ov026/calls/Ov026_ReloadTabIcons.c:
+src/overlays/screens/ov026_shop/Ov026_ReloadTabIcons.c:
     complete
     .text       start:0x020874b4 end:0x02087570
 
-src/overlays/ov026/calls/Ov026_RebuildShopList.c:
+src/overlays/screens/ov026_shop/Ov026_RebuildShopList.c:
     complete
     .text       start:0x02087570 end:0x02087798
 
-src/overlays/ov026/calls/Ov026_DrawShopRowMarks.c:
+src/overlays/screens/ov026_shop/Ov026_DrawShopRowMarks.c:
     complete
     .text       start:0x02087798 end:0x020879c0
 
-src/overlays/ov026/calls/Ov026_Shop_DrawRow.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_DrawRow.c:
     complete
     .text       start:0x020879c0 end:0x02087d6c
 
-src/overlays/ov026/calls/Ov026_ShowShopRows.c:
+src/overlays/screens/ov026_shop/Ov026_ShowShopRows.c:
     complete
     .text       start:0x02087d6c end:0x02087ebc
 
-src/overlays/ov026/calls/Ov026_ShowTierPage.c:
+src/overlays/screens/ov026_shop/Ov026_ShowTierPage.c:
     complete
     .text       start:0x02087ebc end:0x02087f70
 
-src/overlays/ov026/calls/Ov026_Shop_LayoutPage.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_LayoutPage.c:
     complete
     .text       start:0x02087f70 end:0x020885cc
 
-src/overlays/ov026/calls/Ov026_ShopRefreshSelection.c:
+src/overlays/screens/ov026_shop/Ov026_ShopRefreshSelection.c:
     complete
     .text       start:0x020885cc end:0x02088820
 
-src/overlays/ov026/calls/Ov026_CanConfirmShopRow.c:
+src/overlays/screens/ov026_shop/Ov026_CanConfirmShopRow.c:
     complete
     .text       start:0x02088820 end:0x0208894c
 
-src/overlays/ov026/calls/Ov026_UpdateScrollArrows.c:
+src/overlays/screens/ov026_shop/Ov026_UpdateScrollArrows.c:
     complete
     .text       start:0x0208894c end:0x020889c0
 
-src/overlays/ov026/calls/Ov026_HideShopList.c:
+src/overlays/screens/ov026_shop/Ov026_HideShopList.c:
     complete
     .text       start:0x020889c0 end:0x02088c84
 
-src/overlays/ov026/calls/Ov026_OpenSellDialog.c:
+src/overlays/screens/ov026_shop/Ov026_OpenSellDialog.c:
     complete
     .text       start:0x02088c84 end:0x0208922c
 
-src/overlays/ov026/calls/Ov026_Shop_DrawQuantityDialog.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_DrawQuantityDialog.c:
     complete
     .text       start:0x0208922c end:0x02089658
 
-src/overlays/ov026/calls/Ov026_HideDetailOverlay.c:
+src/overlays/screens/ov026_shop/Ov026_HideDetailOverlay.c:
     complete
     .text       start:0x02089658 end:0x02089780
 
-src/overlays/ov026/calls/Ov026_Stats_CreateRowCells.c:
+src/overlays/screens/ov026_shop/Ov026_Stats_CreateRowCells.c:
     complete
     .text       start:0x02089780 end:0x02089854
 
-src/overlays/ov026/calls/Ov026_DrawTradePanel.c:
+src/overlays/screens/ov026_shop/Ov026_DrawTradePanel.c:
     complete
     .text       start:0x02089854 end:0x02089c54
 
-src/overlays/ov026/calls/Ov026_SetupMenuScreen.c:
+src/overlays/screens/ov026_shop/Ov026_SetupMenuScreen.c:
     complete
     .text       start:0x02089c54 end:0x02089d2c
 
-src/overlays/ov026/calls/Ov026_OpenShopDetailPanel.c:
+src/overlays/screens/ov026_shop/Ov026_OpenShopDetailPanel.c:
     complete
     .text       start:0x02089d2c end:0x0208a010
 
-src/overlays/ov026/calls/Ov026_DrawShopDetailPanel.c:
+src/overlays/screens/ov026_shop/Ov026_DrawShopDetailPanel.c:
     complete
     .text       start:0x0208a010 end:0x0208a24c
 
-src/overlays/ov026/calls/Ov026_RefreshDetailPanel.c:
+src/overlays/screens/ov026_shop/Ov026_RefreshDetailPanel.c:
     complete
     .text       start:0x0208a24c end:0x0208a2fc
 
-src/overlays/ov026/calls/Ov026_OpenBuyDialog.c:
+src/overlays/screens/ov026_shop/Ov026_OpenBuyDialog.c:
     complete
     .text       start:0x0208a2fc end:0x0208a584
 
-src/overlays/ov026/calls/Ov026_BuildTotalsPanel.c:
+src/overlays/screens/ov026_shop/Ov026_BuildTotalsPanel.c:
     complete
     .text       start:0x0208a584 end:0x0208a658
 
-src/overlays/ov026/calls/Ov026_CloseBuyDialog.c:
+src/overlays/screens/ov026_shop/Ov026_CloseBuyDialog.c:
     complete
     .text       start:0x0208a658 end:0x0208a734
 
-src/overlays/ov026/calls/Ov026_Shop_HideArrows.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_HideArrows.c:
     complete
     .text       start:0x0208a734 end:0x0208a774
 
-src/overlays/ov026/calls/Ov026_RefreshPanelDisplay.c:
+src/overlays/screens/ov026_shop/Ov026_RefreshPanelDisplay.c:
     complete
     .text       start:0x0208a774 end:0x0208a848
 
-src/overlays/ov026/calls/Ov026_ShopCreate.c:
+src/overlays/screens/ov026_shop/Ov026_ShopCreate.c:
     complete
     .text       start:0x0208a848 end:0x0208aa48
 
-src/overlays/ov026/calls/Ov026_ClosePanel.c:
+src/overlays/screens/ov026_shop/Ov026_ClosePanel.c:
     complete
     .text       start:0x0208aa48 end:0x0208ab5c
 
-src/overlays/ov026/calls/Ov026_EnterSelectionScreen.c:
+src/overlays/screens/ov026_shop/Ov026_EnterSelectionScreen.c:
     complete
     .text       start:0x0208ab5c end:0x0208ac00
 
-src/overlays/ov026/calls/Ov026_SelectionFadeInTick.c:
+src/overlays/screens/ov026_shop/Ov026_SelectionFadeInTick.c:
     complete
     .text       start:0x0208ac00 end:0x0208ac9c
 
-src/overlays/ov026/calls/Ov026_ShopEnterTabSelectWhenReady.c:
+src/overlays/screens/ov026_shop/Ov026_ShopEnterTabSelectWhenReady.c:
     complete
     .text       start:0x0208ac9c end:0x0208acc4
 
-src/overlays/ov026/calls/Ov026_ShopTabSelectTick.c:
+src/overlays/screens/ov026_shop/Ov026_ShopTabSelectTick.c:
     complete
     .text       start:0x0208acc4 end:0x0208afc4
 
-src/overlays/ov026/calls/Ov026_FadeToBlackStep.c:
+src/overlays/screens/ov026_shop/Ov026_FadeToBlackStep.c:
     complete
     .text       start:0x0208afc4 end:0x0208b028
 
-src/overlays/ov026/calls/Ov026_ShopFadeOutThenConfirm.c:
+src/overlays/screens/ov026_shop/Ov026_ShopFadeOutThenConfirm.c:
     complete
     .text       start:0x0208b028 end:0x0208b04c
 
-src/overlays/ov026/calls/Ov026_ConfirmSelection.c:
+src/overlays/screens/ov026_shop/Ov026_ConfirmSelection.c:
     complete
     .text       start:0x0208b04c end:0x0208b0bc
 
-src/overlays/ov026/calls/Ov026_RebuildTabList.c:
+src/overlays/screens/ov026_shop/Ov026_RebuildTabList.c:
     complete
     .text       start:0x0208b0bc end:0x0208b188
 
-src/overlays/ov026/calls/Ov026_FadeInStep.c:
+src/overlays/screens/ov026_shop/Ov026_FadeInStep.c:
     complete
     .text       start:0x0208b188 end:0x0208b1dc
 
-src/overlays/ov026/calls/Ov026_FadeOutStep.c:
+src/overlays/screens/ov026_shop/Ov026_FadeOutStep.c:
     complete
     .text       start:0x0208b1dc end:0x0208b234
 
-src/overlays/ov026/calls/Ov026_SelectionIdleTick.c:
+src/overlays/screens/ov026_shop/Ov026_SelectionIdleTick.c:
     complete
     .text       start:0x0208b234 end:0x0208b2c0
 
-src/overlays/ov026/calls/Ov026_ShopListInput.c:
+src/overlays/screens/ov026_shop/Ov026_ShopListInput.c:
     complete
     .text       start:0x0208b2c0 end:0x0208bab0
 
-src/overlays/ov026/calls/Ov026_ShopFadeOutThenSelection.c:
+src/overlays/screens/ov026_shop/Ov026_ShopFadeOutThenSelection.c:
     complete
     .text       start:0x0208bab0 end:0x0208bad4
 
-src/overlays/ov026/calls/Ov026_SelectionTick.c:
+src/overlays/screens/ov026_shop/Ov026_SelectionTick.c:
     complete
     .text       start:0x0208bad4 end:0x0208bb84
 
-src/overlays/ov026/calls/Ov026_EnterDetailView.c:
+src/overlays/screens/ov026_shop/Ov026_EnterDetailView.c:
     complete
     .text       start:0x0208bb84 end:0x0208bbf4
 
-src/overlays/ov026/calls/Ov026_Shop_QuantityDialogTick.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_QuantityDialogTick.c:
     complete
     .text       start:0x0208bbf4 end:0x0208c28c
 
-src/overlays/ov026/calls/Ov026_ResetPanelAndRebuildTabs.c:
+src/overlays/screens/ov026_shop/Ov026_ResetPanelAndRebuildTabs.c:
     complete
     .text       start:0x0208c28c end:0x0208c2c0
 
-src/overlays/ov026/calls/Ov026_ShopOpenDetailStep.c:
+src/overlays/screens/ov026_shop/Ov026_ShopOpenDetailStep.c:
     complete
     .text       start:0x0208c2c0 end:0x0208c2d8
 
-src/overlays/ov026/calls/Ov026_ShopDetailConfirmTick.c:
+src/overlays/screens/ov026_shop/Ov026_ShopDetailConfirmTick.c:
     complete
     .text       start:0x0208c2d8 end:0x0208c564
 
-src/overlays/ov026/calls/Ov026_Shop_ReturnToList.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_ReturnToList.c:
     complete
     .text       start:0x0208c564 end:0x0208c598
 
-src/overlays/ov026/calls/Ov026_Shop_WaitDialogClose.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_WaitDialogClose.c:
     complete
     .text       start:0x0208c598 end:0x0208c5d8
 
-src/overlays/ov026/calls/Ov026_Shop_OpenBuy.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_OpenBuy.c:
     complete
     .text       start:0x0208c5d8 end:0x0208c610
 
-src/overlays/ov026/calls/Ov026_GrantRewardItems.c:
+src/overlays/screens/ov026_shop/Ov026_GrantRewardItems.c:
     complete
     .text       start:0x0208c610 end:0x0208cb0c
 
-src/overlays/ov026/calls/Ov026_ShopConfirmPurchase.c:
+src/overlays/screens/ov026_shop/Ov026_ShopConfirmPurchase.c:
     complete
     .text       start:0x0208cb0c end:0x0208cbf4
 
-src/overlays/ov026/calls/Ov026_CommitSelection.c:
+src/overlays/screens/ov026_shop/Ov026_CommitSelection.c:
     complete
     .text       start:0x0208cbf4 end:0x0208cc58
 
-src/overlays/ov026/calls/Ov026_Shop_IsClosed.c:
+src/overlays/screens/ov026_shop/Ov026_Shop_IsClosed.c:
     complete
     .text       start:0x0208cc58 end:0x0208cc74
 
-src/overlays/ov026/calls/Ov026_ComputeRecordPrice.c:
+src/overlays/screens/ov026_shop/Ov026_ComputeRecordPrice.c:
     complete
     .text       start:0x0208cc74 end:0x0208cd44
 
-src/overlays/ov026/calls/Ov026_RefreshShopUnlockParams.c:
+src/overlays/screens/ov026_shop/Ov026_RefreshShopUnlockParams.c:
     complete
     .text       start:0x0208cd44 end:0x0208cf08
 
-src/overlays/ov026/auto/Ov026_InitSlotFromSource.c:
+src/overlays/screens/ov026_shop/Ov026_InitSlotFromSource.c:
     complete
     .text       start:0x0208cf08 end:0x0208cf28
 
-src/overlays/ov026/calls/Ov026_BuildSlotPacketA.c:
+src/overlays/screens/ov026_shop/Ov026_BuildSlotPacketA.c:
     complete
     .text       start:0x0208cf28 end:0x0208cfc4
 
-src/overlays/ov026/calls/Ov026_BuildSlotPacketB.c:
+src/overlays/screens/ov026_shop/Ov026_BuildSlotPacketB.c:
     complete
     .text       start:0x0208cfc4 end:0x0208d064
 
-src/overlays/ov026/calls/Ov026_FillRewardRecord.c:
+src/overlays/screens/ov026_shop/Ov026_FillRewardRecord.c:
     complete
     .text       start:0x0208d064 end:0x0208d170
 
-src/overlays/ov026/calls/Ov026_LoadParamRecords.c:
+src/overlays/screens/ov026_shop/Ov026_LoadParamRecords.c:
     complete
     .text       start:0x0208d170 end:0x0208d22c
 
-src/overlays/ov026/calls/Ov026_CreateParamTable.c:
+src/overlays/screens/ov026_shop/Ov026_CreateParamTable.c:
     complete
     .text       start:0x0208d22c end:0x0208d360
 
-src/overlays/ov026/calls/Ov026_SortParamRecordsByItemOrder.c:
+src/overlays/screens/ov026_shop/Ov026_SortParamRecordsByItemOrder.c:
     complete
     .text       start:0x0208d360 end:0x0208d40c
 
-src/overlays/ov026/calls/Ov026_GetItemParamWord.c:
+src/overlays/screens/ov026_shop/Ov026_GetItemParamWord.c:
     complete
     .text       start:0x0208d40c end:0x0208d498
 
-src/overlays/ov026/auto/Ov026_IsValidItemId.c:
+src/overlays/screens/ov026_shop/Ov026_IsValidItemId.c:
     complete
     .text       start:0x0208d498 end:0x0208d4f0
 
-src/overlays/ov026/calls/Ov026_IsShopRecordListed.c:
+src/overlays/screens/ov026_shop/Ov026_IsShopRecordListed.c:
     complete
     .text       start:0x0208d4f0 end:0x0208d614
 
-src/overlays/ov026/calls/Ov026_IsShopRecordShown.c:
+src/overlays/screens/ov026_shop/Ov026_IsShopRecordShown.c:
     complete
     .text       start:0x0208d614 end:0x0208d7cc
 
-src/overlays/ov026/calls/Ov026_BuildShopList.c:
+src/overlays/screens/ov026_shop/Ov026_BuildShopList.c:
     complete
     .text       start:0x0208d7cc end:0x0208d970
 
-src/overlays/ov026/calls/Ov026_BuildSellList.c:
+src/overlays/screens/ov026_shop/Ov026_BuildSellList.c:
     complete
     .text       start:0x0208d970 end:0x0208db5c
 
-src/overlays/ov026/calls/Ov026_IsRewardItemShown.c:
+src/overlays/screens/ov026_shop/Ov026_IsRewardItemShown.c:
     complete
     .text       start:0x0208db5c end:0x0208dc68
 
-src/overlays/ov026/calls/Ov026_IsRecipeListed.c:
+src/overlays/screens/ov026_shop/Ov026_IsRecipeListed.c:
     complete
     .text       start:0x0208dc68 end:0x0208dd34
 
-src/overlays/ov026/calls/Ov026_BuildRecipeList.c:
+src/overlays/screens/ov026_shop/Ov026_BuildRecipeList.c:
     complete
     .text       start:0x0208dd34 end:0x0208de40
 
-src/overlays/ov026/calls/Ov026_BuildShopTierList.c:
+src/overlays/screens/ov026_shop/Ov026_BuildShopTierList.c:
     complete
     .text       start:0x0208de40 end:0x0208df6c
 
-src/overlays/ov026/auto/Ov026_GetChildField14OrNeg1.c:
+src/overlays/screens/ov026_shop/Ov026_GetChildField14OrNeg1.c:
     complete
     .text       start:0x0208df6c end:0x0208df80
 
-src/overlays/ov026/calls/Ov026_CountSpareItemsOfChild.c:
+src/overlays/screens/ov026_shop/Ov026_CountSpareItemsOfChild.c:
     complete
     .text       start:0x0208df80 end:0x0208dff8
 
-src/overlays/ov026/calls/Ov026_CountUnassignedCopies.c:
+src/overlays/screens/ov026_shop/Ov026_CountUnassignedCopies.c:
     complete
     .text       start:0x0208dff8 end:0x0208e06c
 
-src/overlays/ov026/calls/Ov026_FreeParamTable.c:
+src/overlays/screens/ov026_shop/Ov026_FreeParamTable.c:
     complete
     .text       start:0x0208e06c end:0x0208e178
 
-src/overlays/ov026/calls/Ov026_CommitSynthesisOrder.c:
+src/overlays/screens/ov026_shop/Ov026_CommitSynthesisOrder.c:
     complete
     .text       start:0x0208e178 end:0x0208e218
 
-src/overlays/ov026/calls/Ov026_QueryRecordUnlock.c:
+src/overlays/screens/ov026_shop/Ov026_QueryRecordUnlock.c:
     complete
     .text       start:0x0208e218 end:0x0208e35c
 
-src/overlays/ov026/calls/Ov026_MergePendingUnlockBits.c:
+src/overlays/screens/ov026_shop/Ov026_MergePendingUnlockBits.c:
     complete
     .text       start:0x0208e35c end:0x0208e40c
 
-src/overlays/ov026/calls/Ov026_FindNewlyEarnedReward.c:
+src/overlays/screens/ov026_shop/Ov026_FindNewlyEarnedReward.c:
     complete
     .text       start:0x0208e40c end:0x0208e558
 
-src/overlays/ov026/calls/Ov026_CountAffordableRecords.c:
+src/overlays/screens/ov026_shop/Ov026_CountAffordableRecords.c:
     complete
     .text       start:0x0208e558 end:0x0208e658
 
-src/overlays/ov026/auto/Ov026_IsSpecialItemId.c:
+src/overlays/screens/ov026_shop/Ov026_IsSpecialItemId.c:
     complete
     .text       start:0x0208e658 end:0x0208e6a0
 
-src/overlays/ov026/calls/Ov026_IsEntryVisible.c:
+src/overlays/screens/ov026_shop/Ov026_IsEntryVisible.c:
     complete
     .text       start:0x0208e6a0 end:0x0208e6e8
 
-src/overlays/ov026/calls/Ov026_GetParamRecordValue.c:
+src/overlays/screens/ov026_shop/Ov026_GetParamRecordValue.c:
     complete
     .text       start:0x0208e6e8 end:0x0208e720
 
-src/overlays/ov026/auto/Ov026_ClearPtrIfType15.c:
+src/overlays/screens/ov026_shop/Ov026_ClearPtrIfType15.c:
     complete
     .text       start:0x0208e720 end:0x0208e740
 
-src/overlays/ov026/calls/Ov026_GetLocalMemberKind.c:
+src/overlays/screens/ov026_shop/Ov026_GetLocalMemberKind.c:
     complete
     .text       start:0x0208e740 end:0x0208e75c
 
-src/overlays/ov026/auto/Ov026_RemapCharCode00.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode00.c:
     complete
     .text       start:0x0208e75c end:0x0208e988
 
-src/overlays/ov026/auto/Ov026_RemapCharCode01.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode01.c:
     complete
     .text       start:0x0208e988 end:0x0208ebb4
 
-src/overlays/ov026/auto/Ov026_RemapCharCode02.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode02.c:
     complete
     .text       start:0x0208ebb4 end:0x0208ede0
 
-src/overlays/ov026/auto/Ov026_RemapCharCode03.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode03.c:
     complete
     .text       start:0x0208ede0 end:0x0208f00c
 
-src/overlays/ov026/auto/Ov026_RemapCharCode04.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode04.c:
     complete
     .text       start:0x0208f00c end:0x0208f238
 
-src/overlays/ov026/auto/Ov026_RemapCharCode05.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode05.c:
     complete
     .text       start:0x0208f238 end:0x0208f464
 
-src/overlays/ov026/auto/Ov026_RemapCharCode06.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode06.c:
     complete
     .text       start:0x0208f464 end:0x0208f690
 
-src/overlays/ov026/auto/Ov026_RemapCharCode07.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode07.c:
     complete
     .text       start:0x0208f690 end:0x0208f8bc
 
-src/overlays/ov026/auto/Ov026_RemapCharCode08.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode08.c:
     complete
     .text       start:0x0208f8bc end:0x0208fae8
 
-src/overlays/ov026/auto/Ov026_RemapCharCode09.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode09.c:
     complete
     .text       start:0x0208fae8 end:0x0208fd14
 
-src/overlays/ov026/auto/Ov026_RemapCharCode10.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode10.c:
     complete
     .text       start:0x0208fd14 end:0x0208ff40
 
-src/overlays/ov026/auto/Ov026_RemapCharCode11.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode11.c:
     complete
     .text       start:0x0208ff40 end:0x0209016c
 
-src/overlays/ov026/auto/Ov026_RemapCharCode12.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode12.c:
     complete
     .text       start:0x0209016c end:0x02090398
 
-src/overlays/ov026/auto/Ov026_RemapCharCode13.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode13.c:
     complete
     .text       start:0x02090398 end:0x020905c4
 
-src/overlays/ov026/auto/Ov026_RemapCharCode14.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode14.c:
     complete
     .text       start:0x020905c4 end:0x020907f0
 
-src/overlays/ov026/auto/Ov026_RemapCharCode15.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode15.c:
     complete
     .text       start:0x020907f0 end:0x02090a1c
 
-src/overlays/ov026/auto/Ov026_RemapCharCode16.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode16.c:
     complete
     .text       start:0x02090a1c end:0x02090c48
 
-src/overlays/ov026/auto/Ov026_RemapCharCode17.c:
+src/overlays/screens/ov026_shop/Ov026_RemapCharCode17.c:
     complete
     .text       start:0x02090c48 end:0x02090e74
 
-src/overlays/ov026/calls/Ov026_InitWithDefaultHandlers.c:
+src/overlays/screens/ov026_shop/Ov026_InitWithDefaultHandlers.c:
     complete
     .text       start:0x02090e74 end:0x02090eb8
 
-src/overlays/ov026/auto/Ov026_InvokeMethod8.c:
+src/overlays/screens/ov026_shop/Ov026_InvokeMethod8.c:
     complete
     .text       start:0x02090eb8 end:0x02090ed4
 
-src/overlays/ov026/calls/Ov026_GetItemDescriptionForMember.c:
+src/overlays/screens/ov026_shop/Ov026_GetItemDescriptionForMember.c:
     complete
     .text       start:0x02090ed4 end:0x020910b0
 
-src/overlays/ov026/data/ov026_class_02091200.c:
+src/overlays/screens/ov026_shop/data/ov026_class_02091200.c:
     complete
     .data       start:0x02091200 end:0x02091214
 
-src/overlays/ov026/data/ov026_class_02091230.c:
+src/overlays/screens/ov026_shop/data/ov026_class_02091230.c:
     complete
     .data       start:0x02091230 end:0x02091244
 
-src/overlays/ov026/data/ov026_msglist_020911c4.c:
+src/overlays/screens/ov026_shop/data/ov026_msglist_020911c4.c:
     complete
     .rodata     start:0x020911c4 end:0x020911d0
 
-src/overlays/ov026/data/ov026_strings_02091214.c:
+src/overlays/screens/ov026_shop/data/ov026_strings_02091214.c:
     complete
     .data       start:0x02091214 end:0x02091230
 
-src/overlays/ov026/data/ov026_strings_02091244.c:
+src/overlays/screens/ov026_shop/data/ov026_strings_02091244.c:
     complete
     .data       start:0x02091244 end:0x0209130c
 
-src/overlays/ov026/data/ov026_strings_02091340.c:
+src/overlays/screens/ov026_shop/data/ov026_strings_02091340.c:
     complete
     .data       start:0x02091340 end:0x02091360
 
-src/overlays/ov026/data/ov026_tables_020910b0.c:
+src/overlays/screens/ov026_shop/data/ov026_tables_020910b0.c:
     complete
     .rodata     start:0x020910b0 end:0x02091120
 
-src/overlays/ov026/data/ov026_tables_02091134.c:
+src/overlays/screens/ov026_shop/data/ov026_tables_02091134.c:
     complete
     .rodata     start:0x02091134 end:0x020911c4
 
-src/overlays/ov026/data/ov026_tables_020911d0.c:
+src/overlays/screens/ov026_shop/data/ov026_tables_020911d0.c:
     complete
     .rodata     start:0x020911d0 end:0x020911e0
 
-src/overlays/ov026/data/ov026_tables_0209130c.c:
+src/overlays/screens/ov026_shop/data/ov026_tables_0209130c.c:
     complete
     .data       start:0x0209130c end:0x02091340
 
-src/overlays/ov026/data/ov026_tracker_02091120.c:
+src/overlays/screens/ov026_shop/data/ov026_tracker_02091120.c:
     complete
     .rodata     start:0x02091120 end:0x02091134

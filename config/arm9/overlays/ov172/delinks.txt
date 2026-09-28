@@ -4,234 +4,234 @@
     .data       start:0x020d2b00 end:0x020d2b20 kind:data align:32
     .bss        start:0x020d2b20 end:0x020d2b20 kind:bss align:32
 
-src/overlays/ov172/calls/Ov172_RegisterEntityClass.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov172/calls/Ov172_CreateNamedEntity.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov172/calls/Ov172_OrientPartAlongDirection.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cfc04 end:0x020cfc60
 
-src/overlays/ov172/calls/Ov172_Construct.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_Construct.c:
     complete
     .text       start:0x020cfc60 end:0x020cff84
 
-src/overlays/ov172/calls/Ov172_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020cff84 end:0x020cffc4
 
-src/overlays/ov172/calls/func_ov172_020cffc4.c:
+src/overlays/enemies/ov172_enemy_1c_2/func_ov172_020cffc4.c:
     complete
     .text       start:0x020cffc4 end:0x020cffd0
 
-src/overlays/ov172/calls/Ov172_ForwardEventToChild.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_ForwardEventToChild.c:
     complete
     .text       start:0x020cffd0 end:0x020cfff8
 
-src/overlays/ov172/calls/Ov172_NotifyPartThenBase.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_NotifyPartThenBase.c:
     complete
     .text       start:0x020cfff8 end:0x020d0020
 
-src/overlays/ov172/calls/Ov172_HandleSpawnMessage.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_HandleSpawnMessage.c:
     complete
     .text       start:0x020d0020 end:0x020d0238
 
-src/overlays/ov172/calls/Ov172_Model_SetTrack0.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_Model_SetTrack0.c:
     complete
     .text       start:0x020d0238 end:0x020d0268
 
-src/overlays/ov172/calls/Ov172_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020d0268 end:0x020d03a0
 
-src/overlays/ov172/calls/Ov172_registryCreateEntry.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_registryCreateEntry.c:
     complete
     .text       start:0x020d03a0 end:0x020d03fc
 
-src/overlays/ov172/calls/Ov172_OnHit.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_OnHit.c:
     complete
     .text       start:0x020d03fc end:0x020d061c
 
-src/overlays/ov172/auto/Ov172_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d061c end:0x020d0648
 
-src/overlays/ov172/calls/Ov172_FaceTargetGetClearance.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_FaceTargetGetClearance.c:
     complete
     .text       start:0x020d0648 end:0x020d06e0
 
-src/overlays/ov172/auto/Ov172_IsChildInactive.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_IsChildInactive.c:
     complete
     .text       start:0x020d06e0 end:0x020d0720
 
-src/overlays/ov172/calls/Ov172_stateInitTransformSlots.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_stateInitTransformSlots.c:
     complete
     .text       start:0x020d0720 end:0x020d080c
 
-src/overlays/ov172/calls/Ov172_stDispatchByStateByte_ccbcc.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020d080c end:0x020d09f8
 
-src/overlays/ov172/calls/Ov172_stDivStoreField.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_stDivStoreField.c:
     complete
     .text       start:0x020d09f8 end:0x020d0a98
 
-src/overlays/ov172/calls/Ov172_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0a98 end:0x020d0b00
 
-src/overlays/ov172/calls/Ov172_AnchorAndAdvance.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_AnchorAndAdvance.c:
     complete
     .text       start:0x020d0b00 end:0x020d0b88
 
-src/overlays/ov172/calls/Ov172_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020d0b88 end:0x020d0c54
 
-src/overlays/ov172/calls/Ov172_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020d0c54 end:0x020d0d2c
 
-src/overlays/ov172/calls/Ov172_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d0d2c end:0x020d0d60
 
-src/overlays/ov172/calls/Ov172_stateRandomInitFull.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_stateRandomInitFull.c:
     complete
     .text       start:0x020d0d60 end:0x020d0dec
 
-src/overlays/ov172/calls/Ov172_OrbitTick.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_OrbitTick.c:
     complete
     .text       start:0x020d0dec end:0x020d10bc
 
-src/overlays/ov172/calls/Ov172_AiStep_StartTag1WithTimer.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020d10bc end:0x020d1100
 
-src/overlays/ov172/calls/Ov172_HoverBobTick.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_HoverBobTick.c:
     complete
     .text       start:0x020d1100 end:0x020d1308
 
-src/overlays/ov172/calls/Ov172_AiStep_StartTag1.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_AiStep_StartTag1.c:
     complete
     .text       start:0x020d1308 end:0x020d1344
 
-src/overlays/ov172/calls/Ov172_HoverApproachTick.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_HoverApproachTick.c:
     complete
     .text       start:0x020d1344 end:0x020d1528
 
-src/overlays/ov172/calls/Ov172_stateRandomDirValue.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_stateRandomDirValue.c:
     complete
     .text       start:0x020d1528 end:0x020d1598
 
-src/overlays/ov172/calls/Ov172_CircleTick.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_CircleTick.c:
     complete
     .text       start:0x020d1598 end:0x020d1714
 
-src/overlays/ov172/calls/Ov172_AcquireTargetOrGiveUp.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020d1714 end:0x020d17b0
 
-src/overlays/ov172/calls/Ov172_HoverHoldTick.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_HoverHoldTick.c:
     complete
     .text       start:0x020d17b0 end:0x020d198c
 
-src/overlays/ov172/calls/Ov172_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d198c end:0x020d19c0
 
-src/overlays/ov172/calls/Ov172_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d19c0 end:0x020d19f4
 
-src/overlays/ov172/calls/Ov172_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020d19f4 end:0x020d1ae8
 
-src/overlays/ov172/calls/Ov172_AiEndWithUpdate.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_AiEndWithUpdate.c:
     complete
     .text       start:0x020d1ae8 end:0x020d1bd4
 
-src/overlays/ov172/calls/Ov172_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020d1bd4 end:0x020d1c74
 
-src/overlays/ov172/calls/Ov172_stateTimerToggleFlags.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_stateTimerToggleFlags.c:
     complete
     .text       start:0x020d1c74 end:0x020d1d08
 
-src/overlays/ov172/calls/Ov172_Store4WordsAndSetHw60HighBit0.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_Store4WordsAndSetHw60HighBit0.c:
     complete
     .text       start:0x020d1d08 end:0x020d1d48
 
-src/overlays/ov172/calls/Ov172_Actor_New.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_Actor_New.c:
     complete
     .text       start:0x020d1d48 end:0x020d1d7c
 
-src/overlays/ov172/calls/Ov172_ConstructSubitem.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_ConstructSubitem.c:
     complete
     .text       start:0x020d1d7c end:0x020d1ed4
 
-src/overlays/ov172/calls/Ov172_OnDespawn.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_OnDespawn.c:
     complete
     .text       start:0x020d1ed4 end:0x020d1ef0
 
-src/overlays/ov172/calls/Ov172_TickAndSyncModelXform.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d1ef0 end:0x020d1f28
 
-src/overlays/ov172/calls/Ov172_TryTriggerEffect.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_TryTriggerEffect.c:
     complete
     .text       start:0x020d1f28 end:0x020d1fb0
 
-src/overlays/ov172/calls/Ov172_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d1fb0 end:0x020d200c
 
-src/overlays/ov172/calls/Ov172_SettleCarryPosition.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_SettleCarryPosition.c:
     complete
     .text       start:0x020d200c end:0x020d2274
 
-src/overlays/ov172/calls/Ov172_stateInitClearSlots.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_stateInitClearSlots.c:
     complete
     .text       start:0x020d2274 end:0x020d231c
 
-src/overlays/ov172/calls/Ov172_dispatchByStatusByte.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_dispatchByStatusByte.c:
     complete
     .text       start:0x020d231c end:0x020d2394
 
-src/overlays/ov172/calls/Ov172_DeriveOrSeedVectorThenPublish.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_DeriveOrSeedVectorThenPublish.c:
     complete
     .text       start:0x020d2394 end:0x020d23ec
 
-src/overlays/ov172/calls/Ov172_ConfigHw60CopyVec3ConstTo30ThenAdvance.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_ConfigHw60CopyVec3ConstTo30ThenAdvance.c:
     complete
     .text       start:0x020d23ec end:0x020d249c
 
-src/overlays/ov172/calls/Ov172_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d249c end:0x020d24d4
 
-src/overlays/ov172/calls/Ov172_TransformVecThenAction5.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_TransformVecThenAction5.c:
     complete
     .text       start:0x020d24d4 end:0x020d25dc
 
-src/overlays/ov172/calls/Ov172_CarryDashTick.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_CarryDashTick.c:
     complete
     .text       start:0x020d25dc end:0x020d2954
 
-src/overlays/ov172/calls/Ov172_CarryReleaseTick.c:
+src/overlays/enemies/ov172_enemy_1c_2/Ov172_CarryReleaseTick.c:
     complete
     .text       start:0x020d2954 end:0x020d2aec
 
-src/overlays/ov172/data/ov172_strings_020d2b00.c:
+src/overlays/enemies/ov172_enemy_1c_2/data/ov172_strings_020d2b00.c:
     complete
     .data       start:0x020d2b00 end:0x020d2b20
 
-src/overlays/ov172/data/ov172_tables_020d2aec.c:
+src/overlays/enemies/ov172_enemy_1c_2/data/ov172_tables_020d2aec.c:
     complete
     .rodata     start:0x020d2aec end:0x020d2afc

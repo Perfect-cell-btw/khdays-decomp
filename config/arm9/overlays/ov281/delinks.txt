@@ -4,202 +4,202 @@
     .data       start:0x020ce480 end:0x020ce540 kind:data align:32
     .bss        start:0x020ce540 end:0x020ce540 kind:bss align:32
 
-src/overlays/ov281/calls/Ov281_RegisterEntityClass.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov281/calls/Ov281_CreateNamedEntity.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov281/calls/Ov281_InitializeActor.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_InitializeActor.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc3dc
 
-src/overlays/ov281/calls/Ov281_ReleaseSubObjectsAndSlotArrayThenNotify.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ReleaseSubObjectsAndSlotArrayThenNotify.c:
     complete
     .text       start:0x020cc3dc end:0x020cc41c
 
-src/overlays/ov281/calls/Ov281_TickWithChildRefresh.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_TickWithChildRefresh.c:
     complete
     .text       start:0x020cc41c end:0x020cc440
 
-src/overlays/ov281/calls/Ov281_HandleActorCommand.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_HandleActorCommand.c:
     complete
     .text       start:0x020cc440 end:0x020cc63c
 
-src/overlays/ov281/calls/func_ov281_020cc63c.c:
+src/overlays/enemies/ov281_enemy_66/func_ov281_020cc63c.c:
     complete
     .text       start:0x020cc63c end:0x020cc648
 
-src/overlays/ov281/calls/func_ov281_020cc648.c:
+src/overlays/enemies/ov281_enemy_66/func_ov281_020cc648.c:
     complete
     .text       start:0x020cc648 end:0x020cc654
 
-src/overlays/ov281/calls/Ov281_Model_ReapplyTrack0.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020cc654 end:0x020cc68c
 
-src/overlays/ov281/calls/Ov281_ReleaseByStateAndPublishPose.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ReleaseByStateAndPublishPose.c:
     complete
     .text       start:0x020cc68c end:0x020cc7dc
 
-src/overlays/ov281/calls/Ov281_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020cc7dc end:0x020cc838
 
-src/overlays/ov281/calls/Ov281_ProcessHitReaction.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ProcessHitReaction.c:
     complete
     .text       start:0x020cc838 end:0x020cca88
 
-src/overlays/ov281/auto/Ov281_RequestSubState10IfNotCurrent.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_RequestSubState10IfNotCurrent.c:
     complete
     .text       start:0x020cca88 end:0x020ccab4
 
-src/overlays/ov281/auto/Ov281_RequestSubState11IfIdle.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_RequestSubState11IfIdle.c:
     complete
     .text       start:0x020ccab4 end:0x020ccae4
 
-src/overlays/ov281/calls/Ov281_ApplyAreaHit.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ApplyAreaHit.c:
     complete
     .text       start:0x020ccae4 end:0x020ccd68
 
-src/overlays/ov281/calls/Ov281_InitReactionSlots.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_InitReactionSlots.c:
     complete
     .text       start:0x020ccd68 end:0x020cce20
 
-src/overlays/ov281/calls/Ov281_DispatchSubStateByte.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_DispatchSubStateByte.c:
     complete
     .text       start:0x020cce20 end:0x020ccff0
 
-src/overlays/ov281/calls/Ov281_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020ccff0 end:0x020cd08c
 
-src/overlays/ov281/calls/Ov281_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cd08c end:0x020cd0f4
 
-src/overlays/ov281/calls/Ov281_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cd0f4 end:0x020cd130
 
-src/overlays/ov281/calls/Ov281_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020cd130 end:0x020cd1fc
 
-src/overlays/ov281/calls/Ov281_CompleteAction48Windup.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_CompleteAction48Windup.c:
     complete
     .text       start:0x020cd1fc end:0x020cd2e0
 
-src/overlays/ov281/calls/Ov281_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd2e0 end:0x020cd314
 
-src/overlays/ov281/calls/Ov281_PickNextWaitTime.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_PickNextWaitTime.c:
     complete
     .text       start:0x020cd314 end:0x020cd378
 
-src/overlays/ov281/calls/Ov281_AimPickAttack.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_AimPickAttack.c:
     complete
     .text       start:0x020cd378 end:0x020cd4c8
 
-src/overlays/ov281/calls/Ov281_PickWaitAndResetCounter.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_PickWaitAndResetCounter.c:
     complete
     .text       start:0x020cd4c8 end:0x020cd534
 
-src/overlays/ov281/calls/Ov281_AimApproachAndDispatch.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_AimApproachAndDispatch.c:
     complete
     .text       start:0x020cd534 end:0x020cd728
 
-src/overlays/ov281/calls/Ov281_ComputeTargetDeltaThenAdvance.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020cd728 end:0x020cd798
 
-src/overlays/ov281/calls/Ov281_CopyScaleVec3GuardedThenAdvance.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_CopyScaleVec3GuardedThenAdvance.c:
     complete
     .text       start:0x020cd798 end:0x020cd814
 
-src/overlays/ov281/calls/Ov281_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cd814 end:0x020cd870
 
-src/overlays/ov281/calls/Ov281_WindUpCharge.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_WindUpCharge.c:
     complete
     .text       start:0x020cd870 end:0x020cd98c
 
-src/overlays/ov281/calls/Ov281_ConfigSubStateThenAdvanceSlot_2.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020cd98c end:0x020cda08
 
-src/overlays/ov281/calls/Ov281_UpdateRotatingHitAction.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_UpdateRotatingHitAction.c:
     complete
     .text       start:0x020cda08 end:0x020cdb9c
 
-src/overlays/ov281/calls/Ov281_AiStep_QueueAction2OnAnimEnd_2.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_AiStep_QueueAction2OnAnimEnd_2.c:
     complete
     .text       start:0x020cdb9c end:0x020cdbd0
 
-src/overlays/ov281/calls/Ov281_EnterMode7KickEffectThenAdvance.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_EnterMode7KickEffectThenAdvance.c:
     complete
     .text       start:0x020cdbd0 end:0x020cdc44
 
-src/overlays/ov281/calls/Ov281_ApplyAimTransformThenAdvance.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ApplyAimTransformThenAdvance.c:
     complete
     .text       start:0x020cdc44 end:0x020cdce0
 
-src/overlays/ov281/calls/Ov281_ApplyAimThenClearFlag.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ApplyAimThenClearFlag.c:
     complete
     .text       start:0x020cdce0 end:0x020cdd94
 
-src/overlays/ov281/calls/Ov281_AiDelayThenAnim10.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_AiDelayThenAnim10.c:
     complete
     .text       start:0x020cdd94 end:0x020cdde0
 
-src/overlays/ov281/calls/Ov281_AiStep_QueueAction2OnAnimEnd_3.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_AiStep_QueueAction2OnAnimEnd_3.c:
     complete
     .text       start:0x020cdde0 end:0x020cde14
 
-src/overlays/ov281/calls/Ov281_PlayCueAtOrigin.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_PlayCueAtOrigin.c:
     complete
     .text       start:0x020cde14 end:0x020cde7c
 
-src/overlays/ov281/calls/Ov281_PoseClearFields18ThenAdvance.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_PoseClearFields18ThenAdvance.c:
     complete
     .text       start:0x020cde7c end:0x020cded0
 
-src/overlays/ov281/calls/Ov281_UpdateAimedHitAction.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_UpdateAimedHitAction.c:
     complete
     .text       start:0x020cded0 end:0x020ce0c4
 
-src/overlays/ov281/calls/Ov281_AiStep_QueueAction2OnAnimEnd_4.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_AiStep_QueueAction2OnAnimEnd_4.c:
     complete
     .text       start:0x020ce0c4 end:0x020ce0f8
 
-src/overlays/ov281/calls/Ov281_ConfigHw60FlagsBeginAction4b.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ConfigHw60FlagsBeginAction4b.c:
     complete
     .text       start:0x020ce0f8 end:0x020ce1c0
 
-src/overlays/ov281/calls/Ov281_BeginChargeStance.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_BeginChargeStance.c:
     complete
     .text       start:0x020ce1c0 end:0x020ce284
 
-src/overlays/ov281/calls/Ov281_TimerGateHw60FlipThenAdvance.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_TimerGateHw60FlipThenAdvance.c:
     complete
     .text       start:0x020ce284 end:0x020ce318
 
-src/overlays/ov281/calls/Ov281_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020ce318 end:0x020ce34c
 
-src/overlays/ov281/calls/Ov281_ReaimAndClose.c:
+src/overlays/enemies/ov281_enemy_66/Ov281_ReaimAndClose.c:
     complete
     .text       start:0x020ce34c end:0x020ce468
 
-src/overlays/ov281/data/ov281_const_020ce468.c:
+src/overlays/enemies/ov281_enemy_66/data/ov281_const_020ce468.c:
     complete
     .rodata     start:0x020ce468 end:0x020ce46c
 
-src/overlays/ov281/data/ov281_strings_020ce480.c:
+src/overlays/enemies/ov281_enemy_66/data/ov281_strings_020ce480.c:
     complete
     .data       start:0x020ce480 end:0x020ce540

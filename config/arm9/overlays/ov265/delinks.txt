@@ -4,275 +4,275 @@
     .data       start:0x020d36c0 end:0x020d3720 kind:data align:32
     .bss        start:0x020d3720 end:0x020d3720 kind:bss align:32
 
-src/overlays/ov265/calls/Ov265_RegisterEntityClass.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov265/calls/Ov265_CreateNamedEntity.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc08
 
-src/overlays/ov265/calls/Ov265_Construct.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_Construct.c:
     complete
     .text       start:0x020cfc08 end:0x020d009c
 
-src/overlays/ov265/calls/Ov265_Destroy.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_Destroy.c:
     complete
     .text       start:0x020d009c end:0x020d00f4
 
-src/overlays/ov265/calls/Ov265_TickWithChildRefresh.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_TickWithChildRefresh.c:
     complete
     .text       start:0x020d00f4 end:0x020d0118
 
-src/overlays/ov265/calls/Ov265_RebindClip.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_RebindClip.c:
     complete
     .text       start:0x020d0118 end:0x020d019c
 
-src/overlays/ov265/calls/Ov265_OnEffectMessage.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_OnEffectMessage.c:
     complete
     .text       start:0x020d019c end:0x020d02d0
 
-src/overlays/ov265/calls/Ov265_ForwardEventToChildren.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_ForwardEventToChildren.c:
     complete
     .text       start:0x020d02d0 end:0x020d030c
 
-src/overlays/ov265/calls/Ov265_NotifyPartsThenBase.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d030c end:0x020d0348
 
-src/overlays/ov265/calls/Ov265_DrawPrePass.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_DrawPrePass.c:
     complete
     .text       start:0x020d0348 end:0x020d05c4
 
-src/overlays/ov265/calls/Ov265_CreateAiTask.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_CreateAiTask.c:
     complete
     .text       start:0x020d05c4 end:0x020d0628
 
-src/overlays/ov265/calls/Ov265_AcquireTarget.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AcquireTarget.c:
     complete
     .text       start:0x020d0628 end:0x020d06bc
 
-src/overlays/ov265/calls/Ov265_rotateVecByOwnerYaw.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_rotateVecByOwnerYaw.c:
     complete
     .text       start:0x020d06bc end:0x020d0750
 
-src/overlays/ov265/calls/Ov265_ProbeGround.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_ProbeGround.c:
     complete
     .text       start:0x020d0750 end:0x020d0890
 
-src/overlays/ov265/calls/Ov265_ProbeSpawnPoint.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_ProbeSpawnPoint.c:
     complete
     .text       start:0x020d0890 end:0x020d09a0
 
-src/overlays/ov265/calls/Ov265_FilterHit.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_FilterHit.c:
     complete
     .text       start:0x020d09a0 end:0x020d0c00
     .rodata     start:0x020d3688 end:0x020d368c
 
-src/overlays/ov265/calls/Ov265_ChooseAttack.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_ChooseAttack.c:
     complete
     .text       start:0x020d0c00 end:0x020d0ce8
 
-src/overlays/ov265/calls/Ov265_PlayPoseAnims.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_PlayPoseAnims.c:
     complete
     .text       start:0x020d0ce8 end:0x020d0d30
 
-src/overlays/ov265/auto/Ov265_TryRequestState13.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_TryRequestState13.c:
     complete
     .text       start:0x020d0d30 end:0x020d0d6c
 
-src/overlays/ov265/calls/Ov265_AiStateInit.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiStateInit.c:
     complete
     .text       start:0x020d0d6c end:0x020d0e68
 
-src/overlays/ov265/calls/Ov265_AiEnterStandby.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterStandby.c:
     complete
     .text       start:0x020d0e68 end:0x020d0ed0
 
-src/overlays/ov265/calls/Ov265_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d0ed0 end:0x020d0f08
 
-src/overlays/ov265/calls/Ov265_AiDispatchAction.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiDispatchAction.c:
     complete
     .text       start:0x020d0f08 end:0x020d1164
 
-src/overlays/ov265/calls/Ov265_ChaseTick.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_ChaseTick.c:
     complete
     .text       start:0x020d1164 end:0x020d13bc
 
-src/overlays/ov265/calls/Ov265_AiEnterWait.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterWait.c:
     complete
     .text       start:0x020d13bc end:0x020d1460
 
-src/overlays/ov265/calls/Ov265_AiWaitTick.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiWaitTick.c:
     complete
     .text       start:0x020d1460 end:0x020d14e0
 
-src/overlays/ov265/calls/Ov265_AiFollowUntilAnimEnd.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiFollowUntilAnimEnd.c:
     complete
     .text       start:0x020d14e0 end:0x020d1550
 
-src/overlays/ov265/calls/Ov265_AiEnterIdle.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterIdle.c:
     complete
     .text       start:0x020d1550 end:0x020d1574
 
-src/overlays/ov265/calls/Ov265_AiIdleTick.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiIdleTick.c:
     complete
     .text       start:0x020d1574 end:0x020d16fc
 
-src/overlays/ov265/calls/Ov265_AiEnterStrafe.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterStrafe.c:
     complete
     .text       start:0x020d16fc end:0x020d18e4
 
-src/overlays/ov265/calls/Ov265_UpdateAimPoint.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_UpdateAimPoint.c:
     complete
     .text       start:0x020d18e4 end:0x020d1990
 
-src/overlays/ov265/calls/Ov265_AiDiveTick.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiDiveTick.c:
     complete
     .text       start:0x020d1990 end:0x020d1c50
 
-src/overlays/ov265/calls/Ov265_Reaction_BiasFramesAndDispatch.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_Reaction_BiasFramesAndDispatch.c:
     complete
     .text       start:0x020d1c50 end:0x020d1d60
 
-src/overlays/ov265/calls/Ov265_AiFollowThenChooseAttack.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiFollowThenChooseAttack.c:
     complete
     .text       start:0x020d1d60 end:0x020d1e28
 
-src/overlays/ov265/calls/Ov265_AiEnterFireVolley.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterFireVolley.c:
     complete
     .text       start:0x020d1e28 end:0x020d1e64
 
-src/overlays/ov265/calls/Ov265_AiFireVolleyTick.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiFireVolleyTick.c:
     complete
     .text       start:0x020d1e64 end:0x020d20c0
 
-src/overlays/ov265/calls/Ov265_AiEnterLunge.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterLunge.c:
     complete
     .text       start:0x020d20c0 end:0x020d2104
 
-src/overlays/ov265/calls/Ov265_LungeTick.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_LungeTick.c:
     complete
     .text       start:0x020d2104 end:0x020d2370
 
-src/overlays/ov265/calls/Ov265_AiEnterLungeB.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterLungeB.c:
     complete
     .text       start:0x020d2370 end:0x020d23a8
 
-src/overlays/ov265/calls/Ov265_LungeTick_2.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_LungeTick_2.c:
     complete
     .text       start:0x020d23a8 end:0x020d25f4
 
-src/overlays/ov265/calls/Ov265_AiEnterSlam.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterSlam.c:
     complete
     .text       start:0x020d25f4 end:0x020d2628
 
-src/overlays/ov265/calls/Ov265_AiSlamWindupTick.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiSlamWindupTick.c:
     complete
     .text       start:0x020d2628 end:0x020d2744
 
-src/overlays/ov265/calls/Ov265_AiSlamDashTick.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiSlamDashTick.c:
     complete
     .text       start:0x020d2744 end:0x020d2884
 
-src/overlays/ov265/calls/Ov265_AiFollowThenQueueAction9.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiFollowThenQueueAction9.c:
     complete
     .text       start:0x020d2884 end:0x020d28f4
 
-src/overlays/ov265/calls/Ov265_AiEnterPoseSequence.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterPoseSequence.c:
     complete
     .text       start:0x020d28f4 end:0x020d2920
 
-src/overlays/ov265/calls/Ov265_AiPoseSequenceTick.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiPoseSequenceTick.c:
     complete
     .text       start:0x020d2920 end:0x020d29f8
 
-src/overlays/ov265/calls/Ov265_AiEnterPoseSequenceB.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterPoseSequenceB.c:
     complete
     .text       start:0x020d29f8 end:0x020d2a4c
 
-src/overlays/ov265/calls/Ov265_AiPoseSequenceTickB.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiPoseSequenceTickB.c:
     complete
     .text       start:0x020d2a4c end:0x020d2af8
 
-src/overlays/ov265/calls/Ov265_AiEnterAim.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterAim.c:
     complete
     .text       start:0x020d2af8 end:0x020d2b28
 
-src/overlays/ov265/calls/Ov265_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d2b28 end:0x020d2bf0
 
-src/overlays/ov265/calls/Ov265_AiEnterHold.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiEnterHold.c:
     complete
     .text       start:0x020d2bf0 end:0x020d2ca0
 
-src/overlays/ov265/calls/Ov265_AiHoldTick.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_AiHoldTick.c:
     complete
     .text       start:0x020d2ca0 end:0x020d2d34
 
-src/overlays/ov265/calls/Ov265_Item_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_Item_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d2d34 end:0x020d2d7c
 
-src/overlays/ov265/calls/Ov265_Item_New.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_Item_New.c:
     complete
     .text       start:0x020d2d7c end:0x020d2db0
 
-src/overlays/ov265/calls/Ov265_ItemConstruct.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_ItemConstruct.c:
     complete
     .text       start:0x020d2db0 end:0x020d2ee4
 
-src/overlays/ov265/calls/Ov265_OnDespawn.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_OnDespawn.c:
     complete
     .text       start:0x020d2ee4 end:0x020d2f00
 
-src/overlays/ov265/auto/Ov265_SetField1cIfFlags1And10.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_SetField1cIfFlags1And10.c:
     complete
     .text       start:0x020d2f00 end:0x020d2f38
 
-src/overlays/ov265/calls/Ov265_CreateAiTask_2.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_CreateAiTask_2.c:
     complete
     .text       start:0x020d2f38 end:0x020d2f90
 
-src/overlays/ov265/calls/Ov265_stateInitClearSlots.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_stateInitClearSlots.c:
     complete
     .text       start:0x020d2f90 end:0x020d3038
 
-src/overlays/ov265/calls/Ov265_dispatchByStatusByte.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_dispatchByStatusByte.c:
     complete
     .text       start:0x020d3038 end:0x020d30b0
 
-src/overlays/ov265/calls/Ov265_Item_ApplyOrientation.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_Item_ApplyOrientation.c:
     complete
     .text       start:0x020d30b0 end:0x020d3110
 
-src/overlays/ov265/calls/Ov265_Item_AiEnterWait.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_Item_AiEnterWait.c:
     complete
     .text       start:0x020d3110 end:0x020d3198
 
-src/overlays/ov265/calls/Ov265_Item_AiWaitActive.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_Item_AiWaitActive.c:
     complete
     .text       start:0x020d3198 end:0x020d31d0
 
-src/overlays/ov265/calls/Ov265_Item_AiEnterCharge.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_Item_AiEnterCharge.c:
     complete
     .text       start:0x020d31d0 end:0x020d32c4
 
-src/overlays/ov265/calls/Ov265_Item_AiChargeTick.c:
+src/overlays/enemies/ov265_enemy_59/Ov265_Item_AiChargeTick.c:
     complete
     .text       start:0x020d32c4 end:0x020d3668
 
-src/overlays/ov265/data/ov265_strings_020d36c0.c:
+src/overlays/enemies/ov265_enemy_59/data/ov265_strings_020d36c0.c:
     complete
     .data       start:0x020d36c0 end:0x020d3720
 
-src/overlays/ov265/data/ov265_tables_020d3668.c:
+src/overlays/enemies/ov265_enemy_59/data/ov265_tables_020d3668.c:
     complete
     .rodata     start:0x020d3668 end:0x020d3688
 
-src/overlays/ov265/data/ov265_tables_020d368c.c:
+src/overlays/enemies/ov265_enemy_59/data/ov265_tables_020d368c.c:
     complete
     .rodata     start:0x020d368c end:0x020d36b0

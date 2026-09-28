@@ -4,146 +4,146 @@
     .data       start:0x020bc1c0 end:0x020bc2a0 kind:data align:32
     .bss        start:0x020bc2a0 end:0x020bc2c0 kind:bss align:32
 
-src/overlays/ov104/calls/func_ov104_020ba7c0.c:
+src/overlays/players/ov104_player_roxas_dual_4/func_ov104_020ba7c0.c:
     complete
     .text       start:0x020ba7c0 end:0x020ba7d4
 
-src/overlays/ov104/calls/Ov104_ClassCtor.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_ClassCtor.c:
     complete
     .text       start:0x020ba7d4 end:0x020ba83c
 
-src/overlays/ov104/calls/Ov104_ClassTeardown.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_ClassTeardown.c:
     complete
     .text       start:0x020ba83c end:0x020ba89c
 
-src/overlays/ov104/calls/Ov104_Boot.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_Boot.c:
     complete
     .text       start:0x020ba89c end:0x020baad8
 
-src/overlays/ov104/calls/Ov104_ReloadTwoSceneResources.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_ReloadTwoSceneResources.c:
     complete
     .text       start:0x020baad8 end:0x020bab8c
 
-src/overlays/ov104/calls/Ov104_MapSlotKindToAnim.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_MapSlotKindToAnim.c:
     complete
     .text       start:0x020bab8c end:0x020bab90
 
-src/overlays/ov104/calls/Ov104_HandleMsgAndFaceHeading.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_HandleMsgAndFaceHeading.c:
     complete
     .text       start:0x020bab90 end:0x020bacc8
 
-src/overlays/ov104/calls/Ov104_ApplyModeChange.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_ApplyModeChange.c:
     complete
     .text       start:0x020bacc8 end:0x020bae24
 
-src/overlays/ov104/calls/Ov104_UpdateAttachmentAndChannels.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_UpdateAttachmentAndChannels.c:
     complete
     .text       start:0x020bae24 end:0x020baf10
 
-src/overlays/ov104/calls/Ov104_InvokeSubHandlerPairWithGlobalBuffer.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020baf10 end:0x020baf48
 
-src/overlays/ov104/calls/Ov104_PollHitAndFlagLanded.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_PollHitAndFlagLanded.c:
     complete
     .text       start:0x020baf48 end:0x020baffc
 
-src/overlays/ov104/calls/Ov104_InitEffectSlots.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_InitEffectSlots.c:
     complete
     .text       start:0x020baffc end:0x020bb08c
 
-src/overlays/ov104/calls/Ov104_ReleaseChannelAndFreeSubObject.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_ReleaseChannelAndFreeSubObject.c:
     complete
     .text       start:0x020bb08c end:0x020bb0cc
 
-src/overlays/ov104/calls/Ov104_AdvancePoseState.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_AdvancePoseState.c:
     complete
     .text       start:0x020bb0cc end:0x020bb14c
 
-src/overlays/ov104/calls/Ov104_StepEffectSlot.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_StepEffectSlot.c:
     complete
     .text       start:0x020bb14c end:0x020bb3a0
 
-src/overlays/ov104/calls/Ov104_PlaceTrailMarker.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_PlaceTrailMarker.c:
     complete
     .text       start:0x020bb3a0 end:0x020bb4bc
 
-src/overlays/ov104/calls/Ov104_InitGlobalChannelSlot.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_InitGlobalChannelSlot.c:
     complete
     .text       start:0x020bb4bc end:0x020bb4f4
 
-src/overlays/ov104/calls/Ov104_CreateSubObject.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_CreateSubObject.c:
     complete
     .text       start:0x020bb4f4 end:0x020bb60c
 
-src/overlays/ov104/calls/Ov104_BindRig.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_BindRig.c:
     complete
     .text       start:0x020bb60c end:0x020bb664
 
-src/overlays/ov104/calls/Ov104_SpawnNextEffect.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_SpawnNextEffect.c:
     complete
     .text       start:0x020bb664 end:0x020bb81c
 
-src/overlays/ov104/calls/Ov104_SpawnEffectWithVariant.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_SpawnEffectWithVariant.c:
     complete
     .text       start:0x020bb81c end:0x020bb8a4
 
-src/overlays/ov104/calls/Ov104_ResolveHitPositionRaised.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_ResolveHitPositionRaised.c:
     complete
     .text       start:0x020bb8a4 end:0x020bb948
 
-src/overlays/ov104/calls/Ov104_UpdateParts.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_UpdateParts.c:
     complete
     .text       start:0x020bb948 end:0x020bba04
 
-src/overlays/ov104/calls/Ov104_TickThrowArcThenLand.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_TickThrowArcThenLand.c:
     complete
     .text       start:0x020bba04 end:0x020bbab8
 
-src/overlays/ov104/calls/Ov104_BuildRenderHandles.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_BuildRenderHandles.c:
     complete
     .text       start:0x020bbab8 end:0x020bbb70
 
-src/overlays/ov104/calls/Ov104_StoreArgToGlobalSlot22AndForward.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_StoreArgToGlobalSlot22AndForward.c:
     complete
     .text       start:0x020bbb70 end:0x020bbba0
 
-src/overlays/ov104/calls/Ov104_DescentStep.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_DescentStep.c:
     complete
     .text       start:0x020bbba0 end:0x020bbd80
 
-src/overlays/ov104/calls/Ov104_HoverStep.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_HoverStep.c:
     complete
     .text       start:0x020bbd80 end:0x020bc07c
 
-src/overlays/ov104/calls/Ov104_InvokeWithDataTable.c:
+src/overlays/players/ov104_player_roxas_dual_4/Ov104_InvokeWithDataTable.c:
     complete
     .text       start:0x020bc07c end:0x020bc094
 
-src/overlays/ov104/data/ov104_class_020bc1d4.c:
+src/overlays/players/ov104_player_roxas_dual_4/data/ov104_class_020bc1d4.c:
     complete
     .data       start:0x020bc1d4 end:0x020bc1e8
 
-src/overlays/ov104/data/ov104_ctorargs_020bc0e4.c:
+src/overlays/players/ov104_player_roxas_dual_4/data/ov104_ctorargs_020bc0e4.c:
     complete
     .rodata     start:0x020bc0e4 end:0x020bc0f8
 
-src/overlays/ov104/data/ov104_pointers_020bc1e8.c:
+src/overlays/players/ov104_player_roxas_dual_4/data/ov104_pointers_020bc1e8.c:
     complete
     .data       start:0x020bc1e8 end:0x020bc1fc
 
-src/overlays/ov104/data/ov104_strings_020bc094.c:
+src/overlays/players/ov104_player_roxas_dual_4/data/ov104_strings_020bc094.c:
     complete
     .rodata     start:0x020bc094 end:0x020bc0e4
 
-src/overlays/ov104/data/ov104_strings_020bc1c0.c:
+src/overlays/players/ov104_player_roxas_dual_4/data/ov104_strings_020bc1c0.c:
     complete
     .data       start:0x020bc1c0 end:0x020bc1d4
 
-src/overlays/ov104/data/ov104_strings_020bc1fc.c:
+src/overlays/players/ov104_player_roxas_dual_4/data/ov104_strings_020bc1fc.c:
     complete
     .data       start:0x020bc1fc end:0x020bc2a0
 
-src/overlays/ov104/data/ov104_tables_020bc0f8.c:
+src/overlays/players/ov104_player_roxas_dual_4/data/ov104_tables_020bc0f8.c:
     complete
     .rodata     start:0x020bc0f8 end:0x020bc1b8

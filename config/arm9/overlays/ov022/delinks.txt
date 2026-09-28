@@ -4,3168 +4,3168 @@
     .data       start:0x020b2880 end:0x020b2e60 kind:data align:32
     .bss        start:0x020b2e60 end:0x020b2ee0 kind:bss align:32
 
-src/overlays/ov022/calls/Ov022_SetupRenderState.c:
+src/overlays/field/ov022_battle/Ov022_SetupRenderState.c:
     complete
     .text       start:0x02082960 end:0x020829f4
 
-src/overlays/ov022/calls/Ov022_LoadSceneResources.c:
+src/overlays/field/ov022_battle/Ov022_LoadSceneResources.c:
     complete
     .text       start:0x020829f4 end:0x02082a40
 
-src/overlays/ov022/calls/Ov022_BeginScene.c:
+src/overlays/field/ov022_battle/Ov022_BeginScene.c:
     complete
     .text       start:0x02082a40 end:0x02082acc
 
-src/overlays/ov022/calls/Ov022_BeginSceneWithRoster.c:
+src/overlays/field/ov022_battle/Ov022_BeginSceneWithRoster.c:
     complete
     .text       start:0x02082acc end:0x02082b84
 
-src/overlays/ov022/calls/func_ov022_02082b84.c:
+src/overlays/field/ov022_battle/func_ov022_02082b84.c:
     complete
     .text       start:0x02082b84 end:0x02082bb0
 
-src/overlays/ov022/calls/Ov022_ShutDownLink.c:
+src/overlays/field/ov022_battle/Ov022_ShutDownLink.c:
     complete
     .text       start:0x02082bb0 end:0x02082bf4
 
-src/overlays/ov022/calls/Ov022_PollBattleEntry.c:
+src/overlays/field/ov022_battle/Ov022_PollBattleEntry.c:
     complete
     .text       start:0x02082bf4 end:0x02082c54
 
-src/overlays/ov022/calls/func_ov022_02082c54.c:
+src/overlays/field/ov022_battle/func_ov022_02082c54.c:
     complete
     .text       start:0x02082c54 end:0x02082c90
 
-src/overlays/ov022/calls/Ov022_StartPauseMenu.c:
+src/overlays/field/ov022_battle/Ov022_StartPauseMenu.c:
     complete
     .text       start:0x02082c90 end:0x02082d04
 
-src/overlays/ov022/calls/Ov022_StateEnterGameplay.c:
+src/overlays/field/ov022_battle/Ov022_StateEnterGameplay.c:
     complete
     .text       start:0x02082d04 end:0x02082d8c
 
-src/overlays/ov022/calls/Ov022_StateGameplayHub.c:
+src/overlays/field/ov022_battle/Ov022_StateGameplayHub.c:
     complete
     .text       start:0x02082d8c end:0x02083038
 
-src/overlays/ov022/calls/Ov022_StateBeginResultSequence.c:
+src/overlays/field/ov022_battle/Ov022_StateBeginResultSequence.c:
     complete
     .text       start:0x02083038 end:0x0208310c
 
-src/overlays/ov022/calls/func_ov022_0208310c.c:
+src/overlays/field/ov022_battle/func_ov022_0208310c.c:
     complete
     .text       start:0x0208310c end:0x02083178
 
-src/overlays/ov022/calls/Ov022_SetupSessionObject.c:
+src/overlays/field/ov022_battle/Ov022_SetupSessionObject.c:
     complete
     .text       start:0x02083178 end:0x020831dc
 
-src/overlays/ov022/calls/func_ov022_020831dc.c:
+src/overlays/field/ov022_battle/func_ov022_020831dc.c:
     complete
     .text       start:0x020831dc end:0x02083204
 
-src/overlays/ov022/calls/Ov022_StateWaitForAction.c:
+src/overlays/field/ov022_battle/Ov022_StateWaitForAction.c:
     complete
     .text       start:0x02083204 end:0x020833c8
 
-src/overlays/ov022/calls/Ov022_StateFinishAction.c:
+src/overlays/field/ov022_battle/Ov022_StateFinishAction.c:
     complete
     .text       start:0x020833c8 end:0x020834d8
 
-src/overlays/ov022/calls/func_ov022_020834d8.c:
+src/overlays/field/ov022_battle/func_ov022_020834d8.c:
     complete
     .text       start:0x020834d8 end:0x02083530
 
-src/overlays/ov022/calls/Ov022_StateRosterStep.c:
+src/overlays/field/ov022_battle/Ov022_StateRosterStep.c:
     complete
     .text       start:0x02083530 end:0x020836f8
 
-src/overlays/ov022/calls/func_ov022_020836f8.c:
+src/overlays/field/ov022_battle/func_ov022_020836f8.c:
     complete
     .text       start:0x020836f8 end:0x02083714
 
-src/overlays/ov022/calls/func_ov022_02083714.c:
+src/overlays/field/ov022_battle/func_ov022_02083714.c:
     complete
     .text       start:0x02083714 end:0x02083758
 
-src/overlays/ov022/calls/func_ov022_02083758.c:
+src/overlays/field/ov022_battle/func_ov022_02083758.c:
     complete
     .text       start:0x02083758 end:0x02083774
 
-src/overlays/ov022/calls/Ov022_EndSceneForEachPlayer.c:
+src/overlays/field/ov022_battle/Ov022_EndSceneForEachPlayer.c:
     complete
     .text       start:0x02083774 end:0x02083844
 
-src/overlays/ov022/calls/func_ov022_02083844.c:
+src/overlays/field/ov022_battle/func_ov022_02083844.c:
     complete
     .text       start:0x02083844 end:0x02083878
 
-src/overlays/ov022/calls/Ov022_StartSessionThenNextStep.c:
+src/overlays/field/ov022_battle/Ov022_StartSessionThenNextStep.c:
     complete
     .text       start:0x02083878 end:0x02083904
 
-src/overlays/ov022/calls/Ov022_StepCameraInputThenNextState.c:
+src/overlays/field/ov022_battle/Ov022_StepCameraInputThenNextState.c:
     complete
     .text       start:0x02083904 end:0x0208398c
 
-src/overlays/ov022/calls/Ov022_StateAdvanceAfterPause.c:
+src/overlays/field/ov022_battle/Ov022_StateAdvanceAfterPause.c:
     complete
     .text       start:0x0208398c end:0x02083aac
 
-src/overlays/ov022/calls/Ov022_ExpireTimerThenNextStep.c:
+src/overlays/field/ov022_battle/Ov022_ExpireTimerThenNextStep.c:
     complete
     .text       start:0x02083aac end:0x02083b20
 
-src/overlays/ov022/calls/Ov022_StateReturnToHub.c:
+src/overlays/field/ov022_battle/Ov022_StateReturnToHub.c:
     complete
     .text       start:0x02083b20 end:0x02083bd8
 
-src/overlays/ov022/calls/Ov022_EndKeySharingSession.c:
+src/overlays/field/ov022_battle/Ov022_EndKeySharingSession.c:
     complete
     .text       start:0x02083bd8 end:0x02083c08
 
-src/overlays/ov022/calls/Ov022_SetActorInputEnabled.c:
+src/overlays/field/ov022_battle/Ov022_SetActorInputEnabled.c:
     complete
     .text       start:0x02083c08 end:0x02083ce4
 
-src/overlays/ov022/calls/func_ov022_02083ce4.c:
+src/overlays/field/ov022_battle/func_ov022_02083ce4.c:
     complete
     .text       start:0x02083ce4 end:0x02083cfc
 
-src/overlays/ov022/calls/func_ov022_02083cfc.c:
+src/overlays/field/ov022_battle/func_ov022_02083cfc.c:
     complete
     .text       start:0x02083cfc end:0x02083d14
 
-src/overlays/ov022/calls/func_ov022_02083d14.c:
+src/overlays/field/ov022_battle/func_ov022_02083d14.c:
     complete
     .text       start:0x02083d14 end:0x02083d24
 
-src/overlays/ov022/calls/func_ov022_02083d24.c:
+src/overlays/field/ov022_battle/func_ov022_02083d24.c:
     complete
     .text       start:0x02083d24 end:0x02083d54
 
-src/overlays/ov022/calls/func_ov022_02083d54.c:
+src/overlays/field/ov022_battle/func_ov022_02083d54.c:
     complete
     .text       start:0x02083d54 end:0x02083d78
 
-src/overlays/ov022/calls/func_ov022_02083d78.c:
+src/overlays/field/ov022_battle/func_ov022_02083d78.c:
     complete
     .text       start:0x02083d78 end:0x02083da8
 
-src/overlays/ov022/calls/func_ov022_02083da8.c:
+src/overlays/field/ov022_battle/func_ov022_02083da8.c:
     complete
     .text       start:0x02083da8 end:0x02083dcc
 
-src/overlays/ov022/calls/func_ov022_02083dcc.c:
+src/overlays/field/ov022_battle/func_ov022_02083dcc.c:
     complete
     .text       start:0x02083dcc end:0x02083e08
 
-src/overlays/ov022/calls/func_ov022_02083e08.c:
+src/overlays/field/ov022_battle/func_ov022_02083e08.c:
     complete
     .text       start:0x02083e08 end:0x02083e54
 
-src/overlays/ov022/calls/func_ov022_02083e54.c:
+src/overlays/field/ov022_battle/func_ov022_02083e54.c:
     complete
     .text       start:0x02083e54 end:0x02083e98
 
-src/overlays/ov022/calls/Ov022_FillSceneVTable.c:
+src/overlays/field/ov022_battle/Ov022_FillSceneVTable.c:
     complete
     .text       start:0x02083e98 end:0x02083f0c
 
-src/overlays/ov022/calls/func_ov022_02083f0c.c:
+src/overlays/field/ov022_battle/func_ov022_02083f0c.c:
     complete
     .text       start:0x02083f0c end:0x02083f40
 
-src/overlays/ov022/calls/func_ov022_02083f40.c:
+src/overlays/field/ov022_battle/func_ov022_02083f40.c:
     complete
     .text       start:0x02083f40 end:0x02083f5c
 
-src/overlays/ov022/calls/func_ov022_02083f5c.c:
+src/overlays/field/ov022_battle/func_ov022_02083f5c.c:
     complete
     .text       start:0x02083f5c end:0x02083f90
 
-src/overlays/ov022/calls/Ov022_GetGlobal34.c:
+src/overlays/field/ov022_battle/Ov022_GetGlobal34.c:
     complete
     .text       start:0x02083f90 end:0x02083fa4
 
-src/overlays/ov022/calls/func_ov022_02083fa4.c:
+src/overlays/field/ov022_battle/func_ov022_02083fa4.c:
     complete
     .text       start:0x02083fa4 end:0x02083fdc
 
-src/overlays/ov022/calls/func_ov022_02083fdc.c:
+src/overlays/field/ov022_battle/func_ov022_02083fdc.c:
     complete
     .text       start:0x02083fdc end:0x02084028
 
-src/overlays/ov022/calls/func_ov022_02084028.c:
+src/overlays/field/ov022_battle/func_ov022_02084028.c:
     complete
     .text       start:0x02084028 end:0x02084048
 
-src/overlays/ov022/calls/Ov022_ResetAndBuildFromSeqArchive.c:
+src/overlays/field/ov022_battle/Ov022_ResetAndBuildFromSeqArchive.c:
     complete
     .text       start:0x02084048 end:0x020840c8
 
-src/overlays/ov022/calls/func_ov022_020840c8.c:
+src/overlays/field/ov022_battle/func_ov022_020840c8.c:
     complete
     .text       start:0x020840c8 end:0x020840e0
 
-src/overlays/ov022/calls/func_ov022_020840e0.c:
+src/overlays/field/ov022_battle/func_ov022_020840e0.c:
     complete
     .text       start:0x020840e0 end:0x020840fc
 
-src/overlays/ov022/calls/Ov022_PickSelectorTarget.c:
+src/overlays/field/ov022_battle/Ov022_PickSelectorTarget.c:
     complete
     .text       start:0x020840fc end:0x020841e0
 
-src/overlays/ov022/calls/Ov022_MoveSelectorTo.c:
+src/overlays/field/ov022_battle/Ov022_MoveSelectorTo.c:
     complete
     .text       start:0x020841e0 end:0x02084668
 
-src/overlays/ov022/calls/Ov022_TestSelectorTurn.c:
+src/overlays/field/ov022_battle/Ov022_TestSelectorTurn.c:
     complete
     .text       start:0x02084668 end:0x0208471c
 
-src/overlays/ov022/calls/Ov022_UpdateSelectionController.c:
+src/overlays/field/ov022_battle/Ov022_UpdateSelectionController.c:
     complete
     .text       start:0x0208471c end:0x020847f0
 
-src/overlays/ov022/calls/func_ov022_020847f0.c:
+src/overlays/field/ov022_battle/func_ov022_020847f0.c:
     complete
     .text       start:0x020847f0 end:0x02084810
 
-src/overlays/ov022/auto/func_ov022_02084810.c:
+src/overlays/field/ov022_battle/func_ov022_02084810.c:
     complete
     .text       start:0x02084810 end:0x0208484c
 
-src/overlays/ov022/auto/func_ov022_0208484c.c:
+src/overlays/field/ov022_battle/func_ov022_0208484c.c:
     complete
     .text       start:0x0208484c end:0x02084880
 
-src/overlays/ov022/auto/func_ov022_02084880.c:
+src/overlays/field/ov022_battle/func_ov022_02084880.c:
     complete
     .text       start:0x02084880 end:0x020848bc
 
-src/overlays/ov022/auto/Ov022_ClearMaskBitsAndReset.c:
+src/overlays/field/ov022_battle/Ov022_ClearMaskBitsAndReset.c:
     complete
     .text       start:0x020848bc end:0x020848ec
 
-src/overlays/ov022/calls/Ov022_RefreshSelectionCandidates.c:
+src/overlays/field/ov022_battle/Ov022_RefreshSelectionCandidates.c:
     complete
     .text       start:0x020848ec end:0x02084a34
 
-src/overlays/ov022/calls/Ov022_ScoreCandidateByFacing.c:
+src/overlays/field/ov022_battle/Ov022_ScoreCandidateByFacing.c:
     complete
     .text       start:0x02084a34 end:0x02084be8
 
-src/overlays/ov022/calls/Ov022_ScoreCandidateByDistance.c:
+src/overlays/field/ov022_battle/Ov022_ScoreCandidateByDistance.c:
     complete
     .text       start:0x02084be8 end:0x02084d2c
 
-src/overlays/ov022/calls/Ov022_ScoreCandidatePart.c:
+src/overlays/field/ov022_battle/Ov022_ScoreCandidatePart.c:
     complete
     .text       start:0x02084d2c end:0x02084e7c
 
-src/overlays/ov022/calls/Ov022_TestLineOfSight.c:
+src/overlays/field/ov022_battle/Ov022_TestLineOfSight.c:
     complete
     .text       start:0x02084e7c end:0x02084f34
 
-src/overlays/ov022/calls/Ov022_WalkTraversalNode.c:
+src/overlays/field/ov022_battle/Ov022_WalkTraversalNode.c:
     complete
     .text       start:0x02084f34 end:0x02084fe8
 
-src/overlays/ov022/calls/Ov022_CollectActorCandidates.c:
+src/overlays/field/ov022_battle/Ov022_CollectActorCandidates.c:
     complete
     .text       start:0x02084fe8 end:0x02085140
 
-src/overlays/ov022/calls/Ov022_AcceptCandidate.c:
+src/overlays/field/ov022_battle/Ov022_AcceptCandidate.c:
     complete
     .text       start:0x02085140 end:0x02085280
 
-src/overlays/ov022/calls/func_ov022_02085280.c:
+src/overlays/field/ov022_battle/func_ov022_02085280.c:
     complete
     .text       start:0x02085280 end:0x020852c0
 
-src/overlays/ov022/calls/Ov022_SetSelectionEnabled.c:
+src/overlays/field/ov022_battle/Ov022_SetSelectionEnabled.c:
     complete
     .text       start:0x020852c0 end:0x02085380
 
-src/overlays/ov022/calls/Ov022_ReadSelectionInput.c:
+src/overlays/field/ov022_battle/Ov022_ReadSelectionInput.c:
     complete
     .text       start:0x02085380 end:0x02085858
 
-src/overlays/ov022/calls/Ov022_ResetSelectorOrigin.c:
+src/overlays/field/ov022_battle/Ov022_ResetSelectorOrigin.c:
     complete
     .text       start:0x02085858 end:0x02085b00
 
-src/overlays/ov022/calls/Ov022_ComputeApproachPoint.c:
+src/overlays/field/ov022_battle/Ov022_ComputeApproachPoint.c:
     complete
     .text       start:0x02085b00 end:0x02085cc0
 
-src/overlays/ov022/auto/func_ov022_02085cc0.c:
+src/overlays/field/ov022_battle/func_ov022_02085cc0.c:
     complete
     .text       start:0x02085cc0 end:0x02085d00
 
-src/overlays/ov022/calls/Ov022_UpdateSelectionMarker.c:
+src/overlays/field/ov022_battle/Ov022_UpdateSelectionMarker.c:
     complete
     .text       start:0x02085d00 end:0x02085ec4
 
-src/overlays/ov022/calls/Ov022_ProjectToScreen.c:
+src/overlays/field/ov022_battle/Ov022_ProjectToScreen.c:
     complete
     .text       start:0x02085ec4 end:0x02085f9c
 
-src/overlays/ov022/calls/Ov022_InitUiSubsystem.c:
+src/overlays/field/ov022_battle/Ov022_InitUiSubsystem.c:
     complete
     .text       start:0x02085f9c end:0x02086058
 
-src/overlays/ov022/calls/func_ov022_02086058.c:
+src/overlays/field/ov022_battle/func_ov022_02086058.c:
     complete
     .text       start:0x02086058 end:0x02086098
 
-src/overlays/ov022/calls/Ov022_SelectSlotAndRestartAnim.c:
+src/overlays/field/ov022_battle/Ov022_SelectSlotAndRestartAnim.c:
     complete
     .text       start:0x02086098 end:0x02086128
 
-src/overlays/ov022/auto/Ov022_ClearWords124And128.c:
+src/overlays/field/ov022_battle/Ov022_ClearWords124And128.c:
     complete
     .text       start:0x02086128 end:0x02086138
 
-src/overlays/ov022/calls/Ov022_UpdateUiSelectionMarker.c:
+src/overlays/field/ov022_battle/Ov022_UpdateUiSelectionMarker.c:
     complete
     .text       start:0x02086138 end:0x02086264
 
-src/overlays/ov022/calls/Ov022_PlaceCornerMarkers.c:
+src/overlays/field/ov022_battle/Ov022_PlaceCornerMarkers.c:
     complete
     .text       start:0x02086264 end:0x02086318
 
-src/overlays/ov022/calls/Ov022_LoadMarkerSprites.c:
+src/overlays/field/ov022_battle/Ov022_LoadMarkerSprites.c:
     complete
     .text       start:0x02086318 end:0x020863b2
 
-src/overlays/ov022/calls/func_ov022_020863b4.c:
+src/overlays/field/ov022_battle/func_ov022_020863b4.c:
     complete
     .text       start:0x020863b4 end:0x020863ce
 
-src/overlays/ov022/calls/Ov022_DrawSelectionMarkers.c:
+src/overlays/field/ov022_battle/Ov022_DrawSelectionMarkers.c:
     complete
     .text       start:0x020863d0 end:0x020865b4
 
-src/overlays/ov022/calls/func_ov022_020865b4.c:
+src/overlays/field/ov022_battle/func_ov022_020865b4.c:
     complete
     .text       start:0x020865b4 end:0x02086620
 
-src/overlays/ov022/auto/Ov022_IsBit2SetVia0x20.c:
+src/overlays/field/ov022_battle/Ov022_IsBit2SetVia0x20.c:
     complete
     .text       start:0x02086620 end:0x02086638
 
-src/overlays/ov022/auto/Ov022_SetBit3OnPtr20.c:
+src/overlays/field/ov022_battle/Ov022_SetBit3OnPtr20.c:
     complete
     .text       start:0x02086638 end:0x02086654
 
-src/overlays/ov022/calls/func_ov022_02086654.c:
+src/overlays/field/ov022_battle/func_ov022_02086654.c:
     complete
     .text       start:0x02086654 end:0x02086688
 
-src/overlays/ov022/calls/Ov022_BuildSlotSelection.c:
+src/overlays/field/ov022_battle/Ov022_BuildSlotSelection.c:
     complete
     .text       start:0x02086688 end:0x02086748
 
-src/overlays/ov022/calls/Ov022_EncodeSelectionResult.c:
+src/overlays/field/ov022_battle/Ov022_EncodeSelectionResult.c:
     complete
     .text       start:0x02086748 end:0x02086818
 
-src/overlays/ov022/auto/func_ov022_02086818.c:
+src/overlays/field/ov022_battle/func_ov022_02086818.c:
     complete
     .text       start:0x02086818 end:0x02086834
 
-src/overlays/ov022/calls/func_ov022_02086834.c:
+src/overlays/field/ov022_battle/func_ov022_02086834.c:
     complete
     .text       start:0x02086834 end:0x02086888
 
-src/overlays/ov022/auto/Ov022_GetWordVia0x20Then0x230.c:
+src/overlays/field/ov022_battle/Ov022_GetWordVia0x20Then0x230.c:
     complete
     .text       start:0x02086888 end:0x02086894
 
-src/overlays/ov022/calls/Ov022_EnterFourRowScene.c:
+src/overlays/field/ov022_battle/Ov022_EnterFourRowScene.c:
     complete
     .text       start:0x02086894 end:0x0208694c
 
-src/overlays/ov022/calls/Ov022_ResetDecoderSlots.c:
+src/overlays/field/ov022_battle/Ov022_ResetDecoderSlots.c:
     complete
     .text       start:0x0208694c end:0x02086970
 
-src/overlays/ov022/calls/Ov022_AdvanceFadeStateThenNextStep.c:
+src/overlays/field/ov022_battle/Ov022_AdvanceFadeStateThenNextStep.c:
     complete
     .text       start:0x02086970 end:0x020869f4
 
-src/overlays/ov022/calls/func_ov022_020869f4.c:
+src/overlays/field/ov022_battle/func_ov022_020869f4.c:
     complete
     .text       start:0x020869f4 end:0x02086a24
 
-src/overlays/ov022/calls/Ov022_StepSelectionSchedule.c:
+src/overlays/field/ov022_battle/Ov022_StepSelectionSchedule.c:
     complete
     .text       start:0x02086a24 end:0x02086a90
 
-src/overlays/ov022/calls/Ov022_ElapsedGate.c:
+src/overlays/field/ov022_battle/Ov022_ElapsedGate.c:
     complete
     .text       start:0x02086a90 end:0x02086ae4
 
-src/overlays/ov022/calls/Ov022_StepCursorTween.c:
+src/overlays/field/ov022_battle/Ov022_StepCursorTween.c:
     complete
     .text       start:0x02086ae4 end:0x02086b4c
 
-src/overlays/ov022/calls/Ov022_StepScaleTweens.c:
+src/overlays/field/ov022_battle/Ov022_StepScaleTweens.c:
     complete
     .text       start:0x02086b4c end:0x02086c10
 
-src/overlays/ov022/calls/Ov022_WaitDwellTimer.c:
+src/overlays/field/ov022_battle/Ov022_WaitDwellTimer.c:
     complete
     .text       start:0x02086c10 end:0x02086c9c
 
-src/overlays/ov022/calls/Ov022_StepHeaderFooterTweens.c:
+src/overlays/field/ov022_battle/Ov022_StepHeaderFooterTweens.c:
     complete
     .text       start:0x02086c9c end:0x02086d0c
 
-src/overlays/ov022/calls/func_ov022_02086d0c.c:
+src/overlays/field/ov022_battle/func_ov022_02086d0c.c:
     complete
     .text       start:0x02086d0c end:0x02086d60
 
-src/overlays/ov022/calls/func_ov022_02086d60.c:
+src/overlays/field/ov022_battle/func_ov022_02086d60.c:
     complete
     .text       start:0x02086d60 end:0x02086d7a
 
-src/overlays/ov022/calls/Ov022_BuildPresetRows.c:
+src/overlays/field/ov022_battle/Ov022_BuildPresetRows.c:
     complete
     .text       start:0x02086d7c end:0x02086e80
 
-src/overlays/ov022/calls/func_ov022_02086e80.c:
+src/overlays/field/ov022_battle/func_ov022_02086e80.c:
     complete
     .text       start:0x02086e80 end:0x02086ec0
 
-src/overlays/ov022/auto/func_ov022_02086ec0.c:
+src/overlays/field/ov022_battle/func_ov022_02086ec0.c:
     complete
     .text       start:0x02086ec0 end:0x02086ef4
 
-src/overlays/ov022/calls/func_ov022_02086ef4.c:
+src/overlays/field/ov022_battle/func_ov022_02086ef4.c:
     complete
     .text       start:0x02086ef4 end:0x02086f14
 
-src/overlays/ov022/calls/Ov022_SetGlobalC0.c:
+src/overlays/field/ov022_battle/Ov022_SetGlobalC0.c:
     complete
     .text       start:0x02086f14 end:0x02086f24
 
-src/overlays/ov022/calls/func_ov022_02086f24.c:
+src/overlays/field/ov022_battle/func_ov022_02086f24.c:
     complete
     .text       start:0x02086f24 end:0x02086f44
 
-src/overlays/ov022/calls/Ov022_ResetCameraState.c:
+src/overlays/field/ov022_battle/Ov022_ResetCameraState.c:
     complete
     .text       start:0x02086f44 end:0x0208700c
 
-src/overlays/ov022/calls/Ov022_FillSelectorStates.c:
+src/overlays/field/ov022_battle/Ov022_FillSelectorStates.c:
     complete
     .text       start:0x0208700c end:0x020871fc
 
-src/overlays/ov022/calls/Ov022_UnloadParty.c:
+src/overlays/field/ov022_battle/Ov022_UnloadParty.c:
     complete
     .text       start:0x020871fc end:0x02087298
 
-src/overlays/ov022/calls/func_ov022_02087298.c:
+src/overlays/field/ov022_battle/func_ov022_02087298.c:
     complete
     .text       start:0x02087298 end:0x020872d0
 
-src/overlays/ov022/calls/Ov022_TickSceneDispatch.c:
+src/overlays/field/ov022_battle/Ov022_TickSceneDispatch.c:
     complete
     .text       start:0x020872d0 end:0x02087344
 
-src/overlays/ov022/calls/func_ov022_02087344.c:
+src/overlays/field/ov022_battle/func_ov022_02087344.c:
     complete
     .text       start:0x02087344 end:0x0208739c
 
-src/overlays/ov022/calls/Ov022_RefreshSlotRows.c:
+src/overlays/field/ov022_battle/Ov022_RefreshSlotRows.c:
     complete
     .text       start:0x0208739c end:0x02087630
 
-src/overlays/ov022/calls/Ov022_MarshalEntrySnapshot.c:
+src/overlays/field/ov022_battle/Ov022_MarshalEntrySnapshot.c:
     complete
     .text       start:0x02087630 end:0x020876f0
 
-src/overlays/ov022/calls/Ov022_StepPrimaryNodeTarget.c:
+src/overlays/field/ov022_battle/Ov022_StepPrimaryNodeTarget.c:
     complete
     .text       start:0x020876f0 end:0x02087890
 
-src/overlays/ov022/calls/Ov022_LoadNodeFromResource.c:
+src/overlays/field/ov022_battle/Ov022_LoadNodeFromResource.c:
     complete
     .text       start:0x02087890 end:0x02087a70
 
-src/overlays/ov022/calls/func_ov022_02087a70.c:
+src/overlays/field/ov022_battle/func_ov022_02087a70.c:
     complete
     .text       start:0x02087a70 end:0x02087ac0
 
-src/overlays/ov022/calls/Ov022_Party_SyncAndUpdate.c:
+src/overlays/field/ov022_battle/Ov022_Party_SyncAndUpdate.c:
     complete
     .text       start:0x02087ac0 end:0x02087b7c
 
-src/overlays/ov022/calls/Ov022_Party_ApplyNetState.c:
+src/overlays/field/ov022_battle/Ov022_Party_ApplyNetState.c:
     complete
     .text       start:0x02087b7c end:0x02087f30
 
-src/overlays/ov022/calls/func_ov022_02087f30.c:
+src/overlays/field/ov022_battle/func_ov022_02087f30.c:
     complete
     .text       start:0x02087f30 end:0x02087f7c
 
-src/overlays/ov022/calls/Ov022_Party_ShowNearbyNames.c:
+src/overlays/field/ov022_battle/Ov022_Party_ShowNearbyNames.c:
     complete
     .text       start:0x02087f7c end:0x0208808c
 
-src/overlays/ov022/calls/Ov022_Party_SetFrozen.c:
+src/overlays/field/ov022_battle/Ov022_Party_SetFrozen.c:
     complete
     .text       start:0x0208808c end:0x020881d8
 
-src/overlays/ov022/calls/func_ov022_020881d8.c:
+src/overlays/field/ov022_battle/func_ov022_020881d8.c:
     complete
     .text       start:0x020881d8 end:0x020881f8
 
-src/overlays/ov022/calls/func_ov022_020881f8.c:
+src/overlays/field/ov022_battle/func_ov022_020881f8.c:
     complete
     .text       start:0x020881f8 end:0x02088218
 
-src/overlays/ov022/calls/func_ov022_02088218.c:
+src/overlays/field/ov022_battle/func_ov022_02088218.c:
     complete
     .text       start:0x02088218 end:0x02088254
 
-src/overlays/ov022/calls/func_ov022_02088254.c:
+src/overlays/field/ov022_battle/func_ov022_02088254.c:
     complete
     .text       start:0x02088254 end:0x02088280
 
-src/overlays/ov022/calls/func_ov022_02088280.c:
+src/overlays/field/ov022_battle/func_ov022_02088280.c:
     complete
     .text       start:0x02088280 end:0x020882bc
 
-src/overlays/ov022/calls/func_ov022_020882bc.c:
+src/overlays/field/ov022_battle/func_ov022_020882bc.c:
     complete
     .text       start:0x020882bc end:0x020882e0
 
-src/overlays/ov022/calls/Ov022_GetEntryField12.c:
+src/overlays/field/ov022_battle/Ov022_GetEntryField12.c:
     complete
     .text       start:0x020882e0 end:0x020882f8
 
-src/overlays/ov022/calls/func_ov022_020882f8.c:
+src/overlays/field/ov022_battle/func_ov022_020882f8.c:
     complete
     .text       start:0x020882f8 end:0x02088314
 
-src/overlays/ov022/calls/Ov022_GetStreamTimestamp.c:
+src/overlays/field/ov022_battle/Ov022_GetStreamTimestamp.c:
     complete
     .text       start:0x02088314 end:0x02088338
 
-src/overlays/ov022/calls/func_ov022_02088338.c:
+src/overlays/field/ov022_battle/func_ov022_02088338.c:
     complete
     .text       start:0x02088338 end:0x02088370
 
-src/overlays/ov022/calls/func_ov022_02088370.c:
+src/overlays/field/ov022_battle/func_ov022_02088370.c:
     complete
     .text       start:0x02088370 end:0x02088398
 
-src/overlays/ov022/calls/func_ov022_02088398.c:
+src/overlays/field/ov022_battle/func_ov022_02088398.c:
     complete
     .text       start:0x02088398 end:0x020883d4
 
-src/overlays/ov022/calls/func_ov022_020883d4.c:
+src/overlays/field/ov022_battle/func_ov022_020883d4.c:
     complete
     .text       start:0x020883d4 end:0x020883f4
 
-src/overlays/ov022/calls/Ov022_CleanupEntry.c:
+src/overlays/field/ov022_battle/Ov022_CleanupEntry.c:
     complete
     .text       start:0x020883f4 end:0x0208840c
 
-src/overlays/ov022/calls/func_ov022_0208840c.c:
+src/overlays/field/ov022_battle/func_ov022_0208840c.c:
     complete
     .text       start:0x0208840c end:0x02088428
 
-src/overlays/ov022/calls/func_ov022_02088428.c:
+src/overlays/field/ov022_battle/func_ov022_02088428.c:
     complete
     .text       start:0x02088428 end:0x02088474
 
-src/overlays/ov022/calls/Ov022_GetEntryField66.c:
+src/overlays/field/ov022_battle/Ov022_GetEntryField66.c:
     complete
     .text       start:0x02088474 end:0x0208848c
 
-src/overlays/ov022/calls/func_ov022_0208848c.c:
+src/overlays/field/ov022_battle/func_ov022_0208848c.c:
     complete
     .text       start:0x0208848c end:0x020884ec
 
-src/overlays/ov022/calls/func_ov022_020884ec.c:
+src/overlays/field/ov022_battle/func_ov022_020884ec.c:
     complete
     .text       start:0x020884ec end:0x02088528
 
-src/overlays/ov022/calls/Ov022_Member_Reset.c:
+src/overlays/field/ov022_battle/Ov022_Member_Reset.c:
     complete
     .text       start:0x02088528 end:0x02088648
 
-src/overlays/ov022/calls/func_ov022_02088648.c:
+src/overlays/field/ov022_battle/func_ov022_02088648.c:
     complete
     .text       start:0x02088648 end:0x02088668
 
-src/overlays/ov022/calls/func_ov022_02088668.c:
+src/overlays/field/ov022_battle/func_ov022_02088668.c:
     complete
     .text       start:0x02088668 end:0x0208868c
 
-src/overlays/ov022/calls/Ov022_IsInputAllowedForActiveSlot.c:
+src/overlays/field/ov022_battle/Ov022_IsInputAllowedForActiveSlot.c:
     complete
     .text       start:0x0208868c end:0x020886d0
 
-src/overlays/ov022/calls/func_ov022_020886d0.c:
+src/overlays/field/ov022_battle/func_ov022_020886d0.c:
     complete
     .text       start:0x020886d0 end:0x020886f8
 
-src/overlays/ov022/calls/func_ov022_020886f8.c:
+src/overlays/field/ov022_battle/func_ov022_020886f8.c:
     complete
     .text       start:0x020886f8 end:0x0208872c
 
-src/overlays/ov022/calls/func_ov022_0208872c.c:
+src/overlays/field/ov022_battle/func_ov022_0208872c.c:
     complete
     .text       start:0x0208872c end:0x0208875c
 
-src/overlays/ov022/calls/func_ov022_0208875c.c:
+src/overlays/field/ov022_battle/func_ov022_0208875c.c:
     complete
     .text       start:0x0208875c end:0x0208876c
 
-src/overlays/ov022/calls/Ov022_SetupPartyRootAndEntry.c:
+src/overlays/field/ov022_battle/Ov022_SetupPartyRootAndEntry.c:
     complete
     .text       start:0x0208876c end:0x02088830
 
-src/overlays/ov022/calls/Ov022_NotifyRowsAndFlag.c:
+src/overlays/field/ov022_battle/Ov022_NotifyRowsAndFlag.c:
     complete
     .text       start:0x02088830 end:0x020888b8
 
-src/overlays/ov022/calls/func_ov022_020888b8.c:
+src/overlays/field/ov022_battle/func_ov022_020888b8.c:
     complete
     .text       start:0x020888b8 end:0x020888ec
 
-src/overlays/ov022/calls/func_ov022_020888ec.c:
+src/overlays/field/ov022_battle/func_ov022_020888ec.c:
     complete
     .text       start:0x020888ec end:0x02088984
 
-src/overlays/ov022/calls/func_ov022_02088984.c:
+src/overlays/field/ov022_battle/func_ov022_02088984.c:
     complete
     .text       start:0x02088984 end:0x020889cc
 
-src/overlays/ov022/calls/Ov022_SetPlayerScale.c:
+src/overlays/field/ov022_battle/Ov022_SetPlayerScale.c:
     complete
     .text       start:0x020889cc end:0x02088a5c
 
-src/overlays/ov022/calls/Ov022_Member_ShowDamage.c:
+src/overlays/field/ov022_battle/Ov022_Member_ShowDamage.c:
     complete
     .text       start:0x02088a5c end:0x02088b50
 
-src/overlays/ov022/calls/Ov022_SetColourChannel.c:
+src/overlays/field/ov022_battle/Ov022_SetColourChannel.c:
     complete
     .text       start:0x02088b50 end:0x02088bec
 
-src/overlays/ov022/calls/func_ov022_02088bec.c:
+src/overlays/field/ov022_battle/func_ov022_02088bec.c:
     complete
     .text       start:0x02088bec end:0x02088c10
 
-src/overlays/ov022/calls/Ov022_Member_ShowSpotMessage.c:
+src/overlays/field/ov022_battle/Ov022_Member_ShowSpotMessage.c:
     complete
     .text       start:0x02088c10 end:0x02088cac
 
-src/overlays/ov022/calls/func_ov022_02088cac.c:
+src/overlays/field/ov022_battle/func_ov022_02088cac.c:
     complete
     .text       start:0x02088cac end:0x02088cdc
 
-src/overlays/ov022/calls/func_ov022_02088cdc.c:
+src/overlays/field/ov022_battle/func_ov022_02088cdc.c:
     complete
     .text       start:0x02088cdc end:0x02088d04
 
-src/overlays/ov022/calls/Ov022_GetGlobalPlusE0.c:
+src/overlays/field/ov022_battle/Ov022_GetGlobalPlusE0.c:
     complete
     .text       start:0x02088d04 end:0x02088d18
 
-src/overlays/ov022/calls/Ov022_AnimationRootCtor.c:
+src/overlays/field/ov022_battle/Ov022_AnimationRootCtor.c:
     complete
     .text       start:0x02088d18 end:0x02088db0
 
-src/overlays/ov022/calls/Ov022_DestroyRootEntries.c:
+src/overlays/field/ov022_battle/Ov022_DestroyRootEntries.c:
     complete
     .text       start:0x02088db0 end:0x02088dea
 
-src/overlays/ov022/calls/func_ov022_02088dec.c:
+src/overlays/field/ov022_battle/func_ov022_02088dec.c:
     complete
     .text       start:0x02088dec end:0x02088e50
 
-src/overlays/ov022/calls/Ov022_AvoidAnimationSlots.c:
+src/overlays/field/ov022_battle/Ov022_AvoidAnimationSlots.c:
     complete
     .text       start:0x02088e50 end:0x02088f74
 
-src/overlays/ov022/calls/Ov022_SetupAnimationSlots.c:
+src/overlays/field/ov022_battle/Ov022_SetupAnimationSlots.c:
     complete
     .text       start:0x02088f74 end:0x0208900c
 
-src/overlays/ov022/calls/Ov022_RefreshRootEntries.c:
+src/overlays/field/ov022_battle/Ov022_RefreshRootEntries.c:
     complete
     .text       start:0x0208900c end:0x02089078
 
-src/overlays/ov022/calls/Ov022_AnimSlot_Draw.c:
+src/overlays/field/ov022_battle/Ov022_AnimSlot_Draw.c:
     complete
     .text       start:0x02089078 end:0x02089150
 
-src/overlays/ov022/calls/Ov022_SweepHeapBlocks.c:
+src/overlays/field/ov022_battle/Ov022_SweepHeapBlocks.c:
     complete
     .text       start:0x02089150 end:0x020891d4
 
-src/overlays/ov022/calls/Ov022_ClaimPoolSlot.c:
+src/overlays/field/ov022_battle/Ov022_ClaimPoolSlot.c:
     complete
     .text       start:0x020891d4 end:0x020892f0
 
-src/overlays/ov022/calls/Ov022_BindAnimationTracks.c:
+src/overlays/field/ov022_battle/Ov022_BindAnimationTracks.c:
     complete
     .text       start:0x020892f0 end:0x02089384
 
-src/overlays/ov022/calls/func_ov022_02089384.c:
+src/overlays/field/ov022_battle/func_ov022_02089384.c:
     complete
     .text       start:0x02089384 end:0x020893f4
 
-src/overlays/ov022/calls/Ov022_DispatchSpawnRecord.c:
+src/overlays/field/ov022_battle/Ov022_DispatchSpawnRecord.c:
     complete
     .text       start:0x020893f4 end:0x02089478
 
-src/overlays/ov022/auto/func_ov022_02089478.c:
+src/overlays/field/ov022_battle/func_ov022_02089478.c:
     complete
     .text       start:0x02089478 end:0x020894a0
 
-src/overlays/ov022/calls/func_ov022_020894a0.c:
+src/overlays/field/ov022_battle/func_ov022_020894a0.c:
     complete
     .text       start:0x020894a0 end:0x020894cc
 
-src/overlays/ov022/calls/func_ov022_020894cc.c:
+src/overlays/field/ov022_battle/func_ov022_020894cc.c:
     complete
     .text       start:0x020894cc end:0x020894f8
 
-src/overlays/ov022/auto/Ov022_IsIndexedRecordByteZero.c:
+src/overlays/field/ov022_battle/Ov022_IsIndexedRecordByteZero.c:
     complete
     .text       start:0x020894f8 end:0x02089524
 
-src/overlays/ov022/auto/func_ov022_02089524.c:
+src/overlays/field/ov022_battle/func_ov022_02089524.c:
     complete
     .text       start:0x02089524 end:0x0208954c
 
-src/overlays/ov022/auto/func_ov022_0208954c.c:
+src/overlays/field/ov022_battle/func_ov022_0208954c.c:
     complete
     .text       start:0x0208954c end:0x0208956c
 
-src/overlays/ov022/auto/Ov022_StoreVToBase101418IfNonNeg.c:
+src/overlays/field/ov022_battle/Ov022_StoreVToBase101418IfNonNeg.c:
     complete
     .text       start:0x0208956c end:0x02089584
 
-src/overlays/ov022/auto/func_ov022_02089584.c:
+src/overlays/field/ov022_battle/func_ov022_02089584.c:
     complete
     .text       start:0x02089584 end:0x020895a4
 
-src/overlays/ov022/auto/func_ov022_020895a4.c:
+src/overlays/field/ov022_battle/func_ov022_020895a4.c:
     complete
     .text       start:0x020895a4 end:0x02089604
 
-src/overlays/ov022/calls/func_ov022_02089604.c:
+src/overlays/field/ov022_battle/func_ov022_02089604.c:
     complete
     .text       start:0x02089604 end:0x02089628
 
-src/overlays/ov022/auto/Ov022_GetHi6BitsOfByteVia0x20.c:
+src/overlays/field/ov022_battle/Ov022_GetHi6BitsOfByteVia0x20.c:
     complete
     .text       start:0x02089628 end:0x0208963c
 
-src/overlays/ov022/auto/Ov022_IndexedRecordAddr0x114.c:
+src/overlays/field/ov022_battle/Ov022_IndexedRecordAddr0x114.c:
     complete
     .text       start:0x0208963c end:0x02089654
 
-src/overlays/ov022/calls/Ov022_SetupPauseMenu.c:
+src/overlays/field/ov022_battle/Ov022_SetupPauseMenu.c:
     complete
     .text       start:0x02089654 end:0x020896dc
 
-src/overlays/ov022/calls/func_ov022_020896dc.c:
+src/overlays/field/ov022_battle/func_ov022_020896dc.c:
     complete
     .text       start:0x020896dc end:0x02089704
 
-src/overlays/ov022/calls/func_ov022_02089704.c:
+src/overlays/field/ov022_battle/func_ov022_02089704.c:
     complete
     .text       start:0x02089704 end:0x0208973c
 
-src/overlays/ov022/calls/Ov022_PublishRecord.c:
+src/overlays/field/ov022_battle/Ov022_PublishRecord.c:
     complete
     .text       start:0x0208973c end:0x02089784
 
-src/overlays/ov022/auto/Ov022_PublishRequestToSlot.c:
+src/overlays/field/ov022_battle/Ov022_PublishRequestToSlot.c:
     complete
     .text       start:0x02089784 end:0x020897dc
 
-src/overlays/ov022/calls/func_ov022_020897dc.c:
+src/overlays/field/ov022_battle/func_ov022_020897dc.c:
     complete
     .text       start:0x020897dc end:0x0208981c
 
-src/overlays/ov022/calls/Ov022_SendActorStatePacket.c:
+src/overlays/field/ov022_battle/Ov022_SendActorStatePacket.c:
     complete
     .text       start:0x0208981c end:0x02089a8c
 
-src/overlays/ov022/calls/Ov022_SendControlPacket.c:
+src/overlays/field/ov022_battle/Ov022_SendControlPacket.c:
     complete
     .text       start:0x02089a8c end:0x02089d90
 
-src/overlays/ov022/calls/Ov022_DispatchEntryByKind.c:
+src/overlays/field/ov022_battle/Ov022_DispatchEntryByKind.c:
     complete
     .text       start:0x02089d90 end:0x02089e20
 
-src/overlays/ov022/calls/func_ov022_02089e20.c:
+src/overlays/field/ov022_battle/func_ov022_02089e20.c:
     complete
     .text       start:0x02089e20 end:0x02089e90
 
-src/overlays/ov022/calls/Ov022_BroadcastCue.c:
+src/overlays/field/ov022_battle/Ov022_BroadcastCue.c:
     complete
     .text       start:0x02089e90 end:0x02089fe8
 
-src/overlays/ov022/calls/Ov022_PublishTableSlot.c:
+src/overlays/field/ov022_battle/Ov022_PublishTableSlot.c:
     complete
     .text       start:0x02089fe8 end:0x0208a0b4
 
-src/overlays/ov022/calls/func_ov022_0208a0b4.c:
+src/overlays/field/ov022_battle/func_ov022_0208a0b4.c:
     complete
     .text       start:0x0208a0b4 end:0x0208a134
 
-src/overlays/ov022/calls/func_ov022_0208a134.c:
+src/overlays/field/ov022_battle/func_ov022_0208a134.c:
     complete
     .text       start:0x0208a134 end:0x0208a1a4
 
-src/overlays/ov022/calls/func_ov022_0208a1a4.c:
+src/overlays/field/ov022_battle/func_ov022_0208a1a4.c:
     complete
     .text       start:0x0208a1a4 end:0x0208a1fc
 
-src/overlays/ov022/calls/func_ov022_0208a1fc.c:
+src/overlays/field/ov022_battle/func_ov022_0208a1fc.c:
     complete
     .text       start:0x0208a1fc end:0x0208a278
 
-src/overlays/ov022/calls/Ov022_GetGlobalPlus14.c:
+src/overlays/field/ov022_battle/Ov022_GetGlobalPlus14.c:
     complete
     .text       start:0x0208a278 end:0x0208a28c
 
-src/overlays/ov022/calls/Ov022_GetGlobalPlus14_2.c:
+src/overlays/field/ov022_battle/Ov022_GetGlobalPlus14_2.c:
     complete
     .text       start:0x0208a28c end:0x0208a2a0
 
-src/overlays/ov022/calls/Ov022_GetGlobalPlus4.c:
+src/overlays/field/ov022_battle/Ov022_GetGlobalPlus4.c:
     complete
     .text       start:0x0208a2a0 end:0x0208a2b4
 
-src/overlays/ov022/calls/Ov022_OnEndMessage.c:
+src/overlays/field/ov022_battle/Ov022_OnEndMessage.c:
     complete
     .text       start:0x0208a2b4 end:0x0208a464
 
-src/overlays/ov022/calls/Ov022_MarshalStateHalf12.c:
+src/overlays/field/ov022_battle/Ov022_MarshalStateHalf12.c:
     complete
     .text       start:0x0208a464 end:0x0208a50c
 
-src/overlays/ov022/calls/Ov022_EndPartRun.c:
+src/overlays/field/ov022_battle/Ov022_EndPartRun.c:
     complete
     .text       start:0x0208a50c end:0x0208a624
 
-src/overlays/ov022/calls/func_ov022_0208a624.c:
+src/overlays/field/ov022_battle/func_ov022_0208a624.c:
     complete
     .text       start:0x0208a624 end:0x0208a6b0
 
-src/overlays/ov022/auto/func_ov022_0208a6b0.c:
+src/overlays/field/ov022_battle/func_ov022_0208a6b0.c:
     complete
     .text       start:0x0208a6b0 end:0x0208a6d0
 
-src/overlays/ov022/calls/Ov022_BeginSubStateDispatch.c:
+src/overlays/field/ov022_battle/Ov022_BeginSubStateDispatch.c:
     complete
     .text       start:0x0208a6d0 end:0x0208a790
 
-src/overlays/ov022/auto/Ov022_ClearActiveEntryAndFlags.c:
+src/overlays/field/ov022_battle/Ov022_ClearActiveEntryAndFlags.c:
     complete
     .text       start:0x0208a790 end:0x0208a830
 
-src/overlays/ov022/calls/Ov022_BuildEntryLabelText.c:
+src/overlays/field/ov022_battle/Ov022_BuildEntryLabelText.c:
     complete
     .text       start:0x0208a830 end:0x0208a8bc
 
-src/overlays/ov022/calls/Ov022_BindBlockAnimations.c:
+src/overlays/field/ov022_battle/Ov022_BindBlockAnimations.c:
     complete
     .text       start:0x0208a8bc end:0x0208a938
 
-src/overlays/ov022/calls/func_ov022_0208a938.c:
+src/overlays/field/ov022_battle/func_ov022_0208a938.c:
     complete
     .text       start:0x0208a938 end:0x0208a96c
 
-src/overlays/ov022/auto/func_ov022_0208a96c.c:
+src/overlays/field/ov022_battle/func_ov022_0208a96c.c:
     complete
     .text       start:0x0208a96c end:0x0208a9ac
 
-src/overlays/ov022/calls/func_ov022_0208a9ac.c:
+src/overlays/field/ov022_battle/func_ov022_0208a9ac.c:
     complete
     .text       start:0x0208a9ac end:0x0208aa28
 
-src/overlays/ov022/calls/Ov022_CastMove.c:
+src/overlays/field/ov022_battle/Ov022_CastMove.c:
     complete
     .text       start:0x0208aa28 end:0x0208ac10
 
-src/overlays/ov022/calls/func_ov022_0208ac10.c:
+src/overlays/field/ov022_battle/func_ov022_0208ac10.c:
     complete
     .text       start:0x0208ac10 end:0x0208ac80
 
-src/overlays/ov022/calls/Ov022_TrySpawnAction.c:
+src/overlays/field/ov022_battle/Ov022_TrySpawnAction.c:
     complete
     .text       start:0x0208ac80 end:0x0208acc4
 
-src/overlays/ov022/auto/Ov022_ClampReactionForKind10.c:
+src/overlays/field/ov022_battle/Ov022_ClampReactionForKind10.c:
     complete
     .text       start:0x0208acc4 end:0x0208acdc
 
-src/overlays/ov022/calls/func_ov022_0208acdc.c:
+src/overlays/field/ov022_battle/func_ov022_0208acdc.c:
     complete
     .text       start:0x0208acdc end:0x0208ad48
 
-src/overlays/ov022/calls/Ov022_StepAimedPart.c:
+src/overlays/field/ov022_battle/Ov022_StepAimedPart.c:
     complete
     .text       start:0x0208ad48 end:0x0208ae90
 
-src/overlays/ov022/calls/Ov022_StepHomingPart.c:
+src/overlays/field/ov022_battle/Ov022_StepHomingPart.c:
     complete
     .text       start:0x0208ae90 end:0x0208b080
 
-src/overlays/ov022/calls/Ov022_StepPartStrike.c:
+src/overlays/field/ov022_battle/Ov022_StepPartStrike.c:
     complete
     .text       start:0x0208b080 end:0x0208b1c8
 
-src/overlays/ov022/calls/func_ov022_0208b1c8.c:
+src/overlays/field/ov022_battle/func_ov022_0208b1c8.c:
     complete
     .text       start:0x0208b1c8 end:0x0208b214
 
-src/overlays/ov022/calls/Ov022_AimAngleThenNotify.c:
+src/overlays/field/ov022_battle/Ov022_AimAngleThenNotify.c:
     complete
     .text       start:0x0208b214 end:0x0208b2a8
 
-src/overlays/ov022/calls/Ov022_CopyMtxClearFlagThenNotify.c:
+src/overlays/field/ov022_battle/Ov022_CopyMtxClearFlagThenNotify.c:
     complete
     .text       start:0x0208b2a8 end:0x0208b374
 
-src/overlays/ov022/calls/Ov022_NotifyIfStateMatches.c:
+src/overlays/field/ov022_battle/Ov022_NotifyIfStateMatches.c:
     complete
     .text       start:0x0208b374 end:0x0208b400
 
-src/overlays/ov022/calls/Ov022_MovePartTo.c:
+src/overlays/field/ov022_battle/Ov022_MovePartTo.c:
     complete
     .text       start:0x0208b400 end:0x0208b6c0
 
-src/overlays/ov022/calls/func_ov022_0208b6c0.c:
+src/overlays/field/ov022_battle/func_ov022_0208b6c0.c:
     complete
     .text       start:0x0208b6c0 end:0x0208b71c
 
-src/overlays/ov022/calls/Ov022_CreateChannel.c:
+src/overlays/field/ov022_battle/Ov022_CreateChannel.c:
     complete
     .text       start:0x0208b71c end:0x0208b758
 
-src/overlays/ov022/calls/Ov022_BindSlotParts.c:
+src/overlays/field/ov022_battle/Ov022_BindSlotParts.c:
     complete
     .text       start:0x0208b758 end:0x0208b848
 
-src/overlays/ov022/calls/Ov022_LaunchSlotPart.c:
+src/overlays/field/ov022_battle/Ov022_LaunchSlotPart.c:
     complete
     .text       start:0x0208b848 end:0x0208ba80
 
-src/overlays/ov022/calls/Ov022_TickEntrySubObjects.c:
+src/overlays/field/ov022_battle/Ov022_TickEntrySubObjects.c:
     complete
     .text       start:0x0208ba80 end:0x0208bb38
 
-src/overlays/ov022/calls/func_ov022_0208bb38.c:
+src/overlays/field/ov022_battle/func_ov022_0208bb38.c:
     complete
     .text       start:0x0208bb38 end:0x0208bb98
 
-src/overlays/ov022/calls/func_ov022_0208bb98.c:
+src/overlays/field/ov022_battle/func_ov022_0208bb98.c:
     complete
     .text       start:0x0208bb98 end:0x0208bbe4
 
-src/overlays/ov022/calls/func_ov022_0208bbe4.c:
+src/overlays/field/ov022_battle/func_ov022_0208bbe4.c:
     complete
     .text       start:0x0208bbe4 end:0x0208bc3c
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind00.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind00.c:
     complete
     .text       start:0x0208bc3c end:0x0208bce0
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind01.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind01.c:
     complete
     .text       start:0x0208bce0 end:0x0208bd8c
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind02.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind02.c:
     complete
     .text       start:0x0208bd8c end:0x0208be38
 
-src/overlays/ov022/calls/Ov022_LaunchSlotPartArc.c:
+src/overlays/field/ov022_battle/Ov022_LaunchSlotPartArc.c:
     complete
     .text       start:0x0208be38 end:0x0208c068
 
-src/overlays/ov022/calls/Ov022_StepSlotPartsD.c:
+src/overlays/field/ov022_battle/Ov022_StepSlotPartsD.c:
     complete
     .text       start:0x0208c068 end:0x0208c164
 
-src/overlays/ov022/calls/Ov022_StepHomingPart_2.c:
+src/overlays/field/ov022_battle/Ov022_StepHomingPart_2.c:
     complete
     .text       start:0x0208c164 end:0x0208c37c
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind03.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind03.c:
     complete
     .text       start:0x0208c37c end:0x0208c420
 
-src/overlays/ov022/calls/Ov022_EnterReactionAlongFacing.c:
+src/overlays/field/ov022_battle/Ov022_EnterReactionAlongFacing.c:
     complete
     .text       start:0x0208c420 end:0x0208c54c
 
-src/overlays/ov022/calls/Ov022_StepSlotPartsC.c:
+src/overlays/field/ov022_battle/Ov022_StepSlotPartsC.c:
     complete
     .text       start:0x0208c54c end:0x0208c644
 
-src/overlays/ov022/calls/Ov022_StepWaitingPart.c:
+src/overlays/field/ov022_battle/Ov022_StepWaitingPart.c:
     complete
     .text       start:0x0208c644 end:0x0208c744
 
-src/overlays/ov022/calls/Ov022_StepFlightPart.c:
+src/overlays/field/ov022_battle/Ov022_StepFlightPart.c:
     complete
     .text       start:0x0208c744 end:0x0208c924
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind05.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind05.c:
     complete
     .text       start:0x0208c924 end:0x0208c9b2
 
-src/overlays/ov022/calls/Ov022_EnterReactionAtOffset.c:
+src/overlays/field/ov022_battle/Ov022_EnterReactionAtOffset.c:
     complete
     .text       start:0x0208c9b4 end:0x0208caf4
 
-src/overlays/ov022/calls/Ov022_StepSlotByState.c:
+src/overlays/field/ov022_battle/Ov022_StepSlotByState.c:
     complete
     .text       start:0x0208caf4 end:0x0208cb9c
 
-src/overlays/ov022/calls/func_ov022_0208cb9c.c:
+src/overlays/field/ov022_battle/func_ov022_0208cb9c.c:
     complete
     .text       start:0x0208cb9c end:0x0208cbf8
 
-src/overlays/ov022/calls/func_ov022_0208cbf8.c:
+src/overlays/field/ov022_battle/func_ov022_0208cbf8.c:
     complete
     .text       start:0x0208cbf8 end:0x0208cc4c
 
-src/overlays/ov022/calls/Ov022_StepSlotState2.c:
+src/overlays/field/ov022_battle/Ov022_StepSlotState2.c:
     complete
     .text       start:0x0208cc4c end:0x0208cde8
 
-src/overlays/ov022/calls/Ov022_StepSlotState3.c:
+src/overlays/field/ov022_battle/Ov022_StepSlotState3.c:
     complete
     .text       start:0x0208cde8 end:0x0208cf18
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind04.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind04.c:
     complete
     .text       start:0x0208cf18 end:0x0208cfbc
 
-src/overlays/ov022/calls/Ov022_LaunchSlotPartTracked.c:
+src/overlays/field/ov022_battle/Ov022_LaunchSlotPartTracked.c:
     complete
     .text       start:0x0208cfbc end:0x0208d224
 
-src/overlays/ov022/calls/Ov022_StepSlotPartsB.c:
+src/overlays/field/ov022_battle/Ov022_StepSlotPartsB.c:
     complete
     .text       start:0x0208d224 end:0x0208d310
 
-src/overlays/ov022/calls/Ov022_StepBoundPart.c:
+src/overlays/field/ov022_battle/Ov022_StepBoundPart.c:
     complete
     .text       start:0x0208d310 end:0x0208d5fc
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind09.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind09.c:
     complete
     .text       start:0x0208d5fc end:0x0208d6a8
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind0a.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind0a.c:
     complete
     .text       start:0x0208d6a8 end:0x0208d758
 
-src/overlays/ov022/calls/Ov022_VeneerTo_Ov022_LaunchSlotPart.c:
+src/overlays/field/ov022_battle/Ov022_VeneerTo_Ov022_LaunchSlotPart.c:
     complete
     .text       start:0x0208d758 end:0x0208d764
 
-src/overlays/ov022/calls/Ov022_LaunchSlotPartFlat.c:
+src/overlays/field/ov022_battle/Ov022_LaunchSlotPartFlat.c:
     complete
     .text       start:0x0208d764 end:0x0208d9a0
 
-src/overlays/ov022/calls/Ov022_StepSlotParts.c:
+src/overlays/field/ov022_battle/Ov022_StepSlotParts.c:
     complete
     .text       start:0x0208d9a0 end:0x0208da8c
 
-src/overlays/ov022/calls/Ov022_StepFlyingPart.c:
+src/overlays/field/ov022_battle/Ov022_StepFlyingPart.c:
     complete
     .text       start:0x0208da8c end:0x0208dd94
 
-src/overlays/ov022/calls/Ov022_CreateReactionSlot.c:
+src/overlays/field/ov022_battle/Ov022_CreateReactionSlot.c:
     complete
     .text       start:0x0208dd94 end:0x0208de14
 
-src/overlays/ov022/calls/Ov022_EnterReactionAtActor.c:
+src/overlays/field/ov022_battle/Ov022_EnterReactionAtActor.c:
     complete
     .text       start:0x0208de14 end:0x0208ded4
 
-src/overlays/ov022/calls/Ov022_StepSlotBeats.c:
+src/overlays/field/ov022_battle/Ov022_StepSlotBeats.c:
     complete
     .text       start:0x0208ded4 end:0x0208e200
 
-src/overlays/ov022/calls/Ov022_UpdateTracks23ByFlag.c:
+src/overlays/field/ov022_battle/Ov022_UpdateTracks23ByFlag.c:
     complete
     .text       start:0x0208e200 end:0x0208e2ac
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind06.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind06.c:
     complete
     .text       start:0x0208e2ac end:0x0208e404
 
-src/overlays/ov022/calls/Ov022_ArmSlotAtActor.c:
+src/overlays/field/ov022_battle/Ov022_ArmSlotAtActor.c:
     complete
     .text       start:0x0208e404 end:0x0208e66c
 
-src/overlays/ov022/calls/Ov022_StepSlotPartsAndArm.c:
+src/overlays/field/ov022_battle/Ov022_StepSlotPartsAndArm.c:
     complete
     .text       start:0x0208e66c end:0x0208e7a0
 
-src/overlays/ov022/calls/Ov022_RestartEntryParts.c:
+src/overlays/field/ov022_battle/Ov022_RestartEntryParts.c:
     complete
     .text       start:0x0208e7a0 end:0x0208e80c
 
-src/overlays/ov022/calls/Ov022_SettlePointOnGround.c:
+src/overlays/field/ov022_battle/Ov022_SettlePointOnGround.c:
     complete
     .text       start:0x0208e80c end:0x0208e978
 
-src/overlays/ov022/calls/Ov022_ArmNextPart.c:
+src/overlays/field/ov022_battle/Ov022_ArmNextPart.c:
     complete
     .text       start:0x0208e978 end:0x0208ebf8
     .rodata     start:0x020b2424 end:0x020b24e4
 
-src/overlays/ov022/calls/Ov022_StepSpawnPart.c:
+src/overlays/field/ov022_battle/Ov022_StepSpawnPart.c:
     complete
     .text       start:0x0208ebf8 end:0x0208edb8
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind07.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind07.c:
     complete
     .text       start:0x0208edb8 end:0x0208eee8
 
-src/overlays/ov022/calls/Ov022_EnterChainReaction.c:
+src/overlays/field/ov022_battle/Ov022_EnterChainReaction.c:
     complete
     .text       start:0x0208eee8 end:0x0208f14c
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind08.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind08.c:
     complete
     .text       start:0x0208f14c end:0x0208f2d4
 
-src/overlays/ov022/calls/Ov022_EnterGroundReaction.c:
+src/overlays/field/ov022_battle/Ov022_EnterGroundReaction.c:
     complete
     .text       start:0x0208f2d4 end:0x0208f5cc
 
-src/overlays/ov022/calls/Ov022_StepSlotByPartState.c:
+src/overlays/field/ov022_battle/Ov022_StepSlotByPartState.c:
     complete
     .text       start:0x0208f5cc end:0x0208f69c
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind0c.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind0c.c:
     complete
     .text       start:0x0208f69c end:0x0208f728
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind0d.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind0d.c:
     complete
     .text       start:0x0208f728 end:0x0208f7d0
 
-src/overlays/ov022/calls/Ov022_CreateSlotKind0e.c:
+src/overlays/field/ov022_battle/Ov022_CreateSlotKind0e.c:
     complete
     .text       start:0x0208f7d0 end:0x0208f886
 
-src/overlays/ov022/calls/Ov022_EnterBlockReaction.c:
+src/overlays/field/ov022_battle/Ov022_EnterBlockReaction.c:
     complete
     .text       start:0x0208f888 end:0x0208f980
 
-src/overlays/ov022/calls/Ov022_StepChargeSlot.c:
+src/overlays/field/ov022_battle/Ov022_StepChargeSlot.c:
     complete
     .text       start:0x0208f980 end:0x0208fb34
 
-src/overlays/ov022/calls/Ov022_ApplyReactionHit.c:
+src/overlays/field/ov022_battle/Ov022_ApplyReactionHit.c:
     complete
     .text       start:0x0208fb34 end:0x0208fd64
 
-src/overlays/ov022/calls/Ov022_VeneerTo_Ov022_EnterBlockReaction.c:
+src/overlays/field/ov022_battle/Ov022_VeneerTo_Ov022_EnterBlockReaction.c:
     complete
     .text       start:0x0208fd64 end:0x0208fd70
 
-src/overlays/ov022/calls/Ov022_UpdateTrack10ByFlag.c:
+src/overlays/field/ov022_battle/Ov022_UpdateTrack10ByFlag.c:
     complete
     .text       start:0x0208fd70 end:0x0208fdf8
 
-src/overlays/ov022/calls/func_ov022_0208fdf8.c:
+src/overlays/field/ov022_battle/func_ov022_0208fdf8.c:
     complete
     .text       start:0x0208fdf8 end:0x0208fe40
 
-src/overlays/ov022/calls/Ov022_StepReaction.c:
+src/overlays/field/ov022_battle/Ov022_StepReaction.c:
     complete
     .text       start:0x0208fe40 end:0x0208ffe8
 
-src/overlays/ov022/calls/func_ov022_0208ffe8.c:
+src/overlays/field/ov022_battle/func_ov022_0208ffe8.c:
     complete
     .text       start:0x0208ffe8 end:0x02090070
 
-src/overlays/ov022/calls/func_ov022_02090070.c:
+src/overlays/field/ov022_battle/func_ov022_02090070.c:
     complete
     .text       start:0x02090070 end:0x020900b8
 
-src/overlays/ov022/calls/Ov022_CopyMtxClearFlagThenNotify_2.c:
+src/overlays/field/ov022_battle/Ov022_CopyMtxClearFlagThenNotify_2.c:
     complete
     .text       start:0x020900b8 end:0x02090150
 
-src/overlays/ov022/calls/Ov022_RegisterHandlerC.c:
+src/overlays/field/ov022_battle/Ov022_RegisterHandlerC.c:
     complete
     .text       start:0x02090150 end:0x02090160
 
-src/overlays/ov022/calls/func_ov022_02090160.c:
+src/overlays/field/ov022_battle/func_ov022_02090160.c:
     complete
     .text       start:0x02090160 end:0x0209016c
 
-src/overlays/ov022/auto/Ov022_InitEntryState.c:
+src/overlays/field/ov022_battle/Ov022_InitEntryState.c:
     complete
     .text       start:0x0209016c end:0x02090198
 
-src/overlays/ov022/calls/func_ov022_02090198.c:
+src/overlays/field/ov022_battle/func_ov022_02090198.c:
     complete
     .text       start:0x02090198 end:0x020901d4
 
-src/overlays/ov022/calls/Ov022_BuildSlotPool.c:
+src/overlays/field/ov022_battle/Ov022_BuildSlotPool.c:
     complete
     .text       start:0x020901d4 end:0x0209029c
 
-src/overlays/ov022/auto/func_ov022_0209029c.c:
+src/overlays/field/ov022_battle/func_ov022_0209029c.c:
     complete
     .text       start:0x0209029c end:0x020902d4
 
-src/overlays/ov022/calls/Ov022_SetRecordValue.c:
+src/overlays/field/ov022_battle/Ov022_SetRecordValue.c:
     complete
     .text       start:0x020902d4 end:0x02090308
 
-src/overlays/ov022/calls/Ov022_IsEnabledAndFlag100Set.c:
+src/overlays/field/ov022_battle/Ov022_IsEnabledAndFlag100Set.c:
     complete
     .text       start:0x02090308 end:0x02090338
 
-src/overlays/ov022/calls/func_ov022_02090338.c:
+src/overlays/field/ov022_battle/func_ov022_02090338.c:
     complete
     .text       start:0x02090338 end:0x02090360
 
-src/overlays/ov022/auto/Ov022_SetBit5OfHalf0IfByte2.c:
+src/overlays/field/ov022_battle/Ov022_SetBit5OfHalf0IfByte2.c:
     complete
     .text       start:0x02090360 end:0x02090378
 
-src/overlays/ov022/auto/Ov022_IsByte2Zero.c:
+src/overlays/field/ov022_battle/Ov022_IsByte2Zero.c:
     complete
     .text       start:0x02090378 end:0x0209038c
 
-src/overlays/ov022/calls/Ov022_IsSlotActionAllowed.c:
+src/overlays/field/ov022_battle/Ov022_IsSlotActionAllowed.c:
     complete
     .text       start:0x0209038c end:0x0209045c
 
-src/overlays/ov022/calls/Ov022_StepReactionState.c:
+src/overlays/field/ov022_battle/Ov022_StepReactionState.c:
     complete
     .text       start:0x0209045c end:0x0209093c
 
-src/overlays/ov022/calls/func_ov022_0209093c.c:
+src/overlays/field/ov022_battle/func_ov022_0209093c.c:
     complete
     .text       start:0x0209093c end:0x02090978
 
-src/overlays/ov022/auto/Ov022_GetSlotMoveMode.c:
+src/overlays/field/ov022_battle/Ov022_GetSlotMoveMode.c:
     complete
     .text       start:0x02090978 end:0x02090a50
 
-src/overlays/ov022/calls/Ov022_RunShotCommand.c:
+src/overlays/field/ov022_battle/Ov022_RunShotCommand.c:
     complete
     .text       start:0x02090a50 end:0x02090c04
 
-src/overlays/ov022/calls/Ov022_InitSlotManager.c:
+src/overlays/field/ov022_battle/Ov022_InitSlotManager.c:
     complete
     .text       start:0x02090c04 end:0x02090c7c
 
-src/overlays/ov022/calls/func_ov022_02090c7c.c:
+src/overlays/field/ov022_battle/func_ov022_02090c7c.c:
     complete
     .text       start:0x02090c7c end:0x02090caa
 
-src/overlays/ov022/calls/Ov022_ForwardPlus28.c:
+src/overlays/field/ov022_battle/Ov022_ForwardPlus28.c:
     complete
     .text       start:0x02090cac end:0x02090cbc
 
-src/overlays/ov022/calls/Ov022_SpawnShot.c:
+src/overlays/field/ov022_battle/Ov022_SpawnShot.c:
     complete
     .text       start:0x02090cbc end:0x02090e2c
 
-src/overlays/ov022/calls/Ov022_RunSlotHandlers.c:
+src/overlays/field/ov022_battle/Ov022_RunSlotHandlers.c:
     complete
     .text       start:0x02090e2c end:0x02090ec4
 
-src/overlays/ov022/calls/func_ov022_02090ec4.c:
+src/overlays/field/ov022_battle/func_ov022_02090ec4.c:
     complete
     .text       start:0x02090ec4 end:0x02090f14
 
-src/overlays/ov022/calls/Ov022_CloseAllStreams.c:
+src/overlays/field/ov022_battle/Ov022_CloseAllStreams.c:
     complete
     .text       start:0x02090f14 end:0x02090f5c
 
-src/overlays/ov022/calls/Ov022_TestShotHit.c:
+src/overlays/field/ov022_battle/Ov022_TestShotHit.c:
     complete
     .text       start:0x02090f5c end:0x020911a8
 
-src/overlays/ov022/calls/Ov022_TransformNodeValue.c:
+src/overlays/field/ov022_battle/Ov022_TransformNodeValue.c:
     complete
     .text       start:0x020911a8 end:0x020911f0
 
-src/overlays/ov022/calls/Ov022_TakeChannelBlock.c:
+src/overlays/field/ov022_battle/Ov022_TakeChannelBlock.c:
     complete
     .text       start:0x020911f0 end:0x02091228
 
-src/overlays/ov022/calls/func_ov022_02091228.c:
+src/overlays/field/ov022_battle/func_ov022_02091228.c:
     complete
     .text       start:0x02091228 end:0x02091254
 
-src/overlays/ov022/calls/Ov022_PublishGroupUpdateFixed.c:
+src/overlays/field/ov022_battle/Ov022_PublishGroupUpdateFixed.c:
     complete
     .text       start:0x02091254 end:0x02091296
 
-src/overlays/ov022/calls/Ov022_PublishGroupUpdate.c:
+src/overlays/field/ov022_battle/Ov022_PublishGroupUpdate.c:
     complete
     .text       start:0x02091298 end:0x020912d8
 
-src/overlays/ov022/calls/Ov022_AreStreamsIdle.c:
+src/overlays/field/ov022_battle/Ov022_AreStreamsIdle.c:
     complete
     .text       start:0x020912d8 end:0x02091324
 
-src/overlays/ov022/calls/Ov022_SendPlacementMessage.c:
+src/overlays/field/ov022_battle/Ov022_SendPlacementMessage.c:
     complete
     .text       start:0x02091324 end:0x0209145c
 
-src/overlays/ov022/auto/Ov022_ForwardToNodeHandler.c:
+src/overlays/field/ov022_battle/Ov022_ForwardToNodeHandler.c:
     complete
     .text       start:0x0209145c end:0x02091474
 
-src/overlays/ov022/auto/Ov022_InvokeCallback24IfBit0.c:
+src/overlays/field/ov022_battle/Ov022_InvokeCallback24IfBit0.c:
     complete
     .text       start:0x02091474 end:0x020914a0
 
-src/overlays/ov022/calls/Ov022_ReleaseRigSlots.c:
+src/overlays/field/ov022_battle/Ov022_ReleaseRigSlots.c:
     complete
     .text       start:0x020914a0 end:0x02091540
 
-src/overlays/ov022/calls/func_ov022_02091540.c:
+src/overlays/field/ov022_battle/func_ov022_02091540.c:
     complete
     .text       start:0x02091540 end:0x020915bc
 
-src/overlays/ov022/auto/Ov022_AdvanceTimerAndLatchDone.c:
+src/overlays/field/ov022_battle/Ov022_AdvanceTimerAndLatchDone.c:
     complete
     .text       start:0x020915bc end:0x020915fc
 
-src/overlays/ov022/calls/Ov022_StepShot.c:
+src/overlays/field/ov022_battle/Ov022_StepShot.c:
     complete
     .text       start:0x020915fc end:0x020916e0
 
-src/overlays/ov022/auto/Ov022_NullStep.c:
+src/overlays/field/ov022_battle/Ov022_NullStep.c:
     complete
     .text       start:0x020916e0 end:0x020916e8
 
-src/overlays/ov022/calls/Ov022_StepShot_2.c:
+src/overlays/field/ov022_battle/Ov022_StepShot_2.c:
     complete
     .text       start:0x020916e8 end:0x0209183c
 
-src/overlays/ov022/calls/Ov022_StepStandingShot.c:
+src/overlays/field/ov022_battle/Ov022_StepStandingShot.c:
     complete
     .text       start:0x0209183c end:0x0209190c
 
-src/overlays/ov022/calls/func_ov022_0209190c.c:
+src/overlays/field/ov022_battle/func_ov022_0209190c.c:
     complete
     .text       start:0x0209190c end:0x0209198c
 
-src/overlays/ov022/calls/Ov022_ComputeShotStep.c:
+src/overlays/field/ov022_battle/Ov022_ComputeShotStep.c:
     complete
     .text       start:0x0209198c end:0x02091b48
 
-src/overlays/ov022/calls/Ov022_ResolveShotHit.c:
+src/overlays/field/ov022_battle/Ov022_ResolveShotHit.c:
     complete
     .text       start:0x02091b48 end:0x02091d80
 
-src/overlays/ov022/calls/func_ov022_02091d80.c:
+src/overlays/field/ov022_battle/func_ov022_02091d80.c:
     complete
     .text       start:0x02091d80 end:0x02091e08
 
-src/overlays/ov022/calls/Ov022_MarshalStateByte9.c:
+src/overlays/field/ov022_battle/Ov022_MarshalStateByte9.c:
     complete
     .text       start:0x02091e08 end:0x02091eb0
 
-src/overlays/ov022/calls/Ov022_DrawShot.c:
+src/overlays/field/ov022_battle/Ov022_DrawShot.c:
     complete
     .text       start:0x02091eb0 end:0x02091f8c
 
-src/overlays/ov022/calls/Ov022_ApplyControlTable.c:
+src/overlays/field/ov022_battle/Ov022_ApplyControlTable.c:
     complete
     .text       start:0x02091f8c end:0x02092060
 
-src/overlays/ov022/calls/Ov022_PlayControlRecord.c:
+src/overlays/field/ov022_battle/Ov022_PlayControlRecord.c:
     complete
     .text       start:0x02092060 end:0x020922a4
 
-src/overlays/ov022/calls/Ov022_NotifyPeerHit.c:
+src/overlays/field/ov022_battle/Ov022_NotifyPeerHit.c:
     complete
     .text       start:0x020922a4 end:0x02092320
 
-src/overlays/ov022/calls/Ov022_AcquireSlotBlock.c:
+src/overlays/field/ov022_battle/Ov022_AcquireSlotBlock.c:
     complete
     .text       start:0x02092320 end:0x02092354
 
-src/overlays/ov022/calls/func_ov022_02092354.c:
+src/overlays/field/ov022_battle/func_ov022_02092354.c:
     complete
     .text       start:0x02092354 end:0x02092384
 
-src/overlays/ov022/calls/Ov022_AllocateSlotWithClass.c:
+src/overlays/field/ov022_battle/Ov022_AllocateSlotWithClass.c:
     complete
     .text       start:0x02092384 end:0x020923dc
 
-src/overlays/ov022/calls/func_ov022_020923dc.c:
+src/overlays/field/ov022_battle/func_ov022_020923dc.c:
     complete
     .text       start:0x020923dc end:0x02092438
 
-src/overlays/ov022/calls/func_ov022_02092438.c:
+src/overlays/field/ov022_battle/func_ov022_02092438.c:
     complete
     .text       start:0x02092438 end:0x0209246c
 
-src/overlays/ov022/calls/Ov022_SendAimMessage.c:
+src/overlays/field/ov022_battle/Ov022_SendAimMessage.c:
     complete
     .text       start:0x0209246c end:0x02092588
 
-src/overlays/ov022/calls/Ov022_PostContactPacket.c:
+src/overlays/field/ov022_battle/Ov022_PostContactPacket.c:
     complete
     .text       start:0x02092588 end:0x02092634
 
-src/overlays/ov022/auto/Ov022_ClearByte.c:
+src/overlays/field/ov022_battle/Ov022_ClearByte.c:
     complete
     .text       start:0x02092634 end:0x0209263a
 
-src/overlays/ov022/calls/Ov022_TeardownIfBit0.c:
+src/overlays/field/ov022_battle/Ov022_TeardownIfBit0.c:
     complete
     .text       start:0x0209263c end:0x02092656
 
-src/overlays/ov022/calls/Ov022_SetUpTrailEffect.c:
+src/overlays/field/ov022_battle/Ov022_SetUpTrailEffect.c:
     complete
     .text       start:0x02092658 end:0x020926f8
 
-src/overlays/ov022/auto/Ov022_IsBit0Set.c:
+src/overlays/field/ov022_battle/Ov022_IsBit0Set.c:
     complete
     .text       start:0x020926f8 end:0x02092710
 
-src/overlays/ov022/calls/Ov022_StartSlotEffect.c:
+src/overlays/field/ov022_battle/Ov022_StartSlotEffect.c:
     complete
     .text       start:0x02092710 end:0x02092808
 
-src/overlays/ov022/calls/func_ov022_02092808.c:
+src/overlays/field/ov022_battle/func_ov022_02092808.c:
     complete
     .text       start:0x02092808 end:0x02092844
 
-src/overlays/ov022/calls/func_ov022_02092844.c:
+src/overlays/field/ov022_battle/func_ov022_02092844.c:
     complete
     .text       start:0x02092844 end:0x02092868
 
-src/overlays/ov022/auto/Ov022_ClearByte_2.c:
+src/overlays/field/ov022_battle/Ov022_ClearByte_2.c:
     complete
     .text       start:0x02092868 end:0x0209286e
 
-src/overlays/ov022/calls/Ov022_ClearIfBit0.c:
+src/overlays/field/ov022_battle/Ov022_ClearIfBit0.c:
     complete
     .text       start:0x02092870 end:0x02092880
 
-src/overlays/ov022/calls/func_ov022_02092880.c:
+src/overlays/field/ov022_battle/func_ov022_02092880.c:
     complete
     .text       start:0x02092880 end:0x020928c0
 
-src/overlays/ov022/auto/Ov022_IsBit0Set_2.c:
+src/overlays/field/ov022_battle/Ov022_IsBit0Set_2.c:
     complete
     .text       start:0x020928c0 end:0x020928d8
 
-src/overlays/ov022/calls/Ov022_PlaceWindNode.c:
+src/overlays/field/ov022_battle/Ov022_PlaceWindNode.c:
     complete
     .text       start:0x020928d8 end:0x020929cc
 
-src/overlays/ov022/auto/Ov022_ClearByte0AndByte0x135.c:
+src/overlays/field/ov022_battle/Ov022_ClearByte0AndByte0x135.c:
     complete
     .text       start:0x020929cc end:0x020929dc
 
-src/overlays/ov022/calls/func_ov022_020929dc.c:
+src/overlays/field/ov022_battle/func_ov022_020929dc.c:
     complete
     .text       start:0x020929dc end:0x02092a12
 
-src/overlays/ov022/calls/Ov022_SetUpWindEffect.c:
+src/overlays/field/ov022_battle/Ov022_SetUpWindEffect.c:
     complete
     .text       start:0x02092a14 end:0x02092af8
 
-src/overlays/ov022/auto/Ov022_IsBit0Set_3.c:
+src/overlays/field/ov022_battle/Ov022_IsBit0Set_3.c:
     complete
     .text       start:0x02092af8 end:0x02092b10
 
-src/overlays/ov022/calls/func_ov022_02092b10.c:
+src/overlays/field/ov022_battle/func_ov022_02092b10.c:
     complete
     .text       start:0x02092b10 end:0x02092b54
 
-src/overlays/ov022/auto/Ov022_CopyWord17cTo170.c:
+src/overlays/field/ov022_battle/Ov022_CopyWord17cTo170.c:
     complete
     .text       start:0x02092b54 end:0x02092b60
 
-src/overlays/ov022/calls/Ov022_RotateAboutAxis.c:
+src/overlays/field/ov022_battle/Ov022_RotateAboutAxis.c:
     complete
     .text       start:0x02092b60 end:0x02092bfc
 
-src/overlays/ov022/calls/Ov022_StepSpinEffect.c:
+src/overlays/field/ov022_battle/Ov022_StepSpinEffect.c:
     complete
     .text       start:0x02092bfc end:0x02092d68
 
-src/overlays/ov022/calls/Ov022_TearDownNode.c:
+src/overlays/field/ov022_battle/Ov022_TearDownNode.c:
     complete
     .text       start:0x02092d68 end:0x02092dc8
 
-src/overlays/ov022/auto/func_ov022_02092dc8.c:
+src/overlays/field/ov022_battle/func_ov022_02092dc8.c:
     complete
     .text       start:0x02092dc8 end:0x02092e08
 
-src/overlays/ov022/auto/Ov022_ResetFields135_168_174.c:
+src/overlays/field/ov022_battle/Ov022_ResetFields135_168_174.c:
     complete
     .text       start:0x02092e08 end:0x02092e2c
 
-src/overlays/ov022/auto/Ov022_ResetBlock94c.c:
+src/overlays/field/ov022_battle/Ov022_ResetBlock94c.c:
     complete
     .text       start:0x02092e2c end:0x02092e4c
 
-src/overlays/ov022/calls/func_ov022_02092e4c.c:
+src/overlays/field/ov022_battle/func_ov022_02092e4c.c:
     complete
     .text       start:0x02092e4c end:0x02092e8c
 
-src/overlays/ov022/calls/Ov022_SetUpDustEffect.c:
+src/overlays/field/ov022_battle/Ov022_SetUpDustEffect.c:
     complete
     .text       start:0x02092e8c end:0x02092ff0
 
-src/overlays/ov022/auto/Ov022_IsBit0Set_4.c:
+src/overlays/field/ov022_battle/Ov022_IsBit0Set_4.c:
     complete
     .text       start:0x02092ff0 end:0x02093008
 
-src/overlays/ov022/calls/Ov022_IsActiveAndCounterZero.c:
+src/overlays/field/ov022_battle/Ov022_IsActiveAndCounterZero.c:
     complete
     .text       start:0x02093008 end:0x02093034
 
-src/overlays/ov022/auto/Ov022_CopyWord968To958.c:
+src/overlays/field/ov022_battle/Ov022_CopyWord968To958.c:
     complete
     .text       start:0x02093034 end:0x02093040
 
-src/overlays/ov022/calls/Ov022_StepDustEmitter.c:
+src/overlays/field/ov022_battle/Ov022_StepDustEmitter.c:
     complete
     .text       start:0x02093040 end:0x02093400
 
-src/overlays/ov022/calls/func_ov022_02093400.c:
+src/overlays/field/ov022_battle/func_ov022_02093400.c:
     complete
     .text       start:0x02093400 end:0x0209344c
 
-src/overlays/ov022/calls/Ov022_IsBlockDone.c:
+src/overlays/field/ov022_battle/Ov022_IsBlockDone.c:
     complete
     .text       start:0x0209344c end:0x02093474
 
-src/overlays/ov022/calls/Ov022_FireReaction.c:
+src/overlays/field/ov022_battle/Ov022_FireReaction.c:
     complete
     .text       start:0x02093474 end:0x02093860
 
-src/overlays/ov022/calls/Ov022_ApplyScaledDamage.c:
+src/overlays/field/ov022_battle/Ov022_ApplyScaledDamage.c:
     complete
     .text       start:0x02093860 end:0x02093900
 
-src/overlays/ov022/calls/func_ov022_02093900.c:
+src/overlays/field/ov022_battle/func_ov022_02093900.c:
     complete
     .text       start:0x02093900 end:0x0209398c
 
-src/overlays/ov022/calls/Ov022_ResetSlotTracks.c:
+src/overlays/field/ov022_battle/Ov022_ResetSlotTracks.c:
     complete
     .text       start:0x0209398c end:0x02093a1c
 
-src/overlays/ov022/calls/Ov022_KindToGroup.c:
+src/overlays/field/ov022_battle/Ov022_KindToGroup.c:
     complete
     .text       start:0x02093a1c end:0x02093a7c
 
-src/overlays/ov022/calls/func_ov022_02093a7c.c:
+src/overlays/field/ov022_battle/func_ov022_02093a7c.c:
     complete
     .text       start:0x02093a7c end:0x02093b10
 
-src/overlays/ov022/auto/func_ov022_02093b10.c:
+src/overlays/field/ov022_battle/func_ov022_02093b10.c:
     complete
     .text       start:0x02093b10 end:0x02093b2c
 
-src/overlays/ov022/calls/Ov022_TeardownVoices.c:
+src/overlays/field/ov022_battle/Ov022_TeardownVoices.c:
     complete
     .text       start:0x02093b2c end:0x02093b68
 
-src/overlays/ov022/calls/Ov022_BindReactionAnims.c:
+src/overlays/field/ov022_battle/Ov022_BindReactionAnims.c:
     complete
     .text       start:0x02093b68 end:0x02093be0
 
-src/overlays/ov022/auto/Ov022_IsByte1Zero.c:
+src/overlays/field/ov022_battle/Ov022_IsByte1Zero.c:
     complete
     .text       start:0x02093be0 end:0x02093bf4
 
-src/overlays/ov022/auto/Ov022_IsReactionActive.c:
+src/overlays/field/ov022_battle/Ov022_IsReactionActive.c:
     complete
     .text       start:0x02093bf4 end:0x02093c0c
 
-src/overlays/ov022/calls/func_ov022_02093c0c.c:
+src/overlays/field/ov022_battle/func_ov022_02093c0c.c:
     complete
     .text       start:0x02093c0c end:0x02093c34
 
-src/overlays/ov022/auto/Ov022_ClearByte1IfEquals4.c:
+src/overlays/field/ov022_battle/Ov022_ClearByte1IfEquals4.c:
     complete
     .text       start:0x02093c34 end:0x02093c48
 
-src/overlays/ov022/calls/func_ov022_02093c48.c:
+src/overlays/field/ov022_battle/func_ov022_02093c48.c:
     complete
     .text       start:0x02093c48 end:0x02093cb0
 
-src/overlays/ov022/calls/Ov022_StepReactionPhase.c:
+src/overlays/field/ov022_battle/Ov022_StepReactionPhase.c:
     complete
     .text       start:0x02093cb0 end:0x02093ea8
 
-src/overlays/ov022/calls/Ov022_RefreshDirtyPanels.c:
+src/overlays/field/ov022_battle/Ov022_RefreshDirtyPanels.c:
     complete
     .text       start:0x02093ea8 end:0x02093f24
 
-src/overlays/ov022/calls/func_ov022_02093f24.c:
+src/overlays/field/ov022_battle/func_ov022_02093f24.c:
     complete
     .text       start:0x02093f24 end:0x02093f70
 
-src/overlays/ov022/auto/Ov022_ClearBytes01.c:
+src/overlays/field/ov022_battle/Ov022_ClearBytes01.c:
     complete
     .text       start:0x02093f70 end:0x02093f78
 
-src/overlays/ov022/calls/Ov022_TeardownIfBit0_2.c:
+src/overlays/field/ov022_battle/Ov022_TeardownIfBit0_2.c:
     complete
     .text       start:0x02093f78 end:0x02093f92
 
-src/overlays/ov022/calls/Ov022_SetUpArmEffect.c:
+src/overlays/field/ov022_battle/Ov022_SetUpArmEffect.c:
     complete
     .text       start:0x02093f94 end:0x0209405c
 
-src/overlays/ov022/auto/Ov022_IsBit0Set_5.c:
+src/overlays/field/ov022_battle/Ov022_IsBit0Set_5.c:
     complete
     .text       start:0x0209405c end:0x02094074
 
-src/overlays/ov022/calls/func_ov022_02094074.c:
+src/overlays/field/ov022_battle/func_ov022_02094074.c:
     complete
     .text       start:0x02094074 end:0x020940a0
 
-src/overlays/ov022/calls/func_ov022_020940a0.c:
+src/overlays/field/ov022_battle/func_ov022_020940a0.c:
     complete
     .text       start:0x020940a0 end:0x02094120
 
-src/overlays/ov022/auto/func_ov022_02094120.c:
+src/overlays/field/ov022_battle/func_ov022_02094120.c:
     complete
     .text       start:0x02094120 end:0x02094160
 
-src/overlays/ov022/auto/Ov022_SetWord0x110ToC000IfBit3.c:
+src/overlays/field/ov022_battle/Ov022_SetWord0x110ToC000IfBit3.c:
     complete
     .text       start:0x02094160 end:0x02094174
 
-src/overlays/ov022/calls/Ov022_IsActiveAndCountPositive.c:
+src/overlays/field/ov022_battle/Ov022_IsActiveAndCountPositive.c:
     complete
     .text       start:0x02094174 end:0x020941a0
 
-src/overlays/ov022/calls/Ov022_ApplyVec3AndResetTracks.c:
+src/overlays/field/ov022_battle/Ov022_ApplyVec3AndResetTracks.c:
     complete
     .text       start:0x020941a0 end:0x02094224
 
-src/overlays/ov022/calls/func_ov022_02094224.c:
+src/overlays/field/ov022_battle/func_ov022_02094224.c:
     complete
     .text       start:0x02094224 end:0x020942c4
 
-src/overlays/ov022/calls/func_ov022_020942c4.c:
+src/overlays/field/ov022_battle/func_ov022_020942c4.c:
     complete
     .text       start:0x020942c4 end:0x020942f0
 
-src/overlays/ov022/calls/Ov022_ApplyStateMessage.c:
+src/overlays/field/ov022_battle/Ov022_ApplyStateMessage.c:
     complete
     .text       start:0x020942f0 end:0x0209441c
 
-src/overlays/ov022/calls/Ov022_ArePartsDone.c:
+src/overlays/field/ov022_battle/Ov022_ArePartsDone.c:
     complete
     .text       start:0x0209441c end:0x020944ec
     .rodata     start:0x020b2520 end:0x020b2538
 
-src/overlays/ov022/calls/Ov022_IsActionOver.c:
+src/overlays/field/ov022_battle/Ov022_IsActionOver.c:
     complete
     .text       start:0x020944ec end:0x020945a8
 
-src/overlays/ov022/calls/Ov022_ShouldForceState.c:
+src/overlays/field/ov022_battle/Ov022_ShouldForceState.c:
     complete
     .text       start:0x020945a8 end:0x02094678
 
-src/overlays/ov022/calls/func_ov022_02094678.c:
+src/overlays/field/ov022_battle/func_ov022_02094678.c:
     complete
     .text       start:0x02094678 end:0x020946e4
 
-src/overlays/ov022/calls/func_ov022_020946e4.c:
+src/overlays/field/ov022_battle/func_ov022_020946e4.c:
     complete
     .text       start:0x020946e4 end:0x02094730
 
-src/overlays/ov022/calls/func_ov022_02094730.c:
+src/overlays/field/ov022_battle/func_ov022_02094730.c:
     complete
     .text       start:0x02094730 end:0x020947a4
 
-src/overlays/ov022/calls/Ov022_SendPayloadMessage.c:
+src/overlays/field/ov022_battle/Ov022_SendPayloadMessage.c:
     complete
     .text       start:0x020947a4 end:0x02094810
 
-src/overlays/ov022/calls/func_ov022_02094810.c:
+src/overlays/field/ov022_battle/func_ov022_02094810.c:
     complete
     .text       start:0x02094810 end:0x0209487c
 
-src/overlays/ov022/calls/Ov022_StepRunSequences.c:
+src/overlays/field/ov022_battle/Ov022_StepRunSequences.c:
     complete
     .text       start:0x0209487c end:0x020949f8
 
-src/overlays/ov022/calls/Ov022_FeedRunSequences.c:
+src/overlays/field/ov022_battle/Ov022_FeedRunSequences.c:
     complete
     .text       start:0x020949f8 end:0x02094b40
 
-src/overlays/ov022/calls/func_ov022_02094b40.c:
+src/overlays/field/ov022_battle/func_ov022_02094b40.c:
     complete
     .text       start:0x02094b40 end:0x02094b74
 
-src/overlays/ov022/auto/Ov022_ClearWordAt8.c:
+src/overlays/field/ov022_battle/Ov022_ClearWordAt8.c:
     complete
     .text       start:0x02094b74 end:0x02094b80
 
-src/overlays/ov022/calls/func_ov022_02094b80.c:
+src/overlays/field/ov022_battle/func_ov022_02094b80.c:
     complete
     .text       start:0x02094b80 end:0x02094bd8
 
-src/overlays/ov022/auto/Ov022_IsWord0x32cNonNegative.c:
+src/overlays/field/ov022_battle/Ov022_IsWord0x32cNonNegative.c:
     complete
     .text       start:0x02094bd8 end:0x02094bec
 
-src/overlays/ov022/calls/func_ov022_02094bec.c:
+src/overlays/field/ov022_battle/func_ov022_02094bec.c:
     complete
     .text       start:0x02094bec end:0x02094c10
 
-src/overlays/ov022/calls/Ov022_RegisterHandler10.c:
+src/overlays/field/ov022_battle/Ov022_RegisterHandler10.c:
     complete
     .text       start:0x02094c10 end:0x02094c20
 
-src/overlays/ov022/calls/func_ov022_02094c20.c:
+src/overlays/field/ov022_battle/func_ov022_02094c20.c:
     complete
     .text       start:0x02094c20 end:0x02094c2c
 
-src/overlays/ov022/auto/Ov022_ClearFields.c:
+src/overlays/field/ov022_battle/Ov022_ClearFields.c:
     complete
     .text       start:0x02094c2c end:0x02094c42
 
-src/overlays/ov022/calls/func_ov022_02094c44.c:
+src/overlays/field/ov022_battle/func_ov022_02094c44.c:
     complete
     .text       start:0x02094c44 end:0x02094c70
 
-src/overlays/ov022/calls/Ov022_StartRun.c:
+src/overlays/field/ov022_battle/Ov022_StartRun.c:
     complete
     .text       start:0x02094c70 end:0x02094d90
 
-src/overlays/ov022/calls/Ov022_StepRun.c:
+src/overlays/field/ov022_battle/Ov022_StepRun.c:
     complete
     .text       start:0x02094d90 end:0x02095444
 
-src/overlays/ov022/calls/Ov022_VeneerTo_Ov002_ClosePrompt.c:
+src/overlays/field/ov022_battle/Ov022_VeneerTo_Ov002_ClosePrompt.c:
     complete
     .text       start:0x02095444 end:0x02095450
 
-src/overlays/ov022/auto/func_ov022_02095450.c:
+src/overlays/field/ov022_battle/func_ov022_02095450.c:
     complete
     .text       start:0x02095450 end:0x020954c0
 
-src/overlays/ov022/auto/Ov022_IsType8AndBit7Set.c:
+src/overlays/field/ov022_battle/Ov022_IsType8AndBit7Set.c:
     complete
     .text       start:0x020954c0 end:0x020954e4
 
-src/overlays/ov022/auto/Ov022_SetBit8ClearBit7.c:
+src/overlays/field/ov022_battle/Ov022_SetBit8ClearBit7.c:
     complete
     .text       start:0x020954e4 end:0x020954f8
 
-src/overlays/ov022/calls/func_ov022_020954f8.c:
+src/overlays/field/ov022_battle/func_ov022_020954f8.c:
     complete
     .text       start:0x020954f8 end:0x02095524
 
-src/overlays/ov022/auto/Ov022_IsState9Or6WithFlag200.c:
+src/overlays/field/ov022_battle/Ov022_IsState9Or6WithFlag200.c:
     complete
     .text       start:0x02095524 end:0x02095554
 
-src/overlays/ov022/calls/Ov022_IsSlotReady.c:
+src/overlays/field/ov022_battle/Ov022_IsSlotReady.c:
     complete
     .text       start:0x02095554 end:0x020955b0
 
-src/overlays/ov022/auto/Ov022_IsActionAllowed.c:
+src/overlays/field/ov022_battle/Ov022_IsActionAllowed.c:
     complete
     .text       start:0x020955b0 end:0x02095600
 
-src/overlays/ov022/auto/Ov022_GetWordAt0x340Plus4.c:
+src/overlays/field/ov022_battle/Ov022_GetWordAt0x340Plus4.c:
     complete
     .text       start:0x02095600 end:0x0209560c
 
-src/overlays/ov022/auto/Ov022_GetWordAt0x348Plus4.c:
+src/overlays/field/ov022_battle/Ov022_GetWordAt0x348Plus4.c:
     complete
     .text       start:0x0209560c end:0x02095618
 
-src/overlays/ov022/calls/func_ov022_02095618.c:
+src/overlays/field/ov022_battle/func_ov022_02095618.c:
     complete
     .text       start:0x02095618 end:0x02095648
 
-src/overlays/ov022/calls/Ov022_ComputeChipGauge.c:
+src/overlays/field/ov022_battle/Ov022_ComputeChipGauge.c:
     complete
     .text       start:0x02095648 end:0x020956e8
 
-src/overlays/ov022/calls/Ov022_IsActionBlocked.c:
+src/overlays/field/ov022_battle/Ov022_IsActionBlocked.c:
     complete
     .text       start:0x020956e8 end:0x02095940
 
-src/overlays/ov022/auto/Ov022_DecoderIdleStep.c:
+src/overlays/field/ov022_battle/Ov022_DecoderIdleStep.c:
     complete
     .text       start:0x02095940 end:0x02095948
 
-src/overlays/ov022/calls/Ov022_GetEffectAnchor.c:
+src/overlays/field/ov022_battle/Ov022_GetEffectAnchor.c:
     complete
     .text       start:0x02095948 end:0x02095a38
 
-src/overlays/ov022/calls/Ov022_MayActOnHit.c:
+src/overlays/field/ov022_battle/Ov022_MayActOnHit.c:
     complete
     .text       start:0x02095a38 end:0x02095c58
 
-src/overlays/ov022/calls/Ov022_ClampHitPoints.c:
+src/overlays/field/ov022_battle/Ov022_ClampHitPoints.c:
     complete
     .text       start:0x02095c58 end:0x02095d10
 
-src/overlays/ov022/calls/Ov022_CanTriggerFinisher.c:
+src/overlays/field/ov022_battle/Ov022_CanTriggerFinisher.c:
     complete
     .text       start:0x02095d10 end:0x02095dc8
 
-src/overlays/ov022/calls/Ov022_TestAnchorReachable.c:
+src/overlays/field/ov022_battle/Ov022_TestAnchorReachable.c:
     complete
     .text       start:0x02095dc8 end:0x02095e48
 
-src/overlays/ov022/calls/Ov022_FindClimbTarget.c:
+src/overlays/field/ov022_battle/Ov022_FindClimbTarget.c:
     complete
     .text       start:0x02095e48 end:0x020965b8
 
-src/overlays/ov022/calls/func_ov022_020965b8.c:
+src/overlays/field/ov022_battle/func_ov022_020965b8.c:
     complete
     .text       start:0x020965b8 end:0x02096644
 
-src/overlays/ov022/calls/Ov022_ApplySurfaceReactions.c:
+src/overlays/field/ov022_battle/Ov022_ApplySurfaceReactions.c:
     complete
     .text       start:0x02096644 end:0x02096964
 
-src/overlays/ov022/auto/func_ov022_02096964.c:
+src/overlays/field/ov022_battle/func_ov022_02096964.c:
     complete
     .text       start:0x02096964 end:0x02096984
 
-src/overlays/ov022/calls/Ov022_TrackWallPress.c:
+src/overlays/field/ov022_battle/Ov022_TrackWallPress.c:
     complete
     .text       start:0x02096984 end:0x02096e44
 
-src/overlays/ov022/calls/Ov022_FormatDebugLine.c:
+src/overlays/field/ov022_battle/Ov022_FormatDebugLine.c:
     complete
     .text       start:0x02096e44 end:0x02096e94
 
-src/overlays/ov022/calls/Ov022_ApplyMissionLevelStats.c:
+src/overlays/field/ov022_battle/Ov022_ApplyMissionLevelStats.c:
     complete
     .text       start:0x02096e94 end:0x02097038
 
-src/overlays/ov022/calls/func_ov022_02097038.c:
+src/overlays/field/ov022_battle/func_ov022_02097038.c:
     complete
     .text       start:0x02097038 end:0x02097060
 
-src/overlays/ov022/calls/Ov022_ClosestPointOnSegment.c:
+src/overlays/field/ov022_battle/Ov022_ClosestPointOnSegment.c:
     complete
     .text       start:0x02097060 end:0x02097150
 
-src/overlays/ov022/calls/Ov022_UpdateSubsystems.c:
+src/overlays/field/ov022_battle/Ov022_UpdateSubsystems.c:
     complete
     .text       start:0x02097150 end:0x020976f4
 
-src/overlays/ov022/calls/Ov022_StepLocalActorCues.c:
+src/overlays/field/ov022_battle/Ov022_StepLocalActorCues.c:
     complete
     .text       start:0x020976f4 end:0x02097904
 
-src/overlays/ov022/calls/Ov022_StepEffectTowardCamera.c:
+src/overlays/field/ov022_battle/Ov022_StepEffectTowardCamera.c:
     complete
     .text       start:0x02097904 end:0x020979e0
 
-src/overlays/ov022/calls/Ov022_MoveEffectTowardCamera.c:
+src/overlays/field/ov022_battle/Ov022_MoveEffectTowardCamera.c:
     complete
     .text       start:0x020979e0 end:0x02097a90
 
-src/overlays/ov022/calls/Ov022_StartGroundEffect.c:
+src/overlays/field/ov022_battle/Ov022_StartGroundEffect.c:
     complete
     .text       start:0x02097a90 end:0x02097b78
 
-src/overlays/ov022/calls/func_ov022_02097b78.c:
+src/overlays/field/ov022_battle/func_ov022_02097b78.c:
     complete
     .text       start:0x02097b78 end:0x02097bd8
 
-src/overlays/ov022/calls/Ov022_LoadEffectFiles.c:
+src/overlays/field/ov022_battle/Ov022_LoadEffectFiles.c:
     complete
     .text       start:0x02097bd8 end:0x02097cd0
 
-src/overlays/ov022/calls/Ov022_ReleaseResourceTables.c:
+src/overlays/field/ov022_battle/Ov022_ReleaseResourceTables.c:
     complete
     .text       start:0x02097cd0 end:0x02097d20
 
-src/overlays/ov022/calls/Ov022_SpendDecodeBudget.c:
+src/overlays/field/ov022_battle/Ov022_SpendDecodeBudget.c:
     complete
     .text       start:0x02097d20 end:0x02097d50
 
-src/overlays/ov022/calls/Ov022_ResetTimersAndMaybeSignal.c:
+src/overlays/field/ov022_battle/Ov022_ResetTimersAndMaybeSignal.c:
     complete
     .text       start:0x02097d50 end:0x02097de4
 
-src/overlays/ov022/auto/func_ov022_02097de4.c:
+src/overlays/field/ov022_battle/func_ov022_02097de4.c:
     complete
     .text       start:0x02097de4 end:0x02097e14
 
-src/overlays/ov022/calls/Ov022_TakeDriftStep.c:
+src/overlays/field/ov022_battle/Ov022_TakeDriftStep.c:
     complete
     .text       start:0x02097e14 end:0x02097f08
 
-src/overlays/ov022/calls/Ov022_IntegrateRecoilVec.c:
+src/overlays/field/ov022_battle/Ov022_IntegrateRecoilVec.c:
     complete
     .text       start:0x02097f08 end:0x02097ff0
 
-src/overlays/ov022/calls/func_ov022_02097ff0.c:
+src/overlays/field/ov022_battle/func_ov022_02097ff0.c:
     complete
     .text       start:0x02097ff0 end:0x02098040
 
-src/overlays/ov022/calls/Ov022_FindGroundUnder.c:
+src/overlays/field/ov022_battle/Ov022_FindGroundUnder.c:
     complete
     .text       start:0x02098040 end:0x02098134
 
-src/overlays/ov022/calls/Ov022_LookUpSlotCue.c:
+src/overlays/field/ov022_battle/Ov022_LookUpSlotCue.c:
     complete
     .text       start:0x02098134 end:0x020981f4
 
-src/overlays/ov022/calls/Ov022_StepIdleActor.c:
+src/overlays/field/ov022_battle/Ov022_StepIdleActor.c:
     complete
     .text       start:0x020981f4 end:0x020983ec
 
-src/overlays/ov022/calls/Ov022_TryPendingAction.c:
+src/overlays/field/ov022_battle/Ov022_TryPendingAction.c:
     complete
     .text       start:0x020983ec end:0x02098834
 
-src/overlays/ov022/calls/Ov022_EnterActorState.c:
+src/overlays/field/ov022_battle/Ov022_EnterActorState.c:
     complete
     .text       start:0x02098834 end:0x0209a1ac
 
-src/overlays/ov022/auto/func_ov022_0209a1ac.c:
+src/overlays/field/ov022_battle/func_ov022_0209a1ac.c:
     complete
     .text       start:0x0209a1ac end:0x0209a264
 
-src/overlays/ov022/calls/Ov022_ApplyExternalPush.c:
+src/overlays/field/ov022_battle/Ov022_ApplyExternalPush.c:
     complete
     .text       start:0x0209a264 end:0x0209a3a4
 
-src/overlays/ov022/auto/Ov022_ComputeAimPoint.c:
+src/overlays/field/ov022_battle/Ov022_ComputeAimPoint.c:
     complete
     .text       start:0x0209a3a4 end:0x0209a4e0
 
-src/overlays/ov022/calls/func_ov022_0209a4e0.c:
+src/overlays/field/ov022_battle/func_ov022_0209a4e0.c:
     complete
     .text       start:0x0209a4e0 end:0x0209a4f8
 
-src/overlays/ov022/calls/func_ov022_0209a4f8.c:
+src/overlays/field/ov022_battle/func_ov022_0209a4f8.c:
     complete
     .text       start:0x0209a4f8 end:0x0209a508
 
-src/overlays/ov022/calls/Ov022_ApplyActorAction.c:
+src/overlays/field/ov022_battle/Ov022_ApplyActorAction.c:
     complete
     .text       start:0x0209a508 end:0x0209a614
 
-src/overlays/ov022/calls/func_ov022_0209a614.c:
+src/overlays/field/ov022_battle/func_ov022_0209a614.c:
     complete
     .text       start:0x0209a614 end:0x0209a630
 
-src/overlays/ov022/calls/func_ov022_0209a630.c:
+src/overlays/field/ov022_battle/func_ov022_0209a630.c:
     complete
     .text       start:0x0209a630 end:0x0209a68c
 
-src/overlays/ov022/calls/func_ov022_0209a68c.c:
+src/overlays/field/ov022_battle/func_ov022_0209a68c.c:
     complete
     .text       start:0x0209a68c end:0x0209a6f4
 
-src/overlays/ov022/calls/Ov022_SelectForcedState.c:
+src/overlays/field/ov022_battle/Ov022_SelectForcedState.c:
     complete
     .text       start:0x0209a6f4 end:0x0209ab1c
 
-src/overlays/ov022/calls/Ov022_SelectStunState.c:
+src/overlays/field/ov022_battle/Ov022_SelectStunState.c:
     complete
     .text       start:0x0209ab1c end:0x0209adfc
 
-src/overlays/ov022/calls/Ov022_StartCharge.c:
+src/overlays/field/ov022_battle/Ov022_StartCharge.c:
     complete
     .text       start:0x0209adfc end:0x0209aed0
 
-src/overlays/ov022/calls/func_ov022_0209aed0.c:
+src/overlays/field/ov022_battle/func_ov022_0209aed0.c:
     complete
     .text       start:0x0209aed0 end:0x0209aefc
 
-src/overlays/ov022/calls/Ov022_StepChargeEntries.c:
+src/overlays/field/ov022_battle/Ov022_StepChargeEntries.c:
     complete
     .text       start:0x0209aefc end:0x0209b078
 
-src/overlays/ov022/calls/Ov022_ResetAnimationSlot.c:
+src/overlays/field/ov022_battle/Ov022_ResetAnimationSlot.c:
     complete
     .text       start:0x0209b078 end:0x0209b0c0
 
-src/overlays/ov022/calls/func_ov022_0209b0c0.c:
+src/overlays/field/ov022_battle/func_ov022_0209b0c0.c:
     complete
     .text       start:0x0209b0c0 end:0x0209b100
 
-src/overlays/ov022/calls/Ov022_DrawChargeEntries.c:
+src/overlays/field/ov022_battle/Ov022_DrawChargeEntries.c:
     complete
     .text       start:0x0209b100 end:0x0209b1e8
 
-src/overlays/ov022/calls/Ov022_EnterState0E.c:
+src/overlays/field/ov022_battle/Ov022_EnterState0E.c:
     complete
     .text       start:0x0209b1e8 end:0x0209b250
 
-src/overlays/ov022/calls/Ov022_ArmGuardWindow.c:
+src/overlays/field/ov022_battle/Ov022_ArmGuardWindow.c:
     complete
     .text       start:0x0209b250 end:0x0209b3c4
 
-src/overlays/ov022/calls/Ov022_SpendGuardOnHit.c:
+src/overlays/field/ov022_battle/Ov022_SpendGuardOnHit.c:
     complete
     .text       start:0x0209b3c4 end:0x0209b750
 
-src/overlays/ov022/calls/Ov022_StepChargeSequence.c:
+src/overlays/field/ov022_battle/Ov022_StepChargeSequence.c:
     complete
     .text       start:0x0209b750 end:0x0209bd04
 
-src/overlays/ov022/auto/Ov022_GetByte2770.c:
+src/overlays/field/ov022_battle/Ov022_GetByte2770.c:
     complete
     .text       start:0x0209bd04 end:0x0209bd10
 
-src/overlays/ov022/calls/Ov022_FireChargeRelease.c:
+src/overlays/field/ov022_battle/Ov022_FireChargeRelease.c:
     complete
     .text       start:0x0209bd10 end:0x0209bdbc
 
-src/overlays/ov022/auto/Ov022_SwapPairedStateFlags.c:
+src/overlays/field/ov022_battle/Ov022_SwapPairedStateFlags.c:
     complete
     .text       start:0x0209bdbc end:0x0209be44
 
-src/overlays/ov022/calls/Ov022_ResetStreamCursor.c:
+src/overlays/field/ov022_battle/Ov022_ResetStreamCursor.c:
     complete
     .text       start:0x0209be44 end:0x0209be64
 
-src/overlays/ov022/calls/Ov022_TickLevelTimer.c:
+src/overlays/field/ov022_battle/Ov022_TickLevelTimer.c:
     complete
     .text       start:0x0209be64 end:0x0209bec8
 
-src/overlays/ov022/calls/func_ov022_0209bec8.c:
+src/overlays/field/ov022_battle/func_ov022_0209bec8.c:
     complete
     .text       start:0x0209bec8 end:0x0209bf54
 
-src/overlays/ov022/calls/Ov022_ResetActionBlockFromTable.c:
+src/overlays/field/ov022_battle/Ov022_ResetActionBlockFromTable.c:
     complete
     .text       start:0x0209bf54 end:0x0209bfc0
 
-src/overlays/ov022/calls/Ov022_UpdateRumble.c:
+src/overlays/field/ov022_battle/Ov022_UpdateRumble.c:
     complete
     .text       start:0x0209bfc0 end:0x0209c4e0
 
-src/overlays/ov022/calls/Ov022_AdvanceComboGauge.c:
+src/overlays/field/ov022_battle/Ov022_AdvanceComboGauge.c:
     complete
     .text       start:0x0209c4e0 end:0x0209c5ec
 
-src/overlays/ov022/calls/Ov022_BuildActorSlot.c:
+src/overlays/field/ov022_battle/Ov022_BuildActorSlot.c:
     complete
     .text       start:0x0209c5ec end:0x0209c6c4
 
-src/overlays/ov022/calls/Ov022_CommitPanes.c:
+src/overlays/field/ov022_battle/Ov022_CommitPanes.c:
     complete
     .text       start:0x0209c6c4 end:0x0209c700
 
-src/overlays/ov022/calls/func_ov022_0209c700.c:
+src/overlays/field/ov022_battle/func_ov022_0209c700.c:
     complete
     .text       start:0x0209c700 end:0x0209c774
 
-src/overlays/ov022/calls/func_ov022_0209c774.c:
+src/overlays/field/ov022_battle/func_ov022_0209c774.c:
     complete
     .text       start:0x0209c774 end:0x0209c7dc
 
-src/overlays/ov022/calls/Ov022_SubmitGaugeValue.c:
+src/overlays/field/ov022_battle/Ov022_SubmitGaugeValue.c:
     complete
     .text       start:0x0209c7dc end:0x0209c870
 
-src/overlays/ov022/calls/Ov022_DropGroundMark.c:
+src/overlays/field/ov022_battle/Ov022_DropGroundMark.c:
     complete
     .text       start:0x0209c870 end:0x0209c9fc
 
-src/overlays/ov022/calls/func_ov022_0209c9fc.c:
+src/overlays/field/ov022_battle/func_ov022_0209c9fc.c:
     complete
     .text       start:0x0209c9fc end:0x0209ca88
 
-src/overlays/ov022/calls/func_ov022_0209ca88.c:
+src/overlays/field/ov022_battle/func_ov022_0209ca88.c:
     complete
     .text       start:0x0209ca88 end:0x0209cac0
 
-src/overlays/ov022/calls/Ov022_BuildEffectSlots.c:
+src/overlays/field/ov022_battle/Ov022_BuildEffectSlots.c:
     complete
     .text       start:0x0209cac0 end:0x0209cc68
 
-src/overlays/ov022/calls/func_ov022_0209cc68.c:
+src/overlays/field/ov022_battle/func_ov022_0209cc68.c:
     complete
     .text       start:0x0209cc68 end:0x0209ccb0
 
-src/overlays/ov022/calls/func_ov022_0209ccb0.c:
+src/overlays/field/ov022_battle/func_ov022_0209ccb0.c:
     complete
     .text       start:0x0209ccb0 end:0x0209ccf4
 
-src/overlays/ov022/calls/Ov022_SendInterruptRecord.c:
+src/overlays/field/ov022_battle/Ov022_SendInterruptRecord.c:
     complete
     .text       start:0x0209ccf4 end:0x0209cda8
 
-src/overlays/ov022/calls/Ov022_LoadActorEffects.c:
+src/overlays/field/ov022_battle/Ov022_LoadActorEffects.c:
     complete
     .text       start:0x0209cda8 end:0x0209cee8
 
-src/overlays/ov022/calls/Ov022_ReleaseAllSubsystems.c:
+src/overlays/field/ov022_battle/Ov022_ReleaseAllSubsystems.c:
     complete
     .text       start:0x0209cee8 end:0x0209cf58
 
-src/overlays/ov022/calls/Ov022_SendAimAtTarget.c:
+src/overlays/field/ov022_battle/Ov022_SendAimAtTarget.c:
     complete
     .text       start:0x0209cf58 end:0x0209d08c
 
-src/overlays/ov022/calls/func_ov022_0209d08c.c:
+src/overlays/field/ov022_battle/func_ov022_0209d08c.c:
     complete
     .text       start:0x0209d08c end:0x0209d0b0
 
-src/overlays/ov022/calls/func_ov022_0209d0b0.c:
+src/overlays/field/ov022_battle/func_ov022_0209d0b0.c:
     complete
     .text       start:0x0209d0b0 end:0x0209d10c
 
-src/overlays/ov022/calls/Ov022_VeneerTo_Ov022_CopyBlock2c00.c:
+src/overlays/field/ov022_battle/Ov022_VeneerTo_Ov022_CopyBlock2c00.c:
     complete
     .text       start:0x0209d10c end:0x0209d118
 
-src/overlays/ov022/calls/Ov022_TickChargeTimer.c:
+src/overlays/field/ov022_battle/Ov022_TickChargeTimer.c:
     complete
     .text       start:0x0209d118 end:0x0209d1c0
 
-src/overlays/ov022/calls/Ov022_CopyBlock2c00.c:
+src/overlays/field/ov022_battle/Ov022_CopyBlock2c00.c:
     complete
     .text       start:0x0209d1c0 end:0x0209d1d8
 
-src/overlays/ov022/calls/Ov022_RegisterSequence.c:
+src/overlays/field/ov022_battle/Ov022_RegisterSequence.c:
     complete
     .text       start:0x0209d1d8 end:0x0209d278
 
-src/overlays/ov022/calls/func_ov022_0209d278.c:
+src/overlays/field/ov022_battle/func_ov022_0209d278.c:
     complete
     .text       start:0x0209d278 end:0x0209d2bc
 
-src/overlays/ov022/calls/Ov022_PlayHitFeedback.c:
+src/overlays/field/ov022_battle/Ov022_PlayHitFeedback.c:
     complete
     .text       start:0x0209d2bc end:0x0209d3a0
 
-src/overlays/ov022/calls/func_ov022_0209d3a0.c:
+src/overlays/field/ov022_battle/func_ov022_0209d3a0.c:
     complete
     .text       start:0x0209d3a0 end:0x0209d440
 
-src/overlays/ov022/calls/Ov022_ChargeGaugeForHit.c:
+src/overlays/field/ov022_battle/Ov022_ChargeGaugeForHit.c:
     complete
     .text       start:0x0209d440 end:0x0209d5a4
 
-src/overlays/ov022/calls/Ov022_TurnAwayFromDrift.c:
+src/overlays/field/ov022_battle/Ov022_TurnAwayFromDrift.c:
     complete
     .text       start:0x0209d5a4 end:0x0209d6c0
 
-src/overlays/ov022/calls/Ov022_ResolveGuardBreakState.c:
+src/overlays/field/ov022_battle/Ov022_ResolveGuardBreakState.c:
     complete
     .text       start:0x0209d6c0 end:0x0209d7a4
 
-src/overlays/ov022/auto/func_ov022_0209d7a4.c:
+src/overlays/field/ov022_battle/func_ov022_0209d7a4.c:
     complete
     .text       start:0x0209d7a4 end:0x0209d7c0
 
-src/overlays/ov022/calls/Ov022_TryBlockHit.c:
+src/overlays/field/ov022_battle/Ov022_TryBlockHit.c:
     complete
     .text       start:0x0209d7c0 end:0x0209df9c
 
-src/overlays/ov022/calls/Ov022_TryTriggerFinisher.c:
+src/overlays/field/ov022_battle/Ov022_TryTriggerFinisher.c:
     complete
     .text       start:0x0209df9c end:0x0209e0d8
 
-src/overlays/ov022/calls/Ov022_TestCapsuleReach.c:
+src/overlays/field/ov022_battle/Ov022_TestCapsuleReach.c:
     complete
     .text       start:0x0209e0d8 end:0x0209e1b0
 
-src/overlays/ov022/calls/Ov022_SweepFanOverGroup.c:
+src/overlays/field/ov022_battle/Ov022_SweepFanOverGroup.c:
     complete
     .text       start:0x0209e1b0 end:0x0209e398
 
-src/overlays/ov022/calls/Ov022_SweepCapsuleOverGroup.c:
+src/overlays/field/ov022_battle/Ov022_SweepCapsuleOverGroup.c:
     complete
     .text       start:0x0209e398 end:0x0209e4a4
 
-src/overlays/ov022/calls/func_ov022_0209e4a4.c:
+src/overlays/field/ov022_battle/func_ov022_0209e4a4.c:
     complete
     .text       start:0x0209e4a4 end:0x0209e540
 
-src/overlays/ov022/calls/Ov022_SweepFanOverParts.c:
+src/overlays/field/ov022_battle/Ov022_SweepFanOverParts.c:
     complete
     .text       start:0x0209e540 end:0x0209e830
 
-src/overlays/ov022/calls/Ov022_SweepCapsuleOverParts.c:
+src/overlays/field/ov022_battle/Ov022_SweepCapsuleOverParts.c:
     complete
     .text       start:0x0209e830 end:0x0209ea44
 
-src/overlays/ov022/auto/Ov022_IsEntryUsableAndNotInList.c:
+src/overlays/field/ov022_battle/Ov022_IsEntryUsableAndNotInList.c:
     complete
     .text       start:0x0209ea44 end:0x0209eac4
 
-src/overlays/ov022/calls/Ov022_SweepFanOverEntries.c:
+src/overlays/field/ov022_battle/Ov022_SweepFanOverEntries.c:
     complete
     .text       start:0x0209eac4 end:0x0209ecc8
 
-src/overlays/ov022/calls/Ov022_SweepCapsuleOverEntries.c:
+src/overlays/field/ov022_battle/Ov022_SweepCapsuleOverEntries.c:
     complete
     .text       start:0x0209ecc8 end:0x0209ee54
 
-src/overlays/ov022/calls/func_ov022_0209ee54.c:
+src/overlays/field/ov022_battle/func_ov022_0209ee54.c:
     complete
     .text       start:0x0209ee54 end:0x0209eed8
 
-src/overlays/ov022/calls/Ov022_LoadCueTables.c:
+src/overlays/field/ov022_battle/Ov022_LoadCueTables.c:
     complete
     .text       start:0x0209eed8 end:0x0209f0b8
 
-src/overlays/ov022/calls/func_ov022_0209f0b8.c:
+src/overlays/field/ov022_battle/func_ov022_0209f0b8.c:
     complete
     .text       start:0x0209f0b8 end:0x0209f118
 
-src/overlays/ov022/calls/Ov022_PickComboPhase.c:
+src/overlays/field/ov022_battle/Ov022_PickComboPhase.c:
     complete
     .text       start:0x0209f118 end:0x0209f370
 
-src/overlays/ov022/calls/Ov022_StepComboMotion.c:
+src/overlays/field/ov022_battle/Ov022_StepComboMotion.c:
     complete
     .text       start:0x0209f370 end:0x0209f6e0
 
-src/overlays/ov022/calls/Ov022_InitActor.c:
+src/overlays/field/ov022_battle/Ov022_InitActor.c:
     complete
     .text       start:0x0209f6e0 end:0x0209fab4
 
-src/overlays/ov022/calls/Ov022_DestroyRoot.c:
+src/overlays/field/ov022_battle/Ov022_DestroyRoot.c:
     complete
     .text       start:0x0209fab4 end:0x0209fb24
 
-src/overlays/ov022/calls/Ov022_ArmDecoder.c:
+src/overlays/field/ov022_battle/Ov022_ArmDecoder.c:
     complete
     .text       start:0x0209fb24 end:0x0209fb50
 
-src/overlays/ov022/calls/Ov022_SetGlobalByte.c:
+src/overlays/field/ov022_battle/Ov022_SetGlobalByte.c:
     complete
     .text       start:0x0209fb50 end:0x0209fb60
 
-src/overlays/ov022/calls/func_ov022_0209fb60.c:
+src/overlays/field/ov022_battle/func_ov022_0209fb60.c:
     complete
     .text       start:0x0209fb60 end:0x0209fb98
 
-src/overlays/ov022/calls/Ov022_SetSlotClaim.c:
+src/overlays/field/ov022_battle/Ov022_SetSlotClaim.c:
     complete
     .text       start:0x0209fb98 end:0x0209fc48
 
-src/overlays/ov022/auto/Ov022_IsIndexedRecordBit0Set.c:
+src/overlays/field/ov022_battle/Ov022_IsIndexedRecordBit0Set.c:
     complete
     .text       start:0x0209fc48 end:0x0209fc78
 
-src/overlays/ov022/auto/func_ov022_0209fc78.c:
+src/overlays/field/ov022_battle/func_ov022_0209fc78.c:
     complete
     .text       start:0x0209fc78 end:0x0209fcd4
 
-src/overlays/ov022/calls/func_ov022_0209fcd4.c:
+src/overlays/field/ov022_battle/func_ov022_0209fcd4.c:
     complete
     .text       start:0x0209fcd4 end:0x0209fd54
 
-src/overlays/ov022/calls/Ov022_RunReplayFrame.c:
+src/overlays/field/ov022_battle/Ov022_RunReplayFrame.c:
     complete
     .text       start:0x0209fd54 end:0x0209fe20
 
-src/overlays/ov022/calls/Ov022_StepAnchorDelta.c:
+src/overlays/field/ov022_battle/Ov022_StepAnchorDelta.c:
     complete
     .text       start:0x0209fe20 end:0x020a0008
 
-src/overlays/ov022/calls/Ov022_ActorUpdate.c:
+src/overlays/field/ov022_battle/Ov022_ActorUpdate.c:
     complete
     .text       start:0x020a0008 end:0x020a0678
 
-src/overlays/ov022/calls/func_ov022_020a0678.c:
+src/overlays/field/ov022_battle/func_ov022_020a0678.c:
     complete
     .text       start:0x020a0678 end:0x020a06bc
 
-src/overlays/ov022/calls/Ov022_RunPendingHitCallback.c:
+src/overlays/field/ov022_battle/Ov022_RunPendingHitCallback.c:
     complete
     .text       start:0x020a06bc end:0x020a0710
 
-src/overlays/ov022/calls/Ov022_TickSubObjectChain.c:
+src/overlays/field/ov022_battle/Ov022_TickSubObjectChain.c:
     complete
     .text       start:0x020a0710 end:0x020a0814
 
-src/overlays/ov022/auto/func_ov022_020a0814.c:
+src/overlays/field/ov022_battle/func_ov022_020a0814.c:
     complete
     .text       start:0x020a0814 end:0x020a0870
 
-src/overlays/ov022/calls/func_ov022_020a0870.c:
+src/overlays/field/ov022_battle/func_ov022_020a0870.c:
     complete
     .text       start:0x020a0870 end:0x020a08a8
 
-src/overlays/ov022/calls/Ov022_ReceiveHit.c:
+src/overlays/field/ov022_battle/Ov022_ReceiveHit.c:
     complete
     .text       start:0x020a08a8 end:0x020a0f2c
 
-src/overlays/ov022/calls/func_ov022_020a0f2c.c:
+src/overlays/field/ov022_battle/func_ov022_020a0f2c.c:
     complete
     .text       start:0x020a0f2c end:0x020a0f60
 
-src/overlays/ov022/calls/Ov022_RefreshSharedPanel.c:
+src/overlays/field/ov022_battle/Ov022_RefreshSharedPanel.c:
     complete
     .text       start:0x020a0f60 end:0x020a0fb8
 
-src/overlays/ov022/calls/Ov022_RunCommandHandlers.c:
+src/overlays/field/ov022_battle/Ov022_RunCommandHandlers.c:
     complete
     .text       start:0x020a0fb8 end:0x020a1064
 
-src/overlays/ov022/calls/Ov022_RunReachHandlers.c:
+src/overlays/field/ov022_battle/Ov022_RunReachHandlers.c:
     complete
     .text       start:0x020a1064 end:0x020a1118
 
-src/overlays/ov022/calls/Ov022_BuildHitPush.c:
+src/overlays/field/ov022_battle/Ov022_BuildHitPush.c:
     complete
     .text       start:0x020a1118 end:0x020a1258
 
-src/overlays/ov022/calls/Ov022_ReportHit.c:
+src/overlays/field/ov022_battle/Ov022_ReportHit.c:
     complete
     .text       start:0x020a1258 end:0x020a1330
 
-src/overlays/ov022/calls/Ov022_SendSweepHit.c:
+src/overlays/field/ov022_battle/Ov022_SendSweepHit.c:
     complete
     .text       start:0x020a1330 end:0x020a1870
 
-src/overlays/ov022/calls/Ov022_DeliverHit.c:
+src/overlays/field/ov022_battle/Ov022_DeliverHit.c:
     complete
     .text       start:0x020a1870 end:0x020a1c28
 
-src/overlays/ov022/calls/func_ov022_020a1c28.c:
+src/overlays/field/ov022_battle/func_ov022_020a1c28.c:
     complete
     .text       start:0x020a1c28 end:0x020a1c80
 
-src/overlays/ov022/calls/func_ov022_020a1c80.c:
+src/overlays/field/ov022_battle/func_ov022_020a1c80.c:
     complete
     .text       start:0x020a1c80 end:0x020a1cd8
 
-src/overlays/ov022/calls/Ov022_ResolveReachSweep.c:
+src/overlays/field/ov022_battle/Ov022_ResolveReachSweep.c:
     complete
     .text       start:0x020a1cd8 end:0x020a1f84
 
-src/overlays/ov022/calls/Ov022_ComputeStrengthDamage.c:
+src/overlays/field/ov022_battle/Ov022_ComputeStrengthDamage.c:
     complete
     .text       start:0x020a1f84 end:0x020a216c
 
-src/overlays/ov022/calls/Ov022_GetActorValue.c:
+src/overlays/field/ov022_battle/Ov022_GetActorValue.c:
     complete
     .text       start:0x020a216c end:0x020a2230
 
-src/overlays/ov022/calls/Ov022_LookupRowValue.c:
+src/overlays/field/ov022_battle/Ov022_LookupRowValue.c:
     complete
     .text       start:0x020a2230 end:0x020a22f0
 
-src/overlays/ov022/calls/Ov022_SearchMatchingRow.c:
+src/overlays/field/ov022_battle/Ov022_SearchMatchingRow.c:
     complete
     .text       start:0x020a22f0 end:0x020a23a4
 
-src/overlays/ov022/calls/Ov022_ScaleRowValues.c:
+src/overlays/field/ov022_battle/Ov022_ScaleRowValues.c:
     complete
     .text       start:0x020a23a4 end:0x020a2424
 
-src/overlays/ov022/calls/Ov022_ComputeDamageTaken.c:
+src/overlays/field/ov022_battle/Ov022_ComputeDamageTaken.c:
     complete
     .text       start:0x020a2424 end:0x020a2954
 
-src/overlays/ov022/auto/Ov022_FillEightHalvesMinus1At0x2bd4.c:
+src/overlays/field/ov022_battle/Ov022_FillEightHalvesMinus1At0x2bd4.c:
     complete
     .text       start:0x020a2954 end:0x020a2978
 
-src/overlays/ov022/calls/Ov022_UpdateCommandInput.c:
+src/overlays/field/ov022_battle/Ov022_UpdateCommandInput.c:
     complete
     .text       start:0x020a2978 end:0x020a31b4
 
-src/overlays/ov022/calls/Ov022_TranslateCommandToAction.c:
+src/overlays/field/ov022_battle/Ov022_TranslateCommandToAction.c:
     complete
     .text       start:0x020a31b4 end:0x020a35f4
 
-src/overlays/ov022/calls/Ov022_ActorSetState.c:
+src/overlays/field/ov022_battle/Ov022_ActorSetState.c:
     complete
     .text       start:0x020a35f4 end:0x020a37d0
 
-src/overlays/ov022/calls/func_ov022_020a37d0.c:
+src/overlays/field/ov022_battle/func_ov022_020a37d0.c:
     complete
     .text       start:0x020a37d0 end:0x020a384c
 
-src/overlays/ov022/calls/Ov022_SetAnimState.c:
+src/overlays/field/ov022_battle/Ov022_SetAnimState.c:
     complete
     .text       start:0x020a384c end:0x020a3c78
 
-src/overlays/ov022/calls/func_ov022_020a3c78.c:
+src/overlays/field/ov022_battle/func_ov022_020a3c78.c:
     complete
     .text       start:0x020a3c78 end:0x020a3ccc
 
-src/overlays/ov022/calls/Ov022_SteerIdleByAim.c:
+src/overlays/field/ov022_battle/Ov022_SteerIdleByAim.c:
     complete
     .text       start:0x020a3ccc end:0x020a4238
 
-src/overlays/ov022/calls/Ov022_StepReactionCues.c:
+src/overlays/field/ov022_battle/Ov022_StepReactionCues.c:
     complete
     .text       start:0x020a4238 end:0x020a4490
 
-src/overlays/ov022/calls/Ov022_PlayEntityVoice.c:
+src/overlays/field/ov022_battle/Ov022_PlayEntityVoice.c:
     complete
     .text       start:0x020a4490 end:0x020a46f8
 
-src/overlays/ov022/calls/Ov022_ReleaseNodeSlotResources.c:
+src/overlays/field/ov022_battle/Ov022_ReleaseNodeSlotResources.c:
     complete
     .text       start:0x020a46f8 end:0x020a4798
 
-src/overlays/ov022/calls/Ov022_RequestVoiceIds.c:
+src/overlays/field/ov022_battle/Ov022_RequestVoiceIds.c:
     complete
     .text       start:0x020a4798 end:0x020a48c8
 
-src/overlays/ov022/calls/Ov022_SpawnVoiceCue.c:
+src/overlays/field/ov022_battle/Ov022_SpawnVoiceCue.c:
     complete
     .text       start:0x020a48c8 end:0x020a49e0
 
-src/overlays/ov022/calls/Ov022_StepComboState.c:
+src/overlays/field/ov022_battle/Ov022_StepComboState.c:
     complete
     .text       start:0x020a49e0 end:0x020a5570
 
-src/overlays/ov022/calls/Ov022_RunComboContacts.c:
+src/overlays/field/ov022_battle/Ov022_RunComboContacts.c:
     complete
     .text       start:0x020a5570 end:0x020a5768
 
-src/overlays/ov022/calls/Ov022_RunContactMode0.c:
+src/overlays/field/ov022_battle/Ov022_RunContactMode0.c:
     complete
     .text       start:0x020a5768 end:0x020a59b8
 
-src/overlays/ov022/calls/Ov022_RunContactMode1.c:
+src/overlays/field/ov022_battle/Ov022_RunContactMode1.c:
     complete
     .text       start:0x020a59b8 end:0x020a5d18
 
-src/overlays/ov022/calls/Ov022_RunContactMode2.c:
+src/overlays/field/ov022_battle/Ov022_RunContactMode2.c:
     complete
     .text       start:0x020a5d18 end:0x020a5f28
 
-src/overlays/ov022/calls/Ov022_EmitEventBlocks.c:
+src/overlays/field/ov022_battle/Ov022_EmitEventBlocks.c:
     complete
     .text       start:0x020a5f28 end:0x020a5ff4
 
-src/overlays/ov022/calls/Ov022_ShapeMotionDelta.c:
+src/overlays/field/ov022_battle/Ov022_ShapeMotionDelta.c:
     complete
     .text       start:0x020a5ff4 end:0x020a64e0
 
-src/overlays/ov022/calls/Ov022_StepJumpState.c:
+src/overlays/field/ov022_battle/Ov022_StepJumpState.c:
     complete
     .text       start:0x020a64e0 end:0x020a6d0c
 
-src/overlays/ov022/calls/Ov022_DispatchIdleInput.c:
+src/overlays/field/ov022_battle/Ov022_DispatchIdleInput.c:
     complete
     .text       start:0x020a6d0c end:0x020a6f9c
 
-src/overlays/ov022/calls/func_ov022_020a6f9c.c:
+src/overlays/field/ov022_battle/func_ov022_020a6f9c.c:
     complete
     .text       start:0x020a6f9c end:0x020a7018
 
-src/overlays/ov022/calls/Ov022_UpdateTailState.c:
+src/overlays/field/ov022_battle/Ov022_UpdateTailState.c:
     complete
     .text       start:0x020a7018 end:0x020a70cc
 
-src/overlays/ov022/calls/Ov022_StepStaggerState.c:
+src/overlays/field/ov022_battle/Ov022_StepStaggerState.c:
     complete
     .text       start:0x020a70cc end:0x020a72f8
 
-src/overlays/ov022/calls/Ov022_StepActorState.c:
+src/overlays/field/ov022_battle/Ov022_StepActorState.c:
     complete
     .text       start:0x020a72f8 end:0x020a74d0
 
-src/overlays/ov022/calls/Ov022_StepAimJumpState.c:
+src/overlays/field/ov022_battle/Ov022_StepAimJumpState.c:
     complete
     .text       start:0x020a74d0 end:0x020a7a38
 
-src/overlays/ov022/calls/Ov022_StepAnchorApproachState.c:
+src/overlays/field/ov022_battle/Ov022_StepAnchorApproachState.c:
     complete
     .text       start:0x020a7a38 end:0x020a7d80
 
-src/overlays/ov022/calls/Ov022_StepActorFollow.c:
+src/overlays/field/ov022_battle/Ov022_StepActorFollow.c:
     complete
     .text       start:0x020a7d80 end:0x020a8020
 
-src/overlays/ov022/calls/Ov022_StepInterruptible.c:
+src/overlays/field/ov022_battle/Ov022_StepInterruptible.c:
     complete
     .text       start:0x020a8020 end:0x020a8354
 
-src/overlays/ov022/calls/Ov022_StepAnchorReadyState.c:
+src/overlays/field/ov022_battle/Ov022_StepAnchorReadyState.c:
     complete
     .text       start:0x020a8354 end:0x020a8764
 
-src/overlays/ov022/calls/Ov022_StepAnchoredState.c:
+src/overlays/field/ov022_battle/Ov022_StepAnchoredState.c:
     complete
     .text       start:0x020a8764 end:0x020a8940
 
-src/overlays/ov022/calls/Ov022_ResetActorAfterPlace.c:
+src/overlays/field/ov022_battle/Ov022_ResetActorAfterPlace.c:
     complete
     .text       start:0x020a8940 end:0x020a8b54
 
-src/overlays/ov022/calls/Ov022_StepLungeState.c:
+src/overlays/field/ov022_battle/Ov022_StepLungeState.c:
     complete
     .text       start:0x020a8b54 end:0x020a8ec0
 
-src/overlays/ov022/calls/Ov022_StepKnockout.c:
+src/overlays/field/ov022_battle/Ov022_StepKnockout.c:
     complete
     .text       start:0x020a8ec0 end:0x020a947c
 
-src/overlays/ov022/calls/Ov022_StepDodgeRollState.c:
+src/overlays/field/ov022_battle/Ov022_StepDodgeRollState.c:
     complete
     .text       start:0x020a947c end:0x020a98b4
 
-src/overlays/ov022/calls/Ov022_StepGlideState.c:
+src/overlays/field/ov022_battle/Ov022_StepGlideState.c:
     complete
     .text       start:0x020a98b4 end:0x020aa788
 
-src/overlays/ov022/calls/Ov022_PlayCueForKind.c:
+src/overlays/field/ov022_battle/Ov022_PlayCueForKind.c:
     complete
     .text       start:0x020aa788 end:0x020aa824
 
-src/overlays/ov022/calls/Ov022_DriveOwnedSound.c:
+src/overlays/field/ov022_battle/Ov022_DriveOwnedSound.c:
     complete
     .text       start:0x020aa824 end:0x020aa8e8
 
-src/overlays/ov022/calls/Ov022_ApplyItemEffect.c:
+src/overlays/field/ov022_battle/Ov022_ApplyItemEffect.c:
     complete
     .text       start:0x020aa8e8 end:0x020aac98
 
-src/overlays/ov022/calls/Ov022_StepHeldState.c:
+src/overlays/field/ov022_battle/Ov022_StepHeldState.c:
     complete
     .text       start:0x020aac98 end:0x020aaea0
 
-src/overlays/ov022/calls/Ov022_StepHeldMoveState.c:
+src/overlays/field/ov022_battle/Ov022_StepHeldMoveState.c:
     complete
     .text       start:0x020aaea0 end:0x020ab350
 
-src/overlays/ov022/auto/func_ov022_020ab350.c:
+src/overlays/field/ov022_battle/func_ov022_020ab350.c:
     complete
     .text       start:0x020ab350 end:0x020ab378
 
-src/overlays/ov022/calls/Ov022_StepDownedState.c:
+src/overlays/field/ov022_battle/Ov022_StepDownedState.c:
     complete
     .text       start:0x020ab378 end:0x020ab57c
 
-src/overlays/ov022/calls/Ov022_EndAnchoredAction.c:
+src/overlays/field/ov022_battle/Ov022_EndAnchoredAction.c:
     complete
     .text       start:0x020ab57c end:0x020ab764
 
-src/overlays/ov022/calls/Ov022_TryAdvanceAndClearBit13.c:
+src/overlays/field/ov022_battle/Ov022_TryAdvanceAndClearBit13.c:
     complete
     .text       start:0x020ab764 end:0x020ab810
 
-src/overlays/ov022/calls/Ov022_TryAdvanceAndClearBit11.c:
+src/overlays/field/ov022_battle/Ov022_TryAdvanceAndClearBit11.c:
     complete
     .text       start:0x020ab810 end:0x020ab8d0
 
-src/overlays/ov022/calls/Ov022_StepChargeState.c:
+src/overlays/field/ov022_battle/Ov022_StepChargeState.c:
     complete
     .text       start:0x020ab8d0 end:0x020abb6c
 
-src/overlays/ov022/calls/Ov022_StepChaseState.c:
+src/overlays/field/ov022_battle/Ov022_StepChaseState.c:
     complete
     .text       start:0x020abb6c end:0x020abe80
 
-src/overlays/ov022/calls/Ov022_StepRushState.c:
+src/overlays/field/ov022_battle/Ov022_StepRushState.c:
     complete
     .text       start:0x020abe80 end:0x020ac21c
 
-src/overlays/ov022/calls/Ov022_StepLaunchState.c:
+src/overlays/field/ov022_battle/Ov022_StepLaunchState.c:
     complete
     .text       start:0x020ac21c end:0x020ac480
 
-src/overlays/ov022/calls/Ov022_StepWalkState.c:
+src/overlays/field/ov022_battle/Ov022_StepWalkState.c:
     complete
     .text       start:0x020ac480 end:0x020ac6c8
 
-src/overlays/ov022/calls/Ov022_StepStuckRespawnState.c:
+src/overlays/field/ov022_battle/Ov022_StepStuckRespawnState.c:
     complete
     .text       start:0x020ac6c8 end:0x020acbf0
 
-src/overlays/ov022/calls/Ov022_RequestGuardBreak.c:
+src/overlays/field/ov022_battle/Ov022_RequestGuardBreak.c:
     complete
     .text       start:0x020acbf0 end:0x020acc94
 
-src/overlays/ov022/calls/Ov022_ActorSetHp.c:
+src/overlays/field/ov022_battle/Ov022_ActorSetHp.c:
     complete
     .text       start:0x020acc94 end:0x020ace24
 
-src/overlays/ov022/calls/Ov022_ApplyDamageAndFlagHit.c:
+src/overlays/field/ov022_battle/Ov022_ApplyDamageAndFlagHit.c:
     complete
     .text       start:0x020ace24 end:0x020acebc
 
-src/overlays/ov022/calls/func_ov022_020acebc.c:
+src/overlays/field/ov022_battle/func_ov022_020acebc.c:
     complete
     .text       start:0x020acebc end:0x020acf14
 
-src/overlays/ov022/calls/func_ov022_020acf14.c:
+src/overlays/field/ov022_battle/func_ov022_020acf14.c:
     complete
     .text       start:0x020acf14 end:0x020acfa4
 
-src/overlays/ov022/calls/Ov022_ResolveTargetPick.c:
+src/overlays/field/ov022_battle/Ov022_ResolveTargetPick.c:
     complete
     .text       start:0x020acfa4 end:0x020ad0c0
 
-src/overlays/ov022/calls/func_ov022_020ad0c0.c:
+src/overlays/field/ov022_battle/func_ov022_020ad0c0.c:
     complete
     .text       start:0x020ad0c0 end:0x020ad114
 
-src/overlays/ov022/calls/Ov022_ValidateTargetRef.c:
+src/overlays/field/ov022_battle/Ov022_ValidateTargetRef.c:
     complete
     .text       start:0x020ad114 end:0x020ad1b4
 
-src/overlays/ov022/calls/func_ov022_020ad1b4.c:
+src/overlays/field/ov022_battle/func_ov022_020ad1b4.c:
     complete
     .text       start:0x020ad1b4 end:0x020ad1d0
 
-src/overlays/ov022/auto/Ov022_GetSubKindIfState2.c:
+src/overlays/field/ov022_battle/Ov022_GetSubKindIfState2.c:
     complete
     .text       start:0x020ad1d0 end:0x020ad208
 
-src/overlays/ov022/calls/Ov022_MarshalNetworkRecord.c:
+src/overlays/field/ov022_battle/Ov022_MarshalNetworkRecord.c:
     complete
     .text       start:0x020ad208 end:0x020ad28c
 
-src/overlays/ov022/calls/func_ov022_020ad28c.c:
+src/overlays/field/ov022_battle/func_ov022_020ad28c.c:
     complete
     .text       start:0x020ad28c end:0x020ad2e4
 
-src/overlays/ov022/calls/func_ov022_020ad2e4.c:
+src/overlays/field/ov022_battle/func_ov022_020ad2e4.c:
     complete
     .text       start:0x020ad2e4 end:0x020ad338
 
-src/overlays/ov022/calls/func_ov022_020ad338.c:
+src/overlays/field/ov022_battle/func_ov022_020ad338.c:
     complete
     .text       start:0x020ad338 end:0x020ad358
 
-src/overlays/ov022/calls/Ov022_ArmChargeIfReady.c:
+src/overlays/field/ov022_battle/Ov022_ArmChargeIfReady.c:
     complete
     .text       start:0x020ad358 end:0x020ad44c
 
-src/overlays/ov022/calls/func_ov022_020ad44c.c:
+src/overlays/field/ov022_battle/func_ov022_020ad44c.c:
     complete
     .text       start:0x020ad44c end:0x020ad474
 
-src/overlays/ov022/auto/func_ov022_020ad474.c:
+src/overlays/field/ov022_battle/func_ov022_020ad474.c:
     complete
     .text       start:0x020ad474 end:0x020ad4e8
 
-src/overlays/ov022/auto/Ov022_ClampAngleTowardTarget.c:
+src/overlays/field/ov022_battle/Ov022_ClampAngleTowardTarget.c:
     complete
     .text       start:0x020ad4e8 end:0x020ad588
 
-src/overlays/ov022/calls/func_ov022_020ad588.c:
+src/overlays/field/ov022_battle/func_ov022_020ad588.c:
     complete
     .text       start:0x020ad588 end:0x020ad5f4
 
-src/overlays/ov022/calls/func_ov022_020ad5f4.c:
+src/overlays/field/ov022_battle/func_ov022_020ad5f4.c:
     complete
     .text       start:0x020ad5f4 end:0x020ad61c
 
-src/overlays/ov022/calls/Ov022_ForwardArg1.c:
+src/overlays/field/ov022_battle/Ov022_ForwardArg1.c:
     complete
     .text       start:0x020ad61c end:0x020ad62c
 
-src/overlays/ov022/calls/Ov022_FillEffectBlocks.c:
+src/overlays/field/ov022_battle/Ov022_FillEffectBlocks.c:
     complete
     .text       start:0x020ad62c end:0x020ad718
 
-src/overlays/ov022/calls/Ov022_FollowGroundRumble.c:
+src/overlays/field/ov022_battle/Ov022_FollowGroundRumble.c:
     complete
     .text       start:0x020ad718 end:0x020ad7b0
 
-src/overlays/ov022/calls/func_ov022_020ad7b0.c:
+src/overlays/field/ov022_battle/func_ov022_020ad7b0.c:
     complete
     .text       start:0x020ad7b0 end:0x020ad7f0
 
-src/overlays/ov022/calls/Ov022_GetSlotPos.c:
+src/overlays/field/ov022_battle/Ov022_GetSlotPos.c:
     complete
     .text       start:0x020ad7f0 end:0x020ad838
 
-src/overlays/ov022/auto/func_ov022_020ad838.c:
+src/overlays/field/ov022_battle/func_ov022_020ad838.c:
     complete
     .text       start:0x020ad838 end:0x020ad8e0
 
-src/overlays/ov022/calls/Ov022_ToggleBit13ByMode.c:
+src/overlays/field/ov022_battle/Ov022_ToggleBit13ByMode.c:
     complete
     .text       start:0x020ad8e0 end:0x020ad9b0
 
-src/overlays/ov022/calls/Ov022_StepPartnerSlot.c:
+src/overlays/field/ov022_battle/Ov022_StepPartnerSlot.c:
     complete
     .text       start:0x020ad9b0 end:0x020ae8a4
 
-src/overlays/ov022/calls/Ov022_SteerPartnerToPoint.c:
+src/overlays/field/ov022_battle/Ov022_SteerPartnerToPoint.c:
     complete
     .text       start:0x020ae8a4 end:0x020aed60
 
-src/overlays/ov022/calls/Ov022_StepFollowSlot.c:
+src/overlays/field/ov022_battle/Ov022_StepFollowSlot.c:
     complete
     .text       start:0x020aed60 end:0x020aeef8
 
-src/overlays/ov022/calls/func_ov022_020aeef8.c:
+src/overlays/field/ov022_battle/func_ov022_020aeef8.c:
     complete
     .text       start:0x020aeef8 end:0x020aef50
 
-src/overlays/ov022/calls/Ov022_FindApproachDir.c:
+src/overlays/field/ov022_battle/Ov022_FindApproachDir.c:
     complete
     .text       start:0x020aef50 end:0x020af180
 
-src/overlays/ov022/calls/Ov022_DrivePartnerTarget.c:
+src/overlays/field/ov022_battle/Ov022_DrivePartnerTarget.c:
     complete
     .text       start:0x020af180 end:0x020af930
 
-src/overlays/ov022/calls/Ov022_RollSlotRetreat.c:
+src/overlays/field/ov022_battle/Ov022_RollSlotRetreat.c:
     complete
     .text       start:0x020af930 end:0x020afabc
 
-src/overlays/ov022/calls/Ov022_DecidePartnerAid.c:
+src/overlays/field/ov022_battle/Ov022_DecidePartnerAid.c:
     complete
     .text       start:0x020afabc end:0x020afd0c
 
-src/overlays/ov022/calls/func_ov022_020afd0c.c:
+src/overlays/field/ov022_battle/func_ov022_020afd0c.c:
     complete
     .text       start:0x020afd0c end:0x020afd38
 
-src/overlays/ov022/calls/func_ov022_020afd38.c:
+src/overlays/field/ov022_battle/func_ov022_020afd38.c:
     complete
     .text       start:0x020afd38 end:0x020afd78
 
-src/overlays/ov022/calls/func_ov022_020afd78.c:
+src/overlays/field/ov022_battle/func_ov022_020afd78.c:
     complete
     .text       start:0x020afd78 end:0x020afe14
 
-src/overlays/ov022/calls/Ov022_RebaseAnimRecord.c:
+src/overlays/field/ov022_battle/Ov022_RebaseAnimRecord.c:
     complete
     .text       start:0x020afe14 end:0x020afe86
 
-src/overlays/ov022/calls/Ov022_BuildNodeGraph.c:
+src/overlays/field/ov022_battle/Ov022_BuildNodeGraph.c:
     complete
     .text       start:0x020afe88 end:0x020aff84
 
-src/overlays/ov022/calls/Ov022_LinkActionAnims.c:
+src/overlays/field/ov022_battle/Ov022_LinkActionAnims.c:
     complete
     .text       start:0x020aff84 end:0x020b015e
 
-src/overlays/ov022/calls/Ov022_UnpackChannelGrid.c:
+src/overlays/field/ov022_battle/Ov022_UnpackChannelGrid.c:
     complete
     .text       start:0x020b0160 end:0x020b02a2
 
-src/overlays/ov022/auto/Ov022_FindOrClaimTagSlot.c:
+src/overlays/field/ov022_battle/Ov022_FindOrClaimTagSlot.c:
     complete
     .text       start:0x020b02a4 end:0x020b02d6
 
-src/overlays/ov022/calls/Ov022_LoadActionRows.c:
+src/overlays/field/ov022_battle/Ov022_LoadActionRows.c:
     complete
     .text       start:0x020b02d8 end:0x020b036c
 
-src/overlays/ov022/calls/Ov022_LoadActionVoices.c:
+src/overlays/field/ov022_battle/Ov022_LoadActionVoices.c:
     complete
     .text       start:0x020b036c end:0x020b064c
 
-src/overlays/ov022/calls/Ov022_ResetChannelGrid.c:
+src/overlays/field/ov022_battle/Ov022_ResetChannelGrid.c:
     complete
     .text       start:0x020b064c end:0x020b06d8
 
-src/overlays/ov022/calls/func_ov022_020b06d8.c:
+src/overlays/field/ov022_battle/func_ov022_020b06d8.c:
     complete
     .text       start:0x020b06d8 end:0x020b0720
 
-src/overlays/ov022/calls/Ov022_BuildActionTable.c:
+src/overlays/field/ov022_battle/Ov022_BuildActionTable.c:
     complete
     .text       start:0x020b0720 end:0x020b07f0
 
-src/overlays/ov022/calls/Ov022_TearDownActionTable.c:
+src/overlays/field/ov022_battle/Ov022_TearDownActionTable.c:
     complete
     .text       start:0x020b07f0 end:0x020b08f2
 
-src/overlays/ov022/calls/Ov022_StartGroupWalk.c:
+src/overlays/field/ov022_battle/Ov022_StartGroupWalk.c:
     complete
     .text       start:0x020b08f4 end:0x020b09c4
 
-src/overlays/ov022/auto/func_ov022_020b09c4.c:
+src/overlays/field/ov022_battle/func_ov022_020b09c4.c:
     complete
     .text       start:0x020b09c4 end:0x020b09e0
 
-src/overlays/ov022/calls/func_ov022_020b09e0.c:
+src/overlays/field/ov022_battle/func_ov022_020b09e0.c:
     complete
     .text       start:0x020b09e0 end:0x020b0a54
 
-src/overlays/ov022/calls/func_ov022_020b0a54.c:
+src/overlays/field/ov022_battle/func_ov022_020b0a54.c:
     complete
     .text       start:0x020b0a54 end:0x020b0ac8
 
-src/overlays/ov022/auto/Ov022_PickComboLockA.c:
+src/overlays/field/ov022_battle/Ov022_PickComboLockA.c:
     complete
     .text       start:0x020b0ac8 end:0x020b0b10
 
-src/overlays/ov022/auto/Ov022_PickComboLockB.c:
+src/overlays/field/ov022_battle/Ov022_PickComboLockB.c:
     complete
     .text       start:0x020b0b10 end:0x020b0b58
 
-src/overlays/ov022/auto/Ov022_LongestComboSlot.c:
+src/overlays/field/ov022_battle/Ov022_LongestComboSlot.c:
     complete
     .text       start:0x020b0b58 end:0x020b0ba8
 
-src/overlays/ov022/calls/Ov022_FindEntryByKind.c:
+src/overlays/field/ov022_battle/Ov022_FindEntryByKind.c:
     complete
     .text       start:0x020b0ba8 end:0x020b0bf0
 
-src/overlays/ov022/auto/Ov022_IsFrameInComboWindow.c:
+src/overlays/field/ov022_battle/Ov022_IsFrameInComboWindow.c:
     complete
     .text       start:0x020b0bf0 end:0x020b0c24
 
-src/overlays/ov022/auto/Ov022_ApplyScaleControl.c:
+src/overlays/field/ov022_battle/Ov022_ApplyScaleControl.c:
     complete
     .text       start:0x020b0c24 end:0x020b0d28
 
-src/overlays/ov022/calls/Ov022_DrawTaggedVoice.c:
+src/overlays/field/ov022_battle/Ov022_DrawTaggedVoice.c:
     complete
     .text       start:0x020b0d28 end:0x020b0e20
 
-src/overlays/ov022/auto/Ov022_ComboStateOpenOrSelf.c:
+src/overlays/field/ov022_battle/Ov022_ComboStateOpenOrSelf.c:
     complete
     .text       start:0x020b0e20 end:0x020b0e3c
 
-src/overlays/ov022/auto/Ov022_SetBit3IfClear.c:
+src/overlays/field/ov022_battle/Ov022_SetBit3IfClear.c:
     complete
     .text       start:0x020b0e3c end:0x020b0e50
 
-src/overlays/ov022/auto/Ov022_TestBit4.c:
+src/overlays/field/ov022_battle/Ov022_TestBit4.c:
     complete
     .text       start:0x020b0e50 end:0x020b0e64
 
-src/overlays/ov022/calls/Ov022_MarkSlotSeen.c:
+src/overlays/field/ov022_battle/Ov022_MarkSlotSeen.c:
     complete
     .text       start:0x020b0e64 end:0x020b0eb8
 
-src/overlays/ov022/calls/Ov022_SendSyncRequest.c:
+src/overlays/field/ov022_battle/Ov022_SendSyncRequest.c:
     complete
     .text       start:0x020b0eb8 end:0x020b0f2c
 
-src/overlays/ov022/calls/Ov022_InitSyncSession.c:
+src/overlays/field/ov022_battle/Ov022_InitSyncSession.c:
     complete
     .text       start:0x020b0f2c end:0x020b0ff8
 
-src/overlays/ov022/calls/func_ov022_020b0ff8.c:
+src/overlays/field/ov022_battle/func_ov022_020b0ff8.c:
     complete
     .text       start:0x020b0ff8 end:0x020b102c
 
-src/overlays/ov022/calls/Ov022_ResetVoiceBanks.c:
+src/overlays/field/ov022_battle/Ov022_ResetVoiceBanks.c:
     complete
     .text       start:0x020b102c end:0x020b1078
 
-src/overlays/ov022/auto/func_ov022_020b1078.c:
+src/overlays/field/ov022_battle/func_ov022_020b1078.c:
     complete
     .text       start:0x020b1078 end:0x020b10c8
 
-src/overlays/ov022/calls/Ov022_StepSyncRequest.c:
+src/overlays/field/ov022_battle/Ov022_StepSyncRequest.c:
     complete
     .text       start:0x020b10c8 end:0x020b11e8
 
-src/overlays/ov022/calls/Ov022_StartGridEntryLoad.c:
+src/overlays/field/ov022_battle/Ov022_StartGridEntryLoad.c:
     complete
     .text       start:0x020b11e8 end:0x020b1224
 
-src/overlays/ov022/calls/Ov022_ActivateSyncRequest.c:
+src/overlays/field/ov022_battle/Ov022_ActivateSyncRequest.c:
     complete
     .text       start:0x020b1224 end:0x020b1264
 
-src/overlays/ov022/calls/func_ov022_020b1264.c:
+src/overlays/field/ov022_battle/func_ov022_020b1264.c:
     complete
     .text       start:0x020b1264 end:0x020b1290
 
-src/overlays/ov022/calls/Ov022_BuildResNodeSet.c:
+src/overlays/field/ov022_battle/Ov022_BuildResNodeSet.c:
     complete
     .text       start:0x020b1290 end:0x020b145c
 
-src/overlays/ov022/calls/func_ov022_020b145c.c:
+src/overlays/field/ov022_battle/func_ov022_020b145c.c:
     complete
     .text       start:0x020b145c end:0x020b1484
 
-src/overlays/ov022/calls/func_ov022_020b1484.c:
+src/overlays/field/ov022_battle/func_ov022_020b1484.c:
     complete
     .text       start:0x020b1484 end:0x020b14a4
 
-src/overlays/ov022/calls/Ov022_AcquireGridSlot.c:
+src/overlays/field/ov022_battle/Ov022_AcquireGridSlot.c:
     complete
     .text       start:0x020b14a4 end:0x020b1510
 
-src/overlays/ov022/auto/func_ov022_020b1510.c:
+src/overlays/field/ov022_battle/func_ov022_020b1510.c:
     complete
     .text       start:0x020b1510 end:0x020b152c
 
-src/overlays/ov022/auto/Ov022_AdvanceFlagState.c:
+src/overlays/field/ov022_battle/Ov022_AdvanceFlagState.c:
     complete
     .text       start:0x020b152c end:0x020b1554
 
-src/overlays/ov022/calls/func_ov022_020b1554.c:
+src/overlays/field/ov022_battle/func_ov022_020b1554.c:
     complete
     .text       start:0x020b1554 end:0x020b15a4
 
-src/overlays/ov022/calls/func_ov022_020b15a4.c:
+src/overlays/field/ov022_battle/func_ov022_020b15a4.c:
     complete
     .text       start:0x020b15a4 end:0x020b15b0
 
-src/overlays/ov022/calls/Ov022_ConfigureGridSlotMode.c:
+src/overlays/field/ov022_battle/Ov022_ConfigureGridSlotMode.c:
     complete
     .text       start:0x020b15b0 end:0x020b1660
 
-src/overlays/ov022/auto/Ov022_ResolveRequestPart.c:
+src/overlays/field/ov022_battle/Ov022_ResolveRequestPart.c:
     complete
     .text       start:0x020b1660 end:0x020b1730
 
-src/overlays/ov022/calls/Ov022_StartAnimRequest.c:
+src/overlays/field/ov022_battle/Ov022_StartAnimRequest.c:
     complete
     .text       start:0x020b1730 end:0x020b1848
 
-src/overlays/ov022/calls/func_ov022_020b1848.c:
+src/overlays/field/ov022_battle/func_ov022_020b1848.c:
     complete
     .text       start:0x020b1848 end:0x020b18cc
 
-src/overlays/ov022/calls/Ov022_ResetByte8AndSetField4.c:
+src/overlays/field/ov022_battle/Ov022_ResetByte8AndSetField4.c:
     complete
     .text       start:0x020b18cc end:0x020b18de
 
-src/overlays/ov022/calls/Ov022_ReleaseIfFlags.c:
+src/overlays/field/ov022_battle/Ov022_ReleaseIfFlags.c:
     complete
     .text       start:0x020b18e0 end:0x020b18f8
 
-src/overlays/ov022/calls/Ov022_PostAnimRequest.c:
+src/overlays/field/ov022_battle/Ov022_PostAnimRequest.c:
     complete
     .text       start:0x020b18f8 end:0x020b19cc
 
-src/overlays/ov022/calls/func_ov022_020b19cc.c:
+src/overlays/field/ov022_battle/func_ov022_020b19cc.c:
     complete
     .text       start:0x020b19cc end:0x020b19ec
 
-src/overlays/ov022/calls/func_ov022_020b19ec.c:
+src/overlays/field/ov022_battle/func_ov022_020b19ec.c:
     complete
     .text       start:0x020b19ec end:0x020b1a24
 
-src/overlays/ov022/calls/Ov022_StepAnimRequest.c:
+src/overlays/field/ov022_battle/Ov022_StepAnimRequest.c:
     complete
     .text       start:0x020b1a24 end:0x020b1b74
 
-src/overlays/ov022/auto/Ov022_IsField8Eq3.c:
+src/overlays/field/ov022_battle/Ov022_IsField8Eq3.c:
     complete
     .text       start:0x020b1b74 end:0x020b1b88
 
-src/overlays/ov022/auto/Ov022_IsByte8ZeroOr3.c:
+src/overlays/field/ov022_battle/Ov022_IsByte8ZeroOr3.c:
     complete
     .text       start:0x020b1b88 end:0x020b1ba0
 
-src/overlays/ov022/auto/Ov022_GetByteCOrA.c:
+src/overlays/field/ov022_battle/Ov022_GetByteCOrA.c:
     complete
     .text       start:0x020b1ba0 end:0x020b1bb4
 
-src/overlays/ov022/calls/Ov022_ResetSlotBytes.c:
+src/overlays/field/ov022_battle/Ov022_ResetSlotBytes.c:
     complete
     .text       start:0x020b1bb4 end:0x020b1be8
 
-src/overlays/ov022/auto/func_ov022_020b1be8.c:
+src/overlays/field/ov022_battle/func_ov022_020b1be8.c:
     complete
     .text       start:0x020b1be8 end:0x020b1c08
 
-src/overlays/ov022/calls/Ov022_RecueTrack.c:
+src/overlays/field/ov022_battle/Ov022_RecueTrack.c:
     complete
     .text       start:0x020b1c08 end:0x020b1c4c
 
-src/overlays/ov022/calls/Ov022_StepCueQueue.c:
+src/overlays/field/ov022_battle/Ov022_StepCueQueue.c:
     complete
     .text       start:0x020b1c4c end:0x020b1cec
 
-src/overlays/ov022/auto/Ov022_StepCueTrack.c:
+src/overlays/field/ov022_battle/Ov022_StepCueTrack.c:
     complete
     .text       start:0x020b1cec end:0x020b1d54
 
-src/overlays/ov022/auto/func_ov022_020b1d54.c:
+src/overlays/field/ov022_battle/func_ov022_020b1d54.c:
     complete
     .text       start:0x020b1d54 end:0x020b1d90
 
-src/overlays/ov022/calls/Ov022_ProjectPointToScreen.c:
+src/overlays/field/ov022_battle/Ov022_ProjectPointToScreen.c:
     complete
     .text       start:0x020b1d90 end:0x020b1e48
 
-src/overlays/ov022/calls/Ov022_MenuStateToMarker.c:
+src/overlays/field/ov022_battle/Ov022_MenuStateToMarker.c:
     complete
     .text       start:0x020b1e48 end:0x020b1eb8
 
-src/overlays/ov022/calls/Ov022_LoadMarkerPanel.c:
+src/overlays/field/ov022_battle/Ov022_LoadMarkerPanel.c:
     complete
     .text       start:0x020b1eb8 end:0x020b1fc4
 
-src/overlays/ov022/calls/Ov022_FreeResourceSubLists.c:
+src/overlays/field/ov022_battle/Ov022_FreeResourceSubLists.c:
     complete
     .text       start:0x020b1fc4 end:0x020b201c
 
-src/overlays/ov022/auto/Ov022_SceneTickHookNoOp.c:
+src/overlays/field/ov022_battle/Ov022_SceneTickHookNoOp.c:
     complete
     .text       start:0x020b201c end:0x020b2020
 
-src/overlays/ov022/calls/Ov022_PlaceStateMarker.c:
+src/overlays/field/ov022_battle/Ov022_PlaceStateMarker.c:
     complete
     .text       start:0x020b2020 end:0x020b2118
 
-src/overlays/ov022/calls/Ov022_DrawStateMarker.c:
+src/overlays/field/ov022_battle/Ov022_DrawStateMarker.c:
     complete
     .text       start:0x020b2118 end:0x020b2240
 
-src/overlays/ov022/calls/Ov022_GetMarkerState.c:
+src/overlays/field/ov022_battle/Ov022_GetMarkerState.c:
     complete
     .text       start:0x020b2240 end:0x020b226c
 
-src/overlays/ov022/data/ov022_class_020b2894.c:
+src/overlays/field/ov022_battle/data/ov022_class_020b2894.c:
     complete
     .data       start:0x020b2894 end:0x020b28a8
 
-src/overlays/ov022/data/ov022_class_020b28a8.c:
+src/overlays/field/ov022_battle/data/ov022_class_020b28a8.c:
     complete
     .data       start:0x020b28a8 end:0x020b28bc
 
-src/overlays/ov022/data/ov022_class_020b28d4.c:
+src/overlays/field/ov022_battle/data/ov022_class_020b28d4.c:
     complete
     .data       start:0x020b28d4 end:0x020b28e8
 
-src/overlays/ov022/data/ov022_class_020b28f8.c:
+src/overlays/field/ov022_battle/data/ov022_class_020b28f8.c:
     complete
     .data       start:0x020b28f8 end:0x020b290c
 
-src/overlays/ov022/data/ov022_class_020b291c.c:
+src/overlays/field/ov022_battle/data/ov022_class_020b291c.c:
     complete
     .data       start:0x020b291c end:0x020b2930
 
-src/overlays/ov022/data/ov022_class_020b2930.c:
+src/overlays/field/ov022_battle/data/ov022_class_020b2930.c:
     complete
     .data       start:0x020b2930 end:0x020b2944
 
-src/overlays/ov022/data/ov022_class_020b2944.c:
+src/overlays/field/ov022_battle/data/ov022_class_020b2944.c:
     complete
     .data       start:0x020b2944 end:0x020b2958
 
-src/overlays/ov022/data/ov022_class_020b2db0.c:
+src/overlays/field/ov022_battle/data/ov022_class_020b2db0.c:
     complete
     .data       start:0x020b2db0 end:0x020b2dc4
 
-src/overlays/ov022/data/ov022_ctorargs_020b24fc.c:
+src/overlays/field/ov022_battle/data/ov022_ctorargs_020b24fc.c:
     complete
     .rodata     start:0x020b24fc end:0x020b2510
 
-src/overlays/ov022/data/ov022_ctorargs_020b2604.c:
+src/overlays/field/ov022_battle/data/ov022_ctorargs_020b2604.c:
     complete
     .rodata     start:0x020b2604 end:0x020b2618
 
-src/overlays/ov022/data/ov022_ctorargs_020b2618.c:
+src/overlays/field/ov022_battle/data/ov022_ctorargs_020b2618.c:
     complete
     .rodata     start:0x020b2618 end:0x020b262c
 
-src/overlays/ov022/data/ov022_ctorargs_020b262c.c:
+src/overlays/field/ov022_battle/data/ov022_ctorargs_020b262c.c:
     complete
     .rodata     start:0x020b262c end:0x020b2640
 
-src/overlays/ov022/data/ov022_ctorargs_020b2640.c:
+src/overlays/field/ov022_battle/data/ov022_ctorargs_020b2640.c:
     complete
     .rodata     start:0x020b2640 end:0x020b2654
 
-src/overlays/ov022/data/ov022_pointers_020b2394.c:
+src/overlays/field/ov022_battle/data/ov022_pointers_020b2394.c:
     complete
     .rodata     start:0x020b2394 end:0x020b2424
 
-src/overlays/ov022/data/ov022_pointers_020b2510.c:
+src/overlays/field/ov022_battle/data/ov022_pointers_020b2510.c:
     complete
     .rodata     start:0x020b2510 end:0x020b2520
 
-src/overlays/ov022/data/ov022_pointers_020b25a8.c:
+src/overlays/field/ov022_battle/data/ov022_pointers_020b25a8.c:
     complete
     .rodata     start:0x020b25a8 end:0x020b25b4
 
-src/overlays/ov022/data/ov022_pointers_020b2850.c:
+src/overlays/field/ov022_battle/data/ov022_pointers_020b2850.c:
     complete
     .rodata     start:0x020b2850 end:0x020b2874
 
-src/overlays/ov022/data/ov022_pointers_020b2880.c:
+src/overlays/field/ov022_battle/data/ov022_pointers_020b2880.c:
     complete
     .data       start:0x020b2880 end:0x020b2894
 
-src/overlays/ov022/data/ov022_pointers_020b29bc.c:
+src/overlays/field/ov022_battle/data/ov022_pointers_020b29bc.c:
     complete
     .data       start:0x020b29bc end:0x020b2b1c
 
-src/overlays/ov022/data/ov022_pointers_020b2b48.c:
+src/overlays/field/ov022_battle/data/ov022_pointers_020b2b48.c:
     complete
     .data       start:0x020b2b48 end:0x020b2b6c
 
-src/overlays/ov022/data/ov022_strings_020b24e4.c:
+src/overlays/field/ov022_battle/data/ov022_strings_020b24e4.c:
     complete
     .rodata     start:0x020b24e4 end:0x020b24fc
 
-src/overlays/ov022/data/ov022_strings_020b25b4.c:
+src/overlays/field/ov022_battle/data/ov022_strings_020b25b4.c:
     complete
     .rodata     start:0x020b25b4 end:0x020b25c4
 
-src/overlays/ov022/data/ov022_strings_020b28bc.c:
+src/overlays/field/ov022_battle/data/ov022_strings_020b28bc.c:
     complete
     .data       start:0x020b28bc end:0x020b28d4
 
-src/overlays/ov022/data/ov022_strings_020b28e8.c:
+src/overlays/field/ov022_battle/data/ov022_strings_020b28e8.c:
     complete
     .data       start:0x020b28e8 end:0x020b28f8
 
-src/overlays/ov022/data/ov022_strings_020b290c.c:
+src/overlays/field/ov022_battle/data/ov022_strings_020b290c.c:
     complete
     .data       start:0x020b290c end:0x020b291c
 
-src/overlays/ov022/data/ov022_strings_020b2958.c:
+src/overlays/field/ov022_battle/data/ov022_strings_020b2958.c:
     complete
     .data       start:0x020b2958 end:0x020b29bc
 
-src/overlays/ov022/data/ov022_strings_020b2b1c.c:
+src/overlays/field/ov022_battle/data/ov022_strings_020b2b1c.c:
     complete
     .data       start:0x020b2b1c end:0x020b2b48
 
-src/overlays/ov022/data/ov022_strings_020b2b6c.c:
+src/overlays/field/ov022_battle/data/ov022_strings_020b2b6c.c:
     complete
     .data       start:0x020b2b6c end:0x020b2db0
 
-src/overlays/ov022/data/ov022_strings_020b2dc4.c:
+src/overlays/field/ov022_battle/data/ov022_strings_020b2dc4.c:
     complete
     .data       start:0x020b2dc4 end:0x020b2e60
 
-src/overlays/ov022/data/ov022_tables_020b226c.c:
+src/overlays/field/ov022_battle/data/ov022_tables_020b226c.c:
     complete
     .rodata     start:0x020b226c end:0x020b2394
 
-src/overlays/ov022/data/ov022_tables_020b25c4.c:
+src/overlays/field/ov022_battle/data/ov022_tables_020b25c4.c:
     complete
     .rodata     start:0x020b25c4 end:0x020b2604
 
-src/overlays/ov022/data/ov022_tables_020b2654.c:
+src/overlays/field/ov022_battle/data/ov022_tables_020b2654.c:
     complete
     .rodata     start:0x020b2654 end:0x020b2850
 
-src/overlays/ov022/data/ov022_tuning_020b2538.c:
+src/overlays/field/ov022_battle/data/ov022_tuning_020b2538.c:
     complete
     .rodata     start:0x020b2538 end:0x020b25a8

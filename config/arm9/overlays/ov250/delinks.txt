@@ -4,218 +4,218 @@
     .data       start:0x020d2900 end:0x020d2940 kind:data align:32
     .bss        start:0x020d2940 end:0x020d2940 kind:bss align:32
 
-src/overlays/ov250/calls/Ov250_RegisterEntityClass.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov250/calls/Ov250_CreateNamedEntity.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov250/calls/Ov250_Construct.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_Construct.c:
     complete
     .text       start:0x020cfc04 end:0x020cfe64
 
-src/overlays/ov250/calls/Ov250_Destroy.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_Destroy.c:
     complete
     .text       start:0x020cfe64 end:0x020cfeac
 
-src/overlays/ov250/calls/Ov250_TickWithChildRefresh.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_TickWithChildRefresh.c:
     complete
     .text       start:0x020cfeac end:0x020cfed0
 
-src/overlays/ov250/calls/Ov250_Model_SetTrack0.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_Model_SetTrack0.c:
     complete
     .text       start:0x020cfed0 end:0x020cff00
 
-src/overlays/ov250/auto/Ov250_SendMessage28.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_SendMessage28.c:
     complete
     .text       start:0x020cff00 end:0x020cff64
 
-src/overlays/ov250/calls/Ov250_HandleMessage.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_HandleMessage.c:
     complete
     .text       start:0x020cff64 end:0x020d0088
 
-src/overlays/ov250/calls/Ov250_PropagateBlockChainThenNotify.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_PropagateBlockChainThenNotify.c:
     complete
     .text       start:0x020d0088 end:0x020d00f0
 
-src/overlays/ov250/calls/Ov250_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d00f0 end:0x020d013c
 
-src/overlays/ov250/calls/Ov250_OnHit.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_OnHit.c:
     complete
     .text       start:0x020d013c end:0x020d0394
 
-src/overlays/ov250/auto/Ov250_ReactionRequestSubState11.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_ReactionRequestSubState11.c:
     complete
     .text       start:0x020d0394 end:0x020d03fc
 
-src/overlays/ov250/calls/Ov250_InitStates.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_InitStates.c:
     complete
     .text       start:0x020d03fc end:0x020d04d8
 
-src/overlays/ov250/calls/Ov250_stDispatchByStateByte.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_stDispatchByStateByte.c:
     complete
     .text       start:0x020d04d8 end:0x020d06d0
 
-src/overlays/ov250/calls/Ov250_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020d06d0 end:0x020d0784
 
-src/overlays/ov250/calls/Ov250_stateSetFlagsClearBitInit.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_stateSetFlagsClearBitInit.c:
     complete
     .text       start:0x020d0784 end:0x020d07f8
 
-src/overlays/ov250/calls/Ov250_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d07f8 end:0x020d0834
 
-src/overlays/ov250/calls/Ov250_stateAcquireAimInit.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_stateAcquireAimInit.c:
     complete
     .text       start:0x020d0834 end:0x020d08fc
 
-src/overlays/ov250/calls/Ov250_AiFadeInSlowTick.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_AiFadeInSlowTick.c:
     complete
     .text       start:0x020d08fc end:0x020d0988
 
-src/overlays/ov250/calls/Ov250_SpawnHook.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_SpawnHook.c:
     complete
     .text       start:0x020d0988 end:0x020d09d4
 
-src/overlays/ov250/calls/Ov250_CircleTick.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_CircleTick.c:
     complete
     .text       start:0x020d09d4 end:0x020d0c00
 
-src/overlays/ov250/calls/Ov250_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d0c00 end:0x020d0c34
 
-src/overlays/ov250/calls/Ov250_BeginCharge.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_BeginCharge.c:
     complete
     .text       start:0x020d0c34 end:0x020d0d54
 
-src/overlays/ov250/calls/Ov250_ApproachTick.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_ApproachTick.c:
     complete
     .text       start:0x020d0d54 end:0x020d0eac
 
-src/overlays/ov250/calls/Ov250_BeginLunge.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_BeginLunge.c:
     complete
     .text       start:0x020d0eac end:0x020d0fcc
 
-src/overlays/ov250/calls/Ov250_AiStep_QueueAction2OnFlag0cClear.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d0fcc end:0x020d1000
 
-src/overlays/ov250/calls/Ov250_SetPose5ThenAdvanceSlot.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_SetPose5ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1000 end:0x020d1034
 
-src/overlays/ov250/calls/Ov250_GuardFieldCClearField1cAdvance.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_GuardFieldCClearField1cAdvance.c:
     complete
     .text       start:0x020d1034 end:0x020d1068
 
-src/overlays/ov250/calls/Ov250_ChargeUpTick.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_ChargeUpTick.c:
     complete
     .text       start:0x020d1068 end:0x020d1298
 
-src/overlays/ov250/calls/Ov250_evalHermiteSplinePath.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_evalHermiteSplinePath.c:
     complete
     .text       start:0x020d1298 end:0x020d14fc
 
-src/overlays/ov250/calls/Ov250_AiFadeInTick.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_AiFadeInTick.c:
     complete
     .text       start:0x020d14fc end:0x020d15a0
 
-src/overlays/ov250/calls/Ov250_stateAnimAimAtTarget.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_stateAnimAimAtTarget.c:
     complete
     .text       start:0x020d15a0 end:0x020d160c
 
-src/overlays/ov250/calls/Ov250_stEasePoseCheckFlags.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_stEasePoseCheckFlags.c:
     complete
     .text       start:0x020d160c end:0x020d1690
 
-src/overlays/ov250/calls/Ov250_stateScaleVecMagnitudeGate.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_stateScaleVecMagnitudeGate.c:
     complete
     .text       start:0x020d1690 end:0x020d16f4
 
-src/overlays/ov250/calls/Ov250_AiQueue2OnFlagClear.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020d16f4 end:0x020d1728
 
-src/overlays/ov250/calls/Ov250_Action6Callback.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_Action6Callback.c:
     complete
     .text       start:0x020d1728 end:0x020d17f4
 
-src/overlays/ov250/calls/Ov250_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d17f4 end:0x020d1848
 
-src/overlays/ov250/calls/Ov250_BiteSweepTick.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_BiteSweepTick.c:
     complete
     .text       start:0x020d1848 end:0x020d1b08
 
-src/overlays/ov250/calls/Ov250_BeginApproach.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_BeginApproach.c:
     complete
     .text       start:0x020d1b08 end:0x020d1c2c
 
-src/overlays/ov250/calls/Ov250_AiSwingRecover.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_AiSwingRecover.c:
     complete
     .text       start:0x020d1c2c end:0x020d1c70
 
-src/overlays/ov250/calls/Ov250_LungeTick.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_LungeTick.c:
     complete
     .text       start:0x020d1c70 end:0x020d1fcc
 
-src/overlays/ov250/calls/Ov250_stateAnimSetFlagClear.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_stateAnimSetFlagClear.c:
     complete
     .text       start:0x020d1fcc end:0x020d2038
 
-src/overlays/ov250/calls/Ov250_stateTimerTransformVec.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_stateTimerTransformVec.c:
     complete
     .text       start:0x020d2038 end:0x020d20c8
 
-src/overlays/ov250/calls/Ov250_LeapTick.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_LeapTick.c:
     complete
     .text       start:0x020d20c8 end:0x020d2440
 
-src/overlays/ov250/calls/Ov250_AiRollTimerQueue2.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_AiRollTimerQueue2.c:
     complete
     .text       start:0x020d2440 end:0x020d24a0
 
-src/overlays/ov250/calls/Ov250_stateAnimNegateClamp.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_stateAnimNegateClamp.c:
     complete
     .text       start:0x020d24a0 end:0x020d24fc
 
-src/overlays/ov250/calls/Ov250_BeginSteerSweep.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_BeginSteerSweep.c:
     complete
     .text       start:0x020d24fc end:0x020d25e0
 
-src/overlays/ov250/calls/Ov250_SteerSweep.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_SteerSweep.c:
     complete
     .text       start:0x020d25e0 end:0x020d26d0
 
-src/overlays/ov250/calls/Ov250_BeginRecover.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_BeginRecover.c:
     complete
     .text       start:0x020d26d0 end:0x020d276c
 
-src/overlays/ov250/calls/Ov250_GuardFieldCClearField1cAdvance_2.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_GuardFieldCClearField1cAdvance_2.c:
     complete
     .text       start:0x020d276c end:0x020d27a0
 
-src/overlays/ov250/calls/Ov250_TimerInterp394ThenAdvance.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_TimerInterp394ThenAdvance.c:
     complete
     .text       start:0x020d27a0 end:0x020d2818
 
-src/overlays/ov250/calls/Ov250_AiSetStanceAndEnd.c:
+src/overlays/enemies/ov250_enemy_4b/Ov250_AiSetStanceAndEnd.c:
     complete
     .text       start:0x020d2818 end:0x020d2890
 
-src/overlays/ov250/data/ov250_strings_020d2900.c:
+src/overlays/enemies/ov250_enemy_4b/data/ov250_strings_020d2900.c:
     complete
     .data       start:0x020d2900 end:0x020d2940
 
-src/overlays/ov250/data/ov250_tables_020d2890.c:
+src/overlays/enemies/ov250_enemy_4b/data/ov250_tables_020d2890.c:
     complete
     .rodata     start:0x020d2890 end:0x020d28ec

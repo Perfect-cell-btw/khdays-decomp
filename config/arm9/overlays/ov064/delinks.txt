@@ -4,130 +4,130 @@
     .data       start:0x020b7380 end:0x020b7420 kind:data align:32
     .bss        start:0x020b7420 end:0x020b7440 kind:bss align:32
 
-src/overlays/ov064/calls/func_ov064_020b5a20.c:
+src/overlays/players/ov064_player_zexion_2/func_ov064_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov064/calls/Ov064_InitAndReturnNextState.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_InitAndReturnNextState.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a5c
 
-src/overlays/ov064/calls/Ov064_stateDtorCleanup.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_stateDtorCleanup.c:
     complete
     .text       start:0x020b5a5c end:0x020b5a98
 
-src/overlays/ov064/calls/Ov064_Boot.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_Boot.c:
     complete
     .text       start:0x020b5a98 end:0x020b5c80
 
-src/overlays/ov064/calls/Ov064_BindChannelsAndSlotMap.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_BindChannelsAndSlotMap.c:
     complete
     .text       start:0x020b5c80 end:0x020b5e18
 
-src/overlays/ov064/auto/Ov064_MapSlotKindToAnim.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5e18 end:0x020b5e84
 
-src/overlays/ov064/calls/Ov064_ApplyModeChange.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_ApplyModeChange.c:
     complete
     .text       start:0x020b5e84 end:0x020b5f60
 
-src/overlays/ov064/calls/Ov064_UpdateAnchorsAndChannels.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_UpdateAnchorsAndChannels.c:
     complete
     .text       start:0x020b5f60 end:0x020b62ec
 
-src/overlays/ov064/calls/Ov064_SetupTwoSubActionsWithGlobal.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_SetupTwoSubActionsWithGlobal.c:
     complete
     .text       start:0x020b62ec end:0x020b633c
 
-src/overlays/ov064/calls/Ov064_SelectRequestHandler.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_SelectRequestHandler.c:
     complete
     .text       start:0x020b633c end:0x020b63a4
 
-src/overlays/ov064/calls/Ov064_BuildRenderHandles.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_BuildRenderHandles.c:
     complete
     .text       start:0x020b63a4 end:0x020b642c
 
-src/overlays/ov064/calls/Ov064_StoreArgToGlobalSlotAndForward.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_StoreArgToGlobalSlotAndForward.c:
     complete
     .text       start:0x020b642c end:0x020b645c
 
-src/overlays/ov064/calls/Ov064_DescentStep.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_DescentStep.c:
     complete
     .text       start:0x020b645c end:0x020b6638
 
-src/overlays/ov064/calls/Ov064_HoverStep.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_HoverStep.c:
     complete
     .text       start:0x020b6638 end:0x020b6930
 
-src/overlays/ov064/calls/Ov064_InitActorTwoRegionsAndForward.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_InitActorTwoRegionsAndForward.c:
     complete
     .text       start:0x020b6930 end:0x020b6978
 
-src/overlays/ov064/calls/Ov064_ReleaseChannelListAndSubObjects.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_ReleaseChannelListAndSubObjects.c:
     complete
     .text       start:0x020b6978 end:0x020b69c8
 
-src/overlays/ov064/calls/Ov064_BindAnimsOnPoseReset.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_BindAnimsOnPoseReset.c:
     complete
     .text       start:0x020b69c8 end:0x020b6a54
 
-src/overlays/ov064/calls/Ov064_StepEffectSlot.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_StepEffectSlot.c:
     complete
     .text       start:0x020b6a54 end:0x020b6c50
 
-src/overlays/ov064/calls/Ov064_ForwardArg1IfStateInRangeAndFlag.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_ForwardArg1IfStateInRangeAndFlag.c:
     complete
     .text       start:0x020b6c50 end:0x020b6c84
 
-src/overlays/ov064/calls/Ov064_SpawnNextEffect.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_SpawnNextEffect.c:
     complete
     .text       start:0x020b6c84 end:0x020b6e30
 
-src/overlays/ov064/calls/Ov064_SpawnEffectWithFalloff.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_SpawnEffectWithFalloff.c:
     complete
     .text       start:0x020b6e30 end:0x020b6ed0
 
-src/overlays/ov064/calls/Ov064_ResolveHitPositionOrFallback.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_ResolveHitPositionOrFallback.c:
     complete
     .text       start:0x020b6ed0 end:0x020b6f6c
 
-src/overlays/ov064/calls/Ov064_BuildEmitterDescriptor.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_BuildEmitterDescriptor.c:
     complete
     .text       start:0x020b6f6c end:0x020b70b4
 
-src/overlays/ov064/calls/Ov064_BindRig.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_BindRig.c:
     complete
     .text       start:0x020b70b4 end:0x020b7100
 
-src/overlays/ov064/calls/Ov064_ReleaseSlotHandles.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_ReleaseSlotHandles.c:
     complete
     .text       start:0x020b7100 end:0x020b7168
 
-src/overlays/ov064/calls/Ov064_StepParts.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_StepParts.c:
     complete
     .text       start:0x020b7168 end:0x020b7264
 
-src/overlays/ov064/calls/Ov064_InvokeWithDataTable.c:
+src/overlays/players/ov064_player_zexion_2/Ov064_InvokeWithDataTable.c:
     complete
     .text       start:0x020b7264 end:0x020b727c
 
-src/overlays/ov064/data/ov064_class_020b7380.c:
+src/overlays/players/ov064_player_zexion_2/data/ov064_class_020b7380.c:
     complete
     .data       start:0x020b7380 end:0x020b7394
 
-src/overlays/ov064/data/ov064_pointers_020b7394.c:
+src/overlays/players/ov064_player_zexion_2/data/ov064_pointers_020b7394.c:
     complete
     .data       start:0x020b7394 end:0x020b73a8
 
-src/overlays/ov064/data/ov064_strings_020b727c.c:
+src/overlays/players/ov064_player_zexion_2/data/ov064_strings_020b727c.c:
     complete
     .rodata     start:0x020b727c end:0x020b72ac
 
-src/overlays/ov064/data/ov064_strings_020b73a8.c:
+src/overlays/players/ov064_player_zexion_2/data/ov064_strings_020b73a8.c:
     complete
     .data       start:0x020b73a8 end:0x020b7420
 
-src/overlays/ov064/data/ov064_tables_020b72ac.c:
+src/overlays/players/ov064_player_zexion_2/data/ov064_tables_020b72ac.c:
     complete
     .rodata     start:0x020b72ac end:0x020b736c

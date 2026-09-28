@@ -8,40 +8,19 @@ from temporary ASM-based matches and SDK/library identifications.
 import json
 import os
 import re
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def _discover_src_dirs():
-    """Every directory that holds .c source:
-      src/{auto,calls,asm_stubs/*}          (main/itcm/dtcm)
-      src/overlays/ovNNN/{auto,calls,asm_stubs/*}
-      libs/{msl,nitro}/<module>/{auto,calls,asm_stubs/*}
-    """
-    subtrees = ["auto", "calls", "asm_stubs/auto", "asm_stubs/calls"]
-    out = []
-    for sub in subtrees:
-        out.append(ROOT / "src" / sub)
-    ov_root = ROOT / "src" / "overlays"
-    if ov_root.exists():
-        for ov in sorted(ov_root.iterdir()):
-            if not ov.is_dir(): continue
-            for sub in subtrees:
-                out.append(ov / sub)
-    libs_root = ROOT / "libs"
-    if libs_root.exists():
-        for top in sorted(libs_root.iterdir()):
-            if not top.is_dir(): continue
-            for mod in sorted(top.iterdir()):
-                if not mod.is_dir(): continue
-                for sub in subtrees:
-                    out.append(mod / sub)
-    return out
+sys.path.insert(0, str(ROOT / "tools"))
+import srctree  # noqa: E402  (where sources live: docs/layout.md)
 
-
-SRC_DIRS = _discover_src_dirs()
+# every directory that holds function sources: src/engine, each overlay directory, and
+# libs/<vendor>/<module>/{auto,calls,asm_stubs/*}
+SRC_DIRS = srctree.function_source_dirs(ROOT)
 BUILD_DIR = ROOT / "build"
 
 ASM_MARKERS = (

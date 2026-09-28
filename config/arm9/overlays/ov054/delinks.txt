@@ -4,154 +4,154 @@
     .data       start:0x020b73e0 end:0x020b74a0 kind:data align:32
     .bss        start:0x020b74a0 end:0x020b74c0 kind:bss align:32
 
-src/overlays/ov054/calls/func_ov054_020b5a20.c:
+src/overlays/players/ov054_player_sora_2/func_ov054_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov054/calls/Ov054_stateCtorCondConfigReturnHandler.c:
+src/overlays/players/ov054_player_sora_2/Ov054_stateCtorCondConfigReturnHandler.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a64
 
-src/overlays/ov054/calls/Ov054_initRegionCondClearGlobal.c:
+src/overlays/players/ov054_player_sora_2/Ov054_initRegionCondClearGlobal.c:
     complete
     .text       start:0x020b5a64 end:0x020b5aa0
 
-src/overlays/ov054/calls/Ov054_BuildRigObject.c:
+src/overlays/players/ov054_player_sora_2/Ov054_BuildRigObject.c:
     complete
     .text       start:0x020b5aa0 end:0x020b5cd0
 
-src/overlays/ov054/calls/Ov054_initFlagStateRegionMarshal.c:
+src/overlays/players/ov054_player_sora_2/Ov054_initFlagStateRegionMarshal.c:
     complete
     .text       start:0x020b5cd0 end:0x020b5d3c
 
-src/overlays/ov054/auto/Ov054_MapSlotKindToAnim.c:
+src/overlays/players/ov054_player_sora_2/Ov054_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5d3c end:0x020b5d5c
 
-src/overlays/ov054/calls/Ov054_ApplyModeChange.c:
+src/overlays/players/ov054_player_sora_2/Ov054_ApplyModeChange.c:
     complete
     .text       start:0x020b5d5c end:0x020b5ee0
 
-src/overlays/ov054/calls/Ov054_Weapon_TickStreams.c:
+src/overlays/players/ov054_player_sora_2/Ov054_Weapon_TickStreams.c:
     complete
     .text       start:0x020b5ee0 end:0x020b5fec
 
-src/overlays/ov054/calls/Ov054_StepSlotAndForward.c:
+src/overlays/players/ov054_player_sora_2/Ov054_StepSlotAndForward.c:
     complete
     .text       start:0x020b5fec end:0x020b6024
 
-src/overlays/ov054/calls/Ov054_EnterActorState.c:
+src/overlays/players/ov054_player_sora_2/Ov054_EnterActorState.c:
     complete
     .text       start:0x020b6024 end:0x020b61a8
 
-src/overlays/ov054/calls/Ov054_RegisterHandlersAndArm.c:
+src/overlays/players/ov054_player_sora_2/Ov054_RegisterHandlersAndArm.c:
     complete
     .text       start:0x020b61a8 end:0x020b6230
 
-src/overlays/ov054/calls/Ov054_InitEffectSlotsWithTimings.c:
+src/overlays/players/ov054_player_sora_2/Ov054_InitEffectSlotsWithTimings.c:
     complete
     .text       start:0x020b6230 end:0x020b62dc
 
-src/overlays/ov054/calls/Ov054_ReleaseSlotAndChannels.c:
+src/overlays/players/ov054_player_sora_2/Ov054_ReleaseSlotAndChannels.c:
     complete
     .text       start:0x020b62dc end:0x020b6308
 
-src/overlays/ov054/calls/func_ov054_020b6308.c:
+src/overlays/players/ov054_player_sora_2/func_ov054_020b6308.c:
     complete
     .text       start:0x020b6308 end:0x020b6314
 
-src/overlays/ov054/calls/Ov054_TickTwoPhaseAnimOfSlot.c:
+src/overlays/players/ov054_player_sora_2/Ov054_TickTwoPhaseAnimOfSlot.c:
     complete
     .text       start:0x020b6314 end:0x020b6324
 
-src/overlays/ov054/calls/Ov054_ForwardPlus10IfFlag694.c:
+src/overlays/players/ov054_player_sora_2/Ov054_ForwardPlus10IfFlag694.c:
     complete
     .text       start:0x020b6324 end:0x020b6344
 
-src/overlays/ov054/calls/Ov054_ArmWithValue.c:
+src/overlays/players/ov054_player_sora_2/Ov054_ArmWithValue.c:
     complete
     .text       start:0x020b6344 end:0x020b635c
 
-src/overlays/ov054/calls/Ov054_TickTwoPhaseAnim.c:
+src/overlays/players/ov054_player_sora_2/Ov054_TickTwoPhaseAnim.c:
     complete
     .text       start:0x020b635c end:0x020b6418
 
-src/overlays/ov054/calls/Ov054_RecenterSubObjectAndCopyVec.c:
+src/overlays/players/ov054_player_sora_2/Ov054_RecenterSubObjectAndCopyVec.c:
     complete
     .text       start:0x020b6418 end:0x020b648c
 
-src/overlays/ov054/calls/Ov054_GetMarkPoint.c:
+src/overlays/players/ov054_player_sora_2/Ov054_GetMarkPoint.c:
     complete
     .text       start:0x020b648c end:0x020b6544
 
-src/overlays/ov054/calls/Ov054_Weapon_FireSpreadShot.c:
+src/overlays/players/ov054_player_sora_2/Ov054_Weapon_FireSpreadShot.c:
     complete
     .text       start:0x020b6544 end:0x020b66f0
 
-src/overlays/ov054/calls/Ov054_Weapon_FireStraightShot.c:
+src/overlays/players/ov054_player_sora_2/Ov054_Weapon_FireStraightShot.c:
     complete
     .text       start:0x020b66f0 end:0x020b6878
 
-src/overlays/ov054/calls/Ov054_SetupChannelBlocks.c:
+src/overlays/players/ov054_player_sora_2/Ov054_SetupChannelBlocks.c:
     complete
     .text       start:0x020b6878 end:0x020b6a3c
 
-src/overlays/ov054/calls/Ov054_freeSubObjectChannels.c:
+src/overlays/players/ov054_player_sora_2/Ov054_freeSubObjectChannels.c:
     complete
     .text       start:0x020b6a3c end:0x020b6a70
 
-src/overlays/ov054/calls/Ov054_BindRig.c:
+src/overlays/players/ov054_player_sora_2/Ov054_BindRig.c:
     complete
     .text       start:0x020b6a70 end:0x020b6ac8
 
-src/overlays/ov054/calls/Ov054_dispatchEntryList.c:
+src/overlays/players/ov054_player_sora_2/Ov054_dispatchEntryList.c:
     complete
     .text       start:0x020b6ac8 end:0x020b6b2c
 
-src/overlays/ov054/calls/Ov054_StepProjectile.c:
+src/overlays/players/ov054_player_sora_2/Ov054_StepProjectile.c:
     complete
     .text       start:0x020b6b2c end:0x020b6c6c
 
-src/overlays/ov054/calls/Ov054_FlagLocalAndEnterState21.c:
+src/overlays/players/ov054_player_sora_2/Ov054_FlagLocalAndEnterState21.c:
     complete
     .text       start:0x020b6c6c end:0x020b6cd4
 
-src/overlays/ov054/calls/Ov054_StepRiseState.c:
+src/overlays/players/ov054_player_sora_2/Ov054_StepRiseState.c:
     complete
     .text       start:0x020b6cd4 end:0x020b702c
 
-src/overlays/ov054/calls/Ov054_VolleyStep.c:
+src/overlays/players/ov054_player_sora_2/Ov054_VolleyStep.c:
     complete
     .text       start:0x020b702c end:0x020b7348
 
-src/overlays/ov054/calls/Ov054_InvokeWithDataTable.c:
+src/overlays/players/ov054_player_sora_2/Ov054_InvokeWithDataTable.c:
     complete
     .text       start:0x020b7348 end:0x020b7360
 
-src/overlays/ov054/data/ov054_class_020b73f4.c:
+src/overlays/players/ov054_player_sora_2/data/ov054_class_020b73f4.c:
     complete
     .data       start:0x020b73f4 end:0x020b7408
 
-src/overlays/ov054/data/ov054_ctorargs_020b7378.c:
+src/overlays/players/ov054_player_sora_2/data/ov054_ctorargs_020b7378.c:
     complete
     .rodata     start:0x020b7378 end:0x020b738c
 
-src/overlays/ov054/data/ov054_pointers_020b7408.c:
+src/overlays/players/ov054_player_sora_2/data/ov054_pointers_020b7408.c:
     complete
     .data       start:0x020b7408 end:0x020b741c
 
-src/overlays/ov054/data/ov054_strings_020b738c.c:
+src/overlays/players/ov054_player_sora_2/data/ov054_strings_020b738c.c:
     complete
     .rodata     start:0x020b738c end:0x020b73dc
 
-src/overlays/ov054/data/ov054_strings_020b73e0.c:
+src/overlays/players/ov054_player_sora_2/data/ov054_strings_020b73e0.c:
     complete
     .data       start:0x020b73e0 end:0x020b73f4
 
-src/overlays/ov054/data/ov054_strings_020b741c.c:
+src/overlays/players/ov054_player_sora_2/data/ov054_strings_020b741c.c:
     complete
     .data       start:0x020b741c end:0x020b74a0
 
-src/overlays/ov054/data/ov054_tables_020b7360.c:
+src/overlays/players/ov054_player_sora_2/data/ov054_tables_020b7360.c:
     complete
     .rodata     start:0x020b7360 end:0x020b7378

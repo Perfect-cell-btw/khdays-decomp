@@ -4,122 +4,122 @@
     .data       start:0x020b7300 end:0x020b7380 kind:data align:32
     .bss        start:0x020b7380 end:0x020b73a0 kind:bss align:32
 
-src/overlays/ov051/calls/func_ov051_020b5a20.c:
+src/overlays/players/ov051_player_saix_2/func_ov051_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov051/calls/Ov051_ClassCtor.c:
+src/overlays/players/ov051_player_saix_2/Ov051_ClassCtor.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a5c
 
-src/overlays/ov051/calls/Ov051_ClassTeardown.c:
+src/overlays/players/ov051_player_saix_2/Ov051_ClassTeardown.c:
     complete
     .text       start:0x020b5a5c end:0x020b5a70
 
-src/overlays/ov051/calls/Ov051_Boot.c:
+src/overlays/players/ov051_player_saix_2/Ov051_Boot.c:
     complete
     .text       start:0x020b5a70 end:0x020b5cac
 
-src/overlays/ov051/calls/Ov051_initSharedObjSetReadyFlag.c:
+src/overlays/players/ov051_player_saix_2/Ov051_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020b5cac end:0x020b5ce4
 
-src/overlays/ov051/auto/Ov051_MapSlotKindToAnim.c:
+src/overlays/players/ov051_player_saix_2/Ov051_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5ce4 end:0x020b5d0c
 
-src/overlays/ov051/calls/Ov051_BuildRenderHandle.c:
+src/overlays/players/ov051_player_saix_2/Ov051_BuildRenderHandle.c:
     complete
     .text       start:0x020b5d0c end:0x020b5d6c
 
-src/overlays/ov051/calls/Ov051_initSubObjectSlots.c:
+src/overlays/players/ov051_player_saix_2/Ov051_initSubObjectSlots.c:
     complete
     .text       start:0x020b5d6c end:0x020b5e08
 
-src/overlays/ov051/calls/Ov051_refreshSubObjectSlots.c:
+src/overlays/players/ov051_player_saix_2/Ov051_refreshSubObjectSlots.c:
     complete
     .text       start:0x020b5e08 end:0x020b5e4c
 
-src/overlays/ov051/calls/Ov051_dispatchStateTransitionCode.c:
+src/overlays/players/ov051_player_saix_2/Ov051_dispatchStateTransitionCode.c:
     complete
     .text       start:0x020b5e4c end:0x020b5f10
 
-src/overlays/ov051/calls/Ov051_UpdateShotsByMode.c:
+src/overlays/players/ov051_player_saix_2/Ov051_UpdateShotsByMode.c:
     complete
     .text       start:0x020b5f10 end:0x020b60e0
 
-src/overlays/ov051/calls/Ov051_beginStateBindHandlers.c:
+src/overlays/players/ov051_player_saix_2/Ov051_beginStateBindHandlers.c:
     complete
     .text       start:0x020b60e0 end:0x020b6170
 
-src/overlays/ov051/calls/Ov051_HandleMsgAndReaimArc.c:
+src/overlays/players/ov051_player_saix_2/Ov051_HandleMsgAndReaimArc.c:
     complete
     .text       start:0x020b6170 end:0x020b62bc
 
-src/overlays/ov051/calls/Ov051_activateAndComputeAimAngle.c:
+src/overlays/players/ov051_player_saix_2/Ov051_activateAndComputeAimAngle.c:
     complete
     .text       start:0x020b62bc end:0x020b63c4
 
-src/overlays/ov051/calls/Ov051_IdleStep.c:
+src/overlays/players/ov051_player_saix_2/Ov051_IdleStep.c:
     complete
     .text       start:0x020b63c4 end:0x020b6610
 
-src/overlays/ov051/calls/Ov051_AttackStep.c:
+src/overlays/players/ov051_player_saix_2/Ov051_AttackStep.c:
     complete
     .text       start:0x020b6610 end:0x020b6838
 
-src/overlays/ov051/calls/Ov051_LandingStep.c:
+src/overlays/players/ov051_player_saix_2/Ov051_LandingStep.c:
     complete
     .text       start:0x020b6838 end:0x020b6a20
 
-src/overlays/ov051/calls/Ov051_FireForwardBurst.c:
+src/overlays/players/ov051_player_saix_2/Ov051_FireForwardBurst.c:
     complete
     .text       start:0x020b6a20 end:0x020b6bdc
 
-src/overlays/ov051/calls/Ov051_FireRecoilBurst.c:
+src/overlays/players/ov051_player_saix_2/Ov051_FireRecoilBurst.c:
     complete
     .text       start:0x020b6bdc end:0x020b6d28
 
-src/overlays/ov051/calls/Ov051_FireSustainedBurst.c:
+src/overlays/players/ov051_player_saix_2/Ov051_FireSustainedBurst.c:
     complete
     .text       start:0x020b6d28 end:0x020b6e88
 
-src/overlays/ov051/calls/Ov051_BindDefaultAnimsIfIdle.c:
+src/overlays/players/ov051_player_saix_2/Ov051_BindDefaultAnimsIfIdle.c:
     complete
     .text       start:0x020b6e88 end:0x020b6ef0
 
-src/overlays/ov051/calls/Ov051_UpdateGuardedSlots.c:
+src/overlays/players/ov051_player_saix_2/Ov051_UpdateGuardedSlots.c:
     complete
     .text       start:0x020b6ef0 end:0x020b6fa0
 
-src/overlays/ov051/calls/Ov051_UpdateSlotsAndFlush.c:
+src/overlays/players/ov051_player_saix_2/Ov051_UpdateSlotsAndFlush.c:
     complete
     .text       start:0x020b6fa0 end:0x020b7004
 
-src/overlays/ov051/calls/Ov051_LaunchProjectile.c:
+src/overlays/players/ov051_player_saix_2/Ov051_LaunchProjectile.c:
     complete
     .text       start:0x020b7004 end:0x020b7234
 
-src/overlays/ov051/calls/Ov051_ClearStateIfReadyWhenActive.c:
+src/overlays/players/ov051_player_saix_2/Ov051_ClearStateIfReadyWhenActive.c:
     complete
     .text       start:0x020b7234 end:0x020b7260
 
-src/overlays/ov051/calls/Ov051_DispatchWhenStateActive.c:
+src/overlays/players/ov051_player_saix_2/Ov051_DispatchWhenStateActive.c:
     complete
     .text       start:0x020b7260 end:0x020b7290
 
-src/overlays/ov051/calls/Ov051_InvokeWithDataTable.c:
+src/overlays/players/ov051_player_saix_2/Ov051_InvokeWithDataTable.c:
     complete
     .text       start:0x020b7290 end:0x020b72a8
 
-src/overlays/ov051/data/ov051_class_020b7300.c:
+src/overlays/players/ov051_player_saix_2/data/ov051_class_020b7300.c:
     complete
     .data       start:0x020b7300 end:0x020b7314
 
-src/overlays/ov051/data/ov051_strings_020b72a8.c:
+src/overlays/players/ov051_player_saix_2/data/ov051_strings_020b72a8.c:
     complete
     .rodata     start:0x020b72a8 end:0x020b72f8
 
-src/overlays/ov051/data/ov051_strings_020b7314.c:
+src/overlays/players/ov051_player_saix_2/data/ov051_strings_020b7314.c:
     complete
     .data       start:0x020b7314 end:0x020b7380

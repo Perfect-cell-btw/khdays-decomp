@@ -4,466 +4,466 @@
     .data       start:0x020d2680 end:0x020d2700 kind:data align:32
     .bss        start:0x020d2700 end:0x020d2700 kind:bss align:32
 
-src/overlays/ov256/calls/Ov256_RegisterEntityClass.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov256/calls/Ov256_CreateNamedEntity.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/ov256/calls/Ov256_EnemyConstruct.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_EnemyConstruct.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc53c
 
-src/overlays/ov256/calls/Ov256_ReleaseNodeResources.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ReleaseNodeResources.c:
     complete
     .text       start:0x020cc53c end:0x020cc5d4
 
-src/overlays/ov256/calls/Ov256_ModelUpdate.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ModelUpdate.c:
     complete
     .text       start:0x020cc5d4 end:0x020cc680
 
-src/overlays/ov256/calls/Ov256_AddItemsToScene.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AddItemsToScene.c:
     complete
     .text       start:0x020cc680 end:0x020cc6dc
 
-src/overlays/ov256/calls/Ov256_RemoveItemsFromScene.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_RemoveItemsFromScene.c:
     complete
     .text       start:0x020cc6dc end:0x020cc738
 
-src/overlays/ov256/calls/Ov256_MessageHandler.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_MessageHandler.c:
     complete
     .text       start:0x020cc738 end:0x020cc95c
 
-src/overlays/ov256/calls/Ov256_DrawPrePass.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_DrawPrePass.c:
     complete
     .text       start:0x020cc95c end:0x020ccba4
 
-src/overlays/ov256/calls/Ov256_PlayRigMove.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_PlayRigMove.c:
     complete
     .text       start:0x020ccba4 end:0x020ccc6c
 
-src/overlays/ov256/calls/Ov256_AppendWorkEntryFinalize.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AppendWorkEntryFinalize.c:
     complete
     .text       start:0x020ccc6c end:0x020ccce8
 
-src/overlays/ov256/calls/Ov256_CreateAiTask.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_CreateAiTask.c:
     complete
     .text       start:0x020ccce8 end:0x020ccd54
 
-src/overlays/ov256/calls/Ov256_PickTarget.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_PickTarget.c:
     complete
     .text       start:0x020ccd54 end:0x020ccdf0
 
-src/overlays/ov256/calls/Ov256_PickMove.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_PickMove.c:
     complete
     .text       start:0x020ccdf0 end:0x020cd054
 
-src/overlays/ov256/calls/Ov256_RotateByActorHeading.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_RotateByActorHeading.c:
     complete
     .text       start:0x020cd054 end:0x020cd0e8
 
-src/overlays/ov256/calls/Ov256_AttackHitTest.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AttackHitTest.c:
     complete
     .text       start:0x020cd0e8 end:0x020cd240
 
-src/overlays/ov256/calls/Ov256_DamageHandler.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_DamageHandler.c:
     complete
     .text       start:0x020cd240 end:0x020cd39c
 
-src/overlays/ov256/calls/Ov256_StartBrain.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_StartBrain.c:
     complete
     .text       start:0x020cd39c end:0x020cd430
 
-src/overlays/ov256/calls/Ov256_AiDispatchAction.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiDispatchAction.c:
     complete
     .text       start:0x020cd430 end:0x020cd740
 
-src/overlays/ov256/calls/Ov256_Update.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Update.c:
     complete
     .text       start:0x020cd740 end:0x020cd8f0
 
-src/overlays/ov256/calls/Ov256_EnterState.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_EnterState.c:
     complete
     .text       start:0x020cd8f0 end:0x020cd94c
 
-src/overlays/ov256/calls/Ov256_AiEnterThink.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiEnterThink.c:
     complete
     .text       start:0x020cd94c end:0x020cd9a8
 
-src/overlays/ov256/calls/Ov256_ThinkSlot.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ThinkSlot.c:
     complete
     .text       start:0x020cd9a8 end:0x020cdab8
 
-src/overlays/ov256/calls/Ov256_PathProbe.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_PathProbe.c:
     complete
     .text       start:0x020cdab8 end:0x020cdb9c
 
-src/overlays/ov256/calls/Ov256_AiEnterStep.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiEnterStep.c:
     complete
     .text       start:0x020cdb9c end:0x020cdbe4
 
-src/overlays/ov256/calls/Ov256_StepTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_StepTick.c:
     complete
     .text       start:0x020cdbe4 end:0x020cdc98
 
-src/overlays/ov256/calls/Ov256_WalkTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_WalkTick.c:
     complete
     .text       start:0x020cdc98 end:0x020cdf14
 
-src/overlays/ov256/calls/Ov256_AiEnterWalk.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiEnterWalk.c:
     complete
     .text       start:0x020cdf14 end:0x020cdf5c
 
-src/overlays/ov256/calls/Ov256_WalkEntryTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_WalkEntryTick.c:
     complete
     .text       start:0x020cdf5c end:0x020ce050
 
-src/overlays/ov256/calls/Ov256_AiTakeOff.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiTakeOff.c:
     complete
     .text       start:0x020ce050 end:0x020ce0dc
 
-src/overlays/ov256/calls/Ov256_FlightTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_FlightTick.c:
     complete
     .text       start:0x020ce0dc end:0x020ce574
 
-src/overlays/ov256/calls/Ov256_TurnTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_TurnTick.c:
     complete
     .text       start:0x020ce574 end:0x020ce650
 
-src/overlays/ov256/calls/Ov256_RetreatTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_RetreatTick.c:
     complete
     .text       start:0x020ce650 end:0x020ce714
 
-src/overlays/ov256/calls/Ov256_AiArmClawsAndStep.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiArmClawsAndStep.c:
     complete
     .text       start:0x020ce714 end:0x020ce778
 
-src/overlays/ov256/calls/Ov256_Reaction_AdvanceStepAndDispatch.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Reaction_AdvanceStepAndDispatch.c:
     complete
     .text       start:0x020ce778 end:0x020ce7cc
 
-src/overlays/ov256/calls/Ov256_AiClawStepLoop.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiClawStepLoop.c:
     complete
     .text       start:0x020ce7cc end:0x020ce85c
 
-src/overlays/ov256/calls/Ov256_AiEnterLeap.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiEnterLeap.c:
     complete
     .text       start:0x020ce85c end:0x020ce8a8
 
-src/overlays/ov256/calls/Ov256_LeapEntryTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_LeapEntryTick.c:
     complete
     .text       start:0x020ce8a8 end:0x020cea18
 
-src/overlays/ov256/calls/Ov256_TickWarp.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_TickWarp.c:
     complete
     .text       start:0x020cea18 end:0x020cec64
 
-src/overlays/ov256/calls/Ov256_LeapTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_LeapTick.c:
     complete
     .text       start:0x020cec64 end:0x020cee70
 
-src/overlays/ov256/calls/Ov256_SweepTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_SweepTick.c:
     complete
     .text       start:0x020cee70 end:0x020cf0e8
 
-src/overlays/ov256/calls/Ov256_AiEnterPounce.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiEnterPounce.c:
     complete
     .text       start:0x020cf0e8 end:0x020cf15c
 
-src/overlays/ov256/calls/Ov256_TickPounceEntry.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_TickPounceEntry.c:
     complete
     .text       start:0x020cf15c end:0x020cf238
 
-src/overlays/ov256/calls/Ov256_ChaseTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ChaseTick.c:
     complete
     .text       start:0x020cf238 end:0x020cf3b4
 
-src/overlays/ov256/calls/Ov256_TickBrace.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_TickBrace.c:
     complete
     .text       start:0x020cf3b4 end:0x020cf474
 
-src/overlays/ov256/calls/Ov256_LungeTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_LungeTick.c:
     complete
     .text       start:0x020cf474 end:0x020cf68c
 
-src/overlays/ov256/calls/Ov256_TickReactionAim.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_TickReactionAim.c:
     complete
     .text       start:0x020cf68c end:0x020cf700
 
-src/overlays/ov256/calls/Ov256_AiEnterClawWindup.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiEnterClawWindup.c:
     complete
     .text       start:0x020cf700 end:0x020cf738
 
-src/overlays/ov256/calls/Ov256_AiClawWindupStart.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiClawWindupStart.c:
     complete
     .text       start:0x020cf738 end:0x020cf780
 
-src/overlays/ov256/calls/Ov256_ClawWindupTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawWindupTick.c:
     complete
     .text       start:0x020cf780 end:0x020cf88c
 
-src/overlays/ov256/calls/Ov256_RoarTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_RoarTick.c:
     complete
     .text       start:0x020cf88c end:0x020cf974
 
-src/overlays/ov256/calls/Ov256_AiClawRepeat.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiClawRepeat.c:
     complete
     .text       start:0x020cf974 end:0x020cf9e0
 
-src/overlays/ov256/calls/Ov256_AiClawEnd.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiClawEnd.c:
     complete
     .text       start:0x020cf9e0 end:0x020cfa28
 
-src/overlays/ov256/calls/Ov256_AiEnterCharge.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiEnterCharge.c:
     complete
     .text       start:0x020cfa28 end:0x020cfa70
 
-src/overlays/ov256/calls/Ov256_ChargeTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ChargeTick.c:
     complete
     .text       start:0x020cfa70 end:0x020cfafc
 
-src/overlays/ov256/calls/Ov256_AiChargeRepeat.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiChargeRepeat.c:
     complete
     .text       start:0x020cfafc end:0x020cfb74
 
-src/overlays/ov256/calls/Ov256_AiClawsReturnWait.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiClawsReturnWait.c:
     complete
     .text       start:0x020cfb74 end:0x020cfbd4
 
-src/overlays/ov256/calls/Ov256_AiEnterClawLob.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiEnterClawLob.c:
     complete
     .text       start:0x020cfbd4 end:0x020cfc1c
 
-src/overlays/ov256/calls/Ov256_ClawLobTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawLobTick.c:
     complete
     .text       start:0x020cfc1c end:0x020cfd80
 
-src/overlays/ov256/calls/Ov256_ClawThrowEntry.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawThrowEntry.c:
     complete
     .text       start:0x020cfd80 end:0x020cfe2c
 
-src/overlays/ov256/calls/Ov256_AiLobPickNext.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiLobPickNext.c:
     complete
     .text       start:0x020cfe2c end:0x020cfe8c
 
-src/overlays/ov256/calls/Ov256_AiEnterStomp.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiEnterStomp.c:
     complete
     .text       start:0x020cfe8c end:0x020cfed0
 
-src/overlays/ov256/calls/Ov256_StompTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_StompTick.c:
     complete
     .text       start:0x020cfed0 end:0x020cfff4
 
-src/overlays/ov256/calls/Ov256_AiEnterCollapse.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiEnterCollapse.c:
     complete
     .text       start:0x020cfff4 end:0x020d0074
 
-src/overlays/ov256/calls/Ov256_TickFall.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_TickFall.c:
     complete
     .text       start:0x020d0074 end:0x020d0144
 
-src/overlays/ov256/calls/Ov256_PartDriftTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_PartDriftTick.c:
     complete
     .text       start:0x020d0144 end:0x020d01bc
 
-src/overlays/ov256/calls/Ov256_PartWanderTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_PartWanderTick.c:
     complete
     .text       start:0x020d01bc end:0x020d02a0
 
-src/overlays/ov256/calls/Ov256_PartHoverTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_PartHoverTick.c:
     complete
     .text       start:0x020d02a0 end:0x020d0334
 
-src/overlays/ov256/calls/Ov256_InvokeHookAndRearm2.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_InvokeHookAndRearm2.c:
     complete
     .text       start:0x020d0334 end:0x020d0388
 
-src/overlays/ov256/calls/Ov256_Shard_New.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Shard_New.c:
     complete
     .text       start:0x020d0388 end:0x020d03c4
 
-src/overlays/ov256/calls/Ov256_ShardInitTail.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ShardInitTail.c:
     complete
     .text       start:0x020d03c4 end:0x020d04f4
 
-src/overlays/ov256/calls/Ov256_OnDespawn.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_OnDespawn.c:
     complete
     .text       start:0x020d04f4 end:0x020d0510
 
-src/overlays/ov256/calls/Ov256_TickAndSyncModelXform.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d0510 end:0x020d0548
 
-src/overlays/ov256/calls/Ov256_Shard_Launch.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Shard_Launch.c:
     complete
     .text       start:0x020d0548 end:0x020d0560
 
-src/overlays/ov256/calls/Ov256_Shard_CreateAiTask.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Shard_CreateAiTask.c:
     complete
     .text       start:0x020d0560 end:0x020d05bc
 
-src/overlays/ov256/calls/Ov256_HelperHitReaction.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_HelperHitReaction.c:
     complete
     .text       start:0x020d05bc end:0x020d060c
 
-src/overlays/ov256/calls/Ov256_stateInitClearSlots.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_stateInitClearSlots.c:
     complete
     .text       start:0x020d060c end:0x020d06b4
 
-src/overlays/ov256/calls/Ov256_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d06b4 end:0x020d072c
 
-src/overlays/ov256/calls/Ov256_FacingStep.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_FacingStep.c:
     complete
     .text       start:0x020d072c end:0x020d079c
 
-src/overlays/ov256/calls/Ov256_ClawReleaseEntry.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawReleaseEntry.c:
     complete
     .text       start:0x020d079c end:0x020d0874
 
-src/overlays/ov256/calls/Ov256_ClawDockEntry.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawDockEntry.c:
     complete
     .text       start:0x020d0874 end:0x020d0934
 
-src/overlays/ov256/calls/Ov256_HomingOrbTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_HomingOrbTick.c:
     complete
     .text       start:0x020d0934 end:0x020d0c8c
 
-src/overlays/ov256/calls/Ov256_SpawnShard.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_SpawnShard.c:
     complete
     .text       start:0x020d0c8c end:0x020d0d18
 
-src/overlays/ov256/calls/Ov256_ShellDropStart.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ShellDropStart.c:
     complete
     .text       start:0x020d0d18 end:0x020d0e44
 
-src/overlays/ov256/auto/Ov256_TaskTeardown_FlagOwner.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_TaskTeardown_FlagOwner.c:
     complete
     .text       start:0x020d0e44 end:0x020d0e5c
 
-src/overlays/ov256/calls/Ov256_ShockwaveTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ShockwaveTick.c:
     complete
     .text       start:0x020d0e5c end:0x020d1068
 
-src/overlays/ov256/calls/Ov256_FlagDoneAndNotify.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_FlagDoneAndNotify.c:
     complete
     .text       start:0x020d1068 end:0x020d108c
 
-src/overlays/ov256/calls/Ov256_Claw_LaunchIfReady.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Claw_LaunchIfReady.c:
     complete
     .text       start:0x020d108c end:0x020d10b0
 
-src/overlays/ov256/calls/Ov256_Claw_New.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Claw_New.c:
     complete
     .text       start:0x020d10b0 end:0x020d10ec
 
-src/overlays/ov256/calls/Ov256_ClawInit.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawInit.c:
     complete
     .text       start:0x020d10ec end:0x020d12c0
 
-src/overlays/ov256/calls/Ov256_Destroy.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Destroy.c:
     complete
     .text       start:0x020d12c0 end:0x020d12e4
 
-src/overlays/ov256/calls/Ov256_ClawUpdate.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawUpdate.c:
     complete
     .text       start:0x020d12e4 end:0x020d13d0
 
-src/overlays/ov256/auto/Ov256_SetPendingState2.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_SetPendingState2.c:
     complete
     .text       start:0x020d13d0 end:0x020d13e0
 
-src/overlays/ov256/calls/Ov256_Claw_Launch.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Claw_Launch.c:
     complete
     .text       start:0x020d13e0 end:0x020d1400
 
-src/overlays/ov256/calls/Ov256_AttackHitTestB.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AttackHitTestB.c:
     complete
     .text       start:0x020d1400 end:0x020d1560
 
-src/overlays/ov256/auto/Ov256_Claw_OnHitNoOp.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Claw_OnHitNoOp.c:
     complete
     .text       start:0x020d1560 end:0x020d1564
 
-src/overlays/ov256/calls/Ov256_Claw_CreateAiTask.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Claw_CreateAiTask.c:
     complete
     .text       start:0x020d1564 end:0x020d15c0
 
-src/overlays/ov256/calls/Ov256_Claw_AiStateInit.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_Claw_AiStateInit.c:
     complete
     .text       start:0x020d15c0 end:0x020d166c
 
-src/overlays/ov256/calls/Ov256_HelperMoveDispatch.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_HelperMoveDispatch.c:
     complete
     .text       start:0x020d166c end:0x020d1714
 
-src/overlays/ov256/calls/Ov256_ClawWatchSlot.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawWatchSlot.c:
     complete
     .text       start:0x020d1714 end:0x020d1900
 
-src/overlays/ov256/calls/Ov256_RotateByOwnerHeading.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_RotateByOwnerHeading.c:
     complete
     .text       start:0x020d1900 end:0x020d1994
 
-src/overlays/ov256/calls/Ov256_HelperStopEntry.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_HelperStopEntry.c:
     complete
     .text       start:0x020d1994 end:0x020d1a40
 
-src/overlays/ov256/calls/Ov256_ArmEntry.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ArmEntry.c:
     complete
     .text       start:0x020d1a40 end:0x020d1ae8
 
-src/overlays/ov256/calls/Ov256_AiClearFlag80AndEnd.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_AiClearFlag80AndEnd.c:
     complete
     .text       start:0x020d1ae8 end:0x020d1b2c
 
-src/overlays/ov256/calls/Ov256_HelperOrbitHeading.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_HelperOrbitHeading.c:
     complete
     .text       start:0x020d1b2c end:0x020d1b7c
 
-src/overlays/ov256/calls/Ov256_ClawLaunchEntry.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawLaunchEntry.c:
     complete
     .text       start:0x020d1b7c end:0x020d1c50
 
-src/overlays/ov256/calls/Ov256_ClawOrbitEntryTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawOrbitEntryTick.c:
     complete
     .text       start:0x020d1c50 end:0x020d1d88
 
-src/overlays/ov256/calls/Ov256_ClawOrbitTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawOrbitTick.c:
     complete
     .text       start:0x020d1d88 end:0x020d1ed0
 
-src/overlays/ov256/calls/Ov256_StrafeTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_StrafeTick.c:
     complete
     .text       start:0x020d1ed0 end:0x020d2054
 
-src/overlays/ov256/calls/Ov256_ClawAimEntry.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawAimEntry.c:
     complete
     .text       start:0x020d2054 end:0x020d21d0
 
-src/overlays/ov256/calls/Ov256_ClawSpinTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawSpinTick.c:
     complete
     .text       start:0x020d21d0 end:0x020d227c
 
-src/overlays/ov256/calls/Ov256_ClawSwingTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawSwingTick.c:
     complete
     .text       start:0x020d227c end:0x020d2368
 
-src/overlays/ov256/calls/Ov256_ClawReturnTick.c:
+src/overlays/enemies/ov256_enemy_50/Ov256_ClawReturnTick.c:
     complete
     .text       start:0x020d2368 end:0x020d2444
 
-src/overlays/ov256/data/ov256_rodata_020d2444.c:
+src/overlays/enemies/ov256_enemy_50/data/ov256_rodata_020d2444.c:
     complete
     .rodata     start:0x020d2444 end:0x020d2594
 
-src/overlays/ov256/data/ov256_strings_020d2680.c:
+src/overlays/enemies/ov256_enemy_50/data/ov256_strings_020d2680.c:
     complete
     .data       start:0x020d2680 end:0x020d2700
 
-src/overlays/ov256/data/ov256_templates_020d2594.c:
+src/overlays/enemies/ov256_enemy_50/data/ov256_templates_020d2594.c:
     complete
     .rodata     start:0x020d2594 end:0x020d2660

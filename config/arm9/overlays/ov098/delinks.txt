@@ -4,138 +4,138 @@
     .data       start:0x020bbce0 end:0x020bbda0 kind:data align:32
     .bss        start:0x020bbda0 end:0x020bbdc0 kind:bss align:32
 
-src/overlays/ov098/calls/func_ov098_020ba7c0.c:
+src/overlays/players/ov098_player_vexen_4/func_ov098_020ba7c0.c:
     complete
     .text       start:0x020ba7c0 end:0x020ba7d4
 
-src/overlays/ov098/calls/Ov098_stateCtorReturnHandler.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_stateCtorReturnHandler.c:
     complete
     .text       start:0x020ba7d4 end:0x020ba7fc
 
-src/overlays/ov098/calls/Ov098_setupTriple.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_setupTriple.c:
     complete
     .text       start:0x020ba7fc end:0x020ba81c
 
-src/overlays/ov098/calls/Ov098_BuildRigObject.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_BuildRigObject.c:
     complete
     .text       start:0x020ba81c end:0x020baa2c
 
-src/overlays/ov098/calls/Ov098_initFlagStateObj.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_initFlagStateObj.c:
     complete
     .text       start:0x020baa2c end:0x020baa5c
 
-src/overlays/ov098/auto/Ov098_MapSlotKindToAnim.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_MapSlotKindToAnim.c:
     complete
     .text       start:0x020baa5c end:0x020baa84
 
-src/overlays/ov098/calls/Ov098_SetAnimStateWithEnterHook.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_SetAnimStateWithEnterHook.c:
     complete
     .text       start:0x020baa84 end:0x020baac8
 
-src/overlays/ov098/calls/Ov098_UpdateSubObjects.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_UpdateSubObjects.c:
     complete
     .text       start:0x020baac8 end:0x020bac04
 
-src/overlays/ov098/calls/Ov098_InvokeSubHandlerPairWithBuffer.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_InvokeSubHandlerPairWithBuffer.c:
     complete
     .text       start:0x020bac04 end:0x020bac30
 
-src/overlays/ov098/calls/Ov098_HandleMessage.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_HandleMessage.c:
     complete
     .text       start:0x020bac30 end:0x020bad28
 
-src/overlays/ov098/calls/Ov098_AcquireGridSlots.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_AcquireGridSlots.c:
     complete
     .text       start:0x020bad28 end:0x020badb0
 
-src/overlays/ov098/calls/Ov098_FlagLocalAndMaybeEnterState21.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_FlagLocalAndMaybeEnterState21.c:
     complete
     .text       start:0x020badb0 end:0x020bae74
 
-src/overlays/ov098/calls/Ov098_AttackStep.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_AttackStep.c:
     complete
     .text       start:0x020bae74 end:0x020bb2d4
 
-src/overlays/ov098/calls/Ov098_ResetSequenceSlots.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_ResetSequenceSlots.c:
     complete
     .text       start:0x020bb2d4 end:0x020bb358
 
-src/overlays/ov098/calls/Ov098_DestroySlotsAndFree.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_DestroySlotsAndFree.c:
     complete
     .text       start:0x020bb358 end:0x020bb3c0
 
-src/overlays/ov098/calls/Ov098_CreateSubObject.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_CreateSubObject.c:
     complete
     .text       start:0x020bb3c0 end:0x020bb5dc
 
-src/overlays/ov098/calls/Ov098_BindRig.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_BindRig.c:
     complete
     .text       start:0x020bb5dc end:0x020bb634
 
-src/overlays/ov098/calls/Ov098_StepParts.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_StepParts.c:
     complete
     .text       start:0x020bb634 end:0x020bb740
 
-src/overlays/ov098/calls/Ov098_DispatchActiveEntriesByStatus.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_DispatchActiveEntriesByStatus.c:
     complete
     .text       start:0x020bb740 end:0x020bb794
 
-src/overlays/ov098/calls/Ov098_SteerPart.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_SteerPart.c:
     complete
     .text       start:0x020bb794 end:0x020bb8f8
 
-src/overlays/ov098/calls/Ov098_AdvanceArg1StateFrom0Or2.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_AdvanceArg1StateFrom0Or2.c:
     complete
     .text       start:0x020bb8f8 end:0x020bb928
 
-src/overlays/ov098/calls/Ov098_UpdateSlotsWithGate.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_UpdateSlotsWithGate.c:
     complete
     .text       start:0x020bb928 end:0x020bb99c
 
-src/overlays/ov098/calls/Ov098_InvokeHandlerFor7SubObjects.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_InvokeHandlerFor7SubObjects.c:
     complete
     .text       start:0x020bb99c end:0x020bb9c4
 
-src/overlays/ov098/calls/Ov098_LayTrail.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_LayTrail.c:
     complete
     .text       start:0x020bb9c4 end:0x020bba88
 
-src/overlays/ov098/calls/Ov098_ClaimSlotAndLaunch.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_ClaimSlotAndLaunch.c:
     complete
     .text       start:0x020bba88 end:0x020bbbc8
 
-src/overlays/ov098/calls/Ov098_ClearState1IfReady.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_ClearState1IfReady.c:
     complete
     .text       start:0x020bbbc8 end:0x020bbbfc
 
-src/overlays/ov098/calls/Ov098_ForwardToHandlerIfHeadSet.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_ForwardToHandlerIfHeadSet.c:
     complete
     .text       start:0x020bbbfc end:0x020bbc18
 
-src/overlays/ov098/calls/Ov098_InvokeWithDataTable.c:
+src/overlays/players/ov098_player_vexen_4/Ov098_InvokeWithDataTable.c:
     complete
     .text       start:0x020bbc18 end:0x020bbc30
 
-src/overlays/ov098/data/ov098_class_020bbce0.c:
+src/overlays/players/ov098_player_vexen_4/data/ov098_class_020bbce0.c:
     complete
     .data       start:0x020bbce0 end:0x020bbcf4
 
-src/overlays/ov098/data/ov098_pointers_020bbcf4.c:
+src/overlays/players/ov098_player_vexen_4/data/ov098_pointers_020bbcf4.c:
     complete
     .data       start:0x020bbcf4 end:0x020bbd08
 
-src/overlays/ov098/data/ov098_strings_020bbc54.c:
+src/overlays/players/ov098_player_vexen_4/data/ov098_strings_020bbc54.c:
     complete
     .rodata     start:0x020bbc54 end:0x020bbc94
 
-src/overlays/ov098/data/ov098_strings_020bbd08.c:
+src/overlays/players/ov098_player_vexen_4/data/ov098_strings_020bbd08.c:
     complete
     .data       start:0x020bbd08 end:0x020bbda0
 
-src/overlays/ov098/data/ov098_tables_020bbc30.c:
+src/overlays/players/ov098_player_vexen_4/data/ov098_tables_020bbc30.c:
     complete
     .rodata     start:0x020bbc30 end:0x020bbc54
 
-src/overlays/ov098/data/ov098_tables_020bbc94.c:
+src/overlays/players/ov098_player_vexen_4/data/ov098_tables_020bbc94.c:
     complete
     .rodata     start:0x020bbc94 end:0x020bbcdc

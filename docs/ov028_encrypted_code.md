@@ -48,8 +48,8 @@ bl   0x0208a8ac                        ; RE-ENCRYPT routine
 pop  {r4..pc}                          ; real epilogue
 ```
 
-The decryptor at `0x0208a7e0` (already in the repo as an `asm` stub,
-`src/overlays/ov028/asm_stubs/calls/Ov028_DSProt_Encryptor_StartRange.c`) is a 16-iteration loop
+The decryptor at `0x0208a7e0` (C in the repo,
+`src/overlays/system/ov028_dsprotect/Ov028_DSProt_Encryptor_StartRange.c`) is a 16-iteration loop
 using the magic constant `0x88888889` (reciprocal divide by 15) and an XOR with
 `0xff`, ending in `DC_FlushRange` + `IC_InvalidateRange` — it flushes the data cache
 and invalidates the instruction cache because it has just rewritten code the CPU is

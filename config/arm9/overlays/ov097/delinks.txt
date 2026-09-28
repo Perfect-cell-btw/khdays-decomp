@@ -4,146 +4,146 @@
     .data       start:0x020bc200 end:0x020bc2a0 kind:data align:32
     .bss        start:0x020bc2a0 end:0x020bc2c0 kind:bss align:32
 
-src/overlays/ov097/calls/func_ov097_020ba7c0.c:
+src/overlays/players/ov097_player_riku_4/func_ov097_020ba7c0.c:
     complete
     .text       start:0x020ba7c0 end:0x020ba7d4
 
-src/overlays/ov097/calls/Ov097_stateCtorReturnHandler.c:
+src/overlays/players/ov097_player_riku_4/Ov097_stateCtorReturnHandler.c:
     complete
     .text       start:0x020ba7d4 end:0x020ba7fc
 
-src/overlays/ov097/calls/Ov097_stateDtorCleanup.c:
+src/overlays/players/ov097_player_riku_4/Ov097_stateDtorCleanup.c:
     complete
     .text       start:0x020ba7fc end:0x020ba830
 
-src/overlays/ov097/calls/Ov097_BuildRigObject.c:
+src/overlays/players/ov097_player_riku_4/Ov097_BuildRigObject.c:
     complete
     .text       start:0x020ba830 end:0x020baa44
 
-src/overlays/ov097/calls/Ov097_initFlagStateRegionMarshal.c:
+src/overlays/players/ov097_player_riku_4/Ov097_initFlagStateRegionMarshal.c:
     complete
     .text       start:0x020baa44 end:0x020baab0
 
-src/overlays/ov097/auto/Ov097_MapSlotKindToAnim.c:
+src/overlays/players/ov097_player_riku_4/Ov097_MapSlotKindToAnim.c:
     complete
     .text       start:0x020baab0 end:0x020baad0
 
-src/overlays/ov097/calls/Ov097_ApplyModeChange.c:
+src/overlays/players/ov097_player_riku_4/Ov097_ApplyModeChange.c:
     complete
     .text       start:0x020baad0 end:0x020babc8
 
-src/overlays/ov097/calls/Ov097_SetupAndForwardToVecBuilder.c:
+src/overlays/players/ov097_player_riku_4/Ov097_SetupAndForwardToVecBuilder.c:
     complete
     .text       start:0x020babc8 end:0x020bac0c
 
-src/overlays/ov097/calls/Ov097_InvokeSubHandlerPairWithBuffer.c:
+src/overlays/players/ov097_player_riku_4/Ov097_InvokeSubHandlerPairWithBuffer.c:
     complete
     .text       start:0x020bac0c end:0x020bac38
 
-src/overlays/ov097/calls/Ov097_BuildRenderHandle.c:
+src/overlays/players/ov097_player_riku_4/Ov097_BuildRenderHandle.c:
     complete
     .text       start:0x020bac38 end:0x020bac98
 
-src/overlays/ov097/calls/Ov097_SelectRequestHandler2.c:
+src/overlays/players/ov097_player_riku_4/Ov097_SelectRequestHandler2.c:
     complete
     .text       start:0x020bac98 end:0x020bad0c
 
-src/overlays/ov097/calls/Ov097_ResetAndBindFourSlotSets.c:
+src/overlays/players/ov097_player_riku_4/Ov097_ResetAndBindFourSlotSets.c:
     complete
     .text       start:0x020bad0c end:0x020bade0
 
-src/overlays/ov097/calls/Ov097_FreeSubObjectArrayAndTailSlots.c:
+src/overlays/players/ov097_player_riku_4/Ov097_FreeSubObjectArrayAndTailSlots.c:
     complete
     .text       start:0x020bade0 end:0x020bae28
 
-src/overlays/ov097/calls/Ov097_FireTwinBurst.c:
+src/overlays/players/ov097_player_riku_4/Ov097_FireTwinBurst.c:
     complete
     .text       start:0x020bae28 end:0x020bafd8
 
-src/overlays/ov097/calls/Ov097_FireTimedBurst.c:
+src/overlays/players/ov097_player_riku_4/Ov097_FireTimedBurst.c:
     complete
     .text       start:0x020bafd8 end:0x020bb168
 
-src/overlays/ov097/calls/Ov097_DispatchToFourSubHandlers.c:
+src/overlays/players/ov097_player_riku_4/Ov097_DispatchToFourSubHandlers.c:
     complete
     .text       start:0x020bb168 end:0x020bb1b0
 
-src/overlays/ov097/calls/Ov097_UpdateSubBlocksIfEnabled.c:
+src/overlays/players/ov097_player_riku_4/Ov097_UpdateSubBlocksIfEnabled.c:
     complete
     .text       start:0x020bb1b0 end:0x020bb210
 
-src/overlays/ov097/calls/Ov097_Activate.c:
+src/overlays/players/ov097_player_riku_4/Ov097_Activate.c:
     complete
     .text       start:0x020bb210 end:0x020bb224
 
-src/overlays/ov097/calls/Ov097_StepSequenceSlot.c:
+src/overlays/players/ov097_player_riku_4/Ov097_StepSequenceSlot.c:
     complete
     .text       start:0x020bb224 end:0x020bb324
 
-src/overlays/ov097/calls/Ov097_DrawNodeAtOwner.c:
+src/overlays/players/ov097_player_riku_4/Ov097_DrawNodeAtOwner.c:
     complete
     .text       start:0x020bb324 end:0x020bb39c
 
-src/overlays/ov097/calls/Ov097_StepProjectilesAndFireVolley.c:
+src/overlays/players/ov097_player_riku_4/Ov097_StepProjectilesAndFireVolley.c:
     complete
     .text       start:0x020bb39c end:0x020bb484
 
-src/overlays/ov097/calls/Ov097_LaunchProjectile.c:
+src/overlays/players/ov097_player_riku_4/Ov097_LaunchProjectile.c:
     complete
     .text       start:0x020bb484 end:0x020bb64c
 
-src/overlays/ov097/calls/Ov097_UpdateTracksWhileState2.c:
+src/overlays/players/ov097_player_riku_4/Ov097_UpdateTracksWhileState2.c:
     complete
     .text       start:0x020bb64c end:0x020bb67c
 
-src/overlays/ov097/calls/Ov097_DrawNodeCallback.c:
+src/overlays/players/ov097_player_riku_4/Ov097_DrawNodeCallback.c:
     complete
     .text       start:0x020bb67c end:0x020bb698
 
-src/overlays/ov097/calls/Ov097_DriveEmitterStateMachine.c:
+src/overlays/players/ov097_player_riku_4/Ov097_DriveEmitterStateMachine.c:
     complete
     .text       start:0x020bb698 end:0x020bb7c4
 
-src/overlays/ov097/calls/Ov097_UploadBoneMatrices.c:
+src/overlays/players/ov097_player_riku_4/Ov097_UploadBoneMatrices.c:
     complete
     .text       start:0x020bb7c4 end:0x020bb840
 
-src/overlays/ov097/calls/Ov097_BindAnimsMode2.c:
+src/overlays/players/ov097_player_riku_4/Ov097_BindAnimsMode2.c:
     complete
     .text       start:0x020bb840 end:0x020bb8c0
 
-src/overlays/ov097/calls/Ov097_AdvanceTrackTime.c:
+src/overlays/players/ov097_player_riku_4/Ov097_AdvanceTrackTime.c:
     complete
     .text       start:0x020bb8c0 end:0x020bb93c
 
-src/overlays/ov097/calls/Ov097_SetYawAndDrawNode.c:
+src/overlays/players/ov097_player_riku_4/Ov097_SetYawAndDrawNode.c:
     complete
     .text       start:0x020bb93c end:0x020bb998
 
-src/overlays/ov097/calls/Ov097_FlagLocalAndEnterState.c:
+src/overlays/players/ov097_player_riku_4/Ov097_FlagLocalAndEnterState.c:
     complete
     .text       start:0x020bb998 end:0x020bba18
 
-src/overlays/ov097/calls/Ov097_ApproachStep.c:
+src/overlays/players/ov097_player_riku_4/Ov097_ApproachStep.c:
     complete
     .text       start:0x020bba18 end:0x020bbdc0
 
-src/overlays/ov097/calls/Ov097_PursuitStep.c:
+src/overlays/players/ov097_player_riku_4/Ov097_PursuitStep.c:
     complete
     .text       start:0x020bbdc0 end:0x020bc194
 
-src/overlays/ov097/calls/Ov097_InvokeWithDataTable.c:
+src/overlays/players/ov097_player_riku_4/Ov097_InvokeWithDataTable.c:
     complete
     .text       start:0x020bc194 end:0x020bc1ac
 
-src/overlays/ov097/data/ov097_class_020bc200.c:
+src/overlays/players/ov097_player_riku_4/data/ov097_class_020bc200.c:
     complete
     .data       start:0x020bc200 end:0x020bc214
 
-src/overlays/ov097/data/ov097_strings_020bc1ac.c:
+src/overlays/players/ov097_player_riku_4/data/ov097_strings_020bc1ac.c:
     complete
     .rodata     start:0x020bc1ac end:0x020bc1ec
 
-src/overlays/ov097/data/ov097_strings_020bc214.c:
+src/overlays/players/ov097_player_riku_4/data/ov097_strings_020bc214.c:
     complete
     .data       start:0x020bc214 end:0x020bc2a0

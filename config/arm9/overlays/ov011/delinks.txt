@@ -4,190 +4,190 @@
     .data       start:0x0205e8a0 end:0x0205e960 kind:data align:32
     .bss        start:0x0205e960 end:0x0205e980 kind:bss align:32
 
-src/overlays/ov011/calls/Ov011_CreateScene.c:
+src/overlays/scenes/ov011/Ov011_CreateScene.c:
     complete
     .text       start:0x0205ac40 end:0x0205ae14
 
-src/overlays/ov011/calls/Ov011_InitGlobalStateAndGetHandler.c:
+src/overlays/scenes/ov011/Ov011_InitGlobalStateAndGetHandler.c:
     complete
     .text       start:0x0205ae14 end:0x0205ae4c
 
-src/overlays/ov011/calls/Ov011_TickMoviePlaybackState.c:
+src/overlays/scenes/ov011/Ov011_TickMoviePlaybackState.c:
     complete
     .text       start:0x0205ae4c end:0x0205aff4
 
-src/overlays/ov011/calls/Ov011_InvokeWithMainBldcnt.c:
+src/overlays/scenes/ov011/Ov011_InvokeWithMainBldcnt.c:
     complete
     .text       start:0x0205aff4 end:0x0205b014
 
-src/overlays/ov011/calls/Ov011_InvokeWithSubBldcnt.c:
+src/overlays/scenes/ov011/Ov011_InvokeWithSubBldcnt.c:
     complete
     .text       start:0x0205b014 end:0x0205b034
 
-src/overlays/ov011/calls/Ov011_DestroyScene.c:
+src/overlays/scenes/ov011/Ov011_DestroyScene.c:
     complete
     .text       start:0x0205b034 end:0x0205b1bc
 
-src/overlays/ov011/calls/Ov011_Window_SetCorners.c:
+src/overlays/scenes/ov011/Ov011_Window_SetCorners.c:
     complete
     .text       start:0x0205b1bc end:0x0205b340
 
-src/overlays/ov011/calls/Ov011_TickLayoutAnimator.c:
+src/overlays/scenes/ov011/Ov011_TickLayoutAnimator.c:
     complete
     .text       start:0x0205b340 end:0x0205b814
 
-src/overlays/ov011/calls/Ov011_BlitTileRow.c:
+src/overlays/scenes/ov011/Ov011_BlitTileRow.c:
     complete
     .text       start:0x0205b814 end:0x0205b8f8
 
-src/overlays/ov011/calls/Ov011_BlitTileColumn.c:
+src/overlays/scenes/ov011/Ov011_BlitTileColumn.c:
     complete
     .text       start:0x0205b8f8 end:0x0205b9f4
 
-src/overlays/ov011/calls/Ov011_BlitPaneTiles.c:
+src/overlays/scenes/ov011/Ov011_BlitPaneTiles.c:
     complete
     .text       start:0x0205b9f4 end:0x0205bb58
 
-src/overlays/ov011/calls/Ov011_StepPaneScroll.c:
+src/overlays/scenes/ov011/Ov011_StepPaneScroll.c:
     complete
     .text       start:0x0205bb58 end:0x0205bddc
 
-src/overlays/ov011/calls/Ov011_SelectMenuTableA.c:
+src/overlays/scenes/ov011/Ov011_SelectMenuTableA.c:
     complete
     .text       start:0x0205bddc end:0x0205be38
 
-src/overlays/ov011/calls/Ov011_BuildTitleLayout0.c:
+src/overlays/scenes/ov011/Ov011_BuildTitleLayout0.c:
     complete
     .text       start:0x0205be38 end:0x0205c04c
 
-src/overlays/ov011/auto/Ov011_ClearBlendA.c:
+src/overlays/scenes/ov011/Ov011_ClearBlendA.c:
     complete
     .text       start:0x0205c04c end:0x0205c060
 
-src/overlays/ov011/auto/Ov011_ClearBlendB.c:
+src/overlays/scenes/ov011/Ov011_ClearBlendB.c:
     complete
     .text       start:0x0205c060 end:0x0205c074
 
-src/overlays/ov011/calls/Ov011_EnterMode2.c:
+src/overlays/scenes/ov011/Ov011_EnterMode2.c:
     complete
     .text       start:0x0205c074 end:0x0205c190
 
-src/overlays/ov011/calls/Ov011_Mode2Teardown.c:
+src/overlays/scenes/ov011/Ov011_Mode2Teardown.c:
     complete
     .text       start:0x0205c190 end:0x0205c2fc
 
-src/overlays/ov011/calls/Ov011_StartTitleExit.c:
+src/overlays/scenes/ov011/Ov011_StartTitleExit.c:
     complete
     .text       start:0x0205c2fc end:0x0205c370
 
-src/overlays/ov011/calls/Ov011_RunSetupThenInvokeIfState3.c:
+src/overlays/scenes/ov011/Ov011_RunSetupThenInvokeIfState3.c:
     complete
     .text       start:0x0205c370 end:0x0205c3a0
 
-src/overlays/ov011/calls/Ov011_UpdateTitleFrame.c:
+src/overlays/scenes/ov011/Ov011_UpdateTitleFrame.c:
     complete
     .text       start:0x0205c3a0 end:0x0205c5e0
 
-src/overlays/ov011/auto/Ov011_TitleStateNoOp.c:
+src/overlays/scenes/ov011/Ov011_TitleStateNoOp.c:
     complete
     .text       start:0x0205c5e0 end:0x0205c5e4
 
-src/overlays/ov011/calls/Ov011_TickTitleFadeOut.c:
+src/overlays/scenes/ov011/Ov011_TickTitleFadeOut.c:
     complete
     .text       start:0x0205c5e4 end:0x0205c6fc
 
-src/overlays/ov011/calls/Ov011_ApplyPaneFade.c:
+src/overlays/scenes/ov011/Ov011_ApplyPaneFade.c:
     complete
     .text       start:0x0205c6fc end:0x0205c884
 
-src/overlays/ov011/calls/Ov011_TickTitleFade.c:
+src/overlays/scenes/ov011/Ov011_TickTitleFade.c:
     complete
     .text       start:0x0205c884 end:0x0205cad8
 
-src/overlays/ov011/calls/Ov011_RefreshCurrentPhase.c:
+src/overlays/scenes/ov011/Ov011_RefreshCurrentPhase.c:
     complete
     .text       start:0x0205cad8 end:0x0205cb18
 
-src/overlays/ov011/calls/Ov011_TickTitleMenu.c:
+src/overlays/scenes/ov011/Ov011_TickTitleMenu.c:
     complete
     .text       start:0x0205cb18 end:0x0205cda0
 
-src/overlays/ov011/calls/Ov011_DrawTitleLine.c:
+src/overlays/scenes/ov011/Ov011_DrawTitleLine.c:
     complete
     .text       start:0x0205cda0 end:0x0205cfa8
 
-src/overlays/ov011/auto/Ov011_IsTagString.c:
+src/overlays/scenes/ov011/Ov011_IsTagString.c:
     complete
     .text       start:0x0205cfa8 end:0x0205cff0
 
-src/overlays/ov011/calls/Ov011_ScrollTitleText.c:
+src/overlays/scenes/ov011/Ov011_ScrollTitleText.c:
     complete
     .text       start:0x0205cff0 end:0x0205d218
 
-src/overlays/ov011/calls/Ov011_VBlankApplyBgScroll.c:
+src/overlays/scenes/ov011/Ov011_VBlankApplyBgScroll.c:
     complete
     .text       start:0x0205d218 end:0x0205d324
 
-src/overlays/ov011/calls/Ov011_InitTitleDisplay.c:
+src/overlays/scenes/ov011/Ov011_InitTitleDisplay.c:
     complete
     .text       start:0x0205d324 end:0x0205d508
 
-src/overlays/ov011/calls/Ov011_EmitSlotGfx.c:
+src/overlays/scenes/ov011/Ov011_EmitSlotGfx.c:
     complete
     .text       start:0x0205d508 end:0x0205d664
 
-src/overlays/ov011/calls/Ov011_AllocAndRegisterObject.c:
+src/overlays/scenes/ov011/Ov011_AllocAndRegisterObject.c:
     complete
     .text       start:0x0205d664 end:0x0205d6a0
 
-src/overlays/ov011/calls/Ov011_CreateTitleObjects.c:
+src/overlays/scenes/ov011/Ov011_CreateTitleObjects.c:
     complete
     .text       start:0x0205d6a0 end:0x0205d7bc
 
-src/overlays/ov011/calls/Ov011_SetupTitleBackgrounds.c:
+src/overlays/scenes/ov011/Ov011_SetupTitleBackgrounds.c:
     complete
     .text       start:0x0205d7bc end:0x0205da60
 
-src/overlays/ov011/calls/Ov011_InitTitleTileSurface.c:
+src/overlays/scenes/ov011/Ov011_InitTitleTileSurface.c:
     complete
     .text       start:0x0205da60 end:0x0205dac8
 
-src/overlays/ov011/calls/Ov011_SetupTitleTileSurfaces.c:
+src/overlays/scenes/ov011/Ov011_SetupTitleTileSurfaces.c:
     complete
     .text       start:0x0205dac8 end:0x0205db90
 
-src/overlays/ov011/calls/Ov011_LoadEntryTable.c:
+src/overlays/scenes/ov011/Ov011_LoadEntryTable.c:
     complete
     .text       start:0x0205db90 end:0x0205dc4c
 
-src/overlays/ov011/calls/Ov011_IsBootStateReady.c:
+src/overlays/scenes/ov011/Ov011_IsBootStateReady.c:
     complete
     .text       start:0x0205dc4c end:0x0205dc7c
 
-src/overlays/ov011/data/ov011_anim_0205e130.c:
+src/overlays/scenes/ov011/data/ov011_anim_0205e130.c:
     complete
     .rodata     start:0x0205e130 end:0x0205e880
 
-src/overlays/ov011/data/ov011_class_0205e8a0.c:
+src/overlays/scenes/ov011/data/ov011_class_0205e8a0.c:
     complete
     .data       start:0x0205e8a0 end:0x0205e8b4
 
-src/overlays/ov011/data/ov011_pointers_0205dc90.c:
+src/overlays/scenes/ov011/data/ov011_pointers_0205dc90.c:
     complete
     .rodata     start:0x0205dc90 end:0x0205dca0
 
-src/overlays/ov011/data/ov011_pointers_0205e8b4.c:
+src/overlays/scenes/ov011/data/ov011_pointers_0205e8b4.c:
     complete
     .data       start:0x0205e8b4 end:0x0205e8e4
 
-src/overlays/ov011/data/ov011_strings_0205e8e4.c:
+src/overlays/scenes/ov011/data/ov011_strings_0205e8e4.c:
     complete
     .data       start:0x0205e8e4 end:0x0205e960
 
-src/overlays/ov011/data/ov011_tables_0205dc7c.c:
+src/overlays/scenes/ov011/data/ov011_tables_0205dc7c.c:
     complete
     .rodata     start:0x0205dc7c end:0x0205dc90
 
-src/overlays/ov011/data/ov011_tables_0205dca0.c:
+src/overlays/scenes/ov011/data/ov011_tables_0205dca0.c:
     complete
     .rodata     start:0x0205dca0 end:0x0205e130

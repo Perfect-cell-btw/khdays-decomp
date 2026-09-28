@@ -4,162 +4,162 @@
     .data       start:0x020d55c0 end:0x020d55e0 kind:data align:32
     .bss        start:0x020d55e0 end:0x020d55e0 kind:bss align:32
 
-src/overlays/ov298/calls/Ov298_RegisterEntityClass.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov298/calls/Ov298_CreateNamedEntity.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov298/calls/Ov298_Construct.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_Construct.c:
     complete
     .text       start:0x020d3844 end:0x020d3a28
 
-src/overlays/ov298/calls/Ov298_ReleaseSubObjectsThenNotify.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_ReleaseSubObjectsThenNotify.c:
     complete
     .text       start:0x020d3a28 end:0x020d3a54
 
-src/overlays/ov298/calls/Ov298_PropagateBlockChain.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_PropagateBlockChain.c:
     complete
     .text       start:0x020d3a54 end:0x020d3ab4
 
-src/overlays/ov298/calls/func_ov298_020d3ab4.c:
+src/overlays/enemies/ov298_enemy_72/func_ov298_020d3ab4.c:
     complete
     .text       start:0x020d3ab4 end:0x020d3ac0
 
-src/overlays/ov298/calls/func_ov298_020d3ac0.c:
+src/overlays/enemies/ov298_enemy_72/func_ov298_020d3ac0.c:
     complete
     .text       start:0x020d3ac0 end:0x020d3acc
 
-src/overlays/ov298/calls/Ov298_HandleMessage.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_HandleMessage.c:
     complete
     .text       start:0x020d3acc end:0x020d3bcc
 
-src/overlays/ov298/calls/Ov298_SwitchAnimation.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_SwitchAnimation.c:
     complete
     .text       start:0x020d3bcc end:0x020d3ca8
 
-src/overlays/ov298/calls/Ov298_Slot38_StoreValue.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_Slot38_StoreValue.c:
     complete
     .text       start:0x020d3ca8 end:0x020d3cb0
 
-src/overlays/ov298/calls/Ov298_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d3cb0 end:0x020d3d0c
 
-src/overlays/ov298/calls/Ov298_OnHit.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_OnHit.c:
     complete
     .text       start:0x020d3d0c end:0x020d3f50
 
-src/overlays/ov298/calls/Ov298_MapHeldItemKindToAnim.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_MapHeldItemKindToAnim.c:
     complete
     .text       start:0x020d3f50 end:0x020d404c
 
-src/overlays/ov298/calls/Ov298_AcquireTargetGapAndAngle.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_AcquireTargetGapAndAngle.c:
     complete
     .text       start:0x020d404c end:0x020d40e4
 
-src/overlays/ov298/calls/Ov298_ComputeNormalizedDir.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_ComputeNormalizedDir.c:
     complete
     .text       start:0x020d40e4 end:0x020d4124
 
-src/overlays/ov298/calls/Ov298_DashSetup.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_DashSetup.c:
     complete
     .text       start:0x020d4124 end:0x020d4200
 
-src/overlays/ov298/calls/Ov298_InitStates.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_InitStates.c:
     complete
     .text       start:0x020d4200 end:0x020d42f8
 
-src/overlays/ov298/calls/Ov298_DispatchSubStateByte.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_DispatchSubStateByte.c:
     complete
     .text       start:0x020d42f8 end:0x020d4484
 
-src/overlays/ov298/calls/Ov298_OrientationTick.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_OrientationTick.c:
     complete
     .text       start:0x020d4484 end:0x020d45a8
 
-src/overlays/ov298/calls/Ov298_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d45a8 end:0x020d4610
 
-src/overlays/ov298/calls/Ov298_RerollTimerThenAdvance.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_RerollTimerThenAdvance.c:
     complete
     .text       start:0x020d4610 end:0x020d467c
 
-src/overlays/ov298/calls/Ov298_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d467c end:0x020d46d0
 
-src/overlays/ov298/calls/Ov298_IdleTick.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_IdleTick.c:
     complete
     .text       start:0x020d46d0 end:0x020d47c0
 
-src/overlays/ov298/calls/Ov298_Pose1SetupWithTimerThenAdvance.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_Pose1SetupWithTimerThenAdvance.c:
     complete
     .text       start:0x020d47c0 end:0x020d4834
 
-src/overlays/ov298/calls/Ov298_WanderTick.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_WanderTick.c:
     complete
     .text       start:0x020d4834 end:0x020d4cb0
 
-src/overlays/ov298/calls/Ov298_LeapEntry.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_LeapEntry.c:
     complete
     .text       start:0x020d4cb0 end:0x020d4da4
 
-src/overlays/ov298/calls/Ov298_ScaleDescentVectorThenAdvance.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_ScaleDescentVectorThenAdvance.c:
     complete
     .text       start:0x020d4da4 end:0x020d4e1c
 
-src/overlays/ov298/calls/Ov298_AiDecelerateUntilReady.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_AiDecelerateUntilReady.c:
     complete
     .text       start:0x020d4e1c end:0x020d4ea0
 
-src/overlays/ov298/calls/Ov298_CopyScaleVecSetField28ThenAdvance.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_CopyScaleVecSetField28ThenAdvance.c:
     complete
     .text       start:0x020d4ea0 end:0x020d4f28
 
-src/overlays/ov298/calls/Ov298_ApproachEntry.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_ApproachEntry.c:
     complete
     .text       start:0x020d4f28 end:0x020d5034
 
-src/overlays/ov298/calls/Ov298_AiPickApproachOrAttack.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_AiPickApproachOrAttack.c:
     complete
     .text       start:0x020d5034 end:0x020d510c
 
-src/overlays/ov298/calls/Ov298_TurnEntry.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_TurnEntry.c:
     complete
     .text       start:0x020d510c end:0x020d51fc
 
-src/overlays/ov298/calls/Ov298_ForwardThenEnterSubState4.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_ForwardThenEnterSubState4.c:
     complete
     .text       start:0x020d51fc end:0x020d5258
 
-src/overlays/ov298/calls/Ov298_RetreatEntry.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_RetreatEntry.c:
     complete
     .text       start:0x020d5258 end:0x020d53c4
 
-src/overlays/ov298/calls/Ov298_AiWarpToArenaSpot.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_AiWarpToArenaSpot.c:
     complete
     .text       start:0x020d53c4 end:0x020d5484
 
-src/overlays/ov298/calls/Ov298_ConfigSubStateThenAdvanceSlot_2.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020d5484 end:0x020d54cc
 
-src/overlays/ov298/auto/Ov298_AiLockStep.c:
+src/overlays/enemies/ov298_enemy_72/Ov298_AiLockStep.c:
     complete
     .text       start:0x020d54cc end:0x020d54e8
 
-src/overlays/ov298/data/ov298_strings_020d55c0.c:
+src/overlays/enemies/ov298_enemy_72/data/ov298_strings_020d55c0.c:
     complete
     .data       start:0x020d55c0 end:0x020d55e0
 
-src/overlays/ov298/data/ov298_tables_020d54e8.c:
+src/overlays/enemies/ov298_enemy_72/data/ov298_tables_020d54e8.c:
     complete
     .rodata     start:0x020d54e8 end:0x020d54f0
 
-src/overlays/ov298/data/ov298_tables_020d54f0.c:
+src/overlays/enemies/ov298_enemy_72/data/ov298_tables_020d54f0.c:
     complete
     .rodata     start:0x020d54f0 end:0x020d55a4

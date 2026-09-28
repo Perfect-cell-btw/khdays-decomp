@@ -4,162 +4,162 @@
     .data       start:0x020b9980 end:0x020b9a20 kind:data align:32
     .bss        start:0x020b9a20 end:0x020b9a40 kind:bss align:32
 
-src/overlays/ov084/calls/func_ov084_020b8100.c:
+src/overlays/players/ov084_player_mickey_3/func_ov084_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov084/calls/Ov084_stateCtorReturnHandler.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b813c
 
-src/overlays/ov084/calls/Ov084_stateDtorCleanup.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_stateDtorCleanup.c:
     complete
     .text       start:0x020b813c end:0x020b8170
 
-src/overlays/ov084/calls/Ov084_BuildRigObject.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_BuildRigObject.c:
     complete
     .text       start:0x020b8170 end:0x020b8368
 
-src/overlays/ov084/calls/Ov084_initFlagStateRegionMarshal.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_initFlagStateRegionMarshal.c:
     complete
     .text       start:0x020b8368 end:0x020b83d4
 
-src/overlays/ov084/auto/Ov084_MapSlotKindToAnim.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b83d4 end:0x020b83e8
 
-src/overlays/ov084/calls/Ov084_ApplyModeChange.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_ApplyModeChange.c:
     complete
     .text       start:0x020b83e8 end:0x020b850c
 
-src/overlays/ov084/calls/Ov084_TickPairedState.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_TickPairedState.c:
     complete
     .text       start:0x020b850c end:0x020b8650
 
-src/overlays/ov084/calls/Ov084_HandleMsgAndFacePartner.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_HandleMsgAndFacePartner.c:
     complete
     .text       start:0x020b8650 end:0x020b8798
 
-src/overlays/ov084/calls/Ov084_InvokeSubHandlerPairWithGlobalBuffer.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b8798 end:0x020b87cc
 
-src/overlays/ov084/calls/Ov084_AcquireGridSlots.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_AcquireGridSlots.c:
     complete
     .text       start:0x020b87cc end:0x020b8854
 
-src/overlays/ov084/calls/Ov084_ResetAndBindSlotArray.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_ResetAndBindSlotArray.c:
     complete
     .text       start:0x020b8854 end:0x020b88f4
 
-src/overlays/ov084/calls/Ov084_DestroyNodesAndFree.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_DestroyNodesAndFree.c:
     complete
     .text       start:0x020b88f4 end:0x020b8950
 
-src/overlays/ov084/calls/func_ov084_020b8950.c:
+src/overlays/players/ov084_player_mickey_3/func_ov084_020b8950.c:
     complete
     .text       start:0x020b8950 end:0x020b895c
 
-src/overlays/ov084/calls/Ov084_CreateSubObject.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_CreateSubObject.c:
     complete
     .text       start:0x020b895c end:0x020b8a5c
 
-src/overlays/ov084/calls/Ov084_BindRig.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_BindRig.c:
     complete
     .text       start:0x020b8a5c end:0x020b8ab4
 
-src/overlays/ov084/calls/Ov084_dispatchEntryList.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_dispatchEntryList.c:
     complete
     .text       start:0x020b8ab4 end:0x020b8b18
 
-src/overlays/ov084/calls/Ov084_InitRadialBurst.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_InitRadialBurst.c:
     complete
     .text       start:0x020b8b18 end:0x020b8c74
 
-src/overlays/ov084/calls/Ov084_StepHeldProjectile.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_StepHeldProjectile.c:
     complete
     .text       start:0x020b8c74 end:0x020b8d68
 
-src/overlays/ov084/calls/Ov084_FireGroundShot.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_FireGroundShot.c:
     complete
     .text       start:0x020b8d68 end:0x020b8f68
 
-src/overlays/ov084/calls/Ov084_UpdateSlotsAndFlagLocal.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_UpdateSlotsAndFlagLocal.c:
     complete
     .text       start:0x020b8f68 end:0x020b9024
 
-src/overlays/ov084/calls/Ov084_InitAndProcessSixSlotsIfFlagSet.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_InitAndProcessSixSlotsIfFlagSet.c:
     complete
     .text       start:0x020b9024 end:0x020b9064
 
-src/overlays/ov084/calls/Ov084_Activate.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_Activate.c:
     complete
     .text       start:0x020b9064 end:0x020b9078
 
-src/overlays/ov084/calls/Ov084_Deactivate.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_Deactivate.c:
     complete
     .text       start:0x020b9078 end:0x020b9084
 
-src/overlays/ov084/calls/Ov084_DriveChargeSequence.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_DriveChargeSequence.c:
     complete
     .text       start:0x020b9084 end:0x020b91c8
 
-src/overlays/ov084/calls/Ov084_DrawNodeWithOwnerPos3.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_DrawNodeWithOwnerPos3.c:
     complete
     .text       start:0x020b91c8 end:0x020b9248
 
-src/overlays/ov084/calls/Ov084_BindChargeTracks.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_BindChargeTracks.c:
     complete
     .text       start:0x020b9248 end:0x020b929c
 
-src/overlays/ov084/calls/Ov084_BindFreeSlotAtPos.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_BindFreeSlotAtPos.c:
     complete
     .text       start:0x020b929c end:0x020b933c
 
-src/overlays/ov084/calls/Ov084_TickStateReturnDone.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_TickStateReturnDone.c:
     complete
     .text       start:0x020b933c end:0x020b93c8
 
-src/overlays/ov084/calls/Ov084_DrawNodeIfState2.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_DrawNodeIfState2.c:
     complete
     .text       start:0x020b93c8 end:0x020b93e4
 
-src/overlays/ov084/calls/Ov084_LaunchPartProjectile.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_LaunchPartProjectile.c:
     complete
     .text       start:0x020b93e4 end:0x020b94e8
 
-src/overlays/ov084/auto/Ov084_FillEightHalvesMinus1.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_FillEightHalvesMinus1.c:
     complete
     .text       start:0x020b94e8 end:0x020b950c
 
-src/overlays/ov084/calls/Ov084_FlagLocalAndEnterState21.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_FlagLocalAndEnterState21.c:
     complete
     .text       start:0x020b950c end:0x020b9574
 
-src/overlays/ov084/calls/Ov084_StepAttackEnd.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_StepAttackEnd.c:
     complete
     .text       start:0x020b9574 end:0x020b9704
 
-src/overlays/ov084/calls/Ov084_LandingStep.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_LandingStep.c:
     complete
     .text       start:0x020b9704 end:0x020b9920
 
-src/overlays/ov084/calls/Ov084_InvokeWithDataTable.c:
+src/overlays/players/ov084_player_mickey_3/Ov084_InvokeWithDataTable.c:
     complete
     .text       start:0x020b9920 end:0x020b9938
 
-src/overlays/ov084/data/ov084_class_020b9980.c:
+src/overlays/players/ov084_player_mickey_3/data/ov084_class_020b9980.c:
     complete
     .data       start:0x020b9980 end:0x020b9994
 
-src/overlays/ov084/data/ov084_pointers_020b9994.c:
+src/overlays/players/ov084_player_mickey_3/data/ov084_pointers_020b9994.c:
     complete
     .data       start:0x020b9994 end:0x020b99a8
 
-src/overlays/ov084/data/ov084_strings_020b9938.c:
+src/overlays/players/ov084_player_mickey_3/data/ov084_strings_020b9938.c:
     complete
     .rodata     start:0x020b9938 end:0x020b9978
 
-src/overlays/ov084/data/ov084_strings_020b99a8.c:
+src/overlays/players/ov084_player_mickey_3/data/ov084_strings_020b99a8.c:
     complete
     .data       start:0x020b99a8 end:0x020b9a20

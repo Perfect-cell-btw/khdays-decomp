@@ -4,154 +4,154 @@
     .data       start:0x020d4fe0 end:0x020d5000 kind:data align:32
     .bss        start:0x020d5000 end:0x020d5000 kind:bss align:32
 
-src/overlays/ov128/calls/Ov128_RegisterEntityClass.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov128/calls/Ov128_CreateNamedEntity.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov128/calls/Ov128_ChaserInit.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_ChaserInit.c:
     complete
     .text       start:0x020d3844 end:0x020d3a50
 
-src/overlays/ov128/calls/Ov128_ReleaseSubObjectsAndListThenNotify.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020d3a50 end:0x020d3a90
 
-src/overlays/ov128/calls/Ov128_PropagateBlockChain.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_PropagateBlockChain.c:
     complete
     .text       start:0x020d3a90 end:0x020d3b04
 
-src/overlays/ov128/calls/Ov128_Model_SetTrack0.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_Model_SetTrack0.c:
     complete
     .text       start:0x020d3b04 end:0x020d3b34
 
-src/overlays/ov128/calls/Ov128_SpawnSlotEffectOnce.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_SpawnSlotEffectOnce.c:
     complete
     .text       start:0x020d3b34 end:0x020d3bb0
 
-src/overlays/ov128/calls/Ov128_RebuildIdList.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_RebuildIdList.c:
     complete
     .text       start:0x020d3bb0 end:0x020d3c10
 
-src/overlays/ov128/calls/Ov128_registryCreateEntry.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_registryCreateEntry.c:
     complete
     .text       start:0x020d3c10 end:0x020d3c6c
 
-src/overlays/ov128/calls/Ov128_FireEffectOnRandomListId.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_FireEffectOnRandomListId.c:
     complete
     .text       start:0x020d3c6c end:0x020d3ce8
 
-src/overlays/ov128/calls/Ov128_DecaySpinOverElapsed.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_DecaySpinOverElapsed.c:
     complete
     .text       start:0x020d3ce8 end:0x020d3e38
 
-src/overlays/ov128/calls/Ov128_UpdateChaseFacing.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_UpdateChaseFacing.c:
     complete
     .text       start:0x020d3e38 end:0x020d3fdc
 
-src/overlays/ov128/calls/Ov128_HandleHit.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_HandleHit.c:
     complete
     .text       start:0x020d3fdc end:0x020d4144
 
-src/overlays/ov128/calls/Ov128_BeginPhasedReaction.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_BeginPhasedReaction.c:
     complete
     .text       start:0x020d4144 end:0x020d4208
 
-src/overlays/ov128/calls/Ov128_DispatchSubStateByte.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_DispatchSubStateByte.c:
     complete
     .text       start:0x020d4208 end:0x020d4390
 
-src/overlays/ov128/calls/Ov128_SpinAndDriftTick.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_SpinAndDriftTick.c:
     complete
     .text       start:0x020d4390 end:0x020d449c
 
-src/overlays/ov128/calls/Ov128_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d449c end:0x020d4504
 
-src/overlays/ov128/calls/Ov128_AdvanceStateSlotIfHw60Bit0.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_AdvanceStateSlotIfHw60Bit0.c:
     complete
     .text       start:0x020d4504 end:0x020d4548
 
-src/overlays/ov128/calls/Ov128_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020d4548 end:0x020d4614
 
-src/overlays/ov128/calls/Ov128_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d4614 end:0x020d46dc
 
-src/overlays/ov128/calls/Ov128_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d46dc end:0x020d4710
 
-src/overlays/ov128/calls/Ov128_SetPose1ThenAdvanceSlot.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_SetPose1ThenAdvanceSlot.c:
     complete
     .text       start:0x020d4710 end:0x020d4744
 
-src/overlays/ov128/calls/Ov128_PrepSubState4IfChildIdle.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_PrepSubState4IfChildIdle.c:
     complete
     .text       start:0x020d4744 end:0x020d4784
 
-src/overlays/ov128/calls/Ov128_AiEnterChase.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_AiEnterChase.c:
     complete
     .text       start:0x020d4784 end:0x020d47dc
 
-src/overlays/ov128/calls/Ov128_DecideChaseMove.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_DecideChaseMove.c:
     complete
     .text       start:0x020d47dc end:0x020d49dc
 
-src/overlays/ov128/calls/Ov128_SetHw60Flag40ThenAdvance.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_SetHw60Flag40ThenAdvance.c:
     complete
     .text       start:0x020d49dc end:0x020d4a40
 
-src/overlays/ov128/calls/Ov128_ArmThenAttack.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_ArmThenAttack.c:
     complete
     .text       start:0x020d4a40 end:0x020d4acc
 
-src/overlays/ov128/calls/Ov128_ClearHiFlagAndAdvance.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_ClearHiFlagAndAdvance.c:
     complete
     .text       start:0x020d4acc end:0x020d4b40
 
-src/overlays/ov128/calls/Ov128_PrepSubState2IfChildIdle.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_PrepSubState2IfChildIdle.c:
     complete
     .text       start:0x020d4b40 end:0x020d4b80
 
-src/overlays/ov128/calls/Ov128_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d4b80 end:0x020d4bb4
 
-src/overlays/ov128/calls/Ov128_AiStep_QueueAction4OnAnimEnd.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_AiStep_QueueAction4OnAnimEnd.c:
     complete
     .text       start:0x020d4bb4 end:0x020d4be8
 
-src/overlays/ov128/calls/Ov128_SetFlagsAndAdvance.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_SetFlagsAndAdvance.c:
     complete
     .text       start:0x020d4be8 end:0x020d4c90
 
-src/overlays/ov128/calls/Ov128_stateFixedAngleMatrix.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_stateFixedAngleMatrix.c:
     complete
     .text       start:0x020d4c90 end:0x020d4d50
 
-src/overlays/ov128/calls/Ov128_ConfigHw60ActionCallSubThenAdvance.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_ConfigHw60ActionCallSubThenAdvance.c:
     complete
     .text       start:0x020d4d50 end:0x020d4e20
 
-src/overlays/ov128/calls/Ov128_BeginWindUp.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_BeginWindUp.c:
     complete
     .text       start:0x020d4e20 end:0x020d4f14
 
-src/overlays/ov128/calls/Ov128_TimerFireNodeCallbackThenAdvance.c:
+src/overlays/enemies/ov128_enemy_07_2/Ov128_TimerFireNodeCallbackThenAdvance.c:
     complete
     .text       start:0x020d4f14 end:0x020d4fc4
 
-src/overlays/ov128/data/ov128_const_020d4fc4.c:
+src/overlays/enemies/ov128_enemy_07_2/data/ov128_const_020d4fc4.c:
     complete
     .rodata     start:0x020d4fc4 end:0x020d4fc8
 
-src/overlays/ov128/data/ov128_strings_020d4fe0.c:
+src/overlays/enemies/ov128_enemy_07_2/data/ov128_strings_020d4fe0.c:
     complete
     .data       start:0x020d4fe0 end:0x020d5000

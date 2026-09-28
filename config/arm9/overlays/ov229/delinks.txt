@@ -4,334 +4,334 @@
     .data       start:0x020d6920 end:0x020d6960 kind:data align:32
     .bss        start:0x020d6960 end:0x020d6960 kind:bss align:32
 
-src/overlays/ov229/calls/Ov229_RegisterEntityClass.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/ov229/calls/Ov229_CreateNamedEntity.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a28
 
-src/overlays/ov229/calls/Ov229_SyncEffectNodesToJoints.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_SyncEffectNodesToJoints.c:
     complete
     .text       start:0x020d1a28 end:0x020d1b18
 
-src/overlays/ov229/calls/Ov229_Construct.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_Construct.c:
     complete
     .text       start:0x020d1b18 end:0x020d1f04
 
-src/overlays/ov229/calls/Ov229_Destroy.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_Destroy.c:
     complete
     .text       start:0x020d1f04 end:0x020d1f5c
 
-src/overlays/ov229/calls/Ov229_TickAndUpdateAnchor.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_TickAndUpdateAnchor.c:
     complete
     .text       start:0x020d1f5c end:0x020d1fd0
 
-src/overlays/ov229/calls/Ov229_ForwardEventToChildren.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_ForwardEventToChildren.c:
     complete
     .text       start:0x020d1fd0 end:0x020d200c
 
-src/overlays/ov229/calls/Ov229_NotifyPartsThenBase.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d200c end:0x020d2048
 
-src/overlays/ov229/calls/Ov229_OnEffectMessage.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_OnEffectMessage.c:
     complete
     .text       start:0x020d2048 end:0x020d22b4
 
-src/overlays/ov229/calls/Ov229_PostTickCleanup.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_PostTickCleanup.c:
     complete
     .text       start:0x020d22b4 end:0x020d243c
 
-src/overlays/ov229/calls/Ov229_RebindClip.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_RebindClip.c:
     complete
     .text       start:0x020d243c end:0x020d24f4
 
-src/overlays/ov229/calls/Ov229_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d24f4 end:0x020d2550
 
-src/overlays/ov229/calls/Ov229_OnHit.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_OnHit.c:
     complete
     .text       start:0x020d2550 end:0x020d2a9c
 
-src/overlays/ov229/auto/Ov229_RequestSubState12IfNotCurrent.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_RequestSubState12IfNotCurrent.c:
     complete
     .text       start:0x020d2a9c end:0x020d2ac8
 
-src/overlays/ov229/auto/Ov229_RequestSubState13IfIdle.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_RequestSubState13IfIdle.c:
     complete
     .text       start:0x020d2ac8 end:0x020d2af8
 
-src/overlays/ov229/calls/Ov229_ContactSweep.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_ContactSweep.c:
     complete
     .text       start:0x020d2af8 end:0x020d2d90
 
-src/overlays/ov229/calls/Ov229_AiPickMoveByRange.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiPickMoveByRange.c:
     complete
     .text       start:0x020d2d90 end:0x020d2f70
 
-src/overlays/ov229/calls/Ov229_startAnim.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_startAnim.c:
     complete
     .text       start:0x020d2f70 end:0x020d2f84
 
-src/overlays/ov229/calls/Ov229_MeasureTargetGap.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_MeasureTargetGap.c:
     complete
     .text       start:0x020d2f84 end:0x020d302c
 
-src/overlays/ov229/calls/Ov229_BeginPhasedReaction.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_BeginPhasedReaction.c:
     complete
     .text       start:0x020d302c end:0x020d30bc
 
-src/overlays/ov229/calls/Ov229_AiDispatchAction.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiDispatchAction.c:
     complete
     .text       start:0x020d30bc end:0x020d32bc
 
-src/overlays/ov229/calls/Ov229_AiIntegrateMotion.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiIntegrateMotion.c:
     complete
     .text       start:0x020d32bc end:0x020d3450
 
-src/overlays/ov229/calls/Ov229_stSetFlags86Clear3ac.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_stSetFlags86Clear3ac.c:
     complete
     .text       start:0x020d3450 end:0x020d34b8
 
-src/overlays/ov229/calls/Ov229_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d34b8 end:0x020d3544
 
-src/overlays/ov229/calls/Ov229_SetChargeFlagsAndDispatch.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_SetChargeFlagsAndDispatch.c:
     complete
     .text       start:0x020d3544 end:0x020d3624
 
-src/overlays/ov229/calls/Ov229_PushLocalOffsetToOwner.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_PushLocalOffsetToOwner.c:
     complete
     .text       start:0x020d3624 end:0x020d36a8
 
-src/overlays/ov229/calls/Ov229_TickTimerReleaseAtThreshold.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_TickTimerReleaseAtThreshold.c:
     complete
     .text       start:0x020d36a8 end:0x020d3710
 
-src/overlays/ov229/calls/Ov229_AiMoveUntilAnimEnd.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiMoveUntilAnimEnd.c:
     complete
     .text       start:0x020d3710 end:0x020d3850
 
-src/overlays/ov229/calls/Ov229_AiEnterIdle.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiEnterIdle.c:
     complete
     .text       start:0x020d3850 end:0x020d388c
 
-src/overlays/ov229/calls/Ov229_AiIdleTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiIdleTick.c:
     complete
     .text       start:0x020d388c end:0x020d3a1c
 
-src/overlays/ov229/calls/Ov229_RerollTimerThenDispatchSlot5c.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_RerollTimerThenDispatchSlot5c.c:
     complete
     .text       start:0x020d3a1c end:0x020d3aec
 
-src/overlays/ov229/calls/Ov229_AiPickStanceReaction.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiPickStanceReaction.c:
     complete
     .text       start:0x020d3aec end:0x020d3c70
 
-src/overlays/ov229/calls/Ov229_AiStanceMoveTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiStanceMoveTick.c:
     complete
     .text       start:0x020d3c70 end:0x020d3e28
 
-src/overlays/ov229/calls/Ov229_AiStanceMoveFinish.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiStanceMoveFinish.c:
     complete
     .text       start:0x020d3e28 end:0x020d3f20
 
-src/overlays/ov229/calls/Ov229_GrabRelease.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_GrabRelease.c:
     complete
     .text       start:0x020d3f20 end:0x020d3ffc
 
-src/overlays/ov229/calls/Ov229_AiSlamWindup.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiSlamWindup.c:
     complete
     .text       start:0x020d3ffc end:0x020d40e0
 
-src/overlays/ov229/calls/Ov229_AiSlamLeap.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiSlamLeap.c:
     complete
     .text       start:0x020d40e0 end:0x020d41cc
 
-src/overlays/ov229/calls/Ov229_SlamSweepTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_SlamSweepTick.c:
     complete
     .text       start:0x020d41cc end:0x020d4540
 
-src/overlays/ov229/calls/Ov229_PushOffsetTwiceAndReset.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_PushOffsetTwiceAndReset.c:
     complete
     .text       start:0x020d4540 end:0x020d45dc
 
-src/overlays/ov229/calls/Ov229_SpinAttackTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_SpinAttackTick.c:
     complete
     .text       start:0x020d45dc end:0x020d48f0
 
-src/overlays/ov229/calls/Ov229_AiEnterCharge.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiEnterCharge.c:
     complete
     .text       start:0x020d48f0 end:0x020d49f4
 
-src/overlays/ov229/calls/Ov229_ChargeTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_ChargeTick.c:
     complete
     .text       start:0x020d49f4 end:0x020d4b10
 
-src/overlays/ov229/calls/Ov229_CountdownTimer4cThenPose15.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_CountdownTimer4cThenPose15.c:
     complete
     .text       start:0x020d4b10 end:0x020d4b5c
 
-src/overlays/ov229/calls/Ov229_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d4b5c end:0x020d4b90
 
-src/overlays/ov229/calls/Ov229_PushConstThenOffset.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_PushConstThenOffset.c:
     complete
     .text       start:0x020d4b90 end:0x020d4c30
 
-src/overlays/ov229/calls/Ov229_GuardedPushOffset.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_GuardedPushOffset.c:
     complete
     .text       start:0x020d4c30 end:0x020d4ce0
 
-src/overlays/ov229/calls/Ov229_AiBurstWindup.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiBurstWindup.c:
     complete
     .text       start:0x020d4ce0 end:0x020d4d6c
 
-src/overlays/ov229/calls/Ov229_Burst.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_Burst.c:
     complete
     .text       start:0x020d4d6c end:0x020d4e80
 
-src/overlays/ov229/calls/Ov229_AiLungeStrikeTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiLungeStrikeTick.c:
     complete
     .text       start:0x020d4e80 end:0x020d5064
 
-src/overlays/ov229/calls/Ov229_AiEnterRecoilWindup.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiEnterRecoilWindup.c:
     complete
     .text       start:0x020d5064 end:0x020d50e0
 
-src/overlays/ov229/calls/Ov229_RecoilWindUpTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_RecoilWindUpTick.c:
     complete
     .text       start:0x020d50e0 end:0x020d51dc
 
-src/overlays/ov229/calls/Ov229_AiHomingDriftTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiHomingDriftTick.c:
     complete
     .text       start:0x020d51dc end:0x020d53f4
 
-src/overlays/ov229/calls/Ov229_SlamTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_SlamTick.c:
     complete
     .text       start:0x020d53f4 end:0x020d557c
 
-src/overlays/ov229/calls/Ov229_AiExpandingSweepTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiExpandingSweepTick.c:
     complete
     .text       start:0x020d557c end:0x020d5694
 
-src/overlays/ov229/calls/Ov229_AiEnterEmitRing.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiEnterEmitRing.c:
     complete
     .text       start:0x020d5694 end:0x020d56dc
 
-src/overlays/ov229/calls/Ov229_EmitChildOnRing.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_EmitChildOnRing.c:
     complete
     .text       start:0x020d56dc end:0x020d5854
 
-src/overlays/ov229/calls/Ov229_AiStep_QueueAction2OnAnimEnd_2.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiStep_QueueAction2OnAnimEnd_2.c:
     complete
     .text       start:0x020d5854 end:0x020d5888
 
-src/overlays/ov229/calls/Ov229_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d5888 end:0x020d5950
 
-src/overlays/ov229/calls/Ov229_AiStep_QueueAction0.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiStep_QueueAction0.c:
     complete
     .text       start:0x020d5950 end:0x020d5970
 
-src/overlays/ov229/calls/Ov229_AiEnterHold.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiEnterHold.c:
     complete
     .text       start:0x020d5970 end:0x020d5a38
 
-src/overlays/ov229/calls/Ov229_AiHoldTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiHoldTick.c:
     complete
     .text       start:0x020d5a38 end:0x020d5acc
 
-src/overlays/ov229/calls/Ov229_AiEnterApproach.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiEnterApproach.c:
     complete
     .text       start:0x020d5acc end:0x020d5b0c
 
-src/overlays/ov229/calls/Ov229_AiApproachTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiApproachTick.c:
     complete
     .text       start:0x020d5b0c end:0x020d5c34
 
-src/overlays/ov229/calls/Ov229_SetTwoVecsAndFlag.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_SetTwoVecsAndFlag.c:
     complete
     .text       start:0x020d5c34 end:0x020d5c84
 
-src/overlays/ov229/calls/Ov229_Companion_New.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_Companion_New.c:
     complete
     .text       start:0x020d5c84 end:0x020d5cb8
 
-src/overlays/ov229/calls/Ov229_CompanionSetup.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_CompanionSetup.c:
     complete
     .text       start:0x020d5cb8 end:0x020d5e14
 
-src/overlays/ov229/calls/Ov229_Destroy_2.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_Destroy_2.c:
     complete
     .text       start:0x020d5e14 end:0x020d5e38
 
-src/overlays/ov229/calls/Ov229_TickAndSyncModelXform.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d5e38 end:0x020d5e70
 
-src/overlays/ov229/calls/Ov229_EventArmEmitterForward.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_EventArmEmitterForward.c:
     complete
     .text       start:0x020d5e70 end:0x020d5ee8
 
-src/overlays/ov229/calls/Ov229_Model_ReapplyTracks.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_Model_ReapplyTracks.c:
     complete
     .text       start:0x020d5ee8 end:0x020d5f80
 
-src/overlays/ov229/calls/Ov229_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d5f80 end:0x020d5fcc
 
-src/overlays/ov229/calls/Ov229_ScanNearbyEntitiesReact.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_ScanNearbyEntitiesReact.c:
     complete
     .text       start:0x020d5fcc end:0x020d60b4
 
-src/overlays/ov229/calls/Ov229_stateInitClearSlots.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_stateInitClearSlots.c:
     complete
     .text       start:0x020d60b4 end:0x020d615c
 
-src/overlays/ov229/calls/Ov229_dispatchByStatusByte.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_dispatchByStatusByte.c:
     complete
     .text       start:0x020d615c end:0x020d61d4
 
-src/overlays/ov229/calls/Ov229_SeedOffsetVecPublish.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_SeedOffsetVecPublish.c:
     complete
     .text       start:0x020d61d4 end:0x020d6218
 
-src/overlays/ov229/calls/Ov229_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d6218 end:0x020d62c8
 
-src/overlays/ov229/calls/Ov229_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d62c8 end:0x020d6300
 
-src/overlays/ov229/calls/Ov229_EnterDash.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_EnterDash.c:
     complete
     .text       start:0x020d6300 end:0x020d6444
 
-src/overlays/ov229/calls/Ov229_AiDashWindup.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiDashWindup.c:
     complete
     .text       start:0x020d6444 end:0x020d6488
 
-src/overlays/ov229/calls/Ov229_DashTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_DashTick.c:
     complete
     .text       start:0x020d6488 end:0x020d6814
 
-src/overlays/ov229/calls/Ov229_AiScanReactTick.c:
+src/overlays/enemies/ov229_enemy_39_2/Ov229_AiScanReactTick.c:
     complete
     .text       start:0x020d6814 end:0x020d686c
 
-src/overlays/ov229/data/ov229_strings_020d6920.c:
+src/overlays/enemies/ov229_enemy_39_2/data/ov229_strings_020d6920.c:
     complete
     .data       start:0x020d6920 end:0x020d6960
 
-src/overlays/ov229/data/ov229_tables_020d686c.c:
+src/overlays/enemies/ov229_enemy_39_2/data/ov229_tables_020d686c.c:
     complete
     .rodata     start:0x020d686c end:0x020d691c

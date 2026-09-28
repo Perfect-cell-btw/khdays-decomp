@@ -52,21 +52,31 @@ workflow.
 ## Repository layout
 
 ```text
-src/auto/           real C leaf functions (byte-exact, no external calls)
-src/calls/          real C functions with calls (byte-exact)
-src/asm_stubs/auto/   ASM / inline-asm bootstrap stubs, leaf functions
-src/asm_stubs/calls/  ASM / inline-asm bootstrap stubs with calls
-config/             dsd project config (symbols / delinks / relocs per module)
-macros/             assembler macros (function.inc)
-tools/              Python tooling (extraction, matching, candidate finders)
-sdk/                NitroSDK byte-match identification harness (see sdk/README.md)
-build/              generated manifests and reports; build output is git-ignored
+src/engine/                 the main module's game code (ITCM included); data/ holds its DATA
+src/overlays/scenes/        overlays loaded through the scene table (title, field, camp menu, ...)
+src/overlays/screens/       screens and menus a scene loads (shop, game over, ...)
+src/overlays/field/         modules loaded inside the field scene: battle, event script, pickups, ...
+src/overlays/players/       playable characters, one overlay per character and load slot
+src/overlays/enemies/       one overlay per enemy class (ovNNN_enemy_<class id>)
+src/overlays/system/        boot, wireless, MobiClip video, DS Protect, shared enemy framework
+libs/nitro/ libs/nns/       NitroSDK and NitroSystem
+libs/msl/ libs/mobiclip/    Metrowerks runtime and C library, MobiClip middleware
+config/                     dsd project config (symbols / delinks / relocs per module)
+docs/                       layout.md maps the binary to this tree; renames/ lists symbol renames
+tools/                      Python tooling (build, verification, reports)
+sdk/                        NitroSDK byte-match identification harness (see sdk/README.md)
+build/                      generated manifests and reports; build output is git-ignored
 ```
 
-Files under `src/asm_stubs/` may match the original bytes, but they are
-temporary ASM-based matches (`asm void`, `__asm`, hand-written ARM) that were
-used to bootstrap the project. They are counted separately from real C
-decompilation progress, see [docs/PROGRESS_POLICY.md](docs/PROGRESS_POLICY.md).
+Every function is one `.c` file named after it, in its module's directory: `src/engine/` for the
+main module, the overlay's own directory otherwise. An overlay directory keeps the FS overlay id
+the game loads it by (`ov114_enemy_00`); overlays whose purpose is not established yet keep the
+bare `ovNNN`. [docs/layout.md](docs/layout.md) explains what each overlay is and on what evidence.
+
+Library code under `libs/` keeps `auto/` and `calls/` for C and `asm_stubs/` for the
+libraries' own assembly (the NitroSDK's hand-written routines, the CodeWarrior runtime). That
+assembly may match the original bytes, but it is counted separately from real C decompilation
+progress, see [docs/PROGRESS_POLICY.md](docs/PROGRESS_POLICY.md).
 
 The ROM, the extracted data (`dsd_extract/`, `asm/`), build artifacts, and the
 proprietary toolchain are intentionally **not** tracked; see `.gitignore`.

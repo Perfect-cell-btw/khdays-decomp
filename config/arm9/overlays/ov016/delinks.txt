@@ -3,350 +3,350 @@
     .data       start:0x020826e0 end:0x020827c0 kind:data align:32
     .bss        start:0x020827c0 end:0x020827c0 kind:bss align:32
 
-src/overlays/ov016/auto/Ov016_StoreByteAt0x2b8FromByte.c:
+src/overlays/field/ov016_field_breakables/Ov016_StoreByteAt0x2b8FromByte.c:
     complete
     .text       start:0x0207fa40 end:0x0207fa4c
 
-src/overlays/ov016/calls/Ov016_Entry_ReleaseBoundObject.c:
+src/overlays/field/ov016_field_breakables/Ov016_Entry_ReleaseBoundObject.c:
     complete
     .text       start:0x0207fa4c end:0x0207fa5c
 
-src/overlays/ov016/calls/Ov016_ReleaseEmbeddedNode.c:
+src/overlays/field/ov016_field_breakables/Ov016_ReleaseEmbeddedNode.c:
     complete
     .text       start:0x0207fa5c end:0x0207fa68
 
-src/overlays/ov016/calls/Ov016_LiftBindSequence.c:
+src/overlays/field/ov016_field_breakables/Ov016_LiftBindSequence.c:
     complete
     .text       start:0x0207fa68 end:0x0207fad0
 
-src/overlays/ov016/calls/Ov016_RebindActorModelAndIdle.c:
+src/overlays/field/ov016_field_breakables/Ov016_RebindActorModelAndIdle.c:
     complete
     .text       start:0x0207fad0 end:0x0207fafc
 
-src/overlays/ov016/calls/Ov016_Entry_QueryStateReturn8.c:
+src/overlays/field/ov016_field_breakables/Ov016_Entry_QueryStateReturn8.c:
     complete
     .text       start:0x0207fafc end:0x0207fb18
 
-src/overlays/ov016/auto/Ov016_AddrOfField0xE0.c:
+src/overlays/field/ov016_field_breakables/Ov016_AddrOfField0xE0.c:
     complete
     .text       start:0x0207fb18 end:0x0207fb20
 
-src/overlays/ov016/auto/Ov016_AddrOfField0x2C4.c:
+src/overlays/field/ov016_field_breakables/Ov016_AddrOfField0x2C4.c:
     complete
     .text       start:0x0207fb20 end:0x0207fb28
 
-src/overlays/ov016/calls/Ov016_SetEmbeddedSceneNodeEnabled.c:
+src/overlays/field/ov016_field_breakables/Ov016_SetEmbeddedSceneNodeEnabled.c:
     complete
     .text       start:0x0207fb28 end:0x0207fb34
 
-src/overlays/ov016/calls/Ov016_LiftStep.c:
+src/overlays/field/ov016_field_breakables/Ov016_LiftStep.c:
     complete
     .text       start:0x0207fb34 end:0x0207feb8
 
-src/overlays/ov016/calls/Ov016_CreateEntry.c:
+src/overlays/field/ov016_field_breakables/Ov016_CreateEntry.c:
     complete
     .text       start:0x0207feb8 end:0x0207ff40
 
-src/overlays/ov016/calls/Ov016_LiftCreate.c:
+src/overlays/field/ov016_field_breakables/Ov016_LiftCreate.c:
     complete
     .text       start:0x0207ff40 end:0x02080014
 
-src/overlays/ov016/calls/Ov016_Follower_Release.c:
+src/overlays/field/ov016_field_breakables/Ov016_Follower_Release.c:
     complete
     .text       start:0x02080014 end:0x02080024
 
-src/overlays/ov016/calls/Ov016_ReleaseEmbeddedNode_3.c:
+src/overlays/field/ov016_field_breakables/Ov016_ReleaseEmbeddedNode_3.c:
     complete
     .text       start:0x02080024 end:0x02080030
 
-src/overlays/ov016/calls/Ov016_FollowerStart.c:
+src/overlays/field/ov016_field_breakables/Ov016_FollowerStart.c:
     complete
     .text       start:0x02080030 end:0x020800fc
 
-src/overlays/ov016/calls/Ov016_SubmitNodeUnlessHidden.c:
+src/overlays/field/ov016_field_breakables/Ov016_SubmitNodeUnlessHidden.c:
     complete
     .text       start:0x020800fc end:0x02080122
 
-src/overlays/ov016/auto/Ov016_AddrOfField0xD0.c:
+src/overlays/field/ov016_field_breakables/Ov016_AddrOfField0xD0.c:
     complete
     .text       start:0x02080124 end:0x0208012c
 
-src/overlays/ov016/calls/Ov016_FollowerMoveTo.c:
+src/overlays/field/ov016_field_breakables/Ov016_FollowerMoveTo.c:
     complete
     .text       start:0x0208012c end:0x02080190
 
-src/overlays/ov016/auto/Ov016_AddrOfField0x1C.c:
+src/overlays/field/ov016_field_breakables/Ov016_AddrOfField0x1C.c:
     complete
     .text       start:0x02080190 end:0x02080198
 
-src/overlays/ov016/auto/Ov016_AddrOfField0x1A0.c:
+src/overlays/field/ov016_field_breakables/Ov016_AddrOfField0x1A0.c:
     complete
     .text       start:0x02080198 end:0x020801a0
 
-src/overlays/ov016/calls/Ov016_FollowerPieceHolds.c:
+src/overlays/field/ov016_field_breakables/Ov016_FollowerPieceHolds.c:
     complete
     .text       start:0x020801a0 end:0x020802e4
 
-src/overlays/ov016/calls/Ov016_FollowerCheckPieces.c:
+src/overlays/field/ov016_field_breakables/Ov016_FollowerCheckPieces.c:
     complete
     .text       start:0x020802e4 end:0x020803b4
 
-src/overlays/ov016/calls/Ov016_FollowerComplete.c:
+src/overlays/field/ov016_field_breakables/Ov016_FollowerComplete.c:
     complete
     .text       start:0x020803b4 end:0x02080440
 
-src/overlays/ov016/calls/Ov016_AdvanceFrame.c:
+src/overlays/field/ov016_field_breakables/Ov016_AdvanceFrame.c:
     complete
     .text       start:0x02080440 end:0x02080480
 
-src/overlays/ov016/calls/Ov016_FollowerStep.c:
+src/overlays/field/ov016_field_breakables/Ov016_FollowerStep.c:
     complete
     .text       start:0x02080480 end:0x0208076c
 
-src/overlays/ov016/calls/Ov016_SetNodeEnabled.c:
+src/overlays/field/ov016_field_breakables/Ov016_SetNodeEnabled.c:
     complete
     .text       start:0x0208076c end:0x02080780
 
-src/overlays/ov016/calls/Ov016_CreateFollowerClass.c:
+src/overlays/field/ov016_field_breakables/Ov016_CreateFollowerClass.c:
     complete
     .text       start:0x02080780 end:0x02080810
 
-src/overlays/ov016/calls/Ov016_FollowerCreate.c:
+src/overlays/field/ov016_field_breakables/Ov016_FollowerCreate.c:
     complete
     .text       start:0x02080810 end:0x020808c0
 
-src/overlays/ov016/auto/Ov016_SetByteAt0x2bcTo1.c:
+src/overlays/field/ov016_field_breakables/Ov016_SetByteAt0x2bcTo1.c:
     complete
     .text       start:0x020808c0 end:0x020808cc
 
-src/overlays/ov016/calls/Ov016_BreakableRelease.c:
+src/overlays/field/ov016_field_breakables/Ov016_BreakableRelease.c:
     complete
     .text       start:0x020808cc end:0x02080934
 
-src/overlays/ov016/calls/Ov016_ReleaseEmbeddedNode_2.c:
+src/overlays/field/ov016_field_breakables/Ov016_ReleaseEmbeddedNode_2.c:
     complete
     .text       start:0x02080934 end:0x02080940
 
-src/overlays/ov016/calls/Ov016_BreakableStart.c:
+src/overlays/field/ov016_field_breakables/Ov016_BreakableStart.c:
     complete
     .text       start:0x02080940 end:0x020809f4
 
-src/overlays/ov016/calls/Ov016_SubmitRenderNode.c:
+src/overlays/field/ov016_field_breakables/Ov016_SubmitRenderNode.c:
     complete
     .text       start:0x020809f4 end:0x02080a12
 
-src/overlays/ov016/calls/Ov016_BreakableHit.c:
+src/overlays/field/ov016_field_breakables/Ov016_BreakableHit.c:
     complete
     .text       start:0x02080a14 end:0x02080ad4
 
-src/overlays/ov016/auto/Ov016_AddrOf0x1cIfByte0x2bcClear.c:
+src/overlays/field/ov016_field_breakables/Ov016_AddrOf0x1cIfByte0x2bcClear.c:
     complete
     .text       start:0x02080ad4 end:0x02080ae8
 
-src/overlays/ov016/auto/Ov016_GetWordVia8Then0x80.c:
+src/overlays/field/ov016_field_breakables/Ov016_GetWordVia8Then0x80.c:
     complete
     .text       start:0x02080ae8 end:0x02080af4
 
-src/overlays/ov016/auto/Ov016_AddrOfField0xE0_2.c:
+src/overlays/field/ov016_field_breakables/Ov016_AddrOfField0xE0_2.c:
     complete
     .text       start:0x02080af4 end:0x02080afc
 
-src/overlays/ov016/calls/Ov016_SetEmbeddedSceneNodeEnabled_2.c:
+src/overlays/field/ov016_field_breakables/Ov016_SetEmbeddedSceneNodeEnabled_2.c:
     complete
     .text       start:0x02080afc end:0x02080b08
 
-src/overlays/ov016/calls/Ov016_BreakableStep.c:
+src/overlays/field/ov016_field_breakables/Ov016_BreakableStep.c:
     complete
     .text       start:0x02080b08 end:0x02080d1c
 
-src/overlays/ov016/auto/Ov016_BreakableDoneStep.c:
+src/overlays/field/ov016_field_breakables/Ov016_BreakableDoneStep.c:
     complete
     .text       start:0x02080d1c end:0x02080d24
 
-src/overlays/ov016/calls/Ov016_BreakableBreakStep.c:
+src/overlays/field/ov016_field_breakables/Ov016_BreakableBreakStep.c:
     complete
     .text       start:0x02080d24 end:0x02080de0
 
-src/overlays/ov016/calls/Ov016_CreateBreakableClass.c:
+src/overlays/field/ov016_field_breakables/Ov016_CreateBreakableClass.c:
     complete
     .text       start:0x02080de0 end:0x02080ec0
 
-src/overlays/ov016/calls/Ov016_BreakableCreate.c:
+src/overlays/field/ov016_field_breakables/Ov016_BreakableCreate.c:
     complete
     .text       start:0x02080ec0 end:0x02080fa4
 
-src/overlays/ov016/calls/Ov016_VmCmdCreateEntry.c:
+src/overlays/field/ov016_field_breakables/Ov016_VmCmdCreateEntry.c:
     complete
     .text       start:0x02080fa4 end:0x02080ffa
 
-src/overlays/ov016/calls/Ov016_ScriptOpCreateLift.c:
+src/overlays/field/ov016_field_breakables/Ov016_ScriptOpCreateLift.c:
     complete
     .text       start:0x02080ffc end:0x02081108
 
-src/overlays/ov016/calls/Ov016_InitTripleAndDispatch.c:
+src/overlays/field/ov016_field_breakables/Ov016_InitTripleAndDispatch.c:
     complete
     .text       start:0x02081108 end:0x02081142
 
-src/overlays/ov016/calls/Ov016_ScriptOpCreateFollower.c:
+src/overlays/field/ov016_field_breakables/Ov016_ScriptOpCreateFollower.c:
     complete
     .text       start:0x02081144 end:0x020811fe
 
-src/overlays/ov016/calls/Ov016_VmCmd1200.c:
+src/overlays/field/ov016_field_breakables/Ov016_VmCmd1200.c:
     complete
     .text       start:0x02081200 end:0x020812a2
 
-src/overlays/ov016/calls/Ov016_ScriptOpCreateBreakable.c:
+src/overlays/field/ov016_field_breakables/Ov016_ScriptOpCreateBreakable.c:
     complete
     .text       start:0x020812a4 end:0x0208135e
 
-src/overlays/ov016/calls/Ov016_VmCmdCreateEntryClass80.c:
+src/overlays/field/ov016_field_breakables/Ov016_VmCmdCreateEntryClass80.c:
     complete
     .text       start:0x02081360 end:0x020813e8
 
-src/overlays/ov016/calls/Ov016_ScriptOpCreateKickable.c:
+src/overlays/field/ov016_field_breakables/Ov016_ScriptOpCreateKickable.c:
     complete
     .text       start:0x020813e8 end:0x020814b0
 
-src/overlays/ov016/calls/Ov016_VmCmd14b0.c:
+src/overlays/field/ov016_field_breakables/Ov016_VmCmd14b0.c:
     complete
     .text       start:0x020814b0 end:0x0208154e
 
-src/overlays/ov016/calls/Ov016_ScriptOpCreateHazard.c:
+src/overlays/field/ov016_field_breakables/Ov016_ScriptOpCreateHazard.c:
     complete
     .text       start:0x02081550 end:0x020815e8
 
-src/overlays/ov016/calls/Ov016_SetAnim.c:
+src/overlays/field/ov016_field_breakables/Ov016_SetAnim.c:
     complete
     .text       start:0x020815e8 end:0x02081624
 
-src/overlays/ov016/calls/Ov016_KickableAckPeer.c:
+src/overlays/field/ov016_field_breakables/Ov016_KickableAckPeer.c:
     complete
     .text       start:0x02081624 end:0x02081670
 
-src/overlays/ov016/calls/Ov016_KickableHandleMessage.c:
+src/overlays/field/ov016_field_breakables/Ov016_KickableHandleMessage.c:
     complete
     .text       start:0x02081670 end:0x02081830
 
-src/overlays/ov016/calls/Ov016_KickableReturnHome.c:
+src/overlays/field/ov016_field_breakables/Ov016_KickableReturnHome.c:
     complete
     .text       start:0x02081830 end:0x020818dc
 
-src/overlays/ov016/calls/Ov016_KickableReceiveHit.c:
+src/overlays/field/ov016_field_breakables/Ov016_KickableReceiveHit.c:
     complete
     .text       start:0x020818dc end:0x020819a8
 
-src/overlays/ov016/calls/Ov016_ReleaseNode.c:
+src/overlays/field/ov016_field_breakables/Ov016_ReleaseNode.c:
     complete
     .text       start:0x020819a8 end:0x020819c4
 
-src/overlays/ov016/calls/Ov016_ReleaseNodeAndInvalidate.c:
+src/overlays/field/ov016_field_breakables/Ov016_ReleaseNodeAndInvalidate.c:
     complete
     .text       start:0x020819c4 end:0x020819e0
 
-src/overlays/ov016/calls/Ov016_KickableStart.c:
+src/overlays/field/ov016_field_breakables/Ov016_KickableStart.c:
     complete
     .text       start:0x020819e0 end:0x02081a78
 
-src/overlays/ov016/calls/Ov016_RebindActorAndApplyStatePalette.c:
+src/overlays/field/ov016_field_breakables/Ov016_RebindActorAndApplyStatePalette.c:
     complete
     .text       start:0x02081a78 end:0x02081af0
 
-src/overlays/ov016/calls/Ov016_Entry80_SetNodeEnabled.c:
+src/overlays/field/ov016_field_breakables/Ov016_Entry80_SetNodeEnabled.c:
     complete
     .text       start:0x02081af0 end:0x02081b00
 
-src/overlays/ov016/calls/Ov016_KickableHit.c:
+src/overlays/field/ov016_field_breakables/Ov016_KickableHit.c:
     complete
     .text       start:0x02081b00 end:0x02081c34
 
-src/overlays/ov016/calls/Ov016_KickableTargetPosition.c:
+src/overlays/field/ov016_field_breakables/Ov016_KickableTargetPosition.c:
     complete
     .text       start:0x02081c34 end:0x02081cc8
 
-src/overlays/ov016/calls/Ov016_KickableQueryParamA.c:
+src/overlays/field/ov016_field_breakables/Ov016_KickableQueryParamA.c:
     complete
     .text       start:0x02081cc8 end:0x02081d14
 
-src/overlays/ov016/auto/Ov016_GetField54cPtr.c:
+src/overlays/field/ov016_field_breakables/Ov016_GetField54cPtr.c:
     complete
     .text       start:0x02081d14 end:0x02081d20
 
-src/overlays/ov016/auto/Ov016_AddrOfField0x64c.c:
+src/overlays/field/ov016_field_breakables/Ov016_AddrOfField0x64c.c:
     complete
     .text       start:0x02081d20 end:0x02081d2c
 
-src/overlays/ov016/calls/Ov016_KickableStep.c:
+src/overlays/field/ov016_field_breakables/Ov016_KickableStep.c:
     complete
     .text       start:0x02081d2c end:0x02081f64
 
-src/overlays/ov016/calls/Ov016_CreateEntryClass80.c:
+src/overlays/field/ov016_field_breakables/Ov016_CreateEntryClass80.c:
     complete
     .text       start:0x02081f64 end:0x02082020
 
-src/overlays/ov016/calls/Ov016_KickableCreate.c:
+src/overlays/field/ov016_field_breakables/Ov016_KickableCreate.c:
     complete
     .text       start:0x02082020 end:0x020821f8
 
-src/overlays/ov016/calls/Ov016_HazardSetState.c:
+src/overlays/field/ov016_field_breakables/Ov016_HazardSetState.c:
     complete
     .text       start:0x020821f8 end:0x02082294
 
-src/overlays/ov016/calls/Ov016_OnHazardMessage.c:
+src/overlays/field/ov016_field_breakables/Ov016_OnHazardMessage.c:
     complete
     .text       start:0x02082294 end:0x020822c0
 
-src/overlays/ov016/calls/Ov016_ReleaseEmbeddedRenderItem.c:
+src/overlays/field/ov016_field_breakables/Ov016_ReleaseEmbeddedRenderItem.c:
     complete
     .text       start:0x020822c0 end:0x020822cc
 
-src/overlays/ov016/calls/Ov016_ReleaseNodeAndMark.c:
+src/overlays/field/ov016_field_breakables/Ov016_ReleaseNodeAndMark.c:
     complete
     .text       start:0x020822cc end:0x020822e0
 
-src/overlays/ov016/calls/Ov016_HazardStart.c:
+src/overlays/field/ov016_field_breakables/Ov016_HazardStart.c:
     complete
     .text       start:0x020822e0 end:0x02082380
 
-src/overlays/ov016/calls/Ov016_RebindActorModelWithBones.c:
+src/overlays/field/ov016_field_breakables/Ov016_RebindActorModelWithBones.c:
     complete
     .text       start:0x02082380 end:0x020823a8
 
-src/overlays/ov016/auto/Ov016_AddrOfField0xE0_3.c:
+src/overlays/field/ov016_field_breakables/Ov016_AddrOfField0xE0_3.c:
     complete
     .text       start:0x020823a8 end:0x020823b0
 
-src/overlays/ov016/calls/Ov016_DeliverHitToTarget.c:
+src/overlays/field/ov016_field_breakables/Ov016_DeliverHitToTarget.c:
     complete
     .text       start:0x020823b0 end:0x02082444
 
-src/overlays/ov016/calls/Ov016_HazardStep.c:
+src/overlays/field/ov016_field_breakables/Ov016_HazardStep.c:
     complete
     .text       start:0x02082444 end:0x020825b4
 
-src/overlays/ov016/calls/Ov016_CreateHazardClass.c:
+src/overlays/field/ov016_field_breakables/Ov016_CreateHazardClass.c:
     complete
     .text       start:0x020825b4 end:0x02082664
 
-src/overlays/ov016/calls/Ov016_HazardCreate.c:
+src/overlays/field/ov016_field_breakables/Ov016_HazardCreate.c:
     complete
     .text       start:0x02082664 end:0x020826dc
 
-src/overlays/ov016/data/ov016_kickable_rows_02082758.c:
+src/overlays/field/ov016_field_breakables/data/ov016_kickable_rows_02082758.c:
     complete
     .data       start:0x02082758 end:0x020827c0
 
-src/overlays/ov016/data/ov016_pointers_020826e0.c:
+src/overlays/field/ov016_field_breakables/data/ov016_pointers_020826e0.c:
     complete
     .data       start:0x020826e0 end:0x02082740
 
-src/overlays/ov016/data/ov016_pointers_02082748.c:
+src/overlays/field/ov016_field_breakables/data/ov016_pointers_02082748.c:
     complete
     .data       start:0x02082748 end:0x0208274c
 
-src/overlays/ov016/data/ov016_tables_02082740.c:
+src/overlays/field/ov016_field_breakables/data/ov016_tables_02082740.c:
     complete
     .data       start:0x02082740 end:0x02082748
 
-src/overlays/ov016/data/ov016_tables_0208274c.c:
+src/overlays/field/ov016_field_breakables/data/ov016_tables_0208274c.c:
     complete
     .data       start:0x0208274c end:0x02082758

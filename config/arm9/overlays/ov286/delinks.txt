@@ -3,98 +3,98 @@
     .data       start:0x020d4580 end:0x020d45a0 kind:data align:32
     .bss        start:0x020d45a0 end:0x020d45a0 kind:bss align:32
 
-src/overlays/ov286/calls/Ov286_RegisterEntityClass.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov286/calls/Ov286_CreateNamedEntity.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov286/calls/Ov286_ClassInit.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_ClassInit.c:
     complete
     .text       start:0x020d3844 end:0x020d3984
 
-src/overlays/ov286/calls/Ov286_OnDespawn.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_OnDespawn.c:
     complete
     .text       start:0x020d3984 end:0x020d39a0
 
-src/overlays/ov286/calls/Ov286_CopyBlockToTwoNodes.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_CopyBlockToTwoNodes.c:
     complete
     .text       start:0x020d39a0 end:0x020d39fc
 
-src/overlays/ov286/calls/Ov286_ForwardAnimEvent.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_ForwardAnimEvent.c:
     complete
     .text       start:0x020d39fc end:0x020d3a1c
 
-src/overlays/ov286/calls/Ov286_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d3a1c end:0x020d3a68
 
-src/overlays/ov286/calls/Ov286_SpendHitPointsOnHit.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_SpendHitPointsOnHit.c:
     complete
     .text       start:0x020d3a68 end:0x020d3adc
 
-src/overlays/ov286/auto/Ov286_TryBeginSubState5IfIdle.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_TryBeginSubState5IfIdle.c:
     complete
     .text       start:0x020d3adc end:0x020d3b0c
 
-src/overlays/ov286/calls/Ov286_AiStateInit.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_AiStateInit.c:
     complete
     .text       start:0x020d3b0c end:0x020d3bd0
 
-src/overlays/ov286/calls/Ov286_DispatchSubStateByte.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_DispatchSubStateByte.c:
     complete
     .text       start:0x020d3bd0 end:0x020d3d18
 
-src/overlays/ov286/calls/Ov286_ApplyFacingAndFlushMove.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_ApplyFacingAndFlushMove.c:
     complete
     .text       start:0x020d3d18 end:0x020d3dac
 
-src/overlays/ov286/calls/Ov286_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d3dac end:0x020d3e14
 
-src/overlays/ov286/calls/Ov286_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d3e14 end:0x020d3e50
 
-src/overlays/ov286/calls/Ov286_Action48Callback.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_Action48Callback.c:
     complete
     .text       start:0x020d3e50 end:0x020d3f18
 
-src/overlays/ov286/calls/Ov286_Wait_Tick.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_Wait_Tick.c:
     complete
     .text       start:0x020d3f18 end:0x020d3fe8
 
-src/overlays/ov286/calls/Ov286_AccumulateTimer28ThenAdvanceAt400.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_AccumulateTimer28ThenAdvanceAt400.c:
     complete
     .text       start:0x020d3fe8 end:0x020d4038
 
-src/overlays/ov286/calls/Ov286_stDiv5Store.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_stDiv5Store.c:
     complete
     .text       start:0x020d4038 end:0x020d409c
 
-src/overlays/ov286/calls/Ov286_Chase_DecideAttack.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_Chase_DecideAttack.c:
     complete
     .text       start:0x020d409c end:0x020d4188
 
-src/overlays/ov286/calls/Ov286_Chase_Enter.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_Chase_Enter.c:
     complete
     .text       start:0x020d4188 end:0x020d4210
 
-src/overlays/ov286/calls/Ov286_Chase_Tick.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_Chase_Tick.c:
     complete
     .text       start:0x020d4210 end:0x020d43ec
 
-src/overlays/ov286/calls/Ov286_ConfigHw60FlagsBeginAction4a.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_ConfigHw60FlagsBeginAction4a.c:
     complete
     .text       start:0x020d43ec end:0x020d44b4
 
-src/overlays/ov286/calls/Ov286_ConfigHw60BeginAction49.c:
+src/overlays/enemies/ov286_enemy_6a_2/Ov286_ConfigHw60BeginAction49.c:
     complete
     .text       start:0x020d44b4 end:0x020d4568
 
-src/overlays/ov286/data/ov286_strings_020d4580.c:
+src/overlays/enemies/ov286_enemy_6a_2/data/ov286_strings_020d4580.c:
     complete
     .data       start:0x020d4580 end:0x020d45a0

@@ -15,6 +15,7 @@ from pathlib import Path
 
 import audit_progress
 import data_progress
+import srctree
 from report_asm import is_verified_match, load_verified_matches
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,9 +33,9 @@ def category_for_source(src_path, unit):
         m = re.match(r"^libs/(msl|nitro)/([^/]+)/", s)
         if m:
             return f"{m.group(1)}/{m.group(2)}"
-        m = re.match(r"^src/overlays/(ov\d+)/", s)
-        if m:
-            return f"overlays/{m.group(1)}"
+        ov = srctree.overlay_of(s)  # src/overlays/<group>/ovNNN[_name]/
+        if ov and s.startswith("src/"):
+            return f"overlays/{ov}"
         if s.startswith("src/"):
             return "main"
     # Fall back on unit id from the symbol index.

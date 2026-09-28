@@ -4,210 +4,210 @@
     .data       start:0x020d2c20 end:0x020d2c60 kind:data align:32
     .bss        start:0x020d2c60 end:0x020d2c60 kind:bss align:32
 
-src/overlays/ov276/calls/Ov276_RegisterEntityClass.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov276/calls/Ov276_AllocActorWithName.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AllocActorWithName.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc08
 
-src/overlays/ov276/calls/Ov276_JointCallback.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_JointCallback.c:
     complete
     .text       start:0x020cfc08 end:0x020cfcf8
 
-src/overlays/ov276/calls/Ov276_EnemyConstruct.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_EnemyConstruct.c:
     complete
     .text       start:0x020cfcf8 end:0x020d00c0
 
-src/overlays/ov276/calls/Ov276_FullTeardownReleaseSlots.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_FullTeardownReleaseSlots.c:
     complete
     .text       start:0x020d00c0 end:0x020d0118
 
-src/overlays/ov276/calls/Ov276_DrawHook.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_DrawHook.c:
     complete
     .text       start:0x020d0118 end:0x020d0194
 
-src/overlays/ov276/calls/func_ov276_020d0194.c:
+src/overlays/enemies/ov276_enemy_61/func_ov276_020d0194.c:
     complete
     .text       start:0x020d0194 end:0x020d01a0
 
-src/overlays/ov276/calls/func_ov276_020d01a0.c:
+src/overlays/enemies/ov276_enemy_61/func_ov276_020d01a0.c:
     complete
     .text       start:0x020d01a0 end:0x020d01ac
 
-src/overlays/ov276/calls/Ov276_HandleMessage.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_HandleMessage.c:
     complete
     .text       start:0x020d01ac end:0x020d0374
 
-src/overlays/ov276/calls/Ov276_TickHook.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_TickHook.c:
     complete
     .text       start:0x020d0374 end:0x020d044c
 
-src/overlays/ov276/calls/Ov276_RebindModelForVariant.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_RebindModelForVariant.c:
     complete
     .text       start:0x020d044c end:0x020d0504
 
-src/overlays/ov276/calls/Ov276_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d0504 end:0x020d0560
 
-src/overlays/ov276/calls/Ov276_OnHit.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_OnHit.c:
     complete
     .text       start:0x020d0560 end:0x020d08f8
 
-src/overlays/ov276/auto/Ov276_RequestSubState8IfNotAlready.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_RequestSubState8IfNotAlready.c:
     complete
     .text       start:0x020d08f8 end:0x020d0924
 
-src/overlays/ov276/auto/Ov276_RequestSubState9IfIdle.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_RequestSubState9IfIdle.c:
     complete
     .text       start:0x020d0924 end:0x020d0954
 
-src/overlays/ov276/calls/Ov276_ContactSweep.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_ContactSweep.c:
     complete
     .text       start:0x020d0954 end:0x020d0be8
 
-src/overlays/ov276/calls/Ov276_IdleCountdown.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_IdleCountdown.c:
     complete
     .text       start:0x020d0be8 end:0x020d0cdc
 
-src/overlays/ov276/calls/Ov276_startAnim.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_startAnim.c:
     complete
     .text       start:0x020d0cdc end:0x020d0cf0
 
-src/overlays/ov276/calls/Ov276_DistanceToTarget.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_DistanceToTarget.c:
     complete
     .text       start:0x020d0cf0 end:0x020d0d98
 
-src/overlays/ov276/calls/Ov276_BeginPhasedReaction.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_BeginPhasedReaction.c:
     complete
     .text       start:0x020d0d98 end:0x020d0e28
 
-src/overlays/ov276/calls/Ov276_DispatchSubStateByte.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_DispatchSubStateByte.c:
     complete
     .text       start:0x020d0e28 end:0x020d0fc8
 
-src/overlays/ov276/calls/Ov276_ProbeBoxAhead.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_ProbeBoxAhead.c:
     complete
     .text       start:0x020d0fc8 end:0x020d1160
 
-src/overlays/ov276/calls/Ov276_stSetFlags86Clear3ac.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_stSetFlags86Clear3ac.c:
     complete
     .text       start:0x020d1160 end:0x020d11c8
 
-src/overlays/ov276/calls/Ov276_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d11c8 end:0x020d1254
 
-src/overlays/ov276/calls/Ov276_SetChargeFlagsAndDispatch.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_SetChargeFlagsAndDispatch.c:
     complete
     .text       start:0x020d1254 end:0x020d1334
 
-src/overlays/ov276/calls/Ov276_PushLocalOffsetToOwner.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_PushLocalOffsetToOwner.c:
     complete
     .text       start:0x020d1334 end:0x020d13b8
 
-src/overlays/ov276/calls/Ov276_TickTimerReleaseAtThreshold.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_TickTimerReleaseAtThreshold.c:
     complete
     .text       start:0x020d13b8 end:0x020d1420
 
-src/overlays/ov276/calls/Ov276_AiTurnTick.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AiTurnTick.c:
     complete
     .text       start:0x020d1420 end:0x020d1560
 
-src/overlays/ov276/calls/Ov276_AiEnterIdle.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AiEnterIdle.c:
     complete
     .text       start:0x020d1560 end:0x020d159c
 
-src/overlays/ov276/calls/Ov276_IdleTick.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_IdleTick.c:
     complete
     .text       start:0x020d159c end:0x020d1738
 
-src/overlays/ov276/calls/Ov276_RerollTimerThenDispatchSlot5c.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_RerollTimerThenDispatchSlot5c.c:
     complete
     .text       start:0x020d1738 end:0x020d1808
 
-src/overlays/ov276/calls/Ov276_AiPickStanceReaction.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AiPickStanceReaction.c:
     complete
     .text       start:0x020d1808 end:0x020d198c
 
-src/overlays/ov276/calls/Ov276_AiApproachTick.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AiApproachTick.c:
     complete
     .text       start:0x020d198c end:0x020d1b44
 
-src/overlays/ov276/calls/Ov276_stateFixedAngleMatrix.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_stateFixedAngleMatrix.c:
     complete
     .text       start:0x020d1b44 end:0x020d1c3c
 
-src/overlays/ov276/calls/Ov276_GrabRelease.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_GrabRelease.c:
     complete
     .text       start:0x020d1c3c end:0x020d1d14
 
-src/overlays/ov276/calls/Ov276_stateFixedAngleMatrix_2.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_stateFixedAngleMatrix_2.c:
     complete
     .text       start:0x020d1d14 end:0x020d1df8
 
-src/overlays/ov276/calls/Ov276_stateFixedAngleMatrix_3.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_stateFixedAngleMatrix_3.c:
     complete
     .text       start:0x020d1df8 end:0x020d1ee4
 
-src/overlays/ov276/calls/Ov276_SlamTick.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_SlamTick.c:
     complete
     .text       start:0x020d1ee4 end:0x020d2194
 
-src/overlays/ov276/calls/Ov276_PushOffsetTwiceAndReset.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_PushOffsetTwiceAndReset.c:
     complete
     .text       start:0x020d2194 end:0x020d2230
 
-src/overlays/ov276/calls/Ov276_SpinAttackTick.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_SpinAttackTick.c:
     complete
     .text       start:0x020d2230 end:0x020d2540
 
-src/overlays/ov276/calls/Ov276_stateFixedAngleMatrix_4.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_stateFixedAngleMatrix_4.c:
     complete
     .text       start:0x020d2540 end:0x020d2644
 
-src/overlays/ov276/calls/Ov276_ChargeTick.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_ChargeTick.c:
     complete
     .text       start:0x020d2644 end:0x020d275c
 
-src/overlays/ov276/calls/Ov276_CountdownTimer4cThenPose15.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_CountdownTimer4cThenPose15.c:
     complete
     .text       start:0x020d275c end:0x020d27a8
 
-src/overlays/ov276/calls/Ov276_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d27a8 end:0x020d27dc
 
-src/overlays/ov276/calls/Ov276_DescentEntry.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_DescentEntry.c:
     complete
     .text       start:0x020d27dc end:0x020d28a4
 
-src/overlays/ov276/calls/Ov276_AiStep_QueueAction0.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AiStep_QueueAction0.c:
     complete
     .text       start:0x020d28a4 end:0x020d28c4
 
-src/overlays/ov276/calls/Ov276_AscentEntry.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AscentEntry.c:
     complete
     .text       start:0x020d28c4 end:0x020d298c
 
-src/overlays/ov276/calls/Ov276_AiHoldTick.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AiHoldTick.c:
     complete
     .text       start:0x020d298c end:0x020d2a20
 
-src/overlays/ov276/calls/Ov276_AiEnterApproach.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AiEnterApproach.c:
     complete
     .text       start:0x020d2a20 end:0x020d2a60
 
-src/overlays/ov276/calls/Ov276_AiWalkToTargetTick.c:
+src/overlays/enemies/ov276_enemy_61/Ov276_AiWalkToTargetTick.c:
     complete
     .text       start:0x020d2a60 end:0x020d2b88
 
-src/overlays/ov276/data/ov276_strings_020d2c20.c:
+src/overlays/enemies/ov276_enemy_61/data/ov276_strings_020d2c20.c:
     complete
     .data       start:0x020d2c20 end:0x020d2c60
 
-src/overlays/ov276/data/ov276_tables_020d2b88.c:
+src/overlays/enemies/ov276_enemy_61/data/ov276_tables_020d2b88.c:
     complete
     .rodata     start:0x020d2b88 end:0x020d2c04

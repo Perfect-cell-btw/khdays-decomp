@@ -4,162 +4,162 @@
     .data       start:0x020b57e0 end:0x020b58c0 kind:data align:32
     .bss        start:0x020b58c0 end:0x020b58e0 kind:bss align:32
 
-src/overlays/ov032/calls/func_ov032_020b3220.c:
+src/overlays/players/ov032_player_xigbar/func_ov032_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov032/calls/Ov032_InitAndGetHandler.c:
+src/overlays/players/ov032_player_xigbar/Ov032_InitAndGetHandler.c:
     complete
     .text       start:0x020b3234 end:0x020b328c
 
-src/overlays/ov032/calls/Ov032_UnloadEnemyOverlay.c:
+src/overlays/players/ov032_player_xigbar/Ov032_UnloadEnemyOverlay.c:
     complete
     .text       start:0x020b328c end:0x020b32d8
 
-src/overlays/ov032/calls/Ov032_Boot.c:
+src/overlays/players/ov032_player_xigbar/Ov032_Boot.c:
     complete
     .text       start:0x020b32d8 end:0x020b3524
 
-src/overlays/ov032/calls/Ov032_SceneSetup.c:
+src/overlays/players/ov032_player_xigbar/Ov032_SceneSetup.c:
     complete
     .text       start:0x020b3524 end:0x020b3654
 
-src/overlays/ov032/auto/Ov032_MapSlotKindToAnim.c:
+src/overlays/players/ov032_player_xigbar/Ov032_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b3654 end:0x020b367c
 
-src/overlays/ov032/calls/Ov032_ForwardSetFlagBit3.c:
+src/overlays/players/ov032_player_xigbar/Ov032_ForwardSetFlagBit3.c:
     complete
     .text       start:0x020b367c end:0x020b3698
 
-src/overlays/ov032/calls/Ov032_HandleStateMessage.c:
+src/overlays/players/ov032_player_xigbar/Ov032_HandleStateMessage.c:
     complete
     .text       start:0x020b3698 end:0x020b3994
 
-src/overlays/ov032/calls/Ov032_SpawnShot.c:
+src/overlays/players/ov032_player_xigbar/Ov032_SpawnShot.c:
     complete
     .text       start:0x020b3994 end:0x020b3ba8
 
-src/overlays/ov032/calls/Ov032_ApplyMode.c:
+src/overlays/players/ov032_player_xigbar/Ov032_ApplyMode.c:
     complete
     .text       start:0x020b3ba8 end:0x020b3e28
 
-src/overlays/ov032/calls/Ov032_UpdateTick.c:
+src/overlays/players/ov032_player_xigbar/Ov032_UpdateTick.c:
     complete
     .text       start:0x020b3e28 end:0x020b3f38
 
-src/overlays/ov032/calls/Ov032_EffectTick.c:
+src/overlays/players/ov032_player_xigbar/Ov032_EffectTick.c:
     complete
     .text       start:0x020b3f38 end:0x020b4034
 
-src/overlays/ov032/calls/Ov032_SpawnAttachEffects.c:
+src/overlays/players/ov032_player_xigbar/Ov032_SpawnAttachEffects.c:
     complete
     .text       start:0x020b4034 end:0x020b413c
 
-src/overlays/ov032/calls/Ov032_ChargeTick.c:
+src/overlays/players/ov032_player_xigbar/Ov032_ChargeTick.c:
     complete
     .text       start:0x020b413c end:0x020b43dc
 
-src/overlays/ov032/calls/Ov032_CreateSubObject.c:
+src/overlays/players/ov032_player_xigbar/Ov032_CreateSubObject.c:
     complete
     .text       start:0x020b43dc end:0x020b4618
 
-src/overlays/ov032/calls/Ov032_DisposeAndFreeChild.c:
+src/overlays/players/ov032_player_xigbar/Ov032_DisposeAndFreeChild.c:
     complete
     .text       start:0x020b4618 end:0x020b463c
 
-src/overlays/ov032/calls/Ov032_HandleMessage.c:
+src/overlays/players/ov032_player_xigbar/Ov032_HandleMessage.c:
     complete
     .text       start:0x020b463c end:0x020b46e4
 
-src/overlays/ov032/calls/Ov032_InvokeBothGroupCallbacks.c:
+src/overlays/players/ov032_player_xigbar/Ov032_InvokeBothGroupCallbacks.c:
     complete
     .text       start:0x020b46e4 end:0x020b470c
 
-src/overlays/ov032/calls/Ov032_DrawTrail.c:
+src/overlays/players/ov032_player_xigbar/Ov032_DrawTrail.c:
     complete
     .text       start:0x020b470c end:0x020b48e0
 
-src/overlays/ov032/calls/Ov032_BuildRenderHandles.c:
+src/overlays/players/ov032_player_xigbar/Ov032_BuildRenderHandles.c:
     complete
     .text       start:0x020b48e0 end:0x020b4994
 
-src/overlays/ov032/calls/Ov032_MissionStart.c:
+src/overlays/players/ov032_player_xigbar/Ov032_MissionStart.c:
     complete
     .text       start:0x020b4994 end:0x020b49f8
 
-src/overlays/ov032/calls/Ov032_ReleaseChildFromGlobal.c:
+src/overlays/players/ov032_player_xigbar/Ov032_ReleaseChildFromGlobal.c:
     complete
     .text       start:0x020b49f8 end:0x020b4a10
 
-src/overlays/ov032/calls/Ov032_EffectBlockStart.c:
+src/overlays/players/ov032_player_xigbar/Ov032_EffectBlockStart.c:
     complete
     .text       start:0x020b4a10 end:0x020b4ae8
 
-src/overlays/ov032/calls/Ov032_EffectBlockStop.c:
+src/overlays/players/ov032_player_xigbar/Ov032_EffectBlockStop.c:
     complete
     .text       start:0x020b4ae8 end:0x020b4bd8
 
-src/overlays/ov032/calls/Ov032_SetState5.c:
+src/overlays/players/ov032_player_xigbar/Ov032_SetState5.c:
     complete
     .text       start:0x020b4bd8 end:0x020b4be4
 
-src/overlays/ov032/calls/Ov032_EffectBlockTick.c:
+src/overlays/players/ov032_player_xigbar/Ov032_EffectBlockTick.c:
     complete
     .text       start:0x020b4be4 end:0x020b4cb0
 
-src/overlays/ov032/calls/Ov032_EffectBlockPlace.c:
+src/overlays/players/ov032_player_xigbar/Ov032_EffectBlockPlace.c:
     complete
     .text       start:0x020b4cb0 end:0x020b4da4
 
-src/overlays/ov032/calls/Ov032_OpenSubObject.c:
+src/overlays/players/ov032_player_xigbar/Ov032_OpenSubObject.c:
     complete
     .text       start:0x020b4da4 end:0x020b4e5c
 
-src/overlays/ov032/calls/Ov032_BindRig.c:
+src/overlays/players/ov032_player_xigbar/Ov032_BindRig.c:
     complete
     .text       start:0x020b4e5c end:0x020b4ebc
 
-src/overlays/ov032/calls/Ov032_ArmPlayerLock.c:
+src/overlays/players/ov032_player_xigbar/Ov032_ArmPlayerLock.c:
     complete
     .text       start:0x020b4ebc end:0x020b4f24
 
-src/overlays/ov032/calls/Ov032_HoverStep.c:
+src/overlays/players/ov032_player_xigbar/Ov032_HoverStep.c:
     complete
     .text       start:0x020b4f24 end:0x020b51a8
 
-src/overlays/ov032/calls/Ov032_ShotStep.c:
+src/overlays/players/ov032_player_xigbar/Ov032_ShotStep.c:
     complete
     .text       start:0x020b51a8 end:0x020b552c
 
-src/overlays/ov032/calls/Ov032_TryFire.c:
+src/overlays/players/ov032_player_xigbar/Ov032_TryFire.c:
     complete
     .text       start:0x020b552c end:0x020b56d0
 
-src/overlays/ov032/calls/Ov032_InvokeWithDataTable.c:
+src/overlays/players/ov032_player_xigbar/Ov032_InvokeWithDataTable.c:
     complete
     .text       start:0x020b56d0 end:0x020b56e8
 
-src/overlays/ov032/data/ov032_class_020b57f4.c:
+src/overlays/players/ov032_player_xigbar/data/ov032_class_020b57f4.c:
     complete
     .data       start:0x020b57f4 end:0x020b5808
 
-src/overlays/ov032/data/ov032_ctorargs_020b5724.c:
+src/overlays/players/ov032_player_xigbar/data/ov032_ctorargs_020b5724.c:
     complete
     .rodata     start:0x020b5724 end:0x020b5738
 
-src/overlays/ov032/data/ov032_strings_020b5738.c:
+src/overlays/players/ov032_player_xigbar/data/ov032_strings_020b5738.c:
     complete
     .rodata     start:0x020b5738 end:0x020b57c8
 
-src/overlays/ov032/data/ov032_strings_020b57e0.c:
+src/overlays/players/ov032_player_xigbar/data/ov032_strings_020b57e0.c:
     complete
     .data       start:0x020b57e0 end:0x020b57f4
 
-src/overlays/ov032/data/ov032_strings_020b5808.c:
+src/overlays/players/ov032_player_xigbar/data/ov032_strings_020b5808.c:
     complete
     .data       start:0x020b5808 end:0x020b58c0
 
-src/overlays/ov032/data/ov032_tables_020b56e8.c:
+src/overlays/players/ov032_player_xigbar/data/ov032_tables_020b56e8.c:
     complete
     .rodata     start:0x020b56e8 end:0x020b5724

@@ -4,178 +4,178 @@
     .data       start:0x020b4e40 end:0x020b4f40 kind:data align:32
     .bss        start:0x020b4f40 end:0x020b4f60 kind:bss align:32
 
-src/overlays/ov036/calls/func_ov036_020b3220.c:
+src/overlays/players/ov036_player_demyx/func_ov036_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov036/calls/Ov036_stateCtorMultiInitReturnHandler.c:
+src/overlays/players/ov036_player_demyx/Ov036_stateCtorMultiInitReturnHandler.c:
     complete
     .text       start:0x020b3234 end:0x020b3268
 
-src/overlays/ov036/calls/Ov036_stateDtorCleanupMulti.c:
+src/overlays/players/ov036_player_demyx/Ov036_stateDtorCleanupMulti.c:
     complete
     .text       start:0x020b3268 end:0x020b32a4
 
-src/overlays/ov036/calls/Ov036_Boot.c:
+src/overlays/players/ov036_player_demyx/Ov036_Boot.c:
     complete
     .text       start:0x020b32a4 end:0x020b3498
 
-src/overlays/ov036/calls/Ov036_initFlagStateRegionMarshal.c:
+src/overlays/players/ov036_player_demyx/Ov036_initFlagStateRegionMarshal.c:
     complete
     .text       start:0x020b3498 end:0x020b3504
 
-src/overlays/ov036/auto/Ov036_MapSlotKindToAnim.c:
+src/overlays/players/ov036_player_demyx/Ov036_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b3504 end:0x020b352c
 
-src/overlays/ov036/calls/Ov036_ApplyModeChange.c:
+src/overlays/players/ov036_player_demyx/Ov036_ApplyModeChange.c:
     complete
     .text       start:0x020b352c end:0x020b35f8
 
-src/overlays/ov036/calls/Ov036_UpdateAnchor.c:
+src/overlays/players/ov036_player_demyx/Ov036_UpdateAnchor.c:
     complete
     .text       start:0x020b35f8 end:0x020b3684
 
-src/overlays/ov036/calls/Ov036_UpdateAimAndFlagLocal.c:
+src/overlays/players/ov036_player_demyx/Ov036_UpdateAimAndFlagLocal.c:
     complete
     .text       start:0x020b3684 end:0x020b3744
 
-src/overlays/ov036/calls/Ov036_SelectRequestHandler3.c:
+src/overlays/players/ov036_player_demyx/Ov036_SelectRequestHandler3.c:
     complete
     .text       start:0x020b3744 end:0x020b37ec
 
-src/overlays/ov036/calls/Ov036_BuildRenderHandles.c:
+src/overlays/players/ov036_player_demyx/Ov036_BuildRenderHandles.c:
     complete
     .text       start:0x020b37ec end:0x020b389c
 
-src/overlays/ov036/calls/Ov036_InitGlobalRecordAndForward.c:
+src/overlays/players/ov036_player_demyx/Ov036_InitGlobalRecordAndForward.c:
     complete
     .text       start:0x020b389c end:0x020b38e4
 
-src/overlays/ov036/calls/Ov036_FreeGlobalSlotAndTwoChannels.c:
+src/overlays/players/ov036_player_demyx/Ov036_FreeGlobalSlotAndTwoChannels.c:
     complete
     .text       start:0x020b38e4 end:0x020b3928
 
-src/overlays/ov036/calls/func_ov036_020b3928.c:
+src/overlays/players/ov036_player_demyx/func_ov036_020b3928.c:
     complete
     .text       start:0x020b3928 end:0x020b3934
 
-src/overlays/ov036/calls/Ov036_ForwardWithHeaderOffset.c:
+src/overlays/players/ov036_player_demyx/Ov036_ForwardWithHeaderOffset.c:
     complete
     .text       start:0x020b3934 end:0x020b3990
 
-src/overlays/ov036/calls/Ov036_ForwardPlus14IfFlag694.c:
+src/overlays/players/ov036_player_demyx/Ov036_ForwardPlus14IfFlag694.c:
     complete
     .text       start:0x020b3990 end:0x020b39b0
 
-src/overlays/ov036/calls/Ov036_StartSequenceSlot.c:
+src/overlays/players/ov036_player_demyx/Ov036_StartSequenceSlot.c:
     complete
     .text       start:0x020b39b0 end:0x020b3ac4
 
-src/overlays/ov036/calls/Ov036_TickChargeStates.c:
+src/overlays/players/ov036_player_demyx/Ov036_TickChargeStates.c:
     complete
     .text       start:0x020b3ac4 end:0x020b3b40
 
-src/overlays/ov036/calls/Ov036_DrawNodeWithOffsetPos.c:
+src/overlays/players/ov036_player_demyx/Ov036_DrawNodeWithOffsetPos.c:
     complete
     .text       start:0x020b3b40 end:0x020b3bd0
 
-src/overlays/ov036/calls/Ov036_OpenSecondarySubObjects.c:
+src/overlays/players/ov036_player_demyx/Ov036_OpenSecondarySubObjects.c:
     complete
     .text       start:0x020b3bd0 end:0x020b3d40
 
-src/overlays/ov036/calls/Ov036_BindRig.c:
+src/overlays/players/ov036_player_demyx/Ov036_BindRig.c:
     complete
     .text       start:0x020b3d40 end:0x020b3de0
 
-src/overlays/ov036/calls/Ov036_dispatchEntryList.c:
+src/overlays/players/ov036_player_demyx/Ov036_dispatchEntryList.c:
     complete
     .text       start:0x020b3de0 end:0x020b3e44
 
-src/overlays/ov036/calls/Ov036_BeginHitEffectIfEnabled.c:
+src/overlays/players/ov036_player_demyx/Ov036_BeginHitEffectIfEnabled.c:
     complete
     .text       start:0x020b3e44 end:0x020b3f00
 
-src/overlays/ov036/calls/Ov036_PartAttackStep.c:
+src/overlays/players/ov036_player_demyx/Ov036_PartAttackStep.c:
     complete
     .text       start:0x020b3f00 end:0x020b400c
 
-src/overlays/ov036/calls/Ov036_FireSpread.c:
+src/overlays/players/ov036_player_demyx/Ov036_FireSpread.c:
     complete
     .text       start:0x020b400c end:0x020b41e8
 
-src/overlays/ov036/calls/Ov036_SpawnEffectAtBonePos.c:
+src/overlays/players/ov036_player_demyx/Ov036_SpawnEffectAtBonePos.c:
     complete
     .text       start:0x020b41e8 end:0x020b425c
 
-src/overlays/ov036/calls/Ov036_InitStateFieldFromQuery.c:
+src/overlays/players/ov036_player_demyx/Ov036_InitStateFieldFromQuery.c:
     complete
     .text       start:0x020b425c end:0x020b42a8
 
-src/overlays/ov036/calls/Ov036_IdleStep.c:
+src/overlays/players/ov036_player_demyx/Ov036_IdleStep.c:
     complete
     .text       start:0x020b42a8 end:0x020b46e8
 
-src/overlays/ov036/calls/Ov036_ChargeStep.c:
+src/overlays/players/ov036_player_demyx/Ov036_ChargeStep.c:
     complete
     .text       start:0x020b46e8 end:0x020b497c
 
-src/overlays/ov036/calls/Ov036_InitRegionRecordAndZero.c:
+src/overlays/players/ov036_player_demyx/Ov036_InitRegionRecordAndZero.c:
     complete
     .text       start:0x020b497c end:0x020b49bc
 
-src/overlays/ov036/calls/Ov036_ClearFlagAndReleaseChild.c:
+src/overlays/players/ov036_player_demyx/Ov036_ClearFlagAndReleaseChild.c:
     complete
     .text       start:0x020b49bc end:0x020b49dc
 
-src/overlays/ov036/calls/Ov036_PickChargeLevelAndDraw.c:
+src/overlays/players/ov036_player_demyx/Ov036_PickChargeLevelAndDraw.c:
     complete
     .text       start:0x020b49dc end:0x020b4a98
 
-src/overlays/ov036/calls/Ov036_ApplyChargeLevelOnce.c:
+src/overlays/players/ov036_player_demyx/Ov036_ApplyChargeLevelOnce.c:
     complete
     .text       start:0x020b4a98 end:0x020b4b68
 
-src/overlays/ov036/auto/Ov036_ResetCounterFromOwner.c:
+src/overlays/players/ov036_player_demyx/Ov036_ResetCounterFromOwner.c:
     complete
     .text       start:0x020b4b68 end:0x020b4b9c
 
-src/overlays/ov036/calls/Ov036_AllocAndConfigureEmitter.c:
+src/overlays/players/ov036_player_demyx/Ov036_AllocAndConfigureEmitter.c:
     complete
     .text       start:0x020b4b9c end:0x020b4c34
 
-src/overlays/ov036/calls/Ov036_ReleaseAndFreeField2644.c:
+src/overlays/players/ov036_player_demyx/Ov036_ReleaseAndFreeField2644.c:
     complete
     .text       start:0x020b4c34 end:0x020b4c50
 
-src/overlays/ov036/calls/Ov036_PushPartsArgAndRefresh.c:
+src/overlays/players/ov036_player_demyx/Ov036_PushPartsArgAndRefresh.c:
     complete
     .text       start:0x020b4c50 end:0x020b4c94
 
-src/overlays/ov036/calls/Ov036_RefreshParts.c:
+src/overlays/players/ov036_player_demyx/Ov036_RefreshParts.c:
     complete
     .text       start:0x020b4c94 end:0x020b4cc4
 
-src/overlays/ov036/calls/Ov036_FirePartShot.c:
+src/overlays/players/ov036_player_demyx/Ov036_FirePartShot.c:
     complete
     .text       start:0x020b4cc4 end:0x020b4df0
 
-src/overlays/ov036/calls/Ov036_InvokeWithDataTable.c:
+src/overlays/players/ov036_player_demyx/Ov036_InvokeWithDataTable.c:
     complete
     .text       start:0x020b4df0 end:0x020b4e08
 
-src/overlays/ov036/data/ov036_class_020b4e40.c:
+src/overlays/players/ov036_player_demyx/data/ov036_class_020b4e40.c:
     complete
     .data       start:0x020b4e40 end:0x020b4e54
 
-src/overlays/ov036/data/ov036_pointers_020b4e54.c:
+src/overlays/players/ov036_player_demyx/data/ov036_pointers_020b4e54.c:
     complete
     .data       start:0x020b4e54 end:0x020b4e68
 
-src/overlays/ov036/data/ov036_strings_020b4e08.c:
+src/overlays/players/ov036_player_demyx/data/ov036_strings_020b4e08.c:
     complete
     .rodata     start:0x020b4e08 end:0x020b4e38
 
-src/overlays/ov036/data/ov036_strings_020b4e68.c:
+src/overlays/players/ov036_player_demyx/data/ov036_strings_020b4e68.c:
     complete
     .data       start:0x020b4e68 end:0x020b4f40

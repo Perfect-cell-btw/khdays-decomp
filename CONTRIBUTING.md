@@ -137,22 +137,14 @@ image content. See
 [project-khdays-blx-followup](../.claude/projects/E--KH-3582-decomp/memory/project_khdays_blx_followup.md)
 for the full pipeline history.
 
-For per-function byte-parity while iterating, compare the compiled `.o`
-against the `dsd` delink output directly — this is faster than a full
+For per-function byte-parity while iterating, compile one source and compare it
+with the original bytes, relocations included — this is faster than a full
 module rebuild and catches the failure right at the function boundary:
 
 ```sh
-# after `ninja`, given a src/overlays/ov030/calls/func_ov030_020b3e84.c
-python -c "
-o = open('build/delinks/src/overlays/ov030/asm_stubs/calls/func_ov030_020b3e84.o', 'rb').read()
-n = open('build/link/func_ov030_020b3e84.o', 'rb').read()
-print(f'byte-exact: {o == n}  size: {len(o)}={len(n)}')
-"
+python tools/verify_idx.py src/overlays/players/ov030_player_roxas/<name>.c <name>
+python tools/verify_idx.py <source> <name> --thumb     # for a THUMB function
 ```
-
-Note the delink path still points to `asm_stubs/calls/` even after you've
-moved the source out of there — dsd keys the delink by *address*, not
-path, so the reference `.o` stays put.
 
 If you're new to a function, refresh the mismatch table before iterating:
 
@@ -183,11 +175,12 @@ broken in the extraction or build configuration.
    ```sh
    python tools/getcand.py func_XXXXXXXX
    ```
-3. Write C to `src/auto/<name>.c` for no external calls, or
-   `src/calls/<name>.c` when the function calls other functions.
-   If the only match you can produce right now is inline/handwritten ASM,
-   put it under `src/asm_stubs/auto/` or `src/asm_stubs/calls/` instead —
-   ASM stubs do not count as C decompilation progress.
+3. Write C to `<name>.c` in the function's module directory: `src/engine/` for
+   the main module, or the overlay's directory under `src/overlays/<group>/`
+   (`docs/layout.md` lists them). Library functions go under
+   `libs/<vendor>/<module>/auto/` (no external calls) or `calls/`.
+   Inline or handwritten ASM does not count as C decompilation and is not
+   accepted for game code.
 4. Run the printed `verify_cmd`. Iterate until `>>> MATCH <<<`.
 5. Open a PR with just your new source file(s).
 

@@ -4,154 +4,154 @@
     .data       start:0x020cd760 end:0x020cd780 kind:data align:32
     .bss        start:0x020cd780 end:0x020cd780 kind:bss align:32
 
-src/overlays/ov130/calls/Ov130_RegisterEntityClass.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov130/calls/Ov130_CreateNamedEntity.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov130/calls/Ov130_ChaserInit.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_ChaserInit.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc1d0
 
-src/overlays/ov130/calls/Ov130_ReleaseSubObjectsAndListThenNotify.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020cc1d0 end:0x020cc210
 
-src/overlays/ov130/calls/Ov130_PropagateBlockChain.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_PropagateBlockChain.c:
     complete
     .text       start:0x020cc210 end:0x020cc284
 
-src/overlays/ov130/calls/Ov130_Model_SetTrack0.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_Model_SetTrack0.c:
     complete
     .text       start:0x020cc284 end:0x020cc2b4
 
-src/overlays/ov130/calls/Ov130_SpawnSlotEffectOnce.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_SpawnSlotEffectOnce.c:
     complete
     .text       start:0x020cc2b4 end:0x020cc330
 
-src/overlays/ov130/calls/Ov130_RebuildIdList.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_RebuildIdList.c:
     complete
     .text       start:0x020cc330 end:0x020cc390
 
-src/overlays/ov130/calls/Ov130_registryCreateEntry.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_registryCreateEntry.c:
     complete
     .text       start:0x020cc390 end:0x020cc3ec
 
-src/overlays/ov130/calls/Ov130_FireEffectOnRandomListId.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_FireEffectOnRandomListId.c:
     complete
     .text       start:0x020cc3ec end:0x020cc468
 
-src/overlays/ov130/calls/Ov130_DecaySpinOverElapsed.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_DecaySpinOverElapsed.c:
     complete
     .text       start:0x020cc468 end:0x020cc5b8
 
-src/overlays/ov130/calls/Ov130_UpdateChaseFacing.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_UpdateChaseFacing.c:
     complete
     .text       start:0x020cc5b8 end:0x020cc75c
 
-src/overlays/ov130/calls/Ov130_HandleHit.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_HandleHit.c:
     complete
     .text       start:0x020cc75c end:0x020cc8c4
 
-src/overlays/ov130/calls/Ov130_BeginPhasedReaction.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_BeginPhasedReaction.c:
     complete
     .text       start:0x020cc8c4 end:0x020cc988
 
-src/overlays/ov130/calls/Ov130_DispatchSubStateByte.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_DispatchSubStateByte.c:
     complete
     .text       start:0x020cc988 end:0x020ccb10
 
-src/overlays/ov130/calls/Ov130_SpinAndDriftTick.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_SpinAndDriftTick.c:
     complete
     .text       start:0x020ccb10 end:0x020ccc1c
 
-src/overlays/ov130/calls/Ov130_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccc1c end:0x020ccc84
 
-src/overlays/ov130/calls/Ov130_AdvanceStateSlotIfHw60Bit0.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_AdvanceStateSlotIfHw60Bit0.c:
     complete
     .text       start:0x020ccc84 end:0x020cccc8
 
-src/overlays/ov130/calls/Ov130_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020cccc8 end:0x020ccd94
 
-src/overlays/ov130/calls/Ov130_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020ccd94 end:0x020cce5c
 
-src/overlays/ov130/calls/Ov130_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cce5c end:0x020cce90
 
-src/overlays/ov130/calls/Ov130_SetPose1ThenAdvanceSlot.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_SetPose1ThenAdvanceSlot.c:
     complete
     .text       start:0x020cce90 end:0x020ccec4
 
-src/overlays/ov130/calls/Ov130_PrepSubState4IfChildIdle.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_PrepSubState4IfChildIdle.c:
     complete
     .text       start:0x020ccec4 end:0x020ccf04
 
-src/overlays/ov130/calls/Ov130_AiEnterChase.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_AiEnterChase.c:
     complete
     .text       start:0x020ccf04 end:0x020ccf5c
 
-src/overlays/ov130/calls/Ov130_DecideChaseMove.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_DecideChaseMove.c:
     complete
     .text       start:0x020ccf5c end:0x020cd158
 
-src/overlays/ov130/calls/Ov130_SetHw60Flag40ThenAdvance.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_SetHw60Flag40ThenAdvance.c:
     complete
     .text       start:0x020cd158 end:0x020cd1bc
 
-src/overlays/ov130/calls/Ov130_SpinUp_Tick.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_SpinUp_Tick.c:
     complete
     .text       start:0x020cd1bc end:0x020cd248
 
-src/overlays/ov130/calls/Ov130_ClearHiFlagAndAdvance.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_ClearHiFlagAndAdvance.c:
     complete
     .text       start:0x020cd248 end:0x020cd2bc
 
-src/overlays/ov130/calls/Ov130_PrepSubState2IfChildIdle.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_PrepSubState2IfChildIdle.c:
     complete
     .text       start:0x020cd2bc end:0x020cd2fc
 
-src/overlays/ov130/calls/Ov130_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd2fc end:0x020cd330
 
-src/overlays/ov130/calls/Ov130_AiStep_QueueAction4OnAnimEnd.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_AiStep_QueueAction4OnAnimEnd.c:
     complete
     .text       start:0x020cd330 end:0x020cd364
 
-src/overlays/ov130/calls/Ov130_SetFlagsAndAdvance.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_SetFlagsAndAdvance.c:
     complete
     .text       start:0x020cd364 end:0x020cd40c
 
-src/overlays/ov130/calls/Ov130_stateFixedAngleMatrix.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_stateFixedAngleMatrix.c:
     complete
     .text       start:0x020cd40c end:0x020cd4cc
 
-src/overlays/ov130/calls/Ov130_ConfigHw60ActionCallSubThenAdvance.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_ConfigHw60ActionCallSubThenAdvance.c:
     complete
     .text       start:0x020cd4cc end:0x020cd59c
 
-src/overlays/ov130/calls/Ov130_BeginWindUp.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_BeginWindUp.c:
     complete
     .text       start:0x020cd59c end:0x020cd690
 
-src/overlays/ov130/calls/Ov130_TimerFireNodeCallbackThenAdvance.c:
+src/overlays/enemies/ov130_enemy_08/Ov130_TimerFireNodeCallbackThenAdvance.c:
     complete
     .text       start:0x020cd690 end:0x020cd740
 
-src/overlays/ov130/data/ov130_const_020cd740.c:
+src/overlays/enemies/ov130_enemy_08/data/ov130_const_020cd740.c:
     complete
     .rodata     start:0x020cd740 end:0x020cd744
 
-src/overlays/ov130/data/ov130_strings_020cd760.c:
+src/overlays/enemies/ov130_enemy_08/data/ov130_strings_020cd760.c:
     complete
     .data       start:0x020cd760 end:0x020cd780

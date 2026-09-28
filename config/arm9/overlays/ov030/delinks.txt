@@ -4,190 +4,190 @@
     .data       start:0x020b58e0 end:0x020b5a00 kind:data align:32
     .bss        start:0x020b5a00 end:0x020b5a20 kind:bss align:32
 
-src/overlays/ov030/calls/func_ov030_020b3220.c:
+src/overlays/players/ov030_player_roxas/func_ov030_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov030/calls/Ov030_SetUpScene.c:
+src/overlays/players/ov030_player_roxas/Ov030_SetUpScene.c:
     complete
     .text       start:0x020b3234 end:0x020b3310
 
-src/overlays/ov030/calls/Ov030_TeardownScene.c:
+src/overlays/players/ov030_player_roxas/Ov030_TeardownScene.c:
     complete
     .text       start:0x020b3310 end:0x020b3374
 
-src/overlays/ov030/calls/Ov030_CreateActor.c:
+src/overlays/players/ov030_player_roxas/Ov030_CreateActor.c:
     complete
     .text       start:0x020b3374 end:0x020b35dc
 
-src/overlays/ov030/calls/Ov030_SubmitPanel.c:
+src/overlays/players/ov030_player_roxas/Ov030_SubmitPanel.c:
     complete
     .text       start:0x020b35dc end:0x020b3694
 
-src/overlays/ov030/auto/Ov030_CueForKind.c:
+src/overlays/players/ov030_player_roxas/Ov030_CueForKind.c:
     complete
     .text       start:0x020b3694 end:0x020b36cc
 
-src/overlays/ov030/calls/Ov030_BuildActorHandles.c:
+src/overlays/players/ov030_player_roxas/Ov030_BuildActorHandles.c:
     complete
     .text       start:0x020b36cc end:0x020b375c
 
-src/overlays/ov030/calls/Ov030_HandleMessage.c:
+src/overlays/players/ov030_player_roxas/Ov030_HandleMessage.c:
     complete
     .text       start:0x020b375c end:0x020b38a4
 
-src/overlays/ov030/calls/Ov030_StepActor.c:
+src/overlays/players/ov030_player_roxas/Ov030_StepActor.c:
     complete
     .text       start:0x020b38a4 end:0x020b3990
 
-src/overlays/ov030/calls/Ov030_ApplyModeChange.c:
+src/overlays/players/ov030_player_roxas/Ov030_ApplyModeChange.c:
     complete
     .text       start:0x020b3990 end:0x020b3cd4
 
-src/overlays/ov030/calls/Ov030_CommitScrollForFrame.c:
+src/overlays/players/ov030_player_roxas/Ov030_CommitScrollForFrame.c:
     complete
     .text       start:0x020b3cd4 end:0x020b3d18
 
-src/overlays/ov030/calls/Ov030_TickExtraClass.c:
+src/overlays/players/ov030_player_roxas/Ov030_TickExtraClass.c:
     complete
     .text       start:0x020b3d18 end:0x020b3e24
 
-src/overlays/ov030/calls/Ov030_ForwardGlobalCtx2cb0.c:
+src/overlays/players/ov030_player_roxas/Ov030_ForwardGlobalCtx2cb0.c:
     complete
     .text       start:0x020b3e24 end:0x020b3e44
 
-src/overlays/ov030/calls/Ov030_ForwardGlobalCtx2cb0_2.c:
+src/overlays/players/ov030_player_roxas/Ov030_ForwardGlobalCtx2cb0_2.c:
     complete
     .text       start:0x020b3e44 end:0x020b3e64
 
-src/overlays/ov030/calls/Ov030_ForwardGlobalCtx2cb0_3.c:
+src/overlays/players/ov030_player_roxas/Ov030_ForwardGlobalCtx2cb0_3.c:
     complete
     .text       start:0x020b3e64 end:0x020b3e84
 
-src/overlays/ov030/calls/Ov030_InvokeWithDataTable.c:
+src/overlays/players/ov030_player_roxas/Ov030_InvokeWithDataTable.c:
     complete
     .text       start:0x020b3e84 end:0x020b3e9c
 
-src/overlays/ov030/calls/Ov030_initEightSubSlots.c:
+src/overlays/players/ov030_player_roxas/Ov030_initEightSubSlots.c:
     complete
     .text       start:0x020b3e9c end:0x020b3edc
 
-src/overlays/ov030/calls/Ov030_ReleaseChildArray8.c:
+src/overlays/players/ov030_player_roxas/Ov030_ReleaseChildArray8.c:
     complete
     .text       start:0x020b3edc end:0x020b3efa
 
-src/overlays/ov030/calls/Ov030_BindPartRigs.c:
+src/overlays/players/ov030_player_roxas/Ov030_BindPartRigs.c:
     complete
     .text       start:0x020b3efc end:0x020b3f30
 
-src/overlays/ov030/calls/Ov030_SpawnEmitters.c:
+src/overlays/players/ov030_player_roxas/Ov030_SpawnEmitters.c:
     complete
     .text       start:0x020b3f30 end:0x020b4000
 
-src/overlays/ov030/calls/Ov030_beginState5.c:
+src/overlays/players/ov030_player_roxas/Ov030_beginState5.c:
     complete
     .text       start:0x020b4000 end:0x020b4024
 
-src/overlays/ov030/auto/Ov030_ResetSlotIds.c:
+src/overlays/players/ov030_player_roxas/Ov030_ResetSlotIds.c:
     complete
     .text       start:0x020b4024 end:0x020b4048
 
-src/overlays/ov030/calls/Ov030_RebindEmitterSlots.c:
+src/overlays/players/ov030_player_roxas/Ov030_RebindEmitterSlots.c:
     complete
     .text       start:0x020b4048 end:0x020b40c0
 
-src/overlays/ov030/calls/Ov030_UpdatePathMotionState.c:
+src/overlays/players/ov030_player_roxas/Ov030_UpdatePathMotionState.c:
     complete
     .text       start:0x020b40c0 end:0x020b43c0
 
-src/overlays/ov030/calls/Ov030_DrawWithFadePolygonId.c:
+src/overlays/players/ov030_player_roxas/Ov030_DrawWithFadePolygonId.c:
     complete
     .text       start:0x020b43c0 end:0x020b4410
 
-src/overlays/ov030/calls/Ov030_RequestSpawnAtObject.c:
+src/overlays/players/ov030_player_roxas/Ov030_RequestSpawnAtObject.c:
     complete
     .text       start:0x020b4410 end:0x020b4534
 
-src/overlays/ov030/calls/Ov030_ProbeLandingPoint.c:
+src/overlays/players/ov030_player_roxas/Ov030_ProbeLandingPoint.c:
     complete
     .text       start:0x020b4534 end:0x020b4654
 
-src/overlays/ov030/calls/Ov030_InitMoveParams.c:
+src/overlays/players/ov030_player_roxas/Ov030_InitMoveParams.c:
     complete
     .text       start:0x020b4654 end:0x020b468c
 
-src/overlays/ov030/calls/Ov030_updateSubObjects.c:
+src/overlays/players/ov030_player_roxas/Ov030_updateSubObjects.c:
     complete
     .text       start:0x020b468c end:0x020b46fc
 
-src/overlays/ov030/calls/Ov030_StartAnimTracks.c:
+src/overlays/players/ov030_player_roxas/Ov030_StartAnimTracks.c:
     complete
     .text       start:0x020b46fc end:0x020b477c
 
-src/overlays/ov030/calls/Ov030_UpdateNodeActiveByMode.c:
+src/overlays/players/ov030_player_roxas/Ov030_UpdateNodeActiveByMode.c:
     complete
     .text       start:0x020b477c end:0x020b4800
 
-src/overlays/ov030/calls/Ov030_DrawNodeAtOwner.c:
+src/overlays/players/ov030_player_roxas/Ov030_DrawNodeAtOwner.c:
     complete
     .text       start:0x020b4800 end:0x020b4864
 
-src/overlays/ov030/calls/Ov030_EmitTimelineEffect.c:
+src/overlays/players/ov030_player_roxas/Ov030_EmitTimelineEffect.c:
     complete
     .text       start:0x020b4864 end:0x020b4b9c
 
-src/overlays/ov030/calls/Ov030_initStateSlotsDispatch.c:
+src/overlays/players/ov030_player_roxas/Ov030_initStateSlotsDispatch.c:
     complete
     .text       start:0x020b4b9c end:0x020b4c34
 
-src/overlays/ov030/calls/Ov030_setupTriple.c:
+src/overlays/players/ov030_player_roxas/Ov030_setupTriple.c:
     complete
     .text       start:0x020b4c34 end:0x020b4c50
 
-src/overlays/ov030/calls/Ov030_ArmPlayerTarget.c:
+src/overlays/players/ov030_player_roxas/Ov030_ArmPlayerTarget.c:
     complete
     .text       start:0x020b4c50 end:0x020b4cd4
 
-src/overlays/ov030/calls/Ov030_ComputeAimAngle.c:
+src/overlays/players/ov030_player_roxas/Ov030_ComputeAimAngle.c:
     complete
     .text       start:0x020b4cd4 end:0x020b4fe0
 
-src/overlays/ov030/calls/Ov030_UpdateController.c:
+src/overlays/players/ov030_player_roxas/Ov030_UpdateController.c:
     complete
     .text       start:0x020b4fe0 end:0x020b54dc
 
-src/overlays/ov030/calls/Ov030_SetActionAnimation.c:
+src/overlays/players/ov030_player_roxas/Ov030_SetActionAnimation.c:
     complete
     .text       start:0x020b54dc end:0x020b55d0
 
-src/overlays/ov030/calls/Ov030_handleCommand.c:
+src/overlays/players/ov030_player_roxas/Ov030_handleCommand.c:
     complete
     .text       start:0x020b55d0 end:0x020b564c
 
-src/overlays/ov030/calls/Ov030_UpdateMotionController.c:
+src/overlays/players/ov030_player_roxas/Ov030_UpdateMotionController.c:
     complete
     .text       start:0x020b564c end:0x020b5860
 
-src/overlays/ov030/data/ov030_class_020b58f4.c:
+src/overlays/players/ov030_player_roxas/data/ov030_class_020b58f4.c:
     complete
     .data       start:0x020b58f4 end:0x020b5908
 
-src/overlays/ov030/data/ov030_ctorargs_020b58b0.c:
+src/overlays/players/ov030_player_roxas/data/ov030_ctorargs_020b58b0.c:
     complete
     .rodata     start:0x020b58b0 end:0x020b58c4
 
-src/overlays/ov030/data/ov030_ctorargs_020b58c4.c:
+src/overlays/players/ov030_player_roxas/data/ov030_ctorargs_020b58c4.c:
     complete
     .rodata     start:0x020b58c4 end:0x020b58d8
 
-src/overlays/ov030/data/ov030_strings_020b5860.c:
+src/overlays/players/ov030_player_roxas/data/ov030_strings_020b5860.c:
     complete
     .rodata     start:0x020b5860 end:0x020b58b0
 
-src/overlays/ov030/data/ov030_strings_020b58e0.c:
+src/overlays/players/ov030_player_roxas/data/ov030_strings_020b58e0.c:
     complete
     .data       start:0x020b58e0 end:0x020b58f4
 
-src/overlays/ov030/data/ov030_strings_020b5908.c:
+src/overlays/players/ov030_player_roxas/data/ov030_strings_020b5908.c:
     complete
     .data       start:0x020b5908 end:0x020b5a00

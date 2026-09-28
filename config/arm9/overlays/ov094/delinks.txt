@@ -4,178 +4,178 @@
     .data       start:0x020bc160 end:0x020bc240 kind:data align:32
     .bss        start:0x020bc240 end:0x020bc260 kind:bss align:32
 
-src/overlays/ov094/calls/func_ov094_020ba7c0.c:
+src/overlays/players/ov094_player_lexaeus_4/func_ov094_020ba7c0.c:
     complete
     .text       start:0x020ba7c0 end:0x020ba7d4
 
-src/overlays/ov094/calls/Ov094_InitAndReturnNextState.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_InitAndReturnNextState.c:
     complete
     .text       start:0x020ba7d4 end:0x020ba7fc
 
-src/overlays/ov094/calls/Ov094_setupTriple.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_setupTriple.c:
     complete
     .text       start:0x020ba7fc end:0x020ba81c
 
-src/overlays/ov094/calls/Ov094_BuildRigObject.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_BuildRigObject.c:
     complete
     .text       start:0x020ba81c end:0x020baa30
 
-src/overlays/ov094/calls/Ov094_initSharedObjSetReadyFlag.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020baa30 end:0x020baa68
 
-src/overlays/ov094/auto/Ov094_MapSlotKindToAnim.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_MapSlotKindToAnim.c:
     complete
     .text       start:0x020baa68 end:0x020baa90
 
-src/overlays/ov094/calls/Ov094_SwitchAnimationSet.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_SwitchAnimationSet.c:
     complete
     .text       start:0x020baa90 end:0x020babac
 
-src/overlays/ov094/calls/func_ov094_020babac.c:
+src/overlays/players/ov094_player_lexaeus_4/func_ov094_020babac.c:
     complete
     .text       start:0x020babac end:0x020babb8
 
-src/overlays/ov094/calls/Ov094_HandleMsgAndReaim.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_HandleMsgAndReaim.c:
     complete
     .text       start:0x020babb8 end:0x020bacf8
 
-src/overlays/ov094/calls/Ov094_StepAttackSlotAndForward.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_StepAttackSlotAndForward.c:
     complete
     .text       start:0x020bacf8 end:0x020bad30
 
-src/overlays/ov094/calls/Ov094_BuildScene.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_BuildScene.c:
     complete
     .text       start:0x020bad30 end:0x020badc0
 
-src/overlays/ov094/calls/Ov094_ResetSequences.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_ResetSequences.c:
     complete
     .text       start:0x020badc0 end:0x020baed0
 
-src/overlays/ov094/calls/Ov094_FreeFiveGlobalSubObjects.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_FreeFiveGlobalSubObjects.c:
     complete
     .text       start:0x020baed0 end:0x020baf18
 
-src/overlays/ov094/calls/Ov094_PublishAttachAnchor.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_PublishAttachAnchor.c:
     complete
     .text       start:0x020baf18 end:0x020baf3c
 
-src/overlays/ov094/calls/Ov094_UpdateAllPartsAndFlagLocal.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_UpdateAllPartsAndFlagLocal.c:
     complete
     .text       start:0x020baf3c end:0x020bb00c
 
-src/overlays/ov094/calls/Ov094_UpdatePartsIfEnabled.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_UpdatePartsIfEnabled.c:
     complete
     .text       start:0x020bb00c end:0x020bb068
 
-src/overlays/ov094/calls/Ov094_EnterStateAndPlayVoice.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_EnterStateAndPlayVoice.c:
     complete
     .text       start:0x020bb068 end:0x020bb0a4
 
-src/overlays/ov094/calls/Ov094_ReleaseGlobalSlotIfSet.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_ReleaseGlobalSlotIfSet.c:
     complete
     .text       start:0x020bb0a4 end:0x020bb0e0
 
-src/overlays/ov094/calls/Ov094_StepCharge.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_StepCharge.c:
     complete
     .text       start:0x020bb0e0 end:0x020bb29c
 
-src/overlays/ov094/calls/Ov094_BindDefaultAnims.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_BindDefaultAnims.c:
     complete
     .text       start:0x020bb29c end:0x020bb2f8
 
-src/overlays/ov094/calls/Ov094_UpdateTracksWhileActive.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_UpdateTracksWhileActive.c:
     complete
     .text       start:0x020bb2f8 end:0x020bb328
 
-src/overlays/ov094/calls/Ov094_DrawNodeWithOwnerPos.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_DrawNodeWithOwnerPos.c:
     complete
     .text       start:0x020bb328 end:0x020bb3a0
 
-src/overlays/ov094/calls/Ov094_BindDefaultAnimsAtBase.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_BindDefaultAnimsAtBase.c:
     complete
     .text       start:0x020bb3a0 end:0x020bb3fc
 
-src/overlays/ov094/calls/Ov094_PlaceChargeEffect.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_PlaceChargeEffect.c:
     complete
     .text       start:0x020bb3fc end:0x020bb56c
 
-src/overlays/ov094/calls/Ov094_DrawNodeCallback.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_DrawNodeCallback.c:
     complete
     .text       start:0x020bb56c end:0x020bb588
 
-src/overlays/ov094/calls/Ov094_BindAnimsWithIndex.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_BindAnimsWithIndex.c:
     complete
     .text       start:0x020bb588 end:0x020bb5f0
 
-src/overlays/ov094/calls/Ov094_TickChargeStateGuarded.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_TickChargeStateGuarded.c:
     complete
     .text       start:0x020bb5f0 end:0x020bb688
 
-src/overlays/ov094/calls/Ov094_DrawNodeAtOwner.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_DrawNodeAtOwner.c:
     complete
     .text       start:0x020bb688 end:0x020bb700
 
-src/overlays/ov094/calls/Ov094_DrawNodeWithOwnerPos2.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_DrawNodeWithOwnerPos2.c:
     complete
     .text       start:0x020bb700 end:0x020bb780
 
-src/overlays/ov094/calls/Ov094_BindChargeTracks.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_BindChargeTracks.c:
     complete
     .text       start:0x020bb780 end:0x020bb7d4
 
-src/overlays/ov094/calls/Ov094_RearmSequenceSlots.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_RearmSequenceSlots.c:
     complete
     .text       start:0x020bb7d4 end:0x020bb894
 
-src/overlays/ov094/calls/Ov094_ResetSequenceState.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_ResetSequenceState.c:
     complete
     .text       start:0x020bb894 end:0x020bb8a0
 
-src/overlays/ov094/calls/Ov094_DriveSwingSequence.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_DriveSwingSequence.c:
     complete
     .text       start:0x020bb8a0 end:0x020bb9d0
 
-src/overlays/ov094/calls/Ov094_UploadBoneMatrices.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_UploadBoneMatrices.c:
     complete
     .text       start:0x020bb9d0 end:0x020bba48
 
-src/overlays/ov094/calls/Ov094_TryEmitChargeBurst.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_TryEmitChargeBurst.c:
     complete
     .text       start:0x020bba48 end:0x020bbccc
 
-src/overlays/ov094/calls/Ov094_FlagLocalAndEnterState21.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_FlagLocalAndEnterState21.c:
     complete
     .text       start:0x020bbccc end:0x020bbd34
 
-src/overlays/ov094/calls/Ov094_WaitForActionCompletion.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_WaitForActionCompletion.c:
     complete
     .text       start:0x020bbd34 end:0x020bbee0
 
-src/overlays/ov094/calls/Ov094_FinishActionTick.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_FinishActionTick.c:
     complete
     .text       start:0x020bbee0 end:0x020bc0d4
 
-src/overlays/ov094/calls/Ov094_InvokeWithDataTable.c:
+src/overlays/players/ov094_player_lexaeus_4/Ov094_InvokeWithDataTable.c:
     complete
     .text       start:0x020bc0d4 end:0x020bc0ec
 
-src/overlays/ov094/data/ov094_class_020bc174.c:
+src/overlays/players/ov094_player_lexaeus_4/data/ov094_class_020bc174.c:
     complete
     .data       start:0x020bc174 end:0x020bc188
 
-src/overlays/ov094/data/ov094_ctorargs_020bc12c.c:
+src/overlays/players/ov094_player_lexaeus_4/data/ov094_ctorargs_020bc12c.c:
     complete
     .rodata     start:0x020bc12c end:0x020bc140
 
-src/overlays/ov094/data/ov094_strings_020bc0ec.c:
+src/overlays/players/ov094_player_lexaeus_4/data/ov094_strings_020bc0ec.c:
     complete
     .rodata     start:0x020bc0ec end:0x020bc12c
 
-src/overlays/ov094/data/ov094_strings_020bc160.c:
+src/overlays/players/ov094_player_lexaeus_4/data/ov094_strings_020bc160.c:
     complete
     .data       start:0x020bc160 end:0x020bc174
 
-src/overlays/ov094/data/ov094_strings_020bc188.c:
+src/overlays/players/ov094_player_lexaeus_4/data/ov094_strings_020bc188.c:
     complete
     .data       start:0x020bc188 end:0x020bc240

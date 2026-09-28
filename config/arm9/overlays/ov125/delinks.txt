@@ -4,274 +4,274 @@
     .data       start:0x020d0440 end:0x020d0460 kind:data align:32
     .bss        start:0x020d0460 end:0x020d0460 kind:bss align:32
 
-src/overlays/ov125/calls/Ov125_RegisterEntityClass.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov125/calls/Ov125_CreateNamedEntity.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov125/calls/Ov125_Construct.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc2b8
 
-src/overlays/ov125/calls/Ov125_Destroy.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_Destroy.c:
     complete
     .text       start:0x020cc2b8 end:0x020cc2f8
 
-src/overlays/ov125/calls/Ov125_TickAndSyncTwoModelXforms.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_TickAndSyncTwoModelXforms.c:
     complete
     .text       start:0x020cc2f8 end:0x020cc354
 
-src/overlays/ov125/calls/Ov125_Model_SetTrack0.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_Model_SetTrack0.c:
     complete
     .text       start:0x020cc354 end:0x020cc384
 
-src/overlays/ov125/calls/Ov125_HandleMessage.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_HandleMessage.c:
     complete
     .text       start:0x020cc384 end:0x020cc65c
 
-src/overlays/ov125/calls/Ov125_LeaveHandling.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_LeaveHandling.c:
     complete
     .text       start:0x020cc65c end:0x020cc748
 
-src/overlays/ov125/calls/Ov125_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cc748 end:0x020cc784
 
-src/overlays/ov125/calls/Ov125_NotifyPartsThenBase.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc784 end:0x020cc7c0
 
-src/overlays/ov125/calls/Ov125_CreateAiTask.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_CreateAiTask.c:
     complete
     .text       start:0x020cc7c0 end:0x020cc80c
 
-src/overlays/ov125/calls/Ov125_OnHit.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_OnHit.c:
     complete
     .text       start:0x020cc80c end:0x020cca20
 
-src/overlays/ov125/auto/Ov125_RequestSubState9IfIdle.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_RequestSubState9IfIdle.c:
     complete
     .text       start:0x020cca20 end:0x020cca50
 
-src/overlays/ov125/calls/Ov125_InitChase.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_InitChase.c:
     complete
     .text       start:0x020cca50 end:0x020ccb24
 
-src/overlays/ov125/calls/Ov125_AiDispatchAction.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AiDispatchAction.c:
     complete
     .text       start:0x020ccb24 end:0x020cccf0
 
-src/overlays/ov125/calls/Ov125_AiSlerpHeadingAndMove.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AiSlerpHeadingAndMove.c:
     complete
     .text       start:0x020cccf0 end:0x020ccd64
 
-src/overlays/ov125/calls/Ov125_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccd64 end:0x020ccdcc
 
-src/overlays/ov125/calls/Ov125_PublishLandingPose.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_PublishLandingPose.c:
     complete
     .text       start:0x020ccdcc end:0x020cce48
 
-src/overlays/ov125/calls/Ov125_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020cce48 end:0x020ccf14
 
-src/overlays/ov125/calls/Ov125_AimedAttackWait.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AimedAttackWait.c:
     complete
     .text       start:0x020ccf14 end:0x020ccfec
 
-src/overlays/ov125/calls/Ov125_AiRollTimerQueue2.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AiRollTimerQueue2.c:
     complete
     .text       start:0x020ccfec end:0x020cd04c
 
-src/overlays/ov125/calls/Ov125_AiEnterIdle.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AiEnterIdle.c:
     complete
     .text       start:0x020cd04c end:0x020cd0a8
 
-src/overlays/ov125/calls/Ov125_HoverTick.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_HoverTick.c:
     complete
     .text       start:0x020cd0a8 end:0x020cd248
 
-src/overlays/ov125/calls/Ov125_SetPoseThenAdvanceSlot.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020cd248 end:0x020cd27c
 
-src/overlays/ov125/calls/Ov125_ChooseMove.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_ChooseMove.c:
     complete
     .text       start:0x020cd27c end:0x020cd570
 
-src/overlays/ov125/calls/Ov125_DiveTick.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_DiveTick.c:
     complete
     .text       start:0x020cd570 end:0x020cd7ec
 
-src/overlays/ov125/calls/Ov125_AiEnterStrafe.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AiEnterStrafe.c:
     complete
     .text       start:0x020cd7ec end:0x020cd840
 
-src/overlays/ov125/calls/Ov125_CircleTick.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_CircleTick.c:
     complete
     .text       start:0x020cd840 end:0x020cda84
 
-src/overlays/ov125/calls/Ov125_EnterAimedAttack.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_EnterAimedAttack.c:
     complete
     .text       start:0x020cda84 end:0x020cdb28
 
-src/overlays/ov125/calls/Ov125_AimedAttackTick.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AimedAttackTick.c:
     complete
     .text       start:0x020cdb28 end:0x020cdc00
 
-src/overlays/ov125/calls/Ov125_SpawnEffect4aReconfigureFlags.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_SpawnEffect4aReconfigureFlags.c:
     complete
     .text       start:0x020cdc00 end:0x020cdcc8
 
-src/overlays/ov125/calls/Ov125_AiEnterSwing.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AiEnterSwing.c:
     complete
     .text       start:0x020cdcc8 end:0x020cdd3c
 
-src/overlays/ov125/calls/Ov125_EnterRecover.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_EnterRecover.c:
     complete
     .text       start:0x020cdd3c end:0x020cde04
 
-src/overlays/ov125/calls/Ov125_RecoverTick.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_RecoverTick.c:
     complete
     .text       start:0x020cde04 end:0x020cdf78
 
-src/overlays/ov125/calls/Ov125_AiQueue2AndRollTimer.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AiQueue2AndRollTimer.c:
     complete
     .text       start:0x020cdf78 end:0x020cdfd8
 
-src/overlays/ov125/calls/Ov125_EnterHop.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_EnterHop.c:
     complete
     .text       start:0x020cdfd8 end:0x020ce078
 
-src/overlays/ov125/calls/Ov125_HopTick.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_HopTick.c:
     complete
     .text       start:0x020ce078 end:0x020ce1a8
 
-src/overlays/ov125/calls/Ov125_LaunchTick.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_LaunchTick.c:
     complete
     .text       start:0x020ce1a8 end:0x020ce344
 
-src/overlays/ov125/calls/Ov125_EnterCharge.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_EnterCharge.c:
     complete
     .text       start:0x020ce344 end:0x020ce3fc
 
-src/overlays/ov125/calls/Ov125_TickRecovery.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_TickRecovery.c:
     complete
     .text       start:0x020ce3fc end:0x020ce45c
 
-src/overlays/ov125/calls/Ov125_PushTowardAnchorMidpoint.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_PushTowardAnchorMidpoint.c:
     complete
     .text       start:0x020ce45c end:0x020ce4b0
 
-src/overlays/ov125/calls/Ov125_SpawnProjectileEntry.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_SpawnProjectileEntry.c:
     complete
     .text       start:0x020ce4b0 end:0x020ce55c
 
-src/overlays/ov125/auto/Ov125_SetNodeActiveState.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_SetNodeActiveState.c:
     complete
     .text       start:0x020ce55c end:0x020ce594
 
-src/overlays/ov125/auto/Ov125_IsField34Nibble1.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_IsField34Nibble1.c:
     complete
     .text       start:0x020ce594 end:0x020ce5b0
 
-src/overlays/ov125/calls/Ov125_InitProjectileSubNodes.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_InitProjectileSubNodes.c:
     complete
     .text       start:0x020ce5b0 end:0x020ce75c
 
-src/overlays/ov125/calls/Ov125_SubNodePhaseSwitch.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_SubNodePhaseSwitch.c:
     complete
     .text       start:0x020ce75c end:0x020ce84c
 
-src/overlays/ov125/calls/Ov125_HideAllParts.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_HideAllParts.c:
     complete
     .text       start:0x020ce84c end:0x020ce8b4
 
-src/overlays/ov125/calls/Ov125_EnterAimSubNode.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_EnterAimSubNode.c:
     complete
     .text       start:0x020ce8b4 end:0x020ce998
 
-src/overlays/ov125/calls/Ov125_AimWindupTick.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AimWindupTick.c:
     complete
     .text       start:0x020ce998 end:0x020ceb74
 
-src/overlays/ov125/calls/Ov125_BeamTick.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_BeamTick.c:
     complete
     .text       start:0x020ceb74 end:0x020cf1a8
 
-src/overlays/ov125/calls/Ov125_AiEnterBeamWindDown.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AiEnterBeamWindDown.c:
     complete
     .text       start:0x020cf1a8 end:0x020cf1cc
 
-src/overlays/ov125/calls/Ov125_BeamWindDownTick.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_BeamWindDownTick.c:
     complete
     .text       start:0x020cf1cc end:0x020cf7f0
 
-src/overlays/ov125/calls/Ov125_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020cf7f0 end:0x020cf830
 
-src/overlays/ov125/calls/Ov125_Actor_New.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_Actor_New.c:
     complete
     .text       start:0x020cf830 end:0x020cf864
 
-src/overlays/ov125/calls/Ov125_ConstructSubitem.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_ConstructSubitem.c:
     complete
     .text       start:0x020cf864 end:0x020cf9a0
 
-src/overlays/ov125/calls/Ov125_OnDespawn.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_OnDespawn.c:
     complete
     .text       start:0x020cf9a0 end:0x020cf9bc
 
-src/overlays/ov125/calls/Ov125_TickAndSyncModelXform.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_TickAndSyncModelXform.c:
     complete
     .text       start:0x020cf9bc end:0x020cf9f4
 
-src/overlays/ov125/calls/Ov125_HandleBounce.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_HandleBounce.c:
     complete
     .text       start:0x020cf9f4 end:0x020cfa50
 
-src/overlays/ov125/calls/Ov125_CreateAiTask_2.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_CreateAiTask_2.c:
     complete
     .text       start:0x020cfa50 end:0x020cfaac
 
-src/overlays/ov125/calls/Ov125_stateInitClearSlots.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_stateInitClearSlots.c:
     complete
     .text       start:0x020cfaac end:0x020cfb54
 
-src/overlays/ov125/calls/Ov125_dispatchByStatusByte.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_dispatchByStatusByte.c:
     complete
     .text       start:0x020cfb54 end:0x020cfbcc
 
-src/overlays/ov125/auto/Ov125_AiApplyMoveVector.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AiApplyMoveVector.c:
     complete
     .text       start:0x020cfbcc end:0x020cfbe4
 
-src/overlays/ov125/calls/Ov125_ConfigHw60CopyVec3ConstToCThenAdvance.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_ConfigHw60CopyVec3ConstToCThenAdvance.c:
     complete
     .text       start:0x020cfbe4 end:0x020cfc94
 
-src/overlays/ov125/calls/Ov125_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020cfc94 end:0x020cfccc
 
-src/overlays/ov125/calls/Ov125_EnterSpin.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_EnterSpin.c:
     complete
     .text       start:0x020cfccc end:0x020cfde8
 
-src/overlays/ov125/calls/Ov125_SpinStrikeTick.c:
+src/overlays/enemies/ov125_enemy_06/Ov125_SpinStrikeTick.c:
     complete
     .text       start:0x020cfde8 end:0x020d03a8
 
-src/overlays/ov125/data/ov125_strings_020d0440.c:
+src/overlays/enemies/ov125_enemy_06/data/ov125_strings_020d0440.c:
     complete
     .data       start:0x020d0440 end:0x020d0460
 
-src/overlays/ov125/data/ov125_tables_020d03a8.c:
+src/overlays/enemies/ov125_enemy_06/data/ov125_tables_020d03a8.c:
     complete
     .rodata     start:0x020d03a8 end:0x020d0424

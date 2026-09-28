@@ -4,982 +4,982 @@
     .data       start:0x0208a000 end:0x0208a780 kind:data align:32
     .bss        start:0x0208a780 end:0x0208a7e0 kind:bss align:32
 
-src/overlays/ov023/calls/Ov023_SceneEnter.c:
+src/overlays/field/ov023_event_script/Ov023_SceneEnter.c:
     complete
     .text       start:0x02082960 end:0x020829c4
 
-src/overlays/ov023/calls/Ov023_SceneLeave.c:
+src/overlays/field/ov023_event_script/Ov023_SceneLeave.c:
     complete
     .text       start:0x020829c4 end:0x02082a44
 
-src/overlays/ov023/calls/Ov023_FirstFrameGate.c:
+src/overlays/field/ov023_event_script/Ov023_FirstFrameGate.c:
     complete
     .text       start:0x02082a44 end:0x02082a80
 
-src/overlays/ov023/calls/Ov023_SetupDisplay.c:
+src/overlays/field/ov023_event_script/Ov023_SetupDisplay.c:
     complete
     .text       start:0x02082a80 end:0x02082bdc
 
-src/overlays/ov023/calls/Ov023_MobiClip_SrcOpen.c:
+src/overlays/field/ov023_event_script/Ov023_MobiClip_SrcOpen.c:
     complete
     .text       start:0x02082bdc end:0x02082c00
 
-src/overlays/ov023/calls/Ov023_EndKeySharingIfOpen.c:
+src/overlays/field/ov023_event_script/Ov023_EndKeySharingIfOpen.c:
     complete
     .text       start:0x02082c00 end:0x02082c24
 
-src/overlays/ov023/calls/Ov023_ClosePrompt.c:
+src/overlays/field/ov023_event_script/Ov023_ClosePrompt.c:
     complete
     .text       start:0x02082c24 end:0x02082c5c
 
-src/overlays/ov023/calls/Ov023_SwapGlobalPair.c:
+src/overlays/field/ov023_event_script/Ov023_SwapGlobalPair.c:
     complete
     .text       start:0x02082c5c end:0x02082c80
 
-src/overlays/ov023/calls/Ov023_SceneMarkDone.c:
+src/overlays/field/ov023_event_script/Ov023_SceneMarkDone.c:
     complete
     .text       start:0x02082c80 end:0x02082c9c
 
-src/overlays/ov023/calls/Ov023_SceneIsDone.c:
+src/overlays/field/ov023_event_script/Ov023_SceneIsDone.c:
     complete
     .text       start:0x02082c9c end:0x02082cc0
 
-src/overlays/ov023/calls/Ov023_InstallSceneInterface.c:
+src/overlays/field/ov023_event_script/Ov023_InstallSceneInterface.c:
     complete
     .text       start:0x02082cc0 end:0x02082d20
 
-src/overlays/ov023/calls/Ov023_SceneInit.c:
+src/overlays/field/ov023_event_script/Ov023_SceneInit.c:
     complete
     .text       start:0x02082d20 end:0x02082ec0
 
-src/overlays/ov023/calls/Ov023_PollForNextState.c:
+src/overlays/field/ov023_event_script/Ov023_PollForNextState.c:
     complete
     .text       start:0x02082ec0 end:0x02082ee4
 
-src/overlays/ov023/calls/Ov023_LoadScripts.c:
+src/overlays/field/ov023_event_script/Ov023_LoadScripts.c:
     complete
     .text       start:0x02082ee4 end:0x02082ff8
 
-src/overlays/ov023/calls/Ov023_SceneDestroy.c:
+src/overlays/field/ov023_event_script/Ov023_SceneDestroy.c:
     complete
     .text       start:0x02082ff8 end:0x020830cc
 
-src/overlays/ov023/calls/Ov023_BeginClose.c:
+src/overlays/field/ov023_event_script/Ov023_BeginClose.c:
     complete
     .text       start:0x020830cc end:0x02083100
 
-src/overlays/ov023/calls/Ov023_SetupMainBackgrounds.c:
+src/overlays/field/ov023_event_script/Ov023_SetupMainBackgrounds.c:
     complete
     .text       start:0x02083100 end:0x02083270
 
-src/overlays/ov023/calls/Ov023_SetupSubBackgrounds.c:
+src/overlays/field/ov023_event_script/Ov023_SetupSubBackgrounds.c:
     complete
     .text       start:0x02083270 end:0x020832e4
 
-src/overlays/ov023/calls/Ov023_Ov027_LoadGraphics.c:
+src/overlays/field/ov023_event_script/Ov023_Ov027_LoadGraphics.c:
     complete
     .text       start:0x020832e4 end:0x02083334
 
-src/overlays/ov023/calls/Ov023_DrawSignInPanel.c:
+src/overlays/field/ov023_event_script/Ov023_DrawSignInPanel.c:
     complete
     .text       start:0x02083334 end:0x0208337c
 
-src/overlays/ov023/calls/Ov023_SceneRun.c:
+src/overlays/field/ov023_event_script/Ov023_SceneRun.c:
     complete
     .text       start:0x0208337c end:0x020834c0
 
-src/overlays/ov023/calls/Ov023_DropPeer.c:
+src/overlays/field/ov023_event_script/Ov023_DropPeer.c:
     complete
     .text       start:0x020834c0 end:0x02083508
 
-src/overlays/ov023/calls/Ov023_ReleaseScreenActors.c:
+src/overlays/field/ov023_event_script/Ov023_ReleaseScreenActors.c:
     complete
     .text       start:0x02083508 end:0x0208357c
 
-src/overlays/ov023/calls/Ov023_HideScreenActors.c:
+src/overlays/field/ov023_event_script/Ov023_HideScreenActors.c:
     complete
     .text       start:0x0208357c end:0x02083604
 
-src/overlays/ov023/calls/Ov023_ReleaseScreenSprites.c:
+src/overlays/field/ov023_event_script/Ov023_ReleaseScreenSprites.c:
     complete
     .text       start:0x02083604 end:0x02083690
 
-src/overlays/ov023/calls/Ov023_ReleaseArmedSlots.c:
+src/overlays/field/ov023_event_script/Ov023_ReleaseArmedSlots.c:
     complete
     .text       start:0x02083690 end:0x020836c0
 
-src/overlays/ov023/calls/Ov023_StepInterpolation.c:
+src/overlays/field/ov023_event_script/Ov023_StepInterpolation.c:
     complete
     .text       start:0x020836c0 end:0x020836fe
 
-src/overlays/ov023/calls/Ov023_ApplyFades.c:
+src/overlays/field/ov023_event_script/Ov023_ApplyFades.c:
     complete
     .text       start:0x02083700 end:0x02083758
 
-src/overlays/ov023/calls/Ov023_StepFade.c:
+src/overlays/field/ov023_event_script/Ov023_StepFade.c:
     complete
     .text       start:0x02083758 end:0x02083784
 
-src/overlays/ov023/calls/Ov023_Dual3DUpdate.c:
+src/overlays/field/ov023_event_script/Ov023_Dual3DUpdate.c:
     complete
     .text       start:0x02083784 end:0x020838b8
 
-src/overlays/ov023/calls/Ov023_ApplyScreenBlend.c:
+src/overlays/field/ov023_event_script/Ov023_ApplyScreenBlend.c:
     complete
     .text       start:0x020838b8 end:0x02083920
 
-src/overlays/ov023/calls/Ov023_CreateHintSprites.c:
+src/overlays/field/ov023_event_script/Ov023_CreateHintSprites.c:
     complete
     .text       start:0x02083920 end:0x020839b8
 
-src/overlays/ov023/calls/Ov023_EnterDisplayMode.c:
+src/overlays/field/ov023_event_script/Ov023_EnterDisplayMode.c:
     complete
     .text       start:0x020839b8 end:0x020839f4
 
-src/overlays/ov023/calls/Ov023_RefreshSpriteObjects.c:
+src/overlays/field/ov023_event_script/Ov023_RefreshSpriteObjects.c:
     complete
     .text       start:0x020839f4 end:0x02083a48
 
-src/overlays/ov023/calls/Ov023_ScriptTestStatusBit3.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptTestStatusBit3.c:
     complete
     .text       start:0x02083a48 end:0x02083a68
 
-src/overlays/ov023/calls/Ov023_SetScriptSlotWord.c:
+src/overlays/field/ov023_event_script/Ov023_SetScriptSlotWord.c:
     complete
     .text       start:0x02083a68 end:0x02083a80
 
-src/overlays/ov023/calls/Ov023_SetPendingText.c:
+src/overlays/field/ov023_event_script/Ov023_SetPendingText.c:
     complete
     .text       start:0x02083a80 end:0x02083aa8
 
-src/overlays/ov023/calls/Ov023_FlushTextBox.c:
+src/overlays/field/ov023_event_script/Ov023_FlushTextBox.c:
     complete
     .text       start:0x02083aa8 end:0x02083ad0
 
-src/overlays/ov023/calls/Ov023_CanOpenPauseMenu.c:
+src/overlays/field/ov023_event_script/Ov023_CanOpenPauseMenu.c:
     complete
     .text       start:0x02083ad0 end:0x02083afc
 
-src/overlays/ov023/calls/Ov023_PlaceObject.c:
+src/overlays/field/ov023_event_script/Ov023_PlaceObject.c:
     complete
     .text       start:0x02083afc end:0x02083b7c
 
-src/overlays/ov023/calls/Ov023_SetSlotPair.c:
+src/overlays/field/ov023_event_script/Ov023_SetSlotPair.c:
     complete
     .text       start:0x02083b7c end:0x02083b94
 
-src/overlays/ov023/calls/Ov023_SetSlotMode.c:
+src/overlays/field/ov023_event_script/Ov023_SetSlotMode.c:
     complete
     .text       start:0x02083b94 end:0x02083bc0
 
-src/overlays/ov023/calls/Ov023_SetEventFlag.c:
+src/overlays/field/ov023_event_script/Ov023_SetEventFlag.c:
     complete
     .text       start:0x02083bc0 end:0x02083bd4
 
-src/overlays/ov023/calls/Ov023_ResetEntryTable.c:
+src/overlays/field/ov023_event_script/Ov023_ResetEntryTable.c:
     complete
     .text       start:0x02083bd4 end:0x02083c14
 
-src/overlays/ov023/calls/Ov023_RequestGroupResources.c:
+src/overlays/field/ov023_event_script/Ov023_RequestGroupResources.c:
     complete
     .text       start:0x02083c14 end:0x02083cc4
 
-src/overlays/ov023/calls/Ov023_BuildEventTextPath.c:
+src/overlays/field/ov023_event_script/Ov023_BuildEventTextPath.c:
     complete
     .text       start:0x02083cc4 end:0x02083d2c
 
-src/overlays/ov023/calls/Ov023_PushTween.c:
+src/overlays/field/ov023_event_script/Ov023_PushTween.c:
     complete
     .text       start:0x02083d2c end:0x02083d58
 
-src/overlays/ov023/calls/Ov023_PostMessageBox.c:
+src/overlays/field/ov023_event_script/Ov023_PostMessageBox.c:
     complete
     .text       start:0x02083d58 end:0x02083d88
 
-src/overlays/ov023/calls/Ov023_DialogFlagBit2.c:
+src/overlays/field/ov023_event_script/Ov023_DialogFlagBit2.c:
     complete
     .text       start:0x02083d88 end:0x02083da0
 
-src/overlays/ov023/calls/Ov023_OpenDialog.c:
+src/overlays/field/ov023_event_script/Ov023_OpenDialog.c:
     complete
     .text       start:0x02083da0 end:0x02083e08
 
-src/overlays/ov023/calls/Ov023_StepDialog.c:
+src/overlays/field/ov023_event_script/Ov023_StepDialog.c:
     complete
     .text       start:0x02083e08 end:0x02083f1c
 
-src/overlays/ov023/calls/Ov023_LoadSecondaryScript.c:
+src/overlays/field/ov023_event_script/Ov023_LoadSecondaryScript.c:
     complete
     .text       start:0x02083f1c end:0x02084018
 
-src/overlays/ov023/calls/Ov023_GetScriptState.c:
+src/overlays/field/ov023_event_script/Ov023_GetScriptState.c:
     complete
     .text       start:0x02084018 end:0x0208402c
 
-src/overlays/ov023/calls/Ov023_RebuildSubObject.c:
+src/overlays/field/ov023_event_script/Ov023_RebuildSubObject.c:
     complete
     .text       start:0x0208402c end:0x0208405c
 
-src/overlays/ov023/calls/Ov023_CmdLoadActor.c:
+src/overlays/field/ov023_event_script/Ov023_CmdLoadActor.c:
     complete
     .text       start:0x0208405c end:0x02084108
 
-src/overlays/ov023/calls/Ov023_Cmd_StartEntityMotionParam.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_StartEntityMotionParam.c:
     complete
     .text       start:0x02084108 end:0x02084166
 
-src/overlays/ov023/calls/Ov023_CmdPlaceActor.c:
+src/overlays/field/ov023_event_script/Ov023_CmdPlaceActor.c:
     complete
     .text       start:0x02084168 end:0x02084368
 
-src/overlays/ov023/calls/Ov023_Cmd_StopEntitySound.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_StopEntitySound.c:
     complete
     .text       start:0x02084368 end:0x020843b0
 
-src/overlays/ov023/calls/Ov023_Cmd_ParentEntityToEntity.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_ParentEntityToEntity.c:
     complete
     .text       start:0x020843b0 end:0x0208449c
 
-src/overlays/ov023/calls/Ov023_Cmd_ShowEntity.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_ShowEntity.c:
     complete
     .text       start:0x0208449c end:0x020844e8
 
-src/overlays/ov023/calls/Ov023_Cmd_HideEntity.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_HideEntity.c:
     complete
     .text       start:0x020844e8 end:0x02084534
 
-src/overlays/ov023/calls/Ov023_Cmd_PlayEntityAnimKind1.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_PlayEntityAnimKind1.c:
     complete
     .text       start:0x02084534 end:0x020845a0
 
-src/overlays/ov023/calls/Ov023_CmdRampActorTransition.c:
+src/overlays/field/ov023_event_script/Ov023_CmdRampActorTransition.c:
     complete
     .text       start:0x020845a0 end:0x0208461e
 
-src/overlays/ov023/calls/Ov023_ScriptOpDispatchWrapped.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptOpDispatchWrapped.c:
     complete
     .text       start:0x02084620 end:0x02084640
 
-src/overlays/ov023/calls/Ov023_Cmd_SetEntityLookupValue.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_SetEntityLookupValue.c:
     complete
     .text       start:0x02084640 end:0x020846bc
 
-src/overlays/ov023/calls/Ov023_ResolveSpeakerOperands.c:
+src/overlays/field/ov023_event_script/Ov023_ResolveSpeakerOperands.c:
     complete
     .text       start:0x020846bc end:0x02084780
 
-src/overlays/ov023/calls/Ov023_Cmd_PlayNamedMotionOrNode.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_PlayNamedMotionOrNode.c:
     complete
     .text       start:0x02084780 end:0x02084844
 
-src/overlays/ov023/calls/Ov023_ScriptCmd_StoreIfFree.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptCmd_StoreIfFree.c:
     complete
     .text       start:0x02084844 end:0x0208485e
 
-src/overlays/ov023/calls/Ov023_Cmd_TestEntityCollisionBit.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_TestEntityCollisionBit.c:
     complete
     .text       start:0x02084860 end:0x020848b6
 
-src/overlays/ov023/calls/Ov023_ReadTargetPosition.c:
+src/overlays/field/ov023_event_script/Ov023_ReadTargetPosition.c:
     complete
     .text       start:0x020848b8 end:0x02084994
 
-src/overlays/ov023/calls/Ov023_Cmd_SpawnEntityFollower.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_SpawnEntityFollower.c:
     complete
     .text       start:0x02084994 end:0x02084a38
 
-src/overlays/ov023/calls/Ov023_CmdEntry_SpawnEntityFollower.c:
+src/overlays/field/ov023_event_script/Ov023_CmdEntry_SpawnEntityFollower.c:
     complete
     .text       start:0x02084a38 end:0x02084a42
 
-src/overlays/ov023/calls/Ov023_TurnActorToward.c:
+src/overlays/field/ov023_event_script/Ov023_TurnActorToward.c:
     complete
     .text       start:0x02084a44 end:0x02084adc
 
-src/overlays/ov023/calls/Ov023_CmdStoreSlot48.c:
+src/overlays/field/ov023_event_script/Ov023_CmdStoreSlot48.c:
     complete
     .text       start:0x02084adc end:0x02084ae6
 
-src/overlays/ov023/calls/Ov023_Cmd_FaceEntityTowards.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_FaceEntityTowards.c:
     complete
     .text       start:0x02084ae8 end:0x02084ba0
 
-src/overlays/ov023/calls/Ov023_CmdStoreSlot48_2.c:
+src/overlays/field/ov023_event_script/Ov023_CmdStoreSlot48_2.c:
     complete
     .text       start:0x02084ba0 end:0x02084baa
 
-src/overlays/ov023/calls/Ov023_Cmd_PlayEntityAnim.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_PlayEntityAnim.c:
     complete
     .text       start:0x02084bac end:0x02084be6
 
-src/overlays/ov023/calls/Ov023_ScriptCmd_SetCharacterEntry.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptCmd_SetCharacterEntry.c:
     complete
     .text       start:0x02084be8 end:0x02084c30
 
-src/overlays/ov023/calls/Ov023_VmTickActor.c:
+src/overlays/field/ov023_event_script/Ov023_VmTickActor.c:
     complete
     .text       start:0x02084c30 end:0x02084c5e
 
-src/overlays/ov023/calls/Ov023_CmdStartBrightnessFade.c:
+src/overlays/field/ov023_event_script/Ov023_CmdStartBrightnessFade.c:
     complete
     .text       start:0x02084c60 end:0x02084cc2
 
-src/overlays/ov023/calls/Ov023_CmdStepBrightnessFade.c:
+src/overlays/field/ov023_event_script/Ov023_CmdStepBrightnessFade.c:
     complete
     .text       start:0x02084cc4 end:0x02084d62
 
-src/overlays/ov023/calls/Ov023_Teardown.c:
+src/overlays/field/ov023_event_script/Ov023_Teardown.c:
     complete
     .text       start:0x02084d64 end:0x02084d98
 
-src/overlays/ov023/calls/Ov023_CmdResetStage.c:
+src/overlays/field/ov023_event_script/Ov023_CmdResetStage.c:
     complete
     .text       start:0x02084d98 end:0x02084e94
 
-src/overlays/ov023/calls/Ov023_CmdMoveCamera.c:
+src/overlays/field/ov023_event_script/Ov023_CmdMoveCamera.c:
     complete
     .text       start:0x02084e94 end:0x02085174
 
-src/overlays/ov023/calls/Ov023_CmdStopCamera.c:
+src/overlays/field/ov023_event_script/Ov023_CmdStopCamera.c:
     complete
     .text       start:0x02085174 end:0x02085258
 
-src/overlays/ov023/calls/Ov023_SceneExit.c:
+src/overlays/field/ov023_event_script/Ov023_SceneExit.c:
     complete
     .text       start:0x02085258 end:0x02085284
 
-src/overlays/ov023/calls/Ov023_CmdStartScreenBlend.c:
+src/overlays/field/ov023_event_script/Ov023_CmdStartScreenBlend.c:
     complete
     .text       start:0x02085284 end:0x02085310
 
-src/overlays/ov023/calls/Ov023_CmdStepScreenBlend.c:
+src/overlays/field/ov023_event_script/Ov023_CmdStepScreenBlend.c:
     complete
     .text       start:0x02085310 end:0x0208539a
 
-src/overlays/ov023/calls/Ov023_CmdPushVramState.c:
+src/overlays/field/ov023_event_script/Ov023_CmdPushVramState.c:
     complete
     .text       start:0x0208539c end:0x020853a6
 
-src/overlays/ov023/calls/Ov023_RebuildVisibleEntries.c:
+src/overlays/field/ov023_event_script/Ov023_RebuildVisibleEntries.c:
     complete
     .text       start:0x020853a8 end:0x020853f8
 
-src/overlays/ov023/calls/Ov023_Cmd_StartNamedMotion.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_StartNamedMotion.c:
     complete
     .text       start:0x020853f8 end:0x02085470
 
-src/overlays/ov023/calls/Ov023_Cmd_EntityAction895dc.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_EntityAction895dc.c:
     complete
     .text       start:0x02085470 end:0x020854c0
 
-src/overlays/ov023/auto/Ov023_AdvancePastGlyph.c:
+src/overlays/field/ov023_event_script/Ov023_AdvancePastGlyph.c:
     complete
     .text       start:0x020854c0 end:0x0208552a
 
-src/overlays/ov023/calls/Ov023_SplitPath.c:
+src/overlays/field/ov023_event_script/Ov023_SplitPath.c:
     complete
     .text       start:0x0208552c end:0x0208557a
 
-src/overlays/ov023/calls/Ov023_CmdShowCharacterPanel.c:
+src/overlays/field/ov023_event_script/Ov023_CmdShowCharacterPanel.c:
     complete
     .text       start:0x0208557c end:0x0208564c
 
-src/overlays/ov023/calls/Ov023_VmResetRegisters.c:
+src/overlays/field/ov023_event_script/Ov023_VmResetRegisters.c:
     complete
     .text       start:0x0208564c end:0x0208567c
 
-src/overlays/ov023/calls/Ov023_VmStep.c:
+src/overlays/field/ov023_event_script/Ov023_VmStep.c:
     complete
     .text       start:0x0208567c end:0x020856b4
 
-src/overlays/ov023/calls/Ov023_Cmd_SetEntityAngles.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_SetEntityAngles.c:
     complete
     .text       start:0x020856b4 end:0x02085750
 
-src/overlays/ov023/calls/Ov023_Cmd_PushEntityTween3.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_PushEntityTween3.c:
     complete
     .text       start:0x02085750 end:0x02085798
 
-src/overlays/ov023/calls/Ov023_Cmd_NudgeEntityByCamera.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_NudgeEntityByCamera.c:
     complete
     .text       start:0x02085798 end:0x02085842
 
-src/overlays/ov023/calls/Ov023_ScriptOpStoreInt.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptOpStoreInt.c:
     complete
     .text       start:0x02085844 end:0x02085860
 
-src/overlays/ov023/calls/Ov023_Cmd_EntityAction88f90.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_EntityAction88f90.c:
     complete
     .text       start:0x02085860 end:0x02085890
 
-src/overlays/ov023/calls/Ov023_Cmd_ResolveEntityHandle.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_ResolveEntityHandle.c:
     complete
     .text       start:0x02085890 end:0x020858d0
 
-src/overlays/ov023/calls/Ov023_ScriptOpRunEntityAction.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptOpRunEntityAction.c:
     complete
     .text       start:0x020858d0 end:0x02085910
 
-src/overlays/ov023/calls/Ov023_Cmd_SetEntityScale.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_SetEntityScale.c:
     complete
     .text       start:0x02085910 end:0x0208598c
 
-src/overlays/ov023/calls/Ov023_Cmd_AttachEntityToEntity.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_AttachEntityToEntity.c:
     complete
     .text       start:0x0208598c end:0x02085a44
 
-src/overlays/ov023/calls/Ov023_CmdSetAnchor.c:
+src/overlays/field/ov023_event_script/Ov023_CmdSetAnchor.c:
     complete
     .text       start:0x02085a44 end:0x02085b00
 
-src/overlays/ov023/calls/Ov023_CmdSetupPartyActors.c:
+src/overlays/field/ov023_event_script/Ov023_CmdSetupPartyActors.c:
     complete
     .text       start:0x02085b00 end:0x02085d30
 
-src/overlays/ov023/calls/Ov023_CmdAttachWeapons.c:
+src/overlays/field/ov023_event_script/Ov023_CmdAttachWeapons.c:
     complete
     .text       start:0x02085d30 end:0x02085edc
 
-src/overlays/ov023/calls/Ov023_Cmd_EntityAction88f08.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_EntityAction88f08.c:
     complete
     .text       start:0x02085edc end:0x02085f2c
 
-src/overlays/ov023/calls/Ov023_ScriptOpRunEntityTablePass.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptOpRunEntityTablePass.c:
     complete
     .text       start:0x02085f2c end:0x02085f46
 
-src/overlays/ov023/calls/Ov023_CmdPlayCameraScript.c:
+src/overlays/field/ov023_event_script/Ov023_CmdPlayCameraScript.c:
     complete
     .text       start:0x02085f48 end:0x02086060
 
-src/overlays/ov023/calls/Ov023_VmSetSlotPairAndMode.c:
+src/overlays/field/ov023_event_script/Ov023_VmSetSlotPairAndMode.c:
     complete
     .text       start:0x02086060 end:0x020860b2
 
-src/overlays/ov023/calls/Ov023_Cmd_ClearEntityOffsetY.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_ClearEntityOffsetY.c:
     complete
     .text       start:0x020860b4 end:0x02086106
 
-src/overlays/ov023/calls/Ov023_CmdPlaceObject.c:
+src/overlays/field/ov023_event_script/Ov023_CmdPlaceObject.c:
     complete
     .text       start:0x02086108 end:0x0208617c
 
-src/overlays/ov023/calls/Ov023_ScriptCmd_SetEventFlag.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptCmd_SetEventFlag.c:
     complete
     .text       start:0x0208617c end:0x0208618e
 
-src/overlays/ov023/calls/Ov023_CmdSetEventFlag.c:
+src/overlays/field/ov023_event_script/Ov023_CmdSetEventFlag.c:
     complete
     .text       start:0x02086190 end:0x020861a2
 
-src/overlays/ov023/calls/Ov023_CmdSetCamera.c:
+src/overlays/field/ov023_event_script/Ov023_CmdSetCamera.c:
     complete
     .text       start:0x020861a4 end:0x020862bc
 
-src/overlays/ov023/calls/Ov023_ScriptOpStoreSlotFx32.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptOpStoreSlotFx32.c:
     complete
     .text       start:0x020862bc end:0x020862e8
 
-src/overlays/ov023/calls/Ov023_Cmd_WriteEntityField.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_WriteEntityField.c:
     complete
     .text       start:0x020862e8 end:0x0208632c
 
-src/overlays/ov023/calls/Ov023_CmdPlaceRelative.c:
+src/overlays/field/ov023_event_script/Ov023_CmdPlaceRelative.c:
     complete
     .text       start:0x0208632c end:0x02086470
 
-src/overlays/ov023/calls/Ov023_Cmd_SetEntityTransformA.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_SetEntityTransformA.c:
     complete
     .text       start:0x02086470 end:0x02086508
 
-src/overlays/ov023/calls/Ov023_Cmd_EntityAction89174.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_EntityAction89174.c:
     complete
     .text       start:0x02086508 end:0x02086538
 
-src/overlays/ov023/calls/Ov023_CmdWarpActor.c:
+src/overlays/field/ov023_event_script/Ov023_CmdWarpActor.c:
     complete
     .text       start:0x02086538 end:0x020867c4
 
-src/overlays/ov023/calls/Ov023_CmdStoreGlobalValue.c:
+src/overlays/field/ov023_event_script/Ov023_CmdStoreGlobalValue.c:
     complete
     .text       start:0x020867c4 end:0x020867d2
 
-src/overlays/ov023/calls/Ov023_Cmd_SetEntityFlag.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_SetEntityFlag.c:
     complete
     .text       start:0x020867d4 end:0x0208681c
 
-src/overlays/ov023/calls/Ov023_Cmd_PlayEntityAnimByName.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_PlayEntityAnimByName.c:
     complete
     .text       start:0x0208681c end:0x02086964
 
-src/overlays/ov023/calls/Ov023_CmdActorSpeak.c:
+src/overlays/field/ov023_event_script/Ov023_CmdActorSpeak.c:
     complete
     .text       start:0x02086964 end:0x02086a00
 
-src/overlays/ov023/calls/Ov023_Cmd_StartEntityMotion.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_StartEntityMotion.c:
     complete
     .text       start:0x02086a00 end:0x02086a4c
 
-src/overlays/ov023/calls/Ov023_Cmd_SeekEntityAnim.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_SeekEntityAnim.c:
     complete
     .text       start:0x02086a4c end:0x02086aaa
 
-src/overlays/ov023/calls/Ov023_CmdRampAnimFrame.c:
+src/overlays/field/ov023_event_script/Ov023_CmdRampAnimFrame.c:
     complete
     .text       start:0x02086aac end:0x02086b34
 
-src/overlays/ov023/calls/Ov023_IsRecordIdle.c:
+src/overlays/field/ov023_event_script/Ov023_IsRecordIdle.c:
     complete
     .text       start:0x02086b34 end:0x02086b70
 
-src/overlays/ov023/calls/Ov023_VmWaitRecordIdle.c:
+src/overlays/field/ov023_event_script/Ov023_VmWaitRecordIdle.c:
     complete
     .text       start:0x02086b70 end:0x02086bb8
 
-src/overlays/ov023/calls/Ov023_ScriptOpTestSlot.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptOpTestSlot.c:
     complete
     .text       start:0x02086bb8 end:0x02086bf8
 
-src/overlays/ov023/calls/Ov023_Cmd_SetEntityTransformB.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_SetEntityTransformB.c:
     complete
     .text       start:0x02086bf8 end:0x02086c90
 
-src/overlays/ov023/calls/Ov023_FormatIndex.c:
+src/overlays/field/ov023_event_script/Ov023_FormatIndex.c:
     complete
     .text       start:0x02086c90 end:0x02086cb8
 
-src/overlays/ov023/calls/Ov023_CmdSeatMembers.c:
+src/overlays/field/ov023_event_script/Ov023_CmdSeatMembers.c:
     complete
     .text       start:0x02086cb8 end:0x02086dcc
 
-src/overlays/ov023/calls/Ov023_Cmd_EntityAction8929c.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_EntityAction8929c.c:
     complete
     .text       start:0x02086dcc end:0x02086e60
 
-src/overlays/ov023/calls/Ov023_Cmd_SetEntitySlot.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_SetEntitySlot.c:
     complete
     .text       start:0x02086e60 end:0x02086e8e
 
-src/overlays/ov023/calls/Ov023_CmdOpenDialog.c:
+src/overlays/field/ov023_event_script/Ov023_CmdOpenDialog.c:
     complete
     .text       start:0x02086e90 end:0x02086e9e
 
-src/overlays/ov023/calls/Ov023_CmdWaitDialog.c:
+src/overlays/field/ov023_event_script/Ov023_CmdWaitDialog.c:
     complete
     .text       start:0x02086ea0 end:0x02086eb2
 
-src/overlays/ov023/calls/Ov023_ScriptOpActWhenOpcodeC.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptOpActWhenOpcodeC.c:
     complete
     .text       start:0x02086eb4 end:0x02086ee4
 
-src/overlays/ov023/calls/Ov023_ScriptTestOpcodeC.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptTestOpcodeC.c:
     complete
     .text       start:0x02086ee4 end:0x02086f02
 
-src/overlays/ov023/calls/Ov023_CmdWaitScriptIdle.c:
+src/overlays/field/ov023_event_script/Ov023_CmdWaitScriptIdle.c:
     complete
     .text       start:0x02086f04 end:0x02086f16
 
-src/overlays/ov023/calls/Ov023_Cmd_WorldActionAtEntity.c:
+src/overlays/field/ov023_event_script/Ov023_Cmd_WorldActionAtEntity.c:
     complete
     .text       start:0x02086f18 end:0x02086f6c
 
-src/overlays/ov023/calls/Ov023_ScriptCmd_SetGateFlagWithSound.c:
+src/overlays/field/ov023_event_script/Ov023_ScriptCmd_SetGateFlagWithSound.c:
     complete
     .text       start:0x02086f6c end:0x02086f8c
 
-src/overlays/ov023/calls/Ov023_CmdSetGateFlag.c:
+src/overlays/field/ov023_event_script/Ov023_CmdSetGateFlag.c:
     complete
     .text       start:0x02086f8c end:0x02086fac
 
-src/overlays/ov023/calls/Ov023_CmdStartLightFade.c:
+src/overlays/field/ov023_event_script/Ov023_CmdStartLightFade.c:
     complete
     .text       start:0x02086fac end:0x02087018
 
-src/overlays/ov023/calls/Ov023_CmdStepLightFade.c:
+src/overlays/field/ov023_event_script/Ov023_CmdStepLightFade.c:
     complete
     .text       start:0x02087018 end:0x0208708a
 
-src/overlays/ov023/calls/Ov023_CmdSetGameMode2.c:
+src/overlays/field/ov023_event_script/Ov023_CmdSetGameMode2.c:
     complete
     .text       start:0x0208708c end:0x0208709c
 
-src/overlays/ov023/auto/Ov023_ConstReturn0.c:
+src/overlays/field/ov023_event_script/Ov023_ConstReturn0.c:
     complete
     .text       start:0x0208709c end:0x020870a0
 
-src/overlays/ov023/calls/Ov023_CmdSaveGame.c:
+src/overlays/field/ov023_event_script/Ov023_CmdSaveGame.c:
     complete
     .text       start:0x020870a0 end:0x02087114
 
-src/overlays/ov023/calls/Ov023_VmCmdApplyByFlag.c:
+src/overlays/field/ov023_event_script/Ov023_VmCmdApplyByFlag.c:
     complete
     .text       start:0x02087114 end:0x02087160
 
-src/overlays/ov023/calls/Ov023_ActorFinish.c:
+src/overlays/field/ov023_event_script/Ov023_ActorFinish.c:
     complete
     .text       start:0x02087160 end:0x02087210
 
-src/overlays/ov023/auto/Ov023_ResetTimers.c:
+src/overlays/field/ov023_event_script/Ov023_ResetTimers.c:
     complete
     .text       start:0x02087210 end:0x02087234
 
-src/overlays/ov023/auto/Ov023_ActorLatchAngle.c:
+src/overlays/field/ov023_event_script/Ov023_ActorLatchAngle.c:
     complete
     .text       start:0x02087234 end:0x02087298
 
-src/overlays/ov023/calls/Ov023_ActorStartMotion.c:
+src/overlays/field/ov023_event_script/Ov023_ActorStartMotion.c:
     complete
     .text       start:0x02087298 end:0x02087510
 
-src/overlays/ov023/calls/Ov023_SubmitRequestRecord.c:
+src/overlays/field/ov023_event_script/Ov023_SubmitRequestRecord.c:
     complete
     .text       start:0x02087510 end:0x02087564
 
-src/overlays/ov023/auto/Ov023_ActorFindPending.c:
+src/overlays/field/ov023_event_script/Ov023_ActorFindPending.c:
     complete
     .text       start:0x02087564 end:0x020875b0
 
-src/overlays/ov023/calls/Ov023_ActorSampleTrack.c:
+src/overlays/field/ov023_event_script/Ov023_ActorSampleTrack.c:
     complete
     .text       start:0x020875b0 end:0x02087620
 
-src/overlays/ov023/calls/Ov023_ActorStepTrack.c:
+src/overlays/field/ov023_event_script/Ov023_ActorStepTrack.c:
     complete
     .text       start:0x02087620 end:0x0208776c
 
-src/overlays/ov023/calls/Ov023_ActorFollowParent.c:
+src/overlays/field/ov023_event_script/Ov023_ActorFollowParent.c:
     complete
     .text       start:0x0208776c end:0x02087870
 
-src/overlays/ov023/calls/Ov023_ActorResourceId.c:
+src/overlays/field/ov023_event_script/Ov023_ActorResourceId.c:
     complete
     .text       start:0x02087870 end:0x02087a48
 
-src/overlays/ov023/calls/Ov023_ActorSpawnEffect.c:
+src/overlays/field/ov023_event_script/Ov023_ActorSpawnEffect.c:
     complete
     .text       start:0x02087a48 end:0x02087b34
 
-src/overlays/ov023/calls/Ov023_MotionAdvance.c:
+src/overlays/field/ov023_event_script/Ov023_MotionAdvance.c:
     complete
     .text       start:0x02087b34 end:0x02087bc8
 
-src/overlays/ov023/calls/Ov023_ActorStepEffects.c:
+src/overlays/field/ov023_event_script/Ov023_ActorStepEffects.c:
     complete
     .text       start:0x02087bc8 end:0x02087cec
 
-src/overlays/ov023/calls/Ov023_ActorWithinReach.c:
+src/overlays/field/ov023_event_script/Ov023_ActorWithinReach.c:
     complete
     .text       start:0x02087cec end:0x02087d64
 
-src/overlays/ov023/calls/Ov023_ActorWalkStep.c:
+src/overlays/field/ov023_event_script/Ov023_ActorWalkStep.c:
     complete
     .text       start:0x02087d64 end:0x02087f68
 
-src/overlays/ov023/calls/Ov023_ActorPopMotion.c:
+src/overlays/field/ov023_event_script/Ov023_ActorPopMotion.c:
     complete
     .text       start:0x02087f68 end:0x02088010
 
-src/overlays/ov023/calls/Ov023_ActorPopEffect.c:
+src/overlays/field/ov023_event_script/Ov023_ActorPopEffect.c:
     complete
     .text       start:0x02088010 end:0x020880e0
 
-src/overlays/ov023/calls/Ov023_ActorFlushSounds.c:
+src/overlays/field/ov023_event_script/Ov023_ActorFlushSounds.c:
     complete
     .text       start:0x020880e0 end:0x02088144
 
-src/overlays/ov023/calls/Ov023_ActorUpdateMotions.c:
+src/overlays/field/ov023_event_script/Ov023_ActorUpdateMotions.c:
     complete
     .text       start:0x02088144 end:0x0208836c
 
-src/overlays/ov023/calls/Ov023_BuildRotation33.c:
+src/overlays/field/ov023_event_script/Ov023_BuildRotation33.c:
     complete
     .text       start:0x0208836c end:0x02088454
 
-src/overlays/ov023/calls/Ov023_RotTweenStep.c:
+src/overlays/field/ov023_event_script/Ov023_RotTweenStep.c:
     complete
     .text       start:0x02088454 end:0x020885fc
 
-src/overlays/ov023/calls/Ov023_DrawJointRotations.c:
+src/overlays/field/ov023_event_script/Ov023_DrawJointRotations.c:
     complete
     .text       start:0x020885fc end:0x02088714
 
-src/overlays/ov023/calls/Ov023_ActorInit.c:
+src/overlays/field/ov023_event_script/Ov023_ActorInit.c:
     complete
     .text       start:0x02088714 end:0x020887dc
 
-src/overlays/ov023/calls/Ov023_PlaceActorModel.c:
+src/overlays/field/ov023_event_script/Ov023_PlaceActorModel.c:
     complete
     .text       start:0x020887dc end:0x020888b8
 
-src/overlays/ov023/auto/Ov023_DispatchWorkerRequest.c:
+src/overlays/field/ov023_event_script/Ov023_DispatchWorkerRequest.c:
     complete
     .text       start:0x020888b8 end:0x020888e8
 
-src/overlays/ov023/calls/Ov023_ActorRelease.c:
+src/overlays/field/ov023_event_script/Ov023_ActorRelease.c:
     complete
     .text       start:0x020888e8 end:0x02088954
 
-src/overlays/ov023/calls/Ov023_ActorFinish_2.c:
+src/overlays/field/ov023_event_script/Ov023_ActorFinish_2.c:
     complete
     .text       start:0x02088954 end:0x0208895c
 
-src/overlays/ov023/calls/Ov023_ActorStep.c:
+src/overlays/field/ov023_event_script/Ov023_ActorStep.c:
     complete
     .text       start:0x0208895c end:0x02088d18
 
-src/overlays/ov023/calls/Ov023_ActorHookJoints.c:
+src/overlays/field/ov023_event_script/Ov023_ActorHookJoints.c:
     complete
     .text       start:0x02088d18 end:0x02088da0
 
-src/overlays/ov023/calls/Ov023_ActorSetVelocity.c:
+src/overlays/field/ov023_event_script/Ov023_ActorSetVelocity.c:
     complete
     .text       start:0x02088da0 end:0x02088e78
 
-src/overlays/ov023/auto/Ov023_SetScrollAndMarkDirty.c:
+src/overlays/field/ov023_event_script/Ov023_SetScrollAndMarkDirty.c:
     complete
     .text       start:0x02088e78 end:0x02088ea8
 
-src/overlays/ov023/auto/Ov023_Window_SetField1A34.c:
+src/overlays/field/ov023_event_script/Ov023_Window_SetField1A34.c:
     complete
     .text       start:0x02088ea8 end:0x02088eb4
 
-src/overlays/ov023/auto/Ov023_Window_GetFlags.c:
+src/overlays/field/ov023_event_script/Ov023_Window_GetFlags.c:
     complete
     .text       start:0x02088eb4 end:0x02088ec0
 
-src/overlays/ov023/calls/Ov023_IsActivePanelEntry.c:
+src/overlays/field/ov023_event_script/Ov023_IsActivePanelEntry.c:
     complete
     .text       start:0x02088ec0 end:0x02088ee8
 
-src/overlays/ov023/calls/Ov023_Window_SetFlag4.c:
+src/overlays/field/ov023_event_script/Ov023_Window_SetFlag4.c:
     complete
     .text       start:0x02088ee8 end:0x02088f08
 
-src/overlays/ov023/calls/Ov023_ActorStartTrack.c:
+src/overlays/field/ov023_event_script/Ov023_ActorStartTrack.c:
     complete
     .text       start:0x02088f08 end:0x02088f90
 
-src/overlays/ov023/calls/Ov023_DetachActorModel.c:
+src/overlays/field/ov023_event_script/Ov023_DetachActorModel.c:
     complete
     .text       start:0x02088f90 end:0x02089000
 
-src/overlays/ov023/calls/Ov023_ActorLoadEffectAnim.c:
+src/overlays/field/ov023_event_script/Ov023_ActorLoadEffectAnim.c:
     complete
     .text       start:0x02089000 end:0x02089064
 
-src/overlays/ov023/calls/Ov023_CountSubPanelEntries.c:
+src/overlays/field/ov023_event_script/Ov023_CountSubPanelEntries.c:
     complete
     .text       start:0x02089064 end:0x02089080
 
-src/overlays/ov023/calls/Ov023_SubPanelColumnStep.c:
+src/overlays/field/ov023_event_script/Ov023_SubPanelColumnStep.c:
     complete
     .text       start:0x02089080 end:0x020890ac
 
-src/overlays/ov023/calls/Ov023_ActorStartEffectTimer.c:
+src/overlays/field/ov023_event_script/Ov023_ActorStartEffectTimer.c:
     complete
     .text       start:0x020890ac end:0x02089108
 
-src/overlays/ov023/calls/Ov023_BindTableEntry.c:
+src/overlays/field/ov023_event_script/Ov023_BindTableEntry.c:
     complete
     .text       start:0x02089108 end:0x02089130
 
-src/overlays/ov023/calls/Ov023_ResetSubBlockLayout.c:
+src/overlays/field/ov023_event_script/Ov023_ResetSubBlockLayout.c:
     complete
     .text       start:0x02089130 end:0x02089152
 
-src/overlays/ov023/calls/Ov023_AppendListEntry.c:
+src/overlays/field/ov023_event_script/Ov023_AppendListEntry.c:
     complete
     .text       start:0x02089154 end:0x02089174
 
-src/overlays/ov023/calls/Ov023_ResetActorModel.c:
+src/overlays/field/ov023_event_script/Ov023_ResetActorModel.c:
     complete
     .text       start:0x02089174 end:0x020891e4
 
-src/overlays/ov023/auto/Ov023_StoreEntityTransform.c:
+src/overlays/field/ov023_event_script/Ov023_StoreEntityTransform.c:
     complete
     .text       start:0x020891e4 end:0x02089206
 
-src/overlays/ov023/auto/Ov023_IsSlotFree.c:
+src/overlays/field/ov023_event_script/Ov023_IsSlotFree.c:
     complete
     .text       start:0x02089208 end:0x02089240
 
-src/overlays/ov023/calls/Ov023_ResetHistory.c:
+src/overlays/field/ov023_event_script/Ov023_ResetHistory.c:
     complete
     .text       start:0x02089240 end:0x02089274
 
-src/overlays/ov023/calls/Ov023_Window_SetFlag8IfOpen.c:
+src/overlays/field/ov023_event_script/Ov023_Window_SetFlag8IfOpen.c:
     complete
     .text       start:0x02089274 end:0x0208929c
 
-src/overlays/ov023/auto/Ov023_ActorQueueSound.c:
+src/overlays/field/ov023_event_script/Ov023_ActorQueueSound.c:
     complete
     .text       start:0x0208929c end:0x02089304
 
-src/overlays/ov023/calls/Ov023_ActorRotateJoint.c:
+src/overlays/field/ov023_event_script/Ov023_ActorRotateJoint.c:
     complete
     .text       start:0x02089304 end:0x02089370
 
-src/overlays/ov023/calls/Ov023_Window_SetFlag10.c:
+src/overlays/field/ov023_event_script/Ov023_Window_SetFlag10.c:
     complete
     .text       start:0x02089370 end:0x02089390
 
-src/overlays/ov023/calls/Ov023_ActorPlayMotion.c:
+src/overlays/field/ov023_event_script/Ov023_ActorPlayMotion.c:
     complete
     .text       start:0x02089390 end:0x020894c0
 
-src/overlays/ov023/calls/Ov023_ActorQueueMotion.c:
+src/overlays/field/ov023_event_script/Ov023_ActorQueueMotion.c:
     complete
     .text       start:0x020894c0 end:0x020895dc
 
-src/overlays/ov023/auto/Ov023_StorePairAt0x15b8.c:
+src/overlays/field/ov023_event_script/Ov023_StorePairAt0x15b8.c:
     complete
     .text       start:0x020895dc end:0x020895ec
 
-src/overlays/ov023/calls/Ov023_Window_OpenMessages.c:
+src/overlays/field/ov023_event_script/Ov023_Window_OpenMessages.c:
     complete
     .text       start:0x020895ec end:0x02089604
 
-src/overlays/ov023/calls/Ov023_ReleaseSubPanelResource.c:
+src/overlays/field/ov023_event_script/Ov023_ReleaseSubPanelResource.c:
     complete
     .text       start:0x02089604 end:0x0208961c
 
-src/overlays/ov023/auto/Ov023_MakeDescriptorWord.c:
+src/overlays/field/ov023_event_script/Ov023_MakeDescriptorWord.c:
     complete
     .text       start:0x0208961c end:0x02089640
 
-src/overlays/ov023/calls/Ov023_ActorAttachToParent.c:
+src/overlays/field/ov023_event_script/Ov023_ActorAttachToParent.c:
     complete
     .text       start:0x02089640 end:0x020896b8
 
-src/overlays/ov023/calls/Ov023_SubSceneEnter.c:
+src/overlays/field/ov023_event_script/Ov023_SubSceneEnter.c:
     complete
     .text       start:0x020896b8 end:0x020896f0
 
-src/overlays/ov023/calls/Ov023_ClassTeardown.c:
+src/overlays/field/ov023_event_script/Ov023_ClassTeardown.c:
     complete
     .text       start:0x020896f0 end:0x020896fc
 
-src/overlays/ov023/calls/Ov023_InitNoiseOverlay.c:
+src/overlays/field/ov023_event_script/Ov023_InitNoiseOverlay.c:
     complete
     .text       start:0x020896fc end:0x02089760
 
-src/overlays/ov023/calls/Ov023_LoadNoiseTexture.c:
+src/overlays/field/ov023_event_script/Ov023_LoadNoiseTexture.c:
     complete
     .text       start:0x02089760 end:0x02089848
 
-src/overlays/ov023/calls/Ov023_SubSceneTick.c:
+src/overlays/field/ov023_event_script/Ov023_SubSceneTick.c:
     complete
     .text       start:0x02089848 end:0x02089880
 
-src/overlays/ov023/calls/Ov023_SetupNoiseDraw.c:
+src/overlays/field/ov023_event_script/Ov023_SetupNoiseDraw.c:
     complete
     .text       start:0x02089880 end:0x02089a38
 
-src/overlays/ov023/calls/Ov023_DrawNoiseTile.c:
+src/overlays/field/ov023_event_script/Ov023_DrawNoiseTile.c:
     complete
     .text       start:0x02089a38 end:0x02089ae0
 
-src/overlays/ov023/calls/Ov023_DrawNoiseQuad.c:
+src/overlays/field/ov023_event_script/Ov023_DrawNoiseQuad.c:
     complete
     .text       start:0x02089ae0 end:0x02089c38
 
-src/overlays/ov023/calls/Ov023_DrawNoiseOverlay.c:
+src/overlays/field/ov023_event_script/Ov023_DrawNoiseOverlay.c:
     complete
     .text       start:0x02089c38 end:0x02089ccc
 
-src/overlays/ov023/calls/Ov023_SetGateFlag.c:
+src/overlays/field/ov023_event_script/Ov023_SetGateFlag.c:
     complete
     .text       start:0x02089ccc end:0x02089cdc
 
-src/overlays/ov023/calls/Ov023_SetGateValue.c:
+src/overlays/field/ov023_event_script/Ov023_SetGateValue.c:
     complete
     .text       start:0x02089cdc end:0x02089cec
 
-src/overlays/ov023/calls/Ov023_GetGateValue.c:
+src/overlays/field/ov023_event_script/Ov023_GetGateValue.c:
     complete
     .text       start:0x02089cec end:0x02089cfc
 
-src/overlays/ov023/data/ov023_class_0208a004.c:
+src/overlays/field/ov023_event_script/data/ov023_class_0208a004.c:
     complete
     .data       start:0x0208a004 end:0x0208a018
 
-src/overlays/ov023/data/ov023_class_0208a038.c:
+src/overlays/field/ov023_event_script/data/ov023_class_0208a038.c:
     complete
     .data       start:0x0208a038 end:0x0208a04c
 
-src/overlays/ov023/data/ov023_class_0208a748.c:
+src/overlays/field/ov023_event_script/data/ov023_class_0208a748.c:
     complete
     .data       start:0x0208a748 end:0x0208a75c
 
-src/overlays/ov023/data/ov023_const_0208a000.c:
+src/overlays/field/ov023_event_script/data/ov023_const_0208a000.c:
     complete
     .data       start:0x0208a000 end:0x0208a004
 
-src/overlays/ov023/data/ov023_const_0208a0ac.c:
+src/overlays/field/ov023_event_script/data/ov023_const_0208a0ac.c:
     complete
     .data       start:0x0208a0ac end:0x0208a0b0
 
-src/overlays/ov023/data/ov023_const_0208a744.c:
+src/overlays/field/ov023_event_script/data/ov023_const_0208a744.c:
     complete
     .data       start:0x0208a744 end:0x0208a748
 
-src/overlays/ov023/data/ov023_pointers_02089d14.c:
+src/overlays/field/ov023_event_script/data/ov023_pointers_02089d14.c:
     complete
     .rodata     start:0x02089d14 end:0x02089d74
 
-src/overlays/ov023/data/ov023_pointers_02089e10.c:
+src/overlays/field/ov023_event_script/data/ov023_pointers_02089e10.c:
     complete
     .rodata     start:0x02089e10 end:0x02089eb0
 
-src/overlays/ov023/data/ov023_pointers_0208a334.c:
+src/overlays/field/ov023_event_script/data/ov023_pointers_0208a334.c:
     complete
     .data       start:0x0208a334 end:0x0208a5cc
 
-src/overlays/ov023/data/ov023_pointers_0208a66c.c:
+src/overlays/field/ov023_event_script/data/ov023_pointers_0208a66c.c:
     complete
     .data       start:0x0208a66c end:0x0208a69c
 
-src/overlays/ov023/data/ov023_pointers_0208a70c.c:
+src/overlays/field/ov023_event_script/data/ov023_pointers_0208a70c.c:
     complete
     .data       start:0x0208a70c end:0x0208a730
 
-src/overlays/ov023/data/ov023_strings_0208a018.c:
+src/overlays/field/ov023_event_script/data/ov023_strings_0208a018.c:
     complete
     .data       start:0x0208a018 end:0x0208a038
 
-src/overlays/ov023/data/ov023_strings_0208a04c.c:
+src/overlays/field/ov023_event_script/data/ov023_strings_0208a04c.c:
     complete
     .data       start:0x0208a04c end:0x0208a0ac
 
-src/overlays/ov023/data/ov023_strings_0208a0b0.c:
+src/overlays/field/ov023_event_script/data/ov023_strings_0208a0b0.c:
     complete
     .data       start:0x0208a0b0 end:0x0208a334
 
-src/overlays/ov023/data/ov023_strings_0208a5cc.c:
+src/overlays/field/ov023_event_script/data/ov023_strings_0208a5cc.c:
     complete
     .data       start:0x0208a5cc end:0x0208a66c
 
-src/overlays/ov023/data/ov023_strings_0208a69c.c:
+src/overlays/field/ov023_event_script/data/ov023_strings_0208a69c.c:
     complete
     .data       start:0x0208a69c end:0x0208a70c
 
-src/overlays/ov023/data/ov023_strings_0208a730.c:
+src/overlays/field/ov023_event_script/data/ov023_strings_0208a730.c:
     complete
     .data       start:0x0208a730 end:0x0208a744
 
-src/overlays/ov023/data/ov023_strings_0208a75c.c:
+src/overlays/field/ov023_event_script/data/ov023_strings_0208a75c.c:
     complete
     .data       start:0x0208a75c end:0x0208a780
 
-src/overlays/ov023/data/ov023_tables_02089cfc.c:
+src/overlays/field/ov023_event_script/data/ov023_tables_02089cfc.c:
     complete
     .rodata     start:0x02089cfc end:0x02089d14
 
-src/overlays/ov023/data/ov023_tables_02089d74.c:
+src/overlays/field/ov023_event_script/data/ov023_tables_02089d74.c:
     complete
     .rodata     start:0x02089d74 end:0x02089e10
 
-src/overlays/ov023/data/ov023_tables_02089eb0.c:
+src/overlays/field/ov023_event_script/data/ov023_tables_02089eb0.c:
     complete
     .rodata     start:0x02089eb0 end:0x02089ff0

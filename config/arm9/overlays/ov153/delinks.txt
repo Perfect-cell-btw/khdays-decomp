@@ -4,190 +4,190 @@
     .data       start:0x020ce080 end:0x020ce0a0 kind:data align:32
     .bss        start:0x020ce0a0 end:0x020ce0a0 kind:bss align:32
 
-src/overlays/ov153/calls/Ov153_RegisterEntityClass.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov153/calls/Ov153_CreateNamedEntity.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov153/calls/Ov153_ConstructActor.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_ConstructActor.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc250
 
-src/overlays/ov153/calls/Ov153_Destroy.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_Destroy.c:
     complete
     .text       start:0x020cc250 end:0x020cc290
 
-src/overlays/ov153/calls/func_ov153_020cc290.c:
+src/overlays/enemies/ov153_enemy_14/func_ov153_020cc290.c:
     complete
     .text       start:0x020cc290 end:0x020cc29c
 
-src/overlays/ov153/calls/Ov153_Model_SetTracks0And3.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_Model_SetTracks0And3.c:
     complete
     .text       start:0x020cc29c end:0x020cc2ec
 
-src/overlays/ov153/calls/Ov153_HandleMessage.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_HandleMessage.c:
     complete
     .text       start:0x020cc2ec end:0x020cc388
 
-src/overlays/ov153/calls/Ov153_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cc388 end:0x020cc3b0
 
-src/overlays/ov153/calls/Ov153_NotifyPartsThenBase.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc3b0 end:0x020cc3d8
 
-src/overlays/ov153/calls/Ov153_RefreshPose.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_RefreshPose.c:
     complete
     .text       start:0x020cc3d8 end:0x020cc41c
 
-src/overlays/ov153/calls/Ov153_Tick.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_Tick.c:
     complete
     .text       start:0x020cc41c end:0x020cc514
 
-src/overlays/ov153/calls/Ov153_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020cc514 end:0x020cc554
 
-src/overlays/ov153/calls/Ov153_Actor_New.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_Actor_New.c:
     complete
     .text       start:0x020cc554 end:0x020cc588
 
-src/overlays/ov153/calls/Ov153_Construct.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_Construct.c:
     complete
     .text       start:0x020cc588 end:0x020cc768
 
-src/overlays/ov153/calls/Ov153_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020cc768 end:0x020cc7a8
 
-src/overlays/ov153/calls/Ov153_TickAndSyncModelXform.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_TickAndSyncModelXform.c:
     complete
     .text       start:0x020cc7a8 end:0x020cc7e0
 
-src/overlays/ov153/calls/Ov153_AiState_OnMessage.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_AiState_OnMessage.c:
     complete
     .text       start:0x020cc7e0 end:0x020cc894
 
-src/overlays/ov153/calls/Ov153_BroadcastPositionMessage.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_BroadcastPositionMessage.c:
     complete
     .text       start:0x020cc894 end:0x020cc9bc
 
-src/overlays/ov153/calls/Ov153_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cc9bc end:0x020cca08
 
-src/overlays/ov153/calls/Ov153_stateInitClearSlots.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_stateInitClearSlots.c:
     complete
     .text       start:0x020cca08 end:0x020ccab0
 
-src/overlays/ov153/calls/Ov153_dispatchByStatusByte.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_dispatchByStatusByte.c:
     complete
     .text       start:0x020ccab0 end:0x020ccb28
 
-src/overlays/ov153/auto/Ov153_AiApplyMoveVector.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_AiApplyMoveVector.c:
     complete
     .text       start:0x020ccb28 end:0x020ccb40
 
-src/overlays/ov153/calls/Ov153_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020ccb40 end:0x020ccbf0
 
-src/overlays/ov153/calls/Ov153_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020ccbf0 end:0x020ccc28
 
-src/overlays/ov153/calls/Ov153_SeedDashVector.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_SeedDashVector.c:
     complete
     .text       start:0x020ccc28 end:0x020cccf8
 
-src/overlays/ov153/calls/Ov153_HomingFlightTick.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_HomingFlightTick.c:
     complete
     .text       start:0x020cccf8 end:0x020cd2f0
 
-src/overlays/ov153/calls/Ov153_CreateRegistryEntryAndLink_2.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020cd2f0 end:0x020cd33c
 
-src/overlays/ov153/calls/Ov153_OnHit.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_OnHit.c:
     complete
     .text       start:0x020cd33c end:0x020cd470
 
-src/overlays/ov153/auto/Ov153_TryBeginSubState4.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_TryBeginSubState4.c:
     complete
     .text       start:0x020cd470 end:0x020cd4a0
 
-src/overlays/ov153/calls/Ov153_InitNode.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_InitNode.c:
     complete
     .text       start:0x020cd4a0 end:0x020cd570
 
-src/overlays/ov153/calls/Ov153_DispatchSubStateByte.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_DispatchSubStateByte.c:
     complete
     .text       start:0x020cd570 end:0x020cd6d0
 
-src/overlays/ov153/calls/Ov153_UpdateFacing.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_UpdateFacing.c:
     complete
     .text       start:0x020cd6d0 end:0x020cd754
 
-src/overlays/ov153/calls/Ov153_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cd754 end:0x020cd7bc
 
-src/overlays/ov153/calls/Ov153_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cd7bc end:0x020cd7f8
 
-src/overlays/ov153/calls/Ov153_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020cd7f8 end:0x020cd8c4
 
-src/overlays/ov153/calls/Ov153_AiWaitThenTarget.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_AiWaitThenTarget.c:
     complete
     .text       start:0x020cd8c4 end:0x020cd990
 
-src/overlays/ov153/calls/Ov153_AiStep_QueueAction2OnFlag0cClear.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020cd990 end:0x020cd9c4
 
-src/overlays/ov153/calls/Ov153_AiEnterStalk.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_AiEnterStalk.c:
     complete
     .text       start:0x020cd9c4 end:0x020cda1c
 
-src/overlays/ov153/calls/Ov153_StalkTick.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_StalkTick.c:
     complete
     .text       start:0x020cda1c end:0x020cdc08
 
-src/overlays/ov153/calls/Ov153_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020cdc08 end:0x020cdc3c
 
-src/overlays/ov153/calls/Ov153_stDiv5Store.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_stDiv5Store.c:
     complete
     .text       start:0x020cdc3c end:0x020cdc98
 
-src/overlays/ov153/calls/Ov153_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020cdc98 end:0x020cdd60
 
-src/overlays/ov153/calls/Ov153_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020cdd60 end:0x020cde14
 
-src/overlays/ov153/calls/Ov153_stateAnimFlagCallback.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_stateAnimFlagCallback.c:
     complete
     .text       start:0x020cde14 end:0x020cdec4
 
-src/overlays/ov153/calls/Ov153_AimTick.c:
+src/overlays/enemies/ov153_enemy_14/Ov153_AimTick.c:
     complete
     .text       start:0x020cdec4 end:0x020ce00c
 
-src/overlays/ov153/data/ov153_strings_020ce080.c:
+src/overlays/enemies/ov153_enemy_14/data/ov153_strings_020ce080.c:
     complete
     .data       start:0x020ce080 end:0x020ce0a0
 
-src/overlays/ov153/data/ov153_tables_020ce00c.c:
+src/overlays/enemies/ov153_enemy_14/data/ov153_tables_020ce00c.c:
     complete
     .rodata     start:0x020ce00c end:0x020ce064

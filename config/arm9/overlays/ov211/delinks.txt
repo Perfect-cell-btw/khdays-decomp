@@ -4,342 +4,342 @@
     .data       start:0x020d65a0 end:0x020d6600 kind:data align:32
     .bss        start:0x020d6600 end:0x020d6600 kind:bss align:32
 
-src/overlays/ov211/calls/Ov211_RegisterEntityClass.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/ov211/calls/Ov211_CreateNamedEntity.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a24
 
-src/overlays/ov211/calls/Ov211_Construct.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_Construct.c:
     complete
     .text       start:0x020d1a24 end:0x020d1d08
 
-src/overlays/ov211/calls/Ov211_Destroy.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_Destroy.c:
     complete
     .text       start:0x020d1d08 end:0x020d1d60
 
-src/overlays/ov211/calls/Ov211_TickWithChildRefresh.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_TickWithChildRefresh.c:
     complete
     .text       start:0x020d1d60 end:0x020d1d84
 
-src/overlays/ov211/calls/Ov211_ForwardRegionEventToShield.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_ForwardRegionEventToShield.c:
     complete
     .text       start:0x020d1d84 end:0x020d1db0
 
-src/overlays/ov211/calls/Ov211_NotifyShieldThenBase.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_NotifyShieldThenBase.c:
     complete
     .text       start:0x020d1db0 end:0x020d1ddc
 
-src/overlays/ov211/calls/Ov211_HandleMessage.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_HandleMessage.c:
     complete
     .text       start:0x020d1ddc end:0x020d1fec
 
-src/overlays/ov211/calls/Ov211_MessageMapSetupSubObject.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_MessageMapSetupSubObject.c:
     complete
     .text       start:0x020d1fec end:0x020d206c
 
-src/overlays/ov211/calls/Ov211_Update.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_Update.c:
     complete
     .text       start:0x020d206c end:0x020d21a8
 
-src/overlays/ov211/calls/Ov211_SetupSubObject.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_SetupSubObject.c:
     complete
     .text       start:0x020d21a8 end:0x020d2214
 
-src/overlays/ov211/calls/Ov211_CreateAiTask.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_CreateAiTask.c:
     complete
     .text       start:0x020d2214 end:0x020d2260
 
-src/overlays/ov211/calls/Ov211_HandleHit.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_HandleHit.c:
     complete
     .text       start:0x020d2260 end:0x020d24d4
 
-src/overlays/ov211/auto/Ov211_UpdateNodeReservationState.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_UpdateNodeReservationState.c:
     complete
     .text       start:0x020d24d4 end:0x020d2540
 
-src/overlays/ov211/calls/Ov211_InitSubStateRegister3B.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_InitSubStateRegister3B.c:
     complete
     .text       start:0x020d2540 end:0x020d25f0
 
-src/overlays/ov211/calls/Ov211_AiDispatchAction.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiDispatchAction.c:
     complete
     .text       start:0x020d25f0 end:0x020d2868
 
-src/overlays/ov211/calls/Ov211_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020d2868 end:0x020d2968
 
-src/overlays/ov211/calls/Ov211_AiLockAndPostUpdate.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d2968 end:0x020d29d0
 
-src/overlays/ov211/calls/Ov211_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d29d0 end:0x020d2a38
 
-src/overlays/ov211/calls/Ov211_AiEnterRecover.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiEnterRecover.c:
     complete
     .text       start:0x020d2a38 end:0x020d2ab4
 
-src/overlays/ov211/calls/Ov211_AiStep_QueueAction2OnFlag0cClear.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d2ab4 end:0x020d2ae8
 
-src/overlays/ov211/calls/Ov211_SeedRandomTimer.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_SeedRandomTimer.c:
     complete
     .text       start:0x020d2ae8 end:0x020d2b44
 
-src/overlays/ov211/calls/Ov211_AiPickMove.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiPickMove.c:
     complete
     .text       start:0x020d2b44 end:0x020d2d7c
 
-src/overlays/ov211/calls/Ov211_PickMeleeReaction.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_PickMeleeReaction.c:
     complete
     .text       start:0x020d2d7c end:0x020d2f08
 
-src/overlays/ov211/calls/Ov211_AiLandPickNext.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiLandPickNext.c:
     complete
     .text       start:0x020d2f08 end:0x020d2f6c
 
-src/overlays/ov211/calls/Ov211_RiseDecision.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_RiseDecision.c:
     complete
     .text       start:0x020d2f6c end:0x020d327c
 
-src/overlays/ov211/calls/Ov211_RiseTick.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_RiseTick.c:
     complete
     .text       start:0x020d327c end:0x020d33a4
 
-src/overlays/ov211/calls/Ov211_FlagsKickSubNode.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_FlagsKickSubNode.c:
     complete
     .text       start:0x020d33a4 end:0x020d344c
 
-src/overlays/ov211/calls/Ov211_AiWaitThenTrackLeader.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiWaitThenTrackLeader.c:
     complete
     .text       start:0x020d344c end:0x020d3480
 
-src/overlays/ov211/calls/Ov211_TrackLeaderRangeCheck.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_TrackLeaderRangeCheck.c:
     complete
     .text       start:0x020d3480 end:0x020d3570
 
-src/overlays/ov211/calls/Ov211_EnterLeap.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_EnterLeap.c:
     complete
     .text       start:0x020d3570 end:0x020d375c
 
-src/overlays/ov211/calls/Ov211_LeapTick.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_LeapTick.c:
     complete
     .text       start:0x020d375c end:0x020d3914
 
-src/overlays/ov211/calls/Ov211_AimSetupNotifyArm.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AimSetupNotifyArm.c:
     complete
     .text       start:0x020d3914 end:0x020d3a24
 
-src/overlays/ov211/calls/Ov211_ChargeTick.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_ChargeTick.c:
     complete
     .text       start:0x020d3a24 end:0x020d3d34
 
-src/overlays/ov211/calls/Ov211_AiRetarget.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiRetarget.c:
     complete
     .text       start:0x020d3d34 end:0x020d3df4
 
-src/overlays/ov211/calls/Ov211_AiEnterFire.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiEnterFire.c:
     complete
     .text       start:0x020d3df4 end:0x020d3e28
 
-src/overlays/ov211/calls/Ov211_AiQueue2OnFlagClear.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020d3e28 end:0x020d3e5c
 
-src/overlays/ov211/calls/Ov211_EnterRiseStrike.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_EnterRiseStrike.c:
     complete
     .text       start:0x020d3e5c end:0x020d4050
 
-src/overlays/ov211/calls/Ov211_AiFollowLeaderTick.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiFollowLeaderTick.c:
     complete
     .text       start:0x020d4050 end:0x020d415c
 
-src/overlays/ov211/calls/Ov211_BurstTick.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_BurstTick.c:
     complete
     .text       start:0x020d415c end:0x020d440c
 
-src/overlays/ov211/calls/Ov211_AiEnterSteerFire.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiEnterSteerFire.c:
     complete
     .text       start:0x020d440c end:0x020d445c
 
-src/overlays/ov211/calls/Ov211_RebuildSteerFireChild.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_RebuildSteerFireChild.c:
     complete
     .text       start:0x020d445c end:0x020d4500
 
-src/overlays/ov211/calls/Ov211_AimCloseInRange.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AimCloseInRange.c:
     complete
     .text       start:0x020d4500 end:0x020d462c
 
-src/overlays/ov211/calls/Ov211_AimSteerFireWhenReady.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AimSteerFireWhenReady.c:
     complete
     .text       start:0x020d462c end:0x020d4738
 
-src/overlays/ov211/calls/Ov211_RebuildSteerAndGate.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_RebuildSteerAndGate.c:
     complete
     .text       start:0x020d4738 end:0x020d47b8
 
-src/overlays/ov211/calls/Ov211_AiEnterAim.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiEnterAim.c:
     complete
     .text       start:0x020d47b8 end:0x020d4808
 
-src/overlays/ov211/calls/Ov211_AimGiveUpOnFree.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AimGiveUpOnFree.c:
     complete
     .text       start:0x020d4808 end:0x020d48f8
 
-src/overlays/ov211/calls/Ov211_AcquireOrTimedRecover.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AcquireOrTimedRecover.c:
     complete
     .text       start:0x020d48f8 end:0x020d4980
 
-src/overlays/ov211/calls/Ov211_StrafeSameTarget.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_StrafeSameTarget.c:
     complete
     .text       start:0x020d4980 end:0x020d4a64
 
-src/overlays/ov211/calls/Ov211_StrafeSameTargetTimed.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_StrafeSameTargetTimed.c:
     complete
     .text       start:0x020d4a64 end:0x020d4b58
 
-src/overlays/ov211/calls/Ov211_AimPerpStrafe.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AimPerpStrafe.c:
     complete
     .text       start:0x020d4b58 end:0x020d4c10
 
-src/overlays/ov211/calls/Ov211_AcquireOrTimedRecoverB.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AcquireOrTimedRecoverB.c:
     complete
     .text       start:0x020d4c10 end:0x020d4c98
 
-src/overlays/ov211/calls/Ov211_StrafeSameTargetNeg.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_StrafeSameTargetNeg.c:
     complete
     .text       start:0x020d4c98 end:0x020d4d7c
 
-src/overlays/ov211/calls/Ov211_StrafeSameTargetTimedNeg.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_StrafeSameTargetTimedNeg.c:
     complete
     .text       start:0x020d4d7c end:0x020d4e70
 
-src/overlays/ov211/calls/Ov211_AimPerpStrafeNeg.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AimPerpStrafeNeg.c:
     complete
     .text       start:0x020d4e70 end:0x020d4f28
 
-src/overlays/ov211/calls/Ov211_AiEnterRise.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiEnterRise.c:
     complete
     .text       start:0x020d4f28 end:0x020d4f78
 
-src/overlays/ov211/calls/Ov211_AiRiseTick.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiRiseTick.c:
     complete
     .text       start:0x020d4f78 end:0x020d4ff8
 
-src/overlays/ov211/calls/Ov211_AdvanceLungeOrCommit.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AdvanceLungeOrCommit.c:
     complete
     .text       start:0x020d4ff8 end:0x020d508c
 
-src/overlays/ov211/calls/Ov211_AiQueue2OnFlagClear_2.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiQueue2OnFlagClear_2.c:
     complete
     .text       start:0x020d508c end:0x020d50c0
 
-src/overlays/ov211/calls/Ov211_BeginPounce.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_BeginPounce.c:
     complete
     .text       start:0x020d50c0 end:0x020d5184
 
-src/overlays/ov211/calls/Ov211_DoubleClawTick.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_DoubleClawTick.c:
     complete
     .text       start:0x020d5184 end:0x020d56d8
 
-src/overlays/ov211/calls/Ov211_SpawnEffect4dReconfigureFlags.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_SpawnEffect4dReconfigureFlags.c:
     complete
     .text       start:0x020d56d8 end:0x020d57a0
 
-src/overlays/ov211/calls/Ov211_EnterRise.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_EnterRise.c:
     complete
     .text       start:0x020d57a0 end:0x020d5948
 
-src/overlays/ov211/calls/Ov211_RiseTickLate.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_RiseTickLate.c:
     complete
     .text       start:0x020d5948 end:0x020d5a70
 
-src/overlays/ov211/calls/Ov211_AiEnterDefeat.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiEnterDefeat.c:
     complete
     .text       start:0x020d5a70 end:0x020d5ae8
 
-src/overlays/ov211/calls/Ov211_New.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_New.c:
     complete
     .text       start:0x020d5ae8 end:0x020d5b10
 
-src/overlays/ov211/calls/Ov211_ShieldPartInit.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_ShieldPartInit.c:
     complete
     .text       start:0x020d5b10 end:0x020d5c60
 
-src/overlays/ov211/calls/Ov211_Destroy_2.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_Destroy_2.c:
     complete
     .text       start:0x020d5c60 end:0x020d5c7c
 
-src/overlays/ov211/calls/Ov211_ReaimEmitterCone.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_ReaimEmitterCone.c:
     complete
     .text       start:0x020d5c7c end:0x020d5d3c
 
-src/overlays/ov211/calls/func_ov211_020d5d3c.c:
+src/overlays/enemies/ov211_enemy_2b_2/func_ov211_020d5d3c.c:
     complete
     .text       start:0x020d5d3c end:0x020d5d48
 
-src/overlays/ov211/calls/Ov211_SendBlankStatus.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_SendBlankStatus.c:
     complete
     .text       start:0x020d5d48 end:0x020d5db8
 
-src/overlays/ov211/calls/Ov211_RebuildSubObjectNotify.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_RebuildSubObjectNotify.c:
     complete
     .text       start:0x020d5db8 end:0x020d5df0
 
-src/overlays/ov211/calls/Ov211_FinishPendingRequest.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_FinishPendingRequest.c:
     complete
     .text       start:0x020d5df0 end:0x020d5e1c
 
-src/overlays/ov211/calls/Ov211_BindOwnerAndAttach.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_BindOwnerAndAttach.c:
     complete
     .text       start:0x020d5e1c end:0x020d5e4c
 
-src/overlays/ov211/calls/Ov211_CreateSwoopTask.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_CreateSwoopTask.c:
     complete
     .text       start:0x020d5e4c end:0x020d5e98
 
-src/overlays/ov211/calls/Ov211_AiGoToIdle.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiGoToIdle.c:
     complete
     .text       start:0x020d5e98 end:0x020d5ec8
 
-src/overlays/ov211/auto/Ov211_SwoopTaskReleaseNoOp.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_SwoopTaskReleaseNoOp.c:
     complete
     .text       start:0x020d5ec8 end:0x020d5ecc
 
-src/overlays/ov211/calls/Ov211_AiEnterIdle.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiEnterIdle.c:
     complete
     .text       start:0x020d5ecc end:0x020d5f38
 
-src/overlays/ov211/calls/Ov211_AiIdleTick.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiIdleTick.c:
     complete
     .text       start:0x020d5f38 end:0x020d5f60
 
-src/overlays/ov211/calls/Ov211_SetupScatter.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_SetupScatter.c:
     complete
     .text       start:0x020d5f60 end:0x020d6188
 
-src/overlays/ov211/calls/Ov211_AiSwoopDelay.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiSwoopDelay.c:
     complete
     .text       start:0x020d6188 end:0x020d61c4
 
-src/overlays/ov211/calls/Ov211_TickSwoop.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_TickSwoop.c:
     complete
     .text       start:0x020d61c4 end:0x020d645c
 
-src/overlays/ov211/calls/Ov211_AiReturnToIdleWhenClear.c:
+src/overlays/enemies/ov211_enemy_2b_2/Ov211_AiReturnToIdleWhenClear.c:
     complete
     .text       start:0x020d645c end:0x020d6484
 
-src/overlays/ov211/data/ov211_strings_020d65a0.c:
+src/overlays/enemies/ov211_enemy_2b_2/data/ov211_strings_020d65a0.c:
     complete
     .data       start:0x020d65a0 end:0x020d6600
 
-src/overlays/ov211/data/ov211_tables_020d6484.c:
+src/overlays/enemies/ov211_enemy_2b_2/data/ov211_tables_020d6484.c:
     complete
     .rodata     start:0x020d6484 end:0x020d658c

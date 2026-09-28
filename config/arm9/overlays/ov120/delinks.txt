@@ -4,170 +4,170 @@
     .data       start:0x020cdf20 end:0x020cdf80 kind:data align:32
     .bss        start:0x020cdf80 end:0x020cdf80 kind:bss align:32
 
-src/overlays/ov120/calls/Ov120_RegisterEntityClass.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov120/calls/Ov120_CreateNamedEntity.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov120/calls/Ov120_InitializeActor.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_InitializeActor.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc238
 
-src/overlays/ov120/calls/Ov120_Destroy.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_Destroy.c:
     complete
     .text       start:0x020cc238 end:0x020cc280
 
-src/overlays/ov120/calls/Ov120_ReleaseAndDestroy.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_ReleaseAndDestroy.c:
     complete
     .text       start:0x020cc280 end:0x020cc2a4
 
-src/overlays/ov120/calls/Ov120_Actor_HandleEvent.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_Actor_HandleEvent.c:
     complete
     .text       start:0x020cc2a4 end:0x020cc444
 
-src/overlays/ov120/calls/Ov120_Model_SetTrack0.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_Model_SetTrack0.c:
     complete
     .text       start:0x020cc444 end:0x020cc474
 
-src/overlays/ov120/calls/Ov120_SyncAttachedPose.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_SyncAttachedPose.c:
     complete
     .text       start:0x020cc474 end:0x020cc50c
 
-src/overlays/ov120/calls/Ov120_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020cc50c end:0x020cc568
 
-src/overlays/ov120/calls/Ov120_Actor_OnHit.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_Actor_OnHit.c:
     complete
     .text       start:0x020cc568 end:0x020cc7a0
 
-src/overlays/ov120/auto/Ov120_RequestSubState9IfIdle.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_RequestSubState9IfIdle.c:
     complete
     .text       start:0x020cc7a0 end:0x020cc7d0
 
-src/overlays/ov120/calls/Ov120_InitAiState.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_InitAiState.c:
     complete
     .text       start:0x020cc7d0 end:0x020cc898
 
-src/overlays/ov120/calls/Ov120_DispatchSubStateByte.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_DispatchSubStateByte.c:
     complete
     .text       start:0x020cc898 end:0x020cca40
 
-src/overlays/ov120/calls/Ov120_RecomputeNodeVectorAndReloadTriple.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_RecomputeNodeVectorAndReloadTriple.c:
     complete
     .text       start:0x020cca40 end:0x020ccab4
 
-src/overlays/ov120/calls/Ov120_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccab4 end:0x020ccb1c
 
-src/overlays/ov120/calls/Ov120_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020ccb1c end:0x020ccb58
 
-src/overlays/ov120/calls/Ov120_SetupThenAction48.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_SetupThenAction48.c:
     complete
     .text       start:0x020ccb58 end:0x020ccc3c
 
-src/overlays/ov120/calls/Ov120_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020ccc3c end:0x020ccd04
 
-src/overlays/ov120/calls/Ov120_AiStep_QueueAction2OnFlag48Clear.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_AiStep_QueueAction2OnFlag48Clear.c:
     complete
     .text       start:0x020ccd04 end:0x020ccd38
 
-src/overlays/ov120/calls/Ov120_AiEnterApproach.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_AiEnterApproach.c:
     complete
     .text       start:0x020ccd38 end:0x020ccd90
 
-src/overlays/ov120/calls/Ov120_AimPickMeleeReaction.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_AimPickMeleeReaction.c:
     complete
     .text       start:0x020ccd90 end:0x020ccf08
 
-src/overlays/ov120/calls/Ov120_SeedTimerFireAttack2ThenAdvanceSlot.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_SeedTimerFireAttack2ThenAdvanceSlot.c:
     complete
     .text       start:0x020ccf08 end:0x020ccf6c
 
-src/overlays/ov120/calls/Ov120_ChargeTowardTarget_Step.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_ChargeTowardTarget_Step.c:
     complete
     .text       start:0x020ccf6c end:0x020cd1a0
 
-src/overlays/ov120/calls/Ov120_ComputeTargetDeltaThenAdvance.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020cd1a0 end:0x020cd210
 
-src/overlays/ov120/calls/Ov120_CopyScaleVecCheckMagThenAdvance.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_CopyScaleVecCheckMagThenAdvance.c:
     complete
     .text       start:0x020cd210 end:0x020cd2a0
 
-src/overlays/ov120/calls/Ov120_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cd2a0 end:0x020cd2fc
 
-src/overlays/ov120/calls/Ov120_AreaAttack_Broadcast.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_AreaAttack_Broadcast.c:
     complete
     .text       start:0x020cd2fc end:0x020cd638
 
-src/overlays/ov120/calls/Ov120_ConfigSubStateThenAdvanceSlot_2.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020cd638 end:0x020cd6b4
 
-src/overlays/ov120/calls/Ov120_SweepAttack_Step.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_SweepAttack_Step.c:
     complete
     .text       start:0x020cd6b4 end:0x020cd9f8
 
-src/overlays/ov120/calls/Ov120_DecayCopyPosFireOnHitFlag.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_DecayCopyPosFireOnHitFlag.c:
     complete
     .text       start:0x020cd9f8 end:0x020cda58
 
-src/overlays/ov120/calls/Ov120_AiStep_QueueAction2OnFlag48Clear_2.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_AiStep_QueueAction2OnFlag48Clear_2.c:
     complete
     .text       start:0x020cda58 end:0x020cda8c
 
-src/overlays/ov120/calls/Ov120_EnterRecoveryIdle.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_EnterRecoveryIdle.c:
     complete
     .text       start:0x020cda8c end:0x020cdaf8
 
-src/overlays/ov120/calls/Ov120_AiTrackOffsetTick.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_AiTrackOffsetTick.c:
     complete
     .text       start:0x020cdaf8 end:0x020cdb80
 
-src/overlays/ov120/calls/Ov120_CopyVecThenSetupSubActionAndAdvance.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_CopyVecThenSetupSubActionAndAdvance.c:
     complete
     .text       start:0x020cdb80 end:0x020cdbf4
 
-src/overlays/ov120/calls/Ov120_ReaimStrafe.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_ReaimStrafe.c:
     complete
     .text       start:0x020cdbf4 end:0x020cdcb0
 
-src/overlays/ov120/calls/Ov120_AiPauseTick.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_AiPauseTick.c:
     complete
     .text       start:0x020cdcb0 end:0x020cdcf0
 
-src/overlays/ov120/calls/Ov120_stIdlePose10Advance.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_stIdlePose10Advance.c:
     complete
     .text       start:0x020cdcf0 end:0x020cdd34
 
-src/overlays/ov120/calls/Ov120_AiStep_QueueAction2OnFlag48Clear_3.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_AiStep_QueueAction2OnFlag48Clear_3.c:
     complete
     .text       start:0x020cdd34 end:0x020cdd68
 
-src/overlays/ov120/calls/Ov120_ConfigHw60FlagsBeginAction4a.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_ConfigHw60FlagsBeginAction4a.c:
     complete
     .text       start:0x020cdd68 end:0x020cde30
 
-src/overlays/ov120/calls/Ov120_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov120_enemy_04/Ov120_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020cde30 end:0x020cdee4
 
-src/overlays/ov120/data/ov120_strings_020cdf20.c:
+src/overlays/enemies/ov120_enemy_04/data/ov120_strings_020cdf20.c:
     complete
     .data       start:0x020cdf20 end:0x020cdf80
 
-src/overlays/ov120/data/ov120_tables_020cdee4.c:
+src/overlays/enemies/ov120_enemy_04/data/ov120_tables_020cdee4.c:
     complete
     .rodata     start:0x020cdee4 end:0x020cdf10

@@ -4,146 +4,146 @@
     .data       start:0x020b4c20 end:0x020b4d00 kind:data align:32
     .bss        start:0x020b4d00 end:0x020b4d20 kind:bss align:32
 
-src/overlays/ov049/calls/func_ov049_020b3220.c:
+src/overlays/players/ov049_player_roxas_dual/func_ov049_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov049/calls/Ov049_ClassCtor.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_ClassCtor.c:
     complete
     .text       start:0x020b3234 end:0x020b329c
 
-src/overlays/ov049/calls/Ov049_ClassTeardown.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_ClassTeardown.c:
     complete
     .text       start:0x020b329c end:0x020b32fc
 
-src/overlays/ov049/calls/Ov049_Boot.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_Boot.c:
     complete
     .text       start:0x020b32fc end:0x020b3538
 
-src/overlays/ov049/calls/Ov049_ReloadTwoSceneResources.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_ReloadTwoSceneResources.c:
     complete
     .text       start:0x020b3538 end:0x020b35ec
 
-src/overlays/ov049/auto/Ov049_MapSlotKindToAnim.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b35ec end:0x020b35f0
 
-src/overlays/ov049/calls/Ov049_HandleMsgAndFaceHeading.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_HandleMsgAndFaceHeading.c:
     complete
     .text       start:0x020b35f0 end:0x020b3728
 
-src/overlays/ov049/calls/Ov049_ApplyModeChange.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_ApplyModeChange.c:
     complete
     .text       start:0x020b3728 end:0x020b3884
 
-src/overlays/ov049/calls/Ov049_UpdateAttachmentAndChannels.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_UpdateAttachmentAndChannels.c:
     complete
     .text       start:0x020b3884 end:0x020b3970
 
-src/overlays/ov049/calls/Ov049_InvokeSubHandlerPairWithGlobalBuffer.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b3970 end:0x020b39a8
 
-src/overlays/ov049/calls/Ov049_PollHitAndFlagLanded.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_PollHitAndFlagLanded.c:
     complete
     .text       start:0x020b39a8 end:0x020b3a5c
 
-src/overlays/ov049/calls/Ov049_InitEffectSlots.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_InitEffectSlots.c:
     complete
     .text       start:0x020b3a5c end:0x020b3aec
 
-src/overlays/ov049/calls/Ov049_ReleaseChannelAndFreeSubObject.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_ReleaseChannelAndFreeSubObject.c:
     complete
     .text       start:0x020b3aec end:0x020b3b2c
 
-src/overlays/ov049/calls/Ov049_AdvancePoseState.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_AdvancePoseState.c:
     complete
     .text       start:0x020b3b2c end:0x020b3bac
 
-src/overlays/ov049/calls/Ov049_StepEffectSlot.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_StepEffectSlot.c:
     complete
     .text       start:0x020b3bac end:0x020b3e00
 
-src/overlays/ov049/calls/Ov049_PlaceTrailMarker.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_PlaceTrailMarker.c:
     complete
     .text       start:0x020b3e00 end:0x020b3f1c
 
-src/overlays/ov049/calls/Ov049_InitGlobalChannelSlot.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_InitGlobalChannelSlot.c:
     complete
     .text       start:0x020b3f1c end:0x020b3f54
 
-src/overlays/ov049/calls/Ov049_CreateSubObject.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_CreateSubObject.c:
     complete
     .text       start:0x020b3f54 end:0x020b406c
 
-src/overlays/ov049/calls/Ov049_BindRig.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_BindRig.c:
     complete
     .text       start:0x020b406c end:0x020b40c4
 
-src/overlays/ov049/calls/Ov049_SpawnNextEffect.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_SpawnNextEffect.c:
     complete
     .text       start:0x020b40c4 end:0x020b427c
 
-src/overlays/ov049/calls/Ov049_SpawnEffectWithVariant.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_SpawnEffectWithVariant.c:
     complete
     .text       start:0x020b427c end:0x020b4304
 
-src/overlays/ov049/calls/Ov049_ResolveHitPositionRaised.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_ResolveHitPositionRaised.c:
     complete
     .text       start:0x020b4304 end:0x020b43a8
 
-src/overlays/ov049/calls/Ov049_UpdateParts.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_UpdateParts.c:
     complete
     .text       start:0x020b43a8 end:0x020b4464
 
-src/overlays/ov049/calls/Ov049_TickThrowArcThenLand.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_TickThrowArcThenLand.c:
     complete
     .text       start:0x020b4464 end:0x020b4518
 
-src/overlays/ov049/calls/Ov049_BuildRenderHandles.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_BuildRenderHandles.c:
     complete
     .text       start:0x020b4518 end:0x020b45d0
 
-src/overlays/ov049/calls/Ov049_StoreArgToGlobalSlot22AndForward.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_StoreArgToGlobalSlot22AndForward.c:
     complete
     .text       start:0x020b45d0 end:0x020b4600
 
-src/overlays/ov049/calls/Ov049_DescentStep.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_DescentStep.c:
     complete
     .text       start:0x020b4600 end:0x020b47e0
 
-src/overlays/ov049/calls/Ov049_HoverStep.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_HoverStep.c:
     complete
     .text       start:0x020b47e0 end:0x020b4adc
 
-src/overlays/ov049/calls/Ov049_InvokeWithDataTable.c:
+src/overlays/players/ov049_player_roxas_dual/Ov049_InvokeWithDataTable.c:
     complete
     .text       start:0x020b4adc end:0x020b4af4
 
-src/overlays/ov049/data/ov049_class_020b4c34.c:
+src/overlays/players/ov049_player_roxas_dual/data/ov049_class_020b4c34.c:
     complete
     .data       start:0x020b4c34 end:0x020b4c48
 
-src/overlays/ov049/data/ov049_ctorargs_020b4b44.c:
+src/overlays/players/ov049_player_roxas_dual/data/ov049_ctorargs_020b4b44.c:
     complete
     .rodata     start:0x020b4b44 end:0x020b4b58
 
-src/overlays/ov049/data/ov049_pointers_020b4c48.c:
+src/overlays/players/ov049_player_roxas_dual/data/ov049_pointers_020b4c48.c:
     complete
     .data       start:0x020b4c48 end:0x020b4c5c
 
-src/overlays/ov049/data/ov049_strings_020b4af4.c:
+src/overlays/players/ov049_player_roxas_dual/data/ov049_strings_020b4af4.c:
     complete
     .rodata     start:0x020b4af4 end:0x020b4b44
 
-src/overlays/ov049/data/ov049_strings_020b4c20.c:
+src/overlays/players/ov049_player_roxas_dual/data/ov049_strings_020b4c20.c:
     complete
     .data       start:0x020b4c20 end:0x020b4c34
 
-src/overlays/ov049/data/ov049_strings_020b4c5c.c:
+src/overlays/players/ov049_player_roxas_dual/data/ov049_strings_020b4c5c.c:
     complete
     .data       start:0x020b4c5c end:0x020b4d00
 
-src/overlays/ov049/data/ov049_tables_020b4b58.c:
+src/overlays/players/ov049_player_roxas_dual/data/ov049_tables_020b4b58.c:
     complete
     .rodata     start:0x020b4b58 end:0x020b4c18

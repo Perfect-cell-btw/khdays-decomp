@@ -4,178 +4,178 @@
     .data       start:0x020d18c0 end:0x020d18e0 kind:data align:32
     .bss        start:0x020d18e0 end:0x020d18e0 kind:bss align:32
 
-src/overlays/ov219/calls/Ov219_RegisterEntityClass.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov219/calls/Ov219_CreateNamedEntity.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov219/calls/Ov219_Construct.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_Construct.c:
     complete
     .text       start:0x020cfc04 end:0x020cfdfc
 
-src/overlays/ov219/calls/Ov219_ReleaseSubObjectsAndSlotArrayThenNotify.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_ReleaseSubObjectsAndSlotArrayThenNotify.c:
     complete
     .text       start:0x020cfdfc end:0x020cfe3c
 
-src/overlays/ov219/calls/Ov219_ModelUpdateHook.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_ModelUpdateHook.c:
     complete
     .text       start:0x020cfe3c end:0x020cfee4
 
-src/overlays/ov219/calls/Ov219_HandleMessage.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_HandleMessage.c:
     complete
     .text       start:0x020cfee4 end:0x020cfff0
 
-src/overlays/ov219/calls/Ov219_ReleaseSubObjectsUnlessActive.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_ReleaseSubObjectsUnlessActive.c:
     complete
     .text       start:0x020cfff0 end:0x020d0054
 
-src/overlays/ov219/calls/Ov219_Model_ReapplyTrack0.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020d0054 end:0x020d008c
 
-src/overlays/ov219/calls/Ov219_CreateNodeRegistryEntry.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d008c end:0x020d00e8
 
-src/overlays/ov219/calls/Ov219_HandleHit.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_HandleHit.c:
     complete
     .text       start:0x020d00e8 end:0x020d0320
 
-src/overlays/ov219/auto/Ov219_RequestState3.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_RequestState3.c:
     complete
     .text       start:0x020d0320 end:0x020d0340
 
-src/overlays/ov219/auto/Ov219_RequestSubState9IfNotCurrent.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_RequestSubState9IfNotCurrent.c:
     complete
     .text       start:0x020d0340 end:0x020d036c
 
-src/overlays/ov219/auto/Ov219_TryBeginSubState10IfIdle.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_TryBeginSubState10IfIdle.c:
     complete
     .text       start:0x020d036c end:0x020d039c
 
-src/overlays/ov219/calls/Ov219_AttackSweep.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_AttackSweep.c:
     complete
     .text       start:0x020d039c end:0x020d055c
 
-src/overlays/ov219/calls/Ov219_IdleCountdown.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_IdleCountdown.c:
     complete
     .text       start:0x020d055c end:0x020d05dc
 
-src/overlays/ov219/calls/Ov219_startAnim.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_startAnim.c:
     complete
     .text       start:0x020d05dc end:0x020d05f0
 
-src/overlays/ov219/calls/Ov219_DistanceToTarget.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_DistanceToTarget.c:
     complete
     .text       start:0x020d05f0 end:0x020d0698
 
-src/overlays/ov219/calls/Ov219_AiStateInit.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_AiStateInit.c:
     complete
     .text       start:0x020d0698 end:0x020d0750
 
-src/overlays/ov219/calls/Ov219_DispatchSubStateByte.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_DispatchSubStateByte.c:
     complete
     .text       start:0x020d0750 end:0x020d092c
 
-src/overlays/ov219/calls/Ov219_FlightOrientationTick.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_FlightOrientationTick.c:
     complete
     .text       start:0x020d092c end:0x020d0a90
 
-src/overlays/ov219/calls/Ov219_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0a90 end:0x020d0af8
 
-src/overlays/ov219/calls/Ov219_AdvanceStateSlotIfHw60Bit0.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_AdvanceStateSlotIfHw60Bit0.c:
     complete
     .text       start:0x020d0af8 end:0x020d0b3c
 
-src/overlays/ov219/calls/Ov219_AiStep_QueueAction2.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_AiStep_QueueAction2.c:
     complete
     .text       start:0x020d0b3c end:0x020d0b60
 
-src/overlays/ov219/calls/Ov219_AiEnterIdle.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_AiEnterIdle.c:
     complete
     .text       start:0x020d0b60 end:0x020d0b9c
 
-src/overlays/ov219/calls/Ov219_AiIdleCountdown.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_AiIdleCountdown.c:
     complete
     .text       start:0x020d0b9c end:0x020d0bd8
 
-src/overlays/ov219/calls/Ov219_BeginWander.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_BeginWander.c:
     complete
     .text       start:0x020d0bd8 end:0x020d0c70
 
-src/overlays/ov219/calls/Ov219_WanderTick.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_WanderTick.c:
     complete
     .text       start:0x020d0c70 end:0x020d0d24
 
-src/overlays/ov219/calls/Ov219_ApproachTick.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_ApproachTick.c:
     complete
     .text       start:0x020d0d24 end:0x020d0f14
 
-src/overlays/ov219/calls/Ov219_SetupGuardThenAction4.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_SetupGuardThenAction4.c:
     complete
     .text       start:0x020d0f14 end:0x020d0f88
 
-src/overlays/ov219/calls/Ov219_ChaseDecision.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_ChaseDecision.c:
     complete
     .text       start:0x020d0f88 end:0x020d1028
 
-src/overlays/ov219/calls/Ov219_ChaseTick.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_ChaseTick.c:
     complete
     .text       start:0x020d1028 end:0x020d1144
 
-src/overlays/ov219/calls/Ov219_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d1144 end:0x020d1178
 
-src/overlays/ov219/calls/Ov219_Pose2ThenAimAngle.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_Pose2ThenAimAngle.c:
     complete
     .text       start:0x020d1178 end:0x020d120c
 
-src/overlays/ov219/calls/Ov219_ConfigSubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d120c end:0x020d1268
 
-src/overlays/ov219/calls/Ov219_BeginAttack.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_BeginAttack.c:
     complete
     .text       start:0x020d1268 end:0x020d134c
 
-src/overlays/ov219/calls/Ov219_AttackTick.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_AttackTick.c:
     complete
     .text       start:0x020d134c end:0x020d14dc
 
-src/overlays/ov219/calls/Ov219_GuardTick.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_GuardTick.c:
     complete
     .text       start:0x020d14dc end:0x020d15ac
 
-src/overlays/ov219/calls/Ov219_GuardEnd.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_GuardEnd.c:
     complete
     .text       start:0x020d15ac end:0x020d167c
 
-src/overlays/ov219/calls/Ov219_stAdvanceState.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_stAdvanceState.c:
     complete
     .text       start:0x020d167c end:0x020d16a8
 
-src/overlays/ov219/calls/Ov219_Release.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_Release.c:
     complete
     .text       start:0x020d16a8 end:0x020d1778
 
-src/overlays/ov219/calls/Ov219_SetPose1ThenAdvanceSlot.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_SetPose1ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1778 end:0x020d17ac
 
-src/overlays/ov219/calls/Ov219_AimAndFaceTick.c:
+src/overlays/enemies/ov219_enemy_31/Ov219_AimAndFaceTick.c:
     complete
     .text       start:0x020d17ac end:0x020d18a0
 
-src/overlays/ov219/data/ov219_strings_020d18c0.c:
+src/overlays/enemies/ov219_enemy_31/data/ov219_strings_020d18c0.c:
     complete
     .data       start:0x020d18c0 end:0x020d18e0
 
-src/overlays/ov219/data/ov219_tables_020d18a0.c:
+src/overlays/enemies/ov219_enemy_31/data/ov219_tables_020d18a0.c:
     complete
     .rodata     start:0x020d18a0 end:0x020d18a8

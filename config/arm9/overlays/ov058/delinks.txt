@@ -4,184 +4,184 @@
     .data       start:0x020b7d40 end:0x020b7e00 kind:data align:32
     .bss        start:0x020b7e00 end:0x020b7e20 kind:bss align:32
 
-src/overlays/ov058/calls/func_ov058_020b5a20.c:
+src/overlays/players/ov058_player_luxord_2/func_ov058_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov058/calls/Ov058_stateCtorReturnHandler.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a5c
 
-src/overlays/ov058/calls/Ov058_stateDtorCleanup.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_stateDtorCleanup.c:
     complete
     .text       start:0x020b5a5c end:0x020b5a9c
 
-src/overlays/ov058/calls/Ov058_Boot.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_Boot.c:
     complete
     .text       start:0x020b5a9c end:0x020b5c80
 
-src/overlays/ov058/calls/Ov058_ReloadTwoSceneResourcesAlt.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_ReloadTwoSceneResourcesAlt.c:
     complete
     .text       start:0x020b5c80 end:0x020b5d48
 
-src/overlays/ov058/auto/Ov058_MapSlotKindToAnim.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5d48 end:0x020b5d70
 
-src/overlays/ov058/calls/Ov058_ApplyMode.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_ApplyMode.c:
     complete
     .text       start:0x020b5d70 end:0x020b6088
 
-src/overlays/ov058/calls/Ov058_UpdateAnchorsAndChannels.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_UpdateAnchorsAndChannels.c:
     complete
     .text       start:0x020b6088 end:0x020b62d4
 
-src/overlays/ov058/calls/Ov058_StepSlotAndForward.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_StepSlotAndForward.c:
     complete
     .text       start:0x020b62d4 end:0x020b630c
 
-src/overlays/ov058/calls/Ov058_HandleMsg.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_HandleMsg.c:
     complete
     .text       start:0x020b630c end:0x020b64a8
 
-src/overlays/ov058/calls/Ov058_ResetFlagsAndBuildTwoModels.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_ResetFlagsAndBuildTwoModels.c:
     complete
     .text       start:0x020b64a8 end:0x020b6530
 
-src/overlays/ov058/calls/Ov058_SetupSequenceSlots.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_SetupSequenceSlots.c:
     complete
     .text       start:0x020b6530 end:0x020b663c
 
-src/overlays/ov058/calls/Ov058_ProcessTwoGlobalSlotsThenNotify.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_ProcessTwoGlobalSlotsThenNotify.c:
     complete
     .text       start:0x020b663c end:0x020b6680
 
-src/overlays/ov058/calls/func_ov058_020b6680.c:
+src/overlays/players/ov058_player_luxord_2/func_ov058_020b6680.c:
     complete
     .text       start:0x020b6680 end:0x020b668c
 
-src/overlays/ov058/calls/Ov058_ProcessTwoSlotsThenTail.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_ProcessTwoSlotsThenTail.c:
     complete
     .text       start:0x020b668c end:0x020b66d8
 
-src/overlays/ov058/calls/Ov058_ProcessTwoSlotsIfFlagSet.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_ProcessTwoSlotsIfFlagSet.c:
     complete
     .text       start:0x020b66d8 end:0x020b6718
 
-src/overlays/ov058/calls/Ov058_InitSubActionWithClampedArg.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_InitSubActionWithClampedArg.c:
     complete
     .text       start:0x020b6718 end:0x020b6754
 
-src/overlays/ov058/calls/Ov058_TickChargeStateGated.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_TickChargeStateGated.c:
     complete
     .text       start:0x020b6754 end:0x020b67dc
 
-src/overlays/ov058/calls/Ov058_DrawNodeWithResolvedPos.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_DrawNodeWithResolvedPos.c:
     complete
     .text       start:0x020b67dc end:0x020b6850
 
-src/overlays/ov058/calls/Ov058_GetAttackAnchor.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_GetAttackAnchor.c:
     complete
     .text       start:0x020b6850 end:0x020b6968
 
-src/overlays/ov058/calls/Ov058_StepStoredShot.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_StepStoredShot.c:
     complete
     .text       start:0x020b6968 end:0x020b6ad4
 
-src/overlays/ov058/calls/Ov058_CreateSubObject.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_CreateSubObject.c:
     complete
     .text       start:0x020b6ad4 end:0x020b6c04
 
-src/overlays/ov058/calls/Ov058_BindRig.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_BindRig.c:
     complete
     .text       start:0x020b6c04 end:0x020b6c5c
 
-src/overlays/ov058/calls/Ov058_FreeAttachedGroup.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_FreeAttachedGroup.c:
     complete
     .text       start:0x020b6c5c end:0x020b6c80
 
-src/overlays/ov058/calls/Ov058_dispatchEntryList.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_dispatchEntryList.c:
     complete
     .text       start:0x020b6c80 end:0x020b6ce4
 
-src/overlays/ov058/calls/Ov058_SetMode4Delay3000.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_SetMode4Delay3000.c:
     complete
     .text       start:0x020b6ce4 end:0x020b6cfc
 
-src/overlays/ov058/calls/Ov058_TickThrowArcWithLimit.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_TickThrowArcWithLimit.c:
     complete
     .text       start:0x020b6cfc end:0x020b6dc0
 
-src/overlays/ov058/calls/Ov058_ReleaseSlotHandles.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_ReleaseSlotHandles.c:
     complete
     .text       start:0x020b6dc0 end:0x020b6e28
 
-src/overlays/ov058/calls/Ov058_GetBandStepCount.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_GetBandStepCount.c:
     complete
     .text       start:0x020b6e28 end:0x020b6eb0
     .rodata     start:0x020b7c34 end:0x020b7cac
 
-src/overlays/ov058/calls/Ov058_PushAttackEvents.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_PushAttackEvents.c:
     complete
     .text       start:0x020b6eb0 end:0x020b7020
     .rodata     start:0x020b7cac end:0x020b7d24
 
-src/overlays/ov058/calls/Ov058_StartFlight.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_StartFlight.c:
     complete
     .text       start:0x020b7020 end:0x020b718c
 
-src/overlays/ov058/calls/Ov058_FireStoredShot.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_FireStoredShot.c:
     complete
     .text       start:0x020b718c end:0x020b72e8
 
-src/overlays/ov058/calls/Ov058_LazyInitSlot21IfUnset.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_LazyInitSlot21IfUnset.c:
     complete
     .text       start:0x020b72e8 end:0x020b7320
 
-src/overlays/ov058/calls/Ov058_IdleStep.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_IdleStep.c:
     complete
     .text       start:0x020b7320 end:0x020b770c
 
-src/overlays/ov058/calls/Ov058_ChargeStep.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_ChargeStep.c:
     complete
     .text       start:0x020b770c end:0x020b79b4
 
-src/overlays/ov058/calls/Ov058_LandingStep.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_LandingStep.c:
     complete
     .text       start:0x020b79b4 end:0x020b7b78
 
-src/overlays/ov058/calls/Ov058_InvokeWithDataTable.c:
+src/overlays/players/ov058_player_luxord_2/Ov058_InvokeWithDataTable.c:
     complete
     .text       start:0x020b7b78 end:0x020b7b90
 
-src/overlays/ov058/data/ov058_class_020b7d54.c:
+src/overlays/players/ov058_player_luxord_2/data/ov058_class_020b7d54.c:
     complete
     .data       start:0x020b7d54 end:0x020b7d68
 
-src/overlays/ov058/data/ov058_ctorargs_020b7b9c.c:
+src/overlays/players/ov058_player_luxord_2/data/ov058_ctorargs_020b7b9c.c:
     complete
     .rodata     start:0x020b7b9c end:0x020b7bb0
 
-src/overlays/ov058/data/ov058_pointers_020b7d68.c:
+src/overlays/players/ov058_player_luxord_2/data/ov058_pointers_020b7d68.c:
     complete
     .data       start:0x020b7d68 end:0x020b7d7c
 
-src/overlays/ov058/data/ov058_strings_020b7c04.c:
+src/overlays/players/ov058_player_luxord_2/data/ov058_strings_020b7c04.c:
     complete
     .rodata     start:0x020b7c04 end:0x020b7c34
 
-src/overlays/ov058/data/ov058_strings_020b7d40.c:
+src/overlays/players/ov058_player_luxord_2/data/ov058_strings_020b7d40.c:
     complete
     .data       start:0x020b7d40 end:0x020b7d54
 
-src/overlays/ov058/data/ov058_strings_020b7d7c.c:
+src/overlays/players/ov058_player_luxord_2/data/ov058_strings_020b7d7c.c:
     complete
     .data       start:0x020b7d7c end:0x020b7e00
 
-src/overlays/ov058/data/ov058_tables_020b7b90.c:
+src/overlays/players/ov058_player_luxord_2/data/ov058_tables_020b7b90.c:
     complete
     .rodata     start:0x020b7b90 end:0x020b7b9c
 
-src/overlays/ov058/data/ov058_tables_020b7bb0.c:
+src/overlays/players/ov058_player_luxord_2/data/ov058_tables_020b7bb0.c:
     complete
     .rodata     start:0x020b7bb0 end:0x020b7c04

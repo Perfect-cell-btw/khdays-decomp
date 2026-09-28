@@ -4,494 +4,494 @@
     .data       start:0x020d2fc0 end:0x020d3000 kind:data align:32
     .bss        start:0x020d3000 end:0x020d3000 kind:bss align:32
 
-src/overlays/ov259/calls/Ov259_RegisterEntityClass.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov259/calls/Ov259_CreateNamedEntity.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/ov259/calls/Ov259_ModelAnimTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ModelAnimTick.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc134
 
-src/overlays/ov259/calls/Ov259_MoveHook.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_MoveHook.c:
     complete
     .text       start:0x020cc134 end:0x020cc194
 
-src/overlays/ov259/calls/Ov259_BindAnimation.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_BindAnimation.c:
     complete
     .text       start:0x020cc194 end:0x020cc218
 
-src/overlays/ov259/calls/Ov259_Construct.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Construct.c:
     complete
     .text       start:0x020cc218 end:0x020cc508
 
-src/overlays/ov259/calls/Ov259_Actor_Destroy.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Actor_Destroy.c:
     complete
     .text       start:0x020cc508 end:0x020cc590
 
-src/overlays/ov259/calls/Ov259_Update.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Update.c:
     complete
     .text       start:0x020cc590 end:0x020cc610
 
-src/overlays/ov259/calls/Ov259_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cc610 end:0x020cc644
 
-src/overlays/ov259/calls/Ov259_NotifyPartsThenBase.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc644 end:0x020cc678
 
-src/overlays/ov259/calls/Ov259_OnMessage.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_OnMessage.c:
     complete
     .text       start:0x020cc678 end:0x020ccb0c
 
-src/overlays/ov259/calls/Ov259_DrawPrePass.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_DrawPrePass.c:
     complete
     .text       start:0x020ccb0c end:0x020ccbc0
 
-src/overlays/ov259/calls/Ov259_SetPose.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_SetPose.c:
     complete
     .text       start:0x020ccbc0 end:0x020ccde8
 
-src/overlays/ov259/calls/Ov259_CreateAiTask.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_CreateAiTask.c:
     complete
     .text       start:0x020ccde8 end:0x020cce44
 
-src/overlays/ov259/calls/Ov259_OnHit.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_OnHit.c:
     complete
     .text       start:0x020cce44 end:0x020cd2c8
 
-src/overlays/ov259/calls/Ov259_MapHeldItemKindToAnim.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_MapHeldItemKindToAnim.c:
     complete
     .text       start:0x020cd2c8 end:0x020cd3c4
 
-src/overlays/ov259/calls/Ov259_PlaySound.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_PlaySound.c:
     complete
     .text       start:0x020cd3c4 end:0x020cd524
 
-src/overlays/ov259/calls/Ov259_MirrorPartnerPose.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_MirrorPartnerPose.c:
     complete
     .text       start:0x020cd524 end:0x020cd590
 
-src/overlays/ov259/calls/Ov259_PickTarget.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_PickTarget.c:
     complete
     .text       start:0x020cd590 end:0x020cd5d4
 
-src/overlays/ov259/calls/Ov259_FaceTarget.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_FaceTarget.c:
     complete
     .text       start:0x020cd5d4 end:0x020cd628
 
-src/overlays/ov259/calls/Ov259_ArmPartnerCue.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ArmPartnerCue.c:
     complete
     .text       start:0x020cd628 end:0x020cd648
 
-src/overlays/ov259/calls/Ov259_SoundCueTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_SoundCueTick.c:
     complete
     .text       start:0x020cd648 end:0x020cdc20
 
-src/overlays/ov259/calls/Ov259_FaceTargetGap.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_FaceTargetGap.c:
     complete
     .text       start:0x020cdc20 end:0x020cdcac
 
-src/overlays/ov259/calls/Ov259_RefreshAim.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_RefreshAim.c:
     complete
     .text       start:0x020cdcac end:0x020cdd48
 
-src/overlays/ov259/calls/Ov259_TargetGap.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_TargetGap.c:
     complete
     .text       start:0x020cdd48 end:0x020cddbc
 
-src/overlays/ov259/calls/Ov259_ComputeNormalizedDir.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ComputeNormalizedDir.c:
     complete
     .text       start:0x020cddbc end:0x020cddfc
 
-src/overlays/ov259/calls/Ov259_StartBrain.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_StartBrain.c:
     complete
     .text       start:0x020cddfc end:0x020cdef8
 
-src/overlays/ov259/calls/Ov259_AiDispatchAction.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiDispatchAction.c:
     complete
     .text       start:0x020cdef8 end:0x020ce184
 
-src/overlays/ov259/calls/Ov259_WatchSlot.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_WatchSlot.c:
     complete
     .text       start:0x020ce184 end:0x020ce2a8
 
-src/overlays/ov259/calls/Ov259_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ce2a8 end:0x020ce310
 
-src/overlays/ov259/calls/Ov259_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020ce310 end:0x020ce34c
 
-src/overlays/ov259/calls/Ov259_AiResetMoveState.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiResetMoveState.c:
     complete
     .text       start:0x020ce34c end:0x020ce400
 
-src/overlays/ov259/calls/Ov259_ThinkSlot.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ThinkSlot.c:
     complete
     .text       start:0x020ce400 end:0x020ce63c
 
-src/overlays/ov259/calls/Ov259_HitWindowStep.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HitWindowStep.c:
     complete
     .text       start:0x020ce63c end:0x020ce898
 
-src/overlays/ov259/calls/Ov259_ShootEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ShootEntry.c:
     complete
     .text       start:0x020ce898 end:0x020ce944
 
-src/overlays/ov259/calls/Ov259_AiQueue2OnAnimEnd.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiQueue2OnAnimEnd.c:
     complete
     .text       start:0x020ce944 end:0x020ce988
 
-src/overlays/ov259/calls/Ov259_AiEnterTaunt.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiEnterTaunt.c:
     complete
     .text       start:0x020ce988 end:0x020ce9e0
 
-src/overlays/ov259/calls/Ov259_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020ce9e0 end:0x020cea14
 
-src/overlays/ov259/calls/Ov259_AiEnterDash.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiEnterDash.c:
     complete
     .text       start:0x020cea14 end:0x020cea80
 
-src/overlays/ov259/calls/Ov259_GuardEndTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_GuardEndTick.c:
     complete
     .text       start:0x020cea80 end:0x020ceb38
 
-src/overlays/ov259/calls/Ov259_AiEnterRise.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiEnterRise.c:
     complete
     .text       start:0x020ceb38 end:0x020ceb9c
 
-src/overlays/ov259/calls/Ov259_RiseTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_RiseTick.c:
     complete
     .text       start:0x020ceb9c end:0x020ced2c
 
-src/overlays/ov259/calls/Ov259_ComboTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ComboTick.c:
     complete
     .text       start:0x020ced2c end:0x020cef48
 
-src/overlays/ov259/calls/Ov259_EnterFlinch.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_EnterFlinch.c:
     complete
     .text       start:0x020cef48 end:0x020cef8c
 
-src/overlays/ov259/calls/Ov259_FaceTargetOnEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_FaceTargetOnEntry.c:
     complete
     .text       start:0x020cef8c end:0x020ceff4
 
-src/overlays/ov259/calls/Ov259_EnterLunge.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_EnterLunge.c:
     complete
     .text       start:0x020ceff4 end:0x020cf040
 
-src/overlays/ov259/calls/Ov259_WaitEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_WaitEntry.c:
     complete
     .text       start:0x020cf040 end:0x020cf0bc
 
-src/overlays/ov259/calls/Ov259_HoverTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HoverTick.c:
     complete
     .text       start:0x020cf0bc end:0x020cf1d4
 
-src/overlays/ov259/calls/Ov259_LungeEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_LungeEntry.c:
     complete
     .text       start:0x020cf1d4 end:0x020cf324
 
-src/overlays/ov259/calls/Ov259_LungeTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_LungeTick.c:
     complete
     .text       start:0x020cf324 end:0x020cf474
 
-src/overlays/ov259/calls/Ov259_LandingCheck.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_LandingCheck.c:
     complete
     .text       start:0x020cf474 end:0x020cf508
 
-src/overlays/ov259/calls/Ov259_JumpEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_JumpEntry.c:
     complete
     .text       start:0x020cf508 end:0x020cf5d8
 
-src/overlays/ov259/calls/Ov259_LaunchTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_LaunchTick.c:
     complete
     .text       start:0x020cf5d8 end:0x020cf6d0
 
-src/overlays/ov259/calls/Ov259_AiEnterFinisher.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiEnterFinisher.c:
     complete
     .text       start:0x020cf6d0 end:0x020cf764
 
-src/overlays/ov259/calls/Ov259_LandingTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_LandingTick.c:
     complete
     .text       start:0x020cf764 end:0x020cf82c
 
-src/overlays/ov259/calls/Ov259_TickWindUp.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_TickWindUp.c:
     complete
     .text       start:0x020cf82c end:0x020cf8e0
 
-src/overlays/ov259/calls/Ov259_BurrowBurstTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_BurrowBurstTick.c:
     complete
     .text       start:0x020cf8e0 end:0x020cfaa8
 
-src/overlays/ov259/calls/Ov259_DownEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_DownEntry.c:
     complete
     .text       start:0x020cfaa8 end:0x020cfc40
 
-src/overlays/ov259/calls/Ov259_DownTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_DownTick.c:
     complete
     .text       start:0x020cfc40 end:0x020cfce4
 
-src/overlays/ov259/calls/Ov259_AiFinisherTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiFinisherTick.c:
     complete
     .text       start:0x020cfce4 end:0x020cfd90
 
-src/overlays/ov259/calls/Ov259_GuardTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_GuardTick.c:
     complete
     .text       start:0x020cfd90 end:0x020cfe0c
 
-src/overlays/ov259/calls/Ov259_AiFinisherEnd.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiFinisherEnd.c:
     complete
     .text       start:0x020cfe0c end:0x020cfe64
 
-src/overlays/ov259/calls/Ov259_ChargeEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ChargeEntry.c:
     complete
     .text       start:0x020cfe64 end:0x020cff54
 
-src/overlays/ov259/calls/Ov259_SweepSequenceTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_SweepSequenceTick.c:
     complete
     .text       start:0x020cff54 end:0x020d02b8
 
-src/overlays/ov259/calls/Ov259_SequenceTailTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_SequenceTailTick.c:
     complete
     .text       start:0x020d02b8 end:0x020d0338
 
-src/overlays/ov259/calls/Ov259_SlamEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_SlamEntry.c:
     complete
     .text       start:0x020d0338 end:0x020d0400
 
-src/overlays/ov259/calls/Ov259_SlamChargeTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_SlamChargeTick.c:
     complete
     .text       start:0x020d0400 end:0x020d06b0
 
-src/overlays/ov259/calls/Ov259_LungeSequenceTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_LungeSequenceTick.c:
     complete
     .text       start:0x020d06b0 end:0x020d0b6c
 
-src/overlays/ov259/calls/Ov259_SlamTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_SlamTick.c:
     complete
     .text       start:0x020d0b6c end:0x020d0cb4
 
-src/overlays/ov259/calls/Ov259_RecoilTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_RecoilTick.c:
     complete
     .text       start:0x020d0cb4 end:0x020d0d28
 
-src/overlays/ov259/calls/Ov259_SweepRecoveryTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_SweepRecoveryTick.c:
     complete
     .text       start:0x020d0d28 end:0x020d0dbc
 
-src/overlays/ov259/calls/Ov259_LungeRestartEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_LungeRestartEntry.c:
     complete
     .text       start:0x020d0dbc end:0x020d0e34
 
-src/overlays/ov259/calls/Ov259_RiseTick_2.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_RiseTick_2.c:
     complete
     .text       start:0x020d0e34 end:0x020d0f88
 
-src/overlays/ov259/calls/Ov259_ChargeTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ChargeTick.c:
     complete
     .text       start:0x020d0f88 end:0x020d105c
 
-src/overlays/ov259/calls/Ov259_TickDive.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_TickDive.c:
     complete
     .text       start:0x020d105c end:0x020d13cc
 
-src/overlays/ov259/calls/Ov259_SlamSweepTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_SlamSweepTick.c:
     complete
     .text       start:0x020d13cc end:0x020d15bc
 
-src/overlays/ov259/calls/Ov259_FindFarthestTarget.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_FindFarthestTarget.c:
     complete
     .text       start:0x020d15bc end:0x020d16d4
 
-src/overlays/ov259/calls/Ov259_AiStep_SetFlags3AndEnd.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_AiStep_SetFlags3AndEnd.c:
     complete
     .text       start:0x020d16d4 end:0x020d1700
 
-src/overlays/ov259/calls/Ov259_ForwardSweep.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ForwardSweep.c:
     complete
     .text       start:0x020d1700 end:0x020d1764
 
-src/overlays/ov259/calls/Ov259_SwapShells.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_SwapShells.c:
     complete
     .text       start:0x020d1764 end:0x020d17b8
 
-src/overlays/ov259/calls/Ov259_ReleaseRig.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ReleaseRig.c:
     complete
     .text       start:0x020d17b8 end:0x020d17fc
 
-src/overlays/ov259/calls/Ov259_Helper_ReleaseIfReady.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Helper_ReleaseIfReady.c:
     complete
     .text       start:0x020d17fc end:0x020d1838
 
-src/overlays/ov259/auto/Ov259_Helper_IsHeld.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Helper_IsHeld.c:
     complete
     .text       start:0x020d1838 end:0x020d1840
 
-src/overlays/ov259/calls/Ov259_New.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_New.c:
     complete
     .text       start:0x020d1840 end:0x020d1874
 
-src/overlays/ov259/calls/Ov259_HelperInit.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperInit.c:
     complete
     .text       start:0x020d1874 end:0x020d1aa4
 
-src/overlays/ov259/calls/Ov259_ReleaseSubObjects.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ReleaseSubObjects.c:
     complete
     .text       start:0x020d1aa4 end:0x020d1ad4
 
-src/overlays/ov259/calls/Ov259_HelperUpdate.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperUpdate.c:
     complete
     .text       start:0x020d1ad4 end:0x020d1be0
 
-src/overlays/ov259/calls/func_ov259_020d1be0.c:
+src/overlays/enemies/ov259_enemy_53/func_ov259_020d1be0.c:
     complete
     .text       start:0x020d1be0 end:0x020d1bec
 
-src/overlays/ov259/calls/func_ov259_020d1bec.c:
+src/overlays/enemies/ov259_enemy_53/func_ov259_020d1bec.c:
     complete
     .text       start:0x020d1bec end:0x020d1bf8
 
-src/overlays/ov259/auto/Ov259_RequestMoveTo.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_RequestMoveTo.c:
     complete
     .text       start:0x020d1bf8 end:0x020d1c28
 
-src/overlays/ov259/calls/Ov259_Helper_Grab.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Helper_Grab.c:
     complete
     .text       start:0x020d1c28 end:0x020d1c44
 
-src/overlays/ov259/calls/Ov259_Helper_Release.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Helper_Release.c:
     complete
     .text       start:0x020d1c44 end:0x020d1c60
 
-src/overlays/ov259/auto/Ov259_OnHitIgnore.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_OnHitIgnore.c:
     complete
     .text       start:0x020d1c60 end:0x020d1c68
 
-src/overlays/ov259/calls/Ov259_Helper_CreateAiTask.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Helper_CreateAiTask.c:
     complete
     .text       start:0x020d1c68 end:0x020d1cc4
 
-src/overlays/ov259/calls/Ov259_HelperFlightStep.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperFlightStep.c:
     complete
     .text       start:0x020d1cc4 end:0x020d1f24
 
-src/overlays/ov259/calls/Ov259_Helper_AiStateInit.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Helper_AiStateInit.c:
     complete
     .text       start:0x020d1f24 end:0x020d1fd0
 
-src/overlays/ov259/calls/Ov259_HelperDispatchMove.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperDispatchMove.c:
     complete
     .text       start:0x020d1fd0 end:0x020d20c0
 
-src/overlays/ov259/calls/Ov259_ApplyHelperStep.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ApplyHelperStep.c:
     complete
     .text       start:0x020d20c0 end:0x020d2108
 
-src/overlays/ov259/calls/Ov259_HelperDockEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperDockEntry.c:
     complete
     .text       start:0x020d2108 end:0x020d21ac
 
-src/overlays/ov259/calls/Ov259_ReleaseEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ReleaseEntry.c:
     complete
     .text       start:0x020d21ac end:0x020d2254
 
-src/overlays/ov259/auto/Ov259_ClearBusyFlag.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_ClearBusyFlag.c:
     complete
     .text       start:0x020d2254 end:0x020d2288
 
-src/overlays/ov259/calls/Ov259_Helper_AiEnterFlight.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Helper_AiEnterFlight.c:
     complete
     .text       start:0x020d2288 end:0x020d22b0
 
-src/overlays/ov259/calls/Ov259_Helper_AiFlightTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Helper_AiFlightTick.c:
     complete
     .text       start:0x020d22b0 end:0x020d2328
 
-src/overlays/ov259/calls/Ov259_HelperLatchEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperLatchEntry.c:
     complete
     .text       start:0x020d2328 end:0x020d23c4
 
-src/overlays/ov259/calls/Ov259_HelperReturnTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperReturnTick.c:
     complete
     .text       start:0x020d23c4 end:0x020d2498
 
-src/overlays/ov259/calls/Ov259_HelperSweepTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperSweepTick.c:
     complete
     .text       start:0x020d2498 end:0x020d2658
 
-src/overlays/ov259/calls/Ov259_HelperReleaseEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperReleaseEntry.c:
     complete
     .text       start:0x020d2658 end:0x020d26e0
 
-src/overlays/ov259/calls/Ov259_LaunchHelper.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_LaunchHelper.c:
     complete
     .text       start:0x020d26e0 end:0x020d2780
 
-src/overlays/ov259/calls/Ov259_New_2.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_New_2.c:
     complete
     .text       start:0x020d2780 end:0x020d27b4
 
-src/overlays/ov259/calls/Ov259_HelperInitTail.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperInitTail.c:
     complete
     .text       start:0x020d27b4 end:0x020d28c0
 
-src/overlays/ov259/calls/func_ov259_020d28c0.c:
+src/overlays/enemies/ov259_enemy_53/func_ov259_020d28c0.c:
     complete
     .text       start:0x020d28c0 end:0x020d28cc
 
-src/overlays/ov259/calls/Ov259_Item_TickSyncXform.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Item_TickSyncXform.c:
     complete
     .text       start:0x020d28cc end:0x020d2904
 
-src/overlays/ov259/calls/Ov259_HelperStartFlight.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperStartFlight.c:
     complete
     .text       start:0x020d2904 end:0x020d29a8
 
-src/overlays/ov259/auto/Ov259_OnHitIgnore_2.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_OnHitIgnore_2.c:
     complete
     .text       start:0x020d29a8 end:0x020d29b0
 
-src/overlays/ov259/calls/Ov259_Item_CreateAiTask.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Item_CreateAiTask.c:
     complete
     .text       start:0x020d29b0 end:0x020d2a0c
 
-src/overlays/ov259/calls/Ov259_stateInitClearSlots.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_stateInitClearSlots.c:
     complete
     .text       start:0x020d2a0c end:0x020d2ab4
 
-src/overlays/ov259/calls/Ov259_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d2ab4 end:0x020d2b2c
 
-src/overlays/ov259/calls/Ov259_Item_ApplyVelocity.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_Item_ApplyVelocity.c:
     complete
     .text       start:0x020d2b2c end:0x020d2b90
 
-src/overlays/ov259/calls/Ov259_UnlinkEntry.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_UnlinkEntry.c:
     complete
     .text       start:0x020d2b90 end:0x020d2c48
 
-src/overlays/ov259/calls/Ov259_HelperReleaseEntry_2.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_HelperReleaseEntry_2.c:
     complete
     .text       start:0x020d2c48 end:0x020d2d3c
 
-src/overlays/ov259/calls/Ov259_TailLashTick.c:
+src/overlays/enemies/ov259_enemy_53/Ov259_TailLashTick.c:
     complete
     .text       start:0x020d2d3c end:0x020d2f2c
 
-src/overlays/ov259/data/ov259_rodata_020d2f2c.c:
+src/overlays/enemies/ov259_enemy_53/data/ov259_rodata_020d2f2c.c:
     complete
     .rodata     start:0x020d2f2c end:0x020d2fac
 
-src/overlays/ov259/data/ov259_strings_020d2fc0.c:
+src/overlays/enemies/ov259_enemy_53/data/ov259_strings_020d2fc0.c:
     complete
     .data       start:0x020d2fc0 end:0x020d3000

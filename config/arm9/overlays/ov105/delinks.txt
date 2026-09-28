@@ -3,7 +3,7 @@
     .data       start:0x020bfa00 end:0x020bfa20 kind:data align:32
     .bss        start:0x020bfa20 end:0x020c0680 kind:bss align:32
 
-src/overlays/ov105/calls/Ov105_WmInit.c:
+src/overlays/system/ov105_wireless/Ov105_WmInit.c:
     complete
     .text       start:0x020bcc20 end:0x020bcc4c
 
@@ -11,11 +11,11 @@ libs/nitro/wm/calls/Ov105_WmInitCore.c:
     complete
     .text       start:0x020bcc4c end:0x020bce30
 
-src/overlays/ov105/calls/Ov105_ShutdownWireless.c:
+src/overlays/system/ov105_wireless/Ov105_ShutdownWireless.c:
     complete
     .text       start:0x020bce30 end:0x020bcea0
 
-src/overlays/ov105/calls/Ov105_SetCommandArg.c:
+src/overlays/system/ov105_wireless/Ov105_SetCommandArg.c:
     complete
     .text       start:0x020bcea0 end:0x020bceb8
 
@@ -31,15 +31,15 @@ libs/nitro/wm/calls/Ov105_WMi_SendCommandDirect.c:
     complete
     .text       start:0x020bcfbc end:0x020bd02c
 
-src/overlays/ov105/calls/Ov105_GetContext.c:
+src/overlays/system/ov105_wireless/Ov105_GetContext.c:
     complete
     .text       start:0x020bd02c end:0x020bd03c
 
-src/overlays/ov105/calls/Ov105_IsDeviceReady.c:
+src/overlays/system/ov105_wireless/Ov105_IsDeviceReady.c:
     complete
     .text       start:0x020bd03c end:0x020bd058
 
-src/overlays/ov105/calls/Ov105_PollDeviceStatus.c:
+src/overlays/system/ov105_wireless/Ov105_PollDeviceStatus.c:
     complete
     .text       start:0x020bd058 end:0x020bd0a0
 
@@ -51,23 +51,23 @@ libs/nitro/wm/calls/Ov105_WmReceiveFifo.c:
     complete
     .text       start:0x020bd134 end:0x020bd4dc
 
-src/overlays/ov105/calls/Ov105_ClearSharedRequestBit.c:
+src/overlays/system/ov105_wireless/Ov105_ClearSharedRequestBit.c:
     complete
     .text       start:0x020bd4dc end:0x020bd4f8
 
-src/overlays/ov105/calls/Ov105_GetSessionChannel.c:
+src/overlays/system/ov105_wireless/Ov105_GetSessionChannel.c:
     complete
     .text       start:0x020bd4f8 end:0x020bd528
 
-src/overlays/ov105/calls/Ov105_GetSessionLinkState.c:
+src/overlays/system/ov105_wireless/Ov105_GetSessionLinkState.c:
     complete
     .text       start:0x020bd528 end:0x020bd558
 
-src/overlays/ov105/calls/Ov105_SetSessionCallback.c:
+src/overlays/system/ov105_wireless/Ov105_SetSessionCallback.c:
     complete
     .text       start:0x020bd558 end:0x020bd59c
 
-src/overlays/ov105/calls/Ov105_SetSlotEventHandler.c:
+src/overlays/system/ov105_wireless/Ov105_SetSlotEventHandler.c:
     complete
     .text       start:0x020bd59c end:0x020bd674
 
@@ -79,7 +79,7 @@ libs/nitro/wm/calls/Ov105_WM_GetMPReceiveBufferSize.c:
     complete
     .text       start:0x020bd6e0 end:0x020bd7a4
 
-src/overlays/ov105/calls/Ov105_GetTransitionFrame.c:
+src/overlays/system/ov105_wireless/Ov105_GetTransitionFrame.c:
     complete
     .text       start:0x020bd7a4 end:0x020bd7c4
 
@@ -99,7 +99,7 @@ libs/nitro/wm/calls/Ov105_WM_GetNextTgid.c:
     complete
     .text       start:0x020bd978 end:0x020bd9ec
 
-src/overlays/ov105/calls/func_ov105_020bd9ec.c:
+src/overlays/system/ov105_wireless/func_ov105_020bd9ec.c:
     complete
     .text       start:0x020bd9ec end:0x020bd9fc
 
@@ -107,11 +107,11 @@ libs/nitro/wm/calls/Ov105_WMi_InitializeEx.c:
     complete
     .text       start:0x020bd9fc end:0x020bda5c
 
-src/overlays/ov105/calls/Ov105_RunTransitionSlot1.c:
+src/overlays/system/ov105_wireless/Ov105_RunTransitionSlot1.c:
     complete
     .text       start:0x020bda5c end:0x020bda94
 
-src/overlays/ov105/calls/Ov105_RunTransitionSlot2.c:
+src/overlays/system/ov105_wireless/Ov105_RunTransitionSlot2.c:
     complete
     .text       start:0x020bda94 end:0x020bdad4
 
@@ -127,11 +127,11 @@ libs/nitro/wm/calls/Ov105_WMi_StartParentEx.c:
     complete
     .text       start:0x020bdc00 end:0x020bdc5c
 
-src/overlays/ov105/calls/Ov105_ResourceEntryCallback.c:
+src/overlays/system/ov105_wireless/Ov105_ResourceEntryCallback.c:
     complete
     .text       start:0x020bdc5c end:0x020bdc6c
 
-src/overlays/ov105/calls/Ov105_RunTransitionSlot9.c:
+src/overlays/system/ov105_wireless/Ov105_RunTransitionSlot9.c:
     complete
     .text       start:0x020bdc6c end:0x020bdcac
 
@@ -139,7 +139,7 @@ libs/nitro/wm/calls/Ov105_WM_StartScan.c:
     complete
     .text       start:0x020bdcac end:0x020bdd98
 
-src/overlays/ov105/calls/Ov105_RunTransitionSlotB.c:
+src/overlays/system/ov105_wireless/Ov105_RunTransitionSlotB.c:
     complete
     .text       start:0x020bdd98 end:0x020bddd8
 
@@ -179,254 +179,254 @@ libs/nitro/wm/calls/Ov105_WM_SetEntry.c:
     complete
     .text       start:0x020be3f0 end:0x020be43c
 
-src/overlays/ov105/calls/Ov105_WH_FreeBuffers.c:
+src/overlays/system/ov105_wireless/Ov105_WH_FreeBuffers.c:
     complete
     .text       start:0x020be43c end:0x020be49c
 
-src/overlays/ov105/calls/Ov105_SetField24.c:
+src/overlays/system/ov105_wireless/Ov105_SetField24.c:
     complete
     .text       start:0x020be49c end:0x020be4ac
 
-src/overlays/ov105/calls/Ov105_SetField30IfModeAllows.c:
+src/overlays/system/ov105_wireless/Ov105_SetField30IfModeAllows.c:
     complete
     .text       start:0x020be4ac end:0x020be4c8
 
-src/overlays/ov105/calls/Ov105_RunStep3.c:
+src/overlays/system/ov105_wireless/Ov105_RunStep3.c:
     complete
     .text       start:0x020be4c8 end:0x020be508
 
-src/overlays/ov105/calls/Ov105_WH_StateOutSetParentParam.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateOutSetParentParam.c:
     complete
     .text       start:0x020be508 end:0x020be56c
 
-src/overlays/ov105/calls/Ov105_RunStep3ViaBackend.c:
+src/overlays/system/ov105_wireless/Ov105_RunStep3ViaBackend.c:
     complete
     .text       start:0x020be56c end:0x020be5cc
 
-src/overlays/ov105/calls/Ov105_ApplyTargetThenState9.c:
+src/overlays/system/ov105_wireless/Ov105_ApplyTargetThenState9.c:
     complete
     .text       start:0x020be5cc end:0x020be604
 
-src/overlays/ov105/calls/Ov105_WH_StateInStartParent.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateInStartParent.c:
     complete
     .text       start:0x020be604 end:0x020be668
 
-src/overlays/ov105/calls/Ov105_WH_StateOutStartParent.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateOutStartParent.c:
     complete
     .text       start:0x020be668 end:0x020be770
 
-src/overlays/ov105/calls/Ov105_WH_StateInStartParentMP.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateInStartParentMP.c:
     complete
     .text       start:0x020be770 end:0x020be7fc
 
-src/overlays/ov105/calls/Ov105_WH_StateOutStartParentMP.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateOutStartParentMP.c:
     complete
     .text       start:0x020be7fc end:0x020be850
 
-src/overlays/ov105/calls/Ov105_EnterMode3Step.c:
+src/overlays/system/ov105_wireless/Ov105_EnterMode3Step.c:
     complete
     .text       start:0x020be850 end:0x020be880
 
-src/overlays/ov105/calls/Ov105_OnRequestDoneA.c:
+src/overlays/system/ov105_wireless/Ov105_OnRequestDoneA.c:
     complete
     .text       start:0x020be880 end:0x020be8b0
 
-src/overlays/ov105/calls/Ov105_PumpSubStateA.c:
+src/overlays/system/ov105_wireless/Ov105_PumpSubStateA.c:
     complete
     .text       start:0x020be8b0 end:0x020be8d8
 
-src/overlays/ov105/calls/Ov105_DispatchTargetOrReset.c:
+src/overlays/system/ov105_wireless/Ov105_DispatchTargetOrReset.c:
     complete
     .text       start:0x020be8d8 end:0x020be900
 
-src/overlays/ov105/calls/Ov105_WH_StartScan.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StartScan.c:
     complete
     .text       start:0x020be900 end:0x020be96c
 
-src/overlays/ov105/calls/Ov105_WH_StateInStartScan.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateInStartScan.c:
     complete
     .text       start:0x020be96c end:0x020bea34
 
-src/overlays/ov105/calls/Ov105_WH_StateOutStartScan.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateOutStartScan.c:
     complete
     .text       start:0x020bea34 end:0x020beb98
 
-src/overlays/ov105/calls/Ov105_AdvanceState2To3.c:
+src/overlays/system/ov105_wireless/Ov105_AdvanceState2To3.c:
     complete
     .text       start:0x020beb98 end:0x020bebcc
 
-src/overlays/ov105/calls/Ov105_PumpSubStateB.c:
+src/overlays/system/ov105_wireless/Ov105_PumpSubStateB.c:
     complete
     .text       start:0x020bebcc end:0x020bebf4
 
-src/overlays/ov105/calls/Ov105_WH_StateOutEndScan.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateOutEndScan.c:
     complete
     .text       start:0x020bebf4 end:0x020bec64
 
-src/overlays/ov105/calls/Ov105_RunStep3OnThirdHandle.c:
+src/overlays/system/ov105_wireless/Ov105_RunStep3OnThirdHandle.c:
     complete
     .text       start:0x020bec64 end:0x020becc4
 
-src/overlays/ov105/calls/Ov105_ApplyTargetThenState9B.c:
+src/overlays/system/ov105_wireless/Ov105_ApplyTargetThenState9B.c:
     complete
     .text       start:0x020becc4 end:0x020becfc
 
-src/overlays/ov105/calls/Ov105_WH_StateInStartChild.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateInStartChild.c:
     complete
     .text       start:0x020becfc end:0x020bed80
 
-src/overlays/ov105/calls/Ov105_WH_StateOutStartChild.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateOutStartChild.c:
     complete
     .text       start:0x020bed80 end:0x020bee7c
 
-src/overlays/ov105/calls/Ov105_WH_StateInStartChildMP.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateInStartChildMP.c:
     complete
     .text       start:0x020bee7c end:0x020beee0
 
-src/overlays/ov105/calls/Ov105_WH_StateOutStartChildMP.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateOutStartChildMP.c:
     complete
     .text       start:0x020beee0 end:0x020bef44
 
-src/overlays/ov105/calls/Ov105_EnterMode3Step_b.c:
+src/overlays/system/ov105_wireless/Ov105_EnterMode3Step_b.c:
     complete
     .text       start:0x020bef44 end:0x020bef74
 
-src/overlays/ov105/calls/Ov105_OnRequestDoneB.c:
+src/overlays/system/ov105_wireless/Ov105_OnRequestDoneB.c:
     complete
     .text       start:0x020bef74 end:0x020befa8
 
-src/overlays/ov105/calls/Ov105_WH_StateInEndChild.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateInEndChild.c:
     complete
     .text       start:0x020befa8 end:0x020befe0
 
-src/overlays/ov105/calls/Ov105_DispatchTargetOrResetB.c:
+src/overlays/system/ov105_wireless/Ov105_DispatchTargetOrResetB.c:
     complete
     .text       start:0x020befe0 end:0x020bf008
 
-src/overlays/ov105/calls/Ov105_EnterMode3Step_c.c:
+src/overlays/system/ov105_wireless/Ov105_EnterMode3Step_c.c:
     complete
     .text       start:0x020bf008 end:0x020bf038
 
-src/overlays/ov105/calls/Ov105_ApplyTargetFromState9.c:
+src/overlays/system/ov105_wireless/Ov105_ApplyTargetFromState9.c:
     complete
     .text       start:0x020bf038 end:0x020bf070
 
-src/overlays/ov105/calls/Ov105_WH_StateInSetMPData.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateInSetMPData.c:
     complete
     .text       start:0x020bf070 end:0x020bf0e0
 
-src/overlays/ov105/calls/Ov105_DispatchOrNotifyCancel.c:
+src/overlays/system/ov105_wireless/Ov105_DispatchOrNotifyCancel.c:
     complete
     .text       start:0x020bf0e0 end:0x020bf120
 
-src/overlays/ov105/calls/Ov105_WH_PortReceiveCallback.c:
+src/overlays/system/ov105_wireless/Ov105_WH_PortReceiveCallback.c:
     complete
     .text       start:0x020bf120 end:0x020bf18c
 
-src/overlays/ov105/calls/Ov105_WH_StateOutEnd.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateOutEnd.c:
     complete
     .text       start:0x020bf18c end:0x020bf1e4
 
-src/overlays/ov105/calls/Ov105_SetParamWord8.c:
+src/overlays/system/ov105_wireless/Ov105_SetParamWord8.c:
     complete
     .text       start:0x020bf1e4 end:0x020bf1f4
 
-src/overlays/ov105/calls/Ov105_WH_SetSsid.c:
+src/overlays/system/ov105_wireless/Ov105_WH_SetSsid.c:
     complete
     .text       start:0x020bf1f4 end:0x020bf22c
 
-src/overlays/ov105/calls/Ov105_SetBuffer.c:
+src/overlays/system/ov105_wireless/Ov105_SetBuffer.c:
     complete
     .text       start:0x020bf22c end:0x020bf240
 
-src/overlays/ov105/calls/func_ov105_020bf240.c:
+src/overlays/system/ov105_wireless/func_ov105_020bf240.c:
     complete
     .text       start:0x020bf240 end:0x020bf24c
 
-src/overlays/ov105/calls/Ov105_GetWord24.c:
+src/overlays/system/ov105_wireless/Ov105_GetWord24.c:
     complete
     .text       start:0x020bf24c end:0x020bf25c
 
-src/overlays/ov105/calls/Ov105_GetState.c:
+src/overlays/system/ov105_wireless/Ov105_GetState.c:
     complete
     .text       start:0x020bf25c end:0x020bf26c
 
-src/overlays/ov105/calls/Ov105_GetStatusLow.c:
+src/overlays/system/ov105_wireless/Ov105_GetStatusLow.c:
     complete
     .text       start:0x020bf26c end:0x020bf27c
 
-src/overlays/ov105/calls/Ov105_WH_StartMeasureChannel.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StartMeasureChannel.c:
     complete
     .text       start:0x020bf27c end:0x020bf33c
 
-src/overlays/ov105/calls/Ov105_WH_StateInMeasureChannel.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateInMeasureChannel.c:
     complete
     .text       start:0x020bf33c end:0x020bf3d8
 
-src/overlays/ov105/calls/Ov105_WH_StateOutMeasureChannel.c:
+src/overlays/system/ov105_wireless/Ov105_WH_StateOutMeasureChannel.c:
     complete
     .text       start:0x020bf3d8 end:0x020bf480
 
-src/overlays/ov105/calls/Ov105_WHi_MeasureChannel.c:
+src/overlays/system/ov105_wireless/Ov105_WHi_MeasureChannel.c:
     complete
     .text       start:0x020bf480 end:0x020bf4a0
 
-src/overlays/ov105/calls/Ov105_EnterState1AndResolveId.c:
+src/overlays/system/ov105_wireless/Ov105_EnterState1AndResolveId.c:
     complete
     .text       start:0x020bf4a0 end:0x020bf4cc
 
-src/overlays/ov105/calls/Ov105_SelectChannel.c:
+src/overlays/system/ov105_wireless/Ov105_SelectChannel.c:
     complete
     .text       start:0x020bf4cc end:0x020bf5a8
 
-src/overlays/ov105/calls/Ov105_WH_Initialize.c:
+src/overlays/system/ov105_wireless/Ov105_WH_Initialize.c:
     complete
     .text       start:0x020bf5a8 end:0x020bf64c
 
-src/overlays/ov105/calls/Ov105_TerminateOnState8.c:
+src/overlays/system/ov105_wireless/Ov105_TerminateOnState8.c:
     complete
     .text       start:0x020bf64c end:0x020bf66c
 
-src/overlays/ov105/calls/Ov105_RunStep3OnSecondHandle.c:
+src/overlays/system/ov105_wireless/Ov105_RunStep3OnSecondHandle.c:
     complete
     .text       start:0x020bf66c end:0x020bf6b4
 
-src/overlays/ov105/calls/Ov105_StepOrFallBack.c:
+src/overlays/system/ov105_wireless/Ov105_StepOrFallBack.c:
     complete
     .text       start:0x020bf6b4 end:0x020bf704
 
-src/overlays/ov105/calls/Ov105_WH_ParentConnect.c:
+src/overlays/system/ov105_wireless/Ov105_WH_ParentConnect.c:
     complete
     .text       start:0x020bf704 end:0x020bf7f4
 
-src/overlays/ov105/calls/Ov105_WH_ChildConnect.c:
+src/overlays/system/ov105_wireless/Ov105_WH_ChildConnect.c:
     complete
     .text       start:0x020bf7f4 end:0x020bf8b8
 
-src/overlays/ov105/calls/Ov105_SetPacketFilter.c:
+src/overlays/system/ov105_wireless/Ov105_SetPacketFilter.c:
     complete
     .text       start:0x020bf8b8 end:0x020bf8c8
 
-src/overlays/ov105/calls/Ov105_WH_SetReceiver.c:
+src/overlays/system/ov105_wireless/Ov105_WH_SetReceiver.c:
     complete
     .text       start:0x020bf8c8 end:0x020bf900
 
-src/overlays/ov105/calls/func_ov105_020bf900.c:
+src/overlays/system/ov105_wireless/func_ov105_020bf900.c:
     complete
     .text       start:0x020bf900 end:0x020bf90c
 
-src/overlays/ov105/calls/Ov105_KickIdleHandler.c:
+src/overlays/system/ov105_wireless/Ov105_KickIdleHandler.c:
     complete
     .text       start:0x020bf90c end:0x020bf928
 
-src/overlays/ov105/calls/Ov105_WH_Finalize.c:
+src/overlays/system/ov105_wireless/Ov105_WH_Finalize.c:
     complete
     .text       start:0x020bf928 end:0x020bf9c0
 
-src/overlays/ov105/calls/Ov105_RunScriptedStepState3.c:
+src/overlays/system/ov105_wireless/Ov105_RunScriptedStepState3.c:
     complete
     .text       start:0x020bf9c0 end:0x020bf9f4
 
-src/overlays/ov105/data/ov105_tables_020bfa00.c:
+src/overlays/system/ov105_wireless/data/ov105_tables_020bfa00.c:
     complete
     .data       start:0x020bfa00 end:0x020bfa20

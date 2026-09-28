@@ -3,54 +3,54 @@
     .data       start:0x020800c0 end:0x02080120 kind:data align:32
     .bss        start:0x02080120 end:0x02080120 kind:bss align:32
 
-src/overlays/ov020/calls/Ov020_InitTripleAndDispatch.c:
+src/overlays/field/ov020/Ov020_InitTripleAndDispatch.c:
     complete
     .text       start:0x0207fa40 end:0x0207fa7a
 
-src/overlays/ov020/calls/Ov020_MarshalAndDispatch.c:
+src/overlays/field/ov020/Ov020_MarshalAndDispatch.c:
     complete
     .text       start:0x0207fa7c end:0x0207fac8
 
-src/overlays/ov020/calls/Ov020_ScriptOpPostScoreAndClearBgPriority.c:
+src/overlays/field/ov020/Ov020_ScriptOpPostScoreAndClearBgPriority.c:
     complete
     .text       start:0x0207fac8 end:0x0207fb04
 
-src/overlays/ov020/calls/Ov020_tailDispatch.c:
+src/overlays/field/ov020/Ov020_tailDispatch.c:
     complete
     .text       start:0x0207fb04 end:0x0207fb14
 
-src/overlays/ov020/calls/Ov020_BindTaskAnimation.c:
+src/overlays/field/ov020/Ov020_BindTaskAnimation.c:
     complete
     .text       start:0x0207fb14 end:0x0207fb8c
 
-src/overlays/ov020/calls/Ov020_OnSceneNodeState.c:
+src/overlays/field/ov020/Ov020_OnSceneNodeState.c:
     complete
     .text       start:0x0207fb8c end:0x0207fbdc
 
-src/overlays/ov020/calls/Ov020_DrawEntity.c:
+src/overlays/field/ov020/Ov020_DrawEntity.c:
     complete
     .text       start:0x0207fbdc end:0x0207fc68
 
-src/overlays/ov020/calls/Ov020_CreateScriptTask.c:
+src/overlays/field/ov020/Ov020_CreateScriptTask.c:
     complete
     .text       start:0x0207fc68 end:0x0207fcd4
 
-src/overlays/ov020/calls/Ov020_CreateEntity.c:
+src/overlays/field/ov020/Ov020_CreateEntity.c:
     complete
     .text       start:0x0207fcd4 end:0x0207fd28
 
-src/overlays/ov020/calls/Ov020_OpenWallView.c:
+src/overlays/field/ov020/Ov020_OpenWallView.c:
     complete
     .text       start:0x0207fd28 end:0x0207fe4c
 
-src/overlays/ov020/calls/Ov020_StepWallView.c:
+src/overlays/field/ov020/Ov020_StepWallView.c:
     complete
     .text       start:0x0207fe4c end:0x020800a0
 
-src/overlays/ov020/data/ov020_pointers_020800c0.c:
+src/overlays/field/ov020/data/ov020_pointers_020800c0.c:
     complete
     .data       start:0x020800c0 end:0x020800d8
 
-src/overlays/ov020/data/ov020_strings_020800d8.c:
+src/overlays/field/ov020/data/ov020_strings_020800d8.c:
     complete
     .data       start:0x020800d8 end:0x02080120

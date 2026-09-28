@@ -4,258 +4,258 @@
     .data       start:0x020ce8c0 end:0x020ce8e0 kind:data align:32
     .bss        start:0x020ce8e0 end:0x020ce8e0 kind:bss align:32
 
-src/overlays/ov197/calls/Ov197_RegisterEntityClass.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov197/calls/Ov197_CreateNamedEntity.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov197/calls/Ov197_QueryAndCopyVecIfHit.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_QueryAndCopyVecIfHit.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc00c
 
-src/overlays/ov197/calls/Ov197_TickSwingArc.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_TickSwingArc.c:
     complete
     .text       start:0x020cc00c end:0x020cc188
 
-src/overlays/ov197/calls/Ov197_InitActor.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_InitActor.c:
     complete
     .text       start:0x020cc188 end:0x020cc450
 
-src/overlays/ov197/calls/Ov197_ReleaseSubObjectsThenNotify.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_ReleaseSubObjectsThenNotify.c:
     complete
     .text       start:0x020cc450 end:0x020cc47c
 
-src/overlays/ov197/calls/Ov197_ResetSetupAndPropagate.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_ResetSetupAndPropagate.c:
     complete
     .text       start:0x020cc47c end:0x020cc4fc
 
-src/overlays/ov197/calls/Ov197_AttachThreeSubNodesThenFinalize.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_AttachThreeSubNodesThenFinalize.c:
     complete
     .text       start:0x020cc4fc end:0x020cc538
 
-src/overlays/ov197/calls/Ov197_AttachThreeSubNodesThenFinalize_2.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_AttachThreeSubNodesThenFinalize_2.c:
     complete
     .text       start:0x020cc538 end:0x020cc574
 
-src/overlays/ov197/calls/Ov197_ReleaseAttachmentsOnStop.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_ReleaseAttachmentsOnStop.c:
     complete
     .text       start:0x020cc574 end:0x020cc644
 
-src/overlays/ov197/calls/Ov197_IssueSpawnCommand.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_IssueSpawnCommand.c:
     complete
     .text       start:0x020cc644 end:0x020cc764
 
-src/overlays/ov197/calls/Ov197_Model_ReapplyTrack0.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020cc764 end:0x020cc79c
 
-src/overlays/ov197/calls/Ov197_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020cc79c end:0x020cc7f8
 
-src/overlays/ov197/calls/Ov197_ResolveHitReaction.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_ResolveHitReaction.c:
     complete
     .text       start:0x020cc7f8 end:0x020cc958
 
-src/overlays/ov197/auto/Ov197_RequestSubState7IfNotCurrent.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_RequestSubState7IfNotCurrent.c:
     complete
     .text       start:0x020cc958 end:0x020cc984
 
-src/overlays/ov197/auto/Ov197_RequestSubState8IfIdle.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_RequestSubState8IfIdle.c:
     complete
     .text       start:0x020cc984 end:0x020cc9b4
 
-src/overlays/ov197/calls/Ov197_SeedDefaultPoseAndAdvance.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_SeedDefaultPoseAndAdvance.c:
     complete
     .text       start:0x020cc9b4 end:0x020cca1c
 
-src/overlays/ov197/calls/Ov197_FireThreeWaySpread.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_FireThreeWaySpread.c:
     complete
     .text       start:0x020cca1c end:0x020ccb24
 
-src/overlays/ov197/calls/Ov197_BuildHeadingRotation.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_BuildHeadingRotation.c:
     complete
     .text       start:0x020ccb24 end:0x020ccc24
 
-src/overlays/ov197/calls/Ov197_InitReactionSlots.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_InitReactionSlots.c:
     complete
     .text       start:0x020ccc24 end:0x020cccdc
 
-src/overlays/ov197/calls/Ov197_DispatchSubStateByte.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_DispatchSubStateByte.c:
     complete
     .text       start:0x020cccdc end:0x020cce64
 
-src/overlays/ov197/calls/Ov197_CommitTrailTransform.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_CommitTrailTransform.c:
     complete
     .text       start:0x020cce64 end:0x020ccf48
 
-src/overlays/ov197/calls/Ov197_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccf48 end:0x020ccfb0
 
-src/overlays/ov197/calls/Ov197_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020ccfb0 end:0x020ccfec
 
-src/overlays/ov197/calls/Ov197_EnterAttackFacingTarget.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_EnterAttackFacingTarget.c:
     complete
     .text       start:0x020ccfec end:0x020cd138
 
-src/overlays/ov197/calls/Ov197_ClearMoveTimerAndFire.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_ClearMoveTimerAndFire.c:
     complete
     .text       start:0x020cd138 end:0x020cd200
 
-src/overlays/ov197/calls/Ov197_AimAtTargetAfterWindup.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_AimAtTargetAfterWindup.c:
     complete
     .text       start:0x020cd200 end:0x020cd320
 
-src/overlays/ov197/calls/Ov197_AiEnterHold.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_AiEnterHold.c:
     complete
     .text       start:0x020cd320 end:0x020cd35c
 
-src/overlays/ov197/calls/Ov197_TickHoldTimer.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_TickHoldTimer.c:
     complete
     .text       start:0x020cd35c end:0x020cd3c0
 
-src/overlays/ov197/calls/Ov197_BeginMoveOrRequestState2.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_BeginMoveOrRequestState2.c:
     complete
     .text       start:0x020cd3c0 end:0x020cd498
 
-src/overlays/ov197/calls/Ov197_ApplyTransformThenReseedIfFree.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_ApplyTransformThenReseedIfFree.c:
     complete
     .text       start:0x020cd498 end:0x020cd500
 
-src/overlays/ov197/calls/Ov197_StepChargeUntilSettled.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_StepChargeUntilSettled.c:
     complete
     .text       start:0x020cd500 end:0x020cd5e4
 
-src/overlays/ov197/calls/Ov197_PointHeadingCheckPose.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_PointHeadingCheckPose.c:
     complete
     .text       start:0x020cd5e4 end:0x020cd65c
 
-src/overlays/ov197/calls/Ov197_InvokeWithVec3ThenSetSubState5.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_InvokeWithVec3ThenSetSubState5.c:
     complete
     .text       start:0x020cd65c end:0x020cd6b0
 
-src/overlays/ov197/calls/Ov197_SpawnTrailOrFail.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_SpawnTrailOrFail.c:
     complete
     .text       start:0x020cd6b0 end:0x020cd788
 
-src/overlays/ov197/calls/Ov197_SteerTrailThenAdvance.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_SteerTrailThenAdvance.c:
     complete
     .text       start:0x020cd788 end:0x020cd868
 
-src/overlays/ov197/calls/Ov197_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd868 end:0x020cd89c
 
-src/overlays/ov197/calls/Ov197_SetPose5ThenAdvanceSlot.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_SetPose5ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd89c end:0x020cd8d0
 
-src/overlays/ov197/calls/Ov197_CopyScaleVec3ThenAdvanceSlot.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_CopyScaleVec3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd8d0 end:0x020cd92c
 
-src/overlays/ov197/calls/Ov197_Action4B_Enter.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_Action4B_Enter.c:
     complete
     .text       start:0x020cd92c end:0x020cd9f0
 
-src/overlays/ov197/calls/Ov197_AiStep_QueueAction0.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_AiStep_QueueAction0.c:
     complete
     .text       start:0x020cd9f0 end:0x020cda10
 
-src/overlays/ov197/calls/Ov197_BeginGuardPose.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_BeginGuardPose.c:
     complete
     .text       start:0x020cda10 end:0x020cdab0
 
-src/overlays/ov197/calls/Ov197_TimerGateHw60FlipThenAdvance.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_TimerGateHw60FlipThenAdvance.c:
     complete
     .text       start:0x020cdab0 end:0x020cdb44
 
-src/overlays/ov197/calls/Ov197_AiEnterFaceTarget.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_AiEnterFaceTarget.c:
     complete
     .text       start:0x020cdb44 end:0x020cdb84
 
-src/overlays/ov197/calls/Ov197_FaceTargetThenIdle.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_FaceTargetThenIdle.c:
     complete
     .text       start:0x020cdb84 end:0x020cdc0c
 
-src/overlays/ov197/calls/Ov197_FaceTargetCheckReach.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_FaceTargetCheckReach.c:
     complete
     .text       start:0x020cdc0c end:0x020cdc90
 
-src/overlays/ov197/calls/Ov197_RunPreDispatchHook.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_RunPreDispatchHook.c:
     complete
     .text       start:0x020cdc90 end:0x020cdcf4
 
-src/overlays/ov197/calls/Ov197_AllocLinkChild3a4.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_AllocLinkChild3a4.c:
     complete
     .text       start:0x020cdcf4 end:0x020cdd28
 
-src/overlays/ov197/calls/Ov197_InitSubActor.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_InitSubActor.c:
     complete
     .text       start:0x020cdd28 end:0x020cdef4
 
-src/overlays/ov197/calls/Ov197_Destroy.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_Destroy.c:
     complete
     .text       start:0x020cdef4 end:0x020cdf2c
 
-src/overlays/ov197/calls/Ov197_TickAndSyncModelXform.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_TickAndSyncModelXform.c:
     complete
     .text       start:0x020cdf2c end:0x020cdf64
 
-src/overlays/ov197/calls/Ov197_PlaceNodeFromCommand.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_PlaceNodeFromCommand.c:
     complete
     .text       start:0x020cdf64 end:0x020ce05c
 
-src/overlays/ov197/calls/Ov197_SetSubStateAndScaleVec.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_SetSubStateAndScaleVec.c:
     complete
     .text       start:0x020ce05c end:0x020ce090
 
-src/overlays/ov197/calls/Ov197_Event_ReverseVelocityOnce.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_Event_ReverseVelocityOnce.c:
     complete
     .text       start:0x020ce090 end:0x020ce0f4
 
-src/overlays/ov197/calls/Ov197_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020ce0f4 end:0x020ce140
 
-src/overlays/ov197/calls/Ov197_stateInitClearSlots.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_stateInitClearSlots.c:
     complete
     .text       start:0x020ce140 end:0x020ce1e8
 
-src/overlays/ov197/calls/Ov197_dispatchByStatusByteReset.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020ce1e8 end:0x020ce260
 
-src/overlays/ov197/calls/Ov197_PublishVelocity_Step.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_PublishVelocity_Step.c:
     complete
     .text       start:0x020ce260 end:0x020ce2c4
 
-src/overlays/ov197/calls/Ov197_ResetPoseAndFlags.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_ResetPoseAndFlags.c:
     complete
     .text       start:0x020ce2c4 end:0x020ce380
 
-src/overlays/ov197/auto/Ov197_ResetPoseIdleStep.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_ResetPoseIdleStep.c:
     complete
     .text       start:0x020ce380 end:0x020ce384
 
-src/overlays/ov197/calls/Ov197_ResetOrientationAndAdvance.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_ResetOrientationAndAdvance.c:
     complete
     .text       start:0x020ce384 end:0x020ce410
 
-src/overlays/ov197/calls/Ov197_SeekTarget.c:
+src/overlays/enemies/ov197_enemy_25/Ov197_SeekTarget.c:
     complete
     .text       start:0x020ce410 end:0x020ce894
 
-src/overlays/ov197/data/ov197_strings_020ce8c0.c:
+src/overlays/enemies/ov197_enemy_25/data/ov197_strings_020ce8c0.c:
     complete
     .data       start:0x020ce8c0 end:0x020ce8e0
 
-src/overlays/ov197/data/ov197_tables_020ce894.c:
+src/overlays/enemies/ov197_enemy_25/data/ov197_tables_020ce894.c:
     complete
     .rodata     start:0x020ce894 end:0x020ce8a4

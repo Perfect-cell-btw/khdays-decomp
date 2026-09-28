@@ -361,12 +361,12 @@ class DataDelinkTests(unittest.TestCase):
 
     def test_code_and_data_for_one_source_share_one_file_block(self):
         code = (
-            "src/overlays/ov008/calls/Ov008_SelectMenuGroupAndDrawCaption.c:\n"
+            "src/overlays/scenes/ov008_camp_menu/Ov008_SelectMenuGroupAndDrawCaption.c:\n"
             "    complete\n"
             "    .text       start:0x02058df0 end:0x020590b4\n"
         )
         data = (
-            "src/overlays/ov008/calls/Ov008_SelectMenuGroupAndDrawCaption.c:\n"
+            "src/overlays/scenes/ov008_camp_menu/Ov008_SelectMenuGroupAndDrawCaption.c:\n"
             "    complete\n"
             "    .rodata     start:0x0208e8fc end:0x0208e958\n"
         )

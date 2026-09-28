@@ -4,146 +4,146 @@
     .data       start:0x020b7420 end:0x020b7500 kind:data align:32
     .bss        start:0x020b7500 end:0x020b7520 kind:bss align:32
 
-src/overlays/ov068/calls/func_ov068_020b5a20.c:
+src/overlays/players/ov068_player_roxas_dual_2/func_ov068_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov068/calls/Ov068_ClassCtor.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_ClassCtor.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a9c
 
-src/overlays/ov068/calls/Ov068_ClassTeardown.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_ClassTeardown.c:
     complete
     .text       start:0x020b5a9c end:0x020b5afc
 
-src/overlays/ov068/calls/Ov068_Boot.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_Boot.c:
     complete
     .text       start:0x020b5afc end:0x020b5d38
 
-src/overlays/ov068/calls/Ov068_ReloadTwoSceneResources.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_ReloadTwoSceneResources.c:
     complete
     .text       start:0x020b5d38 end:0x020b5dec
 
-src/overlays/ov068/auto/Ov068_MapSlotKindToAnim.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5dec end:0x020b5df0
 
-src/overlays/ov068/calls/Ov068_HandleMsgAndFaceHeading.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_HandleMsgAndFaceHeading.c:
     complete
     .text       start:0x020b5df0 end:0x020b5f28
 
-src/overlays/ov068/calls/Ov068_ApplyModeChange.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_ApplyModeChange.c:
     complete
     .text       start:0x020b5f28 end:0x020b6084
 
-src/overlays/ov068/calls/Ov068_UpdateAttachmentAndChannels.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_UpdateAttachmentAndChannels.c:
     complete
     .text       start:0x020b6084 end:0x020b6170
 
-src/overlays/ov068/calls/Ov068_InvokeSubHandlerPairWithGlobalBuffer.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b6170 end:0x020b61a8
 
-src/overlays/ov068/calls/Ov068_PollHitAndFlagLanded.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_PollHitAndFlagLanded.c:
     complete
     .text       start:0x020b61a8 end:0x020b625c
 
-src/overlays/ov068/calls/Ov068_InitEffectSlots.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_InitEffectSlots.c:
     complete
     .text       start:0x020b625c end:0x020b62ec
 
-src/overlays/ov068/calls/Ov068_ReleaseChannelAndFreeSubObject.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_ReleaseChannelAndFreeSubObject.c:
     complete
     .text       start:0x020b62ec end:0x020b632c
 
-src/overlays/ov068/calls/Ov068_AdvancePoseState.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_AdvancePoseState.c:
     complete
     .text       start:0x020b632c end:0x020b63ac
 
-src/overlays/ov068/calls/Ov068_StepEffectSlot.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_StepEffectSlot.c:
     complete
     .text       start:0x020b63ac end:0x020b6600
 
-src/overlays/ov068/calls/Ov068_PlaceTrailMarker.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_PlaceTrailMarker.c:
     complete
     .text       start:0x020b6600 end:0x020b671c
 
-src/overlays/ov068/calls/Ov068_InitGlobalChannelSlot.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_InitGlobalChannelSlot.c:
     complete
     .text       start:0x020b671c end:0x020b6754
 
-src/overlays/ov068/calls/Ov068_CreateSubObject.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_CreateSubObject.c:
     complete
     .text       start:0x020b6754 end:0x020b686c
 
-src/overlays/ov068/calls/Ov068_BindRig.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_BindRig.c:
     complete
     .text       start:0x020b686c end:0x020b68c4
 
-src/overlays/ov068/calls/Ov068_SpawnNextEffect.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_SpawnNextEffect.c:
     complete
     .text       start:0x020b68c4 end:0x020b6a7c
 
-src/overlays/ov068/calls/Ov068_SpawnEffectWithVariant.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_SpawnEffectWithVariant.c:
     complete
     .text       start:0x020b6a7c end:0x020b6b04
 
-src/overlays/ov068/calls/Ov068_ResolveHitPositionRaised.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_ResolveHitPositionRaised.c:
     complete
     .text       start:0x020b6b04 end:0x020b6ba8
 
-src/overlays/ov068/calls/Ov068_UpdateParts.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_UpdateParts.c:
     complete
     .text       start:0x020b6ba8 end:0x020b6c64
 
-src/overlays/ov068/calls/Ov068_TickThrowArcThenLand.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_TickThrowArcThenLand.c:
     complete
     .text       start:0x020b6c64 end:0x020b6d18
 
-src/overlays/ov068/calls/Ov068_BuildRenderHandles.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_BuildRenderHandles.c:
     complete
     .text       start:0x020b6d18 end:0x020b6dd0
 
-src/overlays/ov068/calls/Ov068_StoreArgToGlobalSlot22AndForward.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_StoreArgToGlobalSlot22AndForward.c:
     complete
     .text       start:0x020b6dd0 end:0x020b6e00
 
-src/overlays/ov068/calls/Ov068_DescentStep.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_DescentStep.c:
     complete
     .text       start:0x020b6e00 end:0x020b6fe0
 
-src/overlays/ov068/calls/Ov068_HoverStep.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_HoverStep.c:
     complete
     .text       start:0x020b6fe0 end:0x020b72dc
 
-src/overlays/ov068/calls/Ov068_InvokeWithDataTable.c:
+src/overlays/players/ov068_player_roxas_dual_2/Ov068_InvokeWithDataTable.c:
     complete
     .text       start:0x020b72dc end:0x020b72f4
 
-src/overlays/ov068/data/ov068_class_020b7434.c:
+src/overlays/players/ov068_player_roxas_dual_2/data/ov068_class_020b7434.c:
     complete
     .data       start:0x020b7434 end:0x020b7448
 
-src/overlays/ov068/data/ov068_ctorargs_020b7344.c:
+src/overlays/players/ov068_player_roxas_dual_2/data/ov068_ctorargs_020b7344.c:
     complete
     .rodata     start:0x020b7344 end:0x020b7358
 
-src/overlays/ov068/data/ov068_pointers_020b7448.c:
+src/overlays/players/ov068_player_roxas_dual_2/data/ov068_pointers_020b7448.c:
     complete
     .data       start:0x020b7448 end:0x020b745c
 
-src/overlays/ov068/data/ov068_strings_020b72f4.c:
+src/overlays/players/ov068_player_roxas_dual_2/data/ov068_strings_020b72f4.c:
     complete
     .rodata     start:0x020b72f4 end:0x020b7344
 
-src/overlays/ov068/data/ov068_strings_020b7420.c:
+src/overlays/players/ov068_player_roxas_dual_2/data/ov068_strings_020b7420.c:
     complete
     .data       start:0x020b7420 end:0x020b7434
 
-src/overlays/ov068/data/ov068_strings_020b745c.c:
+src/overlays/players/ov068_player_roxas_dual_2/data/ov068_strings_020b745c.c:
     complete
     .data       start:0x020b745c end:0x020b7500
 
-src/overlays/ov068/data/ov068_tables_020b7358.c:
+src/overlays/players/ov068_player_roxas_dual_2/data/ov068_tables_020b7358.c:
     complete
     .rodata     start:0x020b7358 end:0x020b7418

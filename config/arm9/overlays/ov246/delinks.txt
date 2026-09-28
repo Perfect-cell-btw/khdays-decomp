@@ -4,266 +4,266 @@
     .data       start:0x020d3120 end:0x020d3140 kind:data align:32
     .bss        start:0x020d3140 end:0x020d3140 kind:bss align:32
 
-src/overlays/ov246/calls/Ov246_RegisterEntityClass.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov246/calls/Ov246_CreateNamedEntity.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov246/calls/Ov246_Construct.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_Construct.c:
     complete
     .text       start:0x020cfc04 end:0x020cfe84
 
-src/overlays/ov246/calls/Ov246_Destroy.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_Destroy.c:
     complete
     .text       start:0x020cfe84 end:0x020cfecc
 
-src/overlays/ov246/calls/Ov246_RebindClip.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_RebindClip.c:
     complete
     .text       start:0x020cfecc end:0x020cff18
 
-src/overlays/ov246/calls/Ov246_PlayAnimSpawnBody.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_PlayAnimSpawnBody.c:
     complete
     .text       start:0x020cff18 end:0x020cffd4
 
-src/overlays/ov246/calls/Ov246_HandleSpawnMessage.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_HandleSpawnMessage.c:
     complete
     .text       start:0x020cffd4 end:0x020d0174
 
-src/overlays/ov246/calls/Ov246_ForwardEventToChild.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_ForwardEventToChild.c:
     complete
     .text       start:0x020d0174 end:0x020d019c
 
-src/overlays/ov246/calls/Ov246_NotifyPartThenBase.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_NotifyPartThenBase.c:
     complete
     .text       start:0x020d019c end:0x020d01c4
 
-src/overlays/ov246/calls/Ov246_TickHandler.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_TickHandler.c:
     complete
     .text       start:0x020d01c4 end:0x020d0360
 
-src/overlays/ov246/calls/Ov246_CreateAiTask.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_CreateAiTask.c:
     complete
     .text       start:0x020d0360 end:0x020d03bc
 
-src/overlays/ov246/calls/Ov246_HandleHit.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_HandleHit.c:
     complete
     .text       start:0x020d03bc end:0x020d05d0
 
-src/overlays/ov246/auto/Ov246_RequestState8.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_RequestState8.c:
     complete
     .text       start:0x020d05d0 end:0x020d0614
 
-src/overlays/ov246/calls/Ov246_PickApproachDir.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_PickApproachDir.c:
     complete
     .text       start:0x020d0614 end:0x020d07b0
 
-src/overlays/ov246/calls/Ov246_BeginPhasedReaction.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_BeginPhasedReaction.c:
     complete
     .text       start:0x020d07b0 end:0x020d0874
 
-src/overlays/ov246/calls/Ov246_AiDispatchAction.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiDispatchAction.c:
     complete
     .text       start:0x020d0874 end:0x020d09fc
 
-src/overlays/ov246/calls/Ov246_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020d09fc end:0x020d0ab0
 
-src/overlays/ov246/calls/Ov246_SetHwFlagsAndDispatch.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_SetHwFlagsAndDispatch.c:
     complete
     .text       start:0x020d0ab0 end:0x020d0b18
 
-src/overlays/ov246/calls/Ov246_PickRandomOffsetThenAdvanceSlot.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_PickRandomOffsetThenAdvanceSlot.c:
     complete
     .text       start:0x020d0b18 end:0x020d0b80
 
-src/overlays/ov246/calls/Ov246_EnterSpawnEffect.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_EnterSpawnEffect.c:
     complete
     .text       start:0x020d0b80 end:0x020d0c48
 
-src/overlays/ov246/calls/Ov246_Reaction_ChargeThenAim.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_Reaction_ChargeThenAim.c:
     complete
     .text       start:0x020d0c48 end:0x020d0d10
 
-src/overlays/ov246/calls/Ov246_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d0d10 end:0x020d0d44
 
-src/overlays/ov246/calls/Ov246_AiEnterReach.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiEnterReach.c:
     complete
     .text       start:0x020d0d44 end:0x020d0d80
 
-src/overlays/ov246/calls/Ov246_AiMeasureTarget.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiMeasureTarget.c:
     complete
     .text       start:0x020d0d80 end:0x020d0e0c
 
-src/overlays/ov246/calls/Ov246_AimAtTargetAndDispatch.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020d0e0c end:0x020d0edc
 
-src/overlays/ov246/calls/Ov246_StartLeapMotion.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_StartLeapMotion.c:
     complete
     .text       start:0x020d0edc end:0x020d1018
 
-src/overlays/ov246/calls/Ov246_StepLeapMotion.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_StepLeapMotion.c:
     complete
     .text       start:0x020d1018 end:0x020d105c
 
-src/overlays/ov246/calls/Ov246_AiJumpRiseTick.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiJumpRiseTick.c:
     complete
     .text       start:0x020d105c end:0x020d1118
 
-src/overlays/ov246/calls/Ov246_AiJumpFallTick.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiJumpFallTick.c:
     complete
     .text       start:0x020d1118 end:0x020d11a8
 
-src/overlays/ov246/calls/Ov246_AiLandPickAction.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiLandPickAction.c:
     complete
     .text       start:0x020d11a8 end:0x020d1214
 
-src/overlays/ov246/calls/Ov246_AiEnterTurnToTarget.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiEnterTurnToTarget.c:
     complete
     .text       start:0x020d1214 end:0x020d1284
 
-src/overlays/ov246/calls/Ov246_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020d1284 end:0x020d1300
 
-src/overlays/ov246/calls/Ov246_AiEnterApproach.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiEnterApproach.c:
     complete
     .text       start:0x020d1300 end:0x020d13d8
 
-src/overlays/ov246/calls/Ov246_ArmMovePhase2.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_ArmMovePhase2.c:
     complete
     .text       start:0x020d13d8 end:0x020d14a4
 
-src/overlays/ov246/calls/Ov246_AttackWaitTick.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AttackWaitTick.c:
     complete
     .text       start:0x020d14a4 end:0x020d15ec
 
-src/overlays/ov246/calls/Ov246_Reaction_AimAtTargetAndDispatch.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_Reaction_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020d15ec end:0x020d16b0
 
-src/overlays/ov246/calls/Ov246_ScheduleFollowUpMove.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_ScheduleFollowUpMove.c:
     complete
     .text       start:0x020d16b0 end:0x020d178c
 
-src/overlays/ov246/calls/Ov246_AimedAttackWaitTick.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AimedAttackWaitTick.c:
     complete
     .text       start:0x020d178c end:0x020d1960
 
-src/overlays/ov246/calls/Ov246_SpawnEffect4aReconfigureFlagsB.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_SpawnEffect4aReconfigureFlagsB.c:
     complete
     .text       start:0x020d1960 end:0x020d1a28
 
-src/overlays/ov246/calls/Ov246_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d1a28 end:0x020d1adc
 
-src/overlays/ov246/calls/Ov246_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d1adc end:0x020d1b1c
 
-src/overlays/ov246/calls/Ov246_Actor_New.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_Actor_New.c:
     complete
     .text       start:0x020d1b1c end:0x020d1b50
 
-src/overlays/ov246/calls/Ov246_ConstructItem.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_ConstructItem.c:
     complete
     .text       start:0x020d1b50 end:0x020d1cf0
 
-src/overlays/ov246/calls/Ov246_SubObject_Destroy.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_SubObject_Destroy.c:
     complete
     .text       start:0x020d1cf0 end:0x020d1d20
 
-src/overlays/ov246/calls/Ov246_TickAndSyncModelXform.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d1d20 end:0x020d1d58
 
-src/overlays/ov246/calls/Ov246_HandleItemMessage.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_HandleItemMessage.c:
     complete
     .text       start:0x020d1d58 end:0x020d1dd0
 
-src/overlays/ov246/calls/Ov246_HandleBounce.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_HandleBounce.c:
     complete
     .text       start:0x020d1dd0 end:0x020d1e2c
 
-src/overlays/ov246/calls/Ov246_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d1e2c end:0x020d1e78
 
-src/overlays/ov246/calls/Ov246_stateInitClearSlots.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_stateInitClearSlots.c:
     complete
     .text       start:0x020d1e78 end:0x020d1f20
 
-src/overlays/ov246/calls/Ov246_dispatchByStatusByte.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_dispatchByStatusByte.c:
     complete
     .text       start:0x020d1f20 end:0x020d1f98
 
-src/overlays/ov246/auto/Ov246_AiApplyMoveVector.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiApplyMoveVector.c:
     complete
     .text       start:0x020d1f98 end:0x020d1fb0
 
-src/overlays/ov246/calls/Ov246_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d1fb0 end:0x020d2060
 
-src/overlays/ov246/calls/Ov246_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d2060 end:0x020d2098
 
-src/overlays/ov246/auto/Ov246_ArmDashAndDispatch.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_ArmDashAndDispatch.c:
     complete
     .text       start:0x020d2098 end:0x020d216c
 
-src/overlays/ov246/calls/Ov246_SweepStrikeTick.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_SweepStrikeTick.c:
     complete
     .text       start:0x020d216c end:0x020d2584
 
-src/overlays/ov246/calls/Ov246_SendPositionMessage.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_SendPositionMessage.c:
     complete
     .text       start:0x020d2584 end:0x020d268c
 
-src/overlays/ov246/calls/Ov246_SpawnAndInitRegistryEntry.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_SpawnAndInitRegistryEntry.c:
     complete
     .text       start:0x020d268c end:0x020d2764
 
-src/overlays/ov246/calls/Ov246_ProbeGround.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_ProbeGround.c:
     complete
     .text       start:0x020d2764 end:0x020d2958
 
-src/overlays/ov246/calls/Ov246_Reaction_ResetTwoSubObjects.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_Reaction_ResetTwoSubObjects.c:
     complete
     .text       start:0x020d2958 end:0x020d29fc
 
-src/overlays/ov246/auto/Ov246_TaskTeardown_FlagParts.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_TaskTeardown_FlagParts.c:
     complete
     .text       start:0x020d29fc end:0x020d2a34
 
-src/overlays/ov246/calls/Ov246_AiDescentProbe_2.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiDescentProbe_2.c:
     complete
     .text       start:0x020d2a34 end:0x020d2b8c
 
-src/overlays/ov246/calls/Ov246_AiDescentProbe.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_AiDescentProbe.c:
     complete
     .text       start:0x020d2b8c end:0x020d2e50
 
-src/overlays/ov246/calls/Ov246_EnterGroundDrop.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_EnterGroundDrop.c:
     complete
     .text       start:0x020d2e50 end:0x020d2f4c
 
-src/overlays/ov246/calls/Ov246_GroundDropTick.c:
+src/overlays/enemies/ov246_enemy_48/Ov246_GroundDropTick.c:
     complete
     .text       start:0x020d2f4c end:0x020d30c0
 
-src/overlays/ov246/data/ov246_strings_020d3120.c:
+src/overlays/enemies/ov246_enemy_48/data/ov246_strings_020d3120.c:
     complete
     .data       start:0x020d3120 end:0x020d3140
 
-src/overlays/ov246/data/ov246_tables_020d30c0.c:
+src/overlays/enemies/ov246_enemy_48/data/ov246_tables_020d30c0.c:
     complete
     .rodata     start:0x020d30c0 end:0x020d3114

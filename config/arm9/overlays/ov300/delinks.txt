@@ -3,18 +3,18 @@
     .data       start:0x020cbfe0 end:0x020cc000 kind:data align:32
     .bss        start:0x020cc000 end:0x020cc000 kind:bss align:32
 
-src/overlays/ov300/calls/Ov300_RegisterEntityClass.c:
+src/overlays/enemies/ov300_enemy_74/Ov300_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov300/calls/Ov300_CreateNamedEntity.c:
+src/overlays/enemies/ov300_enemy_74/Ov300_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov300/auto/Ov300_ConstructNoOp.c:
+src/overlays/enemies/ov300_enemy_74/Ov300_ConstructNoOp.c:
     complete
     .text       start:0x020cbfc4 end:0x020cbfc8
 
-src/overlays/ov300/data/ov300_strings_020cbfe0.c:
+src/overlays/enemies/ov300_enemy_74/data/ov300_strings_020cbfe0.c:
     complete
     .data       start:0x020cbfe0 end:0x020cc000

@@ -4,226 +4,226 @@
     .data       start:0x020d72e0 end:0x020d7300 kind:data align:32
     .bss        start:0x020d7300 end:0x020d7300 kind:bss align:32
 
-src/overlays/ov205/calls/Ov205_RegisterEntityClass.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov205/calls/Ov205_CreateNamedEntity.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov205/calls/Ov205_Construct.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_Construct.c:
     complete
     .text       start:0x020d3844 end:0x020d3a48
 
-src/overlays/ov205/calls/Ov205_ReleaseSubObjectsAndListThenNotify.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020d3a48 end:0x020d3a90
 
-src/overlays/ov205/calls/Ov205_TickAndSyncChildren.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_TickAndSyncChildren.c:
     complete
     .text       start:0x020d3a90 end:0x020d3b00
 
-src/overlays/ov205/calls/Ov205_Model_SetTrack0.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_Model_SetTrack0.c:
     complete
     .text       start:0x020d3b00 end:0x020d3b30
 
-src/overlays/ov205/calls/Ov205_OnMessage.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_OnMessage.c:
     complete
     .text       start:0x020d3b30 end:0x020d3d40
 
-src/overlays/ov205/calls/Ov205_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d3d40 end:0x020d3d8c
 
-src/overlays/ov205/calls/Ov205_OnHit.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_OnHit.c:
     complete
     .text       start:0x020d3d8c end:0x020d3ff4
 
-src/overlays/ov205/auto/Ov205_RequestSubState10IfNotState9.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_RequestSubState10IfNotState9.c:
     complete
     .text       start:0x020d3ff4 end:0x020d4034
 
-src/overlays/ov205/calls/Ov205_EnterAimStateInstallCallbacks.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_EnterAimStateInstallCallbacks.c:
     complete
     .text       start:0x020d4034 end:0x020d4108
 
-src/overlays/ov205/calls/Ov205_DispatchSubStateByte.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_DispatchSubStateByte.c:
     complete
     .text       start:0x020d4108 end:0x020d42dc
 
-src/overlays/ov205/calls/Ov205_AdvanceMotionPublish.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_AdvanceMotionPublish.c:
     complete
     .text       start:0x020d42dc end:0x020d4390
 
-src/overlays/ov205/calls/Ov205_TestSubObjectHelperNonzero.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_TestSubObjectHelperNonzero.c:
     complete
     .text       start:0x020d4390 end:0x020d43d0
 
-src/overlays/ov205/calls/Ov205_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d43d0 end:0x020d4438
 
-src/overlays/ov205/calls/Ov205_RerollTimerIfHitFlag.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_RerollTimerIfHitFlag.c:
     complete
     .text       start:0x020d4438 end:0x020d44a0
 
-src/overlays/ov205/calls/Ov205_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020d44a0 end:0x020d456c
 
-src/overlays/ov205/calls/Ov205_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d456c end:0x020d4634
 
-src/overlays/ov205/calls/Ov205_AiStep_QueueAction2OnFlag28Clear.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_AiStep_QueueAction2OnFlag28Clear.c:
     complete
     .text       start:0x020d4634 end:0x020d4668
 
-src/overlays/ov205/calls/Ov205_stDiv5Store.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_stDiv5Store.c:
     complete
     .text       start:0x020d4668 end:0x020d46c4
 
-src/overlays/ov205/calls/Ov205_ApproachDecision.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_ApproachDecision.c:
     complete
     .text       start:0x020d46c4 end:0x020d4960
 
-src/overlays/ov205/calls/Ov205_AiEnterChase.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_AiEnterChase.c:
     complete
     .text       start:0x020d4960 end:0x020d49f4
 
-src/overlays/ov205/calls/Ov205_BeginApproach.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_BeginApproach.c:
     complete
     .text       start:0x020d49f4 end:0x020d4b6c
 
-src/overlays/ov205/calls/Ov205_ApproachTick.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_ApproachTick.c:
     complete
     .text       start:0x020d4b6c end:0x020d4c84
 
-src/overlays/ov205/calls/Ov205_stateAcquireTransform.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_stateAcquireTransform.c:
     complete
     .text       start:0x020d4c84 end:0x020d4d70
 
-src/overlays/ov205/calls/Ov205_AiStep_QueueAction2OnFlag28Clear_2.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_AiStep_QueueAction2OnFlag28Clear_2.c:
     complete
     .text       start:0x020d4d70 end:0x020d4da4
 
-src/overlays/ov205/calls/Ov205_BeginPose5Aim.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_BeginPose5Aim.c:
     complete
     .text       start:0x020d4da4 end:0x020d4e3c
 
-src/overlays/ov205/calls/Ov205_CopyScaleVec3GuardedThenAdvance.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_CopyScaleVec3GuardedThenAdvance.c:
     complete
     .text       start:0x020d4e3c end:0x020d4eb8
 
-src/overlays/ov205/calls/Ov205_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d4eb8 end:0x020d4f80
 
-src/overlays/ov205/calls/Ov205_AiEnterAnim6WithSpeed.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_AiEnterAnim6WithSpeed.c:
     complete
     .text       start:0x020d4f80 end:0x020d4ff0
 
-src/overlays/ov205/calls/Ov205_TransformScaleAdvanceIfZero.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_TransformScaleAdvanceIfZero.c:
     complete
     .text       start:0x020d4ff0 end:0x020d5060
 
-src/overlays/ov205/calls/Ov205_Action6IfHitFlagsSet.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_Action6IfHitFlagsSet.c:
     complete
     .text       start:0x020d5060 end:0x020d50e0
 
-src/overlays/ov205/calls/Ov205_TransformScaleThenAdvance.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_TransformScaleThenAdvance.c:
     complete
     .text       start:0x020d50e0 end:0x020d5158
 
-src/overlays/ov205/calls/Ov205_Action7IfHitFlagsSet.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_Action7IfHitFlagsSet.c:
     complete
     .text       start:0x020d5158 end:0x020d51e4
 
-src/overlays/ov205/calls/Ov205_SweepTick.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_SweepTick.c:
     complete
     .text       start:0x020d51e4 end:0x020d54cc
 
-src/overlays/ov205/calls/Ov205_stateSetFlagEffect.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_stateSetFlagEffect.c:
     complete
     .text       start:0x020d54cc end:0x020d5570
 
-src/overlays/ov205/calls/Ov205_SlamTick.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_SlamTick.c:
     complete
     .text       start:0x020d5570 end:0x020d5994
 
-src/overlays/ov205/calls/Ov205_SetPose9ThenAdvanceSlot.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_SetPose9ThenAdvanceSlot.c:
     complete
     .text       start:0x020d5994 end:0x020d59c8
 
-src/overlays/ov205/calls/Ov205_GuardField28Pose10ClearAdvance.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_GuardField28Pose10ClearAdvance.c:
     complete
     .text       start:0x020d59c8 end:0x020d5a14
 
-src/overlays/ov205/calls/Ov205_AiWaitThenAnim11.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_AiWaitThenAnim11.c:
     complete
     .text       start:0x020d5a14 end:0x020d5a60
 
-src/overlays/ov205/calls/Ov205_AiStep_QueueAction2OnFlag28Clear_3.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_AiStep_QueueAction2OnFlag28Clear_3.c:
     complete
     .text       start:0x020d5a60 end:0x020d5a94
 
-src/overlays/ov205/calls/Ov205_EnterBounce.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_EnterBounce.c:
     complete
     .text       start:0x020d5a94 end:0x020d5b54
 
-src/overlays/ov205/calls/Ov205_BounceTick.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_BounceTick.c:
     complete
     .text       start:0x020d5b54 end:0x020d6368
 
-src/overlays/ov205/calls/Ov205_AiStep_QueueAction2OnFlag28Clear_4.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_AiStep_QueueAction2OnFlag28Clear_4.c:
     complete
     .text       start:0x020d6368 end:0x020d639c
 
-src/overlays/ov205/calls/Ov205_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d639c end:0x020d6450
 
-src/overlays/ov205/calls/Ov205_AiEnterAnim13.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_AiEnterAnim13.c:
     complete
     .text       start:0x020d6450 end:0x020d6490
 
-src/overlays/ov205/calls/Ov205_TimedAction6ThenReset.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_TimedAction6ThenReset.c:
     complete
     .text       start:0x020d6490 end:0x020d6544
 
-src/overlays/ov205/calls/Ov205_ChargeTick1.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_ChargeTick1.c:
     complete
     .text       start:0x020d6544 end:0x020d6794
 
-src/overlays/ov205/calls/Ov205_ChargeTick2.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_ChargeTick2.c:
     complete
     .text       start:0x020d6794 end:0x020d69e4
 
-src/overlays/ov205/calls/Ov205_ChargeTick3.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_ChargeTick3.c:
     complete
     .text       start:0x020d69e4 end:0x020d6c34
 
-src/overlays/ov205/calls/Ov205_ChargeAdvance.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_ChargeAdvance.c:
     complete
     .text       start:0x020d6c34 end:0x020d6d20
 
-src/overlays/ov205/calls/Ov205_AiStep_QueueAction2OnFlag28Clear_5.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_AiStep_QueueAction2OnFlag28Clear_5.c:
     complete
     .text       start:0x020d6d20 end:0x020d6d54
 
-src/overlays/ov205/calls/Ov205_ChargeSweep.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_ChargeSweep.c:
     complete
     .text       start:0x020d6d54 end:0x020d6f4c
 
-src/overlays/ov205/calls/Ov205_GroundSweep.c:
+src/overlays/enemies/ov205_enemy_28_2/Ov205_GroundSweep.c:
     complete
     .text       start:0x020d6f4c end:0x020d7204
 
-src/overlays/ov205/data/ov205_strings_020d72e0.c:
+src/overlays/enemies/ov205_enemy_28_2/data/ov205_strings_020d72e0.c:
     complete
     .data       start:0x020d72e0 end:0x020d7300
 
-src/overlays/ov205/data/ov205_tables_020d7204.c:
+src/overlays/enemies/ov205_enemy_28_2/data/ov205_tables_020d7204.c:
     complete
     .rodata     start:0x020d7204 end:0x020d72cc

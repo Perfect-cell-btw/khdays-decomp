@@ -4,170 +4,170 @@
     .data       start:0x020d18a0 end:0x020d18c0 kind:data align:32
     .bss        start:0x020d18c0 end:0x020d18c0 kind:bss align:32
 
-src/overlays/ov118/calls/Ov118_RegisterEntityClass.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov118/calls/Ov118_CreateNamedEntity.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov118/calls/Ov118_InitEffectActor.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_InitEffectActor.c:
     complete
     .text       start:0x020cfc04 end:0x020cfd90
 
-src/overlays/ov118/calls/Ov118_OnDespawn.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_OnDespawn.c:
     complete
     .text       start:0x020cfd90 end:0x020cfdac
 
-src/overlays/ov118/calls/Ov118_TickAndSyncTwoModelXforms.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_TickAndSyncTwoModelXforms.c:
     complete
     .text       start:0x020cfdac end:0x020cfe08
 
-src/overlays/ov118/calls/Ov118_UnlinkHeldNode.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_UnlinkHeldNode.c:
     complete
     .text       start:0x020cfe08 end:0x020cfe24
 
-src/overlays/ov118/calls/Ov118_SpawnAuraOnTag5.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_SpawnAuraOnTag5.c:
     complete
     .text       start:0x020cfe24 end:0x020cfe98
 
-src/overlays/ov118/calls/Ov118_CallSetupThenSharedHandler.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_CallSetupThenSharedHandler.c:
     complete
     .text       start:0x020cfe98 end:0x020cfeb0
 
-src/overlays/ov118/calls/Ov118_PlayAnimPair.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_PlayAnimPair.c:
     complete
     .text       start:0x020cfeb0 end:0x020cff94
 
-src/overlays/ov118/calls/Ov118_RunHandlerUnlessBit0OnlyThenAdvance.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_RunHandlerUnlessBit0OnlyThenAdvance.c:
     complete
     .text       start:0x020cff94 end:0x020cffcc
 
-src/overlays/ov118/calls/Ov118_CreateRegistryEntryForActor.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_CreateRegistryEntryForActor.c:
     complete
     .text       start:0x020cffcc end:0x020d0018
 
-src/overlays/ov118/auto/Ov118_TickStaggerAndFlipFacing.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_TickStaggerAndFlipFacing.c:
     complete
     .text       start:0x020d0018 end:0x020d01a8
 
-src/overlays/ov118/auto/Ov118_ReactionRequestSubState8.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_ReactionRequestSubState8.c:
     complete
     .text       start:0x020d01a8 end:0x020d0200
 
-src/overlays/ov118/calls/Ov118_LookAtQuat.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_LookAtQuat.c:
     complete
     .text       start:0x020d0200 end:0x020d023c
 
-src/overlays/ov118/calls/Ov118_SeedVecAndArm.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_SeedVecAndArm.c:
     complete
     .text       start:0x020d023c end:0x020d0328
 
-src/overlays/ov118/calls/Ov118_DispatchSubStateByte.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_DispatchSubStateByte.c:
     complete
     .text       start:0x020d0328 end:0x020d0538
 
-src/overlays/ov118/calls/Ov118_AiSlerpHeading.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_AiSlerpHeading.c:
     complete
     .text       start:0x020d0538 end:0x020d063c
 
-src/overlays/ov118/calls/Ov118_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d063c end:0x020d06a4
 
-src/overlays/ov118/calls/Ov118_PublishFinishPose.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_PublishFinishPose.c:
     complete
     .text       start:0x020d06a4 end:0x020d073c
 
-src/overlays/ov118/calls/Ov118_AcquireAimTransform.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_AcquireAimTransform.c:
     complete
     .text       start:0x020d073c end:0x020d080c
 
-src/overlays/ov118/calls/Ov118_AiRollTimerQueue2B.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_AiRollTimerQueue2B.c:
     complete
     .text       start:0x020d080c end:0x020d086c
 
-src/overlays/ov118/calls/Ov118_PickRandomSignedSpeed.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_PickRandomSignedSpeed.c:
     complete
     .text       start:0x020d086c end:0x020d08f4
 
-src/overlays/ov118/calls/Ov118_ChaseTargetOrReposition.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_ChaseTargetOrReposition.c:
     complete
     .text       start:0x020d08f4 end:0x020d0a00
 
-src/overlays/ov118/calls/Ov118_SetPose1ThenAdvanceSlot.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_SetPose1ThenAdvanceSlot.c:
     complete
     .text       start:0x020d0a00 end:0x020d0a34
 
-src/overlays/ov118/calls/Ov118_KeepDistanceOrRetreat.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_KeepDistanceOrRetreat.c:
     complete
     .text       start:0x020d0a34 end:0x020d0b78
 
-src/overlays/ov118/calls/Ov118_BuildTransformMatrixThenAdvance.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_BuildTransformMatrixThenAdvance.c:
     complete
     .text       start:0x020d0b78 end:0x020d0bf4
 
-src/overlays/ov118/calls/Ov118_AiDecelUntilSlow.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_AiDecelUntilSlow.c:
     complete
     .text       start:0x020d0bf4 end:0x020d0ccc
 
-src/overlays/ov118/calls/Ov118_AiEndWithUpdate.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_AiEndWithUpdate.c:
     complete
     .text       start:0x020d0ccc end:0x020d0d94
 
-src/overlays/ov118/calls/Ov118_SeedTimerFireThenAdvanceSlot.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_SeedTimerFireThenAdvanceSlot.c:
     complete
     .text       start:0x020d0d94 end:0x020d0df0
 
-src/overlays/ov118/calls/Ov118_AimAtTarget.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_AimAtTarget.c:
     complete
     .text       start:0x020d0df0 end:0x020d0f34
 
-src/overlays/ov118/calls/Ov118_OrbitStep.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_OrbitStep.c:
     complete
     .text       start:0x020d0f34 end:0x020d10d4
 
-src/overlays/ov118/calls/Ov118_PublishLanding.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_PublishLanding.c:
     complete
     .text       start:0x020d10d4 end:0x020d11d4
 
-src/overlays/ov118/calls/Ov118_AiReaimStrafe.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_AiReaimStrafe.c:
     complete
     .text       start:0x020d11d4 end:0x020d12d8
 
-src/overlays/ov118/calls/Ov118_BeginTumble.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_BeginTumble.c:
     complete
     .text       start:0x020d12d8 end:0x020d13cc
 
-src/overlays/ov118/calls/Ov118_EmitAtOrbit.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_EmitAtOrbit.c:
     complete
     .text       start:0x020d13cc end:0x020d1698
 
-src/overlays/ov118/calls/Ov118_AiFallTick.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_AiFallTick.c:
     complete
     .text       start:0x020d1698 end:0x020d1728
 
-src/overlays/ov118/calls/Ov118_AiEnterDown.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_AiEnterDown.c:
     complete
     .text       start:0x020d1728 end:0x020d17bc
 
-src/overlays/ov118/calls/Ov118_AiStep_QueueAction9OnFlag48Clear.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_AiStep_QueueAction9OnFlag48Clear.c:
     complete
     .text       start:0x020d17bc end:0x020d17f0
 
-src/overlays/ov118/calls/Ov118_AiEnterDefeat.c:
+src/overlays/enemies/ov118_enemy_02_2/Ov118_AiEnterDefeat.c:
     complete
     .text       start:0x020d17f0 end:0x020d1868
 
-src/overlays/ov118/data/ov118_const_020d18a0.c:
+src/overlays/enemies/ov118_enemy_02_2/data/ov118_const_020d18a0.c:
     complete
     .data       start:0x020d18a0 end:0x020d18a4
 
-src/overlays/ov118/data/ov118_strings_020d18a4.c:
+src/overlays/enemies/ov118_enemy_02_2/data/ov118_strings_020d18a4.c:
     complete
     .data       start:0x020d18a4 end:0x020d18c0
 
-src/overlays/ov118/data/ov118_tables_020d1868.c:
+src/overlays/enemies/ov118_enemy_02_2/data/ov118_tables_020d1868.c:
     complete
     .rodata     start:0x020d1868 end:0x020d1884

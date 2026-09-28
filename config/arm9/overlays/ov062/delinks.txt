@@ -4,210 +4,210 @@
     .data       start:0x020b8000 end:0x020b80e0 kind:data align:32
     .bss        start:0x020b80e0 end:0x020b8100 kind:bss align:32
 
-src/overlays/ov062/calls/func_ov062_020b5a20.c:
+src/overlays/players/ov062_player_xemnas_2/func_ov062_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov062/calls/Ov062_ClassCtor.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_ClassCtor.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a64
 
-src/overlays/ov062/calls/Ov062_ClassTeardown.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_ClassTeardown.c:
     complete
     .text       start:0x020b5a64 end:0x020b5a90
 
-src/overlays/ov062/calls/Ov062_Construct.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_Construct.c:
     complete
     .text       start:0x020b5a90 end:0x020b5cc4
 
-src/overlays/ov062/calls/Ov062_MissionStart.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_MissionStart.c:
     complete
     .text       start:0x020b5cc4 end:0x020b5d1c
 
-src/overlays/ov062/calls/Ov062_MapSlotKindToAnim.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5d1c end:0x020b5d44
 
-src/overlays/ov062/calls/Ov062_HandleModeChange.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_HandleModeChange.c:
     complete
     .text       start:0x020b5d44 end:0x020b5e28
 
-src/overlays/ov062/calls/Ov062_UpdateTick.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_UpdateTick.c:
     complete
     .text       start:0x020b5e28 end:0x020b5ecc
 
-src/overlays/ov062/calls/Ov062_ResolveStateHandler.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_ResolveStateHandler.c:
     complete
     .text       start:0x020b5ecc end:0x020b5fa4
 
-src/overlays/ov062/calls/Ov062_InvokeSubHandlerPairWithGlobalBuffer.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b5fa4 end:0x020b5fdc
 
-src/overlays/ov062/calls/Ov062_ResetScriptRequest.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_ResetScriptRequest.c:
     complete
     .text       start:0x020b5fdc end:0x020b6010
 
-src/overlays/ov062/calls/Ov062_ReleaseBoundObject.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_ReleaseBoundObject.c:
     complete
     .text       start:0x020b6010 end:0x020b6028
 
-src/overlays/ov062/calls/Ov062_DriveScriptNode.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_DriveScriptNode.c:
     complete
     .text       start:0x020b6028 end:0x020b6218
 
-src/overlays/ov062/calls/Ov062_BuildPeerGroup.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_BuildPeerGroup.c:
     complete
     .text       start:0x020b6218 end:0x020b62d0
 
-src/overlays/ov062/calls/Ov062_ReleaseAndFreeField2644.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_ReleaseAndFreeField2644.c:
     complete
     .text       start:0x020b62d0 end:0x020b62ec
 
-src/overlays/ov062/calls/Ov062_PushAnimArg.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_PushAnimArg.c:
     complete
     .text       start:0x020b62ec end:0x020b6324
 
-src/overlays/ov062/calls/Ov062_InvokeBothGroupCallbacks.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_InvokeBothGroupCallbacks.c:
     complete
     .text       start:0x020b6324 end:0x020b634c
 
-src/overlays/ov062/calls/Ov062_SpawnProjectile.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_SpawnProjectile.c:
     complete
     .text       start:0x020b634c end:0x020b6498
 
-src/overlays/ov062/calls/Ov062_BuildStep.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_BuildStep.c:
     complete
     .text       start:0x020b6498 end:0x020b6550
 
-src/overlays/ov062/calls/Ov062_EnterState21.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_EnterState21.c:
     complete
     .text       start:0x020b6550 end:0x020b6624
 
-src/overlays/ov062/calls/Ov062_HoverStep.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_HoverStep.c:
     complete
     .text       start:0x020b6624 end:0x020b6968
 
-src/overlays/ov062/calls/Ov062_ChargeStep.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_ChargeStep.c:
     complete
     .text       start:0x020b6968 end:0x020b6bdc
 
-src/overlays/ov062/calls/Ov062_LandingStep.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_LandingStep.c:
     complete
     .text       start:0x020b6bdc end:0x020b6db8
 
-src/overlays/ov062/calls/Ov062_AttackBurstTick.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_AttackBurstTick.c:
     complete
     .text       start:0x020b6db8 end:0x020b6f34
 
-src/overlays/ov062/calls/Ov062_OpenMissionBlock.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_OpenMissionBlock.c:
     complete
     .text       start:0x020b6f34 end:0x020b6ffc
 
-src/overlays/ov062/calls/Ov062_ReleaseMissionBlock.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_ReleaseMissionBlock.c:
     complete
     .text       start:0x020b6ffc end:0x020b7060
 
-src/overlays/ov062/calls/Ov062_BindMissionBlock.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_BindMissionBlock.c:
     complete
     .text       start:0x020b7060 end:0x020b7098
 
-src/overlays/ov062/calls/Ov062_NodeRequestTick.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_NodeRequestTick.c:
     complete
     .text       start:0x020b7098 end:0x020b7268
 
-src/overlays/ov062/calls/Ov062_RelaySlotEvent.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_RelaySlotEvent.c:
     complete
     .text       start:0x020b7268 end:0x020b7320
 
-src/overlays/ov062/calls/Ov062_ActivateAndStep.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_ActivateAndStep.c:
     complete
     .text       start:0x020b7320 end:0x020b7344
 
-src/overlays/ov062/calls/Ov062_EnterState4.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_EnterState4.c:
     complete
     .text       start:0x020b7344 end:0x020b7360
 
-src/overlays/ov062/calls/Ov062_RebindAnimTracks.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_RebindAnimTracks.c:
     complete
     .text       start:0x020b7360 end:0x020b73d8
 
-src/overlays/ov062/calls/Ov062_SeedRequestRows.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_SeedRequestRows.c:
     complete
     .text       start:0x020b73d8 end:0x020b74d4
 
-src/overlays/ov062/calls/Ov062_SwingRequestEffect.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_SwingRequestEffect.c:
     complete
     .text       start:0x020b74d4 end:0x020b76f0
 
-src/overlays/ov062/calls/Ov062_ComputeSlotPosition.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_ComputeSlotPosition.c:
     complete
     .text       start:0x020b76f0 end:0x020b77b8
 
-src/overlays/ov062/calls/Ov062_ArmRequestRow.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_ArmRequestRow.c:
     complete
     .text       start:0x020b77b8 end:0x020b78ac
 
-src/overlays/ov062/calls/Ov062_AdvanceRequest.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_AdvanceRequest.c:
     complete
     .text       start:0x020b78ac end:0x020b78f8
 
-src/overlays/ov062/calls/Ov062_DrawNodesWhileActive.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_DrawNodesWhileActive.c:
     complete
     .text       start:0x020b78f8 end:0x020b7920
 
-src/overlays/ov062/calls/Ov062_FireBothRows.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_FireBothRows.c:
     complete
     .text       start:0x020b7920 end:0x020b79ec
 
-src/overlays/ov062/calls/Ov062_OpenSecondarySub.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_OpenSecondarySub.c:
     complete
     .text       start:0x020b79ec end:0x020b7a74
 
-src/overlays/ov062/calls/Ov062_BindRig.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_BindRig.c:
     complete
     .text       start:0x020b7a74 end:0x020b7acc
 
-src/overlays/ov062/calls/Ov062_dispatchEntryList.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_dispatchEntryList.c:
     complete
     .text       start:0x020b7acc end:0x020b7b30
 
-src/overlays/ov062/calls/func_ov062_020b7b30.c:
+src/overlays/players/ov062_player_xemnas_2/func_ov062_020b7b30.c:
     complete
     .text       start:0x020b7b30 end:0x020b7b80
 
-src/overlays/ov062/calls/Ov062_DrawRequestEffect.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_DrawRequestEffect.c:
     complete
     .text       start:0x020b7b80 end:0x020b7c7c
 
-src/overlays/ov062/calls/Ov062_UpdateSwingRequestEffect.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_UpdateSwingRequestEffect.c:
     complete
     .text       start:0x020b7c7c end:0x020b7f24
 
-src/overlays/ov062/calls/Ov062_InvokeWithDataTable.c:
+src/overlays/players/ov062_player_xemnas_2/Ov062_InvokeWithDataTable.c:
     complete
     .text       start:0x020b7f24 end:0x020b7f3c
 
-src/overlays/ov062/data/ov062_class_020b8000.c:
+src/overlays/players/ov062_player_xemnas_2/data/ov062_class_020b8000.c:
     complete
     .data       start:0x020b8000 end:0x020b8014
 
-src/overlays/ov062/data/ov062_pointers_020b8014.c:
+src/overlays/players/ov062_player_xemnas_2/data/ov062_pointers_020b8014.c:
     complete
     .data       start:0x020b8014 end:0x020b8028
 
-src/overlays/ov062/data/ov062_strings_020b7f3c.c:
+src/overlays/players/ov062_player_xemnas_2/data/ov062_strings_020b7f3c.c:
     complete
     .rodata     start:0x020b7f3c end:0x020b7f6c
 
-src/overlays/ov062/data/ov062_strings_020b7fd4.c:
+src/overlays/players/ov062_player_xemnas_2/data/ov062_strings_020b7fd4.c:
     complete
     .rodata     start:0x020b7fd4 end:0x020b7ff4
 
-src/overlays/ov062/data/ov062_strings_020b8028.c:
+src/overlays/players/ov062_player_xemnas_2/data/ov062_strings_020b8028.c:
     complete
     .data       start:0x020b8028 end:0x020b80e0
 
-src/overlays/ov062/data/ov062_tables_020b7f6c.c:
+src/overlays/players/ov062_player_xemnas_2/data/ov062_tables_020b7f6c.c:
     complete
     .rodata     start:0x020b7f6c end:0x020b7fd4

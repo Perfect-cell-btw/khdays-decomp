@@ -4,226 +4,226 @@
     .data       start:0x020d6a20 end:0x020d6a40 kind:data align:32
     .bss        start:0x020d6a40 end:0x020d6a40 kind:bss align:32
 
-src/overlays/ov193/calls/Ov193_RegisterEntityClass.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov193/calls/Ov193_CreateNamedEntity.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov193/calls/Ov193_Construct.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_Construct.c:
     complete
     .text       start:0x020d3844 end:0x020d3bb4
 
-src/overlays/ov193/calls/Ov193_DestroyArrayObjectsAndBuffersThenNotify.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_DestroyArrayObjectsAndBuffersThenNotify.c:
     complete
     .text       start:0x020d3bb4 end:0x020d3bfc
 
-src/overlays/ov193/calls/Ov193_Model_SetTracks0And3.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_Model_SetTracks0And3.c:
     complete
     .text       start:0x020d3bfc end:0x020d3c4c
 
-src/overlays/ov193/calls/Ov193_HandleSpawnMessage.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_HandleSpawnMessage.c:
     complete
     .text       start:0x020d3c4c end:0x020d3de8
 
-src/overlays/ov193/calls/Ov193_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020d3de8 end:0x020d3e24
 
-src/overlays/ov193/calls/Ov193_NotifyPartsThenBase.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d3e24 end:0x020d3e60
 
-src/overlays/ov193/calls/func_ov193_020d3e60.c:
+src/overlays/enemies/ov193_enemy_23_3/func_ov193_020d3e60.c:
     complete
     .text       start:0x020d3e60 end:0x020d3e6c
 
-src/overlays/ov193/calls/Ov193_RefreshPose.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_RefreshPose.c:
     complete
     .text       start:0x020d3e6c end:0x020d3eb0
 
-src/overlays/ov193/calls/Ov193_Tick.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_Tick.c:
     complete
     .text       start:0x020d3eb0 end:0x020d3ffc
 
-src/overlays/ov193/calls/Ov193_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d3ffc end:0x020d4048
 
-src/overlays/ov193/calls/Ov193_OnHit.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_OnHit.c:
     complete
     .text       start:0x020d4048 end:0x020d4268
 
-src/overlays/ov193/auto/Ov193_TryBeginSubState7.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_TryBeginSubState7.c:
     complete
     .text       start:0x020d4268 end:0x020d4298
 
-src/overlays/ov193/calls/Ov193_ProbeGroundBelowNode.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_ProbeGroundBelowNode.c:
     complete
     .text       start:0x020d4298 end:0x020d437c
 
-src/overlays/ov193/calls/Ov193_BoxSweepPush.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_BoxSweepPush.c:
     complete
     .text       start:0x020d437c end:0x020d461c
 
-src/overlays/ov193/calls/Ov193_stInitSlotsFlags6B.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_stInitSlotsFlags6B.c:
     complete
     .text       start:0x020d461c end:0x020d4714
 
-src/overlays/ov193/calls/Ov193_DispatchSubStateByte.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_DispatchSubStateByte.c:
     complete
     .text       start:0x020d4714 end:0x020d490c
 
-src/overlays/ov193/calls/Ov193_stUpdateOrientMatrix.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_stUpdateOrientMatrix.c:
     complete
     .text       start:0x020d490c end:0x020d49b4
 
-src/overlays/ov193/calls/Ov193_stSetFlagsC6ClearBits.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_stSetFlagsC6ClearBits.c:
     complete
     .text       start:0x020d49b4 end:0x020d4a44
 
-src/overlays/ov193/calls/Ov193_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d4a44 end:0x020d4a80
 
-src/overlays/ov193/calls/Ov193_stSetFlags82ClearC.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_stSetFlags82ClearC.c:
     complete
     .text       start:0x020d4a80 end:0x020d4b74
 
-src/overlays/ov193/calls/Ov193_stTickAimTimerB.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_stTickAimTimerB.c:
     complete
     .text       start:0x020d4b74 end:0x020d4c3c
 
-src/overlays/ov193/calls/Ov193_stRandDelayInRange.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_stRandDelayInRange.c:
     complete
     .text       start:0x020d4c3c end:0x020d4c9c
 
-src/overlays/ov193/calls/Ov193_SetPose1ThenAdvanceSlot.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_SetPose1ThenAdvanceSlot.c:
     complete
     .text       start:0x020d4c9c end:0x020d4cd0
 
-src/overlays/ov193/calls/Ov193_ChaseTick.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_ChaseTick.c:
     complete
     .text       start:0x020d4cd0 end:0x020d4e14
 
-src/overlays/ov193/calls/Ov193_BeginPickTarget.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_BeginPickTarget.c:
     complete
     .text       start:0x020d4e14 end:0x020d4fb0
 
-src/overlays/ov193/calls/Ov193_FireShockwave.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_FireShockwave.c:
     complete
     .text       start:0x020d4fb0 end:0x020d50d0
 
-src/overlays/ov193/calls/Ov193_SetPose2ThenAdvanceSlot.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d50d0 end:0x020d5104
 
-src/overlays/ov193/calls/Ov193_stDiv5Store.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_stDiv5Store.c:
     complete
     .text       start:0x020d5104 end:0x020d5160
 
-src/overlays/ov193/calls/Ov193_stClearFlag1SetFlags86C.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_stClearFlag1SetFlags86C.c:
     complete
     .text       start:0x020d5160 end:0x020d5250
 
-src/overlays/ov193/calls/Ov193_stClearFlag1SetFlags86B.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_stClearFlag1SetFlags86B.c:
     complete
     .text       start:0x020d5250 end:0x020d532c
 
-src/overlays/ov193/calls/Ov193_Pose4ClearFieldsAdvance.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_Pose4ClearFieldsAdvance.c:
     complete
     .text       start:0x020d532c end:0x020d5378
 
-src/overlays/ov193/calls/Ov193_LeapTick.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_LeapTick.c:
     complete
     .text       start:0x020d5378 end:0x020d554c
 
-src/overlays/ov193/calls/Ov193_ChargeAimedShotState.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_ChargeAimedShotState.c:
     complete
     .text       start:0x020d554c end:0x020d56e4
 
-src/overlays/ov193/calls/Ov193_stTimedInterpPhases.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_stTimedInterpPhases.c:
     complete
     .text       start:0x020d56e4 end:0x020d581c
 
-src/overlays/ov193/calls/Ov193_FindTarget.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_FindTarget.c:
     complete
     .text       start:0x020d581c end:0x020d5a18
 
-src/overlays/ov193/calls/Ov193_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d5a18 end:0x020d5a58
 
-src/overlays/ov193/calls/Ov193_Actor_New.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_Actor_New.c:
     complete
     .text       start:0x020d5a58 end:0x020d5a8c
 
-src/overlays/ov193/calls/Ov193_Construct_2.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_Construct_2.c:
     complete
     .text       start:0x020d5a8c end:0x020d5c60
 
-src/overlays/ov193/calls/Ov193_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020d5c60 end:0x020d5ca0
 
-src/overlays/ov193/calls/Ov193_TickAndSyncModelXform.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d5ca0 end:0x020d5cd8
 
-src/overlays/ov193/calls/Ov193_HandleMessage.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_HandleMessage.c:
     complete
     .text       start:0x020d5cd8 end:0x020d5d8c
 
-src/overlays/ov193/calls/Ov193_InvertVecOnceIfFlagSet.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_InvertVecOnceIfFlagSet.c:
     complete
     .text       start:0x020d5d8c end:0x020d5de8
 
-src/overlays/ov193/calls/Ov193_CreateRegistryEntryAndLink_2.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020d5de8 end:0x020d5e34
 
-src/overlays/ov193/calls/Ov193_stateInitClearSlots.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_stateInitClearSlots.c:
     complete
     .text       start:0x020d5e34 end:0x020d5edc
 
-src/overlays/ov193/calls/Ov193_AiDispatchAction.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_AiDispatchAction.c:
     complete
     .text       start:0x020d5edc end:0x020d5f70
 
-src/overlays/ov193/auto/Ov193_AiApplyMoveVector.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_AiApplyMoveVector.c:
     complete
     .text       start:0x020d5f70 end:0x020d5f88
 
-src/overlays/ov193/calls/Ov193_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d5f88 end:0x020d6038
 
-src/overlays/ov193/calls/Ov193_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d6038 end:0x020d6070
 
-src/overlays/ov193/calls/Ov193_SetupScaledVecThenAction4.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_SetupScaledVecThenAction4.c:
     complete
     .text       start:0x020d6070 end:0x020d6158
 
-src/overlays/ov193/calls/Ov193_FlightTick.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_FlightTick.c:
     complete
     .text       start:0x020d6158 end:0x020d66a0
 
-src/overlays/ov193/calls/Ov193_BeginShockwave.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_BeginShockwave.c:
     complete
     .text       start:0x020d66a0 end:0x020d6848
 
-src/overlays/ov193/calls/Ov193_ShockwaveTick.c:
+src/overlays/enemies/ov193_enemy_23_3/Ov193_ShockwaveTick.c:
     complete
     .text       start:0x020d6848 end:0x020d6994
 
-src/overlays/ov193/data/ov193_strings_020d6a20.c:
+src/overlays/enemies/ov193_enemy_23_3/data/ov193_strings_020d6a20.c:
     complete
     .data       start:0x020d6a20 end:0x020d6a40
 
-src/overlays/ov193/data/ov193_tables_020d6994.c:
+src/overlays/enemies/ov193_enemy_23_3/data/ov193_tables_020d6994.c:
     complete
     .rodata     start:0x020d6994 end:0x020d6a04

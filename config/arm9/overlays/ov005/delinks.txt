@@ -4,1238 +4,1238 @@
     .data       start:0x0205b4c0 end:0x0205b800 kind:data align:32
     .bss        start:0x0205b800 end:0x0205b8e0 kind:bss align:32
 
-src/overlays/ov005/calls/Ov005_LoadLayoutResources.c:
+src/overlays/scenes/ov005_story_result/Ov005_LoadLayoutResources.c:
     complete
     .text       start:0x0204cac0 end:0x0204cafe
 
-src/overlays/ov005/calls/Ov005_LoadElemsFromLayout.c:
+src/overlays/scenes/ov005_story_result/Ov005_LoadElemsFromLayout.c:
     complete
     .text       start:0x0204cb00 end:0x0204cb68
 
-src/overlays/ov005/calls/Ov005_BuildLayoutFromTagTable.c:
+src/overlays/scenes/ov005_story_result/Ov005_BuildLayoutFromTagTable.c:
     complete
     .text       start:0x0204cb68 end:0x0204cba0
 
-src/overlays/ov005/auto/Ov005_IsPointInBox.c:
+src/overlays/scenes/ov005_story_result/Ov005_IsPointInBox.c:
     complete
     .text       start:0x0204cba0 end:0x0204cbdc
 
-src/overlays/ov005/auto/Ov005_FindActiveEntryById.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindActiveEntryById.c:
     complete
     .text       start:0x0204cbdc end:0x0204cc2c
 
-src/overlays/ov005/auto/Ov005_FindFreeElem.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindFreeElem.c:
     complete
     .text       start:0x0204cc2c end:0x0204cc6c
 
-src/overlays/ov005/auto/Ov005_FindFirstUnusedEntry.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindFirstUnusedEntry.c:
     complete
     .text       start:0x0204cc6c end:0x0204ccb0
 
-src/overlays/ov005/auto/Ov005_FindFirstUnusedElem.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindFirstUnusedElem.c:
     complete
     .text       start:0x0204ccb0 end:0x0204ccec
 
-src/overlays/ov005/calls/Ov005_Touch_GetLatestValidSample.c:
+src/overlays/scenes/ov005_story_result/Ov005_Touch_GetLatestValidSample.c:
     complete
     .text       start:0x0204ccec end:0x0204cd60
 
-src/overlays/ov005/calls/Ov005_FlushOrRegisterBlock.c:
+src/overlays/scenes/ov005_story_result/Ov005_FlushOrRegisterBlock.c:
     complete
     .text       start:0x0204cd60 end:0x0204cdd0
 
-src/overlays/ov005/auto/Ov005_TickTagTrackerNodes.c:
+src/overlays/scenes/ov005_story_result/Ov005_TickTagTrackerNodes.c:
     complete
     .text       start:0x0204cdd0 end:0x0204cf70
 
-src/overlays/ov005/auto/Ov005_ResolveHoveredEntryAndNotify.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResolveHoveredEntryAndNotify.c:
     complete
     .text       start:0x0204cf70 end:0x0204d098
 
-src/overlays/ov005/calls/Ov005_Container_Init.c:
+src/overlays/scenes/ov005_story_result/Ov005_Container_Init.c:
     complete
     .text       start:0x0204d098 end:0x0204d10e
 
-src/overlays/ov005/calls/Ov005_TickSelectionWidget.c:
+src/overlays/scenes/ov005_story_result/Ov005_TickSelectionWidget.c:
     complete
     .text       start:0x0204d110 end:0x0204d138
 
-src/overlays/ov005/calls/Ov005_ReleaseThreeBuffers.c:
+src/overlays/scenes/ov005_story_result/Ov005_ReleaseThreeBuffers.c:
     complete
     .text       start:0x0204d138 end:0x0204d160
 
-src/overlays/ov005/calls/Ov005_LoadAndInitResourceSections.c:
+src/overlays/scenes/ov005_story_result/Ov005_LoadAndInitResourceSections.c:
     complete
     .text       start:0x0204d160 end:0x0204d198
 
-src/overlays/ov005/calls/Ov005_AddElem.c:
+src/overlays/scenes/ov005_story_result/Ov005_AddElem.c:
     complete
     .text       start:0x0204d198 end:0x0204d208
 
-src/overlays/ov005/auto/Ov005_InvokeElementCallback.c:
+src/overlays/scenes/ov005_story_result/Ov005_InvokeElementCallback.c:
     complete
     .text       start:0x0204d208 end:0x0204d234
 
-src/overlays/ov005/calls/Ov005_FlushFlaggedElements.c:
+src/overlays/scenes/ov005_story_result/Ov005_FlushFlaggedElements.c:
     complete
     .text       start:0x0204d234 end:0x0204d266
 
-src/overlays/ov005/calls/Ov005_BuildTagTrackerNode.c:
+src/overlays/scenes/ov005_story_result/Ov005_BuildTagTrackerNode.c:
     complete
     .text       start:0x0204d268 end:0x0204d334
 
-src/overlays/ov005/calls/Ov005_ReleaseElement.c:
+src/overlays/scenes/ov005_story_result/Ov005_ReleaseElement.c:
     complete
     .text       start:0x0204d334 end:0x0204d364
 
-src/overlays/ov005/calls/Ov005_SweepReleasePendingElements.c:
+src/overlays/scenes/ov005_story_result/Ov005_SweepReleasePendingElements.c:
     complete
     .text       start:0x0204d364 end:0x0204d396
 
-src/overlays/ov005/calls/Ov005_AllocResourceEntry.c:
+src/overlays/scenes/ov005_story_result/Ov005_AllocResourceEntry.c:
     complete
     .text       start:0x0204d398 end:0x0204d3dc
 
-src/overlays/ov005/calls/Ov005_FreeElementBuffer.c:
+src/overlays/scenes/ov005_story_result/Ov005_FreeElementBuffer.c:
     complete
     .text       start:0x0204d3dc end:0x0204d408
 
-src/overlays/ov005/calls/Ov005_SweepFreeElementBuffers.c:
+src/overlays/scenes/ov005_story_result/Ov005_SweepFreeElementBuffers.c:
     complete
     .text       start:0x0204d408 end:0x0204d432
 
-src/overlays/ov005/auto/Ov005_FindEntryByTag.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindEntryByTag.c:
     complete
     .text       start:0x0204d434 end:0x0204d490
 
-src/overlays/ov005/auto/Ov005_Elem_SetX.c:
+src/overlays/scenes/ov005_story_result/Ov005_Elem_SetX.c:
     complete
     .text       start:0x0204d490 end:0x0204d498
 
-src/overlays/ov005/auto/Ov005_Elem_SetY.c:
+src/overlays/scenes/ov005_story_result/Ov005_Elem_SetY.c:
     complete
     .text       start:0x0204d498 end:0x0204d4a0
 
-src/overlays/ov005/calls/Ov005_Elem_SetPos.c:
+src/overlays/scenes/ov005_story_result/Ov005_Elem_SetPos.c:
     complete
     .text       start:0x0204d4a0 end:0x0204d4c8
 
-src/overlays/ov005/auto/Ov005_TagTracker_InvokeCallback.c:
+src/overlays/scenes/ov005_story_result/Ov005_TagTracker_InvokeCallback.c:
     complete
     .text       start:0x0204d4c8 end:0x0204d4e4
 
-src/overlays/ov005/calls/Ov005_SweepElements.c:
+src/overlays/scenes/ov005_story_result/Ov005_SweepElements.c:
     complete
     .text       start:0x0204d4e4 end:0x0204d4fc
 
-src/overlays/ov005/calls/Ov005_ClearElementList.c:
+src/overlays/scenes/ov005_story_result/Ov005_ClearElementList.c:
     complete
     .text       start:0x0204d4fc end:0x0204d554
 
-src/overlays/ov005/calls/Ov005_BuildNodeWithChildren.c:
+src/overlays/scenes/ov005_story_result/Ov005_BuildNodeWithChildren.c:
     complete
     .text       start:0x0204d554 end:0x0204d5b0
 
-src/overlays/ov005/calls/Ov005_ProjectWorldPos.c:
+src/overlays/scenes/ov005_story_result/Ov005_ProjectWorldPos.c:
     complete
     .text       start:0x0204d5b0 end:0x0204d64c
 
-src/overlays/ov005/calls/Ov005_Widget_HitTest.c:
+src/overlays/scenes/ov005_story_result/Ov005_Widget_HitTest.c:
     complete
     .text       start:0x0204d64c end:0x0204d704
 
-src/overlays/ov005/calls/Ov005_Touch_GetLatestValidSampleB.c:
+src/overlays/scenes/ov005_story_result/Ov005_Touch_GetLatestValidSampleB.c:
     complete
     .text       start:0x0204d704 end:0x0204d770
 
-src/overlays/ov005/calls/Ov005_RouteNewPressToWidget.c:
+src/overlays/scenes/ov005_story_result/Ov005_RouteNewPressToWidget.c:
     complete
     .text       start:0x0204d770 end:0x0204d850
 
-src/overlays/ov005/calls/Ov005_MoveFocusByDpad.c:
+src/overlays/scenes/ov005_story_result/Ov005_MoveFocusByDpad.c:
     complete
     .text       start:0x0204d850 end:0x0204dae0
 
-src/overlays/ov005/calls/Ov005_FillAnchorPair.c:
+src/overlays/scenes/ov005_story_result/Ov005_FillAnchorPair.c:
     complete
     .text       start:0x0204dae0 end:0x0204db58
 
-src/overlays/ov005/calls/Ov005_ProcessAllListNodes.c:
+src/overlays/scenes/ov005_story_result/Ov005_ProcessAllListNodes.c:
     complete
     .text       start:0x0204db58 end:0x0204dba0
 
-src/overlays/ov005/calls/Ov005_UpdateWidgetLayer.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateWidgetLayer.c:
     complete
     .text       start:0x0204dba0 end:0x0204dc64
 
-src/overlays/ov005/calls/Ov005_InitSubsystemObject.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitSubsystemObject.c:
     complete
     .text       start:0x0204dc64 end:0x0204dcec
 
-src/overlays/ov005/calls/Ov005_DestroyObjectsAndRelease.c:
+src/overlays/scenes/ov005_story_result/Ov005_DestroyObjectsAndRelease.c:
     complete
     .text       start:0x0204dcec end:0x0204dd18
 
-src/overlays/ov005/calls/Ov005_UpdateWidgetLayerDefault.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateWidgetLayerDefault.c:
     complete
     .text       start:0x0204dd18 end:0x0204dd28
 
-src/overlays/ov005/calls/Ov005_CreateWidget.c:
+src/overlays/scenes/ov005_story_result/Ov005_CreateWidget.c:
     complete
     .text       start:0x0204dd28 end:0x0204dfb0
 
-src/overlays/ov005/calls/Ov005_InstantiateAndLinkElements.c:
+src/overlays/scenes/ov005_story_result/Ov005_InstantiateAndLinkElements.c:
     complete
     .text       start:0x0204dfb0 end:0x0204dfee
 
-src/overlays/ov005/calls/Ov005_LoadBlockProcessAndFree.c:
+src/overlays/scenes/ov005_story_result/Ov005_LoadBlockProcessAndFree.c:
     complete
     .text       start:0x0204dff0 end:0x0204e016
 
-src/overlays/ov005/calls/Ov005_DestroyObject.c:
+src/overlays/scenes/ov005_story_result/Ov005_DestroyObject.c:
     complete
     .text       start:0x0204e018 end:0x0204e064
 
-src/overlays/ov005/calls/Ov005_DestroyAllListObjects.c:
+src/overlays/scenes/ov005_story_result/Ov005_DestroyAllListObjects.c:
     complete
     .text       start:0x0204e064 end:0x0204e098
 
-src/overlays/ov005/calls/Ov005_InitFromDescAndMark.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitFromDescAndMark.c:
     complete
     .text       start:0x0204e098 end:0x0204e0b0
 
-src/overlays/ov005/calls/func_ov005_0204e0b0.c:
+src/overlays/scenes/ov005_story_result/func_ov005_0204e0b0.c:
     complete
     .text       start:0x0204e0b0 end:0x0204e0b8
 
-src/overlays/ov005/auto/Ov005_StoreWordAt0x98.c:
+src/overlays/scenes/ov005_story_result/Ov005_StoreWordAt0x98.c:
     complete
     .text       start:0x0204e0b8 end:0x0204e0be
 
-src/overlays/ov005/calls/Ov005_ResolveEntryStoreWord.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResolveEntryStoreWord.c:
     complete
     .text       start:0x0204e0c0 end:0x0204e0d0
 
-src/overlays/ov005/calls/Ov005_FindEntryById.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindEntryById.c:
     complete
     .text       start:0x0204e0d0 end:0x0204e120
 
-src/overlays/ov005/auto/Ov005_Widget_IsShownAndEnabled.c:
+src/overlays/scenes/ov005_story_result/Ov005_Widget_IsShownAndEnabled.c:
     complete
     .text       start:0x0204e120 end:0x0204e14c
 
-src/overlays/ov005/auto/Ov005_GetField84Bit1.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetField84Bit1.c:
     complete
     .text       start:0x0204e14c end:0x0204e15c
 
-src/overlays/ov005/calls/Ov005_ApplyFirstValidSlot.c:
+src/overlays/scenes/ov005_story_result/Ov005_ApplyFirstValidSlot.c:
     complete
     .text       start:0x0204e15c end:0x0204e194
 
-src/overlays/ov005/calls/Ov005_ReleaseTwoSlotsEx.c:
+src/overlays/scenes/ov005_story_result/Ov005_ReleaseTwoSlotsEx.c:
     complete
     .text       start:0x0204e194 end:0x0204e1d8
 
-src/overlays/ov005/auto/Ov005_GetEntryBlock2c.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetEntryBlock2c.c:
     complete
     .text       start:0x0204e1d8 end:0x0204e1e0
 
-src/overlays/ov005/calls/Ov005_ApplyOffsetSum.c:
+src/overlays/scenes/ov005_story_result/Ov005_ApplyOffsetSum.c:
     complete
     .text       start:0x0204e1e0 end:0x0204e230
 
-src/overlays/ov005/calls/Ov005_EmitSplinePair.c:
+src/overlays/scenes/ov005_story_result/Ov005_EmitSplinePair.c:
     complete
     .text       start:0x0204e230 end:0x0204e29c
 
-src/overlays/ov005/calls/Ov005_SetEntrySlotsVisible.c:
+src/overlays/scenes/ov005_story_result/Ov005_SetEntrySlotsVisible.c:
     complete
     .text       start:0x0204e29c end:0x0204e300
 
-src/overlays/ov005/calls/Ov005_ReleaseTwoSlots.c:
+src/overlays/scenes/ov005_story_result/Ov005_ReleaseTwoSlots.c:
     complete
     .text       start:0x0204e300 end:0x0204e33c
 
-src/overlays/ov005/calls/Ov005_ReleaseTwoSlots_2.c:
+src/overlays/scenes/ov005_story_result/Ov005_ReleaseTwoSlots_2.c:
     complete
     .text       start:0x0204e33c end:0x0204e378
 
-src/overlays/ov005/calls/Ov005_GetFirstValidSlotFrame.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetFirstValidSlotFrame.c:
     complete
     .text       start:0x0204e378 end:0x0204e3bc
 
-src/overlays/ov005/calls/Ov005_ReleaseTwoSlotsEx_2.c:
+src/overlays/scenes/ov005_story_result/Ov005_ReleaseTwoSlotsEx_2.c:
     complete
     .text       start:0x0204e3bc end:0x0204e400
 
-src/overlays/ov005/calls/Ov005_SwapParamOverrides.c:
+src/overlays/scenes/ov005_story_result/Ov005_SwapParamOverrides.c:
     complete
     .text       start:0x0204e400 end:0x0204e478
 
-src/overlays/ov005/auto/Ov005_SetControlBit0AtA7C.c:
+src/overlays/scenes/ov005_story_result/Ov005_SetControlBit0AtA7C.c:
     complete
     .text       start:0x0204e478 end:0x0204e4a0
 
-src/overlays/ov005/calls/Ov005_GetTouchSample.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetTouchSample.c:
     complete
     .text       start:0x0204e4a0 end:0x0204e4c0
 
-src/overlays/ov005/calls/Ov005_InitResourceRecord.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitResourceRecord.c:
     complete
     .text       start:0x0204e4c0 end:0x0204e4e6
 
-src/overlays/ov005/calls/Ov005_FreeResourceRecordBuffer.c:
+src/overlays/scenes/ov005_story_result/Ov005_FreeResourceRecordBuffer.c:
     complete
     .text       start:0x0204e4e8 end:0x0204e4f6
 
-src/overlays/ov005/auto/Ov005_GetVarRecordByIndex.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetVarRecordByIndex.c:
     complete
     .text       start:0x0204e4f8 end:0x0204e530
 
-src/overlays/ov005/calls/Ov005_CopySourceBlock.c:
+src/overlays/scenes/ov005_story_result/Ov005_CopySourceBlock.c:
     complete
     .text       start:0x0204e530 end:0x0204e564
 
-src/overlays/ov005/calls/Ov005_DupWideString.c:
+src/overlays/scenes/ov005_story_result/Ov005_DupWideString.c:
     complete
     .text       start:0x0204e564 end:0x0204e5a8
 
-src/overlays/ov005/calls/Ov005_BuildRecordNode.c:
+src/overlays/scenes/ov005_story_result/Ov005_BuildRecordNode.c:
     complete
     .text       start:0x0204e5a8 end:0x0204e6f0
 
-src/overlays/ov005/calls/Ov005_FreeWorkBuffers.c:
+src/overlays/scenes/ov005_story_result/Ov005_FreeWorkBuffers.c:
     complete
     .text       start:0x0204e6f0 end:0x0204e75c
 
-src/overlays/ov005/auto/Ov005_RecordFilter_InRange.c:
+src/overlays/scenes/ov005_story_result/Ov005_RecordFilter_InRange.c:
     complete
     .text       start:0x0204e75c end:0x0204e788
 
-src/overlays/ov005/auto/Ov005_RecordFilter_BelowMax.c:
+src/overlays/scenes/ov005_story_result/Ov005_RecordFilter_BelowMax.c:
     complete
     .text       start:0x0204e788 end:0x0204e7ac
 
-src/overlays/ov005/calls/Ov005_IsEncounterEligible.c:
+src/overlays/scenes/ov005_story_result/Ov005_IsEncounterEligible.c:
     complete
     .text       start:0x0204e7ac end:0x0204e900
 
-src/overlays/ov005/calls/Ov005_CanTriggerActionInRange.c:
+src/overlays/scenes/ov005_story_result/Ov005_CanTriggerActionInRange.c:
     complete
     .text       start:0x0204e900 end:0x0204e980
 
-src/overlays/ov005/auto/Ov005_RecordFilter_KindZero.c:
+src/overlays/scenes/ov005_story_result/Ov005_RecordFilter_KindZero.c:
     complete
     .text       start:0x0204e980 end:0x0204e994
 
-src/overlays/ov005/auto/Ov005_RecordFilter_KindNonZero.c:
+src/overlays/scenes/ov005_story_result/Ov005_RecordFilter_KindNonZero.c:
     complete
     .text       start:0x0204e994 end:0x0204e9a8
 
-src/overlays/ov005/auto/Ov005_RecordFilter_Kind4Id10.c:
+src/overlays/scenes/ov005_story_result/Ov005_RecordFilter_Kind4Id10.c:
     complete
     .text       start:0x0204e9a8 end:0x0204e9cc
 
-src/overlays/ov005/calls/Ov005_WalkRecordsAppendMatching.c:
+src/overlays/scenes/ov005_story_result/Ov005_WalkRecordsAppendMatching.c:
     complete
     .text       start:0x0204e9cc end:0x0204ea54
 
-src/overlays/ov005/calls/Ov005_AppendRecordsInRange.c:
+src/overlays/scenes/ov005_story_result/Ov005_AppendRecordsInRange.c:
     complete
     .text       start:0x0204ea54 end:0x0204ea68
 
-src/overlays/ov005/calls/Ov005_FindBestRecordAppend.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindBestRecordAppend.c:
     complete
     .text       start:0x0204ea68 end:0x0204eb04
 
-src/overlays/ov005/calls/Ov005_AppendEligibleRecords.c:
+src/overlays/scenes/ov005_story_result/Ov005_AppendEligibleRecords.c:
     complete
     .text       start:0x0204eb04 end:0x0204eb18
 
-src/overlays/ov005/calls/Ov005_AppendRecordsBelowMax.c:
+src/overlays/scenes/ov005_story_result/Ov005_AppendRecordsBelowMax.c:
     complete
     .text       start:0x0204eb18 end:0x0204eb2c
 
-src/overlays/ov005/calls/Ov005_AppendTriggerableInRange.c:
+src/overlays/scenes/ov005_story_result/Ov005_AppendTriggerableInRange.c:
     complete
     .text       start:0x0204eb2c end:0x0204eb40
 
-src/overlays/ov005/calls/Ov005_AppendRecordsKindZero.c:
+src/overlays/scenes/ov005_story_result/Ov005_AppendRecordsKindZero.c:
     complete
     .text       start:0x0204eb40 end:0x0204eb54
 
-src/overlays/ov005/calls/Ov005_AppendRecordsKindNonZero.c:
+src/overlays/scenes/ov005_story_result/Ov005_AppendRecordsKindNonZero.c:
     complete
     .text       start:0x0204eb54 end:0x0204eb68
 
-src/overlays/ov005/calls/Ov005_AppendRecordsKind4Id10.c:
+src/overlays/scenes/ov005_story_result/Ov005_AppendRecordsKind4Id10.c:
     complete
     .text       start:0x0204eb68 end:0x0204eb7c
 
-src/overlays/ov005/calls/Ov005_DestroyAllListObjects_2.c:
+src/overlays/scenes/ov005_story_result/Ov005_DestroyAllListObjects_2.c:
     complete
     .text       start:0x0204eb7c end:0x0204ebdc
 
-src/overlays/ov005/calls/Ov005_QueryFieldBySelector.c:
+src/overlays/scenes/ov005_story_result/Ov005_QueryFieldBySelector.c:
     complete
     .text       start:0x0204ebdc end:0x0204ec90
 
-src/overlays/ov005/calls/Ov005_InitObjectWithList.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitObjectWithList.c:
     complete
     .text       start:0x0204ec90 end:0x0204ecf0
 
-src/overlays/ov005/calls/Ov005_DestroyMissionList.c:
+src/overlays/scenes/ov005_story_result/Ov005_DestroyMissionList.c:
     complete
     .text       start:0x0204ecf0 end:0x0204ed20
 
-src/overlays/ov005/calls/Ov005_FindListObjectWithField10Zero.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindListObjectWithField10Zero.c:
     complete
     .text       start:0x0204ed20 end:0x0204ed5c
 
-src/overlays/ov005/calls/Ov005_FindListEntryByKey.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindListEntryByKey.c:
     complete
     .text       start:0x0204ed5c end:0x0204eda0
 
-src/overlays/ov005/calls/Ov005_LookupTypeCode.c:
+src/overlays/scenes/ov005_story_result/Ov005_LookupTypeCode.c:
     complete
     .text       start:0x0204eda0 end:0x0204eddc
 
-src/overlays/ov005/auto/Ov005_TagListHasFbAtLeast3.c:
+src/overlays/scenes/ov005_story_result/Ov005_TagListHasFbAtLeast3.c:
     complete
     .text       start:0x0204eddc end:0x0204ee2c
 
-src/overlays/ov005/auto/Ov005_ClampStatBlock.c:
+src/overlays/scenes/ov005_story_result/Ov005_ClampStatBlock.c:
     complete
     .text       start:0x0204ee2c end:0x0204eed8
 
-src/overlays/ov005/auto/Ov005_RecipeVisitHookNoOp.c:
+src/overlays/scenes/ov005_story_result/Ov005_RecipeVisitHookNoOp.c:
     complete
     .text       start:0x0204eed8 end:0x0204eedc
 
-src/overlays/ov005/calls/Ov005_AccumulateKeyed.c:
+src/overlays/scenes/ov005_story_result/Ov005_AccumulateKeyed.c:
     complete
     .text       start:0x0204eedc end:0x0204ef70
 
-src/overlays/ov005/calls/Ov005_AddToSecondaryTally.c:
+src/overlays/scenes/ov005_story_result/Ov005_AddToSecondaryTally.c:
     complete
     .text       start:0x0204ef70 end:0x0204f078
 
-src/overlays/ov005/calls/Ov005_AddToTally.c:
+src/overlays/scenes/ov005_story_result/Ov005_AddToTally.c:
     complete
     .text       start:0x0204f078 end:0x0204f1ec
 
-src/overlays/ov005/calls/Ov005_Tally_ApplyCommand.c:
+src/overlays/scenes/ov005_story_result/Ov005_Tally_ApplyCommand.c:
     complete
     .text       start:0x0204f1ec end:0x0204f354
 
-src/overlays/ov005/auto/Ov005_FoldRecordIntoTally.c:
+src/overlays/scenes/ov005_story_result/Ov005_FoldRecordIntoTally.c:
     complete
     .text       start:0x0204f354 end:0x0204f49c
 
-src/overlays/ov005/calls/Ov005_TallySlots.c:
+src/overlays/scenes/ov005_story_result/Ov005_TallySlots.c:
     complete
     .text       start:0x0204f49c end:0x0204f4fc
 
-src/overlays/ov005/calls/Ov005_TallyScaledSlots.c:
+src/overlays/scenes/ov005_story_result/Ov005_TallyScaledSlots.c:
     complete
     .text       start:0x0204f4fc end:0x0204f594
 
-src/overlays/ov005/auto/Ov005_FindKeyedByte.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindKeyedByte.c:
     complete
     .text       start:0x0204f594 end:0x0204f5e0
 
-src/overlays/ov005/calls/Ov005_FindLastCraftableRecipe.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindLastCraftableRecipe.c:
     complete
     .text       start:0x0204f5e0 end:0x0204f7a8
 
-src/overlays/ov005/calls/Ov005_MatchRecipeAndApply.c:
+src/overlays/scenes/ov005_story_result/Ov005_MatchRecipeAndApply.c:
     complete
     .text       start:0x0204f7a8 end:0x0204fc14
 
-src/overlays/ov005/calls/Ov005_LayoutPanelEntry.c:
+src/overlays/scenes/ov005_story_result/Ov005_LayoutPanelEntry.c:
     complete
     .text       start:0x0204fc14 end:0x02050188
 
-src/overlays/ov005/calls/Ov005_FoldPanelIntoTally.c:
+src/overlays/scenes/ov005_story_result/Ov005_FoldPanelIntoTally.c:
     complete
     .text       start:0x02050188 end:0x020504c0
 
-src/overlays/ov005/calls/Ov005_ClearStateFreeLists.c:
+src/overlays/scenes/ov005_story_result/Ov005_ClearStateFreeLists.c:
     complete
     .text       start:0x020504c0 end:0x020505e0
 
-src/overlays/ov005/auto/Ov005_GetGridMaskExtent.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetGridMaskExtent.c:
     complete
     .text       start:0x020505e0 end:0x020506a4
 
-src/overlays/ov005/calls/Ov005_InitRecordContext.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitRecordContext.c:
     complete
     .text       start:0x020506a4 end:0x02050724
 
-src/overlays/ov005/calls/Ov005_ReleasePanelViewVeneer.c:
+src/overlays/scenes/ov005_story_result/Ov005_ReleasePanelViewVeneer.c:
     complete
     .text       start:0x02050724 end:0x02050730
 
-src/overlays/ov005/calls/Ov005_RebuildViewAndCountCells.c:
+src/overlays/scenes/ov005_story_result/Ov005_RebuildViewAndCountCells.c:
     complete
     .text       start:0x02050730 end:0x020509ac
 
-src/overlays/ov005/calls/Ov005_BuildMenuGrid.c:
+src/overlays/scenes/ov005_story_result/Ov005_BuildMenuGrid.c:
     complete
     .text       start:0x020509ac end:0x02050bfc
 
-src/overlays/ov005/calls/Ov005_ReleaseHandleGridAndList.c:
+src/overlays/scenes/ov005_story_result/Ov005_ReleaseHandleGridAndList.c:
     complete
     .text       start:0x02050bfc end:0x02050cb0
 
-src/overlays/ov005/calls/Ov005_ResetPartyMemberAndLayout.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResetPartyMemberAndLayout.c:
     complete
     .text       start:0x02050cb0 end:0x02050cec
 
-src/overlays/ov005/calls/Ov005_RunTransientLayoutPass.c:
+src/overlays/scenes/ov005_story_result/Ov005_RunTransientLayoutPass.c:
     complete
     .text       start:0x02050cec end:0x02050d64
 
-src/overlays/ov005/calls/Ov005_ResolveTextureParams.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResolveTextureParams.c:
     complete
     .text       start:0x02050d64 end:0x02050e50
 
-src/overlays/ov005/calls/Ov005_SetupMenuCamera.c:
+src/overlays/scenes/ov005_story_result/Ov005_SetupMenuCamera.c:
     complete
     .text       start:0x02050e50 end:0x02050f98
 
-src/overlays/ov005/auto/Ov005_DrawMenuHookNoOp.c:
+src/overlays/scenes/ov005_story_result/Ov005_DrawMenuHookNoOp.c:
     complete
     .text       start:0x02050f98 end:0x02050f9c
 
-src/overlays/ov005/calls/Ov005_DrawMenuQuad.c:
+src/overlays/scenes/ov005_story_result/Ov005_DrawMenuQuad.c:
     complete
     .text       start:0x02050f9c end:0x0205129c
 
-src/overlays/ov005/calls/Ov005_RemoveEquippedItem.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemoveEquippedItem.c:
     complete
     .text       start:0x0205129c end:0x02051328
 
-src/overlays/ov005/calls/Ov005_ClampEquippedItemCounts.c:
+src/overlays/scenes/ov005_story_result/Ov005_ClampEquippedItemCounts.c:
     complete
     .text       start:0x02051328 end:0x02051408
 
-src/overlays/ov005/calls/Ov005_SetVramBankPlan.c:
+src/overlays/scenes/ov005_story_result/Ov005_SetVramBankPlan.c:
     complete
     .text       start:0x02051408 end:0x02051440
 
-src/overlays/ov005/calls/Ov005_ConfigureBackgroundControls.c:
+src/overlays/scenes/ov005_story_result/Ov005_ConfigureBackgroundControls.c:
     complete
     .text       start:0x02051440 end:0x020514ec
 
-src/overlays/ov005/auto/Ov005_ConfigureBackgroundPriorities.c:
+src/overlays/scenes/ov005_story_result/Ov005_ConfigureBackgroundPriorities.c:
     complete
     .text       start:0x020514ec end:0x02051560
 
-src/overlays/ov005/calls/Ov005_InitializeGraphics.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitializeGraphics.c:
     complete
     .text       start:0x02051560 end:0x020515dc
 
-src/overlays/ov005/calls/Ov005_EnterSceneWithMode.c:
+src/overlays/scenes/ov005_story_result/Ov005_EnterSceneWithMode.c:
     complete
     .text       start:0x020515dc end:0x020516b4
 
-src/overlays/ov005/calls/Ov005_TeardownMissionResult.c:
+src/overlays/scenes/ov005_story_result/Ov005_TeardownMissionResult.c:
     complete
     .text       start:0x020516b4 end:0x02051724
 
-src/overlays/ov005/calls/Ov005_UpdateMenuExitTransition.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateMenuExitTransition.c:
     complete
     .text       start:0x02051724 end:0x0205192c
 
-src/overlays/ov005/calls/Ov005_PopulateMenuItem.c:
+src/overlays/scenes/ov005_story_result/Ov005_PopulateMenuItem.c:
     complete
     .text       start:0x0205192c end:0x02051ba0
 
-src/overlays/ov005/calls/Ov005_AddMenuItem.c:
+src/overlays/scenes/ov005_story_result/Ov005_AddMenuItem.c:
     complete
     .text       start:0x02051ba0 end:0x02051be4
 
-src/overlays/ov005/calls/Ov005_AddWeightedMenuItem.c:
+src/overlays/scenes/ov005_story_result/Ov005_AddWeightedMenuItem.c:
     complete
     .text       start:0x02051be4 end:0x02051cd4
 
-src/overlays/ov005/calls/Ov005_AddMissionRewardItems.c:
+src/overlays/scenes/ov005_story_result/Ov005_AddMissionRewardItems.c:
     complete
     .text       start:0x02051cd4 end:0x02051eb8
 
-src/overlays/ov005/auto/Ov005_InitializeMenuQuad.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitializeMenuQuad.c:
     complete
     .text       start:0x02051eb8 end:0x02051efc
 
-src/overlays/ov005/calls/Ov005_LoadTextureResource.c:
+src/overlays/scenes/ov005_story_result/Ov005_LoadTextureResource.c:
     complete
     .text       start:0x02051efc end:0x02051f78
 
-src/overlays/ov005/calls/Ov005_LoadItemTextures.c:
+src/overlays/scenes/ov005_story_result/Ov005_LoadItemTextures.c:
     complete
     .text       start:0x02051f78 end:0x02052048
 
-src/overlays/ov005/calls/Ov005_RefreshQuadTextures.c:
+src/overlays/scenes/ov005_story_result/Ov005_RefreshQuadTextures.c:
     complete
     .text       start:0x02052048 end:0x02052118
 
-src/overlays/ov005/calls/Ov005_DrawVisibleMenuItems.c:
+src/overlays/scenes/ov005_story_result/Ov005_DrawVisibleMenuItems.c:
     complete
     .text       start:0x02052118 end:0x020522ec
 
-src/overlays/ov005/calls/Ov005_DrawMenuFrame.c:
+src/overlays/scenes/ov005_story_result/Ov005_DrawMenuFrame.c:
     complete
     .text       start:0x020522ec end:0x020522fc
 
-src/overlays/ov005/calls/Ov005_SetEntryOffsetXY.c:
+src/overlays/scenes/ov005_story_result/Ov005_SetEntryOffsetXY.c:
     complete
     .text       start:0x020522fc end:0x0205234c
 
-src/overlays/ov005/calls/Ov005_InvokeTagCallback.c:
+src/overlays/scenes/ov005_story_result/Ov005_InvokeTagCallback.c:
     complete
     .text       start:0x0205234c end:0x02052384
 
-src/overlays/ov005/calls/Ov005_DrawShadowedText.c:
+src/overlays/scenes/ov005_story_result/Ov005_DrawShadowedText.c:
     complete
     .text       start:0x02052384 end:0x020523f8
 
-src/overlays/ov005/calls/Ov005_RenderTextSurface.c:
+src/overlays/scenes/ov005_story_result/Ov005_RenderTextSurface.c:
     complete
     .text       start:0x020523f8 end:0x02052738
 
-src/overlays/ov005/calls/Ov005_LoadResultBackground.c:
+src/overlays/scenes/ov005_story_result/Ov005_LoadResultBackground.c:
     complete
     .text       start:0x02052738 end:0x02052800
 
-src/overlays/ov005/calls/Ov005_RebuildRewardRows.c:
+src/overlays/scenes/ov005_story_result/Ov005_RebuildRewardRows.c:
     complete
     .text       start:0x02052800 end:0x020528c0
 
-src/overlays/ov005/calls/Ov005_InitializeRewardItems.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitializeRewardItems.c:
     complete
     .text       start:0x020528c0 end:0x02052a7c
 
-src/overlays/ov005/calls/Ov005_AllocateResultTextures.c:
+src/overlays/scenes/ov005_story_result/Ov005_AllocateResultTextures.c:
     complete
     .text       start:0x02052a7c end:0x02052ba8
 
-src/overlays/ov005/calls/Ov005_InitializeResultResources.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitializeResultResources.c:
     complete
     .text       start:0x02052ba8 end:0x02052ca4
 
-src/overlays/ov005/calls/Ov005_InitializeResultSprites.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitializeResultSprites.c:
     complete
     .text       start:0x02052ca4 end:0x02052fe0
 
-src/overlays/ov005/calls/Ov005_InitializeResultTextSurfaces.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitializeResultTextSurfaces.c:
     complete
     .text       start:0x02052fe0 end:0x020531cc
 
-src/overlays/ov005/calls/Ov005_InitializeResourceTracker.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitializeResourceTracker.c:
     complete
     .text       start:0x020531cc end:0x02053250
 
-src/overlays/ov005/calls/Ov005_InitInteractiveEntries.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitInteractiveEntries.c:
     complete
     .text       start:0x02053250 end:0x020532d0
 
-src/overlays/ov005/calls/Ov005_InitRowSelection.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitRowSelection.c:
     complete
     .text       start:0x020532d0 end:0x02053370
 
-src/overlays/ov005/auto/Ov005_GetVisibleItemCount.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetVisibleItemCount.c:
     complete
     .text       start:0x02053370 end:0x020533a8
 
-src/overlays/ov005/calls/Ov005_GetVisibleItemPercent.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetVisibleItemPercent.c:
     complete
     .text       start:0x020533a8 end:0x020533d8
 
-src/overlays/ov005/calls/Ov005_MoveSelection.c:
+src/overlays/scenes/ov005_story_result/Ov005_MoveSelection.c:
     complete
     .text       start:0x020533d8 end:0x020535c8
 
-src/overlays/ov005/calls/Ov005_RefreshSelectionIndicators.c:
+src/overlays/scenes/ov005_story_result/Ov005_RefreshSelectionIndicators.c:
     complete
     .text       start:0x020535c8 end:0x020536ac
 
-src/overlays/ov005/calls/Ov005_HandleDirectionalInput.c:
+src/overlays/scenes/ov005_story_result/Ov005_HandleDirectionalInput.c:
     complete
     .text       start:0x020536ac end:0x0205374c
 
-src/overlays/ov005/calls/Ov005_InitScrollbar.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitScrollbar.c:
     complete
     .text       start:0x0205374c end:0x020538ec
 
-src/overlays/ov005/calls/Ov005_StartStatusTween.c:
+src/overlays/scenes/ov005_story_result/Ov005_StartStatusTween.c:
     complete
     .text       start:0x020538ec end:0x02053994
 
-src/overlays/ov005/calls/Ov005_UpdateRewardPosition.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateRewardPosition.c:
     complete
     .text       start:0x02053994 end:0x02053a74
 
-src/overlays/ov005/calls/Ov005_UpdateScrollPosition.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateScrollPosition.c:
     complete
     .text       start:0x02053a74 end:0x02053b80
 
-src/overlays/ov005/calls/Ov005_EnterMainScene.c:
+src/overlays/scenes/ov005_story_result/Ov005_EnterMainScene.c:
     complete
     .text       start:0x02053b80 end:0x02053c58
 
-src/overlays/ov005/calls/Ov005_CloseMainMenu.c:
+src/overlays/scenes/ov005_story_result/Ov005_CloseMainMenu.c:
     complete
     .text       start:0x02053c58 end:0x02053d74
 
-src/overlays/ov005/calls/Ov005_UpdateMainScene.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateMainScene.c:
     complete
     .text       start:0x02053d74 end:0x02053e24
 
-src/overlays/ov005/calls/Ov005_ResourceEntryCallback.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResourceEntryCallback.c:
     complete
     .text       start:0x02053e24 end:0x02053e34
 
-src/overlays/ov005/calls/Ov005_ResourceNodeCallback.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResourceNodeCallback.c:
     complete
     .text       start:0x02053e34 end:0x02053e44
 
-src/overlays/ov005/calls/Ov005_EnqueueDirtyTextBuffers.c:
+src/overlays/scenes/ov005_story_result/Ov005_EnqueueDirtyTextBuffers.c:
     complete
     .text       start:0x02053e44 end:0x02053ebc
 
-src/overlays/ov005/auto/Ov005_GetRowBufferIndex.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetRowBufferIndex.c:
     complete
     .text       start:0x02053ebc end:0x02053ef0
 
-src/overlays/ov005/calls/Ov005_GetRowBuffer.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetRowBuffer.c:
     complete
     .text       start:0x02053ef0 end:0x02053f34
 
-src/overlays/ov005/calls/Ov005_BlitResourceTilemap.c:
+src/overlays/scenes/ov005_story_result/Ov005_BlitResourceTilemap.c:
     complete
     .text       start:0x02053f34 end:0x020540b4
 
-src/overlays/ov005/calls/Ov005_UpdateFadeIn.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateFadeIn.c:
     complete
     .text       start:0x020540b4 end:0x02054164
 
-src/overlays/ov005/calls/Ov005_StartTouchSampling.c:
+src/overlays/scenes/ov005_story_result/Ov005_StartTouchSampling.c:
     complete
     .text       start:0x02054164 end:0x02054184
 
-src/overlays/ov005/calls/Ov005_UpdateDialogVisibility.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateDialogVisibility.c:
     complete
     .text       start:0x02054184 end:0x020544f4
 
-src/overlays/ov005/calls/Ov005_RefreshDialogChoice.c:
+src/overlays/scenes/ov005_story_result/Ov005_RefreshDialogChoice.c:
     complete
     .text       start:0x020544f4 end:0x020545f8
 
-src/overlays/ov005/calls/Ov005_WaitForMenuEntry.c:
+src/overlays/scenes/ov005_story_result/Ov005_WaitForMenuEntry.c:
     complete
     .text       start:0x020545f8 end:0x02054674
 
-src/overlays/ov005/calls/Ov005_UpdateRewardPresentation.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateRewardPresentation.c:
     complete
     .text       start:0x02054674 end:0x02054774
 
-src/overlays/ov005/calls/Ov005_RefreshAndHandleCancel.c:
+src/overlays/scenes/ov005_story_result/Ov005_RefreshAndHandleCancel.c:
     complete
     .text       start:0x02054774 end:0x020547e4
 
-src/overlays/ov005/calls/Ov005_UpdateConfirmation.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateConfirmation.c:
     complete
     .text       start:0x020547e4 end:0x020549bc
 
-src/overlays/ov005/calls/Ov005_WaitForExitTask.c:
+src/overlays/scenes/ov005_story_result/Ov005_WaitForExitTask.c:
     complete
     .text       start:0x020549bc end:0x02054a10
 
-src/overlays/ov005/calls/Ov005_LatchTickState7.c:
+src/overlays/scenes/ov005_story_result/Ov005_LatchTickState7.c:
     complete
     .text       start:0x02054a10 end:0x02054a4c
 
-src/overlays/ov005/calls/Ov005_UpdateFadeOut.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateFadeOut.c:
     complete
     .text       start:0x02054a4c end:0x02054ad0
 
-src/overlays/ov005/calls/Ov005_MarkMenuExitRequested.c:
+src/overlays/scenes/ov005_story_result/Ov005_MarkMenuExitRequested.c:
     complete
     .text       start:0x02054ad0 end:0x02054af4
 
-src/overlays/ov005/calls/Ov005_CommitMenuRewards.c:
+src/overlays/scenes/ov005_story_result/Ov005_CommitMenuRewards.c:
     complete
     .text       start:0x02054af4 end:0x02054dcc
 
-src/overlays/ov005/calls/Ov005_ScrollFromTouch.c:
+src/overlays/scenes/ov005_story_result/Ov005_ScrollFromTouch.c:
     complete
     .text       start:0x02054dcc end:0x02054eb8
 
-src/overlays/ov005/auto/Ov005_ResultSpriteCallbackNoOp.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResultSpriteCallbackNoOp.c:
     complete
     .text       start:0x02054eb8 end:0x02054ebc
 
-src/overlays/ov005/auto/Ov005_ResultSpriteCallbackNoOp_2.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResultSpriteCallbackNoOp_2.c:
     complete
     .text       start:0x02054ebc end:0x02054ec0
 
-src/overlays/ov005/auto/Ov005_ResultSpriteCallbackNoOp_3.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResultSpriteCallbackNoOp_3.c:
     complete
     .text       start:0x02054ec0 end:0x02054ec4
 
-src/overlays/ov005/auto/Ov005_ResultSpriteCallbackNoOp_4.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResultSpriteCallbackNoOp_4.c:
     complete
     .text       start:0x02054ec4 end:0x02054ec8
 
-src/overlays/ov005/calls/Ov005_ConfirmExitFromTouch.c:
+src/overlays/scenes/ov005_story_result/Ov005_ConfirmExitFromTouch.c:
     complete
     .text       start:0x02054ec8 end:0x02054f18
 
-src/overlays/ov005/calls/Ov005_CancelExitFromTouch.c:
+src/overlays/scenes/ov005_story_result/Ov005_CancelExitFromTouch.c:
     complete
     .text       start:0x02054f18 end:0x02054f7c
 
-src/overlays/ov005/calls/Ov005_Arm.c:
+src/overlays/scenes/ov005_story_result/Ov005_Arm.c:
     complete
     .text       start:0x02054f7c end:0x02054f9c
 
-src/overlays/ov005/calls/Ov005_SetField4C2C.c:
+src/overlays/scenes/ov005_story_result/Ov005_SetField4C2C.c:
     complete
     .text       start:0x02054f9c end:0x02054fb8
 
-src/overlays/ov005/calls/Ov005_IsState6.c:
+src/overlays/scenes/ov005_story_result/Ov005_IsState6.c:
     complete
     .text       start:0x02054fb8 end:0x02054fdc
 
-src/overlays/ov005/calls/Ov005_GetResult.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetResult.c:
     complete
     .text       start:0x02054fdc end:0x02054ff4
 
-src/overlays/ov005/calls/Ov005_UpdateAllMissionsClearedFlag.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateAllMissionsClearedFlag.c:
     complete
     .text       start:0x02054ff4 end:0x0205506c
 
-src/overlays/ov005/calls/Ov005_UpdateAllMissionsCompleteFlag.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateAllMissionsCompleteFlag.c:
     complete
     .text       start:0x0205506c end:0x020550e4
 
-src/overlays/ov005/calls/Ov005_CommitMissionResults.c:
+src/overlays/scenes/ov005_story_result/Ov005_CommitMissionResults.c:
     complete
     .text       start:0x020550e4 end:0x02055480
 
-src/overlays/ov005/calls/Ov005_DrawResultNumber.c:
+src/overlays/scenes/ov005_story_result/Ov005_DrawResultNumber.c:
     complete
     .text       start:0x02055480 end:0x02055528
 
-src/overlays/ov005/calls/Ov005_SelectAndShowResultSprite.c:
+src/overlays/scenes/ov005_story_result/Ov005_SelectAndShowResultSprite.c:
     complete
     .text       start:0x02055528 end:0x02055594
 
-src/overlays/ov005/calls/Ov005_SetResultSpritePixelOffset.c:
+src/overlays/scenes/ov005_story_result/Ov005_SetResultSpritePixelOffset.c:
     complete
     .text       start:0x02055594 end:0x020555e4
 
-src/overlays/ov005/calls/Ov005_DrawResultGauge.c:
+src/overlays/scenes/ov005_story_result/Ov005_DrawResultGauge.c:
     complete
     .text       start:0x020555e4 end:0x02055688
 
-src/overlays/ov005/calls/Ov005_DrawRewardRows.c:
+src/overlays/scenes/ov005_story_result/Ov005_DrawRewardRows.c:
     complete
     .text       start:0x02055688 end:0x020557a8
 
-src/overlays/ov005/calls/Ov005_ShowResultRankAwards.c:
+src/overlays/scenes/ov005_story_result/Ov005_ShowResultRankAwards.c:
     complete
     .text       start:0x020557a8 end:0x020558c0
 
-src/overlays/ov005/calls/Ov005_DrawResultValues.c:
+src/overlays/scenes/ov005_story_result/Ov005_DrawResultValues.c:
     complete
     .text       start:0x020558c0 end:0x02055bb4
 
-src/overlays/ov005/calls/Ov005_ConfigureResultTweens.c:
+src/overlays/scenes/ov005_story_result/Ov005_ConfigureResultTweens.c:
     complete
     .text       start:0x02055bb4 end:0x02055c4c
 
-src/overlays/ov005/calls/Ov005_SampleResultCounters.c:
+src/overlays/scenes/ov005_story_result/Ov005_SampleResultCounters.c:
     complete
     .text       start:0x02055c4c end:0x02055d2c
 
-src/overlays/ov005/calls/Ov005_ShowResultRewardMultiplier.c:
+src/overlays/scenes/ov005_story_result/Ov005_ShowResultRewardMultiplier.c:
     complete
     .text       start:0x02055d2c end:0x02055e34
 
-src/overlays/ov005/calls/Ov005_UpdateResultRewardIndicators.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateResultRewardIndicators.c:
     complete
     .text       start:0x02055e34 end:0x02056010
 
-src/overlays/ov005/calls/Ov005_StartAndZeroAllCounterDurations.c:
+src/overlays/scenes/ov005_story_result/Ov005_StartAndZeroAllCounterDurations.c:
     complete
     .text       start:0x02056010 end:0x02056078
 
-src/overlays/ov005/calls/Ov005_ZeroStartedCounterDurations.c:
+src/overlays/scenes/ov005_story_result/Ov005_ZeroStartedCounterDurations.c:
     complete
     .text       start:0x02056078 end:0x020560e8
 
-src/overlays/ov005/calls/Ov005_LoadResultBackgroundGraphics.c:
+src/overlays/scenes/ov005_story_result/Ov005_LoadResultBackgroundGraphics.c:
     complete
     .text       start:0x020560e8 end:0x020562c4
 
-src/overlays/ov005/calls/Ov005_DrawResultTile.c:
+src/overlays/scenes/ov005_story_result/Ov005_DrawResultTile.c:
     complete
     .text       start:0x020562c4 end:0x02056314
 
-src/overlays/ov005/calls/Ov005_SelectEntryById.c:
+src/overlays/scenes/ov005_story_result/Ov005_SelectEntryById.c:
     complete
     .text       start:0x02056314 end:0x02056344
 
-src/overlays/ov005/calls/Ov005_DrawResultTextWithShadow.c:
+src/overlays/scenes/ov005_story_result/Ov005_DrawResultTextWithShadow.c:
     complete
     .text       start:0x02056344 end:0x020563b0
 
-src/overlays/ov005/calls/Ov005_UpdateResultLabels.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateResultLabels.c:
     complete
     .text       start:0x020563b0 end:0x020564a4
 
-src/overlays/ov005/calls/Ov005_InitResultResources.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitResultResources.c:
     complete
     .text       start:0x020564a4 end:0x0205660c
 
-src/overlays/ov005/calls/Ov005_InitializeResultResourceTracker.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitializeResultResourceTracker.c:
     complete
     .text       start:0x0205660c end:0x02056690
 
-src/overlays/ov005/calls/Ov005_InitializeMissionResultSprites.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitializeMissionResultSprites.c:
     complete
     .text       start:0x02056690 end:0x02056b54
 
-src/overlays/ov005/calls/Ov005_InitializeResultTextSurfaces_2.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitializeResultTextSurfaces_2.c:
     complete
     .text       start:0x02056b54 end:0x02056ca4
 
-src/overlays/ov005/calls/Ov005_OpenResultScreen.c:
+src/overlays/scenes/ov005_story_result/Ov005_OpenResultScreen.c:
     complete
     .text       start:0x02056ca4 end:0x02056e24
 
-src/overlays/ov005/calls/Ov005_CloseResultScreen.c:
+src/overlays/scenes/ov005_story_result/Ov005_CloseResultScreen.c:
     complete
     .text       start:0x02056e24 end:0x02056f1c
 
-src/overlays/ov005/calls/Ov005_TickResultScreen.c:
+src/overlays/scenes/ov005_story_result/Ov005_TickResultScreen.c:
     complete
     .text       start:0x02056f1c end:0x02056fb0
 
-src/overlays/ov005/calls/Ov005_ResultResourceEntryCallback.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResultResourceEntryCallback.c:
     complete
     .text       start:0x02056fb0 end:0x02056fc0
 
-src/overlays/ov005/calls/Ov005_ResultResourceNodeCallback.c:
+src/overlays/scenes/ov005_story_result/Ov005_ResultResourceNodeCallback.c:
     complete
     .text       start:0x02056fc0 end:0x02056fd0
 
-src/overlays/ov005/calls/Ov005_FlushDirtyResultRows.c:
+src/overlays/scenes/ov005_story_result/Ov005_FlushDirtyResultRows.c:
     complete
     .text       start:0x02056fd0 end:0x02057048
 
-src/overlays/ov005/calls/Ov005_ElemIdToSlot.c:
+src/overlays/scenes/ov005_story_result/Ov005_ElemIdToSlot.c:
     complete
     .text       start:0x02057048 end:0x0205708c
 
-src/overlays/ov005/calls/Ov005_FindResultRowBuffer.c:
+src/overlays/scenes/ov005_story_result/Ov005_FindResultRowBuffer.c:
     complete
     .text       start:0x0205708c end:0x020570d0
 
-src/overlays/ov005/calls/Ov005_ClearEntryWorkArea.c:
+src/overlays/scenes/ov005_story_result/Ov005_ClearEntryWorkArea.c:
     complete
     .text       start:0x020570d0 end:0x020570f0
 
-src/overlays/ov005/calls/Ov005_BlitResultTilemap.c:
+src/overlays/scenes/ov005_story_result/Ov005_BlitResultTilemap.c:
     complete
     .text       start:0x020570f0 end:0x02057270
 
-src/overlays/ov005/calls/Ov005_FadeInResultScreen.c:
+src/overlays/scenes/ov005_story_result/Ov005_FadeInResultScreen.c:
     complete
     .text       start:0x02057270 end:0x020573e8
 
-src/overlays/ov005/calls/Ov005_AnimateResultCounters.c:
+src/overlays/scenes/ov005_story_result/Ov005_AnimateResultCounters.c:
     complete
     .text       start:0x020573e8 end:0x020576c8
 
-src/overlays/ov005/calls/Ov005_LatchTickState3.c:
+src/overlays/scenes/ov005_story_result/Ov005_LatchTickState3.c:
     complete
     .text       start:0x020576c8 end:0x02057704
 
-src/overlays/ov005/calls/Ov005_FadeOutResultScreen.c:
+src/overlays/scenes/ov005_story_result/Ov005_FadeOutResultScreen.c:
     complete
     .text       start:0x02057704 end:0x02057784
 
-src/overlays/ov005/calls/Ov005_SetFlag4B78.c:
+src/overlays/scenes/ov005_story_result/Ov005_SetFlag4B78.c:
     complete
     .text       start:0x02057784 end:0x020577a0
 
-src/overlays/ov005/calls/Ov005_CalculateGaugeRange.c:
+src/overlays/scenes/ov005_story_result/Ov005_CalculateGaugeRange.c:
     complete
     .text       start:0x020577a0 end:0x020578c4
 
-src/overlays/ov005/auto/Ov005_CountDecimalDigits.c:
+src/overlays/scenes/ov005_story_result/Ov005_CountDecimalDigits.c:
     complete
     .text       start:0x020578c4 end:0x020578f4
 
-src/overlays/ov005/calls/Ov005_ExtractDecimalDigit.c:
+src/overlays/scenes/ov005_story_result/Ov005_ExtractDecimalDigit.c:
     complete
     .text       start:0x020578f4 end:0x02057984
 
-src/overlays/ov005/auto/Ov005_SplitResultMilliseconds.c:
+src/overlays/scenes/ov005_story_result/Ov005_SplitResultMilliseconds.c:
     complete
     .text       start:0x02057984 end:0x02057a18
 
-src/overlays/ov005/calls/Ov005_SubScene_SetFlagC5C.c:
+src/overlays/scenes/ov005_story_result/Ov005_SubScene_SetFlagC5C.c:
     complete
     .text       start:0x02057a18 end:0x02057a34
 
-src/overlays/ov005/calls/Ov005_SubScene_SetFlagC60.c:
+src/overlays/scenes/ov005_story_result/Ov005_SubScene_SetFlagC60.c:
     complete
     .text       start:0x02057a34 end:0x02057a50
 
-src/overlays/ov005/calls/Ov005_SubScene_Arm.c:
+src/overlays/scenes/ov005_story_result/Ov005_SubScene_Arm.c:
     complete
     .text       start:0x02057a50 end:0x02057a6c
 
-src/overlays/ov005/calls/Ov005_SubScene_IsState2.c:
+src/overlays/scenes/ov005_story_result/Ov005_SubScene_IsState2.c:
     complete
     .text       start:0x02057a6c end:0x02057a90
 
-src/overlays/ov005/calls/Ov005_SubScene_IsIdle.c:
+src/overlays/scenes/ov005_story_result/Ov005_SubScene_IsIdle.c:
     complete
     .text       start:0x02057a90 end:0x02057ab4
 
-src/overlays/ov005/calls/Ov005_SubScene_GetResult.c:
+src/overlays/scenes/ov005_story_result/Ov005_SubScene_GetResult.c:
     complete
     .text       start:0x02057ab4 end:0x02057acc
 
-src/overlays/ov005/auto/Ov005_RoundRewardPercent.c:
+src/overlays/scenes/ov005_story_result/Ov005_RoundRewardPercent.c:
     complete
     .text       start:0x02057acc end:0x02057b40
 
-src/overlays/ov005/calls/Ov005_ScaleByPercent.c:
+src/overlays/scenes/ov005_story_result/Ov005_ScaleByPercent.c:
     complete
     .text       start:0x02057b40 end:0x02057b6c
 
-src/overlays/ov005/calls/Ov005_CountRewardThresholdGains.c:
+src/overlays/scenes/ov005_story_result/Ov005_CountRewardThresholdGains.c:
     complete
     .text       start:0x02057b6c end:0x02057c48
 
-src/overlays/ov005/calls/Ov005_InitializeResultConfiguration.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitializeResultConfiguration.c:
     complete
     .text       start:0x02057c48 end:0x02058390
 
-src/overlays/ov005/calls/Ov005_RegisterAnimTables.c:
+src/overlays/scenes/ov005_story_result/Ov005_RegisterAnimTables.c:
     complete
     .text       start:0x02058390 end:0x020583b0
 
-src/overlays/ov005/calls/Ov005_IsRangeFullyCleared.c:
+src/overlays/scenes/ov005_story_result/Ov005_IsRangeFullyCleared.c:
     complete
     .text       start:0x020583b0 end:0x020584a8
 
-src/overlays/ov005/calls/Ov005_UpdateCompletionMilestones.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateCompletionMilestones.c:
     complete
     .text       start:0x020584a8 end:0x02058678
 
-src/overlays/ov005/calls/Ov005_IsSubContextUsable.c:
+src/overlays/scenes/ov005_story_result/Ov005_IsSubContextUsable.c:
     complete
     .text       start:0x02058678 end:0x020586ac
 
-src/overlays/ov005/calls/Ov005_OpenExitTask.c:
+src/overlays/scenes/ov005_story_result/Ov005_OpenExitTask.c:
     complete
     .text       start:0x020586ac end:0x0205873c
 
-src/overlays/ov005/calls/Ov005_ClassTeardown.c:
+src/overlays/scenes/ov005_story_result/Ov005_ClassTeardown.c:
     complete
     .text       start:0x0205873c end:0x0205875c
 
-src/overlays/ov005/calls/Ov005_ReceiveExitMessage.c:
+src/overlays/scenes/ov005_story_result/Ov005_ReceiveExitMessage.c:
     complete
     .text       start:0x0205875c end:0x02058818
 
-src/overlays/ov005/calls/Ov005_UpdateHostExit.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateHostExit.c:
     complete
     .text       start:0x02058818 end:0x0205889c
 
-src/overlays/ov005/calls/Ov005_UpdateClientExit.c:
+src/overlays/scenes/ov005_story_result/Ov005_UpdateClientExit.c:
     complete
     .text       start:0x0205889c end:0x020588f0
 
-src/overlays/ov005/calls/Ov005_WaitExitDelivery.c:
+src/overlays/scenes/ov005_story_result/Ov005_WaitExitDelivery.c:
     complete
     .text       start:0x020588f0 end:0x02058954
 
-src/overlays/ov005/calls/Ov005_FinishExit.c:
+src/overlays/scenes/ov005_story_result/Ov005_FinishExit.c:
     complete
     .text       start:0x02058954 end:0x0205896c
 
-src/overlays/ov005/calls/Ov005_GetLocalMemberKind.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetLocalMemberKind.c:
     complete
     .text       start:0x0205896c end:0x02058988
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord00.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord00.c:
     complete
     .text       start:0x02058988 end:0x02058bb4
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord01.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord01.c:
     complete
     .text       start:0x02058bb4 end:0x02058de0
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord02.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord02.c:
     complete
     .text       start:0x02058de0 end:0x0205900c
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord03.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord03.c:
     complete
     .text       start:0x0205900c end:0x02059238
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord04.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord04.c:
     complete
     .text       start:0x02059238 end:0x02059464
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord05.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord05.c:
     complete
     .text       start:0x02059464 end:0x02059690
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord06.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord06.c:
     complete
     .text       start:0x02059690 end:0x020598bc
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord07.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord07.c:
     complete
     .text       start:0x020598bc end:0x02059ae8
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord08.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord08.c:
     complete
     .text       start:0x02059ae8 end:0x02059d14
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord09.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord09.c:
     complete
     .text       start:0x02059d14 end:0x02059f40
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord10.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord10.c:
     complete
     .text       start:0x02059f40 end:0x0205a16c
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord11.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord11.c:
     complete
     .text       start:0x0205a16c end:0x0205a398
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord12.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord12.c:
     complete
     .text       start:0x0205a398 end:0x0205a5c4
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord13.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord13.c:
     complete
     .text       start:0x0205a5c4 end:0x0205a7f0
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord14.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord14.c:
     complete
     .text       start:0x0205a7f0 end:0x0205aa1c
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord15.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord15.c:
     complete
     .text       start:0x0205aa1c end:0x0205ac48
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord16.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord16.c:
     complete
     .text       start:0x0205ac48 end:0x0205ae74
 
-src/overlays/ov005/auto/Ov005_RemapDescriptionRecord17.c:
+src/overlays/scenes/ov005_story_result/Ov005_RemapDescriptionRecord17.c:
     complete
     .text       start:0x0205ae74 end:0x0205b0a0
 
-src/overlays/ov005/calls/Ov005_InitWithDefaultHandlers.c:
+src/overlays/scenes/ov005_story_result/Ov005_InitWithDefaultHandlers.c:
     complete
     .text       start:0x0205b0a0 end:0x0205b0e4
 
-src/overlays/ov005/auto/Ov005_InvokeMethod8.c:
+src/overlays/scenes/ov005_story_result/Ov005_InvokeMethod8.c:
     complete
     .text       start:0x0205b0e4 end:0x0205b100
 
-src/overlays/ov005/calls/Ov005_GetItemDescriptionForMember.c:
+src/overlays/scenes/ov005_story_result/Ov005_GetItemDescriptionForMember.c:
     complete
     .text       start:0x0205b100 end:0x0205b2dc
 
-src/overlays/ov005/data/ov005_class_0205b4dc.c:
+src/overlays/scenes/ov005_story_result/data/ov005_class_0205b4dc.c:
     complete
     .data       start:0x0205b4dc end:0x0205b4f0
 
-src/overlays/ov005/data/ov005_class_0205b4f0.c:
+src/overlays/scenes/ov005_story_result/data/ov005_class_0205b4f0.c:
     complete
     .data       start:0x0205b4f0 end:0x0205b504
 
-src/overlays/ov005/data/ov005_class_0205b590.c:
+src/overlays/scenes/ov005_story_result/data/ov005_class_0205b590.c:
     complete
     .data       start:0x0205b590 end:0x0205b5a4
 
-src/overlays/ov005/data/ov005_class_0205b7cc.c:
+src/overlays/scenes/ov005_story_result/data/ov005_class_0205b7cc.c:
     complete
     .data       start:0x0205b7cc end:0x0205b7e0
 
-src/overlays/ov005/data/ov005_msglist_0205b3bc.c:
+src/overlays/scenes/ov005_story_result/data/ov005_msglist_0205b3bc.c:
     complete
     .rodata     start:0x0205b3bc end:0x0205b3c8
 
-src/overlays/ov005/data/ov005_pointers_0205b368.c:
+src/overlays/scenes/ov005_story_result/data/ov005_pointers_0205b368.c:
     complete
     .rodata     start:0x0205b368 end:0x0205b38c
 
-src/overlays/ov005/data/ov005_pointers_0205b39c.c:
+src/overlays/scenes/ov005_story_result/data/ov005_pointers_0205b39c.c:
     complete
     .rodata     start:0x0205b39c end:0x0205b3bc
 
-src/overlays/ov005/data/ov005_pointers_0205b79c.c:
+src/overlays/scenes/ov005_story_result/data/ov005_pointers_0205b79c.c:
     complete
     .data       start:0x0205b79c end:0x0205b7a8
 
-src/overlays/ov005/data/ov005_strings_0205b4c0.c:
+src/overlays/scenes/ov005_story_result/data/ov005_strings_0205b4c0.c:
     complete
     .data       start:0x0205b4c0 end:0x0205b4dc
 
-src/overlays/ov005/data/ov005_strings_0205b50c.c:
+src/overlays/scenes/ov005_story_result/data/ov005_strings_0205b50c.c:
     complete
     .data       start:0x0205b50c end:0x0205b588
 
-src/overlays/ov005/data/ov005_strings_0205b5a4.c:
+src/overlays/scenes/ov005_story_result/data/ov005_strings_0205b5a4.c:
     complete
     .data       start:0x0205b5a4 end:0x0205b620
 
-src/overlays/ov005/data/ov005_strings_0205b788.c:
+src/overlays/scenes/ov005_story_result/data/ov005_strings_0205b788.c:
     complete
     .data       start:0x0205b788 end:0x0205b79c
 
-src/overlays/ov005/data/ov005_tables_0205b2dc.c:
+src/overlays/scenes/ov005_story_result/data/ov005_tables_0205b2dc.c:
     complete
     .rodata     start:0x0205b2dc end:0x0205b368
 
-src/overlays/ov005/data/ov005_tables_0205b38c.c:
+src/overlays/scenes/ov005_story_result/data/ov005_tables_0205b38c.c:
     complete
     .rodata     start:0x0205b38c end:0x0205b39c
 
-src/overlays/ov005/data/ov005_tables_0205b3c8.c:
+src/overlays/scenes/ov005_story_result/data/ov005_tables_0205b3c8.c:
     complete
     .rodata     start:0x0205b3c8 end:0x0205b4b8
 
-src/overlays/ov005/data/ov005_tables_0205b504.c:
+src/overlays/scenes/ov005_story_result/data/ov005_tables_0205b504.c:
     complete
     .data       start:0x0205b504 end:0x0205b50c
 
-src/overlays/ov005/data/ov005_tables_0205b588.c:
+src/overlays/scenes/ov005_story_result/data/ov005_tables_0205b588.c:
     complete
     .data       start:0x0205b588 end:0x0205b590
 
-src/overlays/ov005/data/ov005_tables_0205b620.c:
+src/overlays/scenes/ov005_story_result/data/ov005_tables_0205b620.c:
     complete
     .data       start:0x0205b620 end:0x0205b788
 
-src/overlays/ov005/data/ov005_tables_0205b7a8.c:
+src/overlays/scenes/ov005_story_result/data/ov005_tables_0205b7a8.c:
     complete
     .data       start:0x0205b7a8 end:0x0205b7cc
 
-src/overlays/ov005/data/ov005_tables_0205b7e0.c:
+src/overlays/scenes/ov005_story_result/data/ov005_tables_0205b7e0.c:
     complete
     .data       start:0x0205b7e0 end:0x0205b800

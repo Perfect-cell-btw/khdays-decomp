@@ -2,7 +2,7 @@
 """Post-compile step for the DS Protect 1.10 units of ov028: encrypt their marked ranges.
 
 DS Protect keeps parts of its checks encrypted in the ROM. In the source a range is opened
-and closed by two hand-written markers (src/overlays/ov028/dsprot/dsprot_ranges.h) that carry
+and closed by two hand-written markers (src/overlays/system/ov028_dsprotect/dsprot/dsprot_ranges.h) that carry
 the same 16-bit key as the word 0xEB00kkkk; at run time the opening marker decrypts the
 instructions up to the matching key and the closing one encrypts them again. The library's
 build encrypted every range after compiling each unit, before linking -- which is why no call
@@ -25,7 +25,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIR = "src/overlays/ov028/dsprot/"
+sys.path.insert(0, str(ROOT / "tools"))
+import srctree  # noqa: E402  (where sources live: docs/layout.md)
+
+# the DS Protect units: <ov028 directory>/dsprot/
+SOURCE_DIR = (srctree.overlay_dirs(ROOT)["ov028"] / "dsprot").relative_to(ROOT).as_posix() + "/"
 
 SHT_REL, SHT_RELA = 9, 4
 SHF_ALLOC = 0x2

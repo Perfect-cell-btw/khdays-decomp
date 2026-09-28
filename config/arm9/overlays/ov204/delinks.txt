@@ -4,226 +4,226 @@
     .data       start:0x020d36a0 end:0x020d36c0 kind:data align:32
     .bss        start:0x020d36c0 end:0x020d36c0 kind:bss align:32
 
-src/overlays/ov204/calls/Ov204_RegisterEntityClass.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov204/calls/Ov204_CreateNamedEntity.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov204/calls/Ov204_Construct.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_Construct.c:
     complete
     .text       start:0x020cfc04 end:0x020cfe08
 
-src/overlays/ov204/calls/Ov204_ReleaseSubObjectsAndListThenNotify.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020cfe08 end:0x020cfe50
 
-src/overlays/ov204/calls/Ov204_TickAndSyncChildren.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_TickAndSyncChildren.c:
     complete
     .text       start:0x020cfe50 end:0x020cfec0
 
-src/overlays/ov204/calls/Ov204_Model_SetTrack0.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_Model_SetTrack0.c:
     complete
     .text       start:0x020cfec0 end:0x020cfef0
 
-src/overlays/ov204/calls/Ov204_OnMessage.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_OnMessage.c:
     complete
     .text       start:0x020cfef0 end:0x020d0100
 
-src/overlays/ov204/calls/Ov204_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d0100 end:0x020d014c
 
-src/overlays/ov204/calls/Ov204_OnHit.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_OnHit.c:
     complete
     .text       start:0x020d014c end:0x020d03b4
 
-src/overlays/ov204/auto/Ov204_RequestSubState10IfNotState9.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_RequestSubState10IfNotState9.c:
     complete
     .text       start:0x020d03b4 end:0x020d03f4
 
-src/overlays/ov204/calls/Ov204_EnterAimStateInstallCallbacks.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_EnterAimStateInstallCallbacks.c:
     complete
     .text       start:0x020d03f4 end:0x020d04c8
 
-src/overlays/ov204/calls/Ov204_DispatchSubStateByte.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_DispatchSubStateByte.c:
     complete
     .text       start:0x020d04c8 end:0x020d069c
 
-src/overlays/ov204/calls/Ov204_AdvanceMotionPublish.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_AdvanceMotionPublish.c:
     complete
     .text       start:0x020d069c end:0x020d0750
 
-src/overlays/ov204/calls/Ov204_TestSubObjectHelperNonzero.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_TestSubObjectHelperNonzero.c:
     complete
     .text       start:0x020d0750 end:0x020d0790
 
-src/overlays/ov204/calls/Ov204_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0790 end:0x020d07f8
 
-src/overlays/ov204/calls/Ov204_RerollTimerIfHitFlag.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_RerollTimerIfHitFlag.c:
     complete
     .text       start:0x020d07f8 end:0x020d0860
 
-src/overlays/ov204/calls/Ov204_ConfigHw60Action48ThenAdvance.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020d0860 end:0x020d092c
 
-src/overlays/ov204/calls/Ov204_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d092c end:0x020d09f4
 
-src/overlays/ov204/calls/Ov204_AiStep_QueueAction2OnFlag28Clear.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_AiStep_QueueAction2OnFlag28Clear.c:
     complete
     .text       start:0x020d09f4 end:0x020d0a28
 
-src/overlays/ov204/calls/Ov204_stDiv5Store.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_stDiv5Store.c:
     complete
     .text       start:0x020d0a28 end:0x020d0a84
 
-src/overlays/ov204/calls/Ov204_ApproachDecision.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_ApproachDecision.c:
     complete
     .text       start:0x020d0a84 end:0x020d0d20
 
-src/overlays/ov204/calls/Ov204_AiEnterChase.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_AiEnterChase.c:
     complete
     .text       start:0x020d0d20 end:0x020d0db4
 
-src/overlays/ov204/calls/Ov204_BeginApproach.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_BeginApproach.c:
     complete
     .text       start:0x020d0db4 end:0x020d0f2c
 
-src/overlays/ov204/calls/Ov204_ApproachTick.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_ApproachTick.c:
     complete
     .text       start:0x020d0f2c end:0x020d1044
 
-src/overlays/ov204/calls/Ov204_stateAcquireTransform.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_stateAcquireTransform.c:
     complete
     .text       start:0x020d1044 end:0x020d1130
 
-src/overlays/ov204/calls/Ov204_AiStep_QueueAction2OnFlag28Clear_2.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_AiStep_QueueAction2OnFlag28Clear_2.c:
     complete
     .text       start:0x020d1130 end:0x020d1164
 
-src/overlays/ov204/calls/Ov204_BeginPose5Aim.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_BeginPose5Aim.c:
     complete
     .text       start:0x020d1164 end:0x020d11fc
 
-src/overlays/ov204/calls/Ov204_CopyScaleVec3GuardedThenAdvance.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_CopyScaleVec3GuardedThenAdvance.c:
     complete
     .text       start:0x020d11fc end:0x020d1278
 
-src/overlays/ov204/calls/Ov204_ConfigHw60C5af8ThenClearRequest.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d1278 end:0x020d1340
 
-src/overlays/ov204/calls/Ov204_AiEnterAnim6WithSpeed.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_AiEnterAnim6WithSpeed.c:
     complete
     .text       start:0x020d1340 end:0x020d13b0
 
-src/overlays/ov204/calls/Ov204_TransformScaleAdvanceIfZero.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_TransformScaleAdvanceIfZero.c:
     complete
     .text       start:0x020d13b0 end:0x020d1420
 
-src/overlays/ov204/calls/Ov204_Action6IfHitFlagsSet.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_Action6IfHitFlagsSet.c:
     complete
     .text       start:0x020d1420 end:0x020d14a0
 
-src/overlays/ov204/calls/Ov204_TransformScaleThenAdvance.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_TransformScaleThenAdvance.c:
     complete
     .text       start:0x020d14a0 end:0x020d1518
 
-src/overlays/ov204/calls/Ov204_Action7IfHitFlagsSet.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_Action7IfHitFlagsSet.c:
     complete
     .text       start:0x020d1518 end:0x020d15a4
 
-src/overlays/ov204/calls/Ov204_SweepTick.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_SweepTick.c:
     complete
     .text       start:0x020d15a4 end:0x020d188c
 
-src/overlays/ov204/calls/Ov204_stateSetFlagEffect.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_stateSetFlagEffect.c:
     complete
     .text       start:0x020d188c end:0x020d1930
 
-src/overlays/ov204/calls/Ov204_SlamTick.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_SlamTick.c:
     complete
     .text       start:0x020d1930 end:0x020d1d54
 
-src/overlays/ov204/calls/Ov204_SetPose9ThenAdvanceSlot.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_SetPose9ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1d54 end:0x020d1d88
 
-src/overlays/ov204/calls/Ov204_GuardField28Pose10ClearAdvance.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_GuardField28Pose10ClearAdvance.c:
     complete
     .text       start:0x020d1d88 end:0x020d1dd4
 
-src/overlays/ov204/calls/Ov204_AiWaitThenAnim11.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_AiWaitThenAnim11.c:
     complete
     .text       start:0x020d1dd4 end:0x020d1e20
 
-src/overlays/ov204/calls/Ov204_AiStep_QueueAction2OnFlag28Clear_3.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_AiStep_QueueAction2OnFlag28Clear_3.c:
     complete
     .text       start:0x020d1e20 end:0x020d1e54
 
-src/overlays/ov204/calls/Ov204_EnterBounce.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_EnterBounce.c:
     complete
     .text       start:0x020d1e54 end:0x020d1f14
 
-src/overlays/ov204/calls/Ov204_BounceTick.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_BounceTick.c:
     complete
     .text       start:0x020d1f14 end:0x020d2728
 
-src/overlays/ov204/calls/Ov204_AiStep_QueueAction2OnFlag28Clear_4.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_AiStep_QueueAction2OnFlag28Clear_4.c:
     complete
     .text       start:0x020d2728 end:0x020d275c
 
-src/overlays/ov204/calls/Ov204_ConfigHw60Action49ThenAdvance.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d275c end:0x020d2810
 
-src/overlays/ov204/calls/Ov204_AiEnterAnim13.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_AiEnterAnim13.c:
     complete
     .text       start:0x020d2810 end:0x020d2850
 
-src/overlays/ov204/calls/Ov204_TimedAction6ThenReset.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_TimedAction6ThenReset.c:
     complete
     .text       start:0x020d2850 end:0x020d2904
 
-src/overlays/ov204/calls/Ov204_ChargeTick1.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_ChargeTick1.c:
     complete
     .text       start:0x020d2904 end:0x020d2b54
 
-src/overlays/ov204/calls/Ov204_ChargeTick2.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_ChargeTick2.c:
     complete
     .text       start:0x020d2b54 end:0x020d2da4
 
-src/overlays/ov204/calls/Ov204_ChargeTick3.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_ChargeTick3.c:
     complete
     .text       start:0x020d2da4 end:0x020d2ff4
 
-src/overlays/ov204/calls/Ov204_ChargeAdvance.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_ChargeAdvance.c:
     complete
     .text       start:0x020d2ff4 end:0x020d30e0
 
-src/overlays/ov204/calls/Ov204_AiStep_QueueAction2OnFlag28Clear_5.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_AiStep_QueueAction2OnFlag28Clear_5.c:
     complete
     .text       start:0x020d30e0 end:0x020d3114
 
-src/overlays/ov204/calls/Ov204_ChargeSweep.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_ChargeSweep.c:
     complete
     .text       start:0x020d3114 end:0x020d330c
 
-src/overlays/ov204/calls/Ov204_GroundSweep.c:
+src/overlays/enemies/ov204_enemy_28/Ov204_GroundSweep.c:
     complete
     .text       start:0x020d330c end:0x020d35c4
 
-src/overlays/ov204/data/ov204_strings_020d36a0.c:
+src/overlays/enemies/ov204_enemy_28/data/ov204_strings_020d36a0.c:
     complete
     .data       start:0x020d36a0 end:0x020d36c0
 
-src/overlays/ov204/data/ov204_tables_020d35c4.c:
+src/overlays/enemies/ov204_enemy_28/data/ov204_tables_020d35c4.c:
     complete
     .rodata     start:0x020d35c4 end:0x020d368c

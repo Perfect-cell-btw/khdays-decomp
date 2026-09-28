@@ -4,158 +4,158 @@
     .data       start:0x020b9ba0 end:0x020b9ca0 kind:data align:32
     .bss        start:0x020b9ca0 end:0x020b9cc0 kind:bss align:32
 
-src/overlays/ov070/calls/func_ov070_020b8100.c:
+src/overlays/players/ov070_player_axel_3/func_ov070_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov070/calls/Ov070_ClassCtor.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ClassCtor.c:
     complete
     .text       start:0x020b8114 end:0x020b813c
 
-src/overlays/ov070/calls/Ov070_ClassTeardown.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ClassTeardown.c:
     complete
     .text       start:0x020b813c end:0x020b8150
 
-src/overlays/ov070/calls/Ov070_ActorCtor.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ActorCtor.c:
     complete
     .text       start:0x020b8150 end:0x020b8390
 
-src/overlays/ov070/calls/Ov070_ClaimBothSlots.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ClaimBothSlots.c:
     complete
     .text       start:0x020b8390 end:0x020b83ec
 
-src/overlays/ov070/auto/Ov070_MapSlotKindToAnim.c:
+src/overlays/players/ov070_player_axel_3/Ov070_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b83ec end:0x020b8414
 
-src/overlays/ov070/calls/Ov070_ActorApplyModeChange.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ActorApplyModeChange.c:
     complete
     .text       start:0x020b8414 end:0x020b84f0
 
-src/overlays/ov070/calls/Ov070_initSubObjectsSetU64Flags.c:
+src/overlays/players/ov070_player_axel_3/Ov070_initSubObjectsSetU64Flags.c:
     complete
     .text       start:0x020b84f0 end:0x020b8608
 
-src/overlays/ov070/calls/Ov070_dispatchSubHandlerPair.c:
+src/overlays/players/ov070_player_axel_3/Ov070_dispatchSubHandlerPair.c:
     complete
     .text       start:0x020b8608 end:0x020b8638
 
-src/overlays/ov070/calls/Ov070_enterState21ComputeAimAngle.c:
+src/overlays/players/ov070_player_axel_3/Ov070_enterState21ComputeAimAngle.c:
     complete
     .text       start:0x020b8638 end:0x020b8710
 
-src/overlays/ov070/calls/Ov070_ActorBuildStep.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ActorBuildStep.c:
     complete
     .text       start:0x020b8710 end:0x020b87c0
 
-src/overlays/ov070/calls/Ov070_initTwoEntrySlots.c:
+src/overlays/players/ov070_player_axel_3/Ov070_initTwoEntrySlots.c:
     complete
     .text       start:0x020b87c0 end:0x020b883c
 
-src/overlays/ov070/calls/Ov070_freeSubitemChannelResources.c:
+src/overlays/players/ov070_player_axel_3/Ov070_freeSubitemChannelResources.c:
     complete
     .text       start:0x020b883c end:0x020b88b4
 
-src/overlays/ov070/calls/Ov070_initClearSubBlockField10.c:
+src/overlays/players/ov070_player_axel_3/Ov070_initClearSubBlockField10.c:
     complete
     .text       start:0x020b88b4 end:0x020b88e0
 
-src/overlays/ov070/calls/Ov070_ResetChannelsAndArm.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ResetChannelsAndArm.c:
     complete
     .text       start:0x020b88e0 end:0x020b8900
 
-src/overlays/ov070/calls/Ov070_ArmState3.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ArmState3.c:
     complete
     .text       start:0x020b8900 end:0x020b8918
 
-src/overlays/ov070/calls/Ov070_configTwoChannelsPair.c:
+src/overlays/players/ov070_player_axel_3/Ov070_configTwoChannelsPair.c:
     complete
     .text       start:0x020b8918 end:0x020b897c
 
-src/overlays/ov070/calls/Ov070_ActorNodeTick.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ActorNodeTick.c:
     complete
     .text       start:0x020b897c end:0x020b8b40
 
-src/overlays/ov070/calls/Ov070_configureSubObjectSlot.c:
+src/overlays/players/ov070_player_axel_3/Ov070_configureSubObjectSlot.c:
     complete
     .text       start:0x020b8b40 end:0x020b8c10
 
-src/overlays/ov070/calls/Ov070_updateSubObjectsAndRebind.c:
+src/overlays/players/ov070_player_axel_3/Ov070_updateSubObjectsAndRebind.c:
     complete
     .text       start:0x020b8c10 end:0x020b8c9c
 
-src/overlays/ov070/calls/Ov070_tickSubObjectsIfFlagged.c:
+src/overlays/players/ov070_player_axel_3/Ov070_tickSubObjectsIfFlagged.c:
     complete
     .text       start:0x020b8c9c end:0x020b8ce0
 
-src/overlays/ov070/calls/Ov070_ActorCreateSubObjects.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ActorCreateSubObjects.c:
     complete
     .text       start:0x020b8ce0 end:0x020b8f6c
 
-src/overlays/ov070/calls/Ov070_BindRig.c:
+src/overlays/players/ov070_player_axel_3/Ov070_BindRig.c:
     complete
     .text       start:0x020b8f6c end:0x020b9000
 
-src/overlays/ov070/calls/Ov070_beginObjectSlotIfReady.c:
+src/overlays/players/ov070_player_axel_3/Ov070_beginObjectSlotIfReady.c:
     complete
     .text       start:0x020b9000 end:0x020b90e0
 
-src/overlays/ov070/calls/Ov070_ActorFireAttack.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ActorFireAttack.c:
     complete
     .text       start:0x020b90e0 end:0x020b941c
 
-src/overlays/ov070/calls/Ov070_ActorPartsUpdatePass.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ActorPartsUpdatePass.c:
     complete
     .text       start:0x020b941c end:0x020b9510
 
-src/overlays/ov070/calls/Ov070_dispatchEntryList.c:
+src/overlays/players/ov070_player_axel_3/Ov070_dispatchEntryList.c:
     complete
     .text       start:0x020b9510 end:0x020b9574
 
-src/overlays/ov070/calls/Ov070_HomingApproachTriggerStep.c:
+src/overlays/players/ov070_player_axel_3/Ov070_HomingApproachTriggerStep.c:
     complete
     .text       start:0x020b9574 end:0x020b9700
 
-src/overlays/ov070/calls/Ov070_HomingApproachStep.c:
+src/overlays/players/ov070_player_axel_3/Ov070_HomingApproachStep.c:
     complete
     .text       start:0x020b9700 end:0x020b9810
 
-src/overlays/ov070/calls/Ov070_advanceProjectileAndSteer.c:
+src/overlays/players/ov070_player_axel_3/Ov070_advanceProjectileAndSteer.c:
     complete
     .text       start:0x020b9810 end:0x020b98e8
 
-src/overlays/ov070/calls/Ov070_emitTripleSpreadShots.c:
+src/overlays/players/ov070_player_axel_3/Ov070_emitTripleSpreadShots.c:
     complete
     .text       start:0x020b98e8 end:0x020b99e8
 
-src/overlays/ov070/calls/Ov070_ComputeApproachVelocity.c:
+src/overlays/players/ov070_player_axel_3/Ov070_ComputeApproachVelocity.c:
     complete
     .text       start:0x020b99e8 end:0x020b9b0c
 
-src/overlays/ov070/calls/Ov070_InvokeWithDataTable.c:
+src/overlays/players/ov070_player_axel_3/Ov070_InvokeWithDataTable.c:
     complete
     .text       start:0x020b9b0c end:0x020b9b24
 
-src/overlays/ov070/data/ov070_class_020b9ba0.c:
+src/overlays/players/ov070_player_axel_3/data/ov070_class_020b9ba0.c:
     complete
     .data       start:0x020b9ba0 end:0x020b9bb4
 
-src/overlays/ov070/data/ov070_const_020b9b24.c:
+src/overlays/players/ov070_player_axel_3/data/ov070_const_020b9b24.c:
     complete
     .rodata     start:0x020b9b24 end:0x020b9b28
 
-src/overlays/ov070/data/ov070_pointers_020b9bb4.c:
+src/overlays/players/ov070_player_axel_3/data/ov070_pointers_020b9bb4.c:
     complete
     .data       start:0x020b9bb4 end:0x020b9bdc
 
-src/overlays/ov070/data/ov070_strings_020b9b40.c:
+src/overlays/players/ov070_player_axel_3/data/ov070_strings_020b9b40.c:
     complete
     .rodata     start:0x020b9b40 end:0x020b9b90
 
-src/overlays/ov070/data/ov070_strings_020b9bdc.c:
+src/overlays/players/ov070_player_axel_3/data/ov070_strings_020b9bdc.c:
     complete
     .data       start:0x020b9bdc end:0x020b9ca0
 
-src/overlays/ov070/data/ov070_tables_020b9b28.c:
+src/overlays/players/ov070_player_axel_3/data/ov070_tables_020b9b28.c:
     complete
     .rodata     start:0x020b9b28 end:0x020b9b40

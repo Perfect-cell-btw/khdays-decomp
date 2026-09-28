@@ -4,242 +4,242 @@
     .data       start:0x020d64e0 end:0x020d6520 kind:data align:32
     .bss        start:0x020d6520 end:0x020d6520 kind:bss align:32
 
-src/overlays/ov152/calls/Ov152_RegisterEntityClass.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov152/calls/Ov152_CreateNamedEntity.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov152/calls/Ov152_Construct.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_Construct.c:
     complete
     .text       start:0x020d3844 end:0x020d3acc
 
-src/overlays/ov152/calls/Ov152_DestroySubListAndArraySlotsThenNotify.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_DestroySubListAndArraySlotsThenNotify.c:
     complete
     .text       start:0x020d3acc end:0x020d3b1c
 
-src/overlays/ov152/calls/Ov152_TickAndSyncMarkerSrt.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_TickAndSyncMarkerSrt.c:
     complete
     .text       start:0x020d3b1c end:0x020d3b64
 
-src/overlays/ov152/calls/Ov152_Model_SetTrack0.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_Model_SetTrack0.c:
     complete
     .text       start:0x020d3b64 end:0x020d3b94
 
-src/overlays/ov152/calls/Ov152_HandleCommand.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_HandleCommand.c:
     complete
     .text       start:0x020d3b94 end:0x020d3df0
 
-src/overlays/ov152/calls/Ov152_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020d3df0 end:0x020d3e2c
 
-src/overlays/ov152/calls/Ov152_NotifyPartsThenBase.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d3e2c end:0x020d3e68
 
-src/overlays/ov152/calls/Ov152_ReleaseByStateAndSyncSrt.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020d3e68 end:0x020d3f94
 
-src/overlays/ov152/calls/Ov152_bindSubitemsByTypeId.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_bindSubitemsByTypeId.c:
     complete
     .text       start:0x020d3f94 end:0x020d4078
 
-src/overlays/ov152/calls/Ov152_RenderPerSphere.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_RenderPerSphere.c:
     complete
     .text       start:0x020d4078 end:0x020d40e4
 
-src/overlays/ov152/calls/Ov152_stateAttachSubitemInit.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_stateAttachSubitemInit.c:
     complete
     .text       start:0x020d40e4 end:0x020d418c
 
-src/overlays/ov152/calls/Ov152_ChildTaskTeardown.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_ChildTaskTeardown.c:
     complete
     .text       start:0x020d418c end:0x020d41b4
 
-src/overlays/ov152/calls/Ov152_FinishIfSubFlagClear.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d41b4 end:0x020d41d4
 
-src/overlays/ov152/calls/Ov152_Store4WordsAndSetHw60HighBit0.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_Store4WordsAndSetHw60HighBit0.c:
     complete
     .text       start:0x020d41d4 end:0x020d4214
 
-src/overlays/ov152/calls/Ov152_New.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_New.c:
     complete
     .text       start:0x020d4214 end:0x020d4248
 
-src/overlays/ov152/calls/Ov152_ConstructPet.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_ConstructPet.c:
     complete
     .text       start:0x020d4248 end:0x020d4444
 
-src/overlays/ov152/calls/Ov152_Actor_DestroyWithParts.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020d4444 end:0x020d4484
 
-src/overlays/ov152/calls/Ov152_CopyBlockToTwoNodes.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_CopyBlockToTwoNodes.c:
     complete
     .text       start:0x020d4484 end:0x020d44e0
 
-src/overlays/ov152/calls/Ov152_AiState_OnMessage.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_AiState_OnMessage.c:
     complete
     .text       start:0x020d44e0 end:0x020d4594
 
-src/overlays/ov152/calls/Ov152_BroadcastPositionMessage.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_BroadcastPositionMessage.c:
     complete
     .text       start:0x020d4594 end:0x020d46b4
 
-src/overlays/ov152/calls/Ov152_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d46b4 end:0x020d4700
 
-src/overlays/ov152/calls/Ov152_stateInitClearSlots.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_stateInitClearSlots.c:
     complete
     .text       start:0x020d4700 end:0x020d47a8
 
-src/overlays/ov152/calls/Ov152_dispatchByStatusByte.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_dispatchByStatusByte.c:
     complete
     .text       start:0x020d47a8 end:0x020d4820
 
-src/overlays/ov152/calls/Ov152_HoverBob.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_HoverBob.c:
     complete
     .text       start:0x020d4820 end:0x020d4904
 
-src/overlays/ov152/calls/Ov152_ClearAndSetNodeFlags.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_ClearAndSetNodeFlags.c:
     complete
     .text       start:0x020d4904 end:0x020d4998
 
-src/overlays/ov152/calls/Ov152_CopyBlock394ThenAdvance.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_CopyBlock394ThenAdvance.c:
     complete
     .text       start:0x020d4998 end:0x020d49ec
 
-src/overlays/ov152/calls/Ov152_ShotLaunch.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_ShotLaunch.c:
     complete
     .text       start:0x020d49ec end:0x020d4c2c
 
-src/overlays/ov152/calls/Ov152_ShotTick.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_ShotTick.c:
     complete
     .text       start:0x020d4c2c end:0x020d5144
 
-src/overlays/ov152/calls/Ov152_CreateRegistryEntryAndLink_2.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020d5144 end:0x020d5190
 
-src/overlays/ov152/calls/Ov152_StaggerFlipTick.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_StaggerFlipTick.c:
     complete
     .text       start:0x020d5190 end:0x020d532c
 
-src/overlays/ov152/calls/Ov152_EnterAimStateInstallCallbacks.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_EnterAimStateInstallCallbacks.c:
     complete
     .text       start:0x020d532c end:0x020d5400
 
-src/overlays/ov152/calls/Ov152_DispatchSubStateByte.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_DispatchSubStateByte.c:
     complete
     .text       start:0x020d5400 end:0x020d5588
 
-src/overlays/ov152/calls/Ov152_AiApplyHeadingAndNormal.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020d5588 end:0x020d5620
 
-src/overlays/ov152/calls/Ov152_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d5620 end:0x020d5688
 
-src/overlays/ov152/calls/Ov152_AiStep_QueueStoredActionIfActive.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d5688 end:0x020d56c4
 
-src/overlays/ov152/calls/Ov152_Action48Callback.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_Action48Callback.c:
     complete
     .text       start:0x020d56c4 end:0x020d578c
 
-src/overlays/ov152/calls/Ov152_TimerAcquireTargetAngleThenAdvance.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d578c end:0x020d5854
 
-src/overlays/ov152/calls/Ov152_AiStep_QueueAction2OnFlag48Clear.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_AiStep_QueueAction2OnFlag48Clear.c:
     complete
     .text       start:0x020d5854 end:0x020d5888
 
-src/overlays/ov152/calls/Ov152_stateTimerRandomRange.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_stateTimerRandomRange.c:
     complete
     .text       start:0x020d5888 end:0x020d5908
 
-src/overlays/ov152/calls/Ov152_TriggerWhenTargetInRange.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_TriggerWhenTargetInRange.c:
     complete
     .text       start:0x020d5908 end:0x020d5994
 
-src/overlays/ov152/calls/Ov152_AiEnterApproachArc.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_AiEnterApproachArc.c:
     complete
     .text       start:0x020d5994 end:0x020d5b30
 
-src/overlays/ov152/calls/Ov152_PoseAdvanceUnlessField14AtLeast80.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_PoseAdvanceUnlessField14AtLeast80.c:
     complete
     .text       start:0x020d5b30 end:0x020d5b78
 
-src/overlays/ov152/calls/Ov152_stateFixedAngleMove.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_stateFixedAngleMove.c:
     complete
     .text       start:0x020d5b78 end:0x020d5c4c
 
-src/overlays/ov152/calls/Ov152_StrafePick.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_StrafePick.c:
     complete
     .text       start:0x020d5c4c end:0x020d5d70
 
-src/overlays/ov152/calls/Ov152_ProjectileAction_Enter.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_ProjectileAction_Enter.c:
     complete
     .text       start:0x020d5d70 end:0x020d5e24
 
-src/overlays/ov152/calls/Ov152_AiTrackOffsetThenNotify.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_AiTrackOffsetThenNotify.c:
     complete
     .text       start:0x020d5e24 end:0x020d5ed8
 
-src/overlays/ov152/calls/Ov152_Pose3AimYawAdvance.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_Pose3AimYawAdvance.c:
     complete
     .text       start:0x020d5ed8 end:0x020d5f58
 
-src/overlays/ov152/calls/Ov152_AiTrackOffsetUntilLanded.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_AiTrackOffsetUntilLanded.c:
     complete
     .text       start:0x020d5f58 end:0x020d601c
 
-src/overlays/ov152/calls/Ov152_ConfigHw60FlagsBeginAction4a.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_ConfigHw60FlagsBeginAction4a.c:
     complete
     .text       start:0x020d601c end:0x020d60e4
 
-src/overlays/ov152/calls/Ov152_BeginAimAtTarget.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_BeginAimAtTarget.c:
     complete
     .text       start:0x020d60e4 end:0x020d61b0
 
-src/overlays/ov152/calls/Ov152_stateAnimCallbackEffect.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_stateAnimCallbackEffect.c:
     complete
     .text       start:0x020d61b0 end:0x020d6274
 
-src/overlays/ov152/calls/Ov152_SummonTick.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_SummonTick.c:
     complete
     .text       start:0x020d6274 end:0x020d6310
 
-src/overlays/ov152/calls/Ov152_SummonWait.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_SummonWait.c:
     complete
     .text       start:0x020d6310 end:0x020d63ac
 
-src/overlays/ov152/calls/Ov152_stateToggleFlagsEffectClear.c:
+src/overlays/enemies/ov152_enemy_13_2/Ov152_stateToggleFlagsEffectClear.c:
     complete
     .text       start:0x020d63ac end:0x020d6460
 
-src/overlays/ov152/data/ov152_const_020d64ec.c:
+src/overlays/enemies/ov152_enemy_13_2/data/ov152_const_020d64ec.c:
     complete
     .data       start:0x020d64ec end:0x020d64f0
 
-src/overlays/ov152/data/ov152_strings_020d64e0.c:
+src/overlays/enemies/ov152_enemy_13_2/data/ov152_strings_020d64e0.c:
     complete
     .data       start:0x020d64e0 end:0x020d64ec
 
-src/overlays/ov152/data/ov152_strings_020d64f0.c:
+src/overlays/enemies/ov152_enemy_13_2/data/ov152_strings_020d64f0.c:
     complete
     .data       start:0x020d64f0 end:0x020d6520
 
-src/overlays/ov152/data/ov152_tables_020d6460.c:
+src/overlays/enemies/ov152_enemy_13_2/data/ov152_tables_020d6460.c:
     complete
     .rodata     start:0x020d6460 end:0x020d64c0

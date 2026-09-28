@@ -3,190 +3,190 @@
     .data       start:0x0205c2a0 end:0x0205cb20 kind:data align:32
     .bss        start:0x0205cb20 end:0x0205cb40 kind:bss align:32
 
-src/overlays/ov012/calls/Ov012_UpdateOpeningBrightness.c:
+src/overlays/scenes/ov012_opening/Ov012_UpdateOpeningBrightness.c:
     complete
     .text       start:0x0205ac40 end:0x0205accc
 
-src/overlays/ov012/calls/Ov012_UpdateOpeningGlobals.c:
+src/overlays/scenes/ov012_opening/Ov012_UpdateOpeningGlobals.c:
     complete
     .text       start:0x0205accc end:0x0205ad1c
 
-src/overlays/ov012/calls/Ov012_ConfigureOpeningDisplay.c:
+src/overlays/scenes/ov012_opening/Ov012_ConfigureOpeningDisplay.c:
     complete
     .text       start:0x0205ad1c end:0x0205ade8
 
-src/overlays/ov012/calls/Ov012_InitOpeningScene.c:
+src/overlays/scenes/ov012_opening/Ov012_InitOpeningScene.c:
     complete
     .text       start:0x0205ade8 end:0x0205b03c
 
-src/overlays/ov012/calls/Ov012_DestroyOpeningScene.c:
+src/overlays/scenes/ov012_opening/Ov012_DestroyOpeningScene.c:
     complete
     .text       start:0x0205b03c end:0x0205b0cc
 
-src/overlays/ov012/calls/Ov012_StartOpeningMovie.c:
+src/overlays/scenes/ov012_opening/Ov012_StartOpeningMovie.c:
     complete
     .text       start:0x0205b0cc end:0x0205b214
 
-src/overlays/ov012/calls/Ov012_SubmitRequestIfIdle.c:
+src/overlays/scenes/ov012_opening/Ov012_SubmitRequestIfIdle.c:
     complete
     .text       start:0x0205b214 end:0x0205b258
 
-src/overlays/ov012/calls/Ov012_IsRequestStateTwo.c:
+src/overlays/scenes/ov012_opening/Ov012_IsRequestStateTwo.c:
     complete
     .text       start:0x0205b258 end:0x0205b280
 
-src/overlays/ov012/calls/Ov012_IsCounterAt16.c:
+src/overlays/scenes/ov012_opening/Ov012_IsCounterAt16.c:
     complete
     .text       start:0x0205b280 end:0x0205b2a4
 
-src/overlays/ov012/calls/Ov012_LoadOpeningBgCharacters.c:
+src/overlays/scenes/ov012_opening/Ov012_LoadOpeningBgCharacters.c:
     complete
     .text       start:0x0205b2a4 end:0x0205b32c
 
-src/overlays/ov012/calls/Ov012_LoadOpeningBgScreen.c:
+src/overlays/scenes/ov012_opening/Ov012_LoadOpeningBgScreen.c:
     complete
     .text       start:0x0205b32c end:0x0205b3a4
 
-src/overlays/ov012/calls/Ov012_InvokeIndexedTableEntry.c:
+src/overlays/scenes/ov012_opening/Ov012_InvokeIndexedTableEntry.c:
     complete
     .text       start:0x0205b3a4 end:0x0205b3d4
 
-src/overlays/ov012/calls/Ov012_BlendOpeningBgPlanes.c:
+src/overlays/scenes/ov012_opening/Ov012_BlendOpeningBgPlanes.c:
     complete
     .text       start:0x0205b3d4 end:0x0205b4b0
 
-src/overlays/ov012/calls/Ov012_FadeOutOpeningBgPlanes.c:
+src/overlays/scenes/ov012_opening/Ov012_FadeOutOpeningBgPlanes.c:
     complete
     .text       start:0x0205b4b0 end:0x0205b57c
 
-src/overlays/ov012/auto/Ov012_OpeningStepReturnZero.c:
+src/overlays/scenes/ov012_opening/Ov012_OpeningStepReturnZero.c:
     complete
     .text       start:0x0205b57c end:0x0205b584
 
-src/overlays/ov012/calls/Ov012_ProcessOpeningTimeline.c:
+src/overlays/scenes/ov012_opening/Ov012_ProcessOpeningTimeline.c:
     complete
     .text       start:0x0205b584 end:0x0205b618
 
-src/overlays/ov012/calls/Ov012_RunOpeningScene.c:
+src/overlays/scenes/ov012_opening/Ov012_RunOpeningScene.c:
     complete
     .text       start:0x0205b618 end:0x0205b8ac
 
-src/overlays/ov012/calls/Ov012_SetHeapFlag8CheckFlag10.c:
+src/overlays/scenes/ov012_opening/Ov012_SetHeapFlag8CheckFlag10.c:
     complete
     .text       start:0x0205b8ac end:0x0205b8e0
 
-src/overlays/ov012/calls/Ov012_SetGlobalByte8be1To1.c:
+src/overlays/scenes/ov012_opening/Ov012_SetGlobalByte8be1To1.c:
     complete
     .text       start:0x0205b8e0 end:0x0205b8fc
 
-src/overlays/ov012/calls/Ov012_IsGlobalByte8be1Clear.c:
+src/overlays/scenes/ov012_opening/Ov012_IsGlobalByte8be1Clear.c:
     complete
     .text       start:0x0205b8fc end:0x0205b920
 
-src/overlays/ov012/calls/Ov012_IsGlobalFlag3Set.c:
+src/overlays/scenes/ov012_opening/Ov012_IsGlobalFlag3Set.c:
     complete
     .text       start:0x0205b920 end:0x0205b940
 
-src/overlays/ov012/calls/Ov012_StartOpeningMovieFromScriptArgs.c:
+src/overlays/scenes/ov012_opening/Ov012_StartOpeningMovieFromScriptArgs.c:
     complete
     .text       start:0x0205b940 end:0x0205b982
 
-src/overlays/ov012/calls/Ov012_RegisterTwoAndReturn6.c:
+src/overlays/scenes/ov012_opening/Ov012_RegisterTwoAndReturn6.c:
     complete
     .text       start:0x0205b984 end:0x0205b9a6
 
-src/overlays/ov012/calls/Ov012_IsStreamFinished.c:
+src/overlays/scenes/ov012_opening/Ov012_IsStreamFinished.c:
     complete
     .text       start:0x0205b9a8 end:0x0205b9de
 
-src/overlays/ov012/calls/Ov012_MayWaitFrames.c:
+src/overlays/scenes/ov012_opening/Ov012_MayWaitFrames.c:
     complete
     .text       start:0x0205b9e0 end:0x0205ba08
 
-src/overlays/ov012/calls/Ov012_InitAndDispatchTriple.c:
+src/overlays/scenes/ov012_opening/Ov012_InitAndDispatchTriple.c:
     complete
     .text       start:0x0205ba08 end:0x0205ba3c
 
-src/overlays/ov012/calls/Ov012_thumbStep.c:
+src/overlays/scenes/ov012_opening/Ov012_thumbStep.c:
     complete
     .text       start:0x0205ba3c end:0x0205ba46
 
-src/overlays/ov012/calls/Ov012_thumbStep_2.c:
+src/overlays/scenes/ov012_opening/Ov012_thumbStep_2.c:
     complete
     .text       start:0x0205ba48 end:0x0205ba5a
 
-src/overlays/ov012/auto/Ov012_MobiClip_InitFromHeader.c:
+src/overlays/scenes/ov012_opening/Ov012_MobiClip_InitFromHeader.c:
     complete
     .text       start:0x0205ba5c end:0x0205bb3c
 
-src/overlays/ov012/calls/Ov012_InitOpeningRendererFromMobiClipHeader.c:
+src/overlays/scenes/ov012_opening/Ov012_InitOpeningRendererFromMobiClipHeader.c:
     complete
     .text       start:0x0205bb3c end:0x0205bb78
 
-src/overlays/ov012/calls/func_ov012_0205bb78.c:
+src/overlays/scenes/ov012_opening/func_ov012_0205bb78.c:
     complete
     .text       start:0x0205bb78 end:0x0205bb84
 
-src/overlays/ov012/calls/Ov012_ArmAndStart.c:
+src/overlays/scenes/ov012_opening/Ov012_ArmAndStart.c:
     complete
     .text       start:0x0205bb84 end:0x0205bba4
 
-src/overlays/ov012/calls/Ov012_TileTextRenderer_SetReady.c:
+src/overlays/scenes/ov012_opening/Ov012_TileTextRenderer_SetReady.c:
     complete
     .text       start:0x0205bba4 end:0x0205bbac
 
-src/overlays/ov012/calls/Ov012_MobiClip_StreamAdvance.c:
+src/overlays/scenes/ov012_opening/Ov012_MobiClip_StreamAdvance.c:
     complete
     .text       start:0x0205bbac end:0x0205bc08
 
-src/overlays/ov012/calls/Ov012_MobiClip_StreamHandleEvent.c:
+src/overlays/scenes/ov012_opening/Ov012_MobiClip_StreamHandleEvent.c:
     complete
     .text       start:0x0205bc08 end:0x0205bcf0
 
-src/overlays/ov012/calls/Ov012_MobiClip_SubtitleNextChar.c:
+src/overlays/scenes/ov012_opening/Ov012_MobiClip_SubtitleNextChar.c:
     complete
     .text       start:0x0205bcf0 end:0x0205be44
 
-src/overlays/ov012/calls/Ov012_MobiClip_MeasureSubtitleWidth.c:
+src/overlays/scenes/ov012_opening/Ov012_MobiClip_MeasureSubtitleWidth.c:
     complete
     .text       start:0x0205be44 end:0x0205c048
 
-src/overlays/ov012/calls/Ov012_MobiClip_UpdateStreamLead.c:
+src/overlays/scenes/ov012_opening/Ov012_MobiClip_UpdateStreamLead.c:
     complete
     .text       start:0x0205c048 end:0x0205c0e0
 
-src/overlays/ov012/calls/Ov012_MobiClip_PresentRecord.c:
+src/overlays/scenes/ov012_opening/Ov012_MobiClip_PresentRecord.c:
     complete
     .text       start:0x0205c0e0 end:0x0205c1d4
 
-src/overlays/ov012/auto/Ov012_IsModeEntryActive.c:
+src/overlays/scenes/ov012_opening/Ov012_IsModeEntryActive.c:
     complete
     .text       start:0x0205c1d4 end:0x0205c224
 
-src/overlays/ov012/calls/Ov012_MobiClip_DrainStream.c:
+src/overlays/scenes/ov012_opening/Ov012_MobiClip_DrainStream.c:
     complete
     .text       start:0x0205c224 end:0x0205c278
 
-src/overlays/ov012/calls/Ov012_ReleaseField50IfSet.c:
+src/overlays/scenes/ov012_opening/Ov012_ReleaseField50IfSet.c:
     complete
     .text       start:0x0205c278 end:0x0205c29c
 
-src/overlays/ov012/data/ov012_opening_clip_0205c2a0.c:
+src/overlays/scenes/ov012_opening/data/ov012_opening_clip_0205c2a0.c:
     complete
     .data       start:0x0205c2a0 end:0x0205c2a4
 
-src/overlays/ov012/data/ov012_opening_data_0205c2bc.c:
+src/overlays/scenes/ov012_opening/data/ov012_opening_data_0205c2bc.c:
     complete
     .data       start:0x0205c2bc end:0x0205cac0
 
-src/overlays/ov012/data/ov012_pointers_0205c2a4.c:
+src/overlays/scenes/ov012_opening/data/ov012_pointers_0205c2a4.c:
     complete
     .data       start:0x0205c2a4 end:0x0205c2bc
 
-src/overlays/ov012/data/ov012_pointers_0205caf4.c:
+src/overlays/scenes/ov012_opening/data/ov012_pointers_0205caf4.c:
     complete
     .data       start:0x0205caf4 end:0x0205cb20
 
-src/overlays/ov012/data/ov012_strings_0205cac0.c:
+src/overlays/scenes/ov012_opening/data/ov012_strings_0205cac0.c:
     complete
     .data       start:0x0205cac0 end:0x0205caf4

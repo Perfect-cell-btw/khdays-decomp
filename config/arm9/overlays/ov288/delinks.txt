@@ -4,114 +4,114 @@
     .data       start:0x020d5320 end:0x020d5340 kind:data align:32
     .bss        start:0x020d5340 end:0x020d5340 kind:bss align:32
 
-src/overlays/ov288/calls/Ov288_RegisterEntityClass.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov288/calls/Ov288_CreateNamedEntity.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov288/calls/Ov288_Actor_InitClassAndSpawnParts.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_Actor_InitClassAndSpawnParts.c:
     complete
     .text       start:0x020d3844 end:0x020d3a38
 
-src/overlays/ov288/calls/Ov288_TeardownActorSlotsAndDoubleList.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_TeardownActorSlotsAndDoubleList.c:
     complete
     .text       start:0x020d3a38 end:0x020d3a80
 
-src/overlays/ov288/calls/Ov288_CopyBlockThenNotify.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_CopyBlockThenNotify.c:
     complete
     .text       start:0x020d3a80 end:0x020d3acc
 
-src/overlays/ov288/auto/Ov288_SendMessage26.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_SendMessage26.c:
     complete
     .text       start:0x020d3acc end:0x020d3b34
 
-src/overlays/ov288/calls/Ov288_StampField394ToMsgAndForward.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_StampField394ToMsgAndForward.c:
     complete
     .text       start:0x020d3b34 end:0x020d3b50
 
-src/overlays/ov288/calls/Ov288_Actor_HandleEvent.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_Actor_HandleEvent.c:
     complete
     .text       start:0x020d3b50 end:0x020d3d98
 
-src/overlays/ov288/calls/Ov288_Actor_SetSubStateAndNotify.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_Actor_SetSubStateAndNotify.c:
     complete
     .text       start:0x020d3d98 end:0x020d3e68
 
-src/overlays/ov288/calls/Ov288_LoadWaypoints.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_LoadWaypoints.c:
     complete
     .text       start:0x020d3e68 end:0x020d3ee8
 
-src/overlays/ov288/calls/Ov288_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d3ee8 end:0x020d3f44
 
-src/overlays/ov288/calls/Ov288_Actor_ResolveHit.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_Actor_ResolveHit.c:
     complete
     .text       start:0x020d3f44 end:0x020d40ec
 
-src/overlays/ov288/calls/Ov288_InitActorStateSlots.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_InitActorStateSlots.c:
     complete
     .text       start:0x020d40ec end:0x020d4188
 
-src/overlays/ov288/calls/Ov288_DispatchSubStateByte.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_DispatchSubStateByte.c:
     complete
     .text       start:0x020d4188 end:0x020d42b0
 
-src/overlays/ov288/calls/Ov288_StageVecUnlessState2ThenCommit.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_StageVecUnlessState2ThenCommit.c:
     complete
     .text       start:0x020d42b0 end:0x020d42f4
 
-src/overlays/ov288/calls/Ov288_SetHw60Bit15ClearSubBit0ThenAdvanceSlot.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_SetHw60Bit15ClearSubBit0ThenAdvanceSlot.c:
     complete
     .text       start:0x020d42f4 end:0x020d4368
 
-src/overlays/ov288/calls/Ov288_RollFlag38cCopySubStateThenAdvanceSlot.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_RollFlag38cCopySubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d4368 end:0x020d43dc
 
-src/overlays/ov288/calls/Ov288_AiEnterHold.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_AiEnterHold.c:
     complete
     .text       start:0x020d43dc end:0x020d44b8
 
-src/overlays/ov288/calls/Ov288_AccumulateTimer34ThenAdvanceAt2a8.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_AccumulateTimer34ThenAdvanceAt2a8.c:
     complete
     .text       start:0x020d44b8 end:0x020d4558
 
-src/overlays/ov288/calls/Ov288_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d4558 end:0x020d458c
 
-src/overlays/ov288/calls/Ov288_StageVecsResetFieldsThenAdvanceSlot.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_StageVecsResetFieldsThenAdvanceSlot.c:
     complete
     .text       start:0x020d458c end:0x020d45fc
 
-src/overlays/ov288/calls/Ov288_Throw_Tick.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_Throw_Tick.c:
     complete
     .text       start:0x020d45fc end:0x020d4bcc
 
-src/overlays/ov288/calls/Ov288_SetupActionVariantThenAdvanceSlot.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_SetupActionVariantThenAdvanceSlot.c:
     complete
     .text       start:0x020d4bcc end:0x020d4c98
 
-src/overlays/ov288/calls/Ov288_AreaSweepAttack_Tick.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_AreaSweepAttack_Tick.c:
     complete
     .text       start:0x020d4c98 end:0x020d5174
 
-src/overlays/ov288/calls/Ov288_ResetHw60FlagsAndTimer34ThenAdvance.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_ResetHw60FlagsAndTimer34ThenAdvance.c:
     complete
     .text       start:0x020d5174 end:0x020d5218
 
-src/overlays/ov288/calls/Ov288_ChargeAndPickTarget.c:
+src/overlays/enemies/ov288_enemy_6b_2/Ov288_ChargeAndPickTarget.c:
     complete
     .text       start:0x020d5218 end:0x020d5314
 
-src/overlays/ov288/data/ov288_strings_020d5320.c:
+src/overlays/enemies/ov288_enemy_6b_2/data/ov288_strings_020d5320.c:
     complete
     .data       start:0x020d5320 end:0x020d5340
 
-src/overlays/ov288/data/ov288_tables_020d5314.c:
+src/overlays/enemies/ov288_enemy_6b_2/data/ov288_tables_020d5314.c:
     complete
     .rodata     start:0x020d5314 end:0x020d531c

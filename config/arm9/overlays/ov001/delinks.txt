@@ -2,34 +2,34 @@
     .ctor       start:0x0204cfe4 end:0x0204cfe4 kind:rodata align:4
     .bss        start:0x0204d000 end:0x0204d000 kind:bss align:32
 
-src/overlays/ov001/calls/Ov001_ClearVideoMemory.c:
+src/overlays/system/ov001_boot/Ov001_ClearVideoMemory.c:
     complete
     .text       start:0x0204cac0 end:0x0204cb30
 
-src/overlays/ov001/calls/Ov001_SetupSubScreenBanks.c:
+src/overlays/system/ov001_boot/Ov001_SetupSubScreenBanks.c:
     complete
     .text       start:0x0204cb30 end:0x0204cb6c
 
-src/overlays/ov001/calls/Ov001_InitTouchPanel.c:
+src/overlays/system/ov001_boot/Ov001_InitTouchPanel.c:
     complete
     .text       start:0x0204cb6c end:0x0204cbb4
 
-src/overlays/ov001/calls/Ov001_SetupDisplayRegs.c:
+src/overlays/system/ov001_boot/Ov001_SetupDisplayRegs.c:
     complete
     .text       start:0x0204cbb4 end:0x0204cccc
 
-src/overlays/ov001/calls/Ov001_SeedMathRandContexts.c:
+src/overlays/system/ov001_boot/Ov001_SeedMathRandContexts.c:
     complete
     .text       start:0x0204cccc end:0x0204cd7c
 
-src/overlays/ov001/calls/Ov001_BootInit.c:
+src/overlays/system/ov001_boot/Ov001_BootInit.c:
     complete
     .text       start:0x0204cd7c end:0x0204ce40
 
-src/overlays/ov001/calls/Ov001_CreateMainAndSubHeaps.c:
+src/overlays/system/ov001_boot/Ov001_CreateMainAndSubHeaps.c:
     complete
     .text       start:0x0204ce40 end:0x0204cf5c
 
-src/overlays/ov001/calls/func_ov001_0204cf5c.c:
+src/overlays/system/ov001_boot/func_ov001_0204cf5c.c:
     complete
     .text       start:0x0204cf5c end:0x0204cfe4

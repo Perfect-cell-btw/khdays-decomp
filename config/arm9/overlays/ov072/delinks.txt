@@ -4,162 +4,162 @@
     .data       start:0x020ba6c0 end:0x020ba7a0 kind:data align:32
     .bss        start:0x020ba7a0 end:0x020ba7c0 kind:bss align:32
 
-src/overlays/ov072/calls/func_ov072_020b8100.c:
+src/overlays/players/ov072_player_xigbar_3/func_ov072_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov072/calls/Ov072_InitAndGetHandler.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_InitAndGetHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b816c
 
-src/overlays/ov072/calls/Ov072_UnloadEnemyOverlay.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_UnloadEnemyOverlay.c:
     complete
     .text       start:0x020b816c end:0x020b81b8
 
-src/overlays/ov072/calls/Ov072_Boot.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_Boot.c:
     complete
     .text       start:0x020b81b8 end:0x020b8404
 
-src/overlays/ov072/calls/Ov072_SceneSetup.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_SceneSetup.c:
     complete
     .text       start:0x020b8404 end:0x020b8534
 
-src/overlays/ov072/auto/Ov072_MapSlotKindToAnim.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b8534 end:0x020b855c
 
-src/overlays/ov072/calls/Ov072_ForwardSetFlagBit3.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_ForwardSetFlagBit3.c:
     complete
     .text       start:0x020b855c end:0x020b8578
 
-src/overlays/ov072/calls/Ov072_HandleStateMessage.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_HandleStateMessage.c:
     complete
     .text       start:0x020b8578 end:0x020b8874
 
-src/overlays/ov072/calls/Ov072_SpawnShot.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_SpawnShot.c:
     complete
     .text       start:0x020b8874 end:0x020b8a88
 
-src/overlays/ov072/calls/Ov072_ApplyMode.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_ApplyMode.c:
     complete
     .text       start:0x020b8a88 end:0x020b8d08
 
-src/overlays/ov072/calls/Ov072_UpdateTick.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_UpdateTick.c:
     complete
     .text       start:0x020b8d08 end:0x020b8e18
 
-src/overlays/ov072/calls/Ov072_EffectTick.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_EffectTick.c:
     complete
     .text       start:0x020b8e18 end:0x020b8f14
 
-src/overlays/ov072/calls/Ov072_SpawnAttachEffects.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_SpawnAttachEffects.c:
     complete
     .text       start:0x020b8f14 end:0x020b901c
 
-src/overlays/ov072/calls/Ov072_ChargeTick.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_ChargeTick.c:
     complete
     .text       start:0x020b901c end:0x020b92bc
 
-src/overlays/ov072/calls/Ov072_CreateSubObject.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_CreateSubObject.c:
     complete
     .text       start:0x020b92bc end:0x020b94f8
 
-src/overlays/ov072/calls/Ov072_DisposeAndFreeChild.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_DisposeAndFreeChild.c:
     complete
     .text       start:0x020b94f8 end:0x020b951c
 
-src/overlays/ov072/calls/Ov072_HandleMessage.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_HandleMessage.c:
     complete
     .text       start:0x020b951c end:0x020b95c4
 
-src/overlays/ov072/calls/Ov072_InvokeBothGroupCallbacks.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_InvokeBothGroupCallbacks.c:
     complete
     .text       start:0x020b95c4 end:0x020b95ec
 
-src/overlays/ov072/calls/Ov072_DrawTrail.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_DrawTrail.c:
     complete
     .text       start:0x020b95ec end:0x020b97c0
 
-src/overlays/ov072/calls/Ov072_BuildRenderHandles.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_BuildRenderHandles.c:
     complete
     .text       start:0x020b97c0 end:0x020b9874
 
-src/overlays/ov072/calls/Ov072_MissionStart.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_MissionStart.c:
     complete
     .text       start:0x020b9874 end:0x020b98d8
 
-src/overlays/ov072/calls/Ov072_ReleaseChildFromGlobal.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_ReleaseChildFromGlobal.c:
     complete
     .text       start:0x020b98d8 end:0x020b98f0
 
-src/overlays/ov072/calls/Ov072_EffectBlockStart.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_EffectBlockStart.c:
     complete
     .text       start:0x020b98f0 end:0x020b99c8
 
-src/overlays/ov072/calls/Ov072_EffectBlockStop.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_EffectBlockStop.c:
     complete
     .text       start:0x020b99c8 end:0x020b9ab8
 
-src/overlays/ov072/calls/Ov072_SetState5.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_SetState5.c:
     complete
     .text       start:0x020b9ab8 end:0x020b9ac4
 
-src/overlays/ov072/calls/Ov072_EffectBlockTick.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_EffectBlockTick.c:
     complete
     .text       start:0x020b9ac4 end:0x020b9b90
 
-src/overlays/ov072/calls/Ov072_EffectBlockPlace.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_EffectBlockPlace.c:
     complete
     .text       start:0x020b9b90 end:0x020b9c84
 
-src/overlays/ov072/calls/Ov072_OpenSubObject.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_OpenSubObject.c:
     complete
     .text       start:0x020b9c84 end:0x020b9d3c
 
-src/overlays/ov072/calls/Ov072_BindRig.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_BindRig.c:
     complete
     .text       start:0x020b9d3c end:0x020b9d9c
 
-src/overlays/ov072/calls/Ov072_ArmPlayerLock.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_ArmPlayerLock.c:
     complete
     .text       start:0x020b9d9c end:0x020b9e04
 
-src/overlays/ov072/calls/Ov072_HoverStep.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_HoverStep.c:
     complete
     .text       start:0x020b9e04 end:0x020ba088
 
-src/overlays/ov072/calls/Ov072_ShotStep.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_ShotStep.c:
     complete
     .text       start:0x020ba088 end:0x020ba40c
 
-src/overlays/ov072/calls/Ov072_TryFire.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_TryFire.c:
     complete
     .text       start:0x020ba40c end:0x020ba5b0
 
-src/overlays/ov072/calls/Ov072_InvokeWithDataTable.c:
+src/overlays/players/ov072_player_xigbar_3/Ov072_InvokeWithDataTable.c:
     complete
     .text       start:0x020ba5b0 end:0x020ba5c8
 
-src/overlays/ov072/data/ov072_class_020ba6d4.c:
+src/overlays/players/ov072_player_xigbar_3/data/ov072_class_020ba6d4.c:
     complete
     .data       start:0x020ba6d4 end:0x020ba6e8
 
-src/overlays/ov072/data/ov072_ctorargs_020ba604.c:
+src/overlays/players/ov072_player_xigbar_3/data/ov072_ctorargs_020ba604.c:
     complete
     .rodata     start:0x020ba604 end:0x020ba618
 
-src/overlays/ov072/data/ov072_strings_020ba618.c:
+src/overlays/players/ov072_player_xigbar_3/data/ov072_strings_020ba618.c:
     complete
     .rodata     start:0x020ba618 end:0x020ba6a8
 
-src/overlays/ov072/data/ov072_strings_020ba6c0.c:
+src/overlays/players/ov072_player_xigbar_3/data/ov072_strings_020ba6c0.c:
     complete
     .data       start:0x020ba6c0 end:0x020ba6d4
 
-src/overlays/ov072/data/ov072_strings_020ba6e8.c:
+src/overlays/players/ov072_player_xigbar_3/data/ov072_strings_020ba6e8.c:
     complete
     .data       start:0x020ba6e8 end:0x020ba7a0
 
-src/overlays/ov072/data/ov072_tables_020ba5c8.c:
+src/overlays/players/ov072_player_xigbar_3/data/ov072_tables_020ba5c8.c:
     complete
     .rodata     start:0x020ba5c8 end:0x020ba604

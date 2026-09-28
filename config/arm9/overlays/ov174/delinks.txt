@@ -4,214 +4,214 @@
     .data       start:0x020d2900 end:0x020d2920 kind:data align:32
     .bss        start:0x020d2920 end:0x020d2920 kind:bss align:32
 
-src/overlays/ov174/calls/Ov174_RegisterEntityClass.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov174/calls/Ov174_CreateNamedEntity.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov174/calls/Ov174_OrientPartAlongDirection.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cfc04 end:0x020cfc60
 
-src/overlays/ov174/calls/Ov174_Construct.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_Construct.c:
     complete
     .text       start:0x020cfc60 end:0x020cff70
 
-src/overlays/ov174/calls/Ov174_ReleaseSubObjectsListThenNotify.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020cff70 end:0x020cffb0
 
-src/overlays/ov174/calls/func_ov174_020cffb0.c:
+src/overlays/enemies/ov174_enemy_1d_2/func_ov174_020cffb0.c:
     complete
     .text       start:0x020cffb0 end:0x020cffbc
 
-src/overlays/ov174/calls/func_ov174_020cffbc.c:
+src/overlays/enemies/ov174_enemy_1d_2/func_ov174_020cffbc.c:
     complete
     .text       start:0x020cffbc end:0x020cffc8
 
-src/overlays/ov174/calls/func_ov174_020cffc8.c:
+src/overlays/enemies/ov174_enemy_1d_2/func_ov174_020cffc8.c:
     complete
     .text       start:0x020cffc8 end:0x020cffd4
 
-src/overlays/ov174/calls/Ov174_HandleSpawnMessage.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_HandleSpawnMessage.c:
     complete
     .text       start:0x020cffd4 end:0x020d021c
 
-src/overlays/ov174/calls/Ov174_Model_SetTrack0.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_Model_SetTrack0.c:
     complete
     .text       start:0x020d021c end:0x020d024c
 
-src/overlays/ov174/calls/Ov174_ReleaseTasks.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_ReleaseTasks.c:
     complete
     .text       start:0x020d024c end:0x020d03ac
 
-src/overlays/ov174/calls/Ov174_registryCreateEntry.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_registryCreateEntry.c:
     complete
     .text       start:0x020d03ac end:0x020d0408
 
-src/overlays/ov174/calls/Ov174_OnHit.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_OnHit.c:
     complete
     .text       start:0x020d0408 end:0x020d06e8
 
-src/overlays/ov174/auto/Ov174_RequestSubState14IfNotCurrent.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d06e8 end:0x020d0714
 
-src/overlays/ov174/calls/Ov174_FaceTargetGetClearance.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_FaceTargetGetClearance.c:
     complete
     .text       start:0x020d0714 end:0x020d07ac
 
-src/overlays/ov174/auto/Ov174_DefaultStepDone.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_DefaultStepDone.c:
     complete
     .text       start:0x020d07ac end:0x020d07b4
 
-src/overlays/ov174/calls/Ov174_stateInitTransformSlots.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_stateInitTransformSlots.c:
     complete
     .text       start:0x020d07b4 end:0x020d08a0
 
-src/overlays/ov174/calls/Ov174_DispatchSubStateByte.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_DispatchSubStateByte.c:
     complete
     .text       start:0x020d08a0 end:0x020d0adc
 
-src/overlays/ov174/calls/Ov174_stDivStoreField.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_stDivStoreField.c:
     complete
     .text       start:0x020d0adc end:0x020d0b7c
 
-src/overlays/ov174/calls/Ov174_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0b7c end:0x020d0be4
 
-src/overlays/ov174/calls/Ov174_FlagGatedCopyVec3AndAdvance.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020d0be4 end:0x020d0c68
 
-src/overlays/ov174/calls/Ov174_stateSetFlagsInitAnim.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020d0c68 end:0x020d0d34
 
-src/overlays/ov174/calls/Ov174_stateTimerRebuildTransform.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020d0d34 end:0x020d0e0c
 
-src/overlays/ov174/calls/Ov174_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d0e0c end:0x020d0e40
 
-src/overlays/ov174/calls/Ov174_BeginWander.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_BeginWander.c:
     complete
     .text       start:0x020d0e40 end:0x020d0ecc
 
-src/overlays/ov174/calls/Ov174_OrbitTick.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_OrbitTick.c:
     complete
     .text       start:0x020d0ecc end:0x020d1230
 
-src/overlays/ov174/calls/Ov174_SetPoseAndRandomTimer.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_SetPoseAndRandomTimer.c:
     complete
     .text       start:0x020d1230 end:0x020d1274
 
-src/overlays/ov174/calls/Ov174_HoverBobTick.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_HoverBobTick.c:
     complete
     .text       start:0x020d1274 end:0x020d1434
 
-src/overlays/ov174/calls/Ov174_AiStep_StartTag1.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_AiStep_StartTag1.c:
     complete
     .text       start:0x020d1434 end:0x020d1470
 
-src/overlays/ov174/calls/Ov174_StalkTick.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_StalkTick.c:
     complete
     .text       start:0x020d1470 end:0x020d1654
 
-src/overlays/ov174/calls/Ov174_stateRandomDirValue.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_stateRandomDirValue.c:
     complete
     .text       start:0x020d1654 end:0x020d16c4
 
-src/overlays/ov174/calls/Ov174_CircleTick.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_CircleTick.c:
     complete
     .text       start:0x020d16c4 end:0x020d182c
 
-src/overlays/ov174/calls/Ov174_BeginDash.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_BeginDash.c:
     complete
     .text       start:0x020d182c end:0x020d190c
 
-src/overlays/ov174/calls/Ov174_DashTick.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_DashTick.c:
     complete
     .text       start:0x020d190c end:0x020d1acc
 
-src/overlays/ov174/calls/Ov174_EndDash.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_EndDash.c:
     complete
     .text       start:0x020d1acc end:0x020d1b6c
 
-src/overlays/ov174/calls/Ov174_BeginGuardPose.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_BeginGuardPose.c:
     complete
     .text       start:0x020d1b6c end:0x020d1c44
 
-src/overlays/ov174/calls/Ov174_TrackTargetUntilCharge.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_TrackTargetUntilCharge.c:
     complete
     .text       start:0x020d1c44 end:0x020d1d68
 
-src/overlays/ov174/calls/Ov174_DashTick_2.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_DashTick_2.c:
     complete
     .text       start:0x020d1d68 end:0x020d1f40
 
-src/overlays/ov174/calls/Ov174_QueryTargetThenAdvance.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_QueryTargetThenAdvance.c:
     complete
     .text       start:0x020d1f40 end:0x020d1fac
 
-src/overlays/ov174/calls/Ov174_SteerCircleAttack.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_SteerCircleAttack.c:
     complete
     .text       start:0x020d1fac end:0x020d20b8
 
-src/overlays/ov174/calls/Ov174_ConfigAimVecThenAction8.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_ConfigAimVecThenAction8.c:
     complete
     .text       start:0x020d20b8 end:0x020d216c
 
-src/overlays/ov174/calls/Ov174_FlightStep1.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_FlightStep1.c:
     complete
     .text       start:0x020d216c end:0x020d22ac
 
-src/overlays/ov174/calls/Ov174_FlightStep2.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_FlightStep2.c:
     complete
     .text       start:0x020d22ac end:0x020d23ec
 
-src/overlays/ov174/calls/Ov174_FlightStep3.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_FlightStep3.c:
     complete
     .text       start:0x020d23ec end:0x020d2528
 
-src/overlays/ov174/calls/Ov174_AiStep_QueueAction5OnAnimEnd.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_AiStep_QueueAction5OnAnimEnd.c:
     complete
     .text       start:0x020d2528 end:0x020d255c
 
-src/overlays/ov174/calls/Ov174_SetPose3ThenAdvanceSlot.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d255c end:0x020d2590
 
-src/overlays/ov174/calls/Ov174_SetPose4ThenAdvanceSlot.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d2590 end:0x020d25c4
 
-src/overlays/ov174/calls/Ov174_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020d25c4 end:0x020d26b8
 
-src/overlays/ov174/calls/Ov174_AiEndWithUpdate.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_AiEndWithUpdate.c:
     complete
     .text       start:0x020d26b8 end:0x020d27a4
 
-src/overlays/ov174/calls/Ov174_stateSetFlagsEffectClear.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020d27a4 end:0x020d2844
 
-src/overlays/ov174/calls/Ov174_stateTimerToggleFlags.c:
+src/overlays/enemies/ov174_enemy_1d_2/Ov174_stateTimerToggleFlags.c:
     complete
     .text       start:0x020d2844 end:0x020d28d8
 
-src/overlays/ov174/data/ov174_strings_020d2900.c:
+src/overlays/enemies/ov174_enemy_1d_2/data/ov174_strings_020d2900.c:
     complete
     .data       start:0x020d2900 end:0x020d2920
 
-src/overlays/ov174/data/ov174_tables_020d28d8.c:
+src/overlays/enemies/ov174_enemy_1d_2/data/ov174_tables_020d28d8.c:
     complete
     .rodata     start:0x020d28d8 end:0x020d28ec

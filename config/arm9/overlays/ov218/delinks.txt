@@ -4,302 +4,302 @@
     .data       start:0x020cf320 end:0x020cf340 kind:data align:32
     .bss        start:0x020cf340 end:0x020cf340 kind:bss align:32
 
-src/overlays/ov218/calls/Ov218_RegisterEntityClass.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov218/calls/Ov218_CreateNamedEntity.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov218/calls/Ov218_CaptureJoint.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_CaptureJoint.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc018
 
-src/overlays/ov218/calls/Ov218_ArmModelCallback.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ArmModelCallback.c:
     complete
     .text       start:0x020cc018 end:0x020cc054
 
-src/overlays/ov218/calls/Ov218_Construct.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_Construct.c:
     complete
     .text       start:0x020cc054 end:0x020cc294
 
-src/overlays/ov218/calls/Ov218_Actor_Destroy.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_Actor_Destroy.c:
     complete
     .text       start:0x020cc294 end:0x020cc2d4
 
-src/overlays/ov218/calls/Ov218_Update.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_Update.c:
     complete
     .text       start:0x020cc2d4 end:0x020cc37c
 
-src/overlays/ov218/calls/Ov218_ForwardRegionEventToParts.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cc37c end:0x020cc3b8
 
-src/overlays/ov218/calls/Ov218_NotifyPartsThenBase.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc3b8 end:0x020cc3f4
 
-src/overlays/ov218/calls/Ov218_OnSetMessage.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_OnSetMessage.c:
     complete
     .text       start:0x020cc3f4 end:0x020cc4ec
 
-src/overlays/ov218/calls/Ov218_PostTickCleanup.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_PostTickCleanup.c:
     complete
     .text       start:0x020cc4ec end:0x020cc528
 
-src/overlays/ov218/calls/Ov218_Model_ReapplyTrack0.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020cc528 end:0x020cc560
 
-src/overlays/ov218/calls/Ov218_Projectile_CreateAiTask.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_Projectile_CreateAiTask.c:
     complete
     .text       start:0x020cc560 end:0x020cc5bc
 
-src/overlays/ov218/calls/Ov218_OnDamage.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_OnDamage.c:
     complete
     .text       start:0x020cc5bc end:0x020cc77c
 
-src/overlays/ov218/auto/Ov218_RequestState3.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_RequestState3.c:
     complete
     .text       start:0x020cc77c end:0x020cc79c
 
-src/overlays/ov218/auto/Ov218_RequestSubState10IfNotCurrent.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_RequestSubState10IfNotCurrent.c:
     complete
     .text       start:0x020cc79c end:0x020cc7c8
 
-src/overlays/ov218/auto/Ov218_RequestSubState11IfIdle.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_RequestSubState11IfIdle.c:
     complete
     .text       start:0x020cc7c8 end:0x020cc7f8
 
-src/overlays/ov218/calls/Ov218_WalkDecide.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_WalkDecide.c:
     complete
     .text       start:0x020cc7f8 end:0x020cc8ec
 
-src/overlays/ov218/calls/Ov218_startAnim.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_startAnim.c:
     complete
     .text       start:0x020cc8ec end:0x020cc900
 
-src/overlays/ov218/calls/Ov218_DistanceToTarget.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_DistanceToTarget.c:
     complete
     .text       start:0x020cc900 end:0x020cc9a8
 
-src/overlays/ov218/calls/Ov218_AiStateInit.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiStateInit.c:
     complete
     .text       start:0x020cc9a8 end:0x020cca60
 
-src/overlays/ov218/calls/Ov218_AiDispatchAction.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiDispatchAction.c:
     complete
     .text       start:0x020cca60 end:0x020ccc58
 
-src/overlays/ov218/calls/Ov218_SpinTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_SpinTick.c:
     complete
     .text       start:0x020ccc58 end:0x020ccdbc
 
-src/overlays/ov218/calls/Ov218_stateSetFlagsClearBit.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccdbc end:0x020cce24
 
-src/overlays/ov218/calls/Ov218_AiStep_ResumeStoredAction.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020cce24 end:0x020cce68
 
-src/overlays/ov218/calls/Ov218_AiStep_QueueAction2.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiStep_QueueAction2.c:
     complete
     .text       start:0x020cce68 end:0x020cce8c
 
-src/overlays/ov218/calls/Ov218_AiEnterIdle.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiEnterIdle.c:
     complete
     .text       start:0x020cce8c end:0x020ccec8
 
-src/overlays/ov218/calls/Ov218_AiIdleCountdown.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiIdleCountdown.c:
     complete
     .text       start:0x020ccec8 end:0x020ccf04
 
-src/overlays/ov218/calls/Ov218_PickTarget.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_PickTarget.c:
     complete
     .text       start:0x020ccf04 end:0x020ccfa8
 
-src/overlays/ov218/calls/Ov218_CircleTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_CircleTick.c:
     complete
     .text       start:0x020ccfa8 end:0x020cd098
 
-src/overlays/ov218/calls/Ov218_FlightTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_FlightTick.c:
     complete
     .text       start:0x020cd098 end:0x020cd35c
 
-src/overlays/ov218/calls/Ov218_Reaction_PollBranchTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_Reaction_PollBranchTick.c:
     complete
     .text       start:0x020cd35c end:0x020cd3a8
 
-src/overlays/ov218/calls/Ov218_AiEnterAnim3IfTarget.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiEnterAnim3IfTarget.c:
     complete
     .text       start:0x020cd3a8 end:0x020cd404
 
-src/overlays/ov218/calls/Ov218_ThrowTickAim.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ThrowTickAim.c:
     complete
     .text       start:0x020cd404 end:0x020cd658
 
-src/overlays/ov218/calls/Ov218_AiEnterAnim4IfTarget.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiEnterAnim4IfTarget.c:
     complete
     .text       start:0x020cd658 end:0x020cd6bc
 
-src/overlays/ov218/calls/Ov218_ThrowWindupTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ThrowWindupTick.c:
     complete
     .text       start:0x020cd6bc end:0x020cd7d4
 
-src/overlays/ov218/calls/Ov218_AimEntry.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AimEntry.c:
     complete
     .text       start:0x020cd7d4 end:0x020cd868
 
-src/overlays/ov218/calls/Ov218_CopyScaleVec3ThenAdvanceSlot.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_CopyScaleVec3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd868 end:0x020cd8c4
 
-src/overlays/ov218/calls/Ov218_AimedStrikeEntry.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AimedStrikeEntry.c:
     complete
     .text       start:0x020cd8c4 end:0x020cd974
 
-src/overlays/ov218/calls/Ov218_ThrowReleaseEntry.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ThrowReleaseEntry.c:
     complete
     .text       start:0x020cd974 end:0x020cda78
 
-src/overlays/ov218/calls/Ov218_ThrowTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ThrowTick.c:
     complete
     .text       start:0x020cda78 end:0x020cdb68
 
-src/overlays/ov218/calls/Ov218_GuardEnd.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_GuardEnd.c:
     complete
     .text       start:0x020cdb68 end:0x020cdc18
 
-src/overlays/ov218/calls/Ov218_AiEnterAnim8WithUpdate.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiEnterAnim8WithUpdate.c:
     complete
     .text       start:0x020cdc18 end:0x020cdc70
 
-src/overlays/ov218/calls/Ov218_ThrowEntryTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ThrowEntryTick.c:
     complete
     .text       start:0x020cdc70 end:0x020cdd44
 
-src/overlays/ov218/calls/Ov218_StaggerTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_StaggerTick.c:
     complete
     .text       start:0x020cdd44 end:0x020cddc4
 
-src/overlays/ov218/calls/Ov218_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cddc4 end:0x020cddf8
 
-src/overlays/ov218/calls/Ov218_AiQueueAction4WithDelay.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiQueueAction4WithDelay.c:
     complete
     .text       start:0x020cddf8 end:0x020cde24
 
-src/overlays/ov218/calls/Ov218_Release.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_Release.c:
     complete
     .text       start:0x020cde24 end:0x020cded0
 
-src/overlays/ov218/calls/Ov218_SetPoseThenAdvanceSlot.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020cded0 end:0x020cdf04
 
-src/overlays/ov218/calls/Ov218_ApproachTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ApproachTick.c:
     complete
     .text       start:0x020cdf04 end:0x020cdff8
 
-src/overlays/ov218/calls/Ov218_PlaceAt.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_PlaceAt.c:
     complete
     .text       start:0x020cdff8 end:0x020ce040
 
-src/overlays/ov218/calls/Ov218_New.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_New.c:
     complete
     .text       start:0x020ce040 end:0x020ce07c
 
-src/overlays/ov218/calls/Ov218_Build.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_Build.c:
     complete
     .text       start:0x020ce07c end:0x020ce224
 
-src/overlays/ov218/calls/Ov218_Destroy.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_Destroy.c:
     complete
     .text       start:0x020ce224 end:0x020ce25c
 
-src/overlays/ov218/calls/Ov218_PropagateBlockToLinkedNodes.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_PropagateBlockToLinkedNodes.c:
     complete
     .text       start:0x020ce25c end:0x020ce2bc
 
-src/overlays/ov218/calls/Ov218_OnMessage.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_OnMessage.c:
     complete
     .text       start:0x020ce2bc end:0x020ce36c
 
-src/overlays/ov218/calls/Ov218_ReleaseHeld3a8.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ReleaseHeld3a8.c:
     complete
     .text       start:0x020ce36c end:0x020ce3a8
 
-src/overlays/ov218/calls/Ov218_ReplayAnim.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ReplayAnim.c:
     complete
     .text       start:0x020ce3a8 end:0x020ce3fc
 
-src/overlays/ov218/auto/Ov218_StoreTargetVector.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_StoreTargetVector.c:
     complete
     .text       start:0x020ce3fc end:0x020ce430
 
-src/overlays/ov218/calls/Ov218_SpawnActorRegistryEntry.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020ce430 end:0x020ce48c
 
-src/overlays/ov218/calls/Ov218_stateInitClearSlots.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_stateInitClearSlots.c:
     complete
     .text       start:0x020ce48c end:0x020ce534
 
-src/overlays/ov218/calls/Ov218_dispatchByStatusByte.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_dispatchByStatusByte.c:
     complete
     .text       start:0x020ce534 end:0x020ce5ac
 
-src/overlays/ov218/calls/Ov218_RollTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_RollTick.c:
     complete
     .text       start:0x020ce5ac end:0x020ce798
 
-src/overlays/ov218/calls/Ov218_HaltEntry.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_HaltEntry.c:
     complete
     .text       start:0x020ce798 end:0x020ce848
 
-src/overlays/ov218/calls/Ov218_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020ce848 end:0x020ce880
 
-src/overlays/ov218/calls/Ov218_RiseEntry.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_RiseEntry.c:
     complete
     .text       start:0x020ce880 end:0x020ce9b0
 
-src/overlays/ov218/calls/Ov218_ShotBounceTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ShotBounceTick.c:
     complete
     .text       start:0x020ce9b0 end:0x020cecb8
 
-src/overlays/ov218/calls/Ov218_ShotBurstTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ShotBurstTick.c:
     complete
     .text       start:0x020cecb8 end:0x020cf0fc
 
-src/overlays/ov218/calls/Ov218_SpawnChild10AndBackLink.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_SpawnChild10AndBackLink.c:
     complete
     .text       start:0x020cf0fc end:0x020cf144
 
-src/overlays/ov218/calls/Ov218_DrawShadow.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_DrawShadow.c:
     complete
     .text       start:0x020cf144 end:0x020cf1ac
 
-src/overlays/ov218/calls/Ov218_FlashStart.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_FlashStart.c:
     complete
     .text       start:0x020cf1ac end:0x020cf260
 
-src/overlays/ov218/auto/Ov218_ResetEntryMarkDirty.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_ResetEntryMarkDirty.c:
     complete
     .text       start:0x020cf260 end:0x020cf28c
 
-src/overlays/ov218/calls/Ov218_FlashTick.c:
+src/overlays/enemies/ov218_enemy_30/Ov218_FlashTick.c:
     complete
     .text       start:0x020cf28c end:0x020cf30c
 
-src/overlays/ov218/data/ov218_strings_020cf320.c:
+src/overlays/enemies/ov218_enemy_30/data/ov218_strings_020cf320.c:
     complete
     .data       start:0x020cf320 end:0x020cf340
 
-src/overlays/ov218/data/ov218_tables_020cf30c.c:
+src/overlays/enemies/ov218_enemy_30/data/ov218_tables_020cf30c.c:
     complete
     .rodata     start:0x020cf30c end:0x020cf318

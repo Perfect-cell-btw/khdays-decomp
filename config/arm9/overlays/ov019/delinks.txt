@@ -4,34 +4,34 @@
     .data       start:0x0207fd60 end:0x0207fd80 kind:data align:32
     .bss        start:0x0207fd80 end:0x0207fd80 kind:bss align:32
 
-src/overlays/ov019/calls/Ov019_RecordStatHighWater.c:
+src/overlays/field/ov019/Ov019_RecordStatHighWater.c:
     complete
     .text       start:0x0207fa40 end:0x0207fa94
 
-src/overlays/ov019/calls/Ov019_ShowMessageWithCounters.c:
+src/overlays/field/ov019/Ov019_ShowMessageWithCounters.c:
     complete
     .text       start:0x0207fa94 end:0x0207fc88
 
-src/overlays/ov019/calls/Ov019_PollMenuFlow.c:
+src/overlays/field/ov019/Ov019_PollMenuFlow.c:
     complete
     .text       start:0x0207fc88 end:0x0207fcbe
 
-src/overlays/ov019/calls/Ov019_StoreSlotIndex.c:
+src/overlays/field/ov019/Ov019_StoreSlotIndex.c:
     complete
     .text       start:0x0207fcc0 end:0x0207fcda
 
-src/overlays/ov019/calls/Ov019_AdvancePlayTime.c:
+src/overlays/field/ov019/Ov019_AdvancePlayTime.c:
     complete
     .text       start:0x0207fcdc end:0x0207fd40
 
-src/overlays/ov019/data/ov019_pointers_0207fd60.c:
+src/overlays/field/ov019/data/ov019_pointers_0207fd60.c:
     complete
     .data       start:0x0207fd60 end:0x0207fd78
 
-src/overlays/ov019/data/ov019_strings_0207fd78.c:
+src/overlays/field/ov019/data/ov019_strings_0207fd78.c:
     complete
     .data       start:0x0207fd78 end:0x0207fd80
 
-src/overlays/ov019/data/ov019_tables_0207fd40.c:
+src/overlays/field/ov019/data/ov019_tables_0207fd40.c:
     complete
     .rodata     start:0x0207fd40 end:0x0207fd48

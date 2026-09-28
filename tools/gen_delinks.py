@@ -20,28 +20,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def _discover_src_roots():
-    """Kept in sync with tools/audit_progress.py._discover_src_dirs."""
-    subs = ["auto", "calls", "asm_stubs/auto", "asm_stubs/calls"]
-    out = [ROOT / "src" / s for s in subs]
-    ov_root = ROOT / "src" / "overlays"
-    if ov_root.exists():
-        for ov in sorted(ov_root.iterdir()):
-            if not ov.is_dir(): continue
-            for s in subs:
-                out.append(ov / s)
-    libs_root = ROOT / "libs"
-    if libs_root.exists():
-        for top in sorted(libs_root.iterdir()):
-            if not top.is_dir(): continue
-            for mod in sorted(top.iterdir()):
-                if not mod.is_dir(): continue
-                for s in subs:
-                    out.append(mod / s)
-    return out
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import srctree  # noqa: E402  (where sources live: docs/layout.md)
 
-
-SRC_ROOTS = _discover_src_roots()
+SRC_ROOTS = srctree.function_source_dirs(ROOT)
 
 SYM_RE = re.compile(
     r"(\S+)\s+kind:function\((arm|thumb),[^)]*size=0x([0-9a-fA-F]+)[^)]*\)"
@@ -163,7 +145,7 @@ def load_renames(root=ROOT):
     return tables
 
 
-def _renamed_source(source, root, tables, src_by_name):
+def _renamed_source(source, root, tables, src_by_name, every):
     """Where a claimed source lives now that its function was renamed, or None.
 
     A function's local .rodata (initializer templates, switch tables) is claimed only by
@@ -174,9 +156,13 @@ def _renamed_source(source, root, tables, src_by_name):
 
     Newest table first, then forward through the later ones: some old names were reused
     for other addresses, so the oldest table that knows a name is not necessarily the one
-    that renamed this file.
+    that renamed this file. A file that only MOVED (the 2026-09-28 folder restructure) keeps
+    its name, which is unique across src/ and libs/, so it is found by name first.
     """
     path = Path(source)
+    moved = every.get(path.stem)
+    if moved and Path(moved).suffix == path.suffix:
+        return moved
     for i in range(len(tables) - 1, -1, -1):
         new = tables[i].get(path.stem)
         if new is None:
@@ -204,7 +190,7 @@ def committed_data_claims(delinks_txt, root=ROOT):
     claims = {}
     if not Path(delinks_txt).is_file():
         return claims
-    tables = src_by_name = None
+    tables = src_by_name = every = None
     current = None
     for line in Path(delinks_txt).read_text(encoding="utf-8").splitlines():
         head = re.match(r"^(\S+\.(?:c|cpp|s)):\s*$", line)
@@ -213,7 +199,8 @@ def committed_data_claims(delinks_txt, root=ROOT):
             if not (Path(root) / current).is_file():
                 if tables is None:
                     tables, src_by_name = load_renames(root), index_sources()
-                current = _renamed_source(current, root, tables, src_by_name)
+                    every = srctree.all_sources(root)
+                current = _renamed_source(current, root, tables, src_by_name, every)
             continue
         m = DATA_LINE_RE.match(line)
         if m and current and (Path(root) / current).is_file():

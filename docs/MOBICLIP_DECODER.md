@@ -74,7 +74,7 @@ The whole payload is now matched in the separate `mobiclip_payload` DATA
 category. Extraction, Ghidra carving, names, or preserving it as a blob still
 contribute zero by themselves; the counted source is the mnemonic ARM and
 typed/symbolic DATA reconstruction in
-`src/overlays/ov024/data/mobiclip_payload.s`, admitted only through the strict
+`src/overlays/system/ov024_mobiclip/data/mobiclip_payload.s`, admitted only through the strict
 executable-payload verifier and the real ov024 build.
 
 A compiler probe also established the intended reconstruction route: the

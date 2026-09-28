@@ -4,266 +4,266 @@
     .data       start:0x020cf3c0 end:0x020cf3e0 kind:data align:32
     .bss        start:0x020cf3e0 end:0x020cf3e0 kind:bss align:32
 
-src/overlays/ov137/calls/Ov137_RegisterEntityClass.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov137/calls/Ov137_CreateNamedEntity.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov137/calls/Ov137_Construct.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc248
 
-src/overlays/ov137/calls/Ov137_Destroy.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_Destroy.c:
     complete
     .text       start:0x020cc248 end:0x020cc290
 
-src/overlays/ov137/calls/Ov137_RebindClip.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_RebindClip.c:
     complete
     .text       start:0x020cc290 end:0x020cc2dc
 
-src/overlays/ov137/calls/Ov137_PlayAnimSpawnBody.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_PlayAnimSpawnBody.c:
     complete
     .text       start:0x020cc2dc end:0x020cc398
 
-src/overlays/ov137/calls/Ov137_HandleSpawnMessage.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc398 end:0x020cc53c
 
-src/overlays/ov137/calls/Ov137_ForwardEventToChild.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_ForwardEventToChild.c:
     complete
     .text       start:0x020cc53c end:0x020cc564
 
-src/overlays/ov137/calls/Ov137_NotifyPartThenBase.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_NotifyPartThenBase.c:
     complete
     .text       start:0x020cc564 end:0x020cc58c
 
-src/overlays/ov137/calls/Ov137_TickHandler.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_TickHandler.c:
     complete
     .text       start:0x020cc58c end:0x020cc728
 
-src/overlays/ov137/calls/Ov137_CreateAiTask.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_CreateAiTask.c:
     complete
     .text       start:0x020cc728 end:0x020cc784
 
-src/overlays/ov137/calls/Ov137_HandleHit.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_HandleHit.c:
     complete
     .text       start:0x020cc784 end:0x020cc99c
 
-src/overlays/ov137/auto/Ov137_RequestState8.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_RequestState8.c:
     complete
     .text       start:0x020cc99c end:0x020cc9e0
 
-src/overlays/ov137/calls/Ov137_PickApproachDir.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_PickApproachDir.c:
     complete
     .text       start:0x020cc9e0 end:0x020ccb7c
 
-src/overlays/ov137/calls/Ov137_InitChase.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_InitChase.c:
     complete
     .text       start:0x020ccb7c end:0x020ccc50
 
-src/overlays/ov137/calls/Ov137_AiDispatchAction.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AiDispatchAction.c:
     complete
     .text       start:0x020ccc50 end:0x020ccdf0
 
-src/overlays/ov137/calls/Ov137_AdvanceMotionPublish.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AdvanceMotionPublish.c:
     complete
     .text       start:0x020ccdf0 end:0x020ccea4
 
-src/overlays/ov137/calls/Ov137_SetHwFlagsAndDispatch.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_SetHwFlagsAndDispatch.c:
     complete
     .text       start:0x020ccea4 end:0x020ccf0c
 
-src/overlays/ov137/calls/Ov137_PickRandomOffsetThenAdvanceSlot.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_PickRandomOffsetThenAdvanceSlot.c:
     complete
     .text       start:0x020ccf0c end:0x020ccf74
 
-src/overlays/ov137/calls/Ov137_SpawnEffect48ReconfigureFlags.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_SpawnEffect48ReconfigureFlags.c:
     complete
     .text       start:0x020ccf74 end:0x020cd03c
 
-src/overlays/ov137/calls/Ov137_Reaction_ChargeThenAim.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_Reaction_ChargeThenAim.c:
     complete
     .text       start:0x020cd03c end:0x020cd104
 
-src/overlays/ov137/calls/Ov137_AiStep_QueueAction2OnAnimEnd.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd104 end:0x020cd138
 
-src/overlays/ov137/calls/Ov137_AiEnterReach.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AiEnterReach.c:
     complete
     .text       start:0x020cd138 end:0x020cd174
 
-src/overlays/ov137/calls/Ov137_ReachCheckTick.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_ReachCheckTick.c:
     complete
     .text       start:0x020cd174 end:0x020cd208
 
-src/overlays/ov137/calls/Ov137_AimAtTargetAndDispatch.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020cd208 end:0x020cd2d8
 
-src/overlays/ov137/calls/Ov137_StartLeapMotion.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_StartLeapMotion.c:
     complete
     .text       start:0x020cd2d8 end:0x020cd414
 
-src/overlays/ov137/calls/Ov137_StepLeapMotion.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_StepLeapMotion.c:
     complete
     .text       start:0x020cd414 end:0x020cd458
 
-src/overlays/ov137/calls/Ov137_AiJumpRiseTick.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AiJumpRiseTick.c:
     complete
     .text       start:0x020cd458 end:0x020cd514
 
-src/overlays/ov137/calls/Ov137_AiJumpFallTick.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AiJumpFallTick.c:
     complete
     .text       start:0x020cd514 end:0x020cd5a4
 
-src/overlays/ov137/calls/Ov137_AiLandPickAction.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AiLandPickAction.c:
     complete
     .text       start:0x020cd5a4 end:0x020cd610
 
-src/overlays/ov137/calls/Ov137_AiEnterTurnToTarget.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AiEnterTurnToTarget.c:
     complete
     .text       start:0x020cd610 end:0x020cd680
 
-src/overlays/ov137/calls/Ov137_AiDecelUntilAnimEnd.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020cd680 end:0x020cd6fc
 
-src/overlays/ov137/calls/Ov137_FaceTargetSetTurnRate.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_FaceTargetSetTurnRate.c:
     complete
     .text       start:0x020cd6fc end:0x020cd7e8
 
-src/overlays/ov137/calls/Ov137_ArmMovePhase2.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_ArmMovePhase2.c:
     complete
     .text       start:0x020cd7e8 end:0x020cd8b4
 
-src/overlays/ov137/calls/Ov137_AttackWaitTick.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AttackWaitTick.c:
     complete
     .text       start:0x020cd8b4 end:0x020cda00
 
-src/overlays/ov137/calls/Ov137_Reaction_AimAtTargetAndDispatch.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_Reaction_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020cda00 end:0x020cdac4
 
-src/overlays/ov137/calls/Ov137_ScheduleFollowUpMove.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_ScheduleFollowUpMove.c:
     complete
     .text       start:0x020cdac4 end:0x020cdba0
 
-src/overlays/ov137/calls/Ov137_AimedAttackWaitTick.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AimedAttackWaitTick.c:
     complete
     .text       start:0x020cdba0 end:0x020cdd74
 
-src/overlays/ov137/calls/Ov137_SpawnEffect4aReconfigureFlagsB.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_SpawnEffect4aReconfigureFlagsB.c:
     complete
     .text       start:0x020cdd74 end:0x020cde3c
 
-src/overlays/ov137/calls/Ov137_EnterReturn.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_EnterReturn.c:
     complete
     .text       start:0x020cde3c end:0x020cdec4
 
-src/overlays/ov137/calls/Ov137_SpawnAndInitRegistryEntry.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_SpawnAndInitRegistryEntry.c:
     complete
     .text       start:0x020cdec4 end:0x020cdf9c
 
-src/overlays/ov137/calls/Ov137_ProbeGround.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_ProbeGround.c:
     complete
     .text       start:0x020cdf9c end:0x020ce190
 
-src/overlays/ov137/calls/Ov137_Reaction_ResetTwoSubObjects.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_Reaction_ResetTwoSubObjects.c:
     complete
     .text       start:0x020ce190 end:0x020ce234
 
-src/overlays/ov137/auto/Ov137_TaskTeardown_FlagParts.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_TaskTeardown_FlagParts.c:
     complete
     .text       start:0x020ce234 end:0x020ce26c
 
-src/overlays/ov137/calls/Ov137_DescentTick.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_DescentTick.c:
     complete
     .text       start:0x020ce26c end:0x020ce3c8
 
-src/overlays/ov137/calls/Ov137_AiDescentProbe.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AiDescentProbe.c:
     complete
     .text       start:0x020ce3c8 end:0x020ce68c
 
-src/overlays/ov137/calls/Ov137_EnterGroundDrop.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_EnterGroundDrop.c:
     complete
     .text       start:0x020ce68c end:0x020ce79c
 
-src/overlays/ov137/calls/Ov137_GroundDropTick.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_GroundDropTick.c:
     complete
     .text       start:0x020ce79c end:0x020ce8f0
 
-src/overlays/ov137/calls/Ov137_RelayoutAndStoreVec.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020ce8f0 end:0x020ce930
 
-src/overlays/ov137/calls/Ov137_Actor_New.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_Actor_New.c:
     complete
     .text       start:0x020ce930 end:0x020ce964
 
-src/overlays/ov137/calls/Ov137_InitializeActor.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_InitializeActor.c:
     complete
     .text       start:0x020ce964 end:0x020ceaf0
 
-src/overlays/ov137/calls/Ov137_SubObject_Destroy.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_SubObject_Destroy.c:
     complete
     .text       start:0x020ceaf0 end:0x020ceb20
 
-src/overlays/ov137/calls/Ov137_TickAndSyncModelXform.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_TickAndSyncModelXform.c:
     complete
     .text       start:0x020ceb20 end:0x020ceb58
 
-src/overlays/ov137/calls/Ov137_HandleMessage.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_HandleMessage.c:
     complete
     .text       start:0x020ceb58 end:0x020cebcc
 
-src/overlays/ov137/calls/Ov137_HandleBounce.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_HandleBounce.c:
     complete
     .text       start:0x020cebcc end:0x020cec28
 
-src/overlays/ov137/calls/Ov137_CreateRegistryEntryAndLink.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cec28 end:0x020cec74
 
-src/overlays/ov137/calls/Ov137_stateInitClearSlots.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_stateInitClearSlots.c:
     complete
     .text       start:0x020cec74 end:0x020ced1c
 
-src/overlays/ov137/calls/Ov137_dispatchByStatusByte.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_dispatchByStatusByte.c:
     complete
     .text       start:0x020ced1c end:0x020ced94
 
-src/overlays/ov137/auto/Ov137_AiApplyMoveVector.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AiApplyMoveVector.c:
     complete
     .text       start:0x020ced94 end:0x020cedac
 
-src/overlays/ov137/calls/Ov137_ConfigHw60CopyVec3ConstThenAdvance.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020cedac end:0x020cee5c
 
-src/overlays/ov137/calls/Ov137_AiStep_QueueAction1IfActive.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020cee5c end:0x020cee94
 
-src/overlays/ov137/auto/Ov137_ArmDashAndDispatch.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_ArmDashAndDispatch.c:
     complete
     .text       start:0x020cee94 end:0x020cef68
 
-src/overlays/ov137/calls/Ov137_SweepStrikeTick.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_SweepStrikeTick.c:
     complete
     .text       start:0x020cef68 end:0x020cf254
 
-src/overlays/ov137/calls/Ov137_SendPositionMessage.c:
+src/overlays/enemies/ov137_enemy_0b/Ov137_SendPositionMessage.c:
     complete
     .text       start:0x020cf254 end:0x020cf35c
 
-src/overlays/ov137/data/ov137_strings_020cf3c0.c:
+src/overlays/enemies/ov137_enemy_0b/data/ov137_strings_020cf3c0.c:
     complete
     .data       start:0x020cf3c0 end:0x020cf3e0
 
-src/overlays/ov137/data/ov137_tables_020cf35c.c:
+src/overlays/enemies/ov137_enemy_0b/data/ov137_tables_020cf35c.c:
     complete
     .rodata     start:0x020cf35c end:0x020cf3b0
