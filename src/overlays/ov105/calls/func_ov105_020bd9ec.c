@@ -1,6 +1,6 @@
-/* Constant-argument forwarding veneer onto func_ov105_020bd9fc (fourth argument 0). */
-extern void *func_ov105_020bd9fc();
+/* Constant-argument forwarding veneer onto Ov105_WMi_InitializeEx (fourth argument 0). */
+extern void *Ov105_WMi_InitializeEx();
 
 void *func_ov105_020bd9ec(int a, void *b, void *c) {
-    return func_ov105_020bd9fc(a, b, c, 0);
+    return Ov105_WMi_InitializeEx(a, b, c, 0);
 }

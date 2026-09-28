@@ -194,8 +194,18 @@ def verify(cpath, name, index):
     if section != entry["section"]:
         return DIFFERS, "section %s != %s (const-ness of the reconstruction is wrong)" % (
             section, entry["section"]), {}
+    covered = [name]
     if len(mine) != len(original):
-        return DIFFERS, "size %d != %d" % (len(mine), len(original)), {}
+        # The index cuts DATA at every symbols.txt label, and dsd adds labels at relocation
+        # targets inside objects (a literal `table + 4` makes `data_020424b8` inside the g3d
+        # anim-init table) or a split was declared on purpose (the ov223/ov226 mode tables).
+        # So one source object can span several index entries, and an entry can run past the
+        # next label. Neither changes what the ROM holds; both are reconciled here only when
+        # the index itself proves the boundary, and every byte and relocation is still checked.
+        adjusted = _reconcile_span(name, entry, len(mine), index)
+        if adjusted is None:
+            return DIFFERS, "size %d != %d" % (len(mine), len(original)), {}
+        original, orig_relocs, orig_addends, covered = adjusted
 
     size = len(original)
     a = bytearray(mine)
@@ -246,8 +256,77 @@ def verify(cpath, name, index):
         "size": size,
         "relocs": len(orig_relocs),
     }
-    return MATCH, "%s %d bytes, %d relocs, .%s, %s" % (
-        name, size, len(orig_relocs), section, where), info
+    if len(covered) > 1:
+        info["covered_symbols"] = covered
+    return MATCH, "%s %d bytes, %d relocs, .%s, %s%s" % (
+        name, size, len(orig_relocs), section, where,
+        (" (spans %s)" % ", ".join(covered)) if len(covered) > 1 else ""), info
+
+
+def _region_entries(index, module, section):
+    """Index entries of one module/section, sorted by address (addresses from the entry or
+    symbols.txt)."""
+    out = []
+    for other, e in index.items():
+        if e.get("module") != module or e.get("section") != section:
+            continue
+        addr = e.get("addr", SYM_ADDR.get(other))
+        if addr is not None:
+            out.append((addr, other, e))
+    out.sort()
+    return out
+
+
+def _reconcile_span(name, entry, want, index):
+    """(bytes, relocs, addends, covered) describing exactly `want` bytes from `name`'s address,
+    or None when the index does not prove that boundary.
+
+    - longer object: the following index entries must tile [addr, addr + want) exactly,
+      without gaps or overlaps, and none may be ambiguous;
+    - shorter object: another index entry must start exactly at addr + want, and wherever the
+      over-long entry overlaps it their bytes must agree (the index double-covers that range).
+    """
+    addr = entry.get("addr", SYM_ADDR.get(name))
+    if addr is None:
+        return None
+    raw = bytes.fromhex(entry["hex"])
+    region = _region_entries(index, entry.get("module"), entry.get("section"))
+    if want > len(raw):
+        blob = bytearray()
+        relocs = {}
+        addends = {}
+        covered = []
+        cursor = addr
+        for a, other, e in region:
+            if a < addr:
+                continue
+            if cursor >= addr + want:
+                break
+            if a != cursor or e.get("ambiguous"):
+                return None
+            part = bytes.fromhex(e["hex"])
+            base = a - addr
+            for off, sym in e["relocs"]:
+                relocs[base + off] = sym
+            for off, v in e.get("addends", {}).items():
+                addends[base + int(off)] = v
+            blob += part
+            covered.append(other)
+            cursor = a + len(part)
+        if cursor != addr + want:
+            return None
+        return bytes(blob), relocs, addends, covered
+    nxt = [(a, other, e) for a, other, e in region if a == addr + want]
+    if not nxt:
+        return None
+    a, other, e = nxt[0]
+    tail = bytes.fromhex(e["hex"])
+    overlap = raw[want:want + len(tail)]
+    if overlap != tail[:len(overlap)]:
+        return None
+    relocs = {off: sym for off, sym in entry["relocs"] if off < want}
+    addends = {int(k): v for k, v in entry.get("addends", {}).items() if int(k) < want}
+    return raw[:want], relocs, addends, [name]
 
 
 def verify_section_range(cpath, module, section, start, index):

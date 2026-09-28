@@ -4,323 +4,323 @@
     .data       start:0x020d4b60 end:0x020d4bc0 kind:data align:32
     .bss        start:0x020d4bc0 end:0x020d4bc0 kind:bss align:32
 
-src/overlays/ov226/calls/func_ov226_020cfb60.c:
+src/overlays/ov226/calls/Ov226_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov226/calls/func_ov226_020cfb78.c:
+src/overlays/ov226/calls/Ov226_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc08
 
-src/overlays/ov226/calls/func_ov226_020cfc08.c:
+src/overlays/ov226/calls/Ov226_SyncPartNodesToJoint.c:
     complete
     .text       start:0x020cfc08 end:0x020cfd80
 
-src/overlays/ov226/calls/func_ov226_020cfd80.c:
+src/overlays/ov226/calls/Ov226_ArmModelCallback.c:
     complete
     .text       start:0x020cfd80 end:0x020cfdbc
 
-src/overlays/ov226/calls/func_ov226_020cfdbc.c:
+src/overlays/ov226/calls/Ov226_EnemyInit.c:
     complete
     .text       start:0x020cfdbc end:0x020d0208
 
-src/overlays/ov226/calls/func_ov226_020d0208.c:
+src/overlays/ov226/calls/Ov226_Destroy.c:
     complete
     .text       start:0x020d0208 end:0x020d0260
 
-src/overlays/ov226/calls/func_ov226_020d0260.c:
+src/overlays/ov226/calls/Ov226_TickWithChildRefresh.c:
     complete
     .text       start:0x020d0260 end:0x020d0284
 
-src/overlays/ov226/calls/func_ov226_020d0284.c:
+src/overlays/ov226/calls/Ov226_ForwardEventToChildren.c:
     complete
     .text       start:0x020d0284 end:0x020d02c8
 
-src/overlays/ov226/calls/func_ov226_020d02c8.c:
+src/overlays/ov226/calls/Ov226_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d02c8 end:0x020d030c
 
-src/overlays/ov226/calls/func_ov226_020d030c.c:
+src/overlays/ov226/calls/Ov226_HandleMessage.c:
     complete
     .text       start:0x020d030c end:0x020d05b8
 
-src/overlays/ov226/calls/func_ov226_020d05b8.c:
+src/overlays/ov226/calls/Ov226_ReleaseHeldSoundsAndTick.c:
     complete
     .text       start:0x020d05b8 end:0x020d0624
 
-src/overlays/ov226/calls/func_ov226_020d0624.c:
+src/overlays/ov226/calls/Ov226_RebindClip.c:
     complete
     .text       start:0x020d0624 end:0x020d06a8
 
-src/overlays/ov226/calls/func_ov226_020d06a8.c:
+src/overlays/ov226/calls/Ov226_CreateAiTask.c:
     complete
     .text       start:0x020d06a8 end:0x020d0704
 
-src/overlays/ov226/calls/func_ov226_020d0704.c:
+src/overlays/ov226/calls/Ov226_HandleHit.c:
     complete
     .text       start:0x020d0704 end:0x020d09d0
 
-src/overlays/ov226/auto/func_ov226_020d09d0.c:
+src/overlays/ov226/auto/Ov226_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d09d0 end:0x020d09fc
 
-src/overlays/ov226/auto/func_ov226_020d09fc.c:
+src/overlays/ov226/auto/Ov226_RequestSubState15IfIdle.c:
     complete
     .text       start:0x020d09fc end:0x020d0a2c
 
-src/overlays/ov226/calls/func_ov226_020d0a2c.c:
+src/overlays/ov226/calls/Ov226_StrikeSweepEntities.c:
     complete
     .text       start:0x020d0a2c end:0x020d0d28
 
-src/overlays/ov226/calls/func_ov226_020d0d28.c:
+src/overlays/ov226/calls/Ov226_ChooseMove.c:
     complete
     .text       start:0x020d0d28 end:0x020d0fc0
 
-src/overlays/ov226/calls/func_ov226_020d0fc0.c:
+src/overlays/ov226/calls/Ov226_startAnim.c:
     complete
     .text       start:0x020d0fc0 end:0x020d0fd4
 
-src/overlays/ov226/calls/func_ov226_020d0fd4.c:
+src/overlays/ov226/calls/Ov226_SetModeAndResetCounters.c:
     complete
     .text       start:0x020d0fd4 end:0x020d104c
 
-src/overlays/ov226/calls/func_ov226_020d104c.c:
+src/overlays/ov226/calls/Ov226_RunSubStateScript.c:
     complete
     .text       start:0x020d104c end:0x020d1330
 
-src/overlays/ov226/calls/func_ov226_020d1330.c:
+src/overlays/ov226/calls/Ov226_MeasureTargetGap.c:
     complete
     .text       start:0x020d1330 end:0x020d13f0
 
-src/overlays/ov226/calls/func_ov226_020d13f0.c:
+src/overlays/ov226/calls/Ov226_ResetSubObjectsAndArm.c:
     complete
     .text       start:0x020d13f0 end:0x020d14d8
 
-src/overlays/ov226/calls/func_ov226_020d14d8.c:
+src/overlays/ov226/calls/Ov226_AiDispatchAction.c:
     complete
     .text       start:0x020d14d8 end:0x020d17fc
 
-src/overlays/ov226/calls/func_ov226_020d17fc.c:
+src/overlays/ov226/calls/Ov226_HoverTick.c:
     complete
     .text       start:0x020d17fc end:0x020d1b84
 
-src/overlays/ov226/calls/func_ov226_020d1b84.c:
+src/overlays/ov226/calls/Ov226_RaiseFlagsAndArmChildren.c:
     complete
     .text       start:0x020d1b84 end:0x020d1c00
 
-src/overlays/ov226/calls/func_ov226_020d1c00.c:
+src/overlays/ov226/calls/Ov226_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d1c00 end:0x020d1c50
 
-src/overlays/ov226/calls/func_ov226_020d1c50.c:
+src/overlays/ov226/calls/Ov226_AiEnterWait.c:
     complete
     .text       start:0x020d1c50 end:0x020d1d2c
 
-src/overlays/ov226/calls/func_ov226_020d1d2c.c:
+src/overlays/ov226/calls/Ov226_WaitThenAdvanceState.c:
     complete
     .text       start:0x020d1d2c end:0x020d1dac
 
-src/overlays/ov226/calls/func_ov226_020d1dac.c:
+src/overlays/ov226/calls/Ov226_AiRollTimerOnAnimEnd.c:
     complete
     .text       start:0x020d1dac end:0x020d1e40
 
-src/overlays/ov226/calls/func_ov226_020d1e40.c:
+src/overlays/ov226/calls/Ov226_AiEnterCuedAnim.c:
     complete
     .text       start:0x020d1e40 end:0x020d1eac
 
-src/overlays/ov226/calls/func_ov226_020d1eac.c:
+src/overlays/ov226/calls/Ov226_SweepStrikeEntry.c:
     complete
     .text       start:0x020d1eac end:0x020d1f68
 
-src/overlays/ov226/calls/func_ov226_020d1f68.c:
+src/overlays/ov226/calls/Ov226_AiEnterRetreatB.c:
     complete
     .text       start:0x020d1f68 end:0x020d1fb8
 
-src/overlays/ov226/calls/func_ov226_020d1fb8.c:
+src/overlays/ov226/calls/Ov226_AiEnterRetreat.c:
     complete
     .text       start:0x020d1fb8 end:0x020d2020
 
-src/overlays/ov226/calls/func_ov226_020d2020.c:
+src/overlays/ov226/calls/Ov226_RetreatTick.c:
     complete
     .text       start:0x020d2020 end:0x020d22f8
 
-src/overlays/ov226/calls/func_ov226_020d22f8.c:
+src/overlays/ov226/calls/Ov226_AiEnterCooldown.c:
     complete
     .text       start:0x020d22f8 end:0x020d2340
 
-src/overlays/ov226/auto/func_ov226_020d2340.c:
+src/overlays/ov226/auto/Ov226_AiCooldownTick.c:
     complete
     .text       start:0x020d2340 end:0x020d2380
 
-src/overlays/ov226/calls/func_ov226_020d2380.c:
+src/overlays/ov226/calls/Ov226_Steer.c:
     complete
     .text       start:0x020d2380 end:0x020d253c
 
-src/overlays/ov226/calls/func_ov226_020d253c.c:
+src/overlays/ov226/calls/Ov226_AiEnterChase.c:
     complete
     .text       start:0x020d253c end:0x020d2578
 
-src/overlays/ov226/calls/func_ov226_020d2578.c:
+src/overlays/ov226/calls/Ov226_AiChaseTick.c:
     complete
     .text       start:0x020d2578 end:0x020d27c0
 
-src/overlays/ov226/calls/func_ov226_020d27c0.c:
+src/overlays/ov226/calls/Ov226_GuardedAimOrHandoff.c:
     complete
     .text       start:0x020d27c0 end:0x020d288c
 
-src/overlays/ov226/calls/func_ov226_020d288c.c:
+src/overlays/ov226/calls/Ov226_EnterAttack.c:
     complete
     .text       start:0x020d288c end:0x020d2930
 
-src/overlays/ov226/calls/func_ov226_020d2930.c:
+src/overlays/ov226/calls/Ov226_SpawnWindupTick.c:
     complete
     .text       start:0x020d2930 end:0x020d2c3c
 
-src/overlays/ov226/calls/func_ov226_020d2c3c.c:
+src/overlays/ov226/calls/Ov226_AiEnterChargeWindup.c:
     complete
     .text       start:0x020d2c3c end:0x020d2cac
 
-src/overlays/ov226/calls/func_ov226_020d2cac.c:
+src/overlays/ov226/calls/Ov226_ChargeWindupTick.c:
     complete
     .text       start:0x020d2cac end:0x020d2f24
 
-src/overlays/ov226/calls/func_ov226_020d2f24.c:
+src/overlays/ov226/calls/Ov226_ChargeTimerThenFire.c:
     complete
     .text       start:0x020d2f24 end:0x020d2ff4
 
-src/overlays/ov226/calls/func_ov226_020d2ff4.c:
+src/overlays/ov226/calls/Ov226_DashTick.c:
     complete
     .text       start:0x020d2ff4 end:0x020d31d8
 
-src/overlays/ov226/calls/func_ov226_020d31d8.c:
+src/overlays/ov226/calls/Ov226_AiStep_QueueAction4OnAnimEnd.c:
     complete
     .text       start:0x020d31d8 end:0x020d320c
 
-src/overlays/ov226/calls/func_ov226_020d320c.c:
+src/overlays/ov226/calls/Ov226_AiEnterRecoilTurn.c:
     complete
     .text       start:0x020d320c end:0x020d3260
 
-src/overlays/ov226/calls/func_ov226_020d3260.c:
+src/overlays/ov226/calls/Ov226_AiRecoilTurnWait.c:
     complete
     .text       start:0x020d3260 end:0x020d32a4
 
-src/overlays/ov226/calls/func_ov226_020d32a4.c:
+src/overlays/ov226/calls/Ov226_AiRecoilTurnStart.c:
     complete
     .text       start:0x020d32a4 end:0x020d32f4
 
-src/overlays/ov226/calls/func_ov226_020d32f4.c:
+src/overlays/ov226/calls/Ov226_TurnTick.c:
     complete
     .text       start:0x020d32f4 end:0x020d3454
 
-src/overlays/ov226/calls/func_ov226_020d3454.c:
+src/overlays/ov226/calls/Ov226_AiEnterLeap.c:
     complete
     .text       start:0x020d3454 end:0x020d3598
 
-src/overlays/ov226/calls/func_ov226_020d3598.c:
+src/overlays/ov226/calls/Ov226_AiLeapWindup.c:
     complete
     .text       start:0x020d3598 end:0x020d3600
 
-src/overlays/ov226/calls/func_ov226_020d3600.c:
+src/overlays/ov226/calls/Ov226_LeapTick.c:
     complete
     .text       start:0x020d3600 end:0x020d38cc
 
-src/overlays/ov226/calls/func_ov226_020d38cc.c:
+src/overlays/ov226/calls/Ov226_AiEnterAttackB.c:
     complete
     .text       start:0x020d38cc end:0x020d391c
 
-src/overlays/ov226/calls/func_ov226_020d391c.c:
+src/overlays/ov226/calls/Ov226_SlamTick.c:
     complete
     .text       start:0x020d391c end:0x020d3a18
 
-src/overlays/ov226/calls/func_ov226_020d3a18.c:
+src/overlays/ov226/calls/Ov226_AiEnterCuedAnimB.c:
     complete
     .text       start:0x020d3a18 end:0x020d3a58
 
-src/overlays/ov226/calls/func_ov226_020d3a58.c:
+src/overlays/ov226/calls/Ov226_AiCuedAnimTickB.c:
     complete
     .text       start:0x020d3a58 end:0x020d3b0c
 
-src/overlays/ov226/calls/func_ov226_020d3b0c.c:
+src/overlays/ov226/calls/Ov226_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d3b0c end:0x020d3be4
 
-src/overlays/ov226/calls/func_ov226_020d3be4.c:
+src/overlays/ov226/calls/Ov226_AiStep_QueueAction0.c:
     complete
     .text       start:0x020d3be4 end:0x020d3c04
 
-src/overlays/ov226/calls/func_ov226_020d3c04.c:
+src/overlays/ov226/calls/Ov226_AiEnterHold.c:
     complete
     .text       start:0x020d3c04 end:0x020d3cdc
 
-src/overlays/ov226/calls/func_ov226_020d3cdc.c:
+src/overlays/ov226/calls/Ov226_AiHoldTick.c:
     complete
     .text       start:0x020d3cdc end:0x020d3d70
 
-src/overlays/ov226/calls/func_ov226_020d3d70.c:
+src/overlays/ov226/calls/Ov226_AiEnterApproach.c:
     complete
     .text       start:0x020d3d70 end:0x020d3da0
 
-src/overlays/ov226/calls/func_ov226_020d3da0.c:
+src/overlays/ov226/calls/Ov226_AiApproachTick.c:
     complete
     .text       start:0x020d3da0 end:0x020d3eb4
 
-src/overlays/ov226/calls/func_ov226_020d3eb4.c:
+src/overlays/ov226/calls/Ov226_HandleMessageArgs.c:
     complete
     .text       start:0x020d3eb4 end:0x020d3f60
 
-src/overlays/ov226/calls/func_ov226_020d3f60.c:
+src/overlays/ov226/calls/Ov226_Projectile_New.c:
     complete
     .text       start:0x020d3f60 end:0x020d3f94
 
-src/overlays/ov226/calls/func_ov226_020d3f94.c:
+src/overlays/ov226/calls/Ov226_ConstructItem.c:
     complete
     .text       start:0x020d3f94 end:0x020d411c
 
-src/overlays/ov226/calls/func_ov226_020d411c.c:
+src/overlays/ov226/calls/Ov226_Destroy_2.c:
     complete
     .text       start:0x020d411c end:0x020d4140
 
-src/overlays/ov226/calls/func_ov226_020d4140.c:
+src/overlays/ov226/calls/Ov226_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d4140 end:0x020d4178
 
-src/overlays/ov226/calls/func_ov226_020d4178.c:
+src/overlays/ov226/calls/Ov226_ItemHandleMessage.c:
     complete
     .text       start:0x020d4178 end:0x020d429c
 
-src/overlays/ov226/auto/func_ov226_020d429c.c:
+src/overlays/ov226/auto/Ov226_Projectile_SetupFlight.c:
     complete
     .text       start:0x020d429c end:0x020d42d8
 
-src/overlays/ov226/calls/func_ov226_020d42d8.c:
+src/overlays/ov226/calls/Ov226_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d42d8 end:0x020d4334
 
-src/overlays/ov226/calls/func_ov226_020d4334.c:
+src/overlays/ov226/calls/Ov226_stateInitClearSlots.c:
     complete
     .text       start:0x020d4334 end:0x020d43dc
 
-src/overlays/ov226/calls/func_ov226_020d43dc.c:
+src/overlays/ov226/calls/Ov226_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d43dc end:0x020d4454
 
-src/overlays/ov226/calls/func_ov226_020d4454.c:
+src/overlays/ov226/calls/Ov226_AiApplyMoveVector.c:
     complete
     .text       start:0x020d4454 end:0x020d446c
 
-src/overlays/ov226/calls/func_ov226_020d446c.c:
+src/overlays/ov226/calls/Ov226_EnterCharge.c:
     complete
     .text       start:0x020d446c end:0x020d4538
 
-src/overlays/ov226/auto/func_ov226_020d4538.c:
+src/overlays/ov226/auto/Ov226_ChargeIdleStep.c:
     complete
     .text       start:0x020d4538 end:0x020d453c
 
-src/overlays/ov226/calls/func_ov226_020d453c.c:
+src/overlays/ov226/calls/Ov226_LaunchCharge.c:
     complete
     .text       start:0x020d453c end:0x020d46e4
 
-src/overlays/ov226/calls/func_ov226_020d46e4.c:
+src/overlays/ov226/calls/Ov226_FlightTick.c:
     complete
     .text       start:0x020d46e4 end:0x020d4b20
 

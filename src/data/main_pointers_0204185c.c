@@ -4,7 +4,7 @@
  * a zero word is a null entry.
  */
 
-extern void func_0200a10c(void);
+extern void FSi_CloseFileCommand(void);
 extern int FSi_FindPathCommand;
 extern int FSi_GetPathCommand;
 extern int FSi_OpenFileDirectCommand;
@@ -32,6 +32,6 @@ void *const data_0204185c[9] = {
 
     &FSi_OpenFileDirectCommand,
 
-    (void *)func_0200a10c,
+    (void *)FSi_CloseFileCommand,
 
 };

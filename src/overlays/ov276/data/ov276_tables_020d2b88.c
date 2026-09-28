@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov276_020cfcf8 (020cfcf8): void data_ov276_020d2b88(void); */
+/* read by Ov276_EnemyConstruct (020cfcf8): void data_ov276_020d2b88(void); */
 const int data_ov276_020d2b88[6] = {
     0, 24, 25, 26, 27, 28,
 };

@@ -4,211 +4,211 @@
     .data       start:0x020d6540 end:0x020d6580 kind:data align:32
     .bss        start:0x020d6580 end:0x020d6580 kind:bss align:32
 
-src/overlays/ov251/calls/func_ov251_020d37a0.c:
+src/overlays/ov251/calls/Ov251_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov251/calls/func_ov251_020d37b8.c:
+src/overlays/ov251/calls/Ov251_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov251/calls/func_ov251_020d3844.c:
+src/overlays/ov251/calls/Ov251_Construct.c:
     complete
     .text       start:0x020d3844 end:0x020d3aa4
 
-src/overlays/ov251/calls/func_ov251_020d3aa4.c:
+src/overlays/ov251/calls/Ov251_Destroy.c:
     complete
     .text       start:0x020d3aa4 end:0x020d3aec
 
-src/overlays/ov251/calls/func_ov251_020d3aec.c:
+src/overlays/ov251/calls/Ov251_TickWithChildRefresh.c:
     complete
     .text       start:0x020d3aec end:0x020d3b10
 
-src/overlays/ov251/calls/func_ov251_020d3b10.c:
+src/overlays/ov251/calls/Ov251_Model_SetTrack0.c:
     complete
     .text       start:0x020d3b10 end:0x020d3b40
 
-src/overlays/ov251/auto/func_ov251_020d3b40.c:
+src/overlays/ov251/auto/Ov251_SendMessage28.c:
     complete
     .text       start:0x020d3b40 end:0x020d3ba4
 
-src/overlays/ov251/calls/func_ov251_020d3ba4.c:
+src/overlays/ov251/calls/Ov251_HandleMessage.c:
     complete
     .text       start:0x020d3ba4 end:0x020d3cc8
 
-src/overlays/ov251/calls/func_ov251_020d3cc8.c:
+src/overlays/ov251/calls/Ov251_PropagateBlockChainThenNotify.c:
     complete
     .text       start:0x020d3cc8 end:0x020d3d30
 
-src/overlays/ov251/calls/func_ov251_020d3d30.c:
+src/overlays/ov251/calls/Ov251_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d3d30 end:0x020d3d7c
 
-src/overlays/ov251/calls/func_ov251_020d3d7c.c:
+src/overlays/ov251/calls/Ov251_OnHit.c:
     complete
     .text       start:0x020d3d7c end:0x020d3fd4
 
-src/overlays/ov251/auto/func_ov251_020d3fd4.c:
+src/overlays/ov251/auto/Ov251_ReactionRequestSubState11.c:
     complete
     .text       start:0x020d3fd4 end:0x020d403c
 
-src/overlays/ov251/calls/func_ov251_020d403c.c:
+src/overlays/ov251/calls/Ov251_InitStates.c:
     complete
     .text       start:0x020d403c end:0x020d4118
 
-src/overlays/ov251/calls/func_ov251_020d4118.c:
+src/overlays/ov251/calls/Ov251_stDispatchByStateByte.c:
     complete
     .text       start:0x020d4118 end:0x020d4310
 
-src/overlays/ov251/calls/func_ov251_020d4310.c:
+src/overlays/ov251/calls/Ov251_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020d4310 end:0x020d43c4
 
-src/overlays/ov251/calls/func_ov251_020d43c4.c:
+src/overlays/ov251/calls/Ov251_stateSetFlagsClearBitInit.c:
     complete
     .text       start:0x020d43c4 end:0x020d4438
 
-src/overlays/ov251/calls/func_ov251_020d4438.c:
+src/overlays/ov251/calls/Ov251_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d4438 end:0x020d4474
 
-src/overlays/ov251/calls/func_ov251_020d4474.c:
+src/overlays/ov251/calls/Ov251_stateAcquireAimInit.c:
     complete
     .text       start:0x020d4474 end:0x020d453c
 
-src/overlays/ov251/calls/func_ov251_020d453c.c:
+src/overlays/ov251/calls/Ov251_AiFadeInSlowTick.c:
     complete
     .text       start:0x020d453c end:0x020d45c8
 
-src/overlays/ov251/calls/func_ov251_020d45c8.c:
+src/overlays/ov251/calls/Ov251_SpawnHook.c:
     complete
     .text       start:0x020d45c8 end:0x020d4614
 
-src/overlays/ov251/calls/func_ov251_020d4614.c:
+src/overlays/ov251/calls/Ov251_CircleTick.c:
     complete
     .text       start:0x020d4614 end:0x020d4840
 
-src/overlays/ov251/calls/func_ov251_020d4840.c:
+src/overlays/ov251/calls/Ov251_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d4840 end:0x020d4874
 
-src/overlays/ov251/calls/func_ov251_020d4874.c:
+src/overlays/ov251/calls/Ov251_BeginCharge.c:
     complete
     .text       start:0x020d4874 end:0x020d4994
 
-src/overlays/ov251/calls/func_ov251_020d4994.c:
+src/overlays/ov251/calls/Ov251_ApproachTick.c:
     complete
     .text       start:0x020d4994 end:0x020d4aec
 
-src/overlays/ov251/calls/func_ov251_020d4aec.c:
+src/overlays/ov251/calls/Ov251_BeginLunge.c:
     complete
     .text       start:0x020d4aec end:0x020d4c0c
 
-src/overlays/ov251/calls/func_ov251_020d4c0c.c:
+src/overlays/ov251/calls/Ov251_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d4c0c end:0x020d4c40
 
-src/overlays/ov251/calls/func_ov251_020d4c40.c:
+src/overlays/ov251/calls/Ov251_SetPose5ThenAdvanceSlot.c:
     complete
     .text       start:0x020d4c40 end:0x020d4c74
 
-src/overlays/ov251/calls/func_ov251_020d4c74.c:
+src/overlays/ov251/calls/Ov251_GuardFieldCClearField1cAdvance.c:
     complete
     .text       start:0x020d4c74 end:0x020d4ca8
 
-src/overlays/ov251/calls/func_ov251_020d4ca8.c:
+src/overlays/ov251/calls/Ov251_ChargeUpTick.c:
     complete
     .text       start:0x020d4ca8 end:0x020d4ed8
 
-src/overlays/ov251/calls/func_ov251_020d4ed8.c:
+src/overlays/ov251/calls/Ov251_evalHermiteSplinePath.c:
     complete
     .text       start:0x020d4ed8 end:0x020d513c
 
-src/overlays/ov251/calls/func_ov251_020d513c.c:
+src/overlays/ov251/calls/Ov251_AiFadeInTick.c:
     complete
     .text       start:0x020d513c end:0x020d51e0
 
-src/overlays/ov251/calls/func_ov251_020d51e0.c:
+src/overlays/ov251/calls/Ov251_stateAnimAimAtTarget.c:
     complete
     .text       start:0x020d51e0 end:0x020d524c
 
-src/overlays/ov251/calls/func_ov251_020d524c.c:
+src/overlays/ov251/calls/Ov251_stEasePoseCheckFlags.c:
     complete
     .text       start:0x020d524c end:0x020d52d0
 
-src/overlays/ov251/calls/func_ov251_020d52d0.c:
+src/overlays/ov251/calls/Ov251_stateScaleVecMagnitudeGate.c:
     complete
     .text       start:0x020d52d0 end:0x020d5334
 
-src/overlays/ov251/calls/func_ov251_020d5334.c:
+src/overlays/ov251/calls/Ov251_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020d5334 end:0x020d5368
 
-src/overlays/ov251/calls/func_ov251_020d5368.c:
+src/overlays/ov251/calls/Ov251_Action6Callback.c:
     complete
     .text       start:0x020d5368 end:0x020d5434
 
-src/overlays/ov251/calls/func_ov251_020d5434.c:
+src/overlays/ov251/calls/Ov251_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d5434 end:0x020d5488
 
-src/overlays/ov251/calls/func_ov251_020d5488.c:
+src/overlays/ov251/calls/Ov251_BiteSweepTick.c:
     complete
     .text       start:0x020d5488 end:0x020d5748
 
-src/overlays/ov251/calls/func_ov251_020d5748.c:
+src/overlays/ov251/calls/Ov251_BeginApproach.c:
     complete
     .text       start:0x020d5748 end:0x020d586c
 
-src/overlays/ov251/calls/func_ov251_020d586c.c:
+src/overlays/ov251/calls/Ov251_AiSwingRecover.c:
     complete
     .text       start:0x020d586c end:0x020d58b0
 
-src/overlays/ov251/calls/func_ov251_020d58b0.c:
+src/overlays/ov251/calls/Ov251_LungeTick.c:
     complete
     .text       start:0x020d58b0 end:0x020d5c0c
 
-src/overlays/ov251/calls/func_ov251_020d5c0c.c:
+src/overlays/ov251/calls/Ov251_stateAnimSetFlagClear.c:
     complete
     .text       start:0x020d5c0c end:0x020d5c78
 
-src/overlays/ov251/calls/func_ov251_020d5c78.c:
+src/overlays/ov251/calls/Ov251_stateTimerTransformVec.c:
     complete
     .text       start:0x020d5c78 end:0x020d5d08
 
-src/overlays/ov251/calls/func_ov251_020d5d08.c:
+src/overlays/ov251/calls/Ov251_LeapTick.c:
     complete
     .text       start:0x020d5d08 end:0x020d6080
 
-src/overlays/ov251/calls/func_ov251_020d6080.c:
+src/overlays/ov251/calls/Ov251_AiRollTimerQueue2.c:
     complete
     .text       start:0x020d6080 end:0x020d60e0
 
-src/overlays/ov251/calls/func_ov251_020d60e0.c:
+src/overlays/ov251/calls/Ov251_stateAnimNegateClamp.c:
     complete
     .text       start:0x020d60e0 end:0x020d613c
 
-src/overlays/ov251/calls/func_ov251_020d613c.c:
+src/overlays/ov251/calls/Ov251_BeginSteerSweep.c:
     complete
     .text       start:0x020d613c end:0x020d6220
 
-src/overlays/ov251/calls/func_ov251_020d6220.c:
+src/overlays/ov251/calls/Ov251_SteerSweep.c:
     complete
     .text       start:0x020d6220 end:0x020d6310
 
-src/overlays/ov251/calls/func_ov251_020d6310.c:
+src/overlays/ov251/calls/Ov251_BeginRecover.c:
     complete
     .text       start:0x020d6310 end:0x020d63ac
 
-src/overlays/ov251/calls/func_ov251_020d63ac.c:
+src/overlays/ov251/calls/Ov251_GuardFieldCClearField1cAdvance_2.c:
     complete
     .text       start:0x020d63ac end:0x020d63e0
 
-src/overlays/ov251/calls/func_ov251_020d63e0.c:
+src/overlays/ov251/calls/Ov251_TimerInterp394ThenAdvance.c:
     complete
     .text       start:0x020d63e0 end:0x020d6458
 
-src/overlays/ov251/calls/func_ov251_020d6458.c:
+src/overlays/ov251/calls/Ov251_AiSetStanceAndEnd.c:
     complete
     .text       start:0x020d6458 end:0x020d64d0
 

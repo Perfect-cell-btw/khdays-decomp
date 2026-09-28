@@ -10,5 +10,5 @@ typedef struct MsgListInit {
 
 extern char data_ov009_020563b4;  /* "UI/cm/msl_&.msi.z" */
 
-/* Read by func_ov009_020557dc. */
+/* Read by Ov009_UpdateCompletionMilestones. */
 const MsgListInit data_ov009_02056108 = { &data_ov009_020563b4, 0, 5 };

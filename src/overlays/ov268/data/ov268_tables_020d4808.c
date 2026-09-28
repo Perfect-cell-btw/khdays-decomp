@@ -13,7 +13,7 @@ const u8 data_ov268_020d4808[16] = {
     0, 0, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov268_020d096c (020d096c): const struct tbl8 data_ov268_020d4818; */
+/* read by Ov268_collectObjectsInSphereRec (020d096c): const struct tbl8 data_ov268_020d4818; */
 const u8 data_ov268_020d4818[32] = {
     255, 255, 255, 255, 255, 255, 255, 255, 1, 0, 0, 0, 255, 255, 255, 255,
     255, 255, 255, 255, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0,

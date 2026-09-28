@@ -8,131 +8,131 @@ src/overlays/ov073/calls/func_ov073_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov073/calls/func_ov073_020b8114.c:
+src/overlays/ov073/calls/Ov073_stateCtorConfigReturnHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b8148
 
-src/overlays/ov073/calls/func_ov073_020b8148.c:
+src/overlays/ov073/calls/Ov073_initTwoRegionsClearGlobal.c:
     complete
     .text       start:0x020b8148 end:0x020b818c
 
-src/overlays/ov073/calls/func_ov073_020b818c.c:
+src/overlays/ov073/calls/Ov073_Boot.c:
     complete
     .text       start:0x020b818c end:0x020b8374
 
-src/overlays/ov073/calls/func_ov073_020b8374.c:
+src/overlays/ov073/calls/Ov073_BindChannelsAndSlotMaps.c:
     complete
     .text       start:0x020b8374 end:0x020b84c4
 
-src/overlays/ov073/auto/func_ov073_020b84c4.c:
+src/overlays/ov073/auto/Ov073_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b84c4 end:0x020b84ec
 
-src/overlays/ov073/calls/func_ov073_020b84ec.c:
+src/overlays/ov073/calls/Ov073_ApplyModeChange.c:
     complete
     .text       start:0x020b84ec end:0x020b8664
 
-src/overlays/ov073/calls/func_ov073_020b8664.c:
+src/overlays/ov073/calls/Ov073_SyncHandleAndDrawAim.c:
     complete
     .text       start:0x020b8664 end:0x020b8724
 
-src/overlays/ov073/calls/func_ov073_020b8724.c:
+src/overlays/ov073/calls/Ov073_UpdateAnimationAndDraw.c:
     complete
     .text       start:0x020b8724 end:0x020b8ae4
 
-src/overlays/ov073/calls/func_ov073_020b8ae4.c:
+src/overlays/ov073/calls/Ov073_ReleaseIndexedHandles.c:
     complete
     .text       start:0x020b8ae4 end:0x020b8b50
 
-src/overlays/ov073/calls/func_ov073_020b8b50.c:
+src/overlays/ov073/calls/Ov073_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b8b50 end:0x020b8b88
 
-src/overlays/ov073/calls/func_ov073_020b8b88.c:
+src/overlays/ov073/calls/Ov073_HandleMessage.c:
     complete
     .text       start:0x020b8b88 end:0x020b8d74
 
-src/overlays/ov073/calls/func_ov073_020b8d74.c:
+src/overlays/ov073/calls/Ov073_BuildRenderHandles.c:
     complete
     .text       start:0x020b8d74 end:0x020b8e10
 
-src/overlays/ov073/calls/func_ov073_020b8e10.c:
+src/overlays/ov073/calls/Ov073_SetTimingsAndEnterState21.c:
     complete
     .text       start:0x020b8e10 end:0x020b8ebc
 
-src/overlays/ov073/calls/func_ov073_020b8ebc.c:
+src/overlays/ov073/calls/Ov073_IdleStep.c:
     complete
     .text       start:0x020b8ebc end:0x020b912c
 
-src/overlays/ov073/calls/func_ov073_020b912c.c:
+src/overlays/ov073/calls/Ov073_AttackPhaseStep.c:
     complete
     .text       start:0x020b912c end:0x020b92e0
 
-src/overlays/ov073/calls/func_ov073_020b92e0.c:
+src/overlays/ov073/calls/Ov073_StepAndCheckTimer.c:
     complete
     .text       start:0x020b92e0 end:0x020b93f0
 
-src/overlays/ov073/calls/func_ov073_020b93f0.c:
+src/overlays/ov073/calls/Ov073_ApproachStep.c:
     complete
     .text       start:0x020b93f0 end:0x020b9600
 
-src/overlays/ov073/calls/func_ov073_020b9600.c:
+src/overlays/ov073/calls/Ov073_DiveStep.c:
     complete
     .text       start:0x020b9600 end:0x020b9900
 
-src/overlays/ov073/calls/func_ov073_020b9900.c:
+src/overlays/ov073/calls/Ov073_LandingStep.c:
     complete
     .text       start:0x020b9900 end:0x020b9ad8
 
-src/overlays/ov073/calls/func_ov073_020b9ad8.c:
+src/overlays/ov073/calls/Ov073_FireRapidBurst.c:
     complete
     .text       start:0x020b9ad8 end:0x020b9c5c
 
-src/overlays/ov073/calls/func_ov073_020b9c5c.c:
+src/overlays/ov073/calls/Ov073_FireHeavyBurst.c:
     complete
     .text       start:0x020b9c5c end:0x020b9e18
 
-src/overlays/ov073/calls/func_ov073_020b9e18.c:
+src/overlays/ov073/calls/Ov073_FireThirdCountBurst.c:
     complete
     .text       start:0x020b9e18 end:0x020b9f94
 
-src/overlays/ov073/calls/func_ov073_020b9f94.c:
+src/overlays/ov073/calls/Ov073_initSubObjectSlots.c:
     complete
     .text       start:0x020b9f94 end:0x020b9fec
 
-src/overlays/ov073/calls/func_ov073_020b9fec.c:
+src/overlays/ov073/calls/Ov073_ReleaseChildFromGlobal.c:
     complete
     .text       start:0x020b9fec end:0x020ba004
 
-src/overlays/ov073/calls/func_ov073_020ba004.c:
+src/overlays/ov073/calls/Ov073_initGlobalSlotBaseRefs.c:
     complete
     .text       start:0x020ba004 end:0x020ba044
 
-src/overlays/ov073/calls/func_ov073_020ba044.c:
+src/overlays/ov073/calls/Ov073_enterState5ConfigAnims.c:
     complete
     .text       start:0x020ba044 end:0x020ba0c0
 
-src/overlays/ov073/calls/func_ov073_020ba0c0.c:
+src/overlays/ov073/calls/Ov073_enterState1ConfigAnims.c:
     complete
     .text       start:0x020ba0c0 end:0x020ba158
 
-src/overlays/ov073/calls/func_ov073_020ba158.c:
+src/overlays/ov073/calls/Ov073_enterState3ConfigAnims.c:
     complete
     .text       start:0x020ba158 end:0x020ba1f0
 
-src/overlays/ov073/calls/func_ov073_020ba1f0.c:
+src/overlays/ov073/calls/Ov073_ClearTimer.c:
     complete
     .text       start:0x020ba1f0 end:0x020ba1fc
 
-src/overlays/ov073/calls/func_ov073_020ba1fc.c:
+src/overlays/ov073/calls/Ov073_DriveGuardSequence.c:
     complete
     .text       start:0x020ba1fc end:0x020ba370
 
-src/overlays/ov073/calls/func_ov073_020ba370.c:
+src/overlays/ov073/calls/Ov073_PickSourcePosAndDraw.c:
     complete
     .text       start:0x020ba370 end:0x020ba438
 
-src/overlays/ov073/calls/func_ov073_020ba438.c:
+src/overlays/ov073/calls/Ov073_InvokeWithDataTable.c:
     complete
     .text       start:0x020ba438 end:0x020ba450
 

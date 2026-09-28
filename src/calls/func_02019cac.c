@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_0201b0ec. */
-extern void *func_0201b0ec();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to NNSi_SndCaptureEndSleep. */
+extern void *NNSi_SndCaptureEndSleep();
 
 void *func_02019cac() {
-    return func_0201b0ec();
+    return NNSi_SndCaptureEndSleep();
 }

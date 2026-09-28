@@ -4,40 +4,40 @@
  * a zero word is a null entry.
  */
 
-extern void func_02021e84(void);
-extern void func_02021ed8(void);
-extern void func_02021f7c(void);
-extern void func_020220dc(void);
-extern void func_02022148(void);
-extern void func_0202214c(void);
-extern void func_0202216c(void);
-extern void func_020221a0(void);
-extern void func_020221e0(void);
-extern void func_020221f0(void);
-extern void func_020221f4(void);
-extern void func_020221f8(void);
-extern void func_0202223c(void);
-extern void func_0202225c(void);
-extern void func_02022290(void);
-extern void func_020222bc(void);
-extern void func_02022324(void);
-extern void func_02022360(void);
-extern void func_0202237c(void);
-extern void func_020223dc(void);
-extern void func_02022410(void);
-extern void func_02022434(void);
-extern void func_02022448(void);
-extern void func_02022460(void);
-extern void func_02022484(void);
-extern void func_020224b4(void);
-extern void func_020224cc(void);
-extern void func_020224ec(void);
-extern void func_02022510(void);
-extern void func_02022544(void);
-extern void func_02022578(void);
-extern void func_020225f0(void);
-extern void func_02022670(void);
-extern void func_020226d4(void);
+extern void Game_ActionAssign(void);
+extern void ScriptCmd_SetElemOffset(void);
+extern void Game_ActionLoadArenaResource(void);
+extern void Game_ActionInitObject(void);
+extern void Game_ActionReturn4(void);
+extern void ResetRequestRecord(void);
+extern void CommitRecordCursor(void);
+extern void ScriptVm_RunCallback(void);
+extern void IsDerefZero(void);
+extern void ConstReturn0(void);
+extern void ConstReturn0_2(void);
+extern void Game_ActionSetBranchTarget(void);
+extern void ScriptCmd_StoreDoubled(void);
+extern void DeferredAction_Gate(void);
+extern void ScriptCmd_ArmPair(void);
+extern void Game_ActionSetupNamedCall(void);
+extern void CommitCachedByteIfChanged(void);
+extern void ScriptCmd_RequestKind3(void);
+extern void Game_ActionEnqueueCmdIfChanged(void);
+extern void RegisterActorOrRetry(void);
+extern void ScriptCmd_SetSelection(void);
+extern void ScriptCmd_QueueSoundKind1(void);
+extern void Script_StepAndIsIdle(void);
+extern void ScriptCmd_PlaySound(void);
+extern void ScriptCmd_ForwardThreeToHandler(void);
+extern void ScriptCmd_DispatchToHandler(void);
+extern void ScriptCmd_RequestResPair(void);
+extern void ScriptCmd_StartStream(void);
+extern void QueryAndRegisterNode(void);
+extern void ScriptCmd_FreeSlotEntry(void);
+extern void Script_Cmd_PlayEntityCutsceneCamWait(void);
+extern void Game_ActionTurnHandler(void);
+extern void Script_Cmd_PlayEntityCutsceneCam(void);
+extern void DispatchTrackEntryIfReady(void);
 extern void *data_02042640[60];
 
 void *data_020425ec[21] = {
@@ -88,31 +88,27 @@ void *data_020425ec[21] = {
 
 void *data_02042640[60] = {
 
-    (void *)func_02021e84,
+    (void *)Game_ActionAssign,
 
     0,
 
-    (void *)func_02021ed8,
+    (void *)ScriptCmd_SetElemOffset,
 
     0,
 
-    (void *)func_02021f7c,
+    (void *)Game_ActionLoadArenaResource,
 
-    (void *)func_020220dc,
+    (void *)Game_ActionInitObject,
 
-    (void *)func_02022148,
-
-    0,
-
-    (void *)func_0202214c,
+    (void *)Game_ActionReturn4,
 
     0,
 
-    (void *)func_0202216c,
+    (void *)ResetRequestRecord,
 
     0,
 
-    0,
+    (void *)CommitRecordCursor,
 
     0,
 
@@ -120,89 +116,93 @@ void *data_02042640[60] = {
 
     0,
 
-    (void *)func_020221a0,
-
-    (void *)func_020221e0,
-
-    (void *)func_020221f0,
-
-    (void *)func_020221f4,
-
-    (void *)func_020221f8,
-
-    0,
-
-    (void *)func_0202223c,
-
-    (void *)func_0202225c,
-
-    (void *)func_02022290,
-
-    0,
-
-    (void *)func_020222bc,
-
-    0,
-
-    (void *)func_02022324,
-
-    0,
-
-    (void *)func_02022360,
-
-    0,
-
-    (void *)func_0202237c,
-
-    0,
-
-    (void *)func_020223dc,
-
-    (void *)func_02022410,
-
-    (void *)func_02022434,
-
-    (void *)func_02022448,
-
     0,
 
     0,
 
-    (void *)func_02022460,
+    (void *)ScriptVm_RunCallback,
+
+    (void *)IsDerefZero,
+
+    (void *)ConstReturn0,
+
+    (void *)ConstReturn0_2,
+
+    (void *)Game_ActionSetBranchTarget,
 
     0,
 
-    (void *)func_02022484,
+    (void *)ScriptCmd_StoreDoubled,
+
+    (void *)DeferredAction_Gate,
+
+    (void *)ScriptCmd_ArmPair,
 
     0,
 
-    (void *)func_020224b4,
+    (void *)Game_ActionSetupNamedCall,
 
     0,
 
-    (void *)func_020224cc,
+    (void *)CommitCachedByteIfChanged,
 
     0,
 
-    (void *)func_020224ec,
+    (void *)ScriptCmd_RequestKind3,
 
     0,
 
-    (void *)func_02022510,
+    (void *)Game_ActionEnqueueCmdIfChanged,
 
     0,
 
-    (void *)func_02022544,
+    (void *)RegisterActorOrRetry,
+
+    (void *)ScriptCmd_SetSelection,
+
+    (void *)ScriptCmd_QueueSoundKind1,
+
+    (void *)Script_StepAndIsIdle,
 
     0,
 
-    (void *)func_02022578,
+    0,
 
-    (void *)func_020225f0,
+    (void *)ScriptCmd_PlaySound,
 
-    (void *)func_02022670,
+    0,
 
-    (void *)func_020226d4,
+    (void *)ScriptCmd_ForwardThreeToHandler,
+
+    0,
+
+    (void *)ScriptCmd_DispatchToHandler,
+
+    0,
+
+    (void *)ScriptCmd_RequestResPair,
+
+    0,
+
+    (void *)ScriptCmd_StartStream,
+
+    0,
+
+    (void *)QueryAndRegisterNode,
+
+    0,
+
+    (void *)ScriptCmd_FreeSlotEntry,
+
+    0,
+
+    (void *)Script_Cmd_PlayEntityCutsceneCamWait,
+
+    (void *)Game_ActionTurnHandler,
+
+    (void *)Script_Cmd_PlayEntityCutsceneCam,
+
+    (void *)DispatchTrackEntryIfReady,
 
     0,
 

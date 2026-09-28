@@ -18,7 +18,7 @@ const int data_ov124_020d1ee0[3] = {
     0, 1024, 0,
 };
 
-/* read by func_ov124_020d0ab4 (020d0ab4): short data_ov124_020d1eec; */
+/* read by Ov124_ResetAndInvokeMethodThenAdvance (020d0ab4): short data_ov124_020d1eec; */
 const u8 data_ov124_020d1eec[4] = {
     0, 0, 5, 0,
 };

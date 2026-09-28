@@ -1,7 +1,7 @@
 /* ov256 .rodata head 0x020d2444-0x020d2594: pose tables of the actor, one object per function in
  * the original unit's order (the templates that follow are in ov256_templates_020d2594.c). */
 
-/* func_ov256_020cbfc8 (constructor): poses of the 16 hidden parts. */
+/* Ov256_EnemyConstruct (constructor): poses of the 16 hidden parts. */
 typedef struct { int id[16]; } PartPoses;
 
 /* Ov256_PlayRigMove (020ccba4): per-move poses of the +0x384 body rig and the +0x3ac tail rig. */

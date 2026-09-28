@@ -51,24 +51,24 @@ typedef struct {
     int targets[8];
 } MissionBufferTargets;
 
-extern void func_ov006_02054a90(void);
-extern void func_ov006_02054aa0(void);
+extern void Ov006_CopyCellBufferRegion(void);
+extern void Ov006_ClearCellBufferRegion(void);
 
-extern void func_ov006_020552ac(void);
-extern void func_ov006_02055340(void);
-extern void func_ov006_02055344(void);
-extern void func_ov006_020553d8(void);
-extern void func_ov006_020553dc(void);
-extern void func_ov006_02055560(void);
-extern void func_ov006_020556b8(void);
-extern void func_ov006_020556bc(void);
-extern void func_ov006_020556c0(void);
-extern void func_ov006_020556e8(void);
-extern void func_ov006_020556ec(void);
-extern void func_ov006_020557d4(void);
-extern void func_ov006_02055800(void);
-extern void func_ov006_02055804(void);
-extern void func_ov006_020558e0(void);
+extern void Ov006_MissionEnterPage1(void);
+extern void Ov006_MissionStep1NoOp(void);
+extern void Ov006_MissionEnterPage2(void);
+extern void Ov006_MissionStep3NoOp(void);
+extern void Ov006_MissionRebuildLayers(void);
+extern void Ov006_MissionInitCells(void);
+extern void Ov006_MissionStep6NoOp(void);
+extern void Ov006_MissionStep7NoOp(void);
+extern void Ov006_MissionStep8SetModeIfFlagged(void);
+extern void Ov006_MissionStep9NoOp(void);
+extern void Ov006_MissionInitDisplayResources(void);
+extern void Ov006_ConfigDispcntBothEngines(void);
+extern void Ov006_MissionStep12NoOp(void);
+extern void Ov006_MissionShutdownDisplayResources(void);
+extern void Ov006_ResetTweensAndBlank(void);
 
 const MissionSetupParams data_ov006_0205628c = {
     { 0x11, 0x0a, 0x12, 0x09, 0x08, 0x00 },
@@ -80,8 +80,8 @@ const MissionSceneSetup data_ov006_0205629c = {
     50,
     50,
     20,
-    func_ov006_02054a90,
-    func_ov006_02054aa0,
+    Ov006_CopyCellBufferRegion,
+    Ov006_ClearCellBufferRegion,
 };
 
 const MissionBufferTargets data_ov006_020562b0 = {{
@@ -90,21 +90,21 @@ const MissionBufferTargets data_ov006_020562b0 = {{
 }};
 
 const MissionStepFn data_ov006_020562d0[15] = {
-    func_ov006_020552ac,
-    func_ov006_02055340,
-    func_ov006_02055344,
-    func_ov006_020553d8,
-    func_ov006_020553dc,
-    func_ov006_02055560,
-    func_ov006_020556b8,
-    func_ov006_020556bc,
-    func_ov006_020556c0,
-    func_ov006_020556e8,
-    func_ov006_020556ec,
-    func_ov006_020557d4,
-    func_ov006_02055800,
-    func_ov006_02055804,
-    func_ov006_020558e0,
+    Ov006_MissionEnterPage1,
+    Ov006_MissionStep1NoOp,
+    Ov006_MissionEnterPage2,
+    Ov006_MissionStep3NoOp,
+    Ov006_MissionRebuildLayers,
+    Ov006_MissionInitCells,
+    Ov006_MissionStep6NoOp,
+    Ov006_MissionStep7NoOp,
+    Ov006_MissionStep8SetModeIfFlagged,
+    Ov006_MissionStep9NoOp,
+    Ov006_MissionInitDisplayResources,
+    Ov006_ConfigDispcntBothEngines,
+    Ov006_MissionStep12NoOp,
+    Ov006_MissionShutdownDisplayResources,
+    Ov006_ResetTweensAndBlank,
 };
 
 const MissionOffsetTable data_ov006_0205630c = {{

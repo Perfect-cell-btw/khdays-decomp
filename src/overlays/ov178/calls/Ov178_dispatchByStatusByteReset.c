@@ -1,0 +1,19 @@
+extern void SetIndexedSlot(void *obj, int idx, void *value);
+extern void Ov178_ToggleStanceFlags(void);
+extern void Ov178_SettleEnter(void);
+void Ov178_dispatchByStatusByteReset(int *node) {
+    int *state = (int *)node[1];
+    signed char c = *(signed char *)(*state + 0x1c7);
+    if (c != -1) {
+        *(signed char *)(*state + 0x1c6) = c;
+        switch (*(signed char *)(*state + 0x1c6)) {
+        case 0:
+            SetIndexedSlot(node, 1, Ov178_ToggleStanceFlags);
+            break;
+        case 1:
+            SetIndexedSlot(node, 1, Ov178_SettleEnter);
+            break;
+        }
+    }
+    *(signed char *)(*state + 0x1c7) = 0xff;
+}

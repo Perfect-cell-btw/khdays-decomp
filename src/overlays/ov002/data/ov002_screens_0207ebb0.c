@@ -15,9 +15,9 @@ typedef struct {
     int nReserved;
 } Ov002ScreenDesc;
 
-extern void func_ov002_020614d4(void);
-extern void func_ov002_020615fc(void);
+extern void Ov002_SceneCreatePanel(void);
+extern void Ov002_Hud_ReleaseAll(void);
 
 Ov002ScreenDesc data_ov002_0207ebb0 = {
-    0x0f003c, func_ov002_020614d4, func_ov002_020615fc, 5236, 0,
+    0x0f003c, Ov002_SceneCreatePanel, Ov002_Hud_ReleaseAll, 5236, 0,
 };

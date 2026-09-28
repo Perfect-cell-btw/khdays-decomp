@@ -6,24 +6,24 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov019_0207fa40(void);
-extern void func_ov019_0207fa94(void);
-extern void func_ov019_0207fc88(void);
-extern void func_ov019_0207fcc0(void);
-extern void func_ov019_0207fcdc(void);
+extern void Ov019_RecordStatHighWater(void);
+extern void Ov019_ShowMessageWithCounters(void);
+extern void Ov019_PollMenuFlow(void);
+extern void Ov019_StoreSlotIndex(void);
+extern void Ov019_AdvancePlayTime(void);
 
 Ov_Fn data_ov019_0207fd60[6] = {
 
-    func_ov019_0207fa40,
+    Ov019_RecordStatHighWater,
 
     0,
 
-    func_ov019_0207fa94,
+    Ov019_ShowMessageWithCounters,
 
-    func_ov019_0207fc88,
+    Ov019_PollMenuFlow,
 
-    func_ov019_0207fcc0,
+    Ov019_StoreSlotIndex,
 
-    func_ov019_0207fcdc,
+    Ov019_AdvancePlayTime,
 
 };

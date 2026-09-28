@@ -5,47 +5,47 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_0208f15c: func_ov008_0205dbcc
- *   data_ov008_0208f180: func_ov008_0205f54c
- *   data_ov008_0208f198: func_ov008_02062d00
- *   data_ov008_0208f1b0: func_ov008_02065294
- *   data_ov008_0208f1cc: func_ov008_02065664
- *   data_ov008_0208f208: func_ov008_0205e8d0
- *   data_ov008_0208f248: func_ov008_0205f6f8
- *   data_ov008_0208f270: func_ov008_0205f6f8
- *   data_ov008_0208f298: func_ov008_0205f6f8
- *   data_ov008_0208f2c0: func_ov008_0205da8c
- *   data_ov008_0208f2e8: func_ov008_02063018
- *   data_ov008_0208f328: func_ov008_0205c580
- *   data_ov008_0208f378: func_ov008_0205f5c8
- *   data_ov008_0208f3c8: func_ov008_0205eb6c
- *   data_ov008_0208f420: func_ov008_0205f6f8
- *   data_ov008_0208f4e8: func_ov008_02068d58, func_ov008_02069180
- *   data_ov008_0208f4f0: func_ov008_02068d58
- *   data_ov008_0208f500: func_ov008_02067edc
- *   data_ov008_0208f510: func_ov008_0206821c
- *   data_ov008_0208f538: func_ov008_0206821c
- *   data_ov008_0208f560: func_ov008_0206821c
- *   data_ov008_0208f588: func_ov008_02067edc, func_ov008_02068e68, func_ov008_02069224, func_ov008_020697a4
- *   data_ov008_0208f5e8: func_ov008_0206a564
- *   data_ov008_0208f5f8: func_ov008_0206ad9c
- *   data_ov008_0208f618: func_ov008_0206a700
- *   data_ov008_0208f648: func_ov008_0206bfac
- *   data_ov008_0208f658: func_ov008_0206bfac
- *   data_ov008_0208f668: func_ov008_0206ba8c
- *   data_ov008_0208f688: func_ov008_0206cea0
- *   data_ov008_0208f6b0: func_ov008_0206cea0
- *   data_ov008_0208f6d8: func_ov008_0206cea0
- *   data_ov008_0208f700: func_ov008_0206cea0
- *   data_ov008_0208f728: func_ov008_0206cea0
- *   data_ov008_0208f750: func_ov008_0206cea0
- *   data_ov008_0208f778: func_ov008_0206e4cc
- *   data_ov008_0208f7b0: func_ov008_0206ec2c
- *   data_ov008_0208f7f8: func_ov008_0206ed7c
- *   data_ov008_0208f850: func_ov008_0206b6ac
- *   data_ov008_0208f852: func_ov008_0206b6e4
- *   data_ov008_0208f854: func_ov008_0206b71c
- *   data_ov008_0208f8c8: func_ov008_02071468
+ *   data_ov008_0208f15c: Ov008_InitGridMenuWidgets
+ *   data_ov008_0208f180: Ov008_DrawMenuEntry
+ *   data_ov008_0208f198: Ov008_ShowGridPage
+ *   data_ov008_0208f1b0: Ov008_HideGridMenu
+ *   data_ov008_0208f1cc: Ov008_FinishMenuModeSwitch
+ *   data_ov008_0208f208: Ov008_BuildInventoryLists
+ *   data_ov008_0208f248: Ov008_InitGridMenuSurfaces
+ *   data_ov008_0208f270: Ov008_InitGridMenuSurfaces
+ *   data_ov008_0208f298: Ov008_InitGridMenuSurfaces
+ *   data_ov008_0208f2c0: Ov008_SetSavePageGroupVisible
+ *   data_ov008_0208f2e8: Ov008_Menu_ChangePage
+ *   data_ov008_0208f328: Ov008_GetPlayerSlotConfig
+ *   data_ov008_0208f378: Ov008_DrawTextRow
+ *   data_ov008_0208f3c8: Ov008_ComputeGridChanges
+ *   data_ov008_0208f420: Ov008_InitGridMenuSurfaces
+ *   data_ov008_0208f4e8: Ov008_SetMenuEntriesVisible, Ov008_SaveMenu_SlideArrows
+ *   data_ov008_0208f4f0: Ov008_SetMenuEntriesVisible
+ *   data_ov008_0208f500: Ov008_SaveMenu_BuildLayout
+ *   data_ov008_0208f510: Ov008_SaveMenu_BuildTextSurfaces
+ *   data_ov008_0208f538: Ov008_SaveMenu_BuildTextSurfaces
+ *   data_ov008_0208f560: Ov008_SaveMenu_BuildTextSurfaces
+ *   data_ov008_0208f588: Ov008_SaveMenu_BuildLayout, Ov008_TickPageScroll, Ov008_RefreshSaveRowDigits, Ov008_SaveMenu_RefreshRows
+ *   data_ov008_0208f5e8: Ov008_SetupItemMenu
+ *   data_ov008_0208f5f8: Ov008_DrawMenuPageTexts
+ *   data_ov008_0208f618: Ov008_SetupMenuSurface
+ *   data_ov008_0208f648: Ov008_LayoutMissionEntries
+ *   data_ov008_0208f658: Ov008_LayoutMissionEntries
+ *   data_ov008_0208f668: Ov008_DrawStatusPanelLabels
+ *   data_ov008_0208f688: Ov008_InitStatusPanelSurfaces
+ *   data_ov008_0208f6b0: Ov008_InitStatusPanelSurfaces
+ *   data_ov008_0208f6d8: Ov008_InitStatusPanelSurfaces
+ *   data_ov008_0208f700: Ov008_InitStatusPanelSurfaces
+ *   data_ov008_0208f728: Ov008_InitStatusPanelSurfaces
+ *   data_ov008_0208f750: Ov008_InitStatusPanelSurfaces
+ *   data_ov008_0208f778: Ov008_DrawStatBar
+ *   data_ov008_0208f7b0: Ov008_DrawPageBWidget
+ *   data_ov008_0208f7f8: Ov008_RefreshEquipPanel
+ *   data_ov008_0208f850: Ov008_GetLocalPlayerStatA
+ *   data_ov008_0208f852: Ov008_GetLocalPlayerStatB
+ *   data_ov008_0208f854: Ov008_GetLocalPlayerStatC
+ *   data_ov008_0208f8c8: Ov008_PositionListCursor
  */
 
 typedef unsigned char u8;

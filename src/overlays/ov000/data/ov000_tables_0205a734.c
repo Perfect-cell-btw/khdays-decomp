@@ -26,10 +26,10 @@ const int data_ov000_0205a784[10] = {
     0, 32,
 };
 
-/* read by func_ov000_0204fdac (0204fdac): const int data_ov000_0205a7ac[4][8];
- *   func_ov000_020506d0 (020506d0): Ov000EntryIdGrid data_ov000_0205a7ac;
+/* read by Ov000_LayoutSelectionPages (0204fdac): const int data_ov000_0205a7ac[4][8];
+ *   Ov000_RefreshSelectionGroupDraw (020506d0): Ov000EntryIdGrid data_ov000_0205a7ac;
  *   Page-scroll tick for the ov000 title/menu stack: eases each of the four selection (02050ec4): const int data_ov000_0205a7ac[4][8];
- *   func_ov000_02051470 (02051470): const NumberDisplayConfig data_ov000_0205a7ac[3]; */
+ *   Ov000_UpdateNumberDisplays (02051470): const NumberDisplayConfig data_ov000_0205a7ac[3]; */
 const int data_ov000_0205a7ac[32] = {
     1, 31, 34, 37, 40, 50, 51, 52,
     2, 32, 35, 38, 41, 53, 54, 55,
@@ -37,7 +37,7 @@ const int data_ov000_0205a7ac[32] = {
     4, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov000_02053b0c (02053b0c): EntryIdGroup3 data_ov000_0205a82c; */
+/* read by Ov000_ModeSelect_ShowGroup (02053b0c): EntryIdGroup3 data_ov000_0205a82c; */
 const int data_ov000_0205a82c[3] = {
     2, 3, 4,
 };
@@ -47,7 +47,7 @@ const int data_ov000_0205a838[4] = {
     24, 25, 26, 27,
 };
 
-/* read by func_ov000_02053b0c (02053b0c): EntryIdGroup4 data_ov000_0205a848; */
+/* read by Ov000_ModeSelect_ShowGroup (02053b0c): EntryIdGroup4 data_ov000_0205a848; */
 const int data_ov000_0205a848[4] = {
     5, 6, 7, 8,
 };

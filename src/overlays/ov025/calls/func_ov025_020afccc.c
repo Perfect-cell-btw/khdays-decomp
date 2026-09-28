@@ -1,6 +1,6 @@
-/* Constant-argument forwarding veneer onto func_ov025_020afae8 (first argument 0). */
-extern void *func_ov025_020afae8();
+/* Constant-argument forwarding veneer onto Ov025_MovePageBUp (first argument 0). */
+extern void *Ov025_MovePageBUp();
 
 void *func_ov025_020afccc() {
-    return func_ov025_020afae8(0);
+    return Ov025_MovePageBUp(0);
 }

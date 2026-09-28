@@ -6,19 +6,19 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov002_02062a00(void);
-extern void func_ov002_02062a04(void);
-extern void func_ov002_02062ad8(void);
-extern void func_ov002_02062b30(void);
+extern void Ov002_OptionsActionNoOp(void);
+extern void Ov002_StartCaptionVoice(void);
+extern void Ov002_StartSlideOut(void);
+extern void Ov002_RedrawOptionsPage(void);
 
 const Ov_Fn data_ov002_0207e378[4] = {
 
-    func_ov002_02062a00,
+    Ov002_OptionsActionNoOp,
 
-    func_ov002_02062a04,
+    Ov002_StartCaptionVoice,
 
-    func_ov002_02062ad8,
+    Ov002_StartSlideOut,
 
-    func_ov002_02062b30,
+    Ov002_RedrawOptionsPage,
 
 };

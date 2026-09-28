@@ -21,9 +21,9 @@ const u8 data_ov271_020d3688[24] = {
 
 /* read by Ov271_HandleHit (020d04cc): const u8 data_ov271_020d36a0[];
  *   Publish the swing: send the canned 4-byte block from the config table to the owner's notif (020d1b70): struct blk data_ov271_020d36a0;
- *   * func_ov271_020d1c14 -- x3. AI-state tick: orient toward the target, then transition on a (020d1c14): struct h2 data_ov271_020d36a0[];
+ *   * Ov271_OrientReadyTimerNodeGate -- x3. AI-state tick: orient toward the target, then transition on a (020d1c14): struct h2 data_ov271_020d36a0[];
  *   Enter the attack state: refresh the owner, convert the owner's per-frame delta into the (020d1dc8): struct blk data_ov271_020d36a0;
- *   * func_ov271_020d1e7c -- x3. AI-state tick: clamp, aim, and transition on a timer. (020d1e7c): struct h2 data_ov271_020d36a0[]; */
+ *   * Ov271_OrientTimerNodeGate -- x3. AI-state tick: clamp, aim, and transition on a timer. (020d1e7c): struct h2 data_ov271_020d36a0[]; */
 const u8 data_ov271_020d36a0[20] = {
     2, 3, 0, 1, 0, 0, 5, 2, 0, 0, 5, 1, 0, 0, 5, 3,
     0, 0, 5, 4,

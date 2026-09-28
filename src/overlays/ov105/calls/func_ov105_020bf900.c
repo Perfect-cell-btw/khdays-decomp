@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_ov105_020bf070. */
-extern void *func_ov105_020bf070();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to Ov105_WH_StateInSetMPData. */
+extern void *Ov105_WH_StateInSetMPData();
 
 void *func_ov105_020bf900() {
-    return func_ov105_020bf070();
+    return Ov105_WH_StateInSetMPData();
 }

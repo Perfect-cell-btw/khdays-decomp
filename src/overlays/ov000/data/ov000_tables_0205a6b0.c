@@ -8,15 +8,15 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov000_0204d244 (0204d244): const OverlayCountTable data_ov000_0205a6b0; */
+/* read by Ov000_StepMenuSelection (0204d244): const OverlayCountTable data_ov000_0205a6b0; */
 const int data_ov000_0205a6b0[3] = {
     2, 2, 2,
 };
 
-/* read by func_ov000_0204fdac (0204fdac): const int data_ov000_0205a6bc[2];
- *   func_ov000_0205042c (0205042c): const int data_ov000_0205a6bc[2];
+/* read by Ov000_LayoutSelectionPages (0204fdac): const int data_ov000_0205a6bc[2];
+ *   Ov000_UpdateMenuMarkers (0205042c): const int data_ov000_0205a6bc[2];
  *   park the two selection markers on their side of the screen. (02051b98): const int data_ov000_0205a6bc[2];
- *   func_ov000_02052124 (02052124): const int data_ov000_0205a6bc[2]; */
+ *   Ov000_TickSelectionScene (02052124): const int data_ov000_0205a6bc[2]; */
 const int data_ov000_0205a6bc[2] = {
     20, 21,
 };

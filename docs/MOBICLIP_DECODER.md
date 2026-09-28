@@ -63,9 +63,9 @@ bitstream cursor at `+0x00`, dimensions at `+0x04/+0x08`, decode tables at
 currently visible include `0x0208e928`, `0x0208e93c`, `0x02091218`, and
 `0x0208cb70`.
 
-The external call chain is also confirmed: `func_ov024_02086620` copies or
+The external call chain is also confirmed: `Ov024_MobiClip_GetDecoderCodeCached` copies or
 returns the payload and its caller stores the result at owner offset `+0x38`;
-`func_ov024_020859d4` later invokes that pointer with the decoder state kept at
+`Ov024_MobiClip_DecodeFrame` later invokes that pointer with the decoder state kept at
 owner offset `+0x34`.
 
 ## Progress accounting and integration

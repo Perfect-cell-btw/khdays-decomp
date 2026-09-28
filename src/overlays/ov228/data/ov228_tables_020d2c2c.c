@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov228_020cded8 (not yet decompiled) */
+/* read by Ov228_Construct (not yet decompiled) */
 const int data_ov228_020d2c2c[10] = {
     0, 29, 30, 31, 32, 33, 34, 37,
     38, 39,
@@ -28,7 +28,7 @@ const u8 data_ov228_020d2cc0[24] = {
     1, 0, 0, 0, 1, 0, 0, 0,
 };
 
-/* read by func_ov228_020d2078 (not yet decompiled) */
+/* read by Ov228_CompanionSetup (not yet decompiled) */
 const int data_ov228_020d2cd8[1] = {
     35,
 };

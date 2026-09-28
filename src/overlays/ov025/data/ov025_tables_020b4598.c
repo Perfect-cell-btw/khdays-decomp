@@ -5,14 +5,14 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov025_020b4598: func_ov025_020a62bc
- *   data_ov025_020b45a8: func_ov025_020a8d50
- *   data_ov025_020b45c0: func_ov025_020a7780
- *   data_ov025_020b45e8: func_ov025_020a7780
- *   data_ov025_020b4610: func_ov025_020a7780
- *   data_ov025_020b4638: func_ov025_020a7780
- *   data_ov025_020b4660: func_ov025_020a54c8
- *   data_ov025_020b4690: func_ov025_020a54c8
+ *   data_ov025_020b4598: Ov025_LayoutMissionTiles
+ *   data_ov025_020b45a8: Ov025_MissionListDestroy
+ *   data_ov025_020b45c0: Ov025_InitMissionListRowSurfaces
+ *   data_ov025_020b45e8: Ov025_InitMissionListRowSurfaces
+ *   data_ov025_020b4610: Ov025_InitMissionListRowSurfaces
+ *   data_ov025_020b4638: Ov025_InitMissionListRowSurfaces
+ *   data_ov025_020b4660: Ov025_DrawMissionRow
+ *   data_ov025_020b4690: Ov025_DrawMissionRow
  */
 
 typedef unsigned char u8;

@@ -12,7 +12,7 @@ typedef struct ResourceTrackerConfig {
     TrackerCallback pfnNode;         /* 0x10 */
 } ResourceTrackerConfig;
 
-/* Layout template copied by func_ov000_0204fdac: the save-screen object layout
+/* Layout template copied by Ov000_LayoutSelectionPages: the save-screen object layout
  * ("UI/cm/sav_o_000.pobj.z"), mode 2. */
 typedef struct LayoutTemplate {
     const char *pszLayout;  /* 0x00 */
@@ -24,8 +24,8 @@ extern char data_ov000_0205aa48;  /* "UI/cm/sav_o_000.pobj.z" */
 
 const LayoutTemplate data_ov000_0205a6d0 = { &data_ov000_0205aa48, 2, { 0, 0 } };
 
-extern void func_ov000_02052fbc(void);
-extern void func_ov000_02052fcc(void);
+extern void Ov000_ResourceEntryCallback(void);
+extern void Ov000_ResourceNodeCallback(void);
 
-/* Read by func_ov000_0204f838. */
-const ResourceTrackerConfig data_ov000_0205a6e0 = { 256, 8, 12, func_ov000_02052fbc, func_ov000_02052fcc };
+/* Read by Ov000_LoadPageSubScreenLayer. */
+const ResourceTrackerConfig data_ov000_0205a6e0 = { 256, 8, 12, Ov000_ResourceEntryCallback, Ov000_ResourceNodeCallback };

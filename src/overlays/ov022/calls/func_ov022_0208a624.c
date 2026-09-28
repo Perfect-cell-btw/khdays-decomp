@@ -1,4 +1,4 @@
-extern int func_01fffe14(void);
+extern int QueryActiveStateOrDelegate(void);
 extern int func_02031384(int a, void *b, int c);
 
 union marshal_0208a624 {
@@ -16,7 +16,7 @@ union marshal_0208a624 {
 void func_ov022_0208a624(int param_1, int param_2, int param_3, int param_4) {
     int iVar3 = *(int *)(param_1 + 0x58);
     union marshal_0208a624 m;
-    m.f.f0 = func_01fffe14();
+    m.f.f0 = QueryActiveStateOrDelegate();
     m.f.f3 = *(unsigned char *)(iVar3 + 9);
     m.f.f10 = 3;
     m.f.f5 = *(int *)(iVar3 + 0x6bc);

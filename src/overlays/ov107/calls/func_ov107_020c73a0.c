@@ -11,7 +11,7 @@
  * Returns 1 otherwise.
  *
  * The record is filled through a pointer to the destination, high halfword first, with the
- * table declared as an incomplete array (same shape as func_ov117_020cd494). A struct
+ * table declared as an incomplete array (same shape as Ov117_PublishLanding). A struct
  * assignment reads +0xc first; a sized `[4]` declaration stores the first halfword before
  * loading the second.
  */

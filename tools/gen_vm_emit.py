@@ -4,10 +4,10 @@
 Every member has the same skeleton: pull N operands out of the script VM's
 descriptor array into a stack struct, fetch a target id and a builder id, call an
 overlay-specific builder with (id, &params), and hand the result to
-func_ov002_0207643c. They differ only in which fetcher serves each slot, the
+Ov002_SetModuleSlot. They differ only in which fetcher serves each slot, the
 descriptor offsets, and whether a slot is stored as a word or a byte.
 
-    python tools/gen_vm_emit.py func_ov016_020814b0 [--write]
+    python tools/gen_vm_emit.py Ov016_VmCmd14b0 [--write]
 
 Reads build/func_index.json (bytes + relocs) and disassembles with capstone, so
 it needs no Ghidra round trip. Emits to build/try/ unless --write is given.
@@ -21,9 +21,9 @@ import capstone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IDX = json.load(open(os.path.join(ROOT, "build", "func_index.json")))
-FETCHERS = {"func_02021948", "func_02021980", "func_02021994",
+FETCHERS = {"ByteCode_ResolveOperand", "ScriptVm_ReadOperandInt", "ScriptVm_ReadOperandFx32",
             "func_020219a8", "func_020219c0"}
-SINK = "func_ov002_0207643c"
+SINK = "Ov002_SetModuleSlot"
 
 
 def analyse(name):

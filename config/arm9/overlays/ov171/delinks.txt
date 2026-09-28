@@ -4,23 +4,23 @@
     .data       start:0x020ceec0 end:0x020ceee0 kind:data align:32
     .bss        start:0x020ceee0 end:0x020ceee0 kind:bss align:32
 
-src/overlays/ov171/calls/func_ov171_020cbf20.c:
+src/overlays/ov171/calls/Ov171_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov171/calls/func_ov171_020cbf38.c:
+src/overlays/ov171/calls/Ov171_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov171/calls/func_ov171_020cbfc4.c:
+src/overlays/ov171/calls/Ov171_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc020
 
-src/overlays/ov171/calls/func_ov171_020cc020.c:
+src/overlays/ov171/calls/Ov171_Construct.c:
     complete
     .text       start:0x020cc020 end:0x020cc344
 
-src/overlays/ov171/calls/func_ov171_020cc344.c:
+src/overlays/ov171/calls/Ov171_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020cc344 end:0x020cc384
 
@@ -28,203 +28,203 @@ src/overlays/ov171/calls/func_ov171_020cc384.c:
     complete
     .text       start:0x020cc384 end:0x020cc390
 
-src/overlays/ov171/calls/func_ov171_020cc390.c:
+src/overlays/ov171/calls/Ov171_ForwardEventToChild.c:
     complete
     .text       start:0x020cc390 end:0x020cc3b8
 
-src/overlays/ov171/calls/func_ov171_020cc3b8.c:
+src/overlays/ov171/calls/Ov171_NotifyPartThenBase.c:
     complete
     .text       start:0x020cc3b8 end:0x020cc3e0
 
-src/overlays/ov171/calls/func_ov171_020cc3e0.c:
+src/overlays/ov171/calls/Ov171_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc3e0 end:0x020cc5f8
 
-src/overlays/ov171/calls/func_ov171_020cc5f8.c:
+src/overlays/ov171/calls/Ov171_Model_SetTrack0.c:
     complete
     .text       start:0x020cc5f8 end:0x020cc628
 
-src/overlays/ov171/calls/func_ov171_020cc628.c:
+src/overlays/ov171/calls/Ov171_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020cc628 end:0x020cc760
 
-src/overlays/ov171/calls/func_ov171_020cc760.c:
+src/overlays/ov171/calls/Ov171_registryCreateEntry.c:
     complete
     .text       start:0x020cc760 end:0x020cc7bc
 
-src/overlays/ov171/calls/func_ov171_020cc7bc.c:
+src/overlays/ov171/calls/Ov171_OnHit.c:
     complete
     .text       start:0x020cc7bc end:0x020cc9dc
 
-src/overlays/ov171/auto/func_ov171_020cc9dc.c:
+src/overlays/ov171/auto/Ov171_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020cc9dc end:0x020cca08
 
-src/overlays/ov171/calls/func_ov171_020cca08.c:
+src/overlays/ov171/calls/Ov171_FaceTargetGetClearance.c:
     complete
     .text       start:0x020cca08 end:0x020ccaa0
 
-src/overlays/ov171/auto/func_ov171_020ccaa0.c:
+src/overlays/ov171/auto/Ov171_IsChildInactive.c:
     complete
     .text       start:0x020ccaa0 end:0x020ccae0
 
-src/overlays/ov171/calls/func_ov171_020ccae0.c:
+src/overlays/ov171/calls/Ov171_stateInitTransformSlots.c:
     complete
     .text       start:0x020ccae0 end:0x020ccbcc
 
-src/overlays/ov171/calls/func_ov171_020ccbcc.c:
+src/overlays/ov171/calls/Ov171_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020ccbcc end:0x020ccdb8
 
-src/overlays/ov171/calls/func_ov171_020ccdb8.c:
+src/overlays/ov171/calls/Ov171_stDivStoreField.c:
     complete
     .text       start:0x020ccdb8 end:0x020cce58
 
-src/overlays/ov171/calls/func_ov171_020cce58.c:
+src/overlays/ov171/calls/Ov171_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cce58 end:0x020ccec0
 
-src/overlays/ov171/calls/func_ov171_020ccec0.c:
+src/overlays/ov171/calls/Ov171_AnchorAndAdvance.c:
     complete
     .text       start:0x020ccec0 end:0x020ccf48
 
-src/overlays/ov171/calls/func_ov171_020ccf48.c:
+src/overlays/ov171/calls/Ov171_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020ccf48 end:0x020cd014
 
-src/overlays/ov171/calls/func_ov171_020cd014.c:
+src/overlays/ov171/calls/Ov171_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020cd014 end:0x020cd0ec
 
-src/overlays/ov171/calls/func_ov171_020cd0ec.c:
+src/overlays/ov171/calls/Ov171_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd0ec end:0x020cd120
 
-src/overlays/ov171/calls/func_ov171_020cd120.c:
+src/overlays/ov171/calls/Ov171_stateRandomInitFull.c:
     complete
     .text       start:0x020cd120 end:0x020cd1ac
 
-src/overlays/ov171/calls/func_ov171_020cd1ac.c:
+src/overlays/ov171/calls/Ov171_OrbitTick.c:
     complete
     .text       start:0x020cd1ac end:0x020cd47c
 
-src/overlays/ov171/calls/func_ov171_020cd47c.c:
+src/overlays/ov171/calls/Ov171_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020cd47c end:0x020cd4c0
 
-src/overlays/ov171/calls/func_ov171_020cd4c0.c:
+src/overlays/ov171/calls/Ov171_HoverBobTick.c:
     complete
     .text       start:0x020cd4c0 end:0x020cd6c8
 
-src/overlays/ov171/calls/func_ov171_020cd6c8.c:
+src/overlays/ov171/calls/Ov171_AiStep_StartTag1.c:
     complete
     .text       start:0x020cd6c8 end:0x020cd704
 
-src/overlays/ov171/calls/func_ov171_020cd704.c:
+src/overlays/ov171/calls/Ov171_HoverApproachTick.c:
     complete
     .text       start:0x020cd704 end:0x020cd8e8
 
-src/overlays/ov171/calls/func_ov171_020cd8e8.c:
+src/overlays/ov171/calls/Ov171_stateRandomDirValue.c:
     complete
     .text       start:0x020cd8e8 end:0x020cd958
 
-src/overlays/ov171/calls/func_ov171_020cd958.c:
+src/overlays/ov171/calls/Ov171_CircleTick.c:
     complete
     .text       start:0x020cd958 end:0x020cdad4
 
-src/overlays/ov171/calls/func_ov171_020cdad4.c:
+src/overlays/ov171/calls/Ov171_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020cdad4 end:0x020cdb70
 
-src/overlays/ov171/calls/func_ov171_020cdb70.c:
+src/overlays/ov171/calls/Ov171_HoverHoldTick.c:
     complete
     .text       start:0x020cdb70 end:0x020cdd4c
 
-src/overlays/ov171/calls/func_ov171_020cdd4c.c:
+src/overlays/ov171/calls/Ov171_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cdd4c end:0x020cdd80
 
-src/overlays/ov171/calls/func_ov171_020cdd80.c:
+src/overlays/ov171/calls/Ov171_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020cdd80 end:0x020cddb4
 
-src/overlays/ov171/calls/func_ov171_020cddb4.c:
+src/overlays/ov171/calls/Ov171_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020cddb4 end:0x020cdea8
 
-src/overlays/ov171/calls/func_ov171_020cdea8.c:
+src/overlays/ov171/calls/Ov171_AiEndWithUpdate.c:
     complete
     .text       start:0x020cdea8 end:0x020cdf94
 
-src/overlays/ov171/calls/func_ov171_020cdf94.c:
+src/overlays/ov171/calls/Ov171_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020cdf94 end:0x020ce034
 
-src/overlays/ov171/calls/func_ov171_020ce034.c:
+src/overlays/ov171/calls/Ov171_stateTimerToggleFlags.c:
     complete
     .text       start:0x020ce034 end:0x020ce0c8
 
-src/overlays/ov171/calls/func_ov171_020ce0c8.c:
+src/overlays/ov171/calls/Ov171_Store4WordsAndSetHw60HighBit0.c:
     complete
     .text       start:0x020ce0c8 end:0x020ce108
 
-src/overlays/ov171/calls/func_ov171_020ce108.c:
+src/overlays/ov171/calls/Ov171_Actor_New.c:
     complete
     .text       start:0x020ce108 end:0x020ce13c
 
-src/overlays/ov171/calls/func_ov171_020ce13c.c:
+src/overlays/ov171/calls/Ov171_ConstructSubitem.c:
     complete
     .text       start:0x020ce13c end:0x020ce294
 
-src/overlays/ov171/calls/func_ov171_020ce294.c:
+src/overlays/ov171/calls/Ov171_OnDespawn.c:
     complete
     .text       start:0x020ce294 end:0x020ce2b0
 
-src/overlays/ov171/calls/func_ov171_020ce2b0.c:
+src/overlays/ov171/calls/Ov171_TickAndSyncModelXform.c:
     complete
     .text       start:0x020ce2b0 end:0x020ce2e8
 
-src/overlays/ov171/calls/func_ov171_020ce2e8.c:
+src/overlays/ov171/calls/Ov171_TryTriggerEffect.c:
     complete
     .text       start:0x020ce2e8 end:0x020ce370
 
-src/overlays/ov171/calls/func_ov171_020ce370.c:
+src/overlays/ov171/calls/Ov171_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020ce370 end:0x020ce3cc
 
-src/overlays/ov171/calls/func_ov171_020ce3cc.c:
+src/overlays/ov171/calls/Ov171_SettleCarryPosition.c:
     complete
     .text       start:0x020ce3cc end:0x020ce634
 
-src/overlays/ov171/calls/func_ov171_020ce634.c:
+src/overlays/ov171/calls/Ov171_stateInitClearSlots.c:
     complete
     .text       start:0x020ce634 end:0x020ce6dc
 
-src/overlays/ov171/calls/func_ov171_020ce6dc.c:
+src/overlays/ov171/calls/Ov171_dispatchByStatusByte.c:
     complete
     .text       start:0x020ce6dc end:0x020ce754
 
-src/overlays/ov171/calls/func_ov171_020ce754.c:
+src/overlays/ov171/calls/Ov171_SetPoseVecFromStateOrConst.c:
     complete
     .text       start:0x020ce754 end:0x020ce7ac
 
-src/overlays/ov171/calls/func_ov171_020ce7ac.c:
+src/overlays/ov171/calls/Ov171_ConfigHw60CopyVec3ConstTo30ThenAdvance.c:
     complete
     .text       start:0x020ce7ac end:0x020ce85c
 
-src/overlays/ov171/calls/func_ov171_020ce85c.c:
+src/overlays/ov171/calls/Ov171_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020ce85c end:0x020ce894
 
-src/overlays/ov171/calls/func_ov171_020ce894.c:
+src/overlays/ov171/calls/Ov171_TransformVecThenAction5.c:
     complete
     .text       start:0x020ce894 end:0x020ce99c
 
-src/overlays/ov171/calls/func_ov171_020ce99c.c:
+src/overlays/ov171/calls/Ov171_CarryDashTick.c:
     complete
     .text       start:0x020ce99c end:0x020ced14
 
-src/overlays/ov171/calls/func_ov171_020ced14.c:
+src/overlays/ov171/calls/Ov171_CarryReleaseTick.c:
     complete
     .text       start:0x020ced14 end:0x020ceeac
 

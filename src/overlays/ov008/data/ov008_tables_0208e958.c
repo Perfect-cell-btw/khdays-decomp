@@ -3,9 +3,9 @@
  * 3 word tables after the layout templates 02058df0.c owns.
  *
  * Readers:
- *   data_ov008_0208e958: func_ov008_02057f58
- *   data_ov008_0208e974: func_ov008_020593d8
- *   data_ov008_0208e99c: func_ov008_020593d8
+ *   data_ov008_0208e958: Ov008_Menu_RefreshSubitemGrid
+ *   data_ov008_0208e974: Ov008_SetupMenuSurfaces
+ *   data_ov008_0208e99c: Ov008_SetupMenuSurfaces
  */
 
 const int data_ov008_0208e958[7] = {

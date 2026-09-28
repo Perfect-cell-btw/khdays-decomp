@@ -4,251 +4,251 @@
     .data       start:0x020d2500 end:0x020d2520 kind:data align:32
     .bss        start:0x020d2520 end:0x020d2520 kind:bss align:32
 
-src/overlays/ov148/calls/func_ov148_020cfb60.c:
+src/overlays/ov148/calls/Ov148_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov148/calls/func_ov148_020cfb78.c:
+src/overlays/ov148/calls/Ov148_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov148/calls/func_ov148_020cfc04.c:
+src/overlays/ov148/calls/Ov148_QueryAndCopyVecIfHit.c:
     complete
     .text       start:0x020cfc04 end:0x020cfc4c
 
-src/overlays/ov148/calls/func_ov148_020cfc4c.c:
+src/overlays/ov148/calls/Ov148_TickSwingArc.c:
     complete
     .text       start:0x020cfc4c end:0x020cfdc8
 
-src/overlays/ov148/calls/func_ov148_020cfdc8.c:
+src/overlays/ov148/calls/Ov148_InitActor.c:
     complete
     .text       start:0x020cfdc8 end:0x020d0094
 
-src/overlays/ov148/calls/func_ov148_020d0094.c:
+src/overlays/ov148/calls/Ov148_ReleaseSubObjectsThenNotify.c:
     complete
     .text       start:0x020d0094 end:0x020d00c0
 
-src/overlays/ov148/calls/func_ov148_020d00c0.c:
+src/overlays/ov148/calls/Ov148_ResetSetupAndPropagate.c:
     complete
     .text       start:0x020d00c0 end:0x020d0140
 
-src/overlays/ov148/calls/func_ov148_020d0140.c:
+src/overlays/ov148/calls/Ov148_AttachThreeSubNodesThenFinalize.c:
     complete
     .text       start:0x020d0140 end:0x020d017c
 
-src/overlays/ov148/calls/func_ov148_020d017c.c:
+src/overlays/ov148/calls/Ov148_AttachThreeSubNodesThenFinalize_2.c:
     complete
     .text       start:0x020d017c end:0x020d01b8
 
-src/overlays/ov148/calls/func_ov148_020d01b8.c:
+src/overlays/ov148/calls/Ov148_ReleaseAttachmentsOnStop.c:
     complete
     .text       start:0x020d01b8 end:0x020d0288
 
-src/overlays/ov148/calls/func_ov148_020d0288.c:
+src/overlays/ov148/calls/Ov148_IssueSpawnCommand.c:
     complete
     .text       start:0x020d0288 end:0x020d03ac
 
-src/overlays/ov148/calls/func_ov148_020d03ac.c:
+src/overlays/ov148/calls/Ov148_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020d03ac end:0x020d03e4
 
-src/overlays/ov148/calls/func_ov148_020d03e4.c:
+src/overlays/ov148/calls/Ov148_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d03e4 end:0x020d0440
 
-src/overlays/ov148/calls/func_ov148_020d0440.c:
+src/overlays/ov148/calls/Ov148_ResolveHitReaction.c:
     complete
     .text       start:0x020d0440 end:0x020d05a4
 
-src/overlays/ov148/auto/func_ov148_020d05a4.c:
+src/overlays/ov148/auto/Ov148_RequestSubState7IfNotCurrent.c:
     complete
     .text       start:0x020d05a4 end:0x020d05d0
 
-src/overlays/ov148/auto/func_ov148_020d05d0.c:
+src/overlays/ov148/auto/Ov148_RequestSubState8IfIdle.c:
     complete
     .text       start:0x020d05d0 end:0x020d0600
 
-src/overlays/ov148/calls/func_ov148_020d0600.c:
+src/overlays/ov148/calls/Ov148_SeedDefaultPoseAndAdvance.c:
     complete
     .text       start:0x020d0600 end:0x020d0668
 
-src/overlays/ov148/calls/func_ov148_020d0668.c:
+src/overlays/ov148/calls/Ov148_FireThreeWaySpread.c:
     complete
     .text       start:0x020d0668 end:0x020d0770
 
-src/overlays/ov148/calls/func_ov148_020d0770.c:
+src/overlays/ov148/calls/Ov148_BuildHeadingRotation.c:
     complete
     .text       start:0x020d0770 end:0x020d0870
 
-src/overlays/ov148/calls/func_ov148_020d0870.c:
+src/overlays/ov148/calls/Ov148_InitReactionSlots.c:
     complete
     .text       start:0x020d0870 end:0x020d0928
 
-src/overlays/ov148/calls/func_ov148_020d0928.c:
+src/overlays/ov148/calls/Ov148_DispatchSubStateByte.c:
     complete
     .text       start:0x020d0928 end:0x020d0ab0
 
-src/overlays/ov148/calls/func_ov148_020d0ab0.c:
+src/overlays/ov148/calls/Ov148_CommitTrailTransform.c:
     complete
     .text       start:0x020d0ab0 end:0x020d0b94
 
-src/overlays/ov148/calls/func_ov148_020d0b94.c:
+src/overlays/ov148/calls/Ov148_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0b94 end:0x020d0bfc
 
-src/overlays/ov148/calls/func_ov148_020d0bfc.c:
+src/overlays/ov148/calls/Ov148_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d0bfc end:0x020d0c38
 
-src/overlays/ov148/calls/func_ov148_020d0c38.c:
+src/overlays/ov148/calls/Ov148_EnterAttackFacingTarget.c:
     complete
     .text       start:0x020d0c38 end:0x020d0d84
 
-src/overlays/ov148/calls/func_ov148_020d0d84.c:
+src/overlays/ov148/calls/Ov148_ClearMoveTimerAndFire.c:
     complete
     .text       start:0x020d0d84 end:0x020d0e4c
 
-src/overlays/ov148/calls/func_ov148_020d0e4c.c:
+src/overlays/ov148/calls/Ov148_AimAtTargetAfterWindup.c:
     complete
     .text       start:0x020d0e4c end:0x020d0f6c
 
-src/overlays/ov148/calls/func_ov148_020d0f6c.c:
+src/overlays/ov148/calls/Ov148_AiEnterHold.c:
     complete
     .text       start:0x020d0f6c end:0x020d0fa8
 
-src/overlays/ov148/calls/func_ov148_020d0fa8.c:
+src/overlays/ov148/calls/Ov148_TickHoldTimer.c:
     complete
     .text       start:0x020d0fa8 end:0x020d100c
 
-src/overlays/ov148/calls/func_ov148_020d100c.c:
+src/overlays/ov148/calls/Ov148_BeginMoveOrRequestState2.c:
     complete
     .text       start:0x020d100c end:0x020d10e4
 
-src/overlays/ov148/calls/func_ov148_020d10e4.c:
+src/overlays/ov148/calls/Ov148_ApplyTransformThenReseedIfFree.c:
     complete
     .text       start:0x020d10e4 end:0x020d114c
 
-src/overlays/ov148/calls/func_ov148_020d114c.c:
+src/overlays/ov148/calls/Ov148_StepChargeUntilSettled.c:
     complete
     .text       start:0x020d114c end:0x020d1230
 
-src/overlays/ov148/calls/func_ov148_020d1230.c:
+src/overlays/ov148/calls/Ov148_PointHeadingCheckPose.c:
     complete
     .text       start:0x020d1230 end:0x020d12a8
 
-src/overlays/ov148/calls/func_ov148_020d12a8.c:
+src/overlays/ov148/calls/Ov148_InvokeWithVec3ThenSetSubState5.c:
     complete
     .text       start:0x020d12a8 end:0x020d12fc
 
-src/overlays/ov148/calls/func_ov148_020d12fc.c:
+src/overlays/ov148/calls/Ov148_SpawnTrailOrFail.c:
     complete
     .text       start:0x020d12fc end:0x020d13d4
 
-src/overlays/ov148/calls/func_ov148_020d13d4.c:
+src/overlays/ov148/calls/Ov148_SteerTrailThenAdvance.c:
     complete
     .text       start:0x020d13d4 end:0x020d14b4
 
-src/overlays/ov148/calls/func_ov148_020d14b4.c:
+src/overlays/ov148/calls/Ov148_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d14b4 end:0x020d14e8
 
-src/overlays/ov148/calls/func_ov148_020d14e8.c:
+src/overlays/ov148/calls/Ov148_SetPose5ThenAdvanceSlot.c:
     complete
     .text       start:0x020d14e8 end:0x020d151c
 
-src/overlays/ov148/calls/func_ov148_020d151c.c:
+src/overlays/ov148/calls/Ov148_CopyScaleVec3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d151c end:0x020d1578
 
-src/overlays/ov148/calls/func_ov148_020d1578.c:
+src/overlays/ov148/calls/Ov148_Action4A_Enter.c:
     complete
     .text       start:0x020d1578 end:0x020d163c
 
-src/overlays/ov148/calls/func_ov148_020d163c.c:
+src/overlays/ov148/calls/Ov148_AiStep_QueueAction0.c:
     complete
     .text       start:0x020d163c end:0x020d165c
 
-src/overlays/ov148/calls/func_ov148_020d165c.c:
+src/overlays/ov148/calls/Ov148_BeginGuardPose.c:
     complete
     .text       start:0x020d165c end:0x020d16fc
 
-src/overlays/ov148/calls/func_ov148_020d16fc.c:
+src/overlays/ov148/calls/Ov148_TimerGateHw60FlipThenAdvance.c:
     complete
     .text       start:0x020d16fc end:0x020d1790
 
-src/overlays/ov148/calls/func_ov148_020d1790.c:
+src/overlays/ov148/calls/Ov148_AiEnterFaceTarget.c:
     complete
     .text       start:0x020d1790 end:0x020d17d0
 
-src/overlays/ov148/calls/func_ov148_020d17d0.c:
+src/overlays/ov148/calls/Ov148_FaceTargetThenIdle.c:
     complete
     .text       start:0x020d17d0 end:0x020d1858
 
-src/overlays/ov148/calls/func_ov148_020d1858.c:
+src/overlays/ov148/calls/Ov148_FaceTargetCheckReach.c:
     complete
     .text       start:0x020d1858 end:0x020d18dc
 
-src/overlays/ov148/calls/func_ov148_020d18dc.c:
+src/overlays/ov148/calls/Ov148_RunPreDispatchHook.c:
     complete
     .text       start:0x020d18dc end:0x020d1940
 
-src/overlays/ov148/calls/func_ov148_020d1940.c:
+src/overlays/ov148/calls/Ov148_AllocLinkChild3a4.c:
     complete
     .text       start:0x020d1940 end:0x020d1974
 
-src/overlays/ov148/calls/func_ov148_020d1974.c:
+src/overlays/ov148/calls/Ov148_InitSubActor.c:
     complete
     .text       start:0x020d1974 end:0x020d1b40
 
-src/overlays/ov148/calls/func_ov148_020d1b40.c:
+src/overlays/ov148/calls/Ov148_Destroy.c:
     complete
     .text       start:0x020d1b40 end:0x020d1b78
 
-src/overlays/ov148/calls/func_ov148_020d1b78.c:
+src/overlays/ov148/calls/Ov148_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d1b78 end:0x020d1bb0
 
-src/overlays/ov148/calls/func_ov148_020d1bb0.c:
+src/overlays/ov148/calls/Ov148_PlaceNodeFromCommand.c:
     complete
     .text       start:0x020d1bb0 end:0x020d1ca8
 
-src/overlays/ov148/calls/func_ov148_020d1ca8.c:
+src/overlays/ov148/calls/Ov148_SetSubStateAndScaleVec.c:
     complete
     .text       start:0x020d1ca8 end:0x020d1cdc
 
-src/overlays/ov148/calls/func_ov148_020d1cdc.c:
+src/overlays/ov148/calls/Ov148_Event_ReverseVelocityOnce.c:
     complete
     .text       start:0x020d1cdc end:0x020d1d40
 
-src/overlays/ov148/calls/func_ov148_020d1d40.c:
+src/overlays/ov148/calls/Ov148_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d1d40 end:0x020d1d8c
 
-src/overlays/ov148/calls/func_ov148_020d1d8c.c:
+src/overlays/ov148/calls/Ov148_stateInitClearSlots.c:
     complete
     .text       start:0x020d1d8c end:0x020d1e34
 
-src/overlays/ov148/calls/func_ov148_020d1e34.c:
+src/overlays/ov148/calls/Ov148_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d1e34 end:0x020d1eac
 
-src/overlays/ov148/calls/func_ov148_020d1eac.c:
+src/overlays/ov148/calls/Ov148_PublishVelocity_Step.c:
     complete
     .text       start:0x020d1eac end:0x020d1f10
 
-src/overlays/ov148/calls/func_ov148_020d1f10.c:
+src/overlays/ov148/calls/Ov148_ResetPoseAndFlags.c:
     complete
     .text       start:0x020d1f10 end:0x020d1fcc
 
-src/overlays/ov148/auto/func_ov148_020d1fcc.c:
+src/overlays/ov148/auto/Ov148_ResetPoseIdleStep.c:
     complete
     .text       start:0x020d1fcc end:0x020d1fd0
 
-src/overlays/ov148/calls/func_ov148_020d1fd0.c:
+src/overlays/ov148/calls/Ov148_ResetOrientationAndAdvance.c:
     complete
     .text       start:0x020d1fd0 end:0x020d205c
 
-src/overlays/ov148/calls/func_ov148_020d205c.c:
+src/overlays/ov148/calls/Ov148_SeekTarget.c:
     complete
     .text       start:0x020d205c end:0x020d24e0
 

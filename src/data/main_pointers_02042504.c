@@ -6,16 +6,16 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_01ffa13c(void);
-extern void func_01ffa1b8(void);
+extern void UploadNodeMatricesByFlags(void);
+extern void Node_SeedTransform(void);
 extern void func_01ffa218(void);
 extern void func_01ffa2dc(void);
-extern void func_01ffa450(void);
-extern void func_01ffa5dc(void);
+extern void NNSi_G3dSendTexMtxMode0(void);
+extern void NNSi_G3dSendTexMtxMode2(void);
 
 Ov_Fn data_02042504[3] = {
 
-    func_01ffa13c,
+    UploadNodeMatricesByFlags,
 
     func_01ffa218,
 
@@ -25,7 +25,7 @@ Ov_Fn data_02042504[3] = {
 
 Ov_Fn data_02042510[3] = {
 
-    func_01ffa1b8,
+    Node_SeedTransform,
 
     func_01ffa2dc,
 
@@ -35,11 +35,11 @@ Ov_Fn data_02042510[3] = {
 
 Ov_Fn data_0204251c[4] = {
 
-    func_01ffa450,
+    NNSi_G3dSendTexMtxMode0,
 
     0,
 
-    func_01ffa5dc,
+    NNSi_G3dSendTexMtxMode2,
 
     0,
 

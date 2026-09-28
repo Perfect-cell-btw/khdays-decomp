@@ -1,7 +1,7 @@
 /* ov052 constructor argument block data_ov052_020b7f24, 0x020b7f24-0x020b7f38 (.rodata).
  *
  * Five words handed to a class constructor: the resource path of the object's archive
- * ('ba/ch/xi/li_e2.p.z') and four parameters the constructor reads.  Used by func_ov052_020b7194.
+ * ('ba/ch/xi/li_e2.p.z') and four parameters the constructor reads.  Used by Ov052_MissionStart.
  */
 
 typedef struct ClassCtorArgs {

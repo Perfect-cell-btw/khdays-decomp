@@ -42,17 +42,17 @@ typedef struct NNSG3dResJntAnmSRTTag {
     u32 tag;
 } NNSG3dResJntAnmSRTTag;
 
-extern void func_02026cd0(fx32 *pVal, fx32 frame, const u32 *pData,
+extern void G3dJnt_GetTransData(fx32 *pVal, fx32 frame, const u32 *pData,
                           const NNSG3dResJntAnm *pJntAnm);
-extern void func_02026a44(NNSG3dJntAnmResult *pResult);
+extern void NNSi_G3dGetJntTransFromNode(NNSG3dJntAnmResult *pResult);
 extern void func_01ffaa14(MtxFx33 *pRot, fx32 frame, const u32 *pData,
                           const NNSG3dResJntAnm *pJntAnm);
 extern BOOL func_01ffae5c(MtxFx33 *pRot, const void *pArrayRot3,
                           const void *pArrayRot5, u32 info);
-extern void func_02026b70(NNSG3dJntAnmResult *pResult);
-extern void func_02026f84(fx32 *pValues, fx32 frame, const u32 *pData,
+extern void NNSi_G3dGetMdlRot(NNSG3dJntAnmResult *pResult);
+extern void G3dJnt_GetScaleData(fx32 *pValues, fx32 frame, const u32 *pData,
                           const NNSG3dResJntAnm *pJntAnm);
-extern void func_02026adc(NNSG3dJntAnmResult *pResult);
+extern void NNSi_G3dGetJntScaleFromNode(NNSG3dJntAnmResult *pResult);
 
 static inline void vecCross_(const VecFx32 *a, const VecFx32 *b, VecFx32 *axb)
 {
@@ -71,7 +71,7 @@ void func_01ffaf9c(const NNSG3dResJntAnm *pJntAnm,
 
     if (!(tag & (0x00000002 | 0x00000004))) {
         if (!(tag & 0x00000008)) {
-            func_02026cd0(&pResult->trans.x, frame, pData, pJntAnm);
+            G3dJnt_GetTransData(&pResult->trans.x, frame, pData, pJntAnm);
             pData += 2;
         } else {
             pResult->trans.x = *(const fx32 *)pData;
@@ -79,7 +79,7 @@ void func_01ffaf9c(const NNSG3dResJntAnm *pJntAnm,
         }
 
         if (!(tag & 0x00000010)) {
-            func_02026cd0(&pResult->trans.y, frame, pData, pJntAnm);
+            G3dJnt_GetTransData(&pResult->trans.y, frame, pData, pJntAnm);
             pData += 2;
         } else {
             pResult->trans.y = *(const fx32 *)pData;
@@ -87,7 +87,7 @@ void func_01ffaf9c(const NNSG3dResJntAnm *pJntAnm,
         }
 
         if (!(tag & 0x00000020)) {
-            func_02026cd0(&pResult->trans.z, frame, pData, pJntAnm);
+            G3dJnt_GetTransData(&pResult->trans.z, frame, pData, pJntAnm);
             pData += 2;
         } else {
             pResult->trans.z = *(const fx32 *)pData;
@@ -97,7 +97,7 @@ void func_01ffaf9c(const NNSG3dResJntAnm *pJntAnm,
         if (tag & 0x00000002) {
             pResult->flag |= 0x00000004;
         } else {
-            func_02026a44(pResult);
+            NNSi_G3dGetJntTransFromNode(pResult);
         }
     }
 
@@ -120,7 +120,7 @@ void func_01ffaf9c(const NNSG3dResJntAnm *pJntAnm,
         if (tag & 0x00000040) {
             pResult->flag |= 0x00000002;
         } else {
-            func_02026b70(pResult);
+            NNSi_G3dGetMdlRot(pResult);
         }
     }
 
@@ -128,7 +128,7 @@ void func_01ffaf9c(const NNSG3dResJntAnm *pJntAnm,
         if (!(tag & 0x00000800)) {
             fx32 sx_invsx[2];
 
-            func_02026f84(&sx_invsx[0], frame, pData, pJntAnm);
+            G3dJnt_GetScaleData(&sx_invsx[0], frame, pData, pJntAnm);
             pS_invS[0] = sx_invsx[0];
             pS_invS[3] = sx_invsx[1];
         } else {
@@ -142,7 +142,7 @@ void func_01ffaf9c(const NNSG3dResJntAnm *pJntAnm,
         if (!(tag & 0x00001000)) {
             fx32 sy_invsy[2];
 
-            func_02026f84(&sy_invsy[0], frame, pData, pJntAnm);
+            G3dJnt_GetScaleData(&sy_invsy[0], frame, pData, pJntAnm);
             pS_invS[1] = sy_invsy[0];
             pS_invS[4] = sy_invsy[1];
         } else {
@@ -156,7 +156,7 @@ void func_01ffaf9c(const NNSG3dResJntAnm *pJntAnm,
         if (!(tag & 0x00002000)) {
             fx32 sz_invsz[2];
 
-            func_02026f84(&sz_invsz[0], frame, pData, pJntAnm);
+            G3dJnt_GetScaleData(&sz_invsz[0], frame, pData, pJntAnm);
             pS_invS[2] = sz_invsz[0];
             pS_invS[5] = sz_invsz[1];
         } else {
@@ -169,7 +169,7 @@ void func_01ffaf9c(const NNSG3dResJntAnm *pJntAnm,
         if (tag & 0x00000200) {
             pResult->flag |= 0x00000001;
         } else {
-            func_02026adc(pResult);
+            NNSi_G3dGetJntScaleFromNode(pResult);
         }
     }
 }

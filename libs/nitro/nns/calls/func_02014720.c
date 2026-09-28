@@ -35,8 +35,8 @@ typedef struct NNSG2dFontInformation {
 } NNSG2dFontInformation;
 
 extern void OS_Terminate(void);
-extern void func_02014874(NNSG2dBinaryFileHeader *pHeader);
-extern NNSG2dBinaryBlockHeader *func_02011aa0(
+extern void FontResource_Relocate(NNSG2dBinaryFileHeader *pHeader);
+extern NNSG2dBinaryBlockHeader *NNS_G2dFindBinaryBlock(
     NNSG2dBinaryFileHeader *pHeader, u32 kind);
 
 static inline BOOL NNSi_G2dIsBinFileSignatureValid(
@@ -92,8 +92,8 @@ BOOL func_02014720(void *pNftrFile, NNSG2dFontInformation **ppRes)
             (NNSG2dBinaryFileHeader *)pNftrFile;
         NNSG2dBinaryBlockHeader *pBinBlock;
 
-        func_02014874(pBinFile);
-        pBinBlock = func_02011aa0(pBinFile, NNS_G2D_BINBLK_SIG_FINFDATA);
+        FontResource_Relocate(pBinFile);
+        pBinBlock = NNS_G2dFindBinaryBlock(pBinFile, NNS_G2D_BINBLK_SIG_FINFDATA);
 
         if (pBinBlock == 0) {
             *ppRes = 0;

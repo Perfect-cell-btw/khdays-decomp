@@ -1,0 +1,11 @@
+extern void *CallocInstance(int size);
+extern void func_ov107_020c6624(void *obj, int flag);
+extern void Ov170_SubObject_ConstructB(void);
+
+void *Ov170_Actor_New(void *a) {
+    void *obj = CallocInstance(0x39c);
+    *(void **)((char *)obj + 0x38c) = a;
+    *(void **)((char *)obj + 0x18c) = Ov170_SubObject_ConstructB;
+    func_ov107_020c6624(obj, 0);
+    return obj;
+}

@@ -1,0 +1,33 @@
+/* Shoot entry of the ov259 actor: the +0x68 timer and +0xac cue flags clear, +0x94 = 180; with a
+ * +0xc aim target it faces it (+0x78 / +0x7c heading); +0x58 is set, pose 0xc plays on the actor
+ * and its partner (020cd524), the shot is armed (020cd628: pose 0xf after 0x2a8) and the node moves
+ * on to 020ce944. */
+typedef unsigned char u8;
+typedef struct { int x, y, z; } Vec3;
+
+extern void VEC_Subtract(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern int func_020050b4(int x, int y);
+extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
+extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
+extern void Ov259_ArmPartnerCue(int *node, int pose, int delay);
+extern void SetIndexedSlot(int *node, int slot, void *cb);
+extern void Ov259_AiQueue2OnAnimEnd(void);
+
+void Ov259_ShootEntry(int *node)
+{
+    int *state = (int *)node[1];
+    Vec3 d;
+
+    state[0x1a] = 0;
+    *((u8 *)state + 0xac) = 0;
+    state[0x25] = 0xb4;
+    if (state[3] != 0) {
+        VEC_Subtract((Vec3 *)(state[3] + 0x190), (Vec3 *)(*state + 0xb0), &d);
+        state[0x1e] = state[0x1f] = func_020050b4(d.x, d.z);
+    }
+    state[0x16] = 1;
+    Ov107_PostTagUpdate(*state, 0xc, 0);
+    Ov259_MirrorPartnerPose(node, 0xc, 0);
+    Ov259_ArmPartnerCue(node, 0xf, 0x2a8);
+    SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov259_AiQueue2OnAnimEnd);
+}

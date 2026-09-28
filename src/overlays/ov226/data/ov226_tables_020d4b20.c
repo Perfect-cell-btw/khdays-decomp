@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov226_020cfdbc (not yet decompiled) */
+/* read by Ov226_EnemyInit (not yet decompiled) */
 const u8 data_ov226_020d4b20[32] = {
     25, 0, 0, 0, 27, 0, 0, 0, 28, 0, 0, 0, 29, 0, 0, 0,
     30, 0, 0, 0, 255, 255, 255, 255, 32, 0, 0, 0, 31, 0, 0, 0,

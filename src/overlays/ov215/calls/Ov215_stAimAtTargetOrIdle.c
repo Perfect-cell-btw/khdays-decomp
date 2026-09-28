@@ -1,0 +1,29 @@
+extern void SetIndexedSlot(void *obj, int idx, void *value);
+extern void VEC_Subtract(void *a, void *b, void *out);
+extern int VEC_Normalize(void *v, void *v2);
+extern int func_020050b4(int x, int z);
+extern void Ov107_PostTagUpdate();
+extern void Ov107_BuildAndSendUpdate();
+extern void Ov215_stEnterSetFlag40(void);
+
+void Ov215_stAimAtTargetOrIdle(int *node) {
+    int *state = (int *)node[1];
+    int buf[3];
+    int target = state[2];
+    if (target == 0) {
+        *(signed char *)(*state + 0x1c7) = 2;
+        SetIndexedSlot(node, *(signed char *)(node + 8), (void *)0);
+        return;
+    }
+    VEC_Subtract((void *)(target + 0x190), (void *)(*state + 0xb0), buf);
+    buf[1] = 0;
+    state[0x12] = VEC_Normalize(buf, buf);
+    {
+        int angle = func_020050b4(buf[0], buf[2]);
+        state[0x13] = angle;
+        state[0x11] = angle;
+    }
+    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_BuildAndSendUpdate(*state, 0x129, 6, state[4]);
+    SetIndexedSlot(node, *(signed char *)(node + 8), Ov215_stEnterSetFlag40);
+}

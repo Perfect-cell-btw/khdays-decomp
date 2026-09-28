@@ -5,13 +5,13 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_0209092c: func_ov008_02074c40
- *   data_ov008_02090930: func_ov008_02074c40
- *   data_ov008_02090954: func_ov008_02074c40
- *   data_ov008_02090960: func_ov008_02074c40
- *   data_ov008_02090978: func_ov008_020759c4
- *   data_ov008_0209097c: func_ov008_020759c4
- *   data_ov008_02090980: func_ov008_02076780
+ *   data_ov008_0209092c: Ov008_MissionMenu_DrawInfo
+ *   data_ov008_02090930: Ov008_MissionMenu_DrawInfo
+ *   data_ov008_02090954: Ov008_MissionMenu_DrawInfo
+ *   data_ov008_02090960: Ov008_MissionMenu_DrawInfo
+ *   data_ov008_02090978: Ov008_MissionMenu_BuildRewardRows
+ *   data_ov008_0209097c: Ov008_MissionMenu_BuildRewardRows
+ *   data_ov008_02090980: Ov008_DrawMissionDetail
  */
 
 typedef unsigned char u8;

@@ -13,7 +13,7 @@ const int data_ov162_020d1080[6] = {
     2, 3, 4, 5, 6, 10,
 };
 
-/* read by func_ov162_020cfc98 (020cfc98): unsigned short data_ov162_020d1098[];
+/* read by Ov162_stateTransformAimVec (020cfc98): unsigned short data_ov162_020d1098[];
  *   Enter the recoil state of the ov161 enemy (x2: ov161/162), variant of the matched ov163 (020d02e4): unsigned short data_ov162_020d1098[]; */
 const u8 data_ov162_020d1098[8] = {
     0, 0, 5, 0, 0, 0, 5, 4,
@@ -39,7 +39,7 @@ const u16 data_ov162_020d10ca[7] = {
     0, 773, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov162_020cea50 (020cea50): const struct tbl8 data_ov162_020d10d8; */
+/* read by Ov162_collectObjectsInSphereRec (020cea50): const struct tbl8 data_ov162_020d10d8; */
 const u8 data_ov162_020d10d8[32] = {
     255, 255, 255, 255, 255, 255, 255, 255, 1, 0, 0, 0, 255, 255, 255, 255,
     255, 255, 255, 255, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0,

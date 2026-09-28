@@ -42,7 +42,7 @@ const u8 data_ov026_0209114b[17] = {
     17,
 };
 
-/* read by func_ov026_0208529c (0208529c): int data_ov026_0209115c[]; */
+/* read by Ov026_FlushDirtyVramBanks (0208529c): int data_ov026_0209115c[]; */
 const int data_ov026_0209115c[7] = {
     9, 10, 11, 24, 25, 26, 27,
 };

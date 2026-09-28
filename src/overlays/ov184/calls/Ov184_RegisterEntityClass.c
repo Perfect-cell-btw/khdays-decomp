@@ -1,0 +1,6 @@
+extern void Ov107_RegisterHandler(int arg0, void (*arg1)(int));
+extern void Ov184_CreateNamedEntity(int);
+
+void Ov184_RegisterEntityClass(void) {
+    Ov107_RegisterHandler(0x20, Ov184_CreateNamedEntity);
+}

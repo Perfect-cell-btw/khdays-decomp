@@ -5,8 +5,8 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_0208f044: func_ov008_0205bb7c
- *   data_ov008_0208f050: func_ov008_0205bf5c, func_ov008_0205c010, func_ov008_0205c458, func_ov008_0205c4c4
+ *   data_ov008_0208f044: Ov008_BindUiAnimTracks
+ *   data_ov008_0208f050: Ov008_UpdatePanelBrightnessTweens, Ov008_MainMenu_InitPanelContext, Ov008_ReleaseRowSurfaces, Ov008_DrawMenuPanels
  */
 
 typedef unsigned char u8;

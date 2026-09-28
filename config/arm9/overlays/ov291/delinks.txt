@@ -4,131 +4,131 @@
     .data       start:0x020cd620 end:0x020cd640 kind:data align:32
     .bss        start:0x020cd640 end:0x020cd640 kind:bss align:32
 
-src/overlays/ov291/calls/func_ov291_020cbf20.c:
+src/overlays/ov291/calls/Ov291_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov291/calls/func_ov291_020cbf38.c:
+src/overlays/ov291/calls/Ov291_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov291/calls/func_ov291_020cbfc4.c:
+src/overlays/ov291/calls/Ov291_HeadBoneCallback.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc128
 
-src/overlays/ov291/calls/func_ov291_020cc128.c:
+src/overlays/ov291/calls/Ov291_EnemyConstruct.c:
     complete
     .text       start:0x020cc128 end:0x020cc4c8
 
-src/overlays/ov291/calls/func_ov291_020cc4c8.c:
+src/overlays/ov291/calls/Ov291_ReleaseSubObjectsGuardedThenNotify.c:
     complete
     .text       start:0x020cc4c8 end:0x020cc50c
 
-src/overlays/ov291/calls/func_ov291_020cc50c.c:
+src/overlays/ov291/calls/Ov291_TickWithChildRefresh.c:
     complete
     .text       start:0x020cc50c end:0x020cc530
 
-src/overlays/ov291/calls/func_ov291_020cc530.c:
+src/overlays/ov291/calls/Ov291_ForwardAnimEvent.c:
     complete
     .text       start:0x020cc530 end:0x020cc550
 
-src/overlays/ov291/calls/func_ov291_020cc550.c:
+src/overlays/ov291/calls/Ov291_ReallocBufferCopyHeader.c:
     complete
     .text       start:0x020cc550 end:0x020cc5a8
 
-src/overlays/ov291/calls/func_ov291_020cc5a8.c:
+src/overlays/ov291/calls/Ov291_RequestSubState6AndLatchTarget.c:
     complete
     .text       start:0x020cc5a8 end:0x020cc5f4
 
-src/overlays/ov291/calls/func_ov291_020cc5f4.c:
+src/overlays/ov291/calls/Ov291_OnHitStore.c:
     complete
     .text       start:0x020cc5f4 end:0x020cc604
 
-src/overlays/ov291/calls/func_ov291_020cc604.c:
+src/overlays/ov291/calls/Ov291_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020cc604 end:0x020cc670
 
-src/overlays/ov291/calls/func_ov291_020cc670.c:
+src/overlays/ov291/calls/Ov291_FindTarget.c:
     complete
     .text       start:0x020cc670 end:0x020cc7e8
 
-src/overlays/ov291/calls/func_ov291_020cc7e8.c:
+src/overlays/ov291/calls/Ov291_AiStateInit.c:
     complete
     .text       start:0x020cc7e8 end:0x020cc870
 
-src/overlays/ov291/calls/func_ov291_020cc870.c:
+src/overlays/ov291/calls/Ov291_SubStateDispatch.c:
     complete
     .text       start:0x020cc870 end:0x020cca78
 
-src/overlays/ov291/calls/func_ov291_020cca78.c:
+src/overlays/ov291/calls/Ov291_HasKind1Target.c:
     complete
     .text       start:0x020cca78 end:0x020ccab4
 
-src/overlays/ov291/calls/func_ov291_020ccab4.c:
+src/overlays/ov291/calls/Ov291_TurnTick.c:
     complete
     .text       start:0x020ccab4 end:0x020ccc18
 
-src/overlays/ov291/calls/func_ov291_020ccc18.c:
+src/overlays/ov291/calls/Ov291_stSetDispFlags86.c:
     complete
     .text       start:0x020ccc18 end:0x020ccc58
 
-src/overlays/ov291/calls/func_ov291_020ccc58.c:
+src/overlays/ov291/calls/Ov291_GuardedInvokeNodeCallbackThenAdvance.c:
     complete
     .text       start:0x020ccc58 end:0x020cccd0
 
-src/overlays/ov291/calls/func_ov291_020cccd0.c:
+src/overlays/ov291/calls/Ov291_SetPose0ThenAdvanceSlot.c:
     complete
     .text       start:0x020cccd0 end:0x020ccd04
 
-src/overlays/ov291/calls/func_ov291_020ccd04.c:
+src/overlays/ov291/calls/Ov291_stAdvanceState.c:
     complete
     .text       start:0x020ccd04 end:0x020ccd28
 
-src/overlays/ov291/calls/func_ov291_020ccd28.c:
+src/overlays/ov291/calls/Ov291_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020ccd28 end:0x020ccd70
 
-src/overlays/ov291/calls/func_ov291_020ccd70.c:
+src/overlays/ov291/calls/Ov291_stateTransformScaleTimer.c:
     complete
     .text       start:0x020ccd70 end:0x020cce3c
 
-src/overlays/ov291/calls/func_ov291_020cce3c.c:
+src/overlays/ov291/calls/Ov291_PathFollowTick.c:
     complete
     .text       start:0x020cce3c end:0x020cd100
 
-src/overlays/ov291/calls/func_ov291_020cd100.c:
+src/overlays/ov291/calls/Ov291_ApproachTick.c:
     complete
     .text       start:0x020cd100 end:0x020cd2d0
 
-src/overlays/ov291/calls/func_ov291_020cd2d0.c:
+src/overlays/ov291/calls/Ov291_AiSpinTick.c:
     complete
     .text       start:0x020cd2d0 end:0x020cd430
 
-src/overlays/ov291/calls/func_ov291_020cd430.c:
+src/overlays/ov291/calls/Ov291_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd430 end:0x020cd464
 
-src/overlays/ov291/calls/func_ov291_020cd464.c:
+src/overlays/ov291/calls/Ov291_PrepSubState5GuardField20.c:
     complete
     .text       start:0x020cd464 end:0x020cd498
 
-src/overlays/ov291/calls/func_ov291_020cd498.c:
+src/overlays/ov291/calls/Ov291_SetPose5ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd498 end:0x020cd4cc
 
-src/overlays/ov291/calls/func_ov291_020cd4cc.c:
+src/overlays/ov291/calls/Ov291_AdvanceWrapCounterThenSubState3.c:
     complete
     .text       start:0x020cd4cc end:0x020cd524
 
-src/overlays/ov291/calls/func_ov291_020cd524.c:
+src/overlays/ov291/calls/Ov291_AiFinishAndNotifyOwner.c:
     complete
     .text       start:0x020cd524 end:0x020cd578
 
-src/overlays/ov291/calls/func_ov291_020cd578.c:
+src/overlays/ov291/calls/Ov291_SetPose7ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd578 end:0x020cd5ac
 
-src/overlays/ov291/calls/func_ov291_020cd5ac.c:
+src/overlays/ov291/calls/Ov291_AdvanceWrapCounterThenSubState3_2.c:
     complete
     .text       start:0x020cd5ac end:0x020cd604
 

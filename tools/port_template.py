@@ -51,7 +51,7 @@ def dis(name):
     como instrucciones basura (`andeq r2, r4, #100, #4`), y como su contenido difiere entre dos
     funciones de la misma forma, la comparacion de mnemonicos/inmediatos las declaraba distintas.
     Eso rechazaba miembros que casan BYTE A BYTE con la plantilla sin tocar nada mas
-    (func_ov199_020d46e4 <- func_ov147_020cce70, 2026-07-19: `sed` del nombre = MATCH, y este
+    (Ov199_CommitTrailTransform <- Ov147_CommitTrailTransform, 2026-07-19: `sed` del nombre = MATCH, y este
     script decia "forma/relocs no encajan"). El inicio del pool se calcula como en poolmap.py:
     el minimo destino de un `ldr rX,[pc,#N]`.
     """
@@ -103,7 +103,7 @@ def build_map(tpl, cand):
         # fija el enlazador a partir del reloc, no hay nada que sustituir en el .c, y meterlos
         # en el mapa rompia familias enteras: si la plantilla llama dos veces al MISMO destino
         # y la candidata a dos distintos, el mapa se declara ambiguo y se rechaza la candidata.
-        # Asi se caian las formas de func_ov222_020d3cc8 (4 miembros) y func_ov025_020a26f8
+        # Asi se caian las formas de Ov222_AiCuedAnimTick (4 miembros) y Ov025_DrawStringOptShadow
         # (3 miembros) -- 2026-07-19.
         if re.match(r"^(b|bl|blx|bx)(eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al)?$",
                     a.mnemonic):
@@ -165,7 +165,7 @@ def render(tpl, cand, sym, val, scaled=False, guard_shifts=True, min_val=0):
     # ⚠ Y los DESPLAZAMIENTOS: `(u << 0x10) >> 0x18` es el idiom con el que este arbol escribe
     # un bitfield empaquetado. Esos 0x10/0x18 son estructura (que byte de la palabra), no datos,
     # asi que un mapeo legitimo como 0x10 -> 5 los destroza y el residuo aparece en un sitio
-    # que no tiene nada que ver. Detectado en la forma de func_ov270_020d4104 (2026-07-18).
+    # que no tiene nada que ver. Detectado en la forma de Ov270_stInitSlotsFlags6C (2026-07-18).
     if guard_shifts:
         s = re.sub(r"(<<|>>)\s*(0x[0-9a-fA-F]+|\d+)", _stash, s)
 

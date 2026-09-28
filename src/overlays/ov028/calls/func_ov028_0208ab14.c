@@ -1,4 +1,4 @@
-extern void *func_ov028_0208aa78();
+extern void *Ov028_RC4_EncryptInstructions();
 void *func_ov028_0208ab14() {
-    return func_ov028_0208aa78();
+    return Ov028_RC4_EncryptInstructions();
 }

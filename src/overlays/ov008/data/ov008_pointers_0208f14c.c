@@ -6,18 +6,18 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov008_02065664(void);
-extern void func_ov008_020658bc(void);
-extern void func_ov008_02065990(void);
+extern void Ov008_FinishMenuModeSwitch(void);
+extern void Ov008_UpdateReadyState(void);
+extern void Ov008_TryAcquire14ThenClearField4(void);
 
 const Ov_Fn data_ov008_0208f14c[4] = {
 
     0,
 
-    func_ov008_02065664,
+    Ov008_FinishMenuModeSwitch,
 
-    func_ov008_020658bc,
+    Ov008_UpdateReadyState,
 
-    func_ov008_02065990,
+    Ov008_TryAcquire14ThenClearField4,
 
 };

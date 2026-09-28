@@ -4,7 +4,7 @@
     .data       start:0x02083ee0 end:0x02084360 kind:data align:32
     .bss        start:0x02084360 end:0x02084380 kind:bss align:32
 
-src/overlays/ov027/calls/func_ov027_02082960.c:
+src/overlays/ov027/calls/Ov027_SetupGraphics.c:
     complete
     .text       start:0x02082960 end:0x02082ac0
 
@@ -12,167 +12,167 @@ src/overlays/ov027/calls/func_ov027_02082ac0.c:
     complete
     .text       start:0x02082ac0 end:0x02082ad8
 
-src/overlays/ov027/calls/func_ov027_02082ad8.c:
+src/overlays/ov027/calls/Ov027_EndKeySharingIfOpen.c:
     complete
     .text       start:0x02082ad8 end:0x02082af0
 
-src/overlays/ov027/calls/func_ov027_02082af0.c:
+src/overlays/ov027/calls/Ov027_SceneIsIdle.c:
     complete
     .text       start:0x02082af0 end:0x02082b08
 
-src/overlays/ov027/calls/func_ov027_02082b08.c:
+src/overlays/ov027/calls/Ov027_SceneActivate.c:
     complete
     .text       start:0x02082b08 end:0x02082b24
 
-src/overlays/ov027/calls/func_ov027_02082b24.c:
+src/overlays/ov027/calls/Ov027_SetFlag4.c:
     complete
     .text       start:0x02082b24 end:0x02082b38
 
-src/overlays/ov027/calls/func_ov027_02082b38.c:
+src/overlays/ov027/calls/Ov027_SceneIsActive.c:
     complete
     .text       start:0x02082b38 end:0x02082b48
 
-src/overlays/ov027/calls/func_ov027_02082b48.c:
+src/overlays/ov027/calls/Ov027_SceneGetField24.c:
     complete
     .text       start:0x02082b48 end:0x02082b54
 
-src/overlays/ov027/calls/func_ov027_02082b54.c:
+src/overlays/ov027/calls/Ov027_LoadGraphics.c:
     complete
     .text       start:0x02082b54 end:0x02082ba4
 
-src/overlays/ov027/calls/func_ov027_02082ba4.c:
+src/overlays/ov027/calls/Ov027_DrawSignInPanel.c:
     complete
     .text       start:0x02082ba4 end:0x02082bec
 
-src/overlays/ov027/calls/func_ov027_02082bec.c:
+src/overlays/ov027/calls/Ov027_InitScene.c:
     complete
     .text       start:0x02082bec end:0x02082cd8
 
-src/overlays/ov027/calls/func_ov027_02082cd8.c:
+src/overlays/ov027/calls/Ov027_ExitScene.c:
     complete
     .text       start:0x02082cd8 end:0x02082d8c
 
-src/overlays/ov027/calls/func_ov027_02082d8c.c:
+src/overlays/ov027/calls/Ov027_ClearHeapBusyOrRetry.c:
     complete
     .text       start:0x02082d8c end:0x02082dac
 
-src/overlays/ov027/calls/func_ov027_02082dac.c:
+src/overlays/ov027/calls/Ov027_GameOverFadeIn.c:
     complete
     .text       start:0x02082dac end:0x02082e74
 
-src/overlays/ov027/calls/func_ov027_02082e74.c:
+src/overlays/ov027/calls/Ov027_GameOverMenu.c:
     complete
     .text       start:0x02082e74 end:0x02082f44
 
-src/overlays/ov027/calls/func_ov027_02082f44.c:
+src/overlays/ov027/calls/Ov027_PollConfirmAndAdvance.c:
     complete
     .text       start:0x02082f44 end:0x02082fb4
 
-src/overlays/ov027/calls/func_ov027_02082fb4.c:
+src/overlays/ov027/calls/Ov027_GameOverChoice.c:
     complete
     .text       start:0x02082fb4 end:0x02083068
 
-src/overlays/ov027/calls/func_ov027_02083068.c:
+src/overlays/ov027/calls/Ov027_GameOverIdle.c:
     complete
     .text       start:0x02083068 end:0x02083114
 
-src/overlays/ov027/calls/func_ov027_02083114.c:
+src/overlays/ov027/calls/Ov027_GameOverFadeOut.c:
     complete
     .text       start:0x02083114 end:0x02083164
 
-src/overlays/ov027/auto/func_ov027_02083164.c:
+src/overlays/ov027/auto/Ov027_ConstReturn0.c:
     complete
     .text       start:0x02083164 end:0x02083168
 
-src/overlays/ov027/calls/func_ov027_02083168.c:
+src/overlays/ov027/calls/Ov027_LoadCharacterModels.c:
     complete
     .text       start:0x02083168 end:0x02083308
 
-src/overlays/ov027/calls/func_ov027_02083308.c:
+src/overlays/ov027/calls/Ov027_UpdateModels.c:
     complete
     .text       start:0x02083308 end:0x0208334c
 
-src/overlays/ov027/calls/func_ov027_0208334c.c:
+src/overlays/ov027/calls/Ov027_InitCamera.c:
     complete
     .text       start:0x0208334c end:0x020833b4
 
-src/overlays/ov027/calls/func_ov027_020833b4.c:
+src/overlays/ov027/calls/Ov027_InitCharacterObject.c:
     complete
     .text       start:0x020833b4 end:0x0208344c
 
-src/overlays/ov027/calls/func_ov027_0208344c.c:
+src/overlays/ov027/calls/Ov027_UpdateFlushForward.c:
     complete
     .text       start:0x0208344c end:0x0208346c
 
-src/overlays/ov027/calls/func_ov027_0208346c.c:
+src/overlays/ov027/calls/Ov027_FloatCharacterObject.c:
     complete
     .text       start:0x0208346c end:0x020835b8
 
-src/overlays/ov027/auto/func_ov027_020835b8.c:
+src/overlays/ov027/auto/Ov027_ObjectAimAt.c:
     complete
     .text       start:0x020835b8 end:0x0208360c
 
-src/overlays/ov027/calls/func_ov027_0208360c.c:
+src/overlays/ov027/calls/Ov027_MoveCursor.c:
     complete
     .text       start:0x0208360c end:0x02083740
 
-src/overlays/ov027/calls/func_ov027_02083740.c:
+src/overlays/ov027/calls/Ov027_PollMenu.c:
     complete
     .text       start:0x02083740 end:0x020837dc
 
-src/overlays/ov027/calls/func_ov027_020837dc.c:
+src/overlays/ov027/calls/Ov027_StepScreenSwap.c:
     complete
     .text       start:0x020837dc end:0x02083834
 
-src/overlays/ov027/calls/func_ov027_02083834.c:
+src/overlays/ov027/calls/Ov027_PollChoice.c:
     complete
     .text       start:0x02083834 end:0x020838f0
 
-src/overlays/ov027/calls/func_ov027_020838f0.c:
+src/overlays/ov027/calls/Ov027_IsMissionMode5Active.c:
     complete
     .text       start:0x020838f0 end:0x02083918
 
-src/overlays/ov027/calls/func_ov027_02083918.c:
+src/overlays/ov027/calls/Ov027_BlinkPanelSlot.c:
     complete
     .text       start:0x02083918 end:0x02083980
 
-src/overlays/ov027/calls/func_ov027_02083980.c:
+src/overlays/ov027/calls/Ov027_LoadPanel.c:
     complete
     .text       start:0x02083980 end:0x02083a80
 
-src/overlays/ov027/calls/func_ov027_02083a80.c:
+src/overlays/ov027/calls/Ov027_LayoutChoicePanel.c:
     complete
     .text       start:0x02083a80 end:0x02083b94
 
-src/overlays/ov027/calls/func_ov027_02083b94.c:
+src/overlays/ov027/calls/Ov027_LayoutMenuPanel.c:
     complete
     .text       start:0x02083b94 end:0x02083c1c
 
-src/overlays/ov027/calls/func_ov027_02083c1c.c:
+src/overlays/ov027/calls/Ov027_FillDrawSlot.c:
     complete
     .text       start:0x02083c1c end:0x02083c40
 
-src/overlays/ov027/calls/func_ov027_02083c40.c:
+src/overlays/ov027/calls/Ov027_BlitScreenSlot.c:
     complete
     .text       start:0x02083c40 end:0x02083c76
 
-src/overlays/ov027/calls/func_ov027_02083c78.c:
+src/overlays/ov027/calls/Ov027_DrawPanelSlotShifted.c:
     complete
     .text       start:0x02083c78 end:0x02083cb8
 
-src/overlays/ov027/calls/func_ov027_02083cb8.c:
+src/overlays/ov027/calls/Ov027_EnqueueDisplayList.c:
     complete
     .text       start:0x02083cb8 end:0x02083ccc
 
-src/overlays/ov027/calls/func_ov027_02083ccc.c:
+src/overlays/ov027/calls/Ov027_InitHintText.c:
     complete
     .text       start:0x02083ccc end:0x02083d50
 
-src/overlays/ov027/calls/func_ov027_02083d50.c:
+src/overlays/ov027/calls/Ov027_DrawHintText.c:
     complete
     .text       start:0x02083d50 end:0x02083dbc
 
-src/overlays/ov027/calls/func_ov027_02083dbc.c:
+src/overlays/ov027/calls/Ov027_FillSceneVTable.c:
     complete
     .text       start:0x02083dbc end:0x02083e04
 

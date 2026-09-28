@@ -14,22 +14,22 @@ typedef struct Ov008PageHooks {
     Ov008HookFn apfnHook[12]; /* 0x10 .. 0x3c */
 } Ov008PageHooks;
 
-extern void func_ov008_02073564(void);
-extern void func_ov008_0207378c(void);
-extern void func_ov008_02073994(void);
-extern void func_ov008_02073a04(void);
-extern void func_ov008_02073acc(void);
-extern void func_ov008_02073b78(void);
-extern void func_ov008_02073be0(void);
-extern void func_ov008_02073c48(void);
-extern void func_ov008_02073cec(void);
-extern void func_ov008_02073d88(void);
-extern void func_ov008_02073df0(void);
+extern void Ov008_MissionListInitStep(void);
+extern void Ov008_MissionListDestroy(void);
+extern void Ov008_PanelRebuild(void);
+extern void Ov008_MissionListKeyUp(void);
+extern void Ov008_MissionListKeyDown(void);
+extern void Ov008_TickIdleReaction_Down(void);
+extern void Ov008_TickIdleReaction_Up(void);
+extern void Ov008_MissionListConfirm(void);
+extern void Ov008_MissionListBack(void);
+extern void Ov008_RefreshHoveredCell(void);
+extern void Ov008_RefreshHoveredRow(void);
 
 Ov008PageHooks data_ov008_0209082c = {
-    func_ov008_02073564,  /* pfnOpen */
-    func_ov008_0207378c,  /* pfnStep */
-    func_ov008_02073994,  /* pfnClose */
+    Ov008_MissionListInitStep,  /* pfnOpen */
+    Ov008_MissionListDestroy,  /* pfnStep */
+    Ov008_PanelRebuild,  /* pfnClose */
     1288,  /* nStateSize */
-    { func_ov008_02073a04, func_ov008_02073acc, func_ov008_02073b78, func_ov008_02073be0, func_ov008_02073c48, func_ov008_02073cec, 0, 0, func_ov008_02073d88, func_ov008_02073df0, 0, func_ov008_02073cec },  /* apfnHook */
+    { Ov008_MissionListKeyUp, Ov008_MissionListKeyDown, Ov008_TickIdleReaction_Down, Ov008_TickIdleReaction_Up, Ov008_MissionListConfirm, Ov008_MissionListBack, 0, 0, Ov008_RefreshHoveredCell, Ov008_RefreshHoveredRow, 0, Ov008_MissionListBack },  /* apfnHook */
 };

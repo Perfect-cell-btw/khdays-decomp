@@ -12,10 +12,10 @@ typedef struct Ov015PickupKindRow {
     u8   pad_05[3];
 } Ov015PickupKindRow;
 
-extern void func_ov015_0207fe0c(void);   /* Ov015_PickupUpdate */
-extern void func_ov015_0207ffd0(void);   /* Ov015_PickupTakenStep */
+extern void Ov015_PickupUpdate(void);   /* Ov015_PickupUpdate */
+extern void Ov015_PickupTakenStep(void);   /* Ov015_PickupTakenStep */
 
 const Ov015PickupKindRow data_ov015_020828d4[2] = {
-    { (void *)func_ov015_0207fe0c, 0x3c },
-    { (void *)func_ov015_0207ffd0, 0 },
+    { (void *)Ov015_PickupUpdate, 0x3c },
+    { (void *)Ov015_PickupTakenStep, 0 },
 };

@@ -102,15 +102,15 @@ typedef struct NNSG2dCellAnimation {
     NNSG2dSRTControl srtCtrl;
 } NNSG2dCellAnimation;
 
-extern void *func_02011c7c(NNSG2dAnimController *pAnimCtrl);
-extern const NNSG2dCellData *func_020118c4(const NNSG2dCellDataBank *pBank,
+extern void *NNS_G2dGetAnimCtrlCurrentElement(NNSG2dAnimController *pAnimCtrl);
+extern const NNSG2dCellData *NNS_G2dGetCellDataByIdx(const NNSG2dCellDataBank *pBank,
                                            u16 index);
-extern void func_0201231c(NNSG2dSRTControl *pCtrl,
+extern void NNSi_G2dSrtcInitControl(NNSG2dSRTControl *pCtrl,
                           NNSG2dSRTControlType type);
-extern void func_020122b8(NNSG2dSRTControl *pCtrl, s16 x, s16 y);
-extern void func_020122fc(NNSG2dSRTControl *pCtrl, fx32 x, fx32 y);
-extern void func_020122dc(NNSG2dSRTControl *pCtrl, u16 rotZ);
-extern void func_0201285c(u32 handle, u32 srcDataOffset, u32 szByte);
+extern void NNSi_G2dSrtcSetTrans(NNSG2dSRTControl *pCtrl, s16 x, s16 y);
+extern void NNSi_G2dSrtcSetSRTScale(NNSG2dSRTControl *pCtrl, fx32 x, fx32 y);
+extern void NNSi_G2dSrtcSetSRTRotZ(NNSG2dSRTControl *pCtrl, u16 rotZ);
+extern void NNS_G2dSetCellTransferStateRequested(u32 handle, u32 srcDataOffset, u32 szByte);
 
 static inline NNSG2dAnimationElement NNSi_G2dGetAnimSequenceElementType(
     u32 animType)
@@ -150,34 +150,34 @@ void func_02012354(NNSG2dCellAnimation *pCellAnim)
         return;
     }
     pAnimResult =
-        (const NNSG2dAnimDataSRT *)func_02011c7c(&pCellAnim->animCtrl);
+        (const NNSG2dAnimDataSRT *)NNS_G2dGetAnimCtrlCurrentElement(&pCellAnim->animCtrl);
     (void)0;
 
     pAnimResult =
-        (const NNSG2dAnimDataSRT *)func_02011c7c(&pCellAnim->animCtrl);
+        (const NNSG2dAnimDataSRT *)NNS_G2dGetAnimCtrlCurrentElement(&pCellAnim->animCtrl);
     pCellBank = pCellAnim->pCellDataBank;
     (void)0;
 
-    pCellAnim->pCurrentCell = func_020118c4(pCellBank, pAnimResult->index);
+    pCellAnim->pCurrentCell = NNS_G2dGetCellDataByIdx(pCellBank, pAnimResult->index);
     (void)0;
 
     {
         const NNSG2dAnimationElement elemType =
             NNSi_G2dGetAnimSequenceElementType(
                 pCellAnim->animCtrl.pAnimSequence->animType);
-        func_0201231c(&pCellAnim->srtCtrl, NNS_G2D_SRTCONTROLTYPE_SRT);
+        NNSi_G2dSrtcInitControl(&pCellAnim->srtCtrl, NNS_G2D_SRTCONTROLTYPE_SRT);
 
         if (elemType != NNS_G2D_ANIMELEMENT_INDEX) {
             if (elemType == NNS_G2D_ANIMELEMENT_INDEX_T) {
                 const NNSG2dAnimDataT *pAnmResT =
                     (const NNSG2dAnimDataT *)pAnimResult;
-                func_020122b8(&pCellAnim->srtCtrl, pAnmResT->px,
+                NNSi_G2dSrtcSetTrans(&pCellAnim->srtCtrl, pAnmResT->px,
                               pAnmResT->py);
             } else {
-                func_020122fc(&pCellAnim->srtCtrl, pAnimResult->sx,
+                NNSi_G2dSrtcSetSRTScale(&pCellAnim->srtCtrl, pAnimResult->sx,
                               pAnimResult->sy);
-                func_020122dc(&pCellAnim->srtCtrl, pAnimResult->rotZ);
-                func_020122b8(&pCellAnim->srtCtrl, pAnimResult->px,
+                NNSi_G2dSrtcSetSRTRotZ(&pCellAnim->srtCtrl, pAnimResult->rotZ);
+                NNSi_G2dSrtcSetTrans(&pCellAnim->srtCtrl, pAnimResult->px,
                               pAnimResult->py);
             }
         }
@@ -194,7 +194,7 @@ void func_02012354(NNSG2dCellAnimation *pCellAnim)
             NNSi_G2dIsCellAnimVramTransferHandleValid(pCellAnim)) {
             const NNSG2dCellVramTransferData *pCellTransferData =
                 &pVramTransferData->pCellTransferDataArray[pAnimResult->index];
-            func_0201285c(pCellAnim->cellTransferStateHandle,
+            NNS_G2dSetCellTransferStateRequested(pCellAnim->cellTransferStateHandle,
                           pCellTransferData->srcDataOffset,
                           pCellTransferData->szByte);
         }

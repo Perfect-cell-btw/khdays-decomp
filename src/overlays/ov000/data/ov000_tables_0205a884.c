@@ -8,19 +8,19 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov000_020535b4 (020535b4): const TileSurfaceCfg data_ov000_0205a884; */
+/* read by Ov000_SetupLogoTileSurfaces (020535b4): const TileSurfaceCfg data_ov000_0205a884; */
 const int data_ov000_0205a884[10] = {
     6, 8, 16, 8, 37, 15, 0, 23,
     0, 32,
 };
 
-/* read by func_ov000_020535b4 (020535b4): const TileSurfaceCfg data_ov000_0205a8ac; */
+/* read by Ov000_SetupLogoTileSurfaces (020535b4): const TileSurfaceCfg data_ov000_0205a8ac; */
 const int data_ov000_0205a8ac[10] = {
     18, 1, 30, 6, 165, 15, 0, 23,
     0, 32,
 };
 
-/* read by func_ov000_020535b4 (020535b4): const TileSurfaceCfg data_ov000_0205a8d4; */
+/* read by Ov000_SetupLogoTileSurfaces (020535b4): const TileSurfaceCfg data_ov000_0205a8d4; */
 const int data_ov000_0205a8d4[10] = {
     0, 14, 18, 2, 1, 15, 0, 23,
     0, 32,
@@ -43,7 +43,7 @@ const int data_ov000_0205a904[20] = {
     8, 2, 3, 10,
 };
 
-/* read by func_ov000_0205a19c (0205a19c): const u8 data_ov000_0205a954[4]; */
+/* read by Ov000_TickListSceneInput (0205a19c): const u8 data_ov000_0205a954[4]; */
 const u8 data_ov000_0205a954[8] = {
     224, 16, 16, 160, 19, 0, 0, 0,
 };

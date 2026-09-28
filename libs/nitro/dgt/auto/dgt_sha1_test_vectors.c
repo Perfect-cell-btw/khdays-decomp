@@ -6,7 +6,7 @@
 typedef unsigned char u8;
 typedef unsigned int u32;
 
-extern void func_0200bd4c(void);   /* the SHA-1 block transform */
+extern void DGTi_Hash2ProcessBlock(void);   /* the SHA-1 block transform */
 extern u8 data_02042338[24], data_02042350[24], data_02042308[24], data_02042320[24];
 extern char data_02042304[4], data_02042368[60], data_020423a4[68];
 
@@ -27,7 +27,7 @@ struct {
     u32 repeatA;                  /* 0x2c */
     u32 repeat0123;               /* 0x30 */
 } data_020422d0 = {
-    func_0200bd4c,
+    DGTi_Hash2ProcessBlock,
     data_02042338, data_02042350, data_02042308, data_02042320,
     data_02042304, data_02042368, data_020422cc, data_020423a4,
     1, 1, 1000000, 10,

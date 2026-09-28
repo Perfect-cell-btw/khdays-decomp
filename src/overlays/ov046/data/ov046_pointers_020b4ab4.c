@@ -6,21 +6,21 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov022_020915bc(void);
-extern void func_ov022_020916e0(void);
-extern void func_ov046_020b3c38(void);
-extern void func_ov046_020b3d94(void);
+extern void Ov022_AdvanceTimerAndLatchDone(void);
+extern void Ov022_NullStep(void);
+extern void Ov046_InitRadialBurst(void);
+extern void Ov046_StepHeldProjectile(void);
 
 Ov_Fn data_ov046_020b4ab4[5] = {
 
     0,
 
-    func_ov022_020915bc,
+    Ov022_AdvanceTimerAndLatchDone,
 
-    func_ov046_020b3c38,
+    Ov046_InitRadialBurst,
 
-    func_ov022_020916e0,
+    Ov022_NullStep,
 
-    func_ov046_020b3d94,
+    Ov046_StepHeldProjectile,
 
 };

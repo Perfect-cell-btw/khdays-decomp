@@ -22,18 +22,18 @@ typedef struct ObjectSize {
     u8 heightShift;
 } ObjectSize;
 
-void func_02013c78(const struct NNSG2dCharCanvas *pCC, const struct NNSG2dFont *pFont, int x, int y, int cl, const struct NNSG2dGlyph *pGlyph);   /* DrawGlyphLine */
-void func_02013e10(const struct NNSG2dCharCanvas *pCC, int cl);                                                                                 /* ClearContinuous */
-void func_02013e60(const struct NNSG2dCharCanvas *pCC, int cl, int x, int y, int w, int h);                                                     /* ClearAreaLine */
+void DrawGlyphLine(const struct NNSG2dCharCanvas *pCC, const struct NNSG2dFont *pFont, int x, int y, int cl, const struct NNSG2dGlyph *pGlyph);   /* DrawGlyphLine */
+void ClearContinuous(const struct NNSG2dCharCanvas *pCC, int cl);                                                                                 /* ClearContinuous */
+void ClearAreaLine(const struct NNSG2dCharCanvas *pCC, int cl, int x, int y, int w, int h);                                                     /* ClearAreaLine */
 
 /* fullbits (NNS_G2dCharCanvasInitForOBJ1D / ...OBJ2DRect) */
 const u32 data_02041a8c[2] = { (u32)~0, (u32)~0 };
 
 /* VTABLE_BG */
 const NNSiG2dCharCanvasVTable data_02041a94 = {
-    func_02013c78,
-    func_02013e10,
-    func_02013e60
+    DrawGlyphLine,
+    ClearContinuous,
+    ClearAreaLine
 };
 
 /* GetMaxObjectSize's objs[4][4]: {widthShift, heightShift} by [log2 h][log2 w] */

@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_ov008_02078088. */
-extern void *func_ov008_02078088();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to Ov008_MissionMenuBack. */
+extern void *Ov008_MissionMenuBack();
 
 void *func_ov008_02078154() {
-    return func_ov008_02078088();
+    return Ov008_MissionMenuBack();
 }

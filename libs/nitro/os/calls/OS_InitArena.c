@@ -13,8 +13,8 @@ typedef int BOOL;
 
 /* The two getters return the boundaries the linker laid down for an arena;
    the setters publish them as the live allocation window. */
-extern void *func_020029d0(int nArena);
-extern void *func_02002ab4(int nArena);
+extern void *OS_GetInitArenaHi(int nArena);
+extern void *OS_GetInitArenaLo(int nArena);
 extern void OS_SetArenaHi(int nArena, void *pAddress);
 extern void OS_SetArenaLo(int nArena, void *pAddress);
 
@@ -29,21 +29,21 @@ void OS_InitArena(void)
     }
     data_02044588 = 1;
 
-    OS_SetArenaHi(OS_ARENA_MAIN, func_020029d0(OS_ARENA_MAIN));
-    OS_SetArenaLo(OS_ARENA_MAIN, func_02002ab4(OS_ARENA_MAIN));
+    OS_SetArenaHi(OS_ARENA_MAIN, OS_GetInitArenaHi(OS_ARENA_MAIN));
+    OS_SetArenaLo(OS_ARENA_MAIN, OS_GetInitArenaLo(OS_ARENA_MAIN));
 
     OS_SetArenaLo(OS_ARENA_MAINEX, (void *)0);
     OS_SetArenaHi(OS_ARENA_MAINEX, (void *)0);
 
-    OS_SetArenaHi(OS_ARENA_ITCM, func_020029d0(OS_ARENA_ITCM));
-    OS_SetArenaLo(OS_ARENA_ITCM, func_02002ab4(OS_ARENA_ITCM));
+    OS_SetArenaHi(OS_ARENA_ITCM, OS_GetInitArenaHi(OS_ARENA_ITCM));
+    OS_SetArenaLo(OS_ARENA_ITCM, OS_GetInitArenaLo(OS_ARENA_ITCM));
 
-    OS_SetArenaHi(OS_ARENA_DTCM, func_020029d0(OS_ARENA_DTCM));
-    OS_SetArenaLo(OS_ARENA_DTCM, func_02002ab4(OS_ARENA_DTCM));
+    OS_SetArenaHi(OS_ARENA_DTCM, OS_GetInitArenaHi(OS_ARENA_DTCM));
+    OS_SetArenaLo(OS_ARENA_DTCM, OS_GetInitArenaLo(OS_ARENA_DTCM));
 
-    OS_SetArenaHi(OS_ARENA_SHARED, func_020029d0(OS_ARENA_SHARED));
-    OS_SetArenaLo(OS_ARENA_SHARED, func_02002ab4(OS_ARENA_SHARED));
+    OS_SetArenaHi(OS_ARENA_SHARED, OS_GetInitArenaHi(OS_ARENA_SHARED));
+    OS_SetArenaLo(OS_ARENA_SHARED, OS_GetInitArenaLo(OS_ARENA_SHARED));
 
-    OS_SetArenaHi(OS_ARENA_WRAM_MAIN, func_020029d0(OS_ARENA_WRAM_MAIN));
-    OS_SetArenaLo(OS_ARENA_WRAM_MAIN, func_02002ab4(OS_ARENA_WRAM_MAIN));
+    OS_SetArenaHi(OS_ARENA_WRAM_MAIN, OS_GetInitArenaHi(OS_ARENA_WRAM_MAIN));
+    OS_SetArenaLo(OS_ARENA_WRAM_MAIN, OS_GetInitArenaLo(OS_ARENA_WRAM_MAIN));
 }

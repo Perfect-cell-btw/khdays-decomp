@@ -1,12 +1,12 @@
-extern int func_02030788(void);
-extern int func_01fffde0(int a);
+extern int Session_GetLocalPlayerIndex(void);
+extern int GetEntryField20ByIndex(int a);
 
 void func_ov022_020888ec(int param_1, int param_2) {
     unsigned int *puVar2;
-    if (func_02030788() != 0) {
+    if (Session_GetLocalPlayerIndex() != 0) {
         return;
     }
-    puVar2 = (unsigned int *)func_01fffde0(param_1);
+    puVar2 = (unsigned int *)GetEntryField20ByIndex(param_1);
     if (puVar2 == 0) {
         return;
     }

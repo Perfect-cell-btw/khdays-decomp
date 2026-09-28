@@ -8,51 +8,51 @@ src/overlays/ov055/calls/func_ov055_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov055/calls/func_ov055_020b5a34.c:
+src/overlays/ov055/calls/Ov055_stateCtorMultiInitReturnHandler.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a68
 
-src/overlays/ov055/calls/func_ov055_020b5a68.c:
+src/overlays/ov055/calls/Ov055_stateDtorCleanupMulti.c:
     complete
     .text       start:0x020b5a68 end:0x020b5aa4
 
-src/overlays/ov055/calls/func_ov055_020b5aa4.c:
+src/overlays/ov055/calls/Ov055_Boot.c:
     complete
     .text       start:0x020b5aa4 end:0x020b5c98
 
-src/overlays/ov055/calls/func_ov055_020b5c98.c:
+src/overlays/ov055/calls/Ov055_initFlagStateRegionMarshal.c:
     complete
     .text       start:0x020b5c98 end:0x020b5d04
 
-src/overlays/ov055/auto/func_ov055_020b5d04.c:
+src/overlays/ov055/auto/Ov055_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5d04 end:0x020b5d2c
 
-src/overlays/ov055/calls/func_ov055_020b5d2c.c:
+src/overlays/ov055/calls/Ov055_ApplyModeChange.c:
     complete
     .text       start:0x020b5d2c end:0x020b5df8
 
-src/overlays/ov055/calls/func_ov055_020b5df8.c:
+src/overlays/ov055/calls/Ov055_UpdateAnchor.c:
     complete
     .text       start:0x020b5df8 end:0x020b5e84
 
-src/overlays/ov055/calls/func_ov055_020b5e84.c:
+src/overlays/ov055/calls/Ov055_UpdateAimAndFlagLocal.c:
     complete
     .text       start:0x020b5e84 end:0x020b5f44
 
-src/overlays/ov055/calls/func_ov055_020b5f44.c:
+src/overlays/ov055/calls/Ov055_SelectRequestHandler3.c:
     complete
     .text       start:0x020b5f44 end:0x020b5fec
 
-src/overlays/ov055/calls/func_ov055_020b5fec.c:
+src/overlays/ov055/calls/Ov055_BuildRenderHandles.c:
     complete
     .text       start:0x020b5fec end:0x020b609c
 
-src/overlays/ov055/calls/func_ov055_020b609c.c:
+src/overlays/ov055/calls/Ov055_InitGlobalRecordAndForward.c:
     complete
     .text       start:0x020b609c end:0x020b60e4
 
-src/overlays/ov055/calls/func_ov055_020b60e4.c:
+src/overlays/ov055/calls/Ov055_FreeGlobalSlotAndTwoChannels.c:
     complete
     .text       start:0x020b60e4 end:0x020b6128
 
@@ -60,107 +60,107 @@ src/overlays/ov055/calls/func_ov055_020b6128.c:
     complete
     .text       start:0x020b6128 end:0x020b6134
 
-src/overlays/ov055/calls/func_ov055_020b6134.c:
+src/overlays/ov055/calls/Ov055_ForwardWithHeaderOffset.c:
     complete
     .text       start:0x020b6134 end:0x020b6190
 
-src/overlays/ov055/calls/func_ov055_020b6190.c:
+src/overlays/ov055/calls/Ov055_ForwardPlus14IfFlag694.c:
     complete
     .text       start:0x020b6190 end:0x020b61b0
 
-src/overlays/ov055/calls/func_ov055_020b61b0.c:
+src/overlays/ov055/calls/Ov055_StartSequenceSlot.c:
     complete
     .text       start:0x020b61b0 end:0x020b62c4
 
-src/overlays/ov055/calls/func_ov055_020b62c4.c:
+src/overlays/ov055/calls/Ov055_TickChargeStates.c:
     complete
     .text       start:0x020b62c4 end:0x020b6340
 
-src/overlays/ov055/calls/func_ov055_020b6340.c:
+src/overlays/ov055/calls/Ov055_DrawNodeWithOffsetPos.c:
     complete
     .text       start:0x020b6340 end:0x020b63d0
 
-src/overlays/ov055/calls/func_ov055_020b63d0.c:
+src/overlays/ov055/calls/Ov055_OpenSecondarySubObjects.c:
     complete
     .text       start:0x020b63d0 end:0x020b6540
 
-src/overlays/ov055/calls/func_ov055_020b6540.c:
+src/overlays/ov055/calls/Ov055_BindRig.c:
     complete
     .text       start:0x020b6540 end:0x020b65e0
 
-src/overlays/ov055/calls/func_ov055_020b65e0.c:
+src/overlays/ov055/calls/Ov055_dispatchEntryList.c:
     complete
     .text       start:0x020b65e0 end:0x020b6644
 
-src/overlays/ov055/calls/func_ov055_020b6644.c:
+src/overlays/ov055/calls/Ov055_BeginHitEffectIfEnabled.c:
     complete
     .text       start:0x020b6644 end:0x020b6700
 
-src/overlays/ov055/calls/func_ov055_020b6700.c:
+src/overlays/ov055/calls/Ov055_PartAttackStep.c:
     complete
     .text       start:0x020b6700 end:0x020b680c
 
-src/overlays/ov055/calls/func_ov055_020b680c.c:
+src/overlays/ov055/calls/Ov055_FireSpread.c:
     complete
     .text       start:0x020b680c end:0x020b69e8
 
-src/overlays/ov055/calls/func_ov055_020b69e8.c:
+src/overlays/ov055/calls/Ov055_SpawnEffectAtBonePos.c:
     complete
     .text       start:0x020b69e8 end:0x020b6a5c
 
-src/overlays/ov055/calls/func_ov055_020b6a5c.c:
+src/overlays/ov055/calls/Ov055_InitStateFieldFromQuery.c:
     complete
     .text       start:0x020b6a5c end:0x020b6aa8
 
-src/overlays/ov055/calls/func_ov055_020b6aa8.c:
+src/overlays/ov055/calls/Ov055_IdleStep.c:
     complete
     .text       start:0x020b6aa8 end:0x020b6ee8
 
-src/overlays/ov055/calls/func_ov055_020b6ee8.c:
+src/overlays/ov055/calls/Ov055_ChargeStep.c:
     complete
     .text       start:0x020b6ee8 end:0x020b717c
 
-src/overlays/ov055/calls/func_ov055_020b717c.c:
+src/overlays/ov055/calls/Ov055_InitRegionRecordAndZero.c:
     complete
     .text       start:0x020b717c end:0x020b71bc
 
-src/overlays/ov055/calls/func_ov055_020b71bc.c:
+src/overlays/ov055/calls/Ov055_ClearFlagAndReleaseChild.c:
     complete
     .text       start:0x020b71bc end:0x020b71dc
 
-src/overlays/ov055/calls/func_ov055_020b71dc.c:
+src/overlays/ov055/calls/Ov055_PickChargeLevelAndDraw.c:
     complete
     .text       start:0x020b71dc end:0x020b7298
 
-src/overlays/ov055/calls/func_ov055_020b7298.c:
+src/overlays/ov055/calls/Ov055_ApplyChargeLevelOnce.c:
     complete
     .text       start:0x020b7298 end:0x020b7368
 
-src/overlays/ov055/auto/func_ov055_020b7368.c:
+src/overlays/ov055/auto/Ov055_ResetCounterFromOwner.c:
     complete
     .text       start:0x020b7368 end:0x020b739c
 
-src/overlays/ov055/calls/func_ov055_020b739c.c:
+src/overlays/ov055/calls/Ov055_AllocAndConfigureEmitter.c:
     complete
     .text       start:0x020b739c end:0x020b7434
 
-src/overlays/ov055/calls/func_ov055_020b7434.c:
+src/overlays/ov055/calls/Ov055_ReleaseAndFreeField2644.c:
     complete
     .text       start:0x020b7434 end:0x020b7450
 
-src/overlays/ov055/calls/func_ov055_020b7450.c:
+src/overlays/ov055/calls/Ov055_PushPartsArgAndRefresh.c:
     complete
     .text       start:0x020b7450 end:0x020b7494
 
-src/overlays/ov055/calls/func_ov055_020b7494.c:
+src/overlays/ov055/calls/Ov055_RefreshParts.c:
     complete
     .text       start:0x020b7494 end:0x020b74c4
 
-src/overlays/ov055/calls/func_ov055_020b74c4.c:
+src/overlays/ov055/calls/Ov055_FirePartShot.c:
     complete
     .text       start:0x020b74c4 end:0x020b75f0
 
-src/overlays/ov055/calls/func_ov055_020b75f0.c:
+src/overlays/ov055/calls/Ov055_InvokeWithDataTable.c:
     complete
     .text       start:0x020b75f0 end:0x020b7608
 

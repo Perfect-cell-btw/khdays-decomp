@@ -1,4 +1,4 @@
-extern void func_0202afdc(int a, int b);
+extern void Widget_SetTagWord(int a, int b);
 
 void func_ov022_020965b8(int param_1) {
     int iVar1;
@@ -14,12 +14,12 @@ void func_ov022_020965b8(int param_1) {
         }
         sVar2 = 0x7fff;
     }
-    func_0202afdc(*(int *)(param_1 + 0x20) + 4, sVar2);
+    Widget_SetTagWord(*(int *)(param_1 + 0x20) + 4, sVar2);
     iVar3 = param_1 + 0xdac;
     iVar1 = 0;
     do {
         if (*(char *)(param_1 + 0xda9) != 0) {
-            func_0202afdc(iVar3, sVar2);
+            Widget_SetTagWord(iVar3, sVar2);
         }
         iVar1 = iVar1 + 1;
         param_1 = param_1 + 0x164;

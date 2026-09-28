@@ -8,115 +8,115 @@ src/overlays/ov104/calls/func_ov104_020ba7c0.c:
     complete
     .text       start:0x020ba7c0 end:0x020ba7d4
 
-src/overlays/ov104/calls/func_ov104_020ba7d4.c:
+src/overlays/ov104/calls/Ov104_ClassCtor.c:
     complete
     .text       start:0x020ba7d4 end:0x020ba83c
 
-src/overlays/ov104/calls/func_ov104_020ba83c.c:
+src/overlays/ov104/calls/Ov104_ClassTeardown.c:
     complete
     .text       start:0x020ba83c end:0x020ba89c
 
-src/overlays/ov104/calls/func_ov104_020ba89c.c:
+src/overlays/ov104/calls/Ov104_Boot.c:
     complete
     .text       start:0x020ba89c end:0x020baad8
 
-src/overlays/ov104/calls/func_ov104_020baad8.c:
+src/overlays/ov104/calls/Ov104_ReloadTwoSceneResources.c:
     complete
     .text       start:0x020baad8 end:0x020bab8c
 
-src/overlays/ov104/calls/func_ov104_020bab8c.c:
+src/overlays/ov104/calls/Ov104_MapSlotKindToAnim.c:
     complete
     .text       start:0x020bab8c end:0x020bab90
 
-src/overlays/ov104/calls/func_ov104_020bab90.c:
+src/overlays/ov104/calls/Ov104_HandleMsgAndFaceHeading.c:
     complete
     .text       start:0x020bab90 end:0x020bacc8
 
-src/overlays/ov104/calls/func_ov104_020bacc8.c:
+src/overlays/ov104/calls/Ov104_ApplyModeChange.c:
     complete
     .text       start:0x020bacc8 end:0x020bae24
 
-src/overlays/ov104/calls/func_ov104_020bae24.c:
+src/overlays/ov104/calls/Ov104_UpdateAttachmentAndChannels.c:
     complete
     .text       start:0x020bae24 end:0x020baf10
 
-src/overlays/ov104/calls/func_ov104_020baf10.c:
+src/overlays/ov104/calls/Ov104_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020baf10 end:0x020baf48
 
-src/overlays/ov104/calls/func_ov104_020baf48.c:
+src/overlays/ov104/calls/Ov104_PollHitAndFlagLanded.c:
     complete
     .text       start:0x020baf48 end:0x020baffc
 
-src/overlays/ov104/calls/func_ov104_020baffc.c:
+src/overlays/ov104/calls/Ov104_InitEffectSlots.c:
     complete
     .text       start:0x020baffc end:0x020bb08c
 
-src/overlays/ov104/calls/func_ov104_020bb08c.c:
+src/overlays/ov104/calls/Ov104_ReleaseChannelAndFreeSubObject.c:
     complete
     .text       start:0x020bb08c end:0x020bb0cc
 
-src/overlays/ov104/calls/func_ov104_020bb0cc.c:
+src/overlays/ov104/calls/Ov104_AdvancePoseState.c:
     complete
     .text       start:0x020bb0cc end:0x020bb14c
 
-src/overlays/ov104/calls/func_ov104_020bb14c.c:
+src/overlays/ov104/calls/Ov104_StepEffectSlot.c:
     complete
     .text       start:0x020bb14c end:0x020bb3a0
 
-src/overlays/ov104/calls/func_ov104_020bb3a0.c:
+src/overlays/ov104/calls/Ov104_PlaceTrailMarker.c:
     complete
     .text       start:0x020bb3a0 end:0x020bb4bc
 
-src/overlays/ov104/calls/func_ov104_020bb4bc.c:
+src/overlays/ov104/calls/Ov104_InitGlobalChannelSlot.c:
     complete
     .text       start:0x020bb4bc end:0x020bb4f4
 
-src/overlays/ov104/calls/func_ov104_020bb4f4.c:
+src/overlays/ov104/calls/Ov104_CreateSubObject.c:
     complete
     .text       start:0x020bb4f4 end:0x020bb60c
 
-src/overlays/ov104/calls/func_ov104_020bb60c.c:
+src/overlays/ov104/calls/Ov104_BindRig.c:
     complete
     .text       start:0x020bb60c end:0x020bb664
 
-src/overlays/ov104/calls/func_ov104_020bb664.c:
+src/overlays/ov104/calls/Ov104_SpawnNextEffect.c:
     complete
     .text       start:0x020bb664 end:0x020bb81c
 
-src/overlays/ov104/calls/func_ov104_020bb81c.c:
+src/overlays/ov104/calls/Ov104_SpawnEffectWithVariant.c:
     complete
     .text       start:0x020bb81c end:0x020bb8a4
 
-src/overlays/ov104/calls/func_ov104_020bb8a4.c:
+src/overlays/ov104/calls/Ov104_ResolveHitPositionRaised.c:
     complete
     .text       start:0x020bb8a4 end:0x020bb948
 
-src/overlays/ov104/calls/func_ov104_020bb948.c:
+src/overlays/ov104/calls/Ov104_UpdateParts.c:
     complete
     .text       start:0x020bb948 end:0x020bba04
 
-src/overlays/ov104/calls/func_ov104_020bba04.c:
+src/overlays/ov104/calls/Ov104_TickThrowArcThenLand.c:
     complete
     .text       start:0x020bba04 end:0x020bbab8
 
-src/overlays/ov104/calls/func_ov104_020bbab8.c:
+src/overlays/ov104/calls/Ov104_BuildRenderHandles.c:
     complete
     .text       start:0x020bbab8 end:0x020bbb70
 
-src/overlays/ov104/calls/func_ov104_020bbb70.c:
+src/overlays/ov104/calls/Ov104_StoreArgToGlobalSlot22AndForward.c:
     complete
     .text       start:0x020bbb70 end:0x020bbba0
 
-src/overlays/ov104/calls/func_ov104_020bbba0.c:
+src/overlays/ov104/calls/Ov104_DescentStep.c:
     complete
     .text       start:0x020bbba0 end:0x020bbd80
 
-src/overlays/ov104/calls/func_ov104_020bbd80.c:
+src/overlays/ov104/calls/Ov104_HoverStep.c:
     complete
     .text       start:0x020bbd80 end:0x020bc07c
 
-src/overlays/ov104/calls/func_ov104_020bc07c.c:
+src/overlays/ov104/calls/Ov104_InvokeWithDataTable.c:
     complete
     .text       start:0x020bc07c end:0x020bc094
 

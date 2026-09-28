@@ -6,16 +6,16 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov013_0207fe40(void);
-extern void func_ov013_0207fe98(void);
+extern void Ov013_MarshalFieldsAndInvoke(void);
+extern void Ov013_CopyEquipTables(void);
 
 Ov_Fn data_ov013_0207fec8[6] = {
 
-    func_ov013_0207fe40,
+    Ov013_MarshalFieldsAndInvoke,
 
     0,
 
-    func_ov013_0207fe98,
+    Ov013_CopyEquipTables,
 
     0,
 

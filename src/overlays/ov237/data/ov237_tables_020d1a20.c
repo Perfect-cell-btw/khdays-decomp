@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov237_020cc08c (not yet decompiled) */
+/* read by Ov237_Construct (not yet decompiled) */
 const int data_ov237_020d1a20[19] = {
     52, 53, 54, 55, 56, 57, 58, 59,
     60, 61, 62, 63, 64, 65, 66, 67,
@@ -31,87 +31,87 @@ const int data_ov237_020d1ad0[25] = {
     51,
 };
 
-/* read by func_ov237_020cd1bc (not yet decompiled) */
+/* read by Ov237_OnDamage (not yet decompiled) */
 const u8 data_ov237_020d1b34[12] = {
     2, 3, 0, 1, 20, 0, 70, 0, 100, 0, 0, 0,
 };
 
-/* read by func_ov237_020cff0c (not yet decompiled) */
+/* read by Ov237_SplitTick (not yet decompiled) */
 const int data_ov237_020d1b40[3] = {
     1408, 0, 0,
 };
 
-/* read by func_ov237_020cf784 (not yet decompiled) */
+/* read by Ov237_SweepTick (not yet decompiled) */
 const u8 data_ov237_020d1b4c[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0,
 };
 
-/* read by func_ov237_020cf784 (not yet decompiled) */
+/* read by Ov237_SweepTick (not yet decompiled) */
 const u8 data_ov237_020d1b58[12] = {
     0, 0, 0, 0, 0, 248, 255, 255, 0, 8, 0, 0,
 };
 
-/* read by func_ov237_020cfc88 (not yet decompiled) */
+/* read by Ov237_ChargeHitTick (not yet decompiled) */
 const u8 data_ov237_020d1b64[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 0, 0,
 };
 
-/* read by func_ov237_020cf2b0 (not yet decompiled) */
+/* read by Ov237_ChargeRelease (not yet decompiled) */
 const u8 data_ov237_020d1b70[12] = {
     0, 0, 0, 0, 0, 248, 255, 255, 0, 8, 0, 0,
 };
 
-/* read by func_ov237_020cf048 (not yet decompiled) */
+/* read by Ov237_ThrowTick (not yet decompiled) */
 const u8 data_ov237_020d1b7c[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0,
 };
 
-/* read by func_ov237_020ced4c (not yet decompiled) */
+/* read by Ov237_SlamTick (not yet decompiled) */
 const u8 data_ov237_020d1b88[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 0, 0,
 };
 
-/* read by func_ov237_020ced4c (not yet decompiled) */
+/* read by Ov237_SlamTick (not yet decompiled) */
 const u8 data_ov237_020d1b94[12] = {
     0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov237_020ce980 (not yet decompiled) */
+/* read by Ov237_DoubleSlamTick (not yet decompiled) */
 const u8 data_ov237_020d1ba0[12] = {
     0, 0, 0, 0, 0, 8, 0, 0, 0, 16, 0, 0,
 };
 
-/* read by func_ov237_020ce980 (not yet decompiled) */
+/* read by Ov237_DoubleSlamTick (not yet decompiled) */
 const u8 data_ov237_020d1bac[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0,
 };
 
-/* read by func_ov237_020ce378 (not yet decompiled) */
+/* read by Ov237_StartMove (not yet decompiled) */
 const u8 data_ov237_020d1bb8[12] = {
     0, 48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov237_020cdda8 (not yet decompiled) */
+/* read by Ov237_PairTick (not yet decompiled) */
 const u8 data_ov237_020d1bc4[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 255, 255,
 };
 
-/* read by func_ov237_020cf2b0 (not yet decompiled) */
+/* read by Ov237_ChargeRelease (not yet decompiled) */
 const u8 data_ov237_020d1bd0[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0,
 };
 
-/* read by func_ov237_020cff0c (not yet decompiled) */
+/* read by Ov237_SplitTick (not yet decompiled) */
 const u8 data_ov237_020d1bdc[12] = {
     128, 249, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov237_020d05d0 (not yet decompiled) */
+/* read by Ov237_LandTick (not yet decompiled) */
 const u8 data_ov237_020d1be8[12] = {
     0, 0, 0, 0, 0, 56, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov237_020d06e0 (not yet decompiled) */
+/* read by Ov237_TickRejoin (not yet decompiled) */
 const u8 data_ov237_020d1bf4[12] = {
     0, 0, 0, 0, 0, 248, 255, 255, 0, 0, 0, 0,
 };

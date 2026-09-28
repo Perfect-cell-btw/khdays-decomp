@@ -44,7 +44,7 @@ def _load_abs_syms():
     absolute symbol, so the source takes an address and mwcc emits a literal-pool word plus a
     relocation. The ROM is already linked: that word holds the plain value (12) and points into
     no section, so dsd records no relocation there. Our object legitimately has one more reloc
-    than the ROM, and the real build resolves it from arm9.lcf -- func_ov001_0204ce40 has shipped
+    than the ROM, and the real build resolves it from arm9.lcf -- Ov001_CreateMainAndSubHeaps has shipped
     in calls/ that way with the gate at 306. Without this the tool reports `relocs difieren` on
     C the build accepts, which is the one failure mode that makes it disagree with the gate.
     """
@@ -239,7 +239,7 @@ def check(cpath, name, thumb):
         d = [i for i in range(size) if mt[i] != ob[i]]
         return 1, ">>> DIFIERE <<< byte diff @0x%X (tras enmascarar relocs)" % d[0]
     if mrel != orel:
-        # Two symbols may share one address, and func_020234e8 REQUIRES it: the
+        # Two symbols may share one address, and LatchPendingRequestOnce REQUIRES it: the
         # ROM's literal pool holds 0x0204be08 in two separate entries, and mwcc
         # emits two entries only for two distinct symbols. func_index.json resolves
         # an address to its FIRST symbol, so a legitimate alias reads as a mismatch

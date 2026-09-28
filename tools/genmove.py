@@ -175,7 +175,7 @@ def emit(name, r, steps):
               "} Hw60;", ""]
     if "sub_or" in kinds or "sub_and" in kinds:
         L += ["typedef struct {", "    unsigned f : 8;", "} B8;", ""]
-    L.append("extern void func_0203c634(int self, int slot, void (*cb)(void));")
+    L.append("extern void SetIndexedSlot(int self, int slot, void (*cb)(void));")
     L += ["extern void %s(void);" % h for h in hs]
     L += ["", "void %s(int self) {" % name, "    int *ctx;"]
     if "hw60_or" in kinds:
@@ -216,7 +216,7 @@ def emit(name, r, steps):
     for c in r["cases"]:
         for k in c["ks"]:
             L.append(ind + "case %d:" % k)
-        L += [ind + "    func_0203c634(self, 1, %s);" % c["handler"], ind + "    break;"]
+        L += [ind + "    SetIndexedSlot(self, 1, %s);" % c["handler"], ind + "    break;"]
     L.append(ind + "}")
     if guard == "beq":
         L.append("    }")

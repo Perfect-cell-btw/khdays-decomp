@@ -6,7 +6,7 @@
  * line by MVA" operations have no mwcc 3.0 intrinsic (every spelling
  * lowers to an external call), so each is written as the project's
  * one-line inline-asm helper, the same convention already used for clz
- * in func_02031440.c / func_02031130.c.
+ * in MsgQueue_Contains.c / MsgQueue_ResendForPeer.c.
  */
 
 static inline void ZeroIp(void) { asm { mov ip, #0 } }

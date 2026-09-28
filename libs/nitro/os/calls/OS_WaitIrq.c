@@ -4,7 +4,7 @@ typedef unsigned int u32;
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(OSIntrMode state);
-extern void func_02001f10(void *queue);
+extern void OS_SleepThread(void *queue);
 
 /* The IRQ check flags and the wait queue both sit near the top of DTCM. The pool
    carries the base and the compiler splits the 0x3ff8 offset itself. */
@@ -37,7 +37,7 @@ void OS_WaitIrq(BOOL clear, u32 irqFlags)
             volatile u32 *flags = (volatile u32 *)(dtcm + 0x3ff8);
 
             do {
-                func_02001f10(&data_027e006c);
+                OS_SleepThread(&data_027e006c);
             } while ((irqFlags & *flags) == 0);
         }
     }

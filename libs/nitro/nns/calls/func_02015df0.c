@@ -56,9 +56,9 @@ enum {
 extern void MIi_CpuClearFast(u32 data, void *dest, u32 size);
 extern void MIi_CpuCopy32(const void *src, void *dest, u32 size);
 extern fx32 FX_Div(fx32 numer, fx32 denom);
-extern void func_02015d80(VecFx32 *v0, const VecFx32 *v1, fx32 ratio, BOOL isV1One);
+extern void blendScaleVec_(VecFx32 *v0, const VecFx32 *v1, fx32 ratio, BOOL isV1One);
 extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void func_01ff8d18(const VecFx32 *src, VecFx32 *dst);
+extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 
 BOOL func_02015df0(NNSG3dJntAnmResult *pResult, const NNSG3dAnmObj *pAnmObj, u32 nodeID)
 {
@@ -162,17 +162,17 @@ BOOL func_02015df0(NNSG3dJntAnmResult *pResult, const NNSG3dAnmObj *pAnmObj, u32
                             ratio = p->ratio;
                         }
 
-                        func_02015d80(&pResult->scale,
+                        blendScaleVec_(&pResult->scale,
                                       &r.scale,
                                       ratio,
                                       r.flag & NNS_G3D_JNTANM_RESULTFLAG_SCALE_ONE);
 
-                        func_02015d80(&pResult->scaleEx0,
+                        blendScaleVec_(&pResult->scaleEx0,
                                       &r.scaleEx0,
                                       ratio,
                                       r.flag & NNS_G3D_JNTANM_RESULTFLAG_SCALEEX0_ONE);
 
-                        func_02015d80(&pResult->scaleEx1,
+                        blendScaleVec_(&pResult->scaleEx1,
                                       &r.scaleEx1,
                                       ratio,
                                       r.flag & NNS_G3D_JNTANM_RESULTFLAG_SCALEEX1_ONE);
@@ -213,7 +213,7 @@ BOOL func_02015df0(NNSG3dJntAnmResult *pResult, const NNSG3dAnmObj *pAnmObj, u32
             (pResult->rot._02 == 0)) {
             MIi_CpuCopy32(&keepAxisX, &pResult->rot._00, sizeof(VecFx32));
         } else {
-            func_01ff8d18((VecFx32 *)&pResult->rot._00, (VecFx32 *)&pResult->rot._00);
+            VEC_Normalize((VecFx32 *)&pResult->rot._00, (VecFx32 *)&pResult->rot._00);
         }
 
         if ((pResult->rot._20 == 0) &&
@@ -221,7 +221,7 @@ BOOL func_02015df0(NNSG3dJntAnmResult *pResult, const NNSG3dAnmObj *pAnmObj, u32
             (pResult->rot._22 == 0)) {
             MIi_CpuCopy32(&keepAxisZ, &pResult->rot._20, sizeof(VecFx32));
         } else {
-            func_01ff8d18((VecFx32 *)&pResult->rot._20, (VecFx32 *)&pResult->rot._20);
+            VEC_Normalize((VecFx32 *)&pResult->rot._20, (VecFx32 *)&pResult->rot._20);
         }
 
         VEC_CrossProduct((VecFx32 *)&pResult->rot._20,

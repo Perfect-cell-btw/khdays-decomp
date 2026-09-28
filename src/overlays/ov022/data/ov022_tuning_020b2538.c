@@ -1,5 +1,5 @@
 /* ov022 .rodata 0x020b2538-0x020b25a8: 28 words right after the part-bit templates of
- * func_ov022_0209441c. No code references them; most read as fx32 tuning values (0x10e000 = 270.0,
+ * Ov022_ArePartsDone. No code references them; most read as fx32 tuning values (0x10e000 = 270.0,
  * 0x258000 = 600.0, 0x12c000 = 300.0, 0x4000 = 4.0) mixed with small integers (0x12, 0x258). */
 
 const int data_ov022_020b2538[28] = {

@@ -20,26 +20,26 @@ typedef struct Ov008ScreenHooks {
     Ov008HookFn apfnHook[7];  /* 0x28 .. 0x40 */
 } Ov008ScreenHooks;
 
-extern void func_ov025_0209de5c(void);
-extern void func_ov025_0209df14(void);
-extern void func_ov025_0209dfbc(void);
-extern void func_ov025_0209e060(void);
-extern void func_ov025_0209e128(void);
-extern void func_ov025_0209e168(void);
-extern void func_ov025_0209e194(void);
-extern void func_ov025_0209e41c(void);
-extern void func_ov025_0209e490(void);
-extern void func_ov025_0209e5e8(void);
+extern void Ov025_Tutorial_CursorUp(void);
+extern void Ov025_Tutorial_CursorDown(void);
+extern void Ov025_Tutorial_PageUp(void);
+extern void Ov025_Tutorial_PageDown(void);
+extern void Ov025_ResetIfNotBusy(void);
+extern void Ov025_Dma0HookA(void);
+extern void Ov025_Dma0HookB(void);
+extern void Ov025_SetupListScreen(void);
+extern void Ov025_TeardownListScreen(void);
+extern void Ov025_Tutorial_HandleTouch(void);
 
 Ov008ScreenHooks data_ov025_020b516c = {
-    func_ov025_0209e41c,  /* pfnOpen */
-    func_ov025_0209e490,  /* pfnStep */
-    func_ov025_0209e5e8,  /* pfnClose */
+    Ov025_SetupListScreen,  /* pfnOpen */
+    Ov025_TeardownListScreen,  /* pfnStep */
+    Ov025_Tutorial_HandleTouch,  /* pfnClose */
     4,  /* nFlags */
     688,  /* nStateSize */
-    func_ov025_0209de5c,  /* pfnSelect */
-    func_ov025_0209df14,  /* pfnCancel */
-    { func_ov025_0209dfbc, func_ov025_0209e060 },  /* apfnAux */
-    func_ov025_0209e194,  /* pfnDone */
-    { func_ov025_0209e128, 0, 0, func_ov025_0209e168, func_ov025_0209e194, 0, func_ov025_0209e128 },  /* apfnHook */
+    Ov025_Tutorial_CursorUp,  /* pfnSelect */
+    Ov025_Tutorial_CursorDown,  /* pfnCancel */
+    { Ov025_Tutorial_PageUp, Ov025_Tutorial_PageDown },  /* apfnAux */
+    Ov025_Dma0HookB,  /* pfnDone */
+    { Ov025_ResetIfNotBusy, 0, 0, Ov025_Dma0HookA, Ov025_Dma0HookB, 0, Ov025_ResetIfNotBusy },  /* apfnHook */
 };

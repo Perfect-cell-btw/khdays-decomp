@@ -1,5 +1,5 @@
-extern unsigned int func_ov022_020b0ac8(int a);
-extern void func_ov022_020b064c(int a);
+extern unsigned int Ov022_PickComboLockA(int a);
+extern void Ov022_ResetChannelGrid(int a);
 
 struct flags_020b09e0 {
     unsigned int lo3 : 3;
@@ -10,14 +10,14 @@ struct flags_020b09e0 {
 
 void func_ov022_020b09e0(unsigned int *param_1) {
     unsigned int v;
-    param_1[0x11c] = func_ov022_020b0ac8((int)param_1);
+    param_1[0x11c] = Ov022_PickComboLockA((int)param_1);
     if ((int)(param_1[0x11d] + 1) >= *(int *)(param_1[0x11a] + 0x14)) {
         param_1[0x11d] = 0xffffffff;
     }
     if ((int)param_1[0x11d] >= 0) {
         param_1[0x11d] = param_1[0x11d] + 1;
     }
-    func_ov022_020b064c(*(int *)(param_1[0x11c] + 0x14));
+    Ov022_ResetChannelGrid(*(int *)(param_1[0x11c] + 0x14));
     if ((*param_1 & 8) == 0) {
         v = 0;
     } else {

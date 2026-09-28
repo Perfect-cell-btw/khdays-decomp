@@ -56,12 +56,12 @@ const u8 data_ov277_020d3690[16] = {
     0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov277_020ce8c4 (not yet decompiled) */
+/* read by Ov277_ArmSwingSweepA (not yet decompiled) */
 const u16 data_ov277_020d36a0[7] = {
     0, 517, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov277_020cf13c (not yet decompiled) */
+/* read by Ov277_ArmSwingSweepB (not yet decompiled) */
 const u16 data_ov277_020d36ae[7] = {
     0, 517, 0, 0, 0, 0, 0,
 };
@@ -70,7 +70,7 @@ const u16 data_ov277_020d36ae[7] = {
  *   Kick anim 4, send sprite request 4 (data_ov277_020d36bc entry 10 with the actor's +2 id), (020d02c4): unsigned short data_ov277_020d36bc[];
  *   Play anim 7, send the cue at data_ov277_020d36bc entry 9 through the actor's +0x24 hook, (020d03c8): unsigned short data_ov277_020d36bc[];
  *   Summon wind-up tick: until the +9 one-shot fires, the +0x1c timer accumulates the frame ra (020d044c): const u16 data_ov277_020d36bc[];
- *   func_ov277_020d05b4 (not yet decompiled)
+ *   Ov277_VolleyTick (not yet decompiled)
  *   Once the low nibble of the actor's +0x420 word reaches 4, the cue at data_ov277_020d36bc (020d08a4): unsigned short data_ov277_020d36bc[];
  *   Post a 4-byte sprite request (template halfword-pair with the live tile id), kick anim 5, (020d0944): int data_ov277_020d36bc; */
 const u8 data_ov277_020d36bc[48] = {
@@ -84,7 +84,7 @@ const u8 data_ov277_020d36ec[16] = {
     0, 0, 5, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov277_020d05b4 (not yet decompiled) */
+/* read by Ov277_VolleyTick (not yet decompiled) */
 const u8 data_ov277_020d36fc[16] = {
     80, 11, 0, 0, 0, 0, 0, 0, 176, 244, 255, 255, 0, 0, 0, 0,
 };

@@ -5,18 +5,18 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_0208fdc8: func_ov008_0207dfec, func_ov008_02080d28
- *   data_ov008_0208fe60: func_ov008_020846c0
- *   data_ov008_0208fe64: func_ov008_02088d44
- *   data_ov008_0208fe6c: func_ov008_02088410
- *   data_ov008_0208fe74: func_ov008_02086e7c, func_ov008_02089428
- *   data_ov008_0208fe78: func_ov008_02089428
- *   data_ov008_0208fe7c: func_ov008_02088410
- *   data_ov008_0208fe84: func_ov008_02088d44
- *   data_ov008_0208fe88: func_ov008_02088d44
- *   data_ov008_0208fe98: func_ov008_02087e14
- *   data_ov008_0208fea7: func_ov008_02088d44
- *   data_ov008_0208feb8: func_ov008_020846c0
+ *   data_ov008_0208fdc8: Ov008_MissionBuildScreenCells, Ov008_MissionPlaceCellPair
+ *   data_ov008_0208fe60: Ov008_RebuildShopList
+ *   data_ov008_0208fe64: Ov008_Shop_QuantityDialogTick
+ *   data_ov008_0208fe6c: Ov008_ShopListInput
+ *   data_ov008_0208fe74: Ov008_OpenShopDetailPanel, Ov008_ShopDetailConfirmTick
+ *   data_ov008_0208fe78: Ov008_ShopDetailConfirmTick
+ *   data_ov008_0208fe7c: Ov008_ShopListInput
+ *   data_ov008_0208fe84: Ov008_Shop_QuantityDialogTick
+ *   data_ov008_0208fe88: Ov008_Shop_QuantityDialogTick
+ *   data_ov008_0208fe98: Ov008_ShopTabSelectTick
+ *   data_ov008_0208fea7: Ov008_Shop_QuantityDialogTick
+ *   data_ov008_0208feb8: Ov008_RebuildShopList
  */
 
 typedef unsigned char u8;

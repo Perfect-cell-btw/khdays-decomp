@@ -45,13 +45,13 @@ typedef struct NNSG2dPaletteData NNSG2dPaletteData;
 typedef struct NNSG2dCharacterPosInfo NNSG2dCharacterPosInfo;
 typedef struct NNSG2dPaletteCompressInfo NNSG2dPaletteCompressInfo;
 
-extern void func_02013020(NNSG2dBGSelect bg,
+extern void SetBGControlAuto(NNSG2dBGSelect bg,
                           NNSG2dScreenFormat screenFormat,
                           GXBGColorMode colorMode,
                           int screenWidth, int screenHeight,
                           GXBGScrBase screenBase,
                           GXBGCharBase characterBase);
-extern void func_020133ac(NNSG2dBGSelect bg,
+extern void NNS_G2dBGLoadElementsEx(NNSG2dBGSelect bg,
                           const NNSG2dScreenData *pScreenData,
                           const NNSG2dCharacterData *pCharacterData,
                           const NNSG2dPaletteData *pPaletteData,
@@ -78,13 +78,13 @@ void func_02013408(NNSG2dBGSelect bg,
                    GXBGScrBase screenBase,
                    GXBGCharBase characterBase)
 {
-    func_02013020(bg,
+    SetBGControlAuto(bg,
                   GetScreenFormat(pScreenData),
                   GetScreenColorMode(pScreenData),
                   pScreenData->screenWidth,
                   pScreenData->screenHeight,
                   screenBase,
                   characterBase);
-    func_020133ac(bg, pScreenData, pCharacterData, pPaletteData,
+    NNS_G2dBGLoadElementsEx(bg, pScreenData, pCharacterData, pPaletteData,
                   pPositionInfo, pCompressInfo);
 }

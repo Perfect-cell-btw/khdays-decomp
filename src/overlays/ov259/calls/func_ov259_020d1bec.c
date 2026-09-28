@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_ov107_020c7ca4. */
-extern void *func_ov107_020c7ca4();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to Ov107_AiState_PostTickBase. */
+extern void *Ov107_AiState_PostTickBase();
 
 void *func_ov259_020d1bec() {
-    return func_ov107_020c7ca4();
+    return Ov107_AiState_PostTickBase();
 }

@@ -373,9 +373,8 @@ static inline BOOL FSi_IsArchiveSync(const volatile FSArchive *p_arc)
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
-extern void func_02001f10(OSThreadQueue *queue);   /* OS_SleepThread */
+extern void OS_SleepThread(OSThreadQueue *queue);   /* OS_SleepThread */
 extern void OS_WakeupThread(OSThreadQueue *queue);
-#define OS_SleepThread func_02001f10
 
 typedef struct {
     FSArchive *arc;
@@ -393,8 +392,7 @@ extern FSResult FSi_TranslateCommand(FSFile *p_file, FSCommandType command);
 extern void FSi_ReleaseCommand(FSFile *p_file, FSResult ret);
 extern void FSi_ExecuteAsyncCommand(FSFile *p_file);
 extern FSFile *FSi_NextCommand(FSArchive *p_arc);
-extern BOOL func_0200a4ac(FSFile *p_file, FSCommandType command);   /* FSi_SendCommand */
-#define FSi_SendCommand func_0200a4ac
+extern BOOL FSi_SendCommand(FSFile *p_file, FSCommandType command);   /* FSi_SendCommand */
 extern void FS_InitFile(FSFile *p_file);
 extern BOOL FS_CloseFile(FSFile *p_file);
 extern BOOL FS_OpenFileDirect(FSFile *p_file, FSArchive *p_arc, u32 image_top, u32 image_bottom, u32 file_index);

@@ -1,0 +1,23 @@
+extern void Ov107_PostTagUpdate(int a, int b, int c);
+extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
+extern void VEC_Subtract(void *a, void *b, void *out);
+extern int func_020050b4(int x, int y);
+extern void SetIndexedSlot(void *node, int idx, void *cb);
+extern void Ov220_ScaleVecThenSubState9(void);
+
+void Ov220_Pose2ThenAimAngle(int *node) {
+    int *state = (int *)node[1];
+    int v[3];
+    Ov107_PostTagUpdate(*state, 2, 0);
+    if (state[0x18] != 0) {
+        Ov107_BuildAndSendUpdate(*state, 0x137, 6, state[2]);
+    }
+    if (state[0x10] != 0) {
+        int r;
+        VEC_Subtract((void *)(state[0x10] + 0x190), (void *)(*state + 0xb0), v);
+        r = func_020050b4(v[0], v[2]);
+        state[4] = r;
+        state[3] = r;
+    }
+    SetIndexedSlot(node, *(signed char *)(node + 8), Ov220_ScaleVecThenSubState9);
+}

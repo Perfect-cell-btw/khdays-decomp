@@ -4,183 +4,183 @@
     .data       start:0x020baa20 end:0x020baae0 kind:data align:32
     .bss        start:0x020baae0 end:0x020baae0 kind:bss align:32
 
-src/overlays/ov069/calls/func_ov069_020b8100.c:
+src/overlays/ov069/calls/Ov069_DispatchTableEntry.c:
     complete
     .text       start:0x020b8100 end:0x020b812c
 
-src/overlays/ov069/calls/func_ov069_020b812c.c:
+src/overlays/ov069/calls/Ov069_IsItemFlagSet.c:
     complete
     .text       start:0x020b812c end:0x020b815c
 
-src/overlays/ov069/auto/func_ov069_020b815c.c:
+src/overlays/ov069/auto/Ov069_LookupRecordValue.c:
     complete
     .text       start:0x020b815c end:0x020b818e
 
-src/overlays/ov069/calls/func_ov069_020b8190.c:
+src/overlays/ov069/calls/Ov069_RequirementListMet.c:
     complete
     .text       start:0x020b8190 end:0x020b81fc
 
-src/overlays/ov069/calls/func_ov069_020b81fc.c:
+src/overlays/ov069/calls/Ov069_ResourceGE_Arg3x2a4c.c:
     complete
     .text       start:0x020b81fc end:0x020b821c
 
-src/overlays/ov069/calls/func_ov069_020b821c.c:
+src/overlays/ov069/calls/Ov069_CountActiveAndCompare.c:
     complete
     .text       start:0x020b821c end:0x020b8250
 
-src/overlays/ov069/calls/func_ov069_020b8250.c:
+src/overlays/ov069/calls/Ov069_ResourceGE.c:
     complete
     .text       start:0x020b8250 end:0x020b826c
 
-src/overlays/ov069/calls/func_ov069_020b826c.c:
+src/overlays/ov069/calls/Ov069_ResourceGE_2.c:
     complete
     .text       start:0x020b826c end:0x020b8288
 
-src/overlays/ov069/calls/func_ov069_020b8288.c:
+src/overlays/ov069/calls/Ov069_ResourceGE_3.c:
     complete
     .text       start:0x020b8288 end:0x020b82a4
 
-src/overlays/ov069/calls/func_ov069_020b82a4.c:
+src/overlays/ov069/calls/Ov069_IsFlagSetComplete.c:
     complete
     .text       start:0x020b82a4 end:0x020b8300
 
-src/overlays/ov069/calls/func_ov069_020b8300.c:
+src/overlays/ov069/calls/Ov069_ConstReturn1.c:
     complete
     .text       start:0x020b8300 end:0x020b8304
 
-src/overlays/ov069/calls/func_ov069_020b8304.c:
+src/overlays/ov069/calls/Ov069_ResourceGE_4.c:
     complete
     .text       start:0x020b8304 end:0x020b831e
 
-src/overlays/ov069/calls/func_ov069_020b8320.c:
+src/overlays/ov069/calls/Ov069_AreKeyFlagsComplete.c:
     complete
     .text       start:0x020b8320 end:0x020b8376
 
-src/overlays/ov069/calls/func_ov069_020b8378.c:
+src/overlays/ov069/calls/Ov069_ItemStockAvailable.c:
     complete
     .text       start:0x020b8378 end:0x020b83d4
 
-src/overlays/ov069/calls/func_ov069_020b83d4.c:
+src/overlays/ov069/calls/Ov069_ConstReturn1_2.c:
     complete
     .text       start:0x020b83d4 end:0x020b83d8
 
-src/overlays/ov069/calls/func_ov069_020b83d8.c:
+src/overlays/ov069/calls/Ov069_HasKind4MenuEntry.c:
     complete
     .text       start:0x020b83d8 end:0x020b847c
 
-src/overlays/ov069/calls/func_ov069_020b847c.c:
+src/overlays/ov069/calls/Ov069_ReportGlobalHalfword.c:
     complete
     .text       start:0x020b847c end:0x020b84ac
 
-src/overlays/ov069/calls/func_ov069_020b84ac.c:
+src/overlays/ov069/calls/Ov069_ReportGlobalHalfword_2.c:
     complete
     .text       start:0x020b84ac end:0x020b84dc
 
-src/overlays/ov069/calls/func_ov069_020b84dc.c:
+src/overlays/ov069/calls/Ov069_ScriptCmd_SetupBgLayer.c:
     complete
     .text       start:0x020b84dc end:0x020b8518
 
-src/overlays/ov069/calls/func_ov069_020b8518.c:
+src/overlays/ov069/calls/Ov069_InitPairAndDispatch.c:
     complete
     .text       start:0x020b8518 end:0x020b8546
 
-src/overlays/ov069/calls/func_ov069_020b8548.c:
+src/overlays/ov069/calls/Ov069_OpGiveItem.c:
     complete
     .text       start:0x020b8548 end:0x020b8604
 
-src/overlays/ov069/calls/func_ov069_020b8604.c:
+src/overlays/ov069/calls/Ov069_OpTakeItem.c:
     complete
     .text       start:0x020b8604 end:0x020b8698
 
-src/overlays/ov069/calls/func_ov069_020b8698.c:
+src/overlays/ov069/calls/Ov069_MarkCurrentItemEquipped.c:
     complete
     .text       start:0x020b8698 end:0x020b86e4
 
-src/overlays/ov069/calls/func_ov069_020b86e4.c:
+src/overlays/ov069/calls/Ov069_ShiftGlobalHalfword.c:
     complete
     .text       start:0x020b86e4 end:0x020b8704
 
-src/overlays/ov069/calls/func_ov069_020b8704.c:
+src/overlays/ov069/calls/Ov069_IsLevelFlagSet.c:
     complete
     .text       start:0x020b8704 end:0x020b876c
 
-src/overlays/ov069/calls/func_ov069_020b876c.c:
+src/overlays/ov069/calls/Ov069_TallyMissionRecords.c:
     complete
     .text       start:0x020b876c end:0x020b88c0
 
-src/overlays/ov069/calls/func_ov069_020b88c0.c:
+src/overlays/ov069/calls/Ov069_LookupTypeCode.c:
     complete
     .text       start:0x020b88c0 end:0x020b88fc
 
-src/overlays/ov069/auto/func_ov069_020b88fc.c:
+src/overlays/ov069/auto/Ov069_TagListHasFbAtLeast3.c:
     complete
     .text       start:0x020b88fc end:0x020b894c
 
-src/overlays/ov069/auto/func_ov069_020b894c.c:
+src/overlays/ov069/auto/Ov069_ClampStatBlock.c:
     complete
     .text       start:0x020b894c end:0x020b89f8
 
-src/overlays/ov069/auto/func_ov069_020b89f8.c:
+src/overlays/ov069/auto/Ov069_RecipeVisitHookNoOp.c:
     complete
     .text       start:0x020b89f8 end:0x020b89fc
 
-src/overlays/ov069/calls/func_ov069_020b89fc.c:
+src/overlays/ov069/calls/Ov069_AccumulateKeyed.c:
     complete
     .text       start:0x020b89fc end:0x020b8a90
 
-src/overlays/ov069/calls/func_ov069_020b8a90.c:
+src/overlays/ov069/calls/Ov069_AddToSecondaryTally.c:
     complete
     .text       start:0x020b8a90 end:0x020b8b98
 
-src/overlays/ov069/calls/func_ov069_020b8b98.c:
+src/overlays/ov069/calls/Ov069_AddToTally.c:
     complete
     .text       start:0x020b8b98 end:0x020b8d0c
 
-src/overlays/ov069/calls/func_ov069_020b8d0c.c:
+src/overlays/ov069/calls/Ov069_Tally_ApplyCommand.c:
     complete
     .text       start:0x020b8d0c end:0x020b8e74
 
-src/overlays/ov069/auto/func_ov069_020b8e74.c:
+src/overlays/ov069/auto/Ov069_FoldRecordIntoTally.c:
     complete
     .text       start:0x020b8e74 end:0x020b8fbc
 
-src/overlays/ov069/calls/func_ov069_020b8fbc.c:
+src/overlays/ov069/calls/Ov069_TallySlots.c:
     complete
     .text       start:0x020b8fbc end:0x020b901c
 
-src/overlays/ov069/calls/func_ov069_020b901c.c:
+src/overlays/ov069/calls/Ov069_TallyScaledSlots.c:
     complete
     .text       start:0x020b901c end:0x020b90b4
 
-src/overlays/ov069/auto/func_ov069_020b90b4.c:
+src/overlays/ov069/auto/Ov069_FindKeyedByte.c:
     complete
     .text       start:0x020b90b4 end:0x020b9100
 
-src/overlays/ov069/calls/func_ov069_020b9100.c:
+src/overlays/ov069/calls/Ov069_FindLastCraftableRecipe.c:
     complete
     .text       start:0x020b9100 end:0x020b92c8
 
-src/overlays/ov069/calls/func_ov069_020b92c8.c:
+src/overlays/ov069/calls/Ov069_MatchRecipeAndApply.c:
     complete
     .text       start:0x020b92c8 end:0x020b9734
 
-src/overlays/ov069/calls/func_ov069_020b9734.c:
+src/overlays/ov069/calls/Ov069_LayoutPanelEntry.c:
     complete
     .text       start:0x020b9734 end:0x020b9ca8
 
-src/overlays/ov069/calls/func_ov069_020b9ca8.c:
+src/overlays/ov069/calls/Ov069_FoldPanelIntoTally.c:
     complete
     .text       start:0x020b9ca8 end:0x020b9fe0
 
-src/overlays/ov069/calls/func_ov069_020b9fe0.c:
+src/overlays/ov069/calls/Ov069_ClearStateFreeLists.c:
     complete
     .text       start:0x020b9fe0 end:0x020ba100
 
-src/overlays/ov069/auto/func_ov069_020ba100.c:
+src/overlays/ov069/auto/Ov069_GetGridMaskExtent.c:
     complete
     .text       start:0x020ba100 end:0x020ba1c4
 
-src/overlays/ov069/calls/func_ov069_020ba1c4.c:
+src/overlays/ov069/calls/Ov069_InitRecordContext.c:
     complete
     .text       start:0x020ba1c4 end:0x020ba244
 
@@ -188,15 +188,15 @@ src/overlays/ov069/calls/func_ov069_020ba244.c:
     complete
     .text       start:0x020ba244 end:0x020ba250
 
-src/overlays/ov069/calls/func_ov069_020ba250.c:
+src/overlays/ov069/calls/Ov069_RebuildViewAndCountCells.c:
     complete
     .text       start:0x020ba250 end:0x020ba4cc
 
-src/overlays/ov069/calls/func_ov069_020ba4cc.c:
+src/overlays/ov069/calls/Ov069_BuildMenuGrid.c:
     complete
     .text       start:0x020ba4cc end:0x020ba71c
 
-src/overlays/ov069/calls/func_ov069_020ba71c.c:
+src/overlays/ov069/calls/Ov069_ReleaseHandleGridAndList.c:
     complete
     .text       start:0x020ba71c end:0x020ba7d0
 

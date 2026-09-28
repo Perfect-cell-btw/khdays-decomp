@@ -1,7 +1,7 @@
 /* ov011 .rodata 0x0205e130-0x0205e880: the title layout-0 animation script.
  *
- * 117 16-byte steps installed by Ov011_BuildTitleLayout0 (func_ov011_0205be38) as the scene's
- * pAnimTable / nAnimCount = 0x75 and stepped by func_ov011_0205b340: the high nibble of the first
+ * 117 16-byte steps installed by Ov011_BuildTitleLayout0 (Ov011_BuildTitleLayout0) as the scene's
+ * pAnimTable / nAnimCount = 0x75 and stepped by Ov011_TickLayoutAnimator: the high nibble of the first
  * byte is the opcode and the low nibble the targeted panes, then the step duration in frames, a
  * mode byte and a resource / argument word.
  */
@@ -21,7 +21,7 @@ typedef struct Ov011AnimEntry {
     int nResource;
 } Ov011AnimEntry;
 
-/* read by func_ov011_0205be38 (pAnimTable) and func_ov011_0205b340 */
+/* read by Ov011_BuildTitleLayout0 (pAnimTable) and Ov011_TickLayoutAnimator */
 const Ov011AnimEntry data_ov011_0205e130[117] = {
     { 0, 5, { 0 }, 515, { 0 }, 0, 0, { 0 }, 0 },
     { 3, 7, { 0 }, 6, { 0 }, 2, 0, { 0 }, 0 },

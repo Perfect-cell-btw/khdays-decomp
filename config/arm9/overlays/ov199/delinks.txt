@@ -4,251 +4,251 @@
     .data       start:0x020d6140 end:0x020d6160 kind:data align:32
     .bss        start:0x020d6160 end:0x020d6160 kind:bss align:32
 
-src/overlays/ov199/calls/func_ov199_020d37a0.c:
+src/overlays/ov199/calls/Ov199_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov199/calls/func_ov199_020d37b8.c:
+src/overlays/ov199/calls/Ov199_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov199/calls/func_ov199_020d3844.c:
+src/overlays/ov199/calls/Ov199_QueryAndCopyVecIfHit.c:
     complete
     .text       start:0x020d3844 end:0x020d388c
 
-src/overlays/ov199/calls/func_ov199_020d388c.c:
+src/overlays/ov199/calls/Ov199_TickSwingArc.c:
     complete
     .text       start:0x020d388c end:0x020d3a08
 
-src/overlays/ov199/calls/func_ov199_020d3a08.c:
+src/overlays/ov199/calls/Ov199_InitActor.c:
     complete
     .text       start:0x020d3a08 end:0x020d3cd0
 
-src/overlays/ov199/calls/func_ov199_020d3cd0.c:
+src/overlays/ov199/calls/Ov199_ReleaseSubObjectsThenNotify.c:
     complete
     .text       start:0x020d3cd0 end:0x020d3cfc
 
-src/overlays/ov199/calls/func_ov199_020d3cfc.c:
+src/overlays/ov199/calls/Ov199_ResetSetupAndPropagate.c:
     complete
     .text       start:0x020d3cfc end:0x020d3d7c
 
-src/overlays/ov199/calls/func_ov199_020d3d7c.c:
+src/overlays/ov199/calls/Ov199_AttachThreeSubNodesThenFinalize.c:
     complete
     .text       start:0x020d3d7c end:0x020d3db8
 
-src/overlays/ov199/calls/func_ov199_020d3db8.c:
+src/overlays/ov199/calls/Ov199_AttachThreeSubNodesThenFinalize_2.c:
     complete
     .text       start:0x020d3db8 end:0x020d3df4
 
-src/overlays/ov199/calls/func_ov199_020d3df4.c:
+src/overlays/ov199/calls/Ov199_ReleaseAttachmentsOnStop.c:
     complete
     .text       start:0x020d3df4 end:0x020d3ec4
 
-src/overlays/ov199/calls/func_ov199_020d3ec4.c:
+src/overlays/ov199/calls/Ov199_IssueSpawnCommand.c:
     complete
     .text       start:0x020d3ec4 end:0x020d3fe4
 
-src/overlays/ov199/calls/func_ov199_020d3fe4.c:
+src/overlays/ov199/calls/Ov199_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020d3fe4 end:0x020d401c
 
-src/overlays/ov199/calls/func_ov199_020d401c.c:
+src/overlays/ov199/calls/Ov199_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d401c end:0x020d4078
 
-src/overlays/ov199/calls/func_ov199_020d4078.c:
+src/overlays/ov199/calls/Ov199_ResolveHitReaction.c:
     complete
     .text       start:0x020d4078 end:0x020d41d8
 
-src/overlays/ov199/auto/func_ov199_020d41d8.c:
+src/overlays/ov199/auto/Ov199_RequestSubState7IfNotCurrent.c:
     complete
     .text       start:0x020d41d8 end:0x020d4204
 
-src/overlays/ov199/auto/func_ov199_020d4204.c:
+src/overlays/ov199/auto/Ov199_RequestSubState8IfIdle.c:
     complete
     .text       start:0x020d4204 end:0x020d4234
 
-src/overlays/ov199/calls/func_ov199_020d4234.c:
+src/overlays/ov199/calls/Ov199_SeedDefaultPoseAndAdvance.c:
     complete
     .text       start:0x020d4234 end:0x020d429c
 
-src/overlays/ov199/calls/func_ov199_020d429c.c:
+src/overlays/ov199/calls/Ov199_FireThreeWaySpread.c:
     complete
     .text       start:0x020d429c end:0x020d43a4
 
-src/overlays/ov199/calls/func_ov199_020d43a4.c:
+src/overlays/ov199/calls/Ov199_BuildHeadingRotation.c:
     complete
     .text       start:0x020d43a4 end:0x020d44a4
 
-src/overlays/ov199/calls/func_ov199_020d44a4.c:
+src/overlays/ov199/calls/Ov199_InitReactionSlots.c:
     complete
     .text       start:0x020d44a4 end:0x020d455c
 
-src/overlays/ov199/calls/func_ov199_020d455c.c:
+src/overlays/ov199/calls/Ov199_DispatchSubStateByte.c:
     complete
     .text       start:0x020d455c end:0x020d46e4
 
-src/overlays/ov199/calls/func_ov199_020d46e4.c:
+src/overlays/ov199/calls/Ov199_CommitTrailTransform.c:
     complete
     .text       start:0x020d46e4 end:0x020d47c8
 
-src/overlays/ov199/calls/func_ov199_020d47c8.c:
+src/overlays/ov199/calls/Ov199_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d47c8 end:0x020d4830
 
-src/overlays/ov199/calls/func_ov199_020d4830.c:
+src/overlays/ov199/calls/Ov199_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d4830 end:0x020d486c
 
-src/overlays/ov199/calls/func_ov199_020d486c.c:
+src/overlays/ov199/calls/Ov199_EnterAttackFacingTarget.c:
     complete
     .text       start:0x020d486c end:0x020d49b8
 
-src/overlays/ov199/calls/func_ov199_020d49b8.c:
+src/overlays/ov199/calls/Ov199_ClearMoveTimerAndFire.c:
     complete
     .text       start:0x020d49b8 end:0x020d4a80
 
-src/overlays/ov199/calls/func_ov199_020d4a80.c:
+src/overlays/ov199/calls/Ov199_AimAtTargetAfterWindup.c:
     complete
     .text       start:0x020d4a80 end:0x020d4ba0
 
-src/overlays/ov199/calls/func_ov199_020d4ba0.c:
+src/overlays/ov199/calls/Ov199_AiEnterHold.c:
     complete
     .text       start:0x020d4ba0 end:0x020d4bdc
 
-src/overlays/ov199/calls/func_ov199_020d4bdc.c:
+src/overlays/ov199/calls/Ov199_TickCountdownOrEnterSubState4.c:
     complete
     .text       start:0x020d4bdc end:0x020d4c40
 
-src/overlays/ov199/calls/func_ov199_020d4c40.c:
+src/overlays/ov199/calls/Ov199_BeginMoveOrRequestState2.c:
     complete
     .text       start:0x020d4c40 end:0x020d4d18
 
-src/overlays/ov199/calls/func_ov199_020d4d18.c:
+src/overlays/ov199/calls/Ov199_ApplyTransformThenReseedIfFree.c:
     complete
     .text       start:0x020d4d18 end:0x020d4d80
 
-src/overlays/ov199/calls/func_ov199_020d4d80.c:
+src/overlays/ov199/calls/Ov199_StepChargeUntilSettled.c:
     complete
     .text       start:0x020d4d80 end:0x020d4e64
 
-src/overlays/ov199/calls/func_ov199_020d4e64.c:
+src/overlays/ov199/calls/Ov199_PointHeadingCheckPose.c:
     complete
     .text       start:0x020d4e64 end:0x020d4edc
 
-src/overlays/ov199/calls/func_ov199_020d4edc.c:
+src/overlays/ov199/calls/Ov199_InvokeWithVec3ThenSetSubState5.c:
     complete
     .text       start:0x020d4edc end:0x020d4f30
 
-src/overlays/ov199/calls/func_ov199_020d4f30.c:
+src/overlays/ov199/calls/Ov199_SpawnTrailOrFail.c:
     complete
     .text       start:0x020d4f30 end:0x020d5008
 
-src/overlays/ov199/calls/func_ov199_020d5008.c:
+src/overlays/ov199/calls/Ov199_SteerTrailThenAdvance.c:
     complete
     .text       start:0x020d5008 end:0x020d50e8
 
-src/overlays/ov199/calls/func_ov199_020d50e8.c:
+src/overlays/ov199/calls/Ov199_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d50e8 end:0x020d511c
 
-src/overlays/ov199/calls/func_ov199_020d511c.c:
+src/overlays/ov199/calls/Ov199_SetPose5ThenAdvanceSlot.c:
     complete
     .text       start:0x020d511c end:0x020d5150
 
-src/overlays/ov199/calls/func_ov199_020d5150.c:
+src/overlays/ov199/calls/Ov199_CopyScaleVec3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d5150 end:0x020d51ac
 
-src/overlays/ov199/calls/func_ov199_020d51ac.c:
+src/overlays/ov199/calls/Ov199_Action4bCallback.c:
     complete
     .text       start:0x020d51ac end:0x020d5270
 
-src/overlays/ov199/calls/func_ov199_020d5270.c:
+src/overlays/ov199/calls/Ov199_AiStep_QueueAction0.c:
     complete
     .text       start:0x020d5270 end:0x020d5290
 
-src/overlays/ov199/calls/func_ov199_020d5290.c:
+src/overlays/ov199/calls/Ov199_Action49Callback.c:
     complete
     .text       start:0x020d5290 end:0x020d5330
 
-src/overlays/ov199/calls/func_ov199_020d5330.c:
+src/overlays/ov199/calls/Ov199_TimerGateHw60FlipThenAdvance.c:
     complete
     .text       start:0x020d5330 end:0x020d53c4
 
-src/overlays/ov199/calls/func_ov199_020d53c4.c:
+src/overlays/ov199/calls/Ov199_AiEnterFaceTarget.c:
     complete
     .text       start:0x020d53c4 end:0x020d5404
 
-src/overlays/ov199/calls/func_ov199_020d5404.c:
+src/overlays/ov199/calls/Ov199_FaceTargetThenIdle.c:
     complete
     .text       start:0x020d5404 end:0x020d548c
 
-src/overlays/ov199/calls/func_ov199_020d548c.c:
+src/overlays/ov199/calls/Ov199_FaceTargetCheckReach.c:
     complete
     .text       start:0x020d548c end:0x020d5510
 
-src/overlays/ov199/calls/func_ov199_020d5510.c:
+src/overlays/ov199/calls/Ov199_RunPreDispatchHook.c:
     complete
     .text       start:0x020d5510 end:0x020d5574
 
-src/overlays/ov199/calls/func_ov199_020d5574.c:
+src/overlays/ov199/calls/Ov199_AllocLinkChild3a4.c:
     complete
     .text       start:0x020d5574 end:0x020d55a8
 
-src/overlays/ov199/calls/func_ov199_020d55a8.c:
+src/overlays/ov199/calls/Ov199_InitSubActor.c:
     complete
     .text       start:0x020d55a8 end:0x020d5774
 
-src/overlays/ov199/calls/func_ov199_020d5774.c:
+src/overlays/ov199/calls/Ov199_Destroy.c:
     complete
     .text       start:0x020d5774 end:0x020d57ac
 
-src/overlays/ov199/calls/func_ov199_020d57ac.c:
+src/overlays/ov199/calls/Ov199_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d57ac end:0x020d57e4
 
-src/overlays/ov199/calls/func_ov199_020d57e4.c:
+src/overlays/ov199/calls/Ov199_PlaceNodeFromCommand.c:
     complete
     .text       start:0x020d57e4 end:0x020d58dc
 
-src/overlays/ov199/calls/func_ov199_020d58dc.c:
+src/overlays/ov199/calls/Ov199_SetSubStateAndScaleVec.c:
     complete
     .text       start:0x020d58dc end:0x020d5910
 
-src/overlays/ov199/calls/func_ov199_020d5910.c:
+src/overlays/ov199/calls/Ov199_InvertVecOnceIfFlags1And10.c:
     complete
     .text       start:0x020d5910 end:0x020d5974
 
-src/overlays/ov199/calls/func_ov199_020d5974.c:
+src/overlays/ov199/calls/Ov199_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d5974 end:0x020d59c0
 
-src/overlays/ov199/calls/func_ov199_020d59c0.c:
+src/overlays/ov199/calls/Ov199_stateInitClearSlots.c:
     complete
     .text       start:0x020d59c0 end:0x020d5a68
 
-src/overlays/ov199/calls/func_ov199_020d5a68.c:
+src/overlays/ov199/calls/Ov199_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d5a68 end:0x020d5ae0
 
-src/overlays/ov199/calls/func_ov199_020d5ae0.c:
+src/overlays/ov199/calls/Ov199_SetPoseVecFromStateOrConst.c:
     complete
     .text       start:0x020d5ae0 end:0x020d5b44
 
-src/overlays/ov199/calls/func_ov199_020d5b44.c:
+src/overlays/ov199/calls/Ov199_ResetPoseAndFlags.c:
     complete
     .text       start:0x020d5b44 end:0x020d5c00
 
-src/overlays/ov199/auto/func_ov199_020d5c00.c:
+src/overlays/ov199/auto/Ov199_ResetPoseIdleStep.c:
     complete
     .text       start:0x020d5c00 end:0x020d5c04
 
-src/overlays/ov199/calls/func_ov199_020d5c04.c:
+src/overlays/ov199/calls/Ov199_ResetOrientationAndAdvance.c:
     complete
     .text       start:0x020d5c04 end:0x020d5c90
 
-src/overlays/ov199/calls/func_ov199_020d5c90.c:
+src/overlays/ov199/calls/Ov199_SeekTarget.c:
     complete
     .text       start:0x020d5c90 end:0x020d6114
 

@@ -4,307 +4,307 @@
     .data       start:0x020d16c0 end:0x020d16e0 kind:data align:32
     .bss        start:0x020d16e0 end:0x020d16e0 kind:bss align:32
 
-src/overlays/ov185/calls/func_ov185_020cdd40.c:
+src/overlays/ov185/calls/Ov185_RegisterEntityClass.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd58
 
-src/overlays/ov185/calls/func_ov185_020cdd58.c:
+src/overlays/ov185/calls/Ov185_CreateNamedEntity_2.c:
     complete
     .text       start:0x020cdd58 end:0x020cdde8
 
-src/overlays/ov185/calls/func_ov185_020cdde8.c:
+src/overlays/ov185/calls/Ov185_Actor_Construct.c:
     complete
     .text       start:0x020cdde8 end:0x020ce034
 
-src/overlays/ov185/calls/func_ov185_020ce034.c:
+src/overlays/ov185/calls/Ov185_Destroy.c:
     complete
     .text       start:0x020ce034 end:0x020ce058
 
-src/overlays/ov185/calls/func_ov185_020ce058.c:
+src/overlays/ov185/calls/Ov185_TickAndSyncTwoModelXforms.c:
     complete
     .text       start:0x020ce058 end:0x020ce0b4
 
-src/overlays/ov185/calls/func_ov185_020ce0b4.c:
+src/overlays/ov185/calls/Ov185_RetuneRigKindSlots03.c:
     complete
     .text       start:0x020ce0b4 end:0x020ce178
 
-src/overlays/ov185/calls/func_ov185_020ce178.c:
+src/overlays/ov185/calls/Ov185_NotifySubNodesRunCallbacks.c:
     complete
     .text       start:0x020ce178 end:0x020ce1e0
 
-src/overlays/ov185/calls/func_ov185_020ce1e0.c:
+src/overlays/ov185/calls/Ov185_PingAllSubNodes.c:
     complete
     .text       start:0x020ce1e0 end:0x020ce21c
 
-src/overlays/ov185/calls/func_ov185_020ce21c.c:
+src/overlays/ov185/calls/Ov185_EventCreateDestroySubObject.c:
     complete
     .text       start:0x020ce21c end:0x020ce2a4
 
-src/overlays/ov185/calls/func_ov185_020ce2a4.c:
+src/overlays/ov185/calls/Ov185_CancelPendingRequest.c:
     complete
     .text       start:0x020ce2a4 end:0x020ce2e4
 
-src/overlays/ov185/calls/func_ov185_020ce2e4.c:
+src/overlays/ov185/calls/Ov185_NotifyAndDoubleAngle.c:
     complete
     .text       start:0x020ce2e4 end:0x020ce344
 
-src/overlays/ov185/calls/func_ov185_020ce344.c:
+src/overlays/ov185/calls/Ov185_RunSubNodeCallbacksArg.c:
     complete
     .text       start:0x020ce344 end:0x020ce384
 
-src/overlays/ov185/calls/func_ov185_020ce384.c:
+src/overlays/ov185/calls/Ov185_RunSubNodeCallbacksClose.c:
     complete
     .text       start:0x020ce384 end:0x020ce3c0
 
-src/overlays/ov185/calls/func_ov185_020ce3c0.c:
+src/overlays/ov185/calls/Ov185_CreateAiTask.c:
     complete
     .text       start:0x020ce3c0 end:0x020ce40c
 
-src/overlays/ov185/calls/func_ov185_020ce40c.c:
+src/overlays/ov185/calls/Ov185_ApplyHitReaction.c:
     complete
     .text       start:0x020ce40c end:0x020ce59c
 
-src/overlays/ov185/calls/func_ov185_020ce59c.c:
+src/overlays/ov185/calls/Ov185_DriveExitModes.c:
     complete
     .text       start:0x020ce59c end:0x020ce6fc
 
-src/overlays/ov185/calls/func_ov185_020ce6fc.c:
+src/overlays/ov185/calls/Ov185_LookAtQuat.c:
     complete
     .text       start:0x020ce6fc end:0x020ce738
 
-src/overlays/ov185/calls/func_ov185_020ce738.c:
+src/overlays/ov185/calls/Ov185_SeedVecAndArm.c:
     complete
     .text       start:0x020ce738 end:0x020ce824
 
-src/overlays/ov185/calls/func_ov185_020ce824.c:
+src/overlays/ov185/calls/Ov185_Action_Dispatch.c:
     complete
     .text       start:0x020ce824 end:0x020cea34
 
-src/overlays/ov185/calls/func_ov185_020cea34.c:
+src/overlays/ov185/calls/Ov185_Sweep_Step.c:
     complete
     .text       start:0x020cea34 end:0x020ced10
 
-src/overlays/ov185/calls/func_ov185_020ced10.c:
+src/overlays/ov185/calls/Ov185_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ced10 end:0x020ced78
 
-src/overlays/ov185/calls/func_ov185_020ced78.c:
+src/overlays/ov185/calls/Ov185_PublishLandingPose.c:
     complete
     .text       start:0x020ced78 end:0x020cedf0
 
-src/overlays/ov185/calls/func_ov185_020cedf0.c:
+src/overlays/ov185/calls/Ov185_AcquireAimTransform.c:
     complete
     .text       start:0x020cedf0 end:0x020ceec0
 
-src/overlays/ov185/calls/func_ov185_020ceec0.c:
+src/overlays/ov185/calls/Ov185_AiRollTimerQueue2.c:
     complete
     .text       start:0x020ceec0 end:0x020cef20
 
-src/overlays/ov185/calls/func_ov185_020cef20.c:
+src/overlays/ov185/calls/Ov185_SeedRandomStrafe.c:
     complete
     .text       start:0x020cef20 end:0x020cefa8
 
-src/overlays/ov185/calls/func_ov185_020cefa8.c:
+src/overlays/ov185/calls/Ov185_CircleStrafe_Step.c:
     complete
     .text       start:0x020cefa8 end:0x020cf118
 
-src/overlays/ov185/calls/func_ov185_020cf118.c:
+src/overlays/ov185/calls/Ov185_AiEnterApproach.c:
     complete
     .text       start:0x020cf118 end:0x020cf174
 
-src/overlays/ov185/calls/func_ov185_020cf174.c:
+src/overlays/ov185/calls/Ov185_ApproachTarget_Step.c:
     complete
     .text       start:0x020cf174 end:0x020cf2b0
 
-src/overlays/ov185/calls/func_ov185_020cf2b0.c:
+src/overlays/ov185/calls/Ov185_BuildTransformMatrixThenAdvance.c:
     complete
     .text       start:0x020cf2b0 end:0x020cf32c
 
-src/overlays/ov185/calls/func_ov185_020cf32c.c:
+src/overlays/ov185/calls/Ov185_DecayOffsetGiveUp.c:
     complete
     .text       start:0x020cf32c end:0x020cf3e0
 
-src/overlays/ov185/calls/func_ov185_020cf3e0.c:
+src/overlays/ov185/calls/Ov185_AiEndWithUpdate.c:
     complete
     .text       start:0x020cf3e0 end:0x020cf4a8
 
-src/overlays/ov185/calls/func_ov185_020cf4a8.c:
+src/overlays/ov185/calls/Ov185_AiEnterGuard.c:
     complete
     .text       start:0x020cf4a8 end:0x020cf53c
 
-src/overlays/ov185/calls/func_ov185_020cf53c.c:
+src/overlays/ov185/calls/Ov185_AiStep_QueueAction9OnFlag48Clear.c:
     complete
     .text       start:0x020cf53c end:0x020cf570
 
-src/overlays/ov185/calls/func_ov185_020cf570.c:
+src/overlays/ov185/calls/Ov185_AiEnterStagger.c:
     complete
     .text       start:0x020cf570 end:0x020cf5e8
 
-src/overlays/ov185/calls/func_ov185_020cf5e8.c:
+src/overlays/ov185/calls/Ov185_RingBurst_Begin.c:
     complete
     .text       start:0x020cf5e8 end:0x020cf784
 
-src/overlays/ov185/calls/func_ov185_020cf784.c:
+src/overlays/ov185/calls/Ov185_AiEnterBoneSpin.c:
     complete
     .text       start:0x020cf784 end:0x020cf7b0
 
-src/overlays/ov185/calls/func_ov185_020cf7b0.c:
+src/overlays/ov185/calls/Ov185_BoneSpin_Step.c:
     complete
     .text       start:0x020cf7b0 end:0x020cf928
 
-src/overlays/ov185/calls/func_ov185_020cf928.c:
+src/overlays/ov185/calls/Ov185_AiSetStanceAndEnd.c:
     complete
     .text       start:0x020cf928 end:0x020cf9a0
 
-src/overlays/ov185/calls/func_ov185_020cf9a0.c:
+src/overlays/ov185/calls/Ov185_CreateNamedEntity.c:
     complete
     .text       start:0x020cf9a0 end:0x020cfa2c
 
-src/overlays/ov185/calls/func_ov185_020cfa2c.c:
+src/overlays/ov185/calls/Ov185_Actor_Construct_2.c:
     complete
     .text       start:0x020cfa2c end:0x020cfbb8
 
-src/overlays/ov185/calls/func_ov185_020cfbb8.c:
+src/overlays/ov185/calls/Ov185_OnDespawn.c:
     complete
     .text       start:0x020cfbb8 end:0x020cfbd4
 
-src/overlays/ov185/calls/func_ov185_020cfbd4.c:
+src/overlays/ov185/calls/Ov185_TickAndSyncChildren.c:
     complete
     .text       start:0x020cfbd4 end:0x020cfc30
 
-src/overlays/ov185/calls/func_ov185_020cfc30.c:
+src/overlays/ov185/calls/Ov185_UnlinkHeldNode.c:
     complete
     .text       start:0x020cfc30 end:0x020cfc4c
 
-src/overlays/ov185/calls/func_ov185_020cfc4c.c:
+src/overlays/ov185/calls/Ov185_SpawnAuraOnTag5.c:
     complete
     .text       start:0x020cfc4c end:0x020cfcc0
 
-src/overlays/ov185/calls/func_ov185_020cfcc0.c:
+src/overlays/ov185/calls/Ov185_CallSetupThenSharedHandler.c:
     complete
     .text       start:0x020cfcc0 end:0x020cfcd8
 
-src/overlays/ov185/calls/func_ov185_020cfcd8.c:
+src/overlays/ov185/calls/Ov185_PlayAnimPair.c:
     complete
     .text       start:0x020cfcd8 end:0x020cfdbc
 
-src/overlays/ov185/calls/func_ov185_020cfdbc.c:
+src/overlays/ov185/calls/Ov185_RunHandlerUnlessBit0OnlyThenAdvance.c:
     complete
     .text       start:0x020cfdbc end:0x020cfdf4
 
-src/overlays/ov185/calls/func_ov185_020cfdf4.c:
+src/overlays/ov185/calls/Ov185_CreateRegistryEntryForActor.c:
     complete
     .text       start:0x020cfdf4 end:0x020cfe40
 
-src/overlays/ov185/auto/func_ov185_020cfe40.c:
+src/overlays/ov185/auto/Ov185_TickStaggerAndFlipFacing.c:
     complete
     .text       start:0x020cfe40 end:0x020cffd0
 
-src/overlays/ov185/auto/func_ov185_020cffd0.c:
+src/overlays/ov185/auto/Ov185_ReactionRequestSubState8.c:
     complete
     .text       start:0x020cffd0 end:0x020d0028
 
-src/overlays/ov185/calls/func_ov185_020d0028.c:
+src/overlays/ov185/calls/Ov185_LookAtQuat_2.c:
     complete
     .text       start:0x020d0028 end:0x020d0064
 
-src/overlays/ov185/calls/func_ov185_020d0064.c:
+src/overlays/ov185/calls/Ov185_SeedVecAndArm_2.c:
     complete
     .text       start:0x020d0064 end:0x020d0150
 
-src/overlays/ov185/calls/func_ov185_020d0150.c:
+src/overlays/ov185/calls/Ov185_DispatchSubStateByte.c:
     complete
     .text       start:0x020d0150 end:0x020d0360
 
-src/overlays/ov185/calls/func_ov185_020d0360.c:
+src/overlays/ov185/calls/Ov185_AiSlerpHeading.c:
     complete
     .text       start:0x020d0360 end:0x020d0464
 
-src/overlays/ov185/calls/func_ov185_020d0464.c:
+src/overlays/ov185/calls/Ov185_stateSetFlagsClearBit_2.c:
     complete
     .text       start:0x020d0464 end:0x020d04cc
 
-src/overlays/ov185/calls/func_ov185_020d04cc.c:
+src/overlays/ov185/calls/Ov185_PublishFinishPose.c:
     complete
     .text       start:0x020d04cc end:0x020d0564
 
-src/overlays/ov185/calls/func_ov185_020d0564.c:
+src/overlays/ov185/calls/Ov185_AcquireAimTransform_2.c:
     complete
     .text       start:0x020d0564 end:0x020d0634
 
-src/overlays/ov185/calls/func_ov185_020d0634.c:
+src/overlays/ov185/calls/Ov185_AiRollTimerQueue2B.c:
     complete
     .text       start:0x020d0634 end:0x020d0694
 
-src/overlays/ov185/calls/func_ov185_020d0694.c:
+src/overlays/ov185/calls/Ov185_PickRandomSignedSpeed.c:
     complete
     .text       start:0x020d0694 end:0x020d071c
 
-src/overlays/ov185/calls/func_ov185_020d071c.c:
+src/overlays/ov185/calls/Ov185_ChaseTargetOrReposition.c:
     complete
     .text       start:0x020d071c end:0x020d0828
 
-src/overlays/ov185/calls/func_ov185_020d0828.c:
+src/overlays/ov185/calls/Ov185_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020d0828 end:0x020d085c
 
-src/overlays/ov185/calls/func_ov185_020d085c.c:
+src/overlays/ov185/calls/Ov185_KeepDistanceOrRetreat.c:
     complete
     .text       start:0x020d085c end:0x020d09a0
 
-src/overlays/ov185/calls/func_ov185_020d09a0.c:
+src/overlays/ov185/calls/Ov185_BuildTransformMatrixThenAdvance_2.c:
     complete
     .text       start:0x020d09a0 end:0x020d0a1c
 
-src/overlays/ov185/calls/func_ov185_020d0a1c.c:
+src/overlays/ov185/calls/Ov185_AiDecelUntilSlow.c:
     complete
     .text       start:0x020d0a1c end:0x020d0af4
 
-src/overlays/ov185/calls/func_ov185_020d0af4.c:
+src/overlays/ov185/calls/Ov185_AiEndWithUpdate_2.c:
     complete
     .text       start:0x020d0af4 end:0x020d0bbc
 
-src/overlays/ov185/calls/func_ov185_020d0bbc.c:
+src/overlays/ov185/calls/Ov185_SeedTimerFireThenAdvanceSlot.c:
     complete
     .text       start:0x020d0bbc end:0x020d0c18
 
-src/overlays/ov185/calls/func_ov185_020d0c18.c:
+src/overlays/ov185/calls/Ov185_LaunchAtTarget_Step.c:
     complete
     .text       start:0x020d0c18 end:0x020d0d5c
 
-src/overlays/ov185/calls/func_ov185_020d0d5c.c:
+src/overlays/ov185/calls/Ov185_HopArc_Step.c:
     complete
     .text       start:0x020d0d5c end:0x020d0efc
 
-src/overlays/ov185/calls/func_ov185_020d0efc.c:
+src/overlays/ov185/calls/Ov185_PublishLanding.c:
     complete
     .text       start:0x020d0efc end:0x020d0ffc
 
-src/overlays/ov185/calls/func_ov185_020d0ffc.c:
+src/overlays/ov185/calls/Ov185_AiReaimStrafe.c:
     complete
     .text       start:0x020d0ffc end:0x020d1100
 
-src/overlays/ov185/calls/func_ov185_020d1100.c:
+src/overlays/ov185/calls/Ov185_BeginTumble.c:
     complete
     .text       start:0x020d1100 end:0x020d11f4
 
-src/overlays/ov185/calls/func_ov185_020d11f4.c:
+src/overlays/ov185/calls/Ov185_Orbit_Step.c:
     complete
     .text       start:0x020d11f4 end:0x020d14c0
 
-src/overlays/ov185/calls/func_ov185_020d14c0.c:
+src/overlays/ov185/calls/Ov185_AiFallTick.c:
     complete
     .text       start:0x020d14c0 end:0x020d1550
 
-src/overlays/ov185/calls/func_ov185_020d1550.c:
+src/overlays/ov185/calls/Ov185_AiEnterDown.c:
     complete
     .text       start:0x020d1550 end:0x020d15e4
 
-src/overlays/ov185/calls/func_ov185_020d15e4.c:
+src/overlays/ov185/calls/Ov185_AiQueue9OnFlagClear.c:
     complete
     .text       start:0x020d15e4 end:0x020d1618
 
-src/overlays/ov185/calls/func_ov185_020d1618.c:
+src/overlays/ov185/calls/Ov185_AiEnterDefeat.c:
     complete
     .text       start:0x020d1618 end:0x020d1690
 

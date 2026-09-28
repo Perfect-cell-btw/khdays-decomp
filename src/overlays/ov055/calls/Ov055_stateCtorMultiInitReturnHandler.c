@@ -1,0 +1,16 @@
+extern int NNSi_FndGetCurrentRootHeap(void);
+extern void Ov055_Boot(int a);
+extern void Ov055_InitRegionRecordAndZero(int a);
+extern void Ov055_AllocAndConfigureEmitter(int a);
+extern void Ov055_InitGlobalRecordAndForward(int a);
+extern void Ov022_RequestVoiceIds(int a, int b, int c);
+extern void Ov022_ArmDecoder(void);
+void *Ov055_stateCtorMultiInitReturnHandler(int param) {
+    int obj = NNSi_FndGetCurrentRootHeap();
+    Ov055_Boot(param);
+    Ov055_InitRegionRecordAndZero(obj);
+    Ov055_AllocAndConfigureEmitter(obj);
+    Ov055_InitGlobalRecordAndForward(obj);
+    Ov022_RequestVoiceIds(obj, 0x4c, 0xcc);
+    return (void *)Ov022_ArmDecoder;
+}

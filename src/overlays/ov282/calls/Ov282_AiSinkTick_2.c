@@ -1,0 +1,35 @@
+typedef struct { int x, y, z; } Vec3;
+
+extern int Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
+extern long long FX_DivFx64c(int num, int denom);
+extern void Ov107_MoveNodeAndRelayout(int obj, void *v);
+extern void SetIndexedSlot(int self, int idx, int cb);
+
+void Ov282_AiSinkTick_2(int *self) {
+    int *state = (int *)self[1];
+    long long q;
+    Vec3 v;
+
+    if (*(unsigned char *)((char *)state + 0x66) == 0) {
+        state[0x18] += *(int *)(*self + 0x2c);
+        if (state[0x18] >= 0x999) {
+            *(unsigned char *)((char *)state + 0x66) = 1;
+            Ov107_BuildAndSendUpdate(state[0], 0x16a, 4, state[1]);
+        }
+    }
+    state[0xb] += *(int *)(*self + 0x2c);
+    if (state[0xb] > 0xaaa) {
+        state[0xc] += *(int *)(*self + 0x2c);
+        q = FX_DivFx64c(state[0xc], 0x888);
+        if (q > 0x100000000LL) {
+            q = 0x100000000LL;
+        }
+        v = *(Vec3 *)(state + 0xd);
+        v.y -= (int)(((q * (long long)0x6000) + 0x80000000LL) >> 32);
+        Ov107_MoveNodeAndRelayout(state[0], &v);
+    }
+    if (*(unsigned char *)state[3] == 0) {
+        *(char *)(state[0] + 0x1c7) = 0x12;
+        SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), 0);
+    }
+}

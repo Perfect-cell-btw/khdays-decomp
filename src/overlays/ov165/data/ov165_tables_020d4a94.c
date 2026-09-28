@@ -13,7 +13,7 @@ const int data_ov165_020d4a94[5] = {
     2, 3, 5, 6, 10,
 };
 
-/* read by func_ov165_020d337c (020d337c): unsigned short data_ov165_020d4aa8[];
+/* read by Ov165_AiTrackOffsetTick (020d337c): unsigned short data_ov165_020d4aa8[];
  *   Enter the recoil state, unless the gate byte at state[0x16] says otherwise: play the (020d39c4): unsigned short data_ov165_020d4aa8[]; */
 const u8 data_ov165_020d4aa8[8] = {
     0, 0, 5, 0, 0, 0, 5, 4,
@@ -39,7 +39,7 @@ const u16 data_ov165_020d4ada[7] = {
     0, 773, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov165_020d20dc (020d20dc): const struct tbl8 data_ov165_020d4ae8; */
+/* read by Ov165_collectObjectsInSphereRec (020d20dc): const struct tbl8 data_ov165_020d4ae8; */
 const u8 data_ov165_020d4ae8[32] = {
     255, 255, 255, 255, 255, 255, 255, 255, 1, 0, 0, 0, 255, 255, 255, 255,
     255, 255, 255, 255, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0,

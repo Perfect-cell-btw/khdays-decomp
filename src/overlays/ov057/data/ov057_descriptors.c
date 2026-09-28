@@ -23,8 +23,8 @@ typedef struct {
 } Ov022SlotInitParams;
 
 extern char data_ov057_020b73c0;
-extern void func_ov057_020b5a34(void);
-extern void func_ov057_020b5a5c(void);
+extern void Ov057_InitAndReturnNextState(void);
+extern void Ov057_setupTriple(void);
 
 const Ov022SlotInitParams data_ov057_020b738c = {
     &data_ov057_020b73c0,
@@ -35,8 +35,8 @@ const Ov022SlotInitParams data_ov057_020b738c = {
 GameClassDescriptor data_ov057_020b73d4 = {
     10,
     6,
-    func_ov057_020b5a34,
-    func_ov057_020b5a5c,
+    Ov057_InitAndReturnNextState,
+    Ov057_setupTriple,
     0x3180,
     0,
 };

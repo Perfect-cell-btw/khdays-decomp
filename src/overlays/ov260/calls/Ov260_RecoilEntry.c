@@ -1,0 +1,22 @@
+/* Recoil entry of the ov260 actor: pose 0x1b plays, its +0x428 part takes motion 0x10, the +0x2c
+ * push is normalised and scaled to 1/16, +0x30 = -0x3d2b and the node moves on to 020cf90c. */
+typedef struct { int x, y, z; } Vec3;
+
+extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
+extern int Ov107_StartAnim(int part, int motion, int mode);
+extern int VEC_Normalize(Vec3 *v, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, Vec3 *v, Vec3 *d);
+extern void SetIndexedSlot(int *node, int slot, void *cb);
+extern void Ov260_TickRecoilFall(void);
+
+void Ov260_RecoilEntry(int *node)
+{
+    int *state = (int *)node[1];
+
+    Ov107_PostTagUpdate(*state, 0x1b, 0);
+    Ov107_StartAnim(*(int *)(*state + 0x428), 0x10, 0);
+    VEC_Normalize((Vec3 *)(state + 0xb), (Vec3 *)(state + 0xb));
+    ScaleVec3Fx12(0x100, (Vec3 *)(state + 0xb), (Vec3 *)(state + 0xb));
+    state[0xc] = -0x3d2b;
+    SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov260_TickRecoilFall);
+}

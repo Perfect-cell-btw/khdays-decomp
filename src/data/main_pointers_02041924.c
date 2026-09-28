@@ -4,14 +4,14 @@
  * a zero word is a null entry.
  */
 
-extern void func_02010da0(void);
-extern void func_02010dbc(void);
-extern void func_020113a4(void);
-extern void func_020113d0(void);
-extern void func_020113fc(void);
-extern void func_02011428(void);
-extern void func_02011454(void);
-extern void func_02011480(void);
+extern void AllocatorAllocForSDKHeap(void);
+extern void AllocatorFreeForSDKHeap(void);
+extern void Gfd_LoadTex(void);
+extern void Gfd_LoadTexPltt(void);
+extern void DoTransfer2dObjExtPlttMain(void);
+extern void DoTransfer2dBGExtPlttMain(void);
+extern void Gfd_LoadSubObjExtPltt(void);
+extern void Gfd_LoadSubBgExtPltt(void);
 extern int AllocatorAllocForExpHeap;
 extern int AllocatorFreeForExpHeap;
 extern int GXS_LoadBG0Char;
@@ -45,17 +45,17 @@ void *const data_02041924[4] = {
 
     &AllocatorFreeForExpHeap,
 
-    (void *)func_02010da0,
+    (void *)AllocatorAllocForSDKHeap,
 
-    (void *)func_02010dbc,
+    (void *)AllocatorFreeForSDKHeap,
 
 };
 
 void *const data_02041934[36] = {
 
-    (void *)func_020113a4,
+    (void *)Gfd_LoadTex,
 
-    (void *)func_020113d0,
+    (void *)Gfd_LoadTexPltt,
 
     0,
 
@@ -85,9 +85,9 @@ void *const data_02041934[36] = {
 
     &GX_LoadBGPltt,
 
-    (void *)func_020113fc,
+    (void *)DoTransfer2dObjExtPlttMain,
 
-    (void *)func_02011428,
+    (void *)DoTransfer2dBGExtPlttMain,
 
     &GX_LoadOAM,
 
@@ -117,9 +117,9 @@ void *const data_02041934[36] = {
 
     &GXS_LoadBGPltt,
 
-    (void *)func_02011454,
+    (void *)Gfd_LoadSubObjExtPltt,
 
-    (void *)func_02011480,
+    (void *)Gfd_LoadSubBgExtPltt,
 
     &GXS_LoadOAM,
 

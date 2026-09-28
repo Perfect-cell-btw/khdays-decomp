@@ -1,5 +1,5 @@
-extern void func_020158b0(int *arg0);
-extern void func_0202aa9c(unsigned short *arg0);
+extern void NNS_G3dGlbSetBaseScale(int *arg0);
+extern void Scene_DrawNode(unsigned short *arg0);
 void func_ov022_02093400(unsigned char *arg0) {
     int i;
     unsigned char *p;
@@ -10,8 +10,8 @@ void func_ov022_02093400(unsigned char *arg0) {
     p = arg0 + 0xb4;
     q = (unsigned short *)(arg0 + 4);
     do {
-        func_020158b0((int *)p);
-        func_0202aa9c(q);
+        NNS_G3dGlbSetBaseScale((int *)p);
+        Scene_DrawNode(q);
         i++;
         p += 0x108;
         q += 0x84;

@@ -6,22 +6,22 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov004_02050b04(void);
-extern void func_ov004_02050c60(void);
-extern void func_ov004_02050e44(void);
-extern void func_ov004_02050f9c(void);
-extern void func_ov004_02051008(void);
+extern void Ov004_FadeInTransition(void);
+extern void Ov004_UpdateRollingTransition(void);
+extern void Ov004_RunDelayedProtectionChecks(void);
+extern void Ov004_FadeOutTransition(void);
+extern void Ov004_MarkTransitionComplete(void);
 
 const Ov_Fn data_ov004_020510b8[5] = {
 
-    func_ov004_02050b04,
+    Ov004_FadeInTransition,
 
-    func_ov004_02050c60,
+    Ov004_UpdateRollingTransition,
 
-    func_ov004_02050e44,
+    Ov004_RunDelayedProtectionChecks,
 
-    func_ov004_02050f9c,
+    Ov004_FadeOutTransition,
 
-    func_ov004_02051008,
+    Ov004_MarkTransitionComplete,
 
 };

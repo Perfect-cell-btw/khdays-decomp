@@ -29,9 +29,9 @@ typedef struct NNSG3dResJntAnm {
     u32 ofsRot5;
 } NNSG3dResJntAnm;
 
-extern BOOL func_020186c4(MtxFx33 *pRot, const void *pArrayRot3,
+extern BOOL getRotDataByIdx_(MtxFx33 *pRot, const void *pArrayRot3,
                           const void *pArrayRot5, u32 info);
-extern void func_01ff8d18(const VecFx32 *src, VecFx32 *dst);
+extern void VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 
 static inline void vecCross_(const VecFx32 *a, const VecFx32 *b, VecFx32 *axb)
 {
@@ -95,8 +95,8 @@ void func_02017f68(MtxFx33 *pRot, fx32 Frame, const u32 *pData,
                     idx_sub = idx + 1;
                 }
 
-                doCross |= func_020186c4(pRot, pArrayRot3, pArrayRot5, p[idx]);
-                doCross |= func_020186c4(&tmp, pArrayRot3, pArrayRot5, p[idx_sub]);
+                doCross |= getRotDataByIdx_(pRot, pArrayRot3, pArrayRot5, p[idx]);
+                doCross |= getRotDataByIdx_(&tmp, pArrayRot3, pArrayRot5, p[idx_sub]);
 
                 pRot->_00 = (pRot->_00 * 3 + tmp._00) >> 0;
                 pRot->_01 = (pRot->_01 * 3 + tmp._01) >> 0;
@@ -105,14 +105,14 @@ void func_02017f68(MtxFx33 *pRot, fx32 Frame, const u32 *pData,
                 pRot->_11 = (pRot->_11 * 3 + tmp._11) >> 0;
                 pRot->_12 = (pRot->_12 * 3 + tmp._12) >> 0;
 
-                func_01ff8d18((VecFx32 *)&pRot->_00, (VecFx32 *)&pRot->_00);
-                func_01ff8d18((VecFx32 *)&pRot->_10, (VecFx32 *)&pRot->_10);
+                VEC_Normalize((VecFx32 *)&pRot->_00, (VecFx32 *)&pRot->_00);
+                VEC_Normalize((VecFx32 *)&pRot->_10, (VecFx32 *)&pRot->_10);
 
                 if (!doCross) {
                     pRot->_20 = (pRot->_20 * 3 + tmp._20) >> 0;
                     pRot->_21 = (pRot->_21 * 3 + tmp._21) >> 0;
                     pRot->_22 = (pRot->_22 * 3 + tmp._22) >> 0;
-                    func_01ff8d18((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
+                    VEC_Normalize((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
                 } else {
                     vecCross_((const VecFx32 *)&pRot->_00,
                               (const VecFx32 *)&pRot->_10,
@@ -133,8 +133,8 @@ ROT_INTERP_2:
     {
         MtxFx33 tmp;
         BOOL doCross = 0;
-        doCross |= func_020186c4(pRot, pArrayRot3, pArrayRot5, p[idx]);
-        doCross |= func_020186c4(&tmp, pArrayRot3, pArrayRot5, p[idx + 1]);
+        doCross |= getRotDataByIdx_(pRot, pArrayRot3, pArrayRot5, p[idx]);
+        doCross |= getRotDataByIdx_(&tmp, pArrayRot3, pArrayRot5, p[idx + 1]);
 
         pRot->_00 = (pRot->_00 + tmp._00) >> 0;
         pRot->_01 = (pRot->_01 + tmp._01) >> 0;
@@ -143,14 +143,14 @@ ROT_INTERP_2:
         pRot->_11 = (pRot->_11 + tmp._11) >> 0;
         pRot->_12 = (pRot->_12 + tmp._12) >> 0;
 
-        func_01ff8d18((VecFx32 *)&pRot->_00, (VecFx32 *)&pRot->_00);
-        func_01ff8d18((VecFx32 *)&pRot->_10, (VecFx32 *)&pRot->_10);
+        VEC_Normalize((VecFx32 *)&pRot->_00, (VecFx32 *)&pRot->_00);
+        VEC_Normalize((VecFx32 *)&pRot->_10, (VecFx32 *)&pRot->_10);
 
         if (!doCross) {
             pRot->_20 = (pRot->_20 + tmp._20) >> 0;
             pRot->_21 = (pRot->_21 + tmp._21) >> 0;
             pRot->_22 = (pRot->_22 + tmp._22) >> 0;
-            func_01ff8d18((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
+            VEC_Normalize((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
         } else {
             vecCross_((const VecFx32 *)&pRot->_00,
                       (const VecFx32 *)&pRot->_10,
@@ -160,11 +160,11 @@ ROT_INTERP_2:
     }
 
 ROT_NONINTERP:
-    if (func_020186c4(pRot, pArrayRot3, pArrayRot5, p[idx])) {
+    if (getRotDataByIdx_(pRot, pArrayRot3, pArrayRot5, p[idx])) {
         vecCross_((const VecFx32 *)&pRot->_00,
                   (const VecFx32 *)&pRot->_10,
                   (VecFx32 *)&pRot->_20);
     } else {
-        func_01ff8d18((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
+        VEC_Normalize((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
     }
 }

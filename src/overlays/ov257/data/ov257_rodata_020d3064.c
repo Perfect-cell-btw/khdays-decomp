@@ -14,7 +14,7 @@ extern int data_ov257_020d339c;
 extern int data_ov257_020d33a8;
 extern int data_ov257_020d33b4;
 
-/* read by func_ov257_020cbfc4 (not yet decompiled) */
+/* read by Ov257_EnemyConstruct (not yet decompiled) */
 const int data_ov257_020d3064[4] = {
     71, 72, 73, 74,
 };
@@ -33,7 +33,7 @@ void *const data_ov257_020d3084[4] = {
     &data_ov257_020d336c,
 };
 
-/* read by func_ov257_020cbfc4 (not yet decompiled) */
+/* read by Ov257_EnemyConstruct (not yet decompiled) */
 const int data_ov257_020d3094[12] = {
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 75, 76, 77,
@@ -72,7 +72,7 @@ const u8 data_ov257_020d31d4[136] = {
 
 /* read by Ov257_GroundStrikeEnterTick (020cf3f8): const Cmd4 data_ov257_020d325c;
  *   Ov257_HoverInTick (020d01ec): const Cmd4 data_ov257_020d325c[];
- *   func_ov257_020d02c8 (not yet decompiled)
+ *   Ov257_HealBurstTick (not yet decompiled)
  *   Ov257_SwoopEnterTick (020d096c) */
 const u8 data_ov257_020d325c[16] = {
     0, 0, 5, 0, 0, 0, 5, 8, 0, 0, 5, 1, 0, 0, 5, 2,
@@ -108,7 +108,7 @@ const u16 data_ov257_020d32b0[7] = {
     0, 2565, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov257_020d02c8 (not yet decompiled) */
+/* read by Ov257_HealBurstTick (not yet decompiled) */
 const u16 data_ov257_020d32be[7] = {
     0, 1541, 0, 0, 0, 0, 0,
 };

@@ -8,12 +8,12 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov074_020b8dd0 (020b8dd0): Vec3 data_ov074_020b9a40; */
+/* read by Ov074_Weapon_FireStraightShot (020b8dd0): Vec3 data_ov074_020b9a40; */
 const u8 data_ov074_020b9a40[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0,
 };
 
-/* read by func_ov074_020b8c24 (020b8c24): Vec3 data_ov074_020b9a4c; */
+/* read by Ov074_Weapon_FireSpreadShot (020b8c24): Vec3 data_ov074_020b9a4c; */
 const u8 data_ov074_020b9a4c[12] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0,
 };

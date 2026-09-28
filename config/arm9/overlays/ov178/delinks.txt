@@ -4,23 +4,23 @@
     .data       start:0x020ceea0 end:0x020ceec0 kind:data align:32
     .bss        start:0x020ceec0 end:0x020ceec0 kind:bss align:32
 
-src/overlays/ov178/calls/func_ov178_020cbf20.c:
+src/overlays/ov178/calls/Ov178_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov178/calls/func_ov178_020cbf38.c:
+src/overlays/ov178/calls/Ov178_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov178/calls/func_ov178_020cbfc4.c:
+src/overlays/ov178/calls/Ov178_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc020
 
-src/overlays/ov178/calls/func_ov178_020cc020.c:
+src/overlays/ov178/calls/Ov178_Construct.c:
     complete
     .text       start:0x020cc020 end:0x020cc344
 
-src/overlays/ov178/calls/func_ov178_020cc344.c:
+src/overlays/ov178/calls/Ov178_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020cc344 end:0x020cc384
 
@@ -28,227 +28,227 @@ src/overlays/ov178/calls/func_ov178_020cc384.c:
     complete
     .text       start:0x020cc384 end:0x020cc390
 
-src/overlays/ov178/calls/func_ov178_020cc390.c:
+src/overlays/ov178/calls/Ov178_ForwardEventToChild.c:
     complete
     .text       start:0x020cc390 end:0x020cc3b8
 
-src/overlays/ov178/calls/func_ov178_020cc3b8.c:
+src/overlays/ov178/calls/Ov178_NotifyPartThenBase.c:
     complete
     .text       start:0x020cc3b8 end:0x020cc3e0
 
-src/overlays/ov178/calls/func_ov178_020cc3e0.c:
+src/overlays/ov178/calls/Ov178_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc3e0 end:0x020cc688
 
-src/overlays/ov178/calls/func_ov178_020cc688.c:
+src/overlays/ov178/calls/Ov178_Model_SetTrack0.c:
     complete
     .text       start:0x020cc688 end:0x020cc6b8
 
-src/overlays/ov178/calls/func_ov178_020cc6b8.c:
+src/overlays/ov178/calls/Ov178_Tick.c:
     complete
     .text       start:0x020cc6b8 end:0x020cc848
 
-src/overlays/ov178/calls/func_ov178_020cc848.c:
+src/overlays/ov178/calls/Ov178_registryCreateEntry.c:
     complete
     .text       start:0x020cc848 end:0x020cc8a4
 
-src/overlays/ov178/calls/func_ov178_020cc8a4.c:
+src/overlays/ov178/calls/Ov178_OnHit.c:
     complete
     .text       start:0x020cc8a4 end:0x020ccac8
 
-src/overlays/ov178/auto/func_ov178_020ccac8.c:
+src/overlays/ov178/auto/Ov178_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020ccac8 end:0x020ccaf4
 
-src/overlays/ov178/calls/func_ov178_020ccaf4.c:
+src/overlays/ov178/calls/Ov178_FaceTargetGetClearance.c:
     complete
     .text       start:0x020ccaf4 end:0x020ccb8c
 
-src/overlays/ov178/auto/func_ov178_020ccb8c.c:
+src/overlays/ov178/auto/Ov178_IsChildInactive.c:
     complete
     .text       start:0x020ccb8c end:0x020ccbcc
 
-src/overlays/ov178/calls/func_ov178_020ccbcc.c:
+src/overlays/ov178/calls/Ov178_stateInitTransformSlots.c:
     complete
     .text       start:0x020ccbcc end:0x020cccb8
 
-src/overlays/ov178/calls/func_ov178_020cccb8.c:
+src/overlays/ov178/calls/Ov178_ov115_DispatchSubStateByte.c:
     complete
     .text       start:0x020cccb8 end:0x020cceb8
 
-src/overlays/ov178/calls/func_ov178_020cceb8.c:
+src/overlays/ov178/calls/Ov178_stDivStoreField.c:
     complete
     .text       start:0x020cceb8 end:0x020ccf58
 
-src/overlays/ov178/calls/func_ov178_020ccf58.c:
+src/overlays/ov178/calls/Ov178_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccf58 end:0x020ccfc0
 
-src/overlays/ov178/calls/func_ov178_020ccfc0.c:
+src/overlays/ov178/calls/Ov178_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020ccfc0 end:0x020cd044
 
-src/overlays/ov178/calls/func_ov178_020cd044.c:
+src/overlays/ov178/calls/Ov178_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020cd044 end:0x020cd110
 
-src/overlays/ov178/calls/func_ov178_020cd110.c:
+src/overlays/ov178/calls/Ov178_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020cd110 end:0x020cd1e8
 
-src/overlays/ov178/calls/func_ov178_020cd1e8.c:
+src/overlays/ov178/calls/Ov178_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd1e8 end:0x020cd21c
 
-src/overlays/ov178/calls/func_ov178_020cd21c.c:
+src/overlays/ov178/calls/Ov178_stateRandomInitFull.c:
     complete
     .text       start:0x020cd21c end:0x020cd2a8
 
-src/overlays/ov178/calls/func_ov178_020cd2a8.c:
+src/overlays/ov178/calls/Ov178_OrbitTick.c:
     complete
     .text       start:0x020cd2a8 end:0x020cd69c
 
-src/overlays/ov178/calls/func_ov178_020cd69c.c:
+src/overlays/ov178/calls/Ov178_AiEnterHover.c:
     complete
     .text       start:0x020cd69c end:0x020cd6e0
 
-src/overlays/ov178/calls/func_ov178_020cd6e0.c:
+src/overlays/ov178/calls/Ov178_HoverBobTick.c:
     complete
     .text       start:0x020cd6e0 end:0x020cd938
 
-src/overlays/ov178/calls/func_ov178_020cd938.c:
+src/overlays/ov178/calls/Ov178_AiStep_StartTag1.c:
     complete
     .text       start:0x020cd938 end:0x020cd974
 
-src/overlays/ov178/calls/func_ov178_020cd974.c:
+src/overlays/ov178/calls/Ov178_StalkTick.c:
     complete
     .text       start:0x020cd974 end:0x020cdb58
 
-src/overlays/ov178/calls/func_ov178_020cdb58.c:
+src/overlays/ov178/calls/Ov178_stateRandomDirValue.c:
     complete
     .text       start:0x020cdb58 end:0x020cdbc8
 
-src/overlays/ov178/calls/func_ov178_020cdbc8.c:
+src/overlays/ov178/calls/Ov178_CircleTick.c:
     complete
     .text       start:0x020cdbc8 end:0x020cddb0
 
-src/overlays/ov178/calls/func_ov178_020cddb0.c:
+src/overlays/ov178/calls/Ov178_BeginGuardPose.c:
     complete
     .text       start:0x020cddb0 end:0x020cde88
 
-src/overlays/ov178/calls/func_ov178_020cde88.c:
+src/overlays/ov178/calls/Ov178_TrackTargetUntilCharge.c:
     complete
     .text       start:0x020cde88 end:0x020cdfac
 
-src/overlays/ov178/calls/func_ov178_020cdfac.c:
+src/overlays/ov178/calls/Ov178_DashTick.c:
     complete
     .text       start:0x020cdfac end:0x020ce184
 
-src/overlays/ov178/calls/func_ov178_020ce184.c:
+src/overlays/ov178/calls/Ov178_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020ce184 end:0x020ce220
 
-src/overlays/ov178/calls/func_ov178_020ce220.c:
+src/overlays/ov178/calls/Ov178_ApproachTick.c:
     complete
     .text       start:0x020ce220 end:0x020ce340
 
-src/overlays/ov178/calls/func_ov178_020ce340.c:
+src/overlays/ov178/calls/Ov178_AiEnterAnim3WithPartReset.c:
     complete
     .text       start:0x020ce340 end:0x020ce380
 
-src/overlays/ov178/calls/func_ov178_020ce380.c:
+src/overlays/ov178/calls/Ov178_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020ce380 end:0x020ce3b4
 
-src/overlays/ov178/calls/func_ov178_020ce3b4.c:
+src/overlays/ov178/calls/Ov178_HoverTick.c:
     complete
     .text       start:0x020ce3b4 end:0x020ce4f0
 
-src/overlays/ov178/calls/func_ov178_020ce4f0.c:
+src/overlays/ov178/calls/Ov178_AiEndWithUpdate.c:
     complete
     .text       start:0x020ce4f0 end:0x020ce5dc
 
-src/overlays/ov178/calls/func_ov178_020ce5dc.c:
+src/overlays/ov178/calls/Ov178_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020ce5dc end:0x020ce67c
 
-src/overlays/ov178/calls/func_ov178_020ce67c.c:
+src/overlays/ov178/calls/Ov178_stateTimerToggleFlags.c:
     complete
     .text       start:0x020ce67c end:0x020ce710
 
-src/overlays/ov178/calls/func_ov178_020ce710.c:
+src/overlays/ov178/calls/Ov178_RunSetupThenSetHw60HighBit0.c:
     complete
     .text       start:0x020ce710 end:0x020ce740
 
-src/overlays/ov178/calls/func_ov178_020ce740.c:
+src/overlays/ov178/calls/Ov178_ForwardToAiTaskWhenReady.c:
     complete
     .text       start:0x020ce740 end:0x020ce75c
 
-src/overlays/ov178/calls/func_ov178_020ce75c.c:
+src/overlays/ov178/calls/Ov178_AllocLinkChild390.c:
     complete
     .text       start:0x020ce75c end:0x020ce790
 
-src/overlays/ov178/calls/func_ov178_020ce790.c:
+src/overlays/ov178/calls/Ov178_Construct_2.c:
     complete
     .text       start:0x020ce790 end:0x020ce864
 
-src/overlays/ov178/calls/func_ov178_020ce864.c:
+src/overlays/ov178/calls/Ov178_OnDespawn.c:
     complete
     .text       start:0x020ce864 end:0x020ce880
 
-src/overlays/ov178/calls/func_ov178_020ce880.c:
+src/overlays/ov178/calls/Ov178_ConfigureSubObjectThenForward.c:
     complete
     .text       start:0x020ce880 end:0x020ce8a8
 
-src/overlays/ov178/calls/func_ov178_020ce8a8.c:
+src/overlays/ov178/calls/Ov178_HandleMessage.c:
     complete
     .text       start:0x020ce8a8 end:0x020ce918
 
-src/overlays/ov178/calls/func_ov178_020ce918.c:
+src/overlays/ov178/calls/Ov178_Model_ReapplyTracks.c:
     complete
     .text       start:0x020ce918 end:0x020ce9b0
 
-src/overlays/ov178/calls/func_ov178_020ce9b0.c:
+src/overlays/ov178/calls/Ov178_ReleaseField38cUnlessState1ThenAdvance.c:
     complete
     .text       start:0x020ce9b0 end:0x020ce9e8
 
-src/overlays/ov178/calls/func_ov178_020ce9e8.c:
+src/overlays/ov178/calls/Ov178_SetTimerA000.c:
     complete
     .text       start:0x020ce9e8 end:0x020ce9f4
 
-src/overlays/ov178/calls/func_ov178_020ce9f4.c:
+src/overlays/ov178/calls/Ov178_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020ce9f4 end:0x020cea50
 
-src/overlays/ov178/calls/func_ov178_020cea50.c:
+src/overlays/ov178/calls/Ov178_stateInitClearSlots.c:
     complete
     .text       start:0x020cea50 end:0x020ceaf8
 
-src/overlays/ov178/calls/func_ov178_020ceaf8.c:
+src/overlays/ov178/calls/Ov178_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020ceaf8 end:0x020ceb70
 
-src/overlays/ov178/auto/func_ov178_020ceb70.c:
+src/overlays/ov178/auto/Ov178_AiSlot2NoOp.c:
     complete
     .text       start:0x020ceb70 end:0x020ceb74
 
-src/overlays/ov178/calls/func_ov178_020ceb74.c:
+src/overlays/ov178/calls/Ov178_ToggleStanceFlags.c:
     complete
     .text       start:0x020ceb74 end:0x020cebe0
 
-src/overlays/ov178/calls/func_ov178_020cebe0.c:
+src/overlays/ov178/calls/Ov178_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020cebe0 end:0x020cec18
 
-src/overlays/ov178/calls/func_ov178_020cec18.c:
+src/overlays/ov178/calls/Ov178_SettleEnter.c:
     complete
     .text       start:0x020cec18 end:0x020cecdc
 
-src/overlays/ov178/calls/func_ov178_020cecdc.c:
+src/overlays/ov178/calls/Ov178_SettleHold.c:
     complete
     .text       start:0x020cecdc end:0x020cee40
 
-src/overlays/ov178/calls/func_ov178_020cee40.c:
+src/overlays/ov178/calls/Ov178_AiStep_QueueAction0OnAnimEnd.c:
     complete
     .text       start:0x020cee40 end:0x020cee70
 

@@ -49,7 +49,7 @@ pop  {r4..pc}                          ; real epilogue
 ```
 
 The decryptor at `0x0208a7e0` (already in the repo as an `asm` stub,
-`src/overlays/ov028/asm_stubs/calls/func_ov028_0208a7e0.c`) is a 16-iteration loop
+`src/overlays/ov028/asm_stubs/calls/Ov028_DSProt_Encryptor_StartRange.c`) is a 16-iteration loop
 using the magic constant `0x88888889` (reciprocal divide by 15) and an XOR with
 `0xff`, ending in `DC_FlushRange` + `IC_InvalidateRange` — it flushes the data cache
 and invalidates the instruction cache because it has just rewritten code the CPU is
@@ -69,7 +69,7 @@ about to execute. `0x0208a8ac` re-encrypts on the way out.
 
 ## Consequence for ov001 (RESOLVED 2026-07-10 — the encryption never blocked the link)
 
-`func_ov001_0204ce40` (`ov001_CreateMainAndSubHeaps`, a heap bootstrap — NOT sound
+`Ov001_CreateMainAndSubHeaps` (`ov001_CreateMainAndSubHeaps`, a heap bootstrap — NOT sound
 related) calls five of these encrypted ov028 functions (`0x0208b490`, `b200`, `b040`,
 `b120`, `b2e0`). The earlier conclusion here — "it cannot be compiled to linkable
 matched C because those callees are not code in the static image" — was **wrong**.

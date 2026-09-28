@@ -1,4 +1,4 @@
-/* ov009 .rodata 0x02055f54-0x02055f6c: menu header limits and the menu object tracker config (func_ov009_0204dc00). */
+/* ov009 .rodata 0x02055f54-0x02055f6c: menu header limits and the menu object tracker config (Ov009_Menu_Init). */
 
 typedef void (*TrackerCallback)(void);
 
@@ -18,8 +18,8 @@ const struct {
     unsigned short second;
 } data_ov009_02055f54 = { 12, 2 };
 
-extern void func_ov009_0204db68(void);
-extern void func_ov009_0204db78(void);
+extern void Ov009_ResourceEntryCallback(void);
+extern void Ov009_ResourceNodeCallback(void);
 
-/* Read by func_ov009_0204dc00. */
-const ResourceTrackerConfig data_ov009_02055f58 = { 256, 32, 32, func_ov009_0204db68, func_ov009_0204db78 };
+/* Read by Ov009_Menu_Init. */
+const ResourceTrackerConfig data_ov009_02055f58 = { 256, 32, 32, Ov009_ResourceEntryCallback, Ov009_ResourceNodeCallback };

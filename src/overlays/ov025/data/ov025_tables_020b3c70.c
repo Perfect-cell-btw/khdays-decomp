@@ -5,11 +5,11 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov025_020b3c70: func_ov025_02090140
+ *   data_ov025_020b3c70: Ov025_InitGridMenuWidgets
  *   data_ov025_020b3c78: (no C reader yet)
- *   data_ov025_020b3c84: func_ov025_02095cbc
- *   data_ov025_020b3c90: func_ov025_0208fae0
- *   data_ov025_020b3c9c: func_ov025_0209522c
+ *   data_ov025_020b3c84: Ov025_BuildActionPage
+ *   data_ov025_020b3c90: Ov025_InitializeSavePageLayout
+ *   data_ov025_020b3c9c: Ov025_ShowGridPage
  */
 
 typedef unsigned char u8;

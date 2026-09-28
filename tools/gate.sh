@@ -84,6 +84,16 @@ if [ "$cfg_ok" != "1" ]; then
     exit 1
 fi
 
+echo "== 5b/8 ninguna reclamacion de DATA perdida frente a HEAD"
+# POR QUE ESTA AQUI (2026-09-28): la .rodata local de una funcion solo la reclama la linea del
+# delinks.txt commiteado bajo la ruta de su fuente. Renombrar el fichero la perdia y dsd rellenaba
+# el rango con bytes de la ROM: verde salvo que el objeto dejara relocs colgando (ov107 si, y asi
+# se vio). Quitar una reclamacion a proposito: KHDAYS_ALLOW_CLAIM_LOSS=1 bash tools/gate.sh
+if ! python tools/audit_data_claims.py; then
+    echo "!! configure ha dejado de reclamar DATA que HEAD reclamaba (arriba, con su fuente anterior)"
+    exit 1
+fi
+
 echo "== 6/8 ninja (compila todos los objetos)"
 if ! ninja; then
     echo "!! ninja FALLO -- el dsd check que viene despues seria un falso verde. Abortando."
@@ -116,6 +126,11 @@ echo "== 8b/8 informe de progreso (lo mismo que ejecuta el CI)"
 if ! python tools/gen_report.py > build/gen_report_gate.log 2>&1; then
     tail -5 build/gen_report_gate.log
     echo "!! gen_report.py falla (el CI tambien): python tools/verify_report_asm.py"
+    exit 1
+fi
+if ! python -m unittest discover -s tools/tests -p 'test_*.py' > build/unittest_gate.log 2>&1; then
+    tail -15 build/unittest_gate.log
+    echo "!! los tests de tools/tests fallan (el CI tambien)"
     exit 1
 fi
 echo "GATE VERDE (306/306, modulos enlazados)"

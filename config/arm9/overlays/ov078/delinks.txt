@@ -8,51 +8,51 @@ src/overlays/ov078/calls/func_ov078_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov078/calls/func_ov078_020b8114.c:
+src/overlays/ov078/calls/Ov078_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b813c
 
-src/overlays/ov078/calls/func_ov078_020b813c.c:
+src/overlays/ov078/calls/Ov078_stateDtorCleanup.c:
     complete
     .text       start:0x020b813c end:0x020b817c
 
-src/overlays/ov078/calls/func_ov078_020b817c.c:
+src/overlays/ov078/calls/Ov078_Boot.c:
     complete
     .text       start:0x020b817c end:0x020b8360
 
-src/overlays/ov078/calls/func_ov078_020b8360.c:
+src/overlays/ov078/calls/Ov078_ReloadTwoSceneResourcesAlt.c:
     complete
     .text       start:0x020b8360 end:0x020b8428
 
-src/overlays/ov078/auto/func_ov078_020b8428.c:
+src/overlays/ov078/auto/Ov078_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b8428 end:0x020b8450
 
-src/overlays/ov078/calls/func_ov078_020b8450.c:
+src/overlays/ov078/calls/Ov078_ApplyMode.c:
     complete
     .text       start:0x020b8450 end:0x020b8768
 
-src/overlays/ov078/calls/func_ov078_020b8768.c:
+src/overlays/ov078/calls/Ov078_UpdateAnchorsAndChannels.c:
     complete
     .text       start:0x020b8768 end:0x020b89b4
 
-src/overlays/ov078/calls/func_ov078_020b89b4.c:
+src/overlays/ov078/calls/Ov078_StepSlotAndForward.c:
     complete
     .text       start:0x020b89b4 end:0x020b89ec
 
-src/overlays/ov078/calls/func_ov078_020b89ec.c:
+src/overlays/ov078/calls/Ov078_HandleMsg.c:
     complete
     .text       start:0x020b89ec end:0x020b8b88
 
-src/overlays/ov078/calls/func_ov078_020b8b88.c:
+src/overlays/ov078/calls/Ov078_ResetFlagsAndBuildTwoModels.c:
     complete
     .text       start:0x020b8b88 end:0x020b8c10
 
-src/overlays/ov078/calls/func_ov078_020b8c10.c:
+src/overlays/ov078/calls/Ov078_SetupSequenceSlots.c:
     complete
     .text       start:0x020b8c10 end:0x020b8d1c
 
-src/overlays/ov078/calls/func_ov078_020b8d1c.c:
+src/overlays/ov078/calls/Ov078_ProcessTwoGlobalSlotsThenNotify.c:
     complete
     .text       start:0x020b8d1c end:0x020b8d60
 
@@ -60,97 +60,97 @@ src/overlays/ov078/calls/func_ov078_020b8d60.c:
     complete
     .text       start:0x020b8d60 end:0x020b8d6c
 
-src/overlays/ov078/calls/func_ov078_020b8d6c.c:
+src/overlays/ov078/calls/Ov078_ProcessTwoSlotsThenTail.c:
     complete
     .text       start:0x020b8d6c end:0x020b8db8
 
-src/overlays/ov078/calls/func_ov078_020b8db8.c:
+src/overlays/ov078/calls/Ov078_ProcessTwoSlotsIfFlagSet.c:
     complete
     .text       start:0x020b8db8 end:0x020b8df8
 
-src/overlays/ov078/calls/func_ov078_020b8df8.c:
+src/overlays/ov078/calls/Ov078_InitSubActionWithClampedArg.c:
     complete
     .text       start:0x020b8df8 end:0x020b8e34
 
-src/overlays/ov078/calls/func_ov078_020b8e34.c:
+src/overlays/ov078/calls/Ov078_TickChargeStateGated.c:
     complete
     .text       start:0x020b8e34 end:0x020b8ebc
 
-src/overlays/ov078/calls/func_ov078_020b8ebc.c:
+src/overlays/ov078/calls/Ov078_DrawNodeWithResolvedPos.c:
     complete
     .text       start:0x020b8ebc end:0x020b8f30
 
-src/overlays/ov078/calls/func_ov078_020b8f30.c:
+src/overlays/ov078/calls/Ov078_GetAttackAnchor.c:
     complete
     .text       start:0x020b8f30 end:0x020b9048
 
-src/overlays/ov078/calls/func_ov078_020b9048.c:
+src/overlays/ov078/calls/Ov078_StepStoredShot.c:
     complete
     .text       start:0x020b9048 end:0x020b91b4
 
-src/overlays/ov078/calls/func_ov078_020b91b4.c:
+src/overlays/ov078/calls/Ov078_CreateSubObject.c:
     complete
     .text       start:0x020b91b4 end:0x020b92e4
 
-src/overlays/ov078/calls/func_ov078_020b92e4.c:
+src/overlays/ov078/calls/Ov078_BindRig.c:
     complete
     .text       start:0x020b92e4 end:0x020b933c
 
-src/overlays/ov078/calls/func_ov078_020b933c.c:
+src/overlays/ov078/calls/Ov078_FreeAttachedGroup.c:
     complete
     .text       start:0x020b933c end:0x020b9360
 
-src/overlays/ov078/calls/func_ov078_020b9360.c:
+src/overlays/ov078/calls/Ov078_dispatchEntryList.c:
     complete
     .text       start:0x020b9360 end:0x020b93c4
 
-src/overlays/ov078/calls/func_ov078_020b93c4.c:
+src/overlays/ov078/calls/Ov078_SetMode4Delay3000.c:
     complete
     .text       start:0x020b93c4 end:0x020b93dc
 
-src/overlays/ov078/calls/func_ov078_020b93dc.c:
+src/overlays/ov078/calls/Ov078_TickThrowArcWithLimit.c:
     complete
     .text       start:0x020b93dc end:0x020b94a0
 
-src/overlays/ov078/calls/func_ov078_020b94a0.c:
+src/overlays/ov078/calls/Ov078_ReleaseSlotHandles.c:
     complete
     .text       start:0x020b94a0 end:0x020b9508
 
-src/overlays/ov078/calls/func_ov078_020b9508.c:
+src/overlays/ov078/calls/Ov078_GetBandStepCount.c:
     complete
     .text       start:0x020b9508 end:0x020b9590
     .rodata     start:0x020ba314 end:0x020ba38c
 
-src/overlays/ov078/calls/func_ov078_020b9590.c:
+src/overlays/ov078/calls/Ov078_PushAttackEvents.c:
     complete
     .text       start:0x020b9590 end:0x020b9700
     .rodata     start:0x020ba38c end:0x020ba404
 
-src/overlays/ov078/calls/func_ov078_020b9700.c:
+src/overlays/ov078/calls/Ov078_StartFlight.c:
     complete
     .text       start:0x020b9700 end:0x020b986c
 
-src/overlays/ov078/calls/func_ov078_020b986c.c:
+src/overlays/ov078/calls/Ov078_FireStoredShot.c:
     complete
     .text       start:0x020b986c end:0x020b99c8
 
-src/overlays/ov078/calls/func_ov078_020b99c8.c:
+src/overlays/ov078/calls/Ov078_LazyInitSlot21IfUnset.c:
     complete
     .text       start:0x020b99c8 end:0x020b9a00
 
-src/overlays/ov078/calls/func_ov078_020b9a00.c:
+src/overlays/ov078/calls/Ov078_IdleStep.c:
     complete
     .text       start:0x020b9a00 end:0x020b9dec
 
-src/overlays/ov078/calls/func_ov078_020b9dec.c:
+src/overlays/ov078/calls/Ov078_ChargeStep.c:
     complete
     .text       start:0x020b9dec end:0x020ba094
 
-src/overlays/ov078/calls/func_ov078_020ba094.c:
+src/overlays/ov078/calls/Ov078_LandingStep.c:
     complete
     .text       start:0x020ba094 end:0x020ba258
 
-src/overlays/ov078/calls/func_ov078_020ba258.c:
+src/overlays/ov078/calls/Ov078_InvokeWithDataTable.c:
     complete
     .text       start:0x020ba258 end:0x020ba270
 

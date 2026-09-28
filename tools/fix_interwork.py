@@ -6,8 +6,8 @@ and NDS overlays OVERLAP in virtual address space (LCF: ORIGIN=AFTER(...)
 groups). mwld's -interworking pass resolves BL-vs-BLX per final *address*, so
 a THUMB function in overlay A at the same address as an ARM function in
 overlay B poisons the decision for calls in B. Proof: the ov035 call to
-func_ov035_020b3a30 (ARM) linked as thumb BL because ov043 has THUMB
-func_ov043_020b3a18 covering 0x020b3a30; the same-shape call to 0x020b38e0
+Ov035_InitEffectSlotsWithTimings (ARM) linked as thumb BL because ov043 has THUMB
+Ov043_BuildPeerGroup covering 0x020b3a30; the same-shape call to 0x020b38e0
 (ARM in ALL 16 overlapping overlays) linked correctly as BLX. The original
 game was linked per-overlay and never had this ambiguity.
 

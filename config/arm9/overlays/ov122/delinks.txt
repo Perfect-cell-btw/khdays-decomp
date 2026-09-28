@@ -4,163 +4,163 @@
     .data       start:0x020d1b60 end:0x020d1bc0 kind:data align:32
     .bss        start:0x020d1bc0 end:0x020d1bc0 kind:bss align:32
 
-src/overlays/ov122/calls/func_ov122_020cfb60.c:
+src/overlays/ov122/calls/Ov122_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov122/calls/func_ov122_020cfb78.c:
+src/overlays/ov122/calls/Ov122_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov122/calls/func_ov122_020cfc04.c:
+src/overlays/ov122/calls/Ov122_InitializeActor.c:
     complete
     .text       start:0x020cfc04 end:0x020cfe78
 
-src/overlays/ov122/calls/func_ov122_020cfe78.c:
+src/overlays/ov122/calls/Ov122_Destroy.c:
     complete
     .text       start:0x020cfe78 end:0x020cfec0
 
-src/overlays/ov122/calls/func_ov122_020cfec0.c:
+src/overlays/ov122/calls/Ov122_ReleaseAndDestroy.c:
     complete
     .text       start:0x020cfec0 end:0x020cfee4
 
-src/overlays/ov122/calls/func_ov122_020cfee4.c:
+src/overlays/ov122/calls/Ov122_Actor_HandleEvent.c:
     complete
     .text       start:0x020cfee4 end:0x020d0084
 
-src/overlays/ov122/calls/func_ov122_020d0084.c:
+src/overlays/ov122/calls/Ov122_Model_SetTrack0.c:
     complete
     .text       start:0x020d0084 end:0x020d00b4
 
-src/overlays/ov122/calls/func_ov122_020d00b4.c:
+src/overlays/ov122/calls/Ov122_SyncAttachedPose.c:
     complete
     .text       start:0x020d00b4 end:0x020d014c
 
-src/overlays/ov122/calls/func_ov122_020d014c.c:
+src/overlays/ov122/calls/Ov122_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d014c end:0x020d01a8
 
-src/overlays/ov122/calls/func_ov122_020d01a8.c:
+src/overlays/ov122/calls/Ov122_Actor_OnHit.c:
     complete
     .text       start:0x020d01a8 end:0x020d03e0
 
-src/overlays/ov122/auto/func_ov122_020d03e0.c:
+src/overlays/ov122/auto/Ov122_RequestSubState9IfIdle.c:
     complete
     .text       start:0x020d03e0 end:0x020d0410
 
-src/overlays/ov122/calls/func_ov122_020d0410.c:
+src/overlays/ov122/calls/Ov122_InitAiState.c:
     complete
     .text       start:0x020d0410 end:0x020d04d8
 
-src/overlays/ov122/calls/func_ov122_020d04d8.c:
+src/overlays/ov122/calls/Ov122_DispatchSubStateByte.c:
     complete
     .text       start:0x020d04d8 end:0x020d0680
 
-src/overlays/ov122/calls/func_ov122_020d0680.c:
+src/overlays/ov122/calls/Ov122_RecomputeNodeVectorAndReloadTriple.c:
     complete
     .text       start:0x020d0680 end:0x020d06f4
 
-src/overlays/ov122/calls/func_ov122_020d06f4.c:
+src/overlays/ov122/calls/Ov122_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d06f4 end:0x020d075c
 
-src/overlays/ov122/calls/func_ov122_020d075c.c:
+src/overlays/ov122/calls/Ov122_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d075c end:0x020d0798
 
-src/overlays/ov122/calls/func_ov122_020d0798.c:
+src/overlays/ov122/calls/Ov122_SetupThenAction48.c:
     complete
     .text       start:0x020d0798 end:0x020d087c
 
-src/overlays/ov122/calls/func_ov122_020d087c.c:
+src/overlays/ov122/calls/Ov122_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d087c end:0x020d0944
 
-src/overlays/ov122/calls/func_ov122_020d0944.c:
+src/overlays/ov122/calls/Ov122_AiStep_QueueAction2OnFlag48Clear.c:
     complete
     .text       start:0x020d0944 end:0x020d0978
 
-src/overlays/ov122/calls/func_ov122_020d0978.c:
+src/overlays/ov122/calls/Ov122_AiEnterApproach.c:
     complete
     .text       start:0x020d0978 end:0x020d09d0
 
-src/overlays/ov122/calls/func_ov122_020d09d0.c:
+src/overlays/ov122/calls/Ov122_AimPickMeleeReaction.c:
     complete
     .text       start:0x020d09d0 end:0x020d0b48
 
-src/overlays/ov122/calls/func_ov122_020d0b48.c:
+src/overlays/ov122/calls/Ov122_SeedTimerFireAttack2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d0b48 end:0x020d0bac
 
-src/overlays/ov122/calls/func_ov122_020d0bac.c:
+src/overlays/ov122/calls/Ov122_ChargeTowardTarget_Step.c:
     complete
     .text       start:0x020d0bac end:0x020d0de0
 
-src/overlays/ov122/calls/func_ov122_020d0de0.c:
+src/overlays/ov122/calls/Ov122_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020d0de0 end:0x020d0e50
 
-src/overlays/ov122/calls/func_ov122_020d0e50.c:
+src/overlays/ov122/calls/Ov122_CopyScaleVecCheckMagThenAdvance.c:
     complete
     .text       start:0x020d0e50 end:0x020d0ee0
 
-src/overlays/ov122/calls/func_ov122_020d0ee0.c:
+src/overlays/ov122/calls/Ov122_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d0ee0 end:0x020d0f3c
 
-src/overlays/ov122/calls/func_ov122_020d0f3c.c:
+src/overlays/ov122/calls/Ov122_AreaAttack_Broadcast.c:
     complete
     .text       start:0x020d0f3c end:0x020d1278
 
-src/overlays/ov122/calls/func_ov122_020d1278.c:
+src/overlays/ov122/calls/Ov122_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020d1278 end:0x020d12f4
 
-src/overlays/ov122/calls/func_ov122_020d12f4.c:
+src/overlays/ov122/calls/Ov122_SweepAttack_Step.c:
     complete
     .text       start:0x020d12f4 end:0x020d1638
 
-src/overlays/ov122/calls/func_ov122_020d1638.c:
+src/overlays/ov122/calls/Ov122_DecayCopyPosFireOnHitFlag.c:
     complete
     .text       start:0x020d1638 end:0x020d1698
 
-src/overlays/ov122/calls/func_ov122_020d1698.c:
+src/overlays/ov122/calls/Ov122_AiStep_QueueAction2OnFlag48Clear_2.c:
     complete
     .text       start:0x020d1698 end:0x020d16cc
 
-src/overlays/ov122/calls/func_ov122_020d16cc.c:
+src/overlays/ov122/calls/Ov122_EnterRecoveryIdle.c:
     complete
     .text       start:0x020d16cc end:0x020d1738
 
-src/overlays/ov122/calls/func_ov122_020d1738.c:
+src/overlays/ov122/calls/Ov122_AiTrackOffsetTick.c:
     complete
     .text       start:0x020d1738 end:0x020d17c0
 
-src/overlays/ov122/calls/func_ov122_020d17c0.c:
+src/overlays/ov122/calls/Ov122_CopyVecThenSetupSubActionAndAdvance.c:
     complete
     .text       start:0x020d17c0 end:0x020d1834
 
-src/overlays/ov122/calls/func_ov122_020d1834.c:
+src/overlays/ov122/calls/Ov122_ReaimStrafe.c:
     complete
     .text       start:0x020d1834 end:0x020d18f0
 
-src/overlays/ov122/calls/func_ov122_020d18f0.c:
+src/overlays/ov122/calls/Ov122_AiPauseTick.c:
     complete
     .text       start:0x020d18f0 end:0x020d1930
 
-src/overlays/ov122/calls/func_ov122_020d1930.c:
+src/overlays/ov122/calls/Ov122_stIdlePose10Advance.c:
     complete
     .text       start:0x020d1930 end:0x020d1974
 
-src/overlays/ov122/calls/func_ov122_020d1974.c:
+src/overlays/ov122/calls/Ov122_AiStep_QueueAction2OnFlag48Clear_3.c:
     complete
     .text       start:0x020d1974 end:0x020d19a8
 
-src/overlays/ov122/calls/func_ov122_020d19a8.c:
+src/overlays/ov122/calls/Ov122_ConfigHw60FlagsBeginAction4a.c:
     complete
     .text       start:0x020d19a8 end:0x020d1a70
 
-src/overlays/ov122/calls/func_ov122_020d1a70.c:
+src/overlays/ov122/calls/Ov122_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d1a70 end:0x020d1b24
 

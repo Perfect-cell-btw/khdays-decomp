@@ -1,7 +1,7 @@
-/* Interworking tail-call veneer: calls srand_0x0208875c with &func_ov049_020b4adc as its first argument. */
+/* Interworking tail-call veneer: calls srand_0x0208875c with &Ov049_InvokeWithDataTable as its first argument. */
 extern void func_ov022_0208875c(void *p);
-extern int func_ov049_020b4adc;
+extern int Ov049_InvokeWithDataTable;
 
 void func_ov049_020b3220(void) {
-    func_ov022_0208875c(&func_ov049_020b4adc);
+    func_ov022_0208875c(&Ov049_InvokeWithDataTable);
 }

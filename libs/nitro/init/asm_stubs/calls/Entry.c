@@ -5,9 +5,9 @@ extern void func_020009fc(void);
 extern void INITi_CpuClear32_0x0200093c(void);
 extern void MIi_UncompressBackward(void);
 extern void func_01ff8148(void);
-extern void func_020207f0(void);
-extern void func_02000b60(void);
-extern void func_02020808(void);
+extern void _fp_init(void);
+extern void NitroStartUp(void);
+extern void __call_static_initializers(void);
 extern void main(void);
 extern unsigned char data_027e0000[];   /* SDK_AUTOLOAD_DTCM_START */
 
@@ -34,9 +34,6 @@ extern unsigned char data_027e0000[];   /* SDK_AUTOLOAD_DTCM_START */
 #define init_cp15                        func_02000a78
 #define INITi_CpuClear32                 INITi_CpuClear32_0x0200093c
 #define OS_IrqHandler                    func_01ff8148
-#define _fp_init                         func_020207f0
-#define NitroStartUp                     func_02000b60
-#define __call_static_initializers       func_02020808
 #define NitroMain                        main
 
 asm void Entry(void)

@@ -15,8 +15,8 @@ typedef struct GameClassDescriptor {
     int *pArena;              /* 0x10 */
 } GameClassDescriptor;
 
-extern void func_02022708(void);
-extern void func_020227c0(void);
+extern void Boot3DSubsystem(void);
+extern void Shutdown3DSubsystem(void);
 
 /* The yes/no cursor of the pause menu confirmation page (02022eb0 defines and moves it; 1 = "no"). */
 int data_02042730 = 1;
@@ -24,8 +24,8 @@ int data_02042730 = 1;
 GameClassDescriptor data_02042734 = {
     0x12,  /* nClassId */
     0xf,   /* nGroupId */
-    func_02022708,  /* pfnCtor */
-    func_020227c0,  /* pfnMethod */
+    Boot3DSubsystem,  /* pfnCtor */
+    Shutdown3DSubsystem,  /* pfnMethod */
     0xec,  /* nAuxSize */
     0,     /* pArena */
 };

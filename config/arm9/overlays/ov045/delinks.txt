@@ -8,107 +8,107 @@ src/overlays/ov045/calls/func_ov045_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov045/calls/func_ov045_020b3234.c:
+src/overlays/ov045/calls/Ov045_InitAndReturnNextState.c:
     complete
     .text       start:0x020b3234 end:0x020b325c
 
-src/overlays/ov045/calls/func_ov045_020b325c.c:
+src/overlays/ov045/calls/Ov045_stateDtorCleanup.c:
     complete
     .text       start:0x020b325c end:0x020b3298
 
-src/overlays/ov045/calls/func_ov045_020b3298.c:
+src/overlays/ov045/calls/Ov045_Boot.c:
     complete
     .text       start:0x020b3298 end:0x020b3480
 
-src/overlays/ov045/calls/func_ov045_020b3480.c:
+src/overlays/ov045/calls/Ov045_BindChannelsAndSlotMap.c:
     complete
     .text       start:0x020b3480 end:0x020b3618
 
-src/overlays/ov045/auto/func_ov045_020b3618.c:
+src/overlays/ov045/auto/Ov045_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b3618 end:0x020b3684
 
-src/overlays/ov045/calls/func_ov045_020b3684.c:
+src/overlays/ov045/calls/Ov045_ApplyModeChange.c:
     complete
     .text       start:0x020b3684 end:0x020b3760
 
-src/overlays/ov045/calls/func_ov045_020b3760.c:
+src/overlays/ov045/calls/Ov045_UpdateAnchorsAndChannels.c:
     complete
     .text       start:0x020b3760 end:0x020b3aec
 
-src/overlays/ov045/calls/func_ov045_020b3aec.c:
+src/overlays/ov045/calls/Ov045_SetupTwoSubActionsWithGlobal.c:
     complete
     .text       start:0x020b3aec end:0x020b3b3c
 
-src/overlays/ov045/calls/func_ov045_020b3b3c.c:
+src/overlays/ov045/calls/Ov045_SelectRequestHandler.c:
     complete
     .text       start:0x020b3b3c end:0x020b3ba4
 
-src/overlays/ov045/calls/func_ov045_020b3ba4.c:
+src/overlays/ov045/calls/Ov045_BuildRenderHandles.c:
     complete
     .text       start:0x020b3ba4 end:0x020b3c2c
 
-src/overlays/ov045/calls/func_ov045_020b3c2c.c:
+src/overlays/ov045/calls/Ov045_StoreArgToGlobalSlotAndForward.c:
     complete
     .text       start:0x020b3c2c end:0x020b3c5c
 
-src/overlays/ov045/calls/func_ov045_020b3c5c.c:
+src/overlays/ov045/calls/Ov045_DescentStep.c:
     complete
     .text       start:0x020b3c5c end:0x020b3e38
 
-src/overlays/ov045/calls/func_ov045_020b3e38.c:
+src/overlays/ov045/calls/Ov045_HoverStep.c:
     complete
     .text       start:0x020b3e38 end:0x020b4130
 
-src/overlays/ov045/calls/func_ov045_020b4130.c:
+src/overlays/ov045/calls/Ov045_InitActorTwoRegionsAndForward.c:
     complete
     .text       start:0x020b4130 end:0x020b4178
 
-src/overlays/ov045/calls/func_ov045_020b4178.c:
+src/overlays/ov045/calls/Ov045_ReleaseChannelListAndSubObjects.c:
     complete
     .text       start:0x020b4178 end:0x020b41c8
 
-src/overlays/ov045/calls/func_ov045_020b41c8.c:
+src/overlays/ov045/calls/Ov045_BindAnimsOnPoseReset.c:
     complete
     .text       start:0x020b41c8 end:0x020b4254
 
-src/overlays/ov045/calls/func_ov045_020b4254.c:
+src/overlays/ov045/calls/Ov045_StepEffectSlot.c:
     complete
     .text       start:0x020b4254 end:0x020b4450
 
-src/overlays/ov045/calls/func_ov045_020b4450.c:
+src/overlays/ov045/calls/Ov045_ForwardArg1IfStateInRangeAndFlag.c:
     complete
     .text       start:0x020b4450 end:0x020b4484
 
-src/overlays/ov045/calls/func_ov045_020b4484.c:
+src/overlays/ov045/calls/Ov045_SpawnNextEffect.c:
     complete
     .text       start:0x020b4484 end:0x020b4630
 
-src/overlays/ov045/calls/func_ov045_020b4630.c:
+src/overlays/ov045/calls/Ov045_SpawnEffectWithFalloff.c:
     complete
     .text       start:0x020b4630 end:0x020b46d0
 
-src/overlays/ov045/calls/func_ov045_020b46d0.c:
+src/overlays/ov045/calls/Ov045_ResolveHitPositionOrFallback.c:
     complete
     .text       start:0x020b46d0 end:0x020b476c
 
-src/overlays/ov045/calls/func_ov045_020b476c.c:
+src/overlays/ov045/calls/Ov045_CreateSubObject.c:
     complete
     .text       start:0x020b476c end:0x020b48b4
 
-src/overlays/ov045/calls/func_ov045_020b48b4.c:
+src/overlays/ov045/calls/Ov045_BindRig.c:
     complete
     .text       start:0x020b48b4 end:0x020b4900
 
-src/overlays/ov045/calls/func_ov045_020b4900.c:
+src/overlays/ov045/calls/Ov045_ReleaseSlotHandles.c:
     complete
     .text       start:0x020b4900 end:0x020b4968
 
-src/overlays/ov045/calls/func_ov045_020b4968.c:
+src/overlays/ov045/calls/Ov045_StepParts.c:
     complete
     .text       start:0x020b4968 end:0x020b4a64
 
-src/overlays/ov045/calls/func_ov045_020b4a64.c:
+src/overlays/ov045/calls/Ov045_InvokeWithDataTable.c:
     complete
     .text       start:0x020b4a64 end:0x020b4a7c
 

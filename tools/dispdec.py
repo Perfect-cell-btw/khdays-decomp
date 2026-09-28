@@ -30,7 +30,7 @@ for i,t in enumerate(table):
 order = sorted(casetgt, key=lambda c:c[1])
 # callbacks from relocs (in pool order = body-address order); parse reloc lines
 relocs = re.findall(r'\+0x[0-9a-f]+ -> (func_ov\w+)', out)
-# filter out non-callback (func_0203c634); callbacks are the ov-local ones after the c634 block
+# filter out non-callback (SetIndexedSlot); callbacks are the ov-local ones after the c634 block
 cbs = [r for r in relocs if not r.endswith('0203c634')]
 print("=== HEADER (first %d instrs) ===" % sw)
 for x in ins[:sw]: print("  ", x)

@@ -5,18 +5,18 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov025_020b394c: func_ov025_0208d05c
- *   data_ov025_020b395c: func_ov025_0208d05c
- *   data_ov025_020b396c: func_ov025_0208d454
- *   data_ov025_020b3994: func_ov025_0208d454
- *   data_ov025_020b39bc: func_ov025_0208d454
- *   data_ov025_020b39e4: func_ov025_0208dd74, func_ov025_0208df9c, func_ov025_0208dfc4
- *   data_ov025_020b39e6: func_ov025_0208dfb0
- *   data_ov025_020b39e8: func_ov025_0208dd74
- *   data_ov025_020b39e9: func_ov025_0208dd74
- *   data_ov025_020b39ea: func_ov025_0208dd74
- *   data_ov025_020b3ba4: func_ov025_0208e110
- *   data_ov025_020b3bb0: func_ov025_0208e4f0, func_ov025_0208e5a4, func_ov025_0208e9ec, func_ov025_0208ea58
+ *   data_ov025_020b394c: Ov025_MainMenu_SetupToolbar
+ *   data_ov025_020b395c: Ov025_MainMenu_SetupToolbar
+ *   data_ov025_020b396c: Ov025_MainMenu_SetupTextSurfaces
+ *   data_ov025_020b3994: Ov025_MainMenu_SetupTextSurfaces
+ *   data_ov025_020b39bc: Ov025_MainMenu_SetupTextSurfaces
+ *   data_ov025_020b39e4: Ov025_MainMenu_RecalculateMissionSummary, Ov025_GetTableValue, Ov025_FindFirstThresholdRow
+ *   data_ov025_020b39e6: Ov025_GetTableValueB
+ *   data_ov025_020b39e8: Ov025_MainMenu_RecalculateMissionSummary
+ *   data_ov025_020b39e9: Ov025_MainMenu_RecalculateMissionSummary
+ *   data_ov025_020b39ea: Ov025_MainMenu_RecalculateMissionSummary
+ *   data_ov025_020b3ba4: Ov025_BindUiAnimTracks
+ *   data_ov025_020b3bb0: Ov025_UpdatePanelBrightnessTweens, Ov025_MainMenu_InitPanelContext, Ov025_ReleaseRowSurfaces, Ov025_DrawMenuPanels
  */
 
 typedef unsigned char u8;

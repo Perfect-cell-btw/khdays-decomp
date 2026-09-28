@@ -4,23 +4,23 @@
     .data       start:0x020d57c0 end:0x020d57e0 kind:data align:32
     .bss        start:0x020d57e0 end:0x020d57e0 kind:bss align:32
 
-src/overlays/ov297/calls/func_ov297_020d37a0.c:
+src/overlays/ov297/calls/Ov297_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov297/calls/func_ov297_020d37b8.c:
+src/overlays/ov297/calls/Ov297_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov297/calls/func_ov297_020d3844.c:
+src/overlays/ov297/calls/Ov297_Construct.c:
     complete
     .text       start:0x020d3844 end:0x020d3a3c
 
-src/overlays/ov297/calls/func_ov297_020d3a3c.c:
+src/overlays/ov297/calls/Ov297_ReleaseSubObjectsAndSlotArrayThenNotify.c:
     complete
     .text       start:0x020d3a3c end:0x020d3a7c
 
-src/overlays/ov297/calls/func_ov297_020d3a7c.c:
+src/overlays/ov297/calls/Ov297_PropagateBlockChain.c:
     complete
     .text       start:0x020d3a7c end:0x020d3adc
 
@@ -32,131 +32,131 @@ src/overlays/ov297/calls/func_ov297_020d3ae8.c:
     complete
     .text       start:0x020d3ae8 end:0x020d3af4
 
-src/overlays/ov297/calls/func_ov297_020d3af4.c:
+src/overlays/ov297/calls/Ov297_HandleMessage.c:
     complete
     .text       start:0x020d3af4 end:0x020d3cb4
 
-src/overlays/ov297/calls/func_ov297_020d3cb4.c:
+src/overlays/ov297/calls/Ov297_SwitchAnimation.c:
     complete
     .text       start:0x020d3cb4 end:0x020d3d90
 
-src/overlays/ov297/calls/func_ov297_020d3d90.c:
+src/overlays/ov297/calls/Ov297_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d3d90 end:0x020d3dec
 
-src/overlays/ov297/calls/func_ov297_020d3dec.c:
+src/overlays/ov297/calls/Ov297_OnHit.c:
     complete
     .text       start:0x020d3dec end:0x020d406c
 
-src/overlays/ov297/calls/func_ov297_020d406c.c:
+src/overlays/ov297/calls/Ov297_MapHeldItemKindToAnim.c:
     complete
     .text       start:0x020d406c end:0x020d4168
 
-src/overlays/ov297/calls/func_ov297_020d4168.c:
+src/overlays/ov297/calls/Ov297_AcquireTargetGapAndAngle.c:
     complete
     .text       start:0x020d4168 end:0x020d4200
 
-src/overlays/ov297/calls/func_ov297_020d4200.c:
+src/overlays/ov297/calls/Ov297_ComputeNormalizedDir.c:
     complete
     .text       start:0x020d4200 end:0x020d4240
 
-src/overlays/ov297/calls/func_ov297_020d4240.c:
+src/overlays/ov297/calls/Ov297_UpdateHeadingVector.c:
     complete
     .text       start:0x020d4240 end:0x020d4308
 
-src/overlays/ov297/calls/func_ov297_020d4308.c:
+src/overlays/ov297/calls/Ov297_InitStates.c:
     complete
     .text       start:0x020d4308 end:0x020d441c
 
-src/overlays/ov297/calls/func_ov297_020d441c.c:
+src/overlays/ov297/calls/Ov297_DispatchSubStateByte.c:
     complete
     .text       start:0x020d441c end:0x020d45c0
 
-src/overlays/ov297/calls/func_ov297_020d45c0.c:
+src/overlays/ov297/calls/Ov297_OrientationTick.c:
     complete
     .text       start:0x020d45c0 end:0x020d46e4
 
-src/overlays/ov297/calls/func_ov297_020d46e4.c:
+src/overlays/ov297/calls/Ov297_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d46e4 end:0x020d474c
 
-src/overlays/ov297/calls/func_ov297_020d474c.c:
+src/overlays/ov297/calls/Ov297_RerollTimerThenAdvance.c:
     complete
     .text       start:0x020d474c end:0x020d47b8
 
-src/overlays/ov297/calls/func_ov297_020d47b8.c:
+src/overlays/ov297/calls/Ov297_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d47b8 end:0x020d480c
 
-src/overlays/ov297/calls/func_ov297_020d480c.c:
+src/overlays/ov297/calls/Ov297_IdleTick.c:
     complete
     .text       start:0x020d480c end:0x020d48fc
 
-src/overlays/ov297/calls/func_ov297_020d48fc.c:
+src/overlays/ov297/calls/Ov297_Pose1SetupThenAdvance.c:
     complete
     .text       start:0x020d48fc end:0x020d4964
 
-src/overlays/ov297/calls/func_ov297_020d4964.c:
+src/overlays/ov297/calls/Ov297_WanderTick.c:
     complete
     .text       start:0x020d4964 end:0x020d4e00
 
-src/overlays/ov297/calls/func_ov297_020d4e00.c:
+src/overlays/ov297/calls/Ov297_LeapEntry.c:
     complete
     .text       start:0x020d4e00 end:0x020d4ef4
 
-src/overlays/ov297/calls/func_ov297_020d4ef4.c:
+src/overlays/ov297/calls/Ov297_ScaleDescentVectorThenAdvance.c:
     complete
     .text       start:0x020d4ef4 end:0x020d4f6c
 
-src/overlays/ov297/calls/func_ov297_020d4f6c.c:
+src/overlays/ov297/calls/Ov297_AiDecelerateUntilReady.c:
     complete
     .text       start:0x020d4f6c end:0x020d4ff0
 
-src/overlays/ov297/calls/func_ov297_020d4ff0.c:
+src/overlays/ov297/calls/Ov297_CopyScaleVecSetField28ThenAdvance.c:
     complete
     .text       start:0x020d4ff0 end:0x020d5078
 
-src/overlays/ov297/calls/func_ov297_020d5078.c:
+src/overlays/ov297/calls/Ov297_ApproachEntry.c:
     complete
     .text       start:0x020d5078 end:0x020d5184
 
-src/overlays/ov297/calls/func_ov297_020d5184.c:
+src/overlays/ov297/calls/Ov297_CopyScaleVecSetFlag88ThenAdvance.c:
     complete
     .text       start:0x020d5184 end:0x020d51f4
 
-src/overlays/ov297/calls/func_ov297_020d51f4.c:
+src/overlays/ov297/calls/Ov297_SetPose0ThenAdvanceSlot.c:
     complete
     .text       start:0x020d51f4 end:0x020d5228
 
-src/overlays/ov297/calls/func_ov297_020d5228.c:
+src/overlays/ov297/calls/Ov297_TickTimerOrEnterSubState2.c:
     complete
     .text       start:0x020d5228 end:0x020d527c
 
-src/overlays/ov297/calls/func_ov297_020d527c.c:
+src/overlays/ov297/calls/Ov297_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020d527c end:0x020d52c0
 
-src/overlays/ov297/calls/func_ov297_020d52c0.c:
+src/overlays/ov297/calls/Ov297_AiPickNextMove.c:
     complete
     .text       start:0x020d52c0 end:0x020d5354
 
-src/overlays/ov297/calls/func_ov297_020d5354.c:
+src/overlays/ov297/calls/Ov297_PrepSubState2IfChildIdle.c:
     complete
     .text       start:0x020d5354 end:0x020d5394
 
-src/overlays/ov297/calls/func_ov297_020d5394.c:
+src/overlays/ov297/calls/Ov297_RetreatEntry.c:
     complete
     .text       start:0x020d5394 end:0x020d5540
 
-src/overlays/ov297/calls/func_ov297_020d5540.c:
+src/overlays/ov297/calls/Ov297_HideEntry.c:
     complete
     .text       start:0x020d5540 end:0x020d5644
 
-src/overlays/ov297/calls/func_ov297_020d5644.c:
+src/overlays/ov297/calls/Ov297_ConfigSubStateThenAdvanceSlot_3.c:
     complete
     .text       start:0x020d5644 end:0x020d568c
 
-src/overlays/ov297/auto/func_ov297_020d568c.c:
+src/overlays/ov297/auto/Ov297_SubStateIdleStep.c:
     complete
     .text       start:0x020d568c end:0x020d5690
 

@@ -18,13 +18,13 @@ typedef struct GameClassDescriptor {
     int *pArena;              /* 0x10 */
 } GameClassDescriptor;
 
-extern void func_ov006_020560cc(void);
-extern void func_ov006_02056118(void);
+extern void Ov006_CreateSubObject(void);
+extern void Ov006_MissionBootWatchdog(void);
 
 struct {
     GameClassDescriptor desc;
     int reserved[3];
 } data_ov006_020565c0 = {
-    { 8, 14, func_ov006_020560cc, func_ov006_02056118, 8, 0 },
+    { 8, 14, Ov006_CreateSubObject, Ov006_MissionBootWatchdog, 8, 0 },
     { 0, 0, 0 },
 };

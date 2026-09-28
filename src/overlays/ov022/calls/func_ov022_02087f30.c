@@ -1,5 +1,5 @@
 extern int data_ov022_020b2e78;
-extern int func_ov022_02083f90(void);
+extern int Ov022_GetGlobal34(void);
 void func_ov022_02087f30(void) {
     int e = ((int *)&data_ov022_020b2e78)[1];
     if (*(int *)(e + 0x40) == 0) {
@@ -7,7 +7,7 @@ void func_ov022_02087f30(void) {
         return;
     }
     {
-        int v = *(int *)(e + 0x40) - func_ov022_02083f90();
+        int v = *(int *)(e + 0x40) - Ov022_GetGlobal34();
         *(int *)(e + 0x40) = v;
         if (v < 0) *(int *)(e + 0x40) = 0;
     }

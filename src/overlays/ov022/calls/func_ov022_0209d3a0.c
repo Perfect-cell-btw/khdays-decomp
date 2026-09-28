@@ -7,9 +7,9 @@
  * `*(T*)a = *(T*)b` picks the reversed base order; the field form picks the ROM's. Same crack landed
  * ov208_020cfc04 (an 11-word copy). See codegen-cracks.md.
  */
-extern void func_02016ae8(int a, int b, int c, int d);
-extern void func_0202aa9c(unsigned short *a);
-extern void func_02016c90(int a, int b);
+extern void NNS_G3dMdlSetMdlCullMode(int a, int b, int c, int d);
+extern void Scene_DrawNode(unsigned short *a);
+extern void NNS_G3dMdlSetMdlCullModeAll(int a, int b);
 extern unsigned char data_0204c240;
 
 struct vec3_0209d3a0 {
@@ -44,7 +44,7 @@ void func_ov022_0209d3a0(int param_1) {
     *(unsigned short *)(param_1 + 0x850) =
         (unsigned short)(*(unsigned short *)(*(int *)(param_1 + 0x20) + 0x80) - 0x8000) + 0x8000;
     *(unsigned short *)(param_1 + 0x7d4) = *(unsigned short *)(param_1 + 0x7d4) | 0x20;
-    func_02016ae8(*(int *)(param_1 + 0x84c), 1, 0, iVar2);
-    func_0202aa9c((unsigned short *)(param_1 + 0x7d4));
-    func_02016c90(*(int *)(param_1 + 0x84c), 3);
+    NNS_G3dMdlSetMdlCullMode(*(int *)(param_1 + 0x84c), 1, 0, iVar2);
+    Scene_DrawNode((unsigned short *)(param_1 + 0x7d4));
+    NNS_G3dMdlSetMdlCullModeAll(*(int *)(param_1 + 0x84c), 3);
 }

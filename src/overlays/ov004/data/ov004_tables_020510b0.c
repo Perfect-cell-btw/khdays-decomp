@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov004_0204fd60 (0204fd60): char data_ov004_020510b0[]; */
+/* read by Ov004_LoadSceneGraphics (0204fd60): char data_ov004_020510b0[]; */
 const u8 data_ov004_020510b0[8] = {
     0, 0, 255, 127, 0, 0, 0, 0,
 };

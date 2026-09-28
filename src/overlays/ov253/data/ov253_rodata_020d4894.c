@@ -8,13 +8,13 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov253_020ccd00 (not yet decompiled) */
+/* read by Ov253_RebuildCarriedLists (not yet decompiled) */
 const int data_ov253_020d4894[13] = {
     1, 2, 3, 4, 5, 6, 7, 8,
     9, 10, 11, 12, 13,
 };
 
-/* read by func_ov253_020ccd00 (not yet decompiled) */
+/* read by Ov253_RebuildCarriedLists (not yet decompiled) */
 const int data_ov253_020d48c8[13] = {
     15, 16, 17, 18, 19, 20, 21, 22,
     23, 24, 25, 26, 27,
@@ -25,7 +25,7 @@ const u8 data_ov253_020d48fc[4] = {
     0, 0, 5, 1,
 };
 
-/* read by func_ov253_020cda5c (not yet decompiled) */
+/* read by Ov253_TickSpin (not yet decompiled) */
 const u8 data_ov253_020d4900[16] = {
     0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };

@@ -6,146 +6,58 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov002_0207ceac(void);
-extern void func_ov002_0207cf58(void);
-extern void func_ov002_0207d004(void);
-extern void func_ov002_0207d0f0(void);
-extern void func_ov002_0207d188(void);
-extern void func_ov002_0207d18c(void);
-extern void func_ov002_0207d218(void);
-extern void func_ov002_0207d32c(void);
-extern void func_ov002_0207d330(void);
-extern void func_ov002_0207d334(void);
-extern void func_ov002_0207d3bc(void);
-extern void func_ov002_0207d450(void);
-extern void func_ov002_0207d48c(void);
-extern void func_ov002_0207d4dc(void);
-extern void func_ov002_0207d610(void);
-extern void func_ov002_0207d698(void);
-extern void func_ov002_0207d74c(void);
-extern void func_ov002_0207d758(void);
-extern void func_ov002_0207d774(void);
-extern void func_ov002_0207d7b8(void);
-extern void func_ov002_0207d874(void);
-extern void func_ov002_0207d92c(void);
-extern void func_ov002_0207d940(void);
-extern void func_ov002_0207d950(void);
-extern void func_ov002_0207da34(void);
-extern void func_ov002_0207dae4(void);
-extern void func_ov002_0207daf0(void);
-extern void func_ov002_0207db30(void);
+extern void Ov002_VmCmd7ceac(void);
+extern void Ov002_ScriptCmdSpawnElement(void);
+extern void Ov002_VmCmd7d004(void);
+extern void Ov002_ScriptCmdSpawnTimedElement(void);
+extern void Ov002_ConstReturn1_4(void);
+extern void Ov002_VmCmd7d18c(void);
+extern void Ov002_ScriptCmdSpawnActorElement(void);
+extern void Ov002_ConstReturn1_5(void);
+extern void Ov002_ConstReturn1_6(void);
+extern void Ov002_VmCmd7d334(void);
+extern void Ov002_ScriptCmdSpawnPlacedPiece(void);
+extern void Ov002_ScriptDriveWidget(void);
+extern void Ov002_CmdCreateModuleSlot(void);
+extern void Ov002_ScriptCmdSpawnSpareEntry(void);
+extern void Ov002_VmCmdList7d610(void);
+extern void Ov002_ScriptCmdSpawnLineElement(void);
+extern void Ov002_ScriptCmd_RetireAllEntries(void);
+extern void Ov002_ScriptCmd_StoreIfFree(void);
+extern void Ov002_ScriptIsEntryFree(void);
+extern void Ov002_ScriptCmdInvokeObjectCallback48(void);
+extern void Ov002_ScriptCmdPublishSpawnRequest(void);
+extern void Ov002_ScriptCmd_NotifyNodesOfKind(void);
+extern void Ov002_ScriptCmd_SwitchPanelOverlay(void);
+extern void Ov002_VmCmd7d950(void);
+extern void Ov002_ScriptCmdSpawnTravelElement(void);
+extern void Ov002_ScriptCmd_ClearListTable(void);
+extern void Ov002_VmSetEntryValue(void);
+extern void Ov002_ScriptCmd_SetListRowMode(void);
 
 Ov_Fn data_ov002_0207f484[66] = {
 
-    func_ov002_0207ceac,
+    Ov002_VmCmd7ceac,
 
     0,
 
-    func_ov002_0207cf58,
+    Ov002_ScriptCmdSpawnElement,
 
     0,
 
-    func_ov002_0207d004,
+    Ov002_VmCmd7d004,
 
     0,
 
-    func_ov002_0207d0f0,
+    Ov002_ScriptCmdSpawnTimedElement,
 
     0,
 
-    func_ov002_0207d188,
+    Ov002_ConstReturn1_4,
 
     0,
 
-    func_ov002_0207daf0,
-
-    0,
-
-    0,
-
-    0,
-
-    0,
-
-    0,
-
-    0,
-
-    0,
-
-    func_ov002_0207d18c,
-
-    0,
-
-    func_ov002_0207d218,
-
-    0,
-
-    func_ov002_0207d32c,
-
-    0,
-
-    func_ov002_0207d330,
-
-    0,
-
-    func_ov002_0207d334,
-
-    0,
-
-    func_ov002_0207d3bc,
-
-    0,
-
-    func_ov002_0207d450,
-
-    0,
-
-    func_ov002_0207d48c,
-
-    0,
-
-    func_ov002_0207d4dc,
-
-    0,
-
-    func_ov002_0207d610,
-
-    0,
-
-    func_ov002_0207d698,
-
-    0,
-
-    func_ov002_0207d74c,
-
-    0,
-
-    func_ov002_0207d758,
-
-    func_ov002_0207d774,
-
-    func_ov002_0207d7b8,
-
-    0,
-
-    func_ov002_0207d874,
-
-    0,
-
-    func_ov002_0207d92c,
-
-    0,
-
-    func_ov002_0207d940,
-
-    0,
-
-    func_ov002_0207d950,
-
-    0,
-
-    func_ov002_0207da34,
+    Ov002_VmSetEntryValue,
 
     0,
 
@@ -161,11 +73,99 @@ Ov_Fn data_ov002_0207f484[66] = {
 
     0,
 
-    func_ov002_0207dae4,
+    Ov002_VmCmd7d18c,
 
     0,
 
-    func_ov002_0207db30,
+    Ov002_ScriptCmdSpawnActorElement,
+
+    0,
+
+    Ov002_ConstReturn1_5,
+
+    0,
+
+    Ov002_ConstReturn1_6,
+
+    0,
+
+    Ov002_VmCmd7d334,
+
+    0,
+
+    Ov002_ScriptCmdSpawnPlacedPiece,
+
+    0,
+
+    Ov002_ScriptDriveWidget,
+
+    0,
+
+    Ov002_CmdCreateModuleSlot,
+
+    0,
+
+    Ov002_ScriptCmdSpawnSpareEntry,
+
+    0,
+
+    Ov002_VmCmdList7d610,
+
+    0,
+
+    Ov002_ScriptCmdSpawnLineElement,
+
+    0,
+
+    Ov002_ScriptCmd_RetireAllEntries,
+
+    0,
+
+    Ov002_ScriptCmd_StoreIfFree,
+
+    Ov002_ScriptIsEntryFree,
+
+    Ov002_ScriptCmdInvokeObjectCallback48,
+
+    0,
+
+    Ov002_ScriptCmdPublishSpawnRequest,
+
+    0,
+
+    Ov002_ScriptCmd_NotifyNodesOfKind,
+
+    0,
+
+    Ov002_ScriptCmd_SwitchPanelOverlay,
+
+    0,
+
+    Ov002_VmCmd7d950,
+
+    0,
+
+    Ov002_ScriptCmdSpawnTravelElement,
+
+    0,
+
+    0,
+
+    0,
+
+    0,
+
+    0,
+
+    0,
+
+    0,
+
+    Ov002_ScriptCmd_ClearListTable,
+
+    0,
+
+    Ov002_ScriptCmd_SetListRowMode,
 
     0,
 

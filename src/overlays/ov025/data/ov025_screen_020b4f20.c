@@ -20,14 +20,14 @@ typedef struct Ov008ScreenHooks {
     Ov008HookFn apfnHook[7];  /* 0x28 .. 0x40 */
 } Ov008ScreenHooks;
 
-extern void func_ov025_0209d564(void);
-extern void func_ov025_0209d590(void);
-extern void func_ov025_0209d610(void);
+extern void Ov025_MenuPage_Init(void);
+extern void Ov025_TeardownSimpleScene(void);
+extern void Ov025_TickMenuTierLabel(void);
 
 Ov008ScreenHooks data_ov025_020b4f20 = {
-    func_ov025_0209d564,  /* pfnOpen */
-    func_ov025_0209d590,  /* pfnStep */
-    func_ov025_0209d610,  /* pfnClose */
+    Ov025_MenuPage_Init,  /* pfnOpen */
+    Ov025_TeardownSimpleScene,  /* pfnStep */
+    Ov025_TickMenuTierLabel,  /* pfnClose */
     0,  /* nFlags */
     188,  /* nStateSize */
     0,  /* pfnSelect */

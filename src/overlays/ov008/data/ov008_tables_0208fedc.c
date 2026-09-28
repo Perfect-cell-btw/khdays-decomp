@@ -5,16 +5,16 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_0208fedc: func_ov008_02083464, func_ov008_02083588, func_ov008_02087e14
- *   data_ov008_0208fedd: func_ov008_02083588
- *   data_ov008_0208fef0: func_ov008_02082714
- *   data_ov008_0208fef1: func_ov008_02082714
- *   data_ov008_0208fef2: func_ov008_0208247c
- *   data_ov008_0208fef3: func_ov008_02082714
- *   data_ov008_0208ff04: func_ov008_020823ec
- *   data_ov008_0208ff20: func_ov008_02083c44
- *   data_ov008_0208ff3c: func_ov008_02088410
- *   data_ov008_0208ff64: func_ov008_0208b4ac
+ *   data_ov008_0208fedc: Ov008_InitFilterRows, Ov008_ShowFilterRow, Ov008_ShopTabSelectTick
+ *   data_ov008_0208fedd: Ov008_ShowFilterRow
+ *   data_ov008_0208fef0: Ov008_InitPanelSlotManagers
+ *   data_ov008_0208fef1: Ov008_InitPanelSlotManagers
+ *   data_ov008_0208fef2: Ov008_LoadShopResources
+ *   data_ov008_0208fef3: Ov008_InitPanelSlotManagers
+ *   data_ov008_0208ff04: Ov008_FlushDirtyVramBanks
+ *   data_ov008_0208ff20: Ov008_DrawCounterPanel
+ *   data_ov008_0208ff3c: Ov008_ShopListInput
+ *   data_ov008_0208ff64: Ov008_MergePendingUnlockBits
  */
 
 typedef unsigned char u8;

@@ -1,0 +1,55 @@
+typedef unsigned char u8;
+typedef void (*OverlayCallback)(void);
+
+typedef struct {
+    int state_0;
+    u8 pad_0004[8];
+    u8 update_object[0x4bdc];
+    u8 overlay_image[0x58];
+    int transition_flag;
+    u8 pad_4c44[0x42c];
+    int sharing_handle;
+    int sharing_state;
+} OverlayContext;
+
+extern OverlayContext *NNSi_FndGetCurrentRootHeap(void);
+extern void func_020362ec(void *image);
+extern void Mem_ReadU16(void *image);
+extern void Ov000_SetSubSceneHalf1C(void);
+extern void Scene_DrawNode(void *object);
+extern int Ov000_GetSubSceneResult(void);
+extern void func_02023ad0(int handle);
+extern void Ov000_PreloadLogoResources(void);
+extern void Ov000_Title_CreateLogoObjects(void);
+extern void Ov000_ReleaseLogoResources(void);
+extern void StampByteAndInvokeSubStructAt(int first, int second);
+extern void Table_TailCallWithEntry(int first, int second);
+extern void Ov000_ReentryState(void);
+extern void Ov000_TickBootFadeTransition(void);
+
+OverlayCallback Ov000_WaitSubMenuResult(void) {
+    OverlayContext *context = NNSi_FndGetCurrentRootHeap();
+
+    func_020362ec(context->overlay_image);
+    Mem_ReadU16(context->overlay_image);
+    Ov000_SetSubSceneHalf1C();
+    Scene_DrawNode(context->update_object);
+
+    switch (Ov000_GetSubSceneResult()) {
+    case 4:
+        func_02023ad0(context->sharing_handle);
+        context->sharing_handle = context->sharing_state = 0;
+        Ov000_PreloadLogoResources();
+        Ov000_Title_CreateLogoObjects();
+        Ov000_ReleaseLogoResources();
+        return Ov000_ReentryState;
+    case 5:
+        context->state_0 = 0;
+        context->transition_flag = 1;
+        StampByteAndInvokeSubStructAt(1, 3);
+        Table_TailCallWithEntry(0, 30);
+        return Ov000_TickBootFadeTransition;
+    default:
+        return 0;
+    }
+}

@@ -61,8 +61,7 @@ extern SNDSharedWork *data_02046280;   /* SNDi_SharedWork */
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
-extern void func_0200386c(u32 cycles);   /* OS_SpinWait */
-#define OS_SpinWait func_0200386c
+extern void OS_SpinWait(u32 cycles);   /* OS_SpinWait */
 extern void PXI_SetFifoRecvCallback(int fifotag, void (*callback)(PXIFifoTag, u32, BOOL));
 extern BOOL PXI_IsCallbackReady(int fifotag, int proc);
 extern void PxiFifoCallback(PXIFifoTag tag, u32 data, BOOL err);
@@ -71,10 +70,8 @@ extern void InitPXI(void);
 extern void SNDi_InitSharedWork(SNDSharedWork *work);
 extern u32 SNDi_GetFinishedCommandTag(void);
 extern SNDCommand *SND_AllocCommand(u32 flags);
-extern void func_02008788(SNDCommand *command);   /* SND_PushCommand */
-#define SND_PushCommand func_02008788
-extern BOOL func_020087c0(u32 flags);              /* SND_FlushCommand */
-#define SND_FlushCommand func_020087c0
+extern void SND_PushCommand(SNDCommand *command);   /* SND_PushCommand */
+extern BOOL SND_FlushCommand(u32 flags);              /* SND_FlushCommand */
 
 /* InitPXI -- NitroSDK snd_command.c. */
 void InitPXI (void)

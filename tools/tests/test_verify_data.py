@@ -361,12 +361,12 @@ class DataDelinkTests(unittest.TestCase):
 
     def test_code_and_data_for_one_source_share_one_file_block(self):
         code = (
-            "src/overlays/ov008/calls/func_ov008_02058df0.c:\n"
+            "src/overlays/ov008/calls/Ov008_SelectMenuGroupAndDrawCaption.c:\n"
             "    complete\n"
             "    .text       start:0x02058df0 end:0x020590b4\n"
         )
         data = (
-            "src/overlays/ov008/calls/func_ov008_02058df0.c:\n"
+            "src/overlays/ov008/calls/Ov008_SelectMenuGroupAndDrawCaption.c:\n"
             "    complete\n"
             "    .rodata     start:0x0208e8fc end:0x0208e958\n"
         )
@@ -374,6 +374,44 @@ class DataDelinkTests(unittest.TestCase):
         self.assertEqual(len(merged), 1)
         self.assertIn(".text       start:0x02058df0 end:0x020590b4", merged[0])
         self.assertIn(".rodata     start:0x0208e8fc end:0x0208e958", merged[0])
+
+    def committed_local_rodata(self, old_stem, new_stem, tables):
+        renames = self.root / "docs" / "renames"
+        renames.mkdir(parents=True)
+        for i, rows in enumerate(tables):
+            body = "# old\tnew\tmodule\n" + "".join("%s\t%s\tov107\n" % row for row in rows)
+            (renames / ("2026-09-%02d-t.tsv" % (i + 1))).write_text(body, encoding="utf-8")
+        calls = self.root / "src" / "overlays" / "ov107" / "calls"
+        calls.mkdir(parents=True)
+        (calls / (new_stem + ".c")).write_text("void f(void) {}\n", encoding="utf-8")
+        delinks = self.root / "delinks.txt"
+        delinks.write_text(
+            "    .text start:0x020c5000 end:0x020c7000\n\n"
+            "src/overlays/ov107/calls/%s.c:\n"
+            "    complete\n"
+            "    .text       start:0x020c5cfc end:0x020c65d8\n"
+            "    .rodata     start:0x020cb628 end:0x020cb630\n" % old_stem,
+            encoding="utf-8",
+        )
+        return gen_delinks.committed_data_claims(delinks, self.root)
+
+    def test_a_renamed_source_keeps_its_local_rodata(self):
+        claims = self.committed_local_rodata(
+            "func_ov107_020c5cfc", "Ov107_AiState_ApplyHit",
+            [[("func_ov107_020c5cfc", "Ov107_AiState_ApplyHit")]])
+        self.assertEqual(claims, {"src/overlays/ov107/calls/Ov107_AiState_ApplyHit.c":
+                                  [("rodata", 0x020CB628, 0x020CB630)]})
+
+    def test_renames_chain_and_the_newest_table_wins_a_reused_name(self):
+        # "Reused" was renamed away first, then became another function's name, then renamed again
+        claims = self.committed_local_rodata(
+            "Reused", "Final",
+            [[("Reused", "Elsewhere")], [("Reused", "Middle")], [("Middle", "Final")]])
+        self.assertEqual(list(claims), ["src/overlays/ov107/calls/Final.c"])
+
+    def test_a_deleted_source_loses_its_claim(self):
+        claims = self.committed_local_rodata("func_ov107_020c5cfc", "Unrelated", [[]])
+        self.assertEqual(claims, {})
 
 
 if __name__ == "__main__":

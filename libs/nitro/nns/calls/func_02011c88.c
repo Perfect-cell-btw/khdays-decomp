@@ -60,7 +60,7 @@ typedef struct NNSG2dAnimController {
 } NNSG2dAnimController;
 
 extern int abs(int value);
-extern void func_02011b30(NNSG2dAnimController *pAnimCtrl);
+extern void SequenceEdgeHandle_(NNSG2dAnimController *pAnimCtrl);
 
 static inline fx32 FX_Mul(fx32 v1, fx32 v2)
 {
@@ -177,7 +177,7 @@ BOOL func_02011c88(NNSG2dAnimController *pAnimCtrl, fx32 frames)
         MoveNext_(pAnimCtrl);
 
         if (IsReachEdge_(pAnimCtrl, pAnimCtrl->pCurrent)) {
-            func_02011b30(pAnimCtrl);
+            SequenceEdgeHandle_(pAnimCtrl);
         }
 
         if (pAnimCtrl->pCurrent->frames != 0) {

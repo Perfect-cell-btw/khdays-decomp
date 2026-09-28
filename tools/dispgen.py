@@ -58,7 +58,7 @@ for i,x in enumerate(hdr):
             else: op = '|= 1' if re.search(r'orr r\d+, r\d+, #1\b',blk) else '&= ~1'
             body_ops.append(('bf', mo.group(2), op))
 L=["struct bf { unsigned b : 8; };","struct hw60 { unsigned short lo : 8, hi : 8; };",
-   "extern void func_0203c634(void *obj, int idx, void *value);"]
+   "extern void SetIndexedSlot(void *obj, int idx, void *value);"]
 for cb in cbs: L.append(f"extern void {cb}(void);")
 L.append(f"\nvoid {f}(int *node) {{"); L.append("    int *state = (int *)node[1];")
 def op_line(o, ind):
@@ -74,7 +74,7 @@ def emit(ind):
     if mbot: L.append(f"{ind}*(signed char *)(*state + 0x1c6) = *(signed char *)(*state + 0x1c7);")
     L.append(f"{ind}switch (*(signed char *)(*state + 0x1c6)) {{")
     for (ci,addr),cb in zip(order,cbs):
-        L.append(f"{ind}case {hex(ci) if ci>9 else ci}:"); L.append(f"{ind}    func_0203c634(node, 1, {cb});"); L.append(f"{ind}    break;")
+        L.append(f"{ind}case {hex(ci) if ci>9 else ci}:"); L.append(f"{ind}    SetIndexedSlot(node, 1, {cb});"); L.append(f"{ind}    break;")
     L.append(f"{ind}}}")
 if pre=='flag2set5':
     L.append("    if (*(unsigned char *)(*state + 0x1c4) & 2)"); L.append("        *(signed char *)(*state + 0x1c7) = 5;")

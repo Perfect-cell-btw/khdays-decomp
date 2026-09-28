@@ -128,8 +128,8 @@ extern u32 data_020444c0[OSi_IDLE_THREAD_STACK_SIZE / sizeof(u32)];   /* OSi_Idl
 #define OSi_LAUNCHER_STACK_BOTTOM (HW_DTCM_SVC_STACK_ADDR - OSi_IRQ_STACKSIZE)
 /* OSSystemWork.threadinfo_mainp lives at HW_SYS_WORK + 0x?? = 0x027fffa0. */
 #define OSi_SYSTEMWORK_THREADINFO_MAINP (*(OSThreadInfo **)0x027fffa0)
-extern int func_02002198(void *callback);   /* OS_SetSwitchThreadCallback */
-#define OS_SetSwitchThreadCallback func_02002198
+extern int OS_SetIrqWorkField30(void *callback);   /* OS_SetSwitchThreadCallback */
+#define OS_SetSwitchThreadCallback OS_SetIrqWorkField30
 extern void OS_CreateThread(OSThread *thread, void (*func)(void *), void *arg, void *stack, u32 stackSize, u32 prio);
 extern void OSi_IdleThreadProc(void *arg);
 

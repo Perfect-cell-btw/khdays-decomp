@@ -1,6 +1,6 @@
 /* Allocator vtable hook: frees `block` from the expanded heap stored at allocator+4. */
-extern void *func_0201098c();
+extern void *NNS_FndFreeToExpHeap();
 
 void *AllocatorFreeForExpHeap(void **allocator, void *block) {
-    return func_0201098c(allocator[1], block);
+    return NNS_FndFreeToExpHeap(allocator[1], block);
 }

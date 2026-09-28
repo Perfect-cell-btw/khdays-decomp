@@ -7,7 +7,7 @@ session can re-test it.  One that will not compile is a dead end wearing the cos
 a lead: the next person runs verify_idx, gets a compiler error instead of a diff, and
 has to reconstruct the source before they can even start.
 
-func_ov181_020cd1e0.c sat broken in the tree for a day.  Its note listed the type
+Ov181_BeginCharge.c sat broken in the tree for a day.  Its note listed the type
 combinations it had tried, written as pointer types separated by slashes, and one of
 those sequences accidentally spelled a comment terminator -- so the block comment closed
 early and the typedef below it was parsed as code.  Nothing flagged it because parked

@@ -6,160 +6,160 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov002_0207465c(void);
-extern void func_ov002_0207466c(void);
-extern void func_ov002_0207467c(void);
-extern void func_ov002_02074698(void);
-extern void func_ov002_020746dc(void);
-extern void func_ov002_02074708(void);
-extern void func_ov002_020747d0(void);
-extern void func_ov002_02074878(void);
-extern void func_ov002_020748e8(void);
-extern void func_ov002_020749dc(void);
-extern void func_ov002_02074a94(void);
-extern void func_ov002_02074aac(void);
-extern void func_ov002_02074ac4(void);
-extern void func_ov002_02074b4c(void);
-extern void func_ov002_02074be4(void);
-extern void func_ov002_02074bf4(void);
-extern void func_ov002_02074c04(void);
-extern void func_ov002_02074c3c(void);
-extern void func_ov002_02074c7c(void);
-extern void func_ov002_02074c9c(void);
-extern void func_ov002_02074cac(void);
-extern void func_ov002_02074cb8(void);
-extern void func_ov002_02074ccc(void);
-extern void func_ov002_02074ce8(void);
-extern void func_ov002_02074d0c(void);
-extern void func_ov002_02074d30(void);
-extern void func_ov002_02074d40(void);
-extern void func_ov002_02074d70(void);
-extern void func_ov002_02074d7c(void);
-extern void func_ov002_02074d88(void);
-extern void func_ov002_02074e80(void);
-extern void func_ov002_02074ef0(void);
-extern void func_ov002_02074f30(void);
-extern void func_ov002_02074f54(void);
-extern void func_ov002_0207508c(void);
-extern void func_ov002_020750bc(void);
-extern void func_ov002_0207510c(void);
-extern void func_ov002_0207511c(void);
-extern void func_ov002_0207512c(void);
-extern void func_ov002_0207518c(void);
-extern void func_ov002_02075190(void);
-extern void func_ov002_02075194(void);
-extern void func_ov002_020751a4(void);
-extern void func_ov002_020751b0(void);
-extern void func_ov002_020751c0(void);
-extern void func_ov002_020751e4(void);
-extern void func_ov002_020751f0(void);
-extern void func_ov002_020751fc(void);
-extern void func_ov002_02075234(void);
-extern void func_ov002_02075264(void);
-extern void func_ov002_020752d0(void);
-extern void func_ov002_02075320(void);
-extern void func_ov002_02075350(void);
-extern void func_ov002_0207535c(void);
-extern void func_ov002_020753a0(void);
-extern void func_ov002_020753d8(void);
-extern void func_ov002_020753fc(void);
-extern void func_ov002_02075628(void);
-extern void func_ov002_0207568c(void);
-extern void func_ov002_02075730(void);
-extern void func_ov002_02075860(void);
-extern void func_ov002_020758b8(void);
-extern void func_ov002_020758d8(void);
-extern void func_ov002_020758e8(void);
-extern void func_ov002_02075900(void);
-extern void func_ov002_02075914(void);
-extern void func_ov002_02075924(void);
-extern void func_ov002_02075948(void);
-extern void func_ov002_02075978(void);
-extern void func_ov002_02075988(void);
-extern void func_ov002_020759b8(void);
-extern void func_ov002_020759e8(void);
-extern void func_ov002_020759f8(void);
-extern void func_ov002_02075a44(void);
-extern void func_ov002_02075a58(void);
-extern void func_ov002_02075af8(void);
-extern void func_ov002_02075b38(void);
-extern void func_ov002_02075b3c(void);
-extern void func_ov002_02075b60(void);
-extern void func_ov002_02075b90(void);
-extern void func_ov002_02075b9c(void);
-extern void func_ov002_02075bc0(void);
+extern void Ov002_ScriptCmd_EnterPhase(void);
+extern void Ov002_ScriptCmd_DispatchStateEnter(void);
+extern void Ov002_ScriptCmd_SetSessionActive(void);
+extern void Ov002_ScriptPostLinkMessage(void);
+extern void Ov002_ScriptOpSetFlagInverted(void);
+extern void Ov002_ScriptQueueTextItem(void);
+extern void Ov002_ScriptAwardAndShow(void);
+extern void Ov002_SubmitRequestBlockKind1(void);
+extern void Ov002_ScriptSubmitPathTask(void);
+extern void Ov002_ScriptSubmitTaskNode(void);
+extern void Ov002_ScriptCmd_AdvanceRosterSetup(void);
+extern void Ov002_ScriptCmd_WaitRosterSetup(void);
+extern void Ov002_ScriptPlaceSlot(void);
+extern void Ov002_ScriptMoveSlot(void);
+extern void Ov002_ScriptCmd_CreateFieldContext(void);
+extern void Ov002_ScriptCmd_RecreateObjectSlot(void);
+extern void Ov002_ScriptOpInvokeWithFlag(void);
+extern void Ov002_StartFieldEffect(void);
+extern void Ov002_IsRequestForUs(void);
+extern void Ov002_ScriptCmd_SnapshotPausedObject(void);
+extern void Ov002_ScriptCmd_SkipIntOperand(void);
+extern void Ov002_ScriptCmd_SetWorldByte8D68(void);
+extern void Ov002_ScriptOpScaleAndPublish(void);
+extern void Ov002_ScriptCmd_LoadWorldLinkResources(void);
+extern void Ov002_ScriptCmd_LoadPeerIntoSlot(void);
+extern void Ov002_ScriptCmd_SetSessionIdle(void);
+extern void Ov002_ScriptCmd_ThreeOperandStub(void);
+extern void Ov002_ScriptCmd_RestorePanel(void);
+extern void Ov002_ScriptCmd_LoadObjectRecords(void);
+extern void Ov002_ScriptCreateSlotObject(void);
+extern void Ov002_SubmitRequestBlockKind4(void);
+extern void Ov002_ResolveFourDescriptors(void);
+extern void Ov002_ScriptCmd_InitObjectTables(void);
+extern void Ov002_ScriptBuildBindingPayload(void);
+extern void Ov002_ScriptOpInvokeSlot0(void);
+extern void Ov002_ScriptDriveFourOperands(void);
+extern void Ov002_ScriptCmd_SetGlobalFlagOnce(void);
+extern void Ov002_ScriptCmd_SetWorldByte8C9C(void);
+extern void Ov002_SubmitRequestBlock(void);
+extern void Ov002_ConstReturn1(void);
+extern void Ov002_ConstReturn1_2(void);
+extern void Ov002_ScriptCmd_AppendPendingId(void);
+extern void Ov002_ScriptCmd_BuildKeyEntryTable(void);
+extern void Ov002_ScriptCmd_UpdateSlotLookup(void);
+extern void Ov002_ScriptCmd_CreateActorFromMarker(void);
+extern void Ov002_ScriptCmd_BuildSceneIdTable(void);
+extern void Ov002_ScriptCmd_SkipIntOperand_2(void);
+extern void Ov002_BuildEntryList(void);
+extern void Ov002_ScriptCmd_SetWorldSlotPair(void);
+extern void Ov002_ScriptCmdAimRosterSlots(void);
+extern void Ov002_CmdSetRowValues(void);
+extern void Ov002_ScriptCmd_AddMissionMember(void);
+extern void Ov002_ScriptCmd_ArmPartyReset(void);
+extern void Ov002_ScriptDriveWithModeHalfword(void);
+extern void Ov002_ScriptOpDispatchHalfWord(void);
+extern void Ov002_ScriptCmd_SetWorldFlagByte(void);
+extern void Ov002_ApplyRequestBlock(void);
+extern void Ov002_FinishRequest(void);
+extern void Ov002_ScriptCmd_WaitPanelPose(void);
+extern void Ov002_ScriptOpenChoicePanel(void);
+extern void Ov002_ConfirmMission(void);
+extern void Ov002_IsActivePanelIdle(void);
+extern void Ov002_ScriptCmd_SetWorldByte8BAD(void);
+extern void Ov002_ScriptCmd_UpdateRatePanelIfFlag(void);
+extern void Ov002_ScriptCmd_PostCrawlScoreLine(void);
+extern void Ov002_ScriptCmd_SetPendingText(void);
+extern void Ov002_ScriptCmd_SetEventParams(void);
+extern void Ov002_ScriptCmd_EditSessionClock(void);
+extern void Ov002_ScriptCmd_SetWorldHalf8D5C(void);
+extern void Ov002_ScriptCmd_ThreeMixedOperands(void);
+extern void Ov002_ScriptOpApplyValueA(void);
+extern void Ov002_ScriptCmd_SetGlobalByte1F(void);
+extern void Ov002_CmdApplyOperandList(void);
+extern void Ov002_ScriptCmd_WaitCaptionSequence(void);
+extern void Ov002_ScriptWalkPath(void);
+extern void Ov002_ScriptCmd_SpawnStateSpot(void);
+extern void Ov002_ConstReturn1_3(void);
+extern void Ov002_ScriptCmd_SweepSharedMarker(void);
+extern void Ov002_ScriptOpApplyValueB(void);
+extern void Ov002_ScriptCmd_ResetTracks(void);
+extern void Ov002_ScriptCmd_SetLinkMode(void);
+extern void Ov002_ScriptSpawnAtPoint(void);
 
 Ov_Fn data_ov002_0207f134[180] = {
 
-    func_ov002_0207465c,
+    Ov002_ScriptCmd_EnterPhase,
 
     0,
 
-    func_ov002_0207466c,
+    Ov002_ScriptCmd_DispatchStateEnter,
 
     0,
 
-    func_ov002_0207467c,
+    Ov002_ScriptCmd_SetSessionActive,
 
     0,
 
-    func_ov002_02074698,
+    Ov002_ScriptPostLinkMessage,
 
     0,
 
-    func_ov002_020746dc,
+    Ov002_ScriptOpSetFlagInverted,
 
     0,
 
-    func_ov002_02074708,
+    Ov002_ScriptQueueTextItem,
 
     0,
 
-    func_ov002_020747d0,
+    Ov002_ScriptAwardAndShow,
 
     0,
 
-    func_ov002_02074878,
+    Ov002_SubmitRequestBlockKind1,
 
     0,
 
-    func_ov002_020748e8,
+    Ov002_ScriptSubmitPathTask,
 
     0,
 
-    func_ov002_020749dc,
+    Ov002_ScriptSubmitTaskNode,
 
     0,
 
-    func_ov002_02074a94,
+    Ov002_ScriptCmd_AdvanceRosterSetup,
 
-    func_ov002_02074aac,
+    Ov002_ScriptCmd_WaitRosterSetup,
 
-    func_ov002_02074ac4,
+    Ov002_ScriptPlaceSlot,
 
     0,
 
-    func_ov002_02074b4c,
+    Ov002_ScriptMoveSlot,
 
     0,
 
-    func_ov002_02074be4,
+    Ov002_ScriptCmd_CreateFieldContext,
 
     0,
 
-    func_ov002_02074bf4,
+    Ov002_ScriptCmd_RecreateObjectSlot,
 
     0,
 
-    func_ov002_02074c04,
+    Ov002_ScriptOpInvokeWithFlag,
 
     0,
 
-    func_ov002_02074c3c,
+    Ov002_StartFieldEffect,
 
     0,
 
-    func_ov002_02074c7c,
+    Ov002_IsRequestForUs,
 
     0,
 
@@ -171,11 +171,11 @@ Ov_Fn data_ov002_0207f134[180] = {
 
     0,
 
-    func_ov002_02074c9c,
+    Ov002_ScriptCmd_SnapshotPausedObject,
 
     0,
 
-    func_ov002_02074cac,
+    Ov002_ScriptCmd_SkipIntOperand,
 
     0,
 
@@ -183,7 +183,7 @@ Ov_Fn data_ov002_0207f134[180] = {
 
     0,
 
-    func_ov002_02074cb8,
+    Ov002_ScriptCmd_SetWorldByte8D68,
 
     0,
 
@@ -191,23 +191,23 @@ Ov_Fn data_ov002_0207f134[180] = {
 
     0,
 
-    func_ov002_02074ce8,
+    Ov002_ScriptCmd_LoadWorldLinkResources,
 
     0,
 
-    func_ov002_02074d0c,
+    Ov002_ScriptCmd_LoadPeerIntoSlot,
 
     0,
 
-    func_ov002_02074d30,
+    Ov002_ScriptCmd_SetSessionIdle,
 
     0,
 
-    func_ov002_02074d40,
+    Ov002_ScriptCmd_ThreeOperandStub,
 
     0,
 
-    func_ov002_02074d70,
+    Ov002_ScriptCmd_RestorePanel,
 
     0,
 
@@ -215,19 +215,19 @@ Ov_Fn data_ov002_0207f134[180] = {
 
     0,
 
-    func_ov002_02074d7c,
+    Ov002_ScriptCmd_LoadObjectRecords,
 
     0,
 
-    func_ov002_02074d88,
+    Ov002_ScriptCreateSlotObject,
 
     0,
 
-    func_ov002_02074e80,
+    Ov002_SubmitRequestBlockKind4,
 
     0,
 
-    func_ov002_02074ef0,
+    Ov002_ResolveFourDescriptors,
 
     0,
 
@@ -235,47 +235,47 @@ Ov_Fn data_ov002_0207f134[180] = {
 
     0,
 
-    func_ov002_02074f30,
+    Ov002_ScriptCmd_InitObjectTables,
 
     0,
 
-    func_ov002_02074f54,
+    Ov002_ScriptBuildBindingPayload,
 
     0,
 
-    func_ov002_0207508c,
+    Ov002_ScriptOpInvokeSlot0,
 
     0,
 
-    func_ov002_020750bc,
+    Ov002_ScriptDriveFourOperands,
 
     0,
 
-    func_ov002_0207510c,
+    Ov002_ScriptCmd_SetGlobalFlagOnce,
 
     0,
 
-    func_ov002_0207511c,
+    Ov002_ScriptCmd_SetWorldByte8C9C,
 
     0,
 
-    func_ov002_0207512c,
+    Ov002_SubmitRequestBlock,
 
     0,
 
-    func_ov002_0207518c,
+    Ov002_ConstReturn1,
 
     0,
 
-    func_ov002_02075190,
+    Ov002_ConstReturn1_2,
 
     0,
 
-    func_ov002_02075194,
+    Ov002_ScriptCmd_AppendPendingId,
 
     0,
 
-    func_ov002_020751a4,
+    Ov002_ScriptCmd_BuildKeyEntryTable,
 
     0,
 
@@ -283,51 +283,51 @@ Ov_Fn data_ov002_0207f134[180] = {
 
     0,
 
-    func_ov002_020751b0,
+    Ov002_ScriptCmd_UpdateSlotLookup,
 
     0,
 
-    func_ov002_020751c0,
+    Ov002_ScriptCmd_CreateActorFromMarker,
 
     0,
 
-    func_ov002_020751e4,
+    Ov002_ScriptCmd_BuildSceneIdTable,
 
     0,
 
-    func_ov002_020751f0,
+    Ov002_ScriptCmd_SkipIntOperand_2,
 
     0,
 
-    func_ov002_020751fc,
+    Ov002_BuildEntryList,
 
     0,
 
-    func_ov002_02075234,
+    Ov002_ScriptCmd_SetWorldSlotPair,
 
     0,
 
-    func_ov002_02075264,
+    Ov002_ScriptCmdAimRosterSlots,
 
     0,
 
-    func_ov002_020752d0,
+    Ov002_CmdSetRowValues,
 
     0,
 
-    func_ov002_02075320,
+    Ov002_ScriptCmd_AddMissionMember,
 
     0,
 
-    func_ov002_02075350,
+    Ov002_ScriptCmd_ArmPartyReset,
 
     0,
 
-    func_ov002_0207535c,
+    Ov002_ScriptDriveWithModeHalfword,
 
     0,
 
-    func_ov002_020753a0,
+    Ov002_ScriptOpDispatchHalfWord,
 
     0,
 
@@ -335,39 +335,39 @@ Ov_Fn data_ov002_0207f134[180] = {
 
     0,
 
-    func_ov002_020753d8,
+    Ov002_ScriptCmd_SetWorldFlagByte,
 
     0,
 
-    func_ov002_020753fc,
+    Ov002_ApplyRequestBlock,
 
     0,
 
-    func_ov002_02075628,
+    Ov002_FinishRequest,
 
-    func_ov002_0207568c,
+    Ov002_ScriptCmd_WaitPanelPose,
 
-    func_ov002_02075730,
+    Ov002_ScriptOpenChoicePanel,
 
-    func_ov002_02075860,
+    Ov002_ConfirmMission,
 
-    func_ov002_020758b8,
+    Ov002_IsActivePanelIdle,
 
     0,
 
-    func_ov002_020758d8,
+    Ov002_ScriptCmd_SetWorldByte8BAD,
 
     0,
 
-    func_ov002_02074ccc,
+    Ov002_ScriptOpScaleAndPublish,
 
     0,
 
-    func_ov002_020758e8,
+    Ov002_ScriptCmd_UpdateRatePanelIfFlag,
 
     0,
 
-    func_ov002_02075900,
+    Ov002_ScriptCmd_PostCrawlScoreLine,
 
     0,
 
@@ -379,37 +379,37 @@ Ov_Fn data_ov002_0207f134[180] = {
 
     0,
 
-    func_ov002_02075914,
+    Ov002_ScriptCmd_SetPendingText,
 
     0,
 
-    func_ov002_02075924,
+    Ov002_ScriptCmd_SetEventParams,
 
     0,
 
-    func_ov002_02075948,
+    Ov002_ScriptCmd_EditSessionClock,
 
     0,
 
-    func_ov002_02075978,
+    Ov002_ScriptCmd_SetWorldHalf8D5C,
 
     0,
 
-    func_ov002_02075988,
+    Ov002_ScriptCmd_ThreeMixedOperands,
 
     0,
 
-    func_ov002_020759b8,
+    Ov002_ScriptOpApplyValueA,
 
     0,
 
-    func_ov002_020759e8,
+    Ov002_ScriptCmd_SetGlobalByte1F,
 
     0,
 
-    func_ov002_020759f8,
+    Ov002_CmdApplyOperandList,
 
-    func_ov002_02075a44,
+    Ov002_ScriptCmd_WaitCaptionSequence,
 
     0,
 
@@ -419,35 +419,35 @@ Ov_Fn data_ov002_0207f134[180] = {
 
     0,
 
-    func_ov002_02075a58,
+    Ov002_ScriptWalkPath,
 
     0,
 
-    func_ov002_02075af8,
+    Ov002_ScriptCmd_SpawnStateSpot,
 
     0,
 
-    func_ov002_02075b38,
+    Ov002_ConstReturn1_3,
 
     0,
 
-    func_ov002_02075b3c,
+    Ov002_ScriptCmd_SweepSharedMarker,
 
     0,
 
-    func_ov002_02075b60,
+    Ov002_ScriptOpApplyValueB,
 
     0,
 
-    func_ov002_02075b90,
+    Ov002_ScriptCmd_ResetTracks,
 
     0,
 
-    func_ov002_02075b9c,
+    Ov002_ScriptCmd_SetLinkMode,
 
     0,
 
-    func_ov002_02075bc0,
+    Ov002_ScriptSpawnAtPoint,
 
     0,
 

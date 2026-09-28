@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov003_0204e9d8 (0204e9d8): int data_ov003_0204f724[]; */
+/* read by Ov003_StateRebindAnims (0204e9d8): int data_ov003_0204f724[]; */
 const u8 data_ov003_0204f724[16] = {
     0, 144, 0, 0, 0, 128, 0, 0, 0, 120, 0, 0, 0, 100, 0, 0,
 };

@@ -43,7 +43,7 @@ def is_asm(path):
 #     (2026-07-17: this generated 188 blobs and binned 24 nonmatching write-ups before it was
 #     caught. The tell was progress.py's ASM count going UP.)
 done, attempted = {}, {}
-# libs/ too: the SDK sources carved there (libs/nitro/nns/auto/func_02017a90.c ...) are as
+# libs/ too: the SDK sources carved there (libs/nitro/nns/auto/getTransDataEx_.c ...) are as
 # done as anything under src/. Scanning src/ alone made the 2026-09-12 gate re-carve three
 # of them as unclaimed duplicates under src/auto and src/calls.
 for p in (glob.glob(os.path.join(ROOT, "src", "**", "*.c"), recursive=True)

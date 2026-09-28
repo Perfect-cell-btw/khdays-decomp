@@ -1,6 +1,6 @@
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
-extern void func_02001f10(void *queue);
+extern void OS_SleepThread(void *queue);
 
 static inline int FSi_IsTableBusy(char *arc) {
     return (*(volatile int *)(arc + 0x1c) & 0x200) != 0;
@@ -23,7 +23,7 @@ int FSi_ReadTable(char *ctx, void *dst, int len) {
     case 6: {
         enabled = OS_DisableInterrupts();
         while (FSi_IsTableBusy(arc)) {
-            func_02001f10(arc + 0xc);
+            OS_SleepThread(arc + 0xc);
         }
         OS_RestoreInterrupts(enabled);
         r = *(int *)(*(char **)(arc + 0x24) + 0x14);

@@ -11,7 +11,7 @@ Ov<NNN>_ prefix and any trailing digit stripped -- and compare the shapes of the
 functions under it.  Members of a real shape family are byte-identical modulo
 relocations and therefore identical in size; an outlier is a misnamed function.
 
-Found func_ov166_020cc624 (312 bytes) sitting among ten 72-byte members of the
+Found Ov166_ReleaseByStateAndSyncSrt (312 bytes) sitting among ten 72-byte members of the
 c5c0 spawn family, from the 2026-07-18 batch.  That was the batch's only bad row.
 
 Only SHAPE families are checked.  A stem whose majority members are not themselves

@@ -8,51 +8,51 @@ src/overlays/ov046/calls/func_ov046_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov046/calls/func_ov046_020b3234.c:
+src/overlays/ov046/calls/Ov046_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b3234 end:0x020b325c
 
-src/overlays/ov046/calls/func_ov046_020b325c.c:
+src/overlays/ov046/calls/Ov046_stateDtorCleanup.c:
     complete
     .text       start:0x020b325c end:0x020b3290
 
-src/overlays/ov046/calls/func_ov046_020b3290.c:
+src/overlays/ov046/calls/Ov046_BuildRigObject.c:
     complete
     .text       start:0x020b3290 end:0x020b3488
 
-src/overlays/ov046/calls/func_ov046_020b3488.c:
+src/overlays/ov046/calls/Ov046_initFlagStateRegionMarshal.c:
     complete
     .text       start:0x020b3488 end:0x020b34f4
 
-src/overlays/ov046/auto/func_ov046_020b34f4.c:
+src/overlays/ov046/auto/Ov046_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b34f4 end:0x020b3508
 
-src/overlays/ov046/calls/func_ov046_020b3508.c:
+src/overlays/ov046/calls/Ov046_ApplyModeChange.c:
     complete
     .text       start:0x020b3508 end:0x020b362c
 
-src/overlays/ov046/calls/func_ov046_020b362c.c:
+src/overlays/ov046/calls/Ov046_TickPairedState.c:
     complete
     .text       start:0x020b362c end:0x020b3770
 
-src/overlays/ov046/calls/func_ov046_020b3770.c:
+src/overlays/ov046/calls/Ov046_HandleMsgAndFacePartner.c:
     complete
     .text       start:0x020b3770 end:0x020b38b8
 
-src/overlays/ov046/calls/func_ov046_020b38b8.c:
+src/overlays/ov046/calls/Ov046_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b38b8 end:0x020b38ec
 
-src/overlays/ov046/calls/func_ov046_020b38ec.c:
+src/overlays/ov046/calls/Ov046_AcquireGridSlots.c:
     complete
     .text       start:0x020b38ec end:0x020b3974
 
-src/overlays/ov046/calls/func_ov046_020b3974.c:
+src/overlays/ov046/calls/Ov046_ResetAndBindSlotArray.c:
     complete
     .text       start:0x020b3974 end:0x020b3a14
 
-src/overlays/ov046/calls/func_ov046_020b3a14.c:
+src/overlays/ov046/calls/Ov046_DestroyNodesAndFree.c:
     complete
     .text       start:0x020b3a14 end:0x020b3a70
 
@@ -60,91 +60,91 @@ src/overlays/ov046/calls/func_ov046_020b3a70.c:
     complete
     .text       start:0x020b3a70 end:0x020b3a7c
 
-src/overlays/ov046/calls/func_ov046_020b3a7c.c:
+src/overlays/ov046/calls/Ov046_CreateSubObject.c:
     complete
     .text       start:0x020b3a7c end:0x020b3b7c
 
-src/overlays/ov046/calls/func_ov046_020b3b7c.c:
+src/overlays/ov046/calls/Ov046_BindRig.c:
     complete
     .text       start:0x020b3b7c end:0x020b3bd4
 
-src/overlays/ov046/calls/func_ov046_020b3bd4.c:
+src/overlays/ov046/calls/Ov046_dispatchEntryList.c:
     complete
     .text       start:0x020b3bd4 end:0x020b3c38
 
-src/overlays/ov046/calls/func_ov046_020b3c38.c:
+src/overlays/ov046/calls/Ov046_InitRadialBurst.c:
     complete
     .text       start:0x020b3c38 end:0x020b3d94
 
-src/overlays/ov046/calls/func_ov046_020b3d94.c:
+src/overlays/ov046/calls/Ov046_StepHeldProjectile.c:
     complete
     .text       start:0x020b3d94 end:0x020b3e88
 
-src/overlays/ov046/calls/func_ov046_020b3e88.c:
+src/overlays/ov046/calls/Ov046_FireGroundShot.c:
     complete
     .text       start:0x020b3e88 end:0x020b4088
 
-src/overlays/ov046/calls/func_ov046_020b4088.c:
+src/overlays/ov046/calls/Ov046_UpdateSlotsAndFlagLocal.c:
     complete
     .text       start:0x020b4088 end:0x020b4144
 
-src/overlays/ov046/calls/func_ov046_020b4144.c:
+src/overlays/ov046/calls/Ov046_InitAndProcessSixSlotsIfFlagSet.c:
     complete
     .text       start:0x020b4144 end:0x020b4184
 
-src/overlays/ov046/calls/func_ov046_020b4184.c:
+src/overlays/ov046/calls/Ov046_Activate.c:
     complete
     .text       start:0x020b4184 end:0x020b4198
 
-src/overlays/ov046/calls/func_ov046_020b4198.c:
+src/overlays/ov046/calls/Ov046_Deactivate.c:
     complete
     .text       start:0x020b4198 end:0x020b41a4
 
-src/overlays/ov046/calls/func_ov046_020b41a4.c:
+src/overlays/ov046/calls/Ov046_DriveChargeSequence.c:
     complete
     .text       start:0x020b41a4 end:0x020b42e8
 
-src/overlays/ov046/calls/func_ov046_020b42e8.c:
+src/overlays/ov046/calls/Ov046_DrawNodeWithOwnerPos3.c:
     complete
     .text       start:0x020b42e8 end:0x020b4368
 
-src/overlays/ov046/calls/func_ov046_020b4368.c:
+src/overlays/ov046/calls/Ov046_BindChargeTracks.c:
     complete
     .text       start:0x020b4368 end:0x020b43bc
 
-src/overlays/ov046/calls/func_ov046_020b43bc.c:
+src/overlays/ov046/calls/Ov046_BindFreeSlotAtPos.c:
     complete
     .text       start:0x020b43bc end:0x020b445c
 
-src/overlays/ov046/calls/func_ov046_020b445c.c:
+src/overlays/ov046/calls/Ov046_TickStateReturnDone.c:
     complete
     .text       start:0x020b445c end:0x020b44e8
 
-src/overlays/ov046/calls/func_ov046_020b44e8.c:
+src/overlays/ov046/calls/Ov046_DrawNodeIfState2.c:
     complete
     .text       start:0x020b44e8 end:0x020b4504
 
-src/overlays/ov046/calls/func_ov046_020b4504.c:
+src/overlays/ov046/calls/Ov046_LaunchPartProjectile.c:
     complete
     .text       start:0x020b4504 end:0x020b4608
 
-src/overlays/ov046/auto/func_ov046_020b4608.c:
+src/overlays/ov046/auto/Ov046_FillEightHalvesMinus1.c:
     complete
     .text       start:0x020b4608 end:0x020b462c
 
-src/overlays/ov046/calls/func_ov046_020b462c.c:
+src/overlays/ov046/calls/Ov046_FlagLocalAndEnterState21.c:
     complete
     .text       start:0x020b462c end:0x020b4694
 
-src/overlays/ov046/calls/func_ov046_020b4694.c:
+src/overlays/ov046/calls/Ov046_StepAttackEnd.c:
     complete
     .text       start:0x020b4694 end:0x020b4824
 
-src/overlays/ov046/calls/func_ov046_020b4824.c:
+src/overlays/ov046/calls/Ov046_LandingStep.c:
     complete
     .text       start:0x020b4824 end:0x020b4a40
 
-src/overlays/ov046/calls/func_ov046_020b4a40.c:
+src/overlays/ov046/calls/Ov046_InvokeWithDataTable.c:
     complete
     .text       start:0x020b4a40 end:0x020b4a58
 

@@ -122,8 +122,7 @@ extern void DC_FlushAll(void);
 extern void MI_DmaCopy16(u32 dmaNo, const void *src, void *dest, u32 size);
 extern void MIi_CpuCopy32(const void *src, void *dest, u32 size);
 #define MI_CpuCopy32 MIi_CpuCopy32
-extern int func_020093e8(int tag, u32 data, BOOL err);   /* PXI_SendWordByFifo */
-#define PXI_SendWordByFifo func_020093e8
+extern int PXI_SendWordByFifo(int tag, u32 data, BOOL err);   /* PXI_SendWordByFifo */
 extern void WaitByLoop(s32 count);   /* SVC_WaitByLoop */
 #define SVC_WaitByLoop WaitByLoop
 

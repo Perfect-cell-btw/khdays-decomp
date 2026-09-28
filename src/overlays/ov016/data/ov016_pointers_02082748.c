@@ -6,10 +6,10 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov016_02081d2c(void);
+extern void Ov016_KickableStep(void);
 
 Ov_Fn data_ov016_02082748[1] = {
 
-    func_ov016_02081d2c,
+    Ov016_KickableStep,
 
 };

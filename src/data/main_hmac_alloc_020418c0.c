@@ -1,6 +1,6 @@
 /* main .rodata 0x020418c0-0x02041924, one dsd symbol spanning two SDK objects:
  * - the three HMAC-SHA1 driver templates of NitroSDK math (MATHiHMACFuncs initialisers
- *   { MATH_SHA1_DIGEST_SIZE, 512 / 8 }); MATH_CalcHMACSHA1 (func_0200baec) copies the first one
+ *   { MATH_SHA1_DIGEST_SIZE, 512 / 8 }); MATH_CalcHMACSHA1 (MATH_CalcHMACSHA1) copies the first one
  *   and fills in its context, buffer and SHA-1 callbacks;
  * - the NitroSystem FND allocator callback pairs of the expanded heap (allocate / free), which
  *   NNS_FndInitAllocatorFor*Heap install into an NNSFndAllocator. */
@@ -27,10 +27,10 @@ typedef struct NNSFndAllocatorFunc {
 
 #define MATH_SHA1_DIGEST_SIZE 20
 
-extern void *func_02010d70(void *allocator, u32 size);
+extern void *AllocatorAllocForUnitHeap(void *allocator, u32 size);
 extern void AllocatorFreeForUnitHeap(void *allocator, void *memBlock);
 extern void *AllocatorAllocForFrmHeap(void *allocator, u32 size);
-extern void func_02010d6c(void *allocator, void *memBlock);
+extern void AllocatorFreeForFrmHeap(void *allocator, void *memBlock);
 
 const struct {
     MATHiHMACFuncs hmacSha1[3];
@@ -42,7 +42,7 @@ const struct {
         { MATH_SHA1_DIGEST_SIZE, 512 / 8 },
     },
     {
-        { func_02010d70, AllocatorFreeForUnitHeap },
-        { AllocatorAllocForFrmHeap, func_02010d6c },
+        { AllocatorAllocForUnitHeap, AllocatorFreeForUnitHeap },
+        { AllocatorAllocForFrmHeap, AllocatorFreeForFrmHeap },
     },
 };

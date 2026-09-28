@@ -1,0 +1,23 @@
+/*
+ * Ov211_SetupSubObject -- x3. Set up a sub-object (arg5) bound to owner arg2. Init it (0202a440),
+ * clear its +0xc field, then bind the owner's node p = *(arg2+0x88): register p's callback
+ * (02014b5c with p+0x20 and *(p+0x78)) and attach it to arg5 (0202a388(arg5, p, arg3, 0xc)). Finally
+ * link arg5 into the owner (0203b9ac) and configure it (0203b9fc(arg2, 0, 0, arg4)). arg1 unused.
+ */
+extern void FreeAllResourceTables(int a);
+extern void NNS_G3dRenderObjInit(int a, int b);
+extern void Snd_RegisterSeqAndBind(int a, int b, int c, int d);
+extern void MainBlob_ResetSlotRows(int a, int b);
+extern void SetSubitemState(int a, int b, int c, int d);
+
+void Ov211_SetupSubObject(int arg1, int arg2, int arg3, int arg4, int arg5) {
+    int p;
+
+    FreeAllResourceTables(arg5);
+    *(int *)(arg5 + 0xc) = 0;
+    p = *(int *)(arg2 + 0x88);
+    NNS_G3dRenderObjInit(p + 0x20, *(int *)(p + 0x78));
+    Snd_RegisterSeqAndBind(arg5, p, arg3, 0xc);
+    MainBlob_ResetSlotRows(arg2, arg5);
+    SetSubitemState(arg2, 0, 0, arg4);
+}

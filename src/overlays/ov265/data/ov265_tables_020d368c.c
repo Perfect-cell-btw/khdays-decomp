@@ -13,7 +13,7 @@ const u8 data_ov265_020d368c[12] = {
     0, 0, 0, 0, 0, 144, 255, 255, 0, 0, 0, 0,
 };
 
-/* read by decide which way to sidestep, then hand off to func_ov265_020d18e4. (020d16fc): VecFx32 data_ov265_020d3698; */
+/* read by decide which way to sidestep, then hand off to Ov265_UpdateAimPoint. (020d16fc): VecFx32 data_ov265_020d3698; */
 const u8 data_ov265_020d3698[12] = {
     0, 176, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0,
 };

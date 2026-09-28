@@ -1,0 +1,253 @@
+/* Charge step of an ov149 enemy action: push anything caught in front and end
+ * the action, otherwise steer the heading toward the target and keep
+ * accelerating until the charged distance runs out.
+ *
+ * There are three exits and each one announces itself with a fourteen byte
+ * message: a push landed on a victim, the owner dropped the second flag, or the
+ * charge covered more than 0x14000. The message blocks use the packed position
+ * idiom of ov131 020cd9a4 and ov281 020cc440: copy a seven halfword template,
+ * then write each coordinate as three bytes, the top one keeping bit 7 of the
+ * high byte and the low seven bits of the middle byte. Each block needs its own
+ * buffer and its own raw vector; sharing them collapses the frame. Coordinates
+ * are held in a one-value wrapper type (Fx32), a tentative reconstruction of the
+ * original's coordinate type: copying a wrapped value is a struct copy, which
+ * mwcc keeps, and that is the ROM's unread stack copy.
+ *
+ * The heading pick is the ov137 020cc9e0 idiom: 0x28be60db9391 is 65536/(2*PI)
+ * in .32 and the pair at data_0203d210 is sin and cos. The random spread is
+ * computed into its own variable and the atan2 result into another before they
+ * are summed, which is what keeps the fresh call result in the leading slot.
+ *
+ * The vertical step divides into two arms: without the first flag the fall is a
+ * flat 0x80 per frame, with it the remaining vertical speed is scaled and the
+ * forward speed decays, both inside that same arm.
+ */
+typedef unsigned char u8;
+typedef unsigned short u16;
+typedef unsigned int u32;
+
+typedef struct {
+    int x;
+    int y;
+    int z;
+} VecFx32;
+
+struct Msg {
+    u16 h[7];
+};
+
+typedef struct { int value; } Fx32;
+typedef struct { Fx32 x, y, z; } FxVec;
+
+struct Flags17a {
+    u8 bBit0 : 1;
+    u8 bBit1 : 1;
+};
+
+struct State {
+    void *pActor;
+    FxVec *pPoint04;
+    VecFx32 vStep08;
+    VecFx32 vDir14;
+    int nSpeed20;
+    int nDistance24;
+};
+
+struct Node {
+    void *pScene;
+    struct State *pState;
+    char pad08[0x18];
+    signed char bSlot;
+};
+
+extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *ab);
+extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
+extern int VEC_Mag(const VecFx32 *v);
+extern int VEC_Normalize(VecFx32 *out, VecFx32 *in);
+extern void ScaleVec3Fx12(int scale, VecFx32 *in, VecFx32 *out);
+extern int func_020050b4(int x, int z);
+extern int RandNextScaled();
+extern void *Ov107_FindNearestObject(void *actor, int mode);
+extern int Ov107_CollectSphereOverlaps(void *a, VecFx32 *at, void **out);
+extern int Ov107_InvokeHitCallback(void *victim, void *actor, void *owner, int mode,
+                               VecFx32 *push, int flags);
+extern void Ov107_BuildAndSendUpdate(void *actor, int id, u16 mode, FxVec *at);
+extern void SetIndexedSlot(struct Node *node, int slot, void *next);
+
+extern const struct Msg data_ov149_020d0760;
+extern const struct Msg data_ov149_020d076e;
+extern const struct Msg data_ov149_020d078a;
+extern const short data_0203d210[];
+
+static inline int Ov149FxMul(int a, int b)
+{
+    return (int)(((long long)a * b + 0x800) >> 12);
+}
+
+void Ov149_Ov149ChargeStep(struct Node *node)
+{
+    void *pActor;
+    struct State *st;
+    void *aVictims[4];
+    VecFx32 vPush;
+    struct Msg msg1;
+    VecFx32 vToTarget;
+    VecFx32 vFacing;
+    VecFx32 vSum;
+    struct Msg msg2;
+    struct Msg msg3;
+    FxVec raw1;
+    FxVec raw2;
+    FxVec raw3;
+    void (*pfnHook)(void *, struct Msg *, int);
+    FxVec *pPoint;
+    void *pTarget;
+    int i;
+    int nHits;
+    int off;
+    int angle;
+    long long m;
+    int fb;
+    int t;
+
+    st = node->pState;
+    pActor = st->pActor;
+    nHits = Ov107_CollectSphereOverlaps(*(void **)((char *)pActor + 0x38c),
+                                (VecFx32 *)((char *)pActor + 0x74), aVictims);
+    i = 0;
+    if (nHits > 0) {
+        do {
+            VEC_Subtract((VecFx32 *)((char *)aVictims[i] + 0x74),
+                         (VecFx32 *)((char *)pActor + 0x74), &vPush);
+            vPush.y = 0;
+            VEC_Normalize(&vPush, &vPush);
+            ScaleVec3Fx12(0x800, &vPush, &vPush);
+            if (Ov107_InvokeHitCallback(aVictims[i], st->pActor,
+                                    *(void **)((char *)st->pActor + 0x38c), 0,
+                                    &vPush, 0) != 0) {
+                msg1 = data_ov149_020d076e;
+                pPoint = st->pPoint04;
+                raw1.x = pPoint->x;
+                ((u8 *)&msg1)[5] = (u8)(((u32)raw1.x.value >> 16 & 0x7f) |
+                                       ((u32)raw1.x.value >> 24 & 0x80));
+                ((u8 *)&msg1)[6] = (u8)((u32)raw1.x.value >> 8);
+                ((u8 *)&msg1)[7] = (u8)raw1.x.value;
+                raw1.y = pPoint->y;
+                ((u8 *)&msg1)[8] = (u8)(((u32)raw1.y.value >> 16 & 0x7f) |
+                                       ((u32)raw1.y.value >> 24 & 0x80));
+                ((u8 *)&msg1)[9] = (u8)((u32)raw1.y.value >> 8);
+                ((u8 *)&msg1)[10] = (u8)raw1.y.value;
+                raw1.z = pPoint->z;
+                ((u8 *)&msg1)[11] = (u8)(((u32)raw1.z.value >> 16 & 0x7f) |
+                                        ((u32)raw1.z.value >> 24 & 0x80));
+                ((u8 *)&msg1)[12] = (u8)((u32)raw1.z.value >> 8);
+                ((u8 *)&msg1)[13] = (u8)raw1.z.value;
+                pfnHook = *(void (**)(void *, struct Msg *, int))
+                    ((char *)st->pActor + 0x24);
+                if (pfnHook != 0) {
+                    (*pfnHook)(st->pActor, &msg1, 0xe);
+                }
+                Ov107_BuildAndSendUpdate(st->pActor, 0x14e, 5, st->pPoint04);
+                *(u8 *)((char *)st->pActor + 0x1c7) = 0;
+                SetIndexedSlot(node, node->bSlot, 0);
+                return;
+            }
+            i++;
+        } while (i < nHits);
+    }
+
+    if (((struct Flags17a *)((char *)st->pActor + 0x17a))->bBit0 != 0) {
+        pTarget = Ov107_FindNearestObject(st->pActor, 0);
+        if (pTarget != 0) {
+            VEC_Subtract((VecFx32 *)((char *)pTarget + 0x74),
+                         (VecFx32 *)((char *)pActor + 0x74), &vToTarget);
+            vToTarget.y = 0;
+            vFacing = st->vDir14;
+            vFacing.y = 0;
+            VEC_Normalize(&vToTarget, &vToTarget);
+            VEC_Normalize(&vFacing, &vFacing);
+            if (VEC_DotProduct(&vToTarget, &vFacing) > 0x800) {
+                VEC_Add(&vToTarget, &vFacing, &vSum);
+                off = RandNextScaled(0x10c1) - 0x860;
+                angle = func_020050b4(vSum.x, vSum.z);
+                angle = angle + off;
+                t = (unsigned short)(((long long)angle * 0x28be60db9391LL
+                                      + 0x80000000000LL) >> 44) >> 4;
+                st->vDir14.x = data_0203d210[t * 2];
+                st->vDir14.z = data_0203d210[t * 2 + 1];
+            }
+        }
+    }
+
+    st->vStep08.x = (int)(((long long)st->vDir14.x * st->nSpeed20
+                           + 0x800) >> 12);
+    st->vStep08.z = (int)(((long long)st->vDir14.z * st->nSpeed20
+                           + 0x800) >> 12);
+
+    if (((struct Flags17a *)((char *)st->pActor + 0x17a))->bBit0 == 0) {
+        st->vStep08.y = st->vStep08.y - 0x80;
+    } else {
+        st->vStep08.y = -Ov149FxMul(st->vStep08.y, 0xd00);
+        st->nSpeed20 = st->nSpeed20 + (-st->nSpeed20) / 20;
+    }
+
+    if (((struct Flags17a *)((char *)st->pActor + 0x17a))->bBit1 != 0) {
+        msg2 = data_ov149_020d0760;
+        pPoint = st->pPoint04;
+        raw2.x = pPoint->x;
+        ((u8 *)&msg2)[5] = (u8)(((u32)raw2.x.value >> 16 & 0x7f) |
+                               ((u32)raw2.x.value >> 24 & 0x80));
+        ((u8 *)&msg2)[6] = (u8)((u32)raw2.x.value >> 8);
+        ((u8 *)&msg2)[7] = (u8)raw2.x.value;
+        raw2.y = pPoint->y;
+        ((u8 *)&msg2)[8] = (u8)(((u32)raw2.y.value >> 16 & 0x7f) |
+                               ((u32)raw2.y.value >> 24 & 0x80));
+        ((u8 *)&msg2)[9] = (u8)((u32)raw2.y.value >> 8);
+        ((u8 *)&msg2)[10] = (u8)raw2.y.value;
+        raw2.z = pPoint->z;
+        ((u8 *)&msg2)[11] = (u8)(((u32)raw2.z.value >> 16 & 0x7f) |
+                                ((u32)raw2.z.value >> 24 & 0x80));
+        ((u8 *)&msg2)[12] = (u8)((u32)raw2.z.value >> 8);
+        ((u8 *)&msg2)[13] = (u8)raw2.z.value;
+        pfnHook = *(void (**)(void *, struct Msg *, int))
+            ((char *)st->pActor + 0x24);
+        if (pfnHook != 0) {
+            (*pfnHook)(st->pActor, &msg2, 0xe);
+        }
+        Ov107_BuildAndSendUpdate(st->pActor, 0x14e, 6, st->pPoint04);
+        *(u8 *)((char *)st->pActor + 0x1c7) = 0;
+        SetIndexedSlot(node, node->bSlot, 0);
+        return;
+    }
+
+    st->nDistance24 = st->nDistance24 + VEC_Mag(&st->vStep08);
+    if (st->nDistance24 <= 0x14000) {
+        return;
+    }
+
+    msg3 = data_ov149_020d078a;
+    pPoint = st->pPoint04;
+    raw3.x = pPoint->x;
+    ((u8 *)&msg3)[5] = (u8)(((u32)raw3.x.value >> 16 & 0x7f) |
+                           ((u32)raw3.x.value >> 24 & 0x80));
+    ((u8 *)&msg3)[6] = (u8)((u32)raw3.x.value >> 8);
+    ((u8 *)&msg3)[7] = (u8)raw3.x.value;
+    raw3.y = pPoint->y;
+    ((u8 *)&msg3)[8] = (u8)(((u32)raw3.y.value >> 16 & 0x7f) |
+                           ((u32)raw3.y.value >> 24 & 0x80));
+    ((u8 *)&msg3)[9] = (u8)((u32)raw3.y.value >> 8);
+    ((u8 *)&msg3)[10] = (u8)raw3.y.value;
+    raw3.z = pPoint->z;
+    ((u8 *)&msg3)[11] = (u8)(((u32)raw3.z.value >> 16 & 0x7f) |
+                            ((u32)raw3.z.value >> 24 & 0x80));
+    ((u8 *)&msg3)[12] = (u8)((u32)raw3.z.value >> 8);
+    ((u8 *)&msg3)[13] = (u8)raw3.z.value;
+    pfnHook = *(void (**)(void *, struct Msg *, int))
+        ((char *)st->pActor + 0x24);
+    if (pfnHook != 0) {
+        (*pfnHook)(st->pActor, &msg3, 0xe);
+    }
+    *(u8 *)((char *)st->pActor + 0x1c7) = 0;
+    SetIndexedSlot(node, node->bSlot, 0);
+}

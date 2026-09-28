@@ -4,223 +4,223 @@
     .data       start:0x020d4a40 end:0x020d4a80 kind:data align:32
     .bss        start:0x020d4a80 end:0x020d4a80 kind:bss align:32
 
-src/overlays/ov133/calls/func_ov133_020d1980.c:
+src/overlays/ov133/calls/Ov133_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/ov133/calls/func_ov133_020d1998.c:
+src/overlays/ov133/calls/Ov133_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a24
 
-src/overlays/ov133/calls/func_ov133_020d1a24.c:
+src/overlays/ov133/calls/Ov133_nodeConstructor.c:
     complete
     .text       start:0x020d1a24 end:0x020d1c74
 
-src/overlays/ov133/calls/func_ov133_020d1c74.c:
+src/overlays/ov133/calls/Ov133_Destroy.c:
     complete
     .text       start:0x020d1c74 end:0x020d1cbc
 
-src/overlays/ov133/calls/func_ov133_020d1cbc.c:
+src/overlays/ov133/calls/Ov133_TickWithChildRefresh.c:
     complete
     .text       start:0x020d1cbc end:0x020d1ce0
 
-src/overlays/ov133/calls/func_ov133_020d1ce0.c:
+src/overlays/ov133/calls/Ov133_TickAndPlaceBelowCamera.c:
     complete
     .text       start:0x020d1ce0 end:0x020d1d54
 
-src/overlays/ov133/calls/func_ov133_020d1d54.c:
+src/overlays/ov133/calls/Ov133_OnEffectMessage.c:
     complete
     .text       start:0x020d1d54 end:0x020d1ea8
 
-src/overlays/ov133/calls/func_ov133_020d1ea8.c:
+src/overlays/ov133/calls/Ov133_Model_SetTrack0.c:
     complete
     .text       start:0x020d1ea8 end:0x020d1ed8
 
-src/overlays/ov133/calls/func_ov133_020d1ed8.c:
+src/overlays/ov133/calls/Ov133_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020d1ed8 end:0x020d200c
 
-src/overlays/ov133/calls/func_ov133_020d200c.c:
+src/overlays/ov133/calls/Ov133_collectChildrenInBox.c:
     complete
     .text       start:0x020d200c end:0x020d20ec
 
-src/overlays/ov133/calls/func_ov133_020d20ec.c:
+src/overlays/ov133/calls/Ov133_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020d20ec end:0x020d22a0
 
-src/overlays/ov133/calls/func_ov133_020d22a0.c:
+src/overlays/ov133/calls/Ov133_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d22a0 end:0x020d22fc
 
-src/overlays/ov133/calls/func_ov133_020d22fc.c:
+src/overlays/ov133/calls/Ov133_ApplyHitAndRequestState.c:
     complete
     .text       start:0x020d22fc end:0x020d25b0
 
-src/overlays/ov133/auto/func_ov133_020d25b0.c:
+src/overlays/ov133/auto/Ov133_RequestSubState10IfIdleUnless7Or8.c:
     complete
     .text       start:0x020d25b0 end:0x020d25f4
 
-src/overlays/ov133/calls/func_ov133_020d25f4.c:
+src/overlays/ov133/calls/Ov133_AiStateInit.c:
     complete
     .text       start:0x020d25f4 end:0x020d26f0
 
-src/overlays/ov133/calls/func_ov133_020d26f0.c:
+src/overlays/ov133/calls/Ov133_stDispatchByStateByte.c:
     complete
     .text       start:0x020d26f0 end:0x020d28b0
 
-src/overlays/ov133/calls/func_ov133_020d28b0.c:
+src/overlays/ov133/calls/Ov133_UpdateHeadingAndVelocity.c:
     complete
     .text       start:0x020d28b0 end:0x020d298c
 
-src/overlays/ov133/calls/func_ov133_020d298c.c:
+src/overlays/ov133/calls/Ov133_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d298c end:0x020d29f4
 
-src/overlays/ov133/calls/func_ov133_020d29f4.c:
+src/overlays/ov133/calls/Ov133_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d29f4 end:0x020d2a30
 
-src/overlays/ov133/calls/func_ov133_020d2a30.c:
+src/overlays/ov133/calls/Ov133_BeginRecoveryStance.c:
     complete
     .text       start:0x020d2a30 end:0x020d2af8
 
-src/overlays/ov133/calls/func_ov133_020d2af8.c:
+src/overlays/ov133/calls/Ov133_stAdvanceTimerAimTarget.c:
     complete
     .text       start:0x020d2af8 end:0x020d2bc0
 
-src/overlays/ov133/calls/func_ov133_020d2bc0.c:
+src/overlays/ov133/calls/Ov133_AiRollTimerQueue2.c:
     complete
     .text       start:0x020d2bc0 end:0x020d2c20
 
-src/overlays/ov133/calls/func_ov133_020d2c20.c:
+src/overlays/ov133/calls/Ov133_stDiv30Store.c:
     complete
     .text       start:0x020d2c20 end:0x020d2c80
 
-src/overlays/ov133/calls/func_ov133_020d2c80.c:
+src/overlays/ov133/calls/Ov133_ReactWhenTargetInReach.c:
     complete
     .text       start:0x020d2c80 end:0x020d2cf0
 
-src/overlays/ov133/calls/func_ov133_020d2cf0.c:
+src/overlays/ov133/calls/Ov133_stDiv30Store_2.c:
     complete
     .text       start:0x020d2cf0 end:0x020d2d50
 
-src/overlays/ov133/calls/func_ov133_020d2d50.c:
+src/overlays/ov133/calls/Ov133_stIdlePose2Advance.c:
     complete
     .text       start:0x020d2d50 end:0x020d2d94
 
-src/overlays/ov133/calls/func_ov133_020d2d94.c:
+src/overlays/ov133/calls/Ov133_stSeekTargetSteer.c:
     complete
     .text       start:0x020d2d94 end:0x020d2f3c
 
-src/overlays/ov133/calls/func_ov133_020d2f3c.c:
+src/overlays/ov133/calls/Ov133_AiStep_QueueAction9OnFlag48Clear.c:
     complete
     .text       start:0x020d2f3c end:0x020d2f70
 
-src/overlays/ov133/calls/func_ov133_020d2f70.c:
+src/overlays/ov133/calls/Ov133_PickRandomSpinDirection.c:
     complete
     .text       start:0x020d2f70 end:0x020d2ff4
 
-src/overlays/ov133/calls/func_ov133_020d2ff4.c:
+src/overlays/ov133/calls/Ov133_StrafeThenReact.c:
     complete
     .text       start:0x020d2ff4 end:0x020d31e0
 
-src/overlays/ov133/calls/func_ov133_020d31e0.c:
+src/overlays/ov133/calls/Ov133_stateAnimAimAtTarget.c:
     complete
     .text       start:0x020d31e0 end:0x020d3250
 
-src/overlays/ov133/calls/func_ov133_020d3250.c:
+src/overlays/ov133/calls/Ov133_AiDecelUntilFlagClear.c:
     complete
     .text       start:0x020d3250 end:0x020d32cc
 
-src/overlays/ov133/calls/func_ov133_020d32cc.c:
+src/overlays/ov133/calls/Ov133_stateSetFlagEffect.c:
     complete
     .text       start:0x020d32cc end:0x020d3338
 
-src/overlays/ov133/calls/func_ov133_020d3338.c:
+src/overlays/ov133/calls/Ov133_stateTransformAimVec.c:
     complete
     .text       start:0x020d3338 end:0x020d3404
 
-src/overlays/ov133/calls/func_ov133_020d3404.c:
+src/overlays/ov133/calls/Ov133_HomingDash_Tick.c:
     complete
     .text       start:0x020d3404 end:0x020d3898
 
-src/overlays/ov133/calls/func_ov133_020d3898.c:
+src/overlays/ov133/calls/Ov133_HomingDash_Recover.c:
     complete
     .text       start:0x020d3898 end:0x020d394c
 
-src/overlays/ov133/calls/func_ov133_020d394c.c:
+src/overlays/ov133/calls/Ov133_SetPose6ThenAdvanceSlot.c:
     complete
     .text       start:0x020d394c end:0x020d3980
 
-src/overlays/ov133/calls/func_ov133_020d3980.c:
+src/overlays/ov133/calls/Ov133_stateStartThrow.c:
     complete
     .text       start:0x020d3980 end:0x020d3a54
 
-src/overlays/ov133/calls/func_ov133_020d3a54.c:
+src/overlays/ov133/calls/Ov133_ThrowCharge_Tick.c:
     complete
     .text       start:0x020d3a54 end:0x020d3b48
 
-src/overlays/ov133/calls/func_ov133_020d3b48.c:
+src/overlays/ov133/calls/Ov133_ThrowRelease_Enter.c:
     complete
     .text       start:0x020d3b48 end:0x020d3d14
 
-src/overlays/ov133/calls/func_ov133_020d3d14.c:
+src/overlays/ov133/calls/Ov133_throwRelease_tick.c:
     complete
     .text       start:0x020d3d14 end:0x020d4454
 
-src/overlays/ov133/calls/func_ov133_020d4454.c:
+src/overlays/ov133/calls/Ov133_ConfigHw60FlagsBeginAction4a.c:
     complete
     .text       start:0x020d4454 end:0x020d451c
 
-src/overlays/ov133/calls/func_ov133_020d451c.c:
+src/overlays/ov133/calls/Ov133_stateToggleFlagsEffectClear.c:
     complete
     .text       start:0x020d451c end:0x020d45d0
 
-src/overlays/ov133/calls/func_ov133_020d45d0.c:
+src/overlays/ov133/calls/Ov133_SpawnChild10AndBackLink.c:
     complete
     .text       start:0x020d45d0 end:0x020d4618
 
-src/overlays/ov133/calls/func_ov133_020d4618.c:
+src/overlays/ov133/calls/Ov133_RenderAtOwnerScaled.c:
     complete
     .text       start:0x020d4618 end:0x020d4670
 
-src/overlays/ov133/calls/func_ov133_020d4670.c:
+src/overlays/ov133/calls/Ov133_stInitChildActor.c:
     complete
     .text       start:0x020d4670 end:0x020d471c
 
-src/overlays/ov133/auto/func_ov133_020d471c.c:
+src/overlays/ov133/auto/Ov133_ChildTaskTeardownAndFlag.c:
     complete
     .text       start:0x020d471c end:0x020d4758
 
-src/overlays/ov133/calls/func_ov133_020d4758.c:
+src/overlays/ov133/calls/Ov133_TickTimerAdvanceSubState.c:
     complete
     .text       start:0x020d4758 end:0x020d47bc
 
-src/overlays/ov133/calls/func_ov133_020d47bc.c:
+src/overlays/ov133/calls/Ov133_SpawnChild0cAndBackLink.c:
     complete
     .text       start:0x020d47bc end:0x020d4804
 
-src/overlays/ov133/calls/func_ov133_020d4804.c:
+src/overlays/ov133/calls/Ov133_RenderAtOwnerModel.c:
     complete
     .text       start:0x020d4804 end:0x020d484c
 
-src/overlays/ov133/calls/func_ov133_020d484c.c:
+src/overlays/ov133/calls/Ov133_stateInitSubitem.c:
     complete
     .text       start:0x020d484c end:0x020d48cc
 
-src/overlays/ov133/auto/func_ov133_020d48cc.c:
+src/overlays/ov133/auto/Ov133_ChildTaskTeardown.c:
     complete
     .text       start:0x020d48cc end:0x020d48f4
 
-src/overlays/ov133/calls/func_ov133_020d48f4.c:
+src/overlays/ov133/calls/Ov133_ConfigureActorUnlessBusy.c:
     complete
     .text       start:0x020d48f4 end:0x020d4938
 
-src/overlays/ov133/calls/func_ov133_020d4938.c:
+src/overlays/ov133/calls/Ov133_stateSubitemStateTransition.c:
     complete
     .text       start:0x020d4938 end:0x020d4998
 
-src/overlays/ov133/calls/func_ov133_020d4998.c:
+src/overlays/ov133/calls/Ov133_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d4998 end:0x020d49b8
 

@@ -12,8 +12,8 @@ typedef struct ResourceTrackerConfig {
     TrackerCallback pfnNode;         /* 0x10 */
 } ResourceTrackerConfig;
 
-extern void func_ov026_0208530c(void);
-extern void func_ov026_0208531c(void);
+extern void Ov026_ResourceEntryCallback(void);
+extern void Ov026_ResourceNodeCallback(void);
 
-/* Read by func_ov026_0208532c. */
-const ResourceTrackerConfig data_ov026_02091120 = { 105, 1, 28, func_ov026_0208530c, func_ov026_0208531c };
+/* Read by Ov026_LoadShopResources. */
+const ResourceTrackerConfig data_ov026_02091120 = { 105, 1, 28, Ov026_ResourceEntryCallback, Ov026_ResourceNodeCallback };

@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_02032288. */
-extern void *func_02032288();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to SlotTable_AddEntry. */
+extern void *SlotTable_AddEntry();
 
 void *func_02032444() {
-    return func_02032288();
+    return SlotTable_AddEntry();
 }

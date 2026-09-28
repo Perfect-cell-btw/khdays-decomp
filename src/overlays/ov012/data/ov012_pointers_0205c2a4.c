@@ -6,25 +6,25 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov012_0205b2a4(void);
-extern void func_ov012_0205b32c(void);
-extern void func_ov012_0205b3a4(void);
-extern void func_ov012_0205b3d4(void);
-extern void func_ov012_0205b4b0(void);
-extern void func_ov012_0205b57c(void);
+extern void Ov012_LoadOpeningBgCharacters(void);
+extern void Ov012_LoadOpeningBgScreen(void);
+extern void Ov012_InvokeIndexedTableEntry(void);
+extern void Ov012_BlendOpeningBgPlanes(void);
+extern void Ov012_FadeOutOpeningBgPlanes(void);
+extern void Ov012_OpeningStepReturnZero(void);
 
 Ov_Fn data_ov012_0205c2a4[6] = {
 
-    func_ov012_0205b2a4,
+    Ov012_LoadOpeningBgCharacters,
 
-    func_ov012_0205b32c,
+    Ov012_LoadOpeningBgScreen,
 
-    func_ov012_0205b3a4,
+    Ov012_InvokeIndexedTableEntry,
 
-    func_ov012_0205b3d4,
+    Ov012_BlendOpeningBgPlanes,
 
-    func_ov012_0205b4b0,
+    Ov012_FadeOutOpeningBgPlanes,
 
-    func_ov012_0205b57c,
+    Ov012_OpeningStepReturnZero,
 
 };

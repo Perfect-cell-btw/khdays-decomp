@@ -8,131 +8,131 @@ src/overlays/ov067/calls/func_ov067_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov067/calls/func_ov067_020b5a34.c:
+src/overlays/ov067/calls/Ov067_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a5c
 
-src/overlays/ov067/calls/func_ov067_020b5a5c.c:
+src/overlays/ov067/calls/Ov067_setupTriple.c:
     complete
     .text       start:0x020b5a5c end:0x020b5a7c
 
-src/overlays/ov067/calls/func_ov067_020b5a7c.c:
+src/overlays/ov067/calls/Ov067_Boot.c:
     complete
     .text       start:0x020b5a7c end:0x020b5c74
 
-src/overlays/ov067/calls/func_ov067_020b5c74.c:
+src/overlays/ov067/calls/Ov067_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020b5c74 end:0x020b5cac
 
-src/overlays/ov067/auto/func_ov067_020b5cac.c:
+src/overlays/ov067/auto/Ov067_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5cac end:0x020b5ccc
 
-src/overlays/ov067/calls/func_ov067_020b5ccc.c:
+src/overlays/ov067/calls/Ov067_ApplyMode.c:
     complete
     .text       start:0x020b5ccc end:0x020b5d9c
 
-src/overlays/ov067/calls/func_ov067_020b5d9c.c:
+src/overlays/ov067/calls/Ov067_SyncLocalPlayerHandle.c:
     complete
     .text       start:0x020b5d9c end:0x020b5e0c
 
-src/overlays/ov067/calls/func_ov067_020b5e0c.c:
+src/overlays/ov067/calls/Ov067_HandleMessage.c:
     complete
     .text       start:0x020b5e0c end:0x020b6050
 
-src/overlays/ov067/calls/func_ov067_020b6050.c:
+src/overlays/ov067/calls/Ov067_StepAttackSlotAndForward.c:
     complete
     .text       start:0x020b6050 end:0x020b6088
 
-src/overlays/ov067/calls/func_ov067_020b6088.c:
+src/overlays/ov067/calls/Ov067_BuildRenderHandles.c:
     complete
     .text       start:0x020b6088 end:0x020b6134
 
-src/overlays/ov067/calls/func_ov067_020b6134.c:
+src/overlays/ov067/calls/Ov067_InitThreeEffectSlots.c:
     complete
     .text       start:0x020b6134 end:0x020b61f4
 
-src/overlays/ov067/calls/func_ov067_020b61f4.c:
+src/overlays/ov067/calls/Ov067_ReleaseThreeSubBlocks2c2c.c:
     complete
     .text       start:0x020b61f4 end:0x020b6228
 
-src/overlays/ov067/calls/func_ov067_020b6228.c:
+src/overlays/ov067/calls/Ov067_InitTwoGlobalChannelSlots.c:
     complete
     .text       start:0x020b6228 end:0x020b625c
 
-src/overlays/ov067/calls/func_ov067_020b625c.c:
+src/overlays/ov067/calls/Ov067_ForwardToThreeSubHandlersSameArgs.c:
     complete
     .text       start:0x020b625c end:0x020b6294
 
-src/overlays/ov067/calls/func_ov067_020b6294.c:
+src/overlays/ov067/calls/Ov067_RunThreeSubHandlersIfFlagSet.c:
     complete
     .text       start:0x020b6294 end:0x020b62d0
 
-src/overlays/ov067/calls/func_ov067_020b62d0.c:
+src/overlays/ov067/calls/Ov067_BindAnimsAndFaceOwner.c:
     complete
     .text       start:0x020b62d0 end:0x020b63b0
 
-src/overlays/ov067/calls/func_ov067_020b63b0.c:
+src/overlays/ov067/calls/Ov067_UpdateTracksWhileActive.c:
     complete
     .text       start:0x020b63b0 end:0x020b63e0
 
-src/overlays/ov067/calls/func_ov067_020b63e0.c:
+src/overlays/ov067/calls/Ov067_DrawNodeWhileActive.c:
     complete
     .text       start:0x020b63e0 end:0x020b63fc
 
-src/overlays/ov067/calls/func_ov067_020b63fc.c:
+src/overlays/ov067/calls/Ov067_PlayVoiceAndBindThreeAnims.c:
     complete
     .text       start:0x020b63fc end:0x020b64b4
 
-src/overlays/ov067/calls/func_ov067_020b64b4.c:
+src/overlays/ov067/calls/Ov067_StepSequenceSlot.c:
     complete
     .text       start:0x020b64b4 end:0x020b65f0
 
-src/overlays/ov067/calls/func_ov067_020b65f0.c:
+src/overlays/ov067/calls/Ov067_DrawNodeWithYaw2.c:
     complete
     .text       start:0x020b65f0 end:0x020b6668
 
-src/overlays/ov067/calls/func_ov067_020b6668.c:
+src/overlays/ov067/calls/Ov067_Activate.c:
     complete
     .text       start:0x020b6668 end:0x020b667c
 
-src/overlays/ov067/calls/func_ov067_020b667c.c:
+src/overlays/ov067/calls/Ov067_Deactivate.c:
     complete
     .text       start:0x020b667c end:0x020b6688
 
-src/overlays/ov067/calls/func_ov067_020b6688.c:
+src/overlays/ov067/calls/Ov067_DriveChargeSequence.c:
     complete
     .text       start:0x020b6688 end:0x020b67cc
 
-src/overlays/ov067/calls/func_ov067_020b67cc.c:
+src/overlays/ov067/calls/Ov067_DrawSubNodeWithYaw3.c:
     complete
     .text       start:0x020b67cc end:0x020b6850
 
-src/overlays/ov067/calls/func_ov067_020b6850.c:
+src/overlays/ov067/calls/Ov067_RebindAnimTracks.c:
     complete
     .text       start:0x020b6850 end:0x020b68c8
 
-src/overlays/ov067/calls/func_ov067_020b68c8.c:
+src/overlays/ov067/calls/Ov067_EmitAttackBurst.c:
     complete
     .text       start:0x020b68c8 end:0x020b6b40
 
-src/overlays/ov067/calls/func_ov067_020b6b40.c:
+src/overlays/ov067/calls/Ov067_FlagLocalAndEnterState21.c:
     complete
     .text       start:0x020b6b40 end:0x020b6ba8
 
-src/overlays/ov067/calls/func_ov067_020b6ba8.c:
+src/overlays/ov067/calls/Ov067_HoverStep.c:
     complete
     .text       start:0x020b6ba8 end:0x020b6d8c
 
-src/overlays/ov067/calls/func_ov067_020b6d8c.c:
+src/overlays/ov067/calls/Ov067_AttackStep.c:
     complete
     .text       start:0x020b6d8c end:0x020b7048
 
-src/overlays/ov067/calls/func_ov067_020b7048.c:
+src/overlays/ov067/calls/Ov067_LandingStep.c:
     complete
     .text       start:0x020b7048 end:0x020b7234
 
-src/overlays/ov067/calls/func_ov067_020b7234.c:
+src/overlays/ov067/calls/Ov067_InvokeWithDataTable.c:
     complete
     .text       start:0x020b7234 end:0x020b724c
 

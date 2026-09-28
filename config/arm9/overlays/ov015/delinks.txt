@@ -4,283 +4,283 @@
     .data       start:0x02082900 end:0x02082960 kind:data align:32
     .bss        start:0x02082960 end:0x02082960 kind:bss align:32
 
-src/overlays/ov015/calls/func_ov015_0207fa40.c:
+src/overlays/ov015/calls/Ov015_StoreArgsRunTwoSubActionsIfFlag4.c:
     complete
     .text       start:0x0207fa40 end:0x0207fa7c
 
-src/overlays/ov015/auto/func_ov015_0207fa7c.c:
+src/overlays/ov015/auto/Ov015_SetByte0x14cTo2IfQ1.c:
     complete
     .text       start:0x0207fa7c end:0x0207fa90
 
-src/overlays/ov015/calls/func_ov015_0207fa90.c:
+src/overlays/ov015/calls/Ov015_TeardownRenderNode.c:
     complete
     .text       start:0x0207fa90 end:0x0207fab0
 
-src/overlays/ov015/calls/func_ov015_0207fab0.c:
+src/overlays/ov015/calls/Ov015_Pickup_ReleaseNode.c:
     complete
     .text       start:0x0207fab0 end:0x0207fabe
 
-src/overlays/ov015/calls/func_ov015_0207fac0.c:
+src/overlays/ov015/calls/Ov015_PickupLoad.c:
     complete
     .text       start:0x0207fac0 end:0x0207fb8c
 
-src/overlays/ov015/calls/func_ov015_0207fb8c.c:
+src/overlays/ov015/calls/Ov015_PickupShow.c:
     complete
     .text       start:0x0207fb8c end:0x0207fc40
 
-src/overlays/ov015/calls/func_ov015_0207fc40.c:
+src/overlays/ov015/calls/Ov015_PickupRequestTake.c:
     complete
     .text       start:0x0207fc40 end:0x0207fcbc
 
-src/overlays/ov015/auto/func_ov015_0207fcbc.c:
+src/overlays/ov015/auto/Ov015_AddrOfField0x1C.c:
     complete
     .text       start:0x0207fcbc end:0x0207fcc4
 
-src/overlays/ov015/auto/func_ov015_0207fcc4.c:
+src/overlays/ov015/auto/Ov015_GetField8Field78.c:
     complete
     .text       start:0x0207fcc4 end:0x0207fcd0
 
-src/overlays/ov015/auto/func_ov015_0207fcd0.c:
+src/overlays/ov015/auto/Ov015_AddrOfField0x140.c:
     complete
     .text       start:0x0207fcd0 end:0x0207fcd8
 
-src/overlays/ov015/calls/func_ov015_0207fcd8.c:
+src/overlays/ov015/calls/Ov015_FreeBlock0x2c.c:
     complete
     .text       start:0x0207fcd8 end:0x0207fcec
 
-src/overlays/ov015/calls/func_ov015_0207fcec.c:
+src/overlays/ov015/calls/Ov015_PickupCollect.c:
     complete
     .text       start:0x0207fcec end:0x0207fdc4
 
-src/overlays/ov015/calls/func_ov015_0207fdc4.c:
+src/overlays/ov015/calls/Ov015_PickupPlayTakenSequence.c:
     complete
     .text       start:0x0207fdc4 end:0x0207fe0c
 
-src/overlays/ov015/calls/func_ov015_0207fe0c.c:
+src/overlays/ov015/calls/Ov015_PickupUpdate.c:
     complete
     .text       start:0x0207fe0c end:0x0207ffd0
 
-src/overlays/ov015/calls/func_ov015_0207ffd0.c:
+src/overlays/ov015/calls/Ov015_PickupTakenStep.c:
     complete
     .text       start:0x0207ffd0 end:0x020800d4
 
-src/overlays/ov015/calls/func_ov015_020800d4.c:
+src/overlays/ov015/calls/Ov015_CreatePickupClass.c:
     complete
     .text       start:0x020800d4 end:0x020801c8
 
-src/overlays/ov015/calls/func_ov015_020801c8.c:
+src/overlays/ov015/calls/Ov015_SpawnPickup.c:
     complete
     .text       start:0x020801c8 end:0x02080408
 
-src/overlays/ov015/auto/func_ov015_02080408.c:
+src/overlays/ov015/auto/Ov015_SetByte0x50To2IfQ1.c:
     complete
     .text       start:0x02080408 end:0x0208041c
 
-src/overlays/ov015/auto/func_ov015_0208041c.c:
+src/overlays/ov015/auto/Ov015_AddrOfField0x30.c:
     complete
     .text       start:0x0208041c end:0x02080424
 
-src/overlays/ov015/calls/func_ov015_02080424.c:
+src/overlays/ov015/calls/Ov015_TriggerHitTest.c:
     complete
     .text       start:0x02080424 end:0x020804a4
 
-src/overlays/ov015/calls/func_ov015_020804a4.c:
+src/overlays/ov015/calls/Ov015_TriggerUpdate.c:
     complete
     .text       start:0x020804a4 end:0x02080540
 
-src/overlays/ov015/calls/func_ov015_02080540.c:
+src/overlays/ov015/calls/Ov015_CutsceneStep2.c:
     complete
     .text       start:0x02080540 end:0x020805cc
 
-src/overlays/ov015/calls/func_ov015_020805cc.c:
+src/overlays/ov015/calls/Ov015_CreateTriggerClass.c:
     complete
     .text       start:0x020805cc end:0x0208061c
 
-src/overlays/ov015/calls/func_ov015_0208061c.c:
+src/overlays/ov015/calls/Ov015_SpawnTrigger.c:
     complete
     .text       start:0x0208061c end:0x02080684
 
-src/overlays/ov015/calls/func_ov015_02080684.c:
+src/overlays/ov015/calls/Ov015_ClearBlock0x44.c:
     complete
     .text       start:0x02080684 end:0x0208069c
 
-src/overlays/ov015/calls/func_ov015_0208069c.c:
+src/overlays/ov015/calls/Ov015_SpotDriveActor.c:
     complete
     .text       start:0x0208069c end:0x02080734
 
-src/overlays/ov015/auto/func_ov015_02080734.c:
+src/overlays/ov015/auto/Ov015_AddrOfField0x30_2.c:
     complete
     .text       start:0x02080734 end:0x0208073c
 
-src/overlays/ov015/calls/func_ov015_0208073c.c:
+src/overlays/ov015/calls/Ov015_Spot_SetPosition.c:
     complete
     .text       start:0x0208073c end:0x0208075c
 
-src/overlays/ov015/calls/func_ov015_0208075c.c:
+src/overlays/ov015/calls/Ov015_GetTargetIfInRange.c:
     complete
     .text       start:0x0208075c end:0x02080794
 
-src/overlays/ov015/calls/func_ov015_02080794.c:
+src/overlays/ov015/calls/Ov015_SpotFacingForInteraction.c:
     complete
     .text       start:0x02080794 end:0x020807cc
 
-src/overlays/ov015/calls/func_ov015_020807cc.c:
+src/overlays/ov015/calls/Ov015_FreeAllEntryBuffers.c:
     complete
     .text       start:0x020807cc end:0x020807f2
 
-src/overlays/ov015/auto/func_ov015_020807f4.c:
+src/overlays/ov015/auto/Ov015_SpotDefFindEntry.c:
     complete
     .text       start:0x020807f4 end:0x02080884
 
-src/overlays/ov015/calls/func_ov015_02080884.c:
+src/overlays/ov015/calls/Ov015_SpotDefFindNearestFreeEntry.c:
     complete
     .text       start:0x02080884 end:0x02080ad0
 
-src/overlays/ov015/calls/func_ov015_02080ad0.c:
+src/overlays/ov015/calls/Ov015_SpotAssignPlayer.c:
     complete
     .text       start:0x02080ad0 end:0x02080b9c
 
-src/overlays/ov015/auto/func_ov015_02080b9c.c:
+src/overlays/ov015/auto/Ov015_SpotFindEntryIdByKey.c:
     complete
     .text       start:0x02080b9c end:0x02080c00
 
-src/overlays/ov015/calls/func_ov015_02080c00.c:
+src/overlays/ov015/calls/Ov015_SpotArrive.c:
     complete
     .text       start:0x02080c00 end:0x02080d30
 
-src/overlays/ov015/calls/func_ov015_02080d30.c:
+src/overlays/ov015/calls/Ov015_SpotUpdate.c:
     complete
     .text       start:0x02080d30 end:0x02080df8
 
-src/overlays/ov015/calls/func_ov015_02080df8.c:
+src/overlays/ov015/calls/Ov015_CreateSpotClass.c:
     complete
     .text       start:0x02080df8 end:0x02080fc0
 
-src/overlays/ov015/calls/func_ov015_02080fc0.c:
+src/overlays/ov015/calls/Ov015_SpawnSpot.c:
     complete
     .text       start:0x02080fc0 end:0x02081030
 
-src/overlays/ov015/calls/func_ov015_02081030.c:
+src/overlays/ov015/calls/Ov015_SpotDefCollectLinkedMasks.c:
     complete
     .text       start:0x02081030 end:0x020810c0
 
-src/overlays/ov015/calls/func_ov015_020810c0.c:
+src/overlays/ov015/calls/Ov015_SpotInstallTable.c:
     complete
     .text       start:0x020810c0 end:0x02081284
 
-src/overlays/ov015/auto/func_ov015_02081284.c:
+src/overlays/ov015/auto/Ov015_StoreWordAt0x3c.c:
     complete
     .text       start:0x02081284 end:0x02081288
 
-src/overlays/ov015/calls/func_ov015_02081288.c:
+src/overlays/ov015/calls/Ov015_ForEachPieceInSphere.c:
     complete
     .text       start:0x02081288 end:0x020813c4
 
-src/overlays/ov015/calls/func_ov015_020813c4.c:
+src/overlays/ov015/calls/Ov015_ChestNotifyNeighbours.c:
     complete
     .text       start:0x020813c4 end:0x02081554
 
-src/overlays/ov015/calls/func_ov015_02081554.c:
+src/overlays/ov015/calls/Ov015_ChestPushNearbyPlayers.c:
     complete
     .text       start:0x02081554 end:0x02081694
 
-src/overlays/ov015/calls/func_ov015_02081694.c:
+src/overlays/ov015/calls/Ov015_ChestPushPlayer.c:
     complete
     .text       start:0x02081694 end:0x020817bc
 
-src/overlays/ov015/calls/func_ov015_020817bc.c:
+src/overlays/ov015/calls/Ov015_StartActorRoutine.c:
     complete
     .text       start:0x020817bc end:0x020817f0
 
-src/overlays/ov015/calls/func_ov015_020817f0.c:
+src/overlays/ov015/calls/Ov015_PlayAnimIfVisible.c:
     complete
     .text       start:0x020817f0 end:0x02081824
 
-src/overlays/ov015/calls/func_ov015_02081824.c:
+src/overlays/ov015/calls/Ov015_ChestAckPlayer.c:
     complete
     .text       start:0x02081824 end:0x0208186c
 
-src/overlays/ov015/calls/func_ov015_0208186c.c:
+src/overlays/ov015/calls/Ov015_ChestHandleMessage.c:
     complete
     .text       start:0x0208186c end:0x0208190c
 
-src/overlays/ov015/calls/func_ov015_0208190c.c:
+src/overlays/ov015/calls/Ov015_ChestReset.c:
     complete
     .text       start:0x0208190c end:0x02081978
 
-src/overlays/ov015/calls/func_ov015_02081978.c:
+src/overlays/ov015/calls/Ov015_ReleaseModel.c:
     complete
     .text       start:0x02081978 end:0x020819a0
 
-src/overlays/ov015/calls/func_ov015_020819a0.c:
+src/overlays/ov015/calls/Ov015_ReleaseNodeAndInvalidate.c:
     complete
     .text       start:0x020819a0 end:0x020819bc
 
-src/overlays/ov015/calls/func_ov015_020819bc.c:
+src/overlays/ov015/calls/Ov015_ChestShow.c:
     complete
     .text       start:0x020819bc end:0x02081acc
 
-src/overlays/ov015/calls/func_ov015_02081acc.c:
+src/overlays/ov015/calls/Ov015_RebindActorModelIfVisible.c:
     complete
     .text       start:0x02081acc end:0x02081b14
 
-src/overlays/ov015/calls/func_ov015_02081b14.c:
+src/overlays/ov015/calls/Ov015_ChestHit.c:
     complete
     .text       start:0x02081b14 end:0x02081c78
 
-src/overlays/ov015/auto/func_ov015_02081c78.c:
+src/overlays/ov015/auto/Ov015_AddrOf0x488IfBit3OfHalf12.c:
     complete
     .text       start:0x02081c78 end:0x02081c90
 
-src/overlays/ov015/auto/func_ov015_02081c90.c:
+src/overlays/ov015/auto/Ov015_GetField8Field78_2.c:
     complete
     .text       start:0x02081c90 end:0x02081c9c
 
-src/overlays/ov015/auto/func_ov015_02081c9c.c:
+src/overlays/ov015/auto/Ov015_GetField54cPtr.c:
     complete
     .text       start:0x02081c9c end:0x02081ca8
 
-src/overlays/ov015/calls/func_ov015_02081ca8.c:
+src/overlays/ov015/calls/Ov015_ChestUpdate.c:
     complete
     .text       start:0x02081ca8 end:0x020820c4
 
-src/overlays/ov015/calls/func_ov015_020820c4.c:
+src/overlays/ov015/calls/Ov015_CreateChestClass.c:
     complete
     .text       start:0x020820c4 end:0x02082188
 
-src/overlays/ov015/calls/func_ov015_02082188.c:
+src/overlays/ov015/calls/Ov015_SpawnChest.c:
     complete
     .text       start:0x02082188 end:0x020822b0
 
-src/overlays/ov015/calls/func_ov015_020822b0.c:
+src/overlays/ov015/calls/Ov015_VmCmd22b0.c:
     complete
     .text       start:0x020822b0 end:0x0208237e
 
-src/overlays/ov015/calls/func_ov015_02082380.c:
+src/overlays/ov015/calls/Ov015_ScriptOpSpawnPickup.c:
     complete
     .text       start:0x02082380 end:0x02082472
 
-src/overlays/ov015/calls/func_ov015_02082474.c:
+src/overlays/ov015/calls/Ov015_ScriptOpBuildAndPublish.c:
     complete
     .text       start:0x02082474 end:0x020824a0
 
-src/overlays/ov015/calls/func_ov015_020824a0.c:
+src/overlays/ov015/calls/Ov015_ScriptOpSpawnTrigger.c:
     complete
     .text       start:0x020824a0 end:0x02082574
 
-src/overlays/ov015/calls/func_ov015_02082574.c:
+src/overlays/ov015/calls/Ov015_ScriptOpCreateSpots.c:
     complete
     .text       start:0x02082574 end:0x02082740
 
-src/overlays/ov015/calls/func_ov015_02082740.c:
+src/overlays/ov015/calls/Ov015_ScriptOpSpawnPoint.c:
     complete
     .text       start:0x02082740 end:0x020827a0
 
-src/overlays/ov015/calls/func_ov015_020827a0.c:
+src/overlays/ov015/calls/Ov015_VmCmd27a0.c:
     complete
     .text       start:0x020827a0 end:0x02082836
 
-src/overlays/ov015/calls/func_ov015_02082838.c:
+src/overlays/ov015/calls/Ov015_MarshalFxAndDispatch2.c:
     complete
     .text       start:0x02082838 end:0x020828d2
 

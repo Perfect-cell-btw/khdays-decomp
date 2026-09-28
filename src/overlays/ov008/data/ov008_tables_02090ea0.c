@@ -5,10 +5,10 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_02090ea0: func_ov008_02082d98
- *   data_ov008_02090ea8: func_ov008_02082df0
- *   data_ov008_02090eb0: func_ov008_02084b10
- *   data_ov008_02090eb8: func_ov008_02084b10
+ *   data_ov008_02090ea0: Ov008_BuildTable9AndDelegate
+ *   data_ov008_02090ea8: Ov008_DrawNumber3Shadowed
+ *   data_ov008_02090eb0: Ov008_Shop_DrawRow
+ *   data_ov008_02090eb8: Ov008_Shop_DrawRow
  *   data_ov008_02090ecc: (no C reader yet)
  *   data_ov008_02090ed0: (no C reader yet)
  */

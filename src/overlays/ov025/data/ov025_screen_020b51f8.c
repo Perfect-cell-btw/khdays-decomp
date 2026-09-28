@@ -20,25 +20,25 @@ typedef struct Ov008ScreenHooks {
     Ov008HookFn apfnHook[7];  /* 0x28 .. 0x40 */
 } Ov008ScreenHooks;
 
-extern void func_ov025_0209fa88(void);
-extern void func_ov025_0209fc64(void);
-extern void func_ov025_0209fe48(void);
-extern void func_ov025_0209ffd0(void);
-extern void func_ov025_020a018c(void);
-extern void func_ov025_020a01bc(void);
-extern void func_ov025_020a086c(void);
-extern void func_ov025_020a08c0(void);
-extern void func_ov025_020a0a9c(void);
+extern void Ov025_Reports_CursorUp(void);
+extern void Ov025_Reports_CursorDown(void);
+extern void Ov025_Reports_PageUp(void);
+extern void Ov025_Reports_PageDown(void);
+extern void Ov025_Reports_Leave(void);
+extern void Ov025_Reports_ToggleView(void);
+extern void Ov025_SetupPanelScreen(void);
+extern void Ov025_Reports_Teardown(void);
+extern void Ov025_Reports_HandleInput(void);
 
 Ov008ScreenHooks data_ov025_020b51f8 = {
-    func_ov025_020a086c,  /* pfnOpen */
-    func_ov025_020a08c0,  /* pfnStep */
-    func_ov025_020a0a9c,  /* pfnClose */
+    Ov025_SetupPanelScreen,  /* pfnOpen */
+    Ov025_Reports_Teardown,  /* pfnStep */
+    Ov025_Reports_HandleInput,  /* pfnClose */
     6,  /* nFlags */
     632,  /* nStateSize */
-    func_ov025_0209fa88,  /* pfnSelect */
-    func_ov025_0209fc64,  /* pfnCancel */
-    { func_ov025_0209fe48, func_ov025_0209ffd0 },  /* apfnAux */
+    Ov025_Reports_CursorUp,  /* pfnSelect */
+    Ov025_Reports_CursorDown,  /* pfnCancel */
+    { Ov025_Reports_PageUp, Ov025_Reports_PageDown },  /* apfnAux */
     0,  /* pfnDone */
-    { func_ov025_020a018c, 0, 0, func_ov025_020a01bc, func_ov025_020a01bc, 0, func_ov025_020a018c },  /* apfnHook */
+    { Ov025_Reports_Leave, 0, 0, Ov025_Reports_ToggleView, Ov025_Reports_ToggleView, 0, Ov025_Reports_Leave },  /* apfnHook */
 };

@@ -1,0 +1,5 @@
+extern int Ov002_DrawSpriteQuad();
+
+int Ov002_ResourceEntryCallback(int arg0) {
+    return Ov002_DrawSpriteQuad(arg0, 1);
+}

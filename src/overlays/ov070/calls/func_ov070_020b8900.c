@@ -1,6 +1,0 @@
-void func_ov070_020b8900(void *self, int value)
-{
-    *(int *)((char *)self + 4) = 3;
-    *(int *)((char *)self + 0x110) = value;
-    *(int *)((char *)self + 0x114) = 0;
-}

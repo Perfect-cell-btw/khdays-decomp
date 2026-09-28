@@ -1,7 +1,7 @@
 /* ov077 constructor argument block data_ov077_020b9a6c, 0x020b9a6c-0x020b9a80 (.rodata).
  *
  * Five words handed to a class constructor: the resource path of the object's archive
- * ('ba/ch/le/li_e3.p.z') and four parameters the constructor reads.  Used by func_ov077_020b8700.
+ * ('ba/ch/le/li_e3.p.z') and four parameters the constructor reads.  Used by Ov077_InitSceneResources.
  */
 
 typedef struct ClassCtorArgs {

@@ -1,0 +1,37 @@
+extern void Ov022_SetActorInputEnabled(int mode);
+extern int Ov002_StepPeerObjectLoading(void);
+extern void QueryActiveStateOrDelegate(void);
+extern int Ov022_GetEntryField66(void);
+extern void Ov002_ReadRosterSeat(int a, int b, int *out);
+extern void Ov002_RunSeatHooks(void);
+extern void Ov002_ClearListA(unsigned short id);
+extern int Session_IsActive(void);
+extern int Ov002_GetSeatBudget(int id);
+extern int Ov002_GetSeatBudgetScaled(int id);
+extern void Req_SetPendingFields(int a, int b, unsigned short c);
+extern void Ov002_SetSessionBusy(int mode);
+extern void Ov022_StateEnterGameplay(void);
+extern unsigned char data_0204be04;
+
+/* Starts the pause menu unless the lock byte is set: opens the panel, publishes the selected
+ * entry and hands back the menu's tick handler. */
+void *Ov022_StartPauseMenu(void) {
+    int entry;
+    unsigned short alpha;
+    if (data_0204be04 != 0) {
+        /* No value: the ROM really does leave r0 untouched on this path. */
+        return;
+    }
+    Ov022_SetActorInputEnabled(0);
+    if (Ov002_StepPeerObjectLoading() != 0) {
+        QueryActiveStateOrDelegate();
+        Ov002_ReadRosterSeat(Ov022_GetEntryField66(), 0, &entry);
+        Ov002_RunSeatHooks();
+        Ov002_ClearListA((unsigned short)entry);
+        alpha = Session_IsActive() != 0 ? 0x66 : 0x7f;
+        Req_SetPendingFields(Ov002_GetSeatBudget(entry), Ov002_GetSeatBudgetScaled(entry), alpha);
+        Ov002_SetSessionBusy(0);
+        return (void *)&Ov022_StateEnterGameplay;
+    }
+    return 0;
+}

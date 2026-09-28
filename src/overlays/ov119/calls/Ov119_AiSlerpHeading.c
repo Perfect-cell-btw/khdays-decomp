@@ -1,0 +1,16 @@
+/* Build the child's +0xc transform via 0202f55c, drive the pose via Srt_SetRotationQuat, copy the
+ * child's +0x30 vector into *(child)+0xf0, then reseed +0x30 from the constant data_02041dc8. */
+struct w3 { int a, b, c; };
+extern void Quat_Slerp(int a, int b, int c, int d);
+extern void Srt_SetRotationQuat(int a, int b);
+extern const struct w3 data_02041dc8;
+void Ov119_AiSlerpHeading(int param_1) {
+    int child = *(int *)(param_1 + 4);
+    Quat_Slerp(child + 0xc, *(int *)(child + 0x2c), child + 0xc, child + 0x1c);
+    Srt_SetRotationQuat(*(int *)child + 0xa0, child + 0xc);
+    {
+        struct w3 *p30 = (struct w3 *)(child + 0x30);
+        *(struct w3 *)(*(int *)child + 0xf0) = *p30;
+        *p30 = data_02041dc8;
+    }
+}

@@ -1,5 +1,5 @@
-extern void func_0201d0e0(void *p);
-extern void func_0201e144(void *p, int a, int b);
+extern void ForceStopStrm_2(void *p);
+extern void NNSi_SndFaderSet(void *p, int a, int b);
 
 struct S {
     char _0[0x110];
@@ -11,14 +11,14 @@ struct S {
 void SNDi_FreeVoiceChannel(struct S *p, int a)
 {
     if (((p->flags << 30) >> 31) == 0) {
-        func_0201d0e0(p);
+        ForceStopStrm_2(p);
         return;
     }
     if (a == 0) {
-        func_0201d0e0(p);
+        ForceStopStrm_2(p);
         return;
     }
-    func_0201e144((char *)p + 0xe8, 0, a);
+    NNSi_SndFaderSet((char *)p + 0xe8, 0, a);
     p->flags |= 8;
     p->x150 = 0;
 }

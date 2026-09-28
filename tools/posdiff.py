@@ -9,7 +9,7 @@ Why this exists, and why it is NOT an edit-distance tool
 The obvious way to score a near-miss candidate is an edit distance over the
 disassembled instruction stream. That metric LIES once you are close, because it
 weighs a renamed register exactly like a genuinely different instruction. On
-func_ov000_02050ec4 it ranked a candidate with 24 mnemonic mismatches ABOVE one
+Ov000_TickPageScroll it ranked a candidate with 24 mnemonic mismatches ABOVE one
 with 4, and several hours went into optimising the wrong one.
 
 So: once the size already matches, align by POSITION and report two numbers.
@@ -22,7 +22,7 @@ So: once the size already matches, align by POSITION and report two numbers.
                         tie-break only, never as the primary score.
 
 RANK BY mnemonic + operand. Reporting the mnemonic count alone is a trap I fell into
-on func_ov000_02050ec4: a candidate came out `mnemonic-mismatch=0` and I read it as
+on Ov000_TickPageScroll: a candidate came out `mnemonic-mismatch=0` and I read it as
 "the instruction stream is identical". It was not -- two adjacent loads had SWAPPED
 MEMORY OFFSETS (0xc94 and 0xc98), which is a real defect the mnemonic view cannot see
 because both instructions are `ldr`. The operand column exists so that cannot happen

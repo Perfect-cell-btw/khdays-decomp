@@ -1,0 +1,15 @@
+extern void FreeInstanceMemory();
+extern void DestroyInstance();
+extern void Ov107_ActionResource_Destroy();
+extern void Ov107_DestroyObject();
+
+void Ov291_ReleaseSubObjectsGuardedThenNotify(int this_) {
+    if (*(int *)(this_ + 0x3a0) != 0) {
+        FreeInstanceMemory(*(int *)(this_ + 0x3a0));
+    }
+    DestroyInstance(*(int *)(this_ + 0x384));
+    Ov107_ActionResource_Destroy(*(int *)(this_ + 0x394));
+    DestroyInstance(*(int *)(this_ + 0x388));
+    DestroyInstance(*(int *)(this_ + 0x398));
+    Ov107_DestroyObject(this_);
+}

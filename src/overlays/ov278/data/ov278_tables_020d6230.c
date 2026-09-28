@@ -57,7 +57,7 @@ const int data_ov278_020d6330[17] = {
 
 /* read by Ov278_JumpTick (020cfef8): unsigned short data_ov278_020d6374[];
  *   Ov278_EnterCharge (020d039c): Ov278CueTable data_ov278_020d6374;
- *   func_ov278_020d0ad4 (020d0ad4): Ov236CueTable data_ov278_020d6374; */
+ *   Ov278_AiEnterSurprised (020d0ad4): Ov236CueTable data_ov278_020d6374; */
 const u8 data_ov278_020d6374[12] = {
     0, 0, 5, 1, 0, 0, 5, 4, 0, 0, 5, 5,
 };
@@ -72,7 +72,7 @@ const u16 data_ov278_020d638e[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov278_020d1848 (not yet decompiled)
+/* read by Ov278_RiderHitFilter (not yet decompiled)
  *   Charge-in tick: refreshes the +4 target (none: pose request 9), measures the surface gap (020d27fc): unsigned short data_ov278_020d639c[];
  *   Publish the pounce landing: send the canned 4-byte block from the config table to the owne (020d296c): struct Blk data_ov278_020d639c;
  *   Recovery wait (first rider): runs the +0x14 timer; once the +0x24 child's byte clears pose (020d30a8): unsigned short data_ov278_020d639c[];
@@ -88,7 +88,7 @@ const u16 data_ov278_020d63b8[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov278_020d1848 (not yet decompiled) */
+/* read by Ov278_RiderHitFilter (not yet decompiled) */
 const u16 data_ov278_020d63c6[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };
@@ -98,7 +98,7 @@ const u8 data_ov278_020d63d4[16] = {
     0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov278_020d374c (not yet decompiled)
+/* read by Ov278_RiderHitFilterB (not yet decompiled)
  *   Ov278_StalkTick (020d4570): const Cmd4 data_ov278_020d63e4[];
  *   Ov278_StompTick (020d4d38): const Cmd4 data_ov278_020d63e4[];
  *   Ov278_DismountLandingTick (020d5494): u16 data_ov278_020d63e4[];
@@ -115,7 +115,7 @@ const u16 data_ov278_020d6408[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov278_020d374c (not yet decompiled) */
+/* read by Ov278_RiderHitFilterB (not yet decompiled) */
 const u16 data_ov278_020d6416[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };

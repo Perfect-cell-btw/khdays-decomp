@@ -20,13 +20,13 @@ typedef struct Ov008ScreenHooks {
 } Ov008ScreenHooks;
 
 extern void func_ov008_020676a0(void);
-extern void func_ov008_02067698(void);
-extern void func_ov008_020676b0(void);
+extern void Ov008_ScreenOpenNoOp(void);
+extern void Ov008_ScreenCloseNoOp(void);
 
 Ov008ScreenHooks data_ov008_0209041c = {
-    func_ov008_02067698,  /* pfnOpen */
+    Ov008_ScreenOpenNoOp,  /* pfnOpen */
     func_ov008_020676a0,  /* pfnStep */
-    func_ov008_020676b0,  /* pfnClose */
+    Ov008_ScreenCloseNoOp,  /* pfnClose */
     3,  /* nFlags */
     4,  /* nStateSize */
     0,  /* pfnSelect */

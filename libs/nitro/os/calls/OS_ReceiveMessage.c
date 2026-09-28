@@ -1,6 +1,6 @@
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
-extern void func_02001f10(void *queue);
+extern void OS_SleepThread(void *queue);
 extern void OS_WakeupThread(void *queue);
 extern long long func_02020400(int a, int b);
 
@@ -12,7 +12,7 @@ int OS_ReceiveMessage(char *q, void **out, int flags) {
             OS_RestoreInterrupts(enabled);
             return 0;
         }
-        func_02001f10(q + 8);
+        OS_SleepThread(q + 8);
     }
     if (out != 0) {
         *out = (*(void ***)(q + 0x10))[*(int *)(q + 0x18)];

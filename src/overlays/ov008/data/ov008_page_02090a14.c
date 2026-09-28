@@ -14,17 +14,17 @@ typedef struct Ov008PageHooks {
     Ov008HookFn apfnHook[12]; /* 0x10 .. 0x3c */
 } Ov008PageHooks;
 
-extern void func_ov008_02078df0(void);
-extern void func_ov008_02078e68(void);
-extern void func_ov008_02079038(void);
-extern void func_ov008_02079090(void);
-extern void func_ov008_02079118(void);
-extern void func_ov008_020791e0(void);
+extern void Ov008_SetupShopScreen(void);
+extern void Ov008_DestroyPageB(void);
+extern void Ov008_PageB_StepSlideIfBusy(void);
+extern void Ov008_MovePageBUp(void);
+extern void Ov008_MovePageBDown(void);
+extern void Ov008_ConfirmPageBSelection(void);
 
 Ov008PageHooks data_ov008_02090a14 = {
-    func_ov008_02078df0,  /* pfnOpen */
-    func_ov008_02078e68,  /* pfnStep */
-    func_ov008_02079038,  /* pfnClose */
+    Ov008_SetupShopScreen,  /* pfnOpen */
+    Ov008_DestroyPageB,  /* pfnStep */
+    Ov008_PageB_StepSlideIfBusy,  /* pfnClose */
     532,  /* nStateSize */
-    { 0, 0, 0, 0, 0, 0, 0, 0, func_ov008_02079090, func_ov008_02079118, 0, func_ov008_020791e0 },  /* apfnHook */
+    { 0, 0, 0, 0, 0, 0, 0, 0, Ov008_MovePageBUp, Ov008_MovePageBDown, 0, Ov008_ConfirmPageBSelection },  /* apfnHook */
 };

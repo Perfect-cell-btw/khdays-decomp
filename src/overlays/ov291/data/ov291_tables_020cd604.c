@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov291_020cbfc4 (020cbfc4): char data_ov291_020cd604[]; */
+/* read by Ov291_HeadBoneCallback (020cbfc4): char data_ov291_020cd604[]; */
 const int data_ov291_020cd604[4] = {
     0, 2896, 2896, 0,
 };

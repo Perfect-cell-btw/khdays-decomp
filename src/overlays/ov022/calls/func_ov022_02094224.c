@@ -1,5 +1,5 @@
-extern int func_ov022_0209405c(int a);
-extern int func_0202a818(unsigned short *a, int b);
+extern int Ov022_IsBit0Set_5(int a);
+extern int Sequence_UpdateTracks(unsigned short *a, int b);
 
 struct vec3_02094224 {
     int a;
@@ -15,7 +15,7 @@ struct flags_02094224 {
 };
 
 void func_ov022_02094224(int param_1, struct vec3_02094224 *param_2, int param_3) {
-    if (func_ov022_0209405c(param_1) == 0) {
+    if (Ov022_IsBit0Set_5(param_1) == 0) {
         return;
     }
     if (*(int *)(param_1 + 0x110) > 0) {
@@ -32,7 +32,7 @@ void func_ov022_02094224(int param_1, struct vec3_02094224 *param_2, int param_3
     }
     if ((*(unsigned char *)param_1 & 0x20) != 0) {
         *(struct vec3_02094224 *)(param_1 + 0xa8) = *param_2;
-        if (func_0202a818((unsigned short *)(param_1 + 4), param_3) != 0) {
+        if (Sequence_UpdateTracks((unsigned short *)(param_1 + 4), param_3) != 0) {
             ((struct flags_02094224 *)param_1)->b4 = 0;
             ((struct flags_02094224 *)param_1)->b5 = 0;
         }

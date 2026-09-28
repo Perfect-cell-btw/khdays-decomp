@@ -14,7 +14,7 @@ typedef struct NNSG3dRenderState {
 
 extern NNSG3dRenderState *data_020475d0;
 
-extern void func_02027668(void *model, void *record, u32 packed,
+extern void getJntSRTAnmResult__2(void *model, void *record, u32 packed,
                           u32 coordinate, u32 *result, u32 *scratch);
 extern void func_01ffaf9c(void *model, void *record, u32 packed,
                           u32 coordinate, u32 *result, u32 *scratch);
@@ -45,7 +45,7 @@ void func_01ffb234(u32 *result, u32 *input, s32 index)
 
     *result = 0;
     if ((coordinate & 0xfff) != 0 && (*(u32 *)(model + 8) & 1) != 0) {
-        func_02027668(model, model + offset, packed, coordinate,
+        getJntSRTAnmResult__2(model, model + offset, packed, coordinate,
                       result, scratch);
     } else {
         func_01ffaf9c(model, model + offset, packed, coordinate,

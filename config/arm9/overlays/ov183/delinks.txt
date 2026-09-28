@@ -4,211 +4,211 @@
     .data       start:0x020d2680 end:0x020d26a0 kind:data align:32
     .bss        start:0x020d26a0 end:0x020d26a0 kind:bss align:32
 
-src/overlays/ov183/calls/func_ov183_020cfb60.c:
+src/overlays/ov183/calls/Ov183_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov183/calls/func_ov183_020cfb78.c:
+src/overlays/ov183/calls/Ov183_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov183/calls/func_ov183_020cfc04.c:
+src/overlays/ov183/calls/Ov183_Construct.c:
     complete
     .text       start:0x020cfc04 end:0x020cfdd0
 
-src/overlays/ov183/calls/func_ov183_020cfdd0.c:
+src/overlays/ov183/calls/Ov183_Destroy.c:
     complete
     .text       start:0x020cfdd0 end:0x020cfe18
 
-src/overlays/ov183/calls/func_ov183_020cfe18.c:
+src/overlays/ov183/calls/Ov183_TickAndSyncChildren.c:
     complete
     .text       start:0x020cfe18 end:0x020cfe88
 
-src/overlays/ov183/calls/func_ov183_020cfe88.c:
+src/overlays/ov183/calls/Ov183_Model_SetTrack0.c:
     complete
     .text       start:0x020cfe88 end:0x020cfeb8
 
-src/overlays/ov183/auto/func_ov183_020cfeb8.c:
+src/overlays/ov183/auto/Ov183_SendMessage28.c:
     complete
     .text       start:0x020cfeb8 end:0x020cff1c
 
-src/overlays/ov183/calls/func_ov183_020cff1c.c:
+src/overlays/ov183/calls/Ov183_HandleMessage.c:
     complete
     .text       start:0x020cff1c end:0x020d0040
 
-src/overlays/ov183/calls/func_ov183_020d0040.c:
+src/overlays/ov183/calls/Ov183_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d0040 end:0x020d008c
 
-src/overlays/ov183/calls/func_ov183_020d008c.c:
+src/overlays/ov183/calls/Ov183_OnHit.c:
     complete
     .text       start:0x020d008c end:0x020d02dc
 
-src/overlays/ov183/auto/func_ov183_020d02dc.c:
+src/overlays/ov183/auto/Ov183_ReactionRequestSubState11.c:
     complete
     .text       start:0x020d02dc end:0x020d0344
 
-src/overlays/ov183/calls/func_ov183_020d0344.c:
+src/overlays/ov183/calls/Ov183_SwingSweep.c:
     complete
     .text       start:0x020d0344 end:0x020d05cc
 
-src/overlays/ov183/calls/func_ov183_020d05cc.c:
+src/overlays/ov183/calls/Ov183_InitNodeAndRegisterHandlers.c:
     complete
     .text       start:0x020d05cc end:0x020d06a8
 
-src/overlays/ov183/calls/func_ov183_020d06a8.c:
+src/overlays/ov183/calls/Ov183_stDispatchByStateByte.c:
     complete
     .text       start:0x020d06a8 end:0x020d08a0
 
-src/overlays/ov183/calls/func_ov183_020d08a0.c:
+src/overlays/ov183/calls/Ov183_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020d08a0 end:0x020d0954
 
-src/overlays/ov183/calls/func_ov183_020d0954.c:
+src/overlays/ov183/calls/Ov183_stateSetFlagsClearBitInit.c:
     complete
     .text       start:0x020d0954 end:0x020d09c8
 
-src/overlays/ov183/calls/func_ov183_020d09c8.c:
+src/overlays/ov183/calls/Ov183_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d09c8 end:0x020d0a04
 
-src/overlays/ov183/calls/func_ov183_020d0a04.c:
+src/overlays/ov183/calls/Ov183_stateAcquireAimInit.c:
     complete
     .text       start:0x020d0a04 end:0x020d0acc
 
-src/overlays/ov183/calls/func_ov183_020d0acc.c:
+src/overlays/ov183/calls/Ov183_AiFadeInSlowTick.c:
     complete
     .text       start:0x020d0acc end:0x020d0b58
 
-src/overlays/ov183/calls/func_ov183_020d0b58.c:
+src/overlays/ov183/calls/Ov183_SpawnHook.c:
     complete
     .text       start:0x020d0b58 end:0x020d0ba4
 
-src/overlays/ov183/calls/func_ov183_020d0ba4.c:
+src/overlays/ov183/calls/Ov183_CircleTick.c:
     complete
     .text       start:0x020d0ba4 end:0x020d0dec
 
-src/overlays/ov183/calls/func_ov183_020d0dec.c:
+src/overlays/ov183/calls/Ov183_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d0dec end:0x020d0e20
 
-src/overlays/ov183/calls/func_ov183_020d0e20.c:
+src/overlays/ov183/calls/Ov183_BeginCharge.c:
     complete
     .text       start:0x020d0e20 end:0x020d0f40
 
-src/overlays/ov183/calls/func_ov183_020d0f40.c:
+src/overlays/ov183/calls/Ov183_ApproachTick.c:
     complete
     .text       start:0x020d0f40 end:0x020d1098
 
-src/overlays/ov183/calls/func_ov183_020d1098.c:
+src/overlays/ov183/calls/Ov183_BeginLunge.c:
     complete
     .text       start:0x020d1098 end:0x020d11b8
 
-src/overlays/ov183/calls/func_ov183_020d11b8.c:
+src/overlays/ov183/calls/Ov183_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d11b8 end:0x020d11ec
 
-src/overlays/ov183/calls/func_ov183_020d11ec.c:
+src/overlays/ov183/calls/Ov183_SetPose5ThenAdvanceSlot.c:
     complete
     .text       start:0x020d11ec end:0x020d1220
 
-src/overlays/ov183/calls/func_ov183_020d1220.c:
+src/overlays/ov183/calls/Ov183_GuardFieldCClearField1cAdvance.c:
     complete
     .text       start:0x020d1220 end:0x020d1254
 
-src/overlays/ov183/calls/func_ov183_020d1254.c:
+src/overlays/ov183/calls/Ov183_ChargeUpTick.c:
     complete
     .text       start:0x020d1254 end:0x020d1484
 
-src/overlays/ov183/calls/func_ov183_020d1484.c:
+src/overlays/ov183/calls/Ov183_evalHermiteSplinePath.c:
     complete
     .text       start:0x020d1484 end:0x020d16e8
 
-src/overlays/ov183/calls/func_ov183_020d16e8.c:
+src/overlays/ov183/calls/Ov183_AiFadeInTick.c:
     complete
     .text       start:0x020d16e8 end:0x020d178c
 
-src/overlays/ov183/calls/func_ov183_020d178c.c:
+src/overlays/ov183/calls/Ov183_stateAnimAimAtTarget.c:
     complete
     .text       start:0x020d178c end:0x020d17f8
 
-src/overlays/ov183/calls/func_ov183_020d17f8.c:
+src/overlays/ov183/calls/Ov183_stEasePoseCheckFlags.c:
     complete
     .text       start:0x020d17f8 end:0x020d187c
 
-src/overlays/ov183/calls/func_ov183_020d187c.c:
+src/overlays/ov183/calls/Ov183_stateScaleVecMagnitudeGate.c:
     complete
     .text       start:0x020d187c end:0x020d18e0
 
-src/overlays/ov183/calls/func_ov183_020d18e0.c:
+src/overlays/ov183/calls/Ov183_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020d18e0 end:0x020d1914
 
-src/overlays/ov183/calls/func_ov183_020d1914.c:
+src/overlays/ov183/calls/Ov183_ConfigHw60FlagsBeginAction6.c:
     complete
     .text       start:0x020d1914 end:0x020d19e0
 
-src/overlays/ov183/calls/func_ov183_020d19e0.c:
+src/overlays/ov183/calls/Ov183_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d19e0 end:0x020d1a34
 
-src/overlays/ov183/calls/func_ov183_020d1a34.c:
+src/overlays/ov183/calls/Ov183_TickWindupThenPickWait.c:
     complete
     .text       start:0x020d1a34 end:0x020d1adc
 
-src/overlays/ov183/calls/func_ov183_020d1adc.c:
+src/overlays/ov183/calls/Ov183_BeginApproach.c:
     complete
     .text       start:0x020d1adc end:0x020d1c00
 
-src/overlays/ov183/calls/func_ov183_020d1c00.c:
+src/overlays/ov183/calls/Ov183_AiSwingRecover.c:
     complete
     .text       start:0x020d1c00 end:0x020d1c44
 
-src/overlays/ov183/calls/func_ov183_020d1c44.c:
+src/overlays/ov183/calls/Ov183_StepWindUp.c:
     complete
     .text       start:0x020d1c44 end:0x020d1d90
 
-src/overlays/ov183/calls/func_ov183_020d1d90.c:
+src/overlays/ov183/calls/Ov183_stateAnimSetFlagClear.c:
     complete
     .text       start:0x020d1d90 end:0x020d1dfc
 
-src/overlays/ov183/calls/func_ov183_020d1dfc.c:
+src/overlays/ov183/calls/Ov183_stateTimerTransformVec.c:
     complete
     .text       start:0x020d1dfc end:0x020d1e8c
 
-src/overlays/ov183/calls/func_ov183_020d1e8c.c:
+src/overlays/ov183/calls/Ov183_DiveTick.c:
     complete
     .text       start:0x020d1e8c end:0x020d21e8
 
-src/overlays/ov183/calls/func_ov183_020d21e8.c:
+src/overlays/ov183/calls/Ov183_AiRollTimerQueue2.c:
     complete
     .text       start:0x020d21e8 end:0x020d2248
 
-src/overlays/ov183/calls/func_ov183_020d2248.c:
+src/overlays/ov183/calls/Ov183_stateAnimNegateClamp.c:
     complete
     .text       start:0x020d2248 end:0x020d22a4
 
-src/overlays/ov183/calls/func_ov183_020d22a4.c:
+src/overlays/ov183/calls/Ov183_BeginSteerSweep.c:
     complete
     .text       start:0x020d22a4 end:0x020d2388
 
-src/overlays/ov183/calls/func_ov183_020d2388.c:
+src/overlays/ov183/calls/Ov183_SteerSweep.c:
     complete
     .text       start:0x020d2388 end:0x020d2478
 
-src/overlays/ov183/calls/func_ov183_020d2478.c:
+src/overlays/ov183/calls/Ov183_BeginState5AndClear.c:
     complete
     .text       start:0x020d2478 end:0x020d2514
 
-src/overlays/ov183/calls/func_ov183_020d2514.c:
+src/overlays/ov183/calls/Ov183_GuardFieldCClearField1cAdvance_2.c:
     complete
     .text       start:0x020d2514 end:0x020d2548
 
-src/overlays/ov183/calls/func_ov183_020d2548.c:
+src/overlays/ov183/calls/Ov183_TimerInterp394ThenAdvance.c:
     complete
     .text       start:0x020d2548 end:0x020d25c0
 
-src/overlays/ov183/calls/func_ov183_020d25c0.c:
+src/overlays/ov183/calls/Ov183_AiSetStanceAndEnd.c:
     complete
     .text       start:0x020d25c0 end:0x020d2638
 

@@ -373,9 +373,8 @@ static inline BOOL FSi_IsArchiveSync(const volatile FSArchive *p_arc)
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
-extern void func_02001f10(OSThreadQueue *queue);   /* OS_SleepThread */
+extern void OS_SleepThread(OSThreadQueue *queue);   /* OS_SleepThread */
 extern void OS_WakeupThread(OSThreadQueue *queue);
-#define OS_SleepThread func_02001f10
 
 #define BIT_MASK(n) ((1 << (n)) - 1)
 #define ALIGN_MASK(a)   ((a) - 1)
@@ -478,8 +477,8 @@ extern void DC_FlushRange(void *addr, u32 size);
 extern void MIi_UncompressBackward(void *bottom);
 extern void OS_Terminate(void);
 #define OS_TPanic(...) OS_Terminate()
-extern void func_0200baec(u8 *digest, const void *src, int len, const void *key, int key_len);   /* DGT_Hash2CalcHmac */
-#define DGT_Hash2CalcHmac func_0200baec
+extern void MATH_CalcHMACSHA1(u8 *digest, const void *src, int len, const void *key, int key_len);   /* DGT_Hash2CalcHmac */
+#define DGT_Hash2CalcHmac MATH_CalcHMACSHA1
 extern CARDRomRegion data_02046324;   /* fsi_ovt9 */
 extern CARDRomRegion data_0204632c;   /* fsi_ovt7 */
 extern FSArchive data_02046334;       /* fsi_arc_rom */

@@ -4,231 +4,231 @@
     .data       start:0x020d62c0 end:0x020d6300 kind:data align:32
     .bss        start:0x020d6300 end:0x020d6300 kind:bss align:32
 
-src/overlays/ov143/calls/func_ov143_020d37a0.c:
+src/overlays/ov143/calls/Ov143_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov143/calls/func_ov143_020d37b8.c:
+src/overlays/ov143/calls/Ov143_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov143/calls/func_ov143_020d3844.c:
+src/overlays/ov143/calls/Ov143_InitializeActor.c:
     complete
     .text       start:0x020d3844 end:0x020d3ab8
 
-src/overlays/ov143/calls/func_ov143_020d3ab8.c:
+src/overlays/ov143/calls/Ov143_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020d3ab8 end:0x020d3b00
 
-src/overlays/ov143/calls/func_ov143_020d3b00.c:
+src/overlays/ov143/calls/Ov143_TickAndSyncMarkerSrt.c:
     complete
     .text       start:0x020d3b00 end:0x020d3b48
 
-src/overlays/ov143/calls/func_ov143_020d3b48.c:
+src/overlays/ov143/calls/Ov143_Model_SetTrack0.c:
     complete
     .text       start:0x020d3b48 end:0x020d3b78
 
-src/overlays/ov143/calls/func_ov143_020d3b78.c:
+src/overlays/ov143/calls/Ov143_HandleCommand.c:
     complete
     .text       start:0x020d3b78 end:0x020d3dd4
 
-src/overlays/ov143/calls/func_ov143_020d3dd4.c:
+src/overlays/ov143/calls/Ov143_ForwardEventToChild.c:
     complete
     .text       start:0x020d3dd4 end:0x020d3dfc
 
-src/overlays/ov143/calls/func_ov143_020d3dfc.c:
+src/overlays/ov143/calls/Ov143_NotifyPartThenBase.c:
     complete
     .text       start:0x020d3dfc end:0x020d3e24
 
-src/overlays/ov143/calls/func_ov143_020d3e24.c:
+src/overlays/ov143/calls/Ov143_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020d3e24 end:0x020d3f50
 
-src/overlays/ov143/calls/func_ov143_020d3f50.c:
+src/overlays/ov143/calls/Ov143_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d3f50 end:0x020d3f9c
 
-src/overlays/ov143/calls/func_ov143_020d3f9c.c:
+src/overlays/ov143/calls/Ov143_ApplyHit.c:
     complete
     .text       start:0x020d3f9c end:0x020d4130
 
-src/overlays/ov143/auto/func_ov143_020d4130.c:
+src/overlays/ov143/auto/Ov143_RequestSubState8IfIdle.c:
     complete
     .text       start:0x020d4130 end:0x020d4160
 
-src/overlays/ov143/calls/func_ov143_020d4160.c:
+src/overlays/ov143/calls/Ov143_stInitSlotsFlags6.c:
     complete
     .text       start:0x020d4160 end:0x020d4234
 
-src/overlays/ov143/calls/func_ov143_020d4234.c:
+src/overlays/ov143/calls/Ov143_DispatchSubStateByte.c:
     complete
     .text       start:0x020d4234 end:0x020d43c4
 
-src/overlays/ov143/calls/func_ov143_020d43c4.c:
+src/overlays/ov143/calls/Ov143_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020d43c4 end:0x020d445c
 
-src/overlays/ov143/calls/func_ov143_020d445c.c:
+src/overlays/ov143/calls/Ov143_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d445c end:0x020d44c4
 
-src/overlays/ov143/calls/func_ov143_020d44c4.c:
+src/overlays/ov143/calls/Ov143_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d44c4 end:0x020d4500
 
-src/overlays/ov143/calls/func_ov143_020d4500.c:
+src/overlays/ov143/calls/Ov143_stSetFlagsEffectClear82.c:
     complete
     .text       start:0x020d4500 end:0x020d459c
 
-src/overlays/ov143/calls/func_ov143_020d459c.c:
+src/overlays/ov143/calls/Ov143_stTickAimTimer.c:
     complete
     .text       start:0x020d459c end:0x020d4664
 
-src/overlays/ov143/calls/func_ov143_020d4664.c:
+src/overlays/ov143/calls/Ov143_AiStep_QueueAction2OnFlag44Clear.c:
     complete
     .text       start:0x020d4664 end:0x020d4698
 
-src/overlays/ov143/calls/func_ov143_020d4698.c:
+src/overlays/ov143/calls/Ov143_stateTimerRandomRange.c:
     complete
     .text       start:0x020d4698 end:0x020d4718
 
-src/overlays/ov143/calls/func_ov143_020d4718.c:
+src/overlays/ov143/calls/Ov143_TriggerWhenTargetInRange.c:
     complete
     .text       start:0x020d4718 end:0x020d47a4
 
-src/overlays/ov143/calls/func_ov143_020d47a4.c:
+src/overlays/ov143/calls/Ov143_PickApproachHeading.c:
     complete
     .text       start:0x020d47a4 end:0x020d4940
 
-src/overlays/ov143/calls/func_ov143_020d4940.c:
+src/overlays/ov143/calls/Ov143_PoseAdvanceUnlessField14AtLeast80.c:
     complete
     .text       start:0x020d4940 end:0x020d4988
 
-src/overlays/ov143/calls/func_ov143_020d4988.c:
+src/overlays/ov143/calls/Ov143_stateFixedAngleMove.c:
     complete
     .text       start:0x020d4988 end:0x020d4a5c
 
-src/overlays/ov143/calls/func_ov143_020d4a5c.c:
+src/overlays/ov143/calls/Ov143_PickStrafeDirection.c:
     complete
     .text       start:0x020d4a5c end:0x020d4b30
 
-src/overlays/ov143/calls/func_ov143_020d4b30.c:
+src/overlays/ov143/calls/Ov143_ProjectileAction_Enter.c:
     complete
     .text       start:0x020d4b30 end:0x020d4be4
 
-src/overlays/ov143/calls/func_ov143_020d4be4.c:
+src/overlays/ov143/calls/Ov143_stTransformProjectilePose.c:
     complete
     .text       start:0x020d4be4 end:0x020d4c98
 
-src/overlays/ov143/calls/func_ov143_020d4c98.c:
+src/overlays/ov143/calls/Ov143_stAimAngleToTarget.c:
     complete
     .text       start:0x020d4c98 end:0x020d4d1c
 
-src/overlays/ov143/calls/func_ov143_020d4d1c.c:
+src/overlays/ov143/calls/Ov143_stAdvanceProjectilePose.c:
     complete
     .text       start:0x020d4d1c end:0x020d4de0
 
-src/overlays/ov143/calls/func_ov143_020d4de0.c:
+src/overlays/ov143/calls/Ov143_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d4de0 end:0x020d4ea8
 
-src/overlays/ov143/calls/func_ov143_020d4ea8.c:
+src/overlays/ov143/calls/Ov143_FaceTarget.c:
     complete
     .text       start:0x020d4ea8 end:0x020d4f6c
 
-src/overlays/ov143/calls/func_ov143_020d4f6c.c:
+src/overlays/ov143/calls/Ov143_stateAnimCallbackEffect.c:
     complete
     .text       start:0x020d4f6c end:0x020d5030
 
-src/overlays/ov143/calls/func_ov143_020d5030.c:
+src/overlays/ov143/calls/Ov143_stateFixedAngleTimed.c:
     complete
     .text       start:0x020d5030 end:0x020d5104
 
-src/overlays/ov143/calls/func_ov143_020d5104.c:
+src/overlays/ov143/calls/Ov143_AiStep_QueueAction2WhenFree.c:
     complete
     .text       start:0x020d5104 end:0x020d5138
 
-src/overlays/ov143/calls/func_ov143_020d5138.c:
+src/overlays/ov143/calls/Ov143_stClearFlag1SetFlags86.c:
     complete
     .text       start:0x020d5138 end:0x020d51ec
 
-src/overlays/ov143/calls/func_ov143_020d51ec.c:
+src/overlays/ov143/calls/Ov143_StoreVec3AndSetHw60HighBit0.c:
     complete
     .text       start:0x020d51ec end:0x020d522c
 
-src/overlays/ov143/calls/func_ov143_020d522c.c:
+src/overlays/ov143/calls/Ov143_AllocLinkChild3a0.c:
     complete
     .text       start:0x020d522c end:0x020d5260
 
-src/overlays/ov143/calls/func_ov143_020d5260.c:
+src/overlays/ov143/calls/Ov143_InitializeSubObject.c:
     complete
     .text       start:0x020d5260 end:0x020d5408
 
-src/overlays/ov143/calls/func_ov143_020d5408.c:
+src/overlays/ov143/calls/Ov143_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020d5408 end:0x020d5448
 
-src/overlays/ov143/calls/func_ov143_020d5448.c:
+src/overlays/ov143/calls/Ov143_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d5448 end:0x020d5480
 
-src/overlays/ov143/calls/func_ov143_020d5480.c:
+src/overlays/ov143/calls/Ov143_SpawnEffectForMsgSlotThenForward.c:
     complete
     .text       start:0x020d5480 end:0x020d5534
 
-src/overlays/ov143/calls/func_ov143_020d5534.c:
+src/overlays/ov143/calls/Ov143_InvertVecOnceIfFlagSet.c:
     complete
     .text       start:0x020d5534 end:0x020d5590
 
-src/overlays/ov143/calls/func_ov143_020d5590.c:
+src/overlays/ov143/calls/Ov143_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020d5590 end:0x020d55dc
 
-src/overlays/ov143/calls/func_ov143_020d55dc.c:
+src/overlays/ov143/calls/Ov143_stateInitClearSlots.c:
     complete
     .text       start:0x020d55dc end:0x020d5684
 
-src/overlays/ov143/calls/func_ov143_020d5684.c:
+src/overlays/ov143/calls/Ov143_dispatchByStatusByte.c:
     complete
     .text       start:0x020d5684 end:0x020d56fc
 
-src/overlays/ov143/auto/func_ov143_020d56fc.c:
+src/overlays/ov143/auto/Ov143_AiApplyMoveVector.c:
     complete
     .text       start:0x020d56fc end:0x020d5714
 
-src/overlays/ov143/calls/func_ov143_020d5714.c:
+src/overlays/ov143/calls/Ov143_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d5714 end:0x020d57c4
 
-src/overlays/ov143/calls/func_ov143_020d57c4.c:
+src/overlays/ov143/calls/Ov143_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d57c4 end:0x020d57fc
 
-src/overlays/ov143/calls/func_ov143_020d57fc.c:
+src/overlays/ov143/calls/Ov143_StepSlamProbe.c:
     complete
     .text       start:0x020d57fc end:0x020d5ab0
 
-src/overlays/ov143/calls/func_ov143_020d5ab0.c:
+src/overlays/ov143/calls/Ov143_StepSlamStrike.c:
     complete
     .text       start:0x020d5ab0 end:0x020d5fec
 
-src/overlays/ov143/calls/func_ov143_020d5fec.c:
+src/overlays/ov143/calls/Ov143_bindSubitemsByTypeId.c:
     complete
     .text       start:0x020d5fec end:0x020d60d0
 
-src/overlays/ov143/calls/func_ov143_020d60d0.c:
+src/overlays/ov143/calls/Ov143_RenderPerSphere.c:
     complete
     .text       start:0x020d60d0 end:0x020d613c
 
-src/overlays/ov143/calls/func_ov143_020d613c.c:
+src/overlays/ov143/calls/Ov143_stateAttachSubitemInit.c:
     complete
     .text       start:0x020d613c end:0x020d61e4
 
-src/overlays/ov143/auto/func_ov143_020d61e4.c:
+src/overlays/ov143/auto/Ov143_ChildTaskTeardown.c:
     complete
     .text       start:0x020d61e4 end:0x020d621c
 
-src/overlays/ov143/calls/func_ov143_020d621c.c:
+src/overlays/ov143/calls/Ov143_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d621c end:0x020d623c
 

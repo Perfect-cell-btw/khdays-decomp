@@ -11,7 +11,7 @@ When that is the case the pending function does not have to be decompiled at
 all: take the sibling's source, rewrite `func_ovNNN_XXXXXXXX` / `data_ovNNN_...`
 by that gap, and it verifies first try.
 
-    python tools/find_sibling.py func_ov141_020cbfc4     # one function
+    python tools/find_sibling.py Ov141_InitializeActor     # one function
     python tools/find_sibling.py ov141                   # every pending one
 
 A hit prints the substitution to apply. `--apply <out.c>` writes it for you.

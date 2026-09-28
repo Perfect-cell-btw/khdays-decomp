@@ -1,0 +1,81 @@
+/* Ov008_MissionListOpen -- Ov008_MissionListOpen: prepare the mission list.  Of
+ * the twelve mission slots, 0 and 4 are always open; the others lock (slot
+ * value 0x333, kind 0) unless their game flag (0x3bc9 + slot) is set.  With a
+ * modal object up: outside a page transition the current scroll word (u16) is
+ * fed to the list; during one the mission named by the context is looked up --
+ * found: its slot byte (+4) becomes the cursor slot and its selection text is
+ * updated; not found: the cursor slot is cleared, and when the list has no
+ * entries either, the cursor steps to the first accepted slot.
+ */
+typedef unsigned char  u8;
+typedef unsigned short u16;
+typedef unsigned int   u32;
+
+#define SLOT_COUNT     12
+#define FLAG_SLOT_BASE 0x3bc9
+#define SLOT_LOCKED    0x333
+
+typedef struct Ov008MissionListEntry {
+    u8  pad_00[4];
+    u16 nSlot;                /* 0x04 */
+} Ov008MissionListEntry;
+
+typedef struct Ov008MissionList {
+    u8  pad_00[0x54];
+    u8  nCursorSlot;          /* 0x54 */
+} Ov008MissionList;
+
+extern int  GameState_IsFlagSet(int nFlag);                                     /* GameState_IsFlagSet */
+extern void Ov008_Menu_ForwardToWidgets(int nSlot, u32 nValue, u32 nKind);        /* set a mission slot */
+extern int  Ov008_GetCtxObject9630(void);                                    /* Ov008_GetCtxObject9630 */
+extern int  Ov008_GetCtxObject9634(void);                                    /* page transition active */
+extern u32  Ov008_GetCtxField9638(void);                                    /* Ov008_GetCtxField9638 */
+extern void Ov008_FeedScrollInput(u32 nWord);                               /* Ov008_FeedScrollInput */
+extern u32  Ov008_GetCtxField967c(void);                                    /* Ov008_GetCtxField967c */
+extern Ov008MissionListEntry *Ov008_GetNextMissionEntry_5(u32 nMissionId);        /* find the listed mission */
+extern void Ov008_EncodeCursorAction(int nSlot);                               /* cursor pick */
+extern void Ov008_MainMenu_UpdateSelectionText(int nSlot, int nArg);                     /* Ov008_MainMenu_UpdateSelectionText */
+extern u16  Ov008_GetCurrentListId(void);                                    /* mission entry count */
+extern u32  Ov008_StepCursorToAcceptedSlot(Ov008MissionList *pList, int nCell);      /* Ov008_StepCursorToAcceptedSlot */
+
+void Ov008_MissionListOpen(Ov008MissionList *pList)
+{
+    int nSlot;
+    int bOpen;
+    Ov008MissionListEntry *pEntry;
+
+    for (nSlot = 0; nSlot < SLOT_COUNT; nSlot++) {
+        if (nSlot == 0) {
+            bOpen = 1;
+        } else if (nSlot == 4) {
+            bOpen = 1;
+        } else {
+            bOpen = GameState_IsFlagSet(nSlot + FLAG_SLOT_BASE);
+        }
+        if (bOpen == 0) {
+            Ov008_Menu_ForwardToWidgets(nSlot, SLOT_LOCKED, 0);
+        }
+    }
+    if (Ov008_GetCtxObject9630() == 0) {
+        return;
+    }
+    if (Ov008_GetCtxObject9634() == 0) {
+        Ov008_FeedScrollInput((u16)Ov008_GetCtxField9638());
+        return;
+    }
+    if (Ov008_GetCtxObject9634() == 0) {
+        return;
+    }
+    pEntry = Ov008_GetNextMissionEntry_5(Ov008_GetCtxField967c());
+    if (pEntry != 0) {
+        pList->nCursorSlot = pEntry->nSlot;
+        Ov008_EncodeCursorAction(pList->nCursorSlot);
+        Ov008_MainMenu_UpdateSelectionText(pList->nCursorSlot, 0);
+        return;
+    }
+    pList->nCursorSlot = 0;
+    Ov008_EncodeCursorAction(0);
+    if (Ov008_GetCurrentListId() == 0 && pEntry == 0) {
+        pList->nCursorSlot = Ov008_StepCursorToAcceptedSlot(pList, 1);
+    }
+}

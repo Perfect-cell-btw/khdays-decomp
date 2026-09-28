@@ -1,4 +1,4 @@
-extern void func_ov022_0208b214(int arg0);
+extern void Ov022_AimAngleThenNotify(int arg0);
 extern void func_ov022_02090070(int arg0);
 
 void func_ov022_0208bb38(int arg0, int arg1, int arg2, int arg3) {
@@ -8,7 +8,7 @@ void func_ov022_0208bb38(int arg0, int arg1, int arg2, int arg3) {
     if ((int)*(unsigned char *)(e + 1) > 0) {
         off = 0;
         do {
-            func_ov022_0208b214(*(int *)(e + 0x168) + off);
+            Ov022_AimAngleThenNotify(*(int *)(e + 0x168) + off);
             i = i + 1;
             off = off + 0x150;
         } while (i < *(unsigned char *)(e + 1));

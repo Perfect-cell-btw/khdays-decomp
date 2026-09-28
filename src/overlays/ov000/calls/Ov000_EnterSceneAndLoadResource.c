@@ -1,0 +1,40 @@
+typedef unsigned char u8;
+typedef unsigned short u16;
+typedef unsigned int u32;
+typedef void (*OverlayCallback)(void);
+
+typedef struct {
+    u16 second_value;
+    u16 first_value;
+    u8 pad_0004[0x965c];
+    u32 resource;
+} OverlayContext;
+
+typedef struct {
+    u32 first;
+    u32 second;
+} OverlayStartParams;
+
+extern u8 data_ov000_0205abd0[];
+extern OverlayContext *NNSi_FndGetCurrentRootHeap(void);
+extern void Ov000_CreateSceneContext(void);
+extern void SetMasterBrightnessMain(int value);
+extern void SetMasterBrightnessSub(int value);
+extern u32 Loader_RequestFile(const void *data, int id);
+extern void Ov000_EnterListScene(void);
+
+OverlayCallback Ov000_EnterSceneAndLoadResource(const OverlayStartParams *params) {
+    OverlayContext *context = NNSi_FndGetCurrentRootHeap();
+
+    Ov000_CreateSceneContext();
+    SetMasterBrightnessMain(-16);
+    SetMasterBrightnessSub(-16);
+
+    if (params != 0) {
+        context->first_value = params->first;
+        context->second_value = params->second;
+    }
+
+    context->resource = Loader_RequestFile(data_ov000_0205abd0, 14);
+    return Ov000_EnterListScene;
+}

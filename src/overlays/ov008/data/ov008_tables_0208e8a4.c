@@ -5,9 +5,9 @@
  * small integers, bytes where the words are packed bytes.
  *
  * Readers:
- *   data_ov008_0208e8a4: func_ov008_02051b20
- *   data_ov008_0208e8f4: func_ov008_02054ed4
- *   data_ov008_0208e8f8: func_ov008_02054ed4
+ *   data_ov008_0208e8a4: Ov008_LookupTypeCode
+ *   data_ov008_0208e8f4: Ov008_LoadElemsFromLayout
+ *   data_ov008_0208e8f8: Ov008_LoadElemsFromLayout
  */
 
 typedef unsigned char u8;

@@ -24,7 +24,7 @@ typedef struct RenderCommandState {
     FrameTable *frameTableDc;
 } RenderCommandState;
 
-extern void func_01ff9d90(const void *source, u32 size);
+extern void NNS_G3dGeSendDL(const void *source, u32 size);
 
 static inline s32 *GetFrameEntry(FrameTable *table, u32 frame)
 {
@@ -63,7 +63,7 @@ void func_01ffc0d0(RenderCommandState *state)
 no_data:
         data = 0;
 have_data:
-        func_01ff9d90((u8 *)data + data->payloadOffset08, data->payloadSize0c);
+        NNS_G3dGeSendDL((u8 *)data + data->payloadOffset08, data->payloadSize0c);
     }
     state->stream00 += 2;
 }

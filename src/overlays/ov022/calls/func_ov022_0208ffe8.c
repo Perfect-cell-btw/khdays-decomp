@@ -1,5 +1,5 @@
-extern int func_01ff8e94(int *a, int *b);
-extern void func_0202aa9c(unsigned short *p);
+extern int VEC_Distance(int *a, int *b);
+extern void Scene_DrawNode(unsigned short *p);
 
 struct vec3_0208ffe8 {
     int a;
@@ -18,7 +18,7 @@ void func_ov022_0208ffe8(unsigned short *param_1, int param_2, int param_3, int 
     iVar2 = local_1c.b - local_28.b;
     local_28.b = 0;
     local_1c.b = 0;
-    iVar1 = func_01ff8e94((int *)&local_28, (int *)&local_1c);
+    iVar1 = VEC_Distance((int *)&local_28, (int *)&local_1c);
     if (iVar1 < 0xccd) {
         if (iVar2 < 0) {
             iVar2 = -iVar2;
@@ -27,5 +27,5 @@ void func_ov022_0208ffe8(unsigned short *param_1, int param_2, int param_3, int 
             return;
         }
     }
-    func_0202aa9c(param_1);
+    Scene_DrawNode(param_1);
 }

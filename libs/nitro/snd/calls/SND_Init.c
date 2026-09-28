@@ -43,7 +43,7 @@ extern void PushCommand_impl(int command, u32 arg0, u32 arg1, u32 arg2, u32 arg3
 
 typedef struct OSMutex OSMutex;
 extern void OS_InitMutex(OSMutex *mutex);
-extern void func_0200851c(void);              /* SND_CommandInit */
+extern void SND_CommandInit(void);              /* SND_CommandInit */
 extern void SND_AlarmInit(void);
 extern BOOL data_0204472c;                    /* initialized */
 extern OSMutex data_02044730;                 /* sSndMutex */
@@ -61,6 +61,6 @@ void SND_Init(void)
     }
 
     OS_InitMutex(&sSndMutex);
-    func_0200851c();
+    SND_CommandInit();
     SND_AlarmInit();
 }

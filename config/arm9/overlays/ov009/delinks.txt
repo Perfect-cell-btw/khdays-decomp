@@ -4,295 +4,295 @@
     .data       start:0x02056220 end:0x020563e0 kind:data align:32
     .bss        start:0x020563e0 end:0x02056420 kind:bss align:32
 
-src/overlays/ov009/calls/func_ov009_0204cac0.c:
+src/overlays/ov009/calls/Ov009_ClassCtor.c:
     complete
     .text       start:0x0204cac0 end:0x0204caec
 
-src/overlays/ov009/calls/func_ov009_0204caec.c:
+src/overlays/ov009/calls/Ov009_SaveSceneTeardown.c:
     complete
     .text       start:0x0204caec end:0x0204cb4c
 
-src/overlays/ov009/calls/func_ov009_0204cb4c.c:
+src/overlays/ov009/calls/Ov009_WaitCommitPage.c:
     complete
     .text       start:0x0204cb4c end:0x0204cb6c
 
-src/overlays/ov009/calls/func_ov009_0204cb6c.c:
+src/overlays/ov009/calls/Ov009_SetCtxField95cc.c:
     complete
     .text       start:0x0204cb6c end:0x0204cb84
 
-src/overlays/ov009/calls/func_ov009_0204cb84.c:
+src/overlays/ov009/calls/Ov009_GetCtxField95cc.c:
     complete
     .text       start:0x0204cb84 end:0x0204cb9c
 
-src/overlays/ov009/calls/func_ov009_0204cb9c.c:
+src/overlays/ov009/calls/Ov009_PushCannedDescriptors.c:
     complete
     .text       start:0x0204cb9c end:0x0204cc18
 
-src/overlays/ov009/calls/func_ov009_0204cc18.c:
+src/overlays/ov009/calls/Ov009_ResetFourChannels.c:
     complete
     .text       start:0x0204cc18 end:0x0204cc74
 
-src/overlays/ov009/calls/func_ov009_0204cc74.c:
+src/overlays/ov009/calls/Ov009_ClearCellsLow.c:
     complete
     .text       start:0x0204cc74 end:0x0204ccd4
 
-src/overlays/ov009/calls/func_ov009_0204ccd4.c:
+src/overlays/ov009/calls/Ov009_ClearCellsHigh.c:
     complete
     .text       start:0x0204ccd4 end:0x0204cd34
 
-src/overlays/ov009/calls/func_ov009_0204cd34.c:
+src/overlays/ov009/calls/Ov009_BlitConfigRegion.c:
     complete
     .text       start:0x0204cd34 end:0x0204cd7c
 
-src/overlays/ov009/calls/func_ov009_0204cd7c.c:
+src/overlays/ov009/calls/Ov009_Menu_VBlankTick.c:
     complete
     .text       start:0x0204cd7c end:0x0204cec0
 
-src/overlays/ov009/calls/func_ov009_0204cec0.c:
+src/overlays/ov009/calls/Ov009_EnableBothHalves.c:
     complete
     .text       start:0x0204cec0 end:0x0204cfbc
 
-src/overlays/ov009/calls/func_ov009_0204cfbc.c:
+src/overlays/ov009/calls/Ov009_PollPageInput.c:
     complete
     .text       start:0x0204cfbc end:0x0204d224
 
-src/overlays/ov009/calls/func_ov009_0204d224.c:
+src/overlays/ov009/calls/Ov009_Menu_PreparePage.c:
     complete
     .text       start:0x0204d224 end:0x0204d35c
 
-src/overlays/ov009/calls/func_ov009_0204d35c.c:
+src/overlays/ov009/calls/Ov009_UpdateInputAndEnterMode3.c:
     complete
     .text       start:0x0204d35c end:0x0204d3c4
 
-src/overlays/ov009/calls/func_ov009_0204d3c4.c:
+src/overlays/ov009/calls/Ov009_InitThenDispatchTwoHandlers.c:
     complete
     .text       start:0x0204d3c4 end:0x0204d3fc
 
-src/overlays/ov009/calls/func_ov009_0204d3fc.c:
+src/overlays/ov009/calls/Ov009_WaitLoadAdvancePhase.c:
     complete
     .text       start:0x0204d3fc end:0x0204d4d4
 
-src/overlays/ov009/calls/func_ov009_0204d4d4.c:
+src/overlays/ov009/calls/Ov009_AllocWorkBufferInit.c:
     complete
     .text       start:0x0204d4d4 end:0x0204d5a4
 
-src/overlays/ov009/calls/func_ov009_0204d5a4.c:
+src/overlays/ov009/calls/Ov009_UpdateInputAndEnableHalves.c:
     complete
     .text       start:0x0204d5a4 end:0x0204d604
 
-src/overlays/ov009/calls/func_ov009_0204d604.c:
+src/overlays/ov009/calls/Ov009_UpdateInputAndEnterMode8.c:
     complete
     .text       start:0x0204d604 end:0x0204d65c
 
-src/overlays/ov009/calls/func_ov009_0204d65c.c:
+src/overlays/ov009/calls/Ov009_FullScreenTeardown.c:
     complete
     .text       start:0x0204d65c end:0x0204d76c
 
-src/overlays/ov009/calls/func_ov009_0204d76c.c:
+src/overlays/ov009/calls/Ov009_ScreenTeardown.c:
     complete
     .text       start:0x0204d76c end:0x0204d7f4
 
-src/overlays/ov009/calls/func_ov009_0204d7f4.c:
+src/overlays/ov009/calls/Ov009_RunModeCallback.c:
     complete
     .text       start:0x0204d7f4 end:0x0204d818
 
-src/overlays/ov009/auto/func_ov009_0204d818.c:
+src/overlays/ov009/auto/Ov009_MapCodeToSlotIndex.c:
     complete
     .text       start:0x0204d818 end:0x0204d8a8
 
-src/overlays/ov009/calls/func_ov009_0204d8a8.c:
+src/overlays/ov009/calls/Ov009_CodeToSlotTile.c:
     complete
     .text       start:0x0204d8a8 end:0x0204d8ec
 
-src/overlays/ov009/auto/func_ov009_0204d8ec.c:
+src/overlays/ov009/auto/Ov009_ClampedGridOffset.c:
     complete
     .text       start:0x0204d8ec end:0x0204d924
 
-src/overlays/ov009/calls/func_ov009_0204d924.c:
+src/overlays/ov009/calls/Ov009_BlitTileRect.c:
     complete
     .text       start:0x0204d924 end:0x0204db68
 
-src/overlays/ov009/calls/func_ov009_0204db68.c:
+src/overlays/ov009/calls/Ov009_ResourceEntryCallback.c:
     complete
     .text       start:0x0204db68 end:0x0204db78
 
-src/overlays/ov009/calls/func_ov009_0204db78.c:
+src/overlays/ov009/calls/Ov009_ResourceNodeCallback.c:
     complete
     .text       start:0x0204db78 end:0x0204db88
 
-src/overlays/ov009/calls/func_ov009_0204db88.c:
+src/overlays/ov009/calls/Ov009_FlushDirtyCells.c:
     complete
     .text       start:0x0204db88 end:0x0204dc00
 
-src/overlays/ov009/calls/func_ov009_0204dc00.c:
+src/overlays/ov009/calls/Ov009_Menu_Init.c:
     complete
     .text       start:0x0204dc00 end:0x0204df00
 
-src/overlays/ov009/calls/func_ov009_0204df00.c:
+src/overlays/ov009/calls/Ov009_CommitPage.c:
     complete
     .text       start:0x0204df00 end:0x0204dfcc
 
-src/overlays/ov009/calls/func_ov009_0204dfcc.c:
+src/overlays/ov009/calls/Ov009_PageTeardown.c:
     complete
     .text       start:0x0204dfcc end:0x0204e328
 
-src/overlays/ov009/calls/func_ov009_0204e328.c:
+src/overlays/ov009/calls/Ov009_StartScreenTransition.c:
     complete
     .text       start:0x0204e328 end:0x0204e3b4
 
-src/overlays/ov009/calls/func_ov009_0204e3b4.c:
+src/overlays/ov009/calls/Ov009_SetCtxField95fc.c:
     complete
     .text       start:0x0204e3b4 end:0x0204e3d8
 
-src/overlays/ov009/calls/func_ov009_0204e3d8.c:
+src/overlays/ov009/calls/Ov009_SetCtxField9614.c:
     complete
     .text       start:0x0204e3d8 end:0x0204e3f4
 
-src/overlays/ov009/calls/func_ov009_0204e3f4.c:
+src/overlays/ov009/calls/Ov009_MarkSlotUsed.c:
     complete
     .text       start:0x0204e3f4 end:0x0204e42c
 
-src/overlays/ov009/calls/func_ov009_0204e42c.c:
+src/overlays/ov009/calls/Ov009_GetCtxBlock9500.c:
     complete
     .text       start:0x0204e42c end:0x0204e440
 
-src/overlays/ov009/calls/func_ov009_0204e440.c:
+src/overlays/ov009/calls/Ov009_GetContext.c:
     complete
     .text       start:0x0204e440 end:0x0204e450
 
-src/overlays/ov009/calls/func_ov009_0204e450.c:
+src/overlays/ov009/calls/Ov009_ResourceNodeCallback_2.c:
     complete
     .text       start:0x0204e450 end:0x0204e460
 
-src/overlays/ov009/calls/func_ov009_0204e460.c:
+src/overlays/ov009/calls/Ov009_SetRenderModeWord.c:
     complete
     .text       start:0x0204e460 end:0x0204e4a8
 
-src/overlays/ov009/calls/func_ov009_0204e4a8.c:
+src/overlays/ov009/calls/Ov009_GetPageA.c:
     complete
     .text       start:0x0204e4a8 end:0x0204e4c0
 
-src/overlays/ov009/calls/func_ov009_0204e4c0.c:
+src/overlays/ov009/calls/Ov009_ListRemoveAndFree.c:
     complete
     .text       start:0x0204e4c0 end:0x0204e540
 
-src/overlays/ov009/calls/func_ov009_0204e540.c:
+src/overlays/ov009/calls/Ov009_DestroyAllRegistryEntries.c:
     complete
     .text       start:0x0204e540 end:0x0204e59c
 
-src/overlays/ov009/calls/func_ov009_0204e59c.c:
+src/overlays/ov009/calls/Ov009_GetCtxBlock968c.c:
     complete
     .text       start:0x0204e59c end:0x0204e5b4
 
-src/overlays/ov009/auto/func_ov009_0204e5b4.c:
+src/overlays/ov009/auto/Ov009_MenuInitHookNoOp.c:
     complete
     .text       start:0x0204e5b4 end:0x0204e5b8
 
-src/overlays/ov009/calls/func_ov009_0204e5b8.c:
+src/overlays/ov009/calls/Ov009_PackHandleTag.c:
     complete
     .text       start:0x0204e5b8 end:0x0204e5fc
 
-src/overlays/ov009/calls/func_ov009_0204e5fc.c:
+src/overlays/ov009/calls/Ov009_PackHandleTagB.c:
     complete
     .text       start:0x0204e5fc end:0x0204e640
 
-src/overlays/ov009/auto/func_ov009_0204e640.c:
+src/overlays/ov009/auto/Ov009_TryInvoke.c:
     complete
     .text       start:0x0204e640 end:0x0204e660
 
-src/overlays/ov009/calls/func_ov009_0204e660.c:
+src/overlays/ov009/calls/Ov009_ClearActiveHandlers.c:
     complete
     .text       start:0x0204e660 end:0x0204e678
 
-src/overlays/ov009/calls/func_ov009_0204e678.c:
+src/overlays/ov009/calls/Ov009_ResetActiveHandlers.c:
     complete
     .text       start:0x0204e678 end:0x0204e6a8
 
-src/overlays/ov009/calls/func_ov009_0204e6a8.c:
+src/overlays/ov009/calls/Ov009_SetHandlerA.c:
     complete
     .text       start:0x0204e6a8 end:0x0204e6bc
 
-src/overlays/ov009/calls/func_ov009_0204e6bc.c:
+src/overlays/ov009/calls/Ov009_ClearHandlerA.c:
     complete
     .text       start:0x0204e6bc end:0x0204e6dc
 
-src/overlays/ov009/calls/func_ov009_0204e6dc.c:
+src/overlays/ov009/calls/Ov009_InvokeHandlerA.c:
     complete
     .text       start:0x0204e6dc end:0x0204e71c
 
-src/overlays/ov009/calls/func_ov009_0204e71c.c:
+src/overlays/ov009/calls/Ov009_HandlerA_Call1.c:
     complete
     .text       start:0x0204e71c end:0x0204e750
 
-src/overlays/ov009/calls/func_ov009_0204e750.c:
+src/overlays/ov009/calls/Ov009_HandlerA_Call2.c:
     complete
     .text       start:0x0204e750 end:0x0204e784
 
-src/overlays/ov009/calls/func_ov009_0204e784.c:
+src/overlays/ov009/calls/Ov009_SetHandlerB.c:
     complete
     .text       start:0x0204e784 end:0x0204e798
 
-src/overlays/ov009/calls/func_ov009_0204e798.c:
+src/overlays/ov009/calls/Ov009_ClearHandlerB.c:
     complete
     .text       start:0x0204e798 end:0x0204e7b8
 
-src/overlays/ov009/calls/func_ov009_0204e7b8.c:
+src/overlays/ov009/calls/Ov009_InvokeHandlerB.c:
     complete
     .text       start:0x0204e7b8 end:0x0204e7f8
 
-src/overlays/ov009/calls/func_ov009_0204e7f8.c:
+src/overlays/ov009/calls/Ov009_HandlerB_Call1.c:
     complete
     .text       start:0x0204e7f8 end:0x0204e82c
 
-src/overlays/ov009/calls/func_ov009_0204e82c.c:
+src/overlays/ov009/calls/Ov009_HandlerB_Call2.c:
     complete
     .text       start:0x0204e82c end:0x0204e860
 
-src/overlays/ov009/calls/func_ov009_0204e860.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_00.c:
     complete
     .text       start:0x0204e860 end:0x0204e8d8
 
-src/overlays/ov009/calls/func_ov009_0204e8d8.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_01.c:
     complete
     .text       start:0x0204e8d8 end:0x0204e950
 
-src/overlays/ov009/calls/func_ov009_0204e950.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_02.c:
     complete
     .text       start:0x0204e950 end:0x0204e9c8
 
-src/overlays/ov009/calls/func_ov009_0204e9c8.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_03.c:
     complete
     .text       start:0x0204e9c8 end:0x0204ea40
 
-src/overlays/ov009/calls/func_ov009_0204ea40.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_04.c:
     complete
     .text       start:0x0204ea40 end:0x0204eab8
 
-src/overlays/ov009/calls/func_ov009_0204eab8.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_05.c:
     complete
     .text       start:0x0204eab8 end:0x0204eb30
 
-src/overlays/ov009/calls/func_ov009_0204eb30.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_06.c:
     complete
     .text       start:0x0204eb30 end:0x0204eba8
 
-src/overlays/ov009/calls/func_ov009_0204eba8.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_07.c:
     complete
     .text       start:0x0204eba8 end:0x0204ec20
 
-src/overlays/ov009/calls/func_ov009_0204ec20.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_08.c:
     complete
     .text       start:0x0204ec20 end:0x0204ec98
 
-src/overlays/ov009/calls/func_ov009_0204ec98.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_09.c:
     complete
     .text       start:0x0204ec98 end:0x0204ed10
 
-src/overlays/ov009/calls/func_ov009_0204ed10.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_10.c:
     complete
     .text       start:0x0204ed10 end:0x0204ed88
 
-src/overlays/ov009/calls/func_ov009_0204ed88.c:
+src/overlays/ov009/calls/Ov009_MenuInputDispatch_11.c:
     complete
     .text       start:0x0204ed88 end:0x0204ee00
 
@@ -300,87 +300,87 @@ src/overlays/ov009/calls/func_ov009_0204ee00.c:
     complete
     .text       start:0x0204ee00 end:0x0204ee10
 
-src/overlays/ov009/calls/func_ov009_0204ee10.c:
+src/overlays/ov009/calls/Ov009_HandlerA_GetField10.c:
     complete
     .text       start:0x0204ee10 end:0x0204ee30
 
-src/overlays/ov009/calls/func_ov009_0204ee30.c:
+src/overlays/ov009/calls/Ov009_HandlerB_GetField0C.c:
     complete
     .text       start:0x0204ee30 end:0x0204ee50
 
-src/overlays/ov009/calls/func_ov009_0204ee50.c:
+src/overlays/ov009/calls/Ov009_LookupTypeCode.c:
     complete
     .text       start:0x0204ee50 end:0x0204ee8c
 
-src/overlays/ov009/auto/func_ov009_0204ee8c.c:
+src/overlays/ov009/auto/Ov009_TagListHasFbAtLeast3.c:
     complete
     .text       start:0x0204ee8c end:0x0204eedc
 
-src/overlays/ov009/auto/func_ov009_0204eedc.c:
+src/overlays/ov009/auto/Ov009_ClampStatBlock.c:
     complete
     .text       start:0x0204eedc end:0x0204ef88
 
-src/overlays/ov009/auto/func_ov009_0204ef88.c:
+src/overlays/ov009/auto/Ov009_RecipeVisitHookNoOp.c:
     complete
     .text       start:0x0204ef88 end:0x0204ef8c
 
-src/overlays/ov009/calls/func_ov009_0204ef8c.c:
+src/overlays/ov009/calls/Ov009_AccumulateKeyed.c:
     complete
     .text       start:0x0204ef8c end:0x0204f020
 
-src/overlays/ov009/calls/func_ov009_0204f020.c:
+src/overlays/ov009/calls/Ov009_AddToSecondaryTally.c:
     complete
     .text       start:0x0204f020 end:0x0204f128
 
-src/overlays/ov009/calls/func_ov009_0204f128.c:
+src/overlays/ov009/calls/Ov009_AddToTally.c:
     complete
     .text       start:0x0204f128 end:0x0204f29c
 
-src/overlays/ov009/calls/func_ov009_0204f29c.c:
+src/overlays/ov009/calls/Ov009_Tally_ApplyCommand.c:
     complete
     .text       start:0x0204f29c end:0x0204f404
 
-src/overlays/ov009/auto/func_ov009_0204f404.c:
+src/overlays/ov009/auto/Ov009_FoldRecordIntoTally.c:
     complete
     .text       start:0x0204f404 end:0x0204f54c
 
-src/overlays/ov009/calls/func_ov009_0204f54c.c:
+src/overlays/ov009/calls/Ov009_TallySlots.c:
     complete
     .text       start:0x0204f54c end:0x0204f5ac
 
-src/overlays/ov009/calls/func_ov009_0204f5ac.c:
+src/overlays/ov009/calls/Ov009_TallyScaledSlots.c:
     complete
     .text       start:0x0204f5ac end:0x0204f644
 
-src/overlays/ov009/auto/func_ov009_0204f644.c:
+src/overlays/ov009/auto/Ov009_FindKeyedByte.c:
     complete
     .text       start:0x0204f644 end:0x0204f690
 
-src/overlays/ov009/calls/func_ov009_0204f690.c:
+src/overlays/ov009/calls/Ov009_FindLastCraftableRecipe.c:
     complete
     .text       start:0x0204f690 end:0x0204f858
 
-src/overlays/ov009/calls/func_ov009_0204f858.c:
+src/overlays/ov009/calls/Ov009_MatchRecipeAndApply.c:
     complete
     .text       start:0x0204f858 end:0x0204fcc4
 
-src/overlays/ov009/calls/func_ov009_0204fcc4.c:
+src/overlays/ov009/calls/Ov009_LayoutPanelEntry.c:
     complete
     .text       start:0x0204fcc4 end:0x02050238
 
-src/overlays/ov009/calls/func_ov009_02050238.c:
+src/overlays/ov009/calls/Ov009_FoldPanelIntoTally.c:
     complete
     .text       start:0x02050238 end:0x02050570
 
-src/overlays/ov009/calls/func_ov009_02050570.c:
+src/overlays/ov009/calls/Ov009_ClearStateFreeLists.c:
     complete
     .text       start:0x02050570 end:0x02050690
 
-src/overlays/ov009/auto/func_ov009_02050690.c:
+src/overlays/ov009/auto/Ov009_GetGridMaskExtent.c:
     complete
     .text       start:0x02050690 end:0x02050754
 
-src/overlays/ov009/calls/func_ov009_02050754.c:
+src/overlays/ov009/calls/Ov009_InitRecordContext.c:
     complete
     .text       start:0x02050754 end:0x020507d4
 
@@ -388,459 +388,459 @@ src/overlays/ov009/calls/func_ov009_020507d4.c:
     complete
     .text       start:0x020507d4 end:0x020507e0
 
-src/overlays/ov009/calls/func_ov009_020507e0.c:
+src/overlays/ov009/calls/Ov009_RebuildViewAndCountCells.c:
     complete
     .text       start:0x020507e0 end:0x02050a5c
 
-src/overlays/ov009/calls/func_ov009_02050a5c.c:
+src/overlays/ov009/calls/Ov009_BuildMenuGrid.c:
     complete
     .text       start:0x02050a5c end:0x02050cac
 
-src/overlays/ov009/calls/func_ov009_02050cac.c:
+src/overlays/ov009/calls/Ov009_ReleaseHandleGridAndList.c:
     complete
     .text       start:0x02050cac end:0x02050d60
 
-src/overlays/ov009/calls/func_ov009_02050d60.c:
+src/overlays/ov009/calls/Ov009_BuildNodeWithChildren.c:
     complete
     .text       start:0x02050d60 end:0x02050dbc
 
-src/overlays/ov009/calls/func_ov009_02050dbc.c:
+src/overlays/ov009/calls/Ov009_ProjectWorldPos.c:
     complete
     .text       start:0x02050dbc end:0x02050e58
 
-src/overlays/ov009/calls/func_ov009_02050e58.c:
+src/overlays/ov009/calls/Ov009_Widget_HitTest.c:
     complete
     .text       start:0x02050e58 end:0x02050f10
 
-src/overlays/ov009/calls/func_ov009_02050f10.c:
+src/overlays/ov009/calls/Ov009_Touch_GetLatestValidSampleB.c:
     complete
     .text       start:0x02050f10 end:0x02050f7c
 
-src/overlays/ov009/calls/func_ov009_02050f7c.c:
+src/overlays/ov009/calls/Ov009_RouteNewPressToWidget.c:
     complete
     .text       start:0x02050f7c end:0x0205105c
 
-src/overlays/ov009/calls/func_ov009_0205105c.c:
+src/overlays/ov009/calls/Ov009_MoveFocusByDpad.c:
     complete
     .text       start:0x0205105c end:0x020512ec
 
-src/overlays/ov009/calls/func_ov009_020512ec.c:
+src/overlays/ov009/calls/Ov009_FillAnchorPair.c:
     complete
     .text       start:0x020512ec end:0x02051364
 
-src/overlays/ov009/calls/func_ov009_02051364.c:
+src/overlays/ov009/calls/Ov009_ProcessAllListNodes.c:
     complete
     .text       start:0x02051364 end:0x020513ac
 
-src/overlays/ov009/calls/func_ov009_020513ac.c:
+src/overlays/ov009/calls/Ov009_UpdateWidgetLayer.c:
     complete
     .text       start:0x020513ac end:0x02051470
 
-src/overlays/ov009/calls/func_ov009_02051470.c:
+src/overlays/ov009/calls/Ov009_InitSubsystemObject.c:
     complete
     .text       start:0x02051470 end:0x020514f8
 
-src/overlays/ov009/calls/func_ov009_020514f8.c:
+src/overlays/ov009/calls/Ov009_DestroyObjectsAndRelease.c:
     complete
     .text       start:0x020514f8 end:0x02051524
 
-src/overlays/ov009/calls/func_ov009_02051524.c:
+src/overlays/ov009/calls/Ov009_UpdateWidgetLayerDefault.c:
     complete
     .text       start:0x02051524 end:0x02051534
 
-src/overlays/ov009/calls/func_ov009_02051534.c:
+src/overlays/ov009/calls/Ov009_CallSelectionHandler.c:
     complete
     .text       start:0x02051534 end:0x02051544
 
-src/overlays/ov009/calls/func_ov009_02051544.c:
+src/overlays/ov009/calls/Ov009_CreateWidget.c:
     complete
     .text       start:0x02051544 end:0x020517cc
 
-src/overlays/ov009/calls/func_ov009_020517cc.c:
+src/overlays/ov009/calls/Ov009_InstantiateAndLinkElements.c:
     complete
     .text       start:0x020517cc end:0x0205180a
 
-src/overlays/ov009/calls/func_ov009_0205180c.c:
+src/overlays/ov009/calls/Ov009_LoadBlockProcessAndFree.c:
     complete
     .text       start:0x0205180c end:0x02051832
 
-src/overlays/ov009/calls/func_ov009_02051834.c:
+src/overlays/ov009/calls/Ov009_DestroyObject.c:
     complete
     .text       start:0x02051834 end:0x02051880
 
-src/overlays/ov009/calls/func_ov009_02051880.c:
+src/overlays/ov009/calls/Ov009_DestroyAllListObjects.c:
     complete
     .text       start:0x02051880 end:0x020518b4
 
-src/overlays/ov009/calls/func_ov009_020518b4.c:
+src/overlays/ov009/calls/Ov009_ReleaseIfMarked.c:
     complete
     .text       start:0x020518b4 end:0x020518d8
 
-src/overlays/ov009/calls/func_ov009_020518d8.c:
+src/overlays/ov009/calls/Ov009_InitFromDescAndMark.c:
     complete
     .text       start:0x020518d8 end:0x020518f0
 
-src/overlays/ov009/auto/func_ov009_020518f0.c:
+src/overlays/ov009/auto/Ov009_StoreWordAt0x4a50.c:
     complete
     .text       start:0x020518f0 end:0x020518fc
 
-src/overlays/ov009/calls/func_ov009_020518fc.c:
+src/overlays/ov009/calls/Ov009_FindEntryById.c:
     complete
     .text       start:0x020518fc end:0x0205194c
 
-src/overlays/ov009/auto/func_ov009_0205194c.c:
+src/overlays/ov009/auto/Ov009_Widget_IsShownAndEnabled.c:
     complete
     .text       start:0x0205194c end:0x02051978
 
-src/overlays/ov009/calls/func_ov009_02051978.c:
+src/overlays/ov009/calls/Ov009_ApplyFirstValidSlot.c:
     complete
     .text       start:0x02051978 end:0x020519b0
 
-src/overlays/ov009/calls/func_ov009_020519b0.c:
+src/overlays/ov009/calls/Ov009_ReleaseTwoSlotsEx.c:
     complete
     .text       start:0x020519b0 end:0x020519f4
 
-src/overlays/ov009/auto/func_ov009_020519f4.c:
+src/overlays/ov009/auto/Ov009_GetEntryBlock2c.c:
     complete
     .text       start:0x020519f4 end:0x020519fc
 
-src/overlays/ov009/calls/func_ov009_020519fc.c:
+src/overlays/ov009/calls/Ov009_EmitSplinePair.c:
     complete
     .text       start:0x020519fc end:0x02051a68
 
-src/overlays/ov009/calls/func_ov009_02051a68.c:
+src/overlays/ov009/calls/Ov009_SetEntrySlotsVisible.c:
     complete
     .text       start:0x02051a68 end:0x02051acc
 
-src/overlays/ov009/calls/func_ov009_02051acc.c:
+src/overlays/ov009/calls/Ov009_ReleaseTwoSlots.c:
     complete
     .text       start:0x02051acc end:0x02051b08
 
-src/overlays/ov009/calls/func_ov009_02051b08.c:
+src/overlays/ov009/calls/Ov009_ReleaseTwoSlotsEx_2.c:
     complete
     .text       start:0x02051b08 end:0x02051b4c
 
-src/overlays/ov009/calls/func_ov009_02051b4c.c:
+src/overlays/ov009/calls/Ov009_SwapParamOverrides.c:
     complete
     .text       start:0x02051b4c end:0x02051bc4
 
-src/overlays/ov009/calls/func_ov009_02051bc4.c:
+src/overlays/ov009/calls/Ov009_ReleaseTwoSlotsEx_3.c:
     complete
     .text       start:0x02051bc4 end:0x02051c08
 
-src/overlays/ov009/auto/func_ov009_02051c08.c:
+src/overlays/ov009/auto/Ov009_SetControlBit0AtA7C.c:
     complete
     .text       start:0x02051c08 end:0x02051c30
 
-src/overlays/ov009/auto/func_ov009_02051c30.c:
+src/overlays/ov009/auto/Ov009_SetControlBit1AtA7C.c:
     complete
     .text       start:0x02051c30 end:0x02051c58
 
-src/overlays/ov009/calls/func_ov009_02051c58.c:
+src/overlays/ov009/calls/Ov009_LoadLayoutResources.c:
     complete
     .text       start:0x02051c58 end:0x02051c96
 
-src/overlays/ov009/calls/func_ov009_02051c98.c:
+src/overlays/ov009/calls/Ov009_LoadElemsFromLayout.c:
     complete
     .text       start:0x02051c98 end:0x02051d00
 
-src/overlays/ov009/calls/func_ov009_02051d00.c:
+src/overlays/ov009/calls/Ov009_BuildLayoutFromTagTable.c:
     complete
     .text       start:0x02051d00 end:0x02051d38
 
-src/overlays/ov009/auto/func_ov009_02051d38.c:
+src/overlays/ov009/auto/Ov009_IsPointInBox.c:
     complete
     .text       start:0x02051d38 end:0x02051d74
 
-src/overlays/ov009/auto/func_ov009_02051d74.c:
+src/overlays/ov009/auto/Ov009_FindActiveEntryById.c:
     complete
     .text       start:0x02051d74 end:0x02051dc4
 
-src/overlays/ov009/auto/func_ov009_02051dc4.c:
+src/overlays/ov009/auto/Ov009_FindFreeElem.c:
     complete
     .text       start:0x02051dc4 end:0x02051e04
 
-src/overlays/ov009/auto/func_ov009_02051e04.c:
+src/overlays/ov009/auto/Ov009_FindFirstUnusedEntry.c:
     complete
     .text       start:0x02051e04 end:0x02051e48
 
-src/overlays/ov009/auto/func_ov009_02051e48.c:
+src/overlays/ov009/auto/Ov009_FindFirstUnusedElem.c:
     complete
     .text       start:0x02051e48 end:0x02051e84
 
-src/overlays/ov009/calls/func_ov009_02051e84.c:
+src/overlays/ov009/calls/Ov009_Touch_GetLatestValidSample.c:
     complete
     .text       start:0x02051e84 end:0x02051ef8
 
-src/overlays/ov009/calls/func_ov009_02051ef8.c:
+src/overlays/ov009/calls/Ov009_FlushOrRegisterBlock.c:
     complete
     .text       start:0x02051ef8 end:0x02051f68
 
-src/overlays/ov009/auto/func_ov009_02051f68.c:
+src/overlays/ov009/auto/Ov009_TickTagTrackerNodes.c:
     complete
     .text       start:0x02051f68 end:0x02052108
 
-src/overlays/ov009/auto/func_ov009_02052108.c:
+src/overlays/ov009/auto/Ov009_ResolveHoveredEntryAndNotify.c:
     complete
     .text       start:0x02052108 end:0x02052230
 
-src/overlays/ov009/calls/func_ov009_02052230.c:
+src/overlays/ov009/calls/Ov009_Container_Init.c:
     complete
     .text       start:0x02052230 end:0x020522a6
 
-src/overlays/ov009/calls/func_ov009_020522a8.c:
+src/overlays/ov009/calls/Ov009_TickSelectionWidget.c:
     complete
     .text       start:0x020522a8 end:0x020522d0
 
-src/overlays/ov009/calls/func_ov009_020522d0.c:
+src/overlays/ov009/calls/Ov009_ReleaseThreeBuffers.c:
     complete
     .text       start:0x020522d0 end:0x020522f8
 
-src/overlays/ov009/calls/func_ov009_020522f8.c:
+src/overlays/ov009/calls/Ov009_LoadAndInitResourceSections.c:
     complete
     .text       start:0x020522f8 end:0x02052330
 
-src/overlays/ov009/calls/func_ov009_02052330.c:
+src/overlays/ov009/calls/Ov009_AddElem.c:
     complete
     .text       start:0x02052330 end:0x020523a0
 
-src/overlays/ov009/auto/func_ov009_020523a0.c:
+src/overlays/ov009/auto/Ov009_InvokeElementCallback.c:
     complete
     .text       start:0x020523a0 end:0x020523cc
 
-src/overlays/ov009/calls/func_ov009_020523cc.c:
+src/overlays/ov009/calls/Ov009_FlushFlaggedElements.c:
     complete
     .text       start:0x020523cc end:0x020523fe
 
-src/overlays/ov009/calls/func_ov009_02052400.c:
+src/overlays/ov009/calls/Ov009_BuildTagTrackerNode.c:
     complete
     .text       start:0x02052400 end:0x020524cc
 
-src/overlays/ov009/calls/func_ov009_020524cc.c:
+src/overlays/ov009/calls/Ov009_ReleaseElement.c:
     complete
     .text       start:0x020524cc end:0x020524fc
 
-src/overlays/ov009/calls/func_ov009_020524fc.c:
+src/overlays/ov009/calls/Ov009_SweepReleasePendingElements.c:
     complete
     .text       start:0x020524fc end:0x0205252e
 
-src/overlays/ov009/calls/func_ov009_02052530.c:
+src/overlays/ov009/calls/Ov009_AllocResourceEntry.c:
     complete
     .text       start:0x02052530 end:0x02052574
 
-src/overlays/ov009/calls/func_ov009_02052574.c:
+src/overlays/ov009/calls/Ov009_FreeElementBuffer.c:
     complete
     .text       start:0x02052574 end:0x020525a0
 
-src/overlays/ov009/calls/func_ov009_020525a0.c:
+src/overlays/ov009/calls/Ov009_SweepFreeElementBuffers.c:
     complete
     .text       start:0x020525a0 end:0x020525ca
 
-src/overlays/ov009/auto/func_ov009_020525cc.c:
+src/overlays/ov009/auto/Ov009_FindEntryByTag.c:
     complete
     .text       start:0x020525cc end:0x02052628
 
-src/overlays/ov009/auto/func_ov009_02052628.c:
+src/overlays/ov009/auto/Ov009_Elem_SetX.c:
     complete
     .text       start:0x02052628 end:0x02052630
 
-src/overlays/ov009/auto/func_ov009_02052630.c:
+src/overlays/ov009/auto/Ov009_Elem_SetY.c:
     complete
     .text       start:0x02052630 end:0x02052638
 
-src/overlays/ov009/calls/func_ov009_02052638.c:
+src/overlays/ov009/calls/Ov009_Elem_SetPos.c:
     complete
     .text       start:0x02052638 end:0x02052660
 
-src/overlays/ov009/auto/func_ov009_02052660.c:
+src/overlays/ov009/auto/Ov009_TagTracker_InvokeCallback.c:
     complete
     .text       start:0x02052660 end:0x0205267c
 
-src/overlays/ov009/calls/func_ov009_0205267c.c:
+src/overlays/ov009/calls/Ov009_ApplyTempFieldsAndRestore.c:
     complete
     .text       start:0x0205267c end:0x020526b8
 
-src/overlays/ov009/calls/func_ov009_020526b8.c:
+src/overlays/ov009/calls/Ov009_SweepElements.c:
     complete
     .text       start:0x020526b8 end:0x020526d0
 
-src/overlays/ov009/calls/func_ov009_020526d0.c:
+src/overlays/ov009/calls/Ov009_ClearElementList.c:
     complete
     .text       start:0x020526d0 end:0x02052728
 
-src/overlays/ov009/auto/func_ov009_02052728.c:
+src/overlays/ov009/auto/Ov009_SetFlagBit0.c:
     complete
     .text       start:0x02052728 end:0x02052744
 
-src/overlays/ov009/auto/func_ov009_02052744.c:
+src/overlays/ov009/auto/Ov009_SetHalfword20.c:
     complete
     .text       start:0x02052744 end:0x02052750
 
-src/overlays/ov009/calls/func_ov009_02052750.c:
+src/overlays/ov009/calls/Ov009_InitResourceRecord.c:
     complete
     .text       start:0x02052750 end:0x02052776
 
-src/overlays/ov009/calls/func_ov009_02052778.c:
+src/overlays/ov009/calls/Ov009_FreeResourceRecordBuffer.c:
     complete
     .text       start:0x02052778 end:0x02052786
 
-src/overlays/ov009/auto/func_ov009_02052788.c:
+src/overlays/ov009/auto/Ov009_GetVarRecordByIndex.c:
     complete
     .text       start:0x02052788 end:0x020527c0
 
-src/overlays/ov009/calls/func_ov009_020527c0.c:
+src/overlays/ov009/calls/Ov009_CopyActiveHitToCursor.c:
     complete
     .text       start:0x020527c0 end:0x02052834
 
-src/overlays/ov009/calls/func_ov009_02052834.c:
+src/overlays/ov009/calls/Ov009_CaptureRootHeap.c:
     complete
     .text       start:0x02052834 end:0x02052854
 
-src/overlays/ov009/auto/func_ov009_02052854.c:
+src/overlays/ov009/auto/Ov009_RootClassMethodNoOp.c:
     complete
     .text       start:0x02052854 end:0x02052858
 
-src/overlays/ov009/calls/func_ov009_02052858.c:
+src/overlays/ov009/calls/Ov009_MsgQueue_GetHeap.c:
     complete
     .text       start:0x02052858 end:0x02052868
 
-src/overlays/ov009/calls/func_ov009_02052868.c:
+src/overlays/ov009/calls/Ov009_CopySourceBlock.c:
     complete
     .text       start:0x02052868 end:0x0205289c
 
-src/overlays/ov009/calls/func_ov009_0205289c.c:
+src/overlays/ov009/calls/Ov009_PollSaveTransfer.c:
     complete
     .text       start:0x0205289c end:0x0205297c
 
-src/overlays/ov009/calls/func_ov009_0205297c.c:
+src/overlays/ov009/calls/Ov009_StartCardTransfer.c:
     complete
     .text       start:0x0205297c end:0x02052998
 
-src/overlays/ov009/calls/func_ov009_02052998.c:
+src/overlays/ov009/calls/Ov009_CommitSaveFields.c:
     complete
     .text       start:0x02052998 end:0x02052abc
 
-src/overlays/ov009/auto/func_ov009_02052abc.c:
+src/overlays/ov009/auto/Ov009_SplitTimeUnitsHMS.c:
     complete
     .text       start:0x02052abc end:0x02052b58
 
-src/overlays/ov009/calls/func_ov009_02052b58.c:
+src/overlays/ov009/calls/Ov009_PlaceElementByVariant.c:
     complete
     .text       start:0x02052b58 end:0x02052be0
 
-src/overlays/ov009/calls/func_ov009_02052be0.c:
+src/overlays/ov009/calls/Ov009_DrawNumberDigits.c:
     complete
     .text       start:0x02052be0 end:0x02052c64
 
-src/overlays/ov009/calls/func_ov009_02052c64.c:
+src/overlays/ov009/calls/Ov009_DrawTwoDigits.c:
     complete
     .text       start:0x02052c64 end:0x02052cf4
 
-src/overlays/ov009/calls/func_ov009_02052cf4.c:
+src/overlays/ov009/calls/Ov009_RenderTimeDigits.c:
     complete
     .text       start:0x02052cf4 end:0x02052dec
 
-src/overlays/ov009/calls/func_ov009_02052dec.c:
+src/overlays/ov009/calls/Ov009_InitSubScreenGraphics.c:
     complete
     .text       start:0x02052dec end:0x02052f98
 
-src/overlays/ov009/calls/func_ov009_02052f98.c:
+src/overlays/ov009/calls/Ov009_LoadMenuBgWithVariantChars.c:
     complete
     .text       start:0x02052f98 end:0x020530c4
 
-src/overlays/ov009/calls/func_ov009_020530c4.c:
+src/overlays/ov009/calls/Ov009_SaveMenu_BuildLayout.c:
     complete
     .text       start:0x020530c4 end:0x02053308
 
-src/overlays/ov009/calls/func_ov009_02053308.c:
+src/overlays/ov009/calls/Ov009_DrawWithShadow.c:
     complete
     .text       start:0x02053308 end:0x02053398
 
-src/overlays/ov009/calls/func_ov009_02053398.c:
+src/overlays/ov009/calls/Ov009_DrawTextNewline.c:
     complete
     .text       start:0x02053398 end:0x02053404
 
-src/overlays/ov009/calls/func_ov009_02053404.c:
+src/overlays/ov009/calls/Ov009_SaveMenu_BuildTextSurfaces.c:
     complete
     .text       start:0x02053404 end:0x02053554
 
-src/overlays/ov009/calls/func_ov009_02053554.c:
+src/overlays/ov009/calls/Ov009_FillSaveSlotInfo.c:
     complete
     .text       start:0x02053554 end:0x020536b8
 
-src/overlays/ov009/calls/func_ov009_020536b8.c:
+src/overlays/ov009/calls/Ov009_TickSaveSlotPrep.c:
     complete
     .text       start:0x020536b8 end:0x02053770
 
-src/overlays/ov009/calls/func_ov009_02053770.c:
+src/overlays/ov009/calls/Ov009_StepSelectionBackward.c:
     complete
     .text       start:0x02053770 end:0x020537b8
 
-src/overlays/ov009/calls/func_ov009_020537b8.c:
+src/overlays/ov009/calls/Ov009_StepSelectionForward.c:
     complete
     .text       start:0x020537b8 end:0x02053804
 
-src/overlays/ov009/calls/func_ov009_02053804.c:
+src/overlays/ov009/calls/Ov009_MenuElementPress.c:
     complete
     .text       start:0x02053804 end:0x0205388c
 
-src/overlays/ov009/calls/func_ov009_0205388c.c:
+src/overlays/ov009/calls/Ov009_MenuElementRelease.c:
     complete
     .text       start:0x0205388c end:0x02053918
 
-src/overlays/ov009/calls/func_ov009_02053918.c:
+src/overlays/ov009/calls/Ov009_TickSaveConfirmState.c:
     complete
     .text       start:0x02053918 end:0x02053af0
 
-src/overlays/ov009/calls/func_ov009_02053af0.c:
+src/overlays/ov009/calls/Ov009_TickSaveCancelState.c:
     complete
     .text       start:0x02053af0 end:0x02053c14
 
-src/overlays/ov009/auto/func_ov009_02053c14.c:
+src/overlays/ov009/auto/Ov009_MenuStateNoOp.c:
     complete
     .text       start:0x02053c14 end:0x02053c18
 
-src/overlays/ov009/calls/func_ov009_02053c18.c:
+src/overlays/ov009/calls/Ov009_TickSlotScanState.c:
     complete
     .text       start:0x02053c18 end:0x02053e24
 
-src/overlays/ov009/calls/func_ov009_02053e24.c:
+src/overlays/ov009/calls/Ov009_TeardownScene.c:
     complete
     .text       start:0x02053e24 end:0x02053ec8
 
-src/overlays/ov009/calls/func_ov009_02053ec8.c:
+src/overlays/ov009/calls/Ov009_TickSaveCommitState.c:
     complete
     .text       start:0x02053ec8 end:0x02054070
 
-src/overlays/ov009/calls/func_ov009_02054070.c:
+src/overlays/ov009/calls/Ov009_SetMenuEntriesVisible.c:
     complete
     .text       start:0x02054070 end:0x02054180
 
-src/overlays/ov009/calls/func_ov009_02054180.c:
+src/overlays/ov009/calls/Ov009_TickPageScroll.c:
     complete
     .text       start:0x02054180 end:0x020544b4
 
-src/overlays/ov009/calls/func_ov009_020544b4.c:
+src/overlays/ov009/calls/Ov009_UpdateSlotSelectionTargets.c:
     complete
     .text       start:0x020544b4 end:0x02054558
 
-src/overlays/ov009/calls/func_ov009_02054558.c:
+src/overlays/ov009/calls/Ov009_SaveMenu_UpdateNumbers.c:
     complete
     .text       start:0x02054558 end:0x02054654
 
-src/overlays/ov009/calls/func_ov009_02054654.c:
+src/overlays/ov009/calls/Ov009_TickSlotTween.c:
     complete
     .text       start:0x02054654 end:0x020546f8
 
-src/overlays/ov009/calls/func_ov009_020546f8.c:
+src/overlays/ov009/calls/Ov009_DrawMenuText.c:
     complete
     .text       start:0x020546f8 end:0x02054924
 
-src/overlays/ov009/calls/func_ov009_02054924.c:
+src/overlays/ov009/calls/Ov009_SaveMenu_DrawSummaries.c:
     complete
     .text       start:0x02054924 end:0x02054b58
 
-src/overlays/ov009/calls/func_ov009_02054b58.c:
+src/overlays/ov009/calls/Ov009_SaveMenu_RefreshRows.c:
     complete
     .text       start:0x02054b58 end:0x02054ca0
 
@@ -848,179 +848,179 @@ src/overlays/ov009/calls/func_ov009_02054ca0.c:
     complete
     .text       start:0x02054ca0 end:0x02054cac
 
-src/overlays/ov009/calls/func_ov009_02054cac.c:
+src/overlays/ov009/calls/Ov009_ConfigureTagBySign.c:
     complete
     .text       start:0x02054cac end:0x02054d08
 
-src/overlays/ov009/calls/func_ov009_02054d08.c:
+src/overlays/ov009/calls/Ov009_TryApplyPageStep.c:
     complete
     .text       start:0x02054d08 end:0x02054de8
 
-src/overlays/ov009/auto/func_ov009_02054de8.c:
+src/overlays/ov009/auto/Ov009_CountDecimalDigits.c:
     complete
     .text       start:0x02054de8 end:0x02054e18
 
-src/overlays/ov009/calls/func_ov009_02054e18.c:
+src/overlays/ov009/calls/Ov009_GetDecimalDigit.c:
     complete
     .text       start:0x02054e18 end:0x02054eec
 
-src/overlays/ov009/calls/func_ov009_02054eec.c:
+src/overlays/ov009/calls/Ov009_DupWideString.c:
     complete
     .text       start:0x02054eec end:0x02054f30
 
-src/overlays/ov009/calls/func_ov009_02054f30.c:
+src/overlays/ov009/calls/Ov009_BuildRecordNode.c:
     complete
     .text       start:0x02054f30 end:0x02055078
 
-src/overlays/ov009/calls/func_ov009_02055078.c:
+src/overlays/ov009/calls/Ov009_FreeWorkBuffers.c:
     complete
     .text       start:0x02055078 end:0x020550e4
 
-src/overlays/ov009/auto/func_ov009_020550e4.c:
+src/overlays/ov009/auto/Ov009_RecordFilter_InRange.c:
     complete
     .text       start:0x020550e4 end:0x02055110
 
-src/overlays/ov009/auto/func_ov009_02055110.c:
+src/overlays/ov009/auto/Ov009_RecordFilter_BelowMax.c:
     complete
     .text       start:0x02055110 end:0x02055134
 
-src/overlays/ov009/calls/func_ov009_02055134.c:
+src/overlays/ov009/calls/Ov009_IsEncounterEligible.c:
     complete
     .text       start:0x02055134 end:0x02055288
 
-src/overlays/ov009/calls/func_ov009_02055288.c:
+src/overlays/ov009/calls/Ov009_CanTriggerActionInRange.c:
     complete
     .text       start:0x02055288 end:0x02055308
 
-src/overlays/ov009/auto/func_ov009_02055308.c:
+src/overlays/ov009/auto/Ov009_RecordFilter_KindZero.c:
     complete
     .text       start:0x02055308 end:0x0205531c
 
-src/overlays/ov009/auto/func_ov009_0205531c.c:
+src/overlays/ov009/auto/Ov009_RecordFilter_KindNonZero.c:
     complete
     .text       start:0x0205531c end:0x02055330
 
-src/overlays/ov009/auto/func_ov009_02055330.c:
+src/overlays/ov009/auto/Ov009_RecordFilter_Kind4Id10.c:
     complete
     .text       start:0x02055330 end:0x02055354
 
-src/overlays/ov009/calls/func_ov009_02055354.c:
+src/overlays/ov009/calls/Ov009_WalkRecordsAppendMatching.c:
     complete
     .text       start:0x02055354 end:0x020553dc
 
-src/overlays/ov009/calls/func_ov009_020553dc.c:
+src/overlays/ov009/calls/Ov009_AppendRecordsInRange.c:
     complete
     .text       start:0x020553dc end:0x020553f0
 
-src/overlays/ov009/calls/func_ov009_020553f0.c:
+src/overlays/ov009/calls/Ov009_FindBestRecordAppend.c:
     complete
     .text       start:0x020553f0 end:0x0205548c
 
-src/overlays/ov009/calls/func_ov009_0205548c.c:
+src/overlays/ov009/calls/Ov009_AppendEligibleRecords.c:
     complete
     .text       start:0x0205548c end:0x020554a0
 
-src/overlays/ov009/calls/func_ov009_020554a0.c:
+src/overlays/ov009/calls/Ov009_AppendRecordsBelowMax.c:
     complete
     .text       start:0x020554a0 end:0x020554b4
 
-src/overlays/ov009/calls/func_ov009_020554b4.c:
+src/overlays/ov009/calls/Ov009_AppendTriggerableInRange.c:
     complete
     .text       start:0x020554b4 end:0x020554c8
 
-src/overlays/ov009/calls/func_ov009_020554c8.c:
+src/overlays/ov009/calls/Ov009_AppendRecordsKindZero.c:
     complete
     .text       start:0x020554c8 end:0x020554dc
 
-src/overlays/ov009/calls/func_ov009_020554dc.c:
+src/overlays/ov009/calls/Ov009_AppendRecordsKindNonZero.c:
     complete
     .text       start:0x020554dc end:0x020554f0
 
-src/overlays/ov009/calls/func_ov009_020554f0.c:
+src/overlays/ov009/calls/Ov009_AppendRecordsKind4Id10.c:
     complete
     .text       start:0x020554f0 end:0x02055504
 
-src/overlays/ov009/calls/func_ov009_02055504.c:
+src/overlays/ov009/calls/Ov009_DestroyAllListObjects_2.c:
     complete
     .text       start:0x02055504 end:0x02055564
 
-src/overlays/ov009/calls/func_ov009_02055564.c:
+src/overlays/ov009/calls/Ov009_QueryFieldBySelector.c:
     complete
     .text       start:0x02055564 end:0x02055618
 
-src/overlays/ov009/calls/func_ov009_02055618.c:
+src/overlays/ov009/calls/Ov009_InitObjectWithList.c:
     complete
     .text       start:0x02055618 end:0x02055678
 
-src/overlays/ov009/calls/func_ov009_02055678.c:
+src/overlays/ov009/calls/Ov009_DestroyMissionList.c:
     complete
     .text       start:0x02055678 end:0x020556a8
 
-src/overlays/ov009/calls/func_ov009_020556a8.c:
+src/overlays/ov009/calls/Ov009_FindListObjectWithField10Zero.c:
     complete
     .text       start:0x020556a8 end:0x020556e4
 
-src/overlays/ov009/calls/func_ov009_020556e4.c:
+src/overlays/ov009/calls/Ov009_IsRangeFullyCleared.c:
     complete
     .text       start:0x020556e4 end:0x020557dc
 
-src/overlays/ov009/calls/func_ov009_020557dc.c:
+src/overlays/ov009/calls/Ov009_UpdateCompletionMilestones.c:
     complete
     .text       start:0x020557dc end:0x020559ac
 
-src/overlays/ov009/calls/func_ov009_020559ac.c:
+src/overlays/ov009/calls/Ov009_EmitCommandAndStoreHandle.c:
     complete
     .text       start:0x020559ac end:0x020559d4
 
-src/overlays/ov009/calls/func_ov009_020559d4.c:
+src/overlays/ov009/calls/Ov009_Backup_WriteChunked.c:
     complete
     .text       start:0x020559d4 end:0x02055a64
 
-src/overlays/ov009/calls/func_ov009_02055a64.c:
+src/overlays/ov009/calls/Ov009_StartCardThread.c:
     complete
     .text       start:0x02055a64 end:0x02055ab8
 
-src/overlays/ov009/calls/func_ov009_02055ab8.c:
+src/overlays/ov009/calls/Ov009_ReapTerminatedJobResult.c:
     complete
     .text       start:0x02055ab8 end:0x02055aec
 
-src/overlays/ov009/calls/func_ov009_02055aec.c:
+src/overlays/ov009/calls/Ov009_EmitCommandVariantA.c:
     complete
     .text       start:0x02055aec end:0x02055b12
 
-src/overlays/ov009/calls/func_ov009_02055b14.c:
+src/overlays/ov009/calls/Ov009_CARD_TryWaitRomAsync.c:
     complete
     .text       start:0x02055b14 end:0x02055b1c
 
-src/overlays/ov009/calls/func_ov009_02055b1c.c:
+src/overlays/ov009/calls/Ov009_VerifySha1Signature.c:
     complete
     .text       start:0x02055b1c end:0x02055b60
 
-src/overlays/ov009/calls/func_ov009_02055b60.c:
+src/overlays/ov009/calls/Ov009_SetupWorkArea.c:
     complete
     .text       start:0x02055b60 end:0x02055d58
 
-src/overlays/ov009/calls/func_ov009_02055d58.c:
+src/overlays/ov009/calls/Ov009_BeginCardTransfer.c:
     complete
     .text       start:0x02055d58 end:0x02055d8c
 
-src/overlays/ov009/calls/func_ov009_02055d8c.c:
+src/overlays/ov009/calls/Ov009_PollSaveLoad.c:
     complete
     .text       start:0x02055d8c end:0x02055e18
 
-src/overlays/ov009/calls/func_ov009_02055e18.c:
+src/overlays/ov009/calls/Ov009_CommitSaveToSlot.c:
     complete
     .text       start:0x02055e18 end:0x02055ec8
 
-src/overlays/ov009/calls/func_ov009_02055ec8.c:
+src/overlays/ov009/calls/Ov009_CardTransferStep.c:
     complete
     .text       start:0x02055ec8 end:0x02055f34
 
-src/overlays/ov009/calls/func_ov009_02055f34.c:
+src/overlays/ov009/calls/Ov009_LatchTick.c:
     complete
     .text       start:0x02055f34 end:0x02055f48
 
-src/overlays/ov009/calls/func_ov009_02055f48.c:
+src/overlays/ov009/calls/Ov009_GetLatchedTick.c:
     complete
     .text       start:0x02055f48 end:0x02055f54
 

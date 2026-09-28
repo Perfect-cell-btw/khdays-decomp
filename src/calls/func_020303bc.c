@@ -1,5 +1,5 @@
-extern int func_02013814();
+extern int NNSi_G2dFontGetTextWidth();
 
 int func_020303bc(int arg0, int arg1) {
-    return func_02013814(*(int *)(arg0 + 0x20), *(int *)(arg0 + 0x24), arg1, arg0);
+    return NNSi_G2dFontGetTextWidth(*(int *)(arg0 + 0x20), *(int *)(arg0 + 0x24), arg1, arg0);
 }

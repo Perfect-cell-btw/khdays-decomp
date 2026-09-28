@@ -13,7 +13,7 @@ const u8 data_ov232_020d3674[12] = {
     0, 0, 0, 0, 0, 144, 255, 255, 0, 0, 0, 0,
 };
 
-/* read by decide which way to sidestep, then hand off to func_ov232_020d18d0. (020d16e8): VecFx32 data_ov232_020d3680; */
+/* read by decide which way to sidestep, then hand off to Ov232_UpdateAimPoint. (020d16e8): VecFx32 data_ov232_020d3680; */
 const u8 data_ov232_020d3680[12] = {
     0, 176, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0,
 };

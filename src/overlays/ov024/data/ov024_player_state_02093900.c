@@ -33,16 +33,16 @@ typedef struct {
 
 #define BGR555(r, g, b) ((u16)(((b) << 10) | ((g) << 5) | (r)))
 
-extern void func_ov024_02082a78(void);
-extern void func_ov024_02082c44(void);
+extern void Ov024_MobiClip_OpenPlayer(void);
+extern void Ov024_TeardownPlayer(void);
 
 int data_ov024_02093900 = -1;
 
 GameClassDescriptor data_ov024_02093904 = {
     8,
     13,
-    func_ov024_02082a78,
-    func_ov024_02082c44,
+    Ov024_MobiClip_OpenPlayer,
+    Ov024_TeardownPlayer,
     0x8bf0,
     0,
 };

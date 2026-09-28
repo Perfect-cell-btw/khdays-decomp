@@ -1,5 +1,5 @@
-extern int func_ov022_0208876c();
+extern int Ov022_SetupPartyRootAndEntry();
 
 int func_ov002_0206d31c(int arg0) {
-    return func_ov022_0208876c(arg0);
+    return Ov022_SetupPartyRootAndEntry(arg0);
 }

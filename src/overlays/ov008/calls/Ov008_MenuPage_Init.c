@@ -1,0 +1,19 @@
+extern void Ov008_GetMenuContext(void);
+extern void Ov008_ResetMissionSlotState(void);
+extern void Ov008_SetupGridMenuDisplay(void);
+extern void Ov008_LoadMenuBgWithAltChars(void);
+extern void Ov008_SetupItemMenu(void);
+extern void Ov008_SetupMenuSurface(void);
+extern void Ov008_MoveMenuCursor(int arg0);
+
+int Ov008_MenuPage_Init(void)
+{
+    Ov008_GetMenuContext();
+    Ov008_ResetMissionSlotState();
+    Ov008_SetupGridMenuDisplay();
+    Ov008_LoadMenuBgWithAltChars();
+    Ov008_SetupItemMenu();
+    Ov008_SetupMenuSurface();
+    Ov008_MoveMenuCursor(0);
+    return 1;
+}

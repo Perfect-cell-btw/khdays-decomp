@@ -4,147 +4,147 @@
     .data       start:0x020cd760 end:0x020cd780 kind:data align:32
     .bss        start:0x020cd780 end:0x020cd780 kind:bss align:32
 
-src/overlays/ov130/calls/func_ov130_020cbf20.c:
+src/overlays/ov130/calls/Ov130_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov130/calls/func_ov130_020cbf38.c:
+src/overlays/ov130/calls/Ov130_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov130/calls/func_ov130_020cbfc4.c:
+src/overlays/ov130/calls/Ov130_ChaserInit.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc1d0
 
-src/overlays/ov130/calls/func_ov130_020cc1d0.c:
+src/overlays/ov130/calls/Ov130_ReleaseSubObjectsAndListThenNotify.c:
     complete
     .text       start:0x020cc1d0 end:0x020cc210
 
-src/overlays/ov130/calls/func_ov130_020cc210.c:
+src/overlays/ov130/calls/Ov130_PropagateBlockChain.c:
     complete
     .text       start:0x020cc210 end:0x020cc284
 
-src/overlays/ov130/calls/func_ov130_020cc284.c:
+src/overlays/ov130/calls/Ov130_Model_SetTrack0.c:
     complete
     .text       start:0x020cc284 end:0x020cc2b4
 
-src/overlays/ov130/calls/func_ov130_020cc2b4.c:
+src/overlays/ov130/calls/Ov130_SpawnSlotEffectOnce.c:
     complete
     .text       start:0x020cc2b4 end:0x020cc330
 
-src/overlays/ov130/calls/func_ov130_020cc330.c:
+src/overlays/ov130/calls/Ov130_RebuildIdList.c:
     complete
     .text       start:0x020cc330 end:0x020cc390
 
-src/overlays/ov130/calls/func_ov130_020cc390.c:
+src/overlays/ov130/calls/Ov130_registryCreateEntry.c:
     complete
     .text       start:0x020cc390 end:0x020cc3ec
 
-src/overlays/ov130/calls/func_ov130_020cc3ec.c:
+src/overlays/ov130/calls/Ov130_FireEffectOnRandomListId.c:
     complete
     .text       start:0x020cc3ec end:0x020cc468
 
-src/overlays/ov130/calls/func_ov130_020cc468.c:
+src/overlays/ov130/calls/Ov130_DecaySpinOverElapsed.c:
     complete
     .text       start:0x020cc468 end:0x020cc5b8
 
-src/overlays/ov130/calls/func_ov130_020cc5b8.c:
+src/overlays/ov130/calls/Ov130_UpdateChaseFacing.c:
     complete
     .text       start:0x020cc5b8 end:0x020cc75c
 
-src/overlays/ov130/calls/func_ov130_020cc75c.c:
+src/overlays/ov130/calls/Ov130_HandleHit.c:
     complete
     .text       start:0x020cc75c end:0x020cc8c4
 
-src/overlays/ov130/calls/func_ov130_020cc8c4.c:
+src/overlays/ov130/calls/Ov130_BeginPhasedReaction.c:
     complete
     .text       start:0x020cc8c4 end:0x020cc988
 
-src/overlays/ov130/calls/func_ov130_020cc988.c:
+src/overlays/ov130/calls/Ov130_DispatchSubStateByte.c:
     complete
     .text       start:0x020cc988 end:0x020ccb10
 
-src/overlays/ov130/calls/func_ov130_020ccb10.c:
+src/overlays/ov130/calls/Ov130_SpinAndDriftTick.c:
     complete
     .text       start:0x020ccb10 end:0x020ccc1c
 
-src/overlays/ov130/calls/func_ov130_020ccc1c.c:
+src/overlays/ov130/calls/Ov130_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccc1c end:0x020ccc84
 
-src/overlays/ov130/calls/func_ov130_020ccc84.c:
+src/overlays/ov130/calls/Ov130_AdvanceStateSlotIfHw60Bit0.c:
     complete
     .text       start:0x020ccc84 end:0x020cccc8
 
-src/overlays/ov130/calls/func_ov130_020cccc8.c:
+src/overlays/ov130/calls/Ov130_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020cccc8 end:0x020ccd94
 
-src/overlays/ov130/calls/func_ov130_020ccd94.c:
+src/overlays/ov130/calls/Ov130_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020ccd94 end:0x020cce5c
 
-src/overlays/ov130/calls/func_ov130_020cce5c.c:
+src/overlays/ov130/calls/Ov130_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cce5c end:0x020cce90
 
-src/overlays/ov130/calls/func_ov130_020cce90.c:
+src/overlays/ov130/calls/Ov130_SetPose1ThenAdvanceSlot.c:
     complete
     .text       start:0x020cce90 end:0x020ccec4
 
-src/overlays/ov130/calls/func_ov130_020ccec4.c:
+src/overlays/ov130/calls/Ov130_PrepSubState4IfChildIdle.c:
     complete
     .text       start:0x020ccec4 end:0x020ccf04
 
-src/overlays/ov130/calls/func_ov130_020ccf04.c:
+src/overlays/ov130/calls/Ov130_AiEnterChase.c:
     complete
     .text       start:0x020ccf04 end:0x020ccf5c
 
-src/overlays/ov130/calls/func_ov130_020ccf5c.c:
+src/overlays/ov130/calls/Ov130_DecideChaseMove.c:
     complete
     .text       start:0x020ccf5c end:0x020cd158
 
-src/overlays/ov130/calls/func_ov130_020cd158.c:
+src/overlays/ov130/calls/Ov130_SetHw60Flag40ThenAdvance.c:
     complete
     .text       start:0x020cd158 end:0x020cd1bc
 
-src/overlays/ov130/calls/func_ov130_020cd1bc.c:
+src/overlays/ov130/calls/Ov130_SpinUp_Tick.c:
     complete
     .text       start:0x020cd1bc end:0x020cd248
 
-src/overlays/ov130/calls/func_ov130_020cd248.c:
+src/overlays/ov130/calls/Ov130_ClearHiFlagAndAdvance.c:
     complete
     .text       start:0x020cd248 end:0x020cd2bc
 
-src/overlays/ov130/calls/func_ov130_020cd2bc.c:
+src/overlays/ov130/calls/Ov130_PrepSubState2IfChildIdle.c:
     complete
     .text       start:0x020cd2bc end:0x020cd2fc
 
-src/overlays/ov130/calls/func_ov130_020cd2fc.c:
+src/overlays/ov130/calls/Ov130_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd2fc end:0x020cd330
 
-src/overlays/ov130/calls/func_ov130_020cd330.c:
+src/overlays/ov130/calls/Ov130_AiStep_QueueAction4OnAnimEnd.c:
     complete
     .text       start:0x020cd330 end:0x020cd364
 
-src/overlays/ov130/calls/func_ov130_020cd364.c:
+src/overlays/ov130/calls/Ov130_SetFlagsAndAdvance.c:
     complete
     .text       start:0x020cd364 end:0x020cd40c
 
-src/overlays/ov130/calls/func_ov130_020cd40c.c:
+src/overlays/ov130/calls/Ov130_stateFixedAngleMatrix.c:
     complete
     .text       start:0x020cd40c end:0x020cd4cc
 
-src/overlays/ov130/calls/func_ov130_020cd4cc.c:
+src/overlays/ov130/calls/Ov130_ConfigHw60ActionCallSubThenAdvance.c:
     complete
     .text       start:0x020cd4cc end:0x020cd59c
 
-src/overlays/ov130/calls/func_ov130_020cd59c.c:
+src/overlays/ov130/calls/Ov130_BeginWindUp.c:
     complete
     .text       start:0x020cd59c end:0x020cd690
 
-src/overlays/ov130/calls/func_ov130_020cd690.c:
+src/overlays/ov130/calls/Ov130_TimerFireNodeCallbackThenAdvance.c:
     complete
     .text       start:0x020cd690 end:0x020cd740
 

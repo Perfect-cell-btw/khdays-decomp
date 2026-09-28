@@ -1,0 +1,90 @@
+typedef struct {
+    int x;
+    int y;
+    int z;
+    int w;
+} Vec4;
+
+typedef struct {
+    int x;
+    int y;
+    int z;
+} Vec3;
+
+typedef struct {
+    int owner;
+    char padding04[0x28];
+    Vec3 motion;
+    char padding38[0x0c];
+    int *related;
+    char padding48[0x18];
+    int timer;
+    Vec3 direction;
+    int baseY;
+    int landingY;
+} Ov118MoveState;
+
+typedef struct {
+    unsigned short a;
+    unsigned short b;
+} Pair;
+
+extern int Ov107_CollectSphereOverlaps(int owner, int source, Vec4 *out);
+extern void SetIndexedSlot(int *self, int action, void *callback);
+extern short data_0203d210[];
+extern Pair data_ov118_020d1868[];
+extern void Ov118_PublishLanding(void);
+
+static inline int FX_Mul(int a, int b) {
+    return (int)(((long long)a * b + 0x800) >> 12);
+}
+
+static inline void SetVec3(Vec3 *dst, int x, int y, int z) {
+    dst->x = x;
+    dst->y = y;
+    dst->z = z;
+}
+
+void Ov118_OrbitStep(int *self) {
+    Ov118MoveState *ctx = (Ov118MoveState *)self[1];
+    int angle;
+    int index;
+    int y;
+    Vec4 out;
+    Pair event;
+    void (*notify)(int owner, Pair *event, int size);
+
+    ctx->timer += *(int *)(self[0] + 0x2c);
+    index = (unsigned short)(((long long)FX_Mul(ctx->timer, 0x3244)
+                              * 0x28be60db9391LL
+                              + 0x80000000000LL) >> 44) >> 4;
+    y = ctx->baseY + data_0203d210[index * 2] * 3
+        - ctx->related[1];
+    ctx->direction.y = y;
+
+    angle = *(int *)(self[0] + 0x2c) * 30;
+    SetVec3(&ctx->motion,
+            FX_Mul(ctx->direction.x, angle),
+            y,
+            FX_Mul(ctx->direction.z, angle));
+
+    if (ctx->direction.y < 0
+        && Ov107_CollectSphereOverlaps(ctx->owner, ctx->owner + 0x74, &out) != 0) {
+        Pair *eventPtr = &event;
+        eventPtr->b = data_ov118_020d1868[0].b;
+        eventPtr->a = data_ov118_020d1868[0].a;
+        notify = *(void (**)(int, Pair *, int))(ctx->owner + 0x24);
+        if (notify != 0) {
+            notify(ctx->owner, eventPtr, 4);
+        }
+        ctx->landingY = out.x;
+        *(signed char *)(ctx->owner + 0x1c7) = 7;
+        SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), 0);
+        return;
+    }
+
+    if (ctx->timer >= 0x1000) {
+        SetIndexedSlot(self, *(signed char *)((char *)self + 0x20),
+                      &Ov118_PublishLanding);
+    }
+}

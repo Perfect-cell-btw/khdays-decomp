@@ -8,38 +8,38 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov132_020cdde4 (020cdde4): struct v5 data_ov132_020d0d78; */
+/* read by Ov132_nodeConstructor (020cdde4): struct v5 data_ov132_020d0d78; */
 const int data_ov132_020d0d78[5] = {
     2, 3, 4, 5, 6,
 };
 
-/* read by func_ov132_020cf6f8 (020cf6f8): unsigned short data_ov132_020d0d8c[];
- *   func_ov132_020cfd40 (020cfd40): unsigned short data_ov132_020d0d8c[]; */
+/* read by Ov132_stateTransformAimVec (020cf6f8): unsigned short data_ov132_020d0d8c[];
+ *   Ov132_stateStartThrow (020cfd40): unsigned short data_ov132_020d0d8c[]; */
 const u8 data_ov132_020d0d8c[8] = {
     0, 0, 5, 0, 0, 0, 5, 4,
 };
 
-/* read by func_ov132_020d00d4 (020d00d4): const struct Msg data_ov132_020d0d94; */
+/* read by Ov132_throwRelease_tick (020d00d4): const struct Msg data_ov132_020d0d94; */
 const u16 data_ov132_020d0d94[7] = {
     0, 261, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov132_020cf7c4 (020cf7c4): const struct Msg data_ov132_020d0da2; */
+/* read by Ov132_HomingDash_Tick (020cf7c4): const struct Msg data_ov132_020d0da2; */
 const u16 data_ov132_020d0da2[7] = {
     0, 261, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov132_020d00d4 (020d00d4): const struct Msg data_ov132_020d0db0; */
+/* read by Ov132_throwRelease_tick (020d00d4): const struct Msg data_ov132_020d0db0; */
 const u16 data_ov132_020d0db0[7] = {
     0, 261, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov132_020cff08 (020cff08): const struct Msg data_ov132_020d0dbe; */
+/* read by Ov132_ThrowRelease_Enter (020cff08): const struct Msg data_ov132_020d0dbe; */
 const u16 data_ov132_020d0dbe[7] = {
     0, 773, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov132_020ce4ac (020ce4ac): const struct tbl8 data_ov132_020d0dcc; */
+/* read by Ov132_collectObjectsInSphereRec (020ce4ac): const struct tbl8 data_ov132_020d0dcc; */
 const u8 data_ov132_020d0dcc[32] = {
     255, 255, 255, 255, 255, 255, 255, 255, 1, 0, 0, 0, 255, 255, 255, 255,
     255, 255, 255, 255, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0,

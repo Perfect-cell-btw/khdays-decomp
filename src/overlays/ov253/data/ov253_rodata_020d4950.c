@@ -3,7 +3,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov253_020ce50c (not yet decompiled) */
+/* read by Ov253_Setup (not yet decompiled) */
 const int data_ov253_020d4950[5] = {
     32, 31, 33, 41, 42,
 };

@@ -8,8 +8,8 @@
  *   data_ov025_020b3888: (no C reader yet)
  *   data_ov025_020b3894: (no C reader yet)
  *   data_ov025_020b38b8: (no C reader yet)
- *   data_ov025_020b38d4: func_ov025_0208bca0
- *   data_ov025_020b38fc: func_ov025_0208bca0
+ *   data_ov025_020b38d4: Ov025_Hub_SetupTextSurfaces
+ *   data_ov025_020b38fc: Ov025_Hub_SetupTextSurfaces
  */
 
 typedef unsigned char u8;

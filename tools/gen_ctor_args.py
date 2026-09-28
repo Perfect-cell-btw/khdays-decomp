@@ -3,7 +3,7 @@
 
     python tools/gen_ctor_args.py [--dry] [module ...]
 
-Many overlays hand InstantiateClass (func_02023930) a five-word argument block whose first word is
+Many overlays hand InstantiateClass (InstantiateClass) a five-word argument block whose first word is
 the resource path of the object's model/animation archive (a string symbol such as
 "ba/ch/ro/w_d00.p.z") and the other four are small parameters (kind / variant / flags) the class
 constructor reads. Candidates are build/data_index.json symbols of exactly 20 bytes with a single

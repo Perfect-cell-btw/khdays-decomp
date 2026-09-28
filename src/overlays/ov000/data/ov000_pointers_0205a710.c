@@ -6,34 +6,34 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov000_0205223c(void);
-extern void func_ov000_020522d0(void);
-extern void func_ov000_02052374(void);
-extern void func_ov000_020526fc(void);
-extern void func_ov000_020529c4(void);
-extern void func_ov000_02052c74(void);
-extern void func_ov000_02052ef8(void);
-extern void func_ov000_02052f78(void);
-extern void func_ov000_02052fb8(void);
+extern void Ov000_TickFadeOutFromCtxTimer(void);
+extern void Ov000_TickFadeThenEnterState2(void);
+extern void Ov000_HandleSaveSlotInput(void);
+extern void Ov000_HandleLoadConfirm(void);
+extern void Ov000_PollSaveCheckState(void);
+extern void Ov000_TickMarkerMenuInput(void);
+extern void Ov000_BeginSaveCheck(void);
+extern void Ov000_LatchTickState7(void);
+extern void Ov000_MarkerMenuStateNoOp(void);
 
 const Ov_Fn data_ov000_0205a710[9] = {
 
-    func_ov000_0205223c,
+    Ov000_TickFadeOutFromCtxTimer,
 
-    func_ov000_020522d0,
+    Ov000_TickFadeThenEnterState2,
 
-    func_ov000_02052374,
+    Ov000_HandleSaveSlotInput,
 
-    func_ov000_020526fc,
+    Ov000_HandleLoadConfirm,
 
-    func_ov000_020529c4,
+    Ov000_PollSaveCheckState,
 
-    func_ov000_02052c74,
+    Ov000_TickMarkerMenuInput,
 
-    func_ov000_02052ef8,
+    Ov000_BeginSaveCheck,
 
-    func_ov000_02052f78,
+    Ov000_LatchTickState7,
 
-    func_ov000_02052fb8,
+    Ov000_MarkerMenuStateNoOp,
 
 };

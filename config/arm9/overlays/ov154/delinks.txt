@@ -4,19 +4,19 @@
     .data       start:0x020d1cc0 end:0x020d1ce0 kind:data align:32
     .bss        start:0x020d1ce0 end:0x020d1ce0 kind:bss align:32
 
-src/overlays/ov154/calls/func_ov154_020cfb60.c:
+src/overlays/ov154/calls/Ov154_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov154/calls/func_ov154_020cfb78.c:
+src/overlays/ov154/calls/Ov154_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov154/calls/func_ov154_020cfc04.c:
+src/overlays/ov154/calls/Ov154_ConstructActor.c:
     complete
     .text       start:0x020cfc04 end:0x020cfe90
 
-src/overlays/ov154/calls/func_ov154_020cfe90.c:
+src/overlays/ov154/calls/Ov154_Destroy.c:
     complete
     .text       start:0x020cfe90 end:0x020cfed0
 
@@ -24,163 +24,163 @@ src/overlays/ov154/calls/func_ov154_020cfed0.c:
     complete
     .text       start:0x020cfed0 end:0x020cfedc
 
-src/overlays/ov154/calls/func_ov154_020cfedc.c:
+src/overlays/ov154/calls/Ov154_Model_SetTracks0And3.c:
     complete
     .text       start:0x020cfedc end:0x020cff2c
 
-src/overlays/ov154/calls/func_ov154_020cff2c.c:
+src/overlays/ov154/calls/Ov154_HandleMessage.c:
     complete
     .text       start:0x020cff2c end:0x020cffc8
 
-src/overlays/ov154/calls/func_ov154_020cffc8.c:
+src/overlays/ov154/calls/Ov154_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cffc8 end:0x020cfff0
 
-src/overlays/ov154/calls/func_ov154_020cfff0.c:
+src/overlays/ov154/calls/Ov154_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cfff0 end:0x020d0018
 
-src/overlays/ov154/calls/func_ov154_020d0018.c:
+src/overlays/ov154/calls/Ov154_RefreshPose.c:
     complete
     .text       start:0x020d0018 end:0x020d005c
 
-src/overlays/ov154/calls/func_ov154_020d005c.c:
+src/overlays/ov154/calls/Ov154_Tick.c:
     complete
     .text       start:0x020d005c end:0x020d0154
 
-src/overlays/ov154/calls/func_ov154_020d0154.c:
+src/overlays/ov154/calls/Ov154_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d0154 end:0x020d0194
 
-src/overlays/ov154/calls/func_ov154_020d0194.c:
+src/overlays/ov154/calls/Ov154_Actor_New.c:
     complete
     .text       start:0x020d0194 end:0x020d01c8
 
-src/overlays/ov154/calls/func_ov154_020d01c8.c:
+src/overlays/ov154/calls/Ov154_Construct.c:
     complete
     .text       start:0x020d01c8 end:0x020d03a8
 
-src/overlays/ov154/calls/func_ov154_020d03a8.c:
+src/overlays/ov154/calls/Ov154_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020d03a8 end:0x020d03e8
 
-src/overlays/ov154/calls/func_ov154_020d03e8.c:
+src/overlays/ov154/calls/Ov154_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d03e8 end:0x020d0420
 
-src/overlays/ov154/calls/func_ov154_020d0420.c:
+src/overlays/ov154/calls/Ov154_AiState_OnMessage.c:
     complete
     .text       start:0x020d0420 end:0x020d04d4
 
-src/overlays/ov154/calls/func_ov154_020d04d4.c:
+src/overlays/ov154/calls/Ov154_BroadcastPositionMessage.c:
     complete
     .text       start:0x020d04d4 end:0x020d05fc
 
-src/overlays/ov154/calls/func_ov154_020d05fc.c:
+src/overlays/ov154/calls/Ov154_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d05fc end:0x020d0648
 
-src/overlays/ov154/calls/func_ov154_020d0648.c:
+src/overlays/ov154/calls/Ov154_stateInitClearSlots.c:
     complete
     .text       start:0x020d0648 end:0x020d06f0
 
-src/overlays/ov154/calls/func_ov154_020d06f0.c:
+src/overlays/ov154/calls/Ov154_dispatchByStatusByte.c:
     complete
     .text       start:0x020d06f0 end:0x020d0768
 
-src/overlays/ov154/auto/func_ov154_020d0768.c:
+src/overlays/ov154/auto/Ov154_AiApplyMoveVector.c:
     complete
     .text       start:0x020d0768 end:0x020d0780
 
-src/overlays/ov154/calls/func_ov154_020d0780.c:
+src/overlays/ov154/calls/Ov154_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d0780 end:0x020d0830
 
-src/overlays/ov154/calls/func_ov154_020d0830.c:
+src/overlays/ov154/calls/Ov154_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d0830 end:0x020d0868
 
-src/overlays/ov154/calls/func_ov154_020d0868.c:
+src/overlays/ov154/calls/Ov154_SeedDashVector.c:
     complete
     .text       start:0x020d0868 end:0x020d0938
 
-src/overlays/ov154/calls/func_ov154_020d0938.c:
+src/overlays/ov154/calls/Ov154_HomingFlightTick.c:
     complete
     .text       start:0x020d0938 end:0x020d0f30
 
-src/overlays/ov154/calls/func_ov154_020d0f30.c:
+src/overlays/ov154/calls/Ov154_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020d0f30 end:0x020d0f7c
 
-src/overlays/ov154/calls/func_ov154_020d0f7c.c:
+src/overlays/ov154/calls/Ov154_OnHit.c:
     complete
     .text       start:0x020d0f7c end:0x020d10b0
 
-src/overlays/ov154/auto/func_ov154_020d10b0.c:
+src/overlays/ov154/auto/Ov154_TryBeginSubState4.c:
     complete
     .text       start:0x020d10b0 end:0x020d10e0
 
-src/overlays/ov154/calls/func_ov154_020d10e0.c:
+src/overlays/ov154/calls/Ov154_InitNode.c:
     complete
     .text       start:0x020d10e0 end:0x020d11b0
 
-src/overlays/ov154/calls/func_ov154_020d11b0.c:
+src/overlays/ov154/calls/Ov154_DispatchSubStateByte.c:
     complete
     .text       start:0x020d11b0 end:0x020d1310
 
-src/overlays/ov154/calls/func_ov154_020d1310.c:
+src/overlays/ov154/calls/Ov154_UpdateFacing.c:
     complete
     .text       start:0x020d1310 end:0x020d1394
 
-src/overlays/ov154/calls/func_ov154_020d1394.c:
+src/overlays/ov154/calls/Ov154_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d1394 end:0x020d13fc
 
-src/overlays/ov154/calls/func_ov154_020d13fc.c:
+src/overlays/ov154/calls/Ov154_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d13fc end:0x020d1438
 
-src/overlays/ov154/calls/func_ov154_020d1438.c:
+src/overlays/ov154/calls/Ov154_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020d1438 end:0x020d1504
 
-src/overlays/ov154/calls/func_ov154_020d1504.c:
+src/overlays/ov154/calls/Ov154_AiWaitThenTarget.c:
     complete
     .text       start:0x020d1504 end:0x020d15d0
 
-src/overlays/ov154/calls/func_ov154_020d15d0.c:
+src/overlays/ov154/calls/Ov154_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d15d0 end:0x020d1604
 
-src/overlays/ov154/calls/func_ov154_020d1604.c:
+src/overlays/ov154/calls/Ov154_AiEnterStalk.c:
     complete
     .text       start:0x020d1604 end:0x020d165c
 
-src/overlays/ov154/calls/func_ov154_020d165c.c:
+src/overlays/ov154/calls/Ov154_StalkTick.c:
     complete
     .text       start:0x020d165c end:0x020d1848
 
-src/overlays/ov154/calls/func_ov154_020d1848.c:
+src/overlays/ov154/calls/Ov154_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1848 end:0x020d187c
 
-src/overlays/ov154/calls/func_ov154_020d187c.c:
+src/overlays/ov154/calls/Ov154_stDiv5Store.c:
     complete
     .text       start:0x020d187c end:0x020d18d8
 
-src/overlays/ov154/calls/func_ov154_020d18d8.c:
+src/overlays/ov154/calls/Ov154_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d18d8 end:0x020d19a0
 
-src/overlays/ov154/calls/func_ov154_020d19a0.c:
+src/overlays/ov154/calls/Ov154_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d19a0 end:0x020d1a54
 
-src/overlays/ov154/calls/func_ov154_020d1a54.c:
+src/overlays/ov154/calls/Ov154_stateAnimFlagCallback.c:
     complete
     .text       start:0x020d1a54 end:0x020d1b04
 
-src/overlays/ov154/calls/func_ov154_020d1b04.c:
+src/overlays/ov154/calls/Ov154_AimTick.c:
     complete
     .text       start:0x020d1b04 end:0x020d1c4c
 

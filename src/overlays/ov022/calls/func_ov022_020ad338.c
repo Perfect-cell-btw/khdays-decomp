@@ -1,6 +1,6 @@
-extern short func_02030788(void);
-extern void func_ov022_0209b1e8(int arg0);
+extern short Session_GetLocalPlayerIndex(void);
+extern void Ov022_EnterState0E(int arg0);
 void func_ov022_020ad338(int arg0) {
-    if (func_02030788() != 0) return;
-    func_ov022_0209b1e8(arg0);
+    if (Session_GetLocalPlayerIndex() != 0) return;
+    Ov022_EnterState0E(arg0);
 }

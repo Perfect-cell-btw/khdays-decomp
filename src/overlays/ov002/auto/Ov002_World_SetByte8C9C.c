@@ -1,0 +1,5 @@
+extern int data_ov002_0207fa00;
+
+void Ov002_World_SetByte8C9C(int arg0) {
+    *(char *)(*(int *)&data_ov002_0207fa00 + 0x8c9c) = arg0;
+}

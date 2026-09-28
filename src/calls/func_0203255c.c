@@ -1,5 +1,5 @@
-extern int func_020321c0();
+extern int DispObjList_Update();
 
 int func_0203255c(int arg0) {
-    return func_020321c0(arg0, 0);
+    return DispObjList_Update(arg0, 0);
 }

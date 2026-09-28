@@ -5,37 +5,37 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov025_020b3cbc: func_ov025_02090140
- *   data_ov025_020b3ce0: func_ov025_02091a9c
- *   data_ov025_020b3cf8: func_ov025_0209522c
- *   data_ov025_020b3d10: func_ov025_020977c0
- *   data_ov025_020b3d2c: func_ov025_02097b90
- *   data_ov025_020b3d68: func_ov025_02090e44
- *   data_ov025_020b3da8: func_ov025_02091c48
- *   data_ov025_020b3dd0: func_ov025_02091c48
- *   data_ov025_020b3df8: func_ov025_02091c48
- *   data_ov025_020b3e20: func_ov025_02090000
- *   data_ov025_020b3e48: func_ov025_02095544
- *   data_ov025_020b3e88: func_ov025_0208eb14
- *   data_ov025_020b3ed8: func_ov025_02091b18
+ *   data_ov025_020b3cbc: Ov025_InitGridMenuWidgets
+ *   data_ov025_020b3ce0: Ov025_DrawMenuEntry
+ *   data_ov025_020b3cf8: Ov025_ShowGridPage
+ *   data_ov025_020b3d10: Ov025_HideGridMenu
+ *   data_ov025_020b3d2c: Ov025_FinishMenuModeSwitch
+ *   data_ov025_020b3d68: Ov025_BuildInventoryLists
+ *   data_ov025_020b3da8: Ov025_InitGridMenuSurfaces
+ *   data_ov025_020b3dd0: Ov025_InitGridMenuSurfaces
+ *   data_ov025_020b3df8: Ov025_InitGridMenuSurfaces
+ *   data_ov025_020b3e20: Ov025_SetSavePageGroupVisible
+ *   data_ov025_020b3e48: Ov025_Menu_ChangePage
+ *   data_ov025_020b3e88: Ov025_GetPlayerSlotConfig
+ *   data_ov025_020b3ed8: Ov025_DrawTextRow
  *   data_ov025_020b3f28: (no C reader yet)
- *   data_ov025_020b3f80: func_ov025_02091c48
- *   data_ov025_020b4048: func_ov025_0209b138, func_ov025_0209b560
- *   data_ov025_020b4050: func_ov025_0209b138
- *   data_ov025_020b4060: func_ov025_0209a2bc
- *   data_ov025_020b4070: func_ov025_0209a5fc
- *   data_ov025_020b4098: func_ov025_0209a5fc
- *   data_ov025_020b40c0: func_ov025_0209a5fc
- *   data_ov025_020b40e8: func_ov025_0209a2bc, func_ov025_0209b248, func_ov025_0209b604, func_ov025_0209bb84
- *   data_ov025_020b4148: func_ov025_0209c62c
- *   data_ov025_020b4158: func_ov025_0209ce6c
- *   data_ov025_020b4178: func_ov025_0209c7d0
- *   data_ov025_020b41a0: func_ov025_0209e5e8
- *   data_ov025_020b41a4: func_ov025_0209d974
- *   data_ov025_020b41b4: func_ov025_0209da74
+ *   data_ov025_020b3f80: Ov025_InitGridMenuSurfaces
+ *   data_ov025_020b4048: Ov025_SetMenuEntriesVisible, Ov025_SaveMenu_SlideArrows
+ *   data_ov025_020b4050: Ov025_SetMenuEntriesVisible
+ *   data_ov025_020b4060: Ov025_SaveMenu_BuildLayout
+ *   data_ov025_020b4070: Ov025_SaveMenu_BuildTextSurfaces
+ *   data_ov025_020b4098: Ov025_SaveMenu_BuildTextSurfaces
+ *   data_ov025_020b40c0: Ov025_SaveMenu_BuildTextSurfaces
+ *   data_ov025_020b40e8: Ov025_SaveMenu_BuildLayout, Ov025_TickPageScroll, Ov025_RefreshSaveRowDigits, Ov025_SaveMenu_RefreshRows
+ *   data_ov025_020b4148: Ov025_Config_Setup
+ *   data_ov025_020b4158: Ov025_DrawMenuPageTexts
+ *   data_ov025_020b4178: Ov025_SetupMenuSurface
+ *   data_ov025_020b41a0: Ov025_Tutorial_HandleTouch
+ *   data_ov025_020b41a4: Ov025_Tutorial_SetupEntries
+ *   data_ov025_020b41b4: Ov025_Tutorial_SetupSurfaces
  *   data_ov025_020b41dc: (no C reader yet)
- *   data_ov025_020b4218: func_ov025_0209ebb4
- *   data_ov025_020b421c: func_ov025_020a0a9c
+ *   data_ov025_020b4218: Ov025_Reports_SetupEntries
+ *   data_ov025_020b421c: Ov025_Reports_HandleInput
  */
 
 typedef unsigned char u8;

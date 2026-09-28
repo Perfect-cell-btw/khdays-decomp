@@ -8,107 +8,107 @@ src/overlays/ov033/calls/func_ov033_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov033/calls/func_ov033_020b3234.c:
+src/overlays/ov033/calls/Ov033_ClassCtor.c:
     complete
     .text       start:0x020b3234 end:0x020b325c
 
-src/overlays/ov033/calls/func_ov033_020b325c.c:
+src/overlays/ov033/calls/Ov033_ClassTeardown.c:
     complete
     .text       start:0x020b325c end:0x020b3270
 
-src/overlays/ov033/calls/func_ov033_020b3270.c:
+src/overlays/ov033/calls/Ov033_Boot.c:
     complete
     .text       start:0x020b3270 end:0x020b34ac
 
-src/overlays/ov033/calls/func_ov033_020b34ac.c:
+src/overlays/ov033/calls/Ov033_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020b34ac end:0x020b34e4
 
-src/overlays/ov033/auto/func_ov033_020b34e4.c:
+src/overlays/ov033/auto/Ov033_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b34e4 end:0x020b350c
 
-src/overlays/ov033/calls/func_ov033_020b350c.c:
+src/overlays/ov033/calls/Ov033_BuildRenderHandle.c:
     complete
     .text       start:0x020b350c end:0x020b356c
 
-src/overlays/ov033/calls/func_ov033_020b356c.c:
+src/overlays/ov033/calls/Ov033_initSubObjectSlots.c:
     complete
     .text       start:0x020b356c end:0x020b3608
 
-src/overlays/ov033/calls/func_ov033_020b3608.c:
+src/overlays/ov033/calls/Ov033_refreshSubObjectSlots.c:
     complete
     .text       start:0x020b3608 end:0x020b364c
 
-src/overlays/ov033/calls/func_ov033_020b364c.c:
+src/overlays/ov033/calls/Ov033_dispatchStateTransitionCode.c:
     complete
     .text       start:0x020b364c end:0x020b3710
 
-src/overlays/ov033/calls/func_ov033_020b3710.c:
+src/overlays/ov033/calls/Ov033_UpdateShotsByMode.c:
     complete
     .text       start:0x020b3710 end:0x020b38e0
 
-src/overlays/ov033/calls/func_ov033_020b38e0.c:
+src/overlays/ov033/calls/Ov033_beginStateBindHandlers.c:
     complete
     .text       start:0x020b38e0 end:0x020b3970
 
-src/overlays/ov033/calls/func_ov033_020b3970.c:
+src/overlays/ov033/calls/Ov033_HandleMsgAndReaimArc.c:
     complete
     .text       start:0x020b3970 end:0x020b3abc
 
-src/overlays/ov033/calls/func_ov033_020b3abc.c:
+src/overlays/ov033/calls/Ov033_activateAndComputeAimAngle.c:
     complete
     .text       start:0x020b3abc end:0x020b3bc4
 
-src/overlays/ov033/calls/func_ov033_020b3bc4.c:
+src/overlays/ov033/calls/Ov033_IdleStep.c:
     complete
     .text       start:0x020b3bc4 end:0x020b3e10
 
-src/overlays/ov033/calls/func_ov033_020b3e10.c:
+src/overlays/ov033/calls/Ov033_AttackStep.c:
     complete
     .text       start:0x020b3e10 end:0x020b4038
 
-src/overlays/ov033/calls/func_ov033_020b4038.c:
+src/overlays/ov033/calls/Ov033_LandingStep.c:
     complete
     .text       start:0x020b4038 end:0x020b4220
 
-src/overlays/ov033/calls/func_ov033_020b4220.c:
+src/overlays/ov033/calls/Ov033_FireForwardBurst.c:
     complete
     .text       start:0x020b4220 end:0x020b43dc
 
-src/overlays/ov033/calls/func_ov033_020b43dc.c:
+src/overlays/ov033/calls/Ov033_FireRecoilBurst.c:
     complete
     .text       start:0x020b43dc end:0x020b4528
 
-src/overlays/ov033/calls/func_ov033_020b4528.c:
+src/overlays/ov033/calls/Ov033_FireSustainedBurst.c:
     complete
     .text       start:0x020b4528 end:0x020b4688
 
-src/overlays/ov033/calls/func_ov033_020b4688.c:
+src/overlays/ov033/calls/Ov033_BindDefaultAnimsIfIdle.c:
     complete
     .text       start:0x020b4688 end:0x020b46f0
 
-src/overlays/ov033/calls/func_ov033_020b46f0.c:
+src/overlays/ov033/calls/Ov033_UpdateGuardedSlots.c:
     complete
     .text       start:0x020b46f0 end:0x020b47a0
 
-src/overlays/ov033/calls/func_ov033_020b47a0.c:
+src/overlays/ov033/calls/Ov033_UpdateSlotsAndFlush.c:
     complete
     .text       start:0x020b47a0 end:0x020b4804
 
-src/overlays/ov033/calls/func_ov033_020b4804.c:
+src/overlays/ov033/calls/Ov033_LaunchProjectile.c:
     complete
     .text       start:0x020b4804 end:0x020b4a34
 
-src/overlays/ov033/calls/func_ov033_020b4a34.c:
+src/overlays/ov033/calls/Ov033_ClearStateIfReadyWhenActive.c:
     complete
     .text       start:0x020b4a34 end:0x020b4a60
 
-src/overlays/ov033/calls/func_ov033_020b4a60.c:
+src/overlays/ov033/calls/Ov033_DispatchWhenStateActive.c:
     complete
     .text       start:0x020b4a60 end:0x020b4a90
 
-src/overlays/ov033/calls/func_ov033_020b4a90.c:
+src/overlays/ov033/calls/Ov033_InvokeWithDataTable.c:
     complete
     .text       start:0x020b4a90 end:0x020b4aa8
 

@@ -4,7 +4,7 @@ SOURCE order.
 
 The ov228/ov231/ov210 dispatchers all have the same shape -- test ctx[0]+0x1c7 against -1, reset
 some flags, copy the id to +0x1c6, then a dense jump table whose every arm is
-`func_0203c634(self, 1, handler)`. They match first try once the mapping is right, and getting the
+`SetIndexedSlot(self, 1, handler)`. They match first try once the mapping is right, and getting the
 mapping right by hand means resolving a `ldr rN,[pc,#imm]` per case against the literal pool.
 
 The catch this automates: the jump TABLE is index-ordered but the case BODIES are laid out in
@@ -37,7 +37,7 @@ def decode(name):
     # 1. Find the jump table. A function can have MORE THAN ONE -- ov259 020cdef8 has a small
     # `switch (move) { case 0xa ... case 0x11 }` before the real move dispatcher, and taking the
     # first one produced complete nonsense (every case pointing at one body, handler unresolved).
-    # So collect them all and pick the one whose arms actually call func_0203c634.
+    # So collect them all and pick the one whose arms actually call SetIndexedSlot.
     #
     # Also note the case values are not always 0-based: mwcc range-optimises a switch over 0xa..0x11
     # into `sub rN,rN,#0xa ; cmp rN,#7`, so the `sub` carries the base and has to be added back.
@@ -55,7 +55,7 @@ def decode(name):
                 continue
             body = int(e.op_str.lstrip("#"), 0)
             for a in range(body, body + 0x18, 4):
-                if rel.get(a) == "func_0203c634":
+                if rel.get(a) == "SetIndexedSlot":
                     hits += 1
                     break
         return hits
@@ -126,7 +126,7 @@ def main():
         if c["outlier"]:
             note = ("   <-- %d bytes, not the usual %d: EXTRA CODE and/or a fall-through."
                     "  DISASSEMBLE IT." % (c["size"], r["normal"]))
-        print("        case %-2s: func_0203c634(self, 1, %s); break;%s"
+        print("        case %-2s: SetIndexedSlot(self, 1, %s); break;%s"
               % (",".join(str(k) for k in c["ks"]), c["handler"], note))
     if r["gaps"]:
         print("\n(cases %s point at the default -- they are ABSENT from the switch)"

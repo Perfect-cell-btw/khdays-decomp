@@ -6,19 +6,19 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov011_0205aff4(void);
-extern void func_ov011_0205b014(void);
-extern void func_ov011_0205c04c(void);
-extern void func_ov011_0205c060(void);
+extern void Ov011_InvokeWithMainBldcnt(void);
+extern void Ov011_InvokeWithSubBldcnt(void);
+extern void Ov011_ClearBlendA(void);
+extern void Ov011_ClearBlendB(void);
 
 const Ov_Fn data_ov011_0205dc90[4] = {
 
-    func_ov011_0205aff4,
+    Ov011_InvokeWithMainBldcnt,
 
-    func_ov011_0205c04c,
+    Ov011_ClearBlendA,
 
-    func_ov011_0205b014,
+    Ov011_InvokeWithSubBldcnt,
 
-    func_ov011_0205c060,
+    Ov011_ClearBlendB,
 
 };

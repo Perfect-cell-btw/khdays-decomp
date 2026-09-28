@@ -13,7 +13,7 @@ const u8 data_ov280_020d3698[12] = {
     0, 0, 0, 0, 0, 144, 255, 255, 0, 0, 0, 0,
 };
 
-/* read by decide which way to sidestep, then hand off to func_ov280_020d18f0. (020d1708): VecFx32 data_ov280_020d36a4; */
+/* read by decide which way to sidestep, then hand off to Ov280_UpdateAimPoint. (020d1708): VecFx32 data_ov280_020d36a4; */
 const u8 data_ov280_020d36a4[12] = {
     0, 176, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0,
 };

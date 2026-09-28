@@ -8,7 +8,7 @@
 DEFINIDO, que es la fuente de verdad: si `func_X` se define con dos parametros y tu `extern` dice
 uno, tienes un argumento perdido aunque nadie mas lo llame.
 
-POR QUE (2026-07-18): en func_ov041_020b3c10 el residuo eran 3 bytes y un solo registro distinto
+POR QUE (2026-07-18): en Ov041_UpdateSubBlocksIfEnabled el residuo eran 3 bytes y un solo registro distinto
 -- la firma exacta de un empate de asignacion. La causa real era un `extern` con un parametro de
 menos: el ROM mantenia r1 intacto porque r1 era el segundo argumento vivo. La definicion correcta
 llevaba todo el rato en el arbol. Un argumento perdido no cambia el tamaño NI el numero de
@@ -97,12 +97,12 @@ def main():
             # Al reves es legitimo y comun: en el ABI de ARM un callee que usa menos parametros
             # simplemente ignora los registros de mas, asi que el original puede pasar 2 a una
             # funcion que solo lee 1 -- y el ROM SI pone r1. Quitar ese argumento "de mas" en
-            # func_ov185_020ced78 empeoro de +8 a -44 bytes (2026-07-18). La definicion no es
+            # Ov185_PublishLandingPose empeoro de +8 a -44 bytes (2026-07-18). La definicion no es
             # autoritativa sobre lo que pasan los llamadores.
             if mine >= real:
                 continue
             # ⚠ Solo importa si el fichero LLAMA al callee. Cuando solo toma su direccion
-            # (callback pasado a func_0203c634 y compañia) la aridad declarada no afecta al
+            # (callback pasado a SetIndexedSlot y compañia) la aridad declarada no afecta al
             # codegen, y contarla llenaba el informe de ruido inofensivo.
             body = s[m.end():]
             if not re.search(r"(?<![\w&])%s\s*\(" % re.escape(name), body):

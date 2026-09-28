@@ -5,11 +5,11 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_0208edec: func_ov008_0205ab5c
- *   data_ov008_0208edfc: func_ov008_0205ab5c
- *   data_ov008_0208ee0c: func_ov008_0205af54
- *   data_ov008_0208ee34: func_ov008_0205af54
- *   data_ov008_0208ee5c: func_ov008_0205af54
+ *   data_ov008_0208edec: Ov008_MainMenu_SetupToolbar
+ *   data_ov008_0208edfc: Ov008_MainMenu_SetupToolbar
+ *   data_ov008_0208ee0c: Ov008_MainMenu_SetupTextSurfaces
+ *   data_ov008_0208ee34: Ov008_MainMenu_SetupTextSurfaces
+ *   data_ov008_0208ee5c: Ov008_MainMenu_SetupTextSurfaces
  */
 
 typedef unsigned char u8;

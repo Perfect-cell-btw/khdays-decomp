@@ -15,9 +15,9 @@ typedef struct MtxFx44 {
 
 extern void func_02015ca0(int *px1, int *py1, int *px2, int *py2);
 extern fx32 FX_Div(fx32 numerator, fx32 denominator);
-extern const MtxFx44 *func_02015c38(void);
+extern const MtxFx44 *G3d_GetInverseViewProjMtx(void);
 extern void FX_InvAsync(fx32 value);
-extern fx64c func_01ff8ab0(void);
+extern fx64c FX_GetDivResultFx64c(void);
 
 static inline fx32 FX_Mul32x64c(fx32 x, fx64c y)
 {
@@ -51,7 +51,7 @@ int func_020166c4(int px, int py, VecFx32 *pNear, VecFx32 *pFar)
     x = (x - 0x800) * 2;
     y = (y - 0x800) * 2;
 
-    m = func_02015c38();
+    m = G3d_GetInverseViewProjMtx();
 
     wNear = m->_33 + (fx32)(((fx64)x * m->_03 + (fx64)y * m->_13) >> 12);
     FX_InvAsync(wNear - m->_23);
@@ -71,7 +71,7 @@ int func_020166c4(int px, int py, VecFx32 *pNear, VecFx32 *pFar)
     vNear.y -= m->_21;
     vNear.z -= m->_22;
 
-    invWNear = func_01ff8ab0();
+    invWNear = FX_GetDivResultFx64c();
     if (pFar)
         FX_InvAsync(wFar);
 
@@ -80,7 +80,7 @@ int func_020166c4(int px, int py, VecFx32 *pNear, VecFx32 *pFar)
     pNear->z = FX_Mul32x64c(vNear.z, invWNear);
 
     if (pFar) {
-        invWFar = func_01ff8ab0();
+        invWFar = FX_GetDivResultFx64c();
 
         pFar->x = FX_Mul32x64c(vFar.x, invWFar);
         pFar->y = FX_Mul32x64c(vFar.y, invWFar);

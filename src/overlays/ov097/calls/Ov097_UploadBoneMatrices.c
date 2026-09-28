@@ -1,0 +1,20 @@
+extern void MI_Copy48B(int dst, int src);
+extern void GX_SendFifoWords(int a, void *b, int c);
+extern void Gfx_SubmitCachedCommandBlock(void);
+extern void Obj_InitChannelsAndRun(int a);
+
+void Ov097_UploadBoneMatrices(int self, int *blk) {
+    int tmp[3];
+    if (*blk != 2 && *blk != 3 && *blk != 4) return;
+    MI_Copy48B(self + 0x158 + 0x400, (int)blk + 0x84);
+    {
+        int v = *(int *)(blk[10] + 0x1c);
+        tmp[0] = v;
+        tmp[1] = v;
+        tmp[2] = v;
+        GX_SendFifoWords(0x1b, tmp, 3);
+    }
+    Gfx_SubmitCachedCommandBlock();
+    GX_SendFifoWords(0x17, (void *)((int)blk + 0x84), 0xc);
+    Obj_InitChannelsAndRun((int)blk + 0x24);
+}

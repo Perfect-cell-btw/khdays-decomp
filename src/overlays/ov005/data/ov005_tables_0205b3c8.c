@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov005_020584a8 (020584a8): const u16 data_ov005_0205b3c8[60][2]; */
+/* read by Ov005_UpdateCompletionMilestones (020584a8): const u16 data_ov005_0205b3c8[60][2]; */
 const u8 data_ov005_0205b3c8[240] = {
     0, 0, 7, 0, 8, 0, 8, 0, 9, 0, 13, 0, 14, 0, 14, 0,
     15, 0, 21, 0, 22, 0, 22, 0, 23, 0, 23, 0, 24, 0, 24, 0,

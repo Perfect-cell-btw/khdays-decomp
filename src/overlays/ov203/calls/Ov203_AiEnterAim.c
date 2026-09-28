@@ -1,0 +1,20 @@
+/* ⚠ The `+ (v - v)` terms are deliberate and `v` is deliberately uninitialised: they are
+ * the documented crack for RandNextScaled's copy artifact (`adds r0,r0,#0` when the result
+ * is tested, `add r0,r0,#0` when it is stored). Both forms appear here, one of each.
+ * The ternary is `!= 0 ? -1 : 1`, not `== 0 ? 1 : -1` -- the arm order decides which of
+ * mvnne/moveq comes first. */
+extern int  RandNextScaled();
+extern void Ov107_PostTagUpdate(int owner, int a, int b);
+extern void SetIndexedSlot(int self, int index, void *cb);
+extern void Ov203_OrbitTarget(void);
+
+void Ov203_AiEnterAim(int *self) {
+    int v;
+    int *obj = (int *)self[1];
+
+    obj[4] = *(int *)(self[0] + 0x2c) * 0x1e / 10;
+    *(signed char *)((int)obj + 0x58) = RandNextScaled(2) + (v - v) != 0 ? -1 : 1;
+    obj[0xe] = RandNextScaled(0x81) + (v - v);
+    Ov107_PostTagUpdate(*obj, 1, 1);
+    SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), &Ov203_OrbitTarget);
+}

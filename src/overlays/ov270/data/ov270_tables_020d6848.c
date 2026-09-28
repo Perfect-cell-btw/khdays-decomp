@@ -13,7 +13,7 @@ const int data_ov270_020d6848[3] = {
     2, 3, 4,
 };
 
-/* read by func_ov270_020d5ac4 (020d5ac4): unsigned short data_ov270_020d6854[]; */
+/* read by Ov270_stateAnimPairCallback (020d5ac4): unsigned short data_ov270_020d6854[]; */
 const u8 data_ov270_020d6854[4] = {
     0, 0, 5, 2,
 };

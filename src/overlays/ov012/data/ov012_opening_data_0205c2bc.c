@@ -22,13 +22,13 @@ typedef struct Ov012OpeningEvent {
     u16 argument2;
 } Ov012OpeningEvent;
 
-extern void func_ov012_0205ade8(void);
-extern void func_ov012_0205b03c(void);
+extern void Ov012_InitOpeningScene(void);
+extern void Ov012_DestroyOpeningScene(void);
 
 Ov012OpeningSceneDescriptor data_ov012_0205c2bc = {
     8, 13,
-    func_ov012_0205ade8,
-    func_ov012_0205b03c,
+    Ov012_InitOpeningScene,
+    Ov012_DestroyOpeningScene,
     0x8df0, 0
 };
 

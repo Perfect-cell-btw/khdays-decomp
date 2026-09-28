@@ -126,7 +126,7 @@ def main():
     placeholders = []
     missing = 0
     for name in sorted(matched_c()):
-        # Overlay functions live in a prefixed address space: func_ov000_020593f4 is at
+        # Overlay functions live in a prefixed address space: Ov000_ScrollListToRow is at
         # `arm9_ov000::020593f4`, NOT `020593f4`. Looking up the bare address silently finds
         # nothing and makes the whole overlay tree look clean -- the same prefix trap that made
         # a rename read-back report 27/27 "missing" on 2026-07-17.

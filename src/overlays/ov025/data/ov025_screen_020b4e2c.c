@@ -20,25 +20,25 @@ typedef struct Ov008ScreenHooks {
     Ov008HookFn apfnHook[7];  /* 0x28 .. 0x40 */
 } Ov008ScreenHooks;
 
-extern void func_ov025_0209a968(void);
-extern void func_ov025_0209a9b0(void);
-extern void func_ov025_0209a9fc(void);
-extern void func_ov025_0209aa80(void);
-extern void func_ov025_0209ab08(void);
-extern void func_ov025_0209ac58(void);
-extern void func_ov025_0209ace4(void);
-extern void func_ov025_0209aef0(void);
-extern void func_ov025_0209af88(void);
+extern void Ov025_StepSelectionBackward(void);
+extern void Ov025_StepSelectionForward(void);
+extern void Ov025_HandleElementTap(void);
+extern void Ov025_HandleElementRelease(void);
+extern void Ov025_SaveMenuConfirm(void);
+extern void Ov025_SaveMenu_OnBack(void);
+extern void Ov025_SaveMenuInitStep(void);
+extern void Ov025_TeardownListScene(void);
+extern void Ov025_SaveMenuTick(void);
 
 Ov008ScreenHooks data_ov025_020b4e2c = {
-    func_ov025_0209ace4,  /* pfnOpen */
-    func_ov025_0209aef0,  /* pfnStep */
-    func_ov025_0209af88,  /* pfnClose */
+    Ov025_SaveMenuInitStep,  /* pfnOpen */
+    Ov025_TeardownListScene,  /* pfnStep */
+    Ov025_SaveMenuTick,  /* pfnClose */
     0,  /* nFlags */
     7936,  /* nStateSize */
-    func_ov025_0209a968,  /* pfnSelect */
-    func_ov025_0209a9b0,  /* pfnCancel */
-    { func_ov025_0209aa80, func_ov025_0209a9fc },  /* apfnAux */
-    func_ov025_0209ab08,  /* pfnDone */
-    { func_ov025_0209ac58, 0, 0, 0, 0, 0, func_ov025_0209ac58 },  /* apfnHook */
+    Ov025_StepSelectionBackward,  /* pfnSelect */
+    Ov025_StepSelectionForward,  /* pfnCancel */
+    { Ov025_HandleElementRelease, Ov025_HandleElementTap },  /* apfnAux */
+    Ov025_SaveMenuConfirm,  /* pfnDone */
+    { Ov025_SaveMenu_OnBack, 0, 0, 0, 0, 0, Ov025_SaveMenu_OnBack },  /* apfnHook */
 };

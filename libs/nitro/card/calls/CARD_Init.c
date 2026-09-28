@@ -48,9 +48,9 @@ struct CARDRomStat {
     u8 cache_buf[0x200];
 };
 
-extern void func_0200df58(void);
+extern void CARDi_InitCommon(void);
 extern void (*CARDi_GetRomAccessor(void))(struct CARDRomStat *state);
-extern void func_0200f1f4(void);
+extern void CARD_InitPulledOutCallback(void);
 extern struct CARDiCommon data_020464e0;
 extern u32 data_02046b00;
 extern struct CARDRomStat data_02046b20 __attribute__((aligned(32)));
@@ -67,8 +67,8 @@ void CARD_Init(void)
         common->callback_arg = 0;
 
         data_02046b00 = 0;
-        func_0200df58();
+        CARDi_InitCommon();
         data_02046b20.read_func = CARDi_GetRomAccessor();
-        func_0200f1f4();
+        CARD_InitPulledOutCallback();
     }
 }

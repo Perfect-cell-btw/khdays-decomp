@@ -6,52 +6,52 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov008_0208101c(void);
-extern void func_ov008_020810b0(void);
-extern void func_ov008_020810b4(void);
-extern void func_ov008_02081148(void);
-extern void func_ov008_0208114c(void);
-extern void func_ov008_020812d0(void);
-extern void func_ov008_02081428(void);
-extern void func_ov008_0208142c(void);
-extern void func_ov008_02081430(void);
-extern void func_ov008_02081458(void);
-extern void func_ov008_0208145c(void);
-extern void func_ov008_02081544(void);
-extern void func_ov008_02081570(void);
-extern void func_ov008_02081574(void);
-extern void func_ov008_02081650(void);
+extern void Ov008_MissionEnterPage1(void);
+extern void Ov008_MissionStep1NoOp(void);
+extern void Ov008_MissionEnterPage2(void);
+extern void Ov008_MissionStep3NoOp(void);
+extern void Ov008_MissionRebuildLayers(void);
+extern void Ov008_MissionInitCells(void);
+extern void Ov008_MissionStep6NoOp(void);
+extern void Ov008_MissionStep7NoOp(void);
+extern void Ov008_MissionStep8SetModeIfFlagged(void);
+extern void Ov008_MissionStep9NoOp(void);
+extern void Ov008_MissionInitDisplayResources(void);
+extern void Ov008_ConfigDispcntBothEngines(void);
+extern void Ov008_MissionStep12NoOp(void);
+extern void Ov008_MissionShutdownDisplayResources(void);
+extern void Ov008_ResetTweensAndBlank(void);
 
 const Ov_Fn data_ov008_0208fd8c[15] = {
 
-    func_ov008_0208101c,
+    Ov008_MissionEnterPage1,
 
-    func_ov008_020810b0,
+    Ov008_MissionStep1NoOp,
 
-    func_ov008_020810b4,
+    Ov008_MissionEnterPage2,
 
-    func_ov008_02081148,
+    Ov008_MissionStep3NoOp,
 
-    func_ov008_0208114c,
+    Ov008_MissionRebuildLayers,
 
-    func_ov008_020812d0,
+    Ov008_MissionInitCells,
 
-    func_ov008_02081428,
+    Ov008_MissionStep6NoOp,
 
-    func_ov008_0208142c,
+    Ov008_MissionStep7NoOp,
 
-    func_ov008_02081430,
+    Ov008_MissionStep8SetModeIfFlagged,
 
-    func_ov008_02081458,
+    Ov008_MissionStep9NoOp,
 
-    func_ov008_0208145c,
+    Ov008_MissionInitDisplayResources,
 
-    func_ov008_02081544,
+    Ov008_ConfigDispcntBothEngines,
 
-    func_ov008_02081570,
+    Ov008_MissionStep12NoOp,
 
-    func_ov008_02081574,
+    Ov008_MissionShutdownDisplayResources,
 
-    func_ov008_02081650,
+    Ov008_ResetTweensAndBlank,
 
 };

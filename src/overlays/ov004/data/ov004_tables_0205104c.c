@@ -15,7 +15,7 @@ const int data_ov004_0205104c[20] = {
     8, 2, 3, 10,
 };
 
-/* read by func_ov004_0204fa44 (0204fa44): const Ov004SceneArgs data_ov004_0205109c; */
+/* read by Ov004_CreateMissionSelectScene (0204fa44): const Ov004SceneArgs data_ov004_0205109c; */
 const int data_ov004_0205109c[2] = {
     1, 1,
 };

@@ -8,15 +8,15 @@
  * placement, not a compiler limit. (2026-07-17)
  */
 extern int NNSi_FndGetCurrentRootHeap(void);
-extern long long func_02030d10(int arg0);
-extern void func_0201ef58(long long v);
+extern long long ClearGlobalArrayInt(int arg0);
+extern void Loader_SleepIfBusy(long long v);
 extern void NNSi_FndFreeFromDefaultHeap(int arg0);
 extern int data_ov022_020b2eb8;
 
 void func_ov022_020b0ff8(int arg0, int arg1, int arg2, int arg3) {
     int i;
     int *p = (int *)NNSi_FndGetCurrentRootHeap();
-    func_0201ef58(func_02030d10(8));
+    Loader_SleepIfBusy(ClearGlobalArrayInt(8));
     i = 0;
     do {
         if (*p != 0) NNSi_FndFreeFromDefaultHeap(*p);

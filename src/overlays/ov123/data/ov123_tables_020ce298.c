@@ -18,7 +18,7 @@ const int data_ov123_020ce2a0[3] = {
     0, 1024, 0,
 };
 
-/* read by func_ov123_020cce74 (020cce74): short data_ov123_020ce2ac; */
+/* read by Ov123_ResetAndInvokeMethodThenAdvance (020cce74): short data_ov123_020ce2ac; */
 const u8 data_ov123_020ce2ac[4] = {
     0, 0, 5, 0,
 };

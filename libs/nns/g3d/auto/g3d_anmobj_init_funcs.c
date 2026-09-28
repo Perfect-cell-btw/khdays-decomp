@@ -18,19 +18,19 @@ typedef struct NNSG3dAnmObjInitFunc {
 #define NNS_G3D_ANMOBJ_INITFUNC_MAX 10
 #define CATEGORY1(a, b) ((u16)((a) | ((b) << 8)))
 
-extern void func_0201891c(void *, void *, const void *);   /* NNSi_G3dAnmObjInitNsBma */
-extern void func_02018f04(void *, void *, const void *);   /* NNSi_G3dAnmObjInitNsBtp */
-extern void func_02018dec(void *, void *, const void *);   /* NNSi_G3dAnmObjInitNsBta */
-extern void func_02019194(void *, void *, const void *);   /* NNSi_G3dAnmObjInitNsBva */
-extern void func_02017224(void *, void *, const void *);   /* NNSi_G3dAnmObjInitNsBca */
+extern void AnmObj_InitMatTable(void *, void *, const void *);   /* NNSi_G3dAnmObjInitNsBma */
+extern void NNSi_G3dAnmObjInitNsBtp(void *, void *, const void *);   /* NNSi_G3dAnmObjInitNsBtp */
+extern void AnmObj_InitVisTable(void *, void *, const void *);   /* NNSi_G3dAnmObjInitNsBta */
+extern void NNSi_G3dAnmObjInitNsBva(void *, void *, const void *);   /* NNSi_G3dAnmObjInitNsBva */
+extern void NNSi_G3dAnmObjInitNsBca(void *, void *, const void *);   /* NNSi_G3dAnmObjInitNsBca */
 
 /* NNSi_G3dAnmObjInitFuncArray */
 NNSG3dAnmObjInitFunc data_020424b4[NNS_G3D_ANMOBJ_INITFUNC_MAX] = {
-    { 'M', 0, CATEGORY1('A', 'M'), func_0201891c },
-    { 'M', 0, CATEGORY1('P', 'T'), func_02018f04 },
-    { 'M', 0, CATEGORY1('A', 'T'), func_02018dec },
-    { 'V', 0, CATEGORY1('A', 'V'), func_02019194 },
-    { 'J', 0, CATEGORY1('A', 'C'), func_02017224 },
+    { 'M', 0, CATEGORY1('A', 'M'), AnmObj_InitMatTable },
+    { 'M', 0, CATEGORY1('P', 'T'), NNSi_G3dAnmObjInitNsBtp },
+    { 'M', 0, CATEGORY1('A', 'T'), AnmObj_InitVisTable },
+    { 'V', 0, CATEGORY1('A', 'V'), NNSi_G3dAnmObjInitNsBva },
+    { 'J', 0, CATEGORY1('A', 'C'), NNSi_G3dAnmObjInitNsBca },
     { 0, 0, 0, 0 },
     { 0, 0, 0, 0 },
     { 0, 0, 0, 0 },

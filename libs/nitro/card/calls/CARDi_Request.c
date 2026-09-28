@@ -80,18 +80,18 @@ struct CARDiCommon {
 struct OSThreadQueue;
 
 extern BOOL PXI_IsCallbackReady(PXIFifoTag tag, PXIProc processor);
-extern void func_0200386c(u32 cycles);
+extern void OS_SpinWait(u32 cycles);
 extern void DC_FlushRange(void *address, u32 size);
 extern void DC_WaitWriteBufferEmpty(void);
-extern s32 func_020093e8(PXIFifoTag tag, u32 data, BOOL error);
+extern s32 PXI_SendWordByFifo(PXIFifoTag tag, u32 data, BOOL error);
 extern OSIntrMode OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(OSIntrMode state);
-extern void func_02001f10(struct OSThreadQueue *queue);
+extern void OS_SleepThread(struct OSThreadQueue *queue);
 extern void DC_InvalidateRange(void *address, u32 size);
 
 static inline void CARDi_SendPxi(u32 data)
 {
-    while (func_020093e8(PXI_FIFO_TAG_FS, data, TRUE) < 0) {
+    while (PXI_SendWordByFifo(PXI_FIFO_TAG_FS, data, TRUE) < 0) {
     }
 }
 
@@ -100,7 +100,7 @@ BOOL CARDi_Request(struct CARDiCommon *common, CARDRequest requestType, s32 retr
     if ((common->flag & CARD_STAT_INIT_CMD) == 0) {
         common->flag |= CARD_STAT_INIT_CMD;
         while (!PXI_IsCallbackReady(PXI_FIFO_TAG_FS, PXI_PROC_ARM7)) {
-            func_0200386c(100);
+            OS_SpinWait(100);
         }
 
         CARDi_Request(common, CARD_REQ_INIT, 1);
@@ -122,7 +122,7 @@ BOOL CARDi_Request(struct CARDiCommon *common, CARDRequest requestType, s32 retr
         {
             OSIntrMode interruptState = OS_DisableInterrupts();
             while ((common->flag & CARD_STAT_REQ) != 0) {
-                func_02001f10(0);
+                OS_SleepThread(0);
             }
             OS_RestoreInterrupts(interruptState);
         }

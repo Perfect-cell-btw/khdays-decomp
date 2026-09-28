@@ -29,7 +29,7 @@ TOOLS = ROOT / "tools"
 if str(TOOLS) not in sys.path:
     sys.path.insert(0, str(TOOLS))
 
-FUNCTION = "func_ov024_02086004"
+FUNCTION = "Ov024_MobiClip_BlitRows"
 INDEX = ROOT / "build" / "func_index.json"
 # The working candidate, when one exists. build/ is not tracked, so the test
 # that uses this skips in a fresh checkout and runs while the function is

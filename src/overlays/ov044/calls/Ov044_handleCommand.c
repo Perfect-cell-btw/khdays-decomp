@@ -1,0 +1,24 @@
+extern void Ov044_BindPartRigs(void *this);
+extern void Ov044_StartAnimTracks(void *this);
+extern void Ov044_InitMoveParams(void *this);
+
+void Ov044_handleCommand(char *this, int cmd) {
+    char *g = *(char **)(this + 0xdb4);
+    switch (cmd) {
+    case 0x2e:
+        if (*(int *)(g + 0x6bc) == cmd) return;
+        Ov044_BindPartRigs(this);
+        return;
+    case 0x2f:
+        if (*(int *)(g + 0x6bc) == cmd) return;
+        *(int *)(this + 8) = 1;
+        Ov044_StartAnimTracks(this);
+        return;
+    case 0x30:
+        *(int *)this = 1;
+        if (*(int *)(g + 0x6bc) == cmd) return;
+        Ov044_StartAnimTracks(this);
+        Ov044_InitMoveParams(this);
+        return;
+    }
+}

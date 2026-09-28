@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_02023a4c. */
-extern void *func_02023a4c();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to Obj_Destroy. */
+extern void *Obj_Destroy();
 
 void *func_02023ad0() {
-    return func_02023a4c();
+    return Obj_Destroy();
 }

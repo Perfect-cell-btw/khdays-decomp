@@ -6,51 +6,51 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov017_02080a6c(void);
-extern void func_ov017_02080b08(void);
-extern void func_ov017_02080bcc(void);
-extern void func_ov017_02080c40(void);
-extern void func_ov017_02080c88(void);
-extern void func_ov017_02080cb4(void);
-extern void func_ov017_02080d0c(void);
-extern void func_ov017_02080dd0(void);
-extern void func_ov017_02080dfc(void);
+extern void Ov017_MarshalAndDispatch(void);
+extern void Ov017_MarshalFxAndDispatch2(void);
+extern void Ov017_MarshalFxAndDispatch(void);
+extern void Ov017_ScriptOpRetirePiece(void);
+extern void Ov017_SetFlagBit62OnFour(void);
+extern void Ov017_VmCmd0cb4(void);
+extern void Ov017_MarshalFxAndDispatch3(void);
+extern void Ov017_RegisterPairAndDispatch(void);
+extern void Ov017_ScriptOpPostScoreAndClearBgPriority(void);
 
 Ov_Fn data_ov017_02080e40[24] = {
 
-    func_ov017_02080a6c,
+    Ov017_MarshalAndDispatch,
 
     0,
 
-    func_ov017_02080b08,
+    Ov017_MarshalFxAndDispatch2,
 
     0,
 
-    func_ov017_02080bcc,
+    Ov017_MarshalFxAndDispatch,
 
     0,
 
-    func_ov017_02080c40,
+    Ov017_ScriptOpRetirePiece,
 
     0,
 
-    func_ov017_02080c88,
+    Ov017_SetFlagBit62OnFour,
 
     0,
 
-    func_ov017_02080cb4,
+    Ov017_VmCmd0cb4,
 
     0,
 
-    func_ov017_02080d0c,
+    Ov017_MarshalFxAndDispatch3,
 
     0,
 
-    func_ov017_02080dd0,
+    Ov017_RegisterPairAndDispatch,
 
     0,
 
-    func_ov017_02080dfc,
+    Ov017_ScriptOpPostScoreAndClearBgPriority,
 
     0,
 

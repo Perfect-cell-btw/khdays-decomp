@@ -15,15 +15,15 @@ typedef struct {
     int nReserved;
 } Ov002ScreenDesc;
 
-extern void func_ov002_02065cc8(void);
-extern void func_ov002_02065e0c(void);
-extern void func_ov002_02066a80(void);
-extern void func_ov002_02066ba8(void);
+extern void Ov002_TouchPageCreate(void);
+extern void Ov002_TeardownSession(void);
+extern void Ov002_MapPageCreate(void);
+extern void Ov002_TearDownSessionScene(void);
 
 Ov002ScreenDesc data_ov002_0207ee70 = {
-    0x0e0037, func_ov002_02065cc8, func_ov002_02065e0c, 44, 0,
+    0x0e0037, Ov002_TouchPageCreate, Ov002_TeardownSession, 44, 0,
 };
 
 Ov002ScreenDesc data_ov002_0207ee84 = {
-    0x0e0039, func_ov002_02066a80, func_ov002_02066ba8, 148, 0,
+    0x0e0039, Ov002_MapPageCreate, Ov002_TearDownSessionScene, 148, 0,
 };

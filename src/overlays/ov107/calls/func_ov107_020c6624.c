@@ -1,10 +1,10 @@
-/* Constructs an AiState on top of the base actor node (func_ov107_020c3c74): sets flag 0x40,
+/* Constructs an AiState on top of the base actor node (Ov107_InitActorNode): sets flag 0x40,
  * installs this subclass's callbacks, binds the state data table `data` at +0x1a0, seeds the
  * scale/timer fields, initialises the two lists at +0x22c/+0x260, attaches the +0x3c object and
  * the +0x1a8 item, then runs the record-load callbacks at +0x1ec/+0x1f0 and the +0x18c hook.
  * With a table bound, it creates attachment slot 6 for an entry of kind 4, slots 5 and 7 for an
  * entry of kind 8, and otherwise slot 7 when any field_24 value exceeds 0x100; every created
- * item gets func_ov107_020c65d8 at +0x6c, and slot 7's item points back at this state at +0x84.
+ * item gets Ov107_RenderAtOwnerSphere at +0x6c, and slot 7's item points back at this state at +0x84.
  *
  * Partial layouts: only offsets this function and the landed callbacks establish.
  * field_310 is signed: the ROM stores it as -1, derived from the preceding constant 2. */
@@ -119,30 +119,30 @@ struct AiState {
     Slot *slots[8];
 };
 
-extern void func_ov107_020c3c74(u16 *node);
-extern void func_01fffc24(void *list);
-extern void *func_0203c400(void);
+extern void Ov107_InitActorNode(u16 *node);
+extern void List_Init(void *list);
+extern void *ObjList_New(void);
 extern ActorManager *func_ov107_020c9848(void);
-extern CreatedItem *func_0203b898(u32 handle);
-extern void func_ov107_020c92b0(AiState *self, int slot, unsigned int kind, Vec3 *pos, int field10);
+extern CreatedItem *CreateSubitemInstance0xB4(u32 handle);
+extern void Ov107_Actor_SetAttachSlot(AiState *self, int slot, unsigned int kind, Vec3 *pos, int field10);
 
-extern void func_ov107_020c68ec(AiState *self);
-extern void func_ov107_020c6980(AiState *self, int delta);
-extern void func_ov107_020c7500(AiState *self, void *msg, int size);
-extern void func_ov107_020c7a2c(AiState *self);
-extern void func_ov107_020c7a90(AiState *self, void *msg, int size);
-extern void func_ov107_020c7b70(AiState *self, void *region);
-extern void func_ov107_020c7c1c(AiState *self, void *param);
-extern void func_ov107_020c7ca4(AiState *self);
-extern int func_ov107_020c8014(AiState *a, AiState *b);
+extern void Ov107_DestroyObject(AiState *self);
+extern void Ov107_ProcessObjectTick(AiState *self, int delta);
+extern void Ov107_AiState_OnMessage(AiState *self, void *msg, int size);
+extern void Ov107_SendMessage24(AiState *self);
+extern void Ov107_AiState_SendPose(AiState *self, void *msg, int size);
+extern void Ov107_HandleRegionEvent(AiState *self, void *region);
+extern void Ov107_Actor_DetachFromRegion(AiState *self, void *param);
+extern void Ov107_AiState_PostTickBase(AiState *self);
+extern int Ov107_ResolveActorContact(AiState *a, AiState *b);
 extern int func_ov107_020c73a0(AiState *self, int event);
-extern void func_ov107_020c8500(AiState *self, int recordIndex);
-extern void func_ov107_020c887c(AiState *self, u8 recordIndex);
-extern void func_ov107_020c88dc(AiState *self, int a, int b);
-extern void func_ov107_020c88fc(AiState *self);
-extern void func_ov107_020c7da4(AiState *self);
-extern void func_ov107_020c8000(AiState *self, int a, int b);
-extern void func_ov107_020c65d8(CreatedItem *self, int region);
+extern void Ov107_AiState_LoadStats(AiState *self, int recordIndex);
+extern void Ov107_LoadMsUpRecord(AiState *self, u8 recordIndex);
+extern void Ov107_StoreHitInfo(AiState *self, int a, int b);
+extern void Ov107_ResetStanceBase(AiState *self);
+extern void Ov107_AiState_OnDefeat(AiState *self);
+extern void Ov107_StoreSlotEvent(AiState *self, int a, int b);
+extern void Ov107_RenderAtOwnerSphere(CreatedItem *self, int region);
 
 extern u8 data_0204252c;
 extern u8 data_02042530;
@@ -151,28 +151,28 @@ void func_ov107_020c6624(AiState *self, StateData *data)
 {
     int i;
 
-    func_ov107_020c3c74((u16 *)self);
+    Ov107_InitActorNode((u16 *)self);
     self->flags00 |= 0x40;
-    self->field_08 = func_ov107_020c68ec;
-    self->field_0c = func_ov107_020c6980;
-    self->field_1c = func_ov107_020c7500;
-    self->field_20 = func_ov107_020c7a2c;
-    self->field_24 = func_ov107_020c7a90;
-    self->field_28 = func_ov107_020c7b70;
-    self->field_2c = func_ov107_020c7c1c;
-    self->field_34 = func_ov107_020c7ca4;
+    self->field_08 = Ov107_DestroyObject;
+    self->field_0c = Ov107_ProcessObjectTick;
+    self->field_1c = Ov107_AiState_OnMessage;
+    self->field_20 = Ov107_SendMessage24;
+    self->field_24 = Ov107_AiState_SendPose;
+    self->field_28 = Ov107_HandleRegionEvent;
+    self->field_2c = Ov107_Actor_DetachFromRegion;
+    self->field_34 = Ov107_AiState_PostTickBase;
     self->flags40 |= 4;
-    self->field_4c = func_ov107_020c8014;
+    self->field_4c = Ov107_ResolveActorContact;
     self->field_1cc = func_ov107_020c73a0;
-    self->field_1ec = func_ov107_020c8500;
-    self->field_1f0 = func_ov107_020c887c;
-    self->field_1f4 = func_ov107_020c88dc;
-    self->field_1f8 = func_ov107_020c88fc;
+    self->field_1ec = Ov107_AiState_LoadStats;
+    self->field_1f0 = Ov107_LoadMsUpRecord;
+    self->field_1f4 = Ov107_StoreHitInfo;
+    self->field_1f8 = Ov107_ResetStanceBase;
     self->field_1d0 = 0;
     self->field_1e0 = 0;
     self->field_1e4 = 0;
-    self->field_1d4 = func_ov107_020c7da4;
-    self->field_1d8 = func_ov107_020c8000;
+    self->field_1d4 = Ov107_AiState_OnDefeat;
+    self->field_1d8 = Ov107_StoreSlotEvent;
     self->field_1dc = 0;
     self->field_1e8 = 0;
     self->field_1c9 = 1;
@@ -183,10 +183,10 @@ void func_ov107_020c6624(AiState *self, StateData *data)
     self->field_220 = 0x1000;
     self->field_2f8 = 0x1000;
     self->field_2ec = 0;
-    func_01fffc24(self->list_22c);
-    func_01fffc24(self->list_260);
-    self->field_3c = func_0203c400();
-    self->field_1a8 = func_0203b898((((func_ov107_020c9848()->spriteSet_88 + 0x8000)
+    List_Init(self->list_22c);
+    List_Init(self->list_260);
+    self->field_3c = ObjList_New();
+    self->field_1a8 = CreateSubitemInstance0xB4((((func_ov107_020c9848()->spriteSet_88 + 0x8000)
                                       & 0xfffffc) << 7) | 0x80000000 | 6);
     self->field_1a8->flags_5c |= 2;
     self->field_310 = -1;
@@ -215,18 +215,18 @@ void func_ov107_020c6624(AiState *self, StateData *data)
         for (i = 0; i < 8; i++) {
             if (self->field_1a0->field_04[i].field_02_high == 4 &&
                 self->field_1a0->field_04[i].field_03 != 0) {
-                func_ov107_020c92b0(self, 6, 1, 0, 0x1000);
-                self->slots[6]->item->field_6c = func_ov107_020c65d8;
+                Ov107_Actor_SetAttachSlot(self, 6, 1, 0, 0x1000);
+                self->slots[6]->item->field_6c = Ov107_RenderAtOwnerSphere;
                 break;
             }
         }
         for (i = 0; i < 8; i++) {
             if (self->field_1a0->field_04[i].field_02_high == 8 &&
                 self->field_1a0->field_04[i].field_03 != 0) {
-                func_ov107_020c92b0(self, 5, 1, 0, 0x1000);
-                self->slots[5]->item->field_6c = func_ov107_020c65d8;
-                func_ov107_020c92b0(self, 7, 1, 0, 0x1000);
-                self->slots[7]->item->field_6c = func_ov107_020c65d8;
+                Ov107_Actor_SetAttachSlot(self, 5, 1, 0, 0x1000);
+                self->slots[5]->item->field_6c = Ov107_RenderAtOwnerSphere;
+                Ov107_Actor_SetAttachSlot(self, 7, 1, 0, 0x1000);
+                self->slots[7]->item->field_6c = Ov107_RenderAtOwnerSphere;
                 self->slots[7]->item->field_84 = self;
                 break;
             }
@@ -234,8 +234,8 @@ void func_ov107_020c6624(AiState *self, StateData *data)
         if (self->slots[7] == 0) {
             for (i = 0; i < 8; i++) {
                 if (self->field_1a0->field_24[i] > 0x100) {
-                    func_ov107_020c92b0(self, 7, 1, 0, 0x1000);
-                    self->slots[7]->item->field_6c = func_ov107_020c65d8;
+                    Ov107_Actor_SetAttachSlot(self, 7, 1, 0, 0x1000);
+                    self->slots[7]->item->field_6c = Ov107_RenderAtOwnerSphere;
                     self->slots[7]->item->field_84 = self;
                     break;
                 }

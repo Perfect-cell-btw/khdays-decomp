@@ -57,7 +57,7 @@ const int data_ov236_020d637c[17] = {
 
 /* read by Ov236_JumpTick (020cff4c): unsigned short data_ov236_020d63c0[];
  *   Ov236_EnterCharge (020d03ec): Ov236CueTable data_ov236_020d63c0;
- *   func_ov236_020d0b20 (020d0b20): Ov236CueTable data_ov236_020d63c0; */
+ *   Ov236_AiEnterSurprised (020d0b20): Ov236CueTable data_ov236_020d63c0; */
 const u8 data_ov236_020d63c0[12] = {
     0, 0, 5, 1, 0, 0, 5, 4, 0, 0, 5, 5,
 };
@@ -72,7 +72,7 @@ const u16 data_ov236_020d63da[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov236_020d1894 (not yet decompiled)
+/* read by Ov236_RiderHitFilter (not yet decompiled)
  *   Ov236_ChargeInTick (020d2848): unsigned short data_ov236_020d63e8[];
  *   Publish the pounce landing: send the canned 4-byte block from the config table to the owne (020d29b8): struct Blk data_ov236_020d63e8;
  *   Ov236_RecoveryWaitA (020d30f4): unsigned short data_ov236_020d63e8[];
@@ -88,7 +88,7 @@ const u16 data_ov236_020d6404[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov236_020d1894 (not yet decompiled) */
+/* read by Ov236_RiderHitFilter (not yet decompiled) */
 const u16 data_ov236_020d6412[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };
@@ -98,7 +98,7 @@ const u8 data_ov236_020d6420[16] = {
     0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov236_020d3798 (not yet decompiled)
+/* read by Ov236_RiderHitFilter_2 (not yet decompiled)
  *   Ov236_StalkTick (020d45bc): const Cmd4 data_ov236_020d6430[];
  *   Ov236_StompTick (020d4d84): const Cmd4 data_ov236_020d6430[];
  *   Ov236_DismountLandingTick (020d54e0): u16 data_ov236_020d6430[];
@@ -115,7 +115,7 @@ const u16 data_ov236_020d6454[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov236_020d3798 (not yet decompiled) */
+/* read by Ov236_RiderHitFilter_2 (not yet decompiled) */
 const u16 data_ov236_020d6462[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };

@@ -8,7 +8,7 @@ const u16 data_ov253_020d4964[13] = {
     0, 1797, 0, 1285, 0,
 };
 
-/* read by func_ov253_020cfd20 (not yet decompiled) */
+/* read by Ov253_GrabTick (not yet decompiled) */
 const u16 data_ov253_020d497e[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };

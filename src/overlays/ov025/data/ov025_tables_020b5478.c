@@ -5,7 +5,7 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov025_020b5478: func_ov025_020abdd8
+ *   data_ov025_020b5478: Ov025_DrawMissionDetail
  */
 
 typedef unsigned char u8;

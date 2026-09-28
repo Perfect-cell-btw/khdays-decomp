@@ -1,7 +1,7 @@
 /* ov074 constructor argument block data_ov074_020b9a58, 0x020b9a58-0x020b9a6c (.rodata).
  *
  * Five words handed to a class constructor: the resource path of the object's archive
- * ('ba/ch/so/li_e1.p.z') and four parameters the constructor reads.  Used by func_ov074_020b8910.
+ * ('ba/ch/so/li_e1.p.z') and four parameters the constructor reads.  Used by Ov074_InitEffectSlotsWithTimings.
  */
 
 typedef struct ClassCtorArgs {

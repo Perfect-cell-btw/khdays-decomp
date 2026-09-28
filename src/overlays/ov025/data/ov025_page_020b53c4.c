@@ -15,22 +15,22 @@ typedef struct Ov008PageHooks {
 } Ov008PageHooks;
 
 extern void func_ov025_020ad7ac(void);
-extern void func_ov025_020ad180(void);
-extern void func_ov025_020ad3bc(void);
-extern void func_ov025_020ad50c(void);
-extern void func_ov025_020ad53c(void);
-extern void func_ov025_020ad558(void);
-extern void func_ov025_020ad574(void);
-extern void func_ov025_020ad5e4(void);
-extern void func_ov025_020ad654(void);
-extern void func_ov025_020ad6e0(void);
-extern void func_ov025_020ad724(void);
-extern void func_ov025_020ad768(void);
+extern void Ov025_MissionMenuInitStep(void);
+extern void Ov025_MissionMenuDestroy(void);
+extern void Ov025_MissionMenu_TickPanels(void);
+extern void Ov025_SetState1IfIdle(void);
+extern void Ov025_SetState2IfIdle(void);
+extern void Ov025_RefreshPageOrNotifyToggle(void);
+extern void Ov025_RefreshPageOrNotifyToggle_2(void);
+extern void Ov025_MissionMenuConfirm(void);
+extern void Ov025_TeardownOrInit(void);
+extern void Ov025_StepBackIfIdle(void);
+extern void Ov025_StepForwardIfIdle(void);
 
 Ov008PageHooks data_ov025_020b53c4 = {
-    func_ov025_020ad180,  /* pfnOpen */
-    func_ov025_020ad3bc,  /* pfnStep */
-    func_ov025_020ad50c,  /* pfnClose */
+    Ov025_MissionMenuInitStep,  /* pfnOpen */
+    Ov025_MissionMenuDestroy,  /* pfnStep */
+    Ov025_MissionMenu_TickPanels,  /* pfnClose */
     1392,  /* nStateSize */
-    { func_ov025_020ad53c, func_ov025_020ad558, func_ov025_020ad574, func_ov025_020ad5e4, func_ov025_020ad654, func_ov025_020ad6e0, 0, 0, func_ov025_020ad724, func_ov025_020ad768, 0, func_ov025_020ad7ac },  /* apfnHook */
+    { Ov025_SetState1IfIdle, Ov025_SetState2IfIdle, Ov025_RefreshPageOrNotifyToggle, Ov025_RefreshPageOrNotifyToggle_2, Ov025_MissionMenuConfirm, Ov025_TeardownOrInit, 0, 0, Ov025_StepBackIfIdle, Ov025_StepForwardIfIdle, 0, func_ov025_020ad7ac },  /* apfnHook */
 };

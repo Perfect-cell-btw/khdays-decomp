@@ -2,7 +2,7 @@
 """Semantic model of the MobiClip deblocking post-filter (ov024 0x02092e60).
 
 The player can hand a decoded frame through this filter before the colour
-converter (func_ov024_02085ab8, display modes 1 and 2). It copies the frame's
+converter (Ov024_MobiClip_BlitFrame, display modes 1 and 2). It copies the frame's
 planes into a second pair of 256-byte-stride planes, smoothing the 8-pixel block
 edges on the way:
 

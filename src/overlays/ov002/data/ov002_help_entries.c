@@ -18,10 +18,10 @@ typedef struct {
 
 extern int data_ov002_0207dd84;
 extern int data_ov002_0207dd8c;
-extern void func_ov002_0205779c(void);
-extern void func_ov002_02057888(void);
+extern void Ov002_DrawGaugeTweenCell(void);
+extern void Ov002_DrawLayoutRow(void);
 
 Ov002HelpEntry data_ov002_0207e98c[2] = {
-    { 1, 77, 6, 0, &data_ov002_0207dd8c, 8, func_ov002_0205779c },
-    { 0, 46, 4, 2, &data_ov002_0207dd84, 2, func_ov002_02057888 },
+    { 1, 77, 6, 0, &data_ov002_0207dd8c, 8, Ov002_DrawGaugeTweenCell },
+    { 0, 46, 4, 2, &data_ov002_0207dd84, 2, Ov002_DrawLayoutRow },
 };

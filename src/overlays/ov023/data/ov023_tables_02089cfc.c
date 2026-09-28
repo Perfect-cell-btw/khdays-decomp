@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov023_02083920 (not yet decompiled) */
+/* read by Ov023_CreateHintSprites (not yet decompiled) */
 const u8 data_ov023_02089cfc[24] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 11, 0,
     0, 0, 0, 0, 0, 0, 0, 0,

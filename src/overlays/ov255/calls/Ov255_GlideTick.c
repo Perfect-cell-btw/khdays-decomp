@@ -1,0 +1,29 @@
+/* Glide tick of the ov255 enemy: the +0x40 rate is the owner's frame rate x 15; the +0x5c path
+ * point is resolved (Ov255_SteerToTarget) into a direction and a speed that give the +0x10 step.
+ * Once the +0xc idle byte clears, animation 8 plays, the +0x3a4 part plays motion 7 and the tick
+ * hands over to Ov255_GlideToLandTick. */
+typedef struct { int x, y, z; } Vec3;
+
+extern void Ov255_SteerToTarget(int *state, int point, Vec3 *dir, int *speed);
+extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
+extern void Ov107_StartAnim(int part, int motion, int mode);
+extern void SetIndexedSlot(int *node, int slot, void *cb);
+extern void Ov255_GlideToLandTick(int *node);
+
+void Ov255_GlideTick(int *node)
+{
+    int *state = (int *)node[1];
+    Vec3 dir;
+    int speed;
+
+    state[0x10] = *(int *)(node[0] + 0x2c) * 30 / 2;
+    Ov255_SteerToTarget(state, state[0x17], &dir, &speed);
+    ScaleVec3Fx12(speed, &dir, (Vec3 *)(state + 4));
+    if (*(unsigned char *)state[3] != 0) {
+        return;
+    }
+    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_StartAnim(*(int *)(*state + 0x3a4), 7, 0);
+    SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov255_GlideToLandTick);
+}

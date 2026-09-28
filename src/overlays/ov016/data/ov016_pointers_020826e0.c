@@ -6,16 +6,16 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov016_02080fa4(void);
-extern void func_ov016_02080ffc(void);
-extern void func_ov016_02081108(void);
-extern void func_ov016_02081144(void);
-extern void func_ov016_02081200(void);
-extern void func_ov016_020812a4(void);
-extern void func_ov016_02081360(void);
-extern void func_ov016_020813e8(void);
-extern void func_ov016_020814b0(void);
-extern void func_ov016_02081550(void);
+extern void Ov016_VmCmdCreateEntry(void);
+extern void Ov016_ScriptOpCreateLift(void);
+extern void Ov016_InitTripleAndDispatch(void);
+extern void Ov016_ScriptOpCreateFollower(void);
+extern void Ov016_VmCmd1200(void);
+extern void Ov016_ScriptOpCreateBreakable(void);
+extern void Ov016_VmCmdCreateEntryClass80(void);
+extern void Ov016_ScriptOpCreateKickable(void);
+extern void Ov016_VmCmd14b0(void);
+extern void Ov016_ScriptOpCreateHazard(void);
 
 Ov_Fn data_ov016_020826e0[24] = {
 
@@ -27,43 +27,43 @@ Ov_Fn data_ov016_020826e0[24] = {
 
     0,
 
-    func_ov016_02080fa4,
+    Ov016_VmCmdCreateEntry,
 
     0,
 
-    func_ov016_02080ffc,
+    Ov016_ScriptOpCreateLift,
 
     0,
 
-    func_ov016_02081108,
+    Ov016_InitTripleAndDispatch,
 
     0,
 
-    func_ov016_02081144,
+    Ov016_ScriptOpCreateFollower,
 
     0,
 
-    func_ov016_02081200,
+    Ov016_VmCmd1200,
 
     0,
 
-    func_ov016_020812a4,
+    Ov016_ScriptOpCreateBreakable,
 
     0,
 
-    func_ov016_02081360,
+    Ov016_VmCmdCreateEntryClass80,
 
     0,
 
-    func_ov016_020813e8,
+    Ov016_ScriptOpCreateKickable,
 
     0,
 
-    func_ov016_020814b0,
+    Ov016_VmCmd14b0,
 
     0,
 
-    func_ov016_02081550,
+    Ov016_ScriptOpCreateHazard,
 
     0,
 

@@ -31,7 +31,7 @@ enum {
     JNT_MAYA_SSC = 0x20
 };
 
-extern void func_01ff9f00(u32 op, const void *args, u32 numWords);
+extern void GX_SendFifoWords(u32 op, const void *args, u32 numWords);
 
 void func_01ffa218(const NNSG3dJntAnmResult *result)
 {
@@ -44,24 +44,24 @@ void func_01ffa218(const NNSG3dJntAnmResult *result)
 
     if ((flag & JNT_MAYA_SSC) && !(flag & JNT_SCALEEX0_ONE)) {
         if (sendTranslation) {
-            func_01ff9f00(0x1c, &result->mtx._30, 3);
+            GX_SendFifoWords(0x1c, &result->mtx._30, 3);
             sendTranslation = 0;
         }
-        func_01ff9f00(0x1b, &result->scaleEx0, 3);
+        GX_SendFifoWords(0x1b, &result->scaleEx0, 3);
     }
 
     if (!(result->flag & JNT_ROT_ZERO)) {
         if (sendTranslation) {
-            func_01ff9f00(0x19, &result->mtx, 12);
+            GX_SendFifoWords(0x19, &result->mtx, 12);
         } else {
-            func_01ff9f00(0x1a, &result->mtx, 9);
+            GX_SendFifoWords(0x1a, &result->mtx, 9);
         }
     } else if (sendTranslation) {
-        func_01ff9f00(0x1c, &result->mtx._30, 3);
+        GX_SendFifoWords(0x1c, &result->mtx._30, 3);
     }
 
     if (result->flag & JNT_SCALE_ONE) {
         return;
     }
-    func_01ff9f00(0x1b, &result->scale, 3);
+    GX_SendFifoWords(0x1b, &result->scale, 3);
 }

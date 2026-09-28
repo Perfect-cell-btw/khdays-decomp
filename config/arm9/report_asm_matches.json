@@ -99,6 +99,15 @@
       "source_sha256": "38ffd1c71d046d0e816912823f0ed77e1cb10daf96efc1b397b020c8650f505b",
       "target_sha256": "c27ce0bc897baa92f297f607f9677de717c8702b912841eeb8cfc4a5d7d4a16c"
     },
+    "DGTi_Hash2ProcessBlock": {
+      "evidence": "NitroSDK DGT DGTi_hash2_arm4_small: byte-identical to the prebuilt libdgt.a object sha1s-arm4cw.o (hand-written ARM)",
+      "kind": "canonical_sdk_asm",
+      "mode": "arm",
+      "size": 640,
+      "source": "libs/nitro/dgt/asm_stubs/auto/DGTi_Hash2ProcessBlock.c",
+      "source_sha256": "b629f8916f52b01f405e75a9c6e88fd342f229798012d5f8d4a14b2dc88ab13b",
+      "target_sha256": "9d8f4b525bc4793377af54290058824c8f6113b4deb004ea9589507e4891d2cf"
+    },
     "Div": {
       "evidence": "NitroSDK libraries/syscall/asm/subpsyscall.s (BIOS SWI veneer)",
       "kind": "canonical_sdk_asm",
@@ -114,7 +123,7 @@
       "mode": "arm",
       "size": 316,
       "source": "libs/nitro/init/asm_stubs/calls/Entry.c",
-      "source_sha256": "e4c4ad3cb318831cb7e1cb8e8d6a887a38b4a8eedeb7453b7d2f29ca6d2f0c7f",
+      "source_sha256": "b37862ae06199508053b7a28b6fb51f4a066ae0096cab7666230fb4fda1528c8",
       "target_sha256": "2bcf03099ef25046cc7dbcd6f31038bdf85c0440de516c1a14d9499eda0703b9"
     },
     "GX_SendFifo48B": {
@@ -459,6 +468,15 @@
       "source_sha256": "87fe4b27cd5ae7eb92d581dd7872c945949f8c1c114e8adaf7d8ee12eb2125dc",
       "target_sha256": "a6d1dfbde73c8c629d95075631c88a75bd015ed65668060e607581c807711fed"
     },
+    "Math_DivMod": {
+      "evidence": "CodeWarrior MSL runtime assembly (_u32_div_f, unsigned 32-bit division); the helpers branch into each other, so they are GAS sources",
+      "kind": "canonical_sdk_asm",
+      "mode": "arm",
+      "size": 484,
+      "source": "libs/msl/runtime/asm_stubs/auto/Math_DivMod.s",
+      "source_sha256": "bd2847371ccf54f39c2f216dda52d0ffa3c9fb269d5d1ceee6123f3a8b6e8ac0",
+      "target_sha256": "3b0403581ea03e86bdfc0cde00ea2ca13f522291aec399b93ecdf2fef57944eb"
+    },
     "Mod": {
       "evidence": "NitroSDK libraries/syscall/asm/subpsyscall.s (BIOS SWI veneer)",
       "kind": "canonical_sdk_asm",
@@ -639,6 +657,15 @@
       "source_sha256": "a3e9f088e343c3ce3bef48ecd59e7c6aeb1536e4c58b323a34561b9abbdb95e9",
       "target_sha256": "92431ce8a41e4a29855e6b5e9757ee5c9798e357db757638f24b6a14f5f09791"
     },
+    "OS_SpinWait": {
+      "evidence": "NitroSDK libraries/os/src/os_system.c: asm OS_SpinWait",
+      "kind": "canonical_sdk_asm",
+      "mode": "arm",
+      "size": 12,
+      "source": "libs/nitro/os/asm_stubs/auto/OS_SpinWait.c",
+      "source_sha256": "b4c0a7ae79869815e78484ba1f3c0d706b33770576316ce5780406f5a092ca5f",
+      "target_sha256": "f7e146ee9e88c39b1758c3dd337d6e4d5cf4bb336b965a5f72911e6bd4a17587"
+    },
     "OS_UnLockCartridge": {
       "evidence": "NitroSDK libraries/os/src/os_spinLock.c: asm OS_UnLockCartridge",
       "kind": "canonical_sdk_asm",
@@ -654,7 +681,7 @@
       "mode": "arm",
       "size": 16,
       "source": "libs/nitro/os/asm_stubs/calls/OSi_AlarmHandler.c",
-      "source_sha256": "f27ae7b29263e301de85d22df2c4e5f5e2d862dc05efdecf062234c1c014a966",
+      "source_sha256": "4c5be236c80ff5eceac7e58250c42ab145d859a4115ebf3b1274cfb1511d643b",
       "target_sha256": "785ae0872480afca27d740a8210a281fc5ac2d64ff610e3ae61c04cec102b2ab"
     },
     "OSi_CancelDma0": {
@@ -702,6 +729,40 @@
       "source_sha256": "99e40ac02a4863340e1bb89db5ddd8355617664b94f30d23f85c810683d08694",
       "target_sha256": "060682c80d3a37098de575f51eabcbe853bedcd07c00051f839c558df4b37d67"
     },
+    "Ov002_FindFreeSpotId": {
+      "kind": "authorized_clz",
+      "mode": "arm",
+      "size": 132,
+      "source": "src/overlays/ov002/calls/Ov002_FindFreeSpotId.c",
+      "source_sha256": "71a2319dde8a26e51a582b7ba1f400c0e9fe0e5f3dcfb46e1505f82290a87b34",
+      "target_sha256": "952e8b2925837566aa0a639f1785105356e8ba50bf12113c2f82a17e8a56c230"
+    },
+    "Ov003_RankPlayers": {
+      "kind": "authorized_clz",
+      "mode": "arm",
+      "size": 576,
+      "source": "src/overlays/ov003/calls/Ov003_RankPlayers.c",
+      "source_sha256": "2acf18c100aad1ac0f169cff4f27c8642f8818cdf5381f16559cdf6f01d4941a",
+      "target_sha256": "b97dbd98de132ddcd2afe50d2e898935fc1de228f0fd88c3b5485ad9c419404d"
+    },
+    "Ov024_MobiClip_AudioTransformDecode": {
+      "evidence": "MobiClip middleware (Actimagine) coding-1 audio transform: hand-written ARM (mov pc, lr returns, constants and padding between routines, inner subroutines entered by bl)",
+      "kind": "canonical_sdk_asm",
+      "mode": "arm",
+      "size": 2496,
+      "source": "libs/mobiclip/audio/asm_stubs/calls/Ov024_MobiClip_AudioTransformDecode.s",
+      "source_sha256": "3b6c3a6cda7233a474096b90520b7c9fc6ff5f7420fa09bd7d01e00eeae8197e",
+      "target_sha256": "8adfbb1a200d509d1569353474926b4ea80cb01e4121d5ff96421925f7045d79"
+    },
+    "Ov024_MobiClip_BlitRows": {
+      "evidence": "MobiClip middleware (Actimagine) YCoCg-to-RGB row blit: hand-written ARM (ip used as the stack pad, subs+bgt countdowns, paired post-indexed chroma loads -- none emitted by mwcc; see the source header)",
+      "kind": "canonical_sdk_asm",
+      "mode": "arm",
+      "size": 1472,
+      "source": "libs/mobiclip/video/asm_stubs/auto/Ov024_MobiClip_BlitRows.c",
+      "source_sha256": "f978263d5c435c5841317f3492e8a0ba6b76229da3bcbf4446ff1602b9640c76",
+      "target_sha256": "d73c01e5683150a7a650c444be0d65e7aa5c127c229631df07dab513fc253937"
+    },
     "RLUnCompReadByCallbackWrite16bit": {
       "evidence": "NitroSDK libraries/syscall/asm/subpsyscall.s (BIOS SWI veneer)",
       "kind": "canonical_sdk_asm",
@@ -720,6 +781,15 @@
       "source_sha256": "d422c50fdf2f018e56541233d5f23856adf29e7a9e93f0c22347bc69e94e7b94",
       "target_sha256": "f1048b99d6e37687865f22863a77e61648b8054a57ca380b03dad2594796b86d"
     },
+    "RtcWaitBusy": {
+      "evidence": "NitroSDK libraries/rtc/src/external.c: static asm RtcWaitBusy",
+      "kind": "canonical_sdk_asm",
+      "mode": "arm",
+      "size": 24,
+      "source": "libs/nitro/rtc/asm_stubs/calls/RtcWaitBusy.c",
+      "source_sha256": "83be3fbb0856d4b17d32a376b0e9c8a4f101c3564d60416c6a95b1e459f4e8e0",
+      "target_sha256": "7618c661f9d3e8c2f28ab47ee2da692d18eb76057451f8edc722505d257815da"
+    },
     "SoftReset": {
       "evidence": "NitroSDK libraries/syscall/asm/subpsyscall.s (BIOS SWI veneer)",
       "kind": "canonical_sdk_asm",
@@ -737,6 +807,15 @@
       "source": "libs/nitro/os/asm_stubs/auto/Sqrt.c",
       "source_sha256": "d364778b3d3f17dca208ae6e824e52cc3b5570c9b68e85125a5b0db72e001eae",
       "target_sha256": "51890e29a359e96d6336ed379d2ddeb11fc12facb36bbb2f55afb650f4fb9375"
+    },
+    "Util_QuickSortWithWork": {
+      "evidence": "NitroSDK libraries/math/src/qsort.c: asm MATH_QSort",
+      "kind": "canonical_sdk_asm",
+      "mode": "arm",
+      "size": 648,
+      "source": "libs/nitro/math/asm_stubs/auto/Util_QuickSortWithWork.c",
+      "source_sha256": "a57cee8a00f9b88250790439c168624354aa3ae7c0be24ff1577fcbfa2778406",
+      "target_sha256": "54aa3756d22c704c48e99081f6fbc020ea68f4be1fe4787f5f2564b841ad4502"
     },
     "VBlankIntrWait": {
       "evidence": "NitroSDK libraries/syscall/asm/subpsyscall.s (BIOS SWI veneer)",
@@ -816,15 +895,6 @@
       "source_sha256": "fbf1f5a1dd51947eedf237940a5d52107dc0186e180b046966e91435a02e3564",
       "target_sha256": "1cdb4a7c45521a423b782ff8f77aa27c7e7a28d50cd063d3f10fc6fe28bfbffc"
     },
-    "func_0200386c": {
-      "evidence": "NitroSDK libraries/os/src/os_system.c: asm OS_SpinWait",
-      "kind": "canonical_sdk_asm",
-      "mode": "arm",
-      "size": 12,
-      "source": "libs/nitro/os/asm_stubs/auto/func_0200386c.c",
-      "source_sha256": "56aa17cbff4d7b31b15453858918fcdc1d8b04fe21f2e16f0c081ef740d29b01",
-      "target_sha256": "f7e146ee9e88c39b1758c3dd337d6e4d5cf4bb336b965a5f72911e6bd4a17587"
-    },
     "func_02003948": {
       "evidence": "NitroSDK libraries/os/src/os_reset.c: OS_ResetSystem (C with the SDK's inline asm block)",
       "kind": "canonical_sdk_asm",
@@ -842,33 +912,6 @@
       "source": "libs/nitro/mi/asm_stubs/calls/func_02004484.c",
       "source_sha256": "af028c2187cf507b643dfb64208fded7b5d936561edeec6ffc8c2c2ad8d9e254",
       "target_sha256": "3bc1beb64a0de5abb0c883eda6b32c6e2028ec260ca0ea071439d34692e15b8c"
-    },
-    "func_0200bd4c": {
-      "evidence": "NitroSDK DGT DGTi_hash2_arm4_small: byte-identical to the prebuilt libdgt.a object sha1s-arm4cw.o (hand-written ARM)",
-      "kind": "canonical_sdk_asm",
-      "mode": "arm",
-      "size": 640,
-      "source": "libs/nitro/dgt/asm_stubs/auto/func_0200bd4c.c",
-      "source_sha256": "53e85fea0ebd65f78e63c743fcd384e371e8b4abd1838e17dc3ec7873cbb1c77",
-      "target_sha256": "9d8f4b525bc4793377af54290058824c8f6113b4deb004ea9589507e4891d2cf"
-    },
-    "func_0200dcf0": {
-      "evidence": "NitroSDK libraries/rtc/src/external.c: static asm RtcWaitBusy",
-      "kind": "canonical_sdk_asm",
-      "mode": "arm",
-      "size": 24,
-      "source": "libs/nitro/rtc/asm_stubs/calls/func_0200dcf0.c",
-      "source_sha256": "8251e64b6773286d254069a8bdc2884170344f421672549d653a1256d96bab02",
-      "target_sha256": "7618c661f9d3e8c2f28ab47ee2da692d18eb76057451f8edc722505d257815da"
-    },
-    "func_0200fc00": {
-      "evidence": "NitroSDK libraries/math/src/qsort.c: asm MATH_QSort",
-      "kind": "canonical_sdk_asm",
-      "mode": "arm",
-      "size": 648,
-      "source": "libs/nitro/math/asm_stubs/auto/func_0200fc00.c",
-      "source_sha256": "0099b7422a1c5f01c4f8ec640a029e9ed0ba6da0559fee5b085b8786f10b2a7a",
-      "target_sha256": "54aa3756d22c704c48e99081f6fbc020ea68f4be1fe4787f5f2564b841ad4502"
     },
     "func_020201a8": {
       "evidence": "CodeWarrior MSL runtime assembly (_ll_mod, signed 64-bit remainder entry); the helpers branch into each other, so they are GAS sources",
@@ -923,49 +966,6 @@
       "source": "libs/msl/runtime/asm_stubs/auto/func_02020400.s",
       "source_sha256": "e5dc1b16421ef870d892eb7944df4f6f26d75e7543665eeb54c94570043b982a",
       "target_sha256": "e8183a62ffe6a54210cd7d025b01431ff792025c1b45a0e8537abd8cec16ccfb"
-    },
-    "func_0202060c": {
-      "evidence": "CodeWarrior MSL runtime assembly (_u32_div_f, unsigned 32-bit division); the helpers branch into each other, so they are GAS sources",
-      "kind": "canonical_sdk_asm",
-      "mode": "arm",
-      "size": 484,
-      "source": "libs/msl/runtime/asm_stubs/auto/func_0202060c.s",
-      "source_sha256": "4b773c92f605da964839aecef0cd9804ed43b859044f38e4619318b0fefecd5a",
-      "target_sha256": "3b0403581ea03e86bdfc0cde00ea2ca13f522291aec399b93ecdf2fef57944eb"
-    },
-    "func_ov002_02077560": {
-      "kind": "authorized_clz",
-      "mode": "arm",
-      "size": 132,
-      "source": "src/overlays/ov002/calls/func_ov002_02077560.c",
-      "source_sha256": "41f8f4ad3790ed33c8d6ff7f49f9ee7a31413161bbf41b76b8c846fb0a28888e",
-      "target_sha256": "952e8b2925837566aa0a639f1785105356e8ba50bf12113c2f82a17e8a56c230"
-    },
-    "func_ov003_0204d74c": {
-      "kind": "authorized_clz",
-      "mode": "arm",
-      "size": 576,
-      "source": "src/overlays/ov003/calls/func_ov003_0204d74c.c",
-      "source_sha256": "b3d889a801e2554787752c68f3d67a0e2d2c558e936b8d5ea9ccd309aefaff97",
-      "target_sha256": "b97dbd98de132ddcd2afe50d2e898935fc1de228f0fd88c3b5485ad9c419404d"
-    },
-    "func_ov024_02086004": {
-      "evidence": "MobiClip middleware (Actimagine) YCoCg-to-RGB row blit: hand-written ARM (ip used as the stack pad, subs+bgt countdowns, paired post-indexed chroma loads -- none emitted by mwcc; see the source header)",
-      "kind": "canonical_sdk_asm",
-      "mode": "arm",
-      "size": 1472,
-      "source": "libs/mobiclip/video/asm_stubs/auto/func_ov024_02086004.c",
-      "source_sha256": "370123b50edb69bd72e308ea49c857d53e3139609cd3d9488a0ae9ee9fafdddd",
-      "target_sha256": "d73c01e5683150a7a650c444be0d65e7aa5c127c229631df07dab513fc253937"
-    },
-    "func_ov024_02086958": {
-      "evidence": "MobiClip middleware (Actimagine) coding-1 audio transform: hand-written ARM (mov pc, lr returns, constants and padding between routines, inner subroutines entered by bl)",
-      "kind": "canonical_sdk_asm",
-      "mode": "arm",
-      "size": 2496,
-      "source": "libs/mobiclip/audio/asm_stubs/calls/func_ov024_02086958.s",
-      "source_sha256": "9d8487a389a933f75cd8954dacfb21430af1bd429cb8107535f4dea7c97cddf3",
-      "target_sha256": "8adfbb1a200d509d1569353474926b4ea80cb01e4121d5ff96421925f7045d79"
     }
   },
   "schema_version": 1

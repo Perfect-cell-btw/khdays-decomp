@@ -1,0 +1,7 @@
+extern void LinkChildNode(int, int, int);
+extern int data_0204c208;
+
+void EntityMgr_LinkChild(int param_1, int param_2, int param_3) {
+    int base = data_0204c208 + 0xc4;
+    LinkChildNode(base + param_1 * 0x184, base + param_2 * 0x184, param_3);
+}

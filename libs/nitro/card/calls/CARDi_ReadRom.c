@@ -56,12 +56,12 @@ struct OSiThreadInfoPrefix {
 extern void CARD_CheckEnabled(void);
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
-extern void func_02001f10(void *queue);
+extern void OS_SleepThread(void *queue);
 extern void MI_StopDma(u32 channel);
-extern BOOL func_0200eb34(struct CARDRomStat *state);
+extern BOOL CARDi_TryReadCardDma(struct CARDRomStat *state);
 extern void CARD_WaitBackupAsync(void);
 extern void CARDi_SetTask(void (*task)(struct CARDiCommon *common));
-extern void func_0200ee0c(struct CARDiCommon *common);
+extern void CARDi_ReadRomSyncCore(struct CARDiCommon *common);
 extern struct CARDRomStat data_02046b20 __attribute__((aligned(32)));
 extern struct CARDiCommon data_020464e0;
 extern u32 data_02046b00;
@@ -73,7 +73,7 @@ static inline void Card_WaitTask(struct CARDiCommon *common,
 {
     int interruptState = OS_DisableInterrupts();
     while ((common->flag & CARD_STAT_BUSY) != 0) {
-        func_02001f10(common->busy_q);
+        OS_SleepThread(common->busy_q);
     }
     common->flag |= CARD_STAT_BUSY;
     common->callback = callback;
@@ -98,14 +98,14 @@ void CARDi_ReadRom(u32 dma, const void *source, void *destination, u32 length,
         MI_StopDma(dma);
     }
 
-    if (func_0200eb34(state)) {
+    if (CARDi_TryReadCardDma(state)) {
         if (!asynchronous) {
             CARD_WaitBackupAsync();
         }
     } else if (asynchronous) {
-        CARDi_SetTask(func_0200ee0c);
+        CARDi_SetTask(CARDi_ReadRomSyncCore);
     } else {
         common->cur_th = data_02044330.current_thread;
-        func_0200ee0c(common);
+        CARDi_ReadRomSyncCore(common);
     }
 }

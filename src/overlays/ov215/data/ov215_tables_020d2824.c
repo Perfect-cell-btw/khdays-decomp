@@ -8,12 +8,12 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov215_020cfe3c (020cfe3c): KindTable data_ov215_020d2824; */
+/* read by Ov215_ConstructActor (020cfe3c): KindTable data_ov215_020d2824; */
 const int data_ov215_020d2824[5] = {
     0, 11, 12, 13, 15,
 };
 
-/* read by func_ov215_020d0620 (020d0620): int data_ov215_020d2838[]; */
+/* read by Ov215_spawnFromTable (020d0620): int data_ov215_020d2838[]; */
 const int data_ov215_020d2838[9] = {
     1, 2, 3, 4, 5, 6, 7, 8,
     9,

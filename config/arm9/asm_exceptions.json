@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "exceptions": {
-    "func_ov003_0204d74c": {
+    "Ov003_RankPlayers": {
       "kind": "single_inline_clz",
       "approved_by": "user",
       "approved_at": "2026-08-31",
@@ -10,7 +10,7 @@
       "classification": "authorized_asm_exception",
       "counts_as_real_c": false
     },
-    "func_ov002_02077560": {
+    "Ov002_FindFreeSpotId": {
       "kind": "single_inline_clz",
       "approved_by": "user",
       "approved_at": "2026-08-30",

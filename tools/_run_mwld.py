@@ -74,8 +74,8 @@ cmd = [
     # NOTE: mwld's -interworking pass resolves BL-vs-BLX per final VIRTUAL
     # ADDRESS; NDS overlays overlap in address space, so a same-address
     # function of the other mode in a sibling overlay can poison the decision
-    # (e.g. ov035 call to ARM func_ov035_020b3a30 linked as thumb BL because
-    # THUMB func_ov043_020b3a18 covers 0x020b3a30 in the overlapping ov043).
+    # (e.g. ov035 call to ARM Ov035_InitEffectSlotsWithTimings linked as thumb BL because
+    # THUMB Ov043_BuildPeerGroup covers 0x020b3a30 in the overlapping ov043).
     # tools/fix_interwork.py repairs those sites post-link from the config
     # symbols.txt modes (ground truth), verified against the original ROM.
     "-interworking",

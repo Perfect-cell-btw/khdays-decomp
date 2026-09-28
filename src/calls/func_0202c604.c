@@ -1,5 +1,5 @@
-extern int func_0202872c();
+extern int ListPushFront();
 
 int func_0202c604(int arg0) {
-    return func_0202872c(arg0 + 0xc);
+    return ListPushFront(arg0 + 0xc);
 }

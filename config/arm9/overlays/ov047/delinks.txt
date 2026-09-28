@@ -8,95 +8,95 @@ src/overlays/ov047/calls/func_ov047_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov047/calls/func_ov047_020b3234.c:
+src/overlays/ov047/calls/Ov047_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b3234 end:0x020b325c
 
-src/overlays/ov047/calls/func_ov047_020b325c.c:
+src/overlays/ov047/calls/Ov047_setupTriple.c:
     complete
     .text       start:0x020b325c end:0x020b327c
 
-src/overlays/ov047/calls/func_ov047_020b327c.c:
+src/overlays/ov047/calls/Ov047_PanelCtor.c:
     complete
     .text       start:0x020b327c end:0x020b3474
 
-src/overlays/ov047/calls/func_ov047_020b3474.c:
+src/overlays/ov047/calls/Ov047_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020b3474 end:0x020b34ac
 
-src/overlays/ov047/auto/func_ov047_020b34ac.c:
+src/overlays/ov047/auto/Ov047_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b34ac end:0x020b34cc
 
-src/overlays/ov047/calls/func_ov047_020b34cc.c:
+src/overlays/ov047/calls/Ov047_RequestState.c:
     complete
     .text       start:0x020b34cc end:0x020b3630
 
-src/overlays/ov047/calls/func_ov047_020b3630.c:
+src/overlays/ov047/calls/Ov047_PanelTick.c:
     complete
     .text       start:0x020b3630 end:0x020b36c8
 
-src/overlays/ov047/calls/func_ov047_020b36c8.c:
+src/overlays/ov047/calls/Ov047_FaceTargetOnRequest21.c:
     complete
     .text       start:0x020b36c8 end:0x020b37a4
 
-src/overlays/ov047/calls/func_ov047_020b37a4.c:
+src/overlays/ov047/calls/Ov047_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b37a4 end:0x020b37dc
 
-src/overlays/ov047/calls/func_ov047_020b37dc.c:
+src/overlays/ov047/calls/Ov047_SetupBuildBlock.c:
     complete
     .text       start:0x020b37dc end:0x020b3864
 
-src/overlays/ov047/calls/func_ov047_020b3864.c:
+src/overlays/ov047/calls/Ov047_InitTwoGlobalRegionsAndForward.c:
     complete
     .text       start:0x020b3864 end:0x020b38b4
 
-src/overlays/ov047/calls/func_ov047_020b38b4.c:
+src/overlays/ov047/calls/Ov047_ReleaseGlobalAndSubObjectChannel.c:
     complete
     .text       start:0x020b38b4 end:0x020b38f0
 
-src/overlays/ov047/calls/func_ov047_020b38f0.c:
+src/overlays/ov047/calls/Ov047_BindDefaultAnimsAtBase.c:
     complete
     .text       start:0x020b38f0 end:0x020b3950
 
-src/overlays/ov047/calls/func_ov047_020b3950.c:
+src/overlays/ov047/calls/Ov047_TickChargeState.c:
     complete
     .text       start:0x020b3950 end:0x020b39b0
 
-src/overlays/ov047/calls/func_ov047_020b39b0.c:
+src/overlays/ov047/calls/Ov047_DrawNodeIfEnabled.c:
     complete
     .text       start:0x020b39b0 end:0x020b3a3c
 
-src/overlays/ov047/calls/func_ov047_020b3a3c.c:
+src/overlays/ov047/calls/Ov047_CreateSubObject.c:
     complete
     .text       start:0x020b3a3c end:0x020b3b40
 
-src/overlays/ov047/calls/func_ov047_020b3b40.c:
+src/overlays/ov047/calls/Ov047_BindRig.c:
     complete
     .text       start:0x020b3b40 end:0x020b3b98
 
-src/overlays/ov047/calls/func_ov047_020b3b98.c:
+src/overlays/ov047/calls/Ov047_dispatchEntryList.c:
     complete
     .text       start:0x020b3b98 end:0x020b3bfc
 
-src/overlays/ov047/calls/func_ov047_020b3bfc.c:
+src/overlays/ov047/calls/Ov047_PlayHitVoiceIfEnabled.c:
     complete
     .text       start:0x020b3bfc end:0x020b3c54
 
-src/overlays/ov047/calls/func_ov047_020b3c54.c:
+src/overlays/ov047/calls/Ov047_SpawnEffectRing.c:
     complete
     .text       start:0x020b3c54 end:0x020b3e34
 
-src/overlays/ov047/calls/func_ov047_020b3e34.c:
+src/overlays/ov047/calls/Ov047_ArmPlayerBlock.c:
     complete
     .text       start:0x020b3e34 end:0x020b3ed0
 
-src/overlays/ov047/calls/func_ov047_020b3ed0.c:
+src/overlays/ov047/calls/Ov047_PanelUpdate.c:
     complete
     .text       start:0x020b3ed0 end:0x020b41f4
 
-src/overlays/ov047/calls/func_ov047_020b41f4.c:
+src/overlays/ov047/calls/Ov047_InvokeWithDataTable.c:
     complete
     .text       start:0x020b41f4 end:0x020b420c
 

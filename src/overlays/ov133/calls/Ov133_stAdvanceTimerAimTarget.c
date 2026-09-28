@@ -1,0 +1,30 @@
+struct hw { unsigned short lo:8, hi:8; };
+
+extern int Ov107_FindNearestObject(int a, int b);
+extern void VEC_Subtract(void *a, void *b, void *out);
+extern int func_020050b4(int a, int b);
+extern void Ov107_PostTagUpdate(int a, int b, int c);
+extern void SetIndexedSlot(int node, int slot, void *cb);
+extern void Ov133_AiRollTimerQueue2(void);
+
+void Ov133_stAdvanceTimerAimTarget(int *param_1) {
+    int *state = (int *)param_1[1];
+    int sp[3];
+    int acc = state[0xc] + *(int *)(*param_1 + 0x2c);
+    state[0xc] = acc;
+    if (acc < 0x6ee) return;
+    {
+        int target = Ov107_FindNearestObject(*state, 0);
+        state[2] = target;
+        if (target != 0) {
+            int angle;
+            VEC_Subtract((void *)(target + 0x74), (void *)state[0x11], sp);
+            angle = func_020050b4(sp[0], sp[2]);
+            state[4] = angle;
+            state[3] = angle;
+        }
+    }
+    ((struct hw *)(*state + 0x60))->hi &= ~0x82;
+    Ov107_PostTagUpdate(*state, 0, 0);
+    SetIndexedSlot((int)param_1, *(signed char *)((int)param_1 + 0x20), &Ov133_AiRollTimerQueue2);
+}

@@ -8,7 +8,7 @@ POR QUE (2026-07-19): la familia de destructores de actor (11 miembros, 64-212 B
 una tanda) no la encuentra `nearfam.py` NI `dedupprop.py`. La primera agrupa por secuencia de
 mnemonicos y estos miembros tienen bucles y llamadas distintas; la segunda pide bytes identicos.
 Lo unico que comparten es que **todos terminan llamando al mismo destructor base**
-(`func_ov107_020c68ec`).
+(`Ov107_DestroyObject`).
 
 Esa es la idea: un callee poco frecuente pero compartido por muchas funciones sin hacer marca una
 FAMILIA SEMANTICA -- el mismo patron escrito a mano N veces por el mismo programador. Una vez

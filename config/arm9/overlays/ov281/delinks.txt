@@ -4,27 +4,27 @@
     .data       start:0x020ce480 end:0x020ce540 kind:data align:32
     .bss        start:0x020ce540 end:0x020ce540 kind:bss align:32
 
-src/overlays/ov281/calls/func_ov281_020cbf20.c:
+src/overlays/ov281/calls/Ov281_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov281/calls/func_ov281_020cbf38.c:
+src/overlays/ov281/calls/Ov281_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov281/calls/func_ov281_020cbfc4.c:
+src/overlays/ov281/calls/Ov281_InitializeActor.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc3dc
 
-src/overlays/ov281/calls/func_ov281_020cc3dc.c:
+src/overlays/ov281/calls/Ov281_ReleaseSubObjectsAndSlotArrayThenNotify.c:
     complete
     .text       start:0x020cc3dc end:0x020cc41c
 
-src/overlays/ov281/calls/func_ov281_020cc41c.c:
+src/overlays/ov281/calls/Ov281_TickWithChildRefresh.c:
     complete
     .text       start:0x020cc41c end:0x020cc440
 
-src/overlays/ov281/calls/func_ov281_020cc440.c:
+src/overlays/ov281/calls/Ov281_HandleActorCommand.c:
     complete
     .text       start:0x020cc440 end:0x020cc63c
 
@@ -36,163 +36,163 @@ src/overlays/ov281/calls/func_ov281_020cc648.c:
     complete
     .text       start:0x020cc648 end:0x020cc654
 
-src/overlays/ov281/calls/func_ov281_020cc654.c:
+src/overlays/ov281/calls/Ov281_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020cc654 end:0x020cc68c
 
-src/overlays/ov281/calls/func_ov281_020cc68c.c:
+src/overlays/ov281/calls/Ov281_ReleaseByStateAndPublishPose.c:
     complete
     .text       start:0x020cc68c end:0x020cc7dc
 
-src/overlays/ov281/calls/func_ov281_020cc7dc.c:
+src/overlays/ov281/calls/Ov281_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020cc7dc end:0x020cc838
 
-src/overlays/ov281/calls/func_ov281_020cc838.c:
+src/overlays/ov281/calls/Ov281_ProcessHitReaction.c:
     complete
     .text       start:0x020cc838 end:0x020cca88
 
-src/overlays/ov281/auto/func_ov281_020cca88.c:
+src/overlays/ov281/auto/Ov281_RequestSubState10IfNotCurrent.c:
     complete
     .text       start:0x020cca88 end:0x020ccab4
 
-src/overlays/ov281/auto/func_ov281_020ccab4.c:
+src/overlays/ov281/auto/Ov281_RequestSubState11IfIdle.c:
     complete
     .text       start:0x020ccab4 end:0x020ccae4
 
-src/overlays/ov281/calls/func_ov281_020ccae4.c:
+src/overlays/ov281/calls/Ov281_ApplyAreaHit.c:
     complete
     .text       start:0x020ccae4 end:0x020ccd68
 
-src/overlays/ov281/calls/func_ov281_020ccd68.c:
+src/overlays/ov281/calls/Ov281_InitReactionSlots.c:
     complete
     .text       start:0x020ccd68 end:0x020cce20
 
-src/overlays/ov281/calls/func_ov281_020cce20.c:
+src/overlays/ov281/calls/Ov281_DispatchSubStateByte.c:
     complete
     .text       start:0x020cce20 end:0x020ccff0
 
-src/overlays/ov281/calls/func_ov281_020ccff0.c:
+src/overlays/ov281/calls/Ov281_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020ccff0 end:0x020cd08c
 
-src/overlays/ov281/calls/func_ov281_020cd08c.c:
+src/overlays/ov281/calls/Ov281_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cd08c end:0x020cd0f4
 
-src/overlays/ov281/calls/func_ov281_020cd0f4.c:
+src/overlays/ov281/calls/Ov281_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cd0f4 end:0x020cd130
 
-src/overlays/ov281/calls/func_ov281_020cd130.c:
+src/overlays/ov281/calls/Ov281_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020cd130 end:0x020cd1fc
 
-src/overlays/ov281/calls/func_ov281_020cd1fc.c:
+src/overlays/ov281/calls/Ov281_CompleteAction48Windup.c:
     complete
     .text       start:0x020cd1fc end:0x020cd2e0
 
-src/overlays/ov281/calls/func_ov281_020cd2e0.c:
+src/overlays/ov281/calls/Ov281_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd2e0 end:0x020cd314
 
-src/overlays/ov281/calls/func_ov281_020cd314.c:
+src/overlays/ov281/calls/Ov281_PickNextWaitTime.c:
     complete
     .text       start:0x020cd314 end:0x020cd378
 
-src/overlays/ov281/calls/func_ov281_020cd378.c:
+src/overlays/ov281/calls/Ov281_AimPickAttack.c:
     complete
     .text       start:0x020cd378 end:0x020cd4c8
 
-src/overlays/ov281/calls/func_ov281_020cd4c8.c:
+src/overlays/ov281/calls/Ov281_PickWaitAndResetCounter.c:
     complete
     .text       start:0x020cd4c8 end:0x020cd534
 
-src/overlays/ov281/calls/func_ov281_020cd534.c:
+src/overlays/ov281/calls/Ov281_AimApproachAndDispatch.c:
     complete
     .text       start:0x020cd534 end:0x020cd728
 
-src/overlays/ov281/calls/func_ov281_020cd728.c:
+src/overlays/ov281/calls/Ov281_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020cd728 end:0x020cd798
 
-src/overlays/ov281/calls/func_ov281_020cd798.c:
+src/overlays/ov281/calls/Ov281_CopyScaleVec3GuardedThenAdvance.c:
     complete
     .text       start:0x020cd798 end:0x020cd814
 
-src/overlays/ov281/calls/func_ov281_020cd814.c:
+src/overlays/ov281/calls/Ov281_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cd814 end:0x020cd870
 
-src/overlays/ov281/calls/func_ov281_020cd870.c:
+src/overlays/ov281/calls/Ov281_WindUpCharge.c:
     complete
     .text       start:0x020cd870 end:0x020cd98c
 
-src/overlays/ov281/calls/func_ov281_020cd98c.c:
+src/overlays/ov281/calls/Ov281_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020cd98c end:0x020cda08
 
-src/overlays/ov281/calls/func_ov281_020cda08.c:
+src/overlays/ov281/calls/Ov281_UpdateRotatingHitAction.c:
     complete
     .text       start:0x020cda08 end:0x020cdb9c
 
-src/overlays/ov281/calls/func_ov281_020cdb9c.c:
+src/overlays/ov281/calls/Ov281_AiStep_QueueAction2OnAnimEnd_2.c:
     complete
     .text       start:0x020cdb9c end:0x020cdbd0
 
-src/overlays/ov281/calls/func_ov281_020cdbd0.c:
+src/overlays/ov281/calls/Ov281_EnterMode7KickEffectThenAdvance.c:
     complete
     .text       start:0x020cdbd0 end:0x020cdc44
 
-src/overlays/ov281/calls/func_ov281_020cdc44.c:
+src/overlays/ov281/calls/Ov281_ApplyAimTransformThenAdvance.c:
     complete
     .text       start:0x020cdc44 end:0x020cdce0
 
-src/overlays/ov281/calls/func_ov281_020cdce0.c:
+src/overlays/ov281/calls/Ov281_ApplyAimThenClearFlag.c:
     complete
     .text       start:0x020cdce0 end:0x020cdd94
 
-src/overlays/ov281/calls/func_ov281_020cdd94.c:
+src/overlays/ov281/calls/Ov281_AiDelayThenAnim10.c:
     complete
     .text       start:0x020cdd94 end:0x020cdde0
 
-src/overlays/ov281/calls/func_ov281_020cdde0.c:
+src/overlays/ov281/calls/Ov281_AiStep_QueueAction2OnAnimEnd_3.c:
     complete
     .text       start:0x020cdde0 end:0x020cde14
 
-src/overlays/ov281/calls/func_ov281_020cde14.c:
+src/overlays/ov281/calls/Ov281_PlayCueAtOrigin.c:
     complete
     .text       start:0x020cde14 end:0x020cde7c
 
-src/overlays/ov281/calls/func_ov281_020cde7c.c:
+src/overlays/ov281/calls/Ov281_PoseClearFields18ThenAdvance.c:
     complete
     .text       start:0x020cde7c end:0x020cded0
 
-src/overlays/ov281/calls/func_ov281_020cded0.c:
+src/overlays/ov281/calls/Ov281_UpdateAimedHitAction.c:
     complete
     .text       start:0x020cded0 end:0x020ce0c4
 
-src/overlays/ov281/calls/func_ov281_020ce0c4.c:
+src/overlays/ov281/calls/Ov281_AiStep_QueueAction2OnAnimEnd_4.c:
     complete
     .text       start:0x020ce0c4 end:0x020ce0f8
 
-src/overlays/ov281/calls/func_ov281_020ce0f8.c:
+src/overlays/ov281/calls/Ov281_ConfigHw60FlagsBeginAction4b.c:
     complete
     .text       start:0x020ce0f8 end:0x020ce1c0
 
-src/overlays/ov281/calls/func_ov281_020ce1c0.c:
+src/overlays/ov281/calls/Ov281_BeginChargeStance.c:
     complete
     .text       start:0x020ce1c0 end:0x020ce284
 
-src/overlays/ov281/calls/func_ov281_020ce284.c:
+src/overlays/ov281/calls/Ov281_TimerGateHw60FlipThenAdvance.c:
     complete
     .text       start:0x020ce284 end:0x020ce318
 
-src/overlays/ov281/calls/func_ov281_020ce318.c:
+src/overlays/ov281/calls/Ov281_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020ce318 end:0x020ce34c
 
-src/overlays/ov281/calls/func_ov281_020ce34c.c:
+src/overlays/ov281/calls/Ov281_ReaimAndClose.c:
     complete
     .text       start:0x020ce34c end:0x020ce468
 

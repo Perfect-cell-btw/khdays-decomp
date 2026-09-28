@@ -6,15 +6,15 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov002_0206739c(void);
+extern void Ov002_ClosePageIfAllowed(void);
 extern void func_ov002_020673d4(void);
-extern void func_ov002_02067404(void);
+extern void Ov002_HandleHudPageKeys(void);
 
 Ov_Fn data_ov002_0207eed8[4] = {
 
-    func_ov002_02067404,
+    Ov002_HandleHudPageKeys,
 
-    func_ov002_0206739c,
+    Ov002_ClosePageIfAllowed,
 
     func_ov002_020673d4,
 

@@ -8,107 +8,107 @@ src/overlays/ov089/calls/func_ov089_020ba7c0.c:
     complete
     .text       start:0x020ba7c0 end:0x020ba7d4
 
-src/overlays/ov089/calls/func_ov089_020ba7d4.c:
+src/overlays/ov089/calls/Ov089_ClassCtor.c:
     complete
     .text       start:0x020ba7d4 end:0x020ba7fc
 
-src/overlays/ov089/calls/func_ov089_020ba7fc.c:
+src/overlays/ov089/calls/Ov089_ClassTeardown.c:
     complete
     .text       start:0x020ba7fc end:0x020ba810
 
-src/overlays/ov089/calls/func_ov089_020ba810.c:
+src/overlays/ov089/calls/Ov089_Boot.c:
     complete
     .text       start:0x020ba810 end:0x020baa4c
 
-src/overlays/ov089/calls/func_ov089_020baa4c.c:
+src/overlays/ov089/calls/Ov089_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020baa4c end:0x020baa84
 
-src/overlays/ov089/auto/func_ov089_020baa84.c:
+src/overlays/ov089/auto/Ov089_MapSlotKindToAnim.c:
     complete
     .text       start:0x020baa84 end:0x020baaac
 
-src/overlays/ov089/calls/func_ov089_020baaac.c:
+src/overlays/ov089/calls/Ov089_BuildRenderHandle.c:
     complete
     .text       start:0x020baaac end:0x020bab0c
 
-src/overlays/ov089/calls/func_ov089_020bab0c.c:
+src/overlays/ov089/calls/Ov089_initSubObjectSlots.c:
     complete
     .text       start:0x020bab0c end:0x020baba8
 
-src/overlays/ov089/calls/func_ov089_020baba8.c:
+src/overlays/ov089/calls/Ov089_refreshSubObjectSlots.c:
     complete
     .text       start:0x020baba8 end:0x020babec
 
-src/overlays/ov089/calls/func_ov089_020babec.c:
+src/overlays/ov089/calls/Ov089_dispatchStateTransitionCode.c:
     complete
     .text       start:0x020babec end:0x020bacb0
 
-src/overlays/ov089/calls/func_ov089_020bacb0.c:
+src/overlays/ov089/calls/Ov089_UpdateShotsByMode.c:
     complete
     .text       start:0x020bacb0 end:0x020bae80
 
-src/overlays/ov089/calls/func_ov089_020bae80.c:
+src/overlays/ov089/calls/Ov089_beginStateBindHandlers.c:
     complete
     .text       start:0x020bae80 end:0x020baf10
 
-src/overlays/ov089/calls/func_ov089_020baf10.c:
+src/overlays/ov089/calls/Ov089_HandleMsgAndReaimArc.c:
     complete
     .text       start:0x020baf10 end:0x020bb05c
 
-src/overlays/ov089/calls/func_ov089_020bb05c.c:
+src/overlays/ov089/calls/Ov089_activateAndComputeAimAngle.c:
     complete
     .text       start:0x020bb05c end:0x020bb164
 
-src/overlays/ov089/calls/func_ov089_020bb164.c:
+src/overlays/ov089/calls/Ov089_IdleStep.c:
     complete
     .text       start:0x020bb164 end:0x020bb3b0
 
-src/overlays/ov089/calls/func_ov089_020bb3b0.c:
+src/overlays/ov089/calls/Ov089_AttackStep.c:
     complete
     .text       start:0x020bb3b0 end:0x020bb5d8
 
-src/overlays/ov089/calls/func_ov089_020bb5d8.c:
+src/overlays/ov089/calls/Ov089_LandingStep.c:
     complete
     .text       start:0x020bb5d8 end:0x020bb7c0
 
-src/overlays/ov089/calls/func_ov089_020bb7c0.c:
+src/overlays/ov089/calls/Ov089_FireForwardBurst.c:
     complete
     .text       start:0x020bb7c0 end:0x020bb97c
 
-src/overlays/ov089/calls/func_ov089_020bb97c.c:
+src/overlays/ov089/calls/Ov089_FireRecoilBurst.c:
     complete
     .text       start:0x020bb97c end:0x020bbac8
 
-src/overlays/ov089/calls/func_ov089_020bbac8.c:
+src/overlays/ov089/calls/Ov089_FireSustainedBurst.c:
     complete
     .text       start:0x020bbac8 end:0x020bbc28
 
-src/overlays/ov089/calls/func_ov089_020bbc28.c:
+src/overlays/ov089/calls/Ov089_BindDefaultAnimsIfIdle.c:
     complete
     .text       start:0x020bbc28 end:0x020bbc90
 
-src/overlays/ov089/calls/func_ov089_020bbc90.c:
+src/overlays/ov089/calls/Ov089_UpdateGuardedSlots.c:
     complete
     .text       start:0x020bbc90 end:0x020bbd40
 
-src/overlays/ov089/calls/func_ov089_020bbd40.c:
+src/overlays/ov089/calls/Ov089_UpdateSlotsAndFlush.c:
     complete
     .text       start:0x020bbd40 end:0x020bbda4
 
-src/overlays/ov089/calls/func_ov089_020bbda4.c:
+src/overlays/ov089/calls/Ov089_LaunchProjectile.c:
     complete
     .text       start:0x020bbda4 end:0x020bbfd4
 
-src/overlays/ov089/calls/func_ov089_020bbfd4.c:
+src/overlays/ov089/calls/Ov089_ClearStateIfReadyWhenActive.c:
     complete
     .text       start:0x020bbfd4 end:0x020bc000
 
-src/overlays/ov089/calls/func_ov089_020bc000.c:
+src/overlays/ov089/calls/Ov089_DispatchWhenStateActive.c:
     complete
     .text       start:0x020bc000 end:0x020bc030
 
-src/overlays/ov089/calls/func_ov089_020bc030.c:
+src/overlays/ov089/calls/Ov089_InvokeWithDataTable.c:
     complete
     .text       start:0x020bc030 end:0x020bc048
 

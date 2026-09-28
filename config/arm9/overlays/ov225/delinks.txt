@@ -4,351 +4,351 @@
     .data       start:0x020d50e0 end:0x020d5140 kind:data align:32
     .bss        start:0x020d5140 end:0x020d5140 kind:bss align:32
 
-src/overlays/ov225/calls/func_ov225_020cfb60.c:
+src/overlays/ov225/calls/Ov225_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov225/calls/func_ov225_020cfb78.c:
+src/overlays/ov225/calls/Ov225_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc08
 
-src/overlays/ov225/calls/func_ov225_020cfc08.c:
+src/overlays/ov225/calls/Ov225_SyncPartNodesToJoint.c:
     complete
     .text       start:0x020cfc08 end:0x020cfd80
 
-src/overlays/ov225/calls/func_ov225_020cfd80.c:
+src/overlays/ov225/calls/Ov225_ArmModelCallback.c:
     complete
     .text       start:0x020cfd80 end:0x020cfdbc
 
-src/overlays/ov225/calls/func_ov225_020cfdbc.c:
+src/overlays/ov225/calls/Ov225_EnemyInit.c:
     complete
     .text       start:0x020cfdbc end:0x020d0214
 
-src/overlays/ov225/calls/func_ov225_020d0214.c:
+src/overlays/ov225/calls/Ov225_Destroy.c:
     complete
     .text       start:0x020d0214 end:0x020d026c
 
-src/overlays/ov225/calls/func_ov225_020d026c.c:
+src/overlays/ov225/calls/Ov225_TickWithChildRefresh.c:
     complete
     .text       start:0x020d026c end:0x020d0290
 
-src/overlays/ov225/calls/func_ov225_020d0290.c:
+src/overlays/ov225/calls/Ov225_ForwardEventToChildren.c:
     complete
     .text       start:0x020d0290 end:0x020d02d4
 
-src/overlays/ov225/calls/func_ov225_020d02d4.c:
+src/overlays/ov225/calls/Ov225_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d02d4 end:0x020d0318
 
-src/overlays/ov225/calls/func_ov225_020d0318.c:
+src/overlays/ov225/calls/Ov225_HandleMessage.c:
     complete
     .text       start:0x020d0318 end:0x020d05c4
 
-src/overlays/ov225/calls/func_ov225_020d05c4.c:
+src/overlays/ov225/calls/Ov225_ReleaseHeldSoundsAndTick.c:
     complete
     .text       start:0x020d05c4 end:0x020d0630
 
-src/overlays/ov225/calls/func_ov225_020d0630.c:
+src/overlays/ov225/calls/Ov225_RebindClip.c:
     complete
     .text       start:0x020d0630 end:0x020d06b4
 
-src/overlays/ov225/calls/func_ov225_020d06b4.c:
+src/overlays/ov225/calls/Ov225_CreateAiTask.c:
     complete
     .text       start:0x020d06b4 end:0x020d0710
 
-src/overlays/ov225/calls/func_ov225_020d0710.c:
+src/overlays/ov225/calls/Ov225_HandleHit.c:
     complete
     .text       start:0x020d0710 end:0x020d09ac
 
-src/overlays/ov225/auto/func_ov225_020d09ac.c:
+src/overlays/ov225/auto/Ov225_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020d09ac end:0x020d09d8
 
-src/overlays/ov225/auto/func_ov225_020d09d8.c:
+src/overlays/ov225/auto/Ov225_RequestSubState15IfIdle.c:
     complete
     .text       start:0x020d09d8 end:0x020d0a08
 
-src/overlays/ov225/calls/func_ov225_020d0a08.c:
+src/overlays/ov225/calls/Ov225_StrikeSweepEntities.c:
     complete
     .text       start:0x020d0a08 end:0x020d0d04
 
-src/overlays/ov225/calls/func_ov225_020d0d04.c:
+src/overlays/ov225/calls/Ov225_ChooseMove.c:
     complete
     .text       start:0x020d0d04 end:0x020d0f08
 
-src/overlays/ov225/calls/func_ov225_020d0f08.c:
+src/overlays/ov225/calls/Ov225_startAnim.c:
     complete
     .text       start:0x020d0f08 end:0x020d0f1c
 
-src/overlays/ov225/calls/func_ov225_020d0f1c.c:
+src/overlays/ov225/calls/Ov225_SetModeAndResetCounters.c:
     complete
     .text       start:0x020d0f1c end:0x020d0f94
 
-src/overlays/ov225/calls/func_ov225_020d0f94.c:
+src/overlays/ov225/calls/Ov225_RunSubStateScript.c:
     complete
     .text       start:0x020d0f94 end:0x020d127c
 
-src/overlays/ov225/calls/func_ov225_020d127c.c:
+src/overlays/ov225/calls/Ov225_MeasureTargetGap.c:
     complete
     .text       start:0x020d127c end:0x020d133c
 
-src/overlays/ov225/calls/func_ov225_020d133c.c:
+src/overlays/ov225/calls/Ov225_ResetSubObjectsAndArm.c:
     complete
     .text       start:0x020d133c end:0x020d1424
 
-src/overlays/ov225/calls/func_ov225_020d1424.c:
+src/overlays/ov225/calls/Ov225_AiDispatchAction.c:
     complete
     .text       start:0x020d1424 end:0x020d1764
 
-src/overlays/ov225/calls/func_ov225_020d1764.c:
+src/overlays/ov225/calls/Ov225_HoverTick.c:
     complete
     .text       start:0x020d1764 end:0x020d1aec
 
-src/overlays/ov225/calls/func_ov225_020d1aec.c:
+src/overlays/ov225/calls/Ov225_RaiseFlagsAndArmChildren.c:
     complete
     .text       start:0x020d1aec end:0x020d1b68
 
-src/overlays/ov225/calls/func_ov225_020d1b68.c:
+src/overlays/ov225/calls/Ov225_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d1b68 end:0x020d1bb8
 
-src/overlays/ov225/calls/func_ov225_020d1bb8.c:
+src/overlays/ov225/calls/Ov225_AiEnterWait.c:
     complete
     .text       start:0x020d1bb8 end:0x020d1c94
 
-src/overlays/ov225/calls/func_ov225_020d1c94.c:
+src/overlays/ov225/calls/Ov225_WaitThenAdvanceState.c:
     complete
     .text       start:0x020d1c94 end:0x020d1d14
 
-src/overlays/ov225/calls/func_ov225_020d1d14.c:
+src/overlays/ov225/calls/Ov225_AiRollTimerOnAnimEnd.c:
     complete
     .text       start:0x020d1d14 end:0x020d1da8
 
-src/overlays/ov225/calls/func_ov225_020d1da8.c:
+src/overlays/ov225/calls/Ov225_AiEnterCuedAnim.c:
     complete
     .text       start:0x020d1da8 end:0x020d1e14
 
-src/overlays/ov225/calls/func_ov225_020d1e14.c:
+src/overlays/ov225/calls/Ov225_SweepStrikeEntry.c:
     complete
     .text       start:0x020d1e14 end:0x020d1ed4
 
-src/overlays/ov225/calls/func_ov225_020d1ed4.c:
+src/overlays/ov225/calls/Ov225_AiEnterRetreatB.c:
     complete
     .text       start:0x020d1ed4 end:0x020d1f24
 
-src/overlays/ov225/calls/func_ov225_020d1f24.c:
+src/overlays/ov225/calls/Ov225_AiEnterRetreat.c:
     complete
     .text       start:0x020d1f24 end:0x020d1f8c
 
-src/overlays/ov225/calls/func_ov225_020d1f8c.c:
+src/overlays/ov225/calls/Ov225_RetreatTick.c:
     complete
     .text       start:0x020d1f8c end:0x020d2268
 
-src/overlays/ov225/calls/func_ov225_020d2268.c:
+src/overlays/ov225/calls/Ov225_AiEnterCooldown.c:
     complete
     .text       start:0x020d2268 end:0x020d22b0
 
-src/overlays/ov225/auto/func_ov225_020d22b0.c:
+src/overlays/ov225/auto/Ov225_AiCooldownTick.c:
     complete
     .text       start:0x020d22b0 end:0x020d22f0
 
-src/overlays/ov225/calls/func_ov225_020d22f0.c:
+src/overlays/ov225/calls/Ov225_Steer.c:
     complete
     .text       start:0x020d22f0 end:0x020d24ac
 
-src/overlays/ov225/calls/func_ov225_020d24ac.c:
+src/overlays/ov225/calls/Ov225_AiEnterChase.c:
     complete
     .text       start:0x020d24ac end:0x020d24e8
 
-src/overlays/ov225/calls/func_ov225_020d24e8.c:
+src/overlays/ov225/calls/Ov225_AiChaseTick.c:
     complete
     .text       start:0x020d24e8 end:0x020d2730
 
-src/overlays/ov225/calls/func_ov225_020d2730.c:
+src/overlays/ov225/calls/Ov225_GuardedAimOrHandoff.c:
     complete
     .text       start:0x020d2730 end:0x020d27fc
 
-src/overlays/ov225/calls/func_ov225_020d27fc.c:
+src/overlays/ov225/calls/Ov225_EnterSlam.c:
     complete
     .text       start:0x020d27fc end:0x020d2908
 
-src/overlays/ov225/calls/func_ov225_020d2908.c:
+src/overlays/ov225/calls/Ov225_SlamAimTick.c:
     complete
     .text       start:0x020d2908 end:0x020d2a80
 
-src/overlays/ov225/calls/func_ov225_020d2a80.c:
+src/overlays/ov225/calls/Ov225_SlamLanding.c:
     complete
     .text       start:0x020d2a80 end:0x020d2b74
 
-src/overlays/ov225/calls/func_ov225_020d2b74.c:
+src/overlays/ov225/calls/Ov225_EnterAttack.c:
     complete
     .text       start:0x020d2b74 end:0x020d2c1c
 
-src/overlays/ov225/calls/func_ov225_020d2c1c.c:
+src/overlays/ov225/calls/Ov225_SpawnWindupTick.c:
     complete
     .text       start:0x020d2c1c end:0x020d2f98
 
-src/overlays/ov225/calls/func_ov225_020d2f98.c:
+src/overlays/ov225/calls/Ov225_AiEnterChargeWindup.c:
     complete
     .text       start:0x020d2f98 end:0x020d3008
 
-src/overlays/ov225/calls/func_ov225_020d3008.c:
+src/overlays/ov225/calls/Ov225_ChargeWindupTick.c:
     complete
     .text       start:0x020d3008 end:0x020d3284
 
-src/overlays/ov225/calls/func_ov225_020d3284.c:
+src/overlays/ov225/calls/Ov225_ChargeTimerThenFire.c:
     complete
     .text       start:0x020d3284 end:0x020d3354
 
-src/overlays/ov225/calls/func_ov225_020d3354.c:
+src/overlays/ov225/calls/Ov225_DashTick.c:
     complete
     .text       start:0x020d3354 end:0x020d353c
 
-src/overlays/ov225/calls/func_ov225_020d353c.c:
+src/overlays/ov225/calls/Ov225_AiStep_QueueAction4OnAnimEnd.c:
     complete
     .text       start:0x020d353c end:0x020d3570
 
-src/overlays/ov225/calls/func_ov225_020d3570.c:
+src/overlays/ov225/calls/Ov225_AiEnterRecoilTurn.c:
     complete
     .text       start:0x020d3570 end:0x020d35c4
 
-src/overlays/ov225/calls/func_ov225_020d35c4.c:
+src/overlays/ov225/calls/Ov225_AiRecoilTurnWait.c:
     complete
     .text       start:0x020d35c4 end:0x020d3608
 
-src/overlays/ov225/calls/func_ov225_020d3608.c:
+src/overlays/ov225/calls/Ov225_AiRecoilTurnStart.c:
     complete
     .text       start:0x020d3608 end:0x020d3658
 
-src/overlays/ov225/calls/func_ov225_020d3658.c:
+src/overlays/ov225/calls/Ov225_TurnTick.c:
     complete
     .text       start:0x020d3658 end:0x020d37bc
 
-src/overlays/ov225/calls/func_ov225_020d37bc.c:
+src/overlays/ov225/calls/Ov225_AiEnterLeap.c:
     complete
     .text       start:0x020d37bc end:0x020d3900
 
-src/overlays/ov225/calls/func_ov225_020d3900.c:
+src/overlays/ov225/calls/Ov225_AiLeapWindup.c:
     complete
     .text       start:0x020d3900 end:0x020d3968
 
-src/overlays/ov225/calls/func_ov225_020d3968.c:
+src/overlays/ov225/calls/Ov225_LeapTick.c:
     complete
     .text       start:0x020d3968 end:0x020d3c38
 
-src/overlays/ov225/calls/func_ov225_020d3c38.c:
+src/overlays/ov225/calls/Ov225_AiEnterAttackB.c:
     complete
     .text       start:0x020d3c38 end:0x020d3c88
 
-src/overlays/ov225/calls/func_ov225_020d3c88.c:
+src/overlays/ov225/calls/Ov225_SlamTick.c:
     complete
     .text       start:0x020d3c88 end:0x020d3d84
 
-src/overlays/ov225/calls/func_ov225_020d3d84.c:
+src/overlays/ov225/calls/Ov225_AiEnterCuedAnimB.c:
     complete
     .text       start:0x020d3d84 end:0x020d3dc4
 
-src/overlays/ov225/calls/func_ov225_020d3dc4.c:
+src/overlays/ov225/calls/Ov225_AiCuedAnimTickB.c:
     complete
     .text       start:0x020d3dc4 end:0x020d3e7c
 
-src/overlays/ov225/calls/func_ov225_020d3e7c.c:
+src/overlays/ov225/calls/Ov225_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d3e7c end:0x020d3f54
 
-src/overlays/ov225/calls/func_ov225_020d3f54.c:
+src/overlays/ov225/calls/Ov225_AiStep_QueueAction0.c:
     complete
     .text       start:0x020d3f54 end:0x020d3f74
 
-src/overlays/ov225/calls/func_ov225_020d3f74.c:
+src/overlays/ov225/calls/Ov225_AiEnterHold.c:
     complete
     .text       start:0x020d3f74 end:0x020d404c
 
-src/overlays/ov225/calls/func_ov225_020d404c.c:
+src/overlays/ov225/calls/Ov225_AiHoldTick.c:
     complete
     .text       start:0x020d404c end:0x020d40e0
 
-src/overlays/ov225/calls/func_ov225_020d40e0.c:
+src/overlays/ov225/calls/Ov225_AiEnterApproach.c:
     complete
     .text       start:0x020d40e0 end:0x020d4110
 
-src/overlays/ov225/calls/func_ov225_020d4110.c:
+src/overlays/ov225/calls/Ov225_AiApproachTick.c:
     complete
     .text       start:0x020d4110 end:0x020d4224
 
-src/overlays/ov225/calls/func_ov225_020d4224.c:
+src/overlays/ov225/calls/Ov225_Projectile_Fire.c:
     complete
     .text       start:0x020d4224 end:0x020d42d8
 
-src/overlays/ov225/calls/func_ov225_020d42d8.c:
+src/overlays/ov225/calls/Ov225_Projectile_New.c:
     complete
     .text       start:0x020d42d8 end:0x020d430c
 
-src/overlays/ov225/calls/func_ov225_020d430c.c:
+src/overlays/ov225/calls/Ov225_Construct.c:
     complete
     .text       start:0x020d430c end:0x020d4504
 
-src/overlays/ov225/calls/func_ov225_020d4504.c:
+src/overlays/ov225/calls/Ov225_Projectile_Destroy.c:
     complete
     .text       start:0x020d4504 end:0x020d4538
 
-src/overlays/ov225/calls/func_ov225_020d4538.c:
+src/overlays/ov225/calls/Ov225_Projectile_TickSyncXform.c:
     complete
     .text       start:0x020d4538 end:0x020d459c
 
-src/overlays/ov225/calls/func_ov225_020d459c.c:
+src/overlays/ov225/calls/Ov225_CmdSpawnChild.c:
     complete
     .text       start:0x020d459c end:0x020d468c
 
-src/overlays/ov225/calls/func_ov225_020d468c.c:
+src/overlays/ov225/calls/Ov225_Projectile_SetupFlight.c:
     complete
     .text       start:0x020d468c end:0x020d4728
 
-src/overlays/ov225/calls/func_ov225_020d4728.c:
+src/overlays/ov225/calls/Ov225_Projectile_CreateAiTask.c:
     complete
     .text       start:0x020d4728 end:0x020d4784
 
-src/overlays/ov225/calls/func_ov225_020d4784.c:
+src/overlays/ov225/calls/Ov225_ForwardVecToOwner.c:
     complete
     .text       start:0x020d4784 end:0x020d47cc
 
-src/overlays/ov225/calls/func_ov225_020d47cc.c:
+src/overlays/ov225/calls/Ov225_SweepStrike.c:
     complete
     .text       start:0x020d47cc end:0x020d48d4
 
-src/overlays/ov225/calls/func_ov225_020d48d4.c:
+src/overlays/ov225/calls/Ov225_stateInitClearSlots.c:
     complete
     .text       start:0x020d48d4 end:0x020d497c
 
-src/overlays/ov225/calls/func_ov225_020d497c.c:
+src/overlays/ov225/calls/Ov225_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d497c end:0x020d49f4
 
-src/overlays/ov225/calls/func_ov225_020d49f4.c:
+src/overlays/ov225/calls/Ov225_Projectile_ApplyOrientation.c:
     complete
     .text       start:0x020d49f4 end:0x020d4a54
 
-src/overlays/ov225/calls/func_ov225_020d4a54.c:
+src/overlays/ov225/calls/Ov225_EnterReaction.c:
     complete
     .text       start:0x020d4a54 end:0x020d4b10
 
-src/overlays/ov225/auto/func_ov225_020d4b10.c:
+src/overlays/ov225/auto/Ov225_ReactionIdleStep.c:
     complete
     .text       start:0x020d4b10 end:0x020d4b14
 
-src/overlays/ov225/calls/func_ov225_020d4b14.c:
+src/overlays/ov225/calls/Ov225_EnterChargeState.c:
     complete
     .text       start:0x020d4b14 end:0x020d4c3c
 
-src/overlays/ov225/calls/func_ov225_020d4c3c.c:
+src/overlays/ov225/calls/Ov225_ProjectileTick.c:
     complete
     .text       start:0x020d4c3c end:0x020d4e8c
 
-src/overlays/ov225/calls/func_ov225_020d4e8c.c:
+src/overlays/ov225/calls/Ov225_SpinLungeTick.c:
     complete
     .text       start:0x020d4e8c end:0x020d4fc0
 
-src/overlays/ov225/calls/func_ov225_020d4fc0.c:
+src/overlays/ov225/calls/Ov225_Projectile_FlightTick.c:
     complete
     .text       start:0x020d4fc0 end:0x020d5094
 

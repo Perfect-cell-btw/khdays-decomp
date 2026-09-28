@@ -4,131 +4,131 @@
     .data       start:0x020d6460 end:0x020d64e0 kind:data align:32
     .bss        start:0x020d64e0 end:0x020d64e0 kind:bss align:32
 
-src/overlays/ov278/calls/func_ov278_020cbf20.c:
+src/overlays/ov278/calls/Ov278_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov278/calls/func_ov278_020cbf38.c:
+src/overlays/ov278/calls/Ov278_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov278/calls/func_ov278_020cbfc4.c:
+src/overlays/ov278/calls/Ov278_SetupModelPoses.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc110
 
-src/overlays/ov278/calls/func_ov278_020cc110.c:
+src/overlays/ov278/calls/Ov278_RenderAtOwnerModel.c:
     complete
     .text       start:0x020cc110 end:0x020cc154
 
-src/overlays/ov278/calls/func_ov278_020cc154.c:
+src/overlays/ov278/calls/Ov278_Construct.c:
     complete
     .text       start:0x020cc154 end:0x020cc5c0
 
-src/overlays/ov278/calls/func_ov278_020cc5c0.c:
+src/overlays/ov278/calls/Ov278_Destroy.c:
     complete
     .text       start:0x020cc5c0 end:0x020cc630
 
-src/overlays/ov278/calls/func_ov278_020cc630.c:
+src/overlays/ov278/calls/Ov278_UpdateShadowA.c:
     complete
     .text       start:0x020cc630 end:0x020cc6f8
 
-src/overlays/ov278/calls/func_ov278_020cc6f8.c:
+src/overlays/ov278/calls/Ov278_RemoveFromDrawList.c:
     complete
     .text       start:0x020cc6f8 end:0x020cc838
 
-src/overlays/ov278/calls/func_ov278_020cc838.c:
+src/overlays/ov278/calls/Ov278_VisitSubObjects.c:
     complete
     .text       start:0x020cc838 end:0x020cc86c
 
-src/overlays/ov278/calls/func_ov278_020cc86c.c:
+src/overlays/ov278/calls/Ov278_HandleMessage.c:
     complete
     .text       start:0x020cc86c end:0x020cca44
 
-src/overlays/ov278/calls/func_ov278_020cca44.c:
+src/overlays/ov278/calls/Ov278_PlayRiderMove.c:
     complete
     .text       start:0x020cca44 end:0x020ccd14
 
-src/overlays/ov278/calls/func_ov278_020ccd14.c:
+src/overlays/ov278/calls/Ov278_ForwardHitToSubObjects.c:
     complete
     .text       start:0x020ccd14 end:0x020ccd68
 
-src/overlays/ov278/calls/func_ov278_020ccd68.c:
+src/overlays/ov278/calls/Ov278_SyncRiderHitPoints.c:
     complete
     .text       start:0x020ccd68 end:0x020cce20
 
-src/overlays/ov278/calls/func_ov278_020cce20.c:
+src/overlays/ov278/calls/Ov278_New.c:
     complete
     .text       start:0x020cce20 end:0x020cce54
 
-src/overlays/ov278/calls/func_ov278_020cce54.c:
+src/overlays/ov278/calls/Ov278_FrontRidersConstruct.c:
     complete
     .text       start:0x020cce54 end:0x020cd300
 
-src/overlays/ov278/calls/func_ov278_020cd300.c:
+src/overlays/ov278/calls/Ov278_Destroy_2.c:
     complete
     .text       start:0x020cd300 end:0x020cd368
 
-src/overlays/ov278/calls/func_ov278_020cd368.c:
+src/overlays/ov278/calls/Ov278_UpdateShadowB.c:
     complete
     .text       start:0x020cd368 end:0x020cd450
 
-src/overlays/ov278/calls/func_ov278_020cd450.c:
+src/overlays/ov278/calls/Ov278_InitModelPoses.c:
     complete
     .text       start:0x020cd450 end:0x020cd508
 
-src/overlays/ov278/calls/func_ov278_020cd508.c:
+src/overlays/ov278/calls/Ov278_SendStatusWithPos.c:
     complete
     .text       start:0x020cd508 end:0x020cd5a0
 
-src/overlays/ov278/calls/func_ov278_020cd5a0.c:
+src/overlays/ov278/calls/Ov278_HandleRiderMessage.c:
     complete
     .text       start:0x020cd5a0 end:0x020cd780
 
-src/overlays/ov278/calls/func_ov278_020cd780.c:
+src/overlays/ov278/calls/Ov278_TeardownHook.c:
     complete
     .text       start:0x020cd780 end:0x020cd834
 
-src/overlays/ov278/calls/func_ov278_020cd834.c:
+src/overlays/ov278/calls/Ov278_Release.c:
     complete
     .text       start:0x020cd834 end:0x020cd8cc
 
-src/overlays/ov278/calls/func_ov278_020cd8cc.c:
+src/overlays/ov278/calls/Ov278_CopyPoseFromParent394.c:
     complete
     .text       start:0x020cd8cc end:0x020cd918
 
-src/overlays/ov278/calls/func_ov278_020cd918.c:
+src/overlays/ov278/calls/Ov278_RebuildRiderListsA.c:
     complete
     .text       start:0x020cd918 end:0x020cda7c
 
-src/overlays/ov278/calls/func_ov278_020cda7c.c:
+src/overlays/ov278/calls/Ov278_RiderPresenceHook.c:
     complete
     .text       start:0x020cda7c end:0x020cdc84
 
-src/overlays/ov278/calls/func_ov278_020cdc84.c:
+src/overlays/ov278/calls/Ov278_New_2.c:
     complete
     .text       start:0x020cdc84 end:0x020cdcb8
 
-src/overlays/ov278/calls/func_ov278_020cdcb8.c:
+src/overlays/ov278/calls/Ov278_RearRidersConstruct.c:
     complete
     .text       start:0x020cdcb8 end:0x020ce1c0
 
-src/overlays/ov278/calls/func_ov278_020ce1c0.c:
+src/overlays/ov278/calls/Ov278_Destroy_3.c:
     complete
     .text       start:0x020ce1c0 end:0x020ce230
 
-src/overlays/ov278/calls/func_ov278_020ce230.c:
+src/overlays/ov278/calls/Ov278_UpdateShadow.c:
     complete
     .text       start:0x020ce230 end:0x020ce2d0
 
-src/overlays/ov278/calls/func_ov278_020ce2d0.c:
+src/overlays/ov278/calls/Ov278_InitRiderAnchors.c:
     complete
     .text       start:0x020ce2d0 end:0x020ce430
 
-src/overlays/ov278/calls/func_ov278_020ce430.c:
+src/overlays/ov278/calls/Ov278_SendStatusWithPosB.c:
     complete
     .text       start:0x020ce430 end:0x020ce4c8
 
-src/overlays/ov278/calls/func_ov278_020ce4c8.c:
+src/overlays/ov278/calls/Ov278_HandleRiderMessageB.c:
     complete
     .text       start:0x020ce4c8 end:0x020ce6fc
 
@@ -136,483 +136,483 @@ src/overlays/ov278/calls/func_ov278_020ce6fc.c:
     complete
     .text       start:0x020ce6fc end:0x020ce708
 
-src/overlays/ov278/calls/func_ov278_020ce708.c:
+src/overlays/ov278/calls/Ov278_SuspendSubObjects.c:
     complete
     .text       start:0x020ce708 end:0x020ce7d4
 
-src/overlays/ov278/calls/func_ov278_020ce7d4.c:
+src/overlays/ov278/calls/Ov278_CopyPoseFromParent384.c:
     complete
     .text       start:0x020ce7d4 end:0x020ce820
 
-src/overlays/ov278/calls/func_ov278_020ce820.c:
+src/overlays/ov278/calls/Ov278_RebuildRiderListsB.c:
     complete
     .text       start:0x020ce820 end:0x020ce984
 
-src/overlays/ov278/calls/func_ov278_020ce984.c:
+src/overlays/ov278/calls/Ov278_RefreshRearRiders.c:
     complete
     .text       start:0x020ce984 end:0x020ced5c
 
-src/overlays/ov278/calls/func_ov278_020ced5c.c:
+src/overlays/ov278/calls/Ov278_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020ced5c end:0x020cedb8
 
-src/overlays/ov278/calls/func_ov278_020cedb8.c:
+src/overlays/ov278/calls/Ov278_MountHitFilter.c:
     complete
     .text       start:0x020cedb8 end:0x020cf3b8
 
-src/overlays/ov278/calls/func_ov278_020cf3b8.c:
+src/overlays/ov278/calls/Ov278_InitMountState.c:
     complete
     .text       start:0x020cf3b8 end:0x020cf4b4
 
-src/overlays/ov278/calls/func_ov278_020cf4b4.c:
+src/overlays/ov278/calls/Ov278_MountMoveDispatch.c:
     complete
     .text       start:0x020cf4b4 end:0x020cf984
 
-src/overlays/ov278/calls/func_ov278_020cf984.c:
+src/overlays/ov278/calls/Ov278_MountStep.c:
     complete
     .text       start:0x020cf984 end:0x020cfa30
 
-src/overlays/ov278/calls/func_ov278_020cfa30.c:
+src/overlays/ov278/calls/Ov278_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cfa30 end:0x020cfa98
 
-src/overlays/ov278/calls/func_ov278_020cfa98.c:
+src/overlays/ov278/calls/Ov278_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cfa98 end:0x020cfad4
 
-src/overlays/ov278/calls/func_ov278_020cfad4.c:
+src/overlays/ov278/calls/Ov278_AiEnterRest.c:
     complete
     .text       start:0x020cfad4 end:0x020cfb30
 
-src/overlays/ov278/auto/func_ov278_020cfb30.c:
+src/overlays/ov278/auto/Ov278_SetChild1c7Byte2.c:
     complete
     .text       start:0x020cfb30 end:0x020cfb44
 
-src/overlays/ov278/calls/func_ov278_020cfb44.c:
+src/overlays/ov278/calls/Ov278_EnterRoll.c:
     complete
     .text       start:0x020cfb44 end:0x020cfc0c
 
-src/overlays/ov278/calls/func_ov278_020cfc0c.c:
+src/overlays/ov278/calls/Ov278_RollTick.c:
     complete
     .text       start:0x020cfc0c end:0x020cfd5c
 
-src/overlays/ov278/calls/func_ov278_020cfd5c.c:
+src/overlays/ov278/calls/Ov278_AiPrepareJump.c:
     complete
     .text       start:0x020cfd5c end:0x020cfdb8
 
-src/overlays/ov278/calls/func_ov278_020cfdb8.c:
+src/overlays/ov278/calls/Ov278_EnterJump.c:
     complete
     .text       start:0x020cfdb8 end:0x020cfef8
 
-src/overlays/ov278/calls/func_ov278_020cfef8.c:
+src/overlays/ov278/calls/Ov278_JumpTick.c:
     complete
     .text       start:0x020cfef8 end:0x020cffa4
 
-src/overlays/ov278/calls/func_ov278_020cffa4.c:
+src/overlays/ov278/calls/Ov278_AiEnterTailSweep.c:
     complete
     .text       start:0x020cffa4 end:0x020d000c
 
-src/overlays/ov278/calls/func_ov278_020d000c.c:
+src/overlays/ov278/calls/Ov278_TailSweepTick.c:
     complete
     .text       start:0x020d000c end:0x020d039c
 
-src/overlays/ov278/calls/func_ov278_020d039c.c:
+src/overlays/ov278/calls/Ov278_EnterCharge.c:
     complete
     .text       start:0x020d039c end:0x020d041c
 
-src/overlays/ov278/calls/func_ov278_020d041c.c:
+src/overlays/ov278/calls/Ov278_AiReleaseRidersOnAnimEnd.c:
     complete
     .text       start:0x020d041c end:0x020d0480
 
-src/overlays/ov278/calls/func_ov278_020d0480.c:
+src/overlays/ov278/calls/Ov278_ChargeEnter.c:
     complete
     .text       start:0x020d0480 end:0x020d058c
 
-src/overlays/ov278/calls/func_ov278_020d058c.c:
+src/overlays/ov278/calls/Ov278_ChargeTick.c:
     complete
     .text       start:0x020d058c end:0x020d0700
 
-src/overlays/ov278/auto/func_ov278_020d0700.c:
+src/overlays/ov278/auto/Ov278_ReleaseRiderItems.c:
     complete
     .text       start:0x020d0700 end:0x020d0810
 
-src/overlays/ov278/calls/func_ov278_020d0810.c:
+src/overlays/ov278/calls/Ov278_AiEnterRoar.c:
     complete
     .text       start:0x020d0810 end:0x020d08b0
 
-src/overlays/ov278/calls/func_ov278_020d08b0.c:
+src/overlays/ov278/calls/Ov278_RoarWaitTick.c:
     complete
     .text       start:0x020d08b0 end:0x020d0a30
 
-src/overlays/ov278/calls/func_ov278_020d0a30.c:
+src/overlays/ov278/calls/Ov278_RoarTick.c:
     complete
     .text       start:0x020d0a30 end:0x020d0ad4
 
-src/overlays/ov278/calls/func_ov278_020d0ad4.c:
+src/overlays/ov278/calls/Ov278_AiEnterSurprised.c:
     complete
     .text       start:0x020d0ad4 end:0x020d0b3c
 
-src/overlays/ov278/calls/func_ov278_020d0b3c.c:
+src/overlays/ov278/calls/Ov278_AiStartRollingCharge.c:
     complete
     .text       start:0x020d0b3c end:0x020d0bac
 
-src/overlays/ov278/calls/func_ov278_020d0bac.c:
+src/overlays/ov278/calls/Ov278_RollingChargeTick.c:
     complete
     .text       start:0x020d0bac end:0x020d10c8
 
-src/overlays/ov278/calls/func_ov278_020d10c8.c:
+src/overlays/ov278/calls/Ov278_ReactDecayAimAndCancelAction.c:
     complete
     .text       start:0x020d10c8 end:0x020d1134
 
-src/overlays/ov278/calls/func_ov278_020d1134.c:
+src/overlays/ov278/calls/Ov278_ReactDecayAimAndSetState.c:
     complete
     .text       start:0x020d1134 end:0x020d119c
 
-src/overlays/ov278/calls/func_ov278_020d119c.c:
+src/overlays/ov278/calls/Ov278_AiEnterDown.c:
     complete
     .text       start:0x020d119c end:0x020d11fc
 
-src/overlays/ov278/calls/func_ov278_020d11fc.c:
+src/overlays/ov278/calls/Ov278_AiDownLoopStart.c:
     complete
     .text       start:0x020d11fc end:0x020d1264
 
-src/overlays/ov278/calls/func_ov278_020d1264.c:
+src/overlays/ov278/calls/Ov278_AiDownTick.c:
     complete
     .text       start:0x020d1264 end:0x020d12f0
 
-src/overlays/ov278/calls/func_ov278_020d12f0.c:
+src/overlays/ov278/calls/Ov278_AiDownPickNext.c:
     complete
     .text       start:0x020d12f0 end:0x020d1384
 
-src/overlays/ov278/calls/func_ov278_020d1384.c:
+src/overlays/ov278/calls/Ov278_AiHidePartsAndEnd.c:
     complete
     .text       start:0x020d1384 end:0x020d1400
 
-src/overlays/ov278/calls/func_ov278_020d1400.c:
+src/overlays/ov278/calls/Ov278_AiEnterDash.c:
     complete
     .text       start:0x020d1400 end:0x020d1478
 
-src/overlays/ov278/calls/func_ov278_020d1478.c:
+src/overlays/ov278/calls/Ov278_DashTick.c:
     complete
     .text       start:0x020d1478 end:0x020d1550
 
-src/overlays/ov278/calls/func_ov278_020d1550.c:
+src/overlays/ov278/calls/Ov278_DashSteerTick.c:
     complete
     .text       start:0x020d1550 end:0x020d16b8
 
-src/overlays/ov278/calls/func_ov278_020d16b8.c:
+src/overlays/ov278/calls/Ov278_SpawnStep.c:
     complete
     .text       start:0x020d16b8 end:0x020d16fc
 
-src/overlays/ov278/calls/func_ov278_020d16fc.c:
+src/overlays/ov278/calls/Ov278_AiEnterLunge.c:
     complete
     .text       start:0x020d16fc end:0x020d176c
 
-src/overlays/ov278/calls/func_ov278_020d176c.c:
+src/overlays/ov278/calls/Ov278_LungeTick.c:
     complete
     .text       start:0x020d176c end:0x020d17fc
 
-src/overlays/ov278/calls/func_ov278_020d17fc.c:
+src/overlays/ov278/calls/Ov278_CreateAiTask.c:
     complete
     .text       start:0x020d17fc end:0x020d1848
 
-src/overlays/ov278/calls/func_ov278_020d1848.c:
+src/overlays/ov278/calls/Ov278_RiderHitFilter.c:
     complete
     .text       start:0x020d1848 end:0x020d1c50
 
-src/overlays/ov278/calls/func_ov278_020d1c50.c:
+src/overlays/ov278/calls/Ov278_InitRiderStateA.c:
     complete
     .text       start:0x020d1c50 end:0x020d1d4c
 
-src/overlays/ov278/calls/func_ov278_020d1d4c.c:
+src/overlays/ov278/calls/Ov278_AiDispatchAction.c:
     complete
     .text       start:0x020d1d4c end:0x020d2024
 
-src/overlays/ov278/calls/func_ov278_020d2024.c:
+src/overlays/ov278/calls/Ov278_RideStepA.c:
     complete
     .text       start:0x020d2024 end:0x020d20e4
 
-src/overlays/ov278/calls/func_ov278_020d20e4.c:
+src/overlays/ov278/calls/Ov278_SetFlagsC6ClearBits.c:
     complete
     .text       start:0x020d20e4 end:0x020d2174
 
-src/overlays/ov278/calls/func_ov278_020d2174.c:
+src/overlays/ov278/calls/Ov278_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020d2174 end:0x020d21b0
 
-src/overlays/ov278/calls/func_ov278_020d21b0.c:
+src/overlays/ov278/calls/Ov278_AiEnterInert.c:
     complete
     .text       start:0x020d21b0 end:0x020d220c
 
-src/overlays/ov278/auto/func_ov278_020d220c.c:
+src/overlays/ov278/auto/Ov278_InertIdleStep.c:
     complete
     .text       start:0x020d220c end:0x020d2210
 
-src/overlays/ov278/calls/func_ov278_020d2210.c:
+src/overlays/ov278/calls/Ov278_AiPlayIdleAndEnd.c:
     complete
     .text       start:0x020d2210 end:0x020d2240
 
-src/overlays/ov278/calls/func_ov278_020d2240.c:
+src/overlays/ov278/calls/Ov278_AiEnterFire.c:
     complete
     .text       start:0x020d2240 end:0x020d2274
 
-src/overlays/ov278/calls/func_ov278_020d2274.c:
+src/overlays/ov278/calls/Ov278_AiFireWait.c:
     complete
     .text       start:0x020d2274 end:0x020d22b4
 
-src/overlays/ov278/calls/func_ov278_020d22b4.c:
+src/overlays/ov278/calls/Ov278_AiPlayAnim12AndEnd.c:
     complete
     .text       start:0x020d22b4 end:0x020d22e4
 
-src/overlays/ov278/calls/func_ov278_020d22e4.c:
+src/overlays/ov278/calls/Ov278_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d22e4 end:0x020d2318
 
-src/overlays/ov278/calls/func_ov278_020d2318.c:
+src/overlays/ov278/calls/Ov278_AiFaceForwardQueue9.c:
     complete
     .text       start:0x020d2318 end:0x020d239c
 
-src/overlays/ov278/calls/func_ov278_020d239c.c:
+src/overlays/ov278/calls/Ov278_AiEnterSeek.c:
     complete
     .text       start:0x020d239c end:0x020d23dc
 
-src/overlays/ov278/calls/func_ov278_020d23dc.c:
+src/overlays/ov278/calls/Ov278_AiSeekTick.c:
     complete
     .text       start:0x020d23dc end:0x020d2420
 
-src/overlays/ov278/calls/func_ov278_020d2420.c:
+src/overlays/ov278/calls/Ov278_AiEnterApproach.c:
     complete
     .text       start:0x020d2420 end:0x020d2490
 
-src/overlays/ov278/calls/func_ov278_020d2490.c:
+src/overlays/ov278/calls/Ov278_ApproachTick.c:
     complete
     .text       start:0x020d2490 end:0x020d25dc
 
-src/overlays/ov278/calls/func_ov278_020d25dc.c:
+src/overlays/ov278/calls/Ov278_StrafeTick.c:
     complete
     .text       start:0x020d25dc end:0x020d27c4
 
-src/overlays/ov278/calls/func_ov278_020d27c4.c:
+src/overlays/ov278/calls/Ov278_AiEnterChargeIn.c:
     complete
     .text       start:0x020d27c4 end:0x020d27fc
 
-src/overlays/ov278/calls/func_ov278_020d27fc.c:
+src/overlays/ov278/calls/Ov278_ChargeInTick.c:
     complete
     .text       start:0x020d27fc end:0x020d296c
 
-src/overlays/ov278/calls/func_ov278_020d296c.c:
+src/overlays/ov278/calls/Ov278_PublishPounceLanding.c:
     complete
     .text       start:0x020d296c end:0x020d29dc
 
-src/overlays/ov278/calls/func_ov278_020d29dc.c:
+src/overlays/ov278/calls/Ov278_StompLandingTick.c:
     complete
     .text       start:0x020d29dc end:0x020d2cdc
 
-src/overlays/ov278/calls/func_ov278_020d2cdc.c:
+src/overlays/ov278/calls/Ov278_EnterBuck.c:
     complete
     .text       start:0x020d2cdc end:0x020d2e88
 
-src/overlays/ov278/calls/func_ov278_020d2e88.c:
+src/overlays/ov278/calls/Ov278_BuckTick.c:
     complete
     .text       start:0x020d2e88 end:0x020d30a8
 
-src/overlays/ov278/calls/func_ov278_020d30a8.c:
+src/overlays/ov278/calls/Ov278_RecoveryWaitA.c:
     complete
     .text       start:0x020d30a8 end:0x020d3194
 
-src/overlays/ov278/calls/func_ov278_020d3194.c:
+src/overlays/ov278/calls/Ov278_RiderWatchTickA.c:
     complete
     .text       start:0x020d3194 end:0x020d326c
 
-src/overlays/ov278/calls/func_ov278_020d326c.c:
+src/overlays/ov278/calls/Ov278_ReleaseRiderA.c:
     complete
     .text       start:0x020d326c end:0x020d3348
 
-src/overlays/ov278/calls/func_ov278_020d3348.c:
+src/overlays/ov278/calls/Ov278_AiEnterReaction.c:
     complete
     .text       start:0x020d3348 end:0x020d337c
 
-src/overlays/ov278/calls/func_ov278_020d337c.c:
+src/overlays/ov278/calls/Ov278_ReactionStepNotify.c:
     complete
     .text       start:0x020d337c end:0x020d33f4
 
-src/overlays/ov278/calls/func_ov278_020d33f4.c:
+src/overlays/ov278/calls/Ov278_ClawSwipeTick.c:
     complete
     .text       start:0x020d33f4 end:0x020d3698
 
-src/overlays/ov278/calls/func_ov278_020d3698.c:
+src/overlays/ov278/calls/Ov278_AiStep_StartTag15.c:
     complete
     .text       start:0x020d3698 end:0x020d36cc
 
-src/overlays/ov278/calls/func_ov278_020d36cc.c:
+src/overlays/ov278/calls/Ov278_AiQueue2OnAnimEnd.c:
     complete
     .text       start:0x020d36cc end:0x020d3700
 
-src/overlays/ov278/calls/func_ov278_020d3700.c:
+src/overlays/ov278/calls/Ov278_CreateAiTask_2.c:
     complete
     .text       start:0x020d3700 end:0x020d374c
 
-src/overlays/ov278/calls/func_ov278_020d374c.c:
+src/overlays/ov278/calls/Ov278_RiderHitFilterB.c:
     complete
     .text       start:0x020d374c end:0x020d3b54
 
-src/overlays/ov278/calls/func_ov278_020d3b54.c:
+src/overlays/ov278/calls/Ov278_InitRiderStateB.c:
     complete
     .text       start:0x020d3b54 end:0x020d3c44
 
-src/overlays/ov278/calls/func_ov278_020d3c44.c:
+src/overlays/ov278/calls/Ov278_RearMoveDispatch.c:
     complete
     .text       start:0x020d3c44 end:0x020d3f04
 
-src/overlays/ov278/calls/func_ov278_020d3f04.c:
+src/overlays/ov278/calls/Ov278_RideStepB.c:
     complete
     .text       start:0x020d3f04 end:0x020d3fc4
 
-src/overlays/ov278/calls/func_ov278_020d3fc4.c:
+src/overlays/ov278/calls/Ov278_SetFlagsC6ClearBits_b.c:
     complete
     .text       start:0x020d3fc4 end:0x020d4054
 
-src/overlays/ov278/calls/func_ov278_020d4054.c:
+src/overlays/ov278/calls/Ov278_AiStep_ResumeStoredAction_2.c:
     complete
     .text       start:0x020d4054 end:0x020d4090
 
-src/overlays/ov278/calls/func_ov278_020d4090.c:
+src/overlays/ov278/calls/Ov278_AiEnterInert_2.c:
     complete
     .text       start:0x020d4090 end:0x020d40ec
 
-src/overlays/ov278/auto/func_ov278_020d40ec.c:
+src/overlays/ov278/auto/Ov278_InertIdleStep_2.c:
     complete
     .text       start:0x020d40ec end:0x020d40f0
 
-src/overlays/ov278/calls/func_ov278_020d40f0.c:
+src/overlays/ov278/calls/Ov278_AiPlayIdleAndEnd_2.c:
     complete
     .text       start:0x020d40f0 end:0x020d4120
 
-src/overlays/ov278/calls/func_ov278_020d4120.c:
+src/overlays/ov278/calls/Ov278_AiEnterFire_2.c:
     complete
     .text       start:0x020d4120 end:0x020d415c
 
-src/overlays/ov278/calls/func_ov278_020d415c.c:
+src/overlays/ov278/calls/Ov278_RiderFireTickB.c:
     complete
     .text       start:0x020d415c end:0x020d42b4
 
-src/overlays/ov278/calls/func_ov278_020d42b4.c:
+src/overlays/ov278/calls/Ov278_AiPlayAnim12AndEnd_2.c:
     complete
     .text       start:0x020d42b4 end:0x020d42e4
 
-src/overlays/ov278/calls/func_ov278_020d42e4.c:
+src/overlays/ov278/calls/Ov278_SetPose4ThenAdvanceSlot_2.c:
     complete
     .text       start:0x020d42e4 end:0x020d4318
 
-src/overlays/ov278/calls/func_ov278_020d4318.c:
+src/overlays/ov278/calls/Ov278_AiFaceForwardQueue9_2.c:
     complete
     .text       start:0x020d4318 end:0x020d439c
 
-src/overlays/ov278/calls/func_ov278_020d439c.c:
+src/overlays/ov278/calls/Ov278_AiEnterSeek_2.c:
     complete
     .text       start:0x020d439c end:0x020d43ec
 
-src/overlays/ov278/calls/func_ov278_020d43ec.c:
+src/overlays/ov278/calls/Ov278_AiSeekTick_2.c:
     complete
     .text       start:0x020d43ec end:0x020d444c
 
-src/overlays/ov278/calls/func_ov278_020d444c.c:
+src/overlays/ov278/calls/Ov278_AiEnterStalk.c:
     complete
     .text       start:0x020d444c end:0x020d44f8
 
-src/overlays/ov278/calls/func_ov278_020d44f8.c:
+src/overlays/ov278/calls/Ov278_AiStalkStart.c:
     complete
     .text       start:0x020d44f8 end:0x020d4570
 
-src/overlays/ov278/calls/func_ov278_020d4570.c:
+src/overlays/ov278/calls/Ov278_StalkTick.c:
     complete
     .text       start:0x020d4570 end:0x020d4ce8
 
-src/overlays/ov278/calls/func_ov278_020d4ce8.c:
+src/overlays/ov278/calls/Ov278_AiEnterStomp.c:
     complete
     .text       start:0x020d4ce8 end:0x020d4d38
 
-src/overlays/ov278/calls/func_ov278_020d4d38.c:
+src/overlays/ov278/calls/Ov278_StompTick.c:
     complete
     .text       start:0x020d4d38 end:0x020d5038
 
-src/overlays/ov278/calls/func_ov278_020d5038.c:
+src/overlays/ov278/calls/Ov278_EnterBuckB.c:
     complete
     .text       start:0x020d5038 end:0x020d5240
 
-src/overlays/ov278/calls/func_ov278_020d5240.c:
+src/overlays/ov278/calls/Ov278_DismountLeapTick.c:
     complete
     .text       start:0x020d5240 end:0x020d5494
 
-src/overlays/ov278/calls/func_ov278_020d5494.c:
+src/overlays/ov278/calls/Ov278_DismountLandingTick.c:
     complete
     .text       start:0x020d5494 end:0x020d5758
 
-src/overlays/ov278/calls/func_ov278_020d5758.c:
+src/overlays/ov278/calls/Ov278_RiderWatchTickB.c:
     complete
     .text       start:0x020d5758 end:0x020d5830
 
-src/overlays/ov278/calls/func_ov278_020d5830.c:
+src/overlays/ov278/calls/Ov278_ReleaseRiderB.c:
     complete
     .text       start:0x020d5830 end:0x020d590c
 
-src/overlays/ov278/calls/func_ov278_020d590c.c:
+src/overlays/ov278/calls/Ov278_AiEnterStampWalk.c:
     complete
     .text       start:0x020d590c end:0x020d5940
 
-src/overlays/ov278/calls/func_ov278_020d5940.c:
+src/overlays/ov278/calls/Ov278_AiStampWalkStart.c:
     complete
     .text       start:0x020d5940 end:0x020d598c
 
-src/overlays/ov278/calls/func_ov278_020d598c.c:
+src/overlays/ov278/calls/Ov278_StampWalkTick.c:
     complete
     .text       start:0x020d598c end:0x020d5d54
 
-src/overlays/ov278/calls/func_ov278_020d5d54.c:
+src/overlays/ov278/calls/Ov278_AiEnterFinish.c:
     complete
     .text       start:0x020d5d54 end:0x020d5d88
 
-src/overlays/ov278/calls/func_ov278_020d5d88.c:
+src/overlays/ov278/calls/Ov278_AiQueue2OnAnimEnd_2.c:
     complete
     .text       start:0x020d5d88 end:0x020d5dbc
 
-src/overlays/ov278/calls/func_ov278_020d5dbc.c:
+src/overlays/ov278/calls/Ov278_SpawnReactionTaskAB.c:
     complete
     .text       start:0x020d5dbc end:0x020d5e1c
 
-src/overlays/ov278/calls/func_ov278_020d5e1c.c:
+src/overlays/ov278/calls/Ov278_ResetModelTracks.c:
     complete
     .text       start:0x020d5e1c end:0x020d5eb0
 
-src/overlays/ov278/auto/func_ov278_020d5eb0.c:
+src/overlays/ov278/auto/Ov278_TaskTeardown_FlagPart.c:
     complete
     .text       start:0x020d5eb0 end:0x020d5ec8
 
-src/overlays/ov278/calls/func_ov278_020d5ec8.c:
+src/overlays/ov278/calls/Ov278_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020d5ec8 end:0x020d5ee8
 
-src/overlays/ov278/calls/func_ov278_020d5ee8.c:
+src/overlays/ov278/calls/Ov278_SpawnReactionTaskFromHit.c:
     complete
     .text       start:0x020d5ee8 end:0x020d5f50
 
-src/overlays/ov278/calls/func_ov278_020d5f50.c:
+src/overlays/ov278/calls/Ov278_EnterRelease.c:
     complete
     .text       start:0x020d5f50 end:0x020d601c
 
-src/overlays/ov278/auto/func_ov278_020d601c.c:
+src/overlays/ov278/auto/Ov278_SetField5cBit1BothEntries.c:
     complete
     .text       start:0x020d601c end:0x020d6048
 
-src/overlays/ov278/calls/func_ov278_020d6048.c:
+src/overlays/ov278/calls/Ov278_EnterRecall.c:
     complete
     .text       start:0x020d6048 end:0x020d6110
 
-src/overlays/ov278/calls/func_ov278_020d6110.c:
+src/overlays/ov278/calls/Ov278_RecallWait.c:
     complete
     .text       start:0x020d6110 end:0x020d6204
 
-src/overlays/ov278/calls/func_ov278_020d6204.c:
+src/overlays/ov278/calls/Ov278_FinishWhenAnimsEnd.c:
     complete
     .text       start:0x020d6204 end:0x020d6230
 

@@ -3,7 +3,7 @@
  *
  * Builds a 14-byte message: the object's u16 id, kind 5, the caller's command
  * byte and flag byte, then the position packed into three 24-bit big-endian
- * coordinates; sends it through func_02031258 on channel 1.
+ * coordinates; sends it through MsgQueue_SendGate on channel 1.
  *
  * The position is kept next to the message in one stack struct; the message's
  * address escapes into the send call, so mwcc keeps the three position stores
@@ -34,7 +34,7 @@ struct MsgOwner {
     u16 id;             /* +0x2 */
 };
 
-extern int func_02031258(int channel, u16 *msg, u16 size);
+extern int MsgQueue_SendGate(int channel, u16 *msg, u16 size);
 
 static inline void PackFx24(Fx24 *dst, int v) {
     dst->hi = ((u32)v >> 16 & 0x7f) | ((u32)v >> 24 & 0x80);
@@ -66,5 +66,5 @@ void func_ov107_020c0b90(struct MsgOwner *obj, int cmd, VecFx32 pos, u8 flag) {
     PackFx24(&send.msg.pos[2], send.pos.z);
     send.msg.flag = flag;
 
-    func_02031258(1, (u16 *)&send.msg, sizeof(PosMsg));
+    MsgQueue_SendGate(1, (u16 *)&send.msg, sizeof(PosMsg));
 }

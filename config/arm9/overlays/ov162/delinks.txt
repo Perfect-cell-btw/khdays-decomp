@@ -4,243 +4,243 @@
     .data       start:0x020d1100 end:0x020d1140 kind:data align:32
     .bss        start:0x020d1140 end:0x020d1140 kind:bss align:32
 
-src/overlays/ov162/calls/func_ov162_020cdd40.c:
+src/overlays/ov162/calls/Ov162_RegisterEntityClass.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd58
 
-src/overlays/ov162/calls/func_ov162_020cdd58.c:
+src/overlays/ov162/calls/Ov162_CreateNamedEntity.c:
     complete
     .text       start:0x020cdd58 end:0x020cdde4
 
-src/overlays/ov162/calls/func_ov162_020cdde4.c:
+src/overlays/ov162/calls/Ov162_Construct.c:
     complete
     .text       start:0x020cdde4 end:0x020ce034
 
-src/overlays/ov162/calls/func_ov162_020ce034.c:
+src/overlays/ov162/calls/Ov162_Destroy.c:
     complete
     .text       start:0x020ce034 end:0x020ce07c
 
-src/overlays/ov162/calls/func_ov162_020ce07c.c:
+src/overlays/ov162/calls/Ov162_TickWithChildRefresh.c:
     complete
     .text       start:0x020ce07c end:0x020ce0a0
 
-src/overlays/ov162/calls/func_ov162_020ce0a0.c:
+src/overlays/ov162/calls/Ov162_TickAndPlaceBelowCamera.c:
     complete
     .text       start:0x020ce0a0 end:0x020ce114
 
-src/overlays/ov162/calls/func_ov162_020ce114.c:
+src/overlays/ov162/calls/Ov162_HandleSpawnMessage.c:
     complete
     .text       start:0x020ce114 end:0x020ce29c
 
-src/overlays/ov162/calls/func_ov162_020ce29c.c:
+src/overlays/ov162/calls/Ov162_Model_SetTrack0.c:
     complete
     .text       start:0x020ce29c end:0x020ce2cc
 
-src/overlays/ov162/calls/func_ov162_020ce2cc.c:
+src/overlays/ov162/calls/Ov162_ReleaseTasks.c:
     complete
     .text       start:0x020ce2cc end:0x020ce414
 
-src/overlays/ov162/calls/func_ov162_020ce414.c:
+src/overlays/ov162/calls/Ov162_SpawnChild10AndBackLink.c:
     complete
     .text       start:0x020ce414 end:0x020ce45c
 
-src/overlays/ov162/calls/func_ov162_020ce45c.c:
+src/overlays/ov162/calls/Ov162_RenderAtOwnerScaled.c:
     complete
     .text       start:0x020ce45c end:0x020ce4b4
 
-src/overlays/ov162/calls/func_ov162_020ce4b4.c:
+src/overlays/ov162/calls/Ov162_stInitChildActor.c:
     complete
     .text       start:0x020ce4b4 end:0x020ce560
 
-src/overlays/ov162/auto/func_ov162_020ce560.c:
+src/overlays/ov162/auto/Ov162_ChildTaskTeardownAndFlag.c:
     complete
     .text       start:0x020ce560 end:0x020ce59c
 
-src/overlays/ov162/calls/func_ov162_020ce59c.c:
+src/overlays/ov162/calls/Ov162_TickTimerAdvanceSubState.c:
     complete
     .text       start:0x020ce59c end:0x020ce600
 
-src/overlays/ov162/calls/func_ov162_020ce600.c:
+src/overlays/ov162/calls/Ov162_SpawnChild0cAndBackLink.c:
     complete
     .text       start:0x020ce600 end:0x020ce648
 
-src/overlays/ov162/calls/func_ov162_020ce648.c:
+src/overlays/ov162/calls/Ov162_RenderAtOwnerModel.c:
     complete
     .text       start:0x020ce648 end:0x020ce690
 
-src/overlays/ov162/calls/func_ov162_020ce690.c:
+src/overlays/ov162/calls/Ov162_stateInitSubitem.c:
     complete
     .text       start:0x020ce690 end:0x020ce710
 
-src/overlays/ov162/auto/func_ov162_020ce710.c:
+src/overlays/ov162/auto/Ov162_ChildTaskTeardown.c:
     complete
     .text       start:0x020ce710 end:0x020ce738
 
-src/overlays/ov162/calls/func_ov162_020ce738.c:
+src/overlays/ov162/calls/Ov162_ConfigureActorUnlessBusy.c:
     complete
     .text       start:0x020ce738 end:0x020ce77c
 
-src/overlays/ov162/calls/func_ov162_020ce77c.c:
+src/overlays/ov162/calls/Ov162_stateSubitemStateTransition.c:
     complete
     .text       start:0x020ce77c end:0x020ce7dc
 
-src/overlays/ov162/calls/func_ov162_020ce7dc.c:
+src/overlays/ov162/calls/Ov162_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020ce7dc end:0x020ce7fc
 
-src/overlays/ov162/calls/func_ov162_020ce7fc.c:
+src/overlays/ov162/calls/Ov162_SpawnChild0cAndBackLink_2.c:
     complete
     .text       start:0x020ce7fc end:0x020ce844
 
-src/overlays/ov162/calls/func_ov162_020ce844.c:
+src/overlays/ov162/calls/Ov162_BindSubObjectResetAndInstallSlots.c:
     complete
     .text       start:0x020ce844 end:0x020ce8c0
 
-src/overlays/ov162/calls/func_ov162_020ce8c0.c:
+src/overlays/ov162/calls/Ov162_ChildTaskTeardown_2.c:
     complete
     .text       start:0x020ce8c0 end:0x020ce8e8
 
-src/overlays/ov162/auto/func_ov162_020ce8e8.c:
+src/overlays/ov162/auto/Ov162_CopyBoundBlock44.c:
     complete
     .text       start:0x020ce8e8 end:0x020ce91c
 
-src/overlays/ov162/calls/func_ov162_020ce91c.c:
+src/overlays/ov162/calls/Ov162_ConfigureSubObjectTwiceThenAdvance.c:
     complete
     .text       start:0x020ce91c end:0x020ce970
 
-src/overlays/ov162/calls/func_ov162_020ce970.c:
+src/overlays/ov162/calls/Ov162_collectChildrenInBox.c:
     complete
     .text       start:0x020ce970 end:0x020cea50
 
-src/overlays/ov162/calls/func_ov162_020cea50.c:
+src/overlays/ov162/calls/Ov162_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020cea50 end:0x020cec04
 
-src/overlays/ov162/calls/func_ov162_020cec04.c:
+src/overlays/ov162/calls/Ov162_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020cec04 end:0x020cec60
 
-src/overlays/ov162/calls/func_ov162_020cec60.c:
+src/overlays/ov162/calls/Ov162_OnHit.c:
     complete
     .text       start:0x020cec60 end:0x020cef10
 
-src/overlays/ov162/auto/func_ov162_020cef10.c:
+src/overlays/ov162/auto/Ov162_RequestSubState10IfIdleUnless7Or8.c:
     complete
     .text       start:0x020cef10 end:0x020cef54
 
-src/overlays/ov162/calls/func_ov162_020cef54.c:
+src/overlays/ov162/calls/Ov162_AiStateInit.c:
     complete
     .text       start:0x020cef54 end:0x020cf050
 
-src/overlays/ov162/calls/func_ov162_020cf050.c:
+src/overlays/ov162/calls/Ov162_stDispatchByStateByte.c:
     complete
     .text       start:0x020cf050 end:0x020cf210
 
-src/overlays/ov162/calls/func_ov162_020cf210.c:
+src/overlays/ov162/calls/Ov162_UpdateHeadingAndVelocity.c:
     complete
     .text       start:0x020cf210 end:0x020cf2ec
 
-src/overlays/ov162/calls/func_ov162_020cf2ec.c:
+src/overlays/ov162/calls/Ov162_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cf2ec end:0x020cf354
 
-src/overlays/ov162/calls/func_ov162_020cf354.c:
+src/overlays/ov162/calls/Ov162_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cf354 end:0x020cf390
 
-src/overlays/ov162/calls/func_ov162_020cf390.c:
+src/overlays/ov162/calls/Ov162_BeginRecoveryStance.c:
     complete
     .text       start:0x020cf390 end:0x020cf458
 
-src/overlays/ov162/calls/func_ov162_020cf458.c:
+src/overlays/ov162/calls/Ov162_stAdvanceTimerAimTarget.c:
     complete
     .text       start:0x020cf458 end:0x020cf520
 
-src/overlays/ov162/calls/func_ov162_020cf520.c:
+src/overlays/ov162/calls/Ov162_AiRollTimerQueue2.c:
     complete
     .text       start:0x020cf520 end:0x020cf580
 
-src/overlays/ov162/calls/func_ov162_020cf580.c:
+src/overlays/ov162/calls/Ov162_stDiv30Store.c:
     complete
     .text       start:0x020cf580 end:0x020cf5e0
 
-src/overlays/ov162/calls/func_ov162_020cf5e0.c:
+src/overlays/ov162/calls/Ov162_ReactWhenTargetInReach.c:
     complete
     .text       start:0x020cf5e0 end:0x020cf650
 
-src/overlays/ov162/calls/func_ov162_020cf650.c:
+src/overlays/ov162/calls/Ov162_stDiv30Store_2.c:
     complete
     .text       start:0x020cf650 end:0x020cf6b0
 
-src/overlays/ov162/calls/func_ov162_020cf6b0.c:
+src/overlays/ov162/calls/Ov162_stIdlePose2Advance.c:
     complete
     .text       start:0x020cf6b0 end:0x020cf6f4
 
-src/overlays/ov162/calls/func_ov162_020cf6f4.c:
+src/overlays/ov162/calls/Ov162_stSeekTargetSteer.c:
     complete
     .text       start:0x020cf6f4 end:0x020cf89c
 
-src/overlays/ov162/calls/func_ov162_020cf89c.c:
+src/overlays/ov162/calls/Ov162_AiStep_QueueAction9OnFlag48Clear.c:
     complete
     .text       start:0x020cf89c end:0x020cf8d0
 
-src/overlays/ov162/calls/func_ov162_020cf8d0.c:
+src/overlays/ov162/calls/Ov162_PickRandomSpinDirection.c:
     complete
     .text       start:0x020cf8d0 end:0x020cf954
 
-src/overlays/ov162/calls/func_ov162_020cf954.c:
+src/overlays/ov162/calls/Ov162_StrafeThenReact.c:
     complete
     .text       start:0x020cf954 end:0x020cfb40
 
-src/overlays/ov162/calls/func_ov162_020cfb40.c:
+src/overlays/ov162/calls/Ov162_stateAnimAimAtTarget.c:
     complete
     .text       start:0x020cfb40 end:0x020cfbb0
 
-src/overlays/ov162/calls/func_ov162_020cfbb0.c:
+src/overlays/ov162/calls/Ov162_AiDecelUntilFlagClear.c:
     complete
     .text       start:0x020cfbb0 end:0x020cfc2c
 
-src/overlays/ov162/calls/func_ov162_020cfc2c.c:
+src/overlays/ov162/calls/Ov162_stateSetFlagEffect.c:
     complete
     .text       start:0x020cfc2c end:0x020cfc98
 
-src/overlays/ov162/calls/func_ov162_020cfc98.c:
+src/overlays/ov162/calls/Ov162_stateTransformAimVec.c:
     complete
     .text       start:0x020cfc98 end:0x020cfd64
 
-src/overlays/ov162/calls/func_ov162_020cfd64.c:
+src/overlays/ov162/calls/Ov162_HomingDashTick.c:
     complete
     .text       start:0x020cfd64 end:0x020d01fc
 
-src/overlays/ov162/calls/func_ov162_020d01fc.c:
+src/overlays/ov162/calls/Ov162_HomingDash_Recover.c:
     complete
     .text       start:0x020d01fc end:0x020d02b0
 
-src/overlays/ov162/calls/func_ov162_020d02b0.c:
+src/overlays/ov162/calls/Ov162_SetPose6ThenAdvanceSlot.c:
     complete
     .text       start:0x020d02b0 end:0x020d02e4
 
-src/overlays/ov162/calls/func_ov162_020d02e4.c:
+src/overlays/ov162/calls/Ov162_BeginRecoil.c:
     complete
     .text       start:0x020d02e4 end:0x020d038c
 
-src/overlays/ov162/calls/func_ov162_020d038c.c:
+src/overlays/ov162/calls/Ov162_RecoilTick.c:
     complete
     .text       start:0x020d038c end:0x020d05f8
 
-src/overlays/ov162/calls/func_ov162_020d05f8.c:
+src/overlays/ov162/calls/Ov162_BeginThrowRelease.c:
     complete
     .text       start:0x020d05f8 end:0x020d07c4
 
-src/overlays/ov162/calls/func_ov162_020d07c4.c:
+src/overlays/ov162/calls/Ov162_ThrowReleaseTick.c:
     complete
     .text       start:0x020d07c4 end:0x020d0f30
 
-src/overlays/ov162/calls/func_ov162_020d0f30.c:
+src/overlays/ov162/calls/Ov162_ConfigHw60NoResetBeginAction4a.c:
     complete
     .text       start:0x020d0f30 end:0x020d0fcc
 
-src/overlays/ov162/calls/func_ov162_020d0fcc.c:
+src/overlays/ov162/calls/Ov162_stateToggleFlagsEffectClear.c:
     complete
     .text       start:0x020d0fcc end:0x020d1080
 

@@ -6,10 +6,10 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_02024524(void);
-extern void func_02024574(void);
-extern void func_020247a4(void);
-extern void func_020247f4(void);
+extern void Bg_SetMainBg2ExtControl(void);
+extern void Bg_SetMainBg3ExtControl(void);
+extern void Bg_SetSubBg2ExtControl(void);
+extern void Bg_SetSubBg3ExtControl(void);
 
 const Ov_Fn data_02041eac[8] = {
 
@@ -17,16 +17,16 @@ const Ov_Fn data_02041eac[8] = {
 
     0,
 
-    func_02024524,
+    Bg_SetMainBg2ExtControl,
 
-    func_02024574,
-
-    0,
+    Bg_SetMainBg3ExtControl,
 
     0,
 
-    func_020247a4,
+    0,
 
-    func_020247f4,
+    Bg_SetSubBg2ExtControl,
+
+    Bg_SetSubBg3ExtControl,
 
 };

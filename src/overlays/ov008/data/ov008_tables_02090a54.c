@@ -5,7 +5,7 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_02090a54: func_ov008_02078aa4, func_ov008_020791e0, func_ov008_02079264
+ *   data_ov008_02090a54: Ov008_OpenTutorialPage, Ov008_ConfirmPageBSelection, Ov008_GetSlideTableValue
  */
 
 typedef unsigned char u8;

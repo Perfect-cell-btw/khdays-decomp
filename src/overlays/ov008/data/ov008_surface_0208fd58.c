@@ -15,13 +15,13 @@ typedef struct Ov008SurfaceConfig {
     Ov008SurfaceFn pfnRelease; /* 0x10 */
 } Ov008SurfaceConfig;
 
-extern void func_ov008_02080800(void);
-extern void func_ov008_02080810(void);
+extern void Ov008_ResourceEntryCallback_2(void);
+extern void Ov008_ResourceNodeCallback_2(void);
 
 const Ov008SurfaceConfig data_ov008_0208fd58 = {
     50,  /* nCellCount */
     50,  /* nSpriteCount */
     20,  /* nSlotCount */
-    func_ov008_02080800,  /* pfnDraw */
-    func_ov008_02080810,  /* pfnRelease */
+    Ov008_ResourceEntryCallback_2,  /* pfnDraw */
+    Ov008_ResourceNodeCallback_2,  /* pfnRelease */
 };

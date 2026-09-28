@@ -13,17 +13,17 @@ const int data_ov122_020d1b24[3] = {
     2, 3, 4,
 };
 
-/* read by * func_ov122_020d0f3c -- Ov122_AreaAttack_Broadcast. (020d0f3c): struct Ov120AreaOpener data_ov122_020d1b30; */
+/* read by * Ov122_AreaAttack_Broadcast -- Ov122_AreaAttack_Broadcast. (020d0f3c): struct Ov120AreaOpener data_ov122_020d1b30; */
 const u8 data_ov122_020d1b30[4] = {
     0, 0, 5, 1,
 };
 
-/* read by * func_ov122_020d0f3c -- Ov122_AreaAttack_Broadcast. (020d0f3c): struct Ov120AreaMsg data_ov122_020d1b34; */
+/* read by * Ov122_AreaAttack_Broadcast -- Ov122_AreaAttack_Broadcast. (020d0f3c): struct Ov120AreaMsg data_ov122_020d1b34; */
 const u16 data_ov122_020d1b34[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov122_020d12f4 (020d12f4): struct Ov120AreaMsg data_ov122_020d1b42; */
+/* read by Ov122_SweepAttack_Step (020d12f4): struct Ov120AreaMsg data_ov122_020d1b42; */
 const u16 data_ov122_020d1b42[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };

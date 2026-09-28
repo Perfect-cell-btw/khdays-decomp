@@ -1,7 +1,7 @@
 extern int func_ov022_0209c774(int a, int b);
-extern void func_ov002_02051d44(int a, int b);
-extern void func_ov002_02051cbc(int a);
-extern void func_ov022_0209c7dc(int a);
+extern void Ov002_SetMatrix43(int a, int b);
+extern void Ov002_SubmitActorDraw(int a);
+extern void Ov022_SubmitGaugeValue(int a);
 
 struct bits_0209c9fc {
     unsigned char b0 : 1;
@@ -23,8 +23,8 @@ void func_ov022_0209c9fc(int param_1) {
     do {
         if (*(char *)(iVar3 + 0xda9) != 0) {
             int iVar1 = func_ov022_0209c774(param_1, iVar2);
-            func_ov002_02051d44(iVar4, iVar1);
-            func_ov002_02051cbc(iVar4);
+            Ov002_SetMatrix43(iVar4, iVar1);
+            Ov002_SubmitActorDraw(iVar4);
         }
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 0x164;
@@ -34,5 +34,5 @@ void func_ov022_0209c9fc(int param_1) {
         (*(void (**)(int))(param_1 + 0x674))(param_1);
         return;
     }
-    func_ov022_0209c7dc(param_1);
+    Ov022_SubmitGaugeValue(param_1);
 }

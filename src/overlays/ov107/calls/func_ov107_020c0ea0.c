@@ -82,16 +82,16 @@ struct Ov107Object {
     int field_118;
 };
 
-extern int *func_01fffd70(void *list);
-extern int *func_01fffd8c(void *list);
+extern int *List_First(void *list);
+extern int *List_Next(void *list);
 extern void VEC_Subtract(int *a, int *b, int *out);
 extern int FX_Sqrt(int x);
-extern int func_ov107_020cab14(Ov107Actor *actor, int *out);
-extern s16 func_ov107_020c1c8c(Ov107Object *self);
-extern int func_ov107_020c1c94(Ov107Object *self);
-extern void func_ov107_020c1c18(Ov107Object *self, void *pAnim, int duration);
-extern int func_ov107_020cb4f0(int obj, int arg);
-extern void func_ov107_020c1870(Ov107Object *self, int arg);
+extern int Ov107_FindNearestObject(Ov107Actor *actor, int *out);
+extern s16 Ov107_GetSlotCount(Ov107Object *self);
+extern int Ov107_Spawner_CountInactiveSlots(Ov107Object *self);
+extern void Ov107_Spawner_SetMoveAnim(Ov107Object *self, void *pAnim, int duration);
+extern int Ov107_TaskRunStep(int obj, int arg);
+extern void Ov107_Spawner_Run(Ov107Object *self, int arg);
 
 void func_ov107_020c0ea0(Ov107Object *self, int delta)
 {
@@ -117,7 +117,7 @@ void func_ov107_020c0ea0(Ov107Object *self, int delta)
 
         bestDist = 0x7fffffff;
         best = 0;
-        pNode = func_01fffd70(owner->listA8);
+        pNode = List_First(owner->listA8);
         actor = pNode == 0 ? 0 : (Ov107Actor *)*pNode;
         while (actor != 0) {
             if (actor->flags40.bit1 && actor->flags40.bit2
@@ -137,7 +137,7 @@ void func_ov107_020c0ea0(Ov107Object *self, int delta)
                     best = actor;
                 }
             }
-            pNode = func_01fffd8c(owner->listA8);
+            pNode = List_Next(owner->listA8);
             actor = pNode == 0 ? 0 : (Ov107Actor *)*pNode;
         }
 
@@ -148,7 +148,7 @@ void func_ov107_020c0ea0(Ov107Object *self, int delta)
                         slotActor = self->slots[i].pActor;
                         if (slotActor->flags40.bit1 && slotActor->flags40.bit2) {
                             int out;
-                            if (func_ov107_020cab14(slotActor, &out) == 0) {
+                            if (Ov107_FindNearestObject(slotActor, &out) == 0) {
                                 int result;
                                 if (slotActor->actionCallback != 0) {
                                     result = slotActor->actionCallback(slotActor, 2);
@@ -198,10 +198,10 @@ void func_ov107_020c0ea0(Ov107Object *self, int delta)
         return;
 
     if ((self->flags48 & 1) == 0 && self->field_f8 <= 0) {
-        if (func_ov107_020c1c8c(self) == func_ov107_020c1c94(self)) {
+        if (Ov107_GetSlotCount(self) == Ov107_Spawner_CountInactiveSlots(self)) {
             void (*callback)(Ov107Object *);
 
-            func_ov107_020c1c18(self, 0, 0);
+            Ov107_Spawner_SetMoveAnim(self, 0, 0);
             callback = self->callback44;
             if (callback != 0)
                 callback(self);
@@ -209,8 +209,8 @@ void func_ov107_020c0ea0(Ov107Object *self, int delta)
         }
     }
 
-    if (func_ov107_020cb4f0((int)self->field_f4, delta) != 0) {
-        func_ov107_020c1870(self, 0);
+    if (Ov107_TaskRunStep((int)self->field_f4, delta) != 0) {
+        Ov107_Spawner_Run(self, 0);
         self->field_fc = 0x1000;
         if ((self->flags48 & 1) == 0)
             self->field_f8--;

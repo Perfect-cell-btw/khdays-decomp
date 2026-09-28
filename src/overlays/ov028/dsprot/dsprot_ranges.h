@@ -8,15 +8,15 @@
 #ifndef DSPROT_RANGES_H
 #define DSPROT_RANGES_H
 
-extern void func_ov028_0208a7e0(unsigned int *pRange);   /* Encryptor_StartRange */
-extern void func_ov028_0208a8ac(unsigned int *pRange);   /* Encryptor_EndRange */
+extern void Ov028_DSProt_Encryptor_StartRange(unsigned int *pRange);   /* Encryptor_StartRange */
+extern void Ov028_DSProt_Encryptor_EndRange(unsigned int *pRange);   /* Encryptor_EndRange */
 
 #define DSPROT_RANGE_BEGIN(key)                 \
     asm {                                       \
         stmfd sp!, {r0-r7};                     \
         mov r0, #6;                             \
         add r0, pc, r0, lsl #1;                 \
-        bl func_ov028_0208a7e0;                 \
+        bl Ov028_DSProt_Encryptor_StartRange;                 \
         ldmia sp!, {r0-r7};                     \
         b @begin_##key;                         \
         dcd 0xEB000000 + key;                   \
@@ -31,7 +31,7 @@ extern void func_ov028_0208a8ac(unsigned int *pRange);   /* Encryptor_EndRange *
         stmfd sp!, {r0};                        \
         mov r0, pc;                             \
         sub r0, r0, #0x14;                      \
-        bl func_ov028_0208a8ac;                 \
+        bl Ov028_DSProt_Encryptor_EndRange;                 \
         ldmfd sp!, {r0};                        \
     }
 

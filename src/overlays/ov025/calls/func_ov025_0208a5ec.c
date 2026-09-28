@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_ov025_0208a4bc. */
-extern void *func_ov025_0208a4bc();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to Ov025_MergeSortList. */
+extern void *Ov025_MergeSortList();
 
 void *func_ov025_0208a5ec() {
-    return func_ov025_0208a4bc();
+    return Ov025_MergeSortList();
 }

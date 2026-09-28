@@ -14,14 +14,14 @@ typedef struct Ov008PageHooks {
     Ov008HookFn apfnHook[12]; /* 0x10 .. 0x3c */
 } Ov008PageHooks;
 
-extern void func_ov025_020b00ec(void);
-extern void func_ov025_020b0154(void);
-extern void func_ov025_020b0484(void);
+extern void Ov025_ReportDetail_Setup(void);
+extern void Ov025_ReportDetail_Teardown(void);
+extern void Ov025_ReportDetail_Refresh(void);
 
 Ov008PageHooks data_ov025_020b56e4 = {
-    func_ov025_020b00ec,  /* pfnOpen */
-    func_ov025_020b0154,  /* pfnStep */
-    func_ov025_020b0484,  /* pfnClose */
+    Ov025_ReportDetail_Setup,  /* pfnOpen */
+    Ov025_ReportDetail_Teardown,  /* pfnStep */
+    Ov025_ReportDetail_Refresh,  /* pfnClose */
     132,  /* nStateSize */
     { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },  /* apfnHook */
 };

@@ -13,7 +13,7 @@ const int data_ov205_020d7204[3] = {
     0, 2048, 0,
 };
 
-/* read by func_ov205_020d3b30 (020d3b30): void data_ov205_020d7210(void); */
+/* read by Ov205_OnMessage (020d3b30): void data_ov205_020d7210(void); */
 const int data_ov205_020d7210[4] = {
     0, 1, 2, 3,
 };

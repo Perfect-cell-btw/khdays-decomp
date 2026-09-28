@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_020116a8. */
-extern void *func_020116a8();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to GetUnpackedAnimBankImpl_. */
+extern void *GetUnpackedAnimBankImpl_();
 
 void *func_020116e4() {
-    return func_020116a8();
+    return GetUnpackedAnimBankImpl_();
 }

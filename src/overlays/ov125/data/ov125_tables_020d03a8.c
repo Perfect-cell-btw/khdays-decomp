@@ -16,7 +16,7 @@ const int data_ov125_020d03a8[9] = {
 
 /* read by Ov125_EnterRecover (020cdd3c): unsigned short data_ov125_020d03cc[];
  *   Ov125_RecoverTick (020cde04): unsigned short data_ov125_020d03cc[];
- *   func_ov125_020ce1a8 (not yet decompiled) */
+ *   Ov125_LaunchTick (not yet decompiled) */
 const u8 data_ov125_020d03cc[16] = {
     0, 0, 5, 2, 0, 0, 5, 5, 0, 0, 5, 1, 0, 0, 5, 3,
 };

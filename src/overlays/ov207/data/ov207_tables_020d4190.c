@@ -13,7 +13,7 @@ const int data_ov207_020d4190[5] = {
     18, 19, 21, 22, 23,
 };
 
-/* read by * func_ov207_020d0508 -- x4. Message handler: on kinds 6 and 0xa, (re-)arm the emitter, th (020d0508): struct t17 data_ov207_020d41a4; */
+/* read by * Ov207_MessageArmEmitterTable -- x4. Message handler: on kinds 6 and 0xa, (re-)arm the emitter, th (020d0508): struct t17 data_ov207_020d41a4; */
 const int data_ov207_020d41a4[17] = {
     1, 2, 3, 4, 5, 6, 7, 8,
     9, 10, 11, 12, 13, 14, 15, 16,
@@ -25,12 +25,12 @@ const u8 data_ov207_020d41e8[8] = {
     184, 3, 0, 0, 0, 0, 5, 0,
 };
 
-/* read by func_ov207_020d3680 (not yet decompiled) */
+/* read by Ov207_RockFlightTick (not yet decompiled) */
 const u16 data_ov207_020d41f0[7] = {
     0, 1285, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov207_020d3680 (not yet decompiled) */
+/* read by Ov207_RockFlightTick (not yet decompiled) */
 const u16 data_ov207_020d41fe[7] = {
     0, 261, 0, 0, 0, 0, 0,
 };
@@ -65,7 +65,7 @@ const u16 data_ov207_020d4252[7] = {
     0, 261, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov207_020d3680 (not yet decompiled) */
+/* read by Ov207_RockFlightTick (not yet decompiled) */
 const u16 data_ov207_020d4260[7] = {
     0, 261, 0, 0, 0, 0, 0,
 };
@@ -75,7 +75,7 @@ const u16 data_ov207_020d426e[7] = {
     0, 261, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov207_020d0b34 (020d0b34): const struct tbl8 data_ov207_020d427c; */
+/* read by Ov207_collectObjectsInSphereRec (020d0b34): const struct tbl8 data_ov207_020d427c; */
 const u8 data_ov207_020d427c[32] = {
     255, 255, 255, 255, 255, 255, 255, 255, 1, 0, 0, 0, 255, 255, 255, 255,
     255, 255, 255, 255, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0,

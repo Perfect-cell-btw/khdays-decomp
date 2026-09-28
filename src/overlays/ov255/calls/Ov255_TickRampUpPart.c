@@ -1,0 +1,22 @@
+/* Ramp-up tick of an ov255 part: the +0xc timer accumulates the owner's rate; at 3.0 animation
+ * channels 0, 2, 4 and 1 are stopped (0203b9fc mode 2), the timer clears and the tick hands over to
+ * Ov255_FinishIfOwnerIdle. */
+extern void SetSubitemState(int obj, int channel, int a, int b);
+extern void SetIndexedSlot(int *node, int slot, void *cb);
+extern void Ov255_FinishIfOwnerIdle(int *node);
+
+void Ov255_TickRampUpPart(int *node)
+{
+    int *state = (int *)node[1];
+
+    state[3] += *(int *)(*node + 0x2c);
+    if (!(state[3] < 0x3000)) {
+        SetSubitemState(state[0], 0, 2, 0);
+        SetSubitemState(state[0], 2, 2, 0);
+        SetSubitemState(state[0], 4, 2, 0);
+        SetSubitemState(state[0], 1, 2, 0);
+        state[3] = 0;
+        SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov255_FinishIfOwnerIdle);
+        return;
+    }
+}

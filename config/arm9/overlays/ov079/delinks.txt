@@ -8,27 +8,27 @@ src/overlays/ov079/calls/func_ov079_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov079/calls/func_ov079_020b8114.c:
+src/overlays/ov079/calls/Ov079_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b813c
 
-src/overlays/ov079/calls/func_ov079_020b813c.c:
+src/overlays/ov079/calls/Ov079_setupTriple.c:
     complete
     .text       start:0x020b813c end:0x020b815c
 
-src/overlays/ov079/calls/func_ov079_020b815c.c:
+src/overlays/ov079/calls/Ov079_BuildRigObject.c:
     complete
     .text       start:0x020b815c end:0x020b8370
 
-src/overlays/ov079/calls/func_ov079_020b8370.c:
+src/overlays/ov079/calls/Ov079_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020b8370 end:0x020b83a8
 
-src/overlays/ov079/auto/func_ov079_020b83a8.c:
+src/overlays/ov079/auto/Ov079_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b83a8 end:0x020b83d0
 
-src/overlays/ov079/calls/func_ov079_020b83d0.c:
+src/overlays/ov079/calls/Ov079_SwitchAnimationSet.c:
     complete
     .text       start:0x020b83d0 end:0x020b84f4
 
@@ -36,99 +36,99 @@ src/overlays/ov079/calls/func_ov079_020b84f4.c:
     complete
     .text       start:0x020b84f4 end:0x020b8500
 
-src/overlays/ov079/calls/func_ov079_020b8500.c:
+src/overlays/ov079/calls/Ov079_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b8500 end:0x020b8538
 
-src/overlays/ov079/calls/func_ov079_020b8538.c:
+src/overlays/ov079/calls/Ov079_HandleMessage.c:
     complete
     .text       start:0x020b8538 end:0x020b86b8
 
-src/overlays/ov079/calls/func_ov079_020b86b8.c:
+src/overlays/ov079/calls/Ov079_BuildRenderHandles.c:
     complete
     .text       start:0x020b86b8 end:0x020b8748
 
-src/overlays/ov079/calls/func_ov079_020b8748.c:
+src/overlays/ov079/calls/Ov079_SetupSequenceSlots.c:
     complete
     .text       start:0x020b8748 end:0x020b8848
 
-src/overlays/ov079/calls/func_ov079_020b8848.c:
+src/overlays/ov079/calls/Ov079_ReleaseThreeSubBlocks2c50.c:
     complete
     .text       start:0x020b8848 end:0x020b887c
 
-src/overlays/ov079/calls/func_ov079_020b887c.c:
+src/overlays/ov079/calls/Ov079_PublishAttachAnchor.c:
     complete
     .text       start:0x020b887c end:0x020b88a0
 
-src/overlays/ov079/calls/func_ov079_020b88a0.c:
+src/overlays/ov079/calls/Ov079_ForwardToThreeSubHandlers.c:
     complete
     .text       start:0x020b88a0 end:0x020b88dc
 
-src/overlays/ov079/calls/func_ov079_020b88dc.c:
+src/overlays/ov079/calls/Ov079_ForwardToThreeSubHandlersIfFlagSet.c:
     complete
     .text       start:0x020b88dc end:0x020b891c
 
-src/overlays/ov079/calls/func_ov079_020b891c.c:
+src/overlays/ov079/calls/Ov079_ArmWithValue.c:
     complete
     .text       start:0x020b891c end:0x020b8934
 
-src/overlays/ov079/calls/func_ov079_020b8934.c:
+src/overlays/ov079/calls/Ov079_StepSequenceSlot.c:
     complete
     .text       start:0x020b8934 end:0x020b8a38
 
-src/overlays/ov079/calls/func_ov079_020b8a38.c:
+src/overlays/ov079/calls/Ov079_RecenterSubObjectAndCopyVec.c:
     complete
     .text       start:0x020b8a38 end:0x020b8aac
 
-src/overlays/ov079/calls/func_ov079_020b8aac.c:
+src/overlays/ov079/calls/Ov079_PlayVoiceAndBindAnims.c:
     complete
     .text       start:0x020b8aac end:0x020b8b4c
 
-src/overlays/ov079/calls/func_ov079_020b8b4c.c:
+src/overlays/ov079/calls/Ov079_UpdateTracksByMode.c:
     complete
     .text       start:0x020b8b4c end:0x020b8b80
 
-src/overlays/ov079/calls/func_ov079_020b8b80.c:
+src/overlays/ov079/calls/Ov079_DrawSubNodeWithYaw.c:
     complete
     .text       start:0x020b8b80 end:0x020b8bf8
 
-src/overlays/ov079/calls/func_ov079_020b8bf8.c:
+src/overlays/ov079/calls/Ov079_BindAnimsMode1.c:
     complete
     .text       start:0x020b8bf8 end:0x020b8c58
 
-src/overlays/ov079/calls/func_ov079_020b8c58.c:
+src/overlays/ov079/calls/Ov079_BindAnimsMode3.c:
     complete
     .text       start:0x020b8c58 end:0x020b8cb8
 
-src/overlays/ov079/calls/func_ov079_020b8cb8.c:
+src/overlays/ov079/calls/Ov079_StepAttackSlot.c:
     complete
     .text       start:0x020b8cb8 end:0x020b8ea0
 
-src/overlays/ov079/calls/func_ov079_020b8ea0.c:
+src/overlays/ov079/calls/Ov079_DrawSubNodeWithYaw2.c:
     complete
     .text       start:0x020b8ea0 end:0x020b8f20
 
-src/overlays/ov079/calls/func_ov079_020b8f20.c:
+src/overlays/ov079/calls/Ov079_AttackBurstTick.c:
     complete
     .text       start:0x020b8f20 end:0x020b9138
 
-src/overlays/ov079/calls/func_ov079_020b9138.c:
+src/overlays/ov079/calls/Ov079_PublishAndEnterState21.c:
     complete
     .text       start:0x020b9138 end:0x020b91bc
 
-src/overlays/ov079/calls/func_ov079_020b91bc.c:
+src/overlays/ov079/calls/Ov079_IdleStep.c:
     complete
     .text       start:0x020b91bc end:0x020b9458
 
-src/overlays/ov079/calls/func_ov079_020b9458.c:
+src/overlays/ov079/calls/Ov079_FinishActionTick.c:
     complete
     .text       start:0x020b9458 end:0x020b964c
 
-src/overlays/ov079/calls/func_ov079_020b964c.c:
+src/overlays/ov079/calls/Ov079_PursuitStep.c:
     complete
     .text       start:0x020b964c end:0x020b98cc
 
-src/overlays/ov079/calls/func_ov079_020b98cc.c:
+src/overlays/ov079/calls/Ov079_InvokeWithDataTable.c:
     complete
     .text       start:0x020b98cc end:0x020b98e4
 

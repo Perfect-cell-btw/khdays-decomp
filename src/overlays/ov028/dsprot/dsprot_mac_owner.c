@@ -33,7 +33,7 @@ u32 func_ov028_0208abd0(void)
     }
     DSPROT_RANGE_END(KEY_MAC_OWNER_1)
 
-    func_02003a20(&ownerInfo);
+    Game_ReadLocalProfile(&ownerInfo);
 
     DSPROT_RANGE_BEGIN(KEY_MAC_OWNER_2)
     /* `i` doubles as the result */

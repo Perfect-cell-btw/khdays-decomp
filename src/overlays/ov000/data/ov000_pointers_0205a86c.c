@@ -6,25 +6,25 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov000_02054170(void);
-extern void func_ov000_020541fc(void);
-extern void func_ov000_02054288(void);
-extern void func_ov000_020544b0(void);
-extern void func_ov000_02054640(void);
-extern void func_ov000_02054644(void);
+extern void Ov000_TickFadeOutFromObjTimer(void);
+extern void Ov000_TickFadeInFromObjTimer(void);
+extern void Ov000_NavigateModeSelect(void);
+extern void Ov000_SelectMenuSubMode(void);
+extern void Ov000_ModeSelectStateNoOp(void);
+extern void Ov000_ModeSelectStateNoOp_2(void);
 
 const Ov_Fn data_ov000_0205a86c[6] = {
 
-    func_ov000_02054170,
+    Ov000_TickFadeOutFromObjTimer,
 
-    func_ov000_020541fc,
+    Ov000_TickFadeInFromObjTimer,
 
-    func_ov000_02054288,
+    Ov000_NavigateModeSelect,
 
-    func_ov000_020544b0,
+    Ov000_SelectMenuSubMode,
 
-    func_ov000_02054640,
+    Ov000_ModeSelectStateNoOp,
 
-    func_ov000_02054644,
+    Ov000_ModeSelectStateNoOp_2,
 
 };

@@ -1,0 +1,34 @@
+/* Recovery wait (first rider): runs the +0x14 timer; once the +0x24 child's byte clears pose
+ * 0x10 plays and, for each empty rider counter (+0x3bc / +0x3be), the matching cue
+ * (data_ov278_020d639c entries 3 / 1) goes through the +0x24 hook; the node moves to 020d31e0. */
+extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
+extern void SetIndexedSlot(void *obj, int idx, void *value);
+extern unsigned short data_ov278_020d639c[];
+extern void Ov278_RiderWatchTickA(void);
+
+void Ov278_RecoveryWaitA(int *node) {
+    int *state = (int *)node[1];
+    unsigned short pairA[2];
+    unsigned short pairB[2];
+    unsigned short *pp;
+    void (*cb)();
+
+    state[5] += *(int *)(*node + 0x2c);
+    if (*(unsigned char *)state[9] != 0) return;
+    Ov107_PostTagUpdate(*state, 0x10, 0);
+    if (*(short *)(*state + 0x300 + 0xbc) == 0) {
+        pp = pairA;
+        pp[1] = data_ov278_020d639c[7];
+        pp[0] = data_ov278_020d639c[6];
+        cb = *(void (**)())(*state + 0x24);
+        if (cb != 0) cb(*state, pp, 4);
+    }
+    if (*(short *)(*state + 0x300 + 0xbe) == 0) {
+        pp = pairB;
+        pp[1] = data_ov278_020d639c[3];
+        pp[0] = data_ov278_020d639c[2];
+        cb = *(void (**)())(*state + 0x24);
+        if (cb != 0) cb(*state, pp, 4);
+    }
+    SetIndexedSlot(node, *(signed char *)(node + 8), Ov278_RiderWatchTickA);
+}

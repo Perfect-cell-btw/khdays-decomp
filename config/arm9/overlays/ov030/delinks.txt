@@ -8,163 +8,163 @@ src/overlays/ov030/calls/func_ov030_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov030/calls/func_ov030_020b3234.c:
+src/overlays/ov030/calls/Ov030_SetUpScene.c:
     complete
     .text       start:0x020b3234 end:0x020b3310
 
-src/overlays/ov030/calls/func_ov030_020b3310.c:
+src/overlays/ov030/calls/Ov030_TeardownScene.c:
     complete
     .text       start:0x020b3310 end:0x020b3374
 
-src/overlays/ov030/calls/func_ov030_020b3374.c:
+src/overlays/ov030/calls/Ov030_CreateActor.c:
     complete
     .text       start:0x020b3374 end:0x020b35dc
 
-src/overlays/ov030/calls/func_ov030_020b35dc.c:
+src/overlays/ov030/calls/Ov030_SubmitPanel.c:
     complete
     .text       start:0x020b35dc end:0x020b3694
 
-src/overlays/ov030/auto/func_ov030_020b3694.c:
+src/overlays/ov030/auto/Ov030_CueForKind.c:
     complete
     .text       start:0x020b3694 end:0x020b36cc
 
-src/overlays/ov030/calls/func_ov030_020b36cc.c:
+src/overlays/ov030/calls/Ov030_BuildActorHandles.c:
     complete
     .text       start:0x020b36cc end:0x020b375c
 
-src/overlays/ov030/calls/func_ov030_020b375c.c:
+src/overlays/ov030/calls/Ov030_HandleMessage.c:
     complete
     .text       start:0x020b375c end:0x020b38a4
 
-src/overlays/ov030/calls/func_ov030_020b38a4.c:
+src/overlays/ov030/calls/Ov030_StepActor.c:
     complete
     .text       start:0x020b38a4 end:0x020b3990
 
-src/overlays/ov030/calls/func_ov030_020b3990.c:
+src/overlays/ov030/calls/Ov030_ApplyModeChange.c:
     complete
     .text       start:0x020b3990 end:0x020b3cd4
 
-src/overlays/ov030/calls/func_ov030_020b3cd4.c:
+src/overlays/ov030/calls/Ov030_CommitScrollForFrame.c:
     complete
     .text       start:0x020b3cd4 end:0x020b3d18
 
-src/overlays/ov030/calls/func_ov030_020b3d18.c:
+src/overlays/ov030/calls/Ov030_TickExtraClass.c:
     complete
     .text       start:0x020b3d18 end:0x020b3e24
 
-src/overlays/ov030/calls/func_ov030_020b3e24.c:
+src/overlays/ov030/calls/Ov030_ForwardGlobalCtx2cb0.c:
     complete
     .text       start:0x020b3e24 end:0x020b3e44
 
-src/overlays/ov030/calls/func_ov030_020b3e44.c:
+src/overlays/ov030/calls/Ov030_ForwardGlobalCtx2cb0_2.c:
     complete
     .text       start:0x020b3e44 end:0x020b3e64
 
-src/overlays/ov030/calls/func_ov030_020b3e64.c:
+src/overlays/ov030/calls/Ov030_ForwardGlobalCtx2cb0_3.c:
     complete
     .text       start:0x020b3e64 end:0x020b3e84
 
-src/overlays/ov030/calls/func_ov030_020b3e84.c:
+src/overlays/ov030/calls/Ov030_InvokeWithDataTable.c:
     complete
     .text       start:0x020b3e84 end:0x020b3e9c
 
-src/overlays/ov030/calls/func_ov030_020b3e9c.c:
+src/overlays/ov030/calls/Ov030_initEightSubSlots.c:
     complete
     .text       start:0x020b3e9c end:0x020b3edc
 
-src/overlays/ov030/calls/func_ov030_020b3edc.c:
+src/overlays/ov030/calls/Ov030_ReleaseChildArray8.c:
     complete
     .text       start:0x020b3edc end:0x020b3efa
 
-src/overlays/ov030/calls/func_ov030_020b3efc.c:
+src/overlays/ov030/calls/Ov030_BindPartRigs.c:
     complete
     .text       start:0x020b3efc end:0x020b3f30
 
-src/overlays/ov030/calls/func_ov030_020b3f30.c:
+src/overlays/ov030/calls/Ov030_SpawnEmitters.c:
     complete
     .text       start:0x020b3f30 end:0x020b4000
 
-src/overlays/ov030/calls/func_ov030_020b4000.c:
+src/overlays/ov030/calls/Ov030_beginState5.c:
     complete
     .text       start:0x020b4000 end:0x020b4024
 
-src/overlays/ov030/auto/func_ov030_020b4024.c:
+src/overlays/ov030/auto/Ov030_ResetSlotIds.c:
     complete
     .text       start:0x020b4024 end:0x020b4048
 
-src/overlays/ov030/calls/func_ov030_020b4048.c:
+src/overlays/ov030/calls/Ov030_RebindEmitterSlots.c:
     complete
     .text       start:0x020b4048 end:0x020b40c0
 
-src/overlays/ov030/calls/func_ov030_020b40c0.c:
+src/overlays/ov030/calls/Ov030_UpdatePathMotionState.c:
     complete
     .text       start:0x020b40c0 end:0x020b43c0
 
-src/overlays/ov030/calls/func_ov030_020b43c0.c:
+src/overlays/ov030/calls/Ov030_DrawWithFadePolygonId.c:
     complete
     .text       start:0x020b43c0 end:0x020b4410
 
-src/overlays/ov030/calls/func_ov030_020b4410.c:
+src/overlays/ov030/calls/Ov030_RequestSpawnAtObject.c:
     complete
     .text       start:0x020b4410 end:0x020b4534
 
-src/overlays/ov030/calls/func_ov030_020b4534.c:
+src/overlays/ov030/calls/Ov030_ProbeLandingPoint.c:
     complete
     .text       start:0x020b4534 end:0x020b4654
 
-src/overlays/ov030/calls/func_ov030_020b4654.c:
+src/overlays/ov030/calls/Ov030_InitMoveParams.c:
     complete
     .text       start:0x020b4654 end:0x020b468c
 
-src/overlays/ov030/calls/func_ov030_020b468c.c:
+src/overlays/ov030/calls/Ov030_updateSubObjects.c:
     complete
     .text       start:0x020b468c end:0x020b46fc
 
-src/overlays/ov030/calls/func_ov030_020b46fc.c:
+src/overlays/ov030/calls/Ov030_StartAnimTracks.c:
     complete
     .text       start:0x020b46fc end:0x020b477c
 
-src/overlays/ov030/calls/func_ov030_020b477c.c:
+src/overlays/ov030/calls/Ov030_UpdateNodeActiveByMode.c:
     complete
     .text       start:0x020b477c end:0x020b4800
 
-src/overlays/ov030/calls/func_ov030_020b4800.c:
+src/overlays/ov030/calls/Ov030_DrawNodeAtOwner.c:
     complete
     .text       start:0x020b4800 end:0x020b4864
 
-src/overlays/ov030/calls/func_ov030_020b4864.c:
+src/overlays/ov030/calls/Ov030_EmitTimelineEffect.c:
     complete
     .text       start:0x020b4864 end:0x020b4b9c
 
-src/overlays/ov030/calls/func_ov030_020b4b9c.c:
+src/overlays/ov030/calls/Ov030_initStateSlotsDispatch.c:
     complete
     .text       start:0x020b4b9c end:0x020b4c34
 
-src/overlays/ov030/calls/func_ov030_020b4c34.c:
+src/overlays/ov030/calls/Ov030_setupTriple.c:
     complete
     .text       start:0x020b4c34 end:0x020b4c50
 
-src/overlays/ov030/calls/func_ov030_020b4c50.c:
+src/overlays/ov030/calls/Ov030_ArmPlayerTarget.c:
     complete
     .text       start:0x020b4c50 end:0x020b4cd4
 
-src/overlays/ov030/calls/func_ov030_020b4cd4.c:
+src/overlays/ov030/calls/Ov030_ComputeAimAngle.c:
     complete
     .text       start:0x020b4cd4 end:0x020b4fe0
 
-src/overlays/ov030/calls/func_ov030_020b4fe0.c:
+src/overlays/ov030/calls/Ov030_UpdateController.c:
     complete
     .text       start:0x020b4fe0 end:0x020b54dc
 
-src/overlays/ov030/calls/func_ov030_020b54dc.c:
+src/overlays/ov030/calls/Ov030_SetActionAnimation.c:
     complete
     .text       start:0x020b54dc end:0x020b55d0
 
-src/overlays/ov030/calls/func_ov030_020b55d0.c:
+src/overlays/ov030/calls/Ov030_handleCommand.c:
     complete
     .text       start:0x020b55d0 end:0x020b564c
 
-src/overlays/ov030/calls/func_ov030_020b564c.c:
+src/overlays/ov030/calls/Ov030_UpdateMotionController.c:
     complete
     .text       start:0x020b564c end:0x020b5860
 

@@ -14,8 +14,8 @@ const int data_ov150_020d2558[5] = {
 };
 
 /* read by Projectile action enter step (Ghidra: Ov150_ProjectileAction_Enter). (020d0ef4): u16 data_ov150_020d256c[4];
- *   func_ov150_020d0fa8 (020d0fa8): unsigned short data_ov150_020d256c[];
- *   func_ov150_020d1330 (020d1330): unsigned short data_ov150_020d256c[]; */
+ *   Ov150_stTransformProjectilePose (020d0fa8): unsigned short data_ov150_020d256c[];
+ *   Ov150_stateAnimCallbackEffect (020d1330): unsigned short data_ov150_020d256c[]; */
 const u8 data_ov150_020d256c[12] = {
     0, 0, 5, 0, 0, 0, 5, 1, 0, 0, 5, 2,
 };

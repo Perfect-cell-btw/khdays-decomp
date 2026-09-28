@@ -1,5 +1,5 @@
 /* Unlinks and releases every node of the intrusive doubly linked list. */
-extern void func_0203d194(void *node);
+extern void FreeInstanceMemory(void *node);
 
 void NNSi_FndDestroyDoubleList(int *list) {
     int *node = (int *)list[4];
@@ -11,7 +11,7 @@ void NNSi_FndDestroyDoubleList(int *list) {
         next = (int *)node[0];
         *(int *)(next + 1) = node[1];
         *(int *)node[1] = node[0];
-        func_0203d194(node);
+        FreeInstanceMemory(node);
         list[8] = list[8] - 1;
         node = next;
     } while (next != list);

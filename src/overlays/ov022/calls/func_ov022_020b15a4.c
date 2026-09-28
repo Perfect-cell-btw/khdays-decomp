@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_ov022_020b1290. */
-extern void *func_ov022_020b1290();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to Ov022_BuildResNodeSet. */
+extern void *Ov022_BuildResNodeSet();
 
 void *func_ov022_020b15a4() {
-    return func_ov022_020b1290();
+    return Ov022_BuildResNodeSet();
 }

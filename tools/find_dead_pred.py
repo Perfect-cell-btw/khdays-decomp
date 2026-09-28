@@ -4,7 +4,7 @@
 
    Eso no es basura del compilador: significa que el ORIGINAL repite un test que tu C
    no tiene (mwcc reusa los flags en vez de volver a comparar). Confirmado en
-   func_ov008_02077f1c y func_ov024_02084fac el 2026-07-18.
+   Ov008_RefreshPageOrNotifyToggle y Ov024_MobiClip_DecoderDestroy el 2026-07-18.
 """
 import os as _os
 _HERE = _os.path.dirname(_os.path.abspath(__file__))

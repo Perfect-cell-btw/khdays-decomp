@@ -1,11 +1,11 @@
 /* ov252 .rodata head 0x020d4258-0x020d4334: the constructor's tables (the per-function templates
  * that follow are in ov252_templates_020d4334.c). Q12 fixed point for the bounds. */
 
-/* func_ov252_020cc1a0 (constructor): the +0x1fc bounds, min (-1.62, -4.92, -1.48) and max
+/* Ov252_Construct (constructor): the +0x1fc bounds, min (-1.62, -4.92, -1.48) and max
  * (1.62, 2.47, 5.01). */
 typedef struct { int min[3]; int max[3]; } Bounds;
 
-/* func_ov252_020cc1a0 (constructor): poses of the 49 hidden parts. */
+/* Ov252_Construct (constructor): poses of the 49 hidden parts. */
 typedef struct { int id[49]; } PartPoses;
 
 const Bounds data_ov252_020d4258 = { { -0x19ef, -0x4ec0, -0x17af }, { 0x19ef, 0x2798, 0x502f } };

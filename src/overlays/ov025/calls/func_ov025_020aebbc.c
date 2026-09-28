@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_ov025_020ae0f0. */
-extern void *func_ov025_020ae0f0();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to Ov025_ScrollList_Confirm. */
+extern void *Ov025_ScrollList_Confirm();
 
 void *func_ov025_020aebbc() {
-    return func_ov025_020ae0f0();
+    return Ov025_ScrollList_Confirm();
 }

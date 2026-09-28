@@ -8,22 +8,22 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov136_020d1a24 (020d1a24): struct v5 data_ov136_020d39d8; */
+/* read by Ov136_Construct (020d1a24): struct v5 data_ov136_020d39d8; */
 const int data_ov136_020d39d8[3] = {
     2, 3, 4,
 };
 
-/* read by func_ov136_020d37f0 (020d37f0): unsigned short data_ov136_020d39e4[]; */
+/* read by Ov136_stateAnimPairCallback (020d37f0): unsigned short data_ov136_020d39e4[]; */
 const u8 data_ov136_020d39e4[16] = {
     0, 0, 5, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0,
 };
 
-/* read by * func_ov136_020d2f8c -- burst attack tick of the ov134 enemy (and its byte-identical twin (020d2f8c): struct Ov134AreaMsg data_ov136_020d39f4; */
+/* read by * Ov136_BurstAttackTick -- burst attack tick of the ov134 enemy (and its byte-identical twin (020d2f8c): struct Ov134AreaMsg data_ov136_020d39f4; */
 const u16 data_ov136_020d39f4[7] = {
     0, 261, 0, 0, 0, 0, 0,
 };
 
-/* read by * func_ov136_020d2f8c -- burst attack tick of the ov134 enemy (and its byte-identical twin (020d2f8c): struct Ov134AreaMsg data_ov136_020d3a02; */
+/* read by * Ov136_BurstAttackTick -- burst attack tick of the ov134 enemy (and its byte-identical twin (020d2f8c): struct Ov134AreaMsg data_ov136_020d3a02; */
 const u16 data_ov136_020d3a02[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };

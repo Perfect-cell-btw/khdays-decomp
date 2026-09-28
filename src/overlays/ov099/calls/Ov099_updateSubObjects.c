@@ -1,0 +1,21 @@
+struct b1 { unsigned char b : 1; };
+struct v3 { int a, b, c; };
+extern void Ov099_DrawWithFadePolygonId(void *p);
+extern void Ov099_DrawNodeAtOwner(void *this);
+extern void Scene_DrawNode(void *p);
+
+void Ov099_updateSubObjects(char *this) {
+    char *g = *(char **)(this + 0xdb4);
+    int i;
+    char *p;
+    if (((struct b1 *)(g + 0x694))->b == 0) return;
+    p = this + 0x234;
+    for (i = 0; i < 8; i++) {
+        Ov099_DrawWithFadePolygonId(p);
+        p += 0x170;
+    }
+    Ov099_DrawNodeAtOwner(this);
+    if (*(int *)(this + 0x14) != 1) return;
+    *(struct v3 *)(this + 0xbc) = *(struct v3 *)(g + 0x48c);
+    Scene_DrawNode(this + 0x18);
+}

@@ -1,0 +1,71 @@
+/* Circle tick of the ov166 enemy (x3: ov166/167/168), the Ov178_CircleTick shape: acquires
+ * a target (+0xc; none requests sub-state 2), steps towards it along the direction from
+ * 020cca08 (0x200 when the distance exceeds 0x100) plus a sideways component (world Y x
+ * direction, normalised, times the +0x60 orbit sense x 0x180) into +0x20; the +0x24 height
+ * tracks the target's +0x78 by 0x80 per tick outside a 0x80 dead band. The +0x5c timer runs
+ * down by the node's +0x2c speed; at zero a roll under 60 (of 101) with a free target
+ * (020ccaa0) requests sub-state 8, else 5, and the slot is cleared unless the sub-state stayed
+ * idle. `+ (dist - dist)` is the documented copy artifact of RandNextScaled. */
+typedef struct { int x, y, z; } Vec3;
+
+extern int Ov107_FindNearestObject(int obj, int b);
+extern void SetIndexedSlot(int node, int slot, void *cb);
+extern int Ov166_FaceTargetGetClearance(int node, Vec3 *out);
+extern void ScaleVec3Fx12(int scale, const Vec3 *v, Vec3 *out);
+extern void VEC_CrossProduct(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern int VEC_Normalize(const Vec3 *v, Vec3 *out);
+extern void VEC_Add(const Vec3 *a, const Vec3 *b, Vec3 *out);
+extern int RandNextScaled(int bound);
+extern int Ov166_IsChildInactive(int node);
+extern int data_02042264;
+
+void Ov166_CircleTick(int node)
+{
+    int *state = *(int **)(node + 4);
+    Vec3 dir;
+    Vec3 side;
+    int dist;
+    int a;
+    int b;
+    int diff;
+    int roll;
+
+    state[3] = Ov107_FindNearestObject(*state, 0);
+    if (state[3] == 0) {
+        *(unsigned char *)(*state + 0x1c7) = 2;
+        SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
+        return;
+    }
+    dist = Ov166_FaceTargetGetClearance(node, &dir);
+    if (dist > 0x100) {
+        dist = 0x200;
+    }
+    ScaleVec3Fx12(dist, &dir, (Vec3 *)(state + 8));
+    VEC_CrossProduct((Vec3 *)&data_02042264, &dir, &side);
+    VEC_Normalize(&side, &side);
+    ScaleVec3Fx12(state[0x18] * 0x180, &side, &side);
+    VEC_Add((Vec3 *)(state + 8), &side, (Vec3 *)(state + 8));
+    a = *(int *)(state[3] + 0x78);
+    b = *(int *)(state[2] + 4);
+    diff = a - b;
+    if (diff < 0) {
+        diff = -diff;
+    }
+    if (diff > 0x80) {
+        if (a < b) {
+            state[9] -= 0x80;
+        } else {
+            state[9] += 0x80;
+        }
+    }
+    state[0x17] -= *(int *)(*(int *)node + 0x2c);
+    if (state[0x17] > 0) {
+        return;
+    }
+    roll = RandNextScaled(0x65) + (dist - dist);
+    state[0x17] = 0;
+    *(unsigned char *)(*state + 0x1c7) = (roll < 0x3c && Ov166_IsChildInactive(node) != 0) ? 8 : 5;
+    if (*(signed char *)(*state + 0x1c7) != -1) {
+        SetIndexedSlot(node, *(signed char *)(node + 0x20), 0);
+    }
+}

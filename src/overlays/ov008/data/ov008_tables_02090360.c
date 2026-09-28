@@ -5,8 +5,8 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_02090360: func_ov008_0205f050
- *   data_ov008_02090370: func_ov008_0205f050
+ *   data_ov008_02090360: Ov008_EnqueueRowPalette
+ *   data_ov008_02090370: Ov008_EnqueueRowPalette
  */
 
 typedef unsigned char u8;

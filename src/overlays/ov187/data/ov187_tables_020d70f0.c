@@ -8,19 +8,19 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov187_020d3848 (020d3848): const struct CameraWork data_ov187_020d70f0; */
+/* read by Ov187_Actor_Construct (020d3848): const struct CameraWork data_ov187_020d70f0; */
 const int data_ov187_020d70f0[4] = {
     0, 0, 0, 3072,
 };
 
-/* read by func_ov187_020d67bc (020d67bc): Pair data_ov187_020d7100[];
+/* read by Ov187_OrbitStep (020d67bc): Pair data_ov187_020d7100[];
  *   Publish the landing: copy the pending anchor into the live slot and ask the placement help (020d695c): Ev data_ov187_020d7100[];
- *   func_ov187_020d6c54 (020d6c54): Pair16 data_ov187_020d7100[]; */
+ *   Ov187_EmitAtOrbit (020d6c54): Pair16 data_ov187_020d7100[]; */
 const u8 data_ov187_020d7100[12] = {
     0, 0, 5, 0, 0, 0, 5, 0, 0, 0, 5, 0,
 };
 
-/* read by func_ov187_020d548c (020d548c): const struct CameraWork data_ov187_020d710c; */
+/* read by Ov187_InitEffectActor (020d548c): const struct CameraWork data_ov187_020d710c; */
 const int data_ov187_020d710c[4] = {
     0, 0, 0, 2560,
 };

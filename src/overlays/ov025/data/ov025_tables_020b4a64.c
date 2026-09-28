@@ -5,7 +5,7 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov025_020b4a64: func_ov025_02083e84
+ *   data_ov025_020b4a64: Ov025_InitCampaignMenuContext
  */
 
 typedef unsigned char u8;

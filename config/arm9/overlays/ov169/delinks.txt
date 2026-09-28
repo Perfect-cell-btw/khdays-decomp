@@ -4,23 +4,23 @@
     .data       start:0x020cee60 end:0x020cee80 kind:data align:32
     .bss        start:0x020cee80 end:0x020cee80 kind:bss align:32
 
-src/overlays/ov169/calls/func_ov169_020cbf20.c:
+src/overlays/ov169/calls/Ov169_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov169/calls/func_ov169_020cbf38.c:
+src/overlays/ov169/calls/Ov169_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov169/calls/func_ov169_020cbfc4.c:
+src/overlays/ov169/calls/Ov169_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc020
 
-src/overlays/ov169/calls/func_ov169_020cc020.c:
+src/overlays/ov169/calls/Ov169_Construct.c:
     complete
     .text       start:0x020cc020 end:0x020cc33c
 
-src/overlays/ov169/calls/func_ov169_020cc33c.c:
+src/overlays/ov169/calls/Ov169_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020cc33c end:0x020cc37c
 
@@ -28,159 +28,159 @@ src/overlays/ov169/calls/func_ov169_020cc37c.c:
     complete
     .text       start:0x020cc37c end:0x020cc388
 
-src/overlays/ov169/calls/func_ov169_020cc388.c:
+src/overlays/ov169/calls/Ov169_ForwardEventToChild.c:
     complete
     .text       start:0x020cc388 end:0x020cc3b0
 
-src/overlays/ov169/calls/func_ov169_020cc3b0.c:
+src/overlays/ov169/calls/Ov169_NotifyPartThenBase.c:
     complete
     .text       start:0x020cc3b0 end:0x020cc3d8
 
-src/overlays/ov169/calls/func_ov169_020cc3d8.c:
+src/overlays/ov169/calls/Ov169_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc3d8 end:0x020cc620
 
-src/overlays/ov169/calls/func_ov169_020cc620.c:
+src/overlays/ov169/calls/Ov169_Model_SetTrack0.c:
     complete
     .text       start:0x020cc620 end:0x020cc650
 
-src/overlays/ov169/calls/func_ov169_020cc650.c:
+src/overlays/ov169/calls/Ov169_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020cc650 end:0x020cc788
 
-src/overlays/ov169/calls/func_ov169_020cc788.c:
+src/overlays/ov169/calls/Ov169_registryCreateEntry.c:
     complete
     .text       start:0x020cc788 end:0x020cc7e4
 
-src/overlays/ov169/calls/func_ov169_020cc7e4.c:
+src/overlays/ov169/calls/Ov169_OnHit.c:
     complete
     .text       start:0x020cc7e4 end:0x020cca08
 
-src/overlays/ov169/auto/func_ov169_020cca08.c:
+src/overlays/ov169/auto/Ov169_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020cca08 end:0x020cca34
 
-src/overlays/ov169/calls/func_ov169_020cca34.c:
+src/overlays/ov169/calls/Ov169_FaceTargetGetClearance.c:
     complete
     .text       start:0x020cca34 end:0x020ccacc
 
-src/overlays/ov169/auto/func_ov169_020ccacc.c:
+src/overlays/ov169/auto/Ov169_IsChildInactive.c:
     complete
     .text       start:0x020ccacc end:0x020ccb0c
 
-src/overlays/ov169/calls/func_ov169_020ccb0c.c:
+src/overlays/ov169/calls/Ov169_stateInitTransformSlots.c:
     complete
     .text       start:0x020ccb0c end:0x020ccbf8
 
-src/overlays/ov169/calls/func_ov169_020ccbf8.c:
+src/overlays/ov169/calls/Ov169_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020ccbf8 end:0x020ccde4
 
-src/overlays/ov169/calls/func_ov169_020ccde4.c:
+src/overlays/ov169/calls/Ov169_stDivStoreField.c:
     complete
     .text       start:0x020ccde4 end:0x020cce84
 
-src/overlays/ov169/calls/func_ov169_020cce84.c:
+src/overlays/ov169/calls/Ov169_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cce84 end:0x020cceec
 
-src/overlays/ov169/calls/func_ov169_020cceec.c:
+src/overlays/ov169/calls/Ov169_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020cceec end:0x020ccf70
 
-src/overlays/ov169/calls/func_ov169_020ccf70.c:
+src/overlays/ov169/calls/Ov169_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020ccf70 end:0x020cd03c
 
-src/overlays/ov169/calls/func_ov169_020cd03c.c:
+src/overlays/ov169/calls/Ov169_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020cd03c end:0x020cd114
 
-src/overlays/ov169/calls/func_ov169_020cd114.c:
+src/overlays/ov169/calls/Ov169_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd114 end:0x020cd148
 
-src/overlays/ov169/calls/func_ov169_020cd148.c:
+src/overlays/ov169/calls/Ov169_stateRandomInitFull.c:
     complete
     .text       start:0x020cd148 end:0x020cd1d4
 
-src/overlays/ov169/calls/func_ov169_020cd1d4.c:
+src/overlays/ov169/calls/Ov169_OrbitTick.c:
     complete
     .text       start:0x020cd1d4 end:0x020cd554
 
-src/overlays/ov169/calls/func_ov169_020cd554.c:
+src/overlays/ov169/calls/Ov169_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020cd554 end:0x020cd598
 
-src/overlays/ov169/calls/func_ov169_020cd598.c:
+src/overlays/ov169/calls/Ov169_HoverBobTick.c:
     complete
     .text       start:0x020cd598 end:0x020cd790
 
-src/overlays/ov169/calls/func_ov169_020cd790.c:
+src/overlays/ov169/calls/Ov169_AiStep_StartTag1.c:
     complete
     .text       start:0x020cd790 end:0x020cd7cc
 
-src/overlays/ov169/calls/func_ov169_020cd7cc.c:
+src/overlays/ov169/calls/Ov169_HoverApproachTick.c:
     complete
     .text       start:0x020cd7cc end:0x020cd998
 
-src/overlays/ov169/calls/func_ov169_020cd998.c:
+src/overlays/ov169/calls/Ov169_stateRandomDirValue.c:
     complete
     .text       start:0x020cd998 end:0x020cda08
 
-src/overlays/ov169/calls/func_ov169_020cda08.c:
+src/overlays/ov169/calls/Ov169_CircleStrafeTarget.c:
     complete
     .text       start:0x020cda08 end:0x020cdb84
 
-src/overlays/ov169/calls/func_ov169_020cdb84.c:
+src/overlays/ov169/calls/Ov169_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020cdb84 end:0x020cdc20
 
-src/overlays/ov169/calls/func_ov169_020cdc20.c:
+src/overlays/ov169/calls/Ov169_HoverHoldTick.c:
     complete
     .text       start:0x020cdc20 end:0x020cddec
 
-src/overlays/ov169/calls/func_ov169_020cddec.c:
+src/overlays/ov169/calls/Ov169_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cddec end:0x020cde20
 
-src/overlays/ov169/calls/func_ov169_020cde20.c:
+src/overlays/ov169/calls/Ov169_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020cde20 end:0x020cde54
 
-src/overlays/ov169/calls/func_ov169_020cde54.c:
+src/overlays/ov169/calls/Ov169_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020cde54 end:0x020cdf48
 
-src/overlays/ov169/calls/func_ov169_020cdf48.c:
+src/overlays/ov169/calls/Ov169_AiEndWithUpdate.c:
     complete
     .text       start:0x020cdf48 end:0x020ce034
 
-src/overlays/ov169/calls/func_ov169_020ce034.c:
+src/overlays/ov169/calls/Ov169_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020ce034 end:0x020ce0d4
 
-src/overlays/ov169/calls/func_ov169_020ce0d4.c:
+src/overlays/ov169/calls/Ov169_stateTimerToggleFlags.c:
     complete
     .text       start:0x020ce0d4 end:0x020ce168
 
-src/overlays/ov169/calls/func_ov169_020ce168.c:
+src/overlays/ov169/calls/Ov169_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020ce168 end:0x020ce1a8
 
-src/overlays/ov169/calls/func_ov169_020ce1a8.c:
+src/overlays/ov169/calls/Ov169_Actor_New.c:
     complete
     .text       start:0x020ce1a8 end:0x020ce1dc
 
-src/overlays/ov169/calls/func_ov169_020ce1dc.c:
+src/overlays/ov169/calls/Ov169_SubObject_ConstructB.c:
     complete
     .text       start:0x020ce1dc end:0x020ce33c
 
-src/overlays/ov169/calls/func_ov169_020ce33c.c:
+src/overlays/ov169/calls/Ov169_OnDespawn.c:
     complete
     .text       start:0x020ce33c end:0x020ce358
 
-src/overlays/ov169/calls/func_ov169_020ce358.c:
+src/overlays/ov169/calls/Ov169_TickAndSyncModelXform.c:
     complete
     .text       start:0x020ce358 end:0x020ce390
 
@@ -188,47 +188,47 @@ src/overlays/ov169/calls/func_ov169_020ce390.c:
     complete
     .text       start:0x020ce390 end:0x020ce39c
 
-src/overlays/ov169/calls/func_ov169_020ce39c.c:
+src/overlays/ov169/calls/Ov169_TryTriggerEffect.c:
     complete
     .text       start:0x020ce39c end:0x020ce424
 
-src/overlays/ov169/calls/func_ov169_020ce424.c:
+src/overlays/ov169/calls/Ov169_AttackSweep.c:
     complete
     .text       start:0x020ce424 end:0x020ce5a8
 
-src/overlays/ov169/calls/func_ov169_020ce5a8.c:
+src/overlays/ov169/calls/Ov169_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020ce5a8 end:0x020ce5f4
 
-src/overlays/ov169/calls/func_ov169_020ce5f4.c:
+src/overlays/ov169/calls/Ov169_stateInitClearSlots.c:
     complete
     .text       start:0x020ce5f4 end:0x020ce69c
 
-src/overlays/ov169/calls/func_ov169_020ce69c.c:
+src/overlays/ov169/calls/Ov169_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020ce69c end:0x020ce714
 
-src/overlays/ov169/auto/func_ov169_020ce714.c:
+src/overlays/ov169/auto/Ov169_AiApplyMoveVector.c:
     complete
     .text       start:0x020ce714 end:0x020ce72c
 
-src/overlays/ov169/calls/func_ov169_020ce72c.c:
+src/overlays/ov169/calls/Ov169_ConfigHw60CopyVec3ConstToCThenAdvance.c:
     complete
     .text       start:0x020ce72c end:0x020ce7dc
 
-src/overlays/ov169/calls/func_ov169_020ce7dc.c:
+src/overlays/ov169/calls/Ov169_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020ce7dc end:0x020ce814
 
-src/overlays/ov169/calls/func_ov169_020ce814.c:
+src/overlays/ov169/calls/Ov169_BeginLeap.c:
     complete
     .text       start:0x020ce814 end:0x020cea4c
 
-src/overlays/ov169/calls/func_ov169_020cea4c.c:
+src/overlays/ov169/calls/Ov169_LeapTick.c:
     complete
     .text       start:0x020cea4c end:0x020ceda8
 
-src/overlays/ov169/calls/func_ov169_020ceda8.c:
+src/overlays/ov169/calls/Ov169_SweepStep.c:
     complete
     .text       start:0x020ceda8 end:0x020cee44
 

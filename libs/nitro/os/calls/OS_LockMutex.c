@@ -1,7 +1,7 @@
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern void OSi_EnqueueTail(void *thread, void *mutex);
-extern void func_02001f10(void *queue);
+extern void OS_SleepThread(void *queue);
 extern char data_02044330;
 
 /* Takes a mutex, blocking on its wait queue until the current owner releases it. Recursive locks
@@ -24,7 +24,7 @@ void OS_LockMutex(char *mutex) {
             break;
         }
         *(char **)(self + 0x84) = mutex;
-        func_02001f10(mutex);
+        OS_SleepThread(mutex);
         *(char **)(self + 0x84) = none;
     }
     OS_RestoreInterrupts(enabled);

@@ -3,7 +3,7 @@
 Why this exists (2026-07-24): `audit_arity.py` compares the local `extern` DECLARATION against the
 tree, and it deliberately skips `extern int f();` because an empty parameter list "is not a
 declaration". It also only looks at `func_XXXXXXXX` style names. Both gaps hid the real cause of
-`func_ov030_020b4410`: the park declared `extern int VEC_Mag();` (unprototyped, so no declared
+`Ov030_RequestSpawnAtObject`: the park declared `extern int VEC_Mag();` (unprototyped, so no declared
 arity to compare) and CALLED it with four arguments, while every matched call site passes one.
 The three phantom arguments were enough extra live values to push mwcc over its
 keep-vs-rematerialise threshold, and the residue surfaced ~0x99 bytes later looking exactly like a

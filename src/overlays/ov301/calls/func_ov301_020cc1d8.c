@@ -1,5 +1,5 @@
-extern int func_ov107_020c7b70();
+extern int Ov107_HandleRegionEvent();
 
 int func_ov301_020cc1d8() {
-    return func_ov107_020c7b70();
+    return Ov107_HandleRegionEvent();
 }

@@ -10,7 +10,7 @@ typedef struct RenderCommandState {
     u32 alternateScaleE4;
 } RenderCommandState;
 
-extern void func_01ff9f00(u32 command, const void *words, u32 count);
+extern void GX_SendFifoWords(u32 command, const void *words, u32 count);
 
 void func_01ffcbac(RenderCommandState *state, int useAlternate)
 {
@@ -23,7 +23,7 @@ void func_01ffcbac(RenderCommandState *state, int useAlternate)
         } else {
             values[0] = values[1] = values[2] = state->alternateScaleE4;
         }
-        func_01ff9f00(0x1b, values, 3);
+        GX_SendFifoWords(0x1b, values, 3);
     }
     state->stream00++;
 }

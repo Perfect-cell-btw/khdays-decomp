@@ -1,0 +1,24 @@
+extern int SetIndexedSlot();
+
+struct Inner {
+    unsigned char *ptr0;        /* +0x00 */
+    char pad[0x30 - 4];
+    unsigned char *flagptr;     /* +0x30 */
+};
+
+struct Obj {
+    char pad0;                  /* +0x00 */
+    struct Inner *inner;        /* +0x04 */
+    char pad1[0x20 - 8];
+    signed char field20;        /* +0x20 */
+};
+
+void Ov244_AiQueue2OnFlagClear(struct Obj *obj)
+{
+    struct Inner *inner = obj->inner;
+    if (inner->flagptr[0] != 0) {
+        return;
+    }
+    inner->ptr0[0x1c7] = 2;
+    SetIndexedSlot(obj, obj->field20, 0);
+}

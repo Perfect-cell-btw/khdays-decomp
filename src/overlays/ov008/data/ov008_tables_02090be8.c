@@ -5,9 +5,9 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_02090be8: func_ov008_0207d888
- *   data_ov008_02090c00: func_ov008_0207d888
- *   data_ov008_02090c60: func_ov008_0207d888
+ *   data_ov008_02090be8: Ov008_UpdateMissionMemberSelectionInput
+ *   data_ov008_02090c00: Ov008_UpdateMissionMemberSelectionInput
+ *   data_ov008_02090c60: Ov008_UpdateMissionMemberSelectionInput
  */
 
 typedef unsigned char u8;

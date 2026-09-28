@@ -5,7 +5,7 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_02090bc4: func_ov008_02079d60, func_ov008_0207b70c
+ *   data_ov008_02090bc4: Ov008_RefreshSelectionSendBlock, Ov008_MissionFillMenuLabels
  */
 
 typedef unsigned char u8;

@@ -15,19 +15,19 @@ typedef struct Ov008PageHooks {
 } Ov008PageHooks;
 
 extern void func_ov025_020aebbc(void);
-extern void func_ov025_020ae6f0(void);
-extern void func_ov025_020ae998(void);
-extern void func_ov025_020aea2c(void);
-extern void func_ov025_020aea98(void);
-extern void func_ov025_020aeaec(void);
-extern void func_ov025_020aeb44(void);
-extern void func_ov025_020aeb80(void);
-extern void func_ov025_020aebc8(void);
+extern void Ov025_ScrollList_Open(void);
+extern void Ov025_ScrollList_Release(void);
+extern void Ov025_ListViewUpdate(void);
+extern void Ov025_StepBackIfState4(void);
+extern void Ov025_StepForwardIfState8(void);
+extern void Ov025_ScrollList_PageUpOnKey(void);
+extern void Ov025_ScrollList_PageDownOnKey(void);
+extern void Ov025_ScrollList_Leave(void);
 
 Ov008PageHooks data_ov025_020b54b8 = {
-    func_ov025_020ae6f0,  /* pfnOpen */
-    func_ov025_020ae998,  /* pfnStep */
-    func_ov025_020aea2c,  /* pfnClose */
+    Ov025_ScrollList_Open,  /* pfnOpen */
+    Ov025_ScrollList_Release,  /* pfnStep */
+    Ov025_ListViewUpdate,  /* pfnClose */
     744,  /* nStateSize */
-    { func_ov025_020aea98, func_ov025_020aeaec, func_ov025_020aeb44, func_ov025_020aeb80, func_ov025_020aebbc, func_ov025_020aebc8, 0, 0, 0, 0, 0, func_ov025_020aebc8 },  /* apfnHook */
+    { Ov025_StepBackIfState4, Ov025_StepForwardIfState8, Ov025_ScrollList_PageUpOnKey, Ov025_ScrollList_PageDownOnKey, func_ov025_020aebbc, Ov025_ScrollList_Leave, 0, 0, 0, 0, 0, Ov025_ScrollList_Leave },  /* apfnHook */
 };

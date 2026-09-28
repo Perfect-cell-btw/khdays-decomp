@@ -1,6 +1,6 @@
-extern void *func_0201f3d8(int a, int b);
-extern int func_0201ef9c(int a, int b);
-extern void func_0201f924(void *dst, int src);
+extern void *ResCache_FindSlot(int a, int b);
+extern int Archive_LoadFile(int a, int b);
+extern void strcpy(void *dst, int src);
 extern int func_02023650(void);
 
 extern int data_0204bbfc[];
@@ -16,7 +16,7 @@ typedef struct {
 } Slot_0201f510;
 
 void *SND_RegisterSeq(int a, int b) {
-    Slot_0201f510 *p = (Slot_0201f510 *)func_0201f3d8(a, b);
+    Slot_0201f510 *p = (Slot_0201f510 *)ResCache_FindSlot(a, b);
     int v;
 
     if (p->s0 != 0) {
@@ -30,11 +30,11 @@ void *SND_RegisterSeq(int a, int b) {
         v = func_02023650();
     }
     p->w8 = v;
-    p->wc = func_0201ef9c(a, b);
+    p->wc = Archive_LoadFile(a, b);
     if (a & 0x80000000) {
         p->w10 = a;
     } else {
-        func_0201f924(&p->w10, a);
+        strcpy(&p->w10, a);
     }
     p->s0 = 1;
     p->s2 = 0;

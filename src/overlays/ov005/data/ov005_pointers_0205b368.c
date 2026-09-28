@@ -6,34 +6,34 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov005_020540b4(void);
-extern void func_ov005_020545f8(void);
-extern void func_ov005_02054674(void);
-extern void func_ov005_02054774(void);
-extern void func_ov005_020547e4(void);
-extern void func_ov005_020549bc(void);
-extern void func_ov005_02054a10(void);
-extern void func_ov005_02054a4c(void);
-extern void func_ov005_02054ad0(void);
+extern void Ov005_UpdateFadeIn(void);
+extern void Ov005_WaitForMenuEntry(void);
+extern void Ov005_UpdateRewardPresentation(void);
+extern void Ov005_RefreshAndHandleCancel(void);
+extern void Ov005_UpdateConfirmation(void);
+extern void Ov005_WaitForExitTask(void);
+extern void Ov005_LatchTickState7(void);
+extern void Ov005_UpdateFadeOut(void);
+extern void Ov005_MarkMenuExitRequested(void);
 
 const Ov_Fn data_ov005_0205b368[9] = {
 
-    func_ov005_020540b4,
+    Ov005_UpdateFadeIn,
 
-    func_ov005_020545f8,
+    Ov005_WaitForMenuEntry,
 
-    func_ov005_02054674,
+    Ov005_UpdateRewardPresentation,
 
-    func_ov005_02054774,
+    Ov005_RefreshAndHandleCancel,
 
-    func_ov005_020547e4,
+    Ov005_UpdateConfirmation,
 
-    func_ov005_020549bc,
+    Ov005_WaitForExitTask,
 
-    func_ov005_02054a10,
+    Ov005_LatchTickState7,
 
-    func_ov005_02054a4c,
+    Ov005_UpdateFadeOut,
 
-    func_ov005_02054ad0,
+    Ov005_MarkMenuExitRequested,
 
 };

@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by * func_ov289_020d5d64 -- Ov287_Actor_ResolveHit. (020d5d64): const struct ImpactIdPairs data_ov289_020d7134; */
+/* read by * Ov289_Actor_ResolveHit -- Ov287_Actor_ResolveHit. (020d5d64): const struct ImpactIdPairs data_ov289_020d7134; */
 const u8 data_ov289_020d7134[8] = {
     2, 3, 0, 1, 0, 16, 0, 0,
 };

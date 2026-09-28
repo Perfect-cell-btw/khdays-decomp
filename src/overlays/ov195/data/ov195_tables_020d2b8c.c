@@ -13,7 +13,7 @@ const int data_ov195_020d2b8c[3] = {
     2, 3, 4,
 };
 
-/* read by func_ov195_020d1e08 (020d1e08): unsigned short data_ov195_020d2b98[]; */
+/* read by Ov195_stateAnimPairCallback (020d1e08): unsigned short data_ov195_020d2b98[]; */
 const u8 data_ov195_020d2b98[16] = {
     0, 0, 5, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0,
 };

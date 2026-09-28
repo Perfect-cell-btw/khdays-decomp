@@ -5,22 +5,22 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov025_020b4240: func_ov025_0209ebb4
- *   data_ov025_020b4250: func_ov025_0209eea8
- *   data_ov025_020b4278: func_ov025_0209f860
- *   data_ov025_020b4370: func_ov025_020a16e4
- *   data_ov025_020b4380: func_ov025_020a16e4
- *   data_ov025_020b4390: func_ov025_020a11c4
- *   data_ov025_020b43b0: func_ov025_020a2534
- *   data_ov025_020b43d8: func_ov025_020a2534
- *   data_ov025_020b4400: func_ov025_020a2534
- *   data_ov025_020b4428: func_ov025_020a2534
- *   data_ov025_020b4450: func_ov025_020a2534
- *   data_ov025_020b4478: func_ov025_020a2534
- *   data_ov025_020b44a0: func_ov025_020a3b60
- *   data_ov025_020b44d8: func_ov025_020a42b8
+ *   data_ov025_020b4240: Ov025_Reports_SetupEntries
+ *   data_ov025_020b4250: Ov025_Reports_SetupSurface
+ *   data_ov025_020b4278: Ov025_Reports_CountUnlocked
+ *   data_ov025_020b4370: Ov025_ScrollMenu_SetupEntries
+ *   data_ov025_020b4380: Ov025_ScrollMenu_SetupEntries
+ *   data_ov025_020b4390: Ov025_DrawStatusPanelLabels
+ *   data_ov025_020b43b0: Ov025_InitStatusPanelSurfaces
+ *   data_ov025_020b43d8: Ov025_InitStatusPanelSurfaces
+ *   data_ov025_020b4400: Ov025_InitStatusPanelSurfaces
+ *   data_ov025_020b4428: Ov025_InitStatusPanelSurfaces
+ *   data_ov025_020b4450: Ov025_InitStatusPanelSurfaces
+ *   data_ov025_020b4478: Ov025_InitStatusPanelSurfaces
+ *   data_ov025_020b44a0: Ov025_DrawStatBar
+ *   data_ov025_020b44d8: Ov025_DrawPageBWidget
  *   data_ov025_020b4520: (no C reader yet)
- *   data_ov025_020b4578: func_ov025_020a694c
+ *   data_ov025_020b4578: Ov025_MissionList_PlaceCursor
  */
 
 typedef unsigned char u8;

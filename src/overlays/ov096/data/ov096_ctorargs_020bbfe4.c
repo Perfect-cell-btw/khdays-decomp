@@ -1,7 +1,7 @@
 /* ov096 constructor argument block data_ov096_020bbfe4, 0x020bbfe4-0x020bbff8 (.rodata).
  *
  * Five words handed to a class constructor: the resource path of the object's archive
- * ('ba/ch/ma/li_e2.p.z') and four parameters the constructor reads.  Used by func_ov096_020bae08.
+ * ('ba/ch/ma/li_e2.p.z') and four parameters the constructor reads.  Used by Ov096_SetupSequenceSlots.
  */
 
 typedef struct ClassCtorArgs {

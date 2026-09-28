@@ -48,8 +48,8 @@ typedef struct NNSG3dRenderObj {
     NNSG3dResMdl *resMdl;
 } NNSG3dRenderObj;
 
-extern void func_01ff9f00(u32 op, const u32 *args, u32 num);
-extern void func_02016294(MtxFx43 *pos, MtxFx33 *nrm);
+extern void GX_SendFifoWords(u32 op, const u32 *args, u32 num);
+extern void NNS_G3dGetCurrentMtx(MtxFx43 *pos, MtxFx33 *nrm);
 
 static inline void *NNS_G3dGetResDataByIdx(const NNSG3dResDict *dict, u32 idx)
 {
@@ -78,7 +78,7 @@ static inline NNSG3dResNodeData *NNS_G3dGetNodeDataByIdx(const NNSG3dResNodeInfo
 
 static inline void NNS_G3dGeRestoreMtx(int num)
 {
-    func_01ff9f00(0x14, (u32 *)&num, 1);
+    GX_SendFifoWords(0x14, (u32 *)&num, 1);
 }
 
 BOOL func_02016320(const NNSG3dRenderObj *pRenderObj, MtxFx43 *pos, MtxFx33 *nrm, u32 nodeID)
@@ -92,7 +92,7 @@ BOOL func_02016320(const NNSG3dRenderObj *pRenderObj, MtxFx43 *pos, MtxFx33 *nrm
     if (stackID != 31) {
         NNS_G3dGeRestoreMtx((int)stackID);
         if (pos || nrm) {
-            func_02016294(pos, nrm);
+            NNS_G3dGetCurrentMtx(pos, nrm);
         }
         return 1;
     } else {

@@ -4,10 +4,10 @@
  * a zero word is a null entry.
  */
 
-extern void func_02010e18(void);
-extern void func_02010e20(void);
-extern void func_02010e28(void);
-extern void func_02010e30(void);
+extern void Gfd_DefaultAllocTexVram(void);
+extern void Gfd_DefaultFreeTexVram(void);
+extern void Gfd_DefaultAllocPlttVram(void);
+extern void Gfd_DefaultFreePlttVram(void);
 
 /* The five party roster entries (src/data/main_party_roster_02042418.c). */
 typedef struct PartyRosterEntry { unsigned int w[6]; } PartyRosterEntry;
@@ -15,25 +15,25 @@ extern PartyRosterEntry data_02042418[5];
 
 void *data_020423ec[1] = {
 
-    (void *)func_02010e18,
+    (void *)Gfd_DefaultAllocTexVram,
 
 };
 
 void *data_020423f0[1] = {
 
-    (void *)func_02010e20,
+    (void *)Gfd_DefaultFreeTexVram,
 
 };
 
 void *data_020423f4[1] = {
 
-    (void *)func_02010e28,
+    (void *)Gfd_DefaultAllocPlttVram,
 
 };
 
 void *data_020423f8[1] = {
 
-    (void *)func_02010e30,
+    (void *)Gfd_DefaultFreePlttVram,
 
 };
 

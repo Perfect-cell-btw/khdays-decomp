@@ -4,23 +4,23 @@
     .data       start:0x020ceb00 end:0x020ceb20 kind:data align:32
     .bss        start:0x020ceb20 end:0x020ceb20 kind:bss align:32
 
-src/overlays/ov166/calls/func_ov166_020cbf20.c:
+src/overlays/ov166/calls/Ov166_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov166/calls/func_ov166_020cbf38.c:
+src/overlays/ov166/calls/Ov166_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov166/calls/func_ov166_020cbfc4.c:
+src/overlays/ov166/calls/Ov166_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc020
 
-src/overlays/ov166/calls/func_ov166_020cc020.c:
+src/overlays/ov166/calls/Ov166_Construct.c:
     complete
     .text       start:0x020cc020 end:0x020cc33c
 
-src/overlays/ov166/calls/func_ov166_020cc33c.c:
+src/overlays/ov166/calls/Ov166_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020cc33c end:0x020cc37c
 
@@ -28,159 +28,159 @@ src/overlays/ov166/calls/func_ov166_020cc37c.c:
     complete
     .text       start:0x020cc37c end:0x020cc388
 
-src/overlays/ov166/calls/func_ov166_020cc388.c:
+src/overlays/ov166/calls/Ov166_ForwardEventToChild.c:
     complete
     .text       start:0x020cc388 end:0x020cc3b0
 
-src/overlays/ov166/calls/func_ov166_020cc3b0.c:
+src/overlays/ov166/calls/Ov166_NotifyPartThenBase.c:
     complete
     .text       start:0x020cc3b0 end:0x020cc3d8
 
-src/overlays/ov166/calls/func_ov166_020cc3d8.c:
+src/overlays/ov166/calls/Ov166_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc3d8 end:0x020cc5f4
 
-src/overlays/ov166/calls/func_ov166_020cc5f4.c:
+src/overlays/ov166/calls/Ov166_Model_SetTrack0.c:
     complete
     .text       start:0x020cc5f4 end:0x020cc624
 
-src/overlays/ov166/calls/func_ov166_020cc624.c:
+src/overlays/ov166/calls/Ov166_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020cc624 end:0x020cc75c
 
-src/overlays/ov166/calls/func_ov166_020cc75c.c:
+src/overlays/ov166/calls/Ov166_registryCreateEntry.c:
     complete
     .text       start:0x020cc75c end:0x020cc7b8
 
-src/overlays/ov166/calls/func_ov166_020cc7b8.c:
+src/overlays/ov166/calls/Ov166_OnHit.c:
     complete
     .text       start:0x020cc7b8 end:0x020cc9dc
 
-src/overlays/ov166/auto/func_ov166_020cc9dc.c:
+src/overlays/ov166/auto/Ov166_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020cc9dc end:0x020cca08
 
-src/overlays/ov166/calls/func_ov166_020cca08.c:
+src/overlays/ov166/calls/Ov166_FaceTargetGetClearance.c:
     complete
     .text       start:0x020cca08 end:0x020ccaa0
 
-src/overlays/ov166/auto/func_ov166_020ccaa0.c:
+src/overlays/ov166/auto/Ov166_IsChildInactive.c:
     complete
     .text       start:0x020ccaa0 end:0x020ccae0
 
-src/overlays/ov166/calls/func_ov166_020ccae0.c:
+src/overlays/ov166/calls/Ov166_stateInitTransformSlots.c:
     complete
     .text       start:0x020ccae0 end:0x020ccbcc
 
-src/overlays/ov166/calls/func_ov166_020ccbcc.c:
+src/overlays/ov166/calls/Ov166_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020ccbcc end:0x020ccdb8
 
-src/overlays/ov166/calls/func_ov166_020ccdb8.c:
+src/overlays/ov166/calls/Ov166_stDivStoreField.c:
     complete
     .text       start:0x020ccdb8 end:0x020cce58
 
-src/overlays/ov166/calls/func_ov166_020cce58.c:
+src/overlays/ov166/calls/Ov166_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cce58 end:0x020ccec0
 
-src/overlays/ov166/calls/func_ov166_020ccec0.c:
+src/overlays/ov166/calls/Ov166_AnchorAndAdvance.c:
     complete
     .text       start:0x020ccec0 end:0x020ccf44
 
-src/overlays/ov166/calls/func_ov166_020ccf44.c:
+src/overlays/ov166/calls/Ov166_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020ccf44 end:0x020cd010
 
-src/overlays/ov166/calls/func_ov166_020cd010.c:
+src/overlays/ov166/calls/Ov166_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020cd010 end:0x020cd0e8
 
-src/overlays/ov166/calls/func_ov166_020cd0e8.c:
+src/overlays/ov166/calls/Ov166_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd0e8 end:0x020cd11c
 
-src/overlays/ov166/calls/func_ov166_020cd11c.c:
+src/overlays/ov166/calls/Ov166_stateRandomInitFull.c:
     complete
     .text       start:0x020cd11c end:0x020cd1a8
 
-src/overlays/ov166/calls/func_ov166_020cd1a8.c:
+src/overlays/ov166/calls/Ov166_OrbitTick.c:
     complete
     .text       start:0x020cd1a8 end:0x020cd524
 
-src/overlays/ov166/calls/func_ov166_020cd524.c:
+src/overlays/ov166/calls/Ov166_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020cd524 end:0x020cd568
 
-src/overlays/ov166/calls/func_ov166_020cd568.c:
+src/overlays/ov166/calls/Ov166_HoverBobTick.c:
     complete
     .text       start:0x020cd568 end:0x020cd75c
 
-src/overlays/ov166/calls/func_ov166_020cd75c.c:
+src/overlays/ov166/calls/Ov166_AiStep_StartTag1.c:
     complete
     .text       start:0x020cd75c end:0x020cd798
 
-src/overlays/ov166/calls/func_ov166_020cd798.c:
+src/overlays/ov166/calls/Ov166_HoverApproachTick.c:
     complete
     .text       start:0x020cd798 end:0x020cd964
 
-src/overlays/ov166/calls/func_ov166_020cd964.c:
+src/overlays/ov166/calls/Ov166_stateRandomDirValue.c:
     complete
     .text       start:0x020cd964 end:0x020cd9d4
 
-src/overlays/ov166/calls/func_ov166_020cd9d4.c:
+src/overlays/ov166/calls/Ov166_CircleTick.c:
     complete
     .text       start:0x020cd9d4 end:0x020cdb50
 
-src/overlays/ov166/calls/func_ov166_020cdb50.c:
+src/overlays/ov166/calls/Ov166_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020cdb50 end:0x020cdbec
 
-src/overlays/ov166/calls/func_ov166_020cdbec.c:
+src/overlays/ov166/calls/Ov166_HoverHoldTick.c:
     complete
     .text       start:0x020cdbec end:0x020cddb8
 
-src/overlays/ov166/calls/func_ov166_020cddb8.c:
+src/overlays/ov166/calls/Ov166_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cddb8 end:0x020cddec
 
-src/overlays/ov166/calls/func_ov166_020cddec.c:
+src/overlays/ov166/calls/Ov166_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020cddec end:0x020cde20
 
-src/overlays/ov166/calls/func_ov166_020cde20.c:
+src/overlays/ov166/calls/Ov166_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020cde20 end:0x020cdf14
 
-src/overlays/ov166/calls/func_ov166_020cdf14.c:
+src/overlays/ov166/calls/Ov166_AiEndWithUpdate.c:
     complete
     .text       start:0x020cdf14 end:0x020ce000
 
-src/overlays/ov166/calls/func_ov166_020ce000.c:
+src/overlays/ov166/calls/Ov166_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020ce000 end:0x020ce0a0
 
-src/overlays/ov166/calls/func_ov166_020ce0a0.c:
+src/overlays/ov166/calls/Ov166_stateTimerToggleFlags.c:
     complete
     .text       start:0x020ce0a0 end:0x020ce134
 
-src/overlays/ov166/calls/func_ov166_020ce134.c:
+src/overlays/ov166/calls/Ov166_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020ce134 end:0x020ce174
 
-src/overlays/ov166/calls/func_ov166_020ce174.c:
+src/overlays/ov166/calls/Ov166_Actor_New.c:
     complete
     .text       start:0x020ce174 end:0x020ce1a8
 
-src/overlays/ov166/calls/func_ov166_020ce1a8.c:
+src/overlays/ov166/calls/Ov166_SubObject_Construct.c:
     complete
     .text       start:0x020ce1a8 end:0x020ce308
 
-src/overlays/ov166/calls/func_ov166_020ce308.c:
+src/overlays/ov166/calls/Ov166_OnDespawn.c:
     complete
     .text       start:0x020ce308 end:0x020ce324
 
-src/overlays/ov166/calls/func_ov166_020ce324.c:
+src/overlays/ov166/calls/Ov166_TickAndSyncModelXform.c:
     complete
     .text       start:0x020ce324 end:0x020ce35c
 
@@ -188,39 +188,39 @@ src/overlays/ov166/calls/func_ov166_020ce35c.c:
     complete
     .text       start:0x020ce35c end:0x020ce368
 
-src/overlays/ov166/calls/func_ov166_020ce368.c:
+src/overlays/ov166/calls/Ov166_TryTriggerEffect.c:
     complete
     .text       start:0x020ce368 end:0x020ce3f0
 
-src/overlays/ov166/calls/func_ov166_020ce3f0.c:
+src/overlays/ov166/calls/Ov166_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020ce3f0 end:0x020ce43c
 
-src/overlays/ov166/calls/func_ov166_020ce43c.c:
+src/overlays/ov166/calls/Ov166_stateInitClearSlots.c:
     complete
     .text       start:0x020ce43c end:0x020ce4e4
 
-src/overlays/ov166/calls/func_ov166_020ce4e4.c:
+src/overlays/ov166/calls/Ov166_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020ce4e4 end:0x020ce55c
 
-src/overlays/ov166/auto/func_ov166_020ce55c.c:
+src/overlays/ov166/auto/Ov166_AiApplyMoveVector.c:
     complete
     .text       start:0x020ce55c end:0x020ce574
 
-src/overlays/ov166/calls/func_ov166_020ce574.c:
+src/overlays/ov166/calls/Ov166_ConfigHw60CopyVec3ConstToCThenAdvance.c:
     complete
     .text       start:0x020ce574 end:0x020ce624
 
-src/overlays/ov166/calls/func_ov166_020ce624.c:
+src/overlays/ov166/calls/Ov166_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020ce624 end:0x020ce65c
 
-src/overlays/ov166/calls/func_ov166_020ce65c.c:
+src/overlays/ov166/calls/Ov166_BeginDash.c:
     complete
     .text       start:0x020ce65c end:0x020ce744
 
-src/overlays/ov166/calls/func_ov166_020ce744.c:
+src/overlays/ov166/calls/Ov166_DashTick.c:
     complete
     .text       start:0x020ce744 end:0x020cead0
 

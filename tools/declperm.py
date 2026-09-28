@@ -6,7 +6,7 @@
 POR QUE (2026-07-22): el orden de declaracion colorea los registros callee-saved, y un residuo
 que es solo una permutacion de registros suele caer con la permutacion correcta. Hacerlo a mano
 cuesta una iteracion por prueba; con 4-5 locales hay 24-120 ordenes y el barrido tarda segundos.
-Cerro func_ov008_02069954 (permutacion 33 de 120).
+Cerro Ov008_TryApplyPageStep (permutacion 33 de 120).
 
 Detecta el bloque de declaraciones como las lineas consecutivas al principio del cuerpo que
 declaran UNA variable cada una y no tienen inicializador. Si tus declaraciones llevan

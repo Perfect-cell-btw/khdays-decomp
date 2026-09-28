@@ -1,0 +1,123 @@
+typedef unsigned char u8;
+
+typedef struct VecFx32 {
+    int x;
+    int y;
+    int z;
+} VecFx32;
+
+typedef struct SphereFx32 {
+    VecFx32 center;
+    int radius;
+} SphereFx32;
+
+typedef struct Ov022SelectionRecord {
+    int distance;
+    int unused;
+    int kind;
+} Ov022SelectionRecord;
+
+typedef struct Ov022PartScanState {
+    struct Ov022PartNode *part;
+    VecFx32 *origin;
+    int radius;
+    int accepted;
+} Ov022PartScanState;
+
+typedef struct Ov022NodeFlags {
+    unsigned int lowByte : 8;
+    unsigned int rest : 24;
+} Ov022NodeFlags;
+
+typedef struct Ov022PartNode {
+    void *item;
+    char pad_0004[4];
+    unsigned int flags8;
+} Ov022PartNode;
+
+typedef struct Ov022Candidate {
+    char pad_0000[0x179];
+    u8 special179;
+    char pad_017a[0xb2];
+    char traversal22c[1];
+} Ov022Candidate;
+
+typedef struct Ov022SelectorContext {
+    int flags;
+    char selectionState[4];
+} Ov022SelectorContext;
+
+extern Ov022SelectorContext *NNSi_FndGetCurrentRootHeap(void);
+extern int QueryActiveStateOrDelegate(void);
+extern VecFx32 *func_ov022_020881f8(int index);
+extern void *GetEntryField20ByIndex(int index);
+extern Ov022PartNode *List_First(void *list);
+extern Ov022PartNode *List_Next(void *list);
+extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
+extern int Ov107_HitShape_TestSphere(void *part, const SphereFx32 *sphere, int mode);
+extern void func_ov022_0208484c(int *state, Ov022Candidate *candidate,
+                                Ov022PartNode *part,
+                                const Ov022SelectionRecord *record);
+
+int Ov022_AcceptCandidate(Ov022Candidate *candidate)
+{
+    SphereFx32 sphere;
+    Ov022SelectionRecord record;
+    int result = 0;
+    Ov022SelectorContext *context = NNSi_FndGetCurrentRootHeap();
+    Ov022PartScanState scan;
+    int special;
+
+    scan.part = 0;
+    scan.origin = 0;
+    scan.radius = 0x1e000;
+    scan.accepted = 0;
+    if (candidate == 0) {
+        return 0;
+    }
+    special = candidate->special179 == 1;
+    scan.origin = func_ov022_020881f8(QueryActiveStateOrDelegate());
+    GetEntryField20ByIndex(QueryActiveStateOrDelegate());
+    if (special != 0) {
+        scan.radius = 0x7fffffff;
+    }
+
+    scan.part = List_First(candidate->traversal22c);
+    while (scan.part != 0) {
+        scan.accepted = 0;
+        unsigned int flags = ((Ov022NodeFlags *)&scan.part->flags8)->lowByte;
+
+        if ((flags & 2) == 0 && (flags & 1) != 0) {
+            if (special != 0) {
+                goto accept_part;
+            }
+            if (VEC_Distance((VecFx32 *)((char *)scan.part->item + 4), scan.origin) >
+                scan.radius) {
+                goto next_part;
+            }
+            sphere.center = *scan.origin;
+            sphere.radius = scan.radius;
+            if (Ov107_HitShape_TestSphere(scan.part->item, &sphere,
+                                    scan.accepted) != 0) {
+                scan.accepted = 1;
+            }
+            goto test_part;
+
+accept_part:
+            scan.accepted = 1;
+test_part:
+            if (scan.accepted != 0) {
+                record.distance = VEC_Distance(
+                    scan.origin, (VecFx32 *)((char *)scan.part->item + 4));
+                record.unused = 0;
+                record.kind = 1;
+                func_ov022_0208484c((int *)context->selectionState, candidate,
+                                    scan.part, &record);
+                result = 1;
+            }
+        }
+next_part:
+        scan.part = List_Next(candidate->traversal22c);
+    }
+    return result;
+}

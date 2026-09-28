@@ -1,0 +1,11 @@
+extern void Record_Init();
+extern char data_02042940[];
+
+int InitNodeAndStoreParamsMode1(int this_, int arg1, int arg2, int arg3, int arg4) {
+    Record_Init(this_, arg1, arg2, arg3);
+    *(unsigned char *)(this_ + 0x21) = 1;
+    *(char **)(this_ + 0x1c) = data_02042940;
+    *(int *)(this_ + 0x38) = arg3;
+    *(int *)(this_ + 0x3c) = arg4;
+    return 1;
+}

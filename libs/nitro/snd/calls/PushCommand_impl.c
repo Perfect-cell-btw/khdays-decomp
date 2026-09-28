@@ -1,6 +1,6 @@
 /* Fills one command slot and queues it; silently drops the command when the pool is dry. */
 extern char *SND_AllocCommand(int wait);
-extern void func_02008788(char *cmd);
+extern void SND_PushCommand(char *cmd);
 
 void PushCommand_impl(int cmd, int a, int b, int c, int d) {
     char *slot = SND_AllocCommand(1);
@@ -12,5 +12,5 @@ void PushCommand_impl(int cmd, int a, int b, int c, int d) {
     *(int *)(slot + 0xc) = b;
     *(int *)(slot + 0x10) = c;
     *(int *)(slot + 0x14) = d;
-    func_02008788(slot);
+    SND_PushCommand(slot);
 }

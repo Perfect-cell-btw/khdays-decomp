@@ -1,5 +1,5 @@
 /* ov107 .data 0x020cb9a4-0x020cbaa4: per slot and kind, the item resource an actor's
- * sub-item spawner (func_ov107_020c92b0) creates, or -1 for none, with the two bytes it copies
+ * sub-item spawner (Ov107_Actor_SetAttachSlot) creates, or -1 for none, with the two bytes it copies
  * into the created entry (+0x18, +0x19). The spawner addresses the byte columns of the first
  * record directly, which is why the ROM also carries labels at 0x020cb9a8 and 0x020cb9a9. */
 

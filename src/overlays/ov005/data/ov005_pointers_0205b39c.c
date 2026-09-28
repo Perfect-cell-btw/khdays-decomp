@@ -4,24 +4,24 @@
  * a zero word is a null entry.
  */
 
-extern void func_ov005_02057270(void);
-extern void func_ov005_020573e8(void);
-extern void func_ov005_020576c8(void);
-extern void func_ov005_02057704(void);
-extern void func_ov005_02057784(void);
+extern void Ov005_FadeInResultScreen(void);
+extern void Ov005_AnimateResultCounters(void);
+extern void Ov005_LatchTickState3(void);
+extern void Ov005_FadeOutResultScreen(void);
+extern void Ov005_SetFlag4B78(void);
 extern int data_ov005_0205b60c;
 
 void *const data_ov005_0205b39c[5] = {
 
-    (void *)func_ov005_02057270,
+    (void *)Ov005_FadeInResultScreen,
 
-    (void *)func_ov005_020573e8,
+    (void *)Ov005_AnimateResultCounters,
 
-    (void *)func_ov005_020576c8,
+    (void *)Ov005_LatchTickState3,
 
-    (void *)func_ov005_02057704,
+    (void *)Ov005_FadeOutResultScreen,
 
-    (void *)func_ov005_02057784,
+    (void *)Ov005_SetFlag4B78,
 
 };
 

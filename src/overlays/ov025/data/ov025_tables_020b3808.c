@@ -5,12 +5,12 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov025_020b3808: func_ov025_020858d0
- *   data_ov025_020b3858: func_ov025_02088b7c
- *   data_ov025_020b385c: func_ov025_02088b7c
+ *   data_ov025_020b3808: Ov025_LookupTypeCode
+ *   data_ov025_020b3858: Ov025_LoadElemsFromLayout
+ *   data_ov025_020b385c: Ov025_LoadElemsFromLayout
  *
  * 0x020b3860-0x020b3870 ([12, 13, 10, 11]) is the local-initialiser template of
- * func_ov025_0208b274 and is emitted by that unit.
+ * Ov025_Hub_SelectMenuGroup and is emitted by that unit.
  */
 
 typedef unsigned char u8;

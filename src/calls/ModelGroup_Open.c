@@ -1,0 +1,38 @@
+/* Opens a model group from a resource: an 'HPAK' pack yields all its kind-5 entries
+ * (Obj_GetIndirectWord count, Archive_GetMember entry), any other resource is a single model; the model
+ * pointers (+4, count at +2) are allocated from the default heap and each one is prepared
+ * (Coll_ResolveModelBlobPointers). Returns 1. */
+#pragma thumb on
+typedef unsigned short u16;
+
+typedef struct {
+    u16 flags;          /* 0x00 */
+    u16 count;          /* 0x02 */
+    void **models;      /* 0x04 */
+} ModelGroup;
+
+extern int Obj_GetIndirectWord(void *pack, int kind);
+extern void *Archive_GetMember(void *pack, int kind, int index);
+extern void *NNSi_FndAllocFromDefaultExpHeap(unsigned int size);
+extern void Coll_ResolveModelBlobPointers(void *model);
+
+int ModelGroup_Open(ModelGroup *g, void *res)
+{
+    int i;
+
+    g->flags = 0;
+    if (*(unsigned int *)res == 0x4850414b) {
+        g->count = Obj_GetIndirectWord(res, 5);
+        g->models = NNSi_FndAllocFromDefaultExpHeap(g->count << 2);
+        for (i = 0; i < g->count; i++) {
+            g->models[i] = Archive_GetMember(res, 5, i);
+            Coll_ResolveModelBlobPointers(g->models[i]);
+        }
+    } else {
+        g->count = 1;
+        g->models = NNSi_FndAllocFromDefaultExpHeap(4);
+        g->models[0] = res;
+        Coll_ResolveModelBlobPointers(g->models[0]);
+    }
+    return 1;
+}

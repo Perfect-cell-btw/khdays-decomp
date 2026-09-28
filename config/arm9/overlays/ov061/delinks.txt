@@ -8,111 +8,111 @@ src/overlays/ov061/calls/func_ov061_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov061/calls/func_ov061_020b5a34.c:
+src/overlays/ov061/calls/Ov061_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a5c
 
-src/overlays/ov061/calls/func_ov061_020b5a5c.c:
+src/overlays/ov061/calls/Ov061_setupTriple.c:
     complete
     .text       start:0x020b5a5c end:0x020b5a7c
 
-src/overlays/ov061/calls/func_ov061_020b5a7c.c:
+src/overlays/ov061/calls/Ov061_BuildRigObject.c:
     complete
     .text       start:0x020b5a7c end:0x020b5c8c
 
-src/overlays/ov061/calls/func_ov061_020b5c8c.c:
+src/overlays/ov061/calls/Ov061_initFlagStateObj.c:
     complete
     .text       start:0x020b5c8c end:0x020b5cbc
 
-src/overlays/ov061/auto/func_ov061_020b5cbc.c:
+src/overlays/ov061/auto/Ov061_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5cbc end:0x020b5ce4
 
-src/overlays/ov061/calls/func_ov061_020b5ce4.c:
+src/overlays/ov061/calls/Ov061_SetAnimStateWithEnterHook.c:
     complete
     .text       start:0x020b5ce4 end:0x020b5d28
 
-src/overlays/ov061/calls/func_ov061_020b5d28.c:
+src/overlays/ov061/calls/Ov061_UpdateSubObjects.c:
     complete
     .text       start:0x020b5d28 end:0x020b5e64
 
-src/overlays/ov061/calls/func_ov061_020b5e64.c:
+src/overlays/ov061/calls/Ov061_InvokeSubHandlerPairWithBuffer.c:
     complete
     .text       start:0x020b5e64 end:0x020b5e90
 
-src/overlays/ov061/calls/func_ov061_020b5e90.c:
+src/overlays/ov061/calls/Ov061_HandleMessage.c:
     complete
     .text       start:0x020b5e90 end:0x020b5f88
 
-src/overlays/ov061/calls/func_ov061_020b5f88.c:
+src/overlays/ov061/calls/Ov061_AcquireGridSlots.c:
     complete
     .text       start:0x020b5f88 end:0x020b6010
 
-src/overlays/ov061/calls/func_ov061_020b6010.c:
+src/overlays/ov061/calls/Ov061_FlagLocalAndMaybeEnterState21.c:
     complete
     .text       start:0x020b6010 end:0x020b60d4
 
-src/overlays/ov061/calls/func_ov061_020b60d4.c:
+src/overlays/ov061/calls/Ov061_AttackStep.c:
     complete
     .text       start:0x020b60d4 end:0x020b6534
 
-src/overlays/ov061/calls/func_ov061_020b6534.c:
+src/overlays/ov061/calls/Ov061_ResetSequenceSlots.c:
     complete
     .text       start:0x020b6534 end:0x020b65b8
 
-src/overlays/ov061/calls/func_ov061_020b65b8.c:
+src/overlays/ov061/calls/Ov061_DestroySlotsAndFree.c:
     complete
     .text       start:0x020b65b8 end:0x020b6620
 
-src/overlays/ov061/calls/func_ov061_020b6620.c:
+src/overlays/ov061/calls/Ov061_CreateSubObject.c:
     complete
     .text       start:0x020b6620 end:0x020b683c
 
-src/overlays/ov061/calls/func_ov061_020b683c.c:
+src/overlays/ov061/calls/Ov061_BindRig.c:
     complete
     .text       start:0x020b683c end:0x020b6894
 
-src/overlays/ov061/calls/func_ov061_020b6894.c:
+src/overlays/ov061/calls/Ov061_StepParts.c:
     complete
     .text       start:0x020b6894 end:0x020b69a0
 
-src/overlays/ov061/calls/func_ov061_020b69a0.c:
+src/overlays/ov061/calls/Ov061_DispatchActiveEntriesByStatus.c:
     complete
     .text       start:0x020b69a0 end:0x020b69f4
 
-src/overlays/ov061/calls/func_ov061_020b69f4.c:
+src/overlays/ov061/calls/Ov061_SteerPart.c:
     complete
     .text       start:0x020b69f4 end:0x020b6b58
 
-src/overlays/ov061/calls/func_ov061_020b6b58.c:
+src/overlays/ov061/calls/Ov061_AdvanceArg1StateFrom0Or2.c:
     complete
     .text       start:0x020b6b58 end:0x020b6b88
 
-src/overlays/ov061/calls/func_ov061_020b6b88.c:
+src/overlays/ov061/calls/Ov061_UpdateSlotsWithGate.c:
     complete
     .text       start:0x020b6b88 end:0x020b6bfc
 
-src/overlays/ov061/calls/func_ov061_020b6bfc.c:
+src/overlays/ov061/calls/Ov061_InvokeHandlerFor7SubObjects.c:
     complete
     .text       start:0x020b6bfc end:0x020b6c24
 
-src/overlays/ov061/calls/func_ov061_020b6c24.c:
+src/overlays/ov061/calls/Ov061_LayTrail.c:
     complete
     .text       start:0x020b6c24 end:0x020b6ce8
 
-src/overlays/ov061/calls/func_ov061_020b6ce8.c:
+src/overlays/ov061/calls/Ov061_ClaimSlotAndLaunch.c:
     complete
     .text       start:0x020b6ce8 end:0x020b6e28
 
-src/overlays/ov061/calls/func_ov061_020b6e28.c:
+src/overlays/ov061/calls/Ov061_ClearState1IfReady.c:
     complete
     .text       start:0x020b6e28 end:0x020b6e5c
 
-src/overlays/ov061/calls/func_ov061_020b6e5c.c:
+src/overlays/ov061/calls/Ov061_ForwardToHandlerIfHeadSet.c:
     complete
     .text       start:0x020b6e5c end:0x020b6e78
 
-src/overlays/ov061/calls/func_ov061_020b6e78.c:
+src/overlays/ov061/calls/Ov061_InvokeWithDataTable.c:
     complete
     .text       start:0x020b6e78 end:0x020b6e90
 

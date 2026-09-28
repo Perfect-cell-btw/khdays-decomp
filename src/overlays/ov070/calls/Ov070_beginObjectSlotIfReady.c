@@ -1,0 +1,29 @@
+extern int data_ov070_020b9ca0;
+extern int Session_GetLocalPlayerIndex(void);
+extern int Ov022_AreStreamsIdle(int x);
+extern int Ov022_ActorSetState(int this, int tag);
+
+int Ov070_beginObjectSlotIfReady(int this, int param2) {
+    int base = data_ov070_020b9ca0 + 0x2c2c;
+    int result = 0;
+    int ok = 1;
+
+    if (Session_GetLocalPlayerIndex() == 0) {
+        *(unsigned long long *)(this + 0x464) |= 0x10000ULL;
+    }
+    if (Session_GetLocalPlayerIndex() == 0) {
+        *(unsigned long long *)(this + 0x46c) |= 0x10000ULL;
+    }
+    *(int *)(base + 4) = 0;
+    *(int *)base = param2;
+    if (param2 != 0) {
+        if (Ov022_AreStreamsIdle(*(int *)(this + 0x2644) + 0x30) == 0 ||
+            Ov022_AreStreamsIdle(*(int *)(this + 0x2644) + 0x60) == 0) {
+            ok = 0;
+        }
+    }
+    if (ok != 0) {
+        result = Ov022_ActorSetState(this, 0x21);
+    }
+    return result;
+}

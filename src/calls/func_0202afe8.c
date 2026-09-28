@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_0202a9d0. */
-extern void *func_0202a9d0();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to SceneNode_JointCallback. */
+extern void *SceneNode_JointCallback();
 
 void *func_0202afe8() {
-    return func_0202a9d0();
+    return SceneNode_JointCallback();
 }

@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov107_020c5cfc (020c5cfc): const struct Message12 data_ov107_020cb64c; */
+/* read by Ov107_AiState_ApplyHit (020c5cfc): const struct Message12 data_ov107_020cb64c; */
 const u8 data_ov107_020cb64c[12] = {
     0, 0, 8, 7, 0, 0, 0, 0, 0, 0, 0, 0,
 };
@@ -19,17 +19,17 @@ const u8 data_ov107_020cb658[12] = {
 };
 
 /* read by Collect sphere contacts against polygon fans, then visit child spatial groups. (020c9f64): const ChildOffset data_ov107_020cb664[4];
- *   func_ov107_020ca4b4 (020ca4b4): const ChildOffset data_ov107_020cb664[4]; */
+ *   Ov107_CollectShapeContacts (020ca4b4): const ChildOffset data_ov107_020cb664[4]; */
 const u8 data_ov107_020cb664[16] = {
     255, 255, 255, 255, 1, 0, 255, 255, 255, 255, 1, 0, 1, 0, 1, 0,
 };
 
-/* read by func_ov107_020ca918 (020ca918): const struct HitMsg data_ov107_020cb674; */
+/* read by Ov107_InvokeHitCallback (020ca918): const struct HitMsg data_ov107_020cb674; */
 const u8 data_ov107_020cb674[12] = {
     0, 0, 8, 6, 0, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov107_020ca918 (020ca918): const struct HitMsg data_ov107_020cb680; */
+/* read by Ov107_InvokeHitCallback (020ca918): const struct HitMsg data_ov107_020cb680; */
 const u8 data_ov107_020cb680[12] = {
     0, 0, 8, 5, 0, 0, 0, 0, 0, 0, 0, 0,
 };

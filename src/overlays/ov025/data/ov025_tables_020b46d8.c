@@ -8,20 +8,20 @@
  * at a 2-byte offset and mwcc keeps byte objects packed inside one section.
  *
  * Readers:
- *   data_ov025_020b46d8: func_ov025_020ab7b0
- *   data_ov025_020b46e8: func_ov025_020ad3bc
- *   data_ov025_020b46fc: func_ov025_020ac994
- *   data_ov025_020b4724: func_ov025_020ac994
- *   data_ov025_020b474c: func_ov025_020ac994
- *   data_ov025_020b4774: func_ov025_020ac994
- *   data_ov025_020b479c: func_ov025_020ac994
- *   data_ov025_020b47c4: func_ov025_020ac994
- *   data_ov025_020b47ec: func_ov025_020ab7b0
- *   data_ov025_020b481c: func_ov025_020ae28c
- *   data_ov025_020b4844: func_ov025_020af6a0
- *   data_ov025_020b495c: func_ov025_020afdd4, func_ov025_020afef4
+ *   data_ov025_020b46d8: Ov025_MissionMenu_DrawTags
+ *   data_ov025_020b46e8: Ov025_MissionMenuDestroy
+ *   data_ov025_020b46fc: Ov025_InitMissionMenuSurfaces
+ *   data_ov025_020b4724: Ov025_InitMissionMenuSurfaces
+ *   data_ov025_020b474c: Ov025_InitMissionMenuSurfaces
+ *   data_ov025_020b4774: Ov025_InitMissionMenuSurfaces
+ *   data_ov025_020b479c: Ov025_InitMissionMenuSurfaces
+ *   data_ov025_020b47c4: Ov025_InitMissionMenuSurfaces
+ *   data_ov025_020b47ec: Ov025_MissionMenu_DrawTags
+ *   data_ov025_020b481c: Ov025_ScrollList_SetupSurfaces
+ *   data_ov025_020b4844: Ov025_InitTutorialSurfaces
+ *   data_ov025_020b495c: Ov025_ReportDetail_LoadBackground, Ov025_ReportDetail_SetupEntries
  *   data_ov025_020b495d: (no C reader yet)
- *   data_ov025_020b4960: func_ov025_020afdd4, func_ov025_020afef4
+ *   data_ov025_020b4960: Ov025_ReportDetail_LoadBackground, Ov025_ReportDetail_SetupEntries
  *   data_ov025_020b4961: (no C reader yet)
  *   data_ov025_020b4962: (no C reader yet)
  */

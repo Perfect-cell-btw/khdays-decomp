@@ -11,7 +11,7 @@
    Un argumento de sobra en un `extern` fuerza a mwcc a mantener vivo un valor que la ROM
    no mantiene, y el sintoma que ves es un registro o un push de mas.
 
-   ⚠ MIRA LAS DOS DIRECCIONES. Declarar de MENOS tambien rompe: `func_ov008_02072d9c`
+   ⚠ MIRA LAS DOS DIRECCIONES. Declarar de MENOS tambien rompe: `Ov008_BuildMissionListRows`
    estaba declarado con un argumento y toma dos, y el sintoma era un `mov r1,r0` de la ROM
    que parecia "nuestro compilador es mas listo". La prueba estaba en el orden: la ROM emite
    `mov r0,r4` ANTES del store, asi que r1 sigue vivo en el `bl` -- es un argumento.

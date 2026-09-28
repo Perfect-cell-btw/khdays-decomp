@@ -15,9 +15,9 @@ typedef struct {
     int nReserved;
 } Ov002ScreenDesc;
 
-extern void func_ov002_0206e810(void);
-extern void func_ov002_0206e870(void);
+extern void Ov002_CreateEventContext(void);
+extern void Ov002_DestroyEventContext(void);
 
 Ov002ScreenDesc data_ov002_0207f010 = {
-    0x0f0008, func_ov002_0206e810, func_ov002_0206e870, 588, 0,
+    0x0f0008, Ov002_CreateEventContext, Ov002_DestroyEventContext, 588, 0,
 };

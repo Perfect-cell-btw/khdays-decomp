@@ -6,35 +6,35 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov012_0205b940(void);
-extern void func_ov012_0205b984(void);
-extern void func_ov012_0205b9a8(void);
-extern void func_ov012_0205b9e0(void);
-extern void func_ov012_0205ba08(void);
-extern void func_ov012_0205ba3c(void);
-extern void func_ov012_0205ba48(void);
+extern void Ov012_StartOpeningMovieFromScriptArgs(void);
+extern void Ov012_RegisterTwoAndReturn6(void);
+extern void Ov012_IsStreamFinished(void);
+extern void Ov012_MayWaitFrames(void);
+extern void Ov012_InitAndDispatchTriple(void);
+extern void Ov012_thumbStep(void);
+extern void Ov012_thumbStep_2(void);
 
 Ov_Fn data_ov012_0205caf4[11] = {
 
-    func_ov012_0205b984,
+    Ov012_RegisterTwoAndReturn6,
 
     0,
 
-    func_ov012_0205ba08,
+    Ov012_InitAndDispatchTriple,
 
     0,
 
-    func_ov012_0205b940,
+    Ov012_StartOpeningMovieFromScriptArgs,
 
     0,
 
-    func_ov012_0205b9a8,
+    Ov012_IsStreamFinished,
 
-    func_ov012_0205b9e0,
+    Ov012_MayWaitFrames,
 
-    func_ov012_0205ba3c,
+    Ov012_thumbStep,
 
-    func_ov012_0205ba48,
+    Ov012_thumbStep_2,
 
     0,
 

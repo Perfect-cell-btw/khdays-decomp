@@ -37,7 +37,7 @@ typedef struct NNSiG2dTextDirection {
     s8 y;
 } NNSiG2dTextDirection;
 
-extern int func_02014024(NNSG2dCharCanvas *pCanvas, NNSG2dFont *pFont,
+extern int Text_DrawGlyph(NNSG2dCharCanvas *pCanvas, NNSG2dFont *pFont,
                           int x, int y, int cl, u16 c);
 
 static inline s8 NNS_G2dFontGetLineFeed(const NNSG2dFont *pFont)
@@ -103,7 +103,7 @@ void func_020145c0(const NNSG2dTextCanvas *pTxn,
 
             continue;
         } else {
-            const int w = func_02014024(cbInfo.txn.pCanvas,
+            const int w = Text_DrawGlyph(cbInfo.txn.pCanvas,
                                        cbInfo.txn.pFont,
                                        px, py, cl, c) + charSpace;
             px += w * d.x;

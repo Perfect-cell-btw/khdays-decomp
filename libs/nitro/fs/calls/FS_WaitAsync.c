@@ -1,6 +1,6 @@
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
-extern void func_02001f10(void *queue);
+extern void OS_SleepThread(void *queue);
 extern int FSi_ExecuteSyncCommand(void *file);
 
 static inline int FSi_IsBusy(char *file) {
@@ -21,11 +21,11 @@ int FS_WaitAsync(char *file) {
         if (owner != 0) {
             *(volatile int *)(file + 0xc) |= 4;
             do {
-                func_02001f10(file + 0x18);
+                OS_SleepThread(file + 0x18);
             } while ((*(volatile int *)(file + 0xc) & 0x40) == 0);
         } else {
             do {
-                func_02001f10(file + 0x18);
+                OS_SleepThread(file + 0x18);
             } while (FSi_IsBusy(file));
         }
     }

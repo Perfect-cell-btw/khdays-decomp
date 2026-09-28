@@ -12,8 +12,8 @@ typedef struct ResourceTrackerConfig {
     TrackerCallback pfnNode;         /* 0x10 */
 } ResourceTrackerConfig;
 
-extern void func_ov000_02059524(void);
-extern void func_ov000_0205967c(void);
+extern void Ov000_BlitTileRequest(void);
+extern void Ov000_TrackerReleaseNoOp(void);
 
-/* Read by func_ov000_02058e88. */
-const ResourceTrackerConfig data_ov000_0205a95c = { 4, 1, 4, func_ov000_02059524, func_ov000_0205967c };
+/* Read by Ov000_SetupMenuObjects. */
+const ResourceTrackerConfig data_ov000_0205a95c = { 4, 1, 4, Ov000_BlitTileRequest, Ov000_TrackerReleaseNoOp };

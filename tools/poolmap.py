@@ -6,7 +6,7 @@
 Modo ARM/THUMB automatico desde symbols.txt. Cada `ldr rX,[pc,#N]` sale con el offset del pool
 al que apunta y, si hay reloc en ese offset, con el simbolo.
 
-POR QUE (2026-07-19): en func_ov188_020cee00 supuse que dos `ldr [pc]` distintos cargaban dos
+POR QUE (2026-07-19): en Ov188_AiApplyHeadingAndNormal supuse que dos `ldr [pc]` distintos cargaban dos
 simbolos distintos. Apuntaban a **la misma palabra**, y estuve cuatro compilaciones persiguiendo
 un falso problema de "orden del pool" cuando lo que hacia mal era pasar dos tablas donde el
 original pasa una. Mapear esto ANTES de escribir la primera linea de C cuesta un comando.

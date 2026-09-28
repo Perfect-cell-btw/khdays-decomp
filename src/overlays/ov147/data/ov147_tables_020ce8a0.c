@@ -8,12 +8,12 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov147_020cc800 (020cc800): const struct ReactionModes data_ov147_020ce8a0; */
+/* read by Ov147_ResolveHitReaction (020cc800): const struct ReactionModes data_ov147_020ce8a0; */
 const u8 data_ov147_020ce8a0[8] = {
     2, 3, 0, 1, 96, 8, 0, 0,
 };
 
-/* read by func_ov147_020cdd34 (020cdd34): const struct ChildIds data_ov147_020ce8a8; */
+/* read by Ov147_InitSubActor (020cdd34): const struct ChildIds data_ov147_020ce8a8; */
 const int data_ov147_020ce8a8[2] = {
     3, 5,
 };

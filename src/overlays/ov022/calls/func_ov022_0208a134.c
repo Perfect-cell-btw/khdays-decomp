@@ -1,4 +1,4 @@
-extern int func_02030788(void);
+extern int Session_GetLocalPlayerIndex(void);
 extern void func_02031384(int arg0, void *arg1, int arg2);
 extern int data_ov022_020b2ea4;
 
@@ -15,7 +15,7 @@ void func_ov022_0208a134(int param_1) {
     if (data_ov022_020b2ea4 == 0) {
         return;
     }
-    if (func_02030788() != 0) {
+    if (Session_GetLocalPlayerIndex() != 0) {
         return;
     }
     m.b345 = param_1;

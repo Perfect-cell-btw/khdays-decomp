@@ -6,43 +6,43 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov002_02055ba8(void);
-extern void func_ov002_02055bd0(void);
-extern void func_ov002_02055c14(void);
-extern void func_ov002_02055c38(void);
-extern void func_ov002_02055d60(void);
-extern void func_ov002_02055f38(void);
-extern void func_ov002_02055fac(void);
-extern void func_ov002_020560d8(void);
-extern void func_ov002_02056118(void);
-extern void func_ov002_020561ac(void);
-extern void func_ov002_02056258(void);
-extern void func_ov002_020562ec(void);
+extern void Ov002_GetPanelField012c(void);
+extern void Ov002_ConfirmSelection(void);
+extern void Ov002_SetPanelField018c(void);
+extern void Ov002_BeginTextCrawl(void);
+extern void Ov002_StepTextCrawl(void);
+extern void Ov002_HoldAfterTextCrawl(void);
+extern void Ov002_FinishPanelFadeIn(void);
+extern void Ov002_ReleasePanelSurface(void);
+extern void Ov002_ClosePanel(void);
+extern void Ov002_LeavePanelForMap(void);
+extern void Ov002_ReturnFromMapToPanel(void);
+extern void Ov002_FlushPanelDisplayList(void);
 
 const Ov_Fn data_ov002_0207dc60[12] = {
 
-    func_ov002_02055ba8,
+    Ov002_GetPanelField012c,
 
-    func_ov002_02055bd0,
+    Ov002_ConfirmSelection,
 
-    func_ov002_02055c14,
+    Ov002_SetPanelField018c,
 
-    func_ov002_02055c38,
+    Ov002_BeginTextCrawl,
 
-    func_ov002_02055d60,
+    Ov002_StepTextCrawl,
 
-    func_ov002_02055f38,
+    Ov002_HoldAfterTextCrawl,
 
-    func_ov002_02055fac,
+    Ov002_FinishPanelFadeIn,
 
-    func_ov002_020560d8,
+    Ov002_ReleasePanelSurface,
 
-    func_ov002_02056118,
+    Ov002_ClosePanel,
 
-    func_ov002_020561ac,
+    Ov002_LeavePanelForMap,
 
-    func_ov002_02056258,
+    Ov002_ReturnFromMapToPanel,
 
-    func_ov002_020562ec,
+    Ov002_FlushPanelDisplayList,
 
 };

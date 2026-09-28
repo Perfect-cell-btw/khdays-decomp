@@ -1,4 +1,5 @@
 import json
+import re
 import sys
 import tempfile
 import unittest
@@ -102,7 +103,10 @@ class ReportTests(unittest.TestCase):
         for unit, count in [("ov002", 1477), ("ov003", 27), ("itcm", 129)]:
             functions.extend(function(f"{unit}_real_{i}", "c_decompiled_matched", unit) for i in range(count))
         for name, entry in entries.items():
-            unit = name.split("_")[1] if entry["kind"] == "authorized_clz" else "itcm"
+            # the overlay comes from the source path: since 2026-09-28 functions carry real names
+            # (Ov002_FindFreeSpotId), so the name no longer spells out func_ov002_<addr>
+            ov = re.search(r"/overlays/(ov\d{3})/", entry["source"])
+            unit = ov.group(1) if entry["kind"] == "authorized_clz" and ov else "itcm"
             f = function(name, "asm_stub_matched", unit, entry["source"], entry["size"])
             f["mode"] = entry["mode"]
             functions.append(f)

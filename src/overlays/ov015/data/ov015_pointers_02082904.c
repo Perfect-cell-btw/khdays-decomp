@@ -6,46 +6,46 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov015_020822b0(void);
-extern void func_ov015_02082380(void);
-extern void func_ov015_02082474(void);
-extern void func_ov015_020824a0(void);
-extern void func_ov015_02082574(void);
-extern void func_ov015_02082740(void);
-extern void func_ov015_020827a0(void);
-extern void func_ov015_02082838(void);
+extern void Ov015_VmCmd22b0(void);
+extern void Ov015_ScriptOpSpawnPickup(void);
+extern void Ov015_ScriptOpBuildAndPublish(void);
+extern void Ov015_ScriptOpSpawnTrigger(void);
+extern void Ov015_ScriptOpCreateSpots(void);
+extern void Ov015_ScriptOpSpawnPoint(void);
+extern void Ov015_VmCmd27a0(void);
+extern void Ov015_MarshalFxAndDispatch2(void);
 
 Ov_Fn data_ov015_02082904[23] = {
 
-    func_ov015_020822b0,
+    Ov015_VmCmd22b0,
 
     0,
 
-    func_ov015_02082380,
+    Ov015_ScriptOpSpawnPickup,
 
     0,
 
-    func_ov015_02082474,
+    Ov015_ScriptOpBuildAndPublish,
 
     0,
 
-    func_ov015_020824a0,
+    Ov015_ScriptOpSpawnTrigger,
 
     0,
 
-    func_ov015_02082574,
+    Ov015_ScriptOpCreateSpots,
 
     0,
 
-    func_ov015_02082740,
+    Ov015_ScriptOpSpawnPoint,
 
     0,
 
-    func_ov015_020827a0,
+    Ov015_VmCmd27a0,
 
     0,
 
-    func_ov015_02082838,
+    Ov015_MarshalFxAndDispatch2,
 
     0,
 

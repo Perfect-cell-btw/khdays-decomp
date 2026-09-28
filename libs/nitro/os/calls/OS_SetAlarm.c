@@ -1,8 +1,8 @@
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int state);
 extern void OS_Terminate(void);
-extern long long func_020031d4(void);
-extern void func_02003410(void *alarm, long long fire);
+extern long long OS_GetTick(void);
+extern void OSi_InsertAlarm(void *alarm, long long fire);
 
 /* Arms an alarm to fire `delay` ticks from now. Re-arming a live alarm is a fatal error. */
 void OS_SetAlarm(char *alarm, long long delay, void *handler, void *arg) {
@@ -15,6 +15,6 @@ void OS_SetAlarm(char *alarm, long long delay, void *handler, void *arg) {
     *(int *)(alarm + 0x20) = 0;
     *(void **)alarm = handler;
     *(void **)(alarm + 4) = arg;
-    func_02003410(alarm, delay + func_020031d4());
+    OSi_InsertAlarm(alarm, delay + OS_GetTick());
     OS_RestoreInterrupts(enabled);
 }

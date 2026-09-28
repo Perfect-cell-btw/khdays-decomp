@@ -4,251 +4,251 @@
     .data       start:0x020ce8c0 end:0x020ce8e0 kind:data align:32
     .bss        start:0x020ce8e0 end:0x020ce8e0 kind:bss align:32
 
-src/overlays/ov197/calls/func_ov197_020cbf20.c:
+src/overlays/ov197/calls/Ov197_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov197/calls/func_ov197_020cbf38.c:
+src/overlays/ov197/calls/Ov197_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov197/calls/func_ov197_020cbfc4.c:
+src/overlays/ov197/calls/Ov197_QueryAndCopyVecIfHit.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc00c
 
-src/overlays/ov197/calls/func_ov197_020cc00c.c:
+src/overlays/ov197/calls/Ov197_TickSwingArc.c:
     complete
     .text       start:0x020cc00c end:0x020cc188
 
-src/overlays/ov197/calls/func_ov197_020cc188.c:
+src/overlays/ov197/calls/Ov197_InitActor.c:
     complete
     .text       start:0x020cc188 end:0x020cc450
 
-src/overlays/ov197/calls/func_ov197_020cc450.c:
+src/overlays/ov197/calls/Ov197_ReleaseSubObjectsThenNotify.c:
     complete
     .text       start:0x020cc450 end:0x020cc47c
 
-src/overlays/ov197/calls/func_ov197_020cc47c.c:
+src/overlays/ov197/calls/Ov197_ResetSetupAndPropagate.c:
     complete
     .text       start:0x020cc47c end:0x020cc4fc
 
-src/overlays/ov197/calls/func_ov197_020cc4fc.c:
+src/overlays/ov197/calls/Ov197_AttachThreeSubNodesThenFinalize.c:
     complete
     .text       start:0x020cc4fc end:0x020cc538
 
-src/overlays/ov197/calls/func_ov197_020cc538.c:
+src/overlays/ov197/calls/Ov197_AttachThreeSubNodesThenFinalize_2.c:
     complete
     .text       start:0x020cc538 end:0x020cc574
 
-src/overlays/ov197/calls/func_ov197_020cc574.c:
+src/overlays/ov197/calls/Ov197_ReleaseAttachmentsOnStop.c:
     complete
     .text       start:0x020cc574 end:0x020cc644
 
-src/overlays/ov197/calls/func_ov197_020cc644.c:
+src/overlays/ov197/calls/Ov197_IssueSpawnCommand.c:
     complete
     .text       start:0x020cc644 end:0x020cc764
 
-src/overlays/ov197/calls/func_ov197_020cc764.c:
+src/overlays/ov197/calls/Ov197_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020cc764 end:0x020cc79c
 
-src/overlays/ov197/calls/func_ov197_020cc79c.c:
+src/overlays/ov197/calls/Ov197_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020cc79c end:0x020cc7f8
 
-src/overlays/ov197/calls/func_ov197_020cc7f8.c:
+src/overlays/ov197/calls/Ov197_ResolveHitReaction.c:
     complete
     .text       start:0x020cc7f8 end:0x020cc958
 
-src/overlays/ov197/auto/func_ov197_020cc958.c:
+src/overlays/ov197/auto/Ov197_RequestSubState7IfNotCurrent.c:
     complete
     .text       start:0x020cc958 end:0x020cc984
 
-src/overlays/ov197/auto/func_ov197_020cc984.c:
+src/overlays/ov197/auto/Ov197_RequestSubState8IfIdle.c:
     complete
     .text       start:0x020cc984 end:0x020cc9b4
 
-src/overlays/ov197/calls/func_ov197_020cc9b4.c:
+src/overlays/ov197/calls/Ov197_SeedDefaultPoseAndAdvance.c:
     complete
     .text       start:0x020cc9b4 end:0x020cca1c
 
-src/overlays/ov197/calls/func_ov197_020cca1c.c:
+src/overlays/ov197/calls/Ov197_FireThreeWaySpread.c:
     complete
     .text       start:0x020cca1c end:0x020ccb24
 
-src/overlays/ov197/calls/func_ov197_020ccb24.c:
+src/overlays/ov197/calls/Ov197_BuildHeadingRotation.c:
     complete
     .text       start:0x020ccb24 end:0x020ccc24
 
-src/overlays/ov197/calls/func_ov197_020ccc24.c:
+src/overlays/ov197/calls/Ov197_InitReactionSlots.c:
     complete
     .text       start:0x020ccc24 end:0x020cccdc
 
-src/overlays/ov197/calls/func_ov197_020cccdc.c:
+src/overlays/ov197/calls/Ov197_DispatchSubStateByte.c:
     complete
     .text       start:0x020cccdc end:0x020cce64
 
-src/overlays/ov197/calls/func_ov197_020cce64.c:
+src/overlays/ov197/calls/Ov197_CommitTrailTransform.c:
     complete
     .text       start:0x020cce64 end:0x020ccf48
 
-src/overlays/ov197/calls/func_ov197_020ccf48.c:
+src/overlays/ov197/calls/Ov197_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccf48 end:0x020ccfb0
 
-src/overlays/ov197/calls/func_ov197_020ccfb0.c:
+src/overlays/ov197/calls/Ov197_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020ccfb0 end:0x020ccfec
 
-src/overlays/ov197/calls/func_ov197_020ccfec.c:
+src/overlays/ov197/calls/Ov197_EnterAttackFacingTarget.c:
     complete
     .text       start:0x020ccfec end:0x020cd138
 
-src/overlays/ov197/calls/func_ov197_020cd138.c:
+src/overlays/ov197/calls/Ov197_ClearMoveTimerAndFire.c:
     complete
     .text       start:0x020cd138 end:0x020cd200
 
-src/overlays/ov197/calls/func_ov197_020cd200.c:
+src/overlays/ov197/calls/Ov197_AimAtTargetAfterWindup.c:
     complete
     .text       start:0x020cd200 end:0x020cd320
 
-src/overlays/ov197/calls/func_ov197_020cd320.c:
+src/overlays/ov197/calls/Ov197_AiEnterHold.c:
     complete
     .text       start:0x020cd320 end:0x020cd35c
 
-src/overlays/ov197/calls/func_ov197_020cd35c.c:
+src/overlays/ov197/calls/Ov197_TickHoldTimer.c:
     complete
     .text       start:0x020cd35c end:0x020cd3c0
 
-src/overlays/ov197/calls/func_ov197_020cd3c0.c:
+src/overlays/ov197/calls/Ov197_BeginMoveOrRequestState2.c:
     complete
     .text       start:0x020cd3c0 end:0x020cd498
 
-src/overlays/ov197/calls/func_ov197_020cd498.c:
+src/overlays/ov197/calls/Ov197_ApplyTransformThenReseedIfFree.c:
     complete
     .text       start:0x020cd498 end:0x020cd500
 
-src/overlays/ov197/calls/func_ov197_020cd500.c:
+src/overlays/ov197/calls/Ov197_StepChargeUntilSettled.c:
     complete
     .text       start:0x020cd500 end:0x020cd5e4
 
-src/overlays/ov197/calls/func_ov197_020cd5e4.c:
+src/overlays/ov197/calls/Ov197_PointHeadingCheckPose.c:
     complete
     .text       start:0x020cd5e4 end:0x020cd65c
 
-src/overlays/ov197/calls/func_ov197_020cd65c.c:
+src/overlays/ov197/calls/Ov197_InvokeWithVec3ThenSetSubState5.c:
     complete
     .text       start:0x020cd65c end:0x020cd6b0
 
-src/overlays/ov197/calls/func_ov197_020cd6b0.c:
+src/overlays/ov197/calls/Ov197_SpawnTrailOrFail.c:
     complete
     .text       start:0x020cd6b0 end:0x020cd788
 
-src/overlays/ov197/calls/func_ov197_020cd788.c:
+src/overlays/ov197/calls/Ov197_SteerTrailThenAdvance.c:
     complete
     .text       start:0x020cd788 end:0x020cd868
 
-src/overlays/ov197/calls/func_ov197_020cd868.c:
+src/overlays/ov197/calls/Ov197_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd868 end:0x020cd89c
 
-src/overlays/ov197/calls/func_ov197_020cd89c.c:
+src/overlays/ov197/calls/Ov197_SetPose5ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd89c end:0x020cd8d0
 
-src/overlays/ov197/calls/func_ov197_020cd8d0.c:
+src/overlays/ov197/calls/Ov197_CopyScaleVec3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd8d0 end:0x020cd92c
 
-src/overlays/ov197/calls/func_ov197_020cd92c.c:
+src/overlays/ov197/calls/Ov197_Action4B_Enter.c:
     complete
     .text       start:0x020cd92c end:0x020cd9f0
 
-src/overlays/ov197/calls/func_ov197_020cd9f0.c:
+src/overlays/ov197/calls/Ov197_AiStep_QueueAction0.c:
     complete
     .text       start:0x020cd9f0 end:0x020cda10
 
-src/overlays/ov197/calls/func_ov197_020cda10.c:
+src/overlays/ov197/calls/Ov197_BeginGuardPose.c:
     complete
     .text       start:0x020cda10 end:0x020cdab0
 
-src/overlays/ov197/calls/func_ov197_020cdab0.c:
+src/overlays/ov197/calls/Ov197_TimerGateHw60FlipThenAdvance.c:
     complete
     .text       start:0x020cdab0 end:0x020cdb44
 
-src/overlays/ov197/calls/func_ov197_020cdb44.c:
+src/overlays/ov197/calls/Ov197_AiEnterFaceTarget.c:
     complete
     .text       start:0x020cdb44 end:0x020cdb84
 
-src/overlays/ov197/calls/func_ov197_020cdb84.c:
+src/overlays/ov197/calls/Ov197_FaceTargetThenIdle.c:
     complete
     .text       start:0x020cdb84 end:0x020cdc0c
 
-src/overlays/ov197/calls/func_ov197_020cdc0c.c:
+src/overlays/ov197/calls/Ov197_FaceTargetCheckReach.c:
     complete
     .text       start:0x020cdc0c end:0x020cdc90
 
-src/overlays/ov197/calls/func_ov197_020cdc90.c:
+src/overlays/ov197/calls/Ov197_RunPreDispatchHook.c:
     complete
     .text       start:0x020cdc90 end:0x020cdcf4
 
-src/overlays/ov197/calls/func_ov197_020cdcf4.c:
+src/overlays/ov197/calls/Ov197_AllocLinkChild3a4.c:
     complete
     .text       start:0x020cdcf4 end:0x020cdd28
 
-src/overlays/ov197/calls/func_ov197_020cdd28.c:
+src/overlays/ov197/calls/Ov197_InitSubActor.c:
     complete
     .text       start:0x020cdd28 end:0x020cdef4
 
-src/overlays/ov197/calls/func_ov197_020cdef4.c:
+src/overlays/ov197/calls/Ov197_Destroy.c:
     complete
     .text       start:0x020cdef4 end:0x020cdf2c
 
-src/overlays/ov197/calls/func_ov197_020cdf2c.c:
+src/overlays/ov197/calls/Ov197_TickAndSyncModelXform.c:
     complete
     .text       start:0x020cdf2c end:0x020cdf64
 
-src/overlays/ov197/calls/func_ov197_020cdf64.c:
+src/overlays/ov197/calls/Ov197_PlaceNodeFromCommand.c:
     complete
     .text       start:0x020cdf64 end:0x020ce05c
 
-src/overlays/ov197/calls/func_ov197_020ce05c.c:
+src/overlays/ov197/calls/Ov197_SetSubStateAndScaleVec.c:
     complete
     .text       start:0x020ce05c end:0x020ce090
 
-src/overlays/ov197/calls/func_ov197_020ce090.c:
+src/overlays/ov197/calls/Ov197_Event_ReverseVelocityOnce.c:
     complete
     .text       start:0x020ce090 end:0x020ce0f4
 
-src/overlays/ov197/calls/func_ov197_020ce0f4.c:
+src/overlays/ov197/calls/Ov197_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020ce0f4 end:0x020ce140
 
-src/overlays/ov197/calls/func_ov197_020ce140.c:
+src/overlays/ov197/calls/Ov197_stateInitClearSlots.c:
     complete
     .text       start:0x020ce140 end:0x020ce1e8
 
-src/overlays/ov197/calls/func_ov197_020ce1e8.c:
+src/overlays/ov197/calls/Ov197_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020ce1e8 end:0x020ce260
 
-src/overlays/ov197/calls/func_ov197_020ce260.c:
+src/overlays/ov197/calls/Ov197_PublishVelocity_Step.c:
     complete
     .text       start:0x020ce260 end:0x020ce2c4
 
-src/overlays/ov197/calls/func_ov197_020ce2c4.c:
+src/overlays/ov197/calls/Ov197_ResetPoseAndFlags.c:
     complete
     .text       start:0x020ce2c4 end:0x020ce380
 
-src/overlays/ov197/auto/func_ov197_020ce380.c:
+src/overlays/ov197/auto/Ov197_ResetPoseIdleStep.c:
     complete
     .text       start:0x020ce380 end:0x020ce384
 
-src/overlays/ov197/calls/func_ov197_020ce384.c:
+src/overlays/ov197/calls/Ov197_ResetOrientationAndAdvance.c:
     complete
     .text       start:0x020ce384 end:0x020ce410
 
-src/overlays/ov197/calls/func_ov197_020ce410.c:
+src/overlays/ov197/calls/Ov197_SeekTarget.c:
     complete
     .text       start:0x020ce410 end:0x020ce894
 

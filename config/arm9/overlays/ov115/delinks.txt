@@ -4,23 +4,23 @@
     .data       start:0x020ceb80 end:0x020ceba0 kind:data align:32
     .bss        start:0x020ceba0 end:0x020ceba0 kind:bss align:32
 
-src/overlays/ov115/calls/func_ov115_020cbf20.c:
+src/overlays/ov115/calls/Ov115_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov115/calls/func_ov115_020cbf38.c:
+src/overlays/ov115/calls/Ov115_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov115/calls/func_ov115_020cbfc4.c:
+src/overlays/ov115/calls/Ov115_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc020
 
-src/overlays/ov115/calls/func_ov115_020cc020.c:
+src/overlays/ov115/calls/Ov115_EnemyConstruct.c:
     complete
     .text       start:0x020cc020 end:0x020cc334
 
-src/overlays/ov115/calls/func_ov115_020cc334.c:
+src/overlays/ov115/calls/Ov115_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020cc334 end:0x020cc374
 
@@ -36,159 +36,159 @@ src/overlays/ov115/calls/func_ov115_020cc38c.c:
     complete
     .text       start:0x020cc38c end:0x020cc398
 
-src/overlays/ov115/calls/func_ov115_020cc398.c:
+src/overlays/ov115/calls/Ov115_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc398 end:0x020cc66c
 
-src/overlays/ov115/calls/func_ov115_020cc66c.c:
+src/overlays/ov115/calls/Ov115_Model_SetTrack0.c:
     complete
     .text       start:0x020cc66c end:0x020cc69c
 
-src/overlays/ov115/calls/func_ov115_020cc69c.c:
+src/overlays/ov115/calls/Ov115_ReleaseTasks.c:
     complete
     .text       start:0x020cc69c end:0x020cc838
 
-src/overlays/ov115/calls/func_ov115_020cc838.c:
+src/overlays/ov115/calls/Ov115_SpawnActionEntry.c:
     complete
     .text       start:0x020cc838 end:0x020cc8f8
 
-src/overlays/ov115/calls/func_ov115_020cc8f8.c:
+src/overlays/ov115/calls/Ov115_ActionEntry.c:
     complete
     .text       start:0x020cc8f8 end:0x020cc994
 
-src/overlays/ov115/calls/func_ov115_020cc994.c:
+src/overlays/ov115/calls/Ov115_ChildTaskTeardown.c:
     complete
     .text       start:0x020cc994 end:0x020cc9bc
 
-src/overlays/ov115/calls/func_ov115_020cc9bc.c:
+src/overlays/ov115/calls/Ov115_DropStrikeTick.c:
     complete
     .text       start:0x020cc9bc end:0x020ccddc
 
-src/overlays/ov115/calls/func_ov115_020ccddc.c:
+src/overlays/ov115/calls/Ov115_registryCreateEntry.c:
     complete
     .text       start:0x020ccddc end:0x020cce38
 
-src/overlays/ov115/calls/func_ov115_020cce38.c:
+src/overlays/ov115/calls/Ov115_OnHit.c:
     complete
     .text       start:0x020cce38 end:0x020cd058
 
-src/overlays/ov115/auto/func_ov115_020cd058.c:
+src/overlays/ov115/auto/Ov115_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020cd058 end:0x020cd084
 
-src/overlays/ov115/calls/func_ov115_020cd084.c:
+src/overlays/ov115/calls/Ov115_FaceTargetGetClearance.c:
     complete
     .text       start:0x020cd084 end:0x020cd11c
 
-src/overlays/ov115/auto/func_ov115_020cd11c.c:
+src/overlays/ov115/auto/Ov115_IsHeldSlotEmpty.c:
     complete
     .text       start:0x020cd11c end:0x020cd13c
 
-src/overlays/ov115/calls/func_ov115_020cd13c.c:
+src/overlays/ov115/calls/Ov115_stateInitTransformSlots.c:
     complete
     .text       start:0x020cd13c end:0x020cd228
 
-src/overlays/ov115/calls/func_ov115_020cd228.c:
+src/overlays/ov115/calls/Ov115_DispatchSubStateByte.c:
     complete
     .text       start:0x020cd228 end:0x020cd428
 
-src/overlays/ov115/calls/func_ov115_020cd428.c:
+src/overlays/ov115/calls/Ov115_stDivStoreField.c:
     complete
     .text       start:0x020cd428 end:0x020cd4c8
 
-src/overlays/ov115/calls/func_ov115_020cd4c8.c:
+src/overlays/ov115/calls/Ov115_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cd4c8 end:0x020cd530
 
-src/overlays/ov115/calls/func_ov115_020cd530.c:
+src/overlays/ov115/calls/Ov115_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020cd530 end:0x020cd5b4
 
-src/overlays/ov115/calls/func_ov115_020cd5b4.c:
+src/overlays/ov115/calls/Ov115_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020cd5b4 end:0x020cd680
 
-src/overlays/ov115/calls/func_ov115_020cd680.c:
+src/overlays/ov115/calls/Ov115_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020cd680 end:0x020cd758
 
-src/overlays/ov115/calls/func_ov115_020cd758.c:
+src/overlays/ov115/calls/Ov115_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd758 end:0x020cd78c
 
-src/overlays/ov115/calls/func_ov115_020cd78c.c:
+src/overlays/ov115/calls/Ov115_stateRandomInitFull.c:
     complete
     .text       start:0x020cd78c end:0x020cd818
 
-src/overlays/ov115/calls/func_ov115_020cd818.c:
+src/overlays/ov115/calls/Ov115_OrbitTick.c:
     complete
     .text       start:0x020cd818 end:0x020cdbac
 
-src/overlays/ov115/calls/func_ov115_020cdbac.c:
+src/overlays/ov115/calls/Ov115_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020cdbac end:0x020cdbf0
 
-src/overlays/ov115/calls/func_ov115_020cdbf0.c:
+src/overlays/ov115/calls/Ov115_HoverBobTick.c:
     complete
     .text       start:0x020cdbf0 end:0x020cdde4
 
-src/overlays/ov115/calls/func_ov115_020cdde4.c:
+src/overlays/ov115/calls/Ov115_AiStep_StartTag1.c:
     complete
     .text       start:0x020cdde4 end:0x020cde20
 
-src/overlays/ov115/calls/func_ov115_020cde20.c:
+src/overlays/ov115/calls/Ov115_HoverApproachTick.c:
     complete
     .text       start:0x020cde20 end:0x020cdfec
 
-src/overlays/ov115/calls/func_ov115_020cdfec.c:
+src/overlays/ov115/calls/Ov115_stateRandomDirValue.c:
     complete
     .text       start:0x020cdfec end:0x020ce05c
 
-src/overlays/ov115/calls/func_ov115_020ce05c.c:
+src/overlays/ov115/calls/Ov115_CircleTick.c:
     complete
     .text       start:0x020ce05c end:0x020ce20c
 
-src/overlays/ov115/calls/func_ov115_020ce20c.c:
+src/overlays/ov115/calls/Ov115_BeginGuardPose.c:
     complete
     .text       start:0x020ce20c end:0x020ce2e4
 
-src/overlays/ov115/calls/func_ov115_020ce2e4.c:
+src/overlays/ov115/calls/Ov115_TrackTargetUntilCharge.c:
     complete
     .text       start:0x020ce2e4 end:0x020ce408
 
-src/overlays/ov115/calls/func_ov115_020ce408.c:
+src/overlays/ov115/calls/Ov115_DashTick.c:
     complete
     .text       start:0x020ce408 end:0x020ce5dc
 
-src/overlays/ov115/calls/func_ov115_020ce5dc.c:
+src/overlays/ov115/calls/Ov115_EngageEnter.c:
     complete
     .text       start:0x020ce5dc end:0x020ce6b0
 
-src/overlays/ov115/calls/func_ov115_020ce6b0.c:
+src/overlays/ov115/calls/Ov115_SteerCircleAttack.c:
     complete
     .text       start:0x020ce6b0 end:0x020ce7bc
 
-src/overlays/ov115/calls/func_ov115_020ce7bc.c:
+src/overlays/ov115/calls/Ov115_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020ce7bc end:0x020ce7f0
 
-src/overlays/ov115/calls/func_ov115_020ce7f0.c:
+src/overlays/ov115/calls/Ov115_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020ce7f0 end:0x020ce824
 
-src/overlays/ov115/calls/func_ov115_020ce824.c:
+src/overlays/ov115/calls/Ov115_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020ce824 end:0x020ce918
 
-src/overlays/ov115/calls/func_ov115_020ce918.c:
+src/overlays/ov115/calls/Ov115_AiEndWithUpdate.c:
     complete
     .text       start:0x020ce918 end:0x020cea04
 
-src/overlays/ov115/calls/func_ov115_020cea04.c:
+src/overlays/ov115/calls/Ov115_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020cea04 end:0x020ceaa4
 
-src/overlays/ov115/calls/func_ov115_020ceaa4.c:
+src/overlays/ov115/calls/Ov115_stateTimerToggleFlags.c:
     complete
     .text       start:0x020ceaa4 end:0x020ceb38
 

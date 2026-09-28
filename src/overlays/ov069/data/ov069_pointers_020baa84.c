@@ -6,36 +6,36 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov069_020b84dc(void);
-extern void func_ov069_020b8518(void);
-extern void func_ov069_020b8548(void);
-extern void func_ov069_020b8604(void);
-extern void func_ov069_020b8698(void);
-extern void func_ov069_020b86e4(void);
+extern void Ov069_ScriptCmd_SetupBgLayer(void);
+extern void Ov069_InitPairAndDispatch(void);
+extern void Ov069_OpGiveItem(void);
+extern void Ov069_OpTakeItem(void);
+extern void Ov069_MarkCurrentItemEquipped(void);
+extern void Ov069_ShiftGlobalHalfword(void);
 
 Ov_Fn data_ov069_020baa84[12] = {
 
-    func_ov069_020b84dc,
+    Ov069_ScriptCmd_SetupBgLayer,
 
     0,
 
-    func_ov069_020b8518,
+    Ov069_InitPairAndDispatch,
 
     0,
 
-    func_ov069_020b8548,
+    Ov069_OpGiveItem,
 
     0,
 
-    func_ov069_020b8604,
+    Ov069_OpTakeItem,
 
     0,
 
-    func_ov069_020b8698,
+    Ov069_MarkCurrentItemEquipped,
 
     0,
 
-    func_ov069_020b86e4,
+    Ov069_ShiftGlobalHalfword,
 
     0,
 

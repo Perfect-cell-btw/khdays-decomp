@@ -12,7 +12,7 @@ routinely NOT 0,1,2,... Writing the switch in that order makes the whole layout 
 Cases sharing a target share a body (`case 0: case 14: case 19:`). The branch immediately before
 the table is the `default`.
 
-Usage:  python tools/switchorder.py func_ov005_0205b100
+Usage:  python tools/switchorder.py Ov005_GetItemDescriptionForMember
 """
 import json
 import os

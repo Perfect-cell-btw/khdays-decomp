@@ -75,8 +75,7 @@ static inline void OS_SetIrqCheckFlag(OSIrqMask intr)
     data_027e0000.intr_check |= (u32)intr;
 }
 
-extern OSTick func_020031d4(void);          /* OS_GetTick */
-#define OS_GetTick func_020031d4
+extern OSTick OS_GetTick(void);          /* OS_GetTick */
 extern void OSi_EnterTimerCallback(int timerNo, void (*callback)(void *), void *arg);
 extern OSIrqMask OS_EnableIrqMask(OSIrqMask intr);
 extern OSIrqMask OS_DisableIrqMask(OSIrqMask intr);
@@ -86,8 +85,7 @@ extern struct { u16 useAlarm; u16 pad; struct OSiAlarmQueue queue; } data_020446
 #define OSi_UseAlarm data_02044674.useAlarm
 #define OSi_AlarmQueue data_02044674.queue
 extern void OSi_SetTimer(OSAlarm *alarm);
-extern void func_02003410(OSAlarm *alarm, OSTick fire);   /* OSi_InsertAlarm */
-#define OSi_InsertAlarm func_02003410
+extern void OSi_InsertAlarm(OSAlarm *alarm, OSTick fire);   /* OSi_InsertAlarm */
 
 /* OSi_SetTimer -- NitroSDK os_alarm.c. */
 void OSi_SetTimer (OSAlarm * alarm)

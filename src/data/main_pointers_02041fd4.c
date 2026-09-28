@@ -4,12 +4,12 @@
  * a zero word is a null entry.
  */
 
-extern void func_02024030(void);
-extern void func_0202405c(void);
+extern void PackDisplayReg0x400100e(void);
+extern void PackDisplayReg0x400100c(void);
 extern void func_02024088(void);
 extern void func_020240bc(void);
-extern void func_020240f0(void);
-extern void func_0202411c(void);
+extern void PackDisplayReg0x400000e(void);
+extern void PackDisplayReg0x400000c(void);
 extern void func_02024148(void);
 extern int G2S_GetBG0ScrPtr;
 extern int G2S_GetBG1ScrPtr;
@@ -74,7 +74,7 @@ void *const data_02041fe0[43] = {
 
     0,
 
-    (void *)func_0202411c,
+    (void *)PackDisplayReg0x400000c,
 
     &G2_GetBG2ScrPtr,
 
@@ -86,7 +86,7 @@ void *const data_02041fe0[43] = {
 
     0,
 
-    (void *)func_020240f0,
+    (void *)PackDisplayReg0x400000e,
 
     &G2_GetBG3ScrPtr,
 
@@ -122,7 +122,7 @@ void *const data_02041fe0[43] = {
 
     0,
 
-    (void *)func_0202405c,
+    (void *)PackDisplayReg0x400100c,
 
     &G2S_GetBG2ScrPtr,
 
@@ -134,7 +134,7 @@ void *const data_02041fe0[43] = {
 
     0,
 
-    (void *)func_02024030,
+    (void *)PackDisplayReg0x400100e,
 
     &G2S_GetBG3ScrPtr,
 

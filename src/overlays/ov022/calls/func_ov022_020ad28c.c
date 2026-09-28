@@ -1,4 +1,4 @@
-extern void func_ov022_02092588(int arg0, void *buf, int arg2, int arg3);
+extern void Ov022_PostContactPacket(int arg0, void *buf, int arg2, int arg3);
 
 typedef struct { int a; int b; int c; } Vec3w;
 
@@ -25,5 +25,5 @@ void func_ov022_020ad28c(int arg0, unsigned int *arg1, unsigned short arg2, int 
     buf.b15 = 0;
     buf.h16 = arg2;
     buf.h18 = (unsigned short)arg3;
-    func_ov022_02092588(arg0 + 0x2648, &buf, 0, arg3);
+    Ov022_PostContactPacket(arg0 + 0x2648, &buf, 0, arg3);
 }

@@ -5,26 +5,26 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_0208fa28: func_ov008_02076158
- *   data_ov008_0208fa38: func_ov008_02077d64
- *   data_ov008_0208fa4c: func_ov008_0207733c
- *   data_ov008_0208fa74: func_ov008_0207733c
- *   data_ov008_0208fa9c: func_ov008_0207733c
- *   data_ov008_0208fac4: func_ov008_0207733c
- *   data_ov008_0208faec: func_ov008_0207733c
- *   data_ov008_0208fb14: func_ov008_0207733c
- *   data_ov008_0208fb3c: func_ov008_02076158
- *   data_ov008_0208fb6c: func_ov008_02078c48
- *   data_ov008_0208fc84: func_ov008_0207ab50
- *   data_ov008_0208fc8c: func_ov008_0207bfe8, func_ov008_0207d888
- *   data_ov008_0208fc9c: func_ov008_0207bcdc
- *   data_ov008_0208fc9d: func_ov008_0207bcdc
- *   data_ov008_0208fc9e: func_ov008_0207bcdc
- *   data_ov008_0208fc9f: func_ov008_0207bcdc
- *   data_ov008_0208fca0: func_ov008_0207bcdc
- *   data_ov008_0208fca3: func_ov008_0207bcdc
- *   data_ov008_0208fca4: func_ov008_0207bcdc
- *   data_ov008_0208fd48: func_ov008_0207dfec
+ *   data_ov008_0208fa28: Ov008_LayoutMissionBadges
+ *   data_ov008_0208fa38: Ov008_MissionMenuDestroy
+ *   data_ov008_0208fa4c: Ov008_InitMissionMenuSurfaces
+ *   data_ov008_0208fa74: Ov008_InitMissionMenuSurfaces
+ *   data_ov008_0208fa9c: Ov008_InitMissionMenuSurfaces
+ *   data_ov008_0208fac4: Ov008_InitMissionMenuSurfaces
+ *   data_ov008_0208faec: Ov008_InitMissionMenuSurfaces
+ *   data_ov008_0208fb14: Ov008_InitMissionMenuSurfaces
+ *   data_ov008_0208fb3c: Ov008_LayoutMissionBadges
+ *   data_ov008_0208fb6c: Ov008_InitTutorialSurfaces
+ *   data_ov008_0208fc84: Ov008_MissionExpireRows
+ *   data_ov008_0208fc8c: Ov008_MissionMenuCreate, Ov008_UpdateMissionMemberSelectionInput
+ *   data_ov008_0208fc9c: Ov008_MissionApplyParameterRow
+ *   data_ov008_0208fc9d: Ov008_MissionApplyParameterRow
+ *   data_ov008_0208fc9e: Ov008_MissionApplyParameterRow
+ *   data_ov008_0208fc9f: Ov008_MissionApplyParameterRow
+ *   data_ov008_0208fca0: Ov008_MissionApplyParameterRow
+ *   data_ov008_0208fca3: Ov008_MissionApplyParameterRow
+ *   data_ov008_0208fca4: Ov008_MissionApplyParameterRow
+ *   data_ov008_0208fd48: Ov008_MissionBuildScreenCells
  */
 
 typedef unsigned char u8;

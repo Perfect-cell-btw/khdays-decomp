@@ -1,0 +1,49 @@
+/* Whether the menu grid built from the save block's +0xee0 id rows holds an entry of kind 4
+ * (the +0x18 word of the entry the node's page/column/row point at); with a non-zero `min` the
+ * node must also carry a +4 record and a +8 count of at least `min`. The grid context, entry
+ * table and node list are built and torn down around the search. */
+typedef unsigned short u16;
+
+struct MenuNode {
+    char pad000[4];
+    int pRecord;            /* +0x04 */
+    u16 nCount;             /* +0x08 */
+    u16 nPage;              /* +0x0a */
+    char pad00c[4];
+    u16 nColumn;            /* +0x10 */
+    u16 nRow;               /* +0x12 */
+};
+
+extern void NNS_FndInitList(void *list, int offset);
+extern void Ov069_InitRecordContext(void *ctx, void **hooks);
+extern void Ov069_BuildMenuGrid(void *ctx, void **entries, void *list, u16 *ids);
+extern void Ov069_RebuildViewAndCountCells(void *ctx, void **entries, void *list);
+extern void *NNS_FndGetNextListObject(void *list, void *cur);
+extern void Ov069_ReleaseHandleGridAndList(void *ctx, void **entries, void *list);
+extern void func_ov069_020ba244(void *ctx);
+extern char *data_0204be18;
+
+int Ov069_HasKind4MenuEntry(unsigned int min)
+{
+    int found;
+    int list[3];
+    char *entries[3][0x28];
+    char ctx[0x100];
+    struct MenuNode *node;
+
+    found = 0;
+    NNS_FndInitList(list, 0x28);
+    Ov069_InitRecordContext(ctx, 0);
+    Ov069_BuildMenuGrid(ctx, (void **)entries, list, (u16 *)(data_0204be18 + 0xee0));
+    Ov069_RebuildViewAndCountCells(ctx, (void **)entries, list);
+    for (node = NNS_FndGetNextListObject(list, 0); node != 0; node = NNS_FndGetNextListObject(list, node)) {
+        if (*(int *)(entries[node->nPage][node->nColumn + node->nRow * 5] + 0x18) == 4 &&
+            (min == 0 || (node->pRecord != 0 && node->nCount >= min))) {
+            found = 1;
+            break;
+        }
+    }
+    Ov069_ReleaseHandleGridAndList(ctx, (void **)entries, list);
+    func_ov069_020ba244(ctx);
+    return found;
+}

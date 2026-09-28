@@ -16,7 +16,7 @@ things they structurally cannot:
   this              needs only that you have NAMED the subsystem, and finds its
                     members even when none of them is matched yet.
 
-Found func_ov008_0208bd9c (the third CommitSaveToSlot) in one run, from a single
+Found Ov008_CommitSaveToSlot (the third CommitSaveToSlot) in one run, from a single
 census over the save-system symbols, when neither of the others could have.
 
 Use it right after naming a subsystem: that is the moment you know its symbol set

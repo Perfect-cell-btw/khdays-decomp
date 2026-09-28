@@ -3,13 +3,13 @@
 
 typedef struct { int x, y, z; } Vec3;
 
-/* func_ov258_020cce70: per-move poses of the +0x384 body rig and the +0x3ac tail rig. */
+/* Ov258_PlayRigMove: per-move poses of the +0x384 body rig and the +0x3ac tail rig. */
 typedef struct { int id[16]; } MovePoses;
 
-/* func_ov258_020cbfc8 (constructor): poses of the 43 hidden parts. */
+/* Ov258_Construct (constructor): poses of the 43 hidden parts. */
 typedef struct { int id[43]; } PartPoses;
 
-/* func_ov258_020d02f8: the five hit reaction variants a strike picks from at random; the object
+/* Ov258_SwingTick_2: the five hit reaction variants a strike picks from at random; the object
  * pads to the section end. */
 typedef struct { short mode[5]; short pad; } ReactionVariants;
 
@@ -21,13 +21,13 @@ const PartPoses data_ov258_020d1774 = { {
     48, 49, 49, 50, 50, 51, 51, 51, 51, 51, 51, 52, 53, 54, 55, 56, 57, 57, 58, 59, 60,
 } };
 
-/* func_ov258_020ce0a0: strike push (0, 1.25, 0). */
+/* Ov258_StompTick: strike push (0, 1.25, 0). */
 const Vec3 data_ov258_020d1820 = { 0, 0x1400, 0 };
 
-/* func_ov258_020ce0a0: reach 7.875 ahead, turned by the heading. */
+/* Ov258_StompTick: reach 7.875 ahead, turned by the heading. */
 const Vec3 data_ov258_020d182c = { 0, 0, 0x7e00 };
 
-/* func_ov258_020ce63c: offset 5.0 behind. */
+/* Ov258_TickBarrage: offset 5.0 behind. */
 const Vec3 data_ov258_020d1838 = { 0, 0, -0x5000 };
 
 const ReactionVariants data_ov258_020d1844 = { { 1, 9, 5, 6, 10 }, 0 };

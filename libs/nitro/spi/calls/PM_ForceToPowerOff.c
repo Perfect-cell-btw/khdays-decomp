@@ -1,12 +1,12 @@
 /* NitroSDK spi (pm.c): PM_ForceToPowerOff -- PM_ForceToPowerOffAsync with PMi_DummyCallback, then PMi_WaitBusy. */
-extern int func_0200cfdc(void *fn, int *out);
-extern void func_0200cab8(void);
-extern void func_0200caf8(void);
+extern int PM_ForceToPowerOffAsync(void *fn, int *out);
+extern void PMi_WaitBusy(void);
+extern void PMi_DummyCallback(void);
 
 int PM_ForceToPowerOff(void) {
     int local;
-    int r = func_0200cfdc((void *)func_0200caf8, &local);
+    int r = PM_ForceToPowerOffAsync((void *)PMi_DummyCallback, &local);
     if (r != 0) return r;
-    func_0200cab8();
+    PMi_WaitBusy();
     return local;
 }

@@ -6,19 +6,19 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov022_020915bc(void);
-extern void func_ov022_020916e0(void);
-extern void func_ov043_020b547c(void);
+extern void Ov022_AdvanceTimerAndLatchDone(void);
+extern void Ov022_NullStep(void);
+extern void Ov043_UpdateSwingRequestEffect(void);
 
 Ov_Fn data_ov043_020b5814[5] = {
 
     0,
 
-    func_ov022_020915bc,
+    Ov022_AdvanceTimerAndLatchDone,
 
-    func_ov043_020b547c,
+    Ov043_UpdateSwingRequestEffect,
 
-    func_ov022_020916e0,
+    Ov022_NullStep,
 
     0,
 

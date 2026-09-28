@@ -6,7 +6,7 @@
        python tools/park_permute.py --sweep       # todos los parks de tamano exacto
 
    Por que existe (2026-07-22): mwcc reparte los callee-saved siguiendo el orden en
-   que se DECLARAN los locales. `func_ov008_0208b148` tenia el stream de instrucciones
+   que se DECLARAN los locales. `Ov008_CountUnassignedCopies` tenia el stream de instrucciones
    ya correcto y solo casaba con una de las 24 ordenaciones de sus cuatro locales; el
    park llevaba desde el 18/07 archivado como empate de reduccion de fuerza. Cuando el
    tamano ya coincide y solo bailan los registros, esto son 24 compilaciones y medio
@@ -14,7 +14,7 @@
 
    ⚠ RESULTADO DEL BARRIDO COMPLETO (2026-07-22): sobre los 297 parks que quedaban,
    CERO se resuelven solo con el orden de declaracion. O sea: la palanca es real (cerro
-   func_ov008_0208b148) pero **no basta por si sola**; hace falta que el stream ya sea
+   Ov008_CountUnassignedCopies) pero **no basta por si sola**; hace falta que el stream ya sea
    correcto por otro motivo. Uso correcto = de una en una, DESPUES de haber arreglado la
    forma (arity, bucle, cast), no como barrido de pesca.
 

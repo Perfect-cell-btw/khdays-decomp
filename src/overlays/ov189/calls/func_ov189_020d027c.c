@@ -1,5 +1,5 @@
-extern int func_ov107_020c7c1c();
+extern int Ov107_Actor_DetachFromRegion();
 
 int func_ov189_020d027c(int a, int b, int c, int d) {
-    return func_ov107_020c7c1c(a, b, c, d);
+    return Ov107_Actor_DetachFromRegion(a, b, c, d);
 }

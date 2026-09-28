@@ -1,0 +1,44 @@
+/* Ov159_CommitMove -- commit the move once the counter allows. If the counter at +0x40 has
+ * reached 0x100 nothing happens. Otherwise a 2-field descriptor is built from
+ * data_ov159_020d4fa0 and passed to the owner's own hook (+0x24) if it has one, the delay at
+ * +0x14 is set to the short value (x * 30 / 10), the owner is retuned (mode 7), the progress
+ * fields (+0x3c/+0x54) cleared, the rig at +0x39c reset, and the action dispatched with
+ * Ov159_AimedAttackWaitTick. */
+
+typedef struct {
+    unsigned short a;
+    unsigned short b;
+} Ov158_Desc;
+
+extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
+extern void Ov107_StartAnim(int rig, int a, int b);
+extern void SetIndexedSlot(int self, int action, void (*cb)(void));
+extern void Ov159_AimedAttackWaitTick(void);
+extern unsigned short data_ov159_020d4fa0[];
+
+void Ov159_CommitMove(int self) {
+    int *ctx;
+    Ov158_Desc d;
+    Ov158_Desc *p;
+    void (*hook)(int, Ov158_Desc *, int);
+
+    ctx = *(int **)(self + 4);
+    if (ctx[0x10] >= 0x100) {
+        return;
+    }
+
+    p = &d;
+    d.b = data_ov159_020d4fa0[1];
+    d.a = data_ov159_020d4fa0[0];
+    hook = *(void (**)(int, Ov158_Desc *, int))(ctx[0] + 0x24);
+    if (hook != 0) {
+        hook(ctx[0], p, 4);
+    }
+
+    ctx[5] = *(int *)(*(int *)self + 0x2c) * 30 / 10;
+    Ov107_PostTagUpdate(ctx[0], 7, 0);
+    ctx[0xf] = 0;
+    *(unsigned char *)((char *)ctx + 0x54) = 0;
+    Ov107_StartAnim(*(int *)(ctx[0] + 0x39c), 0, 0);
+    SetIndexedSlot(self, *(signed char *)(self + 0x20), Ov159_AimedAttackWaitTick);
+}

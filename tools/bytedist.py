@@ -7,8 +7,8 @@ Imprime una linea por fichero, ordenadas de mejor a peor, y marca la ganadora.
 
 POR QUE (2026-07-18): `verify_idx` imprime el offset del PRIMER byte distinto, y eso NO es una
 distancia -- una sola eleccion temprana de registro lo desplaza mientras el resto casa. Caso real:
-en func_ov141_020cd1dc mover `v[1] = 0;` detras de dos lecturas paso de **37 a 7 bytes distintos**,
-y por offset habria parecido irrelevante. En func_ov141_020cd2b0 el offset dijo que una variante
+en Ov141_PickStrafeDirection mover `v[1] = 0;` detras de dos lecturas paso de **37 a 7 bytes distintos**,
+y por offset habria parecido irrelevante. En Ov141_ProjectileAction_Enter el offset dijo que una variante
 mejoraba (0x38 -> 0x21) cuando en realidad empeoraba 4x (8 -> 36 bytes).
 
 Usalo siempre que compares dos formas candidatas, y sobre todo para barrer varias de una tacada.

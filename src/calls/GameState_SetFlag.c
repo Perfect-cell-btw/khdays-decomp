@@ -1,0 +1,6 @@
+extern int data_0204be18;
+extern int BitArray_SetBit();
+
+int GameState_SetFlag(int arg0) {
+    return BitArray_SetBit(*(int *)&data_0204be18 + 0x10, arg0);
+}

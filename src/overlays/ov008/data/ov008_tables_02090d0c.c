@@ -5,7 +5,7 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_02090d0c: func_ov008_0207c518, func_ov008_0207c7c8
+ *   data_ov008_02090d0c: Ov008_UpdateMissionMenuConfirmScreen, Ov008_UpdateMissionMenuSelectionScreen
  */
 
 typedef unsigned char u8;

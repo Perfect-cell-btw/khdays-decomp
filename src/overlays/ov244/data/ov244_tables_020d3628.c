@@ -56,12 +56,12 @@ const u8 data_ov244_020d36f8[16] = {
     0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov244_020ce8bc (not yet decompiled) */
+/* read by Ov244_ArmSwingSweepA (not yet decompiled) */
 const u16 data_ov244_020d3708[7] = {
     0, 517, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov244_020cf16c (not yet decompiled) */
+/* read by Ov244_ArmSwingSweep (not yet decompiled) */
 const u16 data_ov244_020d3716[7] = {
     0, 517, 0, 0, 0, 0, 0,
 };
@@ -70,7 +70,7 @@ const u16 data_ov244_020d3716[7] = {
  *   Ov244_EnterAnim4 (020d032c): unsigned short data_ov244_020d3724[];
  *   Ov244_EnterAnim7 (020d0430): unsigned short data_ov244_020d3724[];
  *   Ov244_SummonWindupTick (020d04b4): const u16 data_ov244_020d3724[];
- *   func_ov244_020d061c (not yet decompiled)
+ *   Ov244_VolleyTick (not yet decompiled)
  *   Ov244_WaitNibbleTick (020d090c): unsigned short data_ov244_020d3724[];
  *   Build the sprite request (mirroring facing), kick anim 5, then dispatch. (020d09ac): int data_ov244_020d3724; */
 const u8 data_ov244_020d3724[48] = {
@@ -84,7 +84,7 @@ const u8 data_ov244_020d3754[16] = {
     0, 0, 5, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov244_020d061c (not yet decompiled) */
+/* read by Ov244_VolleyTick (not yet decompiled) */
 const u8 data_ov244_020d3764[16] = {
     80, 11, 0, 0, 0, 0, 0, 0, 176, 244, 255, 255, 0, 0, 0, 0,
 };

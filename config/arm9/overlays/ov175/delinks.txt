@@ -4,23 +4,23 @@
     .data       start:0x020ceaa0 end:0x020ceac0 kind:data align:32
     .bss        start:0x020ceac0 end:0x020ceac0 kind:bss align:32
 
-src/overlays/ov175/calls/func_ov175_020cbf20.c:
+src/overlays/ov175/calls/Ov175_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov175/calls/func_ov175_020cbf38.c:
+src/overlays/ov175/calls/Ov175_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov175/calls/func_ov175_020cbfc4.c:
+src/overlays/ov175/calls/Ov175_OrientPartAlongDirection.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc020
 
-src/overlays/ov175/calls/func_ov175_020cc020.c:
+src/overlays/ov175/calls/Ov175_Construct.c:
     complete
     .text       start:0x020cc020 end:0x020cc33c
 
-src/overlays/ov175/calls/func_ov175_020cc33c.c:
+src/overlays/ov175/calls/Ov175_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020cc33c end:0x020cc37c
 
@@ -28,159 +28,159 @@ src/overlays/ov175/calls/func_ov175_020cc37c.c:
     complete
     .text       start:0x020cc37c end:0x020cc388
 
-src/overlays/ov175/calls/func_ov175_020cc388.c:
+src/overlays/ov175/calls/Ov175_ForwardEventToChild.c:
     complete
     .text       start:0x020cc388 end:0x020cc3b0
 
-src/overlays/ov175/calls/func_ov175_020cc3b0.c:
+src/overlays/ov175/calls/Ov175_NotifyPartThenBase.c:
     complete
     .text       start:0x020cc3b0 end:0x020cc3d8
 
-src/overlays/ov175/calls/func_ov175_020cc3d8.c:
+src/overlays/ov175/calls/Ov175_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc3d8 end:0x020cc5f4
 
-src/overlays/ov175/calls/func_ov175_020cc5f4.c:
+src/overlays/ov175/calls/Ov175_Model_SetTrack0.c:
     complete
     .text       start:0x020cc5f4 end:0x020cc624
 
-src/overlays/ov175/calls/func_ov175_020cc624.c:
+src/overlays/ov175/calls/Ov175_ReleaseByStateAndSyncSrt.c:
     complete
     .text       start:0x020cc624 end:0x020cc75c
 
-src/overlays/ov175/calls/func_ov175_020cc75c.c:
+src/overlays/ov175/calls/Ov175_registryCreateEntry.c:
     complete
     .text       start:0x020cc75c end:0x020cc7b8
 
-src/overlays/ov175/calls/func_ov175_020cc7b8.c:
+src/overlays/ov175/calls/Ov175_OnHit.c:
     complete
     .text       start:0x020cc7b8 end:0x020cca70
 
-src/overlays/ov175/auto/func_ov175_020cca70.c:
+src/overlays/ov175/auto/Ov175_RequestSubState14IfNotCurrent.c:
     complete
     .text       start:0x020cca70 end:0x020cca9c
 
-src/overlays/ov175/calls/func_ov175_020cca9c.c:
+src/overlays/ov175/calls/Ov175_FaceTargetGetClearance.c:
     complete
     .text       start:0x020cca9c end:0x020ccb34
 
-src/overlays/ov175/auto/func_ov175_020ccb34.c:
+src/overlays/ov175/auto/Ov175_IsChildInactive.c:
     complete
     .text       start:0x020ccb34 end:0x020ccb74
 
-src/overlays/ov175/calls/func_ov175_020ccb74.c:
+src/overlays/ov175/calls/Ov175_stateInitTransformSlots.c:
     complete
     .text       start:0x020ccb74 end:0x020ccc60
 
-src/overlays/ov175/calls/func_ov175_020ccc60.c:
+src/overlays/ov175/calls/Ov175_stDispatchByStateByte_ccbcc.c:
     complete
     .text       start:0x020ccc60 end:0x020cce4c
 
-src/overlays/ov175/calls/func_ov175_020cce4c.c:
+src/overlays/ov175/calls/Ov175_stDivStoreField.c:
     complete
     .text       start:0x020cce4c end:0x020cceec
 
-src/overlays/ov175/calls/func_ov175_020cceec.c:
+src/overlays/ov175/calls/Ov175_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cceec end:0x020ccf54
 
-src/overlays/ov175/calls/func_ov175_020ccf54.c:
+src/overlays/ov175/calls/Ov175_FlagGatedCopyVec3AndAdvance.c:
     complete
     .text       start:0x020ccf54 end:0x020ccfd8
 
-src/overlays/ov175/calls/func_ov175_020ccfd8.c:
+src/overlays/ov175/calls/Ov175_stateSetFlagsInitAnim.c:
     complete
     .text       start:0x020ccfd8 end:0x020cd0a4
 
-src/overlays/ov175/calls/func_ov175_020cd0a4.c:
+src/overlays/ov175/calls/Ov175_stateTimerRebuildTransform.c:
     complete
     .text       start:0x020cd0a4 end:0x020cd17c
 
-src/overlays/ov175/calls/func_ov175_020cd17c.c:
+src/overlays/ov175/calls/Ov175_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd17c end:0x020cd1b0
 
-src/overlays/ov175/calls/func_ov175_020cd1b0.c:
+src/overlays/ov175/calls/Ov175_stateRandomInitFull.c:
     complete
     .text       start:0x020cd1b0 end:0x020cd23c
 
-src/overlays/ov175/calls/func_ov175_020cd23c.c:
+src/overlays/ov175/calls/Ov175_OrbitTick.c:
     complete
     .text       start:0x020cd23c end:0x020cd5bc
 
-src/overlays/ov175/calls/func_ov175_020cd5bc.c:
+src/overlays/ov175/calls/Ov175_AiStep_StartTag1WithTimer.c:
     complete
     .text       start:0x020cd5bc end:0x020cd600
 
-src/overlays/ov175/calls/func_ov175_020cd600.c:
+src/overlays/ov175/calls/Ov175_HoverBobTick.c:
     complete
     .text       start:0x020cd600 end:0x020cd7f8
 
-src/overlays/ov175/calls/func_ov175_020cd7f8.c:
+src/overlays/ov175/calls/Ov175_AiStep_StartTag1.c:
     complete
     .text       start:0x020cd7f8 end:0x020cd834
 
-src/overlays/ov175/calls/func_ov175_020cd834.c:
+src/overlays/ov175/calls/Ov175_HoverApproachTick.c:
     complete
     .text       start:0x020cd834 end:0x020cda00
 
-src/overlays/ov175/calls/func_ov175_020cda00.c:
+src/overlays/ov175/calls/Ov175_stateRandomDirValue.c:
     complete
     .text       start:0x020cda00 end:0x020cda70
 
-src/overlays/ov175/calls/func_ov175_020cda70.c:
+src/overlays/ov175/calls/Ov175_CircleStrafeTarget.c:
     complete
     .text       start:0x020cda70 end:0x020cdbec
 
-src/overlays/ov175/calls/func_ov175_020cdbec.c:
+src/overlays/ov175/calls/Ov175_AcquireTargetOrGiveUp.c:
     complete
     .text       start:0x020cdbec end:0x020cdc88
 
-src/overlays/ov175/calls/func_ov175_020cdc88.c:
+src/overlays/ov175/calls/Ov175_HoverHoldTick.c:
     complete
     .text       start:0x020cdc88 end:0x020cde54
 
-src/overlays/ov175/calls/func_ov175_020cde54.c:
+src/overlays/ov175/calls/Ov175_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cde54 end:0x020cde88
 
-src/overlays/ov175/calls/func_ov175_020cde88.c:
+src/overlays/ov175/calls/Ov175_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020cde88 end:0x020cdebc
 
-src/overlays/ov175/calls/func_ov175_020cdebc.c:
+src/overlays/ov175/calls/Ov175_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020cdebc end:0x020cdfb0
 
-src/overlays/ov175/calls/func_ov175_020cdfb0.c:
+src/overlays/ov175/calls/Ov175_AiEndWithUpdate.c:
     complete
     .text       start:0x020cdfb0 end:0x020ce09c
 
-src/overlays/ov175/calls/func_ov175_020ce09c.c:
+src/overlays/ov175/calls/Ov175_stateSetFlagsEffectClear.c:
     complete
     .text       start:0x020ce09c end:0x020ce13c
 
-src/overlays/ov175/calls/func_ov175_020ce13c.c:
+src/overlays/ov175/calls/Ov175_stateTimerToggleFlags.c:
     complete
     .text       start:0x020ce13c end:0x020ce1d0
 
-src/overlays/ov175/calls/func_ov175_020ce1d0.c:
+src/overlays/ov175/calls/Ov175_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020ce1d0 end:0x020ce210
 
-src/overlays/ov175/calls/func_ov175_020ce210.c:
+src/overlays/ov175/calls/Ov175_Actor_New.c:
     complete
     .text       start:0x020ce210 end:0x020ce244
 
-src/overlays/ov175/calls/func_ov175_020ce244.c:
+src/overlays/ov175/calls/Ov175_SubObject_ConstructB.c:
     complete
     .text       start:0x020ce244 end:0x020ce3a4
 
-src/overlays/ov175/calls/func_ov175_020ce3a4.c:
+src/overlays/ov175/calls/Ov175_OnDespawn.c:
     complete
     .text       start:0x020ce3a4 end:0x020ce3c0
 
-src/overlays/ov175/calls/func_ov175_020ce3c0.c:
+src/overlays/ov175/calls/Ov175_TickAndSyncModelXform.c:
     complete
     .text       start:0x020ce3c0 end:0x020ce3f8
 
@@ -188,39 +188,39 @@ src/overlays/ov175/calls/func_ov175_020ce3f8.c:
     complete
     .text       start:0x020ce3f8 end:0x020ce404
 
-src/overlays/ov175/calls/func_ov175_020ce404.c:
+src/overlays/ov175/calls/Ov175_OnHitMessage.c:
     complete
     .text       start:0x020ce404 end:0x020ce48c
 
-src/overlays/ov175/calls/func_ov175_020ce48c.c:
+src/overlays/ov175/calls/Ov175_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020ce48c end:0x020ce4d8
 
-src/overlays/ov175/calls/func_ov175_020ce4d8.c:
+src/overlays/ov175/calls/Ov175_stateInitClearSlots.c:
     complete
     .text       start:0x020ce4d8 end:0x020ce580
 
-src/overlays/ov175/calls/func_ov175_020ce580.c:
+src/overlays/ov175/calls/Ov175_dispatchByStatusByte.c:
     complete
     .text       start:0x020ce580 end:0x020ce5f8
 
-src/overlays/ov175/calls/func_ov175_020ce5f8.c:
+src/overlays/ov175/calls/Ov175_SetPoseVecOrTransform.c:
     complete
     .text       start:0x020ce5f8 end:0x020ce680
 
-src/overlays/ov175/calls/func_ov175_020ce680.c:
+src/overlays/ov175/calls/Ov175_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020ce680 end:0x020ce730
 
-src/overlays/ov175/calls/func_ov175_020ce730.c:
+src/overlays/ov175/calls/Ov175_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020ce730 end:0x020ce768
 
-src/overlays/ov175/calls/func_ov175_020ce768.c:
+src/overlays/ov175/calls/Ov175_Action5ThenScaleVec.c:
     complete
     .text       start:0x020ce768 end:0x020ce844
 
-src/overlays/ov175/calls/func_ov175_020ce844.c:
+src/overlays/ov175/calls/Ov175_DashTick.c:
     complete
     .text       start:0x020ce844 end:0x020cea78
 

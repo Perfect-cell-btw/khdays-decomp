@@ -14,12 +14,12 @@ typedef struct GameClassDescriptor {
     int *pArena;              /* 0x10 */
 } GameClassDescriptor;
 
-extern void func_02030478(void);
-extern void func_02030550(void);
-extern void func_02030988(void);
-extern void func_020309f0(void);
-extern void func_02030e7c(void);
-extern void func_02030f58(void);
+extern void Session_Init(void);
+extern void Session_Destroy(void);
+extern void Session_Init_2(void);
+extern void CloseDebugOverlay(void);
+extern void MsgQueue_Init_2(void);
+extern void Session_Shutdown(void);
 extern int data_0204c024;   /* the main heap arena the three tasks allocate from */
 
 /* A 16-colour BGR555 palette (black, white, black, red, green, blue, yellow, magenta, cyan, ...)
@@ -34,8 +34,8 @@ int data_02042978 = -1;
 GameClassDescriptor data_0204297c = {
     0x3e,  /* nClassId */
     0xf,   /* nGroupId */
-    func_02030478,  /* pfnCtor */
-    func_02030550,  /* pfnMethod */
+    Session_Init,  /* pfnCtor */
+    Session_Destroy,  /* pfnMethod */
     0x30,  /* nAuxSize */
     &data_0204c024,  /* pArena */
 };
@@ -43,8 +43,8 @@ GameClassDescriptor data_0204297c = {
 GameClassDescriptor data_02042990 = {
     0x3e,  /* nClassId */
     0xf,   /* nGroupId */
-    func_02030988,  /* pfnCtor */
-    func_020309f0,  /* pfnMethod */
+    Session_Init_2,  /* pfnCtor */
+    CloseDebugOverlay,  /* pfnMethod */
     0x74,  /* nAuxSize */
     &data_0204c024,  /* pArena */
 };
@@ -52,8 +52,8 @@ GameClassDescriptor data_02042990 = {
 GameClassDescriptor data_020429a4 = {
     0x2,   /* nClassId */
     0xf,   /* nGroupId */
-    func_02030e7c,  /* pfnCtor */
-    func_02030f58,  /* pfnMethod */
+    MsgQueue_Init_2,  /* pfnCtor */
+    Session_Shutdown,  /* pfnMethod */
     0x760, /* nAuxSize */
     &data_0204c024,  /* pArena */
 };

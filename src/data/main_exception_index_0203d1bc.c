@@ -10,20 +10,20 @@ typedef struct ExceptionTableIndex {
     u32 descriptor;           /* 0x08: inline unwind descriptor */
 } ExceptionTableIndex;
 
-extern void func_0201f79c(void);
-extern void func_0201fc04(void);
-extern void func_0201ffec(void);
+extern void StackAlloc_FreeIfSet(void);
+extern void __strtoul(void);
+extern void strtol(void);
 extern void func_020200b4(void);
 extern void OSi_FreeStackAlloc(void);
-extern void func_020207f4(void);
-extern void func_02020808(void);
+extern void StackAlloc_FreeIfSetB(void);
+extern void __call_static_initializers(void);
 
 const ExceptionTableIndex data_0203d1bc[7] = {
-    { func_0201f79c, 0x14 | 1, 0x00100000 },
-    { func_0201fc04, 0x3e8 | 1, 0x0060ff00 },
-    { func_0201ffec, 0xc8 | 1, 0x00600300 },
+    { StackAlloc_FreeIfSet, 0x14 | 1, 0x00100000 },
+    { __strtoul, 0x3e8 | 1, 0x0060ff00 },
+    { strtol, 0xc8 | 1, 0x00600300 },
     { func_020200b4, 0x14 | 1, 0x00000000 },
     { OSi_FreeStackAlloc, 0x18 | 1, 0x00000000 },
-    { func_020207f4, 0x14 | 1, 0x00100000 },
-    { func_02020808, 0x2c | 1, 0x00100100 },
+    { StackAlloc_FreeIfSetB, 0x14 | 1, 0x00100000 },
+    { __call_static_initializers, 0x2c | 1, 0x00100100 },
 };

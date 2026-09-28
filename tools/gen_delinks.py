@@ -149,22 +149,71 @@ def unit_of(module_dir):
 DATA_LINE_RE = re.compile(r"^\s+\.(rodata|data|ctor|bss)\s+start:0x([0-9a-f]+)\s+end:0x([0-9a-f]+)")
 
 
+def load_renames(root=ROOT):
+    """The docs/renames/*.tsv tables in date order, each as {old symbol: new symbol}."""
+    tables = []
+    for path in sorted((Path(root) / "docs" / "renames").glob("*.tsv")):
+        step = {}
+        for line in path.read_text(encoding="utf-8").splitlines():
+            cols = line.split("\t")
+            if line.startswith("#") or len(cols) < 2:
+                continue
+            step[cols[0]] = cols[1]
+        tables.append(step)
+    return tables
+
+
+def _renamed_source(source, root, tables, src_by_name):
+    """Where a claimed source lives now that its function was renamed, or None.
+
+    A function's local .rodata (initializer templates, switch tables) is claimed only by
+    the committed delinks.txt line under the source's path, with no receipt behind it.
+    Renaming the file therefore used to drop the claim: dsd filled the range with the ROM
+    bytes and nothing noticed unless the object's own section-relative relocations were
+    left dangling (2026-09-28: 25 claims, only ov107 broke the link).
+
+    Newest table first, then forward through the later ones: some old names were reused
+    for other addresses, so the oldest table that knows a name is not necessarily the one
+    that renamed this file.
+    """
+    path = Path(source)
+    for i in range(len(tables) - 1, -1, -1):
+        new = tables[i].get(path.stem)
+        if new is None:
+            continue
+        for later in tables[i + 1:]:
+            new = later.get(new, new)
+        moved = path.with_name(new + path.suffix).as_posix()
+        if (Path(root) / moved).is_file():
+            return moved
+        found = src_by_name.get(new)  # re-homed as well (src/ -> libs/)
+        if found and Path(found).suffix == path.suffix:
+            return found
+    return None
+
+
 def committed_data_claims(delinks_txt, root=ROOT):
     """Data section lines already present in the committed delinks.txt, per source.
 
     Receipts live under build/, which is git-ignored, so a fresh clone or a CI
     runner has none; without this the generator silently rewrote every module's
     delinks.txt with its data claims stripped (issue #6). A claim is kept only
-    while its source file still exists.
+    while its source file still exists -- under its old path, or under the name
+    docs/renames/ gives its function.
     """
     claims = {}
     if not Path(delinks_txt).is_file():
         return claims
+    tables = src_by_name = None
     current = None
     for line in Path(delinks_txt).read_text(encoding="utf-8").splitlines():
         head = re.match(r"^(\S+\.(?:c|cpp|s)):\s*$", line)
         if head:
             current = head.group(1)
+            if not (Path(root) / current).is_file():
+                if tables is None:
+                    tables, src_by_name = load_renames(root), index_sources()
+                current = _renamed_source(current, root, tables, src_by_name)
             continue
         m = DATA_LINE_RE.match(line)
         if m and current and (Path(root) / current).is_file():

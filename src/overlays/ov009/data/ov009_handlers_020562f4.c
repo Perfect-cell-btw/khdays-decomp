@@ -5,16 +5,16 @@
 
 typedef void (*Ov009Fn)(void);
 
-extern void func_ov009_02053c18(void);
-extern void func_ov009_02053e24(void);
-extern void func_ov009_02053ec8(void);
-extern void func_ov009_02053770(void);
-extern void func_ov009_020537b8(void);
-extern void func_ov009_0205388c(void);
-extern void func_ov009_02053804(void);
-extern void func_ov009_02053918(void);
-extern void func_ov009_02053af0(void);
-extern void func_ov009_02053c14(void);
+extern void Ov009_TickSlotScanState(void);
+extern void Ov009_TeardownScene(void);
+extern void Ov009_TickSaveCommitState(void);
+extern void Ov009_StepSelectionBackward(void);
+extern void Ov009_StepSelectionForward(void);
+extern void Ov009_MenuElementRelease(void);
+extern void Ov009_MenuElementPress(void);
+extern void Ov009_TickSaveConfirmState(void);
+extern void Ov009_TickSaveCancelState(void);
+extern void Ov009_MenuStateNoOp(void);
 
 struct {
     Ov009Fn entry[3];
@@ -22,12 +22,12 @@ struct {
     int nFlags;
     Ov009Fn state[12];
 } data_ov009_020562f4 = {
-    { func_ov009_02053c18, func_ov009_02053e24, func_ov009_02053ec8 },
+    { Ov009_TickSlotScanState, Ov009_TeardownScene, Ov009_TickSaveCommitState },
     -1,
     0x1f04,
     {
-        func_ov009_02053770, func_ov009_020537b8, func_ov009_0205388c, func_ov009_02053804,
-        func_ov009_02053918, func_ov009_02053af0, func_ov009_02053c14, func_ov009_02053c14,
-        func_ov009_02053c14, func_ov009_02053c14, func_ov009_02053c14, func_ov009_02053af0,
+        Ov009_StepSelectionBackward, Ov009_StepSelectionForward, Ov009_MenuElementRelease, Ov009_MenuElementPress,
+        Ov009_TickSaveConfirmState, Ov009_TickSaveCancelState, Ov009_MenuStateNoOp, Ov009_MenuStateNoOp,
+        Ov009_MenuStateNoOp, Ov009_MenuStateNoOp, Ov009_MenuStateNoOp, Ov009_TickSaveCancelState,
     },
 };

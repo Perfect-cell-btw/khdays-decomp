@@ -8,111 +8,111 @@ src/overlays/ov081/calls/func_ov081_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov081/calls/func_ov081_020b8114.c:
+src/overlays/ov081/calls/Ov081_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b813c
 
-src/overlays/ov081/calls/func_ov081_020b813c.c:
+src/overlays/ov081/calls/Ov081_setupTriple.c:
     complete
     .text       start:0x020b813c end:0x020b815c
 
-src/overlays/ov081/calls/func_ov081_020b815c.c:
+src/overlays/ov081/calls/Ov081_BuildRigObject.c:
     complete
     .text       start:0x020b815c end:0x020b836c
 
-src/overlays/ov081/calls/func_ov081_020b836c.c:
+src/overlays/ov081/calls/Ov081_initFlagStateObj.c:
     complete
     .text       start:0x020b836c end:0x020b839c
 
-src/overlays/ov081/auto/func_ov081_020b839c.c:
+src/overlays/ov081/auto/Ov081_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b839c end:0x020b83c4
 
-src/overlays/ov081/calls/func_ov081_020b83c4.c:
+src/overlays/ov081/calls/Ov081_SetAnimStateWithEnterHook.c:
     complete
     .text       start:0x020b83c4 end:0x020b8408
 
-src/overlays/ov081/calls/func_ov081_020b8408.c:
+src/overlays/ov081/calls/Ov081_UpdateSubObjects.c:
     complete
     .text       start:0x020b8408 end:0x020b8544
 
-src/overlays/ov081/calls/func_ov081_020b8544.c:
+src/overlays/ov081/calls/Ov081_InvokeSubHandlerPairWithBuffer.c:
     complete
     .text       start:0x020b8544 end:0x020b8570
 
-src/overlays/ov081/calls/func_ov081_020b8570.c:
+src/overlays/ov081/calls/Ov081_HandleMessage.c:
     complete
     .text       start:0x020b8570 end:0x020b8668
 
-src/overlays/ov081/calls/func_ov081_020b8668.c:
+src/overlays/ov081/calls/Ov081_AcquireGridSlots.c:
     complete
     .text       start:0x020b8668 end:0x020b86f0
 
-src/overlays/ov081/calls/func_ov081_020b86f0.c:
+src/overlays/ov081/calls/Ov081_FlagLocalAndMaybeEnterState21.c:
     complete
     .text       start:0x020b86f0 end:0x020b87b4
 
-src/overlays/ov081/calls/func_ov081_020b87b4.c:
+src/overlays/ov081/calls/Ov081_AttackStep.c:
     complete
     .text       start:0x020b87b4 end:0x020b8c14
 
-src/overlays/ov081/calls/func_ov081_020b8c14.c:
+src/overlays/ov081/calls/Ov081_ResetSequenceSlots.c:
     complete
     .text       start:0x020b8c14 end:0x020b8c98
 
-src/overlays/ov081/calls/func_ov081_020b8c98.c:
+src/overlays/ov081/calls/Ov081_DestroySlotsAndFree.c:
     complete
     .text       start:0x020b8c98 end:0x020b8d00
 
-src/overlays/ov081/calls/func_ov081_020b8d00.c:
+src/overlays/ov081/calls/Ov081_CreateSubObject.c:
     complete
     .text       start:0x020b8d00 end:0x020b8f1c
 
-src/overlays/ov081/calls/func_ov081_020b8f1c.c:
+src/overlays/ov081/calls/Ov081_BindRig.c:
     complete
     .text       start:0x020b8f1c end:0x020b8f74
 
-src/overlays/ov081/calls/func_ov081_020b8f74.c:
+src/overlays/ov081/calls/Ov081_StepParts.c:
     complete
     .text       start:0x020b8f74 end:0x020b9080
 
-src/overlays/ov081/calls/func_ov081_020b9080.c:
+src/overlays/ov081/calls/Ov081_DispatchActiveEntriesByStatus.c:
     complete
     .text       start:0x020b9080 end:0x020b90d4
 
-src/overlays/ov081/calls/func_ov081_020b90d4.c:
+src/overlays/ov081/calls/Ov081_SteerPart.c:
     complete
     .text       start:0x020b90d4 end:0x020b9238
 
-src/overlays/ov081/calls/func_ov081_020b9238.c:
+src/overlays/ov081/calls/Ov081_AdvanceArg1StateFrom0Or2.c:
     complete
     .text       start:0x020b9238 end:0x020b9268
 
-src/overlays/ov081/calls/func_ov081_020b9268.c:
+src/overlays/ov081/calls/Ov081_UpdateSlotsWithGate.c:
     complete
     .text       start:0x020b9268 end:0x020b92dc
 
-src/overlays/ov081/calls/func_ov081_020b92dc.c:
+src/overlays/ov081/calls/Ov081_InvokeHandlerFor7SubObjects.c:
     complete
     .text       start:0x020b92dc end:0x020b9304
 
-src/overlays/ov081/calls/func_ov081_020b9304.c:
+src/overlays/ov081/calls/Ov081_LayTrail.c:
     complete
     .text       start:0x020b9304 end:0x020b93c8
 
-src/overlays/ov081/calls/func_ov081_020b93c8.c:
+src/overlays/ov081/calls/Ov081_ClaimSlotAndLaunch.c:
     complete
     .text       start:0x020b93c8 end:0x020b9508
 
-src/overlays/ov081/calls/func_ov081_020b9508.c:
+src/overlays/ov081/calls/Ov081_ClearState1IfReady.c:
     complete
     .text       start:0x020b9508 end:0x020b953c
 
-src/overlays/ov081/calls/func_ov081_020b953c.c:
+src/overlays/ov081/calls/Ov081_ForwardToHandlerIfHeadSet.c:
     complete
     .text       start:0x020b953c end:0x020b9558
 
-src/overlays/ov081/calls/func_ov081_020b9558.c:
+src/overlays/ov081/calls/Ov081_InvokeWithDataTable.c:
     complete
     .text       start:0x020b9558 end:0x020b9570
 

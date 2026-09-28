@@ -3,155 +3,155 @@
     .data       start:0x020cdce0 end:0x020cdd00 kind:data align:32
     .bss        start:0x020cdd00 end:0x020cdd00 kind:bss align:32
 
-src/overlays/ov144/calls/func_ov144_020cbf20.c:
+src/overlays/ov144/calls/Ov144_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov144/calls/func_ov144_020cbf38.c:
+src/overlays/ov144/calls/Ov144_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov144/calls/func_ov144_020cbfc4.c:
+src/overlays/ov144/calls/Ov144_NodeMatrixCallback.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc0a4
 
-src/overlays/ov144/calls/func_ov144_020cc0a4.c:
+src/overlays/ov144/calls/Ov144_Construct.c:
     complete
     .text       start:0x020cc0a4 end:0x020cc39c
 
-src/overlays/ov144/calls/func_ov144_020cc39c.c:
+src/overlays/ov144/calls/Ov144_ReleaseActorSubObjects.c:
     complete
     .text       start:0x020cc39c end:0x020cc3f8
 
-src/overlays/ov144/calls/func_ov144_020cc3f8.c:
+src/overlays/ov144/calls/Ov144_SetupAndPropagateBlock.c:
     complete
     .text       start:0x020cc3f8 end:0x020cc440
 
-src/overlays/ov144/calls/func_ov144_020cc440.c:
+src/overlays/ov144/calls/Ov144_Model_SetTracks0And3.c:
     complete
     .text       start:0x020cc440 end:0x020cc490
 
-src/overlays/ov144/calls/func_ov144_020cc490.c:
+src/overlays/ov144/calls/Ov144_Configure.c:
     complete
     .text       start:0x020cc490 end:0x020cc570
 
-src/overlays/ov144/calls/func_ov144_020cc570.c:
+src/overlays/ov144/calls/Ov144_SendBlankStatus.c:
     complete
     .text       start:0x020cc570 end:0x020cc5cc
 
-src/overlays/ov144/calls/func_ov144_020cc5cc.c:
+src/overlays/ov144/calls/Ov144_StampActorBytesToMsgAndForward.c:
     complete
     .text       start:0x020cc5cc end:0x020cc600
 
-src/overlays/ov144/calls/func_ov144_020cc600.c:
+src/overlays/ov144/calls/Ov144_HandleMessage.c:
     complete
     .text       start:0x020cc600 end:0x020cc7fc
 
-src/overlays/ov144/calls/func_ov144_020cc7fc.c:
+src/overlays/ov144/calls/Ov144_ChargeRange.c:
     complete
     .text       start:0x020cc7fc end:0x020cc8e4
 
-src/overlays/ov144/calls/func_ov144_020cc8e4.c:
+src/overlays/ov144/calls/Ov144_HasLineOfSight.c:
     complete
     .text       start:0x020cc8e4 end:0x020cc970
 
-src/overlays/ov144/calls/func_ov144_020cc970.c:
+src/overlays/ov144/calls/Ov144_LureToPiece.c:
     complete
     .text       start:0x020cc970 end:0x020cca50
 
-src/overlays/ov144/calls/func_ov144_020cca50.c:
+src/overlays/ov144/calls/Ov144_AimYawToTarget.c:
     complete
     .text       start:0x020cca50 end:0x020ccabc
 
-src/overlays/ov144/calls/func_ov144_020ccabc.c:
+src/overlays/ov144/calls/Ov144_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020ccabc end:0x020ccb08
 
-src/overlays/ov144/auto/func_ov144_020ccb08.c:
+src/overlays/ov144/auto/Ov144_RequestSubState9IfNotCurrent.c:
     complete
     .text       start:0x020ccb08 end:0x020ccb34
 
-src/overlays/ov144/calls/func_ov144_020ccb34.c:
+src/overlays/ov144/calls/Ov144_FindPiece.c:
     complete
     .text       start:0x020ccb34 end:0x020ccda0
 
-src/overlays/ov144/calls/func_ov144_020ccda0.c:
+src/overlays/ov144/calls/Ov144_InitAimStateSlots.c:
     complete
     .text       start:0x020ccda0 end:0x020cce0c
 
-src/overlays/ov144/calls/func_ov144_020cce0c.c:
+src/overlays/ov144/calls/Ov144_SubStateDispatch.c:
     complete
     .text       start:0x020cce0c end:0x020cd084
 
-src/overlays/ov144/calls/func_ov144_020cd084.c:
+src/overlays/ov144/calls/Ov144_OrientationTick.c:
     complete
     .text       start:0x020cd084 end:0x020cd20c
 
-src/overlays/ov144/calls/func_ov144_020cd20c.c:
+src/overlays/ov144/calls/Ov144_stSetDispFlags86.c:
     complete
     .text       start:0x020cd20c end:0x020cd24c
 
-src/overlays/ov144/calls/func_ov144_020cd24c.c:
+src/overlays/ov144/calls/Ov144_SpawnReadyTick.c:
     complete
     .text       start:0x020cd24c end:0x020cd38c
 
-src/overlays/ov144/calls/func_ov144_020cd38c.c:
+src/overlays/ov144/calls/Ov144_ChargeDecision.c:
     complete
     .text       start:0x020cd38c end:0x020cd41c
 
-src/overlays/ov144/calls/func_ov144_020cd41c.c:
+src/overlays/ov144/calls/Ov144_AiCountdownThenBranch.c:
     complete
     .text       start:0x020cd41c end:0x020cd450
 
-src/overlays/ov144/calls/func_ov144_020cd450.c:
+src/overlays/ov144/calls/Ov144_BranchInvokeOrCopySlotThenAdvance.c:
     complete
     .text       start:0x020cd450 end:0x020cd4e4
 
-src/overlays/ov144/calls/func_ov144_020cd4e4.c:
+src/overlays/ov144/calls/Ov144_BeginRecover.c:
     complete
     .text       start:0x020cd4e4 end:0x020cd560
 
-src/overlays/ov144/calls/func_ov144_020cd560.c:
+src/overlays/ov144/calls/Ov144_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020cd560 end:0x020cd5b8
 
-src/overlays/ov144/calls/func_ov144_020cd5b8.c:
+src/overlays/ov144/calls/Ov144_AdvanceTick.c:
     complete
     .text       start:0x020cd5b8 end:0x020cd820
 
-src/overlays/ov144/calls/func_ov144_020cd820.c:
+src/overlays/ov144/calls/Ov144_FacingAlignedTick.c:
     complete
     .text       start:0x020cd820 end:0x020cd928
 
-src/overlays/ov144/calls/func_ov144_020cd928.c:
+src/overlays/ov144/calls/Ov144_PoseThenAction4OrIdle.c:
     complete
     .text       start:0x020cd928 end:0x020cd9ac
 
-src/overlays/ov144/calls/func_ov144_020cd9ac.c:
+src/overlays/ov144/calls/Ov144_AimHoldTick.c:
     complete
     .text       start:0x020cd9ac end:0x020cda10
 
-src/overlays/ov144/calls/func_ov144_020cda10.c:
+src/overlays/ov144/calls/Ov144_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020cda10 end:0x020cda44
 
-src/overlays/ov144/calls/func_ov144_020cda44.c:
+src/overlays/ov144/calls/Ov144_ConfigSubStateThenAdvanceSlot_2.c:
     complete
     .text       start:0x020cda44 end:0x020cda9c
 
-src/overlays/ov144/calls/func_ov144_020cda9c.c:
+src/overlays/ov144/calls/Ov144_CountdownTimer38ThenPose5.c:
     complete
     .text       start:0x020cda9c end:0x020cdae8
 
-src/overlays/ov144/calls/func_ov144_020cdae8.c:
+src/overlays/ov144/calls/Ov144_stateScanSlotRoundRobin.c:
     complete
     .text       start:0x020cdae8 end:0x020cdb70
 
-src/overlays/ov144/calls/func_ov144_020cdb70.c:
+src/overlays/ov144/calls/Ov144_BeginRetreat.c:
     complete
     .text       start:0x020cdb70 end:0x020cdc2c
 
-src/overlays/ov144/calls/func_ov144_020cdc2c.c:
+src/overlays/ov144/calls/Ov144_TimerGateHw60FlipThenAdvance.c:
     complete
     .text       start:0x020cdc2c end:0x020cdcc0
 

@@ -3,7 +3,7 @@
 From the ov029 crack (codegen-cracks.md, "Si estas casteando punteros, la C esta mal"):
 a `(char *)table + n`, a `(T *)(base + i*K)`, or a hand-computed `i << 4` byte
 offset is a sign the C is transcribing the ROM's addressing instead of
-reconstructing the source.  That closed func_ov029_020b2ee0 at the first attempt
+reconstructing the source.  That closed Ov029_AcquireOverlaySlot at the first attempt
 after months parked behind ~19 spellings, 12 compiler builds and 10 flag sets.
 
 It is a re-test vein, not one case.  This ranks the parked files by how strongly

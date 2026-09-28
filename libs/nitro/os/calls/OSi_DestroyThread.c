@@ -1,6 +1,6 @@
-extern void func_0201d214(void *p);
-extern void func_0201d298(void *list, void *node);
-extern void func_0201cdec(void *p);
+extern void FreeChannel(void *p);
+extern void RemoveCommandByPlayer(void *list, void *node);
+extern void FreePlayer(void *p);
 
 extern char data_0204b620[];
 extern char *data_0204ad8c[];
@@ -16,12 +16,12 @@ void OSi_DestroyThread(struct S *p)
 {
     char *q;
     if (((p->flags << 31) >> 31) == 0) return;
-    func_0201d214(p);
+    FreeChannel(p);
     p->x168(p);
-    func_0201d298(data_0204b620, p);
+    RemoveCommandByPlayer(data_0204b620, p);
     q = data_0204ad8c[1];
     if (q != 0) {
-        func_0201d298(q + 0x4e0, p);
+        RemoveCommandByPlayer(q + 0x4e0, p);
     }
-    func_0201cdec(p);
+    FreePlayer(p);
 }

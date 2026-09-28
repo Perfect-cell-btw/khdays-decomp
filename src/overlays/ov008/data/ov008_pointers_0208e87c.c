@@ -6,36 +6,36 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov008_0204f510(void);
-extern void func_ov008_0204f7b8(void);
-extern void func_ov008_0204f820(void);
-extern void func_ov008_0204f858(void);
-extern void func_ov008_0204f930(void);
-extern void func_ov008_0204fa00(void);
-extern void func_ov008_0204fa60(void);
-extern void func_ov008_0204fab8(void);
-extern void func_ov008_0204fbc8(void);
+extern void Ov008_UpdateCampaignMenuManager(void);
+extern void Ov008_UpdateInputAndEnterMode3(void);
+extern void Ov008_InitThenDispatchTwoHandlers(void);
+extern void Ov008_WaitLoadAdvancePhase(void);
+extern void Ov008_AllocWorkBufferInit(void);
+extern void Ov008_UpdateInputAndEnableHalves(void);
+extern void Ov008_UpdateInputAndEnterMode8(void);
+extern void Ov008_FullScreenTeardown(void);
+extern void Ov008_ScreenTeardown(void);
 
 const Ov_Fn data_ov008_0208e87c[10] = {
 
     0,
 
-    func_ov008_0204f510,
+    Ov008_UpdateCampaignMenuManager,
 
-    func_ov008_0204f7b8,
+    Ov008_UpdateInputAndEnterMode3,
 
-    func_ov008_0204f820,
+    Ov008_InitThenDispatchTwoHandlers,
 
-    func_ov008_0204f858,
+    Ov008_WaitLoadAdvancePhase,
 
-    func_ov008_0204f930,
+    Ov008_AllocWorkBufferInit,
 
-    func_ov008_0204fa00,
+    Ov008_UpdateInputAndEnableHalves,
 
-    func_ov008_0204fa60,
+    Ov008_UpdateInputAndEnterMode8,
 
-    func_ov008_0204fbc8,
+    Ov008_ScreenTeardown,
 
-    func_ov008_0204fab8,
+    Ov008_FullScreenTeardown,
 
 };

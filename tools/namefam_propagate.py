@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Propagate Ghidra names across byte-identical shape families.
 
-If `func_ov228_020d01e8` is named `Ov228_SteerToTarget` and `func_ov229_020d0154` is byte-identical
+If `Ov228_AiStanceMoveFinish` is named `Ov228_SteerToTarget` and `func_ov229_020d0154` is byte-identical
 to it modulo relocs, the twin is the same routine compiled into another overlay -- it has earned the
 same name. That is the same equivalence `dedupprop.py` already trusts to propagate the *code*; this
 propagates the *semantics*, which the project's hard rule says is the half that counts.
@@ -113,7 +113,7 @@ OVNAME = re.compile(r'^(Ov|ov)(\d{3})_(.+)$')
 #  1. The name embeds the REP's address (`SetMode95d0`, `Fwd_020521a0`, `CleanupEntry_83f4`).
 #     Retargeting keeps the digits, so `Ov008_SetMode95d0` points at an ov025 address -- a name
 #     that actively lies. These are placeholders anyway; the twin deserves better, not a copy.
-#  2. The name asserts a SCENE the twin is not in. `func_ov006_0204fa88` is `MissionPollKeys`
+#  2. The name asserts a SCENE the twin is not in. `Ov006_MissionPollKeys` is `MissionPollKeys`
 #     because ov006 IS Mission-Mode character select; its byte-identical twin in ov008 is the
 #     same *routine*, not the same *screen*. The skill's own scene table exists because ~23
 #     symbols were once misnamed exactly this way. Structure propagates; scene identity does not.
@@ -235,8 +235,8 @@ def main():
     #
     # Seeded with every real name ALREADY in the program, per unit -- not just with the renames
     # planned in this run. Comparing the plan only against itself missed the case where a
-    # destination collides with the family's own REP: `func_0203c634` is already `SetIndexedSlot`
-    # in main, and its byte-identical main twin `func_02011f88` was planned to become
+    # destination collides with the family's own REP: `SetIndexedSlot` is already `SetIndexedSlot`
+    # in main, and its byte-identical main twin `SetIndexedSlot_2` was planned to become
     # `SetIndexedSlot` too, which is the exact "duplicated routine, needs a human" this check
     # exists to refuse. Bare names made that common (a prefixed `Ov008_Foo` can only retarget
     # into a different overlay, so it hid the gap); checking against the program catches the

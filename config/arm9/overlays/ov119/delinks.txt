@@ -4,227 +4,227 @@
     .data       start:0x020cf980 end:0x020cf9e0 kind:data align:32
     .bss        start:0x020cf9e0 end:0x020cf9e0 kind:bss align:32
 
-src/overlays/ov119/calls/func_ov119_020cbf20.c:
+src/overlays/ov119/calls/Ov119_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov119/calls/func_ov119_020cbf38.c:
+src/overlays/ov119/calls/Ov119_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov119/calls/func_ov119_020cbfc4.c:
+src/overlays/ov119/calls/Ov119_RefreshAndPublishTransform.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc02c
 
-src/overlays/ov119/calls/func_ov119_020cc02c.c:
+src/overlays/ov119/calls/Ov119_Construct.c:
     complete
     .text       start:0x020cc02c end:0x020cc2ec
 
-src/overlays/ov119/calls/func_ov119_020cc2ec.c:
+src/overlays/ov119/calls/Ov119_Destroy.c:
     complete
     .text       start:0x020cc2ec end:0x020cc32c
 
-src/overlays/ov119/calls/func_ov119_020cc32c.c:
+src/overlays/ov119/calls/Ov119_PlayAnimWithParts.c:
     complete
     .text       start:0x020cc32c end:0x020cc3a8
 
-src/overlays/ov119/calls/func_ov119_020cc3a8.c:
+src/overlays/ov119/calls/Ov119_OnEffectMessage.c:
     complete
     .text       start:0x020cc3a8 end:0x020cc534
 
-src/overlays/ov119/calls/func_ov119_020cc534.c:
+src/overlays/ov119/calls/Ov119_Tick.c:
     complete
     .text       start:0x020cc534 end:0x020cc768
 
-src/overlays/ov119/calls/func_ov119_020cc768.c:
+src/overlays/ov119/calls/Ov119_CreateAiTask.c:
     complete
     .text       start:0x020cc768 end:0x020cc7c4
 
-src/overlays/ov119/calls/func_ov119_020cc7c4.c:
+src/overlays/ov119/calls/Ov119_OnHit.c:
     complete
     .text       start:0x020cc7c4 end:0x020cc9d0
 
-src/overlays/ov119/auto/func_ov119_020cc9d0.c:
+src/overlays/ov119/auto/Ov119_RequestSubState11IfIdle.c:
     complete
     .text       start:0x020cc9d0 end:0x020cca00
 
-src/overlays/ov119/calls/func_ov119_020cca00.c:
+src/overlays/ov119/calls/Ov119_PickBestFacingTarget.c:
     complete
     .text       start:0x020cca00 end:0x020ccb10
 
-src/overlays/ov119/calls/func_ov119_020ccb10.c:
+src/overlays/ov119/calls/Ov119_ChooseNextAttack.c:
     complete
     .text       start:0x020ccb10 end:0x020ccc48
 
-src/overlays/ov119/calls/func_ov119_020ccc48.c:
+src/overlays/ov119/calls/Ov119_PushOutOfWorld.c:
     complete
     .text       start:0x020ccc48 end:0x020cce30
 
-src/overlays/ov119/calls/func_ov119_020cce30.c:
+src/overlays/ov119/calls/Ov119_InitStateRegister3HwFlags.c:
     complete
     .text       start:0x020cce30 end:0x020ccef4
 
-src/overlays/ov119/calls/func_ov119_020ccef4.c:
+src/overlays/ov119/calls/Ov119_AiDispatchAction.c:
     complete
     .text       start:0x020ccef4 end:0x020cd0f0
 
-src/overlays/ov119/calls/func_ov119_020cd0f0.c:
+src/overlays/ov119/calls/Ov119_AiSlerpHeading.c:
     complete
     .text       start:0x020cd0f0 end:0x020cd144
 
-src/overlays/ov119/calls/func_ov119_020cd144.c:
+src/overlays/ov119/calls/Ov119_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cd144 end:0x020cd1ac
 
-src/overlays/ov119/calls/func_ov119_020cd1ac.c:
+src/overlays/ov119/calls/Ov119_AiStep_ResumeStoredActionRaised.c:
     complete
     .text       start:0x020cd1ac end:0x020cd224
 
-src/overlays/ov119/calls/func_ov119_020cd224.c:
+src/overlays/ov119/calls/Ov119_SpawnEffect48SetTurnRate.c:
     complete
     .text       start:0x020cd224 end:0x020cd314
 
-src/overlays/ov119/calls/func_ov119_020cd314.c:
+src/overlays/ov119/calls/Ov119_ChargeAndAim.c:
     complete
     .text       start:0x020cd314 end:0x020cd3ec
 
-src/overlays/ov119/calls/func_ov119_020cd3ec.c:
+src/overlays/ov119/calls/Ov119_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd3ec end:0x020cd420
 
-src/overlays/ov119/calls/func_ov119_020cd420.c:
+src/overlays/ov119/calls/Ov119_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020cd420 end:0x020cd454
 
-src/overlays/ov119/calls/func_ov119_020cd454.c:
+src/overlays/ov119/calls/Ov119_AiStep_QueueAction5.c:
     complete
     .text       start:0x020cd454 end:0x020cd478
 
-src/overlays/ov119/calls/func_ov119_020cd478.c:
+src/overlays/ov119/calls/Ov119_AiStep_PickLandingPoint.c:
     complete
     .text       start:0x020cd478 end:0x020cd4d0
 
-src/overlays/ov119/calls/func_ov119_020cd4d0.c:
+src/overlays/ov119/calls/Ov119_IdleFloatTick.c:
     complete
     .text       start:0x020cd4d0 end:0x020cd6a0
 
-src/overlays/ov119/calls/func_ov119_020cd6a0.c:
+src/overlays/ov119/calls/Ov119_HoverTick.c:
     complete
     .text       start:0x020cd6a0 end:0x020cd7f4
 
-src/overlays/ov119/calls/func_ov119_020cd7f4.c:
+src/overlays/ov119/calls/Ov119_FaceTargetLookAt.c:
     complete
     .text       start:0x020cd7f4 end:0x020cd8a8
 
-src/overlays/ov119/calls/func_ov119_020cd8a8.c:
+src/overlays/ov119/calls/Ov119_DecayOffsetGiveUpLatch.c:
     complete
     .text       start:0x020cd8a8 end:0x020cd988
 
-src/overlays/ov119/calls/func_ov119_020cd988.c:
+src/overlays/ov119/calls/Ov119_SpawnEffect4aReconfigureFlags.c:
     complete
     .text       start:0x020cd988 end:0x020cda50
 
-src/overlays/ov119/calls/func_ov119_020cda50.c:
+src/overlays/ov119/calls/Ov119_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020cda50 end:0x020cda84
 
-src/overlays/ov119/calls/func_ov119_020cda84.c:
+src/overlays/ov119/calls/Ov119_AiQueue7OnAnimEnd.c:
     complete
     .text       start:0x020cda84 end:0x020cdab8
 
-src/overlays/ov119/calls/func_ov119_020cdab8.c:
+src/overlays/ov119/calls/Ov119_SetPoseThenAdvanceSlot_2.c:
     complete
     .text       start:0x020cdab8 end:0x020cdaec
 
-src/overlays/ov119/calls/func_ov119_020cdaec.c:
+src/overlays/ov119/calls/Ov119_TickApproachTarget.c:
     complete
     .text       start:0x020cdaec end:0x020cdc88
 
-src/overlays/ov119/calls/func_ov119_020cdc88.c:
+src/overlays/ov119/calls/Ov119_SwipeHitWindow.c:
     complete
     .text       start:0x020cdc88 end:0x020cde44
 
-src/overlays/ov119/calls/func_ov119_020cde44.c:
+src/overlays/ov119/calls/Ov119_AiEnterBackOff.c:
     complete
     .text       start:0x020cde44 end:0x020cdec4
 
-src/overlays/ov119/calls/func_ov119_020cdec4.c:
+src/overlays/ov119/calls/Ov119_BackOffTick.c:
     complete
     .text       start:0x020cdec4 end:0x020ce0f0
 
-src/overlays/ov119/calls/func_ov119_020ce0f0.c:
+src/overlays/ov119/calls/Ov119_CircleTick.c:
     complete
     .text       start:0x020ce0f0 end:0x020ce318
 
-src/overlays/ov119/calls/func_ov119_020ce318.c:
+src/overlays/ov119/calls/Ov119_StalkTick.c:
     complete
     .text       start:0x020ce318 end:0x020ce52c
 
-src/overlays/ov119/calls/func_ov119_020ce52c.c:
+src/overlays/ov119/calls/Ov119_EnterBite.c:
     complete
     .text       start:0x020ce52c end:0x020ce610
 
-src/overlays/ov119/calls/func_ov119_020ce610.c:
+src/overlays/ov119/calls/Ov119_TimerReseedRandom.c:
     complete
     .text       start:0x020ce610 end:0x020ce674
 
-src/overlays/ov119/calls/func_ov119_020ce674.c:
+src/overlays/ov119/calls/Ov119_TickOrbitTarget.c:
     complete
     .text       start:0x020ce674 end:0x020ce8a8
 
-src/overlays/ov119/calls/func_ov119_020ce8a8.c:
+src/overlays/ov119/calls/Ov119_EnterPounce.c:
     complete
     .text       start:0x020ce8a8 end:0x020ce9a8
 
-src/overlays/ov119/calls/func_ov119_020ce9a8.c:
+src/overlays/ov119/calls/Ov119_AiTimerQueueAction7.c:
     complete
     .text       start:0x020ce9a8 end:0x020ce9e4
 
-src/overlays/ov119/calls/func_ov119_020ce9e4.c:
+src/overlays/ov119/calls/Ov119_EnterLunge.c:
     complete
     .text       start:0x020ce9e4 end:0x020ceac8
 
-src/overlays/ov119/calls/func_ov119_020ceac8.c:
+src/overlays/ov119/calls/Ov119_RepositionTick.c:
     complete
     .text       start:0x020ceac8 end:0x020cec1c
 
-src/overlays/ov119/calls/func_ov119_020cec1c.c:
+src/overlays/ov119/calls/Ov119_GrabApproachFinish.c:
     complete
     .text       start:0x020cec1c end:0x020cedc4
 
-src/overlays/ov119/calls/func_ov119_020cedc4.c:
+src/overlays/ov119/calls/Ov119_TickHoldTarget.c:
     complete
     .text       start:0x020cedc4 end:0x020cf158
 
-src/overlays/ov119/calls/func_ov119_020cf158.c:
+src/overlays/ov119/calls/Ov119_HoldTick.c:
     complete
     .text       start:0x020cf158 end:0x020cf370
 
-src/overlays/ov119/calls/func_ov119_020cf370.c:
+src/overlays/ov119/calls/Ov119_CarryTick.c:
     complete
     .text       start:0x020cf370 end:0x020cf6fc
 
-src/overlays/ov119/calls/func_ov119_020cf6fc.c:
+src/overlays/ov119/calls/Ov119_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020cf6fc end:0x020cf7b0
 
-src/overlays/ov119/calls/func_ov119_020cf7b0.c:
+src/overlays/ov119/calls/Ov119_SpawnChildStoreSelfAndArg.c:
     complete
     .text       start:0x020cf7b0 end:0x020cf804
 
-src/overlays/ov119/calls/func_ov119_020cf804.c:
+src/overlays/ov119/calls/Ov119_TimerBlinkStart.c:
     complete
     .text       start:0x020cf804 end:0x020cf848
 
-src/overlays/ov119/auto/func_ov119_020cf848.c:
+src/overlays/ov119/auto/Ov119_ChildReleaseNoOp.c:
     complete
     .text       start:0x020cf848 end:0x020cf84c
 
-src/overlays/ov119/calls/func_ov119_020cf84c.c:
+src/overlays/ov119/calls/Ov119_TimerBlinkParityClear.c:
     complete
     .text       start:0x020cf84c end:0x020cf8c4
 
-src/overlays/ov119/calls/func_ov119_020cf8c4.c:
+src/overlays/ov119/calls/Ov119_TimerBlinkParitySet.c:
     complete
     .text       start:0x020cf8c4 end:0x020cf93c
 

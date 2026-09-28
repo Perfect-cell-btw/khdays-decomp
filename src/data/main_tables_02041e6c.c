@@ -5,5 +5,5 @@
 const int data_02041e6c[8] = { 4, 5, 6, 7, 20, 21, 22, 23 };
 
 /* BG3 as an extended (bitmap) BG, indexed by the current BG mode (DISPCNT & 7); entries >= 8 are
- * folded back into 0..7 (func_02024574 main / func_020247f4 sub). */
+ * folded back into 0..7 (Bg_SetMainBg3ExtControl main / Bg_SetSubBg3ExtControl sub). */
 const int data_02041e8c[8] = { 3, 3, 4, 4, 4, 5, 11, 11 };

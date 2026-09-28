@@ -40,19 +40,19 @@ typedef struct OSThread {
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(OSIntrMode state);
-extern u32 func_020018ec(void);
+extern u32 OSi_GetUnusedThreadId(void);
 extern void OSi_InsertThreadByPriority(OSThread *pThread);
 extern void OS_InitContext(OSThread *pThread, OSThreadFunc pfnEntry, void *pStack);
 extern void OS_SetThreadDestructor(OSThread *pThread, void *pfnDestructor);
 extern void INITi_CpuClear32_0x01ff86fc(u32 nValue, void *pDest, u32 nBytes);
-extern void func_02001dec(void);
+extern void OS_ExitThread(void);
 
 void OS_CreateThread(OSThread *pThread, OSThreadFunc pfnEntry, void *pArg,
                      void *pStack, u32 nStackSize, u32 nPriority)
 {
     u8 *pLow;
     OSIntrMode nLast = OS_DisableInterrupts();
-    u32 nId = func_020018ec();
+    u32 nId = OSi_GetUnusedThreadId();
 
     pThread->priority = nPriority;
     pThread->id = nId;
@@ -70,7 +70,7 @@ void OS_CreateThread(OSThread *pThread, OSThreadFunc pfnEntry, void *pArg,
     OS_InitContext(pThread, pfnEntry, (void *)((u8 *)pStack - 4));
 
     pThread->pArg = pArg;
-    pThread->pTerminateHook = (void *)func_02001dec;
+    pThread->pTerminateHook = (void *)OS_ExitThread;
     INITi_CpuClear32_0x01ff86fc(0, pLow + 4, nStackSize - 8);
 
     pThread->field84 = 0;

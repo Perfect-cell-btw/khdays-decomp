@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov000_0204fdac (0204fdac): const int data_ov000_0205a6f4[7]; */
+/* read by Ov000_LayoutSelectionPages (0204fdac): const int data_ov000_0205a6f4[7]; */
 const int data_ov000_0205a6f4[7] = {
     11, 12, 13, 14, 15, 17, 61,
 };

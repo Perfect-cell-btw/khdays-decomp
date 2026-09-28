@@ -4,227 +4,227 @@
     .data       start:0x020d35c0 end:0x020d3620 kind:data align:32
     .bss        start:0x020d3620 end:0x020d3620 kind:bss align:32
 
-src/overlays/ov279/calls/func_ov279_020cfb60.c:
+src/overlays/ov279/calls/Ov279_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov279/calls/func_ov279_020cfb78.c:
+src/overlays/ov279/calls/Ov279_CreateNamedEntity.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc04
 
-src/overlays/ov279/calls/func_ov279_020cfc04.c:
+src/overlays/ov279/calls/Ov279_RefreshAndPublishTransform.c:
     complete
     .text       start:0x020cfc04 end:0x020cfc6c
 
-src/overlays/ov279/calls/func_ov279_020cfc6c.c:
+src/overlays/ov279/calls/Ov279_Construct.c:
     complete
     .text       start:0x020cfc6c end:0x020cff2c
 
-src/overlays/ov279/calls/func_ov279_020cff2c.c:
+src/overlays/ov279/calls/Ov279_Destroy.c:
     complete
     .text       start:0x020cff2c end:0x020cff6c
 
-src/overlays/ov279/calls/func_ov279_020cff6c.c:
+src/overlays/ov279/calls/Ov279_PlayAnimWithParts.c:
     complete
     .text       start:0x020cff6c end:0x020cffe8
 
-src/overlays/ov279/calls/func_ov279_020cffe8.c:
+src/overlays/ov279/calls/Ov279_OnEffectMessage.c:
     complete
     .text       start:0x020cffe8 end:0x020d0174
 
-src/overlays/ov279/calls/func_ov279_020d0174.c:
+src/overlays/ov279/calls/Ov279_Tick.c:
     complete
     .text       start:0x020d0174 end:0x020d03a8
 
-src/overlays/ov279/calls/func_ov279_020d03a8.c:
+src/overlays/ov279/calls/Ov279_CreateAiTask.c:
     complete
     .text       start:0x020d03a8 end:0x020d0404
 
-src/overlays/ov279/calls/func_ov279_020d0404.c:
+src/overlays/ov279/calls/Ov279_OnHit.c:
     complete
     .text       start:0x020d0404 end:0x020d0610
 
-src/overlays/ov279/auto/func_ov279_020d0610.c:
+src/overlays/ov279/auto/Ov279_RequestSubState11IfIdle.c:
     complete
     .text       start:0x020d0610 end:0x020d0640
 
-src/overlays/ov279/calls/func_ov279_020d0640.c:
+src/overlays/ov279/calls/Ov279_PickBestFacingTarget.c:
     complete
     .text       start:0x020d0640 end:0x020d0750
 
-src/overlays/ov279/calls/func_ov279_020d0750.c:
+src/overlays/ov279/calls/Ov279_DecideAttackByDistanceRoll.c:
     complete
     .text       start:0x020d0750 end:0x020d0888
 
-src/overlays/ov279/calls/func_ov279_020d0888.c:
+src/overlays/ov279/calls/Ov279_PushOutOfWorld.c:
     complete
     .text       start:0x020d0888 end:0x020d0a70
 
-src/overlays/ov279/calls/func_ov279_020d0a70.c:
+src/overlays/ov279/calls/Ov279_InitStateRegister3HwFlags.c:
     complete
     .text       start:0x020d0a70 end:0x020d0b34
 
-src/overlays/ov279/calls/func_ov279_020d0b34.c:
+src/overlays/ov279/calls/Ov279_AiDispatchAction.c:
     complete
     .text       start:0x020d0b34 end:0x020d0d30
 
-src/overlays/ov279/calls/func_ov279_020d0d30.c:
+src/overlays/ov279/calls/Ov279_AiSlerpHeading.c:
     complete
     .text       start:0x020d0d30 end:0x020d0d84
 
-src/overlays/ov279/calls/func_ov279_020d0d84.c:
+src/overlays/ov279/calls/Ov279_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d0d84 end:0x020d0dec
 
-src/overlays/ov279/calls/func_ov279_020d0dec.c:
+src/overlays/ov279/calls/Ov279_AiWarpAboveTargetAndResume.c:
     complete
     .text       start:0x020d0dec end:0x020d0e64
 
-src/overlays/ov279/calls/func_ov279_020d0e64.c:
+src/overlays/ov279/calls/Ov279_SpawnEffect48SetTurnRate.c:
     complete
     .text       start:0x020d0e64 end:0x020d0f54
 
-src/overlays/ov279/calls/func_ov279_020d0f54.c:
+src/overlays/ov279/calls/Ov279_TimerReAimLookAtFire.c:
     complete
     .text       start:0x020d0f54 end:0x020d102c
 
-src/overlays/ov279/calls/func_ov279_020d102c.c:
+src/overlays/ov279/calls/Ov279_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d102c end:0x020d1060
 
-src/overlays/ov279/calls/func_ov279_020d1060.c:
+src/overlays/ov279/calls/Ov279_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020d1060 end:0x020d1094
 
-src/overlays/ov279/calls/func_ov279_020d1094.c:
+src/overlays/ov279/calls/Ov279_AiStep_QueueAction5.c:
     complete
     .text       start:0x020d1094 end:0x020d10b8
 
-src/overlays/ov279/calls/func_ov279_020d10b8.c:
+src/overlays/ov279/calls/Ov279_AiStep_PickLandingPoint.c:
     complete
     .text       start:0x020d10b8 end:0x020d1110
 
-src/overlays/ov279/calls/func_ov279_020d1110.c:
+src/overlays/ov279/calls/Ov279_IdleFloatTick.c:
     complete
     .text       start:0x020d1110 end:0x020d12e0
 
-src/overlays/ov279/calls/func_ov279_020d12e0.c:
+src/overlays/ov279/calls/Ov279_HoverTick.c:
     complete
     .text       start:0x020d12e0 end:0x020d1434
 
-src/overlays/ov279/calls/func_ov279_020d1434.c:
+src/overlays/ov279/calls/Ov279_FaceTargetLookAt.c:
     complete
     .text       start:0x020d1434 end:0x020d14e8
 
-src/overlays/ov279/calls/func_ov279_020d14e8.c:
+src/overlays/ov279/calls/Ov279_DecayOffsetGiveUpLatch.c:
     complete
     .text       start:0x020d14e8 end:0x020d15c8
 
-src/overlays/ov279/calls/func_ov279_020d15c8.c:
+src/overlays/ov279/calls/Ov279_SpawnEffect4aReconfigureFlags.c:
     complete
     .text       start:0x020d15c8 end:0x020d1690
 
-src/overlays/ov279/calls/func_ov279_020d1690.c:
+src/overlays/ov279/calls/Ov279_SetPose4ThenAdvanceSlot.c:
     complete
     .text       start:0x020d1690 end:0x020d16c4
 
-src/overlays/ov279/calls/func_ov279_020d16c4.c:
+src/overlays/ov279/calls/Ov279_AiQueue7OnAnimEnd.c:
     complete
     .text       start:0x020d16c4 end:0x020d16f8
 
-src/overlays/ov279/calls/func_ov279_020d16f8.c:
+src/overlays/ov279/calls/Ov279_SetPoseThenAdvanceSlot_2.c:
     complete
     .text       start:0x020d16f8 end:0x020d172c
 
-src/overlays/ov279/calls/func_ov279_020d172c.c:
+src/overlays/ov279/calls/Ov279_TickApproachTarget.c:
     complete
     .text       start:0x020d172c end:0x020d18c8
 
-src/overlays/ov279/calls/func_ov279_020d18c8.c:
+src/overlays/ov279/calls/Ov279_SwipeHitWindow.c:
     complete
     .text       start:0x020d18c8 end:0x020d1a84
 
-src/overlays/ov279/calls/func_ov279_020d1a84.c:
+src/overlays/ov279/calls/Ov279_AiEnterBackOff.c:
     complete
     .text       start:0x020d1a84 end:0x020d1b04
 
-src/overlays/ov279/calls/func_ov279_020d1b04.c:
+src/overlays/ov279/calls/Ov279_BackOffTick.c:
     complete
     .text       start:0x020d1b04 end:0x020d1d30
 
-src/overlays/ov279/calls/func_ov279_020d1d30.c:
+src/overlays/ov279/calls/Ov279_CircleTick.c:
     complete
     .text       start:0x020d1d30 end:0x020d1f58
 
-src/overlays/ov279/calls/func_ov279_020d1f58.c:
+src/overlays/ov279/calls/Ov279_StalkTick.c:
     complete
     .text       start:0x020d1f58 end:0x020d216c
 
-src/overlays/ov279/calls/func_ov279_020d216c.c:
+src/overlays/ov279/calls/Ov279_EnterBite.c:
     complete
     .text       start:0x020d216c end:0x020d2250
 
-src/overlays/ov279/calls/func_ov279_020d2250.c:
+src/overlays/ov279/calls/Ov279_TimerReseedRandom.c:
     complete
     .text       start:0x020d2250 end:0x020d22b4
 
-src/overlays/ov279/calls/func_ov279_020d22b4.c:
+src/overlays/ov279/calls/Ov279_TickOrbitTarget.c:
     complete
     .text       start:0x020d22b4 end:0x020d24e8
 
-src/overlays/ov279/calls/func_ov279_020d24e8.c:
+src/overlays/ov279/calls/Ov279_EnterPounce.c:
     complete
     .text       start:0x020d24e8 end:0x020d25e8
 
-src/overlays/ov279/calls/func_ov279_020d25e8.c:
+src/overlays/ov279/calls/Ov279_AiTimerQueueAction7.c:
     complete
     .text       start:0x020d25e8 end:0x020d2624
 
-src/overlays/ov279/calls/func_ov279_020d2624.c:
+src/overlays/ov279/calls/Ov279_EnterLunge.c:
     complete
     .text       start:0x020d2624 end:0x020d2708
 
-src/overlays/ov279/calls/func_ov279_020d2708.c:
+src/overlays/ov279/calls/Ov279_RepositionTick.c:
     complete
     .text       start:0x020d2708 end:0x020d285c
 
-src/overlays/ov279/calls/func_ov279_020d285c.c:
+src/overlays/ov279/calls/Ov279_GrabApproachFinish.c:
     complete
     .text       start:0x020d285c end:0x020d2a04
 
-src/overlays/ov279/calls/func_ov279_020d2a04.c:
+src/overlays/ov279/calls/Ov279_TickHoldTarget.c:
     complete
     .text       start:0x020d2a04 end:0x020d2d98
 
-src/overlays/ov279/calls/func_ov279_020d2d98.c:
+src/overlays/ov279/calls/Ov279_HoldTick.c:
     complete
     .text       start:0x020d2d98 end:0x020d2fb0
 
-src/overlays/ov279/calls/func_ov279_020d2fb0.c:
+src/overlays/ov279/calls/Ov279_CarryTick.c:
     complete
     .text       start:0x020d2fb0 end:0x020d333c
 
-src/overlays/ov279/calls/func_ov279_020d333c.c:
+src/overlays/ov279/calls/Ov279_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d333c end:0x020d33f0
 
-src/overlays/ov279/calls/func_ov279_020d33f0.c:
+src/overlays/ov279/calls/Ov279_SpawnChildStoreSelfAndArg.c:
     complete
     .text       start:0x020d33f0 end:0x020d3444
 
-src/overlays/ov279/calls/func_ov279_020d3444.c:
+src/overlays/ov279/calls/Ov279_TimerBlinkStart.c:
     complete
     .text       start:0x020d3444 end:0x020d3488
 
-src/overlays/ov279/auto/func_ov279_020d3488.c:
+src/overlays/ov279/auto/Ov279_ChildReleaseNoOp.c:
     complete
     .text       start:0x020d3488 end:0x020d348c
 
-src/overlays/ov279/calls/func_ov279_020d348c.c:
+src/overlays/ov279/calls/Ov279_TimerBlinkParityClear.c:
     complete
     .text       start:0x020d348c end:0x020d3504
 
-src/overlays/ov279/calls/func_ov279_020d3504.c:
+src/overlays/ov279/calls/Ov279_TimerBlinkParitySet.c:
     complete
     .text       start:0x020d3504 end:0x020d357c
 

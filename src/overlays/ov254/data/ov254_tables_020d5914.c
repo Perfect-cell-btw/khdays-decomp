@@ -8,13 +8,13 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov254_020cbfc8 (not yet decompiled) */
+/* read by Ov254_Construct (not yet decompiled) */
 const u8 data_ov254_020d5914[24] = {
     0, 176, 255, 255, 0, 96, 255, 255, 0, 176, 255, 255, 0, 80, 0, 0,
     0, 160, 0, 0, 0, 80, 0, 0,
 };
 
-/* read by func_ov254_020cbfc8 (not yet decompiled) */
+/* read by Ov254_Construct (not yet decompiled) */
 const int data_ov254_020d592c[8] = {
     63, 64, 72, 73, 76, 78, 79, 80,
 };

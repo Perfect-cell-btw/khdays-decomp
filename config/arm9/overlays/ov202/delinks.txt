@@ -4,227 +4,227 @@
     .data       start:0x020cefe0 end:0x020cf020 kind:data align:32
     .bss        start:0x020cf020 end:0x020cf020 kind:bss align:32
 
-src/overlays/ov202/calls/func_ov202_020cbf20.c:
+src/overlays/ov202/calls/Ov202_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov202/calls/func_ov202_020cbf38.c:
+src/overlays/ov202/calls/Ov202_AllocActorWithName.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/ov202/calls/func_ov202_020cbfc8.c:
+src/overlays/ov202/calls/Ov202_Construct.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc218
 
-src/overlays/ov202/calls/func_ov202_020cc218.c:
+src/overlays/ov202/calls/Ov202_Destroy.c:
     complete
     .text       start:0x020cc218 end:0x020cc260
 
-src/overlays/ov202/calls/func_ov202_020cc260.c:
+src/overlays/ov202/calls/Ov202_TickWithChildRefresh.c:
     complete
     .text       start:0x020cc260 end:0x020cc284
 
-src/overlays/ov202/calls/func_ov202_020cc284.c:
+src/overlays/ov202/calls/Ov202_InitModelPose.c:
     complete
     .text       start:0x020cc284 end:0x020cc2f8
 
-src/overlays/ov202/calls/func_ov202_020cc2f8.c:
+src/overlays/ov202/calls/Ov202_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc2f8 end:0x020cc44c
 
-src/overlays/ov202/calls/func_ov202_020cc44c.c:
+src/overlays/ov202/calls/Ov202_Model_SetTrack0.c:
     complete
     .text       start:0x020cc44c end:0x020cc47c
 
-src/overlays/ov202/calls/func_ov202_020cc47c.c:
+src/overlays/ov202/calls/Ov202_ReleaseTasks.c:
     complete
     .text       start:0x020cc47c end:0x020cc588
 
-src/overlays/ov202/calls/func_ov202_020cc588.c:
+src/overlays/ov202/calls/Ov202_collectChildrenInBox.c:
     complete
     .text       start:0x020cc588 end:0x020cc668
 
-src/overlays/ov202/calls/func_ov202_020cc668.c:
+src/overlays/ov202/calls/Ov202_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020cc668 end:0x020cc81c
 
-src/overlays/ov202/calls/func_ov202_020cc81c.c:
+src/overlays/ov202/calls/Ov202_CreateRegistryEntryTwoCallbacks.c:
     complete
     .text       start:0x020cc81c end:0x020cc86c
 
-src/overlays/ov202/calls/func_ov202_020cc86c.c:
+src/overlays/ov202/calls/Ov202_OnHit.c:
     complete
     .text       start:0x020cc86c end:0x020ccb08
 
-src/overlays/ov202/auto/func_ov202_020ccb08.c:
+src/overlays/ov202/auto/Ov202_RequestSubState10IfIdleUnless7Or8.c:
     complete
     .text       start:0x020ccb08 end:0x020ccb4c
 
-src/overlays/ov202/calls/func_ov202_020ccb4c.c:
+src/overlays/ov202/calls/Ov202_EnterRandomDwellState.c:
     complete
     .text       start:0x020ccb4c end:0x020ccc48
 
-src/overlays/ov202/auto/func_ov202_020ccc48.c:
+src/overlays/ov202/auto/Ov202_EntryReleaseNoOp.c:
     complete
     .text       start:0x020ccc48 end:0x020ccc4c
 
-src/overlays/ov202/calls/func_ov202_020ccc4c.c:
+src/overlays/ov202/calls/Ov202_DispatchSubStateByte.c:
     complete
     .text       start:0x020ccc4c end:0x020cce04
 
-src/overlays/ov202/calls/func_ov202_020cce04.c:
+src/overlays/ov202/calls/Ov202_MotionTick.c:
     complete
     .text       start:0x020cce04 end:0x020ccef0
 
-src/overlays/ov202/calls/func_ov202_020ccef0.c:
+src/overlays/ov202/calls/Ov202_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccef0 end:0x020ccf58
 
-src/overlays/ov202/calls/func_ov202_020ccf58.c:
+src/overlays/ov202/calls/Ov202_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020ccf58 end:0x020ccf94
 
-src/overlays/ov202/calls/func_ov202_020ccf94.c:
+src/overlays/ov202/calls/Ov202_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020ccf94 end:0x020cd060
 
-src/overlays/ov202/calls/func_ov202_020cd060.c:
+src/overlays/ov202/calls/Ov202_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020cd060 end:0x020cd128
 
-src/overlays/ov202/calls/func_ov202_020cd128.c:
+src/overlays/ov202/calls/Ov202_RerollTimerThenSubState2.c:
     complete
     .text       start:0x020cd128 end:0x020cd188
 
-src/overlays/ov202/calls/func_ov202_020cd188.c:
+src/overlays/ov202/calls/Ov202_stDiv30Store.c:
     complete
     .text       start:0x020cd188 end:0x020cd1e8
 
-src/overlays/ov202/calls/func_ov202_020cd1e8.c:
+src/overlays/ov202/calls/Ov202_ReactWhenTargetInReach.c:
     complete
     .text       start:0x020cd1e8 end:0x020cd258
 
-src/overlays/ov202/calls/func_ov202_020cd258.c:
+src/overlays/ov202/calls/Ov202_stDiv30Store_2.c:
     complete
     .text       start:0x020cd258 end:0x020cd2b8
 
-src/overlays/ov202/calls/func_ov202_020cd2b8.c:
+src/overlays/ov202/calls/Ov202_AiLoopAnim2OnFlagClear.c:
     complete
     .text       start:0x020cd2b8 end:0x020cd2fc
 
-src/overlays/ov202/calls/func_ov202_020cd2fc.c:
+src/overlays/ov202/calls/Ov202_CloseOnTarget.c:
     complete
     .text       start:0x020cd2fc end:0x020cd4a0
 
-src/overlays/ov202/calls/func_ov202_020cd4a0.c:
+src/overlays/ov202/calls/Ov202_AdvanceNodeWhenGateClear.c:
     complete
     .text       start:0x020cd4a0 end:0x020cd4d4
 
-src/overlays/ov202/calls/func_ov202_020cd4d4.c:
+src/overlays/ov202/calls/Ov202_AiEnterAim.c:
     complete
     .text       start:0x020cd4d4 end:0x020cd558
 
-src/overlays/ov202/calls/func_ov202_020cd558.c:
+src/overlays/ov202/calls/Ov202_OrbitTarget.c:
     complete
     .text       start:0x020cd558 end:0x020cd740
 
-src/overlays/ov202/calls/func_ov202_020cd740.c:
+src/overlays/ov202/calls/Ov202_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020cd740 end:0x020cd7b0
 
-src/overlays/ov202/calls/func_ov202_020cd7b0.c:
+src/overlays/ov202/calls/Ov202_CopyScaleVec3GuardedThenAdvance.c:
     complete
     .text       start:0x020cd7b0 end:0x020cd82c
 
-src/overlays/ov202/calls/func_ov202_020cd82c.c:
+src/overlays/ov202/calls/Ov202_stateSetFlagEffect.c:
     complete
     .text       start:0x020cd82c end:0x020cd898
 
-src/overlays/ov202/calls/func_ov202_020cd898.c:
+src/overlays/ov202/calls/Ov202_stateTransformAimVec.c:
     complete
     .text       start:0x020cd898 end:0x020cd964
 
-src/overlays/ov202/calls/func_ov202_020cd964.c:
+src/overlays/ov202/calls/Ov202_HomingDashTick.c:
     complete
     .text       start:0x020cd964 end:0x020cddf8
 
-src/overlays/ov202/calls/func_ov202_020cddf8.c:
+src/overlays/ov202/calls/Ov202_AiReleaseHeldAndTrack.c:
     complete
     .text       start:0x020cddf8 end:0x020cdeac
 
-src/overlays/ov202/calls/func_ov202_020cdeac.c:
+src/overlays/ov202/calls/Ov202_SetPose6ThenAdvanceSlot.c:
     complete
     .text       start:0x020cdeac end:0x020cdee0
 
-src/overlays/ov202/calls/func_ov202_020cdee0.c:
+src/overlays/ov202/calls/Ov202_BeginRecoil.c:
     complete
     .text       start:0x020cdee0 end:0x020cdfc0
 
-src/overlays/ov202/calls/func_ov202_020cdfc0.c:
+src/overlays/ov202/calls/Ov202_ThrowChargeTick.c:
     complete
     .text       start:0x020cdfc0 end:0x020ce0b4
 
-src/overlays/ov202/calls/func_ov202_020ce0b4.c:
+src/overlays/ov202/calls/Ov202_BeginThrowRelease.c:
     complete
     .text       start:0x020ce0b4 end:0x020ce280
 
-src/overlays/ov202/calls/func_ov202_020ce280.c:
+src/overlays/ov202/calls/Ov202_ThrowReleaseTick.c:
     complete
     .text       start:0x020ce280 end:0x020ce9c0
 
-src/overlays/ov202/calls/func_ov202_020ce9c0.c:
+src/overlays/ov202/calls/Ov202_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020ce9c0 end:0x020cea88
 
-src/overlays/ov202/calls/func_ov202_020cea88.c:
+src/overlays/ov202/calls/Ov202_AiEndWithUpdate.c:
     complete
     .text       start:0x020cea88 end:0x020ceb3c
 
-src/overlays/ov202/calls/func_ov202_020ceb3c.c:
+src/overlays/ov202/calls/Ov202_SpawnChild10AndBackLink.c:
     complete
     .text       start:0x020ceb3c end:0x020ceb84
 
-src/overlays/ov202/calls/func_ov202_020ceb84.c:
+src/overlays/ov202/calls/Ov202_RenderAtOwnerScaled.c:
     complete
     .text       start:0x020ceb84 end:0x020cebdc
 
-src/overlays/ov202/calls/func_ov202_020cebdc.c:
+src/overlays/ov202/calls/Ov202_stInitChildActor.c:
     complete
     .text       start:0x020cebdc end:0x020cec88
 
-src/overlays/ov202/auto/func_ov202_020cec88.c:
+src/overlays/ov202/auto/Ov202_ChildTaskTeardownAndFlag.c:
     complete
     .text       start:0x020cec88 end:0x020cecc4
 
-src/overlays/ov202/calls/func_ov202_020cecc4.c:
+src/overlays/ov202/calls/Ov202_TickTimerAdvanceSubState.c:
     complete
     .text       start:0x020cecc4 end:0x020ced28
 
-src/overlays/ov202/calls/func_ov202_020ced28.c:
+src/overlays/ov202/calls/Ov202_SpawnChild0cAndBackLink.c:
     complete
     .text       start:0x020ced28 end:0x020ced70
 
-src/overlays/ov202/calls/func_ov202_020ced70.c:
+src/overlays/ov202/calls/Ov202_RenderAtOwnerModel.c:
     complete
     .text       start:0x020ced70 end:0x020cedb8
 
-src/overlays/ov202/calls/func_ov202_020cedb8.c:
+src/overlays/ov202/calls/Ov202_stateInitSubitem.c:
     complete
     .text       start:0x020cedb8 end:0x020cee38
 
-src/overlays/ov202/calls/func_ov202_020cee38.c:
+src/overlays/ov202/calls/Ov202_ChildTaskTeardown.c:
     complete
     .text       start:0x020cee38 end:0x020cee60
 
-src/overlays/ov202/calls/func_ov202_020cee60.c:
+src/overlays/ov202/calls/Ov202_ConfigureActorUnlessBusy.c:
     complete
     .text       start:0x020cee60 end:0x020ceea4
 
-src/overlays/ov202/calls/func_ov202_020ceea4.c:
+src/overlays/ov202/calls/Ov202_ReleaseSubitemStep.c:
     complete
     .text       start:0x020ceea4 end:0x020cef30
 
-src/overlays/ov202/calls/func_ov202_020cef30.c:
+src/overlays/ov202/calls/Ov202_FinishIfSubFlagClear.c:
     complete
     .text       start:0x020cef30 end:0x020cef50
 

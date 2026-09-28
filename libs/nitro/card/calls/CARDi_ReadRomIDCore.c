@@ -82,8 +82,7 @@ extern u32 data_020423e8;           /* cardi_rom_header_addr */
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
-extern void func_02001f10(OSThreadQueue *queue);   /* OS_SleepThread */
-#define OS_SleepThread func_02001f10
+extern void OS_SleepThread(OSThreadQueue *queue);   /* OS_SleepThread */
 extern void OS_WakeupThread(OSThreadQueue *queue);
 extern void OS_Terminate(void);
 #define OS_Panic(...) OS_Terminate()

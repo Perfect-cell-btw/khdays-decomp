@@ -1,0 +1,7 @@
+/* Forward to 02056874 (full args) and 0205687c (a, b, d). */
+extern void Ov000_Elem_SetX(int a, int b, int c, int d);
+extern void Ov000_Elem_SetY(int a, int b, int d);
+void Ov000_Elem_SetPos(int param_1, int param_2, int param_3, int param_4) {
+    Ov000_Elem_SetX(param_1, param_2, param_3, param_4);
+    Ov000_Elem_SetY(param_1, param_2, param_4);
+}

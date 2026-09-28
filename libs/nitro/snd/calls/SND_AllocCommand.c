@@ -42,10 +42,10 @@ extern void PushCommand_impl(int command, u32 arg0, u32 arg1, u32 arg2, u32 arg3
 #define PushCommand(c, a0, a1, a2, a3) PushCommand_impl((c), (u32)(a0), (u32)(a1), (u32)(a2), (u32)(a3))
 
 extern BOOL IsCommandAvailable(void);
-extern SNDCommand *func_02008ba4(void);       /* AllocCommand */
+extern SNDCommand *SND_PopFreeCommand(void);       /* AllocCommand */
 extern int SND_CountWaitingCommand(void);
-extern const SNDCommand *func_020085f0(u32 flags);   /* SND_RecvCommandReply */
-extern BOOL func_020087c0(u32 flags);         /* SND_FlushCommand */
+extern const SNDCommand *SND_RecvCommandReply(u32 flags);   /* SND_RecvCommandReply */
+extern BOOL SND_FlushCommand(u32 flags);         /* SND_FlushCommand */
 extern void RequestCommandProc(void);
 
 /* SND_AllocCommand -- take a free command slot; with SND_COMMAND_BLOCK the caller waits,
@@ -58,7 +58,7 @@ SNDCommand *SND_AllocCommand(u32 flags)
     if (!IsCommandAvailable())
         return NULL;
 
-    command = func_02008ba4();
+    command = SND_PopFreeCommand();
     if (command != NULL)
         return command;
 
@@ -66,21 +66,21 @@ SNDCommand *SND_AllocCommand(u32 flags)
         return NULL;
 
     if (SND_CountWaitingCommand() > 0) {
-        while (func_020085f0(SND_COMMAND_NOBLOCK) != NULL) {
+        while (SND_RecvCommandReply(SND_COMMAND_NOBLOCK) != NULL) {
         }
 
-        command = func_02008ba4();
+        command = SND_PopFreeCommand();
         if (command != NULL)
             return command;
     } else {
-        (void)func_020087c0(SND_COMMAND_BLOCK);
+        (void)SND_FlushCommand(SND_COMMAND_BLOCK);
     }
 
     RequestCommandProc();
 
     do {
-        (void)func_020085f0(SND_COMMAND_BLOCK);
-        command = func_02008ba4();
+        (void)SND_RecvCommandReply(SND_COMMAND_BLOCK);
+        command = SND_PopFreeCommand();
     } while (command == NULL);
 
     return command;

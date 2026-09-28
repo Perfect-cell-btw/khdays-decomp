@@ -9,7 +9,7 @@ extern void OS_CreateAlarm(OSAlarm *alarm);
 extern void OS_SetAlarm(OSAlarm *alarm, OSTick fire_tick, OSAlarmHandler handler, void *arg);
 extern int OS_DisableInterrupts(void);
 extern void OS_RestoreInterrupts(int mask);
-extern void func_02001f10(void *arg);
+extern void OS_SleepThread(void *arg);
 extern void OSi_SleepAlarmCallback(void *arg);
 extern void **data_0204430c[];
 
@@ -24,7 +24,7 @@ void OS_Sleep(u32 arg0) {
     *(void **)((char *)thread + 0xb0) = alarm;
     OS_SetAlarm((OSAlarm *)alarm, (u64)arg0 * 0x82eaULL >> 6, OSi_SleepAlarmCallback, &thread);
     while (thread != 0) {
-        func_02001f10(0);
+        OS_SleepThread(0);
     }
     OS_RestoreInterrupts(mask);
 }

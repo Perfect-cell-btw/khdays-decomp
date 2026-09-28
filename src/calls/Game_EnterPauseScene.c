@@ -1,0 +1,96 @@
+#pragma thumb on
+/* Game_EnterPauseScene -- enter a scene, MAIN. Unless forced (data_0204bd85) or flag 0x20ef is set, the
+ * call is refused (Callbacks_SetByte(0)). Otherwise: graphics mode 1/0/1 when +0xe4 asks for it, the
+ * scene state becomes 3 (+0xc8, sub-state +0xcc = 2, +0xd8 cleared), a +0xdc scene resets its
+ * display (Ov002_HoldPanelScreen(1, 0), TP_RequestAutoSamplingStopAsync, layers 4). Unless a reset is pending
+ * (data_0204c240 bit 2 while mode bit 1 is set) the state is saved for the way back: the 64-bit
+ * tick (+0x0), the random seed (+0x8) and the playing BGM track (+0xc4, then paused). In mode bit 1
+ * the sound fades to 0x40; the main screen shows BG0 only; the fade block (+0xac, 0x18 bytes) is
+ * reset with its step at 3 in mode bit 1 else 2; mode bit 3 resets the effect layer; and
+ * PauseMenu_Open is queued as the next task. */
+typedef unsigned char u8;
+typedef unsigned int u32;
+typedef unsigned long long u64;
+
+#define REG_DISPCNT (*(volatile u32 *)0x04000000)
+
+typedef struct GameHeap {
+    u64 save;                           /* +0x00 */
+    unsigned int seed;                  /* +0x08 */
+    char pad0c[0xac - 0xc];
+    int fade[6];                        /* +0xac */
+    int track;                          /* +0xc4 */
+    int state;                          /* +0xc8 */
+    int subState;                       /* +0xcc */
+    int fadeStep;                       /* +0xd0 */
+    int fadeTimer;                      /* +0xd4 */
+    int stateTimer;                     /* +0xd8 */
+    int scene;                          /* +0xdc */
+    int object;                         /* +0xe0 */
+    int gfxMode;                        /* +0xe4 */
+} GameHeap;
+
+extern char *data_0204be08;
+extern u8 data_0204bd85;
+extern u8 data_0204c240;
+extern char data_02042748[16];
+extern int GameState_IsFlagSet(int id);
+extern void Callbacks_SetByte(int a);
+extern void GX_SetGraphicsMode(int a, int b, int c);
+extern void Ov002_HoldPanelScreen(int nHold, int bLeaving);
+extern void TP_RequestAutoSamplingStopAsync(void);
+extern void TP_WaitBusy(int layer);
+extern void TP_CheckError(int layer);
+extern int LoadGlobalU16At0(void);
+extern u64 OS_GetTick(void);
+extern unsigned int func_01ff80a8(void);
+extern int SoundStrm_HasPlaybackPos(int slot);
+extern int SoundMgr_GetStreamNextPos(int slot);
+extern void Table_TailCallWithEntry(int slot, int a);
+extern void InvokeSubStructAndStampByte(int volume, int frames);
+extern void MI_CpuFill8(void *dest, int data, u32 size);
+extern void SetGameMode(int mode);
+extern void RegisterNamedTask(int nSlot, const char *pName, void (*pfnTask)(void));
+extern void PauseMenu_Open(void);
+
+void Game_EnterPauseScene(void)
+{
+    GameHeap *heap = (GameHeap *)(&data_0204be08)[1];
+
+    if (data_0204bd85 == 0 && GameState_IsFlagSet(0x20ef) == 0) {
+        Callbacks_SetByte(0);
+        return;
+    }
+    if (heap->gfxMode != 0) {
+        GX_SetGraphicsMode(1, 0, 1);
+    }
+    heap->stateTimer = 0;
+    heap->state = 3;
+    heap->subState = 2;
+    if (heap->scene != 0) {
+        Ov002_HoldPanelScreen(1, 0);
+        TP_RequestAutoSamplingStopAsync();
+        TP_WaitBusy(4);
+        TP_CheckError(4);
+    }
+    if ((data_0204c240 & 4) == 0 || (LoadGlobalU16At0() & 2) == 0) {
+        heap->save = OS_GetTick();
+        heap->seed = func_01ff80a8();
+        if (SoundStrm_HasPlaybackPos(0) != 0) {
+            heap->track = SoundMgr_GetStreamNextPos(0);
+            Table_TailCallWithEntry(0, 0);
+        }
+    }
+    if ((LoadGlobalU16At0() & 2) != 0) {
+        InvokeSubStructAndStampByte(0x40, 10);
+    }
+    REG_DISPCNT = (REG_DISPCNT & 0xffffe0ff) | 0x100;
+    heap->fadeStep = (LoadGlobalU16At0() & 2) ? 3 : 2;
+    heap->fadeTimer = 0;
+    MI_CpuFill8(heap->fade, 0, sizeof(heap->fade));
+    heap->fade[1] = 1;
+    if ((LoadGlobalU16At0() & 8) != 0) {
+        SetGameMode(0);
+    }
+    RegisterNamedTask(1, data_02042748, PauseMenu_Open);
+}

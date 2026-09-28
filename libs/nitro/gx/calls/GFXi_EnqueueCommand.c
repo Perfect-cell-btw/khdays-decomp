@@ -1,6 +1,6 @@
-extern int func_02011378(void *q);
-extern void *func_02011548(void *q);
-extern void func_020114fc(void *q);
+extern int IsVramTransferTaskQueueFull_(void *q);
+extern void *NNSi_GfdGetEndVramTransferTaskQueue(void *q);
+extern void NNSi_GfdPushVramTransferTaskQueue(void *q);
 
 extern char data_02047370[];
 
@@ -20,13 +20,13 @@ int GFXi_EnqueueCommand(void *a, int b, int c, int d)
 {
     struct Node *n;
     struct Q *q = (struct Q *)data_02047370;
-    if (func_02011378(q) != 0) return 0;
-    n = (struct Node *)func_02011548(q);
+    if (IsVramTransferTaskQueueFull_(q) != 0) return 0;
+    n = (struct Node *)NNSi_GfdGetEndVramTransferTaskQueue(q);
     n->x0 = a;
     n->x4 = c;
     n->x8 = b;
     n->xc = d;
-    func_020114fc(q);
+    NNSi_GfdPushVramTransferTaskQueue(q);
     q->x10 = q->x10 + n->xc;
     return 1;
 }

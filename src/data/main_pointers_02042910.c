@@ -6,65 +6,65 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_01fff0e0(void);
-extern void func_01fff290(void);
-extern void func_01fff554(void);
-extern void func_02029444(void);
-extern void func_0202947c(void);
-extern void func_02029480(void);
-extern void func_020294b0(void);
-extern void func_0202951c(void);
-extern void func_02029520(void);
-extern void func_0202958c(void);
-extern void func_0202980c(void);
-extern void func_02029810(void);
-extern void func_02029a7c(void);
-extern void func_02029f3c(void);
+extern void Coll_TestRayAgainstFlatCap(void);
+extern void Coll_TestSphereAgainstCylinder(void);
+extern void Coll_TestRayAgainstRoundedCap(void);
+extern void Bounds_FromCenterRadius(void);
+extern void Collider_Slot1NoOp_2(void);
+extern void Collider_InitPlaneY(void);
+extern void Collider_InitCylinderContact(void);
+extern void Collider_Slot1NoOp(void);
+extern void Collider_InitSphereContact(void);
+extern void RoomBox_UpdateBounds(void);
+extern void RoomBox_Slot1NoOp(void);
+extern void RoomBox_HitTop(void);
+extern void RoomBox_HitSides(void);
+extern void RoomBox_WallPlane(void);
 
 Ov_Fn data_02042910[6] = {
 
-    func_02029444,
+    Bounds_FromCenterRadius,
 
-    func_0202951c,
+    Collider_Slot1NoOp,
 
-    func_01fff554,
+    Coll_TestRayAgainstRoundedCap,
 
-    func_01fff290,
+    Coll_TestSphereAgainstCylinder,
 
-    func_02029520,
+    Collider_InitSphereContact,
 
-    func_020294b0,
+    Collider_InitCylinderContact,
 
 };
 
 Ov_Fn data_02042928[6] = {
 
-    func_0202958c,
+    RoomBox_UpdateBounds,
 
-    func_0202980c,
+    RoomBox_Slot1NoOp,
 
-    func_02029810,
+    RoomBox_HitTop,
 
-    func_02029a7c,
+    RoomBox_HitSides,
 
-    func_02029480,
+    Collider_InitPlaneY,
 
-    func_02029f3c,
+    RoomBox_WallPlane,
 
 };
 
 Ov_Fn data_02042940[6] = {
 
-    func_02029444,
+    Bounds_FromCenterRadius,
 
-    func_0202947c,
+    Collider_Slot1NoOp_2,
 
-    func_01fff0e0,
+    Coll_TestRayAgainstFlatCap,
 
-    func_01fff290,
+    Coll_TestSphereAgainstCylinder,
 
-    func_02029480,
+    Collider_InitPlaneY,
 
-    func_020294b0,
+    Collider_InitCylinderContact,
 
 };

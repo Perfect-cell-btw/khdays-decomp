@@ -8,131 +8,131 @@ src/overlays/ov050/calls/func_ov050_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov050/calls/func_ov050_020b5a34.c:
+src/overlays/ov050/calls/Ov050_ClassCtor.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a5c
 
-src/overlays/ov050/calls/func_ov050_020b5a5c.c:
+src/overlays/ov050/calls/Ov050_ClassTeardown.c:
     complete
     .text       start:0x020b5a5c end:0x020b5a70
 
-src/overlays/ov050/calls/func_ov050_020b5a70.c:
+src/overlays/ov050/calls/Ov050_ActorCtor.c:
     complete
     .text       start:0x020b5a70 end:0x020b5cb0
 
-src/overlays/ov050/calls/func_ov050_020b5cb0.c:
+src/overlays/ov050/calls/Ov050_ClaimBothSlots.c:
     complete
     .text       start:0x020b5cb0 end:0x020b5d0c
 
-src/overlays/ov050/auto/func_ov050_020b5d0c.c:
+src/overlays/ov050/auto/Ov050_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5d0c end:0x020b5d34
 
-src/overlays/ov050/calls/func_ov050_020b5d34.c:
+src/overlays/ov050/calls/Ov050_ActorApplyModeChange.c:
     complete
     .text       start:0x020b5d34 end:0x020b5e10
 
-src/overlays/ov050/calls/func_ov050_020b5e10.c:
+src/overlays/ov050/calls/Ov050_initSubObjectsSetU64Flags.c:
     complete
     .text       start:0x020b5e10 end:0x020b5f28
 
-src/overlays/ov050/calls/func_ov050_020b5f28.c:
+src/overlays/ov050/calls/Ov050_dispatchSubHandlerPair.c:
     complete
     .text       start:0x020b5f28 end:0x020b5f58
 
-src/overlays/ov050/calls/func_ov050_020b5f58.c:
+src/overlays/ov050/calls/Ov050_enterState21ComputeAimAngle.c:
     complete
     .text       start:0x020b5f58 end:0x020b6030
 
-src/overlays/ov050/calls/func_ov050_020b6030.c:
+src/overlays/ov050/calls/Ov050_ActorBuildStep.c:
     complete
     .text       start:0x020b6030 end:0x020b60e0
 
-src/overlays/ov050/calls/func_ov050_020b60e0.c:
+src/overlays/ov050/calls/Ov050_initTwoEntrySlots.c:
     complete
     .text       start:0x020b60e0 end:0x020b615c
 
-src/overlays/ov050/calls/func_ov050_020b615c.c:
+src/overlays/ov050/calls/Ov050_freeSubitemChannelResources.c:
     complete
     .text       start:0x020b615c end:0x020b61d4
 
-src/overlays/ov050/calls/func_ov050_020b61d4.c:
+src/overlays/ov050/calls/Ov050_initClearSubBlockField10.c:
     complete
     .text       start:0x020b61d4 end:0x020b6200
 
-src/overlays/ov050/calls/func_ov050_020b6200.c:
+src/overlays/ov050/calls/Ov050_ResetChannelsAndArm.c:
     complete
     .text       start:0x020b6200 end:0x020b6220
 
-src/overlays/ov050/auto/func_ov050_020b6220.c:
+src/overlays/ov050/auto/Ov050_ArmState3.c:
     complete
     .text       start:0x020b6220 end:0x020b6238
 
-src/overlays/ov050/calls/func_ov050_020b6238.c:
+src/overlays/ov050/calls/Ov050_configTwoChannelsPair.c:
     complete
     .text       start:0x020b6238 end:0x020b629c
 
-src/overlays/ov050/calls/func_ov050_020b629c.c:
+src/overlays/ov050/calls/Ov050_ActorNodeTick.c:
     complete
     .text       start:0x020b629c end:0x020b6460
 
-src/overlays/ov050/calls/func_ov050_020b6460.c:
+src/overlays/ov050/calls/Ov050_configureSubObjectSlot.c:
     complete
     .text       start:0x020b6460 end:0x020b6530
 
-src/overlays/ov050/calls/func_ov050_020b6530.c:
+src/overlays/ov050/calls/Ov050_updateSubObjectsAndRebind.c:
     complete
     .text       start:0x020b6530 end:0x020b65bc
 
-src/overlays/ov050/calls/func_ov050_020b65bc.c:
+src/overlays/ov050/calls/Ov050_tickSubObjectsIfFlagged.c:
     complete
     .text       start:0x020b65bc end:0x020b6600
 
-src/overlays/ov050/calls/func_ov050_020b6600.c:
+src/overlays/ov050/calls/Ov050_ActorCreateSubObjects.c:
     complete
     .text       start:0x020b6600 end:0x020b688c
 
-src/overlays/ov050/calls/func_ov050_020b688c.c:
+src/overlays/ov050/calls/Ov050_BindRig.c:
     complete
     .text       start:0x020b688c end:0x020b6920
 
-src/overlays/ov050/calls/func_ov050_020b6920.c:
+src/overlays/ov050/calls/Ov050_beginObjectSlotIfReady.c:
     complete
     .text       start:0x020b6920 end:0x020b6a00
 
-src/overlays/ov050/calls/func_ov050_020b6a00.c:
+src/overlays/ov050/calls/Ov050_ActorFireAttack.c:
     complete
     .text       start:0x020b6a00 end:0x020b6d3c
 
-src/overlays/ov050/calls/func_ov050_020b6d3c.c:
+src/overlays/ov050/calls/Ov050_ActorPartsUpdatePass.c:
     complete
     .text       start:0x020b6d3c end:0x020b6e30
 
-src/overlays/ov050/calls/func_ov050_020b6e30.c:
+src/overlays/ov050/calls/Ov050_dispatchEntryList.c:
     complete
     .text       start:0x020b6e30 end:0x020b6e94
 
-src/overlays/ov050/calls/func_ov050_020b6e94.c:
+src/overlays/ov050/calls/Ov050_HomingApproachTriggerStep.c:
     complete
     .text       start:0x020b6e94 end:0x020b7020
 
-src/overlays/ov050/calls/func_ov050_020b7020.c:
+src/overlays/ov050/calls/Ov050_HomingApproachStep.c:
     complete
     .text       start:0x020b7020 end:0x020b7130
 
-src/overlays/ov050/calls/func_ov050_020b7130.c:
+src/overlays/ov050/calls/Ov050_advanceProjectileAndSteer.c:
     complete
     .text       start:0x020b7130 end:0x020b7208
 
-src/overlays/ov050/calls/func_ov050_020b7208.c:
+src/overlays/ov050/calls/Ov050_emitTripleSpreadShots.c:
     complete
     .text       start:0x020b7208 end:0x020b7308
 
-src/overlays/ov050/calls/func_ov050_020b7308.c:
+src/overlays/ov050/calls/Ov050_ComputeApproachVelocity.c:
     complete
     .text       start:0x020b7308 end:0x020b742c
 
-src/overlays/ov050/calls/func_ov050_020b742c.c:
+src/overlays/ov050/calls/Ov050_InvokeWithDataTable.c:
     complete
     .text       start:0x020b742c end:0x020b7444
 

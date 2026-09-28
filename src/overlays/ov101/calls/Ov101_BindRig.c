@@ -1,0 +1,31 @@
+/* Bind the two 0x24-byte bone slots of the shared rig (at +0x1d4 of the global,
+ * then +0x2c00 into it) to this enemy's two 0x1c8-byte parts, and back-point
+ * each part at its slot. */
+extern void func_ov022_020b15a4(int handle, void *slot);
+
+extern char *data_ov101_020bc0e0;
+
+void Ov101_BindRig(char *self) {
+    char *base;
+    char *parts;
+    int i;
+    char *part;
+    int off;
+    char *slot;
+
+    base = self + 0x2000;
+    i = 0;
+    parts = *(char **)(base + 0x644);
+    off = 0;
+    slot = data_ov101_020bc0e0 + 0x68 + 0x3400;
+
+    for (; i < 2; i++) {
+        part = *(char **)(parts + 0xc) + off;
+
+        func_ov022_020b15a4(*(int *)(base + 0x63c), slot);
+        *(char **)(part + 0x130) = slot;
+
+        off += 0x1c8;
+        slot += 0x24;
+    }
+}

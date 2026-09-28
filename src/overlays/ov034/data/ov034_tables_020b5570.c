@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov034_020b3c04 (020b3c04): Idx3 data_ov034_020b5570; */
+/* read by Ov034_ReleaseIndexedHandles (020b3c04): Idx3 data_ov034_020b5570; */
 const int data_ov034_020b5570[3] = {
     0, 1, 2,
 };

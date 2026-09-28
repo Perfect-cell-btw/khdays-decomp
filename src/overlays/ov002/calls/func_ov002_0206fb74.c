@@ -1,6 +1,6 @@
-/* Constant-argument forwarding veneer onto func_02030d10 (first argument 7). */
-extern void *func_02030d10();
+/* Constant-argument forwarding veneer onto ClearGlobalArrayInt (first argument 7). */
+extern void *ClearGlobalArrayInt();
 
 void *func_ov002_0206fb74() {
-    return func_02030d10(7);
+    return ClearGlobalArrayInt(7);
 }

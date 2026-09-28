@@ -4,19 +4,19 @@
     .data       start:0x020d5900 end:0x020d5920 kind:data align:32
     .bss        start:0x020d5920 end:0x020d5920 kind:bss align:32
 
-src/overlays/ov155/calls/func_ov155_020d37a0.c:
+src/overlays/ov155/calls/Ov155_RegisterEntityClass.c:
     complete
     .text       start:0x020d37a0 end:0x020d37b8
 
-src/overlays/ov155/calls/func_ov155_020d37b8.c:
+src/overlays/ov155/calls/Ov155_CreateNamedEntity.c:
     complete
     .text       start:0x020d37b8 end:0x020d3844
 
-src/overlays/ov155/calls/func_ov155_020d3844.c:
+src/overlays/ov155/calls/Ov155_ConstructActor.c:
     complete
     .text       start:0x020d3844 end:0x020d3ad0
 
-src/overlays/ov155/calls/func_ov155_020d3ad0.c:
+src/overlays/ov155/calls/Ov155_Destroy.c:
     complete
     .text       start:0x020d3ad0 end:0x020d3b10
 
@@ -24,163 +24,163 @@ src/overlays/ov155/calls/func_ov155_020d3b10.c:
     complete
     .text       start:0x020d3b10 end:0x020d3b1c
 
-src/overlays/ov155/calls/func_ov155_020d3b1c.c:
+src/overlays/ov155/calls/Ov155_Model_SetTracks0And3.c:
     complete
     .text       start:0x020d3b1c end:0x020d3b6c
 
-src/overlays/ov155/calls/func_ov155_020d3b6c.c:
+src/overlays/ov155/calls/Ov155_HandleMessage.c:
     complete
     .text       start:0x020d3b6c end:0x020d3c08
 
-src/overlays/ov155/calls/func_ov155_020d3c08.c:
+src/overlays/ov155/calls/Ov155_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020d3c08 end:0x020d3c30
 
-src/overlays/ov155/calls/func_ov155_020d3c30.c:
+src/overlays/ov155/calls/Ov155_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d3c30 end:0x020d3c58
 
-src/overlays/ov155/calls/func_ov155_020d3c58.c:
+src/overlays/ov155/calls/Ov155_RefreshPose.c:
     complete
     .text       start:0x020d3c58 end:0x020d3c9c
 
-src/overlays/ov155/calls/func_ov155_020d3c9c.c:
+src/overlays/ov155/calls/Ov155_Tick.c:
     complete
     .text       start:0x020d3c9c end:0x020d3d94
 
-src/overlays/ov155/calls/func_ov155_020d3d94.c:
+src/overlays/ov155/calls/Ov155_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020d3d94 end:0x020d3dd4
 
-src/overlays/ov155/calls/func_ov155_020d3dd4.c:
+src/overlays/ov155/calls/Ov155_Actor_New.c:
     complete
     .text       start:0x020d3dd4 end:0x020d3e08
 
-src/overlays/ov155/calls/func_ov155_020d3e08.c:
+src/overlays/ov155/calls/Ov155_Construct.c:
     complete
     .text       start:0x020d3e08 end:0x020d3fe8
 
-src/overlays/ov155/calls/func_ov155_020d3fe8.c:
+src/overlays/ov155/calls/Ov155_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020d3fe8 end:0x020d4028
 
-src/overlays/ov155/calls/func_ov155_020d4028.c:
+src/overlays/ov155/calls/Ov155_TickAndSyncModelXform.c:
     complete
     .text       start:0x020d4028 end:0x020d4060
 
-src/overlays/ov155/calls/func_ov155_020d4060.c:
+src/overlays/ov155/calls/Ov155_AiState_OnMessage.c:
     complete
     .text       start:0x020d4060 end:0x020d4114
 
-src/overlays/ov155/calls/func_ov155_020d4114.c:
+src/overlays/ov155/calls/Ov155_BroadcastPositionMessage.c:
     complete
     .text       start:0x020d4114 end:0x020d423c
 
-src/overlays/ov155/calls/func_ov155_020d423c.c:
+src/overlays/ov155/calls/Ov155_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020d423c end:0x020d4288
 
-src/overlays/ov155/calls/func_ov155_020d4288.c:
+src/overlays/ov155/calls/Ov155_stateInitClearSlots.c:
     complete
     .text       start:0x020d4288 end:0x020d4330
 
-src/overlays/ov155/calls/func_ov155_020d4330.c:
+src/overlays/ov155/calls/Ov155_dispatchByStatusByte.c:
     complete
     .text       start:0x020d4330 end:0x020d43a8
 
-src/overlays/ov155/auto/func_ov155_020d43a8.c:
+src/overlays/ov155/auto/Ov155_AiApplyMoveVector.c:
     complete
     .text       start:0x020d43a8 end:0x020d43c0
 
-src/overlays/ov155/calls/func_ov155_020d43c0.c:
+src/overlays/ov155/calls/Ov155_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020d43c0 end:0x020d4470
 
-src/overlays/ov155/calls/func_ov155_020d4470.c:
+src/overlays/ov155/calls/Ov155_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020d4470 end:0x020d44a8
 
-src/overlays/ov155/calls/func_ov155_020d44a8.c:
+src/overlays/ov155/calls/Ov155_SeedDashVector.c:
     complete
     .text       start:0x020d44a8 end:0x020d4578
 
-src/overlays/ov155/calls/func_ov155_020d4578.c:
+src/overlays/ov155/calls/Ov155_HomingFlightTick.c:
     complete
     .text       start:0x020d4578 end:0x020d4b70
 
-src/overlays/ov155/calls/func_ov155_020d4b70.c:
+src/overlays/ov155/calls/Ov155_CreateRegistryEntryAndLink_2.c:
     complete
     .text       start:0x020d4b70 end:0x020d4bbc
 
-src/overlays/ov155/calls/func_ov155_020d4bbc.c:
+src/overlays/ov155/calls/Ov155_OnHit.c:
     complete
     .text       start:0x020d4bbc end:0x020d4cf0
 
-src/overlays/ov155/auto/func_ov155_020d4cf0.c:
+src/overlays/ov155/auto/Ov155_TryBeginSubState4.c:
     complete
     .text       start:0x020d4cf0 end:0x020d4d20
 
-src/overlays/ov155/calls/func_ov155_020d4d20.c:
+src/overlays/ov155/calls/Ov155_InitNode.c:
     complete
     .text       start:0x020d4d20 end:0x020d4df0
 
-src/overlays/ov155/calls/func_ov155_020d4df0.c:
+src/overlays/ov155/calls/Ov155_DispatchSubStateByte.c:
     complete
     .text       start:0x020d4df0 end:0x020d4f50
 
-src/overlays/ov155/calls/func_ov155_020d4f50.c:
+src/overlays/ov155/calls/Ov155_UpdateFacing.c:
     complete
     .text       start:0x020d4f50 end:0x020d4fd4
 
-src/overlays/ov155/calls/func_ov155_020d4fd4.c:
+src/overlays/ov155/calls/Ov155_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020d4fd4 end:0x020d503c
 
-src/overlays/ov155/calls/func_ov155_020d503c.c:
+src/overlays/ov155/calls/Ov155_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d503c end:0x020d5078
 
-src/overlays/ov155/calls/func_ov155_020d5078.c:
+src/overlays/ov155/calls/Ov155_ConfigHw60Action48ThenAdvance.c:
     complete
     .text       start:0x020d5078 end:0x020d5144
 
-src/overlays/ov155/calls/func_ov155_020d5144.c:
+src/overlays/ov155/calls/Ov155_AiWaitThenTarget.c:
     complete
     .text       start:0x020d5144 end:0x020d5210
 
-src/overlays/ov155/calls/func_ov155_020d5210.c:
+src/overlays/ov155/calls/Ov155_AiStep_QueueAction2OnFlag0cClear.c:
     complete
     .text       start:0x020d5210 end:0x020d5244
 
-src/overlays/ov155/calls/func_ov155_020d5244.c:
+src/overlays/ov155/calls/Ov155_AiEnterStalk.c:
     complete
     .text       start:0x020d5244 end:0x020d529c
 
-src/overlays/ov155/calls/func_ov155_020d529c.c:
+src/overlays/ov155/calls/Ov155_StalkTick.c:
     complete
     .text       start:0x020d529c end:0x020d5488
 
-src/overlays/ov155/calls/func_ov155_020d5488.c:
+src/overlays/ov155/calls/Ov155_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d5488 end:0x020d54bc
 
-src/overlays/ov155/calls/func_ov155_020d54bc.c:
+src/overlays/ov155/calls/Ov155_stDiv5Store.c:
     complete
     .text       start:0x020d54bc end:0x020d5518
 
-src/overlays/ov155/calls/func_ov155_020d5518.c:
+src/overlays/ov155/calls/Ov155_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020d5518 end:0x020d55e0
 
-src/overlays/ov155/calls/func_ov155_020d55e0.c:
+src/overlays/ov155/calls/Ov155_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020d55e0 end:0x020d5694
 
-src/overlays/ov155/calls/func_ov155_020d5694.c:
+src/overlays/ov155/calls/Ov155_stateAnimFlagCallback.c:
     complete
     .text       start:0x020d5694 end:0x020d5744
 
-src/overlays/ov155/calls/func_ov155_020d5744.c:
+src/overlays/ov155/calls/Ov155_AimTick.c:
     complete
     .text       start:0x020d5744 end:0x020d588c
 

@@ -3,7 +3,7 @@
     python tools/regmap_dwarf.py <file.c> [more.c ...]
 
 Compiles each file with the project flags plus -g (measured on
-func_ov022_0208ded4: the .text is byte-identical with and without -g), then
+Ov022_StepSlotBeats: the .text is byte-identical with and without -g), then
 reads DW_AT_location of every DW_TAG_formal_parameter and DW_TAG_variable.
 A value that lives in a callee-saved register prints as r4..fp; one that the
 compiler kept in a scratch register prints r0..r3; aggregates print "stack".

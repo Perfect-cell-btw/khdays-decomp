@@ -7,7 +7,7 @@
  * slot entries, 32 state blocks of 0x34 bytes each (four-byte header, then the
  * payload area) and, immediately after the last state block, the running u16
  * sequence counter that supplies every handle. Same object as
- * func_02031130.c/func_02031440.c/func_020314a4.c.
+ * MsgQueue_ResendForPeer.c/MsgQueue_Contains.c/MsgQueue_MarkSlotReceived.c.
  *
  * Returns 0xffff when no slot is free. Otherwise the highest-order free slot is
  * taken, its type and payload size recorded, nSize bytes of pCmd copied into its
@@ -16,7 +16,7 @@
  *
  * The clz leading-zero count has no mwcc 3.0 intrinsic (every spelling lowers to
  * an external call), so it is the project's one-line inline-asm helper, exactly
- * as in the sibling func_02031440.c.
+ * as in the sibling MsgQueue_Contains.c.
  */
 
 static inline unsigned int Clz(unsigned int x) { asm { clz x, x } return x; }

@@ -6,21 +6,21 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov022_020915bc(void);
-extern void func_ov022_020916e0(void);
-extern void func_ov078_020b93c4(void);
-extern void func_ov078_020b93dc(void);
+extern void Ov022_AdvanceTimerAndLatchDone(void);
+extern void Ov022_NullStep(void);
+extern void Ov078_SetMode4Delay3000(void);
+extern void Ov078_TickThrowArcWithLimit(void);
 
 Ov_Fn data_ov078_020ba448[5] = {
 
     0,
 
-    func_ov022_020915bc,
+    Ov022_AdvanceTimerAndLatchDone,
 
-    func_ov078_020b93c4,
+    Ov078_SetMode4Delay3000,
 
-    func_ov022_020916e0,
+    Ov022_NullStep,
 
-    func_ov078_020b93dc,
+    Ov078_TickThrowArcWithLimit,
 
 };

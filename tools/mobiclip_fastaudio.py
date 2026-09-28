@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Semantic model of the MobiClip FastAudio decoder (ov024 0x02087318).
 
-Audio coding 2 of the MobiClip player (func_ov024_02085c8c): every 0x28-byte
+Audio coding 2 of the MobiClip player (Ov024_MobiClip_StepAudio): every 0x28-byte
 block of one channel becomes 256 signed 16-bit samples.
 
 Block layout, as ten little-endian 32-bit words w0..w9 (each read as two u16s):

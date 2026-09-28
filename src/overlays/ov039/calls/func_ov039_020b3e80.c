@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_ov039_020b4404. */
-extern void *func_ov039_020b4404();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to Ov039_BindRig. */
+extern void *Ov039_BindRig();
 
 void *func_ov039_020b3e80() {
-    return func_ov039_020b4404();
+    return Ov039_BindRig();
 }

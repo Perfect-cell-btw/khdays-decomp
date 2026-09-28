@@ -1,4 +1,4 @@
-extern int func_02030694(void);
+extern int Session_IsReady(void);
 extern int func_02031384(int a, void *b, int c);
 
 struct marshal_02091d80 {
@@ -13,7 +13,7 @@ struct marshal_02091d80 {
 void func_ov022_02091d80(unsigned int *param_1, int param_2, int param_3, int param_4) {
     int iVar2 = param_1[2];
     struct marshal_02091d80 m;
-    if (func_02030694() != 0) {
+    if (Session_IsReady() != 0) {
         m.f0 = 1;
         m.f2 = *(unsigned char *)(iVar2 + 9);
         m.g0 = *param_1;

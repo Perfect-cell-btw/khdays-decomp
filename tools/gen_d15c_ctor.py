@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera los .c de la familia de constructores func_0203d15c a partir del desensamblado.
+"""Genera los .c de la familia de constructores CallocInstance a partir del desensamblado.
 
     python tools/gen_d15c_ctor.py            # informe: que casa y que no
     python tools/gen_d15c_ctor.py --write    # escribe los que casan en calls/
@@ -7,7 +7,7 @@
 La forma (35 instrucciones, ver tools/nearfam.py) es identica en ~70 overlays y solo cambian
 CINCO cosas, todas legibles del desensamblado + los relocs:
 
-  - el tamaño del objeto           (`mov r0, #SIZE` antes del `bl func_0203d15c`)
+  - el tamaño del objeto           (`mov r0, #SIZE` antes del `bl CallocInstance`)
   - un byte de tipo                (`mov r2, #N`, que ademas es el 3er argumento de OS_SPrintf)
   - los tres offsets del objeto    (strb #A, str #B tras la llamada al hash, str #C)
   - los dos simbolos               (la cadena de formato y el callback), que vienen de los relocs
@@ -30,19 +30,19 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IDX = json.load(open(os.path.join(ROOT, "build", "func_index.json")))
 MD = Cs(CS_ARCH_ARM, CS_MODE_ARM)
 
-TEMPLATE = """extern int func_0203d15c(int a);
+TEMPLATE = """extern int CallocInstance(int a);
 extern void OS_SPrintf(char *buf, const char *fmt, int a);
-extern int func_ov107_020c9c24(char *buf);
+extern int Ov107_OpenCachedResourceByName(char *buf);
 extern void func_ov107_020c6624(int a, int b);
 extern const char {fmt}[];
 extern void {cb}(int);
 
 int {name}(int param_1) {{
     char buf[{buflen:#x}] = {{0}};
-    int obj = func_0203d15c({size:#x});
+    int obj = CallocInstance({size:#x});
     *(signed char *)(obj + {off_type:#x}) = {typeval};
     OS_SPrintf(buf, {fmt}, {typeval});
-    *(int *)(obj + {off_hash:#x}) = func_ov107_020c9c24(buf);
+    *(int *)(obj + {off_hash:#x}) = Ov107_OpenCachedResourceByName(buf);
     *(int *)(obj + {off_cb:#x}) = (int){cb};
     func_ov107_020c6624(obj, param_1);
     return obj;
@@ -96,7 +96,7 @@ def parse(name):
 def main():
     write = "--write" in sys.argv
     tpl_shape = None
-    ins0 = list(MD.disasm(bytes.fromhex(IDX["func_ov114_020cbf38"]["hex"]), 0x020cbf38))
+    ins0 = list(MD.disasm(bytes.fromhex(IDX["Ov114_CreateNamedEntity"]["hex"]), 0x020cbf38))
     tpl_shape = " ".join(i.mnemonic for i in ins0)
 
     todo = []

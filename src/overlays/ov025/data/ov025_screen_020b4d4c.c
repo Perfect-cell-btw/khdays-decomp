@@ -20,30 +20,30 @@ typedef struct Ov008ScreenHooks {
     Ov008HookFn apfnHook[7];  /* 0x28 .. 0x40 */
 } Ov008ScreenHooks;
 
-extern void func_ov025_02097eec(void);
-extern void func_ov025_02098214(void);
-extern void func_ov025_020983c0(void);
-extern void func_ov025_020984ac(void);
-extern void func_ov025_020985b8(void);
-extern void func_ov025_020986c0(void);
-extern void func_ov025_020987c0(void);
-extern void func_ov025_020988c0(void);
-extern void func_ov025_02098ad4(void);
-extern void func_ov025_02098dc4(void);
-extern void func_ov025_02098e30(void);
-extern void func_ov025_02098e9c(void);
-extern void func_ov025_02098f18(void);
-extern void func_ov025_02098f60(void);
+extern void Ov025_GridMenuInitStep(void);
+extern void Ov025_DestroyGridMenu(void);
+extern void Ov025_TickGridMenu(void);
+extern void Ov025_MenuKeyUp(void);
+extern void Ov025_MenuKeyDown(void);
+extern void Ov025_MenuKeyLeft(void);
+extern void Ov025_MenuKeyRight(void);
+extern void Ov025_GridMenuConfirm(void);
+extern void Ov025_GridMenuBack(void);
+extern void Ov025_GridConfirmOnPenUp(void);
+extern void Ov025_GridConfirmOnPenUp_2(void);
+extern void Ov025_TickIdleTouchSample(void);
+extern void Ov025_SettleGridIfIdle(void);
+extern void Ov025_MenuKeyCancel(void);
 
 Ov008ScreenHooks data_ov025_020b4d4c = {
-    func_ov025_02097eec,  /* pfnOpen */
-    func_ov025_02098214,  /* pfnStep */
-    func_ov025_020983c0,  /* pfnClose */
+    Ov025_GridMenuInitStep,  /* pfnOpen */
+    Ov025_DestroyGridMenu,  /* pfnStep */
+    Ov025_TickGridMenu,  /* pfnClose */
     0,  /* nFlags */
     8352,  /* nStateSize */
-    func_ov025_020984ac,  /* pfnSelect */
-    func_ov025_020985b8,  /* pfnCancel */
-    { func_ov025_020986c0, func_ov025_020987c0 },  /* apfnAux */
-    func_ov025_020988c0,  /* pfnDone */
-    { func_ov025_02098ad4, 0, func_ov025_02098e9c, func_ov025_02098dc4, func_ov025_02098e30, func_ov025_02098f18, func_ov025_02098f60 },  /* apfnHook */
+    Ov025_MenuKeyUp,  /* pfnSelect */
+    Ov025_MenuKeyDown,  /* pfnCancel */
+    { Ov025_MenuKeyLeft, Ov025_MenuKeyRight },  /* apfnAux */
+    Ov025_GridMenuConfirm,  /* pfnDone */
+    { Ov025_GridMenuBack, 0, Ov025_TickIdleTouchSample, Ov025_GridConfirmOnPenUp, Ov025_GridConfirmOnPenUp_2, Ov025_SettleGridIfIdle, Ov025_MenuKeyCancel },  /* apfnHook */
 };

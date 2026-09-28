@@ -16,7 +16,7 @@ const int data_ov126_020d3fe8[9] = {
 
 /* read by Enter the ov125 enemy's recover state: seed the +0x3c counter with twice the owner's +0x2c (020d197c): unsigned short data_ov126_020d400c[];
  *   Recover tick of the ov125 enemy: the +0x2c timer accumulates the owner's +0x2c rate; once  (020d1a44): unsigned short data_ov126_020d400c[];
- *   func_ov126_020d1de8 (not yet decompiled) */
+ *   Ov126_LaunchTick (not yet decompiled) */
 const u8 data_ov126_020d400c[16] = {
     0, 0, 5, 2, 0, 0, 5, 5, 0, 0, 5, 1, 0, 0, 5, 3,
 };

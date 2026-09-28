@@ -17,14 +17,14 @@ typedef struct GameClassDescriptor {
     int *pArena;              /* 0x10 */
 } GameClassDescriptor;
 
-extern void func_ov039_020b3234(void);
-extern void func_ov039_020b325c(void);
+extern void Ov039_stateCtorReturnHandler(void);
+extern void Ov039_stateDtorCleanup(void);
 
 GameClassDescriptor data_ov039_020b5554 = {
     10,  /* nClassId */
     6,  /* nGroupId */
-    func_ov039_020b3234,  /* pfnCtor */
-    func_ov039_020b325c,  /* pfnMethod */
+    Ov039_stateCtorReturnHandler,  /* pfnCtor */
+    Ov039_stateDtorCleanup,  /* pfnMethod */
     12304,  /* nAuxSize */
     0,  /* pArena */
 };

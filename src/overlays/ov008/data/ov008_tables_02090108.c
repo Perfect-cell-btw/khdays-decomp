@@ -5,7 +5,7 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_02090108: func_ov008_02056ec0
+ *   data_ov008_02090108: Ov008_Menu_ApplyFlagPresets
  */
 
 typedef unsigned char u8;

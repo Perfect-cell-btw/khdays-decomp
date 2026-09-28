@@ -1,0 +1,18 @@
+extern void Ov022_SetActorInputEnabled(int a);
+extern unsigned long long OS_GetTick(void);
+extern void Ov022_StateReturnToHub(void);
+extern int data_0204be04;
+extern int data_ov022_020b2e60;
+
+int Ov022_ExpireTimerThenNextStep(void) {
+    int g = data_ov022_020b2e60;
+    int r = 0;
+    if (*(unsigned char *)&data_0204be04 != 0) return r;
+    Ov022_SetActorInputEnabled(1);
+    if (*(unsigned long long *)(g + 0x24) + 0x17f898 <= OS_GetTick()) {
+        *(int *)(g + 0x1c) = 0;
+        r = (int)Ov022_StateReturnToHub;
+        *(int *)(g + 0x20) = 0;
+    }
+    return r;
+}

@@ -6,22 +6,18 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov014_02080664(void);
-extern void func_ov014_02080718(void);
-extern void func_ov014_020807c4(void);
-extern void func_ov014_02080828(void);
+extern void Ov014_VmCmd0664(void);
+extern void Ov014_MarshalFxAndDispatch4(void);
+extern void Ov014_VmCmd07c4(void);
+extern void Ov014_MarshalFxAndDispatch(void);
 
 Ov_Fn data_ov014_020808e0[16] = {
 
-    func_ov014_02080664,
+    Ov014_VmCmd0664,
 
     0,
 
-    func_ov014_02080718,
-
-    0,
-
-    0,
+    Ov014_MarshalFxAndDispatch4,
 
     0,
 
@@ -29,11 +25,15 @@ Ov_Fn data_ov014_020808e0[16] = {
 
     0,
 
-    func_ov014_020807c4,
+    0,
 
     0,
 
-    func_ov014_02080828,
+    Ov014_VmCmd07c4,
+
+    0,
+
+    Ov014_MarshalFxAndDispatch,
 
     0,
 

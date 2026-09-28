@@ -1,15 +1,15 @@
 extern unsigned int *NNSi_FndGetCurrentRootHeap(void);
-extern short func_02030788(void);
-extern void func_ov022_0208981c(void);
+extern short Session_GetLocalPlayerIndex(void);
+extern void Ov022_SendActorStatePacket(void);
 extern void func_ov022_02089e20(void);
-extern void func_ov022_02089a8c(void);
+extern void Ov022_SendControlPacket(void);
 int func_ov022_02089704(void) {
     unsigned int *p = NNSi_FndGetCurrentRootHeap();
     if (*p & 1) return 0;
-    if (func_02030788() == 0) {
-        func_ov022_0208981c();
+    if (Session_GetLocalPlayerIndex() == 0) {
+        Ov022_SendActorStatePacket();
         func_ov022_02089e20();
     }
-    func_ov022_02089a8c();
+    Ov022_SendControlPacket();
     return 0;
 }

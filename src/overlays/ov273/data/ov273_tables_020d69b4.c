@@ -99,7 +99,7 @@ const int data_ov273_020d6b7c[2] = {
     67, 59,
 };
 
-/* read by func_ov273_020d5ba0 (not yet decompiled) */
+/* read by Ov273_LeapTick (not yet decompiled) */
 const u16 data_ov273_020d6b84[7] = {
     0, 261, 0, 0, 0, 0, 0,
 };
@@ -109,7 +109,7 @@ const u16 data_ov273_020d6b92[7] = {
     0, 5, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov273_020d5ba0 (not yet decompiled) */
+/* read by Ov273_LeapTick (not yet decompiled) */
 const u8 data_ov273_020d6ba0[16] = {
     0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };

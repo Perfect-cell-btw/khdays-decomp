@@ -1,6 +1,6 @@
-extern void func_0202a7dc(int arg0);
+extern void ReleaseField74AndCleanup(int arg0);
 extern void func_02023ad0(int arg0);
-extern void func_ov022_02092e2c(unsigned char *arg0);
+extern void Ov022_ResetBlock94c(unsigned char *arg0);
 
 void func_ov022_02092e4c(unsigned char *arg0, int arg1, int arg2, int arg3) {
     int f = *arg0;
@@ -9,7 +9,7 @@ void func_ov022_02092e4c(unsigned char *arg0, int arg1, int arg2, int arg3) {
             int i = 0;
             int p = (int)arg0 + 4;
             do {
-                func_0202a7dc(p);
+                ReleaseField74AndCleanup(p);
                 i = i + 1;
                 p = p + 0x108;
             } while (i < 9);
@@ -17,6 +17,6 @@ void func_ov022_02092e4c(unsigned char *arg0, int arg1, int arg2, int arg3) {
                 func_02023ad0(*(int *)((char *)arg0 + 0x94c));
             }
         }
-        func_ov022_02092e2c(arg0);
+        Ov022_ResetBlock94c(arg0);
     }
 }

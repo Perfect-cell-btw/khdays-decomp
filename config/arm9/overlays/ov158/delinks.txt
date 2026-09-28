@@ -4,259 +4,259 @@
     .data       start:0x020cf580 end:0x020cf5a0 kind:data align:32
     .bss        start:0x020cf5a0 end:0x020cf5a0 kind:bss align:32
 
-src/overlays/ov158/calls/func_ov158_020cbf20.c:
+src/overlays/ov158/calls/Ov158_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov158/calls/func_ov158_020cbf38.c:
+src/overlays/ov158/calls/Ov158_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov158/calls/func_ov158_020cbfc4.c:
+src/overlays/ov158/calls/Ov158_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc244
 
-src/overlays/ov158/calls/func_ov158_020cc244.c:
+src/overlays/ov158/calls/Ov158_Destroy.c:
     complete
     .text       start:0x020cc244 end:0x020cc28c
 
-src/overlays/ov158/calls/func_ov158_020cc28c.c:
+src/overlays/ov158/calls/Ov158_RebindClip.c:
     complete
     .text       start:0x020cc28c end:0x020cc2d8
 
-src/overlays/ov158/calls/func_ov158_020cc2d8.c:
+src/overlays/ov158/calls/Ov158_RetuneRigRearmEmitter.c:
     complete
     .text       start:0x020cc2d8 end:0x020cc394
 
-src/overlays/ov158/calls/func_ov158_020cc394.c:
+src/overlays/ov158/calls/Ov158_HandleSpawnMessage.c:
     complete
     .text       start:0x020cc394 end:0x020cc548
 
-src/overlays/ov158/calls/func_ov158_020cc548.c:
+src/overlays/ov158/calls/Ov158_ForwardEventToChild.c:
     complete
     .text       start:0x020cc548 end:0x020cc570
 
-src/overlays/ov158/calls/func_ov158_020cc570.c:
+src/overlays/ov158/calls/Ov158_NotifyPartThenBase.c:
     complete
     .text       start:0x020cc570 end:0x020cc598
 
-src/overlays/ov158/calls/func_ov158_020cc598.c:
+src/overlays/ov158/calls/Ov158_TickHandler.c:
     complete
     .text       start:0x020cc598 end:0x020cc734
 
-src/overlays/ov158/calls/func_ov158_020cc734.c:
+src/overlays/ov158/calls/Ov158_stCreateRegistryEntry.c:
     complete
     .text       start:0x020cc734 end:0x020cc790
 
-src/overlays/ov158/calls/func_ov158_020cc790.c:
+src/overlays/ov158/calls/Ov158_HandleHit.c:
     complete
     .text       start:0x020cc790 end:0x020cc9a4
 
-src/overlays/ov158/auto/func_ov158_020cc9a4.c:
+src/overlays/ov158/auto/Ov158_RequestState8.c:
     complete
     .text       start:0x020cc9a4 end:0x020cc9e8
 
-src/overlays/ov158/calls/func_ov158_020cc9e8.c:
+src/overlays/ov158/calls/Ov158_PickApproachDir.c:
     complete
     .text       start:0x020cc9e8 end:0x020ccb84
 
-src/overlays/ov158/calls/func_ov158_020ccb84.c:
+src/overlays/ov158/calls/Ov158_InitChase.c:
     complete
     .text       start:0x020ccb84 end:0x020ccc68
 
-src/overlays/ov158/calls/func_ov158_020ccc68.c:
+src/overlays/ov158/calls/Ov158_AiDispatchAction.c:
     complete
     .text       start:0x020ccc68 end:0x020ccdf0
 
-src/overlays/ov158/calls/func_ov158_020ccdf0.c:
+src/overlays/ov158/calls/Ov158_AiApplyHeadingAndNormal.c:
     complete
     .text       start:0x020ccdf0 end:0x020ccea4
 
-src/overlays/ov158/calls/func_ov158_020ccea4.c:
+src/overlays/ov158/calls/Ov158_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ccea4 end:0x020ccf0c
 
-src/overlays/ov158/calls/func_ov158_020ccf0c.c:
+src/overlays/ov158/calls/Ov158_PickRandomOffsetThenAdvanceSlot.c:
     complete
     .text       start:0x020ccf0c end:0x020ccf74
 
-src/overlays/ov158/calls/func_ov158_020ccf74.c:
+src/overlays/ov158/calls/Ov158_SpawnEffect48ReconfigureFlags.c:
     complete
     .text       start:0x020ccf74 end:0x020cd03c
 
-src/overlays/ov158/calls/func_ov158_020cd03c.c:
+src/overlays/ov158/calls/Ov158_Reaction_ChargeThenAim.c:
     complete
     .text       start:0x020cd03c end:0x020cd104
 
-src/overlays/ov158/calls/func_ov158_020cd104.c:
+src/overlays/ov158/calls/Ov158_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cd104 end:0x020cd138
 
-src/overlays/ov158/calls/func_ov158_020cd138.c:
+src/overlays/ov158/calls/Ov158_AiEnterReach.c:
     complete
     .text       start:0x020cd138 end:0x020cd174
 
-src/overlays/ov158/calls/func_ov158_020cd174.c:
+src/overlays/ov158/calls/Ov158_AiMeasureTarget.c:
     complete
     .text       start:0x020cd174 end:0x020cd200
 
-src/overlays/ov158/calls/func_ov158_020cd200.c:
+src/overlays/ov158/calls/Ov158_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020cd200 end:0x020cd2d0
 
-src/overlays/ov158/calls/func_ov158_020cd2d0.c:
+src/overlays/ov158/calls/Ov158_StartLeapMotion.c:
     complete
     .text       start:0x020cd2d0 end:0x020cd40c
 
-src/overlays/ov158/calls/func_ov158_020cd40c.c:
+src/overlays/ov158/calls/Ov158_StepLeapMotion.c:
     complete
     .text       start:0x020cd40c end:0x020cd450
 
-src/overlays/ov158/calls/func_ov158_020cd450.c:
+src/overlays/ov158/calls/Ov158_AiJumpRiseTick.c:
     complete
     .text       start:0x020cd450 end:0x020cd50c
 
-src/overlays/ov158/calls/func_ov158_020cd50c.c:
+src/overlays/ov158/calls/Ov158_AiJumpFallTick.c:
     complete
     .text       start:0x020cd50c end:0x020cd59c
 
-src/overlays/ov158/calls/func_ov158_020cd59c.c:
+src/overlays/ov158/calls/Ov158_AiLandPickAction.c:
     complete
     .text       start:0x020cd59c end:0x020cd608
 
-src/overlays/ov158/calls/func_ov158_020cd608.c:
+src/overlays/ov158/calls/Ov158_AiEnterTurnToTarget.c:
     complete
     .text       start:0x020cd608 end:0x020cd678
 
-src/overlays/ov158/calls/func_ov158_020cd678.c:
+src/overlays/ov158/calls/Ov158_AiDecelUntilAnimEnd.c:
     complete
     .text       start:0x020cd678 end:0x020cd6f4
 
-src/overlays/ov158/calls/func_ov158_020cd6f4.c:
+src/overlays/ov158/calls/Ov158_AiEnterApproach.c:
     complete
     .text       start:0x020cd6f4 end:0x020cd7cc
 
-src/overlays/ov158/calls/func_ov158_020cd7cc.c:
+src/overlays/ov158/calls/Ov158_ArmMovePhase2.c:
     complete
     .text       start:0x020cd7cc end:0x020cd898
 
-src/overlays/ov158/calls/func_ov158_020cd898.c:
+src/overlays/ov158/calls/Ov158_AttackWaitTick.c:
     complete
     .text       start:0x020cd898 end:0x020cda0c
 
-src/overlays/ov158/calls/func_ov158_020cda0c.c:
+src/overlays/ov158/calls/Ov158_Reaction_AimAtTargetAndDispatch.c:
     complete
     .text       start:0x020cda0c end:0x020cdad0
 
-src/overlays/ov158/calls/func_ov158_020cdad0.c:
+src/overlays/ov158/calls/Ov158_CommitMove.c:
     complete
     .text       start:0x020cdad0 end:0x020cdb88
 
-src/overlays/ov158/calls/func_ov158_020cdb88.c:
+src/overlays/ov158/calls/Ov158_AimedAttackWaitTick.c:
     complete
     .text       start:0x020cdb88 end:0x020cdd5c
 
-src/overlays/ov158/calls/func_ov158_020cdd5c.c:
+src/overlays/ov158/calls/Ov158_SpawnEffect4aReconfigureFlagsB.c:
     complete
     .text       start:0x020cdd5c end:0x020cde24
 
-src/overlays/ov158/calls/func_ov158_020cde24.c:
+src/overlays/ov158/calls/Ov158_SpawnEffectReconfigureFlags.c:
     complete
     .text       start:0x020cde24 end:0x020cded8
 
-src/overlays/ov158/calls/func_ov158_020cded8.c:
+src/overlays/ov158/calls/Ov158_SpawnAndInitRegistryEntry.c:
     complete
     .text       start:0x020cded8 end:0x020cdfb0
 
-src/overlays/ov158/calls/func_ov158_020cdfb0.c:
+src/overlays/ov158/calls/Ov158_ProbeGround.c:
     complete
     .text       start:0x020cdfb0 end:0x020ce1ac
 
-src/overlays/ov158/calls/func_ov158_020ce1ac.c:
+src/overlays/ov158/calls/Ov158_Reaction_ResetTwoSubObjects.c:
     complete
     .text       start:0x020ce1ac end:0x020ce250
 
-src/overlays/ov158/auto/func_ov158_020ce250.c:
+src/overlays/ov158/auto/Ov158_TaskTeardown_FlagParts.c:
     complete
     .text       start:0x020ce250 end:0x020ce288
 
-src/overlays/ov158/calls/func_ov158_020ce288.c:
+src/overlays/ov158/calls/Ov158_AiDescentProbe.c:
     complete
     .text       start:0x020ce288 end:0x020ce3e0
 
-src/overlays/ov158/calls/func_ov158_020ce3e0.c:
+src/overlays/ov158/calls/Ov158_DescentTick.c:
     complete
     .text       start:0x020ce3e0 end:0x020ce6dc
 
-src/overlays/ov158/calls/func_ov158_020ce6dc.c:
+src/overlays/ov158/calls/Ov158_EnterGroundDrop.c:
     complete
     .text       start:0x020ce6dc end:0x020ce7ec
 
-src/overlays/ov158/calls/func_ov158_020ce7ec.c:
+src/overlays/ov158/calls/Ov158_GroundDropTick.c:
     complete
     .text       start:0x020ce7ec end:0x020ce960
 
-src/overlays/ov158/calls/func_ov158_020ce960.c:
+src/overlays/ov158/calls/Ov158_RelayoutAndStoreVec.c:
     complete
     .text       start:0x020ce960 end:0x020ce9a0
 
-src/overlays/ov158/calls/func_ov158_020ce9a0.c:
+src/overlays/ov158/calls/Ov158_Actor_New.c:
     complete
     .text       start:0x020ce9a0 end:0x020ce9d4
 
-src/overlays/ov158/calls/func_ov158_020ce9d4.c:
+src/overlays/ov158/calls/Ov158_ConstructItem.c:
     complete
     .text       start:0x020ce9d4 end:0x020ceb74
 
-src/overlays/ov158/calls/func_ov158_020ceb74.c:
+src/overlays/ov158/calls/Ov158_SubObject_Destroy.c:
     complete
     .text       start:0x020ceb74 end:0x020ceba4
 
-src/overlays/ov158/calls/func_ov158_020ceba4.c:
+src/overlays/ov158/calls/Ov158_TickAndSyncModelXform.c:
     complete
     .text       start:0x020ceba4 end:0x020cebdc
 
-src/overlays/ov158/calls/func_ov158_020cebdc.c:
+src/overlays/ov158/calls/Ov158_HandleMsgTag5BuildChild.c:
     complete
     .text       start:0x020cebdc end:0x020cec50
 
-src/overlays/ov158/calls/func_ov158_020cec50.c:
+src/overlays/ov158/calls/Ov158_HandleBounce.c:
     complete
     .text       start:0x020cec50 end:0x020cecac
 
-src/overlays/ov158/calls/func_ov158_020cecac.c:
+src/overlays/ov158/calls/Ov158_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cecac end:0x020cecf8
 
-src/overlays/ov158/calls/func_ov158_020cecf8.c:
+src/overlays/ov158/calls/Ov158_stateInitClearSlots.c:
     complete
     .text       start:0x020cecf8 end:0x020ceda0
 
-src/overlays/ov158/calls/func_ov158_020ceda0.c:
+src/overlays/ov158/calls/Ov158_dispatchByStatusByte.c:
     complete
     .text       start:0x020ceda0 end:0x020cee18
 
-src/overlays/ov158/auto/func_ov158_020cee18.c:
+src/overlays/ov158/auto/Ov158_AiApplyMoveVector.c:
     complete
     .text       start:0x020cee18 end:0x020cee30
 
-src/overlays/ov158/calls/func_ov158_020cee30.c:
+src/overlays/ov158/calls/Ov158_ConfigHw60CopyVec3ConstThenAdvance.c:
     complete
     .text       start:0x020cee30 end:0x020ceee0
 
-src/overlays/ov158/calls/func_ov158_020ceee0.c:
+src/overlays/ov158/calls/Ov158_AiStep_QueueAction1IfActive.c:
     complete
     .text       start:0x020ceee0 end:0x020cef18
 
-src/overlays/ov158/auto/func_ov158_020cef18.c:
+src/overlays/ov158/auto/Ov158_ArmDashAndDispatch.c:
     complete
     .text       start:0x020cef18 end:0x020cefec
 
-src/overlays/ov158/calls/func_ov158_020cefec.c:
+src/overlays/ov158/calls/Ov158_SweepStrikeTick.c:
     complete
     .text       start:0x020cefec end:0x020cf418
 
-src/overlays/ov158/calls/func_ov158_020cf418.c:
+src/overlays/ov158/calls/Ov158_SendPositionMessage.c:
     complete
     .text       start:0x020cf418 end:0x020cf520
 

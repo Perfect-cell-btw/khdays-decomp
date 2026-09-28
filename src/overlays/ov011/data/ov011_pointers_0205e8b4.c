@@ -6,39 +6,39 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov011_0205c370(void);
-extern void func_ov011_0205c3a0(void);
-extern void func_ov011_0205c5e0(void);
-extern void func_ov011_0205c5e4(void);
+extern void Ov011_RunSetupThenInvokeIfState3(void);
+extern void Ov011_UpdateTitleFrame(void);
+extern void Ov011_TitleStateNoOp(void);
+extern void Ov011_TickTitleFadeOut(void);
 
 Ov_Fn data_ov011_0205e8b4[6] = {
 
-    func_ov011_0205c370,
+    Ov011_RunSetupThenInvokeIfState3,
 
-    func_ov011_0205c3a0,
+    Ov011_UpdateTitleFrame,
 
-    func_ov011_0205c370,
+    Ov011_RunSetupThenInvokeIfState3,
 
-    func_ov011_0205c370,
+    Ov011_RunSetupThenInvokeIfState3,
 
-    func_ov011_0205c5e4,
+    Ov011_TickTitleFadeOut,
 
-    func_ov011_0205c5e0,
+    Ov011_TitleStateNoOp,
 
 };
 
 Ov_Fn data_ov011_0205e8cc[6] = {
 
-    func_ov011_0205c370,
+    Ov011_RunSetupThenInvokeIfState3,
 
-    func_ov011_0205c3a0,
+    Ov011_UpdateTitleFrame,
 
-    func_ov011_0205c370,
+    Ov011_RunSetupThenInvokeIfState3,
 
-    func_ov011_0205c370,
+    Ov011_RunSetupThenInvokeIfState3,
 
-    func_ov011_0205c5e4,
+    Ov011_TickTitleFadeOut,
 
-    func_ov011_0205c5e0,
+    Ov011_TitleStateNoOp,
 
 };

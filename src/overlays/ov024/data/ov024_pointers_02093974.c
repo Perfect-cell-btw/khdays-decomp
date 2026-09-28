@@ -6,43 +6,43 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov024_02083368(void);
-extern void func_ov024_020833b8(void);
-extern void func_ov024_020833dc(void);
-extern void func_ov024_02083414(void);
-extern void func_ov024_0208343c(void);
-extern void func_ov024_02083468(void);
-extern void func_ov024_02083474(void);
-extern void func_ov024_02083488(void);
-extern void func_ov024_0208349c(void);
+extern void Ov024_MobiClip_ResolveStreamDescs(void);
+extern void Ov024_MobiClip_OpenDescPair(void);
+extern void Ov024_IsStreamFinished(void);
+extern void Ov024_MayWaitFrames(void);
+extern void Ov024_MobiClip_StopPlayerStream(void);
+extern void Ov024_thumbStep(void);
+extern void Ov024_thumbStep_2(void);
+extern void Ov024_CmdPrepareStream(void);
+extern void Ov024_CmdSetStreamByte(void);
 
 Ov_Fn data_ov024_02093974[14] = {
 
-    func_ov024_020833b8,
+    Ov024_MobiClip_OpenDescPair,
 
     0,
 
-    func_ov024_0208343c,
+    Ov024_MobiClip_StopPlayerStream,
 
     0,
 
-    func_ov024_02083368,
+    Ov024_MobiClip_ResolveStreamDescs,
 
     0,
 
-    func_ov024_020833dc,
+    Ov024_IsStreamFinished,
 
-    func_ov024_02083414,
+    Ov024_MayWaitFrames,
 
-    func_ov024_02083468,
+    Ov024_thumbStep,
 
-    func_ov024_02083474,
+    Ov024_thumbStep_2,
 
-    func_ov024_02083488,
+    Ov024_CmdPrepareStream,
 
     0,
 
-    func_ov024_0208349c,
+    Ov024_CmdSetStreamByte,
 
     0,
 

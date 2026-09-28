@@ -1,0 +1,25 @@
+/* c634 handler: run the guard Ov228_MeasureTargetGap; if it fails (<0), dispatch null. Else,
+ * only when the parent's flag byte obj[1]+0xad is clear: notify Ov107_PostTagUpdate(owner,
+ * 0x11,0), push the owner's local-offset vec (owner+0x494) via func_ov107_020c0b90 mode 4,
+ * clear obj+0x61 and obj[2], and dispatch via SetIndexedSlot. */
+struct vec { int x, y, z; };
+extern int Ov228_MeasureTargetGap(int self);
+extern void SetIndexedSlot(int self, int index, void *cb);
+extern void Ov107_PostTagUpdate(int owner, int a, int b);
+extern void func_ov107_020c0b90(int owner, int mode, struct vec v, int flag);
+extern void Ov228_AiBurstWindup(void);
+void Ov228_GuardedPushOffset(int self) {
+    int *obj = *(int **)(self + 4);
+    if (Ov228_MeasureTargetGap(self) < 0) {
+        SetIndexedSlot(self, *(signed char *)(self + 0x20), 0);
+        return;
+    }
+    if (*(unsigned char *)(obj[1] + 0xad) != 0) {
+        return;
+    }
+    Ov107_PostTagUpdate(*obj, 0x11, 0);
+    func_ov107_020c0b90(*obj, 4, *(struct vec *)(*obj + 0x494), 1);
+    *(char *)((char *)obj + 0x61) = 0;
+    obj[2] = 0;
+    SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov228_AiBurstWindup);
+}

@@ -1,0 +1,21 @@
+extern void Ov075_PickChargeLevelAndDraw(int self);
+extern void Ov075_ForwardWithHeaderOffset(int a, int b, int c);
+extern void Ov075_ForwardPlus14IfFlag694(int a, int b);
+extern int Ov022_AreStreamsIdle(int a);
+extern int Session_GetLocalPlayerIndex(void);
+extern int data_ov075_020b9e20;
+
+void Ov075_UpdateAimAndFlagLocal(int self) {
+    char *blk = (char *)(*(int *)&data_ov075_020b9e20 + 0x194);
+    Ov075_PickChargeLevelAndDraw(self);
+    Ov075_ForwardWithHeaderOffset(self, (int)(blk + 0x2c00), *(short *)(self + 0x2a00 + 0xba));
+    Ov075_ForwardPlus14IfFlag694(self, (int)(blk + 0x2c00));
+    if (Ov022_AreStreamsIdle(*(int *)(self + 0x2000 + 0x644) + 0x30) != 0) {
+        if (Ov022_AreStreamsIdle(*(int *)(self + 0x2000 + 0x644) + 0x60) != 0) return;
+    }
+    if (Session_GetLocalPlayerIndex() == 0) {
+        *(long long *)((char *)self + 0x464) |= 0x10000;
+    }
+    if (Session_GetLocalPlayerIndex() != 0) return;
+    *(long long *)((char *)self + 0x46c) |= 0x10000;
+}

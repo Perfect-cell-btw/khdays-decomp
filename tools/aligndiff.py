@@ -12,7 +12,7 @@ alignment separates the three things that actually matter:
     structural   -- different opcodes or different counts: a real source-shape difference
 
 Rank candidates by `structural` ascending, not by the positional diff count, which is noise.
-Measured on func_ov030_020b4864: the positional count said 94 vs 98 while structural said
+Measured on Ov030_EmitTimelineEffect: the positional count said 94 vs 98 while structural said
 22 vs 18, and the 18 was the better source.
 
 ARM/Thumb is taken from build/func_index.json (the same authority verify_idx uses): the

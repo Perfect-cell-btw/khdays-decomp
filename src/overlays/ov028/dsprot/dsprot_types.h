@@ -36,7 +36,7 @@ typedef struct OSOwnerInfo {
 extern s32 OS_GetLockID(void);
 extern void OS_ReleaseLockID(u16 lockId);
 extern void OS_GetMacAddress(u8 *pMacAddress);
-extern void func_02003a20(OSOwnerInfo *pInfo);           /* OS_GetOwnerInfo */
+extern void Game_ReadLocalProfile(OSOwnerInfo *pInfo);           /* OS_GetOwnerInfo */
 extern void CARD_LockRom(u16 lockId);
 extern void CARD_UnlockRom(u16 lockId);
 

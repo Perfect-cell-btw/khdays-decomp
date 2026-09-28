@@ -3,7 +3,7 @@
 
     python tools/gen_class_descriptors.py [--dry] [module ...]
 
-A class descriptor is the 20-byte record InstantiateClass (func_02023930 / func_02023960) builds a
+A class descriptor is the 20-byte record InstantiateClass (InstantiateClass / RunClassConstructor) builds a
 task object from: u16 class id, u16 group id, the constructor (its return is the object's first
 state function), the method slot, the size of the zero-filled auxiliary state block and the arena
 reference. Candidates are the build/data_index.json symbols of exactly 20 bytes whose relocations

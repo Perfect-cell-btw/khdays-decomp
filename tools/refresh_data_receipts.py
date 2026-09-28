@@ -36,25 +36,42 @@ def stale_receipts():
     return out
 
 
+def verify(sym, source):
+    res = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "verify_data.py"),
+                          os.path.join(ROOT, source), sym, "--receipt"],
+                         capture_output=True, text=True, cwd=ROOT)
+    ok = res.returncode == 0 and "MATCH" in res.stdout
+    return sym, source, ok, (res.stdout + res.stderr)[-400:]
+
+
 def main():
     fix = "--fix" in sys.argv
     stale = stale_receipts()
     print("stale DATA receipts: %d" % len(stale))
-    bad = 0
+    if not fix:
+        for path, r, why in stale[:50]:
+            print("  %-40s %s (%s)" % (os.path.splitext(os.path.basename(path))[0], r.get("source"), why))
+        return 1 if stale else 0
+    # verify_data compiles <source>.o, so symbols of ONE source run in sequence; sources in parallel
+    by_source = {}
     for path, r, why in stale:
-        sym = os.path.splitext(os.path.basename(path))[0]
-        if not fix or why != "source changed":
-            print("  %-40s %s (%s)" % (sym, r.get("source"), why))
-            continue
-        res = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "verify_data.py"),
-                              os.path.join(ROOT, r["source"]), sym, "--receipt"],
-                             capture_output=True, text=True, cwd=ROOT)
-        ok = res.returncode == 0 and "MATCH" in res.stdout
-        if not ok:
-            bad += 1
-            print("  FAIL %-35s %s\n%s" % (sym, r["source"], (res.stdout + res.stderr)[-400:]))
-    if fix:
-        print("re-verified %d, failed %d" % (len(stale) - bad, bad))
+        if why == "source changed":
+            by_source.setdefault(r["source"], []).append(os.path.splitext(os.path.basename(path))[0])
+    from concurrent.futures import ThreadPoolExecutor
+
+    def run_group(item):
+        source, syms = item
+        return [verify(sym, source) for sym in syms]
+
+    bad = 0
+    with ThreadPoolExecutor(max_workers=max(2, (os.cpu_count() or 4) - 1)) as pool:
+        for results in pool.map(run_group, sorted(by_source.items())):
+            for sym, source, ok, out in results:
+                if not ok:
+                    bad += 1
+                    print("  FAIL %-35s %s" % (sym, source))
+                    print(out)
+    print("re-verified %d, failed %d" % (sum(len(v) for v in by_source.values()) - bad, bad))
     return 1 if bad else 0
 
 

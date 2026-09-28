@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov022_02085f9c (02085f9c): Ov022DefaultValues data_ov022_020b226c; */
+/* read by Ov022_InitUiSubsystem (02085f9c): Ov022DefaultValues data_ov022_020b226c; */
 const u8 data_ov022_020b226c[16] = {
     0, 0, 0, 0, 255, 63, 0, 0, 255, 127, 0, 0, 255, 191, 0, 0,
 };
@@ -19,12 +19,12 @@ const u8 data_ov022_020b227c[32] = {
     0, 160, 0, 0, 0, 160, 0, 0, 0, 96, 255, 255, 0, 160, 0, 0,
 };
 
-/* read by func_ov022_02086d7c (02086d7c): const Ov022ScaleSourcePair data_ov022_020b229c; */
+/* read by Ov022_BuildPresetRows (02086d7c): const Ov022ScaleSourcePair data_ov022_020b229c; */
 const u8 data_ov022_020b229c[8] = {
     0, 16, 0, 0, 0, 16, 0, 0,
 };
 
-/* read by func_ov022_02086d7c (02086d7c): const Ov022PresetTable data_ov022_020b22a4; */
+/* read by Ov022_BuildPresetRows (02086d7c): const Ov022PresetTable data_ov022_020b22a4; */
 const u8 data_ov022_020b22a4[200] = {
     0, 0, 6, 0, 0, 176, 5, 0, 0, 192, 7, 0, 0, 176, 6, 0,
     0, 208, 8, 0, 0, 96, 5, 0, 0, 80, 10, 0, 0, 80, 6, 0,
@@ -41,7 +41,7 @@ const u8 data_ov022_020b22a4[200] = {
     0, 0, 8, 0, 0, 0, 6, 0,
 };
 
-/* read by func_ov022_020892f0 (020892f0): struct Ov022TrackTable5 data_ov022_020b236c; */
+/* read by Ov022_BindAnimationTracks (020892f0): struct Ov022TrackTable5 data_ov022_020b236c; */
 const int data_ov022_020b236c[5] = {
     0, 3, 1, 2, 4,
 };

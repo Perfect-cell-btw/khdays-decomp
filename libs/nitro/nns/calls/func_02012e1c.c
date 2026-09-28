@@ -43,7 +43,7 @@ typedef struct NNSG2dPaletteCompressInfo {
     void *pPlttIdxTbl;
 } NNSG2dPaletteCompressInfo;
 
-extern void func_02012de4(NNSG2dBGSelect bg, BOOL useExtended,
+extern void LoadBGPaletteSelect(NNSG2dBGSelect bg, BOOL useExtended,
                           const NNSG2dPaletteData *pPltData,
                           const NNSG2dPaletteCompressInfo *pCmpInfo);
 
@@ -75,12 +75,12 @@ void func_02012e1c(NNSG2dBGSelect bg,
     const u16 screenFormat = pScreenData->screenFormat;
 
     if (screenFormat == 0 && pScreenData->colorMode == 1) {
-        func_02012de4(bg, IsBGUseExtPltt(bg),
+        LoadBGPaletteSelect(bg, IsBGUseExtPltt(bg),
                       pPltData, pCmpInfo);
         return;
     }
 
-    func_02012de4(bg,
+    LoadBGPaletteSelect(bg,
                   pPltData->fmt != GX_TEXFMT_PLTT16 && screenFormat != 1,
                   pPltData, pCmpInfo);
 }

@@ -6,18 +6,18 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_020242f8(void);
-extern void func_02024368(void);
-extern void func_020243f4(void);
-extern void func_0202443c(void);
-extern void func_02024484(void);
-extern void func_020244d4(void);
-extern void func_020245c4(void);
-extern void func_0202461c(void);
-extern void func_02024674(void);
-extern void func_020246bc(void);
-extern void func_02024704(void);
-extern void func_02024754(void);
+extern void Bg_SetMainBg0Control(void);
+extern void Bg_SetMainBg1Control(void);
+extern void Bg_SetMainBg2TextControl(void);
+extern void Bg_SetMainBg3TextControl(void);
+extern void Bg_SetMainBg2AffineControl(void);
+extern void Bg_SetMainBg3AffineControl(void);
+extern void Bg_SetSubBg0Control(void);
+extern void Bg_SetSubBg1Control(void);
+extern void Bg_SetSubBg2TextControl(void);
+extern void Bg_SetSubBg3TextControl(void);
+extern void Bg_SetSubBg2AffineControl(void);
+extern void Bg_SetSubBg3AffineControl(void);
 
 const Ov_Fn data_02041e2c[8] = {
 
@@ -25,36 +25,36 @@ const Ov_Fn data_02041e2c[8] = {
 
     0,
 
-    func_02024484,
+    Bg_SetMainBg2AffineControl,
 
-    func_020244d4,
-
-    0,
+    Bg_SetMainBg3AffineControl,
 
     0,
 
-    func_02024704,
+    0,
 
-    func_02024754,
+    Bg_SetSubBg2AffineControl,
+
+    Bg_SetSubBg3AffineControl,
 
 };
 
 const Ov_Fn data_02041e4c[8] = {
 
-    func_020242f8,
+    Bg_SetMainBg0Control,
 
-    func_02024368,
+    Bg_SetMainBg1Control,
 
-    func_020243f4,
+    Bg_SetMainBg2TextControl,
 
-    func_0202443c,
+    Bg_SetMainBg3TextControl,
 
-    func_020245c4,
+    Bg_SetSubBg0Control,
 
-    func_0202461c,
+    Bg_SetSubBg1Control,
 
-    func_02024674,
+    Bg_SetSubBg2TextControl,
 
-    func_020246bc,
+    Bg_SetSubBg3TextControl,
 
 };

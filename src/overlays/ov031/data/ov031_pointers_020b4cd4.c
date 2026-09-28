@@ -6,24 +6,24 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov022_020915bc(void);
-extern void func_ov022_020916e0(void);
-extern void func_ov022_0209183c(void);
-extern void func_ov031_020b4694(void);
-extern void func_ov031_020b4820(void);
-extern void func_ov031_020b4930(void);
+extern void Ov022_AdvanceTimerAndLatchDone(void);
+extern void Ov022_NullStep(void);
+extern void Ov022_StepStandingShot(void);
+extern void Ov031_HomingApproachTriggerStep(void);
+extern void Ov031_HomingApproachStep(void);
+extern void Ov031_advanceProjectileAndSteer(void);
 
 Ov_Fn data_ov031_020b4cd4[5] = {
 
     0,
 
-    func_ov022_020915bc,
+    Ov022_AdvanceTimerAndLatchDone,
 
-    func_ov031_020b4694,
+    Ov031_HomingApproachTriggerStep,
 
-    func_ov022_020916e0,
+    Ov022_NullStep,
 
-    func_ov022_0209183c,
+    Ov022_StepStandingShot,
 
 };
 
@@ -31,12 +31,12 @@ Ov_Fn data_ov031_020b4ce8[5] = {
 
     0,
 
-    func_ov022_020915bc,
+    Ov022_AdvanceTimerAndLatchDone,
 
-    func_ov031_020b4820,
+    Ov031_HomingApproachStep,
 
-    func_ov022_020916e0,
+    Ov022_NullStep,
 
-    func_ov031_020b4930,
+    Ov031_advanceProjectileAndSteer,
 
 };

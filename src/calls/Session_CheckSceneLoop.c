@@ -1,0 +1,32 @@
+extern void *NNSi_FndGetCurrentRootHeap(void);
+extern int Session_IsActive(void);
+extern int Session_IsReady(void);
+extern int Session_IsSceneInterruptible(void);
+extern int func_01ff8138(void);
+extern void Game_RunSceneLoop(void);
+
+typedef struct {
+    char _00[0x20];
+    unsigned short h20;
+    char _22[0x2c - 0x22];
+    unsigned short bit0 : 1;
+    unsigned short rest : 15;
+} Obj02030570;
+
+int Session_CheckSceneLoop(void)
+{
+    Obj02030570 *obj = (Obj02030570 *)NNSi_FndGetCurrentRootHeap();
+    int flag = 0;
+
+    if (Session_IsActive() != 0 && Session_IsReady() != 0) {
+        if (obj->h20 != func_01ff8138())
+            flag = 1;
+    }
+    if (Session_IsSceneInterruptible() != 0)
+        flag = 1;
+
+    if (flag != 0 && obj->bit0 == 0)
+        Game_RunSceneLoop();
+
+    return 0;
+}

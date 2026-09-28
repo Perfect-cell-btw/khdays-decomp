@@ -4,22 +4,22 @@
  * a zero word is a null entry.
  */
 
-extern void func_ov069_020b812c(void);
-extern void func_ov069_020b8190(void);
-extern void func_ov069_020b81fc(void);
-extern void func_ov069_020b821c(void);
-extern void func_ov069_020b8250(void);
-extern void func_ov069_020b826c(void);
-extern void func_ov069_020b8288(void);
-extern void func_ov069_020b82a4(void);
-extern void func_ov069_020b8300(void);
-extern void func_ov069_020b8304(void);
-extern void func_ov069_020b8320(void);
-extern void func_ov069_020b8378(void);
-extern void func_ov069_020b83d4(void);
-extern void func_ov069_020b83d8(void);
-extern void func_ov069_020b847c(void);
-extern void func_ov069_020b84ac(void);
+extern void Ov069_IsItemFlagSet(void);
+extern void Ov069_RequirementListMet(void);
+extern void Ov069_ResourceGE_Arg3x2a4c(void);
+extern void Ov069_CountActiveAndCompare(void);
+extern void Ov069_ResourceGE(void);
+extern void Ov069_ResourceGE_2(void);
+extern void Ov069_ResourceGE_3(void);
+extern void Ov069_IsFlagSetComplete(void);
+extern void Ov069_ConstReturn1(void);
+extern void Ov069_ResourceGE_4(void);
+extern void Ov069_AreKeyFlagsComplete(void);
+extern void Ov069_ItemStockAvailable(void);
+extern void Ov069_ConstReturn1_2(void);
+extern void Ov069_HasKind4MenuEntry(void);
+extern void Ov069_ReportGlobalHalfword(void);
+extern void Ov069_ReportGlobalHalfword_2(void);
 extern int data_ov069_020ba7d0;
 extern int data_ov069_020ba7d8;
 extern int data_ov069_020ba7e2;
@@ -36,38 +36,38 @@ void *data_ov069_020baa20[3] = {
 
 void *data_ov069_020baa2c[17] = {
 
-    (void *)func_ov069_020b812c,
+    (void *)Ov069_IsItemFlagSet,
 
-    (void *)func_ov069_020b812c,
+    (void *)Ov069_IsItemFlagSet,
 
-    (void *)func_ov069_020b8190,
+    (void *)Ov069_RequirementListMet,
 
-    (void *)func_ov069_020b81fc,
+    (void *)Ov069_ResourceGE_Arg3x2a4c,
 
-    (void *)func_ov069_020b821c,
+    (void *)Ov069_CountActiveAndCompare,
 
-    (void *)func_ov069_020b8250,
+    (void *)Ov069_ResourceGE,
 
-    (void *)func_ov069_020b826c,
+    (void *)Ov069_ResourceGE_2,
 
-    (void *)func_ov069_020b8288,
+    (void *)Ov069_ResourceGE_3,
 
-    (void *)func_ov069_020b82a4,
+    (void *)Ov069_IsFlagSetComplete,
 
-    (void *)func_ov069_020b8300,
+    (void *)Ov069_ConstReturn1,
 
-    (void *)func_ov069_020b8304,
+    (void *)Ov069_ResourceGE_4,
 
-    (void *)func_ov069_020b8320,
+    (void *)Ov069_AreKeyFlagsComplete,
 
-    (void *)func_ov069_020b8378,
+    (void *)Ov069_ItemStockAvailable,
 
-    (void *)func_ov069_020b83d4,
+    (void *)Ov069_ConstReturn1_2,
 
-    (void *)func_ov069_020b83d8,
+    (void *)Ov069_HasKind4MenuEntry,
 
-    (void *)func_ov069_020b847c,
+    (void *)Ov069_ReportGlobalHalfword,
 
-    (void *)func_ov069_020b84ac,
+    (void *)Ov069_ReportGlobalHalfword_2,
 
 };

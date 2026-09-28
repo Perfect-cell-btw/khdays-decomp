@@ -8,115 +8,115 @@ src/overlays/ov068/calls/func_ov068_020b5a20.c:
     complete
     .text       start:0x020b5a20 end:0x020b5a34
 
-src/overlays/ov068/calls/func_ov068_020b5a34.c:
+src/overlays/ov068/calls/Ov068_ClassCtor.c:
     complete
     .text       start:0x020b5a34 end:0x020b5a9c
 
-src/overlays/ov068/calls/func_ov068_020b5a9c.c:
+src/overlays/ov068/calls/Ov068_ClassTeardown.c:
     complete
     .text       start:0x020b5a9c end:0x020b5afc
 
-src/overlays/ov068/calls/func_ov068_020b5afc.c:
+src/overlays/ov068/calls/Ov068_Boot.c:
     complete
     .text       start:0x020b5afc end:0x020b5d38
 
-src/overlays/ov068/calls/func_ov068_020b5d38.c:
+src/overlays/ov068/calls/Ov068_ReloadTwoSceneResources.c:
     complete
     .text       start:0x020b5d38 end:0x020b5dec
 
-src/overlays/ov068/auto/func_ov068_020b5dec.c:
+src/overlays/ov068/auto/Ov068_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b5dec end:0x020b5df0
 
-src/overlays/ov068/calls/func_ov068_020b5df0.c:
+src/overlays/ov068/calls/Ov068_HandleMsgAndFaceHeading.c:
     complete
     .text       start:0x020b5df0 end:0x020b5f28
 
-src/overlays/ov068/calls/func_ov068_020b5f28.c:
+src/overlays/ov068/calls/Ov068_ApplyModeChange.c:
     complete
     .text       start:0x020b5f28 end:0x020b6084
 
-src/overlays/ov068/calls/func_ov068_020b6084.c:
+src/overlays/ov068/calls/Ov068_UpdateAttachmentAndChannels.c:
     complete
     .text       start:0x020b6084 end:0x020b6170
 
-src/overlays/ov068/calls/func_ov068_020b6170.c:
+src/overlays/ov068/calls/Ov068_InvokeSubHandlerPairWithGlobalBuffer.c:
     complete
     .text       start:0x020b6170 end:0x020b61a8
 
-src/overlays/ov068/calls/func_ov068_020b61a8.c:
+src/overlays/ov068/calls/Ov068_PollHitAndFlagLanded.c:
     complete
     .text       start:0x020b61a8 end:0x020b625c
 
-src/overlays/ov068/calls/func_ov068_020b625c.c:
+src/overlays/ov068/calls/Ov068_InitEffectSlots.c:
     complete
     .text       start:0x020b625c end:0x020b62ec
 
-src/overlays/ov068/calls/func_ov068_020b62ec.c:
+src/overlays/ov068/calls/Ov068_ReleaseChannelAndFreeSubObject.c:
     complete
     .text       start:0x020b62ec end:0x020b632c
 
-src/overlays/ov068/calls/func_ov068_020b632c.c:
+src/overlays/ov068/calls/Ov068_AdvancePoseState.c:
     complete
     .text       start:0x020b632c end:0x020b63ac
 
-src/overlays/ov068/calls/func_ov068_020b63ac.c:
+src/overlays/ov068/calls/Ov068_StepEffectSlot.c:
     complete
     .text       start:0x020b63ac end:0x020b6600
 
-src/overlays/ov068/calls/func_ov068_020b6600.c:
+src/overlays/ov068/calls/Ov068_PlaceTrailMarker.c:
     complete
     .text       start:0x020b6600 end:0x020b671c
 
-src/overlays/ov068/calls/func_ov068_020b671c.c:
+src/overlays/ov068/calls/Ov068_InitGlobalChannelSlot.c:
     complete
     .text       start:0x020b671c end:0x020b6754
 
-src/overlays/ov068/calls/func_ov068_020b6754.c:
+src/overlays/ov068/calls/Ov068_CreateSubObject.c:
     complete
     .text       start:0x020b6754 end:0x020b686c
 
-src/overlays/ov068/calls/func_ov068_020b686c.c:
+src/overlays/ov068/calls/Ov068_BindRig.c:
     complete
     .text       start:0x020b686c end:0x020b68c4
 
-src/overlays/ov068/calls/func_ov068_020b68c4.c:
+src/overlays/ov068/calls/Ov068_SpawnNextEffect.c:
     complete
     .text       start:0x020b68c4 end:0x020b6a7c
 
-src/overlays/ov068/calls/func_ov068_020b6a7c.c:
+src/overlays/ov068/calls/Ov068_SpawnEffectWithVariant.c:
     complete
     .text       start:0x020b6a7c end:0x020b6b04
 
-src/overlays/ov068/calls/func_ov068_020b6b04.c:
+src/overlays/ov068/calls/Ov068_ResolveHitPositionRaised.c:
     complete
     .text       start:0x020b6b04 end:0x020b6ba8
 
-src/overlays/ov068/calls/func_ov068_020b6ba8.c:
+src/overlays/ov068/calls/Ov068_UpdateParts.c:
     complete
     .text       start:0x020b6ba8 end:0x020b6c64
 
-src/overlays/ov068/calls/func_ov068_020b6c64.c:
+src/overlays/ov068/calls/Ov068_TickThrowArcThenLand.c:
     complete
     .text       start:0x020b6c64 end:0x020b6d18
 
-src/overlays/ov068/calls/func_ov068_020b6d18.c:
+src/overlays/ov068/calls/Ov068_BuildRenderHandles.c:
     complete
     .text       start:0x020b6d18 end:0x020b6dd0
 
-src/overlays/ov068/calls/func_ov068_020b6dd0.c:
+src/overlays/ov068/calls/Ov068_StoreArgToGlobalSlot22AndForward.c:
     complete
     .text       start:0x020b6dd0 end:0x020b6e00
 
-src/overlays/ov068/calls/func_ov068_020b6e00.c:
+src/overlays/ov068/calls/Ov068_DescentStep.c:
     complete
     .text       start:0x020b6e00 end:0x020b6fe0
 
-src/overlays/ov068/calls/func_ov068_020b6fe0.c:
+src/overlays/ov068/calls/Ov068_HoverStep.c:
     complete
     .text       start:0x020b6fe0 end:0x020b72dc
 
-src/overlays/ov068/calls/func_ov068_020b72dc.c:
+src/overlays/ov068/calls/Ov068_InvokeWithDataTable.c:
     complete
     .text       start:0x020b72dc end:0x020b72f4
 

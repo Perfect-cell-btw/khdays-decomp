@@ -8,131 +8,131 @@ src/overlays/ov048/calls/func_ov048_020b3220.c:
     complete
     .text       start:0x020b3220 end:0x020b3234
 
-src/overlays/ov048/calls/func_ov048_020b3234.c:
+src/overlays/ov048/calls/Ov048_stateCtorReturnHandler.c:
     complete
     .text       start:0x020b3234 end:0x020b325c
 
-src/overlays/ov048/calls/func_ov048_020b325c.c:
+src/overlays/ov048/calls/Ov048_setupTriple.c:
     complete
     .text       start:0x020b325c end:0x020b327c
 
-src/overlays/ov048/calls/func_ov048_020b327c.c:
+src/overlays/ov048/calls/Ov048_Boot.c:
     complete
     .text       start:0x020b327c end:0x020b3474
 
-src/overlays/ov048/calls/func_ov048_020b3474.c:
+src/overlays/ov048/calls/Ov048_initSharedObjSetReadyFlag.c:
     complete
     .text       start:0x020b3474 end:0x020b34ac
 
-src/overlays/ov048/auto/func_ov048_020b34ac.c:
+src/overlays/ov048/auto/Ov048_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b34ac end:0x020b34cc
 
-src/overlays/ov048/calls/func_ov048_020b34cc.c:
+src/overlays/ov048/calls/Ov048_ApplyMode.c:
     complete
     .text       start:0x020b34cc end:0x020b359c
 
-src/overlays/ov048/calls/func_ov048_020b359c.c:
+src/overlays/ov048/calls/Ov048_SyncLocalPlayerHandle.c:
     complete
     .text       start:0x020b359c end:0x020b360c
 
-src/overlays/ov048/calls/func_ov048_020b360c.c:
+src/overlays/ov048/calls/Ov048_HandleMessage.c:
     complete
     .text       start:0x020b360c end:0x020b3850
 
-src/overlays/ov048/calls/func_ov048_020b3850.c:
+src/overlays/ov048/calls/Ov048_StepAttackSlotAndForward.c:
     complete
     .text       start:0x020b3850 end:0x020b3888
 
-src/overlays/ov048/calls/func_ov048_020b3888.c:
+src/overlays/ov048/calls/Ov048_BuildRenderHandles.c:
     complete
     .text       start:0x020b3888 end:0x020b3934
 
-src/overlays/ov048/calls/func_ov048_020b3934.c:
+src/overlays/ov048/calls/Ov048_InitThreeEffectSlots.c:
     complete
     .text       start:0x020b3934 end:0x020b39f4
 
-src/overlays/ov048/calls/func_ov048_020b39f4.c:
+src/overlays/ov048/calls/Ov048_ReleaseThreeSubBlocks2c2c.c:
     complete
     .text       start:0x020b39f4 end:0x020b3a28
 
-src/overlays/ov048/calls/func_ov048_020b3a28.c:
+src/overlays/ov048/calls/Ov048_InitTwoGlobalChannelSlots.c:
     complete
     .text       start:0x020b3a28 end:0x020b3a5c
 
-src/overlays/ov048/calls/func_ov048_020b3a5c.c:
+src/overlays/ov048/calls/Ov048_ForwardToThreeSubHandlersSameArgs.c:
     complete
     .text       start:0x020b3a5c end:0x020b3a94
 
-src/overlays/ov048/calls/func_ov048_020b3a94.c:
+src/overlays/ov048/calls/Ov048_RunThreeSubHandlersIfFlagSet.c:
     complete
     .text       start:0x020b3a94 end:0x020b3ad0
 
-src/overlays/ov048/calls/func_ov048_020b3ad0.c:
+src/overlays/ov048/calls/Ov048_BindAnimsAndFaceOwner.c:
     complete
     .text       start:0x020b3ad0 end:0x020b3bb0
 
-src/overlays/ov048/calls/func_ov048_020b3bb0.c:
+src/overlays/ov048/calls/Ov048_UpdateTracksWhileActive.c:
     complete
     .text       start:0x020b3bb0 end:0x020b3be0
 
-src/overlays/ov048/calls/func_ov048_020b3be0.c:
+src/overlays/ov048/calls/Ov048_DrawNodeWhileActive.c:
     complete
     .text       start:0x020b3be0 end:0x020b3bfc
 
-src/overlays/ov048/calls/func_ov048_020b3bfc.c:
+src/overlays/ov048/calls/Ov048_PlayVoiceAndBindThreeAnims.c:
     complete
     .text       start:0x020b3bfc end:0x020b3cb4
 
-src/overlays/ov048/calls/func_ov048_020b3cb4.c:
+src/overlays/ov048/calls/Ov048_StepSequenceSlot.c:
     complete
     .text       start:0x020b3cb4 end:0x020b3df0
 
-src/overlays/ov048/calls/func_ov048_020b3df0.c:
+src/overlays/ov048/calls/Ov048_DrawNodeWithYaw2.c:
     complete
     .text       start:0x020b3df0 end:0x020b3e68
 
-src/overlays/ov048/calls/func_ov048_020b3e68.c:
+src/overlays/ov048/calls/Ov048_Activate.c:
     complete
     .text       start:0x020b3e68 end:0x020b3e7c
 
-src/overlays/ov048/calls/func_ov048_020b3e7c.c:
+src/overlays/ov048/calls/Ov048_Deactivate.c:
     complete
     .text       start:0x020b3e7c end:0x020b3e88
 
-src/overlays/ov048/calls/func_ov048_020b3e88.c:
+src/overlays/ov048/calls/Ov048_DriveChargeSequence.c:
     complete
     .text       start:0x020b3e88 end:0x020b3fcc
 
-src/overlays/ov048/calls/func_ov048_020b3fcc.c:
+src/overlays/ov048/calls/Ov048_DrawSubNodeWithYaw3.c:
     complete
     .text       start:0x020b3fcc end:0x020b4050
 
-src/overlays/ov048/calls/func_ov048_020b4050.c:
+src/overlays/ov048/calls/Ov048_RebindAnimTracks.c:
     complete
     .text       start:0x020b4050 end:0x020b40c8
 
-src/overlays/ov048/calls/func_ov048_020b40c8.c:
+src/overlays/ov048/calls/Ov048_EmitAttackBurst.c:
     complete
     .text       start:0x020b40c8 end:0x020b4340
 
-src/overlays/ov048/calls/func_ov048_020b4340.c:
+src/overlays/ov048/calls/Ov048_FlagLocalAndEnterState21.c:
     complete
     .text       start:0x020b4340 end:0x020b43a8
 
-src/overlays/ov048/calls/func_ov048_020b43a8.c:
+src/overlays/ov048/calls/Ov048_HoverStep.c:
     complete
     .text       start:0x020b43a8 end:0x020b458c
 
-src/overlays/ov048/calls/func_ov048_020b458c.c:
+src/overlays/ov048/calls/Ov048_AttackStep.c:
     complete
     .text       start:0x020b458c end:0x020b4848
 
-src/overlays/ov048/calls/func_ov048_020b4848.c:
+src/overlays/ov048/calls/Ov048_LandingStep.c:
     complete
     .text       start:0x020b4848 end:0x020b4a34
 
-src/overlays/ov048/calls/func_ov048_020b4a34.c:
+src/overlays/ov048/calls/Ov048_InvokeWithDataTable.c:
     complete
     .text       start:0x020b4a34 end:0x020b4a4c
 

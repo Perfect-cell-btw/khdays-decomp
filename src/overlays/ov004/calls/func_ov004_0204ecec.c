@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_ov004_0204ea88. */
-extern void *func_ov004_0204ea88();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to Ov004_ClearStateFreeLists. */
+extern void *Ov004_ClearStateFreeLists();
 
 void *func_ov004_0204ecec() {
-    return func_ov004_0204ea88();
+    return Ov004_ClearStateFreeLists();
 }

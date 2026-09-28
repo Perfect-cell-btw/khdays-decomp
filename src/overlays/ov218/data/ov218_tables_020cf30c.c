@@ -8,17 +8,17 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov218_020cc054 (not yet decompiled) */
+/* read by Ov218_Construct (not yet decompiled) */
 const int data_ov218_020cf30c[1] = {
     1026,
 };
 
-/* read by func_ov218_020cc5bc (not yet decompiled) */
+/* read by Ov218_OnDamage (not yet decompiled) */
 const u8 data_ov218_020cf310[4] = {
     0, 1, 2, 3,
 };
 
-/* read by func_ov218_020ce07c (not yet decompiled) */
+/* read by Ov218_Build (not yet decompiled) */
 const int data_ov218_020cf314[1] = {
     1541,
 };

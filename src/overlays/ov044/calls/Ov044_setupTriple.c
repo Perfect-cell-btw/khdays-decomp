@@ -1,0 +1,6 @@
+extern void ReleaseField74AndCleanup();extern void ReleaseField74AndCleanup();extern void Ov044_ReleaseChildArray8();
+void Ov044_setupTriple(int p) {
+    ReleaseField74AndCleanup(p + 0x18);
+    ReleaseField74AndCleanup(p + 0x128);
+    Ov044_ReleaseChildArray8(p);
+}

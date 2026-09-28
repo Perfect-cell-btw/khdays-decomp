@@ -20,11 +20,11 @@ extern void func_020130b0(void *pScreenDst,
                           const NNSG2dScreenData *pScreenData,
                           int srcX, int srcY, int dstX, int dstY,
                           int dstW, int dstH, int width, int height);
-extern void func_020132d8(void *pScreenDst,
+extern void LoadScreenPartAffine(void *pScreenDst,
                           const NNSG2dScreenData *pScreenData,
                           int srcX, int srcY, int dstX, int dstY,
                           int dstW, int width, int height);
-extern void func_02013340(void *pScreenDst,
+extern void LoadScreenPart256x16Pltt(void *pScreenDst,
                           const NNSG2dScreenData *pScreenData,
                           int srcX, int srcY, int dstX, int dstY,
                           int dstW, int width, int height);
@@ -85,11 +85,11 @@ void func_02013484(void *pScreenDst,
                       srcX, srcY, dstX, dstY, dstW, dstH, width, height);
         break;
     case NNS_G2D_SCREENFORMAT_AFFINE:
-        func_020132d8(pScreenDst, pScreenData,
+        LoadScreenPartAffine(pScreenDst, pScreenData,
                       srcX, srcY, dstX, dstY, dstW, width, height);
         break;
     case NNS_G2D_SCREENFORMAT_AFFINEEXT:
-        func_02013340(pScreenDst, pScreenData,
+        LoadScreenPart256x16Pltt(pScreenDst, pScreenData,
                       srcX, srcY, dstX, dstY, dstW, width, height);
         break;
     default:

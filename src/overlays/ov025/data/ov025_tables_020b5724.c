@@ -5,7 +5,7 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov025_020b5724: func_ov025_020b03dc, func_ov025_020b0484
+ *   data_ov025_020b5724: Ov025_ReportDetail_DrawLines, Ov025_ReportDetail_Refresh
  */
 
 typedef unsigned char u8;

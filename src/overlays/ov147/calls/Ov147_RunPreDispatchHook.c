@@ -1,0 +1,25 @@
+/* ⚠ RefreshObjectCallbacks takes TWO arguments here, not four. Ghidra shows a 4-arg call because
+ * r2/r3 still hold leftovers at that point -- but the preceding `bl` clobbered them, so
+ * they are garbage, not arguments. Passing p4 makes mwcc save it in a callee-saved
+ * register (+16 B). */
+struct Flags40 { int b0 : 1, b1 : 1; };
+extern void Ov107_MoveNodeAndRelayout();
+extern void RefreshObjectCallbacks(int a, int b);
+extern void Ov147_SetSubStateAndScaleVec(int a, void *b);
+
+void Ov147_RunPreDispatchHook(int self, int p2, void *p3, int p4) {
+    void (*cb)(int, int);
+
+    Ov107_MoveNodeAndRelayout(self, p2, p3, p4);
+    if (((struct Flags40 *)(self + 0x40))->b1) {
+        cb = *(void (**)(int, int))(self + 0xc);
+        if (cb != 0) {
+            cb(self, 0);
+        }
+    }
+    RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
+    *(int *)(self + 0x38c) = 1;
+    if (*(int *)(self + 0x50) == 1) {
+        Ov147_SetSubStateAndScaleVec(*(int *)(self + 0x214), p3);
+    }
+}

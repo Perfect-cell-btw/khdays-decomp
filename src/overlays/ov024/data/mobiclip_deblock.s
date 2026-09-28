@@ -1,5 +1,5 @@
 /* MobiClip deblocking post-filter, ov024 .rodata 0x02092e60-0x020933ac. */
-/* Hand-written ARM that the player calls in place (func_ov024_02085ab8, display modes 1/2; KH Days */
+/* Hand-written ARM that the player calls in place (Ov024_MobiClip_BlitFrame, display modes 1/2; KH Days */
 /* always uses mode 0). Semantic model and replay: tools/mobiclip_deblock.py. Request block: */
 /* {src luma, src chroma, dst luma, dst chroma, width, height, quantiser, clip table, vertical-only}. */
 /* Planes use a 256-byte stride; chroma rows hold Co at +0 and Cg at +0x80. */

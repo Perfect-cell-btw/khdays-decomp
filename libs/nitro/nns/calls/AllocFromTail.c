@@ -43,7 +43,7 @@ struct NNSiFndExpHeapHead {
     u16 feature;
 };
 
-extern void *func_020103e4(
+extern void *AllocUsedBlockFromFreeBlock(
     struct NNSiFndExpHeapHead *expHeapHead,
     struct NNSiFndExpHeapMBlockHead *freeBlock,
     void *memoryBlock,
@@ -111,5 +111,5 @@ void *AllocFromTail(struct NNSiFndHeapHead *heapHead, u32 size, s32 alignment)
         return 0;
     }
 
-    return func_020103e4(expHeapHead, foundBlock, foundMemory, size, 1);
+    return AllocUsedBlockFromFreeBlock(expHeapHead, foundBlock, foundMemory, size, 1);
 }

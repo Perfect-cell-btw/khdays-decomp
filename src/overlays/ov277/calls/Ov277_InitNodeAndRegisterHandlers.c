@@ -1,0 +1,23 @@
+extern void SetIndexedSlot(int *self, int idx, void *cb);
+extern void Ov277_SetVisFlagsEnterState(void);
+extern void Ov277_DispatchSubStateByte(void);
+extern void Ov277_AdvanceMotionPublish(void);
+
+struct hw60 { unsigned short lo : 8, hi : 8; };
+struct b8 { unsigned int f : 8; };
+
+void Ov277_InitNodeAndRegisterHandlers(int *self) {
+    int *s = (int *)self[1];
+    int zero = 0;
+    *(signed char *)(*s + 0x1c6) = zero;
+    *(signed char *)(*s + 0x1c7) = zero - 1;
+    ((struct b8 *)(*(int *)(*s + 0x388) + 8))->f &= ~1;
+    s[1] = *s + 0xb0;
+    s[2] = *s + 0x74;
+    s[3] = *(int *)(*s + 0x384) + 0xad;
+    *(int *)(*s + 0x390) = 1;
+    ((struct hw60 *)(*s + 0x60))->hi |= (unsigned char)6;
+    SetIndexedSlot(self, 1, (void *)&Ov277_SetVisFlagsEnterState);
+    SetIndexedSlot(self, 0, (void *)&Ov277_DispatchSubStateByte);
+    SetIndexedSlot(self, 2, (void *)&Ov277_AdvanceMotionPublish);
+}

@@ -5,8 +5,8 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_02090808: func_ov008_0206d1b0
- *   data_ov008_02090814: func_ov008_0206d46c
+ *   data_ov008_02090808: Ov008_BuildTable20AndDelegate
+ *   data_ov008_02090814: Ov008_DrawStatusField
  */
 
 typedef unsigned char u8;

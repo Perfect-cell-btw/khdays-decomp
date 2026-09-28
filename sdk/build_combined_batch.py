@@ -5,9 +5,9 @@ from prep_contextual_batch import sym_to_delink, sym_meta, disasm_func, format_d
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ctx = json.load(open(os.path.join(ROOT,'sdk','build','ctx_batch7.json')))
 extras_names = [
-    'func_02030a2c','func_02024ae0','func_02024b04','func_0203d194',
-    'func_0202f818','func_0202f9f8','func_02035c28','func_0202429c',
-    'func_0202c06c','func_02024264',
+    'EffectList_StepIfIdle','Gfx_EnqueueTableCmdAt14','Gfx_EnqueueTableCmdAtC','FreeInstanceMemory',
+    'FontResource_Destroy','Text_UploadTileBuffer','PartyState_AllocRecord','Gfx_EnqueueBgScreenUpload',
+    'EntityMgr_AllocRecords','Gfx_EnqueueBgCharUpload',
 ]
 combined = list(ctx)
 for n in extras_names:

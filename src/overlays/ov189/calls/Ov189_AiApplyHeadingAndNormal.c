@@ -1,0 +1,27 @@
+extern int Angle_TurnToward(int a, int b, int c, int d);
+extern void QuatFromAxisAngle(void *dst, void *src, int t);
+extern void Quat_FromTwoVectors(void *dst, void *src, int m);
+extern void Quat_Multiply(void *dst, void *a, void *b);
+extern void Srt_SetRotationQuat(int a, void *b);
+
+typedef struct { int x, y, z; } Vec3;
+
+extern Vec3 data_02042264;
+extern Vec3 data_02041dc8;
+
+void Ov189_AiApplyHeadingAndNormal(int *ctx) {
+    int b[4];
+    int a[4];
+    int *p = (int *)ctx[0];
+    int *s = (int *)ctx[1];
+    s[4] = Angle_TurnToward(s[4], s[5], p[0xb] * 3, 0);
+    QuatFromAxisAngle(b, &data_02042264, s[4]);
+    Quat_FromTwoVectors(a, &data_02042264, s[0] + 0x124);
+    Quat_Multiply(a, a, b);
+    Srt_SetRotationQuat(s[0] + 0xa0, a);
+    {
+        Vec3 *q = (Vec3 *)((char *)s + 0x20);
+        *(Vec3 *)(s[0] + 0xf0) = *q;
+        *q = data_02041dc8;
+    }
+}

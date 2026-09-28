@@ -1,7 +1,7 @@
-extern int func_ov008_02050c28();
-extern int func_ov008_020559a8();
+extern int Ov008_GetCtxBlock9500();
+extern int Ov008_SweepElements();
 
 void func_ov008_020676a0(void) {
-    func_ov008_02050c28();
-    func_ov008_020559a8();
+    Ov008_GetCtxBlock9500();
+    Ov008_SweepElements();
 }

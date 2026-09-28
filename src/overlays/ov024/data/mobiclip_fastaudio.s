@@ -1,5 +1,5 @@
 /* MobiClip FastAudio decoder (audio coding 2), ov024 .rodata 0x02087318-0x020886c4. */
-/* Hand-written ARM that the audio dispatcher (func_ov024_02085c8c) calls in place; KH Days streams */
+/* Hand-written ARM that the audio dispatcher (Ov024_MobiClip_StepAudio) calls in place; KH Days streams */
 /* use IMA ADPCM, so it never runs in the shipped game. One 0x28-byte block of a channel becomes 256 */
 /* s16 samples: 8 quantised reflection coefficients, 4 x 21 excitation pulses, an 8th-order lattice, */
 /* de-emphasis and x2 saturation. Semantic model and replay: tools/mobiclip_fastaudio.py. */

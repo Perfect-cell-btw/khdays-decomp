@@ -8,135 +8,135 @@ src/overlays/ov072/calls/func_ov072_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov072/calls/func_ov072_020b8114.c:
+src/overlays/ov072/calls/Ov072_InitAndGetHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b816c
 
-src/overlays/ov072/calls/func_ov072_020b816c.c:
+src/overlays/ov072/calls/Ov072_UnloadEnemyOverlay.c:
     complete
     .text       start:0x020b816c end:0x020b81b8
 
-src/overlays/ov072/calls/func_ov072_020b81b8.c:
+src/overlays/ov072/calls/Ov072_Boot.c:
     complete
     .text       start:0x020b81b8 end:0x020b8404
 
-src/overlays/ov072/calls/func_ov072_020b8404.c:
+src/overlays/ov072/calls/Ov072_SceneSetup.c:
     complete
     .text       start:0x020b8404 end:0x020b8534
 
-src/overlays/ov072/auto/func_ov072_020b8534.c:
+src/overlays/ov072/auto/Ov072_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b8534 end:0x020b855c
 
-src/overlays/ov072/calls/func_ov072_020b855c.c:
+src/overlays/ov072/calls/Ov072_ForwardSetFlagBit3.c:
     complete
     .text       start:0x020b855c end:0x020b8578
 
-src/overlays/ov072/calls/func_ov072_020b8578.c:
+src/overlays/ov072/calls/Ov072_HandleStateMessage.c:
     complete
     .text       start:0x020b8578 end:0x020b8874
 
-src/overlays/ov072/calls/func_ov072_020b8874.c:
+src/overlays/ov072/calls/Ov072_SpawnShot.c:
     complete
     .text       start:0x020b8874 end:0x020b8a88
 
-src/overlays/ov072/calls/func_ov072_020b8a88.c:
+src/overlays/ov072/calls/Ov072_ApplyMode.c:
     complete
     .text       start:0x020b8a88 end:0x020b8d08
 
-src/overlays/ov072/calls/func_ov072_020b8d08.c:
+src/overlays/ov072/calls/Ov072_UpdateTick.c:
     complete
     .text       start:0x020b8d08 end:0x020b8e18
 
-src/overlays/ov072/calls/func_ov072_020b8e18.c:
+src/overlays/ov072/calls/Ov072_EffectTick.c:
     complete
     .text       start:0x020b8e18 end:0x020b8f14
 
-src/overlays/ov072/calls/func_ov072_020b8f14.c:
+src/overlays/ov072/calls/Ov072_SpawnAttachEffects.c:
     complete
     .text       start:0x020b8f14 end:0x020b901c
 
-src/overlays/ov072/calls/func_ov072_020b901c.c:
+src/overlays/ov072/calls/Ov072_ChargeTick.c:
     complete
     .text       start:0x020b901c end:0x020b92bc
 
-src/overlays/ov072/calls/func_ov072_020b92bc.c:
+src/overlays/ov072/calls/Ov072_CreateSubObject.c:
     complete
     .text       start:0x020b92bc end:0x020b94f8
 
-src/overlays/ov072/calls/func_ov072_020b94f8.c:
+src/overlays/ov072/calls/Ov072_DisposeAndFreeChild.c:
     complete
     .text       start:0x020b94f8 end:0x020b951c
 
-src/overlays/ov072/calls/func_ov072_020b951c.c:
+src/overlays/ov072/calls/Ov072_HandleMessage.c:
     complete
     .text       start:0x020b951c end:0x020b95c4
 
-src/overlays/ov072/calls/func_ov072_020b95c4.c:
+src/overlays/ov072/calls/Ov072_InvokeBothGroupCallbacks.c:
     complete
     .text       start:0x020b95c4 end:0x020b95ec
 
-src/overlays/ov072/calls/func_ov072_020b95ec.c:
+src/overlays/ov072/calls/Ov072_DrawTrail.c:
     complete
     .text       start:0x020b95ec end:0x020b97c0
 
-src/overlays/ov072/calls/func_ov072_020b97c0.c:
+src/overlays/ov072/calls/Ov072_BuildRenderHandles.c:
     complete
     .text       start:0x020b97c0 end:0x020b9874
 
-src/overlays/ov072/calls/func_ov072_020b9874.c:
+src/overlays/ov072/calls/Ov072_MissionStart.c:
     complete
     .text       start:0x020b9874 end:0x020b98d8
 
-src/overlays/ov072/calls/func_ov072_020b98d8.c:
+src/overlays/ov072/calls/Ov072_ReleaseChildFromGlobal.c:
     complete
     .text       start:0x020b98d8 end:0x020b98f0
 
-src/overlays/ov072/calls/func_ov072_020b98f0.c:
+src/overlays/ov072/calls/Ov072_EffectBlockStart.c:
     complete
     .text       start:0x020b98f0 end:0x020b99c8
 
-src/overlays/ov072/calls/func_ov072_020b99c8.c:
+src/overlays/ov072/calls/Ov072_EffectBlockStop.c:
     complete
     .text       start:0x020b99c8 end:0x020b9ab8
 
-src/overlays/ov072/calls/func_ov072_020b9ab8.c:
+src/overlays/ov072/calls/Ov072_SetState5.c:
     complete
     .text       start:0x020b9ab8 end:0x020b9ac4
 
-src/overlays/ov072/calls/func_ov072_020b9ac4.c:
+src/overlays/ov072/calls/Ov072_EffectBlockTick.c:
     complete
     .text       start:0x020b9ac4 end:0x020b9b90
 
-src/overlays/ov072/calls/func_ov072_020b9b90.c:
+src/overlays/ov072/calls/Ov072_EffectBlockPlace.c:
     complete
     .text       start:0x020b9b90 end:0x020b9c84
 
-src/overlays/ov072/calls/func_ov072_020b9c84.c:
+src/overlays/ov072/calls/Ov072_OpenSubObject.c:
     complete
     .text       start:0x020b9c84 end:0x020b9d3c
 
-src/overlays/ov072/calls/func_ov072_020b9d3c.c:
+src/overlays/ov072/calls/Ov072_BindRig.c:
     complete
     .text       start:0x020b9d3c end:0x020b9d9c
 
-src/overlays/ov072/calls/func_ov072_020b9d9c.c:
+src/overlays/ov072/calls/Ov072_ArmPlayerLock.c:
     complete
     .text       start:0x020b9d9c end:0x020b9e04
 
-src/overlays/ov072/calls/func_ov072_020b9e04.c:
+src/overlays/ov072/calls/Ov072_HoverStep.c:
     complete
     .text       start:0x020b9e04 end:0x020ba088
 
-src/overlays/ov072/calls/func_ov072_020ba088.c:
+src/overlays/ov072/calls/Ov072_ShotStep.c:
     complete
     .text       start:0x020ba088 end:0x020ba40c
 
-src/overlays/ov072/calls/func_ov072_020ba40c.c:
+src/overlays/ov072/calls/Ov072_TryFire.c:
     complete
     .text       start:0x020ba40c end:0x020ba5b0
 
-src/overlays/ov072/calls/func_ov072_020ba5b0.c:
+src/overlays/ov072/calls/Ov072_InvokeWithDataTable.c:
     complete
     .text       start:0x020ba5b0 end:0x020ba5c8
 

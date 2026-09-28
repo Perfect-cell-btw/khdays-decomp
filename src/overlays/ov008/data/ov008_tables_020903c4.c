@@ -5,11 +5,11 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_020903c4: func_ov008_0205cde8
- *   data_ov008_020903d0: func_ov008_0205cde8
- *   data_ov008_020903dc: func_ov008_0205cde8
- *   data_ov008_020903e0: func_ov008_0205cde8
- *   data_ov008_020903e8: func_ov008_0205cde8
+ *   data_ov008_020903c4: Ov008_DrawSavePage
+ *   data_ov008_020903d0: Ov008_DrawSavePage
+ *   data_ov008_020903dc: Ov008_DrawSavePage
+ *   data_ov008_020903e0: Ov008_DrawSavePage
+ *   data_ov008_020903e8: Ov008_DrawSavePage
  */
 
 typedef unsigned char u8;

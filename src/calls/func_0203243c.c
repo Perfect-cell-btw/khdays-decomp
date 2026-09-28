@@ -1,5 +1,5 @@
-extern int func_02031d90();
+extern int Obj_LoadResourceNode();
 
 int func_0203243c(int arg0) {
-    return func_02031d90(arg0);
+    return Obj_LoadResourceNode(arg0);
 }

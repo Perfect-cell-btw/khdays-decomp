@@ -374,9 +374,8 @@ static inline BOOL FSi_IsArchiveSync(const volatile FSArchive *p_arc)
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
-extern void func_02001f10(OSThreadQueue *queue);   /* OS_SleepThread */
+extern void OS_SleepThread(OSThreadQueue *queue);   /* OS_SleepThread */
 extern void OS_WakeupThread(OSThreadQueue *queue);
-#define OS_SleepThread func_02001f10
 
 typedef struct {
     u32 offset;
@@ -427,12 +426,11 @@ extern BOOL FS_LoadArchive(FSArchive *p_arc, u32 base, u32 fat, u32 fat_size, u3
                            FS_ARCHIVE_READ_FUNC read_func, FS_ARCHIVE_WRITE_FUNC write_func);
 extern FSResult FSi_EmptyArchiveProc(FSFile *p_file, FSCommandType cmd);
 extern FSResult FSi_RomArchiveProc(FSFile *p_file, FSCommandType cmd);
-extern FSResult func_0200aeec(FSArchive *p_arc, void *dst, u32 src, u32 len);         /* FSi_ReadRomCallback */
-#define FSi_ReadRomCallback func_0200aeec
-extern FSResult func_0200af34(FSArchive *p_arc, const void *src, u32 dst, u32 len);   /* FSi_WriteDummyCallback */
-#define FSi_WriteDummyCallback func_0200af34
-extern FSResult func_0200afa8(FSArchive *p_arc, void *dst, u32 src, u32 len);         /* FSi_ReadDummyCallback */
-#define FSi_ReadDummyCallback func_0200afa8
+extern FSResult FSi_ReadRomCallback(FSArchive *p_arc, void *dst, u32 src, u32 len);         /* FSi_ReadRomCallback */
+extern FSResult DefaultStepDone(FSArchive *p_arc, const void *src, u32 dst, u32 len);   /* FSi_WriteDummyCallback */
+#define FSi_WriteDummyCallback DefaultStepDone
+extern FSResult DefaultStepDone_2(FSArchive *p_arc, void *dst, u32 src, u32 len);         /* FSi_ReadDummyCallback */
+#define FSi_ReadDummyCallback DefaultStepDone_2
 
 /* func_0200afb8 -- NitroSDK fs_file.c: FS_Init. In this SDK version FS_Init(default_dma_no) is the whole
  * ROM archive setup (4.x splits it as FS_Init -> FSi_InitRom): record the DMA channel and the card

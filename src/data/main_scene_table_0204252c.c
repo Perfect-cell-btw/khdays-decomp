@@ -20,7 +20,7 @@ typedef struct SceneEntry {
     void *classDesc;          /* 0x04: InstantiateClass descriptor */
 } SceneEntry;
 
-extern void func_02020928(void);   /* BootTask_Construct */
+extern void Boot_InitScene(void);   /* BootTask_Construct */
 extern void func_02020974(void);
 extern int data_0204c024;          /* the main heap arena */
 extern int data_ov000_0205a9c0, data_ov002_0207ef54, data_ov003_0204f8e4, data_ov004_02051210,
@@ -35,7 +35,7 @@ int data_02042530 = 5;
 GameClassDescriptor data_02042534 = {
     0,     /* nClassId */
     0xf,   /* nGroupId */
-    func_02020928,  /* pfnCtor */
+    Boot_InitScene,  /* pfnCtor */
     func_02020974,  /* pfnMethod */
     8,     /* nAuxSize */
     &data_0204c024,  /* pArena */

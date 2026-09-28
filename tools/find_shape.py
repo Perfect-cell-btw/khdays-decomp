@@ -3,8 +3,8 @@
 a pending one, so the nearest decompiled neighbour can be read before any source
 is invented.
 
-    python tools/find_shape.py func_ov030_020b35dc
-    python tools/find_shape.py func_ov030_020b35dc --min 0.80 --top 12
+    python tools/find_shape.py Ov030_SubmitPanel
+    python tools/find_shape.py Ov030_SubmitPanel --min 0.80 --top 12
 
 The shape is the mnemonic sequence, so relocated operands, pool values and
 register choices do not matter. Only sources under a calls/ or auto/ directory

@@ -6,48 +6,48 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_02015d14(void);
+extern void NNSi_G3dAnmBlendMat(void);
 extern void func_02015df0(void);
-extern void func_020161dc(void);
-extern void func_020172a0(void);
-extern void func_020189f0(void);
-extern void func_02018ec0(void);
-extern void func_02019120(void);
-extern void func_020191e0(void);
+extern void NNSi_G3dAnmBlendVis(void);
+extern void NNSi_G3dAnmCalcNsBca(void);
+extern void NNSi_G3dAnmCalcNsBma(void);
+extern void NNSi_G3dAnmCalcNsBta(void);
+extern void NNSi_G3dAnmCalcNsBtp(void);
+extern void NNSi_G3dAnmCalcNsBva(void);
 
 Ov_Fn data_02042494[1] = {
 
-    func_020191e0,
+    NNSi_G3dAnmCalcNsBva,
 
 };
 
 Ov_Fn data_02042498[1] = {
 
-    func_020172a0,
+    NNSi_G3dAnmCalcNsBca,
 
 };
 
 Ov_Fn data_0204249c[1] = {
 
-    func_02018ec0,
+    NNSi_G3dAnmCalcNsBta,
 
 };
 
 Ov_Fn data_020424a0[1] = {
 
-    func_02019120,
+    NNSi_G3dAnmCalcNsBtp,
 
 };
 
 Ov_Fn data_020424a4[1] = {
 
-    func_020189f0,
+    NNSi_G3dAnmCalcNsBma,
 
 };
 
 Ov_Fn data_020424a8[1] = {
 
-    func_020161dc,
+    NNSi_G3dAnmBlendVis,
 
 };
 
@@ -59,6 +59,6 @@ Ov_Fn data_020424ac[1] = {
 
 Ov_Fn data_020424b0[1] = {
 
-    func_02015d14,
+    NNSi_G3dAnmBlendMat,
 
 };

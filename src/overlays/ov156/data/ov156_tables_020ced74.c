@@ -18,7 +18,7 @@ const int data_ov156_020ced80[4] = {
     1, 2, 3, 6,
 };
 
-/* read by func_ov156_020cd500 (020cd500): unsigned short data_ov156_020ced90[]; */
+/* read by Ov156_stateAnimIndirectCallback (020cd500): unsigned short data_ov156_020ced90[]; */
 const u8 data_ov156_020ced90[4] = {
     0, 0, 5, 0,
 };

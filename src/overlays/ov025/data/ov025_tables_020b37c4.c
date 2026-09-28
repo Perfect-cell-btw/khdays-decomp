@@ -5,7 +5,7 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov025_020b37c4: func_ov025_02083e0c
+ *   data_ov025_020b37c4: Ov025_FlushDirtyCells
  */
 
 typedef unsigned char u8;

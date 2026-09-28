@@ -13,7 +13,7 @@ const int data_ov282_020d4678[8] = {
     28, 29, 30, 31, 32, 33, 34, 35,
 };
 
-/* read by * func_ov282_020d01d4 -- x3. Message handler: map the kind through a 26-entry table, then  (020d01d4): struct t26 data_ov282_020d4698; */
+/* read by * Ov282_MessageMapSetupSubObject -- x3. Message handler: map the kind through a 26-entry table, then  (020d01d4): struct t26 data_ov282_020d4698; */
 const int data_ov282_020d4698[26] = {
     1, 2, 3, 4, 5, 6, 7, 8,
     9, 10, 11, 12, 13, 14, 15, 16,
@@ -22,7 +22,7 @@ const int data_ov282_020d4698[26] = {
 };
 
 /* read by Leap entry of the ov210 enemy (x3 with ov211/ov282): raises bits 3 and 6 of the owner's +0 (020d1760): const u16 data_ov282_020d4700[];
- *   * func_ov282_020d1b04 -- x3. AI-state entry: set the aim direction, notify, arm and dispat (020d1b04): struct h2 data_ov282_020d4700;
+ *   * Ov282_AimSetupNotifyArm -- x3. AI-state entry: set the aim direction, notify, arm and dispat (020d1b04): struct h2 data_ov282_020d4700;
  *   Ov282_EnterRiseStrike (020d204c): const u16 data_ov282_020d4700[];
  *   Enter the pounce: play animation 0x18, re-acquire the target and face it, reset the counte (020d32b4): struct pt data_ov282_020d4700[]; */
 const u8 data_ov282_020d4700[16] = {

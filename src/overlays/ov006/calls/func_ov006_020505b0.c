@@ -1,7 +1,7 @@
-/* CARDi_GetRomAccessor: returns the address of the ROM accessor routine func_ov006_020505bc. */
+/* CARDi_GetRomAccessor: returns the address of the ROM accessor routine Ov006_CheckMissionMenuConfirmInput. */
 
-extern void func_ov006_020505bc(void);
+extern void Ov006_CheckMissionMenuConfirmInput(void);
 
 int func_ov006_020505b0(void) {
-    return (int)func_ov006_020505bc;
+    return (int)Ov006_CheckMissionMenuConfirmInput;
 }

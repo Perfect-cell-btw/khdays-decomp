@@ -9,7 +9,7 @@ typedef struct MtxFx44 {
 
 extern void MI_Copy64B(const void *src, void *dst);
 extern void MTX_Identity44_(MtxFx44 *dst);
-extern fx64c func_01ff8a50(fx32 x);
+extern fx64c FX_InvFx64c(fx32 x);
 
 static inline fx32 FX_Mul32x64c(fx32 x, fx64c y)
 {
@@ -56,7 +56,7 @@ s32 func_02015924(const MtxFx44 *pSrc, MtxFx44 *pDst)
             }
         }
 
-        ww = func_01ff8a50(gjm.m[i][i]);
+        ww = FX_InvFx64c(gjm.m[i][i]);
         for (j = 0; j < 4; ++j) {
             gjm.m[i][j] = FX_Mul32x64c(gjm.m[i][j], ww);
             pDst->m[i][j] = FX_Mul32x64c(pDst->m[i][j], ww);

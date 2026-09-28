@@ -3,7 +3,7 @@
 
        python tools/park_templates_fuzzy.py [max_dist]     # por defecto 3
 
-   Por que: el 2026-07-22, func_ov083_020b9794 resulto ser el octavo miembro de la
+   Por que: el 2026-07-22, Ov083_BindRig resulto ser el octavo miembro de la
    familia BindRig y el escaneo exacto NO lo agrupo con los otros siete, porque su
    bloque de rig vive en el objeto en vez de detras de una global -- le falta la carga
    del pool y la secuencia difiere en una instruccion. Una familia puede DERIVAR una o

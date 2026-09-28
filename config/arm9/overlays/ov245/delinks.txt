@@ -4,1060 +4,1060 @@
     .data       start:0x020d71e0 end:0x020d72c0 kind:data align:32
     .bss        start:0x020d72c0 end:0x020d72c0 kind:bss align:32
 
-src/overlays/ov245/calls/func_ov245_020cbf20.c:
+src/overlays/ov245/calls/Ov245_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov245/calls/func_ov245_020cbf38.c:
+src/overlays/ov245/calls/Ov245_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc8
 
-src/overlays/ov245/calls/func_ov245_020cbfc8.c:
+src/overlays/ov245/calls/Ov245_WingPose.c:
     complete
     .text       start:0x020cbfc8 end:0x020cc078
 
-src/overlays/ov245/calls/func_ov245_020cc078.c:
+src/overlays/ov245/calls/Ov245_ConstructBoss.c:
     complete
     .text       start:0x020cc078 end:0x020cc434
 
-src/overlays/ov245/calls/func_ov245_020cc434.c:
+src/overlays/ov245/calls/Ov245_Actor_Destroy.c:
     complete
     .text       start:0x020cc434 end:0x020cc494
 
-src/overlays/ov245/calls/func_ov245_020cc494.c:
+src/overlays/ov245/calls/Ov245_CarriedPoseSync.c:
     complete
     .text       start:0x020cc494 end:0x020cc54c
 
-src/overlays/ov245/calls/func_ov245_020cc54c.c:
+src/overlays/ov245/calls/Ov245_UnregisterDrawList.c:
     complete
     .text       start:0x020cc54c end:0x020cc638
 
-src/overlays/ov245/calls/func_ov245_020cc638.c:
+src/overlays/ov245/calls/Ov245_RegisterDrawList.c:
     complete
     .text       start:0x020cc638 end:0x020cc6e4
 
-src/overlays/ov245/calls/func_ov245_020cc6e4.c:
+src/overlays/ov245/calls/Ov245_PairAndSlotMsg.c:
     complete
     .text       start:0x020cc6e4 end:0x020cc794
 
-src/overlays/ov245/calls/func_ov245_020cc794.c:
+src/overlays/ov245/calls/Ov245_BindMotion.c:
     complete
     .text       start:0x020cc794 end:0x020cc810
 
-src/overlays/ov245/auto/func_ov245_020cc810.c:
+src/overlays/ov245/auto/Ov245_SendBlankStatus.c:
     complete
     .text       start:0x020cc810 end:0x020cc86c
 
-src/overlays/ov245/calls/func_ov245_020cc86c.c:
+src/overlays/ov245/calls/Ov245_PublishCountersToMessage.c:
     complete
     .text       start:0x020cc86c end:0x020cc8a4
 
-src/overlays/ov245/calls/func_ov245_020cc8a4.c:
+src/overlays/ov245/calls/Ov245_FilterStateMsg.c:
     complete
     .text       start:0x020cc8a4 end:0x020cc8ec
 
-src/overlays/ov245/calls/func_ov245_020cc8ec.c:
+src/overlays/ov245/calls/Ov245_FilterMessage.c:
     complete
     .text       start:0x020cc8ec end:0x020cc918
 
-src/overlays/ov245/calls/func_ov245_020cc918.c:
+src/overlays/ov245/calls/Ov245_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020cc918 end:0x020cc974
 
-src/overlays/ov245/calls/func_ov245_020cc974.c:
+src/overlays/ov245/calls/Ov245_HitFilterStock.c:
     complete
     .text       start:0x020cc974 end:0x020ccb30
     .rodata     start:0x020d7194 end:0x020d7198
 
-src/overlays/ov245/calls/func_ov245_020ccb30.c:
+src/overlays/ov245/calls/Ov245_ArrivalDecision.c:
     complete
     .text       start:0x020ccb30 end:0x020ccda4
 
-src/overlays/ov245/calls/func_ov245_020ccda4.c:
+src/overlays/ov245/calls/Ov245_TargetHeightGap.c:
     complete
     .text       start:0x020ccda4 end:0x020cce08
 
-src/overlays/ov245/calls/func_ov245_020cce08.c:
+src/overlays/ov245/calls/Ov245_SetNodeMode3.c:
     complete
     .text       start:0x020cce08 end:0x020cce28
 
-src/overlays/ov245/calls/func_ov245_020cce28.c:
+src/overlays/ov245/calls/Ov245_ResetMode.c:
     complete
     .text       start:0x020cce28 end:0x020cce48
 
-src/overlays/ov245/calls/func_ov245_020cce48.c:
+src/overlays/ov245/calls/Ov245_AnimGate.c:
     complete
     .text       start:0x020cce48 end:0x020cceb8
 
-src/overlays/ov245/calls/func_ov245_020cceb8.c:
+src/overlays/ov245/calls/Ov245_NodeInit2.c:
     complete
     .text       start:0x020cceb8 end:0x020ccfa8
 
-src/overlays/ov245/calls/func_ov245_020ccfa8.c:
+src/overlays/ov245/calls/Ov245_CommitQueuedMove.c:
     complete
     .text       start:0x020ccfa8 end:0x020cd1d0
 
-src/overlays/ov245/calls/func_ov245_020cd1d0.c:
+src/overlays/ov245/calls/Ov245_BossMotionTick.c:
     complete
     .text       start:0x020cd1d0 end:0x020cd668
 
-src/overlays/ov245/calls/func_ov245_020cd668.c:
+src/overlays/ov245/calls/Ov245_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cd668 end:0x020cd6d0
 
-src/overlays/ov245/calls/func_ov245_020cd6d0.c:
+src/overlays/ov245/calls/Ov245_EnterReaction.c:
     complete
     .text       start:0x020cd6d0 end:0x020cd73c
 
-src/overlays/ov245/calls/func_ov245_020cd73c.c:
+src/overlays/ov245/calls/Ov245_LandingDecision.c:
     complete
     .text       start:0x020cd73c end:0x020cd7e0
 
-src/overlays/ov245/calls/func_ov245_020cd7e0.c:
+src/overlays/ov245/calls/Ov245_AiStep_QueueAction4OnAnimEnd.c:
     complete
     .text       start:0x020cd7e0 end:0x020cd814
 
-src/overlays/ov245/calls/func_ov245_020cd814.c:
+src/overlays/ov245/calls/Ov245_AiEnterDescend.c:
     complete
     .text       start:0x020cd814 end:0x020cd85c
 
-src/overlays/ov245/calls/func_ov245_020cd85c.c:
+src/overlays/ov245/calls/Ov245_DescendTick.c:
     complete
     .text       start:0x020cd85c end:0x020cd8f0
 
-src/overlays/ov245/calls/func_ov245_020cd8f0.c:
+src/overlays/ov245/calls/Ov245_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd8f0 end:0x020cd924
 
-src/overlays/ov245/calls/func_ov245_020cd924.c:
+src/overlays/ov245/calls/Ov245_AiStep_QueueAction4OnAnimEnd_2.c:
     complete
     .text       start:0x020cd924 end:0x020cd958
 
-src/overlays/ov245/calls/func_ov245_020cd958.c:
+src/overlays/ov245/calls/Ov245_DescendEnter.c:
     complete
     .text       start:0x020cd958 end:0x020cd9f4
 
-src/overlays/ov245/calls/func_ov245_020cd9f4.c:
+src/overlays/ov245/calls/Ov245_DropTick.c:
     complete
     .text       start:0x020cd9f4 end:0x020cdbfc
 
-src/overlays/ov245/calls/func_ov245_020cdbfc.c:
+src/overlays/ov245/calls/Ov245_WaitPartsSettled.c:
     complete
     .text       start:0x020cdbfc end:0x020cdc78
 
-src/overlays/ov245/calls/func_ov245_020cdc78.c:
+src/overlays/ov245/calls/Ov245_AiStep_QueueAction2AfterGate.c:
     complete
     .text       start:0x020cdc78 end:0x020cdcb4
 
-src/overlays/ov245/calls/func_ov245_020cdcb4.c:
+src/overlays/ov245/calls/Ov245_DiveEnter.c:
     complete
     .text       start:0x020cdcb4 end:0x020cdd60
 
-src/overlays/ov245/calls/func_ov245_020cdd60.c:
+src/overlays/ov245/calls/Ov245_DiveTick.c:
     complete
     .text       start:0x020cdd60 end:0x020cde98
 
-src/overlays/ov245/calls/func_ov245_020cde98.c:
+src/overlays/ov245/calls/Ov245_AiStep_FlagAndQueueAction2AfterGate.c:
     complete
     .text       start:0x020cde98 end:0x020cdedc
 
-src/overlays/ov245/calls/func_ov245_020cdedc.c:
+src/overlays/ov245/calls/Ov245_AiEnterFlight.c:
     complete
     .text       start:0x020cdedc end:0x020cdf00
 
-src/overlays/ov245/calls/func_ov245_020cdf00.c:
+src/overlays/ov245/calls/Ov245_FlightTick.c:
     complete
     .text       start:0x020cdf00 end:0x020ce0d8
 
-src/overlays/ov245/calls/func_ov245_020ce0d8.c:
+src/overlays/ov245/calls/Ov245_AiDelayThenFlight.c:
     complete
     .text       start:0x020ce0d8 end:0x020ce130
 
-src/overlays/ov245/calls/func_ov245_020ce130.c:
+src/overlays/ov245/calls/Ov245_AiEnterHoverArm.c:
     complete
     .text       start:0x020ce130 end:0x020ce15c
 
-src/overlays/ov245/calls/func_ov245_020ce15c.c:
+src/overlays/ov245/calls/Ov245_AiHoverArmStart.c:
     complete
     .text       start:0x020ce15c end:0x020ce1cc
 
-src/overlays/ov245/calls/func_ov245_020ce1cc.c:
+src/overlays/ov245/calls/Ov245_HoverArmedTick.c:
     complete
     .text       start:0x020ce1cc end:0x020ce2d4
 
-src/overlays/ov245/calls/func_ov245_020ce2d4.c:
+src/overlays/ov245/calls/Ov245_HoverTick.c:
     complete
     .text       start:0x020ce2d4 end:0x020ce33c
 
-src/overlays/ov245/calls/func_ov245_020ce33c.c:
+src/overlays/ov245/calls/Ov245_ApplyRecoilPush.c:
     complete
     .text       start:0x020ce33c end:0x020ce394
 
-src/overlays/ov245/calls/func_ov245_020ce394.c:
+src/overlays/ov245/calls/Ov245_AiEnterWaitStop.c:
     complete
     .text       start:0x020ce394 end:0x020ce3f4
 
-src/overlays/ov245/calls/func_ov245_020ce3f4.c:
+src/overlays/ov245/calls/Ov245_AiWaitStart.c:
     complete
     .text       start:0x020ce3f4 end:0x020ce448
 
-src/overlays/ov245/calls/func_ov245_020ce448.c:
+src/overlays/ov245/calls/Ov245_WaitTick.c:
     complete
     .text       start:0x020ce448 end:0x020ce4e0
 
-src/overlays/ov245/calls/func_ov245_020ce4e0.c:
+src/overlays/ov245/calls/Ov245_RiseTick.c:
     complete
     .text       start:0x020ce4e0 end:0x020ce560
 
-src/overlays/ov245/calls/func_ov245_020ce560.c:
+src/overlays/ov245/calls/Ov245_LandingTick.c:
     complete
     .text       start:0x020ce560 end:0x020ce7ec
 
-src/overlays/ov245/calls/func_ov245_020ce7ec.c:
+src/overlays/ov245/calls/Ov245_AiStep_SetFlags3AndEnd.c:
     complete
     .text       start:0x020ce7ec end:0x020ce818
 
-src/overlays/ov245/calls/func_ov245_020ce818.c:
+src/overlays/ov245/calls/Ov245_HitReact2.c:
     complete
     .text       start:0x020ce818 end:0x020ce87c
 
-src/overlays/ov245/calls/func_ov245_020ce87c.c:
+src/overlays/ov245/calls/Ov245_Projectile_New.c:
     complete
     .text       start:0x020ce87c end:0x020ce8b0
 
-src/overlays/ov245/calls/func_ov245_020ce8b0.c:
+src/overlays/ov245/calls/Ov245_CarriedConstruct.c:
     complete
     .text       start:0x020ce8b0 end:0x020cea24
 
-src/overlays/ov245/calls/func_ov245_020cea24.c:
+src/overlays/ov245/calls/Ov245_Destroy.c:
     complete
     .text       start:0x020cea24 end:0x020cea48
 
-src/overlays/ov245/calls/func_ov245_020cea48.c:
+src/overlays/ov245/calls/Ov245_TickAndSyncModelXform.c:
     complete
     .text       start:0x020cea48 end:0x020cea80
 
-src/overlays/ov245/calls/func_ov245_020cea80.c:
+src/overlays/ov245/calls/Ov245_SpawnSlotEffectMsg.c:
     complete
     .text       start:0x020cea80 end:0x020ceaf8
 
-src/overlays/ov245/auto/func_ov245_020ceaf8.c:
+src/overlays/ov245/auto/Ov245_StartTwoPointMove.c:
     complete
     .text       start:0x020ceaf8 end:0x020ceb34
 
-src/overlays/ov245/calls/func_ov245_020ceb34.c:
+src/overlays/ov245/calls/Ov245_SubHitFilter2.c:
     complete
     .text       start:0x020ceb34 end:0x020cebd4
 
-src/overlays/ov245/calls/func_ov245_020cebd4.c:
+src/overlays/ov245/calls/Ov245_CreateAiTask.c:
     complete
     .text       start:0x020cebd4 end:0x020cec30
 
-src/overlays/ov245/calls/func_ov245_020cec30.c:
+src/overlays/ov245/calls/Ov245_stateInitClearSlots.c:
     complete
     .text       start:0x020cec30 end:0x020cecd8
 
-src/overlays/ov245/calls/func_ov245_020cecd8.c:
+src/overlays/ov245/calls/Ov245_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020cecd8 end:0x020ced50
 
-src/overlays/ov245/auto/func_ov245_020ced50.c:
+src/overlays/ov245/auto/Ov245_AiApplyMoveVector.c:
     complete
     .text       start:0x020ced50 end:0x020ced68
 
-src/overlays/ov245/calls/func_ov245_020ced68.c:
+src/overlays/ov245/calls/Ov245_ResetPose.c:
     complete
     .text       start:0x020ced68 end:0x020cee24
 
-src/overlays/ov245/auto/func_ov245_020cee24.c:
+src/overlays/ov245/auto/Ov245_ResetPoseIdleStep.c:
     complete
     .text       start:0x020cee24 end:0x020cee28
 
-src/overlays/ov245/calls/func_ov245_020cee28.c:
+src/overlays/ov245/calls/Ov245_ChargeEnter.c:
     complete
     .text       start:0x020cee28 end:0x020ceef0
 
-src/overlays/ov245/calls/func_ov245_020ceef0.c:
+src/overlays/ov245/calls/Ov245_ChargeDelay.c:
     complete
     .text       start:0x020ceef0 end:0x020cef98
 
-src/overlays/ov245/calls/func_ov245_020cef98.c:
+src/overlays/ov245/calls/Ov245_BounceTick.c:
     complete
     .text       start:0x020cef98 end:0x020cf230
 
-src/overlays/ov245/calls/func_ov245_020cf230.c:
+src/overlays/ov245/calls/Ov245_NodeUpdateTickForward.c:
     complete
     .text       start:0x020cf230 end:0x020cf284
 
-src/overlays/ov245/calls/func_ov245_020cf284.c:
+src/overlays/ov245/calls/Ov245_Carrier_New.c:
     complete
     .text       start:0x020cf284 end:0x020cf2f0
 
-src/overlays/ov245/calls/func_ov245_020cf2f0.c:
+src/overlays/ov245/calls/Ov245_CarrierActorInit.c:
     complete
     .text       start:0x020cf2f0 end:0x020cf534
 
-src/overlays/ov245/calls/func_ov245_020cf534.c:
+src/overlays/ov245/calls/Ov245_Actor2_Destroy.c:
     complete
     .text       start:0x020cf534 end:0x020cf574
 
-src/overlays/ov245/calls/func_ov245_020cf574.c:
+src/overlays/ov245/calls/Ov245_OwnedPoseSync.c:
     complete
     .text       start:0x020cf574 end:0x020cf620
 
-src/overlays/ov245/calls/func_ov245_020cf620.c:
+src/overlays/ov245/calls/Ov245_Carrier_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cf620 end:0x020cf65c
 
-src/overlays/ov245/calls/func_ov245_020cf65c.c:
+src/overlays/ov245/calls/Ov245_Carrier_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cf65c end:0x020cf698
 
-src/overlays/ov245/calls/func_ov245_020cf698.c:
+src/overlays/ov245/calls/Ov245_PlacementMsgHook.c:
     complete
     .text       start:0x020cf698 end:0x020cf7f4
 
-src/overlays/ov245/calls/func_ov245_020cf7f4.c:
+src/overlays/ov245/calls/Ov245_ReleaseHeld3f4.c:
     complete
     .text       start:0x020cf7f4 end:0x020cf838
 
-src/overlays/ov245/calls/func_ov245_020cf838.c:
+src/overlays/ov245/calls/Ov245_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020cf838 end:0x020cf870
 
-src/overlays/ov245/auto/func_ov245_020cf870.c:
+src/overlays/ov245/auto/Ov245_SendBlankStatusWide.c:
     complete
     .text       start:0x020cf870 end:0x020cf8cc
 
-src/overlays/ov245/calls/func_ov245_020cf8cc.c:
+src/overlays/ov245/calls/Ov245_PackPosMsg.c:
     complete
     .text       start:0x020cf8cc end:0x020cf978
 
-src/overlays/ov245/calls/func_ov245_020cf978.c:
+src/overlays/ov245/calls/Ov245_SeedDwellAndAim.c:
     complete
     .text       start:0x020cf978 end:0x020cf9b8
 
-src/overlays/ov245/calls/func_ov245_020cf9b8.c:
+src/overlays/ov245/calls/Ov245_SpawnActorRegistryEntry_2.c:
     complete
     .text       start:0x020cf9b8 end:0x020cfa14
 
-src/overlays/ov245/calls/func_ov245_020cfa14.c:
+src/overlays/ov245/calls/Ov245_StockHitFilter.c:
     complete
     .text       start:0x020cfa14 end:0x020cfb30
 
-src/overlays/ov245/calls/func_ov245_020cfb30.c:
+src/overlays/ov245/calls/Ov245_NodeInit.c:
     complete
     .text       start:0x020cfb30 end:0x020cfc14
 
-src/overlays/ov245/calls/func_ov245_020cfc14.c:
+src/overlays/ov245/calls/Ov245_Carrier_AiDispatchAction.c:
     complete
     .text       start:0x020cfc14 end:0x020cfd54
 
-src/overlays/ov245/calls/func_ov245_020cfd54.c:
+src/overlays/ov245/calls/Ov245_SpinTick.c:
     complete
     .text       start:0x020cfd54 end:0x020cfdec
 
-src/overlays/ov245/calls/func_ov245_020cfdec.c:
+src/overlays/ov245/calls/Ov245_stateSetFlagsClearBit_2.c:
     complete
     .text       start:0x020cfdec end:0x020cfe54
 
-src/overlays/ov245/auto/func_ov245_020cfe54.c:
+src/overlays/ov245/auto/Ov245_SetFlagsClearBitIdleStep.c:
     complete
     .text       start:0x020cfe54 end:0x020cfe58
 
-src/overlays/ov245/calls/func_ov245_020cfe58.c:
+src/overlays/ov245/calls/Ov245_StunTick.c:
     complete
     .text       start:0x020cfe58 end:0x020cff94
 
-src/overlays/ov245/calls/func_ov245_020cff94.c:
+src/overlays/ov245/calls/Ov245_Carrier_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cff94 end:0x020cfff4
 
-src/overlays/ov245/calls/func_ov245_020cfff4.c:
+src/overlays/ov245/calls/Ov245_StartHoverWait.c:
     complete
     .text       start:0x020cfff4 end:0x020d003c
 
-src/overlays/ov245/calls/func_ov245_020d003c.c:
+src/overlays/ov245/calls/Ov245_WaitForFreeSlot.c:
     complete
     .text       start:0x020d003c end:0x020d00bc
 
-src/overlays/ov245/calls/func_ov245_020d00bc.c:
+src/overlays/ov245/calls/Ov245_Carrier_AiEnterCharge.c:
     complete
     .text       start:0x020d00bc end:0x020d013c
 
-src/overlays/ov245/calls/func_ov245_020d013c.c:
+src/overlays/ov245/calls/Ov245_ChargeTick.c:
     complete
     .text       start:0x020d013c end:0x020d0330
 
-src/overlays/ov245/calls/func_ov245_020d0330.c:
+src/overlays/ov245/calls/Ov245_ChargeUpTick.c:
     complete
     .text       start:0x020d0330 end:0x020d0664
 
-src/overlays/ov245/calls/func_ov245_020d0664.c:
+src/overlays/ov245/calls/Ov245_SetPose3ThenAdvanceSlot.c:
     complete
     .text       start:0x020d0664 end:0x020d0698
 
-src/overlays/ov245/calls/func_ov245_020d0698.c:
+src/overlays/ov245/calls/Ov245_FinishEnter2.c:
     complete
     .text       start:0x020d0698 end:0x020d0794
 
-src/overlays/ov245/calls/func_ov245_020d0794.c:
+src/overlays/ov245/calls/Ov245_InvokeHookAndRearm.c:
     complete
     .text       start:0x020d0794 end:0x020d07f0
 
-src/overlays/ov245/calls/func_ov245_020d07f0.c:
+src/overlays/ov245/calls/Ov245_Child_New.c:
     complete
     .text       start:0x020d07f0 end:0x020d0828
 
-src/overlays/ov245/calls/func_ov245_020d0828.c:
+src/overlays/ov245/calls/Ov245_Construct.c:
     complete
     .text       start:0x020d0828 end:0x020d097c
 
-src/overlays/ov245/calls/func_ov245_020d097c.c:
+src/overlays/ov245/calls/Ov245_ReleaseSubObjectsLoopThenNotify.c:
     complete
     .text       start:0x020d097c end:0x020d09b4
 
-src/overlays/ov245/calls/func_ov245_020d09b4.c:
+src/overlays/ov245/calls/Ov245_Child_TickSyncXform.c:
     complete
     .text       start:0x020d09b4 end:0x020d09ec
 
-src/overlays/ov245/calls/func_ov245_020d09ec.c:
+src/overlays/ov245/calls/Ov245_SlotSpawnMsg3.c:
     complete
     .text       start:0x020d09ec end:0x020d0abc
 
-src/overlays/ov245/calls/func_ov245_020d0abc.c:
+src/overlays/ov245/calls/Ov245_ReleaseHeldObject.c:
     complete
     .text       start:0x020d0abc end:0x020d0af0
 
-src/overlays/ov245/calls/func_ov245_020d0af0.c:
+src/overlays/ov245/calls/Ov245_Aim.c:
     complete
     .text       start:0x020d0af0 end:0x020d0b58
 
-src/overlays/ov245/calls/func_ov245_020d0b58.c:
+src/overlays/ov245/calls/Ov245_SubHitFilter.c:
     complete
     .text       start:0x020d0b58 end:0x020d0bf4
 
-src/overlays/ov245/calls/func_ov245_020d0bf4.c:
+src/overlays/ov245/calls/Ov245_Child_CreateAiTask.c:
     complete
     .text       start:0x020d0bf4 end:0x020d0c50
 
-src/overlays/ov245/calls/func_ov245_020d0c50.c:
+src/overlays/ov245/calls/Ov245_stateInitClearSlots_2.c:
     complete
     .text       start:0x020d0c50 end:0x020d0cf8
 
-src/overlays/ov245/calls/func_ov245_020d0cf8.c:
+src/overlays/ov245/calls/Ov245_dispatchByStatusByteReset_2.c:
     complete
     .text       start:0x020d0cf8 end:0x020d0d70
 
-src/overlays/ov245/calls/func_ov245_020d0d70.c:
+src/overlays/ov245/calls/Ov245_AimTick.c:
     complete
     .text       start:0x020d0d70 end:0x020d0de4
 
-src/overlays/ov245/calls/func_ov245_020d0de4.c:
+src/overlays/ov245/calls/Ov245_SeedAimResetFlags_b.c:
     complete
     .text       start:0x020d0de4 end:0x020d0ea0
 
-src/overlays/ov245/auto/func_ov245_020d0ea0.c:
+src/overlays/ov245/auto/Ov245_SeedAimIdleStep.c:
     complete
     .text       start:0x020d0ea0 end:0x020d0ea4
 
-src/overlays/ov245/calls/func_ov245_020d0ea4.c:
+src/overlays/ov245/calls/Ov245_SlamEnter.c:
     complete
     .text       start:0x020d0ea4 end:0x020d0fa0
 
-src/overlays/ov245/calls/func_ov245_020d0fa0.c:
+src/overlays/ov245/calls/Ov245_RollTick.c:
     complete
     .text       start:0x020d0fa0 end:0x020d1234
 
-src/overlays/ov245/calls/func_ov245_020d1234.c:
+src/overlays/ov245/calls/Ov245_InvokeHookAndRearm_2.c:
     complete
     .text       start:0x020d1234 end:0x020d1290
 
-src/overlays/ov245/calls/func_ov245_020d1290.c:
+src/overlays/ov245/calls/Ov245_ForwardToAiTaskWhenReady.c:
     complete
     .text       start:0x020d1290 end:0x020d12ac
 
-src/overlays/ov245/calls/func_ov245_020d12ac.c:
+src/overlays/ov245/calls/Ov245_Thrown_New.c:
     complete
     .text       start:0x020d12ac end:0x020d12e0
 
-src/overlays/ov245/calls/func_ov245_020d12e0.c:
+src/overlays/ov245/calls/Ov245_ThrownConstruct.c:
     complete
     .text       start:0x020d12e0 end:0x020d1454
 
-src/overlays/ov245/calls/func_ov245_020d1454.c:
+src/overlays/ov245/calls/Ov245_Destroy_2.c:
     complete
     .text       start:0x020d1454 end:0x020d1478
 
-src/overlays/ov245/calls/func_ov245_020d1478.c:
+src/overlays/ov245/calls/Ov245_TickAndSyncTwoModelXforms.c:
     complete
     .text       start:0x020d1478 end:0x020d14d4
 
-src/overlays/ov245/calls/func_ov245_020d14d4.c:
+src/overlays/ov245/calls/Ov245_SpawnSlotChildMsg.c:
     complete
     .text       start:0x020d14d4 end:0x020d154c
 
-src/overlays/ov245/calls/func_ov245_020d154c.c:
+src/overlays/ov245/calls/Ov245_Thrown_ApplyAnims.c:
     complete
     .text       start:0x020d154c end:0x020d15a4
 
-src/overlays/ov245/calls/func_ov245_020d15a4.c:
+src/overlays/ov245/calls/Ov245_Thrown_Launch.c:
     complete
     .text       start:0x020d15a4 end:0x020d15c4
 
-src/overlays/ov245/auto/func_ov245_020d15c4.c:
+src/overlays/ov245/auto/Ov245_AiQueueAction0.c:
     complete
     .text       start:0x020d15c4 end:0x020d15d4
 
-src/overlays/ov245/calls/func_ov245_020d15d4.c:
+src/overlays/ov245/calls/Ov245_Thrown_CreateAiTask.c:
     complete
     .text       start:0x020d15d4 end:0x020d1630
 
-src/overlays/ov245/calls/func_ov245_020d1630.c:
+src/overlays/ov245/calls/Ov245_stateInitClearSlots_3.c:
     complete
     .text       start:0x020d1630 end:0x020d16d8
 
-src/overlays/ov245/calls/func_ov245_020d16d8.c:
+src/overlays/ov245/calls/Ov245_Thrown_AiDispatchAction.c:
     complete
     .text       start:0x020d16d8 end:0x020d1780
 
-src/overlays/ov245/auto/func_ov245_020d1780.c:
+src/overlays/ov245/auto/Ov245_AiApplyMoveVector_2.c:
     complete
     .text       start:0x020d1780 end:0x020d1798
 
-src/overlays/ov245/calls/func_ov245_020d1798.c:
+src/overlays/ov245/calls/Ov245_EnterState1854.c:
     complete
     .text       start:0x020d1798 end:0x020d1854
 
-src/overlays/ov245/auto/func_ov245_020d1854.c:
+src/overlays/ov245/auto/Ov245_IdleStep.c:
     complete
     .text       start:0x020d1854 end:0x020d1858
 
-src/overlays/ov245/calls/func_ov245_020d1858.c:
+src/overlays/ov245/calls/Ov245_StartWindup.c:
     complete
     .text       start:0x020d1858 end:0x020d18b0
 
-src/overlays/ov245/calls/func_ov245_020d18b0.c:
+src/overlays/ov245/calls/Ov245_PreAttackDelay.c:
     complete
     .text       start:0x020d18b0 end:0x020d1950
 
-src/overlays/ov245/calls/func_ov245_020d1950.c:
+src/overlays/ov245/calls/Ov245_GlideTick.c:
     complete
     .text       start:0x020d1950 end:0x020d1b90
 
-src/overlays/ov245/calls/func_ov245_020d1b90.c:
+src/overlays/ov245/calls/Ov245_Thrown_AiTimeoutTick.c:
     complete
     .text       start:0x020d1b90 end:0x020d1bcc
 
-src/overlays/ov245/calls/func_ov245_020d1bcc.c:
+src/overlays/ov245/calls/Ov245_BurstEntry.c:
     complete
     .text       start:0x020d1bcc end:0x020d1d98
 
-src/overlays/ov245/calls/func_ov245_020d1d98.c:
+src/overlays/ov245/calls/Ov245_AiStep_QueueAction0OnAnimEnd.c:
     complete
     .text       start:0x020d1d98 end:0x020d1dc8
 
-src/overlays/ov245/calls/func_ov245_020d1dc8.c:
+src/overlays/ov245/calls/Ov245_NodeUpdateTickForward_b.c:
     complete
     .text       start:0x020d1dc8 end:0x020d1e1c
 
-src/overlays/ov245/calls/func_ov245_020d1e1c.c:
+src/overlays/ov245/calls/Ov245_Variant_New.c:
     complete
     .text       start:0x020d1e1c end:0x020d1e50
 
-src/overlays/ov245/calls/func_ov245_020d1e50.c:
+src/overlays/ov245/calls/Ov245_ConstructVariant.c:
     complete
     .text       start:0x020d1e50 end:0x020d1fb4
 
-src/overlays/ov245/calls/func_ov245_020d1fb4.c:
+src/overlays/ov245/calls/Ov245_OnDespawn.c:
     complete
     .text       start:0x020d1fb4 end:0x020d1fd0
 
-src/overlays/ov245/calls/func_ov245_020d1fd0.c:
+src/overlays/ov245/calls/Ov245_Variant_TickFollowOwner.c:
     complete
     .text       start:0x020d1fd0 end:0x020d2010
 
-src/overlays/ov245/calls/func_ov245_020d2010.c:
+src/overlays/ov245/calls/Ov245_Variant_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020d2010 end:0x020d204c
 
-src/overlays/ov245/calls/func_ov245_020d204c.c:
+src/overlays/ov245/calls/Ov245_Variant_NotifyPartsThenBase.c:
     complete
     .text       start:0x020d204c end:0x020d2088
 
-src/overlays/ov245/calls/func_ov245_020d2088.c:
+src/overlays/ov245/calls/Ov245_Variant_ApplyAnim.c:
     complete
     .text       start:0x020d2088 end:0x020d20c0
 
-src/overlays/ov245/calls/func_ov245_020d20c0.c:
+src/overlays/ov245/calls/Ov245_Variant_PostTickAim.c:
     complete
     .text       start:0x020d20c0 end:0x020d2118
 
-src/overlays/ov245/calls/func_ov245_020d2118.c:
+src/overlays/ov245/calls/Ov245_ArmStraightMove.c:
     complete
     .text       start:0x020d2118 end:0x020d2154
 
-src/overlays/ov245/calls/func_ov245_020d2154.c:
+src/overlays/ov245/calls/Ov245_Variant_CreateAiTask.c:
     complete
     .text       start:0x020d2154 end:0x020d21c0
 
-src/overlays/ov245/calls/func_ov245_020d21c0.c:
+src/overlays/ov245/calls/Ov245_Variant_AiStateInit.c:
     complete
     .text       start:0x020d21c0 end:0x020d2268
 
-src/overlays/ov245/calls/func_ov245_020d2268.c:
+src/overlays/ov245/calls/Ov245_dispatchByStatusByteReset_3.c:
     complete
     .text       start:0x020d2268 end:0x020d22e0
 
-src/overlays/ov245/calls/func_ov245_020d22e0.c:
+src/overlays/ov245/calls/Ov245_SpinTick_2.c:
     complete
     .text       start:0x020d22e0 end:0x020d23b8
 
-src/overlays/ov245/calls/func_ov245_020d23b8.c:
+src/overlays/ov245/calls/Ov245_EnterState2430.c:
     complete
     .text       start:0x020d23b8 end:0x020d2430
 
-src/overlays/ov245/auto/func_ov245_020d2430.c:
+src/overlays/ov245/auto/Ov245_IdleStep_2.c:
     complete
     .text       start:0x020d2430 end:0x020d2434
 
-src/overlays/ov245/calls/func_ov245_020d2434.c:
+src/overlays/ov245/calls/Ov245_ChargeUpTick_2.c:
     complete
     .text       start:0x020d2434 end:0x020d24bc
 
-src/overlays/ov245/calls/func_ov245_020d24bc.c:
+src/overlays/ov245/calls/Ov245_Variant_AiVolleyStart.c:
     complete
     .text       start:0x020d24bc end:0x020d2538
 
-src/overlays/ov245/calls/func_ov245_020d2538.c:
+src/overlays/ov245/calls/Ov245_VolleyTick.c:
     complete
     .text       start:0x020d2538 end:0x020d2714
 
-src/overlays/ov245/calls/func_ov245_020d2714.c:
+src/overlays/ov245/calls/Ov245_WaitPartsIdle.c:
     complete
     .text       start:0x020d2714 end:0x020d27b4
 
-src/overlays/ov245/calls/func_ov245_020d27b4.c:
+src/overlays/ov245/calls/Ov245_Variant_AiStep_QueueAction0OnAnimEnd.c:
     complete
     .text       start:0x020d27b4 end:0x020d27e4
 
-src/overlays/ov245/calls/func_ov245_020d27e4.c:
+src/overlays/ov245/calls/Ov245_HitReact3.c:
     complete
     .text       start:0x020d27e4 end:0x020d284c
 
-src/overlays/ov245/calls/func_ov245_020d284c.c:
+src/overlays/ov245/calls/Ov245_Hopper_New.c:
     complete
     .text       start:0x020d284c end:0x020d2884
 
-src/overlays/ov245/calls/func_ov245_020d2884.c:
+src/overlays/ov245/calls/Ov245_HopperConstruct.c:
     complete
     .text       start:0x020d2884 end:0x020d2a40
 
-src/overlays/ov245/calls/func_ov245_020d2a40.c:
+src/overlays/ov245/calls/Ov245_ReleaseSubObjectsLoopThenNotify_2.c:
     complete
     .text       start:0x020d2a40 end:0x020d2a78
 
-src/overlays/ov245/calls/func_ov245_020d2a78.c:
+src/overlays/ov245/calls/Ov245_Hopper_TickSyncXform.c:
     complete
     .text       start:0x020d2a78 end:0x020d2ab0
 
-src/overlays/ov245/calls/func_ov245_020d2ab0.c:
+src/overlays/ov245/calls/Ov245_SlotSpawnMsg4.c:
     complete
     .text       start:0x020d2ab0 end:0x020d2b88
 
-src/overlays/ov245/calls/func_ov245_020d2b88.c:
+src/overlays/ov245/calls/Ov245_ReleaseHeld3a8.c:
     complete
     .text       start:0x020d2b88 end:0x020d2bc4
 
-src/overlays/ov245/calls/func_ov245_020d2bc4.c:
+src/overlays/ov245/calls/Ov245_PlanHop.c:
     complete
     .text       start:0x020d2bc4 end:0x020d2c78
 
-src/overlays/ov245/calls/func_ov245_020d2c78.c:
+src/overlays/ov245/calls/Ov245_StartHops.c:
     complete
     .text       start:0x020d2c78 end:0x020d2d08
 
-src/overlays/ov245/calls/func_ov245_020d2d08.c:
+src/overlays/ov245/calls/Ov245_HopToPartHitFilter.c:
     complete
     .text       start:0x020d2d08 end:0x020d2e58
 
-src/overlays/ov245/calls/func_ov245_020d2e58.c:
+src/overlays/ov245/calls/Ov245_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d2e58 end:0x020d2eb4
 
-src/overlays/ov245/calls/func_ov245_020d2eb4.c:
+src/overlays/ov245/calls/Ov245_stateInitClearSlots_4.c:
     complete
     .text       start:0x020d2eb4 end:0x020d2f5c
 
-src/overlays/ov245/calls/func_ov245_020d2f5c.c:
+src/overlays/ov245/calls/Ov245_dispatchByStatusByteReset_4.c:
     complete
     .text       start:0x020d2f5c end:0x020d2fd4
 
-src/overlays/ov245/auto/func_ov245_020d2fd4.c:
+src/overlays/ov245/auto/Ov245_AiApplyMoveVector_3.c:
     complete
     .text       start:0x020d2fd4 end:0x020d2fec
 
-src/overlays/ov245/calls/func_ov245_020d2fec.c:
+src/overlays/ov245/calls/Ov245_SeedAimResetFlags_c.c:
     complete
     .text       start:0x020d2fec end:0x020d30a8
 
-src/overlays/ov245/auto/func_ov245_020d30a8.c:
+src/overlays/ov245/auto/Ov245_SeedAimIdleStep_2.c:
     complete
     .text       start:0x020d30a8 end:0x020d30ac
 
-src/overlays/ov245/calls/func_ov245_020d30ac.c:
+src/overlays/ov245/calls/Ov245_SlideEnter.c:
     complete
     .text       start:0x020d30ac end:0x020d31a4
 
-src/overlays/ov245/calls/func_ov245_020d31a4.c:
+src/overlays/ov245/calls/Ov245_Hopper_AiEnterHop.c:
     complete
     .text       start:0x020d31a4 end:0x020d31ec
 
-src/overlays/ov245/calls/func_ov245_020d31ec.c:
+src/overlays/ov245/calls/Ov245_HopTick.c:
     complete
     .text       start:0x020d31ec end:0x020d37b0
 
-src/overlays/ov245/calls/func_ov245_020d37b0.c:
+src/overlays/ov245/calls/Ov245_NodeUpdateTickForward_c.c:
     complete
     .text       start:0x020d37b0 end:0x020d3804
 
-src/overlays/ov245/calls/func_ov245_020d3804.c:
+src/overlays/ov245/calls/Ov245_FourShape_New.c:
     complete
     .text       start:0x020d3804 end:0x020d3838
 
-src/overlays/ov245/calls/func_ov245_020d3838.c:
+src/overlays/ov245/calls/Ov245_FourShapeConstruct.c:
     complete
     .text       start:0x020d3838 end:0x020d3aac
 
-src/overlays/ov245/calls/func_ov245_020d3aac.c:
+src/overlays/ov245/calls/Ov245_TeardownRig.c:
     complete
     .text       start:0x020d3aac end:0x020d3ae4
 
-src/overlays/ov245/calls/func_ov245_020d3ae4.c:
+src/overlays/ov245/calls/Ov245_FourShape_TickFollowOwner.c:
     complete
     .text       start:0x020d3ae4 end:0x020d3b24
 
-src/overlays/ov245/calls/func_ov245_020d3b24.c:
+src/overlays/ov245/calls/Ov245_SlotSpawnMsg2.c:
     complete
     .text       start:0x020d3b24 end:0x020d3bec
 
-src/overlays/ov245/calls/func_ov245_020d3bec.c:
+src/overlays/ov245/calls/Ov245_FourShape_ApplyAnim.c:
     complete
     .text       start:0x020d3bec end:0x020d3c24
 
-src/overlays/ov245/calls/func_ov245_020d3c24.c:
+src/overlays/ov245/calls/Ov245_ChainTeardown.c:
     complete
     .text       start:0x020d3c24 end:0x020d3ce8
 
-src/overlays/ov245/auto/func_ov245_020d3ce8.c:
+src/overlays/ov245/auto/Ov245_ArmScriptedMove.c:
     complete
     .text       start:0x020d3ce8 end:0x020d3d14
 
-src/overlays/ov245/auto/func_ov245_020d3d14.c:
+src/overlays/ov245/auto/Ov245_FourShape_OnHit.c:
     complete
     .text       start:0x020d3d14 end:0x020d3d60
 
-src/overlays/ov245/calls/func_ov245_020d3d60.c:
+src/overlays/ov245/calls/Ov245_FourShape_CreateAiTask.c:
     complete
     .text       start:0x020d3d60 end:0x020d3dcc
 
-src/overlays/ov245/calls/func_ov245_020d3dcc.c:
+src/overlays/ov245/calls/Ov245_FourShape_AiStateInit.c:
     complete
     .text       start:0x020d3dcc end:0x020d3e74
 
-src/overlays/ov245/calls/func_ov245_020d3e74.c:
+src/overlays/ov245/calls/Ov245_FourShape_AiDispatchAction.c:
     complete
     .text       start:0x020d3e74 end:0x020d3f34
 
-src/overlays/ov245/calls/func_ov245_020d3f34.c:
+src/overlays/ov245/calls/Ov245_FourShape_TurnTick.c:
     complete
     .text       start:0x020d3f34 end:0x020d3f84
 
-src/overlays/ov245/calls/func_ov245_020d3f84.c:
+src/overlays/ov245/calls/Ov245_EnterState4038.c:
     complete
     .text       start:0x020d3f84 end:0x020d4038
 
-src/overlays/ov245/auto/func_ov245_020d4038.c:
+src/overlays/ov245/auto/Ov245_IdleStep_3.c:
     complete
     .text       start:0x020d4038 end:0x020d403c
 
-src/overlays/ov245/calls/func_ov245_020d403c.c:
+src/overlays/ov245/calls/Ov245_ChargeUpTick3.c:
     complete
     .text       start:0x020d403c end:0x020d40e8
 
-src/overlays/ov245/calls/func_ov245_020d40e8.c:
+src/overlays/ov245/calls/Ov245_TurnPlan.c:
     complete
     .text       start:0x020d40e8 end:0x020d4248
 
-src/overlays/ov245/calls/func_ov245_020d4248.c:
+src/overlays/ov245/calls/Ov245_SwingTick.c:
     complete
     .text       start:0x020d4248 end:0x020d462c
 
-src/overlays/ov245/calls/func_ov245_020d462c.c:
+src/overlays/ov245/calls/Ov245_FourShape_AiStep_QueueAction0OnAnimEnd.c:
     complete
     .text       start:0x020d462c end:0x020d465c
 
-src/overlays/ov245/calls/func_ov245_020d465c.c:
+src/overlays/ov245/calls/Ov245_GrabCheck.c:
     complete
     .text       start:0x020d465c end:0x020d47e0
 
-src/overlays/ov245/calls/func_ov245_020d47e0.c:
+src/overlays/ov245/calls/Ov245_FourShape_AiStep_QueueAction0OnAnimEndB.c:
     complete
     .text       start:0x020d47e0 end:0x020d4810
 
-src/overlays/ov245/calls/func_ov245_020d4810.c:
+src/overlays/ov245/calls/Ov245_Stop.c:
     complete
     .text       start:0x020d4810 end:0x020d4870
 
-src/overlays/ov245/calls/func_ov245_020d4870.c:
+src/overlays/ov245/calls/Ov245_FourShape_ResetAiIfReady.c:
     complete
     .text       start:0x020d4870 end:0x020d488c
 
-src/overlays/ov245/calls/func_ov245_020d488c.c:
+src/overlays/ov245/calls/Ov245_ResetVelocity.c:
     complete
     .text       start:0x020d488c end:0x020d48c0
 
-src/overlays/ov245/calls/func_ov245_020d48c0.c:
+src/overlays/ov245/calls/Ov245_Mounted_New.c:
     complete
     .text       start:0x020d48c0 end:0x020d48f4
 
-src/overlays/ov245/calls/func_ov245_020d48f4.c:
+src/overlays/ov245/calls/Ov245_MountedActorInit.c:
     complete
     .text       start:0x020d48f4 end:0x020d4ad8
 
-src/overlays/ov245/calls/func_ov245_020d4ad8.c:
+src/overlays/ov245/calls/Ov245_Actor3_Destroy.c:
     complete
     .text       start:0x020d4ad8 end:0x020d4b18
 
-src/overlays/ov245/calls/func_ov245_020d4b18.c:
+src/overlays/ov245/calls/Ov245_MountedPoseSync.c:
     complete
     .text       start:0x020d4b18 end:0x020d4ba4
 
-src/overlays/ov245/calls/func_ov245_020d4ba4.c:
+src/overlays/ov245/calls/Ov245_SlotSpawnMsg5.c:
     complete
     .text       start:0x020d4ba4 end:0x020d4ca8
 
-src/overlays/ov245/calls/func_ov245_020d4ca8.c:
+src/overlays/ov245/calls/Ov245_Mounted_ApplyAnim.c:
     complete
     .text       start:0x020d4ca8 end:0x020d4ce0
 
-src/overlays/ov245/calls/func_ov245_020d4ce0.c:
+src/overlays/ov245/calls/Ov245_UpdateClaws.c:
     complete
     .text       start:0x020d4ce0 end:0x020d4dec
 
-src/overlays/ov245/calls/func_ov245_020d4dec.c:
+src/overlays/ov245/calls/Ov245_Mounted_Launch.c:
     complete
     .text       start:0x020d4dec end:0x020d4e04
 
-src/overlays/ov245/auto/func_ov245_020d4e04.c:
+src/overlays/ov245/auto/Ov245_AiQueueAction0_2.c:
     complete
     .text       start:0x020d4e04 end:0x020d4e14
 
-src/overlays/ov245/auto/func_ov245_020d4e14.c:
+src/overlays/ov245/auto/Ov245_SetPendingState2.c:
     complete
     .text       start:0x020d4e14 end:0x020d4e24
 
-src/overlays/ov245/calls/func_ov245_020d4e24.c:
+src/overlays/ov245/calls/Ov245_SpawnActorRegistryEntry_3.c:
     complete
     .text       start:0x020d4e24 end:0x020d4e80
 
-src/overlays/ov245/calls/func_ov245_020d4e80.c:
+src/overlays/ov245/calls/Ov245_Mounted_AiStateInit.c:
     complete
     .text       start:0x020d4e80 end:0x020d4f14
 
-src/overlays/ov245/calls/func_ov245_020d4f14.c:
+src/overlays/ov245/calls/Ov245_Mounted_AiDispatchAction.c:
     complete
     .text       start:0x020d4f14 end:0x020d4fd4
 
-src/overlays/ov245/calls/func_ov245_020d4fd4.c:
+src/overlays/ov245/calls/Ov245_EnterState5088.c:
     complete
     .text       start:0x020d4fd4 end:0x020d5088
 
-src/overlays/ov245/auto/func_ov245_020d5088.c:
+src/overlays/ov245/auto/Ov245_IdleStep_4.c:
     complete
     .text       start:0x020d5088 end:0x020d508c
 
-src/overlays/ov245/calls/func_ov245_020d508c.c:
+src/overlays/ov245/calls/Ov245_ChargeUpTick2.c:
     complete
     .text       start:0x020d508c end:0x020d5134
 
-src/overlays/ov245/calls/func_ov245_020d5134.c:
+src/overlays/ov245/calls/Ov245_ReleaseThenPose1.c:
     complete
     .text       start:0x020d5134 end:0x020d51d8
 
-src/overlays/ov245/calls/func_ov245_020d51d8.c:
+src/overlays/ov245/calls/Ov245_FireAttack1.c:
     complete
     .text       start:0x020d51d8 end:0x020d5204
 
-src/overlays/ov245/calls/func_ov245_020d5204.c:
+src/overlays/ov245/calls/Ov245_LandingEnter.c:
     complete
     .text       start:0x020d5204 end:0x020d52b8
 
-src/overlays/ov245/calls/func_ov245_020d52b8.c:
+src/overlays/ov245/calls/Ov245_SweepTick.c:
     complete
     .text       start:0x020d52b8 end:0x020d5478
 
-src/overlays/ov245/calls/func_ov245_020d5478.c:
+src/overlays/ov245/calls/Ov245_InvokeHookAndRearm_3.c:
     complete
     .text       start:0x020d5478 end:0x020d54d4
 
-src/overlays/ov245/calls/func_ov245_020d54d4.c:
+src/overlays/ov245/calls/Ov245_Mounted_ForceState9IfReady.c:
     complete
     .text       start:0x020d54d4 end:0x020d54f0
 
-src/overlays/ov245/calls/func_ov245_020d54f0.c:
+src/overlays/ov245/calls/Ov245_Rider_New.c:
     complete
     .text       start:0x020d54f0 end:0x020d5538
 
-src/overlays/ov245/calls/func_ov245_020d5538.c:
+src/overlays/ov245/calls/Ov245_ConstructRider.c:
     complete
     .text       start:0x020d5538 end:0x020d57ec
 
-src/overlays/ov245/calls/func_ov245_020d57ec.c:
+src/overlays/ov245/calls/Ov245_Rider_Destroy.c:
     complete
     .text       start:0x020d57ec end:0x020d583c
 
-src/overlays/ov245/calls/func_ov245_020d583c.c:
+src/overlays/ov245/calls/Ov245_PoseSyncChain.c:
     complete
     .text       start:0x020d583c end:0x020d58b4
 
-src/overlays/ov245/calls/func_ov245_020d58b4.c:
+src/overlays/ov245/calls/Ov245_SlotSpawnMsg5Scaled.c:
     complete
     .text       start:0x020d58b4 end:0x020d59f8
 
-src/overlays/ov245/calls/func_ov245_020d59f8.c:
+src/overlays/ov245/calls/Ov245_BindMotion2.c:
     complete
     .text       start:0x020d59f8 end:0x020d5a74
 
-src/overlays/ov245/calls/func_ov245_020d5a74.c:
+src/overlays/ov245/calls/Ov245_ReleaseChildHeld1c.c:
     complete
     .text       start:0x020d5a74 end:0x020d5ab8
 
-src/overlays/ov245/calls/func_ov245_020d5ab8.c:
+src/overlays/ov245/calls/Ov245_StopAndLatch.c:
     complete
     .text       start:0x020d5ab8 end:0x020d5ae4
 
-src/overlays/ov245/auto/func_ov245_020d5ae4.c:
+src/overlays/ov245/auto/Ov245_SetSubStateByteTo9.c:
     complete
     .text       start:0x020d5ae4 end:0x020d5af4
 
-src/overlays/ov245/calls/func_ov245_020d5af4.c:
+src/overlays/ov245/calls/Ov245_Rider_CreateAiTask.c:
     complete
     .text       start:0x020d5af4 end:0x020d5b50
 
-src/overlays/ov245/calls/func_ov245_020d5b50.c:
+src/overlays/ov245/calls/Ov245_HitFilterMounted.c:
     complete
     .text       start:0x020d5b50 end:0x020d5d8c
 
-src/overlays/ov245/calls/func_ov245_020d5d8c.c:
+src/overlays/ov245/calls/Ov245_InitReactionSlots.c:
     complete
     .text       start:0x020d5d8c end:0x020d5e44
 
-src/overlays/ov245/calls/func_ov245_020d5e44.c:
+src/overlays/ov245/calls/Ov245_Rider_AiDispatchAction.c:
     complete
     .text       start:0x020d5e44 end:0x020d5fe4
 
-src/overlays/ov245/calls/func_ov245_020d5fe4.c:
+src/overlays/ov245/calls/Ov245_SpinTick2.c:
     complete
     .text       start:0x020d5fe4 end:0x020d607c
 
-src/overlays/ov245/calls/func_ov245_020d607c.c:
+src/overlays/ov245/calls/Ov245_EnterBlockPose.c:
     complete
     .text       start:0x020d607c end:0x020d60e0
 
-src/overlays/ov245/calls/func_ov245_020d60e0.c:
+src/overlays/ov245/calls/Ov245_CrashEnter.c:
     complete
     .text       start:0x020d60e0 end:0x020d61f4
 
-src/overlays/ov245/calls/func_ov245_020d61f4.c:
+src/overlays/ov245/calls/Ov245_TimerAcquireTargetAngleThenAdvance.c:
     complete
     .text       start:0x020d61f4 end:0x020d62bc
 
-src/overlays/ov245/calls/func_ov245_020d62bc.c:
+src/overlays/ov245/calls/Ov245_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d62bc end:0x020d62f0
 
-src/overlays/ov245/calls/func_ov245_020d62f0.c:
+src/overlays/ov245/calls/Ov245_Rider_AiEnterApproach.c:
     complete
     .text       start:0x020d62f0 end:0x020d6348
 
-src/overlays/ov245/calls/func_ov245_020d6348.c:
+src/overlays/ov245/calls/Ov245_ApproachTick.c:
     complete
     .text       start:0x020d6348 end:0x020d6448
 
-src/overlays/ov245/calls/func_ov245_020d6448.c:
+src/overlays/ov245/calls/Ov245_SeedTimerFireAttack2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d6448 end:0x020d64ac
 
-src/overlays/ov245/calls/func_ov245_020d64ac.c:
+src/overlays/ov245/calls/Ov245_ApproachPlan.c:
     complete
     .text       start:0x020d64ac end:0x020d65fc
 
-src/overlays/ov245/calls/func_ov245_020d65fc.c:
+src/overlays/ov245/calls/Ov245_ComputeTargetDeltaThenAdvance.c:
     complete
     .text       start:0x020d65fc end:0x020d666c
 
-src/overlays/ov245/calls/func_ov245_020d666c.c:
+src/overlays/ov245/calls/Ov245_GlideTick_2.c:
     complete
     .text       start:0x020d666c end:0x020d66fc
 
-src/overlays/ov245/calls/func_ov245_020d66fc.c:
+src/overlays/ov245/calls/Ov245_Rider_AiEnterSpinAttack.c:
     complete
     .text       start:0x020d66fc end:0x020d6758
 
-src/overlays/ov245/calls/func_ov245_020d6758.c:
+src/overlays/ov245/calls/Ov245_SpinAttackTick.c:
     complete
     .text       start:0x020d6758 end:0x020d6998
 
-src/overlays/ov245/calls/func_ov245_020d6998.c:
+src/overlays/ov245/calls/Ov245_ConfigSubStateThenAdvanceSlot.c:
     complete
     .text       start:0x020d6998 end:0x020d6a14
 
-src/overlays/ov245/calls/func_ov245_020d6a14.c:
+src/overlays/ov245/calls/Ov245_DoubleStrikeTick.c:
     complete
     .text       start:0x020d6a14 end:0x020d6c78
 
-src/overlays/ov245/calls/func_ov245_020d6c78.c:
+src/overlays/ov245/calls/Ov245_DecayCopyPosFireOnHitFlag.c:
     complete
     .text       start:0x020d6c78 end:0x020d6cd8
 
-src/overlays/ov245/calls/func_ov245_020d6cd8.c:
+src/overlays/ov245/calls/Ov245_AiStep_QueueAction2OnAnimEnd_2.c:
     complete
     .text       start:0x020d6cd8 end:0x020d6d0c
 
-src/overlays/ov245/calls/func_ov245_020d6d0c.c:
+src/overlays/ov245/calls/Ov245_SetVisFlagPose7PlayAdvance.c:
     complete
     .text       start:0x020d6d0c end:0x020d6d78
 
-src/overlays/ov245/calls/func_ov245_020d6d78.c:
+src/overlays/ov245/calls/Ov245_LaunchTick.c:
     complete
     .text       start:0x020d6d78 end:0x020d6e00
 
-src/overlays/ov245/calls/func_ov245_020d6e00.c:
+src/overlays/ov245/calls/Ov245_CopyVecThenSetupSubActionAndAdvance.c:
     complete
     .text       start:0x020d6e00 end:0x020d6e74
 
-src/overlays/ov245/calls/func_ov245_020d6e74.c:
+src/overlays/ov245/calls/Ov245_LaunchTick2.c:
     complete
     .text       start:0x020d6e74 end:0x020d6f30
 
-src/overlays/ov245/calls/func_ov245_020d6f30.c:
+src/overlays/ov245/calls/Ov245_Rider_AiPauseTick.c:
     complete
     .text       start:0x020d6f30 end:0x020d6f70
 
-src/overlays/ov245/calls/func_ov245_020d6f70.c:
+src/overlays/ov245/calls/Ov245_Rider_AiEndPause.c:
     complete
     .text       start:0x020d6f70 end:0x020d6fb4
 
-src/overlays/ov245/calls/func_ov245_020d6fb4.c:
+src/overlays/ov245/calls/Ov245_AiStep_QueueAction2OnAnimEnd_3.c:
     complete
     .text       start:0x020d6fb4 end:0x020d6fe8
 
-src/overlays/ov245/calls/func_ov245_020d6fe8.c:
+src/overlays/ov245/calls/Ov245_ConfigHw60FlagsBeginAction4a.c:
     complete
     .text       start:0x020d6fe8 end:0x020d70b0
 
-src/overlays/ov245/calls/func_ov245_020d70b0.c:
+src/overlays/ov245/calls/Ov245_FinishEnter.c:
     complete
     .text       start:0x020d70b0 end:0x020d7194
 

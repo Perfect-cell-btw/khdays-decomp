@@ -6,21 +6,21 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov024_02084f98(void);
-extern void func_ov024_020850e0(void);
-extern void func_ov024_020850e4(void);
-extern void func_ov024_02085e8c(void);
-extern void func_ov024_02085ed8(void);
-extern void func_ov024_02085f48(void);
-extern void func_ov024_02085fc4(void);
-extern void func_ov024_02085fec(void);
-extern void func_ov024_02086000(void);
+extern void Ov024_MobiClip_DecoderFreeBuffers(void);
+extern void Ov024_StackAllocVtblSlot0NoOp(void);
+extern void Ov024_FreeStackAllocPassthrough(void);
+extern void Ov024_MobiClip_StreamSeek(void);
+extern void Ov024_MobiClip_StreamRead(void);
+extern void Ov024_MobiClip_StreamReadAhead(void);
+extern void Ov024_MobiClip_CursorWaitAsync(void);
+extern void Ov024_CallVirt14(void);
+extern void Ov024_MobiClip_StreamVtblSlot0NoOp(void);
 
 Ov_Fn data_ov024_020939c4[9] = {
 
-    func_ov024_020850e0,
+    Ov024_StackAllocVtblSlot0NoOp,
 
-    func_ov024_020850e4,
+    Ov024_FreeStackAllocPassthrough,
 
     0,
 
@@ -40,19 +40,19 @@ Ov_Fn data_ov024_020939c4[9] = {
 
 Ov_Fn data_ov024_020939e8[14] = {
 
-    func_ov024_02086000,
+    Ov024_MobiClip_StreamVtblSlot0NoOp,
 
-    func_ov024_02084f98,
+    Ov024_MobiClip_DecoderFreeBuffers,
 
-    func_ov024_02085e8c,
+    Ov024_MobiClip_StreamSeek,
 
-    func_ov024_02085ed8,
+    Ov024_MobiClip_StreamRead,
 
-    func_ov024_02085f48,
+    Ov024_MobiClip_StreamReadAhead,
 
-    func_ov024_02085fc4,
+    Ov024_MobiClip_CursorWaitAsync,
 
-    func_ov024_02085fec,
+    Ov024_CallVirt14,
 
     0,
 

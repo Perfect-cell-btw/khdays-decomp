@@ -1,6 +1,6 @@
-/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to func_ov002_020646d4. */
-extern void *func_ov002_020646d4();
+/* Interworking tail-call veneer (`ldr ip,[pc] ; bx ip`): forwards to Ov002_StateGuardStub. */
+extern void *Ov002_StateGuardStub();
 
 void *func_ov002_02063574() {
-    return func_ov002_020646d4();
+    return Ov002_StateGuardStub();
 }

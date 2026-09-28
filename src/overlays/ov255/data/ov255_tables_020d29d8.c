@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov255_020cbfc4 (not yet decompiled) */
+/* read by Ov255_EnemyConstruct (not yet decompiled) */
 const int data_ov255_020d29d8[12] = {
     0, 0, 0, 0, 0, 0, 0, 0,
     0, 73, 76, 77,
@@ -38,7 +38,7 @@ const int data_ov255_020d2a94[35] = {
  *   Ov255_SlamTick (020cf51c): const Cmd4 data_ov255_020d2b20[];
  *   Ov255_LungeTick (020cfa28): const Cmd4 data_ov255_020d2b20[];
  *   Ov255_HoverInTick (020cff68): const Cmd4 data_ov255_020d2b20[];
- *   func_ov255_020d0044 (not yet decompiled)
+ *   Ov255_HealBurstTick (not yet decompiled)
  *   Ov255_TakeOffEnterTick (020d0710)
  *   Ov255_HoverInTick2 (020d0908): const Cmd4 data_ov255_020d2b20[]; */
 const u8 data_ov255_020d2b20[36] = {
@@ -77,7 +77,7 @@ const u16 data_ov255_020d2b8a[7] = {
     0, 773, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov255_020d0044 (not yet decompiled) */
+/* read by Ov255_HealBurstTick (not yet decompiled) */
 const u8 data_ov255_020d2b98[16] = {
     0, 0, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };

@@ -4,19 +4,19 @@
     .data       start:0x020ce300 end:0x020ce320 kind:data align:32
     .bss        start:0x020ce320 end:0x020ce320 kind:bss align:32
 
-src/overlays/ov123/calls/func_ov123_020cbf20.c:
+src/overlays/ov123/calls/Ov123_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov123/calls/func_ov123_020cbf38.c:
+src/overlays/ov123/calls/Ov123_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov123/calls/func_ov123_020cbfc4.c:
+src/overlays/ov123/calls/Ov123_Construct.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc254
 
-src/overlays/ov123/calls/func_ov123_020cc254.c:
+src/overlays/ov123/calls/Ov123_ReleaseSubObjectsListThenNotify.c:
     complete
     .text       start:0x020cc254 end:0x020cc294
 
@@ -24,171 +24,171 @@ src/overlays/ov123/calls/func_ov123_020cc294.c:
     complete
     .text       start:0x020cc294 end:0x020cc2a0
 
-src/overlays/ov123/calls/func_ov123_020cc2a0.c:
+src/overlays/ov123/calls/Ov123_HandleMessage.c:
     complete
     .text       start:0x020cc2a0 end:0x020cc33c
 
-src/overlays/ov123/calls/func_ov123_020cc33c.c:
+src/overlays/ov123/calls/Ov123_ForwardRegionEventToParts.c:
     complete
     .text       start:0x020cc33c end:0x020cc364
 
-src/overlays/ov123/calls/func_ov123_020cc364.c:
+src/overlays/ov123/calls/Ov123_NotifyPartsThenBase.c:
     complete
     .text       start:0x020cc364 end:0x020cc38c
 
-src/overlays/ov123/calls/func_ov123_020cc38c.c:
+src/overlays/ov123/calls/Ov123_Model_SetTracks0And3.c:
     complete
     .text       start:0x020cc38c end:0x020cc3dc
 
-src/overlays/ov123/calls/func_ov123_020cc3dc.c:
+src/overlays/ov123/calls/Ov123_RefreshPose.c:
     complete
     .text       start:0x020cc3dc end:0x020cc420
 
-src/overlays/ov123/calls/func_ov123_020cc420.c:
+src/overlays/ov123/calls/Ov123_Tick.c:
     complete
     .text       start:0x020cc420 end:0x020cc518
 
-src/overlays/ov123/calls/func_ov123_020cc518.c:
+src/overlays/ov123/calls/Ov123_Slot38_SetFlag3C8.c:
     complete
     .text       start:0x020cc518 end:0x020cc524
 
-src/overlays/ov123/calls/func_ov123_020cc524.c:
+src/overlays/ov123/calls/Ov123_CreateRegistryEntryAndLink.c:
     complete
     .text       start:0x020cc524 end:0x020cc570
 
-src/overlays/ov123/calls/func_ov123_020cc570.c:
+src/overlays/ov123/calls/Ov123_OnHit.c:
     complete
     .text       start:0x020cc570 end:0x020cc6e8
 
-src/overlays/ov123/auto/func_ov123_020cc6e8.c:
+src/overlays/ov123/auto/Ov123_TryClaimReactionSlot.c:
     complete
     .text       start:0x020cc6e8 end:0x020cc718
 
-src/overlays/ov123/calls/func_ov123_020cc718.c:
+src/overlays/ov123/calls/Ov123_InitNode.c:
     complete
     .text       start:0x020cc718 end:0x020cc7e8
 
-src/overlays/ov123/calls/func_ov123_020cc7e8.c:
+src/overlays/ov123/calls/Ov123_DispatchSubStateByte.c:
     complete
     .text       start:0x020cc7e8 end:0x020cc948
 
-src/overlays/ov123/calls/func_ov123_020cc948.c:
+src/overlays/ov123/calls/Ov123_OrientationTick.c:
     complete
     .text       start:0x020cc948 end:0x020cc9f0
 
-src/overlays/ov123/calls/func_ov123_020cc9f0.c:
+src/overlays/ov123/calls/Ov123_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020cc9f0 end:0x020cca58
 
-src/overlays/ov123/calls/func_ov123_020cca58.c:
+src/overlays/ov123/calls/Ov123_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020cca58 end:0x020cca94
 
-src/overlays/ov123/calls/func_ov123_020cca94.c:
+src/overlays/ov123/calls/Ov123_Action48Callback.c:
     complete
     .text       start:0x020cca94 end:0x020ccb34
 
-src/overlays/ov123/calls/func_ov123_020ccb34.c:
+src/overlays/ov123/calls/Ov123_AimTimerTick.c:
     complete
     .text       start:0x020ccb34 end:0x020ccbf8
 
-src/overlays/ov123/calls/func_ov123_020ccbf8.c:
+src/overlays/ov123/calls/Ov123_AiQueue2OnFlagClear.c:
     complete
     .text       start:0x020ccbf8 end:0x020ccc2c
 
-src/overlays/ov123/calls/func_ov123_020ccc2c.c:
+src/overlays/ov123/calls/Ov123_AiEnterAnim1WithTimer.c:
     complete
     .text       start:0x020ccc2c end:0x020ccc84
 
-src/overlays/ov123/calls/func_ov123_020ccc84.c:
+src/overlays/ov123/calls/Ov123_ApproachDecision.c:
     complete
     .text       start:0x020ccc84 end:0x020cce74
 
-src/overlays/ov123/calls/func_ov123_020cce74.c:
+src/overlays/ov123/calls/Ov123_ResetAndInvokeMethodThenAdvance.c:
     complete
     .text       start:0x020cce74 end:0x020cceec
 
-src/overlays/ov123/calls/func_ov123_020cceec.c:
+src/overlays/ov123/calls/Ov123_ShotWindup.c:
     complete
     .text       start:0x020cceec end:0x020cd018
 
-src/overlays/ov123/calls/func_ov123_020cd018.c:
+src/overlays/ov123/calls/Ov123_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020cd018 end:0x020cd04c
 
-src/overlays/ov123/calls/func_ov123_020cd04c.c:
+src/overlays/ov123/calls/Ov123_stDiv5Store.c:
     complete
     .text       start:0x020cd04c end:0x020cd0a8
 
-src/overlays/ov123/calls/func_ov123_020cd0a8.c:
+src/overlays/ov123/calls/Ov123_ConfigHw60C5af8ThenClearRequest.c:
     complete
     .text       start:0x020cd0a8 end:0x020cd170
 
-src/overlays/ov123/calls/func_ov123_020cd170.c:
+src/overlays/ov123/calls/Ov123_ConfigHw60Action49ThenAdvance.c:
     complete
     .text       start:0x020cd170 end:0x020cd224
 
-src/overlays/ov123/calls/func_ov123_020cd224.c:
+src/overlays/ov123/calls/Ov123_FindTarget.c:
     complete
     .text       start:0x020cd224 end:0x020cd484
 
-src/overlays/ov123/calls/func_ov123_020cd484.c:
+src/overlays/ov123/calls/Ov123_StoreVec3ThenSetupAndSetHw60.c:
     complete
     .text       start:0x020cd484 end:0x020cd4cc
 
-src/overlays/ov123/calls/func_ov123_020cd4cc.c:
+src/overlays/ov123/calls/Ov123_Actor_New.c:
     complete
     .text       start:0x020cd4cc end:0x020cd500
 
-src/overlays/ov123/calls/func_ov123_020cd500.c:
+src/overlays/ov123/calls/Ov123_ConstructShot.c:
     complete
     .text       start:0x020cd500 end:0x020cd6e8
 
-src/overlays/ov123/calls/func_ov123_020cd6e8.c:
+src/overlays/ov123/calls/Ov123_Actor_DestroyWithParts.c:
     complete
     .text       start:0x020cd6e8 end:0x020cd728
 
-src/overlays/ov123/calls/func_ov123_020cd728.c:
+src/overlays/ov123/calls/Ov123_TickAndSyncModelXform.c:
     complete
     .text       start:0x020cd728 end:0x020cd760
 
-src/overlays/ov123/calls/func_ov123_020cd760.c:
+src/overlays/ov123/calls/Ov123_AiState_OnMessage.c:
     complete
     .text       start:0x020cd760 end:0x020cd814
 
-src/overlays/ov123/calls/func_ov123_020cd814.c:
+src/overlays/ov123/calls/Ov123_InvertVecOnceIfFlagSet.c:
     complete
     .text       start:0x020cd814 end:0x020cd870
 
-src/overlays/ov123/calls/func_ov123_020cd870.c:
+src/overlays/ov123/calls/Ov123_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020cd870 end:0x020cd8cc
 
-src/overlays/ov123/calls/func_ov123_020cd8cc.c:
+src/overlays/ov123/calls/Ov123_stateInitClearSlots.c:
     complete
     .text       start:0x020cd8cc end:0x020cd974
 
-src/overlays/ov123/calls/func_ov123_020cd974.c:
+src/overlays/ov123/calls/Ov123_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020cd974 end:0x020cd9ec
 
-src/overlays/ov123/calls/func_ov123_020cd9ec.c:
+src/overlays/ov123/calls/Ov123_SetPoseVecFromStateOrConst.c:
     complete
     .text       start:0x020cd9ec end:0x020cda50
 
-src/overlays/ov123/calls/func_ov123_020cda50.c:
+src/overlays/ov123/calls/Ov123_ClearAndSetNodeFlags.c:
     complete
     .text       start:0x020cda50 end:0x020cdae4
 
-src/overlays/ov123/calls/func_ov123_020cdae4.c:
+src/overlays/ov123/calls/Ov123_CopyVecSetSubState1IfHw60.c:
     complete
     .text       start:0x020cdae4 end:0x020cdb38
 
-src/overlays/ov123/calls/func_ov123_020cdb38.c:
+src/overlays/ov123/calls/Ov123_SetupVecCopyThenAction4.c:
     complete
     .text       start:0x020cdb38 end:0x020cdbf8
 
-src/overlays/ov123/calls/func_ov123_020cdbf8.c:
+src/overlays/ov123/calls/Ov123_ShotFlightTick.c:
     complete
     .text       start:0x020cdbf8 end:0x020ce298
 

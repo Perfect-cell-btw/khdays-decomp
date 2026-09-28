@@ -4,23 +4,23 @@
     .data       start:0x020cd120 end:0x020cd140 kind:data align:32
     .bss        start:0x020cd140 end:0x020cd140 kind:bss align:32
 
-src/overlays/ov234/calls/func_ov234_020cbf20.c:
+src/overlays/ov234/calls/Ov234_RegisterEntityClass.c:
     complete
     .text       start:0x020cbf20 end:0x020cbf38
 
-src/overlays/ov234/calls/func_ov234_020cbf38.c:
+src/overlays/ov234/calls/Ov234_CreateNamedEntity.c:
     complete
     .text       start:0x020cbf38 end:0x020cbfc4
 
-src/overlays/ov234/calls/func_ov234_020cbfc4.c:
+src/overlays/ov234/calls/Ov234_InitEffectActor.c:
     complete
     .text       start:0x020cbfc4 end:0x020cc1d8
 
-src/overlays/ov234/calls/func_ov234_020cc1d8.c:
+src/overlays/ov234/calls/Ov234_Destroy.c:
     complete
     .text       start:0x020cc1d8 end:0x020cc1fc
 
-src/overlays/ov234/calls/func_ov234_020cc1fc.c:
+src/overlays/ov234/calls/Ov234_PropagateBlockToLinkedNodes.c:
     complete
     .text       start:0x020cc1fc end:0x020cc25c
 
@@ -32,59 +32,59 @@ src/overlays/ov234/calls/func_ov234_020cc268.c:
     complete
     .text       start:0x020cc268 end:0x020cc274
 
-src/overlays/ov234/calls/func_ov234_020cc274.c:
+src/overlays/ov234/calls/Ov234_PlaceActorWithTransform.c:
     complete
     .text       start:0x020cc274 end:0x020cc4e0
 
-src/overlays/ov234/calls/func_ov234_020cc4e0.c:
+src/overlays/ov234/calls/Ov234_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020cc4e0 end:0x020cc518
 
-src/overlays/ov234/calls/func_ov234_020cc518.c:
+src/overlays/ov234/calls/Ov234_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020cc518 end:0x020cc574
 
-src/overlays/ov234/calls/func_ov234_020cc574.c:
+src/overlays/ov234/calls/Ov234_ResolveHitReaction.c:
     complete
     .text       start:0x020cc574 end:0x020cc864
 
-src/overlays/ov234/calls/func_ov234_020cc864.c:
+src/overlays/ov234/calls/Ov234_EnterRecoilState.c:
     complete
     .text       start:0x020cc864 end:0x020cc95c
 
-src/overlays/ov234/calls/func_ov234_020cc95c.c:
+src/overlays/ov234/calls/Ov234_DispatchSubStateByte.c:
     complete
     .text       start:0x020cc95c end:0x020cca84
 
-src/overlays/ov234/calls/func_ov234_020cca84.c:
+src/overlays/ov234/calls/Ov234_TurnTowardDirection.c:
     complete
     .text       start:0x020cca84 end:0x020ccedc
 
-src/overlays/ov234/calls/func_ov234_020ccedc.c:
+src/overlays/ov234/calls/Ov234_stAdvanceState_ccedc.c:
     complete
     .text       start:0x020ccedc end:0x020ccef4
 
-src/overlays/ov234/calls/func_ov234_020ccef4.c:
+src/overlays/ov234/calls/Ov234_CopyVecAdvanceSubStateIfHw60.c:
     complete
     .text       start:0x020ccef4 end:0x020ccf4c
 
-src/overlays/ov234/calls/func_ov234_020ccf4c.c:
+src/overlays/ov234/calls/Ov234_stAdvanceState.c:
     complete
     .text       start:0x020ccf4c end:0x020ccf64
 
-src/overlays/ov234/auto/func_ov234_020ccf64.c:
+src/overlays/ov234/auto/Ov234_AdvanceStateIdleStep.c:
     complete
     .text       start:0x020ccf64 end:0x020ccf68
 
-src/overlays/ov234/calls/func_ov234_020ccf68.c:
+src/overlays/ov234/calls/Ov234_stAdvanceState_2.c:
     complete
     .text       start:0x020ccf68 end:0x020ccf80
 
-src/overlays/ov234/calls/func_ov234_020ccf80.c:
+src/overlays/ov234/calls/Ov234_KnockbackSlide.c:
     complete
     .text       start:0x020ccf80 end:0x020cd0d4
 
-src/overlays/ov234/calls/func_ov234_020cd0d4.c:
+src/overlays/ov234/calls/Ov234_AiStep_SetFlags3AndEnd.c:
     complete
     .text       start:0x020cd0d4 end:0x020cd100
 

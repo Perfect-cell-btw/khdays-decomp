@@ -1,6 +1,6 @@
-extern int func_01fffde0(int arg0);
+extern int GetEntryField20ByIndex(int arg0);
 void func_ov022_02088280(int arg0, short arg1) {
-    int e = func_01fffde0(arg0);
+    int e = GetEntryField20ByIndex(arg0);
     unsigned int *p;
     if (e == 0) return;
     p = *(unsigned int **)(e + 0x20);

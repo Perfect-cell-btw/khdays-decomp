@@ -4,55 +4,55 @@
     .data       start:0x020cb6a0 end:0x020cbb00 kind:data align:32
     .bss        start:0x020cbb00 end:0x020cbf20 kind:bss align:32
 
-src/overlays/ov107/calls/func_ov107_020c0680.c:
+src/overlays/ov107/calls/Ov107_LoadEnemyOverlay.c:
     complete
     .text       start:0x020c0680 end:0x020c0758
 
-src/overlays/ov107/calls/func_ov107_020c0758.c:
+src/overlays/ov107/calls/Ov107_CallSetupThenSharedHandler.c:
     complete
     .text       start:0x020c0758 end:0x020c0770
 
-src/overlays/ov107/calls/func_ov107_020c0770.c:
+src/overlays/ov107/calls/Ov107_EnemyTableHasEntry.c:
     complete
     .text       start:0x020c0770 end:0x020c0794
 
-src/overlays/ov107/calls/func_ov107_020c0794.c:
+src/overlays/ov107/calls/Ov107_CreateNodeXformTask.c:
     complete
     .text       start:0x020c0794 end:0x020c0868
 
-src/overlays/ov107/calls/func_ov107_020c0868.c:
+src/overlays/ov107/calls/Ov107_NodeXformTaskStart.c:
     complete
     .text       start:0x020c0868 end:0x020c0894
 
-src/overlays/ov107/auto/func_ov107_020c0894.c:
+src/overlays/ov107/auto/Ov107_TaskTeardown_FlagOwner.c:
     complete
     .text       start:0x020c0894 end:0x020c08ac
 
-src/overlays/ov107/calls/func_ov107_020c08ac.c:
+src/overlays/ov107/calls/Ov107_FinishIfOwnerIdle.c:
     complete
     .text       start:0x020c08ac end:0x020c08cc
 
-src/overlays/ov107/calls/func_ov107_020c08cc.c:
+src/overlays/ov107/calls/Ov107_CreateNodeXformTaskFx24.c:
     complete
     .text       start:0x020c08cc end:0x020c09a0
 
-src/overlays/ov107/calls/func_ov107_020c09a0.c:
+src/overlays/ov107/calls/Ov107_CreateNodeBodyTask.c:
     complete
     .text       start:0x020c09a0 end:0x020c0a9c
 
-src/overlays/ov107/calls/func_ov107_020c0a9c.c:
+src/overlays/ov107/calls/Ov107_stAdvanceState_ccedc.c:
     complete
     .text       start:0x020c0a9c end:0x020c0ab4
 
-src/overlays/ov107/auto/func_ov107_020c0ab4.c:
+src/overlays/ov107/auto/Ov107_TaskTeardown_FlagOwner_2.c:
     complete
     .text       start:0x020c0ab4 end:0x020c0acc
 
-src/overlays/ov107/calls/func_ov107_020c0acc.c:
+src/overlays/ov107/calls/Ov107_FollowUntilAnimEnd.c:
     complete
     .text       start:0x020c0acc end:0x020c0b14
 
-src/overlays/ov107/calls/func_ov107_020c0b14.c:
+src/overlays/ov107/calls/Ov107_ForwardVisibleEvent.c:
     complete
     .text       start:0x020c0b14 end:0x020c0b90
 
@@ -60,43 +60,43 @@ src/overlays/ov107/calls/func_ov107_020c0b90.c:
     complete
     .text       start:0x020c0b90 end:0x020c0c80
 
-src/overlays/ov107/calls/func_ov107_020c0c80.c:
+src/overlays/ov107/calls/Ov107_ClearGlobalCBB00.c:
     complete
     .text       start:0x020c0c80 end:0x020c0c94
 
-src/overlays/ov107/calls/func_ov107_020c0c94.c:
+src/overlays/ov107/calls/Ov107_InitNodeBase.c:
     complete
     .text       start:0x020c0c94 end:0x020c0cfc
 
-src/overlays/ov107/auto/func_ov107_020c0cfc.c:
+src/overlays/ov107/auto/Ov107_SetBit1OfField0x40.c:
     complete
     .text       start:0x020c0cfc end:0x020c0d14
 
-src/overlays/ov107/auto/func_ov107_020c0d14.c:
+src/overlays/ov107/auto/Ov107_SetBit0OfField0x40.c:
     complete
     .text       start:0x020c0d14 end:0x020c0d2c
 
-src/overlays/ov107/calls/func_ov107_020c0d2c.c:
+src/overlays/ov107/calls/Ov107_DispatchMessage.c:
     complete
     .text       start:0x020c0d2c end:0x020c0d74
 
-src/overlays/ov107/calls/func_ov107_020c0d74.c:
+src/overlays/ov107/calls/Ov107_DestroyInstance.c:
     complete
     .text       start:0x020c0d74 end:0x020c0d94
 
-src/overlays/ov107/calls/func_ov107_020c0d94.c:
+src/overlays/ov107/calls/Ov107_EmitIdEvent.c:
     complete
     .text       start:0x020c0d94 end:0x020c0db4
 
-src/overlays/ov107/calls/func_ov107_020c0db4.c:
+src/overlays/ov107/calls/Ov107_CreateMovementNode.c:
     complete
     .text       start:0x020c0db4 end:0x020c0dd0
 
-src/overlays/ov107/calls/func_ov107_020c0dd0.c:
+src/overlays/ov107/calls/Ov107_InitMovementNode.c:
     complete
     .text       start:0x020c0dd0 end:0x020c0e6c
 
-src/overlays/ov107/calls/func_ov107_020c0e6c.c:
+src/overlays/ov107/calls/Ov107_DestroyActorInstance.c:
     complete
     .text       start:0x020c0e6c end:0x020c0ea0
 
@@ -104,195 +104,195 @@ src/overlays/ov107/calls/func_ov107_020c0ea0.c:
     complete
     .text       start:0x020c0ea0 end:0x020c1268
 
-src/overlays/ov107/calls/func_ov107_020c1268.c:
+src/overlays/ov107/calls/Ov107_Spawner_ReleaseDeadActors.c:
     complete
     .text       start:0x020c1268 end:0x020c1348
 
-src/overlays/ov107/auto/func_ov107_020c1348.c:
+src/overlays/ov107/auto/Ov107_MovementNode_SetRequest.c:
     complete
     .text       start:0x020c1348 end:0x020c1370
 
-src/overlays/ov107/calls/func_ov107_020c1370.c:
+src/overlays/ov107/calls/Ov107_Spawner_PlaceActors.c:
     complete
     .text       start:0x020c1370 end:0x020c1744
 
-src/overlays/ov107/calls/func_ov107_020c1744.c:
+src/overlays/ov107/calls/Ov107_Spawner_FindFreeActor.c:
     complete
     .text       start:0x020c1744 end:0x020c1870
 
-src/overlays/ov107/calls/func_ov107_020c1870.c:
+src/overlays/ov107/calls/Ov107_Spawner_Run.c:
     complete
     .text       start:0x020c1870 end:0x020c1c18
 
-src/overlays/ov107/calls/func_ov107_020c1c18.c:
+src/overlays/ov107/calls/Ov107_Spawner_SetMoveAnim.c:
     complete
     .text       start:0x020c1c18 end:0x020c1c8c
 
-src/overlays/ov107/auto/func_ov107_020c1c8c.c:
+src/overlays/ov107/auto/Ov107_GetSlotCount.c:
     complete
     .text       start:0x020c1c8c end:0x020c1c94
 
-src/overlays/ov107/auto/func_ov107_020c1c94.c:
+src/overlays/ov107/auto/Ov107_Spawner_CountInactiveSlots.c:
     complete
     .text       start:0x020c1c94 end:0x020c1cd4
 
-src/overlays/ov107/calls/func_ov107_020c1cd4.c:
+src/overlays/ov107/calls/Ov107_StartObject.c:
     complete
     .text       start:0x020c1cd4 end:0x020c1d3c
 
-src/overlays/ov107/calls/func_ov107_020c1d3c.c:
+src/overlays/ov107/calls/Ov107_Spawner_AddSlot.c:
     complete
     .text       start:0x020c1d3c end:0x020c1dac
 
-src/overlays/ov107/calls/func_ov107_020c1dac.c:
+src/overlays/ov107/calls/Ov107_SetPartBinding.c:
     complete
     .text       start:0x020c1dac end:0x020c1dd8
 
-src/overlays/ov107/calls/func_ov107_020c1dd8.c:
+src/overlays/ov107/calls/Ov107_Spawner_FreeDataBlocks.c:
     complete
     .text       start:0x020c1dd8 end:0x020c1e24
 
-src/overlays/ov107/calls/func_ov107_020c1e24.c:
+src/overlays/ov107/calls/Ov107_Spawner_AddDataBlock.c:
     complete
     .text       start:0x020c1e24 end:0x020c1e80
 
-src/overlays/ov107/calls/func_ov107_020c1e80.c:
+src/overlays/ov107/calls/Ov107_Spawner_OnActorRetired.c:
     complete
     .text       start:0x020c1e80 end:0x020c1f28
 
-src/overlays/ov107/calls/func_ov107_020c1f28.c:
+src/overlays/ov107/calls/Ov107_Region_New.c:
     complete
     .text       start:0x020c1f28 end:0x020c1f4c
 
-src/overlays/ov107/calls/func_ov107_020c1f4c.c:
+src/overlays/ov107/calls/Ov107_Region_RequestJoin.c:
     complete
     .text       start:0x020c1f4c end:0x020c1fb4
 
-src/overlays/ov107/calls/func_ov107_020c1fb4.c:
+src/overlays/ov107/calls/Ov107_Region_RequestLeave.c:
     complete
     .text       start:0x020c1fb4 end:0x020c2034
 
-src/overlays/ov107/calls/func_ov107_020c2034.c:
+src/overlays/ov107/calls/Ov107_Region_CountFlaggedMembers.c:
     complete
     .text       start:0x020c2034 end:0x020c207c
 
-src/overlays/ov107/calls/func_ov107_020c207c.c:
+src/overlays/ov107/calls/Ov107_Region_Init.c:
     complete
     .text       start:0x020c207c end:0x020c22c4
 
-src/overlays/ov107/calls/func_ov107_020c22c4.c:
+src/overlays/ov107/calls/Ov107_Region_AddMember.c:
     complete
     .text       start:0x020c22c4 end:0x020c2364
 
-src/overlays/ov107/calls/func_ov107_020c2364.c:
+src/overlays/ov107/calls/Ov107_Region_RemoveMember.c:
     complete
     .text       start:0x020c2364 end:0x020c24f0
 
-src/overlays/ov107/calls/func_ov107_020c24f0.c:
+src/overlays/ov107/calls/Ov107_ReleaseEmitterResources.c:
     complete
     .text       start:0x020c24f0 end:0x020c2548
 
-src/overlays/ov107/calls/func_ov107_020c2548.c:
+src/overlays/ov107/calls/Ov107_Region_Update.c:
     complete
     .text       start:0x020c2548 end:0x020c26d8
 
-src/overlays/ov107/calls/func_ov107_020c26d8.c:
+src/overlays/ov107/calls/Ov107_Region_OnEvent.c:
     complete
     .text       start:0x020c26d8 end:0x020c26f8
 
-src/overlays/ov107/calls/func_ov107_020c26f8.c:
+src/overlays/ov107/calls/Ov107_Region_SetEnabled.c:
     complete
     .text       start:0x020c26f8 end:0x020c2768
 
-src/overlays/ov107/calls/func_ov107_020c2768.c:
+src/overlays/ov107/calls/Ov107_Region_SetVisible.c:
     complete
     .text       start:0x020c2768 end:0x020c27e8
 
-src/overlays/ov107/calls/func_ov107_020c27e8.c:
+src/overlays/ov107/calls/Ov107_Region_OnSyncMessage.c:
     complete
     .text       start:0x020c27e8 end:0x020c28f0
 
-src/overlays/ov107/calls/func_ov107_020c28f0.c:
+src/overlays/ov107/calls/Ov107_Region_DrawStatusFx.c:
     complete
     .text       start:0x020c28f0 end:0x020c2a3c
 
-src/overlays/ov107/calls/func_ov107_020c2a3c.c:
+src/overlays/ov107/calls/Ov107_Region_OnBusy.c:
     complete
     .text       start:0x020c2a3c end:0x020c2a54
 
-src/overlays/ov107/calls/func_ov107_020c2a54.c:
+src/overlays/ov107/calls/Ov107_Region_DrawStatusFx2.c:
     complete
     .text       start:0x020c2a54 end:0x020c2a6c
 
-src/overlays/ov107/calls/func_ov107_020c2a6c.c:
+src/overlays/ov107/calls/Ov107_Region_DrawStatusFx4.c:
     complete
     .text       start:0x020c2a6c end:0x020c2a84
 
-src/overlays/ov107/calls/func_ov107_020c2a84.c:
+src/overlays/ov107/calls/Ov107_Region_DrawStatusFx8.c:
     complete
     .text       start:0x020c2a84 end:0x020c2a9c
 
-src/overlays/ov107/calls/func_ov107_020c2a9c.c:
+src/overlays/ov107/calls/Ov107_InitBehaviorNode.c:
     complete
     .text       start:0x020c2a9c end:0x020c2b20
 
-src/overlays/ov107/auto/func_ov107_020c2b20.c:
+src/overlays/ov107/auto/Ov107_InitObjectFromSource.c:
     complete
     .text       start:0x020c2b20 end:0x020c2b38
 
-src/overlays/ov107/auto/func_ov107_020c2b38.c:
+src/overlays/ov107/auto/Ov107_InvokeSlot0x74.c:
     complete
     .text       start:0x020c2b38 end:0x020c2b50
 
-src/overlays/ov107/calls/func_ov107_020c2b50.c:
+src/overlays/ov107/calls/Ov107_FindChildById.c:
     complete
     .text       start:0x020c2b50 end:0x020c2b94
 
-src/overlays/ov107/calls/func_ov107_020c2b94.c:
+src/overlays/ov107/calls/Ov107_LinkChildNode.c:
     complete
     .text       start:0x020c2b94 end:0x020c2bd4
 
-src/overlays/ov107/calls/func_ov107_020c2bd4.c:
+src/overlays/ov107/calls/Ov107_Region_UnlinkChild.c:
     complete
     .text       start:0x020c2bd4 end:0x020c2c44
 
-src/overlays/ov107/calls/func_ov107_020c2c44.c:
+src/overlays/ov107/calls/Ov107_Region_Destroy.c:
     complete
     .text       start:0x020c2c44 end:0x020c2c94
 
-src/overlays/ov107/calls/func_ov107_020c2c94.c:
+src/overlays/ov107/calls/Ov107_Region_TickChildren.c:
     complete
     .text       start:0x020c2c94 end:0x020c2cec
 
-src/overlays/ov107/calls/func_ov107_020c2cec.c:
+src/overlays/ov107/calls/Ov107_Region_SyncChildVisibility.c:
     complete
     .text       start:0x020c2cec end:0x020c2d84
 
-src/overlays/ov107/calls/func_ov107_020c2d84.c:
+src/overlays/ov107/calls/Ov107_Region_RunHandlersAlternating.c:
     complete
     .text       start:0x020c2d84 end:0x020c2e0c
 
-src/overlays/ov107/calls/func_ov107_020c2e0c.c:
+src/overlays/ov107/calls/Ov107_RunChildHandlers.c:
     complete
     .text       start:0x020c2e0c end:0x020c2e4c
 
-src/overlays/ov107/calls/func_ov107_020c2e4c.c:
+src/overlays/ov107/calls/Ov107_BroadcastValueToChildren.c:
     complete
     .text       start:0x020c2e4c end:0x020c2ea8
 
-src/overlays/ov107/calls/func_ov107_020c2ea8.c:
+src/overlays/ov107/calls/Ov107_SpawnEntityClass.c:
     complete
     .text       start:0x020c2ea8 end:0x020c2f40
 
-src/overlays/ov107/calls/func_ov107_020c2f40.c:
+src/overlays/ov107/calls/Ov107_ReleaseLoadedResources.c:
     complete
     .text       start:0x020c2f40 end:0x020c2f7c
 
-src/overlays/ov107/calls/func_ov107_020c2f7c.c:
+src/overlays/ov107/calls/Ov107_RegisterHandler.c:
     complete
     .text       start:0x020c2f7c end:0x020c2f94
 
-src/overlays/ov107/calls/func_ov107_020c2f94.c:
+src/overlays/ov107/calls/Ov107_LoadSpawnRecord.c:
     complete
     .text       start:0x020c2f94 end:0x020c3190
 
@@ -300,116 +300,116 @@ src/overlays/ov107/calls/func_ov107_020c3190.c:
     complete
     .text       start:0x020c3190 end:0x020c319c
 
-src/overlays/ov107/calls/func_ov107_020c319c.c:
+src/overlays/ov107/calls/Ov107_CloneResourceTransform.c:
     complete
     .text       start:0x020c319c end:0x020c3210
 
-src/overlays/ov107/calls/func_ov107_020c3210.c:
+src/overlays/ov107/calls/Ov107_Mover_New.c:
     complete
     .text       start:0x020c3210 end:0x020c32b8
 
-src/overlays/ov107/calls/func_ov107_020c32b8.c:
+src/overlays/ov107/calls/Ov107_HitShape_NewBox.c:
     complete
     .text       start:0x020c32b8 end:0x020c3368
 
-src/overlays/ov107/calls/func_ov107_020c3368.c:
+src/overlays/ov107/calls/Ov107_HitShape_UpdateWorld.c:
     complete
     .text       start:0x020c3368 end:0x020c3504
 
-src/overlays/ov107/calls/func_ov107_020c3504.c:
+src/overlays/ov107/calls/Ov107_HitShape_TestSphere.c:
     complete
     .text       start:0x020c3504 end:0x020c36bc
 
-src/overlays/ov107/calls/func_ov107_020c36bc.c:
+src/overlays/ov107/calls/Ov107_HitShape_IntersectSegment.c:
     complete
     .text       start:0x020c36bc end:0x020c38ac
 
-src/overlays/ov107/calls/func_ov107_020c38ac.c:
+src/overlays/ov107/calls/Ov107_HitShape_TestSegment.c:
     complete
     .text       start:0x020c38ac end:0x020c3c74
 
-src/overlays/ov107/calls/func_ov107_020c3c74.c:
+src/overlays/ov107/calls/Ov107_InitActorNode.c:
     complete
     .text       start:0x020c3c74 end:0x020c3d84
 
-src/overlays/ov107/calls/func_ov107_020c3d84.c:
+src/overlays/ov107/calls/Ov107_DestroyNode.c:
     complete
     .text       start:0x020c3d84 end:0x020c3dc8
 
-src/overlays/ov107/calls/func_ov107_020c3dc8.c:
+src/overlays/ov107/calls/Ov107_RollTransformHistory.c:
     complete
     .text       start:0x020c3dc8 end:0x020c3e50
 
-src/overlays/ov107/calls/func_ov107_020c3e50.c:
+src/overlays/ov107/calls/Ov107_AiState_IntegrateVelocity.c:
     complete
     .text       start:0x020c3e50 end:0x020c41e4
 
-src/overlays/ov107/calls/func_ov107_020c41e4.c:
+src/overlays/ov107/calls/Ov107_AiState_ResolveContacts.c:
     complete
     .text       start:0x020c41e4 end:0x020c4924
 
-src/overlays/ov107/calls/func_ov107_020c4924.c:
+src/overlays/ov107/calls/Ov107_AiState_DispatchModelCallbacks.c:
     complete
     .text       start:0x020c4924 end:0x020c49b8
 
-src/overlays/ov107/calls/func_ov107_020c49b8.c:
+src/overlays/ov107/calls/Ov107_AiState_OnSyncMessage.c:
     complete
     .text       start:0x020c49b8 end:0x020c4bf0
 
-src/overlays/ov107/calls/func_ov107_020c4bf0.c:
+src/overlays/ov107/calls/Ov107_SendPoseMessage.c:
     complete
     .text       start:0x020c4bf0 end:0x020c4d9c
 
-src/overlays/ov107/calls/func_ov107_020c4d9c.c:
+src/overlays/ov107/calls/Ov107_AiState_PostTick.c:
     complete
     .text       start:0x020c4d9c end:0x020c4e30
 
-src/overlays/ov107/calls/func_ov107_020c4e30.c:
+src/overlays/ov107/calls/Ov107_AiState_SetVisible.c:
     complete
     .text       start:0x020c4e30 end:0x020c4e9c
 
-src/overlays/ov107/calls/func_ov107_020c4e9c.c:
+src/overlays/ov107/calls/Ov107_RegisterChildInRegion.c:
     complete
     .text       start:0x020c4e9c end:0x020c4eb4
 
-src/overlays/ov107/calls/func_ov107_020c4eb4.c:
+src/overlays/ov107/calls/Ov107_RemoveChildFromRegion.c:
     complete
     .text       start:0x020c4eb4 end:0x020c4ecc
 
-src/overlays/ov107/calls/func_ov107_020c4ecc.c:
+src/overlays/ov107/calls/Ov107_UpdateCollisionSphere.c:
     complete
     .text       start:0x020c4ecc end:0x020c4efc
 
-src/overlays/ov107/calls/func_ov107_020c4efc.c:
+src/overlays/ov107/calls/Ov107_ApplySeparationPush.c:
     complete
     .text       start:0x020c4efc end:0x020c518c
 
-src/overlays/ov107/calls/func_ov107_020c518c.c:
+src/overlays/ov107/calls/Ov107_AiState_HitShapeOverlap.c:
     complete
     .text       start:0x020c518c end:0x020c5af8
 
-src/overlays/ov107/calls/func_ov107_020c5af8.c:
+src/overlays/ov107/calls/Ov107_BuildAndSendUpdate.c:
     complete
     .text       start:0x020c5af8 end:0x020c5c14
 
-src/overlays/ov107/calls/func_ov107_020c5c14.c:
+src/overlays/ov107/calls/Ov107_SetStatusAndEmit.c:
     complete
     .text       start:0x020c5c14 end:0x020c5c54
 
-src/overlays/ov107/calls/func_ov107_020c5c54.c:
+src/overlays/ov107/calls/Ov107_MoveNodeAndRelayout.c:
     complete
     .text       start:0x020c5c54 end:0x020c5c70
 
-src/overlays/ov107/calls/func_ov107_020c5c70.c:
+src/overlays/ov107/calls/Ov107_CalcDamageScale.c:
     complete
     .text       start:0x020c5c70 end:0x020c5cfc
 
-src/overlays/ov107/calls/func_ov107_020c5cfc.c:
+src/overlays/ov107/calls/Ov107_AiState_ApplyHit.c:
     complete
     .text       start:0x020c5cfc end:0x020c65d8
     .rodata     start:0x020cb628 end:0x020cb630
 
-src/overlays/ov107/calls/func_ov107_020c65d8.c:
+src/overlays/ov107/calls/Ov107_RenderAtOwnerSphere.c:
     complete
     .text       start:0x020c65d8 end:0x020c6624
 
@@ -417,11 +417,11 @@ src/overlays/ov107/calls/func_ov107_020c6624.c:
     complete
     .text       start:0x020c6624 end:0x020c68ec
 
-src/overlays/ov107/calls/func_ov107_020c68ec.c:
+src/overlays/ov107/calls/Ov107_DestroyObject.c:
     complete
     .text       start:0x020c68ec end:0x020c697e
 
-src/overlays/ov107/calls/func_ov107_020c6980.c:
+src/overlays/ov107/calls/Ov107_ProcessObjectTick.c:
     complete
     .text       start:0x020c6980 end:0x020c73a0
 
@@ -429,143 +429,143 @@ src/overlays/ov107/calls/func_ov107_020c73a0.c:
     complete
     .text       start:0x020c73a0 end:0x020c7500
 
-src/overlays/ov107/calls/func_ov107_020c7500.c:
+src/overlays/ov107/calls/Ov107_AiState_OnMessage.c:
     complete
     .text       start:0x020c7500 end:0x020c7a2c
 
-src/overlays/ov107/auto/func_ov107_020c7a2c.c:
+src/overlays/ov107/auto/Ov107_SendMessage24.c:
     complete
     .text       start:0x020c7a2c end:0x020c7a90
 
-src/overlays/ov107/calls/func_ov107_020c7a90.c:
+src/overlays/ov107/calls/Ov107_AiState_SendPose.c:
     complete
     .text       start:0x020c7a90 end:0x020c7b70
 
-src/overlays/ov107/calls/func_ov107_020c7b70.c:
+src/overlays/ov107/calls/Ov107_HandleRegionEvent.c:
     complete
     .text       start:0x020c7b70 end:0x020c7c1c
 
-src/overlays/ov107/calls/func_ov107_020c7c1c.c:
+src/overlays/ov107/calls/Ov107_Actor_DetachFromRegion.c:
     complete
     .text       start:0x020c7c1c end:0x020c7ca4
 
-src/overlays/ov107/calls/func_ov107_020c7ca4.c:
+src/overlays/ov107/calls/Ov107_AiState_PostTickBase.c:
     complete
     .text       start:0x020c7ca4 end:0x020c7da4
 
-src/overlays/ov107/calls/func_ov107_020c7da4.c:
+src/overlays/ov107/calls/Ov107_AiState_OnDefeat.c:
     complete
     .text       start:0x020c7da4 end:0x020c8000
 
-src/overlays/ov107/calls/func_ov107_020c8000.c:
+src/overlays/ov107/calls/Ov107_StoreSlotEvent.c:
     complete
     .text       start:0x020c8000 end:0x020c8014
 
-src/overlays/ov107/calls/func_ov107_020c8014.c:
+src/overlays/ov107/calls/Ov107_ResolveActorContact.c:
     complete
     .text       start:0x020c8014 end:0x020c8500
 
-src/overlays/ov107/calls/func_ov107_020c8500.c:
+src/overlays/ov107/calls/Ov107_AiState_LoadStats.c:
     complete
     .text       start:0x020c8500 end:0x020c887c
 
-src/overlays/ov107/calls/func_ov107_020c887c.c:
+src/overlays/ov107/calls/Ov107_LoadMsUpRecord.c:
     complete
     .text       start:0x020c887c end:0x020c88dc
 
-src/overlays/ov107/calls/func_ov107_020c88dc.c:
+src/overlays/ov107/calls/Ov107_StoreHitInfo.c:
     complete
     .text       start:0x020c88dc end:0x020c88fc
 
-src/overlays/ov107/calls/func_ov107_020c88fc.c:
+src/overlays/ov107/calls/Ov107_ResetStanceBase.c:
     complete
     .text       start:0x020c88fc end:0x020c8958
 
-src/overlays/ov107/calls/func_ov107_020c8958.c:
+src/overlays/ov107/calls/Ov107_AiState_LoadResistances.c:
     complete
     .text       start:0x020c8958 end:0x020c89e8
 
-src/overlays/ov107/calls/func_ov107_020c89e8.c:
+src/overlays/ov107/calls/Ov107_CalcHitDamage.c:
     complete
     .text       start:0x020c89e8 end:0x020c8df0
 
-src/overlays/ov107/calls/func_ov107_020c8df0.c:
+src/overlays/ov107/calls/Ov107_CollectCapsuleOverlaps.c:
     complete
     .text       start:0x020c8df0 end:0x020c8eb8
 
-src/overlays/ov107/calls/func_ov107_020c8eb8.c:
+src/overlays/ov107/calls/Ov107_CollectSphereOverlaps.c:
     complete
     .text       start:0x020c8eb8 end:0x020c8f44
 
-src/overlays/ov107/calls/func_ov107_020c8f44.c:
+src/overlays/ov107/calls/Ov107_CollectSegmentOverlaps.c:
     complete
     .text       start:0x020c8f44 end:0x020c8fd0
 
-src/overlays/ov107/calls/func_ov107_020c8fd0.c:
+src/overlays/ov107/calls/Ov107_CollectEntitiesTouchingDisc.c:
     complete
     .text       start:0x020c8fd0 end:0x020c9074
 
-src/overlays/ov107/calls/func_ov107_020c9074.c:
+src/overlays/ov107/calls/Ov107_EnqueueValue.c:
     complete
     .text       start:0x020c9074 end:0x020c9094
 
-src/overlays/ov107/calls/func_ov107_020c9094.c:
+src/overlays/ov107/calls/Ov107_FindEntityHitBySphere.c:
     complete
     .text       start:0x020c9094 end:0x020c9184
 
-src/overlays/ov107/calls/func_ov107_020c9184.c:
+src/overlays/ov107/calls/Ov107_FindEntityHitBySegment.c:
     complete
     .text       start:0x020c9184 end:0x020c9264
 
-src/overlays/ov107/calls/func_ov107_020c9264.c:
+src/overlays/ov107/calls/Ov107_PostTagUpdate.c:
     complete
     .text       start:0x020c9264 end:0x020c92b0
 
-src/overlays/ov107/calls/func_ov107_020c92b0.c:
+src/overlays/ov107/calls/Ov107_Actor_SetAttachSlot.c:
     complete
     .text       start:0x020c92b0 end:0x020c9440
 
-src/overlays/ov107/auto/func_ov107_020c9440.c:
+src/overlays/ov107/auto/Ov107_PackTextureHandle.c:
     complete
     .text       start:0x020c9440 end:0x020c9474
 
-src/overlays/ov107/calls/func_ov107_020c9474.c:
+src/overlays/ov107/calls/Ov107_PlaceAttachmentAtOwner.c:
     complete
     .text       start:0x020c9474 end:0x020c9554
 
-src/overlays/ov107/calls/func_ov107_020c9554.c:
+src/overlays/ov107/calls/Ov107_ContainerNode_New.c:
     complete
     .text       start:0x020c9554 end:0x020c9566
 
-src/overlays/ov107/calls/func_ov107_020c9568.c:
+src/overlays/ov107/calls/Ov107_IsBehindView.c:
     complete
     .text       start:0x020c9568 end:0x020c95d0
 
-src/overlays/ov107/calls/func_ov107_020c95d0.c:
+src/overlays/ov107/calls/Ov107_AllocSortedEntry.c:
     complete
     .text       start:0x020c95d0 end:0x020c9618
 
-src/overlays/ov107/calls/func_ov107_020c9618.c:
+src/overlays/ov107/calls/Ov107_ContainerNode_Finalize.c:
     complete
     .text       start:0x020c9618 end:0x020c96bc
 
-src/overlays/ov107/auto/func_ov107_020c96bc.c:
+src/overlays/ov107/auto/Ov107_SetLookupByte.c:
     complete
     .text       start:0x020c96bc end:0x020c96c8
 
-src/overlays/ov107/calls/func_ov107_020c96c8.c:
+src/overlays/ov107/calls/Ov107_InitContainerNode.c:
     complete
     .text       start:0x020c96c8 end:0x020c9730
 
-src/overlays/ov107/calls/func_ov107_020c9730.c:
+src/overlays/ov107/calls/Ov107_Scene_Destroy.c:
     complete
     .text       start:0x020c9730 end:0x020c9784
 
-src/overlays/ov107/calls/func_ov107_020c9784.c:
+src/overlays/ov107/calls/Ov107_ContainerNode_Tick.c:
     complete
     .text       start:0x020c9784 end:0x020c980a
 
-src/overlays/ov107/calls/func_ov107_020c980c.c:
+src/overlays/ov107/calls/Ov107_FaceReferenceDirection.c:
     complete
     .text       start:0x020c980c end:0x020c9848
 
@@ -573,39 +573,39 @@ src/overlays/ov107/calls/func_ov107_020c9848.c:
     complete
     .text       start:0x020c9848 end:0x020c9858
 
-src/overlays/ov107/calls/func_ov107_020c9858.c:
+src/overlays/ov107/calls/Ov107_Scene_Tick.c:
     complete
     .text       start:0x020c9858 end:0x020c9960
 
-src/overlays/ov107/calls/func_ov107_020c9960.c:
+src/overlays/ov107/calls/Ov107_SetupActorManager.c:
     complete
     .text       start:0x020c9960 end:0x020c9a10
 
-src/overlays/ov107/calls/func_ov107_020c9a10.c:
+src/overlays/ov107/calls/Ov107_FieldClassTeardown.c:
     complete
     .text       start:0x020c9a10 end:0x020c9ac0
 
-src/overlays/ov107/calls/func_ov107_020c9ac0.c:
+src/overlays/ov107/calls/Ov107_LinkToManagerList.c:
     complete
     .text       start:0x020c9ac0 end:0x020c9aec
 
-src/overlays/ov107/calls/func_ov107_020c9aec.c:
+src/overlays/ov107/calls/Ov107_Scene_RemoveObject.c:
     complete
     .text       start:0x020c9aec end:0x020c9b3c
 
-src/overlays/ov107/calls/func_ov107_020c9b3c.c:
+src/overlays/ov107/calls/Ov107_DispatchByType.c:
     complete
     .text       start:0x020c9b3c end:0x020c9b68
 
-src/overlays/ov107/calls/func_ov107_020c9b68.c:
+src/overlays/ov107/calls/Ov107_FindMessageHandler.c:
     complete
     .text       start:0x020c9b68 end:0x020c9bd4
 
-src/overlays/ov107/calls/func_ov107_020c9bd4.c:
+src/overlays/ov107/calls/Ov107_Scene_BuildIdTable.c:
     complete
     .text       start:0x020c9bd4 end:0x020c9c0c
 
-src/overlays/ov107/calls/func_ov107_020c9c0c.c:
+src/overlays/ov107/calls/Ov107_InstantiateFieldClass.c:
     complete
     .text       start:0x020c9c0c end:0x020c9c1c
 
@@ -613,167 +613,167 @@ src/overlays/ov107/calls/func_ov107_020c9c1c.c:
     complete
     .text       start:0x020c9c1c end:0x020c9c24
 
-src/overlays/ov107/calls/func_ov107_020c9c24.c:
+src/overlays/ov107/calls/Ov107_OpenCachedResourceByName.c:
     complete
     .text       start:0x020c9c24 end:0x020c9c90
 
-src/overlays/ov107/calls/func_ov107_020c9c90.c:
+src/overlays/ov107/calls/Ov107_TrackJointMotion.c:
     complete
     .text       start:0x020c9c90 end:0x020c9e50
 
-src/overlays/ov107/calls/func_ov107_020c9e50.c:
+src/overlays/ov107/calls/Ov107_CreateNamedResourceBinding.c:
     complete
     .text       start:0x020c9e50 end:0x020c9eac
 
-src/overlays/ov107/calls/func_ov107_020c9eac.c:
+src/overlays/ov107/calls/Ov107_ActionResource_Destroy.c:
     complete
     .text       start:0x020c9eac end:0x020c9ec8
 
-src/overlays/ov107/calls/func_ov107_020c9ec8.c:
+src/overlays/ov107/calls/Ov107_RefreshAndSelectChild.c:
     complete
     .text       start:0x020c9ec8 end:0x020c9ee8
 
-src/overlays/ov107/calls/func_ov107_020c9ee8.c:
+src/overlays/ov107/calls/Ov107_StartAnim.c:
     complete
     .text       start:0x020c9ee8 end:0x020c9f48
 
-src/overlays/ov107/calls/func_ov107_020c9f48.c:
+src/overlays/ov107/calls/Ov107_ActionResource_GetOffsetAndScale.c:
     complete
     .text       start:0x020c9f48 end:0x020c9f64
 
-src/overlays/ov107/calls/func_ov107_020c9f64.c:
+src/overlays/ov107/calls/Ov107_CollectSphereContacts.c:
     complete
     .text       start:0x020c9f64 end:0x020ca414
 
-src/overlays/ov107/calls/func_ov107_020ca414.c:
+src/overlays/ov107/calls/Ov107_QuerySphereContacts.c:
     complete
     .text       start:0x020ca414 end:0x020ca4b4
 
-src/overlays/ov107/calls/func_ov107_020ca4b4.c:
+src/overlays/ov107/calls/Ov107_CollectShapeContacts.c:
     complete
     .text       start:0x020ca4b4 end:0x020ca860
 
-src/overlays/ov107/calls/func_ov107_020ca860.c:
+src/overlays/ov107/calls/Ov107_QuerySphereContacts_2.c:
     complete
     .text       start:0x020ca860 end:0x020ca900
 
-src/overlays/ov107/calls/func_ov107_020ca900.c:
+src/overlays/ov107/calls/Ov107_Pillar_New.c:
     complete
     .text       start:0x020ca900 end:0x020ca918
 
-src/overlays/ov107/calls/func_ov107_020ca918.c:
+src/overlays/ov107/calls/Ov107_InvokeHitCallback.c:
     complete
     .text       start:0x020ca918 end:0x020cab14
 
-src/overlays/ov107/calls/func_ov107_020cab14.c:
+src/overlays/ov107/calls/Ov107_FindNearestObject.c:
     complete
     .text       start:0x020cab14 end:0x020cac24
 
-src/overlays/ov107/calls/func_ov107_020cac24.c:
+src/overlays/ov107/calls/Ov107_Pillar_Init.c:
     complete
     .text       start:0x020cac24 end:0x020cad48
 
-src/overlays/ov107/calls/func_ov107_020cad48.c:
+src/overlays/ov107/calls/Ov107_Pillar_UpdateHeight.c:
     complete
     .text       start:0x020cad48 end:0x020cada8
 
-src/overlays/ov107/calls/func_ov107_020cada8.c:
+src/overlays/ov107/calls/Ov107_Pillar_PreTick.c:
     complete
     .text       start:0x020cada8 end:0x020cae68
 
-src/overlays/ov107/calls/func_ov107_020cae68.c:
+src/overlays/ov107/calls/Ov107_Pillar_EnterRegion.c:
     complete
     .text       start:0x020cae68 end:0x020caebc
 
-src/overlays/ov107/calls/func_ov107_020caebc.c:
+src/overlays/ov107/calls/Ov107_Pillar_LeaveRegion.c:
     complete
     .text       start:0x020caebc end:0x020caf24
 
-src/overlays/ov107/auto/func_ov107_020caf24.c:
+src/overlays/ov107/auto/Ov107_SendMessage6.c:
     complete
     .text       start:0x020caf24 end:0x020caf64
 
-src/overlays/ov107/calls/func_ov107_020caf64.c:
+src/overlays/ov107/calls/Ov107_OnQuery.c:
     complete
     .text       start:0x020caf64 end:0x020cafb4
 
-src/overlays/ov107/auto/func_ov107_020cafb4.c:
+src/overlays/ov107/auto/Ov107_SetLowByteOfHw60FromQ4.c:
     complete
     .text       start:0x020cafb4 end:0x020cafd8
 
-src/overlays/ov107/calls/func_ov107_020cafd8.c:
+src/overlays/ov107/calls/Ov107_Pillar_Tick.c:
     complete
     .text       start:0x020cafd8 end:0x020cb040
 
-src/overlays/ov107/calls/func_ov107_020cb040.c:
+src/overlays/ov107/calls/Ov107_CreateSpawnTask.c:
     complete
     .text       start:0x020cb040 end:0x020cb100
 
-src/overlays/ov107/calls/func_ov107_020cb100.c:
+src/overlays/ov107/calls/Ov107_UnlinkNodeFromOwner.c:
     complete
     .text       start:0x020cb100 end:0x020cb124
 
-src/overlays/ov107/calls/func_ov107_020cb124.c:
+src/overlays/ov107/calls/Ov107_Reaction_BranchByOwnerBit0.c:
     complete
     .text       start:0x020cb124 end:0x020cb164
 
-src/overlays/ov107/calls/func_ov107_020cb164.c:
+src/overlays/ov107/calls/Ov107_SpawnTaskTeardown.c:
     complete
     .text       start:0x020cb164 end:0x020cb178
 
-src/overlays/ov107/calls/func_ov107_020cb178.c:
+src/overlays/ov107/calls/Ov107_SoundFollowTick.c:
     complete
     .text       start:0x020cb178 end:0x020cb208
 
-src/overlays/ov107/calls/func_ov107_020cb208.c:
+src/overlays/ov107/calls/Ov107_SoundRestartTick.c:
     complete
     .text       start:0x020cb208 end:0x020cb268
 
-src/overlays/ov107/calls/func_ov107_020cb268.c:
+src/overlays/ov107/calls/Ov107_CreateTriggerSphere.c:
     complete
     .text       start:0x020cb268 end:0x020cb28c
 
-src/overlays/ov107/calls/func_ov107_020cb28c.c:
+src/overlays/ov107/calls/Ov107_TriggerSphere_Init.c:
     complete
     .text       start:0x020cb28c end:0x020cb2dc
 
-src/overlays/ov107/calls/func_ov107_020cb2dc.c:
+src/overlays/ov107/calls/Ov107_TriggerSphere_TestPlayers.c:
     complete
     .text       start:0x020cb2dc end:0x020cb400
 
-src/overlays/ov107/calls/func_ov107_020cb400.c:
+src/overlays/ov107/calls/Ov107_TriggerSphere_NotifyExits.c:
     complete
     .text       start:0x020cb400 end:0x020cb4f0
 
-src/overlays/ov107/auto/func_ov107_020cb4f0.c:
+src/overlays/ov107/auto/Ov107_TaskRunStep.c:
     complete
     .text       start:0x020cb4f0 end:0x020cb51c
 
-src/overlays/ov107/calls/func_ov107_020cb51c.c:
+src/overlays/ov107/calls/Ov107_OrLowFlags.c:
     complete
     .text       start:0x020cb51c end:0x020cb544
 
-src/overlays/ov107/auto/func_ov107_020cb544.c:
+src/overlays/ov107/auto/Ov107_TaskClearFlags.c:
     complete
     .text       start:0x020cb544 end:0x020cb570
 
-src/overlays/ov107/auto/func_ov107_020cb570.c:
+src/overlays/ov107/auto/Ov107_SetOwnerWord.c:
     complete
     .text       start:0x020cb570 end:0x020cb578
 
-src/overlays/ov107/calls/func_ov107_020cb578.c:
+src/overlays/ov107/calls/Ov107_TaskReset.c:
     complete
     .text       start:0x020cb578 end:0x020cb5ac
 
-src/overlays/ov107/calls/func_ov107_020cb5ac.c:
+src/overlays/ov107/calls/Ov107_CreateRestartTask.c:
     complete
     .text       start:0x020cb5ac end:0x020cb5c8
 
-src/overlays/ov107/calls/func_ov107_020cb5c8.c:
+src/overlays/ov107/calls/Ov107_TaskRestartWith5f0.c:
     complete
     .text       start:0x020cb5c8 end:0x020cb5f0
 
-src/overlays/ov107/auto/func_ov107_020cb5f0.c:
+src/overlays/ov107/auto/Ov107_DefaultStepDone.c:
     complete
     .text       start:0x020cb5f0 end:0x020cb5f8
 

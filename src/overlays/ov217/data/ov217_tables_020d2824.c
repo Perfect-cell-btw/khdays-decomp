@@ -13,7 +13,7 @@ const int data_ov217_020d2824[5] = {
     0, 11, 12, 13, 15,
 };
 
-/* read by func_ov217_020d0634 (020d0634): int data_ov217_020d2838[]; */
+/* read by Ov217_spawnFromTable (020d0634): int data_ov217_020d2838[]; */
 const int data_ov217_020d2838[9] = {
     1, 2, 3, 4, 5, 6, 7, 8,
     9,

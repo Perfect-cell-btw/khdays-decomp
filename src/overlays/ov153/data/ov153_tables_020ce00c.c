@@ -43,7 +43,7 @@ const u16 data_ov153_020ce052[7] = {
     0, 261, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov153_020cde14 (020cde14): struct pair data_ov153_020ce060; */
+/* read by Ov153_stateAnimFlagCallback (020cde14): struct pair data_ov153_020ce060; */
 const u8 data_ov153_020ce060[4] = {
     0, 0, 5, 0,
 };

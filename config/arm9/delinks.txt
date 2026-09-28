@@ -100,11 +100,11 @@ libs/nitro/init/asm_stubs/calls/func_02000a78.c:
     complete
     .text       start:0x02000a78 end:0x02000b60
 
-libs/nitro/init/auto/func_02000b60.c:
+libs/nitro/init/auto/NitroStartUp.c:
     complete
     .text       start:0x02000b60 end:0x02000b64
 
-libs/nitro/init/auto/func_02000b64.c:
+libs/nitro/init/auto/OSi_ReferSymbol.c:
     complete
     .text       start:0x02000b64 end:0x02000b68
 
@@ -112,15 +112,15 @@ src/calls/main.c:
     complete
     .text       start:0x02000bcc end:0x02000f1c
 
-src/calls/func_02000f1c.c:
+src/calls/Boot_InitVBlank.c:
     complete
     .text       start:0x02000f1c end:0x02000f48
 
-src/calls/func_02000f48.c:
+src/calls/RegisterNamedTask.c:
     complete
     .text       start:0x02000f48 end:0x02000fb4
 
-src/calls/func_02000fb4.c:
+src/calls/VBlank_UnregisterCallback.c:
     complete
     .text       start:0x02000fb4 end:0x02001020
 
@@ -128,15 +128,15 @@ src/calls/func_02001020.c:
     complete
     .text       start:0x02001020 end:0x02001030
 
-src/calls/func_02001030.c:
+src/calls/Game_PollSceneAlive.c:
     complete
     .text       start:0x02001030 end:0x02001054
 
-src/calls/func_02001054.c:
+src/calls/Overlay105_Load.c:
     complete
     .text       start:0x02001054 end:0x0200108c
 
-src/calls/func_0200108c.c:
+src/calls/Overlay105_Release.c:
     complete
     .text       start:0x0200108c end:0x020010c4
 
@@ -144,7 +144,7 @@ libs/nitro/os/calls/OS_WaitIrq.c:
     complete
     .text       start:0x020010c4 end:0x02001138
 
-libs/nitro/os/auto/func_02001138.c:
+libs/nitro/os/auto/OS_IrqDummy.c:
     complete
     .text       start:0x02001138 end:0x0200113c
 
@@ -308,11 +308,11 @@ libs/nitro/os/calls/OS_SNPrintf.c:
     complete
     .text       start:0x020018b8 end:0x020018e0
 
-src/calls/func_020018e0.c:
+src/calls/Text_VSNPrintf.c:
     complete
     .text       start:0x020018e0 end:0x020018ec
 
-libs/nitro/os/calls/func_020018ec.c:
+libs/nitro/os/calls/OSi_GetUnusedThreadId.c:
     complete
     .text       start:0x020018ec end:0x02001904
 
@@ -336,7 +336,7 @@ libs/nitro/os/calls/OSi_InsertThreadByPriority.c:
     complete
     .text       start:0x02001a34 end:0x02001a94
 
-libs/nitro/os/calls/func_02001a94.c:
+libs/nitro/os/calls/OSi_RemoveThreadFromList.c:
     complete
     .text       start:0x02001a94 end:0x02001adc
 
@@ -344,7 +344,7 @@ libs/nitro/os/calls/OSi_RescheduleThread.c:
     complete
     .text       start:0x02001adc end:0x02001ba4
 
-libs/nitro/os/calls/func_02001ba4.c:
+libs/nitro/os/calls/OS_InitThread.c:
     complete
     .text       start:0x02001ba4 end:0x02001cf0
 
@@ -352,19 +352,19 @@ libs/nitro/os/calls/OS_CreateThread.c:
     complete
     .text       start:0x02001cf0 end:0x02001dec
 
-libs/nitro/os/calls/func_02001dec.c:
+libs/nitro/os/calls/OS_ExitThread.c:
     complete
     .text       start:0x02001dec end:0x02001e0c
 
-libs/nitro/os/calls/func_02001e0c.c:
+libs/nitro/os/calls/OSi_ExitThread_ArgSpecified.c:
     complete
     .text       start:0x02001e0c end:0x02001e68
 
-libs/nitro/os/calls/func_02001e68.c:
+libs/nitro/os/calls/OSi_ExitThread.c:
     complete
     .text       start:0x02001e68 end:0x02001ea0
 
-libs/nitro/os/calls/func_02001ea0.c:
+libs/nitro/os/calls/OSi_ExitThread_Destroy.c:
     complete
     .text       start:0x02001ea0 end:0x02001efc
 
@@ -372,7 +372,7 @@ libs/nitro/os/auto/OS_IsThreadTerminated.c:
     complete
     .text       start:0x02001efc end:0x02001f10
 
-libs/nitro/os/calls/func_02001f10.c:
+libs/nitro/os/calls/OS_SleepThread.c:
     complete
     .text       start:0x02001f10 end:0x02001f60
 
@@ -404,7 +404,7 @@ libs/nitro/os/calls/OSi_SleepAlarmCallback.c:
     complete
     .text       start:0x02002178 end:0x02002198
 
-src/calls/func_02002198.c:
+src/calls/OS_SetIrqWorkField30.c:
     complete
     .text       start:0x02002198 end:0x020021c0
 
@@ -412,11 +412,11 @@ libs/nitro/os/calls/OSi_IdleThreadProc.c:
     complete
     .text       start:0x020021c0 end:0x020021d0
 
-libs/nitro/os/calls/func_020021d0.c:
+libs/nitro/os/calls/OS_DisableScheduler.c:
     complete
     .text       start:0x020021d0 end:0x02002204
 
-libs/nitro/os/calls/func_02002204.c:
+libs/nitro/os/calls/OS_EnableScheduler.c:
     complete
     .text       start:0x02002204 end:0x02002238
 
@@ -436,7 +436,7 @@ libs/nitro/os/asm_stubs/calls/OS_LoadContext.c:
     complete
     .text       start:0x020022f8 end:0x0200233c
 
-src/auto/func_0200233c.c:
+src/auto/CommandPort_IsEnabled.c:
     complete
     .text       start:0x0200233c end:0x02002344
 
@@ -524,7 +524,7 @@ libs/nitro/os/asm_stubs/calls/OSi_CancelDma0.c:
     complete
     .text       start:0x020027d0 end:0x020027f0
 
-libs/nitro/os/calls/func_020027f0.c:
+libs/nitro/os/calls/OS_Init.c:
     complete
     .text       start:0x020027f0 end:0x02002838
 
@@ -544,11 +544,11 @@ libs/nitro/os/auto/OS_GetArenaLo.c:
     complete
     .text       start:0x020029bc end:0x020029d0
 
-libs/nitro/os/calls/func_020029d0.c:
+libs/nitro/os/calls/OS_GetInitArenaHi.c:
     complete
     .text       start:0x020029d0 end:0x02002ab4
 
-libs/nitro/os/calls/func_02002ab4.c:
+libs/nitro/os/calls/OS_GetInitArenaLo.c:
     complete
     .text       start:0x02002ab4 end:0x02002b5c
 
@@ -636,7 +636,7 @@ libs/nitro/os/calls/OSi_ClearAlarmBit.c:
     complete
     .text       start:0x020030c4 end:0x020030e4
 
-src/calls/func_020030e4.c:
+src/calls/OS_InitTick.c:
     complete
     .text       start:0x020030e4 end:0x0200315c
 
@@ -644,11 +644,11 @@ libs/nitro/os/calls/OS_IsTickAvailable.c:
     complete
     .text       start:0x0200315c end:0x0200316c
 
-libs/nitro/os/calls/func_0200316c.c:
+libs/nitro/os/calls/OSi_CountUpTick.c:
     complete
     .text       start:0x0200316c end:0x020031d4
 
-libs/nitro/os/calls/func_020031d4.c:
+libs/nitro/os/calls/OS_GetTick.c:
     complete
     .text       start:0x020031d4 end:0x02003274
 
@@ -656,7 +656,7 @@ libs/nitro/os/calls/OS_GetTickLo.c:
     complete
     .text       start:0x02003274 end:0x02003284
 
-src/calls/func_02003284.c:
+src/calls/SetupTimer0Reload.c:
     complete
     .text       start:0x02003284 end:0x020032f4
 
@@ -664,11 +664,11 @@ libs/nitro/os/calls/OSi_SetTimer.c:
     complete
     .text       start:0x020032f4 end:0x02003380
 
-src/calls/func_02003380.c:
+src/calls/OS_InitAlarm.c:
     complete
     .text       start:0x02003380 end:0x020033c0
 
-libs/nitro/os/calls/func_020033c0.c:
+libs/nitro/os/calls/OS_EndAlarm.c:
     complete
     .text       start:0x020033c0 end:0x02003400
 
@@ -676,7 +676,7 @@ libs/nitro/os/auto/OS_CreateAlarm.c:
     complete
     .text       start:0x02003400 end:0x02003410
 
-libs/nitro/os/calls/func_02003410.c:
+libs/nitro/os/calls/OSi_InsertAlarm.c:
     complete
     .text       start:0x02003410 end:0x0200353c
 
@@ -684,11 +684,11 @@ libs/nitro/os/calls/OS_SetAlarm.c:
     complete
     .text       start:0x0200353c end:0x020035a8
 
-src/calls/func_020035a8.c:
+src/calls/OS_SetPeriodicAlarm.c:
     complete
     .text       start:0x020035a8 end:0x02003618
 
-src/calls/func_02003618.c:
+src/calls/OS_CancelAlarm.c:
     complete
     .text       start:0x02003618 end:0x020036a0
 
@@ -696,11 +696,11 @@ libs/nitro/os/asm_stubs/calls/OSi_AlarmHandler.c:
     complete
     .text       start:0x020036a0 end:0x020036b0
 
-libs/nitro/os/calls/func_020036b0.c:
+libs/nitro/os/calls/OSi_ArrangeTimer.c:
     complete
     .text       start:0x020036b0 end:0x020037a0
 
-src/calls/func_020037a0.c:
+src/calls/OS_InitVAlarm.c:
     complete
     .text       start:0x020037a0 end:0x020037e8
 
@@ -732,7 +732,7 @@ libs/nitro/os/asm_stubs/auto/OS_GetProcMode.c:
     complete
     .text       start:0x02003860 end:0x0200386c
 
-libs/nitro/os/asm_stubs/auto/func_0200386c.c:
+libs/nitro/os/asm_stubs/auto/OS_SpinWait.c:
     complete
     .text       start:0x0200386c end:0x02003878
 
@@ -740,11 +740,11 @@ libs/nitro/os/calls/OS_WaitVBlankIntr.c:
     complete
     .text       start:0x02003878 end:0x02003894
 
-src/calls/func_02003894.c:
+src/calls/OS_InitReset.c:
     complete
     .text       start:0x02003894 end:0x020038e8
 
-src/calls/func_020038e8.c:
+src/calls/OSi_CommonCallback.c:
     complete
     .text       start:0x020038e8 end:0x0200391c
 
@@ -760,7 +760,7 @@ libs/nitro/os/calls/OS_GetMacAddress.c:
     complete
     .text       start:0x02003a04 end:0x02003a20
 
-src/calls/func_02003a20.c:
+src/calls/Game_ReadLocalProfile.c:
     complete
     .text       start:0x02003a20 end:0x02003aa4
 
@@ -856,7 +856,7 @@ libs/nitro/mi/calls/MIi_CardDmaCopy32.c:
     complete
     .text       start:0x020043c8 end:0x0200443c
 
-libs/nitro/mi/auto/func_0200443c.c:
+libs/nitro/mi/auto/MI_InitUncompContextLZ.c:
     complete
     .text       start:0x0200443c end:0x02004484
 
@@ -892,11 +892,11 @@ libs/nitro/mtx/auto/MTX_Concat44.c:
     complete
     .text       start:0x020046fc end:0x02004d60
 
-src/calls/func_02004d60.c:
+src/calls/Camera_BuildProjectionMtx.c:
     complete
     .text       start:0x02004d60 end:0x02004eac
 
-src/calls/func_02004eac.c:
+src/calls/MTX_OrthoW.c:
     complete
     .text       start:0x02004eac end:0x020050b4
 
@@ -908,19 +908,19 @@ src/calls/FX_Atan2.c:
     complete
     .text       start:0x0200526c end:0x02005414
 
-src/auto/func_02005414.c:
+src/auto/BootInitHookNoOp.c:
     complete
     .text       start:0x02005414 end:0x02005418
 
-src/auto/func_02005418.c:
+src/auto/FX_Mul.c:
     complete
     .text       start:0x02005418 end:0x02005430
 
-src/calls/func_02005430.c:
+src/calls/FX_AcosIdx.c:
     complete
     .text       start:0x02005430 end:0x020054b0
 
-src/calls/func_020054b0.c:
+src/calls/GX_Init.c:
     complete
     .text       start:0x020054b0 end:0x020055fc
 
@@ -928,15 +928,15 @@ libs/nitro/gx/auto/GX_VBlankIntr.c:
     complete
     .text       start:0x020055fc end:0x02005630
 
-src/auto/func_02005630.c:
+src/auto/GX_DispOff.c:
     complete
     .text       start:0x02005630 end:0x0200566c
 
-src/calls/func_0200566c.c:
+src/calls/DispCnt_ApplyPendingMode.c:
     complete
     .text       start:0x0200566c end:0x020056b4
 
-libs/nitro/gx/calls/func_020056b4.c:
+libs/nitro/gx/calls/GX_SetGraphicsMode.c:
     complete
     .text       start:0x020056b4 end:0x0200571c
 
@@ -948,7 +948,7 @@ libs/nitro/gx/auto/GXx_SetMasterBrightness_.c:
     complete
     .text       start:0x02005738 end:0x02005760
 
-libs/nitro/gx/auto/func_02005760.c:
+libs/nitro/gx/auto/GXx_GetMasterBrightness_.c:
     complete
     .text       start:0x02005760 end:0x020057a4
 
@@ -1420,11 +1420,11 @@ libs/nitro/snd/calls/SND_SetPlayerChannelPriority.c:
     complete
     .text       start:0x02008140 end:0x02008158
 
-src/calls/func_02008158.c:
+src/calls/PushCommand_0A.c:
     complete
     .text       start:0x02008158 end:0x02008180
 
-src/calls/func_02008180.c:
+src/calls/SND_SetTrackParam0A.c:
     complete
     .text       start:0x02008180 end:0x0200819c
 
@@ -1492,7 +1492,7 @@ libs/nitro/snd/calls/SNDi_SetTrackParam.c:
     complete
     .text       start:0x02008430 end:0x02008458
 
-src/calls/func_02008458.c:
+src/calls/PushCommand_16.c:
     complete
     .text       start:0x02008458 end:0x02008478
 
@@ -1512,11 +1512,11 @@ libs/nitro/snd/calls/SNDi_UnlockMutex.c:
     complete
     .text       start:0x02008508 end:0x0200851c
 
-libs/nitro/snd/calls/func_0200851c.c:
+libs/nitro/snd/calls/SND_CommandInit.c:
     complete
     .text       start:0x0200851c end:0x020085f0
 
-libs/nitro/snd/calls/func_020085f0.c:
+libs/nitro/snd/calls/SND_RecvCommandReply.c:
     complete
     .text       start:0x020085f0 end:0x02008700
 
@@ -1524,11 +1524,11 @@ libs/nitro/snd/calls/SND_AllocCommand.c:
     complete
     .text       start:0x02008700 end:0x02008788
 
-src/calls/func_02008788.c:
+src/calls/SND_PushCommand.c:
     complete
     .text       start:0x02008788 end:0x020087c0
 
-src/calls/func_020087c0.c:
+src/calls/SND_FlushCommand.c:
     complete
     .text       start:0x020087c0 end:0x0200897c
 
@@ -1536,11 +1536,11 @@ libs/nitro/snd/calls/SND_WaitForCommandProc.c:
     complete
     .text       start:0x0200897c end:0x020089e8
 
-src/calls/func_020089e8.c:
+src/calls/SND_GetCurrentCommandTag.c:
     complete
     .text       start:0x020089e8 end:0x02008a14
 
-src/calls/func_02008a14.c:
+src/calls/SND_IsFinishedCommandTag.c:
     complete
     .text       start:0x02008a14 end:0x02008a64
 
@@ -1568,7 +1568,7 @@ libs/nitro/snd/calls/RequestCommandProc.c:
     complete
     .text       start:0x02008b7c end:0x02008ba4
 
-src/calls/func_02008ba4.c:
+src/calls/SND_PopFreeCommand.c:
     complete
     .text       start:0x02008ba4 end:0x02008bec
 
@@ -1596,7 +1596,7 @@ libs/nitro/snd/calls/SND_GetPlayerStatus.c:
     complete
     .text       start:0x02008cf0 end:0x02008d1c
 
-src/calls/func_02008d1c.c:
+src/calls/SND_GetPlayerLocalVariable.c:
     complete
     .text       start:0x02008d1c end:0x02008d64
 
@@ -1616,7 +1616,7 @@ libs/nitro/snd/calls/SND_AssignWaveArc.c:
     complete
     .text       start:0x02008e78 end:0x02008f44
 
-libs/nitro/snd/calls/func_02008f44.c:
+libs/nitro/snd/calls/SND_DestroyBank.c:
     complete
     .text       start:0x02008f44 end:0x02008fdc
 
@@ -1628,7 +1628,7 @@ libs/nitro/snd/auto/SND_GetFirstInstDataPos.c:
     complete
     .text       start:0x02009024 end:0x02009044
 
-libs/nitro/snd/auto/func_02009044.c:
+libs/nitro/snd/auto/SND_GetNextInstData.c:
     complete
     .text       start:0x02009044 end:0x020091f4
 
@@ -1660,7 +1660,7 @@ libs/nitro/pxi/auto/PXI_IsCallbackReady.c:
     complete
     .text       start:0x020093c4 end:0x020093e8
 
-src/calls/func_020093e8.c:
+src/calls/PXI_SendWordByFifo.c:
     complete
     .text       start:0x020093e8 end:0x02009470
 
@@ -1720,7 +1720,7 @@ libs/nitro/fs/auto/FSi_OpenFileDirectCommand.c:
     complete
     .text       start:0x0200a0e4 end:0x0200a10c
 
-libs/nitro/fs/auto/func_0200a10c.c:
+libs/nitro/fs/auto/FSi_CloseFileCommand.c:
     complete
     .text       start:0x0200a10c end:0x0200a114
 
@@ -1752,7 +1752,7 @@ libs/nitro/fs/calls/FSi_ExecuteSyncCommand.c:
     complete
     .text       start:0x0200a468 end:0x0200a4ac
 
-libs/nitro/fs/calls/func_0200a4ac.c:
+libs/nitro/fs/calls/FSi_SendCommand.c:
     complete
     .text       start:0x0200a4ac end:0x0200a650
 
@@ -1824,7 +1824,7 @@ libs/nitro/fs/calls/FS_WaitAsync.c:
     complete
     .text       start:0x0200ad34 end:0x0200adf4
 
-libs/nitro/fs/calls/func_0200adf4.c:
+libs/nitro/fs/calls/FS_CancelFile.c:
     complete
     .text       start:0x0200adf4 end:0x0200ae3c
 
@@ -1844,11 +1844,11 @@ libs/nitro/fs/calls/FSi_OnRomReadDone.c:
     complete
     .text       start:0x0200aec8 end:0x0200aeec
 
-src/calls/func_0200aeec.c:
+src/calls/FSi_ReadRomCallback.c:
     complete
     .text       start:0x0200aeec end:0x0200af34
 
-src/auto/func_0200af34.c:
+src/auto/DefaultStepDone.c:
     complete
     .text       start:0x0200af34 end:0x0200af3c
 
@@ -1856,7 +1856,7 @@ src/calls/FSi_RomArchiveProc.c:
     complete
     .text       start:0x0200af3c end:0x0200afa8
 
-src/auto/func_0200afa8.c:
+src/auto/DefaultStepDone_2.c:
     complete
     .text       start:0x0200afa8 end:0x0200afb0
 
@@ -1920,19 +1920,19 @@ libs/nitro/fs/calls/FS_UnloadOverlay.c:
     complete
     .text       start:0x0200b700 end:0x0200b74c
 
-libs/nitro/dgt/auto/func_0200b74c.c:
+libs/nitro/dgt/auto/DGT_Hash2Reset.c:
     complete
     .text       start:0x0200b74c end:0x0200b79c
 
-libs/nitro/dgt/calls/func_0200b79c.c:
+libs/nitro/dgt/calls/DGT_Hash2SetSource.c:
     complete
     .text       start:0x0200b79c end:0x0200b8f0
 
-libs/nitro/dgt/calls/func_0200b8f0.c:
+libs/nitro/dgt/calls/DGT_Hash2GetDigest.c:
     complete
     .text       start:0x0200b8f0 end:0x0200baec
 
-libs/nitro/math/calls/func_0200baec.c:
+libs/nitro/math/calls/MATH_CalcHMACSHA1.c:
     complete
     .text       start:0x0200baec end:0x0200bb80
 
@@ -1940,7 +1940,7 @@ libs/nitro/math/calls/func_0200bb80.c:
     complete
     .text       start:0x0200bb80 end:0x0200bd38
 
-libs/nitro/dgt/asm_stubs/auto/func_0200bd4c.c:
+libs/nitro/dgt/asm_stubs/auto/DGTi_Hash2ProcessBlock.c:
     complete
     .text       start:0x0200bd4c end:0x0200bfcc
 
@@ -1952,31 +1952,31 @@ libs/nitro/gx/asm_stubs/calls/CPi_RestoreContext.c:
     complete
     .text       start:0x0200c00c end:0x0200c048
 
-libs/nitro/spi/calls/func_0200c048.c:
+libs/nitro/spi/calls/TPi_TpCallback.c:
     complete
     .text       start:0x0200c048 end:0x0200c2c8
 
-libs/nitro/spi/calls/func_0200c2c8.c:
+libs/nitro/spi/calls/TP_Init.c:
     complete
     .text       start:0x0200c2c8 end:0x0200c340
 
-libs/nitro/spi/calls/func_0200c340.c:
+libs/nitro/spi/calls/TP_GetUserInfo.c:
     complete
     .text       start:0x0200c340 end:0x0200c3d4
 
-libs/nitro/spi/calls/func_0200c3d4.c:
+libs/nitro/spi/calls/TP_SetCalibrateParam.c:
     complete
     .text       start:0x0200c3d4 end:0x0200c4fc
 
-libs/nitro/spi/calls/func_0200c4fc.c:
+libs/nitro/spi/calls/TP_RequestAutoSamplingStartAsync.c:
     complete
     .text       start:0x0200c4fc end:0x0200c5fc
 
-libs/nitro/spi/calls/func_0200c5fc.c:
+libs/nitro/spi/calls/TP_RequestAutoSamplingStopAsync.c:
     complete
     .text       start:0x0200c5fc end:0x0200c694
 
-libs/nitro/spi/calls/func_0200c694.c:
+libs/nitro/spi/calls/TP_RequestSetStabilityAsync.c:
     complete
     .text       start:0x0200c694 end:0x0200c730
 
@@ -1984,19 +1984,19 @@ libs/nitro/spi/calls/TP_GetLatestIndexInAuto.c:
     complete
     .text       start:0x0200c730 end:0x0200c740
 
-libs/nitro/spi/calls/func_0200c740.c:
+libs/nitro/spi/calls/TP_CalcCalibrateParam.c:
     complete
     .text       start:0x0200c740 end:0x0200c92c
 
-libs/nitro/spi/calls/func_0200c92c.c:
+libs/nitro/spi/calls/TP_GetCalibratedPoint.c:
     complete
     .text       start:0x0200c92c end:0x0200ca50
 
-libs/nitro/spi/calls/func_0200ca50.c:
+libs/nitro/spi/calls/TP_WaitBusy.c:
     complete
     .text       start:0x0200ca50 end:0x0200ca68
 
-libs/nitro/spi/calls/func_0200ca68.c:
+libs/nitro/spi/calls/TP_CheckError.c:
     complete
     .text       start:0x0200ca68 end:0x0200ca7c
 
@@ -2004,31 +2004,31 @@ libs/nitro/spi/calls/PMi_Lock.c:
     complete
     .text       start:0x0200ca7c end:0x0200cab8
 
-libs/nitro/spi/calls/func_0200cab8.c:
+libs/nitro/spi/calls/PMi_WaitBusy.c:
     complete
     .text       start:0x0200cab8 end:0x0200caf8
 
-libs/nitro/spi/auto/func_0200caf8.c:
+libs/nitro/spi/auto/PMi_DummyCallback.c:
     complete
     .text       start:0x0200caf8 end:0x0200cb00
 
-libs/nitro/spi/calls/func_0200cb00.c:
+libs/nitro/spi/calls/PMi_CallCallbackAndUnlock.c:
     complete
     .text       start:0x0200cb00 end:0x0200cb40
 
-libs/nitro/spi/calls/func_0200cb40.c:
+libs/nitro/spi/calls/PM_Init.c:
     complete
     .text       start:0x0200cb40 end:0x0200cbe4
 
-libs/nitro/spi/calls/func_0200cbe4.c:
+libs/nitro/spi/calls/PMi_CommonCallback.c:
     complete
     .text       start:0x0200cbe4 end:0x0200ccac
 
-libs/nitro/spi/calls/func_0200ccac.c:
+libs/nitro/spi/calls/PMi_SendSleepStart.c:
     complete
     .text       start:0x0200ccac end:0x0200cd40
 
-libs/nitro/spi/calls/func_0200cd40.c:
+libs/nitro/spi/calls/PM_SendUtilityCommandAsync.c:
     complete
     .text       start:0x0200cd40 end:0x0200cda0
 
@@ -2036,7 +2036,7 @@ libs/nitro/spi/calls/PMi_ReadRegisterAsync.c:
     complete
     .text       start:0x0200cda0 end:0x0200ce0c
 
-libs/nitro/spi/calls/func_0200ce0c.c:
+libs/nitro/spi/calls/PMi_ReadRegister.c:
     complete
     .text       start:0x0200ce0c end:0x0200ce34
 
@@ -2044,7 +2044,7 @@ libs/nitro/spi/calls/PMi_WriteRegisterAsync.c:
     complete
     .text       start:0x0200ce34 end:0x0200ce94
 
-libs/nitro/spi/calls/func_0200ce94.c:
+libs/nitro/spi/calls/PMi_WriteRegister.c:
     complete
     .text       start:0x0200ce94 end:0x0200cebc
 
@@ -2052,19 +2052,19 @@ libs/nitro/spi/calls/PMi_SetLEDAsync.c:
     complete
     .text       start:0x0200cebc end:0x0200cf10
 
-libs/nitro/spi/calls/func_0200cf10.c:
+libs/nitro/spi/calls/PMi_SetLED.c:
     complete
     .text       start:0x0200cf10 end:0x0200cf38
 
-libs/nitro/spi/calls/func_0200cf38.c:
+libs/nitro/spi/calls/PM_SetBackLightAsync.c:
     complete
     .text       start:0x0200cf38 end:0x0200cfb4
 
-libs/nitro/spi/calls/func_0200cfb4.c:
+libs/nitro/spi/calls/PM_SetBackLight.c:
     complete
     .text       start:0x0200cfb4 end:0x0200cfdc
 
-libs/nitro/spi/calls/func_0200cfdc.c:
+libs/nitro/spi/calls/PM_ForceToPowerOffAsync.c:
     complete
     .text       start:0x0200cfdc end:0x0200d088
 
@@ -2072,11 +2072,11 @@ libs/nitro/spi/calls/PM_ForceToPowerOff.c:
     complete
     .text       start:0x0200d088 end:0x0200d0b0
 
-libs/nitro/spi/calls/func_0200d0b0.c:
+libs/nitro/spi/calls/PMi_SetAmp.c:
     complete
     .text       start:0x0200d0b0 end:0x0200d0dc
 
-libs/nitro/spi/calls/func_0200d0dc.c:
+libs/nitro/spi/calls/PM_GetBackLight.c:
     complete
     .text       start:0x0200d0dc end:0x0200d138
 
@@ -2084,79 +2084,79 @@ libs/nitro/spi/calls/PMi_SendPxiData.c:
     complete
     .text       start:0x0200d138 end:0x0200d164
 
-libs/nitro/spi/calls/func_0200d164.c:
+libs/nitro/spi/calls/PM_GoSleepMode.c:
     complete
     .text       start:0x0200d164 end:0x0200d3a4
 
-libs/nitro/spi/calls/func_0200d3a4.c:
+libs/nitro/spi/calls/PMi_SetLCDPower.c:
     complete
     .text       start:0x0200d3a4 end:0x0200d49c
 
-libs/nitro/spi/calls/func_0200d49c.c:
+libs/nitro/spi/calls/PM_SetLCDPower.c:
     complete
     .text       start:0x0200d49c end:0x0200d4bc
 
-libs/nitro/spi/auto/func_0200d4bc.c:
+libs/nitro/spi/auto/PM_GetLCDPower.c:
     complete
     .text       start:0x0200d4bc end:0x0200d4d8
 
-libs/nitro/spi/auto/func_0200d4d8.c:
+libs/nitro/spi/auto/PMi_PrependList.c:
     complete
     .text       start:0x0200d4d8 end:0x0200d4ec
 
-libs/nitro/spi/auto/func_0200d4ec.c:
+libs/nitro/spi/auto/PMi_AppendList.c:
     complete
     .text       start:0x0200d4ec end:0x0200d538
 
-libs/nitro/spi/auto/func_0200d538.c:
+libs/nitro/spi/auto/PMi_DeleteList.c:
     complete
     .text       start:0x0200d538 end:0x0200d580
 
-libs/nitro/spi/auto/func_0200d580.c:
+libs/nitro/spi/auto/PMi_ExecuteList.c:
     complete
     .text       start:0x0200d580 end:0x0200d5a8
 
-libs/nitro/spi/calls/func_0200d5a8.c:
+libs/nitro/spi/calls/PM_PrependPreSleepCallback.c:
     complete
     .text       start:0x0200d5a8 end:0x0200d5c0
 
-libs/nitro/spi/calls/func_0200d5c0.c:
+libs/nitro/spi/calls/PM_AppendPostSleepCallback.c:
     complete
     .text       start:0x0200d5c0 end:0x0200d5d8
 
-libs/nitro/spi/calls/func_0200d5d8.c:
+libs/nitro/spi/calls/PM_DeletePreSleepCallback.c:
     complete
     .text       start:0x0200d5d8 end:0x0200d5f0
 
-libs/nitro/spi/calls/func_0200d5f0.c:
+libs/nitro/spi/calls/PM_DeletePostSleepCallback.c:
     complete
     .text       start:0x0200d5f0 end:0x0200d608
 
-libs/nitro/rtc/calls/func_0200d608.c:
+libs/nitro/rtc/calls/RTC_Init.c:
     complete
     .text       start:0x0200d608 end:0x0200d674
 
-libs/nitro/rtc/calls/func_0200d674.c:
+libs/nitro/rtc/calls/RTC_GetTimeAsync.c:
     complete
     .text       start:0x0200d674 end:0x0200d6e8
 
-libs/nitro/rtc/calls/func_0200d6e8.c:
+libs/nitro/rtc/calls/RTC_GetTime.c:
     complete
     .text       start:0x0200d6e8 end:0x0200d720
 
-libs/nitro/rtc/calls/func_0200d720.c:
+libs/nitro/rtc/calls/RtcCommonCallback.c:
     complete
     .text       start:0x0200d720 end:0x0200dc70
 
-libs/nitro/rtc/auto/func_0200dc70.c:
+libs/nitro/rtc/auto/RtcBCD2HEX.c:
     complete
     .text       start:0x0200dc70 end:0x0200dce0
 
-src/calls/func_0200dce0.c:
+src/calls/StoreGlobalIntAt2c.c:
     complete
     .text       start:0x0200dce0 end:0x0200dcf0
 
-libs/nitro/rtc/asm_stubs/calls/func_0200dcf0.c:
+libs/nitro/rtc/asm_stubs/calls/RtcWaitBusy.c:
     complete
     .text       start:0x0200dcf0 end:0x0200dd08
 
@@ -2188,7 +2188,7 @@ libs/nitro/card/calls/CARDi_UnlockResource.c:
     complete
     .text       start:0x0200decc end:0x0200df58
 
-libs/nitro/card/calls/func_0200df58.c:
+libs/nitro/card/calls/CARDi_InitCommon.c:
     complete
     .text       start:0x0200df58 end:0x0200e068
 
@@ -2228,23 +2228,23 @@ libs/nitro/card/calls/CARD_UnlockBackup.c:
     complete
     .text       start:0x0200e154 end:0x0200e164
 
-src/calls/func_0200e164.c:
+src/calls/CardUnlockAfterKeyShare.c:
     complete
     .text       start:0x0200e164 end:0x0200e18c
 
-src/calls/func_0200e18c.c:
+src/calls/StoreGlobalPairAt118.c:
     complete
     .text       start:0x0200e18c end:0x0200e1a0
 
-libs/nitro/card/calls/func_0200e1a0.c:
+libs/nitro/card/calls/CARDi_IdentifyBackupCore.c:
     complete
     .text       start:0x0200e1a0 end:0x0200e4e8
 
-libs/nitro/card/calls/func_0200e4e8.c:
+libs/nitro/card/calls/CARDi_RequestStreamCommandCore.c:
     complete
     .text       start:0x0200e4e8 end:0x0200e6d8
 
-src/calls/func_0200e6d8.c:
+src/calls/CARDi_RequestStreamCommand.c:
     complete
     .text       start:0x0200e6d8 end:0x0200e7c0
 
@@ -2252,7 +2252,7 @@ libs/nitro/card/calls/CARD_GetBackupSectorSize.c:
     complete
     .text       start:0x0200e7c0 end:0x0200e7d4
 
-libs/nitro/card/calls/func_0200e7d4.c:
+libs/nitro/card/calls/CARD_IdentifyBackup.c:
     complete
     .text       start:0x0200e7d4 end:0x0200e90c
 
@@ -2276,15 +2276,15 @@ libs/nitro/card/calls/CARDi_SetCardDma.c:
     complete
     .text       start:0x0200ea10 end:0x0200ea64
 
-libs/nitro/card/calls/func_0200ea64.c:
+libs/nitro/card/calls/CARDi_OnReadCard.c:
     complete
     .text       start:0x0200ea64 end:0x0200eb34
 
-libs/nitro/card/calls/func_0200eb34.c:
+libs/nitro/card/calls/CARDi_TryReadCardDma.c:
     complete
     .text       start:0x0200eb34 end:0x0200ecc0
 
-libs/nitro/card/calls/func_0200ecc0.c:
+libs/nitro/card/calls/CARDi_ReadCard.c:
     complete
     .text       start:0x0200ecc0 end:0x0200edb0
 
@@ -2292,7 +2292,7 @@ libs/nitro/card/calls/CARDi_ReadRomIDCore.c:
     complete
     .text       start:0x0200edb0 end:0x0200ee0c
 
-src/calls/func_0200ee0c.c:
+src/calls/CARDi_ReadRomSyncCore.c:
     complete
     .text       start:0x0200ee0c end:0x0200eea4
 
@@ -2316,7 +2316,7 @@ libs/nitro/card/calls/CARDi_OnFifoRecv.c:
     complete
     .text       start:0x0200f01c end:0x0200f050
 
-libs/nitro/card/calls/func_0200f050.c:
+libs/nitro/card/calls/CARDi_TaskThread.c:
     complete
     .text       start:0x0200f050 end:0x0200f0a0
 
@@ -2324,11 +2324,11 @@ libs/nitro/card/calls/CARDi_Request.c:
     complete
     .text       start:0x0200f0a0 end:0x0200f1f4
 
-src/calls/func_0200f1f4.c:
+src/calls/CARD_InitPulledOutCallback.c:
     complete
     .text       start:0x0200f1f4 end:0x0200f220
 
-src/calls/func_0200f220.c:
+src/calls/CARDi_PulledOutCallback.c:
     complete
     .text       start:0x0200f220 end:0x0200f274
 
@@ -2336,7 +2336,7 @@ src/calls/func_0200f274.c:
     complete
     .text       start:0x0200f274 end:0x0200f284
 
-libs/nitro/card/calls/func_0200f284.c:
+libs/nitro/card/calls/CARD_TerminateForPulledOut.c:
     complete
     .text       start:0x0200f284 end:0x0200f310
 
@@ -2348,7 +2348,7 @@ libs/nitro/card/calls/CARDi_SendtoPxi.c:
     complete
     .text       start:0x0200f370 end:0x0200f3c0
 
-src/calls/func_0200f3c0.c:
+src/calls/CTRDGi_InitCommon.c:
     complete
     .text       start:0x0200f3c0 end:0x0200f3f8
 
@@ -2360,7 +2360,7 @@ libs/nitro/ctrdg/auto/CTRDGi_IsAgbCartridgeAtInit.c:
     complete
     .text       start:0x0200f420 end:0x0200f438
 
-libs/nitro/ctrdg/calls/func_0200f438.c:
+libs/nitro/ctrdg/calls/CTRDG_IsExisting.c:
     complete
     .text       start:0x0200f438 end:0x0200f544
 
@@ -2388,23 +2388,23 @@ libs/nitro/nitro/calls/CTRDG_Enable.c:
     complete
     .text       start:0x0200f690 end:0x0200f6d8
 
-src/calls/func_0200f6d8.c:
+src/calls/CTRDG_Init.c:
     complete
     .text       start:0x0200f6d8 end:0x0200f78c
 
-libs/nitro/ctrdg/calls/func_0200f78c.c:
+libs/nitro/ctrdg/calls/CTRDGi_InitModuleInfo.c:
     complete
     .text       start:0x0200f78c end:0x0200f980
 
-src/calls/func_0200f980.c:
+src/calls/CTRDGi_InitCallback.c:
     complete
     .text       start:0x0200f980 end:0x0200f9ac
 
-src/calls/func_0200f9ac.c:
+src/calls/CTRDGi_PulledOutCallback.c:
     complete
     .text       start:0x0200f9ac end:0x0200fa08
 
-libs/nitro/ctrdg/calls/func_0200fa08.c:
+libs/nitro/ctrdg/calls/CTRDG_TerminateForPulledOut.c:
     complete
     .text       start:0x0200fa08 end:0x0200fa1c
 
@@ -2412,7 +2412,7 @@ src/calls/func_0200fa1c.c:
     complete
     .text       start:0x0200fa1c end:0x0200fa30
 
-src/calls/func_0200fa30.c:
+src/calls/CTRDGi_InitTaskThread.c:
     complete
     .text       start:0x0200fa30 end:0x0200fabc
 
@@ -2420,7 +2420,7 @@ libs/nitro/mi/calls/MIi_CpuFill24.c:
     complete
     .text       start:0x0200fabc end:0x0200fad0
 
-src/calls/func_0200fad0.c:
+src/calls/JobQueue_WorkerLoop.c:
     complete
     .text       start:0x0200fad0 end:0x0200fbc0
 
@@ -2428,19 +2428,19 @@ libs/nitro/nitro/calls/MATH_CalcSHA1.c:
     complete
     .text       start:0x0200fbc0 end:0x0200fc00
 
-libs/nitro/math/asm_stubs/auto/func_0200fc00.c:
+libs/nitro/math/asm_stubs/auto/Util_QuickSortWithWork.c:
     complete
     .text       start:0x0200fc00 end:0x0200fe88
 
-src/calls/func_0200fe88.c:
+src/calls/CTRDGi_IsAgbCartridge.c:
     complete
     .text       start:0x0200fe88 end:0x0200ff20
 
-libs/nitro/std/auto/func_0200ff20.c:
+libs/nitro/std/auto/STD_CopyString.c:
     complete
     .text       start:0x0200ff20 end:0x0200ff54
 
-libs/nitro/std/auto/func_0200ff54.c:
+libs/nitro/std/auto/STD_GetStringLength.c:
     complete
     .text       start:0x0200ff54 end:0x0200ff7c
 
@@ -2476,7 +2476,7 @@ libs/nitro/nns/auto/NNS_FndGetPrevListObject.c:
     complete
     .text       start:0x02010140 end:0x02010154
 
-libs/nns/fnd/calls/func_02010154.c:
+libs/nns/fnd/calls/NNS_FndGetNthListObject.c:
     complete
     .text       start:0x02010154 end:0x0201019c
 
@@ -2516,7 +2516,7 @@ libs/nitro/nns/calls/InitExpHeap.c:
     complete
     .text       start:0x02010370 end:0x020103e4
 
-libs/nitro/nns/calls/func_020103e4.c:
+libs/nitro/nns/calls/AllocUsedBlockFromFreeBlock.c:
     complete
     .text       start:0x020103e4 end:0x02010564
 
@@ -2544,15 +2544,15 @@ libs/nitro/nns/calls/NNS_FndAllocFromExpHeapEx.c:
     complete
     .text       start:0x020107fc end:0x0201082c
 
-libs/nitro/nns/calls/func_0201082c.c:
+libs/nitro/nns/calls/NNS_FndResizeForMBlockExpHeap.c:
     complete
     .text       start:0x0201082c end:0x0201098c
 
-libs/nns/fnd/calls/func_0201098c.c:
+libs/nns/fnd/calls/NNS_FndFreeToExpHeap.c:
     complete
     .text       start:0x0201098c end:0x020109c8
 
-src/calls/func_020109c8.c:
+src/calls/NNS_FndGetAllocatableSizeForExpHeapEx.c:
     complete
     .text       start:0x020109c8 end:0x02010a4c
 
@@ -2568,11 +2568,11 @@ libs/nitro/nns/calls/NNSi_AllocFromTailOfExpHeap.c:
     complete
     .text       start:0x02010af0 end:0x02010b48
 
-src/auto/func_02010b48.c:
+src/auto/NNS_FndResetFrmHeapHead.c:
     complete
     .text       start:0x02010b48 end:0x02010b5c
 
-src/calls/func_02010b5c.c:
+src/calls/NNS_FndResetFrmHeapTail.c:
     complete
     .text       start:0x02010b5c end:0x02010b88
 
@@ -2588,27 +2588,27 @@ libs/nns/fnd/calls/NNS_FndAllocFromFrmHeapEx.c:
     complete
     .text       start:0x02010bcc end:0x02010c00
 
-libs/nns/fnd/calls/func_02010c00.c:
+libs/nns/fnd/calls/NNS_FndFreeToFrmHeap.c:
     complete
     .text       start:0x02010c00 end:0x02010c2c
 
-libs/nns/fnd/calls/func_02010c2c.c:
+libs/nns/fnd/calls/NNS_FndRecordStateForFrmHeap.c:
     complete
     .text       start:0x02010c2c end:0x02010c7c
 
-libs/nns/fnd/auto/func_02010c7c.c:
+libs/nns/fnd/auto/NNS_FndFreeByStateToFrmHeap.c:
     complete
     .text       start:0x02010c7c end:0x02010ccc
 
-libs/nns/fnd/auto/func_02010ccc.c:
+libs/nns/fnd/auto/PopMBlock.c:
     complete
     .text       start:0x02010ccc end:0x02010ce4
 
-src/calls/func_02010ce4.c:
+src/calls/NNS_FndAllocFromUnitHeap.c:
     complete
     .text       start:0x02010ce4 end:0x02010d24
 
-src/auto/func_02010d24.c:
+src/auto/NNS_FndFreeToUnitHeap.c:
     complete
     .text       start:0x02010d24 end:0x02010d34
 
@@ -2624,11 +2624,11 @@ libs/nns/fnd/calls/AllocatorAllocForFrmHeap.c:
     complete
     .text       start:0x02010d58 end:0x02010d6c
 
-libs/nns/fnd/auto/func_02010d6c.c:
+libs/nns/fnd/auto/AllocatorFreeForFrmHeap.c:
     complete
     .text       start:0x02010d6c end:0x02010d70
 
-libs/nns/fnd/calls/func_02010d70.c:
+libs/nns/fnd/calls/AllocatorAllocForUnitHeap.c:
     complete
     .text       start:0x02010d70 end:0x02010d90
 
@@ -2636,11 +2636,11 @@ libs/nns/fnd/calls/AllocatorFreeForUnitHeap.c:
     complete
     .text       start:0x02010d90 end:0x02010da0
 
-libs/nns/fnd/calls/func_02010da0.c:
+libs/nns/fnd/calls/AllocatorAllocForSDKHeap.c:
     complete
     .text       start:0x02010da0 end:0x02010dbc
 
-libs/nns/fnd/calls/func_02010dbc.c:
+libs/nns/fnd/calls/AllocatorFreeForSDKHeap.c:
     complete
     .text       start:0x02010dbc end:0x02010dd8
 
@@ -2656,31 +2656,31 @@ libs/nitro/nns/calls/NNS_FndInitAllocatorForExpHeap.c:
     complete
     .text       start:0x02010e00 end:0x02010e18
 
-libs/nns/gfd/auto/func_02010e18.c:
+libs/nns/gfd/auto/Gfd_DefaultAllocTexVram.c:
     complete
     .text       start:0x02010e18 end:0x02010e20
 
-libs/nns/gfd/auto/func_02010e20.c:
+libs/nns/gfd/auto/Gfd_DefaultFreeTexVram.c:
     complete
     .text       start:0x02010e20 end:0x02010e28
 
-libs/nns/gfd/auto/func_02010e28.c:
+libs/nns/gfd/auto/Gfd_DefaultAllocPlttVram.c:
     complete
     .text       start:0x02010e28 end:0x02010e30
 
-libs/nns/gfd/auto/func_02010e30.c:
+libs/nns/gfd/auto/Gfd_DefaultFreePlttVram.c:
     complete
     .text       start:0x02010e30 end:0x02010e38
 
-src/calls/func_02010e38.c:
+src/calls/Party_SetActiveSlots.c:
     complete
     .text       start:0x02010e38 end:0x02010e80
 
-libs/nns/gfd/calls/func_02010e80.c:
+libs/nns/gfd/calls/NNS_GfdInitFrmTexVramManager.c:
     complete
     .text       start:0x02010e80 end:0x02010f08
 
-libs/nns/gfd/calls/func_02010f08.c:
+libs/nns/gfd/calls/NNS_GfdResetFrmTexVramState.c:
     complete
     .text       start:0x02010f08 end:0x02010f7c
 
@@ -2688,19 +2688,19 @@ libs/nitro/nns/calls/func_02010f7c.c:
     complete
     .text       start:0x02010f7c end:0x020110ec
 
-libs/nns/gfd/auto/func_020110ec.c:
+libs/nns/gfd/auto/NNS_GfdFreeFrmTexVram.c:
     complete
     .text       start:0x020110ec end:0x020110f4
 
-libs/nns/gfd/calls/func_020110f4.c:
+libs/nns/gfd/calls/NNS_GfdGetFrmTexVramState.c:
     complete
     .text       start:0x020110f4 end:0x02011134
 
-libs/nns/gfd/calls/func_02011134.c:
+libs/nns/gfd/calls/NNS_GfdSetFrmTexVramState.c:
     complete
     .text       start:0x02011134 end:0x02011174
 
-src/calls/func_02011174.c:
+src/calls/NNS_GfdInitFrmPlttVramManager.c:
     complete
     .text       start:0x02011174 end:0x020111c0
 
@@ -2708,7 +2708,7 @@ libs/nitro/nns/calls/func_020111c0.c:
     complete
     .text       start:0x020111c0 end:0x020112fc
 
-libs/nns/gfd/auto/func_020112fc.c:
+libs/nns/gfd/auto/NNS_GfdFreeFrmPlttVram.c:
     complete
     .text       start:0x020112fc end:0x02011304
 
@@ -2716,79 +2716,79 @@ libs/nitro/gx/calls/GFXi_SaveStateTo.c:
     complete
     .text       start:0x02011304 end:0x02011320
 
-src/calls/func_02011320.c:
+src/calls/NNS_GfdSetFrmPlttVramState.c:
     complete
     .text       start:0x02011320 end:0x0201133c
 
-src/calls/func_0201133c.c:
+src/calls/NNS_GfdResetFrmPlttVramState.c:
     complete
     .text       start:0x0201133c end:0x02011358
 
-libs/nns/gfd/calls/func_02011358.c:
+libs/nns/gfd/calls/GetNextIndex_.c:
     complete
     .text       start:0x02011358 end:0x02011378
 
-libs/nns/gfd/auto/func_02011378.c:
+libs/nns/gfd/auto/IsVramTransferTaskQueueFull_.c:
     complete
     .text       start:0x02011378 end:0x02011390
 
-libs/nns/gfd/auto/func_02011390.c:
+libs/nns/gfd/auto/IsVramTransferTaskQueueEmpty_.c:
     complete
     .text       start:0x02011390 end:0x020113a4
 
-src/calls/func_020113a4.c:
+src/calls/Gfd_LoadTex.c:
     complete
     .text       start:0x020113a4 end:0x020113d0
 
-src/calls/func_020113d0.c:
+src/calls/Gfd_LoadTexPltt.c:
     complete
     .text       start:0x020113d0 end:0x020113fc
 
-libs/nns/gfd/calls/func_020113fc.c:
+libs/nns/gfd/calls/DoTransfer2dObjExtPlttMain.c:
     complete
     .text       start:0x020113fc end:0x02011428
 
-libs/nns/gfd/calls/func_02011428.c:
+libs/nns/gfd/calls/DoTransfer2dBGExtPlttMain.c:
     complete
     .text       start:0x02011428 end:0x02011454
 
-src/calls/func_02011454.c:
+src/calls/Gfd_LoadSubObjExtPltt.c:
     complete
     .text       start:0x02011454 end:0x02011480
 
-src/calls/func_02011480.c:
+src/calls/Gfd_LoadSubBgExtPltt.c:
     complete
     .text       start:0x02011480 end:0x020114ac
 
-src/calls/func_020114ac.c:
+src/calls/Gfd_RunTransferTask.c:
     complete
     .text       start:0x020114ac end:0x020114e4
 
-libs/nns/gfd/auto/func_020114e4.c:
+libs/nns/gfd/auto/ResetTaskQueue_.c:
     complete
     .text       start:0x020114e4 end:0x020114fc
 
-libs/nns/gfd/calls/func_020114fc.c:
+libs/nns/gfd/calls/NNSi_GfdPushVramTransferTaskQueue.c:
     complete
     .text       start:0x020114fc end:0x02011538
 
-libs/nns/gfd/auto/func_02011538.c:
+libs/nns/gfd/auto/NNSi_GfdGetFrontVramTransferTaskQueue.c:
     complete
     .text       start:0x02011538 end:0x02011548
 
-libs/nns/gfd/auto/func_02011548.c:
+libs/nns/gfd/auto/NNSi_GfdGetEndVramTransferTaskQueue.c:
     complete
     .text       start:0x02011548 end:0x02011558
 
-libs/nns/gfd/calls/func_02011558.c:
+libs/nns/gfd/calls/NNSi_GfdPopVramTransferTaskQueue.c:
     complete
     .text       start:0x02011558 end:0x02011594
 
-src/calls/func_02011594.c:
+src/calls/GfxQueue_Configure.c:
     complete
     .text       start:0x02011594 end:0x020115b8
 
-src/calls/func_020115b8.c:
+src/calls/FrameStep_UpdateTaskQueue.c:
     complete
     .text       start:0x020115b8 end:0x02011640
 
@@ -2796,7 +2796,7 @@ libs/nitro/gx/calls/GFXi_EnqueueCommand.c:
     complete
     .text       start:0x02011640 end:0x020116a8
 
-libs/nns/g2d/calls/func_020116a8.c:
+libs/nns/g2d/calls/GetUnpackedAnimBankImpl_.c:
     complete
     .text       start:0x020116a8 end:0x020116e4
 
@@ -2804,79 +2804,79 @@ src/calls/func_020116e4.c:
     complete
     .text       start:0x020116e4 end:0x020116f0
 
-libs/nns/g2d/auto/func_020116f0.c:
+libs/nns/g2d/auto/NNS_G2dUnpackNAN.c:
     complete
     .text       start:0x020116f0 end:0x02011840
 
-libs/nns/g2d/auto/func_02011840.c:
+libs/nns/g2d/auto/NNS_G2dGetAnimSequenceByIdx.c:
     complete
     .text       start:0x02011840 end:0x02011858
 
-libs/nns/g2d/auto/func_02011858.c:
+libs/nns/g2d/auto/GetPtrOamArrayHead_.c:
     complete
     .text       start:0x02011858 end:0x02011878
 
-libs/nns/g2d/calls/func_02011878.c:
+libs/nns/g2d/calls/UnpackExtendedData_.c:
     complete
     .text       start:0x02011878 end:0x02011888
 
-libs/nns/g2d/calls/func_02011888.c:
+libs/nns/g2d/calls/NNS_G2dGetUnpackedCellBank.c:
     complete
     .text       start:0x02011888 end:0x020118c4
 
-libs/nns/g2d/auto/func_020118c4.c:
+libs/nns/g2d/auto/NNS_G2dGetCellDataByIdx.c:
     complete
     .text       start:0x020118c4 end:0x020118ec
 
-libs/nns/g2d/calls/func_020118ec.c:
+libs/nns/g2d/calls/NNS_G2dUnpackNCE.c:
     complete
     .text       start:0x020118ec end:0x02011988
 
-src/calls/func_02011988.c:
+src/calls/GetResourceSubBlock_CHAR.c:
     complete
     .text       start:0x02011988 end:0x020119c4
 
-src/auto/func_020119c4.c:
+src/auto/Res_RelocateField14.c:
     complete
     .text       start:0x020119c4 end:0x020119d4
 
-src/calls/func_020119d4.c:
+src/calls/GetResourceSubBlock_CHAR2.c:
     complete
     .text       start:0x020119d4 end:0x02011a10
 
-src/auto/func_02011a10.c:
+src/auto/Res_RelocateField14B.c:
     complete
     .text       start:0x02011a10 end:0x02011a20
 
-libs/nns/g2d/calls/func_02011a20.c:
+libs/nns/g2d/calls/NNS_G2dGetUnpackedPaletteData.c:
     complete
     .text       start:0x02011a20 end:0x02011a5c
 
-libs/nns/g2d/auto/func_02011a5c.c:
+libs/nns/g2d/auto/NNS_G2dUnpackNCL.c:
     complete
     .text       start:0x02011a5c end:0x02011a6c
 
-libs/nns/g2d/calls/func_02011a6c.c:
+libs/nns/g2d/calls/NNS_G2dGetUnpackedScreenData.c:
     complete
     .text       start:0x02011a6c end:0x02011aa0
 
-libs/nns/g2d/auto/func_02011aa0.c:
+libs/nns/g2d/auto/NNS_G2dFindBinaryBlock.c:
     complete
     .text       start:0x02011aa0 end:0x02011ae8
 
-libs/nns/g2d/auto/func_02011ae8.c:
+libs/nns/g2d/auto/NNSi_G2dUnpackUserExCellAttrBank.c:
     complete
     .text       start:0x02011ae8 end:0x02011b30
 
-libs/nns/g2d/calls/func_02011b30.c:
+libs/nns/g2d/calls/SequenceEdgeHandle_.c:
     complete
     .text       start:0x02011b30 end:0x02011c44
 
-libs/nns/g2d/auto/func_02011c44.c:
+libs/nns/g2d/auto/SetAnimCtrlCurrentFrameImpl_.c:
     complete
     .text       start:0x02011c44 end:0x02011c7c
 
-libs/nns/g2d/auto/func_02011c7c.c:
+libs/nns/g2d/auto/NNS_G2dGetAnimCtrlCurrentElement.c:
     complete
     .text       start:0x02011c7c end:0x02011c88
 
@@ -2884,75 +2884,75 @@ libs/nitro/nns/calls/func_02011c88.c:
     complete
     .text       start:0x02011c88 end:0x02011e3c
 
-libs/nns/g2d/calls/func_02011e3c.c:
+libs/nns/g2d/calls/NNS_G2dSetAnimCtrlCurrentFrame.c:
     complete
     .text       start:0x02011e3c end:0x02011e58
 
-libs/nns/g2d/auto/func_02011e58.c:
+libs/nns/g2d/auto/NNS_G2dGetAnimCtrlCurrentFrame.c:
     complete
     .text       start:0x02011e58 end:0x02011e74
 
-libs/nns/g2d/calls/func_02011e74.c:
+libs/nns/g2d/calls/NNS_G2dInitAnimCtrl.c:
     complete
     .text       start:0x02011e74 end:0x02011eb4
 
-libs/nns/g2d/auto/func_02011eb4.c:
+libs/nns/g2d/auto/NNS_G2dInitAnimCallBackFunctor.c:
     complete
     .text       start:0x02011eb4 end:0x02011ecc
 
-libs/nns/g2d/calls/func_02011ecc.c:
+libs/nns/g2d/calls/NNS_G2dResetAnimCtrlState.c:
     complete
     .text       start:0x02011ecc end:0x02011f2c
 
-libs/nns/g2d/calls/func_02011f2c.c:
+libs/nns/g2d/calls/NNS_G2dBindAnimCtrl.c:
     complete
     .text       start:0x02011f2c end:0x02011f3c
 
-libs/nns/g2d/auto/func_02011f3c.c:
+libs/nns/g2d/auto/NNS_G2dInitImageProxy.c:
     complete
     .text       start:0x02011f3c end:0x02011f58
 
-src/auto/func_02011f58.c:
+src/auto/IntArray_Set.c:
     complete
     .text       start:0x02011f58 end:0x02011f60
 
-src/auto/func_02011f60.c:
+src/auto/IntArray_Get.c:
     complete
     .text       start:0x02011f60 end:0x02011f68
 
-libs/nns/g2d/auto/func_02011f68.c:
+libs/nns/g2d/auto/NNS_G2dInitImagePaletteProxy.c:
     complete
     .text       start:0x02011f68 end:0x02011f88
 
-src/auto/func_02011f88.c:
+src/auto/SetIndexedSlot_2.c:
     complete
     .text       start:0x02011f88 end:0x02011f94
 
-libs/nns/g2d/calls/func_02011f94.c:
+libs/nns/g2d/calls/NNS_G2dLoadImage1DMapping.c:
     complete
     .text       start:0x02011f94 end:0x020121c0
 
-src/calls/func_020121c0.c:
+src/calls/Pltt_Upload.c:
     complete
     .text       start:0x020121c0 end:0x020122b8
 
-libs/nns/g2d/auto/func_020122b8.c:
+libs/nns/g2d/auto/NNSi_G2dSrtcSetTrans.c:
     complete
     .text       start:0x020122b8 end:0x020122dc
 
-libs/nns/g2d/auto/func_020122dc.c:
+libs/nns/g2d/auto/NNSi_G2dSrtcSetSRTRotZ.c:
     complete
     .text       start:0x020122dc end:0x020122fc
 
-libs/nns/g2d/auto/func_020122fc.c:
+libs/nns/g2d/auto/NNSi_G2dSrtcSetSRTScale.c:
     complete
     .text       start:0x020122fc end:0x0201231c
 
-libs/nns/g2d/calls/func_0201231c.c:
+libs/nns/g2d/calls/NNSi_G2dSrtcInitControl.c:
     complete
     .text       start:0x0201231c end:0x0201232c
 
-libs/nns/g2d/calls/func_0201232c.c:
+libs/nns/g2d/calls/NNSi_G2dSrtcSetInitialValue.c:
     complete
     .text       start:0x0201232c end:0x02012354
 
@@ -2960,23 +2960,23 @@ libs/nitro/nns/calls/func_02012354.c:
     complete
     .text       start:0x02012354 end:0x02012444
 
-libs/nns/g2d/calls/func_02012444.c:
+libs/nns/g2d/calls/NNS_G2dInitCellAnimation.c:
     complete
     .text       start:0x02012444 end:0x02012480
 
-libs/nns/g2d/calls/func_02012480.c:
+libs/nns/g2d/calls/NNS_G2dSetCellAnimationSequence.c:
     complete
     .text       start:0x02012480 end:0x02012498
 
-libs/nns/g2d/calls/func_02012498.c:
+libs/nns/g2d/calls/NNS_G2dTickCellAnimation.c:
     complete
     .text       start:0x02012498 end:0x020124b8
 
-libs/nns/g2d/calls/func_020124b8.c:
+libs/nns/g2d/calls/NNS_G2dSetCellAnimationCurrentFrame.c:
     complete
     .text       start:0x020124b8 end:0x020124d8
 
-src/auto/func_020124d8.c:
+src/auto/Obj_SetField14_2.c:
     complete
     .text       start:0x020124d8 end:0x020124e0
 
@@ -2984,27 +2984,27 @@ libs/nitro/nns/calls/func_020124e0.c:
     complete
     .text       start:0x020124e0 end:0x02012844
 
-src/calls/func_02012844.c:
+src/calls/GlobalArrayEntryPtr30.c:
     complete
     .text       start:0x02012844 end:0x0201285c
 
-libs/nns/g2d/calls/func_0201285c.c:
+libs/nns/g2d/calls/NNS_G2dSetCellTransferStateRequested.c:
     complete
     .text       start:0x0201285c end:0x02012880
 
-libs/nns/g2d/auto/func_02012880.c:
+libs/nns/g2d/auto/SelectScnSize.c:
     complete
     .text       start:0x02012880 end:0x020128c0
 
-libs/nns/g2d/calls/func_020128c0.c:
+libs/nns/g2d/calls/ChangeBGModeByTableMain.c:
     complete
     .text       start:0x020128c0 end:0x02012904
 
-libs/nns/g2d/calls/func_02012904.c:
+libs/nns/g2d/calls/ChangeBGModeByTableSub.c:
     complete
     .text       start:0x02012904 end:0x0201292c
 
-libs/nitro/nns/calls/func_0201292c.c:
+libs/nitro/nns/calls/BgExtPltt_Upload.c:
     complete
     .text       start:0x0201292c end:0x02012a5c
 
@@ -3012,35 +3012,35 @@ libs/nitro/nns/calls/func_02012a5c.c:
     complete
     .text       start:0x02012a5c end:0x02012b6c
 
-libs/nns/g2d/calls/func_02012b6c.c:
+libs/nns/g2d/calls/GetBGExtPlttSlot.c:
     complete
     .text       start:0x02012b6c end:0x02012b98
 
-libs/nns/g2d/calls/func_02012b98.c:
+libs/nns/g2d/calls/SetBGnControlToText.c:
     complete
     .text       start:0x02012b98 end:0x02012c2c
 
-libs/nns/g2d/calls/func_02012c2c.c:
+libs/nns/g2d/calls/SetBGnControlToAffine.c:
     complete
     .text       start:0x02012c2c end:0x02012ca8
 
-libs/nns/g2d/calls/func_02012ca8.c:
+libs/nns/g2d/calls/SetBGnControlTo256x16Pltt.c:
     complete
     .text       start:0x02012ca8 end:0x02012d24
 
-libs/nns/g2d/calls/func_02012d24.c:
+libs/nns/g2d/calls/SetBGControlText.c:
     complete
     .text       start:0x02012d24 end:0x02012d64
 
-libs/nns/g2d/calls/func_02012d64.c:
+libs/nns/g2d/calls/SetBGControlAffine.c:
     complete
     .text       start:0x02012d64 end:0x02012da4
 
-libs/nns/g2d/calls/func_02012da4.c:
+libs/nns/g2d/calls/SetBGControl256x16Pltt.c:
     complete
     .text       start:0x02012da4 end:0x02012de4
 
-libs/nns/g2d/calls/func_02012de4.c:
+libs/nns/g2d/calls/LoadBGPaletteSelect.c:
     complete
     .text       start:0x02012de4 end:0x02012e1c
 
@@ -3048,15 +3048,15 @@ libs/nitro/nns/calls/func_02012e1c.c:
     complete
     .text       start:0x02012e1c end:0x02012e90
 
-libs/nns/g2d/calls/func_02012e90.c:
+libs/nns/g2d/calls/LoadBGCharacter.c:
     complete
     .text       start:0x02012e90 end:0x02012f54
 
-libs/nitro/nns/calls/func_02012f54.c:
+libs/nitro/nns/calls/BgCharVram_Upload.c:
     complete
     .text       start:0x02012f54 end:0x02013020
 
-libs/nns/g2d/calls/func_02013020.c:
+libs/nns/g2d/calls/SetBGControlAuto.c:
     complete
     .text       start:0x02013020 end:0x020130b0
 
@@ -3064,15 +3064,15 @@ libs/nitro/nns/auto/func_020130b0.c:
     complete
     .text       start:0x020130b0 end:0x020132d8
 
-libs/nns/g2d/calls/func_020132d8.c:
+libs/nns/g2d/calls/LoadScreenPartAffine.c:
     complete
     .text       start:0x020132d8 end:0x02013340
 
-libs/nns/g2d/calls/func_02013340.c:
+libs/nns/g2d/calls/LoadScreenPart256x16Pltt.c:
     complete
     .text       start:0x02013340 end:0x020133ac
 
-libs/nns/g2d/calls/func_020133ac.c:
+libs/nns/g2d/calls/NNS_G2dBGLoadElementsEx.c:
     complete
     .text       start:0x020133ac end:0x02013408
 
@@ -3084,83 +3084,83 @@ libs/nitro/nns/calls/func_02013484.c:
     complete
     .text       start:0x02013484 end:0x020135e8
 
-libs/nns/g2d/auto/func_020135e8.c:
+libs/nns/g2d/auto/GetGlyphIndex.c:
     complete
     .text       start:0x020135e8 end:0x020136b0
 
-src/calls/func_020136b0.c:
+src/calls/StreamReader_InitU16.c:
     complete
     .text       start:0x020136b0 end:0x020136d4
 
-libs/nns/g2d/calls/func_020136d4.c:
+libs/nns/g2d/calls/NNS_G2dFontFindGlyphIndex.c:
     complete
     .text       start:0x020136d4 end:0x0201371c
 
-libs/nns/g2d/auto/func_0201371c.c:
+libs/nns/g2d/auto/NNS_G2dFontGetCharWidthsFromIndex.c:
     complete
     .text       start:0x0201371c end:0x02013768
 
-libs/nns/g2d/calls/func_02013768.c:
+libs/nns/g2d/calls/NNSi_G2dFontGetStringWidth.c:
     complete
     .text       start:0x02013768 end:0x02013814
 
-libs/nns/g2d/calls/func_02013814.c:
+libs/nns/g2d/calls/NNSi_G2dFontGetTextWidth.c:
     complete
     .text       start:0x02013814 end:0x0201386c
 
-libs/nns/g2d/calls/func_0201386c.c:
+libs/nns/g2d/calls/NNSi_G2dFontGetTextRect.c:
     complete
     .text       start:0x0201386c end:0x02013900
 
-libs/nns/g2d/calls/func_02013900.c:
+libs/nns/g2d/calls/ClearChar.c:
     complete
     .text       start:0x02013900 end:0x02013a38
 
-libs/nns/g2d/calls/func_02013a38.c:
+libs/nns/g2d/calls/LetterChar.c:
     complete
     .text       start:0x02013a38 end:0x02013c78
 
-libs/nns/g2d/calls/func_02013c78.c:
+libs/nns/g2d/calls/DrawGlyphLine.c:
     complete
     .text       start:0x02013c78 end:0x02013e10
 
-libs/nns/g2d/calls/func_02013e10.c:
+libs/nns/g2d/calls/ClearContinuous.c:
     complete
     .text       start:0x02013e10 end:0x02013e60
 
-libs/nns/g2d/calls/func_02013e60.c:
+libs/nns/g2d/calls/ClearAreaLine.c:
     complete
     .text       start:0x02013e60 end:0x02013ffc
 
-libs/nns/g2d/auto/func_02013ffc.c:
+libs/nns/g2d/auto/InitCharCanvas.c:
     complete
     .text       start:0x02013ffc end:0x02014024
 
-src/calls/func_02014024.c:
+src/calls/Text_DrawGlyph.c:
     complete
     .text       start:0x02014024 end:0x02014148
 
-libs/nns/g2d/calls/func_02014148.c:
+libs/nns/g2d/calls/NNS_G2dCharCanvasInitForBG.c:
     complete
     .text       start:0x02014148 end:0x02014174
 
-libs/nitro/nns/calls/func_02014174.c:
+libs/nitro/nns/calls/Tilemap_FillRect.c:
     complete
     .text       start:0x02014174 end:0x02014224
 
-libs/nns/g2d/auto/func_02014224.c:
+libs/nns/g2d/auto/NNS_G2dMapScrToChar256x16Pltt.c:
     complete
     .text       start:0x02014224 end:0x02014280
 
-src/calls/func_02014280.c:
+src/calls/Text_DrawLine.c:
     complete
     .text       start:0x02014280 end:0x02014334
 
-src/calls/func_02014334.c:
+src/calls/Text_DrawAlignedLines.c:
     complete
     .text       start:0x02014334 end:0x0201449c
 
-src/calls/func_0201449c.c:
+src/calls/Text_AlignAnchor.c:
     complete
     .text       start:0x0201449c end:0x020145c0
 
@@ -3172,15 +3172,15 @@ libs/nitro/nns/calls/func_02014720.c:
     complete
     .text       start:0x02014720 end:0x02014874
 
-src/auto/func_02014874.c:
+src/auto/FontResource_Relocate.c:
     complete
     .text       start:0x02014874 end:0x02014950
 
-libs/nns/g2d/calls/func_02014950.c:
+libs/nns/g2d/calls/NNSi_G2dBitReaderRead.c:
     complete
     .text       start:0x02014950 end:0x020149b0
 
-src/auto/func_020149b0.c:
+src/auto/Stream_ReadU16.c:
     complete
     .text       start:0x020149b0 end:0x020149c4
 
@@ -3192,135 +3192,135 @@ libs/nitro/nitro/calls/NTRi_GetRegionTableSize.c:
     complete
     .text       start:0x02014a5c end:0x02014abc
 
-libs/nns/g3d/calls/func_02014abc.c:
+libs/nns/g3d/calls/NNS_G3dAnmObjInit.c:
     complete
     .text       start:0x02014abc end:0x02014b5c
 
-libs/nns/g3d/calls/func_02014b5c.c:
+libs/nns/g3d/calls/NNS_G3dRenderObjInit.c:
     complete
     .text       start:0x02014b5c end:0x02014bb0
 
-libs/nns/g3d/auto/func_02014bb0.c:
+libs/nns/g3d/auto/addLink_.c:
     complete
     .text       start:0x02014bb0 end:0x02014c68
 
-libs/nns/g3d/auto/func_02014c68.c:
+libs/nns/g3d/auto/updateHintVec_.c:
     complete
     .text       start:0x02014c68 end:0x02014cd0
 
-libs/nns/g3d/calls/func_02014cd0.c:
+libs/nns/g3d/calls/NNS_G3dRenderObjAddAnmObj.c:
     complete
     .text       start:0x02014cd0 end:0x02014d50
 
-libs/nns/g3d/auto/func_02014d50.c:
+libs/nns/g3d/auto/removeLink_.c:
     complete
     .text       start:0x02014d50 end:0x02014dc4
 
-libs/nns/g3d/calls/func_02014dc4.c:
+libs/nns/g3d/calls/NNS_G3dRenderObjRemoveAnmObj.c:
     complete
     .text       start:0x02014dc4 end:0x02014e18
 
-libs/nns/g3d/auto/func_02014e18.c:
+libs/nns/g3d/auto/NNS_G3dRenderObjSetCallBack.c:
     complete
     .text       start:0x02014e18 end:0x02014e2c
 
-libs/nns/g3d/auto/func_02014e2c.c:
+libs/nns/g3d/auto/NNS_G3dRenderObjResetCallBack.c:
     complete
     .text       start:0x02014e2c end:0x02014e40
 
-libs/nns/g3d/auto/func_02014e40.c:
+libs/nns/g3d/auto/NNS_G3dRenderObjSetInitFunc.c:
     complete
     .text       start:0x02014e40 end:0x02014e48
 
-libs/nns/g3d/auto/func_02014e48.c:
+libs/nns/g3d/auto/NNS_G3dTexGetRequiredSize.c:
     complete
     .text       start:0x02014e48 end:0x02014e5c
 
-libs/nns/g3d/auto/func_02014e5c.c:
+libs/nns/g3d/auto/NNS_G3dTex4x4GetRequiredSize.c:
     complete
     .text       start:0x02014e5c end:0x02014e70
 
-libs/nns/g3d/auto/func_02014e70.c:
+libs/nns/g3d/auto/NNS_G3dTexSetTexKey.c:
     complete
     .text       start:0x02014e70 end:0x02014e84
 
-libs/nns/g3d/auto/func_02014e84.c:
+libs/nns/g3d/auto/NNS_G3dTexReleaseTexKey.c:
     complete
     .text       start:0x02014e84 end:0x02014ed0
 
-libs/nns/g3d/auto/func_02014ed0.c:
+libs/nns/g3d/auto/NNS_G3dPlttGetRequiredSize.c:
     complete
     .text       start:0x02014ed0 end:0x02014ee4
 
-libs/nns/g2d/auto/func_02014ee4.c:
+libs/nns/g2d/auto/NNSG2d_SetOamManExDrawOrderType.c:
     complete
     .text       start:0x02014ee4 end:0x02014eec
 
-libs/nns/g3d/auto/func_02014eec.c:
+libs/nns/g3d/auto/NNS_G3dPlttReleasePlttKey.c:
     complete
     .text       start:0x02014eec end:0x02014f0c
 
-libs/nns/g3d/calls/func_02014f0c.c:
+libs/nns/g3d/calls/bindMdlTex_Internal_.c:
     complete
     .text       start:0x02014f0c end:0x0201503c
 
-libs/nns/g3d/auto/func_0201503c.c:
+libs/nns/g3d/auto/releaseMdlTex_Internal_.c:
     complete
     .text       start:0x0201503c end:0x020150f4
 
-libs/nns/g3d/calls/func_020150f4.c:
+libs/nns/g3d/calls/NNS_G3dBindMdlTex.c:
     complete
     .text       start:0x020150f4 end:0x020151f4
 
-libs/nns/g3d/calls/func_020151f4.c:
+libs/nns/g3d/calls/NNS_G3dReleaseMdlTex.c:
     complete
     .text       start:0x020151f4 end:0x02015280
 
-libs/nns/g3d/auto/func_02015280.c:
+libs/nns/g3d/auto/bindMdlPltt_Internal_.c:
     complete
     .text       start:0x02015280 end:0x02015360
 
-libs/nns/g3d/calls/func_02015360.c:
+libs/nns/g3d/calls/NNS_G3dBindMdlPltt.c:
     complete
     .text       start:0x02015360 end:0x02015468
 
-libs/nns/g3d/auto/func_02015468.c:
+libs/nns/g3d/auto/NNS_G3dReleaseMdlPltt.c:
     complete
     .text       start:0x02015468 end:0x020154ec
 
-libs/nns/g3d/calls/func_020154ec.c:
+libs/nns/g3d/calls/NNS_G3dBindMdlSet.c:
     complete
     .text       start:0x020154ec end:0x0201559c
 
-libs/nns/g3d/calls/func_0201559c.c:
+libs/nns/g3d/calls/NNS_G3dReleaseMdlSet.c:
     complete
     .text       start:0x0201559c end:0x02015630
 
-src/calls/func_02015630.c:
+src/calls/NNS_G3dGlbInit.c:
     complete
     .text       start:0x02015630 end:0x0201571c
 
-src/calls/func_0201571c.c:
+src/calls/Gfx_SubmitCachedCommandBlock.c:
     complete
     .text       start:0x0201571c end:0x0201574c
 
-libs/nitro/nns/calls/func_0201574c.c:
+libs/nitro/nns/calls/Gfx_ApplyBaseTransform.c:
     complete
     .text       start:0x0201574c end:0x020157c4
 
-libs/nitro/nns/calls/func_020157c4.c:
+libs/nitro/nns/calls/NNS_G3dGlbFlushP.c:
     complete
     .text       start:0x020157c4 end:0x02015880
 
-src/calls/func_02015880.c:
+src/calls/NNS_G3dGlbSetBaseTrans.c:
     complete
     .text       start:0x02015880 end:0x020158b0
 
-src/calls/func_020158b0.c:
+src/calls/NNS_G3dGlbSetBaseScale.c:
     complete
     .text       start:0x020158b0 end:0x020158e0
 
-src/calls/func_020158e0.c:
+src/calls/G3d_GetInverseCameraMtx.c:
     complete
     .text       start:0x020158e0 end:0x02015924
 
@@ -3328,23 +3328,23 @@ libs/nitro/nns/calls/func_02015924.c:
     complete
     .text       start:0x02015924 end:0x02015b2c
 
-src/calls/func_02015b2c.c:
+src/calls/G3d_GetInverseProjMtx.c:
     complete
     .text       start:0x02015b2c end:0x02015b70
 
-src/calls/func_02015b70.c:
+src/calls/G3dGlb_ComputeInvBaseMtx.c:
     complete
     .text       start:0x02015b70 end:0x02015bc8
 
-src/calls/func_02015bc8.c:
+src/calls/GetOrInitResource749c.c:
     complete
     .text       start:0x02015bc8 end:0x02015c00
 
-src/calls/func_02015c00.c:
+src/calls/GetOrInitResource74cc.c:
     complete
     .text       start:0x02015c00 end:0x02015c38
 
-src/calls/func_02015c38.c:
+src/calls/G3d_GetInverseViewProjMtx.c:
     complete
     .text       start:0x02015c38 end:0x02015ca0
 
@@ -3352,11 +3352,11 @@ libs/nitro/nns/calls/func_02015ca0.c:
     complete
     .text       start:0x02015ca0 end:0x02015d14
 
-libs/nns/g3d/auto/func_02015d14.c:
+libs/nns/g3d/auto/NNSi_G3dAnmBlendMat.c:
     complete
     .text       start:0x02015d14 end:0x02015d80
 
-libs/nns/g3d/auto/func_02015d80.c:
+libs/nns/g3d/auto/blendScaleVec_.c:
     complete
     .text       start:0x02015d80 end:0x02015df0
 
@@ -3364,7 +3364,7 @@ libs/nitro/nns/calls/func_02015df0.c:
     complete
     .text       start:0x02015df0 end:0x020161dc
 
-libs/nns/g3d/auto/func_020161dc.c:
+libs/nns/g3d/auto/NNSi_G3dAnmBlendVis.c:
     complete
     .text       start:0x020161dc end:0x02016264
 
@@ -3376,7 +3376,7 @@ src/calls/func_02016284.c:
     complete
     .text       start:0x02016284 end:0x02016294
 
-libs/nns/g3d/calls/func_02016294.c:
+libs/nns/g3d/calls/NNS_G3dGetCurrentMtx.c:
     complete
     .text       start:0x02016294 end:0x02016320
 
@@ -3384,11 +3384,11 @@ libs/nitro/nns/calls/func_02016320.c:
     complete
     .text       start:0x02016320 end:0x020163cc
 
-libs/nns/g3d/calls/func_020163cc.c:
+libs/nns/g3d/calls/NNS_G3dInit.c:
     complete
     .text       start:0x020163cc end:0x020163f4
 
-libs/nns/g3d/calls/func_020163f4.c:
+libs/nns/g3d/calls/NNS_G3dResDefaultRelease.c:
     complete
     .text       start:0x020163f4 end:0x0201653c
 
@@ -3400,7 +3400,7 @@ libs/nitro/nns/calls/func_020166c4.c:
     complete
     .text       start:0x020166c4 end:0x02016948
 
-libs/nns/g3d/calls/func_02016948.c:
+libs/nns/g3d/calls/NNS_G3dAllocAnmObj.c:
     complete
     .text       start:0x02016948 end:0x0201696c
 
@@ -3412,91 +3412,91 @@ libs/nitro/nns/auto/func_02016978.c:
     complete
     .text       start:0x02016978 end:0x020169f8
 
-libs/nns/g3d/auto/func_020169f8.c:
+libs/nns/g3d/auto/NNS_G3dMdlSetMdlLightEnableFlag.c:
     complete
     .text       start:0x020169f8 end:0x02016a70
 
-libs/nns/g3d/auto/func_02016a70.c:
+libs/nns/g3d/auto/NNS_G3dMdlSetMdlPolygonMode.c:
     complete
     .text       start:0x02016a70 end:0x02016ae8
 
-libs/nns/g3d/auto/func_02016ae8.c:
+libs/nns/g3d/auto/NNS_G3dMdlSetMdlCullMode.c:
     complete
     .text       start:0x02016ae8 end:0x02016b60
 
-libs/nns/g3d/auto/func_02016b60.c:
+libs/nns/g3d/auto/NNS_G3dMdlSetMdlPolygonID.c:
     complete
     .text       start:0x02016b60 end:0x02016bd8
 
-libs/nns/g3d/auto/func_02016bd8.c:
+libs/nns/g3d/auto/NNS_G3dMdlSetMdlAlpha.c:
     complete
     .text       start:0x02016bd8 end:0x02016c50
 
-libs/nns/g3d/calls/func_02016c50.c:
+libs/nns/g3d/calls/NNS_G3dMdlSetMdlDiffAll.c:
     complete
     .text       start:0x02016c50 end:0x02016c90
 
-libs/nns/g3d/calls/func_02016c90.c:
+libs/nns/g3d/calls/NNS_G3dMdlSetMdlCullModeAll.c:
     complete
     .text       start:0x02016c90 end:0x02016cd0
 
-libs/nns/g3d/calls/func_02016cd0.c:
+libs/nns/g3d/calls/NNS_G3dMdlSetMdlPolygonIDAll.c:
     complete
     .text       start:0x02016cd0 end:0x02016d10
 
-libs/nns/g3d/calls/func_02016d10.c:
+libs/nns/g3d/calls/NNS_G3dMdlSetMdlAlphaAll.c:
     complete
     .text       start:0x02016d10 end:0x02016d50
 
-libs/nns/g3d/auto/func_02016d50.c:
+libs/nns/g3d/auto/NNS_G3dGetResDataByName.c:
     complete
     .text       start:0x02016d50 end:0x02016f10
 
-libs/nns/g3d/auto/func_02016f10.c:
+libs/nns/g3d/auto/NNS_G3dGetResDictIdxByName.c:
     complete
     .text       start:0x02016f10 end:0x02017078
 
-libs/nns/g3d/auto/func_02017078.c:
+libs/nns/g3d/auto/NNS_G3dGetMdlSet.c:
     complete
     .text       start:0x02017078 end:0x02017088
 
-libs/nns/g3d/auto/func_02017088.c:
+libs/nns/g3d/auto/NNS_G3dGetTex.c:
     complete
     .text       start:0x02017088 end:0x020170c8
 
-libs/nns/g3d/auto/func_020170c8.c:
+libs/nns/g3d/auto/NNS_G3dGetAnmByIdx.c:
     complete
     .text       start:0x020170c8 end:0x02017124
 
-libs/nns/g3d/auto/func_02017124.c:
+libs/nns/g3d/auto/NNSi_G3dGetTexPatAnmTexNameByIdx.c:
     complete
     .text       start:0x02017124 end:0x02017150
 
-libs/nns/g3d/auto/func_02017150.c:
+libs/nns/g3d/auto/NNSi_G3dGetTexPatAnmPlttNameByIdx.c:
     complete
     .text       start:0x02017150 end:0x0201717c
 
-libs/nns/g3d/calls/func_0201717c.c:
+libs/nns/g3d/calls/NNSi_G3dGetTexPatAnmFV.c:
     complete
     .text       start:0x0201717c end:0x020171f0
 
-libs/nns/g3d/auto/func_020171f0.c:
+libs/nns/g3d/auto/NNSi_G3dGetTexPatAnmDataByIdx.c:
     complete
     .text       start:0x020171f0 end:0x02017224
 
-libs/nns/g3d/calls/func_02017224.c:
+libs/nns/g3d/calls/NNSi_G3dAnmObjInitNsBca.c:
     complete
     .text       start:0x02017224 end:0x020172a0
 
-libs/nns/g3d/calls/func_020172a0.c:
+libs/nns/g3d/calls/NNSi_G3dAnmCalcNsBca.c:
     complete
     .text       start:0x020172a0 end:0x020172dc
 
-libs/nns/g3d/calls/func_020172dc.c:
+libs/nns/g3d/calls/getMdlTrans_.c:
     complete
     .text       start:0x020172dc end:0x02017374
 
-libs/nns/g3d/calls/func_02017374.c:
+libs/nns/g3d/calls/getMdlScale_.c:
     complete
     .text       start:0x02017374 end:0x02017404
 
@@ -3504,15 +3504,15 @@ libs/nitro/nns/calls/func_02017404.c:
     complete
     .text       start:0x02017404 end:0x02017584
 
-libs/nns/g3d/calls/func_02017584.c:
+libs/nns/g3d/calls/getJntSRTAnmResult_.c:
     complete
     .text       start:0x02017584 end:0x02017938
 
-libs/nns/g3d/auto/func_02017938.c:
+libs/nns/g3d/auto/getTransData_.c:
     complete
     .text       start:0x02017938 end:0x02017a90
 
-libs/nns/g3d/auto/func_02017a90.c:
+libs/nns/g3d/auto/getTransDataEx_.c:
     complete
     .text       start:0x02017a90 end:0x02017bec
 
@@ -3528,139 +3528,139 @@ libs/nitro/nns/calls/func_02017f68.c:
     complete
     .text       start:0x02017f68 end:0x02018380
 
-libs/nns/g3d/calls/func_02018380.c:
+libs/nns/g3d/calls/getRotDataEx_.c:
     complete
     .text       start:0x02018380 end:0x020186c4
 
-libs/nns/g3d/calls/func_020186c4.c:
+libs/nns/g3d/calls/getRotDataByIdx_.c:
     complete
     .text       start:0x020186c4 end:0x02018830
 
-libs/nns/g3d/auto/func_02018830.c:
+libs/nns/g3d/auto/GetMatColAnmuAlphaValue_.c:
     complete
     .text       start:0x02018830 end:0x0201891c
 
-src/calls/func_0201891c.c:
+src/calls/AnmObj_InitMatTable.c:
     complete
     .text       start:0x0201891c end:0x020189f0
 
-libs/nns/g3d/calls/func_020189f0.c:
+libs/nns/g3d/calls/NNSi_G3dAnmCalcNsBma.c:
     complete
     .text       start:0x020189f0 end:0x02018ae0
 
-libs/nns/g3d/auto/func_02018ae0.c:
+libs/nns/g3d/auto/GetTexSRTAnmVectorVal_.c:
     complete
     .text       start:0x02018ae0 end:0x02018be0
 
-libs/nns/g3d/auto/func_02018be0.c:
+libs/nns/g3d/auto/GetTexSRTAnmSinCosVal_.c:
     complete
     .text       start:0x02018be0 end:0x02018cec
 
-libs/nns/g3d/calls/func_02018cec.c:
+libs/nns/g3d/calls/GetTexSRTAnm_.c:
     complete
     .text       start:0x02018cec end:0x02018dec
 
-src/calls/func_02018dec.c:
+src/calls/AnmObj_InitVisTable.c:
     complete
     .text       start:0x02018dec end:0x02018ec0
 
-libs/nns/g3d/calls/func_02018ec0.c:
+libs/nns/g3d/calls/NNSi_G3dAnmCalcNsBta.c:
     complete
     .text       start:0x02018ec0 end:0x02018f04
 
-libs/nns/g3d/calls/func_02018f04.c:
+libs/nns/g3d/calls/NNSi_G3dAnmObjInitNsBtp.c:
     complete
     .text       start:0x02018f04 end:0x02018fe0
 
-libs/nns/g3d/calls/func_02018fe0.c:
+libs/nns/g3d/calls/SetTexParamaters_.c:
     complete
     .text       start:0x02018fe0 end:0x020190b8
 
-libs/nns/g3d/calls/func_020190b8.c:
+libs/nns/g3d/calls/SetPlttParamaters_.c:
     complete
     .text       start:0x020190b8 end:0x02019120
 
-libs/nns/g3d/calls/func_02019120.c:
+libs/nns/g3d/calls/NNSi_G3dAnmCalcNsBtp.c:
     complete
     .text       start:0x02019120 end:0x02019194
 
-libs/nns/g3d/calls/func_02019194.c:
+libs/nns/g3d/calls/NNSi_G3dAnmObjInitNsBva.c:
     complete
     .text       start:0x02019194 end:0x020191e0
 
-libs/nns/g3d/auto/func_020191e0.c:
+libs/nns/g3d/auto/NNSi_G3dAnmCalcNsBva.c:
     complete
     .text       start:0x020191e0 end:0x02019218
 
-libs/nns/g3d/calls/func_02019218.c:
+libs/nns/g3d/calls/texmtxCalc_flag_.c:
     complete
     .text       start:0x02019218 end:0x02019320
 
-libs/nns/g3d/calls/func_02019320.c:
+libs/nns/g3d/calls/NNSi_G3dCalcTexMtxRot.c:
     complete
     .text       start:0x02019320 end:0x020193f0
 
-libs/nns/g3d/auto/func_020193f0.c:
+libs/nns/g3d/auto/texmtxCalc_flagR_.c:
     complete
     .text       start:0x020193f0 end:0x0201946c
 
-libs/nns/g3d/auto/func_0201946c.c:
+libs/nns/g3d/auto/texmtxCalc_flagRS_.c:
     complete
     .text       start:0x0201946c end:0x020194b4
 
-libs/nns/g3d/calls/func_020194b4.c:
+libs/nns/g3d/calls/texmtxCalc_flagT_.c:
     complete
     .text       start:0x020194b4 end:0x02019594
 
-src/calls/func_02019594.c:
+src/calls/G3d_ComputeFrustumPlanes.c:
     complete
     .text       start:0x02019594 end:0x0201964c
 
-libs/nns/g3d/auto/func_0201964c.c:
+libs/nns/g3d/auto/texmtxCalc_flagTR_.c:
     complete
     .text       start:0x0201964c end:0x02019690
 
-libs/nns/g3d/calls/func_02019690.c:
+libs/nns/g3d/calls/texmtxCalc_flag__2.c:
     complete
     .text       start:0x02019690 end:0x02019798
 
-libs/nns/g3d/calls/func_02019798.c:
+libs/nns/g3d/calls/texmtxCalc_flagS_.c:
     complete
     .text       start:0x02019798 end:0x02019880
 
-libs/nns/g3d/auto/func_02019880.c:
+libs/nns/g3d/auto/texmtxCalc_flagR__2.c:
     complete
     .text       start:0x02019880 end:0x02019900
 
-libs/nns/g3d/auto/func_02019900.c:
+libs/nns/g3d/auto/texmtxCalc_flagRS__2.c:
     complete
     .text       start:0x02019900 end:0x02019948
 
-libs/nns/g3d/calls/func_02019948.c:
+libs/nns/g3d/calls/texmtxCalc_flagT__2.c:
     complete
     .text       start:0x02019948 end:0x02019a40
 
-libs/nns/g3d/calls/func_02019a40.c:
+libs/nns/g3d/calls/texmtxCalc_flagTS_.c:
     complete
     .text       start:0x02019a40 end:0x02019b18
 
-libs/nns/g3d/auto/func_02019b18.c:
+libs/nns/g3d/auto/texmtxCalc_flagTR__2.c:
     complete
     .text       start:0x02019b18 end:0x02019b68
 
-src/calls/func_02019b68.c:
+src/calls/NNS_SndInit.c:
     complete
     .text       start:0x02019b68 end:0x02019bf0
 
-libs/nns/snd/calls/func_02019bf0.c:
+libs/nns/snd/calls/NNS_SndMain.c:
     complete
     .text       start:0x02019bf0 end:0x02019c20
 
-libs/nns/snd/calls/func_02019c20.c:
+libs/nns/snd/calls/NNS_SndStopSoundAll.c:
     complete
     .text       start:0x02019c20 end:0x02019c74
 
-libs/nns/snd/calls/func_02019c74.c:
+libs/nns/snd/calls/BeginSleep.c:
     complete
     .text       start:0x02019c74 end:0x02019cac
 
@@ -3668,19 +3668,19 @@ src/calls/func_02019cac.c:
     complete
     .text       start:0x02019cac end:0x02019cb8
 
-libs/nns/snd/calls/func_02019cb8.c:
+libs/nns/snd/calls/NNS_SndLockChannel.c:
     complete
     .text       start:0x02019cb8 end:0x02019d00
 
-libs/nns/snd/calls/func_02019d00.c:
+libs/nns/snd/calls/NNS_SndUnlockChannel.c:
     complete
     .text       start:0x02019d00 end:0x02019d30
 
-libs/nns/snd/calls/func_02019d30.c:
+libs/nns/snd/calls/NNS_SndUnlockCapture.c:
     complete
     .text       start:0x02019d30 end:0x02019d4c
 
-libs/nns/snd/calls/func_02019d4c.c:
+libs/nns/snd/calls/NNS_SndAllocAlarm.c:
     complete
     .text       start:0x02019d4c end:0x02019d94
 
@@ -3688,119 +3688,119 @@ libs/nitro/snd/calls/SND_ClearChannelBit.c:
     complete
     .text       start:0x02019d94 end:0x02019db4
 
-src/calls/func_02019db4.c:
+src/calls/SndCapture_Reset.c:
     complete
     .text       start:0x02019db4 end:0x02019dd0
 
-libs/nns/snd/calls/func_02019dd0.c:
+libs/nns/snd/calls/NNS_SndPlayerSetPlayableSeqCount.c:
     complete
     .text       start:0x02019dd0 end:0x02019df0
 
-libs/nns/snd/calls/func_02019df0.c:
+libs/nns/snd/calls/NNS_SndPlayerSetAllocatableChannel.c:
     complete
     .text       start:0x02019df0 end:0x02019e08
 
-libs/nns/snd/calls/func_02019e08.c:
+libs/nns/snd/calls/NNS_SndPlayerCreateHeap.c:
     complete
     .text       start:0x02019e08 end:0x02019e9c
 
-libs/nns/snd/calls/func_02019e9c.c:
+libs/nns/snd/calls/NNS_SndPlayerStopSeq.c:
     complete
     .text       start:0x02019e9c end:0x02019eac
 
-libs/nns/snd/calls/func_02019eac.c:
+libs/nns/snd/calls/NNS_SndPlayerStopSeqByPlayerNo.c:
     complete
     .text       start:0x02019eac end:0x02019f08
 
-libs/nns/snd/calls/func_02019f08.c:
+libs/nns/snd/calls/NNS_SndPlayerStopSeqBySeqArcIdx.c:
     complete
     .text       start:0x02019f08 end:0x02019f6c
 
-libs/nns/snd/calls/func_02019f6c.c:
+libs/nns/snd/calls/NNS_SndPlayerStopSeqAll.c:
     complete
     .text       start:0x02019f6c end:0x02019fac
 
-libs/nns/snd/calls/func_02019fac.c:
+libs/nns/snd/calls/NNS_SndPlayerPause.c:
     complete
     .text       start:0x02019fac end:0x02019fbc
 
-libs/nns/snd/calls/func_02019fbc.c:
+libs/nns/snd/calls/NNS_SndPlayerPauseByPlayerNo.c:
     complete
     .text       start:0x02019fbc end:0x0201a014
 
-libs/nns/snd/calls/func_0201a014.c:
+libs/nns/snd/calls/NNS_SndPlayerPauseAll.c:
     complete
     .text       start:0x0201a014 end:0x0201a064
 
-src/auto/func_0201a064.c:
+src/auto/Word_Clear.c:
     complete
     .text       start:0x0201a064 end:0x0201a070
 
-libs/nns/snd/auto/func_0201a070.c:
+libs/nns/snd/auto/NNS_SndHandleReleaseSeq.c:
     complete
     .text       start:0x0201a070 end:0x0201a090
 
-libs/nns/snd/calls/func_0201a090.c:
+libs/nns/snd/calls/NNS_SndPlayerCountPlayingSeqByPlayerNo.c:
     complete
     .text       start:0x0201a090 end:0x0201a0a8
 
-libs/nns/snd/calls/func_0201a0a8.c:
+libs/nns/snd/calls/NNS_SndPlayerCountPlayingSeqBySeqNo.c:
     complete
     .text       start:0x0201a0a8 end:0x0201a0fc
 
-libs/nns/snd/auto/func_0201a0fc.c:
+libs/nns/snd/auto/NNS_SndPlayerSetVolume.c:
     complete
     .text       start:0x0201a0fc end:0x0201a110
 
-libs/nns/snd/auto/func_0201a110.c:
+libs/nns/snd/auto/NNS_SndPlayerSetInitialVolume.c:
     complete
     .text       start:0x0201a110 end:0x0201a124
 
-libs/nns/snd/calls/func_0201a124.c:
+libs/nns/snd/calls/NNS_SndPlayerMoveVolume.c:
     complete
     .text       start:0x0201a124 end:0x0201a150
 
-libs/nns/snd/calls/func_0201a150.c:
+libs/nns/snd/calls/NNS_SndPlayerSetChannelPriority.c:
     complete
     .text       start:0x0201a150 end:0x0201a170
 
-libs/nns/snd/calls/func_0201a170.c:
+libs/nns/snd/calls/NNS_SndPlayerSetTrackVolume.c:
     complete
     .text       start:0x0201a170 end:0x0201a1a0
 
-libs/nns/snd/calls/func_0201a1a0.c:
+libs/nns/snd/calls/NNS_SndPlayerSetTrackPan.c:
     complete
     .text       start:0x0201a1a0 end:0x0201a1c0
 
-libs/nns/snd/auto/func_0201a1c0.c:
+libs/nns/snd/auto/NNS_SndPlayerSetSeqNo.c:
     complete
     .text       start:0x0201a1c0 end:0x0201a1e4
 
-libs/nns/snd/auto/func_0201a1e4.c:
+libs/nns/snd/auto/NNS_SndPlayerSetSeqArcNo.c:
     complete
     .text       start:0x0201a1e4 end:0x0201a210
 
-libs/nns/snd/auto/func_0201a210.c:
+libs/nns/snd/auto/NNS_SndPlayerGetSeqNo.c:
     complete
     .text       start:0x0201a210 end:0x0201a238
 
-libs/nns/snd/calls/func_0201a238.c:
+libs/nns/snd/calls/NNS_SndPlayerReadVariable.c:
     complete
     .text       start:0x0201a238 end:0x0201a284
 
-libs/nns/snd/calls/func_0201a284.c:
+libs/nns/snd/calls/NNS_SndPlayerWriteVariable.c:
     complete
     .text       start:0x0201a284 end:0x0201a2ac
 
-libs/nns/snd/calls/func_0201a2ac.c:
+libs/nns/snd/calls/NNSi_SndPlayerInit.c:
     complete
     .text       start:0x0201a2ac end:0x0201a360
 
-libs/nns/snd/calls/func_0201a360.c:
+libs/nns/snd/calls/NNSi_SndPlayerMain.c:
     complete
     .text       start:0x0201a360 end:0x0201a4c4
 
-libs/nns/snd/calls/func_0201a4c4.c:
+libs/nns/snd/calls/NNSi_SndPlayerAllocSeqPlayer.c:
     complete
     .text       start:0x0201a4c4 end:0x0201a55c
 
@@ -3808,135 +3808,135 @@ src/calls/func_0201a55c.c:
     complete
     .text       start:0x0201a55c end:0x0201a568
 
-libs/nns/snd/calls/func_0201a568.c:
+libs/nns/snd/calls/NNSi_SndPlayerStartSeq.c:
     complete
     .text       start:0x0201a568 end:0x0201a5b8
 
-libs/nns/snd/calls/func_0201a5b8.c:
+libs/nns/snd/calls/NNSi_SndPlayerStopSeq.c:
     complete
     .text       start:0x0201a5b8 end:0x0201a604
 
-libs/nns/snd/calls/func_0201a604.c:
+libs/nns/snd/calls/NNSi_SndPlayerPause.c:
     complete
     .text       start:0x0201a604 end:0x0201a62c
 
-libs/nns/snd/calls/func_0201a62c.c:
+libs/nns/snd/calls/NNSi_SndPlayerAllocHeap.c:
     complete
     .text       start:0x0201a62c end:0x0201a680
 
-libs/nns/snd/calls/func_0201a680.c:
+libs/nns/snd/calls/InitPlayer.c:
     complete
     .text       start:0x0201a680 end:0x0201a6c8
 
-libs/nns/snd/calls/func_0201a6c8.c:
+libs/nns/snd/calls/InsertPlayerList.c:
     complete
     .text       start:0x0201a6c8 end:0x0201a718
 
-libs/nns/snd/calls/func_0201a718.c:
+libs/nns/snd/calls/InsertPrioList.c:
     complete
     .text       start:0x0201a718 end:0x0201a76c
 
-libs/nns/snd/calls/func_0201a76c.c:
+libs/nns/snd/calls/ForceStopSeq.c:
     complete
     .text       start:0x0201a76c end:0x0201a7a4
 
-libs/nns/snd/calls/func_0201a7a4.c:
+libs/nns/snd/calls/AllocSeqPlayer.c:
     complete
     .text       start:0x0201a7a4 end:0x0201a80c
 
-libs/nns/snd/calls/func_0201a80c.c:
+libs/nns/snd/calls/ShutdownPlayer.c:
     complete
     .text       start:0x0201a80c end:0x0201a890
 
-libs/nns/snd/calls/func_0201a890.c:
+libs/nns/snd/calls/PlayerHeapDisposeCallback.c:
     complete
     .text       start:0x0201a890 end:0x0201a8e0
 
-libs/nns/snd/calls/func_0201a8e0.c:
+libs/nns/snd/calls/SetPlayerPriority.c:
     complete
     .text       start:0x0201a8e0 end:0x0201a940
 
-libs/nns/snd/calls/func_0201a940.c:
+libs/nns/snd/calls/NNS_SndStrmInit.c:
     complete
     .text       start:0x0201a940 end:0x0201a9b8
 
-libs/nns/snd/calls/func_0201a9b8.c:
+libs/nns/snd/calls/NNS_SndStrmAllocChannel.c:
     complete
     .text       start:0x0201a9b8 end:0x0201aa18
 
-libs/nns/snd/calls/func_0201aa18.c:
+libs/nns/snd/calls/NNS_SndStrmFreeChannel.c:
     complete
     .text       start:0x0201aa18 end:0x0201aa40
 
-libs/nns/snd/calls/func_0201aa40.c:
+libs/nns/snd/calls/NNS_SndStrmSetup.c:
     complete
     .text       start:0x0201aa40 end:0x0201abe0
 
-libs/nns/snd/calls/func_0201abe0.c:
+libs/nns/snd/calls/NNS_SndStrmStart.c:
     complete
     .text       start:0x0201abe0 end:0x0201ac34
 
-libs/nns/snd/calls/func_0201ac34.c:
+libs/nns/snd/calls/NNS_SndStrmStop.c:
     complete
     .text       start:0x0201ac34 end:0x0201ac50
 
-libs/nns/snd/calls/func_0201ac50.c:
+libs/nns/snd/calls/NNS_SndStrmSetVolume.c:
     complete
     .text       start:0x0201ac50 end:0x0201acbc
 
-libs/nns/snd/calls/func_0201acbc.c:
+libs/nns/snd/calls/NNS_SndStrmSetChannelPan.c:
     complete
     .text       start:0x0201acbc end:0x0201acec
 
-libs/nns/snd/calls/func_0201acec.c:
+libs/nns/snd/calls/ForceStopStrm.c:
     complete
     .text       start:0x0201acec end:0x0201ad60
 
-libs/nns/snd/calls/func_0201ad60.c:
+libs/nns/snd/calls/ShutdownStrm.c:
     complete
     .text       start:0x0201ad60 end:0x0201ad90
 
-libs/nns/snd/calls/func_0201ad90.c:
+libs/nns/snd/calls/AlarmCallback.c:
     complete
     .text       start:0x0201ad90 end:0x0201ada0
 
-libs/nns/snd/calls/func_0201ada0.c:
+libs/nns/snd/calls/StrmCallback.c:
     complete
     .text       start:0x0201ada0 end:0x0201ae50
 
-libs/nns/snd/calls/func_0201ae50.c:
+libs/nns/snd/calls/BeginSleep_2.c:
     complete
     .text       start:0x0201ae50 end:0x0201ae9c
 
-libs/nns/snd/calls/func_0201ae9c.c:
+libs/nns/snd/calls/EndSleep.c:
     complete
     .text       start:0x0201ae9c end:0x0201af0c
 
-libs/nns/snd/calls/func_0201af0c.c:
+libs/nns/snd/calls/NNSi_SndCaptureInit.c:
     complete
     .text       start:0x0201af0c end:0x0201af2c
 
-libs/nns/snd/calls/func_0201af2c.c:
+libs/nns/snd/calls/NNSi_SndCaptureMain.c:
     complete
     .text       start:0x0201af2c end:0x0201afac
 
-libs/nns/snd/calls/func_0201afac.c:
+libs/nns/snd/calls/NNSi_SndCaptureStop.c:
     complete
     .text       start:0x0201afac end:0x0201b094
 
-libs/nns/snd/calls/func_0201b094.c:
+libs/nns/snd/calls/NNSi_SndCaptureBeginSleep.c:
     complete
     .text       start:0x0201b094 end:0x0201b0ec
 
-libs/nns/snd/calls/func_0201b0ec.c:
+libs/nns/snd/calls/NNSi_SndCaptureEndSleep.c:
     complete
     .text       start:0x0201b0ec end:0x0201b168
 
-libs/nns/snd/calls/func_0201b168.c:
+libs/nns/snd/calls/NNS_SndArcInit.c:
     complete
     .text       start:0x0201b168 end:0x0201b1e8
 
-libs/nns/snd/calls/func_0201b1e8.c:
+libs/nns/snd/calls/NNS_SndArcSetup.c:
     complete
     .text       start:0x0201b1e8 end:0x0201b3c0
 
@@ -3948,95 +3948,95 @@ src/calls/func_0201b3d8.c:
     complete
     .text       start:0x0201b3d8 end:0x0201b3e8
 
-libs/nns/snd/calls/func_0201b3e8.c:
+libs/nns/snd/calls/NNS_SndArcGetSeqInfo.c:
     complete
     .text       start:0x0201b3e8 end:0x0201b44c
 
-libs/nns/snd/calls/func_0201b44c.c:
+libs/nns/snd/calls/NNS_SndArcGetSeqArcInfo.c:
     complete
     .text       start:0x0201b44c end:0x0201b4b0
 
-libs/nns/snd/calls/func_0201b4b0.c:
+libs/nns/snd/calls/NNS_SndArcGetBankInfo.c:
     complete
     .text       start:0x0201b4b0 end:0x0201b514
 
-libs/nns/snd/calls/func_0201b514.c:
+libs/nns/snd/calls/NNS_SndArcGetWaveArcInfo.c:
     complete
     .text       start:0x0201b514 end:0x0201b578
 
-libs/nns/snd/calls/func_0201b578.c:
+libs/nns/snd/calls/NNS_SndArcGetStrmInfo.c:
     complete
     .text       start:0x0201b578 end:0x0201b5dc
 
-libs/nns/snd/calls/func_0201b5dc.c:
+libs/nns/snd/calls/NNS_SndArcGetPlayerInfo.c:
     complete
     .text       start:0x0201b5dc end:0x0201b640
 
-libs/nns/snd/calls/func_0201b640.c:
+libs/nns/snd/calls/NNS_SndArcGetStrmPlayerInfo.c:
     complete
     .text       start:0x0201b640 end:0x0201b6a4
 
-libs/nns/snd/calls/func_0201b6a4.c:
+libs/nns/snd/calls/NNS_SndArcGetFileOffset.c:
     complete
     .text       start:0x0201b6a4 end:0x0201b6cc
 
-libs/nns/snd/calls/func_0201b6cc.c:
+libs/nns/snd/calls/NNS_SndArcGetFileSize.c:
     complete
     .text       start:0x0201b6cc end:0x0201b6f4
 
-libs/nns/snd/calls/func_0201b6f4.c:
+libs/nns/snd/calls/NNS_SndArcReadFile.c:
     complete
     .text       start:0x0201b6f4 end:0x0201b7c0
 
-libs/nns/snd/calls/func_0201b7c0.c:
+libs/nns/snd/calls/NNS_SndArcGetFileID.c:
     complete
     .text       start:0x0201b7c0 end:0x0201b7e0
 
-libs/nns/snd/calls/func_0201b7e0.c:
+libs/nns/snd/calls/NNS_SndArcGetFileAddress.c:
     complete
     .text       start:0x0201b7e0 end:0x0201b808
 
-libs/nns/snd/calls/func_0201b808.c:
+libs/nns/snd/calls/NNS_SndArcSetFileAddress.c:
     complete
     .text       start:0x0201b808 end:0x0201b824
 
-libs/nns/snd/calls/func_0201b824.c:
+libs/nns/snd/calls/NNS_SndArcSetLoadBlockSize.c:
     complete
     .text       start:0x0201b824 end:0x0201b838
 
-libs/nns/snd/auto/func_0201b838.c:
+libs/nns/snd/auto/InfoDisposeCallback.c:
     complete
     .text       start:0x0201b838 end:0x0201b844
 
-libs/nns/snd/auto/func_0201b844.c:
+libs/nns/snd/auto/FatDisposeCallback.c:
     complete
     .text       start:0x0201b844 end:0x0201b850
 
-libs/nns/snd/auto/func_0201b850.c:
+libs/nns/snd/auto/SymbolDisposeCallback.c:
     complete
     .text       start:0x0201b850 end:0x0201b85c
 
-libs/nns/snd/calls/func_0201b85c.c:
+libs/nns/snd/calls/NNS_SndHeapCreate.c:
     complete
     .text       start:0x0201b85c end:0x0201b8cc
 
-libs/nns/snd/calls/func_0201b8cc.c:
+libs/nns/snd/calls/NNS_SndHeapDestroy.c:
     complete
     .text       start:0x0201b8cc end:0x0201b8e4
 
-libs/nns/snd/calls/func_0201b8e4.c:
+libs/nns/snd/calls/NNS_SndHeapClear.c:
     complete
     .text       start:0x0201b8e4 end:0x0201b9a0
 
-libs/nns/snd/calls/func_0201b9a0.c:
+libs/nns/snd/calls/NNS_SndHeapAlloc.c:
     complete
     .text       start:0x0201b9a0 end:0x0201ba08
 
-libs/nns/snd/calls/func_0201ba08.c:
+libs/nns/snd/calls/NNS_SndHeapSaveState.c:
     complete
     .text       start:0x0201ba08 end:0x0201ba54
 
-libs/nns/snd/calls/func_0201ba54.c:
+libs/nns/snd/calls/NNS_SndHeapLoadState.c:
     complete
     .text       start:0x0201ba54 end:0x0201bb28
 
@@ -4044,183 +4044,183 @@ libs/nitro/nns/calls/NNS_FndInitListWithOffset0.c:
     complete
     .text       start:0x0201bb28 end:0x0201bb38
 
-libs/nns/snd/calls/func_0201bb38.c:
+libs/nns/snd/calls/InitHeap.c:
     complete
     .text       start:0x0201bb38 end:0x0201bb6c
 
-libs/nns/snd/calls/func_0201bb6c.c:
+libs/nns/snd/calls/NewSection.c:
     complete
     .text       start:0x0201bb6c end:0x0201bba8
 
-libs/nns/snd/calls/func_0201bba8.c:
+libs/nns/snd/calls/EraseSync.c:
     complete
     .text       start:0x0201bba8 end:0x0201bbc8
 
-libs/nns/snd/calls/func_0201bbc8.c:
+libs/nns/snd/calls/NNS_SndArcLoadSeq.c:
     complete
     .text       start:0x0201bbc8 end:0x0201bbf4
 
-libs/nns/snd/calls/func_0201bbf4.c:
+libs/nns/snd/calls/NNS_SndArcLoadSeqArc.c:
     complete
     .text       start:0x0201bbf4 end:0x0201bc20
 
-libs/nns/snd/calls/func_0201bc20.c:
+libs/nns/snd/calls/NNS_SndArcLoadBank.c:
     complete
     .text       start:0x0201bc20 end:0x0201bc4c
 
-libs/nns/snd/calls/func_0201bc4c.c:
+libs/nns/snd/calls/NNSi_SndArcLoadSeq.c:
     complete
     .text       start:0x0201bc4c end:0x0201bcd0
 
-libs/nns/snd/calls/func_0201bcd0.c:
+libs/nns/snd/calls/NNSi_SndArcLoadSeqArc.c:
     complete
     .text       start:0x0201bcd0 end:0x0201bd30
 
-libs/nns/snd/calls/func_0201bd30.c:
+libs/nns/snd/calls/NNSi_SndArcLoadBank.c:
     complete
     .text       start:0x0201bd30 end:0x0201be70
 
-libs/nns/snd/calls/func_0201be70.c:
+libs/nns/snd/calls/NNSi_SndArcLoadWaveArc.c:
     complete
     .text       start:0x0201be70 end:0x0201befc
 
-libs/nns/snd/calls/func_0201befc.c:
+libs/nns/snd/calls/NNSi_SndArcLoadFile.c:
     complete
     .text       start:0x0201befc end:0x0201bf9c
 
-libs/nns/snd/calls/func_0201bf9c.c:
+libs/nns/snd/calls/LoadSeq.c:
     complete
     .text       start:0x0201bf9c end:0x0201c008
 
-libs/nns/snd/calls/func_0201c008.c:
+libs/nns/snd/calls/LoadSeqArc.c:
     complete
     .text       start:0x0201c008 end:0x0201c074
 
-libs/nns/snd/calls/func_0201c074.c:
+libs/nns/snd/calls/LoadBank.c:
     complete
     .text       start:0x0201c074 end:0x0201c0e0
 
-libs/nns/snd/calls/func_0201c0e0.c:
+libs/nns/snd/calls/LoadWaveArc.c:
     complete
     .text       start:0x0201c0e0 end:0x0201c14c
 
-libs/nns/snd/calls/func_0201c14c.c:
+libs/nns/snd/calls/NNS_SndArcLoadWaveArcTable.c:
     complete
     .text       start:0x0201c14c end:0x0201c254
 
-libs/nns/snd/calls/func_0201c254.c:
+libs/nns/snd/calls/DisposeCallback.c:
     complete
     .text       start:0x0201c254 end:0x0201c2ac
 
-libs/nns/snd/calls/func_0201c2ac.c:
+libs/nns/snd/calls/SeqDisposeCallback.c:
     complete
     .text       start:0x0201c2ac end:0x0201c2d4
 
-libs/nns/snd/calls/func_0201c2d4.c:
+libs/nns/snd/calls/BankDisposeCallback.c:
     complete
     .text       start:0x0201c2d4 end:0x0201c304
 
-libs/nns/snd/calls/func_0201c304.c:
+libs/nns/snd/calls/WaveArcDisposeCallback.c:
     complete
     .text       start:0x0201c304 end:0x0201c334
 
-libs/nns/snd/calls/func_0201c334.c:
+libs/nns/snd/calls/WaveArcTableDisposeCallback.c:
     complete
     .text       start:0x0201c334 end:0x0201c354
 
-libs/nns/snd/calls/func_0201c354.c:
+libs/nns/snd/calls/SingleWaveDisposeCallback.c:
     complete
     .text       start:0x0201c354 end:0x0201c39c
 
-libs/nitro/snd/calls/func_0201c39c.c:
+libs/nitro/snd/calls/SndLoadWaveData.c:
     complete
     .text       start:0x0201c39c end:0x0201c464
 
-libs/nns/snd/calls/func_0201c464.c:
+libs/nns/snd/calls/LoadSingleWaves.c:
     complete
     .text       start:0x0201c464 end:0x0201c524
 
-libs/nns/snd/calls/func_0201c524.c:
+libs/nns/snd/calls/NNS_SndArcPlayerSetup.c:
     complete
     .text       start:0x0201c524 end:0x0201c5c0
 
-libs/nns/snd/calls/func_0201c5c0.c:
+libs/nns/snd/calls/NNS_SndArcPlayerStartSeq.c:
     complete
     .text       start:0x0201c5c0 end:0x0201c608
 
-libs/nns/snd/calls/func_0201c608.c:
+libs/nns/snd/calls/NNS_SndArcPlayerStartSeqArc.c:
     complete
     .text       start:0x0201c608 end:0x0201c688
 
-libs/nns/snd/calls/func_0201c688.c:
+libs/nns/snd/calls/NNS_SndArcPlayerStartSeqArcEx.c:
     complete
     .text       start:0x0201c688 end:0x0201c734
 
-libs/nns/snd/calls/func_0201c734.c:
+libs/nns/snd/calls/StartSeq.c:
     complete
     .text       start:0x0201c734 end:0x0201c830
 
-libs/nns/snd/calls/func_0201c830.c:
+libs/nns/snd/calls/StartSeqArc.c:
     complete
     .text       start:0x0201c830 end:0x0201c8f4
 
-libs/nns/snd/calls/func_0201c8f4.c:
+libs/nns/snd/calls/NNS_SndArcStrmInit.c:
     complete
     .text       start:0x0201c8f4 end:0x0201c9f8
 
-libs/nns/snd/calls/func_0201c9f8.c:
+libs/nns/snd/calls/NNS_SndArcStrmSetupPlayer.c:
     complete
     .text       start:0x0201c9f8 end:0x0201cac0
 
-libs/nns/snd/calls/func_0201cac0.c:
+libs/nns/snd/calls/NNS_SndArcStrmPrepare.c:
     complete
     .text       start:0x0201cac0 end:0x0201cb1c
 
-libs/nns/snd/auto/func_0201cb1c.c:
+libs/nns/snd/auto/NNS_SndArcStrmStartPrepared.c:
     complete
     .text       start:0x0201cb1c end:0x0201cb3c
 
-libs/nns/snd/calls/func_0201cb3c.c:
+libs/nns/snd/calls/NNS_SndArcStrmStart.c:
     complete
     .text       start:0x0201cb3c end:0x0201cb64
 
-libs/nns/snd/calls/func_0201cb64.c:
+libs/nns/snd/calls/NNS_SndArcStrmStop.c:
     complete
     .text       start:0x0201cb64 end:0x0201cb80
 
-libs/nns/snd/calls/func_0201cb80.c:
+libs/nns/snd/calls/NNS_SndArcStrmStopAll.c:
     complete
     .text       start:0x0201cb80 end:0x0201cbc4
 
-src/auto/func_0201cbc4.c:
+src/auto/Word_ClearB.c:
     complete
     .text       start:0x0201cbc4 end:0x0201cbd0
 
-libs/nns/snd/auto/func_0201cbd0.c:
+libs/nns/snd/auto/NNS_SndStrmHandleRelease.c:
     complete
     .text       start:0x0201cbd0 end:0x0201cbe8
 
-libs/nns/snd/calls/func_0201cbe8.c:
+libs/nns/snd/calls/NNS_SndArcStrmGetCurrentPlayingPos.c:
     complete
     .text       start:0x0201cbe8 end:0x0201cc1c
 
-libs/nns/snd/calls/func_0201cc1c.c:
+libs/nns/snd/calls/NNS_SndArcStrmGetTimeLength.c:
     complete
     .text       start:0x0201cc1c end:0x0201cc50
 
-libs/nns/snd/calls/func_0201cc50.c:
+libs/nns/snd/calls/NNSi_SndArcStrmMain.c:
     complete
     .text       start:0x0201cc50 end:0x0201cd60
 
-libs/nns/snd/calls/func_0201cd60.c:
+libs/nns/snd/calls/AllocPlayer.c:
     complete
     .text       start:0x0201cd60 end:0x0201cdec
 
-libs/nns/snd/auto/func_0201cdec.c:
+libs/nns/snd/auto/FreePlayer.c:
     complete
     .text       start:0x0201cdec end:0x0201ce18
 
-libs/nns/snd/calls/func_0201ce18.c:
+libs/nns/snd/calls/PrepareStrm.c:
     complete
     .text       start:0x0201ce18 end:0x0201d088
 
@@ -4228,7 +4228,7 @@ libs/nitro/snd/calls/SNDi_FreeVoiceChannel.c:
     complete
     .text       start:0x0201d088 end:0x0201d0e0
 
-libs/nns/snd/calls/func_0201d0e0.c:
+libs/nns/snd/calls/ForceStopStrm_2.c:
     complete
     .text       start:0x0201d0e0 end:0x0201d178
 
@@ -4236,123 +4236,123 @@ libs/nitro/os/calls/OSi_DestroyThread.c:
     complete
     .text       start:0x0201d178 end:0x0201d1dc
 
-libs/nns/snd/calls/func_0201d1dc.c:
+libs/nns/snd/calls/AllocChannel.c:
     complete
     .text       start:0x0201d1dc end:0x0201d214
 
-libs/nns/snd/calls/func_0201d214.c:
+libs/nns/snd/calls/FreeChannel.c:
     complete
     .text       start:0x0201d214 end:0x0201d238
 
-libs/nns/snd/calls/func_0201d238.c:
+libs/nns/snd/calls/CreateThread.c:
     complete
     .text       start:0x0201d238 end:0x0201d298
 
-libs/nns/snd/calls/func_0201d298.c:
+libs/nns/snd/calls/RemoveCommandByPlayer.c:
     complete
     .text       start:0x0201d298 end:0x0201d308
 
-libs/nns/snd/calls/func_0201d308.c:
+libs/nns/snd/calls/ReadCommandBuffer.c:
     complete
     .text       start:0x0201d308 end:0x0201d358
 
-libs/nns/snd/calls/func_0201d358.c:
+libs/nns/snd/calls/AllocCommandBuffer.c:
     complete
     .text       start:0x0201d358 end:0x0201d398
 
-libs/nns/snd/calls/func_0201d398.c:
+libs/nns/snd/calls/FreeCommandBuffer.c:
     complete
     .text       start:0x0201d398 end:0x0201d3c4
 
-libs/nns/snd/calls/func_0201d3c4.c:
+libs/nns/snd/calls/DisposeCallback_2.c:
     complete
     .text       start:0x0201d3c4 end:0x0201d460
 
-libs/nns/snd/calls/func_0201d460.c:
+libs/nns/snd/calls/StrmCallback_2.c:
     complete
     .text       start:0x0201d460 end:0x0201d598
 
-libs/nns/snd/calls/func_0201d598.c:
+libs/nns/snd/calls/OnDataEnd.c:
     complete
     .text       start:0x0201d598 end:0x0201d6dc
 
-libs/nns/snd/calls/func_0201d6dc.c:
+libs/nns/snd/calls/NNSi_SndArcStrm_MakeWaveData.c:
     complete
     .text       start:0x0201d6dc end:0x0201df04
 
-libs/nns/snd/calls/func_0201df04.c:
+libs/nns/snd/calls/SetupStreamFunction.c:
     complete
     .text       start:0x0201df04 end:0x0201df84
 
-libs/nns/snd/calls/func_0201df84.c:
+libs/nns/snd/calls/OpenFileStream.c:
     complete
     .text       start:0x0201df84 end:0x0201dff8
 
-libs/nns/snd/calls/func_0201dff8.c:
+libs/nns/snd/calls/CloseFileStream.c:
     complete
     .text       start:0x0201dff8 end:0x0201e008
 
-libs/nns/snd/calls/func_0201e008.c:
+libs/nns/snd/calls/ReadFileStream.c:
     complete
     .text       start:0x0201e008 end:0x0201e040
 
-libs/nns/snd/calls/func_0201e040.c:
+libs/nns/snd/calls/CancelFileStream.c:
     complete
     .text       start:0x0201e040 end:0x0201e050
 
-libs/nns/snd/calls/func_0201e050.c:
+libs/nns/snd/calls/OpenMemoryStream.c:
     complete
     .text       start:0x0201e050 end:0x0201e078
 
-libs/nns/snd/auto/func_0201e078.c:
+libs/nns/snd/auto/CloseMemoryStream.c:
     complete
     .text       start:0x0201e078 end:0x0201e07c
 
-libs/nns/snd/calls/func_0201e07c.c:
+libs/nns/snd/calls/ReadMemoryStream.c:
     complete
     .text       start:0x0201e07c end:0x0201e098
 
-libs/nns/snd/auto/func_0201e098.c:
+libs/nns/snd/auto/CancelMemoryStream.c:
     complete
     .text       start:0x0201e098 end:0x0201e09c
 
-libs/nns/snd/calls/func_0201e09c.c:
+libs/nns/snd/calls/StrmThread.c:
     complete
     .text       start:0x0201e09c end:0x0201e0ec
 
-libs/nns/snd/auto/func_0201e0ec.c:
+libs/nns/snd/auto/NNSi_SndSeqArcGetSeqInfo.c:
     complete
     .text       start:0x0201e0ec end:0x0201e12c
 
-libs/nns/snd/auto/func_0201e12c.c:
+libs/nns/snd/auto/NNSi_SndFaderInit.c:
     complete
     .text       start:0x0201e12c end:0x0201e144
 
-libs/nns/snd/calls/func_0201e144.c:
+libs/nns/snd/calls/NNSi_SndFaderSet.c:
     complete
     .text       start:0x0201e144 end:0x0201e16c
 
-libs/nns/snd/calls/func_0201e16c.c:
+libs/nns/snd/calls/NNSi_SndFaderGet.c:
     complete
     .text       start:0x0201e16c end:0x0201e1a0
 
-libs/nns/snd/auto/func_0201e1a0.c:
+libs/nns/snd/auto/NNSi_SndFaderUpdate.c:
     complete
     .text       start:0x0201e1a0 end:0x0201e1b8
 
-libs/nns/snd/auto/func_0201e1b8.c:
+libs/nns/snd/auto/NNSi_SndFaderIsFinished.c:
     complete
     .text       start:0x0201e1b8 end:0x0201e1d0
 
-src/calls/func_0201e1d0.c:
+src/calls/Gfx_Reset2DEngines.c:
     complete
     .text       start:0x0201e1d0 end:0x0201e374
 
-src/calls/func_0201e374.c:
+src/calls/SetMasterBrightnessMain.c:
     complete
     .text       start:0x0201e374 end:0x0201e3cc
 
-src/calls/func_0201e3cc.c:
+src/calls/SetMasterBrightnessSub.c:
     complete
     .text       start:0x0201e3cc end:0x0201e428
 
@@ -4364,23 +4364,23 @@ src/calls/func_0201e438.c:
     complete
     .text       start:0x0201e438 end:0x0201e448
 
-src/calls/func_0201e448.c:
+src/calls/Loader_LoadOverlayInfo.c:
     complete
     .text       start:0x0201e448 end:0x0201e470
 
-src/calls/func_0201e470.c:
+src/calls/LoadOverlaySync.c:
     complete
     .text       start:0x0201e470 end:0x0201e490
 
-src/calls/func_0201e490.c:
+src/calls/Loader_LoadOverlayImage.c:
     complete
     .text       start:0x0201e490 end:0x0201e4a8
 
-src/calls/func_0201e4a8.c:
+src/calls/UnloadOverlaySync.c:
     complete
     .text       start:0x0201e4a8 end:0x0201e4c8
 
-src/calls/func_0201e4c8.c:
+src/calls/Loader_PopFreeRequest.c:
     complete
     .text       start:0x0201e4c8 end:0x0201e4f0
 
@@ -4388,71 +4388,71 @@ src/calls/func_0201e4f0.c:
     complete
     .text       start:0x0201e4f0 end:0x0201e508
 
-src/calls/func_0201e508.c:
+src/calls/Stream_StartUncomp.c:
     complete
     .text       start:0x0201e508 end:0x0201e5fc
 
-src/calls/func_0201e5fc.c:
+src/calls/Loader_SetupLZDecompress.c:
     complete
     .text       start:0x0201e5fc end:0x0201e670
 
-src/calls/func_0201e670.c:
+src/calls/FileLoader_ThreadMain.c:
     complete
     .text       start:0x0201e670 end:0x0201e9e4
 
-src/calls/func_0201e9e4.c:
+src/calls/EnqueueGfxCmd0.c:
     complete
     .text       start:0x0201e9e4 end:0x0201e9fc
 
-src/calls/func_0201e9fc.c:
+src/calls/Gfd_LoadTexB.c:
     complete
     .text       start:0x0201e9fc end:0x0201ea28
 
-src/calls/func_0201ea28.c:
+src/calls/EnqueueGfxCmd1.c:
     complete
     .text       start:0x0201ea28 end:0x0201ea40
 
-src/calls/func_0201ea40.c:
+src/calls/Gfd_LoadTexPlttB.c:
     complete
     .text       start:0x0201ea40 end:0x0201ea6c
 
-src/calls/func_0201ea6c.c:
+src/calls/FileLoader_Init.c:
     complete
     .text       start:0x0201ea6c end:0x0201ebdc
 
-src/calls/func_0201ebdc.c:
+src/calls/Loader_RequestFile.c:
     complete
     .text       start:0x0201ebdc end:0x0201ed3c
 
-src/calls/func_0201ed3c.c:
+src/calls/FileLoader_LoadInto.c:
     complete
     .text       start:0x0201ed3c end:0x0201eea8
 
-src/calls/func_0201eea8.c:
+src/calls/Obj_IsIdFree.c:
     complete
     .text       start:0x0201eea8 end:0x0201ef58
 
-src/calls/func_0201ef58.c:
+src/calls/Loader_SleepIfBusy.c:
     complete
     .text       start:0x0201ef58 end:0x0201ef9c
 
-src/calls/func_0201ef9c.c:
+src/calls/Archive_LoadFile.c:
     complete
     .text       start:0x0201ef9c end:0x0201f1a8
 
-src/calls/func_0201f1a8.c:
+src/calls/FileLoader_LoadSync.c:
     complete
     .text       start:0x0201f1a8 end:0x0201f390
 
-src/calls/func_0201f390.c:
+src/calls/InstallHandlerPairByFlag.c:
     complete
     .text       start:0x0201f390 end:0x0201f3d8
 
-src/calls/func_0201f3d8.c:
+src/calls/ResCache_FindSlot.c:
     complete
     .text       start:0x0201f3d8 end:0x0201f468
 
-src/calls/func_0201f468.c:
+src/calls/ResCache_Acquire.c:
     complete
     .text       start:0x0201f468 end:0x0201f510
 
@@ -4460,27 +4460,27 @@ libs/nitro/snd/calls/SND_RegisterSeq.c:
     complete
     .text       start:0x0201f510 end:0x0201f5ac
 
-src/calls/func_0201f5ac.c:
+src/calls/ResSlot_Release.c:
     complete
     .text       start:0x0201f5ac end:0x0201f634
 
-src/calls/func_0201f634.c:
+src/calls/ResSlot_Acquire.c:
     complete
     .text       start:0x0201f634 end:0x0201f6b0
 
-src/calls/func_0201f6b0.c:
+src/calls/ResSlot_ReleaseResource.c:
     complete
     .text       start:0x0201f6b0 end:0x0201f70c
 
-src/calls/func_0201f70c.c:
+src/calls/Loader_PostIdRequest.c:
     complete
     .text       start:0x0201f70c end:0x0201f750
 
-src/calls/func_0201f750.c:
+src/calls/Loader_PostTypedRequest.c:
     complete
     .text       start:0x0201f750 end:0x0201f79c
 
-src/calls/func_0201f79c.c:
+src/calls/StackAlloc_FreeIfSet.c:
     complete
     .text       start:0x0201f79c end:0x0201f7b0
 
@@ -4488,15 +4488,15 @@ libs/msl/c/auto/abs.c:
     complete
     .text       start:0x0201f7b0 end:0x0201f7bc
 
-src/calls/func_0201f7bc.c:
+src/calls/StrNCaseCmp.c:
     complete
     .text       start:0x0201f7bc end:0x0201f844
 
-src/auto/func_0201f844.c:
+src/auto/Mem_CompareBytes.c:
     complete
     .text       start:0x0201f844 end:0x0201f884
 
-src/calls/func_0201f884.c:
+src/calls/CharCursor_Control.c:
     complete
     .text       start:0x0201f884 end:0x0201f908
 
@@ -4504,7 +4504,7 @@ libs/msl/c/calls/strlen.c:
     complete
     .text       start:0x0201f908 end:0x0201f924
 
-libs/msl/c/auto/func_0201f924.c:
+libs/msl/c/auto/strcpy.c:
     complete
     .text       start:0x0201f924 end:0x0201f9ec
 
@@ -4512,15 +4512,15 @@ libs/msl/c/auto/strncpy.c:
     complete
     .text       start:0x0201f9ec end:0x0201fa3c
 
-src/auto/func_0201fa3c.c:
+src/auto/STD_StrCat.c:
     complete
     .text       start:0x0201fa3c end:0x0201fa6c
 
-src/auto/func_0201fa6c.c:
+src/auto/STD_StrnCat.c:
     complete
     .text       start:0x0201fa6c end:0x0201fabc
 
-libs/msl/c/auto/func_0201fabc.c:
+libs/msl/c/auto/strcmp.c:
     complete
     .text       start:0x0201fabc end:0x0201fbd0
 
@@ -4528,11 +4528,11 @@ libs/msl/c/calls/strncmp.c:
     complete
     .text       start:0x0201fbd0 end:0x0201fc04
 
-libs/msl/c/calls/func_0201fc04.c:
+libs/msl/c/calls/__strtoul.c:
     complete
     .text       start:0x0201fc04 end:0x0201ffec
 
-libs/msl/c/calls/func_0201ffec.c:
+libs/msl/c/calls/strtol.c:
     complete
     .text       start:0x0201ffec end:0x020200b4
 
@@ -4540,19 +4540,19 @@ src/calls/func_020200b4.c:
     complete
     .text       start:0x020200b4 end:0x020200c8
 
-src/auto/func_020200c8.c:
+src/auto/Wcslen.c:
     complete
     .text       start:0x020200c8 end:0x020200e4
 
-src/auto/func_020200e4.c:
+src/auto/StrCopy16.c:
     complete
     .text       start:0x020200e4 end:0x02020104
 
-src/auto/func_02020104.c:
+src/auto/StrNCopy16.c:
     complete
     .text       start:0x02020104 end:0x02020154
 
-src/auto/func_02020154.c:
+src/auto/STD_WStrCat.c:
     complete
     .text       start:0x02020154 end:0x02020184
 
@@ -4592,23 +4592,23 @@ libs/msl/runtime/asm_stubs/auto/func_02020400.s:
     complete
     .text       start:0x02020400 end:0x0202060c
 
-libs/msl/runtime/asm_stubs/auto/func_0202060c.s:
+libs/msl/runtime/asm_stubs/auto/Math_DivMod.s:
     complete
     .text       start:0x0202060c end:0x020207f0
 
-libs/msl/runtime/auto/func_020207f0.c:
+libs/msl/runtime/auto/_fp_init.c:
     complete
     .text       start:0x020207f0 end:0x020207f4
 
-src/calls/func_020207f4.c:
+src/calls/StackAlloc_FreeIfSetB.c:
     complete
     .text       start:0x020207f4 end:0x02020808
 
-libs/msl/runtime/calls/func_02020808.c:
+libs/msl/runtime/calls/__call_static_initializers.c:
     complete
     .text       start:0x02020808 end:0x02020834
 
-src/auto/func_02020834.c:
+src/auto/Callbacks_Init.c:
     complete
     .text       start:0x02020834 end:0x02020878
 
@@ -4616,15 +4616,15 @@ src/calls/func_02020878.c:
     complete
     .text       start:0x02020878 end:0x02020888
 
-src/calls/func_02020888.c:
+src/calls/setDualArrayEntry.c:
     complete
     .text       start:0x02020888 end:0x020208a4
 
-src/calls/func_020208a4.c:
+src/calls/Callbacks_Run.c:
     complete
     .text       start:0x020208a4 end:0x020208d0
 
-src/calls/func_020208d0.c:
+src/calls/Callbacks_SetByte.c:
     complete
     .text       start:0x020208d0 end:0x020208e0
 
@@ -4644,7 +4644,7 @@ src/calls/func_02020914.c:
     complete
     .text       start:0x02020914 end:0x02020928
 
-src/calls/func_02020928.c:
+src/calls/Boot_InitScene.c:
     complete
     .text       start:0x02020928 end:0x02020974
 
@@ -4652,63 +4652,63 @@ src/auto/func_02020974.c:
     complete
     .text       start:0x02020974 end:0x02020976
 
-src/calls/func_02020978.c:
+src/calls/Scene_StepAndContinue.c:
     complete
     .text       start:0x02020978 end:0x02020988
 
-src/calls/func_02020988.c:
+src/calls/Scene_ClearPending.c:
     complete
     .text       start:0x02020988 end:0x0202099c
 
-src/calls/func_0202099c.c:
+src/calls/Scene_AdvanceToPending.c:
     complete
     .text       start:0x0202099c end:0x02020a78
 
-src/calls/func_02020a78.c:
+src/calls/StoreGlobalPairAt10.c:
     complete
     .text       start:0x02020a78 end:0x02020a84
 
-src/calls/func_02020a84.c:
+src/calls/LoadGlobalIntAtC.c:
     complete
     .text       start:0x02020a84 end:0x02020a90
 
-src/calls/func_02020a90.c:
+src/calls/StoreGlobalShortAt0.c:
     complete
     .text       start:0x02020a90 end:0x02020a9c
 
-src/calls/func_02020a9c.c:
+src/calls/LoadGlobalU16At0.c:
     complete
     .text       start:0x02020a9c end:0x02020aa8
 
-src/calls/func_02020aa8.c:
+src/calls/StoreGlobalArrayEntry.c:
     complete
     .text       start:0x02020aa8 end:0x02020ab4
 
-src/calls/func_02020ab4.c:
+src/calls/Archive_FindNameIndex.c:
     complete
     .text       start:0x02020ab4 end:0x02020aee
 
-src/calls/func_02020af0.c:
+src/calls/ParseSlotQuantityId.c:
     complete
     .text       start:0x02020af0 end:0x02020b64
 
-src/calls/func_02020b64.c:
+src/calls/Script_Start.c:
     complete
     .text       start:0x02020b64 end:0x02020c7c
 
-src/calls/func_02020c7c.c:
+src/calls/Stream_DecodeIntoStagingBuffer.c:
     complete
     .text       start:0x02020c7c end:0x02020cc6
 
-src/calls/func_02020cc8.c:
+src/calls/Obj_ResetBothSubBlocksAndArm.c:
     complete
     .text       start:0x02020cc8 end:0x02020cf8
 
-src/calls/func_02020cf8.c:
+src/calls/StoreGlobalByteAt0.c:
     complete
     .text       start:0x02020cf8 end:0x02020d04
 
-src/calls/func_02020d04.c:
+src/calls/LoadGlobalS8At0.c:
     complete
     .text       start:0x02020d04 end:0x02020d10
 
@@ -4716,55 +4716,55 @@ src/calls/func_02020d10.c:
     complete
     .text       start:0x02020d10 end:0x02020d44
 
-src/calls/func_02020d44.c:
+src/calls/Game_UnwindActionStack.c:
     complete
     .text       start:0x02020d44 end:0x02020e20
 
-src/calls/func_02020e20.c:
+src/calls/Camera_UpdateSoundListener.c:
     complete
     .text       start:0x02020e20 end:0x02020e56
 
-src/calls/func_02020e58.c:
+src/calls/Game_RunActionScript.c:
     complete
     .text       start:0x02020e58 end:0x02021048
 
-src/auto/func_02021048.c:
+src/auto/SetWordAt0x588To1.c:
     complete
     .text       start:0x02021048 end:0x02021054
 
-src/auto/func_02021054.c:
+src/auto/GetWordAt0x58c.c:
     complete
     .text       start:0x02021054 end:0x02021060
 
-src/calls/func_02021060.c:
+src/calls/Camera_Init.c:
     complete
     .text       start:0x02021060 end:0x0202119c
 
-src/calls/func_0202119c.c:
+src/calls/MTX_MakeRotXY43.c:
     complete
     .text       start:0x0202119c end:0x02021208
 
-src/calls/func_02021208.c:
+src/calls/Anim_InterpEased.c:
     complete
     .text       start:0x02021208 end:0x02021292
 
-src/calls/func_02021294.c:
+src/calls/Obj_PrepAltTransform.c:
     complete
     .text       start:0x02021294 end:0x0202136c
 
-src/calls/func_0202136c.c:
+src/calls/Anim_GetBlendFactor.c:
     complete
     .text       start:0x0202136c end:0x02021404
 
-src/calls/func_02021404.c:
+src/calls/ScaleAroundPivot.c:
     complete
     .text       start:0x02021404 end:0x02021416
 
-src/calls/func_02021418.c:
+src/calls/Obj_StepMotionTransform.c:
     complete
     .text       start:0x02021418 end:0x020217d2
 
-src/calls/func_020217d4.c:
+src/calls/Game_UpdateObjectMotion.c:
     complete
     .text       start:0x020217d4 end:0x02021884
 
@@ -4772,23 +4772,23 @@ src/calls/func_02021884.c:
     complete
     .text       start:0x02021884 end:0x020218a4
 
-src/calls/func_020218a4.c:
+src/calls/ScriptVm_ResolveOperand.c:
     complete
     .text       start:0x020218a4 end:0x02021948
 
-src/calls/func_02021948.c:
+src/calls/ByteCode_ResolveOperand.c:
     complete
     .text       start:0x02021948 end:0x0202197e
 
-src/calls/func_02021980.c:
+src/calls/ScriptVm_ReadOperandInt.c:
     complete
     .text       start:0x02021980 end:0x02021994
 
-src/calls/func_02021994.c:
+src/calls/ScriptVm_ReadOperandFx32.c:
     complete
     .text       start:0x02021994 end:0x020219b2
 
-src/auto/func_020219b4.c:
+src/auto/Slot48_StoreAtCurrentIndex.c:
     complete
     .text       start:0x020219b4 end:0x020219c4
 
@@ -4796,279 +4796,279 @@ src/auto/func_020219c4.c:
     complete
     .text       start:0x020219c4 end:0x020219dc
 
-src/auto/func_020219dc.c:
+src/auto/GetField4UnlessState2.c:
     complete
     .text       start:0x020219dc end:0x020219ea
 
-src/calls/func_020219ec.c:
+src/calls/Script_EvalExpr.c:
     complete
     .text       start:0x020219ec end:0x02021e82
 
-src/calls/func_02021e84.c:
+src/calls/Game_ActionAssign.c:
     complete
     .text       start:0x02021e84 end:0x02021ed6
 
-src/auto/func_02021ed8.c:
+src/auto/ScriptCmd_SetElemOffset.c:
     complete
     .text       start:0x02021ed8 end:0x02021ef2
 
-src/calls/func_02021ef4.c:
+src/calls/Game_PushObjectSlot.c:
     complete
     .text       start:0x02021ef4 end:0x02021f7c
 
-src/calls/func_02021f7c.c:
+src/calls/Game_ActionLoadArenaResource.c:
     complete
     .text       start:0x02021f7c end:0x020220dc
 
-src/calls/func_020220dc.c:
+src/calls/Game_ActionInitObject.c:
     complete
     .text       start:0x020220dc end:0x02022148
 
-src/auto/func_02022148.c:
+src/auto/Game_ActionReturn4.c:
     complete
     .text       start:0x02022148 end:0x0202214c
 
-src/auto/func_0202214c.c:
+src/auto/ResetRequestRecord.c:
     complete
     .text       start:0x0202214c end:0x0202216a
 
-src/calls/func_0202216c.c:
+src/calls/CommitRecordCursor.c:
     complete
     .text       start:0x0202216c end:0x0202219e
 
-src/auto/func_020221a0.c:
+src/auto/ScriptVm_RunCallback.c:
     complete
     .text       start:0x020221a0 end:0x020221de
 
-src/auto/func_020221e0.c:
+src/auto/IsDerefZero.c:
     complete
     .text       start:0x020221e0 end:0x020221ee
 
-src/auto/func_020221f0.c:
+src/auto/ConstReturn0.c:
     complete
     .text       start:0x020221f0 end:0x020221f4
 
-src/auto/func_020221f4.c:
+src/auto/ConstReturn0_2.c:
     complete
     .text       start:0x020221f4 end:0x020221f8
 
-src/auto/func_020221f8.c:
+src/auto/Game_ActionSetBranchTarget.c:
     complete
     .text       start:0x020221f8 end:0x0202223c
 
-src/calls/func_0202223c.c:
+src/calls/ScriptCmd_StoreDoubled.c:
     complete
     .text       start:0x0202223c end:0x0202225a
 
-src/calls/func_0202225c.c:
+src/calls/DeferredAction_Gate.c:
     complete
     .text       start:0x0202225c end:0x02022290
 
-src/calls/func_02022290.c:
+src/calls/ScriptCmd_ArmPair.c:
     complete
     .text       start:0x02022290 end:0x020222bc
 
-src/calls/func_020222bc.c:
+src/calls/Game_ActionSetupNamedCall.c:
     complete
     .text       start:0x020222bc end:0x02022324
 
-src/calls/func_02022324.c:
+src/calls/CommitCachedByteIfChanged.c:
     complete
     .text       start:0x02022324 end:0x02022360
 
-src/calls/func_02022360.c:
+src/calls/ScriptCmd_RequestKind3.c:
     complete
     .text       start:0x02022360 end:0x0202237c
 
-src/calls/func_0202237c.c:
+src/calls/Game_ActionEnqueueCmdIfChanged.c:
     complete
     .text       start:0x0202237c end:0x020223dc
 
-src/calls/func_020223dc.c:
+src/calls/RegisterActorOrRetry.c:
     complete
     .text       start:0x020223dc end:0x02022410
 
-src/calls/func_02022410.c:
+src/calls/ScriptCmd_SetSelection.c:
     complete
     .text       start:0x02022410 end:0x02022434
 
-src/calls/func_02022434.c:
+src/calls/ScriptCmd_QueueSoundKind1.c:
     complete
     .text       start:0x02022434 end:0x02022446
 
-src/calls/func_02022448.c:
+src/calls/Script_StepAndIsIdle.c:
     complete
     .text       start:0x02022448 end:0x0202245e
 
-src/calls/func_02022460.c:
+src/calls/ScriptCmd_PlaySound.c:
     complete
     .text       start:0x02022460 end:0x02022482
 
-src/calls/func_02022484.c:
+src/calls/ScriptCmd_ForwardThreeToHandler.c:
     complete
     .text       start:0x02022484 end:0x020224b4
 
-src/calls/func_020224b4.c:
+src/calls/ScriptCmd_DispatchToHandler.c:
     complete
     .text       start:0x020224b4 end:0x020224cc
 
-src/calls/func_020224cc.c:
+src/calls/ScriptCmd_RequestResPair.c:
     complete
     .text       start:0x020224cc end:0x020224ec
 
-src/calls/func_020224ec.c:
+src/calls/ScriptCmd_StartStream.c:
     complete
     .text       start:0x020224ec end:0x0202250e
 
-src/calls/func_02022510.c:
+src/calls/QueryAndRegisterNode.c:
     complete
     .text       start:0x02022510 end:0x02022544
 
-src/calls/func_02022544.c:
+src/calls/ScriptCmd_FreeSlotEntry.c:
     complete
     .text       start:0x02022544 end:0x02022578
 
-src/calls/func_02022578.c:
+src/calls/Script_Cmd_PlayEntityCutsceneCamWait.c:
     complete
     .text       start:0x02022578 end:0x020225f0
 
-src/calls/func_020225f0.c:
+src/calls/Game_ActionTurnHandler.c:
     complete
     .text       start:0x020225f0 end:0x02022652
 
-src/calls/func_02022654.c:
+src/calls/Loader_WaitAndReleaseSlot.c:
     complete
     .text       start:0x02022654 end:0x0202266e
 
-src/calls/func_02022670.c:
+src/calls/Script_Cmd_PlayEntityCutsceneCam.c:
     complete
     .text       start:0x02022670 end:0x020226d2
 
-src/calls/func_020226d4.c:
+src/calls/DispatchTrackEntryIfReady.c:
     complete
     .text       start:0x020226d4 end:0x02022708
 
-src/calls/func_02022708.c:
+src/calls/Boot3DSubsystem.c:
     complete
     .text       start:0x02022708 end:0x020227c0
 
-src/calls/func_020227c0.c:
+src/calls/Shutdown3DSubsystem.c:
     complete
     .text       start:0x020227c0 end:0x0202281c
 
-src/calls/func_0202281c.c:
+src/calls/PauseMenu_PollInput.c:
     complete
     .text       start:0x0202281c end:0x020229c4
 
-src/calls/func_020229c4.c:
+src/calls/Game_EnterPauseScene.c:
     complete
     .text       start:0x020229c4 end:0x02022af4
 
-src/calls/func_02022af4.c:
+src/calls/PauseMenu_Open.c:
     complete
     .text       start:0x02022af4 end:0x02022cb0
 
-src/calls/func_02022cb0.c:
+src/calls/TabPanel_HandleUpDown.c:
     complete
     .text       start:0x02022cb0 end:0x02022d7c
 
-src/calls/func_02022d7c.c:
+src/calls/PauseMenu_Frame.c:
     complete
     .text       start:0x02022d7c end:0x02022eb0
 
-src/calls/func_02022eb0.c:
+src/calls/PauseMenu_ConfirmFrame.c:
     complete
     .text       start:0x02022eb0 end:0x02022fe4
 
-src/calls/func_02022fe4.c:
+src/calls/PauseMenu_OpenIfAllowed.c:
     complete
     .text       start:0x02022fe4 end:0x02023008
 
-src/calls/func_02023008.c:
+src/calls/Callbacks_ClearByteAndRun2.c:
     complete
     .text       start:0x02023008 end:0x02023018
 
-src/calls/func_02023018.c:
+src/calls/Scene_Leave.c:
     complete
     .text       start:0x02023018 end:0x020230e8
 
-src/calls/func_020230e8.c:
+src/calls/ForwardQuery64Result.c:
     complete
     .text       start:0x020230e8 end:0x02023100
 
-src/calls/func_02023100.c:
+src/calls/Gfx_RestoreAfterPause.c:
     complete
     .text       start:0x02023100 end:0x02023198
 
-src/calls/func_02023198.c:
+src/calls/Pause_LoadResources.c:
     complete
     .text       start:0x02023198 end:0x02023204
 
-src/calls/func_02023204.c:
+src/calls/SubObject_SetupDrawsForMode.c:
     complete
     .text       start:0x02023204 end:0x020232d8
 
-src/calls/func_020232d8.c:
+src/calls/SubObject_SetupDraws.c:
     complete
     .text       start:0x020232d8 end:0x02023340
 
-src/calls/func_02023340.c:
+src/calls/SubObject_SetDrawParams.c:
     complete
     .text       start:0x02023340 end:0x02023364
 
-src/calls/func_02023364.c:
+src/calls/Input_DebounceSlot.c:
     complete
     .text       start:0x02023364 end:0x020233b0
 
-src/calls/func_020233b0.c:
+src/calls/SubObject_DispatchDraw.c:
     complete
     .text       start:0x020233b0 end:0x020233fe
 
-src/calls/func_02023400.c:
+src/calls/SubObject_NudgeAndRedraw.c:
     complete
     .text       start:0x02023400 end:0x02023448
 
-src/calls/func_02023448.c:
+src/calls/Gfx_EnqueueSurface.c:
     complete
     .text       start:0x02023448 end:0x0202346e
 
-src/calls/func_02023470.c:
+src/calls/GameConfig_Load.c:
     complete
     .text       start:0x02023470 end:0x02023480
 
-src/calls/func_02023480.c:
+src/calls/SetGlobalShort2To1.c:
     complete
     .text       start:0x02023480 end:0x0202348c
 
-src/calls/func_0202348c.c:
+src/calls/PollAndLatchRequest.c:
     complete
     .text       start:0x0202348c end:0x020234e8
 
-src/calls/func_020234e8.c:
+src/calls/LatchPendingRequestOnce.c:
     complete
     .text       start:0x020234e8 end:0x02023534
 
-src/calls/func_02023534.c:
+src/calls/LoadGlobalPtr4FieldDcOrZero.c:
     complete
     .text       start:0x02023534 end:0x0202354c
 
-src/calls/func_0202354c.c:
+src/calls/StoreToGlobalPtr4FieldDcIfSet.c:
     complete
     .text       start:0x0202354c end:0x02023560
 
-src/calls/func_02023560.c:
+src/calls/StoreToGlobalPtr4FieldE4IfSet.c:
     complete
     .text       start:0x02023560 end:0x02023574
 
-src/calls/func_02023574.c:
+src/calls/ClearGlobalPtrE8AndHead.c:
     complete
     .text       start:0x02023574 end:0x02023588
 
-src/calls/func_02023588.c:
+src/calls/GameState_IsFlagSet.c:
     complete
     .text       start:0x02023588 end:0x020235a8
 
-src/calls/func_020235a8.c:
+src/calls/GameState_SetFlag.c:
     complete
     .text       start:0x020235a8 end:0x020235bc
 
@@ -5076,15 +5076,15 @@ src/calls/func_020235bc.c:
     complete
     .text       start:0x020235bc end:0x020235d0
 
-src/calls/func_020235d0.c:
+src/calls/GameState_GetField.c:
     complete
     .text       start:0x020235d0 end:0x020235e8
 
-src/calls/func_020235e8.c:
+src/calls/GameState_SetField.c:
     complete
     .text       start:0x020235e8 end:0x02023604
 
-src/calls/func_02023604.c:
+src/calls/HeapState_Recreate.c:
     complete
     .text       start:0x02023604 end:0x0202362c
 
@@ -5108,11 +5108,11 @@ libs/nitro/nns/calls/NNSi_FndFreeFromDefaultHeap.c:
     complete
     .text       start:0x020236ac end:0x020236cc
 
-src/calls/func_020236cc.c:
+src/calls/AllocFromExpHeapWrapper.c:
     complete
     .text       start:0x020236cc end:0x020236f8
 
-src/calls/func_020236f8.c:
+src/calls/ExpHeap_AllocOrDefault.c:
     complete
     .text       start:0x020236f8 end:0x02023728
 
@@ -5128,35 +5128,35 @@ src/calls/func_02023768.c:
     complete
     .text       start:0x02023768 end:0x02023778
 
-src/calls/func_02023778.c:
+src/calls/Obj_LinkNode.c:
     complete
     .text       start:0x02023778 end:0x02023890
 
-src/calls/func_02023890.c:
+src/calls/Obj_UnlinkNode.c:
     complete
     .text       start:0x02023890 end:0x0202390c
 
-src/calls/func_0202390c.c:
+src/calls/Obj_InitSystem.c:
     complete
     .text       start:0x0202390c end:0x02023930
 
-src/calls/func_02023930.c:
+src/calls/InstantiateClass.c:
     complete
     .text       start:0x02023930 end:0x02023960
 
-src/calls/func_02023960.c:
+src/calls/RunClassConstructor.c:
     complete
     .text       start:0x02023960 end:0x02023a3c
 
-src/auto/func_02023a3c.c:
+src/auto/Word_Set.c:
     complete
     .text       start:0x02023a3c end:0x02023a44
 
-src/auto/func_02023a44.c:
+src/auto/Obj_SetField14.c:
     complete
     .text       start:0x02023a44 end:0x02023a4c
 
-src/calls/func_02023a4c.c:
+src/calls/Obj_Destroy.c:
     complete
     .text       start:0x02023a4c end:0x02023ad0
 
@@ -5164,11 +5164,11 @@ src/calls/func_02023ad0.c:
     complete
     .text       start:0x02023ad0 end:0x02023adc
 
-src/calls/func_02023adc.c:
+src/calls/Obj_UpdateAll.c:
     complete
     .text       start:0x02023adc end:0x02023bbc
 
-src/calls/func_02023bbc.c:
+src/calls/Instance_ReleaseIfDead.c:
     complete
     .text       start:0x02023bbc end:0x02023bf0
 
@@ -5180,15 +5180,15 @@ libs/nitro/nns/calls/NNSi_FndGetCurrentRootHeap.c:
     complete
     .text       start:0x02023c00 end:0x02023c14
 
-src/calls/func_02023c14.c:
+src/calls/StoreToGlobalPtr4Field28.c:
     complete
     .text       start:0x02023c14 end:0x02023c28
 
-src/auto/func_02023c28.c:
+src/auto/Obj_GetWord28.c:
     complete
     .text       start:0x02023c28 end:0x02023c30
 
-src/calls/func_02023c30.c:
+src/calls/SetGameMode.c:
     complete
     .text       start:0x02023c30 end:0x02023c40
 
@@ -5200,47 +5200,47 @@ src/calls/func_02023c50.c:
     complete
     .text       start:0x02023c50 end:0x02023c60
 
-src/auto/func_02023c60.c:
+src/auto/Projection_LoadDefaults.c:
     complete
     .text       start:0x02023c60 end:0x02023cc0
 
-src/calls/func_02023cc0.c:
+src/calls/Camera_CommitMatrices.c:
     complete
     .text       start:0x02023cc0 end:0x02023d70
 
-src/calls/func_02023d70.c:
+src/calls/Camera_CommitMatricesEx.c:
     complete
     .text       start:0x02023d70 end:0x02023e34
 
-src/auto/func_02023e34.c:
+src/auto/Rng_Seed.c:
     complete
     .text       start:0x02023e34 end:0x02023e80
 
-src/auto/func_02023e80.c:
+src/auto/Rand16NextScaled.c:
     complete
     .text       start:0x02023e80 end:0x02023eb4
 
-src/calls/func_02023eb4.c:
+src/calls/RandNextScaled.c:
     complete
     .text       start:0x02023eb4 end:0x02023f08
 
-src/auto/func_02023f08.c:
+src/auto/RandNext.c:
     complete
     .text       start:0x02023f08 end:0x02023f58
 
-src/calls/func_02023f58.c:
+src/calls/InputState_Init.c:
     complete
     .text       start:0x02023f58 end:0x02023f78
 
-src/calls/func_02023f78.c:
+src/calls/Pad_Sample.c:
     complete
     .text       start:0x02023f78 end:0x02024030
 
-src/auto/func_02024030.c:
+src/auto/PackDisplayReg0x400100e.c:
     complete
     .text       start:0x02024030 end:0x0202405c
 
-src/auto/func_0202405c.c:
+src/auto/PackDisplayReg0x400100c.c:
     complete
     .text       start:0x0202405c end:0x02024088
 
@@ -5252,11 +5252,11 @@ src/calls/func_020240bc.c:
     complete
     .text       start:0x020240bc end:0x020240f0
 
-src/calls/func_020240f0.c:
+src/calls/PackDisplayReg0x400000e.c:
     complete
     .text       start:0x020240f0 end:0x0202411c
 
-src/calls/func_0202411c.c:
+src/calls/PackDisplayReg0x400000c.c:
     complete
     .text       start:0x0202411c end:0x02024148
 
@@ -5268,123 +5268,123 @@ src/calls/func_0202417c.c:
     complete
     .text       start:0x0202417c end:0x020241b0
 
-src/auto/func_020241b0.c:
+src/auto/LookupPairKey.c:
     complete
     .text       start:0x020241b0 end:0x020241f8
 
-src/calls/func_020241f8.c:
+src/calls/DispMode_LookupWordAndDispatch.c:
     complete
     .text       start:0x020241f8 end:0x0202423c
 
-src/calls/func_0202423c.c:
+src/calls/SetSubEngineGraphicsModeFromTable.c:
     complete
     .text       start:0x0202423c end:0x02024264
 
-src/calls/func_02024264.c:
+src/calls/Gfx_EnqueueBgCharUpload.c:
     complete
     .text       start:0x02024264 end:0x0202429c
 
-src/calls/func_0202429c.c:
+src/calls/Gfx_EnqueueBgScreenUpload.c:
     complete
     .text       start:0x0202429c end:0x020242cc
 
-src/calls/func_020242cc.c:
+src/calls/remapIndexIfHwFlagSet.c:
     complete
     .text       start:0x020242cc end:0x020242f8
 
-src/calls/func_020242f8.c:
+src/calls/Bg_SetMainBg0Control.c:
     complete
     .text       start:0x020242f8 end:0x02024368
 
-src/calls/func_02024368.c:
+src/calls/Bg_SetMainBg1Control.c:
     complete
     .text       start:0x02024368 end:0x020243f4
 
-src/calls/func_020243f4.c:
+src/calls/Bg_SetMainBg2TextControl.c:
     complete
     .text       start:0x020243f4 end:0x0202443c
 
-src/calls/func_0202443c.c:
+src/calls/Bg_SetMainBg3TextControl.c:
     complete
     .text       start:0x0202443c end:0x02024484
 
-src/calls/func_02024484.c:
+src/calls/Bg_SetMainBg2AffineControl.c:
     complete
     .text       start:0x02024484 end:0x020244d4
 
-src/calls/func_020244d4.c:
+src/calls/Bg_SetMainBg3AffineControl.c:
     complete
     .text       start:0x020244d4 end:0x02024524
 
-src/calls/func_02024524.c:
+src/calls/Bg_SetMainBg2ExtControl.c:
     complete
     .text       start:0x02024524 end:0x02024574
 
-src/calls/func_02024574.c:
+src/calls/Bg_SetMainBg3ExtControl.c:
     complete
     .text       start:0x02024574 end:0x020245c4
 
-src/calls/func_020245c4.c:
+src/calls/Bg_SetSubBg0Control.c:
     complete
     .text       start:0x020245c4 end:0x0202461c
 
-src/calls/func_0202461c.c:
+src/calls/Bg_SetSubBg1Control.c:
     complete
     .text       start:0x0202461c end:0x02024674
 
-src/calls/func_02024674.c:
+src/calls/Bg_SetSubBg2TextControl.c:
     complete
     .text       start:0x02024674 end:0x020246bc
 
-src/calls/func_020246bc.c:
+src/calls/Bg_SetSubBg3TextControl.c:
     complete
     .text       start:0x020246bc end:0x02024704
 
-src/calls/func_02024704.c:
+src/calls/Bg_SetSubBg2AffineControl.c:
     complete
     .text       start:0x02024704 end:0x02024754
 
-src/calls/func_02024754.c:
+src/calls/Bg_SetSubBg3AffineControl.c:
     complete
     .text       start:0x02024754 end:0x020247a4
 
-src/calls/func_020247a4.c:
+src/calls/Bg_SetSubBg2ExtControl.c:
     complete
     .text       start:0x020247a4 end:0x020247f4
 
-src/calls/func_020247f4.c:
+src/calls/Bg_SetSubBg3ExtControl.c:
     complete
     .text       start:0x020247f4 end:0x02024844
 
-src/calls/func_02024844.c:
+src/calls/Cmd_DispatchWithFlag.c:
     complete
     .text       start:0x02024844 end:0x0202489c
 
-src/calls/func_0202489c.c:
+src/calls/Gfx_DispatchByPairKeyA.c:
     complete
     .text       start:0x0202489c end:0x020248e0
 
-src/calls/func_020248e0.c:
+src/calls/Gfx_DispatchByPairKeyB.c:
     complete
     .text       start:0x020248e0 end:0x02024924
 
-src/calls/func_02024924.c:
+src/calls/Gfx_EnqueueBgUpload.c:
     complete
     .text       start:0x02024924 end:0x02024950
 
-src/calls/func_02024950.c:
+src/calls/GetBGScreenBaseForLayer.c:
     complete
     .text       start:0x02024950 end:0x0202497c
 
-src/calls/func_0202497c.c:
+src/calls/Callbacks_RunTableEntry.c:
     complete
     .text       start:0x0202497c end:0x020249b0
 
-src/calls/func_020249b0.c:
+src/calls/Callbacks_RunTableEntryB.c:
     complete
     .text       start:0x020249b0 end:0x020249e4
 
-src/calls/func_020249e4.c:
+src/calls/Callbacks_RunTableEntryC.c:
     complete
     .text       start:0x020249e4 end:0x02024a18
 
@@ -5392,51 +5392,51 @@ src/calls/func_02024a18.c:
     complete
     .text       start:0x02024a18 end:0x02024a28
 
-src/auto/func_02024a28.c:
+src/auto/Gfx_BgLayerCommand.c:
     complete
     .text       start:0x02024a28 end:0x02024a6c
 
-src/calls/func_02024a6c.c:
+src/calls/Bg_LoadPaletteForScreen.c:
     complete
     .text       start:0x02024a6c end:0x02024ae0
 
-src/calls/func_02024ae0.c:
+src/calls/Gfx_EnqueueTableCmdAt14.c:
     complete
     .text       start:0x02024ae0 end:0x02024b04
 
-src/calls/func_02024b04.c:
+src/calls/Gfx_EnqueueTableCmdAtC.c:
     complete
     .text       start:0x02024b04 end:0x02024b28
 
-src/calls/func_02024b28.c:
+src/calls/DispatchThreeOptionalOpsB.c:
     complete
     .text       start:0x02024b28 end:0x02024ba4
 
-src/calls/func_02024ba4.c:
+src/calls/DispatchByPartType.c:
     complete
     .text       start:0x02024ba4 end:0x02024c1c
 
-src/calls/func_02024c1c.c:
+src/calls/AllocAndRegisterOrFree.c:
     complete
     .text       start:0x02024c1c end:0x02024c58
 
-src/calls/func_02024c58.c:
+src/calls/AllocAndRegisterOrFree2.c:
     complete
     .text       start:0x02024c58 end:0x02024c94
 
-src/calls/func_02024c94.c:
+src/calls/Res_LoadSpriteSet.c:
     complete
     .text       start:0x02024c94 end:0x02024d68
 
-src/calls/func_02024d68.c:
+src/calls/Touch_StartAutoSampling.c:
     complete
     .text       start:0x02024d68 end:0x02024da4
 
-src/calls/func_02024da4.c:
+src/calls/Touch_GetRecentSamples.c:
     complete
     .text       start:0x02024da4 end:0x02024e34
 
-src/calls/func_02024e34.c:
+src/calls/Record_EnsureAllocatedAndSetId.c:
     complete
     .text       start:0x02024e34 end:0x02024e5c
 
@@ -5444,391 +5444,391 @@ src/calls/func_02024e5c.c:
     complete
     .text       start:0x02024e5c end:0x02024e6c
 
-src/calls/func_02024e6c.c:
+src/calls/Msg_BuildLangPath.c:
     complete
     .text       start:0x02024e6c end:0x02024ee8
 
-src/calls/func_02024ee8.c:
+src/calls/Msg_OpenContainerAndReadHeader.c:
     complete
     .text       start:0x02024ee8 end:0x02024fd4
 
-src/calls/func_02024fd4.c:
+src/calls/ZeroHalfThenFree.c:
     complete
     .text       start:0x02024fd4 end:0x02024fe8
 
-src/calls/func_02024fe8.c:
+src/calls/MsgArchive_FindEntryByName.c:
     complete
     .text       start:0x02024fe8 end:0x02025074
 
-src/auto/func_02025074.c:
+src/auto/Archive_SubfileIsCompressed.c:
     complete
     .text       start:0x02025074 end:0x020250bc
 
-src/calls/func_020250bc.c:
+src/calls/Archive_OpenSubfileByHandle.c:
     complete
     .text       start:0x020250bc end:0x02025138
 
-src/calls/func_02025138.c:
+src/calls/G3dRes_DefaultSetup.c:
     complete
     .text       start:0x02025138 end:0x02025364
 
-src/calls/func_02025364.c:
+src/calls/Tex_LoadVram.c:
     complete
     .text       start:0x02025364 end:0x02025420
 
-src/calls/func_02025420.c:
+src/calls/Gfx_UploadBlock.c:
     complete
     .text       start:0x02025420 end:0x02025464
 
-src/calls/func_02025464.c:
+src/calls/Obj_RelocateSections.c:
     complete
     .text       start:0x02025464 end:0x0202552c
 
-src/calls/func_0202552c.c:
+src/calls/ResGroup_Release.c:
     complete
     .text       start:0x0202552c end:0x020255bc
 
-src/auto/func_020255bc.c:
+src/auto/Obj_GetIndirectWord.c:
     complete
     .text       start:0x020255bc end:0x020255d4
 
-src/auto/func_020255d4.c:
+src/auto/Archive_GetMember.c:
     complete
     .text       start:0x020255d4 end:0x020255f0
 
-src/calls/func_020255f0.c:
+src/calls/ForwardType7RecordSpan.c:
     complete
     .text       start:0x020255f0 end:0x02025640
 
-src/auto/func_02025640.c:
+src/auto/BitArray_SetBit.c:
     complete
     .text       start:0x02025640 end:0x02025668
 
-src/auto/func_02025668.c:
+src/auto/BitArray_ClearBit.c:
     complete
     .text       start:0x02025668 end:0x02025694
 
-src/auto/func_02025694.c:
+src/auto/BitArray_TestBit.c:
     complete
     .text       start:0x02025694 end:0x020256b8
 
-src/auto/func_020256b8.c:
+src/auto/BitArray_GetField.c:
     complete
     .text       start:0x020256b8 end:0x02025754
 
-src/auto/func_02025754.c:
+src/auto/BitArray_SetField.c:
     complete
     .text       start:0x02025754 end:0x02025800
 
-src/calls/func_02025800.c:
+src/calls/PrintfDest_PutChar.c:
     complete
     .text       start:0x02025800 end:0x02025818
 
-src/calls/func_02025818.c:
+src/calls/PrintfDestWide_PutChar.c:
     complete
     .text       start:0x02025818 end:0x02025830
 
-src/auto/func_02025830.c:
+src/auto/PrintfDest_FillChar.c:
     complete
     .text       start:0x02025830 end:0x0202585e
 
-src/auto/func_02025860.c:
+src/auto/PrintfDestWide_FillChar.c:
     complete
     .text       start:0x02025860 end:0x02025894
 
-src/auto/func_02025894.c:
+src/auto/PrintfDest_PutString.c:
     complete
     .text       start:0x02025894 end:0x020258c4
 
-src/auto/func_020258c4.c:
+src/auto/PrintfDestWide_PutString.c:
     complete
     .text       start:0x020258c4 end:0x020258fc
 
-src/calls/func_020258fc.c:
+src/calls/Fx64_FormatText.c:
     complete
     .text       start:0x020258fc end:0x02025a50
 
-src/calls/func_02025a50.c:
+src/calls/Fx64_FormatWide.c:
     complete
     .text       start:0x02025a50 end:0x02025aaa
 
-src/calls/func_02025aac.c:
+src/calls/Text_VSNPrintf_2.c:
     complete
     .text       start:0x02025aac end:0x0202629e
 
-src/calls/func_020262a0.c:
+src/calls/Text_FormatUtf16.c:
     complete
     .text       start:0x020262a0 end:0x020262ba
 
-src/calls/func_020262bc.c:
+src/calls/Text_VSNPrintfWide.c:
     complete
     .text       start:0x020262bc end:0x02026a44
 
-src/calls/func_02026a44.c:
+src/calls/NNSi_G3dGetJntTransFromNode.c:
     complete
     .text       start:0x02026a44 end:0x02026adc
 
-src/calls/func_02026adc.c:
+src/calls/NNSi_G3dGetJntScaleFromNode.c:
     complete
     .text       start:0x02026adc end:0x02026b70
 
-libs/nns/g3d/calls/func_02026b70.c:
+libs/nns/g3d/calls/NNSi_G3dGetMdlRot.c:
     complete
     .text       start:0x02026b70 end:0x02026cd0
 
-src/auto/func_02026cd0.c:
+src/auto/G3dJnt_GetTransData.c:
     complete
     .text       start:0x02026cd0 end:0x02026e28
 
-src/calls/func_02026e28.c:
+src/calls/G3dJnt_GetTransDataEx.c:
     complete
     .text       start:0x02026e28 end:0x02026f84
 
-src/auto/func_02026f84.c:
+src/auto/G3dJnt_GetScaleData.c:
     complete
     .text       start:0x02026f84 end:0x0202716c
 
-src/calls/func_0202716c.c:
+src/calls/G3dJnt_GetScaleDataEx.c:
     complete
     .text       start:0x0202716c end:0x02027300
 
-src/calls/func_02027300.c:
+src/calls/G3dJnt_GetRotDataEx.c:
     complete
     .text       start:0x02027300 end:0x02027668
 
-libs/nns/g3d/calls/func_02027668.c:
+libs/nns/g3d/calls/getJntSRTAnmResult__2.c:
     complete
     .text       start:0x02027668 end:0x02027908
 
-src/auto/func_02027908.c:
+src/auto/AccumulateVec3Scaled.c:
     complete
     .text       start:0x02027908 end:0x02027978
 
-libs/nns/g3d/auto/func_02027978.c:
+libs/nns/g3d/auto/updateHintVec__2.c:
     complete
     .text       start:0x02027978 end:0x020279e0
 
-src/calls/func_020279e0.c:
+src/calls/Obj_InitChannelsAndRun.c:
     complete
     .text       start:0x020279e0 end:0x02027ac8
 
-libs/nns/g3d/auto/func_02027ac8.c:
+libs/nns/g3d/auto/Sbc_Nop.c:
     complete
     .text       start:0x02027ac8 end:0x02027af0
 
-libs/nns/g3d/auto/func_02027af0.c:
+libs/nns/g3d/auto/Sbc_Ret.c:
     complete
     .text       start:0x02027af0 end:0x02027b18
 
-libs/nns/g3d/calls/func_02027b18.c:
+libs/nns/g3d/calls/NNSi_G3dFuncSbc_BB.c:
     complete
     .text       start:0x02027b18 end:0x02027d7c
 
-libs/nns/g3d/calls/func_02027d7c.c:
+libs/nns/g3d/calls/NNSi_G3dFuncSbc_BBY.c:
     complete
     .text       start:0x02027d7c end:0x0202803c
 
-libs/nns/g3d/calls/func_0202803c.c:
+libs/nns/g3d/calls/Sbc_CallDl.c:
     complete
     .text       start:0x0202803c end:0x020280a4
 
-libs/nns/g3d/calls/func_020280a4.c:
+libs/nns/g3d/calls/NNSi_G3dFuncSbc_ENVMAP.c:
     complete
     .text       start:0x020280a4 end:0x02028314
 
-libs/nns/g3d/calls/func_02028314.c:
+libs/nns/g3d/calls/NNSi_G3dFuncSbc_PRJMAP.c:
     complete
     .text       start:0x02028314 end:0x020285f0
 
-src/calls/func_020285f0.c:
+src/calls/PublishArchiveVTableAndSeedRng.c:
     complete
     .text       start:0x020285f0 end:0x02028670
 
-src/calls/func_02028670.c:
+src/calls/Tex0_GetTexPlttParams.c:
     complete
     .text       start:0x02028670 end:0x02028724
 
-src/auto/func_02028724.c:
+src/auto/Word_ClearReturn1.c:
     complete
     .text       start:0x02028724 end:0x0202872c
 
-src/auto/func_0202872c.c:
+src/auto/ListPushFront.c:
     complete
     .text       start:0x0202872c end:0x02028740
 
-src/auto/func_02028740.c:
+src/auto/DList_Unlink.c:
     complete
     .text       start:0x02028740 end:0x02028766
 
-src/calls/func_02028768.c:
+src/calls/G3d_ResetGlobalState.c:
     complete
     .text       start:0x02028768 end:0x020287e8
 
-src/calls/func_020287e8.c:
+src/calls/Billboard_DrawList.c:
     complete
     .text       start:0x020287e8 end:0x02028924
 
-src/calls/func_02028924.c:
+src/calls/RoomPoly_BuildPlanes.c:
     complete
     .text       start:0x02028924 end:0x02028a64
 
-src/calls/func_02028a64.c:
+src/calls/RoomPoly_BuildPlanesVertical.c:
     complete
     .text       start:0x02028a64 end:0x02028bb4
 
-src/calls/func_02028bb4.c:
+src/calls/Coll_ResolveModelBlobPointers.c:
     complete
     .text       start:0x02028bb4 end:0x02028d6e
 
-src/auto/func_02028d70.c:
+src/auto/SubResourceTable_FreeHookNoOp.c:
     complete
     .text       start:0x02028d70 end:0x02028d74
 
-src/auto/func_02028d74.c:
+src/auto/VecFx32FromVecS16.c:
     complete
     .text       start:0x02028d74 end:0x02028d90
 
-src/calls/func_02028d90.c:
+src/calls/FindEntryByNameNoCase.c:
     complete
     .text       start:0x02028d90 end:0x02028df0
 
-src/calls/func_02028df0.c:
+src/calls/FindEntryByExactName.c:
     complete
     .text       start:0x02028df0 end:0x02028e4c
 
-src/auto/func_02028e4c.c:
+src/auto/RoomMesh_ForEachPrimOnPoint.c:
     complete
     .text       start:0x02028e4c end:0x02028ff4
 
-src/calls/func_02028ff4.c:
+src/calls/QuadTree_Insert.c:
     complete
     .text       start:0x02028ff4 end:0x02029158
 
-src/auto/func_02029158.c:
+src/auto/Node_UnlinkAndClearRefs.c:
     complete
     .text       start:0x02029158 end:0x0202922c
 
-src/calls/func_0202922c.c:
+src/calls/QuadTree_InsertObject.c:
     complete
     .text       start:0x0202922c end:0x02029250
 
-src/calls/func_02029250.c:
+src/calls/QuadTree_RemoveObject.c:
     complete
     .text       start:0x02029250 end:0x0202926c
 
-src/calls/func_0202926c.c:
+src/calls/Record_Init.c:
     complete
     .text       start:0x0202926c end:0x020292a4
 
-src/calls/func_020292a4.c:
+src/calls/InitNodeAndStoreParamsMode1.c:
     complete
     .text       start:0x020292a4 end:0x020292d8
 
-src/calls/func_020292d8.c:
+src/calls/Record_InitMode2.c:
     complete
     .text       start:0x020292d8 end:0x0202930c
 
-src/calls/func_0202930c.c:
+src/calls/InitNodeAndStoreParamsMode2.c:
     complete
     .text       start:0x0202930c end:0x02029344
 
-src/calls/func_02029344.c:
+src/calls/InitNodeAndStoreParams.c:
     complete
     .text       start:0x02029344 end:0x0202938c
 
-src/calls/func_0202938c.c:
+src/calls/IsField1cEqualData42940.c:
     complete
     .text       start:0x0202938c end:0x020293a8
 
-src/calls/func_020293a8.c:
+src/calls/IsField1cEqualData42910.c:
     complete
     .text       start:0x020293a8 end:0x020293c4
 
-src/calls/func_020293c4.c:
+src/calls/TeardownNodeIfBit0Set.c:
     complete
     .text       start:0x020293c4 end:0x020293fc
 
-src/calls/func_020293fc.c:
+src/calls/Node_SetPosAndNotify.c:
     complete
     .text       start:0x020293fc end:0x02029438
 
-src/auto/func_02029438.c:
+src/auto/Actor_SetBindingByte.c:
     complete
     .text       start:0x02029438 end:0x02029444
 
-src/auto/func_02029444.c:
+src/auto/Bounds_FromCenterRadius.c:
     complete
     .text       start:0x02029444 end:0x0202947c
 
-src/auto/func_0202947c.c:
+src/auto/Collider_Slot1NoOp_2.c:
     complete
     .text       start:0x0202947c end:0x02029480
 
-src/auto/func_02029480.c:
+src/auto/Collider_InitPlaneY.c:
     complete
     .text       start:0x02029480 end:0x020294b0
 
-src/calls/func_020294b0.c:
+src/calls/Collider_InitCylinderContact.c:
     complete
     .text       start:0x020294b0 end:0x0202951c
 
-src/auto/func_0202951c.c:
+src/auto/Collider_Slot1NoOp.c:
     complete
     .text       start:0x0202951c end:0x02029520
 
-src/calls/func_02029520.c:
+src/calls/Collider_InitSphereContact.c:
     complete
     .text       start:0x02029520 end:0x0202958c
 
-src/calls/func_0202958c.c:
+src/calls/RoomBox_UpdateBounds.c:
     complete
     .text       start:0x0202958c end:0x0202980c
 
-src/auto/func_0202980c.c:
+src/auto/RoomBox_Slot1NoOp.c:
     complete
     .text       start:0x0202980c end:0x02029810
 
-src/calls/func_02029810.c:
+src/calls/RoomBox_HitTop.c:
     complete
     .text       start:0x02029810 end:0x02029a7c
 
-src/calls/func_02029a7c.c:
+src/calls/RoomBox_HitSides.c:
     complete
     .text       start:0x02029a7c end:0x02029f3c
 
-src/calls/func_02029f3c.c:
+src/calls/RoomBox_WallPlane.c:
     complete
     .text       start:0x02029f3c end:0x0202a1b8
 
-src/auto/func_0202a1b8.c:
+src/auto/NitroFile_GetSection0Byte9.c:
     complete
     .text       start:0x0202a1b8 end:0x0202a208
 
-src/calls/func_0202a208.c:
+src/calls/ModelAnimSet_Bind.c:
     complete
     .text       start:0x0202a208 end:0x0202a388
 
-src/calls/func_0202a388.c:
+src/calls/Snd_RegisterSeqAndBind.c:
     complete
     .text       start:0x0202a388 end:0x0202a3cc
 
-src/calls/func_0202a3cc.c:
+src/calls/Resource_BindFileToSlot.c:
     complete
     .text       start:0x0202a3cc end:0x0202a440
 
-src/calls/func_0202a440.c:
+src/calls/FreeAllResourceTables.c:
     complete
     .text       start:0x0202a440 end:0x0202a4d0
 
-src/calls/func_0202a4d0.c:
+src/calls/ModelInst_Init.c:
     complete
     .text       start:0x0202a4d0 end:0x0202a634
 
-src/calls/func_0202a634.c:
+src/calls/RegisterSeqAndInit.c:
     complete
     .text       start:0x0202a634 end:0x0202a66c
 
-src/calls/func_0202a66c.c:
+src/calls/StoreField74ThenForward.c:
     complete
     .text       start:0x0202a66c end:0x0202a684
 
@@ -5836,75 +5836,75 @@ src/calls/func_0202a684.c:
     complete
     .text       start:0x0202a684 end:0x0202a6a0
 
-src/calls/func_0202a6a0.c:
+src/calls/RegisterSeqAndInitField74.c:
     complete
     .text       start:0x0202a6a0 end:0x0202a6d8
 
-src/auto/func_0202a6d8.c:
+src/auto/SceneNode_Detach.c:
     complete
     .text       start:0x0202a6d8 end:0x0202a75c
 
-src/calls/func_0202a75c.c:
+src/calls/Anim_StepCrossFade.c:
     complete
     .text       start:0x0202a75c end:0x0202a7dc
 
-src/calls/func_0202a7dc.c:
+src/calls/ReleaseField74AndCleanup.c:
     complete
     .text       start:0x0202a7dc end:0x0202a818
 
-src/calls/func_0202a818.c:
+src/calls/Sequence_UpdateTracks.c:
     complete
     .text       start:0x0202a818 end:0x0202a928
 
-src/auto/func_0202a928.c:
+src/auto/BuildSlotMask.c:
     complete
     .text       start:0x0202a928 end:0x0202a984
 
-src/calls/func_0202a984.c:
+src/calls/Mtx33_ApplyFixedRotation.c:
     complete
     .text       start:0x0202a984 end:0x0202a9d0
 
-src/calls/func_0202a9d0.c:
+src/calls/SceneNode_JointCallback.c:
     complete
     .text       start:0x0202a9d0 end:0x0202aa9c
 
-src/calls/func_0202aa9c.c:
+src/calls/Scene_DrawNode.c:
     complete
     .text       start:0x0202aa9c end:0x0202accc
 
-src/calls/func_0202accc.c:
+src/calls/BindAnimTrack.c:
     complete
     .text       start:0x0202accc end:0x0202ad74
 
-src/calls/func_0202ad74.c:
+src/calls/Anim_BlendToTrack.c:
     complete
     .text       start:0x0202ad74 end:0x0202aee0
 
-src/calls/func_0202aee0.c:
+src/calls/Anim_GetFrame.c:
     complete
     .text       start:0x0202aee0 end:0x0202aef8
 
-src/calls/func_0202aef8.c:
+src/calls/Anim_GetLengthQ12.c:
     complete
     .text       start:0x0202aef8 end:0x0202af1c
 
-src/auto/func_0202af1c.c:
+src/auto/SceneNode_Enable.c:
     complete
     .text       start:0x0202af1c end:0x0202af2c
 
-src/auto/func_0202af2c.c:
+src/auto/SceneNode_Disable.c:
     complete
     .text       start:0x0202af2c end:0x0202af3c
 
-src/calls/func_0202af3c.c:
+src/calls/SceneNode_AttachToModelJoint.c:
     complete
     .text       start:0x0202af3c end:0x0202afc4
 
-src/auto/func_0202afc4.c:
+src/auto/SceneNode_SetFlag40.c:
     complete
     .text       start:0x0202afc4 end:0x0202afdc
 
-src/auto/func_0202afdc.c:
+src/auto/Widget_SetTagWord.c:
     complete
     .text       start:0x0202afdc end:0x0202afe8
 
@@ -5912,79 +5912,79 @@ src/calls/func_0202afe8.c:
     complete
     .text       start:0x0202afe8 end:0x0202aff4
 
-src/calls/func_0202aff4.c:
+src/calls/ModelGroup_Open.c:
     complete
     .text       start:0x0202aff4 end:0x0202b064
 
-src/calls/func_0202b064.c:
+src/calls/SubResourceTable_Free.c:
     complete
     .text       start:0x0202b064 end:0x0202b0a4
 
-src/calls/func_0202b0a4.c:
+src/calls/CollModel_FindEntry.c:
     complete
     .text       start:0x0202b0a4 end:0x0202b0b8
 
-src/calls/func_0202b0b8.c:
+src/calls/Collision_ProbeGround.c:
     complete
     .text       start:0x0202b0b8 end:0x0202b150
 
-src/calls/func_0202b150.c:
+src/calls/CollModel_GetEntryField14.c:
     complete
     .text       start:0x0202b150 end:0x0202b160
 
-src/auto/func_0202b160.c:
+src/auto/Obj_GetSub2c.c:
     complete
     .text       start:0x0202b160 end:0x0202b168
 
-src/auto/func_0202b168.c:
+src/auto/Obj_ResetSize30.c:
     complete
     .text       start:0x0202b168 end:0x0202b178
 
-src/calls/func_0202b178.c:
+src/calls/ClearFlag20InitChildAndSyncTransform.c:
     complete
     .text       start:0x0202b178 end:0x0202b1c0
 
-src/calls/func_0202b1c0.c:
+src/calls/Render_ReleaseItemOnce.c:
     complete
     .text       start:0x0202b1c0 end:0x0202b1ec
 
-src/calls/func_0202b1ec.c:
+src/calls/ClearFlag20InitChildAndSyncTransform2.c:
     complete
     .text       start:0x0202b1ec end:0x0202b234
 
-src/calls/func_0202b234.c:
+src/calls/Actor_ApplyMessage.c:
     complete
     .text       start:0x0202b234 end:0x0202b330
 
-src/calls/func_0202b330.c:
+src/calls/ModelObj_Place.c:
     complete
     .text       start:0x0202b330 end:0x0202b3b0
 
-src/calls/func_0202b3b0.c:
+src/calls/ClearFlag8HandleIfNot10.c:
     complete
     .text       start:0x0202b3b0 end:0x0202b3f0
 
-src/calls/func_0202b3f0.c:
+src/calls/DetachThenApplyNode.c:
     complete
     .text       start:0x0202b3f0 end:0x0202b450
 
-src/calls/func_0202b450.c:
+src/calls/Actor_SetVecAndSyncChild.c:
     complete
     .text       start:0x0202b450 end:0x0202b480
 
-src/calls/func_0202b480.c:
+src/calls/RenderList_PushEarly.c:
     complete
     .text       start:0x0202b480 end:0x0202b4b8
 
-src/calls/func_0202b4b8.c:
+src/calls/EntityMgr_SpliceIntoListA.c:
     complete
     .text       start:0x0202b4b8 end:0x0202b540
 
-src/calls/func_0202b540.c:
+src/calls/RenderList_PushMain.c:
     complete
     .text       start:0x0202b540 end:0x0202b570
 
-src/calls/func_0202b570.c:
+src/calls/EntityMgr_SpliceIntoListB.c:
     complete
     .text       start:0x0202b570 end:0x0202b5f8
 
@@ -5992,55 +5992,55 @@ src/calls/func_0202b5f8.c:
     complete
     .text       start:0x0202b5f8 end:0x0202b628
 
-src/calls/func_0202b628.c:
+src/calls/EntityMgr_UnlinkFromListA.c:
     complete
     .text       start:0x0202b628 end:0x0202b684
 
-src/calls/func_0202b684.c:
+src/calls/EntityMgr_UnlinkFromListB.c:
     complete
     .text       start:0x0202b684 end:0x0202b6e0
 
-src/calls/func_0202b6e0.c:
+src/calls/EntityMgr_UnlinkFromListC.c:
     complete
     .text       start:0x0202b6e0 end:0x0202b73c
 
-src/calls/func_0202b73c.c:
+src/calls/EntityManager_ResetSingleton.c:
     complete
     .text       start:0x0202b73c end:0x0202b788
 
-src/calls/func_0202b788.c:
+src/calls/EntityManager_ReleaseViews.c:
     complete
     .text       start:0x0202b788 end:0x0202b80c
 
-src/calls/func_0202b80c.c:
+src/calls/StoreToGlobalDblPtr.c:
     complete
     .text       start:0x0202b80c end:0x0202b820
 
-src/calls/func_0202b820.c:
+src/calls/Entity_LoadAndAttach.c:
     complete
     .text       start:0x0202b820 end:0x0202b850
 
-src/calls/func_0202b850.c:
+src/calls/Entity_ForwardToSlot.c:
     complete
     .text       start:0x0202b850 end:0x0202b87c
 
-src/calls/func_0202b87c.c:
+src/calls/Actor_ArmWithMessage.c:
     complete
     .text       start:0x0202b87c end:0x0202b914
 
-src/calls/func_0202b914.c:
+src/calls/TailForwardTrackEntry.c:
     complete
     .text       start:0x0202b914 end:0x0202b930
 
-src/calls/func_0202b930.c:
+src/calls/Entity_Register.c:
     complete
     .text       start:0x0202b930 end:0x0202b984
 
-src/calls/func_0202b984.c:
+src/calls/TailForwardTrackEntry_2.c:
     complete
     .text       start:0x0202b984 end:0x0202b9a0
 
-src/calls/func_0202b9a0.c:
+src/calls/Actor_StartMotion.c:
     complete
     .text       start:0x0202b9a0 end:0x0202b9f4
 
@@ -6048,7 +6048,7 @@ libs/nitro/snd/calls/SNDi_ProcessEntry.c:
     complete
     .text       start:0x0202b9f4 end:0x0202ba18
 
-src/calls/func_0202ba18.c:
+src/calls/Render_ReleaseNodeItem.c:
     complete
     .text       start:0x0202ba18 end:0x0202ba44
 
@@ -6060,19 +6060,19 @@ src/calls/func_0202ba68.c:
     complete
     .text       start:0x0202ba68 end:0x0202ba78
 
-src/calls/func_0202ba78.c:
+src/calls/Entity_SubmitRenderNode.c:
     complete
     .text       start:0x0202ba78 end:0x0202ba9c
 
-src/calls/func_0202ba9c.c:
+src/calls/Render_SubmitNode.c:
     complete
     .text       start:0x0202ba9c end:0x0202bb7c
 
-src/calls/func_0202bb7c.c:
+src/calls/EntityMgr_LinkChild.c:
     complete
     .text       start:0x0202bb7c end:0x0202bba4
 
-src/calls/func_0202bba4.c:
+src/calls/LinkChildNode.c:
     complete
     .text       start:0x0202bba4 end:0x0202bc0c
 
@@ -6080,39 +6080,39 @@ libs/nitro/snd/calls/SNDi_ProcessEntryAlt.c:
     complete
     .text       start:0x0202bc0c end:0x0202bc30
 
-src/calls/func_0202bc30.c:
+src/calls/ReleaseNodeResources.c:
     complete
     .text       start:0x0202bc30 end:0x0202bc90
 
-src/calls/func_0202bc90.c:
+src/calls/Render_DrawViewLists.c:
     complete
     .text       start:0x0202bc90 end:0x0202bda4
 
-src/calls/func_0202bda4.c:
+src/calls/Render_ApplyFactorToViews.c:
     complete
     .text       start:0x0202bda4 end:0x0202beb8
 
-src/calls/func_0202beb8.c:
+src/calls/Entity_SetVisible.c:
     complete
     .text       start:0x0202beb8 end:0x0202bedc
 
-src/auto/func_0202bedc.c:
+src/auto/Obj_SetFlagBit3.c:
     complete
     .text       start:0x0202bedc end:0x0202bef4
 
-src/calls/func_0202bef4.c:
+src/calls/EntityMgr_SetTransition.c:
     complete
     .text       start:0x0202bef4 end:0x0202bf18
 
-src/calls/func_0202bf18.c:
+src/calls/Obj_SetTransition.c:
     complete
     .text       start:0x0202bf18 end:0x0202bf84
 
-src/calls/func_0202bf84.c:
+src/calls/LoadArrayU8At0ce.c:
     complete
     .text       start:0x0202bf84 end:0x0202bfa0
 
-src/calls/func_0202bfa0.c:
+src/calls/GetTrackEntryBase.c:
     complete
     .text       start:0x0202bfa0 end:0x0202bfb8
 
@@ -6120,31 +6120,31 @@ src/calls/func_0202bfb8.c:
     complete
     .text       start:0x0202bfb8 end:0x0202bfcc
 
-src/calls/func_0202bfcc.c:
+src/calls/ArrayEntryPtrD0.c:
     complete
     .text       start:0x0202bfcc end:0x0202bfe8
 
-src/calls/func_0202bfe8.c:
+src/calls/SymbolGroup_FindName.c:
     complete
     .text       start:0x0202bfe8 end:0x0202c06c
 
-src/calls/func_0202c06c.c:
+src/calls/EntityMgr_AllocRecords.c:
     complete
     .text       start:0x0202c06c end:0x0202c0a4
 
-src/calls/func_0202c0a4.c:
+src/calls/EntityMgr_GetRecord.c:
     complete
     .text       start:0x0202c0a4 end:0x0202c0dc
 
-src/calls/func_0202c0dc.c:
+src/calls/StoreValueInNamedEntry.c:
     complete
     .text       start:0x0202c0dc end:0x0202c13c
 
-src/calls/func_0202c13c.c:
+src/calls/EntityMgr_AttachTrackData.c:
     complete
     .text       start:0x0202c13c end:0x0202c1d8
 
-src/calls/func_0202c1d8.c:
+src/calls/StoreToGlobalIndexedIfSet.c:
     complete
     .text       start:0x0202c1d8 end:0x0202c208
 
@@ -6160,47 +6160,47 @@ src/calls/func_0202c248.c:
     complete
     .text       start:0x0202c248 end:0x0202c268
 
-src/calls/func_0202c268.c:
+src/calls/EntityMgr_RunRayCast.c:
     complete
     .text       start:0x0202c268 end:0x0202c2ac
 
-src/calls/func_0202c2ac.c:
+src/calls/EntityMgr_RunSphereCast.c:
     complete
     .text       start:0x0202c2ac end:0x0202c2f8
 
-src/calls/func_0202c2f8.c:
+src/calls/EntityMgr_RunCastSimple.c:
     complete
     .text       start:0x0202c2f8 end:0x0202c33c
 
-src/calls/func_0202c33c.c:
+src/calls/EntityMgr_RunSphereCastSimple.c:
     complete
     .text       start:0x0202c33c end:0x0202c37c
 
-src/calls/func_0202c37c.c:
+src/calls/Actor_GetRecord.c:
     complete
     .text       start:0x0202c37c end:0x0202c3c4
 
-src/calls/func_0202c3c4.c:
+src/calls/EntityMgr_FindCollEntry.c:
     complete
     .text       start:0x0202c3c4 end:0x0202c3e4
 
-src/calls/func_0202c3e4.c:
+src/calls/EntityMgr_ProbeGround.c:
     complete
     .text       start:0x0202c3e4 end:0x0202c404
 
-src/calls/func_0202c404.c:
+src/calls/EntityMgr_GetCollEntryField14.c:
     complete
     .text       start:0x0202c404 end:0x0202c424
 
-src/calls/func_0202c424.c:
+src/calls/LoadArrayU8At0cc.c:
     complete
     .text       start:0x0202c424 end:0x0202c440
 
-src/calls/func_0202c440.c:
+src/calls/EntityMgr_PushVramState.c:
     complete
     .text       start:0x0202c440 end:0x0202c4b0
 
-src/calls/func_0202c4b0.c:
+src/calls/EntityMgr_PopVramState.c:
     complete
     .text       start:0x0202c4b0 end:0x0202c57c
 
@@ -6208,15 +6208,15 @@ src/calls/func_0202c57c.c:
     complete
     .text       start:0x0202c57c end:0x0202c594
 
-src/calls/func_0202c594.c:
+src/calls/Obj_MarkIfSubObjectReady.c:
     complete
     .text       start:0x0202c594 end:0x0202c5b8
 
-src/calls/func_0202c5b8.c:
+src/calls/Entity_Activate.c:
     complete
     .text       start:0x0202c5b8 end:0x0202c5e4
 
-src/calls/func_0202c5e4.c:
+src/calls/Entity_Deactivate.c:
     complete
     .text       start:0x0202c5e4 end:0x0202c604
 
@@ -6228,187 +6228,187 @@ src/calls/func_0202c614.c:
     complete
     .text       start:0x0202c614 end:0x0202c624
 
-src/calls/func_0202c624.c:
+src/calls/Entity_Tick.c:
     complete
     .text       start:0x0202c624 end:0x0202c68c
 
-src/calls/func_0202c68c.c:
+src/calls/StoreArrayInt244.c:
     complete
     .text       start:0x0202c68c end:0x0202c6a8
 
-src/calls/func_0202c6a8.c:
+src/calls/LoadArrayInt244.c:
     complete
     .text       start:0x0202c6a8 end:0x0202c6c4
 
-src/calls/func_0202c6c4.c:
+src/calls/Actor_ResolveMove.c:
     complete
     .text       start:0x0202c6c4 end:0x0202cf64
 
-src/calls/func_0202cf64.c:
+src/calls/Mover_ResolveFloor.c:
     complete
     .text       start:0x0202cf64 end:0x0202d660
 
-src/calls/func_0202d660.c:
+src/calls/Actor_ResolveGround.c:
     complete
     .text       start:0x0202d660 end:0x0202d968
 
-src/calls/func_0202d968.c:
+src/calls/Actor_InitEntityLink.c:
     complete
     .text       start:0x0202d968 end:0x0202da08
 
-src/calls/func_0202da08.c:
+src/calls/Mover_Step.c:
     complete
     .text       start:0x0202da08 end:0x0202de3c
 
-src/calls/func_0202de3c.c:
+src/calls/Mover_StepActor.c:
     complete
     .text       start:0x0202de3c end:0x0202de74
 
-src/calls/func_0202de74.c:
+src/calls/ModelFile_LoadFirst.c:
     complete
     .text       start:0x0202de74 end:0x0202ded8
 
-src/calls/func_0202ded8.c:
+src/calls/DeferredDraw_Release.c:
     complete
     .text       start:0x0202ded8 end:0x0202df00
 
-src/calls/func_0202df00.c:
+src/calls/EventRecord_Init.c:
     complete
     .text       start:0x0202df00 end:0x0202df30
 
-src/auto/func_0202df30.c:
+src/auto/ConstReturn1.c:
     complete
     .text       start:0x0202df30 end:0x0202df34
 
-src/calls/func_0202df34.c:
+src/calls/ShadowVolume_Draw.c:
     complete
     .text       start:0x0202df34 end:0x0202e084
 
-src/calls/func_0202e084.c:
+src/calls/CamAnim_ResetProjection.c:
     complete
     .text       start:0x0202e084 end:0x0202e0ec
 
-src/calls/func_0202e0ec.c:
+src/calls/AnmObj_InitTrackTable.c:
     complete
     .text       start:0x0202e0ec end:0x0202e168
 
-src/calls/func_0202e168.c:
+src/calls/initObjAndDispatch.c:
     complete
     .text       start:0x0202e168 end:0x0202e198
 
-src/calls/func_0202e198.c:
+src/calls/CamAnim_AllocPlayer.c:
     complete
     .text       start:0x0202e198 end:0x0202e1b0
 
-src/calls/func_0202e1b0.c:
+src/calls/CamAnim_FreePlayer.c:
     complete
     .text       start:0x0202e1b0 end:0x0202e1cc
 
-src/calls/func_0202e1cc.c:
+src/calls/CamAnim_ApplyPosition.c:
     complete
     .text       start:0x0202e1cc end:0x0202e2b0
 
-src/calls/func_0202e2b0.c:
+src/calls/CamAnim_ApplyFovy.c:
     complete
     .text       start:0x0202e2b0 end:0x0202e358
 
-src/calls/func_0202e358.c:
+src/calls/CamAnim_Start.c:
     complete
     .text       start:0x0202e358 end:0x0202e3c4
 
-src/calls/func_0202e3c4.c:
+src/calls/CamAnim_Release.c:
     complete
     .text       start:0x0202e3c4 end:0x0202e3f4
 
-src/auto/func_0202e3f4.c:
+src/auto/CamAnim_IsActive.c:
     complete
     .text       start:0x0202e3f4 end:0x0202e400
 
-src/auto/func_0202e400.c:
+src/auto/AnimStream_Advance.c:
     complete
     .text       start:0x0202e400 end:0x0202e474
 
-src/calls/func_0202e474.c:
+src/calls/RigWork_Update.c:
     complete
     .text       start:0x0202e474 end:0x0202e4f4
 
-src/calls/func_0202e4f4.c:
+src/calls/DispatchWithReentrantScratch.c:
     complete
     .text       start:0x0202e4f4 end:0x0202e53c
 
-src/calls/func_0202e53c.c:
+src/calls/CamAnim_EvalDelta.c:
     complete
     .text       start:0x0202e53c end:0x0202e5c4
 
-src/auto/func_0202e5c4.c:
+src/auto/Obj_GetWordC.c:
     complete
     .text       start:0x0202e5c4 end:0x0202e5cc
 
-src/auto/func_0202e5cc.c:
+src/auto/Obj_SetIndirectWord.c:
     complete
     .text       start:0x0202e5cc end:0x0202e5d8
 
-src/auto/func_0202e5d8.c:
+src/auto/Transform_SetBasePos.c:
     complete
     .text       start:0x0202e5d8 end:0x0202e5e8
 
-src/calls/func_0202e5e8.c:
+src/calls/CamAnim_SelectAnim.c:
     complete
     .text       start:0x0202e5e8 end:0x0202e618
 
-src/auto/func_0202e618.c:
+src/auto/Obj_SetWord54.c:
     complete
     .text       start:0x0202e618 end:0x0202e620
 
-src/calls/func_0202e620.c:
+src/calls/Gfx_SetupSubScreenCapture.c:
     complete
     .text       start:0x0202e620 end:0x0202e760
 
-src/calls/func_0202e760.c:
+src/calls/Gfx_SetupBlendCapture.c:
     complete
     .text       start:0x0202e760 end:0x0202e844
 
-src/calls/func_0202e844.c:
+src/calls/SubOam_SetupBitmapGrid.c:
     complete
     .text       start:0x0202e844 end:0x0202e8ec
 
-src/calls/func_0202e8ec.c:
+src/calls/Gfx_ResetDisplayAndVram.c:
     complete
     .text       start:0x0202e8ec end:0x0202e944
 
-src/calls/func_0202e944.c:
+src/calls/Gfx_SetupSubEngine.c:
     complete
     .text       start:0x0202e944 end:0x0202e9b8
 
-src/calls/func_0202e9b8.c:
+src/calls/Gfx_ToggleCaptureMode.c:
     complete
     .text       start:0x0202e9b8 end:0x0202ea14
 
-src/auto/func_0202ea14.c:
+src/auto/Obj_SetWord8.c:
     complete
     .text       start:0x0202ea14 end:0x0202ea1c
 
-src/auto/func_0202ea1c.c:
+src/auto/Obj_SetWord4.c:
     complete
     .text       start:0x0202ea1c end:0x0202ea24
 
-src/auto/func_0202ea24.c:
+src/auto/AnmPlayer_SetFrameStep.c:
     complete
     .text       start:0x0202ea24 end:0x0202ea34
 
-src/auto/func_0202ea34.c:
+src/auto/Obj_SetFourWords.c:
     complete
     .text       start:0x0202ea34 end:0x0202ea48
 
-src/calls/func_0202ea48.c:
+src/calls/Quat_FromMtx33.c:
     complete
     .text       start:0x0202ea48 end:0x0202ec2c
 
-src/calls/func_0202ec2c.c:
+src/calls/Mtx33_FromQuat.c:
     complete
     .text       start:0x0202ec2c end:0x0202ed60
 
-src/calls/func_0202ed60.c:
+src/calls/Quat_FromTwoVectors.c:
     complete
     .text       start:0x0202ed60 end:0x0202ef10
 
@@ -6416,39 +6416,39 @@ src/auto/func_0202ef10.c:
     complete
     .text       start:0x0202ef10 end:0x0202ef54
 
-src/calls/func_0202ef54.c:
+src/calls/Quat_Multiply.c:
     complete
     .text       start:0x0202ef54 end:0x0202f110
 
-src/auto/func_0202f110.c:
+src/auto/Vec4_ScaleFx12.c:
     complete
     .text       start:0x0202f110 end:0x0202f188
 
-src/calls/func_0202f188.c:
+src/calls/QuatFromAxisAngle.c:
     complete
     .text       start:0x0202f188 end:0x0202f240
 
-src/calls/func_0202f240.c:
+src/calls/Quat_ToAxisAngle.c:
     complete
     .text       start:0x0202f240 end:0x0202f384
 
-src/calls/func_0202f384.c:
+src/calls/Vec3TransformViaTempMtx.c:
     complete
     .text       start:0x0202f384 end:0x0202f3b4
 
-src/auto/func_0202f3b4.c:
+src/auto/Vec4_DotFx12.c:
     complete
     .text       start:0x0202f3b4 end:0x0202f430
 
-src/calls/func_0202f430.c:
+src/calls/Quat_Length.c:
     complete
     .text       start:0x0202f430 end:0x0202f4a4
 
-src/calls/func_0202f4a4.c:
+src/calls/Vec4_Normalize.c:
     complete
     .text       start:0x0202f4a4 end:0x0202f55c
 
-src/calls/func_0202f55c.c:
+src/calls/Quat_Slerp.c:
     complete
     .text       start:0x0202f55c end:0x0202f7fc
 
@@ -6456,139 +6456,139 @@ src/calls/func_0202f7fc.c:
     complete
     .text       start:0x0202f7fc end:0x0202f816
 
-src/calls/func_0202f818.c:
+src/calls/FontResource_Destroy.c:
     complete
     .text       start:0x0202f818 end:0x0202f834
 
-src/calls/func_0202f834.c:
+src/calls/TileTextRenderer_Init.c:
     complete
     .text       start:0x0202f834 end:0x0202f9ec
 
-src/calls/func_0202f9ec.c:
+src/calls/TileTextRenderer_Destroy.c:
     complete
     .text       start:0x0202f9ec end:0x0202f9f8
 
-src/calls/func_0202f9f8.c:
+src/calls/Text_UploadTileBuffer.c:
     complete
     .text       start:0x0202f9f8 end:0x0202fa20
 
-src/calls/func_0202fa20.c:
+src/calls/CallVirtSlot1.c:
     complete
     .text       start:0x0202fa20 end:0x0202fa38
 
-src/calls/func_0202fa38.c:
+src/calls/Text_DrawDirectional.c:
     complete
     .text       start:0x0202fa38 end:0x0202fae8
 
-src/auto/func_0202fae8.c:
+src/auto/MobiClip_GetStreamStepDelta.c:
     complete
     .text       start:0x0202fae8 end:0x0202fafc
 
-src/calls/func_0202fafc.c:
+src/calls/MobiClip_ResolveGlyphRecord.c:
     complete
     .text       start:0x0202fafc end:0x0202fb58
 
-src/calls/func_0202fb58.c:
+src/calls/CallVirtSlot0.c:
     complete
     .text       start:0x0202fb58 end:0x0202fb8c
 
-src/calls/func_0202fb8c.c:
+src/calls/TextWindow_ScrollUp.c:
     complete
     .text       start:0x0202fb8c end:0x0202fcb8
 
-src/calls/func_0202fcb8.c:
+src/calls/Utf8_ToUcs2.c:
     complete
     .text       start:0x0202fcb8 end:0x0202fd90
 
-src/auto/func_0202fd90.c:
+src/auto/TextCanvas_ResolveColor.c:
     complete
     .text       start:0x0202fd90 end:0x0202fdac
 
-src/calls/func_0202fdac.c:
+src/calls/TextCanvas_DrawShadowed.c:
     complete
     .text       start:0x0202fdac end:0x0202fec8
 
-src/calls/func_0202fec8.c:
+src/calls/TileSurface_Init.c:
     complete
     .text       start:0x0202fec8 end:0x0202ff56
 
-src/calls/func_0202ff58.c:
+src/calls/Resource_BindByName.c:
     complete
     .text       start:0x0202ff58 end:0x0202ff7a
 
-src/calls/func_0202ff7c.c:
+src/calls/FreeFieldAt8.c:
     complete
     .text       start:0x0202ff7c end:0x0202ff8a
 
-src/calls/func_0202ff8c.c:
+src/calls/TileSurface_InitAndUpload4bpp.c:
     complete
     .text       start:0x0202ff8c end:0x0202ff98
 
-src/calls/func_0202ff98.c:
+src/calls/TileSurface_InitAndUpload8bpp.c:
     complete
     .text       start:0x0202ff98 end:0x0202ffa4
 
-src/calls/func_0202ffa4.c:
+src/calls/TileSurface_Init4bpp.c:
     complete
     .text       start:0x0202ffa4 end:0x0202ffb0
 
-src/calls/func_0202ffb0.c:
+src/calls/TileSurface_Init8bpp.c:
     complete
     .text       start:0x0202ffb0 end:0x0202ffbc
 
-src/calls/func_0202ffbc.c:
+src/calls/FreeAllListNodeSubBuffers.c:
     complete
     .text       start:0x0202ffbc end:0x0202fff8
 
-src/calls/func_0202fff8.c:
+src/calls/TileSurface_AddCanvas.c:
     complete
     .text       start:0x0202fff8 end:0x02030094
 
-src/calls/func_02030094.c:
+src/calls/TileSurface_SetCurrentItem.c:
     complete
     .text       start:0x02030094 end:0x020300f8
 
-src/calls/func_020300f8.c:
+src/calls/EnqueueObjGfxCommand.c:
     complete
     .text       start:0x020300f8 end:0x0203011c
 
-src/calls/func_0203011c.c:
+src/calls/Obj_InvokeInnerVtable8.c:
     complete
     .text       start:0x0203011c end:0x02030158
 
-src/calls/func_02030158.c:
+src/calls/Obj_InvokeInnerVtable4.c:
     complete
     .text       start:0x02030158 end:0x02030178
 
-src/auto/func_02030178.c:
+src/auto/InvokeSubObjectMethod.c:
     complete
     .text       start:0x02030178 end:0x02030194
 
-src/calls/func_02030194.c:
+src/calls/Obj_ForwardInnerPayload.c:
     complete
     .text       start:0x02030194 end:0x020301c8
 
-src/calls/func_020301c8.c:
+src/calls/Text_DrawDirectional_2.c:
     complete
     .text       start:0x020301c8 end:0x02030278
 
-src/calls/func_02030278.c:
+src/calls/Text_DrawWithShadow.c:
     complete
     .text       start:0x02030278 end:0x020302ec
 
-src/calls/func_020302ec.c:
+src/calls/Obj_ForwardToSub1c.c:
     complete
     .text       start:0x020302ec end:0x0203031c
 
-src/calls/func_0203031c.c:
+src/calls/TextCanvas_DrawShadowedAt.c:
     complete
     .text       start:0x0203031c end:0x0203034c
 
-src/calls/func_0203034c.c:
+src/calls/Draw_ScaledValue.c:
     complete
     .text       start:0x0203034c end:0x020303b4
 
-src/auto/func_020303b4.c:
+src/auto/Obj_GetWord18.c:
     complete
     .text       start:0x020303b4 end:0x020303bc
 
@@ -6596,31 +6596,31 @@ src/calls/func_020303bc.c:
     complete
     .text       start:0x020303bc end:0x020303d8
 
-src/calls/func_020303d8.c:
+src/calls/Game_RunSceneLoop.c:
     complete
     .text       start:0x020303d8 end:0x02030478
 
-src/calls/func_02030478.c:
+src/calls/Session_Init.c:
     complete
     .text       start:0x02030478 end:0x02030550
 
-src/calls/func_02030550.c:
+src/calls/Session_Destroy.c:
     complete
     .text       start:0x02030550 end:0x02030570
 
-src/calls/func_02030570.c:
+src/calls/Session_CheckSceneLoop.c:
     complete
     .text       start:0x02030570 end:0x020305d8
 
-src/calls/func_020305d8.c:
+src/calls/EnsureServiceInstance.c:
     complete
     .text       start:0x020305d8 end:0x02030610
 
-src/calls/func_02030610.c:
+src/calls/ReleaseServiceInstance.c:
     complete
     .text       start:0x02030610 end:0x02030640
 
-src/calls/func_02030640.c:
+src/calls/Session_Exists.c:
     complete
     .text       start:0x02030640 end:0x0203065c
 
@@ -6628,91 +6628,91 @@ src/calls/func_0203065c.c:
     complete
     .text       start:0x0203065c end:0x02030670
 
-src/calls/func_02030670.c:
+src/calls/Session_IsActive.c:
     complete
     .text       start:0x02030670 end:0x02030694
 
-src/calls/func_02030694.c:
+src/calls/Session_IsReady.c:
     complete
     .text       start:0x02030694 end:0x020306b4
 
-src/calls/func_020306b4.c:
+src/calls/Session_IsSceneInterruptible.c:
     complete
     .text       start:0x020306b4 end:0x0203070c
 
-src/calls/func_0203070c.c:
+src/calls/Session_PackConnectedPlayerMask.c:
     complete
     .text       start:0x0203070c end:0x02030788
 
-src/calls/func_02030788.c:
+src/calls/Session_GetLocalPlayerIndex.c:
     complete
     .text       start:0x02030788 end:0x020307b8
 
-src/calls/func_020307b8.c:
+src/calls/GameSession_SetSyncEnabled.c:
     complete
     .text       start:0x020307b8 end:0x020307f0
 
-src/auto/func_020307f0.c:
+src/auto/AsyncMessage_FlushHookNoOp.c:
     complete
     .text       start:0x020307f0 end:0x020307f4
 
-src/calls/func_020307f4.c:
+src/calls/Session_RandNextScaled.c:
     complete
     .text       start:0x020307f4 end:0x0203084c
 
-src/calls/func_0203084c.c:
+src/calls/Session_RandNext.c:
     complete
     .text       start:0x0203084c end:0x020308a0
 
-src/calls/func_020308a0.c:
+src/calls/Session_LayoutPacketSlots.c:
     complete
     .text       start:0x020308a0 end:0x02030988
 
-src/calls/func_02030988.c:
+src/calls/Session_Init_2.c:
     complete
     .text       start:0x02030988 end:0x020309f0
 
-src/calls/func_020309f0.c:
+src/calls/CloseDebugOverlay.c:
     complete
     .text       start:0x020309f0 end:0x02030a2c
 
-src/calls/func_02030a2c.c:
+src/calls/EffectList_StepIfIdle.c:
     complete
     .text       start:0x02030a2c end:0x02030a4c
 
-src/calls/func_02030a4c.c:
+src/calls/CmdPacket_Dispatch.c:
     complete
     .text       start:0x02030a4c end:0x02030b58
 
-src/calls/func_02030b58.c:
+src/calls/MsgQueue_RecvDispatch.c:
     complete
     .text       start:0x02030b58 end:0x02030ccc
 
-src/calls/func_02030ccc.c:
+src/calls/MsgQueue_Init.c:
     complete
     .text       start:0x02030ccc end:0x02030cf8
 
-src/calls/func_02030cf8.c:
+src/calls/StoreGlobalPtrArray4At0c.c:
     complete
     .text       start:0x02030cf8 end:0x02030d10
 
-src/calls/func_02030d10.c:
+src/calls/ClearGlobalArrayInt.c:
     complete
     .text       start:0x02030d10 end:0x02030d2c
 
-src/calls/func_02030d2c.c:
+src/calls/dispatchByObjTypeBits.c:
     complete
     .text       start:0x02030d2c end:0x02030d60
 
-src/calls/func_02030d60.c:
+src/calls/EffectList_Step.c:
     complete
     .text       start:0x02030d60 end:0x02030de4
 
-src/calls/func_02030de4.c:
+src/calls/List_TryInvokeEntry.c:
     complete
     .text       start:0x02030de4 end:0x02030e50
 
-src/calls/func_02030e50.c:
+src/calls/LoadGlobalPtrField70.c:
     complete
     .text       start:0x02030e50 end:0x02030e64
 
@@ -6720,35 +6720,35 @@ src/calls/func_02030e64.c:
     complete
     .text       start:0x02030e64 end:0x02030e7c
 
-src/calls/func_02030e7c.c:
+src/calls/MsgQueue_Init_2.c:
     complete
     .text       start:0x02030e7c end:0x02030f58
 
-src/calls/func_02030f58.c:
+src/calls/Session_Shutdown.c:
     complete
     .text       start:0x02030f58 end:0x02030fcc
 
-src/calls/func_02030fcc.c:
+src/calls/MsgQueue_GetHeap.c:
     complete
     .text       start:0x02030fcc end:0x02030fdc
 
-src/calls/func_02030fdc.c:
+src/calls/MsgQueue_Enqueue.c:
     complete
     .text       start:0x02030fdc end:0x020310e8
 
-src/auto/func_020310e8.c:
+src/auto/Table6_ResetAll.c:
     complete
     .text       start:0x020310e8 end:0x0203112c
 
-src/auto/func_0203112c.c:
+src/auto/Session_ShutdownHookNoOp.c:
     complete
     .text       start:0x0203112c end:0x02031130
 
-src/calls/func_02031130.c:
+src/calls/MsgQueue_ResendForPeer.c:
     complete
     .text       start:0x02031130 end:0x02031228
 
-src/calls/func_02031228.c:
+src/calls/ContextEntry_Set.c:
     complete
     .text       start:0x02031228 end:0x0203123c
 
@@ -6756,11 +6756,11 @@ src/auto/func_0203123c.c:
     complete
     .text       start:0x0203123c end:0x0203123e
 
-src/calls/func_02031240.c:
+src/calls/ContextEntry_InitForRootHeap.c:
     complete
     .text       start:0x02031240 end:0x02031258
 
-src/calls/func_02031258.c:
+src/calls/MsgQueue_SendGate.c:
     complete
     .text       start:0x02031258 end:0x02031384
 
@@ -6768,11 +6768,11 @@ src/calls/func_02031384.c:
     complete
     .text       start:0x02031384 end:0x02031440
 
-src/calls/func_02031440.c:
+src/calls/MsgQueue_Contains.c:
     complete
     .text       start:0x02031440 end:0x020314a4
 
-src/calls/func_020314a4.c:
+src/calls/MsgQueue_MarkSlotReceived.c:
     complete
     .text       start:0x020314a4 end:0x02031574
 
@@ -6780,15 +6780,15 @@ src/calls/func_02031574.c:
     complete
     .text       start:0x02031574 end:0x0203158c
 
-src/calls/func_0203158c.c:
+src/calls/InitContextEntryOnce.c:
     complete
     .text       start:0x0203158c end:0x020315c0
 
-src/auto/func_020315c0.c:
+src/auto/Slot4_GetIfOccupied.c:
     complete
     .text       start:0x020315c0 end:0x020315f4
 
-src/calls/func_020315f4.c:
+src/calls/Session_GetSlotTable.c:
     complete
     .text       start:0x020315f4 end:0x02031600
 
@@ -6796,39 +6796,39 @@ src/calls/func_02031600.c:
     complete
     .text       start:0x02031600 end:0x02031618
 
-src/calls/func_02031618.c:
+src/calls/CopyToSlotTable8.c:
     complete
     .text       start:0x02031618 end:0x02031644
 
-src/auto/func_02031644.c:
+src/auto/Oam_GetObjHeight.c:
     complete
     .text       start:0x02031644 end:0x02031730
 
-src/auto/func_02031730.c:
+src/auto/Oam_GetObjWidth.c:
     complete
     .text       start:0x02031730 end:0x02031818
 
-src/calls/func_02031818.c:
+src/calls/DispObj_MirrorOam.c:
     complete
     .text       start:0x02031818 end:0x02031930
 
-src/calls/func_02031930.c:
+src/calls/OamBuffer_Flush.c:
     complete
     .text       start:0x02031930 end:0x020319fc
 
-src/auto/func_020319fc.c:
+src/auto/TableAppendRecord.c:
     complete
     .text       start:0x020319fc end:0x02031a74
 
-src/auto/func_02031a74.c:
+src/auto/DispOamBuffer_Push.c:
     complete
     .text       start:0x02031a74 end:0x02031ac4
 
-src/calls/func_02031ac4.c:
+src/calls/SlotTable_FindFree.c:
     complete
     .text       start:0x02031ac4 end:0x02031af4
 
-src/calls/func_02031af4.c:
+src/calls/SlotTable_InitCellAnim.c:
     complete
     .text       start:0x02031af4 end:0x02031b2c
 
@@ -6836,23 +6836,23 @@ src/auto/func_02031b2c.c:
     complete
     .text       start:0x02031b2c end:0x02031b50
 
-src/calls/func_02031b50.c:
+src/calls/ComputeAlignedEndOffset.c:
     complete
     .text       start:0x02031b50 end:0x02031bc8
 
-src/auto/func_02031bc8.c:
+src/auto/CountBlocksForSpan.c:
     complete
     .text       start:0x02031bc8 end:0x02031c30
 
-src/calls/func_02031c30.c:
+src/calls/List_Nth.c:
     complete
     .text       start:0x02031c30 end:0x02031c58
 
-src/calls/func_02031c58.c:
+src/calls/SpriteRes_Load.c:
     complete
     .text       start:0x02031c58 end:0x02031d90
 
-src/calls/func_02031d90.c:
+src/calls/Obj_LoadResourceNode.c:
     complete
     .text       start:0x02031d90 end:0x02031df0
 
@@ -6860,11 +6860,11 @@ src/auto/func_02031df0.c:
     complete
     .text       start:0x02031df0 end:0x02031e30
 
-src/auto/func_02031e30.c:
+src/auto/DList_InsertAfter.c:
     complete
     .text       start:0x02031e30 end:0x02031e50
 
-src/calls/func_02031e50.c:
+src/calls/PrioList_Resort.c:
     complete
     .text       start:0x02031e50 end:0x02031ee0
 
@@ -6872,35 +6872,35 @@ libs/nitro/nns/calls/NNS_FndAppendDoubleListObject.c:
     complete
     .text       start:0x02031ee0 end:0x02031f2c
 
-src/calls/func_02031f2c.c:
+src/calls/DispObj_FinishOams.c:
     complete
     .text       start:0x02031f2c end:0x02032078
 
-src/calls/func_02032078.c:
+src/calls/DispObj_WriteOam.c:
     complete
     .text       start:0x02032078 end:0x020321c0
 
-src/calls/func_020321c0.c:
+src/calls/DispObjList_Update.c:
     complete
     .text       start:0x020321c0 end:0x02032288
 
-src/calls/func_02032288.c:
+src/calls/SlotTable_AddEntry.c:
     complete
     .text       start:0x02032288 end:0x02032334
 
-src/calls/func_02032334.c:
+src/calls/SlotNode_FreeBuffers.c:
     complete
     .text       start:0x02032334 end:0x02032362
 
-src/calls/func_02032364.c:
+src/calls/SlotNodeList_FreeAll.c:
     complete
     .text       start:0x02032364 end:0x02032388
 
-src/calls/func_02032388.c:
+src/calls/ObjNode_InitFromDesc.c:
     complete
     .text       start:0x02032388 end:0x02032428
 
-src/calls/func_02032428.c:
+src/calls/Obj_Release.c:
     complete
     .text       start:0x02032428 end:0x0203243a
 
@@ -6912,19 +6912,19 @@ src/calls/func_02032444.c:
     complete
     .text       start:0x02032444 end:0x02032450
 
-src/calls/func_02032450.c:
+src/calls/Slot_UnlinkIfLinked.c:
     complete
     .text       start:0x02032450 end:0x02032494
 
-src/calls/func_02032494.c:
+src/calls/Slot_UnlinkAll.c:
     complete
     .text       start:0x02032494 end:0x020324aa
 
-src/calls/func_020324ac.c:
+src/calls/Obj_CommitAlphaBlend.c:
     complete
     .text       start:0x020324ac end:0x0203253c
 
-src/calls/func_0203253c.c:
+src/calls/Obj_CommitAllSlots.c:
     complete
     .text       start:0x0203253c end:0x0203255c
 
@@ -6936,151 +6936,151 @@ src/calls/func_0203256c.c:
     complete
     .text       start:0x0203256c end:0x0203257c
 
-src/auto/func_0203257c.c:
+src/auto/Slot_SetPosition.c:
     complete
     .text       start:0x0203257c end:0x020325a0
 
-src/auto/func_020325a0.c:
+src/auto/Slot_GetPositionPtr.c:
     complete
     .text       start:0x020325a0 end:0x020325b8
 
-src/calls/func_020325b8.c:
+src/calls/SlotTable_SetEntryVelocity.c:
     complete
     .text       start:0x020325b8 end:0x020325ec
 
-src/calls/func_020325ec.c:
+src/calls/Slot_ForwardToEntry.c:
     complete
     .text       start:0x020325ec end:0x02032610
 
-src/calls/func_02032610.c:
+src/calls/SlotTable_GetEntryFrame.c:
     complete
     .text       start:0x02032610 end:0x02032634
 
-src/calls/func_02032634.c:
+src/calls/SetSubitemValueFromIndex.c:
     complete
     .text       start:0x02032634 end:0x02032680
 
-src/calls/func_02032680.c:
+src/calls/SlotTable_SetEntryStyle.c:
     complete
     .text       start:0x02032680 end:0x020326a8
 
-src/auto/func_020326a8.c:
+src/auto/Slot_SetFlagBit1.c:
     complete
     .text       start:0x020326a8 end:0x020326cc
 
-src/auto/func_020326cc.c:
+src/auto/Slot_ClearFlagBit1.c:
     complete
     .text       start:0x020326cc end:0x020326f0
 
-src/auto/func_020326f0.c:
+src/auto/SlotTable_SetEntryPair.c:
     complete
     .text       start:0x020326f0 end:0x02032710
 
-src/auto/func_02032710.c:
+src/auto/Slot_SetVisible.c:
     complete
     .text       start:0x02032710 end:0x02032748
 
-src/auto/func_02032748.c:
+src/auto/Slot_IsVisible.c:
     complete
     .text       start:0x02032748 end:0x02032760
 
-src/auto/func_02032760.c:
+src/auto/SlotTable_SetEntryFlag.c:
     complete
     .text       start:0x02032760 end:0x02032798
 
-src/calls/func_02032798.c:
+src/calls/SlotTable_SetBlendAlpha.c:
     complete
     .text       start:0x02032798 end:0x020327e0
 
-src/auto/func_020327e0.c:
+src/auto/ClampToRange0to16At0x4628.c:
     complete
     .text       start:0x020327e0 end:0x02032800
 
-src/auto/func_02032800.c:
+src/auto/SlotTable_SetEntryPriority.c:
     complete
     .text       start:0x02032800 end:0x0203281c
 
-src/auto/func_0203281c.c:
+src/auto/Slot_SetMode2Bit.c:
     complete
     .text       start:0x0203281c end:0x02032838
 
-src/auto/func_02032838.c:
+src/auto/SlotTable_SetMode.c:
     complete
     .text       start:0x02032838 end:0x02032844
 
-src/calls/func_02032844.c:
+src/calls/ClearGlobalFields80to84.c:
     complete
     .text       start:0x02032844 end:0x02032870
 
-src/calls/func_02032870.c:
+src/calls/SoundMgr_ExpireRequests.c:
     complete
     .text       start:0x02032870 end:0x02032928
 
-src/calls/func_02032928.c:
+src/calls/RecentRing_Record.c:
     complete
     .text       start:0x02032928 end:0x020329e8
 
-src/calls/func_020329e8.c:
+src/calls/ScriptPool_AllocSlot.c:
     complete
     .text       start:0x020329e8 end:0x02032a7c
 
-src/calls/func_02032a7c.c:
+src/calls/ScriptPool_FreeSlot.c:
     complete
     .text       start:0x02032a7c end:0x02032af0
 
-src/calls/func_02032af0.c:
+src/calls/Sound_UpdateSpatial.c:
     complete
     .text       start:0x02032af0 end:0x02032be8
 
-src/calls/func_02032be8.c:
+src/calls/ScriptQueue_Push.c:
     complete
     .text       start:0x02032be8 end:0x02032c40
 
-src/calls/func_02032c40.c:
+src/calls/SoundMgr_PopQueued.c:
     complete
     .text       start:0x02032c40 end:0x02032cbc
 
-src/auto/func_02032cbc.c:
+src/auto/SoundMgr_PeekQueued.c:
     complete
     .text       start:0x02032cbc end:0x02032d10
 
-src/calls/func_02032d10.c:
+src/calls/StoreU16FieldAndRefresh.c:
     complete
     .text       start:0x02032d10 end:0x02032d6c
 
-src/calls/func_02032d6c.c:
+src/calls/SoundMgr_StopBgm.c:
     complete
     .text       start:0x02032d6c end:0x02032db8
 
-src/calls/func_02032db8.c:
+src/calls/SoundCtx_Init.c:
     complete
     .text       start:0x02032db8 end:0x02032f0c
 
-src/calls/func_02032f0c.c:
+src/calls/Res_TearDownBlock.c:
     complete
     .text       start:0x02032f0c end:0x02032f5c
 
-src/calls/func_02032f5c.c:
+src/calls/SoundMgr_Update.c:
     complete
     .text       start:0x02032f5c end:0x020333c8
 
-src/calls/func_020333c8.c:
+src/calls/SoundSys_Start.c:
     complete
     .text       start:0x020333c8 end:0x02033500
 
-src/calls/func_02033500.c:
+src/calls/FSi_BindCardTransfer.c:
     complete
     .text       start:0x02033500 end:0x0203355c
 
-src/calls/func_0203355c.c:
+src/calls/Res_RequestIdPair.c:
     complete
     .text       start:0x0203355c end:0x0203358c
 
-src/calls/func_0203358c.c:
+src/calls/SoundMgr_WaitLoaderIfState1.c:
     complete
     .text       start:0x0203358c end:0x020335a4
 
-src/calls/func_020335a4.c:
+src/calls/SoundMgr_IsState1.c:
     complete
     .text       start:0x020335a4 end:0x020335c8
 
@@ -7088,19 +7088,19 @@ src/calls/func_020335c8.c:
     complete
     .text       start:0x020335c8 end:0x020335ec
 
-src/calls/func_020335ec.c:
+src/calls/SetSelectionIfChanged.c:
     complete
     .text       start:0x020335ec end:0x02033660
 
-src/calls/func_02033660.c:
+src/calls/SoundMgr_QueueKind1.c:
     complete
     .text       start:0x02033660 end:0x020336a4
 
-src/calls/func_020336a4.c:
+src/calls/RequestQueue_SetOrPushKind3.c:
     complete
     .text       start:0x020336a4 end:0x020336e8
 
-src/calls/func_020336e8.c:
+src/calls/SoundMgr_QueueRequest.c:
     complete
     .text       start:0x020336e8 end:0x02033758
 
@@ -7112,39 +7112,39 @@ src/calls/func_02033770.c:
     complete
     .text       start:0x02033770 end:0x02033788
 
-src/calls/func_02033788.c:
+src/calls/SoundBank_Acquire.c:
     complete
     .text       start:0x02033788 end:0x020339b0
 
-src/calls/func_020339b0.c:
+src/calls/SoundBank_Release.c:
     complete
     .text       start:0x020339b0 end:0x02033b24
 
-src/calls/func_02033b24.c:
+src/calls/PlaySoundChecked.c:
     complete
     .text       start:0x02033b24 end:0x02033b78
 
-src/calls/func_02033b78.c:
+src/calls/PlaySound.c:
     complete
     .text       start:0x02033b78 end:0x02033bb4
 
-src/calls/func_02033bb4.c:
+src/calls/ForwardToHandlerOrCurrentObject.c:
     complete
     .text       start:0x02033bb4 end:0x02033bd4
 
-src/calls/func_02033bd4.c:
+src/calls/SoundMgr_StopAllSePlayers.c:
     complete
     .text       start:0x02033bd4 end:0x02033bfc
 
-src/calls/func_02033bfc.c:
+src/calls/dispatchToHandlerAtOffset.c:
     complete
     .text       start:0x02033bfc end:0x02033c24
 
-src/calls/func_02033c24.c:
+src/calls/InvokeSubStructAndStampByte.c:
     complete
     .text       start:0x02033c24 end:0x02033c64
 
-src/calls/func_02033c64.c:
+src/calls/SoundMgr_PauseBgm.c:
     complete
     .text       start:0x02033c64 end:0x02033ca0
 
@@ -7152,59 +7152,59 @@ libs/nitro/snd/calls/SNDi_BroadcastChannelOp.c:
     complete
     .text       start:0x02033ca0 end:0x02033cc8
 
-src/calls/func_02033cc8.c:
+src/calls/IsSubStructValidAndReady.c:
     complete
     .text       start:0x02033cc8 end:0x02033d0c
 
-src/calls/func_02033d0c.c:
+src/calls/Slot_Spawn.c:
     complete
     .text       start:0x02033d0c end:0x02033e00
 
-src/auto/func_02033e00.c:
+src/auto/Handle_WritePayloadIfLive.c:
     complete
     .text       start:0x02033e00 end:0x02033e48
 
-src/calls/func_02033e48.c:
+src/calls/SoundSeqHandle_Stop.c:
     complete
     .text       start:0x02033e48 end:0x02033ea0
 
-src/auto/func_02033ea0.c:
+src/auto/SoundSeqHandle_IsActive.c:
     complete
     .text       start:0x02033ea0 end:0x02033ef8
 
-src/calls/func_02033ef8.c:
+src/calls/SoundMgr_SetListener.c:
     complete
     .text       start:0x02033ef8 end:0x02033f50
 
-src/auto/func_02033f50.c:
+src/auto/Req_SetPendingFields.c:
     complete
     .text       start:0x02033f50 end:0x02033f88
 
-src/calls/func_02033f88.c:
+src/calls/SoundMgr_PrepareStream.c:
     complete
     .text       start:0x02033f88 end:0x02033fb4
 
-src/calls/func_02033fb4.c:
+src/calls/StampByteAndInvokeSubStructAt.c:
     complete
     .text       start:0x02033fb4 end:0x02033fec
 
-src/calls/func_02033fec.c:
+src/calls/Table_TailCallWithEntry.c:
     complete
     .text       start:0x02033fec end:0x02034014
 
-src/calls/func_02034014.c:
+src/calls/SoundStrm_HasPlaybackPos.c:
     complete
     .text       start:0x02034014 end:0x02034048
 
-src/calls/func_02034048.c:
+src/calls/SoundMgr_GetStreamNextPos.c:
     complete
     .text       start:0x02034048 end:0x0203409c
 
-src/calls/func_0203409c.c:
+src/calls/SoundMgr_StartStream.c:
     complete
     .text       start:0x0203409c end:0x020340d0
 
-src/calls/func_020340d0.c:
+src/calls/SoundMgr_SetListenersEnabled.c:
     complete
     .text       start:0x020340d0 end:0x02034138
 
@@ -7212,215 +7212,215 @@ src/calls/func_02034138.c:
     complete
     .text       start:0x02034138 end:0x02034150
 
-src/calls/func_02034150.c:
+src/calls/MsgDb_LoadDb.c:
     complete
     .text       start:0x02034150 end:0x02034258
 
-src/calls/func_02034258.c:
+src/calls/ResSlot_Release_2.c:
     complete
     .text       start:0x02034258 end:0x020342b4
 
-src/calls/func_020342b4.c:
+src/calls/MsgDb_IsLoaded.c:
     complete
     .text       start:0x020342b4 end:0x020342d4
 
-src/calls/func_020342d4.c:
+src/calls/LoadArrayU16Stride14At0c.c:
     complete
     .text       start:0x020342d4 end:0x020342e8
 
-src/calls/func_020342e8.c:
+src/calls/MsgDb_FetchRecord.c:
     complete
     .text       start:0x020342e8 end:0x020343cc
 
-src/calls/func_020343cc.c:
+src/calls/DispatchByNodeKind.c:
     complete
     .text       start:0x020343cc end:0x020343ea
 
-src/calls/func_020343ec.c:
+src/calls/MsgDb_InitTable.c:
     complete
     .text       start:0x020343ec end:0x02034428
 
-src/calls/func_02034428.c:
+src/calls/MsgDb_AllocRecord.c:
     complete
     .text       start:0x02034428 end:0x0203445a
 
-src/calls/func_0203445c.c:
+src/calls/MsgDb_LoadRecord15.c:
     complete
     .text       start:0x0203445c end:0x02034660
 
-src/calls/func_02034660.c:
+src/calls/MsgDb_DecodeDb16.c:
     complete
     .text       start:0x02034660 end:0x02034730
 
-src/calls/func_02034730.c:
+src/calls/MsgDb_DecodeDb13.c:
     complete
     .text       start:0x02034730 end:0x020347ec
 
-src/calls/func_020347ec.c:
+src/calls/MsgDb_DecodeDb19.c:
     complete
     .text       start:0x020347ec end:0x0203488c
 
-src/calls/func_0203488c.c:
+src/calls/MsgDb_DecodeDb1A.c:
     complete
     .text       start:0x0203488c end:0x02034918
 
-src/calls/func_02034918.c:
+src/calls/MsgDb_FetchEntryPair0x1b.c:
     complete
     .text       start:0x02034918 end:0x0203498c
 
-src/calls/func_0203498c.c:
+src/calls/MsgDb_DecodeDb1C.c:
     complete
     .text       start:0x0203498c end:0x020349ec
 
-src/calls/func_020349ec.c:
+src/calls/MsgDb_DecodeDb14.c:
     complete
     .text       start:0x020349ec end:0x02034ac0
 
-src/calls/func_02034ac0.c:
+src/calls/MsgDb_DecodeDb1D.c:
     complete
     .text       start:0x02034ac0 end:0x02034b5c
 
-src/calls/func_02034b5c.c:
+src/calls/MsgDb_DecodeDb1E.c:
     complete
     .text       start:0x02034b5c end:0x02034c04
 
-src/calls/func_02034c04.c:
+src/calls/MsgDb_DecodeDb1F.c:
     complete
     .text       start:0x02034c04 end:0x02034ca0
 
-src/calls/func_02034ca0.c:
+src/calls/MsgDb_DecodeDb20.c:
     complete
     .text       start:0x02034ca0 end:0x02034d40
 
-src/calls/func_02034d40.c:
+src/calls/MsgDb_BuildEntryRecord.c:
     complete
     .text       start:0x02034d40 end:0x02034e3c
 
-src/calls/func_02034e3c.c:
+src/calls/MsgDb_DecodeGenericRecord.c:
     complete
     .text       start:0x02034e3c end:0x02034f44
 
-src/calls/func_02034f44.c:
+src/calls/P2_ExtractString.c:
     complete
     .text       start:0x02034f44 end:0x02034fc4
 
-src/calls/func_02034fc4.c:
+src/calls/MsgDb_FetchStringPair.c:
     complete
     .text       start:0x02034fc4 end:0x02035028
 
-src/calls/func_02035028.c:
+src/calls/FreeNodeAndChildLists.c:
     complete
     .text       start:0x02035028 end:0x02035070
 
-src/calls/func_02035070.c:
+src/calls/Record_ReleaseSlot.c:
     complete
     .text       start:0x02035070 end:0x020350ae
 
-src/calls/func_020350b0.c:
+src/calls/FreeAndClearIfNonNeg.c:
     complete
     .text       start:0x020350b0 end:0x020350c8
 
-src/calls/func_020350c8.c:
+src/calls/Game_ApplyModeFlags.c:
     complete
     .text       start:0x020350c8 end:0x0203514c
 
-src/calls/func_0203514c.c:
+src/calls/SaveSlot_AddItem.c:
     complete
     .text       start:0x0203514c end:0x020351dc
 
-src/calls/func_020351dc.c:
+src/calls/Params_BuildIndex.c:
     complete
     .text       start:0x020351dc end:0x02035278
 
-src/calls/func_02035278.c:
+src/calls/PartyMember_ClearLists.c:
     complete
     .text       start:0x02035278 end:0x020352c0
 
-src/calls/func_020352c0.c:
+src/calls/PartyState_Reset.c:
     complete
     .text       start:0x020352c0 end:0x020352cc
 
-src/calls/func_020352cc.c:
+src/calls/PartyState_ResetBuffers.c:
     complete
     .text       start:0x020352cc end:0x02035328
 
-src/calls/func_02035328.c:
+src/calls/PartyMember_Reset.c:
     complete
     .text       start:0x02035328 end:0x020353e0
 
-src/calls/func_020353e0.c:
+src/calls/PartyMember_ResetWithKind.c:
     complete
     .text       start:0x020353e0 end:0x02035444
 
-src/calls/func_02035444.c:
+src/calls/PartyMember_RebuildDerived.c:
     complete
     .text       start:0x02035444 end:0x02035638
 
-src/calls/func_02035638.c:
+src/calls/PartyMember_RefreshDialogue.c:
     complete
     .text       start:0x02035638 end:0x02035708
 
-src/calls/func_02035708.c:
+src/calls/PartyState_ReleaseNodes.c:
     complete
     .text       start:0x02035708 end:0x02035730
 
-src/calls/func_02035730.c:
+src/calls/LevelTable_ReadEntry.c:
     complete
     .text       start:0x02035730 end:0x02035794
 
-src/calls/func_02035794.c:
+src/calls/StoreBytePairKeepMin.c:
     complete
     .text       start:0x02035794 end:0x020357c8
 
-src/auto/func_020357c8.c:
+src/auto/ClampAndStoreLevelEntry.c:
     complete
     .text       start:0x020357c8 end:0x020357f4
 
-src/calls/func_020357f4.c:
+src/calls/Load2DArrayU8.c:
     complete
     .text       start:0x020357f4 end:0x02035808
 
-src/calls/func_02035808.c:
+src/calls/Store2DArrayU8.c:
     complete
     .text       start:0x02035808 end:0x0203581c
 
-src/calls/func_0203581c.c:
+src/calls/Load2DArrayU8_2.c:
     complete
     .text       start:0x0203581c end:0x02035830
 
-src/calls/func_02035830.c:
+src/calls/ForwardWithFlag1.c:
     complete
     .text       start:0x02035830 end:0x0203583c
 
-src/calls/func_0203583c.c:
+src/calls/Table_FindKey.c:
     complete
     .text       start:0x0203583c end:0x02035874
 
-src/auto/func_02035874.c:
+src/auto/Slot_GetEntryIfBothSet.c:
     complete
     .text       start:0x02035874 end:0x020358a4
 
-src/calls/func_020358a4.c:
+src/calls/GetPlayerSlotTableEntry.c:
     complete
     .text       start:0x020358a4 end:0x020358c0
 
-src/calls/func_020358c0.c:
+src/calls/Slot_EvalPackedParamWith.c:
     complete
     .text       start:0x020358c0 end:0x020358f4
 
-src/calls/func_020358f4.c:
+src/calls/Slot_EvalPackedParam.c:
     complete
     .text       start:0x020358f4 end:0x02035924
 
-src/calls/func_02035924.c:
+src/calls/Slot_AllEntriesFilled.c:
     complete
     .text       start:0x02035924 end:0x0203595c
 
-src/calls/func_0203595c.c:
+src/calls/Slot_CalcRangeCap18.c:
     complete
     .text       start:0x0203595c end:0x02035978
 
-src/calls/func_02035978.c:
+src/calls/Slot_GetEntryIfCounted.c:
     complete
     .text       start:0x02035978 end:0x020359b4
 
@@ -7428,7 +7428,7 @@ src/calls/func_020359b4.c:
     complete
     .text       start:0x020359b4 end:0x020359f0
 
-src/calls/func_020359f0.c:
+src/calls/Slot_ClearMatchingEntry.c:
     complete
     .text       start:0x020359f0 end:0x02035a34
 
@@ -7436,11 +7436,11 @@ src/calls/func_02035a34.c:
     complete
     .text       start:0x02035a34 end:0x02035a58
 
-src/calls/func_02035a58.c:
+src/calls/PlayRecord_FoldFrame.c:
     complete
     .text       start:0x02035a58 end:0x02035c28
 
-src/calls/func_02035c28.c:
+src/calls/PartyState_AllocRecord.c:
     complete
     .text       start:0x02035c28 end:0x02035c44
 
@@ -7448,15 +7448,15 @@ src/calls/func_02035c44.c:
     complete
     .text       start:0x02035c44 end:0x02035c60
 
-src/calls/func_02035c60.c:
+src/calls/Save_StoreSlotTables.c:
     complete
     .text       start:0x02035c60 end:0x02035cac
 
-src/calls/func_02035cac.c:
+src/calls/PartyState_CopyEquipTables.c:
     complete
     .text       start:0x02035cac end:0x02035d04
 
-src/calls/func_02035d04.c:
+src/calls/IsArgEqualGlobalHalf4.c:
     complete
     .text       start:0x02035d04 end:0x02035d18
 
@@ -7464,55 +7464,55 @@ src/calls/func_02035d18.c:
     complete
     .text       start:0x02035d18 end:0x02035d30
 
-src/calls/func_02035d30.c:
+src/calls/ClearGlobalShort4.c:
     complete
     .text       start:0x02035d30 end:0x02035d3c
 
-src/calls/func_02035d3c.c:
+src/calls/PartyState_SaveTables.c:
     complete
     .text       start:0x02035d3c end:0x02035d78
 
-src/calls/func_02035d78.c:
+src/calls/LoadActorOverlay.c:
     complete
     .text       start:0x02035d78 end:0x02035d90
 
-src/calls/func_02035d90.c:
+src/calls/UnloadActorOverlay.c:
     complete
     .text       start:0x02035d90 end:0x02035da8
 
-src/calls/func_02035da8.c:
+src/calls/Fx_Tween.c:
     complete
     .text       start:0x02035da8 end:0x02035f84
 
-src/calls/func_02035f84.c:
+src/calls/Tween_Clear.c:
     complete
     .text       start:0x02035f84 end:0x02035fb0
 
-src/calls/func_02035fb0.c:
+src/calls/Tween_Configure.c:
     complete
     .text       start:0x02035fb0 end:0x02035ffc
 
-src/calls/func_02035ffc.c:
+src/calls/Tween_Start.c:
     complete
     .text       start:0x02035ffc end:0x0203602c
 
-src/calls/func_0203602c.c:
+src/calls/Tween_Sample.c:
     complete
     .text       start:0x0203602c end:0x02036104
 
-src/calls/func_02036104.c:
+src/calls/Stopwatch_SetHold.c:
     complete
     .text       start:0x02036104 end:0x0203617c
 
-src/calls/func_0203617c.c:
+src/calls/KeyRepeat_Update.c:
     complete
     .text       start:0x0203617c end:0x02036298
 
-src/calls/func_02036298.c:
+src/calls/Header_InitWithLimits.c:
     complete
     .text       start:0x02036298 end:0x020362e6
 
-src/auto/func_020362e8.c:
+src/auto/ConstReturn1_2.c:
     complete
     .text       start:0x020362e8 end:0x020362ec
 
@@ -7520,331 +7520,331 @@ src/calls/func_020362ec.c:
     complete
     .text       start:0x020362ec end:0x020362fc
 
-src/auto/func_020362fc.c:
+src/auto/Mem_ReadU16.c:
     complete
     .text       start:0x020362fc end:0x02036304
 
-src/calls/func_02036304.c:
+src/calls/Segment_ClosestPoint.c:
     complete
     .text       start:0x02036304 end:0x02036494
 
-src/calls/func_02036494.c:
+src/calls/Seg_SqrDistToSegment.c:
     complete
     .text       start:0x02036494 end:0x02037188
 
-src/calls/func_02037188.c:
+src/calls/OBB_DistSqToPoint.c:
     complete
     .text       start:0x02037188 end:0x020372cc
 
-src/calls/func_020372cc.c:
+src/calls/Disc_DistanceSq.c:
     complete
     .text       start:0x020372cc end:0x02037550
 
-src/calls/func_02037550.c:
+src/calls/LineBox_Face.c:
     complete
     .text       start:0x02037550 end:0x02038a7c
 
-src/calls/func_02038a7c.c:
+src/calls/Shape_ProjectDominantAxis.c:
     complete
     .text       start:0x02038a7c end:0x02038c90
 
-src/calls/func_02038c90.c:
+src/calls/Particle_SolvePairConstraint.c:
     complete
     .text       start:0x02038c90 end:0x02039150
 
-src/calls/func_02039150.c:
+src/calls/ClampAxesToBox.c:
     complete
     .text       start:0x02039150 end:0x020392ac
 
-src/calls/func_020392ac.c:
+src/calls/ClampToLimitsWithPenalty.c:
     complete
     .text       start:0x020392ac end:0x02039428
 
-src/calls/func_02039428.c:
+src/calls/OrientedBox_RayQuery.c:
     complete
     .text       start:0x02039428 end:0x02039700
 
-src/calls/func_02039700.c:
+src/calls/Capsule_ClosestToBox.c:
     complete
     .text       start:0x02039700 end:0x02039824
 
-src/auto/func_02039824.c:
+src/auto/SphereToAABB.c:
     complete
     .text       start:0x02039824 end:0x02039874
 
-src/calls/func_02039874.c:
+src/calls/Capsule_GetBounds.c:
     complete
     .text       start:0x02039874 end:0x02039958
 
-src/calls/func_02039958.c:
+src/calls/OrientedBox_GetBounds.c:
     complete
     .text       start:0x02039958 end:0x02039ba0
 
-src/calls/func_02039ba0.c:
+src/calls/OBB_Intersect.c:
     complete
     .text       start:0x02039ba0 end:0x0203ae14
 
-src/calls/func_0203ae14.c:
+src/calls/Tri_SqrDistToPoint.c:
     complete
     .text       start:0x0203ae14 end:0x0203b898
 
-src/calls/func_0203b898.c:
+src/calls/CreateSubitemInstance0xB4.c:
     complete
     .text       start:0x0203b898 end:0x0203b8bc
 
-src/calls/func_0203b8bc.c:
+src/calls/ModelObj_Construct.c:
     complete
     .text       start:0x0203b8bc end:0x0203b968
 
-src/calls/func_0203b968.c:
+src/calls/DestroySubObjectsAndCleanup2.c:
     complete
     .text       start:0x0203b968 end:0x0203b9ac
 
-src/auto/func_0203b9ac.c:
+src/auto/MainBlob_ResetSlotRows.c:
     complete
     .text       start:0x0203b9ac end:0x0203b9fc
 
-src/calls/func_0203b9fc.c:
+src/calls/SetSubitemState.c:
     complete
     .text       start:0x0203b9fc end:0x0203babc
 
-src/calls/func_0203babc.c:
+src/calls/AnimObj_BindTrackAtLastFrame.c:
     complete
     .text       start:0x0203babc end:0x0203bb34
 
-src/calls/func_0203bb34.c:
+src/calls/Obj_AdvanceGauges.c:
     complete
     .text       start:0x0203bb34 end:0x0203bc78
 
-src/calls/func_0203bc78.c:
+src/calls/Obj_RenderModel.c:
     complete
     .text       start:0x0203bc78 end:0x0203bdfc
 
-src/calls/func_0203bdfc.c:
+src/calls/FindResourceIndexByName.c:
     complete
     .text       start:0x0203bdfc end:0x0203be68
 
-src/auto/func_0203be68.c:
+src/auto/Obj_GetCellScaledField.c:
     complete
     .text       start:0x0203be68 end:0x0203be9c
 
-src/calls/func_0203be9c.c:
+src/calls/callIfTableEntrySet.c:
     complete
     .text       start:0x0203be9c end:0x0203bec0
 
-src/calls/func_0203bec0.c:
+src/calls/queryTableEntry.c:
     complete
     .text       start:0x0203bec0 end:0x0203bee8
 
-src/calls/func_0203bee8.c:
+src/calls/InsertSortedEntryWithKey.c:
     complete
     .text       start:0x0203bee8 end:0x0203bf44
 
-src/calls/func_0203bf44.c:
+src/calls/ModelNode_New.c:
     complete
     .text       start:0x0203bf44 end:0x0203bf60
 
-src/calls/func_0203bf60.c:
+src/calls/ModelNode_Init.c:
     complete
     .text       start:0x0203bf60 end:0x0203bfb4
 
-src/calls/func_0203bfb4.c:
+src/calls/RegisterSubscriberSlot.c:
     complete
     .text       start:0x0203bfb4 end:0x0203bfe8
 
-src/calls/func_0203bfe8.c:
+src/calls/RemoveChildFromListByPtr.c:
     complete
     .text       start:0x0203bfe8 end:0x0203c054
 
-src/calls/func_0203c054.c:
+src/calls/ModelNode_Destroy.c:
     complete
     .text       start:0x0203c054 end:0x0203c070
 
-src/calls/func_0203c070.c:
+src/calls/ModelNode_UpdateTree.c:
     complete
     .text       start:0x0203c070 end:0x0203c10c
 
-src/calls/func_0203c10c.c:
+src/calls/ForEachChildDispatch.c:
     complete
     .text       start:0x0203c10c end:0x0203c148
 
-src/calls/func_0203c148.c:
+src/calls/invokeObjCallbackList.c:
     complete
     .text       start:0x0203c148 end:0x0203c17c
 
-src/calls/func_0203c17c.c:
+src/calls/ProcessListChildren.c:
     complete
     .text       start:0x0203c17c end:0x0203c1b0
 
-src/calls/func_0203c1b0.c:
+src/calls/JointModel_New.c:
     complete
     .text       start:0x0203c1b0 end:0x0203c1dc
 
-src/calls/func_0203c1dc.c:
+src/calls/JointModel_Construct.c:
     complete
     .text       start:0x0203c1dc end:0x0203c2c4
 
-src/calls/func_0203c2c4.c:
+src/calls/DestroySubObjectsAndCleanup.c:
     complete
     .text       start:0x0203c2c4 end:0x0203c304
 
-src/calls/func_0203c304.c:
+src/calls/InstancedModel_Draw.c:
     complete
     .text       start:0x0203c304 end:0x0203c3f8
 
-src/auto/func_0203c3f8.c:
+src/auto/JointModel_DefaultHook7C.c:
     complete
     .text       start:0x0203c3f8 end:0x0203c3fc
 
-src/auto/func_0203c3fc.c:
+src/auto/JointModel_DefaultHook80.c:
     complete
     .text       start:0x0203c3fc end:0x0203c400
 
-src/calls/func_0203c400.c:
+src/calls/ObjList_New.c:
     complete
     .text       start:0x0203c400 end:0x0203c424
 
-src/calls/func_0203c424.c:
+src/calls/DestroyListNode.c:
     complete
     .text       start:0x0203c424 end:0x0203c468
 
-src/calls/func_0203c468.c:
+src/calls/ClearListAndDestroy.c:
     complete
     .text       start:0x0203c468 end:0x0203c4a8
 
-src/calls/func_0203c4a8.c:
+src/calls/ObjList_Update.c:
     complete
     .text       start:0x0203c4a8 end:0x0203c5c0
 
-src/calls/func_0203c5c0.c:
+src/calls/CreateRegistryEntry.c:
     complete
     .text       start:0x0203c5c0 end:0x0203c634
 
-src/auto/func_0203c634.c:
+src/auto/SetIndexedSlot.c:
     complete
     .text       start:0x0203c634 end:0x0203c640
 
-src/auto/func_0203c640.c:
+src/auto/Task_MarkFinished.c:
     complete
     .text       start:0x0203c640 end:0x0203c650
 
-src/calls/func_0203c650.c:
+src/calls/TaskList_FinishByTag.c:
     complete
     .text       start:0x0203c650 end:0x0203c6a4
 
-src/calls/func_0203c6a4.c:
+src/calls/FindListEntryByField4.c:
     complete
     .text       start:0x0203c6a4 end:0x0203c6e0
 
-src/calls/func_0203c6e0.c:
+src/calls/FindListEntryByField1c.c:
     complete
     .text       start:0x0203c6e0 end:0x0203c724
 
-src/calls/func_0203c724.c:
+src/calls/Node_BaseInit.c:
     complete
     .text       start:0x0203c724 end:0x0203c7ac
 
-src/calls/func_0203c7ac.c:
+src/calls/RefreshObjectCallbacks.c:
     complete
     .text       start:0x0203c7ac end:0x0203c7e8
 
-src/calls/func_0203c7e8.c:
+src/calls/DestroyInstance.c:
     complete
     .text       start:0x0203c7e8 end:0x0203c83c
 
-src/auto/func_0203c83c.c:
+src/auto/Obj_ReplaceRef.c:
     complete
     .text       start:0x0203c83c end:0x0203c86c
 
-src/auto/func_0203c86c.c:
+src/auto/DispatchObjectCallbacks.c:
     complete
     .text       start:0x0203c86c end:0x0203c8b0
 
-src/calls/func_0203c8b0.c:
+src/calls/invokeObjCallbackGuarded.c:
     complete
     .text       start:0x0203c8b0 end:0x0203c8e4
 
-src/calls/func_0203c8e4.c:
+src/calls/Node_CallHook80.c:
     complete
     .text       start:0x0203c8e4 end:0x0203c8fc
 
-src/auto/func_0203c8fc.c:
+src/auto/Node_DefaultHook6C.c:
     complete
     .text       start:0x0203c8fc end:0x0203c900
 
-src/auto/func_0203c900.c:
+src/auto/Node_BaseOnDestroy.c:
     complete
     .text       start:0x0203c900 end:0x0203c904
 
-src/calls/func_0203c904.c:
+src/calls/Node_ComposeWorldSrt.c:
     complete
     .text       start:0x0203c904 end:0x0203c960
 
-src/auto/func_0203c960.c:
+src/auto/SrtTransform_SetIdentity.c:
     complete
     .text       start:0x0203c960 end:0x0203c9b4
 
-src/calls/func_0203c9b4.c:
+src/calls/Srt_SetRotationAxisAngle.c:
     complete
     .text       start:0x0203c9b4 end:0x0203c9d0
 
-src/auto/func_0203c9d0.c:
+src/auto/Srt_SetRotationQuat.c:
     complete
     .text       start:0x0203c9d0 end:0x0203c9ec
 
-src/calls/func_0203c9ec.c:
+src/calls/Node_SetRotationFromMtx.c:
     complete
     .text       start:0x0203c9ec end:0x0203ca14
 
-src/auto/func_0203ca14.c:
+src/auto/Srt_SetTranslationXYZ.c:
     complete
     .text       start:0x0203ca14 end:0x0203ca30
 
-src/auto/func_0203ca30.c:
+src/auto/Srt_SetTranslation.c:
     complete
     .text       start:0x0203ca30 end:0x0203ca50
 
-src/auto/func_0203ca50.c:
+src/auto/Srt_SetScaleXYZ.c:
     complete
     .text       start:0x0203ca50 end:0x0203ca74
 
-src/auto/func_0203ca74.c:
+src/auto/Srt_SetScaleVec.c:
     complete
     .text       start:0x0203ca74 end:0x0203ca9c
 
-src/auto/func_0203ca9c.c:
+src/auto/Srt_SetScaleUniform.c:
     complete
     .text       start:0x0203ca9c end:0x0203cac0
 
-src/calls/func_0203cac0.c:
+src/calls/Srt_Concat.c:
     complete
     .text       start:0x0203cac0 end:0x0203cc64
 
-src/calls/func_0203cc64.c:
+src/calls/Obj_LocalToWorld.c:
     complete
     .text       start:0x0203cc64 end:0x0203cd20
 
-src/calls/func_0203cd20.c:
+src/calls/Fx_Acos.c:
     complete
     .text       start:0x0203cd20 end:0x0203cd7c
 
-src/calls/func_0203cd7c.c:
+src/calls/Mtx33_LookAt.c:
     complete
     .text       start:0x0203cd7c end:0x0203cf0c
 
-src/calls/func_0203cf0c.c:
+src/calls/Mtx33_ScaleColumns.c:
     complete
     .text       start:0x0203cf0c end:0x0203d040
 
-src/calls/func_0203d040.c:
+src/calls/Angle_TurnToward.c:
     complete
     .text       start:0x0203d040 end:0x0203d15c
 
-src/calls/func_0203d15c.c:
+src/calls/CallocInstance.c:
     complete
     .text       start:0x0203d15c end:0x0203d194
 
-src/calls/func_0203d194.c:
+src/calls/FreeInstanceMemory.c:
     complete
     .text       start:0x0203d194 end:0x0203d1bc
 

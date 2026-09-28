@@ -1,7 +1,7 @@
 /* ov030 constructor argument block data_ov030_020b58c4, 0x020b58c4-0x020b58d8 (.rodata).
  *
  * Five words handed to a class constructor: the resource path of the object's archive
- * ('ba/ch/ro/li_e3.p.z') and four parameters the constructor reads.  Used by func_ov030_020b4b9c.
+ * ('ba/ch/ro/li_e3.p.z') and four parameters the constructor reads.  Used by Ov030_initStateSlotsDispatch.
  */
 
 typedef struct ClassCtorArgs {

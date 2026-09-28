@@ -8,51 +8,51 @@ src/overlays/ov074/calls/func_ov074_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov074/calls/func_ov074_020b8114.c:
+src/overlays/ov074/calls/Ov074_stateCtorCondConfigReturnHandler.c:
     complete
     .text       start:0x020b8114 end:0x020b8144
 
-src/overlays/ov074/calls/func_ov074_020b8144.c:
+src/overlays/ov074/calls/Ov074_initRegionCondClearGlobal.c:
     complete
     .text       start:0x020b8144 end:0x020b8180
 
-src/overlays/ov074/calls/func_ov074_020b8180.c:
+src/overlays/ov074/calls/Ov074_BuildRigObject.c:
     complete
     .text       start:0x020b8180 end:0x020b83b0
 
-src/overlays/ov074/calls/func_ov074_020b83b0.c:
+src/overlays/ov074/calls/Ov074_initFlagStateRegionMarshal.c:
     complete
     .text       start:0x020b83b0 end:0x020b841c
 
-src/overlays/ov074/auto/func_ov074_020b841c.c:
+src/overlays/ov074/auto/Ov074_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b841c end:0x020b843c
 
-src/overlays/ov074/calls/func_ov074_020b843c.c:
+src/overlays/ov074/calls/Ov074_ApplyModeChange.c:
     complete
     .text       start:0x020b843c end:0x020b85c0
 
-src/overlays/ov074/calls/func_ov074_020b85c0.c:
+src/overlays/ov074/calls/Ov074_Weapon_TickStreams.c:
     complete
     .text       start:0x020b85c0 end:0x020b86cc
 
-src/overlays/ov074/calls/func_ov074_020b86cc.c:
+src/overlays/ov074/calls/Ov074_StepSlotAndForward.c:
     complete
     .text       start:0x020b86cc end:0x020b8704
 
-src/overlays/ov074/calls/func_ov074_020b8704.c:
+src/overlays/ov074/calls/Ov074_EnterActorState.c:
     complete
     .text       start:0x020b8704 end:0x020b8888
 
-src/overlays/ov074/calls/func_ov074_020b8888.c:
+src/overlays/ov074/calls/Ov074_RegisterHandlersAndArm.c:
     complete
     .text       start:0x020b8888 end:0x020b8910
 
-src/overlays/ov074/calls/func_ov074_020b8910.c:
+src/overlays/ov074/calls/Ov074_InitEffectSlotsWithTimings.c:
     complete
     .text       start:0x020b8910 end:0x020b89bc
 
-src/overlays/ov074/calls/func_ov074_020b89bc.c:
+src/overlays/ov074/calls/Ov074_ReleaseSlotAndChannels.c:
     complete
     .text       start:0x020b89bc end:0x020b89e8
 
@@ -60,71 +60,71 @@ src/overlays/ov074/calls/func_ov074_020b89e8.c:
     complete
     .text       start:0x020b89e8 end:0x020b89f4
 
-src/overlays/ov074/calls/func_ov074_020b89f4.c:
+src/overlays/ov074/calls/Ov074_TickTwoPhaseAnimOfSlot.c:
     complete
     .text       start:0x020b89f4 end:0x020b8a04
 
-src/overlays/ov074/calls/func_ov074_020b8a04.c:
+src/overlays/ov074/calls/Ov074_ForwardPlus10IfFlag694.c:
     complete
     .text       start:0x020b8a04 end:0x020b8a24
 
-src/overlays/ov074/calls/func_ov074_020b8a24.c:
+src/overlays/ov074/calls/Ov074_ArmWithValue.c:
     complete
     .text       start:0x020b8a24 end:0x020b8a3c
 
-src/overlays/ov074/calls/func_ov074_020b8a3c.c:
+src/overlays/ov074/calls/Ov074_TickTwoPhaseAnim.c:
     complete
     .text       start:0x020b8a3c end:0x020b8af8
 
-src/overlays/ov074/calls/func_ov074_020b8af8.c:
+src/overlays/ov074/calls/Ov074_RecenterSubObjectAndCopyVec.c:
     complete
     .text       start:0x020b8af8 end:0x020b8b6c
 
-src/overlays/ov074/calls/func_ov074_020b8b6c.c:
+src/overlays/ov074/calls/Ov074_GetMarkPoint.c:
     complete
     .text       start:0x020b8b6c end:0x020b8c24
 
-src/overlays/ov074/calls/func_ov074_020b8c24.c:
+src/overlays/ov074/calls/Ov074_Weapon_FireSpreadShot.c:
     complete
     .text       start:0x020b8c24 end:0x020b8dd0
 
-src/overlays/ov074/calls/func_ov074_020b8dd0.c:
+src/overlays/ov074/calls/Ov074_Weapon_FireStraightShot.c:
     complete
     .text       start:0x020b8dd0 end:0x020b8f58
 
-src/overlays/ov074/calls/func_ov074_020b8f58.c:
+src/overlays/ov074/calls/Ov074_SetupChannelBlocks.c:
     complete
     .text       start:0x020b8f58 end:0x020b911c
 
-src/overlays/ov074/calls/func_ov074_020b911c.c:
+src/overlays/ov074/calls/Ov074_freeSubObjectChannels.c:
     complete
     .text       start:0x020b911c end:0x020b9150
 
-src/overlays/ov074/calls/func_ov074_020b9150.c:
+src/overlays/ov074/calls/Ov074_BindRig.c:
     complete
     .text       start:0x020b9150 end:0x020b91a8
 
-src/overlays/ov074/calls/func_ov074_020b91a8.c:
+src/overlays/ov074/calls/Ov074_dispatchEntryList.c:
     complete
     .text       start:0x020b91a8 end:0x020b920c
 
-src/overlays/ov074/calls/func_ov074_020b920c.c:
+src/overlays/ov074/calls/Ov074_StepProjectile.c:
     complete
     .text       start:0x020b920c end:0x020b934c
 
-src/overlays/ov074/calls/func_ov074_020b934c.c:
+src/overlays/ov074/calls/Ov074_FlagLocalAndEnterState21.c:
     complete
     .text       start:0x020b934c end:0x020b93b4
 
-src/overlays/ov074/calls/func_ov074_020b93b4.c:
+src/overlays/ov074/calls/Ov074_StepRiseState.c:
     complete
     .text       start:0x020b93b4 end:0x020b970c
 
-src/overlays/ov074/calls/func_ov074_020b970c.c:
+src/overlays/ov074/calls/Ov074_VolleyStep.c:
     complete
     .text       start:0x020b970c end:0x020b9a28
 
-src/overlays/ov074/calls/func_ov074_020b9a28.c:
+src/overlays/ov074/calls/Ov074_InvokeWithDataTable.c:
     complete
     .text       start:0x020b9a28 end:0x020b9a40
 

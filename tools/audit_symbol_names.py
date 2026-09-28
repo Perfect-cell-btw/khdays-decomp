@@ -3,7 +3,7 @@
 
 Why this exists (2026-09-11, issue #6): forty sources under src/overlays/*/calls/
 defined a function for a DIFFERENT address than their own file name, e.g.
-func_ov066_020b5a7c.c defining func_ov066_020b327c. They came from propagating a
+Ov066_PanelCtor.c defining func_ov066_020b327c. They came from propagating a
 matched file to a byte-identical twin in another overlay: the overlay prefix was
 rewritten, the address suffix was not. Nothing in the project could see it,
 because verify_idx.py compares bytes under the name it is GIVEN and PROGRESS.md

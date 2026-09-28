@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov235_020cbfc4 (not yet decompiled) */
+/* read by Ov235_EnemyConstruct (not yet decompiled) */
 const int data_ov235_020d22d0[11] = {
     0, 0, 0, 0, 0, 0, 0, 0,
     121, 122, 123,
@@ -43,18 +43,18 @@ const int data_ov235_020d2434[39] = {
 
 /* read by Ov235_EnterState10 (020cf5f0)
  *   Ov235_GlideInTick (020d0130): const Cmd4 data_ov235_020d24d0;
- *   func_ov235_020d020c (not yet decompiled)
+ *   Ov235_HealBurstTick (not yet decompiled)
  *   Ov235_EnterState18 (020d08d4)
  *   Ov235_CirclingTick (020d0d8c): const Cmd4 data_ov235_020d24d0[];
  *   Ov235_AimTick (020d0f60)
  *   Ov235_DashTick (020d10ec): const Cmd4 data_ov235_020d24d0[];
- *   func_ov235_020d161c (not yet decompiled) */
+ *   Ov235_VolleyTick (not yet decompiled) */
 const u8 data_ov235_020d24d0[32] = {
     0, 0, 5, 1, 0, 0, 5, 8, 0, 0, 5, 0, 0, 0, 5, 9,
     0, 0, 5, 11, 0, 0, 5, 7, 0, 0, 5, 2, 0, 0, 5, 8,
 };
 
-/* read by func_ov235_020d161c (not yet decompiled) */
+/* read by Ov235_VolleyTick (not yet decompiled) */
 const int data_ov235_020d24f0[3] = {
     34, 35, 38,
 };
@@ -74,7 +74,7 @@ const u16 data_ov235_020d2518[7] = {
     0, 773, 0, 0, 0, 0, 0,
 };
 
-/* read by func_ov235_020d020c (not yet decompiled) */
+/* read by Ov235_HealBurstTick (not yet decompiled) */
 const u16 data_ov235_020d2526[7] = {
     0, 1541, 0, 0, 0, 0, 0,
 };

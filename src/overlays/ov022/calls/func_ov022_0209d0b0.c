@@ -1,4 +1,4 @@
-extern void func_ov022_020acc94(unsigned int *arg0, int arg1);
+extern void Ov022_ActorSetHp(unsigned int *arg0, int arg1);
 
 void func_ov022_0209d0b0(unsigned int *arg0, int *arg1, int arg2) {
     int v;
@@ -8,7 +8,7 @@ void func_ov022_0209d0b0(unsigned int *arg0, int *arg1, int arg2) {
     *arg1 = v;
     if (v <= (int)((unsigned int)*(volatile unsigned short *)((int)arg1 + 4) << 0xc)) return;
     if (1 < *(unsigned short *)((int)arg0 + 0x12)) {
-        func_ov022_020acc94(arg0, *(unsigned short *)((int)arg0 + 0x12) - 1);
+        Ov022_ActorSetHp(arg0, *(unsigned short *)((int)arg0 + 0x12) - 1);
     }
     *arg1 = 0;
 }

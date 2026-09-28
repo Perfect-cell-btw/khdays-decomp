@@ -8,7 +8,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov107_020c0680 (020c0680): int data_ov107_020cb610[6]; */
+/* read by Ov107_LoadEnemyOverlay (020c0680): int data_ov107_020cb610[6]; */
 const int data_ov107_020cb610[6] = {
     108, 109, 110, 111, 112, 113,
 };

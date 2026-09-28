@@ -32,7 +32,7 @@ typedef struct NNSG3dResJntAnm {
 extern BOOL func_01ffae5c(MtxFx33 *pRot, const void *pArrayRot3,
                           const void *pArrayRot5, u32 info);
 extern void func_01ffa7fc(VecFx32 *first, VecFx32 *second);
-extern fx32 func_01ff8d18(const VecFx32 *src, VecFx32 *dst);
+extern fx32 VEC_Normalize(const VecFx32 *src, VecFx32 *dst);
 
 static inline void vecCross_(const VecFx32 *a, const VecFx32 *b, VecFx32 *axb)
 {
@@ -108,7 +108,7 @@ void func_01ffaa14(MtxFx33 *pRot, fx32 Frame, const u32 *pData,
                     pRot->_20 = (pRot->_20 * 3 + tmp._20) >> 0;
                     pRot->_21 = (pRot->_21 * 3 + tmp._21) >> 0;
                     pRot->_22 = (pRot->_22 * 3 + tmp._22) >> 0;
-                    func_01ff8d18((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
+                    VEC_Normalize((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
                 } else {
                     vecCross_((const VecFx32 *)&pRot->_00,
                               (const VecFx32 *)&pRot->_10,
@@ -145,7 +145,7 @@ ROT_INTERP_2:
             pRot->_20 = (pRot->_20 + tmp._20) >> 0;
             pRot->_21 = (pRot->_21 + tmp._21) >> 0;
             pRot->_22 = (pRot->_22 + tmp._22) >> 0;
-            func_01ff8d18((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
+            VEC_Normalize((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
         } else {
             vecCross_((const VecFx32 *)&pRot->_00,
                       (const VecFx32 *)&pRot->_10,
@@ -160,6 +160,6 @@ ROT_NONINTERP:
                   (const VecFx32 *)&pRot->_10,
                   (VecFx32 *)&pRot->_20);
     } else {
-        func_01ff8d18((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
+        VEC_Normalize((VecFx32 *)&pRot->_20, (VecFx32 *)&pRot->_20);
     }
 }

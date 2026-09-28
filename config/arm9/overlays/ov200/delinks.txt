@@ -4,35 +4,35 @@
     .data       start:0x020d1860 end:0x020d1880 kind:data align:32
     .bss        start:0x020d1880 end:0x020d1880 kind:bss align:32
 
-src/overlays/ov200/calls/func_ov200_020cdd40.c:
+src/overlays/ov200/calls/Ov200_RegisterEntityClass.c:
     complete
     .text       start:0x020cdd40 end:0x020cdd58
 
-src/overlays/ov200/calls/func_ov200_020cdd58.c:
+src/overlays/ov200/calls/Ov200_CreateNamedEntity.c:
     complete
     .text       start:0x020cdd58 end:0x020cdde4
 
-src/overlays/ov200/calls/func_ov200_020cdde4.c:
+src/overlays/ov200/calls/Ov200_Construct.c:
     complete
     .text       start:0x020cdde4 end:0x020ce0d0
 
-src/overlays/ov200/calls/func_ov200_020ce0d0.c:
+src/overlays/ov200/calls/Ov200_Destroy.c:
     complete
     .text       start:0x020ce0d0 end:0x020ce134
 
-src/overlays/ov200/calls/func_ov200_020ce134.c:
+src/overlays/ov200/calls/Ov200_TickAndSyncTwoModelXforms.c:
     complete
     .text       start:0x020ce134 end:0x020ce190
 
-src/overlays/ov200/calls/func_ov200_020ce190.c:
+src/overlays/ov200/calls/Ov200_Model_ReapplyTrack0.c:
     complete
     .text       start:0x020ce190 end:0x020ce1c8
 
-src/overlays/ov200/calls/func_ov200_020ce1c8.c:
+src/overlays/ov200/calls/Ov200_OnEffectMessage.c:
     complete
     .text       start:0x020ce1c8 end:0x020ce4b8
 
-src/overlays/ov200/calls/func_ov200_020ce4b8.c:
+src/overlays/ov200/calls/Ov200_PostTickCleanup.c:
     complete
     .text       start:0x020ce4b8 end:0x020ce638
 
@@ -44,203 +44,203 @@ src/overlays/ov200/calls/func_ov200_020ce644.c:
     complete
     .text       start:0x020ce644 end:0x020ce650
 
-src/overlays/ov200/calls/func_ov200_020ce650.c:
+src/overlays/ov200/calls/Ov200_CreateAiTask.c:
     complete
     .text       start:0x020ce650 end:0x020ce6ac
 
-src/overlays/ov200/calls/func_ov200_020ce6ac.c:
+src/overlays/ov200/calls/Ov200_HandleHit.c:
     complete
     .text       start:0x020ce6ac end:0x020ce8c4
 
-src/overlays/ov200/auto/func_ov200_020ce8c4.c:
+src/overlays/ov200/auto/Ov200_RequestSubState9IfNotCurrent.c:
     complete
     .text       start:0x020ce8c4 end:0x020ce8f0
 
-src/overlays/ov200/calls/func_ov200_020ce8f0.c:
+src/overlays/ov200/calls/Ov200_AimLeadTarget.c:
     complete
     .text       start:0x020ce8f0 end:0x020ce9b0
 
-src/overlays/ov200/calls/func_ov200_020ce9b0.c:
+src/overlays/ov200/calls/Ov200_ResetAimArmDispatch.c:
     complete
     .text       start:0x020ce9b0 end:0x020ceac8
 
-src/overlays/ov200/calls/func_ov200_020ceac8.c:
+src/overlays/ov200/calls/Ov200_AiDispatchAction.c:
     complete
     .text       start:0x020ceac8 end:0x020cec8c
 
-src/overlays/ov200/calls/func_ov200_020cec8c.c:
+src/overlays/ov200/calls/Ov200_AiSlerpHeading.c:
     complete
     .text       start:0x020cec8c end:0x020ced2c
 
-src/overlays/ov200/calls/func_ov200_020ced2c.c:
+src/overlays/ov200/calls/Ov200_stateSetFlagsClearBit.c:
     complete
     .text       start:0x020ced2c end:0x020ced94
 
-src/overlays/ov200/calls/func_ov200_020ced94.c:
+src/overlays/ov200/calls/Ov200_AiStep_ResumeStoredAction.c:
     complete
     .text       start:0x020ced94 end:0x020cee14
 
-src/overlays/ov200/calls/func_ov200_020cee14.c:
+src/overlays/ov200/calls/Ov200_SpawnEffect48ReconfigureFlagsB.c:
     complete
     .text       start:0x020cee14 end:0x020ceee0
 
-src/overlays/ov200/calls/func_ov200_020ceee0.c:
+src/overlays/ov200/calls/Ov200_TimerAimFireReroll.c:
     complete
     .text       start:0x020ceee0 end:0x020cefdc
 
-src/overlays/ov200/calls/func_ov200_020cefdc.c:
+src/overlays/ov200/calls/Ov200_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020cefdc end:0x020cf010
 
-src/overlays/ov200/calls/func_ov200_020cf010.c:
+src/overlays/ov200/calls/Ov200_AiEnterHover.c:
     complete
     .text       start:0x020cf010 end:0x020cf074
 
-src/overlays/ov200/calls/func_ov200_020cf074.c:
+src/overlays/ov200/calls/Ov200_HoverTick.c:
     complete
     .text       start:0x020cf074 end:0x020cf1f4
 
-src/overlays/ov200/calls/func_ov200_020cf1f4.c:
+src/overlays/ov200/calls/Ov200_SetPoseThenAdvanceSlot.c:
     complete
     .text       start:0x020cf1f4 end:0x020cf228
 
-src/overlays/ov200/calls/func_ov200_020cf228.c:
+src/overlays/ov200/calls/Ov200_AiChooseMoveSteering.c:
     complete
     .text       start:0x020cf228 end:0x020cf508
 
-src/overlays/ov200/calls/func_ov200_020cf508.c:
+src/overlays/ov200/calls/Ov200_StrafeMove.c:
     complete
     .text       start:0x020cf508 end:0x020cf7d4
 
-src/overlays/ov200/calls/func_ov200_020cf7d4.c:
+src/overlays/ov200/calls/Ov200_SeedRandomStrafeSign.c:
     complete
     .text       start:0x020cf7d4 end:0x020cf828
 
-src/overlays/ov200/calls/func_ov200_020cf828.c:
+src/overlays/ov200/calls/Ov200_CircleTick.c:
     complete
     .text       start:0x020cf828 end:0x020cfa60
 
-src/overlays/ov200/calls/func_ov200_020cfa60.c:
+src/overlays/ov200/calls/Ov200_FireAimPoseAndGate.c:
     complete
     .text       start:0x020cfa60 end:0x020cfaec
 
-src/overlays/ov200/calls/func_ov200_020cfaec.c:
+src/overlays/ov200/calls/Ov200_DecayOffsetPickGiveUp.c:
     complete
     .text       start:0x020cfaec end:0x020cfbc4
 
-src/overlays/ov200/calls/func_ov200_020cfbc4.c:
+src/overlays/ov200/calls/Ov200_SpawnEffect4bReconfigureFlags.c:
     complete
     .text       start:0x020cfbc4 end:0x020cfc8c
 
-src/overlays/ov200/calls/func_ov200_020cfc8c.c:
+src/overlays/ov200/calls/Ov200_AiEnterSwing.c:
     complete
     .text       start:0x020cfc8c end:0x020cfcfc
 
-src/overlays/ov200/calls/func_ov200_020cfcfc.c:
+src/overlays/ov200/calls/Ov200_PublishSwing.c:
     complete
     .text       start:0x020cfcfc end:0x020cfda0
 
-src/overlays/ov200/calls/func_ov200_020cfda0.c:
+src/overlays/ov200/calls/Ov200_OrientReadyTimerNodeGate.c:
     complete
     .text       start:0x020cfda0 end:0x020cfef4
 
-src/overlays/ov200/calls/func_ov200_020cfef4.c:
+src/overlays/ov200/calls/Ov200_AiRollTimerOnAnimEnd.c:
     complete
     .text       start:0x020cfef4 end:0x020cff54
 
-src/overlays/ov200/calls/func_ov200_020cff54.c:
+src/overlays/ov200/calls/Ov200_EnterAttackState.c:
     complete
     .text       start:0x020cff54 end:0x020d0008
 
-src/overlays/ov200/calls/func_ov200_020d0008.c:
+src/overlays/ov200/calls/Ov200_OrientTimerNodeGate.c:
     complete
     .text       start:0x020d0008 end:0x020d013c
 
-src/overlays/ov200/calls/func_ov200_020d013c.c:
+src/overlays/ov200/calls/Ov200_AiRollTimerQueue2.c:
     complete
     .text       start:0x020d013c end:0x020d018c
 
-src/overlays/ov200/calls/func_ov200_020d018c.c:
+src/overlays/ov200/calls/Ov200_SpawnEffectSetFlags.c:
     complete
     .text       start:0x020d018c end:0x020d0250
 
-src/overlays/ov200/calls/func_ov200_020d0250.c:
+src/overlays/ov200/calls/Ov200_AiHoldTick.c:
     complete
     .text       start:0x020d0250 end:0x020d02e4
 
-src/overlays/ov200/calls/func_ov200_020d02e4.c:
+src/overlays/ov200/calls/Ov200_PushTowardAnchorMidpoint.c:
     complete
     .text       start:0x020d02e4 end:0x020d032c
 
-src/overlays/ov200/calls/func_ov200_020d032c.c:
+src/overlays/ov200/calls/Ov200_BuildBeamState.c:
     complete
     .text       start:0x020d032c end:0x020d04e4
 
-src/overlays/ov200/calls/func_ov200_020d04e4.c:
+src/overlays/ov200/calls/Ov200_AimNode_Destroy.c:
     complete
     .text       start:0x020d04e4 end:0x020d0508
 
-src/overlays/ov200/auto/func_ov200_020d0508.c:
+src/overlays/ov200/auto/Ov200_SetNodeActiveState.c:
     complete
     .text       start:0x020d0508 end:0x020d0540
 
-src/overlays/ov200/auto/func_ov200_020d0540.c:
+src/overlays/ov200/auto/Ov200_IsMode1.c:
     complete
     .text       start:0x020d0540 end:0x020d055c
 
-src/overlays/ov200/auto/func_ov200_020d055c.c:
+src/overlays/ov200/auto/Ov200_IsField38NibbleZero.c:
     complete
     .text       start:0x020d055c end:0x020d0574
 
-src/overlays/ov200/auto/func_ov200_020d0574.c:
+src/overlays/ov200/auto/Ov200_AimNode_GetState.c:
     complete
     .text       start:0x020d0574 end:0x020d057c
 
-src/overlays/ov200/calls/func_ov200_020d057c.c:
+src/overlays/ov200/calls/Ov200_WireSubNodesRegister2.c:
     complete
     .text       start:0x020d057c end:0x020d06a4
 
-src/overlays/ov200/calls/func_ov200_020d06a4.c:
+src/overlays/ov200/calls/Ov200_AimNode_AiDispatch.c:
     complete
     .text       start:0x020d06a4 end:0x020d0764
 
-src/overlays/ov200/calls/func_ov200_020d0764.c:
+src/overlays/ov200/calls/Ov200_AimNode_HideAll.c:
     complete
     .text       start:0x020d0764 end:0x020d07bc
 
-src/overlays/ov200/calls/func_ov200_020d07bc.c:
+src/overlays/ov200/calls/Ov200_AimSubNodeArmRegions.c:
     complete
     .text       start:0x020d07bc end:0x020d0878
 
-src/overlays/ov200/calls/func_ov200_020d0878.c:
+src/overlays/ov200/calls/Ov200_BeamChargeTick.c:
     complete
     .text       start:0x020d0878 end:0x020d0ac4
 
-src/overlays/ov200/calls/func_ov200_020d0ac4.c:
+src/overlays/ov200/calls/Ov200_BeamFireTick.c:
     complete
     .text       start:0x020d0ac4 end:0x020d0bf0
 
-src/overlays/ov200/calls/func_ov200_020d0bf0.c:
+src/overlays/ov200/calls/Ov200_AiGoToTimerEaseInterp.c:
     complete
     .text       start:0x020d0bf0 end:0x020d0c14
 
-src/overlays/ov200/calls/func_ov200_020d0c14.c:
+src/overlays/ov200/calls/Ov200_TimerEaseInterp.c:
     complete
     .text       start:0x020d0c14 end:0x020d0c94
 
-src/overlays/ov200/calls/func_ov200_020d0c94.c:
+src/overlays/ov200/calls/Ov200_TickBeam.c:
     complete
     .text       start:0x020d0c94 end:0x020d1688
 
-src/overlays/ov200/calls/func_ov200_020d1688.c:
+src/overlays/ov200/calls/Ov200_RingBufferFillSlot.c:
     complete
     .text       start:0x020d1688 end:0x020d1708
 
-src/overlays/ov200/auto/func_ov200_020d1708.c:
+src/overlays/ov200/auto/Ov200_DecayActiveEntriesMirror.c:
     complete
     .text       start:0x020d1708 end:0x020d1768
 
-src/overlays/ov200/calls/func_ov200_020d1768.c:
+src/overlays/ov200/calls/Ov200_RingBufferReset.c:
     complete
     .text       start:0x020d1768 end:0x020d1804
 

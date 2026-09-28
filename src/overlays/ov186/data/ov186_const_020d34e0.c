@@ -1,4 +1,4 @@
-/* ov186 .data 0x020d34e0-0x020d34e4: initial value of the rolling counter func_ov186_020cfc08 keeps (the u8 template plus
+/* ov186 .data 0x020d34e0-0x020d34e4: initial value of the rolling counter Ov186_Actor_Construct keeps (the u8 template plus
  * its alignment padding). */
 struct {
     unsigned char value;

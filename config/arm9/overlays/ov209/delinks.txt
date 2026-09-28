@@ -4,328 +4,328 @@
     .data       start:0x020d6640 end:0x020d66c0 kind:data align:32
     .bss        start:0x020d66c0 end:0x020d66c0 kind:bss align:32
 
-src/overlays/ov209/calls/func_ov209_020d1980.c:
+src/overlays/ov209/calls/Ov209_RegisterEntityClass.c:
     complete
     .text       start:0x020d1980 end:0x020d1998
 
-src/overlays/ov209/calls/func_ov209_020d1998.c:
+src/overlays/ov209/calls/Ov209_CreateNamedEntity.c:
     complete
     .text       start:0x020d1998 end:0x020d1a24
 
-src/overlays/ov209/calls/func_ov209_020d1a24.c:
+src/overlays/ov209/calls/Ov209_SnapshotNudgeMatrix.c:
     complete
     .text       start:0x020d1a24 end:0x020d1aa0
 
-src/overlays/ov209/calls/func_ov209_020d1aa0.c:
+src/overlays/ov209/calls/Ov209_EnemyConstruct.c:
     complete
     .text       start:0x020d1aa0 end:0x020d1f58
 
-src/overlays/ov209/calls/func_ov209_020d1f58.c:
+src/overlays/ov209/calls/Ov209_Destroy.c:
     complete
     .text       start:0x020d1f58 end:0x020d1fa8
 
-src/overlays/ov209/calls/func_ov209_020d1fa8.c:
+src/overlays/ov209/calls/Ov209_DrawPushAway.c:
     complete
     .text       start:0x020d1fa8 end:0x020d2208
 
-src/overlays/ov209/calls/func_ov209_020d2208.c:
+src/overlays/ov209/calls/Ov209_OnEffectMessage.c:
     complete
     .text       start:0x020d2208 end:0x020d23bc
 
-src/overlays/ov209/calls/func_ov209_020d23bc.c:
+src/overlays/ov209/calls/Ov209_ForwardRegionEventToPart.c:
     complete
     .text       start:0x020d23bc end:0x020d23e4
 
-src/overlays/ov209/calls/func_ov209_020d23e4.c:
+src/overlays/ov209/calls/Ov209_DetachSubNodesHandOff.c:
     complete
     .text       start:0x020d23e4 end:0x020d2448
 
-src/overlays/ov209/calls/func_ov209_020d2448.c:
+src/overlays/ov209/calls/Ov209_BindClip.c:
     complete
     .text       start:0x020d2448 end:0x020d24b4
 
-src/overlays/ov209/calls/func_ov209_020d24b4.c:
+src/overlays/ov209/calls/Ov209_MessageMapTableForward.c:
     complete
     .text       start:0x020d24b4 end:0x020d252c
 
-src/overlays/ov209/calls/func_ov209_020d252c.c:
+src/overlays/ov209/calls/Ov209_Update.c:
     complete
     .text       start:0x020d252c end:0x020d26a8
 
-src/overlays/ov209/calls/func_ov209_020d26a8.c:
+src/overlays/ov209/calls/Ov209_TestEntitiesAgainstRect.c:
     complete
     .text       start:0x020d26a8 end:0x020d2788
 
-src/overlays/ov209/calls/func_ov209_020d2788.c:
+src/overlays/ov209/calls/Ov209_collectObjectsInSphereRec.c:
     complete
     .text       start:0x020d2788 end:0x020d293c
 
-src/overlays/ov209/calls/func_ov209_020d293c.c:
+src/overlays/ov209/calls/Ov209_CreateNodeRegistryEntry.c:
     complete
     .text       start:0x020d293c end:0x020d2998
 
-src/overlays/ov209/calls/func_ov209_020d2998.c:
+src/overlays/ov209/calls/Ov209_FilterHit.c:
     complete
     .text       start:0x020d2998 end:0x020d2c7c
     .rodata     start:0x020d65f4 end:0x020d65fc
 
-src/overlays/ov209/auto/func_ov209_020d2c7c.c:
+src/overlays/ov209/auto/Ov209_RequestSubState12IfIdleIn2Or4.c:
     complete
     .text       start:0x020d2c7c end:0x020d2cc4
 
-src/overlays/ov209/calls/func_ov209_020d2cc4.c:
+src/overlays/ov209/calls/Ov209_PickBestFacingNode.c:
     complete
     .text       start:0x020d2cc4 end:0x020d2dac
 
-src/overlays/ov209/calls/func_ov209_020d2dac.c:
+src/overlays/ov209/calls/Ov209_ContactSweep.c:
     complete
     .text       start:0x020d2dac end:0x020d2fbc
 
-src/overlays/ov209/calls/func_ov209_020d2fbc.c:
+src/overlays/ov209/calls/Ov209_InitSubStateRegister3.c:
     complete
     .text       start:0x020d2fbc end:0x020d306c
 
-src/overlays/ov209/calls/func_ov209_020d306c.c:
+src/overlays/ov209/calls/Ov209_AiDispatchAction.c:
     complete
     .text       start:0x020d306c end:0x020d32e4
 
-src/overlays/ov209/calls/func_ov209_020d32e4.c:
+src/overlays/ov209/calls/Ov209_MotionTickTimers.c:
     complete
     .text       start:0x020d32e4 end:0x020d33d0
 
-src/overlays/ov209/calls/func_ov209_020d33d0.c:
+src/overlays/ov209/calls/Ov209_AiLockAndPostUpdate.c:
     complete
     .text       start:0x020d33d0 end:0x020d3460
 
-src/overlays/ov209/calls/func_ov209_020d3460.c:
+src/overlays/ov209/calls/Ov209_AiStep_QueueStoredActionIfActive.c:
     complete
     .text       start:0x020d3460 end:0x020d349c
 
-src/overlays/ov209/calls/func_ov209_020d349c.c:
+src/overlays/ov209/calls/Ov209_SpawnEffect48TwoNodeClear.c:
     complete
     .text       start:0x020d349c end:0x020d3564
 
-src/overlays/ov209/calls/func_ov209_020d3564.c:
+src/overlays/ov209/calls/Ov209_WindUpFaceReset.c:
     complete
     .text       start:0x020d3564 end:0x020d362c
 
-src/overlays/ov209/calls/func_ov209_020d362c.c:
+src/overlays/ov209/calls/Ov209_AiStep_QueueAction2OnAnimEnd.c:
     complete
     .text       start:0x020d362c end:0x020d3660
 
-src/overlays/ov209/calls/func_ov209_020d3660.c:
+src/overlays/ov209/calls/Ov209_SetPose1ThenAdvanceSlot.c:
     complete
     .text       start:0x020d3660 end:0x020d3694
 
-src/overlays/ov209/calls/func_ov209_020d3694.c:
+src/overlays/ov209/calls/Ov209_AiPickFacingNode.c:
     complete
     .text       start:0x020d3694 end:0x020d36f4
 
-src/overlays/ov209/calls/func_ov209_020d36f4.c:
+src/overlays/ov209/calls/Ov209_AiEnterAim.c:
     complete
     .text       start:0x020d36f4 end:0x020d3754
 
-src/overlays/ov209/calls/func_ov209_020d3754.c:
+src/overlays/ov209/calls/Ov209_AiAimStart.c:
     complete
     .text       start:0x020d3754 end:0x020d37d8
 
-src/overlays/ov209/calls/func_ov209_020d37d8.c:
+src/overlays/ov209/calls/Ov209_AimSteerDotGate.c:
     complete
     .text       start:0x020d37d8 end:0x020d391c
 
-src/overlays/ov209/calls/func_ov209_020d391c.c:
+src/overlays/ov209/calls/Ov209_FaceTargetFireReadyC.c:
     complete
     .text       start:0x020d391c end:0x020d3a00
 
-src/overlays/ov209/calls/func_ov209_020d3a00.c:
+src/overlays/ov209/calls/Ov209_AiChooseAttack.c:
     complete
     .text       start:0x020d3a00 end:0x020d3ca4
 
-src/overlays/ov209/calls/func_ov209_020d3ca4.c:
+src/overlays/ov209/calls/Ov209_FaceTargetFireGate.c:
     complete
     .text       start:0x020d3ca4 end:0x020d3e44
 
-src/overlays/ov209/calls/func_ov209_020d3e44.c:
+src/overlays/ov209/calls/Ov209_FaceTargetFireReady.c:
     complete
     .text       start:0x020d3e44 end:0x020d3ee0
 
-src/overlays/ov209/calls/func_ov209_020d3ee0.c:
+src/overlays/ov209/calls/Ov209_FaceTargetFireReadyB.c:
     complete
     .text       start:0x020d3ee0 end:0x020d3f7c
 
-src/overlays/ov209/calls/func_ov209_020d3f7c.c:
+src/overlays/ov209/calls/Ov209_FireRangedShot.c:
     complete
     .text       start:0x020d3f7c end:0x020d409c
 
-src/overlays/ov209/calls/func_ov209_020d409c.c:
+src/overlays/ov209/calls/Ov209_KickFixedMotion.c:
     complete
     .text       start:0x020d409c end:0x020d4100
 
-src/overlays/ov209/calls/func_ov209_020d4100.c:
+src/overlays/ov209/calls/Ov209_AiStrikeWindup.c:
     complete
     .text       start:0x020d4100 end:0x020d4154
 
-src/overlays/ov209/calls/func_ov209_020d4154.c:
+src/overlays/ov209/calls/Ov209_DoubleStrikeTick.c:
     complete
     .text       start:0x020d4154 end:0x020d42f4
 
-src/overlays/ov209/calls/func_ov209_020d42f4.c:
+src/overlays/ov209/calls/Ov209_AiEnterChargeBreak.c:
     complete
     .text       start:0x020d42f4 end:0x020d4348
 
-src/overlays/ov209/calls/func_ov209_020d4348.c:
+src/overlays/ov209/calls/Ov209_Reaction_ChargeThenBreak.c:
     complete
     .text       start:0x020d4348 end:0x020d4448
 
-src/overlays/ov209/calls/func_ov209_020d4448.c:
+src/overlays/ov209/calls/Ov209_AiChargeTimeout.c:
     complete
     .text       start:0x020d4448 end:0x020d4498
 
-src/overlays/ov209/calls/func_ov209_020d4498.c:
+src/overlays/ov209/calls/Ov209_AiQueue8OnAnimEnd.c:
     complete
     .text       start:0x020d4498 end:0x020d44cc
 
-src/overlays/ov209/calls/func_ov209_020d44cc.c:
+src/overlays/ov209/calls/Ov209_EnterSlam.c:
     complete
     .text       start:0x020d44cc end:0x020d4548
 
-src/overlays/ov209/calls/func_ov209_020d4548.c:
+src/overlays/ov209/calls/Ov209_AiDriveWindup.c:
     complete
     .text       start:0x020d4548 end:0x020d459c
 
-src/overlays/ov209/calls/func_ov209_020d459c.c:
+src/overlays/ov209/calls/Ov209_MidWindowDriveAnchors.c:
     complete
     .text       start:0x020d459c end:0x020d46bc
 
-src/overlays/ov209/calls/func_ov209_020d46bc.c:
+src/overlays/ov209/calls/Ov209_AiEnterIdle.c:
     complete
     .text       start:0x020d46bc end:0x020d46f8
 
-src/overlays/ov209/calls/func_ov209_020d46f8.c:
+src/overlays/ov209/calls/Ov209_AiIdleTimer.c:
     complete
     .text       start:0x020d46f8 end:0x020d4734
 
-src/overlays/ov209/calls/func_ov209_020d4734.c:
+src/overlays/ov209/calls/Ov209_AiEnterThrow.c:
     complete
     .text       start:0x020d4734 end:0x020d4794
 
-src/overlays/ov209/calls/func_ov209_020d4794.c:
+src/overlays/ov209/calls/Ov209_LeapWindUpTick.c:
     complete
     .text       start:0x020d4794 end:0x020d4964
 
-src/overlays/ov209/calls/func_ov209_020d4964.c:
+src/overlays/ov209/calls/Ov209_AdvanceAimGiveUp.c:
     complete
     .text       start:0x020d4964 end:0x020d4a0c
 
-src/overlays/ov209/calls/func_ov209_020d4a0c.c:
+src/overlays/ov209/calls/Ov209_AiEnterBounceShot.c:
     complete
     .text       start:0x020d4a0c end:0x020d4a8c
 
-src/overlays/ov209/calls/func_ov209_020d4a8c.c:
+src/overlays/ov209/calls/Ov209_BounceShotTick.c:
     complete
     .text       start:0x020d4a8c end:0x020d5064
 
-src/overlays/ov209/calls/func_ov209_020d5064.c:
+src/overlays/ov209/calls/Ov209_ShockwaveTick.c:
     complete
     .text       start:0x020d5064 end:0x020d5240
 
-src/overlays/ov209/calls/func_ov209_020d5240.c:
+src/overlays/ov209/calls/Ov209_SpawnEffect4dTwoNodeClear.c:
     complete
     .text       start:0x020d5240 end:0x020d5330
 
-src/overlays/ov209/calls/func_ov209_020d5330.c:
+src/overlays/ov209/calls/Ov209_SpawnEffect49KickMotion.c:
     complete
     .text       start:0x020d5330 end:0x020d544c
 
-src/overlays/ov209/calls/func_ov209_020d544c.c:
+src/overlays/ov209/calls/Ov209_WaitThenSetFlagsAndAdvance.c:
     complete
     .text       start:0x020d544c end:0x020d54e0
 
-src/overlays/ov209/calls/func_ov209_020d54e0.c:
+src/overlays/ov209/calls/Ov209_NodeUpdateApplyMotion.c:
     complete
     .text       start:0x020d54e0 end:0x020d5554
 
-src/overlays/ov209/calls/func_ov209_020d5554.c:
+src/overlays/ov209/calls/Ov209_New.c:
     complete
     .text       start:0x020d5554 end:0x020d5588
 
-src/overlays/ov209/calls/func_ov209_020d5588.c:
+src/overlays/ov209/calls/Ov209_ItemConstruct.c:
     complete
     .text       start:0x020d5588 end:0x020d575c
 
-src/overlays/ov209/calls/func_ov209_020d575c.c:
+src/overlays/ov209/calls/Ov209_Destroy_2.c:
     complete
     .text       start:0x020d575c end:0x020d5794
 
-src/overlays/ov209/calls/func_ov209_020d5794.c:
+src/overlays/ov209/calls/Ov209_Projectile_TickSyncXform.c:
     complete
     .text       start:0x020d5794 end:0x020d57f8
 
-src/overlays/ov209/calls/func_ov209_020d57f8.c:
+src/overlays/ov209/calls/Ov209_OnItemMessage.c:
     complete
     .text       start:0x020d57f8 end:0x020d5960
 
-src/overlays/ov209/auto/func_ov209_020d5960.c:
+src/overlays/ov209/auto/Ov209_SendMessage26.c:
     complete
     .text       start:0x020d5960 end:0x020d59c8
 
-src/overlays/ov209/calls/func_ov209_020d59c8.c:
+src/overlays/ov209/calls/Ov209_LatchBitFlagTailTick.c:
     complete
     .text       start:0x020d59c8 end:0x020d59f4
 
-src/overlays/ov209/calls/func_ov209_020d59f4.c:
+src/overlays/ov209/calls/Ov209_ReleaseTwoSubObjects.c:
     complete
     .text       start:0x020d59f4 end:0x020d5a50
 
-src/overlays/ov209/calls/func_ov209_020d5a50.c:
+src/overlays/ov209/calls/Ov209_Model_ReapplyTracks.c:
     complete
     .text       start:0x020d5a50 end:0x020d5ae8
 
-src/overlays/ov209/calls/func_ov209_020d5ae8.c:
+src/overlays/ov209/calls/Ov209_SetTargetOrient.c:
     complete
     .text       start:0x020d5ae8 end:0x020d5b30
 
-src/overlays/ov209/calls/func_ov209_020d5b30.c:
+src/overlays/ov209/calls/Ov209_SpawnActorRegistryEntry.c:
     complete
     .text       start:0x020d5b30 end:0x020d5b8c
 
-src/overlays/ov209/calls/func_ov209_020d5b8c.c:
+src/overlays/ov209/calls/Ov209_stateInitClearSlots.c:
     complete
     .text       start:0x020d5b8c end:0x020d5c34
 
-src/overlays/ov209/calls/func_ov209_020d5c34.c:
+src/overlays/ov209/calls/Ov209_dispatchByStatusByteReset.c:
     complete
     .text       start:0x020d5c34 end:0x020d5cac
 
-src/overlays/ov209/calls/func_ov209_020d5cac.c:
+src/overlays/ov209/calls/Ov209_ApplyOrientation.c:
     complete
     .text       start:0x020d5cac end:0x020d5cdc
 
-src/overlays/ov209/calls/func_ov209_020d5cdc.c:
+src/overlays/ov209/calls/Ov209_EnterReaction.c:
     complete
     .text       start:0x020d5cdc end:0x020d5d8c
 
-src/overlays/ov209/auto/func_ov209_020d5d8c.c:
+src/overlays/ov209/auto/Ov209_ReactionIdleStep.c:
     complete
     .text       start:0x020d5d8c end:0x020d5d90
 
-src/overlays/ov209/calls/func_ov209_020d5d90.c:
+src/overlays/ov209/calls/Ov209_EnterGuard.c:
     complete
     .text       start:0x020d5d90 end:0x020d5ed8
 
-src/overlays/ov209/calls/func_ov209_020d5ed8.c:
+src/overlays/ov209/calls/Ov209_ItemSweepTick.c:
     complete
     .text       start:0x020d5ed8 end:0x020d6114
 
-src/overlays/ov209/calls/func_ov209_020d6114.c:
+src/overlays/ov209/calls/Ov209_TimerFlagFirePushTwice.c:
     complete
     .text       start:0x020d6114 end:0x020d624c
 
-src/overlays/ov209/calls/func_ov209_020d624c.c:
+src/overlays/ov209/calls/Ov209_ItemFlightTick.c:
     complete
     .text       start:0x020d624c end:0x020d6574
 
-src/overlays/ov209/calls/func_ov209_020d6574.c:
+src/overlays/ov209/calls/Ov209_AiStep_QueueAction0OnAnimEnd.c:
     complete
     .text       start:0x020d6574 end:0x020d65a4
 

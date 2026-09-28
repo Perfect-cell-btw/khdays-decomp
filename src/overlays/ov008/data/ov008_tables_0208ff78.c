@@ -5,7 +5,7 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov008_0208ff78: func_ov008_0208a640
+ *   data_ov008_0208ff78: Ov008_IsShopRecordListed
  */
 
 typedef unsigned char u8;

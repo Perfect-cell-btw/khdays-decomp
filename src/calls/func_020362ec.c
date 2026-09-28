@@ -1,7 +1,7 @@
-/* Twin of FS_UnloadOverlayImage over func_0203617c. */
-extern void func_0203617c(void *p);
+/* Twin of FS_UnloadOverlayImage over KeyRepeat_Update. */
+extern void KeyRepeat_Update(void *p);
 
 int func_020362ec(void *p) {
-    func_0203617c(p);
+    KeyRepeat_Update(p);
     return 1;
 }

@@ -1,7 +1,7 @@
-/* CARDi_GetRomAccessor: returns the address of the ROM accessor routine func_0200ecc0. */
+/* CARDi_GetRomAccessor: returns the address of the ROM accessor routine CARDi_ReadCard. */
 
-extern void func_0200ecc0(void);
+extern void CARDi_ReadCard(void);
 
 int CARDi_GetRomAccessor(void) {
-    return (int)func_0200ecc0;
+    return (int)CARDi_ReadCard;
 }

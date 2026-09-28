@@ -6,21 +6,21 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov020_0207fa40(void);
-extern void func_ov020_0207fa7c(void);
-extern void func_ov020_0207fac8(void);
+extern void Ov020_InitTripleAndDispatch(void);
+extern void Ov020_MarshalAndDispatch(void);
+extern void Ov020_ScriptOpPostScoreAndClearBgPriority(void);
 
 Ov_Fn data_ov020_020800c0[6] = {
 
-    func_ov020_0207fa40,
+    Ov020_InitTripleAndDispatch,
 
     0,
 
-    func_ov020_0207fa7c,
+    Ov020_MarshalAndDispatch,
 
     0,
 
-    func_ov020_0207fac8,
+    Ov020_ScriptOpPostScoreAndClearBgPriority,
 
     0,
 

@@ -5,9 +5,9 @@
  * packed bytes.
  *
  * Readers:
- *   data_ov025_020b4ec4: func_ov025_0209b950
- *   data_ov025_020b4ed0: func_ov025_0209bf5c, func_ov025_0209bf74
- *   data_ov025_020b4ee8: func_ov025_0209bf40, func_ov025_0209c62c
+ *   data_ov025_020b4ec4: Ov025_DrawSaveSlotTexts
+ *   data_ov025_020b4ed0: Ov025_GetItemTableEntry, Ov025_GetPageItem
+ *   data_ov025_020b4ee8: Ov025_GetPageTableEntry, Ov025_Config_Setup
  */
 
 typedef unsigned char u8;

@@ -4,75 +4,75 @@
     .data       start:0x02093900 end:0x02093a20 kind:data align:32
     .bss        start:0x02093a20 end:0x0209bb60 kind:bss align:32
 
-src/overlays/ov024/calls/func_ov024_02082960.c:
+src/overlays/ov024/calls/Ov024_MobiClip_StepScreenFade.c:
     complete
     .text       start:0x02082960 end:0x02082a28
 
-src/overlays/ov024/calls/func_ov024_02082a28.c:
+src/overlays/ov024/calls/Ov024_MobiClip_PlayerTick.c:
     complete
     .text       start:0x02082a28 end:0x02082a78
 
-src/overlays/ov024/calls/func_ov024_02082a78.c:
+src/overlays/ov024/calls/Ov024_MobiClip_OpenPlayer.c:
     complete
     .text       start:0x02082a78 end:0x02082c44
 
-src/overlays/ov024/calls/func_ov024_02082c44.c:
+src/overlays/ov024/calls/Ov024_TeardownPlayer.c:
     complete
     .text       start:0x02082c44 end:0x02082c98
 
-src/overlays/ov024/calls/func_ov024_02082c98.c:
+src/overlays/ov024/calls/Ov024_MobiClip_StartPlayback.c:
     complete
     .text       start:0x02082c98 end:0x02082e04
 
-src/overlays/ov024/calls/func_ov024_02082e04.c:
+src/overlays/ov024/calls/Ov024_MobiClip_BeginScreenFade.c:
     complete
     .text       start:0x02082e04 end:0x02082eb8
 
-src/overlays/ov024/calls/func_ov024_02082eb8.c:
+src/overlays/ov024/calls/Ov024_MobiClip_PlayerAbortRequested.c:
     complete
     .text       start:0x02082eb8 end:0x02082ee0
 
-src/overlays/ov024/calls/func_ov024_02082ee0.c:
+src/overlays/ov024/calls/Ov024_MobiClip_PlayerPollAbort.c:
     complete
     .text       start:0x02082ee0 end:0x02082f04
 
-src/overlays/ov024/calls/func_ov024_02082f04.c:
+src/overlays/ov024/calls/Ov024_MobiClip_UpdatePlayback.c:
     complete
     .text       start:0x02082f04 end:0x020831d4
 
-src/overlays/ov024/auto/func_ov024_020831d4.c:
+src/overlays/ov024/auto/Ov024_MobiClip_PlaybackIdleState.c:
     complete
     .text       start:0x020831d4 end:0x020831dc
 
-src/overlays/ov024/calls/func_ov024_020831dc.c:
+src/overlays/ov024/calls/Ov024_MobiClip_RestoreDisplay.c:
     complete
     .text       start:0x020831dc end:0x02083238
 
-src/overlays/ov024/calls/func_ov024_02083238.c:
+src/overlays/ov024/calls/Ov024_MobiClip_SrcOpen.c:
     complete
     .text       start:0x02083238 end:0x0208325c
 
-src/overlays/ov024/calls/func_ov024_0208325c.c:
+src/overlays/ov024/calls/Ov024_EndKeySharingIfOpen.c:
     complete
     .text       start:0x0208325c end:0x02083280
 
-src/overlays/ov024/calls/func_ov024_02083280.c:
+src/overlays/ov024/calls/Ov024_StreamSourceStart.c:
     complete
     .text       start:0x02083280 end:0x020832a4
 
-src/overlays/ov024/calls/func_ov024_020832a4.c:
+src/overlays/ov024/calls/Ov024_StreamSourceIsReady.c:
     complete
     .text       start:0x020832a4 end:0x020832c4
 
-src/overlays/ov024/calls/func_ov024_020832c4.c:
+src/overlays/ov024/calls/Ov024_MobiClip_InstallStreamSourceVtbl.c:
     complete
     .text       start:0x020832c4 end:0x02083318
 
-src/overlays/ov024/calls/func_ov024_02083318.c:
+src/overlays/ov024/calls/Ov024_SetFinished.c:
     complete
     .text       start:0x02083318 end:0x02083334
 
-src/overlays/ov024/calls/func_ov024_02083334.c:
+src/overlays/ov024/calls/Ov024_IsRunning.c:
     complete
     .text       start:0x02083334 end:0x02083358
 
@@ -80,47 +80,47 @@ src/overlays/ov024/calls/func_ov024_02083358.c:
     complete
     .text       start:0x02083358 end:0x02083368
 
-src/overlays/ov024/calls/func_ov024_02083368.c:
+src/overlays/ov024/calls/Ov024_MobiClip_ResolveStreamDescs.c:
     complete
     .text       start:0x02083368 end:0x020833b8
 
-src/overlays/ov024/calls/func_ov024_020833b8.c:
+src/overlays/ov024/calls/Ov024_MobiClip_OpenDescPair.c:
     complete
     .text       start:0x020833b8 end:0x020833da
 
-src/overlays/ov024/calls/func_ov024_020833dc.c:
+src/overlays/ov024/calls/Ov024_IsStreamFinished.c:
     complete
     .text       start:0x020833dc end:0x02083412
 
-src/overlays/ov024/calls/func_ov024_02083414.c:
+src/overlays/ov024/calls/Ov024_MayWaitFrames.c:
     complete
     .text       start:0x02083414 end:0x0208343c
 
-src/overlays/ov024/calls/func_ov024_0208343c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_StopPlayerStream.c:
     complete
     .text       start:0x0208343c end:0x02083466
 
-src/overlays/ov024/calls/func_ov024_02083468.c:
+src/overlays/ov024/calls/Ov024_thumbStep.c:
     complete
     .text       start:0x02083468 end:0x02083472
 
-src/overlays/ov024/calls/func_ov024_02083474.c:
+src/overlays/ov024/calls/Ov024_thumbStep_2.c:
     complete
     .text       start:0x02083474 end:0x02083486
 
-src/overlays/ov024/calls/func_ov024_02083488.c:
+src/overlays/ov024/calls/Ov024_CmdPrepareStream.c:
     complete
     .text       start:0x02083488 end:0x0208349a
 
-src/overlays/ov024/calls/func_ov024_0208349c.c:
+src/overlays/ov024/calls/Ov024_CmdSetStreamByte.c:
     complete
     .text       start:0x0208349c end:0x020834ae
 
-src/overlays/ov024/calls/func_ov024_020834b0.c:
+src/overlays/ov024/calls/Ov024_MobiClip_InitFromHeader.c:
     complete
     .text       start:0x020834b0 end:0x02083590
 
-src/overlays/ov024/calls/func_ov024_02083590.c:
+src/overlays/ov024/calls/Ov024_MobiClip_OpenStreamFromHeader.c:
     complete
     .text       start:0x02083590 end:0x020835cc
 
@@ -128,51 +128,51 @@ src/overlays/ov024/calls/func_ov024_020835cc.c:
     complete
     .text       start:0x020835cc end:0x020835d8
 
-src/overlays/ov024/calls/func_ov024_020835d8.c:
+src/overlays/ov024/calls/Ov024_ArmAndStart.c:
     complete
     .text       start:0x020835d8 end:0x020835f8
 
-src/overlays/ov024/auto/func_ov024_020835f8.c:
+src/overlays/ov024/auto/Ov024_TileTextRenderer_SetReady.c:
     complete
     .text       start:0x020835f8 end:0x02083600
 
-src/overlays/ov024/calls/func_ov024_02083600.c:
+src/overlays/ov024/calls/Ov024_MobiClip_StreamAdvance.c:
     complete
     .text       start:0x02083600 end:0x0208365c
 
-src/overlays/ov024/calls/func_ov024_0208365c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_StreamHandleEvent.c:
     complete
     .text       start:0x0208365c end:0x02083744
 
-src/overlays/ov024/calls/func_ov024_02083744.c:
+src/overlays/ov024/calls/Ov024_MobiClip_SubtitleNextChar.c:
     complete
     .text       start:0x02083744 end:0x02083898
 
-src/overlays/ov024/calls/func_ov024_02083898.c:
+src/overlays/ov024/calls/Ov024_MobiClip_MeasureSubtitleWidth.c:
     complete
     .text       start:0x02083898 end:0x02083a9c
 
-src/overlays/ov024/calls/func_ov024_02083a9c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_UpdateStreamLead.c:
     complete
     .text       start:0x02083a9c end:0x02083b34
 
-src/overlays/ov024/calls/func_ov024_02083b34.c:
+src/overlays/ov024/calls/Ov024_MobiClip_PresentRecord.c:
     complete
     .text       start:0x02083b34 end:0x02083c28
 
-src/overlays/ov024/calls/func_ov024_02083c28.c:
+src/overlays/ov024/calls/Ov024_MobiClip_IsStreamReady.c:
     complete
     .text       start:0x02083c28 end:0x02083c78
 
-src/overlays/ov024/calls/func_ov024_02083c78.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DrainStream.c:
     complete
     .text       start:0x02083c78 end:0x02083ccc
 
-src/overlays/ov024/calls/func_ov024_02083ccc.c:
+src/overlays/ov024/calls/Ov024_MobiClip_CloseRenderPass.c:
     complete
     .text       start:0x02083ccc end:0x02083cf0
 
-src/overlays/ov024/calls/func_ov024_02083cf0.c:
+src/overlays/ov024/calls/Ov024_MobiClip_Alloc.c:
     complete
     .text       start:0x02083cf0 end:0x02083d00
 
@@ -180,151 +180,151 @@ src/overlays/ov024/calls/func_ov024_02083d00.c:
     complete
     .text       start:0x02083d00 end:0x02083d0c
 
-src/overlays/ov024/calls/func_ov024_02083d0c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_LoadSpriteGrid.c:
     complete
     .text       start:0x02083d0c end:0x02083e28
 
-src/overlays/ov024/calls/func_ov024_02083e28.c:
+src/overlays/ov024/calls/Ov024_MobiClip_SetUpMainEngine.c:
     complete
     .text       start:0x02083e28 end:0x02083f44
 
-src/overlays/ov024/calls/func_ov024_02083f44.c:
+src/overlays/ov024/calls/Ov024_MobiClip_SetUpSubEngine.c:
     complete
     .text       start:0x02083f44 end:0x02084054
 
-src/overlays/ov024/calls/func_ov024_02084054.c:
+src/overlays/ov024/calls/Ov024_GetFrameBuffer.c:
     complete
     .text       start:0x02084054 end:0x0208406c
 
-src/overlays/ov024/calls/func_ov024_0208406c.c:
+src/overlays/ov024/calls/Ov024_GetSubScreenBuffer.c:
     complete
     .text       start:0x0208406c end:0x02084084
 
-src/overlays/ov024/calls/func_ov024_02084084.c:
+src/overlays/ov024/calls/Ov024_MuteChannel3.c:
     complete
     .text       start:0x02084084 end:0x020840a4
 
-src/overlays/ov024/calls/func_ov024_020840a4.c:
+src/overlays/ov024/calls/Ov024_MobiClip_StartAudio.c:
     complete
     .text       start:0x020840a4 end:0x020841c4
 
-src/overlays/ov024/calls/func_ov024_020841c4.c:
+src/overlays/ov024/calls/Ov024_MobiClip_ReleaseAudioChannel.c:
     complete
     .text       start:0x020841c4 end:0x0208421c
 
-src/overlays/ov024/calls/func_ov024_0208421c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_FrameAlarm.c:
     complete
     .text       start:0x0208421c end:0x0208435c
 
-src/overlays/ov024/calls/func_ov024_0208435c.c:
+src/overlays/ov024/calls/Ov024_AdvanceNodeAnim.c:
     complete
     .text       start:0x0208435c end:0x0208437c
 
-src/overlays/ov024/calls/func_ov024_0208437c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_FlushAudioRing.c:
     complete
     .text       start:0x0208437c end:0x02084438
 
-src/overlays/ov024/calls/func_ov024_02084438.c:
+src/overlays/ov024/calls/Ov024_MobiClip_PresentOnVBlank.c:
     complete
     .text       start:0x02084438 end:0x0208455c
 
-src/overlays/ov024/calls/func_ov024_0208455c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_ReserveTcmArenas.c:
     complete
     .text       start:0x0208455c end:0x02084608
 
-src/overlays/ov024/calls/func_ov024_02084608.c:
+src/overlays/ov024/calls/Ov024_MobiClip_FlushStagedBlock.c:
     complete
     .text       start:0x02084608 end:0x0208462c
 
-src/overlays/ov024/calls/func_ov024_0208462c.c:
+src/overlays/ov024/calls/Ov024_RunDisplayTeardownSteps.c:
     complete
     .text       start:0x0208462c end:0x02084650
 
-src/overlays/ov024/calls/func_ov024_02084650.c:
+src/overlays/ov024/calls/Ov024_MobiClip_OpenStreamSlot.c:
     complete
     .text       start:0x02084650 end:0x020846c0
 
-src/overlays/ov024/calls/func_ov024_020846c0.c:
+src/overlays/ov024/calls/Ov024_MobiClip_OpenStreams.c:
     complete
     .text       start:0x020846c0 end:0x02084b14
 
-src/overlays/ov024/calls/func_ov024_02084b14.c:
+src/overlays/ov024/calls/Ov024_MobiClip_StopPlayback.c:
     complete
     .text       start:0x02084b14 end:0x02084c24
 
-src/overlays/ov024/calls/func_ov024_02084c24.c:
+src/overlays/ov024/calls/Ov024_MobiClip_TickSlot.c:
     complete
     .text       start:0x02084c24 end:0x02084db8
 
-src/overlays/ov024/calls/func_ov024_02084db8.c:
+src/overlays/ov024/calls/Ov024_TickStreamSlots.c:
     complete
     .text       start:0x02084db8 end:0x02084df4
 
-src/overlays/ov024/calls/func_ov024_02084df4.c:
+src/overlays/ov024/calls/Ov024_MobiClip_KickPlayerSlot.c:
     complete
     .text       start:0x02084df4 end:0x02084e68
 
-src/overlays/ov024/calls/func_ov024_02084e68.c:
+src/overlays/ov024/calls/Ov024_MobiClip_BufferedFrameCount.c:
     complete
     .text       start:0x02084e68 end:0x02084e94
 
-src/overlays/ov024/calls/func_ov024_02084e94.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DecoderInitTrampoline.c:
     complete
     .text       start:0x02084e94 end:0x02084ec4
 
-src/overlays/ov024/calls/func_ov024_02084ec4.cpp:
+src/overlays/ov024/calls/Ov024_MobiClip_MakeStream.cpp:
     complete
     .text       start:0x02084ec4 end:0x02084f98
 
-src/overlays/ov024/calls/func_ov024_02084f98.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DecoderFreeBuffers.c:
     complete
     .text       start:0x02084f98 end:0x02084fac
 
-src/overlays/ov024/calls/func_ov024_02084fac.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DecoderDestroy.c:
     complete
     .text       start:0x02084fac end:0x02084fcc
 
-src/overlays/ov024/calls/func_ov024_02084fcc.c:
+src/overlays/ov024/calls/Ov024_ReleaseIfSet.c:
     complete
     .text       start:0x02084fcc end:0x02084fe4
 
-src/overlays/ov024/calls/func_ov024_02084fe4.c:
+src/overlays/ov024/calls/Ov024_ReleaseIfSet_2.c:
     complete
     .text       start:0x02084fe4 end:0x02084ffc
 
-src/overlays/ov024/calls/func_ov024_02084ffc.c:
+src/overlays/ov024/calls/Ov024_GetBlockSizeIfSet.c:
     complete
     .text       start:0x02084ffc end:0x02085014
 
-src/overlays/ov024/calls/func_ov024_02085014.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DecodeAudioEntryChecked.c:
     complete
     .text       start:0x02085014 end:0x02085038
 
-src/overlays/ov024/calls/func_ov024_02085038.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DecodeAudioEntryChecked_2.c:
     complete
     .text       start:0x02085038 end:0x0208505c
 
-src/overlays/ov024/calls/func_ov024_0208505c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DecodeAudioEntryChecked_3.c:
     complete
     .text       start:0x0208505c end:0x02085080
 
-src/overlays/ov024/calls/func_ov024_02085080.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DecodeAudioEntryChecked_4.c:
     complete
     .text       start:0x02085080 end:0x020850a4
 
-src/overlays/ov024/calls/func_ov024_020850a4.c:
+src/overlays/ov024/calls/Ov024_GetIndexedWordIfSet.c:
     complete
     .text       start:0x020850a4 end:0x020850bc
 
-src/overlays/ov024/calls/func_ov024_020850bc.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DecodeAudioEntryChecked_5.c:
     complete
     .text       start:0x020850bc end:0x020850e0
 
-src/overlays/ov024/auto/func_ov024_020850e0.c:
+src/overlays/ov024/auto/Ov024_StackAllocVtblSlot0NoOp.c:
     complete
     .text       start:0x020850e0 end:0x020850e4
 
-src/overlays/ov024/calls/func_ov024_020850e4.c:
+src/overlays/ov024/calls/Ov024_FreeStackAllocPassthrough.c:
     complete
     .text       start:0x020850e4 end:0x020850f8
 
@@ -336,55 +336,55 @@ src/overlays/ov024/calls/func_ov024_02085104.c:
     complete
     .text       start:0x02085104 end:0x02085110
 
-src/overlays/ov024/calls/func_ov024_02085110.c:
+src/overlays/ov024/calls/Ov024_MobiClip_ResetStreamState.c:
     complete
     .text       start:0x02085110 end:0x02085140
 
-src/overlays/ov024/calls/func_ov024_02085140.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DecoderFreeBuffers_2.c:
     complete
     .text       start:0x02085140 end:0x02085154
 
-src/overlays/ov024/calls/func_ov024_02085154.cpp:
+src/overlays/ov024/calls/Ov024_MobiClip_OpenContainer.cpp:
     complete
     .text       start:0x02085154 end:0x02085700
 
-src/overlays/ov024/calls/func_ov024_02085700.cpp:
+src/overlays/ov024/calls/Ov024_MobiClip_CloseContainer.cpp:
     complete
     .text       start:0x02085700 end:0x02085868
 
-src/overlays/ov024/auto/func_ov024_02085868.c:
+src/overlays/ov024/auto/Ov024_GetWord20.c:
     complete
     .text       start:0x02085868 end:0x02085870
 
-src/overlays/ov024/auto/func_ov024_02085870.c:
+src/overlays/ov024/auto/Ov024_GetWord18.c:
     complete
     .text       start:0x02085870 end:0x02085878
 
-src/overlays/ov024/auto/func_ov024_02085878.c:
+src/overlays/ov024/auto/Ov024_Get80or100ByField28.c:
     complete
     .text       start:0x02085878 end:0x0208589c
 
-src/overlays/ov024/calls/func_ov024_0208589c.cpp:
+src/overlays/ov024/calls/Ov024_MobiClip_StepFrame.cpp:
     complete
     .text       start:0x0208589c end:0x020859d4
 
-src/overlays/ov024/calls/func_ov024_020859d4.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DecodeFrame.c:
     complete
     .text       start:0x020859d4 end:0x02085ab8
 
-src/overlays/ov024/calls/func_ov024_02085ab8.cpp:
+src/overlays/ov024/calls/Ov024_MobiClip_BlitFrame.cpp:
     complete
     .text       start:0x02085ab8 end:0x02085c3c
 
-src/overlays/ov024/calls/func_ov024_02085c3c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_DropFrame.c:
     complete
     .text       start:0x02085c3c end:0x02085c7c
 
-src/overlays/ov024/auto/func_ov024_02085c7c.c:
+src/overlays/ov024/auto/Ov024_GetIndexedWordAt0x88.c:
     complete
     .text       start:0x02085c7c end:0x02085c8c
 
-src/overlays/ov024/calls/func_ov024_02085c8c.cpp:
+src/overlays/ov024/calls/Ov024_MobiClip_StepAudio.cpp:
     complete
     .text       start:0x02085c8c end:0x02085e3c
 
@@ -396,79 +396,79 @@ src/overlays/ov024/calls/func_ov024_02085e48.c:
     complete
     .text       start:0x02085e48 end:0x02085e54
 
-src/overlays/ov024/calls/func_ov024_02085e54.c:
+src/overlays/ov024/calls/Ov024_MobiClip_BindBitstreamCursor.c:
     complete
     .text       start:0x02085e54 end:0x02085e8c
 
-src/overlays/ov024/calls/func_ov024_02085e8c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_StreamSeek.c:
     complete
     .text       start:0x02085e8c end:0x02085ed8
 
-src/overlays/ov024/calls/func_ov024_02085ed8.c:
+src/overlays/ov024/calls/Ov024_MobiClip_StreamRead.c:
     complete
     .text       start:0x02085ed8 end:0x02085f48
 
-src/overlays/ov024/calls/func_ov024_02085f48.c:
+src/overlays/ov024/calls/Ov024_MobiClip_StreamReadAhead.c:
     complete
     .text       start:0x02085f48 end:0x02085fc4
 
-src/overlays/ov024/calls/func_ov024_02085fc4.c:
+src/overlays/ov024/calls/Ov024_MobiClip_CursorWaitAsync.c:
     complete
     .text       start:0x02085fc4 end:0x02085fec
 
-src/overlays/ov024/calls/func_ov024_02085fec.c:
+src/overlays/ov024/calls/Ov024_CallVirt14.c:
     complete
     .text       start:0x02085fec end:0x02086000
 
-src/overlays/ov024/auto/func_ov024_02086000.c:
+src/overlays/ov024/auto/Ov024_MobiClip_StreamVtblSlot0NoOp.c:
     complete
     .text       start:0x02086000 end:0x02086004
 
-libs/mobiclip/video/asm_stubs/auto/func_ov024_02086004.c:
+libs/mobiclip/video/asm_stubs/auto/Ov024_MobiClip_BlitRows.c:
     complete
     .text       start:0x02086004 end:0x020865c4
 
-src/overlays/ov024/auto/func_ov024_020865c4.c:
+src/overlays/ov024/auto/Ov024_MobiClip_GetDecoderCodeSize.c:
     complete
     .text       start:0x020865c4 end:0x020865d0
 
-src/overlays/ov024/auto/func_ov024_020865d0.c:
+src/overlays/ov024/auto/Ov024_MobiClip_GetTableArenaSize.c:
     complete
     .text       start:0x020865d0 end:0x020865d8
 
-src/overlays/ov024/calls/func_ov024_020865d8.c:
+src/overlays/ov024/calls/Ov024_MobiClip_ArenaInitCode.c:
     complete
     .text       start:0x020865d8 end:0x020865f8
 
-src/overlays/ov024/calls/func_ov024_020865f8.c:
+src/overlays/ov024/calls/Ov024_MobiClip_ArenaInitData.c:
     complete
     .text       start:0x020865f8 end:0x02086620
 
-src/overlays/ov024/calls/func_ov024_02086620.c:
+src/overlays/ov024/calls/Ov024_MobiClip_GetDecoderCodeCached.c:
     complete
     .text       start:0x02086620 end:0x0208669c
 
-src/overlays/ov024/calls/func_ov024_0208669c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_GetDecodeTableCached.c:
     complete
     .text       start:0x0208669c end:0x0208670c
 
-src/overlays/ov024/calls/func_ov024_0208670c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_GetSatTable5BitCached.c:
     complete
     .text       start:0x0208670c end:0x0208677c
 
-src/overlays/ov024/calls/func_ov024_0208677c.c:
+src/overlays/ov024/calls/Ov024_MobiClip_GetClampTable8BitCached.c:
     complete
     .text       start:0x0208677c end:0x020867ec
 
-src/overlays/ov024/calls/func_ov024_020867ec.c:
+src/overlays/ov024/calls/Ov024_MobiClip_AdpcmInitState.c:
     complete
     .text       start:0x020867ec end:0x02086800
 
-src/overlays/ov024/calls/func_ov024_02086800.cpp:
+src/overlays/ov024/calls/Ov024_MobiClip_DecodeAdpcm.cpp:
     complete
     .text       start:0x02086800 end:0x02086958
 
-libs/mobiclip/audio/asm_stubs/calls/func_ov024_02086958.s:
+libs/mobiclip/audio/asm_stubs/calls/Ov024_MobiClip_AudioTransformDecode.s:
     complete
     .text       start:0x02086958 end:0x02087318
 

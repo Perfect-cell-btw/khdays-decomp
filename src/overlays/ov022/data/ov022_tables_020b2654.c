@@ -26,7 +26,7 @@ const u8 data_ov022_020b2690[32] = {
     19, 0, 17, 0, 24, 0, 255, 255, 255, 255, 255, 255, 26, 0, 0, 0,
 };
 
-/* read by func_ov022_020a22f0 (020a22f0): struct Ov022MatchTable020a22f0 data_ov022_020b26b0; */
+/* read by Ov022_SearchMatchingRow (020a22f0): struct Ov022MatchTable020a22f0 data_ov022_020b26b0; */
 const int data_ov022_020b26b0[8] = {
     67, 7, 68, 3, 69, 11, 70, 2,
 };
@@ -44,7 +44,7 @@ const u8 data_ov022_020b26f4[48] = {
     0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 0, 0,
 };
 
-/* read by func_ov022_020a4798 (020a4798): struct KindIdTable data_ov022_020b2724; */
+/* read by Ov022_RequestVoiceIds (020a4798): struct KindIdTable data_ov022_020b2724; */
 const u8 data_ov022_020b2724[120] = {
     234, 0, 0, 0, 238, 0, 0, 0, 240, 0, 0, 0, 242, 0, 0, 0,
     244, 0, 0, 0, 8, 1, 0, 0, 246, 0, 0, 0, 6, 1, 0, 0,

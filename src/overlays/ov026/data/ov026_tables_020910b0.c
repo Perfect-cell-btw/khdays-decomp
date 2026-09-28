@@ -8,12 +8,12 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by For each variable-stride record, build a sprite via func_ov026_02083294 (kind-mapped prior (02082bfc): unsigned char data_ov026_020910b0; */
+/* read by For each variable-stride record, build a sprite via Ov026_AddElem (kind-mapped prior (02082bfc): unsigned char data_ov026_020910b0; */
 const u8 data_ov026_020910b0[4] = {
     8, 9, 10, 11,
 };
 
-/* read by For each variable-stride record, build a sprite via func_ov026_02083294 (kind-mapped prior (02082bfc): unsigned char data_ov026_020910b4; */
+/* read by For each variable-stride record, build a sprite via Ov026_AddElem (kind-mapped prior (02082bfc): unsigned char data_ov026_020910b4; */
 const u8 data_ov026_020910b4[4] = {
     24, 25, 26, 27,
 };
@@ -49,7 +49,7 @@ const u8 data_ov026_020910d4[8] = {
     200, 24, 16, 128, 216, 24, 16, 128,
 };
 
-/* read by func_ov026_02088c84 (not yet decompiled)
+/* read by Ov026_OpenSellDialog (not yet decompiled)
  *   Ov008_CounterDialogInput: one frame of input on (0208bbf4): const Ov008ChoiceBox data_ov026_020910dc[1]; */
 const u8 data_ov026_020910dc[4] = {
     32, 117, 96, 16,

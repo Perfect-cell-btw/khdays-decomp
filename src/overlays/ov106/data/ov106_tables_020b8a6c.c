@@ -8,12 +8,12 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 
-/* read by func_ov106_020b782c (not yet decompiled) */
+/* read by Ov106_LayoutMarkerWidget (not yet decompiled) */
 const u8 data_ov106_020b8a6c[12] = {
     0, 192, 254, 255, 0, 96, 255, 255, 0, 0, 0, 0,
 };
 
-/* read by func_ov106_020b7ec0 (not yet decompiled) */
+/* read by Ov106_ResetMarkerWidget (not yet decompiled) */
 const u8 data_ov106_020b8a78[12] = {
     0, 192, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0,
 };

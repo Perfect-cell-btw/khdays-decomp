@@ -6,13 +6,13 @@ typedef unsigned int u32;
 #define FS_OVERLAY_DIGEST_SIZE 20
 #define OVERLAY_COUNT 303
 
-/* "%s/%s/lv.b.z": the level file path template (func_02035730 formats it). */
+/* "%s/%s/lv.b.z": the level file path template (LevelTable_ReadEntry formats it). */
 char data_02042ac0[16] = "%s/%s/lv.b.z";
 
 /* "ba/ch": the base directory of the level files. */
 char data_02042ad0[8] = "ba/ch";
 
-/* The next spawn id handed out by func_0203c5c0 (child objects start at 0x01000000). */
+/* The next spawn id handed out by CreateRegistryEntry (child objects start at 0x01000000). */
 u32 data_02042ad8 = 0x00000001;
 
 /* Twenty unreferenced bytes between the counter and the table (one more SHA-1 sized digest). */

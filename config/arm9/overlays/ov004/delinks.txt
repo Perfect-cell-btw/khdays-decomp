@@ -4,191 +4,191 @@
     .data       start:0x020511e0 end:0x02051380 kind:data align:32
     .bss        start:0x02051380 end:0x020513a0 kind:bss align:32
 
-src/overlays/ov004/calls/func_ov004_0204cac0.c:
+src/overlays/ov004/calls/Ov004_InitResourceRecord.c:
     complete
     .text       start:0x0204cac0 end:0x0204cae6
 
-src/overlays/ov004/calls/func_ov004_0204cae8.c:
+src/overlays/ov004/calls/Ov004_FreeResourceRecordBuffer.c:
     complete
     .text       start:0x0204cae8 end:0x0204caf6
 
-src/overlays/ov004/auto/func_ov004_0204caf8.c:
+src/overlays/ov004/auto/Ov004_GetVarRecordByIndex.c:
     complete
     .text       start:0x0204caf8 end:0x0204cb30
 
-src/overlays/ov004/calls/func_ov004_0204cb30.c:
+src/overlays/ov004/calls/Ov004_DupWideString.c:
     complete
     .text       start:0x0204cb30 end:0x0204cb74
 
-src/overlays/ov004/calls/func_ov004_0204cb74.c:
+src/overlays/ov004/calls/Ov004_BuildRecordNode.c:
     complete
     .text       start:0x0204cb74 end:0x0204ccbc
 
-src/overlays/ov004/calls/func_ov004_0204ccbc.c:
+src/overlays/ov004/calls/Ov004_FreeWorkBuffers.c:
     complete
     .text       start:0x0204ccbc end:0x0204cd28
 
-src/overlays/ov004/auto/func_ov004_0204cd28.c:
+src/overlays/ov004/auto/Ov004_RecordFilter_InRange.c:
     complete
     .text       start:0x0204cd28 end:0x0204cd54
 
-src/overlays/ov004/auto/func_ov004_0204cd54.c:
+src/overlays/ov004/auto/Ov004_RecordFilter_BelowMax.c:
     complete
     .text       start:0x0204cd54 end:0x0204cd78
 
-src/overlays/ov004/calls/func_ov004_0204cd78.c:
+src/overlays/ov004/calls/Ov004_IsEncounterEligible.c:
     complete
     .text       start:0x0204cd78 end:0x0204cecc
 
-src/overlays/ov004/calls/func_ov004_0204cecc.c:
+src/overlays/ov004/calls/Ov004_CanTriggerActionInRange.c:
     complete
     .text       start:0x0204cecc end:0x0204cf4c
 
-src/overlays/ov004/auto/func_ov004_0204cf4c.c:
+src/overlays/ov004/auto/Ov004_RecordFilter_KindZero.c:
     complete
     .text       start:0x0204cf4c end:0x0204cf60
 
-src/overlays/ov004/auto/func_ov004_0204cf60.c:
+src/overlays/ov004/auto/Ov004_RecordFilter_KindNonZero.c:
     complete
     .text       start:0x0204cf60 end:0x0204cf74
 
-src/overlays/ov004/auto/func_ov004_0204cf74.c:
+src/overlays/ov004/auto/Ov004_RecordFilter_Kind4Id10.c:
     complete
     .text       start:0x0204cf74 end:0x0204cf98
 
-src/overlays/ov004/calls/func_ov004_0204cf98.c:
+src/overlays/ov004/calls/Ov004_WalkRecordsAppendMatching.c:
     complete
     .text       start:0x0204cf98 end:0x0204d020
 
-src/overlays/ov004/calls/func_ov004_0204d020.c:
+src/overlays/ov004/calls/Ov004_AppendRecordsInRange.c:
     complete
     .text       start:0x0204d020 end:0x0204d034
 
-src/overlays/ov004/calls/func_ov004_0204d034.c:
+src/overlays/ov004/calls/Ov004_FindBestRecordAppend.c:
     complete
     .text       start:0x0204d034 end:0x0204d0d0
 
-src/overlays/ov004/calls/func_ov004_0204d0d0.c:
+src/overlays/ov004/calls/Ov004_AppendEligibleRecords.c:
     complete
     .text       start:0x0204d0d0 end:0x0204d0e4
 
-src/overlays/ov004/calls/func_ov004_0204d0e4.c:
+src/overlays/ov004/calls/Ov004_AppendRecordsBelowMax.c:
     complete
     .text       start:0x0204d0e4 end:0x0204d0f8
 
-src/overlays/ov004/calls/func_ov004_0204d0f8.c:
+src/overlays/ov004/calls/Ov004_AppendTriggerableInRange.c:
     complete
     .text       start:0x0204d0f8 end:0x0204d10c
 
-src/overlays/ov004/calls/func_ov004_0204d10c.c:
+src/overlays/ov004/calls/Ov004_AppendRecordsKindZero.c:
     complete
     .text       start:0x0204d10c end:0x0204d120
 
-src/overlays/ov004/calls/func_ov004_0204d120.c:
+src/overlays/ov004/calls/Ov004_AppendRecordsKindNonZero.c:
     complete
     .text       start:0x0204d120 end:0x0204d134
 
-src/overlays/ov004/calls/func_ov004_0204d134.c:
+src/overlays/ov004/calls/Ov004_AppendRecordsKind4Id10.c:
     complete
     .text       start:0x0204d134 end:0x0204d148
 
-src/overlays/ov004/calls/func_ov004_0204d148.c:
+src/overlays/ov004/calls/Ov004_DestroyAllListObjects.c:
     complete
     .text       start:0x0204d148 end:0x0204d1a8
 
-src/overlays/ov004/calls/func_ov004_0204d1a8.c:
+src/overlays/ov004/calls/Ov004_QueryFieldBySelector.c:
     complete
     .text       start:0x0204d1a8 end:0x0204d25c
 
-src/overlays/ov004/calls/func_ov004_0204d25c.c:
+src/overlays/ov004/calls/Ov004_InitObjectWithList.c:
     complete
     .text       start:0x0204d25c end:0x0204d2bc
 
-src/overlays/ov004/calls/func_ov004_0204d2bc.c:
+src/overlays/ov004/calls/Ov004_DestroyMissionList.c:
     complete
     .text       start:0x0204d2bc end:0x0204d2ec
 
-src/overlays/ov004/calls/func_ov004_0204d2ec.c:
+src/overlays/ov004/calls/Ov004_FindListObjectWithField10Zero.c:
     complete
     .text       start:0x0204d2ec end:0x0204d328
 
-src/overlays/ov004/calls/func_ov004_0204d328.c:
+src/overlays/ov004/calls/Ov004_FirstPositiveCountNode.c:
     complete
     .text       start:0x0204d328 end:0x0204d368
 
-src/overlays/ov004/calls/func_ov004_0204d368.c:
+src/overlays/ov004/calls/Ov004_LookupTypeCode.c:
     complete
     .text       start:0x0204d368 end:0x0204d3a4
 
-src/overlays/ov004/auto/func_ov004_0204d3a4.c:
+src/overlays/ov004/auto/Ov004_TagListHasFbAtLeast3.c:
     complete
     .text       start:0x0204d3a4 end:0x0204d3f4
 
-src/overlays/ov004/auto/func_ov004_0204d3f4.c:
+src/overlays/ov004/auto/Ov004_ClampStatBlock.c:
     complete
     .text       start:0x0204d3f4 end:0x0204d4a0
 
-src/overlays/ov004/auto/func_ov004_0204d4a0.c:
+src/overlays/ov004/auto/Ov004_RecipeVisitHookNoOp.c:
     complete
     .text       start:0x0204d4a0 end:0x0204d4a4
 
-src/overlays/ov004/calls/func_ov004_0204d4a4.c:
+src/overlays/ov004/calls/Ov004_AccumulateKeyed.c:
     complete
     .text       start:0x0204d4a4 end:0x0204d538
 
-src/overlays/ov004/calls/func_ov004_0204d538.c:
+src/overlays/ov004/calls/Ov004_AddToSecondaryTally.c:
     complete
     .text       start:0x0204d538 end:0x0204d640
 
-src/overlays/ov004/calls/func_ov004_0204d640.c:
+src/overlays/ov004/calls/Ov004_AddToTally.c:
     complete
     .text       start:0x0204d640 end:0x0204d7b4
 
-src/overlays/ov004/calls/func_ov004_0204d7b4.c:
+src/overlays/ov004/calls/Ov004_Tally_ApplyCommand.c:
     complete
     .text       start:0x0204d7b4 end:0x0204d91c
 
-src/overlays/ov004/auto/func_ov004_0204d91c.c:
+src/overlays/ov004/auto/Ov004_FoldRecordIntoTally.c:
     complete
     .text       start:0x0204d91c end:0x0204da64
 
-src/overlays/ov004/calls/func_ov004_0204da64.c:
+src/overlays/ov004/calls/Ov004_TallySlots.c:
     complete
     .text       start:0x0204da64 end:0x0204dac4
 
-src/overlays/ov004/calls/func_ov004_0204dac4.c:
+src/overlays/ov004/calls/Ov004_TallyScaledSlots.c:
     complete
     .text       start:0x0204dac4 end:0x0204db5c
 
-src/overlays/ov004/auto/func_ov004_0204db5c.c:
+src/overlays/ov004/auto/Ov004_FindKeyedByte.c:
     complete
     .text       start:0x0204db5c end:0x0204dba8
 
-src/overlays/ov004/calls/func_ov004_0204dba8.c:
+src/overlays/ov004/calls/Ov004_FindLastCraftableRecipe.c:
     complete
     .text       start:0x0204dba8 end:0x0204dd70
 
-src/overlays/ov004/calls/func_ov004_0204dd70.c:
+src/overlays/ov004/calls/Ov004_MatchRecipeAndApply.c:
     complete
     .text       start:0x0204dd70 end:0x0204e1dc
 
-src/overlays/ov004/calls/func_ov004_0204e1dc.c:
+src/overlays/ov004/calls/Ov004_LayoutPanelEntry.c:
     complete
     .text       start:0x0204e1dc end:0x0204e750
 
-src/overlays/ov004/calls/func_ov004_0204e750.c:
+src/overlays/ov004/calls/Ov004_FoldPanelIntoTally.c:
     complete
     .text       start:0x0204e750 end:0x0204ea88
 
-src/overlays/ov004/calls/func_ov004_0204ea88.c:
+src/overlays/ov004/calls/Ov004_ClearStateFreeLists.c:
     complete
     .text       start:0x0204ea88 end:0x0204eba8
 
-src/overlays/ov004/auto/func_ov004_0204eba8.c:
+src/overlays/ov004/auto/Ov004_GetGridMaskExtent.c:
     complete
     .text       start:0x0204eba8 end:0x0204ec6c
 
-src/overlays/ov004/calls/func_ov004_0204ec6c.c:
+src/overlays/ov004/calls/Ov004_InitRecordContext.c:
     complete
     .text       start:0x0204ec6c end:0x0204ecec
 
@@ -196,143 +196,143 @@ src/overlays/ov004/calls/func_ov004_0204ecec.c:
     complete
     .text       start:0x0204ecec end:0x0204ecf8
 
-src/overlays/ov004/calls/func_ov004_0204ecf8.c:
+src/overlays/ov004/calls/Ov004_RebuildViewAndCountCells.c:
     complete
     .text       start:0x0204ecf8 end:0x0204ef74
 
-src/overlays/ov004/calls/func_ov004_0204ef74.c:
+src/overlays/ov004/calls/Ov004_BuildMenuGrid.c:
     complete
     .text       start:0x0204ef74 end:0x0204f1c4
 
-src/overlays/ov004/calls/func_ov004_0204f1c4.c:
+src/overlays/ov004/calls/Ov004_ReleaseHandleGridAndList.c:
     complete
     .text       start:0x0204f1c4 end:0x0204f278
 
-src/overlays/ov004/calls/func_ov004_0204f278.c:
+src/overlays/ov004/calls/Ov004_ResetPartyMemberAndLayout.c:
     complete
     .text       start:0x0204f278 end:0x0204f2b4
 
-src/overlays/ov004/calls/func_ov004_0204f2b4.c:
+src/overlays/ov004/calls/Ov004_RunTransientLayoutPass.c:
     complete
     .text       start:0x0204f2b4 end:0x0204f32c
 
-src/overlays/ov004/calls/func_ov004_0204f32c.c:
+src/overlays/ov004/calls/Ov004_ConfigureGraphics.c:
     complete
     .text       start:0x0204f32c end:0x0204f4b4
 
-src/overlays/ov004/calls/func_ov004_0204f4b4.c:
+src/overlays/ov004/calls/Ov004_ResolveMissionRank.c:
     complete
     .text       start:0x0204f4b4 end:0x0204f5a4
 
-src/overlays/ov004/calls/func_ov004_0204f5a4.c:
+src/overlays/ov004/calls/Ov004_MapMissionToRankSlot.c:
     complete
     .text       start:0x0204f5a4 end:0x0204f7e8
 
-src/overlays/ov004/calls/func_ov004_0204f7e8.c:
+src/overlays/ov004/calls/Ov004_RemoveLoadoutEntries.c:
     complete
     .text       start:0x0204f7e8 end:0x0204f874
 
-src/overlays/ov004/calls/func_ov004_0204f874.c:
+src/overlays/ov004/calls/Ov004_BuildMissionObjectLists.c:
     complete
     .text       start:0x0204f874 end:0x0204f954
 
-src/overlays/ov004/calls/func_ov004_0204f954.c:
+src/overlays/ov004/calls/Ov004_TryAwardAllMissionsPlayed.c:
     complete
     .text       start:0x0204f954 end:0x0204f9cc
 
-src/overlays/ov004/calls/func_ov004_0204f9cc.c:
+src/overlays/ov004/calls/Ov004_TryAwardAllMissionsCleared.c:
     complete
     .text       start:0x0204f9cc end:0x0204fa44
 
-src/overlays/ov004/calls/func_ov004_0204fa44.c:
+src/overlays/ov004/calls/Ov004_CreateMissionSelectScene.c:
     complete
     .text       start:0x0204fa44 end:0x0204fc98
 
-src/overlays/ov004/calls/func_ov004_0204fc98.c:
+src/overlays/ov004/calls/Ov004_ClassTeardown.c:
     complete
     .text       start:0x0204fc98 end:0x0204fcb4
 
-src/overlays/ov004/calls/func_ov004_0204fcb4.c:
+src/overlays/ov004/calls/Ov004_StepMissionSelectScene.c:
     complete
     .text       start:0x0204fcb4 end:0x0204fd60
 
-src/overlays/ov004/calls/func_ov004_0204fd60.c:
+src/overlays/ov004/calls/Ov004_LoadSceneGraphics.c:
     complete
     .text       start:0x0204fd60 end:0x020500e8
 
-src/overlays/ov004/calls/func_ov004_020500e8.c:
+src/overlays/ov004/calls/Ov004_RearmIdleAlarm.c:
     complete
     .text       start:0x020500e8 end:0x02050174
 
-src/overlays/ov004/calls/func_ov004_02050174.c:
+src/overlays/ov004/calls/Ov004_CreateSceneObjects.c:
     complete
     .text       start:0x02050174 end:0x0205023c
 
-src/overlays/ov004/calls/func_ov004_0205023c.c:
+src/overlays/ov004/calls/Ov004_ReleaseSceneObjects.c:
     complete
     .text       start:0x0205023c end:0x02050300
 
-src/overlays/ov004/calls/func_ov004_02050300.c:
+src/overlays/ov004/calls/Ov004_StepSceneFrame.c:
     complete
     .text       start:0x02050300 end:0x02050398
 
-src/overlays/ov004/calls/func_ov004_02050398.c:
+src/overlays/ov004/calls/Ov004_SubmitObjectSprites.c:
     complete
     .text       start:0x02050398 end:0x02050400
 
-src/overlays/ov004/calls/func_ov004_02050400.c:
+src/overlays/ov004/calls/Ov004_StepLogoSlide.c:
     complete
     .text       start:0x02050400 end:0x02050488
 
-src/overlays/ov004/calls/func_ov004_02050488.c:
+src/overlays/ov004/calls/Ov004_StepFadeIn.c:
     complete
     .text       start:0x02050488 end:0x020504c4
 
-src/overlays/ov004/calls/func_ov004_020504c4.c:
+src/overlays/ov004/calls/Ov004_StepLogoScale.c:
     complete
     .text       start:0x020504c4 end:0x02050548
 
-src/overlays/ov004/calls/func_ov004_02050548.c:
+src/overlays/ov004/calls/Ov004_SetPlaneBrightness.c:
     complete
     .text       start:0x02050548 end:0x02050634
 
-src/overlays/ov004/calls/func_ov004_02050634.c:
+src/overlays/ov004/calls/Ov004_EncodeDecimalDigits.c:
     complete
     .text       start:0x02050634 end:0x020506cc
 
-src/overlays/ov004/calls/func_ov004_020506cc.c:
+src/overlays/ov004/calls/Ov004_LayoutRollingDigits.c:
     complete
     .text       start:0x020506cc end:0x02050934
 
-src/overlays/ov004/calls/func_ov004_02050934.c:
+src/overlays/ov004/calls/Ov004_DrawRollingDigits.c:
     complete
     .text       start:0x02050934 end:0x02050a04
 
-src/overlays/ov004/calls/func_ov004_02050a04.c:
+src/overlays/ov004/calls/Ov004_PrepareTransitionLabel.c:
     complete
     .text       start:0x02050a04 end:0x02050b04
 
-src/overlays/ov004/calls/func_ov004_02050b04.c:
+src/overlays/ov004/calls/Ov004_FadeInTransition.c:
     complete
     .text       start:0x02050b04 end:0x02050c60
 
-src/overlays/ov004/calls/func_ov004_02050c60.c:
+src/overlays/ov004/calls/Ov004_UpdateRollingTransition.c:
     complete
     .text       start:0x02050c60 end:0x02050e44
 
-src/overlays/ov004/calls/func_ov004_02050e44.c:
+src/overlays/ov004/calls/Ov004_RunDelayedProtectionChecks.c:
     complete
     .text       start:0x02050e44 end:0x02050f9c
 
-src/overlays/ov004/calls/func_ov004_02050f9c.c:
+src/overlays/ov004/calls/Ov004_FadeOutTransition.c:
     complete
     .text       start:0x02050f9c end:0x02051008
 
-src/overlays/ov004/calls/func_ov004_02051008.c:
+src/overlays/ov004/calls/Ov004_MarkTransitionComplete.c:
     complete
     .text       start:0x02051008 end:0x0205102c
 
-src/overlays/ov004/calls/func_ov004_0205102c.c:
+src/overlays/ov004/calls/Ov004_GetResult.c:
     complete
     .text       start:0x0205102c end:0x0205104c
 

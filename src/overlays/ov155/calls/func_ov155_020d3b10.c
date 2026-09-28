@@ -1,5 +1,5 @@
-extern int func_ov107_020c6980();
+extern int Ov107_ProcessObjectTick();
 
 int func_ov155_020d3b10() {
-    return func_ov107_020c6980();
+    return Ov107_ProcessObjectTick();
 }

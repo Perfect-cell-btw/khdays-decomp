@@ -8,159 +8,159 @@ src/overlays/ov082/calls/func_ov082_020b8100.c:
     complete
     .text       start:0x020b8100 end:0x020b8114
 
-src/overlays/ov082/calls/func_ov082_020b8114.c:
+src/overlays/ov082/calls/Ov082_InitSubsystemAndReturnTick.c:
     complete
     .text       start:0x020b8114 end:0x020b8194
 
-src/overlays/ov082/calls/func_ov082_020b8194.c:
+src/overlays/ov082/calls/Ov082_ShutdownAndFree.c:
     complete
     .text       start:0x020b8194 end:0x020b81f4
 
-src/overlays/ov082/calls/func_ov082_020b81f4.c:
+src/overlays/ov082/calls/Ov082_InitPanelObject.c:
     complete
     .text       start:0x020b81f4 end:0x020b843c
 
-src/overlays/ov082/calls/func_ov082_020b843c.c:
+src/overlays/ov082/calls/Ov082_ReloadSceneResources.c:
     complete
     .text       start:0x020b843c end:0x020b84dc
 
-src/overlays/ov082/auto/func_ov082_020b84dc.c:
+src/overlays/ov082/auto/Ov082_MapSlotKindToAnim.c:
     complete
     .text       start:0x020b84dc end:0x020b8514
 
-src/overlays/ov082/calls/func_ov082_020b8514.c:
+src/overlays/ov082/calls/Ov082_ApplyModeChange.c:
     complete
     .text       start:0x020b8514 end:0x020b882c
 
-src/overlays/ov082/calls/func_ov082_020b882c.c:
+src/overlays/ov082/calls/Ov082_CommitScrollForFrame.c:
     complete
     .text       start:0x020b882c end:0x020b8870
 
-src/overlays/ov082/calls/func_ov082_020b8870.c:
+src/overlays/ov082/calls/Ov082_tailDispatch.c:
     complete
     .text       start:0x020b8870 end:0x020b888c
 
-src/overlays/ov082/calls/func_ov082_020b888c.c:
+src/overlays/ov082/calls/Ov082_SetupBuildBlock.c:
     complete
     .text       start:0x020b888c end:0x020b890c
 
-src/overlays/ov082/calls/func_ov082_020b890c.c:
+src/overlays/ov082/calls/Ov082_BeginActionStep.c:
     complete
     .text       start:0x020b890c end:0x020b895c
 
-src/overlays/ov082/calls/func_ov082_020b895c.c:
+src/overlays/ov082/calls/Ov082_ForwardArmPlayerTarget.c:
     complete
     .text       start:0x020b895c end:0x020b8970
 
-src/overlays/ov082/calls/func_ov082_020b8970.c:
+src/overlays/ov082/calls/Ov082_ForwardUpdateController.c:
     complete
     .text       start:0x020b8970 end:0x020b8984
 
-src/overlays/ov082/calls/func_ov082_020b8984.c:
+src/overlays/ov082/calls/Ov082_ForwardComputeAimAngle.c:
     complete
     .text       start:0x020b8984 end:0x020b8998
 
-src/overlays/ov082/calls/func_ov082_020b8998.c:
+src/overlays/ov082/calls/Ov082_InvokeWithDataTable.c:
     complete
     .text       start:0x020b8998 end:0x020b89b0
 
-src/overlays/ov082/calls/func_ov082_020b89b0.c:
+src/overlays/ov082/calls/Ov082_initEightSubSlots.c:
     complete
     .text       start:0x020b89b0 end:0x020b89f0
 
-src/overlays/ov082/calls/func_ov082_020b89f0.c:
+src/overlays/ov082/calls/Ov082_ReleaseChildArray8.c:
     complete
     .text       start:0x020b89f0 end:0x020b8a0e
 
-src/overlays/ov082/calls/func_ov082_020b8a10.c:
+src/overlays/ov082/calls/Ov082_BindPartRigs.c:
     complete
     .text       start:0x020b8a10 end:0x020b8a44
 
-src/overlays/ov082/calls/func_ov082_020b8a44.c:
+src/overlays/ov082/calls/Ov082_SpawnEmitters.c:
     complete
     .text       start:0x020b8a44 end:0x020b8b14
 
-src/overlays/ov082/calls/func_ov082_020b8b14.c:
+src/overlays/ov082/calls/Ov082_beginState5.c:
     complete
     .text       start:0x020b8b14 end:0x020b8b38
 
-src/overlays/ov082/auto/func_ov082_020b8b38.c:
+src/overlays/ov082/auto/Ov082_ResetSlotIds.c:
     complete
     .text       start:0x020b8b38 end:0x020b8b5c
 
-src/overlays/ov082/calls/func_ov082_020b8b5c.c:
+src/overlays/ov082/calls/Ov082_RebindEmitterSlots.c:
     complete
     .text       start:0x020b8b5c end:0x020b8bd4
 
-src/overlays/ov082/calls/func_ov082_020b8bd4.c:
+src/overlays/ov082/calls/Ov082_ov030_UpdatePathMotionState.c:
     complete
     .text       start:0x020b8bd4 end:0x020b8ed4
 
-src/overlays/ov082/calls/func_ov082_020b8ed4.c:
+src/overlays/ov082/calls/Ov082_DrawWithFadePolygonId.c:
     complete
     .text       start:0x020b8ed4 end:0x020b8f24
 
-src/overlays/ov082/calls/func_ov082_020b8f24.c:
+src/overlays/ov082/calls/Ov082_RequestSpawnAtObject.c:
     complete
     .text       start:0x020b8f24 end:0x020b9048
 
-src/overlays/ov082/calls/func_ov082_020b9048.c:
+src/overlays/ov082/calls/Ov082_ProbeLandingPoint.c:
     complete
     .text       start:0x020b9048 end:0x020b9168
 
-src/overlays/ov082/calls/func_ov082_020b9168.c:
+src/overlays/ov082/calls/Ov082_InitMoveParams.c:
     complete
     .text       start:0x020b9168 end:0x020b91a0
 
-src/overlays/ov082/calls/func_ov082_020b91a0.c:
+src/overlays/ov082/calls/Ov082_updateSubObjects.c:
     complete
     .text       start:0x020b91a0 end:0x020b9210
 
-src/overlays/ov082/calls/func_ov082_020b9210.c:
+src/overlays/ov082/calls/Ov082_StartAnimTracks.c:
     complete
     .text       start:0x020b9210 end:0x020b9290
 
-src/overlays/ov082/calls/func_ov082_020b9290.c:
+src/overlays/ov082/calls/Ov082_UpdateNodeActiveByMode.c:
     complete
     .text       start:0x020b9290 end:0x020b9314
 
-src/overlays/ov082/calls/func_ov082_020b9314.c:
+src/overlays/ov082/calls/Ov082_DrawNodeAtOwner.c:
     complete
     .text       start:0x020b9314 end:0x020b9378
 
-src/overlays/ov082/calls/func_ov082_020b9378.c:
+src/overlays/ov082/calls/Ov082_EmitTimelineEffect.c:
     complete
     .text       start:0x020b9378 end:0x020b96b0
 
-src/overlays/ov082/calls/func_ov082_020b96b0.c:
+src/overlays/ov082/calls/Ov082_initStateSlotsDispatch.c:
     complete
     .text       start:0x020b96b0 end:0x020b9748
 
-src/overlays/ov082/calls/func_ov082_020b9748.c:
+src/overlays/ov082/calls/Ov082_setupTriple.c:
     complete
     .text       start:0x020b9748 end:0x020b9764
 
-src/overlays/ov082/calls/func_ov082_020b9764.c:
+src/overlays/ov082/calls/Ov082_ArmPlayerTarget.c:
     complete
     .text       start:0x020b9764 end:0x020b97e8
 
-src/overlays/ov082/calls/func_ov082_020b97e8.c:
+src/overlays/ov082/calls/Ov082_UpdateController.c:
     complete
     .text       start:0x020b97e8 end:0x020b9af4
 
-src/overlays/ov082/calls/func_ov082_020b9af4.c:
+src/overlays/ov082/calls/Ov082_UpdateControllerCompleting.c:
     complete
     .text       start:0x020b9af4 end:0x020b9ff0
 
-src/overlays/ov082/calls/func_ov082_020b9ff0.c:
+src/overlays/ov082/calls/Ov082_SetActionAnimation.c:
     complete
     .text       start:0x020b9ff0 end:0x020ba0e4
 
-src/overlays/ov082/calls/func_ov082_020ba0e4.c:
+src/overlays/ov082/calls/Ov082_handleCommand.c:
     complete
     .text       start:0x020ba0e4 end:0x020ba160
 
-src/overlays/ov082/calls/func_ov082_020ba160.c:
+src/overlays/ov082/calls/Ov082_TickMotionAndAnim.c:
     complete
     .text       start:0x020ba160 end:0x020ba374
 

@@ -1,0 +1,11 @@
+/* Play the anim (ov107 mode 0,1), clear the +0x6a byte and the +0x70 field, register the handler. */
+extern void Ov107_PostTagUpdate(int a, int b, int c);
+extern int SetIndexedSlot(int a, int b, void *handler);
+extern void Ov213_HoverTick(int);
+void Ov213_AiEnterHover(int param_1) {
+    int child = *(int *)(param_1 + 4);
+    Ov107_PostTagUpdate(*(int *)child, 0, 1);
+    *(signed char *)(child + 0x6a) = 0;
+    *(int *)(child + 0x70) = 0;
+    SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), (void *)&Ov213_HoverTick);
+}

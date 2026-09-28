@@ -4,203 +4,203 @@
     .data       start:0x020d2880 end:0x020d28a0 kind:data align:32
     .bss        start:0x020d28a0 end:0x020d28a0 kind:bss align:32
 
-src/overlays/ov217/calls/func_ov217_020cfb60.c:
+src/overlays/ov217/calls/Ov217_RegisterEntityClass.c:
     complete
     .text       start:0x020cfb60 end:0x020cfb78
 
-src/overlays/ov217/calls/func_ov217_020cfb78.c:
+src/overlays/ov217/calls/Ov217_AllocActorWithName.c:
     complete
     .text       start:0x020cfb78 end:0x020cfc08
 
-src/overlays/ov217/calls/func_ov217_020cfc08.c:
+src/overlays/ov217/calls/Ov217_SyncSubitemPoseToJoint.c:
     complete
     .text       start:0x020cfc08 end:0x020cfcf0
 
-src/overlays/ov217/calls/func_ov217_020cfcf0.c:
+src/overlays/ov217/calls/Ov217_initSubitemPathTarget.c:
     complete
     .text       start:0x020cfcf0 end:0x020cfe50
 
-src/overlays/ov217/calls/func_ov217_020cfe50.c:
+src/overlays/ov217/calls/Ov217_Construct.c:
     complete
     .text       start:0x020cfe50 end:0x020d0218
 
-src/overlays/ov217/calls/func_ov217_020d0218.c:
+src/overlays/ov217/calls/Ov217_destroyObjectSlots.c:
     complete
     .text       start:0x020d0218 end:0x020d0270
 
-src/overlays/ov217/calls/func_ov217_020d0270.c:
+src/overlays/ov217/calls/Ov217_resetChildAndDispatch.c:
     complete
     .text       start:0x020d0270 end:0x020d02a0
 
-src/overlays/ov217/calls/func_ov217_020d02a0.c:
+src/overlays/ov217/calls/Ov217_releaseHandles.c:
     complete
     .text       start:0x020d02a0 end:0x020d02fc
 
-src/overlays/ov217/calls/func_ov217_020d02fc.c:
+src/overlays/ov217/calls/Ov217_HandleSpawnMessage.c:
     complete
     .text       start:0x020d02fc end:0x020d0538
 
-src/overlays/ov217/calls/func_ov217_020d0538.c:
+src/overlays/ov217/calls/Ov217_stSyncChildPauseFlag.c:
     complete
     .text       start:0x020d0538 end:0x020d05bc
 
-src/overlays/ov217/calls/func_ov217_020d05bc.c:
+src/overlays/ov217/calls/Ov217_initChildProjectile.c:
     complete
     .text       start:0x020d05bc end:0x020d0634
 
-src/overlays/ov217/calls/func_ov217_020d0634.c:
+src/overlays/ov217/calls/Ov217_spawnFromTable.c:
     complete
     .text       start:0x020d0634 end:0x020d06ac
 
-src/overlays/ov217/calls/func_ov217_020d06ac.c:
+src/overlays/ov217/calls/Ov217_stCreateRegistryEntry.c:
     complete
     .text       start:0x020d06ac end:0x020d0708
 
-src/overlays/ov217/calls/func_ov217_020d0708.c:
+src/overlays/ov217/calls/Ov217_ApplyHitEvent.c:
     complete
     .text       start:0x020d0708 end:0x020d0a38
 
-src/overlays/ov217/auto/func_ov217_020d0a38.c:
+src/overlays/ov217/auto/Ov217_RequestSubState7IfNotCurrent.c:
     complete
     .text       start:0x020d0a38 end:0x020d0a64
 
-src/overlays/ov217/auto/func_ov217_020d0a64.c:
+src/overlays/ov217/auto/Ov217_RequestSubState8IfIdle.c:
     complete
     .text       start:0x020d0a64 end:0x020d0a94
 
-src/overlays/ov217/calls/func_ov217_020d0a94.c:
+src/overlays/ov217/calls/Ov217_ProcessHitTargets.c:
     complete
     .text       start:0x020d0a94 end:0x020d0d38
 
-src/overlays/ov217/auto/func_ov217_020d0d38.c:
+src/overlays/ov217/auto/Ov217_AiCountdownQueue6.c:
     complete
     .text       start:0x020d0d38 end:0x020d0d88
 
-src/overlays/ov217/calls/func_ov217_020d0d88.c:
+src/overlays/ov217/calls/Ov217_loadDefaultPoseVecs.c:
     complete
     .text       start:0x020d0d88 end:0x020d0de8
 
-src/overlays/ov217/calls/func_ov217_020d0de8.c:
+src/overlays/ov217/calls/Ov217_stInitSlotsFlags6.c:
     complete
     .text       start:0x020d0de8 end:0x020d0ea0
 
-src/overlays/ov217/calls/func_ov217_020d0ea0.c:
+src/overlays/ov217/calls/Ov217_stDispatchByStateByte.c:
     complete
     .text       start:0x020d0ea0 end:0x020d1028
 
-src/overlays/ov217/calls/func_ov217_020d1028.c:
+src/overlays/ov217/calls/Ov217_stUpdateMatrixAdvance.c:
     complete
     .text       start:0x020d1028 end:0x020d110c
 
-src/overlays/ov217/calls/func_ov217_020d110c.c:
+src/overlays/ov217/calls/Ov217_stSetFlags86Clear3ac.c:
     complete
     .text       start:0x020d110c end:0x020d1174
 
-src/overlays/ov217/calls/func_ov217_020d1174.c:
+src/overlays/ov217/calls/Ov217_stEnterClearAndPose.c:
     complete
     .text       start:0x020d1174 end:0x020d11ec
 
-src/overlays/ov217/calls/func_ov217_020d11ec.c:
+src/overlays/ov217/calls/Ov217_stSetFlags82ClearC.c:
     complete
     .text       start:0x020d11ec end:0x020d12b8
 
-src/overlays/ov217/calls/func_ov217_020d12b8.c:
+src/overlays/ov217/calls/Ov217_Action4AfterTimerThreshold.c:
     complete
     .text       start:0x020d12b8 end:0x020d134c
 
-src/overlays/ov217/calls/func_ov217_020d134c.c:
+src/overlays/ov217/calls/Ov217_AiStep_QueueAction5OnAnimEnd.c:
     complete
     .text       start:0x020d134c end:0x020d1380
 
-src/overlays/ov217/calls/func_ov217_020d1380.c:
+src/overlays/ov217/calls/Ov217_AiEnterAim.c:
     complete
     .text       start:0x020d1380 end:0x020d13d8
 
-src/overlays/ov217/calls/func_ov217_020d13d8.c:
+src/overlays/ov217/calls/Ov217_AimSubtractVecSetAngleThenGatedAdvance.c:
     complete
     .text       start:0x020d13d8 end:0x020d1494
 
-src/overlays/ov217/calls/func_ov217_020d1494.c:
+src/overlays/ov217/calls/Ov217_stEnterRandDelay.c:
     complete
     .text       start:0x020d1494 end:0x020d14f8
 
-src/overlays/ov217/calls/func_ov217_020d14f8.c:
+src/overlays/ov217/calls/Ov217_SteerTowardTarget.c:
     complete
     .text       start:0x020d14f8 end:0x020d1650
 
-src/overlays/ov217/calls/func_ov217_020d1650.c:
+src/overlays/ov217/calls/Ov217_ComputeAimAngleThenAction6.c:
     complete
     .text       start:0x020d1650 end:0x020d1708
 
-src/overlays/ov217/calls/func_ov217_020d1708.c:
+src/overlays/ov217/calls/Ov217_stEnterSetFlag40.c:
     complete
     .text       start:0x020d1708 end:0x020d177c
 
-src/overlays/ov217/calls/func_ov217_020d177c.c:
+src/overlays/ov217/calls/Ov217_StepChargeLaunch.c:
     complete
     .text       start:0x020d177c end:0x020d1934
 
-src/overlays/ov217/calls/func_ov217_020d1934.c:
+src/overlays/ov217/calls/Ov217_DashTick.c:
     complete
     .text       start:0x020d1934 end:0x020d1a28
 
-src/overlays/ov217/calls/func_ov217_020d1a28.c:
+src/overlays/ov217/calls/Ov217_EnterAdvancePhase.c:
     complete
     .text       start:0x020d1a28 end:0x020d1b68
 
-src/overlays/ov217/calls/func_ov217_020d1b68.c:
+src/overlays/ov217/calls/Ov217_stActivateWhenReady.c:
     complete
     .text       start:0x020d1b68 end:0x020d1bac
 
-src/overlays/ov217/calls/func_ov217_020d1bac.c:
+src/overlays/ov217/calls/Ov217_StepBounceOffContact.c:
     complete
     .text       start:0x020d1bac end:0x020d2230
 
-src/overlays/ov217/calls/func_ov217_020d2230.c:
+src/overlays/ov217/calls/Ov217_TimerActionOnceThenAdvance.c:
     complete
     .text       start:0x020d2230 end:0x020d22c4
 
-src/overlays/ov217/calls/func_ov217_020d22c4.c:
+src/overlays/ov217/calls/Ov217_stSetFlags86Effect4d.c:
     complete
     .text       start:0x020d22c4 end:0x020d2388
 
-src/overlays/ov217/calls/func_ov217_020d2388.c:
+src/overlays/ov217/calls/Ov217_AiStep_QueueAction0.c:
     complete
     .text       start:0x020d2388 end:0x020d23a8
 
-src/overlays/ov217/calls/func_ov217_020d23a8.c:
+src/overlays/ov217/calls/Ov217_EnterGroundedState.c:
     complete
     .text       start:0x020d23a8 end:0x020d24a0
 
-src/overlays/ov217/calls/func_ov217_020d24a0.c:
+src/overlays/ov217/calls/Ov217_stTimerSetFlag80ClearBit0.c:
     complete
     .text       start:0x020d24a0 end:0x020d2534
 
-src/overlays/ov217/calls/func_ov217_020d2534.c:
+src/overlays/ov217/calls/Ov217_SetPose2ThenAdvanceSlot.c:
     complete
     .text       start:0x020d2534 end:0x020d2568
 
-src/overlays/ov217/calls/func_ov217_020d2568.c:
+src/overlays/ov217/calls/Ov217_AimAndFacePointTick.c:
     complete
     .text       start:0x020d2568 end:0x020d265c
 
-src/overlays/ov217/calls/func_ov217_020d265c.c:
+src/overlays/ov217/calls/Ov217_createRegistryEntryStoreField.c:
     complete
     .text       start:0x020d265c end:0x020d26a8
 
-src/overlays/ov217/calls/func_ov217_020d26a8.c:
+src/overlays/ov217/calls/Ov217_initEntrySlotAdvanceIndex.c:
     complete
     .text       start:0x020d26a8 end:0x020d2714
 
-src/overlays/ov217/auto/func_ov217_020d2714.c:
+src/overlays/ov217/auto/Ov217_tickActiveEntryCooldowns.c:
     complete
     .text       start:0x020d2714 end:0x020d2770
 
-src/overlays/ov217/calls/func_ov217_020d2770.c:
+src/overlays/ov217/calls/Ov217_stEnterInstallTickHandler.c:
     complete
     .text       start:0x020d2770 end:0x020d2820
 
-src/overlays/ov217/auto/func_ov217_020d2820.c:
+src/overlays/ov217/auto/Ov217_EmptyTickHandler.c:
     complete
     .text       start:0x020d2820 end:0x020d2824
 

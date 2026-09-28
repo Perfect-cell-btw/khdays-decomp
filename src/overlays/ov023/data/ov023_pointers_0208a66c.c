@@ -6,38 +6,38 @@
 
 typedef void (*Ov_Fn)(void);
 
-extern void func_ov023_02086f6c(void);
-extern void func_ov023_02086f8c(void);
-extern void func_ov023_02086fac(void);
-extern void func_ov023_02087018(void);
-extern void func_ov023_0208708c(void);
-extern void func_ov023_0208709c(void);
-extern void func_ov023_020870a0(void);
-extern void func_ov023_02087114(void);
+extern void Ov023_ScriptCmd_SetGateFlagWithSound(void);
+extern void Ov023_CmdSetGateFlag(void);
+extern void Ov023_CmdStartLightFade(void);
+extern void Ov023_CmdStepLightFade(void);
+extern void Ov023_CmdSetGameMode2(void);
+extern void Ov023_ConstReturn0(void);
+extern void Ov023_CmdSaveGame(void);
+extern void Ov023_VmCmdApplyByFlag(void);
 
 Ov_Fn data_ov023_0208a66c[12] = {
 
-    func_ov023_02086f6c,
+    Ov023_ScriptCmd_SetGateFlagWithSound,
 
     0,
 
-    func_ov023_02086f8c,
+    Ov023_CmdSetGateFlag,
 
     0,
 
-    func_ov023_02086fac,
+    Ov023_CmdStartLightFade,
 
-    func_ov023_02087018,
+    Ov023_CmdStepLightFade,
 
-    func_ov023_0208708c,
+    Ov023_CmdSetGameMode2,
 
     0,
 
-    func_ov023_0208709c,
+    Ov023_ConstReturn0,
 
-    func_ov023_020870a0,
+    Ov023_CmdSaveGame,
 
-    func_ov023_02087114,
+    Ov023_VmCmdApplyByFlag,
 
     0,
 

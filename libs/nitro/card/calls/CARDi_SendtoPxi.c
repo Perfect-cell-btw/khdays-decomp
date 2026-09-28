@@ -82,8 +82,7 @@ extern u32 data_020423e8;           /* cardi_rom_header_addr */
 
 extern OSIntrMode OS_DisableInterrupts(void);
 extern OSIntrMode OS_RestoreInterrupts(OSIntrMode state);
-extern void func_02001f10(OSThreadQueue *queue);   /* OS_SleepThread */
-#define OS_SleepThread func_02001f10
+extern void OS_SleepThread(OSThreadQueue *queue);   /* OS_SleepThread */
 extern void OS_WakeupThread(OSThreadQueue *queue);
 extern void OS_Terminate(void);
 #define OS_Panic(...) OS_Terminate()
@@ -108,14 +107,14 @@ static inline void CARDi_SetRomOpReadPage1(u32 src)
 extern CARDiCommon data_020464e0;   /* cardi_common */
 #define PXI_FIFO_TAG_CARD 14
 #define PXI_FIFO_SUCCESS 0
-extern int func_020093e8(int tag, u32 data, BOOL err);   /* PXI_SendWordByFifo */
+extern int PXI_SendWordByFifo(int tag, u32 data, BOOL err);   /* PXI_SendWordByFifo */
 extern void WaitByLoop(s32 count);                       /* SVC_WaitByLoop */
 
 /* CARDi_SendtoPxi -- NitroSDK card_pullOut.c: push a CARD command word to the ARM7,
  * spinning `wait` loops between attempts while the fifo is full. */
 void CARDi_SendtoPxi(u32 data, u32 wait)
 {
-    while (func_020093e8(PXI_FIFO_TAG_CARD, data, FALSE) != PXI_FIFO_SUCCESS) {
+    while (PXI_SendWordByFifo(PXI_FIFO_TAG_CARD, data, FALSE) != PXI_FIFO_SUCCESS) {
         WaitByLoop((s32)wait);
     }
 }
