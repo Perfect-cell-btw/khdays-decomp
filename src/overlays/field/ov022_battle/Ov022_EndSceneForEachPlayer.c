@@ -15,7 +15,7 @@ typedef struct {
 extern Ov022Session *data_ov022_020b2e60;
 extern unsigned char data_0204c240;
 
-extern void Ov022_SetActorInputEnabled(int a);
+extern void Ov022_UpdateCameraAndViews(int a);
 extern int Ov002_StepRosterSlotRelease(int index);
 extern int Ov002_GetCodeOwnerSlot(int handle);
 extern void Ov002_FormatWorldPath(int handle, void *out);
@@ -33,7 +33,7 @@ void *Ov022_EndSceneForEachPlayer(void) {
     int a;
     int i;
 
-    Ov022_SetActorInputEnabled(0);
+    Ov022_UpdateCameraAndViews(0);
     if (Ov002_StepRosterSlotRelease(-1) == 1) {
         out[0] = 0;
         out[1] = 0;

@@ -36,7 +36,7 @@ extern int Ov006_TickInputUpdate(void);
 extern int Session_Exists(void);
 extern int Session_IsActive(void);
 extern int Session_IsReady(void);
-extern int Ov006_MissionPollKeys(void);
+extern int Ov006_CountPlayers(void);
 extern int Ov006_SetTitleMode(u32 mode);
 extern void Ov006_FreeResourceRecordBuffer(void *subObject);
 extern void Ov006_InitResourceRecord(void *subObject, const void *config);
@@ -79,7 +79,7 @@ MissionState Ov006_CreateMissionMenu(int immediate)
             InstantiateClass(data_ov006_0205652c, (void *)1);
         Ov006_MissionEnsureController(0);
         data_ov006_02056660->sessionReady = Session_IsReady();
-        Ov006_SetTitleMode(Ov006_MissionPollKeys());
+        Ov006_SetTitleMode(Ov006_CountPlayers());
         Ov006_StartWipeToSubState(4);
         nextState = Ov006_MissionBuildOptionRows;
     } else {

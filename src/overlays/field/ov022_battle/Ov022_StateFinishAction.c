@@ -19,7 +19,7 @@ typedef struct Ov022Context {
 extern Ov022Context *data_ov022_020b2e60;
 extern u8 data_0204be04;
 
-extern void Ov022_SetActorInputEnabled(int mode);
+extern void Ov022_UpdateCameraAndViews(int mode);
 extern int Ov002_Scene_IsIdle(void);
 extern int func_02023c40(void);
 extern void SetMasterBrightnessMain(int brightness);
@@ -36,14 +36,14 @@ Ov022StateCallback Ov022_StateFinishAction(void)
     int completed = 0;
 
     if ((context->flags & 0x20) != 0) {
-        Ov022_SetActorInputEnabled(1);
+        Ov022_UpdateCameraAndViews(1);
         return func_ov022_0208310c;
     }
     if (data_0204be04 != 0) {
         return next;
     }
 
-    Ov022_SetActorInputEnabled(1);
+    Ov022_UpdateCameraAndViews(1);
     if ((context->flags & 8) != 0) {
         return next;
     }

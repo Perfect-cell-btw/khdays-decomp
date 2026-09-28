@@ -2,10 +2,10 @@
  * player. */
 
 extern void EntityMgr_PushVramState(void);
-extern void Ov022_SetActorInputEnabled(int arg0);
+extern void Ov022_UpdateCameraAndViews(int arg0);
 extern int Ov022_EndSceneForEachPlayer(void);
 int func_ov022_02083758(void) {
     EntityMgr_PushVramState();
-    Ov022_SetActorInputEnabled(0);
+    Ov022_UpdateCameraAndViews(0);
     return (int)&Ov022_EndSceneForEachPlayer;
 }

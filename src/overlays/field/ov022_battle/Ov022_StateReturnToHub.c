@@ -16,7 +16,7 @@ typedef struct Ov022Context {
 extern u8 data_0204be04;
 extern Ov022Context *data_ov022_020b2e60;
 
-extern void Ov022_SetActorInputEnabled(int mode);
+extern void Ov022_UpdateCameraAndViews(int mode);
 extern int func_02023c40(void);
 extern void StoreToGlobalPtr4Field28(int value);
 extern void GameState_SetField(int field, int width, int value);
@@ -33,7 +33,7 @@ Ov022StateCallback Ov022_StateReturnToHub(void)
         return next;
     }
 
-    Ov022_SetActorInputEnabled(1);
+    Ov022_UpdateCameraAndViews(1);
 
     int completed = 0;
 

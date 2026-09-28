@@ -4,7 +4,7 @@
  * scene state becomes 3 (+0xc8, sub-state +0xcc = 2, +0xd8 cleared), a +0xdc scene resets its
  * display (Ov002_HoldPanelScreen(1, 0), TP_RequestAutoSamplingStopAsync, layers 4). Unless a reset is pending
  * (data_0204c240 bit 2 while mode bit 1 is set) the state is saved for the way back: the 64-bit
- * tick (+0x0), the random seed (+0x8) and the playing BGM track (+0xc4, then paused). In mode bit 1
+ * tick (+0x0), the VBlank count (+0x8) and the playing BGM track (+0xc4, then paused). In mode bit 1
  * the sound fades to 0x40; the main screen shows BG0 only; the fade block (+0xac, 0x18 bytes) is
  * reset with its step at 3 in mode bit 1 else 2; mode bit 3 resets the effect layer; and
  * PauseMenu_Open is queued as the next task. */
@@ -16,7 +16,7 @@ typedef unsigned long long u64;
 
 typedef struct GameHeap {
     u64 save;                           /* +0x00 */
-    unsigned int seed;                  /* +0x08 */
+    unsigned int vblankCount;           /* +0x08 */
     char pad0c[0xac - 0xc];
     int fade[6];                        /* +0xac */
     int track;                          /* +0xc4 */
@@ -43,7 +43,7 @@ extern void TP_WaitBusy(int layer);
 extern void TP_CheckError(int layer);
 extern int LoadGlobalU16At0(void);
 extern u64 OS_GetTick(void);
-extern unsigned int func_01ff80a8(void);
+extern unsigned int VBlank_GetCount(void);
 extern int SoundStrm_HasPlaybackPos(int slot);
 extern int SoundMgr_GetStreamNextPos(int slot);
 extern void Table_TailCallWithEntry(int slot, int a);
@@ -75,7 +75,7 @@ void Game_EnterPauseScene(void)
     }
     if ((data_0204c240 & 4) == 0 || (LoadGlobalU16At0() & 2) == 0) {
         heap->save = OS_GetTick();
-        heap->seed = func_01ff80a8();
+        heap->vblankCount = VBlank_GetCount();
         if (SoundStrm_HasPlaybackPos(0) != 0) {
             heap->track = SoundMgr_GetStreamNextPos(0);
             Table_TailCallWithEntry(0, 0);

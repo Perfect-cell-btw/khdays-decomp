@@ -1,3 +1,8 @@
-/* Empty second callback of the task entry Ov237_CreateBrain creates. */
+/* Empty second callback of the task entry Ov237_CreateBrain creates. Like every empty function it
+ * returns its first argument unchanged (the ROM is a bare `bx lr`); an object update reads that as
+ * "stay in this state". */
 
-void Ov237_BrainReleaseNoOp(void) {}
+void *Ov237_BrainReleaseNoOp(void *arg)
+{
+    return arg;
+}

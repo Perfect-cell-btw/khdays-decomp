@@ -65,7 +65,7 @@ extern void func_020362ec(void *image);
 extern int PlaySound(int bank, int sound);  /* PlaySound */
 extern u16 Ov006_MissionGetCursorEntry(void);  /* Ov006_MissionGetCursorEntry */
 extern int Ov006_GetMissionMenuSelection(void);  /* Ov006_GetMissionMenuSelection */
-extern int Ov006_MissionPollKeys(void);  /* Ov006_MissionPollKeys */
+extern int Ov006_CountPlayers(void);  /* Ov006_CountPlayers */
 extern int Ov006_Link_Poll(void);
 extern void Ov006_SetPendingInput(int memberId);  /* Ov006_SetPendingInput */
 extern void Ov006_GetMissionRowInfo(int row, MissionMenuRow *out);  /* Ov006_GetMissionRowInfo */
@@ -126,7 +126,7 @@ void *Ov006_UpdateMissionMemberMenuScreen(void)
 
     result = 0;
     cursorEntry = Ov006_MissionGetCursorEntry();
-    pollKeys = (u32)Ov006_MissionPollKeys();
+    pollKeys = (u32)Ov006_CountPlayers();
     allSame = 0;
     slotVisible = 0;
     resolvedSelection = 0;
@@ -171,7 +171,7 @@ void *Ov006_UpdateMissionMemberMenuScreen(void)
             }
             i++;
         } while (i < 4);
-        if (count != (u32)Ov006_MissionPollKeys()) {
+        if (count != (u32)Ov006_CountPlayers()) {
             allSame = 0;
         } else {
             allSame = 1;

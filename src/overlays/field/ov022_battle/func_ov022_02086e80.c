@@ -10,7 +10,7 @@
 extern int func_ov022_02083f0c(void);
 extern void Ov002_ResetViewToDefault(void);
 extern void Ov002_ResourceEntryCallback(int arg0);
-extern void Ov000_Title_CreateLogoObjects(int arg0, int arg1);
+extern void Ov002_ReaimActor(int arg0, int arg1);
 extern int data_ov022_020b2e74;
 
 void func_ov022_02086e80(int arg0) {
@@ -28,5 +28,5 @@ void func_ov022_02086e80(int arg0) {
         i = i + 1;
         p = p + 0x30;
     } while (i < 4);
-    Ov000_Title_CreateLogoObjects(g, 0);
+    Ov002_ReaimActor(g, 0);
 }

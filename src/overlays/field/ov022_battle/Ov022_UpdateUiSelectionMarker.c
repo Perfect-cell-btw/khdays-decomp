@@ -41,7 +41,7 @@ extern int Ov002_ResourceNodeCallback(Ov022DisplayObject *object);
 extern void Tween_Configure(void *tween, int mode, int start, int target,
                           int duration);
 extern void Tween_Start(void *tween);
-extern void Ov000_Title_CreateLogoObjects(int object, int mode);
+extern void Ov002_ReaimActor(int object, int mode);
 
 void Ov022_UpdateUiSelectionMarker(Ov022UiSubsystem *subsystem,
                          const volatile Ov022SelectionPoint *point)
@@ -94,5 +94,5 @@ void Ov022_UpdateUiSelectionMarker(Ov022UiSubsystem *subsystem,
         break;
     }
     }
-    Ov000_Title_CreateLogoObjects(object, 0);
+    Ov002_ReaimActor(object, 0);
 }

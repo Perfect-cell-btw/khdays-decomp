@@ -199,7 +199,7 @@ extern int Session_GetLocalPlayerIndex(void);                                   
 extern int Session_IsActive(void);                                                 /* Session_IsActive */
 extern int FX_Mul(int a, int b);                                         /* FX_Mul */
 extern void func_ov022_02096964(struct Actor *pActor);                          /* ClearVec3At_2bc4: the wall hold */
-extern void Ov022_FormatDebugLine(struct Actor *pActor);                          /* Ov022_FormatDebugLine */
+extern void Ov022_LoadMissionRecord(struct Actor *pActor);                          /* Ov022_LoadMissionRecord */
 extern void BindAnimTrack(u16 *pAnimFlags, int nArg, u8 *pBind, int nZero);     /* BindAnimTrack */
 extern void NNS_G3dMdlSetMdlPolygonIDAll(void *pList, int nArg);                               /* ForEachElement */
 extern void EventRecord_Init(u8 *pMark, const VecFx32 *pVec, void *pArg, int nZero);   /* EventRecord_Init */
@@ -300,7 +300,7 @@ void Ov022_InitActor(struct Actor *pActor)
         pActor->pPush = &pActor->pSub->vecPush;
     }
     func_ov022_02096964(pActor);
-    Ov022_FormatDebugLine(pActor);
+    Ov022_LoadMissionRecord(pActor);
     pNode = pActor->pNode;
     if ((pNode->nFlags & NODE_NO_ANIM) == 0) {
         BindAnimTrack(&pNode->nAnimFlags, 3, &pNode->animBind, 0);

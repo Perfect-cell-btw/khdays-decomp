@@ -22,7 +22,7 @@ extern void Ov025_Hub_InitEntries(void *scene);
 extern void Ov025_Hub_OnEntryHover(void);
 extern void Ov025_MenuEntry_SetSlot2AndBeep(void);
 extern void Ov025_ConfirmMenuItem(void);
-extern void Ov025_DispatchIfRngHigh(void);
+extern void Ov025_Hub_OpenGroup2IfPastDay7(void);
 extern void Ov025_GoToPage6WithCue(void);
 extern void Ov025_GoToPage5(void);
 extern void Ov025_GoToPage4(void);
@@ -73,7 +73,7 @@ void Ov025_Hub_InitializeWidgets(void *scene)
         Ov025_SetEntrySlotsVisible(context, Ov025_FindEntryById(context, 0x2c), 0);
     Ov025_ResolveEntryStoreWord(context, 1, (void *)Ov025_MenuEntry_SetSlot2AndBeep);
     Ov025_ResolveEntryStoreWord(context, 2, (void *)Ov025_ConfirmMenuItem);
-    Ov025_ResolveEntryStoreWord(context, 3, (void *)Ov025_DispatchIfRngHigh);
+    Ov025_ResolveEntryStoreWord(context, 3, (void *)Ov025_Hub_OpenGroup2IfPastDay7);
     Ov025_ResolveEntryStoreWord(context, 4, (void *)Ov025_GoToPage6WithCue);
     Ov025_ResolveEntryStoreWord(context, 5, (void *)Ov025_GoToPage5);
     Ov025_ResolveEntryStoreWord(context, 6, (void *)Ov025_GoToPage4);

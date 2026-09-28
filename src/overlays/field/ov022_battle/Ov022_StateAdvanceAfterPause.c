@@ -19,7 +19,7 @@ typedef struct Ov022Context {
 extern u8 data_0204be04;
 extern Ov022Context *data_ov022_020b2e60;
 
-extern void Ov022_SetActorInputEnabled(int mode);
+extern void Ov022_UpdateCameraAndViews(int mode);
 extern int Ov002_Scene_IsIdle(void);
 extern void StoreToGlobalPtr4Field28(int value);
 extern int func_02023c40(void);
@@ -36,7 +36,7 @@ Ov022StateCallback Ov022_StateAdvanceAfterPause(void)
         return next;
     }
 
-    Ov022_SetActorInputEnabled(1);
+    Ov022_UpdateCameraAndViews(1);
     if (context->state != 0) {
         if (context->state == 2 && Ov002_Scene_IsIdle() != 0) {
             StoreToGlobalPtr4Field28(1);

@@ -12,7 +12,7 @@
 extern int GetWordAt0x58c(int arg0);
 extern int Ov002_RefreshEntries(int arg0);
 extern void Ov002_RebuildSeatSetRows(void);
-extern void Ov022_SetActorInputEnabled(int arg0);
+extern void Ov022_UpdateCameraAndViews(int arg0);
 extern int QueryActiveStateOrDelegate(void);
 extern int data_ov022_020b2e60;
 extern void func_ov022_02082c54(void);
@@ -28,7 +28,7 @@ int Ov022_PollBattleEntry(void) {
         }
     } else {
         int arg;
-        Ov022_SetActorInputEnabled(0);
+        Ov022_UpdateCameraAndViews(0);
         if ((data_0204c240 & 4) != 0) {
             arg = QueryActiveStateOrDelegate();
         } else {

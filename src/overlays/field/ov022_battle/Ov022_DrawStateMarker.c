@@ -62,7 +62,7 @@ extern int func_ov022_02083f0c(void);                /* current view target, -1 
 extern int Ov022_ProjectPointToScreen(VecFx32 *pWorld, struct ScreenPos *pScreen);
 extern void Ov002_ResetViewToDefault(void);               /* reset the view to default */
 extern void Ov002_ResourceEntryCallback(struct MarkerSprite *pSprite);
-extern void Ov000_Title_CreateLogoObjects(int nTarget, int nMode);
+extern void Ov002_ReaimActor(int nTarget, int nMode);
 
 void Ov022_DrawStateMarker(int nKind, int nId, VecFx32 *pPos, int nDelta)
 {
@@ -103,7 +103,7 @@ void Ov022_DrawStateMarker(int nKind, int nId, VecFx32 *pPos, int nDelta)
         pSprite->pos = posScreen;
         Ov002_ResetViewToDefault();
         Ov002_ResourceEntryCallback(pSprite);
-        Ov000_Title_CreateLogoObjects(nTarget, 0);
+        Ov002_ReaimActor(nTarget, 0);
     }
     pSlot->nTimer += nDelta;
     if (pSlot->nTimer >= MARKER_LIFE) {

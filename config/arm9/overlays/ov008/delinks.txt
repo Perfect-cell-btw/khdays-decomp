@@ -3837,11 +3837,11 @@ src/overlays/scenes/ov008_camp_menu/Ov008_GetMissionMenuSelection.c:
     complete
     .text       start:0x0207b7b4 end:0x0207b7e4
 
-src/overlays/scenes/ov008_camp_menu/Ov008_MissionPollKeys.c:
+src/overlays/scenes/ov008_camp_menu/Ov008_CountPlayers.c:
     complete
     .text       start:0x0207b7e4 end:0x0207b814
 
-src/overlays/scenes/ov008_camp_menu/Ov008_ForwardRtcAvailability.c:
+src/overlays/scenes/ov008_camp_menu/Ov008_CountLocalPlayers.c:
     complete
     .text       start:0x0207b814 end:0x0207b82c
 

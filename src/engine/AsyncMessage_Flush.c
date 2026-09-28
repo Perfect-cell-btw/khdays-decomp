@@ -10,7 +10,7 @@ typedef struct AsyncMessage {
     u16 size08;
 } AsyncMessage;
 
-extern int func_0203065c(void);
+extern int Session_GetLinkMode(void);
 extern u16 GetGlobalU16At4(void);
 extern void ClearNodeIfHeadMatches(void);
 extern int Ov105_WM_SetMPDataToPortEx(void (*callback)(void), AsyncMessage *message,
@@ -27,7 +27,7 @@ int AsyncMessage_Flush(AsyncMessage *message)
         return 0;
     }
 
-    switch (func_0203065c()) {
+    switch (Session_GetLinkMode()) {
     case 2:
         message->active00 = 1;
         result = Ov105_WM_SetMPDataToPortEx(ClearNodeIfHeadMatches, message,

@@ -3,7 +3,7 @@
  * available thread/frame count (OS_IsThreadAvailable) is at least param_2, else enqueue
  * the fallback (Slot48_StoreAtCurrentIndex) and deny. Returns 1 to proceed, 0 to skip. */
 #pragma thumb on
-extern unsigned int func_01ff80a8(void);
+extern unsigned int VBlank_GetCount(void);
 extern void Slot48_StoreAtCurrentIndex(int a, unsigned int b);
 extern unsigned short data_0204c190;
 int DeferredAction_Gate(int param_1, unsigned int param_2) {
@@ -11,7 +11,7 @@ int DeferredAction_Gate(int param_1, unsigned int param_2) {
         if (data_0204c190 & 1) return 1;
         return 0;
     }
-    if (func_01ff80a8() < param_2) {
+    if (VBlank_GetCount() < param_2) {
         Slot48_StoreAtCurrentIndex(param_1, param_2);
         return 0;
     }

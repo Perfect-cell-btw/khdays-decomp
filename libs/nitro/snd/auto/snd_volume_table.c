@@ -1,5 +1,8 @@
-/* NitroSDK snd_util.c: VolumeTable, the decibel -> linear volume curve (SND_VOLUME_DB_MIN -723 ..
- * SND_VOLUME_DB_MAX 0, one byte per 1/8 dB step) that SND_CalcChannelVolume reads. */
+/* NitroSDK snd_util.c: VolumeTable, the decibel -> linear volume curve that SND_CalcChannelVolume
+ * reads. One byte per tenth of a decibel, from SND_VOLUME_DB_MIN (-72.3 dB) to 0: entry 723 + d
+ * (d in tenths) is 127 * 10^(d/200), doubled for each data shift the -6/-12/-24 dB thresholds add
+ * (d = -60 gives 64, -61 gives 126, -241 gives 127). Byte for byte the ARM7 BIOS GetVolumeTable
+ * (SWI 1Ch); same unit as snd_decibel_table.c. */
 typedef unsigned char u8;
 #define SND_VOLUME_DB_MIN (-723)
 #define SND_VOLUME_DB_MAX 0

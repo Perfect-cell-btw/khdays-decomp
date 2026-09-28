@@ -50,7 +50,7 @@ extern MissionContext *data_ov006_020565e4;
 extern const u16 data_ov006_020563d4[];
 extern u16 func_01ff8138(void);
 extern void MI_CpuFill8(void *dst, int value, u32 size);
-extern u32 func_01ff80a8(void);
+extern u32 VBlank_GetCount(void);
 extern void StrCopy16(u16 *dst, const u16 *src);
 extern u32 Ov006_IsMissionMenuBusy(void);
 
@@ -79,7 +79,7 @@ void Ov006_RefreshSelectionSendBlock(void) {
 
     MI_CpuFill8(&data_ov006_020565e4->selectionSendBlock, 0,
                 sizeof(MissionSelectionSendBlock));
-    data_ov006_020565e4->selectionSendBlock.sessionValue = func_01ff80a8();
+    data_ov006_020565e4->selectionSendBlock.sessionValue = VBlank_GetCount();
     data_ov006_020565e4->selectionSendBlock.sessionMask = sessionMask;
 
     placeholderName = data_ov006_020563d4;

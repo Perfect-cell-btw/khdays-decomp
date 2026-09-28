@@ -54,7 +54,7 @@ struct MobiClipDecoder {
     u32 nIndexOffset;
     int nIndexEntries;
     void *pFrameState;
-    void *pQuantTables;
+    void *pDecodeFrameCode;  /* ITCM copy of the frame decoder; DecodeFrame calls it (+0x38) */
     int pad003c[4];
     int nPlaneWidth;
     int nPlaneHeight;
@@ -145,7 +145,7 @@ int Ov024_MobiClip_OpenContainer(MobiClipDecoder *pDecoder,
 
     pDecoder->pFrameState = Ov024_MobiClip_Alloc(FRAME_STATE);
     MIi_CpuClearFast(0, pDecoder->pFrameState, FRAME_STATE);
-    pDecoder->pQuantTables = Ov024_MobiClip_GetDecoderCodeCached();
+    pDecoder->pDecodeFrameCode = Ov024_MobiClip_GetDecoderCodeCached();
     ((void **)pDecoder->pFrameState)[0xf] = Ov024_MobiClip_GetDecodeTableCached();
     ((void **)pDecoder->pFrameState)[0x10] = data_ov024_020886c4;
     ((void **)pDecoder->pFrameState)[0x11] =

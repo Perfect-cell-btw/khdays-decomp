@@ -1,8 +1,7 @@
 #pragma thumb on
 /* Session_LayoutPacketSlots -- lay out the packet slots of the session context (data_0204c22c), MAIN. Modes 1/2
  * use five slots, mode 3 two; the slot table sits at the DTCM area data_027e07fc, followed by the
- * slot buffers. The slot sizes follow the connection kind (func_0203065c is
- * misnamed): kinds 1/2 give the first two slots 0x3d8 bytes and the rest 0xc0, kind 3 gives every
+ * slot buffers. The slot sizes follow the link mode (Session_GetLinkMode): modes 1/2 give the first two slots 0x3d8 bytes and the rest 0xc0, mode 3 gives every
  * slot 0x3c0. Each slot then gets its word-aligned buffer, a zero length and a zero state, and a
  * 0x3c0-byte scratch block is allocated from the default heap (+0x5c). */
 typedef unsigned short u16;
@@ -26,7 +25,7 @@ typedef struct PacketCtx {
 extern PacketCtx *data_0204c22c;
 extern char data_027e07fc[];
 extern int **data_0204c024;
-extern int func_0203065c(void);
+extern int Session_GetLinkMode(void);
 extern void *AllocFromExpHeapWrapper(u32 size, int **heap);
 
 void Session_LayoutPacketSlots(int mode)
@@ -46,7 +45,7 @@ void Session_LayoutPacketSlots(int mode)
     }
     ctx->slot = (PacketSlot *)buf;
     buf += (ctx->slotCount * sizeof(PacketSlot) + 3) & ~3;
-    switch (func_0203065c()) {
+    switch (Session_GetLinkMode()) {
     case 1:
     case 2:
         for (i = 0; i < 2; i++) {

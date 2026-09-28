@@ -1,4 +1,5 @@
-/* Seeds the game's 32-bit and 64-bit random generators from the system's low-entropy data. */
+/* Seeds the game's 32-bit and 64-bit random generators from the system's low-entropy data. The two
+ * accumulators are never initialised: the ROM mixes the entropy into whatever the registers held. */
 
 typedef struct { unsigned long long x, mul, add; } Rand64;
 typedef struct { unsigned x, mul, add; } Rand32;

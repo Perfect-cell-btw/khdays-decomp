@@ -1241,7 +1241,7 @@ src/overlays/screens/ov025_camp_menu_2/Ov025_MenuEntry_SetSlot2AndBeep.c:
     complete
     .text       start:0x0208c1cc end:0x0208c1ec
 
-src/overlays/screens/ov025_camp_menu_2/Ov025_DispatchIfRngHigh.c:
+src/overlays/screens/ov025_camp_menu_2/Ov025_Hub_OpenGroup2IfPastDay7.c:
     complete
     .text       start:0x0208c1ec end:0x0208c238
 

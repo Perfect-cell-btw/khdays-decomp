@@ -2,7 +2,7 @@
  * key sharing session. */
 
 extern void func_ov022_02083f0c(void);
-extern void Ov022_SetActorInputEnabled(int arg0);
+extern void Ov022_UpdateCameraAndViews(int arg0);
 extern void StoreToGlobalPtr4Field28(int arg0);
 extern int data_ov022_020b2e60;
 extern void Ov022_StepCameraInputThenNextState(void);
@@ -10,7 +10,7 @@ extern void Ov022_EndKeySharingSession(void);
 
 int func_ov022_0208310c(void) {
     func_ov022_02083f0c();
-    Ov022_SetActorInputEnabled(1);
+    Ov022_UpdateCameraAndViews(1);
     switch (*(char *)(*(int *)&data_ov022_020b2e60 + 0x3e)) {
     case 0:
         return (int)Ov022_StepCameraInputThenNextState;

@@ -22,7 +22,7 @@ extern u8 data_0204be04;
 extern u8 data_0204c240;
 extern Ov022Context *data_ov022_020b2e60;
 
-extern void Ov022_SetActorInputEnabled(int mode);
+extern void Ov022_UpdateCameraAndViews(int mode);
 extern int Ov002_Scene_IsIdle(void);
 extern int QueryActiveStateOrDelegate(void);
 extern int func_ov022_020886d0(int index);
@@ -57,7 +57,7 @@ Ov022StateCallback Ov022_StateRosterStep(void)
         return next;
     }
 
-    Ov022_SetActorInputEnabled(1);
+    Ov022_UpdateCameraAndViews(1);
     if (Ov002_Scene_IsIdle() != 0) {
         if (func_ov022_020886d0(QueryActiveStateOrDelegate()) != 0) {
             return Ov022_StartSessionThenNextStep;

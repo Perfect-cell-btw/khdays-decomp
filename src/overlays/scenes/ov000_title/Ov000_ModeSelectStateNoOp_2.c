@@ -1,3 +1,8 @@
-/* Empty last entry of the mode-select state table (data_ov000_0205a86c). */
+/* Empty last entry of the mode-select state table (data_ov000_0205a86c). Like every empty function
+ * it returns its first argument unchanged (the ROM is a bare `bx lr`); an object update reads that
+ * as "stay in this state". */
 
-void Ov000_ModeSelectStateNoOp_2(void) {}
+void *Ov000_ModeSelectStateNoOp_2(void *arg)
+{
+    return arg;
+}

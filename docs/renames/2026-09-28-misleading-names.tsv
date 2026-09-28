@@ -1,0 +1,12 @@
+# old_name	new_name	module  -- names that described something the function does not do
+Ov022_SetActorInputEnabled	Ov022_UpdateCameraAndViews	ov022
+Ov022_SetColourChannel	Ov022_SpawnMemberDrops	ov022
+Ov022_FormatDebugLine	Ov022_LoadMissionRecord	ov022
+Ov025_DispatchIfRngHigh	Ov025_Hub_OpenGroup2IfPastDay7	ov025
+Ov006_ForwardRtcAvailability	Ov006_CountLocalPlayers	ov006
+Ov008_ForwardRtcAvailability	Ov008_CountLocalPlayers	ov008
+Ov006_MissionPollKeys	Ov006_CountPlayers	ov006
+Ov008_MissionPollKeys	Ov008_CountPlayers	ov008
+func_01ff80a8	VBlank_GetCount	itcm
+func_02001020	VBlank_SetCount	main
+func_0203065c	Session_GetLinkMode	main

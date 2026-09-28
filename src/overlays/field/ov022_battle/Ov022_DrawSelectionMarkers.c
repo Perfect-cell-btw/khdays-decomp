@@ -69,7 +69,7 @@ extern Ov022Actor *GetEntryField20ByIndex(int index);
 extern u64 OS_GetTick(void);
 extern u64 func_02020368(u64 value, u32 divisor, int mode);
 extern int FX_Div(int numerator, int denominator);
-extern void Ov000_Title_CreateLogoObjects();
+extern void Ov002_ReaimActor();
 
 void Ov022_DrawSelectionMarkers(void *state,
                          const Ov022SelectionPoint *point)
@@ -147,5 +147,5 @@ second_done:
         }
     }
 
-    Ov000_Title_CreateLogoObjects(object, 0);
+    Ov002_ReaimActor(object, 0);
 }

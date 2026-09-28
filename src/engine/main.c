@@ -64,7 +64,7 @@ extern void  InstantiateClass(void *classDesc, int ctorArg);
 
 /* ---- per-frame ---- */
 extern void  OS_WaitVBlankIntr(void);             /* 0x02003878  frame begin      */
-extern unsigned int func_01ff80a8(void);   /* GetVBlankCount               */
+extern unsigned int VBlank_GetCount(void);   /* GetVBlankCount               */
 extern void  GXi_FlushCommandList(void);                 /* present / VBlank swap        */
 extern void  FrameStep_UpdateTaskQueue(void);                 /* FrameStep_UpdateTaskQueue    */
 extern void  Pad_Sample(void);                 /* per-frame update B           */
@@ -84,10 +84,10 @@ extern int   func_02020914(void);
 extern void  NNS_SndPlayerPauseAll(int flag);
 extern int   SoundMgr_PauseBgm(int flag);
 extern void  OS_Sleep(unsigned int ms);
-extern void  func_0201e428(void);
-extern void  SetMasterBrightnessMain(void);
-extern void  func_0201e438(void);
-extern void  SetMasterBrightnessSub(void);
+extern int  func_0201e428(void);
+extern void  SetMasterBrightnessMain(int brightness);
+extern int  func_0201e438(void);
+extern void  SetMasterBrightnessSub(int brightness);
 
 /* ---- globals ---- */
 extern unsigned char data_027e0060;   /* current scene id (0 = none)              */
@@ -151,14 +151,14 @@ int main(void) {
     /* --- 4. FRAME LOOP (0x02000cac) --- */
     for (;;) {
         OS_WaitVBlankIntr();                     /* frame begin              */
-        frameTarget = func_01ff80a8();    /* VBlank count snapshot    */
+        frameTarget = VBlank_GetCount();    /* VBlank count snapshot    */
         FrameStep_UpdateTaskQueue();                         /* update task queue        */
         Pad_Sample();
         G3X_ResetMtxStack();
 
         switch (data_0204bd84) {                 /* display mode             */
         case 0: Obj_UpdateAll(0); break;
-        case 1: Callbacks_Run(1); frameTarget = func_01ff80a8(); break;
+        case 1: Callbacks_Run(1); frameTarget = VBlank_GetCount(); break;
         case 2: Obj_UpdateAll(0); Callbacks_Run(1); break;
         }
         SoundMgr_Update();
@@ -166,7 +166,7 @@ int main(void) {
         /* frame-rate pacing: advance whole frames until we reach the target */
         if (data_0204c058 != 2) {
             frameTarget += (data_0204c058 == 1) ? 2 : 1;
-            while (func_01ff80a8() < frameTarget) {
+            while (VBlank_GetCount() < frameTarget) {
                 OS_WaitVBlankIntr();
                 FrameStep_UpdateTaskQueue();
             }
@@ -195,8 +195,8 @@ int main(void) {
             if (phase != 0) {
                 if (HELD_TRANSITION == 0 && PM_SetLCDPower(1) != 0) {
                     data_020442a0.phase = 0;
-                    func_0201e428(); SetMasterBrightnessMain();
-                    func_0201e438(); SetMasterBrightnessSub();
+                    SetMasterBrightnessMain(func_0201e428());
+                    SetMasterBrightnessSub(func_0201e438());
                     DispCnt_ApplyPendingMode();
                 }
             }
@@ -218,7 +218,7 @@ int main(void) {
             DispCnt_ApplyPendingMode();
             data_020442a0.phase = 0;
         }
-        func_0201e428(); SetMasterBrightnessMain();
-        func_0201e438(); SetMasterBrightnessSub();
+        SetMasterBrightnessMain(func_0201e428());
+        SetMasterBrightnessSub(func_0201e438());
     }
 }

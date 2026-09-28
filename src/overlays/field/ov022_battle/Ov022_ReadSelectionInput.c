@@ -58,7 +58,7 @@ extern void *Ov022_PickSelectorTarget(int mask);
 extern int Ov002_Panel_IsMode9(void);
 extern int Ov002_IsObjectFlag2000Set(int object);
 extern int func_02023c40(void);
-extern void Ov000_Title_CreateLogoObjects(int object, int mode);
+extern void Ov002_ReaimActor(int object, int mode);
 
 int Ov022_ReadSelectionInput(void)
 {
@@ -249,6 +249,6 @@ keep_runtime_latch:
     context->repeatAny = value;
 
     Ov022_UpdateSelectionMarker();
-    Ov000_Title_CreateLogoObjects(object, 0);
+    Ov002_ReaimActor(object, 0);
     return 0;
 }

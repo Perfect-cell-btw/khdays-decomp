@@ -1,3 +1,7 @@
-/* Empty pfnGetB of the prize box class. */
+/* Empty pfnGetB of the prize box class. Like every empty function it returns its first argument
+ * unchanged (the ROM is a bare `bx lr`); an object update reads that as "stay in this state". */
 
-void Ov021_PrizeBoxGetBNoOp(void) {}
+void *Ov021_PrizeBoxGetBNoOp(void *arg)
+{
+    return arg;
+}

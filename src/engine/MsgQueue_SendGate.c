@@ -17,7 +17,7 @@
  * argument rather than held across the copy call.
  */
 
-extern int func_0203065c(void);
+extern int Session_GetLinkMode(void);
 extern void MI_CpuCopy8(const void *src, void *dst, unsigned int n);
 extern void dispatchByObjTypeBits(int hdr, int size);
 extern int MsgQueue_Enqueue(int type, int size, unsigned short *hdr);
@@ -36,7 +36,7 @@ int MsgQueue_SendGate(int param_1, unsigned short *param_2, unsigned short param
 
     ret = 0;
     doSend = 1;
-    switch (func_0203065c()) {
+    switch (Session_GetLinkMode()) {
     case 2:
         if (param_1 == 3 || param_1 == 0x12) {
             ((MsgHdr *)buf)->type = param_1;

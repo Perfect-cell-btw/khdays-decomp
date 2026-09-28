@@ -356,11 +356,11 @@ src/overlays/scenes/ov006_mission_mode_select/Ov006_GetMissionMenuSelection.c:
     complete
     .text       start:0x0204fa58 end:0x0204fa88
 
-src/overlays/scenes/ov006_mission_mode_select/Ov006_MissionPollKeys.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CountPlayers.c:
     complete
     .text       start:0x0204fa88 end:0x0204fab8
 
-src/overlays/scenes/ov006_mission_mode_select/Ov006_ForwardRtcAvailability.c:
+src/overlays/scenes/ov006_mission_mode_select/Ov006_CountLocalPlayers.c:
     complete
     .text       start:0x0204fab8 end:0x0204fad0
 

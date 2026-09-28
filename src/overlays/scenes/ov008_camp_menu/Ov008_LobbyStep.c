@@ -83,7 +83,7 @@ extern u16 data_0204c190;
 extern const Ov008LobbyCaptions data_ov008_0208fc8c;
 extern void  Ov008_LobbyNextStepNoOp(void);                                  /* next lobby step */
 extern u16   Ov008_GetLocalPlayerIndex(void);                                  /* local member index */
-extern int   Ov008_MissionPollKeys(void);
+extern int   Ov008_CountPlayers(void);
 extern void  func_020362ec(u16 *pHeader);
 extern void  Ov008_GetMissionRowInfo(int nRow, MissionMenuRow *pOut);
 extern int   Ov008_CanConfirmMissionMenu(void);                                  /* is host */
@@ -139,7 +139,7 @@ Ov008LobbyStep Ov008_LobbyStep(void)
 
     pfnNext = 0;
     nLocal = Ov008_GetLocalPlayerIndex();
-    nSession = Ov008_MissionPollKeys();
+    nSession = Ov008_CountPlayers();
     nCursor = 0;
     func_020362ec(data_ov008_02090fa0->inputHeader);
     for (i = 0; i < MEMBER_COUNT; i++) {

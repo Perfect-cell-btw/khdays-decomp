@@ -1,3 +1,7 @@
-/* Empty callback for hub widget 0x69. */
+/* Empty callback for hub widget 0x69. Like every empty function it returns its first argument
+ * unchanged (the ROM is a bare `bx lr`); an object update reads that as "stay in this state". */
 
-void Ov025_HubWidgetCallbackNoOp_5(void) {}
+void *Ov025_HubWidgetCallbackNoOp_5(void *arg)
+{
+    return arg;
+}

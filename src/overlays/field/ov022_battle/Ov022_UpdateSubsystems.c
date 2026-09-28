@@ -81,7 +81,7 @@ extern int Session_GetLocalPlayerIndex(void);
 extern int LoadGlobalU16At0(void);
 extern void Ov106_SetSceneAnimEnabled(int bOn);
 extern void Ov002_SetWidgetFullOrZero(int bOn);
-extern void Ov082_ShutdownAndFree(int bOn);
+extern void Ov106_SetField8CCC(int bOn);
 extern void Ov002_HudWidgets_SetFieldE0(int bOn);
 extern int Ov022_ComputeChipGauge(u8 *pBlk);
 extern int Ov002_IsMissionClearFinished(int nWhich);
@@ -145,13 +145,13 @@ void Ov022_UpdateSubsystems(struct Actor *pActor)
         }
         if ((pActor->nFlags2 & (1ULL << 61)) != 0) {
             if (LoadGlobalU16At0() == 0x2a) {
-                Ov082_ShutdownAndFree(1);
+                Ov106_SetField8CCC(1);
             } else {
                 Ov002_HudWidgets_SetFieldE0(1);
             }
         } else {
             if (LoadGlobalU16At0() == 0x2a) {
-                Ov082_ShutdownAndFree(0);
+                Ov106_SetField8CCC(0);
             } else {
                 Ov002_HudWidgets_SetFieldE0(0);
             }

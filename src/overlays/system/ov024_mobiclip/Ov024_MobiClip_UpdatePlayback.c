@@ -45,12 +45,12 @@ extern int Game_RunActionScript(void *pStream);
 extern void Obj_ResetBothSubBlocksAndArm(void *pStream);
 extern void GX_DispOff(void);
 extern void DispCnt_ApplyPendingMode(void);
-extern void GXx_GetMasterBrightness_(unsigned int nRegister);
+extern int GXx_GetMasterBrightness_(unsigned int nRegister);
 extern int PM_SetLCDPower(int bResume);
-extern void func_0201e428(void);
-extern void SetMasterBrightnessMain(void);
-extern void func_0201e438(void);
-extern void SetMasterBrightnessSub(void);
+extern int func_0201e428(void);
+extern void SetMasterBrightnessMain(int brightness);
+extern int func_0201e438(void);
+extern void SetMasterBrightnessSub(int brightness);
 extern int SoundStrm_HasPlaybackPos(int nChannel);
 extern void Table_TailCallWithEntry(int nChannel, int nFrames);
 extern void func_02031574(int bOn);
@@ -101,10 +101,8 @@ void *Ov024_MobiClip_UpdatePlayback(void)
                        && ((KEYS_EXTRA & LID_CLOSED) >> 15) == 0) {
                 if (PM_SetLCDPower(1) != 0) {
                     player->bSuspended = 0;
-                    func_0201e428();
-                    SetMasterBrightnessMain();
-                    func_0201e438();
-                    SetMasterBrightnessSub();
+                    SetMasterBrightnessMain(func_0201e428());
+                    SetMasterBrightnessSub(func_0201e438());
                     DispCnt_ApplyPendingMode();
                 }
             }
@@ -155,9 +153,7 @@ teardown:
     player->nFadeStep = 0xf;
     OS_WaitVBlankIntr();
     Ov024_MobiClip_StepScreenFade(player);
-    GXx_GetMasterBrightness_(0x0400006c);
-    SetMasterBrightnessMain();
-    GXx_GetMasterBrightness_(0x0400106c);
-    SetMasterBrightnessSub();
+    SetMasterBrightnessMain(GXx_GetMasterBrightness_(0x0400006c));
+    SetMasterBrightnessSub(GXx_GetMasterBrightness_(0x0400106c));
     return (void *)&Ov024_MobiClip_PlaybackIdleState;
 }

@@ -1,4 +1,4 @@
-extern void Ov022_SetActorInputEnabled(int mode);
+extern void Ov022_UpdateCameraAndViews(int mode);
 extern int Ov002_StepPeerObjectLoading(void);
 extern void QueryActiveStateOrDelegate(void);
 extern int Ov022_GetEntryField66(void);
@@ -22,7 +22,7 @@ void *Ov022_StartPauseMenu(void) {
         /* No value: the ROM really does leave r0 untouched on this path. */
         return;
     }
-    Ov022_SetActorInputEnabled(0);
+    Ov022_UpdateCameraAndViews(0);
     if (Ov002_StepPeerObjectLoading() != 0) {
         QueryActiveStateOrDelegate();
         Ov002_ReadRosterSeat(Ov022_GetEntryField66(), 0, &entry);

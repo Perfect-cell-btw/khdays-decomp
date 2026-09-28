@@ -7,15 +7,15 @@ typedef unsigned short u16;
 typedef unsigned int u32;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
-extern int func_01ff80a8(void);
+extern int VBlank_GetCount(void);
 extern void OS_WaitVBlankIntr(void);
 extern void GX_DispOff(void);
 extern void DispCnt_ApplyPendingMode(void);
 extern int PM_SetLCDPower(int mode);
-extern void SetMasterBrightnessMain();
-extern void SetMasterBrightnessSub();
-extern void func_0201e428(void);
-extern void func_0201e438(void);
+extern void SetMasterBrightnessMain(int brightness);
+extern void SetMasterBrightnessSub(int brightness);
+extern int func_0201e428(void);
+extern int func_0201e438(void);
 extern void Obj_ResetBothSubBlocksAndArm(void *script);
 extern int Game_RunActionScript(void *script);
 extern void SetWordAt0x588To1(void *script);
@@ -45,7 +45,7 @@ void *Ov012_RunOpeningScene(void) {
             u16 *systemFlags;
             u32 keyMask;
 
-            previousThreadCount = func_01ff80a8();
+            previousThreadCount = VBlank_GetCount();
             initialThreadCount = previousThreadCount;
             loopStatus = Ov024_TickStreamSlots();
             if (loopStatus == 0) {
@@ -75,7 +75,7 @@ void *Ov012_RunOpeningScene(void) {
                         *(u16 *)(context + 2) &= ~1;
                     }
 
-                    currentThreadCount = func_01ff80a8();
+                    currentThreadCount = VBlank_GetCount();
                     if (previousThreadCount != currentThreadCount) {
                         Ov012_ProcessOpeningTimeline(context,
                                             currentThreadCount - initialThreadCount);
@@ -91,10 +91,8 @@ void *Ov012_RunOpeningScene(void) {
                                ((int)(*systemFlags & 0x8000) >> 15) == 0 &&
                                PM_SetLCDPower(1) != 0) {
                         *(u8 *)(context + 0x8be0) = 0;
-                        func_0201e428();
-                        SetMasterBrightnessMain();
-                        func_0201e438();
-                        SetMasterBrightnessSub();
+                        SetMasterBrightnessMain(func_0201e428());
+                        SetMasterBrightnessSub(func_0201e438());
                         DispCnt_ApplyPendingMode();
                     }
                 } while (Ov024_TickStreamSlots() == 0);

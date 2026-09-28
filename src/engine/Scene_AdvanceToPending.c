@@ -34,7 +34,7 @@ extern SceneEntry data_02042548[];   /* g_SceneTable, indexed by scene id */
 extern void *data_0204c02c;
 
 extern int  Instance_ReleaseIfDead(void *obj);
-extern void UnloadOverlaySync(int);
+extern void UnloadOverlaySync(int module, int overlayId);
 extern void Callbacks_Init(void);
 extern void HeapState_Recreate(void *);
 extern void LoadOverlaySync(int module, int overlayId);
@@ -47,7 +47,7 @@ int Scene_AdvanceToPending(void) {
     if (*(void **)((char *)&data_0204bda4 + 4) != 0) {
         if (Instance_ReleaseIfDead(s->obj) != 0) {
             if (s->entry->overlayId != -1) {
-                UnloadOverlaySync(0);
+                UnloadOverlaySync(0, s->entry->overlayId);
             }
             Callbacks_Init();
             HeapState_Recreate(data_0204c02c);

@@ -3,7 +3,7 @@
 
 extern int Session_GetLocalPlayerIndex(void);
 extern void Ov022_Member_ShowDamage(int kind, int id, int a2, int a3);
-extern void Ov022_SetColourChannel(int kind, int a2, int id);
+extern void Ov022_SpawnMemberDrops(int kind, int a2, int id);
 extern void func_ov022_02088cac(int kind);
 
 struct Ent02089d90 {
@@ -22,7 +22,7 @@ void Ov022_DispatchEntryByKind(int arg0) {
         Ov022_Member_ShowDamage(e->kind, e->id, e->a2, e->a3);
         return;
     case 1:
-        Ov022_SetColourChannel(e->kind, e->a2, e->id);
+        Ov022_SpawnMemberDrops(e->kind, e->a2, e->id);
         return;
     case 2:
         if (Session_GetLocalPlayerIndex() == 0) return;

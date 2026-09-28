@@ -47,7 +47,7 @@ extern int Ov006_MissionScene_GetState(void);
 extern int GameState_GetField(int id, int field);
 extern void Ov006_MissionScene_SetByte9520(int mask);
 extern void Ov006_GetMissionRowInfo(int row, MissionMenuRow *out);
-extern int Ov006_MissionPollKeys(void);
+extern int Ov006_CountPlayers(void);
 extern int Ov006_SetTitleMode(unsigned mode);
 extern void Ov006_ResetTextLayers(void);
 extern void Ov006_FlushTextLayers(void);
@@ -107,7 +107,7 @@ int Ov006_MissionBuildOptionRows(void) {
     } else {
         u8 i;
 
-        input = Ov006_MissionPollKeys();
+        input = Ov006_CountPlayers();
         for (i = 0; i < 4; i++) {
             Ov006_GetMissionRowInfo(i, &data_ov006_02056660->rows[i]);
         }

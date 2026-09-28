@@ -26,6 +26,10 @@ struct MobiClipReaderRaw {
     int pad0010;
 };
 
+/* mwcc gives a virtual destructor two vtable slots, the complete-object destructor (slot 0) and the
+ * deleting destructor (slot 1), and data_ov024_020939c4 holds exactly those two. A compiler with one
+ * slot per virtual destructor (MSVC) puts every later method one slot early. The entries are plain
+ * functions taking `this` in r0. */
 class MobiClipReader {
 public:
     virtual ~MobiClipReader();

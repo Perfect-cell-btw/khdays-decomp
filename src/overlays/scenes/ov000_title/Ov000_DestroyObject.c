@@ -3,7 +3,7 @@
 
 extern int Slot_UnlinkIfLinked();
 extern int NNS_FndRemoveListObject();
-extern int NNSi_FndFreeFromDefaultHeap();
+extern int NNSi_FndFreeFromDefaultHeap(void *block);
 
 void Ov000_DestroyObject(char *a, int *b)
 {
@@ -27,6 +27,6 @@ void Ov000_DestroyObject(char *a, int *b)
     NNS_FndRemoveListObject(a + 0x4a38, b);
 
     if (b != 0) {
-        NNSi_FndFreeFromDefaultHeap();
+        NNSi_FndFreeFromDefaultHeap(b);
     }
 }

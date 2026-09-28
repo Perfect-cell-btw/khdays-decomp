@@ -58,7 +58,7 @@ extern int   Ov008_Link_Poll(void);                                  /* session 
 extern int   Ov008_MissionScene_GetState(void);                                  /* wipe sub-state */
 extern u32   GameState_GetField(int nField, int nBits);                       /* GameState_GetField */
 extern void  Ov008_MissionScene_SetByte9520(int nFeatures);
-extern int   Ov008_MissionPollKeys(void);
+extern int   Ov008_CountPlayers(void);
 extern void  Ov008_GetMissionRowInfo(int nRow, Ov006RowInfo *pOut);          /* fill a row record */
 extern void  Ov008_MissionScene_SetMode(int nValue);                            /* Ov008_Fn_18a0 */
 extern void  Ov008_ResetTextLayers(void);                                  /* Ov008_ResetTextLayers */
@@ -109,7 +109,7 @@ MissionState Ov008_MissionMenuWaitReady(void)
         if (data_ov008_02090fa0->parametersReady != 0) {
             Ov008_GetMissionRowInfo(0, &data_ov008_02090fa0->rows[0]);
         } else {
-            nValue = Ov008_MissionPollKeys();
+            nValue = Ov008_CountPlayers();
             for (i = 0; i < ROW_COUNT; i++) {
                 Ov008_GetMissionRowInfo(i, &data_ov008_02090fa0->rows[i]);
             }

@@ -22,7 +22,7 @@ extern u16 data_0204c18c;               /* keys held */
 extern u16 data_0204c190;               /* keys pressed this frame */
 
 extern int func_02023c40(void);         /* frame-rate mode */
-extern u32 func_01ff80a8(void);  /* VBlank count */
+extern u32 VBlank_GetCount(void);  /* VBlank count */
 extern u32 Math_DivMod(u32 numer, u32 denom);
 
 void KeyRepeat_Update(KeyRepeat *kr)
@@ -43,7 +43,7 @@ void KeyRepeat_Update(KeyRepeat *kr)
         speed = 1;
         break;
     }
-    now = func_01ff80a8();
+    now = VBlank_GetCount();
     for (i = 0; i < 10; i++) {
         u16 bit = data_0204222c[i];
 

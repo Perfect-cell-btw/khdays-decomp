@@ -32,7 +32,7 @@ extern int Ov002_GetSlotTableByte(int state);
 extern void Ov002_SpawnAllDrops(u8 *color, u16 id, int *vector);
 extern struct Ov022ActiveState data_ov022_020b2e78;
 
-void Ov022_SetColourChannel(int kind, int channel, int intensity) {
+void Ov022_SpawnMemberDrops(int kind, int channel, int intensity) {
     struct Ov022ColorWork work;
     u8 *color;
     void *activeBase;

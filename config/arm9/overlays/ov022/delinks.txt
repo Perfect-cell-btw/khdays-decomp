@@ -124,7 +124,7 @@ src/overlays/field/ov022_battle/Ov022_EndKeySharingSession.c:
     complete
     .text       start:0x02083bd8 end:0x02083c08
 
-src/overlays/field/ov022_battle/Ov022_SetActorInputEnabled.c:
+src/overlays/field/ov022_battle/Ov022_UpdateCameraAndViews.c:
     complete
     .text       start:0x02083c08 end:0x02083ce4
 
@@ -656,7 +656,7 @@ src/overlays/field/ov022_battle/Ov022_Member_ShowDamage.c:
     complete
     .text       start:0x02088a5c end:0x02088b50
 
-src/overlays/field/ov022_battle/Ov022_SetColourChannel.c:
+src/overlays/field/ov022_battle/Ov022_SpawnMemberDrops.c:
     complete
     .text       start:0x02088b50 end:0x02088bec
 
@@ -1866,7 +1866,7 @@ src/overlays/field/ov022_battle/Ov022_TrackWallPress.c:
     complete
     .text       start:0x02096984 end:0x02096e44
 
-src/overlays/field/ov022_battle/Ov022_FormatDebugLine.c:
+src/overlays/field/ov022_battle/Ov022_LoadMissionRecord.c:
     complete
     .text       start:0x02096e44 end:0x02096e94
 

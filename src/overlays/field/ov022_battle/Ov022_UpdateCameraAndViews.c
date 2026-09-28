@@ -1,5 +1,6 @@
-/* Per-frame battle update: updates the local actor (unless paused), draws the local group's view
- * lists and link seats, updates peer animations and applies the scene scale to the views. */
+/* Per-frame battle update: re-aims the camera at the local actor (the argument says whether to turn
+ * it; skipped while paused), draws the local group's view lists and link seats, updates the peers'
+ * animations and applies the scene scale to the views. */
 
 typedef unsigned char u8;
 typedef unsigned short u16;
@@ -17,7 +18,7 @@ extern u8 data_0204be04;
 extern int func_ov022_02083f0c(void);
 extern u32 func_ov022_02088338(void);
 extern int QueryActiveStateOrDelegate(void);
-extern void Ov000_Title_CreateLogoObjects(int actor, int mode);
+extern void Ov002_ReaimActor(int actor, int mode);
 extern int Ov022_GetEntryField66(int index);
 extern void Ov002_RenderLinkSeatEntries(void);
 extern void Render_DrawViewLists(int index);
@@ -27,7 +28,7 @@ extern void Ov002_FlushPendingObjectCommands(void);
 extern int LoadGlobalU16At0(void);
 extern void Render_ApplyFactorToViews(u32 mask, int scale);
 
-void Ov022_SetActorInputEnabled(int mode)
+void Ov022_UpdateCameraAndViews(int mode)
 {
     int actor = func_ov022_02083f0c();
     u32 enabled = func_ov022_02088338();
@@ -35,7 +36,7 @@ void Ov022_SetActorInputEnabled(int mode)
     u32 mask;
 
     if ((data_ov022_020b2e60->flags & 8) == 0) {
-        Ov000_Title_CreateLogoObjects(actor, mode);
+        Ov002_ReaimActor(actor, mode);
     }
 
     index = Ov022_GetEntryField66(index);

@@ -35,7 +35,7 @@ extern void Tilemap_FillRect(u16 *tilemap, int width, int height, int x, int y,
 extern void Ov012_TileTextRenderer_SetReady(void *renderer, int ready);
 extern void func_02031574(int value);
 extern void func_02030e64(int value);
-extern int Ov008_RebuildShopList(MobiClipOpenRequest *request);
+extern int Ov024_MobiClip_OpenStreams(MobiClipOpenRequest *request);
 
 void Ov012_StartOpeningMovie(char *streamName)
 {
@@ -78,7 +78,7 @@ void Ov012_StartOpeningMovie(char *streamName)
     func_02031574(1);
     func_02030e64(1);
 
-    if (Ov008_RebuildShopList(&request) == 0) {
+    if (Ov024_MobiClip_OpenStreams(&request) == 0) {
         *(u16 *)(context + 2) |= 2;
     }
 }

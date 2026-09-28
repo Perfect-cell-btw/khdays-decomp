@@ -16,7 +16,7 @@ typedef struct {
     Ov022Rec record2688;
 } Ov022Context;
 
-void Ov022_FormatDebugLine(Ov022Context *arg0) {
+void Ov022_LoadMissionRecord(Ov022Context *arg0) {
     char buf[128];
     int x;
     OS_SPrintf(buf, (char *)&data_ov022_020b2cd8,

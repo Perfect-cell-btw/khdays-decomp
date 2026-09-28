@@ -5,7 +5,7 @@ libs/nitro/os/calls/OSi_VBlankInterruptHandler.c:
     complete
     .text       start:0x01ff8000 end:0x01ff80a8
 
-libs/nitro/os/calls/func_01ff80a8.c:
+libs/nitro/os/calls/VBlank_GetCount.c:
     complete
     .text       start:0x01ff80a8 end:0x01ff80b8
 
