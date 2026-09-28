@@ -15,9 +15,8 @@ extern void *NNS_FndGetNextListObject(NNSFndList *list, void *object);
 extern void NNS_FndRemoveListObject(NNSFndList *list, void *object);
 extern void NNS_FndAppendListObject(NNSFndList *list, void *object);
 
-void
-Ov008_MergeSortedLists(NNSFndList *destination, NNSFndList *leftList,
-                    NNSFndList *rightList, NNSFndCompare compare)
+void Ov008_MergeSortedLists(NNSFndList *destination, NNSFndList *leftList,
+                            NNSFndList *rightList, NNSFndCompare compare)
 {
     void *left;
     void *right;

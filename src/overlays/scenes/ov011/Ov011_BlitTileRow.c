@@ -1,4 +1,8 @@
-/* Ov011_BlitTileRow -- copy one tileset row into a pane's 32x32-tile VRAM image. */
+/* Ov011_BlitTileRow -- copy one tileset row into a pane's 32x32-tile VRAM image.
+ *
+ * The incoming nCols is not read: it is set from the tileset before any use, and
+ * Ov011_StepPaneScroll passes five arguments. It stays a parameter because mwcc allocates
+ * parameters first: declared as a local, the registers come out different. */
 
 #include "nitro/types.h"
 

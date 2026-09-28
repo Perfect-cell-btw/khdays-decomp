@@ -72,8 +72,7 @@ extern void EnqueueObjGfxCommand(void *surface);
 const Ov008LayoutTemplate data_ov008_0208e918 = {{0, 1, 0, 0}};
 static const Ov008MenuIdList5 sInitialMenuEntries = {{1, 2, 3, 4, 5}};
 
-void
-Ov008_SelectMenuGroupAndDrawCaption(Ov008MenuRenderer *renderer, int selectedGroup)
+void Ov008_SelectMenuGroupAndDrawCaption(Ov008MenuRenderer *renderer, int selectedGroup)
 {
     int itemIndex;
     int groupIndex;

@@ -8,9 +8,7 @@ extern void *Ov008_FindEntryByTag(void *context, u16 tag);
 extern void Ov008_ApplyTempFieldsAndRestore(void *context, void *entry,
                                 int value, int subId);
 
-void
-Ov008_UpdateDecimalDisplay(int group, int value, int maximum,
-                    int width, int subId)
+void Ov008_UpdateDecimalDisplay(int group, int value, int maximum, int width, int subId)
 {
     void *context = (void *)*(volatile int *)&subId;
     int subIdValue = (int)context;

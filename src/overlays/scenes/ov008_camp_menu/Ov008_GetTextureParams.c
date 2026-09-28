@@ -57,8 +57,7 @@ typedef struct Ov008TextureParams {
 
 extern NNSG3dResTex *NNS_G3dGetTex(const NNSG3dResFileHeader *resource);
 
-static inline void *
-NNS_G3dGetResDataByIdx(const NNSG3dResDict *dict, u32 idx)
+static inline void *NNS_G3dGetResDataByIdx(const NNSG3dResDict *dict, u32 idx)
 {
     NNSG3dResDictEntryHeader *header;
 
@@ -70,8 +69,7 @@ NNS_G3dGetResDataByIdx(const NNSG3dResDict *dict, u32 idx)
     }
 }
 
-static inline NNSG3dResDictTexData *
-NNS_G3dGetTexDataByIdx(const NNSG3dResTex *tex, u32 idx)
+static inline NNSG3dResDictTexData *NNS_G3dGetTexDataByIdx(const NNSG3dResTex *tex, u32 idx)
 {
     if (tex) {
         return (NNSG3dResDictTexData *)
@@ -81,8 +79,7 @@ NNS_G3dGetTexDataByIdx(const NNSG3dResTex *tex, u32 idx)
     }
 }
 
-static inline NNSG3dResDictPlttData *
-NNS_G3dGetPlttDataByIdx(const NNSG3dResTex *tex, u32 idx)
+static inline NNSG3dResDictPlttData *NNS_G3dGetPlttDataByIdx(const NNSG3dResTex *tex, u32 idx)
 {
     if (tex && tex->plttInfo.ofsDict != 0) {
         return (NNSG3dResDictPlttData *)NNS_G3dGetResDataByIdx(
@@ -92,9 +89,7 @@ NNS_G3dGetPlttDataByIdx(const NNSG3dResTex *tex, u32 idx)
     }
 }
 
-void
-Ov008_GetTextureParams(Ov008TextureParams *params,
-                    const NNSG3dResFileHeader *resource)
+void Ov008_GetTextureParams(Ov008TextureParams *params, const NNSG3dResFileHeader *resource)
 {
     NNSG3dResTex *tex = NNS_G3dGetTex(resource);
     NNSG3dResDictTexData *texData = NNS_G3dGetTexDataByIdx(tex, 0);

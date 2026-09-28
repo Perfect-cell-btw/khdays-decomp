@@ -22,8 +22,7 @@ extern void Text_DrawWithShadow(void *surface, int id, int x, int y,
                           void *buffer, int flags);
 extern void EnqueueObjGfxCommand(void *surface);
 
-int
-Ov025_UpdateMenuOptionLocksAndDrawCategory(struct Ov008MenuRenderer *renderer)
+int Ov025_UpdateMenuOptionLocksAndDrawCategory(struct Ov008MenuRenderer *renderer)
 {
     int result;
     int hasHandle;

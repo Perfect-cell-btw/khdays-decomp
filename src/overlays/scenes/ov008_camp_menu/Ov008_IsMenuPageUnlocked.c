@@ -10,8 +10,7 @@ struct GameState {
 extern int GameState_GetField(int field, int index);
 extern struct GameState *data_0204be18;
 
-int
-Ov008_IsMenuPageUnlocked(unsigned int page)
+int Ov008_IsMenuPageUnlocked(unsigned int page)
 {
     unsigned int level = GameState_GetField(0x44e, 3) & 0xff;
 

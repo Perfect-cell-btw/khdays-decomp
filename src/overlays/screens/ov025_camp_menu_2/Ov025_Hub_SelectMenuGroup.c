@@ -76,8 +76,7 @@ extern void EnqueueObjGfxCommand(void *surface);
 extern const Ov008MenuIdList7 data_ov025_020b38b8;
 extern const Ov008MenuGroupCounts data_ov025_020b3888;
 
-void
-Ov025_Hub_SelectMenuGroup(Ov008MenuRenderer *renderer, int selectedGroup)
+void Ov025_Hub_SelectMenuGroup(Ov008MenuRenderer *renderer, int selectedGroup)
 {
     int itemIndex;
     int groupIndex;

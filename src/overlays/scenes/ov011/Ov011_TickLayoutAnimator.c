@@ -1,5 +1,9 @@
 /* Runs the title layout animation script: executes each due entry (timed fades, sprite shows,
- * sounds and music) up to the current time. */
+ * sounds and music) up to the current time.
+ *
+ * Neither incoming value is read: both parameters are written before any use, and
+ * Ov011_TickTitleMenu passes none. They stay parameters because mwcc allocates parameters first:
+ * declared as locals (first or last), the registers come out different. */
 
 #include "nitro/types.h"
 

@@ -18,8 +18,7 @@ extern void Ov025_MergeSortedLists(NNSFndList *destination,
                                 NNSFndList *rightList,
                                 NNSFndCompare compare);
 
-void
-Ov025_MergeSortList(NNSFndList *list, NNSFndCompare compare)
+void Ov025_MergeSortList(NNSFndList *list, NNSFndCompare compare)
 {
     void *slow;
     void *fast;

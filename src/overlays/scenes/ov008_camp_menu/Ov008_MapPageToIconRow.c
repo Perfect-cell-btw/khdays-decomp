@@ -1,7 +1,6 @@
 /* Maps a menu page to its icon row. */
 
-unsigned int
-Ov008_MapPageToIconRow(unsigned int page)
+unsigned int Ov008_MapPageToIconRow(unsigned int page)
 {
     unsigned int row = 0;
 

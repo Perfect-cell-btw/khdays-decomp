@@ -16,8 +16,7 @@ extern int Ov008_IsBusy(void);
 extern int Ov008_Link_IsLocal(void);
 extern struct Ov008MenuSlot *Ov008_GetPlayerRecord(int slot);
 
-int
-Ov008_AreSelectedMenuSlotsReady(void)
+int Ov008_AreSelectedMenuSlotsReady(void)
 {
     int slot;
     int selectedCount = 0;

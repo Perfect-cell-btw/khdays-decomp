@@ -42,8 +42,7 @@ extern void Ov008_RequestMode5(void);
 extern void Ov008_GoToPage4FromCursor(void);
 extern void Ov008_ToggleDetailPanelWithSound(void);
 
-void
-Ov008_InitializeMenuEntryLayout(void)
+void Ov008_InitializeMenuEntryLayout(void)
 {
     Ov008LayoutTemplate layout = data_ov008_0208e918;
     int context = Ov008_GetContext();

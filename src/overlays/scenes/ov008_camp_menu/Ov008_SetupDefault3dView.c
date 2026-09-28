@@ -39,16 +39,14 @@ extern void MTX_LookAt(const VecFx32 *, const VecFx32 *,
                           const VecFx32 *, MtxFx43 *);
 extern void NNS_G3dGlbFlushP(void);
 
-static inline void
-setProjection(int top, int bottom, int left, int right, int near, int far)
+static inline void setProjection(int top, int bottom, int left, int right, int near, int far)
 {
     MTX_OrthoW(top, bottom, left, right, near, far, 0x1000,
                   &data_02047394.projMtx);
     data_02047394.flag &= ~0x50u;
 }
 
-void
-Ov008_SetupDefault3dView(void)
+void Ov008_SetupDefault3dView(void)
 {
     VecFx32 base;
     VecFx32 camera;
