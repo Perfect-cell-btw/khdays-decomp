@@ -3,8 +3,11 @@
  * Sets the display and mode configs, runs the boot-time setup, and (only when the boot request
  * at ctx+0x4c40 is pending) asks GameState_GetField for the selector value.  0x191 means "run the
  * protected path": clear the boot-mode state, load ov028 (DS Protect), and if all three of its
- * predicates pass, seed the elapsed field with 10000 and enter Ov000_RequestScene11; either way
- * ov028 is unloaded again.  Anything else falls back to StoreGlobalPairAt10(5, selector).
+ * predicates pass, seed the elapsed field with 10000 and enter Ov000_RequestScene11 (the opening
+ * movie); either way ov028 is unloaded again.  The predicates are: always true; not a flashcart
+ * (the ROM pages below 0x8000 must mirror 0x8000); not an emulator (judged by the MAC address).
+ * When one fails no scene is requested at all, and the game stays on a black screen with no
+ * error.  Anything else falls back to Scene_RequestPending(5, selector), the day title card.
  * Always reports -2.
  *
  * The overlay id is the ADDRESS of a linker-absolute symbol (NitroSDK FS_OVERLAY_ID); dsd emits
@@ -55,7 +58,7 @@ extern int  func_ov028_0208b120(int a);
 extern int  func_ov028_0208b2e0(int a);
 extern void Ov000_RequestScene11(void);
 extern void UnloadOverlaySync(int processor, FSOverlayID id);
-extern void StoreGlobalPairAt10(int a, int b);
+extern void Scene_RequestPending(int a, int b);
 extern BootModeState data_0204c240;
 
 int Ov000_BootRunSelector(void) {
@@ -86,7 +89,7 @@ int Ov000_BootRunSelector(void) {
         }
         UnloadOverlaySync(0, FS_OVERLAY_ID_ov028);
     } else {
-        StoreGlobalPairAt10(5, selector);
+        Scene_RequestPending(5, selector);
     }
     return -2;
 }

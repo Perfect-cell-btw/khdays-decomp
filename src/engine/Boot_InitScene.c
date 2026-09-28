@@ -1,7 +1,7 @@
 /* BootTask_Construct: constructor of g_BootTaskClassDesc (run by RunClassConstructor).
  * Inits subsystems, then selects the first scene from the persisted state word @0x027ffc20:
  * 0 (fresh boot) -> Scene 1 (boot/logo); -2 -> Scene 1; else -> Scene 12. The scene request
- * is latched by StoreGlobalPairAt10 (StoreGlobalPairAt10). Returns the boot task's initial
+ * is latched by Scene_RequestPending (Scene_RequestPending). Returns the boot task's initial
  * per-frame state fn (Scene_StepAndContinue), stored by the caller into obj+0x14.
  *
  * The 4 bytes that kept this parked were the second branch pair: the ROM emits
@@ -17,7 +17,7 @@ extern void FileLoader_Init(void);
 extern void SoundSys_Start(int a);
 extern void FSi_BindCardTransfer(int a);
 extern void Scene_ClearPending(void);
-extern void StoreGlobalPairAt10();
+extern void Scene_RequestPending();
 extern int Scene_StepAndContinue(void);
 
 void *Boot_InitScene(void) {
@@ -29,13 +29,13 @@ void *Boot_InitScene(void) {
     state = *(unsigned int *)0x027ffc20;
     switch (state) {
     case 0:
-        StoreGlobalPairAt10(1, 0);
+        Scene_RequestPending(1, 0);
         break;
     case 0xfffffffeu:
-        StoreGlobalPairAt10(1, state);
+        Scene_RequestPending(1, state);
         break;
     default:
-        StoreGlobalPairAt10(0xc, state);
+        Scene_RequestPending(0xc, state);
         break;
     }
     return (void *)Scene_StepAndContinue;

@@ -53,7 +53,7 @@ extern void Ov002_FillMissionResult(void);
 extern int Session_IsActive(void);                 /* session active */
 extern int Session_IsReady(void);                 /* session ready */
 extern int Session_GetLocalPlayerIndex(void);                 /* local wireless id */
-extern void StoreGlobalPairAt10(int nKind, int nArg); /* request a scene */
+extern void Scene_RequestPending(int nKind, int nArg); /* request a scene */
 extern void MIi_CpuClear16(u16 nValue, void *pDest, u32 nSize);
 extern int Ov002_BuildSessionCommand(int nKind, void *pMsg);
 extern int GameState_GetField(int nWho, int nField);
@@ -105,7 +105,7 @@ void *Ov002_StepSessionMenu(void)
         case 0:
             Ov002_FillMissionResult();
             if (GameState_IsFlagSet(0x2087) != 0 || Session_IsActive() == 0) {
-                StoreGlobalPairAt10(6, 0);
+                Scene_RequestPending(6, 0);
                 break;
             }
             if (Session_IsReady() == 0) {
@@ -132,22 +132,22 @@ void *Ov002_StepSessionMenu(void)
 
         case 1:
             if (pLink->nChoiceValue < 0) {
-                StoreGlobalPairAt10(5, -pLink->nChoiceValue);
+                Scene_RequestPending(5, -pLink->nChoiceValue);
                 break;
             }
             data_0204c240.nMinutes = (u16)pLink->nChoiceValue;
             data_0204c240.nMinutesElapsed = 0;
             data_0204c240.nArmedKind = 2;
-            StoreGlobalPairAt10(2, 0);
+            Scene_RequestPending(2, 0);
             break;
 
         case 2:
             nCount = GameState_GetField(0, 9);
             nStamp = pScreen->nStamp;
             if (nStamp == 0x191 || (nCount >= 7 && nCount <= 0xd)) {
-                StoreGlobalPairAt10(0xa, nStamp);
+                Scene_RequestPending(0xa, nStamp);
             } else {
-                StoreGlobalPairAt10(5, nStamp);
+                Scene_RequestPending(5, nStamp);
             }
             break;
 
@@ -156,11 +156,11 @@ void *Ov002_StepSessionMenu(void)
             data_0204c240.nMinutesElapsed = 0;
             data_0204c240.nArmedKind = 2;
             data_0204c240.nModeFlags = 0;
-            StoreGlobalPairAt10(2, 0);
+            Scene_RequestPending(2, 0);
             break;
 
         case 4:
-            StoreGlobalPairAt10(8, 0);
+            Scene_RequestPending(8, 0);
             break;
         }
     }

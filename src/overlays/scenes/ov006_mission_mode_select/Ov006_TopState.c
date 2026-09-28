@@ -4,7 +4,7 @@
  * transition, else 0 (stay). */
 extern int *data_ov006_02056668;
 extern int  Ov006_PollInput(void);
-extern void StoreGlobalPairAt10(int scene, int arg);
+extern void Scene_RequestPending(int scene, int arg);
 void *Ov006_TopState(void) {
     int result = 0;
     data_ov006_02056668[1] = Ov006_PollInput();
@@ -12,11 +12,11 @@ void *Ov006_TopState(void) {
     case 0:
         break;
     case 1:
-        StoreGlobalPairAt10(0x13, 0);
+        Scene_RequestPending(0x13, 0);
         result = -2;
         break;
     case 2:
-        StoreGlobalPairAt10(1, 0);
+        Scene_RequestPending(1, 0);
         result = -2;
         break;
     }

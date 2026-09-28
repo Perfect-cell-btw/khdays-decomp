@@ -18,7 +18,7 @@
  *         InstantiateClass(&data_02042534, 1)
  *       data_02042534 -> BootTask_Construct (0x02020928, THUMB)
  *       which, on a fresh boot (state @0x027ffc20 == 0), selects Scene 1 (the
- *       boot/logo scene) via StoreGlobalPairAt10(1, 0).
+ *       boot/logo scene) via Scene_RequestPending(1, 0).
  *    4. Run the frame loop forever (label FRAME @0x02000cac):
  *         VBlank sync -> update the task queue -> 3D/capture render -> present ->
  *         poll the current scene; when it ends, run the fade/teardown transition
@@ -98,13 +98,14 @@ extern unsigned char data_0204bd84;   /* display mode byte (0/1/2)              
 extern unsigned char data_0204c058;   /* frame-rate/skip mode byte                */
 extern void         *data_02042534;       /* root task class descriptor           */
 
-/* scene-render state struct @ data_020442a0: +0x00 u8 phase flag, +0x04 handle */
+/* scene-render state struct @ data_020442a0: +0x00 u8 displays off (lid closed), +0x04 handle */
 struct SceneState { unsigned char phase; unsigned char _p[3]; int handle; };
 extern struct SceneState data_020442a0;
 
-/* held-keys mirror @ 0x027fffa8; bit 0x8000 gates transitions */
-#define HELD_KEYS  (*(volatile unsigned short *)0x027fffa8)
-#define HELD_TRANSITION ((HELD_KEYS & 0x8000) >> 15)
+/* the ARM7's X/Y word @ 0x027fffa8: X, Y and debug in bits 10, 11 and 13 (active low), the
+ * hinge in bit 15 (1 = lid closed) */
+#define ARM7_KEYS  (*(volatile unsigned short *)0x027fffa8)
+#define LID_CLOSED ((ARM7_KEYS & 0x8000) >> 15)
 #define REG_0540   (*(volatile unsigned int   *)0x04000540)
 
 int main(void) {
@@ -183,9 +184,9 @@ int main(void) {
         if (Game_PollSceneAlive() != 0) {
             unsigned char phase = data_020442a0.phase;
 
-            /* scene still running: handle its transition request via input */
+            /* scene running: closing the lid turns the displays off, opening it turns them on */
             if (phase == 0) {
-                if (HELD_TRANSITION != 0) {
+                if (LID_CLOSED != 0) {
                     GX_DispOff();
                     PM_SetLCDPower(0);
                     data_020442a0.phase = 1;
@@ -193,7 +194,7 @@ int main(void) {
                 }
             }
             if (phase != 0) {
-                if (HELD_TRANSITION == 0 && PM_SetLCDPower(1) != 0) {
+                if (LID_CLOSED == 0 && PM_SetLCDPower(1) != 0) {
                     data_020442a0.phase = 0;
                     SetMasterBrightnessMain(func_0201e428());
                     SetMasterBrightnessSub(func_0201e438());
@@ -205,7 +206,7 @@ int main(void) {
 
         /* --- scene ended: run fade/teardown transition --- */
         if (func_02020914() == 0) continue;
-        if (HELD_TRANSITION != 1) continue;
+        if (LID_CLOSED != 1) continue;
 
         if (data_0204bd84 == 0) NNS_SndPlayerPauseAll(1); else SoundMgr_PauseBgm(1);
         PM_GoSleepMode(0xc, 0, 0);

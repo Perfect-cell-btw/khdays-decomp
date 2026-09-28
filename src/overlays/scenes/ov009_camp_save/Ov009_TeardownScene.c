@@ -10,7 +10,7 @@ extern void *G2_GetBG2ScrPtr(void);
 extern void *G2_GetBG3ScrPtr(void);
 extern void MIi_CpuClearFast(int value, void *dst, unsigned size);
 extern void G3X_SetHOffset(int off);
-extern void StoreGlobalPairAt10(int a, int b);
+extern void Scene_RequestPending(int a, int b);
 
 /* Scene teardown: releases the sub-allocators, unwinds the active object, blanks the three
  * tiled BG screens and resets the 3D horizontal offset. */
@@ -30,5 +30,5 @@ void Ov009_TeardownScene(char *self) {
     MIi_CpuClearFast(0, G2_GetBG2ScrPtr(), 0x800);
     MIi_CpuClearFast(0, G2_GetBG3ScrPtr(), 0x800);
     G3X_SetHOffset(0);
-    StoreGlobalPairAt10(1, 0);
+    Scene_RequestPending(1, 0);
 }

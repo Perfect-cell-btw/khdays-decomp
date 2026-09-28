@@ -4664,7 +4664,7 @@ src/engine/Scene_AdvanceToPending.c:
     complete
     .text       start:0x0202099c end:0x02020a78
 
-src/engine/StoreGlobalPairAt10.c:
+src/engine/Scene_RequestPending.c:
     complete
     .text       start:0x02020a78 end:0x02020a84
 

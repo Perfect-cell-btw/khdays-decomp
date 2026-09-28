@@ -13,7 +13,7 @@ extern int Ov105_WM_GetLinkLevel(void);
 extern void Ov003_UpdateLayers(int a);
 extern void SetMasterBrightnessMain(int a);
 extern void SetMasterBrightnessSub(int a);
-extern void StoreGlobalPairAt10(int a, int b);
+extern void Scene_RequestPending(int a, int b);
 extern void Ov003_AdvanceAnims(int a);
 
 int Ov003_SceneStateFadeIn(void) {
@@ -31,7 +31,7 @@ int Ov003_SceneStateFadeIn(void) {
         SetMasterBrightnessMain(-n);
         SetMasterBrightnessSub(-root->nFadeTicks);
     } else {
-        StoreGlobalPairAt10(6, 0);
+        Scene_RequestPending(6, 0);
         return -2;
     }
     Ov003_AdvanceAnims((int)root);

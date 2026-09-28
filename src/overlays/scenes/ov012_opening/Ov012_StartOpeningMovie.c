@@ -1,5 +1,7 @@
 /* Initializes the opening movie renderer and tilemaps, registers the frame callback, and opens the
- * requested stream in slot 1. */
+ * requested stream in slot 1. If the stream fails to open it only sets flag 2 of the context:
+ * Ov012_RunOpeningScene then never sets the movie state 3 and the scene script, waiting on
+ * Ov012_MayWaitFrames, waits forever -- the game does not recover from a movie that fails to open. */
 
 typedef unsigned char u8;
 typedef unsigned short u16;

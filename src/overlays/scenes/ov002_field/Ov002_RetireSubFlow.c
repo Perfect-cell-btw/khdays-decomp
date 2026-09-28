@@ -14,7 +14,7 @@ extern void GameState_SetFlag(int nFlag);  /* GameState_SetFlag */
 extern void EntityManager_ResetSingleton(void);  /* EntityManager_ResetSingleton */
 extern void Ov002_ResetNineSlots(void);  /* Ov002_ResetNineSlots */
 extern void Ov002_ScheduleRetry(void);  /* Ov002_ScheduleRetry */
-extern void StoreGlobalPairAt10(int nKind, int nArg);  /* PushSceneRequest */
+extern void Scene_RequestPending(int nKind, int nArg);  /* PushSceneRequest */
 extern int GameState_IsFlagSet(int nFlag);  /* GameState_IsFlagSet */
 extern void func_020235bc(int nFlag);  /* DispatchToHandler */
 extern int GameState_GetField(int nField, int nWidth);  /* GameState_GetField */
@@ -96,7 +96,7 @@ void *Ov002_RetireSubFlow(void)
             EntityManager_ResetSingleton();
             Ov002_ResetNineSlots();
             Ov002_ScheduleRetry();
-            StoreGlobalPairAt10(1, 0);
+            Scene_RequestPending(1, 0);
             return (void *)-2;
         }
         break;

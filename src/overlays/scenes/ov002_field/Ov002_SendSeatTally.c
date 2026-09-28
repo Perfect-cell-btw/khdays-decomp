@@ -6,7 +6,7 @@ extern int data_0204be18;     /* an address kept as an integer */
 
 extern char *NNSi_FndGetCurrentRootHeap(void);               /* the overlay root */
 extern void Ov002_BuildWrapUpReport(void *pReport);  /* Ov002_BuildWrapUpReport */
-extern void StoreGlobalPairAt10(int nKind, int nArg); /* request a scene */
+extern void Scene_RequestPending(int nKind, int nArg); /* request a scene */
 extern int Session_IsReady(void);                 /* is the session ready */
 extern int GetGlobalU16At6(void);                 /* the local peer mask */
 extern void MIi_CpuClear16(int nValue, void *pDst, int nSize);
@@ -54,7 +54,7 @@ int Ov002_SendSeatTally(void)
 
     if ((*(u8 *)(pRoster + 0xb8) & 0x10) != 0) {
         Ov002_BuildWrapUpReport(data_0204c300);
-        StoreGlobalPairAt10(3, 0);
+        Scene_RequestPending(3, 0);
         return -2;
     }
 

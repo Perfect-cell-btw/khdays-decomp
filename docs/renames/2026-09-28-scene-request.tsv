@@ -1,0 +1,2 @@
+# old_name	new_name	module  -- the scene request, named from the scene-control record it writes
+StoreGlobalPairAt10	Scene_RequestPending	main

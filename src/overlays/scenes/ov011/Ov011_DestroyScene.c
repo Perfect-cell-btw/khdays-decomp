@@ -3,7 +3,7 @@
  * title path ran and actually allocated its resources -- it releases everything:
  * the message resource, two display objects, four list-node sub-buffers, two more
  * fields and five default-heap blocks. When no argument was passed (nArg == 0) it
- * dispatches two handlers and requests scene 9 via StoreGlobalPairAt10(9, 0). Finally it
+ * dispatches two handlers and requests scene 9 via Scene_RequestPending(9, 0). Finally it
  * nulls globals->pScene. The overlay id must be taken as &OVERLAY_24_ID (an absolute
  * symbol) so it goes through the literal pool, matching the constructor.
  */
@@ -65,7 +65,7 @@ extern void FreeAllListNodeSubBuffers(void *list);
 extern void FreeFieldAt8(void *field);
 extern void NNSi_FndFreeFromDefaultHeap(void *ptr);
 extern void GameState_SetField(int id, int kind, int flag);
-extern void StoreGlobalPairAt10(int scene, int arg);
+extern void Scene_RequestPending(int scene, int arg);
 
 void Ov011_DestroyScene(void)
 {
@@ -89,7 +89,7 @@ void Ov011_DestroyScene(void)
     if (data_ov011_0205e960.pScene->nArg == 0) {
         GameState_SetField(0x44e, 3, 6);
         GameState_SetField(0, 9, 0x165);
-        StoreGlobalPairAt10(9, 0);
+        Scene_RequestPending(9, 0);
     }
     data_ov011_0205e960.pScene = 0;
 }

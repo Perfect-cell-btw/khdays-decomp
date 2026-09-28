@@ -4,12 +4,12 @@
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern void SetSelectionIfChanged(int);
 extern void InvokeSubStructAndStampByte(int, int);
-extern void StoreGlobalPairAt10(int scene, int arg);
+extern void Scene_RequestPending(int scene, int arg);
 int Ov000_RequestTitleTransition(void) {
     char *h = (char *)NNSi_FndGetCurrentRootHeap();
     int arg = (*(signed char *)(h + 0x4c30) == 0);
     SetSelectionIfChanged(0x1f);
     InvokeSubStructAndStampByte(0x40, 0xa);
-    StoreGlobalPairAt10(7, arg);
+    Scene_RequestPending(7, arg);
     return -2;
 }

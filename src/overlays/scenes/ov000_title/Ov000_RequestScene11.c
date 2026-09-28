@@ -1,5 +1,5 @@
-/* Tail-call StoreGlobalPairAt10 with fixed args (0xb, 0). */
-extern int StoreGlobalPairAt10(int a, int b);
+/* Tail-call Scene_RequestPending with fixed args (0xb, 0). */
+extern int Scene_RequestPending(int a, int b);
 int Ov000_RequestScene11(void) {
-    return StoreGlobalPairAt10(0xb, 0);
+    return Scene_RequestPending(0xb, 0);
 }

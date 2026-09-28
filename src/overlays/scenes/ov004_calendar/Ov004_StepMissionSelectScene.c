@@ -25,7 +25,7 @@ extern void func_020235bc(int handlerId);
 extern void GameState_SetField(u32 field, int width, u32 value);
 extern void PartyState_ResetBuffers(void);
 extern void Ov004_ResetPartyMemberAndLayout(int arg, int unused);
-extern void StoreGlobalPairAt10(int scene, int arg);
+extern void Scene_RequestPending(int scene, int arg);
 
 int Ov004_StepMissionSelectScene(void) {
     if (Ov004_GetResult() != 0) {
@@ -39,7 +39,7 @@ int Ov004_StepMissionSelectScene(void) {
 
         PartyState_ResetBuffers();
         Ov004_ResetPartyMemberAndLayout(0, 0);
-        StoreGlobalPairAt10(2, 0);
+        Scene_RequestPending(2, 0);
         return -2;
     }
     return 0;

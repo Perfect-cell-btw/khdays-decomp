@@ -20,7 +20,7 @@ extern void Ov005_Arm(void);
 extern void Ov005_ClampEquippedItemCounts(void);
 extern void PartyState_ResetBuffers(void);
 extern void Ov005_ResetPartyMemberAndLayout(int,int);
-extern void StoreGlobalPairAt10(int,int);
+extern void Scene_RequestPending(int,int);
 extern void func_020235bc(int);
 extern void GameState_SetFlag(int);
 extern unsigned int GameState_GetField(unsigned int,unsigned int);
@@ -38,7 +38,7 @@ int Ov005_UpdateMenuExitTransition(void) {
         Ov005_ClampEquippedItemCounts();
         PartyState_ResetBuffers();
         Ov005_ResetPartyMemberAndLayout(0,0);
-        if(data_0204c240.flags&4)StoreGlobalPairAt10(0x13,0);
+        if(data_0204c240.flags&4)Scene_RequestPending(0x13,0);
         else if((data_0204c240.flags&2)||(data_0204c240.flags&1)||(data_0204c300[0x4c]&1)) {
             func_020235bc(0x18ae);
             if(data_0204c240.flags&2)GameState_SetFlag(0x18c9);
@@ -47,14 +47,14 @@ int Ov005_UpdateMenuExitTransition(void) {
             data_0204c240.parameter=0;
             data_0204c240.submode=0;
             data_0204c240.flags=0;
-            StoreGlobalPairAt10(2,0);
+            Scene_RequestPending(2,0);
         } else {
             int mode=data_ov005_0205b808->mode;
             if(mode!=999) {
                 int day=GameState_GetField(0,9);
-                if(day>=7 && day<=13)StoreGlobalPairAt10(10,mode);
-                else StoreGlobalPairAt10(5,mode);
-            } else StoreGlobalPairAt10(13,0);
+                if(day>=7 && day<=13)Scene_RequestPending(10,mode);
+                else Scene_RequestPending(5,mode);
+            } else Scene_RequestPending(13,0);
         }
         result=-2;
     }

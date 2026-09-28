@@ -5,7 +5,7 @@
  *   +0x04 obj      current scene task object (from InstantiateClass) [== data_0204bda8]
  *   +0x08 entry    &g_SceneTable[curId]
  *   +0x0c curId    active scene id
- *   +0x10 pendId   pending scene id  (0x0204bdb4; set by StoreGlobalPairAt10 @0x02020a78)
+ *   +0x10 pendId   pending scene id  (0x0204bdb4; set by Scene_RequestPending @0x02020a78)
  *   +0x14 pendArg  pending scene arg (0x0204bdb8)
  * Step 1 (teardown): if a scene object exists and Instance_ReleaseIfDead() reports it ended,
  *   unload its overlay (UnloadOverlaySync, unless the entry has none) and clear obj/curId.

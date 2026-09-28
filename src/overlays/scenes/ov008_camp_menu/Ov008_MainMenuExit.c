@@ -19,7 +19,7 @@ extern void Ov008_TickKeySharingShutdown(void);
 extern int *Session_GetSlotTable(void);
 extern int  Ov008_CountOccupiedSlots(void);
 extern void func_02031600(struct Cfg4 *cfg);
-extern void StoreGlobalPairAt10(int scene, int arg);
+extern void Scene_RequestPending(int scene, int arg);
 extern void ReleaseServiceInstance(void);
 extern void PartyState_ResetBuffers(void);
 extern void func_02003948(int mode);
@@ -45,7 +45,7 @@ void Ov008_MainMenuExit(void) {
             cfg = *(struct Cfg4 *)Session_GetSlotTable();
             cfg.w[1] = Ov008_CountOccupiedSlots();
             func_02031600(&cfg);
-            StoreGlobalPairAt10(2, 0);
+            Scene_RequestPending(2, 0);
         }
     } else {
         if (Session_Exists() != 0) {
@@ -53,7 +53,7 @@ void Ov008_MainMenuExit(void) {
         }
         PartyState_ResetBuffers();
         func_02003948(-2);
-        StoreGlobalPairAt10(1, 0);
+        Scene_RequestPending(1, 0);
     }
     data_ov008_02090f00 = 0;
 }
