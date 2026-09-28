@@ -128,7 +128,7 @@ typedef struct MissionEntryBlock {
 } MissionEntryBlock;
 
 typedef struct MissionContext {
-    void *primaryBuffer;            /* 0x000: the packet buffer; its first word counts packets */
+    u8 *primaryBuffer;              /* 0x000: the packet buffer; its first word counts packets */
     int sendSeq;                    /* 0x004: the outgoing sequence counter */
     MissionWorkBuffer workBuffers[4]; /* 0x008 */
     u32 transitionRequested;        /* 0x028 */

@@ -24,7 +24,7 @@ int Ov008_SendPacket(const void *src, int size)
     MISSION_CONTEXT->sendSeq += 1;
     MISSION_CONTEXT->sendBusy = 1;
     *(int *)MISSION_CONTEXT->primaryBuffer = MISSION_CONTEXT->sendSeq;
-    MI_CpuCopy8(src, (char *)MISSION_CONTEXT->primaryBuffer + 4, size);
+    MI_CpuCopy8(src, MISSION_CONTEXT->primaryBuffer + 4, size);
     if (func_ov105_020bf900(MISSION_CONTEXT->primaryBuffer, (u16)(size + 4),
                                     Ov008_PacketSentCallback) != 0) {
         return 1;

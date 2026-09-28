@@ -15,7 +15,7 @@ typedef struct {
 } Ov107Obj;
 
 extern void invokeObjCallbackGuarded(int param_1);
-extern int Node_CallHook80(char *p);
+extern void Node_CallHook80(char *node);
 
 void Ov107_AiState_SetVisible(Ov107Obj *self, int flag)
 {

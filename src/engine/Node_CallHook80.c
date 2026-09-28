@@ -1,10 +1,10 @@
-/* Calls the node's +0x80 hook, if any. */
+/* Calls the node's +0x80 hook, if any, passing it the node. */
 
-typedef int (*fp)();
+typedef void (*NodeHook)(char *node);
 
-int Node_CallHook80(char *p) {
-    fp f = *(fp *)(p + 0x80);
+void Node_CallHook80(char *p) {
+    NodeHook f = *(NodeHook *)(p + 0x80);
     if (f == 0)
         return;
-    return f();
+    f(p);
 }

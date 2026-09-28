@@ -26,7 +26,7 @@ typedef struct Obj2768 {
 } Obj2768;
 
 extern void invokeObjCallbackGuarded(int param_1);
-extern int Node_CallHook80(char *p);
+extern void Node_CallHook80(char *node);
 extern void Ov107_BroadcastValueToChildren(Obj2768 *self, int b);
 
 void Ov107_Region_SetVisible(Obj2768 *self, int b)
