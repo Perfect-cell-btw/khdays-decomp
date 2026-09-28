@@ -19,8 +19,19 @@
  *     swap" test never fires -- it compares against the 0x7fffffff sentinel forever.
  *     The `prev = <target>` line was left out.
  *   - `swap` is only assigned when ctx+0x48 is non-NULL but is read unconditionally.
- *     With a +0x44 setter and no +0x48 getter it is read uninitialised (on later
- *     iterations it carries over from the previous node).
+ *     Without a +0x48 getter it is r9, which this function never sets on that path:
+ *     the caller's r9 for the first stepped node, then whatever the previous node
+ *     left. A nonzero value makes the ROM call the +0x44 setter with the node's
+ *     target and then with `saved`, still -1; in a table without a setter both calls
+ *     go to address 0, the ITCM mirror, where OSi_VBlankInterruptHandler sits
+ *     (0x01ff8000). The r9 that arrives is the one the caller of Ov009_TickSelectionWidget
+ *     (this function's only caller, which leaves r9 alone too) had:
+ *       - Ov009_TickPageScroll leaves in r9 the last row's +0x12c coordinate with
+ *         its fraction cleared (`and r9, r2, #0xfffff000` inside the row loop);
+ *       - Ov009_CommitPage leaves r9 alone, so it comes from further up;
+ *     where the chain leaves r9 alone up to the object update, it is what
+ *     Obj_UpdateAll left there: the result of the last update it called
+ *     (`blx r0; mov r9, r0`, 0x02023b64), 0 unless that object changed handler.
  * Both are in the ROM's own instruction stream; do not "fix" them.
  *
  * The +4 slot index is volatile: the ROM reloads it at every single use while happily
