@@ -5,7 +5,7 @@
 /* Same Tween/TweenFlags shape already established by the callers in the tree
  * (e.g. src/overlays/scenes/ov008_camp_menu/Ov008_TickInfoWindowTransition.c, which declares this
  * exact function as `extern void Tween_Sample(Tween *tween, s32 *value);`,
- * and src/overlays/scenes/ov005_story_result/Ov005_InitResultResources.c /
+ * and src/overlays/scenes/ov005_mission_result/Ov005_InitResultResources.c /
  * Ov005_UpdateRewardPosition.c with the identical field layout). */
 
 #include "nitro/types.h"

@@ -741,7 +741,7 @@
       "kind": "authorized_clz",
       "mode": "arm",
       "size": 576,
-      "source": "src/overlays/scenes/ov003_mission_result/Ov003_RankPlayers.c",
+      "source": "src/overlays/scenes/ov003/Ov003_RankPlayers.c",
       "source_sha256": "d183e711030f931e21af643e6fed18f6a6adfb932f56f3491c42c59e6ea35c42",
       "target_sha256": "b97dbd98de132ddcd2afe50d2e898935fc1de228f0fd88c3b5485ad9c419404d"
     },

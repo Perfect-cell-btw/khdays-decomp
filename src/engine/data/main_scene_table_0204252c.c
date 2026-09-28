@@ -2,9 +2,15 @@
  * 02020928 / 02020974) and the scene table the scene switcher 0202099c indexes by scene id: each
  * row names the overlay to load (-1 = none) and the InstantiateClass descriptor of the scene task
  * inside it. Seen running: 1 is the logos, the title, all its menus and the save-file screen
- * (ov000); 2 the field (ov002); 5 the day title card (ov004); 7 the Mission Mode character select
- * (ov006); 11 the opening movie that follows "new game" in Story Mode (ov012); 19 the mission
- * lobby (ov008).
+ * (ov000); 2 the field (ov002); 5 the day title card (ov004); 6 the results screen of a Mission
+ * Mode mission (ov005); 7 the Mission Mode character select (ov006); 10 Roxas's narration after
+ * the clock-tower cutscene of day 255 (ov007), which Story Mode follows with 5 (the next day's
+ * title card) and 2; 11 the opening movie that follows "new game" in Story Mode (ov012); 19 the
+ * mission lobby (ov008).
+ *
+ * Leaving a mission: START in the field (2) opens the pause menu; retiring and confirming fades to
+ * black, still in scene 2, until A is pressed; scene 6 then shows the mission as cancelled, and
+ * closing it returns to the lobby (19).
  */
 typedef void (*GameClassFn)(void);
 
@@ -50,11 +56,11 @@ SceneEntry data_02042548[20] = {
     { 3, &data_ov003_0204f8e4 },      /* 3 */
     { -1, 0 },                        /* 4 */
     { 4, &data_ov004_02051210 },      /* 5: day title card (ov004) */
-    { 5, &data_ov005_0205b4dc },      /* 6 */
+    { 5, &data_ov005_0205b4dc },      /* 6: mission results (ov005) */
     { 6, &data_ov006_020565c0 },      /* 7: mission-mode character select (ov006) */
     { 11, &data_ov011_0205e8a0 },     /* 8 */
     { 9, &data_ov006_02056220 },      /* 9: the descriptor at 0x02056220 inside ov009 (the delink names the address after ov006) */
-    { 7, &data_ov007_0204d3c4 },      /* 10 */
+    { 7, &data_ov007_0204d3c4 },      /* 10: Roxas's narration (ov007) */
     { 12, &data_ov012_0205c2bc },     /* 11: opening movie (ov012) */
     { 10, &data_ov010_0204cfa0 },     /* 12 */
     { -1, 0 },                        /* 13 */

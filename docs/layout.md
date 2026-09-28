@@ -114,11 +114,11 @@ keeps the bare `ovNNN` until it is confirmed).
 | ov000 | `ov000_title` | scene | 262 | Scene 1 (g_SceneTable); boot logo, title, new-game/load menus (/ttl/ttl.p2, UI/newgame, cm_save); runtime-verified | H |
 | ov001 | `ov001_boot` | system | 8 | hardware/VRAM/touch init at boot (ov001_BootInit); DS Protect decrypts it | M |
 | ov002 | `ov002_field` | scene | 1478 | Scene 2: all gameplay (story and mission) runs here; HUD, panels, field objects, script commands (/UI/btl, /ba/ch) | H |
-| ov003 | `ov003_mission_result` | scene | 28 | Scene 3; /mrslt/data, per-character def.p.z | M |
+| ov003 | `ov003` (proposed `ov003_multi_result`) | scene | 28 | Scene 3; /mrslt/data, per-character def.p.z. Not seen running; the one-player mission results are ov005 | L |
 | ov004 | `ov004_calendar` | scene | 83 | Scene 5; UI/cal/*.pak | M |
-| ov005 | `ov005_story_result` | scene | 289 | Scene 6; UI/srslt result screens | M |
+| ov005 | `ov005_mission_result` | scene | 289 | Scene 6; UI/srslt; runtime: the results screen of a Mission Mode mission (mission points, hearts, munny, EXP, rewards), reached after it ends or is cancelled | H |
 | ov006 | `ov006_mission_mode_select` | scene | 194 | Scene 7; UI/mlt; runtime-verified Mission Mode character select (NOT the title) | H |
-| ov007 | `ov007` (proposed `ov007_manual`) | scene | 14 | Scene 10; ui/mnl | L |
+| ov007 | `ov007_monologue` | scene | 14 | Scene 10; ui/mnl; runtime: Roxas's narration over his portrait after the clock-tower cutscene of day 255, advanced with A (Story Mode then goes 10 -> 5 -> 2) | H |
 | ov008 | `ov008_camp_menu` | scene | 1235 | Scene 19; CAMPMENUMNGR (the KH pause/"camp" menu), mission list, shop, grid pages | M |
 | ov009 | `ov009_camp_save` | scene | 255 | Scene 9; UI/cm/cm.p2 + cm_save | M |
 | ov010 | `ov010` (proposed `ov010_system_message`) | scene | 7 | Scene 12; /UI/sys/sys_&.s.z | L |
