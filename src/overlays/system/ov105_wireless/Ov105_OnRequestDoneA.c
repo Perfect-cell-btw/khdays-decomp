@@ -1,4 +1,4 @@
-extern void Ov105_SetField30IfModeAllows(unsigned int id);
+extern void Ov105_WH_SetError(unsigned int id);
 extern int Ov105_PumpSubStateA(void);
 extern void Ov105_KickIdleHandler(void);
 
@@ -6,7 +6,7 @@ extern void Ov105_KickIdleHandler(void);
  * finish when it declines. */
 void Ov105_OnRequestDoneA(int req) {
     if (*(unsigned short *)(req + 2) != 0) {
-        Ov105_SetField30IfModeAllows(*(unsigned short *)(req + 2));
+        Ov105_WH_SetError(*(unsigned short *)(req + 2));
         Ov105_KickIdleHandler();
         return;
     }

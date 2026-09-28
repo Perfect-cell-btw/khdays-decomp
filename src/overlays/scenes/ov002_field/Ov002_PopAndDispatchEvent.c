@@ -6,7 +6,7 @@ typedef signed short s16;
 extern char *data_ov002_0207fa04;   /* the ov002 event context */
 
 /* Hands back the level the current session is at, or -1 when none is open. */
-extern int Ov002_AbortSession(void);
+extern int Ov002_GetLocalPlayerGroup(void);
 
 /* Pops the head of the event queue and runs its handler.
  *
@@ -61,7 +61,7 @@ int Ov002_PopAndDispatchEvent(int *pnEventId)
         return 0;
     }
 
-    nLevel = Ov002_AbortSession();
+    nLevel = Ov002_GetLocalPlayerGroup();
     while (pEntry != 0) {
         if (*(int *)pEntry == 0) {
             pEntry = *(char **)(pEntry + 0x18);

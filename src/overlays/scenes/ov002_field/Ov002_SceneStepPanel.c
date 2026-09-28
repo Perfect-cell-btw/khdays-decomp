@@ -27,7 +27,7 @@ typedef struct {
 extern int data_ov002_0207f628;
 
 extern int func_ov022_02083f0c(void);
-extern void *Ov002_GetWord20(void);
+extern void *Ov002_GetWord20(void *self);
 extern void Camera_CommitMatricesEx(void *pCam, int a, int b, int c, int d);
 extern void Camera_CommitMatrices(void *pCam);
 
@@ -47,12 +47,14 @@ void *Ov002_SceneStepPanel(void)
 {
     Ov002PanelScene *s;
     void *pCam;
+    int nLocal;
 
     s = *(Ov002PanelScene **)&data_ov002_0207f628;
-    if (func_ov022_02083f0c() == -1) {
+    nLocal = func_ov022_02083f0c();
+    if (nLocal == -1) {
         return 0;
     }
-    pCam = Ov002_GetWord20();
+    pCam = Ov002_GetWord20((void *)nLocal);
     Camera_CommitMatricesEx(s->aCamera, 0x3b33, -0x3b33, -0x4d9a, 0x4d9a);
 
     switch (s->nCounterState) {

@@ -43,7 +43,7 @@ static inline int FX_Mul(int a, int b)
 }
 
 extern int  Ov002_GetCtxTableByte(int nBucket);                 /* bucket -> seat slot */
-extern int  Ov002_AbortSession(void);                        /* the seat being run */
+extern int  Ov002_GetLocalPlayerGroup(void);                        /* the seat being run */
 extern void Ov016_AdvanceFrame(Ov016Follower *pSelf);
 extern VecFx32 *func_ov022_020881f8(int nSeat);               /* where the seat is */
 extern int  func_ov022_02088254(int nSeat);                   /* the seat's facing */
@@ -70,7 +70,7 @@ int Ov016_FollowerStep(Ov016Follower *pSelf)
     u32 nValue;
     u32 nState;
 
-    if (Ov002_GetCtxTableByte(pSelf->nBucket) != Ov002_AbortSession()) {
+    if (Ov002_GetCtxTableByte(pSelf->nBucket) != Ov002_GetLocalPlayerGroup()) {
         return 0;
     }
     Ov016_AdvanceFrame(pSelf);

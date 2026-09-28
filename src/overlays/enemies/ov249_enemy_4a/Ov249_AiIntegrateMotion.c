@@ -8,7 +8,7 @@ extern int VEC_Add();
 extern int ScaleVec3Fx12();
 extern int VEC_Normalize();
 extern int Vec3TransformViaTempMtx();
-extern int Collision_CastSphereEx();
+extern void *Collision_CastSphereEx(int world, void *pos, void *dir, int radius, int flags);
 extern int ScaleVec3Fixed27();
 
 typedef struct { int a, b, c; } Vec3;
@@ -59,7 +59,7 @@ void Ov249_AiIntegrateMotion(Obj *obj)
     int local28[4];
     Vec3 local1c;
     char local10[0xc];
-    int box[4];
+    Vec3 center;
     void *node4;
     Result *res;
 
@@ -77,13 +77,12 @@ void Ov249_AiIntegrateMotion(Obj *obj)
     }
 
     node4 = inner->n0->f4;
-    box[1] = 0;
-    box[2] = 0x1800;
-    box[3] = 0x1000;
-    Vec3TransformViaTempMtx(&box[1], (char *)inner->n0 + 0xa0, &box[1]);
-    VEC_Add(&box[1], inner->fc, &box[1]);
-    box[0] = 0;
-    res = (Result *)Collision_CastSphereEx(*(int *)((char *)node4 + 0x7c), &box[1], &local1c, 0x1800);
+    center.a = 0;
+    center.b = 0x1800;
+    center.c = 0x1000;
+    Vec3TransformViaTempMtx(&center, (char *)inner->n0 + 0xa0, &center);
+    VEC_Add(&center, inner->fc, &center);
+    res = (Result *)Collision_CastSphereEx(*(int *)((char *)node4 + 0x7c), &center, &local1c, 0x1800, 0);
     if (res != 0 && res->f8 == 0) {
         ScaleVec3Fixed27(res->fc, &local1c, &local1c);
     }

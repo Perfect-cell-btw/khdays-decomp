@@ -183,11 +183,11 @@ src/overlays/system/ov105_wireless/Ov105_WH_FreeBuffers.c:
     complete
     .text       start:0x020be43c end:0x020be49c
 
-src/overlays/system/ov105_wireless/Ov105_SetField24.c:
+src/overlays/system/ov105_wireless/Ov105_WH_ChangeSysState.c:
     complete
     .text       start:0x020be49c end:0x020be4ac
 
-src/overlays/system/ov105_wireless/Ov105_SetField30IfModeAllows.c:
+src/overlays/system/ov105_wireless/Ov105_WH_SetError.c:
     complete
     .text       start:0x020be4ac end:0x020be4c8
 

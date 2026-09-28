@@ -493,10 +493,10 @@ extern u16 data_027e0068;                   /* sConnectBitmap */
 #define sMyAid data_027e0064
 #define sConnectBitmap data_027e0068
 
-extern void Ov105_SetField24(int nState);      /* WH_ChangeSysState */
-extern void Ov105_SetField30IfModeAllows(int nError);      /* WH_SetError */
-#define WH_ChangeSysState Ov105_SetField24
-#define WH_SetError Ov105_SetField30IfModeAllows
+extern void Ov105_WH_ChangeSysState(int nState);      /* WH_ChangeSysState */
+extern void Ov105_WH_SetError(int nError);      /* WH_SetError */
+#define WH_ChangeSysState Ov105_WH_ChangeSysState
+#define WH_SetError Ov105_WH_SetError
 
 extern void DC_InvalidateRange(void *addr, u32 size);
 extern void DC_StoreRange(void *addr, u32 size);

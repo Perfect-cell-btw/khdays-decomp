@@ -3368,7 +3368,7 @@ src/overlays/scenes/ov002_field/Ov002_World_SetPendingEntryOnce.c:
     complete
     .text       start:0x0206ba28 end:0x0206ba48
 
-src/overlays/scenes/ov002_field/Ov002_AbortSession.c:
+src/overlays/scenes/ov002_field/Ov002_GetLocalPlayerGroup.c:
     complete
     .text       start:0x0206ba48 end:0x0206ba78
 

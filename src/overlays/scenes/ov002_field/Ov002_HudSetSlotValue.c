@@ -39,8 +39,8 @@ extern void Ov002_PanelRefreshAllRowHeaders(void);
 extern void Ov002_RedrawPartyStrip(void);
 extern void Ov002_PanelRepaintGroup(int a);
 extern void Ov002_DrawListSpanStrip(int a, int b, int c, int d);
-extern void Ov002_Ctx_FindActiveEntryByTag(int id);
-extern int Ov002_ForwardToSubDc_4(void);
+extern int Ov002_Ctx_FindActiveEntryByTag(int id);
+extern int Ov002_ForwardToSubDc_4(int hEntry);
 extern int Ov002_ForwardToSubDc(int id);
 extern void Ov002_ForwardToSubDc_2(int handle);
 extern long long func_02020400(int a, int b);
@@ -49,8 +49,7 @@ extern void Ov002_PanelRepaintForKind(int a, int b, int c);
 extern Ov002HudContext *data_ov002_0207f620;
 
 static inline void Ov002_HudRefreshMemberPanel(Ov002HudContext *ctx) {
-    Ov002_Ctx_FindActiveEntryByTag(0xe);
-    if (Ov002_ForwardToSubDc_4() == 0) {
+    if (Ov002_ForwardToSubDc_4(Ov002_Ctx_FindActiveEntryByTag(0xe)) == 0) {
         Ov002_ForwardToSubDc_2(Ov002_ForwardToSubDc(0x79));
     }
     Ov002_PanelRepaintForKind(ctx->bPlayer,

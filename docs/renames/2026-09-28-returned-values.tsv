@@ -1,0 +1,4 @@
+# old_name	new_name	module  -- names read from what the functions return or record
+Ov002_AbortSession	Ov002_GetLocalPlayerGroup	ov002
+Ov105_SetField30IfModeAllows	Ov105_WH_SetError	ov105
+Ov105_SetField24	Ov105_WH_ChangeSysState	ov105

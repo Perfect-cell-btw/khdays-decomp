@@ -3,7 +3,7 @@
 
 extern int func_0201696c();
 extern void ResSlot_Release(int a);
-extern void ResSlot_ReleaseResource(void);
+extern int ResSlot_ReleaseResource(void *slot);
 extern void NNSi_FndFreeFromDefaultHeap(int a);
 extern int NNSi_FndGetAllocatorForDefaultHeap(int a);
 
@@ -18,7 +18,7 @@ void FreeAllResourceTables(int *p) {
     }
     if (last) NNSi_FndFreeFromDefaultHeap(last);
     if (p[3]) {
-        ResSlot_ReleaseResource();
+        ResSlot_ReleaseResource((void *)p[3]);
         ResSlot_Release(p[3]);
     }
     p[3] = 0;
