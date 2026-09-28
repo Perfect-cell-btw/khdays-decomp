@@ -1,4 +1,4 @@
-/* Re-lays the node out, stores the vector and sets flag bit 0. */
+/* Moves the node to `pos` (Ov107_MoveNodeAndRelayout), stores `src` at +0x390 and sets flag bit 0. */
 
 #include "nitro/fx_types.h"
 
@@ -12,8 +12,8 @@ struct Obj {
     VecFx32 vec;            /* 0x390 */
 };
 
-void Ov170_RelayoutAndStoreVec(struct Obj *this, int arg1, VecFx32 *src) {
-    Ov107_MoveNodeAndRelayout(this);
+void Ov170_RelayoutAndStoreVec(struct Obj *this, VecFx32 *pos, VecFx32 *src) {
+    Ov107_MoveNodeAndRelayout(this, pos);
     this->vec = *src;
     this->_bf |= (unsigned short)1;
 }

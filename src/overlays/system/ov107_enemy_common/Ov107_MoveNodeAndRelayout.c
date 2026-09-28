@@ -1,6 +1,5 @@
-/* Ov107_MoveNodeAndRelayout -- refresh a node then re-run its layout, ov107. 2nd parameter is
- * unused here; real per callers in ov115/ov117/ov107. Returns what Ov107_UpdateCollisionSphere
- * returns. */
+/* Ov107_MoveNodeAndRelayout -- move a node to `v` (its translation, +0xa0) and refresh its
+ * collision sphere, ov107. Returns what Ov107_UpdateCollisionSphere returns. */
 
 #include "nitro/fx_types.h"
 
