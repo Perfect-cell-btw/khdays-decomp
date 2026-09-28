@@ -4,12 +4,12 @@
  * node has a callback at +0x1ec, call cb(node, arg); then reload node, read the signed halfword at
  * +0x218, set both +0x218 and +0x21a to (short)(v << 1).
  */
-extern void Ov107_AiState_LoadStats(int self);
+extern void Ov107_AiState_LoadStats(int self, int recordIndex);
 
 void Ov185_NotifyAndDoubleAngle(int self, int arg) {
     int i;
 
-    Ov107_AiState_LoadStats(self);
+    Ov107_AiState_LoadStats(self, arg);
     for (i = 0; i < 4; i++) {
         int node = (*(int **)(self + 0x390))[i];
         void (*cb)(int, int) = *(void (**)(int, int))(node + 0x1ec);

@@ -17,7 +17,7 @@ extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void VEC_Normalize(const VecFx32 *v, VecFx32 *out);   /* normalise */
 
-extern void *func_ov022_020881f8(void);
+extern void *func_ov022_020881f8(int player);
 extern int func_ov022_02083f5c(void);
 extern int func_ov022_020881d8(void);
 extern int func_ov022_02088338(void);
@@ -110,7 +110,7 @@ void *Ov002_TickCamera(void)
     pCam = (char *)NNSi_FndGetCurrentRootHeap();
     nPlayer = QueryActiveStateOrDelegate();
     pNext = 0;
-    pTarget = (VecFx32 *)func_ov022_020881f8();
+    pTarget = (VecFx32 *)func_ov022_020881f8(nPlayer);
     nHandle = func_ov022_02083f5c();
     GetEntryField20ByIndex(nPlayer);
     nDist = Ov002_UpdateCameraDistance(*(int *)(pCam + 0x44));

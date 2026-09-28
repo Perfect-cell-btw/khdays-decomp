@@ -1,6 +1,6 @@
 extern int TaskList_FinishByTag();
 extern int Ov107_AiState_PostTickBase();
-extern int Ov107_UnlinkNodeFromOwner();
+extern void Ov107_UnlinkNodeFromOwner(int node);
 
 struct Blob {
     int words[11];
@@ -54,7 +54,7 @@ void Ov229_PostTickCleanup(void *this) {
     }
 
     if (S8(this, 0x1c6) != 8 && I32(this, 0x4a4) != 0) {
-        Ov107_UnlinkNodeFromOwner();
+        Ov107_UnlinkNodeFromOwner(I32(this, 0x4a4));
         I32(this, 0x4a4) = 0;
     }
 

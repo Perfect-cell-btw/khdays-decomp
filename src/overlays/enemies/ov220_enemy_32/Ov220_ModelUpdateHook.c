@@ -16,13 +16,13 @@ struct obj {
     struct s44 copy;
 };
 
-extern void Ov107_RefreshAndSelectChild(void *item);
+extern void Ov107_RefreshAndSelectChild(void *item, int arg1);
 extern void Ov107_ProcessObjectTick(struct obj *o, int a);
 extern void Srt_SetScaleUniform(struct s44 *t, int scale);
 
 void Ov220_ModelUpdateHook(struct obj *o, int a)
 {
-    Ov107_RefreshAndSelectChild(o->p394);
+    Ov107_RefreshAndSelectChild(o->p394, a);
     Ov107_ProcessObjectTick(o, a);
     o->copy = o->src;
     Srt_SetScaleUniform(&o->copy, 0x14cd);

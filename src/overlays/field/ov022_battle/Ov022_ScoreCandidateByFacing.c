@@ -31,8 +31,8 @@ extern void *NNSi_FndGetCurrentRootHeap(void);
 extern VecFx32 *func_ov022_020881f8(int index);
 extern Ov022Actor *GetEntryField20ByIndex(int index);
 extern int QueryActiveStateOrDelegate(void);
-extern void Ov022_GetEntryField66(int index);
-extern int Ov002_GetSlotTableByte(void);
+extern int Ov022_GetEntryField66(int index);
+extern int Ov002_GetSlotTableByte(int group);
 extern Ov022TargetEntry *Ov002_List_GetWord(u16 value);
 extern Ov022Target *Ov002_TriggerEntryActive(Ov022TargetEntry *entry);
 extern int VEC_Distance(const VecFx32 *a, const VecFx32 *b);
@@ -63,8 +63,8 @@ int Ov022_ScoreCandidateByFacing(u32 *selectionFlags, int index, int bestDistanc
     NNSi_FndGetCurrentRootHeap();
     origin = func_ov022_020881f8(index);
     actor = GetEntryField20ByIndex(index);
-    Ov022_GetEntryField66(QueryActiveStateOrDelegate());
-    entry = Ov002_List_GetWord((u16)Ov002_GetSlotTableByte());
+    entry = Ov002_List_GetWord(
+        (u16)Ov002_GetSlotTableByte(Ov022_GetEntryField66(QueryActiveStateOrDelegate())));
 
     while (entry != 0) {
         int distance;

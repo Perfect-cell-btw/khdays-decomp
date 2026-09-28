@@ -6,12 +6,12 @@
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern void Ov107_RefreshAndSelectChild(int item);
+extern void Ov107_RefreshAndSelectChild(int item, int arg1);
 extern void Ov107_ProcessObjectTick(int actor, int arg);
 
 void Ov276_DrawHook(int actor, int arg)
 {
-    Ov107_RefreshAndSelectChild(*(int *)(actor + 0x470));
+    Ov107_RefreshAndSelectChild(*(int *)(actor + 0x470), arg);
     Ov107_ProcessObjectTick(actor, arg);
     if ((((struct hw60 *)(actor + 0x60))->lo & 0x80) != 0) {
         *(VecFx32 *)(actor + 0x474) = *(VecFx32 *)(actor + 0xb0);

@@ -25,7 +25,7 @@ struct Surface {
 
 struct RideOwner {
     u8 pad000[0x158];
-    int nDrifts;                 /* 0x158 */
+    void *pElement;              /* 0x158: the piece element it rides */
 };
 
 struct Ride {
@@ -64,7 +64,7 @@ extern int Session_GetLocalPlayerIndex(void);
 extern void VecFx32FromVecS16(int nHandle, short *pTri, VecFx32 *pOut);
 extern void VEC_Normalize(const VecFx32 *pIn, VecFx32 *pOut);
 extern void ScaleVec3Fx12(int nScale, const VecFx32 *pIn, VecFx32 *pOut);
-extern VecFx32 *Ov002_GetElementVelocity(void);
+extern VecFx32 *Ov002_GetElementVelocity(void *pElement);
 extern void VEC_Add(const VecFx32 *pA, const VecFx32 *pB,
                     VecFx32 *pOut);
 
@@ -152,10 +152,10 @@ void Ov022_ApplySurfaceReactions(struct Actor *pActor)
     }
     if ((pActor->nInputMask & 4) == 0
         || pActor->pRide == 0
-        || pActor->pRide->pOwner->nDrifts == 0) {
+        || pActor->pRide->pOwner->pElement == 0) {
         return;
     }
-    pDrift = Ov002_GetElementVelocity();
+    pDrift = Ov002_GetElementVelocity(pActor->pRide->pOwner->pElement);
     if (pDrift == 0) {
         return;
     }

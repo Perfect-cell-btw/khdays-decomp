@@ -17,7 +17,7 @@ extern void Ov135_registryCreateEntry(void), Ov135_ReleaseSoundAndPublishPose(vo
 extern void Ov135_RequestSubState9IfIdle(void), Ov135_Model_SetTrack0(void);
 extern unsigned short data_ov135_020d1c2c[];
 
-extern void *Ov107_PackTextureHandle();
+extern void *Ov107_PackTextureHandle(int obj, unsigned offset);
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern void *InsertSortedEntryWithKey();
@@ -46,7 +46,7 @@ void Ov135_Construct(int param_1) {
     *(int *)(param_1 + 0x64) = 0;
     *(int *)(param_1 + 0x68) = 0x800;
     *(int *)(param_1 + 0x6c) = 0;
-    *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1));
+    *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, 0));
     RegisterSubscriberSlot(*(int *)(param_1 + 0x9c), *(void **)(param_1 + 0x384));
     *(void **)(param_1 + 0x394) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov135_020d1c2c);
     *(void **)(param_1 + 0x3a0) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &data_ov135_020d1c38);

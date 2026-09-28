@@ -33,7 +33,7 @@ extern int   Ov002_IsSessionOpen(void);                               /* scene r
 extern int   QueryActiveStateOrDelegate(void);                                     /* the local peer */
 extern void  PlaySoundChecked(int nPair, int nArg);                      /* PlaySoundChecked */
 extern int   Ov022_GetEntryField66(int nSeat);                          /* seat -> owner slot */
-extern int   Ov002_GetSlotTableByte(void);                               /* current piece kind */
+extern int   Ov002_GetSlotTableByte(int nGroup);                         /* a group's piece kind */
 extern VecFx32 *func_ov022_020881f8(int nSeat);                       /* where the seat is */
 extern int   Slot_Spawn(int nSlot, int nId, VecFx32 *pPos, u16 nFlags); /* Slot_Spawn */
 
@@ -53,8 +53,7 @@ void Ov021_EmblemHandleMessage(Ov021Emblem *pSelf, Ov021EmblemMessage *pMessage)
         PlaySoundChecked(0, 0xf);
         return;
     }
-    Ov022_GetEntryField66(QueryActiveStateOrDelegate());
-    if (pSelf->nBucket != Ov002_GetSlotTableByte()) {
+    if (pSelf->nBucket != Ov002_GetSlotTableByte(Ov022_GetEntryField66(QueryActiveStateOrDelegate()))) {
         return;
     }
     Slot_Spawn(0, 0xf, func_ov022_020881f8(QueryActiveStateOrDelegate()), 0);

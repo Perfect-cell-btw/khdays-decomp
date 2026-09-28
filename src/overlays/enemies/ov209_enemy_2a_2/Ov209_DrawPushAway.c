@@ -9,7 +9,7 @@
 
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
 
-extern void Ov107_RefreshAndSelectChild(int clip);
+extern void Ov107_RefreshAndSelectChild(int clip, int arg1);
 extern int Ov107_QuerySphereContacts(void *collision, Sphere *sphere, VecFx32 *list, VecFx32 *direction);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
@@ -58,7 +58,7 @@ void Ov209_DrawPushAway(int self, int slot)
     int value;
     struct { char pad[0x7c]; void *collision; } *collisionOwner;
 
-    Ov107_RefreshAndSelectChild(*(int *)(self + 0x3ac));
+    Ov107_RefreshAndSelectChild(*(int *)(self + 0x3ac), slot);
     if (*(int *)(self + 0x50) == 1 && ((unsigned int)(*(unsigned short *)(self + 0x60) << 24) >> 24 & 4) == 0) {
         VEC_Set(&direction, 0, 0, 0);
         collisionOwner = *(void **)(self + 4);

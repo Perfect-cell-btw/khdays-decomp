@@ -7,7 +7,7 @@
 
 extern int Ov002_List_GetMode(void);
 extern int Ov145_ChargeRange(int *state, int flag);
-extern int Ov014_IsState3(void);
+extern int Ov014_IsState3(void *self);
 extern VecFx32 *Ov002_Element_CallHook2C(void *piece);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
@@ -23,7 +23,7 @@ int Ov145_LureToPiece(int *state, int flag)
         if (range <= 0) {
             return 0;
         }
-        if (*(void **)(*state + 0x3ec) != 0 && Ov014_IsState3() != 0) {
+        if (*(void **)(*state + 0x3ec) != 0 && Ov014_IsState3(*(void **)(*state + 0x3ec)) != 0) {
             goal = *Ov002_Element_CallHook2C(*(void **)(*state + 0x3ec));
             goal.y += 0x800;
             VEC_Subtract(&goal, (void *)(*state + 0x74), &dir);

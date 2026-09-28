@@ -3,7 +3,7 @@
  * the +0x3c4 handle; then the common release. */
 struct Ov236Slot { int pItem; int pChild; };
 extern void TaskList_FinishByTag(int a, int b);
-extern void Ov107_UnlinkNodeFromOwner();
+extern void Ov107_UnlinkNodeFromOwner(int node);
 extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov278_TeardownHook(int self) {
@@ -22,7 +22,7 @@ void Ov278_TeardownHook(int self) {
             (*(struct Ov236Slot **)(self + 0x3b8))[0].pChild = 0;
         }
         if (*(int *)(self + 0x3c4) != 0) {
-            Ov107_UnlinkNodeFromOwner();
+            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3c4));
             *(int *)(self + 0x3c4) = 0;
         }
     }

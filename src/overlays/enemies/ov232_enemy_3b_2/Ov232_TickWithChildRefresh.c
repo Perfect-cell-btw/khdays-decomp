@@ -6,6 +6,6 @@ extern int Ov107_ProcessObjectTick();
 struct S { char pad[0x388]; int field_388; };
 
 int Ov232_TickWithChildRefresh(struct S *a, int b) {
-    Ov107_RefreshAndSelectChild(a->field_388);
+    Ov107_RefreshAndSelectChild(a->field_388, b);
     return Ov107_ProcessObjectTick(a, b);
 }

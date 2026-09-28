@@ -3,7 +3,7 @@
  * bucket's seat slot (ov002 0207285c) and sets binding byte 3 of the +0x148 block (02029438)
  * to 1 in mission 0x41d (ov002 0206b84c), 3 elsewhere.  Then the host (02030788 == 0), when
  * the box's prize (the class entry at +0x78 + 6 * the prize index +0x1be) is a keyed object
- * (type 2 with a valid key) and a slot is free for it (ov002 02074460), hides that object
+ * (type 2 with a valid key) that has a record (ov002 02074460), hides that object
  * unless it was already revealed (bit 1 of +0x1b9; ov002 02073ed0) and moves it to the box's
  * position (ov002 02073f28). */
 
@@ -43,7 +43,7 @@ extern void  Render_SubmitNode(void *pNode, u16 nId, int nArg, void *pParams); /
 extern int   Ov002_GetStateWord(void);                              /* the mission id */
 extern void  Actor_SetBindingByte(void *pBinding, int nIndex, u8 nValue);   /* Actor_SetBindingByte */
 extern int   Session_GetLocalPlayerIndex(void);                                    /* Session_GetLocalPlayerIndex */
-extern int   Ov002_FindKeyIndex(void);                              /* a free slot for a keyed object */
+extern int   Ov002_FindKeyIndex(int nKey);                          /* record index of a keyed object */
 extern void  Ov002_SetKeyNodeVisible(int nKey, int bShow, int nPriority); /* show / hide a keyed object's node */
 extern void  Ov002_SetEntryPosition(int nKey, VecFx32 *pPos);           /* move a keyed object */
 
@@ -69,7 +69,7 @@ void Ov021_PrizeBoxRefresh(Ov021PrizeBox *pSelf)
     if (pDef->aPrize[pSelf->nPrize].nValue < 0) {
         return;
     }
-    if (Ov002_FindKeyIndex() < 0) {
+    if (Ov002_FindKeyIndex(pDef->aPrize[pSelf->nPrize].nValue) < 0) {
         return;
     }
     if ((pSelf->nFlags & 2) == 0) {

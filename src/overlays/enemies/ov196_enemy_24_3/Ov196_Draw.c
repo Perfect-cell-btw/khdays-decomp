@@ -3,13 +3,13 @@
  * scales that copy to 0x2199 (the Ov120_ReleaseAndDestroy shape with a placement mirror). */
 typedef struct { int w[11]; } Placement;
 
-extern void Ov107_RefreshAndSelectChild(int node);
+extern void Ov107_RefreshAndSelectChild(int node, int arg1);
 extern void Ov107_ProcessObjectTick(int *self, int arg);
 extern void Srt_SetScaleUniform(Placement *placement, int scale);
 
 void Ov196_Draw(int *self, int arg)
 {
-    Ov107_RefreshAndSelectChild(self[0xf4]);
+    Ov107_RefreshAndSelectChild(self[0xf4], arg);
     Ov107_ProcessObjectTick(self, arg);
     *(Placement *)(self + 0xe9) = *(Placement *)(self[0xe5] + 4);
     Srt_SetScaleUniform((Placement *)(self + 0xe9), 0x2199);

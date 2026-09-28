@@ -41,7 +41,7 @@ extern void Ov002_RenderDecimalIntoEntry(int pEntry, int nValue);
 extern void Ov002_PushMarkerNumber(int nAmount);   /* push the marker number */
 extern int QueryActiveStateOrDelegate(void);                 /* the local peer */
 extern void Ov002_CancelSlotByIndex(int nOwner);    /* cancel the owner's slot */
-extern int Ov002_IsPanelModeSet(void);
+extern int Ov002_IsPanelModeSet(int fallback);
 extern void Ov002_AddToPanelTotal(int a, int b, int c);
 extern int func_ov022_020882f8(void);           /* how many entries are live */
 extern int Slot_EvalPackedParam(int nEntry, int nWhat);
@@ -71,6 +71,7 @@ void Ov002_ApplyTally(Ov002TallyRequest *pReq)
     int i;
     s16 hA;
     s16 hB;
+    int nAssigned;
 
     pRoot = data_ov002_0207fa00;
     pSession = (Ov002SessionBlock *)(pRoot + 0x8bcc);
@@ -154,8 +155,8 @@ void Ov002_ApplyTally(Ov002TallyRequest *pReq)
         break;
 
     case 2:
-        if (pSession->nSessionToken != -1 && Ov002_HasAssignedPeerId() != 0
-            && Ov002_IsPanelModeSet() != 0) {
+        if (pSession->nSessionToken != -1 && (nAssigned = Ov002_HasAssignedPeerId()) != 0
+            && Ov002_IsPanelModeSet(nAssigned) != 0) {
             Ov002_AddToPanelTotal(hA, hB, 1);
         }
         break;

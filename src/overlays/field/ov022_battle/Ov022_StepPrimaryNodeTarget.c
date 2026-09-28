@@ -44,7 +44,7 @@ extern unsigned short data_0204c18c;
 
 extern int Ov002_PollSession(void);
 extern int func_ov022_02083f0c(void);
-extern int Ov002_GetBit0OfField38IfValid(void);
+extern int Ov002_GetBit0OfField38IfValid(int p);
 extern int Ov022_GetGlobalPlus14(void);
 extern void Ov022_ResolveTargetPick(Ov022Node *node, int value);
 extern VecFx32 *Ov002_GetWordAt0x20Plus0x20(int actor);
@@ -77,7 +77,7 @@ void Ov022_StepPrimaryNodeTarget(int unused)
         return;
     }
     actor = func_ov022_02083f0c();
-    if (Ov002_GetBit0OfField38IfValid() == 0) {
+    if (Ov002_GetBit0OfField38IfValid(actor) == 0) {
         return;
     }
 

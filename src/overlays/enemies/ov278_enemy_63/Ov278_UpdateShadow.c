@@ -4,7 +4,7 @@
 
 #include "nitro/fx_types.h"
 
-extern void Ov107_RefreshAndSelectChild(int sub);
+extern void Ov107_RefreshAndSelectChild(int sub, int arg1);
 extern void Srt_SetRotationQuat(int srt, void *pose);
 extern void Srt_SetTranslation(int srt, VecFx32 *pos);
 extern void Srt_SetScaleXYZ(int srt, int sx, int sy, int sz);
@@ -14,7 +14,7 @@ void Ov278_UpdateShadow(char *obj, int arg1) {
     VecFx32 pos;
     int scale;
 
-    Ov107_RefreshAndSelectChild(*(int *)(obj + 0x3c8));
+    Ov107_RefreshAndSelectChild(*(int *)(obj + 0x3c8), arg1);
     scale = 0x1000 - *(int *)(obj + 0x13c) / 20;
     if (scale < 0x100) scale = 0x100;
     pos = *(VecFx32 *)(obj + 0x74);

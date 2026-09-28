@@ -5,7 +5,7 @@ extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int QueryActiveStateOrDelegate(void);
 extern void *func_02023bf0(void);   /* the active scene */
 
-extern VecFx32 *func_ov022_020881f8(void);
+extern VecFx32 *func_ov022_020881f8(int player);
 extern int func_ov022_02083f5c(void);
 extern int func_ov022_020881d8(void);
 extern int func_ov022_02088338(void);
@@ -42,7 +42,7 @@ void *Ov002_TickLockedCamera(void)
     pCam = (char *)NNSi_FndGetCurrentRootHeap();
     pNext = 0;
     nPlayer = QueryActiveStateOrDelegate();
-    pAnchor = func_ov022_020881f8();
+    pAnchor = func_ov022_020881f8(nPlayer);
     nHandle = func_ov022_02083f5c();
 
     if (data_0204be04 != *(unsigned int *)(pCam + 0xe0)) {

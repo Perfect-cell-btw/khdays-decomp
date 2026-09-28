@@ -3,7 +3,7 @@
  * 0/1/3/2/0xf (typed request bytes: a raw +0x1c7 store shares the ldrsb base), and release the three +0x428/+0x424/+0x42c handles; then the common release. */
 struct Req { char pad[0x1c6]; signed char kind; signed char req; };
 extern void TaskList_FinishByTag(int a, int b);
-extern void Ov107_UnlinkNodeFromOwner();
+extern void Ov107_UnlinkNodeFromOwner(int node);
 extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov273_TeardownHook(int self) {
@@ -19,15 +19,15 @@ void Ov273_TeardownHook(int self) {
             }
         }
         if (*(int *)(self + 0x428) != 0) {
-            Ov107_UnlinkNodeFromOwner();
+            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x428));
             *(int *)(self + 0x428) = 0;
         }
         if (*(int *)(self + 0x424) != 0) {
-            Ov107_UnlinkNodeFromOwner();
+            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x424));
             *(int *)(self + 0x424) = 0;
         }
         if (*(int *)(self + 0x42c) != 0) {
-            Ov107_UnlinkNodeFromOwner();
+            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x42c));
             *(int *)(self + 0x42c) = 0;
         }
     }

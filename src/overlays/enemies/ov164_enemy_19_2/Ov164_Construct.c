@@ -13,7 +13,7 @@ extern void Ov164_Destroy(void), Ov164_TickWithChildRefresh(void), Ov164_InitMod
 extern void Ov164_HandleSpawnMessage(void), Ov164_SpawnActorRegistryEntry(void), Ov164_ReleaseTasks(void);
 extern void Ov164_OnHit(void), Ov164_RequestSubState10IfIdleUnless7Or8(void), Ov164_Model_SetTrack0(void);
 
-extern void *Ov107_PackTextureHandle();
+extern void *Ov107_PackTextureHandle(int obj, unsigned offset);
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern void *InsertSortedEntryWithKey();
@@ -44,7 +44,7 @@ void Ov164_Construct(int param_1) {
     *(int *)(param_1 + 0x64) = 0;
     *(int *)(param_1 + 0x68) = 0x1000;
     *(int *)(param_1 + 0x6c) = 0;
-    *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1));
+    *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, 0));
     RegisterSubscriberSlot(*(int *)(param_1 + 0x9c), *(void **)(param_1 + 0x384));
     *(void **)(param_1 + 0x390) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov164_020d2d0c);
     *(void **)(param_1 + 0x3c0) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov164_020d2d18);

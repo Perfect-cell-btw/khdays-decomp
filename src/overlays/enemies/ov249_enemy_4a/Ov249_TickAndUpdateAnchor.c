@@ -25,7 +25,7 @@ struct S {
 };
 
 void Ov249_TickAndUpdateAnchor(struct S *r4, int r5) {
-    Ov107_RefreshAndSelectChild(r4->p490);
+    Ov107_RefreshAndSelectChild(r4->p490, r5);
     Ov107_ProcessObjectTick(r4, r5);
     if (r4->n60 & 0x80) {
         r4->v494 = r4->vb0;

@@ -6,7 +6,7 @@
 #include "nitro/fx_types.h"
 
 struct Flags5c { int b0 : 1; int b1 : 1; };
-extern void Ov107_RefreshAndSelectChild(int sub);
+extern void Ov107_RefreshAndSelectChild(int sub, int arg1);
 extern void Ov107_ProcessObjectTick(char *obj, int arg1);
 extern void Srt_SetRotationQuat(int srt, void *pose);
 extern void Srt_SetTranslation(int srt, VecFx32 *pos);
@@ -16,7 +16,7 @@ void Ov278_UpdateShadowA(char *obj, int arg1) {
     VecFx32 pos;
     int scale;
 
-    Ov107_RefreshAndSelectChild(*(int *)(obj + 0x3ac));
+    Ov107_RefreshAndSelectChild(*(int *)(obj + 0x3ac), arg1);
     scale = 0x1000 - *(int *)(obj + 0x13c) / 20;
     if (scale < 0x100) scale = 0x100;
     pos = *(VecFx32 *)(obj + 0x74);

@@ -47,7 +47,7 @@ extern Ov015MissionMember data_0204c678[];
 
 extern int  func_ov022_020882f8(void);                                    /* seat count */
 extern int  Ov022_GetEntryField66(int nSeat);                               /* seat -> owner slot */
-extern int  Ov002_GetSlotTableByte(void);                                    /* current piece kind */
+extern int  Ov002_GetSlotTableByte(int nGroup);                              /* a group's piece kind */
 extern VecFx32 *func_ov022_020881f8(int nSeat);                           /* where the seat is */
 extern int  VEC_Distance(const VecFx32 *pA, const VecFx32 *pB);          /* VEC_Distance */
 extern void VEC_Subtract(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
@@ -65,8 +65,7 @@ void Ov015_ChestPushNearbyPlayers(Ov015Chest *pChest, int nRange)
     pDef = pChest->pDef;
     for (i = 0; i < func_ov022_020882f8(); i++) {
         if (Ov022_GetEntryField66(i) >= 0 && (pChest->nPushedMask & (1 << i)) == 0) {
-            Ov022_GetEntryField66(i);
-            if (pChest->nKind == Ov002_GetSlotTableByte()) {
+            if (pChest->nKind == Ov002_GetSlotTableByte(Ov022_GetEntryField66(i))) {
                 if (nRange >= VEC_Distance(&pChest->position, func_ov022_020881f8(i))) {
                     VEC_Subtract(func_ov022_020881f8(i), &pChest->position, &direction);
                     VEC_Normalize(&direction, &direction);

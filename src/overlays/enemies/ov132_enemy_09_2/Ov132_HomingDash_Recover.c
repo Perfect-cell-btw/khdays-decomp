@@ -2,7 +2,7 @@
  * the action resource's offset and scale in the actor's frame, and once the actor is on the ground
  * and the gate byte is clear queues action 2 and clears the step handler. */
 
-extern int Ov107_UnlinkNodeFromOwner();
+extern void Ov107_UnlinkNodeFromOwner(int node);
 extern int Ov107_ActionResource_GetOffsetAndScale();
 extern int Vec3TransformViaTempMtx();
 extern int ScaleVec3Fx12();
@@ -15,7 +15,7 @@ void Ov132_HomingDash_Recover(int this) {
     int r6;
 
     if (*(int *)(p + 0x3d0) != 0) {
-        Ov107_UnlinkNodeFromOwner();
+        Ov107_UnlinkNodeFromOwner(*(int *)(p + 0x3d0));
         *(int *)(*(int *)s + 0x3d0) = 0;
     }
 

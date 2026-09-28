@@ -22,7 +22,7 @@ typedef struct Ov022Actor {
 
 extern Ov022Root *NNSi_FndGetCurrentRootHeap(void);
 extern int func_ov022_02083f0c(void);
-extern int Ov002_GetBit0OfField38IfValid(void);
+extern int Ov002_GetBit0OfField38IfValid(int p);
 extern int Ov002_PollSession(void);
 extern VecFx32 *Ov002_GetWordAt0x20Plus0x20(int owner);
 extern int VEC_Distance(VecFx32 *a, VecFx32 *b);
@@ -41,7 +41,7 @@ void Ov022_Party_ShowNearbyNames(void)
     char *entryCursor;
     int minusOne;
 
-    if (Ov002_GetBit0OfField38IfValid() == 0) {
+    if (Ov002_GetBit0OfField38IfValid(owner) == 0) {
         return;
     }
 

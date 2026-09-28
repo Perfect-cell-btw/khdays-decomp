@@ -61,7 +61,7 @@ static inline int FX_Mul(int a, int b)
 extern void *NNSi_FndGetCurrentRootHeap(void);
 extern int func_ov022_02083f5c(void);
 extern unsigned short QueryActiveStateOrDelegate(void);
-extern void *func_ov022_020881f8(void);
+extern void *func_ov022_020881f8(int player);
 extern Ov022Entry *GetEntryField20ByIndex(uint);
 extern int func_ov022_020881d8(void);
 extern int func_ov022_02088338(void);
@@ -145,7 +145,7 @@ Ov002NextFn Ov002_Camera_UpdateFollow(void)
   uVar20 = 0;
   uVar4 = QueryActiveStateOrDelegate();
   idx = (uint)uVar4;
-  puVar9 = (undefined4 *)func_ov022_020881f8();
+  puVar9 = (undefined4 *)func_ov022_020881f8(idx);
   puVar10 = GetEntryField20ByIndex(idx);
   uVar18 = piVar7[0x38];
   if (data_0204be04 != uVar18) {

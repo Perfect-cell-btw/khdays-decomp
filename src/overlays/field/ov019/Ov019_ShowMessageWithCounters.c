@@ -9,7 +9,7 @@ extern void MI_CpuFill8(void *buf, int val, int n);
 extern int GameState_GetField(int key, int kind);
 extern void OS_SPrintf(void *buf, void *fmt, int arg);
 extern void Ov002_SetSeatFlag(int a, int b);
-extern void Ov002_TryBeginPanelRequest(void *s);
+extern void Ov002_TryBeginPanelRequest(void *s, int nValue);
 
 extern unsigned char data_ov019_0207fd40[];
 extern char data_ov019_0207fd78[];
@@ -190,7 +190,7 @@ int Ov019_ShowMessageWithCounters(int param_1, unsigned short *param_2, int para
     out.a = 0;
     out.e = 0;
 
-    Ov002_TryBeginPanelRequest(&out);
+    Ov002_TryBeginPanelRequest(&out, 0);
 
     return 0;
 }

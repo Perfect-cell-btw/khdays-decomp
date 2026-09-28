@@ -8,7 +8,7 @@ extern int Srt_SetTranslation();
 extern int Srt_SetRotationQuat();
 
 void Ov150_TickAndSyncMarkerSrt(char *obj, int arg1) {
-    Ov107_RefreshAndSelectChild(*(int *)(obj + 0x3cc));
+    Ov107_RefreshAndSelectChild(*(int *)(obj + 0x3cc), arg1);
     Ov107_ProcessObjectTick(obj, arg1);
     SrtTransform_SetIdentity(obj + 0x39c);
     Srt_SetTranslation(obj + 0x39c, *(int *)(obj + 0x394) + 0x14);

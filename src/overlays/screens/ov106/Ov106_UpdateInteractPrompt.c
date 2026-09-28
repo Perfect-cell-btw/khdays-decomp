@@ -9,7 +9,7 @@
 extern int GameState_IsFlagSet(int flag);
 extern u8 data_0204be04;
 extern int func_ov022_02083f0c(void);
-extern int Ov002_GetBit0OfField38IfValid(void);
+extern int Ov002_GetBit0OfField38IfValid(int self);
 extern int func_ov022_02083f5c(void);
 extern int func_ov022_02088338(void);
 extern void *GetEntryField20ByIndex(int nPlayer);
@@ -22,14 +22,15 @@ void Ov106_UpdateInteractPrompt(void)
 {
     int actor;
     void *entity;
+    int player;
 
     if (GameState_IsFlagSet(0x248c) == 0 && data_0204be04 != 0) {
         return;
     }
-    if (func_ov022_02083f0c() == 0) {
+    if ((player = func_ov022_02083f0c()) == 0) {
         return;
     }
-    if (Ov002_GetBit0OfField38IfValid() == 0) {
+    if (Ov002_GetBit0OfField38IfValid(player) == 0) {
         return;
     }
     if ((actor = func_ov022_02083f5c()) == 0) {

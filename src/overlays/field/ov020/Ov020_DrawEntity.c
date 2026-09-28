@@ -17,7 +17,7 @@ struct Ov020Entity {
 
 extern void *Ov002_GetModuleScale(void);
 extern int func_ov022_02083f0c(void);
-extern void *Ov002_GetWord20(void);
+extern void *Ov002_GetWord20(int self);
 extern void Camera_CommitMatricesEx(void *camera, int top, int bottom, int left, int right);
 extern void Sequence_UpdateTracks(unsigned short *node, void *context);
 extern void Scene_DrawNode(unsigned short *node);
@@ -27,14 +27,16 @@ int Ov020_DrawEntity(struct Ov020Entity *entity)
 {
     void *context;
     void *scene_camera;
+    int player;
 
     context = Ov002_GetModuleScale();
     if ((entity->hBindFlags12 & 4) != 0) {
-        if (func_ov022_02083f0c() == -1) {
+        player = func_ov022_02083f0c();
+        if (player == -1) {
             return 0;
         }
 
-        scene_camera = Ov002_GetWord20();
+        scene_camera = Ov002_GetWord20(player);
         Camera_CommitMatricesEx(entity->aCamera124, 0x3b33, -0x3b33, -0x4d9a, 0x4d9a);
         Sequence_UpdateTracks(entity->aNode1c, context);
         Scene_DrawNode(entity->aNode1c);

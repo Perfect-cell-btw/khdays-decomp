@@ -26,7 +26,7 @@ extern int   Ov002_GetStateWord(void);                               /* the miss
 extern int   func_ov022_020882f8(void);                               /* number of players */
 extern Ov021PlayerActor *GetEntryField20ByIndex(int nPlayer);                  /* the player's actor */
 extern int   Ov022_GetEntryField66(int nSeat);                          /* seat -> owner slot */
-extern int   Ov002_GetSlotTableByte(void);                               /* current piece kind */
+extern int   Ov002_GetSlotTableByte(int nGroup);                         /* a group's piece kind */
 extern VecFx32 *func_ov022_020881f8(int nSeat);                       /* where the seat is */
 extern int   VEC_Distance(VecFx32 *pA, VecFx32 *pB);                 /* VEC_Distance */
 
@@ -39,8 +39,10 @@ int Ov021_EmblemFindPlayer(Ov021Emblem *pSelf)
     if (Ov002_RunShutdownHook() == 0 && Ov002_IsSessionOpen() != 0) {
         nReach = Ov002_GetStateWord() == 0x3b7 ? 0x3000 : 0x1800;
         for (nPlayer = 0; nPlayer < func_ov022_020882f8(); nPlayer++) {
+            int nGroup;
+
             pActor = GetEntryField20ByIndex(nPlayer);
-            if ((pActor->nFlags & 0x10000) == 0 && Ov022_GetEntryField66(nPlayer) >= 0 && pSelf->nBucket == Ov002_GetSlotTableByte()) {
+            if ((pActor->nFlags & 0x10000) == 0 && (nGroup = Ov022_GetEntryField66(nPlayer)) >= 0 && pSelf->nBucket == Ov002_GetSlotTableByte(nGroup)) {
                 if (VEC_Distance(func_ov022_020881f8(nPlayer), &pSelf->position) <= nReach) {
                     return nPlayer;
                 }

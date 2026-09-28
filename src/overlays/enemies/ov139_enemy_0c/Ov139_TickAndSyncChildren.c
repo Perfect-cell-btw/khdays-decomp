@@ -21,7 +21,7 @@ typedef struct {
 
 void Ov139_TickAndSyncChildren(Obj *obj, int arg1)
 {
-    Ov107_RefreshAndSelectChild(obj->field_390);
+    Ov107_RefreshAndSelectChild(obj->field_390, arg1);
     Ov107_ProcessObjectTick(obj, arg1);
 
     *(Block *)(*obj->p388 + 0x10) = obj->block;

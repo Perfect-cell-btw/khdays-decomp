@@ -4,7 +4,7 @@
  * `> 1`, and both byte reads are SIGNED (ldrsb). */
 struct Hw60 { unsigned short lo : 8, hi : 8; };
 extern void TaskList_FinishByTag(int a, int b);
-extern void Ov107_UnlinkNodeFromOwner();
+extern void Ov107_UnlinkNodeFromOwner(int node);
 extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov148_ReleaseAttachmentsOnStop(int self) {
@@ -17,7 +17,7 @@ void Ov148_ReleaseAttachmentsOnStop(int self) {
             signed char s = *(signed char *)(self + 0x1c6);
             if (s != 0 && s != 1 && s != 3 && s != 6) {
                 if (*(int *)(self + 0x3ec) != 0) {
-                    Ov107_UnlinkNodeFromOwner();
+                    Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3ec));
                     *(int *)(self + 0x3ec) = 0;
                 }
                 *(signed char *)(self + 0x1c7) = 6;
@@ -26,7 +26,7 @@ void Ov148_ReleaseAttachmentsOnStop(int self) {
     }
     if ((((struct Hw60 *)(self + 0x60))->lo & 1) == 0) {
         if (*(int *)(self + 0x3ec) != 0) {
-            Ov107_UnlinkNodeFromOwner();
+            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3ec));
             *(int *)(self + 0x3ec) = 0;
         }
         if (*(int *)(self + 0x3f4) != 0) {

@@ -33,7 +33,7 @@ extern void MTX_MultVec33(VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern void Ov254_PickRoutePoint(int *state);
 extern void VEC_Add(void *a, void *b, VecFx32 *d);
 extern void Ov254_InvokeHookAndRearm2_2(int shard, VecFx32 *at);
-extern int Ov107_QuerySphereContacts(int collision, Sphere *sphere, int *out);
+extern int Ov107_QuerySphereContacts(int collision, Sphere *sphere, int *out, VecFx32 *outDir);
 extern void Ov107_PostTagUpdate(int owner, int pose, int loop);
 extern void Ov107_StartAnim(int rig, int motion, int mode);
 extern void Ov254_ForwardToAiIfReady_7(int helper);
@@ -156,7 +156,7 @@ void Ov254_PursuitTick(int *node)
         VEC_Add((void *)(*(int *)(*state + 0x408) + 0x14), (VecFx32 *)(state + 3), &sph.pos);
         sph.nRadius = 0x7b31;
         v = data_02041dc8;
-        if (Ov107_QuerySphereContacts(*(int *)(world + 0x7c), &sph, hits) > 0) {
+        if (Ov107_QuerySphereContacts(*(int *)(world + 0x7c), &sph, hits, &v) > 0) {
             state[0x18] = VEC_Mag((VecFx32 *)(state + 3));
             state[3] = state[5] = 0;
         }

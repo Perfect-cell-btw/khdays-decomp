@@ -4,13 +4,13 @@
 typedef struct { int m[11]; } Srt;
 struct Piece { char pad[0x10]; Srt srt; };
 
-extern void Ov107_RefreshAndSelectChild(int part);
+extern void Ov107_RefreshAndSelectChild(int part, int arg1);
 extern void Ov107_ProcessObjectTick(char *self, int arg);
 extern void Ov259_MoveHook(char *self, int move);
 
 void Ov259_Update(char *self, int arg)
 {
-    Ov107_RefreshAndSelectChild(*(int *)(self + 0x414));
+    Ov107_RefreshAndSelectChild(*(int *)(self + 0x414), arg);
     Ov107_ProcessObjectTick(self, arg);
     Ov259_MoveHook(self, *(signed char *)(self + 0x100 + 0xc6));
     ((struct Piece *)**(int **)(self + 0x404))->srt = *(Srt *)(self + 0xa0);

@@ -4,7 +4,7 @@
  *
  * The clip is reached through TWO dereferences -- the pointer at +0x384 holds a
  * pointer to the clip -- and the +0x10 is added after the first ldm, not before. */
-extern void Ov107_RefreshAndSelectChild(void *clip);
+extern void Ov107_RefreshAndSelectChild(void *clip, int arg1);
 extern void Ov107_ProcessObjectTick(void *self, int slot);
 
 typedef struct {
@@ -26,7 +26,7 @@ typedef struct {
 } Ov137Object;
 
 void Ov137_RebindClip(Ov137Object *self, int slot) {
-    Ov107_RefreshAndSelectChild(self->pOldClip);
+    Ov107_RefreshAndSelectChild(self->pOldClip, slot);
     Ov107_ProcessObjectTick(self, slot);
 
     (*self->ppClip)->pose = self->bones;
