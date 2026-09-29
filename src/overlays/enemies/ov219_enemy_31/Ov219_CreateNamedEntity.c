@@ -5,7 +5,7 @@
 #include "game/enemy_common.h"
 
 extern void *CallocInstance(int size);
-extern void OS_SPrintf(void *buffer, void *format);
+extern int OS_SPrintf(char *dst, const char *fmt, ...);
 extern void func_ov107_020c6624(void *obj, int arg);
 extern int data_ov219_020d18c0;
 extern void Ov219_Construct(void *obj);
@@ -16,7 +16,7 @@ void *Ov219_CreateNamedEntity(int arg)
     void *obj = CallocInstance(0x3dc);
 
     *(signed char *)((int)obj + 0x19c) = 0x31;
-    OS_SPrintf(name, &data_ov219_020d18c0);
+    OS_SPrintf(name, (const char *)&data_ov219_020d18c0, 0x31);
     *(int *)((int)obj + 0x1a4) = Ov107_OpenCachedResourceByName(name);
     *(void **)((int)obj + 0x18c) = Ov219_Construct;
     func_ov107_020c6624(obj, arg);

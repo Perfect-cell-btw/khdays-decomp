@@ -110,6 +110,9 @@ int Ov006_MissionBuildOptionRows(void) {
         }
     }
 
+    /* On the single-row path `input` is never set: the ROM passes r4 as it is (mov r0,r4), which
+     * holds the caller's value (at run time Obj_UpdateAll's previous heap, an address), and
+     * Ov006_SetTitleMode ignores anything but 1 to 4. */
     Ov006_SetTitleMode(input);
     Ov006_ResetTextLayers();
     Ov006_FlushTextLayers();
