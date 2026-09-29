@@ -37,7 +37,7 @@ void Ov008_MainMenuExit(void) {
     Ov008_TickKeySharingShutdown();
     if (action != 7) {
         if (action == 8) {
-            cfg = *(struct Cfg4 *)Session_GetSlotTable();
+            cfg = *(struct Cfg4 *)Session_GetSetup();
             cfg.w[1] = Ov008_CountOccupiedSlots();
             Session_StoreSetup(&cfg);
             Scene_RequestPending(2, 0);

@@ -13,7 +13,8 @@
  * raises flag-3 bit 40. Kind 3 (local player only) adds tally 4 by level (1,
  * 5, 10) to a live actor. Kinds 6..0xc enable resource nLevel for the owner
  * and, on a remote player with an unfilled slot, drive the owned sound.
- * Kind 0xd enables the resource and sets its global half for a live actor.
+ * Kind 0xd enables the resource and, for a live actor, makes the party hold
+ * item nLevel (Ov022_SetHeldItem).
  * Kind 0xf (local player only) applies the mode.
  */
 
@@ -58,7 +59,7 @@ extern void Ov022_ActorSetHp(struct Actor *pActor, int nValue);             /* O
 extern void Ov002_AnnounceWithSound(int nResource, int bEnabled);
 extern int Slot_AllEntriesFilled(int nId);                                              /* Slot_AllEntriesFilled */
 extern void Ov022_DriveOwnedSound(struct Actor *pActor, int nParam, int nKind, int nDelta);   /* Ov022_DriveOwnedSound */
-extern void func_ov022_020ad5f4(struct Actor *pActor, int nHalf, int bSet);    /* SetGlobalHalfBool */
+extern void Ov022_SetHeldItem(struct Actor *pActor, int nHalf, int bSet);
 extern void Ov002_RequestMode(int nMode);
 extern void Ov002_NoteSeatAnswer(int nWho, int nParam, u32 nKind, int nLevel);
 
@@ -189,7 +190,7 @@ void Ov022_ApplyItemEffect(struct Actor *pActor, int nParam, u32 nKind, int nLev
     case 13:
         if (pActor->nHp != 0) {
             Ov002_AnnounceWithSound(nLevel, 1);
-            func_ov022_020ad5f4(pActor, nLevel, 1);
+            Ov022_SetHeldItem(pActor, nLevel, 1);
         }
         break;
     case 15:

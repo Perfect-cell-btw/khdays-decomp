@@ -83,7 +83,7 @@ extern int Ov002_IsMissionClearFinished(int nWhich);
 extern int Ov002_GetStateWord(void);
 extern void Ov002_SetPanelMode_2(int bOn);
 extern void Ov002_SetScrollPosition(int nWhich, int nValue);
-extern int Ov022_ForwardArg1(struct Actor *pActor, int nKind);
+extern int Ov022_IsHoldingItem(struct Actor *pActor, int nKind);
 extern int Ov022_GetMarkerState(int nId);
 extern void func_ov022_020ad2e4(struct Actor *pActor, int nMode);
 extern void func_ov022_02093f24(u8 *pBlk, int nBit);
@@ -170,7 +170,7 @@ void Ov022_UpdateSubsystems(struct Actor *pActor)
         }
     }
 
-    if (Ov022_ForwardArg1(pActor, 0xc) != 0) {
+    if (Ov022_IsHoldingItem(pActor, 0xc) != 0) {
         nGauge = Ov022_GetMarkerState(pActor->nId);
         if (nGauge == -1 || nGauge == 2) {
             func_ov022_020ad2e4(pActor, 2);

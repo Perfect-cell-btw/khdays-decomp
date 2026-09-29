@@ -2682,11 +2682,11 @@ src/overlays/field/ov022_battle/func_ov022_020ad588.c:
     complete
     .text       start:0x020ad588 end:0x020ad5f4
 
-src/overlays/field/ov022_battle/func_ov022_020ad5f4.c:
+src/overlays/field/ov022_battle/Ov022_SetHeldItem.c:
     complete
     .text       start:0x020ad5f4 end:0x020ad61c
 
-src/overlays/field/ov022_battle/Ov022_ForwardArg1.c:
+src/overlays/field/ov022_battle/Ov022_IsHoldingItem.c:
     complete
     .text       start:0x020ad61c end:0x020ad62c
 

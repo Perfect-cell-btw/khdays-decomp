@@ -26,5 +26,5 @@ void PartyState_ResetBuffers(void) {
         MI_CpuFill8(p, 0, 0x48);
         p += 0x48;
     }
-    ClearGlobalShort4();
+    PartyState_ClearHeldItem();
 }

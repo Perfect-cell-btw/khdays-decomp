@@ -34,7 +34,7 @@ extern int Ov002_GetRootField8b68Alt(void);
 extern int Ov002_FindSharedPlayerExit(void);
 extern int Ov002_RequestLeave(void);
 extern u32 Ov002_BuildSessionCommand(int,Ov002PeerExitCommand *);
-extern void Callbacks_SetByte(int);
+extern void PauseMenu_SetMode(int);
 extern void PauseMenu_SetAllowed(int);
 extern int func_ov022_020882f8(void);
 extern void func_ov022_020888b8(int,int);
@@ -97,7 +97,7 @@ void Ov002_UpdatePeerAnimationsAndExit(int nSlot,int nDeltaQ12,int bAllowExit)
     command.nSlot=nSlot;
     if(Ov002_BuildSessionCommand(5,&command)==0xffff) return;
     pCtx->bFlags|=2;
-    Callbacks_SetByte(0);
+    PauseMenu_SetMode(0);
     PauseMenu_SetAllowed(0);
     for(i=0;i<func_ov022_020882f8();i++) func_ov022_020888b8(i,1);
 }

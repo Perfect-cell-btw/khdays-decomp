@@ -37,7 +37,7 @@ extern const TileSurfaceCfg data_ov000_0205a784;
 extern const char data_ov000_0205aac4[];
 extern Ov000TextSceneContext *data_ov000_0205ac24;
 
-extern void StreamReader_InitU16(void *resource, void *sharedResource);
+extern void NNS_G2dFontInitUTF16(void *resource, void *sharedResource);
 extern void Ov000_InitResourceRecord(void *object, const char *resourceName);
 extern void *G2S_GetBG3ScrPtr(void);
 extern void MIi_CpuClearFast(int value, void *destination, u32 size);
@@ -58,7 +58,7 @@ void Ov000_BuildPageTextSurfaces(void)
         config1.nUnk00 -= 1;
     }
 
-    StreamReader_InitU16(data_ov000_0205ac24->resourceStorage,
+    NNS_G2dFontInitUTF16(data_ov000_0205ac24->resourceStorage,
                   data_ov000_0205ac24->resource);
     Ov000_InitResourceRecord(data_ov000_0205ac24->messageArchive,
                         data_ov000_0205aac4);

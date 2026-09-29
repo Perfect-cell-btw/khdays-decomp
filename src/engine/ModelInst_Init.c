@@ -1,7 +1,7 @@
 /* ModelInst_Init -- set up a model instance, MAIN. Resolves the model file `fileId` through the
  * instance's resource list (+0x74, ResSlot_Acquire; with both a texture source and a file the
  * loader's texture flag is lowered around the lookup), sets the textures up from `texSrc` when
- * given (ForwardType7RecordSpan), takes model 0 of the file's model set as the resource model (+0x78) and
+ * given (ModelArchive_DropTextureImage), takes model 0 of the file's model set as the resource model (+0x78) and
  * initialises the render object (+0x20) with it, binds the animation block (+0xe0, ModelAnimSet_Bind),
  * clears the five animation slots (ids +0x2 / +0xca, handles +0xc), and resets the transform:
  * identity rotation (+0x80), zero translation (+0xa4), unit scale (+0xb0), zero offset (+0xbc).
@@ -60,7 +60,7 @@ typedef struct ModelInst {
 
 extern void InstallHandlerPairByFlag(int flag);
 extern void *ResSlot_Acquire(ModelResList *list, int fileId);
-extern void ForwardType7RecordSpan(void *file, void *texSet, int texSrc);
+extern void ModelArchive_DropTextureImage(void *file, void *texSet, int texSrc);
 extern void *Archive_GetMember(void *file, int nMember, int nSub);
 extern NNSG3dResMdlSet *NNS_G3dGetMdlSet(void *file);   /* NNS_G3dGetMdlSet */
 extern void NNS_G3dRenderObjInit(void *renderObj, void *resMdl);   /* NNS_G3dRenderObjInit */
@@ -102,7 +102,7 @@ BOOL ModelInst_Init(ModelInst *inst, int texSrcFlag, int fileId, int texSrc)
         if (fileId != 0) {
             InstallHandlerPairByFlag(1);
         }
-        ForwardType7RecordSpan(file, inst->resList->texSet, texSrc);
+        ModelArchive_DropTextureImage(file, inst->resList->texSet, texSrc);
     }
     inst->resMdl = GetMdlByIdx(NNS_G3dGetMdlSet(Archive_GetMember(file, 7, 0)), 0);
     NNS_G3dRenderObjInit(inst->renderObj, inst->resMdl);

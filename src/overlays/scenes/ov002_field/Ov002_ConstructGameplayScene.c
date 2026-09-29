@@ -46,7 +46,7 @@ extern void Ov002_SetLazyClassEnabled(int enabled);
 extern int  Obj_GetCurrent(void);
 extern void StoreGlobalArrayEntry(int a, void *b);
 extern int  Session_IsActive(void);
-extern int  Session_GetSlotTable(void);
+extern int  Session_GetSetup(void);
 extern int  Session_GetLocalPlayerIndex(void);
 extern void Ov002_InitPlayRecord(void);
 extern void MI_CpuFill8(void *dest, int data, int size);
@@ -109,7 +109,7 @@ void *Ov002_ConstructGameplayScene(void *param_1)
     *(int *)(heap + 0x8b58) = -1;
     *(int *)(heap + 0x8b4c) = -1;
     *(u16 *)(heap + 0x8da0) = 0;
-    if (Session_IsActive() != 0 && *(int *)(Session_GetSlotTable() + 4) >= 3) {
+    if (Session_IsActive() != 0 && *(int *)(Session_GetSetup() + 4) >= 3) {
         i = 1;
     } else {
         i = 0;

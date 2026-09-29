@@ -16,7 +16,7 @@ typedef struct {
 extern char *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov027_UpdateModels(void);
 extern void Ov027_StepScreenSwap(void);
-extern int *Session_GetSlotTable(void);
+extern int *Session_GetSetup(void);
 extern void Ov027_DrawSignInPanel(Ov027Sub *p);
 extern void Camera_CommitMatrices(void *p);
 extern void PlaySound(int bank, int id);
@@ -30,7 +30,7 @@ Ov027Handler Ov027_PollConfirmAndAdvance(void) {
 
     Ov027_UpdateModels();
     Ov027_StepScreenSwap();
-    if (*Session_GetSlotTable() != 1) {
+    if (*Session_GetSetup() != 1) {
         Ov027_DrawSignInPanel(data_ov027_02084360.sub);
     }
     Camera_CommitMatrices(root + 0x4d8);

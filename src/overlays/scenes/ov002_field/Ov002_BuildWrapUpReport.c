@@ -3,7 +3,7 @@
 
 extern char *data_ov002_0207fa00;   /* the ov002 root context */
 
-extern char *Session_GetSlotTable(void);  /* its +4 is the slot count */
+extern char *Session_GetSetup(void);  /* its +4 is the slot count */
 extern char *Slot4_GetIfOccupied(int nSlot);  /* Slot4_GetIfOccupied */
 
 /* Fills the wrap-up report the session board hands to the results side.
@@ -25,7 +25,7 @@ extern char *Slot4_GetIfOccupied(int nSlot);  /* Slot4_GetIfOccupied */
 #pragma opt_strength_reduction off
 void Ov002_BuildWrapUpReport(u16 *pReport)
 {
-    char *pAccessor;
+    char *pSetup;
     u16 *pOut;
     int i;
     char *pSeat;
@@ -34,10 +34,10 @@ void Ov002_BuildWrapUpReport(u16 *pReport)
     int nCount;
 
     pSeat = data_ov002_0207fa00 + 0x8bcc;
-    pAccessor = Session_GetSlotTable();
+    pSetup = Session_GetSetup();
     nCount = 0;
     i = 0;
-    if (*(int *)(pAccessor + 4) > 0) {
+    if (*(int *)(pSetup + 4) > 0) {
         pOut = (u16 *)((char *)pReport + 0xa);
         do {
             pSlot = Slot4_GetIfOccupied(i);
@@ -57,7 +57,7 @@ void Ov002_BuildWrapUpReport(u16 *pReport)
                 pOut += 4;
             }
             i++;
-        } while (i < *(int *)(pAccessor + 4));
+        } while (i < *(int *)(pSetup + 4));
     }
     *pReport = (u16)nCount;
 }

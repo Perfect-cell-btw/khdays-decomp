@@ -1,7 +1,7 @@
 /* Ov023_CmdActorSpeak -- Ov023_CmdActorSpeak: two-phase script command that puts the event's
  * text block (+0x28 of the event block) on an actor.  Operand 3 is the actor; a negative value
- * marks the second phase (-99 standing for actor 0), which only detaches the text again
- * (0202ba44) and finishes with 1.  In the first phase, once the block's handle (+0xc) is ready
+ * marks the second phase (-99 standing for actor 0), which only drops the entity's texture
+ * image from main memory (EntityMgr_DropTextureImage) and finishes with 1.  In the first phase, once the block's handle (+0xc) is ready
  * (0201eea8), the block is attached to the actor (0202b984) and, when operand 2 asks for it,
  * the actor's sub-panel released (02089604); operand 3's value is then negated for the second
  * phase, the command re-queued (020219b4) and 0 returned. */

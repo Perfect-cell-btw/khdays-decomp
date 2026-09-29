@@ -1,6 +1,6 @@
 #pragma thumb on
 /* Game_EnterPauseScene -- enter a scene, MAIN. Unless forced (data_0204bd85) or flag 0x20ef is set, the
- * call is refused (Callbacks_SetByte(0)). Otherwise: graphics mode 1/0/1 when +0xe4 asks for it, the
+ * call is refused (PauseMenu_SetMode(0)). Otherwise: graphics mode 1/0/1 when +0xe4 asks for it, the
  * scene state becomes 3 (+0xc8, sub-state +0xcc = 2, +0xd8 cleared), a +0xdc scene resets its
  * display (Ov002_HoldPanelScreen(1, 0), TP_RequestAutoSamplingStopAsync, layers 4). Unless a reset is pending
  * (data_0204c240 bit 2 while mode bit 1 is set) the state is saved for the way back: the 64-bit
@@ -34,7 +34,7 @@ extern u8 data_0204bd85;
 extern u8 data_0204c240;
 extern char data_02042748[16];
 extern int GameState_IsFlagSet(int id);
-extern void Callbacks_SetByte(int a);
+extern void PauseMenu_SetMode(int a);
 extern void GX_SetGraphicsMode(int a, int b, int c);
 extern void Ov002_HoldPanelScreen(int nHold, int bLeaving);
 extern void TP_RequestAutoSamplingStopAsync(void);
@@ -57,7 +57,7 @@ void Game_EnterPauseScene(void)
     GameHeap *heap = (GameHeap *)(&data_0204be08)[1];
 
     if (data_0204bd85 == 0 && GameState_IsFlagSet(0x20ef) == 0) {
-        Callbacks_SetByte(0);
+        PauseMenu_SetMode(0);
         return;
     }
     if (heap->gfxMode != 0) {

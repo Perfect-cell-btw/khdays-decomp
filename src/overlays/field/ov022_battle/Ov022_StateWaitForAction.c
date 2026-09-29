@@ -10,8 +10,8 @@ typedef struct Ov022Context {
     char pad_0002[6];
     void *slots[3];
     void *childObjects[2];
-    int viewX;
-    int viewY;
+    int brightnessMain;
+    int brightnessSub;
     char pad_0024[0x1a];
     s8 state;
 } Ov022Context;
@@ -106,13 +106,13 @@ Ov022StateCallback Ov022_StateWaitForAction(void)
 
     if (context->state != 0) {
         if (context->state == 2) {
-            context->viewY = -0x10000;
-            SetMasterBrightnessSub(context->viewY >> 12);
+            context->brightnessSub = -0x10000;
+            SetMasterBrightnessSub(context->brightnessSub >> 12);
             Ov002_InitRefreshWindow();
         }
     } else {
-        context->viewX = GetMasterBrightnessMain() << 12;
-        context->viewY = GetMasterBrightnessSub() << 12;
+        context->brightnessMain = GetMasterBrightnessMain() << 12;
+        context->brightnessSub = GetMasterBrightnessSub() << 12;
     }
 
     return Ov022_StateFinishAction;

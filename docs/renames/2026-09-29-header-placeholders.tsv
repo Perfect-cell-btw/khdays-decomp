@@ -29,7 +29,7 @@ func_0202a684	Model_DropTextureImage	main
 func_0202b5f8	EntityMgr_PushToList	main
 func_0202ba44	EntityMgr_DropTextureImage	main
 func_0202ba68	EntityRecord_DropTextureImage	main
-func_0202bfb8	EntityMgr_GetResourceCount	main
+func_0202bfb8	EntityMgr_GetModelGroupCount	main
 func_0202c57c	EntityMgr_GetVramStateDepth	main
 func_0202c604	Entity_AttachNode	main
 func_0202c614	Entity_DetachNode	main
@@ -52,7 +52,7 @@ func_02034138	SoundMgr_SetSeEnabled	main
 func_020359b4	PartyMember_AddEntryPair	main
 func_02035a34	PartyMember_ClearEntryPairs	main
 func_02035c44	PartyState_FreeRecord	main
-func_02035d18	PartyState_SetInteraction	main
+func_02035d18	PartyState_SetHeldItem	main
 func_020362ec	KeyRepeat_Step	main
 func_ov107_020c9848	Ov107_GetActorManager	ov107
 func_ov107_020c9c1c	Ov107_VeneerTo_Obj_Destroy	ov107

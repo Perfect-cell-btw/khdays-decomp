@@ -136,7 +136,7 @@ extern void  Ov027_UpdateModels(void);                             /* Ov027_Upda
 extern void  Ov027_BlinkPanelSlot(int nSlot);                        /* Ov027_BlinkPanelSlot */
 extern void  Ov027_UpdateFlushForward(Ov027Object *pObject);             /* Ov027_UpdateCharacterObject */
 extern void  Ov027_DrawHintText(void);                             /* Ov027_DrawHintText */
-extern Ov027SessionTable *Session_GetSlotTable(void);        /* Session_GetSlotTable */
+extern Ov027SessionTable *Session_GetSetup(void);
 extern void  Ov027_DrawSignInPanel(Ov027Scene *pScene);               /* Ov027_DrawSignInPanel */
 extern void  Camera_CommitMatrices(Ov027Camera *pCamera);                  /* Camera_Commit */
 extern void *Ov027_GameOverMenu(void);                             /* Ov027_GameOverMenu */
@@ -170,7 +170,7 @@ void *Ov027_GameOverFadeIn(void)
         Ov027_BlinkPanelSlot(data_ov027_02084364->nCursor);
         Ov027_UpdateFlushForward(&pScene->character);
         Ov027_DrawHintText();
-    } else if (Session_GetSlotTable()->nState != 1) {
+    } else if (Session_GetSetup()->nState != 1) {
         Ov027_DrawSignInPanel(data_ov027_02084364);
     }
     Camera_CommitMatrices(&pScene->camera);

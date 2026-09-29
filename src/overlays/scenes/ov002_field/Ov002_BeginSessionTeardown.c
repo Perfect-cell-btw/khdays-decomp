@@ -20,7 +20,7 @@ void Ov002_BeginSessionTeardown(void) {
     *(unsigned char *)(root + 0x8b68) |= 0x10;
 
     if (data_0204c240 & 4) {
-        Callbacks_SetByte(0);
+        PauseMenu_SetMode(0);
     }
     PauseMenu_SetAllowed(0);
 }

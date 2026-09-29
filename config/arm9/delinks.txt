@@ -3088,7 +3088,7 @@ libs/nns/g2d/auto/GetGlyphIndex.c:
     complete
     .text       start:0x020135e8 end:0x020136b0
 
-libs/nns/g2d/calls/StreamReader_InitU16.c:
+libs/nns/g2d/calls/NNS_G2dFontInitUTF16.c:
     complete
     .text       start:0x020136b0 end:0x020136d4
 
@@ -3168,7 +3168,7 @@ libs/nitro/nns/calls/func_020145c0.c:
     complete
     .text       start:0x020145c0 end:0x02014720
 
-libs/nitro/nns/calls/func_02014720.c:
+libs/nitro/nns/calls/NNSi_G2dGetUnpackedFont.c:
     complete
     .text       start:0x02014720 end:0x02014874
 
@@ -3180,7 +3180,7 @@ libs/nns/g2d/calls/NNSi_G2dBitReaderRead.c:
     complete
     .text       start:0x02014950 end:0x020149b0
 
-libs/nns/g2d/auto/Stream_ReadU16.c:
+libs/nns/g2d/auto/NNSi_G2dSplitCharUTF16.c:
     complete
     .text       start:0x020149b0 end:0x020149c4
 
@@ -4624,7 +4624,7 @@ src/engine/Callbacks_Run.c:
     complete
     .text       start:0x020208a4 end:0x020208d0
 
-src/engine/Callbacks_SetByte.c:
+src/engine/PauseMenu_SetMode.c:
     complete
     .text       start:0x020208d0 end:0x020208e0
 
@@ -5496,7 +5496,7 @@ src/engine/Archive_GetMember.c:
     complete
     .text       start:0x020255d4 end:0x020255f0
 
-src/engine/ForwardType7RecordSpan.c:
+src/engine/ModelArchive_DropTextureImage.c:
     complete
     .text       start:0x020255f0 end:0x02025640
 
@@ -6116,7 +6116,7 @@ src/engine/GetTrackEntryBase.c:
     complete
     .text       start:0x0202bfa0 end:0x0202bfb8
 
-src/engine/EntityMgr_GetResourceCount.c:
+src/engine/EntityMgr_GetModelGroupCount.c:
     complete
     .text       start:0x0202bfb8 end:0x0202bfcc
 
@@ -6788,7 +6788,7 @@ src/engine/Slot4_GetIfOccupied.c:
     complete
     .text       start:0x020315c0 end:0x020315f4
 
-src/engine/Session_GetSlotTable.c:
+src/engine/Session_GetSetup.c:
     complete
     .text       start:0x020315f4 end:0x02031600
 
@@ -7456,15 +7456,15 @@ src/engine/PartyState_CopyEquipTables.c:
     complete
     .text       start:0x02035cac end:0x02035d04
 
-src/engine/IsArgEqualGlobalHalf4.c:
+src/engine/PartyState_IsHoldingItem.c:
     complete
     .text       start:0x02035d04 end:0x02035d18
 
-src/engine/PartyState_SetInteraction.c:
+src/engine/PartyState_SetHeldItem.c:
     complete
     .text       start:0x02035d18 end:0x02035d30
 
-src/engine/ClearGlobalShort4.c:
+src/engine/PartyState_ClearHeldItem.c:
     complete
     .text       start:0x02035d30 end:0x02035d3c
 

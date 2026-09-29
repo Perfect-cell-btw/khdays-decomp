@@ -1,6 +1,6 @@
 /* Ov015_SpotAssignPlayer -- Ov015_SpotAssignPlayer: the spot's assign message.  When the
- * player's actor (01fffde0 of the message byte) is in interaction state 0xc (ov022
- * 020ad61c) that state is cleared (020ad5f4), the player is recorded in the class table
+ * party holds item 0xc (Ov022_IsHoldingItem, for the player's actor, 01fffde0 of the message
+ * byte) the item is dropped (Ov022_SetHeldItem), the player is recorded in the class table
  * (+0x180), the owner pickup dropped (+0x54) and the nearest free entry of the spot's kind
  * table searched from the target (+0x30) within 0x400000 (02080884).  Without one the
  * rejected callback (+0x50) fires; otherwise the entry becomes current (+0x179), the
@@ -39,8 +39,8 @@ typedef struct Ov015Spot {
     void *pOwner;             /* 0x54 */
 } Ov015Spot;
 
-extern int  Ov022_ForwardArg1(void *pActor, int nState);                 /* actor in interaction state */
-extern void func_ov022_020ad5f4(void *pActor, u16 nState, int bOn);        /* set / clear an interaction state */
+extern int  Ov022_IsHoldingItem(void *pActor, int nState);                 /* the party holds the item */
+extern void Ov022_SetHeldItem(void *pActor, u16 nState, int bOn);        /* hold / drop an item */
 extern int  Ov015_SpotDefFindNearestFreeEntry(Ov015Spot *pSpot, Ov015SpotDef *pDef, VecFx32 *pFrom, u32 nTable, int nRange, u16 *pVisited, int nDepth); /* nearest free entry */
 
 int Ov015_SpotAssignPlayer(Ov015Spot *pSpot, u8 *pMessage, int nArg2, int nArg3)
@@ -52,8 +52,8 @@ int Ov015_SpotAssignPlayer(Ov015Spot *pSpot, u8 *pMessage, int nArg2, int nArg3)
 
     pDef = pSpot->pDef;
     pPlayer = (Ov015PlayerActor *)GetEntryField20ByIndex(*pMessage);
-    if (Ov022_ForwardArg1(pPlayer, 0xc) != 0) {
-        func_ov022_020ad5f4(pPlayer, 0xc, 0);
+    if (Ov022_IsHoldingItem(pPlayer, 0xc) != 0) {
+        Ov022_SetHeldItem(pPlayer, 0xc, 0);
         pDef->nPlayer = *pMessage;
         pSpot->pOwner = 0;
         nVisited = 0;

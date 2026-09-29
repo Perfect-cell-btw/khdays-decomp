@@ -7,7 +7,7 @@
 
 extern int QueryActiveStateOrDelegate(void);                         /* the local peer */
 extern void *GetEntryField20ByIndex(int nPlayer);                /* the player's actor */
-extern int Ov022_ForwardArg1(void *pActor, int nState); /* the actor is in interaction state nState */
+extern int Ov022_IsHoldingItem(void *pActor, int nState); /* the party holds the item */
 
 typedef struct Ov015Spot {
     u8  pad_00[0x1c];
@@ -20,7 +20,7 @@ typedef struct Ov015Spot {
 int Ov015_SpotFacingForInteraction(Ov015Spot *pSpot)
 {
     if (pSpot->nFlags & 2) {
-        if (Ov022_ForwardArg1(GetEntryField20ByIndex(QueryActiveStateOrDelegate()), 0xc)) {
+        if (Ov022_IsHoldingItem(GetEntryField20ByIndex(QueryActiveStateOrDelegate()), 0xc)) {
             return pSpot->nFacing;
         }
     }

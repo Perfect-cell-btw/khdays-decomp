@@ -83,7 +83,7 @@ extern void NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern int Session_GetLocalPlayerIndex(void);
 extern int Session_IsReady(void);
 extern int GameState_GetField(int a, int b);
-extern void Callbacks_SetByte(int a);
+extern void PauseMenu_SetMode(int a);
 extern void PauseMenu_SetAllowed(int a);
 extern void PlaySound(int a, int b);
 extern int QueryActiveStateOrDelegate(void);
@@ -212,7 +212,7 @@ void *Ov002_SessionTick(void)
             if ((data_0204c240 & 4) == 0) {
                 Ov002_SetSessionBusy(1);
             } else {
-                Callbacks_SetByte(0);
+                PauseMenu_SetMode(0);
             }
             PauseMenu_SetAllowed(0);
             Ov002_SetSessionActive(1, pSess->nSlotByte);
@@ -225,7 +225,7 @@ void *Ov002_SessionTick(void)
         if (pPeer->nReady >= 0) {
             pSess->nFlags &= ~0x100;
             if ((data_0204c240 & 4) != 0) {
-                Callbacks_SetByte(0);
+                PauseMenu_SetMode(0);
             }
             Ov002_SetSessionActive(1, 0xff);
             Ov002_ResetAllSlots();
@@ -240,7 +240,7 @@ void *Ov002_SessionTick(void)
                 return 0;
             }
             if ((data_0204c240 & 4) != 0) {
-                Callbacks_SetByte(0);
+                PauseMenu_SetMode(0);
             }
             PauseMenu_SetAllowed(0);
             if ((data_0204c240 & 4) == 0) {

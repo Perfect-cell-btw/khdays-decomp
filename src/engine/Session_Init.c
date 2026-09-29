@@ -1,7 +1,7 @@
 #pragma thumb on
 /* Session_Init -- set up the shared session context, MAIN. The context lives at the base of the
  * current root heap and is published in data_0204c228. It copies the session id from the source
- * block (Session_GetSlotTable is misnamed); in a connected session (Session_IsActive) it
+ * block (Session_GetSetup is misnamed); in a connected session (Session_IsActive) it
  * takes the member mask (+0xc), registers the source's +0x8 (Rng_Seed) and stores the own
  * index (+0x20), otherwise the mask is just member 0. A 32-bit LCG (MATH_InitRand32) is seeded
  * from RandNextScaled(-1), two handles are opened (InstantiateClass), the member mask is compacted
@@ -26,7 +26,7 @@ static inline void MATH_InitRand32(MATHRandContext32 *context, u64 seed)
 
 typedef struct SessionSource {
     int id;                             /* +0x00 */
-    int pad04;
+    int slotCount;
     int key;                            /* +0x08 */
     u16 memberMask;                     /* +0x0c */
 } SessionSource;
@@ -62,7 +62,7 @@ void *Session_Init(void)
     int pos;
 
     data_0204c228 = ctx;
-    src = (SessionSource *)Session_GetSlotTable();
+    src = (SessionSource *)Session_GetSetup();
     ctx->id = src->id;
     if (Session_IsActive() != 0) {
         ctx->memberMask = src->memberMask;

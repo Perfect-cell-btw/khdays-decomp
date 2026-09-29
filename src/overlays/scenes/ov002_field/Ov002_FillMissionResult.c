@@ -127,7 +127,7 @@ void Ov002_FillMissionResult(void)
         }
     }
 
-    ClearGlobalShort4();
+    PartyState_ClearHeldItem();
     nSeat = Session_GetLocalPlayerIndex();
     nCount = 0;
     pSlot = pRep;

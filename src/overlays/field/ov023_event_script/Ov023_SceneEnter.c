@@ -37,7 +37,7 @@ void *Ov023_SceneEnter(Ov023SceneRequest *pRequest)
     Ov023SceneContext *pContext;
 
     pContext = NNSi_FndGetCurrentRootHeap();
-    Session_GetSlotTable();
+    Session_GetSetup();
     data_ov023_0208a780 = pContext;
     pContext->nStatus = 1;
     strcpy(&args, pRequest);

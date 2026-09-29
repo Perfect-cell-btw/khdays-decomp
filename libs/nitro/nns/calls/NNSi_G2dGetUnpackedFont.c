@@ -1,3 +1,6 @@
+/* NitroSystem: checks an NFTR font file (version 1.1, or 1.0 with its glyph flags cleared),
+ * relocates it in place and returns its FINF font information in *ppRes; FALSE without a FINF
+ * block, and OS_Terminate for a file that is not a font. */
 
 #include "nitro/types.h"
 
@@ -67,7 +70,7 @@ static inline BOOL NNS_G2dIsBinFileValid(
     return FALSE;
 }
 
-BOOL func_02014720(void *pNftrFile, NNSG2dFontInformation **ppRes)
+BOOL NNSi_G2dGetUnpackedFont(void *pNftrFile, NNSG2dFontInformation **ppRes)
 {
     BOOL isOldVer = FALSE;
 

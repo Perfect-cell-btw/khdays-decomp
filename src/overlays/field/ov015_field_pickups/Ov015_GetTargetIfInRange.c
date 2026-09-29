@@ -3,7 +3,7 @@
 #include "nitro/types.h"
 #include "game/engine.h"
 
-int Ov022_ForwardArg1(int arg0, int arg1);
+int Ov022_IsHoldingItem(int arg0, int arg1);
 
 typedef struct {
     u8 pad_00[0x1c];
@@ -16,7 +16,7 @@ void *Ov015_GetTargetIfInRange(Obj_ov015_0208075c *obj)
 {
     if (obj->flags_40 & 2)
     {
-        if (Ov022_ForwardArg1(GetEntryField20ByIndex(QueryActiveStateOrDelegate()), 0xc))
+        if (Ov022_IsHoldingItem(GetEntryField20ByIndex(QueryActiveStateOrDelegate()), 0xc))
             return obj->field_1c;
     }
 

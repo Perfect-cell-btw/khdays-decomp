@@ -20,7 +20,7 @@ typedef struct Ov022ActionContext {
 extern void Ov022_DriveOwnedSound(Ov022Actor *actor, int parameter,
                                 int amount, int enabled);
 extern int func_ov022_020882f8(void);
-extern int Ov022_ForwardArg1(Ov022Actor *actor, int amount);
+extern int Ov022_IsHoldingItem(Ov022Actor *actor, int amount);
 
 u32 Ov022_ApplyActorAction(Ov022ActionContext *context, int parameter,
                         int action, int amount) {
@@ -68,7 +68,7 @@ dispatch:
     case 13:
         if (func_ov022_020882f8() > 0) {
             do {
-                if (Ov022_ForwardArg1((Ov022Actor *)GetEntryField20ByIndex(i), amount) != 0) {
+                if (Ov022_IsHoldingItem((Ov022Actor *)GetEntryField20ByIndex(i), amount) != 0) {
                     result = 0;
                     goto done;
                 }

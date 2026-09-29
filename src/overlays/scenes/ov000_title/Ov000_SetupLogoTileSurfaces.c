@@ -31,7 +31,7 @@ extern const TileSurfaceCfg data_ov000_0205a8ac;
 extern const u8 data_ov000_0205ab38[];
 extern Ov000LogoSceneContext *volatile data_ov000_0205ac28;
 
-extern void StreamReader_InitU16(void *resource, void *sharedResource);
+extern void NNS_G2dFontInitUTF16(void *resource, void *sharedResource);
 extern void Ov000_InitResourceRecord(void *object, const void *config);
 extern void *G2S_GetBG3ScrPtr(void);
 extern void MIi_CpuClearFast(int value, void *destination, u32 size);
@@ -43,7 +43,7 @@ void Ov000_SetupLogoTileSurfaces(void) {
     TileSurfaceCfg config1 = data_ov000_0205a884;
     TileSurfaceCfg config0 = data_ov000_0205a8ac;
 
-    StreamReader_InitU16(context->resourceStorage, context->resource);
+    NNS_G2dFontInitUTF16(context->resourceStorage, context->resource);
     Ov000_InitResourceRecord(data_ov000_0205ac28->variantObject,
                         data_ov000_0205ab38);
     MIi_CpuClearFast(0, G2S_GetBG3ScrPtr(), 0x800);

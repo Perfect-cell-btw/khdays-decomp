@@ -38,7 +38,7 @@ extern unsigned char data_0204c240;
 extern char data_02042748[];            /* "pause_refresh" */
 
 extern int GameState_IsFlagSet(int flag);                 /* GameState_IsFlagSet */
-extern void Callbacks_SetByte(int step);
+extern void PauseMenu_SetMode(int step);
 extern int LoadGlobalU16At0(void);
 extern void *G2_GetBG3ScrPtr(void);
 extern void *G2_GetBG2ScrPtr(void);
@@ -98,7 +98,7 @@ void PauseMenu_Open(void)
     int i;
 
     if (data_0204bd85 == 0 && GameState_IsFlagSet(0x20ef) == 0) {
-        Callbacks_SetByte(0);
+        PauseMenu_SetMode(0);
         return;
     }
     if (ctx->openDelay == 0) {

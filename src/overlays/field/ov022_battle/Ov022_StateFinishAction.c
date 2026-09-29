@@ -9,8 +9,8 @@ typedef void *(*Ov022StateCallback)(void);
 typedef struct Ov022Context {
     u16 flags;
     char pad_0002[0x1a];
-    int viewX;
-    int viewY;
+    int brightnessMain;
+    int brightnessSub;
     char pad_0024[0x1a];
     s8 state;
 } Ov022Context;
@@ -49,14 +49,14 @@ Ov022StateCallback Ov022_StateFinishAction(void)
             completed = 1;
         }
     } else {
-        context->viewX += GetFrameRateMode() == 1 ? 0x3000 : 0x2000;
-        if (context->viewX >= 0) {
-            context->viewX = 0;
+        context->brightnessMain += GetFrameRateMode() == 1 ? 0x3000 : 0x2000;
+        if (context->brightnessMain >= 0) {
+            context->brightnessMain = 0;
             completed = 1;
         }
-        context->viewY = context->viewX;
-        SetMasterBrightnessMain(context->viewX >> 12);
-        SetMasterBrightnessSub(context->viewY >> 12);
+        context->brightnessSub = context->brightnessMain;
+        SetMasterBrightnessMain(context->brightnessMain >> 12);
+        SetMasterBrightnessSub(context->brightnessSub >> 12);
     }
 
     if (completed != 0) {

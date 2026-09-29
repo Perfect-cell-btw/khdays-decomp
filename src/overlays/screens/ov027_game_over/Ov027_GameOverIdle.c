@@ -131,7 +131,7 @@ extern void  SetMasterBrightnessSub(int nBrightness);                        /* 
 extern void  Ov027_SetFlag4(int nArg);                         /* Ov027_SetLeaving */
 extern void *Ov027_ConstReturn0(void);                             /* the terminal state */
 extern void *Ov027_GameOverFadeOut(void);                             /* Ov027_GameOverFadeOut */
-extern Ov027SessionTable *Session_GetSlotTable(void);        /* Session_GetSlotTable */
+extern Ov027SessionTable *Session_GetSetup(void);
 extern void  Ov027_DrawSignInPanel(Ov027Scene *pScene);               /* Ov027_DrawSignInPanel */
 extern void  Ov027_UpdateModels(void);                             /* Ov027_UpdateModels */
 extern void  Camera_CommitMatrices(Ov027Camera *pCamera);                  /* Camera_Commit */
@@ -174,7 +174,7 @@ void *Ov027_GameOverIdle(void)
     }
     SetMasterBrightnessMain(pScene->nBrightness);
     SetMasterBrightnessSub(pScene->nBrightness);
-    if (Session_GetSlotTable()->nState != 1) {
+    if (Session_GetSetup()->nState != 1) {
         Ov027_DrawSignInPanel(data_ov027_02084364);
     }
     Ov027_UpdateModels();

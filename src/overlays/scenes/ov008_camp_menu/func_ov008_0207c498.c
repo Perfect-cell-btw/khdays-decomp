@@ -1,4 +1,4 @@
-/* CARDi_GetRomAccessor: returns the address of the ROM accessor routine Ov008_CheckMissionMenuConfirmInput. */
+/* Returns the address of Ov008_CheckMissionMenuConfirmInput. */
 
 extern void Ov008_CheckMissionMenuConfirmInput(void);
 

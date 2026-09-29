@@ -113,7 +113,7 @@ Ov022StateCallback Ov022_StateGameplayHub(void)
         context->flags |= 0x100;
         PauseMenu_SetAllowed(0);
         if ((data_0204c240 & 4) != 0) {
-            Callbacks_SetByte(0);
+            PauseMenu_SetMode(0);
         }
         context->flags |= 0x10;
         if ((data_0204c240 & 4) == 0) {

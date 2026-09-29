@@ -55,7 +55,7 @@ extern void *Ov022_ActorSetState(struct Actor *pActor, int nState);
 extern void *Ov022_StepChargeSequence(struct Actor *pActor);
 extern void Ov022_EnterState0E(struct Actor *pActor);
 extern void Ov022_StepDownedState(void);
-extern void Callbacks_SetByte(int nArg);
+extern void PauseMenu_SetMode(int nArg);
 extern void PauseMenu_SetAllowed(int nArg);
 extern void Ov022_CopyBlock2c00(struct Actor *pActor);
 extern void *Ov022_ResolveGuardBreakState(struct Actor *pActor);
@@ -134,7 +134,7 @@ void *Ov022_SelectForcedState(struct Actor *pActor)
                 && pActor->bDeathHandled == 0) {
                 pNext = Ov022_ActorSetState(pActor, 0x10);
                 if (pActor->nOwner == Session_GetLocalPlayerIndex()) {
-                    Callbacks_SetByte(0);
+                    PauseMenu_SetMode(0);
                     PauseMenu_SetAllowed(0);
                 }
             }

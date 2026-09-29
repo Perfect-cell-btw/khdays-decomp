@@ -2,7 +2,7 @@ extern char *NNSi_FndGetCurrentRootHeap(void);
 extern int LoadGlobalU16At0(void);
 extern void setDualArrayEntry(int engine, void *handler, int a);
 extern void Pause_LoadResources(void);
-extern int *Session_GetSlotTable(void);
+extern int *Session_GetSetup(void);
 extern void StoreGlobalPtrArray4At0c(int slot, void *handler);
 extern void Game_EnterPauseScene(void);
 extern void PauseMenu_Frame(void);
@@ -29,7 +29,7 @@ void *Boot3DSubsystem(void) {
         setDualArrayEntry(2, (void *)&Scene_Leave, 0);
     }
     Pause_LoadResources();
-    if (*Session_GetSlotTable() != 1) {
+    if (*Session_GetSetup() != 1) {
         *(unsigned short *)&data_0204be08 = 0;
         StoreGlobalPtrArray4At0c(0x11, (void *)&GameConfig_Load);
         if ((LoadGlobalU16At0() & 2) == 0) {

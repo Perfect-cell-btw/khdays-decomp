@@ -1,4 +1,4 @@
-/* Returns the pause mode the main loop runs in (data_0204bd84, set by Callbacks_SetByte):
+/* Returns the pause mode the main loop runs in (data_0204bd84, set by PauseMenu_SetMode):
  * 0 = objects update, 1 = only the pause callbacks run, 2 = both. */
 
 extern int data_0204bd84;

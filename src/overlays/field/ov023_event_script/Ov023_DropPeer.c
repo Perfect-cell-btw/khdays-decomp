@@ -9,7 +9,7 @@ extern char *data_ov023_0208a784;
  * the roster and republishes the lobby. */
 void Ov023_DropPeer(int peer) {
     int state;
-    if (EntityMgr_GetResourceCount() <= peer) {
+    if (EntityMgr_GetModelGroupCount() <= peer) {
         return;
     }
     state = *(int *)((&data_ov023_0208a784)[1] + 0x875e4);

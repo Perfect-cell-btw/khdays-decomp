@@ -142,7 +142,7 @@ typedef struct Ov027GameInfo {
 typedef void *(*Ov027StateFn)(void);
 
 extern Ov027Scene *NNSi_FndGetCurrentRootHeap(void);                /* the current scene work */
-extern Ov027SessionTable *Session_GetSlotTable(void);   /* Session_GetSlotTable */
+extern Ov027SessionTable *Session_GetSetup(void);
 extern int   Ov027_IsMissionMode5Active(void);                             /* Ov027_HasRetryPrompt */
 extern void *Msg_OpenContainerAndReadHeader(const char *pszName, int nHeap);         /* open an archive */
 extern void  Ov027_LoadCharacterModels(void);                             /* Ov027_LoadCharacterModels */
@@ -165,7 +165,7 @@ Ov027StateFn Ov027_InitScene(void)
     int i;
 
     pScene = NNSi_FndGetCurrentRootHeap();
-    Session_GetSlotTable();
+    Session_GetSetup();
     data_ov027_02084364 = pScene;
     if (data_0204c4d8.nGameOvers < 5) {
         data_0204c4d8.nGameOvers++;
@@ -191,7 +191,7 @@ Ov027StateFn Ov027_InitScene(void)
     Ov027_InitHintText();
     if (!(data_0204c240.nBits & 4)) {
         Ov027_InitCharacterObject(&pScene->character);
-    } else if (Session_GetSlotTable()->nState != 1) {
+    } else if (Session_GetSetup()->nState != 1) {
         Ov027_LoadGraphics(data_ov027_02084364);
     }
     return Ov027_ClearHeapBusyOrRetry;

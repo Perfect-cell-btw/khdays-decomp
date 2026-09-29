@@ -9,7 +9,7 @@ extern u8 data_0204c240;
 extern int Ov002_GetRootField8b68Alt(void);
 extern int GameState_IsFlagSet(int nCue);
 extern void Obj_SetField14(int nHandle, void (*pfnStep)(void));
-extern void Callbacks_SetByte(int nValue);
+extern void PauseMenu_SetMode(int nValue);
 extern void PauseMenu_SetAllowed(int nValue);
 extern void Ov002_SessionTick(void);
 
@@ -44,7 +44,7 @@ void Ov002_PauseMissionScene(void)
     *(int *)(pCtx + 0x8b64) |= 1;
     *(u8 *)(pCtx + 0x8b68) |= 0x10;
     if ((data_0204c240 & 4) != 0) {
-        Callbacks_SetByte(0);
+        PauseMenu_SetMode(0);
     }
     PauseMenu_SetAllowed(0);
 }

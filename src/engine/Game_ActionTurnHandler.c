@@ -1,16 +1,16 @@
 /*
- * Game_ActionTurnHandler - action-slot handler for a "turn" command; one of the two cancel
- * sentinels the action system recognises by address (see Game_UnwindActionStack /
- * Game_RunActionScript). param_1 is the action-system state, param_2 the turn angle.
+ * Game_ActionTurnHandler - two-phase action-slot handler; one of the two sentinels the action
+ * system recognises by address (see Game_UnwindActionStack / Game_RunActionScript). param_1 is
+ * the action-system state, param_2 an entity index -- not an angle, as this name once assumed:
+ * the same two phases as Ov023_CmdActorSpeak.
  *
- * A negative angle is the cancel/finish path: -0x63 is normalised to 0, the residual angle is
- * released via EntityMgr_DropTextureImage((-angle) & 0xffff), and it returns 1 (slot done). Otherwise, when the
- * controlled actor is still active (Obj_IsIdFree on the actor at *(*(state+0x128)+0x28)+0xc), it
- * fires the turn effect TailForwardTrackEntry_2(angle, actor, 0, 0) and applies the rotation via
- * Slot48_StoreAtCurrentIndex(state, -angle) - using -0x63 as the marker when the angle is 0 - and returns 0
- * (keep the slot). If the actor is inactive it just returns 0.
+ * Phase one (param_2 >= 0): once the event block's resource (*(state+0x128)+0x28, handle at
+ * +0xc) is ready (Obj_IsIdFree), it is handed to entity param_2 (TailForwardTrackEntry_2 ->
+ * Actor_StartMotion) and the slot is re-queued with -param_2 (-0x63 standing for entity 0,
+ * Slot48_StoreAtCurrentIndex); returns 0 (keep the slot). Phase two (negative): the entity's
+ * texture image is dropped from main memory (EntityMgr_DropTextureImage) and it returns 1.
  *
- * THUMB. The angle is signed (branch-if-negative selects the cancel path); the -0x63 sentinel is
+ * THUMB. The index is signed (branch-if-negative selects phase two); the -0x63 sentinel is
  * built with mvns (~0x62); the two Slot48_StoreAtCurrentIndex calls share the return-0 tail.
  */
 

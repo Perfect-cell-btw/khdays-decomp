@@ -9,8 +9,8 @@ typedef void *(*Ov022StateCallback)(void);
 typedef struct Ov022Context {
     u16 flags;
     char pad_0002[0x1a];
-    int viewX;
-    int viewY;
+    int brightnessMain;
+    int brightnessSub;
     char pad_0024[0x1a];
     s8 state;
 } Ov022Context;
@@ -38,17 +38,17 @@ Ov022StateCallback Ov022_StateAdvanceAfterPause(void)
             next = Ov022_EndKeySharingSession;
         }
     } else {
-        context->viewX -= GetFrameRateMode() == 1 ? 0x3000 : 0x2000;
-        context->viewY -= GetFrameRateMode() == 1 ? 0x3000 : 0x2000;
+        context->brightnessMain -= GetFrameRateMode() == 1 ? 0x3000 : 0x2000;
+        context->brightnessSub -= GetFrameRateMode() == 1 ? 0x3000 : 0x2000;
 
         u8 completed = 0;
 
-        if (context->viewX <= -0x10000) {
-            context->viewX = -0x10000;
+        if (context->brightnessMain <= -0x10000) {
+            context->brightnessMain = -0x10000;
             completed++;
         }
-        if (context->viewY <= -0x10000) {
-            context->viewY = -0x10000;
+        if (context->brightnessSub <= -0x10000) {
+            context->brightnessSub = -0x10000;
             completed++;
         }
 
@@ -57,8 +57,8 @@ Ov022StateCallback Ov022_StateAdvanceAfterPause(void)
             next = Ov022_EndKeySharingSession;
         }
 
-        SetMasterBrightnessMain(context->viewX >> 12);
-        SetMasterBrightnessSub(context->viewY >> 12);
+        SetMasterBrightnessMain(context->brightnessMain >> 12);
+        SetMasterBrightnessSub(context->brightnessSub >> 12);
     }
 
     return next;

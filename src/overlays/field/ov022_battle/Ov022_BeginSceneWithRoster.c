@@ -20,8 +20,8 @@ typedef struct Ov022Context {
     char pad_0002[6];
     void *slots[3];
     void *childObjects[2];
-    int viewX;
-    int viewY;
+    int brightnessMain;
+    int brightnessSub;
     char pad_0024[8];
     void *externalObject;
     int value;
@@ -55,8 +55,8 @@ Ov022StateCallback Ov022_BeginSceneWithRoster(Ov022InitArgs *args)
 
     context = NNSi_FndGetCurrentRootHeap();
     data_ov022_020b2e60 = context;
-    context->viewX = (int)0xffff0000;
-    context->viewY = (int)0xffff0000;
+    context->brightnessMain = (int)0xffff0000;
+    context->brightnessSub = (int)0xffff0000;
     context->kind = (s8)args->kind;
     context->externalObject = args->externalObject;
     context->x = args->x;

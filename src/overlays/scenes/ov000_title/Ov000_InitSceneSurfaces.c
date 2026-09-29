@@ -44,7 +44,7 @@ extern u8 data_ov000_0205abbc[];
 extern Ov000SharedContext *data_ov000_0205ac3c;
 extern Ov000SceneContext *NNSi_FndGetCurrentRootHeap(void);
 extern void Ov000_InitResourceRecord(void *object, const void *config);
-extern void StreamReader_InitU16(void *resource, void *shared_resource);
+extern void NNS_G2dFontInitUTF16(void *resource, void *shared_resource);
 extern void *Ov000_GetVarRecordByIndex(void *object, int variant);
 
 void Ov000_InitSceneSurfaces(void) {
@@ -52,7 +52,7 @@ void Ov000_InitSceneSurfaces(void) {
     Ov000SceneContext *context = NNSi_FndGetCurrentRootHeap();
 
     Ov000_InitResourceRecord(context->object_0088, data_ov000_0205abbc);
-    StreamReader_InitU16(context->resource_9658,
+    NNS_G2dFontInitUTF16(context->resource_9658,
                   data_ov000_0205ac3c->resource_9660);
 
     config.pPixels = context->resource_9658;

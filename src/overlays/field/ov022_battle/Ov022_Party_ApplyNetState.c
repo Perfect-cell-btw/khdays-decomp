@@ -100,7 +100,7 @@ extern void func_ov022_020a0678(Ov022Actor *actor, int value);
 int Ov022_Party_ApplyNetState(void)
 {
     Ov022Root *root = *(Ov022Root **)(data_ov022_020b2e78 + 4);
-    int cardResult;
+    int modelGroupCount;
     char *resource;
     Ov022Actor *searchActor;
     int searchIndex;
@@ -121,7 +121,7 @@ int Ov022_Party_ApplyNetState(void)
         return 0;
     }
 
-    cardResult = EntityMgr_GetResourceCount();
+    modelGroupCount = EntityMgr_GetModelGroupCount();
     resource = (char *)Ov022_GetGlobalPlus14_2();
     if (*(unsigned char *)(resource + 0xc0) == 0) {
         List_TryInvokeEntry(0);
@@ -201,7 +201,7 @@ int Ov022_Party_ApplyNetState(void)
                     (unsigned int)(record->packed26 << 20) >> 29;
             }
 
-            if (packedClass < cardResult) {
+            if (packedClass < modelGroupCount) {
                 if (index == (unsigned int)QueryActiveStateOrDelegate()) {
                     root->stateBits3c.bit4 =
                         ((Ov022PackedWord *)&record->packed28)->bit24;
