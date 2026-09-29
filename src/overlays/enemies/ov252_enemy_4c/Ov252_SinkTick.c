@@ -16,7 +16,7 @@ struct Shapes4e8 { char pad[0x4e8]; int shape[7]; };
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Ov252_TurnVecY(VecFx32 *out, int angle, void *base);
+extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
@@ -44,7 +44,7 @@ void Ov252_SinkTick(int *node)
         *((u8 *)state + 0x88) = 1;
     }
     if (*(int *)(state[2] + 4) > -*(int *)(*state + 0x80) * 4) {
-        Ov252_TurnVecY(&v, state[0x15], (void *)(*(int *)(*state + 0x574) + 0x2c));
+        v = Ov252_TurnVecY(state[0x15], (void *)(*(int *)(*state + 0x574) + 0x2c));
         *(VecFx32 *)(state + 3) = v;
     } else {
         spawn = data_ov252_020d4350;

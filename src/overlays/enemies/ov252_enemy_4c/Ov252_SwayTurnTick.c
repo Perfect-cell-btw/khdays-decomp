@@ -10,7 +10,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 
-extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
+extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern u8 Ov252_TurnSide(int *state, VecFx32 v);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
@@ -31,7 +31,7 @@ void Ov252_SwayTurnTick(int *node)
     int actor;
 
     state[0x19] += *(int *)(node[0] + 0x2c);
-    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    v = Ov252_TurnVecY(state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
     *(VecFx32 *)(state + 3) = v;
     ScaleVec3Fx12(state[0x1c] + 0x800, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     switch (*(u8 *)(*state + 0x579)) {

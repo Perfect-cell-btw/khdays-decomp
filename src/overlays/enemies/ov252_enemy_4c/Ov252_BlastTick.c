@@ -14,7 +14,7 @@ extern int Ov252_CheckTarget(int *node, int a, int b);
 extern int Ov252_GuardSweep(int *node);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Ov252_TurnVecY(VecFx32 *v, int angle, VecFx32 *out);
+extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov252_ReboundHitTest(int *state, int kind, Sphere *sphere, int a, int b);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
@@ -43,7 +43,7 @@ void Ov252_BlastTick(int *node)
         {
         VecFx32 fwd = data_ov252_020d438c;
 
-        Ov252_TurnVecY(&fwd, state[0x15], &fwd);
+        fwd = Ov252_TurnVecY(state[0x15], &fwd);
         VEC_Add((VecFx32 *)(*state + 0xb0), &fwd, &blast.pos);
         blast.radius = 0x4800;
         blast.radius = (state[0x19] - 0x990) * 0xa000 / 0x1c28 + 0x4800;

@@ -8,7 +8,7 @@
 extern void Ov252_GuardSweep(int *node);
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
+extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov252_GuardedDriftTick(int *node)
@@ -22,7 +22,7 @@ void Ov252_GuardedDriftTick(int *node)
         Ov107_PostTagUpdate(*state, 0x31, 0);
         Ov107_PostTagUpdate(*state, 0x35, 0);
     }
-    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    v = Ov252_TurnVecY(state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
     *(VecFx32 *)(state + 3) = v;
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;

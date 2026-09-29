@@ -5,7 +5,7 @@
 #include "nitro/fx_types.h"
 
 extern int Ov252_CheckTarget(int *node, int a, int b);
-extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
+extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov252_DriftTick(int *node)
@@ -14,7 +14,7 @@ void Ov252_DriftTick(int *node)
     VecFx32 v;
 
     Ov252_CheckTarget(node, 0, 1);
-    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    v = Ov252_TurnVecY(state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
     *(VecFx32 *)(state + 3) = v;
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;

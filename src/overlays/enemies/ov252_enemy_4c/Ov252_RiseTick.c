@@ -8,7 +8,7 @@
 
 extern void Ov252_GuardSweep(int *node);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
-extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
+extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
@@ -26,7 +26,7 @@ void Ov252_RiseTick(int *node)
         *((unsigned char *)state + 0x89) -= 1;
         Ov107_BuildAndSendUpdate(*state, 0x148, 4, (void *)state[2]);
     }
-    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    v = Ov252_TurnVecY(state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
     ScaleVec3Fx12(0xe00, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     VEC_Add((VecFx32 *)(state + 3), &v, (VecFx32 *)(state + 3));
     if (*(unsigned char *)(state[1] + 0xad) != 0) {

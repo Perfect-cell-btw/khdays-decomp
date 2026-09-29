@@ -10,7 +10,7 @@
 #include "nitro/fx_types.h"
 
 extern void Ov252_GuardSweep(int *node);
-extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
+extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern unsigned int RandNextScaled(int bound);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
@@ -23,7 +23,7 @@ void Ov252_HoverTick_2(int *node)
     VecFx32 v;
 
     Ov252_GuardSweep(node);
-    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    v = Ov252_TurnVecY(state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
     *(VecFx32 *)(state + 3) = v;
     if (*((unsigned char *)state + 0x88) == 3) {
         Ov252_CheckTarget(node, 0, 1);

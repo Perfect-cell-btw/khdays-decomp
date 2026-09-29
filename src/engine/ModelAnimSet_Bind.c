@@ -5,7 +5,12 @@
  * instance's resource model (NNS_G3dAllocAnmObj with the default allocator) and initialised
  * (NNS_G3dAnmObjInit); group 3 (texture pattern) also gets the texture set of the instance's
  * resource list. The per-group counts and `texSrc` are recorded in the set. Codegen: each loop
- * keeps its own block-scoped count `n`; one function-scope `n` swaps the third loop's n/anm registers. */
+ * keeps its own block-scoped count `n`; one function-scope `n` swaps the third loop's n/anm registers.
+ *
+ * The ROM returns `texSrc`: it reloads it into r0 for the last store (`ldr r0,[sp,#4]; strh
+ * r0,[fp,#0xa]`, 0x0202a378) and leaves it there, and Resource_BindFileToSlot returns that r0 as
+ * its own result. The C cannot say so: declared `int` with `return texSrc;` (or any spelling of
+ * it, measured) mwcc copies the value to r1 for the halfword store, 4 bytes more. */
 
 #include "nitro/types.h"
 

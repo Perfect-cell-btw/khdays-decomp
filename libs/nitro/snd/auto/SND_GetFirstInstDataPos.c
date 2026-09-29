@@ -1,13 +1,13 @@
-struct S {
-    int a;
-    int b;
-};
+/* SND_GetFirstInstDataPos: the position before a bank's first instrument (program 0, index 0).
+ * The NitroSDK's own form: the struct comes back through the pointer the caller passes in r0. */
 
-void SND_GetFirstInstDataPos(struct S *p)
+#include "nitro/snd.h"
+
+SNDInstPos SND_GetFirstInstDataPos(const SNDBankData *bank)
 {
-    volatile struct S local;
-    p->a = 0;
-    local.a = 0;
-    local.b = 0;
-    p->b = 0;
+    SNDInstPos pos;
+    (void)bank;
+    pos.prgNo = 0;
+    pos.index = 0;
+    return pos;
 }

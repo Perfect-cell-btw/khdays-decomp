@@ -8,7 +8,7 @@
 
 #include "nitro/fx_types.h"
 
-extern void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec);
+extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern unsigned int RandNextScaled(int bound);
 extern int Ov252_DropReward(int *node, int param);
@@ -34,7 +34,7 @@ void Ov252_ShedDriftTick(int *node)
     VecFx32 v;
     int dist;
 
-    Ov252_TurnVecY(&v, state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
+    v = Ov252_TurnVecY(state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
     *(VecFx32 *)(state + 3) = v;
     ScaleVec3Fx12(state[0x1c] + 0x800, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     state[4] = *(int *)(*(int *)(*state + 0x574) + 0x30);

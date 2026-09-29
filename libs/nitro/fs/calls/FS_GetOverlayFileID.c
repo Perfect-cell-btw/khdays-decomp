@@ -1,15 +1,14 @@
-/* FS_GetOverlayFileID: fills the two-word info block {&table, overlay->fileId (+0x18)}. */
+/* FS_GetOverlayFileID: the file of an overlay's image, {&fsi_arc_rom, header.file_id}. The
+ * NitroSDK's own form: the struct comes back through the pointer the caller passes in r0. */
 
-typedef struct {
-    int a;
-    int b;
-} FsOverlayInfo;
+#include "nitro/fs.h"
 
-extern int data_02046334;
+extern FSArchive data_02046334;       /* fsi_arc_rom */
 
-void FS_GetOverlayFileID(FsOverlayInfo *dst, int *overlay) {
-    FsOverlayInfo info;
-    info.a = (int)&data_02046334;
-    info.b = overlay[6];
-    *dst = info;
+FSFileID FS_GetOverlayFileID(const FSOverlayInfo *p_ovi)
+{
+    FSFileID ret;
+    ret.arc = &data_02046334;
+    ret.file_id = p_ovi->header.file_id;
+    return ret;
 }

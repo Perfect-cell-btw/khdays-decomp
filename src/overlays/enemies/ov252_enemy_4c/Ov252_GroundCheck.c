@@ -8,7 +8,7 @@
 
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
 
-extern void Ov252_TurnVecY(VecFx32 *v, int angle, VecFx32 *out);
+extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern CollisionHit *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *direction);
 extern const VecFx32 data_ov252_020d435c;
 
@@ -27,7 +27,7 @@ int Ov252_GroundCheck(int *node)
     VecFx32 ray = data_ov252_020d435c;
 
     state[0x1c] = 0;
-    Ov252_TurnVecY(&ray, state[0x15], &ray);
+    ray = Ov252_TurnVecY(state[0x15], &ray);
     hit = Collision_CastRay(*(void **)(item + 0x7c), &pos, &ray);
     if (hit != 0 && hit->c == 0) {
         depth = (int)(((long long)hit->d * ray.y) >> 27);

@@ -1,5 +1,5 @@
 /* Turn `vec` by the fixed-point heading `angle` (Y rotation from the shared trig table), in place,
- * and copy it to *out. Twin of ov256 020cd054. */
+ * and return it. Twin of ov256 020cd054. */
 
 #include "nitro/fx_types.h"
 
@@ -11,7 +11,7 @@ extern const short data_0203d210[];
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec)
+VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec)
 {
     Mtx33 rot;
 
@@ -21,5 +21,5 @@ void Ov252_TurnVecY(VecFx32 *out, int angle, VecFx32 *vec)
         MTX_RotY33_(&rot, data_0203d210[idx], data_0203d210[idx + 1]);
     }
     MTX_MultVec33(vec, &rot, vec);
-    *out = *vec;
+    return *vec;
 }

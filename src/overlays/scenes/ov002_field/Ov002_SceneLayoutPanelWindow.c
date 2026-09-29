@@ -13,33 +13,31 @@
  * ARM.
  */
 
-typedef struct {
-    int nWidth;
-    int nHeight;
-} Ov002TextSize;
+#include "nnsys/g2d.h"
 
 extern int data_ov002_0207f624;
 
-extern void NNSi_G2dFontGetTextRect(Ov002TextSize *pSize, int *pFont, int nOpts,
-                          int nSpacing, int nText);
+extern NNSG2dTextRect NNSi_G2dFontGetTextRect(const NNSG2dFont *pFont, int hSpace, int vSpace,
+                                              const void *txt);
 
 extern int Ov002_Hud_GetBlock30(void);
 extern int Ov002_MeasureActiveEntries(int *pnMax);
 
 int Ov002_SceneLayoutPanelWindow(int *pLayout)
 {
-    Ov002TextSize used;
+    NNSG2dTextRect used;
     int *ctx;
     int nCount;
     int nMax;
-    Ov002TextSize size;
+    NNSG2dTextRect size;
     int n;
 
     ctx = *(int **)&data_ov002_0207f624;
     ctx[0x6c8 / 4] = Ov002_Hud_GetBlock30();
     ctx[0x6f0 / 4] = Ov002_Hud_GetBlock30();
     nCount = Ov002_MeasureActiveEntries(&nMax);
-    NNSi_G2dFontGetTextRect(&size, (int *)ctx[0x6c8 / 4], 0, 3, ctx[0x7c0 / 4]);
+    size = NNSi_G2dFontGetTextRect((const NNSG2dFont *)ctx[0x6c8 / 4], 0, 3,
+                                   (const void *)ctx[0x7c0 / 4]);
 
     used = size;
     if (ctx[0x68c / 4] == 0) {
@@ -48,7 +46,7 @@ int Ov002_SceneLayoutPanelWindow(int *pLayout)
         pLayout[6] = 0x18;
     }
 
-    n = (used.nHeight + 7) / 8;
+    n = (used.height + 7) / 8;
     if (n >= 0x14) {
         n = 0x14;
     }

@@ -27,7 +27,7 @@ extern int func_ov022_02083f0c(void);
 extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov252_CheckTarget(int *node, VecFx32 *to, int b);
 extern int func_020050b4(int x, int y);
-extern void Ov252_TurnVecY(VecFx32 *v, int angle, VecFx32 *out);
+extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern CollisionHit *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *direction);
@@ -134,7 +134,7 @@ void Ov252_FlyerUpdate(int *node)
         VecFx32 aim = data_ov252_020d43b0;
 
         if (Ov252_CheckTarget(node, &toTarget, 0) > 0x20000) {
-            Ov252_TurnVecY(&aim, func_020050b4(*(int *)(*(int *)(*state + 0x4e4) + 0x19c),
+            aim = Ov252_TurnVecY(func_020050b4(*(int *)(*(int *)(*state + 0x4e4) + 0x19c),
                                                     *(int *)(*(int *)(*state + 0x4e4) + 0x1a4)), &aim);
             VEC_Add(&aim, (VecFx32 *)(*(int *)(*state + 0x4e4) + 0x190), &aim);
         } else {
