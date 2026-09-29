@@ -30,7 +30,6 @@
  */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 #define va_start(ap, last) ((ap) = (char *)(&(last) + 1))
 /* Reach a vararg by its offset without keeping a live va_list. Using a held `ap` for these two
@@ -38,6 +37,7 @@
  * mode; folding each one to its own frame offset gives the ROM's `add r0,sp,#0x34`. */
 #define va_at(last, off) (*(VecFx32 *)((char *)&(last) + (off)))
 
+extern void Ov107_MoveNodeAndRelayout(int self, char *ap);
 extern void RefreshObjectCallbacks(int rig, int a);
 extern void Ov223_SetupCharge(int ctx, int mode, VecFx32 a, VecFx32 b);
 
@@ -53,7 +53,7 @@ void Ov223_HandleMessageArgs(int self, int mode, int rest, ...) {
     void (*notify)(int, int);
 
     m = mode;
-    Ov107_MoveNodeAndRelayout((Actor *)self, (VecFx32 *)((char *)&rest));
+    Ov107_MoveNodeAndRelayout(self, (char *)&rest);
 
     /* The hook is captured INSIDE the condition on purpose: as two separate expressions mwcc
      * loads +0xc twice (once predicated for the test, once again for the call). */

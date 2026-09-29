@@ -5,7 +5,6 @@
  * entry 3 of the +0x388 pool, subscribes it and clears its state. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
@@ -15,6 +14,7 @@ extern void Ov179_HandleMessage(void);
 extern void Ov179_SpawnActorRegistryEntry(void);
 extern void Ov179_ReleaseField38cUnlessState1ThenAdvance(void);
 extern void Ov179_Model_ReapplyTracks(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void RefreshObjectCallbacks(int item, int a);
@@ -37,7 +37,7 @@ void Ov179_Construct_2(char *self)
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 3));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 3));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
 }

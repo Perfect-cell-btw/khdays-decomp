@@ -1,15 +1,13 @@
 /* Set anim 5; if the target object (+0x48) exists, aim toward it via VEC_Subtract
  * + func_020050b4 and store the angle at +0x10/+0xc; then dispatch. */
-
-#include "game/enemy_common.h"
-
+extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void VEC_Subtract(const void *a, const void *b, void *out);
 extern int func_020050b4(int a, int b);
 extern int SetIndexedSlot(int a, int b, void *handler);
 extern void Ov159_AiDecelUntilAnimEnd(void);
 void Ov159_AiEnterTurnToTarget(int param_1) {
     int child = *(int *)(param_1 + 4);
-    Ov107_PostTagUpdate((Actor *)(*(int *)child), 5, 0);
+    Ov107_PostTagUpdate(*(int *)child, 5, 0);
     {
         int target = *(int *)(child + 0x48);
         if (target != 0) {

@@ -7,7 +7,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } Srt;
 struct Ov278SlotMap { u8 b[4]; };
@@ -16,7 +15,9 @@ extern int Ov107_CreateNodeXformTaskFx24(int list, int parent, int kind, int a, 
 extern void SrtTransform_SetIdentity(Srt *srt);
 extern void Srt_SetTranslation(Srt *srt, const VecFx32 *t);
 extern int Ov107_CreateNodeXformTask(int owner, int slot, int kind, int a4, const Srt *srt);
+extern void Ov107_ForwardVisibleEvent(char *self, int a2);
 extern int Ov278_SpawnReactionTaskFromHit();
+extern int Ov107_CreateSpawnTask(char *self, int id, int a3, int a4, int xform);
 extern void Ov107_AiState_OnMessage(char *self, u8 *cmd, void *arg3);
 extern const struct Ov278SlotMap data_ov278_020d6230;
 
@@ -55,7 +56,7 @@ void Ov278_HandleMessage(char *self, u8 *cmd, void *arg3)
             *(int *)(*(int *)(self + 0x3b0) + 0x44) = Ov278_SpawnReactionTaskFromHit(self);
             break;
         case 5:
-            *(int *)(self + 0x3c4) = Ov107_CreateSpawnTask((int)self, 0x166, 0xf, 1, (void *)(*(int *)(self + 0x39c) + 4));
+            *(int *)(self + 0x3c4) = Ov107_CreateSpawnTask(self, 0x166, 0xf, 1, *(int *)(self + 0x39c) + 4);
             break;
         }
     }

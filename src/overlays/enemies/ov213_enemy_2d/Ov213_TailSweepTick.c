@@ -9,7 +9,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -25,6 +24,7 @@ typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 extern const VecFx32 data_02042258;
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
+extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
@@ -60,7 +60,7 @@ void Ov213_TailSweepTick(int *node)
         Vec3TransformViaTempMtx(&seg.dir, (void *)(part + 4), &data_02042258);
         seg.nLength = 0x1666;
         seg.nRadius = 0x1000;
-        n = Ov107_CollectSegmentOverlaps((Actor *)(*state), &seg, (void **)hits);
+        n = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
         for (i = 0; i < n; i++) {
             Cmd14 msg;
 

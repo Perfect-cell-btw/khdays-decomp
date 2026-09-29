@@ -11,7 +11,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int w[7]; int radius; } Segment;
 typedef struct { short mode[5]; } Short5;
@@ -28,6 +27,7 @@ struct HitPacket40 {
 };
 
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
+extern int Ov107_CollectSegmentOverlaps(int owner, void *capsule, int *hits);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int RandNextScaled(int bound);
@@ -62,7 +62,7 @@ void Ov258_SwingTick_2(int *node)
 
         seg = *(Segment *)(*(int *)(*state + 0x388) + 0x78);
         seg.radius += 0x1800;
-        n = Ov107_CollectSegmentOverlaps((Actor *)(OwnerOf(*state)), &seg, (void **)hits);
+        n = Ov107_CollectSegmentOverlaps(OwnerOf(*state), &seg, hits);
         i = 0;
         if (n > 0) {
             do {

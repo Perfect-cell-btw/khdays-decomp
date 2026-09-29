@@ -12,7 +12,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -36,6 +35,7 @@ extern void VEC_Subtract(const void *a, const void *b, void *out);
 extern int VEC_Normalize(const void *v, void *out);
 extern long long func_020201b8(long long a, long long b);
 extern void VEC_Add(const void *a, const void *b, void *out);
+extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern const Cmd14 data_ov236_020d63da;
@@ -118,7 +118,7 @@ void Ov236_RollingChargeTick(int *node)
     seg = *(Segment *)(**(int **)(*state + 0x3a4) + 0x78);
     VEC_Add(&seg.p0, state + 6, &seg.p0);
     seg.nRadius *= 3;
-    n = Ov107_CollectSegmentOverlaps((Actor *)(*state), &seg, (void **)hits);
+    n = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
     for (i = 0; i < n; i++) {
         if (((u8 *)state)[0x4c + *(u8 *)(hits[i] + 0x1b4)] != 0) {
             continue;

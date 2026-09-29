@@ -13,7 +13,6 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/ai_task.h"
-#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -68,6 +67,7 @@ extern void Ov293_DecayCopyPosFireOnHitFlag(void);
 extern int Ov107_FindNearestObject(struct Ov293Actor *actor, int mode);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
+extern int Ov107_ActionResource_GetOffsetAndScale(void *resource, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *dst, struct Ov293BoneXform *xfm, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void VEC_Add(void *a, void *b, void *out);
@@ -103,7 +103,7 @@ void Ov293_SwingTick(struct Ov293ActionNode *node)
         VEC_Subtract((char *)state->pTarget04 + 0x190, (char *)state->pOwner + 0xb0, &vToTarget);
         state->nHeading10 = func_020050b4(vToTarget.x, vToTarget.z);
     }
-    scale = Ov107_ActionResource_GetOffsetAndScale((int)state->pOwner->pActionResource39c, &vLocalOffset);
+    scale = Ov107_ActionResource_GetOffsetAndScale(state->pOwner->pActionResource39c, &vLocalOffset);
     Vec3TransformViaTempMtx(&state->vVelocity, &state->pOwner->xfm, &vLocalOffset);
     ScaleVec3Fx12(scale, &state->vVelocity, &state->vVelocity);
     VEC_Add(&state->pOwner->aBones394[0]->vPos14, &state->vVelocity, &aPoints[0]);

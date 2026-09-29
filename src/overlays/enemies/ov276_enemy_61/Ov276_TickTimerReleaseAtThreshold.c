@@ -1,5 +1,4 @@
-#include "game/enemy_common.h"
-
+extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void Ov276_startAnim(int obj, int a);
 extern void SetIndexedSlot(int obj, int a, int cb);
 extern void Ov276_AiTurnTick(void);
@@ -16,7 +15,7 @@ void Ov276_TickTimerReleaseAtThreshold(int *this)
     if (acc < 0x666) {
         return;
     }
-    Ov107_PostTagUpdate((Actor *)(*(int *)node), 0, 0);
+    Ov107_PostTagUpdate(*(int *)node, 0, 0);
     Ov276_startAnim(*(int *)node, 0);
     *(int *)(node + 0x4c) = 0;
     SetIndexedSlot((int)this, *(signed char *)((int)this + 0x20), (int)&Ov276_AiTurnTick);

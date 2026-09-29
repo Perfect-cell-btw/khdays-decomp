@@ -1,7 +1,4 @@
 /* Ov203_Construct: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-
-#include "game/enemy_common.h"
-
 struct v5 { int w[5]; };
 struct v3 { int a, b, c; };
 struct slot { void *ptr; int pad; };
@@ -16,11 +13,13 @@ extern void Ov203_Destroy(void), Ov203_TickWithChildRefresh(void), Ov203_InitMod
 extern void Ov203_HandleSpawnMessage(void), Ov203_CreateRegistryEntryTwoCallbacks(void), Ov203_ReleaseTasks(void);
 extern void Ov203_OnHit(void), Ov203_RequestSubState10IfIdleUnless7Or8(void), Ov203_Model_SetTrack0(void);
 
+extern void *Ov107_PackTextureHandle(int obj, unsigned offset);
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern void *InsertSortedEntryWithKey();
 extern void *Ov107_CreateNamedResourceBinding();
 extern void *CallocInstance();
+extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern long long Ov107_CloneResourceTransform();
@@ -45,15 +44,15 @@ void Ov203_Construct(int param_1) {
     *(int *)(param_1 + 0x64) = 0;
     *(int *)(param_1 + 0x68) = 0x1000;
     *(int *)(param_1 + 0x6c) = 0;
-    *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)param_1, 0));
+    *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, 0));
     RegisterSubscriberSlot(*(int *)(param_1 + 0x9c), *(void **)(param_1 + 0x384));
     *(void **)(param_1 + 0x3d4) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov203_020d686c);
     *(void **)(param_1 + 0x3d8) = InsertSortedEntryWithKey(*(int *)(param_1 + 0x384), 1, data_ov203_020d6878);
-    *(void **)(param_1 + 0x388) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)param_1, 1), &data_ov203_020d6884);
+    *(void **)(param_1 + 0x388) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(param_1, 1), &data_ov203_020d6884);
     *(void **)(param_1 + 0x3dc) = CallocInstance(0x28);
     for (i = 0; i < 5; i++) {
-        ((struct slot *)*(int *)(param_1 + 0x3dc))[i].ptr = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)param_1, tbl.w[i]));
-        Ov107_EnqueueValue((char *)param_1, (int)(((struct slot *)*(int *)(param_1 + 0x3dc))[i].ptr));
+        ((struct slot *)*(int *)(param_1 + 0x3dc))[i].ptr = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, tbl.w[i]));
+        Ov107_EnqueueValue(param_1, ((struct slot *)*(int *)(param_1 + 0x3dc))[i].ptr);
         *(int *)((char *)((struct slot *)*(int *)(param_1 + 0x3dc))[i].ptr + 0x5c) |= 2;
     }
     Ov107_Actor_SetAttachSlot(param_1, 0, 1, 0, 0x3000);

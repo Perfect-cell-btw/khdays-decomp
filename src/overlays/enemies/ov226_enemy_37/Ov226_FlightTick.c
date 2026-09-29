@@ -1,6 +1,5 @@
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef struct Vec3
 {
@@ -31,6 +30,7 @@ extern int func_020050b4(int x, int z);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
 extern void MTX_MultVec33(Vec3 *v, Mtx33 *m, Vec3 *d);
 extern void VEC_Add(Vec3 *a, Vec3 *b, Vec3 *d);
+extern int Ov107_CollectCapsuleOverlaps(int owner, Box *box, int *out);
 extern void VEC_Subtract(void *a, void *b, Vec3 *d);
 extern int VEC_Normalize(Vec3 *v, Vec3 *d);
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, Vec3 *push, int z);
@@ -109,7 +109,7 @@ void Ov226_FlightTick(int *node)
     box.half.x = radius;
     box.half.z = *(int *)(*state + 0x80);
     box.pos.y = centreY + 0x17cc;
-    n = Ov107_CollectCapsuleOverlaps((Actor *)(*(int *)(*state + 0x390)), &box, (void **)hits);
+    n = Ov107_CollectCapsuleOverlaps(*(int *)(*state + 0x390), &box, hits);
     for (i = 0; i < n; i++) {
         VEC_Subtract((void *)(hits[i] + 0x74), (void *)(*state + 0x74), &push);
         push.y = 0;

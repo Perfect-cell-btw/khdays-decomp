@@ -1,13 +1,11 @@
 /* Kick anim (0, phase 1), snapshot the target, compute the travel delta, then dispatch. */
-
-#include "game/enemy_common.h"
-
+extern int Ov107_PostTagUpdate(int, int, int);
 extern int SetIndexedSlot(int, int, void *);
 extern int Ov254_PanelYForPhase(int, int, int);
 extern int Ov254_ClimbOutTick(int);
 void Ov254_AiEnterClimbOut(int param_1) {
     int owner = *(int *)(param_1 + 4);
-    Ov107_PostTagUpdate((Actor *)(*(int *)owner), 0, 1);
+    Ov107_PostTagUpdate(*(int *)owner, 0, 1);
     *(int *)(owner + 0x10) = 0;
     *(int *)(owner + 0x44) = 0;
     int v = *(int *)(*(int *)(owner + 8) + 4);

@@ -18,7 +18,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct ShapeRequest {
     VecFx32 pos;                 /* 0x00 */
@@ -77,10 +76,16 @@ typedef struct Node {
     unsigned char pad1e8[0x1ec - 0x1e8];
 } Node;
 
+extern void Ov107_InitActorNode(Node *node);
 extern void **List_InsertSorted(void *list, int payloadSize, unsigned int key);
 extern void *Ov107_Mover_New(ShapeRequest *req);
 extern void Ov107_Pillar_PreTick(void);
+extern void Ov107_SendMessage6(void);
+extern void Ov107_SetLowByteOfHw60FromQ4(void);
 extern void Ov107_OnQuery(void);
+extern void Ov107_Pillar_EnterRegion(void);
+extern void Ov107_Pillar_LeaveRegion(void);
+extern void Ov107_Pillar_Tick(void);
 extern void Ov107_Pillar_UpdateHeight(void);
 extern const VecFx32 data_02042264;
 
@@ -97,7 +102,7 @@ void Ov107_Pillar_Init(Node *node, int value)
     void **slot;
     VecFx32 *center;
 
-    Ov107_InitActorNode((u16 *)node);
+    Ov107_InitActorNode(node);
     node->flags |= 0x80;
     node->field_0c = (void *)Ov107_Pillar_PreTick;
     node->field_10 = 0;

@@ -7,7 +7,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 typedef struct { VecFx32 center; VecFx32 axisX; VecFx32 axisY; VecFx32 axisZ; int nExtentX; int nExtentY; int nExtentZ; } Box;
@@ -16,6 +15,8 @@ extern const VecFx32 data_02042264;
 extern const VecFx32 data_02042270;
 extern const VecFx32 data_02042258;
 extern const VecFx32 data_02041dc8;
+extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
+extern int Ov107_CollectCapsuleOverlaps(int owner, Box *box, int *hits);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, const VecFx32 *push, int z);
 extern void Task_MarkFinished(int *node);
 
@@ -44,7 +45,7 @@ void Ov256_ShockwaveTick(int *node)
         box.nExtentY = 0x300;
         box.nExtentX = 0x2800;
         box.nExtentZ = 0x2800;
-        n = Ov107_CollectSegmentOverlaps((Actor *)state[1], &seg, (void **)hits);
+        n = Ov107_CollectSegmentOverlaps(state[1], &seg, hits);
         for (i = 0; i < n; i++) {
             u8 bit = 1 << *(u16 *)(hits[i] + 2);
 
@@ -55,7 +56,7 @@ void Ov256_ShockwaveTick(int *node)
                 *((u8 *)state + 0x1c) |= bit;
             }
         }
-        n = Ov107_CollectCapsuleOverlaps((Actor *)state[1], &box, (void **)hits);
+        n = Ov107_CollectCapsuleOverlaps(state[1], &box, hits);
         for (i = 0; i < n; i++) {
             u8 bit = 1 << *(u16 *)(hits[i] + 2);
 

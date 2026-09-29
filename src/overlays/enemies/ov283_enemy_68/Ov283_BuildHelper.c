@@ -6,13 +6,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 
 extern void Ov283_OnDespawn(void);
 extern void Ov283_Item_TickSyncXform(void);
 extern void Ov283_Item_CreateAiTask(void);
+extern void *Ov107_PackTextureHandle(int set, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int *List_InsertSorted(void *pool, int count, int size);
@@ -41,7 +41,7 @@ void Ov283_BuildHelper(char *self)
     *(VecFx32 *)(self + 0x64) = origin;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)set, 1));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(set, 1));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     body.pos = origin;
     body.axis = data_02042258;

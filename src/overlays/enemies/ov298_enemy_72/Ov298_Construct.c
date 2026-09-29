@@ -10,7 +10,6 @@
  * hoists the load above the handler stores and parks the value on the stack across the calls. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 struct Subitem {
     char pad000[0x5c];
@@ -39,8 +38,10 @@ extern void func_ov298_020d3ab4(void);
 extern void func_ov298_020d3ac0(void);
 extern void Ov298_OnHit(void);
 extern void Ov298_SwitchAnimation(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
+extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern void Res_RequestIdPair(int id);
@@ -78,12 +79,12 @@ void Ov298_Construct(char *self)
     *(int *)(self + 0x68) = 0x1000;
     *(int *)(self + 0x6c) = 0;
     *(struct Box *)(self + 0x1fc) = box;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 0));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 1));
+    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 1));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x388));
-    *(int *)(self + 0x39c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), variant));
-    Ov107_EnqueueValue((char *)((int)self), *(int *)(self + 0x39c));
+    *(int *)(self + 0x39c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, variant));
+    Ov107_EnqueueValue((int)self, *(int *)(self + 0x39c));
     *(int *)(*(int *)(self + 0x39c) + 0x5c) |= 2;
     *(int **)(self + 0x38c) = List_InsertSorted(self + 0x22c, 0x10, 0x64);
     **(int **)(self + 0x38c) = Ov107_CloneResourceTransform((char *)actor->camera);

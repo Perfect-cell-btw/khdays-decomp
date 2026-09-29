@@ -1,5 +1,3 @@
-#include "game/enemy_common.h"
-
 #pragma opt_dead_assignments off
 #pragma opt_propagation off
 /* Constructor of the ov240 enemy: resolves the overlay's config into +0x384, installs the
@@ -62,6 +60,7 @@ struct Ov240Actor {
     struct Subitem *subitem3bc;
 };
 
+extern int Ov107_OpenCachedResourceByName(const char *buf);
 extern void Ov240_ReleaseSubObjectsAndSlotsThenNotify(void);
 extern void Ov240_PropagateBlockChain(void);
 extern void Ov240_HandleMessage(void);
@@ -70,9 +69,11 @@ extern void Ov240_OnHit(void);
 extern void Ov240_ApplyActorConfig310(void);
 extern void Ov240_RequestSubState9IfNotCurrent(void);
 extern void Ov240_TryBeginSubState10IfIdle(void);
+extern void *Ov107_PackTextureHandle(struct Ov240Actor *self, int index);
 extern struct Subitem *CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, struct Subitem *item);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
+extern void Ov107_EnqueueValue(struct Ov240Actor *self, struct Subitem *item);
 extern void **List_InsertSorted(void *pool, int size, int count);
 extern void *Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int id);
@@ -113,26 +114,26 @@ void Ov240_InitializeActor(struct Ov240Actor *self)
     self->camera[1] = 0x1000;
     self->camera[2] = 0;
     self->box = box;
-    self->subitem388 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self, 0));
+    self->subitem388 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     RegisterSubscriberSlot(self->subscriberList9c, self->subitem388);
-    self->motion398 = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)self, 1), data_ov240_020cfb9c);
+    self->motion398 = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(self, 1), data_ov240_020cfb9c);
     item = self->subitem39c =
-        CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self, 3));
-    Ov107_EnqueueValue((char *)self, (int)item);
+        CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 3));
+    Ov107_EnqueueValue(self, item);
     item->flags5c |= 2;
-    item = self->subitem3a4 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self, 4));
-    Ov107_EnqueueValue((char *)self, (int)item);
+    item = self->subitem3a4 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 4));
+    Ov107_EnqueueValue(self, item);
     item->flags5c |= 2;
     #pragma opt_scheduling off
         { struct Ov240Actor *owner = self; struct Subitem **out = &self->subitem3ac;
         item = *out = CreateSubitemInstance0xB4((void *)((((self->config384 + 0x8000) & 0xfffffc) << 7) | 0x80000001));
-        Ov107_EnqueueValue((char *)owner, (int)item); }
+        Ov107_EnqueueValue(owner, item); }
     item->flags5c |= 2;
     item = self->subitem3b4 = CreateSubitemInstance0xB4((void *)((((self->config384 + 0x8000) & 0xfffffc) << 7) | 0x80000000));
-    Ov107_EnqueueValue((char *)self, (int)item);
+    Ov107_EnqueueValue(self, item);
     item->flags5c |= 2;
-    item = self->subitem3bc = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self, 2));
-    Ov107_EnqueueValue((char *)self, (int)item);
+    item = self->subitem3bc = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 2));
+    Ov107_EnqueueValue(self, item);
     { struct Ov240Actor *owner = self; void *pool = self->pool22c;
         owner->poolEntry38c = List_InsertSorted(pool, (item->flags5c |= 2, 0x10), 0x64); }
     *self->poolEntry38c = Ov107_CloneResourceTransform(self->camera);

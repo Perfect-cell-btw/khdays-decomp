@@ -13,7 +13,6 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/ai_task.h"
-#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -58,6 +57,7 @@ extern const struct Msg data_ov136_020d3a10;
 extern void Ov136_BranchByFlag42SetStateThenAdvance(void);
 
 extern void Ov107_BuildAndSendUpdate(void *actor, int id, u16 mode, void *at);
+extern int Ov107_ActionResource_GetOffsetAndScale(void *resource, FxVec *out);
 extern void Vec3TransformViaTempMtx(FxVec *out, void *q, const FxVec *in);
 extern void ScaleVec3Fx12(int scale, FxVec *in, FxVec *out);
 extern void VEC_Add(FxVec *a, FxVec *b, FxVec *ab);
@@ -85,7 +85,7 @@ void Ov136_SwingTick(struct Node *node)
         st->bFired40 = 1;
         Ov107_BuildAndSendUpdate(st->pActor, 0x11c, 6, st->pAnchor3c);
     }
-    speed = Ov107_ActionResource_GetOffsetAndScale((int)(*(void **)((char *)st->pActor + 0x3a0)), (VecFx32 *)&vLocal);
+    speed = Ov107_ActionResource_GetOffsetAndScale(*(void **)((char *)st->pActor + 0x3a0), &vLocal);
     Vec3TransformViaTempMtx(&st->vVelocity, (char *)st->pActor + 0xa0, &vLocal);
     ScaleVec3Fx12(speed, &st->vVelocity, &st->vVelocity);
     VEC_Add((FxVec *)((char *)*(void **)((char *)st->pActor + 0x394) + 0x14), &st->vVelocity, &shape.centre);

@@ -3,9 +3,10 @@
  * anim 1, step 2 with anim 0xc, and from step 3 mark sub-state 2 and dispatch. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 extern void Ov265_rotateVecByOwnerYaw(void *out, int a, int b);
+extern void Ov107_PostTagUpdate(int a, int b, int c);
+extern void Ov107_StartAnim(int a, int b, int c);
 extern int SetIndexedSlot(int a, int b, void *handler);
 void Ov265_AiPoseSequenceTick(int param_1) {
     int child = *(int *)(param_1 + 4);
@@ -17,10 +18,10 @@ void Ov265_AiPoseSequenceTick(int param_1) {
     counter = *(int *)(child + 0x28) + 1;
     *(int *)(child + 0x28) = counter;
     if (counter < 2) {
-        Ov107_PostTagUpdate((Actor *)(*(int *)child), 1, 0);
+        Ov107_PostTagUpdate(*(int *)child, 1, 0);
         Ov107_StartAnim(*(int *)(*(int *)child + 0x388), 1, 0);
     } else if (counter < 3) {
-        Ov107_PostTagUpdate((Actor *)(*(int *)child), 0xc, 0);
+        Ov107_PostTagUpdate(*(int *)child, 0xc, 0);
         Ov107_StartAnim(*(int *)(*(int *)child + 0x388), 0xc, 0);
     } else {
         *(signed char *)(*(int *)child + 0x1c7) = 2;

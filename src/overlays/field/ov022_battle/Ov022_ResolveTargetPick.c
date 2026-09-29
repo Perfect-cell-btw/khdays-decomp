@@ -11,7 +11,6 @@
  */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 struct ActorSub {
     u8 pad00[4];
@@ -46,6 +45,7 @@ struct Target {                      /* Ov022Actor, pick view */
     struct Entry *pEntry;            /* 0x504 */
 };
 
+extern struct Node *Ov107_FindChildById(void *pList, int nId);
 extern void *List_First(u8 *pList);
 extern void *List_Next(u8 *pList);
 extern void *Ov002_List_ScaleEntryTag(int nSlot, int nId);
@@ -80,7 +80,7 @@ void Ov022_ResolveTargetPick(struct Target *pTarget)
         {
             struct Node *pFound;
 
-            pFound = Ov107_FindChildById((int)pList, pTarget->nId);
+            pFound = Ov107_FindChildById(pList, pTarget->nId);
             if (pFound == 0) {
                 break;
             }

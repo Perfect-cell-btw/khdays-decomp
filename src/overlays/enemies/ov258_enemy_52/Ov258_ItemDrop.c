@@ -4,19 +4,20 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int b0 : 1; int b1 : 1; } Bits;
 typedef void (*ReleaseCb)(char *item, int arg);
+
+extern void Ov107_MoveNodeAndRelayout(char *owner, const VecFx32 *pos);
 
 void Ov258_ItemDrop(int *state)
 {
     char *item = (char *)*state;
 
     if (*(u8 *)(item + 0x38c) == 0) {
-        Ov107_MoveNodeAndRelayout((Actor *)item, (VecFx32 *)(*(int *)(*(int *)(item + 0x390) + 0x43c) + 0x14));
+        Ov107_MoveNodeAndRelayout(item, (VecFx32 *)(*(int *)(*(int *)(item + 0x390) + 0x43c) + 0x14));
     } else {
-        Ov107_MoveNodeAndRelayout((Actor *)item, (VecFx32 *)(*(int *)(*(int *)(item + 0x390) + 0x448) + 0x14));
+        Ov107_MoveNodeAndRelayout(item, (VecFx32 *)(*(int *)(*(int *)(item + 0x390) + 0x448) + 0x14));
     }
     item = (char *)*state;
     if (((Bits *)(item + 0x40))->b1 && *(ReleaseCb *)(item + 0xc) != 0) {

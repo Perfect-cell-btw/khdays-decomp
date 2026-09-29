@@ -6,7 +6,6 @@
  * from the +0x64 pose with bit 1 of its +8 low byte; +0x38c starts empty. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 struct w8 { unsigned int lo : 8, rest : 24; };
@@ -20,8 +19,10 @@ extern void Ov245_Child_CreateAiTask(void);
 extern void Ov245_ReleaseHeldObject(void);
 extern void Ov245_FilterMessage(void);
 extern void Ov245_SubHitFilter(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
+extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
 
@@ -44,11 +45,11 @@ void Ov245_Construct(int self) {
     }
     *(u16 *)(self + 0x100 + 0xae) |= 4;
     *(int *)(self + 0x70) = 0x800;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x11));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x11));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     for (i = 0; i < 3; i++) {
-        item = ((struct Ov245Self *)self)->slots[i].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, i + 0x17));
-        Ov107_EnqueueValue((char *)self, item);
+        item = ((struct Ov245Self *)self)->slots[i].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, i + 0x17));
+        Ov107_EnqueueValue(self, item);
         *(int *)(((struct Ov245Self *)self)->slots[i].pItem + 0x5c) |= 2;
     }
     *(int **)(self + 0x388) = List_InsertSorted((void *)(self + 0x22c), 0x10, 0x64);

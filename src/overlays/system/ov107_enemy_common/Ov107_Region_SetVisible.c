@@ -1,7 +1,6 @@
 /* Shows or hides the region's node and broadcasts the value to the children. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef struct {
     int bit0 : 1;
@@ -28,6 +27,7 @@ typedef struct Obj2768 {
 
 extern void invokeObjCallbackGuarded(int param_1);
 extern void Node_CallHook80(char *node);
+extern void Ov107_BroadcastValueToChildren(Obj2768 *self, int b);
 
 void Ov107_Region_SetVisible(Obj2768 *self, int b)
 {
@@ -48,5 +48,5 @@ block2:
         Node_CallHook80((char *)self->inner);
 
 end:
-    Ov107_BroadcastValueToChildren((char *)self, b);
+    Ov107_BroadcastValueToChildren(self, b);
 }

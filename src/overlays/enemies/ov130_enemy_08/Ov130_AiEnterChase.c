@@ -1,14 +1,13 @@
 /* Plays anim 2, rolls the move timer and installs the chase decision. */
 
-#include "game/enemy_common.h"
-
+extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern int RandNextScaled(unsigned int mul);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov130_DecideChaseMove(void);
 
 void Ov130_AiEnterChase(char *obj) {
     char *p = *(char **)(obj + 4);
-    Ov107_PostTagUpdate((Actor *)(*(int *)p), 2, 0);
+    Ov107_PostTagUpdate(*(int *)p, 2, 0);
     int min = *(int *)(*(char **)p + 0x224);
     int range = *(int *)(*(char **)p + 0x228) - min;
     if (range < 0) range = -range;

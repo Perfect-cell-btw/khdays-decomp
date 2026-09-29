@@ -3,11 +3,9 @@
  * rider's *(+0x88) owner, query the +0x384 pool for the slot's pose, append it, clear the
  * owner's five +2 / +0xca halfword pairs, bind the rider to its list with channel 0 = (0, flag),
  * then run the 020ce984 hook and re-init both riders. */
-
-#include "game/enemy_common.h"
-
 extern void FreeAllResourceTables(int a);
 extern void NNS_G3dRenderObjInit(int a, int b);
+extern int Ov107_PackTextureHandle(int a, int b);
 extern void Snd_RegisterSeqAndBind(int a, int b, int c, int d);
 extern void MainBlob_ResetSlotRows(int a, int b);
 extern void SetSubitemState(int a, int b, int c, int d);
@@ -26,7 +24,7 @@ void Ov236_RebuildRiderListsB(int self, int slot, int flag) {
     owner = *(int *)(*(int *)(self + 0x388) + 0x88);
     NNS_G3dRenderObjInit(owner + 0x20, *(int *)(owner + 0x78));
     kind = buf.w[slot];
-    Snd_RegisterSeqAndBind(*(int *)(self + 0x38c), owner, Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), kind), 0xc);
+    Snd_RegisterSeqAndBind(*(int *)(self + 0x38c), owner, Ov107_PackTextureHandle(*(int *)(self + 0x384), kind), 0xc);
     for (i = 0; i < 5; i++) {
         ((short *)owner)[i + 1] = -1;
         ((short *)owner)[i + 0x65] = -1;
@@ -37,7 +35,7 @@ void Ov236_RebuildRiderListsB(int self, int slot, int flag) {
     FreeAllResourceTables(*(int *)(self + 0x394));
     owner = *(int *)(*(int *)(self + 0x390) + 0x88);
     NNS_G3dRenderObjInit(owner + 0x20, *(int *)(owner + 0x78));
-    Snd_RegisterSeqAndBind(*(int *)(self + 0x394), owner, Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), kind), 0xc);
+    Snd_RegisterSeqAndBind(*(int *)(self + 0x394), owner, Ov107_PackTextureHandle(*(int *)(self + 0x384), kind), 0xc);
     for (i = 0; i < 5; i++) {
         ((short *)owner)[i + 1] = -1;
         ((short *)owner)[i + 0x65] = -1;

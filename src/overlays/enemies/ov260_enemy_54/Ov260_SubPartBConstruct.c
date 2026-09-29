@@ -4,10 +4,7 @@
  * +0x9c parent (bit 2 of +0x5c); builds the +0x384 rig from pose 0x26 (subscribed to +0x9c) with
  * channels 0, 2, 4 and 1 bound to (0, 1) and re-inits it, builds the two hidden sub-items of its
  * id table into the +0x390 pairs, and reserves the +0x388 placement of the +0x64 pose on the
- * +0x22c pool (flag bit 1). */
-
-#include "game/enemy_common.h"
-typedef unsigned short u16;
+ * +0x22c pool (flag bit 1). */typedef unsigned short u16;
 typedef void (*Callback)(void);
 typedef struct { int id[2]; } IdTable2;
 struct Pairs { char pad[0x390]; struct { int res; int handle; } pair[2]; };
@@ -18,10 +15,12 @@ extern void Ov260_TickSyncXform(void);
 extern void Ov260_PartMessageHandler(void);
 extern void Ov260_CreateRegistryEntryAndLink_2(void);
 extern void Ov260_SubPartBHitFilter(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void SetSubitemState(int item, int channel, int a, int b);
 extern void RefreshObjectCallbacks(int item, int a);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *placement);
 extern IdTable2 data_ov260_020d2a88;
@@ -46,7 +45,7 @@ void Ov260_SubPartBConstruct(char *self)
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x26));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x26));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     SetSubitemState(*(int *)(self + 0x384), 0, 0, 1);
     SetSubitemState(*(int *)(self + 0x384), 2, 0, 1);
@@ -54,7 +53,7 @@ void Ov260_SubPartBConstruct(char *self)
     SetSubitemState(*(int *)(self + 0x384), 1, 0, 1);
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
     for (i = 0; i < 2; i++) {
-        ((struct Pairs *)self)->pair[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, ids.id[i]));
+        ((struct Pairs *)self)->pair[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, ids.id[i]));
         Ov107_EnqueueValue(self, ((struct Pairs *)self)->pair[i].res);
         *(int *)(((struct Pairs *)self)->pair[i].res + 0x5c) |= 2;
     }

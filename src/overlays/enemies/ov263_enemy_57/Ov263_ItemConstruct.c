@@ -6,11 +6,11 @@
  * enabled and it is reset. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
 extern int FX_Div(int num, int den);
+extern int Ov107_PackTextureHandle(int pool, int kind);
 extern int CreateSubitemInstance0xB4(int res);
 extern void Srt_SetScaleUniform(void *srt, int weight);
 extern void RegisterSubscriberSlot(int list, int obj);
@@ -36,7 +36,7 @@ void Ov263_ItemConstruct(char *self)
     *(int *)(self + 0x70) = FX_MUL(*(int *)(*(int *)(self + 0x388) + 0x70), 0x943);
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)owner, 0x14));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, 0x14));
     Srt_SetScaleUniform(self + 0xa0, 0x14cd);
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     Srt_SetScaleXYZ((void *)(*(int *)(self + 0x384) + 4), w, w, w);

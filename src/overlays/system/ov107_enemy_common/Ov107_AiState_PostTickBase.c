@@ -1,10 +1,12 @@
 /* Counts the hit cooldown down, updates the hit shapes, respawns actors fallen below the world and
  * ticks the rest timer. */
 
-#include "game/enemy_common.h"
-
+extern int func_ov107_020c9848(void);
 extern int List_First(void *list);
 extern int List_Next(void *list);
+extern void Ov107_HitShape_UpdateWorld(int v);
+extern void Ov107_MoveNodeAndRelayout(void *self, void *node);
+extern void Ov107_AiState_PostTick(void *self);
 
 typedef struct {
     void *f0;
@@ -31,14 +33,14 @@ void Ov107_AiState_PostTickBase(char *self)
         InnerNode *node = (InnerNode *)List_First(self + 0x22c);
         while (node != 0) {
             if ((node->f8 & 1) && node->f0 != 0) {
-                Ov107_HitShape_UpdateWorld((unsigned char *)((int)node->f0));
+                Ov107_HitShape_UpdateWorld((int)node->f0);
             }
             node = (InnerNode *)List_Next(self + 0x22c);
         }
     }
 
     if (*(int *)(self + 0xb4) < -0x32000) {
-        Ov107_MoveNodeAndRelayout((Actor *)self, (VecFx32 *)(self + 0x190));
+        Ov107_MoveNodeAndRelayout(self, self + 0x190);
     }
 
     if (*(int *)(self + 0x50) == 2) {

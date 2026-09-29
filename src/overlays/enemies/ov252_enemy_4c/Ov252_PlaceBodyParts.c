@@ -8,7 +8,6 @@
  * part is gone and runs the common actor update. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct Srt {
     int     aRot[4];
@@ -67,7 +66,9 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int  VEC_Normalize(const VecFx32 *in, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *in, VecFx32 *out);
 extern void Srt_SetTranslation(Srt *srt, const VecFx32 *pos);
+extern void Ov107_UnlinkNodeFromOwner(int effect);
 extern void TaskList_FinishByTag(int list, int task);
+extern void Ov107_AiState_PostTickBase(Ov252Boss *self);
 
 static inline void VEC_Set(VecFx32 *a, int x, int y, int z)
 {
@@ -180,12 +181,12 @@ void Ov252_PlaceBodyParts(Ov252Boss *self)
         self->nPhaseTimer = 0;
     }
     if (self->nPhaseTimer == 0 && self->nEffect != 0) {
-        Ov107_UnlinkNodeFromOwner((void *)self->nEffect);
+        Ov107_UnlinkNodeFromOwner(self->nEffect);
         self->nEffect = 0;
     }
     if (!(self->aPartB[1]->nFlags & 1) && self->nTask != 0) {
         TaskList_FinishByTag(self->nTaskList, self->nTask);
         self->nTask = 0;
     }
-    Ov107_AiState_PostTickBase((char *)self);
+    Ov107_AiState_PostTickBase(self);
 }

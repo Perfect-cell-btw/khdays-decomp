@@ -6,10 +6,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 extern void Ov256_AttackHitTestB(int *node, int a, int b);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov256_ClawReturnTick(int *node)
@@ -31,9 +31,9 @@ void Ov256_ClawReturnTick(int *node)
         *(int *)(owner + 0x39c) = 0;
     }
     if (*(u8 *)(*state + 0x394) == 0) {
-        Ov107_MoveNodeAndRelayout((Actor *)(*state), (VecFx32 *)(*(int *)(*(int *)(*state + 0x3ac) + 0x418) + 0x14));
+        Ov107_MoveNodeAndRelayout(*state, (VecFx32 *)(*(int *)(*(int *)(*state + 0x3ac) + 0x418) + 0x14));
     } else {
-        Ov107_MoveNodeAndRelayout((Actor *)(*state), (VecFx32 *)(*(int *)(*(int *)(*state + 0x3ac) + 0x424) + 0x14));
+        Ov107_MoveNodeAndRelayout(*state, (VecFx32 *)(*(int *)(*(int *)(*state + 0x3ac) + 0x424) + 0x14));
     }
     *(signed char *)(*state + 0x1c7) = 1;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);

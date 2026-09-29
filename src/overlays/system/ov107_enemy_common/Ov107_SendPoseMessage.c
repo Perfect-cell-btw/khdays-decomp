@@ -16,7 +16,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -64,6 +63,7 @@ struct AiState {
 };
 
 extern void Quat_ToAxisAngle(VecFx32 *axis, int *angle, Quat *q);
+extern void Ov107_EmitIdEvent(struct AiState *self, PoseMsg *msg, int arg);
 
 static inline void PackFx24(Fx24 *dst, int v) {
     dst->hi = ((u32)v >> 16 & 0x7f) | ((u32)v >> 24 & 0x80);
@@ -108,5 +108,5 @@ void Ov107_SendPoseMessage(struct AiState *self, PoseMsg *msg, int arg) {
             self->field_1c(self, msg, arg);
         }
     }
-    Ov107_EmitIdEvent((int)self, (unsigned short *)msg, arg);
+    Ov107_EmitIdEvent(self, msg, arg);
 }

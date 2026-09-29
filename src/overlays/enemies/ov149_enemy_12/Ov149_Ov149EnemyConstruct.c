@@ -8,7 +8,6 @@
  * slot pointer can take +0x390. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 struct ChildIds {
     int values[2];
@@ -63,11 +62,13 @@ extern void Ov149_AiState_OnMessage(void);
 extern void Ov149_CreateRegistryEntryAndLink_2(void);
 extern void Ov149_BroadcastPositionMessage(void);
 
+extern void *Ov107_PackTextureHandle(struct Obj *owner, int index);
 extern struct Subitem *CreateSubitemInstance0xB4(void *item);
 extern void RegisterSubscriberSlot(struct Subitem *subscriber, struct Subitem *item);
 extern void SetSubitemState(struct Subitem *item, int state, int zero, int enabled);
 extern void RefreshObjectCallbacks(struct Subitem *item, int value);
 extern void *CallocInstance(int size);
+extern void Ov107_EnqueueValue(struct Obj *owner, struct Subitem *item);
 extern struct PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *camera);
 
@@ -91,7 +92,7 @@ void Ov149_Ov149EnemyConstruct(struct Obj *self)
 
     self->subscriber9c->flags5c |= 4;
 
-    self->subitem384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self->owner38c, 6));
+    self->subitem384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self->owner38c, 6));
     RegisterSubscriberSlot(self->subscriber9c, self->subitem384);
     SetSubitemState(self->subitem384, 0, 0, 1);
     SetSubitemState(self->subitem384, 2, 0, 1);
@@ -101,8 +102,8 @@ void Ov149_Ov149EnemyConstruct(struct Obj *self)
 
     for (i = 0; i < 2; i++) {
         self->slots390[i].child =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self->owner38c, ids.values[i]));
-        Ov107_EnqueueValue((char *)self->owner38c, (int)self->slots390[i].child);
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self->owner38c, ids.values[i]));
+        Ov107_EnqueueValue(self->owner38c, self->slots390[i].child);
         self->slots390[i].child->flags5c |= 2;
     }
 

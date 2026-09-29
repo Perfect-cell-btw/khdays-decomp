@@ -1,13 +1,12 @@
 /* AI step: once the gate byte is clear, posts pose 2 and installs the seek-and-steer step. */
 
-#include "game/enemy_common.h"
-
+extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot();
 extern void Ov133_stSeekTargetSteer();
 
 void Ov133_stIdlePose2Advance(int this_) {
     int n = *(int *)(this_ + 4);
     if (*(unsigned char *)*(int *)(n + 0x48)) return;
-    Ov107_PostTagUpdate((Actor *)(*(int *)n), 2, 1);
+    Ov107_PostTagUpdate(*(int *)n, 2, 1);
     SetIndexedSlot(this_, *(signed char *)(this_ + 0x20), (int)&Ov133_stSeekTargetSteer);
 }

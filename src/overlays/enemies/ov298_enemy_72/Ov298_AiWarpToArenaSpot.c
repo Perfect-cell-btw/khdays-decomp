@@ -1,10 +1,10 @@
 /* Posts update 0x177/4, stops, moves the actor to the fixed arena spot and queues action 2. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 extern void func_ov107_020c0b90(int obj, int flag, VecFx32 v);
 extern void Ov107_BuildAndSendUpdate(int obj, int b, int c, void *d);
+extern void Ov107_MoveNodeAndRelayout(int node, VecFx32 *pos);
 extern void SetIndexedSlot(int obj, int idx, int cb);
 extern VecFx32 data_02041dc8;
 
@@ -27,7 +27,7 @@ void Ov298_AiWarpToArenaSpot(int *this)
     *(int *)(node + 0x84) = 1;
 
     *(VecFx32 *)(node + 0x10) = data_02041dc8;
-    Ov107_MoveNodeAndRelayout((Actor *)(*(int *)node), &dest.pos);
+    Ov107_MoveNodeAndRelayout(*(int *)node, &dest.pos);
 
     *(int *)(node + 0x38) = 0;
     *(signed char *)(*(int *)node + 0x1c7) = 2;

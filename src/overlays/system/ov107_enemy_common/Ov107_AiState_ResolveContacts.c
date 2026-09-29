@@ -2,7 +2,6 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
-#include "game/enemy_common.h"
 
 typedef struct NodeTransform {
     int field_00[4];
@@ -59,6 +58,7 @@ extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern void ScaleVec3Fx12(int factor, const VecFx32 *source, VecFx32 *destination);
 extern long long FX_DivFx64c(int numerator, int denominator);
 extern void Srt_SetTranslation(NodeTransform *dst, VecFx32 *src);
+extern void Ov107_UpdateCollisionSphere(Actor *node);
 extern CollisionHit *Collision_CastRay(void *obj, VecFx32 *origin, VecFx32 *direction);
 extern void RefreshObjectCallbacks(void *obj, unsigned int tick);
 extern const VecFx32 data_02042264;
@@ -250,7 +250,7 @@ void Ov107_AiState_ResolveContacts(Actor *self, unsigned int tick)
         if (update != 0) {
             VEC_Add(&self->srt.translation, &sumA, &position);
             Srt_SetTranslation(((NodeTransform *)&self->srt), &position);
-            Ov107_UpdateCollisionSphere((int)self);
+            Ov107_UpdateCollisionSphere(self);
         }
     }
 
@@ -281,7 +281,7 @@ void Ov107_AiState_ResolveContacts(Actor *self, unsigned int tick)
             rayDirection.y = self->sphere.radius - self->field_13c;
             VEC_Add(&self->srt.translation, &rayDirection, &position);
             Srt_SetTranslation(((NodeTransform *)&self->srt), &position);
-            Ov107_UpdateCollisionSphere((int)self);
+            Ov107_UpdateCollisionSphere(self);
         }
     } else {
         self->vDirection.x = 0;

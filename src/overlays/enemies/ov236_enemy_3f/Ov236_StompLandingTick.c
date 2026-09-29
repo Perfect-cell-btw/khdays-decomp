@@ -8,7 +8,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 center; VecFx32 axis[3]; int ext[3]; } Box;
 typedef struct { int value; } Fx32;
@@ -20,6 +19,7 @@ struct Ov236Target {
     void (*pfnMessage)(struct Ov236Target *self, void *msg, int size);
 };
 
+extern int Ov107_CollectCapsuleOverlaps(int owner, Box *box, int *hits);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
@@ -60,7 +60,7 @@ void Ov236_StompLandingTick(int *node)
         box.ext[0] = 0x3000;
         box.ext[2] = 0x3000;
         box.ext[1] = 0xa00;
-        nHits = Ov107_CollectCapsuleOverlaps((Actor *)(*state), &box, (void **)hits);
+        nHits = Ov107_CollectCapsuleOverlaps(*state, &box, hits);
         i = 0;
         if (nHits > 0) {
             tmpl = data_ov236_020d6404;

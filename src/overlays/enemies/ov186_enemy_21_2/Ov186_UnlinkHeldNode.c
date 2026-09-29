@@ -1,8 +1,8 @@
 /* Unlinks the held node (+0x390) from its owner and clears it. */
 
-#include "game/enemy_common.h"
+extern int Ov107_UnlinkNodeFromOwner();
 
 void Ov186_UnlinkHeldNode(int *r0) {
-    Ov107_UnlinkNodeFromOwner((void *)r0[0xe4]);
+    Ov107_UnlinkNodeFromOwner(r0[0xe4]);
     r0[0xe4] = 0;
 }

@@ -3,8 +3,8 @@
  * point (020c5c54) and takes its +0xa0 pose. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
+extern void Ov107_MoveNodeAndRelayout(int actor, void *at);
 extern void Srt_SetRotationQuat(void *pose, void *q);
 
 void Ov254_MountFollowTick(int *node)
@@ -29,6 +29,6 @@ void Ov254_MountFollowTick(int *node)
         *(u16 *)(a + 0x60) = (hw & ~0xff00) |
             (((unsigned int)(unsigned short)((((unsigned int)hw << 0x10) >> 0x18) & ~0x80) << 0x18) >> 0x10);
     }
-    Ov107_MoveNodeAndRelayout((Actor *)(*state), (void *)(*(int *)(*state + 0x388) + 0xb0));
+    Ov107_MoveNodeAndRelayout(*state, (void *)(*(int *)(*state + 0x388) + 0xb0));
     Srt_SetRotationQuat((void *)(*state + 0xa0), (void *)(*(int *)(*state + 0x388) + 0xa0));
 }

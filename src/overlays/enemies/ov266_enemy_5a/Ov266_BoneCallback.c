@@ -16,7 +16,6 @@
  * locals; with CSE on the tail loop's i/seg registers swap (r8/r6). */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { int m[9]; VecFx32 t; } Mtx43;
@@ -46,6 +45,7 @@ extern void Quat_Slerp(Quat *out, int t, Quat *a, Quat *b);
 extern void Srt_SetRotationQuat(void *srt, Quat *q);
 extern void Srt_SetScaleXYZ(void *srt, int x, int y, int z);
 extern void Obj_LocalToWorld(VecFx32 *out, void *srt, void *in);
+extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *v);
 extern const short data_0203d210[];
 extern const VecFx32 data_02042258;
 
@@ -158,7 +158,7 @@ void Ov266_BoneCallback(int rig, char *self)
         Srt_SetScaleXYZ((void *)(seg + 0x30), 0x1000, 0x1000, *(int *)(self + 0x57c));
         Obj_LocalToWorld(&pos, (void *)(seg + 0x30), self + 0x4fc);
     }
-    Ov107_MoveNodeAndRelayout((Actor *)(*(int *)(self + 0x5d4)), &pos);
+    Ov107_MoveNodeAndRelayout(*(int *)(self + 0x5d4), &pos);
     obj = *(int *)(self + 0x5d4);
     if (((Flag2 *)(obj + 0x40))->b1 && *(void (**)(int, int))(obj + 0xc) != 0) {
         (*(void (**)(int, int))(obj + 0xc))(obj, 0);

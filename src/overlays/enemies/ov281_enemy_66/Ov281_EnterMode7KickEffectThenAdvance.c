@@ -1,5 +1,5 @@
-#include "game/enemy_common.h"
-
+extern void Ov107_PostTagUpdate(int obj, int a, int b);
+extern void Ov107_StartAnim(int obj, int a, int b);
 extern void SetIndexedSlot(int obj, int a, int cb);
 extern void Ov281_ApplyAimTransformThenAdvance(void);
 
@@ -8,7 +8,7 @@ extern void Ov281_ApplyAimTransformThenAdvance(void);
 void Ov281_EnterMode7KickEffectThenAdvance(int *this)
 {
     int node = this[1];
-    Ov107_PostTagUpdate((Actor *)(*(int *)node), 7, 0);
+    Ov107_PostTagUpdate(*(int *)node, 7, 0);
     Ov107_StartAnim(*(int *)(*(int *)node + 0x3c0), 1, 0);
     {
         unsigned short *hw = (unsigned short *)(*(int *)node + 0x60);

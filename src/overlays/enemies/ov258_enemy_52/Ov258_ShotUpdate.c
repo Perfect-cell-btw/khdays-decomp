@@ -7,13 +7,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 struct EffectPair { int res; int handle; };
 struct Ov258Effects { char pad[0x464]; struct EffectPair pair[0x30]; };
 
 extern void Ov107_BuildAndSendUpdate(int actor, short bank, int variant, void *at);
+extern int Ov107_CollectSegmentOverlaps(int owner, void *capsule, int *hits);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
@@ -43,7 +43,7 @@ void Ov258_ShotUpdate(int *node)
         cap.axis = data_02042264;
         cap.length = 0x30000;
         cap.radius = 0xe00;
-        n = Ov107_CollectSegmentOverlaps((Actor *)state[1], &cap, (void **)hits);
+        n = Ov107_CollectSegmentOverlaps(state[1], &cap, hits);
         for (i = 0; i < n; i++) {
             bit = 1 << *(u16 *)(hits[i] + 2);
             VEC_Subtract((VecFx32 *)(hits[i] + 0x190), (VecFx32 *)(state + 2), &push);

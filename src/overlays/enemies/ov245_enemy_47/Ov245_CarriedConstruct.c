@@ -2,7 +2,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 struct w8 { unsigned int lo : 8, rest : 24; };
@@ -42,10 +41,12 @@ extern void Ov245_SpawnSlotEffectMsg(void);
 extern void Ov245_CreateAiTask(void);
 extern void Ov245_FilterMessage(void);
 extern void Ov245_SubHitFilter2(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void SetSubitemState(int item, int channel, int a, int flag);
 extern void RefreshObjectCallbacks(int item, int a);
+extern void Ov107_EnqueueValue(struct Ov245Obj *self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
 extern const VecFx32 data_02041dc8;
@@ -72,12 +73,12 @@ void Ov245_CarriedConstruct(struct Ov245Obj *self) {
     self->scale = 0x2000;
     self->pose = data_02041dc8;
     *(int *)(self->pOwner + 0x5c) |= 4;
-    self->pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x16));
+    self->pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x16));
     RegisterSubscriberSlot(self->pOwner, self->pItem);
     SetSubitemState(self->pItem, 0, 0, 1);
     RefreshObjectCallbacks(self->pItem, 0);
-    self->pSub = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x1b));
-    Ov107_EnqueueValue((char *)self, self->pSub);
+    self->pSub = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x1b));
+    Ov107_EnqueueValue(self, self->pSub);
     *(int *)(self->pSub + 0x5c) |= 2;
     self->pPlacement = List_InsertSorted((char *)self + 0x22c, 0x10, 0x64);
     *self->pPlacement = Ov107_CloneResourceTransform(&self->pose);

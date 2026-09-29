@@ -14,7 +14,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u8 hi, mid, lo; } Fx24;
@@ -43,6 +42,7 @@ static inline void PackFx24(Fx24 *dst, int v) {
 
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *v);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern int Ov107_CollectSegmentOverlaps(int item, Segment *query, int *results);
 extern int Ov107_InvokeHitCallback(int ent, int actor, int item, int mode, const VecFx32 *dir, int flag);
 extern void Ov022_ToggleBit13ByMode(int effect, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -84,7 +84,7 @@ void Ov160_DashTick(int *node)
     query.dir = fwd;
     query.nLength = state[9];
     query.nRadius = 0x1000;
-    n = Ov107_CollectSegmentOverlaps((Actor *)(*(int *)(*state + 0x38c)), &query, (void **)results);
+    n = Ov107_CollectSegmentOverlaps(*(int *)(*state + 0x38c), &query, results);
     for (i = 0; i < n; i++) {
         if (Ov107_InvokeHitCallback(results[i], *state, *(int *)(*state + 0x38c), 1, &data_02041dc8, 0x200) != 0) {
             state[0xb] = *(int *)(results[i] + 0x18c);

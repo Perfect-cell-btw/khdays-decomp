@@ -6,12 +6,13 @@
  * (looping). The base hook always runs. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 struct Pair { int res; int handle; };
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);
 extern int Ov107_CreateNodeXformTask(int model, int res, int kind, int zero, void *t);
+extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
+extern int Ov107_CreateSpawnTask(char *self, int id, int mode, int flag, void *pose);
 extern int Ov119_SpawnChildStoreSelfAndArg(char *self, int on);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
@@ -38,7 +39,7 @@ void Ov119_OnEffectMessage(char *self, u8 *msg, int arg)
         case 3:
             (*(struct Pair **)(self + 0x3a8))[4].handle =
                 Ov107_CreateNodeXformTask(*(int *)(self + 0x3c), (*(struct Pair **)(self + 0x3a8))[4].res, 5, 0, self + 0xa0);
-            *(int *)(self + 0x3b0) = Ov107_CreateSpawnTask((int)self, 0x121, 6, 0, self + 0xa0);
+            *(int *)(self + 0x3b0) = Ov107_CreateSpawnTask(self, 0x121, 6, 0, self + 0xa0);
             break;
         case 4:
             (*(struct Pair **)(self + 0x3a8))[3].handle =

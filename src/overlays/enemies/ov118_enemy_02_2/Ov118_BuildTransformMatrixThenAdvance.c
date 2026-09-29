@@ -1,7 +1,6 @@
-#include "game/enemy_common.h"
-
 struct m4 { int w[4]; };
 
+extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void Mtx33_LookAt(int *out, int a, int b, int *tbl);
 extern void Quat_FromMtx33(int dst, int *src);
 extern void SetIndexedSlot(int obj, int a, int cb);
@@ -15,7 +14,7 @@ void Ov118_BuildTransformMatrixThenAdvance(int *this)
 {
     int node = this[1];
     int scratch[9];
-    Ov107_PostTagUpdate((Actor *)(*(int *)node), 2, 0);
+    Ov107_PostTagUpdate(*(int *)node, 2, 0);
     if (*(int *)(node + 0x4c) != 0) {
         Mtx33_LookAt(scratch, *(int *)(node + 0x4c) + 0x190, *(int *)(node + 0x44), &data_02042264);
         Quat_FromMtx33(node + 0x18, scratch);

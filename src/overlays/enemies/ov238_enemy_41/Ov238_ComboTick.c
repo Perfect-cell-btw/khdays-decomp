@@ -11,7 +11,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
@@ -26,6 +25,7 @@ extern void MTX_MultVec33(VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void Ov107_PostTagUpdate(int owner, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov238_AiComboStart(void);
 extern void Ov238_AiStep_QueueAction2OnAnimEnd(void);
@@ -122,7 +122,7 @@ void Ov238_ComboTick(int *node)
         return;
     }
     if (busy == 0 && state[9] == 0 && *((u8 *)state + 0x2d) < 3) {
-        Ov107_PostTagUpdate((Actor *)(*state), *((u8 *)state + 0x2d) + 0xb, 0);
+        Ov107_PostTagUpdate(*state, *((u8 *)state + 0x2d) + 0xb, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov238_AiStep_QueueAction2OnAnimEnd);
         return;
     }

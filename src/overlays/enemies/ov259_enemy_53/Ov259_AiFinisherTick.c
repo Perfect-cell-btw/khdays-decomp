@@ -1,10 +1,8 @@
 /* Advance +0x68 by the frame delta; when the +0x21a gauge has drained set +0x1ae bits0-1; once
  * +0x68 passes 0xaa0 (and +0xac bit1 is clear) set it and notify 020cd2c8; then unless busy anim 6. */
-
-#include "game/enemy_common.h"
-
 extern int Ov259_RefreshAim(int);
 extern int Ov259_MapHeldItemKindToAnim(int, int);
+extern int Ov107_PostTagUpdate(int, int, int);
 extern int SetIndexedSlot(int, int, void *);
 extern int Ov259_GuardTick(int);
 void Ov259_AiFinisherTick(int param_1) {
@@ -22,6 +20,6 @@ void Ov259_AiFinisherTick(int param_1) {
         }
     }
     if (*(unsigned char *)(*(int *)(owner + 4) + 0xad) != 0) return;
-    Ov107_PostTagUpdate((Actor *)(*(int *)owner), 6, 1);
+    Ov107_PostTagUpdate(*(int *)owner, 6, 1);
     SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), (void *)&Ov259_GuardTick);
 }

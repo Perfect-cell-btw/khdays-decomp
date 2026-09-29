@@ -7,14 +7,15 @@
  * update (ov107 7ca4) runs. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 struct Body { char pad[0x58]; Segment seg; };
 
 extern void TaskList_FinishByTag(int list, int handle);
+extern void Ov107_UnlinkNodeFromOwner(int handle);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov211_Update(char *self)
 {
@@ -31,7 +32,7 @@ void Ov211_Update(char *self)
         }
     } else {
         if (*(int *)(self + 0x3d8) != 0) {
-            Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x3d8)));
+            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3d8));
             *(int *)(self + 0x3d8) = 0;
         }
         if ((*(unsigned char *)(self + 0x1c4) & 0xa) != 0 && *(signed char *)(self + 0x1c7) == -1) {

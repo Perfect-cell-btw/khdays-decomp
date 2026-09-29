@@ -6,7 +6,6 @@
  * +0x41c and +0x420 -> +0x424 parts (on to +0x3e8 / +0x3ec). Finally the base pre-pass runs. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int m[4]; VecFx32 trans; int pad[4]; } Srt;
 typedef struct { VecFx32 a; VecFx32 d; int len; int r; } Capsule;
@@ -14,12 +13,14 @@ struct Piece { char pad[0x10]; Srt srt; };
 struct Part { char pad[4]; Srt srt; };
 struct CapPiece { char pad[0x58]; Capsule cap; };
 
+extern void Ov107_UnlinkNodeFromOwner(int sub);
 extern void TaskList_FinishByTag(void *taskList, void *handle);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, const Srt *m, const VecFx32 *in);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Srt_SetTranslation(Srt *t, const VecFx32 *v);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
+extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov254_DrawPrePass(char *self)
 {
@@ -28,7 +29,7 @@ void Ov254_DrawPrePass(char *self)
     Capsule *cap;
 
     if (*(signed char *)(self + 0x100 + 0xc6) != 4 && *(int *)(self + 0x4e4) != 0) {
-        Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x4e4)));
+        Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x4e4));
         *(int *)(self + 0x4e4) = 0;
     }
     if (*(signed char *)(self + 0x100 + 0xc6) != 0xa && *(void **)(self + 0x514) != 0) {

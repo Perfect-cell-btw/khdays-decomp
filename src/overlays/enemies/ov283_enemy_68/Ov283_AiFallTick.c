@@ -1,11 +1,11 @@
 /* Applies gravity and damping; lands when the animation ends and grounded. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 struct b1 { unsigned char b:1; };
 
 extern void ScaleVec3Fx12(int factor, int *src, int *dst);
+extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(int obj, int a, int cb);
 extern void Ov283_AiFallTickB(void);
 
@@ -24,6 +24,6 @@ void Ov283_AiFallTick(int *this) {
         }
     }
 
-    Ov107_PostTagUpdate((Actor *)(*(int *)node), 4, 0);
+    Ov107_PostTagUpdate(*(int *)node, 4, 0);
     SetIndexedSlot((int)this, *(signed char *)((int)this + 0x20), (int)&Ov283_AiFallTickB);
 }

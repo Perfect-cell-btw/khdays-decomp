@@ -6,9 +6,7 @@
  * byte goes up and the action byte becomes 1.
  *
  * Matched byte-exact 2026-07-23, first compile. One of three byte-identical siblings. */
-
-#include "game/enemy_common.h"
-
+extern void Ov107_MoveNodeAndRelayout(int obj, void *p);
 extern int RandNextScaled(int n);
 extern void *List_First(void *list);
 extern void *List_Next(void *list, void *node);
@@ -26,14 +24,14 @@ void Ov288_ChargeAndPickTarget(int *node) {
         return;
     }
     state[0xd] = 0x1000;
-    Ov107_MoveNodeAndRelayout((Actor *)state[0], (void *)(state[0] + 0x190));
+    Ov107_MoveNodeAndRelayout(state[0], (void *)(state[0] + 0x190));
     if (*(int *)(state[0] + 0x3b8) > 0) {
         int n = RandNextScaled(*(int *)(state[0] + 0x3b8));
         void *p = List_First((void *)(state[0] + 0x398));
         int i = 0;
         while (p != 0) {
             if (i >= n) {
-                Ov107_MoveNodeAndRelayout((Actor *)state[0], p);
+                Ov107_MoveNodeAndRelayout(state[0], p);
                 break;
             }
             p = List_Next((void *)(state[0] + 0x398), p);

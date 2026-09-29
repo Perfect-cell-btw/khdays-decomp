@@ -9,7 +9,6 @@
  * (+0x388), a placement on the +0x144 list (+0x398) and loads sound 0x13a. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 struct Bit0 {
     unsigned bit0 : 1;
@@ -27,12 +26,14 @@ extern void Ov241_CreateRegistryEntryForActor(void);
 extern void Ov241_AllocCopyEntryTable(void);
 extern void Ov241_Model_SetTrack0(void);
 extern void Ov241_JointCallback(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int FindResourceIndexByName(int item, const char *name);
 extern void NNS_G3dRenderObjSetCallBack(int renderObj, void *cb, int ptr, int timing, int opt);
 extern void Srt_SetTranslationXYZ(void *placement, int x, int y, int z);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
+extern void Ov107_EnqueueValue(int self, int item);
 extern void SetSubitemState(int item, int channel, int a, int b);
 extern int ModelNode_New(void);
 extern int *List_InsertSorted(char *list, int stride, int max);
@@ -63,7 +64,7 @@ void Ov241_Construct(char *self)
         *(u16 *)(self + 0x60) = (hw & ~0xff00) |
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0x20) << 0x18) >> 0x10);
     }
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 0));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     names = data_ov241_020d0c84;
     for (i = 0; i < 3; i++) {
@@ -74,10 +75,10 @@ void Ov241_Construct(char *self)
     *(char **)(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x4c) = self;
     NNS_G3dRenderObjSetCallBack(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x20, Ov241_JointCallback, 0, 6, 3);
     Srt_SetTranslationXYZ((void *)(*(int *)(self + 0x384) + 4), 0, 0x200, 0);
-    *(int *)(self + 0x39c) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)((int)self), 1), data_ov241_020d0cc4);
+    *(int *)(self + 0x39c) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), data_ov241_020d0cc4);
     for (i = 0; i < 3; i++) {
-        ((int *)self)[0xe3 + i] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 2));
-        Ov107_EnqueueValue((char *)((int)self), ((int *)self)[0xe3 + i]);
+        ((int *)self)[0xe3 + i] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 2));
+        Ov107_EnqueueValue((int)self, ((int *)self)[0xe3 + i]);
         ((struct Bit0 *)(((int *)self)[0xe3 + i] + 0x5c))->bit0 = 1;
         *(int *)(((int *)self)[0xe3 + i] + 0x5c) |= 2;
         SetSubitemState(((int *)self)[0xe3 + i], 0, 0, 1);
@@ -87,7 +88,7 @@ void Ov241_Construct(char *self)
     *(int *)(self + 0x3a0) = ModelNode_New();
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x3a0));
     ((struct Bit0 *)(*(int *)(self + 0x3a0) + 0x5c))->bit0 = 1;
-    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 3));
+    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 3));
     RegisterSubscriberSlot(*(int *)(self + 0x3a0), *(int *)(self + 0x388));
     p = List_InsertSorted(self + 0x144, 4, 0x64);
     *p = Ov107_CloneResourceTransform(self + 0x64);

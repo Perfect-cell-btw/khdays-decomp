@@ -2,9 +2,6 @@
  * requests sub-state 2; outside sub-state 6 the +0x4a4 and +0x4b4 effect handles are finished
  * and cleared. The +0x3c0 transform (44 bytes) is copied into the +0x3b0 node and from there
  * into the +0x3ac item's node. The base tick always runs. */
-
-#include "game/enemy_common.h"
-
 struct Transform44 { int a[11]; };
 
 struct Ov276Actor {
@@ -16,6 +13,7 @@ struct Ov276Actor {
 };
 
 extern void TaskList_FinishByTag(int taskList, int handle);
+extern void Ov107_AiState_PostTickBase(int actor);
 
 void Ov276_TickHook(int actor)
 {
@@ -38,5 +36,5 @@ void Ov276_TickHook(int actor)
     }
     *(struct Transform44 *)(self->pNode3b0 + 0x10) = self->xform3c0;
     *(struct Transform44 *)(*self->ppItem3ac + 0x10) = *(struct Transform44 *)(self->pNode3b0 + 0x10);
-    Ov107_AiState_PostTickBase((char *)actor);
+    Ov107_AiState_PostTickBase(actor);
 }

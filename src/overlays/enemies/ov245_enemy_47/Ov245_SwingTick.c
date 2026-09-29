@@ -12,7 +12,6 @@
  * (020d40e8); otherwise pose 2 and the node moves to 020d462c. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 p0; VecFx32 dir; int scale; } Segment;
 struct Capsule { Segment seg; int radius; };
@@ -21,11 +20,13 @@ struct Ov245Box { VecFx32 pos; VecFx32 a; VecFx32 b; VecFx32 c; int scale; int k
 extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern int Ov107_CollectEntitiesTouchingDisc(int actor, struct Ov245Box *box, int *out);
+extern int Ov107_CollectSegmentOverlaps(int actor, struct Capsule *cap, int *out);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void Ov245_TurnPlan(int *node);
+extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_02042270;
@@ -73,7 +74,7 @@ void Ov245_SwingTick(int *node) {
         }
         if (state[0xb] >= 0x5d8 && state[0xb] <= 0x5d8 + 0x220 && nHits == 0) {
             cap = *(struct Capsule *)(**(int **)(*state + 0x388) + 0x78);
-            nHits = Ov107_CollectSegmentOverlaps((Actor *)(*state), &cap, (void **)hits);
+            nHits = Ov107_CollectSegmentOverlaps(*state, &cap, hits);
         }
         for (i = 0; i < nHits; i++) {
             bit = 1 << *(unsigned short *)(hits[i] + 2);
@@ -103,6 +104,6 @@ void Ov245_SwingTick(int *node) {
         Ov245_TurnPlan(node);
         return;
     }
-    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
+    Ov107_PostTagUpdate(*state, 2, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_FourShape_AiStep_QueueAction0OnAnimEnd);
 }

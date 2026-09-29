@@ -2,8 +2,8 @@
  * the action resource's offset and scale in the actor's frame, and once the actor is on the ground
  * and the gate byte is clear queues action 2 and clears the step handler. */
 
-#include "game/enemy_common.h"
-
+extern void Ov107_UnlinkNodeFromOwner(int node);
+extern int Ov107_ActionResource_GetOffsetAndScale();
 extern int Vec3TransformViaTempMtx();
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
@@ -15,12 +15,12 @@ void Ov133_HomingDash_Recover(int this) {
     int r6;
 
     if (*(int *)(p + 0x3d0) != 0) {
-        Ov107_UnlinkNodeFromOwner((void *)(*(int *)(p + 0x3d0)));
+        Ov107_UnlinkNodeFromOwner(*(int *)(p + 0x3d0));
         *(int *)(*(int *)s + 0x3d0) = 0;
     }
 
     p = *(int *)s;
-    r6 = Ov107_ActionResource_GetOffsetAndScale(*(int *)(p + 0x3c8), (VecFx32 *)local);
+    r6 = Ov107_ActionResource_GetOffsetAndScale(*(int *)(p + 0x3c8), local);
 
     Vec3TransformViaTempMtx(s + 0x18, *(int *)s + 0xa0, local);
 

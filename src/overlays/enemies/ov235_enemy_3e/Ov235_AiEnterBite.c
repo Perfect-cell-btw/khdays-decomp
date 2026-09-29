@@ -1,12 +1,11 @@
 /* Kick anim 0xd and the +0x3a8 sub-anim 0xc, reset four fields, then dispatch. */
-
-#include "game/enemy_common.h"
-
+extern int Ov107_PostTagUpdate(int, int, int);
+extern int Ov107_StartAnim(int, int, int);
 extern int SetIndexedSlot(int, int, void *);
 extern int Ov235_BiteTick(int);
 void Ov235_AiEnterBite(int param_1) {
     int owner = *(int *)(param_1 + 4);
-    Ov107_PostTagUpdate((Actor *)(*(int *)owner), 0xd, 0);
+    Ov107_PostTagUpdate(*(int *)owner, 0xd, 0);
     Ov107_StartAnim(*(int *)(*(int *)owner + 0x3a8), 0xc, 0);
     *(int *)(owner + 0x44) = 0;
     *(signed char *)(owner + 0x63) = 0;

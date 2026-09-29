@@ -5,14 +5,12 @@
  * effect is released, outside 5 its +4 effect; if flagged (+0x1c4 & 0xa) outside sub-states
  * 0, 1, 3, 2 and 0xc sub-state 2 is forced and that +4 effect released too. Then the base tick runs.
  * The copies write their DESTINATION as a struct field through a typed pointer. */
-
-#include "game/enemy_common.h"
-
 typedef struct { int w[11]; } Placement;
 typedef struct { int pad; Placement placement; } Bone;              /* +4 */
 typedef struct { char pad[0x10]; Placement placement; } Frame;      /* +0x10 */
 
 extern void TaskList_FinishByTag(int list, int node);
+extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov275_TickHandler(int self)
 {
@@ -65,5 +63,5 @@ void Ov275_TickHandler(int self)
             *(int *)(*(int *)(self + 0x3e0) + 4) = 0;
         }
     }
-    Ov107_AiState_PostTickBase((char *)self);
+    Ov107_AiState_PostTickBase(self);
 }

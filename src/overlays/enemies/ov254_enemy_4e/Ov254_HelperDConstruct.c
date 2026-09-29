@@ -4,13 +4,14 @@
  * and re-initialised) and the hidden +0x390 item (pose 0x4b, registered). */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void RefreshObjectCallbacks(int item, int a);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern void Ov254_Destroy_2(void);
 extern void Ov254_HelperAHandleMessage(void);
 extern void Ov254_HelperD_CreateAiTask(void);
@@ -34,10 +35,10 @@ void Ov254_HelperDConstruct(char *self)
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x4a));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x4a));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
-    *(int *)(self + 0x390) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x4b));
+    *(int *)(self + 0x390) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x4b));
     Ov107_EnqueueValue(self, *(int *)(self + 0x390));
     *(int *)(*(int *)(self + 0x390) + 0x5c) |= 2;
 }

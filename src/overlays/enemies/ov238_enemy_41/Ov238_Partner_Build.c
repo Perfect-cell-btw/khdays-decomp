@@ -9,7 +9,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 center; int nRadius; } Sphere;
 typedef struct { unsigned f : 8; } B8;
@@ -22,9 +21,11 @@ extern void Ov238_Update(void);
 extern void Ov238_CreateAiTask(void);
 extern void Ov238_OnMessage(void);
 extern void Ov238_Teardown(void);
+extern void *Ov107_PackTextureHandle(int set, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Srt_SetScaleUniform(void *srt, int scale);
+extern void Ov107_EnqueueValue(char *self, int model);
 extern int *List_InsertSorted(void *pool, int count, int size);
 extern int Ov107_CloneResourceTransform(void *sphere);
 
@@ -43,10 +44,10 @@ void Ov238_Partner_Build(char *self)
     *(int *)(self + 0x70) = 0xa00;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0x1000;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)set, 0x19));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(set, 0x19));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     Srt_SetScaleUniform(self + 0xa0, 0x14cd);
-    *(int *)(self + 0x3a4) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)set, 0x1a));
+    *(int *)(self + 0x3a4) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(set, 0x1a));
     Ov107_EnqueueValue(self, *(int *)(self + 0x3a4));
     *(int *)(*(int *)(self + 0x3a4) + 0x5c) |= 2;
     *(int **)(self + 0x388) = List_InsertSorted(self + 0x22c, 0x10, 0x64);

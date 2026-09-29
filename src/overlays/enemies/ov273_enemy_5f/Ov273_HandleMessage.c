@@ -11,7 +11,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } Srt;
 struct Pair { int res; int handle; };
@@ -21,12 +20,15 @@ struct Bits40 { int b0 : 1; int b1 : 1; };
 
 extern void RefreshObjectCallbacks(int item, int a);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);
+extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
 extern int Slot_Spawn(int slot, int id, VecFx32 *pos, unsigned int flags);
+extern void Ov107_ForwardVisibleEvent(char *self, int a);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Collision_CastRay(int grid, VecFx32 *pos, VecFx32 *ray);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern void Srt_SetTranslation(void *srt, VecFx32 *pos);
 extern void SrtTransform_SetIdentity(Srt *srt);
+extern int Ov107_CreateSpawnTask(char *self, int id, int mode, int flag, void *pose);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 extern const short data_0203d210[];
 extern const VecFx32 data_02042240;
@@ -138,13 +140,13 @@ void Ov273_HandleMessage(char *self, u8 *msg, int arg)
             break;
         }
         case 7:
-            *(int *)(self + 0x424) = Ov107_CreateSpawnTask((int)self, 0x162, 0xc, 0, self + 0xa0);
+            *(int *)(self + 0x424) = Ov107_CreateSpawnTask(self, 0x162, 0xc, 0, self + 0xa0);
             break;
         case 9:
-            *(int *)(self + 0x428) = Ov107_CreateSpawnTask((int)self, 0x162, 5, 0, self + 0xa0);
+            *(int *)(self + 0x428) = Ov107_CreateSpawnTask(self, 0x162, 5, 0, self + 0xa0);
             break;
         case 8:
-            *(int *)(self + 0x42c) = Ov107_CreateSpawnTask((int)self, 0x162, 0xa, 0, self + 0xa0);
+            *(int *)(self + 0x42c) = Ov107_CreateSpawnTask(self, 0x162, 0xa, 0, self + 0xa0);
             break;
         }
     }

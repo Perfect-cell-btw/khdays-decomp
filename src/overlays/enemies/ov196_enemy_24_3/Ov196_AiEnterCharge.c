@@ -1,13 +1,12 @@
 /* Plays anim 4, resets the charge state and installs the charge tick. */
 
-#include "game/enemy_common.h"
-
+extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov196_ChargeTick(void);
 
 void Ov196_AiEnterCharge(char *obj) {
     char *p = *(char **)(obj + 4);
-    Ov107_PostTagUpdate((Actor *)(*(int *)p), 4, 0);
+    Ov107_PostTagUpdate(*(int *)p, 4, 0);
     p[0x50] = 0;
     *(int *)(p + 0x30) = 0;
     p[0x51] = 0;

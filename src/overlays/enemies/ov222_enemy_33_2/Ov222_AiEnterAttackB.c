@@ -1,12 +1,10 @@
 /* Set anim (0x15 if child+0x78 else 0x16), clear +0x5c/+0x75/+0x76, then dispatch. */
-
-#include "game/enemy_common.h"
-
+extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int SetIndexedSlot(int a, int b, void *handler);
 extern void Ov222_AttackTick(void);
 void Ov222_AiEnterAttackB(int param_1) {
     int child = *(int *)(param_1 + 4);
-    Ov107_PostTagUpdate((Actor *)(*(int *)child), *(int *)(child + 0x78) != 0 ? 0x15 : 0x16, 0);
+    Ov107_PostTagUpdate(*(int *)child, *(int *)(child + 0x78) != 0 ? 0x15 : 0x16, 0);
     *(int *)(child + 0x5c) = 0;
     *(unsigned char *)(child + 0x75) = 0;
     *(unsigned char *)(child + 0x76) = 0;

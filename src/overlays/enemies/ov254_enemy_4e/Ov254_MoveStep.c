@@ -10,7 +10,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 struct AiState {
     u16 field_00;
@@ -84,6 +83,7 @@ extern void ScaleVec3Fixed27(int factor, int *in, int *out);
 extern CollisionHit *Collision_CastRay(void *collision, VecFx32 *origin,
                                     VecFx32 *direction);
 extern void Srt_SetTranslation(void *dst, const void *src);
+extern void Ov107_UpdateCollisionSphere(struct AiState *node);
 
 void Ov254_MoveStep(struct AiState *self, int factor)
 {
@@ -163,6 +163,6 @@ void Ov254_MoveStep(struct AiState *self, int factor)
     VEC_Add((int *)&self->field_b0, (int *)&self->field_fc,
             (int *)&position);
     Srt_SetTranslation((char *)self + 0xa0, &position);
-    Ov107_UpdateCollisionSphere((int)self);
+    Ov107_UpdateCollisionSphere(self);
     return;
 }

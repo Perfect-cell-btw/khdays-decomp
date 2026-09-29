@@ -9,13 +9,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 center; VecFx32 axisX; VecFx32 axisY; VecFx32 axisZ; int nExtentX; int nExtentY; int nExtentZ; } Box;
 struct BombPair { int obj; int active; };
 struct Ov252Spawner { char pad[0x714]; struct BombPair pair[12]; };
 
 extern void SetSubitemState(int rig, int channel, int a, int b);
+extern int Ov107_CollectCapsuleOverlaps(int owner, Box *box, int *hits);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
@@ -61,7 +61,7 @@ void Ov252_GemTick(int *node)
         box.nExtentX = 0x1800;
         box.nExtentY = (state[6] / 0x1000) * 0x7800;
         box.nExtentZ = 0x1800;
-        n = Ov107_CollectCapsuleOverlaps((Actor *)state[1], &box, (void **)hits);
+        n = Ov107_CollectCapsuleOverlaps(state[1], &box, hits);
         for (i = 0; i < n; i++) {
             VEC_Subtract((VecFx32 *)(hits[i] + 0x190), (VecFx32 *)(state + 2), &push);
             push.y = 0;

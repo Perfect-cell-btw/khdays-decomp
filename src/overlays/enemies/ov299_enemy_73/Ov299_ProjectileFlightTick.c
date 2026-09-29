@@ -14,7 +14,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct w8 { unsigned int lo : 8, rest : 24; };
@@ -51,6 +50,7 @@ extern void VEC_Subtract(const void *a, const void *b, VecFx32 *d);
 extern void VEC_Add(const void *a, const void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
+extern int Ov107_CollectSegmentOverlaps(int actor, struct Capsule *cap, int *out);
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void func_ov107_020c0b90(int actor, int effect, VecFx32 at, int d);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);
@@ -88,7 +88,7 @@ void Ov299_ProjectileFlightTick(int *node)
     VEC_Subtract((void *)state[1], state + 6, &cap.seg.dir);
     cap.seg.scale = VEC_Normalize(&cap.seg.dir, &cap.seg.dir);
     cap.radius = *(int *)(*state + 0x80);
-    nHits = Ov107_CollectSegmentOverlaps((Actor *)(*state), &cap, (void **)hits);
+    nHits = Ov107_CollectSegmentOverlaps(*state, &cap, hits);
     for (i = 0; i < nHits; i++) {
         VEC_Subtract((void *)(hits[i] + 0x74), (void *)(*state + 0x74), &push);
         push.y = 0;

@@ -12,7 +12,6 @@
  */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 struct Ov142ChildIds {
     int values[2];
@@ -68,11 +67,13 @@ extern void Ov142_SpawnEffectForMsgSlotThenForward(void);
 extern void Ov142_CreateRegistryEntryAndLink_2(void);
 extern void Ov142_InvertVecOnceIfFlagSet(void);
 
+extern void *Ov107_PackTextureHandle(struct Ov142SubObj *owner, int index);
 extern struct Ov142Subitem *CreateSubitemInstance0xB4(void *item);
 extern void RegisterSubscriberSlot(struct Ov142Subitem *subscriber, struct Ov142Subitem *item);
 extern void SetSubitemState(struct Ov142Subitem *item, int state, int zero, int enabled);
 extern void RefreshObjectCallbacks(struct Ov142Subitem *item, int value);
 extern void *CallocInstance(int size);
+extern void Ov107_EnqueueValue(struct Ov142SubObj *owner, struct Ov142Subitem *item);
 extern struct Ov142PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *camera);
 
@@ -96,7 +97,7 @@ void Ov142_InitializeSubObject(struct Ov142SubObj *self)
     self->flags60 = flags & ~0xff00 |
         (((((flags << 0x10) >> 0x18) | 0x40) << 0x18) >> 0x10);
 
-    self->subitem384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self->owner398, 6));
+    self->subitem384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self->owner398, 6));
     RegisterSubscriberSlot(self->subscriber9c, self->subitem384);
     SetSubitemState(self->subitem384, 0, 0, 1);
     SetSubitemState(self->subitem384, 2, 0, 1);
@@ -106,8 +107,8 @@ void Ov142_InitializeSubObject(struct Ov142SubObj *self)
 
     for (i = 0; i < 2; i++) {
         self->slots39c[i].child =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self->owner398, ids.values[i]));
-        Ov107_EnqueueValue((char *)self->owner398, (int)self->slots39c[i].child);
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self->owner398, ids.values[i]));
+        Ov107_EnqueueValue(self->owner398, self->slots39c[i].child);
         self->slots39c[i].child->flags5c |= 2;
     }
 

@@ -9,11 +9,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern u8 Ov252_TurnSide(int *state, VecFx32 v);
+extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
+extern int Ov107_StartAnim(int part, int motion, int mode);
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern int Ov252_PickMove(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -45,7 +46,7 @@ void Ov252_SwayTurnTick(int *node)
         }
         actor = *state;
         if (*(u8 *)(actor + 0x579) == Ov252_TurnSide(state, d)) {
-            Ov107_PostTagUpdate((Actor *)actor, *((u8 *)state + 0x84), 0);
+            Ov107_PostTagUpdate(actor, *((u8 *)state + 0x84), 0);
             if (*(u8 *)(*state + 0x579) == 2) {
                 Ov107_StartAnim(*(int *)(*state + 0x574), 7, 0);
             } else {
@@ -75,7 +76,7 @@ void Ov252_SwayTurnTick(int *node)
     default:
         return;
     }
-    Ov107_PostTagUpdate((Actor *)(*state), ++*((u8 *)state + 0x84), 0);
+    Ov107_PostTagUpdate(*state, ++*((u8 *)state + 0x84), 0);
     switch (*(u8 *)(*state + 0x579)) {
     case 1:
         Ov107_StartAnim(*(int *)(*state + 0x574), 5, 0);

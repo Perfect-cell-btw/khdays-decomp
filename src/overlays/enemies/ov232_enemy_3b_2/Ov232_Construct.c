@@ -12,7 +12,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { void *node; int pad; } Slot;
 typedef struct { int w[8]; } KindTable;
@@ -20,6 +19,7 @@ typedef struct { int w[6]; } ParamBlock;
 typedef struct { VecFx32 pos; int scale; } Placement;
 typedef struct { VecFx32 center; VecFx32 ax; VecFx32 ay; VecFx32 az; int extent[3]; } Obb;
 
+extern void *Ov107_PackTextureHandle(void *self, int slot);
 extern void *CreateSubitemInstance0xB4(void *res);
 extern void RegisterSubscriberSlot(void *list, void *node);
 extern void Snd_RegisterSeqAndBind(void *dst, void *a, void *b, int n);
@@ -27,6 +27,7 @@ extern void MainBlob_ResetSlotRows(void *obj, void *block);
 extern int InsertSortedEntryWithKey(void *obj, int set, const char *name);
 extern int Ov107_CreateNamedResourceBinding(void *res, const char *name);
 extern void *CallocInstance(int size);
+extern void Ov107_EnqueueValue(void *self, void *obj);
 extern void *Ov232_Item_New(void *self);
 extern void Ov107_Actor_SetAttachSlot(void *self, int a, int b, const VecFx32 *v, int e);
 extern int FX_Div(int num, int den);
@@ -110,7 +111,7 @@ void Ov232_Construct(char *self)
     *(void **)(self + 0x3b8) = CallocInstance(0x40);
     for (i = 0; i < 8; i++) {
         (*(Slot **)(self + 0x3b8))[i].node = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, kinds.w[i]));
-        Ov107_EnqueueValue(self, (int)((*(Slot **)(self + 0x3b8))[i].node));
+        Ov107_EnqueueValue(self, (*(Slot **)(self + 0x3b8))[i].node);
         *(int *)((char *)(*(Slot **)(self + 0x3b8))[i].node + 0x5c) |= 2;
     }
     for (i = 0; i < 2; i++) {

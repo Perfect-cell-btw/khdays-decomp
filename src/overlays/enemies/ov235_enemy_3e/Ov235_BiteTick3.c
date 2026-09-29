@@ -12,7 +12,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -27,8 +26,10 @@ typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int Ov107_FindNearestObject(int obj, int kind);
+extern int Ov107_ActionResource_GetOffsetAndScale(int part, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
+extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov235_020d24fc;
@@ -81,7 +82,7 @@ void Ov235_BiteTick3(int *node)
         Vec3TransformViaTempMtx(&seg.dir, (void *)(body + 4), &data_02042258);
         seg.nLength = 0x3000;
         seg.nRadius = 0xc00;
-        n = Ov107_CollectSegmentOverlaps((Actor *)(*state), &seg, (void **)hits);
+        n = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
         for (i = 0; i < n; i++) {
             VecFx32 push;
             Cmd14 msg;

@@ -2,12 +2,11 @@
    pairs, builds the render object, opens four subitem channels and links two
    sorted list entries built from the seeded block at +0x64. */
 
-#include "game/enemy_common.h"
-
 extern void Ov285_OnDespawn(void), Ov285_CopyBlockToTwoNodes(void);
 extern void Ov285_CreateRegistryEntryAndLink(void), Ov285_SpendHitPointsOnHit(void);
 extern void Ov285_TryBeginSubState5IfIdle(void), Ov285_ForwardAnimEvent(void);
 
+extern void *Ov107_PackTextureHandle();
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern void Ov107_Actor_SetAttachSlot();
@@ -26,7 +25,7 @@ void Ov285_ClassInit(int param_1)
     *(int *)(param_1 + 0x64) = 0;
     *(int *)(param_1 + 0x68) = 0xc00;
     *(int *)(param_1 + 0x6c) = 0;
-    *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)param_1, 0));
+    *(void **)(param_1 + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(param_1, 0));
     RegisterSubscriberSlot(*(int *)(param_1 + 0x9c), *(void **)(param_1 + 0x384));
     Ov107_Actor_SetAttachSlot(param_1, 0, 1, 0, 0x1f33);
     Ov107_Actor_SetAttachSlot(param_1, 1, 1, 0, 0x1f33);

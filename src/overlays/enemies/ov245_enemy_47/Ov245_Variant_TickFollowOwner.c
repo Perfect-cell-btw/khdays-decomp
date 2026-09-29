@@ -1,8 +1,6 @@
 /* Retunes the rig at +0x14 of the sub-object's block at +0x44c and then notifies, with the
  * notify flag forced to 0 while bit 1 of the halfword at +0x1ac is set. */
-
-#include "game/enemy_common.h"
-
+extern void Ov107_MoveNodeAndRelayout(char *self, void *p);
 extern void Ov107_ProcessObjectTick(char *self, int flag);
 
 void Ov245_Variant_TickFollowOwner(char *self, int flag) {
@@ -10,6 +8,6 @@ void Ov245_Variant_TickFollowOwner(char *self, int flag) {
     if (*(unsigned short *)(sub + 0x1ac) & 2) {
         flag = 0;
     }
-    Ov107_MoveNodeAndRelayout((Actor *)self, (VecFx32 *)(*(char **)(sub + 0x44c) + 0x14));
+    Ov107_MoveNodeAndRelayout(self, *(char **)(sub + 0x44c) + 0x14);
     Ov107_ProcessObjectTick(self, flag);
 }

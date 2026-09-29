@@ -8,14 +8,12 @@
  * still >= 0x2000, keep waiting. Otherwise clear the *(*state+0x384)+0xa8 flag, set state[0x14] =
  * 0x6000 and hand off to the 020d280c state.
  */
-
-#include "game/enemy_common.h"
-
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *a, void *b);
 extern int  func_020050b4(int x, int z);
+extern int  Ov107_ActionResource_GetOffsetAndScale(int obj, void *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *src, void *w);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
 extern void Ov282_AimSteerFireWhenReady(void);
@@ -38,7 +36,7 @@ void Ov282_AimCloseInRange(int *self) {
     height = VEC_Normalize(v, v);
     state[0xa] = func_020050b4(v[0], v[2]);
     height = height - *(int *)(state[4] + 0x80) - *(int *)(*state + 0x80);
-    factor = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3b8), (VecFx32 *)w);
+    factor = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3b8), w);
     Vec3TransformViaTempMtx((void *)(state + 5), (void *)(*state + 0xa0), w);
     ScaleVec3Fx12(factor, (void *)(state + 5), (void *)(state + 5));
     state[0xb] += *(int *)(*self + 0x2c);

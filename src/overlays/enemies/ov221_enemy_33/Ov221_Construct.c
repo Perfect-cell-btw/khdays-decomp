@@ -7,9 +7,6 @@
  * a built item is subscribed to the parent and finalised. A non-negative saved kind builds the
  * +0x394 sub-item (registered on the actor, bit 1 of +0x5c raised). Finally a +0x22c list slot
  * takes the +0x64 pose as +0x388 with bit 1 of its +8 low byte raised, and +0x38c clears. */
-
-#include "game/enemy_common.h"
-
 typedef struct {
     unsigned f : 8;
 } B8;
@@ -17,11 +14,13 @@ typedef struct {
 struct Ov221Saved { int w; };
 struct RollingCounter { unsigned char value; };
 
+extern int Ov107_PackTextureHandle(int owner, int kind);
 extern int CreateSubitemInstance0xB4(int a);
 extern void SetSubitemState(int obj, int mode, int a, int b);
 extern void NNS_G3dMdlSetMdlPolygonID(int a, unsigned int b, unsigned int slot);
 extern void RegisterSubscriberSlot(int a, int obj);
 extern void RefreshObjectCallbacks(int obj, int a);
+extern void Ov107_EnqueueValue(int self, int obj);
 extern int List_InsertSorted(int a, int b, int c);
 extern int Ov107_CloneResourceTransform(int a);
 extern void Ov221_Projectile_Destroy(void);
@@ -60,7 +59,7 @@ void Ov221_Construct(char *self) {
     *(int *)(self + 0x58) = 0;
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
 
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)owner, 0x1a));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, 0x1a));
     SetSubitemState(*(int *)(self + 0x384), 0, 0, 1);
     SetSubitemState(*(int *)(self + 0x384), 2, 0, 1);
     SetSubitemState(*(int *)(self + 0x384), 4, 0, 1);
@@ -80,8 +79,8 @@ void Ov221_Construct(char *self) {
     }
 
     if (saved.w >= 0) {
-        *(int *)(self + 0x394) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)owner, saved.w));
-        Ov107_EnqueueValue((char *)((int)self), *(int *)(self + 0x394));
+        *(int *)(self + 0x394) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, saved.w));
+        Ov107_EnqueueValue((int)self, *(int *)(self + 0x394));
         *(int *)(*(int *)(self + 0x394) + 0x5c) |= 2;
     }
 

@@ -2,12 +2,10 @@
  * query Ov107_FindNearestObject; if non-null, aim: VEC_Subtract(result+0x74 - obj->f50)
  * and obj->f10=obj->fc=func_020050b4(dx,dz). Clear owner hw60 hi bit 0x80,
  * Ov107_PostTagUpdate(owner,0,0), and dispatch via SetIndexedSlot. */
-
-#include "game/enemy_common.h"
-
 extern int Ov107_FindNearestObject(int owner, int a);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int func_020050b4(int a, int b);
+extern void Ov107_PostTagUpdate(int owner, int a, int b);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov137_AiStep_QueueAction2OnAnimEnd(void);
 struct hw60 { unsigned short lo:8, hi:8; };
@@ -25,6 +23,6 @@ void Ov137_Reaction_ChargeThenAim(int self) {
         *(int *)(obj + 0xc) = *(int *)(obj + 0x10) = func_020050b4(buf[0], buf[2]);
     }
     ((struct hw60 *)(*(int *)obj + 0x60))->hi &= ~0x80;
-    Ov107_PostTagUpdate((Actor *)(*(int *)obj), 0, 0);
+    Ov107_PostTagUpdate(*(int *)obj, 0, 0);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov137_AiStep_QueueAction2OnAnimEnd);
 }

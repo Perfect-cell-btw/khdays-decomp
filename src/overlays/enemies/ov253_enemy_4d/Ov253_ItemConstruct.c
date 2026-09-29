@@ -7,16 +7,17 @@
  * to the +0x64 pose as +0x39c. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 struct Ov253Poses { int w[2]; };
 struct Ov253Pair { int pEffect; int pChild; };
 
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void SetSubitemState(int item, int channel, int a, int b);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void *CallocInstance(int size);
+extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(char *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern const struct Ov253Poses data_ov253_020d4a00;
@@ -45,7 +46,7 @@ void Ov253_ItemConstruct(char *self) {
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
     *(int *)(self + 0x70) = 0x200;
     *(int *)(self + 0x54) = 0x100;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x388)), 0x23));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x388), 0x23));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     SetSubitemState(*(int *)(self + 0x384), 0, 0, 1);
     SetSubitemState(*(int *)(self + 0x384), 2, 0, 1);
@@ -53,8 +54,8 @@ void Ov253_ItemConstruct(char *self) {
     *(struct Ov253Pair **)(self + 0x398) = CallocInstance(0x10);
     for (i = 0; i < 2; i++) {
         (*(struct Ov253Pair **)(self + 0x398))[i].pEffect =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x388)), poses.w[i]));
-        Ov107_EnqueueValue((char *)(*(int *)(self + 0x388)), (*(struct Ov253Pair **)(self + 0x398))[i].pEffect);
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x388), poses.w[i]));
+        Ov107_EnqueueValue(*(int *)(self + 0x388), (*(struct Ov253Pair **)(self + 0x398))[i].pEffect);
         *(int *)((*(struct Ov253Pair **)(self + 0x398))[i].pEffect + 0x5c) |= 2;
     }
     p = List_InsertSorted(self + 0x144, 4, 0x64);

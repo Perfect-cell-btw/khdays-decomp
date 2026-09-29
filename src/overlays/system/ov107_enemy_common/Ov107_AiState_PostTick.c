@@ -1,9 +1,8 @@
 /* Latches the ground flag, updates the attached hit shapes while active, and clears the frame's
  * push vector. */
 
-#include "game/enemy_common.h"
-
 extern void *List_First(void *list);
+extern void Ov107_HitShape_UpdateWorld(int v);
 extern void *List_Next(void *list);
 
 typedef struct { int w0, w1, w2; } Word3;
@@ -27,7 +26,7 @@ void Ov107_AiState_PostTick(char *self) {
         void *node = List_First(self + 0x144);
         while (node != 0) {
             if (*(int *)node != 0) {
-                Ov107_HitShape_UpdateWorld((unsigned char *)(*(int *)node));
+                Ov107_HitShape_UpdateWorld(*(int *)node);
             }
             node = List_Next(self + 0x144);
         }

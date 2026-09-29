@@ -5,7 +5,6 @@
  * manager's first actor +0x88) fires effect 1 on the actor. The base handler always runs. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 
@@ -13,8 +12,10 @@ extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero,
                                      SrtTransform *transform);
+extern int *func_ov107_020c9848(void);
 extern void VEC_Subtract(const void *a, const VecFx32 *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
+extern void Ov107_ForwardVisibleEvent(int owner, int effect);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 
 void Ov299_HandleMessage(int owner, unsigned char *command, int arg)
@@ -53,7 +54,7 @@ void Ov299_HandleMessage(int owner, unsigned char *command, int arg)
                 if (manager != 0 && *manager != 0) {
                     VEC_Subtract((void *)(*manager + 0x88), &translation, &d);
                     if (VEC_Normalize(&d, &d) <= 0xa000) {
-                        Ov107_ForwardVisibleEvent((void *)owner, 1);
+                        Ov107_ForwardVisibleEvent(owner, 1);
                     }
                 }
             }

@@ -8,7 +8,6 @@
  * the actor's +0x64 pose with bit 1 raised on its +8 flags (cf. Ov191_Construct_2). */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
@@ -26,12 +25,14 @@ extern void Ov153_TickAndSyncModelXform(void);
 extern void Ov153_AiState_OnMessage(void);
 extern void Ov153_BroadcastPositionMessage(void);
 extern void Ov153_CreateRegistryEntryAndLink(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern void Srt_SetScaleUniform(void *placement, int scale);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void SetSubitemState(int item, int channel, int a, int b);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void *CallocInstance(int size);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(char *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern const int data_ov153_020ce020[2];
@@ -56,7 +57,7 @@ void Ov153_Construct(char *self)
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x70) = 0xa00;
     i = 0;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x38c)), 4));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x38c), 4));
     Srt_SetScaleUniform((void *)(*(int *)(self + 0x384) + 4), 0x1400);
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     SetSubitemState(*(int *)(self + 0x384), 0, 0, 1);
@@ -67,7 +68,7 @@ void Ov153_Construct(char *self)
     *(void **)(self + 0x390) = CallocInstance(0x10);
     for (; i < 2; i++) {
         (*(struct Ov153SubitemSlot **)(self + 0x390))[i].pItem =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x38c)), kinds[i]));
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x38c), kinds[i]));
         Ov107_EnqueueValue(self, (*(struct Ov153SubitemSlot **)(self + 0x390))[i].pItem);
         *(int *)((*(struct Ov153SubitemSlot **)(self + 0x390))[i].pItem + 0x5c) |= 2;
     }

@@ -6,11 +6,12 @@
  * The base handler always runs. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 struct Ov246Pair { int pItem; int pChild; };
 
+extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *at, int a, int b);
 extern int Ov107_CreateNodeXformTask(int list, int parent, int kind, int a, void *at);
+extern int Ov107_CreateSpawnTask(char *self, int id, int a3, int a4, void *xform);
 extern int Ov246_SpawnAndInitRegistryEntry(char *self, int item, int a, int b);
 extern void Ov107_AiState_OnMessage(char *self, u8 *cmd, void *arg3);
 
@@ -27,9 +28,9 @@ void Ov246_HandleSpawnMessage(char *self, u8 *cmd, void *arg3)
                 Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), (*(struct Ov246Pair **)(self + 0x390))[7].pItem,
                                     5, *(char **)(self + 0x398) + 4, 0, 0);
             if (cmd[3] == 0) {
-                *(int *)(self + 0x3a8) = Ov107_CreateSpawnTask((int)self, 0x158, 5, 0, *(char **)(self + 0x398) + 4);
+                *(int *)(self + 0x3a8) = Ov107_CreateSpawnTask(self, 0x158, 5, 0, *(char **)(self + 0x398) + 4);
             } else if (cmd[3] == 1) {
-                *(int *)(self + 0x3a4) = Ov107_CreateSpawnTask((int)self, 0x158, 4, 0, *(char **)(self + 0x398) + 4);
+                *(int *)(self + 0x3a4) = Ov107_CreateSpawnTask(self, 0x158, 4, 0, *(char **)(self + 0x398) + 4);
             }
             break;
         case 2:

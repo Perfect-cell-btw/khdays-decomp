@@ -3,7 +3,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct Ov002ObjectSlot {
     void *pObject;                      /* +0x00 */
@@ -26,6 +25,9 @@ typedef struct Ov002AnimAt {
 
 extern Ov002ObjectContext *data_ov002_0207fa14;
 
+extern int Ov107_CreateRestartTask(void);
+extern int Ov107_CreateTriggerSphere(Ov002AnimAt *pAt);
+extern void Ov107_Spawner_SetMoveAnim(void *pObject, int nAnim, int nFlag);
 extern void Ov002_SetKeyNodeVisible(int nKey, int nParam, int nFlag);
 
 /* Start a slot's animation and record where it was started from.
@@ -46,14 +48,14 @@ void Ov002_StartSlotAnim(int nIndex, int nKey, int nMode, VecFx32 *pAt,
     pCtx = data_ov002_0207fa14;
     if (nMode == 0) {
         nAnim = Ov107_CreateRestartTask();
-        Ov107_Spawner_SetMoveAnim(pCtx->pSlots[nIndex].pObject, (void *)nAnim, 1);
+        Ov107_Spawner_SetMoveAnim(pCtx->pSlots[nIndex].pObject, nAnim, 1);
     } else {
         at.vAt.x = pAt->x;
         at.vAt.y = pAt->y;
         at.vAt.z = pAt->z;
         at.nMode = nMode;
-        nAnim = Ov107_CreateTriggerSphere((int)&at);
-        Ov107_Spawner_SetMoveAnim(pCtx->pSlots[nIndex].pObject, (void *)nAnim, 1);
+        nAnim = Ov107_CreateTriggerSphere(&at);
+        Ov107_Spawner_SetMoveAnim(pCtx->pSlots[nIndex].pObject, nAnim, 1);
     }
 
     if (pAt != 0) {

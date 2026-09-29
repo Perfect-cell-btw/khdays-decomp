@@ -4,13 +4,13 @@
  * pose 0x4a, creates the +0x3c4 effect (Ov255_CreateShakeTask), allocates the two-pair +0x3c0 table
  * (the first item from the data_ov255_020d2c30 resource, the second from pose 0x4b; both hidden)
  * and reserves the +0x38c shape (a placement at the +0x64 pose, flag bit 1). */
-
-#include "game/enemy_common.h"
-
 typedef void (*Callback)(void);
 struct Word8 { unsigned int lo : 8; };
 
+extern int Ov107_OpenCachedResourceByName(const char *name);
+extern void *Ov107_PackTextureHandle(int obj, int index);
 extern int JointModel_New(void *res, int size);
+extern void Ov107_EnqueueValue(int self, int item);
 extern int Ov255_CreateShakeTask(char *self);
 extern int *CallocInstance(int size);
 extern int CreateSubitemInstance0xB4(void *res);
@@ -40,15 +40,15 @@ void Ov255_PartnerCtor(char *self)
         ((((((unsigned int)hw << 0x10) >> 0x18) | 0xde) << 0x18) >> 0x10);
     *(unsigned short *)(self + 0x100 + 0xae) |= 0x14;
     *(int *)(self + 0x70) = 0x200;
-    *(int *)(self + 0x388) = JointModel_New(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x4a), 0x20);
-    Ov107_EnqueueValue((char *)(*(int *)(self + 0x384)), *(int *)(self + 0x388));
+    *(int *)(self + 0x388) = JointModel_New(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x4a), 0x20);
+    Ov107_EnqueueValue(*(int *)(self + 0x384), *(int *)(self + 0x388));
     *(int *)(self + 0x3c4) = Ov255_CreateShakeTask(self);
     *(int **)(self + 0x3c0) = CallocInstance(0x10);
     (*(int **)(self + 0x3c0))[0] = CreateSubitemInstance0xB4((void *)((((res + 0x8000) & 0xfffffc) << 7) | 0x80000001));
-    Ov107_EnqueueValue((char *)((int)self), (*(int **)(self + 0x3c0))[0]);
+    Ov107_EnqueueValue((int)self, (*(int **)(self + 0x3c0))[0]);
     *(int *)((*(int **)(self + 0x3c0))[0] + 0x5c) |= 2;
-    (*(int **)(self + 0x3c0))[2] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x4b));
-    Ov107_EnqueueValue((char *)((int)self), (*(int **)(self + 0x3c0))[2]);
+    (*(int **)(self + 0x3c0))[2] = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x4b));
+    Ov107_EnqueueValue((int)self, (*(int **)(self + 0x3c0))[2]);
     *(int *)((*(int **)(self + 0x3c0))[2] + 0x5c) |= 2;
     *(int **)(self + 0x38c) = List_InsertSorted(self + 0x22c, 0x10, 100);
     **(int **)(self + 0x38c) = Ov107_CloneResourceTransform(self + 0x64);

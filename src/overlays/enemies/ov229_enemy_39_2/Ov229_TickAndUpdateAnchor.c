@@ -3,8 +3,8 @@
 
 #include "game/actor.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
+extern int Ov107_RefreshAndSelectChild();
 extern int Ov107_ProcessObjectTick();
 
 struct S {
@@ -18,7 +18,7 @@ struct S {
 };
 
 void Ov229_TickAndUpdateAnchor(struct S *r4, int r5) {
-    Ov107_RefreshAndSelectChild((int)r4->p490, r5);
+    Ov107_RefreshAndSelectChild(r4->p490, r5);
     Ov107_ProcessObjectTick(r4, r5);
     if (r4->base.flags60.bits.lo & 0x80) {
         r4->v494 = r4->base.srt.translation;

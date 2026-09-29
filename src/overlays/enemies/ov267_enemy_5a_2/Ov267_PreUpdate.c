@@ -3,11 +3,11 @@
  * basis and added to the +0xb0 position, then the ov107 actor base finishes the frame. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 extern void TaskList_FinishByTag(int taskList, int task);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *pose, VecFx32 *in);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov267_PreUpdate(int self)
 {
@@ -24,5 +24,5 @@ void Ov267_PreUpdate(int self)
     *(int *)(self + 0x51c) = 0;
     Vec3TransformViaTempMtx((VecFx32 *)(self + 0x114 + 0x400), (void *)(self + 0xa0), (VecFx32 *)(self + 0x114 + 0x400));
     VEC_Add((VecFx32 *)(self + 0x114 + 0x400), (VecFx32 *)(self + 0xb0), (VecFx32 *)(self + 0x114 + 0x400));
-    Ov107_AiState_PostTickBase((char *)self);
+    Ov107_AiState_PostTickBase(self);
 }

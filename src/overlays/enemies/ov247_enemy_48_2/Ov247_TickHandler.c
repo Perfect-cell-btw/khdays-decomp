@@ -7,14 +7,15 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 origin; VecFx32 dir; int nLength; int nRadius; } Segment;
 typedef struct { char pad[0x58]; Segment seg; } Ov246Item;
 
 extern void TaskList_FinishByTag(int list, int node);
+extern void Ov107_UnlinkNodeFromOwner(int sub);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov247_TickHandler(int self)
 {
@@ -46,11 +47,11 @@ void Ov247_TickHandler(int self)
             *(int *)(*(int *)(self + 0x390) + 0x3c) = 0;
         }
         if (*(int *)(self + 0x3a8) != 0) {
-            Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x3a8)));
+            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3a8));
             *(int *)(self + 0x3a8) = 0;
         }
         if (*(int *)(self + 0x3a4) != 0) {
-            Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x3a4)));
+            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3a4));
             *(int *)(self + 0x3a4) = 0;
         }
     }
@@ -59,5 +60,5 @@ void Ov247_TickHandler(int self)
     VEC_Subtract((VecFx32 *)(*(int *)(self + 0x398) + 0x14), &seg.origin, &seg.dir);
     seg.nLength = VEC_Normalize(&seg.dir, &seg.dir);
     (*(Ov246Item **)(self + 0x38c))->seg = seg;
-    Ov107_AiState_PostTickBase((char *)self);
+    Ov107_AiState_PostTickBase(self);
 }

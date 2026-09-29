@@ -5,7 +5,6 @@
  * sub-items of data_ov277_020d370c into the +0x38c pair table. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[3]; } IdTable3;
@@ -15,10 +14,12 @@ extern void Ov277_Destroy_2(void);
 extern void func_ov277_020d0e14(void);
 extern void Ov277_HandleRiderMessageB(void);
 extern void Ov277_CreateAiTask(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void SetSubitemState(int item, int channel, int a, int b);
 extern int CallocInstance(int size);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern IdTable3 data_ov277_020d370c;
 
 void Ov277_PartControllerConstruct(char *self)
@@ -37,7 +38,7 @@ void Ov277_PartControllerConstruct(char *self)
     *(u16 *)(self + 0x100 + 0xae) |= 0xc;
     *(int *)(self + 0x70) = 0x1800;
     *(int *)(self + 0x54) = 0;
-    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x2e));
+    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x2e));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x388));
     SetSubitemState(*(int *)(self + 0x388), 0, 0, 1);
     SetSubitemState(*(int *)(self + 0x388), 1, 0, 1);
@@ -45,7 +46,7 @@ void Ov277_PartControllerConstruct(char *self)
     SetSubitemState(*(int *)(self + 0x388), 4, 0, 1);
     *(int *)(self + 0x38c) = CallocInstance(0x18);
     for (i = 0; i < 3; i++) {
-        ((struct Pair *)*(int *)(self + 0x38c))[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), ids.id[i]));
+        ((struct Pair *)*(int *)(self + 0x38c))[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), ids.id[i]));
         Ov107_EnqueueValue(self, ((struct Pair *)*(int *)(self + 0x38c))[i].res);
         *(int *)(((struct Pair *)*(int *)(self + 0x38c))[i].res + 0x5c) |= 2;
     }

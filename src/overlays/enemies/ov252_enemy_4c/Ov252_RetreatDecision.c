@@ -10,10 +10,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
 
+extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
+extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern CollisionHit *Collision_CastSphereEx(void *collision, VecFx32 *origin, VecFx32 *dir, int radius, void *ignore);
@@ -47,7 +48,7 @@ void Ov252_RetreatDecision(int *node)
     int dist;
 
     if (state[0x28] != 0) {
-        Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
+        Ov107_PostTagUpdate(*state, 3, 0);
         Ov107_StartAnim(*(int *)(*state + 0x574), 2, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_SwaySettleTick);
         return;
@@ -75,13 +76,13 @@ void Ov252_RetreatDecision(int *node)
     }
     if (*(u8 *)(*state + 0x579) == 0) {
         *((u8 *)state + 0x84) = 2;
-        Ov107_PostTagUpdate((Actor *)(*state), *((u8 *)state + 0x84), 0);
+        Ov107_PostTagUpdate(*state, *((u8 *)state + 0x84), 0);
         Ov107_StartAnim(*(int *)(*state + 0x574), 1, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_SwayTurnTick);
         return;
     }
     *((u8 *)state + 0x84) = *(u8 *)(*state + 0x579) * 3 + 1;
-    Ov107_PostTagUpdate((Actor *)(*state), *((u8 *)state + 0x84), 0);
+    Ov107_PostTagUpdate(*state, *((u8 *)state + 0x84), 0);
     switch (*(u8 *)(*state + 0x579)) {
     case 1:
         Ov107_StartAnim(*(int *)(*state + 0x574), 3, 0);

@@ -3,7 +3,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 struct Ov234Box {
     VecFx32 min;
@@ -72,11 +71,13 @@ extern void func_ov234_020cc25c(void);
 extern void func_ov234_020cc268(void);
 
 extern const struct Ov234TextureTable data_ov234_020cd100;
+extern unsigned Ov107_PackTextureHandle();
 extern char *CreateSubitemInstance0xB4(unsigned);
 extern void RegisterSubscriberSlot(void *, char *);
 extern void MainBlob_ResetSlotRows(char *, void *);
 extern void Srt_SetTranslationXYZ(void *, int, int, int);
 extern void Srt_SetScaleUniform(void *, int);
+extern void Ov107_EnqueueValue(struct Ov234Actor *, int);
 extern int *List_InsertSorted(void *, int, int);
 extern int Ov107_CloneResourceTransform(void *);
 extern void Res_RequestIdPair(int nId);
@@ -126,15 +127,15 @@ void Ov234_InitEffectActor(struct Ov234Actor *arg0)
         self->box1fc = box;
 
         self->handle384 =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self, 0));
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
         RegisterSubscriberSlot(self->resource09c, self->handle384);
         MainBlob_ResetSlotRows(self->handle384, self->work394);
         Srt_SetTranslationXYZ(self->handle384 + 4, 0, 0x380, 0);
         Srt_SetScaleUniform((char *)self + 0xa0, 0xccd);
 
         self->handle3bc = CreateSubitemInstance0xB4(
-            Ov107_PackTextureHandle((char *)self, textureTable.offsets[0]));
-        Ov107_EnqueueValue((char *)self, (int)self->handle3bc);
+            Ov107_PackTextureHandle(self, textureTable.offsets[0]));
+        Ov107_EnqueueValue(self, (int)self->handle3bc);
         *(int *)(self->handle3bc + 0x5c) |= 2;
     }
 

@@ -5,11 +5,11 @@
  * pose 2 plays on the partner and the node moves to 020cee0c. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 struct m4 { int w[4]; };
 struct S213 { char pad[0x28]; struct m4 dst; struct m4 src; };
 struct Flags394 { int b0 : 1; int b1 : 1; };
+extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *v, void *out);
 extern int  func_020050b4(int x, int z);
@@ -33,13 +33,13 @@ void Ov273_PairUpWaitTick(int *self) {
     VEC_Normalize(v, v);
     QuatFromAxisAngle((void *)(state + 0xe), &data_02042264, func_020050b4(v[0], v[2]));
     ((struct S213 *)state)->dst = ((struct S213 *)state)->src;
-    Ov107_PostTagUpdate((Actor *)(*state), 0xa, 0);
+    Ov107_PostTagUpdate(*state, 0xa, 0);
     {
         int actor = *state;
         u16 hw = *(u16 *)(actor + 0x60);
         *(u16 *)(actor + 0x60) = (hw & ~0xff00) |
             (((unsigned int)(unsigned short)((((unsigned int)hw << 0x10) >> 0x18) & ~0x80) << 0x18) >> 0x10);
     }
-    Ov107_PostTagUpdate((Actor *)(*(int *)(*state + 0x3dc)), 2, 0);
+    Ov107_PostTagUpdate(*(int *)(*state + 0x3dc), 2, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov273_EnterFaceTarget);
 }

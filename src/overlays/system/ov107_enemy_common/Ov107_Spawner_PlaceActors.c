@@ -22,7 +22,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct TargetList {
     u8  pad00[0x20];
@@ -46,6 +45,7 @@ typedef struct Self {
 
 extern void        *List_First(void *list);
 extern void        *List_Next(void *list);
+extern void         Ov107_MoveNodeAndRelayout(char *node, VecFx32 *v);
 extern int           RandNextScaled(int range);
 extern void          ScaleVec3Fx12(int factor, VecFx32 *src, VecFx32 *dst);
 extern void          VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *out);
@@ -92,7 +92,7 @@ void Ov107_Spawner_PlaceActors(Self *self, TargetList *list)
         node = List_First(list);
         while (node != 0) {
             Entry *entry = *(Entry **)node;
-            Ov107_MoveNodeAndRelayout((Actor *)((char *)entry), &self->pos);
+            Ov107_MoveNodeAndRelayout((char *)entry, &self->pos);
             if (entry->onEvent)
                 entry->onEvent(entry, 0);
             node = List_Next(list);
@@ -112,7 +112,7 @@ void Ov107_Spawner_PlaceActors(Self *self, TargetList *list)
                 pos.y = self->pos.y;
                 pos.z = self->pos.z + RandSpan(-half, span);
 
-                Ov107_MoveNodeAndRelayout((Actor *)((char *)entry), &pos);
+                Ov107_MoveNodeAndRelayout((char *)entry, &pos);
                 if (entry->onEvent)
                     entry->onEvent(entry, 0);
                 node = List_Next(list);
@@ -146,9 +146,9 @@ void Ov107_Spawner_PlaceActors(Self *self, TargetList *list)
         node = List_First(list);
         while (node != 0) {
             Entry *entry = *(Entry **)node;
-            Ov107_MoveNodeAndRelayout((Actor *)((char *)entry), &start);
+            Ov107_MoveNodeAndRelayout((char *)entry, &start);
             VEC_Add(&start, &step, &start);
-            Ov107_MoveNodeAndRelayout((Actor *)((char *)entry), &start);
+            Ov107_MoveNodeAndRelayout((char *)entry, &start);
             if (entry->onEvent)
                 entry->onEvent(entry, 0);
             node = List_Next(list);
@@ -170,7 +170,7 @@ void Ov107_Spawner_PlaceActors(Self *self, TargetList *list)
                 pos.x = self->pos.x + FX_MUL(cosv, half);
                 pos.y = self->pos.y;
                 pos.z = self->pos.z + FX_MUL(sinv, half);
-                Ov107_MoveNodeAndRelayout((Actor *)((char *)entry), &pos);
+                Ov107_MoveNodeAndRelayout((char *)entry, &pos);
                 if (entry->onEvent)
                     entry->onEvent(entry, 0);
                 angle += 0x6488;

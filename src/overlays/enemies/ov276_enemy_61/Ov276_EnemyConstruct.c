@@ -12,7 +12,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 struct Box {
     int xmin, ymin, zmin;
@@ -67,6 +66,7 @@ extern void Ov276_RebindModelForVariant(void);
 extern void Ov276_RequestSubState8IfNotAlready(void);
 extern void Ov276_RequestSubState9IfIdle(void);
 extern void Ov276_JointCallback(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Snd_RegisterSeqAndBind(void *set, int model, void *pool, int count);
@@ -75,6 +75,8 @@ extern int FindResourceIndexByName(int item, const char *name);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void SrtTransform_SetIdentity(void *shape);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
+extern int *func_ov107_020c9848(void);
+extern void Ov107_EnqueueValue(int self, int item);
 extern void NNS_G3dMdlSetMdlPolygonID(void *model, int a, int id);
 extern void Ov107_Actor_SetAttachSlot(int self, int a, int b, struct Lift *lift, int id);
 extern int *List_InsertSorted(void *list, int stride, int max);
@@ -125,11 +127,11 @@ void Ov276_EnemyConstruct(char *self)
     VecSetP_((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
     *(u16 *)(self + 0x100 + 0xae) |= 8;
     polyId = 3;
-    *(int *)(self + 0x3a8) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)handle, 0));
+    *(int *)(self + 0x3a8) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(handle, 0));
     *(void **)(*(int *)(self + 0x3a8) + 0x74) = Ov276_JointCallback;
     *(char **)(*(int *)(self + 0x3a8) + 0x84) = self;
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x3a8));
-    Snd_RegisterSeqAndBind(self + 0x384, *(int *)(*(int *)(self + 0x3a8) + 0x88), Ov107_PackTextureHandle((char *)handle, 1), 0xc);
+    Snd_RegisterSeqAndBind(self + 0x384, *(int *)(*(int *)(self + 0x3a8) + 0x88), Ov107_PackTextureHandle(handle, 1), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x3a8), self + 0x384);
     *(int *)(self + 0x3b4) = FindResourceIndexByName(*(int *)(self + 0x3a8), data_ov276_020d2c2c);
     *(int *)(self + 0x3b8) = FindResourceIndexByName(*(int *)(self + 0x3a8), data_ov276_020d2c3c);
@@ -140,7 +142,7 @@ void Ov276_EnemyConstruct(char *self)
     for (i = 0; i < 2; i++) {
         SrtTransform_SetIdentity(&actor->shapes[i]);
     }
-    *(int *)(self + 0x470) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)handle, 0x17), data_ov276_020d2c4c);
+    *(int *)(self + 0x470) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(handle, 0x17), data_ov276_020d2c4c);
     for (i = 0; i < 6; i++) {
         if (i < 1) {
             int *os = func_ov107_020c9848();
@@ -150,9 +152,9 @@ void Ov276_EnemyConstruct(char *self)
             addr = addr | 0x80000000;
             value = CreateSubitemInstance0xB4((void *)(kind | addr));
         } else {
-            value = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)handle, pools.id[i]));
+            value = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(handle, pools.id[i]));
         }
-        Ov107_EnqueueValue((char *)handle, (actor->subs[i].item = value));
+        Ov107_EnqueueValue(handle, (actor->subs[i].item = value));
         *(int *)(actor->subs[i].item + 0x5c) |= 2;
         if (i >= 1) {
             NNS_G3dMdlSetMdlPolygonID(*(void **)(*(int *)(actor->subs[i].item + 0x88) + 0x78), 0, polyId);

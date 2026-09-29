@@ -5,10 +5,11 @@
  * clears and the node moves on to 020cf7d8. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
+extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
+extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_SwayTurnTick(void);
 
@@ -30,7 +31,7 @@ void Ov252_SwayTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate((Actor *)(*state), ++*((unsigned char *)state + 0x84), 0);
+    Ov107_PostTagUpdate(*state, ++*((unsigned char *)state + 0x84), 0);
     switch (*(unsigned char *)(*state + 0x579)) {
     case 1:
         Ov107_StartAnim(*(int *)(*state + 0x574), 4, 0);

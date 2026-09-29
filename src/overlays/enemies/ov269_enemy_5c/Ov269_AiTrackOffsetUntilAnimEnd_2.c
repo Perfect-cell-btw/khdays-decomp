@@ -2,8 +2,8 @@
  * queues action 2 and ends the step. */
 
 #include "game/ai_task.h"
-#include "game/enemy_common.h"
 
+extern int Ov107_ActionResource_GetOffsetAndScale();
 extern int Vec3TransformViaTempMtx();
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
@@ -20,7 +20,7 @@ void Ov269_AiTrackOffsetUntilAnimEnd_2(struct S0 *this)
     int *r6 = this->pState;
     int r5;
 
-    r5 = Ov107_ActionResource_GetOffsetAndScale((int)(((int **)r6[0])[0xf4]), (VecFx32 *)&local);
+    r5 = Ov107_ActionResource_GetOffsetAndScale(((int **)r6[0])[0xf4], &local);
     Vec3TransformViaTempMtx((char *)r6 + 0x18, (char *)r6[0] + 0xa0, &local);
     ScaleVec3Fx12(r5, (char *)r6 + 0x18, (char *)r6 + 0x18);
 

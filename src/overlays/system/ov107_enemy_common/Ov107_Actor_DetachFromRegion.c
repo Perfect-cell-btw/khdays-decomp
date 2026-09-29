@@ -1,8 +1,6 @@
 /* Finishes the AI task and removes the actor's model and part nodes from the region list (+0x104),
  * then the base detach. */
 
-#include "game/enemy_common.h"
-
 typedef struct {
     char pad_00[0x14];
     int field_14;
@@ -29,6 +27,7 @@ extern void Task_MarkFinished(void *p);
 extern void RemoveChildFromListByPtr(int a, int b);
 extern void *List_First(void *list);
 extern void *List_Next(void *list);
+extern void Ov107_RemoveChildFromRegion(void *obj, void *param1);
 
 void Ov107_Actor_DetachFromRegion(Obj *obj, Param1 *param1) {
     if (obj->field_214 != 0) {
@@ -56,5 +55,5 @@ void Ov107_Actor_DetachFromRegion(Obj *obj, Param1 *param1) {
         }
     }
 
-    Ov107_RemoveChildFromRegion((int)obj, (int)param1);
+    Ov107_RemoveChildFromRegion(obj, param1);
 }

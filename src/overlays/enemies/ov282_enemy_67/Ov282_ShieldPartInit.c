@@ -5,11 +5,11 @@
  * with actions 0/2/4/1 enabled. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 struct Bit0 { unsigned int b0 : 1; };
 
+extern void Ov107_InitActorNode(char *self);
 extern void Ov282_Destroy_2(void);
 extern void Ov282_ReaimEmitterCone(void);
 extern void func_ov282_020d3f30(void);   /* misnamed: an ov282 veneer (see ov223) */
@@ -17,6 +17,7 @@ extern void Ov282_SendBlankStatus(void);
 extern void Ov282_RebuildSubObjectNotify(void);
 extern void Ov282_FinishPendingRequest(void);
 extern int ObjList_New(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void SetSubitemState(int item, int channel, int a, int b);
@@ -25,7 +26,7 @@ void Ov282_ShieldPartInit(char *self, int pool)
 {
     int scale;
 
-    Ov107_InitActorNode((u16 *)self);
+    Ov107_InitActorNode(self);
     *(Callback *)(self + 0x8) = Ov282_Destroy_2;
     *(Callback *)(self + 0xc) = Ov282_ReaimEmitterCone;
     *(Callback *)(self + 0x1c) = func_ov282_020d3f30;
@@ -45,7 +46,7 @@ void Ov282_ShieldPartInit(char *self, int pool)
         *(u16 *)(self + 0x60) = (hw & ~0xff00) |
             ((((((unsigned int)hw << 0x10) >> 0x18) | 2) << 0x18) >> 0x10);
     }
-    *(int *)(self + 0x190) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x24));
+    *(int *)(self + 0x190) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x24));
     ((struct Bit0 *)(*(int *)(self + 0x190) + 0x5c))->b0 = 1;
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x190));
     SetSubitemState(*(int *)(self + 0x190), 0, 0, 1);

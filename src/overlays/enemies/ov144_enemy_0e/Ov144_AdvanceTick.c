@@ -8,9 +8,9 @@
  * count) becomes the point while its +0xc charge stays at or below 0x100, else sub-state 2. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 extern int Ov144_LureToPiece(int *state, int flag);
+extern int Ov107_ActionResource_GetOffsetAndScale(void *item, int mode);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int func_020050b4(int x, int z);
@@ -39,7 +39,7 @@ void Ov144_AdvanceTick(int *node)
         state[0x13] = 1;
         *(unsigned char *)(*state + 0x1c7) = 4;
     }
-    speed = Ov107_ActionResource_GetOffsetAndScale((int)(*(void **)(*state + 0x394)), 0);
+    speed = Ov107_ActionResource_GetOffsetAndScale(*(void **)(*state + 0x394), 0);
     idx = ANG2IDX(state[0xc]);
     facing.x = data_0203d210[idx * 2];
     facing.y = 0;

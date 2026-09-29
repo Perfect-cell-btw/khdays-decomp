@@ -3,7 +3,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 struct Box {
     VecFx32 min;
@@ -90,12 +89,14 @@ extern char data_ov199_020d614c[];
 extern char data_ov199_020d6154[];
 extern VecFx32 data_02042264;
 
+extern void *Ov107_PackTextureHandle(struct Obj *self, int index);
 extern struct Subitem *CreateSubitemInstance0xB4(void *item);
 extern void RegisterSubscriberSlot(void *list, struct Subitem *item);
 extern int FindResourceIndexByName(struct Subitem *item, char *name);
 extern void RefreshObjectCallbacks(struct Subitem *item, int value);
 extern void QuatFromAxisAngle(int *out, VecFx32 *axis, int angle);
 extern void Ov107_Actor_SetAttachSlot(struct Obj *self, int index, int a, int b, int scale);
+extern void Ov107_EnqueueValue(struct Obj *self, struct Subitem *item);
 extern int *List_InsertSorted(void *pool, int size, int count);
 extern int Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int id);
@@ -139,13 +140,13 @@ void Ov199_InitActor(struct Obj *self)
 
     self->box = box;
 
-    self->subitem384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self, 0));
+    self->subitem384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
     self->subitem384->callback74 = Ov199_QueryAndCopyVecIfHit;
     self->subitem384->owner84 = self;
     RegisterSubscriberSlot(self->subscriberList9c, self->subitem384);
     self->resourceId3d4 = FindResourceIndexByName(self->subitem384, data_ov199_020d614c);
 
-    (self->subitem388 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self, 1)))->callback6c = Ov199_TickSwingArc;
+    (self->subitem388 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 1)))->callback6c = Ov199_TickSwingArc;
     self->subitem388->owner84 = self;
     RefreshObjectCallbacks(self->subitem388, 0);
     self->resourceId3d0 = FindResourceIndexByName(self->subitem388, data_ov199_020d6154);
@@ -158,8 +159,8 @@ void Ov199_InitActor(struct Obj *self)
     Ov107_Actor_SetAttachSlot(self, 1, 1, 0, 0x3000);
     Ov107_Actor_SetAttachSlot(self, 4, 1, 0, 0x3000);
 
-    item = self->subitem3f0 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self, 4));
-    Ov107_EnqueueValue((char *)self, (int)item);
+    item = self->subitem3f0 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 4));
+    Ov107_EnqueueValue(self, item);
     item->flags5c |= 2;
 
     self->poolEntry38c = List_InsertSorted(self->pool22c, 0x10, 0x64);

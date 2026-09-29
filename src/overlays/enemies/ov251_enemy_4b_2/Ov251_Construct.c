@@ -9,7 +9,6 @@
  * +0x38c) from the pose at the origin, then loads sound 0x159. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
@@ -41,12 +40,14 @@ extern void Ov251_PropagateBlockChainThenNotify(void);
 extern void Ov251_ReactionRequestSubState11(void);
 extern void Ov251_OnHit(void);
 extern void Ov251_Model_SetTrack0(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern void Srt_SetTranslationXYZ(void *block, int a, int b, int c);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int a, const char *name);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern void *CallocInstance(int size);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern void Ov107_Actor_SetAttachSlot(char *self, int a, int b, void *lift, int id);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(struct Pose *pose);
@@ -82,7 +83,7 @@ void Ov251_Construct(char *self)
     *(int *)(self + 0x68) = 0x2120;
     *(int *)(self + 0x6c) = 0;
     *(unsigned short *)(self + 0x100 + 0xae) |= 0x18;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 0));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
     Srt_SetTranslationXYZ((void *)(*(int *)(self + 0x384) + 4), 0, 0x80, 0);
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov251_020d654c);
@@ -90,11 +91,11 @@ void Ov251_Construct(char *self)
     *(int *)(self + 0x3a4) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov251_020d6564);
     pose = *(struct Pose *)(self + 0x64);
     pose.pos = data_02041dc8;
-    *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)((int)self), 1), data_ov251_020d6574);
+    *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), data_ov251_020d6574);
     *(void **)(self + 0x398) = CallocInstance(0x18);
     for (i = 0; i < 3; i++) {
         (*(struct Ov250SubitemSlot **)(self + 0x398))[i].pItem =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), pools.id[i]));
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, pools.id[i]));
         Ov107_EnqueueValue(self, (*(struct Ov250SubitemSlot **)(self + 0x398))[i].pItem);
         *(int *)((*(struct Ov250SubitemSlot **)(self + 0x398))[i].pItem + 0x5c) |= 2;
     }

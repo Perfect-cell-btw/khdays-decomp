@@ -3,10 +3,8 @@
  * the owner's +0x3c4 bone (+4) and the flag latches. Once the +4 rig is idle, bit 0 of the owner's
  * +0x1ae clears, flag 0 of the +0x3b8 and +0x3b4 rigs is set, pose 6 loops, the clock resets and brain
  * slot +0x20 runs 020d2638. */
-
-#include "game/enemy_common.h"
-
 extern void Ov107_BuildAndSendUpdate(int owner, int a, int b, int c);
+extern void Ov107_PostTagUpdate(int owner, int a, int b);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov268_AiChargeTimeout(void);
 struct b8 { unsigned int f:8; };
@@ -26,7 +24,7 @@ void Ov268_ChargeTick(int self) {
     *(unsigned short *)(*(int *)obj + 0x1ae) &= ~1;
     ((struct b8 *)(*(int *)(*(int *)obj + 0x3b8) + 8))->f |= 1;
     ((struct b8 *)(*(int *)(*(int *)obj + 0x3b4) + 8))->f |= 1;
-    Ov107_PostTagUpdate((Actor *)(*(int *)obj), 6, 1);
+    Ov107_PostTagUpdate(*(int *)obj, 6, 1);
     *(int *)(obj + 0x2c) = 0;
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov268_AiChargeTimeout);
 }

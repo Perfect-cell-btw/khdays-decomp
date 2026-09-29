@@ -8,7 +8,6 @@
  * (+0x3cc) and 0xd ends it. Every message then goes to the common handler. */
 
 #include "nitro/types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 struct Pair { int res; int handle; };
@@ -24,7 +23,10 @@ extern int Ov235_SpawnChildStoreTwoArgs(char *self, int res, void *at);
 extern int Ov235_SpawnHelper(char *self, int res, int res2, void *at);
 extern void TaskList_FinishByTag(int model, int handle);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);
+extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
 extern int Ov235_CreateHelperTask(char *self, int res, void *at);
+extern int Ov107_CreateSpawnTask(char *self, int id, int mode, int flag, void *pose);
+extern void Ov107_UnlinkNodeFromOwner(int handle);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
 #define PAIRS (*(struct Pair **)(self + 0x3bc))
@@ -83,10 +85,10 @@ void Ov235_HandleMessage(char *self, u8 *msg, int arg)
             *(int *)(self + 0x3c4) = 1;
             break;
         case 12:
-            *(int *)(self + 0x3cc) = Ov107_CreateSpawnTask((int)self, (short)*(int *)(self + 0x3c8), 0xd, 0, self + 0xa0);
+            *(int *)(self + 0x3cc) = Ov107_CreateSpawnTask(self, (short)*(int *)(self + 0x3c8), 0xd, 0, self + 0xa0);
             break;
         case 13:
-            Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x3cc)));
+            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3cc));
             *(int *)(self + 0x3cc) = 0;
             break;
         }

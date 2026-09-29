@@ -1,10 +1,9 @@
 /* Pillar +0x2c handler: clears stance bit 0, zeroes the two vectors and leaves the region. */
 
-#include "game/enemy_common.h"
-
 struct T { int a, b, c; };
 
 extern struct T data_02041dc8;
+extern void Ov107_RemoveChildFromRegion(void *self, int region);
 
 void Ov107_Pillar_LeaveRegion(void *self, int region)
 {
@@ -20,5 +19,5 @@ void Ov107_Pillar_LeaveRegion(void *self, int region)
     *(struct T *)((char *)self + 0x1a8) = local;
     *(struct T *)((char *)self + 0xfc) = local;
 
-    Ov107_RemoveChildFromRegion((int)self, region);
+    Ov107_RemoveChildFromRegion(self, region);
 }

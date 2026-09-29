@@ -1,13 +1,11 @@
 /* Set anim 2, raise flag 0x40 in the high byte of the u16 at (*child)+0x60, clear
  * +0x6c/+0x75/+0x5c, then dispatch. */
-
-#include "game/enemy_common.h"
-
+extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int SetIndexedSlot(int a, int b, void *handler);
 extern void Ov223_RetreatTick(void);
 void Ov223_AiEnterRetreat(int param_1) {
     int child = *(int *)(param_1 + 4);
-    Ov107_PostTagUpdate((Actor *)(*(int *)child), 2, 0);
+    Ov107_PostTagUpdate(*(int *)child, 2, 0);
     {
         unsigned short *p = (unsigned short *)(*(int *)child + 0x60);
         unsigned int hi = ((unsigned int)*p << 0x10) >> 0x18;

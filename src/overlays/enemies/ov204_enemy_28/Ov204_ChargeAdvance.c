@@ -6,8 +6,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
+extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *quat, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void Ov204_ChargeSweep(int *state);
@@ -15,6 +15,7 @@ extern int Ov107_FindNearestObject(int actor, int mode);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int func_020050b4(int x, int z);
 extern int FX_Div(int a, int b);
+extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov204_AiStep_QueueAction2OnFlag28Clear_5(int *node);
 
@@ -26,7 +27,7 @@ void Ov204_ChargeAdvance(int *node)
     int speed;
     int rate;
 
-    speed = Ov107_ActionResource_GetOffsetAndScale((int)(*(void **)(*state + 0x390)), &step);
+    speed = Ov107_ActionResource_GetOffsetAndScale(*(void **)(*state + 0x390), &step);
     Vec3TransformViaTempMtx(state + 2, (void *)(*state + 0xa0), &step);
     ScaleVec3Fx12(speed, state + 2, state + 2);
     Ov204_ChargeSweep(state);
@@ -44,6 +45,6 @@ void Ov204_ChargeAdvance(int *node)
     if (*(u8 *)state[10] != 0) {
         return;
     }
-    Ov107_PostTagUpdate((Actor *)(*state), 0x12, 0);
+    Ov107_PostTagUpdate(*state, 0x12, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov204_AiStep_QueueAction2OnFlag28Clear_5);
 }

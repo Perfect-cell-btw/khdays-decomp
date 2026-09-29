@@ -1,9 +1,8 @@
 /* Registers Ov141_CreateNamedEntity as the factory for entity class 0xd. */
 
-#include "game/enemy_common.h"
-
+extern void Ov107_RegisterHandler(int arg0, void (*arg1)(int));
 extern void Ov141_CreateNamedEntity(int);
 
 void Ov141_RegisterEntityClass(void) {
-    Ov107_RegisterHandler(0x0d, (void *)Ov141_CreateNamedEntity);
+    Ov107_RegisterHandler(0x0d, Ov141_CreateNamedEntity);
 }

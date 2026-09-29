@@ -10,7 +10,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 typedef struct { VecFx32 p0; VecFx32 dir; int nLength; } Ray;
@@ -20,6 +19,7 @@ struct Bits17a { unsigned char b0 : 1, b1 : 1, b2 : 1, b3 : 1; };
 extern const VecFx32 data_02041dc8;
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern int Ov253_IdIsFree(int owner, int hit);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
@@ -47,7 +47,7 @@ void Ov253_ThrownSpearTick(int *node)
         seg.p0 = *(VecFx32 *)state[1];
         seg.nLength = VEC_Normalize((VecFx32 *)(state + 2), &seg.dir);
         seg.nRadius = 0x200;
-        n = Ov107_CollectSegmentOverlaps((Actor *)(*(int *)(*state + 0x388)), &seg, (void **)hits);
+        n = Ov107_CollectSegmentOverlaps(*(int *)(*state + 0x388), &seg, hits);
         for (i = 0; i < n; i++) {
             VecFx32 push;
 

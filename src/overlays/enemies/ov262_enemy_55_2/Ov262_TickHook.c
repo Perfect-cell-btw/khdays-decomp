@@ -3,10 +3,9 @@
  * byte and drops bit 7 (shown); with a target but no holder, an actor flagged in +0x40 bit 1
  * that is not yet ready does the same and requests sub-state 2; without a target the high
  * byte drops bit 0 and raises bit 7 (hidden). The base tick always runs. */
-
-#include "game/enemy_common.h"
-
 struct hw60 { unsigned short lo : 8, hi : 8; };
+
+extern void Ov107_AiState_PostTickBase(int actor);
 
 void Ov262_TickHook(int actor)
 {
@@ -38,5 +37,5 @@ void Ov262_TickHook(int actor)
         h = *hw;
         *hw = h & ~0xff00 | (((((unsigned int)h << 0x10) >> 0x18 | 0x80) << 0x18) >> 0x10);
     }
-    Ov107_AiState_PostTickBase((char *)actor);
+    Ov107_AiState_PostTickBase(actor);
 }

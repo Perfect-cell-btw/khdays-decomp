@@ -12,7 +12,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[5]; } IdTable5;
@@ -32,12 +31,14 @@ extern void Ov236_CopyPoseFromParent394(void);
 extern void Ov236_FrontRiders_Release(void);
 extern void Ov236_RiderHitFilter(void);
 extern void Ov236_RebuildRiderListsA(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int CallocInstance(int size);
 extern void Snd_RegisterSeqAndBind(int a, int b, void *c, int d);
 extern void MainBlob_ResetSlotRows(int a, int b);
 extern int InsertSortedEntryWithKey(int item, int kind, void *name);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern void Srt_SetScaleXYZ(int srt, int sx, int sy, int sz);
 extern void Srt_SetTranslationXYZ(int srt, int x, int y, int z);
 extern void NNS_G3dMdlSetMdlAlphaAll(int nList, int nValue);
@@ -92,26 +93,26 @@ void Ov236_FrontRidersConstruct(char *self)
     hw = *(u16 *)(self + 0x60);
     *(u16 *)(self + 0x60) = (hw & ~0xff00) |
         ((((((unsigned int)hw << 0x10) >> 0x18) | 0x20) << 0x18) >> 0x10);
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x394)), 0x18));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x394), 0x18));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(int *)(self + 0x388) = CallocInstance(0x24);
-    Snd_RegisterSeqAndBind(*(int *)(self + 0x388), *(int *)(*(int *)(self + 0x384) + 0x88), Ov107_PackTextureHandle((char *)(*(int *)(self + 0x394)), 0x19), 0xc);
+    Snd_RegisterSeqAndBind(*(int *)(self + 0x388), *(int *)(*(int *)(self + 0x384) + 0x88), Ov107_PackTextureHandle(*(int *)(self + 0x394), 0x19), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), *(int *)(self + 0x388));
     *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov236_020d64c8);
     *(int *)(self + 0x3a4) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov236_020d64d4);
     *(int *)(self + 0x3a8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov236_020d64c8);
     *(int *)(self + 0x3ac) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov236_020d64d4);
-    *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x394)), 0x3d));
+    *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x394), 0x3d));
     Ov107_EnqueueValue(self, *(int *)(self + 0x38c));
     *(int *)(self + 0x390) = CallocInstance(0x24);
-    Snd_RegisterSeqAndBind(*(int *)(self + 0x390), *(int *)(*(int *)(self + 0x38c) + 0x88), Ov107_PackTextureHandle((char *)(*(int *)(self + 0x394)), 0x19), 0xc);
+    Snd_RegisterSeqAndBind(*(int *)(self + 0x390), *(int *)(*(int *)(self + 0x38c) + 0x88), Ov107_PackTextureHandle(*(int *)(self + 0x394), 0x19), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x38c), *(int *)(self + 0x390));
     Srt_SetScaleXYZ(*(int *)(self + 0x38c) + 4, 0x1000, 1, 0x1000);
     Srt_SetTranslationXYZ(*(int *)(self + 0x38c) + 4, 0, 0x200, 0);
     NNS_G3dMdlSetMdlAlphaAll(*(int *)(*(int *)(*(int *)(self + 0x38c) + 0x88) + 0x78), 8);
     *(int *)(self + 0x3b8) = CallocInstance(0x28);
     for (i = 0; i < 5; i++) {
-        ((struct Pair *)*(int *)(self + 0x3b8))[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x394)), ids.id[i]));
+        ((struct Pair *)*(int *)(self + 0x3b8))[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x394), ids.id[i]));
         Ov107_EnqueueValue(self, ((struct Pair *)*(int *)(self + 0x3b8))[i].res);
         *(int *)(((struct Pair *)*(int *)(self + 0x3b8))[i].res + 0x5c) |= 2;
     }

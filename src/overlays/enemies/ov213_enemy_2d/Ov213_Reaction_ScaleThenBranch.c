@@ -2,10 +2,8 @@
  * returns 0, latch owner->+0x1c7 = 2 and dispatch with null cb. Otherwise bail if
  * *(obj->f8) is set; else reset obj->f1c, set obj->f48 = self->f0->f2c*30/2, notify
  * Ov107_PostTagUpdate(owner, 2, 1), and dispatch via SetIndexedSlot. */
-
-#include "game/enemy_common.h"
-
 extern int Ov107_FindNearestObject(int owner, int a);
+extern void Ov107_PostTagUpdate(int owner, int a, int b);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov213_CloseInTick(void);
 void Ov213_Reaction_ScaleThenBranch(int self) {
@@ -22,6 +20,6 @@ void Ov213_Reaction_ScaleThenBranch(int self) {
     }
     *(int *)(obj + 0x1c) = 0;
     *(int *)(obj + 0x48) = *(int *)(*(int *)self + 0x2c) * 30 / 2;
-    Ov107_PostTagUpdate((Actor *)(*(int *)obj), 2, 1);
+    Ov107_PostTagUpdate(*(int *)obj, 2, 1);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov213_CloseInTick);
 }

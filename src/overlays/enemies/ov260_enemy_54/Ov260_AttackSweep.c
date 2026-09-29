@@ -7,13 +7,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 extern const VecFx32 data_02042258;
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, void *cyl, int *hits);
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
+extern int Ov107_CollectSegmentOverlaps(int owner, void *seg, int *hits);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
@@ -42,14 +42,14 @@ void Ov260_AttackSweep(int *state, int kind, VecFx32 *sphere, void *cyl, void *s
     } else if (sphere != 0) {
         n = Ov107_CollectSphereOverlaps(*state, sphere, hits);
     } else if (seg != 0) {
-        n = Ov107_CollectSegmentOverlaps((Actor *)(*state), seg, (void **)hits);
+        n = Ov107_CollectSegmentOverlaps(*state, seg, hits);
         effect = 0;     /* cleared after the query in each branch, as the ROM hoists it */
     } else {
         sweep.p0 = *(VecFx32 *)(*(int *)(*state + 0x424) + 0x14);
         sweep.nLength = *(int *)(*state + 0x470) == 0 ? 0x1800 : 0x3000;
         sweep.nRadius = 0x400;
         Vec3TransformViaTempMtx(&sweep.dir, (void *)(*(int *)(*state + 0x424) + 4), &data_02042258);
-        n = Ov107_CollectSegmentOverlaps((Actor *)(*state), &sweep, (void **)hits);
+        n = Ov107_CollectSegmentOverlaps(*state, &sweep, hits);
         effect = 0;
     }
     for (i = 0; i < n; i++) {

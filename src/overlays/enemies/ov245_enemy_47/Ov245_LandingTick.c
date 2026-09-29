@@ -9,12 +9,12 @@
  * (+0xad) the owner is released (020d4870), sub-state 2 set and the node slot freed. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 struct Ov245Query { VecFx32 pos; int w[12]; };
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int Ov107_CollectCapsuleOverlaps(int actor, struct Ov245Query *query, int *out);
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, const VecFx32 *push, int z);
 extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
@@ -47,7 +47,7 @@ void Ov245_LandingTick(int *node) {
         push.x = 0;
         push.y = 0x1000;
         push.z = -0x5000;
-        nHits = Ov107_CollectCapsuleOverlaps((Actor *)(*state), &query, (void **)hits);
+        nHits = Ov107_CollectCapsuleOverlaps(*state, &query, hits);
         for (i = 0; i < nHits; i++) {
             bit = 1 << *(unsigned short *)(hits[i] + 2);
             if ((*((unsigned char *)state + 0x40) & bit) == 0) {

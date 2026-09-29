@@ -10,7 +10,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -45,6 +44,7 @@ struct Ov204ChargeState {
     int nPhase;                 /* +0x58 */
 };
 
+extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov204_ChargeSweep(struct Ov204ChargeState *state);
@@ -55,6 +55,8 @@ extern int FX_Div(int a, int b);
 extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, VecFx32 *at);
 extern s64 FX_DivFx64c(int num, int den);
 extern void Ov204_GroundSweep(struct Ov204ChargeState *state, s64 t, VecFx32 *at);
+extern void Ov107_StartAnim(void *part, int a, int b);
+extern void Ov107_PostTagUpdate(struct Ov204Owner *actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const PosMsg data_ov204_020d3652;
 extern void Ov204_ChargeTick3(int *node);
@@ -94,7 +96,7 @@ void Ov204_ChargeTick2(int *node)
     int speed;
     int rate;
 
-    speed = Ov107_ActionResource_GetOffsetAndScale((int)(*(void **)((char *)state->pOwner + 0x390)), &step);
+    speed = Ov107_ActionResource_GetOffsetAndScale(*(void **)((char *)state->pOwner + 0x390), &step);
     Vec3TransformViaTempMtx(&state->vVelocity, (char *)state->pOwner + 0xa0, &step);
     ScaleVec3Fx12(speed, &state->vVelocity, &state->vVelocity);
     Ov204_ChargeSweep(state);
@@ -122,8 +124,8 @@ void Ov204_ChargeTick2(int *node)
     if (state->nPhase < 0x800) {
         return;
     }
-    Ov107_StartAnim((int)(*(void **)((char *)state->pOwner + 0x390)), 7, 0);
-    Ov107_PostTagUpdate((Actor *)state->pOwner, 0x10, 0);
+    Ov107_StartAnim(*(void **)((char *)state->pOwner + 0x390), 7, 0);
+    Ov107_PostTagUpdate(state->pOwner, 0x10, 0);
     state->bHitMask44 = 0;
     state->nPhase = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov204_ChargeTick3);

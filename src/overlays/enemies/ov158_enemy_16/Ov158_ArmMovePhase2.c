@@ -26,9 +26,7 @@
  * but is parked on a genuine halfword-order difference underneath it.  Two functions can
  * show the same surface symptom and need different things.
  */
-
-#include "game/enemy_common.h"
-
+extern void Ov107_PostTagUpdate(int owner, int a, int b);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov158_AttackWaitTick(void);
 extern unsigned short data_ov158_020cf540[];
@@ -50,7 +48,7 @@ void Ov158_ArmMovePhase2(int self) {
         }
     }
     *(int *)(obj + 0x14) = *(int *)(*(int *)self + 0x2c) * 30 / 10;
-    Ov107_PostTagUpdate((Actor *)(*(int *)obj), 6, 0);
+    Ov107_PostTagUpdate(*(int *)obj, 6, 0);
     *(int *)(obj + 0x3c) = 0;
     *(unsigned char *)(obj + 0x54) = 0;
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov158_AttackWaitTick);

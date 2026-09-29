@@ -14,13 +14,11 @@
  * the function HEAD matches (divisor 3, magic 0x55555556, no post-shift; unlike the tail-position
  * /5 of ov142 which ties). `tmp` before `aim` for the frame; the counter's <= 0 arm first.
  */
-
-#include "game/enemy_common.h"
-
 extern int Ov107_FindNearestObject(int obj, int out);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int func_020050b4(int x, int z);
+extern int Ov107_ActionResource_GetOffsetAndScale(int a, void *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *mtx, void *src);
 extern void ScaleVec3Fx12(int s, void *v, void *d);
 
@@ -39,7 +37,7 @@ void Ov195_TickSpinRetreatB(int *self) {
         VEC_Subtract((void *)(target + 0x190), (void *)(*state + 0xb0), aim);
         state[4] = func_020050b4(aim[0], aim[2]);
     }
-    scale = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3d0), (VecFx32 *)tmp);
+    scale = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3d0), tmp);
     Vec3TransformViaTempMtx((void *)(state + 6), (void *)(*state + 0xa0), tmp);
     ScaleVec3Fx12(scale, (void *)(state + 6), (void *)(state + 6));
     if (*(unsigned char *)(state[1] + 0xad) == 0) {

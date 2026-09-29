@@ -10,7 +10,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 struct Nib { u8 lo : 4, hi : 4; };
@@ -29,10 +28,12 @@ struct Bits17a { u8 b0 : 1, b1 : 1, b2 : 1, b3 : 1; };
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
+extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
+extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov211_020d6562;
 extern void Ov211_AiRetarget(int *node);
@@ -54,7 +55,7 @@ void Ov211_ChargeTick(int *node)
     ScaleVec3Fx12(0xd00, (VecFx32 *)(state + 0x11), (VecFx32 *)(state + 5));
     seg = *(Segment *)(*(int *)(*state + 0x3b4) + 0x78);
     VEC_Add(&seg.p0, (VecFx32 *)(state + 5), &seg.p0);
-    n = Ov107_CollectSegmentOverlaps((Actor *)(*state), &seg, (void **)hits);
+    n = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
     i = 0;
     if (n > 0) {
         tmpl = data_ov211_020d6562;
@@ -84,7 +85,7 @@ void Ov211_ChargeTick(int *node)
     if (((struct Bits17a *)(*state + 0x17a))->b0 != 0 || ((struct Bits17a *)(*state + 0x17a))->b1 != 0
         || ((struct Bits17a *)(*state + 0x17a))->b3 != 0 || state[0xb] >= 0x1000) {
         ((struct hw60 *)(*state + 0x60))->hi &= ~0x40;
-        Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
+        Ov107_PostTagUpdate(*state, 9, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov211_AiRetarget);
     }
 }

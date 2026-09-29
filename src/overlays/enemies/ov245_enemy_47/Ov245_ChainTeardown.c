@@ -5,7 +5,6 @@
  * then the base teardown (020c7ca4). */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int m[11]; } Pose44;
 struct Ov245Item { char pad[0x10]; Pose44 pose; };
@@ -19,6 +18,7 @@ struct Ov245Chain {
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
+extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov245_ChainTeardown(int self) {
     VecFx32 d;
@@ -32,5 +32,5 @@ void Ov245_ChainTeardown(int self) {
         VEC_Subtract((VecFx32 *)(((struct Ov245Chain *)self)->anchors[i + 1] + 0x14), (VecFx32 *)(part + 0x58), &d);
         *(int *)(part + 0x70) = VEC_Normalize(&d, (VecFx32 *)(part + 0x64));
     }
-    Ov107_AiState_PostTickBase((char *)self);
+    Ov107_AiState_PostTickBase(self);
 }

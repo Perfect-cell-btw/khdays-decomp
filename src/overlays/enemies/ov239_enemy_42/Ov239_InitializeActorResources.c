@@ -3,7 +3,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct Ov239ResourceTransform {
     VecFx32 position;
@@ -69,9 +68,12 @@ typedef struct Ov239Actor {
     int subitemState3b8;
 } Ov239Actor;
 
+extern int Ov107_OpenCachedResourceByName(const void *name);
+extern void *Ov107_PackTextureHandle(Ov239Actor *actor, int kind);
 extern Ov239Subitem *CreateSubitemInstance0xB4(void *packedHandle);
 extern int RegisterSubscriberSlot(void *owner, Ov239Subitem *subitem);
 extern void *Ov107_CreateNamedResourceBinding(void *packedHandle, const void *name);
+extern void Ov107_EnqueueValue(Ov239Actor *actor, Ov239Subitem *subitem);
 extern void **List_InsertSorted(void *pool, int stride, int priority);
 extern void *Ov107_CloneResourceTransform(const Ov239ResourceTransform *transform);
 extern void Res_RequestIdPair(int resourceId);
@@ -126,35 +128,35 @@ void Ov239_InitializeActorResources(Ov239Actor *actor)
     actor->actorBounds = bounds;
 
     actor->primarySubitem =
-        CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)actor, 0));
+        CreateSubitemInstance0xB4(Ov107_PackTextureHandle(actor, 0));
     RegisterSubscriberSlot(actor->subscriberOwner, actor->primarySubitem);
 
     actor->moveBinding =
-        Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)actor, 1),
+        Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(actor, 1),
                             data_ov239_020cdc5c);
 
     actor->subitem39c =
-        CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)actor, 2));
+        CreateSubitemInstance0xB4(Ov107_PackTextureHandle(actor, 2));
     subitem = *(Ov239Subitem *volatile *)&actor->subitem39c;
-    Ov107_EnqueueValue((char *)actor, (int)subitem);
+    Ov107_EnqueueValue(actor, subitem);
     subitem->flags |= 2;
 
     subitem = actor->subitem3a4 =
-        CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)actor, 3));
-    Ov107_EnqueueValue((char *)actor, (int)subitem);
+        CreateSubitemInstance0xB4(Ov107_PackTextureHandle(actor, 3));
+    Ov107_EnqueueValue(actor, subitem);
     subitem->flags |= 2;
 
     subitem = actor->subitem3ac =
         CreateSubitemInstance0xB4((void *)((((actor->cachedResourceId + 0x8000) & 0xfffffc) << 7)
                       | 0x80000001));
-    Ov107_EnqueueValue((char *)actor, (int)subitem);
+    Ov107_EnqueueValue(actor, subitem);
     subitem->flags |= 2;
 
     actor->subitem3b4 =
         CreateSubitemInstance0xB4((void *)((((actor->cachedResourceId + 0x8000) & 0xfffffc) << 7)
                       | 0x80000000));
     subitem = actor->subitem3b4;
-    Ov107_EnqueueValue((char *)actor, (int)subitem);
+    Ov107_EnqueueValue(actor, subitem);
     subitem->flags |= 2;
 
     actor->primaryDescriptorSlot =

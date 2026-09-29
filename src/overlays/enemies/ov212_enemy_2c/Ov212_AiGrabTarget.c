@@ -1,11 +1,9 @@
 /* If the linked partner (+0x5ac -> +0x18c) is present, cache it into +0xc and when non-null fire
  * its 0x128/0xd effect and notify 020cd5ec; always kick anim 8, clear +0x50 and dispatch. */
-
-#include "game/enemy_common.h"
-
 extern int Ov022_ToggleBit13ByMode(int, int);
 extern int Ov107_BuildAndSendUpdate(int, int, int, int);
 extern int Ov212_SetMode70(int, int);
+extern int Ov107_PostTagUpdate(int, int, int);
 extern int SetIndexedSlot(int, int, void *);
 extern int Ov212_CarryTick(int);
 void Ov212_AiGrabTarget(int param_1) {
@@ -20,7 +18,7 @@ void Ov212_AiGrabTarget(int param_1) {
             Ov212_SetMode70(owner, 1);
         }
     }
-    Ov107_PostTagUpdate((Actor *)(*(int *)owner), 8, 0);
+    Ov107_PostTagUpdate(*(int *)owner, 8, 0);
     *(int *)(owner + 0x50) = 0;
     SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), (void *)&Ov212_CarryTick);
 }

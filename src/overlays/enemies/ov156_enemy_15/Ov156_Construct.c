@@ -11,7 +11,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
@@ -41,10 +40,12 @@ extern void Ov156_TickHook(void);
 extern void Ov156_TryBeginSubState7(void);
 extern void Ov156_OnHit(void);
 extern void Ov156_Model_SetTracks0And3(void);
+extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int a, const char *name);
 extern void *CallocInstance(int size);
+extern void Ov107_EnqueueValue(char *self, int item);
 extern void Ov107_Actor_SetAttachSlot(char *self, int a, int b, VecFx32 *lift, int id);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(struct Pose *pose);
@@ -83,14 +84,14 @@ void Ov156_Construct(char *self)
     *(int *)(self + 0x68) = 0xb00;
     *(int *)(self + 0x6c) = 0;
     *(u16 *)(self + 0x100 + 0xae) |= 0x10;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 0));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov156_020cedec);
     *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov156_020cedf4);
     *(void **)(self + 0x3a0) = CallocInstance(0x20);
     for (i = 0; i < 4; i++) {
         (*(struct Ov156SubitemSlot **)(self + 0x3a0))[i].pItem =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), pools.id[i]));
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, pools.id[i]));
         Ov107_EnqueueValue(self, (*(struct Ov156SubitemSlot **)(self + 0x3a0))[i].pItem);
         *(int *)((*(struct Ov156SubitemSlot **)(self + 0x3a0))[i].pItem + 0x5c) |= 2;
     }

@@ -5,11 +5,11 @@
  * spawned at the zero vector (data_02041dc8) and the node moves to 020ce88c. */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void Mtx33_LookAt(void *out, int a, int b, void *c);
 extern void Quat_FromMtx33(void *quat, void *mtx);
+extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov273_LockOnEntry(void);
@@ -30,8 +30,8 @@ void Ov273_EnterCharge(int *self) {
     Mtx33_LookAt(mtx, target + 0x74, *state + 0x74, &data_02042264);
     Quat_FromMtx33((void *)(state + 0xe), mtx);
     state[0x12] = *(int *)(self[0] + 0x2c) * 30 / 10;
-    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
-    Ov107_PostTagUpdate((Actor *)(*(int *)(*state + 0x3dc)), 0, 0);
+    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate(*(int *)(*state + 0x3dc), 0, 0);
     func_ov107_020c0b90(*state, 9, data_02041dc8, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), &Ov273_LockOnEntry);
 }

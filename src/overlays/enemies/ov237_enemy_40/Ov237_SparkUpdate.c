@@ -5,12 +5,12 @@
  * and past 4.0 the record fades (phase 2: the scale drops by a fifth each frame, dying under 1/16). */
 
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { VecFx32 pos; VecFx32 axis[3]; int ext[3]; } Box;
 typedef struct { int scale; int unk4; Quat rot; int phase; int value; int age; char pad24[8]; VecFx32 pos; } Particle;
 
+extern int Ov107_CollectCapsuleOverlaps(int owner, void *box, int *hits);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
@@ -58,7 +58,7 @@ void Ov237_SparkUpdate(char *owner, int unused, int *ctx)
                     box.ext[0] = 0x900;
                     box.ext[1] = 0x200;
                     box.ext[2] = 0x900;
-                    n = Ov107_CollectCapsuleOverlaps((Actor *)ctx[3], &box, (void **)hits);
+                    n = Ov107_CollectCapsuleOverlaps(ctx[3], &box, hits);
                     for (j = 0; j < n; j++) {
                         VEC_Subtract((VecFx32 *)(hits[j] + 0x190), &p->pos, &push);
                         ScaleVec3Fx12(0x800, &push, &push);

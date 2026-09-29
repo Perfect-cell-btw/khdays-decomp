@@ -1,6 +1,6 @@
-#include "game/enemy_common.h"
-
 extern int TaskList_FinishByTag();
+extern int Ov107_AiState_PostTickBase();
+extern void Ov107_UnlinkNodeFromOwner(int node);
 
 struct Blob {
     int words[11];
@@ -54,7 +54,7 @@ void Ov233_PostTickCleanup(void *this) {
     }
 
     if (S8(this, 0x1c6) != 8 && I32(this, 0x4a4) != 0) {
-        Ov107_UnlinkNodeFromOwner((void *)(I32(this, 0x4a4)));
+        Ov107_UnlinkNodeFromOwner(I32(this, 0x4a4));
         I32(this, 0x4a4) = 0;
     }
 

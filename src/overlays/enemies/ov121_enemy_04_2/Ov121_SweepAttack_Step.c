@@ -3,7 +3,6 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/ai_task.h"
-#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -60,6 +59,7 @@ extern const VecFx32 data_02041dc8;
 extern struct Ov120AreaMsg data_ov121_020cfd22;
 extern void Ov121_DecayCopyPosFireOnHitFlag(void);
 
+extern int Ov107_ActionResource_GetOffsetAndScale(void *resource, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *dst, struct Ov120BoneXform *xfm, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void VEC_Add(void *a, void *b, void *out);
@@ -114,7 +114,7 @@ void Ov121_SweepAttack_Step(struct Ov120ActionNode *node)
     int scale;
 
     state = node->pState;
-    scale = Ov107_ActionResource_GetOffsetAndScale((int)state->pOwner->pActionResource3a0, &vLocalOffset);
+    scale = Ov107_ActionResource_GetOffsetAndScale(state->pOwner->pActionResource3a0, &vLocalOffset);
     Vec3TransformViaTempMtx(&state->vVelocity, &state->pOwner->xfm, &vLocalOffset);
     ScaleVec3Fx12(scale, &state->vVelocity, &state->vVelocity);
     VEC_Add(&state->pOwner->aBones390[1]->vPos14, &state->vVelocity, &aPoints[0]);

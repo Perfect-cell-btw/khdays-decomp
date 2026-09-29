@@ -9,10 +9,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; VecFx32 axis[3]; int ext[3]; } Box;
 
+extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
+extern int Ov107_CollectCapsuleOverlaps(int owner, Box *box, int *hits);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
@@ -36,7 +37,7 @@ void Ov254_AttackSweepTick(int *node)
 
     state[3] += *(int *)(node[0] + 0x2c);
     if (*(u8 *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
+        Ov107_PostTagUpdate(*state, 1, 1);
     }
     if (*((u8 *)state + 0x20) == 0) {
         if (state[3] >= 0x1980) {
@@ -47,7 +48,7 @@ void Ov254_AttackSweepTick(int *node)
     box = *(Box *)(**(int **)(*state + 0x388) + 0x94);
     box.pos.y += box.ext[1] - 0x8000;
     box.ext[1] = 0x8000;
-    nHits = Ov107_CollectCapsuleOverlaps((Actor *)(*(int *)(*state + 0x390)), &box, (void **)hits);
+    nHits = Ov107_CollectCapsuleOverlaps(*(int *)(*state + 0x390), &box, hits);
     i = 0;
     if (nHits > 0) {
         fallback = data_02042258;

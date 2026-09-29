@@ -1,9 +1,7 @@
 /* Reset the timer (+0x24), pick a landing point at (child)+0x2c = base(+0x224) +
  * rand(|+0x228 - +0x224| + 1), play the anim (ov107 mode 0xb) and register the handler. */
-
-#include "game/enemy_common.h"
-
 extern int RandNextScaled(int a);
+extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int SetIndexedSlot(int a, int b, void *handler);
 extern void Ov207_AiSteerStart(int);
 void Ov207_AiEnterSteer(int param_1) {
@@ -14,6 +12,6 @@ void Ov207_AiEnterSteer(int param_1) {
     d = *(int *)(*(int *)child + 0x228) - base;
     if (d < 0) d = -d;
     *(int *)(child + 0x2c) = base + RandNextScaled(d + 1);
-    Ov107_PostTagUpdate((Actor *)(*(int *)child), 0xb, 0);
+    Ov107_PostTagUpdate(*(int *)child, 0xb, 0);
     SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), (void *)&Ov207_AiSteerStart);
 }

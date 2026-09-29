@@ -13,9 +13,6 @@
  * of ip and lr (ip walks the source instead of the destination); giving each
  * side a real struct type with the block as a named field pins ip to the
  * destination the way the ROM has it. */
-
-#include "game/enemy_common.h"
-
 struct Ov121BoneXform {
     int w[11];
 };
@@ -31,6 +28,7 @@ struct Ov121BoneRec {
 };
 
 extern void TaskList_FinishByTag();
+extern void Ov107_AiState_PostTickBase();
 
 void Ov121_SyncAttachedPose(int self)
 {
@@ -47,5 +45,5 @@ void Ov121_SyncAttachedPose(int self)
     (*(struct Ov121PoseNode **)(self + 0x38c))->xform =
         (*(struct Ov121BoneRec **)(self + 0x39c))->xform;
 
-    Ov107_AiState_PostTickBase((char *)self);
+    Ov107_AiState_PostTickBase(self);
 }

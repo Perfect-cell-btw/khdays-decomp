@@ -8,7 +8,6 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
-#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 
@@ -16,6 +15,8 @@ extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern void Srt_SetRotationQuat(SrtTransform *transform, void *quat);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int variant, SrtTransform *transform);
+extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
+extern void Ov107_ForwardVisibleEvent(int owner, int flag);
 extern void TaskList_FinishByTag(void *taskList, void *handle);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 
@@ -59,7 +60,7 @@ void Ov260_ActorMessageHandler(int owner, unsigned char *command, int arg)
             *(int *)(owner + command[3] * 8 + 0x47c) = Ov107_CreateNodeXformTask(*(int *)(owner + 0x3c),
                 *(int *)(owner + command[3] * 8 + 0x478), kind, command[4], &transform);
             if (!(command[3] != 2 && command[3] != 6)) {
-                Ov107_ForwardVisibleEvent((void *)owner, 1);
+                Ov107_ForwardVisibleEvent(owner, 1);
             }
             break;
         case 1:

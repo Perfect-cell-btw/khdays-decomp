@@ -3,10 +3,8 @@
  * and latch f49=1. Bail if *(obj->f4 + 0xad) is set. Clear owner->+0x1ae bit0, set
  * bit0 of owner->f3b8->+8 and f3b4->+8, Ov107_PostTagUpdate(owner, 6, 1), reset
  * obj->f2c, dispatch via SetIndexedSlot. owner re-read per section. */
-
-#include "game/enemy_common.h"
-
 extern void Ov107_BuildAndSendUpdate(int owner, int a, int b, int c);
+extern void Ov107_PostTagUpdate(int owner, int a, int b);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov208_AiChargeTimeout(void);
 struct b8 { unsigned int f:8; };
@@ -26,7 +24,7 @@ void Ov208_Reaction_ChargeThenBreak(int self) {
     *(unsigned short *)(*(int *)obj + 0x1ae) &= ~1;
     ((struct b8 *)(*(int *)(*(int *)obj + 0x3b8) + 8))->f |= 1;
     ((struct b8 *)(*(int *)(*(int *)obj + 0x3b4) + 8))->f |= 1;
-    Ov107_PostTagUpdate((Actor *)(*(int *)obj), 6, 1);
+    Ov107_PostTagUpdate(*(int *)obj, 6, 1);
     *(int *)(obj + 0x2c) = 0;
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov208_AiChargeTimeout);
 }
