@@ -3,9 +3,9 @@
  * on to 020d01bc. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_PartWanderTick(void);
 
@@ -19,6 +19,6 @@ void Ov256_PartDriftTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x1c, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1c, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov256_PartWanderTick);
 }

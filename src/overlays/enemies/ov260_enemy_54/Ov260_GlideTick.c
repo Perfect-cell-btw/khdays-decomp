@@ -3,13 +3,12 @@
  * +0x70 and the +0x7b / +0x78 flags clear and the node moves on to 020ce3dc. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_GlideComboTick(void);
 extern const short data_0203d210[];
@@ -30,7 +29,7 @@ void Ov260_GlideTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x13, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x13, 0);
     Ov107_StartAnim(*(int *)(*state + 0x428), 9, 0);
     state[0x1c] = 0;
     *((unsigned char *)state + 0x7b) = 0;

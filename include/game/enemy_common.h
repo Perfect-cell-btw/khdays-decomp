@@ -1,0 +1,137 @@
+#ifndef GAME_ENEMY_COMMON_H
+#define GAME_ENEMY_COMMON_H
+
+/* The enemy framework (ov107): the functions other modules call, declared as they are defined. */
+
+#include "nitro/types.h"
+#include "nitro/fx_types.h"
+#include "game/actor.h"
+#include "game/ai_task.h"
+
+void Ov107_ActionResource_Destroy(char *node);
+int Ov107_ActionResource_GetOffsetAndScale(int res, VecFx32 *pOffset);
+void Ov107_AiState_DispatchModelCallbacks(void *self_, int flag);
+void Ov107_AiState_LoadResistances(char *self, u32 mask);
+void Ov107_AiState_OnSyncMessage(int self, u8 *msg);
+void Ov107_AiState_PostTick(char *self);
+void Ov107_AiState_PostTickBase(char *self);
+void Ov107_AiState_ResolveContacts(Actor *self, unsigned int tick);
+unsigned char Ov107_AllocSortedEntry(int node, unsigned char a, unsigned char b, unsigned char c);
+void Ov107_ApplySeparationPush(int nFactor, VecFx32 *pDelta, Actor *pA, Actor *pB);
+void Ov107_BroadcastValueToChildren(char *self, int value);
+int Ov107_CalcDamageScale(Actor *obj, fx32 p1, fx32 p2);
+void Ov107_CallSetupThenSharedHandler(int param_1);
+void Ov107_ClearGlobalCBB00(void);
+int Ov107_CollectCapsuleOverlaps(Actor *self, void *position, void **outArray);
+int Ov107_CollectSegmentOverlaps(Actor *owner, void *query, void **results);
+void Ov107_ContainerNode_Finalize(int nodeAddr);
+int Ov107_ContainerNode_New(void);
+int Ov107_CreateMovementNode(void);
+int Ov107_CreateNodeBodyTask(int resource, int node, int kind, void *transform, unsigned char e, int f);
+int Ov107_CreateRestartTask(void);
+int Ov107_CreateSpawnTask(int self, int id, int kind, int enabled, void *node);
+int Ov107_CreateTriggerSphere(int param_1);
+int Ov107_DefaultStepDone(void);
+void Ov107_DestroyActorInstance(int obj);
+void Ov107_DestroyInstance(int obj);
+void Ov107_DestroyNode(char *self);
+void Ov107_DispatchByType(unsigned short *node, int arg);
+void Ov107_DispatchMessage(char *self, unsigned char *msg, int arg);
+void Ov107_EmitIdEvent(int obj, unsigned short *out, int arg);
+int Ov107_EnemyTableHasEntry(int param_1, int param_2);
+void Ov107_EnqueueValue(char *node, int val);
+void Ov107_FaceReferenceDirection(char *self, int arg);
+void Ov107_FieldClassTeardown(void);
+int Ov107_FindChildById(int obj, unsigned short id);
+int Ov107_FindMessageHandler(unsigned int id);
+void Ov107_FollowUntilAnimEnd(char *self);
+int Ov107_ForwardVisibleEvent(void *self, int a2);
+short Ov107_GetSlotCount(char *p);
+void Ov107_HitShape_UpdateWorld(unsigned char *self);
+void Ov107_InitActorNode(u16 *node);
+void Ov107_InitBehaviorNode(u16 *node);
+void Ov107_InitContainerNode(u16 *node);
+void Ov107_InitMovementNode(u16 *node);
+void Ov107_InitNodeBase(u16 *node);
+void Ov107_InitObjectFromSource(int obj, int arg1);
+int Ov107_InstantiateFieldClass(int arg0, int arg1);
+void Ov107_InvokeSlot0x74(int obj, int arg1);
+void Ov107_LinkChildNode(int owner, int child);
+void Ov107_LinkToManagerList(int item);
+void Ov107_LoadMsUpRecord(Actor *self, u8 recordIndex);
+int Ov107_MoveNodeAndRelayout(Actor *node, VecFx32 *v);
+void Ov107_MovementNode_SetRequest(char *obj, unsigned request);
+int Ov107_NodeXformTaskStart(int param_1);
+int Ov107_OpenCachedResourceByName(char *name);
+void Ov107_OrLowFlags(int node, unsigned int bits);
+unsigned Ov107_PackTextureHandle(char *obj, unsigned offset);
+void Ov107_Pillar_EnterRegion(Actor *node, int region);
+void Ov107_Pillar_LeaveRegion(void *self, int region);
+int Ov107_Pillar_New(int param_1);
+void Ov107_Pillar_Tick(char *self);
+void Ov107_PostTagUpdate(Actor *self, int mode, int flag);
+void Ov107_Reaction_BranchByOwnerBit0(int self);
+void Ov107_RefreshAndSelectChild(int node, int arg1);
+void Ov107_Region_AddMember(int owner, u16 *child);
+int Ov107_Region_CountFlaggedMembers(char *self);
+void Ov107_Region_Destroy(char *self);
+void Ov107_Region_DrawStatusFx(char *self, int action);
+void Ov107_Region_DrawStatusFx2(void *node, int busy);
+void Ov107_Region_DrawStatusFx4(void *node, int busy);
+void Ov107_Region_DrawStatusFx8(void *node, int busy);
+int Ov107_Region_New(int param_1);
+void Ov107_Region_OnBusy(void *node, int busy);
+void Ov107_Region_OnEvent(char *node, int event);
+void Ov107_Region_RequestJoin(char *self, char *other);
+void Ov107_Region_RequestLeave(int obj, int *ent);
+void Ov107_Region_SetEnabled(void *self, int flag);
+void Ov107_Region_SyncChildVisibility(void *self);
+void Ov107_Region_TickChildren(void *obj, void *param1);
+void Ov107_Region_Update(char *self, void *param1);
+void Ov107_RegisterChildInRegion(int obj, int region);
+void Ov107_RegisterHandler(int idx, void *handler);
+void Ov107_ReleaseEmitterResources(char *self);
+void Ov107_ReleaseLoadedResources(void);
+void Ov107_RemoveChildFromRegion(int obj, int region);
+void Ov107_RenderAtOwnerSphere(void *self, int region);
+void Ov107_ResetStanceBase(Actor *self);
+void Ov107_RollTransformHistory(int self);
+void Ov107_RunChildHandlers(int obj);
+void Ov107_Scene_BuildIdTable(void);
+void Ov107_Scene_RemoveObject(int obj);
+int Ov107_Scene_Tick(void);
+void Ov107_SendMessage6(int *obj);
+void Ov107_SetBit0OfField0x40(int p, int flag);
+void Ov107_SetBit1OfField0x40(int p, int flag);
+void Ov107_SetLookupByte(int param_1, int param_2, int param_3);
+void Ov107_SetLowByteOfHw60FromQ4(int p, int q);
+void Ov107_SetOwnerWord(int *p, int v);
+void Ov107_SetPartBinding(char *obj, int idx, int val);
+void Ov107_SetStatusAndEmit(int node, unsigned char status);
+void Ov107_SoundFollowTick(int param_1);
+void Ov107_SoundRestartTick(int param_1);
+int Ov107_SpawnTaskTeardown(int param_1);
+int Ov107_Spawner_AddDataBlock(void *self, int size, void *src);
+int Ov107_Spawner_CountInactiveSlots(char *self);
+int Ov107_Spawner_FindFreeActor(int self, int index);
+void Ov107_Spawner_OnActorRetired(Actor *actor);
+void Ov107_Spawner_SetMoveAnim(char *self, void *pAnim, int duration);
+void Ov107_StartAnim(int self, short val, int arg);
+void Ov107_StartObject(void *obj);
+void Ov107_StoreHitInfo(int param_1, int param_2, int param_3);
+void Ov107_StoreSlotEvent(int param_1, int param_2, short param_3);
+void Ov107_TaskClearFlags(int obj, unsigned int mask);
+void Ov107_TaskReset(int obj);
+void Ov107_TaskRestartWith5f0(int obj);
+int Ov107_TaskRunStep(int obj, int arg);
+void Ov107_TrackJointMotion(char *self, int region);
+void Ov107_TriggerSphere_Init(int a, int b);
+void Ov107_TriggerSphere_NotifyExits(char *self);
+int Ov107_TriggerSphere_TestPlayers(int self);
+void Ov107_UnlinkNodeFromOwner(void *node);
+int Ov107_UpdateCollisionSphere(int node);
+int Ov107_stAdvanceState_ccedc(int param_1);
+int func_ov107_020c9848(void);
+int func_ov107_020c9c1c(int arg0);
+
+#endif /* GAME_ENEMY_COMMON_H */

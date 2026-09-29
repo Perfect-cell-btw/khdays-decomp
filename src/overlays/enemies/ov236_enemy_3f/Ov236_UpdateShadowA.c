@@ -4,9 +4,9 @@
  * 1.0 - height(+0x13c)/20 (at least 1/16). */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Flags5c { int b0 : 1; int b1 : 1; };
-extern void Ov107_RefreshAndSelectChild(int sub, int arg1);
 extern void Ov107_ProcessObjectTick(char *obj, int arg1);
 extern void Srt_SetRotationQuat(int srt, void *pose);
 extern void Srt_SetTranslation(int srt, VecFx32 *pos);

@@ -1,5 +1,7 @@
 /* Container node tick: runs the callbacks of the active children and sums the finished ones. */
 
+#include "game/enemy_common.h"
+
 typedef struct Ov107_9784_Entry {
     char pad[0xc];
     void (*callback)(struct Ov107_9784_Entry *entry, int b);
@@ -20,8 +22,6 @@ typedef struct Ov107_9784_Self {
 
 extern int List_First(void *listHead);
 extern int List_Next(void *listHead);
-extern int Ov107_Region_CountFlaggedMembers(void *entry);
-extern void Ov107_Region_TickChildren(void *self, int b);
 extern void ObjList_Update(void *ptr, int b);
 
 void Ov107_ContainerNode_Tick(Ov107_9784_Self *self, int b)
@@ -45,12 +45,12 @@ void Ov107_ContainerNode_Tick(Ov107_9784_Self *self, int b)
             }
             allBit2 = 0;
         } else {
-            self->accum += Ov107_Region_CountFlaggedMembers(entry);
+            self->accum += Ov107_Region_CountFlaggedMembers((char *)entry);
         }
         node = (void *)List_Next(self->list);
     }
 
     self->flags = (self->flags & ~4) | ((unsigned int)(allBit2 << 31) >> 29);
-    Ov107_Region_TickChildren(self, b);
+    Ov107_Region_TickChildren(self, (void *)b);
     ObjList_Update(self->field_3c, b);
 }

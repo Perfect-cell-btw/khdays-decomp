@@ -11,9 +11,11 @@
  * Note Ov275_SpawnAndLinkNode is called with FOUR arguments and the ROM sets NONE of them:
  * self, msg[3] (the switch value itself, still live in r1), p3 and p4 are all already in
  * place. And ov107_020c08cc takes SIX -- the last two go on the stack. */
+
+#include "game/enemy_common.h"
+
 extern int Ov275_SpawnAndLinkNode(int self, int a, int b, int c);
 extern int Ov107_CreateNodeXformTaskFx24(int a, int b, int c, int d, int e, void *f);
-extern void Ov107_ForwardVisibleEvent(int self, int a);
 extern void Ov107_AiState_OnMessage(int self, void *msg, int c);
 
 void Ov275_HandleResourceMessage(int self, unsigned char *msg, int p3, int p4) {
@@ -39,7 +41,7 @@ void Ov275_HandleResourceMessage(int self, unsigned char *msg, int p3, int p4) {
                 Ov107_CreateNodeXformTaskFx24(*(int *)(self + 0x3c),
                                     *(int *)(*(int *)(self + 0x3e0) + 0x20),
                                     0x17, 0, 0x1000, msg + 5);
-            Ov107_ForwardVisibleEvent(self, 1);
+            Ov107_ForwardVisibleEvent((void *)self, 1);
             break;
         }
     }

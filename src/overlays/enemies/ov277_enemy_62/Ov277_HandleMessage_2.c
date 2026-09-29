@@ -4,10 +4,12 @@
  * by the sub-kind (0 -> entry 0, 1 -> entry 2) through ov107::020c08cc (mode 0x17, weight
  * 0x1000, the packet's payload) and keeps the handle in the following entry, or for sub-kind 2
  * registers effect 0x112 (kind 7) on the +0xa0 node into +0x398. The base handler always runs. */
+
+#include "game/enemy_common.h"
+
 extern void Srt_SetScaleXYZ(void *placement, int x, int y, int z);
 extern void RefreshObjectCallbacks(int subscriber, int a);
 extern void *Ov107_CreateNodeXformTaskFx24(void *taskList, void *subitem, int mode, int blend, int weight, void *payload);
-extern int Ov107_CreateSpawnTask(int owner, int resourceId, int kind, int zero, void *work);
 extern void Ov107_AiState_OnMessage(int actor, unsigned char *msg, int param);
 
 void Ov277_HandleMessage_2(int actor, unsigned char *msg, int param)

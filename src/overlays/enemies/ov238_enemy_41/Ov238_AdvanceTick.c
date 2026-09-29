@@ -5,13 +5,12 @@
  * (pose 0xf, motion 5) and also goes to 020d16e8; otherwise the node goes back to 020d1510. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov238_TargetGap(int *node);
 extern void Ov238_TimedCue(int *node, int ticks, int cue, int variant);
 extern void Ov238_TurnVelocity(int *node, VecFx32 *vec);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov238_ClawTick(void);
 extern void Ov238_AiWalkStep(void);
@@ -35,14 +34,14 @@ void Ov238_AdvanceTick(int *node)
         *((unsigned char *)state + 0x2e) = 1;
         *((unsigned char *)state + 0x31) = 2;
         state[8] = 0;
-        Ov107_PostTagUpdate(*state, 0x15, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x15, 0);
         Ov107_StartAnim(*(int *)(*state + 0x3e0), 0xb, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov238_ClawTick);
         return;
     }
     if (*((unsigned char *)state + 0x2d) == 0) {
         *((unsigned char *)state + 0x2e) = 0;
-        Ov107_PostTagUpdate(*state, 0xf, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0xf, 0);
         Ov107_StartAnim(*(int *)(*state + 0x3e0), 5, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov238_ClawTick);
         return;

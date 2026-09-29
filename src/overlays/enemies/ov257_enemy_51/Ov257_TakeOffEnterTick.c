@@ -3,9 +3,8 @@
  * hands over to Ov257_JumpStartTick. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov257_JumpStartTick(int *node);
 
@@ -14,7 +13,7 @@ void Ov257_TakeOffEnterTick(int *node)
     int *state = (int *)node[1];
     u16 hw;
 
-    Ov107_PostTagUpdate(*state, 0x1c, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1c, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3d0), 0x19, 0);
     hw = *(u16 *)(*state + 0x60);
     *(u16 *)(*state + 0x60) = (hw & ~0xff00) |

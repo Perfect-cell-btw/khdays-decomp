@@ -6,11 +6,10 @@
  * negation) and moves the node to the hover tick (020ce2d4) or the strike (020ce33c). */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov245_ResetMode(int actor);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
-extern void Ov107_StartAnim(int item, int motion, int flag);
 extern int FX_Div(int num, int den);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_HoverTick(void);
@@ -34,7 +33,7 @@ void Ov245_HoverArmedTick(int *node) {
     if ((*(unsigned short *)(owner + 0x100 + 0xac) & 1) == 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
     Ov107_StartAnim(*(int *)(*state + 0x4c8), 2, 0);
     state[0xc] = FX_Div(-state[10], 0xe40f);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_ApplyRecoilPush);

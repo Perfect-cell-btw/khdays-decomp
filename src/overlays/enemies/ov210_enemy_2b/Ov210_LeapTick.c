@@ -8,6 +8,7 @@
  * sub-state 8 is requested and the action ends. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov210_BindOwnerAndAttach(int height, int a, int b);
 extern int Ov107_FindNearestObject(int owner, int flag);
@@ -15,7 +16,6 @@ extern int Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern long long FX_DivFx64c(int num, int denom);
-extern void Ov107_MoveNodeAndRelayout(int obj, void *v);
 extern void SetIndexedSlot(int self, int idx, int cb);
 
 void Ov210_LeapTick(int *self) {
@@ -52,7 +52,7 @@ void Ov210_LeapTick(int *self) {
         }
         v = *(VecFx32 *)(state + 0xd);
         v.y += (int)(((q * (long long)0x1000) + 0x80000000LL) >> 32);
-        Ov107_MoveNodeAndRelayout(state[0], &v);
+        Ov107_MoveNodeAndRelayout((Actor *)state[0], &v);
     }
     if (*(unsigned char *)state[3] == 0) {
         *(char *)(state[0] + 0x1c7) = 8;

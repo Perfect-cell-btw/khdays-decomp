@@ -8,6 +8,7 @@
  * Ov272_SwipeHitWindow. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 struct Bits40 { int b0 : 1, b1 : 1; };
@@ -19,7 +20,6 @@ extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Mtx33_LookAt(int *dst, const VecFx32 *a, const VecFx32 *b, const void *c);
 extern void Quat_FromMtx33(void *dst, const int *src);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042264;
@@ -70,7 +70,7 @@ void Ov272_TickApproachTarget(int *node)
     Quat_FromMtx33(state + 7, mtx);
     if (!(gap >= 0x2000)) {
         func_ov107_020c0b90(*state, 3, data_02041dc8, 0);
-        Ov107_PostTagUpdate(*state, 7, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
         Ov107_BuildAndSendUpdate(*state, 0x167, 6, (void *)state[0x13]);
         *((unsigned char *)state + 0x70) = 0;
         state[0x14] = 0;

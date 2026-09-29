@@ -7,11 +7,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
@@ -41,7 +41,7 @@ void Ov237_ThrowTick(int *node)
         return;
     }
     if (*(u8 *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 0, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     }
     if (state[0xc] >= 0x330 && *((u8 *)state + 0x55) == 2) {
         (*((u8 *)state + 0x55))--;

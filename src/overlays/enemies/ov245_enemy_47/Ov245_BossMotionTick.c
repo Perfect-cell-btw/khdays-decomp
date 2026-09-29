@@ -13,6 +13,9 @@
  * +0x34 delay runs out, every idle +0x420 part is launched along data_0204227c (020cf230).
  * Codegen: compiled with opt_dead_assignments and opt_strength_reduction off (push/pop scoped);
  * the phase slot is addressed as `*state + j * 4 + 0x4d0` before the call, as in the ROM. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int x, y, z; } Vec3;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Flags40 { int bit0 : 1, bit1 : 1; };
@@ -37,7 +40,6 @@ extern int *List_First(void *list);
 extern int *List_Next(void *list);
 extern void Ov022_ToggleBit13ByMode(int target, int a);
 extern void Actor_SetVecAndSyncChild(int node, Vec3 *pos);
-extern void Ov107_MoveNodeAndRelayout(int actor, Vec3 *pos);
 extern int func_02020400(int num, int den);
 extern void Ov245_NodeUpdateTickForward(int part, const Vec3 *dir);
 extern const Vec3 data_02042264;
@@ -149,10 +151,10 @@ void Ov245_BossMotionTick(int *node) {
     sum = anchor[2] + step.z;
     if (sum < limit) {
         VecSet_(&pos, anchor[0], anchor[1], limit);
-        Ov107_MoveNodeAndRelayout(*state, &pos);
+        Ov107_MoveNodeAndRelayout((Actor *)(*state), (VecFx32 *)&pos);
     } else if (sum > state[0xf] + 0xf000) {
         VecSet_(&pos, anchor[0], anchor[1], state[0xf] + 0xf000);
-        Ov107_MoveNodeAndRelayout(*state, &pos);
+        Ov107_MoveNodeAndRelayout((Actor *)(*state), (VecFx32 *)&pos);
     } else {
         for (j = 0; j < 2; j++) {
             int amp = j == 0 ? 0x3500 : 0x3000;

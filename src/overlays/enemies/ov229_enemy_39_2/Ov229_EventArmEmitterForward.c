@@ -1,6 +1,8 @@
 /* Single-case switch: `if (msg[2] == 5)` (or `== 5 && ...`) lets mwcc if-convert the
  * inner test into the outer one (ldrbeq/cmpeq); the ROM branches on both. */
-extern int  Ov107_CreateNodeBodyTask(int a, int b, int mode, int anchor, int e, int f);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_AiState_OnMessage(int a, int b, int c);
 
 void Ov229_EventArmEmitterForward(int self, unsigned char *msg, int arg3) {

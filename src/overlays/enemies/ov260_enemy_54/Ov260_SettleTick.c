@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
 
@@ -19,7 +20,6 @@ extern long long FX_DivFx64c(int numerator, int denominator);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void *Collision_CastRayEx(void *collision, VecFx32 *origin, VecFx32 *direction, int arg3);
 extern void ScaleVec3Fixed27(int plane, VecFx32 *in, VecFx32 *out);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -102,7 +102,7 @@ void Ov260_SettleTick(int *node)
         ScaleVec3Fixed27(*(int *)((char *)hit + 0xc), &direction, &direction);
         VEC_Add(&sphere.pos, &direction, (VecFx32 *)(state + 5));
     }
-    Ov107_MoveNodeAndRelayout(*state, (VecFx32 *)(state + 5));
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), (VecFx32 *)(state + 5));
     at = *(VecFx32 *)(state + 5);
     at.y += *(int *)(*state + 0x80);
     func_ov107_020c0b90(*state, 3, at, 0);

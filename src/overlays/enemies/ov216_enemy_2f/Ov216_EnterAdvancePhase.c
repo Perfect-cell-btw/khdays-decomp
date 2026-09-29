@@ -10,8 +10,8 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int owner, int mode, int b);
 extern int RandNext(void);
 extern const short data_0203d210[];
 extern VecFx32 data_02041dc8;
@@ -24,7 +24,7 @@ void Ov216_EnterAdvancePhase(int param_1) {
     int *node = *(int **)(param_1 + 4);
     int idx;
     VecFx32 v;
-    Ov107_PostTagUpdate(*node, 6, 0);
+    Ov107_PostTagUpdate((Actor *)(*node), 6, 0);
     idx = (int)(((unsigned)(((long long)RandNext() * 0x28be60db9391LL + 0x80000000000LL) >> 0x20) << 4) >> 0x10) >> 4;
     node[5] = data_0203d210[idx * 2];
     node[6] = 0;

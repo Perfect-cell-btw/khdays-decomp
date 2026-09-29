@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
@@ -19,8 +20,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int y);
 extern int FX_Div(int num, int den);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void Ov260_MapHeldItemKindToAnim(int actor, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_DriftCheckStep(void);
@@ -71,7 +70,7 @@ void Ov260_WalkTick(int *node)
         state[0x18] = 0;
     }
     if (state[0x18] <= 0 || t <= 0x200) {
-        Ov107_PostTagUpdate(*state, 3, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
         Ov107_StartAnim(*(int *)(*state + 0x428), 2, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov260_DriftCheckStep);
         return;
@@ -88,7 +87,7 @@ void Ov260_WalkTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     Ov107_StartAnim(*(int *)(*state + 0x428), 1, 0);
     state[0x1c] = 0;
     *((u8 *)state + 0x7b) = 0;

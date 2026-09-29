@@ -10,13 +10,12 @@
  * in +0x40 and past 15.0 the item bursts silently. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Obb { VecFx32 center; VecFx32 axisX; VecFx32 axisY; VecFx32 axisZ; int extent[3]; };
 
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern int Ov107_CollectCapsuleOverlaps(int actor, struct Obb *query, int *out);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
@@ -42,7 +41,7 @@ void Ov209_ItemFlightTick(int *node)
     int *floor;
 
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 1, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
     }
     ScaleVec3Fx12(0x400, (VecFx32 *)(state + 6), (VecFx32 *)(state + 3));
     query.center = *(VecFx32 *)(*state + 0x74);
@@ -52,7 +51,7 @@ void Ov209_ItemFlightTick(int *node)
     query.extent[0] = *(int *)(*state + 0x80);
     query.extent[1] = 0xc00;
     query.extent[2] = 0xc00;
-    n = Ov107_CollectCapsuleOverlaps(*(int *)(*state + 0x394), &query, hits);
+    n = Ov107_CollectCapsuleOverlaps((Actor *)(*(int *)(*state + 0x394)), &query, (void **)hits);
     i = 0;
     if (n > 0) {
         do {
@@ -70,7 +69,7 @@ void Ov209_ItemFlightTick(int *node)
     if (Collision_CastRay(*(void **)(world + 0x7c), (VecFx32 *)state[2], &delta) != 0) {
         func_ov107_020c0b90(*(int *)(*state + 0x394), 1, *(VecFx32 *)state[2], 0);
         Ov107_BuildAndSendUpdate(*state, 0, 0x53, (void *)state[2]);
-        Ov107_PostTagUpdate(*state, 2, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov209_AiStep_QueueAction0OnAnimEnd);
         return;
     }
@@ -78,7 +77,7 @@ void Ov209_ItemFlightTick(int *node)
     if (floor != 0 && floor[2] == 0) {
         func_ov107_020c0b90(*(int *)(*state + 0x394), 1, *(VecFx32 *)state[2], 0);
         Ov107_BuildAndSendUpdate(*state, 0, 0x53, (void *)state[2]);
-        Ov107_PostTagUpdate(*state, 2, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov209_AiStep_QueueAction0OnAnimEnd);
         return;
     }
@@ -87,6 +86,6 @@ void Ov209_ItemFlightTick(int *node)
         return;
     }
     func_ov107_020c0b90(*(int *)(*state + 0x394), 1, *(VecFx32 *)state[2], 0);
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov209_AiStep_QueueAction0OnAnimEnd);
 }

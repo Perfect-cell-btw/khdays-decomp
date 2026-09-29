@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 center; int nRadius; } Sphere;
 typedef struct { unsigned f : 8; } B8;
@@ -22,8 +23,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern VecFx32 Ov252_PickLandingSpot(int *node);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
 extern u8 Ov252_ReboundHitTest(int *state, int kind, Sphere *sphere, void *cyl, void *box);
@@ -59,9 +58,9 @@ void Ov252_LeapTick(int *node)
     if (state[0x19] > 0x4000 && state[0x27] == 0) {
         spot = Ov252_PickLandingSpot(node);
         *(VecFx32 *)(state + 0x12) = spot;
-        Ov107_MoveNodeAndRelayout(*state, (VecFx32 *)(state + 0x12));
+        Ov107_MoveNodeAndRelayout((Actor *)(*state), (VecFx32 *)(state + 0x12));
         state[0x29] = 1;
-        Ov107_PostTagUpdate(*state, 0x18, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x18, 0);
         func_ov107_020c0b90(*state, 0x32, *(VecFx32 *)state[2], 0);
         state[0x27] = 1;
         *(int *)(*state + 0x584) = 1;
@@ -80,8 +79,8 @@ void Ov252_LeapTick(int *node)
         v.y = 0x1c0;
         state[0x19] = 0;
         *((u8 *)state + 0x88) -= 1;
-        Ov107_PostTagUpdate(*state, 0x31, 0);
-        Ov107_PostTagUpdate(*state, 0x35, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x31, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x35, 0);
         func_ov107_020c0b90(*state, 0xa, v, 0);
         Ov107_BuildAndSendUpdate(*state, 0x148, 0xa, &v);
         func_ov107_020c0b90(*state, 0x32, v, 0);
@@ -125,7 +124,7 @@ void Ov252_LeapTick(int *node)
     if (!((Bits8 *)(*state + 0x17a))->b3) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x19, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x19, 0);
     *(VecFx32 *)(state + 3) = data_02041dc8;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_TurnTick);
 }

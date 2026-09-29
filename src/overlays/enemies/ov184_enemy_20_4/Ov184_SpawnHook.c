@@ -6,7 +6,9 @@
  * itself survives folding and produces the ROM's `adds r0,r0,#0` -- an ADD that
  * sets flags. Same trick as Ov114_StartSidestep, which this family shares a
  * shape with. */
-extern void Ov107_PostTagUpdate(int model, int mode, int b);
+
+#include "game/enemy_common.h"
+
 extern int RandNextScaled(int range);
 extern void SetIndexedSlot(void *self, int script, void *handler);
 extern void Ov184_CircleTick(void);
@@ -15,7 +17,7 @@ void Ov184_SpawnHook(int *self) {
     int *model = (int *)self[1];
     int pad;
 
-    Ov107_PostTagUpdate(*model, 1, 1);
+    Ov107_PostTagUpdate((Actor *)(*model), 1, 1);
 
     *(int *)((char *)model + 0x84) =
         (RandNextScaled(2) + (pad - pad) != 0) ? -1 : 1;

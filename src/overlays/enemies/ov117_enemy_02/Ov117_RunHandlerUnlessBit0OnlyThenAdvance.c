@@ -1,8 +1,9 @@
 /* Post-tick: unlinks the held node when the actor is inactive or flagged, then runs the base
  * post-tick. */
 
+#include "game/enemy_common.h"
+
 extern void Ov117_UnlinkHeldNode();
-extern void Ov107_AiState_PostTickBase();
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
@@ -11,5 +12,5 @@ void Ov117_RunHandlerUnlessBit0OnlyThenAdvance(int this_) {
     if ((lo & 0x80) || !(lo & 1)) {
         Ov117_UnlinkHeldNode(this_);
     }
-    Ov107_AiState_PostTickBase(this_);
+    Ov107_AiState_PostTickBase((char *)this_);
 }

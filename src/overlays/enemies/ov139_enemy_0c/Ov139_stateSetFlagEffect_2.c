@@ -2,8 +2,8 @@
  * actor's flags, starts the slam animation, posts a pose, clears the hit flags and timer, sends a
  * state update and installs the slam step. */
 
-extern void Ov107_StartAnim();
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov139_SlamTick(void);
@@ -19,7 +19,7 @@ void Ov139_stateSetFlagEffect_2(int *node) {
         *p = (unsigned short)((u & ~0xff00) | ((((u << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10));
     }
     Ov107_StartAnim(*(int *)(*state + 0x390), 4, 0);
-    Ov107_PostTagUpdate(*state, 0xc, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xc, 0);
     *(signed char *)((char *)state + 0x54) = 0;
     Ov107_BuildAndSendUpdate(*state, 0x11f, 6, state[0x13]);
     *(signed char *)((char *)state + 0x55) = 0;

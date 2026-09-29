@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { VecFx32 pos; int radius; } Sphere;
@@ -16,8 +17,6 @@ extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov256_AttackHitTest(int *node, Sphere *s, int a, int b, VecFx32 *dir, int c, int d, int e);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_TickReactionAim(void);
 extern const short data_0203d210[];
@@ -50,7 +49,7 @@ void Ov256_LungeTick(int *node)
     Ov256_AttackHitTest(node, &s, 0, 0, &dir, 1, 0, 1);
     }
     if (*(u8 *)(state[1] + 0xad) == 0 && state[0x13] >= state[0x16] + 0x5000) {
-        Ov107_PostTagUpdate(*state, 0x16, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x16, 0);
         Ov107_StartAnim(*(int *)(*state + 0x450), 8, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov256_TickReactionAim);
         return;
@@ -58,7 +57,7 @@ void Ov256_LungeTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x15, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x15, 0);
     Ov107_StartAnim(*(int *)(*state + 0x450), 7, 0);
     func_ov107_020c0b90(*state, 0xf, data_02041dc8, 0);
 }

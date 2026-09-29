@@ -7,6 +7,7 @@
  * assembled through a byte-addressed union as in Ov178_HandleSpawnMessage.) */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 
@@ -16,7 +17,6 @@ extern void Srt_SetScaleUniform(SrtTransform *transform, int scale);
 extern void Srt_SetRotationAxisAngle(SrtTransform *transform, const VecFx32 *axis, int angle);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero, SrtTransform *transform);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int parent, int kind, int zero, int weight, void *payload);
-extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 extern const VecFx32 data_02042264;
 

@@ -2,9 +2,10 @@
  * (+0x65), reaction +0x3c8 (as a halfword) mode 0xc fires at the +4 point. Once the +0xc idle byte
  * clears, animation 0x12 plays, the +0x3a8 part plays motion 0xf, +0x63, the +0x44 timer and the
  * flag clear and the tick hands over to Ov235_LungeTick. */
+
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov235_LungeTick(int *node);
 
@@ -20,7 +21,7 @@ void Ov235_StrikeTick(int *node)
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x12, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x12, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3a8), 0xf, 0);
     *((unsigned char *)state + 0x63) = 0;
     state[0x11] = 0;

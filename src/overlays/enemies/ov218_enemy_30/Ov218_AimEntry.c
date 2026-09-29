@@ -1,6 +1,8 @@
 /* Aim entry: pose 2 plays; with the +0x64 flag reaction 0x135/7 fires at the +8 point; with a
  * +0x44 target the +0xc / +0x10 heading turns towards it. */
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int y);
@@ -10,7 +12,7 @@ extern void Ov218_CopyScaleVec3ThenAdvanceSlot(void);
 void Ov218_AimEntry(int *node) {
     int *state = (int *)node[1];
     int v[3];
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     if (state[0x19] != 0) {
         Ov107_BuildAndSendUpdate(*state, 0x135, 0x7, state[2]);
     }

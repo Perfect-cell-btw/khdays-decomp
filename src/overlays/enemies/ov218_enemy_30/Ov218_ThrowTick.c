@@ -4,9 +4,9 @@
  * origin and the node moves on to 020cdb68. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov218_GuardEnd(void);
@@ -32,7 +32,7 @@ void Ov218_ThrowTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 7, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
     func_ov107_020c0b90(*state, 3, data_02041dc8, 1);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov218_GuardEnd);
 }

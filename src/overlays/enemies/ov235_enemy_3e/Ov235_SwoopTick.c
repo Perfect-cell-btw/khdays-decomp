@@ -5,6 +5,7 @@
  * Ov235_CircleTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 
@@ -12,11 +13,8 @@ extern int Ov107_FindNearestObject(int obj, int kind);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
 extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
-extern int Ov107_ActionResource_GetOffsetAndScale(int obj, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, const Quat *q, const VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov235_CircleTick(int *node);
 extern const VecFx32 data_02042264;
@@ -40,7 +38,7 @@ void Ov235_SwoopTick(int *node)
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x1a, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1a, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3a8), 0x14, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov235_CircleTick);
 }

@@ -5,8 +5,8 @@
  * Ov162_RecoilTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov162_RecoilTick(void);
 extern unsigned short data_ov162_020d1098[];
@@ -30,7 +30,7 @@ void Ov162_BeginRecoil(int *node) {
     if (pfnHook != 0) {
         (*pfnHook)(state[0], pMsg, 4);
     }
-    Ov107_PostTagUpdate(state[0], 7, 1);
+    Ov107_PostTagUpdate((Actor *)state[0], 7, 1);
     *(int *)(state[0] + 0x3cc) &= ~1;
     *(VecFx32 *)(state + 9) = *(VecFx32 *)data_02041dc8;
     state[0x16] = 0;

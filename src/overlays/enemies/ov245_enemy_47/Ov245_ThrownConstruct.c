@@ -6,6 +6,7 @@
  * bit 1 of its +8 low byte) and a +0x144 placement (+0x38c); +0x390 starts empty. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int scale; } Pose;
 typedef void (*Callback)(void);
@@ -17,12 +18,10 @@ extern void Ov245_SpawnSlotChildMsg(void);
 extern void Ov245_Thrown_CreateAiTask(void);
 extern void Ov245_FilterMessage(void);
 extern void Ov245_Thrown_ApplyAnims(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void RefreshObjectCallbacks(int item, int a);
 struct Ov245Thrown;
-extern void Ov107_EnqueueValue(struct Ov245Thrown *self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
 
@@ -82,11 +81,11 @@ void Ov245_ThrownConstruct(struct Ov245Thrown *self) {
     VecSetP_(&self->pose, 0, 0x2991, 0);   /* the constant again, not a re-read of scale */
     self->f54 = 0;
     self->f58 = 0x100;
-    self->pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x12));
+    self->pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x12));
     RegisterSubscriberSlot(self->pOwner, self->pItem);
     RefreshObjectCallbacks(self->pItem, 0);
-    self->pSub = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x24));
-    Ov107_EnqueueValue(self, self->pSub);
+    self->pSub = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x24));
+    Ov107_EnqueueValue((char *)self, self->pSub);
     *(int *)(self->pSub + 0x5c) |= 2;
     pose.pos.x = 0;
     pose.pos.y = 0x1800;

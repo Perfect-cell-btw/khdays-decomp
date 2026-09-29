@@ -3,12 +3,14 @@
  * at +0x68 is rebuilt from the target's +0x74 pose, the +0x24 anchor and data_02042264 and
  * copied down to +0x58. Bit 7 of the hw60 high byte is dropped, action 0/0 fired and the
  * follow-up state registered. */
+
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct blk16 { int a, b, c, d; };
 extern int Ov107_FindNearestObject(int a, int b);
 extern void Mtx33_LookAt(int *out, int *m, int *a, int *b);
 extern void Quat_FromMtx33(int *dst, int *m);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern int data_02042264[];
 extern void Ov125_AiRollTimerQueue2(void);
@@ -27,6 +29,6 @@ void Ov125_AimedAttackWait(int *node) {
         *(struct blk16 *)(state + 0x16) = *(struct blk16 *)(state + 0x1a);
     }
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x80;
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov125_AiRollTimerQueue2);
 }

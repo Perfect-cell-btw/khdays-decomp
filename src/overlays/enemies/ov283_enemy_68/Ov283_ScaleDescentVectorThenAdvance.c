@@ -1,8 +1,8 @@
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void ScaleVec3Fx12(int s, int dst, int src);
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(int obj, int a, int cb);
 extern void Ov283_AiFallTick(void);
 
@@ -20,6 +20,6 @@ void Ov283_ScaleDescentVectorThenAdvance(int *this)
     if (*(unsigned char *)(*(int *)(node + 4) + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*(int *)node, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*(int *)node), 3, 0);
     SetIndexedSlot((int)this, *(signed char *)((int)this + 0x20), (int)&Ov283_AiFallTick);
 }

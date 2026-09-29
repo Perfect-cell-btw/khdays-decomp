@@ -6,6 +6,7 @@
  * (only the first at 0x2e). */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u8 b0 : 1; } Bit0;
 typedef struct { char pad0[0xc]; int bound; char pad10[0x14]; } AnimSlot;
@@ -14,7 +15,6 @@ struct Ov252Rig { char pad[0x3a0]; AnimSlot slots[4]; };
 extern void Ov252_FetchArmourRecords(char *actor, signed char which, int *frames);
 extern void FreeAllResourceTables(AnimSlot *slot);
 extern void NNS_G3dRenderObjInit(int a, int b);
-extern void *Ov107_PackTextureHandle(char *actor, int index);
 extern void Snd_RegisterSeqAndBind(AnimSlot *slot, int bank, void *record, int d);
 extern void Ov252_SwapArmourAnim(char *actor, signed char which, int *frames);
 extern void Ov252_RebindWorkList(int rig, char *list, void *pose, int flag);

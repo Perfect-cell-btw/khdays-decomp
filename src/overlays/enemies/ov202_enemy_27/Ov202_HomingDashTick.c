@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -73,8 +74,6 @@ extern int Ov107_CollectSphereOverlaps(void *actor, struct Sphere *shape, void *
 extern int Ov107_InvokeHitCallback(void *victim, void *a, void *b, int mode,
                                FxVec *push, int flags);
 extern void Ov107_BuildAndSendUpdate(void *actor, int id, u16 mode, FxVec *at);
-extern void Ov107_PostTagUpdate(void *actor, int a, int b);
-extern void Ov107_StartAnim(void *obj, int a, int b);
 extern void SetIndexedSlot(struct Node *node, int slot, void *next);
 
 extern const FxVec data_02042258;
@@ -194,6 +193,6 @@ void Ov202_HomingDashTick(struct Node *node)
     Ov107_PostTagUpdate(st->pActor, 5, 0);
     ((struct Flags60 *)((char *)st->pActor + 0x60))->hi =
         ((struct Flags60 *)((char *)st->pActor + 0x60))->hi & ~0x40;
-    Ov107_StartAnim(*(void **)((char *)st->pActor + 0x388), 1, 0);
+    Ov107_StartAnim((int)(*(void **)((char *)st->pActor + 0x388)), 1, 0);
     SetIndexedSlot(node, node->slot, (void *)Ov202_AiReleaseHeldAndTrack);
 }

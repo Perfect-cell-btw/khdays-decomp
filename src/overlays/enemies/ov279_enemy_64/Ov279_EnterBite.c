@@ -4,11 +4,11 @@
  * timer restarts and the tick hands over to Ov279_TimerReseedRandom. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned int lo : 8, rest : 24; } Byte8;
 
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov279_TimerReseedRandom(int *node);
@@ -19,7 +19,7 @@ void Ov279_EnterBite(int *node)
     unsigned short v;
 
     func_ov107_020c0b90(*state, 1, *(VecFx32 *)state[0x13], 0);
-    Ov107_PostTagUpdate(*state, 1, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
     ((Byte8 *)(*(int *)(*state + 0x388) + 8))->lo &= ~1;
     v = *(unsigned short *)(*state + 0x60);
     *(unsigned short *)(*state + 0x60) = (unsigned short)((v & ~0xff00) | (((((unsigned int)v << 0x10) >> 0x18 | 2) << 0x18) >> 0x10));

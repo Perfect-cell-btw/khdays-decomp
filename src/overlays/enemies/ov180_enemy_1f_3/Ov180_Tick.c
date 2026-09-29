@@ -7,13 +7,14 @@
  * The copies write their DESTINATION as a struct field through a typed pointer: that is what
  * puts the destination in ip and the source in lr (a cast destination gets the opposite; the
  * source spelling does not matter -- cf. Ov119_RefreshAndPublishTransform). */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } Placement;
 typedef struct { int pad; Placement placement; } Source;            /* +0x394 */
 typedef struct { char pad[0x10]; Placement placement; } Frame;      /* +0x398 and the pool node */
 
 extern void TaskList_FinishByTag(int list, int node);
-extern void Ov107_UnlinkNodeFromOwner(int sub);
-extern void Ov107_AiState_PostTickBase(int obj);
 
 void Ov180_Tick(int self)
 {
@@ -42,13 +43,13 @@ void Ov180_Tick(int self)
     if (*(signed char *)(self + 0x1c6) != 9) {
         for (i = 0; i < 2; i++) {
             if (((int *)self)[0xe8 + i] != 0) {
-                Ov107_UnlinkNodeFromOwner(((int *)self)[0xe8 + i]);
+                Ov107_UnlinkNodeFromOwner((void *)(((int *)self)[0xe8 + i]));
                 ((int *)self)[0xe8 + i] = 0;
             }
         }
     }
     if (*(signed char *)(self + 0x1c6) != 8 && *(int *)(self + 0x3a8) != 0) {
-        Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3a8));
+        Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x3a8)));
         *(int *)(self + 0x3a8) = 0;
     }
     {
@@ -61,5 +62,5 @@ void Ov180_Tick(int self)
         Frame *frame = *(Frame **)(self + 0x398);
         node->placement = frame->placement;
     }
-    Ov107_AiState_PostTickBase(self);
+    Ov107_AiState_PostTickBase((char *)self);
 }

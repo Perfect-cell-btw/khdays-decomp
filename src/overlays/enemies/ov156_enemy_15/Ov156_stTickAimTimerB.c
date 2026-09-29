@@ -2,11 +2,12 @@
  * nearest target and faces it, clears flags 0x82 in the high byte of the actor's flags, posts pose
  * 0 and installs the random-delay step. */
 
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern int Ov107_FindNearestObject(void *obj, int flag);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov156_stRandDelayInRange(void);
 
@@ -26,6 +27,6 @@ void Ov156_stTickAimTimerB(int *node) {
         }
     }
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x82;
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov156_stRandDelayInRange);
 }

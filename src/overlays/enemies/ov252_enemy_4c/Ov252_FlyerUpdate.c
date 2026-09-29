@@ -14,6 +14,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { unsigned f : 8; } B8;
@@ -22,9 +23,7 @@ typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
 extern int Angle_TurnToward(int a, int b, int c, int d);
 extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Srt_SetRotationQuat(int a, void *b);
-extern int func_ov107_020c9848();
 extern int func_ov022_02083f0c(void);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov252_CheckTarget(int *node, VecFx32 *to, int b);
 extern int func_020050b4(int x, int y);
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
@@ -117,8 +116,8 @@ void Ov252_FlyerUpdate(int *node)
     }
     if (state[0x2c] != 0 && *(u8 *)(state[1] + 0xaf) == 0) {
         state[0x2c] = 0;
-        Ov107_PostTagUpdate(*state, 0x31, 0);
-        Ov107_PostTagUpdate(*state, 0x35, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x31, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x35, 0);
     }
     if (*(signed char *)(*state + 0x100 + 0xc6) != 4) {
         return;

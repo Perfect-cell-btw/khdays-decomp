@@ -1,6 +1,8 @@
 /* Scene hook of the ov256 enemy: adds its two +0x434 items and the five +0x43c items to the
  * scene (arg 1) and chains to the common handler. */
-extern void Ov107_InitObjectFromSource(int obj, int arg1);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_HandleRegionEvent(int obj, int arg1);
 
 void Ov256_AddItemsToScene(int *list, int target) {

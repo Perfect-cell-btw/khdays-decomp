@@ -10,12 +10,13 @@
  * `and #0xa ; lsl #0x1f ; lsr #30` says so plainly.  It looks like the author meant
  * `!= 0`; either way the C has to say what the ROM does, so the mask stays.
  */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } Pose;
 struct Bit1 { unsigned pad0 : 1, b1 : 1; };
 
 extern void TaskList_FinishByTag(int owner, int handle);
-extern void Ov107_UnlinkNodeFromOwner(int attachment);
-extern void Ov107_AiState_PostTickBase(char *actor);
 
 void Ov281_ReleaseByStateAndPublishPose(char *actor) {
     int state;
@@ -31,7 +32,7 @@ void Ov281_ReleaseByStateAndPublishPose(char *actor) {
             *(int *)(actor + 0x3e4) = 0;
         }
         if (*(int *)(actor + 0x3c4) != 0) {
-            Ov107_UnlinkNodeFromOwner(*(int *)(actor + 0x3c4));
+            Ov107_UnlinkNodeFromOwner((void *)(*(int *)(actor + 0x3c4)));
             *(int *)(actor + 0x3c4) = 0;
         }
     } else if (*(int *)(actor + 0x3e4) != 0) {

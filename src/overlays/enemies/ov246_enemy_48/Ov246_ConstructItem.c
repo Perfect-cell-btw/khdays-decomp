@@ -7,18 +7,17 @@
  * pose as +0x388 with bit 1 of its +8 low byte raised. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Ov246Pose { int w; };
 struct Ov246Byte8 { u32 lo : 8, rest : 24; };
 
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Srt_SetScaleUniform(void *transform, int scale);
 extern void SetSubitemState(int item, int channel, int a, int b);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void *CallocInstance(int size);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(char *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern const struct Ov246Pose data_ov246_020d30f4;
@@ -45,14 +44,14 @@ void Ov246_ConstructItem(char *self)
     *(u16 *)(self + 0x100 + 0xae) |= 4;
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
     *(int *)(self + 0x70) = 0x1000;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x38c), 6));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x38c)), 6));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     Srt_SetScaleUniform((void *)(*(int *)(self + 0x384) + 4), 0x1999);
     SetSubitemState(*(int *)(self + 0x384), 0, 0, 1);
     SetSubitemState(*(int *)(self + 0x384), 2, 0, 1);
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
     *(int **)(self + 0x390) = CallocInstance(8);
-    **(int **)(self + 0x390) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x38c), pose.w));
+    **(int **)(self + 0x390) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x38c)), pose.w));
     Ov107_EnqueueValue(self, **(int **)(self + 0x390));
     *(int *)(**(int **)(self + 0x390) + 0x5c) |= 2;
     *(int **)(self + 0x388) = List_InsertSorted(self + 0x22c, 0x10, 0x64);

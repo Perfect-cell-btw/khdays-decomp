@@ -5,6 +5,9 @@
  * data_02042240, with the direction) of 0xc00 is added and the sum halved, and the +0x38
  * orientation faces the drift (data_02042258). Once the +0x1c timer passes 1.0 the velocity is
  * kept at +0x50, pose 3 plays and the node moves to 020cdcb8. */
+
+#include "game/enemy_common.h"
+
 struct v3 { int x, y, z; };
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
@@ -14,7 +17,6 @@ extern void ScaleVec3Fx12(int s, void *v, void *d);
 extern void VEC_CrossProduct(const void *a, void *b, void *d);
 extern void VEC_Add(void *a, void *b, void *d);
 extern void Quat_FromTwoVectors(void *rotation, const void *from, void *to);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern struct v3 data_02042264;
 extern struct v3 data_02042240;
 extern struct v3 data_02042258;
@@ -56,6 +58,6 @@ void Ov273_CircleStrafeTick(int *self) {
     state[7] += *(int *)(self[0] + 0x2c);
     if (state[7] <= 0x1000) return;
     *(struct v3 *)(state + 0x14) = *(struct v3 *)(state + 3);
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov273_ApproachTickDecay09);
 }

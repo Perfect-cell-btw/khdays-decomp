@@ -5,7 +5,9 @@
  * 0 and 2 while in stance (or for 0xc), otherwise it hides (+0x5c bit 1). Combat poses 10 and 13-24,
  * 27, 28 also drive the +0x388 shell (shell pose 0-0xe on tracks 0 and 2, the stance on track 1);
  * other poses hide it. */
-extern int Ov107_PackTextureHandle(char *self, int kind);
+
+#include "game/enemy_common.h"
+
 extern void Ov260_BindClip(int model, void *bank, int clip, int flag);
 extern void Ov260_ArmModelCallback(char *self);
 extern void SetSubitemState(int model, int track, short pose, int flag);

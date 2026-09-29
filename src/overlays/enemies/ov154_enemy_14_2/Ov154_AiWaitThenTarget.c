@@ -5,11 +5,11 @@
  * Matched byte-exact 2026-07-23, first compile. One of three byte-identical siblings. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void *Ov107_FindNearestObject(void *obj, int a);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov154_AiStep_QueueAction2OnFlag0cClear(void);
 
@@ -35,6 +35,6 @@ void Ov154_AiWaitThenTarget(int *node) {
         state[4] = h;
     }
     ((struct hw60 *)(state[0] + 0x60))->hi &= ~0x82;
-    Ov107_PostTagUpdate(state[0], 0, 0);
+    Ov107_PostTagUpdate((Actor *)state[0], 0, 0);
     SetIndexedSlot(node, *(signed char *)((int)node + 0x20), Ov154_AiStep_QueueAction2OnFlag0cClear);
 }

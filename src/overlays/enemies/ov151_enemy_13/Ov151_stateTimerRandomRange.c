@@ -1,7 +1,8 @@
 /* State step: derives the speed from the owner's frame step, posts tag 1, picks a random range
  * between the actor's limits at +0x224 and +0x228 and installs the trigger-when-in-range step. */
 
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov151_TriggerWhenTargetInRange(void);
@@ -11,7 +12,7 @@ void Ov151_stateTimerRandomRange(int *node) {
         int v = *(int *)(*node + 0x2c) * 0x1e;
         state[4] = v / 5;
     }
-    Ov107_PostTagUpdate(*state, 1, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
     {
         int lo = *(int *)(*state + 0x224);
         int diff = *(int *)(*state + 0x228) - lo;

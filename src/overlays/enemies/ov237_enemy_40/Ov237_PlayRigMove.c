@@ -1,9 +1,11 @@
 /* Play move `move` on both rigs of the ov237 actor: the +0x384 rig takes its pose from the first
  * 25-entry table (data_ov237_020d1a6c) and the +0x3ac rig from the second (data_ov237_020d1ad0),
  * each through 020cd0b0 with its +0x388 / +0x3b0 work list; a negative id skips that rig. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int id[25]; } MovePoses;
 
-extern void *Ov107_PackTextureHandle(char *self, int index);
 extern void Ov237_AppendWorkEntryFinalize(int rig, void *pose, int loop, void *work);
 extern const MovePoses data_ov237_020d1a6c;
 extern const MovePoses data_ov237_020d1ad0;

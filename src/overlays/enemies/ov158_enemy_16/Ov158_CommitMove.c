@@ -5,13 +5,13 @@
  * fields (+0x3c/+0x54) cleared, the rig at +0x39c reset, and the action dispatched with
  * Ov158_AimedAttackWaitTick. */
 
+#include "game/enemy_common.h"
+
 typedef struct {
     unsigned short a;
     unsigned short b;
 } Ov158_Desc;
 
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
-extern void Ov107_StartAnim(int rig, int a, int b);
 extern void SetIndexedSlot(int self, int action, void (*cb)(void));
 extern void Ov158_AimedAttackWaitTick(void);
 extern unsigned short data_ov158_020cf540[];
@@ -36,7 +36,7 @@ void Ov158_CommitMove(int self) {
     }
 
     ctx[5] = *(int *)(*(int *)self + 0x2c) * 30 / 10;
-    Ov107_PostTagUpdate(ctx[0], 7, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 7, 0);
     ctx[0xf] = 0;
     *(unsigned char *)((char *)ctx + 0x54) = 0;
     Ov107_StartAnim(*(int *)(ctx[0] + 0x39c), 0, 0);

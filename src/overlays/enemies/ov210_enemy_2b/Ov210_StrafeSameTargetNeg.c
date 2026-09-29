@@ -2,6 +2,9 @@
  * Ov210_StrafeSameTargetNeg -- x3 (ov210/211/282). Twin of Ov210_StrafeSameTarget (020d2b60) with the cross
  * product scaled by -0x100, attack 0x10, and the 020d2f5c continuation.
  */
+
+#include "game/enemy_common.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
@@ -9,7 +12,6 @@ extern void VEC_Normalize(void *a, void *b);
 extern int  func_020050b4(int x, int z);
 extern void VEC_CrossProduct(void *a, void *b, void *c);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int  data_02042264;
 extern void Ov210_StrafeSameTargetTimedNeg(void);
 
@@ -32,6 +34,6 @@ void Ov210_StrafeSameTargetNeg(int *self) {
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x10, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x10, 1);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov210_StrafeSameTargetTimedNeg);
 }

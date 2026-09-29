@@ -4,11 +4,11 @@
  * (020c6980) and the +0xa0 pose is copied into the +0x390 model and on to the +0x38c shape. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int x, y, z, w; } Quat;
 typedef struct { int w[11]; } Pose;
 
-extern void Ov107_MoveNodeAndRelayout(char *actor, VecFx32 *at);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Multiply(Quat *out, const Quat *a, const Quat *b);
 extern void Srt_SetRotationQuat(char *srt, Quat *q);
@@ -33,7 +33,7 @@ void Ov259_HelperUpdate(char *self, int arg)
         axis = data_02042270;
     }
     if (bone != 0) {
-        Ov107_MoveNodeAndRelayout(self, (VecFx32 *)(bone + 0x14));
+        Ov107_MoveNodeAndRelayout((Actor *)self, (VecFx32 *)(bone + 0x14));
         Quat_FromTwoVectors(&q, &data_02042264, &axis);
         Quat_Multiply(&q, (Quat *)(bone + 4), &q);
         Srt_SetRotationQuat(self + 0xa0, (Quat *)(bone + 4));

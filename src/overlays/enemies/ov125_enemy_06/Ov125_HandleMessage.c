@@ -11,6 +11,7 @@
  * unread word stores at the frame bottom are the ROM's. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -18,7 +19,6 @@ typedef struct { Fx32 x, y, z; } FxVec;
 extern void *Ov107_CreateNodeXformTaskFx24(void *taskList, void *subitem, int mode, int blend, int weight, void *payload);
 extern int FindListEntryByField1c(void *taskList, void *subitem);
 extern void Ov125_SetNodeActiveState(int node, int active);
-extern int Ov107_CreateSpawnTask(int owner, int resourceId, int kind, int flag, void *work);
 extern void Ov107_AiState_OnMessage(int actor, unsigned char *msg, int param);
 
 void Ov125_HandleMessage(int actor, unsigned char *msg, int param)

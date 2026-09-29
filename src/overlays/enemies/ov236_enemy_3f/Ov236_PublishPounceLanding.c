@@ -7,9 +7,11 @@
  * and the two halfword stores, which is where the ROM has it.
  *
  * One of two byte-identical siblings. */
+
+#include "game/enemy_common.h"
+
 struct Pair16 { unsigned short a, b; };
 
-extern int Ov107_PostTagUpdate(int obj, int a, int b);
 extern int SetIndexedSlot(int self, int idx, void *handler);
 extern void Ov236_StompLandingTick(int self);
 struct Blk { unsigned short pad[10]; struct Pair16 p; };
@@ -25,7 +27,7 @@ void Ov236_PublishPounceLanding(int self) {
     if (method != 0) {
         method(*node, &local, 4);
     }
-    Ov107_PostTagUpdate(*node, 6, 0);
+    Ov107_PostTagUpdate((Actor *)(*node), 6, 0);
     *(unsigned char *)((char *)node + 0x74) = 0;
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov236_StompLandingTick);
 }

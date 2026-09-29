@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct b1 { unsigned char b0 : 1; };
 
@@ -16,8 +17,6 @@ extern int Ov259_RefreshAim(int *node);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void Ov107_StartAnim(int rig, int motion, int mode);
 extern void Ov259_ComboTick(void);
 
 void Ov259_RiseTick(int *node)
@@ -62,7 +61,7 @@ void Ov259_RiseTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 1, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
     Ov107_StartAnim(*(int *)(*state + 0x414), 1, 0);
     state[0x1b] = 0;
     *((u8 *)state + 0xac) = 0;

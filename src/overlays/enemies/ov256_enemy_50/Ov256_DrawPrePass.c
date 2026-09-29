@@ -4,10 +4,12 @@
  * the armour piece lost at the current boost hides (+0x5c bit 1: 1 -> +0x3e0, 2 -> +0x3f8,
  * 3 -> +0x3ec, 4 -> +0x3d4). The +0x3f4 node's pose goes to the +0x42c model and on to the +0x428
  * shape, then the base pre-pass runs. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } Pose;
 
 extern void TaskList_FinishByTag(void *taskList, void *handle);
-extern void Ov107_AiState_PostTickBase(char *self);
 
 #define LINK(dst, src) (*(Pose *)(*(char **)(self + (dst)) + 0x30) = *(Pose *)(*(char **)(self + (src)) + 4))
 

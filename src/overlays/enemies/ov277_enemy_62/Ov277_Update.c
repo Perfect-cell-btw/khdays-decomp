@@ -10,6 +10,7 @@
  * Codegen: the pose copies go through typed members (src=lr / dst=ip); a raw cast swaps them. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } Pose;
@@ -18,13 +19,11 @@ struct At4 { char pad[4]; Pose pose; };
 struct At10 { char pad[0x10]; Pose pose; };
 struct At30 { char pad[0x30]; Pose pose; };
 
-extern void Ov107_UnlinkNodeFromOwner(int effect);
 extern void TaskList_FinishByTag(int list, int node);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void Quat_Multiply(void *out, const void *a, const Quat *b);
 extern void Srt_SetRotationQuat(void *pose, const Quat *q);
-extern void Ov107_AiState_PostTickBase(char *self);
 extern const Quat data_ov277_020d35c0;
 
 #define SET_SEG(seg, from, to)                                           ((Seg *)(seg))->p0 = *(VecFx32 *)((from) + 0x14);                        VEC_Subtract((to) + 0x14, &((Seg *)(seg))->p0, &((Seg *)(seg))->dir);     ((Seg *)(seg))->len = VEC_Normalize(&((Seg *)(seg))->dir, &((Seg *)(seg))->dir)
@@ -39,15 +38,15 @@ void Ov277_Update(char *self)
         *(int *)(self + 0x420) |= 0x10;
     }
     if (*(signed char *)(self + 0x100 + 0xc6) != 4 && *(int *)(self + 0x490) != 0) {
-        Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x490));
+        Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x490)));
         *(int *)(self + 0x490) = 0;
     }
     if (*(signed char *)(self + 0x100 + 0xc6) != 5 && *(int *)(self + 0x494) != 0) {
-        Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x494));
+        Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x494)));
         *(int *)(self + 0x494) = 0;
     }
     if (*(signed char *)(self + 0x100 + 0xc6) != 6 && *(int *)(self + 0x498) != 0) {
-        Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x498));
+        Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x498)));
         *(int *)(self + 0x498) = 0;
     }
     if (*(signed char *)(self + 0x100 + 0xc6) == 3) {

@@ -1,10 +1,11 @@
 /* State step: aims away from the target at half speed, posts pose 6, sends a state update, sets the
  * flight distance and queues action 0xb; clears the step handler. */
 
+#include "game/enemy_common.h"
+
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(void *dst, void *src);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 
@@ -20,7 +21,7 @@ void Ov174_ConfigAimVecThenAction8(int *node) {
     }
     VEC_Normalize(state + 0xb, state + 0xb);
     ScaleVec3Fx12(0x800, state + 0xb, state + 0xb);
-    Ov107_PostTagUpdate(*state, 6, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 6, 0);
     Ov107_BuildAndSendUpdate(*state, 0x141, 8, state[2]);
     state[0x16] = 0x6000;
     *(signed char *)(*state + 0x1c7) = 0xb;

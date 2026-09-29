@@ -5,11 +5,13 @@
  * target's +0x74 pose, the +0x24 anchor and data_02042264. Past 0x5000 the [0..1] pair is sent,
  * action 5/0 fired and the next state registered; between 0x800 and that, the same happens as
  * soon as the +0x390 aim node reports idle. */
+
+#include "game/enemy_common.h"
+
 struct b2 { unsigned char b0 : 1, b1 : 1; };
 
 extern void Mtx33_LookAt(void *out, void *a, int b, void *c);
 extern void Quat_FromMtx33(void *a, void *b);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern int Ov125_IsField34Nibble1(int node);
 extern unsigned short data_ov125_020d03cc[];
@@ -46,7 +48,7 @@ void Ov125_RecoverTick(int *self) {
         pp[0] = data_ov125_020d03cc[0];
         cb = *(void (**)())(*state + 0x24);
         if (cb != 0) cb(*state, pp, 4);
-        Ov107_PostTagUpdate(*state, 5, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
         SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), Ov125_AiQueue2AndRollTimer);
         return;
     }
@@ -56,6 +58,6 @@ void Ov125_RecoverTick(int *self) {
     if (Ov125_IsField34Nibble1(*(int *)(*state + 0x390)) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), Ov125_AiQueue2AndRollTimer);
 }

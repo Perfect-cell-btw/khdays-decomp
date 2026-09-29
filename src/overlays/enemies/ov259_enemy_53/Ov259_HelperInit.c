@@ -9,11 +9,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 
-extern int Ov107_PackTextureHandle(char *self, int kind);
 extern int CreateSubitemInstance0xB4(int item);
 extern int InsertSortedEntryWithKey(int item, int a, const char *name);
 extern int RegisterSubscriberSlot(int subscriber, int item);

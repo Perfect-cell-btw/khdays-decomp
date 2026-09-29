@@ -7,15 +7,14 @@
  * effect 0x127 (kind 0xa) at the +0xa0 pose into +0x3c4. The base handler always runs. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Bits3c0 { unsigned int b0 : 1; };
 struct Bits28 { u8 b0 : 1; };
 struct Ov236SubSlot { int pItem; int pChild; };
 
 extern int Ov236_SpawnReactionTaskAB(char *self, int item, int mode);
-extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *at, int a, int b);
 extern void Ov236_RiderPresenceHook(char *self);
-extern int Ov107_CreateSpawnTask(char *self, int id, int a3, int a4, void *xform);
 extern void Ov107_AiState_OnMessage(char *self, u8 *cmd, void *arg3);
 
 void Ov236_HandleRiderMessage(char *self, u8 *cmd, void *arg3)
@@ -65,7 +64,7 @@ void Ov236_HandleRiderMessage(char *self, u8 *cmd, void *arg3)
                                     0x17, *(char **)(self + 0x3a8) + 4, 0, 0);
             break;
         case 6:
-            *(int *)(self + 0x3c4) = Ov107_CreateSpawnTask(self, 0x127, 0xa, 0, self + 0xa0);
+            *(int *)(self + 0x3c4) = Ov107_CreateSpawnTask((int)self, 0x127, 0xa, 0, self + 0xa0);
             break;
         }
     }

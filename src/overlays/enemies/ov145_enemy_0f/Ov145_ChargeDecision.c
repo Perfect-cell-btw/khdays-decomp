@@ -2,7 +2,9 @@
  * +0x3b8 anchor and the +0x40 charge at or below 0x100 the tick hands off to cd450 directly;
  * otherwise (no target/anchor, or charge above 0x100) the actor plays animation 0 and hands off
  * to cd41c. */
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
+
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov145_BranchInvokeOrCopySlotThenAdvance(int *node);
 extern void Ov145_AiCountdownThenBranch(int *node);
@@ -17,10 +19,10 @@ void Ov145_ChargeDecision(int *node)
             SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov145_BranchInvokeOrCopySlotThenAdvance);
             return;
         }
-        Ov107_PostTagUpdate(actor, 0, 1);
+        Ov107_PostTagUpdate((Actor *)actor, 0, 1);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov145_AiCountdownThenBranch);
         return;
     }
-    Ov107_PostTagUpdate(actor, 0, 1);
+    Ov107_PostTagUpdate((Actor *)actor, 0, 1);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov145_BranchInvokeOrCopySlotThenAdvance);
 }

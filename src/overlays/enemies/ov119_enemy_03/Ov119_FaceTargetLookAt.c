@@ -8,9 +8,9 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct q4 { int a, b, c, d; };
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *a, void *b);
 extern void Quat_FromTwoVectors(void *out, void *fwd, void *dir);
@@ -24,7 +24,7 @@ void Ov119_FaceTargetLookAt(int *self) {
     int target;
     VecFx32 v;
 
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     target = state[0x16];
     if (target != 0) {
         VEC_Subtract((void *)(target + 0x190), (void *)state[0x12], &v);

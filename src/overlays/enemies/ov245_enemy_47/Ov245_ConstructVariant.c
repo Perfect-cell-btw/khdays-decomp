@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; VecFx32 axis; int rate; int value; } ShapeRequest;
 typedef void (*Callback)(void);
@@ -21,7 +22,6 @@ extern void Ov245_Variant_PostTickAim(void);
 extern void Ov245_FilterStateMsg(void);
 extern void Ov245_FilterMessage(void);
 extern void Ov245_Variant_ApplyAnim(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
@@ -53,7 +53,7 @@ void Ov245_ConstructVariant(int self) {
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0x7c) << 0x18) >> 0x10);
     }
     *(int *)(self + 0x70) = 0x2000;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x15));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x15));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(int *)(self + 0x3b8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d722c);
     req.pos = data_02041dc8;

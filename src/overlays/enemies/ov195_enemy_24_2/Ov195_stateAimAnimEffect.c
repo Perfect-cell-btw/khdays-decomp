@@ -1,11 +1,11 @@
 /* State step: derives the speed from the owner's frame step, aims at the nearest target, posts a
  * pose, starts the effect animation and installs the spin-and-retreat step. */
 
+#include "game/enemy_common.h"
+
 extern int Ov107_FindNearestObject();
 extern void VEC_Subtract();
 extern int func_020050b4();
-extern void Ov107_PostTagUpdate();
-extern void Ov107_StartAnim();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov195_TickSpinRetreatB(void);
 void Ov195_stateAimAnimEffect(int *node) {
@@ -23,7 +23,7 @@ void Ov195_stateAimAnimEffect(int *node) {
             state[4] = func_020050b4(buf[0], buf[2]);
         }
     }
-    Ov107_PostTagUpdate(*state, 0xa, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xa, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3d0), 2, 0);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov195_TickSpinRetreatB);
 }

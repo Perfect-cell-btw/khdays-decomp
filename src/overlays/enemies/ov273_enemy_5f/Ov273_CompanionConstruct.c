@@ -9,14 +9,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; VecFx32 up; int radius; int height; } Capsule;
 
-extern unsigned Ov107_PackTextureHandle(int pool, int kind);
 extern int CreateSubitemInstance0xB4(unsigned res);
 extern void RegisterSubscriberSlot(int list, int obj);
 extern void *CallocInstance(int size);
-extern void Ov107_EnqueueValue(char *self, int obj);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_Mover_New(Capsule *capsule);
 extern int data_ov273_020d6b68;
@@ -55,12 +54,12 @@ void Ov273_CompanionConstruct(char *self)
      * block's scheduling budget, which keeps the ROM's capsule stores ahead of the fca8 call */
     *(int *)(self + 0x70) = 0x1000;
     *(int *)(self + 0x70) = 0x400;
-    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x1c));
+    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x1c));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x388));
-    *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x3c));
+    *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x3c));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x38c));
     *(void **)(self + 0x3a8) = CallocInstance(8);
-    **(int **)(self + 0x3a8) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), shared));
+    **(int **)(self + 0x3a8) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), shared));
     Ov107_EnqueueValue(self, **(int **)(self + 0x3a8));
     *(int *)(**(int **)(self + 0x3a8) + 0x5c) |= 2;
     capsule.pos = zero;

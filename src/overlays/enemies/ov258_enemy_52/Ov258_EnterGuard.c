@@ -4,10 +4,10 @@
  * 020cef90. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov258_AcquireTarget(int *node, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov258_SlamTick(void);
@@ -17,7 +17,7 @@ void Ov258_EnterGuard(int *node)
 {
     int *state = (int *)node[1];
 
-    Ov107_PostTagUpdate(*state, 4, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 4, 0);
     state[0xc] = 0;
     *(short *)(state + 0x14) = 2;
     ((NibblePair *)((u8 *)state + 0x52))->lo = 0;

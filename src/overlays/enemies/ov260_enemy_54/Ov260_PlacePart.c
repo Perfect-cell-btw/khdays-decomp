@@ -4,15 +4,15 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Flags40 { int b0 : 1; int b1 : 1; };
 
-extern void Ov107_MoveNodeAndRelayout(char *actor, VecFx32 *at);
 extern void RefreshObjectCallbacks(int item, int a);
 
 void Ov260_PlacePart(char *self, VecFx32 *at, VecFx32 *anchor)
 {
-    Ov107_MoveNodeAndRelayout(self, at);
+    Ov107_MoveNodeAndRelayout((Actor *)self, at);
     if (((struct Flags40 *)(self + 0x40))->b1 && *(void (**)(char *, int))(self + 0xc) != 0) {
         (*(void (**)(char *, int))(self + 0xc))(self, 0);
     }

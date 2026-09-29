@@ -4,16 +4,16 @@
  * (+0x50 == 1), the +0x214 part follows (Ov227_PickTarget). */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int b0 : 1, b1 : 1; } Bits32;
 
-extern void Ov107_MoveNodeAndRelayout(char *obj, VecFx32 *pos);
 extern void RefreshObjectCallbacks(int a, int b);
 extern void Ov227_PickTarget(int part);
 
 void Ov227_PlaceAt(char *obj, VecFx32 pos)
 {
-    Ov107_MoveNodeAndRelayout(obj, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)obj, &pos);
     if (((Bits32 *)(obj + 0x40))->b1 != 0 && *(void (**)(char *, int))(obj + 0xc) != 0) {
         (*(void (**)(char *, int))(obj + 0xc))(obj, 0);
     }

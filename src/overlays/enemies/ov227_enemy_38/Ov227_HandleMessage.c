@@ -17,6 +17,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct SrtTransform {
     int w[11];
@@ -41,8 +42,6 @@ typedef struct EffectActor {
 extern void SrtTransform_SetIdentity(SrtTransform *pTransform);                   /* Srt_Init */
 extern void Srt_SetTranslation(SrtTransform *pTransform, const VecFx32 *pPos);  /* Srt_SetTranslation */
 extern int  Ov107_CreateNodeXformTask(int hList, int nResource, int nKind, int nZero, SrtTransform *pTransform);
-extern int  Ov107_CreateNodeBodyTask(int hList, int nResource, int nKind, void *pSrt, int nParam, int nFlag);
-extern void Ov107_ForwardVisibleEvent(EffectActor *pActor, int nPose);
 extern void TaskList_FinishByTag(int hList, int hEffect);                      /* TaskList_FinishByTag */
 extern void Ov107_AiState_OnMessage(EffectActor *pActor, u8 *pCommand, int nArg);
 

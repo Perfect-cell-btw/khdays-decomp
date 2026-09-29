@@ -4,10 +4,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_ShedTick(void);
 
@@ -30,7 +29,7 @@ void Ov252_TurnTick(int *node)
             ((((((unsigned int)hw << 0x10) >> 0x18) | 4) << 0x18) >> 0x10);
     }
     if (state[0x29] != 0) {
-        Ov107_PostTagUpdate(*state, 3, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
         Ov107_StartAnim(*(int *)(*state + 0x574), 2, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_ShedTick);
     } else {

@@ -1,7 +1,8 @@
 /* Ov278_ForwardHitToSubObjects -- forward a hit event to both sub-objects' +0x1f4 handlers (skipping either
  * if it has none) and then to the base handler. The two arguments ride through in r1/r2 the whole
  * way, which is why the ROM sets them up only once. */
-extern void Ov107_StoreHitInfo(int obj, int a, int b);
+
+#include "game/enemy_common.h"
 
 void Ov278_ForwardHitToSubObjects(int obj, int a, int b) {
     void (*cb)(int, int, int);

@@ -6,16 +6,16 @@
  * (01ffa724). While the sub-node byte *(u8)state[3] is set, return. Once idle: fire attack 0xd
  * (020c9264), trigger 020c9ee8(*(*state+0x3b8), 2, 0), and hand off to the 020d2918 state.
  */
+
+#include "game/enemy_common.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern void VEC_Normalize(void *a, void *b);
 extern int  func_020050b4(int x, int z);
-extern int  Ov107_ActionResource_GetOffsetAndScale(int obj, void *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *src, void *w);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
-extern void Ov107_StartAnim(int a, int b, int c);
 extern void Ov211_RebuildSteerAndGate(void);
 
 void Ov211_AimSteerFireWhenReady(int *self) {
@@ -35,13 +35,13 @@ void Ov211_AimSteerFireWhenReady(int *self) {
     v[1] = 0;
     VEC_Normalize(v, v);
     state[0xa] = func_020050b4(v[0], v[2]);
-    factor = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3b8), w);
+    factor = Ov107_ActionResource_GetOffsetAndScale(*(int *)(*state + 0x3b8), (VecFx32 *)w);
     Vec3TransformViaTempMtx((void *)(state + 5), (void *)(*state + 0xa0), w);
     ScaleVec3Fx12(factor, (void *)(state + 5), (void *)(state + 5));
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0xd, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xd, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3b8), 2, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov211_RebuildSteerAndGate);
 }

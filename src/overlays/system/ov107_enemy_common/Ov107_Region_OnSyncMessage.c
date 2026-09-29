@@ -1,6 +1,8 @@
 /* Network join/leave message: forwards requests from the host and applies confirmed joins (1/2) and
  * leaves (3/4). */
 
+#include "game/enemy_common.h"
+
 typedef struct Msg {
     char pad0[2];
     unsigned char field_2;
@@ -21,9 +23,6 @@ typedef struct Ov107 {
 
 extern unsigned int Session_GetLocalPlayerIndex(void);
 extern void func_02031384(int cmd, Msg *msg, unsigned short val);
-extern Res *Ov107_FindMessageHandler(unsigned int idx);
-extern void Ov107_InitObjectFromSource(int obj, int arg1);
-extern void Ov107_InvokeSlot0x74(int obj, int arg1);
 
 void Ov107_Region_OnSyncMessage(Ov107 *self, Msg *msg, int arg2)
 {

@@ -8,10 +8,10 @@
  * call: the initialiser is what zeroes it through one base register, at that position. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned short a, b; } Pair;
 
-extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern int *List_First(void *list);
 extern int *List_Next(void *list);
 extern int RandNextScaled(int bound);
@@ -33,7 +33,7 @@ void Ov192_BeginPickTarget(int node)
     int actor;
     void (*cb)(int owner, Pair *p, int n);
 
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     state[0xb] = 0;
     *(unsigned char *)(state + 0xe) = 0;
     state[0xc] = *(int *)(*(int *)node + 0x2c) * 30 / 5;

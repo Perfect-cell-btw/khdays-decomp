@@ -15,6 +15,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { int m[9]; } Mtx33;
@@ -38,7 +39,6 @@ extern int Ov107_CollectSphereOverlaps(struct Ov269Owner *owner, Sphere *sphere,
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov107_InvokeHitCallback(int hit, struct Ov269Owner *a, struct Ov269Owner *b, int kind, VecFx32 *push, int z);
-extern void Ov107_PostTagUpdate(struct Ov269Owner *actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct Msg20 data_ov270_020d68bc;
 extern const VecFx32 data_ov270_020d6858;
@@ -146,7 +146,7 @@ void Ov270_ChargeTick(int *node)
         } while (++nPoint < 2);
     }
     if (*(u8 *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate((struct Ov269Owner *)*state, 1, 0);
+        Ov107_PostTagUpdate((Actor *)((struct Ov269Owner *)*state), 1, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov270_AiStep_RollDelayQueueAction2OnAnimEnd_2);
     }
 }

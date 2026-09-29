@@ -4,10 +4,10 @@
  * clear obj+0x61 and obj[2], and dispatch via SetIndexedSlot. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov248_MeasureTargetGap(int self);
 extern void SetIndexedSlot(int self, int index, void *cb);
-extern void Ov107_PostTagUpdate(int owner, int a, int b);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern void Ov248_AiBurstWindup(void);
 void Ov248_GuardedPushOffset(int self) {
@@ -19,7 +19,7 @@ void Ov248_GuardedPushOffset(int self) {
     if (*(unsigned char *)(obj[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*obj, 0x11, 0);
+    Ov107_PostTagUpdate((Actor *)(*obj), 0x11, 0);
     func_ov107_020c0b90(*obj, 4, *(VecFx32 *)(*obj + 0x494), 1);
     *(char *)((char *)obj + 0x61) = 0;
     obj[2] = 0;

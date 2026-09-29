@@ -1,10 +1,11 @@
 /* State step: without a target queues action 2 and ends the step; otherwise faces it, posts pose 3,
  * sends a state update and installs the next step. */
 
+#include "game/enemy_common.h"
+
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(void *dst, void *src);
 extern int func_020050b4(int x, int y);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov264_stEnterSetFlag40(void);
@@ -24,7 +25,7 @@ void Ov264_ComputeAimAngleThenAction6(int *node) {
     r = func_020050b4(v[0], v[2]);
     state[0x13] = r;
     state[0x11] = r;
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     Ov107_BuildAndSendUpdate(*state, 0x15d, 6, state[4]);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov264_stEnterSetFlag40);
 }

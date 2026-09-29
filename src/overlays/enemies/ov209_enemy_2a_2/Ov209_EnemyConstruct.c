@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[5]; } PoseTable;
 typedef struct { VecFx32 min; VecFx32 max; } Bounds;
@@ -20,7 +21,6 @@ typedef struct { VecFx32 pos; VecFx32 up; int radius; int height; } Capsule;
 typedef struct { VecFx32 pos; int scale; } Placement;
 struct Pair { int res; int handle; };
 
-extern unsigned Ov107_PackTextureHandle(char *self, int kind);
 extern int CreateSubitemInstance0xB4(unsigned res);
 extern void RegisterSubscriberSlot(int list, int obj);
 extern void Snd_RegisterSeqAndBind(void *set, int model, unsigned anim, int n);
@@ -29,8 +29,6 @@ extern void RefreshObjectCallbacks(int obj, int v);
 extern int InsertSortedEntryWithKey(int obj, int set, const char *name);
 extern void Ov107_Actor_SetAttachSlot(char *self, int a, int b, VecFx32 *lift, int rate);
 extern void *CallocInstance(int size);
-extern char *func_ov107_020c9848(void);
-extern void Ov107_EnqueueValue(char *self, int obj);
 extern int Ov107_CreateNamedResourceBinding(unsigned res, const char *name);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_Mover_New(Capsule *capsule);

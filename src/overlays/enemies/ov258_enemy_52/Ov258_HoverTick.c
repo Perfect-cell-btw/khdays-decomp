@@ -6,11 +6,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, u16 variant, int at);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov258_WindUpTick(void);
@@ -29,7 +29,7 @@ void Ov258_HoverTick(int *node)
         return;
     }
     if (state[0xc] >= 0x1000) {
-        Ov107_PostTagUpdate(*state, 9, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
         Ov107_BuildAndSendUpdate(*state, *(short *)(state + 0x16), *(int *)(*state + 0x460) != 0 ? 0x1b : 0x17,
                             *(int *)(*state + 0x430) + 0x14);
         state[0xc] = 0;
@@ -37,6 +37,6 @@ void Ov258_HoverTick(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov258_WindUpTick);
         return;
     }
-    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
     func_ov107_020c0b90(*state, 0x22, *(VecFx32 *)(state + 7), 0);
 }

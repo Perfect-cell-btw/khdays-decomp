@@ -15,6 +15,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 
@@ -25,8 +26,6 @@ extern void Ov256_RotateByActorHeading(VecFx32 *out, int *node, void *part);
 extern int Ov256_PickTarget(int *node);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov256_PathProbe(int *node, VecFx32 *probe, int a);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_TurnTick(void);
 extern void Ov256_AiTakeOff(void);
@@ -143,7 +142,7 @@ void Ov256_FlightTick(int *node)
         }
     }
     if (done) {
-        Ov107_PostTagUpdate(*state, 4, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 4, 0);
         Ov107_StartAnim(*(int *)(*state + 0x450), 3, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov256_TurnTick);
     } else if (!done && *(u8 *)(state[1] + 0xad) == 0 && state[0x15] != 0) {

@@ -4,8 +4,8 @@
  * Ov173_DashTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void func_ov107_020c0b90(int obj, int a, VecFx32 v, int d);
 extern void Ov107_BuildAndSendUpdate(int obj, int a, int b, void *at);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
@@ -14,7 +14,7 @@ extern void Ov173_DashTick(void);
 void Ov173_BeginDash(int *node) {
     int *state = (int *)node[1];
 
-    Ov107_PostTagUpdate(state[0], 1, 1);
+    Ov107_PostTagUpdate((Actor *)state[0], 1, 1);
     func_ov107_020c0b90(state[0], 5, *(VecFx32 *)state[2], 0);
     Ov107_BuildAndSendUpdate(state[0], 0x141, 7, (void *)state[2]);
     {

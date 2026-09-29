@@ -1,6 +1,8 @@
 /* Unless the busy byte at *(child+4)+0xad is set, stop the two secondary anims (ov107_020c5c14
  * on *(child)+0x3b4 and +0x3b8), set +0x24 = 0x1e000, mark sub-state 0xa and dispatch. */
-extern void Ov107_SetStatusAndEmit(int a, int b);
+
+#include "game/enemy_common.h"
+
 extern int SetIndexedSlot(int a, int b, void *handler);
 void Ov278_AiReleaseRidersOnAnimEnd(int param_1) {
     int child = *(int *)(param_1 + 4);

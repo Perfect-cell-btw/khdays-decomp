@@ -1,11 +1,13 @@
 /* Update of the ov218 actor: its +0x3ac part advances (020c9ec8), the base update runs, the +0xa0 pose
  * is copied to the +0x3b0 shadow transform (scaled 1.3) and to the +0x38c model, and the model's
  * transform is mirrored onto the +0x388 set's first model. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } SrtTransform;
 struct Posed { char pad[0x10]; SrtTransform srt; };
 struct Ov218Actor { char pad[0xa0]; SrtTransform pose; };
 
-extern void Ov107_RefreshAndSelectChild(int part, int arg1);
 extern void Ov107_ProcessObjectTick(void *obj, int arg2);
 extern void Srt_SetScaleUniform(void *srt, int scale);
 

@@ -6,12 +6,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov259_RefreshAim(int *node);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_LungeEntry(void);
 extern const VecFx32 data_02041dc8;
@@ -35,7 +35,7 @@ void Ov259_HoverTick(int *node)
     lift.x = 0;
     lift.z = 0;
     VEC_Add(&at, &lift, &at);
-    Ov107_MoveNodeAndRelayout(*state, &at);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &at);
     state[0x1a] = 0;
     func_ov107_020c0b90(*state, 0xc, *(VecFx32 *)state[4], 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov259_LungeEntry);

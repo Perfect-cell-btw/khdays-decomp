@@ -6,13 +6,12 @@
  * Ov277_AiQueue2OnFlagClear. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-extern void Ov107_MoveNodeAndRelayout(int child, VecFx32 *pos);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern void Ov277_AiQueue2OnFlagClear(int *node);
@@ -36,7 +35,7 @@ void Ov277_SummonTick(int *node)
                 pos.y = *(int *)(state[3] + 4);
                 pos.x += data_0203d210[ANG2IDX(*(short *)((char *)state + 0x12) * 0x6488 / 2) * 2] * 2;
                 pos.z += data_0203d210[ANG2IDX(*(short *)((char *)state + 0x12) * 0x6488 / 2) * 2 + 1] * 2;
-                Ov107_MoveNodeAndRelayout(((int *)*(int *)(*state + 0x400))[*(short *)((char *)state + 0x12)], &pos);
+                Ov107_MoveNodeAndRelayout((Actor *)(((int *)*(int *)(*state + 0x400))[*(short *)((char *)state + 0x12)]), &pos);
             }
         }
         (*(short *)((char *)state + 0x12))++;
@@ -45,6 +44,6 @@ void Ov277_SummonTick(int *node)
     if (state[7] < 0x2aaa) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov277_AiQueue2OnFlagClear);
 }

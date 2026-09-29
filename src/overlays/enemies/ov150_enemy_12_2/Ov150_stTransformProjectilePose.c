@@ -2,7 +2,8 @@
  * frame; once the gate byte is clear sends the animation pair from the overlay's table to the
  * actor's event callback, queues action 2 and clears the step handler. */
 
-extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
+#include "game/enemy_common.h"
+
 extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
@@ -13,7 +14,7 @@ void Ov150_stTransformProjectilePose(char *obj) {
     short pair[2];
     int vec[3];
     int scale;
-    scale = Ov107_ActionResource_GetOffsetAndScale(*(void **)(*state + 0x3cc), vec);
+    scale = Ov107_ActionResource_GetOffsetAndScale((int)(*(void **)(*state + 0x3cc)), (VecFx32 *)vec);
     Vec3TransformViaTempMtx((void *)(state + 6), (void *)(*state + 0xa0), vec);
     ScaleVec3Fx12(scale, (void *)(state + 6), (void *)(state + 6));
     if (*(unsigned char *)state[0x11] == 0) {

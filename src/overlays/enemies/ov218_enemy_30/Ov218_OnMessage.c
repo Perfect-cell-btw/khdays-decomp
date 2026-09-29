@@ -3,12 +3,12 @@
  * for sub 1 starts the flash helper (020cf0fc) into pair 1. The base handler always runs. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct EffectPair { int res; int handle; };
 struct Ov218Effects { char pad[0x39c]; struct EffectPair pair[2]; };
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int parent, int kind, int arg, int weight, void *payload);
-extern void Ov107_ForwardVisibleEvent(char *self, int a);
 extern int Ov218_SpawnChild10AndBackLink(char *self);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 

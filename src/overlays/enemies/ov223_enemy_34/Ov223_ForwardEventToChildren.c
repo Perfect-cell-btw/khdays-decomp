@@ -1,7 +1,8 @@
 /* Passes the event to each non-null child of the 4-entry array at +0x3ec, then to the base
  * region-event handler. */
 
-extern int Ov107_InitObjectFromSource();
+#include "game/enemy_common.h"
+
 extern int Ov107_HandleRegionEvent();
 
 int Ov223_ForwardEventToChildren(int *r0, int r1)

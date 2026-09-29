@@ -6,6 +6,7 @@
  * +0x38c. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct w8 { unsigned int lo : 8, rest : 24; };
 
@@ -21,10 +22,8 @@ extern void Ov299_TickAndSyncModelXform(void);
 extern void Ov299_HandleMessage(void);
 extern void Ov299_BounceOnHit(void);
 extern void Ov299_CreateRegistryEntryAndLink_2(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
-extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(char *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern const struct Kinds3 data_ov299_020d4de8;
@@ -52,11 +51,11 @@ void Ov299_Construct(char *self)
     *(int *)(self + 0x70) = 0x800;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 2));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 2));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     for (i = 0; i < 3; i++) {
-        ((struct Ov299Actor *)self)->subitems[i].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, ((u8 *)&kinds)[i]));
-        Ov107_EnqueueValue((int)self, ((struct Ov299Actor *)self)->subitems[i].pItem);
+        ((struct Ov299Actor *)self)->subitems[i].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, ((u8 *)&kinds)[i]));
+        Ov107_EnqueueValue((char *)((int)self), ((struct Ov299Actor *)self)->subitems[i].pItem);
         *(int *)(((struct Ov299Actor *)self)->subitems[i].pItem + 0x5c) |= 2;
     }
     *(int **)(self + 0x388) = List_InsertSorted(self + 0x22c, 0x10, 0x64);

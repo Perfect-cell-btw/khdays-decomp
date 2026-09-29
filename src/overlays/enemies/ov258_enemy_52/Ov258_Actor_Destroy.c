@@ -1,6 +1,7 @@
+#include "game/enemy_common.h"
+
 extern void FreeAllResourceTables(void *p);
 extern void DestroyInstance(int handle);
-extern void Ov107_ActionResource_Destroy(int handle);
 extern void Ov107_DestroyObject(void *self);
 
 /* Actor teardown: releases the resources this actor owns, then the shared base destructor. */

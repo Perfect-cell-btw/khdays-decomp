@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "game/actor.h"
+#include "game/enemy_common.h"
 
 typedef struct Ov200AimNode Ov200AimNode;
 
@@ -19,8 +20,6 @@ typedef struct {
 extern void Ov271_SetNodeActiveState(Ov200AimNode *node, int active);
 extern int Ov271_IsMode1(Ov200AimNode *node);
 extern int Ov271_IsField38NibbleZero(Ov200AimNode *node);
-extern void Ov107_UnlinkNodeFromOwner(void *handle);
-extern void Ov107_AiState_PostTickBase(Ov200Object *self);
 
 void Ov271_PostTickCleanup(Ov200Object *self) {
     int i;
@@ -60,5 +59,5 @@ void Ov271_PostTickCleanup(Ov200Object *self) {
         Ov107_UnlinkNodeFromOwner(self->handle_03b0);
         self->handle_03b0 = 0;
     }
-    Ov107_AiState_PostTickBase(self);
+    Ov107_AiState_PostTickBase((char *)self);
 }

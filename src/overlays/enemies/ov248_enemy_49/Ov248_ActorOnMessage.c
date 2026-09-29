@@ -4,6 +4,7 @@
  * when it is 2); the effect lands in the slot's +4. The base handler always runs. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 struct Slot { int model; int effect; };
@@ -12,7 +13,6 @@ struct Ov248Actor { char pad[0x388]; struct Slot slots[2]; };
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero, SrtTransform *transform);
-extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 
 void Ov248_ActorOnMessage(int owner, unsigned char *command, int arg)

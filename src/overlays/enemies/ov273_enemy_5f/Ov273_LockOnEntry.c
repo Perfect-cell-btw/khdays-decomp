@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { int w[4]; } Quat;
@@ -29,7 +30,6 @@ extern int Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Mtx33_LookAt(Mtx33 *out, const void *from, const void *to, const VecFx32 *up);
 extern void Quat_FromMtx33(void *q, const Mtx33 *m);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern const VecFx32 data_02042264;
 extern const struct Msg14 data_ov273_020d6b08;
 extern void Ov273_EnterAlert(void);
@@ -64,7 +64,7 @@ void Ov273_LockOnEntry(int *node)
     if (hook != 0) {
         hook(*(int *)(*state + 0x3dc), 0);
     }
-    Ov107_PostTagUpdate(*state, 9, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
     ((struct b1 *)(*state + 0x434))->b0 = 1;
     ((struct b1 *)(*(int *)(*state + 0x3dc) + 0x394))->b0 = 1;
     *(int *)(*(int *)(*state + 0x3dc) + 0x394) &= ~2;
@@ -81,7 +81,7 @@ void Ov273_LockOnEntry(int *node)
     if (((struct Ov213Actor *)*state)->pfnMessage != 0) {
         ((struct Ov213Actor *)*state)->pfnMessage((struct Ov213Actor *)*state, &msg, 0xe);
     }
-    Ov107_PostTagUpdate(*(int *)(*state + 0x3dc), 1, 1);
+    Ov107_PostTagUpdate((Actor *)(*(int *)(*state + 0x3dc)), 1, 1);
     state[7] = 0;
     {
         u16 hw = *(u16 *)(*state + 0x60);

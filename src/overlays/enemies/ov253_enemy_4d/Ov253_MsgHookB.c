@@ -5,9 +5,9 @@
  * (020c08cc, kind 5, scale 1.0, payload at byte 5) into its +0xc. Then the base hook (020c7500). */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_CreateNodeXformTaskFx24(int list, int parent, int kind, int a, int scale, unsigned char *payload);
-extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *pos, int a, int b);
 extern int Ov107_AiState_OnMessage(int self, unsigned char *msg, int extra);
 extern int Ov253_SpawnPosChild(int self, const VecFx32 *pos);
 

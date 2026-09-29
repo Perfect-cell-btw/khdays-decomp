@@ -26,6 +26,7 @@
  * writing *(u16*)p & 0xff & 1 collapses it to ldrb; tst -- see codegen-cracks.md. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     unsigned short lo : 8;
@@ -38,8 +39,6 @@ extern void Ov265_AcquireTarget(int self);
 extern void Ov265_Item_RelayoutAndStoreVec(int muzzle, const VecFx32 *pos, const VecFx32 *dir,
                                     signed char spin, int pt);
 extern void SetIndexedSlot(int self, int action, void *cb);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
-extern void Ov107_StartAnim(int owner, int mode, int arg);
 extern VecFx32 data_02041dc8;
 extern short data_0203d210[];
 
@@ -98,6 +97,6 @@ void Ov265_AiFireVolleyTick(int self) {
         return;
     }
 
-    Ov107_PostTagUpdate(ctx[0], 1, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 1, 0);
     Ov107_StartAnim(*(int *)(ctx[0] + 0x388), 1, 0);
 }

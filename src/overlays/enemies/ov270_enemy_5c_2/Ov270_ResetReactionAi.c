@@ -4,15 +4,17 @@
  *
  * The `+ (v - v)` term is the documented copy artifact for RandNextScaled's 64-bit return
  * (K&R extern), which the ROM tests with `adds r0,r0,#0`. */
+
+#include "game/enemy_common.h"
+
 extern int RandNextScaled();
-extern void Ov107_PostTagUpdate(int owner, int mode, int b);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov270_BeginSwing(void);
 
 void Ov270_ResetReactionAi(int param_1, int param_2, int param_3, int param_4) {
     int v;
     int *node = *(int **)(param_1 + 4);
-    Ov107_PostTagUpdate(*node, 9, 0);
+    Ov107_PostTagUpdate((Actor *)(*node), 9, 0);
     *(unsigned char *)((char *)node + 0x50) = 0;
     *(int *)((char *)node + 0x30) = 0;
     if (*(int *)((char *)node + 0x44) > 0) {

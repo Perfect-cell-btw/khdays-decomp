@@ -12,6 +12,7 @@
  * not. Match the presence of that pair to pick the form -- see codegen-cracks.md. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     unsigned short lo : 8;
@@ -21,7 +22,6 @@ typedef struct {
 extern int Ov107_FindNearestObject(int owner, int kind);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void SetIndexedSlot(int self, int action, void (*cb)(void));
 extern void Ov274_AiStep_QueueAction2OnFlag0cClear(void);
 
@@ -45,6 +45,6 @@ void Ov274_AiWaitThenTarget(int self) {
     }
 
     ((Hw60 *)(ctx[0] + 0x60))->hi &= ~0x82;
-    Ov107_PostTagUpdate(ctx[0], 0, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 0, 0);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), Ov274_AiStep_QueueAction2OnFlag0cClear);
 }

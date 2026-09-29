@@ -2,8 +2,8 @@
  * starts the action resource's animation, posts pose 7, sends a state update and installs the
  * scale-until-ready step. */
 
-extern void Ov107_StartAnim(int a, int b, int c);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov140_TransformScaleUntilObjectReady(void);
@@ -21,7 +21,7 @@ void Ov140_Action6IfHitFlagsSet(int *node) {
             (hw60 & ~0xff00) | (((((unsigned int)hw60 << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10);
     }
     Ov107_StartAnim(*(int *)(*state + 0x390), 2, 0);
-    Ov107_PostTagUpdate(*state, 7, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
     Ov107_BuildAndSendUpdate(*state, 0x11f, 6, state[0x13]);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov140_TransformScaleUntilObjectReady);
 }

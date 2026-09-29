@@ -14,6 +14,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -40,7 +41,6 @@ extern int Ov107_FindNearestObject(int obj, int kind);
 extern int FX_Div(int a, int b);
 extern int RandNextScaled(int n);
 extern int func_020050b4(int y, int x);
-extern int Ov107_ActionResource_GetOffsetAndScale(int part, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern const Cmd4 data_ov236_020d6430[];
 extern const Cmd14 data_ov236_020d647e;

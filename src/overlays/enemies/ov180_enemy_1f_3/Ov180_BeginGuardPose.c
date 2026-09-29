@@ -1,9 +1,9 @@
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int obj, int b);
 extern void SetIndexedSlot(int obj, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
 extern VecFx32 data_02041dc8;
 extern void Ov180_TrackTargetUntilCharge(void);
@@ -27,7 +27,7 @@ void Ov180_BeginGuardPose(int param_1) {
         SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), 0);
         return;
     }
-    Ov107_PostTagUpdate(*piVar5, 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*piVar5), 5, 0);
     {
         VecFx32 v = data_02041dc8;
         func_ov107_020c0b90(*piVar5, 3, v, 0);

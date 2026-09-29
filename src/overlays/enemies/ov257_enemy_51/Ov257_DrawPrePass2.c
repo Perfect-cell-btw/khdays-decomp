@@ -5,6 +5,7 @@
  * bone arrays are indexed as ((int *)self)[base + i] for the ROM's addressing. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } Srt;
@@ -18,7 +19,6 @@ extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *a, const VecFx32 *b);
 extern void Srt_SetTranslation(Srt *srt, const void *pos);
 extern void Srt_SetRotationQuat(Srt *srt, const Quat *q);
 extern void TaskList_FinishByTag(int model, int handle);
-extern void Ov107_AiState_PostTickBase(char *self);
 extern const VecFx32 data_02042258;
 
 void Ov257_DrawPrePass2(char *self)

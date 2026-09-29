@@ -2,11 +2,11 @@
  * clears; then the base teardown runs. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 
 extern void TaskList_FinishByTag(int model, int handle);
-extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov238_Teardown(char *self)
 {

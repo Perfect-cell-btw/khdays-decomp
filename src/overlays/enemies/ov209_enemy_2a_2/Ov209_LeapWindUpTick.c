@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 static inline unsigned short FX_RadToIdx(int rad) {
     return (unsigned short)((0x28BE60DB9391LL * rad + 0x80000000000LL) >> 44);
@@ -16,7 +17,6 @@ static inline unsigned short FX_RadToIdx(int rad) {
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern int Ov107_FindNearestObject(int owner, int flag);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
@@ -44,7 +44,7 @@ void Ov209_LeapWindUpTick(int *node)
     }
     func_ov107_020c0b90(*state, 4, *(VecFx32 *)state[2], 0);
     *(u16 *)(*state + 0x100 + 0xae) |= 1;
-    Ov107_PostTagUpdate(*state, 0xc, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xc, 1);
     *(VecFx32 *)(state + 0x15) = data_02041dc8;
     state[4] = Ov107_FindNearestObject(*state, 0);
     if (state[4] != 0) {

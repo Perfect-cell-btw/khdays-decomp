@@ -21,6 +21,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Bit0 { unsigned char b : 1; };
 
@@ -36,7 +37,6 @@ extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern int func_020050b4(int x, int z);
 extern int VEC_DotProduct(void *a, void *b);
-extern int Ov107_ActionResource_GetOffsetAndScale(int a, int out);
 extern void ScaleVec3Fx12(int s, void *v, void *d);
 extern short data_0203d210[];
 

@@ -2,13 +2,13 @@
  * end queues 4 or 7. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Elem16 {
     u8 pad00[0xc];
     int field_0c;
 };
 
-extern int Ov107_ActionResource_GetOffsetAndScale(int param_1, int param_2);
 extern void Vec3TransformViaTempMtx(void *in_vec, int unused, void *out_vec);
 extern int queryTableEntry(int param_1, int param_2);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
@@ -24,7 +24,7 @@ void Ov291_AiSpinTick(int *node)
     u8 phase;
 
     actor = *(int *)task;
-    factor = Ov107_ActionResource_GetOffsetAndScale(*(int *)(actor + 0x394), (int)local);
+    factor = Ov107_ActionResource_GetOffsetAndScale(*(int *)(actor + 0x394), (VecFx32 *)((int)local));
 
     actor = *(int *)task;
     Vec3TransformViaTempMtx((void *)local, actor + 0xa0, (void *)local);

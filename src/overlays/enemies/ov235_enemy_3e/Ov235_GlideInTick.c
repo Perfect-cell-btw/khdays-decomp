@@ -6,12 +6,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u16 lo; u16 hi; } Cmd4;
 
 extern void Ov235_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd4 data_ov235_020d24d0;
 extern void Ov235_HealBurstTick(int *node);
@@ -33,7 +33,7 @@ void Ov235_GlideInTick(int *node)
     if (*(void (**)(int, Cmd4 *, int))(*state + 0x24) != 0) {
         (*(void (**)(int, Cmd4 *, int))(*state + 0x24))(*state, &note, 4);
     }
-    Ov107_PostTagUpdate(*state, 0x16, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x16, 1);
     state[0x11] = 0;
     state[0x12] = 0;
     *((unsigned char *)state + 0x65) = 0;

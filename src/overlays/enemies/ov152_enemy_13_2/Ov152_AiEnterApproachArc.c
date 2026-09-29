@@ -27,6 +27,7 @@
  * the instruction and land at 408 bytes. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int owner, int mode);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
@@ -34,7 +35,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int FX_Div(int num, int den);
 extern int RandNextScaled();
 extern int func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int owner, int a, int b);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov152_PoseAdvanceUnlessField14AtLeast80(void);
 
@@ -90,7 +90,7 @@ void Ov152_AiEnterApproachArc(int *node)
     }
 
     state[4] = *(int *)(*node + 0x2c) * 30 / 5;
-    Ov107_PostTagUpdate(*state, 1, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
     *(char *)((char *)state + 0x4c) = 0;
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov152_PoseAdvanceUnlessField14AtLeast80);
 }

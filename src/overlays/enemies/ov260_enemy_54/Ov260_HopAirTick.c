@@ -7,11 +7,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int FX_Div(int num, int den);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -39,7 +38,7 @@ void Ov260_HopAirTick(int *node)
     }
     if ((*((u8 *)state + 0x7b) & 1) == 0) {
         *((u8 *)state + 0x7b) |= 1;
-        Ov107_PostTagUpdate(*state, 0x1d, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1d, 0);
         Ov107_StartAnim(*(int *)(*state + 0x428), 0x11, 0);
         return;
     }

@@ -4,13 +4,12 @@
  * Ov235_GlideInTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Bits4 { unsigned char b0 : 1, b1 : 1; };
 
 extern void Ov235_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov235_GlideInTick(int *node);
 
@@ -26,7 +25,7 @@ void Ov235_GlideTick23(int *node)
     if (((struct Bits4 *)(*(int *)(*state + 0x3a8) + 4))->b1 == 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x23, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x23, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3a8), 0x19, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov235_GlideInTick);
 }

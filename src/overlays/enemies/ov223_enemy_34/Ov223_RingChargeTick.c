@@ -7,11 +7,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Ov223Segment { VecFx32 p0; VecFx32 p1; int nLength; int nRadius; };
 
-extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *at);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *pose, const VecFx32 *in);
 extern int Ov223_StrikeSweep(int *node, int mode, struct Ov223Segment *seg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -26,7 +26,7 @@ void Ov223_RingChargeTick(int *node)
 
     at = *(VecFx32 *)(*(int *)(*(int *)(*(int *)(*state + 0x38c) + 0x3ac)) + 0x20);
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x80;
-    Ov107_MoveNodeAndRelayout(*state, &at);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &at);
     Vec3TransformViaTempMtx((VecFx32 *)(state + 8), (const void *)(*(int *)(*state + 0x38c) + 0xa0), &data_02042258);
     seg.p0 = at;
     seg.p1 = *(VecFx32 *)(state + 8);

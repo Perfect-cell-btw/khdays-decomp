@@ -5,10 +5,10 @@
  * (0, 1.5, 0) and the tick hands over to Ov228_AiHomingDriftTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov228_AiHomingDriftTick(int *node);
 
@@ -26,7 +26,7 @@ void Ov228_RecoilWindUpTick(int *node)
         return;
     }
     func_ov107_020c0b90(*state, 7, *(VecFx32 *)state[3], 0);
-    Ov107_PostTagUpdate(*state, 0x17, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x17, 0);
     v = *(unsigned short *)(*state + 0x60);
     *(unsigned short *)(*state + 0x60) = (unsigned short)((v & ~0xff00) | (((((unsigned int)v << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10));
     state[0x13] = 0;

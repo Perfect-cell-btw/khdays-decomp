@@ -2,6 +2,8 @@
  * release flag and the thrown object's motion, clears flag 0x40 in the high byte of the actor's
  * flags and installs the throw step. */
 
+#include "game/enemy_common.h"
+
 struct v3 { int a, b, c; };
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
 struct pair { unsigned short a, b; };
@@ -9,7 +11,6 @@ struct pair { unsigned short a, b; };
 extern unsigned short data_ov133_020d49cc[];
 extern struct v3 data_02041dc8;
 extern void func_02031384();
-extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov133_ThrowCharge_Tick(void);
 
@@ -20,7 +21,7 @@ void Ov133_stateStartThrow(char *obj) {
     buf = *(struct pair *)&data_ov133_020d49cc[2];
     buf.a = *(unsigned short *)(*state + 2);
     func_02031384(4, &buf, 4);
-    Ov107_PostTagUpdate(*state, 7, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 7, 1);
     *(int *)(*state + 0x3cc) &= ~1;
     *(struct v3 *)((char *)state + 0x24) = data_02041dc8;
     state[0x16] = 0;

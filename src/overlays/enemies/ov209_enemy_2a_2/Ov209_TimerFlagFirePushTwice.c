@@ -7,10 +7,10 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned f : 8; };
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int obj, int mode, VecFx32 v, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern VecFx32 data_02041dc8;
@@ -32,7 +32,7 @@ void Ov209_TimerFlagFirePushTwice(int *self) {
     /* hw60.hi |= 1 -- explicit-shift form (bitfield |= adds a redundant mask) */
     *hw = h & ~0xff00 | (((((unsigned int)h << 0x10) >> 0x18 | 1) << 0x18) >> 0x10);
     ((struct b8 *)(*(int *)(*state + 0x388) + 8))->f |= 1;
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     v = data_02041dc8;
     func_ov107_020c0b90(*state, 0, v, 0);
     func_ov107_020c0b90(*state, 1, v, 0);

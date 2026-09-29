@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } Srt;
 struct Bits3d4 { unsigned int b0 : 1; };
@@ -18,7 +19,6 @@ extern void Srt_SetTranslation(Srt *srt, const VecFx32 *t);
 extern void Srt_SetRotationQuat(Srt *srt, void *pose);
 extern int Ov107_CreateNodeXformTask(int owner, int slot, int kind, int a4, const Srt *srt);
 extern void Ov278_RefreshRearRiders(char *self);
-extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *at, int a, int b);
 extern void Ov107_AiState_OnMessage(char *self, u8 *cmd, void *arg3);
 
 void Ov278_HandleRiderMessageB(char *self, u8 *cmd, void *arg3)

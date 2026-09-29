@@ -1,6 +1,8 @@
 /* Field class pfnMethod: runs the pending steps, releases the handles and lists, frees the buffers
  * and clears the instance. */
 
+#include "game/enemy_common.h"
+
 typedef struct { void *f0; void *f4; void *f8; } Step;
 
 extern void *NNSi_FndGetCurrentRootHeap(void);
@@ -9,7 +11,6 @@ extern void FreeInstanceMemory(void *p);
 extern void *List_First(void *list);
 extern void *List_Next(void *list);
 extern void NNSi_FndDestroyDoubleList(void *list);
-extern void Ov107_ReleaseLoadedResources(void);
 extern void ClearGlobalArrayInt(int a);
 
 extern void *data_ov107_020cbf1c;

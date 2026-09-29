@@ -6,6 +6,7 @@
  * summon tick 020d061c. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Level { int n : 4; };
 
@@ -14,7 +15,6 @@ struct Ov244Actor {
     void (*pfnMessage)(struct Ov244Actor *self, void *msg, int size);
 };
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const u16 data_ov244_020d3724[];
 extern void Ov244_VolleyTick(void);
@@ -59,7 +59,7 @@ void Ov244_SummonWindupTick(int *node)
     if (((struct Ov244Actor *)*state)->pfnMessage != 0) {
         ((struct Ov244Actor *)*state)->pfnMessage((struct Ov244Actor *)*state, pp, 4);
     }
-    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
     *(short *)((u8 *)state + 0x14) = 0;
     *((u8 *)state + 9) = 0;
     state[7] = 0;

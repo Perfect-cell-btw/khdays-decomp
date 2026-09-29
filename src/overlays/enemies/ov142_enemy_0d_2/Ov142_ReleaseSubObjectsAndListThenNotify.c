@@ -1,8 +1,9 @@
 /* Destructor: destroys the model (+0x384), the action resource (+0x390) and every part instance in
  * the table at +0x394, frees the table, then destroys the base object. */
 
+#include "game/enemy_common.h"
+
 extern void DestroyInstance();
-extern void Ov107_ActionResource_Destroy();
 extern void FreeInstanceMemory();
 extern void Ov107_DestroyObject();
 
@@ -11,7 +12,7 @@ struct row8 { int a, b; };
 void Ov142_ReleaseSubObjectsAndListThenNotify(int this_) {
     int i;
     DestroyInstance(*(int *)(this_ + 0x384));
-    Ov107_ActionResource_Destroy(*(int *)(this_ + 0x3cc));
+    Ov107_ActionResource_Destroy((char *)(*(int *)(this_ + 0x3cc)));
     for (i = 0; i < 5; i++)
         DestroyInstance(((struct row8 *)*(int *)(this_ + 0x390))[i].a);
     FreeInstanceMemory(*(int *)(this_ + 0x390));

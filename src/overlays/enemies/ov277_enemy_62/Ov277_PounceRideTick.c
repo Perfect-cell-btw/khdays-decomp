@@ -5,10 +5,10 @@
  * base 0203c640 step. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Flags40 { int b0 : 1; int b1 : 1; };
 extern void Srt_SetTranslation(int srt, VecFx32 *pos);
-extern void Ov107_ForwardVisibleEvent(int self, int a);
 extern void Task_MarkFinished(int self);
 
 void Ov277_PounceRideTick(int *node) {
@@ -28,7 +28,7 @@ void Ov277_PounceRideTick(int *node) {
             if (*(int *)(actor + 4) != 0) {
                 if (((struct Flags40 *)(*(int *)(actor + 4) + 0x40))->b0 != 0 &&
                     ((struct Flags40 *)(*(int *)(actor + 4) + 0x40))->b1 != 0) {
-                    Ov107_ForwardVisibleEvent(actor, 1);
+                    Ov107_ForwardVisibleEvent((void *)actor, 1);
                 }
             }
         }

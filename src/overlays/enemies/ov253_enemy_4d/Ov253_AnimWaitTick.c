@@ -1,7 +1,9 @@
 /* Ov253_AnimWaitTick -- animation wait: the +0x1c timer runs up by the frame step; once the
  * +4 item's animation is free (byte 0 clear) the +0x34 repeat count grows: under 2 pose 0xb
  * plays again, otherwise pose 8 and the node moves to 020ce210. */
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
+
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov253_RoarTick(void);
 
@@ -14,9 +16,9 @@ void Ov253_AnimWaitTick(int *node) {
     }
     state[0xd]++;
     if (state[0xd] < 2) {
-        Ov107_PostTagUpdate(*state, 0xb, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0xb, 0);
         return;
     }
-    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov253_RoarTick);
 }

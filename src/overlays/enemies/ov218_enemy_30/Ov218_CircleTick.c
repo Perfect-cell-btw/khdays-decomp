@@ -7,13 +7,13 @@
  * from the +0x48 one is played. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern int Ov218_DistanceToTarget(int *node);
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov218_FlightTick(int *node);
 extern int Ov218_WalkDecide(int *node, int value);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 
 void Ov218_CircleTick(int *node)
 {
@@ -49,6 +49,6 @@ void Ov218_CircleTick(int *node)
     }
     if (state[0x12] != anim) {
         state[0x12] = anim;
-        Ov107_PostTagUpdate(*state, anim, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), anim, 1);
     }
 }

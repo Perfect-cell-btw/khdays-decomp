@@ -4,8 +4,10 @@
  * 0, set bit 0 of owner->f3ac->+8 and owner->f3b0->+8 low bytes,
  * Ov107_PostTagUpdate(owner, 8, 1), reset obj->f24, and dispatch via SetIndexedSlot.
  * owner re-read per section. self->+0x20 = slot index. */
+
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int owner, int a, int b, int c);
-extern void Ov107_PostTagUpdate(int owner, int a, int b);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov207_AiChargeTimeout(void);
 struct b8 { unsigned int f:8; };
@@ -25,7 +27,7 @@ void Ov207_Reaction_ChargeThenBreak(int self) {
     *(unsigned short *)(*(int *)obj + 0x1ae) &= ~1;
     ((struct b8 *)(*(int *)(*(int *)obj + 0x3ac) + 8))->f |= 1;
     ((struct b8 *)(*(int *)(*(int *)obj + 0x3b0) + 8))->f |= 1;
-    Ov107_PostTagUpdate(*(int *)obj, 8, 1);
+    Ov107_PostTagUpdate((Actor *)(*(int *)obj), 8, 1);
     *(int *)(obj + 0x24) = 0;
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov207_AiChargeTimeout);
 }

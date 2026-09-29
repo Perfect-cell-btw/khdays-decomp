@@ -2,11 +2,12 @@
  * drawn; with the +0x4ec shape hidden and move 4 current the next move is 6. When a next move is set
  * while the shape shows and move 4 is current, pose 3 and part motion 2 start, the next move is queued
  * in +0x90 and replaced by 0xc. The rest restarts at 10.0 and 1 is returned (0 when nothing started). */
+
+#include "game/enemy_common.h"
+
 typedef struct { unsigned f : 8; } B8;
 
 extern int RandNextScaled(int bound);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 
 int Ov252_PickMove(int *node)
 {
@@ -24,7 +25,7 @@ int Ov252_PickMove(int *node)
         }
         if (*(signed char *)(*state + 0x1c7) != -1) {
             if (shown != 0 && *(signed char *)(*state + 0x1c6) == 4) {
-                Ov107_PostTagUpdate(*state, 3, 0);
+                Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
                 Ov107_StartAnim(*(int *)(*state + 0x574), 2, 0);
                 *((unsigned char *)state + 0x90) = *(signed char *)(*state + 0x1c7);
                 *(unsigned char *)(*state + 0x1c7) = 0xc;

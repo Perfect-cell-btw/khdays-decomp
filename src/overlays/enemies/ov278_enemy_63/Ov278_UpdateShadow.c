@@ -3,8 +3,8 @@
  * 1.0 - height(+0x13c)/20 (at least 1/16), and run the base update. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_RefreshAndSelectChild(int sub, int arg1);
 extern void Srt_SetRotationQuat(int srt, void *pose);
 extern void Srt_SetTranslation(int srt, VecFx32 *pos);
 extern void Srt_SetScaleXYZ(int srt, int sx, int sy, int sz);

@@ -7,12 +7,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 
 extern int Ov254_PanelYForPhase(int *state, int a);
 extern void Ov254_KnockbackAtFeet(int actor, int side);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02041dc8;
@@ -35,7 +35,7 @@ void Ov254_RouteLandingTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, state[0x1e] != 0 ? 8 : 0x11, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), state[0x1e] != 0 ? 8 : 0x11, 1);
     func_ov107_020c0b90(*state, 5, data_02041dc8, 1);
     ((B8 *)(*(int *)(*state + 0x3e4) + 8))->f &= ~2;
     ((B8 *)(*(int *)(*state + 0x3e0) + 8))->f |= 2;

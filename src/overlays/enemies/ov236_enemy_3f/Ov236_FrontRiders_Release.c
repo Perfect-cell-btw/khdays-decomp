@@ -4,13 +4,15 @@
  *
  * The mode byte is a 4-bit bitfield pair: the ROM's lsl#24 / lsr#28 ... lsl#28 / lsr#24
  * round trip is exactly what `unsigned char hi : 4` generates. */
+
+#include "game/enemy_common.h"
+
 typedef struct {
     unsigned char lo : 4;
     unsigned char hi : 4;
 } Nib;
 
 extern void Ov107_AiState_OnDefeat(char *self);
-extern void Ov107_UnlinkNodeFromOwner(void *p);
 
 void Ov236_FrontRiders_Release(char *self) {
     *(int *)(*(char **)(self + 0x384) + 0x5c) |= 2;

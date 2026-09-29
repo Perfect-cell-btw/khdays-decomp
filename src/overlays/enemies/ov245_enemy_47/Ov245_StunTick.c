@@ -7,8 +7,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern int RandNextScaled(int scale);
 extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
@@ -35,7 +35,7 @@ void Ov245_StunTick(int *node) {
         *(u16 *)(*state + 0x60) = (hw & ~0xff00) |
             ((((((unsigned int)hw << 0x10) >> 0x18) | 1) << 0x18) >> 0x10);
     }
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     *(u16 *)(*state + 0x100 + 0xae) |= 1;
     state[0xe] = (unsigned int)RandNextScaled(0x64) < 0x28 ? 2 : 1;
     func_ov107_020c0b90(*state, 0, *(VecFx32 *)(*state + 0x74), 0);

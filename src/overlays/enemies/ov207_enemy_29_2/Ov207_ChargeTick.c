@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;
 typedef struct { int value; } Fx32;
@@ -76,7 +77,6 @@ extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void VEC_Add(VecFx32 *a, VecFx32 *b, VecFx32 *d);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern const PosMsg data_ov207_020d4252;
@@ -122,7 +122,7 @@ void Ov207_ChargeTick(int *node)
         } while (++i < n);
     }
     if (state->nHits52 >= 4) {
-        Ov107_PostTagUpdate(state->pOwner, 5, 0);
+        Ov107_PostTagUpdate((Actor *)state->pOwner, 5, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov207_AiQueue2OnFlagClear);
         return;
     }
@@ -137,6 +137,6 @@ void Ov207_ChargeTick(int *node)
     if (state->nTimer < 0x3000 && ((struct Bit1 *)(state->pOwner + 0x17a))->bit1 == 0) {
         return;
     }
-    Ov107_PostTagUpdate(state->pOwner, 5, 0);
+    Ov107_PostTagUpdate((Actor *)state->pOwner, 5, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov207_AiQueue2OnFlagClear);
 }

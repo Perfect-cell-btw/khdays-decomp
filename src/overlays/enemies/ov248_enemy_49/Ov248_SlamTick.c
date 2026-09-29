@@ -8,6 +8,7 @@
  * restarts and the tick hands over to Ov248_AiExpandingSweepTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     VecFx32 pos;
@@ -21,7 +22,6 @@ extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov248_ContactSweep(int *ctx, int kind, Sphere *sphere, void *box);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int self, int action, void *cb);
 extern void Ov248_AiExpandingSweepTick(void);
@@ -53,7 +53,7 @@ void Ov248_SlamTick(int self) {
     *(VecFx32 *)((char *)ctx + 0x34) = *(VecFx32 *)(ctx[0] + 0x180);
     ctx[0xe] -= *(int *)(ctx[0] + 0x80) - 0x200;
     func_ov107_020c0b90(ctx[0], 6, *(VecFx32 *)((char *)ctx + 0x34), 0);
-    Ov107_PostTagUpdate(ctx[0], 0x19, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 0x19, 0);
     Ov107_BuildAndSendUpdate(ctx[0], 0x146, 0xc, (char *)ctx + 0x34);
     ctx[0x13] = 0;
     SetIndexedSlot(self, *(signed char *)(self + 0x20), Ov248_AiExpandingSweepTick);

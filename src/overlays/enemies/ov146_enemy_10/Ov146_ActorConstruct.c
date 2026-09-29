@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 center; int nRadius; } Sphere;
 typedef struct { char data[0x24]; } AnimSlot;
@@ -18,7 +19,6 @@ extern void Ov146_Rider_CreateAiTask(void);
 extern void Ov146_PropagateBlockChainThenNotify_2(void);
 extern void Ov146_OnKnockback(void);
 extern void Ov146_RebindAnimSlot(void);
-extern void *Ov107_PackTextureHandle(int set, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int rig, int kind, void *desc);
@@ -69,11 +69,11 @@ void Ov146_ActorConstruct(char *self)
     *(int *)(self + 0x54) = 0x1000;
     *(int *)(self + 0x58) = 0x800;
     VecSet((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(set, 0xb));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)set, 0xb));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(int *)(self + 0x3b8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov146_020cf534);
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
-    Snd_RegisterSeqAndBind((AnimSlot *)(self + 0x388), *(int *)(*(int *)(self + 0x384) + 0x88), Ov107_PackTextureHandle(set, 0xc), 0xc);
+    Snd_RegisterSeqAndBind((AnimSlot *)(self + 0x388), *(int *)(*(int *)(self + 0x384) + 0x88), Ov107_PackTextureHandle((char *)set, 0xc), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), (AnimSlot *)(self + 0x388));
     body = *(Sphere *)(self + 0x64);
     body.center = data_02041dc8;

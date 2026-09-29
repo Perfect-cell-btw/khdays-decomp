@@ -7,6 +7,7 @@
  * timer on 020d2714, otherwise pose 2 and 020d27b4. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov245Actor { char pad[0x390]; int slots[10]; };
 
@@ -17,7 +18,6 @@ extern int func_020050b4(int x, int z);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov245_HitReact3(int self, void *anchor, VecFx32 *pos, int angle, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov245_WaitPartsIdle(void);
 extern void Ov245_Variant_AiStep_QueueAction0OnAnimEnd(void);
 extern const short data_0203d210[];
@@ -60,6 +60,6 @@ void Ov245_VolleyTick(int *node) {
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_WaitPartsIdle);
         return;
     }
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_Variant_AiStep_QueueAction0OnAnimEnd);
 }

@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { u16 lo; u16 hi; } Cmd4;
@@ -22,7 +23,6 @@ extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *a, const VecFx32 *b);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -61,7 +61,7 @@ void Ov235_CirclingTick(int *node)
         if (*(void (**)(int, Cmd4 *, int))(*state + 0x24) != 0) {
             (*(void (**)(int, Cmd4 *, int))(*state + 0x24))(*state, p, 4);
         }
-        Ov107_PostTagUpdate(*state, 0x1f, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1f, 0);
         state[0x11] = 0;
         Quat_FromTwoVectors((Quat *)(state + 0xb), &data_02042258, (VecFx32 *)(state + 0x1a));
         state[0x1d] = 0;

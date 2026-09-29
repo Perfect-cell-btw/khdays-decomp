@@ -1,6 +1,8 @@
 /* Ov236_CopyPoseFromParent384 -- twin of Ov278_CopyPoseFromParent394, reading the pose block from the parent at
  * +0x384 instead of +0x394. Same array-index-with-folded-offset form. */
-extern void Ov107_SetStatusAndEmit(int obj, int mode);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_HandleRegionEvent(int obj, int arg);
 
 void Ov236_CopyPoseFromParent384(int obj, int arg) {

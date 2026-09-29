@@ -3,8 +3,8 @@
  * +0x70 and the +0x7b flag clear and the node moves on to 020cf17c. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_HopTick(void);
@@ -21,7 +21,7 @@ void Ov260_StaggerEntry(int *node)
     if (*(signed char *)(*state + 0x1c6) == 7) {
         *(u8 *)(state[1] + 0xad) = 0;
     } else {
-        Ov107_PostTagUpdate(*state, 0x19, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x19, 0);
     }
     Ov260_PlaySound(*state, 0x19, state[4]);
     state[0x1c] = 0;

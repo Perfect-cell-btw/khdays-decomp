@@ -9,6 +9,7 @@
  * summoned pets (cc994) into a 12-byte table (+0x3c8) and loads sound 0x14f. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
@@ -35,13 +36,11 @@ extern void Ov152_NotifyPartsThenBase(void);
 extern void Ov152_ReleaseByStateAndSyncSrt(void);
 extern void Ov152_StaggerFlipTick(void);
 extern void Ov152_Model_SetTrack0(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int a, const char *name);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern void *CallocInstance(int size);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern void Ov107_Actor_SetAttachSlot(char *self, int a, int b, void *lift, int id);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(struct Pose *pose);
@@ -74,16 +73,16 @@ void Ov152_Construct(char *self)
     *(int *)(self + 0x64) = 0;
     *(int *)(self + 0x68) = 0xc00;
     *(int *)(self + 0x6c) = 0;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov152_020d64ec);
     *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov152_020d64f0);
     *(int *)(self + 0x2cc) = *(int *)(self + 0x398) + 0x14;
-    *(int *)(self + 0x3cc) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), data_ov152_020d64f8);
+    *(int *)(self + 0x3cc) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)((int)self), 1), data_ov152_020d64f8);
     *(void **)(self + 0x390) = CallocInstance(0x28);
     for (i = 0; i < 5; i++) {
         (*(struct Ov151SubitemSlot **)(self + 0x390))[i].pItem =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, pools.id[i]));
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), pools.id[i]));
         Ov107_EnqueueValue(self, (*(struct Ov151SubitemSlot **)(self + 0x390))[i].pItem);
         *(int *)((*(struct Ov151SubitemSlot **)(self + 0x390))[i].pItem + 0x5c) |= 2;
     }

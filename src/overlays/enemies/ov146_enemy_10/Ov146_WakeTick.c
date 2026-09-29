@@ -2,8 +2,8 @@
  * and its partner's (+8) +0x60 high byte clear, both play pose 0 and the node moves on to 020cd0a4. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov146_AiQueue7OnAnimEnd(void);
 
@@ -25,7 +25,7 @@ void Ov146_WakeTick(int *node)
         *(u16 *)(state[2] + 0x60) = (hw & ~0xff00) |
             (((unsigned int)(u16)((((unsigned int)hw << 0x10) >> 0x18) & ~0x82) << 0x18) >> 0x10);
     }
-    Ov107_PostTagUpdate(*state, 0, 0);
-    Ov107_PostTagUpdate(state[2], 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
+    Ov107_PostTagUpdate((Actor *)state[2], 0, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov146_AiQueue7OnAnimEnd);
 }

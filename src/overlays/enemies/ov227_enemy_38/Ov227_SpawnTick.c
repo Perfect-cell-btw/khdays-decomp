@@ -4,11 +4,11 @@
  * 0x19 plays, or after ten spawns animation 0x1a and the tick hands over to Ov227_AiStep_QueueAction2OnAnimEnd. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov227Family { char pad[0x3ec]; char *aMembers[10]; };
 
 extern void Ov227_PlaceAt(char *obj, VecFx32 pos);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov227_AiStep_QueueAction2OnAnimEnd(int *node);
 
@@ -36,9 +36,9 @@ void Ov227_SpawnTick(int *node)
         return;
     }
     if (state[0x18] < 0xa) {
-        Ov107_PostTagUpdate(*state, 0x19, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x19, 0);
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x1a, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1a, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov227_AiStep_QueueAction2OnAnimEnd);
 }

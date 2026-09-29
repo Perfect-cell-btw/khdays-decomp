@@ -20,6 +20,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
@@ -31,8 +32,6 @@ extern int RandNextScaled(int bound);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int Ov252_HeadingDelta(int *node, VecFx32 *v, int angle, int wantAbs);
-extern void Ov107_PostTagUpdate(int owner, int pose, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern int Ov252_DropReward(int *node, int param);
@@ -93,7 +92,7 @@ void Ov252_CruiseTick(int *node)
         state[0x1f] = 0;
         *((u8 *)state + 0x89) = 1;
         state[0x19] = 0;
-        Ov107_PostTagUpdate(*state, 0x2d, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x2d, 0);
         Ov107_StartAnim(*(int *)(*state + 0x574), 0x1a, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov252_RiseTick);
         return;
@@ -127,8 +126,8 @@ void Ov252_CruiseTick(int *node)
     }
     if (state[0x2b] != 0 && *(u8 *)(state[1] + 0xaf) == 0 && *((u8 *)state + 0x88) == 8) {
         *((u8 *)state + 0x88) = 0;
-        Ov107_PostTagUpdate(*state, 0x33, 1);
-        Ov107_PostTagUpdate(*state, 0x37, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x33, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x37, 1);
     }
     if (state[0x2b] == 0) {
         state[0x19] += *(int *)(node[0] + 0x2c);
@@ -242,15 +241,15 @@ void Ov252_CruiseTick(int *node)
             state[0x2e] = 1;
         }
         if (state[0x2f] != 0) {
-            Ov107_PostTagUpdate(*state, 0x34, 0);
-            Ov107_PostTagUpdate(*state, 0x38, 0);
-            Ov107_PostTagUpdate(*state, 3, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 0x34, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 0x38, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
             Ov107_StartAnim(*(int *)(*state + 0x574), 2, 0);
             SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov252_GuardedDriftTick);
             return;
         }
     }
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     if (state[0x2b] != 0) {
         Ov252_CheckTarget(node, 0, 1);
     }

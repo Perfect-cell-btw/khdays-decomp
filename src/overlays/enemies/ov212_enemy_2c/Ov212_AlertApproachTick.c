@@ -6,6 +6,7 @@
  * runs, animation 0xb (looped) plays, the timer resets and the tick hands off to Ov212_AiHoldTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
@@ -13,7 +14,6 @@ extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void Ov212_FlagSlotsDirty(int *state);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov212_AiHoldTick(int *node);
 
@@ -48,7 +48,7 @@ void Ov212_AlertApproachTick(int *node)
     }
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x40;
     Ov212_FlagSlotsDirty(state);
-    Ov107_PostTagUpdate(*state, 0xb, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xb, 1);
     state[0x10] = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov212_AiHoldTick);
 }

@@ -1,11 +1,13 @@
 /* ov301 enemy physics/movement tick (484B). Advances a spawn cursor (x/10 rate),
  * samples a curve, optionally mirrors the velocity vector, applies Q12 fixed-point
  * damping to vx/vz and a clamped ramp to vy, then flags the actor and commits. */
+
+#include "game/enemy_common.h"
+
 extern int  Angle_TurnToward(int a, int b, int c, int *d);
 extern void QuatFromAxisAngle(int *out, int *tbl, int t);
 extern void Srt_SetRotationQuat(unsigned int *a, int *b);
 extern void ScaleVec3Fx12(int scale, int *src, unsigned int *dst);   /* ScaleVec3Fx12 */
-extern void Ov107_MoveNodeAndRelayout(int a, void *desc);
 extern int data_02042264[];
 
 struct blk3 { int x, y, z; };
@@ -57,5 +59,5 @@ void Ov301_EnemyMoveTick(int *param_1) {
         (*(unsigned short *)(*piVar6 + 0x60) & ~0xff00) | ((t << 24) >> 16);
     ((struct wd *)(*(int *)(*piVar6 + 0x388) + 8))->b |= 2;
 
-    Ov107_MoveNodeAndRelayout(*piVar6, desc);
+    Ov107_MoveNodeAndRelayout((Actor *)(*piVar6), (VecFx32 *)desc);
 }

@@ -24,12 +24,12 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov301_OnDespawn, Ov301_PropagateBlockToLinkedNodes, Ov301_CreateRegistryEntryForActor;
 extern int func_ov301_020cc1d8, func_ov301_020cc1e4;
 extern int Ov301_OnHitQueueAction3, Ov301_SetSubitemStatesAndConfig;
 extern int data_02041dc8[], data_02042264[];
-extern int Ov107_PackTextureHandle(int p, int a);
 extern int CreateSubitemInstance0xB4(int r0);
 extern void RegisterSubscriberSlot(int a, int b);
 extern int *List_InsertSorted(void *p, int sz, int n);
@@ -112,7 +112,7 @@ void Ov301_InitObject(struct Ov301Obj *self)
 
     self->box = box;
 
-    self->p384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
+    self->p384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 0));
     RegisterSubscriberSlot(self->p9c, self->p384);
 
     self->flags1ae |= 0x10;

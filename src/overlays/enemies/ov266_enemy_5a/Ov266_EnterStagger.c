@@ -3,8 +3,8 @@
  * +0x5a byte and hands off to the stagger tick (020d1c0c). */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int b, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -15,7 +15,7 @@ void Ov266_EnterStagger(int *node)
 {
     int *state = (int *)node[1];
 
-    Ov107_PostTagUpdate(*state, 9, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
     func_ov107_020c0b90(*state, 2, data_02041dc8, 0);
     Ov107_BuildAndSendUpdate(*state, 0x15e, 9, (void *)state[2]);
     state[0x10] = 0;

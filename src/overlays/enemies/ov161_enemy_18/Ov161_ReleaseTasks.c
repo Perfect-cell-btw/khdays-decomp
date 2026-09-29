@@ -1,9 +1,10 @@
 /* Ov161_ReleaseTasks: release hook of the ov161 enemy (x2), variant of the matched ov131 sibling with a third task slot (+0x2c) and attachment (+0x3d4) finished outside sub-state 7. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } SrtTransform;   /* 44 bytes, the node's SRT block */
 
 extern void TaskList_FinishByTag(int owner, int handle);
-extern void Ov107_UnlinkNodeFromOwner(void *attachment);
-extern void Ov107_AiState_PostTickBase(void *actor);
 
 void Ov161_ReleaseTasks(char *actor) {
     if (*(signed char *)(actor + 0x1c6) != 7) {

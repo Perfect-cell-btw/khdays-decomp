@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 
@@ -15,8 +16,6 @@ extern int Ov107_FindNearestObject(int obj, int kind);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_WalkTick(void);
 extern const short data_0203d210[];
@@ -51,7 +50,7 @@ void Ov260_ApproachTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     Ov107_StartAnim(*(int *)(*state + 0x428), 1, 0);
     state[0x1c] = 0;
     *((u8 *)state + 0x7b) = 0;

@@ -6,13 +6,13 @@
  * A wanted animation different from the +0x44 one is played. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern int Ov220_DistanceToTarget(int *node);
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov220_FlightTick(int *node);
 extern int Ov220_IdleCountdown(int *node, int value);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 
 void Ov220_WanderTick(int *node)
 {
@@ -49,6 +49,6 @@ void Ov220_WanderTick(int *node)
     }
     if (state[0x11] != anim) {
         state[0x11] = anim;
-        Ov107_PostTagUpdate(*state, anim, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), anim, 1);
     }
 }

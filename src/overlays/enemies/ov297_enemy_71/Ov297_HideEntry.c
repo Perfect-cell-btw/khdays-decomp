@@ -4,12 +4,12 @@
  * sub-state 2 and ends the state. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct HideTable { VecFx32 p[2]; };
 
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int b, void *at);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct HideTable data_ov297_020d569c;
 extern const VecFx32 data_02041dc8;
@@ -33,7 +33,7 @@ void Ov297_HideEntry(int *node)
     pick.z = pts.p[set].z;
     state[0x20] = 1;
     *(VecFx32 *)(state + 4) = data_02041dc8;
-    Ov107_MoveNodeAndRelayout(*state, &pick);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pick);
     state[0xe] = 0;
     state[0x1f] = 0;
     *(unsigned char *)(*state + 0x1c7) = 2;

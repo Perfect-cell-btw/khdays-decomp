@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov181SubitemSlot {
     void *subitem;
@@ -27,13 +28,11 @@ extern void Ov182_ReactionRequestSubState11(void);
 extern void Ov182_OnHit(void);
 extern void Ov182_Model_SetTrack0(void);
 
-extern void *Ov107_PackTextureHandle();
 extern void *CreateSubitemInstance0xB4();
 extern void Srt_SetTranslationXYZ();
 extern void RegisterSubscriberSlot();
 extern void *Ov107_CreateNamedResourceBinding();
 extern void *CallocInstance();
-extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern int Ov107_CloneResourceTransform();

@@ -2,12 +2,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Nibbles { u8 lo : 4; u8 hi : 4; };
 
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
-extern int Ov107_CollectCapsuleOverlaps(int owner, void *box, int *hits);
-extern int Ov107_CollectSegmentOverlaps(int owner, void *seg, int *hits);
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, void *cyl, int *hits);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
@@ -24,9 +23,9 @@ int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *seg, void *cyl
     if (sphere != 0) {
         n = Ov107_CollectSphereOverlaps(*state, sphere, hits);
     } else if (box != 0) {
-        n = Ov107_CollectCapsuleOverlaps(*state, box, hits);
+        n = Ov107_CollectCapsuleOverlaps((Actor *)(*state), box, (void **)hits);
     } else if (seg != 0) {
-        n = Ov107_CollectSegmentOverlaps(*state, seg, hits);
+        n = Ov107_CollectSegmentOverlaps((Actor *)(*state), seg, (void **)hits);
     } else {
         n = Ov107_CollectEntitiesTouchingDisc(*state, cyl, hits);
     }

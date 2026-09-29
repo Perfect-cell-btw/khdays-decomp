@@ -5,11 +5,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
 extern void Ov258_AcquireTarget(int *node, int mode);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov258_ForwardEventIfStateOne(int partner, int from, int to, int d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -29,7 +29,7 @@ void Ov258_EnterSwing(int *node)
     state[0x11] = 0;
     ((NibblePair *)((u8 *)state + 0x52))->lo = 0;
     Ov258_AcquireTarget(node, 1);
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     func_ov107_020c0b90(*state, 1, data_02041dc8, 0);
     Ov258_ForwardEventIfStateOne(*(int *)(*state + 0x45c), 0x2288, 0x2530, 1);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov258_StompTick);

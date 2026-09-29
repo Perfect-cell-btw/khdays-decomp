@@ -2,12 +2,12 @@
  * the next step. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct b1 { unsigned char b:1; };
 
 extern void ScaleVec3Fx12(int s, int dst, int src);
 extern void Ov298_MapHeldItemKindToAnim();
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(int obj, int a, int cb);
 extern void Ov298_CopyScaleVecSetField28ThenAdvance(void);
 
@@ -23,6 +23,6 @@ void Ov298_AiDecelerateUntilReady(int *this)
         return;
     }
     Ov298_MapHeldItemKindToAnim(*(int *)node, 3);
-    Ov107_PostTagUpdate(*(int *)node, 4, 0);
+    Ov107_PostTagUpdate((Actor *)(*(int *)node), 4, 0);
     SetIndexedSlot((int)this, *(signed char *)((int)this + 0x20), (int)&Ov298_CopyScaleVecSetField28ThenAdvance);
 }

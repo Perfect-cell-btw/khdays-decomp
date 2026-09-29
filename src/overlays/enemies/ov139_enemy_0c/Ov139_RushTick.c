@@ -17,6 +17,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
@@ -86,7 +87,6 @@ extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern void VEC_Add(void *a, void *b, VecFx32 *d);
 extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, VecFx32 *at);
-extern int Ov107_CollectSegmentOverlaps(struct Ov204Owner *owner, struct Capsule *cap, int *out);
 extern int VEC_Mag(const VecFx32 *v);
 extern int Ov107_InvokeHitCallback(int hit, struct Ov204Owner *a, struct Ov204Owner *b, int kind, VecFx32 *push, int z);
 extern int Segment_ClosestPoint(void *point, Segment *seg, fx64 *outDist);
@@ -94,7 +94,6 @@ extern int *List_First(int list);
 extern int *List_Next(int list);
 extern int Ov107_HitShape_TestSegment(void *shape, Segment *seg, int flags);
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
-extern void Ov107_PostTagUpdate(struct Ov204Owner *actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov139_AiRollTimerOnFlagClear_3(int *node);
 extern const PosMsg data_ov139_020cec58;
@@ -184,7 +183,7 @@ void Ov139_RushTick(int *node)
         cap.seg.p0 = *state->pPos;
         cap.seg.scale = VEC_Normalize(&state->vVelocity, &cap.seg.dir) + VEC_Mag(&state->vVelocity);
         cap.radius = *(int *)((char *)state->pOwner + 0x80);
-        nHits = Ov107_CollectSegmentOverlaps(state->pOwner, &cap, hits);
+        nHits = Ov107_CollectSegmentOverlaps((Actor *)state->pOwner, &cap, (void **)hits);
         i = 0;
         if (nHits > 0) {
             do {
@@ -240,7 +239,7 @@ void Ov139_RushTick(int *node)
         if (*state->pBusy != 0) {
             return;
         }
-        Ov107_PostTagUpdate(state->pOwner, 0xa, 1);
+        Ov107_PostTagUpdate((Actor *)state->pOwner, 0xa, 1);
         state->nPhase54 = 1;
         return;
     }
@@ -250,6 +249,6 @@ void Ov139_RushTick(int *node)
     if (state->nSpeed >= 0x300) {
         return;
     }
-    Ov107_PostTagUpdate(state->pOwner, 0xb, 0);
+    Ov107_PostTagUpdate((Actor *)state->pOwner, 0xb, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov139_AiRollTimerOnFlagClear_3);
 }

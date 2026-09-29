@@ -1,10 +1,11 @@
 /* Destroys the model, the child selector and the five attached instances, frees the table, then the
  * base object. */
 
+#include "game/enemy_common.h"
+
 extern int DestroyInstance();
 extern int FreeInstanceMemory();
 extern int Ov107_DestroyObject();
-extern int Ov107_ActionResource_Destroy();
 
 struct Entry {
     void *ptr;

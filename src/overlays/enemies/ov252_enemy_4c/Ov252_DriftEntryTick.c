@@ -3,10 +3,9 @@
  * motion 0x13 and the node moves on to 020d09cc. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_DriftLandTick(void);
 
@@ -20,7 +19,7 @@ void Ov252_DriftEntryTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0xe, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xe, 0);
     Ov107_StartAnim(*(int *)(*state + 0x574), 0x13, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_DriftLandTick);
 }

@@ -6,10 +6,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov256_PickTarget(int *node);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02041dc8;
 
@@ -37,5 +37,5 @@ void Ov256_StompTick(int *node)
     }
     state[0x13] = 0;
     *((u8 *)state + 0x69) = 1;
-    Ov107_PostTagUpdate(*state, 0x19, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x19, 0);
 }

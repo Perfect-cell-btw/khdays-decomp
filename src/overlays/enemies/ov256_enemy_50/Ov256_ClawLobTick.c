@@ -6,10 +6,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov256_InvokeHookAndRearm2(int claw, VecFx32 *at);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov256_ClawLobTick(int *node)
@@ -40,5 +40,5 @@ void Ov256_ClawLobTick(int *node)
     }
     state[0x13] = 0;
     *((u8 *)state + 0x69) = 2;
-    Ov107_PostTagUpdate(*state, 9, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
 }

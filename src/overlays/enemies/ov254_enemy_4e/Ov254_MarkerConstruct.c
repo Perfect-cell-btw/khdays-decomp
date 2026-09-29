@@ -4,10 +4,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern const VecFx32 data_02041dc8;
@@ -39,6 +39,6 @@ void Ov254_MarkerConstruct(char *self)
     pose = (VecFx32 *)(self + 0x64);
     *pose = data_02041dc8;
     VecSet(pose, 0, *(int *)(self + 0x70) = 1, 0);
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x45));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x45));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
 }

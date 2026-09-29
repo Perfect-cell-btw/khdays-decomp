@@ -7,13 +7,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov261_GrabWalk(int *node);
 
@@ -42,7 +42,7 @@ void Ov261_ApproachTick(int *node)
     actor = *state;
     if (*(int *)(*(int *)(actor + 0x3a8) + 4) == *(int *)(actor + 4)) {
         ((struct hw60 *)(actor + 0x60))->hi &= ~0x80;
-        Ov107_PostTagUpdate(*state, 0, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), 0, 1);
         state[0x1b] = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov261_GrabWalk);
     }

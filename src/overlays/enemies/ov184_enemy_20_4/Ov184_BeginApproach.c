@@ -11,10 +11,10 @@
  * One of four byte-identical siblings. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int z);
 extern void Ov107_BuildAndSendUpdate(int obj, int a, int b, int c);
@@ -38,7 +38,7 @@ void Ov184_BeginApproach(int *node) {
         SetIndexedSlot(node, *(signed char *)((int)node + 0x20), 0);
         return;
     }
-    Ov107_PostTagUpdate(state[0], 0xc, 0);
+    Ov107_PostTagUpdate((Actor *)state[0], 0xc, 0);
     VEC_Subtract((void *)(state[4] + 0x190), (void *)state[1], &v);
     h = func_020050b4(v.x, v.z);
     state[6] = h;

@@ -6,6 +6,7 @@
 /* Partial layouts for the node, its source, and its attached shape. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct Source {
     unsigned char pad0[0x26b8];
@@ -27,8 +28,6 @@ typedef struct Node {
     unsigned char pad190[0x1d8 - 0x190];
     Shape *shape;
 } Node;
-
-extern void Ov107_RollTransformHistory(int self);
 
 /* Keep the vector setter: argument evaluation captures Y before any component
  * is written. This also preserves mwcc's register allocation (VEC_Set pattern).

@@ -9,6 +9,7 @@
  * interleave differently; the ROM reloads +0x394. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
@@ -17,12 +18,10 @@ extern void func_ov212_020d0c3c(void);
 extern void Ov212_ApplyTransformMessage(void);
 extern void Ov212_CreateAiTask(void);
 extern void Ov212_RearmEmitters(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void RefreshObjectCallbacks(int item, int a);
 extern int JointModel_New(void *item, int index);
-extern void Ov107_EnqueueValue(int self, int item);
 extern void BindAnimTrack(void *animation, int track, void *table, short mode);
 extern int Ov212_CreateReactionTask(int self);
 
@@ -44,11 +43,11 @@ void Ov212_ConstructSubActor(char *self) {
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 7));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 7));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
-    *(int *)(self + 0x394) = JointModel_New(Ov107_PackTextureHandle(pool, 8), 0x22);
-    Ov107_EnqueueValue((int)self, *(int *)(self + 0x394));
+    *(int *)(self + 0x394) = JointModel_New(Ov107_PackTextureHandle((char *)pool, 8), 0x22);
+    Ov107_EnqueueValue((char *)((int)self), *(int *)(self + 0x394));
     *(int *)(*(int *)(self + 0x394) + 0x5c) |= 2;
     BindAnimTrack((void *)*(int *)(*(int *)(self + 0x394) + 0x88), 4, (char *)*(int *)(*(int *)(self + 0x394) + 0x88) + 0xe0, 0);
     *(int *)(self + 0x390) = Ov212_CreateReactionTask((int)self);

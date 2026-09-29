@@ -5,10 +5,10 @@
  * a placement goes into a +0x22c pool slot at +0x388 (bit 1 set). */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 
-extern int Ov107_PackTextureHandle(char *self, int kind);
 extern int CreateSubitemInstance0xB4(int item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void SetSubitemState(int model, int track, int pose, int flag);

@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -32,7 +33,6 @@ extern int Ov253_IdIsFree(int owner, int hit);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov253_020d49a8;
 extern void Ov253_WaitTick(int *node);
@@ -102,6 +102,6 @@ void Ov253_HeadButtTick(int *node)
     if (*(u8 *)state[2] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 7, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov253_WaitTick);
 }

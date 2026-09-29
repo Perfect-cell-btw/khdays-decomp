@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
@@ -44,7 +45,6 @@ struct Ov204SweepState {
     u8 bHitMask55;              /* +0x55 */
 };
 
-extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
@@ -94,7 +94,7 @@ void Ov140_SweepTick(int *node)
     int lo;
     int span;
 
-    speed = Ov107_ActionResource_GetOffsetAndScale(*(void **)((char *)state->pOwner + 0x390), &step);
+    speed = Ov107_ActionResource_GetOffsetAndScale((int)(*(void **)((char *)state->pOwner + 0x390)), &step);
     Vec3TransformViaTempMtx(&state->vVelocity, (char *)state->pOwner + 0xa0, &step);
     ScaleVec3Fx12(speed, &state->vVelocity, &state->vVelocity);
     idx = ANG2IDX(state->nYaw);

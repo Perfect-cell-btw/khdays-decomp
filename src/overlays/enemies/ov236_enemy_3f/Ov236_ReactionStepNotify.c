@@ -3,7 +3,9 @@
  * Ov236_ClawSwipeTick.
  * The pair is copied member-wise HIGH HALFWORD FIRST and through a local pointer, which is what
  * puts `&pair` in a register before the copy and the two `ldrh` in the ROM's order. */
-extern void Ov107_PostTagUpdate(int owner, int a, int b);
+
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov236_ClawSwipeTick(void);
 extern char data_ov236_020d63e8[];
@@ -25,6 +27,6 @@ void Ov236_ReactionStepNotify(int self) {
     if (cb != 0) {
         cb(node[0], ps, 4);
     }
-    Ov107_PostTagUpdate(node[0], 0xe, 1);
+    Ov107_PostTagUpdate((Actor *)node[0], 0xe, 1);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), (int)&Ov236_ClawSwipeTick);
 }

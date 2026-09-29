@@ -10,6 +10,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/enemy_common.h"
 
 struct Ov151Cmd {
     u8 pad00[2];
@@ -55,10 +56,6 @@ struct Ov151Self {
     int nEffect3d0;
 };
 
-extern int Ov107_CreateNodeBodyTask(int resource, int node, int kind, void *transform,
-                               int flags, int enabled);
-extern int Ov107_CreateSpawnTask(struct Ov151Self *self, int id, int kind, int enabled,
-                               void *transform);
 extern void **List_First(void *list);
 extern void **List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b,

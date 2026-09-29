@@ -3,13 +3,13 @@
  * +4 rig is idle pose 0xd plays, move 0xa starts (020d3028) and brain slot +0x20 runs 020d4198. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern int Ov230_ContactCheck(int *state);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov230_startAnim(int owner, int anim);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov230_SwingTick(void);
@@ -35,7 +35,7 @@ void Ov230_WindUpTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0xd, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xd, 0);
     Ov230_startAnim(*state, 0xa);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov230_SwingTick);
 }

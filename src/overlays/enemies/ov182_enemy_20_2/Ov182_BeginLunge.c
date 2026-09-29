@@ -6,6 +6,7 @@
  * over to the charge handler. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int owner, int *out);
 extern void SetIndexedSlot(void *self, int index, void *handler);
@@ -14,7 +15,6 @@ extern void VEC_Subtract(void *a, void *b, VecFx32 *out);
 extern int func_020050b4(int dx, int dz);
 extern void Vec3TransformViaTempMtx(void *dst, void *src, const void *table);
 extern void ScaleVec3Fx12(int scale, void *dst, void *src);
-extern void Ov107_PostTagUpdate(int model, int anim, int mode);
 extern const int data_02042258[];
 extern void Ov182_AiStep_QueueAction2OnFlag0cClear(void);
 
@@ -51,6 +51,6 @@ void Ov182_BeginLunge(int *self) {
         return;
     }
 
-    Ov107_PostTagUpdate(obj[0], 4, 0);
+    Ov107_PostTagUpdate((Actor *)obj[0], 4, 0);
     SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), Ov182_AiStep_QueueAction2OnFlag0cClear);
 }

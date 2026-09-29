@@ -1,6 +1,7 @@
+#include "game/enemy_common.h"
+
 struct u16pair { unsigned short a, b; };
 
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(int obj, int a, int cb);
 extern short data_ov123_020ce2ac;
 extern void Ov123_ShotWindup(void);
@@ -13,7 +14,7 @@ void Ov123_ResetAndInvokeMethodThenAdvance(int *this)
     struct u16pair params;
     void (*method)(int, struct u16pair *, int);
     *(int *)(node + 0x20) = 0;
-    Ov107_PostTagUpdate(*(int *)node, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*(int *)node), 3, 0);
     *(int *)(node + 0x28) = 0;
     *(int *)(node + 0x2c) = 0;
     params = *(struct u16pair *)&data_ov123_020ce2ac;

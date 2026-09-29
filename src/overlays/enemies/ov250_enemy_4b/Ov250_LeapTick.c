@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -54,7 +55,6 @@ struct Ov250SweepState {
 
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
-extern void Ov107_PostTagUpdate(struct Ov250Owner *actor, int anim, int flag);
 extern void Ov250_AiRollTimerQueue2(void);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_CollectSphereOverlaps(struct Ov250Owner *owner, Sphere *sphere, int *out);
@@ -133,7 +133,7 @@ void Ov250_LeapTick(int *node)
         }
     }
     if (state->nTimer > 0x100 && ((struct Bits17a *)((char *)state->pOwner + 0x17a))->bit0 != 0) {
-        Ov107_PostTagUpdate(state->pOwner, 0x10, 0);
+        Ov107_PostTagUpdate((Actor *)state->pOwner, 0x10, 0);
         ((struct hw60 *)((char *)state->pOwner + 0x60))->hi &= ~0x40;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov250_AiRollTimerQueue2);
         return;
@@ -145,5 +145,5 @@ void Ov250_LeapTick(int *node)
         return;
     }
     state->bLanded50 = 1;
-    Ov107_PostTagUpdate(state->pOwner, 0xf, 0);
+    Ov107_PostTagUpdate((Actor *)state->pOwner, 0xf, 0);
 }

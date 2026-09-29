@@ -1,11 +1,11 @@
 /* Ov161_HandleSpawnMessage: spawn-message handler of the ov161 enemy (x2), variant of the matched ov163 sibling (sub 3 uses entry 6 with weight 0x2000; sub 4 also attaches entry 4 to the +0x394 placement, spawns the +0x2c child and registers effect 0x152 mode 7 into +0x3d4). */
+
+#include "game/enemy_common.h"
+
 /* Ov161_HandleSpawnMessage: ported from a matched sibling family (same shape, constants and offsets adjusted). */
 extern int Ov161_SpawnChild0cAndBackLink(int, int, int, int);
-extern int Ov107_CreateSpawnTask(int, int, int, int, int);
 extern int Ov107_CreateNodeXformTaskFx24(int, int, int, int, int, int);
-extern void Ov107_ForwardVisibleEvent(int, int);
 extern int Ov161_SpawnChild10AndBackLink(int, int, int, int);
-extern int Ov107_CreateNodeBodyTask(int, int, int, int, int, int);
 extern int Ov161_SpawnChild0cAndBackLink_2(int);
 extern void Ov107_AiState_OnMessage(int, int, int);
 void Ov161_HandleSpawnMessage(int param_1, int param_2, int param_3, int param_4) {

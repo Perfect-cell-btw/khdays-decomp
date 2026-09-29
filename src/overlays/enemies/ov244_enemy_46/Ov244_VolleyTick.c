@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { u16 id; u16 arg; } Msg4;
@@ -34,7 +35,6 @@ extern int func_02020400(int num, int den);
 extern void QuatFromAxisAngle(Quat *q, const VecFx32 *axis, int angle);
 extern void Ov244_AttachWithPose(int part, VecFx32 *at, Quat *q);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int pose, int loop);
 extern void Ov244_WaitNibbleTick(void);
 extern const struct VolleyTable data_ov244_020d3724;
 extern const Quat data_ov244_020d3764;
@@ -101,7 +101,7 @@ void Ov244_VolleyTick(int *node)
         if (*(MsgHook *)(*state + 0x24) != 0) {
             (*(MsgHook *)(*state + 0x24))(*state, (Msg4 *)pp, 4);
         }
-        Ov107_PostTagUpdate(*state, 9, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov244_WaitNibbleTick);
         return;
     }
@@ -118,5 +118,5 @@ void Ov244_VolleyTick(int *node)
     }
     state[7] = 0;
     *((unsigned char *)state + 9) = 0;
-    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
 }

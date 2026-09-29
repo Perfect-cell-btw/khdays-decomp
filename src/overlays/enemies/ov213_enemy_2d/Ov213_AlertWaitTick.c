@@ -5,6 +5,7 @@
  * +0x60 high byte, pose 0x1a plays and the node moves to 020cda00. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct m4 { int w[4]; };
 struct S213 { char pad[0x28]; struct m4 lo; struct m4 hi; };
@@ -13,7 +14,6 @@ extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *v, void *out);
 extern int  func_020050b4(int x, int z);
 extern void QuatFromAxisAngle(void *dst, void *k, int angle);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov213_AiQueue2OnAnimEnd(void);
 extern int  data_02042258;
@@ -43,6 +43,6 @@ void Ov213_AlertWaitTick(int *self) {
         *(u16 *)(actor + 0x60) = (hw & ~0xff00) |
             (((unsigned int)(unsigned short)((((unsigned int)hw << 0x10) >> 0x18) & ~0x82) << 0x18) >> 0x10);
     }
-    Ov107_PostTagUpdate(*state, 0x1a, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1a, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov213_AiQueue2OnAnimEnd);
 }

@@ -1,7 +1,9 @@
 /* Message handler of the ov153 enemy (x3: ov153/154/155): a kind-5 / sub-0 message attaches the
  * two +0x394 sub-items (slots 0 and 2, handles into slots 1 and 3) to the actor's +0x3c model
  * with mode 0x17 at the +0x39c anchor; everything then falls through to the ov107 base handler. */
-extern int Ov107_CreateNodeBodyTask(int resource, int item, int mode, int anchor, int e, int f);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_AiState_OnMessage(int self, int msg, int size);
 
 void Ov154_HandleMessage(int self, int msg, int size)

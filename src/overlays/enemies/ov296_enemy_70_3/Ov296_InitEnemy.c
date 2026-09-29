@@ -2,6 +2,7 @@
  * its model (lowered) with its animation tracks and attach slots, and its transform entries. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct v3 {
     int a;
@@ -46,7 +47,6 @@ extern void Ov296_CopyPoseBlockToTwoNodes(void);
 extern void Ov296_CreateRegistryEntryForActor(void);
 extern void Ov296_TickStaggerAndFlipFacing(void);
 
-extern void *Ov107_PackTextureHandle(struct Obj *, int);
 extern char *CreateSubitemInstance0xB4(void *);
 extern void RegisterSubscriberSlot(void *, void *);
 extern void Srt_SetTranslationXYZ(void *, int, int, int);
@@ -76,7 +76,7 @@ void Ov296_InitEnemy(struct Obj *arg0)
 
     arg0->flags1ae |= 0x10;
 
-    arg0->p384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(arg0, 0));
+    arg0->p384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)arg0, 0));
     RegisterSubscriberSlot(arg0->p9c, arg0->p384);
     Srt_SetTranslationXYZ(arg0->p384 + 4, 0, -0x1200, 0);
     SetSubitemState(arg0->p384, 0, 0, 1);

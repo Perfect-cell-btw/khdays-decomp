@@ -1,11 +1,13 @@
 /* Poll 02033ea0: on empty hand off to 0203c640; otherwise refresh the bar, and if it is active
  * but not flagged bail, then depending on +8 either hand off again or step 02033e48 and dispatch. */
+
+#include "game/enemy_common.h"
+
 extern int SoundSeqHandle_IsActive(int);
 extern int Task_MarkFinished(int);
 extern int Handle_WritePayloadIfLive(int, int);
 extern int SoundSeqHandle_Stop(int);
 extern int SetIndexedSlot(int, int, void *);
-extern int Ov107_SoundRestartTick(int);
 struct sb { int b0 : 1; };
 void Ov107_SoundFollowTick(int param_1) {
     int owner = *(int *)(param_1 + 4);

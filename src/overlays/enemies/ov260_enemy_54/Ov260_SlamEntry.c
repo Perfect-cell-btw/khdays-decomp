@@ -4,9 +4,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -22,7 +21,7 @@ void Ov260_SlamEntry(int *node)
         *(u16 *)(*state + 0x60) = (hw & ~0xff00) |
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0x40) << 0x18) >> 0x10);
     }
-    Ov107_PostTagUpdate(*state, 0xd, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xd, 0);
     Ov107_StartAnim(*(int *)(*state + 0x428), 5, 0);
     Ov260_PlaySound(*state, 9, state[4]);
     Ov260_PlaySound(*state, 0x20, state[4]);

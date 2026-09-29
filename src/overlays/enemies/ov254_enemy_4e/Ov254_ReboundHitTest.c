@@ -7,12 +7,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 extern const VecFx32 data_02042258;
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
-extern int Ov107_CollectSegmentOverlaps(int owner, void *seg, int *hits);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
@@ -36,7 +36,7 @@ u8 Ov254_ReboundHitTest(int *state, int kind, VecFx32 *sphere, Segment *seg)
     if (sphere != 0) {
         n = Ov107_CollectSphereOverlaps(*state, sphere, hits);
     } else if (seg != 0) {
-        n = Ov107_CollectSegmentOverlaps(*state, seg, hits);
+        n = Ov107_CollectSegmentOverlaps((Actor *)(*state), seg, (void **)hits);
     }
     for (i = 0; i < n; i++) {
         u8 bit = 1 << *(u16 *)(hits[i] + 2);

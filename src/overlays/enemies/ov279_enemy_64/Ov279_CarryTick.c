@@ -9,6 +9,7 @@
  * reaches 2.0 the owner is set down above it, the partner is released and sub-state 8 requested. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 
@@ -16,7 +17,6 @@ typedef struct { int w[4]; } Quat;
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
 extern void Ov022_ToggleBit13ByMode(int partner, int flag);
-extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *pos);
 extern void Mtx33_LookAt(int *dst, const VecFx32 *a, const VecFx32 *b, const void *c);
 extern void Quat_FromMtx33(void *dst, const int *src);
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, const VecFx32 *push, int z);
@@ -57,7 +57,7 @@ void Ov279_CarryTick(int *node)
     pos.x = *(int *)(target + 0x74) + FX_MUL(data_0203d210[ANG2IDX(rad) * 2], 0x1e00);
     pos.y = *(int *)(target + 0x78);
     pos.z = *(int *)(target + 0x7c) + FX_MUL(data_0203d210[ANG2IDX(rad) * 2 + 1], 0x1e00);
-    Ov107_MoveNodeAndRelayout(*state, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
     Mtx33_LookAt(mtx, (VecFx32 *)(target + 0x74), (VecFx32 *)state[0x13], &data_02042264);
     Quat_FromMtx33(state + 7, mtx);
     *(Quat *)(state + 3) = *(Quat *)(state + 7);
@@ -95,7 +95,7 @@ void Ov279_CarryTick(int *node)
     }
     pos.y += *(int *)(state[2] + 0x80) + *(int *)(*state + 0x80);
     Ov279_PushOutOfWorld(world, &pos, rad, *(int *)(*state + 0x80));
-    Ov107_MoveNodeAndRelayout(*state, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
     Ov022_ToggleBit13ByMode(*(int *)(*state + 0x3ac), 0);
     *(int *)(*state + 0x3ac) = 0;
     *(unsigned char *)(*state + 0x1c7) = 8;

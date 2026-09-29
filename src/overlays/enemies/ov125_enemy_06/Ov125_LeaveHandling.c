@@ -5,6 +5,7 @@
 
 #include "nitro/types.h"
 #include "game/actor.h"
+#include "game/enemy_common.h"
 
 typedef struct Ov125AimNode Ov125AimNode;
 
@@ -17,10 +18,8 @@ typedef struct {
     void *handle_03ac;
 } Ov125Object;
 
-extern void Ov107_UnlinkNodeFromOwner(void *handle);
 extern void Ov125_SetNodeActiveState(Ov125AimNode *node, int active);
 extern int Ov125_IsField34Nibble1(Ov125AimNode *node);
-extern void Ov107_AiState_PostTickBase(Ov125Object *self);
 
 void Ov125_LeaveHandling(Ov125Object *self) {
     if ((self->base.flags1c4 & 0xa) != 0) {
@@ -53,5 +52,5 @@ void Ov125_LeaveHandling(Ov125Object *self) {
             self->handle_03ac = 0;
         }
     }
-    Ov107_AiState_PostTickBase(self);
+    Ov107_AiState_PostTickBase((char *)self);
 }

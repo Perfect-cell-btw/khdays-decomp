@@ -5,10 +5,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov258_AcquireTarget(int *node, int mode);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov258_ForwardEventIfStateOne(int partner, int from, int to, int d);
@@ -20,7 +20,7 @@ void Ov258_EnterCharge(int *node)
 {
     int *state = (int *)node[1];
 
-    Ov107_PostTagUpdate(*state, 1, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
     state[0xc] = 0;
     *(short *)(state + 0x14) = 2;
     ((NibblePair *)((u8 *)state + 0x53))->lo = 6;

@@ -3,10 +3,10 @@
  * (else the next move is 4); otherwise pose 0 plays. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern int Ov237_PickMove(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(char *a, int b, int c);
 
 void Ov237_WaitTick(int *node)
 {
@@ -30,5 +30,5 @@ void Ov237_WaitTick(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    Ov107_PostTagUpdate(actor, 0, 0);
+    Ov107_PostTagUpdate((Actor *)actor, 0, 0);
 }

@@ -2,10 +2,12 @@
  * bit 0 of its +0x60 low byte set, plays pose 2 and moves the node to 020d27b4; while one is
  * still active, counts the state's +0x1c timer up by the scene step and after 1.0 moves to
  * 020d24bc. */
+
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Ov245Owner { char pad[0x420]; int parts[3]; };
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_Variant_AiStep_QueueAction0OnAnimEnd(void);
 extern void Ov245_Variant_AiVolleyStart(void);
@@ -22,7 +24,7 @@ void Ov245_WaitPartsIdle(int *node) {
         }
     }
     if (i >= 3) {
-        Ov107_PostTagUpdate(*state, 2, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_Variant_AiStep_QueueAction0OnAnimEnd);
         return;
     }

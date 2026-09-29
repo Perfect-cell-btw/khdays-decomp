@@ -6,9 +6,9 @@
  * node moves to 020cff4c. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int  VEC_Normalize(void *a, void *d);
 extern int  VEC_Mag(void *v);
@@ -30,7 +30,7 @@ void Ov236_EnterJump(int *node) {
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0xb, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xb, 1);
     {
         unsigned short *p = (unsigned short *)(*state + 0x60);
         unsigned int hi = ((unsigned int)*p << 0x10) >> 0x18;

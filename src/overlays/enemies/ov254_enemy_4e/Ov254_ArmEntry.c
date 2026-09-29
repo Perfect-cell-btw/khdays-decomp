@@ -2,11 +2,11 @@
  * armed, pose 2 plays and the node moves to 020d2a2c. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 typedef struct { unsigned f : 8; } B8;
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_AiStep_QueueAction0OnAnimEnd_2(void);
 
@@ -21,6 +21,6 @@ void Ov254_ArmEntry(int *node)
             ((((((unsigned int)hw << 0x10) >> 0x18) | 1) << 0x18) >> 0x10);
     }
     ((B8 *)(*(int *)(*state + 0x388) + 8))->f |= 1;
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov254_AiStep_QueueAction0OnAnimEnd_2);
 }

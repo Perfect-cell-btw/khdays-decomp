@@ -2,6 +2,7 @@
  * remote hit. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     unsigned bit0 : 1;
@@ -16,7 +17,6 @@ typedef struct {
 extern void Srt_SetTranslation(void *dst, const void *src);
 extern void QuatFromAxisAngle(int *quat, int *axis, int angle);
 extern int Srt_SetRotationQuat(void *dst, void *src);
-extern void Ov107_UpdateCollisionSphere(int node);
 extern unsigned int Slot_Spawn(unsigned int id, unsigned int kind, unsigned int *vec, unsigned int extra);
 
 void Ov107_AiState_OnSyncMessage(int self, u8 *msg) {

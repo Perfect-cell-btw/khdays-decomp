@@ -1,7 +1,8 @@
 /* AI step: accumulates the owner's frame delta into context +0x30; at 0x3000 posts tag 8 and
  * installs the next step. */
 
-extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov270_AiStep_QueueAction2OnAnimEnd(void);
 
@@ -10,6 +11,6 @@ void Ov270_AiStep_WaitTimerThenTag8(char *obj) {
     int val = *(int *)(p + 0x30) + *(int *)(*(char **)obj + 0x2c);
     *(int *)(p + 0x30) = val;
     if (val < 0x3000) return;
-    Ov107_PostTagUpdate(*(int *)p, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*(int *)p), 8, 0);
     SetIndexedSlot(obj, *(signed char *)(obj + 0x20), Ov270_AiStep_QueueAction2OnAnimEnd);
 }

@@ -5,6 +5,7 @@
  * fires at the +8 position and the tick hands off to the engage state. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Pair { u16 self, kind; };
 struct Msg6 { struct Pair id; u16 target; };
@@ -16,7 +17,6 @@ struct Ov115Templates { u8 impactPairs[4]; struct Msg6 engageMsg; };
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void func_02031384(int channel, void *msg, int len);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern const struct Ov115Templates data_ov115_020ceb70;
@@ -33,7 +33,7 @@ void Ov115_EngageEnter(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
     }
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     state[0x12] = 0;
     *(u8 *)(state + 0x21) = 0;
     msg = data_ov115_020ceb70.engageMsg;

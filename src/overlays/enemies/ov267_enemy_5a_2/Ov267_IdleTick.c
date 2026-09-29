@@ -27,13 +27,13 @@
  * stop the addend folding away. See deferred-ties.md. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov267_IsState6cActive(int *ctx, int a);
 extern int Ov267_CheckState6c(int *ctx, int a);
 extern int Ov267_IsTargetOutsideCone(int self);
 extern int Ov267_ChooseMove(int self, int dist);
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int RandNextScaled();
@@ -81,5 +81,5 @@ void Ov267_IdleTick(int self) {
             }
         }
     }
-    Ov107_PostTagUpdate(ctx[0], 4, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 4, 0);
 }

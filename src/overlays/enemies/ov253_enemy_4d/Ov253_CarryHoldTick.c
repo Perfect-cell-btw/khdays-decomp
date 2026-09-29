@@ -7,11 +7,11 @@
  * moves to 020d0344; otherwise the rider is only refreshed (020ad8e0). */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct htriple { unsigned short a, b, c; };
 struct Ov253Rider { char pad[0x464]; unsigned long long flags; };
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void func_ov022_020ad838(int target, int a);
 extern void Ov022_ToggleBit13ByMode(int target, int a);
@@ -34,7 +34,7 @@ void Ov253_CarryHoldTick(int *node) {
                 (((unsigned int)(unsigned short)((((unsigned int)hw << 0x10) >> 0x18) & ~2) << 0x18) >> 0x10);
         }
         *(int *)(*state + 0x3bc) = 0;
-        Ov107_PostTagUpdate(*state, 7, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov253_EnterReaction);
         return;
     }
@@ -47,7 +47,7 @@ void Ov253_CarryHoldTick(int *node) {
         }
         *((unsigned char *)state + 0x30) = 0;
         state[7] = 0;
-        Ov107_PostTagUpdate(*state, 7, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
         func_ov022_020ad838(*(int *)(*(int *)(*state + 0x3bc) + 0x18c), 1);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov253_CarrySeatTick);
         return;

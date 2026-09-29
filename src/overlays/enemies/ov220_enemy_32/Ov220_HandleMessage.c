@@ -5,10 +5,9 @@
  * The base handler always runs. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern void *Ov107_CreateNodeXformTaskFx24(void *taskList, void *subitem, int mode, int blend, int weight, void *payload);
-extern void *Ov107_CreateNodeBodyTask(void *taskList, void *subitem, int kind, void *at, int a,
-                                      int b);
 extern void TaskList_FinishByTag(void *taskList, void *handle);
 extern void Ov107_AiState_OnMessage(int actor, u8 *msg, int param);
 

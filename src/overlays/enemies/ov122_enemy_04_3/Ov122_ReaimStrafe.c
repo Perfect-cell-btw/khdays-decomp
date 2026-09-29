@@ -6,11 +6,10 @@
  * Matched byte-exact 2026-07-23, first compile. One of three byte-identical siblings. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern int Ov107_ActionResource_GetOffsetAndScale(int a, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *src, VecFx32 *v);
 extern void ScaleVec3Fx12(int a, void *b, void *c);
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov122_AiPauseTick(void);
 
@@ -25,7 +24,7 @@ void Ov122_ReaimStrafe(int *node) {
     if (*(unsigned char *)state[0x12] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(state[0], 9, 1);
+    Ov107_PostTagUpdate((Actor *)state[0], 9, 1);
     state[0x10] = 0;
     {
         unsigned short hw60 = *(unsigned short *)(state[0] + 0x60);

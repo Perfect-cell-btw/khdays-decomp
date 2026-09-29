@@ -15,9 +15,9 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov199_BuildHeadingRotation(int *state, VecFx32 v, int flag);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov199_SeedDefaultPoseAndAdvance(int a, int b);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern int Ov199_InvokeWithVec3ThenSetSubState5;
@@ -32,7 +32,7 @@ void Ov199_PointHeadingCheckPose(int self) {
     if (*(unsigned char *)(*(int *)(*state + 0x388) + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 4, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 4, 0);
     Ov199_SeedDefaultPoseAndAdvance(*state, 2);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), (int)&Ov199_InvokeWithVec3ThenSetSubState5);
 }

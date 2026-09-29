@@ -10,8 +10,8 @@
  * the schedule. See codegen-cracks.md. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern void func_ov107_020c0b90(int obj, int kind, VecFx32 v, int flag);
 extern void SetIndexedSlot(int self, int slot, void *cb);
 extern VecFx32 data_02041dc8;
@@ -20,7 +20,7 @@ void Ov266_Stop(int self) {
     int *ctx;
 
     ctx = *(int **)(self + 4);
-    Ov107_PostTagUpdate(ctx[0], 1, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 1, 0);
     func_ov107_020c0b90(ctx[0], 0xc, data_02041dc8, 0);
     *(signed char *)(ctx[0] + 0x1c7) = 0;
     SetIndexedSlot(self, *(signed char *)(self + 0x20), 0);

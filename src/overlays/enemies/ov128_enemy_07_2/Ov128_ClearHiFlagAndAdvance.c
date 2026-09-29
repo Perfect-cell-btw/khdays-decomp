@@ -1,8 +1,9 @@
 /* AI step: decays the spin; once the actor is on the ground, clears flag 0x40 in the high byte of
  * its flags, posts pose 6 and installs the wait-for-child step. */
 
+#include "game/enemy_common.h"
+
 extern void Ov128_DecaySpinOverElapsed(int self);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov128_PrepSubState2IfChildIdle(void);
 
@@ -14,6 +15,6 @@ void Ov128_ClearHiFlagAndAdvance(int self) {
     Ov128_DecaySpinOverElapsed(self);
     if (!((struct flag17a *)(*s + 0x17a))->b0) return;
     ((struct hw60 *)(*s + 0x60))->hi &= ~0x40;
-    Ov107_PostTagUpdate(*s, 6, 0);
+    Ov107_PostTagUpdate((Actor *)(*s), 6, 0);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), (void *)&Ov128_PrepSubState2IfChildIdle);
 }

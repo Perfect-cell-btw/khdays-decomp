@@ -5,13 +5,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern const VecFx32 data_02041dc8;
 extern void Ov254_Destroy(void);
 extern void Ov254_HelperBHandleMessage(void);
@@ -36,9 +35,9 @@ void Ov254_HelperConstruct(char *self)
     *(int *)(self + 0x70) = 1;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x41));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x41));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x390) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x42));
+    *(int *)(self + 0x390) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x42));
     Ov107_EnqueueValue(self, *(int *)(self + 0x390));
     *(int *)(*(int *)(self + 0x390) + 0x5c) |= 2;
 }

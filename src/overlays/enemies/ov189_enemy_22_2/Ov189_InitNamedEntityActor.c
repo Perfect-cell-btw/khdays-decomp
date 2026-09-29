@@ -8,6 +8,9 @@
  * the subitem is created as CreateSubitemInstance0xB4(Ov107_PackTextureHandle(...)) in one expression, the
  * bone handles come back from InsertSortedEntryWithKey with a literal 1 in the middle, and the two
  * stack blocks are whole-struct assignments rather than field-by-field stores. */
+
+#include "game/enemy_common.h"
+
 struct v3 { int a, b, c; };
 struct Box { struct v3 min, max; };
 struct Pose { struct v3 v; int nScale; };
@@ -33,12 +36,10 @@ extern void Ov189_SpawnActorRegistryEntry(void), func_ov189_020d0270(void), func
 extern void Ov189_ReleaseByStateAndPublishPose(void), Ov189_HandleHitEvent(void), Ov189_Model_ReapplyTrack0(void);
 extern void Ov189_RequestSubState10IfNotCurrent(void), Ov189_RequestSubState11IfIdle(void);
 
-extern void *Ov107_PackTextureHandle();
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern void *InsertSortedEntryWithKey();
 extern void *Ov107_CreateNamedResourceBinding();
-extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern long long Ov107_CloneResourceTransform();
@@ -130,5 +131,4 @@ void Ov189_InitNamedEntityActor(int param_1) {
     }
     Res_RequestIdPair(0x12f);
 }
-
 

@@ -2,7 +2,9 @@
  * knockback values from the table as a 4-byte message to the model's handler at
  * +0x24 (when it has one), clear the hit accumulator at +0x1c and register the
  * recovery handler. */
-extern void Ov107_PostTagUpdate();
+
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern unsigned short data_ov244_020d3724[];
 extern void Ov244_LungeBiteTick(void);
@@ -13,7 +15,7 @@ void Ov244_HurtHook(int *node) {
     unsigned short *pp;
     void (*cb)();
 
-    Ov107_PostTagUpdate(*state, 1, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
 
     pp = pair;
     pp[1] = data_ov244_020d3724[3];

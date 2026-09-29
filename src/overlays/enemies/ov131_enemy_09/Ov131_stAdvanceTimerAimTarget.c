@@ -2,12 +2,13 @@
  * nearest target and faces it, clears flags 0x82 in the high byte of the actor's flags, posts pose
  * 0 and installs the next step. */
 
+#include "game/enemy_common.h"
+
 struct hw { unsigned short lo:8, hi:8; };
 
 extern int Ov107_FindNearestObject(int a, int b);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int a, int b);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void Ov131_AiRollTimerQueue2(void);
 
@@ -29,6 +30,6 @@ void Ov131_stAdvanceTimerAimTarget(int *param_1) {
         }
     }
     ((struct hw *)(*state + 0x60))->hi &= ~0x82;
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     SetIndexedSlot((int)param_1, *(signed char *)((int)param_1 + 0x20), &Ov131_AiRollTimerQueue2);
 }

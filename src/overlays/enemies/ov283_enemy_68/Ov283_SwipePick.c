@@ -3,13 +3,13 @@
  * gets pose 5 or 6, otherwise 7 or 8 (random), and the node moves on to 020cebb4. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern int func_020050b4(int x, int z);
 extern int RandNextScaled(int bound);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov283_DecideTick(void);
 extern const short data_0203d210[];
@@ -43,9 +43,9 @@ void Ov283_SwipePick(int *node)
     }
     actor = *state;
     if (front) {
-        Ov107_PostTagUpdate(actor, RandNextScaled(2) + 5, 0);
+        Ov107_PostTagUpdate((Actor *)actor, RandNextScaled(2) + 5, 0);
     } else {
-        Ov107_PostTagUpdate(actor, RandNextScaled(2) + 7, 0);
+        Ov107_PostTagUpdate((Actor *)actor, RandNextScaled(2) + 7, 0);
     }
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov283_DecideTick);
 }

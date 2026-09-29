@@ -6,10 +6,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void MTX_RotY33_(void *mtx, int sin, int cos);
 extern void MTX_MultVec33(int *out, void *mtx, int *in);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
@@ -34,7 +34,7 @@ void Ov219_AttackTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 7, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 7, 1);
     func_ov107_020c0b90(*state, 2, data_02041dc8, 0);
     if (*(signed char *)(*state + 0x1c6) == 8) {
         state[5] = 0x7000;

@@ -5,11 +5,10 @@
  * to Ov257_BiteChargeTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int queryTableEntry(int rig, int channel);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern int Ov257_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -46,7 +45,7 @@ void Ov257_WindUpHoldTick(int *node)
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3d0), 2, 0);
     *((unsigned char *)state + 0x78) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov257_BiteChargeTick);

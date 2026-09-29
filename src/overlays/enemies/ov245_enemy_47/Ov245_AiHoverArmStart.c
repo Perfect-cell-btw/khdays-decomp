@@ -1,8 +1,10 @@
 /* Once 020cce48 clears, retarget the linked node, restart sub-anim 020c9ee8, drive +0x28 to
  * -0x4000, copy the parent's +8 into +0x30 and dispatch 020ce1cc. */
+
+#include "game/enemy_common.h"
+
 extern int Ov245_AnimGate(int);
 extern int Ov245_NodeUpdateTickForward_c(int, int);
-extern int Ov107_StartAnim(int, int, int);
 extern int SetIndexedSlot(int, int, void *);
 extern int Ov245_HoverArmedTick(int);
 void Ov245_AiHoverArmStart(int param_1) {

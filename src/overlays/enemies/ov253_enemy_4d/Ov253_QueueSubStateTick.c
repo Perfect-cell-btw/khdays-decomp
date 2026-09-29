@@ -3,12 +3,14 @@
  * through the three-byte data_ov253_020d49e0 table into the +0x1c7 sub-state and raises the
  * latch; once raised, a +0x1c8 state other than 2 pops the head (020d2794) and clears it. Then
  * the base tick (020c7ca4). */
+
+#include "game/enemy_common.h"
+
 struct Ov253Entry { signed char a; signed char b; short c; };
 struct Ov253Queue { char pad[0x3dc]; signed char count; signed char head; char pad3de[6]; struct Ov253Entry *table; };
 struct Ov253SubMap { signed char m[3]; };
 
 extern void Ov253_QueuePop(struct Ov253Queue *self);
-extern void Ov107_AiState_PostTickBase(struct Ov253Queue *self);
 extern const struct Ov253SubMap data_ov253_020d49e0;
 
 void Ov253_QueueSubStateTick(struct Ov253Queue *self) {
@@ -28,5 +30,5 @@ void Ov253_QueueSubStateTick(struct Ov253Queue *self) {
             Ov253_QueuePop(self);
         }
     }
-    Ov107_AiState_PostTickBase(self);
+    Ov107_AiState_PostTickBase((char *)self);
 }

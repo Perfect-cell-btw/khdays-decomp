@@ -3,7 +3,9 @@
  * and keeps the handle; then the base handler runs.
  * Two nested single-case switches: written as `if`s mwcc if-converts the sub-kind and handle
  * tests into predicated compares; the ROM branches on each (see Ov117_SpawnAuraOnTag5). */
-extern int Ov107_CreateSpawnTask();
+
+#include "game/enemy_common.h"
+
 extern void Ov107_AiState_OnMessage(int self, int msg, int c);
 
 void Ov180_HandleMessage(int self, int msg, int c) {
@@ -12,7 +14,7 @@ void Ov180_HandleMessage(int self, int msg, int c) {
         switch (*(unsigned char *)(msg + 3)) {
         case 0:
             if (*(int *)(self + 0x38c) == 0) {
-                *(int *)(self + 0x38c) = Ov107_CreateSpawnTask(self, 0x143, 4, 1, self + 0xa0);
+                *(int *)(self + 0x38c) = Ov107_CreateSpawnTask(self, 0x143, 4, 1, (void *)(self + 0xa0));
             }
             break;
         }

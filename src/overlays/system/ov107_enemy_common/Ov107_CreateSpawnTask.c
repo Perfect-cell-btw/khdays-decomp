@@ -2,6 +2,7 @@
  * when the owner's flag bit 0 at +0x40 is set. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     int owner;
@@ -13,10 +14,7 @@ typedef struct {
     u32 field_10;
 } Ov107Sub;
 
-extern void *func_ov107_020c9848(void);
 extern int CreateRegistryEntry(int param_1, unsigned int param_2, unsigned int param_3, int param_4, int param_5, int *param_6);
-extern int Ov107_SpawnTaskTeardown(int param_1);
-extern void Ov107_Reaction_BranchByOwnerBit0(int self);
 extern unsigned int Slot_Spawn(unsigned int param_1, unsigned int param_2, unsigned int *param_3, unsigned int param_4);
 
 int Ov107_CreateSpawnTask(int self, int id, int kind, int enabled, void *node) {

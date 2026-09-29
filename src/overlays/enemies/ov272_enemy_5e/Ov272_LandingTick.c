@@ -3,10 +3,10 @@
  * (+0x1c7) and the node's slot is released with no follow-up handler. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov272_LandingTick(int *node)
@@ -26,7 +26,7 @@ void Ov272_LandingTick(int *node)
         pos.y = y + 0x1ccc;
         pos.z = z;
     }
-    Ov107_MoveNodeAndRelayout(*state, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
     *(signed char *)(*state + 0x1c7) = *(signed char *)(*state + 0x100 + 0xc9);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
 }

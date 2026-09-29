@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -26,8 +27,6 @@ typedef struct { VecFx32 p0; VecFx32 dir; int nLength; int nRadius; } Segment;
 
 extern const VecFx32 data_02042264;
 extern const short data_0203d210[];
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern int RandNextScaled(int n);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
@@ -53,7 +52,7 @@ void Ov273_GroundSlamTick(int *node)
     if (*((u8 *)state + 0xc) == 0) {
         if (state[2] > 0x1800) {
             *((u8 *)state + 0xc) = 1;
-            Ov107_PostTagUpdate(*state, 1, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
         }
     } else if (*((u8 *)state + 0xc) == 1) {
         n = *state;
@@ -61,7 +60,7 @@ void Ov273_GroundSlamTick(int *node)
         seg.dir = data_02042264;
         seg.nLength = 0x8000;
         seg.nRadius = 0x600;
-        n = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
+        n = Ov107_CollectSegmentOverlaps((Actor *)(*state), &seg, (void **)hits);
         for (i = 0; i < n; i++) {
             Cmd14 msg;
             unsigned int idx;

@@ -5,16 +5,15 @@
  * update (020c7ca4) follows. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 
 extern void TaskList_FinishByTag(int scene, int link);
-extern void Ov107_UnlinkNodeFromOwner(int effect);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern void Srt_SetTranslation(void *srt, const VecFx32 *t);
-extern void Ov107_AiState_PostTickBase(char *self);
 
 static inline int ClawPart(char *self, int first)
 {
@@ -39,7 +38,7 @@ void Ov245_UpdateClaws(char *self)
             *(int *)(self + 0x3b8) = 0;
         }
         if (*(int *)(self + 0x3ac) != 0) {
-            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3ac));
+            Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x3ac)));
             *(int *)(self + 0x3ac) = 0;
         }
     }

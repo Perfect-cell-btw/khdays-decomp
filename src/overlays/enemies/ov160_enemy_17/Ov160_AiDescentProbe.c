@@ -25,6 +25,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct Quat {
     fx32 q[4];
@@ -63,7 +64,6 @@ extern void  Quat_FromTwoVectors(Quat *pOut, const VecFx32 *pFrom, const VecFx32
 extern void  Srt_SetRotationQuat(char *pSrt, const Quat *pRot);              /* Srt_SetRotationQuat */
 extern void  Srt_SetTranslation(char *pSrt, const VecFx32 *pPos);              /* Srt_SetTranslation */
 extern fx32  VEC_Normalize(const VecFx32 *pIn, VecFx32 *pOut);                /* VEC_Normalize */
-extern int   Ov107_CollectSegmentOverlaps(int nActor, HitQuery *pQuery, int *pResults);
 extern void  Segment_ClosestPoint(void *pVolume, HitQuery *pQuery, fx64 *pDist);
 extern void  VEC_Add(const VecFx32 *pA, const VecFx32 *pB, VecFx32 *pOut);
 extern void  SetIndexedSlot(DropNode *pNode, int nSlot, void (*pfnCallback)(void)); /* SetIndexedSlot */
@@ -118,7 +118,7 @@ void Ov160_AiDescentProbe(DropNode *pNode)
         query.vOrigin = pState->vPos;
         query.nSpeed = VEC_Normalize(&vStep, &query.vDir);
         query.nRange = 0x400;
-        nCount = Ov107_CollectSegmentOverlaps(pState->pSelf, &query, aResult);
+        nCount = Ov107_CollectSegmentOverlaps((Actor *)pState->pSelf, &query, (void **)aResult);
         if (nCount != 0) {
             nMin = 0x7fffffffffffffffLL;
             for (i = 0; i < nCount; i++) {

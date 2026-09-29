@@ -4,7 +4,9 @@
  * state[0x1a..] from data_02042264 and atan2(dir.x, dir.z) of target(+0x190) - *state(+0xb0).
  * Always hand off to the 020cdb28 state.
  */
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+
+#include "game/enemy_common.h"
+
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  func_020050b4(int x, int z);
 extern void QuatFromAxisAngle(void *dst, void *k, int angle);
@@ -17,7 +19,7 @@ void Ov126_EnterAimedAttack(int *self) {
     int v[3];
 
     state[0xf] = *(int *)(self[0] + 0x2c) * 0x1e / 5;
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     if (state[0xc] != 0) {
         VEC_Subtract((void *)(state[0xc] + 0x190), (void *)(*state + 0xb0), v);
         QuatFromAxisAngle((void *)(state + 0x1a), &data_02042264, func_020050b4(v[0], v[2]));

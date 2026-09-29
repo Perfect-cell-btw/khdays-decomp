@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned f : 8; };
@@ -24,7 +25,6 @@ extern void VEC_Subtract(void *a, void *b, void *d);
 extern struct CastHit *Collision_CastRay(void *world, void *from, void *step);
 extern void ScaleVec3Fixed27(int scale, void *v, void *d);
 extern void VEC_Add(void *a, void *b, void *d);
-extern void Ov107_MoveNodeAndRelayout(int actor, void *at);
 extern void func_ov107_020c0b90(void *item, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern struct CastHit *Collision_CastSphereEx(void *world, void *from, void *step, int radius, void *z);
@@ -77,7 +77,7 @@ void Ov169_LeapTick(int *node)
     if (hit != 0) {
         ScaleVec3Fixed27(hit->nFraction, &step, &step);
         VEC_Add(&step, (void *)state[2], &at);
-        Ov107_MoveNodeAndRelayout(*state, &at);
+        Ov107_MoveNodeAndRelayout((Actor *)(*state), &at);
         func_ov107_020c0b90(*(void **)(*state + 0x38c), 7, *(VecFx32 *)state[2], 0);
         Ov107_BuildAndSendUpdate(*state, 0x13f, 7, (void *)state[2]);
         hw = (unsigned short *)(*state + 0x60);

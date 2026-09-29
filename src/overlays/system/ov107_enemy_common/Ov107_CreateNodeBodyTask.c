@@ -2,6 +2,7 @@
  * set bit of kind, then refreshes. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct Blk44 { int w[11]; } Blk44; /* 44 bytes */
 
@@ -26,7 +27,6 @@ extern int CreateRegistryEntry(int param_1, unsigned int param_2, unsigned int p
 extern void SetSubitemState(Inner09a0 *a, u16 b, int c, int d);
 extern void RefreshObjectCallbacks(Inner09a0 *ptr, int arg);
 extern void Ov107_TaskTeardown_FlagOwner_2(void *a);
-extern int Ov107_stAdvanceState_ccedc(int param_1);
 
 int Ov107_CreateNodeBodyTask(int resource, int node, int kind, void *transform,
                          unsigned char e, int f)

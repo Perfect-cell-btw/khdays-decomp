@@ -1,6 +1,8 @@
 /* Detach hook of the ov260 enemy: unregisters its two +0x42c / +0x430 effects and the fifteen
  * +0x434 slots from the given list, then runs the base detach (020c7c1c). */
-extern void Ov107_InvokeSlot0x74(int list, int item);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_Actor_DetachFromRegion(char *self, int list);
 
 void Ov260_DetachHook(char *self, int list)

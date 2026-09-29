@@ -7,6 +7,7 @@
  * Ov135_AimSpinPickAttack. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Flags42 { unsigned char bCharge : 1; };
 
@@ -15,7 +16,6 @@ extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern int Ov107_ActionResource_GetOffsetAndScale(int resource, int a);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov135_AimSpinPickAttack(void);
 extern const short data_0203d210[];

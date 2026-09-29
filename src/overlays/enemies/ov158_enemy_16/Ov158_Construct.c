@@ -11,6 +11,7 @@
  * Ov158_Actor_New and sound 0x150 is loaded. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov158Capsule {
     VecFx32 vPos;
@@ -45,13 +46,11 @@ extern void Ov158_RequestState8(void);
 extern void Ov158_RetuneRigRearmEmitter(void);
 extern void *Ov158_Actor_New(int *self);
 
-extern void *Ov107_PackTextureHandle();
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern char *InsertSortedEntryWithKey();
 extern void *Ov107_CreateNamedResourceBinding();
 extern void *CallocInstance();
-extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern int Ov107_CloneResourceTransform();

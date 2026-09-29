@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 struct Items4ac { char pad[0x4ac]; int item[10]; };
@@ -16,7 +17,6 @@ struct Items4ac { char pad[0x4ac]; int item[10]; };
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern int RandNextScaled(int n);
 extern void Ov254_InvokeHookAndRearm(int helper, void *from, VecFx32 *to);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int Ov254_PanelYForPhase(int *state, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -62,13 +62,13 @@ void Ov254_SummonTick(int *node)
     }
     state[0x10]++;
     if (idle && state[0x10] < 0xc) {
-        Ov107_PostTagUpdate(*state, 0x17, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x17, 0);
         func_ov107_020c0b90(*state, 7, data_02041dc8, 0);
         state[0x11] = 0;
         *((u8 *)state + 0x70) = 0;
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x18, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x18, 0);
     ((B8 *)(*(int *)(*state + 0x3e4) + 8))->f |= 2;
     state[0x11] = 0;
     *((u8 *)state + 0x70) = 0;

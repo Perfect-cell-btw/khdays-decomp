@@ -5,10 +5,10 @@
  * tick hands off to d0e4c. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern int Ov261_FindGrabSlotPath(int *state, int slot);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void Ov261_GrabWalk(int *node);
 extern void Ov261_ApproachTick(int *node);
 
@@ -27,7 +27,7 @@ void Ov261_ApproachDecision(int *node)
     }
     actor = *state;
     if (*(int *)(*(int *)(actor + 0x3a8) + 4) == *(int *)(actor + 4)) {
-        Ov107_PostTagUpdate(actor, 0, 1);
+        Ov107_PostTagUpdate((Actor *)actor, 0, 1);
         state[0x1b] = 0;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov261_GrabWalk);
         return;
@@ -36,6 +36,6 @@ void Ov261_ApproachDecision(int *node)
     h = *hw;
     /* hw60.hi |= 0x82 -- explicit-shift form (bitfield |= adds a redundant mask) */
     *hw = h & ~0xff00 | (((((unsigned int)h << 0x10) >> 0x18 | 0x82) << 0x18) >> 0x10);
-    Ov107_PostTagUpdate(*state, 2, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 1);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov261_ApproachTick);
 }

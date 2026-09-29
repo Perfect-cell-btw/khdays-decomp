@@ -1,7 +1,8 @@
 /* Inits the two head parts and the sixteen segment parts from the event, then the base region
  * handler. */
 
-extern void Ov107_InitObjectFromSource(int obj, int arg1);
+#include "game/enemy_common.h"
+
 extern void Ov107_HandleRegionEvent(int obj, int arg1);
 
 void Ov283_ForwardRegionEventToParts(int *list, int target) {

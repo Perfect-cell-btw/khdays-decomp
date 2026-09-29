@@ -1,7 +1,8 @@
 /* Refreshes the child selector and runs the tick, then rebuilds the marker transform (+0x39c) at
  * +0x394's position with the object's rotation. */
 
-extern int Ov107_RefreshAndSelectChild();
+#include "game/enemy_common.h"
+
 extern int Ov107_ProcessObjectTick();
 extern int SrtTransform_SetIdentity();
 extern int Srt_SetTranslation();

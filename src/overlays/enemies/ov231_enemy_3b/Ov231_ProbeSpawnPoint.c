@@ -17,9 +17,9 @@
  * register across the gather call. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_CollectSphereOverlaps(int owner, int kind, void **list);
-extern int Ov107_CollectSegmentOverlaps(int owner, void *query, void **list);
 /* Defined taking flags as int: declared narrower here, which is what makes mwcc truncate the
  * argument at the call as the ROM does (declared as defined, the code comes out different). */
 extern int Ov107_InvokeHitCallback(void *cand, int owner, int owner2, unsigned char flags, void *pt, int a);
@@ -37,7 +37,7 @@ int Ov231_ProbeSpawnPoint(int self, int kind, void *query, void *pt, int flags) 
     if (kind != 0) {
         n = Ov107_CollectSphereOverlaps(ctx[0], kind, list);
     } else {
-        n = Ov107_CollectSegmentOverlaps(ctx[0], query, list);
+        n = Ov107_CollectSegmentOverlaps((Actor *)ctx[0], query, list);
     }
 
     for (i = 0; i < n; i++) {

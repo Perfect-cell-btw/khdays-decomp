@@ -7,11 +7,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Vec4;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern int Ov107_CollectSphereOverlaps(int owner, Vec4 *src, int *out);
 extern int Ov107_InvokeHitCallback(int victim, int a, int b, int mode, void *push, int flags);
 extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
@@ -27,7 +27,7 @@ void Ov178_SettleHold(int node) {
     int n;
 
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 1, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
     }
     state[4] += *(int *)(*(int *)node + 0x2c);
     if (state[4] >= 0x800) {
@@ -47,6 +47,6 @@ void Ov178_SettleHold(int node) {
         VecFx32 v = *(VecFx32 *)state[2];
         func_ov107_020c0b90(*(int *)(*state + 0x388), 1, v, 0);
     }
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     SetIndexedSlot(node, *(signed char *)(node + 0x20), Ov178_AiStep_QueueAction0OnAnimEnd);
 }

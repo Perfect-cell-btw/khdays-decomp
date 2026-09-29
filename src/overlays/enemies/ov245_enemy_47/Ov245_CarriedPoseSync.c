@@ -4,11 +4,11 @@
  * keeps the +0x3b8 item's +0x20 position at +0x3bc. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[11]; } Pose44;
 struct Ov245Item { char pad[0x10]; Pose44 pose; };
 
-extern void Ov107_RefreshAndSelectChild(int item, int a);
 extern void Ov107_ProcessObjectTick(int self, int a);
 
 void Ov245_CarriedPoseSync(int self, int a) {

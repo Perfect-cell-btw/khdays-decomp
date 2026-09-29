@@ -9,6 +9,7 @@
  * +0x39 cleared and the follow-up handler (020d190c) installed. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct bf { unsigned b : 8; };
 
@@ -19,7 +20,6 @@ extern void Ov192_ProbeGroundBelowNode(int *node, VecFx32 *out);
 extern long long FX_DivFx64c(int num, int denom);
 extern void Ov192_BoxSweepPush(int *node, long long t, VecFx32 *at);
 extern int RandNextScaled(int bound);
-extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void Ov192_ChargeAimedShotState(void);
 
@@ -50,7 +50,7 @@ void Ov192_LeapTick(int node)
     }
     ((struct bf *)(*(int *)(*state + 0x38c) + 8))->b &= ~1;
     state[7] = RandNextScaled(5) + 2;
-    Ov107_PostTagUpdate(*state, 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
     if (state[6] != 0) {
         VEC_Subtract((VecFx32 *)(state[6] + 0x190), (VecFx32 *)state[2], &d2);
         spread = RandNextScaled(0x1923) - 0xc91;

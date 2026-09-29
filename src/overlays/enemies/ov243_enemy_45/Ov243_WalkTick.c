@@ -7,10 +7,10 @@
  * Arriving inside the actor's +0x80 radius requests sub-state 2 and releases the slot. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int queryTableEntry(int item, int a);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);
-extern int Ov107_ActionResource_GetOffsetAndScale(int resource, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);

@@ -1,6 +1,7 @@
+#include "game/enemy_common.h"
+
 extern void FreeAllResourceTables(char *p);
 extern void DestroyInstance(int h);
-extern void Ov107_ActionResource_Destroy(int h);
 extern void NNSi_FndDestroyDoubleList(char *list);
 extern void Ov107_DestroyObject(char *self);
 
@@ -12,7 +13,7 @@ void Ov254_ReleaseNodeResources(char *self) {
     FreeAllResourceTables(self + 0x3b0);
     DestroyInstance(*(int *)(self + 0x384));
     DestroyInstance(*(int *)(self + 0x388));
-    Ov107_ActionResource_Destroy(*(int *)(self + 0x430));
+    Ov107_ActionResource_Destroy((char *)(*(int *)(self + 0x430)));
     for (i = 0; i < 8; i++) {
         DestroyInstance(*(int *)(self + i * sizeof(long long) + 0x4e8));
     }

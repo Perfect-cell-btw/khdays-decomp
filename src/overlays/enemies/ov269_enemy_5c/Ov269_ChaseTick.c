@@ -8,6 +8,7 @@
  * target is under 6.0 or beyond the actor's +0x2d8 range. The +0x14 turn step is 30 x dt / 20. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int node, int slot, void *cb);
@@ -15,7 +16,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern int Ov107_ActionResource_GetOffsetAndScale(int resource, int a);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov269_TurnStepTick(void);
 extern const short data_0203d210[];

@@ -1,6 +1,7 @@
 /* Refreshes the child selector at +0x3c8, then runs the object tick. */
 
-extern int Ov107_RefreshAndSelectChild();
+#include "game/enemy_common.h"
+
 extern int Ov107_ProcessObjectTick();
 
 int Ov132_TickWithChildRefresh(int *r0, int r1)

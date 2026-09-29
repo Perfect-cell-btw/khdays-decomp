@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { VecFx32 pos; VecFx32 axis[3]; VecFx32 half; } Box;
@@ -25,7 +26,6 @@ extern void Ov254_Pillar_TickFollowOwner(void);
 extern void Ov254_Pillar_CreateAiTask(void);
 extern void Ov254_Pillar_OnHit(void);
 extern void Ov254_Model_ReapplyTracks(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void RefreshObjectCallbacks(int item, int a);
@@ -66,7 +66,7 @@ void Ov254_PillarSetup(char *self)
         *(int *)(self + 0x6c) = 0;
     }
     *(int *)(LoadPtr((int)self + 0x9c) + 0x5c) |= 4;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x4d));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x4d));
     RegisterSubscriberSlot(LoadPtr((int)self + 0x9c), *(int *)(self + 0x384));
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
     box.pos = data_02041dc8;

@@ -1,10 +1,11 @@
 /* Creates enemy 0x69's actor: opens its cached resource by name and initialises it. */
 
+#include "game/enemy_common.h"
+
 extern void OS_SPrintf(void *buffer, void *format);
 extern int data_ov284_020cd600;
 extern void *CallocInstance(int size);
 extern void func_ov107_020c6624(void *obj, int arg);
-extern int Ov107_OpenCachedResourceByName(void *name);
 extern void Ov284_InitializeActor(void *obj);
 
 void *Ov284_CreateNamedEntity(int arg)

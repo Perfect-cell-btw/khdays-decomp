@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov153Capsule {
     VecFx32 vPos;
@@ -41,12 +42,10 @@ extern void Ov155_OnHit(void);
 extern void Ov155_Model_SetTracks0And3(void);
 extern void *Ov155_Actor_New(int *self);
 
-extern void *Ov107_PackTextureHandle();
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern void *InsertSortedEntryWithKey();
 extern void *CallocInstance();
-extern void Ov107_EnqueueValue();
 extern void Ov107_Actor_SetAttachSlot();
 extern void *List_InsertSorted();
 extern int Ov107_Mover_New(struct Ov153Capsule *req);

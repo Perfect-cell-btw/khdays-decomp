@@ -5,9 +5,9 @@
  * Ov206_ChargeTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov206_ChargeTick(int *node);
 extern const VecFx32 data_02041dc8;
@@ -27,7 +27,7 @@ void Ov206_FallTick(int *node)
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 4, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 4, 1);
     state[8] = 0;
     *(unsigned char *)((char *)state + 0x52) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov206_ChargeTick);

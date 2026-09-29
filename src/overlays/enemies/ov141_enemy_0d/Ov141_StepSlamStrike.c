@@ -35,6 +35,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -107,8 +108,6 @@ extern void Quat_FromTwoVectors(struct Ov141Quat *out, const VecFx32 *from,
                           const VecFx32 *to);
 extern void Srt_SetRotationQuat(void *srt, const struct Ov141Quat *rot);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
-extern int Ov107_CollectSegmentOverlaps(struct Ov141Owner *owner, struct Ov141Query *query,
-                               int *results);
 extern int Ov107_InvokeHitCallback(int ent, struct Ov141SubObj *self,
                                struct Ov141Owner *owner, int mode, void *dir,
                                int flag);
@@ -157,7 +156,7 @@ void Ov141_StepSlamStrike(struct Ov141StepNode *node)
     query.nRange = 0x800;
 
     if (state->nMode20 == 0) {
-        n = Ov107_CollectSegmentOverlaps(state->pSelf->pOwner398, &query, results);
+        n = Ov107_CollectSegmentOverlaps((Actor *)state->pSelf->pOwner398, &query, (void **)results);
         i = 0;
         if (n > 0) {
             do {

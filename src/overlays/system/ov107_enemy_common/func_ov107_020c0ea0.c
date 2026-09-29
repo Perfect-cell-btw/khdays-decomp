@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct Ov107Object Ov107Object;
 typedef struct Ov107Actor Ov107Actor;
@@ -82,10 +83,6 @@ extern int *List_Next(void *list);
 extern void VEC_Subtract(int *a, int *b, int *out);
 extern int FX_Sqrt(int x);
 extern int Ov107_FindNearestObject(Ov107Actor *actor, int *out);
-extern s16 Ov107_GetSlotCount(Ov107Object *self);
-extern int Ov107_Spawner_CountInactiveSlots(Ov107Object *self);
-extern void Ov107_Spawner_SetMoveAnim(Ov107Object *self, void *pAnim, int duration);
-extern int Ov107_TaskRunStep(int obj, int arg);
 extern void Ov107_Spawner_Run(Ov107Object *self, int arg);
 
 void func_ov107_020c0ea0(Ov107Object *self, int delta)
@@ -193,10 +190,10 @@ void func_ov107_020c0ea0(Ov107Object *self, int delta)
         return;
 
     if ((self->flags48 & 1) == 0 && self->field_f8 <= 0) {
-        if (Ov107_GetSlotCount(self) == Ov107_Spawner_CountInactiveSlots(self)) {
+        if (Ov107_GetSlotCount((char *)self) == Ov107_Spawner_CountInactiveSlots((char *)self)) {
             void (*callback)(Ov107Object *);
 
-            Ov107_Spawner_SetMoveAnim(self, 0, 0);
+            Ov107_Spawner_SetMoveAnim((char *)self, 0, 0);
             callback = self->callback44;
             if (callback != 0)
                 callback(self);

@@ -6,11 +6,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov258_SwingHitTest(int *node);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, u16 variant, void *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov258_SwingTick(void);
 
@@ -35,6 +35,6 @@ void Ov258_ThrowTick(int *node)
     }
     state[0xc] = 0;
     *(u16 *)(state + 0x14) = 1;
-    Ov107_PostTagUpdate(*state, 7, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov258_SwingTick);
 }

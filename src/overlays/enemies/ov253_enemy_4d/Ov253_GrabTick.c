@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -31,7 +32,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, const VecFx32 *push, int z);
 extern void VEC_Add(const void *a, const VecFx32 *b, void *out);
 extern void Ov022_ToggleBit13ByMode(int a, int b);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov253_020d497e;
 extern const VecFx32 data_02041dc8;
@@ -128,6 +128,6 @@ void Ov253_GrabTick(int *node)
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov253_CarryHoldTick);
         return;
     }
-    Ov107_PostTagUpdate(*state, 7, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov253_EnterReaction);
 }

@@ -4,12 +4,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 
 extern void Ov238_TurnVelocity(int *node, VecFx32 *vec);
 extern void Ov238_TimedCue(int *node, int ticks, int cue, int variant);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 
 void Ov238_LandingTick(int *node)
 {
@@ -21,7 +21,7 @@ void Ov238_LandingTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 1);
     *(u16 *)(*state + 0x1ae) |= 3;
     ((B8 *)(*(int *)(*state + 0x38c) + 8))->f &= ~1;
 }

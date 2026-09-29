@@ -8,12 +8,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov253Bounds { int lo[1]; int hi[4]; };
 
 extern int RandNextScaled(int scale);
-extern void Ov107_MoveNodeAndRelayout(int actor, const VecFx32 *pos);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct Ov253Bounds data_ov253_020d49cc;
@@ -56,13 +55,13 @@ void Ov253_TurnEnter(int *node) {
     pos = *(VecFx32 *)(item + 0xb0);
     pos.x += FX_Mul(data_0203d210[(sinIdx >> 4) << 1], scale);
     pos.z += FX_Mul(data_0203d210[((sinIdx >> 4) << 1) + 1], scale);
-    Ov107_MoveNodeAndRelayout(*state, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
     {
         u16 hw = *(u16 *)(*state + 0x60);
         *(u16 *)(*state + 0x60) = (hw & ~0xff00) |
             (((unsigned int)(unsigned short)((((unsigned int)hw << 0x10) >> 0x18) & ~0x82) << 0x18) >> 0x10);
     }
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     state[4] = state[5] = lo + RandNextScaled((span < 0 ? -span : span) + 1) + 0x3244;
     state[7] = 0;
     *((unsigned char *)state + 0x30) = 0;

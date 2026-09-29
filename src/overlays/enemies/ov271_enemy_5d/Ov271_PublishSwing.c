@@ -9,8 +9,10 @@
  * load lands one slot early.
  *
  * One of three byte-identical siblings. */
+
+#include "game/enemy_common.h"
+
 struct pt { unsigned short a, b; };
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov271_AimLeadTarget(int self);
 extern void Mtx33_LookAt(void *out, void *a, int b, void *c);
 extern void Quat_FromMtx33(void *a, void *b);
@@ -31,7 +33,7 @@ void Ov271_PublishSwing(int *self) {
     if (fp != 0) {
         fp(*state, &pt, 4);
     }
-    Ov107_PostTagUpdate(*state, 4, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 4, 1);
     state[0x14] = 0;
     Ov271_AimLeadTarget((int)self);
     Mtx33_LookAt(&buf, (void *)(state + 0xc), state[0x13], &data_02042264);

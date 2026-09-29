@@ -2,8 +2,10 @@
  * once (+0x65), reaction +0x3f8 (as a halfword) mode 0xb fires at the +4 point. Once the +0xc
  * idle byte clears, animation 0x11 plays, the flag clears and the tick hands over to
  * Ov255_StrikeTick. */
+
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov255_StrikeTick(int *node);
 
@@ -19,7 +21,7 @@ void Ov255_StrikeWindUpTick(int *node)
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x11, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x11, 0);
     *((unsigned char *)state + 0x65) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov255_StrikeTick);
 }

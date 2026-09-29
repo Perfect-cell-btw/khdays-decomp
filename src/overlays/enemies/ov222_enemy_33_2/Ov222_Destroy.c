@@ -1,9 +1,10 @@
 /* Frees the resource tables, destroys the model, the child selector and the eight attached
  * instances, then the base object. */
 
+#include "game/enemy_common.h"
+
 extern int FreeAllResourceTables();
 extern int DestroyInstance();
-extern int Ov107_ActionResource_Destroy();
 extern int Ov107_DestroyObject();
 
 struct Elem {
@@ -30,7 +31,7 @@ void Ov222_Destroy(struct Obj *r5)
     FreeAllResourceTables(&r5->field_388);
     r5->field_394 = 0;
     DestroyInstance(r5->field_384);
-    Ov107_ActionResource_Destroy(r5->field_3fc);
+    Ov107_ActionResource_Destroy((char *)r5->field_3fc);
 
     for (i = 0; i < 8; i++) {
         if (r5->arr[i].val != 0) {

@@ -9,6 +9,7 @@
  * 0x132. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
@@ -28,12 +29,10 @@ extern void Ov205_CreateRegistryEntryAndLink(void);
 extern void Ov205_OnHit(void);
 extern void Ov205_RequestSubState10IfNotState9(void);
 extern void Ov205_Model_SetTrack0(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern void *CallocInstance(int size);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern void Ov107_Actor_SetAttachSlot(char *self, int a, int b, VecFx32 *lift, int id);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
@@ -63,13 +62,13 @@ void Ov205_Construct(char *self)
     *(int *)(self + 0x64) = 0;
     *(int *)(self + 0x68) = 0x1000;
     *(int *)(self + 0x6c) = 0;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 1), data_ov205_020d72ec);
+    *(int *)(self + 0x390) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)((int)self), 1), data_ov205_020d72ec);
     *(void **)(self + 0x394) = CallocInstance(0x38);
     for (i = 0; i < 7; i++) {
         (*(struct Ov139SubitemSlot **)(self + 0x394))[i].pItem =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, pools.id[i]));
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), pools.id[i]));
         Ov107_EnqueueValue(self, (*(struct Ov139SubitemSlot **)(self + 0x394))[i].pItem);
         *(int *)((*(struct Ov139SubitemSlot **)(self + 0x394))[i].pItem + 0x5c) |= 2;
     }

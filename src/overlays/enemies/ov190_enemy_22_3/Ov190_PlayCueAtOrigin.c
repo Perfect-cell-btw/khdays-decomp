@@ -2,8 +2,8 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int a, int b, VecFx32 v, int d);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov190_PoseClearFields18ThenAdvance(void);
@@ -11,7 +11,7 @@ extern VecFx32 data_02041dc8;
 
 void Ov190_PlayCueAtOrigin(int self) {
     int *s = *(int **)(self + 4);
-    Ov107_PostTagUpdate(s[0], 0xb, 0);
+    Ov107_PostTagUpdate((Actor *)s[0], 0xb, 0);
     func_ov107_020c0b90(s[0], 5, data_02041dc8, 0);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), (void *)&Ov190_PoseClearFields18ThenAdvance);
 }

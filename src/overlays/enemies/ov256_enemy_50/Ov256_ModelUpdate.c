@@ -3,11 +3,11 @@
  * offset (x 512). Then the +0x450 part and the base update run. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern int queryTableEntry(int model, int track);
 extern int Obj_GetCellScaledField(int model, int track, int a);
 extern void callIfTableEntrySet(int model, int track, int frame);
-extern void Ov107_RefreshAndSelectChild(int part, int arg);
 extern void Ov107_ProcessObjectTick(char *self, int arg);
 
 void Ov256_ModelUpdate(char *self, int arg)

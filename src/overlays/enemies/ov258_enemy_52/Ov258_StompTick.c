@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { VecFx32 pos; VecFx32 axis[3]; int radius; int flag; } Cylinder;
@@ -21,7 +22,6 @@ extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int Ov258_AttackHitTest(int *node, void *sphere, void *box, void *capsule, void *cylinder, VecFx32 *push, int once, u16 effect, int kind);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int Ov258_PickMove(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
@@ -98,7 +98,7 @@ void Ov258_StompTick(int *node)
     }
     if (((NibblePair *)((u8 *)state + 0x52))->hi != 0) {
         ((NibblePair *)((u8 *)state + 0x52))->hi--;
-        Ov107_PostTagUpdate(*state, ((NibblePair *)((u8 *)state + 0x52))->hi == 1 ? 0xb : 0xe, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), ((NibblePair *)((u8 *)state + 0x52))->hi == 1 ? 0xb : 0xe, 0);
         func_ov107_020c0b90(*state, ((NibblePair *)((u8 *)state + 0x52))->hi == 1 ? 3 : 4, data_02041dc8, 0);
         return;
     }

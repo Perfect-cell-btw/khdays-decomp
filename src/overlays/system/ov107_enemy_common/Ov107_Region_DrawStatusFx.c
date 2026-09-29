@@ -3,6 +3,7 @@
 
 #include "nitro/fx_types.h"
 #include "game/actor.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     char pad0[0xc4];
@@ -18,7 +19,6 @@ typedef struct { int m[9]; } Mtx33;
 
 extern void *List_First(void *list);
 extern void *List_Next(void *list);
-extern void *func_ov107_020c9848(void);
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *src, VecFx32 *dst);
 extern void ScaleVec3Fx12(int factor, VecFx32 *src, VecFx32 *dst);

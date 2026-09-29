@@ -1,6 +1,7 @@
 /* After 0x3000 plays anim 10 and installs the queue-action-2 step. */
 
-extern void Ov107_PostTagUpdate(int obj, int tag1, int tag_lsb);
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov281_AiStep_QueueAction2OnAnimEnd_3(void);
 
@@ -9,6 +10,6 @@ void Ov281_AiDelayThenAnim10(char *obj) {
     int val = *(int *)(p + 0x18) + *(int *)(*(char **)obj + 0x2c);
     *(int *)(p + 0x18) = val;
     if (val < 0x3000) return;
-    Ov107_PostTagUpdate(*(int *)p, 10, 0);
+    Ov107_PostTagUpdate((Actor *)(*(int *)p), 10, 0);
     SetIndexedSlot(obj, *(signed char *)(obj + 0x20), Ov281_AiStep_QueueAction2OnAnimEnd_3);
 }

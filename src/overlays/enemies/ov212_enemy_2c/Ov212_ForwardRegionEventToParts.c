@@ -1,6 +1,8 @@
 /* Bind param_2 to the two sub-objects at (param_1)+0x5cc[0..1] and the one at +0x5d4,
  * then run the ov107 attach for the pair. */
-extern void Ov107_InitObjectFromSource(int a, int b);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_HandleRegionEvent(int a, int b);
 void Ov212_ForwardRegionEventToParts(int param_1, int param_2) {
     int i;

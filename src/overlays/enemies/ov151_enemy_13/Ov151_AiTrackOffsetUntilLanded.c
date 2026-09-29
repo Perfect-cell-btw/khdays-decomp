@@ -1,8 +1,9 @@
 /* Follows the owner-relative offset with damped velocity; once grounded after the flag clears
  * queues action 2. */
 
+#include "game/enemy_common.h"
+
 struct b1 { unsigned char b : 1; };
-extern int Ov107_ActionResource_GetOffsetAndScale(void *obj, int *vec);
 extern void Vec3TransformViaTempMtx(void *dst, void *mtx, int *vec);
 extern void ScaleVec3Fx12(int scale, void *v, void *out);
 extern void VEC_Add(void *a, void *b, void *out);
@@ -12,7 +13,7 @@ void Ov151_AiTrackOffsetUntilLanded(char *obj) {
     int *state = *(int **)(obj + 4);
     int vec[3];
     int scale;
-    scale = Ov107_ActionResource_GetOffsetAndScale(*(void **)(*state + 0x3cc), vec);
+    scale = Ov107_ActionResource_GetOffsetAndScale((int)(*(void **)(*state + 0x3cc)), (VecFx32 *)vec);
     Vec3TransformViaTempMtx((void *)(state + 6), (void *)(*state + 0xa0), vec);
     ScaleVec3Fx12(scale, (void *)(state + 6), (void *)(state + 6));
     VEC_Add((void *)(state + 6), (void *)(state + 9), (void *)(state + 6));

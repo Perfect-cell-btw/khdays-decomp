@@ -3,8 +3,8 @@
  * 020cf2c0. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov253_ChargeWaitTick(void);
@@ -13,7 +13,7 @@ void Ov253_ChargeEnter(int *node) {
     int *state = (int *)node[1];
 
     *(u16 *)(*state + 0x100 + 0xae) |= 1;
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     {
         u16 hw = *(u16 *)(*state + 0x60);
         *(u16 *)(*state + 0x60) = (hw & ~0xff00) |

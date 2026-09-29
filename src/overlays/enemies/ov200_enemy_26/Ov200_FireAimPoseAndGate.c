@@ -5,9 +5,11 @@
  * build the aim pose at state[0x25..] from data_02042264 and atan2(dir.x,dir.z) (0202f188), then copy
  * that 4-word pose down to state[0x21..] (field-to-field). Always hand off to the 020cfaec state.
  */
+
+#include "game/enemy_common.h"
+
 struct m4 { int w[4]; };
 struct S200 { char pad[0x84]; struct m4 dst; struct m4 src; };
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  func_020050b4(int x, int z);
 extern void QuatFromAxisAngle(void *dst, void *k, int angle);
@@ -19,7 +21,7 @@ void Ov200_FireAimPoseAndGate(int *self) {
     int *state = (int *)self[1];
     int v[3];
 
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     if (state[0x15] != 0) {
         VEC_Subtract((void *)(state[0x15] + 0x190), (void *)(*state + 0xb0), v);
         QuatFromAxisAngle((void *)(state + 0x25), &data_02042264, func_020050b4(v[0], v[2]));

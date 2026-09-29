@@ -1,6 +1,7 @@
 /* Plays looping anim 2, resets the part, rolls the move timer and installs the walk tick. */
 
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern void Ov240_startAnim();
 extern int RandNextScaled(int);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
@@ -8,7 +9,7 @@ extern void Ov240_WanderTick(void);
 
 void Ov240_AiEnterWalk(int *node) {
     int *state = (int *)node[1];
-    Ov107_PostTagUpdate(*state, 2, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 1);
     Ov240_startAnim(*state, 0);
     {
         int lo = *(int *)(*state + 0x224);

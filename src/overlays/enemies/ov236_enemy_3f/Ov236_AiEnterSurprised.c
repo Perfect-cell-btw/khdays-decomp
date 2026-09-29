@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     u16 soundId;
@@ -29,7 +30,6 @@ typedef struct {
     AI_TASK_FIELDS(Ov236Node)
 } Ov236Actor;
 
-extern void Ov107_PostTagUpdate(Ov236CueObject *object, int mode, int flag);
 extern void SetIndexedSlot(Ov236Actor *self, int index, void *callback);
 extern Ov236CueTable data_ov236_020d63c0;
 extern void Ov236_AiStartRollingCharge(void);
@@ -44,6 +44,6 @@ void Ov236_AiEnterSurprised(Ov236Actor *self) {
     if (playCue != 0) {
         playCue(node->object, &cue, sizeof(cue));
     }
-    Ov107_PostTagUpdate(node->object, 0xd, 0);
+    Ov107_PostTagUpdate((Actor *)node->object, 0xd, 0);
     SetIndexedSlot(self, self->slot, &Ov236_AiStartRollingCharge);
 }

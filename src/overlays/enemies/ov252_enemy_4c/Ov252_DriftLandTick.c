@@ -4,11 +4,10 @@
  * restart. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern int Ov252_GroundCheck(int *node);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_TickLand(void);
 
@@ -23,11 +22,11 @@ void Ov252_DriftLandTick(int *node)
         return;
     }
     if (Ov252_GroundCheck(node) != 0) {
-        Ov107_PostTagUpdate(*state, 0xf, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0xf, 0);
         Ov107_StartAnim(*(int *)(*state + 0x574), 0x14, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_TickLand);
     } else {
-        Ov107_PostTagUpdate(*state, 0xe, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0xe, 0);
         Ov107_StartAnim(*(int *)(*state + 0x574), 0x13, 0);
     }
 }

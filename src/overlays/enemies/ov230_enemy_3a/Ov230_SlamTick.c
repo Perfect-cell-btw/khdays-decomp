@@ -7,6 +7,9 @@
  * the owner's +0x180 point is kept at ctx+0x34 lowered to the +0x80 floor less 0x200, effect 6 spawns
  * there, animation 0x19 plays, reaction 0x147 mode 0xc fires at it, the +0x4c timer restarts and the
  * tick hands over to 020d5794. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int x, y, z; } Vec3;
 typedef struct { Vec3 pos; int radius; } Sphere;
 typedef struct { int m[9]; } Mtx33;
@@ -24,7 +27,6 @@ extern void MTX_MultVec33(const Vec3 *pIn, const Mtx33 *pMtx, Vec3 *pOut);
 extern void Ov230_SetTwoVecsAndFlag(int shard, Vec3 at, Vec3 dir);
 extern void Ov230_ContactSweep(int *ctx, int kind, Sphere *sphere, void *box);
 extern void func_ov107_020c0b90(int actor, int a, Vec3 v, int b);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int self, int action, void *cb);
 extern void Ov230_AiExpandingSweepTick(void);
@@ -103,7 +105,7 @@ void Ov230_SlamTick(int self)
     *(Vec3 *)((char *)ctx + 0x34) = *(Vec3 *)(ctx[0] + 0x180);
     ctx[0xe] -= *(int *)(ctx[0] + 0x80) - 0x200;
     func_ov107_020c0b90(ctx[0], 6, *(Vec3 *)((char *)ctx + 0x34), 0);
-    Ov107_PostTagUpdate(ctx[0], 0x19, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 0x19, 0);
     Ov107_BuildAndSendUpdate(ctx[0], 0x147, 0xc, (char *)ctx + 0x34);
     ctx[0x13] = 0;
     SetIndexedSlot(self, *(signed char *)(self + 0x20), Ov230_AiExpandingSweepTick);

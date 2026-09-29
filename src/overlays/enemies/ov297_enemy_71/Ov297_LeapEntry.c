@@ -2,9 +2,11 @@
  * bit 6 of the +0x60 high byte, plays animation 2 and its held-item counterpart, points the
  * +0x1c velocity along the facing of the +0x2c yaw at 0xe00, sets the +0x4c height to 0x500
  * and hands off to d4ef4. */
+
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void Ov297_MapHeldItemKindToAnim(int actor, int anim);
 extern void ScaleVec3Fx12(int scale, int *v, int *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -25,7 +27,7 @@ void Ov297_LeapEntry(int *node)
     hw = (unsigned short *)(*state + 0x60);
     h = *hw;
     *hw = h & ~0xff00 | (((((unsigned int)h << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10);
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     Ov297_MapHeldItemKindToAnim(*state, 2);
     idx = ANG2IDX(state[0xb]);
     state[7] = data_0203d210[idx * 2];

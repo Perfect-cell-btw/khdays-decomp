@@ -135,7 +135,7 @@ struct Actor {
     u8 field_19e;                   /* 0x19e */
     u8 field_19f;                   /* 0x19f */
     void *field_1a0;                /* 0x1a0 */
-    u8 pad1a4[4];
+    u32 texAddr;                    /* 0x1a4: its texture's VRAM address (Ov107_PackTextureHandle) */
     void *field_1a8;                /* 0x1a8 */
     u16 field_1ac;                  /* 0x1ac */
     u16 flags1ae;                   /* 0x1ae */
@@ -176,7 +176,8 @@ struct Actor {
     int field_254;                  /* 0x254 */
     int field_258;                  /* 0x258 */
     void *field_25c;                /* 0x25c */
-    u8 pad260[0x2c];
+    ActorList list260;              /* 0x260: Ov107_EnqueueValue queues values here */
+    u8 pad288[4];
     u8 pad28c[0x30];                /* 0x28c: eight 6-byte hit slots */
     s16 field_2bc[8];               /* 0x2bc */
     void *field_2cc;                /* 0x2cc */

@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int w[8]; } Pose32;
@@ -23,8 +24,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int queryTableEntry(int rig, int channel);
 extern void callIfTableEntrySet(int rig, int channel, int frame);
-extern void Ov107_UnlinkNodeFromOwner(int item);
-extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov237_Update(char *self)
 {
@@ -66,7 +65,7 @@ void Ov237_Update(char *self)
         callIfTableEntrySet(*(int *)(*(int *)(self + 0x4a4) + 0x3ac), 0, frame);
     }
     if (*(signed char *)(self + 0x1c6) != 9 && *(int *)(self + 0x498) != 0) {
-        Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x498));
+        Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x498)));
         *(int *)(self + 0x498) = 0;
     }
     for (k = 0; k < 2; k++) {

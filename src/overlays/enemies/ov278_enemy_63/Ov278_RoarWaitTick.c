@@ -6,13 +6,14 @@
  * and pose request 0xa is queued; otherwise, when the actor's +0x3bc bit 0 is set, the timer
  * and the +0x51 latch reset, pose 0x16 plays and the node moves to 020d0a80, else the +0x14 word
  * clears and pose request 2 is queued. */
+
+#include "game/enemy_common.h"
+
 struct Bits17a { unsigned char b0 : 1; };
 struct Bits3bc { unsigned char b0 : 1; };
 struct Flags3c0 { int b0 : 1; };
-extern void Ov107_SetStatusAndEmit(int obj, int mode);
 extern void Ov278_ReleaseRiderItems(int actor, int rider);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov278_RoarTick(void);
 
 void Ov278_RoarWaitTick(int *node) {
@@ -45,7 +46,7 @@ void Ov278_RoarWaitTick(int *node) {
     if (((struct Bits3bc *)(*state + 0x3bc))->b0 != 0) {
         state[0xa] = 0;
         *((unsigned char *)state + 0x51) = 0;
-        Ov107_PostTagUpdate(*state, 0x16, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x16, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov278_RoarTick);
         return;
     }

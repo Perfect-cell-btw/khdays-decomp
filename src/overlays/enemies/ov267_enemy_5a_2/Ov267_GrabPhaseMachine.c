@@ -6,10 +6,10 @@
  * back to phase 0. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct w8 { u32 lo : 8, rest : 24; };
 
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int b, void *at);
 
 void Ov267_GrabPhaseMachine(int *state)
@@ -34,7 +34,7 @@ void Ov267_GrabPhaseMachine(int *state)
         state[0x1c] = -1;
         return;
     case 2:
-        Ov107_PostTagUpdate(*state, 1, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
         Ov107_BuildAndSendUpdate(*state, 0x15e, 6, (void *)state[2]);
         state[0x1b] = 3;
         return;
@@ -47,7 +47,7 @@ void Ov267_GrabPhaseMachine(int *state)
         state[0x1b] = 1;
         return;
     case 4:
-        Ov107_PostTagUpdate(*state, 2, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
         Ov107_BuildAndSendUpdate(*state, 0x15e, 7, (void *)state[2]);
         ((struct w8 *)(*(int *)(*state + 0x4cc) + 8))->lo &= ~2;
         *(unsigned short *)(*state + 0x100 + 0xae) &= ~0x10;
@@ -57,7 +57,7 @@ void Ov267_GrabPhaseMachine(int *state)
         if (*(unsigned char *)(state[1] + 0xaf) != 0) {
             return;
         }
-        Ov107_PostTagUpdate(*state, 0, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
         state[0x1b] = 0;
         return;
     }

@@ -2,10 +2,11 @@
  * collision sphere, ov107. Returns what Ov107_UpdateCollisionSphere returns. */
 
 #include "nitro/fx_types.h"
+#include "game/actor.h"
+#include "game/enemy_common.h"
 
 extern void Srt_SetTranslation(void *sub, void *src);
-extern int Ov107_UpdateCollisionSphere(void *node);
-int Ov107_MoveNodeAndRelayout(char *node, VecFx32 *v) {
-    Srt_SetTranslation(node + 0xa0, v);
-    return Ov107_UpdateCollisionSphere(node);
+int Ov107_MoveNodeAndRelayout(Actor *node, VecFx32 *v) {
+    Srt_SetTranslation(&node->srt, v);
+    return Ov107_UpdateCollisionSphere((int)node);
 }

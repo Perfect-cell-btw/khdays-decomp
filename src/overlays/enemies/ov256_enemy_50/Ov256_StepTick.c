@@ -5,11 +5,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
 extern int RandNextScaled(int n);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_WalkTick(void);
 
@@ -27,7 +26,7 @@ void Ov256_StepTick(int *node)
     state[0x13] = 0;
     *((u8 *)state + 0x69) = 0;
     *((signed char *)state + 0x70) = RandNextScaled(2) == 0 ? 1 : -1;
-    Ov107_PostTagUpdate(*state, 1, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
     Ov107_StartAnim(*(int *)(*state + 0x450), 0, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov256_WalkTick);
 }

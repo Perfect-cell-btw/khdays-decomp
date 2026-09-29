@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int w[11]; } SrtTransform;
@@ -33,7 +34,6 @@ extern void Ov230_RebindClip(void);
 extern void Ov230_RequestSubState12IfNotCurrent(void);
 extern void Ov230_RequestSubState13IfIdle(void);
 extern void Ov230_SyncEffectNodesToJoints(void);
-extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Snd_RegisterSeqAndBind(void *dst, int a, void *b, int n);
@@ -42,8 +42,6 @@ extern int FindResourceIndexByName(int item, const char *name);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void SrtTransform_SetIdentity(void *transform);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
-extern char *func_ov107_020c9848(void);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern void NNS_G3dMdlSetMdlPolygonID(int a, int b, int c);
 extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, const VecFx32 *v, int c);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);

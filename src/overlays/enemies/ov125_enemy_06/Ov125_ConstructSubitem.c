@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     VecFx32 vPos;
@@ -40,7 +41,6 @@ typedef struct {
     int owner_038c;
 } Ov125Object;
 
-extern void *Ov107_PackTextureHandle(int owner, int index);
 extern void *CreateSubitemInstance0xB4(void *item);
 extern void RegisterSubscriberSlot(void *subscriber, void *item);
 extern void SetSubitemState(void *item, int state, int zero, int enabled);
@@ -67,7 +67,7 @@ void Ov125_ConstructSubitem(Ov125Object *self) {
     v = self->flags_0060;
     self->flags_0060 =
         (u16)((v & ~0xff00) | (((((u32)v << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10));
-    self->subitem_0384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self->owner_038c, 2));
+    self->subitem_0384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self->owner_038c, 2));
     RegisterSubscriberSlot(self->subscriber_009c, self->subitem_0384);
     SetSubitemState(self->subitem_0384, 0, 0, 1);
     RefreshObjectCallbacks(self->subitem_0384, 0);

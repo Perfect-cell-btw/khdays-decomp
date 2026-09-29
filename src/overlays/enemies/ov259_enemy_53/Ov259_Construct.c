@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[13]; } IdTable13;
@@ -26,14 +27,12 @@ extern void Ov259_NotifyPartsThenBase(void);
 extern void Ov259_OnHit(void);
 extern void Ov259_SetPose(void);
 extern void Ov259_ModelAnimTick(void);
-extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Snd_RegisterSeqAndBind(void *dst, int a, void *b, int n);
 extern void MainBlob_ResetSlotRows(int obj, void *block);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *pose);
 extern int Ov259_New(char *self);

@@ -10,6 +10,7 @@
  * x / +0x24 z while its y sinks by the probe and the +4 sub-object follows. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int q[4]; } Quat;
 typedef struct { VecFx32 origin; VecFx32 dir; int nLength; int nRadius; } Segment;
@@ -27,7 +28,6 @@ extern void Srt_SetTranslation(void *transform, const VecFx32 *translation);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern int Ov107_CollectSegmentOverlaps(int owner, Segment *query, int *results);
 extern int Segment_ClosestPoint(VecFx32 *point, Segment *seg, fx64 *outDist);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov158_EnterGroundDrop(int *node);
@@ -73,7 +73,7 @@ void Ov158_DescentTick(int *node)
     seg.origin = *(VecFx32 *)(state + 4);
     seg.nLength = VEC_Normalize(&down, &seg.dir);
     seg.nRadius = 0x400;
-    n = Ov107_CollectSegmentOverlaps(*state, &seg, results);
+    n = Ov107_CollectSegmentOverlaps((Actor *)(*state), &seg, (void **)results);
     if (n != 0) {
         best = 0x7fffffffffffffffLL;
         for (i = 0; i < n; i++) {

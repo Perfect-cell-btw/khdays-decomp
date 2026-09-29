@@ -8,6 +8,7 @@
  * one of them) or 0, sub-state 4 is requested and the state ends. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
@@ -16,7 +17,6 @@ extern int Ov276_IdleCountdown(int *node, int dist);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern signed char Ov002_GetCtxModeByte(void);
 extern int RandNextScaled(int range);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 
 void Ov276_IdleTick(int *node)
 {
@@ -61,6 +61,6 @@ void Ov276_IdleTick(int *node)
 reset:
     state[0x13] = 0;
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 1, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
     }
 }

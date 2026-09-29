@@ -5,10 +5,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov237_ChargeRelease(int *node);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, int at);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov237_SweepTick(void);
@@ -23,7 +23,7 @@ void Ov237_ChargeRepeatTick(int *node)
     }
     if (state[0xd] == 0) {
         state[0xc] = 0;
-        Ov107_PostTagUpdate(*state, 0x18, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x18, 0);
         if (*(u8 *)(*state + 0x49e) != 3) {
             func_ov107_020c0b90(*state, 0xc, *(VecFx32 *)state[0xe], 0);
         }
@@ -32,7 +32,7 @@ void Ov237_ChargeRepeatTick(int *node)
     }
     state[0xd]--;
     Ov107_BuildAndSendUpdate(*state, 0x12d, 10, state[0xe]);
-    Ov107_PostTagUpdate(*state, 0x17, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x17, 0);
     if (*(u8 *)(*state + 0x49e) == 3) {
         return;
     }

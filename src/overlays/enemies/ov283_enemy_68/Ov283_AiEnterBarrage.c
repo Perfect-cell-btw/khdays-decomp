@@ -1,6 +1,8 @@
 /* Posts the item update 0x173/7, plays anim 9, resets the barrage state and installs the barrage
  * tick. */
 
+#include "game/enemy_common.h"
+
 typedef struct { int a, b, c; } Blk12;
 
 typedef struct {
@@ -24,7 +26,6 @@ typedef struct {
 } Self;
 
 extern int Ov283_PostItemUpdate(int, int, int, int);
-extern int Ov107_PostTagUpdate(int, int, int);
 extern void SetIndexedSlot(int *a, int i, int v);
 extern Blk12 data_02041dc8;
 extern void Ov283_VolleyCloseTick(void);
@@ -33,7 +34,7 @@ void Ov283_AiEnterBarrage(Self *self) {
     Ctx *ctx = self->ctx;
 
     Ov283_PostItemUpdate(ctx->p0, 0x173, 7, ctx->f8);
-    Ov107_PostTagUpdate(ctx->p0, 9, 0);
+    Ov107_PostTagUpdate((Actor *)ctx->p0, 9, 0);
 
     ctx->f68 = 0;
     ctx->f6c = 0;

@@ -2,10 +2,11 @@
  * gives the ROM's lsl#24/lsr#24 before the test; a plain `*(u16 *)(self+0x60) & 1` folds
  * to `tst #1` and is 8 B short. The state check is four explicit `!=` comparisons, not
  * `> 1`, and both byte reads are SIGNED (ldrsb). */
+
+#include "game/enemy_common.h"
+
 struct Hw60 { unsigned short lo : 8, hi : 8; };
 extern void TaskList_FinishByTag(int a, int b);
-extern void Ov107_UnlinkNodeFromOwner(int node);
-extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov197_ReleaseAttachmentsOnStop(int self) {
     if ((*(unsigned char *)(self + 0x1c4) & 0xa) != 0) {
@@ -17,7 +18,7 @@ void Ov197_ReleaseAttachmentsOnStop(int self) {
             signed char s = *(signed char *)(self + 0x1c6);
             if (s != 0 && s != 1 && s != 3 && s != 6) {
                 if (*(int *)(self + 0x3ec) != 0) {
-                    Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3ec));
+                    Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x3ec)));
                     *(int *)(self + 0x3ec) = 0;
                 }
                 *(signed char *)(self + 0x1c7) = 6;
@@ -26,7 +27,7 @@ void Ov197_ReleaseAttachmentsOnStop(int self) {
     }
     if ((((struct Hw60 *)(self + 0x60))->lo & 1) == 0) {
         if (*(int *)(self + 0x3ec) != 0) {
-            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3ec));
+            Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x3ec)));
             *(int *)(self + 0x3ec) = 0;
         }
         if (*(int *)(self + 0x3f4) != 0) {
@@ -34,5 +35,5 @@ void Ov197_ReleaseAttachmentsOnStop(int self) {
             *(int *)(self + 0x3f4) = 0;
         }
     }
-    Ov107_AiState_PostTickBase(self);
+    Ov107_AiState_PostTickBase((char *)self);
 }

@@ -5,8 +5,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -25,7 +25,7 @@ void Ov254_JumpEntry(int *node)
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0xce) << 0x18) >> 0x10);
     }
     *(u16 *)(*state + 0x100 + 0xae) |= 1;
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     Ov107_BuildAndSendUpdate(*state, 0x16d, 9, (void *)state[6]);
     Vec3TransformViaTempMtx(&dir, state + 2, &data_02042258);
     state[7] = (int)((*(long long *)(state + 10) * dir.x + 0x80000000LL) >> 32);

@@ -9,11 +9,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Bit0 { unsigned char b0 : 1; };
 
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int FX_Div(int num, int den);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
@@ -41,7 +41,7 @@ void Ov245_GlideTick(int *node) {
     }
     if (state[4] < 0 && ((struct Bit0 *)(*state + 0x17a))->b0) {
         if (state[0xb] < 0x80 && *(unsigned char *)(state[1] + 0xad) == 0) {
-            Ov107_PostTagUpdate(*state, 1, 1);
+            Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
             *(VecFx32 *)(state + 3) = data_02041dc8;
             state[9] = 0;
             SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_Thrown_AiTimeoutTick);

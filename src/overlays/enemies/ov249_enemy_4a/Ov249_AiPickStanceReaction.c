@@ -11,6 +11,7 @@
  * parks 2 in ctx[0]+0x1c7 and re-enters with no callback, i.e. gives up. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     int m[9];
@@ -18,7 +19,6 @@ typedef struct {
 
 extern int Ov249_MeasureTargetGap(int self);
 extern void SetIndexedSlot(int self, int action, void *cb);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov249_startAnim(int owner, int a);
 extern void Ov249_AiStanceMoveTick(void);
 extern void MTX_RotY33_(MtxFx33 *mtx, int sinVal, int cosVal);
@@ -39,15 +39,15 @@ void Ov249_AiPickStanceReaction(int self) {
     if (*(unsigned char *)(ctx[1] + 0xad) == 0) {
         switch (ctx[0x17]) {
         case 0:
-            Ov107_PostTagUpdate(ctx[0], 3, 0);
+            Ov107_PostTagUpdate((Actor *)ctx[0], 3, 0);
             Ov249_startAnim(ctx[0], 2);
             break;
         case 2:
-            Ov107_PostTagUpdate(ctx[0], 9, 0);
+            Ov107_PostTagUpdate((Actor *)ctx[0], 9, 0);
             Ov249_startAnim(ctx[0], 7);
             break;
         case 3:
-            Ov107_PostTagUpdate(ctx[0], 6, 0);
+            Ov107_PostTagUpdate((Actor *)ctx[0], 6, 0);
             Ov249_startAnim(ctx[0], 5);
             break;
         default:

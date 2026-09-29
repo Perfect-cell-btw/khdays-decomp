@@ -6,13 +6,13 @@
  * the tick hands over to Ov233_AiDashWindup. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 typedef struct { unsigned int lo : 8, rest : 24; } Byte8;
 
 extern int func_020050b4(int x, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov233_AiDashWindup(int *node);
@@ -29,7 +29,7 @@ void Ov233_EnterDash(int *node)
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x8c;
     ((Byte8 *)(*(int *)(*state + 0x388) + 8))->lo |= 1;
     Ov107_BuildAndSendUpdate(state[0], 0x164, 0xd, (void *)state[1]);
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     func_ov107_020c0b90(*state, 0, *(VecFx32 *)(*state + 0x74), 0);
     state[8] = 0;
     state[9] = 0xc0;

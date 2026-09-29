@@ -9,6 +9,7 @@
  * after 10.0 (15.0 guarded), clears +0x588, plays pose 0x1c and moves on to 020d0220; else pose 0x1b. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
@@ -17,7 +18,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int RandNextScaled(int bound);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int Ov252_HeadingDelta(int *node, VecFx32 *v, int angle, int wantAbs);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_IdleDecide(void);
 extern const short data_0203d210[];
@@ -98,9 +98,9 @@ void Ov252_BarrageTick(int *node)
     Ov252_HeadingDelta(node, &d, state[0x15], 1);
     if ((state[0x2b] == 0 && state[0x1a] >= 0xa000) || (state[0x2b] != 0 && state[0x1a] >= 0xf000)) {
         *(int *)(*state + 0x588) = 0;
-        Ov107_PostTagUpdate(*state, 0x1c, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1c, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_IdleDecide);
     } else {
-        Ov107_PostTagUpdate(*state, 0x1b, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1b, 0);
     }
 }

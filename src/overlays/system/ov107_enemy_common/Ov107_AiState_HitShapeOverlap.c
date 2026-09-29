@@ -17,6 +17,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct Segment {
     VecFx32 p0;
@@ -67,7 +68,6 @@ extern fx32 OBB_DistSqToPoint(VecFx32 *point, Box *box, fx32 *outX, fx32 *outY, 
 extern fx32 Capsule_ClosestToBox(Segment *seg, Box *box, fx32 *outDist,
                           fx32 *outX, fx32 *outY, fx32 *outZ);
 extern int OBB_Intersect(Box *a, Box *b);
-extern void Ov107_ApplySeparationPush(fx32 depth, VecFx32 *dir, AiState *a, AiState *b);
 
 int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
 {
@@ -108,7 +108,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
                     dist = VEC_Normalize(&delta, &delta);
                     reach = a->sphereRadius + b->sphereRadius;
                     if (dist <= reach) {
-                        Ov107_ApplySeparationPush(reach - dist, &delta, self, other);
+                        Ov107_ApplySeparationPush(reach - dist, &delta, (Actor *)self, (Actor *)other);
                         return 1;
                     }
                     break;
@@ -130,7 +130,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
                         VEC_Add(&b->capsuleAxis.p0, &point, &point);
                         VEC_Subtract(&a->sphereCenter, &point, &delta);
                         VEC_Normalize(&delta, &delta);
-                        Ov107_ApplySeparationPush(dist, &delta, self, other);
+                        Ov107_ApplySeparationPush(dist, &delta, (Actor *)self, (Actor *)other);
                         return 1;
                     }
                     break;
@@ -153,7 +153,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
                         boxPoint.z = z;
                         VEC_Subtract(&a->sphereCenter, &boxPoint, &delta);
                         VEC_Normalize(&delta, &delta);
-                        Ov107_ApplySeparationPush(depth, &delta, self, other);
+                        Ov107_ApplySeparationPush(depth, &delta, (Actor *)self, (Actor *)other);
                         return 1;
                     }
                     break;
@@ -190,7 +190,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
                         VEC_Add(&a->capsuleAxis.p0, &point, &point);
                         VEC_Subtract(&point, &b->sphereCenter, &delta);
                         VEC_Normalize(&delta, &delta);
-                        Ov107_ApplySeparationPush(dist, &delta, self, other);
+                        Ov107_ApplySeparationPush(dist, &delta, (Actor *)self, (Actor *)other);
                         return 1;
                     }
                     break;
@@ -218,7 +218,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
                         VEC_Add(&b->capsuleAxis.p0, &pointB, &pointB);
                         VEC_Subtract(&pointA, &pointB, &delta);
                         VEC_Normalize(&delta, &delta);
-                        Ov107_ApplySeparationPush(dist, &delta, self, other);
+                        Ov107_ApplySeparationPush(dist, &delta, (Actor *)self, (Actor *)other);
                         return 1;
                     }
                     break;
@@ -245,7 +245,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
                         VEC_Add(&a->capsuleAxis.p0, &point, &point);
                         VEC_Subtract(&boxPoint, &point, &delta);
                         VEC_Normalize(&delta, &delta);
-                        Ov107_ApplySeparationPush(depth, &delta, self, other);
+                        Ov107_ApplySeparationPush(depth, &delta, (Actor *)self, (Actor *)other);
                         return 1;
                     }
                     break;
@@ -283,7 +283,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
                         boxPoint.z = z;
                         VEC_Subtract(&boxPoint, &b->sphereCenter, &delta);
                         VEC_Normalize(&delta, &delta);
-                        Ov107_ApplySeparationPush(depth, &delta, self, other);
+                        Ov107_ApplySeparationPush(depth, &delta, (Actor *)self, (Actor *)other);
                         return 1;
                     }
                     break;
@@ -310,7 +310,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
                         VEC_Add(&b->capsuleAxis.p0, &point, &point);
                         VEC_Subtract(&boxPoint, &point, &delta);
                         VEC_Normalize(&delta, &delta);
-                        Ov107_ApplySeparationPush(depth, &delta, self, other);
+                        Ov107_ApplySeparationPush(depth, &delta, (Actor *)self, (Actor *)other);
                         return 1;
                     }
                     break;
@@ -333,7 +333,7 @@ int Ov107_AiState_HitShapeOverlap(AiState *self, AiState *other)
                         pointB.y = y;
                         pointB.z = z;
                         VEC_Subtract(&pointB, &pointA, &delta);
-                        Ov107_ApplySeparationPush(VEC_Normalize(&delta, &delta), &delta, self, other);
+                        Ov107_ApplySeparationPush(VEC_Normalize(&delta, &delta), &delta, (Actor *)self, (Actor *)other);
                         return 1;
                     }
                     break;

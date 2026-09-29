@@ -3,8 +3,8 @@
  * byte, plays pose 0 and moves the node to 020d24bc. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_Variant_AiVolleyStart(void);
 
@@ -22,6 +22,6 @@ void Ov245_ChargeUpTick_2(int *node) {
         *(u16 *)(*state + 0x60) = (hw & ~0xff00) |
             ((((((unsigned int)hw << 0x10) >> 0x18) | 1) << 0x18) >> 0x10);
     }
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_Variant_AiVolleyStart);
 }

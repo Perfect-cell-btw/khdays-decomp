@@ -8,6 +8,7 @@
  * it when a plain form that reproduces the stack store is found. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef union {
     s16 value;
@@ -75,7 +76,6 @@ typedef struct {
     u32 field_7c;
 } Manager;
 
-extern Manager *func_ov107_020c9848(void);
 extern void *Archive_LoadFile(u32 resource, int kind);
 extern void NNSi_FndFreeFromDefaultHeap(void *user_ptr);
 

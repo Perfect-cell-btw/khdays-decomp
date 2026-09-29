@@ -1,6 +1,7 @@
 /* Passes the event to the child object (+0x3a0), then to the base region-event handler. */
 
-extern int Ov107_InitObjectFromSource();
+#include "game/enemy_common.h"
+
 extern int Ov107_HandleRegionEvent();
 
 int Ov137_ForwardEventToChild(int *r0, int r1) {

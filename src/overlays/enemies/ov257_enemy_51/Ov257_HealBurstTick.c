@@ -2,6 +2,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 lo; u16 hi; } Cmd4;
@@ -24,8 +25,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov257_020d32be;
 extern const Cmd4 data_ov257_020d325c[];
@@ -123,7 +122,7 @@ void Ov257_HealBurstTick(int *node)
             (*(void (**)(int, Cmd4 *, int))(*state + 0x24))(*state, &note, 4);
         }
         ((struct Nibbles *)*(int *)(*state + 0x3fc))->hi &= ~1;
-        Ov107_PostTagUpdate(*state, 0x1a, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1a, 0);
         Ov107_StartAnim(*(int *)(*state + 0x3d0), 0x17, 0);
         if (*((u8 *)state + 0x7a) == 2) {
             state[0x1f] = 0;
@@ -135,7 +134,7 @@ void Ov257_HealBurstTick(int *node)
         return;
     }
     ((struct Nibbles *)*(int *)(*state + 0x3fc))->hi &= ~1;
-    Ov107_PostTagUpdate(*state, 0x1a, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1a, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3d0), 0x17, 0);
     *(u16 *)(*state + 0x1ae) &= ~1;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov257_GlideTick);

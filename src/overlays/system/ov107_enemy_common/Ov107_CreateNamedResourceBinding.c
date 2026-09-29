@@ -2,12 +2,12 @@
  * resource. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern void *CallocInstance(u32 size);
 extern void *CreateSubitemInstance0xB4(void *arg0);
 extern void RefreshObjectCallbacks(int *ptr, int arg);
 extern int FindResourceIndexByName(void *a0, void *a1);
-extern void Ov107_TrackJointMotion(void);
 
 typedef struct Ov107_9e50_Inner {
     char pad[0x6c];

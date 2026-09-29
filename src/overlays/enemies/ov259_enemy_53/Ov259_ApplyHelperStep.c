@@ -2,9 +2,9 @@
  * (020c5c54) and the step resets. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern const VecFx32 data_02041dc8;
 
 void Ov259_ApplyHelperStep(int *node)
@@ -13,6 +13,6 @@ void Ov259_ApplyHelperStep(int *node)
     VecFx32 at;
 
     VEC_Add((VecFx32 *)(*state + 0xb0), (VecFx32 *)(state + 3), &at);
-    Ov107_MoveNodeAndRelayout(*state, &at);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &at);
     *(VecFx32 *)(state + 3) = data_02041dc8;
 }

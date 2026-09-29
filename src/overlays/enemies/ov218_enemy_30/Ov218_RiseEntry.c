@@ -5,11 +5,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov218_ShotBounceTick(void);
@@ -32,7 +32,7 @@ void Ov218_RiseEntry(int *node)
     ((B8 *)(*(int *)(*state + 0x388) + 8))->f |= 1;
     *(int *)(*state + 0x394) = 1;
     func_ov107_020c0b90(*state, 1, data_02041dc8, 0);
-    Ov107_PostTagUpdate(*state, 0, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 1);
     *(VecFx32 *)(state + 0xa) = *(VecFx32 *)(*state + 0x3ac);
     ScaleVec3Fx12(0x800, (VecFx32 *)(state + 0xa), (VecFx32 *)(state + 4));
     state[0xe] = 0x200;

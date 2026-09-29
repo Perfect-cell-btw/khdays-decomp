@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { int q[4]; } Quat;
@@ -37,7 +38,6 @@ struct Ov223Hit { char pad000[2]; u16 nKind; char pad004[0x70]; VecFx32 vOrigin7
     (msg).pos[(at) + 1] = (u8)((u32)(dead).value >> 8);                       \
     (msg).pos[(at) + 2] = (u8)(dead).value
 
-extern int Ov107_CollectSegmentOverlaps(int item, Segment *query, struct Ov223Hit **results);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern struct CollisionHit *Collision_CastSphereEx(void *collision, VecFx32 *origin, VecFx32 *dir, int radius, void *ignore);
 extern void ScaleVec3Fixed27(int scale, VecFx32 *in, VecFx32 *out);
@@ -72,7 +72,7 @@ void Ov223_StrikeSweep(int *node, Sphere *pSphere, Segment *pSeg)
         {
         HitMsg msg = {0};
         p = (u16 *)&msg;
-        n = Ov107_CollectSegmentOverlaps(*(int *)(*state + 0x38c), pSeg, hits);
+        n = Ov107_CollectSegmentOverlaps((Actor *)(*(int *)(*state + 0x38c)), pSeg, (void **)hits);
         p[0] = *(u16 *)(*state + 2);
         ((u8 *)p)[2] = 5;
         ((u8 *)p)[3] = 2;

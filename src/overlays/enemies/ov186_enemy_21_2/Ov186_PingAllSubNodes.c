@@ -2,7 +2,9 @@
  * Ov186_PingAllSubNodes -- x3 (ov185/186/187). Ping all 4 sub-nodes, then tick the owner.
  * For i in 0..3, call 020c2b38(arg, (*(self+0x390))[i]); finish with 020c7c1c(self, arg).
  */
-extern void Ov107_InvokeSlot0x74(int owner, int node);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_Actor_DetachFromRegion(int self, int arg);
 
 void Ov186_PingAllSubNodes(int self, int arg) {

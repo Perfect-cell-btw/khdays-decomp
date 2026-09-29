@@ -9,10 +9,10 @@
  * short. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ctx2 { char pad[0x40]; VecFx32 arr[3]; };
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *self, int idx, void *cb);
 extern void Ov266_TrailTick(void);
 
@@ -29,6 +29,6 @@ void Ov266_EnterTrackState(void *self) {
     for (; i < 3; i++) {
         ((struct Ctx2 *)ctx)->arr[i] = *(VecFx32 *)ctx[1];
     }
-    Ov107_PostTagUpdate(*ctx, 0, 1);
+    Ov107_PostTagUpdate((Actor *)(*ctx), 0, 1);
     SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), Ov266_TrailTick);
 }

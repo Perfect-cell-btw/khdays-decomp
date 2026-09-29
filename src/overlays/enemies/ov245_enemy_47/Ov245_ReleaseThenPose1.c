@@ -3,10 +3,10 @@
  * and moves the node to 020d51d8. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_FireAttack1(void);
@@ -18,7 +18,7 @@ void Ov245_ReleaseThenPose1(int *node) {
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 1, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
     func_ov107_020c0b90(*state, 0, *(VecFx32 *)state[2], 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_FireAttack1);
 }

@@ -2,15 +2,14 @@
  * +0x70 height, the +0x398 goal to the second point, and bit 0 of the +0x60 high byte is raised. */
 
 #include "nitro/fx_types.h"
-
-extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *v);
+#include "game/enemy_common.h"
 
 void Ov249_SetPlacement(int self, VecFx32 pos, VecFx32 goal)
 {
     VecFx32 at = pos;
 
     at.y += *(int *)(self + 0x70);
-    Ov107_MoveNodeAndRelayout(self, &at);
+    Ov107_MoveNodeAndRelayout((Actor *)self, &at);
     *(VecFx32 *)(self + 0x398) = goal;
     {
         unsigned short hv = *(unsigned short *)(self + 0x60);

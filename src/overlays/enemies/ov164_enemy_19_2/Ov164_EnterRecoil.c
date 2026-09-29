@@ -10,9 +10,9 @@
  * loads pair up with their stores and the order flips. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void func_02031384(int a, void *p, int c);
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov164_TickRecoil(void);
 extern unsigned short data_ov164_020d2c88[];
@@ -30,7 +30,7 @@ void Ov164_EnterRecoil(int *node) {
     buf = *(Ov163Pair *)(data_ov164_020d2c88 + 2);
     buf.a = *(unsigned short *)(state[0] + 2);
     func_02031384(4, &buf, 4);
-    Ov107_PostTagUpdate(state[0], 7, 1);
+    Ov107_PostTagUpdate((Actor *)state[0], 7, 1);
     *(int *)(state[0] + 0x3cc) &= ~1;
     *(VecFx32 *)(state + 9) = *(VecFx32 *)data_02041dc8;
     state[0x1a] = 0;

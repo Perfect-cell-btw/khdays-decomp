@@ -1,12 +1,11 @@
 /* Post-tick: outside action 1 unlinks the attachment at +0x38c; then runs the base post-tick. */
 
-extern void Ov107_UnlinkNodeFromOwner();
-extern void Ov107_AiState_PostTickBase();
+#include "game/enemy_common.h"
 
 void Ov178_ReleaseField38cUnlessState1ThenAdvance(int this_) {
     if (*(signed char *)(this_ + 0x1c6) != 1 && *(int *)(this_ + 0x38c) != 0) {
-        Ov107_UnlinkNodeFromOwner(*(int *)(this_ + 0x38c));
+        Ov107_UnlinkNodeFromOwner((void *)(*(int *)(this_ + 0x38c)));
         *(int *)(this_ + 0x38c) = 0;
     }
-    Ov107_AiState_PostTickBase(this_);
+    Ov107_AiState_PostTickBase((char *)this_);
 }

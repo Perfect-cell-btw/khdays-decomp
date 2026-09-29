@@ -3,9 +3,9 @@
  * Past 0x550 the timer restarts, pose 0x1b plays and the node moves on to 020cfce4. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_AiFinisherTick(void);
 
@@ -25,6 +25,6 @@ void Ov259_DownTick(int *node)
         return;
     }
     state[0x1a] = 0;
-    Ov107_PostTagUpdate(*state, 0x1b, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1b, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov259_AiFinisherTick);
 }

@@ -4,13 +4,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Flag17a { u8 b0 : 1; };
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_TickFall(void);
 extern const short data_0203d210[];
@@ -33,6 +33,6 @@ void Ov260_FallTick(int *node)
     if (!((struct Flag17a *)(*state + 0x17a))->b0 && *(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x10, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x10, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov260_TickFall);
 }

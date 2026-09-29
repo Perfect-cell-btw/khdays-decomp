@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { VecFx32 min; VecFx32 max; } Box;
@@ -26,14 +27,11 @@ extern void Ov146_OnDamage(void);
 extern void Ov146_BindMotion(void);
 extern void Ov146_RequestSubState10IfNotCurrent(void);
 extern void Ov146_RequestSubState11IfIdle(void);
-extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
 extern void Snd_RegisterSeqAndBind(void *track, int model, void *resource, int slot);
 extern void MainBlob_ResetSlotRows(int item, void *track);
-extern int func_ov107_020c9848(void);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern void Ov107_Actor_SetAttachSlot(char *self, int action, int a, int b, int scale);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(Pose *pose);

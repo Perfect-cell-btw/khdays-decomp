@@ -10,12 +10,12 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct b17a { unsigned char b0 : 1; };
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern void Vec3TransformViaTempMtx(void *dst, void *src, void *m);
 extern int  VEC_DotProduct(void *a, void *b);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int  func_020050b4(int x, int z);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov211_AiLandPickNext(void);
@@ -32,14 +32,14 @@ void Ov211_PickMeleeReaction(int self) {
         Vec3TransformViaTempMtx(&w, (void *)(*state + 0xa0), &data_02042258);
         if (VEC_DotProduct(&v, &w) > 0) {
             if (((struct b17a *)(*state + 0x17a))->b0) {
-                Ov107_PostTagUpdate(*state, 2, 0);
+                Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
                 a = func_020050b4(v.x, v.z);
                 state[10] = a;
                 state[9] = a;
                 SetIndexedSlot(self, *(signed char *)(self + 0x20), (int)&Ov211_AiLandPickNext);
                 return;
             }
-            Ov107_PostTagUpdate(*state, 4, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 4, 0);
             a = func_020050b4(v.x, v.z);
             state[10] = a;
             state[9] = a;
@@ -47,20 +47,20 @@ void Ov211_PickMeleeReaction(int self) {
             return;
         }
         if (((struct b17a *)(*state + 0x17a))->b0) {
-            Ov107_PostTagUpdate(*state, 3, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
             a = func_020050b4(v.x, v.z) + 0x3244;
             state[10] = a;
             state[9] = a;
             SetIndexedSlot(self, *(signed char *)(self + 0x20), (int)&Ov211_AiLandPickNext);
             return;
         }
-        Ov107_PostTagUpdate(*state, 5, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
         a = func_020050b4(v.x, v.z) + 0x3244;
         state[10] = a;
         state[9] = a;
         SetIndexedSlot(self, *(signed char *)(self + 0x20), (int)&Ov211_AiLandPickNext);
         return;
     }
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), (int)&Ov211_AiLandPickNext);
 }

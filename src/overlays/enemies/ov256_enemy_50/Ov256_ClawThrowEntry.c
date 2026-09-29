@@ -3,9 +3,9 @@
  * 2.19 above that point (020d0334), the counter grows and the node moves on to 020cfe2c. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov256_PickTarget(int *node);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov256_InvokeHookAndRearm2(int claw, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -19,7 +19,7 @@ void Ov256_ClawThrowEntry(int *node)
     at = *(VecFx32 *)state[3];
     at.y += 0x2300;
     Ov256_PickTarget(node);
-    Ov107_PostTagUpdate(*state, 7, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
     func_ov107_020c0b90(*state, 4, *(VecFx32 *)state[3], 2);
     Ov256_InvokeHookAndRearm2(*(int *)(*state + state[0x15] * 4 + 0x43c), &at);
     state[0x15]++;

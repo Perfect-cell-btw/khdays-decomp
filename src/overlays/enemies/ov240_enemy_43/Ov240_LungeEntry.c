@@ -4,12 +4,12 @@
  * animation 4 plays, the +0x38 timer and +0x3e flag reset and the tick hands off to cf0c8. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void Ov240_LungeTick(int *node);
 
 void Ov240_LungeEntry(int *node)
@@ -29,7 +29,7 @@ void Ov240_LungeEntry(int *node)
         return;
     }
     *(unsigned short *)(*state + 0x1ae) |= 1;
-    Ov107_PostTagUpdate(*state, 4, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 4, 0);
     state[0xe] = 0;
     *(unsigned char *)((char *)state + 0x3e) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov240_LungeTick);

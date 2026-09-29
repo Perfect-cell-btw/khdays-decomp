@@ -8,13 +8,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov259_FaceTargetGap(int *node);
 extern void Ov259_RefreshAim(int *node);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void Ov259_ForwardSweep(int body, int a, int b, VecFx32 lift);
 extern void Ov259_LungeSequenceTick(void);
@@ -70,7 +70,7 @@ void Ov259_SlamChargeTick(int *node)
         return;
     }
     if (state[0x26] == 0) {
-        Ov107_PostTagUpdate(*state, 0x13, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x13, 0);
         Ov259_MirrorPartnerPose(node, 0x13, 0);
         Ov259_ForwardSweep(*(int *)(*state + 0x384), 0x550, 0xee0, data_02041dc8);
         *(int *)(*state + 0x420) = 5;
@@ -79,7 +79,7 @@ void Ov259_SlamChargeTick(int *node)
         state[0x1a] = 0;
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x14, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x14, 0);
     Ov259_MirrorPartnerPose(node, 0x14, 0);
     Ov259_ForwardSweep(*(int *)(*state + 0x384), 0x330, 0x550, data_02041dc8);
     *(int *)(*state + 0x420) = 5;

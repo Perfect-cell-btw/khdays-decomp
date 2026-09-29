@@ -7,10 +7,10 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct S210 { char pad[0x14]; VecFx32 a; char pad2[0x34]; VecFx32 b; };
 struct b17a { unsigned char b0 : 1; };
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov210_AiQueue2OnFlagClearB(void);
 extern VecFx32 data_02041dc8;
@@ -27,6 +27,6 @@ void Ov210_AdvanceLungeOrCommit(int *self) {
         }
     }
     ((struct S210 *)state)->a = data_02041dc8;
-    Ov107_PostTagUpdate(*state, 0x17, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x17, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov210_AiQueue2OnFlagClearB);
 }

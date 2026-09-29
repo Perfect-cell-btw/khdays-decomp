@@ -1,6 +1,8 @@
 /* Forward the sub-object at (obj)+0x3e0, and (if present) the one at +0x4a4, to the ov107
  * callback dispatcher, then tail-call the base ov107 handler for the pair. */
-extern void Ov107_InvokeSlot0x74(int obj, int arg1);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_Actor_DetachFromRegion(int obj, int arg1);
 
 void Ov237_NotifyPartsThenBase(int param_1, int param_2) {

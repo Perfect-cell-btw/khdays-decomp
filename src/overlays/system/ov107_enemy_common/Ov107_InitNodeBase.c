@@ -3,6 +3,7 @@
  * the low 3 bits of the state word at +0x40, and link into the manager list. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct StateFlags {
     unsigned int f0 : 1;
@@ -12,11 +13,6 @@ struct StateFlags {
 };
 
 extern int data_ov107_020cbb00;
-extern void Ov107_DestroyInstance(void);
-extern void Ov107_SetBit1OfField0x40(void);
-extern void Ov107_SetBit0OfField0x40(void);
-extern void Ov107_EmitIdEvent(void);
-extern void Ov107_LinkToManagerList(u16 *node);
 
 void Ov107_InitNodeBase(u16 *node) {
     node[0] = 0;
@@ -43,5 +39,5 @@ void Ov107_InitNodeBase(u16 *node) {
         sf->f1 = 0;
         sf->f2 = 0;
     }
-    Ov107_LinkToManagerList(node);
+    Ov107_LinkToManagerList((int)node);
 }

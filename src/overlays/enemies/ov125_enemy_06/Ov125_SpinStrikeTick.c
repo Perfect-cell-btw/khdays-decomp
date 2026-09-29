@@ -16,6 +16,7 @@
 #include "nitro/fx_types.h"
 #include "game/actor.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 
@@ -71,7 +72,6 @@ extern struct Ov125Cmd data_ov125_020d0406;
 extern struct Ov125Cmd data_ov125_020d03f8;
 extern struct Ov125Cmd data_ov125_020d0414;
 
-extern int Ov107_CollectSegmentOverlaps(struct Ov125Item *item, struct Ov125Query *query, int *results);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
@@ -113,7 +113,7 @@ void Ov125_SpinStrikeTick(struct Ov125Node *node)
     query = (*((struct Ov125PoolEntry **)state->pActor->base.pPoolEntry))->query;
 
     if (state->nMode1c == 0) {
-        n = Ov107_CollectSegmentOverlaps(state->pActor->pItem38c, &query, results);
+        n = Ov107_CollectSegmentOverlaps((Actor *)state->pActor->pItem38c, &query, (void **)results);
         i = 0;
         if (n > 0) {
             do {

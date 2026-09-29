@@ -15,6 +15,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Sphere { VecFx32 centre; int radius; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -49,7 +50,6 @@ extern int *List_First(void *list);
 extern int *List_Next(void *list);
 extern int Ov107_HitShape_TestSphere(int shape, struct Sphere *sphere, int a);
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *pos);
 extern int Collision_CastRay(int collision, const VecFx32 *from, const VecFx32 *step);
 extern int Collision_CastSphereEx(int collision, const VecFx32 *from, const VecFx32 *step, int radius, void *ignore);
 extern int VEC_Mag(const VecFx32 *v);
@@ -135,7 +135,7 @@ void Ov245_HopTick(int *node) {
         VEC_Set(&flatAnchor, anchor[0], 0, anchor[2]);
         if (state[0x13] != 0) {
             *(VecFx32 *)(state + 3) = data_02041dc8;
-            Ov107_MoveNodeAndRelayout(*state, &flatAnchor);
+            Ov107_MoveNodeAndRelayout((Actor *)(*state), &flatAnchor);
         } else if (Collision_CastRay(*(int *)(scene + 0x7c), (VecFx32 *)state[2], &step) != 0) {
             VecFx32 at = *(VecFx32 *)state[2];
             at.y = 0;
@@ -147,7 +147,7 @@ void Ov245_HopTick(int *node) {
             }
             if (state[0x12] != 0) {
                 *(VecFx32 *)(state + 3) = data_02041dc8;
-                Ov107_MoveNodeAndRelayout(*state, &flatAnchor);
+                Ov107_MoveNodeAndRelayout((Actor *)(*state), &flatAnchor);
                 state[0x13] = 1;
                 func_ov107_020c0b90(*state, 1, at, 0);
                 func_ov107_020c0b90(*state, 2, *(VecFx32 *)state[2], 0);

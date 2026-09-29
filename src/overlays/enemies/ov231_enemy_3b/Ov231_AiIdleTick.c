@@ -18,6 +18,7 @@
  * (the address escapes into Ov231_rotateVecByOwnerYaw, so the stores are not dead). */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov231_AcquireTarget(int self);
 extern void Ov231_rotateVecByOwnerYaw(VecFx32 *out, int self, const VecFx32 *ref);
@@ -25,8 +26,6 @@ extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int self, int action, void *cb);
 extern int Ov231_ChooseAttack(int self);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
-extern void Ov107_StartAnim(int owner, int mode, int arg);
 
 void Ov231_AiIdleTick(int self) {
     /* ctx is initialised at its declaration, ahead of offset's, because the ROM computes it
@@ -82,6 +81,6 @@ void Ov231_AiIdleTick(int self) {
     }
 
     ctx[0x16] = 0;
-    Ov107_PostTagUpdate(ctx[0], 1, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 1, 0);
     Ov107_StartAnim(*(int *)(ctx[0] + 0x388), 1, 0);
 }

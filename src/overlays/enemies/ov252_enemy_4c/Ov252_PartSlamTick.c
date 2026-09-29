@@ -7,11 +7,11 @@
  * the node moves on to 020d2c0c. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 center; int nRadius; } Sphere;
 
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
 extern unsigned char Ov252_ReboundHitTest(int *state, int kind, Sphere *sphere, void *cyl, void *box);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -24,7 +24,7 @@ void Ov252_PartSlamTick(int *node)
 
     Ov252_CheckTarget(node, 0, 1);
     if (!(*((unsigned char *)state + 0x88) & 0x80)) {
-        Ov107_PostTagUpdate(*state, 0x21, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x21, 0);
         *((unsigned char *)state + 0x88) |= 0x80;
         return;
     }
@@ -63,7 +63,7 @@ void Ov252_PartSlamTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x22, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x22, 0);
     state[0x19] = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_AiHoldThenQueue13);
 }

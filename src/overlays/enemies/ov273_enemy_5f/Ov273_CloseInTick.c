@@ -4,6 +4,9 @@
  * body radii (+0x80, floored at 0, data_02042258 when the direction is degenerate) drives a
  * 0x800 step along the direction into +0x50, copied to +0xc. Once the gap closes under 0x1000
  * or the timer passes 0x3000, pose 3 plays and the node moves to 020ce2fc. */
+
+#include "game/enemy_common.h"
+
 struct v3 { int x, y, z; };
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
@@ -12,7 +15,6 @@ extern void Quat_FromMtx33(void *quat, void *mtx);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *v, void *out);
 extern void ScaleVec3Fx12(int s, void *v, void *d);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int  data_02042264;
 extern struct v3 data_02042258;
 extern void Ov273_ApproachTickDecay08(void);
@@ -48,6 +50,6 @@ void Ov273_CloseInTick(int *self) {
     if (dist >= 0x1000) {
         if (state[7] < 0x3000) return;
     }
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov273_ApproachTickDecay08);
 }

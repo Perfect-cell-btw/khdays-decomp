@@ -5,10 +5,10 @@
  * bit 1; the +0x5c height is taken from the +0x34 point and the node moves to 020d058c. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct PartFlags { unsigned int lo : 8; };
 
-extern void Ov107_PostTagUpdate(int owner, int pose, int loop);
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov278_ChargeTick(void);
@@ -22,7 +22,7 @@ void Ov278_ChargeEnter(int *node)
     int frontFree = (*(u16 *)(front + 0x100 + 0xac) & 2) ? 0 : 1;
     int rearFree = (*(u16 *)(rear + 0x100 + 0xac) & 2) ? 0 : 1;
 
-    Ov107_PostTagUpdate(*state, 0, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 1);
     state[5] = *(int *)(node[0] + 0x2c) * 30 / 50;
     state[0xc] = RandNextScaled(2) + (v - v) != 0 ? 1 : -1;
     state[0xb] = RandNextScaled(0x7001) + 0x3000;

@@ -17,10 +17,9 @@
  */
 
 #include "game/actor.h"
+#include "game/enemy_common.h"
 
 extern void TaskList_FinishByTag(int owner, int handle);
-extern void Ov107_AiState_PostTickBase(void *actor);
-extern void Ov107_UnlinkNodeFromOwner(int attachment);
 
 struct Blk {
     int data[11];
@@ -72,7 +71,7 @@ void Ov141_ReleaseByStateAndSyncSrt(struct Obj *a) {
             a->f390->m1c = 0;
         }
         if (a->f3d0 != 0) {
-            Ov107_UnlinkNodeFromOwner(a->f3d0);
+            Ov107_UnlinkNodeFromOwner((void *)a->f3d0);
             a->f3d0 = 0;
         }
     }
@@ -85,5 +84,5 @@ void Ov141_ReleaseByStateAndSyncSrt(struct Obj *a) {
     (*((struct P388 **)a->base.pPoolEntry))->blk = a->f398->blk;
     a->f38c->blk = a->f398->blk;
 
-    Ov107_AiState_PostTickBase(a);
+    Ov107_AiState_PostTickBase((char *)a);
 }

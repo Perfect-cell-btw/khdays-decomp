@@ -1,6 +1,9 @@
 /* Start the ov246 leap: reseed the countdown from the owner's frame rate,
  * select animation two, build a Q12 velocity from the stored heading, then
  * install the per-frame leap handler. */
+
+#include "game/enemy_common.h"
+
 static inline int FX_Mul(int a, int b)
 {
     return (int)(((long long)a * b + 0x800) >> 12);
@@ -36,7 +39,6 @@ typedef struct Ov246ActionNode {
     unsigned char pad21[3];
 } Ov246ActionNode;
 
-extern void Ov107_PostTagUpdate(void *owner, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, int value);
 extern void Ov246_StepLeapMotion(Ov246ActionNode *node);
 extern const short data_0203d210[];
@@ -62,5 +64,4 @@ void Ov246_StartLeapMotion(Ov246ActionNode *node)
         SetIndexedSlot((int *)pNextNode, (unsigned short)pNextNode->nHandlerSlot, nNextHandler);
     }
 }
-
 

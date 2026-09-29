@@ -4,11 +4,13 @@
  * (020cab14) -> state[4]; if found, state[0xc] = state[0xd] = atan2 of target(+0x74) - state[3].
  * Clear the +0x60 hi-byte bits 0x82, fire attack 0 (020c9264) and hand off to the 020d180c state.
  */
+
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov268_AiStep_QueueAction2OnAnimEnd(void);
 
@@ -31,6 +33,6 @@ void Ov268_WindUpFaceReset(int *self) {
         state[0xc] = a;
     }
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x82;
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov268_AiStep_QueueAction2OnAnimEnd);
 }

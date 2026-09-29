@@ -3,11 +3,11 @@
  * +0x10 slots clear and the node moves to 020d26e4. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 typedef struct { unsigned f : 8; } B8;
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_AttackSweepTick(void);
 
@@ -24,7 +24,7 @@ void Ov254_HoldEntry(int *node)
             ((((((unsigned int)hw << 0x10) >> 0x18) | 1) << 0x18) >> 0x10);
     }
     ((B8 *)(*(int *)(*state + 0x388) + 8))->f |= 1;
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     state[3] = 0;
     *((u8 *)state + 0x20) = 0;
     for (i = 0; i < 4; i++) {

@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 typedef struct { int b0 : 1; int b1 : 1; } Bits;
@@ -44,14 +45,11 @@ extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int arg, SrtTransform *transform);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int parent, int kind, void *at, int weight, void *payload);
-extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern int Ov252_SpawnShard(char *self, int owner, VecFx32 *vel, signed char slot);
 extern int Ov252_SpawnGem(char *self, int owner, VecFx32 *pos, signed char slot, u8 kind);
 extern int Ov252_SpawnBomb(char *self, int owner, VecFx32 *pos, signed char slot, u8 kind);
-extern void Ov107_ForwardVisibleEvent(char *self, int a);
 extern int Ov002_GetSlotTableByte(void *scene);
 extern void Ov002_SpawnAllDrops(u8 *colour, int id, VecFx32 *vec);
-extern int Ov107_CreateSpawnTask(char *self, int id, int mode, void *at, void *pose);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
 /* The message carries x, y, z at +5 as big-endian signed 24-bit values. */
@@ -209,7 +207,7 @@ void Ov252_HandleMessage(char *self, u8 *msg, int arg)
                                 &work.pos);
             break;
         case 0x34:
-            *(int *)(self + 0x580) = Ov107_CreateSpawnTask(self, 0x148, 6, at, (void *)(*(int *)(self + 0x560) + 4));
+            *(int *)(self + 0x580) = Ov107_CreateSpawnTask((int)self, 0x148, 6, (int)at, (void *)(*(int *)(self + 0x560) + 4));
             break;
         }
         if (at != 0) {

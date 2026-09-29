@@ -5,10 +5,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, int at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov237_AiLoop5OnAnimEnd(void);
@@ -20,7 +20,7 @@ void Ov237_ReleaseGrab(int *node)
     *(VecFx32 *)(*state + 0x4c4) = *(VecFx32 *)state[0xe];
     state[0x16] = 0;
     *(int *)(*state + 0x494) = 0;
-    Ov107_PostTagUpdate(*state, 4, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 4, 0);
     ((B8 *)(*(int *)(*state + 0x488) + 8))->f |= 2;
     {
         u16 hw = *(u16 *)(state + 0x18);

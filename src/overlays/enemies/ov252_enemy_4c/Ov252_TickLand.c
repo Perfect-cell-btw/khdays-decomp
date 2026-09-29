@@ -5,10 +5,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_DriftOutEntryTick(void);
 
@@ -20,7 +19,7 @@ void Ov252_TickLand(int *node)
     v = Ov252_TurnVecY(state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
     *(VecFx32 *)(state + 3) = v;
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 0x16, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x16, 0);
         Ov107_StartAnim(*(int *)(*state + 0x574), 0x15, 0);
         {
             u16 hw = *(u16 *)(*state + 0x60);

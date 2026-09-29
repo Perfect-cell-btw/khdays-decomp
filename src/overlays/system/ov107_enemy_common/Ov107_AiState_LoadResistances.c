@@ -1,8 +1,8 @@
 /* Loads the five resistance triples (percent) of the actor kind. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern int func_ov107_020c9848(void);
 extern void *Archive_LoadFile(u32 flags, int heap);
 extern int func_02020400(int value, int percent);
 extern void NNSi_FndFreeFromDefaultHeap(void *p);

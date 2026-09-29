@@ -8,8 +8,10 @@
  * the low one first and keeps the base alive.
  *
  * One of three byte-identical siblings. */
+
+#include "game/enemy_common.h"
+
 struct pt { unsigned short a, b; };
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int  Ov107_FindNearestObject(int obj, void *out);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  func_020050b4(int x, int z);
@@ -25,7 +27,7 @@ void Ov282_BeginPounce(int *self) {
     void (*fp)(int, void *, int);
     int target;
 
-    Ov107_PostTagUpdate(*state, 0x18, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x18, 0);
     target = Ov107_FindNearestObject(*state, 0);
     state[4] = target;
     if (target != 0) {

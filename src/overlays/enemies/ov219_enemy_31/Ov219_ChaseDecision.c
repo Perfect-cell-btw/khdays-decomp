@@ -4,10 +4,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov219_DistanceToTarget(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern const VecFx32 data_02041dc8;
 extern void Ov219_ChaseTick(int *node);
@@ -21,7 +21,7 @@ void Ov219_ChaseDecision(int *node)
         return;
     }
     if (*(u8 *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 4, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), 4, 1);
         func_ov107_020c0b90(*state, 1, data_02041dc8, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov219_ChaseTick);
     }

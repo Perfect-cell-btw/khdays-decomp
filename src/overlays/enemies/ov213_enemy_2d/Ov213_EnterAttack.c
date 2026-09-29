@@ -3,7 +3,9 @@
  * the aim pose at +0x38 from data_02042264 and atan2 of the flattened, normalised direction from
  * the +4 anchor to the target's +0x74 position (data_02042258 when degenerate); then moves the
  * node to 020cf768. */
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+
+#include "game/enemy_common.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *v, void *out);
@@ -21,7 +23,7 @@ void Ov213_EnterAttack(int *self) {
     struct v3 v;
 
     state[0x12] = *(int *)(self[0] + 0x2c) * 30 / 5;
-    Ov107_PostTagUpdate(*state, 4, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 4, 0);
     *((unsigned char *)state + 0x6a) = 0;
     state[0x1c] = 0;
     target = Ov107_FindNearestObject(*state, 0);

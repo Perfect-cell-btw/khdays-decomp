@@ -7,11 +7,11 @@
  * steps along it before c5c4 launches the actor there; d47dc takes over. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int RandNextScaled(int range);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void VEC_Add(const void *a, const VecFx32 *b, VecFx32 *d);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov299_AiEnterProjectileFlight(int *node);
 extern const short data_0203d210[];
@@ -76,6 +76,6 @@ void Ov299_AttackTick(int *node)
     ScaleVec3Fx12(0x800, (VecFx32 *)(state + 3), (VecFx32 *)(state + 3));
     target.x -= state[3] * n;
     target.z -= state[5] * n;
-    Ov107_MoveNodeAndRelayout(*state, &target);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &target);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov299_AiEnterProjectileFlight);
 }

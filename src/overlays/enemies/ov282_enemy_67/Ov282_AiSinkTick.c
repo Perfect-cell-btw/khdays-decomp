@@ -2,10 +2,10 @@
  * animation ends. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern long long FX_DivFx64c(int num, int denom);
-extern void Ov107_MoveNodeAndRelayout(int obj, void *v);
 extern void SetIndexedSlot(int self, int idx, int cb);
 
 void Ov282_AiSinkTick(int *self) {
@@ -29,7 +29,7 @@ void Ov282_AiSinkTick(int *self) {
         }
         v = *(VecFx32 *)(state + 0xd);
         v.y -= (int)(((q * (long long)0x6000) + 0x80000000LL) >> 32);
-        Ov107_MoveNodeAndRelayout(state[0], &v);
+        Ov107_MoveNodeAndRelayout((Actor *)state[0], &v);
     }
     if (*(unsigned char *)state[3] == 0) {
         *(char *)(state[0] + 0x1c7) = 6;

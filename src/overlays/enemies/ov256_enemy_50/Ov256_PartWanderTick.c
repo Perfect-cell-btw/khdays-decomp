@@ -5,10 +5,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_PartHoverTick(void);
 
@@ -21,7 +20,7 @@ void Ov256_PartWanderTick(int *node)
     Ov256_RotateByActorHeading((int *)&v, (int)node, (int *)(*(int *)(*state + 0x450) + 0x2c));
     *(VecFx32 *)(state + 4) = v;
     if (state[0x13] >= 0x5000 && *(u8 *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 0x1d, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1d, 0);
         Ov107_StartAnim(*(int *)(*state + 0x450), 0xe, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov256_PartHoverTick);
         return;
@@ -29,6 +28,6 @@ void Ov256_PartWanderTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x1c, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1c, 0);
     Ov107_StartAnim(*(int *)(*state + 0x450), 0xd, 0);
 }

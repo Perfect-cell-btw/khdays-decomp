@@ -3,10 +3,10 @@
  * the update. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Subtract(VecFx32 *a, VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *a, VecFx32 *b);
-extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov245_Variant_PostTickAim(char *self) {
     char *o = *(char **)(self + 0x388);

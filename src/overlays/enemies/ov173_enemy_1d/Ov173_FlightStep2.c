@@ -5,9 +5,9 @@
  * animation 8 plays (looping) and the state advances to Ov173_FlightStep3. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern void Ov173_FlightStep3(void);
@@ -32,7 +32,7 @@ void Ov173_FlightStep2(int *node)
         state[9] = (int)(((long long)s * 0x200 + 0x800) >> 12);
     }
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 8, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), 8, 1);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov173_FlightStep3);
     }
 }

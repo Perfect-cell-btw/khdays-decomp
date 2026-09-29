@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 struct w8 { unsigned int lo : 8, rest : 24; };
@@ -27,13 +28,10 @@ extern void Ov245_SendBlankStatusWide(void);
 extern void Ov245_PackPosMsg(void);
 extern void Ov245_StockHitFilter(void);
 extern void Ov245_Model_ReapplyTrack0(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void RefreshObjectCallbacks(int item, int a);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
-extern void *func_ov107_020c9848(void);
-extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
 extern int Ov245_Child_New(int self);
@@ -72,7 +70,7 @@ void Ov245_CarrierActorInit(int selfArg) {
     *(u16 *)(self + 0x100 + 0xb0) |= 0x88c;
     *(int *)(self + 0x70) = 0x1000;
     VEC_Set((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x10));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x10));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
     *(int *)(self + 0x3a0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov245_020d7220);
@@ -82,7 +80,7 @@ void Ov245_CarrierActorInit(int selfArg) {
     os = func_ov107_020c9848();
     ((struct Ov245Self *)self)->slots[1].pItem =
         CreateSubitemInstance0xB4((void *)((((*(int *)((char *)os + 0x88) + 0x8000) & 0x00fffffc) << 7) | 0x80000003));
-    ((struct Ov245Self *)self)->slots[2].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x1a));
+    ((struct Ov245Self *)self)->slots[2].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x1a));
     for (i = 0; i < 3; i++) {
         Ov107_EnqueueValue(self, ((struct Ov245Self *)self)->slots[i].pItem);
         *(int *)(((struct Ov245Self *)self)->slots[i].pItem + 0x5c) |= 2;

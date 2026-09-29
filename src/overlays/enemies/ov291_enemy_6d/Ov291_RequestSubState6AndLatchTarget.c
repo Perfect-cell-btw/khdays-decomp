@@ -1,4 +1,4 @@
-extern int func_ov107_020c9848(void);
+#include "game/enemy_common.h"
 
 // When idle (this[0x1c7]==-1) and the current sub-state is neither 0 nor 6,
 // request sub-state 6 and latch the active target's field (query[0x2c], or 0 if

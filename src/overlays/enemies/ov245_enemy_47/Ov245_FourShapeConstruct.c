@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; VecFx32 axis; int rate; int value; } ShapeRequest;
 typedef void (*Callback)(void);
@@ -23,11 +24,9 @@ extern void Ov245_ChainTeardown(void);
 extern void Ov245_FilterMessage(void);
 extern void Ov245_FourShape_OnHit(void);
 extern void Ov245_FourShape_ApplyAnim(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
-extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_Mover_New(ShapeRequest *req);
 extern const char data_ov245_020d7234[];
@@ -67,16 +66,16 @@ void Ov245_FourShapeConstruct(char *self) {
     }
     *(int *)(self + 0x70) = 0x1800;
     VecSetP_((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x13));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x13));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(int *)(self + 0x3b0) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov245_020d7234);
     *(int *)(self + 0x3a4) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d723c);
     *(int *)(self + 0x3a8) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d7244);
     *(int *)(self + 0x3ac) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d724c);
-    item = *(int *)(self + 0x3b8) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x1e));
+    item = *(int *)(self + 0x3b8) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x1e));
     Ov107_EnqueueValue(self, item);
     *(int *)(item + 0x5c) |= 2;
-    item = *(int *)(self + 0x3c0) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x1f));
+    item = *(int *)(self + 0x3c0) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x1f));
     Ov107_EnqueueValue(self, item);
     *(int *)(item + 0x5c) |= 2;
     req.pos = data_02041dc8;

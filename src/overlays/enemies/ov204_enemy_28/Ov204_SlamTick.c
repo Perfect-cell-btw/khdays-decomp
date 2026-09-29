@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 typedef struct { int value; } Fx32;
@@ -61,7 +62,6 @@ struct Ov204SlamState {
     u8 bLanded45;               /* +0x45 */
 };
 
-extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *quat, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov107_BuildAndSendUpdate(struct Ov204Owner *owner, int a, int id, VecFx32 *at);
@@ -117,7 +117,7 @@ void Ov204_SlamTick(int *node)
     long i;
     long n;
 
-    speed = Ov107_ActionResource_GetOffsetAndScale(*(void **)((char *)state->pOwner + 0x390), &step);
+    speed = Ov107_ActionResource_GetOffsetAndScale((int)(*(void **)((char *)state->pOwner + 0x390)), &step);
     Vec3TransformViaTempMtx(&state->vVelocity, (char *)state->pOwner + 0xa0, &step);
     ScaleVec3Fx12(speed, &state->vVelocity, &state->vVelocity);
     if (state->bLanded45 == 0 && *(int *)(*(int *)((char *)state->pOwner + 0x390) + 0xc) < 0 && speed == 0) {

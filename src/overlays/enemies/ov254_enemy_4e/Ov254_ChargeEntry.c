@@ -3,8 +3,8 @@
  * flags clear and the node moves to 020d48bc. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_ReachTick(void);
@@ -19,7 +19,7 @@ void Ov254_ChargeEntry(int *node)
         *(u16 *)(*state + 0x60) = (hw & ~0xff00) |
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0x81) << 0x18) >> 0x10);
     }
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     Ov107_BuildAndSendUpdate(*state, 0x16d, 7, (void *)state[2]);
     state[9] = 0;
     state[10] = 0;

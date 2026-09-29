@@ -3,10 +3,10 @@
  * 020d57fc. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Riders { char pad[0x384]; int rider[2]; };
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_TwinMarker_IdleStep(void);
 
@@ -25,7 +25,7 @@ void Ov254_MountEntry(int *node)
         }
     }
     if (busy == 0) {
-        Ov107_PostTagUpdate(*state, 0, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), 0, 1);
     }
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov254_TwinMarker_IdleStep);
 }

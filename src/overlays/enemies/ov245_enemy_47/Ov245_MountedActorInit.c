@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; VecFx32 axis; int rate; int value; } ShapeRequest;
 typedef void (*Callback)(void);
@@ -22,12 +23,10 @@ extern void Ov245_SpawnActorRegistryEntry_3(void);
 extern void Ov245_UpdateClaws(void);
 extern void Ov245_FilterMessage(void);
 extern void Ov245_Mounted_ApplyAnim(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
-extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_Mover_New(ShapeRequest *req);
 extern const char data_ov245_020d7254[];
@@ -64,13 +63,13 @@ void Ov245_MountedActorInit(int self) {
     }
     *(int *)(self + 0x70) = 0x1400;
     VEC_Set((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x14));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x14));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 3, data_ov245_020d7254);
-    *(int *)(self + 0x39c) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(pool, 0xf), data_ov245_020d725c);
+    *(int *)(self + 0x39c) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)pool, 0xf), data_ov245_020d725c);
     for (i = 0; i < 3; i++) {
-        item = ((struct Ov245Self *)self)->slots[i].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, i + 0x21));
-        Ov107_EnqueueValue(self, item);
+        item = ((struct Ov245Self *)self)->slots[i].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, i + 0x21));
+        Ov107_EnqueueValue((char *)self, item);
         *(int *)(((struct Ov245Self *)self)->slots[i].pItem + 0x5c) |= 2;
     }
     req.pos = data_02041dc8;

@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 
@@ -13,7 +14,6 @@ extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
 extern int Ov256_HelperOrbitHeading(int *node);
 extern void Ov256_AttackHitTestB(int *node, int a, int b);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern void Ov256_StrafeTick(void);

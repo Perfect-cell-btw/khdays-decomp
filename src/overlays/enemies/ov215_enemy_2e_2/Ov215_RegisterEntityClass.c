@@ -1,8 +1,9 @@
 /* Registers Ov215_AllocActorWithName as the factory for entity class 0x2e. */
 
-extern void Ov107_RegisterHandler(int arg0, void (*arg1)(int));
+#include "game/enemy_common.h"
+
 extern void Ov215_AllocActorWithName(int);
 
 void Ov215_RegisterEntityClass(void) {
-    Ov107_RegisterHandler(0x2e, Ov215_AllocActorWithName);
+    Ov107_RegisterHandler(0x2e, (void *)Ov215_AllocActorWithName);
 }

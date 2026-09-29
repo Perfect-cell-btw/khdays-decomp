@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[4]; } IdTable4;
@@ -31,14 +32,12 @@ extern void Ov236_CopyPoseFromParent384(void);
 extern void Ov236_SuspendSubObjects(void);
 extern void Ov236_RiderHitFilter_2(void);
 extern void Ov236_RebuildRiderListsB(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int CallocInstance(int size);
 extern void Snd_RegisterSeqAndBind(int a, int b, void *c, int d);
 extern void MainBlob_ResetSlotRows(int a, int b);
 extern int InsertSortedEntryWithKey(int item, int kind, void *name);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern void Srt_SetScaleXYZ(int srt, int sx, int sy, int sz);
 extern void Srt_SetTranslationXYZ(int srt, int x, int y, int z);
 extern void NNS_G3dMdlSetMdlAlphaAll(int nList, int nValue);
@@ -96,10 +95,10 @@ void Ov236_RearRidersConstruct(char *self)
     hw = *(u16 *)(self + 0x60);
     *(u16 *)(self + 0x60) = (hw & ~0xff00) |
         ((((((unsigned int)hw << 0x10) >> 0x18) | 0x20) << 0x18) >> 0x10);
-    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x2a));
+    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x2a));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x388));
     *(int *)(self + 0x38c) = CallocInstance(0x24);
-    Snd_RegisterSeqAndBind(*(int *)(self + 0x38c), *(int *)(*(int *)(self + 0x388) + 0x88), Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x2b), 0xc);
+    Snd_RegisterSeqAndBind(*(int *)(self + 0x38c), *(int *)(*(int *)(self + 0x388) + 0x88), Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x2b), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x388), *(int *)(self + 0x38c));
     *(int *)(self + 0x3a8) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 1, data_ov236_020d64e0);
     *(int *)(self + 0x3ac) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, data_ov236_020d64ec);
@@ -107,18 +106,18 @@ void Ov236_RearRidersConstruct(char *self)
     *(int *)(self + 0x3b4) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, data_ov236_020d6504);
     *(int *)(self + 0x3b8) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, data_ov236_020d64e0);
     *(int *)(self + 0x3bc) = InsertSortedEntryWithKey(*(int *)(self + 0x388), 3, data_ov236_020d64f8);
-    *(int *)(self + 0x390) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x3e));
+    *(int *)(self + 0x390) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x3e));
     Ov107_EnqueueValue(self, *(int *)(self + 0x390));
     *(int *)(self + 0x394) = CallocInstance(0x24);
-    Snd_RegisterSeqAndBind(*(int *)(self + 0x394), *(int *)(*(int *)(self + 0x390) + 0x88), Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x2b), 0xc);
+    Snd_RegisterSeqAndBind(*(int *)(self + 0x394), *(int *)(*(int *)(self + 0x390) + 0x88), Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x2b), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x390), *(int *)(self + 0x394));
     Srt_SetScaleXYZ(*(int *)(self + 0x390) + 4, 0x1000, 1, 0x1000);
     Srt_SetTranslationXYZ(*(int *)(self + 0x390) + 4, 0, 0x200, 0);
     NNS_G3dMdlSetMdlAlphaAll(*(int *)(*(int *)(*(int *)(self + 0x390) + 0x88) + 0x78), 8);
-    *(int *)(self + 0x3c8) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x3f), data_ov236_020d6510);
+    *(int *)(self + 0x3c8) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x3f), data_ov236_020d6510);
     *(int *)(self + 0x3cc) = CallocInstance(0x20);
     for (i = 0; i < 4; i++) {
-        ((struct Pair *)*(int *)(self + 0x3cc))[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), ids.id[i]));
+        ((struct Pair *)*(int *)(self + 0x3cc))[i].res = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), ids.id[i]));
         Ov107_EnqueueValue(self, ((struct Pair *)*(int *)(self + 0x3cc))[i].res);
         *(int *)(((struct Pair *)*(int *)(self + 0x3cc))[i].res + 0x5c) |= 2;
     }

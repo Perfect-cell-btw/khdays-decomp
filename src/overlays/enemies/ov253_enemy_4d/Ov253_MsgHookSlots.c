@@ -4,12 +4,13 @@
  * +4 (020c09a0, kinds 0xd / 5); 4 spawns the item child (020d182c); 5 looks the +4 handle up
  * (020c9b68) and, when its +0x18c rider is not 0x10000-flagged and belongs to the current
  * player (02030788), links it as +0x3c0 (020d1b2c); 6 releases +0x3c0. Then the base hook. */
+
+#include "game/enemy_common.h"
+
 extern int Ov107_CreateNodeXformTaskFx24(int list, int parent, int kind, int a, int scale, unsigned char *payload);
-extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *pos, int a, int b);
 extern int Ov107_AiState_OnMessage(int self, unsigned char *msg, int extra);
 extern int Ov253_SpawnHandleChild(int self);
 extern int Ov253_SpawnItemChild(int self);
-extern int Ov107_FindMessageHandler(unsigned int handle);
 extern int Session_GetLocalPlayerIndex(void);
 extern int Ov253_CreateAimTask(int self, int target);
 extern void TaskList_FinishByTag(int scene, int object);

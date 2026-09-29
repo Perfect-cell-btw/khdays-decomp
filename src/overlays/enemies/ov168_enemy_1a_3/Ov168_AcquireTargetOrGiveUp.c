@@ -3,9 +3,9 @@
  * command with the stored vector, then dispatch with the continuation. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int  Ov107_FindNearestObject(int obj, int flag);
-extern void Ov107_PostTagUpdate(int owner, int mode, int b);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov168_HoverHoldTick(void);
@@ -19,7 +19,7 @@ void Ov168_AcquireTargetOrGiveUp(int self) {
         SetIndexedSlot(self, *(signed char *)(self + 0x20), 0);
         return;
     }
-    Ov107_PostTagUpdate(*obj, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*obj), 2, 0);
     obj[0x12] = 0;
     *(signed char *)((int)obj + 0x84) = 0;
     func_ov107_020c0b90(*obj, 0, *(VecFx32 *)obj[2], 0);

@@ -9,6 +9,7 @@
  * Ov185/186/187/118_PublishFinishPose. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int a, b, c, d; } Ov261Quad;
 
@@ -19,7 +20,6 @@ static inline void VEC_Set(VecFx32 *v, int x, int y, int z) {
     v->z = z;
 }
 
-extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *v);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -36,7 +36,7 @@ void Ov262_PublishFinishPose(int *node) {
     *(Ov261Quad *)(state + 7) = *(Ov261Quad *)(state + 3);
     { VecFx32 *p = (VecFx32 *)state[1];
       VEC_Set(&v, p->x, p->y + 0xa00, p->z); }
-    Ov107_MoveNodeAndRelayout(state[0], &v);
+    Ov107_MoveNodeAndRelayout((Actor *)state[0], &v);
     *(char *)(state[0] + 0x1c7) = *(signed char *)(state[0] + 0x1c9);
     SetIndexedSlot(node, *(signed char *)((int)node + 0x20), 0);
 }

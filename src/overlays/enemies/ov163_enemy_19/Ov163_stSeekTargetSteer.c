@@ -2,6 +2,8 @@
  * reach, otherwise sets the heading and a speed along the facing, and once within 0x1000 posts pose
  * 9 and installs the attack step. */
 
+#include "game/enemy_common.h"
+
 extern void *Ov107_FindNearestObject(void *obj, int a);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void VEC_Subtract(void *a, void *b, void *out);
@@ -9,7 +11,6 @@ extern int VEC_Normalize(void *v, void *v2);
 extern int func_020050b4(int a, int b);
 extern int VEC_DotProduct(void *a, void *b);
 extern void ScaleVec3Fx12(int scale, void *vec, void *out);
-extern void Ov107_PostTagUpdate(void *obj, int a, int b);
 extern void Ov163_PrepSubState9GuardField58(void);
 
 extern short data_0203d210[];
@@ -64,6 +65,6 @@ void Ov163_stSeekTargetSteer(int *node)
     }
     if (dist > 0x1000)
         return;
-    Ov107_PostTagUpdate(obj, 9, 0);
+    Ov107_PostTagUpdate((Actor *)obj, 9, 0);
     SetIndexedSlot(node, (signed char)*((char *)node + 0x20), Ov163_PrepSubState9GuardField58);
 }

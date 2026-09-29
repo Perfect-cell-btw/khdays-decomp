@@ -3,9 +3,8 @@
  * the node moves on to 020cec98. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_FallTick(void);
@@ -14,7 +13,7 @@ void Ov260_HoverEntry(int *node)
 {
     int *state = (int *)node[1];
 
-    Ov107_PostTagUpdate(*state, 0xf, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xf, 0);
     Ov107_StartAnim(*(int *)(*state + 0x428), 7, 0);
     state[0xb] = 0;
     state[0xc] = 0x400;

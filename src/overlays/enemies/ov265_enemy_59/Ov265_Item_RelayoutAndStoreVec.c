@@ -5,11 +5,11 @@
  * the stack (`str r0, [sp]` before the call) and this function never reads. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern int Ov107_MoveNodeAndRelayout(int node, const VecFx32 *v);
 void Ov265_Item_RelayoutAndStoreVec(int muzzle, const VecFx32 *pos, const VecFx32 *dir,
                                     signed char spin, int unusedPoint) {
-    Ov107_MoveNodeAndRelayout(muzzle, pos);
+    Ov107_MoveNodeAndRelayout((Actor *)muzzle, pos);
     *(VecFx32 *)(muzzle + 0x390) = *dir;
     *(signed char *)(muzzle + 0x38c) = spin;
     {

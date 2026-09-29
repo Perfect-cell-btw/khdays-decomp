@@ -4,15 +4,14 @@
  * the actor moves to the new spot (020c5c54) and the brain waits on 020ce214. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov283_MeasureTargetGap(int *node);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Ov107_MoveNodeAndRelayout(int owner, const VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov283_AiFaceTarget(void);
 extern const short data_0203d210[];
@@ -42,8 +41,8 @@ void Ov283_AimStart(int *node)
     }
     ScaleVec3Fx12(0x6000, &back, &back);
     VEC_Subtract(&target, &back, &target);
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     func_ov107_020c0b90(*state, 0, *(VecFx32 *)state[2], 0);
-    Ov107_MoveNodeAndRelayout(*state, &target);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &target);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov283_AiFaceTarget);
 }

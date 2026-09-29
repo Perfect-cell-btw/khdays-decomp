@@ -6,10 +6,10 @@
  * afterwards). The base draw handler always runs. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int nRadius; } Sphere;
 
-extern void Ov107_RefreshAndSelectChild(int clip, int arg1);
 extern int Ov107_QuerySphereContacts(void *collision, Sphere *sphere, VecFx32 *list, VecFx32 *direction);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
@@ -17,7 +17,6 @@ extern void ScaleVec3Fx12(int factor, const VecFx32 *source, VecFx32 *destinatio
 extern long long FX_DivFx64c(int numerator, int denominator);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Srt_SetTranslation(void *transform, const VecFx32 *v);
-extern void Ov107_UpdateCollisionSphere(int self);
 extern void Ov107_ProcessObjectTick(int self, int slot);
 
 static inline int scale_by_ratio(long long ratio, int value)

@@ -7,13 +7,13 @@
  * 0x167 at the anchor, hands the rider to 020ad8e0 and moves on to Ov279_HoldTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct lo8 { unsigned int lo : 8; };
 typedef struct { char pad[0x464]; unsigned long long flags; char pad2[0x12]; } Rider;
 
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *pos);
 extern void Mtx33_LookAt(int *dst, const VecFx32 *a, const VecFx32 *b, const void *c);
 extern void Quat_FromMtx33(void *dst, const int *src);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -21,7 +21,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int  VEC_Mag(const VecFx32 *v);
 extern void Ov279_PushOutOfWorld(int world, VecFx32 *pos, int rad, int height);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov022_ToggleBit13ByMode(int rider, int n);
 extern void Ov279_HoldTick(int *node);
@@ -47,7 +46,7 @@ void Ov279_TickHoldTarget(int *node)
     pos.x = *(int *)(target + 0x74) + FX_MUL(data_0203d210[ANG2IDX(rad) * 2], 0x1e00);
     pos.y = tpos->y;
     pos.z = tpos->z + FX_MUL(data_0203d210[ANG2IDX(rad) * 2 + 1], 0x1e00);
-    Ov107_MoveNodeAndRelayout(*state, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
     Mtx33_LookAt(mtx, tpos, (VecFx32 *)state[0x13], &data_02042264);
     Quat_FromMtx33(state + 7, mtx);
     *(Quat *)(state + 3) = *(Quat *)(state + 7);
@@ -64,7 +63,7 @@ void Ov279_TickHoldTarget(int *node)
         pos = *tpos;
         pos.y += *(int *)(state[2] + 0x80) + *(int *)(*state + 0x80);
         Ov279_PushOutOfWorld(*(int *)(*state + 4), &pos, rad, *(int *)(*state + 0x80));
-        Ov107_MoveNodeAndRelayout(*state, &pos);
+        Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
         *(unsigned char *)(*state + 0x1c7) = 8;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
         return;
@@ -72,7 +71,7 @@ void Ov279_TickHoldTarget(int *node)
     state[0x14] += *(int *)(*node + 0x2c);
     if (!(state[0x14] < 0x1000)) {
         func_ov107_020c0b90(*state, 4, data_02041dc8, 0);
-        Ov107_PostTagUpdate(*state, 5, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
         ((struct hw60 *)(*state + 0x60))->hi &= ~4;
         *(unsigned short *)(*state + 0x1ae) &= ~1;
         ((struct lo8 *)(*(int *)(*state + 0x388) + 8))->lo |= 1;

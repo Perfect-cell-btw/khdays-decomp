@@ -9,13 +9,13 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct h2 { unsigned short a, b; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Normalize(void *in, void *out);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern VecFx32 data_02042258;
 extern struct h2 data_ov210_020d46ec;
@@ -43,7 +43,7 @@ void Ov210_AimSetupNotifyArm(int *self) {
     if (cb != 0) {
         cb(*state, &scratch, 4);
     }
-    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
     {
         unsigned short *hw = (unsigned short *)(*state + 0x60);
         unsigned int h = *hw;

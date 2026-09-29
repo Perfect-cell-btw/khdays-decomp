@@ -2,8 +2,10 @@
  * at +9) effect 0x165 of kind 7 fires at the actor's +0x3d8 item's +0x14 point. When the +0x30
  * child's byte clears, the timer resets, bit 16 of +0x18 clears, pose 1 plays (looping) and the
  * node moves to 020d0b10. */
+
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov277_SummonWaitTick(void);
 
@@ -24,6 +26,6 @@ void Ov277_ChargeWindupTick(int *node) {
     zero = 0;
     state[7] = zero;
     state[6] &= zero - 0x10000;
-    Ov107_PostTagUpdate(*state, 0, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 1);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov277_SummonWaitTick);
 }

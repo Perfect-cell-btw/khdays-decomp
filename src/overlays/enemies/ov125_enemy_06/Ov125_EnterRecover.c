@@ -7,7 +7,9 @@
  * `obj = *state` is a local declared right after `state`: that keeps the state load at the top
  * (merged with node[0] into the ROM's `ldm`) and lets the *state load float above the +0x3c
  * store; the later uses still read *state directly. */
-extern void Ov107_PostTagUpdate(int owner, int a, int b);
+
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern unsigned short data_ov125_020d03cc[];
 extern void Ov125_RecoverTick(void);
@@ -31,7 +33,7 @@ void Ov125_EnterRecover(int *node) {
     pp[0] = data_ov125_020d03cc[4];
     cb = *(void (**)())(*state + 0x24);
     if (cb != 0) cb(*state, pp, 4);
-    Ov107_PostTagUpdate(*state, 4, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 4, 1);
     state[0xb] = 0;
     *(unsigned char *)(state + 0xd) &= ~2;
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov125_RecoverTick);

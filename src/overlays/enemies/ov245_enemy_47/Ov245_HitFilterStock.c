@@ -7,12 +7,12 @@
  * parity flips; an empty stock puts the actor in sub-state 3. Returns 1 when the stock was positive. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct HitWord { unsigned int lo : 16, hi : 16; };
 
 extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern int Ov107_CalcHitDamage(int self, unsigned int *hit);
-extern void Ov107_StartAnim(int item, int motion, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern const VecFx32 data_02041dc8;
 

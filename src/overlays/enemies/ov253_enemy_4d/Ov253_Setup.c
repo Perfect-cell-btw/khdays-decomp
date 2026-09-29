@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[5]; } IdTable;
@@ -28,14 +29,12 @@ extern void Ov253_HitFilterCore(void);
 extern void Ov253_Model_SetTrack0(void);
 extern void Ov253_UpdateSegmentDirs(void);
 extern void Ov253_RenderMarkers(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_Mover_New(PlaceReq *req);
 extern int JointModel_New(void *item, int size);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern int *CallocInstance(int size);
 extern int Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int resourceId);
@@ -74,7 +73,7 @@ void Ov253_Setup(char *self)
     *(u16 *)(self + 0x60) = (hw & ~0xff00) |
         ((((((unsigned int)hw << 0x10) >> 0x18) | 0x30) << 0x18) >> 0x10);
     *(u16 *)(self + 0x100 + 0xae) |= 0x18;
-    *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x1d));
+    *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x1d));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x38c));
     *(Callback *)(*(int *)(self + 0x38c) + 0x74) = Ov253_UpdateSegmentDirs;
     *(char **)(*(int *)(self + 0x38c) + 0x84) = self;
@@ -94,13 +93,13 @@ void Ov253_Setup(char *self)
         p = List_InsertSorted(self + 0x144, 4, 100);
         ((int *)(self + 0x3a0))[i] = *p = Ov107_Mover_New(&req);
     }
-    *(int *)(self + 0x3b8) = JointModel_New(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x2c), 0x10);
+    *(int *)(self + 0x3b8) = JointModel_New(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x2c), 0x10);
     Ov107_EnqueueValue(self, *(int *)(self + 0x3b8));
     *(Callback *)(*(int *)(self + 0x3b8) + 0x6c) = Ov253_RenderMarkers;
     *(int *)(*(int *)(self + 0x3b8) + 0x5c) |= 2;
     *(int **)(self + 0x3b0) = CallocInstance(0x28);
     for (i = 0; i < 5; i++) {
-        (*(SubitemSlot **)(self + 0x3b0))[i].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), ids.id[i]));
+        (*(SubitemSlot **)(self + 0x3b0))[i].pItem = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), ids.id[i]));
         Ov107_EnqueueValue(self, (*(SubitemSlot **)(self + 0x3b0))[i].pItem);
         *(int *)((*(SubitemSlot **)(self + 0x3b0))[i].pItem + 0x5c) |= 2;
     }

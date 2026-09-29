@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct m4 { int w[4]; };
 struct Bits3bc { unsigned char b0 : 1; };
@@ -25,7 +26,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Quat_Slerp(void *a, int s, void *b, void *m);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern int func_020050b4(int x, int z);
-extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *v);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042258;
 extern void Ov236_RecoveryWaitA(void);
@@ -66,7 +66,7 @@ void Ov236_BuckTick(int *node) {
             (((unsigned int)(unsigned short)((((unsigned int)hw << 0x10) >> 0x18) & ~2) << 0x18) >> 0x10);
     }
     *(u16 *)(*state + 0x100 + 0xae) &= ~1;
-    Ov107_MoveNodeAndRelayout(*state, &mountPos);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &mountPos);
     if (!(*(short *)(*state + 0x300 + 0xbc) != 0 && *(short *)(*state + 0x300 + 0xbe) != 0)) {
         if (*(short *)(*state + 0x300 + 0xbc) != 0 || *(short *)(*state + 0x300 + 0xbe) != 0) {
             ((struct Bits3bc *)(*(int *)(*state + 0x394) + 0x3bc))->b0 = 1;

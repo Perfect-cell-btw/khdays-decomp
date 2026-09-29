@@ -2,11 +2,13 @@
  * actor's three +0x420 parts are checked; when none has bit 0 of its +0x60 low byte set, the
  * +0x34 timer is armed with 60.0, sub-state 8 is requested and the node's slot is released.
  * Otherwise (flag clear or a part active) pose 0 plays and the node moves to 020cd7e0. */
+
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Ov245Actor { char pad[0x420]; int parts[3]; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void Ov245_AiStep_QueueAction4OnAnimEnd(void);
 
 void Ov245_LandingDecision(int *node) {
@@ -27,6 +29,6 @@ void Ov245_LandingDecision(int *node) {
             return;
         }
     }
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_AiStep_QueueAction4OnAnimEnd);
 }

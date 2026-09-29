@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov281Transform {
     int words[11];
@@ -34,14 +35,7 @@ extern void Srt_SetTranslation(struct Ov281Transform *transform,
                           const VecFx32 *position);
 extern int Ov107_CreateNodeXformTask(int resource, int node, int kind, int flags,
                                struct Ov281Transform *transform);
-extern int Ov107_CreateNodeBodyTask(int resource, int node, int kind,
-                               struct Ov281Transform *transform, int flags,
-                               int enabled);
-extern int Ov107_CreateSpawnTask(struct Ov281Actor *self, int resourceId,
-                               int kind, int enabled,
-                               struct Ov281Transform *transform);
 extern void TaskList_FinishByTag(int resource, int handle);
-extern void Ov107_UnlinkNodeFromOwner(int handle);
 extern void Ov107_AiState_OnMessage(struct Ov281Actor *self,
                                 struct Ov281Command *command, int arg2);
 

@@ -1,8 +1,9 @@
 /* Registers Ov276_AllocActorWithName as the factory for entity class 0x61. */
 
-extern void Ov107_RegisterHandler(int arg0, void (*arg1)(int));
+#include "game/enemy_common.h"
+
 extern void Ov276_AllocActorWithName(int);
 
 void Ov276_RegisterEntityClass(void) {
-    Ov107_RegisterHandler(0x61, Ov276_AllocActorWithName);
+    Ov107_RegisterHandler(0x61, (void *)Ov276_AllocActorWithName);
 }

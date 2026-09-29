@@ -35,10 +35,12 @@
  * `add r0,r5,r0`). Register-CHOICE class; the char flags are all unsigned (ldrb) and the counter
  * test is `<= 0`.
  */
+
+#include "game/enemy_common.h"
+
 extern void Ov193_ProbeGroundBelowNode(int *state, int *p);
 extern long long FX_DivFx64c(int a, int b);
 extern void Ov193_BoxSweepPush(int *state, int lo, int hi, int *p);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern int Ov193_FindTarget(int obj, int out);
 extern void VEC_Subtract(void *a, void *b, void *d);
@@ -73,11 +75,11 @@ void Ov193_ChargeAimedShotState(int *self) {
     c = state[7];
     state[7] = c - 1;
     if (c - 1 <= 0) {
-        Ov107_PostTagUpdate(*state, 6, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 6, 0);
         SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov193_stTimedInterpPhases);
         return;
     }
-    Ov107_PostTagUpdate(*state, 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
     target = Ov193_FindTarget(*state, 0);
     state[6] = target;
     if (target == 0) {

@@ -7,10 +7,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
 extern void MTX_MultVec33(const VecFx32 *v, const Mtx33 *m, VecFx32 *out);
 extern int RandNextScaled(int scale);
@@ -32,7 +32,7 @@ void Ov245_TurnPlan(int *node) {
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 1, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
     idx = (unsigned short)((0x28BE60DB9391LL * state[7] + 0x80000000000LL) >> 44);   /* FX_RAD_TO_IDX */
     MTX_RotY33_(&m, data_0203d210[(idx >> 4) << 1], data_0203d210[((idx >> 4) << 1) + 1]);
     MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x3b0) + 0x14), &m, &out);

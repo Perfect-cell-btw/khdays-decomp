@@ -9,10 +9,12 @@
  *  - a whitelist of three or more values needs no care, unlike a two-value guard, which
  *    mwcc folds into an unsigned range test.
  */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } Pose;
 
 extern void TaskList_FinishByTag(int owner, int handle);
-extern void Ov107_AiState_PostTickBase(char *actor);
 
 void Ov269_ReleaseByStateAndPublishPose(char *actor) {
     int state;

@@ -1,4 +1,5 @@
-/* Packs the object's VRAM address and the caller's offset into a texture handle. */
+/* Packs the actor's texture VRAM address (+0x1a4, Actor.texAddr) and the caller's offset into a
+ * texture handle. Its callers hold the actor as bytes, so it takes it so. */
 unsigned Ov107_PackTextureHandle(char *obj, unsigned offset) {
     unsigned mask = 0xfffffc;
     unsigned addr = *(unsigned *)(obj + 0x1a4);

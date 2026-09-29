@@ -1,8 +1,8 @@
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void ScaleVec3Fx12(int scale, VecFx32 *dst, VecFx32 *src);
-extern int Ov107_PostTagUpdate(int obj, int a, int b);
 extern int SetIndexedSlot(int self, int idx, void *handler);
 extern void Ov236_ReactDecayAimAndSetState(int self);
 
@@ -17,6 +17,6 @@ void Ov236_ReactDecayAimAndCancelAction(int self) {
     if (*(unsigned char *)(node[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*node, 0xf, 0);
+    Ov107_PostTagUpdate((Actor *)(*node), 0xf, 0);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov236_ReactDecayAimAndSetState);
 }

@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned f : 8; };
@@ -18,7 +19,6 @@ extern int Ov107_FindNearestObject(int actor, int mode);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
-extern char *func_ov107_020c9848(void);
 extern int FX_Inv(int v);
 extern int FX_Div(int a, int b);
 extern int RandNextScaled(int bound);

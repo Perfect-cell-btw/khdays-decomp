@@ -1,12 +1,13 @@
 /* Begins the swing: advances time, reacquires and aims at the target, then
  * starts animation 5 and installs the tick callback when the sub-node is idle.
  * The algebraic zero preserves the dependency needed for retail scheduling. */
+
+#include "game/enemy_common.h"
+
 extern int Ov107_FindNearestObject(int obj, int out);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
-extern void Ov107_StartAnim(int a, int b, int c);
 extern int Ov195_SwingTick;
 
 void Ov195_BeginSwing(int *self) {
@@ -24,7 +25,7 @@ void Ov195_BeginSwing(int *self) {
     }
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
         unsigned int u;
-        Ov107_PostTagUpdate(*state, 5, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
         Ov107_StartAnim(*(int *)(*state + 0x3d0), 1, 0);
         u = *(unsigned short *)(*state + 0x60);
         {

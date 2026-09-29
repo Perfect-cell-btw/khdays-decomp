@@ -3,12 +3,14 @@
  * parts and the first +0x3b8/+0x3b4 bodies (at +0x10); a +0x1c4 bit 1/3 enemy with no pending
  * request outside sub-states 0-3 asks for sub-state 2; outside sub-states 6/8 the +0x40c part's
  * +0x14 effect is released on the +0x3c list and cleared; then the base update (ov107 7ca4) runs. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } Shape;
 struct Dst { char pad[0x10]; Shape shape; };
 struct Src { int pad; Shape shape; };
 
 extern void TaskList_FinishByTag(int list, int handle);
-extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov208_Update(char *self)
 {

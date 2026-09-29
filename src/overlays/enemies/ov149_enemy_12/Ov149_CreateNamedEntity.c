@@ -1,8 +1,9 @@
 /* Creates enemy 18's actor: opens its cached resource by name and initialises it. */
 
+#include "game/enemy_common.h"
+
 extern int CallocInstance(int a);
 extern void OS_SPrintf(char *buf, const char *fmt, int a);
-extern int Ov107_OpenCachedResourceByName(char *buf);
 extern void func_ov107_020c6624(int a, int b);
 extern const char data_ov149_020d07a0[];
 extern void Ov149_Ov149ActorInit(int);

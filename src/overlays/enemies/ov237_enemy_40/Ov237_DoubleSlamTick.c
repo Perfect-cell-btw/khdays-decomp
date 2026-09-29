@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; VecFx32 axis[3]; int ext[3]; } Box;
 typedef struct { int w[7]; int radius; } Segment;
@@ -17,8 +18,6 @@ extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, int at);
 extern int Ov237_AttackHitTest(int *node, void *sphere, void *box, void *segment, VecFx32 *push, int once, unsigned short effect, int kind);
 extern VecFx32 Ov237_RotateByActorHeading(int *node, VecFx32 *target);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
-extern void Ov107_StartAnim(int actor, int pose, int c);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov237_LungeTick(void);
 extern const VecFx32 data_ov237_020d1ba0;
@@ -77,7 +76,7 @@ void Ov237_DoubleSlamTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 9, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3d8), 5, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov237_LungeTick);
 }

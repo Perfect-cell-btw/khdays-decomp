@@ -1,14 +1,15 @@
 /* AI step: posts pose 0xb, sends the swing update (0x112, mode 4), resets the swing counters and
  * continues with the swing tick. */
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov114_AiSwingTick(void);
 
 void Ov114_ConfigSubStateThenAdvanceSlot(int *node) {
     int *state = (int *)node[1];
-    Ov107_PostTagUpdate(*state, 0xb, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xb, 0);
     Ov107_BuildAndSendUpdate(*state, 0x112, 4, state[1]);
     state[0x11] = 0;
     *(unsigned char *)((char *)state + 0x49) = 0;

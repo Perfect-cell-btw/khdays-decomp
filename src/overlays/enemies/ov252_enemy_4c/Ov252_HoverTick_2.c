@@ -8,12 +8,12 @@
  * node moves on to 020d1c7c. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov252_GuardSweep(int *node);
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern unsigned int RandNextScaled(int bound);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_CruiseTick(void);
 
@@ -37,8 +37,8 @@ void Ov252_HoverTick_2(int *node)
         *((unsigned char *)state + 0x92) = 0;
         if (*(unsigned char *)(state[1] + 0xaf) == 0 && *((unsigned char *)state + 0x88) == 8) {
             *((unsigned char *)state + 0x88) = 0;
-            Ov107_PostTagUpdate(*state, 0x33, 1);
-            Ov107_PostTagUpdate(*state, 0x37, 1);
+            Ov107_PostTagUpdate((Actor *)(*state), 0x33, 1);
+            Ov107_PostTagUpdate((Actor *)(*state), 0x37, 1);
             state[0x1e] = 0x1c000;
         }
     }
@@ -60,6 +60,6 @@ void Ov252_HoverTick_2(int *node)
     state[0x2f] = 0;
     state[0x1c] = 0;
     state[0x2e] = 0;
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_CruiseTick);
 }

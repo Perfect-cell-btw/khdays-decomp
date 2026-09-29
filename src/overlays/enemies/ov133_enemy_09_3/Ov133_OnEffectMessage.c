@@ -1,11 +1,10 @@
 /* Effect message (kind 5): spawns the child or the effect task for the sub-kind. */
 
+#include "game/enemy_common.h"
+
 extern int Ov133_SpawnChild0cAndBackLink(int, int, int, int);
-extern int Ov107_CreateSpawnTask(int, int, int, int, int);
 extern int Ov107_CreateNodeXformTaskFx24(int, int, int, int, int, int);
-extern void Ov107_ForwardVisibleEvent(int, int);
 extern int Ov133_SpawnChild10AndBackLink(int, int, int, int);
-extern int Ov107_CreateNodeBodyTask(int, int, int, int, int, int);
 extern void Ov107_AiState_OnMessage(int, int, int);
 void Ov133_OnEffectMessage(int param_1, int param_2, int param_3, int param_4) {
     int result;

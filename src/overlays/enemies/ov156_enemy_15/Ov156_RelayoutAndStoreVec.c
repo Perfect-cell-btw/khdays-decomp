@@ -1,8 +1,7 @@
 /* Re-lays the node out, stores the vector at +0x394 and sets flags60 bit 8. */
 
 #include "nitro/types.h"
-
-extern int Ov107_MoveNodeAndRelayout();
+#include "game/enemy_common.h"
 
 struct Vec3 {
     u32 x, y, z;
@@ -24,7 +23,7 @@ struct Obj {
 };
 
 void Ov156_RelayoutAndStoreVec(struct Obj *a, int b, struct Vec3 *src) {
-    Ov107_MoveNodeAndRelayout(a, b);
+    Ov107_MoveNodeAndRelayout((Actor *)a, (VecFx32 *)b);
     a->field_0x394 = *src;
     a->f60.w = (u16)((a->f60.w & ~0xff00) | (((a->f60.bf.hi | 1) & 0xff) << 8));
 }

@@ -2,9 +2,10 @@
  * formatted class name, installs the class constructor as the state callback (+0x18c) and hands the
  * object to the shared enemy framework. */
 
+#include "game/enemy_common.h"
+
 extern void *CallocInstance(int size);
 extern void OS_SPrintf(void *buffer, void *format);
-extern int Ov107_OpenCachedResourceByName(void *name);
 extern void func_ov107_020c6624(void *obj, int arg);
 extern int data_ov241_020d0cb8;
 extern void Ov241_Construct(void *obj);

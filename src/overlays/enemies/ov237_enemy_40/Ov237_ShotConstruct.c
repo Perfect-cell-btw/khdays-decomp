@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { VecFx32 pos; int scale; } Placement;
@@ -16,7 +17,6 @@ extern void Ov237_TickAndSyncModelXform(void);
 extern void func_ov237_020d0ca0(void);
 extern void Ov237_CreateRegistryEntryAndLink(void);
 extern void Ov237_OnHit(void);
-extern void *Ov107_PackTextureHandle(int set, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void SetSubitemState(int rig, int channel, int a, int b);
@@ -45,7 +45,7 @@ void Ov237_ShotConstruct(char *self)
     *(int *)(self + 0x70) = 0x600;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x58) = 0;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(set, 0x3c));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)set, 0x3c));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     SetSubitemState(*(int *)(self + 0x384), 0, 0, 1);
     SetSubitemState(*(int *)(self + 0x384), 2, 0, 1);

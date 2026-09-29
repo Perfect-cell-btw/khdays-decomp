@@ -5,12 +5,11 @@
  * motion 8) and the walk goes on; otherwise it lunges (pose 0x13, motion 9); both lead to 020d1400. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov238_TargetGap(int *node);
 extern void Ov238_TurnVelocity(int *node, VecFx32 *vec);
 extern void Ov238_TimedCue(int *node, int ticks, int cue, int variant);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov238_SwipeTick(void);
 
@@ -29,7 +28,7 @@ void Ov238_WalkTick(int *node)
     if (dist > 0x5000) {
         state[0xd] = 1;
         *((unsigned char *)state + 0x2e) = 0;
-        Ov107_PostTagUpdate(*state, 0x14, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x14, 0);
         Ov107_StartAnim(*(int *)(*state + 0x3e0), 0xa, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov238_SwipeTick);
         return;
@@ -38,7 +37,7 @@ void Ov238_WalkTick(int *node)
         *((unsigned char *)state + 0x2d) -= 1;
         state[8] = 0;
         *((unsigned char *)state + 0x31) = 2;
-        Ov107_PostTagUpdate(*state, 0x12, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x12, 0);
         Ov107_StartAnim(*(int *)(*state + 0x3e0), 8, 0);
     }
     if (*((unsigned char *)state + 0x2d) != 0 && dist >= 0x1800) {
@@ -47,7 +46,7 @@ void Ov238_WalkTick(int *node)
     *((unsigned char *)state + 0x2e) = 1;
     *((unsigned char *)state + 0x31) = 2;
     state[8] = 0;
-    Ov107_PostTagUpdate(*state, 0x13, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x13, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3e0), 9, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov238_SwipeTick);
 }

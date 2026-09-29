@@ -9,12 +9,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Hook)(int obj, int a);
 
 extern void Ov171_SettleCarryPosition(int scene, VecFx32 *pos, int actor);
 extern void Actor_SetVecAndSyncChild(void *obj, VecFx32 *pos);
-extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *at);
 extern void Ov022_ToggleBit13ByMode(int target, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
@@ -40,14 +40,14 @@ void Ov171_CarryReleaseTick(int *node)
         rider = *(int *)(state[3] + 0x4ec);
         if (rider != 0) {
             *(VecFx32 *)(rider + 0x190) = at;
-            Ov107_MoveNodeAndRelayout(rider, (VecFx32 *)(rider + 0x190));
+            Ov107_MoveNodeAndRelayout((Actor *)rider, (VecFx32 *)(rider + 0x190));
             rider = *(int *)(state[3] + 0x4ec);
             if (((*(int *)(rider + 0x40) << 30) >> 31) != 0 && *(Hook *)(rider + 0xc) != 0) {
                 (*(Hook *)(rider + 0xc))(rider, 0);
             }
         }
         Ov022_ToggleBit13ByMode(state[3], 0);
-        Ov107_MoveNodeAndRelayout(*(int *)(*state + 0x38c), &drop);
+        Ov107_MoveNodeAndRelayout((Actor *)(*(int *)(*state + 0x38c)), &drop);
         item = *(int *)(*state + 0x38c);
         if (((*(int *)(item + 0x40) << 30) >> 31) != 0 && *(Hook *)(item + 0xc) != 0) {
             (*(Hook *)(item + 0xc))(item, 0);

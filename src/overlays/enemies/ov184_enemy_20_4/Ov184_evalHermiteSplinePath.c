@@ -2,6 +2,8 @@
  * target, capping the per-frame step at 0x800 and facing the target; at the end of the curve posts
  * pose 7 and installs the fade-in step. Without a target it queues action 2 instead. */
 
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo:8, hi:8; };
 
 extern void SetIndexedSlot(void *node, int slot, void *cb);
@@ -11,7 +13,6 @@ extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Mag(void *v);
 extern void VEC_Normalize(void *src, void *dst);
 extern int func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov184_AiFadeInTick(void);
 extern short data_0203d210[];
 
@@ -60,7 +61,7 @@ void Ov184_evalHermiteSplinePath(int *param_1) {
         VEC_Subtract((void *)(state[4] + 400), (void *)state[1], l40);
         state[6] = func_020050b4(l40[0], l40[2]);
         if (state[7] >= 0x1000) {
-            Ov107_PostTagUpdate(*state, 7, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
             ((struct hw60 *)(*state + 0x60))->hi &= ~2;
             state[7] = 0;
             SetIndexedSlot(param_1, *(signed char *)(param_1 + 8), Ov184_AiFadeInTick);

@@ -3,8 +3,10 @@
  * effect while the matching rider counter (+0x3d2 / +0x3d2 / +0x3d0) is positive: kind 5 at
  * the +0x3c4 item's transform for the first two, kind 4 at the +0x3c0 item's for the third.
  * Once the +0x20 child's byte clears, pose 0xb plays (looping) and the node dispatches null. */
+
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov236_RiderFireTickB(int *node) {
@@ -32,6 +34,6 @@ void Ov236_RiderFireTickB(int *node) {
     if (*(unsigned char *)state[8] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0xb, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xb, 1);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
 }

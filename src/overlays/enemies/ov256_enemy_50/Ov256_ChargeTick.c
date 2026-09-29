@@ -3,9 +3,9 @@
  * queued move pose 0x10 plays, +0x54 and the +0x6a flag clear and the node moves on to 020cfafc. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern void Ov256_FlagDoneAndNotify(int claw);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_AiChargeRepeat(void);
 
@@ -22,7 +22,7 @@ void Ov256_ChargeTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x10, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x10, 0);
     state[0x15] = 0;
     *((u8 *)state + 0x6a) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov256_AiChargeRepeat);

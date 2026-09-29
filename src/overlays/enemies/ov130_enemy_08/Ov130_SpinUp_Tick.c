@@ -4,6 +4,7 @@
    into motion mode 5 and installing the next state. */
 
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 struct State {
     char *pActor;
@@ -23,7 +24,6 @@ struct Node {
 };
 
 extern void Ov130_DecaySpinOverElapsed(struct Node *node);
-extern void Ov107_PostTagUpdate(char *actor, int a, int b);
 extern void SetIndexedSlot(struct Node *node, int slot, void *next);
 
 extern void Ov130_ClearHiFlagAndAdvance(void);
@@ -47,6 +47,6 @@ void Ov130_SpinUp_Tick(struct Node *node)
     if (*(unsigned char *)(st->pOwner + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(st->pActor, 5, 1);
+    Ov107_PostTagUpdate((Actor *)st->pActor, 5, 1);
     SetIndexedSlot(node, node->slot, (void *)Ov130_ClearHiFlagAndAdvance);
 }

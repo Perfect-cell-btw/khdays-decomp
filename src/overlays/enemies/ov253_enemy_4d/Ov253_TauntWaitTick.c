@@ -2,9 +2,11 @@
  * and the +0x1c timer runs down; once it expires or the actor's +0x21a stock is empty the
  * +0x38c item's +0xa8 flag clears, and when the +8 item's animation is free bit 0 of the +0x3b4
  * item's +8 low byte clears, pose 6 plays and the node moves to 020d0b88. */
+
+#include "game/enemy_common.h"
+
 struct w8 { unsigned int lo : 8, rest : 24; };
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov253_AiQueue4OnAnimEnd(void);
 
@@ -21,6 +23,6 @@ void Ov253_TauntWaitTick(int *node) {
         return;
     }
     ((struct w8 *)(*(int *)(*state + 0x3b4) + 8))->lo &= ~1;
-    Ov107_PostTagUpdate(*state, 6, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 6, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov253_AiQueue4OnAnimEnd);
 }

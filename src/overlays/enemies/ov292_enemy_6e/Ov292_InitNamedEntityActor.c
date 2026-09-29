@@ -18,6 +18,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Placement { VecFx32 vec; int scale; };
 struct Box { VecFx32 min, max; };
@@ -35,7 +36,6 @@ extern void Ov292_HandleHitEvent(void);
 extern void Ov292_Model_SetTrack0(void);
 extern void Ov292_RequestSubState7IfNotCurrent(void);
 
-extern void *Ov107_PackTextureHandle();
 extern void *CreateSubitemInstance0xB4();
 extern void RegisterSubscriberSlot();
 extern void Srt_SetTranslationXYZ();

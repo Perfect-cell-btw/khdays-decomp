@@ -5,11 +5,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 struct Items4ac { char pad[0x4ac]; int item[10]; };
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern int List_First(void *list);
 extern int List_Next(void *list);
@@ -26,7 +26,7 @@ void Ov254_StopEntry(int *node)
     int shape;
 
     *(VecFx32 *)(state + 3) = data_02041dc8;
-    Ov107_PostTagUpdate(*state, state[0x1e] != 0 ? 7 : 0x10, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), state[0x1e] != 0 ? 7 : 0x10, 0);
     func_ov107_020c0b90(*state, 5, zero, 0);
     if (state[0x1e] == 0) {
         for (i = 0; i < 10; i++) {

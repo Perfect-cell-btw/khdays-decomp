@@ -12,9 +12,11 @@
  * lets the scheduler split it and the load lands one slot early or two slots late.
  *
  * One of three byte-identical siblings. */
+
+#include "game/enemy_common.h"
+
 struct pt { unsigned short a, b; };
 extern void Ov271_AimLeadTarget(int self);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 struct blk { unsigned short pad[6]; struct pt p; };
 extern struct blk data_ov271_020d36a0;
@@ -29,7 +31,7 @@ void Ov271_EnterAttackState(int *self) {
     pt = data_ov271_020d36a0.p;
     Ov271_AimLeadTarget((int)self);
     state[0x18] = *(int *)(*self + 0x2c) * 0x1e / 15;
-    Ov107_PostTagUpdate(*state, 6, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 6, 1);
     *(unsigned short *)(*state + 0x1ae) |= 8;
     fp = *(void (**)(int, void *, int))(*state + 0x24);
     if (fp != 0) {

@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[4]; VecFx32 trans; int pad[4]; } Srt;
 typedef struct { VecFx32 a; VecFx32 d; int len; int r; } Capsule;
@@ -16,8 +17,6 @@ typedef struct { VecFx32 p; int r; } Sphere;
 typedef struct { void *a; void *b; void *c; int d; } CollisionHit;
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, const Srt *m, const VecFx32 *in);
@@ -50,12 +49,12 @@ void Ov254_ReachTick(int *node)
 
     anchor = *(VecFx32 *)(*(int *)(*(int *)(*state + 0x38c) + 0x414) + 0x14);
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 1, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
     }
     state[9] += *(int *)(node[0] + 0x2c);
     state[9] = state[9] > 0x7f8 ? 0x7f8 : (state[9] < 0 ? 0 : state[9]);
     ((struct Hw60 *)(*state + 0x60))->hi &= ~0x80;
-    Ov107_MoveNodeAndRelayout(*state, &anchor);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &anchor);
     VEC_Subtract((VecFx32 *)(*(int *)(*(int *)(*state + 0x38c) + 0x3dc) + 0x190), &anchor, &dir);
     VEC_Normalize(&dir, &dir);
     if (dir.y < -0x92d) {

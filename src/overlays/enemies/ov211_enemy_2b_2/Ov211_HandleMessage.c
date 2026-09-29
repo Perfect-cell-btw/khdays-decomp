@@ -6,13 +6,12 @@
  * reaction 0x117 mode 7 on the actor's +0xa0 pose into +0x3d8. The base handler always runs. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Pair { int res; int handle; };
 struct Nib { u8 lo : 4, hi : 4; };
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);
-extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
-extern int Ov107_CreateSpawnTask(char *self, int id, int mode, int flag, void *pose);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
 void Ov211_HandleMessage(char *self, u8 *msg, int arg)
@@ -47,7 +46,7 @@ void Ov211_HandleMessage(char *self, u8 *msg, int arg)
                 Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), (*(struct Pair **)(self + 0x3d0))[7].res, 0x17, (void *)(*(int *)(self + 0x9c) + 0x30), 0, 0);
             break;
         case 8:
-            *(int *)(self + 0x3d8) = Ov107_CreateSpawnTask(self, 0x117, 7, 0, self + 0xa0);
+            *(int *)(self + 0x3d8) = Ov107_CreateSpawnTask((int)self, 0x117, 7, 0, self + 0xa0);
             break;
         }
     }

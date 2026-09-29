@@ -2,8 +2,9 @@
  * of the high flag byte, sets the alpha to its minimum, rolls the 10% variant flag (+0x38c), posts
  * pose 0 and installs the wait-for-animation step. */
 
+#include "game/enemy_common.h"
+
 extern unsigned int RandNextScaled(int);
-extern void Ov107_PostTagUpdate(int node, int a, int b);
 extern void SetIndexedSlot();
 extern void Ov288_AiStep_QueueAction2OnAnimEnd(void);
 
@@ -18,6 +19,6 @@ void Ov288_AccumulateTimer34ThenAdvanceAt2a8(int this_) {
     ((struct hw60 *)(*(int *)holder + 0x60))->hi &= ~0x80;
     *(int *)(*(int *)holder + 0x394) = 1;
     *(int *)(*(int *)holder + 0x38c) = RandNextScaled(0x64) < 0xa;
-    Ov107_PostTagUpdate(*(int *)holder, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*(int *)holder), 0, 0);
     SetIndexedSlot(this_, *(signed char *)(this_ + 0x20), (int)&Ov288_AiStep_QueueAction2OnAnimEnd);
 }

@@ -1,6 +1,8 @@
 /* Collects the owner's container entries whose capsule (+0x78 of their shape) is within its radius
  * of the position. */
 
+#include "game/actor.h"
+
 extern int List_First(void *list);
 extern int List_Next(void *list);
 extern int Capsule_ClosestToBox(void *a, void *b, int c, int d, int e, int f);
@@ -15,9 +17,9 @@ typedef struct {
     char *shape;             /* +0x1d8 */
 } Entry;
 
-int Ov107_CollectCapsuleOverlaps(char *self, void *position, void **outArray)
+int Ov107_CollectCapsuleOverlaps(Actor *self, void *position, void **outArray)
 {
-    char *owner = *(char **)(self + 4);
+    char *owner = self->pScene;
     int count = 0;
     void *outerIt;
     Entry *cand;
@@ -26,7 +28,7 @@ int Ov107_CollectCapsuleOverlaps(char *self, void *position, void **outArray)
     cand = !outerIt ? 0 : *(Entry **)outerIt;
 
     while (cand != 0) {
-        if (cand->owner == *(char **)(self + 4)) {
+        if (cand->owner == self->pScene) {
             Blk32 blk = *(Blk32 *)(cand->shape + 0x78);
             int dist = Capsule_ClosestToBox(&blk, position, 0, 0, 0, 0);
             int d = FX_Sqrt(dist);

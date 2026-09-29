@@ -4,9 +4,9 @@
  * origin, +0x64, +0x86 and +0x88 clear and the node moves on to 020d2944. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -21,7 +21,7 @@ void Ov252_PartDescendTick(int *node)
     state[0x1b] += *(int *)(node[0] + 0x2c);
     if (*((unsigned char *)state + 0x88) != 0) {
         *((unsigned char *)state + 0x88) -= 1;
-        Ov107_PostTagUpdate(*state, 0x20, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x20, 0);
     }
     if (state[0x1b] >= 0x16d8 && *((unsigned char *)state + 0x89) == 5) {
         *((unsigned char *)state + 0x89) -= 1;

@@ -8,6 +8,7 @@
  * vector into ctx+0x10. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     int m[9];
@@ -15,7 +16,6 @@ typedef struct {
 
 extern void MTX_RotY33_(MtxFx33 *mtx, int sinVal, int cosVal);
 extern void MTX_MultVec33(const VecFx32 *v, const MtxFx33 *m, VecFx32 *dst);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov233_startAnim(int owner, int a);
 extern void SetIndexedSlot(int self, int action, void *cb);
 extern void Ov233_AiSlamLeap(void);
@@ -39,7 +39,7 @@ void Ov233_AiSlamWindup(int self) {
         return;
     }
 
-    Ov107_PostTagUpdate(ctx[0], 0xd, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 0xd, 0);
     Ov233_startAnim(ctx[0], 0xa);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), Ov233_AiSlamLeap);
 }

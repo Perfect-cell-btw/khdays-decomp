@@ -1,12 +1,13 @@
 /* State step: posts a pose, sets bit 0x40 in the high byte of the actor's flags (+0x60), clears the
  * timer and a sweep flag, and installs the timed transform step. */
 
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov183_stateTimerTransformVec(void);
 void Ov183_stateAnimSetFlagClear(int *node) {
     int *state = (int *)node[1];
-    Ov107_PostTagUpdate(*state, 0xd, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xd, 0);
     {
         unsigned short *p = (unsigned short *)(*state + 0x60);
         unsigned int u = *p;

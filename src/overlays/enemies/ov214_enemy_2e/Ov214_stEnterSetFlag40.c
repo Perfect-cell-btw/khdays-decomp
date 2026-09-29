@@ -1,8 +1,9 @@
 /* AI step: when the model's animation ends, sets bit 0x40 in the high byte of the actor's flags,
  * posts pose 4, resets the pose vectors for the launch and installs the charge-launch step. */
 
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
-extern void Ov107_PostTagUpdate();
 extern void Ov214_loadDefaultPoseVecs();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov214_StepChargeLaunch(void);
@@ -15,7 +16,7 @@ void Ov214_stEnterSetFlag40(int *node) {
         unsigned int u = *p;
         *p = (unsigned short)((u & ~0xff00) | ((((u << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10));
     }
-    Ov107_PostTagUpdate(*state, 4, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 4, 1);
     Ov214_loadDefaultPoseVecs(*state, 1);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov214_StepChargeLaunch);
 }

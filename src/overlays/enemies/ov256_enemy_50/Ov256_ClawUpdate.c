@@ -4,13 +4,13 @@
  * the +0x38c model and on to the +0x388 shape. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } Pose;
 
 extern int queryTableEntry(int model, int track);
 extern int Obj_GetCellScaledField(int model, int track, int clip);
 extern void callIfTableEntrySet(int model, int track, int frame);
-extern void Ov107_RefreshAndSelectChild(int part, int arg);
 extern void Ov107_ProcessObjectTick(char *self, int arg);
 
 void Ov256_ClawUpdate(char *self, int arg)

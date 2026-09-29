@@ -7,11 +7,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct EffectPair { int res; int handle; };
 struct Ov258Effects { char pad[0x464]; struct EffectPair pair[0x30]; };
 
-extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, u8 *pos);
 extern int Ov258_SpawnMarker(char *self, int rig, VecFx32 *pos);
 extern int Ov258_SpawnEffectB(char *self, int rig, VecFx32 *pos, int slot);

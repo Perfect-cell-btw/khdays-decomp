@@ -1,9 +1,10 @@
 /* Allocate and name a 0x3bc-byte Ov239Actor, install the initializer callback, and initialize its
  * base actor. */
 
+#include "game/enemy_common.h"
+
 extern void *CallocInstance(int size);
 extern void OS_SPrintf(void *buffer, void *format);
-extern int Ov107_OpenCachedResourceByName(void *name);
 extern void func_ov107_020c6624(void *obj, int arg);
 extern int data_ov239_020cdc40;
 extern void Ov239_InitializeActorResources(void *obj);

@@ -6,6 +6,9 @@
  * counter is rolled (1..3), animation 5 plays, the heading is re-aimed at the target with a
  * random spread (RandNextScaled(0x1923) - 0xc91), the timer and flags reset (bit 1 of +0x39)
  * and the state advances to cdbd4. */
+
+#include "game/enemy_common.h"
+
 struct b8 { unsigned int b : 8; };
 extern int Ov107_FindNearestObject(int obj, int out);
 extern void VEC_Subtract(void *a, void *b, void *d);
@@ -14,7 +17,6 @@ extern void Ov157_ProbeGroundBelowNode(int *state, int *p);
 extern long long FX_DivFx64c(int a, int b);
 extern void Ov157_GroundSweep(int *state, int lo, int hi, int *p);
 extern int RandNextScaled(int mul);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern int Ov157_ChargeAimedShotState;
 void Ov157_ChargeWindup(int *self) {
@@ -43,7 +45,7 @@ void Ov157_ChargeWindup(int *self) {
     }
     ((struct b8 *)(*(int *)(*state + 0x38c) + 8))->b &= ~1;
     state[7] = RandNextScaled(3) + 1;
-    Ov107_PostTagUpdate(*state, 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
     if (state[6] != 0) {
         VEC_Subtract((void *)(state[6] + 0x190), (void *)state[2], aim2);
         {

@@ -2,9 +2,11 @@
  * Ov211_AcquireOrTimedRecoverB -- x3 (ov210/211/282). AI-state tick: acquire target, else timed recovery.
  * Twin of Ov210_AcquireOrTimedRecover (020d2ad8) with attack 0xf and the 020d2e78 continuation.
  */
+
+#include "game/enemy_common.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int  RandNextScaled(int mul);
 extern void Ov211_StrafeSameTargetNeg(void);
 
@@ -17,7 +19,7 @@ void Ov211_AcquireOrTimedRecoverB(int *self) {
         SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), 0);
         return;
     }
-    Ov107_PostTagUpdate(*state, 0xf, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xf, 0);
     state[0x14] = 0x3000;
     state[0xc] = RandNextScaled(0x1001) + 0x1000;
     state[0xb] = 0;

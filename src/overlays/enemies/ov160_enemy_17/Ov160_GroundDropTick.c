@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -40,7 +41,6 @@ extern int Ov107_InvokeHitCallback(int ent, int owner, int aux, int mode, const 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void Ov022_ToggleBit13ByMode(int body, int a);
 extern void Actor_SetVecAndSyncChild(int object, VecFx32 *at);
-extern void Ov107_MoveNodeAndRelayout(int ent, VecFx32 *at);
 extern void Task_MarkFinished(int *node);
 extern const VecFx32 data_02041dc8;
 extern const PosMsg data_ov160_020cf7b4;
@@ -83,7 +83,7 @@ void Ov160_GroundDropTick(int *node)
         e = *(int *)(state[0xe] + 0x4ec);
         if (e != 0) {
             *(VecFx32 *)(e + 0x190) = *(VecFx32 *)(*state + 0xb0);
-            Ov107_MoveNodeAndRelayout(e, (VecFx32 *)(e + 0x190));
+            Ov107_MoveNodeAndRelayout((Actor *)e, (VecFx32 *)(e + 0x190));
             e = *(int *)(state[0xe] + 0x4ec);
             if (((struct Ov160Bits40 *)(e + 0x40))->b1 != 0 && *(void (**)(int, int))(e + 0xc) != 0) {
                 (*(void (**)(int, int))(e + 0xc))(e, 0);
@@ -94,7 +94,7 @@ void Ov160_GroundDropTick(int *node)
         raw.x = 0x2000;
         raw.y = 0x5000;
         raw.z = 0;
-        Ov107_MoveNodeAndRelayout(*state, &raw);
+        Ov107_MoveNodeAndRelayout((Actor *)(*state), &raw);
         raw = *(VecFx32 *)(*(int *)(state[0xe] + 0x20) + 0xa8);
         raw.y += 0x1000;
         vContact.x = *(Fx32 *)&raw.x;

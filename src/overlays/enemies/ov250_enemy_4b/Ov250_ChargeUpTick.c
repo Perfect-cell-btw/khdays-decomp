@@ -7,12 +7,12 @@
  * gets a third random angle, the timer restarts and handler 020cd844 takes over. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct bf { unsigned b : 8; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
 extern int FX_Div(int a, int b);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int RandNextScaled(int bound);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int node, int slot, void *cb);
@@ -42,7 +42,7 @@ void Ov250_ChargeUpTick(int node)
         unsigned int u = *p;
         *p = (unsigned short)((u & ~0xff00) | ((((u << 0x10) >> 0x18 | 2) << 0x18) >> 0x10));
     }
-    Ov107_PostTagUpdate(*state, 6, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 6, 1);
     *(int *)(*state + 0x394) = 0x1;
     angle = RandNextScaled(0x6489) - 0x3244;
     idx = (unsigned short)((0x28BE60DB9391LL * angle + 0x80000000000LL) >> 44);   /* FX_RAD_TO_IDX */

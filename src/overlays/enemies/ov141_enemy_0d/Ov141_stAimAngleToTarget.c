@@ -1,17 +1,17 @@
 /* State step: posts pose 3, faces the target when one is set, starts the action resource's
  * animation and installs the projectile step. */
 
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int z);
-extern void Ov107_StartAnim();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov141_stAdvanceProjectilePose(void);
 
 void Ov141_stAimAngleToTarget(int *node) {
     int *state = (int *)node[1];
     int buf[3];
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     {
         int p = state[0xe];
         if (p != 0) {

@@ -4,12 +4,12 @@
  * the variant) into the slot's +0x394 handle. The base handler always runs. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
-extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 
 void Ov260_PartMessageHandler(int owner, unsigned char *command, int arg)

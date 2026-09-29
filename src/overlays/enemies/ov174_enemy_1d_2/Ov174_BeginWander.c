@@ -1,11 +1,13 @@
 /* Ov174_BeginWander: ported from the matched ov166 sibling (same enemy family, constants adjusted). */
-extern void Ov107_PostTagUpdate();
+
+#include "game/enemy_common.h"
+
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov174_OrbitTick(void);
 void Ov174_BeginWander(int *node) {
     int *state = (int *)node[1];
-    Ov107_PostTagUpdate(*state, 1, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
     state[0x18] = (RandNextScaled(2) == 0) ? -1 : 1;
     state[0x13] = RandNextScaled(0x100);
     {

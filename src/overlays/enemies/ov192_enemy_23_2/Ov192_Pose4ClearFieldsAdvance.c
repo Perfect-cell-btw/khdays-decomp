@@ -1,12 +1,13 @@
 /* State step: posts pose 4, clears the timer and the leap flags and installs the leap step. */
 
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot();
 extern void Ov192_LeapTick();
 
 void Ov192_Pose4ClearFieldsAdvance(int this_) {
     int n = *(int *)(this_ + 4);
-    Ov107_PostTagUpdate(*(int *)n, 4, 0);
+    Ov107_PostTagUpdate((Actor *)(*(int *)n), 4, 0);
     *(int *)(n + 0x2c) = 0;
     *(char *)(n + 0x38) = 0;
     *(unsigned char *)(n + 0x39) &= ~2;

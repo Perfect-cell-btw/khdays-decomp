@@ -1,6 +1,8 @@
 /* Scene hook of the ov258 enemy: removes its two +0x458 items from the scene (arg 1) and
  * chains to the common handler. */
-extern int Ov107_InvokeSlot0x74(int scene, int item);
+
+#include "game/enemy_common.h"
+
 extern int Ov107_Actor_DetachFromRegion(int *self, int scene);
 
 int Ov258_RemoveItemsFromScene(int *r0, int r1)

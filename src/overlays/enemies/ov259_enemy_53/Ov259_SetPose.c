@@ -7,6 +7,7 @@
  * hit volume (020cc194, pose + 0x21). +0x418 clears and +0x41c records the pose. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Flag { u8 b0 : 1; };
 typedef struct { char pad[0xc]; int clip; char rest[0x24 - 0x10]; } AnimSlot;
@@ -15,7 +16,6 @@ struct Ov259Model { char pad[0x398]; AnimSlot banks[2]; };
 extern int Anim_GetFrame(int animation, int track);
 extern void FreeAllResourceTables(void *bank);
 extern void NNS_G3dRenderObjInit(int a, int b);
-extern int Ov107_PackTextureHandle(char *self, int kind);
 extern void Snd_RegisterSeqAndBind(void *bank, int animation, int clip, int bones);
 extern void MainBlob_ResetSlotRows(int model, void *bank);
 extern void SetSubitemState(int model, int track, int a, int flag);

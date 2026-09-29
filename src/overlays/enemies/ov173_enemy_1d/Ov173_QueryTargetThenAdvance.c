@@ -1,5 +1,6 @@
+#include "game/enemy_common.h"
+
 extern int Ov107_FindNearestObject(int a, int b, int c, int d);
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(int obj, int a, int cb);
 extern void Ov173_SteerCircleAttack(void);
 
@@ -16,7 +17,7 @@ void Ov173_QueryTargetThenAdvance(int *this, int p2, int p3, int p4)
         SetIndexedSlot((int)this, *(signed char *)((int)this + 0x20), 0);
         return;
     }
-    Ov107_PostTagUpdate(node[0], 2, 0);
+    Ov107_PostTagUpdate((Actor *)node[0], 2, 0);
     node[0x12] = 0;
     *(signed char *)((int)node + 0x84) = 0;
     SetIndexedSlot((int)this, *(signed char *)((int)this + 0x20), (int)&Ov173_SteerCircleAttack);

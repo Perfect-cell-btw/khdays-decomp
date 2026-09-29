@@ -4,6 +4,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 struct MtxFx33 { int m[3][3]; };
 struct Ov214Params;
@@ -72,7 +73,6 @@ struct Ov214CollisionFlags {
     unsigned char bGrounded : 1;
 };
 
-extern void Ov107_PostTagUpdate(struct Ov214Actor *actor, int mode, int zero);
 extern void func_ov107_020c0b90(struct Ov214Actor *actor, int mode, VecFx32 value, int zero);
 extern struct Ov214CollisionResult *Collision_CastSphereEx(void *collision, VecFx32 *origin,
                                                  VecFx32 *direction, int radius, int zero);
@@ -128,7 +128,7 @@ void Ov214_StepBounceOffContact(struct Ov214Task *task)
     state->bCollision74 = 0;
 
     if (state->nPhase6e >= state->nPhaseMax6f) {
-        Ov107_PostTagUpdate(state->pActor, 8, 0);
+        Ov107_PostTagUpdate((Actor *)state->pActor, 8, 0);
         func_ov107_020c0b90(state->pActor, 6, data_02041dc8, 0);
         state->nCallback50 = 0;
         state->bEffect70 = 0;

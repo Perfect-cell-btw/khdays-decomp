@@ -6,13 +6,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Flags17a { u8 b0 : 1, b1 : 1; };
 
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern int Ov220_AttackSweep(int *state, int kind);
 extern void Ov220_startAnim(int actor, int anim);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
@@ -33,7 +33,7 @@ void Ov220_ChaseTick(int *node)
     hit = Ov220_AttackSweep(state, 0);
     state[5] += 0x800;
     if (state[5] >= 0x10000 || ((struct Flags17a *)(*state + 0x17a))->b1 || hit != 0) {
-        Ov107_PostTagUpdate(*state, 5, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
         Ov220_startAnim(*state, 0);
         func_ov107_020c0b90(*state, 4, data_02041dc8, 1);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov220_stateFixedAngleMatrix);

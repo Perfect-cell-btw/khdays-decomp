@@ -5,6 +5,7 @@
  * placed at the point, the +0x38 timer resets, sub-state 2 is requested and the state ends. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct PointTable { VecFx32 p[15]; };
 
@@ -12,7 +13,6 @@ extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int b, void *at);
 extern int RandNextScaled(int range);
 extern int Ov298_ComputeNormalizedDir(int *node, VecFx32 v);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct PointTable data_ov298_020d54f0;
 extern const VecFx32 data_02041dc8;
@@ -56,7 +56,7 @@ void Ov298_RetreatEntry(int *node)
     ((int *)((char *)state + 0x64))[state[0x18]] = k;
     state[0x18]++;
     *(VecFx32 *)(state + 4) = data_02041dc8;
-    Ov107_MoveNodeAndRelayout(*state, &pick);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pick);
     state[0xe] = 0;
     *(unsigned char *)(*state + 0x1c7) = 2;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);

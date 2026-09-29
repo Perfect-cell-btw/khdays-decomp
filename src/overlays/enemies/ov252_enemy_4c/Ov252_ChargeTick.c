@@ -5,9 +5,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_BarrageTick(void);
 
@@ -21,7 +21,7 @@ void Ov252_ChargeTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x1b, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1b, 0);
     state[4] = 0;
     if (state[0x2b] == 0) {
         u16 hw = *(u16 *)(*state + 0x60);

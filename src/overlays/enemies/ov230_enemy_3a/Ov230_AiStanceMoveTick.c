@@ -15,6 +15,7 @@
  * conversion). */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     int m[9];
@@ -23,7 +24,6 @@ typedef struct {
 extern int Ov230_MeasureTargetGap(int self);
 extern void SetIndexedSlot(int self, int action, void *cb);
 extern int RandNextScaled(int n);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov230_startAnim(int owner, int a);
 extern void Ov230_AiPickStanceReaction(void);
 extern void Ov230_AiStanceMoveFinish(void);
@@ -59,14 +59,14 @@ void Ov230_AiStanceMoveTick(int self) {
 
         switch (ctx[0x17]) {
         case 0:
-            Ov107_PostTagUpdate(ctx[0], 4, 0);
+            Ov107_PostTagUpdate((Actor *)ctx[0], 4, 0);
             Ov230_startAnim(ctx[0], 3);
             break;
         case 2:
-            Ov107_PostTagUpdate(ctx[0], 0xa, 0);
+            Ov107_PostTagUpdate((Actor *)ctx[0], 0xa, 0);
             break;
         case 3:
-            Ov107_PostTagUpdate(ctx[0], 7, 0);
+            Ov107_PostTagUpdate((Actor *)ctx[0], 7, 0);
             break;
         }
 

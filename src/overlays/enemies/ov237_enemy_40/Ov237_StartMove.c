@@ -7,12 +7,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 
 extern VecFx32 Ov237_RotateByActorHeading(int *node, VecFx32 *target);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void Ov107_MoveNodeAndRelayout(int owner, const VecFx32 *pos);
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov237_AiShareHpAndQueue2(void);
@@ -32,7 +32,7 @@ void Ov237_StartMove(int *node)
         off = Ov237_RotateByActorHeading(node, &off);
         VEC_Add(&pos, &off, &pos);
         *(int *)(*state + 0x4b0) = 1;
-        Ov107_MoveNodeAndRelayout(*state, &pos);
+        Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
         {
             u16 hw = *(u16 *)(*state + 0x60);
 

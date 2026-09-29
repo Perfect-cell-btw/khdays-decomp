@@ -5,11 +5,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov256_PickTarget(int *node);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov256_Claw_LaunchIfReady(int claw, VecFx32 *dir);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_RoarTick(void);
 extern const VecFx32 data_02041dc8;
@@ -32,10 +32,10 @@ void Ov256_ClawWindupTick(int *node)
         func_ov107_020c0b90(*state, 0xb, origin, 0);
         Ov256_Claw_LaunchIfReady(*(int *)(*state + 0x434), (VecFx32 *)(state + 0xd));
         Ov256_Claw_LaunchIfReady(*(int *)(*state + 0x438), (VecFx32 *)(state + 0xd));
-        Ov107_PostTagUpdate(*state, 0xc, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0xc, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov256_RoarTick);
         return;
     }
     state[0x15]++;
-    Ov107_PostTagUpdate(*state, 0xb, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xb, 0);
 }

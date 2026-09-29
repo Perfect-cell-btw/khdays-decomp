@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct b1 { unsigned char b0 : 1; };
 
@@ -17,7 +18,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int Ov259_ComputeNormalizedDir(int *node, VecFx32 pos);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int loop);
 extern void Ov259_ForwardSweep(int body, int a, int b, VecFx32 v);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
@@ -59,7 +59,7 @@ void Ov259_TickDive(int *node)
     dist = Ov259_ComputeNormalizedDir(node, *(VecFx32 *)(state + 0xb));
     state[6] += 0x660 - state[0x1a] / 2;
     if (dist < *(int *)(*state + 0x80) * 0x1c && state[0x15] == 0) {
-        Ov107_PostTagUpdate(*state, 0x1a, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1a, 0);
         Ov259_MirrorPartnerPose(node, 0x1a, 0);
         Ov259_ForwardSweep(*(int *)(*state + 0x384), 0x330, 0xee0, zero);
         *(int *)(*state + 0x420) = 7;
@@ -91,7 +91,7 @@ void Ov259_TickDive(int *node)
         return;
     }
     if (((struct b1 *)(*state + 0x17a))->b0 != 0) {
-        Ov107_PostTagUpdate(*state, 0x19, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x19, 0);
         Ov259_MirrorPartnerPose(node, 0x19, 0);
         func_ov107_020c0b90(*state, 2, *(VecFx32 *)state[4], 0);
         func_ov107_020c0b90(*state, 0xf, *(VecFx32 *)state[4], 0);

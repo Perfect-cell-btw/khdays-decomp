@@ -13,12 +13,14 @@
  * gives the ROM's register split. mwcc forwards the value, so there is no reload and no size cost;
  * the earlier note's "+4B" came from re-reading state[2] down inside the branch instead.
  */
+
+#include "game/enemy_common.h"
+
 struct q4 { int a, b, c, d; };
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void Mtx33_LookAt(void *out, int a, int b, void *c);
 extern void Quat_FromMtx33(void *quat, void *mtx);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int  RandNextScaled(int scale);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern int  data_02042264;
@@ -42,7 +44,7 @@ void Ov201_TimerAimFireReroll(int *self) {
         *(struct q4 *)(state + 0x21) = *(struct q4 *)(state + 0x25);
     }
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x80;
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     a = *(int *)(*state + 0x224);
     d = *(int *)(*state + 0x228) - a;
     if (d < 0) {

@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
@@ -17,10 +18,7 @@ struct Shapes4e8 { char pad[0x4e8]; int shape[7]; };
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void Ov252_LeapTick(void);
 extern const VecFx32 data_02041dc8;
 extern const VecFx32 data_ov252_020d4350;
@@ -61,13 +59,13 @@ void Ov252_SinkTick(int *node)
         state[0x19] = 0;
         *(VecFx32 *)(state + 3) = data_02041dc8;
         ((struct Hw60 *)(*state + 0x60))->hi &= ~1;
-        Ov107_MoveNodeAndRelayout(*state, &spawn);
+        Ov107_MoveNodeAndRelayout((Actor *)(*state), &spawn);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_LeapTick);
         return;
     }
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x17, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x17, 0);
     Ov107_StartAnim(*(int *)(*state + 0x574), 0x16, 0);
 }

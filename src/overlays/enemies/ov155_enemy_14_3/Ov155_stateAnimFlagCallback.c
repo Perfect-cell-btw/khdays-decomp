@@ -2,8 +2,9 @@
  * speed from the owner's frame step, sends the animation pair from the overlay's table to the
  * actor's event callback and installs the aim step. */
 
+#include "game/enemy_common.h"
+
 struct pair { unsigned short a, b; };
-extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern struct pair data_ov155_020d58e0;
 extern void Ov155_AimTick(void);
@@ -11,7 +12,7 @@ void Ov155_stateAnimFlagCallback(int *node) {
     int *state = (int *)node[1];
     struct pair buf;
     void (*cb)();
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     *(unsigned short *)(*state + 0x1ae) |= 0x40;
     state[7] = 0;
     *(signed char *)((char *)state + 0x24) = 0;

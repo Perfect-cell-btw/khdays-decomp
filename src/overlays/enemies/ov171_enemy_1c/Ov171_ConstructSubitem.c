@@ -1,6 +1,7 @@
 /* Ov171_ConstructSubitem: sub-item constructor of the ov171 enemy (x2), variant of the matched ov175 sibling (four handlers, latch 0x64c). */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     char pad_0000[0x5c];
@@ -43,7 +44,6 @@ typedef struct {
     int owner_038c;
 } Ov169Object;
 
-extern void *Ov107_PackTextureHandle(int owner, int index);
 extern Ov169Subitem *CreateSubitemInstance0xB4(void *item);
 extern void RegisterSubscriberSlot(Ov169Subitem *subscriber, Ov169Subitem *item);
 extern void SetSubitemState(Ov169Subitem *item, int state, int zero, int enabled);
@@ -71,7 +71,7 @@ void Ov171_ConstructSubitem(Ov169Object *self) {
     self->field_0054 = 0;
     self->field_0058 = 0;
     self->subscriber_009c->flags_005c |= 4;
-    self->subitem_0384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, 3));
+    self->subitem_0384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)owner, 3));
     RegisterSubscriberSlot(self->subscriber_009c, self->subitem_0384);
     SetSubitemState(self->subitem_0384, 0, 0, 1);
     SetSubitemState(self->subitem_0384, 2, 0, 1);

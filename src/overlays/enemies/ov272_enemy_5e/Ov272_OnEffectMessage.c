@@ -6,12 +6,12 @@
  * (looping). The base hook always runs. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Pair { int res; int handle; };
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);
 extern int Ov107_CreateNodeXformTask(int model, int res, int kind, int zero, void *t);
-extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
 extern int Ov272_SpawnChildStoreSelfAndArg(char *self, int on);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 

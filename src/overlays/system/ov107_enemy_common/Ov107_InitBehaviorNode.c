@@ -2,16 +2,10 @@
  * callback function pointers into the node's vtable slots, and init its child list at +0x44. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_InitNodeBase(u16 *node);
 extern void List_Init(void *list);
-extern void Ov107_Region_Destroy(void);
-extern void Ov107_Region_TickChildren(void);
-extern void Ov107_Region_SyncChildVisibility(void);
 extern void Ov107_Region_RunHandlersAlternating(void);
-extern void Ov107_RunChildHandlers(void);
-extern void Ov107_BroadcastValueToChildren(void);
-extern void Ov107_LinkChildNode(void);
 extern void Ov107_Region_UnlinkChild(void);
 
 void Ov107_InitBehaviorNode(u16 *node) {

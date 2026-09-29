@@ -6,11 +6,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct m4 { int w[4]; };
 struct w8 { unsigned int lo : 8, rest : 24; };
 
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern int RandNextScaled(int range);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -35,7 +35,7 @@ void Ov236_EnterBuck(int *node)
     *(u16 *)(*state + 0x100 + 0xae) |= 1;
     ((struct w8 *)(*(int *)(*state + 0x3b0) + 8))->lo &= ~1;
     ((struct w8 *)(*(int *)(*state + 0x3b4) + 8))->lo &= ~1;
-    Ov107_PostTagUpdate(*state, 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
     *(struct m4 *)(state + 0x19) = *(struct m4 *)(*state + 0xa0);
     *(VecFx32 *)(state + 0x16) = *(VecFx32 *)state[7];
     idx = FX_RadToIdx(RandNextScaled(0x6489) - 0x3244);

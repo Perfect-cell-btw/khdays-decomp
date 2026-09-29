@@ -4,7 +4,9 @@
  * for each live handle (word at +8*i+4) release it through 0203c650(*(self+0x3c), handle) and
  * clear the slot. Finish by ticking 020c7c1c(self, arg).
  */
-extern void Ov107_InvokeSlot0x74(int owner, int node);
+
+#include "game/enemy_common.h"
+
 extern void TaskList_FinishByTag(int scene, int handle);
 extern void Ov107_Actor_DetachFromRegion(int self, int arg);
 

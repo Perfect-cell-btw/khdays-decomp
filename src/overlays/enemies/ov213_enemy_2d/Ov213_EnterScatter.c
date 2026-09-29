@@ -5,11 +5,11 @@
  * moves the node to 020cf5fc. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct SpreadMsg { int w[17]; };
 typedef void (*MsgHook)(int actor, struct SpreadMsg *m, int size);
 extern int  RandNextScaled(int bound);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int obj, int mode, VecFx32 v, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern const struct SpreadMsg data_ov213_020d2ee4;
@@ -31,7 +31,7 @@ void Ov213_EnterScatter(int *self) {
             hook(*state, &msg, 0x44);
         }
     }
-    Ov107_PostTagUpdate(*state, 0x10, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x10, 0);
     {
         int actor = *state;
         if ((*(unsigned char *)(actor + 0x1c4) & 0xa) == 0) {

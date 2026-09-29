@@ -5,9 +5,11 @@
  * atan2(dir.x, dir.z). While the ready byte *(u8)(state[1]+0xad) is set, return; once clear fire
  * attack 0xa (020c9264) and hand off to the 020d20c0 state.
  */
+
+#include "game/enemy_common.h"
+
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov209_FaceTargetFireReadyB(void);
 
@@ -21,6 +23,6 @@ void Ov209_FaceTargetFireReady(int *self) {
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0xa, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xa, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov209_FaceTargetFireReadyB);
 }

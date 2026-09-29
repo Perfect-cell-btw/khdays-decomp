@@ -1,8 +1,9 @@
+#include "game/enemy_common.h"
+
 struct row8 { int a, b; };
 
 extern void FreeAllResourceTables(int a, int b, int c, int d);
 extern void DestroyInstance(int instance);
-extern void Ov107_ActionResource_Destroy(int p);
 extern void Ov107_DestroyObject(int obj);
 
 // Full teardown: run the base cleanup (this+0x384, forwarded args), clear the
@@ -15,7 +16,7 @@ void Ov276_FullTeardownReleaseSlots(int *this, int p2, int p3, int p4)
     FreeAllResourceTables((int)this + 0x384, p2, p3, p4);
     *(int *)((int)this + 0x390) = 0;
     DestroyInstance(*(int *)((int)this + 0x3a8));
-    Ov107_ActionResource_Destroy(*(int *)((int)this + 0x470));
+    Ov107_ActionResource_Destroy((char *)(*(int *)((int)this + 0x470)));
     for (i = 0; i < 6; i++) {
         int slot = ((struct row8 *)this)[i + 0x91].a;
         if (slot != 0) {

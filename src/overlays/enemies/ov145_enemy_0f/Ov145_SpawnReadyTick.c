@@ -7,10 +7,10 @@
  * fallback sub-state; the tick then hands off to a null callback. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern void Ov107_MoveNodeAndRelayout(int actor, int spot);
 extern int Ov145_LureToPiece(int *state, int flag);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int func_020050b4(int x, int z);
@@ -40,7 +40,7 @@ void Ov145_SpawnReadyTick(int *node)
         *(VecFx32 *)(state + 3) = *(VecFx32 *)state[2];
         state[0x10] = 0;
     }
-    Ov107_MoveNodeAndRelayout(*state, *state + 0x3ac);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), (VecFx32 *)(*state + 0x3ac));
     if (Ov145_LureToPiece(state, 0) != 0) {
         VEC_Subtract(state + 3, (void *)state[2], &d);
         state[0xc] = state[0xd] = func_020050b4(d.x, d.z);

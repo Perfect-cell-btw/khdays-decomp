@@ -8,11 +8,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int x, y, z, w; } Quat;
 struct Flag17a { u8 b0 : 1; };
 
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
 extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *from, const VecFx32 *to);
 extern void Quat_Multiply(Quat *out, const Quat *a, const Quat *b);
@@ -32,7 +32,7 @@ void Ov256_ClawWatchSlot(int *node)
 
     if (*(int *)(*state + 0x3a0) == 0 && *(int *)(*state + 0x39c) == 0) {
         hand = *(VecFx32 *)(HAND_BONE(*state) + 0x14);
-        Ov107_MoveNodeAndRelayout(*state, &hand);
+        Ov107_MoveNodeAndRelayout((Actor *)(*state), &hand);
         *(VecFx32 *)(state + 0x20) = data_02042264;
     }
     if (*(int *)(*state + 0x39c) == 0 && *(int *)(*state + 0x3a0) == 0 && *(int *)(*state + 0x398) == 0) {

@@ -9,12 +9,14 @@
  *
  * `lo + RandNextScaled(d + 1)` in one expression is what produces the ROM's `add r0,r6,r0`
  * AFTER the bl (lo held in a callee-saved register across the call). */
+
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct b8 { unsigned f : 8; };
 
 extern int RandNextScaled(int a);
 extern void Ov267_SetState6cReset70(int *ctx);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *self, int idx, void *cb);
 
 void Ov267_RollNextAttack(void *self) {
@@ -42,7 +44,7 @@ void Ov267_RollNextAttack(void *self) {
     if (*(signed char *)(*ctx + 0x1c9) != 1) {
         ctx[0x1b] = 0;
         ((struct b8 *)(((int *)*ctx)[0x133] + 8))->f &= ~2;
-        Ov107_PostTagUpdate(*ctx, 4, 1);
+        Ov107_PostTagUpdate((Actor *)(*ctx), 4, 1);
     }
     *(char *)(*ctx + 0x1c7) = *(signed char *)(*ctx + 0x1c9);
     SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), 0);

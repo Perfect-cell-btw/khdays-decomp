@@ -1,8 +1,8 @@
 /* Unlinks the held node and follows the owner offset; once grounded and the flag clears queues
  * action 2. */
 
-extern void Ov107_UnlinkNodeFromOwner(int node);
-extern int Ov107_ActionResource_GetOffsetAndScale();
+#include "game/enemy_common.h"
+
 extern int Vec3TransformViaTempMtx();
 extern int ScaleVec3Fx12();
 extern int SetIndexedSlot();
@@ -14,12 +14,12 @@ void Ov202_AiReleaseHeldAndTrack(int this) {
     int r6;
 
     if (*(int *)(p + 0x410) != 0) {
-        Ov107_UnlinkNodeFromOwner(*(int *)(p + 0x410));
+        Ov107_UnlinkNodeFromOwner((void *)(*(int *)(p + 0x410)));
         *(int *)(*(int *)s + 0x410) = 0;
     }
 
     p = *(int *)s;
-    r6 = Ov107_ActionResource_GetOffsetAndScale(*(int *)(p + 0x388), local);
+    r6 = Ov107_ActionResource_GetOffsetAndScale(*(int *)(p + 0x388), (VecFx32 *)local);
 
     Vec3TransformViaTempMtx(s + 0x14, *(int *)s + 0xa0, local);
 

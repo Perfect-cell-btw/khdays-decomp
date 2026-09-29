@@ -6,8 +6,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern int Ov107_CollectSegmentOverlaps(int owner, void *seg, int *hits);
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
@@ -24,7 +24,7 @@ void Ov254_SubActorHitTest(int *node, VecFx32 *sphere, void *seg)
     int i;
 
     if (seg != 0) {
-        n = Ov107_CollectSegmentOverlaps(*(int *)(*state + 0x38c), seg, hits);
+        n = Ov107_CollectSegmentOverlaps((Actor *)(*(int *)(*state + 0x38c)), seg, (void **)hits);
     } else {
         if (sphere == 0) {
             return;

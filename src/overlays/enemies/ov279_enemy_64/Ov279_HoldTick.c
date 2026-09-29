@@ -7,16 +7,15 @@
  * Ov279_CarryTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 struct Partner { char pad[0x464]; unsigned long long flags; };
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 
-extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *pos);
 extern void Mtx33_LookAt(int *dst, const VecFx32 *a, const VecFx32 *b, const void *c);
 extern void Quat_FromMtx33(void *dst, const int *src);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern const VecFx32 data_02042264;
@@ -47,14 +46,14 @@ void Ov279_HoldTick(int *node)
     pos.x = *(int *)(target + 0x74) + (int)(((long long)data_0203d210[ANG2IDX(rad) * 2] * 0x1e00LL + 0x800LL) >> 12);
     pos.y = *(int *)(target + 0x78);
     pos.z = *(int *)(target + 0x7c) + (int)(((long long)data_0203d210[ANG2IDX(rad) * 2 + 1] * 0x1e00LL + 0x800LL) >> 12);
-    Ov107_MoveNodeAndRelayout(*state, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
     Mtx33_LookAt(mtx, (VecFx32 *)(target + 0x74), (VecFx32 *)state[0x13], &data_02042264);
     Quat_FromMtx33(state + 7, mtx);
     *(Quat *)(state + 3) = *(Quat *)(state + 7);
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 6, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 6, 1);
     state[0x14] = 0;
     state[0x15] = 0x800;
     state[0x1b] = *(int *)(target + 0x78);

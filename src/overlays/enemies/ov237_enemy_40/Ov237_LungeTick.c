@@ -5,10 +5,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern VecFx32 Ov237_RotateByActorHeading(int *node, VecFx32 *target);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
-extern void Ov107_StartAnim(int actor, int pose, int c);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov237_SlamTick(void);
 
@@ -25,10 +24,10 @@ void Ov237_LungeTick(int *node)
 
         *(u16 *)(state + 0x18) = (hw & ~0xff00) |
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0x40) << 0x18) >> 0x10);
-        Ov107_PostTagUpdate(*state, 0x16, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x16, 0);
         Ov107_StartAnim(*(int *)(*state + 0x3d8), 9, 0);
     } else {
-        Ov107_PostTagUpdate(*state, 10, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 10, 0);
         Ov107_StartAnim(*(int *)(*state + 0x3d8), 6, 0);
     }
     state[0xc] = 0;

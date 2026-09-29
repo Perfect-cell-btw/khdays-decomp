@@ -2,7 +2,8 @@
  * set the 3-bit state field (bits 16..18) to 7, and re-arm it.
  * The word at +0xc is modelled as `unsigned lo:16, mid:3, rest:13`; the ROM's
  * `and ~0xffff ; bic #0x70000 ; orr #0x70000` triple is exactly two bitfield stores. */
-extern void Ov107_OrLowFlags(int obj, int a);
+
+#include "game/enemy_common.h"
 
 struct Ov107Flags2 { unsigned int lo : 16, mid : 3, rest : 13; };
 

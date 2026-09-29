@@ -1,6 +1,7 @@
 /* Refreshes the child selector (+0x3a0), then runs the shared object tick. */
 
-extern int Ov107_RefreshAndSelectChild();
+#include "game/enemy_common.h"
+
 extern int Ov107_ProcessObjectTick();
 
 int Ov120_ReleaseAndDestroy(int *r0, int r1) {

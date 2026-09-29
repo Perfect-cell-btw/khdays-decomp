@@ -7,14 +7,13 @@
  * on the +0xa0 node into the +0x3a0 slot. The base handler always runs. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 
 extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero, SrtTransform *transform);
-extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
-extern int Ov107_CreateSpawnTask(int owner, int resourceId, int kind, int zero, void *work);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 
 void Ov174_HandleSpawnMessage(int owner, unsigned char *command, int arg)

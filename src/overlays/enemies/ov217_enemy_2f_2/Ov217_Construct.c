@@ -2,13 +2,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { void *node; int pad; } Slot;
 typedef struct { int w[5]; } KindTable;
 typedef struct { int w[6]; } ParamBlock;
 typedef struct { VecFx32 v; int w; } SpawnSeed;
 
-extern void *Ov107_PackTextureHandle(void *self, int slot);
 extern void *CreateSubitemInstance0xB4(void *res);
 extern void RegisterSubscriberSlot(void *list, void *node);
 extern void Snd_RegisterSeqAndBind(void *dst, void *a, void *b, int n);
@@ -16,8 +16,6 @@ extern void MainBlob_ResetSlotRows(void *obj, void *block);
 extern int FindResourceIndexByName(void *obj, const char *name);
 extern void RefreshObjectCallbacks(void *obj, int a);
 extern void Ov107_Actor_SetAttachSlot(void *self, int a, int b, const VecFx32 *v, int e);
-extern void *func_ov107_020c9848(void);
-extern void Ov107_EnqueueValue(void *self, void *obj);
 extern void *JointModel_New(void *res, int n);
 extern void *Ov217_createRegistryEntryStoreField(void *self);
 extern void *List_InsertSorted(void *list, int size, int count);
@@ -129,12 +127,12 @@ void Ov217_Construct(char *self)
         } else {
             node = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, kinds.w[i]));
         }
-        Ov107_EnqueueValue(self, (((Slot *)(self + 0x440))[i].node = node));
+        Ov107_EnqueueValue(self, (int)((((Slot *)(self + 0x440))[i].node = node)));
         *(int *)((char *)((Slot *)(self + 0x440))[i].node + 0x5c) |= 2;
     }
 
     *(void **)(self + 0x3c4) = JointModel_New(Ov107_PackTextureHandle(self, 0xe), 0x22);
-    Ov107_EnqueueValue(self, *(void **)(self + 0x3c4));
+    Ov107_EnqueueValue(self, (int)(*(void **)(self + 0x3c4)));
     *(int *)(*(char **)(self + 0x3c4) + 0x5c) |= 2;
     *(void **)(self + 0x3c0) = Ov217_createRegistryEntryStoreField(self);
 

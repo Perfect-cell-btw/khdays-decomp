@@ -1,5 +1,7 @@
 /* Bind param_2 to the sub-object at *(*(param_1)+0x3d4), then run the ov107 attach. */
-extern void Ov107_InvokeSlot0x74(int a, int b);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_Actor_DetachFromRegion(int a, int b);
 void Ov282_NotifyShieldThenBase(int param_1, int param_2) {
     Ov107_InvokeSlot0x74(param_2, *(int *)*(int *)(param_1 + 0x3d4));

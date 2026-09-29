@@ -17,6 +17,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
@@ -37,7 +38,6 @@ struct Ov194Owner {
 };
 
 extern void Ov107_BuildAndSendUpdate(struct Ov194Owner *owner, int a, int id, void *at);
-extern int Ov107_ActionResource_GetOffsetAndScale(int resource, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *dst, void *xfm, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, VecFx32 *src, VecFx32 *dst);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -45,7 +45,6 @@ extern int Ov107_CollectSphereOverlaps(struct Ov194Owner *owner, Sphere *sphere,
 extern int Ov107_InvokeHitCallback(int hit, struct Ov194Owner *a, struct Ov194Owner *b, int kind, VecFx32 *push, int z);
 extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(struct Ov194Owner *actor, int anim, int flag);
 extern const PosMsg data_ov195_020d2bb4;
 extern const VecFx32 data_02041dc8;
 extern void Ov195_BeginSwing(void);
@@ -131,7 +130,7 @@ void Ov195_SwingTick(int *node)
             SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
             return;
         }
-        Ov107_PostTagUpdate((struct Ov194Owner *)*state, 9, 0);
+        Ov107_PostTagUpdate((Actor *)((struct Ov194Owner *)*state), 9, 0);
         *(u8 *)((char *)state + 0x50) = 0;
         state[0xc] = 0;
         *(u8 *)((char *)state + 0x51) = 0;

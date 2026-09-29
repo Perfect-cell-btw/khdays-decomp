@@ -8,6 +8,7 @@
  * the +0x64 pose with bit 1 of its flag byte raised. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct PoseIds {
     int values[3];
@@ -65,14 +66,12 @@ extern void Ov244_HandleRiderMessageA(void);
 extern void Ov244_CreateRegistryEntryAndLink(void);
 extern void Ov244_ActivateEntryIfFlagged(void);
 
-extern void *Ov107_PackTextureHandle(struct Obj *owner, int index);
 extern struct Subitem *CreateSubitemInstance0xB4(void *item);
 extern void Srt_SetScaleUniform(void *srt, int scale);
 extern void RegisterSubscriberSlot(struct Subitem *subscriber, struct Subitem *item);
 extern void SetSubitemState(struct Subitem *item, int state, int zero, int enabled);
 extern void RefreshObjectCallbacks(struct Subitem *item, int value);
 extern void *CallocInstance(int size);
-extern void Ov107_EnqueueValue(struct Obj *self, struct Subitem *item);
 extern struct PoolEntry *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *pose);
 
@@ -96,7 +95,7 @@ void Ov244_ItemConstruct(struct Obj *self)
     self->pose[3] = 0xa00;
     self->field54 = 0x10;
 
-    self->subitem388 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self->owner384, 0x2f));
+    self->subitem388 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self->owner384, 0x2f));
     Srt_SetScaleUniform(self->srtA0, 0x800);
     RegisterSubscriberSlot(self->subscriber9c, self->subitem388);
     SetSubitemState(self->subitem388, 0, 0, 1);
@@ -107,8 +106,8 @@ void Ov244_ItemConstruct(struct Obj *self)
 
     self->slots3a4 = CallocInstance(0x18);
     for (i = 0; i < 3; i++) {
-        self->slots3a4[i].child = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self->owner384, ids.values[i]));
-        Ov107_EnqueueValue(self, self->slots3a4[i].child);
+        self->slots3a4[i].child = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self->owner384, ids.values[i]));
+        Ov107_EnqueueValue((char *)self, (int)self->slots3a4[i].child);
         self->slots3a4[i].child->flags5c |= 2;
     }
 

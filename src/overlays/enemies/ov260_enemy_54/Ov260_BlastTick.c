@@ -5,9 +5,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov260_MapHeldItemKindToAnim(int actor, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02041dc8;
@@ -23,7 +23,7 @@ void Ov260_BlastTick(int *node)
     }
     if ((*((u8 *)state + 0x7b) & 2) == 0 && state[0x1c] >= 0x1870) {
         *((u8 *)state + 0x7b) |= 2;
-        Ov107_PostTagUpdate(*state, 0x1f, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1f, 0);
     }
     if ((*((u8 *)state + 0x7b) & 4) == 0 && state[0x1c] >= 0x1430) {
         *((u8 *)state + 0x7b) |= 4;

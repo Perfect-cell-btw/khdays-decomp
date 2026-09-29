@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov175ActionState {
     int pOwner;
@@ -45,7 +46,6 @@ extern int Ov107_CalcHitDamage(char *actor, struct ActorHitEvent *hit);
 extern void Ov107_BuildAndSendUpdate(char *actor, int id, u8 mode, void *anchor);
 extern const u8 data_ov175_020cea84[];
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
-extern char *func_ov107_020c9848(void);   /* the game's camera-state getter, named after the byte-identical SDK thunk */
 extern int FX_Inv(int x);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);
 

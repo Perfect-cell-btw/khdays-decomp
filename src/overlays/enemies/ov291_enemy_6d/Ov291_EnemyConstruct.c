@@ -10,6 +10,7 @@
  * 7-entry hit table (kind + offset each) is handed to the +0x38 hit callback and freed. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Bit0 {
     unsigned bit0 : 1;
@@ -40,7 +41,6 @@ extern void Ov291_ReallocBufferCopyHeader(void);
 extern void Ov291_ForwardAnimEvent(void);
 extern void Ov291_OnHitStore(void);
 extern void Ov291_HeadBoneCallback(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int FindResourceIndexByName(int item, const char *name);
@@ -85,17 +85,17 @@ void Ov291_EnemyConstruct(char *self)
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0x20) << 0x18) >> 0x10);
     }
     *(u16 *)(self + 0x100 + 0xae) |= 8;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 0));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 0));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(char **)(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x4c) = self;
     *(u16 *)(self + 0x39c) = FindResourceIndexByName(*(int *)(self + 0x384), data_ov291_020cd62c);
     NNS_G3dRenderObjSetCallBack(*(int *)(*(int *)(self + 0x384) + 0x88) + 0x20, Ov291_HeadBoneCallback, 0, 6, 3);
     SetSubitemState(*(int *)(self + 0x384), 3, 0, 1);
-    *(int *)(self + 0x394) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((int)self, 2), data_ov291_020cd638);
+    *(int *)(self + 0x394) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)((int)self), 2), data_ov291_020cd638);
     *(int *)(self + 0x398) = ModelNode_New();
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x398));
     ((struct Bit0 *)(*(int *)(self + 0x398) + 0x5c))->bit0 = 1;
-    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((int)self, 1));
+    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)((int)self), 1));
     RegisterSubscriberSlot(*(int *)(self + 0x398), *(int *)(self + 0x388));
     Srt_SetTranslationXYZ((void *)(*(int *)(self + 0x388) + 4), 0, 0x100, -0x1000);
     SetSubitemState(*(int *)(self + 0x388), 0, 0, 0);

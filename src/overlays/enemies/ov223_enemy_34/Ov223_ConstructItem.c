@@ -8,12 +8,13 @@
  * registered on the actor, bit 1 of +0x5c raised), binds channels 0, 2 and 4 of the latter's
  * +0x88 track's +0xe0 block (0202accc), allocates the +0x390 ring (ov223 4e24) and clears
  * +0x388. */
-extern int Ov107_PackTextureHandle(int owner, int kind);
+
+#include "game/enemy_common.h"
+
 extern int CreateSubitemInstance0xB4(int a);
 extern void SetSubitemState(int obj, int mode, int a, int b);
 extern void RegisterSubscriberSlot(int a, int obj);
 extern void RefreshObjectCallbacks(int obj, int a);
-extern void Ov107_EnqueueValue(int self, int obj);
 extern int JointModel_New(int res, int n);
 extern void BindAnimTrack(int track, int channel, int block, int flag);
 extern int Ov223_CreateReactionTask(char *self);
@@ -60,17 +61,17 @@ void Ov223_ConstructItem(char *self) {
     *(int *)(self + 0x58) = 0;
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
 
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, 0x1a));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)owner, 0x1a));
     SetSubitemState(*(int *)(self + 0x384), 0, 0, 1);
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
 
-    sub = *(int *)(self + 0x398) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, saved.w));
-    Ov107_EnqueueValue((int)self, sub);
+    sub = *(int *)(self + 0x398) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)owner, saved.w));
+    Ov107_EnqueueValue((char *)((int)self), sub);
     *(int *)(*(int *)(self + 0x398) + 0x5c) |= 2;
 
-    sub = *grip = JointModel_New(Ov107_PackTextureHandle(owner, 0x20), 0x22);
-    Ov107_EnqueueValue((int)self, sub);
+    sub = *grip = JointModel_New(Ov107_PackTextureHandle((char *)owner, 0x20), 0x22);
+    Ov107_EnqueueValue((char *)((int)self), sub);
     *(int *)(*grip + 0x5c) |= 2;
     BindAnimTrack(*(int *)(*grip + 0x88), 0, *(int *)(*grip + 0x88) + 0xe0, 0);
     BindAnimTrack(*(int *)(*grip + 0x88), 2, *(int *)(*grip + 0x88) + 0xe0, 0);

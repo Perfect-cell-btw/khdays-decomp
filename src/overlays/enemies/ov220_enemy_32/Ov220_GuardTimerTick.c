@@ -6,9 +6,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02041dc8;
@@ -32,7 +32,7 @@ void Ov220_GuardTimerTick(int *node)
         *(u8 *)((char *)state + 0x3e) = 1;
     }
     if (*(u8 *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 9, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
         func_ov107_020c0b90(*state, 4, data_02041dc8, 2);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov220_GuardEnd);
     }

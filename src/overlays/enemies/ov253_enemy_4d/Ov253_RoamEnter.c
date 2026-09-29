@@ -6,12 +6,12 @@
  * +0x1c9 byte and the node slot is released. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
 struct Ov253Bounds { int lo[1]; int hi[4]; };
 
 extern int RandNextScaled(int scale);
-extern void Ov107_MoveNodeAndRelayout(int actor, const VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const struct Ov253Bounds data_ov253_020d49b8;
 extern const short data_0203d210[];
@@ -51,7 +51,7 @@ void Ov253_RoamEnter(int *node) {
     pos = *(VecFx32 *)(item + 0xb0);
     pos.x += FX_Mul(data_0203d210[(sinIdx >> 4) << 1], scale);
     pos.z += FX_Mul(data_0203d210[((sinIdx >> 4) << 1) + 1], scale);
-    Ov107_MoveNodeAndRelayout(*state, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
     state[4] = state[5] = lo + RandNextScaled((span < 0 ? -span : span) + 1);
     *(signed char *)(*state + 0x1c7) = *(signed char *)(*state + 0x100 + 0xc9);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);

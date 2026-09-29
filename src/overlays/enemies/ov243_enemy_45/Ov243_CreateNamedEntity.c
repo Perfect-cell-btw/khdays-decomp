@@ -1,10 +1,11 @@
 /* Creates enemy 0x45's actor: opens its cached resource by name and initialises it. */
 
+#include "game/enemy_common.h"
+
 extern int data_ov243_020d476c;
 extern void OS_SPrintf(void *buffer, void *format);
 extern void *CallocInstance(int size);
 extern void func_ov107_020c6624(void *obj, int arg);
-extern int Ov107_OpenCachedResourceByName(void *name);
 extern void Ov243_Construct(void *obj);
 
 void *Ov243_CreateNamedEntity(int arg)

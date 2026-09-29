@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 origin; VecFx32 dir; int nLength; int nRadius; } Segment;
 typedef struct { char pad[0x58]; Segment seg; } Ov272Item;
@@ -17,7 +18,6 @@ extern void TaskList_FinishByTag(int list, int node);
 extern void Ov022_ToggleBit13ByMode(int partner, int flag);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov272_Tick(int self)
 {
@@ -65,5 +65,5 @@ void Ov272_Tick(int self)
     seg.nLength = VEC_Normalize(&seg.dir, &seg.dir);
     (*(Ov272Item **)(self + 0x38c))->seg = seg;
     (**(Ov272Item ***)(self + 0x388))->seg = seg;
-    Ov107_AiState_PostTickBase(self);
+    Ov107_AiState_PostTickBase((char *)self);
 }

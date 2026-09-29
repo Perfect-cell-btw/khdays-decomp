@@ -2,7 +2,9 @@
  * resource, handle kept at +0x390, kind 0x17) on the +0xa0 pose with the message's +4 byte; every
  * message then goes to the common handler. (`if (msg[3] == 0)` inside a one-case switch keeps the
  * ROM's two branches instead of an if-converted pair.) */
-extern int  Ov107_CreateNodeBodyTask(int a, int b, int mode, int anchor, int e, int f);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_AiState_OnMessage(int a, int b, int c);
 
 void Ov230_HandleMessage(int self, unsigned char *msg, int arg3) {

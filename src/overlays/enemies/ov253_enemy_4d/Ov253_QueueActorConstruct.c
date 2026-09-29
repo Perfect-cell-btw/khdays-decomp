@@ -10,17 +10,16 @@
  * and allocates the 16-entry queue table cleared to -1. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Ov253Entry { signed char a; signed char b; short c; };
 struct Ov253Queue { char pad[0x3dc]; signed char count; signed char head; signed char tail; char pad3df; short seq; char pad3e2[2]; struct Ov253Entry *table; };
 struct Ov253Poses { int w[2]; };
 struct Ov253Pair { int pEffect; int pChild; };
 
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int JointModel_New(void *item, int count);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern void SrtTransform_SetIdentity(void *srt);
 extern void *CallocInstance(int size);
 extern int *List_InsertSorted(char *list, int stride, int max);
@@ -67,9 +66,9 @@ void Ov253_QueueActorConstruct(char *self) {
     *(int *)(self + 0x390) = 0x1000;
     *(int *)(self + 0x394) = 0x1000;
     *(int *)(self + 0x398) = 0x1000;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x388), 0x1c));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x388)), 0x1c));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
-    *(int *)(self + 0x3a0) = JointModel_New(Ov107_PackTextureHandle(*(int *)(self + 0x388), 0x27), 0x10);
+    *(int *)(self + 0x3a0) = JointModel_New(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x388)), 0x27), 0x10);
     Ov107_EnqueueValue(self, *(int *)(self + 0x3a0));
     *(void **)(*(int *)(self + 0x3a0) + 0x6c) = Ov253_DrawRing;
     *(char **)(*(int *)(self + 0x3a0) + 0x84) = self;
@@ -78,7 +77,7 @@ void Ov253_QueueActorConstruct(char *self) {
     *(struct Ov253Pair **)(self + 0x3e8) = CallocInstance(0x10);
     for (i = 0; i < 2; i++) {
         (*(struct Ov253Pair **)(self + 0x3e8))[i].pEffect =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x388), poses.w[i]));
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x388)), poses.w[i]));
         Ov107_EnqueueValue(self, (*(struct Ov253Pair **)(self + 0x3e8))[i].pEffect);
         *(int *)((*(struct Ov253Pair **)(self + 0x3e8))[i].pEffect + 0x5c) |= 2;
     }

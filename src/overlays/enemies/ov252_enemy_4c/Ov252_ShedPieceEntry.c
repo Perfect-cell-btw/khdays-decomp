@@ -3,13 +3,12 @@
  * node moves on to 020d0480. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 struct Ov252Pieces { char pad[0x4f4]; int shapes[4]; };
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov252_TickShedDrift(void);
 extern const VecFx32 data_02041dc8;
@@ -28,7 +27,7 @@ void Ov252_ShedPieceEntry(int *node)
         *(unsigned char *)(*state + 0x1c7) = 4;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
     } else {
-        Ov107_PostTagUpdate(*state, 0x13, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x13, 0);
         Ov107_StartAnim(*(int *)(*state + 0x574), 0xc, 0);
         func_ov107_020c0b90(*state, 4, data_02041dc8, 0);
         state[0x18] = 0;

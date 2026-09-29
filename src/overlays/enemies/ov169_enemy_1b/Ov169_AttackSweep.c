@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov169Hit {
     char pad000[2];
@@ -15,7 +16,6 @@ struct Ov169Hit {
     VecFx32 vPos74;
 };
 
-extern int Ov107_CollectSegmentOverlaps(void *item, void *query, void *out);
 extern int Ov107_CollectSphereOverlaps(void *item, void *sphere, void *out);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
@@ -35,7 +35,7 @@ int Ov169_AttackSweep(int *state, void *sphere, void *query)
 
     pushed = 0;
     if (query != 0) {
-        n = Ov107_CollectSegmentOverlaps(*(void **)(*state + 0x38c), query, hits);
+        n = Ov107_CollectSegmentOverlaps(*(void **)(*state + 0x38c), query, (void **)hits);
     } else if (sphere != 0) {
         n = Ov107_CollectSphereOverlaps(*(void **)(*state + 0x38c), sphere, hits);
     } else {

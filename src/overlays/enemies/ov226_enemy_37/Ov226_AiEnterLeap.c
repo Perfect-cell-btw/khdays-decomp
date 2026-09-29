@@ -12,11 +12,13 @@
  *
  * The divisors are read off the magic shifts: asr #9 with 0x2aaaaaab is /3072, asr #6 with
  * 0x78787879 is /136. Kept unfolded -- the intermediates can overflow. */
+
+#include "game/enemy_common.h"
+
 extern int Ov226_MeasureTargetGap(int self, int kind);
 extern void SetIndexedSlot(int self, int action, void (*cb)(void));
 extern int RandNextScaled(int n);
 extern int func_02020400(int a, int b);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov226_AiLeapWindup(void);
 
 void Ov226_AiEnterLeap(int self) {
@@ -63,7 +65,7 @@ void Ov226_AiEnterLeap(int self) {
         ctx[0xc] = 0;
     }
 
-    Ov107_PostTagUpdate(ctx[0], 0xb, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 0xb, 0);
     ctx[0x17] = 0;
     *(unsigned char *)((char *)ctx + 0x75) = 0;
     *(unsigned char *)((char *)ctx + 0x76) = 0;

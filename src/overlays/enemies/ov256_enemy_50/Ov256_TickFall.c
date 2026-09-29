@@ -5,13 +5,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Flag17a { u8 b0 : 1; };
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_PartDriftTick(void);
 
@@ -27,7 +26,7 @@ void Ov256_TickFall(int *node)
             return;
         }
         state[0x13] = 0;
-        Ov107_PostTagUpdate(*state, 0x1b, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1b, 0);
         func_ov107_020c0b90(*state, 9, *(VecFx32 *)state[3], 0);
         Ov107_StartAnim(*(int *)(*state + 0x450), 0xc, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov256_PartDriftTick);

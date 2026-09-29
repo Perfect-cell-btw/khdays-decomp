@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 v[5]; } Spots5;
 typedef struct { VecFx32 v[4]; } Corners4;
@@ -15,9 +16,6 @@ typedef struct { unsigned f : 8; } B8;
 extern int RandNextScaled(int n);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_LeapTick(void);
@@ -72,12 +70,12 @@ void Ov256_TickWarp(int *node)
                 at.y += 0x5000;
             }
         }
-        Ov107_MoveNodeAndRelayout(*state, &at);
+        Ov107_MoveNodeAndRelayout((Actor *)(*state), &at);
     }
     state[0x13] += *(int *)(node[0] + 0x2c);
     if (!(state[0x13] < 0x1a90)) {
         ((B8 *)(*(int *)(*state + 0x428) + 8))->f &= ~2;
-        Ov107_PostTagUpdate(*state, 0x18, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x18, 0);
         Ov107_StartAnim(*(int *)(*state + 0x450), 0xa, 0);
         func_ov107_020c0b90(*state, 6, *(VecFx32 *)state[3], 0);
         state[0x13] = 0;

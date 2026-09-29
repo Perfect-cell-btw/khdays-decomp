@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { int w[4]; } Quat;
@@ -34,7 +35,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern int Ov107_CollectCapsuleOverlaps(int body, Obb *query, int *out);
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
@@ -85,7 +85,7 @@ void Ov266_TrailTick(int *node)
         obb.extent[0] = obb.extent[1] = *(int *)(*state + 0x80) / 3;
         ScaleVec3Fx12(0x800, &d, &obb.center);
         VEC_Add(&obb.center, cur, &obb.center);
-        n = Ov107_CollectCapsuleOverlaps(*(int *)(*state + 0x38c), &obb, hits);
+        n = Ov107_CollectCapsuleOverlaps((Actor *)(*(int *)(*state + 0x38c)), &obb, (void **)hits);
     }
     for (i = 0; i < n; i++) {
         VEC_Subtract((void *)(hits[i] + 0x74), (void *)(*state + 0x74), &dir);

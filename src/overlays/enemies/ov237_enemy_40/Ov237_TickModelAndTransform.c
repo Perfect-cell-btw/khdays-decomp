@@ -1,4 +1,5 @@
-extern void Ov107_RefreshAndSelectChild(int node, int arg1);
+#include "game/enemy_common.h"
+
 extern void Sequence_UpdateTracks(unsigned short *anim, int frame);
 extern void Ov107_ProcessObjectTick(int obj, int frame);
 /* Per-frame tick: refresh the child node (+0x3d8), advance the animation held by the model

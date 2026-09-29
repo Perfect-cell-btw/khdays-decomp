@@ -1,6 +1,8 @@
 /* Bail via 020cc900 if not ready; else latch +0x10 into +0xc, kick anim 4, notify 020cc8ec, dispatch. */
+
+#include "game/enemy_common.h"
+
 extern int Ov218_DistanceToTarget(int);
-extern int Ov107_PostTagUpdate(int, int, int);
 extern int Ov218_startAnim(int, int);
 extern int SetIndexedSlot(int, int, void *);
 extern int Ov218_ThrowWindupTick(int);
@@ -11,7 +13,7 @@ void Ov218_AiEnterAnim4IfTarget(int param_1) {
         return;
     }
     *(int *)(owner + 0xc) = *(int *)(owner + 0x10);
-    Ov107_PostTagUpdate(*(int *)owner, 4, 0);
+    Ov107_PostTagUpdate((Actor *)(*(int *)owner), 4, 0);
     Ov218_startAnim(*(int *)owner, 0);
     SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), (void *)&Ov218_ThrowWindupTick);
 }

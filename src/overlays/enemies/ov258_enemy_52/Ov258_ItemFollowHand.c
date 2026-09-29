@@ -4,9 +4,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Srt_SetRotationQuat(void *srt, void *from);
-extern void Ov107_MoveNodeAndRelayout(int owner, const VecFx32 *pos);
 
 void Ov258_ItemFollowHand(int *node)
 {
@@ -20,5 +20,5 @@ void Ov258_ItemFollowHand(int *node)
         hand = *(int *)(*(int *)(*state + 0x390) + 0x448);
         Srt_SetRotationQuat((void *)(*state + 0xa0), (void *)(hand + 4));
     }
-    Ov107_MoveNodeAndRelayout(*state, (VecFx32 *)(hand + 0x14));
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), (VecFx32 *)(hand + 0x14));
 }

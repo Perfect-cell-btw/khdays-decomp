@@ -3,10 +3,10 @@
  * return sub-state is requested and the tick ends. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *pos);
 extern int RandNextScaled(int n);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
@@ -36,7 +36,7 @@ void Ov235_LandingTick(int *node)
         return;
     }
     VEC_Set(&pos, ((VecFx32 *)state[2])->x, ((VecFx32 *)state[2])->y + 0x1000, ((VecFx32 *)state[2])->z);
-    Ov107_MoveNodeAndRelayout(*state, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
     state[0x13] = RandRange(*(int *)(*state + 0x224), *(int *)(*state + 0x228));
     *(signed char *)(*state + 0x1c7) = *(signed char *)(*state + 0x100 + 0xc9);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);

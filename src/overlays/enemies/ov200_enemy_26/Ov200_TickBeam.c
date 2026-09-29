@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct Quat { int x, y, z, w; } Quat;
 typedef struct Segment { VecFx32 p0; VecFx32 dir; int scale; } Segment;
@@ -73,7 +74,6 @@ extern void ScaleVec3Fixed27(int scale, VecFx32 *in, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *in, VecFx32 *out);
 extern void Ov200_RingBufferFillSlot(int *ring, VecFx32 *pos, VecFx32 *normal);
 extern void Srt_SetScaleXYZ(void *srt, int x, int y, int z);
-extern int Ov107_CollectSegmentOverlaps(int owner, BeamQuery *query, int *hits);
 extern int Segment_ClosestPoint(void *point, Segment *seg, fx64 *t);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
@@ -210,7 +210,7 @@ scaled:
             query.nLength = VEC_Normalize(&tmp, &tmp);
         }
         query.nRadius = state->bCharged == 0 ? 0x1000 : 0x300;
-        n = Ov107_CollectSegmentOverlaps(state->pOwner, &query, hits);
+        n = Ov107_CollectSegmentOverlaps((Actor *)state->pOwner, &query, (void **)hits);
         for (i = 0; i < n; i++) {
             u8 bit = (u8)(1 << *(u16 *)(hits[i] + 2));
             int front = 0;

@@ -9,6 +9,7 @@
  * on the +0x144 list is kept in +0x3a4. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
@@ -26,13 +27,11 @@ extern void Ov152_CopyBlockToTwoNodes(void);
 extern void Ov152_AiState_OnMessage(void);
 extern void Ov152_BroadcastPositionMessage(void);
 extern void Ov152_CreateRegistryEntryAndLink(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void SetSubitemState(int item, int channel, int a, int b);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void *CallocInstance(int size);
-extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(char *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern const int data_ov152_020d6474[2];
@@ -57,7 +56,7 @@ void Ov152_ConstructPet(char *self)
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
     *(int *)(self + 0x70) = 0x800;
     *(int *)(self + 0x54) = 0x100;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x38c), 6));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x38c)), 6));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     SetSubitemState(*(int *)(self + 0x384), 0, 0, 1);
     SetSubitemState(*(int *)(self + 0x384), 2, 0, 1);
@@ -67,8 +66,8 @@ void Ov152_ConstructPet(char *self)
     *(void **)(self + 0x390) = CallocInstance(0x10);
     for (i = 0; i < 2; i++) {
         (*(struct Ov191SubitemSlot **)(self + 0x390))[i].pItem =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x38c), kinds[i]));
-        Ov107_EnqueueValue(*(int *)(self + 0x38c), (*(struct Ov191SubitemSlot **)(self + 0x390))[i].pItem);
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x38c)), kinds[i]));
+        Ov107_EnqueueValue((char *)(*(int *)(self + 0x38c)), (*(struct Ov191SubitemSlot **)(self + 0x390))[i].pItem);
         *(int *)((*(struct Ov191SubitemSlot **)(self + 0x390))[i].pItem + 0x5c) |= 2;
     }
     *(int **)(self + 0x388) = List_InsertSorted(self + 0x22c, 0x10, 0x64);

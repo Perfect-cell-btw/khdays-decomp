@@ -3,9 +3,8 @@
  * motion 0x12 and the tick hands over to Ov257_RiseTick. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov257_RiseTick(int *node);
 
@@ -21,7 +20,7 @@ void Ov257_EnterTick(int *node)
     state[0x15] = 0;
     *((unsigned char *)state + 0x88) = 0;
     *((unsigned char *)state + 0x89) = 0;
-    Ov107_PostTagUpdate(*state, 0x15, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x15, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3d0), 0x12, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov257_RiseTick);
 }

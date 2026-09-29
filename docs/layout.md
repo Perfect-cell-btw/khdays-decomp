@@ -74,8 +74,14 @@ Still to do, in this order:
     callback, the running pass `slot`). Its state block is the creator's own type, so the members
     are declared through `AI_TASK_FIELDS(StateType)`: 713 enemy sources declare their task as
     `struct X { AI_TASK_FIELDS(TheirState) };` and read `pState`/`slot` without casts.
+  - the first function prototypes: `game/enemy_common.h` declares, as they are defined, the
+    125 enemy-framework (ov107) functions whose types a header can provide; 4,486 sources dropped
+    their 5,505 local `extern` copies of them for it. Where a caller passes another type than the
+    definition takes (an actor held as an `int`, its own view of a vector), the argument carries
+    a cast. `tools/sharedecls.py` does this for a module: it writes the header from the
+    definitions and keeps a source only if it still compiles to the same bytes.
   Every compile gets `-i include`, and the build tracks header dependencies. Still per source:
-  the function prototypes and most of the game's own structs.
+  the prototypes of every other module and most of the game's own structs.
 - **Translation units**: grouping functions back into one `.c` per original file (per enemy, per
   menu, ...). The build verifies one function per file today. `src/engine/` gets its subsystem
   folders at that point: the boundaries below are approximate, and a prefix such as `Obj_` or

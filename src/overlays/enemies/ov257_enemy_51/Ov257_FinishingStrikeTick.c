@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -32,12 +33,9 @@ extern int Ov257_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
-extern int Ov107_CollectSegmentOverlaps(int owner, Segment *seg, int *hits);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int RandNextScaled(int n);
 extern const Cmd14 data_ov257_020d32b0;
@@ -123,7 +121,7 @@ void Ov257_FinishingStrikeTick(int *node)
         seg = *(Segment *)(*(int *)(*state + 0x3c4) + 0x78);
         VEC_Add(&seg.p0, state + 4, &seg.p0);
         seg.nRadius = FX_Mul(seg.nRadius, 0x2800);
-        count = Ov107_CollectSegmentOverlaps(*state, &seg, hits);
+        count = Ov107_CollectSegmentOverlaps((Actor *)(*state), &seg, (void **)hits);
         for (j = 0; j < count; j++) {
             VecFx32 push;
             Cmd14 msg;

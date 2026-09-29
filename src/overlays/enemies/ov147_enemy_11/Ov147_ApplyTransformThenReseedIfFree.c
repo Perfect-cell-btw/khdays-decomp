@@ -1,8 +1,8 @@
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov147_BuildHeadingRotation(int node, VecFx32 v, int flag);
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void Ov147_SeedDefaultPoseAndAdvance(int obj, int arg1);
 extern void SetIndexedSlot(int obj, int a, int cb);
 extern void Ov147_StepChargeUntilSettled(void);
@@ -17,7 +17,7 @@ void Ov147_ApplyTransformThenReseedIfFree(int *this)
     if (*(unsigned char *)(*(int *)(node + 4) + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*(int *)node, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*(int *)node), 3, 0);
     Ov147_SeedDefaultPoseAndAdvance(*(int *)node, 1);
     SetIndexedSlot((int)this, *(signed char *)((int)this + 0x20), (int)&Ov147_StepChargeUntilSettled);
 }

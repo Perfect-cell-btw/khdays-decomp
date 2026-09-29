@@ -7,12 +7,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 
 extern void Ov254_KnockbackAtFeet(int actor, int side);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_BarrageTick(void);
 extern const short data_0203d210[];
@@ -41,7 +41,7 @@ void Ov254_DropTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x1b, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1b, 0);
     ((B8 *)(*(int *)(*state + 0x3e4) + 8))->f &= ~2;
     state[0x11] = 0;
     state[0x10] = 0;

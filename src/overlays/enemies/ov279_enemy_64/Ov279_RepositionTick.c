@@ -4,11 +4,11 @@
  * from its +0x74 point. The timer restarts and the tick hands over to Ov279_GrabApproachFinish. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
-extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern void Ov279_GrabApproachFinish(int *node);
@@ -32,7 +32,7 @@ void Ov279_RepositionTick(int *node)
     pos.x = *(int *)(target + 0x74) + FX_MUL(data_0203d210[ANG2IDX(rad) * 2], 0x1e00);
     pos.y = *(int *)(target + 0x78);
     pos.z = *(int *)(target + 0x7c) + FX_MUL(data_0203d210[ANG2IDX(rad) * 2 + 1], 0x1e00);
-    Ov107_MoveNodeAndRelayout(*state, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
     state[0x14] = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov279_GrabApproachFinish);
 }

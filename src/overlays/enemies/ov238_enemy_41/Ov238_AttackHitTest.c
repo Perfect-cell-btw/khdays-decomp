@@ -6,12 +6,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 
 extern int Ov238_TargetGap(int *node);
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
-extern int Ov107_CollectCapsuleOverlaps(int owner, void *box, int *hits);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
@@ -36,7 +36,7 @@ int Ov238_AttackHitTest(int *node, void *sphere, void *box, VecFx32 *push, int o
         if (sphere != 0) {
             n = Ov107_CollectSphereOverlaps(*state, sphere, hits);
         } else {
-            n = Ov107_CollectCapsuleOverlaps(*state, box, hits);
+            n = Ov107_CollectCapsuleOverlaps((Actor *)(*state), box, (void **)hits);
         }
         for (i = 0; i < n; i++) {
             bit = 1 << *(u16 *)(hits[i] + 2);

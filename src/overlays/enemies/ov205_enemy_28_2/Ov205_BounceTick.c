@@ -16,6 +16,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
@@ -92,7 +93,6 @@ extern int *List_First(int list);
 extern int *List_Next(int list);
 extern int Ov107_HitShape_TestSegment(void *shape, Segment *seg, int flags);
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
-extern void Ov107_PostTagUpdate(struct Ov204Owner *actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov205_AiStep_QueueAction2OnFlag28Clear_4(int *node);
 extern const PosMsg data_ov205_020d7268;
@@ -239,7 +239,7 @@ void Ov205_BounceTick(int *node)
         if (*state->pBusy != 0) {
             return;
         }
-        Ov107_PostTagUpdate(state->pOwner, 0xa, 1);
+        Ov107_PostTagUpdate((Actor *)state->pOwner, 0xa, 1);
         state->nPhase45 = 1;
         return;
     }
@@ -249,6 +249,6 @@ void Ov205_BounceTick(int *node)
     if (state->nSpeed >= 0x200) {
         return;
     }
-    Ov107_PostTagUpdate(state->pOwner, 0xb, 0);
+    Ov107_PostTagUpdate((Actor *)state->pOwner, 0xb, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov205_AiStep_QueueAction2OnFlag28Clear_4);
 }

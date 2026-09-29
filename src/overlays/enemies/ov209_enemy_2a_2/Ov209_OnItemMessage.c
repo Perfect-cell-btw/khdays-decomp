@@ -6,12 +6,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[4]; VecFx32 trans; int pad[4]; } SrtTransform;
 struct b2 { int b0 : 1, b1 : 1; };
 struct Pair { int res; int handle; };
 
-extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, const SrtTransform *m, const VecFx32 *in);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Srt_SetTranslation(SrtTransform *t, const VecFx32 *v);

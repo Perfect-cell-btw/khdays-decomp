@@ -35,13 +35,14 @@
  * 0x28be60db9391 is 65536/(2*pi) in .32, the +0x800<<32 is rounding, and the (unsigned short) cast
  * is what makes the shifts come out as lsl#4/lsr#16/asr#4. */
 
+#include "game/enemy_common.h"
+
 extern int Ov268_PickBestFacingNode(int obj, int kind);
 extern void SetIndexedSlot(int self, int slot, void (*cb)(void));
 extern void VEC_Subtract(const int *a, const int *b, int *dst);
 extern int VEC_DotProduct(const int *a, const int *b);
 extern int VEC_Normalize(const int *v, int *unit);
 extern int func_020050b4(int x, int z);
-extern int Ov107_ActionResource_GetOffsetAndScale(int a, int *out);
 extern void Vec3TransformViaTempMtx(int *dst, const int *a, const int *b);
 extern void ScaleVec3Fx12(int scale, const int *src, int *dst);
 extern int RandNextScaled(int mul);
@@ -78,7 +79,7 @@ void Ov268_AiChooseAttack(int self) {
     gap -= owner[0x20] + *(int *)(tgt + 0x80);
     ctx[0xd] = func_020050b4(toTarget[0], toTarget[2]);
 
-    scale = Ov107_ActionResource_GetOffsetAndScale(*(int *)(ctx[0] + 0x3ac), forward);
+    scale = Ov107_ActionResource_GetOffsetAndScale(*(int *)(ctx[0] + 0x3ac), (VecFx32 *)forward);
     Vec3TransformViaTempMtx(&ctx[5], (const int *)(ctx[0] + 0xa0), forward);
     ScaleVec3Fx12(scale, &ctx[5], &ctx[5]);
     idx = (unsigned short)(((long long)ctx[0xc] * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4;

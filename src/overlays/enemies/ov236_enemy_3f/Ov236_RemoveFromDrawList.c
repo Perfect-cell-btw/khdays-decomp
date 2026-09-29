@@ -2,8 +2,10 @@
  * rider's +0x22c parts consecutively from 2 into their +4 byte, syncs the riders' hit points
  * (half of this actor's +0x218 max as their max/current, half their current plus one as the
  * +0x3be / +0x3d2 thresholds copied to +0x3bc / +0x3d0) and runs the base removal (020c7b70). */
+
+#include "game/enemy_common.h"
+
 struct ListNode { int item; };
-extern void Ov107_InitObjectFromSource(int list, int item);
 extern struct ListNode *List_First(void *list);
 extern struct ListNode *List_Next(void *list);
 extern void Ov107_HandleRegionEvent(int self, int list);

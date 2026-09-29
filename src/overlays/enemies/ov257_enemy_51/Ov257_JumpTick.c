@@ -5,14 +5,13 @@
  * and the tick hands over to Ov257_LandingSlamTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Bits17a { unsigned char b0 : 1; };
 
 extern int Ov257_SteerToTarget(int *state, int target, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov257_LandingSlamTick(int *node);
 
@@ -34,7 +33,7 @@ void Ov257_JumpTick(int *node)
     if (state[0x1a] >= 0 || *(int *)(*state + 0x13c) >= 0xc000) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x1e, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1e, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3d0), 0x1b, 0);
     state[0x11] = 0;
     *((unsigned char *)state + 0x73) = 0;

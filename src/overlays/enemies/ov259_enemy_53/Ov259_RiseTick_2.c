@@ -7,12 +7,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov259_RefreshAim(int *node);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *at);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void Ov259_PlaySound(int actor, int id, int variant, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -35,13 +34,13 @@ void Ov259_RiseTick_2(int *node)
     pos.y = 0xa000;
     pos.z = -0x1e000;
     *(VecFx32 *)(state + 5) = data_02041dc8;
-    Ov107_MoveNodeAndRelayout(*state, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &pos);
     {
         u16 hw = *(u16 *)(*state + 0x60);
         *(u16 *)(*state + 0x60) = (hw & ~0xff00) |
             ((((((unsigned int)hw << 0x10) >> 0x18) | 0x40) << 0x18) >> 0x10);
     }
-    Ov107_PostTagUpdate(*state, 2, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 1);
     Ov259_MirrorPartnerPose(node, 2, 1);
     state[0x1a] = 0;
     Ov259_PlaySound(*state, 0x172, 0x23, (void *)state[4]);

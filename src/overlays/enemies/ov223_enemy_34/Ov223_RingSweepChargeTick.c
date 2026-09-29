@@ -8,12 +8,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Ov223Segment { VecFx32 p0; VecFx32 p1; int nLength; int nRadius; };
 
-extern void Ov107_MoveNodeAndRelayout(int owner, VecFx32 *at);
 extern void MTX_RotX33_(Mtx33 *m, int sin, int cos);
 extern void MTX_MultVec33(const VecFx32 *v, Mtx33 *m, VecFx32 *d);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, const void *pose, const VecFx32 *in);
@@ -37,7 +37,7 @@ void Ov223_RingSweepChargeTick(int *node)
 
     at = *(VecFx32 *)(*(int *)(*(int *)(*(int *)(*state + 0x38c) + 0x3ac)) + 0x20);
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x80;
-    Ov107_MoveNodeAndRelayout(*state, &at);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &at);
     ang = 0x1922 - state[0xf] * 0x1922 / 4096;
     idx = ANG2IDX(ang);
     MTX_RotX33_(&m, data_0203d210[idx * 2], data_0203d210[idx * 2 + 1]);

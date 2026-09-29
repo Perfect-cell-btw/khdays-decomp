@@ -18,11 +18,11 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov199_BuildHeadingRotation(int *ctx, VecFx32 v, int flag);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern void SetIndexedSlot(int *self, int action, void *cb);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov199_PointHeadingCheckPose(void);
 
 void Ov199_StepChargeUntilSettled(int *self) {
@@ -57,5 +57,5 @@ void Ov199_StepChargeUntilSettled(int *self) {
         VEC_Subtract((const VecFx32 *)(*(int *)(*ctx + 0x394) + 0x190), (const VecFx32 *)ctx[3],
                      (VecFx32 *)((char *)ctx + 0x28));
     }
-    Ov107_PostTagUpdate(*ctx, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*ctx), 3, 0);
 }

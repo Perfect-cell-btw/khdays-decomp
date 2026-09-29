@@ -14,6 +14,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -38,7 +39,6 @@ extern int Ov107_InvokeHitCallback(struct Ov181Actor *hit, struct Ov181Actor *a,
 extern void Ov107_BuildAndSendUpdate(struct Ov181Actor *owner, u16 a, u16 id, VecFx32 *pos);
 extern const struct Msg data_ov182_020d0832;
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int node, int slot, void *cb);
 extern void Ov182_AiRollTimerQueue2(void);
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -104,7 +104,7 @@ void Ov182_DiveTick(int node)
         }
     }
     if (state[7] > 0x100 && ((struct Flags17a *)(*state + 0x17a))->bit0) {
-        Ov107_PostTagUpdate(*state, 0x10, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x10, 0);
         ((struct hw60 *)(*state + 0x60))->hi &= ~0x40;
         SetIndexedSlot(node, *(signed char *)(node + 0x20), Ov182_AiRollTimerQueue2);
         return;
@@ -116,5 +116,5 @@ void Ov182_DiveTick(int node)
         return;
     }
     *(unsigned char *)((char *)state + 0x50) = 1;
-    Ov107_PostTagUpdate(*state, 0xf, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xf, 0);
 }

@@ -11,8 +11,8 @@
  * One of four byte-identical siblings. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern int Ov107_ActionResource_GetOffsetAndScale(int p, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(void *out, void *a, void *b);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
 extern void Ov107_BuildAndSendUpdate(int obj, int a, int b, int c);

@@ -5,6 +5,7 @@
  * 8 / 7 / 9 of bank 0x173 with poses 10 / 9 / 11) and the sequence advances. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int v[16]; } Steps16;
 
@@ -12,7 +13,6 @@ extern int Ov283_MeasureTargetGap(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int Ov283_LaunchHelper(int *node);
 extern void Ov283_PostItemUpdate(int owner, int id, int mode, int at);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov283_AiStep_QueueAction2OnAnimEnd(void);
 extern void Ov283_TickBounce(void);
 extern const Steps16 data_ov283_020cfb88;
@@ -43,17 +43,17 @@ void Ov283_BarrageTick(int *node)
     case 2:
     case 4:
         Ov283_PostItemUpdate(*state, 0x173, 8, state[2]);
-        Ov107_PostTagUpdate(*state, 10, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 10, 0);
         break;
     case 1:
     case 3:
     case 5:
         Ov283_PostItemUpdate(*state, 0x173, 7, state[2]);
-        Ov107_PostTagUpdate(*state, 9, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
         break;
     case 6:
         Ov283_PostItemUpdate(*state, 0x173, 9, state[2]);
-        Ov107_PostTagUpdate(*state, 0xb, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0xb, 0);
         break;
     }
     state[0x1b]++;

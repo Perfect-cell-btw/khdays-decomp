@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int a, b, c; } Vec3b;
 typedef struct { VecFx32 vector; int scalar; } CameraWork;
@@ -32,13 +33,11 @@ extern void Ov173_OnHit(void);
 extern void Ov173_Model_SetTrack0(void);
 extern void Ov173_RequestSubState14IfNotCurrent(void);
 extern void Ov173_OrientPartAlongDirection(void);
-extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Srt_SetTranslationXYZ(void *srt, int x, int y, int z);
 extern int InsertSortedEntryWithKey(int item, int kind, void *name);
 extern int *CallocInstance(int size);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern void Ov107_Actor_SetAttachSlot(char *self, int slot, int a, int b, int c);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *camera);

@@ -2,7 +2,8 @@
  * the high flag byte, posts pose 0, sends a state update and installs the wait-for-animation step.
  */
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov215_AiStep_QueueAction5OnAnimEnd(void);
@@ -15,7 +16,7 @@ void Ov215_Action4AfterTimerThreshold(int *node) {
     state[0x14] = t;
     if (t < 0x6ee) return;
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x80;
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     Ov107_BuildAndSendUpdate(*state, 0x129, 4, state[4]);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov215_AiStep_QueueAction5OnAnimEnd);
 }

@@ -17,6 +17,7 @@
  * Stack: 0x30 = the 0x24-byte MtxFx33 at sp+0 plus the 0xc-byte VecFx32 at sp+0x24. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     int m[9];
@@ -26,7 +27,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int dx, int dz);
 extern int VEC_Normalize(const VecFx32 *a, const VecFx32 *b);
 extern void SetIndexedSlot(int self, int action, void *cb);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov233_startAnim(int owner, int a);
 extern void MTX_RotY33_(MtxFx33 *mtx, int sinVal, int cosVal);
 extern void MTX_MultVec33(const VecFx32 *v, const MtxFx33 *m, VecFx32 *dst);
@@ -51,7 +51,7 @@ void Ov233_AiApproachTick(int self) {
     }
 
     if (*(unsigned char *)(ctx[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(ctx[0], 3, 0);
+        Ov107_PostTagUpdate((Actor *)ctx[0], 3, 0);
         Ov233_startAnim(ctx[0], 2);
         return;
     }

@@ -1,10 +1,12 @@
 /* Update of the ov259 actor (+0xc): the +0x414 partner updates (020c9ec8), then the base update
  * (020c6980), the move hook for the current move (020cc134) and both placements (the +0x404 slot's
  * shape and the +0x408 shape) take the +0xa0 transform. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int m[11]; } Srt;
 struct Piece { char pad[0x10]; Srt srt; };
 
-extern void Ov107_RefreshAndSelectChild(int part, int arg1);
 extern void Ov107_ProcessObjectTick(char *self, int arg);
 extern void Ov259_MoveHook(char *self, int move);
 

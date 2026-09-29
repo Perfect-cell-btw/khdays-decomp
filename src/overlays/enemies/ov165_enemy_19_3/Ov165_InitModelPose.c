@@ -3,6 +3,7 @@
  * camera's +0x88 focus (direction normalised from the pose position). */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     int data[11];
@@ -14,8 +15,6 @@ typedef struct {
     char *src;
 } Obj;
 
-extern void Ov107_AiState_DispatchModelCallbacks(Obj *obj, int);
-extern char *func_ov107_020c9848(void);   /* the game's camera-state getter, named after the byte-identical SDK thunk */
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);

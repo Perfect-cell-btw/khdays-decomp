@@ -1,7 +1,8 @@
 /* Runs the model callbacks, then copies the two action resources' transforms into the two models.
  */
 
-extern void Ov107_AiState_DispatchModelCallbacks(void *obj, int);
+#include "game/enemy_common.h"
+
 struct blk11 { int w[11]; };
 void Ov261_RefreshAndCopyTwoBlocks(char *obj, int flag) {
     Ov107_AiState_DispatchModelCallbacks(obj, flag);

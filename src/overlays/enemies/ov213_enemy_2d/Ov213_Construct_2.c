@@ -8,6 +8,7 @@
  * (the ROM's [sp] spill). */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 
@@ -16,10 +17,8 @@ extern void Ov213_SendMessage24_2(void);
 extern void Ov213_CmdSpawnChildAtOffset(void);
 extern void Ov213_CreateRegistryEntryForActor(void);
 extern void Ov213_SelectCollisionSet(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
-extern void Ov107_EnqueueValue(int self, int item);
 struct Ov213PoolEntry { int index; };
 extern const struct Ov213PoolEntry data_ov213_020d2f70;
 
@@ -48,11 +47,11 @@ void Ov213_Construct_2(int self) {
     *(u16 *)(self + 0x100 + 0xae) |= 0x1d;
     *(u16 *)(self + 0x200 + 0x18) = 0;
     *(u16 *)(self + 0x200 + 0x1a) = 0;
-    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x3f));
+    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x3f));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x388));
-    *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), 0x40));
+    *(int *)(self + 0x38c) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), 0x40));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x38c));
-    item = *(int *)(self + 0x394) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x384), entry.index));
-    Ov107_EnqueueValue(self, item);
+    item = *(int *)(self + 0x394) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x384)), entry.index));
+    Ov107_EnqueueValue((char *)self, item);
     *(int *)(*(int *)(self + 0x394) + 0x5c) |= 2;
 }

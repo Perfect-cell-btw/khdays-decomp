@@ -1,8 +1,9 @@
 /* AI step: measures the target, posts pose 1, sets up the wander heading and a random timer and
  * continues with the wander tick. */
 
+#include "game/enemy_common.h"
+
 extern void Ov298_AcquireTargetGapAndAngle(void *node);
-extern void Ov107_PostTagUpdate(int obj, int arg1, int arg2);
 extern int Rand16NextScaled(unsigned int);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov298_WanderTick(void);
@@ -11,7 +12,7 @@ void Ov298_Pose1SetupWithTimerThenAdvance(int node) {
     int *state = *(int **)(node + 4);
 
     Ov298_AcquireTargetGapAndAngle((void *)node);
-    Ov107_PostTagUpdate(*state, 1, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
     state[0x14] = 0x900;
     state[0x23] = 0;
     state[0xc] = state[0xc] + state[0xa];

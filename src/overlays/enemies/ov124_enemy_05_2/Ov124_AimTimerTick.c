@@ -1,9 +1,11 @@
 /* Ov124_AimTimerTick: ported from a matched sibling family (same shape, constants and offsets adjusted). */
+
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern int Ov124_FindTarget(void *obj, int flag);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov124_AiQueue2OnFlagClear(void);
 
@@ -23,6 +25,6 @@ void Ov124_AimTimerTick(int *node) {
         }
     }
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x82;
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov124_AiQueue2OnFlagClear);
 }

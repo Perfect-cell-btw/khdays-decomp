@@ -1,7 +1,9 @@
 /* Unless busy, tick +0x30; dispatch 020d0540 when either the active node's sub-state hit 0xc or,
  * when idle, the counter reached 3; otherwise reset anim 0. */
+
+#include "game/enemy_common.h"
+
 extern int SetIndexedSlot(int, int, void *);
-extern int Ov107_PostTagUpdate(int, int, int);
 extern int Ov237_AiEnterReaction(int);
 void Ov237_AiComboCount(int param_1) {
     int owner = *(int *)(param_1 + 4);
@@ -19,6 +21,6 @@ void Ov237_AiComboCount(int param_1) {
     if (flag != 0) {
         SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), (void *)&Ov237_AiEnterReaction);
     } else {
-        Ov107_PostTagUpdate(obj, 0, 0);
+        Ov107_PostTagUpdate((Actor *)obj, 0, 0);
     }
 }

@@ -1,7 +1,9 @@
 /* Recovery wait (first rider): runs the +0x14 timer; once the +0x24 child's byte clears pose
  * 0x10 plays and, for each empty rider counter (+0x3bc / +0x3be), the matching cue
  * (data_ov236_020d63e8 entries 3 / 1) goes through the +0x24 hook; the node moves to 020d31e0. */
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
+
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern unsigned short data_ov236_020d63e8[];
 extern void Ov236_RiderWatchTickA(void);
@@ -15,7 +17,7 @@ void Ov236_RecoveryWaitA(int *node) {
 
     state[5] += *(int *)(*node + 0x2c);
     if (*(unsigned char *)state[9] != 0) return;
-    Ov107_PostTagUpdate(*state, 0x10, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x10, 0);
     if (*(short *)(*state + 0x300 + 0xbc) == 0) {
         pp = pairA;
         pp[1] = data_ov236_020d63e8[7];

@@ -5,9 +5,10 @@
  * only in the 5th argument (0 for 6, 1 for 0xa); the handle goes to *(self+0x3e0)+0x14. Then
  * 020cc85c(*(self+0x384), 020c9440(self, table[kind]), arg3, self+0x388), and a reset (0203c7ac).
  */
+
+#include "game/enemy_common.h"
+
 struct t17 { int w[17]; };
-extern int  Ov107_CreateNodeBodyTask(int a, int b, int mode, int anchor, int e, int f);
-extern int  Ov107_PackTextureHandle(int self, int x);
 extern void Ov206_BindClip(int a, int b, int c, int d);
 extern void RefreshObjectCallbacks(int a, int b);
 extern struct t17 data_ov206_020d0564;

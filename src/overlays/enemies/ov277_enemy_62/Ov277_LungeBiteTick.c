@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -26,7 +27,6 @@ extern void ScaleVec3Fx12(int scale, const VecFx32 *v, void *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
 extern int Ov107_CollectSphereOverlaps(int owner, Sphere *sphere, int *hits);
 extern int Ov107_InvokeHitCallback(int hit, int owner, int item, int kind, VecFx32 *push, int z);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov277_020d36ec;
 extern void Ov277_SummonTick(int *node);
@@ -77,7 +77,7 @@ void Ov277_LungeBiteTick(int *node)
     if (*(u8 *)state[0xc] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 2, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 1);
     *(short *)((u8 *)state + 0x12) = 0;
     state[7] = 0;
     state[8] = 0;

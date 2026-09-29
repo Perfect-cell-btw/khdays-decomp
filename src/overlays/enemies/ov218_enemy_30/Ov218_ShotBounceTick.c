@@ -8,6 +8,7 @@
  * +8 target, clears +0x34 and the velocity and hands over to 020cecb8. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Bit17a { unsigned char b0 : 1, b1 : 1; };
 struct W8 { unsigned int lo : 8; };
@@ -20,7 +21,6 @@ extern int *List_Next(void *list);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern int Ov107_FindEntityHitBySphere(int owner, VecFx32 *at, int *out);
-extern void Ov107_PostTagUpdate(int owner, int pose, int loop);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, unsigned char flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, int at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -96,7 +96,7 @@ void Ov218_ShotBounceTick(int *node)
     if (*(int *)(*state + 0x394) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 1, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
     owner = *state;
     func_ov107_020c0b90(owner, 0, *(VecFx32 *)state[2], ((struct Bit17a *)(owner + 0x17a))->b0 == 0 ? 1 : 0);
     Ov107_BuildAndSendUpdate(*state, 0x135, 6, state[2]);

@@ -7,6 +7,7 @@
  * sideways by that ratio. Finally the base pre-pass (020c7ca4) runs. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[4]; VecFx32 trans; int pad[4]; } Srt;
 struct Pieces { char pad[0x3c0]; int piece[3]; };
@@ -19,7 +20,6 @@ extern void TaskList_FinishByTag(void *taskList, void *handle);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, const Srt *m, const VecFx32 *in);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Srt_SetTranslation(Srt *t, const VecFx32 *v);
-extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov231_DrawPrePass(char *self)
 {

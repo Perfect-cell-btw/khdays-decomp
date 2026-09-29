@@ -4,8 +4,8 @@
  * over to Ov224_SpawnWindupTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -16,7 +16,7 @@ void Ov224_EnterAttack(int *node)
 {
     int *state = (int *)node[1];
 
-    Ov107_PostTagUpdate(*state, state[0x1e] != 0 ? 6 : 7, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), state[0x1e] != 0 ? 6 : 7, 0);
     func_ov107_020c0b90(*state, 1, data_02041dc8, (unsigned char)(state[0x1e] == 0));
     Ov107_BuildAndSendUpdate(*state, 0x14a, 6, (void *)state[2]);
     *(unsigned char *)((char *)state + 0x75) = 0;

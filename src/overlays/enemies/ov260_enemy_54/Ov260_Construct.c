@@ -9,6 +9,7 @@
  * loads sound bank 0x17c or 0x174. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[12]; } PartKits;
@@ -25,7 +26,6 @@ extern void Ov260_DetachHook(void);
 extern void Ov260_Teardown(void);
 extern void Ov260_OnHit(void);
 extern void Ov260_SetPose(void);
-extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern void Ov260_ArmModelCallback(char *self);
 extern int RegisterSubscriberSlot(int subscriber, int item);
@@ -36,7 +36,6 @@ extern void SetSubitemState(int model, int track, int pose, int flag);
 extern void RefreshObjectCallbacks(int item, int a);
 extern int InsertSortedEntryWithKey(int item, int kind, void *name);
 extern int Ov107_CreateNamedResourceBinding(void *item, void *name);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_CloneResourceTransform(void *placement);
 extern int Ov260_New_3(char *self);

@@ -3,13 +3,13 @@
  * and discarded); one of animations 5/6 plays at random and the tick hands off to d5034. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern int func_020050b4(int x, int z);
 extern int RandNextScaled(int range);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov297_CopyScaleVecSetFlag88ThenAdvance(int *node);
 extern short data_0203d210[];
@@ -36,6 +36,6 @@ void Ov297_ApproachEntry(int *node)
         state[0xb] = state[0xc] = func_020050b4(dir.x, dir.z);
     }
     actor = *state;
-    Ov107_PostTagUpdate(actor, RandNextScaled(2) + 5, 0);
+    Ov107_PostTagUpdate((Actor *)actor, RandNextScaled(2) + 5, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov297_CopyScaleVecSetFlag88ThenAdvance);
 }

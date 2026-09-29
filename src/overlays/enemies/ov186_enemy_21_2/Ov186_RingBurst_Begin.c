@@ -2,6 +2,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
@@ -46,7 +47,6 @@ struct Ov185ActionNode {
 extern const short data_0203d210[];
 extern void Ov186_AiEnterBoneSpin(void);
 
-extern void Ov107_MoveNodeAndRelayout(struct Ov185Bone *bone, VecFx32 *pos);
 extern void Ov107_BuildAndSendUpdate(struct Ov185Actor *owner, int id, int mode, void *anchor);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 
@@ -103,7 +103,7 @@ void Ov186_RingBurst_Begin(struct Ov185ActionNode *node)
             vPos = *state->pAnchor44;
             vPos.x += data_0203d210[nIndex];
             vPos.z += data_0203d210[nIndex + 1];
-            Ov107_MoveNodeAndRelayout(bone, &vPos);
+            Ov107_MoveNodeAndRelayout((Actor *)bone, &vPos);
             bone->nHold2e4 = 0x800;
         }
         nAngle += 0x6488;

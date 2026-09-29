@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 
@@ -17,8 +18,6 @@ extern int Ov256_PickTarget(int *node);
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int RandNextScaled(int n);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov256_WalkTick(int *node)
@@ -45,7 +44,7 @@ void Ov256_WalkTick(int *node)
         if (*((u8 *)state + 0x69) != 0) {
             if (*((u8 *)state + 0x69) == 1) {
                 *((u8 *)state + 0x69) = 2;
-                Ov107_PostTagUpdate(*state, 4, 0);
+                Ov107_PostTagUpdate((Actor *)(*state), 4, 0);
                 Ov107_StartAnim(*(int *)(*state + 0x450), 2, 0);
             } else if (*((u8 *)state + 0x69) == 2 && *(u8 *)(state[1] + 0xad) == 0) {
                 *(signed char *)(*state + 0x1c7) = state[0x1d] + 2;
@@ -62,19 +61,19 @@ void Ov256_WalkTick(int *node)
         state[0x15]++;
         *((u8 *)state + 0x69) = (u8)(++*((u8 *)state + 0x69)) % 2;
         if (*((u8 *)state + 0x69) == 0) {
-            Ov107_PostTagUpdate(*state, 1, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
             Ov107_StartAnim(*(int *)(*state + 0x450), 0, 0);
         } else {
-            Ov107_PostTagUpdate(*state, 3, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
             Ov107_StartAnim(*(int *)(*state + 0x450), 2, 0);
         }
         return;
     }
     if (*((u8 *)state + 0x69) == 0) {
-        Ov107_PostTagUpdate(*state, 1, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
         Ov107_StartAnim(*(int *)(*state + 0x450), 0, 0);
     } else {
-        Ov107_PostTagUpdate(*state, 3, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
         Ov107_StartAnim(*(int *)(*state + 0x450), 2, 0);
     }
 }

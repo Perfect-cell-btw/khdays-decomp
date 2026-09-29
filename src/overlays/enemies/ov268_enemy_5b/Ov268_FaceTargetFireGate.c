@@ -9,6 +9,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int  Ov268_PickBestFacingNode(int obj, void *p);
 extern void SetIndexedSlot(int self, int idx, int cb);
@@ -16,7 +17,6 @@ extern void VEC_Subtract(void *a, void *b, void *c);
 extern void VEC_Normalize(void *a, void *b);
 extern int  func_020050b4(int x, int z);
 extern int  VEC_DotProduct(void *a, void *b);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov268_FireRangedShot(void);
 extern void Ov268_FaceTargetFireReady(void);
 extern short data_0203d210;
@@ -46,10 +46,10 @@ void Ov268_FaceTargetFireGate(int *self) {
     VEC_Normalize(&v, &v);
     state[0xd] = func_020050b4(v.x, v.z);
     if (VEC_DotProduct(&dir, &v) >= 0xf00) {
-        Ov107_PostTagUpdate(*state, 3, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
         SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov268_FireRangedShot);
         return;
     }
-    Ov107_PostTagUpdate(*state, 9, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov268_FaceTargetFireReady);
 }

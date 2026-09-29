@@ -1,7 +1,6 @@
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern int Ov107_PostTagUpdate();
-extern int Ov107_StartAnim();
 extern int Ov184_SteerSweep();
 
 struct NodeBits { unsigned char ready : 1; };
@@ -25,7 +24,7 @@ void Ov184_BeginSteerSweep(int this_)
     node = *(int *)holder;
     if (((struct NodeBits *)(node + 0x17a))->ready == 0) return;
 
-    Ov107_PostTagUpdate(node, 0x12, 0);
+    Ov107_PostTagUpdate((Actor *)node, 0x12, 0);
     Ov107_StartAnim(*(int *)(*(int *)holder + 0x390), 0, 0);
 
     node = *(int *)holder;

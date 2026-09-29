@@ -1,7 +1,8 @@
 /* AI step: posts pose 2, sends the attack update when armed, turns towards the target and
  * continues. */
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int func_020050b4(int x, int y);
@@ -11,7 +12,7 @@ extern void Ov219_ConfigSubStateThenAdvanceSlot(void);
 void Ov219_Pose2ThenAimAngle(int *node) {
     int *state = (int *)node[1];
     int v[3];
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     if (state[0x14] != 0) {
         Ov107_BuildAndSendUpdate(*state, 0x136, 6, state[2]);
     }

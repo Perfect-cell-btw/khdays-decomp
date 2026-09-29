@@ -5,6 +5,7 @@
  * higher). With a +0x454 target the +0x430 head looks at it; then the base update runs. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 typedef struct { int w[4]; VecFx32 t; int s[4]; } SrtTransform;
@@ -15,7 +16,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void Mtx33_LookAt(Mtx33 *out, const VecFx32 *target, const VecFx32 *from, const VecFx32 *up);
 extern void Quat_FromMtx33(void *srt, const Mtx33 *rot);
-extern void Ov107_AiState_PostTickBase(char *self);
 extern const VecFx32 data_02042264;
 
 void Ov258_Update(char *self)

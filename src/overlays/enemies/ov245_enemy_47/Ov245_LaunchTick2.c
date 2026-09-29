@@ -4,11 +4,10 @@
  * (flag 1), +0x40 clears, bit 6 of the +0x60 high byte clears and the node moves to 020d6f30. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern int Ov107_ActionResource_GetOffsetAndScale(int item, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 struct hw60 { unsigned short lo : 8, hi : 8; };
 extern void Ov245_Rider_AiPauseTick(void);
@@ -24,7 +23,7 @@ void Ov245_LaunchTick2(int *node) {
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 9, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 9, 1);
     state[0x10] = 0;
     ((struct hw60 *)(*state + 0x60))->hi &= ~0x40;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_Rider_AiPauseTick);

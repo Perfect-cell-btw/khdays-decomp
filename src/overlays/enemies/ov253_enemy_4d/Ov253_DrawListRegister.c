@@ -1,8 +1,10 @@
 /* Ov253_DrawListRegister -- draw list registration: handles the +0x460 single, the four +0x458 parts and the
  * eight +0x45c parts (020c2b38), then the base registration (020c7c1c). */
+
+#include "game/enemy_common.h"
+
 struct Ov253Actor { char pad[0x458]; int *parts4; int *parts8; int single; };
 
-extern void Ov107_InvokeSlot0x74(int list, int item);
 extern void Ov107_Actor_DetachFromRegion(struct Ov253Actor *self, int list);
 
 void Ov253_DrawListRegister(struct Ov253Actor *self, int list) {

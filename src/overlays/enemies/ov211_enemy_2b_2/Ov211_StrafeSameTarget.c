@@ -7,6 +7,9 @@
  * While the sub-node byte *(u8)state[3] is set keep waiting; else fire attack 0x13 (flag 1) and hand
  * off to the 020d2c44 state.
  */
+
+#include "game/enemy_common.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
@@ -14,7 +17,6 @@ extern void VEC_Normalize(void *a, void *b);
 extern int  func_020050b4(int x, int z);
 extern void VEC_CrossProduct(void *a, void *b, void *c);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int  data_02042264;
 extern void Ov211_StrafeSameTargetTimed(void);
 
@@ -37,6 +39,6 @@ void Ov211_StrafeSameTarget(int *self) {
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x13, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x13, 1);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov211_StrafeSameTargetTimed);
 }

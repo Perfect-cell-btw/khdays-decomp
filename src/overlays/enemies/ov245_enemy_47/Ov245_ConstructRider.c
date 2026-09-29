@@ -10,6 +10,7 @@
  * is loaded. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int scale; } Pose;
 typedef void (*Callback)(void);
@@ -24,7 +25,6 @@ extern void Ov245_Rider_CreateAiTask(void);
 extern void Ov245_ReleaseChildHeld1c(void);
 extern void Ov245_HitFilterMounted(void);
 extern void Ov245_BindMotion2(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
@@ -33,8 +33,6 @@ extern void MainBlob_ResetSlotRows(int item, void *track);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern void Ov107_Actor_SetAttachSlot(int self, int a, int b, VecFx32 *lift, int id);
 extern void *CallocInstance(int size);
-extern void *func_ov107_020c9848(void);
-extern void Ov107_EnqueueValue(int self, int item);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(void *pose);
 extern void Res_RequestIdPair(int id);
@@ -65,16 +63,16 @@ void Ov245_ConstructRider(int selfArg) {
     *(int *)(self + 0x64) = 0;
     *(int *)(self + 0x68) = 0x800;
     *(int *)(self + 0x6c) = 0;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x3cc), 0x26));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x3cc)), 0x26));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     *(int *)(self + 0x390) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d7268);
     *(int *)(self + 0x394) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d7274);
     *(int *)(self + 0x398) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d7284);
     *(int *)(self + 0x39c) = InsertSortedEntryWithKey(*(int *)(self + 0x384), 1, data_ov245_020d7294);
     Snd_RegisterSeqAndBind((void *)(self + 0x3a8), ((struct Ov245Model *)*(int *)(self + 0x384))->track,
-                  Ov107_PackTextureHandle(*(int *)(self + 0x3cc), 0x27), 0xc);
+                  Ov107_PackTextureHandle((char *)(*(int *)(self + 0x3cc)), 0x27), 0xc);
     MainBlob_ResetSlotRows(*(int *)(self + 0x384), (void *)(self + 0x3a8));
-    *(int *)(self + 0x3a0) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle(*(int *)(self + 0x3cc), 0x32), data_ov245_020d729c);
+    *(int *)(self + 0x3a0) = Ov107_CreateNamedResourceBinding(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x3cc)), 0x32), data_ov245_020d729c);
     Ov107_Actor_SetAttachSlot(self, 1, 1, 0, 0x1800);
     Ov107_Actor_SetAttachSlot(self, 2, 1, 0, 0x1800);
     *(void **)(self + 0x3a4) = CallocInstance(0x28);
@@ -88,7 +86,7 @@ void Ov245_ConstructRider(int selfArg) {
             addr = addr | 0x80000000;
             node = CreateSubitemInstance0xB4((void *)(kind | addr));
         } else {
-            node = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x3cc), pools.id[i]));
+            node = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x3cc)), pools.id[i]));
         }
         (*(struct Ov245Slot **)(self + 0x3a4))[i].pItem = (int)node;
         Ov107_EnqueueValue(self, (*(struct Ov245Slot **)(self + 0x3a4))[i].pItem);

@@ -3,7 +3,8 @@
  * For i in 0..3, node = (*(self+0x390))[i]; cb = *(node + 0x1f8); if set, call cb(node). Finish
  * with 020c88fc(self).
  */
-extern void Ov107_ResetStanceBase(int self);
+
+#include "game/enemy_common.h"
 
 void Ov185_RunSubNodeCallbacksClose(int self) {
     int i;
@@ -16,5 +17,5 @@ void Ov185_RunSubNodeCallbacksClose(int self) {
             cb(node);
         }
     }
-    Ov107_ResetStanceBase(self);
+    Ov107_ResetStanceBase((Actor *)self);
 }

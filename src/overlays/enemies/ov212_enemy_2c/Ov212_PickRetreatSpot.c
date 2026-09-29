@@ -30,9 +30,9 @@
  * Same rule, opposite conclusion -- read the ROM, do not apply the crack by reflex. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int obj, int kind);
-extern void Ov107_MoveNodeAndRelayout(int obj, const VecFx32 *dst);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *unit);
 extern int RandNextScaled();
@@ -72,7 +72,7 @@ void Ov212_PickRetreatSpot(int self) {
                 i++;
             }
             best.y = best.y + *(int *)(ctx[0] + 0x80);
-            Ov107_MoveNodeAndRelayout(ctx[0], &best);
+            Ov107_MoveNodeAndRelayout((Actor *)ctx[0], &best);
         }
     }
 

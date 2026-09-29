@@ -11,6 +11,7 @@
  * Codegen: the packed position goes through Fx32 wrapper copies (ov125_020cc384 idiom). */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -20,9 +21,7 @@ extern int Ov277_SpawnPounceEntry(char *self, int item);
 extern int Ov277_SpawnChildStoreSelfAndArg(char *self, int item);
 extern int Ov277_SpawnPoseEntry(char *self, int item);
 extern int Ov277_SpawnJointEntry(char *self, int item);
-extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern int Ov107_CreateNodeXformTaskFx24(int taskList, int subitem, int mode, int blend, int weight, void *payload);
-extern int Ov107_CreateSpawnTask(char *owner, int resourceId, int kind, int flag, void *work);
 extern void Ov107_AiState_OnMessage(char *actor, unsigned char *msg, int param);
 
 void Ov277_HandleMessage(char *self, unsigned char *msg, int param)
@@ -37,13 +36,13 @@ void Ov277_HandleMessage(char *self, unsigned char *msg, int param)
             (*(int **)(self + 0x40c))[1] = Ov277_SpawnLeapEntry(self, (*(int **)(self + 0x40c))[0]);
             (*(int **)(self + 0x40c))[3] = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), (*(int **)(self + 0x40c))[2], 0x13, (void *)(*(int *)(self + 0x3cc) + 4), 0, 0);
             (*(int **)(self + 0x40c))[5] = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), (*(int **)(self + 0x40c))[4], 0x17, (void *)(*(int *)(self + 0x3cc) + 4), 0, 0);
-            *(int *)(self + 0x490) = Ov107_CreateSpawnTask(self, 0x165, 0xa, 0, (void *)(*(int *)(self + 0x3c8) + 4));
+            *(int *)(self + 0x490) = Ov107_CreateSpawnTask((int)self, 0x165, 0xa, 0, (void *)(*(int *)(self + 0x3c8) + 4));
             break;
         case 1:
             (*(int **)(self + 0x40c))[7] = Ov277_SpawnPounceEntry(self, (*(int **)(self + 0x40c))[6]);
             (*(int **)(self + 0x40c))[3] = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), (*(int **)(self + 0x40c))[2], 0x13, (void *)(*(int *)(self + 0x3cc) + 4), 1, 0);
             (*(int **)(self + 0x40c))[5] = Ov107_CreateNodeBodyTask(*(int *)(self + 0x3c), (*(int **)(self + 0x40c))[4], 0x17, (void *)(*(int *)(self + 0x3cc) + 4), 1, 0);
-            *(int *)(self + 0x494) = Ov107_CreateSpawnTask(self, 0x165, 4, 0, (void *)(*(int *)(self + 0x3c8) + 4));
+            *(int *)(self + 0x494) = Ov107_CreateSpawnTask((int)self, 0x165, 4, 0, (void *)(*(int *)(self + 0x3c8) + 4));
             break;
         case 2:
             (*(int **)(self + 0x40c))[0xf] = Ov107_CreateNodeXformTaskFx24(*(int *)(self + 0x3c), (*(int **)(self + 0x40c))[0xe], 0x17, 0, 0x1000, msg + 5);
@@ -72,7 +71,7 @@ void Ov277_HandleMessage(char *self, unsigned char *msg, int param)
             *(int *)(self + 0x420) |= 0x10;
             break;
         case 6:
-            *(int *)(self + 0x498) = Ov107_CreateSpawnTask(self, 0x165, 0xd, 0, (void *)(*(int *)(self + 0x3b0) + 4));
+            *(int *)(self + 0x498) = Ov107_CreateSpawnTask((int)self, 0x165, 0xd, 0, (void *)(*(int *)(self + 0x3b0) + 4));
             break;
         case 7:
             (*(int **)(self + 0x40c))[0xd] = Ov277_SpawnPoseEntry(self, (*(int **)(self + 0x40c))[0xc]);

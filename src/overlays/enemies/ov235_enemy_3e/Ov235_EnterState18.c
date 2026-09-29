@@ -4,11 +4,11 @@
  * Ov235_GustTick. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u16 lo; u16 hi; } Cmd4;
 
 extern const struct { Cmd4 n[4]; } data_ov235_020d24d0;
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov235_GustTick(int *node);
 
@@ -24,7 +24,7 @@ void Ov235_EnterState18(int *node)
     v = *(unsigned short *)(*state + 0x60);
     *(unsigned short *)(*state + 0x60) =
         (unsigned short)((v & ~0xff00) | (((((unsigned int)v << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10));
-    Ov107_PostTagUpdate(*state, 0x18, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x18, 0);
     state[0x11] = 0;
     state[0x15] = 0;
     *((u8 *)state + 0x65) = 0;

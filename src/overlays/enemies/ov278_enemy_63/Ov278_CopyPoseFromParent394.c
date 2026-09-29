@@ -3,7 +3,9 @@
  * The copy is written as `((int *)obj)[i + 0x6d]`, an ARRAY INDEX WITH THE FIELD OFFSET FOLDED IN
  * (0x1b4 / 4 = 0x6d): that is what keeps the ROM's `add r0, obj, i lsl #2 ; ldr [r0,#0x1b4]`
  * instead of a strength-reduced running pointer. */
-extern void Ov107_SetStatusAndEmit(int obj, int mode);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_HandleRegionEvent(int obj, int arg);
 
 void Ov278_CopyPoseFromParent394(int obj, int arg) {

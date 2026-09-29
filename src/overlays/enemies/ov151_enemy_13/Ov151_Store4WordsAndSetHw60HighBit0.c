@@ -1,14 +1,14 @@
 /* Moves the node and re-lays it out, stores the four words at +0x394 and sets bit 0 of the high
  * byte of its flags (+0x60). */
 
-extern void Ov107_MoveNodeAndRelayout();
+#include "game/enemy_common.h"
 
 struct w4 { int a, b, c, d; };
 
 void Ov151_Store4WordsAndSetHw60HighBit0(int this_, int arg1, struct w4 *src) {
     unsigned short *p;
     unsigned int h;
-    Ov107_MoveNodeAndRelayout(this_, arg1);
+    Ov107_MoveNodeAndRelayout((Actor *)this_, (VecFx32 *)arg1);
     *(struct w4 *)(this_ + 0x394) = *src;
     p = (unsigned short *)(this_ + 0x60);
     h = *p;

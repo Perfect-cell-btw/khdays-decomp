@@ -4,9 +4,9 @@
  * to 020cda78. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov218_ThrowTick(void);
@@ -24,7 +24,7 @@ void Ov218_ThrowReleaseEntry(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 6, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 6, 1);
     func_ov107_020c0b90(*state, 1, data_02041dc8, 0);
     state[5] = 0x4b000;
     for (i = 0; i < state[9]; i++) {

@@ -2,9 +2,9 @@
  * pose 6, fires the trail effects at the tracked position and installs the steer-trail step. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int a, int b);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int *self, int idx, void *cb);
 extern void Ov148_SteerTrailThenAdvance(void);
 
@@ -19,7 +19,7 @@ void Ov148_SpawnTrailOrFail(int *self) {
         SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), 0);
         return;
     }
-    Ov107_PostTagUpdate(*s, 6, 0);
+    Ov107_PostTagUpdate((Actor *)(*s), 6, 0);
     func_ov107_020c0b90(*s, 0, *(VecFx32 *)(*s + 0x3d8), 0);
     func_ov107_020c0b90(*s, 2, data_02041dc8, 0);
     s[0x10] = 0;

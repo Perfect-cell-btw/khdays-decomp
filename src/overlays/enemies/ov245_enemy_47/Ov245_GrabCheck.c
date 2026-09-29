@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct w8 { unsigned int lo : 8, rest : 24; };
 
@@ -30,7 +31,6 @@ struct HitPacket {
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
 extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_FourShape_AiStep_QueueAction0OnAnimEndB(void);
 
@@ -61,7 +61,7 @@ void Ov245_GrabCheck(int *node) {
         func_ov107_020c0b90(*(int *)(*state + 0x3b4), 0, *(VecFx32 *)(*(int *)(*state + 0x3b0) + 0x14), 0);
         Ov107_BuildAndSendUpdate(*state, 0, 0x53, (void *)state[3]);
         *(u16 *)(*state + 0x100 + 0xae) |= 1;
-        Ov107_PostTagUpdate(*state, 3, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_FourShape_AiStep_QueueAction0OnAnimEndB);
     }
 }

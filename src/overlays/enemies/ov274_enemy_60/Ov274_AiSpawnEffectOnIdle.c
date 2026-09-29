@@ -8,13 +8,13 @@
  * SetIndexedSlot with Ov274_FallTick as the continuation. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     unsigned short lo;
     unsigned short hi;
 } Ov206_EffectDesc;
 
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void func_02031384(int a, Ov206_EffectDesc *desc, int n, int v);
 extern void SetIndexedSlot(int self, int action, void (*cb)(void));
 extern void Ov274_FallTick(void);
@@ -32,7 +32,7 @@ void Ov274_AiSpawnEffectOnIdle(int self) {
         return;
     }
 
-    Ov107_PostTagUpdate(ctx[0], 3, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 3, 0);
     ctx[9] = 0;
     *(unsigned char *)((char *)ctx + 0x52) = 0;
 

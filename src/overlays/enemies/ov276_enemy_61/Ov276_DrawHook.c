@@ -3,10 +3,10 @@
  * +0xb0 position raised by 0x10cc; the +0x480 word takes the overlay constant. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
-extern void Ov107_RefreshAndSelectChild(int item, int arg1);
 extern void Ov107_ProcessObjectTick(int actor, int arg);
 
 void Ov276_DrawHook(int actor, int arg)

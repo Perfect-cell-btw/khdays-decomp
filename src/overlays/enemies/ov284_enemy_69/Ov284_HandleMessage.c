@@ -3,8 +3,10 @@
  * (0, 1)) into +0xc, sub 0 the first (mode 5, weight 0x1000, payload) into +4, sub 2 the +0x10
  * one (mode 5, weight 0x1000, payload) into +0x14, sub 6 the +0x18 one (mode 5, at the +0x3a4
  * item's +4 point) into +0x1c; sub 3 runs cd294 on the actor (the original r0 is still live, which is what parks the switch value in r1). The base handler always runs. */
+
+#include "game/enemy_common.h"
+
 extern int Ov107_CreateNodeXformTaskFx24(int, int, int, int, int, int);
-extern int Ov107_CreateNodeBodyTask(int, int, int, int, int, int);
 extern void Ov107_AiState_OnMessage(int, int, int);
 extern void Ov284_CreateChainTask(int);
 

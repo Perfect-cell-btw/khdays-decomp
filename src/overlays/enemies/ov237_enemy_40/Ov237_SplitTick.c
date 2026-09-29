@@ -10,13 +10,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 
 extern VecFx32 Ov237_RotateByActorHeading(int *node, VecFx32 *target);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, int at);
-extern void Ov107_MoveNodeAndRelayout(int owner, const VecFx32 *pos);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_ov237_020d1b40;
 extern const VecFx32 data_ov237_020d1bdc;
@@ -73,7 +73,7 @@ void Ov237_SplitTick(int *node)
             *(int *)(*state + 0x494) = *(short *)(*state + 0x218) / 5;
             *(int *)(((struct Ov237Actor *)*state)->partner + 0x4b0) = 1;
             *(int *)(((struct Ov237Actor *)*state)->partner + 0x494) = *(int *)(*state + 0x494);
-            Ov107_MoveNodeAndRelayout(((struct Ov237Actor *)*state)->partner, &pos);
+            Ov107_MoveNodeAndRelayout((Actor *)(((struct Ov237Actor *)*state)->partner), &pos);
             ((B8 *)(*(int *)(*state + 0x488) + 8))->f &= ~1;
             {
                 u16 hw = *(u16 *)(((struct Ov237Actor *)*state)->partner + 0x60);

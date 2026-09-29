@@ -1,8 +1,10 @@
 /* Teardown: release the two model handles, then the five 8-byte attachment
  * slots at +0x3dc (only the first word of each pair owns anything), free the
  * slot block and let the base class finish. */
+
+#include "game/enemy_common.h"
+
 extern void DestroyInstance(void *handle);
-extern void Ov107_ActionResource_Destroy(void *model);
 extern void FreeInstanceMemory(void *block);
 extern void Ov107_DestroyObject(void *self);
 

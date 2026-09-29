@@ -2,9 +2,9 @@
  * clear starts the charge animation, posts a pose, clears the timers and flags and installs the
  * charge step. */
 
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
-extern void Ov107_StartAnim(int a, int b, int c);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov205_ChargeTick1(void);
 
@@ -21,7 +21,7 @@ void Ov205_TimedAction6ThenReset(int *node) {
     }
     if (*(unsigned char *)state[10] != 0) return;
     Ov107_StartAnim(*(int *)(*state + 0x390), 5, 0);
-    Ov107_PostTagUpdate(*state, 0xe, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xe, 0);
     state[0xb] = 0;
     *((char *)state + 0x44) = 0;
     state[0x16] = 0;

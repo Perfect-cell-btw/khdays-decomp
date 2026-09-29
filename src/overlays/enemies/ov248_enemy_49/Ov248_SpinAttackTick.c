@@ -10,10 +10,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern int Ov248_MeasureTargetGap(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
@@ -38,7 +38,7 @@ void Ov248_SpinAttackTick(int *node)
         if (state[0x13] >= 0x110) {
             *(u8 *)((char *)state + 0x61) |= 0x80;
             state[0x13] = 0;
-            Ov107_PostTagUpdate(*state, 0xf, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 0xf, 0);
         }
         return;
     }

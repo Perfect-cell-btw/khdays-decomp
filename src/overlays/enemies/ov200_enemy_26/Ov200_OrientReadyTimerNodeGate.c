@@ -18,13 +18,13 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct h2 { unsigned short a, b; };
 extern int  Ov200_AimNode_GetState(int obj);
 extern void VEC_Add(void *a, void *b, void *c);
 extern void Mtx33_LookAt(void *out, void *a, int b, void *c);
 extern void Quat_FromMtx33(void *quat, void *mtx);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern int  Ov200_IsMode1(int obj);
 extern int  data_02042264;
@@ -60,7 +60,7 @@ void Ov200_OrientReadyTimerNodeGate(int *self) {
         if (cb != 0) {
             cb(*state, ps, 4);
         }
-        Ov107_PostTagUpdate(*state, 5, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
         SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov200_AiRollTimerOnAnimEnd);
         return;
     }
@@ -70,6 +70,6 @@ void Ov200_OrientReadyTimerNodeGate(int *self) {
     if (Ov200_IsMode1(*(int *)(*state + 0x390)) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov200_AiRollTimerOnAnimEnd);
 }

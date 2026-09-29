@@ -4,8 +4,8 @@
  * 020cdd74. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov146_Rider_LaunchIfReady(int partner, VecFx32 at);
 extern int Ov146_Mount_SetStateIfReady(int param_1, int param_2);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -18,9 +18,9 @@ void Ov146_GuardEntry(int *node)
     int *state = (int *)node[1];
     VecFx32 d;
 
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     if (state[0x16] != 0) {
-        Ov107_PostTagUpdate(state[2], 2, 0);
+        Ov107_PostTagUpdate((Actor *)state[2], 2, 0);
         if (state[0x17] != 0) {
             Ov146_Rider_LaunchIfReady(state[2], *(VecFx32 *)(state + 7));
             Ov146_Mount_SetStateIfReady(*(int *)(*state + 0x3bc), 0);

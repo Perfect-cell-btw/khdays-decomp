@@ -2,6 +2,7 @@
  * the children and callbacks. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct Node2 {
     struct Node2 *prev;
@@ -23,7 +24,6 @@ typedef struct GameObj {
 extern void *List_First(int list);
 extern void *List_Next(int list);
 extern unsigned int Session_GetLocalPlayerIndex(void);
-extern void Ov107_Region_TickChildren(void *self, void *param1);
 extern void RefreshObjectCallbacks(int *ptr, int arg);
 
 void Ov107_Region_Update(char *self, void *param1) {

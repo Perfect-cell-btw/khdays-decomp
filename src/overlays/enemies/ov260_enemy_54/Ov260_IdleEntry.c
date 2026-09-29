@@ -3,11 +3,11 @@
  * the default move (+0x1c9) is queued before the node ends. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct flags16 { unsigned short lo : 8; unsigned short hi : 8; };
 
 extern int RandNextScaled(int n);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov260_IdleEntry(int *node)
@@ -29,7 +29,7 @@ void Ov260_IdleEntry(int *node)
     state[3] = 0;
     *(int *)(*state + 0x470) = 0;
     state[0x20] = 0;
-    Ov107_PostTagUpdate(*state, 0x1e, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1e, 0);
     *(signed char *)(*state + 0x1c7) = *(signed char *)(*state + 0x1c9);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
 }

@@ -4,10 +4,9 @@
  * 020cf474. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov256_RotateByActorHeading(int *out, int param_2, int *vec);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_LungeTick(void);
@@ -21,7 +20,7 @@ void Ov256_TickBrace(int *node)
     Ov256_RotateByActorHeading((int *)&v, (int)node, (int *)(*(int *)(*state + 0x450) + 0x2c));
     *(VecFx32 *)(state + 4) = v;
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 0x15, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x15, 0);
         Ov107_StartAnim(*(int *)(*state + 0x450), 7, 0);
         func_ov107_020c0b90(*state, 0xf, data_02041dc8, 0);
         state[0x13] = 0;

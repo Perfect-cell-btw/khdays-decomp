@@ -8,6 +8,7 @@
  * Written as three field assignments the loads stay split. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 static inline void VEC_Set(VecFx32 *v, int x, int y, int z) {
@@ -16,7 +17,6 @@ static inline void VEC_Set(VecFx32 *v, int x, int y, int z) {
     v->z = z;
 }
 
-extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *v);
 extern void SetIndexedSlot(int self, int idx, int cb);
 
 void Ov126_PublishLandingPose(int *self) {
@@ -28,7 +28,7 @@ void Ov126_PublishLandingPose(int *self) {
     }
     { VecFx32 *p = (VecFx32 *)state[8];
       VEC_Set(&v, p->x, (p->y + 0xe00) * 2, p->z); }
-    Ov107_MoveNodeAndRelayout(*state, &v);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &v);
     *(char *)(*state + 0x1c7) = *(signed char *)(*state + 0x1c9);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), 0);
 }

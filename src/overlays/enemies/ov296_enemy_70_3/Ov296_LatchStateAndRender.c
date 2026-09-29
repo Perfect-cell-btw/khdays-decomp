@@ -37,6 +37,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8; unsigned short hi : 8; };
 
@@ -46,7 +47,6 @@ static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->z = z;
 }
 
-extern void Ov107_MoveNodeAndRelayout(int node, void *blk);
 extern int SetIndexedSlot(void *obj, int slot, int arg);
 
 void Ov296_LatchStateAndRender(void *param_1) {
@@ -59,7 +59,7 @@ void Ov296_LatchStateAndRender(void *param_1) {
         *(signed char *)(node + 0x1c7) = *(signed char *)(node + 0x1c9);
         p = (VecFx32 *)node_ref[1];
         VEC_Set(&stk, p->x, p->y + 0x900, p->z);
-        Ov107_MoveNodeAndRelayout(*node_ref, &stk);
+        Ov107_MoveNodeAndRelayout((Actor *)(*node_ref), &stk);
         SetIndexedSlot(param_1, *(signed char *)((char *)param_1 + 0x20), 0);
     }
 }

@@ -2,7 +2,8 @@
  * the actor's event callback, derives the speed from the owner's frame step, posts pose 5, resets
  * the timer, sends an effect update and installs the timed fixed-angle step. */
 
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern unsigned short data_ov149_020d074c[];
@@ -22,7 +23,7 @@ void Ov149_stateAnimCallbackEffect(int *node) {
         int v = *(int *)(*node + 0x2c) * 0x1e;
         state[4] = v / 10;
     }
-    Ov107_PostTagUpdate(*state, 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
     state[0xc] = 0;
     *(signed char *)((char *)state + 0x48) = 0;
     Ov107_BuildAndSendUpdate(*state, 0x14e, 4, *(int *)(*state + 0x394) + 0x14);

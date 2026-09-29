@@ -5,10 +5,10 @@
  * the tick hands off to d1d14. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void Ov276_startAnim(int actor, int anim);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
@@ -26,7 +26,7 @@ void Ov276_GrabRelease(int *node)
         state[0x10] = state[0x11] = func_020050b4(d.x, d.z);
         state[2] = 0;
     }
-    Ov107_PostTagUpdate(*state, 0xc, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xc, 0);
     Ov276_startAnim(*state, 9);
     func_ov107_020c0b90(*state, 2, data_02041dc8, 0);
     Ov107_BuildAndSendUpdate(*state, 0x164, 4, (void *)state[3]);

@@ -5,9 +5,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov259_FaceTarget(int *node);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -26,7 +26,7 @@ void Ov259_ChargeTick(int *node)
         state[0x18] = 0;
         *(VecFx32 *)(state + 0xe) = data_02041dc8;
         *(VecFx32 *)(state + 0xb) = *(VecFx32 *)(state[2] + 0x190);
-        Ov107_PostTagUpdate(*state, 0x18, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x18, 1);
         Ov259_MirrorPartnerPose(node, 0x18, 1);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov259_TickDive);
         return;

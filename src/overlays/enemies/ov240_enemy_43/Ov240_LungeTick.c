@@ -5,6 +5,7 @@
  * lunge, animation 5 plays, effect 4 spawns there and the tick hands off to cf208. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct CastHit { char pad000[0xc]; int nFraction; };
 
@@ -13,8 +14,6 @@ extern struct CastHit *Collision_CastSphere(void *world, void *from, VecFx32 *st
 extern struct CastHit *Collision_CastRayEx(void *world, void *from, VecFx32 *ray, void *arg);
 extern void ScaleVec3Fixed27(int scale, VecFx32 *v, VecFx32 *d);
 extern void VEC_Add(void *a, void *b, VecFx32 *d);
-extern void Ov107_MoveNodeAndRelayout(int actor, VecFx32 *pos);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov240_stClearReadyFlag(int *node);
@@ -44,8 +43,8 @@ void Ov240_LungeTick(int *node)
         ScaleVec3Fixed27(cast->nFraction, (VecFx32 *)(state + 8), (VecFx32 *)(state + 8));
     }
     VEC_Add((void *)state[2], state + 8, &at);
-    Ov107_MoveNodeAndRelayout(*state, &at);
-    Ov107_PostTagUpdate(*state, 5, 0);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &at);
+    Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
     func_ov107_020c0b90(*state, 4, at, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov240_stClearReadyFlag);
 }

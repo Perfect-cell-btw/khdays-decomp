@@ -1,6 +1,9 @@
 /* Ov245_UnregisterDrawList -- draw list removal: unregisters the actor's nine +0x3fc parts, the
  * three +0x420 parts, the four +0x42c..+0x438 singles and the three +0x43c parts (020c2b20),
  * telling each of the latter's +0x1ec / +0x1f0 hooks 1 and 2, then the base removal (020c7b70). */
+
+#include "game/enemy_common.h"
+
 struct Ov245Actor {
     char pad[0x3fc];
     int parts[9];
@@ -12,7 +15,6 @@ struct Ov245Actor {
     int tails[3];
 };
 
-extern void Ov107_InitObjectFromSource(int list, int item);
 extern void Ov107_HandleRegionEvent(struct Ov245Actor *self, int list);
 
 void Ov245_UnregisterDrawList(struct Ov245Actor *self, int list) {

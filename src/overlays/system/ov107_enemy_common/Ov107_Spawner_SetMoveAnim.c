@@ -1,7 +1,8 @@
 /* Replaces the spawner's move animation and sets its duration (looping when none). */
 
+#include "game/enemy_common.h"
+
 extern void FreeInstanceMemory(void *p);
-extern void Ov107_SetOwnerWord(int *p, int v);
 
 void Ov107_Spawner_SetMoveAnim(char *self, void *pAnim, int duration) {
     if (*(void **)(self + 0xf4) != 0) {

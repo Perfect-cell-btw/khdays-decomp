@@ -1,8 +1,9 @@
 /* AI step: when the animation ends, sets stance bit 0x40, posts pose 4, loads its default pose and
  * continues with the fall. */
 
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo : 8, hi : 8; };
-extern void Ov107_PostTagUpdate();
 extern void Ov264_loadDefaultPoseVecs();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov264_FallStep(void);
@@ -15,7 +16,7 @@ void Ov264_stEnterSetFlag40(int *node) {
         unsigned int u = *p;
         *p = (unsigned short)((u & ~0xff00) | ((((u << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10));
     }
-    Ov107_PostTagUpdate(*state, 4, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 4, 1);
     Ov264_loadDefaultPoseVecs(*state, 1);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov264_FallStep);
 }

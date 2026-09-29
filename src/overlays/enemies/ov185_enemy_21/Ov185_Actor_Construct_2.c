@@ -1,6 +1,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Obj;
 typedef void (*ObjCallback)(struct Obj *self);
@@ -82,7 +83,6 @@ extern void Ov185_TickStaggerAndFlipFacing(struct Obj *self);
 extern void Ov185_ReactionRequestSubState8(struct Obj *self);
 extern void Ov185_PlayAnimPair(struct Obj *self);
 
-extern void *Ov107_PackTextureHandle(struct Obj *self, int index);
 extern struct CreatedItem *CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(struct Subscriber *subscriber, struct CreatedItem *item);
 extern void NNS_G3dMdlSetMdlPolygonID(void *config, unsigned int index, unsigned int variant);
@@ -131,7 +131,7 @@ void Ov185_Actor_Construct_2(struct Obj *self)
     self->flags1ae |= 0x10;
     self->subscriber9c->flags5c |= 4;
 
-    self->subitem384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(self, 0));
+    self->subitem384 = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)self, 0));
     RegisterSubscriberSlot(self->subscriber9c, self->subitem384);
     NNS_G3dMdlSetMdlPolygonID(self->subitem384->container88->config78, 3,
                   data_ov185_020d16d0.value);

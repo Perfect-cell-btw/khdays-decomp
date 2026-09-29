@@ -1,7 +1,8 @@
 /* State step: posts pose 6, sends the two-halfword animation pair from the overlay's table to the
  * actor's event callback (+0x24) and installs the idle step. */
 
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern unsigned short data_ov194_020cef58[];
 extern void Ov194_stIdlePose7ClearTimerAdvance(void);
@@ -10,7 +11,7 @@ void Ov194_stateAnimPairCallback(int *node) {
     unsigned short pair[2];
     unsigned short *pp;
     void (*cb)();
-    Ov107_PostTagUpdate(*state, 6, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 6, 0);
     pp = pair;
     pp[1] = data_ov194_020cef58[1];
     pp[0] = data_ov194_020cef58[0];

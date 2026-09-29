@@ -1,6 +1,7 @@
 /* Refreshes the child selector at +0x3a8 and runs the tick (disabled while flagged). */
 
-extern void Ov107_RefreshAndSelectChild(int node, int flag);
+#include "game/enemy_common.h"
+
 extern void Ov107_ProcessObjectTick(void *a, int flag);
 
 void Ov235_TickWithChildRefresh(char *a, int b) {

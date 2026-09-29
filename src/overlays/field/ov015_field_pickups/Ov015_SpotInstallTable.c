@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct Ov015SpotEntry {
     s8  nId;                  /* 0x00 */
@@ -91,7 +92,6 @@ extern void  NNSi_FndFreeFromDefaultHeap(void *pBlock);
 extern VecFx32 *Ov002_Element_CallHook2C(void *pPiece);                        /* piece position */
 extern u64   func_020203d0(u64 nValue, int nShift);                       /* 64-bit shift left */
 extern void  Ov015_SpotDefCollectLinkedMasks(Ov015Spot *pSpot, int nRoot, u32 nTable, int nDepth, u16 *pVisited, u64 *pMask); /* Ov015_SpotDefCollectLinkedMasks */
-extern void  Ov107_SetStatusAndEmit(void *pActor, u8 nStatus);
 
 void Ov015_SpotInstallTable(Ov015Spot *pSpot, int nArg1, int nTable, u32 nStatus)
 {
@@ -149,7 +149,7 @@ void Ov015_SpotInstallTable(Ov015Spot *pSpot, int nArg1, int nTable, u32 nStatus
     }
     pSpot->callbacks = pBlock->callbacks;
     NNSi_FndFreeFromDefaultHeap(pBlock);
-    Ov107_SetStatusAndEmit(pSpot->pActor, nStatus);
+    Ov107_SetStatusAndEmit((int)pSpot->pActor, nStatus);
     if (pDef->nLinkTable == pSpot->nKind) {
         pSpot->callbacks.pfnInstalled(pSpot->pActor);
         pSpot->nSpotFlags |= 1;

@@ -15,6 +15,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Bits17a { u8 bit0 : 1, bit1 : 1; };
 
@@ -30,7 +31,6 @@ extern int Ov107_FindNearestObject(int actor, int mode);
 extern int VEC_DotProduct(VecFx32 *a, VecFx32 *b);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void Ov298_MapHeldItemKindToAnim(int actor, int anim);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern short data_0203d210[];
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
@@ -144,9 +144,9 @@ void Ov298_WanderTick(int *node)
         Ov298_MapHeldItemKindToAnim(*state, 1);
         state[0x11] = 0;
         *(u8 *)((char *)state + 0x97) = 0;
-        Ov107_PostTagUpdate(*state, 1, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
     }
     if (*(u8 *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 1, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
     }
 }

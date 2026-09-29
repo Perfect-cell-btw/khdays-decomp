@@ -14,6 +14,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { VecFx32 min; VecFx32 max; } Bounds;
@@ -39,14 +40,12 @@ extern void Ov237_HitRelay(void);
 extern void Ov237_NotifyPartnerThenBase(void);
 extern void Ov237_DrawRingMarkEmpty(void);
 extern void Ov237_Construct(char *self);
-extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Snd_RegisterSeqAndBind(void *slot, int bank, void *record, int d);
 extern void MainBlob_ResetSlotRows(int rig, void *slot);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
 extern int CallocInstance(int size);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_Mover_New(const Capsule *capsule);
@@ -55,7 +54,6 @@ extern int Ov237_New(char *self);
 extern int JointModel_New(void *record, int kind);
 extern int Ov237_CreateSparkEmitter(char *self);
 extern void OS_SPrintf(char *buf, const char *fmt, int a);
-extern int Ov107_OpenCachedResourceByName(char *buf);
 extern void func_ov107_020c6624(int obj, int arg);
 extern void Res_RequestIdPair(int resourceId);
 extern const JointNames data_ov237_020d19f8;

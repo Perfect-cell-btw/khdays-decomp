@@ -5,6 +5,7 @@
  * with or without a target. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 
@@ -12,7 +13,6 @@ extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
 extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern int Ov107_ActionResource_GetOffsetAndScale(int part, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
 extern const VecFx32 data_02042264;
 

@@ -1,7 +1,8 @@
 /* Runs the model callbacks, copies the clip's pose into the object and applies its rotation to the
  * bones. */
 
-extern void Ov107_AiState_DispatchModelCallbacks(void *self, int);
+#include "game/enemy_common.h"
+
 extern void Srt_SetRotationQuat(void *pose, void *bones);
 
 typedef struct {

@@ -5,9 +5,9 @@
  * fire attack 5 and hand off to the next state through the indexed dispatcher. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern void Ov128_DecaySpinOverElapsed(int *self);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int *self, int idx, void *cb);
 extern void Ov128_ClearHiFlagAndAdvance(void);
 
@@ -30,6 +30,6 @@ void Ov128_ArmThenAttack(int *self)
     if (((u8 *)node[1])[0xad] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(node[0], 5, 1);
+    Ov107_PostTagUpdate((Actor *)node[0], 5, 1);
     SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), &Ov128_ClearHiFlagAndAdvance);
 }

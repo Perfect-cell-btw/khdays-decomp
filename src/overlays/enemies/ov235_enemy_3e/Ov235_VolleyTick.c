@@ -7,6 +7,7 @@
  * right after the mode table copy and stored last, as in the ROM's load/store order. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u16 lo; u16 hi; } Cmd4;
 typedef struct { int mode[3]; } ModeTable;
@@ -14,7 +15,6 @@ typedef struct { int mode[3]; } ModeTable;
 typedef struct { Cmd4 note[8]; } NoteTable;
 extern const NoteTable data_ov235_020d24d0;
 extern const ModeTable data_ov235_020d24f0;
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, u16 mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov235_DashTick(int *node);
@@ -43,7 +43,7 @@ void Ov235_VolleyTick(int *node)
             (*(void (**)(int, Cmd4 *, int))(*state + 0x24))(*state, p, 4);
         }
     }
-    Ov107_PostTagUpdate(*state, 0x20, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x20, 0);
     *((unsigned char *)state + 0x63) = 0;
     state[0x11] = 0;
     state[0x1e]++;

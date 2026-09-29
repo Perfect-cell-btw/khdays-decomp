@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { void *item; } ListNode;
 struct Bits40 { int b0 : 1, b1 : 1; };
@@ -21,8 +22,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int FX_Div(int num, int den);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const void *a, const void *b, void *out);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov235_SwoopTick(int *node);
 
@@ -78,7 +77,7 @@ void Ov235_GustTick(int *node)
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x19, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x19, 0);
     Ov107_StartAnim(*(int *)(*state + 0x3a8), 0x13, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov235_SwoopTick);
 }

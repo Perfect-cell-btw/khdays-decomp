@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov139RushState {
     void *pOwner;
@@ -19,7 +20,6 @@ struct Ov139RushState {
     u8 nPhase;
 };
 
-extern void Ov107_PostTagUpdate(void *actor, int animation, int loop);
 extern void VEC_Subtract(void *a, void *b, void *out);
 extern int VEC_Normalize(void *source, void *dest);
 extern void Ov107_BuildAndSendUpdate(void *actor, int reaction, int mode,

@@ -7,6 +7,7 @@
  * sound 9 with pose 11) and advances. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int v[6]; } Steps6;
 
@@ -16,7 +17,6 @@ extern int Ov283_LaunchHelper(int *node);
 extern int RandNextScaled(int bound);
 extern int Rand16NextScaled(int bound);
 extern void Ov283_PostItemUpdate(int owner, int id, int mode, int at);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov283_AiStep_QueueAction2OnAnimEnd(void);
 extern void Ov283_TickBounce(void);
 extern const Steps6 data_ov283_020cfb70;
@@ -61,12 +61,12 @@ void Ov283_VolleyCloseTick(int *node)
             *(signed char *)(*state + 0x1c7) = 2;
         } else {
             Ov283_PostItemUpdate(*state, 0x173, 8, state[2]);
-            Ov107_PostTagUpdate(*state, 10, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 10, 0);
         }
         break;
     case 1:
         Ov283_PostItemUpdate(*state, 0x173, 9, state[2]);
-        Ov107_PostTagUpdate(*state, 0xb, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0xb, 0);
         break;
     }
     state[0x1b]++;

@@ -4,7 +4,9 @@
  * ping the owner via 020c2b20(arg, node); if node has a callback at +0x1f0, call cb(node,
  * *(u8)(self+0x19e)); then zero node+0x220. Hand off with 020c7b70(self, arg).
  */
-extern void Ov107_InitObjectFromSource(int owner, int node);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_HandleRegionEvent(int self, int arg);
 
 void Ov186_NotifySubNodesRunCallbacks(int self, int arg) {

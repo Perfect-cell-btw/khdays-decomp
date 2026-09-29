@@ -14,6 +14,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
@@ -26,7 +27,6 @@ extern void Ov127_UpdateChaseFacing(int *self);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int RandNextScaled(int range);
 extern void SetIndexedSlot(int self, int idx, int cb);
-extern void Ov107_PostTagUpdate(int actor, int a, int b);
 extern const short data_0203d210[];
 
 void Ov127_DecideChaseMove(int *self)
@@ -89,5 +89,5 @@ void Ov127_DecideChaseMove(int *self)
             return;
         }
     }
-    Ov107_PostTagUpdate(*nd, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*nd), 2, 0);
 }

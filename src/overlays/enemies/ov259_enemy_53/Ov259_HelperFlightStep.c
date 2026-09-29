@@ -8,11 +8,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; VecFx32 axis; int length; int radius; } Capsule;
 
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *q, const VecFx32 *in);
-extern int Ov107_CollectSegmentOverlaps(int owner, Capsule *seg, int *hits);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
@@ -38,7 +38,7 @@ void Ov259_HelperFlightStep(int *node)
     Vec3TransformViaTempMtx(&axis, (void *)(*state + 0xa0), &data_02042258);
     seg.axis = axis;
     seg.radius += 0x400;
-    count = Ov107_CollectSegmentOverlaps(*(int *)(*state + 0x394), &seg, hits);
+    count = Ov107_CollectSegmentOverlaps((Actor *)(*(int *)(*state + 0x394)), &seg, (void **)hits);
     for (i = 0; i < count; i++) {
         u8 bit = 1 << *(u16 *)(hits[i] + 2);
 

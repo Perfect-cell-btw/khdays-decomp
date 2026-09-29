@@ -2,11 +2,12 @@
  * the slot's +0x3b8 parent at the +0x3b0 item's +4 transform (020c09a0); slot 1 spawns the
  * slot's +0x3b8 effect child (020c08cc, kind 0x15, scale 1.0, payload at byte 5) and then
  * re-links the actor (020c0b14 with 0); both land in +0x3bc. Then the state filter (020cc8a4). */
+
+#include "game/enemy_common.h"
+
 struct Ov245Slots { char pad[0x3b8]; struct { int pParent; int pChild; } slots[2]; };
 
-extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *at, int a, int b);
 extern int Ov107_CreateNodeXformTaskFx24(int list, int parent, int kind, int a, int scale, unsigned char *payload);
-extern void Ov107_ForwardVisibleEvent(int self, int a);
 extern int Ov245_FilterStateMsg(int self, unsigned char *msg, int extra);
 
 int Ov245_SlotSpawnMsg2(int self, unsigned char *msg, int extra) {
@@ -21,7 +22,7 @@ int Ov245_SlotSpawnMsg2(int self, unsigned char *msg, int extra) {
         case 1:
             ((struct Ov245Slots *)self)->slots[msg[3]].pChild =
                 Ov107_CreateNodeXformTaskFx24(*(int *)(self + 0x3c), ((struct Ov245Slots *)self)->slots[msg[3]].pParent, 0x15, 0, 0x1000, msg + 5);
-            Ov107_ForwardVisibleEvent(self, 0);
+            Ov107_ForwardVisibleEvent((void *)self, 0);
             break;
         }
         break;

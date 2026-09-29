@@ -8,8 +8,8 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *v);
 extern int  Ov107_FindNearestObject(int obj, int *out);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  VEC_Mag(int *v);
@@ -30,7 +30,7 @@ void Ov282_TrackLeaderRangeCheck(int *self) {
     }
     w = *(VecFx32 *)(state + 0xd);
     w.y -= 0x6000;
-    Ov107_MoveNodeAndRelayout(*state, &w);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), &w);
     target = Ov107_FindNearestObject(*state, &dist);
     state[4] = target;
     if (target != 0) {

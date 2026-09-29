@@ -5,11 +5,11 @@
  * (normalised, length at +0x70); likewise +0x3b4 -> +0x3a4 / +0x3c4 and +0x3b0 -> +0x3a0. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct blk11 { int w[11]; };
 struct Flags5c { int b0 : 1; int b1 : 1; };
 struct Ov236Anchor { VecFx32 pos; VecFx32 dir; int len; };
-extern void Ov107_AiState_DispatchModelCallbacks(void *obj, int);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 

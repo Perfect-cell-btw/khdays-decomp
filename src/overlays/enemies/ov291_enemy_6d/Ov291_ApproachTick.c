@@ -8,15 +8,13 @@
  * and the tick hands off to cd2d0. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int queryTableEntry(int item, int a);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);
-extern int Ov107_ActionResource_GetOffsetAndScale(int resource, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
-extern void Ov107_StartAnim(void *part, int a, int b);
 extern void Ov291_AiSpinTick(void);
 extern int func_020050b4(int x, int z);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
@@ -68,8 +66,8 @@ void Ov291_ApproachTick(int node)
     if (*(unsigned char *)state[8] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 3, 0);
-    Ov107_StartAnim(*(void **)(*state + 0x394), 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
+    Ov107_StartAnim((int)(*(void **)(*state + 0x394)), 2, 0);
     *(unsigned char *)(state + 0xa) = 0;
     SetIndexedSlot(node, *(signed char *)(node + 0x20), Ov291_AiSpinTick);
 }

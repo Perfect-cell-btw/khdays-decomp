@@ -1,8 +1,10 @@
 /* Construct a named object: allocate 0x4d0 bytes, format a debug name via OS_SPrintf,
  * register it (+0x1a4), install the 020cc08c callback (+0x18c) and init. Return it. */
+
+#include "game/enemy_common.h"
+
 extern int CallocInstance(int a);
 extern void OS_SPrintf(char *buf, const char *fmt, int a);
-extern int Ov107_OpenCachedResourceByName(char *buf);
 extern void func_ov107_020c6624(int a, int b);
 extern const char data_ov237_020d1c88[];
 extern void Ov237_Construct(int);

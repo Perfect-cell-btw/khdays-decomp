@@ -5,9 +5,9 @@
  * animation 9 plays and the state advances to Ov174_AiStep_QueueAction5OnAnimEnd. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern void Ov174_AiStep_QueueAction5OnAnimEnd(void);
@@ -32,7 +32,7 @@ void Ov174_FlightStep3(int *node)
         state[9] = (int)(((long long)s * 0x200 + 0x800) >> 12);
     }
     if (state[0x16] <= 0) {
-        Ov107_PostTagUpdate(*state, 9, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov174_AiStep_QueueAction5OnAnimEnd);
     }
 }

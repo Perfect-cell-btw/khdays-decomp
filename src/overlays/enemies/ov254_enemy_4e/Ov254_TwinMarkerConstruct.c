@@ -5,12 +5,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 struct Items { char pad[0x384]; int item[2]; };
 struct b1 { unsigned int b0 : 1; };
 
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern const VecFx32 data_02041dc8;
@@ -51,8 +51,8 @@ void Ov254_TwinMarkerConstruct(char *self)
     pose = (VecFx32 *)(self + 0x64);
     *pose = data_02041dc8;
     VecSet(pose, 0, *(int *)(self + 0x70) = 1, 0);
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x46));
-    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x47));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x46));
+    *(int *)(self + 0x388) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x47));
     for (i = 0; i < 2; i++) {
         ((struct b1 *)(((struct Items *)self)->item[i] + 0x5c))->b0 = 1;
         RegisterSubscriberSlot(*(int *)(self + 0x9c), ((struct Items *)self)->item[i]);

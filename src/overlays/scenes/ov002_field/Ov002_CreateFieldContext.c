@@ -1,6 +1,6 @@
+#include "game/enemy_common.h"
+
 extern void LoadActorOverlay(void);
-extern int Ov107_InstantiateFieldClass(int size, int a);
-extern char *func_ov107_020c9848(void);
 extern void Ov002_SetCurrentSlotFlag1(int a);
 extern int Ov002_GetRootField8d94(void);
 extern void Ov002_Camera_SetMode(void);

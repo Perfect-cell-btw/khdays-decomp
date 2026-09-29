@@ -4,6 +4,7 @@
  * reaction 0 mode 0x43 fires at the +8 point and the tick hands off to d51fc. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct LowByte32 { unsigned bits : 8; };
 
@@ -13,7 +14,6 @@ extern int Ov298_AcquireTargetGapAndAngle(void *node);
 extern void VEC_Subtract(void *a, void *b, VecFx32 *d);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int b, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov298_ForwardThenEnterSubState4(int *node);
@@ -31,7 +31,7 @@ void Ov298_TurnEntry(int *node)
         state[0xc] = func_020050b4(d.x, d.z);
         state[0xc] += state[10];
     }
-    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
     state[0x24] = 1;
     ((struct LowByte32 *)(*(int *)(*state + 0x38c) + 8))->bits |= 1;
     Ov107_BuildAndSendUpdate(*state, 0, 0x43, (void *)state[2]);

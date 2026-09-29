@@ -2,15 +2,16 @@
  * high byte, clear the travel accumulator and continue in the next step.
  *
  * Matched byte-exact 2026-07-23, first compile. One of three byte-identical siblings. */
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
-extern void Ov107_StartAnim(int p, int a, int b);
+
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov189_ApplyAimTransformThenAdvance(void);
 
 void Ov189_EnterWindDown(int *node) {
     int *state = (int *)node[1];
 
-    Ov107_PostTagUpdate(state[0], 7, 0);
+    Ov107_PostTagUpdate((Actor *)state[0], 7, 0);
     Ov107_StartAnim(*(int *)(state[0] + 0x3c0), 1, 0);
     {
         unsigned short hw60 = *(unsigned short *)(state[0] + 0x60);

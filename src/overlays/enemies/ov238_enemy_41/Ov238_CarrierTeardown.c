@@ -4,6 +4,7 @@
  * the base teardown runs. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 struct Posed { char pad[0x10]; SrtTransform srt; };
@@ -11,7 +12,6 @@ struct Anchor { char pad[4]; SrtTransform srt; };
 
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void TaskList_FinishByTag(int model, int handle);
-extern void Ov107_AiState_PostTickBase(char *self);
 extern const VecFx32 data_ov238_020d3668;
 
 void Ov238_CarrierTeardown(char *self)

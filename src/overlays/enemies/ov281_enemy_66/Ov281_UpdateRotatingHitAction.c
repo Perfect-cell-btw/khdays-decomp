@@ -4,6 +4,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     VecFx32 center;
@@ -58,7 +59,6 @@ extern void func_ov107_020c0b90();
 extern void Ov107_BuildAndSendUpdate(Ov281Actor *actor, int effect, int mode, int context);
 extern void *Ov281_ApplyAreaHit(Ov281ActionState *state, unsigned int mask,
                                  Sphere *sphere, VecFx32 *direction, int strength);
-extern void Ov107_PostTagUpdate(Ov281Actor *actor, int mode, int arg);
 extern void SetIndexedSlot(Ov281ActionNode *node, int slot, void *callback);
 extern void Ov281_AiStep_QueueAction2OnAnimEnd_2(void);
 
@@ -93,7 +93,7 @@ void Ov281_UpdateRotatingHitAction(Ov281ActionNode *node)
     }
 
     if (state->subState->active == 0) {
-        Ov107_PostTagUpdate(state->actor, 6, 0);
+        Ov107_PostTagUpdate((Actor *)state->actor, 6, 0);
         SetIndexedSlot(node, node->slot, Ov281_AiStep_QueueAction2OnAnimEnd_2);
     }
 }

@@ -3,8 +3,8 @@
  * idle the actor plays animation 12 and hands off to the next guard state. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov220_AiStep_QueueAction2OnAnimEnd(int *node);
 
@@ -20,6 +20,6 @@ void Ov220_GuardTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0xc, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xc, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov220_AiStep_QueueAction2OnAnimEnd);
 }

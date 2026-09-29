@@ -14,6 +14,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } MtxFx33;
 
@@ -26,7 +27,6 @@ typedef struct { int w[11]; } PoseBlock;
 
 extern int func_02016320(void *model, MtxFx43 *out, void *opt, unsigned int jointId);
 extern void SrtTransform_SetIdentity(void *srt);
-extern void *func_ov107_020c9848(void);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *dst);
 extern void Srt_SetTranslation(void *srt, const VecFx32 *translation);

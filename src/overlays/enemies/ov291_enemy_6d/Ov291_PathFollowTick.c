@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 
@@ -21,7 +22,6 @@ struct PathEntry {
     int kind;
 };
 
-extern int Ov107_ActionResource_GetOffsetAndScale(int item, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, VecFx32 *in);
 extern int queryTableEntry(int item, int channel);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int mode, void *anchor);

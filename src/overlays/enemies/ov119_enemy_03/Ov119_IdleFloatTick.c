@@ -7,13 +7,13 @@
  * heading and the tick hands over to Ov119_HoverTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
 #define FX_MUL(a, b) ((int)(((long long)(a) * (b) + 0x800) >> 12))
 
 extern int Ov119_PickBestFacingTarget(int owner);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern int RandNextScaled(int n);
 extern void QuatFromAxisAngle(void *q, const VecFx32 *axis, int angle);
 extern const short data_0203d210[];
@@ -50,7 +50,7 @@ void Ov119_IdleFloatTick(int *node)
     if (state[0x14] > 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 1, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
     state[0x14] = RandRange(*(int *)(*state + 0x224), *(int *)(*state + 0x228));
     state[0xb] = *(int *)(*node + 0x2c) * 30 / 10;
     QuatFromAxisAngle(state + 7, &data_02042264, RandRange(0, 0x168) * 0x3244 / 180);

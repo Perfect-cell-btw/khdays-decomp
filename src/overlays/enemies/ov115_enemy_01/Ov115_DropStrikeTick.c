@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
 
@@ -49,7 +50,6 @@ extern struct CastHit *Collision_CastRay(void *world, VecFx32 *from, VecFx32 *st
 extern void SrtTransform_SetIdentity(void *transform);
 extern void Srt_SetTranslation(void *transform, VecFx32 *pos);
 extern void Ov107_BuildAndSendUpdate(struct Ov115Owner *owner, int a, int id, VecFx32 *pos);
-extern int Ov107_CollectSegmentOverlaps(struct Ov115Owner *owner, struct SweepQuery *query, int *out);
 extern int Ov107_InvokeHitCallback(int hit, struct Ov115Owner *a, struct Ov115Owner *b, int kind, const VecFx32 *push, int z);
 extern void Task_MarkFinished(int *node);
 extern const PosMsg data_ov115_020ceb54;
@@ -133,7 +133,7 @@ void Ov115_DropStrikeTick(int *node)
         query.vDir = data_02042264;
         query.nRadius = 0x8000;
         query.nHeight = 0x200;
-        n = Ov107_CollectSegmentOverlaps(state->pOwner, &query, hits);
+        n = Ov107_CollectSegmentOverlaps((Actor *)state->pOwner, &query, (void **)hits);
         for (i = 0; i < n; i++) {
             if (Ov107_InvokeHitCallback(hits[i], state->pOwner, state->pOwner, 1, &data_02041dc8, 0) != 0) {
                 msg2 = data_ov115_020ceb62;

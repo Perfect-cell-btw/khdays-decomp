@@ -5,15 +5,11 @@
  * 0xc) or forwards byte 4 to the camera's +0x78 handler (0xd); then the base handler runs. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Pairs { char pad[0x4e8]; struct { int res; int handle; } pair[1]; };
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int res, int kind, int arg, int scale, void *pos);
-extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, int a, int b);
-extern void Ov107_ForwardVisibleEvent(char *self, int a);
-extern int Ov107_CreateSpawnTask(char *self, int id, int mode, int flag, void *pose);
-extern void Ov107_UnlinkNodeFromOwner(int sub);
-extern int func_ov107_020c9848();
 extern int func_ov022_02083f0c(void);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
@@ -46,11 +42,11 @@ void Ov254_HelperCHandleMessage(char *self, u8 *msg, int arg)
             Ov107_ForwardVisibleEvent(self, 1);
             break;
         case 0xb:
-            *(int *)(self + 0x4e4) = Ov107_CreateSpawnTask(self, 0x16d, 0x14, 1, self + 0xa0);
+            *(int *)(self + 0x4e4) = Ov107_CreateSpawnTask((int)self, 0x16d, 0x14, 1, self + 0xa0);
             break;
         case 0xc:
             if (*(int *)(self + 0x4e4) != 0) {
-                Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x4e4));
+                Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x4e4)));
                 *(int *)(self + 0x4e4) = 0;
             }
             break;

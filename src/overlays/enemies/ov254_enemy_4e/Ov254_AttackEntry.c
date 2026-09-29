@@ -6,13 +6,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Hw60 { u16 lo : 8; u16 hi : 8; };
 
 extern void Ov254_SendCommand0d(int *self, int arg);
 extern void Ov254_ChooseWaypoint(int *state, int a, int *out);
 extern int Ov254_ProbeGround(int *self, VecFx32 pos, int *outY);
-extern void Ov107_MoveNodeAndRelayout(int actor, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
 void Ov254_AttackEntry(int *node)
@@ -32,7 +32,7 @@ void Ov254_AttackEntry(int *node)
     Ov254_ChooseWaypoint(state, 1, state + 0xd);
     state[0xc] = state[0xd];
     Ov254_ProbeGround(state, *(VecFx32 *)(state + 6), state + 7);
-    Ov107_MoveNodeAndRelayout(*state, state + 6);
+    Ov107_MoveNodeAndRelayout((Actor *)(*state), (VecFx32 *)(state + 6));
     *(signed char *)(*state + 0x1c7) = *(signed char *)(*state + 0x100 + 0xc9);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
 }

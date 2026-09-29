@@ -1,12 +1,14 @@
 /* Ov240_AimAtTarget: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-extern void Ov107_PostTagUpdate();
+
+#include "game/enemy_common.h"
+
 extern void VEC_Subtract();
 extern int func_020050b4();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov240_ConfigSubStateThenAdvanceSlot(void);
 void Ov240_AimAtTarget(int *node) {
     int *state = (int *)node[1];
-    Ov107_PostTagUpdate(*state, 0x3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x3, 0);
     if (state[0x10] != 0) {
         int buf[3];
         int a;

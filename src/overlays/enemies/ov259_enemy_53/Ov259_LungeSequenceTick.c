@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int x, y, z, w; } Quat;
 
@@ -22,7 +23,6 @@ extern int func_020050b4(int x, int y);
 extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, const Quat *q, const VecFx32 *in);
 extern void Ov259_LaunchHelper(int helper, int climb, VecFx32 *dir, int heading);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -109,7 +109,7 @@ void Ov259_LungeSequenceTick(int *node)
                 SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
                 return;
             }
-            Ov107_PostTagUpdate(*state, 0x15, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 0x15, 0);
             Ov259_MirrorPartnerPose(node, 0x15, 0);
             Ov259_ForwardSweep(*(int *)(*state + 0x384), 0x2a8, 0x7f8, lift);
             *(int *)(*state + 0x420) = 6;

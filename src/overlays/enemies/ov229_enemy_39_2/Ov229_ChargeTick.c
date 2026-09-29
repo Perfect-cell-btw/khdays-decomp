@@ -5,11 +5,11 @@
  * the +0x40 yaw. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov229_CountdownTimer4cThenPose15(int *node);
 extern void MTX_RotY33_(Mtx33 *m, int sin, int cos);
@@ -30,7 +30,7 @@ void Ov229_ChargeTick(int *node)
         *(unsigned char *)((char *)state + 0x61) = 1;
     }
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 0x14, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x14, 1);
         state[0x13] = state[0x16];
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov229_CountdownTimer4cThenPose15);
         return;

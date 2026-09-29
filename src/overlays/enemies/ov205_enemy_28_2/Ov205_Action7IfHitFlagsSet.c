@@ -1,8 +1,8 @@
 /* AI step: once the actor touches ground or a wall, starts the sweep animation, posts pose 8, sends
  * a state update, clears the hit flag and timer and installs the sweep step. */
 
-extern void Ov107_StartAnim(int a, int b, int c);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 extern void Ov205_SweepTick(void);
@@ -15,7 +15,7 @@ void Ov205_Action7IfHitFlagsSet(int *node) {
     if (((struct sbit1 *)(s + 0x17a))->b == 0 && ((struct sbit1 *)(s + 0x17c))->b == 0)
         return;
     Ov107_StartAnim(*(int *)(s + 0x390), 3, 0);
-    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
     Ov107_BuildAndSendUpdate(*state, 0x132, 7, state[8]);
     *((char *)state + 0x44) = 0;
     state[0xb] = 0;

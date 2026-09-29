@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u16 lo : 8; u16 hi : 8; } flags16;
 
@@ -14,7 +15,6 @@ extern int *List_Next(void *list);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern int Ov146_ForwardToAiTaskWhenReady(int partner);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int bank, int variant, void *at);
@@ -51,8 +51,8 @@ void Ov146_ChargeDecide(int *node)
     }
     state[0xf] = 0;
     *((u8 *)state + 0x50) = 0;
-    Ov107_PostTagUpdate(*state, 3, 0);
-    Ov107_PostTagUpdate(state[2], 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
+    Ov107_PostTagUpdate((Actor *)state[2], 3, 0);
     Ov146_ForwardToAiTaskWhenReady(state[2]);
     func_ov107_020c0b90(*state, 4, *(VecFx32 *)(*state + 0x74), 0);
     Ov107_BuildAndSendUpdate(*state, 0x125, 4, (void *)state[3]);

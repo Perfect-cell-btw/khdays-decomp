@@ -6,10 +6,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct b8 { unsigned f : 8; };
 
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void Ov219_startAnim(int actor, int anim);
 extern void Ov107_BuildAndSendUpdate(int actor, int a, int id, void *at);
 extern void VEC_Subtract(void *a, void *b, void *d);
@@ -23,7 +23,7 @@ void Ov219_BeginAttack(int *node)
     VecFx32 dir;
     int actor;
 
-    Ov107_PostTagUpdate(*state, 6, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 6, 0);
     Ov219_startAnim(*state, 0);
     Ov107_BuildAndSendUpdate(*state, 0x136, 6, (void *)state[2]);
     actor = *state;

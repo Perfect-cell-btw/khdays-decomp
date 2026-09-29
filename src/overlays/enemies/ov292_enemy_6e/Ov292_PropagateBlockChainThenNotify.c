@@ -1,7 +1,8 @@
 /* Post-tick: copies the 44-byte transform down the chain of attached nodes (+0x3c0 -> +0x3b0 ->
  * +0x3ac), then runs the base post-tick. */
 
-extern void Ov107_AiState_PostTickBase(void *obj);
+#include "game/enemy_common.h"
+
 struct blk11 { int w[11]; };
 void Ov292_PropagateBlockChainThenNotify(char *obj) {
     *(struct blk11 *)(*(char **)(obj + 0x390) + 0x10) = *(struct blk11 *)(*(char **)(obj + 0x38c) + 4);

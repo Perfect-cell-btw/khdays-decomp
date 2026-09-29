@@ -2,9 +2,11 @@
  * +0x38c, +0x394, each with its binding at the next word) take the resource listed in
  * data_ov235_020d22fc / 020d2398 / 020d2434 (Ov235_AppendWorkEntry) and restart channel 0 -- channel
  * 2 too for the third part -- with the given loop mode. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int id[39]; } MotionTable;
 
-extern void *Ov107_PackTextureHandle(char *self, int index);
 extern void Ov235_AppendWorkEntry(int part, void *res, int binding);
 extern void SetSubitemState(int obj, int channel, int a, int b);
 extern MotionTable data_ov235_020d22fc;

@@ -2,11 +2,13 @@
  * ends the state; within 0x4800 the +0x14 clock resets, the tick hands off to the approach state
  * and runs it at once, and the actor wants animation 1; beyond it the idle countdown may end the
  * state, else animation 0 is wanted. A wanted animation different from the +0x44 one is played. */
+
+#include "game/enemy_common.h"
+
 extern int Ov219_DistanceToTarget(int *node);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov219_ApproachTick(int *node);
 extern int Ov219_IdleCountdown(int *node, int value);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 
 void Ov219_WanderTick(int *node)
 {
@@ -36,6 +38,6 @@ void Ov219_WanderTick(int *node)
     }
     if (state[0x11] != anim) {
         state[0x11] = anim;
-        Ov107_PostTagUpdate(*state, anim, 1);
+        Ov107_PostTagUpdate((Actor *)(*state), anim, 1);
     }
 }

@@ -5,12 +5,13 @@
  * 0x64, ov200 1768) at +0x30 takes the owner's +0x3a8; +0x14 keeps the beam kind, which
  * selects the two anchors +0x48/+0x4c: the +0x3a0 and +0x39c nodes' +0x14 for kind 0, the
  * +0x39c one twice for kind 1 and the +0x3a0 one twice for kind 2. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[3]; } KindTable;
 
 extern int CreateRegistryEntry(int list, int a, int size, void *cb, int flag, int *out);
-extern int Ov107_PackTextureHandle(int owner, int kind);
 extern int CreateSubitemInstance0xB4(int res);
-extern void Ov107_EnqueueValue(int owner, int obj);
 extern const KindTable data_ov200_020d1844;
 extern void Ov200_WireSubNodesRegister2(void);
 extern void Ov200_RingBufferReset(void);
@@ -26,9 +27,9 @@ int *Ov200_BuildBeamState(int owner, int nKind)
     CreateRegistryEntry(*(int *)(owner + 0x3c), 0x64, 0x54, (void *)Ov200_WireSubNodesRegister2, 0, (int *)&state);
     state[0] = owner;
     for (i = 0; i < 3; i++) {
-        node = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, kinds.w[i]));
+        node = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)owner, kinds.w[i]));
         *(int *)(node + 0x5c) |= 2;
-        Ov107_EnqueueValue(owner, node);
+        Ov107_EnqueueValue((char *)owner, node);
         switch (i) {
         case 0:
             state[1] = node;

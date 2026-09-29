@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 b0 : 1; u8 b1 : 1; } Bits;
@@ -15,7 +16,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov237_AttackHitTest(int *node, void *sphere, void *box, void *segment, VecFx32 *push, int once, unsigned short effect, int kind);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov237_AiStep_QueueAction2OnAnimEnd(void);
@@ -47,7 +47,7 @@ void Ov237_ChargeHitTick(int *node)
     }
     if (state[0xd] == 0 || ((Bits *)(*state + 0x17a))->b1 || *((u8 *)state + 0x55) >= 5 ||
         *(int *)(*state + 0x4b4) != 0) {
-        Ov107_PostTagUpdate(*state, 0x14, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x14, 0);
         if (*(int *)(*state + 0x4b4) == 0) {
             func_ov107_020c0b90(*state, 0x11, *(VecFx32 *)state[0xe], 0);
         }
@@ -55,7 +55,7 @@ void Ov237_ChargeHitTick(int *node)
         return;
     }
     state[0xd]--;
-    Ov107_PostTagUpdate(*state, 0x13, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x13, 0);
     if (*(int *)(*state + 0x4b4) != 0) {
         return;
     }

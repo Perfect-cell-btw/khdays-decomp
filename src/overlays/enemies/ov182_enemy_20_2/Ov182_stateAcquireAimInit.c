@@ -2,11 +2,12 @@
  * minimum, sets bit 0 of +0x1ae, clears bit 0 of the model's flag byte, clears the timer and
  * installs the slow fade-in step. */
 
+#include "game/enemy_common.h"
+
 struct bf { unsigned b : 8; };
 extern int Ov107_FindNearestObject();
 extern void VEC_Subtract();
 extern int func_020050b4();
-extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov182_AiFadeInSlowTick(void);
 void Ov182_stateAcquireAimInit(int *node) {
@@ -21,7 +22,7 @@ void Ov182_stateAcquireAimInit(int *node) {
         state[6] = a;
         state[5] = a;
     }
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     *(int *)(*state + 0x394) = 1;
     *(unsigned short *)(*state + 0x1ae) |= 1;
     ((struct bf *)(*(int *)(*state + 0x388) + 8))->b &= ~1;

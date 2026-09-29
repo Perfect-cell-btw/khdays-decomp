@@ -5,9 +5,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov258_StepCue(int *node, int step, int phase, unsigned int variant);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov258_HoverTick(void);
@@ -22,7 +22,7 @@ void Ov258_LeapTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
     func_ov107_020c0b90(*state, 0x22, *(VecFx32 *)(state + 7), 0);
     state[0xc] = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov258_HoverTick);

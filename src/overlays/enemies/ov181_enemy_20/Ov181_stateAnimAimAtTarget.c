@@ -1,14 +1,15 @@
 /* State step: posts a pose and, when a target is set, turns the heading toward it; installs the
  * eased-pose step. */
 
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern void VEC_Subtract();
 extern int func_020050b4();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov181_stEasePoseCheckFlags(void);
 void Ov181_stateAnimAimAtTarget(int *node) {
     int *state = (int *)node[1];
-    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
     if (state[9] != 0) {
         int buf[3];
         int a;

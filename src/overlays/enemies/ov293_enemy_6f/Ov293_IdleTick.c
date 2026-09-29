@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov293Owner {
     char pad000[4];
@@ -29,8 +30,6 @@ extern int Ov107_FindNearestObject(struct Ov293Owner *actor, int mode);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(struct Ov293Owner *actor, int anim, int flag);
-extern void Ov107_StartAnim(int handle, int a, int b);
 extern void Ov107_BuildAndSendUpdate(struct Ov293Owner *actor, int id, int mode, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov293_SwingTick(int *node);
@@ -65,7 +64,7 @@ void Ov293_IdleTick(int *node)
     if (((struct Ov293Owner *)state[0])->pfnMessage != 0) {
         ((struct Ov293Owner *)state[0])->pfnMessage((struct Ov293Owner *)state[0], &msg, 4);
     }
-    Ov107_PostTagUpdate((struct Ov293Owner *)state[0], 5, 0);
+    Ov107_PostTagUpdate((Actor *)((struct Ov293Owner *)state[0]), 5, 0);
     Ov107_StartAnim(*(int *)(state[0] + 0x39c), 0, 0);
     {
         u16 hw = *(u16 *)(state[0] + 0x60);

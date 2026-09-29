@@ -1,7 +1,9 @@
 /* Kick anim 4, send sprite request 4 (data_ov244_020d3724 entry 10 with the actor's +2 id),
  * clear the +9 byte and +0x1c word, then dispatch to 020d03a0. */
+
+#include "game/enemy_common.h"
+
 extern void func_02031384(int a, void *req, int b);
-extern int Ov107_PostTagUpdate(int, int, int);
 extern int SetIndexedSlot(int, int, void *);
 extern unsigned short data_ov244_020d3724[];
 extern int Ov244_AiCuedWait(int);
@@ -9,7 +11,7 @@ void Ov244_EnterAnim4(int param_1) {
     int owner = *(int *)(param_1 + 4);
     unsigned short pair[2];
     unsigned short *pp;
-    Ov107_PostTagUpdate(*(int *)owner, 4, 0);
+    Ov107_PostTagUpdate((Actor *)(*(int *)owner), 4, 0);
     pp = pair;
     pp[0] = data_ov244_020d3724[20];
     pp[1] = data_ov244_020d3724[21];

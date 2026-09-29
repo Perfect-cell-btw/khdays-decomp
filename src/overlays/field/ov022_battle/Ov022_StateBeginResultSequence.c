@@ -2,6 +2,7 @@
  * queues the result event and sets game-state field 0x20e6; returns the timer step. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef void *(*Ov022StateCallback)(void);
 
@@ -27,7 +28,6 @@ extern u64 OS_GetTick(void);
 extern void Ov022_NotifyRowsAndFlag(void);
 extern int func_ov022_02083f0c(void);
 extern void Ov002_SetOrClearFlag200(int object, int enabled);
-extern GameRuntimeContext *func_ov107_020c9848(void);
 extern void RequestQueue_SetOrPushKind3(int event);
 extern void SoundMgr_SetListenersEnabled(int enabled);
 extern void GameState_SetField(int field, int width, int value);

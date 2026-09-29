@@ -4,10 +4,10 @@
  * moves on to 020cf82c. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Flags5c { int charged : 1; };
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_PlaySound(int actor, int id, int variant, void *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -20,7 +20,7 @@ void Ov259_LandingTick(int *node)
     if ((state[0x1a] += *(int *)(node[0] + 0x2c)) <= 0x1540) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x1c, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1c, 0);
     if (((struct Flags5c *)(state + 0x17))->charged) {
         Ov259_PlaySound(*state, 0x172, 0x1e, (void *)state[4]);
     } else {

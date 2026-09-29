@@ -4,13 +4,13 @@
  * into the +0x38c item's +0x10 and that one's +0x10 into the +0x388 target's +0x10. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[11]; } Pose44;
 struct Ov245Item { char pad[0x10]; Pose44 pose; };
 
 extern void Srt_SetRotationQuat(int placement, void *rotation);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void Ov107_MoveNodeAndRelayout(int self, VecFx32 *v);
 extern void Ov107_ProcessObjectTick(int self, int a);
 
 void Ov245_OwnedPoseSync(int self, int a) {
@@ -18,7 +18,7 @@ void Ov245_OwnedPoseSync(int self, int a) {
 
     Srt_SetRotationQuat(self + 0xa0, (void *)(*(int *)(*(int *)(self + 0x3dc) + 0x448) + 4));
     VEC_Add((VecFx32 *)(*(int *)(*(int *)(self + 0x3dc) + 0x448) + 0x14), (VecFx32 *)(self + 0x3d0), &pos);
-    Ov107_MoveNodeAndRelayout(self, &pos);
+    Ov107_MoveNodeAndRelayout((Actor *)self, &pos);
     Ov107_ProcessObjectTick(self, a);
     ((struct Ov245Item *)*(int *)(self + 0x38c))->pose = *(Pose44 *)(self + 0xa0);
     ((struct Ov245Item *)**(int **)(self + 0x388))->pose = ((struct Ov245Item *)*(int *)(self + 0x38c))->pose;

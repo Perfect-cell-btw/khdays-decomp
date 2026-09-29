@@ -19,6 +19,7 @@
  * hw60 hi-byte (it HAS the trunc pair, so bitfield form) and hands off to Ov230_SlamTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     unsigned short lo : 8;
@@ -30,7 +31,6 @@ extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *a, const VecFx32 *b);
 extern int func_020050b4(int dx, int dz);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void SetIndexedSlot(int self, int action, void *cb);
 extern void Ov230_SlamTick(void);
 extern short data_0203d210[];
@@ -89,7 +89,7 @@ void Ov230_AiHomingDriftTick(int self) {
     if (*(unsigned char *)(ctx[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(ctx[0], 0x18, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 0x18, 0);
     ctx[7] = 0;
     ctx[8] = -0x1800;
     ctx[9] = 0;

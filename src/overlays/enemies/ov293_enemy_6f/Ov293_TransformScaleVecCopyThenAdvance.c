@@ -2,8 +2,8 @@
  * records it and continues. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern int Ov107_ActionResource_GetOffsetAndScale(void *src, void *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *base, void *vec);
 extern void ScaleVec3Fx12(int scale, void *src, void *dst);
 extern void SetIndexedSlot(void *node, int idx, void *next);
@@ -16,7 +16,7 @@ void Ov293_TransformScaleVecCopyThenAdvance(void *node)
     int scale;
 
     state = *(int **)((char *)node + 4);
-    scale = Ov107_ActionResource_GetOffsetAndScale(*(void **)(state[0] + 0x39c), vec);
+    scale = Ov107_ActionResource_GetOffsetAndScale((int)(*(void **)(state[0] + 0x39c)), (VecFx32 *)vec);
     Vec3TransformViaTempMtx(state + 7, (void *)(state[0] + 0xa0), vec);
     ScaleVec3Fx12(scale, state + 7, state + 7);
 

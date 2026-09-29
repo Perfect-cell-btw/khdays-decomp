@@ -1,9 +1,9 @@
 /* Files the member into the actor, player or item list by its flags, then links it as a child. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern int *List_InsertSorted(int list, int stride, int max);
-extern void Ov107_LinkChildNode(int owner, int child);
 
 void Ov107_Region_AddMember(int owner, u16 *child) {
     u16 flags = *child;

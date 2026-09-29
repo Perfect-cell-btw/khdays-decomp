@@ -8,11 +8,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { u8 lo : 4; u8 hi : 4; } NibblePair;
 
 extern void Ov258_StepCue(int *node, int step, int phase, unsigned int variant);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov258_ForwardEventIfStateOne(int partner, int from, int to, int d);
 extern int Ov258_PickMove(int *node);
@@ -39,7 +39,7 @@ void Ov258_ComboTick(int *node)
         ((NibblePair *)((u8 *)state + 0x52))->hi--;
         (*(u16 *)(state + 0x14))--;
         state[0xc] = 0;
-        Ov107_PostTagUpdate(*state, ((NibblePair *)((u8 *)state + 0x52))->hi == 1 ? 10 : 0xf, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), ((NibblePair *)((u8 *)state + 0x52))->hi == 1 ? 10 : 0xf, 0);
         func_ov107_020c0b90(*state, *(u16 *)(state + 0x14) == 1 ? 2 : 5, data_02041dc8, 0);
         Ov258_ForwardEventIfStateOne(*(int *)(*state + 0x458), 0x7f8, 0xd48, 0);
         if (*(u16 *)(state + 0x14) != 0) {

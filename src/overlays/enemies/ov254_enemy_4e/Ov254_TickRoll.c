@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct Sphere { VecFx32 pos; int radius; } Sphere;
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -64,7 +65,6 @@ extern int *List_First(int list);
 extern int *List_Next(int list);
 extern int Ov107_HitShape_TestSphere(void *shape, Sphere *sphere, int mode);
 extern int Ov107_AiState_ApplyHit(int other, int source, struct HitPacket *packet);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02041dc8;
 
@@ -205,7 +205,7 @@ void Ov254_TickRoll(int *node)
     }
     state->nClock += *(int *)(*node + 0x2c);
     if (state->nClock >= 0x8000 && state->bRumble == 0) {
-        Ov107_PostTagUpdate(state->pOwner, 1, 1);
+        Ov107_PostTagUpdate((Actor *)state->pOwner, 1, 1);
         state->bRumble = 1;
     }
     if (!bLanded && state->nClock < 0xc000) {

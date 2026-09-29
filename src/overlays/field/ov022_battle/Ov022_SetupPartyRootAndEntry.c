@@ -2,6 +2,7 @@
  * scene overlay and sets the entry's active object and limit. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct Ov022LimitConfig {
     char padding000[6];
@@ -61,7 +62,6 @@ extern void PartyMember_RebuildDerived(int memberIndex, int flags, int memberKin
 extern void PartyState_SaveTables(void);
 extern int Ov029_AcquireOverlaySlot(int proc, int group);
 extern Ov022ActorEntry *GetEntryField20ByIndex(int index);
-extern Ov022RuntimeContext *func_ov107_020c9848(void);
 
 void Ov022_SetupPartyRootAndEntry(void)
 {

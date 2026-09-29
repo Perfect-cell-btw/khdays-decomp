@@ -1,8 +1,10 @@
 /* Create the ov237 actor's brain: a 0x6c-byte state node (0203c5c0 on the +0x3c model, start
  * 020cd4bc, teardown 020cd550) holding the actor, its +0x384 rig and +0x3ac item; a linked partner
  * (+0x4ac set) is told mode 2 (020c5c14 on +0x4a4). The node becomes +0x214. */
+
+#include "game/enemy_common.h"
+
 extern void CreateRegistryEntry(int model, int a, int size, void *start, void *end, int **out);
-extern void Ov107_SetStatusAndEmit(int actor, int mode);
 extern void Ov237_BrainStart(void);
 extern void Ov237_BrainReleaseNoOp(void);
 

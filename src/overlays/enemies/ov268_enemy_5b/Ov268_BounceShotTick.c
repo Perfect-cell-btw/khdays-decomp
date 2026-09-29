@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 id; u8 kind; u8 cmd; u8 flag; u8 pos[9]; } Cmd14;
@@ -41,7 +42,6 @@ extern int Ov268_TestEntitiesAgainstRect(int grid, Sphere *sphere, int *list);
 extern int Ov002_DispatchNodeEvent(int target, StrikeInfo *info);
 extern int Collision_CastRay(int grid, void *pos, void *step);
 extern void ScaleVec3Fixed27(int plane, VecFx32 *in, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const Cmd14 data_ov268_020d4808;
 extern void Ov268_ShockwaveTick(int *node);
@@ -161,7 +161,7 @@ void Ov268_BounceShotTick(int *node)
     if (done == 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0xe, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xe, 0);
     state[0xb] = 0;
     if ((*(u8 *)(*state + 0x1c4) & 0xa) == 0) {
         func_ov107_020c0b90(*state, 5, *(VecFx32 *)(state + 8), 0);

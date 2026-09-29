@@ -2,6 +2,7 @@
  * position and a spawn task; other messages go to the shared handler (Ov107_AiState_OnMessage). */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 
@@ -9,8 +10,6 @@ extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero,
                                SrtTransform *transform);
-extern int Ov107_CreateSpawnTask(int owner, int resourceId, int kind, int zero,
-                               void *work);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 
 void Ov197_IssueSpawnCommand(int owner, unsigned char *command, int arg)

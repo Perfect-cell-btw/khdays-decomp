@@ -7,14 +7,13 @@
  * pose 0x14, motion 0xd and effect 4 mode 1 restart it. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern unsigned int RandNextScaled(int bound);
 extern int Ov252_DropReward(int *node, int param);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_HoverTickB(void);
@@ -62,13 +61,13 @@ void Ov252_ShedDriftTick(int *node)
     dist = VEC_Normalize(&d, &d);
     if (state[0x18] >= 0xc || dist > 0x19000 || state[0x28] != 0) {
 finish:
-        Ov107_PostTagUpdate(*state, 0x15, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x15, 0);
         Ov107_StartAnim(*(int *)(*state + 0x574), 0xe, 0);
         func_ov107_020c0b90(*state, 4, data_02041dc8, 2);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_HoverTickB);
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x14, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x14, 0);
     Ov107_StartAnim(*(int *)(*state + 0x574), 0xd, 0);
     func_ov107_020c0b90(*state, 4, data_02041dc8, 1);
     state[0x19] = 0;

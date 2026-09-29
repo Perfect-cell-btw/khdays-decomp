@@ -1,8 +1,9 @@
 /* Returns an action resource's scale (+0x38), copying its offset out when asked. */
 
-struct w3 { int a, b, c; };
+#include "nitro/fx_types.h"
+
 /* Optionally copy +0x14 vector out; return +0x38. */
-int Ov107_ActionResource_GetOffsetAndScale(int param_1, int param_2) {
-    if (param_2 != 0) *(struct w3 *)param_2 = *(struct w3 *)(param_1 + 0x14);
-    return *(int *)(param_1 + 0x38);
+int Ov107_ActionResource_GetOffsetAndScale(int res, VecFx32 *pOffset) {
+    if (pOffset != 0) *pOffset = *(VecFx32 *)(res + 0x14);
+    return *(int *)(res + 0x38);
 }

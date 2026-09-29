@@ -4,10 +4,10 @@
  * once the partner holds no queued move the next move is 5 with the guard up, else 2. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov252_GuardSweep(int *node);
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 
@@ -19,8 +19,8 @@ void Ov252_GuardedDriftTick(int *node)
     Ov252_GuardSweep(node);
     Ov252_CheckTarget(node, 0, 1);
     if (state[0x2b] != 0 && *(unsigned char *)(state[1] + 0xaf) == 0) {
-        Ov107_PostTagUpdate(*state, 0x31, 0);
-        Ov107_PostTagUpdate(*state, 0x35, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x31, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x35, 0);
     }
     v = Ov252_TurnVecY(state[0x15], (VecFx32 *)(*(int *)(*state + 0x574) + 0x2c));
     *(VecFx32 *)(state + 3) = v;

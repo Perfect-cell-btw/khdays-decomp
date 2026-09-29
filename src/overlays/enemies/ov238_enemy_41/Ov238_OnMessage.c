@@ -2,8 +2,8 @@
  * actor pose (+0xa0, variant byte 4) into +0x3a8; the base handler always runs. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 
 void Ov238_OnMessage(char *self, u8 *msg, int arg)

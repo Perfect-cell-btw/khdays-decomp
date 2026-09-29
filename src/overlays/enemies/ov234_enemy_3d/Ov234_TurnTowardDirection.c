@@ -3,6 +3,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov234VecBlock {
     VecFx32 vector;
@@ -86,7 +87,6 @@ extern void VEC_Subtract(VecFx32 *, VecFx32 *,
 extern int VEC_Normalize(VecFx32 *, VecFx32 *);
 extern int func_020050b4(int, int);
 extern void Ov107_BuildAndSendUpdate(struct Ov234Object *, int, int, int);
-extern void Ov107_MoveNodeAndRelayout(struct Ov234Object *, VecFx32 *);
 
 void Ov234_TurnTowardDirection(struct Ov234Node *node)
 {
@@ -171,7 +171,7 @@ void Ov234_TurnTowardDirection(struct Ov234Node *node)
 
     state->effectTimer44 += node->object->frameDelta2c;
     if (state->effectTimer44 > 0x77880) {
-        Ov107_MoveNodeAndRelayout(state->object00, &state->effectPosition1c);
+        Ov107_MoveNodeAndRelayout((Actor *)state->object00, &state->effectPosition1c);
         state->effectTimer44 = 0;
     }
 

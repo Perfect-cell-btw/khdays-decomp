@@ -5,12 +5,11 @@
  * Ov255_WindUpTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int obj, int kind);
 extern void Ov255_SteerToTarget(int *state, int point, VecFx32 *dir, int *speed);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov255_WindUpTick(int *node);
 
@@ -32,7 +31,7 @@ void Ov255_TakeOffTick(int *node)
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 2, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 1);
     Ov107_StartAnim(*(int *)(*state + 0x3a4), 1, 1);
     state[0x14] = 0;
     *((unsigned char *)state + 0x66) = 0;

@@ -5,6 +5,7 @@
  * attached and hidden, and the +0x388 contact built from the pose. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int w[1]; } KindTable;
@@ -15,12 +16,10 @@ extern void Ov229_TickAndSyncModelXform(void);
 extern void Ov229_EventArmEmitterForward(void);
 extern void Ov229_CreateRegistryEntryAndLink(void);
 extern void Ov229_Model_ReapplyTracks(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void SetSubitemState(int item, int channel, int a, int b);
 extern void RefreshObjectCallbacks(int item, int a);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(char *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern const KindTable data_ov229_020d6918;
@@ -50,10 +49,10 @@ void Ov229_CompanionSetup(char *self)
         *(int *)(self + 0x68) = scale;
         *(int *)(self + 0x6c) = 0;
     }
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, 0x24));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, 0x24));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
-    *(int *)(self + 0x390) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, kinds.w[0]));
+    *(int *)(self + 0x390) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, kinds.w[0]));
     Ov107_EnqueueValue(self, *(int *)(self + 0x390));
     *(int *)(*(int *)(self + 0x390) + 0x5c) |= 2;
     *(int **)(self + 0x388) = List_InsertSorted(self + 0x22c, 0x10, 0x64);

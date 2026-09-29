@@ -3,11 +3,11 @@
  * and the next move is 1. Always returns 0. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern void Ov146_Launch(int *state, VecFx32 dir);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern const short data_0203d210[];
 
 #define ANG2IDX(a) ((unsigned short)(((long long)(a) * 0x28be60db9391LL + 0x80000000000LL) >> 44) >> 4)
@@ -31,7 +31,7 @@ int Ov146_OnKnockback(char *self, char *attacker)
             dir.z = data_0203d210[idx + 1];
         }
         Ov146_Launch(state, dir);
-        Ov107_PostTagUpdate(*state, 6, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 6, 0);
         state[7] = 1;
         *(unsigned char *)(*state + 0x1c7) = 1;
     }

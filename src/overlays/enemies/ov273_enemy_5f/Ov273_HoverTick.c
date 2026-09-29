@@ -7,10 +7,10 @@
  * 0xc00, the +0x64 counter clears and the node moves to 020cfe48. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Bits17a { unsigned char b0 : 1, b1 : 1, b2 : 1, b3 : 1; };
 extern void func_ov107_020c0b90();  /* K&R + const vector: hoists the pool load over the latch store */
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern const VecFx32 data_02041dc8;
 extern unsigned short data_ov273_020d6aac[];
@@ -51,7 +51,7 @@ void Ov273_HoverTick(int *self) {
     if (*(void **)(*state + 0x24) != 0) {
         (*(void (**)(int, unsigned short *, int))(*state + 0x24))(*state, pp, 4);
     }
-    Ov107_PostTagUpdate(*state, 7, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
     state[7] = 0xc00;
     state[0x19] = 0;
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov273_VolleyTick);

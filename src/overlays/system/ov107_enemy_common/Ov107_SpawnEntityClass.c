@@ -1,9 +1,10 @@
 /* Spawns an entity of the class id: on first use loads the enemy overlay and spawn record, then
  * calls the registered factory. */
 
+#include "game/enemy_common.h"
+
 typedef struct Actor Actor;
 
-extern int Ov107_EnemyTableHasEntry(int id, int cnt);
 extern int Ov107_LoadEnemyOverlay(int id, int cnt, void *slot);
 extern int Ov107_LoadSpawnRecord(int id, void *slot);
 extern void OS_Terminate(void);

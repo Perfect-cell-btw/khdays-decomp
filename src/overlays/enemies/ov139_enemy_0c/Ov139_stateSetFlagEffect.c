@@ -2,8 +2,8 @@
  * actor's flags, starts the action resource's animation, posts a pose, sends a state update and
  * installs the next step. */
 
-extern void Ov107_StartAnim();
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov139_TransformScaleNodeVectorThenAdvance(void);
@@ -19,7 +19,7 @@ void Ov139_stateSetFlagEffect(int *node) {
         *p = (unsigned short)((u & ~0xff00) | ((((u << 0x10) >> 0x18 | 0x40) << 0x18) >> 0x10));
     }
     Ov107_StartAnim(*(int *)(*state + 0x390), 1, 0);
-    Ov107_PostTagUpdate(*state, 6, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 6, 0);
     Ov107_BuildAndSendUpdate(*state, 0x11f, 7, state[0x13]);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov139_TransformScaleNodeVectorThenAdvance);
 }

@@ -4,8 +4,8 @@
  * and the node moves to 020cf064. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern int Ov254_PanelYForPhase(int *state, int a);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
@@ -21,7 +21,7 @@ void Ov254_WalkEntry(int *node)
 {
     int *state = (int *)node[1];
 
-    Ov107_PostTagUpdate(*state, 0, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 1);
     state[4] = 0;
     state[3] = FX_Mul(data_0203d210[ANG2IDX(state[0xc]) * 2], 0x200);
     state[5] = FX_Mul(data_0203d210[ANG2IDX(state[0xc]) * 2 + 1], 0x200);

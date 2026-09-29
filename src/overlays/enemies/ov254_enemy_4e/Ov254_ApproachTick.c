@@ -6,12 +6,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int Ov254_TrackTargetFlatDistance(int *node);
 extern int Ov254_PanelYForPhase(int *state, int a);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_DropTick(void);
 
@@ -38,7 +38,7 @@ void Ov254_ApproachTick(int *node)
     if (dist > 0xa000) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x1a, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1a, 0);
     state[0x11] = 0;
     state[0x14] = *(int *)(state[2] + 4);
     state[0x15] = Ov254_PanelYForPhase(state, 5) - state[0x14];

@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 lo; u16 hi; } Cmd4;
@@ -28,7 +29,6 @@ extern int *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *dir);
 extern void ScaleVec3Fixed27(int plane, VecFx32 *in, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov255_StrikeWindUpTick(int *node);
 
@@ -70,7 +70,7 @@ void Ov255_GroundStrikeEnterTick(int *node)
             Ov107_BuildAndSendUpdate(*state, (short)*(int *)(*state + 0x3f8), 0x2b, &p);
         }
     }
-    Ov107_PostTagUpdate(*state, 0x10, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x10, 0);
     state[0x14] = 0;
     *((u8 *)state + 0x65) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov255_StrikeWindUpTick);

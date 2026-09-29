@@ -3,12 +3,12 @@
  * sub 3 stops pair `byte 4`. The base handler always runs. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct EffectPair { int res; int handle; };
 struct Ov218Set { char pad[0x3dc]; struct EffectPair pair[4]; };
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int parent, int kind, int arg, int weight, void *payload);
-extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern void TaskList_FinishByTag(int model, int handle);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 

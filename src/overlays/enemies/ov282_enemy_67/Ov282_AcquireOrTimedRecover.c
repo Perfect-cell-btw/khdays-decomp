@@ -5,9 +5,11 @@
  * attack 0x12, set the timer state[0x14]=0x3000, pick a random heading state[0xc]=RandNextScaled(
  * 0x1001)+0x1000, clear state[0xb], and hand off to the 020d2b60 state.
  */
+
+#include "game/enemy_common.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int  RandNextScaled(int mul);
 extern void Ov282_StrafeSameTarget(void);
 
@@ -20,7 +22,7 @@ void Ov282_AcquireOrTimedRecover(int *self) {
         SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), 0);
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x12, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x12, 0);
     state[0x14] = 0x3000;
     state[0xc] = RandNextScaled(0x1001) + 0x1000;
     state[0xb] = 0;

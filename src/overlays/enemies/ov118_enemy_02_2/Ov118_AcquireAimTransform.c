@@ -2,12 +2,14 @@
  * low byte at *(owner+0x388)+8, then query the aim target (Ov107_FindNearestObject). If found,
  * fetch its transform into obj[6..9] (Ov118_LookAtQuat) and copy it to obj[2..5]. Finally
  * notify Ov107_PostTagUpdate(owner,0,0) and dispatch via SetIndexedSlot. */
+
+#include "game/enemy_common.h"
+
 struct hw60 { unsigned short lo:8, hi:8; };
 struct b8 { unsigned int b:8; };
 struct vec4 { int a, b, c, d; };
 extern int Ov107_FindNearestObject(int owner, int a);
 extern void Ov118_LookAtQuat(int *obj, int *out);
-extern void Ov107_PostTagUpdate(int owner, int a, int b);
 extern void SetIndexedSlot(int self, int index, void *cb);
 extern void Ov118_AiRollTimerQueue2B(void);
 void Ov118_AcquireAimTransform(int self) {
@@ -20,6 +22,6 @@ void Ov118_AcquireAimTransform(int self) {
         Ov118_LookAtQuat(obj, obj + 6);
         *(struct vec4 *)(obj + 2) = *(struct vec4 *)(obj + 6);
     }
-    Ov107_PostTagUpdate(*obj, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*obj), 0, 0);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), &Ov118_AiRollTimerQueue2B);
 }

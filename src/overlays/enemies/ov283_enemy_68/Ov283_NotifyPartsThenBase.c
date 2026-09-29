@@ -1,6 +1,7 @@
 /* Invokes slot 0x74 on the two head parts and the sixteen segment parts, then the base handler. */
 
-extern void Ov107_InvokeSlot0x74(int obj, int arg1);
+#include "game/enemy_common.h"
+
 extern void Ov107_Actor_DetachFromRegion(int obj, int arg1);
 
 void Ov283_NotifyPartsThenBase(int *list, int target) {

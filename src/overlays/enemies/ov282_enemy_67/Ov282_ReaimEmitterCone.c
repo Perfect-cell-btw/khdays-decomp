@@ -9,11 +9,11 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct xform4 { int w[4]; };
 
 extern void ObjList_Update(int scene, unsigned tick);
-extern void Ov107_AiState_ResolveContacts(int self, unsigned tick);
 extern void Quat_FromTwoVectors(struct xform4 *out, void *basis, int *vec);
 extern void Srt_SetTranslationXYZ(int node, int x, int y, int z);
 extern void Srt_SetScaleUniform(int node, int len);
@@ -24,7 +24,7 @@ void Ov282_ReaimEmitterCone(int self, unsigned tick) {
     if (*(int *)(self + 0x3c) != 0) {
         ObjList_Update(*(int *)(self + 0x3c), tick);
     }
-    Ov107_AiState_ResolveContacts(self, tick);
+    Ov107_AiState_ResolveContacts((Actor *)self, tick);
     if (*(int *)(self + 0x124) == 0 && *(int *)(self + 0x128) == 0 && *(int *)(self + 0x12c) == 0) {
         return;
     }

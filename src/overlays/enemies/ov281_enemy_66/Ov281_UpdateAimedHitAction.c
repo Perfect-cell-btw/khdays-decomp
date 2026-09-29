@@ -6,6 +6,7 @@
 #include "nitro/fx_types.h"
 #include "game/actor.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     VecFx32 center;
@@ -56,7 +57,6 @@ extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
 extern void func_ov107_020c0b90();
 extern void *Ov281_ApplyAreaHit(Ov281ActionState *state, unsigned int mask,
                                  Sphere *sphere, VecFx32 *direction, int strength);
-extern void Ov107_PostTagUpdate(Actor *actor, int mode, int arg);
 extern short data_0203d210[];
 extern const VecFx32 data_02041dc8;
 extern void Ov281_AiStep_QueueAction2OnAnimEnd_4(void);

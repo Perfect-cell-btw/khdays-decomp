@@ -8,9 +8,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern const VecFx32 data_02042258;
-extern int Ov107_CollectCapsuleOverlaps(int owner, void *box, int *hits);
 extern int Ov107_CollectEntitiesTouchingDisc(int owner, void *cyl, int *hits);
 extern int Ov107_CollectSphereOverlaps(int owner, void *sphere, int *hits);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
@@ -33,7 +33,7 @@ u8 Ov252_ReboundHitTest(int *state, int kind, VecFx32 *sphere, void *cyl, void *
     int i;
 
     if (box != 0) {
-        n = Ov107_CollectCapsuleOverlaps(*state, box, hits);
+        n = Ov107_CollectCapsuleOverlaps((Actor *)(*state), box, (void **)hits);
     } else if (cyl != 0) {
         n = Ov107_CollectEntitiesTouchingDisc(*state, cyl, hits);
     } else if (sphere != 0) {

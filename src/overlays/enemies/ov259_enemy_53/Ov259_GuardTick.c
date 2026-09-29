@@ -3,9 +3,9 @@
  * pose 7 plays and the node moves on to 020cfe0c. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern void Ov259_RefreshAim(int *node);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_AiFinisherEnd(void);
 
@@ -22,6 +22,6 @@ void Ov259_GuardTick(int *node)
     if (state[0x1a] <= state[0x19]) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 7, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 7, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov259_AiFinisherEnd);
 }

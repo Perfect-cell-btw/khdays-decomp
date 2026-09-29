@@ -9,13 +9,13 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern void VEC_Normalize(void *a, void *b);
 extern int  func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov207_FaceTargetAndGate(void);
 extern int  data_02041dc8;
 
@@ -39,6 +39,6 @@ void Ov207_FireAttack2OnIdle(int *self) {
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 2, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 1);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov207_FaceTargetAndGate);
 }

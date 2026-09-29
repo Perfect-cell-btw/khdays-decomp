@@ -1,8 +1,9 @@
 /* Releases the object's handles: finishes the two held tasks (+0x454, +0x464) and unlinks the node
  * at +0x43c. */
 
+#include "game/enemy_common.h"
+
 extern void TaskList_FinishByTag(void *a, int b);
-extern void Ov107_UnlinkNodeFromOwner(void *p);
 
 void Ov214_releaseHandles(char *this) {
     if (*(int *)(this + 0x454) != 0) {

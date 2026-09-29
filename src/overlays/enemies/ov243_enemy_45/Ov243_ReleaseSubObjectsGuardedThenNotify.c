@@ -1,14 +1,15 @@
 /* Destroys the enemy: its models and action resource, frees its waypoint table and destroys the
  * base object. */
 
+#include "game/enemy_common.h"
+
 extern void DestroyInstance();
-extern void Ov107_ActionResource_Destroy();
 extern void FreeInstanceMemory();
 extern void Ov107_DestroyObject();
 
 void Ov243_ReleaseSubObjectsGuardedThenNotify(int this_) {
     DestroyInstance(*(int *)(this_ + 0x384));
-    Ov107_ActionResource_Destroy(*(int *)(this_ + 0x390));
+    Ov107_ActionResource_Destroy((char *)(*(int *)(this_ + 0x390)));
     DestroyInstance(*(int *)(this_ + 0x388));
     DestroyInstance(*(int *)(this_ + 0x394));
     if (*(int *)(this_ + 0x398) != 0) {

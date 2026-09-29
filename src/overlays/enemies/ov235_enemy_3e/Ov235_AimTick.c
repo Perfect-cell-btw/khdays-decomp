@@ -8,6 +8,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { int m[9]; } Mtx33;
@@ -20,7 +21,6 @@ extern void Mtx33_LookAt(Mtx33 *out, const VecFx32 *at, const VecFx32 *from, con
 extern void Quat_FromMtx33(Quat *out, const Mtx33 *m);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov235_DashTick(int *node);
@@ -71,7 +71,7 @@ void Ov235_AimTick(int *node)
             (*(void (**)(int, Cmd4 *, int))(*state + 0x24))(*state, p, 4);
         }
     }
-    Ov107_PostTagUpdate(*state, 0x20, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x20, 0);
     *((u8 *)state + 0x63) = 0;
     state[0x11] = 0;
     VEC_Set((VecFx32 *)(*state + 0x64), 0, 0, 0);

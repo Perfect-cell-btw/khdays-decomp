@@ -20,6 +20,9 @@
  * matches without it, and reading uninitialised storage is not something to leave in
  * matched code.
  */
+
+#include "game/enemy_common.h"
+
 /* Head of a 5-member family.  Byte-exact.
  *
  * Why this looked impossible for so long: the ROM hoists two constants above the branch so
@@ -41,7 +44,6 @@
  * *obj in a local (no change). Measured with tools/bytedist.py. */
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int index, void *cb);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov199_SeedDefaultPoseAndAdvance(int owner, int a);
 extern int  RandNextScaled();
 extern void VEC_Subtract();
@@ -57,7 +59,7 @@ void Ov199_BeginMoveOrRequestState2(int *self) {
         SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), 0);
         return;
     }
-    Ov107_PostTagUpdate(*obj, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*obj), 2, 0);
     Ov199_SeedDefaultPoseAndAdvance(*obj, 0);
     obj[0xf] = *(int *)(self[0] + 0x2c) * 0x1e / 10;
     lo = *(int *)(*obj + 0x224);

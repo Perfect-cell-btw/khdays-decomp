@@ -1,6 +1,8 @@
 /* Registry task (0x64) binding a node with a transform (flag bit 1); applies SetSubitemState for
  * each set bit of mode, then refreshes. */
 
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } Xform44;
 
 typedef struct {
@@ -17,7 +19,6 @@ extern int CreateRegistryEntry(int param_1, unsigned int param_2, unsigned int p
 extern void SetSubitemState(int obj, unsigned short idx, int blend, int zero);
 extern void RefreshObjectCallbacks(int *ptr, int arg);
 extern void Ov107_TaskTeardown_FlagOwner(void);
-extern void Ov107_NodeXformTaskStart(void);
 
 int Ov107_CreateNodeXformTask(int taskList, Node *node, int mode, int blend, Xform44 *m)
 {

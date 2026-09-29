@@ -2,15 +2,16 @@
  * the attack update for the rolled variant, clears the alpha, timers and hit state and installs the
  * area-sweep step. */
 
+#include "game/enemy_common.h"
+
 struct bf { unsigned b : 8; };
-extern void Ov107_PostTagUpdate(int node, int a, int b);
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot();
 extern void Ov288_AreaSweepAttack_Tick(void);
 
 void Ov288_SetupActionVariantThenAdvanceSlot(int this_) {
     int holder = *(int *)(this_ + 4);
-    Ov107_PostTagUpdate(*(int *)holder, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*(int *)holder), 3, 0);
     *(unsigned short *)(*(int *)holder + 0x1ae) |= 0x10;
     ((struct bf *)(*(int *)(*(int *)holder + 0x388) + 8))->b &= ~1;
     *(unsigned short *)(*(int *)holder + 0x1ae) |= 1;

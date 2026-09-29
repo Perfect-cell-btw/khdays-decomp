@@ -4,11 +4,11 @@
  * a target. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef void (*IdHook)(int id, int actor);
 
 extern void Ov144_AimYawToTarget(int *state);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 
 void Ov144_AimHoldTick(int *node)
 {
@@ -22,7 +22,7 @@ void Ov144_AimHoldTick(int *node)
         return;
     }
     if (state[0x13] != 0) {
-        Ov107_PostTagUpdate(actor, 0, 1);
+        Ov107_PostTagUpdate((Actor *)actor, 0, 1);
         return;
     }
     hook = *(IdHook *)(actor + 0x3a4);

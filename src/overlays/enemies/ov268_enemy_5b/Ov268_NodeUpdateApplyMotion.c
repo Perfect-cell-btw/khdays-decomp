@@ -6,15 +6,15 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_MoveNodeAndRelayout(int self, VecFx32 *v);
 extern void RefreshObjectCallbacks(int a, int b);
 extern void Ov268_SetTargetOrient(int p, VecFx32 abc);
 
 void Ov268_NodeUpdateApplyMotion(int self, VecFx32 v, VecFx32 abc) {
     int *s = (int *)self;
 
-    Ov107_MoveNodeAndRelayout(self, &v);
+    Ov107_MoveNodeAndRelayout((Actor *)self, &v);
     if (s[0x10] << 30 >> 31 && s[3] != 0) {
         ((void (*)(int, int))s[3])(self, 0);
     }

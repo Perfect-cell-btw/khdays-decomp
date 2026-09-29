@@ -2,7 +2,8 @@
  * frame step, sends the animation pair from the overlay's table to the actor's event callback and
  * installs the throw wind-up step. */
 
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern unsigned short data_ov157_020d0bb0[];
 extern void Ov157_ThrowWindup(void);
@@ -11,7 +12,7 @@ void Ov157_stateAnimIndirectCallback(int *node) {
     unsigned short pair[2];
     unsigned short *pp;
     void (*cb)();
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     state[0xb] = 0;
     *(signed char *)((char *)state + 0x38) = 0;
     {

@@ -21,6 +21,7 @@
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -68,7 +69,6 @@ extern void VEC_Subtract(void *a, void *b, void *out);
 extern int Ov107_InvokeHitCallback(int ent, struct Ov134Actor *a, struct Ov134Actor *b, int mode,
                                void *dir, int flag);
 extern void Ov107_BuildAndSendUpdate(struct Ov134Actor *owner, int a, int id, void *anchor);
-extern void Ov107_PostTagUpdate(struct Ov134Actor *owner, int anim, int flag);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov135_AiStep_QueueAction2OnAnimEnd_2(void);
 
@@ -173,7 +173,7 @@ void Ov135_BurstAttackTick(struct Ov134ActionNode *node)
         } while (k < 2);
     }
     if (*(u8 *)(state->pItem04 + 0xad) == 0) {
-        Ov107_PostTagUpdate(state->pOwner, 1, 0);
+        Ov107_PostTagUpdate((Actor *)state->pOwner, 1, 0);
         SetIndexedSlot(node, node->slot, (void *)&Ov135_AiStep_QueueAction2OnAnimEnd_2);
     }
 }

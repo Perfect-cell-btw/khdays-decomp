@@ -12,6 +12,7 @@
  * hand-off fires modes 0xe/0xb, clears the byte at +0x62 and re-enters at Ov249_SlamSweepTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     int m[9];
@@ -19,7 +20,6 @@ typedef struct {
 
 extern void MTX_RotY33_(MtxFx33 *mtx, int sinVal, int cosVal);
 extern void MTX_MultVec33(const VecFx32 *v, const MtxFx33 *m, VecFx32 *dst);
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov249_startAnim(int owner, int a);
 extern void SetIndexedSlot(int self, int action, void *cb);
 extern void Ov249_SlamSweepTick(void);
@@ -43,7 +43,7 @@ void Ov249_AiSlamLeap(int self) {
         return;
     }
 
-    Ov107_PostTagUpdate(ctx[0], 0xe, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 0xe, 0);
     Ov249_startAnim(ctx[0], 0xb);
     *(unsigned char *)((char *)ctx + 0x62) = 0;
     SetIndexedSlot(self, *(signed char *)(self + 0x20), Ov249_SlamSweepTick);

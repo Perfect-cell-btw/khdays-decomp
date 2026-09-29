@@ -1,8 +1,7 @@
 /* Moves the node to `pos` (Ov107_MoveNodeAndRelayout), stores `src` at +0x390 and sets flag bit 0. */
 
 #include "nitro/fx_types.h"
-
-extern int Ov107_MoveNodeAndRelayout();
+#include "game/enemy_common.h"
 
 struct Obj {
     char _pad0[0x60];
@@ -13,7 +12,7 @@ struct Obj {
 };
 
 void Ov170_RelayoutAndStoreVec(struct Obj *this, VecFx32 *pos, VecFx32 *src) {
-    Ov107_MoveNodeAndRelayout(this, pos);
+    Ov107_MoveNodeAndRelayout((Actor *)this, pos);
     this->vec = *src;
     this->_bf |= (unsigned short)1;
 }

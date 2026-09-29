@@ -1,7 +1,8 @@
 /* State step: sets bit 0 of +0x1ae, clears bit 0 of the model's flag byte, sets bit 1 in the high
  * byte of the actor's flags, posts pose 5, clears the timer and installs the next step. */
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(int *self, int idx, void *cb);
 extern void Ov182_GuardFieldCClearField1cAdvance_2(void);
 
@@ -13,7 +14,7 @@ void Ov182_BeginState5AndClear(int *self) {
     *(unsigned short *)(*s + 0x100 + 0xae) |= 1;
     ((struct b8 *)(*(int *)(*s + 0x388) + 8))->f &= ~1;
     ((struct hw60 *)(*s + 0x60))->hi |= (unsigned char)2;
-    Ov107_PostTagUpdate(*s, 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*s), 5, 0);
     s[7] = 0;
     SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), (void *)&Ov182_GuardFieldCClearField1cAdvance_2);
 }

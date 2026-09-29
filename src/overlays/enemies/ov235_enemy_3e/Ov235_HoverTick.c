@@ -8,6 +8,7 @@
  * Ov235_TurnTick_2. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { int m[9]; } Mtx33;
@@ -17,8 +18,6 @@ extern void Mtx33_LookAt(Mtx33 *out, const VecFx32 *at, const VecFx32 *from, con
 extern void Quat_FromMtx33(Quat *out, const Mtx33 *m);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov235_VolleyTick(int *node);
 extern void Ov235_TurnTick_2(int *node);
@@ -43,12 +42,12 @@ void Ov235_HoverTick(int *node)
         state[0x10] = *(int *)(node[0] + 0x2c) * 30 / 50;
         state[0x11] += *(int *)(node[0] + 0x2c);
         if (state[0x1d] != 0 && state[0x1e] < 8) {
-            Ov107_PostTagUpdate(*state, 0x26, 1);
+            Ov107_PostTagUpdate((Actor *)(*state), 0x26, 1);
             state[0x11] = 0;
             SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov235_VolleyTick);
             return;
         }
-        Ov107_PostTagUpdate(*state, 0x1c, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1c, 0);
         Ov107_StartAnim(*(int *)(*state + 0x3a8), 0x15, 0);
         VEC_Set((VecFx32 *)(*state + 0x64), 0, 0x1800, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov235_TurnTick_2);

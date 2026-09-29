@@ -1,7 +1,8 @@
 /* AI step: counts the timer down while the animation runs and then posts pose 0 and continues with
  * waiting at the waypoint. */
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov243_AiWaypointWaitB(void);
 
@@ -10,6 +11,6 @@ void Ov243_ConfigSubStateThenAdvanceSlot_2(int *node) {
     int *state = (int *)node[1];
     state[0xb] -= n0[0xb];
     if (*(unsigned char *)(*(int *)(*state + 0x384) + 0xad) != 0) return;
-    Ov107_PostTagUpdate(*state, 0, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 1);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov243_AiWaypointWaitB);
 }

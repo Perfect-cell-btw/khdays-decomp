@@ -7,6 +7,7 @@
  * the node moved to 020d0330. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Ov245Actor { char pad[0x394]; int slots[3]; };
 
@@ -16,7 +17,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int FX_Div(int num, int den);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_ChargeUpTick(void);
 extern const VecFx32 data_02042264;
@@ -57,7 +57,7 @@ void Ov245_ChargeTick(int *node) {
     *(int *)(*state + 0x3b8) = 0;
     *(VecFx32 *)(*state + 0x3c0) = zero;
     *(VecFx32 *)(state + 3) = *(VecFx32 *)(*state + 0x3b4);
-    Ov107_PostTagUpdate(*state, 1, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
     state[0xc] = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_ChargeUpTick);
 }

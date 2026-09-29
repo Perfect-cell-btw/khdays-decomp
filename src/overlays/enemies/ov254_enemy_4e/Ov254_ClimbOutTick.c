@@ -8,12 +8,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { unsigned f : 8; } B8;
 
 extern void Ov254_KnockbackAtFeet(int actor, int side);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_CarryTick(void);
 extern const short data_0203d210[];
@@ -48,7 +47,7 @@ void Ov254_ClimbOutTick(int *node)
     }
     ((B8 *)(*(int *)(*state + 0x3e0) + 8))->f &= ~2;
     *(u16 *)(*state + 0x100 + 0xae) |= 1;
-    Ov107_PostTagUpdate(*state, 0xa, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xa, 0);
     Ov107_StartAnim(*(int *)(*state + 0x430), 6, 0);
     state[0x11] = 0;
     state[0x10] = 0;

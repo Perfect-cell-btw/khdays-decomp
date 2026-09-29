@@ -6,9 +6,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void func_ov107_020c0b90(int obj, int cmd, VecFx32 v, int flag);
-extern void Ov107_PostTagUpdate(int obj, int anim, int flag);
 extern void SetIndexedSlot(int obj, int slot, void *cb);
 extern VecFx32 data_02041dc8;
 extern void Ov180_SettleHold(void);
@@ -22,7 +22,7 @@ void Ov180_SettleEnter(int node) {
         VecFx32 v = data_02041dc8;
         func_ov107_020c0b90(*state, 0, v, 0);
     }
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     hw = *(u16 *)(*state + 0x60);
     *(u16 *)(*state + 0x60) = (hw & ~0xff00) |
         ((((((unsigned int)hw << 0x10) >> 0x18) | 1) << 0x18) >> 0x10);

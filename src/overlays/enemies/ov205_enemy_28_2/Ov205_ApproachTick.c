@@ -7,12 +7,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int actor, int *dist);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void VEC_Subtract(void *a, void *b, void *d);
 extern int func_020050b4(int x, int z);
-extern int Ov107_ActionResource_GetOffsetAndScale(void *part, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(void *dst, void *quat, VecFx32 *src);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
 extern void Ov205_stateAcquireTransform(int *node);
@@ -34,7 +34,7 @@ void Ov205_ApproachTick(int *node)
     state[0xf] = *(int *)(*node + 0x2c) * 30 / 10;
     VEC_Subtract((void *)(state[1] + 0x74), (void *)state[9], &dir);
     state[0xe] = func_020050b4(dir.x, dir.z);
-    speed = Ov107_ActionResource_GetOffsetAndScale(*(void **)(*state + 0x390), &step);
+    speed = Ov107_ActionResource_GetOffsetAndScale((int)(*(void **)(*state + 0x390)), &step);
     Vec3TransformViaTempMtx(state + 2, (void *)(*state + 0xa0), &step);
     ScaleVec3Fx12(speed, state + 2, state + 2);
     if (dist < *(int *)(*state + 0x2d8) && dist > 0x5000) {

@@ -3,8 +3,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_RecoverTick(void);
 extern const VecFx32 data_02041dc8;
@@ -13,9 +13,9 @@ void Ov252_CollapseEntry(int *node)
 {
     int *state = (int *)node[1];
 
-    Ov107_PostTagUpdate(*state, 0x2f, 0);
-    Ov107_PostTagUpdate(*state, 0x31, 0);
-    Ov107_PostTagUpdate(*state, 0x35, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x2f, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x31, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x35, 0);
     {
         u16 hw = *(u16 *)(*state + 0x60);
         *(u16 *)(*state + 0x60) = (hw & ~0xff00) |

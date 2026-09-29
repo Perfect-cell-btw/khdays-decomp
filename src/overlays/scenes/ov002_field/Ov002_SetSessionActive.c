@@ -15,6 +15,7 @@
  */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct Ov002RootContext {
     char pad0000[0x8b4c];
@@ -41,7 +42,6 @@ extern int func_ov022_020882f8(void);
 extern void func_ov022_020888b8(int nIndex, int a);
 extern int Ov002_Event_GetField18(void);
 extern void Ov002_SetCurrentSlotFlag1(int a);
-extern Ov002Thread *func_ov107_020c9848(void);
 extern void Ov002_SetSceneObjectsActive(int a);
 extern int Session_IsActive(void);
 extern void SetGameMode(int a);

@@ -7,6 +7,7 @@
  * the tick hands over to Ov257_JumpTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int obj, int *out);
 extern int Ov257_SteerToTarget(int *state, int target, VecFx32 *dir, int *speed);
@@ -15,8 +16,6 @@ extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int VEC_Mag(const VecFx32 *v);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov257_JumpTick(int *node);
 
@@ -54,7 +53,7 @@ void Ov257_JumpStartTick(int *node)
         state[0x1a] = 0x100;
         state[0x1b] = 0;
     }
-    Ov107_PostTagUpdate(*state, 0x1d, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1d, 1);
     Ov107_StartAnim(*(int *)(*state + 0x3d0), 0x1a, 1);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov257_JumpTick);
 }

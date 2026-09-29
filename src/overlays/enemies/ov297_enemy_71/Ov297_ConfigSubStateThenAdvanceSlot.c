@@ -1,12 +1,13 @@
 /* AI step: posts pose 0, resets the idle timers and continues with the idle tick. */
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov297_IdleTick(void);
 
 void Ov297_ConfigSubStateThenAdvanceSlot(int *node) {
     int *state = (int *)node[1];
-    Ov107_PostTagUpdate(*state, 0, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 1);
     state[0x14] = 0x900;
     state[0xe] = 0xff0;
     state[0xf] = 0;

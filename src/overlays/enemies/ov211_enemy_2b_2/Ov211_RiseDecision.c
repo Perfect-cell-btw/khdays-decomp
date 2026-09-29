@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u16 h[7]; } Cmd14;
@@ -23,7 +24,6 @@ struct w8 { unsigned int lo : 8, rest : 24; };
     ((u8 *)&(cmd))[(at) + 1] = (u8)((unsigned int)(dead).value >> 8);         \
     ((u8 *)&(cmd))[(at) + 2] = (u8)(dead).value
 
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern int Ov107_FindNearestObject(int owner, int *out);
 extern int FX_Sqrt(int v);
 extern long long RandNextScaled(int bound);
@@ -92,7 +92,7 @@ void Ov211_RiseDecision(int *node)
     *(u16 *)(*state + 0x60) = (u16)((v & ~0xff00) | (((((unsigned int)v << 0x10) >> 0x18 | 0x4c) << 0x18) >> 0x10));
     *(u16 *)(*state + 0x1ae) |= 1;
     ((struct w8 *)(*(int *)(*state + 0x3b0) + 8))->lo &= ~1;
-    Ov107_PostTagUpdate(*state, 6, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 6, 0);
     state[0xb] = 0;
     state[0xc] = 0;
     *(VecFx32 *)(state + 0xd) = *(VecFx32 *)state[1];

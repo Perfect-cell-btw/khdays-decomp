@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Byte8 { unsigned int lo : 8, rest : 24; };
 
@@ -21,7 +22,6 @@ static inline unsigned short FX_RadToIdx(int rad) {
 extern int Ov224_MeasureTargetGap(int *node, VecFx32 *dir);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, u16 mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
@@ -58,7 +58,7 @@ void Ov224_ChargeWindupTick(int *node)
     if (*(u8 *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, state[0x1e] != 0 ? 9 : 0xd, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), state[0x1e] != 0 ? 9 : 0xd, 1);
     VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x3e8) + 0x190), (VecFx32 *)state[2], &d);
     VEC_Normalize(&d, &d);
     idx = FX_RadToIdx(state[0x14]);

@@ -7,6 +7,7 @@
  * node gets a placement built from the actor's +0x64 pose with bit 1 raised on its +8 flags. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct KindPair { int kind[2]; };
 typedef void (*Callback)(void);
@@ -25,13 +26,11 @@ extern void Ov156_TickAndSyncModelXform(void);
 extern void Ov156_AiState_OnMessage(void);
 extern void Ov156_InvertVecAndSetField2e4(void);
 extern void Ov156_CreateRegistryEntryAndLink_2(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void SetSubitemState(int item, int channel, int a, int b);
 extern void RefreshObjectCallbacks(int item, int a);
 extern void *CallocInstance(int size);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern int *List_InsertSorted(char *list, int stride, int max);
 extern int Ov107_CloneResourceTransform(char *pose);
 extern const struct KindPair data_ov156_020ceda4;
@@ -55,7 +54,7 @@ void Ov156_ConstructHeldItem(char *self)
     *(int *)(self + 0x58) = 1;
     *(int *)(self + 0x54) = 0;
     *(int *)(self + 0x70) = 0x700;
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x38c), 4));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x38c)), 4));
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     SetSubitemState(*(int *)(self + 0x384), 0, 0, 1);
     SetSubitemState(*(int *)(self + 0x384), 1, 0, 1);
@@ -65,7 +64,7 @@ void Ov156_ConstructHeldItem(char *self)
     *(void **)(self + 0x390) = CallocInstance(0x10);
     for (i = 0; i < 2; i++) {
         (*(struct Ov191SubitemSlot **)(self + 0x390))[i].pItem =
-            CreateSubitemInstance0xB4(Ov107_PackTextureHandle(*(int *)(self + 0x38c), kinds.kind[i]));
+            CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)(*(int *)(self + 0x38c)), kinds.kind[i]));
         Ov107_EnqueueValue(self, (*(struct Ov191SubitemSlot **)(self + 0x390))[i].pItem);
         *(int *)((*(struct Ov191SubitemSlot **)(self + 0x390))[i].pItem + 0x5c) |= 2;
     }

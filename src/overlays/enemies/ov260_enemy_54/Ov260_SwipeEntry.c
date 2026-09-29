@@ -3,11 +3,11 @@
  * the +0x10 point and the node moves on to 020d06ec. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_HurtTick(void);
@@ -34,7 +34,7 @@ void Ov260_SwipeEntry(int *node)
             front = 1;
         }
     }
-    Ov107_PostTagUpdate(*state, front ? 4 : 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), front ? 4 : 5, 0);
     Ov260_PlaySound(*state, 0x1b, state[4]);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov260_HurtTick);
 }

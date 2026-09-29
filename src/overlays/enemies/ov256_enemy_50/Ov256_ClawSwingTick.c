@@ -6,11 +6,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov256_RotateByOwnerHeading(int *out, int param_2, int *vec);
 extern void Ov256_AttackHitTestB(int *node, int a, int b);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov256_ClawReturnTick(void);
 

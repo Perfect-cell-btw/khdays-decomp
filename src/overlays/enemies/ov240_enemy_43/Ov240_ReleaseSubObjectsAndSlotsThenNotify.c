@@ -1,7 +1,8 @@
+#include "game/enemy_common.h"
+
 struct row8 { int a, b; };
 
 extern void DestroyInstance(int instance);
-extern void Ov107_ActionResource_Destroy(int p);
 extern void Ov107_DestroyObject(int obj);
 
 // Teardown: destroy the primary sub-object (this[0x388]), release the channel
@@ -11,7 +12,7 @@ void Ov240_ReleaseSubObjectsAndSlotsThenNotify(int *this)
 {
     int i;
     DestroyInstance(*(int *)((int)this + 0x388));
-    Ov107_ActionResource_Destroy(*(int *)((int)this + 0x398));
+    Ov107_ActionResource_Destroy((char *)(*(int *)((int)this + 0x398)));
     for (i = 0; i < 5; i++) {
         int slot = ((struct row8 *)this)[i + 0x73].b;
         if (slot != 0) {

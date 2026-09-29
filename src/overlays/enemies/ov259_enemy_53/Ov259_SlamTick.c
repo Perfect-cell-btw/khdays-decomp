@@ -5,13 +5,13 @@
  * partner has no queued move the timer restarts, pose 0x16 plays and the node moves on to 020d0cb4. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 extern int Ov259_FaceTargetGap(int *node);
 extern void Ov259_RefreshAim(int *node);
 extern void Ov259_PlaySound(int actor, int id, int variant, void *at);
 extern void Ov259_ReleaseRig(char *self);
 extern void Ov259_MapHeldItemKindToAnim(int actor, int flag);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov259_RecoilTick(void);
@@ -48,7 +48,7 @@ void Ov259_SlamTick(int *node)
         return;
     }
     state[0x1a] = 0;
-    Ov107_PostTagUpdate(*state, 0x16, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x16, 0);
     Ov259_MirrorPartnerPose(node, 0x16, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov259_RecoilTick);
 }

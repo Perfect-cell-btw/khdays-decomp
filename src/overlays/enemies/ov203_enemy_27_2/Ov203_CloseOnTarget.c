@@ -29,6 +29,7 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 static inline void VEC_Set(VecFx32 *vec, int x, int y, int z) {
     vec->x = x;
@@ -47,7 +48,6 @@ extern int VEC_Normalize(void *a, void *d);
 extern int func_020050b4(int x, int z);
 extern int VEC_DotProduct(void *a, void *b);
 extern void ScaleVec3Fx12(int s, void *v, void *d);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov203_AdvanceNodeWhenGateClear(void);
 extern short data_0203d210[];
 
@@ -87,6 +87,6 @@ void Ov203_CloseOnTarget(int self) {
         return;
     }
     if (gap > 0x1000) { return; }
-    Ov107_PostTagUpdate(*state, 9, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
     SetIndexedSlot(self, *(signed char *)(self + 0x20), Ov203_AdvanceNodeWhenGateClear);
 }

@@ -6,10 +6,9 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov254_PickRoutePoint(int *state);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void Ov254_ForwardToAiIfReady_6(int helper);
 extern void Ov254_ForwardToAiIfReady_8(int helper);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
@@ -33,7 +32,7 @@ void Ov254_SeekEntry(int *node)
     }
     *((u8 *)state + 0x75) = state[0x1e] != 0 ? 1 : 0xc;
     *((u8 *)state + 0x76) = state[0x1e] != 0 ? 0 : 7;
-    Ov107_PostTagUpdate(*state, *((u8 *)state + 0x75), 0);
+    Ov107_PostTagUpdate((Actor *)(*state), *((u8 *)state + 0x75), 0);
     Ov107_StartAnim(*(int *)(*state + 0x430), *((u8 *)state + 0x76), 1);
     if (state[0x1e] != 0) {
         Ov254_ForwardToAiIfReady_6(*(int *)(*state + 0x460));

@@ -1,8 +1,9 @@
 /* Targets the nearest object (action 2 when none), sets the turn speed, plays anim 2 and installs
  * the chase tick. */
 
+#include "game/enemy_common.h"
+
 extern int Ov107_FindNearestObject(int a, int b);
-extern void Ov107_PostTagUpdate();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov140_ApproachEntry(void);
 void Ov140_AiEnterChase(int *node) {
@@ -18,6 +19,6 @@ void Ov140_AiEnterChase(int *node) {
         int v = *(int *)(*node + 0x2c) * 0x1e;
         state[4] = v / 10;
     }
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov140_ApproachEntry);
 }

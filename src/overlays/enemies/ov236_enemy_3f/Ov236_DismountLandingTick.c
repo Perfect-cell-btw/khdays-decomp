@@ -6,6 +6,7 @@
  * through the actor's +0x24 hook, the +0x14 timer clears and the node moves to 020d57a4. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct Ov236Actor {
     char pad000[0x24];
@@ -13,7 +14,6 @@ struct Ov236Actor {
 };
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern u16 data_ov236_020d6430[];
 extern void Ov236_RiderWatchTickB(void);
@@ -62,7 +62,7 @@ void Ov236_DismountLandingTick(int *node)
     if (*(u8 *)state[8] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x10, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x10, 0);
     if (*(short *)(*state + 0x300 + 0xd0) == 0) {
         pp = noteFront;
         pp[1] = data_ov236_020d6430[9];

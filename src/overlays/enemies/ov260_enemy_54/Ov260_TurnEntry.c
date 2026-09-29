@@ -4,10 +4,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int y);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_TickRecovery(void);
 
@@ -20,7 +20,7 @@ void Ov260_TurnEntry(int *node)
         VEC_Subtract((VecFx32 *)(state[2] + 0x190), (VecFx32 *)state[4], &d);
         state[0x19] = state[0x1a] = func_020050b4(d.x, d.z);
     }
-    Ov107_PostTagUpdate(*state, 8, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 8, 0);
     state[0x1f] = 0;
     state[2] = 0;
     *((u8 *)state + 0x79) = 0;

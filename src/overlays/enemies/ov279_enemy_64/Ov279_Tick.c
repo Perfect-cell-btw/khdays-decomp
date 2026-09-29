@@ -9,16 +9,15 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 origin; VecFx32 dir; int nLength; int nRadius; } Segment;
 typedef struct { char pad[0x58]; Segment seg; } Ov279Item;
 
 extern void TaskList_FinishByTag(int list, int node);
-extern void Ov107_UnlinkNodeFromOwner(int sub);
 extern void Ov022_ToggleBit13ByMode(int partner, int flag);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
-extern void Ov107_AiState_PostTickBase(int self);
 
 void Ov279_Tick(int self)
 {
@@ -36,7 +35,7 @@ void Ov279_Tick(int self)
             *(int *)(*(int *)(self + 0x3a8) + 0x24) = 0;
         }
         if (*(int *)(self + 0x3b0) != 0) {
-            Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3b0));
+            Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x3b0)));
             *(int *)(self + 0x3b0) = 0;
         }
     }
@@ -72,5 +71,5 @@ void Ov279_Tick(int self)
     seg.nLength = VEC_Normalize(&seg.dir, &seg.dir);
     (*(Ov279Item **)(self + 0x38c))->seg = seg;
     (**(Ov279Item ***)(self + 0x388))->seg = seg;
-    Ov107_AiState_PostTickBase(self);
+    Ov107_AiState_PostTickBase((char *)self);
 }

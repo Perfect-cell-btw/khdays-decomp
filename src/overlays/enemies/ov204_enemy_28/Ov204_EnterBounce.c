@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     int actor;
@@ -26,7 +27,6 @@ typedef struct {
     int speed;
 } BallState;
 
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *d);
 extern int VEC_Normalize(const VecFx32 *a, VecFx32 *d);
 extern void Ov107_BuildAndSendUpdate(int actor, int reaction, int mode, VecFx32 *at);
@@ -38,7 +38,7 @@ void Ov204_EnterBounce(int *node)
 {
     BallState *state = (BallState *)node[1];
 
-    Ov107_PostTagUpdate(state->actor, 9, 0);
+    Ov107_PostTagUpdate((Actor *)state->actor, 9, 0);
     if (state->target != 0) {
         VEC_Subtract(state->from, (VecFx32 *)(state->target + 0x190), &state->dir);
         state->dir.y = 0;

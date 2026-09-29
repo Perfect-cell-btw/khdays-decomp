@@ -1,7 +1,9 @@
 /* Teardown of the ov260 actor: outside move 6 the +0x49c and +0x4a4 effects are released from the
  * +0x3c task list, outside move 0xb the +0x4bc one too; then the base teardown runs (020c7ca4). */
+
+#include "game/enemy_common.h"
+
 extern void TaskList_FinishByTag(void *taskList, void *handle);
-extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov260_Teardown(char *self)
 {

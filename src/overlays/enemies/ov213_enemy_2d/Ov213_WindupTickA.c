@@ -2,8 +2,10 @@
  * clear the +0x70 timer runs and past 0xbbb the latch is set and effect 0x122 (kind 0xb) is
  * spawned at the +4 anchor. Unless the +8 flag byte is set, pose 0x15 plays and the node moves
  * to 020cf81c. */
+
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov213_WindupTickB(void);
 
@@ -18,6 +20,6 @@ void Ov213_WindupTickA(int *node) {
         }
     }
     if (*(unsigned char *)state[2] != 0) return;
-    Ov107_PostTagUpdate(*state, 0x15, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x15, 0);
     SetIndexedSlot(node, *(signed char *)(node + 8), Ov213_WindupTickB);
 }

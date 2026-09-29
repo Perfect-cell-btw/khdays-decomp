@@ -8,13 +8,13 @@
  */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern void VEC_Normalize(void *a, void *b);
 extern int  func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void Ov207_DecisionTick(void);
 
 void Ov207_FireAttackCOnIdle(int *self) {
@@ -36,6 +36,6 @@ void Ov207_FireAttackCOnIdle(int *self) {
     if (*(unsigned char *)state[3] != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0xc, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xc, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov207_DecisionTick);
 }

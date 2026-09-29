@@ -5,8 +5,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern int Ov107_PackTextureHandle(char *self, int kind);
 extern int CreateSubitemInstance0xB4(int item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Ov260_OnDespawn(void);

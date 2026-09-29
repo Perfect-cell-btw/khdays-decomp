@@ -10,6 +10,7 @@
  * restarts and the tick hands over to Ov229_AiScanReactTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Bits17a { unsigned char b0 : 1, b1 : 1; };
@@ -25,7 +26,6 @@ extern int Ov229_ScanNearbyEntitiesReact(int *state);
 extern void func_ov107_020c0b90(int actor, int a, VecFx32 v, int b);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
 extern int VEC_Mag(const VecFx32 *v);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern const VecFx32 data_02041dc8;
@@ -96,7 +96,7 @@ void Ov229_DashTick(int *node)
     }
     item = *state;
     func_ov107_020c0b90(item, 0, *(VecFx32 *)(item + 0x74), 1);
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     state[8] = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov229_AiScanReactTick);
 }

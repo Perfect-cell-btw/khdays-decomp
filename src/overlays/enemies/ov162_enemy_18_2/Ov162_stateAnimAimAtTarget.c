@@ -1,13 +1,14 @@
 /* State step: posts pose 3, faces the target when one is set and installs the decelerate step. */
 
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern void VEC_Subtract();
 extern int func_020050b4();
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov162_AiDecelUntilFlagClear(void);
 void Ov162_stateAnimAimAtTarget(int *node) {
     int *state = (int *)node[1];
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     if (state[0xe] != 0) {
         int buf[3];
         int a;

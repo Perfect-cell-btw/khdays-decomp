@@ -8,11 +8,11 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov259_FaceTargetGap(int *node);
 extern void Ov259_RefreshAim(int *node);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void Ov259_ForwardSweep(int body, int a, int b, VecFx32 lift);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -39,21 +39,21 @@ void Ov259_ComboTick(int *node)
     }
     switch (state[0x26]) {
     case 0:
-        Ov107_PostTagUpdate(*state, 9, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
         Ov259_MirrorPartnerPose(node, 9, 0);
         Ov259_ForwardSweep(*(int *)(*state + 0x384), 0x440, 0x660, data_02041dc8);
         *(int *)(*state + 0x420) = 0;
         state[0x20] = 0x7f8;
         break;
     case 1:
-        Ov107_PostTagUpdate(*state, 0xa, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0xa, 0);
         Ov259_MirrorPartnerPose(node, 0xa, 0);
         Ov259_ForwardSweep(*(int *)(*state + 0x384), 0x880, 0xbb0, data_02041dc8);
         *(int *)(*state + 0x420) = 0;
         state[0x20] = 0xcc0;
         break;
     case 2:
-        Ov107_PostTagUpdate(*state, 0xb, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0xb, 0);
         Ov259_MirrorPartnerPose(node, 0xb, 0);
         Ov259_ForwardSweep(*(int *)(*state + 0x384), 0x220, 0x440, data_02041dc8);
         *(int *)(*state + 0x420) = 0;

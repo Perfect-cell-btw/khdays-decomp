@@ -6,6 +6,7 @@
  * +0xad byte clears, a positive +0x44 timer requests sub-state 7 and otherwise 2. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int node, int slot, void *cb);
@@ -13,7 +14,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
-extern int Ov107_ActionResource_GetOffsetAndScale(int resource, int a);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern const short data_0203d210[];
 

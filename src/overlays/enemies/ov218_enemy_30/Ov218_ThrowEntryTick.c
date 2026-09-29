@@ -3,12 +3,12 @@
  * node moves on to 020cdd44. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov218_StaggerTick(void);
 extern const short data_0203d210[];
@@ -29,7 +29,7 @@ void Ov218_ThrowEntryTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 9, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 9, 1);
     state[5] = 0;
     *((unsigned char *)state + 0x40) = 0;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov218_StaggerTick);

@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 struct Flags5c { int bit0 : 1; };
@@ -38,13 +39,11 @@ extern void Ov245_PublishCountersToMessage(void);
 extern void Ov245_HitFilterStock(void);
 extern void Ov245_BindMotion(void);
 extern void Ov245_WingPose(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern void Snd_RegisterSeqAndBind(void *track, int model, void *resource, int slot);
 extern void MainBlob_ResetSlotRows(int item, void *track);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
-extern void Ov107_EnqueueValue(int self, int item);
 extern int Ov107_CreateNamedResourceBinding(void *item, const char *name);
 extern int *List_InsertSorted(void *list, int stride, int max);
 extern int Ov107_HitShape_NewBox(struct Ov245Query *query);

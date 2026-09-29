@@ -3,10 +3,9 @@
  * motion 0x16, the +0x88 flag and +0x9c timer clear and the node moves on to 020d0cc0. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_SinkTick(void);
 
@@ -20,7 +19,7 @@ void Ov252_DriftOutEntryTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x17, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x17, 0);
     Ov107_StartAnim(*(int *)(*state + 0x574), 0x16, 0);
     *((unsigned char *)state + 0x88) = 0;
     state[0x27] = 0;

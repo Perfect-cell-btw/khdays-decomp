@@ -6,6 +6,7 @@
  * 020d1cf0. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int func_ov022_02083f0c(void);
 extern int Ov002_GetWord20(int handle);
@@ -15,7 +16,6 @@ extern void Quat_FromTwoVectors(void *rotation, const VecFx32 *from, const VecFx
 extern void Vec3TransformViaTempMtx(VecFx32 *out, void *rotation, const VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
-extern int func_ov107_020c9848();
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042258;
 extern void Ov253_AimFollow(void);

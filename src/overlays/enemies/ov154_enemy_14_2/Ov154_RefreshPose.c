@@ -6,7 +6,8 @@
  * call, four bytes short. One of six byte-identical siblings across two layouts (clip at +0x38c,
  * pose at +0x39c). */
 
-extern void Ov107_AiState_DispatchModelCallbacks(void *self, int);
+#include "game/enemy_common.h"
+
 extern void Srt_SetRotationQuat(void *pose, void *bones);
 
 typedef struct {

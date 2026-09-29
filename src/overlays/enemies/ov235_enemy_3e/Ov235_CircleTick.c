@@ -5,6 +5,7 @@
  * is rolled in [0x100, 0x300] and the tick hands over to Ov235_CirclingTick. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 
@@ -12,10 +13,8 @@ extern int Ov107_FindNearestObject(int obj, int kind);
 extern void VEC_Subtract(const void *a, const void *b, VecFx32 *out);
 extern int func_020050b4(int y, int x);
 extern void QuatFromAxisAngle(Quat *out, const VecFx32 *axis, int angle);
-extern int Ov107_ActionResource_GetOffsetAndScale(int obj, VecFx32 *out);
 extern void Vec3TransformViaTempMtx(VecFx32 *out, const Quat *q, const VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov235_CirclingTick(int *node);
 extern int RandNextScaled(int n);
@@ -51,7 +50,7 @@ void Ov235_CircleTick(int *node)
         return;
     }
     state[0x16] = RandRange(0, 1) == 0 ? -1 : 1;
-    Ov107_PostTagUpdate(*state, 0x1b, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1b, 0);
     state[0x1f] = RandRange(0x100, 0x300);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov235_CirclingTick);
 }

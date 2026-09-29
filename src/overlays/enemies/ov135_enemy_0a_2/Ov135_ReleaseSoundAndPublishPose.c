@@ -20,10 +20,12 @@
  *    lets mwcc settle the two block-move pointers in the ROM's order.  Worth trying
  *    first on any remaining ldm/stm role mismatch.
  */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } Pose;
 
 extern void TaskList_FinishByTag(int owner, int handle);
-extern void Ov107_AiState_PostTickBase(char *obj);
 
 void Ov135_ReleaseSoundAndPublishPose(char *obj) {
     if ((*(unsigned char *)(obj + 0x1c4) & 0xa) != 0) {

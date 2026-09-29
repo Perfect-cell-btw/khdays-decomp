@@ -6,6 +6,9 @@
  * owner_delta; while it stays under state[0xc], return. Once past: fire attack 0x11 (020c9264) and hand
  * off to the 020d3050 state.
  */
+
+#include "game/enemy_common.h"
+
 extern int  Ov107_FindNearestObject(int obj, int flag);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void VEC_Subtract(void *a, void *b, void *c);
@@ -13,7 +16,6 @@ extern void VEC_Normalize(void *a, void *b);
 extern int  func_020050b4(int x, int z);
 extern void VEC_CrossProduct(void *a, void *b, void *c);
 extern void ScaleVec3Fx12(int scale, void *in, void *out);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern int  data_02042264;
 extern void Ov210_AimPerpStrafeNeg(void);
 
@@ -37,6 +39,6 @@ void Ov210_StrafeSameTargetTimedNeg(int *self) {
     if (state[0xb] < state[0xc]) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x11, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x11, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov210_AimPerpStrafeNeg);
 }

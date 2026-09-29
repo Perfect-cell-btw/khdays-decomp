@@ -13,6 +13,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { VecFx32 c; int r; } Sphere;
@@ -39,7 +40,6 @@ extern int Ov002_DispatchNodeEvent(int obj, BreakReq *req);
 extern int *Collision_CastRay(void *collision, VecFx32 *origin, VecFx32 *dir);
 extern void ScaleVec3Fixed27(int plane, VecFx32 *in, VecFx32 *out);
 extern void func_02031384(int to, void *msg, int size);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const VecFx32 data_02042258;
 extern const Cmd14 data_ov207_020d41fe;
@@ -190,7 +190,7 @@ void Ov207_RockFlightTick(int *node)
         msg3.id = *(u16 *)(*state + 2);
         func_02031384(1, &msg3, 0xe);
     }
-    Ov107_PostTagUpdate(*state, 0x10, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x10, 0);
     state[9] = 0;
     Ov107_BuildAndSendUpdate(*state, 0x116, 0x10, &pos);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov207_ShockwaveTick);

@@ -6,7 +6,9 @@
  * rather than kept in a register, which is why the guard is written as a second load.
  *
  * One of four byte-identical siblings. */
-extern void Ov107_PostTagUpdate(int obj, int a, int b);
+
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 
 void Ov198_TickHoldTimer(int *node) {
@@ -22,5 +24,5 @@ void Ov198_TickHoldTimer(int *node) {
         SetIndexedSlot(node, *(signed char *)((int)node + 0x20), 0);
         return;
     }
-    Ov107_PostTagUpdate(state[0], 1, 0);
+    Ov107_PostTagUpdate((Actor *)state[0], 1, 0);
 }

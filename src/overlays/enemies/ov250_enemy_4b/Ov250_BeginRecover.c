@@ -1,5 +1,7 @@
 /* Ov250_BeginRecover: ported from a matched sibling family (same shape, constants and offsets adjusted). */
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+
+#include "game/enemy_common.h"
+
 extern void SetIndexedSlot(int *self, int idx, void *cb);
 extern void Ov250_GuardFieldCClearField1cAdvance_2(void);
 
@@ -11,7 +13,7 @@ void Ov250_BeginRecover(int *self) {
     ((struct hw60 *)(*s + 0x60))->hi |= (unsigned char)2;
     *(unsigned short *)(*s + 0x100 + 0xae) |= 1;
     ((struct b8 *)(*(int *)(*s + 0x388) + 8))->f &= ~1;
-    Ov107_PostTagUpdate(*s, 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*s), 5, 0);
     s[7] = 0;
     SetIndexedSlot(self, *(signed char *)((char *)self + 0x20), (void *)&Ov250_GuardFieldCClearField1cAdvance_2);
 }

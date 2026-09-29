@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 typedef struct { u8 hi, mid, lo; } Fx24;   /* sign + 23-bit magnitude, big-endian */
@@ -52,7 +53,6 @@ extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern int Ov107_CollectSphereOverlaps(struct Ov284Owner *owner, Sphere *sphere, int *out);
 extern int Ov107_InvokeHitCallback(int hit, struct Ov284Owner *a, struct Ov284Owner *b, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(struct Ov284Owner *owner, int a, int id, void *at);
-extern void Ov107_PostTagUpdate(struct Ov284Owner *actor, int anim, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov284_AiRollTimerQueue2OnAnimEnd(void);
 extern const PosMsg data_ov284_020cd5b8;
@@ -129,6 +129,6 @@ void Ov284_SwingTick(int *node)
     if (*state->pBusy != 0) {
         return;
     }
-    Ov107_PostTagUpdate(state->pOwner, 7, 0);
+    Ov107_PostTagUpdate((Actor *)state->pOwner, 7, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov284_AiRollTimerQueue2OnAnimEnd);
 }

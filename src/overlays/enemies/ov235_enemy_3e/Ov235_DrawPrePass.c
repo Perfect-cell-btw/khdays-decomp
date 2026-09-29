@@ -1,12 +1,14 @@
 /* Draw pre-pass of the ov235 enemy: the +0x39c part's first item and the +0x3a0 part take the
  * +0x3ac rig's pose, the +0x3a4 part the +0x3b0 rig's pose (+0x10 <- +4). Outside sub-state 0xc the
  * pending +0x44 and +0x54 effects of the +0x3bc block are finished. The base pre-pass runs. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } Srt;
 struct Part { char pad[0x10]; Srt pose; };
 struct Rig { int pad; Srt srt; };
 
 extern void TaskList_FinishByTag(int list, int handle);
-extern void Ov107_AiState_PostTickBase(char *self);
 
 void Ov235_DrawPrePass(char *self)
 {

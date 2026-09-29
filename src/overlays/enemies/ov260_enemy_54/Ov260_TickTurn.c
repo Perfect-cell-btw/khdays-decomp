@@ -4,14 +4,13 @@
  * 020ce9d4 runs next. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 
 extern int Ov260_PickTarget(int *node);
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
-extern void Ov107_PostTagUpdate(int owner, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -34,7 +33,7 @@ void Ov260_TickTurn(int *node)
     }
     MTX_MultVec33((VecFx32 *)(*(int *)(*state + 0x428) + 0x2c), &rot, (VecFx32 *)(state + 8));
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 0xe, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0xe, 0);
         Ov107_StartAnim(*(int *)(*state + 0x428), 6, 0);
         func_ov107_020c0b90(*state, 5, data_02041dc8, 0);
         Ov260_PlaySound(*state, 0xa, state[4]);

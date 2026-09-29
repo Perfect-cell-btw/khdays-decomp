@@ -8,13 +8,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern VecFx32 Ov252_TurnVecY(int angle, VecFx32 *vec);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern int Ov252_HeadingDelta(int *node, VecFx32 *v, int angle, int wantAbs);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_HoverTick_2(void);
 extern void Ov252_RetreatDecision(void);
@@ -78,7 +77,7 @@ void Ov252_SwaySettleTick(int *node)
             }
         }
         if (state[0x2a] != 0 || state[0x28] != 0) {
-            Ov107_PostTagUpdate(*state, 3, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
             Ov107_StartAnim(*(int *)(*state + 0x574), 2, 0);
             if (state[0x28] != 0) {
                 *(u8 *)(*state + 0x579) = 0;

@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { u8 hi, mid, lo; } Fx24;
@@ -33,7 +34,6 @@ static inline void PackFx24(Fx24 *dst, int v) {
 }
 
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern int Ov107_FindNearestObject(int owner, int flag);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
@@ -77,7 +77,7 @@ void Ov207_JumpWindupTick(int *node)
         (*(void (**)(int, PosMsg *, int))(*state + 0x24))(*state, &msg, 0xe);
     }
     *(u16 *)(*state + 0x100 + 0xae) |= 1;
-    Ov107_PostTagUpdate(*state, 0xe, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xe, 1);
     state[4] = Ov107_FindNearestObject(*state, 0);
     *(VecFx32 *)(state + 0xc) = data_02041dc8;
     if (state[4] != 0) {

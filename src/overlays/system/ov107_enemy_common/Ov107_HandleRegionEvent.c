@@ -3,6 +3,9 @@
  * nodes of the list at +0x22c, register the +0x1a8 sub-object, every node of the
  * list at +0x260 and every slot's +0x14 sub-object into the region's child list,
  * and finish with Ov107_RegisterChildInRegion. */
+
+#include "game/enemy_common.h"
+
 typedef struct Obj Obj;
 
 typedef struct {
@@ -44,7 +47,6 @@ typedef struct {
 extern void RegisterSubscriberSlot(int list, int child);
 extern void *List_First(void *list);
 extern void *List_Next(void *list);
-extern void Ov107_RegisterChildInRegion(Obj *obj, Region *region);
 
 void Ov107_HandleRegionEvent(Obj *obj, Region *region) {
     if (obj->field_50 == 1 && obj->field_30 != 0) {
@@ -87,5 +89,5 @@ void Ov107_HandleRegionEvent(Obj *obj, Region *region) {
         }
     }
 
-    Ov107_RegisterChildInRegion(obj, region);
+    Ov107_RegisterChildInRegion((int)obj, (int)region);
 }

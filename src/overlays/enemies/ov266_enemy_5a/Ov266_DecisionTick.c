@@ -10,6 +10,7 @@
  * is remembered at +0x5d and cleared, and the tick hands off to 020d1124. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Hw60 { unsigned short lo : 8, hi : 8; };
 struct b2 { unsigned char b0 : 1, b1 : 1; };
@@ -25,7 +26,6 @@ extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void VEC_CrossProduct(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov266_IsTargetOutsideCone(int *node);
 extern int Ov266_ChooseMove(int *node, int gap);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern const short data_0203d210[];
 extern const VecFx32 data_02042264;
 extern void Ov266_AiQueueStoredOnAnimEnd(int *node);
@@ -90,12 +90,12 @@ void Ov266_DecisionTick(int *node)
         }
     }
     if (*(unsigned char *)(state[1] + 0xad) == 0 && Ov266_ChooseMove(node, gap) == 0) {
-        Ov107_PostTagUpdate(*state, 5, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
     }
     if (*(signed char *)(*state + 0x1c7) == -1) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x10, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x10, 0);
     *(unsigned char *)((char *)state + 0x5d) = *(signed char *)(*state + 0x1c7);
     *(signed char *)(*state + 0x1c7) = -1;
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov266_AiQueueStoredOnAnimEnd);

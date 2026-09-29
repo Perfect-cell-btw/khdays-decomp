@@ -1,5 +1,6 @@
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef struct Path {
     char name[10];
@@ -94,11 +95,9 @@ typedef struct AiState {
 } AiState;
 
 extern const char data_ov107_020cb638[10];
-extern int func_ov107_020c9848(void);
 extern void *Archive_LoadFile(char *name, u32 heap);
 extern void NNSi_FndFreeFromDefaultHeap(void *user_ptr);
 extern int func_02020400(int value, int percent);
-extern void Ov107_AiState_LoadResistances(char *self, u32 mask);
 typedef struct ModeFlags { u8 flags; } ModeFlags;
 extern ModeFlags data_0204c240;
 

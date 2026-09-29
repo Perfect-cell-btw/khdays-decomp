@@ -1,10 +1,10 @@
 /* Binds to the leader once, then follows its position. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void Ov282_BindOwnerAndAttach(int a, int b, int c);
 extern long long FX_DivFx64c(int num, int denom);
-extern void Ov107_MoveNodeAndRelayout(int obj, void *v);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov282_BurstTick(void);
 
@@ -29,7 +29,7 @@ void Ov282_AiFollowLeaderTick(int *self) {
     delta = (int)(((q * (long long)0x1666) + 0x80000000LL) >> 32);
     v = *(VecFx32 *)(state + 0xd);
     v.y = v.y + (delta - 0x1000);
-    Ov107_MoveNodeAndRelayout(state[0], &v);
+    Ov107_MoveNodeAndRelayout((Actor *)state[0], &v);
     if (q == 0x100000000LL) {
         state[0xb] = 0;
         SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)Ov282_BurstTick);

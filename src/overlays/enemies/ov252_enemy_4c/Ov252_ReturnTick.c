@@ -3,13 +3,12 @@
  * pending the next move is 8, else pose 1 and part motion 0 start and the node moves on to 020cf324. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov252_CheckTarget(int *node, VecFx32 *delta, int face);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov252_HoverTick(void);
 extern const VecFx32 data_02041dc8;
@@ -31,7 +30,7 @@ void Ov252_ReturnTick(int *node)
         *(unsigned char *)(*state + 0x1c7) = 8;
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), 0);
     } else {
-        Ov107_PostTagUpdate(*state, 1, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 1, 0);
         Ov107_StartAnim(*(int *)(*state + 0x574), 0, 0);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov252_HoverTick);
     }

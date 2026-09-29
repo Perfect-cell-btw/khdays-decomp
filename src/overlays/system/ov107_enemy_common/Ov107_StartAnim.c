@@ -1,7 +1,9 @@
 /* Ov107_StartAnim -- set bit0, clear bit1, set bit2 to arg's low bit in the flag
  * byte at self+4; store val at self+2; notify the collision/select subsystem. */
+
+#include "game/enemy_common.h"
+
 extern void SetSubitemState(int a, int b, short c, int d);
-extern void Ov107_RefreshAndSelectChild();
 
 typedef struct {
     unsigned char bit0 : 1;

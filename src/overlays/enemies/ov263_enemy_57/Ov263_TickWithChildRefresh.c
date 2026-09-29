@@ -1,6 +1,7 @@
 /* Refreshes the child selector at +0x388, then runs the object tick. */
 
-extern int Ov107_RefreshAndSelectChild();
+#include "game/enemy_common.h"
+
 extern int Ov107_ProcessObjectTick();
 
 struct S { char pad[0x388]; int field_388; };

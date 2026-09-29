@@ -5,11 +5,11 @@
  * moves to 020d1d98. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
 struct Ov245Owner { char pad[0x43c]; int parts[3]; };
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void Ov245_InvokeHookAndRearm_3(int part, VecFx32 *pos, int value);
@@ -31,7 +31,7 @@ void Ov245_BurstEntry(int *node) {
     VecFx32 ofs;
     VecFx32 pos;
     *(unsigned short *)(*state + 0x100 + 0xae) |= 0x10;
-    Ov107_PostTagUpdate(*state, 2, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 2, 0);
     func_ov107_020c0b90(*state, 0, *(VecFx32 *)state[2], 0);
     Ov107_BuildAndSendUpdate(*state, 0x15a, 7, (void *)state[2]);
     angle = 0;

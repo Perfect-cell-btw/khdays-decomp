@@ -6,10 +6,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct w8 { unsigned int lo : 8, rest : 24; };
 
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern int RandNextScaled(int range);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *d);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -38,7 +38,7 @@ void Ov244_BounceEntry(int *node)
             ((((((unsigned int)hw << 0x10) >> 0x18) | 2) << 0x18) >> 0x10);
     }
     *(int *)(*state + 0x390) = 0xcc;
-    Ov107_PostTagUpdate(*state, 6, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 6, 1);
     idx = ANG2IDX(RandRange(-0x3244, 0x3244));
     state[7] = data_0203d210[idx * 2];                                        /* FX_SinIdx */
     state[8] = 0;

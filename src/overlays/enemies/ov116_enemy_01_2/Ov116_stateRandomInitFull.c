@@ -1,13 +1,14 @@
 /* State step: posts a tag update, then randomises the movement: a direction sign, a starting phase,
  * a radius between the actor's limits at +0x224 and +0x228 and a timer; installs the orbit step. */
 
-extern void Ov107_PostTagUpdate();
+#include "game/enemy_common.h"
+
 extern int RandNextScaled(int bound);
 extern void SetIndexedSlot(void *obj, int idx, void *value);
 extern void Ov116_OrbitTick(void);
 void Ov116_stateRandomInitFull(int *node) {
     int *state = (int *)node[1];
-    Ov107_PostTagUpdate(*state, 1, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 1, 1);
     state[0x18] = (RandNextScaled(2) == 0) ? -1 : 1;
     state[0x13] = RandNextScaled(0x100);
     {

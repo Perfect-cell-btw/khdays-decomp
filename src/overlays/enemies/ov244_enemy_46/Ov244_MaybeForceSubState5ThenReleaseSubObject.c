@@ -1,5 +1,4 @@
-extern void Ov107_UnlinkNodeFromOwner(int sub);
-extern void Ov107_AiState_PostTickBase(int obj);
+#include "game/enemy_common.h"
 
 // If flagged (this[0x1c4]&0xa) and idle (this[0x1c7]==-1) and the current
 // sub-state isn't one of the reserved values, force sub-state 5. Then, unless the
@@ -14,8 +13,8 @@ void Ov244_MaybeForceSubState5ThenReleaseSubObject(int *this)
         }
     }
     if (*(signed char *)((int)this + 0x1c6) != 10 && *(int *)((int)this + 0x398) != 0) {
-        Ov107_UnlinkNodeFromOwner(*(int *)((int)this + 0x398));
+        Ov107_UnlinkNodeFromOwner((void *)(*(int *)((int)this + 0x398)));
         *(int *)((int)this + 0x398) = 0;
     }
-    Ov107_AiState_PostTickBase((int)this);
+    Ov107_AiState_PostTickBase((char *)((int)this));
 }

@@ -47,6 +47,7 @@
 #include "nitro/fx_types.h"
 #include "game/actor.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 struct SinCos {
     short sin;
@@ -111,7 +112,6 @@ extern int Ov107_HitShape_TestSphere(void *shape, void *other, int mode);
 extern int FX_Div(int a, int b);
 extern int VEC_Normalize(VecFx32 *out, VecFx32 *in);
 extern void ScaleVec3Fx12(int scale, VecFx32 *in, VecFx32 *out);
-extern void *func_ov107_020c9848(void);
 extern int FX_Inv(int a);
 extern void SetIndexedSlot(struct AiStateNode *node, int slot, void *arg);
 

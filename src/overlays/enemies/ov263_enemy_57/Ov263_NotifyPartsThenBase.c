@@ -1,6 +1,8 @@
 /* Feed the two sub-values at param_1+0x38c/+0x390 to Ov107_InvokeSlot0x74 with param_2, then
  * finalize via Ov107_Actor_DetachFromRegion. */
-extern void Ov107_InvokeSlot0x74(int a, int b);
+
+#include "game/enemy_common.h"
+
 extern void Ov107_Actor_DetachFromRegion(int a, int b);
 void Ov263_NotifyPartsThenBase(int param_1, int param_2) {
     int i;

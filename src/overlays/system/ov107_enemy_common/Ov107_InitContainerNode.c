@@ -3,14 +3,13 @@
  * fields, and attach a fresh object at +0x3c. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_InitBehaviorNode(u16 *node);
 extern void *CallocInstance(int size);
 extern void List_Init(void *list);
 extern void *ObjList_New(void);
 extern void Ov107_Scene_Destroy(void);
 extern void Ov107_ContainerNode_Tick(void);
-extern void Ov107_FaceReferenceDirection(void);
 
 void Ov107_InitContainerNode(u16 *node) {
     Ov107_InitBehaviorNode(node);

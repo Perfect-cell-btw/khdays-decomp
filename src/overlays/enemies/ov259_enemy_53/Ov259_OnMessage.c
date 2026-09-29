@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } SrtTransform;
@@ -25,8 +26,6 @@ extern void Srt_SetTranslation(SrtTransform *t, const VecFx32 *pos);
 extern void Srt_SetScaleUniform(SrtTransform *t, int scale);
 extern void Srt_SetScaleXYZ(void *pose, int x, int y, int z);
 extern int Ov107_CreateNodeXformTask(int model, int res, int kind, int flag, void *at);
-extern int Ov107_CreateNodeBodyTask(int model, int res, int kind, void *at, u8 flag, int loop);
-extern void Ov107_ForwardVisibleEvent(char *self, int on);
 extern void Ov259_SwapShells(int body, int on);
 extern void Ov107_AiState_OnMessage(char *self, u8 *msg, int arg);
 extern const VecFx32 data_02042264;

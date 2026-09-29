@@ -7,6 +7,7 @@
  * store (see Ov178_HandleSpawnMessage). */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 
@@ -14,7 +15,6 @@ extern void SrtTransform_SetIdentity(SrtTransform *transform);
 extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translation);
 extern void Srt_SetRotationQuat(SrtTransform *transform, void *placement);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int zero, SrtTransform *transform);
-extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern int Ov107_CreateNodeXformTaskFx24(int model, int parent, int kind, int zero, int weight, void *payload);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 

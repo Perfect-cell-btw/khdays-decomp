@@ -2,8 +2,10 @@
  * anchor, hands the +0x24 value to the +0x430 item (020d1dc8), then from the height gap (020ccda4, flat) computes the
  * fraction of 5.0 still to fall (clamped 0..5.0) and its ratio (FX_Inv against 5.0) scaled by
  * 0.925 into the +0x20 z speed (x/y zero), and hands the node to 020cd9f4. */
+
+#include "game/enemy_common.h"
+
 extern void Ov245_SetNodeMode3(int actor);
-extern void Ov107_StartAnim(int item, int motion, int flag);
 extern void Ov245_NodeUpdateTickForward_b(int item, int a);
 extern int Ov245_TargetHeightGap(int *node, int flat);
 extern int FX_Div(int num, int den);

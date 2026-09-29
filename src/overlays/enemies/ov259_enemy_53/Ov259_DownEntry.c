@@ -7,13 +7,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
 extern int func_020050b4(int x, int y);
 extern void Ov259_PlaySound(int actor, int id, int variant, void *at);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void Ov259_SwapShells(int rig, int open);
 extern void Ov259_ArmPartnerCue(int *node, int pose, int delay);
@@ -47,7 +47,7 @@ void Ov259_DownEntry(int *node)
     }
     Ov259_PlaySound(*state, 0x172, 0x1b, (void *)state[4]);
     func_ov107_020c0b90(*state, 4, *(VecFx32 *)state[4], 0);
-    Ov107_PostTagUpdate(*state, 5, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 5, 0);
     Ov259_MirrorPartnerPose(node, 5, 0);
     Ov259_SwapShells(*(int *)(*state + 0x384), 0);
     {

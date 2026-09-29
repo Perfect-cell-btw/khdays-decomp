@@ -18,6 +18,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { int q[4]; } Quat;
@@ -65,7 +66,6 @@ extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern int VEC_DotProduct(const VecFx32 *a, const VecFx32 *b);
 extern struct CollisionResult *Collision_CastRay(void *collision, VecFx32 *position, VecFx32 *direction);
 extern void Srt_SetScaleXYZ(void *placement, int x, int y, int z);
-extern int Ov107_CollectSegmentOverlaps(int owner, Segment *query, int *results);
 extern int Segment_ClosestPoint(VecFx32 *point, Segment *seg, fx64 *outDist);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int Ov107_InvokeHitCallback(int ent, int owner, int aux, int mode, VecFx32 *dir, int flag);
@@ -196,7 +196,7 @@ scaled:
     axis.dir = end;
     axis.nLength = nLen;
     axis.nRadius = 0x200;
-    n = Ov107_CollectSegmentOverlaps(*state, &axis, results);
+    n = Ov107_CollectSegmentOverlaps((Actor *)(*state), &axis, (void **)results);
     i = 0;
     if (n > 0) {
         tmpl = data_ov126_020d402a;

@@ -10,6 +10,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 
@@ -26,7 +27,6 @@ extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int VEC_Normalize(const VecFx32 *v, VecFx32 *out);
 extern void ScaleVec3Fx12(int scale, VecFx32 *v, VecFx32 *out);
 extern int Ov258_PickMove(int *node);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern const short data_0203d210[];
 extern const VecFx32 data_ov258_020d1838;
@@ -166,8 +166,8 @@ void Ov258_TickBarrage(int *node)
         return;
     }
     if (state[0xf] == 0) {
-        Ov107_PostTagUpdate(*state, 0xc, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0xc, 0);
     } else {
-        Ov107_PostTagUpdate(*state, 0, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     }
 }

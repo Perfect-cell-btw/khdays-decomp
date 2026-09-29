@@ -6,9 +6,9 @@
  * runs. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_CreateNodeXformTaskFx24(int model, int parent, int kind, int zero, int scale, void *spot);
-extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, int a, int b);
 extern int Ov256_SpawnShard(int owner, int model, VecFx32 *pos);
 extern void Ov107_AiState_OnMessage(int owner, unsigned char *command, int arg);
 

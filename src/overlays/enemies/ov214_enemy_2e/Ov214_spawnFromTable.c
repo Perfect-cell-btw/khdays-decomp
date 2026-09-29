@@ -1,9 +1,10 @@
 /* Spawns the projectile for the current animation state: picks its texture from the overlay's
  * table, initialises the child projectile model and refreshes its callbacks. */
 
+#include "game/enemy_common.h"
+
 struct nine { int w[9]; };
 struct b1 { unsigned char b : 1; };
-extern int Ov107_PackTextureHandle(void *this, int v);
 extern void Ov214_initChildProjectile(void *a, int b, int c, void *d);
 extern void RefreshObjectCallbacks(void *a, int b);
 extern int data_ov214_020cebf8[];

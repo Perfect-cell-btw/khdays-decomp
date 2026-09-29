@@ -11,13 +11,13 @@
  * behaviour, since the x*30 intermediate can overflow. The two shifts are how you tell the
  * divisors apart; they are otherwise identical sequences. */
 
+#include "game/enemy_common.h"
+
 typedef struct {
     unsigned short a;
     unsigned short b;
 } Ov137_Desc;
 
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
-extern void Ov107_StartAnim(int rig, int a, int b);
 extern void SetIndexedSlot(int self, int action, void (*cb)(void));
 extern void Ov247_AimedAttackWaitTick(void);
 extern unsigned short data_ov247_020d4f00[];
@@ -43,7 +43,7 @@ void Ov247_ScheduleFollowUpMove(int self) {
     }
 
     ctx[5] = *(int *)(*(int *)self + 0x2c) * 30 / 10;
-    Ov107_PostTagUpdate(ctx[0], 7, 0);
+    Ov107_PostTagUpdate((Actor *)ctx[0], 7, 0);
     ctx[0xf] = 0;
     *(unsigned char *)((char *)ctx + 0x54) = 0;
     Ov107_StartAnim(*(int *)(ctx[0] + 0x39c), 0, 0);

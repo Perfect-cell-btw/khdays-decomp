@@ -18,6 +18,7 @@
  * Stack 0x40 = vec(0xc) at sp+0, anchor(0x10) at sp+0xc, MtxFx33(0x24) at sp+0x1c. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     int m[9];
@@ -28,7 +29,6 @@ typedef struct {
     int xform;
 } Anchor;
 
-extern void Ov107_PostTagUpdate(int owner, int mode, int arg);
 extern void Ov229_startAnim(int owner, int a);
 extern void ScaleVec3Fx12(int xform, VecFx32 *v, VecFx32 *out);
 extern void VEC_Add(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
@@ -58,7 +58,7 @@ void Ov229_AiLungeStrikeTick(int self) {
         }
         *(unsigned char *)((char *)ctx + 0x61) |= 0x80;
         ctx[0x13] = 0;
-        Ov107_PostTagUpdate(ctx[0], 0x12, 0);
+        Ov107_PostTagUpdate((Actor *)ctx[0], 0x12, 0);
         Ov229_startAnim(ctx[0], 0xc);
         return;
     }

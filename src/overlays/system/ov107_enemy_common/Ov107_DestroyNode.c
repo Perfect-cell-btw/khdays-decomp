@@ -1,9 +1,10 @@
+#include "game/enemy_common.h"
+
 extern void DestroyInstance(void *obj);
 extern void *List_First(void *list);
 extern void *List_Next(void *list);
 extern void func_ov107_020c3190(void *obj);
 extern void NNSi_FndDestroyDoubleList(void *list);
-extern void Ov107_DestroyInstance(void *self);
 
 /* Derived destructor: release the sub-object at self+0x9c, then empty the list
  * at self+0x144 (destroying each entry's payload), destroy the list itself, and
@@ -25,5 +26,5 @@ void Ov107_DestroyNode(char *self) {
         } while (entry != 0);
     }
     NNSi_FndDestroyDoubleList(self + 0x144);
-    Ov107_DestroyInstance(self);
+    Ov107_DestroyInstance((int)self);
 }

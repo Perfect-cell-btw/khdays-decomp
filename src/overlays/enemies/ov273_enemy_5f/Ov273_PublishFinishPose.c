@@ -4,6 +4,7 @@
  * into state+0x28), latch the pending action byte from +0x1c9 into +0x1c7 and hand off. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int a, b, c, d; } Ov213Quad;
 
@@ -14,7 +15,6 @@ static inline void VEC_Set(VecFx32 *v, int x, int y, int z) {
     v->z = z;
 }
 
-extern void Ov107_MoveNodeAndRelayout(int obj, VecFx32 *v);
 extern void SetIndexedSlot(void *node, int idx, void *cb);
 
 struct hw60 { unsigned short lo : 8, hi : 8; };
@@ -28,7 +28,7 @@ void Ov273_PublishFinishPose(int *node) {
     }
     { VecFx32 *p = (VecFx32 *)state[1];
       VEC_Set(&v, p->x, p->y + 0x1999, p->z); }
-    Ov107_MoveNodeAndRelayout(state[0], &v);
+    Ov107_MoveNodeAndRelayout((Actor *)state[0], &v);
     *(Ov213Quad *)(state + 0xe) = data_020420f8;
     *(Ov213Quad *)(state + 0xa) = *(Ov213Quad *)(state + 0xe);
     *(char *)(state[0] + 0x1c7) = *(signed char *)(state[0] + 0x100 + 0xc9);

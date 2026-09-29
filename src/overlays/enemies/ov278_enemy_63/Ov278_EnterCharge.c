@@ -4,6 +4,7 @@
 
 #include "nitro/types.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     u16 soundId;
@@ -34,7 +35,6 @@ typedef struct {
 } Ov278Actor;
 
 extern void Ov107_BuildAndSendUpdate(Ov278CueObject *object, int id, int kind, void *anchor);
-extern void Ov107_PostTagUpdate(Ov278CueObject *object, int mode, int flag);
 extern void SetIndexedSlot(Ov278Actor *self, int index, void *callback);
 extern Ov278CueTable data_ov278_020d6374;
 extern void Ov278_AiReleaseRidersOnAnimEnd(void);
@@ -50,6 +50,6 @@ void Ov278_EnterCharge(Ov278Actor *self) {
         playCue(node->object, &cue, sizeof(cue));
     }
     Ov107_BuildAndSendUpdate(node->object, 0x166, 6, node->anchor);
-    Ov107_PostTagUpdate(node->object, 4, 0);
+    Ov107_PostTagUpdate((Actor *)node->object, 4, 0);
     SetIndexedSlot(self, self->slot, &Ov278_AiReleaseRidersOnAnimEnd);
 }

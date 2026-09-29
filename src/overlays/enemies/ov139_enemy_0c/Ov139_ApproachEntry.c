@@ -6,6 +6,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern int Ov107_FindNearestObject(int actor, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -13,8 +14,6 @@ extern void VEC_Subtract(void *a, void *b, void *d);
 extern int VEC_Normalize(void *a, void *d);
 extern int func_020050b4(int x, int z);
 extern void ScaleVec3Fx12(int scale, void *v, void *d);
-extern void Ov107_StartAnim(void *part, int a, int b);
-extern void Ov107_PostTagUpdate(int actor, int anim, int flag);
 extern const short data_0203d210[];
 extern void Ov139_ApproachTick(int *node);
 
@@ -43,7 +42,7 @@ void Ov139_ApproachEntry(int *node)
     if (*(u8 *)state[0x14] != 0) {
         return;
     }
-    Ov107_StartAnim(*(void **)(*state + 0x390), 0, 1);
-    Ov107_PostTagUpdate(*state, 3, 1);
+    Ov107_StartAnim((int)(*(void **)(*state + 0x390)), 0, 1);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 1);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov139_ApproachTick);
 }

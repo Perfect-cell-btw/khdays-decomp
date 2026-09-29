@@ -6,9 +6,8 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int y);
 extern int VEC_Normalize(VecFx32 *v, VecFx32 *out);
@@ -35,7 +34,7 @@ void Ov260_HopTick(int *node)
     if (*(u8 *)(state[1] + 0xad) == 0) {
         int t;
 
-        Ov107_PostTagUpdate(*state, 0x1a, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1a, 0);
         Ov107_StartAnim(*(int *)(*state + 0x428), 0xf, 0);
         VEC_Subtract((VecFx32 *)(*(int *)(*state + 0x420) + 0x190), (VecFx32 *)state[4], &d);
         state[0x19] = state[0x1a] = func_020050b4(d.x, d.z);

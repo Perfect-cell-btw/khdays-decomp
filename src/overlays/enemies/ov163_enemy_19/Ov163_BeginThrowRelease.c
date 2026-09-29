@@ -9,6 +9,7 @@
 
 #include "nitro/types.h"
 #include "game/ai_task.h"
+#include "game/enemy_common.h"
 
 typedef struct { int value; } Fx32;
 typedef struct { Fx32 x, y, z; } FxVec;
@@ -38,7 +39,6 @@ struct Node {
     AI_TASK_FIELDS(struct State)
 };
 
-extern void Ov107_PostTagUpdate(char *actor, int a, int b);
 extern void Ov107_BuildAndSendUpdate(char *actor, int id, u16 mode, int param);
 extern void SetIndexedSlot(struct Node *node, int slot, void *next);
 extern const struct Msg data_ov163_020d0e9a;
@@ -87,7 +87,7 @@ void Ov163_BeginThrowRelease(struct Node *node)
     if (pfnHook != 0) {
         (*pfnHook)(st->pActor, &msg, 0xe);
     }
-    Ov107_PostTagUpdate(st->pActor, 3, 0);
+    Ov107_PostTagUpdate((Actor *)st->pActor, 3, 0);
 
     st->nField30 = 0;
     st->nField4c = 0;

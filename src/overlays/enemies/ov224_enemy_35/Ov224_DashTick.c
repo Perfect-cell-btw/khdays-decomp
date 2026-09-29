@@ -8,6 +8,7 @@
  * sub-action 2 (target) or 4 runs (Ov224_StrikeSweepEntities). */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Bit0 { unsigned char bit0 : 1; };
 
@@ -18,7 +19,6 @@ static inline int FX_Mul(int a, int b) {
 extern int FX_Div(int num, int den);
 extern void ScaleVec3Fx12(int scale, const VecFx32 *v, VecFx32 *out);
 extern void Ov107_BuildAndSendUpdate(int owner, int id, int mode, void *at);
-extern void Ov107_PostTagUpdate(int owner, int anim, int mode);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 v, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern int VEC_Mag(const VecFx32 *v);
@@ -47,7 +47,7 @@ void Ov224_DashTick(int *node)
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
         if (state[0x1e] != 0) {
             if (((struct Bit0 *)(*state + 0x17a))->bit0 != 0) {
-                Ov107_PostTagUpdate(*state, 0x17, 0);
+                Ov107_PostTagUpdate((Actor *)(*state), 0x17, 0);
                 func_ov107_020c0b90(*state, 0xa, data_02041dc8, 3);
                 SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), (void *)Ov224_AiStep_QueueAction4OnAnimEnd);
                 return;

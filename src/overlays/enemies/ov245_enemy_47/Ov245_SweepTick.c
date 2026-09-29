@@ -7,12 +7,12 @@
  * the node moves to 020d5088. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 p0; VecFx32 dir; int scale; } Segment;
 struct Capsule { Segment seg; int radius; };
 
 extern void func_ov107_020c0b90(int actor, int effect, VecFx32 v, int flag);
-extern int Ov107_CollectSegmentOverlaps(int actor, struct Capsule *cap, int *out);
 extern int Ov107_InvokeHitCallback(int hit, int a, int b, int kind, VecFx32 *push, int z);
 extern void Ov107_BuildAndSendUpdate(int actor, int id, int kind, void *anchor);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
@@ -39,7 +39,7 @@ void Ov245_SweepTick(int *node) {
     push.z = -0x5000;
     cap = *(struct Capsule *)(**(int **)(*state + 0x388) + 0x78);
     cap.radius += 0x1000;
-    nHits = Ov107_CollectSegmentOverlaps(*state, &cap, hits);
+    nHits = Ov107_CollectSegmentOverlaps((Actor *)(*state), &cap, (void **)hits);
     for (i = 0; i < nHits; i++) {
         bit = 1 << *(unsigned short *)(hits[i] + 2);
         if ((*(unsigned char *)(*state + 0x3b0) & bit) == 0) {

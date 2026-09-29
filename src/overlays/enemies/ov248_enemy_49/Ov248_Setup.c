@@ -4,6 +4,7 @@
  * from data_ov248_020d0c04), attached and hidden (bit 1 on their +0x5c). */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 struct Slot { int model; int effect; };
@@ -13,9 +14,7 @@ extern void Ov248_Destroy_2(void);
 extern void Ov248_ActorOnMessage(void);
 extern void Ov248_CreateAiTask(void);
 extern void Ov248_Release(void);
-extern void *Ov107_PackTextureHandle(int pool, int index);
 extern int CreateSubitemInstance0xB4(void *item);
-extern void Ov107_EnqueueValue(char *self, int item);
 typedef struct { int w[2]; } KindTable;
 extern const KindTable data_ov248_020d0c04;
 
@@ -40,7 +39,7 @@ void Ov248_Setup(char *self)
     *(u16 *)(self + 0x100 + 0xae) |= 0x14;
     *(int *)(self + 0x70) = 0xe00;
     for (i = 0; i < 2; i++) {
-        ((struct Ov248Actor *)self)->slots[i].model = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(pool, kinds.w[i]));
+        ((struct Ov248Actor *)self)->slots[i].model = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)pool, kinds.w[i]));
         Ov107_EnqueueValue(self, ((struct Ov248Actor *)self)->slots[i].model);
         *(int *)(((struct Ov248Actor *)self)->slots[i].model + 0x5c) |= 2;
     }

@@ -1,14 +1,15 @@
 /* State step: posts a pose, sends a state update, clears the timer and the swing flag, and installs
  * the bite-sweep step. */
 
-extern void Ov107_PostTagUpdate(int a, int b, int c);
+#include "game/enemy_common.h"
+
 extern void Ov107_BuildAndSendUpdate(int a, int b, int c, int d);
 extern void SetIndexedSlot(void *node, int idx, void *value);
 extern void Ov250_BiteSweepTick(void);
 
 void Ov250_ConfigSubStateThenAdvanceSlot(int *node) {
     int *state = (int *)node[1];
-    Ov107_PostTagUpdate(*state, 0xb, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0xb, 0);
     Ov107_BuildAndSendUpdate(*state, 0x159, 4, state[1]);
     state[7] = 0;
     *(unsigned char *)((char *)state + 0x50) = 0;

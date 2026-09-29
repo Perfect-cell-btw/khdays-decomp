@@ -1,9 +1,10 @@
 /* Ov202_ReleaseTasks: release hook of the ov202 enemy (x2: ov202/203), variant of the matched ov131 sibling: the sub-state-dependent task finishes come first (slots +0x3dc, attachment +0x410), then both item transforms are refreshed from the +0x3d8 item. */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } SrtTransform;   /* 44 bytes, the node's SRT block */
 
 extern void TaskList_FinishByTag(int owner, int handle);
-extern void Ov107_UnlinkNodeFromOwner(void *attachment);
-extern void Ov107_AiState_PostTickBase(void *actor);
 
 void Ov202_ReleaseTasks(char *actor) {
     if (*(signed char *)(actor + 0x1c6) != 7) {

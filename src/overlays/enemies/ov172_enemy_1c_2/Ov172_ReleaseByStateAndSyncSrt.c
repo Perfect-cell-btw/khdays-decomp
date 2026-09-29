@@ -25,11 +25,12 @@
  * The note said "no C reordering flips mwcc's inline-block-move register roles", which
  * was true of the forms it tried and false of the function.
  */
+
+#include "game/enemy_common.h"
+
 typedef struct { int w[11]; } SrtTransform;   /* 44 bytes, the node's SRT block */
 
 extern void TaskList_FinishByTag(int owner, int handle);
-extern void Ov107_UnlinkNodeFromOwner(void *attachment);
-extern void Ov107_AiState_PostTickBase(void *actor);
 
 void Ov172_ReleaseByStateAndSyncSrt(char *actor) {
     int i;

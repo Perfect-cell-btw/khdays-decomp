@@ -8,6 +8,7 @@
  * +0x64 pose as +0x388 with bit 1 of its +8 low byte raised; +0x38c clears. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct {
     unsigned f : 8;
@@ -16,12 +17,10 @@ typedef struct {
 struct Ov226Saved { int w; };
 static inline void VEC_Set(VecFx32 *v, int x, int y, int z) { v->x = x; v->y = y; v->z = z; }
 
-extern int Ov107_PackTextureHandle(int owner, int kind);
 extern int CreateSubitemInstance0xB4(int a);
 extern void SetSubitemState(int obj, int mode, int a, int b);
 extern void RegisterSubscriberSlot(int a, int obj);
 extern void RefreshObjectCallbacks(int obj, int a);
-extern void Ov107_EnqueueValue(int self, int obj);
 extern int List_InsertSorted(int a, int b, int c);
 extern int Ov107_CloneResourceTransform(int a);
 extern void Ov226_Destroy_2(void);
@@ -55,14 +54,14 @@ void Ov226_ConstructItem(char *self) {
     *(int *)(*(int *)(self + 0x9c) + 0x5c) |= 4;
     VEC_Set((VecFx32 *)(self + 0x64), 0, *(int *)(self + 0x70), 0);
 
-    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, 0x1a));
+    *(int *)(self + 0x384) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)owner, 0x1a));
     SetSubitemState(*(int *)(self + 0x384), 0, 0, 1);
     SetSubitemState(*(int *)(self + 0x384), 4, 0, 1);
     RegisterSubscriberSlot(*(int *)(self + 0x9c), *(int *)(self + 0x384));
     RefreshObjectCallbacks(*(int *)(self + 0x384), 0);
 
-    sub = *(int *)(self + 0x394) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle(owner, saved.w));
-    Ov107_EnqueueValue((int)self, sub);
+    sub = *(int *)(self + 0x394) = CreateSubitemInstance0xB4(Ov107_PackTextureHandle((char *)owner, saved.w));
+    Ov107_EnqueueValue((char *)((int)self), sub);
     *(int *)(*(int *)(self + 0x394) + 0x5c) |= 2;
 
     *(int *)(self + 0x388) = List_InsertSorted((int)(self + 0x22c), 0x10, 0x64);

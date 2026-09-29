@@ -2,9 +2,11 @@
  * Ov268_FaceTargetFireReadyB -- x3 (ov208/209/268). Twin of Ov208_FaceTargetFireReady (020d2024) with
  * attack 3 and the 020d215c continuation.
  */
+
+#include "game/enemy_common.h"
+
 extern void VEC_Subtract(void *a, void *b, void *c);
 extern int  func_020050b4(int x, int z);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, int cb);
 extern void Ov268_FireRangedShot(void);
 
@@ -18,6 +20,6 @@ void Ov268_FaceTargetFireReadyB(int *self) {
     if (*(unsigned char *)(state[1] + 0xad) != 0) {
         return;
     }
-    Ov107_PostTagUpdate(*state, 3, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 3, 0);
     SetIndexedSlot((int)self, *(signed char *)((int)self + 0x20), (int)&Ov268_FireRangedShot);
 }

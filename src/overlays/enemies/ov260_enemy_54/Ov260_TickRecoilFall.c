@@ -7,14 +7,13 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int m[9]; } Mtx33;
 struct Flag17a { u8 b0 : 1; };
 
 extern void MTX_RotY33_(Mtx33 *pMtx, int nSin, int nCos);
 extern void MTX_MultVec33(const VecFx32 *pIn, const Mtx33 *pMtx, VecFx32 *pOut);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern int Ov107_StartAnim(int part, int motion, int mode);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void Ov260_AttackSweep(int *state, int kind, VecFx32 *sphere, void *cyl, void *seg);
@@ -49,7 +48,7 @@ void Ov260_TickRecoilFall(int *node)
             }
             func_ov107_020c0b90(*state, 2, *land, 0);
             Ov260_PlaySound(*state, 0xd, (int)(state + 0x15));
-            Ov107_PostTagUpdate(*state, 0x1c, 0);
+            Ov107_PostTagUpdate((Actor *)(*state), 0x1c, 0);
             state[0x1c] = 0;
             *((u8 *)state + 0x79) = 0;
             *((u8 *)state + 0x7b) = 0;

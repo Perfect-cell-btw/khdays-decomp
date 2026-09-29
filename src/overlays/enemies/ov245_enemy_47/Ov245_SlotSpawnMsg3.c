@@ -2,10 +2,12 @@
  * +0x394 effect child (020c08cc, kind 5 -- or 0x15 for slot 2 -- scale 1.0, payload at byte 5),
  * slot 1 spawns a kind-0x11 child at the actor's +0xa0 placement (020c09a0, flags 0/1); all
  * land in +0x398. Then the state filter (020cc8a4). */
+
+#include "game/enemy_common.h"
+
 struct Ov245Slots { char pad[0x394]; struct { int pEffect; int pChild; } slots[3]; };
 
 extern int Ov107_CreateNodeXformTaskFx24(int list, int parent, int kind, int a, int scale, unsigned char *payload);
-extern int Ov107_CreateNodeBodyTask(int list, int parent, int kind, void *at, int a, int b);
 extern int Ov245_FilterStateMsg(int self, unsigned char *msg, int extra);
 
 int Ov245_SlotSpawnMsg3(int self, unsigned char *msg, int extra) {

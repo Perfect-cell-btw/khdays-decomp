@@ -7,6 +7,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[11]; } SrtTransform;
 
@@ -15,8 +16,6 @@ extern void Srt_SetTranslation(SrtTransform *transform, const VecFx32 *translati
 extern void Srt_SetScaleUniform(SrtTransform *transform, int scale);
 extern int Ov107_CreateNodeXformTask(int model, int parent, int kind, int blend,
                                      SrtTransform *transform);
-extern int Ov107_CreateNodeBodyTask(int model, int parent, int kind, void *at, u8 blend, int b);
-extern int Ov107_CreateSpawnTask(int owner, int resourceId, int kind, int zero, void *work);
 extern void Ov107_AiState_OnMessage(int owner, u8 *msg, int arg);
 
 void Ov276_HandleMessage(int owner, u8 *msg, int arg)

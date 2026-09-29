@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { VecFx32 pos; int radius; } Sphere;
 struct Items46c { char pad[0x46c]; int item[16]; };
@@ -30,8 +31,6 @@ extern int VEC_Normalize(VecFx32 *v, VecFx32 *d);
 extern int RandNextScaled(int range);
 extern int Ov254_ProbeGround(int *self, VecFx32 pos, int *outY);
 extern void Ov254_InvokeHookAndRearm2(int shell, VecFx32 *at);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
-extern void Ov107_StartAnim(int part, int motion, int mode);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov254_OrbitTick(void);
 extern const short data_0203d210[];
@@ -122,13 +121,13 @@ void Ov254_BarrageTick(int *node)
         return;
     }
     if (++state[0x11] < 3) {
-        Ov107_PostTagUpdate(*state, 0x1b, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x1b, 0);
         state[0x10] = 0;
         state[0x16] = 0;
         *((u8 *)state + 0x70) = 0;
         return;
     }
-    Ov107_PostTagUpdate(*state, 0x1c, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x1c, 0);
     Ov107_StartAnim(*(int *)(*state + 0x430), 0xb, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov254_OrbitTick);
 }

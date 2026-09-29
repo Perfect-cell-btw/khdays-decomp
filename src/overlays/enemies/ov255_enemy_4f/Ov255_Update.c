@@ -3,11 +3,11 @@
  * the rotation from data_02042270 to data_0204227c. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef struct { int w[4]; } Quat;
 typedef struct { int w[11]; } Srt;
 
-extern void Ov107_RefreshAndSelectChild(int part, int dt);
 extern void Ov107_ProcessObjectTick(char *self, int dt);
 extern void Quat_FromTwoVectors(Quat *out, const VecFx32 *a, const VecFx32 *b);
 extern void Quat_Multiply(Quat *out, const void *a, const Quat *b);

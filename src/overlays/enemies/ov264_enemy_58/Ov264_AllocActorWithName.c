@@ -1,10 +1,11 @@
 /* Creates enemy 0x58's actor: opens its cached resource by name and initialises it. */
 
+#include "game/enemy_common.h"
+
 extern void OS_SPrintf(void *buffer, void *format);
 extern int data_ov264_020cec20;
 extern void *CallocInstance(int size);
 extern void func_ov107_020c6624(void *obj, int arg);
-extern int Ov107_OpenCachedResourceByName(void *name);
 extern void Ov264_initActor(void *obj);
 
 void *Ov264_AllocActorWithName(int arg)

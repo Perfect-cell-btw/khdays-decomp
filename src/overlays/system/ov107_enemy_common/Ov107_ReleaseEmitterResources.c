@@ -1,6 +1,7 @@
+#include "game/enemy_common.h"
+
 extern void DestroyInstance(int h);
 extern void NNSi_FndDestroyDoubleList(char *list);
-extern void Ov107_Region_Destroy(char *self);
 
 /* Releases the emitter's two own sprites and the four per-slot ones, then its three lists. */
 void Ov107_ReleaseEmitterResources(char *self) {

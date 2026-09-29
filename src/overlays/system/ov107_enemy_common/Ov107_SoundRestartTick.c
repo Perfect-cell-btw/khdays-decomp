@@ -1,7 +1,9 @@
 /* Unless the object is inactive or locked, resolve the target via 02033d0c and dispatch. */
+
+#include "game/enemy_common.h"
+
 extern int Slot_Spawn(int a, int b, int c, int d);
 extern int SetIndexedSlot(int, int, void *);
-extern int Ov107_SoundFollowTick(int);
 struct sb0 { int b0 : 1; };
 void Ov107_SoundRestartTick(int param_1) {
     int owner = *(int *)(param_1 + 4);

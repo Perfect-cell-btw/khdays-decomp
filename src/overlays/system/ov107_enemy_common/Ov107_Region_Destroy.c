@@ -1,9 +1,10 @@
 /* Calls every child's destroy hook, destroys the list and the instance. */
 
+#include "game/enemy_common.h"
+
 extern int List_First(void *o);
 extern int List_Next(void *o);
 extern void NNSi_FndDestroyDoubleList(void *list);
-extern void Ov107_DestroyInstance(void *obj);
 
 void Ov107_Region_Destroy(char *self)
 {
@@ -19,5 +20,5 @@ void Ov107_Region_Destroy(char *self)
     }
 
     NNSi_FndDestroyDoubleList(list);
-    Ov107_DestroyInstance(self);
+    Ov107_DestroyInstance((int)self);
 }

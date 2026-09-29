@@ -2,6 +2,8 @@
  * the table at +0x40c (stride 8, so only the first word of each pair is an object), then the
  * table itself, and finally hand the object back. */
 
+#include "game/enemy_common.h"
+
 typedef struct {
     int obj;
     int reserved;
@@ -18,7 +20,6 @@ typedef struct {
 
 extern void FreeAllResourceTables(int a);
 extern void DestroyInstance(int obj);
-extern void Ov107_ActionResource_Destroy(int a);
 extern void FreeInstanceMemory(int table);
 extern void Ov107_DestroyObject(int self);
 
@@ -27,7 +28,7 @@ void Ov268_Destroy(int self) {
 
     FreeAllResourceTables(self + 0x388);
     DestroyInstance(*(int *)(self + 0x384));
-    Ov107_ActionResource_Destroy(*(int *)(self + 0x3ac));
+    Ov107_ActionResource_Destroy((char *)(*(int *)(self + 0x3ac)));
 
     /* The stride is 8, so the table is an array of 8-byte entries; expressing it that way is what
      * keeps the ROM's scaled index (`ldr r0,[r0,r4,lsl #3]`). Byte-offset arithmetic gets

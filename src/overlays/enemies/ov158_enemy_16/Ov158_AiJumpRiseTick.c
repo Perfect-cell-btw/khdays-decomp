@@ -1,5 +1,7 @@
 /* Snapshot +0x30, decay +0x34, tick the +0x3c dwell; once armed and ready, dispatch. */
-extern int Ov107_PostTagUpdate(int, int, int);
+
+#include "game/enemy_common.h"
+
 extern int SetIndexedSlot(int, int, void *);
 struct w3 { int a, b, c; };
 struct bit0 { unsigned char b : 1; };
@@ -15,7 +17,7 @@ void Ov158_AiJumpRiseTick(int param_1) {
         if (*(int *)(owner + 0x3c) <= 4) return;
         if ((((struct bit0 *)(obj + 0x17a))->b) == 0) return;
     }
-    Ov107_PostTagUpdate(obj, 3, 1);
+    Ov107_PostTagUpdate((Actor *)obj, 3, 1);
     *(int *)(owner + 0x3c) = 0;
     SetIndexedSlot(param_1, *(signed char *)(param_1 + 0x20), (void *)&Ov158_AiJumpFallTick);
 }

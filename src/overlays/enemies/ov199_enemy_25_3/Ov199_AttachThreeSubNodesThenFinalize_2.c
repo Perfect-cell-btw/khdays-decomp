@@ -1,7 +1,8 @@
 /* Region exit: passes the event to each of the three part objects (+0x398), then detaches the actor
  * from the region. */
 
-extern void Ov107_InvokeSlot0x74();
+#include "game/enemy_common.h"
+
 extern void Ov107_Actor_DetachFromRegion();
 
 void Ov199_AttachThreeSubNodesThenFinalize_2(int arg0, int arg1) {

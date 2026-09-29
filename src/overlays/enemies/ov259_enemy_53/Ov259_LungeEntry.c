@@ -6,10 +6,10 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void VEC_Subtract(const VecFx32 *a, const VecFx32 *b, VecFx32 *out);
 extern int func_020050b4(int x, int y);
-extern void Ov107_PostTagUpdate(int actor, int pose, int loop);
 extern void Ov259_MirrorPartnerPose(int *node, int pose, int mode);
 extern void Ov259_ArmPartnerCue(int *node, int pose, int delay);
 extern void Ov259_ForwardSweep(int body, int a, int b, VecFx32 lift);
@@ -33,7 +33,7 @@ void Ov259_LungeEntry(int *node)
         *(u16 *)(*state + 0x60) = (hw & ~0xff00) |
             (((unsigned int)(u16)((((unsigned int)hw << 0x10) >> 0x18) & ~0x40) << 0x18) >> 0x10);
     }
-    Ov107_PostTagUpdate(*state, 0x10, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0x10, 0);
     Ov259_MirrorPartnerPose(node, 0x10, 0);
     Ov259_ArmPartnerCue(node, 0xd, 0x660);
     Ov259_ForwardSweep(*(int *)(*state + 0x384), 0x660, 0x908, data_02041dc8);

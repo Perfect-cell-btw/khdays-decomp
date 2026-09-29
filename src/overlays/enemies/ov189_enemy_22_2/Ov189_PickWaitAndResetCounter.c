@@ -1,8 +1,9 @@
 /* State step: picks a new random wait between the actor's limits when the last one has run out,
  * posts pose 2, clears the timer and installs the approach step. */
 
+#include "game/enemy_common.h"
+
 extern int RandNextScaled(int range);
-extern void Ov107_PostTagUpdate(int a, int b, int c);
 extern void SetIndexedSlot(int self, int idx, void *cb);
 extern void Ov189_AimApproachAndDispatch(void);
 
@@ -14,7 +15,7 @@ void Ov189_PickWaitAndResetCounter(int self) {
         if (d < 0) d = -d;
         s[7] = lo + RandNextScaled(d + 1);
     }
-    Ov107_PostTagUpdate(s[0], 2, 1);
+    Ov107_PostTagUpdate((Actor *)s[0], 2, 1);
     s[6] = 0;
     SetIndexedSlot(self, *(signed char *)(self + 0x20), (void *)&Ov189_AimApproachAndDispatch);
 }

@@ -5,12 +5,12 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Flag17a { u8 b0 : 1; u8 b1 : 1; };
 
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
-extern void Ov107_PostTagUpdate(int owner, int pose, int loop);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov260_StompTick(void);
 
@@ -31,7 +31,7 @@ void Ov260_TickFall(int *node)
         }
         func_ov107_020c0b90(*state, 6, *(VecFx32 *)(state + 0x15), 0);
         Ov260_PlaySound(*state, 0xb, (int)(state + 0x15));
-        Ov107_PostTagUpdate(*state, 0x11, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 0x11, 0);
         state[0x1c] = 0;
         state[0x1d] = 0;
         *((u8 *)state + 0x79) = 0;

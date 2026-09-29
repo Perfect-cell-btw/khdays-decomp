@@ -1,6 +1,8 @@
 /* Scene hook of the ov258 enemy: adds its two +0x458 items to the scene (arg 1) and
  * chains to the common handler. */
-extern int Ov107_InitObjectFromSource(int scene, int item);
+
+#include "game/enemy_common.h"
+
 extern int Ov107_HandleRegionEvent(int *self, int scene);
 
 int Ov258_AddItemsToScene(int *r0, int r1)

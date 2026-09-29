@@ -3,9 +3,9 @@
  * move 0x15 starts (020cd148 with the +0x10 argument) and 020d0360 follows. */
 
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 extern void SetIndexedSlot(int *node, int slot, void *cb);
-extern void Ov107_PostTagUpdate(int owner, int pose, int loop);
 extern void func_ov107_020c0b90(int owner, int mode, VecFx32 at, int flag);
 extern void Ov260_PlaySound(int owner, int mode, int arg);
 extern void Ov260_DashEntryTick(void);
@@ -21,7 +21,7 @@ void Ov260_TickRecovery(int *node)
         return;
     }
     if (*(unsigned char *)(state[1] + 0xad) == 0) {
-        Ov107_PostTagUpdate(*state, 9, 0);
+        Ov107_PostTagUpdate((Actor *)(*state), 9, 0);
         func_ov107_020c0b90(*state, 8, data_02041dc8, 0);
         Ov260_PlaySound(*state, 0x15, state[4]);
         SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov260_DashEntryTick);

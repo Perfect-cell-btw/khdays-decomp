@@ -11,6 +11,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 struct Segment { VecFx32 origin; VecFx32 dir; int nLength; int nRadius; };
 struct HitWord { u32 lo : 16, hi : 16; };
@@ -28,7 +29,6 @@ struct Ov137Contact { u8 bGrounded : 1, bBlocked : 1; };
 struct Ov137Byte8 { u32 lo : 8, rest : 24; };
 
 extern void ScaleVec3Fx12(int scale, const VecFx32 *src, VecFx32 *dst);
-extern int Ov107_CollectSegmentOverlaps(int item, struct Segment *query, int *results);
 extern int Ov107_InvokeHitCallback(int ent, int actor, int item, int mode, void *dir, int flag);
 extern void Ov137_SendPositionMessage(int *state);
 extern void Ov107_BuildAndSendUpdate(int item, int id, int a, void *at);
@@ -54,7 +54,7 @@ void Ov137_SweepStrikeTick(int *node)
     query.nRadius = 0x800;
 
     if (state[9] == 0) {
-        n = Ov107_CollectSegmentOverlaps(*(int *)(*state + 0x38c), &query, results);
+        n = Ov107_CollectSegmentOverlaps((Actor *)(*(int *)(*state + 0x38c)), &query, (void **)results);
         i = 0;
         if (n > 0) {
             do {

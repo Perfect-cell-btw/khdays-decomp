@@ -1,4 +1,7 @@
 /* Ov116_ReleaseTasks: tick handler of the ov115 enemy (x2), variant of the matched ov178 sibling: task slots +0xc (outside 8/9), +0x34 (outside 8) and +0x2c (outside 9) are finished, then the two +0x3a0 attachments (outside 9) and +0x3a8 (outside 8). */
+
+#include "game/enemy_common.h"
+
 /* Tick handler of the ov115 enemy (and its byte-identical twins). If flagged (+0x1c4 & 0xa) and idle
  * (+0x1c7 == -1) and the current sub-state (+0x1c6) is not 0, 1, 3 or 12, force sub-state 12.
  * Unless in sub-state 8 the first effect of the +0x39c set is released, unless in 9 its two
@@ -13,8 +16,6 @@ typedef struct { int pad; Placement placement; } Source;            /* +0x394 */
 typedef struct { char pad[0x10]; Placement placement; } Frame;      /* +0x398 and the pool node */
 
 extern void TaskList_FinishByTag(int list, int node);
-extern void Ov107_UnlinkNodeFromOwner(int sub);
-extern void Ov107_AiState_PostTickBase(int obj);
 
 void Ov116_ReleaseTasks(int self)
 {
@@ -41,13 +42,13 @@ void Ov116_ReleaseTasks(int self)
     if (*(signed char *)(self + 0x1c6) != 9) {
         for (i = 0; i < 2; i++) {
             if (((int *)self)[0xe8 + i] != 0) {
-                Ov107_UnlinkNodeFromOwner(((int *)self)[0xe8 + i]);
+                Ov107_UnlinkNodeFromOwner((void *)(((int *)self)[0xe8 + i]));
                 ((int *)self)[0xe8 + i] = 0;
             }
         }
     }
     if (*(signed char *)(self + 0x1c6) != 8 && *(int *)(self + 0x3a8) != 0) {
-        Ov107_UnlinkNodeFromOwner(*(int *)(self + 0x3a8));
+        Ov107_UnlinkNodeFromOwner((void *)(*(int *)(self + 0x3a8)));
         *(int *)(self + 0x3a8) = 0;
     }
     {
@@ -60,5 +61,5 @@ void Ov116_ReleaseTasks(int self)
         Frame *frame = *(Frame **)(self + 0x398);
         node->placement = frame->placement;
     }
-    Ov107_AiState_PostTickBase(self);
+    Ov107_AiState_PostTickBase((char *)self);
 }

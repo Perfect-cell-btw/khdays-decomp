@@ -12,6 +12,7 @@
 
 #include "nitro/types.h"
 #include "nitro/fx_types.h"
+#include "game/enemy_common.h"
 
 typedef void (*Callback)(void);
 typedef struct { int id[4]; } IdTable;
@@ -30,14 +31,12 @@ extern void Ov284_ArbitrateSubStateEntry(void);
 extern void Ov284_CreateRegistryEntryAndLink(void);
 extern void Ov284_UpdateSegmentDirections(void);
 extern void Ov284_RenderMarkers(void);
-extern void *Ov107_PackTextureHandle(char *self, int index);
 extern int CreateSubitemInstance0xB4(void *item);
 extern int RegisterSubscriberSlot(int subscriber, int item);
 extern int InsertSortedEntryWithKey(int item, int kind, const char *name);
 extern int *List_InsertSorted(void *pool, int elementSize, int capacity);
 extern int Ov107_Mover_New(PlaceReq *req);
 extern int JointModel_New(void *item, int size);
-extern void Ov107_EnqueueValue(char *self, int item);
 extern int *CallocInstance(int size);
 extern int Ov107_CloneResourceTransform(void *camera);
 extern void Res_RequestIdPair(int resourceId);

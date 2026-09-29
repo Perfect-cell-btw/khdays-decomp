@@ -3,10 +3,10 @@
  * the +0x388 item's +8 low byte, plays pose 0 and moves the node to 020d5134. */
 
 #include "nitro/types.h"
+#include "game/enemy_common.h"
 
 struct w8 { unsigned int lo : 8, rest : 24; };
 
-extern void Ov107_PostTagUpdate(int actor, int pose, int flag);
 extern void SetIndexedSlot(int *node, int slot, void *cb);
 extern void Ov245_ReleaseThenPose1(void);
 
@@ -24,6 +24,6 @@ void Ov245_ChargeUpTick2(int *node) {
             ((((((unsigned int)hw << 0x10) >> 0x18) | 1) << 0x18) >> 0x10);
     }
     ((struct w8 *)(*(int *)(*state + 0x388) + 8))->lo |= 1;
-    Ov107_PostTagUpdate(*state, 0, 0);
+    Ov107_PostTagUpdate((Actor *)(*state), 0, 0);
     SetIndexedSlot(node, *(signed char *)((char *)node + 0x20), Ov245_ReleaseThenPose1);
 }
